@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2002/03/24 22:47:39 brad Exp $
+# $OpenBSD: Makefile,v 1.55 2002/05/27 16:58:29 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc
 
@@ -65,7 +65,7 @@ BUILD_DEPENDS+=:bison-*:devel/bison
 
 #### fetch section
 
-V=3.0.3
+V=3.1
 DIRECTORY=releases/${DISTNAME}/
 DISTNAME=   gcc-$V
 
@@ -74,7 +74,7 @@ MASTER_SITE_SUBDIR=${LATEST_DATE}
 
 DIST_SUBDIR=egcs
 
-DISTFILES=  gcc-3.0.3${EXTRACT_SUFX}
+DISTFILES=  gcc-3.1${EXTRACT_SUFX}
 
 SITES=	
 
@@ -196,7 +196,7 @@ CFLAGS=-O2 -g
 
 
 CONFIGURE_ARGS= --verbose --program-transform-name=s,^,e, \
---disable-nls 
+--disable-nls  --with-system-zlib
 
 # This is needed, as internal cpp is no longer compatible with the
 # visible beast
@@ -261,6 +261,8 @@ post-build:
 	mkdir -p ${WRKBUILD}/gcc/include/machine
 	cp ${FILESDIR}/include/machine/ansi.h ${WRKBUILD}/gcc/include/machine
 
+post-install:
+	-ldconfig -U ${PREFIX}/lib ${PREFIX}/lib/fpic
 
 # Tests still need to be performed at the end of install, I don't know why.
 

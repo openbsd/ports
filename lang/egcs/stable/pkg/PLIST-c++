@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST-c++,v 1.5 2002/01/01 01:21:18 espie Exp $
-@pkgcfl egcs-*-c++
-@pkgcfl gcc-*-c++
+@comment $OpenBSD: PLIST-c++,v 1.6 2002/05/27 16:58:29 espie Exp $
+@pkgcfl egcs-*-core
 bin/ec++
 bin/ec++filt
 bin/eg++
-bin/${MACHINE_ARCH}-unknown-openbsd${OSREV}-c++
-bin/${MACHINE_ARCH}-unknown-openbsd${OSREV}-g++
+bin/${MACHINE_ARCH}-unknown-openbsd${V}-ec++
+bin/${MACHINE_ARCH}-unknown-openbsd${V}-eg++
 include/g++-v3/algorithm
 include/g++-v3/backward/algo.h
 include/g++-v3/backward/algobase.h
@@ -44,7 +43,6 @@ include/g++-v3/backward/strstream.h
 include/g++-v3/backward/tempbuf.h
 include/g++-v3/backward/tree.h
 include/g++-v3/backward/vector.h
-include/g++-v3/bits/basic_file.h
 include/g++-v3/bits/basic_ios.h
 include/g++-v3/bits/basic_ios.tcc
 include/g++-v3/bits/basic_string.h
@@ -70,56 +68,9 @@ include/g++-v3/bits/localefwd.h
 include/g++-v3/bits/mask_array.h
 include/g++-v3/bits/ostream.tcc
 include/g++-v3/bits/pthread_allocimpl.h
-include/g++-v3/bits/sbuf_iter.h
 include/g++-v3/bits/slice.h
 include/g++-v3/bits/slice_array.h
 include/g++-v3/bits/sstream.tcc
-include/g++-v3/bits/std_algorithm.h
-include/g++-v3/bits/std_bitset.h
-include/g++-v3/bits/std_cassert.h
-include/g++-v3/bits/std_cctype.h
-include/g++-v3/bits/std_cerrno.h
-include/g++-v3/bits/std_cfloat.h
-include/g++-v3/bits/std_climits.h
-include/g++-v3/bits/std_clocale.h
-include/g++-v3/bits/std_cmath.h
-include/g++-v3/bits/std_complex.h
-include/g++-v3/bits/std_csetjmp.h
-include/g++-v3/bits/std_csignal.h
-include/g++-v3/bits/std_cstdarg.h
-include/g++-v3/bits/std_cstddef.h
-include/g++-v3/bits/std_cstdio.h
-include/g++-v3/bits/std_cstdlib.h
-include/g++-v3/bits/std_cstring.h
-include/g++-v3/bits/std_ctime.h
-include/g++-v3/bits/std_cwchar.h
-include/g++-v3/bits/std_cwctype.h
-include/g++-v3/bits/std_deque.h
-include/g++-v3/bits/std_fstream.h
-include/g++-v3/bits/std_functional.h
-include/g++-v3/bits/std_iomanip.h
-include/g++-v3/bits/std_ios.h
-include/g++-v3/bits/std_iosfwd.h
-include/g++-v3/bits/std_iostream.h
-include/g++-v3/bits/std_istream.h
-include/g++-v3/bits/std_iterator.h
-include/g++-v3/bits/std_limits.h
-include/g++-v3/bits/std_list.h
-include/g++-v3/bits/std_locale.h
-include/g++-v3/bits/std_map.h
-include/g++-v3/bits/std_memory.h
-include/g++-v3/bits/std_numeric.h
-include/g++-v3/bits/std_ostream.h
-include/g++-v3/bits/std_queue.h
-include/g++-v3/bits/std_set.h
-include/g++-v3/bits/std_sstream.h
-include/g++-v3/bits/std_stack.h
-include/g++-v3/bits/std_stdexcept.h
-include/g++-v3/bits/std_streambuf.h
-include/g++-v3/bits/std_string.h
-include/g++-v3/bits/std_utility.h
-include/g++-v3/bits/std_valarray.h
-include/g++-v3/bits/std_vector.h
 include/g++-v3/bits/stl_algo.h
 include/g++-v3/bits/stl_algobase.h
 include/g++-v3/bits/stl_alloc.h
@@ -148,7 +99,9 @@ include/g++-v3/bits/stl_threads.h
 include/g++-v3/bits/stl_tree.h
 include/g++-v3/bits/stl_uninitialized.h
 include/g++-v3/bits/stl_vector.h
+include/g++-v3/bits/stream_iterator.h
 include/g++-v3/bits/streambuf.tcc
+include/g++-v3/bits/streambuf_iterator.h
 include/g++-v3/bits/stringfwd.h
 include/g++-v3/bits/type_traits.h
 include/g++-v3/bits/valarray_array.h
@@ -178,29 +131,40 @@ include/g++-v3/cxxabi.h
 include/g++-v3/deque
 include/g++-v3/exception
 include/g++-v3/exception_defines.h
+include/g++-v3/ext/algorithm
+include/g++-v3/ext/enc_filebuf.h
+include/g++-v3/ext/functional
 include/g++-v3/ext/hash_map
 include/g++-v3/ext/hash_set
+include/g++-v3/ext/iterator
+include/g++-v3/ext/memory
+include/g++-v3/ext/numeric
+include/g++-v3/ext/rb_tree
 include/g++-v3/ext/rope
 include/g++-v3/ext/ropeimpl.h
 include/g++-v3/ext/slist
+include/g++-v3/ext/stdio_filebuf.h
 include/g++-v3/ext/stl_hash_fun.h
 include/g++-v3/ext/stl_hashtable.h
 include/g++-v3/ext/stl_rope.h
 include/g++-v3/fstream
 include/g++-v3/functional
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/atomicity.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/basic_file_model.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/c++config.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/c++io.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/c++locale.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/ctype_base.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/ctype_inline.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/ctype_noninline.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/gthr-default.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/gthr-single.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/gthr.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/limits.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/os_defines.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/atomicity.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/basic_file.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/c++config.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/c++io.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/c++locale.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/codecvt_specializations.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/cpu_limits.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/ctype_base.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/ctype_inline.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/ctype_noninline.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/gthr-default.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/gthr-posix.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/gthr-single.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/gthr.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/messages_members.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/os_defines.h
 include/g++-v3/iomanip
 include/g++-v3/ios
 include/g++-v3/iosfwd
@@ -230,15 +194,14 @@ lib/fpic/libestdc++.a
 lib/fpic/libestdc++.la
 lib/fpic/libsupc++.a
 lib/fpic/libsupc++.la
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/cc1plus
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/cc1plus
 lib/libestdc++.a
 lib/libestdc++.la
 lib/libsupc++.a
 lib/libsupc++.la
 man/man1/eg++.1
-%%SHARED%%
-@dirrm include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits
-@dirrm include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}
+@dirrm include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits
+@dirrm include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}
 @dirrm include/g++-v3/ext
 @dirrm include/g++-v3/bits
 @dirrm include/g++-v3/backward

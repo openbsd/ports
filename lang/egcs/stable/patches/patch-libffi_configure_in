@@ -1,6 +1,6 @@
---- libffi/configure.in.orig	Mon Jun 25 21:57:42 2001
-+++ libffi/configure.in	Wed Aug 22 09:32:45 2001
-@@ -40,6 +40,7 @@ AC_PROG_LIBTOOL
+--- libffi/configure.in.orig	Wed May  8 06:25:49 2002
++++ libffi/configure.in	Fri May 17 02:06:50 2002
+@@ -46,10 +46,12 @@ AC_PROG_LIBTOOL
  TARGETDIR="unknown"
  case "$host" in
  mips-sgi-irix5.* | mips-sgi-irix6.*) TARGET=MIPS; TARGETDIR=mips;;
@@ -8,24 +8,26 @@
  i*86-*-linux*) TARGET=X86; TARGETDIR=x86;;
  i*86-*-solaris*) TARGET=X86; TARGETDIR=x86;;
  i*86-*-beos*) TARGET=X86; TARGETDIR=x86;;
-@@ -47,15 +48,20 @@ i*86-*-freebsd*) TARGET=X86; TARGETDIR=x
+ i*86-*-freebsd*) TARGET=X86; TARGETDIR=x86;;
++ i*86-*-openbsd*) TARGET=X86; TARGETDIR=x86;;
+ i*86-*-netbsdelf*) TARGET=X86; TARGETDIR=x86;;
  i*86-*-win32*) TARGET=X86_WIN32; TARGETDIR=x86;;
  i*86-*-cygwin*) TARGET=X86_WIN32; TARGETDIR=x86;;
- i*86-*-mingw*) TARGET=X86_WIN32; TARGETDIR=x86;;
-+i*86-*-openbsd*) TARGET=X86; TARGETDIR=x86;;
- sparc-sun-4*) TARGET=SPARC; TARGETDIR=sparc;;
+@@ -58,13 +60,17 @@ sparc-sun-4*) TARGET=SPARC; TARGETDIR=sp
  sparc*-sun-*) TARGET=SPARC; TARGETDIR=sparc;;
  sparc-*-linux*) TARGET=SPARC; TARGETDIR=sparc;;
-+sparc-*-openbsd*) TARGET=SPARC; TARGETDIR=sparc;;
  sparc64-*-linux*) TARGET=SPARC; TARGETDIR=sparc;;
- alpha*-*-linux* | alpha*-*-osf*) TARGET=ALPHA; TARGETDIR=alpha;;
++sparc-*-openbsd*) TARGET=SPARC; TARGETDIR=sparc;;
+ alpha*-*-linux* | alpha*-*-osf* | alpha*-*-freebsd*) TARGET=ALPHA; TARGETDIR=alpha;;
 +alpha*-*-openbsd*) TARGET=ALPHA; TARGETDIR=alpha;;
  ia64*-*-*) TARGET=IA64; TARGETDIR=ia64;;
  m68k-*-linux*) TARGET=M68K; TARGETDIR=m68k;;
 +m68k-*-openbsd*) TARGET=M68K; TARGETDIR=m68k;;
  powerpc-*-linux* | powerpc-*-sysv*) TARGET=POWERPC; TARGETDIR=powerpc;;
  powerpc-*-beos*) TARGET=POWERPC; TARGETDIR=powerpc;;
+ powerpc-*-darwin*) TARGET=POWERPC_DARWIN; TARGETDIR=powerpc;;
+ powerpc-*-aix*) TARGET=POWERPC_AIX; TARGETDIR=powerpc;;
 +powerpc-*-openbsd*) TARGET=POWERPC; TARGETDIR=powerpc;;
+ rs6000-*-aix*) TARGET=POWERPC_AIX; TARGETDIR=powerpc;;
  arm*-*-linux-*) TARGET=ARM; TARGETDIR=arm;;
  esac
- 

@@ -1,13 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/01/01 01:21:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2002/05/27 16:58:29 espie Exp $
 @pkgcfl egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/cpp.info
 @unexec install-info --delete --info-dir=%D/info %D/info/cppinternals.info
 @unexec install-info --delete --info-dir=%D/info %D/info/gcc.info
+@unexec install-info --delete --info-dir=%D/info %D/info/gccint.info
 bin/ecpp
 bin/egcc
 bin/egccbug
 bin/egcov
-bin/${MACHINE_ARCH}-unknown-openbsd${OSREV}-gcc
+bin/${MACHINE_ARCH}-unknown-openbsd${V}-egcc
 info/cpp.info
 info/cpp.info-1
 info/cpp.info-2
@@ -31,59 +32,73 @@ info/gcc.info-20
 info/gcc.info-21
 info/gcc.info-22
 info/gcc.info-23
-info/gcc.info-24
-info/gcc.info-25
-info/gcc.info-26
-info/gcc.info-27
-info/gcc.info-28
-info/gcc.info-29
 info/gcc.info-3
-info/gcc.info-30
-info/gcc.info-31
-info/gcc.info-32
-info/gcc.info-33
-info/gcc.info-34
-info/gcc.info-35
-info/gcc.info-36
-info/gcc.info-37
-info/gcc.info-38
 info/gcc.info-4
 info/gcc.info-5
 info/gcc.info-6
 info/gcc.info-7
 info/gcc.info-8
 info/gcc.info-9
+info/gccint.info
+info/gccint.info-1
+info/gccint.info-10
+info/gccint.info-11
+info/gccint.info-12
+info/gccint.info-13
+info/gccint.info-14
+info/gccint.info-15
+info/gccint.info-16
+info/gccint.info-17
+info/gccint.info-18
+info/gccint.info-19
+info/gccint.info-2
+info/gccint.info-20
+info/gccint.info-21
+info/gccint.info-22
+info/gccint.info-23
+info/gccint.info-3
+info/gccint.info-4
+info/gccint.info-5
+info/gccint.info-6
+info/gccint.info-7
+info/gccint.info-8
+info/gccint.info-9
+lib/fpic/libfrtbegin.a
 lib/fpic/libiberty.a
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/cc1
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/collect2
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/cpp0
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/fpic/libgcc.a
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/README
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/float.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/limits.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/machine/ansi.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/stdarg.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/stdbool.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/syslimits.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/varargs.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/libgcc.a
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/specs
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/tradcpp0
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/cc1
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/collect2
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/cpp0
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/fpic/libgcc.a
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/README
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/float.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/limits.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/machine/ansi.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/stdarg.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/stdbool.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/syslimits.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/varargs.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/libgcc.a
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/specs
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/tradcpp0
+lib/libfrtbegin.a
+lib/libg2c.la
 lib/libiberty.a
+lib/libobjc.a
 man/man1/cpp.1
 man/man1/egcc.1
 man/man1/gcov.1
-man/man7/fsf-funding.7
-man/man7/gfdl.7
-man/man7/gpl.7
+@comment man/man7/fsf-funding.7
+@comment man/man7/gfdl.7
+@comment man/man7/gpl.7
 %%SHARED%%
-@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/machine
-@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include
-@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/fpic
-@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}
-@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}
+@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/machine
+@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include
+@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/fpic
+@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}
+@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}
 @dirrm lib/gcc-lib
 @dirrm lib/fpic
 @exec install-info --info-dir=%D/info %D/info/cpp.info
 @exec install-info --info-dir=%D/info %D/info/cppinternals.info
 @exec install-info --info-dir=%D/info %D/info/gcc.info
+@exec install-info --info-dir=%D/info %D/info/gccint.info

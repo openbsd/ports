@@ -1,18 +1,18 @@
-@comment $OpenBSD: PLIST-objc,v 1.4 2001/10/31 18:46:29 espie Exp $
-@pkgcfl egcs-*-objc
-@pkgcfl gcc-*-objc
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/cc1obj
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/objc/NXConstStr.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/objc/Object.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/objc/Protocol.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/objc/encoding.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/objc/hash.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/objc/objc-api.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/objc/objc-list.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/objc/objc.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/objc/sarray.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/objc/thr.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/objc/typedstream.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/libobjc.a
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/libobjc.la
-@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/objc
+@comment $OpenBSD: PLIST-objc,v 1.5 2002/05/27 16:58:29 espie Exp $
+@pkgcfl egcs-*-core
+lib/fpic/libobjc.a
+lib/fpic/libobjc.la
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/cc1obj
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/NXConstStr.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/Object.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/Protocol.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/encoding.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/hash.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/objc-api.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/objc-list.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/objc.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/sarray.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/thr.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/typedstream.h
+lib/libobjc.la
+@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc

@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-g77,v 1.4 2001/10/31 18:46:29 espie Exp $
-@pkgcfl egcs-*-g77
-@pkgcfl gcc-*-g77
+@comment $OpenBSD: PLIST-g77,v 1.5 2002/05/27 16:58:29 espie Exp $
+@pkgcfl egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/g77.info
 bin/eg77
 info/g77.info
@@ -17,6 +16,7 @@ info/g77.info-18
 info/g77.info-19
 info/g77.info-2
 info/g77.info-20
+info/g77.info-21
 info/g77.info-3
 info/g77.info-4
 info/g77.info-5
@@ -24,9 +24,10 @@ info/g77.info-6
 info/g77.info-7
 info/g77.info-8
 info/g77.info-9
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/f771
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/fpic/libg2c.a
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/g2c.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/libg2c.a
+lib/fpic/libg2c.a
+lib/fpic/libg2c.la
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/f771
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/g2c.h
+lib/libg2c.a
 man/man1/eg77.1
 @exec install-info --info-dir=%D/info %D/info/g77.info
