@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2001/01/23 06:34:50 jasoni Exp $
+# $OpenBSD: Makefile,v 1.35 2001/03/18 22:38:12 miod Exp $
 
 PKGNAME=	vim-5.7.23
 DISTNAME=	vim-5.7
@@ -42,6 +42,8 @@ CONFIGURE_ARGS+=--with-tliba="curses"
 # Internal Compiler Error
 .if (${MACHINE_ARCH} == "m68k")
 PATCH_LIST=	patch-* sup-m68k
+.elif (${MACHINE_ARCH} == "vax")
+PATCH_LIST=	patch-* sup-vax
 .endif
 
 .if ${FLAVOR:L} == "light"
