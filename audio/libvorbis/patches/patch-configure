@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2002/01/16 03:10:21 naddy Exp $
---- configure.orig	Tue Jan  1 22:17:46 2002
-+++ configure	Tue Jan  1 22:20:13 2002
-@@ -5337,7 +5337,7 @@ if test -z "$GCC"; then
+$OpenBSD: patch-configure,v 1.5 2002/07/20 00:52:45 naddy Exp $
+--- configure.orig	Fri Jul 19 16:12:17 2002
++++ configure	Fri Jul 19 21:54:52 2002
+@@ -5441,7 +5441,7 @@ if test -z "$GCC"; then
  		PROFILE="-v -xpg -g -xO4 -fast -native -fsimple -xcg92 -Dsuncc" ;;
  	*)
  		DEBUG="-g"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.4 2002/01/16 03:10:21 naddy Exp $
  		PROFILE="-g -p" ;;
          esac
  else
-@@ -5428,9 +5428,9 @@ rm -f conftest*
+@@ -5536,9 +5536,9 @@ rm -f conftest*
  		CFLAGS="-DDARWIN -fno-common -force_cpusubtype_ALL -Wall -g -O4 -ffast-math -fsigned-char"
  		PROFILE="-DDARWIN -fno-common -force_cpusubtype_ALL -Wall -g -pg -O4 -ffast-math -fsigned-char";;
  	*)

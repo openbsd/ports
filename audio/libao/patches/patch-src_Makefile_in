@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.3 2002/07/20 00:52:45 naddy Exp $
+--- src/Makefile.in.orig	Fri Jul 19 22:39:06 2002
++++ src/Makefile.in	Fri Jul 19 22:39:19 2002
+@@ -99,7 +99,7 @@ INCLUDES = -I$(top_builddir)/include/ao 
+ lib_LTLIBRARIES = libao.la
+ 
+ libao_la_SOURCES = audio_out.c config.c ao_null.c ao_wav.c ao_au.c ao_raw.c ao_private.h
+-libao_la_LDFLAGS = -version-info @LIB_CURRENT@:@LIB_REVISION@:@LIB_AGE@ -ldl
++libao_la_LDFLAGS = -version-info @LIB_CURRENT@:@LIB_REVISION@:@LIB_AGE@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
+ LTLIBRARIES =  $(lib_LTLIBRARIES)

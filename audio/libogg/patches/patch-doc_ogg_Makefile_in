@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_ogg_Makefile_in,v 1.2 2002/01/16 03:10:21 naddy Exp $
---- doc/ogg/Makefile.in.orig	Tue Jan  1 02:47:47 2002
-+++ doc/ogg/Makefile.in	Tue Jan  1 21:47:36 2002
+$OpenBSD: patch-doc_ogg_Makefile_in,v 1.3 2002/07/20 00:52:45 naddy Exp $
+--- doc/ogg/Makefile.in.orig	Fri Jul 19 16:13:22 2002
++++ doc/ogg/Makefile.in	Fri Jul 19 21:49:04 2002
 @@ -89,7 +89,7 @@ VERSION = @VERSION@
  
  AUTOMAKE_OPTIONS = foreign
@@ -8,5 +8,5 @@ $OpenBSD: patch-doc_ogg_Makefile_in,v 1.2 2002/01/16 03:10:21 naddy Exp $
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/ogg
 +docdir = $(datadir)/doc/$(PACKAGE)/ogg
  
- doc_DATA = bitpacking.html datastructures.html decoding.html encoding.html 	general.html index.html ogg_packet.html ogg_page.html 	ogg_page_bos.html ogg_page_continued.html ogg_page_eos.html 	ogg_page_granulepos.html ogg_page_pageno.html ogg_page_serialno.html 	ogg_page_version.html ogg_stream_clear.html ogg_stream_destroy.html 	ogg_page_packets.html ogg_stream_eos.html ogg_stream_flush.html 	ogg_stream_init.html ogg_stream_packetin.html ogg_stream_packetout.html 	ogg_stream_pagein.html ogg_stream_pageout.html ogg_stream_reset.html 	ogg_stream_state.html ogg_sync_buffer.html ogg_sync_clear.html 	ogg_sync_destroy.html ogg_sync_init.html ogg_sync_pageout.html 	ogg_sync_pageseek.html ogg_sync_reset.html ogg_sync_state.html 	ogg_sync_wrote.html oggpack_adv.html oggpack_adv1.html 	oggpack_adv_huff.html oggpack_bits.html oggpack_buffer.html 	oggpack_bytes.html oggpack_get_buffer.html oggpack_look.html 	oggpack_look1.html oggpack_look_huff.html oggpack_read.html 	oggpack_read1.html oggpack_readinit.html oggpack_reset.html 	oggpack_write.html oggpack_writeclear.html oggpack_writeinit.html 	overview.html reference.html style.css vorbis_comment.html 	vorbis_info.html ogg_packet_clear.html ogg_page_checksum_set.html
+ doc_DATA = bitpacking.html datastructures.html decoding.html encoding.html 	general.html index.html ogg_packet.html ogg_page.html 	ogg_page_bos.html ogg_page_continued.html ogg_page_eos.html 	ogg_page_granulepos.html ogg_page_pageno.html ogg_page_serialno.html 	ogg_page_version.html ogg_stream_clear.html ogg_stream_destroy.html 	ogg_page_packets.html ogg_stream_eos.html ogg_stream_flush.html 	ogg_stream_init.html ogg_stream_packetin.html ogg_stream_packetout.html 	ogg_stream_pagein.html ogg_stream_pageout.html ogg_stream_reset.html 	ogg_stream_state.html ogg_sync_buffer.html ogg_sync_clear.html 	ogg_sync_destroy.html ogg_sync_init.html ogg_sync_pageout.html 	ogg_sync_pageseek.html ogg_sync_reset.html ogg_sync_state.html 	ogg_sync_wrote.html oggpack_adv.html oggpack_adv1.html 	oggpack_bits.html oggpack_buffer.html 	oggpack_bytes.html oggpack_get_buffer.html oggpack_look.html 	oggpack_look1.html oggpack_read.html 	oggpack_read1.html oggpack_readinit.html oggpack_reset.html 	oggpack_write.html oggpack_writeclear.html oggpack_writeinit.html 	overview.html reference.html style.css vorbis_comment.html 	vorbis_info.html ogg_packet_clear.html ogg_page_checksum_set.html
  

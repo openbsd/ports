@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/01/16 03:10:21 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/07/20 00:52:45 naddy Exp $
 include/ogg/config_types.h
 include/ogg/ogg.h
 include/ogg/os_types.h
@@ -47,14 +47,12 @@ share/doc/libogg/ogg/ogg_sync_state.html
 share/doc/libogg/ogg/ogg_sync_wrote.html
 share/doc/libogg/ogg/oggpack_adv.html
 share/doc/libogg/ogg/oggpack_adv1.html
-share/doc/libogg/ogg/oggpack_adv_huff.html
 share/doc/libogg/ogg/oggpack_bits.html
 share/doc/libogg/ogg/oggpack_buffer.html
 share/doc/libogg/ogg/oggpack_bytes.html
 share/doc/libogg/ogg/oggpack_get_buffer.html
 share/doc/libogg/ogg/oggpack_look.html
 share/doc/libogg/ogg/oggpack_look1.html
-share/doc/libogg/ogg/oggpack_look_huff.html
 share/doc/libogg/ogg/oggpack_read.html
 share/doc/libogg/ogg/oggpack_read1.html
 share/doc/libogg/ogg/oggpack_readinit.html

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/01/16 03:10:21 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/07/20 00:52:45 naddy Exp $
 include/vorbis/codec.h
 include/vorbis/vorbisenc.h
 include/vorbis/vorbisfile.h
@@ -9,10 +9,43 @@ lib/libvorbisenc.la
 lib/libvorbisfile.a
 lib/libvorbisfile.la
 share/aclocal/vorbis.m4
+share/doc/libvorbis/components.png
+share/doc/libvorbis/draft-moffitt-vorbis-rtp-00.txt
+share/doc/libvorbis/eightphase.png
+share/doc/libvorbis/evenlsp.png
+share/doc/libvorbis/floor1-1.png
+share/doc/libvorbis/floor1-2.png
+share/doc/libvorbis/floor1-3.png
+share/doc/libvorbis/floor1-4.png
+share/doc/libvorbis/floor1_inverse_dB_table.html
+share/doc/libvorbis/floorval.png
+share/doc/libvorbis/fourphase.png
+share/doc/libvorbis/framing.html
+share/doc/libvorbis/helper.html
+share/doc/libvorbis/hufftree-under.png
+share/doc/libvorbis/hufftree.png
+share/doc/libvorbis/index.html
+share/doc/libvorbis/lspmap.png
+share/doc/libvorbis/oddlsp.png
+share/doc/libvorbis/oggstream.html
 share/doc/libvorbis/programming.html
+share/doc/libvorbis/residue-pack.png
+share/doc/libvorbis/residue2.png
+share/doc/libvorbis/squarepolar.png
+share/doc/libvorbis/stereo.html
+share/doc/libvorbis/stream.png
 share/doc/libvorbis/v-comment.html
 share/doc/libvorbis/vorbis-clip.txt
 share/doc/libvorbis/vorbis-errors.txt
+share/doc/libvorbis/vorbis-fidelity.html
+share/doc/libvorbis/vorbis-ogg.html
+share/doc/libvorbis/vorbis-spec-bitpack.html
+share/doc/libvorbis/vorbis-spec-codebook.html
+share/doc/libvorbis/vorbis-spec-floor0.html
+share/doc/libvorbis/vorbis-spec-floor1.html
+share/doc/libvorbis/vorbis-spec-intro.html
+share/doc/libvorbis/vorbis-spec-ref.html
+share/doc/libvorbis/vorbis-spec-res.html
 share/doc/libvorbis/vorbis.html
 share/doc/libvorbis/vorbisenc/index.html
 share/doc/libvorbis/vorbisenc/overview.html
@@ -71,6 +104,8 @@ share/doc/libvorbis/vorbisword2.png
 share/doc/libvorbis/wait.png
 share/doc/libvorbis/white-ogg.png
 share/doc/libvorbis/white-xifish.png
+share/doc/libvorbis/window1.png
+share/doc/libvorbis/window2.png
 %%SHARED%%
 @dirrm share/doc/libvorbis/vorbisfile
 @dirrm share/doc/libvorbis/vorbisenc
