@@ -1,0 +1,40 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/05/23 10:39:29 wilfried Exp $
+--- configure.orig	Sun Apr 20 00:27:26 2003
++++ configure	Wed May 21 14:31:10 2003
+@@ -11838,6 +11838,10 @@ USE_PTHREADS=
+ _PTHREAD_CFLAGS=""
+ _PTHREAD_LDFLAGS=""
+ case "$OS_ARCH" in
++	OpenBSD)
++		USE_PTHREADS=1
++		_PTHREAD_CFLAGS="-pthread -D_THREAD_SAFE"
++		_PTHREAD_LDFLAGS="";;
+ 	NetBSD)
+ 		;;
+ 	FreeBSD)
+@@ -12341,7 +12345,7 @@ rm -f conftest.$ac_objext conftest.$ac_e
+ 
+ CC="$_save_cc"
+ 
+-LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lgtksuperwin"
++LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lgtksuperwin $GTK_LIBS"
+ echo "$as_me:$LINENO: checking for gdk_superwin_get_type in -lgtksuperwin" >&5
+ echo $ECHO_N "checking for gdk_superwin_get_type in -lgtksuperwin... $ECHO_C" >&6
+ if test "${ac_cv_lib_gtksuperwin_gdk_superwin_get_type+set}" = set; then
+@@ -12401,14 +12405,14 @@ if test $ac_cv_lib_gtksuperwin_gdk_super
+ fi
+ 
+ 
+-LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lgtkembedmoz $_mozilla_xpcom_libs $_mozilla_gtk_super_win_libs"
++LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lgtkembedmoz $_mozilla_xpcom_libs $_mozilla_gtk_super_win_libs $GTK_LIBS"
+ echo "$as_me:$LINENO: checking for gtk_moz_embed_get_type in -lgtkembedmoz" >&5
+ echo $ECHO_N "checking for gtk_moz_embed_get_type in -lgtkembedmoz... $ECHO_C" >&6
+ if test "${ac_cv_lib_gtkembedmoz_gtk_moz_embed_get_type+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgtkembedmoz  $LIBS"
++LIBS="-lgtkembedmoz $_PTHREAD_LDFLAGS $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */

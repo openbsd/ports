@@ -1,0 +1,12 @@
+$OpenBSD: patch-galeon-config-tool_in,v 1.1.1.1 2003/05/23 10:39:29 wilfried Exp $
+--- galeon-config-tool.in.orig	Thu Mar 14 08:37:24 2002
++++ galeon-config-tool.in	Fri May 23 12:36:57 2003
+@@ -4,7 +4,7 @@ prefix=@prefix@
+ 
+ clean () {
+ 
+-    if ps hu -C galeon-bin | grep `id -un` >/dev/null 2>&1; then
++    if ps | awk '{print $5}' | grep -q galeon-bin; then
+     echo "Sorry, this script won't work while galeon is running"
+ 
+     else
