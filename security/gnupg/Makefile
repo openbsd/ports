@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/07/13 19:39:24 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2000/08/12 18:21:45 brad Exp $
 
 DISTNAME=	gnupg-1.0.2
 CATEGORIES=	security
@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 		ftp://sunsite.icm.edu.pl/pub/security/gcrypt/gnupg/ \
 		ftp://ftp.stacken.kth.se/pub/crypto/gnupg/gnupg/ \
 		ftp://ftp.net.lut.ac.uk/gcrypt/gnupg/
-DISTFILES=	${DISTNAME}.tar.gz gpg.1.gz
-EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 HOMEPAGE=	http://www.gnupg.org/
 
@@ -31,9 +29,6 @@ CONFIGURE_ARGS=	--disable-nls
 GNUPGDOCDIR=	${PREFIX}/share/doc/gnupg
 GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
 		doc/DETAILS doc/FAQ doc/OpenPGP doc/HACKING
-
-post-extract:
-	@gunzip -c ${FULLDISTDIR}/gpg.1.gz > ${WRKSRC}/doc/gpg.1
 
 post-install:
 	${INSTALL_DATA_DIR} ${GNUPGDOCDIR}
