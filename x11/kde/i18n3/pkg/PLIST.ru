@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ru,v 1.1.1.1 2002/04/04 17:41:18 espie Exp $
+@comment $OpenBSD: PLIST.ru,v 1.2 2002/04/15 06:53:53 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -489,7 +489,6 @@ share/locale/ru/entry.desktop
 share/locale/ru/flag.png
 @dirrm share/locale/ru/LC_MESSAGES
 @dirrm share/locale/ru
-@dirrm share/locale
 @dirrm ${DOC}noatun
 @dirrm ${DOC}kwuftpd
 @dirrm ${DOC}kworldclock

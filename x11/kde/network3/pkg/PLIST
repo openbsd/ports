@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/04 18:29:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/04/15 06:53:54 espie Exp $
 bin/dsirc
 bin/kdict
 bin/kit
@@ -52,15 +52,15 @@ include/mimelib/text.h
 include/mimelib/token.h
 include/mimelib/utility.h
 include/mimelib/uuencode.h
-lib/kde3/kdictapplet.la
-lib/kde3/knewsticker_applet.la
-lib/kde3/kpfapplet.la
-lib/kde3/kpfpropertiesdialogplugin.la
-lib/kde3/libkcm_kcmkxmlrpcd.la
-lib/kde3/libkcm_ktalkd.la
-lib/kde3/libkcm_lanbrowser.la
-lib/kde3/libkcm_newsticker.la
-lib/kde3/libkcm_xmlrpcd.la
+${KDE}/kdictapplet.la
+${KDE}/knewsticker_applet.la
+${KDE}/kpfapplet.la
+${KDE}/kpfpropertiesdialogplugin.la
+${KDE}/libkcm_kcmkxmlrpcd.la
+${KDE}/libkcm_ktalkd.la
+${KDE}/libkcm_lanbrowser.la
+${KDE}/libkcm_newsticker.la
+${KDE}/libkcm_xmlrpcd.la
 lib/kio_lan.la
 lib/ksirc.la
 lib/kxmlrpcd.la

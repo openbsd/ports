@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/04 18:29:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/04/15 06:53:54 espie Exp $
 bin/artsmessage
 bin/checkXML
 bin/dcop
@@ -507,30 +507,30 @@ lib/kaddprinterwizard.la
 lib/kbuildsycoca.la
 lib/kconf_update.la
 lib/kcookiejar.la
-lib/kde3/kbzip2filter.la
-lib/kde3/kded_kdeprintd.la
-lib/kde3/kded_kssld.la
-lib/kde3/kdeprint_ext.la
-lib/kde3/kdeprint_lpdunix.la
-lib/kde3/kdeprint_lpr.la
-lib/kde3/kdeprint_rlpr.la
-lib/kde3/kgzipfilter.la
-lib/kde3/kimg_eps.la
-lib/kde3/kimg_g3.la
-lib/kde3/kimg_ico.la
-lib/kde3/kimg_krl.la
-lib/kde3/kimg_tiff.la
-lib/kde3/kimg_xview.la
-lib/kde3/kio_file.la
-lib/kde3/kio_ftp.la
-lib/kde3/kio_help.la
-lib/kde3/kio_http.la
-lib/kde3/kjs_html.la
-lib/kde3/libkpac.la
-lib/kde3/plugins/designer/kdewidgets.la
-lib/kde3/plugins/styles/highcolor.la
-lib/kde3/plugins/styles/kthemestyle.la
-lib/kde3/plugins/styles/light.la
+${KDE}/kbzip2filter.la
+${KDE}/kded_kdeprintd.la
+${KDE}/kded_kssld.la
+${KDE}/kdeprint_ext.la
+${KDE}/kdeprint_lpdunix.la
+${KDE}/kdeprint_lpr.la
+${KDE}/kdeprint_rlpr.la
+${KDE}/kgzipfilter.la
+${KDE}/kimg_eps.la
+${KDE}/kimg_g3.la
+${KDE}/kimg_ico.la
+${KDE}/kimg_krl.la
+${KDE}/kimg_tiff.la
+${KDE}/kimg_xview.la
+${KDE}/kio_file.la
+${KDE}/kio_ftp.la
+${KDE}/kio_help.la
+${KDE}/kio_http.la
+${KDE}/kjs_html.la
+${KDE}/libkpac.la
+${KDE}/plugins/designer/kdewidgets.la
+${KDE}/plugins/styles/highcolor.la
+${KDE}/plugins/styles/kthemestyle.la
+${KDE}/plugins/styles/light.la
 lib/kded.la
 lib/kio_http_cache_cleaner.la
 lib/kio_uiserver.la
@@ -3092,6 +3092,9 @@ share/servicetypes/scriptinterface.desktop
 %%SHARED%%
 @exec mkdir -p %D/share/wallpapers
 @dirrm share/wallpapers
+@exec mkdir -p %D/share/templates/.source
+@dirrm share/templates/.source
+@dirrm share/templates
 @exec mkdir -p %D/share/sounds
 @dirrm share/sounds
 @dirrm share/servicetypes
@@ -3107,6 +3110,8 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/mimelnk/application
 @dirrm share/mimelnk/all
 @dirrm share/mimelnk
+@exec mkdir -p %D/share/locale
+@dirrm share/locale
 @exec mkdir -p %D/share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
@@ -3317,6 +3322,8 @@ share/servicetypes/scriptinterface.desktop
 @exec mkdir -p %D/share/applnk/Settings/Information
 @dirrm share/applnk/Settings/Information
 @dirrm share/applnk/Settings
+@exec mkdir -p %D/share/applnk/Office
+@dirrm share/applnk/Office
 @exec mkdir -p %D/share/applnk/Graphics
 @dirrm share/applnk/Graphics
 @exec mkdir -p %D/share/applnk/Games/TacticStrategy
@@ -3333,10 +3340,10 @@ share/servicetypes/scriptinterface.desktop
 @exec mkdir -p %D/share/applnk/Editors
 @dirrm share/applnk/Editors
 @dirrm share/applnk
-@dirrm lib/kde3/plugins/styles
-@dirrm lib/kde3/plugins/designer
-@dirrm lib/kde3/plugins
-@dirrm lib/kde3
+@dirrm ${KDE}/plugins/styles
+@dirrm ${KDE}/plugins/designer
+@dirrm ${KDE}/plugins
+@dirrm ${KDE}
 @dirrm include/libkmid
 @dirrm include/ktexteditor
 @dirrm include/kparts

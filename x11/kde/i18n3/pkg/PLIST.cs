@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.cs,v 1.1.1.1 2002/04/04 17:41:16 espie Exp $
+@comment $OpenBSD: PLIST.cs,v 1.2 2002/04/15 06:53:53 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -410,7 +410,6 @@ share/locale/cs/entry.desktop
 share/locale/cs/flag.png
 @dirrm share/locale/cs/LC_MESSAGES
 @dirrm share/locale/cs
-@dirrm share/locale
 @dirrm ${DOC}khelpcenter/quickstart
 @dirrm ${DOC}khelpcenter
 @dirrm ${DOC}kcontrol

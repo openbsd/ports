@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.uk,v 1.1.1.1 2002/04/04 17:41:18 espie Exp $
+@comment $OpenBSD: PLIST.uk,v 1.2 2002/04/15 06:53:54 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -396,7 +396,6 @@ share/locale/uk/entry.desktop
 share/locale/uk/flag.png
 @dirrm share/locale/uk/LC_MESSAGES
 @dirrm share/locale/uk
-@dirrm share/locale
 @dirrm ${DOC}kspell
 @dirrm ${DOC}kioslave
 @dirrm ${DOC}khelpcenter

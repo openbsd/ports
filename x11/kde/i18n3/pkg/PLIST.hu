@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.hu,v 1.1.1.1 2002/04/04 17:41:18 espie Exp $
+@comment $OpenBSD: PLIST.hu,v 1.2 2002/04/15 06:53:53 espie Exp $
 ${DOC}KRegExpEditor/common
 ${DOC}KRegExpEditor/${C}
 ${DOC}KRegExpEditor/${I}
@@ -859,7 +859,6 @@ share/locale/hu/entry.desktop
 share/locale/hu/flag.png
 @dirrm share/locale/hu/LC_MESSAGES
 @dirrm share/locale/hu
-@dirrm share/locale
 @dirrm ${DOC}thesaurus
 @dirrm ${DOC}pixie
 @dirrm ${DOC}noatun

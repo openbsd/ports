@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.xh,v 1.1.1.1 2002/04/04 17:41:18 espie Exp $
+@comment $OpenBSD: PLIST.xh,v 1.2 2002/04/15 06:53:54 espie Exp $
 ${DOC}amor/common
 ${DOC}amor/${C}
 ${DOC}amor/${I}
@@ -393,7 +393,6 @@ share/locale/xh/charset
 share/locale/xh/entry.desktop
 @dirrm share/locale/xh/LC_MESSAGES
 @dirrm share/locale/xh
-@dirrm share/locale
 @dirrm ${DOC}kword
 @dirrm ${DOC}kugar
 @dirrm ${DOC}kspell

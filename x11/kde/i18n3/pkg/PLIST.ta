@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ta,v 1.1.1.1 2002/04/04 17:41:18 espie Exp $
+@comment $OpenBSD: PLIST.ta,v 1.2 2002/04/15 06:53:53 espie Exp $
 ${LOC}aktion.mo
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
@@ -272,4 +272,3 @@ share/locale/ta/entry.desktop
 share/locale/ta/flag.png
 @dirrm share/locale/ta/LC_MESSAGES
 @dirrm share/locale/ta
-@dirrm share/locale

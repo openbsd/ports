@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.pt,v 1.1.1.1 2002/04/04 17:41:18 espie Exp $
+@comment $OpenBSD: PLIST.pt,v 1.2 2002/04/15 06:53:53 espie Exp $
 ${DOC}amor/common
 ${DOC}amor/${C}
 ${DOC}amor/${I}
@@ -665,7 +665,6 @@ share/locale/pt/entry.desktop
 share/locale/pt/flag.png
 @dirrm share/locale/pt/LC_MESSAGES
 @dirrm share/locale/pt
-@dirrm share/locale
 @dirrm ${DOC}kwuftpd
 @dirrm ${DOC}kworldclock
 @dirrm ${DOC}kweather

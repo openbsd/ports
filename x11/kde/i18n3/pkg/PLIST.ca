@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ca,v 1.1.1.1 2002/04/04 17:41:16 espie Exp $
+@comment $OpenBSD: PLIST.ca,v 1.2 2002/04/15 06:53:53 espie Exp $
 ${LOC}aktion.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -190,4 +190,3 @@ share/locale/ca/entry.desktop
 share/locale/ca/flag.png
 @dirrm share/locale/ca/LC_MESSAGES
 @dirrm share/locale/ca
-@dirrm share/locale

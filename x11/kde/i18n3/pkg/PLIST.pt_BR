@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.pt_BR,v 1.1.1.1 2002/04/04 17:41:18 espie Exp $
+@comment $OpenBSD: PLIST.pt_BR,v 1.2 2002/04/15 06:53:53 espie Exp $
 ${DOC}kppp/global-settings.docbook
 ${DOC}kppp/kppp-faq.docbook
 ${LOC}aktion.mo
@@ -286,7 +286,6 @@ share/locale/pt_BR/entry.desktop
 share/locale/pt_BR/flag.png
 @dirrm share/locale/pt_BR/LC_MESSAGES
 @dirrm share/locale/pt_BR
-@dirrm share/locale
 @dirrm ${DOC}kppp
 @dirrm share/doc/HTML/pt_BR
 @dirrm share/doc/HTML

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/04/10 01:24:39 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/04/15 06:53:53 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -16,6 +16,9 @@ LIB_DEPENDS= 	png.2::graphics/png \
 		bz2::archivers/bzip2 \
 		artsflow.1.0,artsflow_idl.1.0,kmedia2_idl.1.0,mcop.1.0,qtmcop.1.0,soundserver_idl.1.0::x11/kde/arts3
 
+# To investigate
+#CONFIGURE_ARGS=--enable-fast-malloc=full
+
 BUILD_DEPENDS=	:qt3-html-*:x11/qt3,-html
 
 EXTRA_DIRECTORIES= \
@@ -26,6 +29,7 @@ EXTRA_DIRECTORIES= \
 	share/applnk/Games/Card \
 	share/applnk/Games/TacticStrategy \
 	share/applnk/Graphics \
+	share/applnk/Office \
 	share/applnk/Settings/Information \
 	share/applnk/Settings/PowerControl \
 	share/applnk/System/ScreenSavers \
@@ -44,7 +48,9 @@ EXTRA_DIRECTORIES= \
 	share/icons/hicolor/48x48/apps \
 	share/icons/locolor/16x16/apps \
 	share/icons/locolor/32x32/apps \
+	share/locale \
 	share/sounds \
+	share/templates/.source \
 	share/wallpapers
 
 post-install:

@@ -1,13 +1,13 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2002/04/04 18:29:21 espie Exp $
-lib/kde3/libkcm_kcmkxmlrpcd.so.0.0
-lib/kde3/libkcm_ktalkd.so.0.0
-lib/kde3/libkcm_lanbrowser.so.0.0
-lib/kde3/libkcm_newsticker.so.0.0
-lib/kde3/libkcm_xmlrpcd.so.0.0
-lib/kde3/libkdictapplet.so.1.0
-lib/kde3/libknewsticker_applet.so.0.0
-lib/kde3/libkpfapplet.so.0.0
-lib/kde3/libkpfpropertiesdialogplugin.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.5 2002/04/15 06:53:54 espie Exp $
+${KDE}/libkcm_kcmkxmlrpcd.so.0.0
+${KDE}/libkcm_ktalkd.so.0.0
+${KDE}/libkcm_lanbrowser.so.0.0
+${KDE}/libkcm_newsticker.so.0.0
+${KDE}/libkcm_xmlrpcd.so.0.0
+${KDE}/libkdictapplet.so.1.0
+${KDE}/libknewsticker_applet.so.0.0
+${KDE}/libkpfapplet.so.0.0
+${KDE}/libkpfpropertiesdialogplugin.so.0.0
 lib/libkdenetwork.so.2.0
 lib/libkio_lan.so.0.0
 lib/libkntsrcfilepropsdlg.so.0.0
@@ -15,4 +15,3 @@ lib/libksirc.so.0.0
 lib/libkxmlrpcd.so.0.0
 lib/libmimelib.so.1.1
 DYNLIBDIR(%D/lib)
-DYNLIBDIR(%D/lib/kde3)

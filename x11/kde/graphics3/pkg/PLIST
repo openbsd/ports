@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/04 18:29:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/04/15 06:53:53 espie Exp $
 bin/kcolorchooser
 bin/kcoloredit
 bin/kdvi
@@ -14,9 +14,9 @@ bin/kview
 bin/kviewshell
 include/kmultipageInterface.h
 lib/kcolorchooser.la
-lib/kde3/kfile_pdf.la
-lib/kde3/kfile_png.la
-lib/kde3/kfile_ps.la
+${KDE}/kfile_pdf.la
+${KDE}/kfile_png.la
+${KDE}/kfile_ps.la
 lib/kuickshow.la
 lib/kview.la
 lib/libkdvi.la

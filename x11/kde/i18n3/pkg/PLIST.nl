@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.nl,v 1.1.1.1 2002/04/04 17:41:18 espie Exp $
+@comment $OpenBSD: PLIST.nl,v 1.2 2002/04/15 06:53:53 espie Exp $
 share/apps/ktuberling/sounds/nl/aardappelmannetje.wav
 share/apps/ktuberling/sounds/nl/bril.wav
 share/apps/ktuberling/sounds/nl/haar.wav
@@ -654,7 +654,6 @@ share/locale/nl/entry.desktop
 share/locale/nl/flag.png
 @dirrm share/locale/nl/LC_MESSAGES
 @dirrm share/locale/nl
-@dirrm share/locale
 @dirrm ${DOC}ksysguard
 @dirrm ${DOC}kspell
 @dirrm ${DOC}kpager

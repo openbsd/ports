@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.el,v 1.1.1.1 2002/04/04 17:41:16 espie Exp $
+@comment $OpenBSD: PLIST.el,v 1.2 2002/04/15 06:53:53 espie Exp $
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
 ${LOC}babelfish.mo
@@ -182,4 +182,3 @@ share/locale/el/entry.desktop
 share/locale/el/flag.png
 @dirrm share/locale/el/LC_MESSAGES
 @dirrm share/locale/el
-@dirrm share/locale

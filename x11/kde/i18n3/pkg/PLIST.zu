@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.zu,v 1.1.1.1 2002/04/04 17:41:18 espie Exp $
+@comment $OpenBSD: PLIST.zu,v 1.2 2002/04/15 06:53:54 espie Exp $
 ${LOC}aktion.mo
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
@@ -209,4 +209,3 @@ share/locale/zu/charset
 share/locale/zu/entry.desktop
 @dirrm share/locale/zu/LC_MESSAGES
 @dirrm share/locale/zu
-@dirrm share/locale

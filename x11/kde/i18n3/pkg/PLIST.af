@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.af,v 1.1.1.1 2002/04/04 17:41:15 espie Exp $
+@comment $OpenBSD: PLIST.af,v 1.2 2002/04/15 06:53:53 espie Exp $
 ${DOC}kicker-applets/kolourpicker.docbook
 ${DOC}kicker-applets/ktimemon.docbook
 ${LOC}aktion.mo
@@ -298,6 +298,5 @@ share/locale/af/entry.desktop
 share/locale/af/flag.png
 @dirrm share/locale/af/LC_MESSAGES
 @dirrm share/locale/af
-@dirrm share/locale
 @dirrm ${DOC}kicker-applets
 @dirrm share/doc/HTML/af

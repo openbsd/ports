@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/05 16:04:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/15 06:53:54 espie Exp $
 bin/filter_wrapper
 bin/kchart
 bin/kformula
@@ -63,42 +63,42 @@ include/tkcoloractions.h
 include/tkcombobox.h
 include/tktoolbarbutton.h
 lib/kchart.la
-lib/kde3/kofficescan.la
-lib/kde3/libabiwordexport.la
-lib/kde3/libabiwordimport.la
-lib/kde3/libapplixgraphicimport.la
-lib/kde3/libapplixspreadimport.la
-lib/kde3/libapplixwordimport.la
-lib/kde3/libasciiexport.la
-lib/kde3/libasciiimport.la
-lib/kde3/libcsvexport.la
-lib/kde3/libcsvimport.la
-lib/kde3/libdocbookexport.la
-lib/kde3/libgnumericexport.la
-lib/kde3/libgnumericimport.la
-lib/kde3/libhtmlexport.la
-lib/kde3/libhtmlimport.la
-lib/kde3/libkchartpart.la
-lib/kde3/libkformulapart.la
-lib/kde3/libkiviopart.la
-lib/kde3/libkontourpart.la
-lib/kde3/libkpresenterpart.la
-lib/kde3/libkprkword.la
-lib/kde3/libkspelltool.la
-lib/kde3/libkspreadcalc.la
-lib/kde3/libkspreadhtmlexport.la
-lib/kde3/libkspreadpart.la
-lib/kde3/libkwordpart.la
-lib/kde3/liblatexexport.la
-lib/kde3/libmsodimport.la
-lib/kde3/libolefilter.la
-lib/kde3/libqproimport.la
-lib/kde3/librtfexport.la
-lib/kde3/libsvgexport.la
-lib/kde3/libsvgimport.la
-lib/kde3/libwmfimport.la
-lib/kde3/libwpimport.la
-lib/kde3/libxfigimport.la
+${KDE}/kofficescan.la
+${KDE}/libabiwordexport.la
+${KDE}/libabiwordimport.la
+${KDE}/libapplixgraphicimport.la
+${KDE}/libapplixspreadimport.la
+${KDE}/libapplixwordimport.la
+${KDE}/libasciiexport.la
+${KDE}/libasciiimport.la
+${KDE}/libcsvexport.la
+${KDE}/libcsvimport.la
+${KDE}/libdocbookexport.la
+${KDE}/libgnumericexport.la
+${KDE}/libgnumericimport.la
+${KDE}/libhtmlexport.la
+${KDE}/libhtmlimport.la
+${KDE}/libkchartpart.la
+${KDE}/libkformulapart.la
+${KDE}/libkiviopart.la
+${KDE}/libkontourpart.la
+${KDE}/libkpresenterpart.la
+${KDE}/libkprkword.la
+${KDE}/libkspelltool.la
+${KDE}/libkspreadcalc.la
+${KDE}/libkspreadhtmlexport.la
+${KDE}/libkspreadpart.la
+${KDE}/libkwordpart.la
+${KDE}/liblatexexport.la
+${KDE}/libmsodimport.la
+${KDE}/libolefilter.la
+${KDE}/libqproimport.la
+${KDE}/librtfexport.la
+${KDE}/libsvgexport.la
+${KDE}/libsvgimport.la
+${KDE}/libwmfimport.la
+${KDE}/libwpimport.la
+${KDE}/libxfigimport.la
 lib/kformulamain.la
 lib/kivio.la
 lib/kontour.la
@@ -1372,13 +1372,13 @@ share/icons/hicolor/48x48/mimetypes/kugardata.png
 share/icons/locolor/16x16/apps/kspreadcalc.png
 share/icons/locolor/22x22/apps/kspreadcalc.png
 share/icons/locolor/32x32/apps/kspreadcalc.png
-share/mimelnk/application/x-abiword.desktop
-share/mimelnk/application/x-quattropro.desktop
-share/mimelnk/image/x-msod.desktop
+@comment share/mimelnk/application/x-abiword.desktop
+@comment share/mimelnk/application/x-quattropro.desktop
+@comment share/mimelnk/image/x-msod.desktop
 share/mimelnk/image/x-svg.desktop
-share/mimelnk/image/x-wmf.desktop
-share/mimelnk/image/x-xfig.desktop
-share/mimelnk/text/x-csv.desktop
+@comment share/mimelnk/image/x-wmf.desktop
+@comment share/mimelnk/image/x-xfig.desktop
+@comment share/mimelnk/text/x-csv.desktop
 share/mimelnk/text/x-gnumeric.desktop
 share/services/ki_rtf_export.desktop
 share/services/killustrator_applixgraphic_import.desktop
@@ -1431,8 +1431,6 @@ share/templates/Presentation.desktop
 share/templates/SpreadSheet.desktop
 share/templates/TextDocument.desktop
 %%SHARED%%
-@dirrm share/templates/.source
-@dirrm share/templates
 @dirrm share/icons/locolor/22x22/apps
 @dirrm share/icons/locolor/22x22
 @dirrm share/icons/hicolor/22x22/mimetypes
@@ -1560,4 +1558,3 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/kchart/icons/hicolor
 @dirrm share/apps/kchart/icons
 @dirrm share/apps/kchart
-@dirrm share/applnk/Office

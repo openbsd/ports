@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.en_GB,v 1.1.1.1 2002/04/04 17:41:16 espie Exp $
+@comment $OpenBSD: PLIST.en_GB,v 1.2 2002/04/15 06:53:53 espie Exp $
 ${DOC}kcontrol/kalarmd.docbook
 ${DOC}kcontrol/kcmaccess.docbook
 ${DOC}kcontrol/kcmbell.docbook
@@ -532,7 +532,6 @@ share/locale/en_GB/entry.desktop
 share/locale/en_GB/flag.png
 @dirrm share/locale/en_GB/LC_MESSAGES
 @dirrm share/locale/en_GB
-@dirrm share/locale
 @dirrm ${DOC}kspell
 @dirrm ${DOC}kioslave
 @dirrm ${DOC}khelpcenter/visualdict
