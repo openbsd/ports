@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/04/09 15:50:14 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/04/16 18:46:19 brad Exp $
 
-SUBDIR=navigator-old
-SUBDIR+=communicator-old
-SUBDIR+=navigator
-SUBDIR+=communicator
-
+SUBDIR+= navigator-old
+SUBDIR+= communicator-old
+SUBDIR+= navigator
+SUBDIR+= communicator
 
 .include <bsd.port.subdir.mk>
