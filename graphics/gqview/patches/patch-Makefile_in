@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2004/10/17 16:05:47 brad Exp $
---- Makefile.in.orig	Fri Oct 15 16:44:50 2004
-+++ Makefile.in	Sun Oct 17 11:31:28 2004
-@@ -160,7 +160,7 @@ EXTRA_DIST = mkinstalldirs  config.rpath
- 	gqview.1
- 
- 
--helpdir = $(prefix)/share/gqview
-+helpdir = $(prefix)/share/doc/gqview
- help_DATA = README
- 
+$OpenBSD: patch-Makefile_in,v 1.10 2005/03/27 20:43:42 pvalchev Exp $
+--- Makefile.in.orig	Fri Mar 25 00:25:29 2005
++++ Makefile.in	Fri Mar 25 00:25:39 2005
+@@ -181,7 +181,7 @@ target_alias = @target_alias@
+ SUBDIRS = src po doc
+ DIST_SUBDIRS = src po doc
+ man_MANS = gqview.1
+-readmedir = $(datadir)/doc/gqview-$(VERSION)
++readmedir = $(datadir)/doc/gqview
+ readme_DATA = README COPYING ChangeLog TODO
  desktopdir = $(datadir)/applications
+ desktop_DATA = gqview.desktop

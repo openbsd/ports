@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2005/03/27 20:43:42 pvalchev Exp $
+--- doc/Makefile.in.orig	Fri Mar 25 00:25:08 2005
++++ doc/Makefile.in	Fri Mar 25 00:25:23 2005
+@@ -148,7 +148,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-helpdir = $(datadir)/doc/gqview-$(VERSION)/html
++helpdir = $(datadir)/doc/gqview/html
+ help_DATA = \
+ 	gnu_fdl.txt	\
+ 	gqview_faq.html	\

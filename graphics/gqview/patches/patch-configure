@@ -1,26 +1,18 @@
-$OpenBSD: patch-configure,v 1.10 2004/10/17 16:05:47 brad Exp $
---- configure.orig	Fri Oct 15 16:44:50 2004
-+++ configure	Sun Oct 17 11:31:28 2004
-@@ -4450,7 +4450,7 @@ fi
+$OpenBSD: patch-configure,v 1.11 2005/03/27 20:43:42 pvalchev Exp $
+--- configure.orig	Sat Feb 26 12:32:21 2005
++++ configure	Thu Mar 24 13:09:34 2005
+@@ -4565,12 +4565,12 @@ echo "$as_me: error: GTK+ >= 2.4.0 not i
  
  
  cat >>confdefs.h <<_ACEOF
--#define GQVIEW_HELPDIR "$prefix/share/gqview"
+-#define GQVIEW_HELPDIR "$prefix/share/doc/gqview-$VERSION"
 +#define GQVIEW_HELPDIR "$prefix/share/doc/gqview"
  _ACEOF
  
  
-@@ -7747,12 +7747,11 @@ cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- #include <libintl.h>
- extern int _nl_msg_cat_cntr;
--extern int *_nl_domain_bindings;
- int
- main ()
- {
- bindtextdomain ("", "");
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
-+return (int) gettext ("") + _nl_msg_cat_cntr
-   ;
-   return 0;
- }
+ cat >>confdefs.h <<_ACEOF
+-#define GQVIEW_HTMLDIR "$prefix/share/doc/gqview-$VERSION/html"
++#define GQVIEW_HTMLDIR "$prefix/share/doc/gqview/html"
+ _ACEOF
+ 
+ 
