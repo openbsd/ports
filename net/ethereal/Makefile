@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2003/11/04 17:42:43 jakob Exp $
+# $OpenBSD: Makefile,v 1.79 2003/11/20 03:17:11 brad Exp $
 
 COMMENT=	"network protocol analyzer"
 
@@ -34,7 +34,6 @@ CONFIGURE_ARGS+=	--enable-gtk2 \
 LIB_DEPENDS+=		glib-2.0.0.0,gthread-2.0.0.0::devel/glib2
 
 .if ${FLAVOR:L:Mno_x11}
-USE_X11=		No
 CONFIGURE_ARGS+=	--disable-ethereal
 .else
 USE_X11=		Yes
