@@ -3,7 +3,7 @@
 # Date created:		December 10, 1996
 # Whom:			form@vs.itam.nsc.ru
 #
-# $OpenBSD: Makefile,v 1.7 1998/06/02 20:51:48 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1998/06/11 08:51:26 todd Exp $
 # FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp
 #
 
@@ -19,7 +19,7 @@ MAINTAINER=	form@vs.itam.nsc.ru
 MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
 GNU_CONFIGURE=  yes
 # comment this and remove the strip statement in post-install for debugging
-CONFIGURE_ARGS=	--disable-debug
+CONFIGURE_ARGS=	--disable-debug --enable-static
 USE_X11=	yes
 
 .if defined(HAVE_MOTIF)
