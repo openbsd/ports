@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/24 23:29:17 sturm Exp $
+@option no-default-conflict
+@pkgcfl logcheck-1.1.1
+bin/logtail
+share/doc/logsentry/CREDITS
+share/doc/logsentry/INSTALL
+share/doc/logsentry/README
+share/doc/logsentry/README.how.to.interpret
+share/doc/logsentry/README.keywords
+share/examples/logsentry/logcheck.hacking
+share/examples/logsentry/logcheck.ignore
+share/examples/logsentry/logcheck.sh
+share/examples/logsentry/logcheck.violations
+share/examples/logsentry/logcheck.violations.ignore
+@dirrm share/examples/logsentry
+@dirrm share/doc/logsentry
