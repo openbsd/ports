@@ -1,23 +1,21 @@
 #!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.2 2000/08/29 16:47:01 danh Exp $
 
 do-deinstall () 
 {
-	if [ -d /etc/raddb -o -d /var/log/radacct ]; then
-		echo "+------------"
-		echo "| If you are removing this package and not planning"
-		echo "| to re-install it at a future time, it is safe to"
-		echo "| remove the following:"
-		echo "|"
-		if [ -d /etc/raddb ]; then
-			echo "|		/etc/raddb"
-		fi
-		if [ -d /var/log/radacct ]; then
-			echo "|		/var/log/radacct"
-		fi
-		echo "|"
-		echo "+------------"
+	echo "+---------------"
+	echo "| If you do not plan on re-installing this package and have"
+	echo "| no more use for the previous configuration or data, then"
+	echo "| the following may safely be deleted:"
+	echo "|"
+	if [ -d /etc/raddb ]; then
+		echo "|      /etc/raddb" 
 	fi
+	if [ -d /var/log/radacct ]; then
+		echo "|      /var/log/radacct"
+	fi
+	echo "+---------------"
 }
 
-do-deinstall
+[ -d /etc/raddb -o -d /var/log/radacct ] && do-deinstall
 exit 0

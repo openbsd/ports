@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/08/18 01:15:04 danh Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/08/29 16:47:02 danh Exp $
+@pkgcfl radiusd-cistron-*
 bin/builddbm
 bin/dbmkeys
 bin/dbmrec
