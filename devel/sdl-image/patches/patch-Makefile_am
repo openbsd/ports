@@ -1,10 +1,10 @@
---- Makefile.am.orig	Sun May  6 15:23:32 2001
-+++ Makefile.am	Sun May  6 15:27:39 2001
-@@ -27,7 +27,6 @@ EXTRA_DIST =			\
+--- Makefile.am~	Sat Dec 22 20:46:46 2001
++++ Makefile.am	Sat Dec 22 20:46:53 2001
+@@ -31,7 +31,6 @@ EXTRA_DIST =			\
  	autogen.sh
  
  libSDL_image_la_LDFLAGS = 		\
--        -release $(LT_RELEASE)	\
+-	-release $(LT_RELEASE)	\
  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
  libSDL_image_la_LIBADD = @IMG_LIBS@
  
