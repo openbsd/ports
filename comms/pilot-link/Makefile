@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2004/12/11 04:59:46 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.37 2004/12/29 16:44:10 pvalchev Exp $
 # $NetBSD: Makefile,v 1.37 2004/10/03 00:13:16 tv Exp $
 
 COMMENT=	"tools to connect your PalmOS® compatible handheld"
@@ -30,6 +30,10 @@ LIB_DEPENDS=		png.4::graphics/png
 
 .if exists(${LOCALBASE}/lib/libpisock.a)
 BROKEN=		"You must remove the existing pilot-link installation before compiling this version"
+.endif
+
+.if ${MACHINE_ARCH} == "powerpc"
+PATCH_LIST=		patch-* gcc-*
 .endif
 
 USE_GMAKE=		Yes
