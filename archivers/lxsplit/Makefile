@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2003/10/29 05:04:25 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2004/04/09 06:27:58 jolan Exp $
 
 COMMENT=	"file joiner/splitter"
 DISTNAME=	lxsplit-1.0-pre
 PKGNAME=	lxsplit-1.0pre
 CATEGORIES=	archivers
-MASTER_SITES=	http://open.bsdcow.net/~jolan/
+MASTER_SITES=	http://users.codefusionis.com/~jolan/
 
 MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
