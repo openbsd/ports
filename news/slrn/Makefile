@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 1999/11/12 07:06:03 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 00:40:43 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
-DISTNAME=	slrn-0.9.5.7
+DISTNAME=	slrn-0.9.6.2
 CATEGORIES=	news
 
 MAINTAINER=	turan@openbsd.org
