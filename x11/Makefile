@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2002/11/13 18:07:46 espie Exp $
+# $OpenBSD: Makefile,v 1.151 2002/11/16 19:34:44 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -100,6 +100,7 @@
 #    SUBDIR += p5-Tcl-Tk
      SUBDIR += p5-Tk
      SUBDIR += paragui
+     SUBDIR += pekwm
      SUBDIR += piewm
      SUBDIR += pwm
      SUBDIR += py-Gtk
@@ -165,6 +166,7 @@
      SUBDIR += wmweather
      SUBDIR += wmx
      SUBDIR += wterm
+     SUBDIR += wxgtk
      SUBDIR += x2vnc
      SUBDIR += x2x
 #    SUBDIR += x3270
