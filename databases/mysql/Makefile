@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2000/07/04 02:49:34 krw Exp $
+# $OpenBSD: Makefile,v 1.26 2000/07/28 22:04:25 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 #BROKEN=	installs files automatically in /etc
@@ -24,10 +24,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-.if ${MACHINE_ARCH} == "sparc"
-BROKEN=		"pthreads are currently not working on the SPARC architecture"
-.endif
-
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
@@ -38,8 +34,21 @@ CONFIGURE_ARGS+= --enable-static \
 		 --without-bench \
 		 --without-mit-threads \
 		 --with-unix-socket-path="/var/mysql/mysql.sock"
+
+FLAVORS=	pth
+FLAVOR?=
+
+.if ${FLAVOR:L} == "pth"
+LIB_DEPENDS=	pthread.13::devel/pth
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+.else
+. if ${MACHINE_ARCH} == "sparc"
+BROKEN=		"pthreads are currently not working on the SPARC architecture"
+. endif
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -pthread" \
 		CXXFLAGS="${CXXFLAGS} -pthread"
+.endif
 
 pre-build:      
 	@echo ""
