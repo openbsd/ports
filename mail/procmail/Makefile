@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2000/02/15 05:04:42 turan Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/10 03:58:21 todd Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=       procmail-3.14
 CATEGORIES=	mail
-#NO_CDROM=	"NOFEE:	Can not sell" # is GPLed as of version 3.12
 
 MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
 		ftp://ftp.psg.com/pub/unix/procmail/ \
@@ -24,19 +23,12 @@ INSTALL_TARGET= install-suid install.man
 
 MAINTAINER=     rohee@OpenBSD.ORG
 
-LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+FAKE=			Yes
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 HOMEPAGE=	http://www.procmail.org
-
-# It asks for list af directories to do test for file locking
-# (defaults to /tmp and ".", so return should suffice in most cases).
-.if !defined(PACKAGE_BUILDING) # handled in patch-aa
-IS_INTERACTIVE=	yes
-.endif
-NO_PACKAGE=	interactive port when target is package
 
 .include <bsd.port.mk>

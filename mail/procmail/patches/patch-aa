@@ -1,10 +1,5 @@
-$OpenBSD: patch-aa,v 1.2 1999/03/24 19:04:16 rohee Exp $
-
-This patch remove the default /usr prefix and makes provisions for non
-interactive building for the packages maintainer.
-
---- Makefile.orig	Tue Mar 23 23:24:56 1999
-+++ Makefile	Tue Mar 23 23:28:12 1999
+--- Makefile.orig	Fri Apr  2 14:22:07 1999
++++ Makefile	Wed Mar  8 22:45:19 2000
 @@ -2,7 +2,7 @@
  
  # BASENAME should point to where the whole lot will be installed
@@ -14,15 +9,12 @@ interactive building for the packages maintainer.
  # For display in the man pages
  VISIBLE_BASENAME= $(BASENAME)
  
-@@ -53,7 +53,11 @@
+@@ -53,7 +53,7 @@
  
  # Makefile.0 - mark, don't (re)move this, a sed script needs it
  
-+.if defined(PACKAGE_BUILDING)
-+LOCKINGTEST=/tmp .
-+.else
- LOCKINGTEST=__defaults__
-+.endif
+-LOCKINGTEST=__defaults__
++LOCKINGTEST=110
  
  #LOCKINGTEST=/tmp .	# Uncomment and add any directories you see fit.
  #			If LOCKINGTEST is defined, autoconf will NOT
