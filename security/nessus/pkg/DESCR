@@ -17,4 +17,4 @@ What is the Nessus Project ?
        not an easy thing.  Thus, the Nessus project provides a simple
        interface which clearly highlights the security holes.
 
-WWW: http://www.nessus.org/
+WWW: ${HOMEPAGE}
