@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2000/08/19 03:21:41 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2000/09/08 23:28:12 brad Exp $
 
-DISTNAME=	nmap-2.54BETA3
-PKGNAME=	nmap-2.54b3
+DISTNAME=	nmap-2.54BETA4
+PKGNAME=	nmap-2.54b4
 CATEGORIES=	net security
-NEED_VERSION=	1.310
+NEED_VERSION=	1.320
 MASTER_SITES=	http://www.insecure.org/nmap/dist/
 EXTRACT_SUFX=	.tgz
 
@@ -16,10 +16,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= gnu dest
+MAKE_FLAGS=	CCOPT="${CFLAGS}"
+
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--no-recursion
 
-post-extract:
-	@rm -rf ${WRKSRC}/libpcap*
+ALL_TARGET=	nmap
 
 .include <bsd.port.mk>
