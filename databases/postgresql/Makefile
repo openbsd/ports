@@ -1,104 +1,128 @@
-# $OpenBSD: Makefile,v 1.15 1999/08/18 02:43:45 angelos Exp $
+# $OpenBSD: Makefile,v 1.16 1999/11/11 02:24:29 kevlo Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
-DISTNAME=	postgresql-6.3.2
+DISTNAME=	postgresql-6.5.2
 CATEGORIES=	databases
 
-BROKEN=		"Version 6.5.1 is out, time someone updated this"
-
 NEED_VERSION=	1.64
-NO_PACKAGE=	"Requires pgsql uid"
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	form@OpenBSD.ORG
 
-MASTER_SITES=	ftp://ftp.postgresql.org/pub/
+MASTER_SITES=	ftp://ftp.postgresql.org/pub/ \
+		ftp://gd.tuwien.ac.at/db/www.postgresql.org/pub/ \
+		ftp://ftp.cwb.fnn.net/pub/Linux/postgresql/ \
+		ftp://looking-glass.usask.ca/pub/postgresql/ \
+		ftp://linux.netfirm.net/pub/Linux/PostgreSQL/ \
+		ftp://sunsite.uniandes.edu.co/pub/postgresql/ \
+		ftp://ftp.fi.muni.cz/pub/postgresql/ \
+		ftp://ftp.sunsite.auc.dk/mirrors/www.postgresql.org/ \
+		ftp://postgresql.matrix.fi/ \
+		ftp://ftp.fr.postgresql.org/ \
+		ftp://ftp.de.postgresql.org/ \
+		ftp://ftp.ntua.gr/pub/databases/postgresql/ \
+		ftp://ftp.postgreSQL.uli.it/ \
+		ftp://mirror.nucba.ac.jp/mirror/postgresql/pub/ \
+		ftp://ring.ip-kyoto.ad.jp/pub/misc/db/postgresql/ \
+		ftp://ring.crl.go.jp/pub/misc/db/postgresql/ \
+		ftp://ring.saitama-u.ac.jp/pub/misc/db/postgresql/ \
+		ftp://ring.astem.or.jp/pub/misc/db/postgresql/ \
+		ftp://ring.exp.fujixerox.co.jp/pub/misc/db/postgresql/ \
+		ftp://ring.jah.ne.jp/pub/misc/db/postgresql/ \
+		ftp://ring.etl.go.jp.jp/pub/misc/db/postgresql/ \
+		ftp://ring.asahi-net.or.jp/pub/misc/db/postgresql/ \
+		ftp://ring.so-net.ne.jp/pub/misc/db/postgresql/ \
+		ftp://ring.aist.go.jp/pub/misc/db/postgresql/ \
+		ftp://jordan.ce.yeungnam.ac.kr/pub/postgresql/ \
+		ftp://ftp.kr.postgresql.org/pub/postgresql/ \
+		ftp://postgresql.linux.com.mx/pub/postgresql/pub/ \
+		ftp://postgresql.godzone.net.nz/postgresql/ \
+		ftp://postgresql.iphil.net/ \
+		ftp://ftp.sai.msu.su/unix/database/pgsql/ \
+		ftp://www.sk.postgresql.org/pub/linux/postgresql/ \
+		ftp://ftp.linux.co.za/pub/postgresql/ \
+		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/ \
+		ftp://ftp.danyk.ch/postgres/ \
+		ftp://ftp.ccit.edu.tw/packages/postgresql/ \
+		ftp://ftp.siamu.ac.th/pub/pub2/ftp.postgresql.org/ \
+		ftp://postgresql.rmplc.co.uk/pub/postgresql/ \
+		ftp://ftp.scyph.org/pub/Mirrors/ftp.postgresql.org/ \
+		ftp://mars.capital-data.com/pub/postgresql/ \
+		ftp://ftp.digex.net/pub/packages/database/postgresql/ \
+		ftp://ftp.iodynamics.com/pub/mirror/postgresql/ \
+		ftp://postgresql.nextpath.com/pub/postgresql/ \
+		ftp://www.ndesign.com.ua/pub/psql/ \
+		ftp://postgresql.netafric.ci/ \
 
-# openbsd yacc fails with: /usr/bin/yacc: f - maximum table size exceeded
-# so use bison
-#
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
-
-.if defined(USE_TCL)
-MAKE_ENV=	USE_TCL=true TCL_INCDIR=${PREFIX}/include/tcl8.0
-LIB_DEPENDS=	tcl80:${PORTSDIR}/lang/tcl80 \
-		tk80:${PORTSDIR}/x11/tk80
-WITH_TCL=	--with-tcl
+# if you want to use the tcl/tk frontend pgaccess, then you need to build
+# postgresql with tcl support by typing: make USE_TCL=yes
+.if defined(USE_TCL) || defined(USE_TK)
+TCL_INCDIR=	${LOCALBASE}/include/tcl8.0
+TK_INCDIR=	${LOCALBASE}/include/tk8.0
+MAKE_ENV=	USE_TCL=true TCL_INCDIR=${TCL_INCDIR} TK_INCDIR=${TK_INCDIR}
+LIB_DEPENDS=	tcl80:${PORTSDIR}/lang/tcl80 tk80:${PORTSDIR}/x11/tk80
+WITH_TCL=	--with-tcl --with-tclconfig="${LOCALBASE}/lib/tcl8.0 ${LOCALBASE}/lib/tk8.0"
 .endif
 
-DBPREFIX=	/var/db
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-
-USE_GMAKE=	YES
+USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-HAS_CONFIGURE=	YES
+HAS_CONFIGURE=	yes
 CONFIGURE_ARGS= --prefix=${PREFIX}/pgsql \
 		--enable-locale \
 		--with-template=`uname -s | ${TR} '[A-Z]' '[a-z]'` \
-		--with-includes=/usr/local/include ${WITH_TCL} \
-		--with-libraries=/usr/local/lib
+		--with-includes="${PREFIX}/include ${TCL_INCDIR} ${TK_INCDIR}" ${WITH_TCL} \
+		--with-libraries=${PREFIX}/lib
 
-# Spit this message out right away.
-#
-pre-build:
-.if !defined(USE_TCL)
-	@${ECHO_MSG} "To build the \"PostgreSQL to Tcl interface library\", libpgtcl, type:"
-	@${ECHO_MSG} "    make USE_TCL=yes"
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
+PLIST=		${WRKDIR}/PLIST
+
+INSTALL_TARGET= install install-man
+
+PGUSER=		pgsql
+PGBIN=		${PREFIX}/pgsql/bin
+PGLIB=		${PREFIX}/pgsql/lib
+PGDATA=		/var/pgsql/data
+
+post-configure:
+.if defined(USE_TCL) || defined(USE_TK)
+	@if [ x"${NO_SHARED_LIBS}" = "x" ]; then \
+		${CP} ${PKGDIR}/PLIST.tcl ${WRKDIR}/PLIST; \
+	else \
+		${CP} ${PKGDIR}/PLIST.tcl.noshared ${WRKDIR}/PLIST; \
+	fi
 .else
-	@${ECHO_MSG} "Building PostgreSQL with \"libpgtcl\"."
+	@if [ x"${NO_SHARED_LIBS}" = "x" ]; then \
+		${CP} ${PKGDIR}/PLIST ${WRKDIR}/PLIST; \
+	else \
+		${CP} ${PKGDIR}/PLIST.noshared ${WRKDIR}/PLIST; \
+	fi
 .endif
+
+pre-build:
+	@${MKDIR} ${WRKSRC}/pgwrap
+	@${CP} ${FILESDIR}/pgwrap.c ${FILESDIR}/pgwrap.h ${WRKSRC}/pgwrap
+	@${SED} -e "s,@PGUSER@,${PGUSER},g" -e "s,@PGBIN@,${PGBIN},g" \
+		-e "s,@PGLIB@,${PGLIB},g" -e "s,@PGDATA@,${PGDATA},g" \
+		-e "s,@PREFIX@,${PREFIX},g" < ${FILESDIR}/Makefile.in \
+		> ${WRKSRC}/pgwrap/Makefile
+	@${SED} -e "s,@PREFIX@,${PREFIX},g" \
+		< ${FILESDIR}/README.OpenBSD.in \
+		> ${WRKSRC}/../doc/README.OpenBSD
+	(cd ${WRKSRC}/pgwrap; ${MAKE} depend && ${MAKE})
 
 pre-install:
-.if defined(PACKAGE_BUILDING)
-	/bin/rm -rf ${PREFIX}/pgsql
-.endif
-	@ ${MKDIR} ${PREFIX}/pgsql
-	@ ${SETENV} ${MAKE_ENV} perl ${SCRIPTDIR}/createuser
+	${INSTALL_DATA_DIR} ${PREFIX}/pgsql
 
 post-install:
-	@ if [ ! -f ${PREFIX}/pgsql/.profile ]; then \
-		${ECHO} "PATH=${PATH}:${PREFIX}/pgsql/bin" \
-			> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "MANPATH=${MANPATH}:${PREFIX}/pgsql/man" \
-			>> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "PGLIB=${PREFIX}/pgsql/lib" \
-			>> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "# note: PGDATA overwrites the -D startup option" \
-			>> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "PGDATA=${DBPREFIX}/pgsql/data" \
-			>> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "DISPLAY=:0" \
-			>> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "export PATH MANPATH PGLIB PGDATA DISPLAY" \
-			>> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "# if you want to make regression tests use this TZ" \
-			>> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "#TZ=PST8PDT" \
-			>> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "#export TZ" \
-			>> ${PREFIX}/pgsql/.profile; \
-	fi
-	@ chown -R pgsql:pgsql ${PREFIX}/pgsql
-	@ if [ ! -d ${DBPREFIX}/pgsql/data ]; then \
-		${MKDIR} -p ${DBPREFIX}/pgsql/data; \
-		chown pgsql:pgsql ${DBPREFIX}/pgsql ${DBPREFIX}/pgsql/data; \
-		chmod 700 ${DBPREFIX}/pgsql/data; \
-		${ECHO} 'Initializing PostgreSQL Databases - this may take a few minutes...'; \
-		${LDCONFIG} -m ${PREFIX}/pgsql/lib; \
-		su -l pgsql -c '${PREFIX}/pgsql/bin/initdb --pglib=${PREFIX}/pgsql/lib --pgdata=${DBPREFIX}/pgsql/data'; \
-	else \
-		${ECHO} 'Found existing PostgreSQL database(s) -- skipping database initializing...'; \
-	fi
-	${SED} -e "s=!!PREFIX!!=${PREFIX}=g" < ${FILESDIR}/pgsql.sh.tmpl > ${PREFIX}/pgsql/bin/pgsql.sh
-	chmod 554 ${PREFIX}/pgsql/bin/pgsql.sh
-	chown root.pgsql ${PREFIX}/pgsql/bin/pgsql.sh
-	${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/pgsql
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/pgsql
-	${CP} -r ${WRKDIR}/${DISTNAME}/doc/* ${PREFIX}/share/doc/pgsql
-.endif
-.if !defined(BATCH)
-	@ more -e ${FILESDIR}/post-install-notes
-.endif
+	@${RMDIR} ${PREFIX}/pgsql/include/port/bsd
+	@${RMDIR} ${PREFIX}/pgsql/include/port
+	${INSTALL_PROGRAM} ${WRKSRC}/pgwrap/pgwrap ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pgsql
+	${INSTALL_DATA} ${WRKSRC}/../doc/FAQ* ${PREFIX}/share/doc/pgsql
+	${INSTALL_DATA} ${WRKSRC}/../doc/README* ${PREFIX}/share/doc/pgsql
+	${INSTALL_DATA} ${WRKSRC}/../doc/TODO* ${PREFIX}/share/doc/pgsql
+	${INSTALL_DATA} ${WRKSRC}/../doc/*ps.gz ${PREFIX}/share/doc/pgsql
+	${INSTALL_DATA} ${WRKSRC}/../INSTALL ${PREFIX}/share/doc/pgsql
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
