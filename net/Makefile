@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 1998/01/28 19:03:28 mickey Exp $
+# $OpenBSD: Makefile,v 1.6 1998/04/09 21:52:52 marc Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
      SUBDIR += archie
-#    SUBDIR += arpwatch
+     SUBDIR += arpwatch
      SUBDIR += ascend-radius
 #    SUBDIR += bb
      SUBDIR += bing
@@ -72,7 +72,7 @@
 #    SUBDIR += scotty
 #    SUBDIR += slirp
 #    SUBDIR += socks5
-     SUBDIR += strobe
+#    SUBDIR += strobe
 #    SUBDIR += sup
 #    SUBDIR += tac_plus
 #    SUBDIR += tcpshow
