@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2001/06/20 19:19:14 lebel Exp $
+# $OpenBSD: Makefile,v 1.106 2001/06/27 21:58:50 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -43,6 +43,7 @@
      SUBDIR += flwm
 #    SUBDIR += fvwm
 #    SUBDIR += fvwm2-english
+     SUBDIR += fvwm2
      SUBDIR += fvwm95
      SUBDIR += fsv
      SUBDIR += gtk+
