@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.35 1999/10/02 23:10:45 brad Exp $
+$OpenBSD: LICENSE,v 1.36 1999/10/06 08:42:49 ho Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -404,7 +404,7 @@ Y	misc/xtar			xtar-1.4.tar.gz			BSD
 Y	misc/xtimer			xtimer-8087.tar.gz		BSD
 N	net/archie			c-archie-1.4.1-FIXED.tar.Z	NOFEE
 Y	net/arpwatch			arpwatch-2.1a4.tar.Z		BSD
-N	net/bind8			bind-19990828-snapshot.tar.gz	CRYPTO
+N	net/bind8			bind-19991004-snapshot.tar.gz	CRYPTO
 Y	net/bing			bing-1.0.4.tar.gz		BSD
 -	net/bitchx			ircii-pana-75p3.tar.gz
 Y	net/clog			clog-1.6.tar.gz			NONE
