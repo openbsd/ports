@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.206 2004/01/28 14:06:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.207 2004/01/29 04:06:07 jose Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -218,6 +218,7 @@
      SUBDIR += tmake
      SUBDIR += ucpp
      SUBDIR += varconf
+     SUBDIR += vtcl
      SUBDIR += vte
      SUBDIR += xmake
 
