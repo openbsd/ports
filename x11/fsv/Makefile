@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/22 14:03:56 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/16 07:55:47 reinhard Exp $
+
+COMMENT=	3D filesystem visualizer 
 
 DISTNAME=	fsv-0.9
 CATEGORIES=     x11
-NEED_VERSION=	1.319
+NEED_VERSION=	1.396
 MASTER_SITES=	http://fox.mit.edu/skunk/soft/src/
 
 HOMEPAGE=	http://fox.mit.edu/skunk/soft/fsv/
 
-LIB_DEPENDS=	GL.3::graphics/Mesa \
-		gtk.1::x11/gtk+ \
+LIB_DEPENDS=	gtk.1::x11/gtk+ \
 		gtkgl.1::x11/gtkglarea
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
@@ -19,5 +20,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 CONFIGURE_STYLE=	gnu
+CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>
