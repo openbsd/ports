@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2002/01/01 01:21:18 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2002/01/05 11:00:03 espie Exp $
 
 # This is a configuration file for egcs
 
@@ -72,8 +72,7 @@ MASTER_SITE_SUBDIR=${LATEST_DATE}
 
 DIST_SUBDIR=egcs
 
-DISTFILES=  gcc-3.0.2${EXTRACT_SUFX}
-PATCHFILES=	gcc-3.0.2-3.0.3.diff.bz2
+DISTFILES=  gcc-3.0.3${EXTRACT_SUFX}
 
 SITES=	
 
@@ -137,12 +136,6 @@ MASTER_SITES=${SITES:S/%DATE%/${LATEST_DATE}/}
 
 #### 
 # Patch section
-
-pre-patch:
-	cd ${WRKDIR} && mv gcc-3.0.2 gcc-3.0.3
-
-PATCH_DIST_STRIP=-p1
-
 
 # get openbsd configuration files where they should be
 post-patch:
