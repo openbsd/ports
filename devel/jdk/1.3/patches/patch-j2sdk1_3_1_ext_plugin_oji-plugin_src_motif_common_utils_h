@@ -1,11 +1,11 @@
-$OpenBSD: patch-j2sdk1_3_1_ext_plugin_oji-plugin_src_motif_common_utils_h,v 1.1.1.1 2004/01/29 22:02:20 pvalchev Exp $
---- j2sdk1.3.1/ext/plugin/oji-plugin/src/motif/common/utils.h.orig	2004-01-08 22:40:44.000000000 -0500
-+++ j2sdk1.3.1/ext/plugin/oji-plugin/src/motif/common/utils.h	2004-01-08 22:48:49.000000000 -0500
+$OpenBSD: patch-j2sdk1_3_1_ext_plugin_oji-plugin_src_motif_common_utils_h,v 1.2 2004/08/14 21:50:38 naddy Exp $
+--- j2sdk1.3.1/ext/plugin/oji-plugin/src/motif/common/utils.h.orig	Sun May  6 09:15:31 2001
++++ j2sdk1.3.1/ext/plugin/oji-plugin/src/motif/common/utils.h	Wed Jul 14 22:41:48 2004
 @@ -61,6 +61,14 @@ extern "C" {
      void plugin_raw_formal_error(const char *msg);
      /* Wrapper that does a dlsym with error checking */
      void *load_function(void* library_handle, const char* function_name);
-+#ifdef __OpenBSD__
++#if defined(__OpenBSD__) && !defined(RTLD_DEFAULT)
 +    typedef struct {
 +        const char *dli_fname;
 +        char *_padding[3]; 

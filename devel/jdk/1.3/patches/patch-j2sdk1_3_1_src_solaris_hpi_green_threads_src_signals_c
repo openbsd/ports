@@ -1,0 +1,19 @@
+$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_src_signals_c,v 1.1 2004/08/14 21:50:38 naddy Exp $
+--- j2sdk1.3.1/src/solaris/hpi/green_threads/src/signals.c.orig	Thu Jul 15 10:40:42 2004
++++ j2sdk1.3.1/src/solaris/hpi/green_threads/src/signals.c	Thu Jul 15 10:41:21 2004
+@@ -29,7 +29,6 @@
+ #include "schedule.h"
+ #include "signals.h"
+ #include "iomgr.h"      	/* For io lock */
+-#include "bsdmisc.h"
+ 
+ /*
+  * Local variables.
+@@ -578,6 +577,7 @@ restart:
+ #ifdef CATCH_SIGMASK_CHANGES
+ 
+ #include <dlfcn.h>
++#include "bsdmisc.h"
+ 
+ /*
+  * The following functions, interposed in front of sigprocmask and

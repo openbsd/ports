@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/06/02 15:23:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/08/14 21:50:38 naddy Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
 
 # Requires existing JDK 1.3 to build
@@ -116,7 +116,7 @@ pre-patch:
 	@cp -f ${FILESDIR}/cacerts ${CACERTSDIR}
 	@cd ${WRKDIR} &&  \
 		${CHMOD} -R u+w * && \
-		${PATCH} -p0 < ${WRKDIR}/jdk131.patches
+		${PATCH} -p0 -z .orig.bsd < ${WRKDIR}/jdk131.patches
 
 .if !${FLAVOR:L:Mnative_bootstrap}
 pre-build:

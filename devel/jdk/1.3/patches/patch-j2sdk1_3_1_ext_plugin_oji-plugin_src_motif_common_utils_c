@@ -1,7 +1,19 @@
-$OpenBSD: patch-j2sdk1_3_1_ext_plugin_oji-plugin_src_motif_common_utils_c,v 1.1.1.1 2004/01/29 22:02:20 pvalchev Exp $
---- j2sdk1.3.1/ext/plugin/oji-plugin/src/motif/common/utils.c.orig	2004-01-08 17:18:45.000000000 -0500
-+++ j2sdk1.3.1/ext/plugin/oji-plugin/src/motif/common/utils.c	2004-01-08 17:01:30.000000000 -0500
-@@ -23,6 +23,11 @@
+$OpenBSD: patch-j2sdk1_3_1_ext_plugin_oji-plugin_src_motif_common_utils_c,v 1.2 2004/08/14 21:50:38 naddy Exp $
+--- j2sdk1.3.1/ext/plugin/oji-plugin/src/motif/common/utils.c.orig	Wed Jul 14 21:56:30 2004
++++ j2sdk1.3.1/ext/plugin/oji-plugin/src/motif/common/utils.c	Wed Jul 14 22:50:55 2004
+@@ -2,7 +2,6 @@
+ #include <stdio.h>
+ #include <stdarg.h>
+ #include "Debug.h"
+-#include "utils.h"
+ #include <unistd.h>
+ #ifdef SVR4
+ #include <stropts.h>
+@@ -20,9 +19,15 @@
+ #include <strings.h>
+ #include <string.h>
+ #include <dlfcn.h>
++#include "utils.h"
  #include "plugin_defs.h"
  #include "pluginversion.h"
  
@@ -17,7 +29,7 @@ $OpenBSD: patch-j2sdk1_3_1_ext_plugin_oji-plugin_src_motif_common_utils_c,v 1.1.
  #endif
  #endif
  
-+#if defined(__OpenBSD__)
++#if defined(__OpenBSD__) && !defined(RTLD_DEFAULT)
 +char *
 +dlfname(const void *addr)
 +{
