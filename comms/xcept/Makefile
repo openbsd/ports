@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/10/25 11:34:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2003/03/31 12:52:10 sturm Exp $
 
 COMMENT=	"decoder for the CEPT (Btx) protocol"
 
@@ -13,6 +13,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	SYSCONFDIR="${SYSCONFDIR}"
+
+USE_X11=	Yes
 
 WRKDIST=	${WRKDIR}/XCept-2.1.2
 

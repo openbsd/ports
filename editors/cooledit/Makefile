@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/12/29 19:43:49 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2003/03/31 12:52:10 sturm Exp $
 
 COMMENT=	"easy to use, graphical editor"
 
@@ -22,6 +22,8 @@ CONFIGURE_ENV+=	PYTHON_VER=${PYTHON_VER}
 .else
 CONFIGURE_ENV+=	NOPYTHON=Yes
 .endif
+
+USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		XTERM_CMD=xterm
