@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.463 2001/09/29 17:36:02 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.464 2001/09/30 11:27:05 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1198,7 +1198,6 @@ _flavor_fragment= \
 # Various dependency styles
 
 _fetch_depends_fragment= \
-	what=$$pkg; \
 	if pkg dependencies check $$pkg; then \
 		found=true; \
 	fi
@@ -1230,7 +1229,7 @@ _lib_depends_fragment = \
 .  endif
 .endif
 
-_misc_depends_fragment = what=$$pkg; :
+_misc_depends_fragment = :
 
 depends: lib-depends misc-depends fetch-depends build-depends run-depends
 
@@ -1254,7 +1253,8 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 		IFS=:; read dep pkg dir target; \
 		case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
 		case "X$$target" in Xinstall|Xreinstall) early_exit=false;; \
-		*) early_exit=true;; esac; \
+		Xpackage) early_exit=true;; \
+		*) early_exit=true; dep="/nonexistent";; esac; \
 		${_flavor_fragment}; \
 		case "X$$pkg" in X) pkg=`cd ${PORTSDIR} && cd $$dir && \
 			eval $$toset ${MAKE} _print-packagename`;; esac; \
@@ -1272,6 +1272,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 				exit 1; \
 			fi; \
 			found=false; \
+			what=$$pkg; \
 			case "$$dep" in \
 			"/nonexistent") ;; \
 			*)  \
