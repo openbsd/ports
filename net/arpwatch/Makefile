@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/18 05:02:08 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/03/31 22:20:03 marc Exp $
 #
 
-DISTNAME=	arpwatch-2.1a3
+DISTNAME=	arpwatch-2.1a4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
 		ftp://ftp.cso.uiuc.edu/pub/security/coast/unix/arpwatch/
