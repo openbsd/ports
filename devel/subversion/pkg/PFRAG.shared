@@ -1,0 +1,14 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/12/01 16:47:54 alek Exp $
+@lib lib/libsvn_client-1.so.0.0
+@lib lib/libsvn_delta-1.so.0.0
+@lib lib/libsvn_diff-1.so.0.0
+@lib lib/libsvn_fs-1.so.0.0
+@lib lib/libsvn_fs_base-1.so.0.0
+@lib lib/libsvn_fs_fs-1.so.0.0
+@lib lib/libsvn_ra-1.so.0.0
+@lib lib/libsvn_ra_dav-1.so.0.0
+@lib lib/libsvn_ra_local-1.so.0.0
+@lib lib/libsvn_ra_svn-1.so.0.0
+@lib lib/libsvn_repos-1.so.0.0
+@lib lib/libsvn_subr-1.so.0.0
+@lib lib/libsvn_wc-1.so.0.0

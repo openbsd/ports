@@ -1,0 +1,56 @@
+@comment $OpenBSD: PLIST-python,v 1.1.1.1 2004/12/01 16:47:54 alek Exp $
+%%SHARED%%
+lib/libsvn_swig_py-1.a
+lib/libsvn_swig_py-1.la
+lib/python${PYTHON_VER}/
+lib/python${PYTHON_VER}/site-packages/
+lib/python${PYTHON_VER}/site-packages/libsvn/
+lib/python${PYTHON_VER}/site-packages/libsvn/__init__.py
+lib/python${PYTHON_VER}/site-packages/libsvn/__init__.pyc
+@comment lib/python${PYTHON_VER}/site-packages/libsvn/_client.a
+@comment lib/python${PYTHON_VER}/site-packages/libsvn/_client.la
+@comment lib/python${PYTHON_VER}/site-packages/libsvn/_core.a
+@comment lib/python${PYTHON_VER}/site-packages/libsvn/_core.la
+@comment lib/python${PYTHON_VER}/site-packages/libsvn/_delta.a
+@comment lib/python${PYTHON_VER}/site-packages/libsvn/_delta.la
+@comment lib/python${PYTHON_VER}/site-packages/libsvn/_fs.a
+@comment lib/python${PYTHON_VER}/site-packages/libsvn/_fs.la
+@comment lib/python${PYTHON_VER}/site-packages/libsvn/_ra.a
+@comment lib/python${PYTHON_VER}/site-packages/libsvn/_ra.la
+@comment lib/python${PYTHON_VER}/site-packages/libsvn/_repos.a
+@comment lib/python${PYTHON_VER}/site-packages/libsvn/_repos.la
+@comment lib/python${PYTHON_VER}/site-packages/libsvn/_wc.a
+@comment lib/python${PYTHON_VER}/site-packages/libsvn/_wc.la
+lib/python${PYTHON_VER}/site-packages/libsvn/client.py
+lib/python${PYTHON_VER}/site-packages/libsvn/client.pyc
+lib/python${PYTHON_VER}/site-packages/libsvn/core.py
+lib/python${PYTHON_VER}/site-packages/libsvn/core.pyc
+lib/python${PYTHON_VER}/site-packages/libsvn/delta.py
+lib/python${PYTHON_VER}/site-packages/libsvn/delta.pyc
+lib/python${PYTHON_VER}/site-packages/libsvn/fs.py
+lib/python${PYTHON_VER}/site-packages/libsvn/fs.pyc
+lib/python${PYTHON_VER}/site-packages/libsvn/ra.py
+lib/python${PYTHON_VER}/site-packages/libsvn/ra.pyc
+lib/python${PYTHON_VER}/site-packages/libsvn/repos.py
+lib/python${PYTHON_VER}/site-packages/libsvn/repos.pyc
+lib/python${PYTHON_VER}/site-packages/libsvn/wc.py
+lib/python${PYTHON_VER}/site-packages/libsvn/wc.pyc
+lib/python${PYTHON_VER}/site-packages/svn/
+lib/python${PYTHON_VER}/site-packages/svn/__init__.py
+lib/python${PYTHON_VER}/site-packages/svn/__init__.pyc
+lib/python${PYTHON_VER}/site-packages/svn/client.py
+lib/python${PYTHON_VER}/site-packages/svn/client.pyc
+lib/python${PYTHON_VER}/site-packages/svn/core.py
+lib/python${PYTHON_VER}/site-packages/svn/core.pyc
+lib/python${PYTHON_VER}/site-packages/svn/delta.py
+lib/python${PYTHON_VER}/site-packages/svn/delta.pyc
+lib/python${PYTHON_VER}/site-packages/svn/fs.py
+lib/python${PYTHON_VER}/site-packages/svn/fs.pyc
+lib/python${PYTHON_VER}/site-packages/svn/ra.py
+lib/python${PYTHON_VER}/site-packages/svn/ra.pyc
+lib/python${PYTHON_VER}/site-packages/svn/repos.py
+lib/python${PYTHON_VER}/site-packages/svn/repos.pyc
+lib/python${PYTHON_VER}/site-packages/svn/util.py
+lib/python${PYTHON_VER}/site-packages/svn/util.pyc
+lib/python${PYTHON_VER}/site-packages/svn/wc.py
+lib/python${PYTHON_VER}/site-packages/svn/wc.pyc

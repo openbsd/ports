@@ -1,0 +1,12 @@
+$OpenBSD: patch-ac-helpers_ltmain_sh,v 1.1.1.1 2004/12/01 16:47:54 alek Exp $
+--- ac-helpers/ltmain.sh.orig	Sat Oct 23 23:59:20 2004
++++ ac-helpers/ltmain.sh	Sat Oct 23 23:59:54 2004
+@@ -1758,7 +1758,7 @@ compiler."
+ 
+ 	  if test "$installed" = no; then
+ 	    notinst_deplibs="$notinst_deplibs $lib"
+-	    need_relink=yes
++	    need_relink=no
+ 	  fi
+ 
+ 	  if test -n "$old_archive_from_expsyms_cmds"; then
