@@ -1,3 +1,4 @@
+$OpenBSD: patch-figlet,v 1.1 2000/09/15 16:07:08 avsm Exp $
 --- figlet.6.orig	Thu Jun 10 03:51:37 1999
 +++ figlet.6	Wed Dec 15 04:21:35 1999
 @@ -34,8 +34,7 @@

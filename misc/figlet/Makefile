@@ -3,15 +3,17 @@
 # Date created:		15 Dec 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.6 2000/06/06 22:31:53 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/09/15 16:07:07 avsm Exp $
 
 PKGNAME=	figlet-2.2
+DISTNAME=	figlet22
+CATEGORIES=	misc graphics
+NEED_VERSION=	1.330
 
-CATEGORIES=	misc
-NEED_VERSION=	1.191
+HOMEPAGE=	http://st-www.cs.uiuc.edu/users/chai/figlet.html
+MAINTAINER=	avsm@openbsd.org
 
-MAINTAINER=	dugsong@monkey.org
-
+# Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -23,15 +25,21 @@ MASTER_SITES=	http://www.internexus.net/pub/figlet/program/unix/ \
 MASTER_SITES0=	http://www.internexus.net/pub/figlet/fonts/ \
 		ftp://ftp.plig.org/pub/figlet/fonts/
 
-DISTFILES=	figlet22${EXTRACT_SUFX} \
-		contributed${EXTRACT_SUFX}:0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} contributed${EXTRACT_SUFX}:0
+MAKE_FLAGS=	CFLAGS=${CFLAGS} DEFAULTFONTDIR=${PREFIX}/share/figlet
 
-FAKE_FLAGS=PREFIX=${WRKINST}/${PREFIX}
+post-extract:
+	@(mv ${WRKDIR}/contributed/*.{flf,flc} ${WRKSRC}/fonts)
+	@(mv ${WRKDIR}/contributed/bdffonts/*.flf ${WRKSRC}/fonts)
 
-WRKDIST=		${WRKDIR}/figlet22
-
-post-install:
-		${INSTALL_DATA} ${WRKDIR}/contributed/*.flf \
-		${WRKDIR}/contributed/*.flc ${PREFIX}/share/figlet
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/figlet ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/chkfont ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/chkfont ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/figlist ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/showfigfonts ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/figlet
+	${INSTALL_DATA} ${WRKSRC}/fonts/*.{flf,flc} ${PREFIX}/share/figlet
+	${INSTALL_MAN} ${WRKSRC}/figlet.6 ${PREFIX}/man/man6
 
 .include <bsd.port.mk>
