@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: resolve-lib,v 1.1 2001/11/17 10:39:19 espie Exp $
+# $OpenBSD: resolve-lib,v 1.2 2002/03/04 13:39:34 espie Exp $
 #
 # Copyright (c) 2001
 # Marc Espie.  All rights reserved.
@@ -77,11 +77,13 @@ my $bestmajor=-1;
 my $bestminor=-1;
 
 my $found_shared;
+my $found_goodshared;
 my $found_unshared;
 
 while(<>) {
 	chomp;
 	if (!$noshared && m/^lib$libname\.so\.(\d+)\.(\d+)$/) {
+		$found_shared = 1;
 		my $major = $1;
 		my $minor = $2;
 		if ($strict) {
@@ -95,7 +97,7 @@ while(<>) {
 			if ($minor < $reqminor) {
 				next;
 			}
-			$found_shared = 1;
+			$found_goodshared = 1;
 			$bestmajor = $major;
 			if ($minor >= $bestminor) {
 				$bestminor = $minor;
@@ -105,7 +107,7 @@ while(<>) {
 			    $minor < $reqminor)) {
 				next;
 		    	}
-			$found_shared = 1;
+			$found_goodshared = 1;
 			if ($major > $bestmajor || ($major == $bestmajor &&
 			    $minor > $bestminor)) {
 			    	$bestmajor = $major;
@@ -117,8 +119,10 @@ while(<>) {
 	}
 }
 
-if ($found_shared) {
+if ($found_goodshared) {
 	print "$libname.$bestmajor.$bestminor\n";
+} elsif ($found_shared) {
+	print "Error: bad shared library\n";
 } elsif ($found_unshared) {
 	print "$libname.a\n";
 } else {
