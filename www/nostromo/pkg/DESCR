@@ -1,0 +1,4 @@
+Nostromo is a simple, fast and secure HTTP server which supports:
+
+HTML, CGI, chroot, setuid, basic authentication, virtual hosts, and
+aliases.
