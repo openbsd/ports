@@ -1,0 +1,12 @@
+$OpenBSD: opatch-kwin_clients_riscos_Manager_cpp,v 1.1.1.1 2000/10/09 22:38:34 espie Exp $
+--- kwin/clients/riscos/Manager.cpp.orig	Fri Sep 29 01:22:48 2000
++++ kwin/clients/riscos/Manager.cpp	Fri Sep 29 01:22:57 2000
+@@ -33,7 +33,7 @@
+ 
+ extern "C"
+ {
+-  Client * allocate(Workspace * workSpace, WId winId)
++  inline Client * allocate(Workspace * workSpace, WId winId)
+   {
+     return new RiscOS::Manager(workSpace, winId);
+   }

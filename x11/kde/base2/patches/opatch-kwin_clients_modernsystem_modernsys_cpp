@@ -1,0 +1,12 @@
+$OpenBSD: opatch-kwin_clients_modernsystem_modernsys_cpp,v 1.1.1.1 2000/10/09 22:38:34 espie Exp $
+--- kwin/clients/modernsystem/modernsys.cpp.orig	Fri Sep 29 01:28:47 2000
++++ kwin/clients/modernsystem/modernsys.cpp	Fri Sep 29 01:28:57 2000
+@@ -18,7 +18,7 @@
+ 
+ extern "C"
+ {
+-    Client *allocate(Workspace *ws, WId w)
++    inline Client *allocate(Workspace *ws, WId w)
+     {
+         return(new ModernSys(ws, w));
+     }

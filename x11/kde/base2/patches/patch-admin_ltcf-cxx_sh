@@ -1,0 +1,15 @@
+--- admin/ltcf-cxx.sh.orig	Sat Sep  9 18:59:52 2000
++++ admin/ltcf-cxx.sh	Tue Sep 26 21:19:31 2000
+@@ -339,6 +339,12 @@ case "$host_os" in
+       ld_shlibs=no
+     fi
+     ;;
++  openbsd*)
++      ld_shlibs=yes
++      hardcode_libdir_flag_spec='-R$libdir'
++      hardcode_direct=yes
++      hardcode_shlibpath_var=no
++    ;;
+   osf3*)
+     if test "$with_gcc" = yes && test "$with_gnu_ld" = no; then
+       allow_undefined_flag=' ${wl}-expect_unresolved ${wl}\*'

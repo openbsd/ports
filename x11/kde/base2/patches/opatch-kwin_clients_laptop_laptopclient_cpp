@@ -1,0 +1,12 @@
+$OpenBSD: opatch-kwin_clients_laptop_laptopclient_cpp,v 1.1.1.1 2000/10/09 22:38:34 espie Exp $
+--- kwin/clients/laptop/laptopclient.cpp.orig	Fri Sep 29 01:06:41 2000
++++ kwin/clients/laptop/laptopclient.cpp	Fri Sep 29 01:06:49 2000
+@@ -17,7 +17,7 @@
+ 
+ extern "C"
+ {
+-    Client *allocate(Workspace *ws, WId w)
++    inline Client *allocate(Workspace *ws, WId w)
+     {
+         return(new LaptopClient(ws, w));
+     }

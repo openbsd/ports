@@ -1,0 +1,11 @@
+--- kcontrol/info/info.cpp.orig	Thu Oct  5 22:04:19 2000
++++ kcontrol/info/info.cpp	Thu Oct  5 22:04:42 2000
+@@ -435,6 +435,8 @@ void KInfoListWidget::resizeEvent( QResi
+ #include "info_hpux.cpp"
+ #elif __NetBSD__
+ #include "info_netbsd.cpp"
++#elif __OpenBSD__
++#include "info_openbsd.cpp"
+ #elif __svr4__
+ #include "info_svr4.cpp"
+ #else
