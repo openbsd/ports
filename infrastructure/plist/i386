@@ -1,4 +1,4 @@
-# $OpenBSD: i386,v 1.5 2004/04/09 05:23:21 pvalchev Exp $
+# $OpenBSD: i386,v 1.6 2004/07/23 23:07:33 pvalchev Exp $
 # This is the master list of subdirs used to choose i386 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -6,7 +6,7 @@ net/rsync
 net/cvsup
 net/cvsync
 sysutils/mergemaster
-editors/vim/stable,no_x11
+editors/vim,no_x11
 editors/emacs21
 archivers/unzip
 archivers/bzip2
