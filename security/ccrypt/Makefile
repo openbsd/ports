@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/01/26 05:58:41 jsyn Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/01 07:13:29 kevlo Exp $
 
 COMMENT=	"encrypt and decrypt AES files and streams"
 
-DISTNAME=	ccrypt-1.1
+DISTNAME=	ccrypt-1.2
 CATEGORIES=	security
 NEED_VERSION=	1.504
 
