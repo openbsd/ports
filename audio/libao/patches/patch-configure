@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2001/07/17 15:23:35 naddy Exp $
---- configure.orig	Tue Jul 17 16:15:46 2001
-+++ configure	Tue Jul 17 16:16:18 2001
-@@ -1510,7 +1510,7 @@ if test -z "$GCC"; then
+$OpenBSD: patch-configure,v 1.2 2001/08/20 21:53:56 naddy Exp $
+--- configure.orig	Thu Aug  9 16:43:36 2001
++++ configure	Thu Aug  9 16:47:48 2001
+@@ -1505,7 +1505,7 @@ if test -z "$GCC"; then
                  PROFILE="-v -xpg -g -xO4 -fast -native -fsimple -xcg92 -Dsuncc" ;;
          *)
                  DEBUG="-g"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.1 2001/07/17 15:23:35 naddy Exp $
                  PROFILE="-g -p" ;;
          esac
  else
-@@ -1525,9 +1525,9 @@ else
+@@ -1520,9 +1520,9 @@ else
                  CFLAGS="-O20 -ffast-math -D__NO_MATH_INLINES -fsigned-char -mv8"
                  PROFILE="-pg -g -O20 -D__NO_MATH_INLINES -fsigned-char -mv8" ;;
          *)
