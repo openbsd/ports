@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2002/09/14 00:10:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2002/11/07 14:19:23 naddy Exp $
 
 COMMENT=	"pager/text-based web browser"
 
-VERSION=	0.3.1
-M17N_VERSION=	20020717
+VERSION=	0.3.2
+M17N_VERSION=	20021107
 
 DISTNAME=	w3m-${VERSION}
 CATEGORIES=	www

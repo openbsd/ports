@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2002/02/04 15:05:32 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.14 2002/11/07 14:19:23 naddy Exp $
 %%japanese%%
 !%%japanese%%
 %%image%%
@@ -13,7 +13,9 @@ libexec/w3m/w3mhelp.cgi
 libexec/w3m/w3mhelperpanel
 libexec/w3m/w3mmail.cgi
 libexec/w3m/w3mman2html.cgi
+libexec/w3m/xface2xpm
 man/man1/w3m.1
+man/man1/w3mman.1
 share/doc/w3m/FAQ.html
 share/doc/w3m/HISTORY
 share/doc/w3m/MANUAL.html
