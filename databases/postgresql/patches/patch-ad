@@ -1,0 +1,12 @@
+--- template/openbsd	Sat Jun 14 20:13:06 1997
++++ /dev/null	Sat Jun 14 20:12:51 1997
+@@ -0,0 +1,9 @@
++AROPT:cq
++SHARED_LIB:-fpic -DPIC
++CFLAGS:-pipe -O2
++SRCH_INC:/usr/local/include
++SRCH_LIB:/usr/local/lib
++USE_LOCALE:yes
++DLSUFFIX:.so
++YFLAGS:-d
++YACC:

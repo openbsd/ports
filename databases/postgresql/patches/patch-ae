@@ -1,0 +1,26 @@
+--- Makefile.global.in.orig	Sat Oct  4 23:21:46 1997
++++ Makefile.global.in	Sat Oct  4 23:27:22 1997
+@@ -162,15 +162,15 @@
+ # USE_TCL= true
+ # customize these to your site's needs
+ #
+-TCL_INCDIR= /home/tools/include
+-TCL_LIBDIR= /home/tools/lib
+-TCL_LIB= -ltcl7.5
+-TK_INCDIR= /home/tools/include
+-TK_LIBDIR= /home/tools/lib
+-TK_LIB= -ltk4.1
++TCL_INCDIR= /usr/local/include/tcl8.0
++TCL_LIBDIR= /usr/local/lib
++TCL_LIB= -ltcl80
++TK_INCDIR= /usr/local/include/tk8.0
++TK_LIBDIR= /usr/local/lib
++TK_LIB= -ltk80
+ 
+-X11_INCDIR= /usr/include
+-X11_LIBDIR= /usr/lib
++X11_INCDIR= /usr/X11R6/include
++X11_LIBDIR= /usr/X11R6/lib
+ X11_LIB= -lX11 @SOCKET_LIB@ @NSL_LIB@
+ 
+ 
