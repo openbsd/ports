@@ -1,10 +1,15 @@
-# $OpenBSD: Makefile,v 1.64 2002/01/11 16:50:30 brad Exp $
+# $OpenBSD: Makefile,v 1.65 2002/02/06 00:48:15 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
 COMMENT=	"multithreaded SQL database (client)"
 COMMENT-server=	"multithreaded SQL database (server)"
 COMMENT-tests=	"multithreaded SQL database (test suite)"
+
+# More architectures need testing of MySQL+native threads
+.if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "sparc"
+BROKEN=		"Support for ${MACHINE_ARCH} threads is currently broken and/or untested with MySQL"
+.endif
 
 VERSION=	3.23.47
 DISTNAME=	mysql-${VERSION}
@@ -71,14 +76,12 @@ CONFIGURE_ARGS+= --with-berkeley-db
 CONFIGURE_ARGS+= --without-berkeley-db
 .endif
 
-# More architectures need testing of MySQL+native threads
 .if ${SUBPACKAGE} == "-server"
-. if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "sparc"
-BROKEN=		"Support for ${MACHINE_ARCH} threads is currently broken and/or untested with MySQL"
-. endif
 RUN_DEPENDS=	:mysql-client-3.23.*:databases/mysql \
 		::databases/p5-DBD-Msql-Mysql
 .endif
+
+REGRESS_TARGET=	test
 
 VMEM_WARNING=	Yes
 
@@ -93,8 +96,5 @@ post-install:
 	  cd ${PREFIX}/lib && ln -sf mysql/libmysqlclient.so.10.0 \
 		libmysqlclient.so.10.0 ;\
 	fi
-
-do-regress:
-	@cd ${WRKSRC}/mysql-test && exec mysql-test-run
 
 .include <bsd.port.mk>
