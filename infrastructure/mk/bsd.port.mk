@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.529 2002/05/15 18:23:21 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.530 2002/05/19 18:51:21 millert Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -995,7 +995,7 @@ _USE_BZIP2?=	No
 
 EXTRACT_CASES?= 
 
-_PERL_FIX_SHAR?=perl -pe 'next unless $$s || ($$s = m:^\#(\!\s*/bin/sh\s*| This is a shell archive):)'
+_PERL_FIX_SHAR?=perl -ne 'print if $$s || ($$s = m:^\#(\!\s*/bin/sh\s*| This is a shell archive):)'
 
 # XXX note that we DON'T set EXTRACT_SUFX.
 .if ${_USE_ZIP:L} != "no"
