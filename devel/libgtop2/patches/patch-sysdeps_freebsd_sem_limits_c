@@ -1,6 +1,6 @@
---- sysdeps/freebsd/sem_limits.c.orig	Wed Dec  1 19:42:08 2004
-+++ sysdeps/freebsd/sem_limits.c	Wed Dec  1 19:42:20 2004
-@@ -104,7 +104,6 @@
+--- sysdeps/freebsd/sem_limits.c.orig	Wed Jun  9 11:52:21 2004
++++ sysdeps/freebsd/sem_limits.c	Fri Dec 10 19:15:09 2004
+@@ -104,7 +104,6 @@ glibtop_get_sem_limits_p (glibtop *serve
  	if (server->sysdeps.sem_limits == 0)
  		return;
  

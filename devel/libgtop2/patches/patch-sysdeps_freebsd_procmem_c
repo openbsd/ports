@@ -1,5 +1,5 @@
---- sysdeps/freebsd/procmem.c.orig	Wed Dec  1 19:37:32 2004
-+++ sysdeps/freebsd/procmem.c	Wed Dec  1 19:41:00 2004
+--- sysdeps/freebsd/procmem.c.orig	Sun Jul 18 13:33:56 2004
++++ sysdeps/freebsd/procmem.c	Fri Dec 10 19:15:09 2004
 @@ -31,7 +31,7 @@
  #include <sys/param.h>
  #include <sys/proc.h>
@@ -18,7 +18,7 @@
  #include <uvm/uvm.h>
  #else
  #include <vm/vm.h>
-@@ -70,7 +70,7 @@
+@@ -70,7 +70,7 @@ static const unsigned long _glibtop_sysd
  (1L << GLIBTOP_PROC_MEM_RSS_RLIM);
  
  static const unsigned long _glibtop_sysdeps_proc_mem_share =
@@ -27,7 +27,7 @@
  (1L << GLIBTOP_PROC_MEM_SHARE);
  #elif defined(__FreeBSD__)
  (1L << GLIBTOP_PROC_MEM_SHARE);
-@@ -120,12 +120,12 @@
+@@ -120,12 +120,12 @@ glibtop_get_proc_mem_p (glibtop *server,
  	struct kinfo_proc *pinfo;
  	struct vm_map_entry entry, *first;
  	struct vmspace *vms, vmspace;
@@ -42,7 +42,7 @@
  	int count;
  
  	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_PROC_MEM), 0);
-@@ -159,16 +159,12 @@
+@@ -159,16 +159,12 @@ glibtop_get_proc_mem_p (glibtop *server,
  #else
  
  #define        PROC_VMSPACE   kp_proc.p_vmspace
@@ -63,7 +63,7 @@
  
  	vms = &pinfo [0].kp_eproc.e_vm;
  
-@@ -220,7 +216,7 @@
+@@ -220,7 +216,7 @@ glibtop_get_proc_mem_p (glibtop *server,
   			continue;
  #endif
  #else
@@ -72,7 +72,7 @@
   		if (UVM_ET_ISSUBMAP (&entry))
  			continue;
  #else
-@@ -228,8 +224,7 @@
+@@ -228,8 +224,7 @@ glibtop_get_proc_mem_p (glibtop *server,
  			continue;
  #endif
  #endif
@@ -82,7 +82,7 @@
  		if (!entry.object.uvm_obj)
  			continue;
  
-@@ -256,7 +251,7 @@
+@@ -256,7 +251,7 @@ glibtop_get_proc_mem_p (glibtop *server,
  #endif
  		/* If the object is of type vnode, add its size */
  

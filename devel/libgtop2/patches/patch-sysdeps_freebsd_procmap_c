@@ -1,5 +1,5 @@
---- sysdeps/freebsd/procmap.c.orig	Fri Sep 24 18:49:06 2004
-+++ sysdeps/freebsd/procmap.c	Wed Dec  1 19:58:45 2004
+--- sysdeps/freebsd/procmap.c.orig	Wed Jun  9 11:52:21 2004
++++ sysdeps/freebsd/procmap.c	Fri Dec 10 19:15:09 2004
 @@ -35,7 +35,7 @@
  #include <vm/vm_object.h>
  #include <vm/vm_prot.h>
@@ -24,7 +24,7 @@
  /* Fixme ... */
  #undef _KERNEL
  #define _UVM_UVM_AMAP_I_H_ 1
-@@ -95,7 +97,7 @@
+@@ -95,7 +97,7 @@ glibtop_get_proc_map_p (glibtop *server,
  	struct kinfo_proc *pinfo;
  	struct vm_map_entry entry, *first;
  	struct vmspace vmspace;
@@ -33,7 +33,7 @@
  	struct vnode vnode;
  	struct inode inode;
  #else
-@@ -179,7 +181,7 @@
+@@ -179,7 +181,7 @@ glibtop_get_proc_map_p (glibtop *server,
   			continue;
  #endif
  #else
@@ -42,7 +42,7 @@
   		if (UVM_ET_ISSUBMAP (&entry))
  			continue;
  #else
-@@ -205,7 +207,7 @@
+@@ -205,7 +207,7 @@ glibtop_get_proc_map_p (glibtop *server,
  
  		i++;
  
@@ -51,7 +51,7 @@
  		if (!entry.object.uvm_obj)
  			continue;
  
-@@ -229,7 +231,7 @@
+@@ -229,7 +231,7 @@ glibtop_get_proc_map_p (glibtop *server,
  			glibtop_error_io_r (server, "kvm_read (object)");
  #endif
  

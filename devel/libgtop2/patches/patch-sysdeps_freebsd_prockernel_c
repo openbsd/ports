@@ -1,5 +1,5 @@
---- sysdeps/freebsd/prockernel.c.orig	Wed Dec  1 19:29:56 2004
-+++ sysdeps/freebsd/prockernel.c	Wed Dec  1 19:30:04 2004
+--- sysdeps/freebsd/prockernel.c.orig	Sun Jul 18 13:33:56 2004
++++ sysdeps/freebsd/prockernel.c	Fri Dec 10 19:15:09 2004
 @@ -35,7 +35,7 @@
  #include <sys/user.h>
  #endif
@@ -34,7 +34,7 @@
  static const unsigned long _glibtop_sysdeps_proc_kernel_pstats =
  (1L << GLIBTOP_PROC_KERNEL_MIN_FLT) +
  (1L << GLIBTOP_PROC_KERNEL_MAJ_FLT) +
-@@ -132,7 +124,7 @@
+@@ -132,7 +124,7 @@ glibtop_get_proc_kernel_p (glibtop *serv
  
  #endif
  
@@ -43,7 +43,7 @@
  	buf->nwchan = (unsigned long) pinfo [0].PROC_WCHAN &~ KERNBASE;
  
  	buf->flags |= (1L << GLIBTOP_PROC_KERNEL_NWCHAN);
-@@ -164,8 +156,8 @@
+@@ -164,8 +156,8 @@ glibtop_get_proc_kernel_p (glibtop *serv
  
  	glibtop_suid_enter (server);
  
@@ -54,7 +54,7 @@
  	/* On NetBSD, there is no kvm_uread(), and kvm_read() always reads
  	 * from kernel memory.  */
  
-@@ -193,7 +185,7 @@
+@@ -193,7 +185,7 @@ glibtop_get_proc_kernel_p (glibtop *serv
  			buf->flags |= _glibtop_sysdeps_proc_kernel_pstats;
  		}
  
@@ -63,7 +63,7 @@
  	if (kvm_read (server->machine.kd,
  #else
  	if ((pinfo [0].kp_proc.p_flag & P_INMEM) &&
-@@ -223,7 +215,7 @@
+@@ -223,7 +215,7 @@ glibtop_get_proc_kernel_p (glibtop *serv
  			buf->kstk_eip = (guint64) pcb.pcb_tss.__tss_eip;
  #endif
  #else
