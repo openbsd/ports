@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/14 21:52:15 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/16 00:47:37 brad Exp $
 
 DISTNAME=		findutils-4.1
 CATEGORIES=		misc
 NEED_VERSION=		1.340
+
+HOMEPAGE=		http://www.gnu.org/software/findutils/
 
 MAINTAINER=		David Lebel <lebel@lebel.org>
 
@@ -19,9 +21,8 @@ LIB_DEPENDS=		intl.1::devel/gettext
 SEPARATE_BUILD=		concurrent
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu old
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-			CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		--program-prefix=g
+CONFIGURE_ARGS=		--program-prefix="g"
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
