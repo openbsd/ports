@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2002/05/31 02:41:44 brad Exp $
+@comment $OpenBSD: PLIST,v 1.14 2002/08/25 22:30:40 brad Exp $
 bin/gdk-pixbuf-config
 include/gdk-pixbuf/gdk-pixbuf-features.h
 include/gdk-pixbuf/gdk-pixbuf-loader.h
@@ -13,51 +13,50 @@ lib/libgdk_pixbuf_xlib.a
 lib/libgdk_pixbuf_xlib.la
 %%SHARED%%
 share/aclocal/gdk-pixbuf.m4
-share/html/gdk-pixbuf/a2605.html
-share/html/gdk-pixbuf/a3640.html
-share/html/gdk-pixbuf/a3652.html
-share/html/gdk-pixbuf/a3657.html
-share/html/gdk-pixbuf/a3694.html
-share/html/gdk-pixbuf/a3696.html
-share/html/gdk-pixbuf/a3716.html
-share/html/gdk-pixbuf/book1.html
-share/html/gdk-pixbuf/compiling.html
-share/html/gdk-pixbuf/extra-configuration-options.html
-share/html/gdk-pixbuf/gdk-pixbuf-animation.html
-share/html/gdk-pixbuf/gdk-pixbuf-creating.html
-share/html/gdk-pixbuf/gdk-pixbuf-file-loading.html
-share/html/gdk-pixbuf/gdk-pixbuf-from-drawables.html
-share/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-xlib-from-drawables.html
-share/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-xlib-init.html
-share/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-xlib-rendering.html
-share/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-xlib-rgb.html
-share/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf.html
-share/html/gdk-pixbuf/gdk-pixbuf-refcounting.html
-share/html/gdk-pixbuf/gdk-pixbuf-rendering.html
-share/html/gdk-pixbuf/gdk-pixbuf-scaling.html
-share/html/gdk-pixbuf/gdk-pixbuf-util.html
-share/html/gdk-pixbuf/gdkpixbufloader.html
-share/html/gdk-pixbuf/gnomecanvaspixbuf.html
-share/html/gdk-pixbuf/index.html
-share/html/gdk-pixbuf/license.html
-share/html/gdk-pixbuf/r15.html
-share/html/gdk-pixbuf/r27.html
-share/html/gdk-pixbuf/x2624.html
-share/html/gdk-pixbuf/x2676.html
-share/html/gdk-pixbuf/x3659.html
-share/html/gdk-pixbuf/x3671.html
-share/html/gdk-pixbuf/x3676.html
-share/html/gdk-pixbuf/x3711.html
-share/html/gdk-pixbuf/x3713.html
-share/html/gdk-pixbuf/x3715.html
-share/html/gdk-pixbuf/x3723.html
-share/html/gdk-pixbuf/x3728.html
-share/html/gdk-pixbuf/x3735.html
-share/html/gdk-pixbuf/x3765.html
-share/html/gdk-pixbuf/x3767.html
-share/html/gdk-pixbuf/x3787.html
-@dirrm share/html/gdk-pixbuf
-@dirrm share/html
+share/doc/gdk-pixbuf/a2605.html
+share/doc/gdk-pixbuf/a3640.html
+share/doc/gdk-pixbuf/a3652.html
+share/doc/gdk-pixbuf/a3657.html
+share/doc/gdk-pixbuf/a3694.html
+share/doc/gdk-pixbuf/a3696.html
+share/doc/gdk-pixbuf/a3716.html
+share/doc/gdk-pixbuf/book1.html
+share/doc/gdk-pixbuf/compiling.html
+share/doc/gdk-pixbuf/extra-configuration-options.html
+share/doc/gdk-pixbuf/gdk-pixbuf-animation.html
+share/doc/gdk-pixbuf/gdk-pixbuf-creating.html
+share/doc/gdk-pixbuf/gdk-pixbuf-file-loading.html
+share/doc/gdk-pixbuf/gdk-pixbuf-from-drawables.html
+share/doc/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-xlib-from-drawables.html
+share/doc/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-xlib-init.html
+share/doc/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-xlib-rendering.html
+share/doc/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-xlib-rgb.html
+share/doc/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf.html
+share/doc/gdk-pixbuf/gdk-pixbuf-refcounting.html
+share/doc/gdk-pixbuf/gdk-pixbuf-rendering.html
+share/doc/gdk-pixbuf/gdk-pixbuf-scaling.html
+share/doc/gdk-pixbuf/gdk-pixbuf-util.html
+share/doc/gdk-pixbuf/gdkpixbufloader.html
+share/doc/gdk-pixbuf/gnomecanvaspixbuf.html
+share/doc/gdk-pixbuf/index.html
+share/doc/gdk-pixbuf/license.html
+share/doc/gdk-pixbuf/r15.html
+share/doc/gdk-pixbuf/r27.html
+share/doc/gdk-pixbuf/x2624.html
+share/doc/gdk-pixbuf/x2676.html
+share/doc/gdk-pixbuf/x3659.html
+share/doc/gdk-pixbuf/x3671.html
+share/doc/gdk-pixbuf/x3676.html
+share/doc/gdk-pixbuf/x3711.html
+share/doc/gdk-pixbuf/x3713.html
+share/doc/gdk-pixbuf/x3715.html
+share/doc/gdk-pixbuf/x3723.html
+share/doc/gdk-pixbuf/x3728.html
+share/doc/gdk-pixbuf/x3735.html
+share/doc/gdk-pixbuf/x3765.html
+share/doc/gdk-pixbuf/x3767.html
+share/doc/gdk-pixbuf/x3787.html
+@dirrm share/doc/gdk-pixbuf
 @exec mkdir -p %D/lib/gdk-pixbuf/loaders
 @unexec rmdir %D/lib/gdk-pixbuf/loaders 2>/dev/null || true
 @unexec rmdir %D/lib/gdk-pixbuf 2>/dev/null || true

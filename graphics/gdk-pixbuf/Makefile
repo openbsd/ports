@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/08/08 12:00:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2002/08/25 22:30:40 brad Exp $
 
 COMMENT=	"GdkPixbuf graphics library"
 COMMENT-gnome=	"GdkPixbuf graphics library (GNOME Canvas)"
@@ -26,7 +26,8 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
 		 --disable-modules \
 		 --disable-mmx \
-		 --with-html-dir="${PREFIX}/share/html"
+		 --disable-gtk-doc \
+		 --with-html-dir="${PREFIX}/share/doc"
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
