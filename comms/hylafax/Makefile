@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.9 1999/06/17 16:57:01 espie Exp $
+# $OpenBSD: Makefile,v 1.10 1999/08/06 02:45:33 brad Exp $
 
 DISTNAME=	hylafax-v4.0pl2
 .if defined(A4)
 PKGNAME=	hylafax-4.0.2-A4
 .else
-PKGNAME= hylafax-4.0.2-letter
+PKGNAME=	hylafax-4.0.2-letter
 .endif
+MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/
+EXTRACT_SUFX=	-tar.gz
 
 CATEGORIES=	comms
 
 MAINTAINER=	d@openbsd.org
 
-MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/
-EXTRACT_SUFX=	-tar.gz
+BUILD_DEPENDS=	${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
+LIB_DEPENDS=	tiff.3.4:${PORTSDIR}/graphics/tiff34 
 
-BUILD_DEPENDS+= ${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
-RUN_DEPENDS=	ghostscript-5.10:${PORTSDIR}/print/ghostscript5
-LIB_DEPENDS=	tiff\\.3\\.4:${PORTSDIR}/graphics/tiff34 
-
-USE_EGXX=yes
+USE_EGCC=	yes
+USE_EGXX=	yes
 
 .if !defined(A4)
 PAGESIZE=	North American Letter
@@ -26,8 +26,8 @@ PAGESIZE=	North American Letter
 PAGESIZE=	ISO A4
 .endif
 
-FAXUID=uucp
-FAXGID=dialer
+FAXUID=	uucp
+FAXGID=	dialer
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-INSTALL="" \
@@ -41,10 +41,11 @@ CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-REGEX=no --with-LIBREGEX= --with-REGEXINC=/usr/include \
 		--with-FAXUID=${FAXUID} --with-FAXGID=${FAXGID} \
 
-SUID_EXES= 	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
+CONFIGURE_ENV=	CONFIG_SOCKARGLENTYPE=::socklen_t
+
+SUID_EXES=	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter
 
-CONFIGURE_ENV=CONFIG_SOCKARGLENTYPE=::socklen_t
 pre-fetch:
 .if !defined(NO_WARNINGS)
 .if !defined(A4)
@@ -53,10 +54,11 @@ pre-fetch:
 	@${ECHO_MSG} "Using \"ISO A4\" for default page size."
 .endif
 .endif
+
 post-install:
 	/usr/sbin/chown ${FAXUID}.${FAXGID} ${SUID_EXES}
 	chmod a=rx,u+s ${SUID_EXES}
 	${INSTALL_DATA} ${FILESDIR}/hylafax.sh.sample ${PREFIX}/lib/fax
-	${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
