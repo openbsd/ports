@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 00:13:04 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/20 12:51:39 kevlo Exp $
 
 COMMENT=	"fast Java decompiler"
 
-DISTNAME=	jadob157
-PKGNAME=	jad-1.5.7f
+DISTNAME=	jadob158
+PKGNAME=	jad-1.5.8c
 CATEGORIES=	devel
 NEED_VERSION=	1.402
 
