@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2002/11/16 19:34:44 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.152 2002/11/19 23:00:55 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -193,6 +193,7 @@
      SUBDIR += xglobe
      SUBDIR += xglobe,no_map
      SUBDIR += xgrab
+     SUBDIR += xkbset
      SUBDIR += xkeycaps
      SUBDIR += xloadimage
      SUBDIR += xlockmore
