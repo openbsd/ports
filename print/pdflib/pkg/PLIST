@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/09/11 13:54:35 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:32:14 espie Exp $
 bin/pdflib-config
 include/pdflib.h
 lib/libpdf.a
 lib/libpdf.la
-%%SHARED%%
+share/doc/pdflib/
 share/doc/pdflib/PDFlib-license.pdf
 share/doc/pdflib/PDFlib-manual.pdf
 share/doc/pdflib/PDFlib-purchase-order.pdf
@@ -15,4 +15,4 @@ share/doc/pdflib/readme_ebcdic.txt
 share/doc/pdflib/readme_mac.txt
 share/doc/pdflib/readme_unix.txt
 share/doc/pdflib/readme_win.txt
-@dirrm share/doc/pdflib
+%%SHARED%%

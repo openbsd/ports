@@ -1,9 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/20 19:48:45 grange Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:33:24 espie Exp $
+share/texmf-local/
+share/texmf-local/doc/
+share/texmf-local/doc/fonts/
+share/texmf-local/doc/fonts/pscyr/
 share/texmf-local/doc/fonts/pscyr/LICENSE
 share/texmf-local/doc/fonts/pscyr/PROBLEMS
 share/texmf-local/doc/fonts/pscyr/README.koi
+share/texmf-local/dvips/
+share/texmf-local/dvips/base/
 share/texmf-local/dvips/base/t2a.enc
+share/texmf-local/dvips/config/
 share/texmf-local/dvips/config/pscyr.map
+share/texmf-local/fonts/
+share/texmf-local/fonts/afm/
+share/texmf-local/fonts/afm/public/
+share/texmf-local/fonts/afm/public/pscyr/
 share/texmf-local/fonts/afm/public/pscyr/acade1.afm
 share/texmf-local/fonts/afm/public/pscyr/acade2.afm
 share/texmf-local/fonts/afm/public/pscyr/acade3.afm
@@ -46,6 +57,9 @@ share/texmf-local/fonts/afm/public/pscyr/times.afm
 share/texmf-local/fonts/afm/public/pscyr/timesbd.afm
 share/texmf-local/fonts/afm/public/pscyr/timesbi.afm
 share/texmf-local/fonts/afm/public/pscyr/timesi.afm
+share/texmf-local/fonts/tfm/
+share/texmf-local/fonts/tfm/public/
+share/texmf-local/fonts/tfm/public/pscyr/
 share/texmf-local/fonts/tfm/public/pscyr/facb6a.tfm
 share/texmf-local/fonts/tfm/public/pscyr/facb7t.tfm
 share/texmf-local/fonts/tfm/public/pscyr/facbo6a.tfm
@@ -178,6 +192,9 @@ share/texmf-local/fonts/tfm/public/pscyr/ftxri6a.tfm
 share/texmf-local/fonts/tfm/public/pscyr/ftxri7t.tfm
 share/texmf-local/fonts/tfm/public/pscyr/ftxro6a.tfm
 share/texmf-local/fonts/tfm/public/pscyr/ftxro7t.tfm
+share/texmf-local/fonts/type1/
+share/texmf-local/fonts/type1/public/
+share/texmf-local/fonts/type1/public/pscyr/
 share/texmf-local/fonts/type1/public/pscyr/acade1.pfb
 share/texmf-local/fonts/type1/public/pscyr/acade2.pfb
 share/texmf-local/fonts/type1/public/pscyr/acade3.pfb
@@ -220,6 +237,9 @@ share/texmf-local/fonts/type1/public/pscyr/times.pfb
 share/texmf-local/fonts/type1/public/pscyr/timesbd.pfb
 share/texmf-local/fonts/type1/public/pscyr/timesbi.pfb
 share/texmf-local/fonts/type1/public/pscyr/timesi.pfb
+share/texmf-local/fonts/vf/
+share/texmf-local/fonts/vf/public/
+share/texmf-local/fonts/vf/public/pscyr/
 share/texmf-local/fonts/vf/public/pscyr/facb7t.vf
 share/texmf-local/fonts/vf/public/pscyr/facbo7t.vf
 share/texmf-local/fonts/vf/public/pscyr/facr7t.vf
@@ -291,6 +311,9 @@ share/texmf-local/fonts/vf/public/pscyr/ftxr7t.vf
 share/texmf-local/fonts/vf/public/pscyr/ftxrc6a.vf
 share/texmf-local/fonts/vf/public/pscyr/ftxri7t.vf
 share/texmf-local/fonts/vf/public/pscyr/ftxro7t.vf
+share/texmf-local/tex/
+share/texmf-local/tex/latex/
+share/texmf-local/tex/latex/pscyr/
 share/texmf-local/tex/latex/pscyr/ot1fac.fd
 share/texmf-local/tex/latex/pscyr/ot1fad.fd
 share/texmf-local/tex/latex/pscyr/ot1faq.fd
@@ -323,12 +346,6 @@ share/texmf-local/tex/latex/pscyr/t2aftx.fd
 @exec %D/bin/mktexlsr
 @exec echo "Map pscyr.map" >> %D/share/texmf/web2c/updmap.cfg
 @exec %D/bin/updmap
-@dirrm share/texmf-local/tex/latex/pscyr
-@dirrm share/texmf-local/fonts/vf/public/pscyr
-@dirrm share/texmf-local/fonts/type1/public/pscyr
-@dirrm share/texmf-local/fonts/tfm/public/pscyr
-@dirrm share/texmf-local/fonts/afm/public/pscyr
-@dirrm share/texmf-local/doc/fonts/pscyr
 @unexec %D/bin/mktexlsr
 @unexec perl -i -pe 's/^Map pscyr\.map\n//' %D/share/texmf/web2c/updmap.cfg
 @unexec %D/bin/updmap

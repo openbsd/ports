@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:52 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:32:13 espie Exp $
+lib/afm/
 lib/afm/AvantGarde-Book
 lib/afm/AvantGarde-BookOblique
 lib/afm/AvantGarde-Demi
@@ -36,4 +37,3 @@ lib/afm/Times-Oblique
 lib/afm/Times-Roman
 lib/afm/ZapfChancery-MediumItalic
 lib/afm/ZapfDingbats
-@dirrm lib/afm

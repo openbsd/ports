@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-doc,v 1.1 2001/08/30 17:12:36 shell Exp $
+@comment $OpenBSD: PLIST-doc,v 1.2 2004/09/15 18:32:14 espie Exp $
+share/doc/freetype/
 share/doc/freetype/FAQ
 share/doc/freetype/TODO
 share/doc/freetype/apiref.txt
@@ -11,6 +12,7 @@ share/doc/freetype/freetype.lsm
 share/doc/freetype/glyphs.htm
 share/doc/freetype/glyphs.txt
 share/doc/freetype/i18n.txt
+share/doc/freetype/image/
 share/doc/freetype/image/baselin2.gif
 share/doc/freetype/image/baseline.gif
 share/doc/freetype/image/emsquare.gif
@@ -29,5 +31,3 @@ share/doc/freetype/raster.txt
 share/doc/freetype/readme.txt
 share/doc/freetype/threads.txt
 share/doc/freetype/user.txt
-@dirrm share/doc/freetype/image
-@dirrm share/doc/freetype

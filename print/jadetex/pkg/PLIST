@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/04/18 09:22:53 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:32:14 espie Exp $
 bin/jadetex
 bin/pdfjadetex
-man/man1/jadetex.1
-man/man1/pdfjadetex.1
+@man man/man1/jadetex.1
+@man man/man1/pdfjadetex.1
+share/texmf-local/
+share/texmf-local/tex/
+share/texmf-local/tex/jadetex/
 share/texmf-local/tex/jadetex/dsssl.def
 share/texmf-local/tex/jadetex/jadetex.ltx
+share/texmf-local/web2c/
 share/texmf-local/web2c/jadetex.fmt
 share/texmf-local/web2c/pdfjadetex.fmt
-@dirrm share/texmf-local/web2c
-@dirrm share/texmf-local/tex/jadetex
-@dirrm share/texmf-local/tex
-@dirrm share/texmf-local
 @exec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
 @unexec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr

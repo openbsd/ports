@@ -1,7 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/12 11:49:53 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:32:14 espie Exp $
+share/texmf-local/
+share/texmf-local/doc/
+share/texmf-local/doc/latex/
+share/texmf-local/doc/latex/memoir/
 share/texmf-local/doc/latex/memoir/memman.pdf
 share/texmf-local/doc/latex/memoir/memoir.dtx
 share/texmf-local/doc/latex/memoir/memoir.dvi
+share/texmf-local/tex/
+share/texmf-local/tex/latex/
+share/texmf-local/tex/latex/memoir/
 share/texmf-local/tex/latex/memoir/mem10.clo
 share/texmf-local/tex/latex/memoir/mem11.clo
 share/texmf-local/tex/latex/memoir/mem12.clo
@@ -11,12 +18,5 @@ share/texmf-local/tex/latex/memoir/mem9.clo
 share/texmf-local/tex/latex/memoir/memhfixc.sty
 share/texmf-local/tex/latex/memoir/memoir.cls
 share/texmf-local/tex/latex/memoir/mempatch.sty
-@dirrm share/texmf-local/tex/latex/memoir
-@dirrm share/texmf-local/tex/latex
-@dirrm share/texmf-local/tex
-@dirrm share/texmf-local/doc/latex/memoir
-@dirrm share/texmf-local/doc/latex
-@dirrm share/texmf-local/doc
-@dirrm share/texmf-local
 @exec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
 @unexec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr

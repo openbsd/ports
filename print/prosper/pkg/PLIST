@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/03/31 17:16:52 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:32:14 espie Exp $
+share/examples/prosper/
 share/examples/prosper/Example.tex
 share/examples/prosper/ExampleAlienglow.tex
 share/examples/prosper/ExampleAutumn.tex
@@ -11,7 +12,14 @@ share/examples/prosper/ExampleNuanceGris.tex
 share/examples/prosper/ExampleTroisPoints.tex
 share/examples/prosper/prosper-tour.pdf
 share/examples/prosper/prosper-tour.tex
+share/texmf-local/
+share/texmf-local/doc/
+share/texmf-local/doc/latex/
+share/texmf-local/doc/latex/prosper/
 share/texmf-local/doc/latex/prosper/prosper-doc.pdf
+share/texmf-local/tex/
+share/texmf-local/tex/latex/
+share/texmf-local/tex/latex/prosper/
 share/texmf-local/tex/latex/prosper/PPRalcatel.sty
 share/texmf-local/tex/latex/prosper/PPRalienglow.sty
 share/texmf-local/tex/latex/prosper/PPRautumn.sty
@@ -26,6 +34,7 @@ share/texmf-local/tex/latex/prosper/PPRnuancegris.sty
 share/texmf-local/tex/latex/prosper/PPRpascal.sty
 share/texmf-local/tex/latex/prosper/PPRrico.sty
 share/texmf-local/tex/latex/prosper/PPRtroispoints.sty
+share/texmf-local/tex/latex/prosper/img/
 share/texmf-local/tex/latex/prosper/img/angleHG.ps
 share/texmf-local/tex/latex/prosper/img/arrow-glow.ps
 share/texmf-local/tex/latex/prosper/img/barre-rico.ps
@@ -41,9 +50,5 @@ share/texmf-local/tex/latex/prosper/img/rule-glow.ps
 share/texmf-local/tex/latex/prosper/img/yellow-bullet-on-blue.ps
 share/texmf-local/tex/latex/prosper/img/yellow-bullet-on-white.ps
 share/texmf-local/tex/latex/prosper/prosper.cls
-@dirrm share/texmf-local/tex/latex/prosper/img
-@dirrm share/texmf-local/tex/latex/prosper
-@dirrm share/texmf-local/doc/latex/prosper
-@dirrm share/examples/prosper
 @exec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
 @unexec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr

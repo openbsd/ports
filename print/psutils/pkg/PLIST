@@ -1,45 +1,45 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/07 01:54:52 naddy Exp $
-bin/psbook
-bin/psselect
-bin/pstops
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:32:14 espie Exp $
 bin/epsffit
-bin/psnup
-bin/psresize
+bin/extractres
+bin/fixdlsrps
 bin/fixfmps
 bin/fixmacps
 bin/fixpsditps
 bin/fixpspps
+bin/fixscribeps
 bin/fixtpps
 bin/fixwfwps
 bin/fixwpps
-bin/fixscribeps
 bin/fixwwps
-bin/fixdlsrps
-bin/extractres
-bin/includeres
-bin/psmerge
 bin/getafm
+bin/includeres
+bin/psbook
+bin/psmerge
+bin/psnup
+bin/psresize
+bin/psselect
+bin/pstops
 bin/showchar
-man/man1/psnup.1
-man/man1/psbook.1
-man/man1/psselect.1
-man/man1/pstops.1
-man/man1/epsffit.1
-man/man1/psresize.1
-man/man1/psmerge.1
-man/man1/fixscribeps.1
-man/man1/getafm.1
-man/man1/fixdlsrps.1
-man/man1/fixfmps.1
-man/man1/fixmacps.1
-man/man1/fixpsditps.1
-man/man1/fixpspps.1
-man/man1/fixtpps.1
-man/man1/fixwfwps.1
-man/man1/fixwpps.1
-man/man1/fixwwps.1
-man/man1/extractres.1
-man/man1/includeres.1
+@man man/man1/epsffit.1
+@man man/man1/extractres.1
+@man man/man1/fixdlsrps.1
+@man man/man1/fixfmps.1
+@man man/man1/fixmacps.1
+@man man/man1/fixpsditps.1
+@man man/man1/fixpspps.1
+@man man/man1/fixscribeps.1
+@man man/man1/fixtpps.1
+@man man/man1/fixwfwps.1
+@man man/man1/fixwpps.1
+@man man/man1/fixwwps.1
+@man man/man1/getafm.1
+@man man/man1/includeres.1
+@man man/man1/psbook.1
+@man man/man1/psmerge.1
+@man man/man1/psnup.1
+@man man/man1/psresize.1
+@man man/man1/psselect.1
+@man man/man1/pstops.1
+share/psutils/
 share/psutils/md68_0.ps
 share/psutils/md71_0.ps
-@dirrm share/psutils

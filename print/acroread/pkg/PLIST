@@ -1,36 +1,50 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/11/26 07:50:01 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:32:13 espie Exp $
+Acrobat5/
+Acrobat5/Browsers/
+Acrobat5/Browsers/intellinux/
 Acrobat5/Browsers/intellinux/nppdf.so
 Acrobat5/Browsers/netscape
+Acrobat5/Reader/
 Acrobat5/Reader/AcroVersion
 Acrobat5/Reader/MapTypes.pdf
+Acrobat5/Reader/help/
 Acrobat5/Reader/help/acrobat.pdf
 Acrobat5/Reader/help/reader.pdf
+Acrobat5/Reader/intellinux/
+Acrobat5/Reader/intellinux/app-defaults/
 Acrobat5/Reader/intellinux/app-defaults/AcroRead
+Acrobat5/Reader/intellinux/bin/
 Acrobat5/Reader/intellinux/bin/acroread
 Acrobat5/Reader/intellinux/fonts
+Acrobat5/Reader/intellinux/lib/
 Acrobat5/Reader/intellinux/lib/XKeysymDB
 Acrobat5/Reader/intellinux/lib/libACE.so
-Acrobat5/Reader/intellinux/lib/libACE.so.2.02
+@lib Acrobat5/Reader/intellinux/lib/libACE.so.2.02
 Acrobat5/Reader/intellinux/lib/libAGM.so
-Acrobat5/Reader/intellinux/lib/libAGM.so.4.08
+@lib Acrobat5/Reader/intellinux/lib/libAGM.so.4.08
 Acrobat5/Reader/intellinux/lib/libBIB.so
-Acrobat5/Reader/intellinux/lib/libBIB.so.1.1
+@lib Acrobat5/Reader/intellinux/lib/libBIB.so.1.1
 Acrobat5/Reader/intellinux/lib/libCoolType.so
-Acrobat5/Reader/intellinux/lib/libCoolType.so.4.10
+@lib Acrobat5/Reader/intellinux/lib/libCoolType.so.4.10
 Acrobat5/Reader/intellinux/lib/libOPP.so
-Acrobat5/Reader/intellinux/lib/libOPP.so.1.02
+@lib Acrobat5/Reader/intellinux/lib/libOPP.so.1.02
+Acrobat5/Reader/intellinux/plug_ins/
 Acrobat5/Reader/intellinux/plug_ins/AcroForm.api
 Acrobat5/Reader/intellinux/plug_ins/EScript.api
 Acrobat5/Reader/intellinux/plug_ins/Highlight.api
+Acrobat5/Reader/intellinux/plug_ins/JavaScripts/
 Acrobat5/Reader/intellinux/plug_ins/JavaScripts/AFStrENU.js
 Acrobat5/Reader/intellinux/plug_ins/JavaScripts/AForm.js
 Acrobat5/Reader/intellinux/plug_ins/ewh.api
 Acrobat5/Reader/intellinux/plug_ins/wwwlink.api
 Acrobat5/Reader/intellinux/res
 Acrobat5/Reader/license.txt
+Acrobat5/Reader/res/
 Acrobat5/Reader/res/ENUtxt.pdf
 Acrobat5/Reader/res/splashScreen11R.xbm
 Acrobat5/Reader/res/splashScreen18R.xpm
+Acrobat5/Resource/
+Acrobat5/Resource/Font/
 Acrobat5/Resource/Font/AdobeSansMM
 Acrobat5/Resource/Font/AdobeSansMM.MMM
 Acrobat5/Resource/Font/AdobeSerifMM
@@ -51,21 +65,7 @@ Acrobat5/Resource/Font/TimesNewRoman-BoldItalic
 Acrobat5/Resource/Font/TimesNewRoman-Italic
 Acrobat5/Resource/Font/ZapfDingbats
 Acrobat5/Resource/LICFONT.TXT
+Acrobat5/bin/
 Acrobat5/bin/acroread
 bin/acroread
-@dirrm Acrobat5/bin
-@dirrm Acrobat5/Resource/Font
-@dirrm Acrobat5/Resource
-@dirrm Acrobat5/Reader/res
-@dirrm Acrobat5/Reader/intellinux/plug_ins/JavaScripts
-@dirrm Acrobat5/Reader/intellinux/plug_ins
-@dirrm Acrobat5/Reader/intellinux/lib
-@dirrm Acrobat5/Reader/intellinux/bin
-@dirrm Acrobat5/Reader/intellinux/app-defaults
-@dirrm Acrobat5/Reader/intellinux
-@dirrm Acrobat5/Reader/help
-@dirrm Acrobat5/Reader
-@dirrm Acrobat5/Browsers/intellinux
-@dirrm Acrobat5/Browsers
-@dirrm Acrobat5
 @exec sysctl -w kern.emul.linux=1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/09/15 17:39:04 sturm Exp $
+# $OpenBSD: Makefile,v 1.24 2004/09/15 18:32:14 espie Exp $
 
 COMMENT=	"AFPL PostScript interpreter"
 
@@ -106,7 +106,7 @@ CFLAGS+=	-DA4
 .if ${FLAVOR:L:Mgtk} && ${FLAVOR:L:Mno_x11}
 ERRORS+= "Fatal: Conflicting flavors: ${FLAVOR}"
 .elif ${FLAVOR:L:Mgtk}
-LIB_DEPENDS+=	gtk.1::x11/gtk+
+LIB_DEPENDS+=	gtk.1,gdk::x11/gtk+
 ALL_TARGET+=so
 INSTALL_TARGET+=soinstall
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}

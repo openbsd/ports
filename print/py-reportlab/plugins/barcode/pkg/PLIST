@@ -1,4 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/27 08:55:23 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:32:15 espie Exp $
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/reportlab/
+lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/
+lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/
 lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/__init__.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/code128.py
@@ -15,4 +20,3 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/test.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/test.pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/usps.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode/usps.pyc
-@dirrm lib/python${MODPY_VERSION}/site-packages/reportlab/extensions/barcode

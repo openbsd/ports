@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/12/16 17:01:23 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:32:14 espie Exp $
 bin/htmldoc
-man/man1/htmldoc.1
+@man man/man1/htmldoc.1
+share/doc/htmldoc/
 share/doc/htmldoc/help.html
 share/doc/htmldoc/htmldoc.pdf
+share/htmldoc/
+share/htmldoc/data/
 share/htmldoc/data/cp-1250
 share/htmldoc/data/cp-1251
 share/htmldoc/data/cp-1252
@@ -27,6 +30,7 @@ share/htmldoc/data/iso-8859-9
 share/htmldoc/data/koi8-r
 share/htmldoc/data/prolog.ps
 share/htmldoc/data/psglyphs
+share/htmldoc/fonts/
 share/htmldoc/fonts/Courier-Bold.afm
 share/htmldoc/fonts/Courier-Bold.pfa
 share/htmldoc/fonts/Courier-BoldOblique.afm
@@ -53,7 +57,3 @@ share/htmldoc/fonts/Times-Italic.afm
 share/htmldoc/fonts/Times-Italic.pfa
 share/htmldoc/fonts/Times-Roman.afm
 share/htmldoc/fonts/Times-Roman.pfa
-@dirrm share/htmldoc/fonts
-@dirrm share/htmldoc/data
-@dirrm share/htmldoc
-@dirrm share/doc/htmldoc

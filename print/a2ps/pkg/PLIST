@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/04/14 10:44:13 xsa Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/a2ps.info
-@unexec install-info --delete --info-dir=%D/info %D/info/ogonkify.info
-@unexec install-info --delete --info-dir=%D/info %D/info/regex.info
+@comment $OpenBSD: PLIST,v 1.13 2004/09/15 18:32:13 espie Exp $
 bin/a2ps
 bin/card
 bin/composeglyphs
@@ -13,30 +10,22 @@ bin/psmandup
 bin/psset
 bin/texi2dvi4a2ps
 include/liba2ps.h
-info/a2ps.info
-info/a2ps.info-1
-info/a2ps.info-2
-info/a2ps.info-3
-info/a2ps.info-4
-info/a2ps.info-5
-info/a2ps.info-6
-info/ogonkify.info
-info/regex.info
-info/regex.info-1
-info/regex.info-2
-info/regex.info-3
+@info info/a2ps.info
+@info info/ogonkify.info
+@info info/regex.info
 lib/liba2ps.a
 lib/liba2ps.la
-%%SHARED%%
-man/man1/a2ps.1
-man/man1/card.1
-man/man1/fixps.1
-man/man1/ogonkify.1
-man/man1/pdiff.1
-man/man1/psmandup.1
-man/man1/psset.1
-man/man1/texi2dvi4a2ps.1
+@man man/man1/a2ps.1
+@man man/man1/card.1
+@man man/man1/fixps.1
+@man man/man1/ogonkify.1
+@man man/man1/pdiff.1
+@man man/man1/psmandup.1
+@man man/man1/psset.1
+@man man/man1/texi2dvi4a2ps.1
+share/a2ps/
 share/a2ps/README
+share/a2ps/afm/
 share/a2ps/afm/fonts.map
 share/a2ps/afm/make_fonts_map.sh
 share/a2ps/afm/pbkd.afm
@@ -71,6 +60,7 @@ share/a2ps/afm/ptmi.afm
 share/a2ps/afm/ptmr.afm
 share/a2ps/afm/pzcmi.afm
 share/a2ps/afm/pzdr.afm
+share/a2ps/encoding/
 share/a2ps/encoding/ascii.edf
 share/a2ps/encoding/encoding.map
 share/a2ps/encoding/hp.edf
@@ -89,12 +79,18 @@ share/a2ps/encoding/iso9.edf
 share/a2ps/encoding/koi8.edf
 share/a2ps/encoding/mac.edf
 share/a2ps/encoding/ms-cp1250.edf
-share/a2ps/etc/a2ps.cfg
+share/a2ps/etc/
 share/a2ps/etc/a2ps-site.cfg
+@sample ${SYSCONFDIR}/a2ps-site.cfg
+share/a2ps/etc/a2ps.cfg
+@sample ${SYSCONFDIR}/a2ps.cfg
+share/a2ps/fonts/
 share/a2ps/fonts/pcfont.pfa
+share/a2ps/ppd/
 share/a2ps/ppd/README
 share/a2ps/ppd/level1.ppd
 share/a2ps/ppd/level2.ppd
+share/a2ps/ps/
 share/a2ps/ps/a2ps.hdr
 share/a2ps/ps/base.ps
 share/a2ps/ps/bold.pro
@@ -108,6 +104,7 @@ share/a2ps/ps/gray.pro
 share/a2ps/ps/gray2.pro
 share/a2ps/ps/matrix.pro
 share/a2ps/ps/ul.pro
+share/a2ps/sheets/
 share/a2ps/sheets/68000.ssh
 share/a2ps/sheets/a2psrc.ssh
 share/a2ps/sheets/ada.ssh
@@ -209,6 +206,14 @@ share/a2ps/sheets/wdiff.ssh
 share/a2ps/sheets/xs.ssh
 share/a2ps/sheets/yacc.ssh
 share/a2ps/sheets/zsh.ssh
+@comment share/emacs/
+@comment share/emacs/site-lisp/
+@comment share/emacs/site-lisp/a2ps-print.el
+@comment share/emacs/site-lisp/a2ps-print.elc
+@comment share/emacs/site-lisp/a2ps.el
+@comment share/emacs/site-lisp/a2ps.elc
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/a2ps.mo
 share/locale/cs/LC_MESSAGES/a2ps.mo
 share/locale/da/LC_MESSAGES/a2ps.mo
@@ -226,8 +231,10 @@ share/locale/ru/LC_MESSAGES/a2ps.mo
 share/locale/sl/LC_MESSAGES/a2ps.mo
 share/locale/sv/LC_MESSAGES/a2ps.mo
 share/locale/tr/LC_MESSAGES/a2ps.mo
+share/ogonkify/
 share/ogonkify/README
 share/ogonkify/adobe.enc
+share/ogonkify/afm/
 share/ogonkify/afm/pcrb-o.afm
 share/ogonkify/afm/pcrbo-o.afm
 share/ogonkify/afm/pcrr-o.afm
@@ -244,6 +251,7 @@ share/ogonkify/allchars.ps
 share/ogonkify/ascii.enc
 share/ogonkify/compose.ps
 share/ogonkify/cp1250.enc
+share/ogonkify/fonts/
 share/ogonkify/fonts/pcrb-o.pfa
 share/ogonkify/fonts/pcrbo-o.pfa
 share/ogonkify/fonts/pcrr-o.pfa
@@ -282,22 +290,4 @@ share/ogonkify/ptmb-o.ps
 share/ogonkify/ptmbi-o.ps
 share/ogonkify/ptmr-o.ps
 share/ogonkify/ptmri-o.ps
-@dirrm share/ogonkify/fonts
-@dirrm share/ogonkify/afm
-@dirrm share/ogonkify
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/a2ps/sheets
-@dirrm share/a2ps/ps
-@dirrm share/a2ps/ppd
-@dirrm share/a2ps/fonts
-@dirrm share/a2ps/encoding
-@dirrm share/a2ps/etc
-@dirrm share/a2ps/afm
-@dirrm share/a2ps
-@exec install-info --info-dir=%D/info %D/info/a2ps.info
-@exec install-info --info-dir=%D/info %D/info/ogonkify.info
-@exec install-info --info-dir=%D/info %D/info/regex.info
-@cwd ${SYSCONFDIR}
-@extra a2ps.cfg
-@extra a2ps-site.cfg
+%%SHARED%%

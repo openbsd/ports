@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/12/16 19:36:39 naddy Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/enscript.info
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:32:14 espie Exp $
 bin/diffpp
 bin/enscript
 bin/mkafmmap
 bin/over
 bin/sliceprint
 bin/states
-info/enscript.info
-man/man1/diffpp.1
-man/man1/enscript.1
-man/man1/sliceprint.1
-man/man1/states.1
+@info info/enscript.info
+@man man/man1/diffpp.1
+@man man/man1/enscript.1
+@man man/man1/sliceprint.1
+@man man/man1/states.1
+share/enscript/
 share/enscript/88591.enc
 share/enscript/885910.enc
 share/enscript/88592.enc
@@ -20,6 +20,7 @@ share/enscript/88595.enc
 share/enscript/88597.enc
 share/enscript/88599.enc
 share/enscript/a2ps.hdr
+share/enscript/afm/
 share/enscript/afm/agd.afm
 share/enscript/afm/agdo.afm
 share/enscript/afm/agw.afm
@@ -71,6 +72,7 @@ share/enscript/enscript-color.hdr
 share/enscript/enscript.hdr
 share/enscript/enscript.pro
 share/enscript/frame.hdr
+share/enscript/hl/
 share/enscript/hl/ada.st
 share/enscript/hl/asm.st
 share/enscript/hl/awk.st
@@ -151,33 +153,29 @@ share/enscript/pslatin1.enc
 share/enscript/simple.hdr
 share/enscript/squeeze.hdr
 share/enscript/vms.enc
+share/examples/enscript/
 share/examples/enscript/enscript.cfg-sample
+share/locale/
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/enscript.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/enscript.mo
+share/locale/fi/
+share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/enscript.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/enscript.mo
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/enscript.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/enscript.mo
+share/locale/sl/
+share/locale/sl/LC_MESSAGES/
 share/locale/sl/LC_MESSAGES/enscript.mo
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale
-@dirrm share/examples/enscript
-@dirrm share/enscript/hl
-@dirrm share/enscript/afm
-@dirrm share/enscript
-@exec install-info --info-dir=%D/info %D/info/enscript.info
 @cwd ${SYSCONFDIR}
 @extra enscript.cfg

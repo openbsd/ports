@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-dpi400,v 1.2 2001/10/05 22:49:29 heko Exp $
+@comment $OpenBSD: PLIST-dpi400,v 1.3 2004/09/15 18:32:14 espie Exp $
+lib/fonts/pk400/
 lib/fonts/pk400/cmb10.400pk
 lib/fonts/pk400/cmb10.438pk
 lib/fonts/pk400/cmb10.480pk
@@ -696,4 +697,3 @@ lib/fonts/pk400/linew10.691pk
 lib/fonts/pk400/linew10.829pk
 lib/fonts/pk400/linew10.995pk
 lib/fonts/pk400/logo50.400pk
-@dirrm lib/fonts/pk400

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1 2001/10/05 22:49:29 heko Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:32:14 espie Exp $
+lib/fonts/
+lib/fonts/pk300/
 lib/fonts/pk300/cmb10.200pk
 lib/fonts/pk300/cmb10.240pk
 lib/fonts/pk300/cmb10.300pk
@@ -1282,4 +1284,3 @@ lib/fonts/pk300/msym9.219pk
 lib/fonts/pk300/msym9.240pk
 lib/fonts/pk300/msym9.263pk
 lib/fonts/pk300/msym9.288pk
-@dirrm lib/fonts/pk300

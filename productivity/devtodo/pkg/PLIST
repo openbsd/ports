@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/11/02 20:16:35 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:32:53 espie Exp $
 bin/devtodo
 bin/tda
 bin/tdd
@@ -6,15 +6,17 @@ bin/tde
 bin/tdl
 bin/tdr
 bin/todo
-man/man1/devtodo.1
-man/man1/tda.1
-man/man1/tdd.1
-man/man1/tde.1
-man/man1/tdl.1
-man/man1/tdr.1
-man/man1/todo.1
+@man man/man1/devtodo.1
+@man man/man1/tda.1
+@man man/man1/tdd.1
+@man man/man1/tde.1
+@man man/man1/tdl.1
+@man man/man1/tdr.1
+@man man/man1/todo.1
+share/doc/devtodo/
 share/doc/devtodo/QuickStart
 share/doc/devtodo/README
+share/examples/devtodo/
 share/examples/devtodo/changelog2html
 share/examples/devtodo/changelog2todo
 share/examples/devtodo/scripts.sh
@@ -27,7 +29,5 @@ share/examples/devtodo/todo2pdf.README
 share/examples/devtodo/todo2pdf.sh
 share/examples/devtodo/todo2pdf.xslt
 share/examples/devtodo/todorc.example
-@dirrm share/examples/devtodo
-@dirrm share/doc/devtodo
 @cwd ${SYSCONFDIR}
 @extra todorc

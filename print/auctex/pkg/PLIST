@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/02/21 01:41:12 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:32:13 espie Exp $
+share/emacs/site-lisp/auctex/
 share/emacs/site-lisp/auctex/auc-old.el
 share/emacs/site-lisp/auctex/auc-old.elc
+share/emacs/site-lisp/auctex/auto/
 share/emacs/site-lisp/auctex/auto/.nosearch
 share/emacs/site-lisp/auctex/font-latex.el
 share/emacs/site-lisp/auctex/font-latex.elc
@@ -8,6 +10,7 @@ share/emacs/site-lisp/auctex/latex.el
 share/emacs/site-lisp/auctex/latex.elc
 share/emacs/site-lisp/auctex/multi-prompt.el
 share/emacs/site-lisp/auctex/multi-prompt.elc
+share/emacs/site-lisp/auctex/style/
 share/emacs/site-lisp/auctex/style/.nosearch
 share/emacs/site-lisp/auctex/style/amsart.el
 share/emacs/site-lisp/auctex/style/amsart.elc
@@ -126,6 +129,3 @@ share/emacs/site-lisp/auctex/tex.elc
 share/emacs/site-lisp/auctex/texmathp.el
 share/emacs/site-lisp/auctex/texmathp.elc
 share/emacs/site-lisp/tex-site.el
-@dirrm share/emacs/site-lisp/auctex/style
-@dirrm share/emacs/site-lisp/auctex/auto
-@dirrm share/emacs/site-lisp/auctex

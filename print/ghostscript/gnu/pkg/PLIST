@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/08/11 10:42:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:32:14 espie Exp $
 bin/bdftops
 bin/dvipdf
 bin/eps2eps
@@ -360,4 +360,3 @@ share/ghostscript/${VERSION}/lib/winmaps.ps
 share/ghostscript/${VERSION}/lib/wrfont.ps
 share/ghostscript/${VERSION}/lib/zeroline.ps
 %%gtk%%
-%%SHARED%%

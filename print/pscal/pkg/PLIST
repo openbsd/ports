@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/08/04 06:37:07 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:32:14 espie Exp $
 bin/pscal
+share/doc/pscal/
 share/doc/pscal/README
-@dirrm share/doc/pscal
