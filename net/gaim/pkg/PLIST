@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2003/10/12 02:20:44 brad Exp $
+@comment $OpenBSD: PLIST,v 1.25 2003/11/02 07:06:43 brad Exp $
 bin/gaim
 bin/gaim-remote
 include/gaim-remote/remote-socket.h
@@ -23,6 +23,7 @@ include/gaim-remote/remote.h
 @comment lib/gaim/spellchk.la
 @comment lib/gaim/ssl-gnutls.la
 @comment lib/gaim/ssl-nss.la
+@comment lib/gaim/ssl-openssl.la
 @comment lib/gaim/ssl.la
 @comment lib/gaim/statenotify.la
 @comment lib/gaim/ticker.la
@@ -49,8 +50,8 @@ share/locale/ko/LC_MESSAGES/gaim.mo
 share/locale/nl/LC_MESSAGES/gaim.mo
 share/locale/no/LC_MESSAGES/gaim.mo
 share/locale/pl/LC_MESSAGES/gaim.mo
+share/locale/pt/LC_MESSAGES/gaim.mo
 share/locale/pt_BR/LC_MESSAGES/gaim.mo
-share/locale/pt_PT/LC_MESSAGES/gaim.mo
 share/locale/ro/LC_MESSAGES/gaim.mo
 share/locale/ru/LC_MESSAGES/gaim.mo
 share/locale/sk/LC_MESSAGES/gaim.mo
@@ -277,6 +278,7 @@ share/pixmaps/gaim/status/default/napster.png
 share/pixmaps/gaim/status/default/notauthorized.png
 share/pixmaps/gaim/status/default/occupied.png
 share/pixmaps/gaim/status/default/offline.png
+share/pixmaps/gaim/status/default/secure.png
 share/pixmaps/gaim/status/default/trepia.png
 share/pixmaps/gaim/status/default/wireless.png
 share/pixmaps/gaim/status/default/yahoo.png
@@ -319,10 +321,10 @@ share/sounds/gaim/send.wav
 @comment @dirrm share/locale/ru
 @comment @dirrm share/locale/ro/LC_MESSAGES
 @comment @dirrm share/locale/ro
-@comment @dirrm share/locale/pt_PT/LC_MESSAGES
-@comment @dirrm share/locale/pt_PT
 @comment @dirrm share/locale/pt_BR/LC_MESSAGES
 @comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/pt/LC_MESSAGES
+@comment @dirrm share/locale/pt
 @comment @dirrm share/locale/pl/LC_MESSAGES
 @comment @dirrm share/locale/pl
 @comment @dirrm share/locale/no/LC_MESSAGES

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.19 2003/10/12 02:20:44 brad Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.20 2003/11/02 07:06:43 brad Exp $
 lib/gaim/autorecon.so
 lib/gaim/docklet.so
 lib/gaim/gaim-remote.so
@@ -18,7 +18,8 @@ lib/gaim/libzephyr.so
 lib/gaim/notify.so
 lib/gaim/spellchk.so
 lib/gaim/ssl-gnutls.so
-@comment lib/gaim/ssl-nss.so
+lib/gaim/ssl-nss.so
+lib/gaim/ssl-openssl.so
 lib/gaim/ssl.so
 lib/gaim/statenotify.so
 lib/gaim/ticker.so
