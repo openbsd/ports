@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_Makefile_in,v 1.1 2003/04/29 14:22:48 wilfried Exp $
+--- docs/Makefile.in.orig	Tue Apr 29 20:13:54 2003
++++ docs/Makefile.in	Tue Apr 29 20:14:17 2003
+@@ -467,7 +467,7 @@ install-data-local: 
+ 	-@INSTALL@ -m 0644 $(srcdir)/images/*.gif $(srcdir)/images/*.png $(DESTDIR)$(TARGET_DIR)/images
+ 	-@INSTALL@ -m 0644 $(srcdir)/api/*.html $(srcdir)/api/*.sgml $(DESTDIR)$(TARGET_DIR)/api
+ 	-@INSTALL@ -m 0644 $(srcdir)/api/chapters/*.sgml $(DESTDIR)$(TARGET_DIR)/api/chapters
+-	-@INSTALL@ -m 0644 $(srcdir)/api/images/*.png $(DESTDIR)$(TARGET_DIR)/api/images
++	-@INSTALL@ -m 0644 $(srcdir)/api/images/*.png $(srcdir)/api/images/*.sxd $(DESTDIR)$(TARGET_DIR)/api/images
+ 
+ uninstall:
+ 	@rm -rf $(TARGET_DIR)
