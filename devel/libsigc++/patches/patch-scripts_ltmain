@@ -1,0 +1,75 @@
+$OpenBSD: patch-scripts_ltmain,v 1.1 2001/06/20 11:14:17 shell Exp $
+--- scripts/ltmain.sh.orig	Wed Jun 20 17:07:35 2001
++++ scripts/ltmain.sh	Wed Jun 20 17:12:10 2001
+@@ -1079,6 +1079,9 @@
+ 	    # These systems don't actually have c library (as such)
+ 	    continue
+ 	    ;;
++	  *-*-openbsd*)
++	    continue
++	    ;;
+ 	  esac
+ 	elif test "$arg" = "-lm"; then
+ 	  case "$host" in
+@@ -1103,6 +1106,10 @@
+ 
+       -o) prev=output ;;
+ 
++      -?thread)
++        deplibs="$deplibs $arg"
++        ;;
++
+       -release)
+ 	prev=release
+ 	continue
+@@ -1799,6 +1806,9 @@
+ 	  # rhapsody is a little odd...
+ 	  deplibs="$deplibs -framework System"
+ 	  ;;
++	*-*-openbsd*)
++	  # do not include libc due to us having libc/libc_r ?
++	  ;;
+ 	*)
+ 	  # Add libc to deplibs on all other systems.
+ 	  deplibs="$deplibs -lc"
+@@ -3567,40 +3577,6 @@
+     # Exit here if they wanted silent mode.
+     test "$show" = : && exit 0
+ 
+-    echo "----------------------------------------------------------------------"
+-    echo "Libraries have been installed in:"
+-    for libdir in $libdirs; do
+-      echo "   $libdir"
+-    done
+-    echo
+-    echo "If you ever happen to want to link against installed libraries"
+-    echo "in a given directory, LIBDIR, you must either use libtool, and"
+-    echo "specify the full pathname of the library, or use \`-LLIBDIR'"
+-    echo "flag during linking and do at least one of the following:"
+-    if test -n "$shlibpath_var"; then
+-      echo "   - add LIBDIR to the \`$shlibpath_var' environment variable"
+-      echo "     during execution"
+-    fi
+-    if test -n "$runpath_var"; then
+-      echo "   - add LIBDIR to the \`$runpath_var' environment variable"
+-      echo "     during linking"
+-    fi
+-    if test -n "$hardcode_libdir_flag_spec"; then
+-      libdir=LIBDIR
+-      eval flag=\"$hardcode_libdir_flag_spec\"
+-
+-      echo "   - use the \`$flag' linker flag"
+-    fi
+-    if test -n "$admincmds"; then
+-      echo "   - have your system administrator run these commands:$admincmds"
+-    fi
+-    if test -f /etc/ld.so.conf; then
+-      echo "   - have your system administrator add LIBDIR to \`/etc/ld.so.conf'"
+-    fi
+-    echo
+-    echo "See any operating system documentation about shared libraries for"
+-    echo "more information, such as the ld(1) and ld.so(8) manual pages."
+-    echo "----------------------------------------------------------------------"
+     exit 0
+     ;;
+ 
