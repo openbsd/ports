@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.271 2003/05/14 13:02:28 margarida Exp $
+# $OpenBSD: Makefile,v 1.272 2003/05/22 14:23:15 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -46,7 +46,6 @@
      SUBDIR += dxpc
      SUBDIR += echoping
      SUBDIR += edonkey
-     SUBDIR += edonkey-gui
      SUBDIR += epic4
      SUBDIR += ethereal
      SUBDIR += ethereal,no_x11
