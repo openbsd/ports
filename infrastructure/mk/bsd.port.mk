@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.559 2003/07/18 19:02:13 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.560 2003/07/23 09:58:33 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -38,9 +38,6 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 # NO_PKG_REGISTER - Don't register a port install as a package.
 # SCRIPTS_ENV	- Additional environment vars passed to scripts in
 #                 ${SCRIPTDIR} executed by bsd.port.mk.
-# DEPENDS		- A list of other ports this package depends on being
-#				  made first.
-#
 #
 # Variables to change if you want a special behavior:
 #
@@ -395,9 +392,8 @@ _ALL_COOKIES=${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
 ${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_REGRESS_COOKIE} \
 ${_PACKAGE_COOKIES} \
 ${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
-${_WRKDIR_COOKIE} ${_DEPlib_COOKIES} ${_DEPmisc_COOKIES} \
-${_DEPfetch_COOKIES} ${_DEPbuild_COOKIES} ${_DEPrun_COOKIES} \
-${_DEPregress_COOKIES}
+${_WRKDIR_COOKIE} ${_DEPlib_COOKIES} ${_DEPbuild_COOKIES} \
+${_DEPrun_COOKIES} ${_DEPregress_COOKIES}
 
 _MAKE_COOKIE=touch -f
 
@@ -1085,14 +1081,12 @@ _flavor_fragment= \
 
 # Various dependency styles
 
-_fetch_depends_fragment= \
+_build_depends_fragment= \
 	if pkg dependencies check $$pkg; then \
 		found=true; \
 	fi
-
-_build_depends_fragment=${_fetch_depends_fragment}
-_run_depends_fragment=${_fetch_depends_fragment}
-_regress_depends_fragment=${_fetch_depends_fragment}
+_run_depends_fragment=${_build_depends_fragment}
+_regress_depends_fragment=${_build_depends_fragment}
 
 .if defined(NO_SHARED_LIBS)
 _noshared=-noshared
@@ -1123,22 +1117,14 @@ _lib_depends_fragment = \
 	done; $$bad || found=true
 
 
-_misc_depends_fragment = :
-
-depends: lib-depends misc-depends fetch-depends build-depends run-depends\
-	regress-depends
-
-# Let DEPENDS behave like the others
-.if defined(DEPENDS)
-MISC_DEPENDS=${DEPENDS:S/^/nonexistent::/}
-.endif
+depends: lib-depends build-depends run-depends regress-depends
 
 # and the rules for the actual dependencies
 
 _print-packagename:
 	@echo ${FULLPKGNAME${SUBPACKAGE}}
 
-.for _DEP in fetch build run lib misc regress
+.for _DEP in build run lib regress
 _DEP${_DEP}_COOKIES=
 .  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
 .    for _i in ${${_DEP:U}_DEPENDS}
@@ -1268,7 +1254,7 @@ manpages-check: ${_FAKE_COOKIE}
 # IMPORTANT: pre-fetch/do-fetch/post-fetch MUST be designed so that they
 # can be run several times in a row.
 
-fetch: fetch-depends
+fetch:
 # See ports/infrastructure/templates/Makefile.template
 	@${ECHO_MSG} "===>  Checking files for ${FULLPKGNAME}${_MASTER}"
 .  if target(pre-fetch)
@@ -1378,13 +1364,13 @@ _PACKAGE_DEPS+=${_BULK_COOKIE}
 # The cookie's recipe hold the real rule for each of those targets.
 
 extract: ${_EXTRACT_COOKIE}
-patch: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPmisc_COOKIES} \
+patch: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
 	${_PATCH_COOKIE}
-distpatch: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPmisc_COOKIES} \
+distpatch: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
 	${_DISTPATCH_COOKIE}
-configure: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPmisc_COOKIES} \
+configure: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
 	${_CONFIGURE_COOKIE}
-all build: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPmisc_COOKIES} \
+all build: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
 	${_BUILD_COOKIE}
 install: ${_INSTALL_DEPS}
 fake: ${_FAKE_COOKIE}
@@ -1422,7 +1408,7 @@ ${_WRKDIR_COOKIE}:
 	@${_MAKE_COOKIE} $@
 
 ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE}
-	@cd ${.CURDIR} && exec ${MAKE} checksum build-depends lib-depends misc-depends
+	@cd ${.CURDIR} && exec ${MAKE} checksum build-depends lib-depends
 	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}${_MASTER}"
 .if target(pre-extract)
 	@cd ${.CURDIR} && exec ${MAKE} pre-extract
@@ -2037,13 +2023,10 @@ package-name:
 
 # Internal variables, used by dependencies targets
 # Only keep pkg:dir spec
-.if defined(LIB_DEPENDS) || defined(MISC_DEPENDS)
-_ALWAYS_DEP2 = ${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/} \
-	${MISC_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
-_ALWAYS_DEP3 = ${MISC_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+.if defined(LIB_DEPENDS)
+_ALWAYS_DEP2 = ${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
 _ALWAYS_DEP= ${_ALWAYS_DEP2:C/[^:]*://}
 .else
-_ALWAYS_DEP3=
 _ALWAYS_DEP2=
 _ALWAYS_DEP=
 .endif
@@ -2057,9 +2040,8 @@ _RUN_DEP=
 .endif
 
 
-.if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS)
-_BUILD_DEP2 = ${FETCH_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/} \
-	${BUILD_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+.if defined(BUILD_DEPENDS)
+_BUILD_DEP2 = ${BUILD_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
 _BUILD_DEP = ${_BUILD_DEP2:C/[^:]*://}
 .else
 _BUILD_DEP2=
@@ -2067,8 +2049,6 @@ _BUILD_DEP=
 .endif
 
 _LIB_DEP2= ${LIB_DEPENDS}
-_RUN_DEP2+= ${_ALWAYS_DEP3}
-_BUILD_DEP2+=${_ALWAYS_DEP3}
 
 clean-depends:
 .if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
@@ -2489,8 +2469,8 @@ homepage-links:
    delete-package delete-package-links depends depends-list \
    describe distclean do-build do-configure do-extract \
    do-fetch do-install do-package do-patch extract list-distfiles \
-   fetch fetch-depends install lib-depends makesum \
-   misc-depends package package-depends package-links package-name \
+   fetch install lib-depends makesum \
+   package package-depends package-links package-name \
    package-noinstall patch plist update-plist update-patches post-build \
    post-configure post-extract post-fetch post-install post-package \
    post-patch pre-build pre-configure \
