@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2001/07/03 19:12:55 jsyn Exp $
+# $OpenBSD: Makefile,v 1.3 2001/07/21 20:46:59 jsyn Exp $
 
 COMMENT=		"network performance measuring tool"
 
 DISTNAME=		oproute-0.7
 CATEGORIES=    		net
-NEED_VERSION=		1.417
+NEED_VERSION=		1.425
 EXTRACT_SUFX=		.tgz
 
 HOMEPAGE=		http://www.oproute.net/
 
-MAINTAINER=		Jason Peel <jsyn@nthought.com>
+MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes 
 PERMIT_PACKAGE_FTP=	Yes 
