@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2000/05/24 04:23:21 form Exp $
+# $OpenBSD: Makefile,v 1.32 2000/06/07 03:38:12 form Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 DISTNAME=	postgresql-${VERS}
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-VERS=		7.0
+VERS=		7.0.2
 
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/db/www.postgresql.org/pub/%SUBDIR%/ \

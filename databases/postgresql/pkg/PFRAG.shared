@@ -1,6 +1,6 @@
 pgsql/lib/libecpg.so
 pgsql/lib/libecpg.so.3
-pgsql/lib/libecpg.so.3.1.0
+pgsql/lib/libecpg.so.3.1.1
 pgsql/lib/libpgeasy.so
 pgsql/lib/libpgeasy.so.2
 pgsql/lib/libpgeasy.so.2.1

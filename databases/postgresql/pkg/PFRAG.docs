@@ -7,7 +7,6 @@ share/doc/pgsql/README.locale
 share/doc/pgsql/README.mb
 share/doc/pgsql/README.mb.jp
 share/doc/pgsql/TODO
-share/doc/pgsql/admin.ps.gz
 share/doc/pgsql/admin/admin.htm
 share/doc/pgsql/admin/admin.html
 share/doc/pgsql/admin/biblio.htm
@@ -78,7 +77,6 @@ share/doc/pgsql/admin/trouble.htm
 share/doc/pgsql/admin/trouble1721.htm
 share/doc/pgsql/admin/trouble1738.htm
 share/doc/pgsql/admin/y2k.htm
-share/doc/pgsql/adminA4.ps.gz
 share/doc/pgsql/internals.ps
 share/doc/pgsql/postgres/about.htm
 share/doc/pgsql/postgres/advanced.htm
@@ -497,7 +495,6 @@ share/doc/pgsql/postgres/xoper.htm
 share/doc/pgsql/postgres/xplang.htm
 share/doc/pgsql/postgres/xtypes.htm
 share/doc/pgsql/postgres/y2k.htm
-share/doc/pgsql/programmer.ps.gz
 share/doc/pgsql/programmer/arch-pg.htm
 share/doc/pgsql/programmer/biblio.htm
 share/doc/pgsql/programmer/bki.htm
@@ -669,8 +666,6 @@ share/doc/pgsql/programmer/xoper.htm
 share/doc/pgsql/programmer/xplang.htm
 share/doc/pgsql/programmer/xtypes.htm
 share/doc/pgsql/programmer/y2k.htm
-share/doc/pgsql/programmerA4.ps.gz
-share/doc/pgsql/tutorial.ps.gz
 share/doc/pgsql/tutorial/about.htm
 share/doc/pgsql/tutorial/advanced.htm
 share/doc/pgsql/tutorial/advanced1511.htm
@@ -707,8 +702,6 @@ share/doc/pgsql/tutorial/terminology.htm
 share/doc/pgsql/tutorial/tutorial.htm
 share/doc/pgsql/tutorial/tutorial.html
 share/doc/pgsql/tutorial/y2k.htm
-share/doc/pgsql/tutorialA4.ps.gz
-share/doc/pgsql/user.ps.gz
 share/doc/pgsql/user/about.htm
 share/doc/pgsql/user/app-createdb.htm
 share/doc/pgsql/user/app-createlang.htm
@@ -877,7 +870,6 @@ share/doc/pgsql/user/user.htm
 share/doc/pgsql/user/user.html
 share/doc/pgsql/user/utilities.htm
 share/doc/pgsql/user/y2k.htm
-share/doc/pgsql/userA4.ps.gz
 @dirrm share/doc/pgsql/user
 @dirrm share/doc/pgsql/tutorial
 @dirrm share/doc/pgsql/programmer

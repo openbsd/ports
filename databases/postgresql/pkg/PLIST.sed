@@ -61,6 +61,7 @@ pgsql/lib/local1_template1.bki.source
 pgsql/lib/local1_template1.description
 pgsql/lib/pg_geqo.sample
 pgsql/lib/pg_hba.conf.sample
+pgsql/lib/pg_ident.conf.sample
 pgsql/lib/pg_options.sample
 pgsql/lib/postmaster.opts.default.sample
 %%SHARED%%
