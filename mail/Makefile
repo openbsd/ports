@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 1998/05/17 04:21:01 angelos Exp $
+# $OpenBSD: Makefile,v 1.15 1998/06/28 21:51:32 marc Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -35,7 +35,7 @@
 #    SUBDIR += popper
 #    SUBDIR += premail
      SUBDIR += procmail
-     SUBDIR += qpopper
+#    SUBDIR += qpopper
 #    SUBDIR += smail
 #    SUBDIR += tkrat
      SUBDIR += xfaces
