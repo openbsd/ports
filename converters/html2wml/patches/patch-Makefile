@@ -1,35 +1,30 @@
-$OpenBSD: patch-Makefile,v 1.1 2001/06/23 04:37:25 shell Exp $
---- Makefile.orig	Tue Jun 19 10:14:08 2001
-+++ Makefile	Sat Jun 23 09:28:48 2001
-@@ -1,8 +1,7 @@
+$OpenBSD: patch-Makefile,v 1.2 2002/01/01 13:11:37 shell Exp $
+--- Makefile.orig	Thu Dec 27 02:57:40 2001
++++ Makefile	Tue Jan  1 21:05:11 2002
+@@ -1,6 +1,6 @@
  # =========================================================================== #
  # Configuration 
- 
 -PREFIX=/usr/local
--CGIDIR=/home/httpd/cgi-bin
-+CGIDIR=${PREFIX}
++#PREFIX=/usr/local
+ CGIDIR=/home/httpd/cgi-bin
  
  # =========================================================================== #
- # Do not edit the following unless you're sure about what're you're doing
-@@ -12,8 +11,9 @@
- 
+@@ -12,7 +12,7 @@
  # Standard subdirectories locations
  BINDIR=$(PREFIX)/bin
--MANDIR=$(PREFIX)/man
--DOCDIR=$(PREFIX)/doc/html2wml-$(VERSION)
-+DATADIR=$(PREFIX)/share
-+MANDIR=$(DATADIR)/man
-+DOCDIR=$(DATADIR)/doc/html2wml
+ MANDIR=$(PREFIX)/man
+-DOCDIR=$(PREFIX)/doc/html2wml
++DOCDIR=$(PREFIX)/share/doc/html2wml
  
  MAN1DIR=$(MANDIR)/man1
  
-@@ -35,8 +35,8 @@
+@@ -34,8 +34,8 @@
  	install -m 555 html2wml.cgi $(BINDIR)/html2wml
- 	install -m 444 doc/html2wml.man $(MAN1DIR)/html2wml.1
- 	install -m 444 ARTISTIC COPYING INSTALL NEWS NOTES README TODO ChangeLog $(DOCDIR)
--	make -C t/ install DOCDIR=$(DOCDIR)
+ 	install -m 444 doc/html2wml.man $(MAN1DIR)/html2wml.1 
+ 	install -m 444 COPYING INSTALL NEWS NOTES README TODO ChangeLog $(DOCDIR) 
+-	make -C t/ install DOCDIR=$(DOCDIR) 
 -	make -C doc/ install DOCDIR=$(DOCDIR)
-+	gmake -C t/ install DOCDIR=$(DOCDIR)
++	gmake -C t/ install DOCDIR=$(DOCDIR) 
 +	gmake -C doc/ install DOCDIR=$(DOCDIR)
  
  installcgi: check-config
