@@ -1,0 +1,32 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/02/13 06:52:32 fgsch Exp $
+
+--- Makefile.orig	Sat Jun 15 06:02:42 1991
++++ Makefile	Tue Feb 13 03:13:23 2001
+@@ -1,21 +1,21 @@
+ SHELL = /bin/sh
+-DESTDIR = /usr/local/bin
+-MANUAL = /usr/local/man/man1/kbanner.1
++BINDIR = $(PREFIX)/bin
++MANUAL = $(PREFIX)/man/man1/kbanner.1
+ CFLAGS = -O
+ OBJ = kbanner.o font1.o font2.o font3.o
+ 
+ .SUFFIXES: .c .o
+ 
+ .c.o:
+-	cc -c $(CFLAGS) $<
++	$(CC) -c $(CFLAGS) $<
+ 
+ kbanner: $(OBJ)
+-	cc $(OBJ) -o kbanner
++	$(CC) $(OBJ) -o kbanner
+ 	strip kbanner
+ 
+ clean:
+ 	rm -f *.o core
+ 
+ install: kbanner
+-	cp kbanner $(DESTDIR)/
+-	cp kbanner.1 $(MANUAL)
++	$(BSD_INSTALL_PROGRAM) kbanner $(BINDIR)
++	$(BSD_INSTALL_MAN) kbanner.1 $(MANUAL)

@@ -1,0 +1,68 @@
+$OpenBSD: patch-kbanner_c,v 1.1.1.1 2001/02/13 06:52:32 fgsch Exp $
+
+--- kbanner.c.orig	Tue Feb 13 03:27:50 2001
++++ kbanner.c	Tue Feb 13 03:33:17 2001
+@@ -1,6 +1,11 @@
+ /* Kanji Banner Version 2.1 by Koichi Yasuoka, October 15, 1993 */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
++
++void	kbanner __P((FILE *));
++int	kgetchar __P((FILE *));
++void	kputchar __P((unsigned int));
+ 
+ extern char *malloc();
+ extern unsigned short
+@@ -82,6 +87,7 @@
+   exit(1);\
+ }
+ 
++int
+ main(argc,argv)
+ int argc;
+ char *argv[];
+@@ -130,7 +136,7 @@
+     exit(0);
+   }
+   while(argc){
+-    if(src=fopen(*argv,"r")){
++    if((src=fopen(*argv,"r"))){
+       kbanner(src);
+       fclose(src);
+     }
+@@ -142,6 +148,7 @@
+   exit(0);
+ }
+ 
++void
+ kbanner(fp)
+ FILE *fp;
+ {
+@@ -199,6 +206,7 @@
+   kputchar(-1);
+ }
+ 
++void
+ kputchar(c)
+ unsigned int c;
+ {
+@@ -275,10 +283,11 @@
+   col++;
+ }
+ 
++int
+ kgetchar(fp)
+ FILE *fp;
+ {
+-  int i,j,k,l;
++  int i,j;
+   if(mime==0)
+     return(fgetc(fp));
+   if(bufindex<buflength)
+@@ -351,4 +360,5 @@
+     bufindex=0;
+     return(((buf[4]&63)<<2)|((buf[5]&48)>>4));
+   }
++  return(0);
+ }

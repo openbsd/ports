@@ -1,0 +1,10 @@
+--- kbanner.1.orig	Thu Oct 14 23:02:37 1993
++++ kbanner.1	Tue Feb 13 03:39:07 2001
+@@ -44,6 +44,6 @@
+ Only ISO-2022-JP is available for MIME.
+ .SH "SEE ALSO"
+ .PP
+-banner(1), or banner(6).
++banner(1).
+ .SH AUTHOR
+ Koichi Yasuoka
