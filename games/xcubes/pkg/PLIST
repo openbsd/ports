@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/06/19 10:12:23 kevlo Exp $
 bin/xcubes
-man/man1/xcubes.1
 lib/X11/app-defaults/Cubes
+man/man1/xcubes.1

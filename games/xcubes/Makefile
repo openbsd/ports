@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/04 09:29:15 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2000/06/19 10:12:08 kevlo Exp $
 #
 
-DISTNAME=	xcubes-5.4.4
+DISTNAME=	xcubes-5.5.2
 CATEGORIES=	games
-NEED_VERSION=	1.191
+NEED_VERSION=	1.307
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -17,8 +17,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles
 
 WRKDIST=	${WRKDIR}/xcubes
-USE_IMAKE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=	imake
 
 post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/xcubes ${PREFIX}/bin
