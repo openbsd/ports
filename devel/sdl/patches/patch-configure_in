@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.9 2001/07/11 16:45:45 pvalchev Exp $
+$OpenBSD: patch-configure_in,v 1.10 2001/07/20 03:07:07 pvalchev Exp $
 --- configure.in.orig	Mon Jun 18 09:21:38 2001
-+++ configure.in	Wed Jul 11 10:08:01 2001
++++ configure.in	Thu Jul 19 20:38:01 2001
 @@ -14,9 +14,9 @@ dnl Set various version strings - taken 
  #
  SDL_MAJOR_VERSION=1
@@ -26,7 +26,15 @@ $OpenBSD: patch-configure_in,v 1.9 2001/07/11 16:45:45 pvalchev Exp $
          ],[
            int arg = SNDCTL_DSP_SETFRAGMENT;
          ],[
-@@ -1385,8 +1389,10 @@ case "$target" in
+@@ -289,6 +293,7 @@ CheckOPENBSDAUDIO()
+ [  --enable-openbsdaudio   OpenBSD native audio support [default=no]],
+                   , enable_openbsdaudio=no)
+     if test x$enable_audio = xyes -a x$enable_openbsdaudio = xyes; then
++	CFLAGS="$CFLAGS -DOPENBSD_SUPPORT"
+         SYSTEM_LIBS="$SYSTEM_LIBS $ESD_LIBS"
+         AUDIO_SUBDIRS="$AUDIO_SUBDIRS openbsd"
+         AUDIO_DRIVERS="$AUDIO_DRIVERS openbsd/libaudio_openbsd.la"
+@@ -1385,8 +1390,10 @@ case "$target" in
          if test x$enable_timers = xyes; then
              COPY_ARCH_SRC(src/timer, linux, SDL_systimer.c)
          fi
@@ -39,7 +47,7 @@ $OpenBSD: patch-configure_in,v 1.9 2001/07/11 16:45:45 pvalchev Exp $
          ;;
      *-*-sysv5*)
          ARCH=sysv5
-@@ -1959,7 +1965,7 @@ if test $ARCH = solaris; then
+@@ -1959,7 +1966,7 @@ if test $ARCH = solaris; then
  fi
  
  if test $ARCH = openbsd; then
