@@ -1,0 +1,24 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/11/14 18:04:31 heko Exp $
+--- Makefile.in.orig	Thu Jun 28 20:37:37 2001
++++ Makefile.in	Wed Nov 14 01:52:25 2001
+@@ -1,5 +1,5 @@
+ # Makefile for golem
+-SUBDIRS=	src plugins doc util
++SUBDIRS=	src @BUILD_PLUGINS@ doc util
+ 
+ @SET_MAKE@
+ 
+@@ -21,11 +21,12 @@ distclean: clean
+ 
+ full: clean all
+ 
+-install-bin:
++install-bin: @INSTALL_PLUGINS@
+ 	@INSTALL@ -d @prefix@/bin
+ 	@INSTALL@ build-bin/golem @prefix@/bin/
+ 	@INSTALL@ build-bin/golem.install @prefix@/bin/
+ 
++install-plugins:
+ 	@INSTALL@ -d @prefix@/lib/golem/plugins
+ 	for i in build-plugin/* ; do \
+ 		@INSTALL@ $$i @prefix@/lib/golem/plugins/ ; \

@@ -1,0 +1,17 @@
+$OpenBSD: patch-sample_golem_golemrc,v 1.1.1.1 2001/11/14 18:04:31 heko Exp $
+--- sample.golem/golemrc.orig	Sun Sep 30 12:47:15 2001
++++ sample.golem/golemrc	Sun Sep 30 12:48:46 2001
+@@ -136,7 +136,12 @@ keys {
+ # wmclass_defs after mwm_hints if you want it to override
+ # what mwmhints has set.
+ #
+-.include "plugins/pier/rc"
++
++# OpenBSD port
++# this plug-in has conflicts with simple-menu plugin,
++# so we comment it by default.
++#.include "plugins/pier/rc"
++
+ .include "plugins/simple_menus/rc"
+ .include "plugins/pager/rc"
+ .include "plugins/box_iconify/rc"
