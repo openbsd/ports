@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2002/07/06 10:24:51 shell Exp $
+# $OpenBSD: Makefile,v 1.20 2002/07/30 10:23:43 shell Exp $
 
 COMMENT=	"basic utilities for writing tests in perl"
 
-VERSION=	0.45
+VERSION=	0.46
 DISTNAME=	Test-Simple-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.525
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Test/}
 
@@ -19,7 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
 
+BUILD_DEPENDS=	:p5-Test-Harness-*:devel/p5-Test-Harness
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 REGRESS_TARGET=	test
-REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>
