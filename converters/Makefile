@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/07/22 21:33:56 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2003/09/29 21:32:46 naddy Exp $
 #
 
     SUBDIR += base64
@@ -22,6 +22,7 @@
     SUBDIR += p5-Unicode-MapUTF8
     SUBDIR += p5-Unicode-String
     SUBDIR += ppmtoTbmp
+    SUBDIR += qprint
     SUBDIR += recode
     SUBDIR += rpm2cpio
     SUBDIR += trans
