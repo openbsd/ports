@@ -1,5 +1,5 @@
 # $FreeBSD: ports/databases/xmysqladmin/Makefile,v 1.25 1999/11/23 02:59:09 billf Exp $
-# $OpenBSD: Makefile,v 1.6 2000/03/24 23:28:05 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/09 09:44:07 turan Exp $
 
 DISTNAME=	xmysqladmin-1.0
 CATEGORIES=	databases
@@ -14,6 +14,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+FAKE=	Yes
+FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 
 LIB_DEPENDS=	xforms.0::x11/xforms \
 		mysqlclient.6::databases/mysql
