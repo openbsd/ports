@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2002/05/13 23:31:26 espie Exp $
-# Original from: Ejovi Nuwere <ejovi@ejovi.net>
+# $OpenBSD: Makefile,v 1.15 2002/10/27 21:07:54 naddy Exp $
 
 COMMENT=	"run two shells in a split window/terminal"
 
 DISTNAME=	splitvt-1.6.3
 CATEGORIES=	misc
-NEED_VERSION=	1.515
+
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=utils/console/}
 
 # License: GPL
@@ -17,6 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	Configure
 ALL_TARGET=
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/splitvt ${PREFIX}/bin

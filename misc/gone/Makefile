@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/12 07:40:40 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/27 21:07:53 naddy Exp $
 
 COMMENT=	"terminal locking utility"
 
 DISTNAME=	gone-1.3.2a
 CATEGORIES=	misc 
-NEED_VERSION=	1.414
 
 HOMEPAGE=	http://jaguar.ir.miami.edu/~marcus/
 
@@ -19,6 +18,8 @@ MASTER_SITES=	${HOMEPAGE}
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	with_setuid="no"
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gone ${PREFIX}/bin

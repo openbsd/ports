@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 21:09:18 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/10/27 21:07:53 naddy Exp $
 
 COMMENT=		"official distributed.net client"
 
@@ -17,7 +17,6 @@ A=			sparc-aout
 PKGNAME=		dnetc-${V}.${SV}
 DISTNAME=		dnetc${SV}-openbsd-${A}
 CATEGORIES=		misc
-NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.distributed.net/
 
@@ -33,6 +32,7 @@ PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 
 NO_BUILD=		Yes
+NO_REGRESS=		Yes
 
 WRKSRC=			${WRKDIR}
 

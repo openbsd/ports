@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/10/12 17:31:43 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/27 21:07:53 naddy Exp $
 
 COMMENT=	"perl scripts for migrating system information to LDAP"
 
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	openldap:openldap-client-*:databases/openldap
 
-NO_BUILD=	YES
+NO_BUILD=	Yes
+NO_REGRESS=	Yes
 SUBST_VARS=	PKGNAME
 WRKDIST=	${WRKDIR}/${DISTNAME}-44
 MTSDIR=		${PREFIX}/share/${PKGNAME}/

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2002/03/21 21:09:18 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/27 21:07:53 naddy Exp $
 
 COMMENT=	"nice X11-based calendar/scheduling tool (using XView)"
 
 DISTNAME=	calentool-2.3
 CATEGORIES=	misc x11
-NEED_VERSION=	1.515
+
 MASTER_SITES = 	http://www.darwinsys.com/freeware/
 
 PERMIT_PACKAGE_CDROM=	No Fee
@@ -27,5 +27,7 @@ FAKE_FLAGS=${MAKE_FLAGS}
 pre-configure:
 	@mkdir -p ${WRKSRC}/include/images
 	@cp ${FILESDIR}/hglass.cursor	${WRKSRC}/include/images
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

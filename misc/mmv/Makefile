@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2002/03/21 21:09:19 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/27 21:07:54 naddy Exp $
 
 COMMENT=	"move/copy/append/link multiple files with wildcards"
 
 DISTNAME=	mmv
 PKGNAME=	mmv-1.01b
 CATEGORIES=	misc
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.unix/volume21/mmv/
 DISTFILES=	part01.Z part02.Z
 
@@ -27,5 +27,7 @@ PATCH_DIST_ARGS= -d ${WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP} mmv.c
 
 post-extract:
 	@cd ${WRKSRC} && cat mmv.c.? >mmv.c && rm mmv.c.?
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/13 23:31:26 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/27 21:07:53 naddy Exp $
 
 COMMENT=	"bible reader"
 
@@ -7,7 +7,6 @@ DISTNAME=	brs.4.00.l1
 PKGNAME=	brs-4.00l1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/religion/}
-NEED_VERSION=	1.515
 
 MAINTAINER=	J Shoemaker <shoemaker@softhome.net>
 
@@ -22,5 +21,7 @@ ALL_TARGET=		bible
 
 MAKE_FLAGS=	DEST=${PREFIX}
 FAKE_FLAGS=	DEST=${WRKINST}${PREFIX}
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

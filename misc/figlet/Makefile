@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/09/07 21:10:41 avsm Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/27 21:07:53 naddy Exp $
 
 COMMENT=	"generates ASCII banner art"
 
@@ -22,6 +22,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		figlet-contributed-06092002${EXTRACT_SUFX}:0
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		DEFAULTFONTDIR=${PREFIX}/share/figlet
+
+NO_REGRESS=	Yes
 
 post-patch:
 	@perl -pi -e 's|%%OPENBSDFIGLET%%|${LOCALBASE}/share/figlet|g' ${WRKBUILD}/figlist

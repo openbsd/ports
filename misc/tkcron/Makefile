@@ -1,16 +1,10 @@
-# OpenBSD makefile for:	tkcron-2.12
-# Version required:	2.12
-# Date created:		May 20 1998
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.13 2001/11/13 22:13:24 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.14 2002/10/27 21:07:54 naddy Exp $
 
 COMMENT=	"frontend to crontab"
 
 DISTNAME=	tkcron-2.12
 CATEGORIES=	misc 
-NEED_VERSION=	1.496
+
 MASTER_SITES=	ftp://ftp.neosoft.com/languages/tcl/alcatel/code/
 EXTRACT_SUFX=	.tcl.gz
 
@@ -28,5 +22,7 @@ WRKDIST=	${WRKDIR}
 
 post-extract:
 	@cp ${FILESDIR}/Makefile ${WRKSRC}
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,16 +1,9 @@
-# OpenBSD makefile for:	tkman
-# Version required:     2.0.6
-# Date created:         May 20 1998
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.14 2002/05/13 23:31:26 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.15 2002/10/27 21:07:54 naddy Exp $
 
 COMMENT=	"Tcl/Tk-based manual browser"
 
 DISTNAME=	tkman-2.1
 CATEGORIES=	misc 
-NEED_VERSION=	1.508
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -26,6 +19,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tkman/}
 LIB_DEPENDS=	tk83.1.::x11/tk/8.3
 RUN_DEPENDS=	::textproc/rman \
 		::textproc/glimpse
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tkman ${PREFIX}/bin

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2002/03/24 22:20:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/10/27 21:07:54 naddy Exp $
 
 COMMENT=	"PalmPilot address database editor"
 
 DISTNAME=	pi-address-0.4.0
 CATEGORIES=	misc x11 palm
-NEED_VERSION=	1.516
 
 HOMEPAGE=	http://me.in-berlin.de/~miwie/pia/
 
@@ -21,10 +20,11 @@ MASTER_SITES=	${HOMEPAGE} \
 MODULES=	qt
 LIB_DEPENDS=	pisock::comms/pilot-link
 
-USE_X11=		yes
+USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${MODQT_CONFIGURE_ARGS} \
+CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS} \
 			--with-pisock-dir=${LOCALBASE}
+NO_REGRESS=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pi-address

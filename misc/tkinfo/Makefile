@@ -1,16 +1,10 @@
-# OpenBSD makefile for:	tkinfo
-# Version required:     1.8
-# Date created:         May 20 1998
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.13 2002/06/09 05:36:59 wilfried Exp $
-#
+# $OpenBSD: Makefile,v 1.14 2002/10/27 21:07:54 naddy Exp $
 
 COMMENT=	"Tk script to read GNU info files and display them"
 
 DISTNAME=	tkinfo-2.5
 CATEGORIES=	misc 
-NEED_VERSION=	1.496
+
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://math-www.uni-paderborn.de/~axel/tkinfo/
@@ -25,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=	:tk-8.3.*:x11/tk/8.3
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tkinfo ${PREFIX}/bin

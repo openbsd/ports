@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/08 03:48:50 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/27 21:07:54 naddy Exp $
 
 COMMENT=	"browse or page through a text file"
 
 DISTNAME=	most-4.9.2
 CATEGORIES=	misc
-NEED_VERSION=	1.525
+
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/most/ \
 		http://openbsd.rutgers.edu/
 
@@ -20,5 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 FAKE_FLAGS=	DESTDIR="${WRKINST}" DOC_DIR='$$(prefix)/share/doc/most'
 
 CONFIGURE_STYLE= gnu
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

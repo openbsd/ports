@@ -1,6 +1,4 @@
-# Makefile for "remind" port.
-
-# $OpenBSD: Makefile,v 1.16 2002/10/27 20:55:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/10/27 21:07:54 naddy Exp $
 
 COMMENT=	"scripting language for reminders, with a Tk front end"
 

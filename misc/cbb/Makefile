@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/09/14 23:40:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2002/10/27 21:07:53 naddy Exp $
 
 COMMENT=	"checkbook balancing tool"
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=       Yes
+NO_REGRESS=	Yes
 
 pre-configure:
 	@mv ${WRKSRC}/install.pl ${WRKSRC}/install.pl.in

@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.18 2002/05/08 18:32:02 millert Exp $
-# Original from: Ejovi Nuwere <ejovi@ejovi.net>
+# $OpenBSD: Makefile,v 1.19 2002/10/27 21:07:53 naddy Exp $
 
 COMMENT=	"astrology program for X11 and alpha-numeric terminals"
 
-DISTNAME=       ast53unx
-PKGNAME=        astrolog-5.30
-CATEGORIES=     misc
-NEED_VERSION=	1.515
+DISTNAME=	ast53unx
+PKGNAME=	astrolog-5.30
+CATEGORIES=	misc
 
-MASTER_SITES=   http://www.astrolog.org/ftp/ephem/ \
+MASTER_SITES=	http://www.astrolog.org/ftp/ephem/ \
 		http://www.astrolog.org/ftp/ \
 		ftp://ftp.kiarchive.ru/pub/unix/magick/astrology/astrolog/
-EXTRACT_ONLY=   ${DISTNAME}.shr
-EPHEM=          LRZ5_24 CHI_24 CPJV_24
-DISTFILES=      ${EXTRACT_ONLY} ${EPHEM}
+EXTRACT_ONLY=	${DISTNAME}.shr
+EPHEM=		LRZ5_24 CHI_24 CPJV_24
+DISTFILES=	${EXTRACT_ONLY} ${EPHEM}
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
@@ -22,9 +20,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_CASES=	*.shr) ${_PERL_FIX_SHAR} ${FULLDISTDIR}/$$archive | /bin/sh;;
 
-DIST_SUBDIR=    astrolog
-ALL_TARGET=     astrolog
+DIST_SUBDIR=	astrolog
+ALL_TARGET=	astrolog
 WRKDIST=	${WRKDIR}
+NO_REGRESS=	Yes
 
 do-install:
 	-@${INSTALL_DATA_DIR} ${PREFIX}/lib/astrolog
