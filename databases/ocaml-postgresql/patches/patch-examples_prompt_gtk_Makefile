@@ -1,0 +1,13 @@
+$OpenBSD: patch-examples_prompt_gtk_Makefile,v 1.1.1.1 2004/06/12 22:03:12 avsm Exp $
+--- examples/prompt_gtk/Makefile.orig	2004-06-12 19:14:41.000000000 +0100
++++ examples/prompt_gtk/Makefile	2004-06-12 19:14:55.000000000 +0100
+@@ -1,8 +1,6 @@
+-OCAMLMAKEFILE = ../../OCamlMakefile
++OCAMLMAKEFILE = ../OCamlMakefile
+ 
+ SOURCES = prompt_gtk.ml
+-INCDIRS = ../../lib
+-LIBDIRS = ../../lib
+ LIBS    = postgresql
+ PACKS   = lablgtk
+ OCAMLBLDFLAGS = gtkInit.cmo

@@ -1,0 +1,7 @@
+This OCaml library provides an interface to PostgreSQL (tested with
+versions 7.0.2, 7.1.3 and 7.4.1), an efficient and reliable, open
+source, relational database.
+
+Almost all functionality available through the C-API (libpq) is
+replicated in a type-safe way. This library uses objects for
+representing database connections and results of queries.

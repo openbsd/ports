@@ -1,0 +1,13 @@
+$OpenBSD: patch-examples_prompt_Makefile,v 1.1.1.1 2004/06/12 22:03:12 avsm Exp $
+--- examples/prompt/Makefile.orig	2004-06-12 19:14:26.000000000 +0100
++++ examples/prompt/Makefile	2004-06-12 19:14:34.000000000 +0100
+@@ -1,8 +1,6 @@
+-OCAMLMAKEFILE = ../../OCamlMakefile
++OCAMLMAKEFILE = ../OCamlMakefile
+ 
+ SOURCES = prompt.ml
+-INCDIRS = ../../lib
+-LIBDIRS = ../../lib
+ LIBS    = postgresql
+ THREADS = yes
+ RESULT  = prompt

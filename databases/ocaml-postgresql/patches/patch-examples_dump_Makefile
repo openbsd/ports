@@ -1,0 +1,14 @@
+$OpenBSD: patch-examples_dump_Makefile,v 1.1.1.1 2004/06/12 22:03:12 avsm Exp $
+--- examples/dump/Makefile.orig	2004-06-12 18:52:07.000000000 +0100
++++ examples/dump/Makefile	2004-06-12 18:52:54.000000000 +0100
+@@ -1,8 +1,7 @@
+-OCAMLMAKEFILE = ../../OCamlMakefile
++OCAMLMAKEFILE = ../OCamlMakefile
+ 
+ SOURCES = dump.ml
+-INCDIRS = ../../lib
+-LIBDIRS = ../../lib
++LIBDIRS = $(shell ocamlfind query postgresql)
+ LIBS    = postgresql
+ RESULT  = dump
+ 
