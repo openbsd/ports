@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2000/06/16 23:06:14 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 16:10:59 espie Exp $
 
 DISTNAME=	TclXML-1.2.1
 CATEGORIES=	textproc
 NEED_VERSION=	1.230
 MASTER_SITES=	ftp://ftp.zveno.com/TclXML/
 
-MAINTAINER=	jakob@openbsd.org
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
