@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.313 2004/04/23 19:35:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.314 2004/04/28 16:43:57 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -256,6 +256,7 @@
      SUBDIR += wmnet
      SUBDIR += wmnetload
      SUBDIR += wmwave
+     SUBDIR += wol
      SUBDIR += xarchie
      SUBDIR += xchat
      SUBDIR += xchat2
