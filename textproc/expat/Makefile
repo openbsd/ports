@@ -1,10 +1,5 @@
-# Makefile for:		expat
-# Version required:	1.1
-# Date created:		Thu Aug 26 14:38:07 CEST 1999
-# Whom:			Dirk Froemberg <dirk@FreeBSD.org>
-#
-# $FreeBSD: ports/textproc/expat/Makefile,v 1.2 1999/08/31 02:09:14 peter Exp $
-# $OpenBSD: Makefile,v 1.1.1.1 1999/11/08 14:02:25 dugsong Exp $
+# $FreeBSD: Makefile,v 1.2 1999/08/31 02:09:14 peter Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/02 22:01:44 fgsch Exp $
 
 DISTNAME=	expat
 PKGNAME=	expat-1.1
