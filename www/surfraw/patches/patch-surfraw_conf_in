@@ -1,0 +1,18 @@
+$OpenBSD: patch-surfraw_conf_in,v 1.1.1.1 2000/08/21 15:09:32 naddy Exp $
+--- surfraw.conf.in.orig	Mon Aug  7 01:09:01 2000
++++ surfraw.conf.in	Mon Aug 14 01:03:37 2000
+@@ -27,7 +27,7 @@ def   SURFRAW_conf		$HOME/.surfraw.conf
+ 
+ # name/path of browser executable
+ # e.g links, lynx, w3m, surfraw-netscape-remote, netscape etc
+-def   SURFRAW_browser		@sr_browser@
++def   SURFRAW_browser		/usr/bin/lynx
+ 
+ # browser arguments, or "none"
+ def   SURFRAW_browser_args	none
+@@ -59,4 +59,4 @@ def   SURFRAW_results		30
+ defyn SURFRAW_escape_url_args	yes
+ 
+ # file containing list of elvi
+-def   SURFRAW_elvi_list		@sysconfdir@/surfraw_elvi.list
++def   SURFRAW_elvi_list		@datadir@/surfraw_elvi.list

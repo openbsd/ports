@@ -1,0 +1,93 @@
+$OpenBSD: patch-elvi_Makefile_in,v 1.1.1.1 2000/08/21 15:09:32 naddy Exp $
+--- elvi/Makefile.in.orig	Wed Aug 16 16:28:00 2000
++++ elvi/Makefile.in	Wed Aug 16 16:32:56 2000
+@@ -70,14 +70,14 @@ sr_browser = @sr_browser@
+ bin_SCRIPTS =  		  altavista 		  appwatch 		  ask 		  austlii 		  cite 		  cnn 		  currency 		  deja 		  excite 		  fast 		  ftpsearch 		  freshmeat 		  google 		  ircsearch 		  linuxdoc 		  netbsd 		  newscientist 		  pubmed 		  raging 		  rhyme 		  slashdot 		  sundocs 		  sunsolve 		  thesaurus 		  translate 		  W 		  webster 		  wetandwild 		  xxx 		  yahoo
+ 
+ 
+-sysconf_DATA = surfraw_elvi.list
++data_DATA = surfraw_elvi.list
+ 
+ EXTRA_DIST = $(bin_SCRIPTS)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
+ SCRIPTS =  $(bin_SCRIPTS)
+ 
+-DATA =  $(sysconf_DATA)
++DATA =  $(data_DATA)
+ 
+ DIST_COMMON =  Makefile.am Makefile.in
+ 
+@@ -115,23 +115,23 @@ uninstall-binSCRIPTS:
+ 	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
+ 	done
+ 
+-install-sysconfDATA: $(sysconf_DATA)
++install-dataDATA: $(data_DATA)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
+-	@list='$(sysconf_DATA)'; for p in $$list; do \
++	$(mkinstalldirs) $(DESTDIR)$(datadir)
++	@list='$(data_DATA)'; for p in $$list; do \
+ 	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(sysconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(sysconfdir)/$$p; \
++	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(datadir)/$$p"; \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(datadir)/$$p; \
+ 	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$p; \
++	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(datadir)/$$p"; \
++	    $(INSTALL_DATA) $$p $(DESTDIR)$(datadir)/$$p; \
+ 	  fi; fi; \
+ 	done
+ 
+-uninstall-sysconfDATA:
++uninstall-dataDATA:
+ 	@$(NORMAL_UNINSTALL)
+-	list='$(sysconf_DATA)'; for p in $$list; do \
+-	  rm -f $(DESTDIR)$(sysconfdir)/$$p; \
++	list='$(data_DATA)'; for p in $$list; do \
++	  rm -f $(DESTDIR)$(datadir)/$$p; \
+ 	done
+ tags: TAGS
+ TAGS:
+@@ -160,23 +160,23 @@ check-am: all-am
+ check: check-am
+ installcheck-am:
+ installcheck: installcheck-am
+-install-exec-am: install-binSCRIPTS install-sysconfDATA
++install-exec-am: install-binSCRIPTS
+ install-exec: install-exec-am
+ 
+-install-data-am:
++install-data-am: install-dataDATA
+ install-data: install-data-am
+ 
+ install-am: all-am
+ 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+ install: install-am
+-uninstall-am: uninstall-binSCRIPTS uninstall-sysconfDATA
++uninstall-am: uninstall-binSCRIPTS uninstall-dataDATA
+ uninstall: uninstall-am
+ all-am: Makefile $(SCRIPTS) $(DATA)
+ all-redirect: all-am
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+ installdirs:
+-	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(sysconfdir)
++	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(datadir)
+ 
+ 
+ mostlyclean-generic:
+@@ -206,8 +206,8 @@ maintainer-clean-am:  maintainer-clean-g
+ 
+ maintainer-clean: maintainer-clean-am
+ 
+-.PHONY: uninstall-binSCRIPTS install-binSCRIPTS uninstall-sysconfDATA \
+-install-sysconfDATA tags distdir info-am info dvi-am dvi check check-am \
++.PHONY: uninstall-binSCRIPTS install-binSCRIPTS uninstall-dataDATA \
++install-dataDATA tags distdir info-am info dvi-am dvi check check-am \
+ installcheck-am installcheck install-exec-am install-exec \
+ install-data-am install-data install-am install uninstall-am uninstall \
+ all-redirect all-am all installdirs mostlyclean-generic \
