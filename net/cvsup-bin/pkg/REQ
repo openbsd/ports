@@ -36,18 +36,21 @@ do_notice()
 # Verify proper execution
 #
 if [ $# -ne 2 ]; then
-    echo "usage: $0 distname INSTALL" >&2
+    echo "usage: $0 distname { INSTALL | DEINSTALL }" >&2
     exit 1
 fi
 
 # Verify/process the command
 #
 case $2 in
+    DEINSTALL)
+	: nothing to de-install for this port
+	;;
     INSTALL)
 	do_notice
 	;;
     *)
-	echo "usage: $0 distname INSTALL" >&2
+	echo "usage: $0 distname { INSTALL | DEINSTALL }" >&2
 	exit 1
 	;;
 esac

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2000/06/02 13:47:26 espie Exp $
+# $OpenBSD: Makefile,v 1.73 2000/06/11 18:37:51 espie Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -15,7 +15,8 @@
      SUBDIR += clog
      SUBDIR += curl
 #    SUBDIR += cvsup
-#    SUBDIR += cvsup-bin
+     SUBDIR += cvsup-bin
+     SUBDIR += cvsup-bin:no_x11
 #    SUBDIR += cvsup-mirror
 #    SUBDIR += delegate
 #    SUBDIR += dgd
