@@ -1,17 +1,7 @@
 --- Makefile.orig	Tue Apr 14 18:57:58 1992
-+++ Makefile	Mon Aug  9 19:32:28 1999
-@@ -32,14 +32,15 @@
- OPT = -O
- # For MWC 3.0 on the Atari ST, use:
- #CFLAGS = -VCOMPAC -VPEEP
--CFLAGS = $(OPT) $(SYSTEM)
-+#CFLAGS = $(OPT) $(SYSTEM)
-+CFLAGS += $(SYSTEM)
- 
- # GNU's gcc is very nice, if you've got it. Otherwise just cc.
- #CC = cgcc -mshort
--CC = cc
-+#CC = cc
++++ Makefile	Tue Feb  8 22:23:59 2000
+@@ -39,7 +39,7 @@
+ CC = cc
  
  # tmclock is only needed on Unix systems...
 -TMCLOCK = tmclock.o
@@ -19,16 +9,16 @@
  
  # Files needed for System V 
  #SYSVOBJ =	getwd.o rename.o scandir.o utimes.o
-@@ -61,6 +62,12 @@
+@@ -61,6 +61,12 @@
  
  clean:
  	-rm *.o arc$(PROG) marc$(PROG)
 +
 +install:
-+	install -cs -o root -g wheel arc marc ${PREFIX}/bin
-+	install -c -o root -g wheel arc.1 ${PREFIX}/man/man1
-+	install -d -o root -g wheel ${PREFIX}/share/doc/arc
-+	install -c -o root -g wheel Arc521.doc Arcinfo ${PREFIX}/share/doc/arc
++	$(BSD_INSTALL_DATA_DIR) ${PREFIX}/share/doc/arc
++	$(BSD_INSTALL_PROGRAM) arc marc ${PREFIX}/bin
++	$(BSD_INSTALL_MAN) arc.1 ${PREFIX}/man/man1
++	$(BSD_INSTALL_DATA) Arc521.doc Arcinfo ${PREFIX}/share/doc/arc
  
  arc.o:	$(SRCDIR)arc.c	$(HEADER)
  	$(CC) $(CFLAGS) -c $(SRCDIR)arc.c

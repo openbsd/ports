@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/09/24 13:04:45 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/09 03:40:54 brad Exp $
 
 DISTNAME=       arc521e.pl8
 PKGNAME=        arc-5.21e
@@ -11,6 +11,8 @@ NO_CDROM=	"NOFEE: can not sell"
 
 MAINTAINER=     ports@openbsd.org
 
-NO_WRKSUBDIR=	yes
+MAKE_FLAGS=	CC="${CC}" OPT="${CFLAGS}"
+
+WRKDIST=	${WRKDIR}
 
 .include <bsd.port.mk>
