@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.pop3,v 1.2 2000/12/29 18:51:57 avsm Exp $
+@comment $OpenBSD: PLIST-pop3,v 1.1 2001/05/10 22:29:05 avsm Exp $
+@pkgdep courier-imap-${COURIERVER}
 bin/pop3d
 libexec/pop3d-ssl.rc
 libexec/pop3d.rc

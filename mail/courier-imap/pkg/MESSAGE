@@ -18,8 +18,4 @@ place the following in /etc/rc.local:
 
 mkdir -p ${COURIERSTATE} 
 ${PREFIX}/libexec/authlib/authdaemond start
-
-If you also installed the 'pop3' flavor, then the relevant
-configuration files are called pop3d-* instead of imapd-*
-Follow similar instructions to those above to activate this.
 ==============================================================

@@ -1,10 +1,17 @@
-# $OpenBSD: Makefile,v 1.14 2001/05/06 01:46:03 lebel Exp $ 
+# $OpenBSD: Makefile,v 1.15 2001/05/10 22:29:04 avsm Exp $ 
+
+MULTI_PACKAGES=	-pop3
 
 COMMENT=	"imap server for maildir format mailboxes"
+COMMENT-pop3=	"pop3 server for maildir format mailboxes"
 
-DISTNAME=	courier-imap-1.3.5
+COURIERVER=	1.3.8.1
+DISTNAME=	courier-imap-${COURIERVER}
+PKGNAME-pop3=	courier-pop3-${COURIERVER}
+
 CATEGORIES=	mail
 NEED_VERSION=	1.402
+
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= courier
 
@@ -17,14 +24,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	pop3 mysql ldap
+FLAVORS=	mysql ldap
 FLAVOR?=
 
 SEPARATE_BUILD=	concurrent
 COURIERCONF=	${SYSCONFDIR}/courier-imap
 COURIERSTATE=	/var/run/courier-imap
-SUBST_VARS=	COURIERSTATE COURIERCONF
+SUBST_VARS=	COURIERSTATE COURIERCONF COURIERVER
 EXAMPLE_DIR= 	${PREFIX}/share/examples/courier-imap
+USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= gnu old
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
@@ -34,7 +42,7 @@ CONFIGURE_ARGS=	--disable-root-check --datadir=${PREFIX}/sbin \
 		--with-userdb=${SYSCONFDIR}/userdb --with-authuserdb \
 		--sysconfdir=${COURIERCONF} --with-authdaemon \
 		--with-authdaemonvar=${COURIERSTATE} \
-		--enable-workarounds-for-imap-client-bugs
+		--enable-workarounds-for-imap-client-bugs --without-ipv6
 
 .if ${FLAVOR:L:Mmysql} && ${FLAVOR:L:Mldap}
 .BEGIN:
@@ -43,17 +51,17 @@ CONFIGURE_ARGS=	--disable-root-check --datadir=${PREFIX}/sbin \
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-CONFIGURE_ARGS+=       --with-authmysql
-LIB_DEPENDS+=          mysqlclient::databases/mysql
+CONFIGURE_ARGS+=	--with-authmysql
+LIB_DEPENDS+=		mysqlclient::databases/mysql
 .else
-CONFIGURE_ARGS+=       --without-authmysql
+CONFIGURE_ARGS+=	--without-authmysql
 .endif
 
 .if ${FLAVOR:L:Mldap}
-CONFIGURE_ARGS+=       --with-authldap
-LIB_DEPENDS+=          ldap.2::databases/openldap
+CONFIGURE_ARGS+=	--with-authldap
+LIB_DEPENDS+=		ldap.2::databases/openldap
 .else
-CONFIGURE_ARGS+=       --without-authldap
+CONFIGURE_ARGS+=	--without-authldap
 .endif
 
 post-install:
@@ -61,8 +69,13 @@ post-install:
 .for i in pop3d-ssl imapd-ssl pop3d imapd
 	${INSTALL_DATA} ${WRKINST}${COURIERCONF}/$i.dist ${EXAMPLE_DIR}/$i
 .endfor
-.for i in imapd.cnf pop3d.cnf quotawarnmsg.example authdaemonrc.dist
+.for i in imapd.cnf pop3d.cnf quotawarnmsg.example
 	${INSTALL_DATA} ${WRKINST}${COURIERCONF}/$i ${EXAMPLE_DIR}
 .endfor
+	${INSTALL_DATA} ${WRKINST}${COURIERCONF}/authdaemonrc.dist ${EXAMPLE_DIR}/authdaemonrc
 
 .include <bsd.port.mk>
+
+.if ${SUBPACKAGE} == "-pop3"
+RUN_DEPENDS+=	${LOCALBASE}/bin/imapd:courier-imap-${COURIERVER}:mail/courier-imap
+.endif

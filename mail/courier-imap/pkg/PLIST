@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/03/22 03:10:51 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/05/10 22:29:05 avsm Exp $
 bin/couriertls
 bin/imapd
 libexec/authlib/authdaemon
@@ -33,12 +33,11 @@ sbin/pw2userdb
 sbin/userdb
 sbin/userdbpw
 sbin/vchkpw2userdb
-share/examples/courier-imap/authdaemonrc.dist
+share/examples/courier-imap/authdaemonrc
 share/examples/courier-imap/imapd
 share/examples/courier-imap/imapd-ssl
 share/examples/courier-imap/imapd.cnf
 share/examples/courier-imap/quotawarnmsg.example
-%%pop3%%
 %%ldap%%
 %%mysql%%
 @dirrm share/examples/courier-imap
