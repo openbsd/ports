@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/04/03 01:38:25 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/04/04 21:37:47 espie Exp $
 
 DISTNAME=	contool-3.3a
 CATEGORIES=	sysutils
@@ -18,8 +18,6 @@ BUILD_DEPENDS=	${X11BASE}/lib/X11/config/XView.cf::x11/xview/config
 WRKDIST=	${WRKDIR}
 USE_IMAKE=	Yes
 FAKE=		Yes
-FAKE_FLAGS=	BINDIR=${PREFIX}/bin MANPATH=${PREFIX}/man
-PREFIX=		${X11BASE}
 
 pre-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/lib/help

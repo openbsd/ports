@@ -1,6 +1,6 @@
---- Imakefile.orig	Thu Feb 24 09:55:24 1994
-+++ Imakefile	Sun Jan  5 13:58:56 1997
-@@ -1,14 +1,14 @@
+--- Imakefile.orig	Thu Feb 24 18:55:24 1994
++++ Imakefile	Tue Apr  4 23:33:50 2000
+@@ -1,19 +1,19 @@
  # Mailer you use.  Solaris 2.x users, change this to /usr/bin/mailx
 -MAILER		= /usr/ucb/mail
 +MAILER		= /usr/bin/mail
@@ -18,3 +18,9 @@
  
  # Where your XView libraries are installed.  If running under
  # SunOS 4.x, use the first version.  If using Solaris 2.x with
+ # with Sun's unbundled compiler, use the second version.
+-LDOPTIONS	= -L$(OPENWINHOME)/lib
++LDOPTIONS	= -L$(OPENWINHOME)/lib -L/usr/X11R6/lib
+ # LDOPTIONS	= -L$(OPENWINHOME)/lib -R$(OPENWINHOME)/lib
+ 
+ # Where your XView include files are installed

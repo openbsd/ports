@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/04 15:10:38 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/04 21:37:47 espie Exp $
 
 DISTNAME=	calentool-2.3
 CATEGORIES=	misc x11
@@ -17,11 +17,10 @@ WRKDIST     = ${WRKDIR}/xcalentool-2.3
 
 USE_IMAKE=	Yes
 USE_X11=	Yes
-PREFIX=		${X11BASE}
 FAKE=		Yes
 MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
 
-MAKE_FLAGS=CCOPTIONS=-I${WRKSRC}/include DATELIB_DIR=${PREFIX}/lib/calentool
+MAKE_FLAGS=CCOPTIONS=-I${WRKSRC}/include
 FAKE_FLAGS=${MAKE_FLAGS}
 
 pre-configure:
