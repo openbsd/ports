@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.31 2004/08/04 14:51:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2004/08/14 20:22:06 naddy Exp $
 # $NetBSD: Makefile,v 1.9 1998/04/15 10:38:50 agc Exp $
+
+BROKEN=		"kernel internals have changed"
 
 COMMENT=	"graphical performance meter"
 
