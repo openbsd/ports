@@ -1,6 +1,6 @@
---- gthread/Makefile.in.orig	Tue Mar  6 13:10:30 2001
-+++ gthread/Makefile.in	Tue Mar  6 13:11:08 2001
-@@ -102,7 +102,7 @@
+--- gthread/Makefile.in.orig	Thu Mar 15 10:48:51 2001
++++ gthread/Makefile.in	Thu Sep 20 11:20:12 2001
+@@ -102,7 +102,7 @@ libglib = $(top_builddir)/libglib.la # -
  lib_LTLIBRARIES = libgthread.la
  
  libgthread_la_SOURCES = gthread.c
@@ -9,7 +9,16 @@
  
  
  libgthread_la_LIBADD = @G_THREAD_LIBS@
-@@ -300,7 +300,7 @@
+@@ -127,7 +127,7 @@ testgthread_SOURCES = testgthread.c
+ testgthread_OBJECTS =  testgthread.o
+ testgthread_DEPENDENCIES =  ../libglib.la libgthread.la
+ testgthread_LDFLAGS = 
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ @G_THREAD_CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+@@ -300,7 +300,7 @@ install-am: all-am
  install: install-am
  uninstall-am: uninstall-libLTLIBRARIES
  uninstall: uninstall-am
