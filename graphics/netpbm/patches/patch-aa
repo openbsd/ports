@@ -38,7 +38,7 @@
   # versions will not work.
   TIFFDEF =	-DLIBTIFF
 ! TIFFINC =	-I$(PREFIX)/include
-! TIFFLIB =	-L$(PREFIX)/lib -ltiff34 -ljpeg
+! TIFFLIB =	-L$(PREFIX)/lib -ltiff -ljpeg
   TIFFBINARIES =	tifftopnm pnmtotiff
   TIFFOBJECTS =	tifftopnm.o pnmtotiff.o
   
