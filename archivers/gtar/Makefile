@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/03/30 23:04:10 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/04/09 07:17:23 turan Exp $
 
 DISTNAME=	tar-1.13
 CATEGORIES=	archivers
@@ -18,6 +18,8 @@ FAKE=		Yes
 SEPARATE_BUILD=	simple
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--program-prefix="g"
+
+BUILD_DEPENDS=	msgfmt::devel/gettext
 
 post-extract:
 	@rm -f ${WRKSRC}/doc/tar.info*
