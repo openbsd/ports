@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/24 01:43:57 kevlo Exp $
+bin/b2g
+bin/g2b
+bin/hc
+man/man1/hc.1
+share/hc/hc.tab
+share/hc/hc-supp.tab
+@dirrm share/hc
