@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/06/09 05:53:07 jsyn Exp $
+# $OpenBSD: Makefile,v 1.13 2002/07/31 20:46:03 fgsch Exp $
 # $FreeBSD: Makefile,v 1.32 1997/11/16 04:58:09 fenner Exp $
 #
 
@@ -20,6 +20,7 @@
      SUBDIR += p5-Gateway
      SUBDIR += p5-News-Article
      SUBDIR += p5-News-Newsrc
+     SUBDIR += pan
      SUBDIR += plor
 #    SUBDIR += rkive
 #    SUBDIR += slnr
