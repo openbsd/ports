@@ -1,0 +1,4 @@
+sbin/usbctl
+sbin/usbdebug
+sbin/usbgen
+sbin/usbstats

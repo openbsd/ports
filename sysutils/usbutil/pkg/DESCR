@@ -1,0 +1,11 @@
+USB developer utilities:
+
+usbctl
+	Dump information about devices on a USB bus.
+usbdebug
+	Set the kernel debugging flag.
+usbgen
+	Dump descriptors of a generic device.
+	usbgen -f ugenN -v -D
+usbstats
+	Gives statistics for a USB host contrller.
