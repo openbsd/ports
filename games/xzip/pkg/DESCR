@@ -1,0 +1,13 @@
+XZip is a clean X Windows interface to games written in Infocom's Z-code
+game format. It handles Z-code versions 1 through 5 and version 8. It is
+free (yee-ha!)
+
+developed at CMU. Really, I would have preferred to actually do this in
+ATK... except that then you'd need ATK to run it, and that's 50 megabytes
+of source code. (Honest.) So I just did an imitation. 
+
+Z-code games are available at:
+
+ftp://ftp.gmd.de/if-archive/games/infocom/
+
+WWW: ${HOMEPAGE}
