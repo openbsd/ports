@@ -1,6 +1,7 @@
 sbin/vtund
 lib/vtun/README.Setup
 lib/vtun/vtund.conf-sample
+man/man5/vtund.conf.5
 man/man8/vtund.8
 man/man8/vtun.8
 @dirrm lib/vtun
