@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/08 00:09:39 matt Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/10 13:11:44 matt Exp $
 
 COMMENT=		"simple slang-based menu program"
 
-DISTNAME=		pdmenu_1.2.65
-PKGNAME=		pdmenu-1.2.65
+DISTNAME=		pdmenu_1.2.69
+PKGNAME=		pdmenu-1.2.69
 CATEGORIES=     	misc
 NEED_VERSION=		1.405
 
@@ -25,5 +25,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		SLANG_LIB_LOC=${LOCALBASE}/lib \
 			SLANG_H_LOC=${LOCALBASE}/include/slang.h
 WRKDIST=		${WRKDIR}/pdmenu
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>
