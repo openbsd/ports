@@ -187,17 +187,5 @@ share/mutt/charsets/charsets.alias.dist
 share/mutt/charsets/charsets.alias
 @dirrm share/mutt/charsets
 @dirrm share/mutt
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale
 @dirrm share/doc/mutt
 @dirrm etc
