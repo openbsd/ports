@@ -20,6 +20,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=corefonts/}
 
 BUILD_DEPENDS=		cabextract:cabextract-*:archivers/cabextract
 
+USE_X11=		Yes
+
 NO_BUILD=		Yes
 
 FONTS=			andale32.exe \
