@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/16 14:44:27 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/06/02 21:22:09 naddy Exp $
 bin/opera
-doc/opera/LICENSE
 libexec/opera
+share/doc/opera/LICENSE
 share/examples/opera/operarc
 share/opera/buttons/DefSmall
 share/opera/buttons/Default
@@ -201,4 +201,4 @@ share/opera/styles/wml.css
 @dirrm share/opera/buttons
 @dirrm share/opera
 @dirrm share/examples/opera
-@dirrm doc/opera
+@dirrm share/doc/opera

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/16 14:44:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/06/02 21:22:09 naddy Exp $
 
 COMMENT=	"fast and customizable WWW browser"
 ONLY_FOR_ARCHS=	i386
@@ -28,8 +28,10 @@ do-build:
 	sed 's,@PREFIX@,${PREFIX},g' ${FILESDIR}/opera.sh >${WRKBUILD}/opera.sh
 
 do-install:
-	cd ${WRKBUILD} && ./install.sh --prefix=${PREFIX}
-	mv ${PREFIX}/bin/opera ${PREFIX}/libexec/opera
+	cd ${WRKBUILD} && ./install.sh \
+		--exec_prefix=${PREFIX}/libexec \
+		--docdir=${PREFIX}/share/doc/opera \
+		--sharedir=${PREFIX}/share/opera
 	${INSTALL_SCRIPT} ${WRKBUILD}/opera.sh ${PREFIX}/bin/opera
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/opera
 	${INSTALL_DATA} ${FILESDIR}/operarc ${PREFIX}/share/examples/opera
