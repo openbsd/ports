@@ -1,51 +1,48 @@
-# $OpenBSD: Makefile,v 1.21 2001/11/13 22:13:23 espie Exp $
-
-BROKEN=		"Needs upgrade to newer version"
+# $OpenBSD: Makefile,v 1.22 2002/10/17 18:37:13 couderc Exp $
 
 COMMENT=	"open-source, cross-platform WYSIWYG word processor"
 
-VERSION=	0.7.12
-PKGNAME=	abiword-${VERSION}
+VERSION=	1.0.2
+DISTNAME=	abiword-${VERSION}
 CATEGORIES=	editors
-NEED_VERSION=	1.496
-
-MASTER_SITES=	http://www.abisource.com/downloads/Version-${VERSION}/lf/
-DISTFILES=	abi-${VERSION}.tar.gz abidistfiles.tar.gz expat.tar.gz \
-		libiconv.tar.gz unixfonts.tar.gz wv.tar.gz
-
-DIST_SUBDIR=	abiword
 
 HOMEPAGE=	http://www.abisource.com/
 
-LIB_DEPENDS=	png.2::graphics/png \
-		gtk.1.2::x11/gtk+
-RUN_DEPENDS=	::textproc/ispell
+MAINTAINER=	Damien Couderc <couderc@openbsd.org>
 
-MAINTAINER=	Dug Song <dugsong@monkey.org>
+LIB_DEPENDS=	png.2::graphics/png \
+		jpeg.62::graphics/jpeg \
+		xml2::textproc/libxml \
+		gtk.1.2,gdk.1.2::x11/gtk+
+RUN_DEPENDS=	ispell::textproc/ispell
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_FLAGS=	prefix="${PREFIX}"
-FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}"
+MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=abiword/}
 
 USE_GMAKE=	Yes
 
-ALL_TARGET=	compile
+CONFIGURE_STYLE=	gnu autoconf
+CONFIGURE_ARGS=		--with-libpng=${LOCALBASE}/lib \
+			--with-libxml2 \
+			--disable-debug --disable-gnome
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
-WRKDIST=	${WRKDIR}/abi-${VERSION}
+MAKE_FLAGS=	prefix="${PREFIX}"
+FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}"
 
-post-install:
-	@cd ${PREFIX}/bin && \
-	  (ln -sf ${TRUEPREFIX}/AbiSuite/bin/AbiWord AbiWord; \
-	   ln -sf ${TRUEPREFIX}/AbiSuite/bin/AbiWord abiword)
-	@strip ${PREFIX}/AbiSuite/bin/AbiWord_d
-	@sed \
-	 -e s#ABISUITE_HOME=${PREFIX}/AbiSuite#ABISUITE_HOME=${TRUEPREFIX}/AbiSuite# \
-	 -e s#ABISUITE_LIBEXEC=${PREFIX}/AbiSuite#ABISUITE_LIBEXEC=${TRUEPREFIX}/AbiSuite# \
-	 ${PREFIX}/AbiSuite/bin/AbiWord > ${WRKDIR}/AbiWord
-	${INSTALL_SCRIPT} ${WRKDIR}/AbiWord ${PREFIX}/AbiSuite/bin
+MAKE_FILE=	GNUmakefile
+
+WRKDIST=	${WRKDIR}/abiword-${VERSION}/abi
+
+PFILE=		${WRKDIR}/abiword-${VERSION}/wv/generic.c
+
+post-patch:
+	@mv ${PFILE} ${PFILE}.orig
+	@sed -e s/tmpnam/mkstemp/ ${PFILE}.orig > ${PFILE}
 
 .include <bsd.port.mk>

@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_af_util_xp_ut_endian_h,v 1.1 2002/10/17 18:37:13 couderc Exp $
+--- src/af/util/xp/ut_endian.h.orig	Fri Sep  6 22:42:32 2002
++++ src/af/util/xp/ut_endian.h	Fri Sep  6 22:44:01 2002
+@@ -74,6 +74,13 @@
+ 	#elif BYTE_ORDER == BIG_ENDIAN
+ 		#define UT_BIG_ENDIAN
+ 	#endif
++#elif defined(__OpenBSD__)
++	#include <machine/endian.h>
++	#if BYTE_ORDER == LITTLE_ENDIAN         
++		#define UT_LITTLE_ENDIAN
++	#elif BYTE_ORDER == BIG_ENDIAN
++		#define UT_BIG_ENDIAN
++	#endif
+ #elif defined(_AIX)
+         #include <sys/machine.h>
+         #if BYTE_ORDER == LITTLE_ENDIAN

@@ -1,4 +1,8 @@
-You must add the ${PREFIX}/AbiSuite/fonts directory to your X server's
+Abiword needs to have XFree86 type1 module loaded to run correctly, you just
+have to add the following line in the module section :
+Load "type1"
+
+You must also add the ${PREFIX}/AbiSuite/fonts directory to your X server's
 font path.  For XFree86, add the line:
 
 FontPath "${PREFIX}/AbiSuite/fonts"
