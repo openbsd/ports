@@ -1,0 +1,11 @@
+$OpenBSD: patch-ratmen_c,v 1.1.1.1 2004/06/28 06:38:35 jcs Exp $
+--- ratmen.c.orig	Sat Feb 21 14:22:02 2004
++++ ratmen.c	Sat Feb 21 14:22:03 2004
+@@ -128,7 +128,6 @@
+ 
+ 
+ /* function prototypes */
+-int  strcasecmp(char*, char*);                 /* string comparison */
+ void ask_wm_for_delete(void);
+ void reap(int);
+ void redraw_snazzy(int, int, int);

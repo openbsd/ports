@@ -1,0 +1,3 @@
+Ratmen is a simple program for displaying a menu in a
+window. On selection is may either run a program or simply
+write something on standard out.
