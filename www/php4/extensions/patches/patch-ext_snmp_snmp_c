@@ -1,0 +1,21 @@
+$OpenBSD: patch-ext_snmp_snmp_c,v 1.1 2004/10/13 01:46:02 danh Exp $
+--- ext/snmp/snmp.c.orig	Tue Feb  3 09:44:17 2004
++++ ext/snmp/snmp.c	Tue Oct 12 14:18:10 2004
+@@ -801,7 +801,7 @@ static int netsnmp_session_gen_auth_key(
+ 		s->securityAuthKeyLen = USM_AUTH_KU_LEN;
+ 		if (s->securityAuthProto == NULL) {
+ 			/* get .conf set default */
+-			oid *def = get_default_authtype(&(s->securityAuthProtoLen));
++			const oid *def = get_default_authtype(&(s->securityAuthProtoLen));
+ 			s->securityAuthProto = snmp_duplicate_objid(def, s->securityAuthProtoLen);
+ 		}
+ 		if (s->securityAuthProto == NULL) {
+@@ -830,7 +830,7 @@ static int netsnmp_session_gen_sec_key(s
+ 		s->securityPrivKeyLen = USM_PRIV_KU_LEN;
+ 		if (s->securityPrivProto == NULL) {
+ 			/* get .conf set default */
+-			oid *def = get_default_privtype(&(s->securityPrivProtoLen));
++			const oid *def = get_default_privtype(&(s->securityPrivProtoLen));
+ 			s->securityPrivProto = snmp_duplicate_objid(def, s->securityPrivProtoLen);
+ 		}
+ 		if (s->securityPrivProto == NULL) {

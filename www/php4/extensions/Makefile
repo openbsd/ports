@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2004/08/03 12:54:40 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2004/10/13 01:46:02 danh Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -252,7 +252,7 @@ CONFIGURE_ARGS+=	--without-snmp
 MULTI_PACKAGES+=	-snmp
 COMMENT-snmp=		"snmp protocol extensions for php4"
 CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE} --enable-ucd-snmp-hack
-SNMP_DEPENDS=		snmp.42::net/ucd-snmp
+SNMP_DEPENDS=		netsnmp.6.2::net/net-snmp
 .endif
 
 # sybase-ct
