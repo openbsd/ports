@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2002/06/28 14:24:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2002/07/22 15:17:14 naddy Exp $
 
 COMMENT=	"official AT&T release of KornShell 93"
 
 PKGNAME=	ast-ksh-${VERSION:S/-//g}
 VERSION=	2002-06-28
 CATEGORIES=	shells
-NEED_VERSION=	1.515
 HOMEPAGE=	http://www.kornshell.com/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -29,12 +28,17 @@ MAKE_ENV+=	LDFLAGS=-static
 WRKDIST=	${WRKDIR}
 
 do-build:
-	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ./bin/package make
+	cd ${WRKBUILD} && env -i ${MAKE_ENV} /bin/sh bin/package make
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/arch/openbsd.${MACHINE_ARCH}/bin/ksh \
 		${PREFIX}/bin/ksh93
 	${INSTALL_MAN} ${WRKBUILD}/arch/openbsd.${MACHINE_ARCH}/man/man1/sh.1 \
 		${PREFIX}/man/man1/ksh93.1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ast-ksh
+.for fun in dirs popd
+	${INSTALL_SCRIPT} ${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/fun/${fun} \
+		${PREFIX}/share/examples/ast-ksh/
+.endfor
 
 .include <bsd.port.mk>

@@ -1,3 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/12 19:17:24 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/07/22 15:17:14 naddy Exp $
 bin/ksh93
 man/man1/ksh93.1
+share/examples/ast-ksh/dirs
+share/examples/ast-ksh/popd
+@dirrm share/examples/ast-ksh
