@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2001/10/15 23:45:45 avsm Exp $
+# $OpenBSD: Makefile,v 1.37 2001/10/16 08:01:44 espie Exp $
 
 COMMENT=	"server-side HTML-embedded scripting language"
 
@@ -29,6 +29,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-pcre-regex \
 			--with-xml \
+			--without-gdbm \
 			--with-config-file-path=/var/www/conf
 
 LIB_DEPENDS+=		expat.2::textproc/expat
