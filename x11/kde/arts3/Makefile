@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2004/02/01 14:59:21 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2004/02/01 22:19:28 espie Exp $
 
 COMMENT=		"X11 toolkit, multimedia hub"
 COMMENT-gmcop=		"glib support for mcop"
@@ -25,8 +25,8 @@ BUILD_DEPENDS=	::devel/glib2 \
 
 SUBPACKAGE?=
 
-.if ${SUBPACKAGE} == "-gmcop"
-LIB_DEPENDS+=glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0,gthread-2.0.0.0::devel/glib2 
+.if defined(PACKAGING) || ${SUBPACKAGE} == "-gmcop"
+LIB_DEPENDS+=glib-2.0.0.0,gmodule-2.0.0.0,gthread-2.0.0.0::devel/glib2 
 .endif
 		
 pre-build:
