@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.30 2002/10/27 00:03:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2002/11/22 02:37:37 margarida Exp $
 
 COMMENT=		"simple paint program"
 
-DISTNAME=		xpaint-2.6.2
+VERSION=		2.6.2
+DISTNAME=		xpaint-${VERSION}
 CATEGORIES=		graphics x11
 
 HOMEPAGE=		http://home.worldonline.dk/torsten/xpaint/
 
 MASTER_SITES=		${HOMEPAGE}
 
-MAINTAINER=		Margarida Sequeira <niness@devilness.org>
+MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/07/31 23:58:57 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2002/11/22 02:37:37 margarida Exp $
 
 COMMENT=		"utility for sending/receiving data over TCP stream"
+
+VERSION=		1.2.0
+DISTNAME=		tcpcat-${VERSION}
 CATEGORIES=		net
-DISTNAME=		tcpcat-1.2.0
+
 MASTER_SITES=		${HOMEPAGE}
 
 HOMEPAGE=		http://www.gusnet.cx/proj/tcpcat/
 
-MAINTAINER=		Margarida Sequeira <niness@devilness.org>
+MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

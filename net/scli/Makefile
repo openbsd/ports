@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2002/10/08 13:02:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/11/22 02:37:37 margarida Exp $
 
 COMMENT=		"snmp command line utility"
-DISTNAME=		scli-0.2.12
+
+VERSION=		0.2.12
+DISTNAME=		scli-${VERSION}
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.ibr.cs.tu-bs.de/projects/scli/
 
 MASTER_SITES=		ftp://ftp.ibr.cs.tu-bs.de/pub/local/scli/	
 
-MAINTAINER=		Margarida Sequeira <niness@devilness.org>
+MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

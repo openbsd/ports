@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/11/17 00:48:00 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2002/11/22 02:37:37 margarida Exp $
 
 COMMENT=		"forensic tool that collects MAC times from files"
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.atstake.com/research/tools/
 
 MASTER_SITES=		${HOMEPAGE}
 
-MAINTAINER=		Margarida Sequeira <niness@devilness.org>
+MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

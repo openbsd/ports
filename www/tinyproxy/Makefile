@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2002/10/29 01:17:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/11/22 02:37:37 margarida Exp $
 
 COMMENT=		"lightweight HTTP/SSL proxy"
+
+VERSION=		1.5.1
+DISTNAME=		tinyproxy-${VERSION}
 CATEGORIES=		www
-DISTNAME=		tinyproxy-1.5.1
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=tinyproxy/}
 
 HOMEPAGE=		http://tinyproxy.sourceforge.net/
 
-MAINTAINER=		Margarida Sequeira <niness@devilness.org>
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=tinyproxy/}
+
+MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/09/17 13:49:00 couderc Exp $
+# $OpenBSD: Makefile,v 1.2 2002/11/22 02:37:37 margarida Exp $
 
 COMMENT=		"screen lock and capture plugin for gkrellm"
 
 VERSION=		0.3.2
 DISTNAME=		gkrellshoot-${VERSION}
 CATEGORIES=		x11
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gkrellshoot/}
 
 HOMEPAGE=		http://gkrellshoot.sourceforge.net/
 
-MAINTAINER=		Margarida Sequeira <niness@devilness.org>
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gkrellshoot/}
+
+MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

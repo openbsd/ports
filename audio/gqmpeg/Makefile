@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2002/11/13 19:39:07 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2002/11/22 02:37:36 margarida Exp $
 
 COMMENT=		"mpg123 front-end with skin support"
 
@@ -7,7 +7,7 @@ CATEGORIES=		audio
 
 HOMEPAGE=		http://gqmpeg.sourceforge.net
 
-MAINTAINER=		Margarida Sequeira <niness@devilness.org>
+MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

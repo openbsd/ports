@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/11/12 01:27:26 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2002/11/22 02:37:37 margarida Exp $
 
 COMMENT=		"highly customizable e-mail to HTML converter"
 
@@ -9,11 +9,11 @@ CATEGORIES=     	www mail
 
 HOMEPAGE=		http://www.mhonarc.org/
 
-MAINTAINER=		Margarida Sequeira <niness@devilness.org>
-
 MASTER_SITES=		http://www.mhonarc.org/release/MHonArc/tar/ \
 			http://www.nacs.uci.edu/indiv/ehood/tar/ \
 			ftp://ftp.plig.org/pub/CPAN/authors/id/EHOOD/ 
+
+MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

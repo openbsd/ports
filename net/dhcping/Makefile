@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/08/04 18:46:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2002/11/22 02:37:37 margarida Exp $
 
 COMMENT=		"dhcp daemon ping program"
+
+VERSION=		1.2
+DISTNAME=		dhcping-${VERSION}
 CATEGORIES=		net
-DISTNAME=		dhcping-1.2
-MASTER_SITES=		http://www.mavetju.org/download/
 
 HOMEPAGE=		http://www.mavetju.org/unix/general.php
 
-MAINTAINER=		Margarida Sequeira <niness@devilness.org>
+MASTER_SITES=		http://www.mavetju.org/download/
+
+MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

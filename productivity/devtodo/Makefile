@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/08/28 01:41:11 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2002/11/22 02:37:37 margarida Exp $
 
 COMMENT=		"a reminder/task program aimed at developers"
-CATEGORIES=		productivity devel
 
-DISTNAME=		devtodo-0.1.14
-MASTER_SITES=		http://devtodo.sourceforge.net/?0.1.14/
+VERSION=		0.1.14
+DISTNAME=		devtodo-${VERSION}
+CATEGORIES=		productivity devel
 
 HOMEPAGE=		http://devtodo.sourceforge.net/
 
-MAINTAINER=		Margarida Sequeira <niness@devilness.org>
+MASTER_SITES=		http://devtodo.sourceforge.net/?0.1.14/
+
+MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

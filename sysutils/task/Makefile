@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2002/11/16 21:27:57 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2002/11/22 02:37:37 margarida Exp $
 
 COMMENT=		"forensic toolkit based on TCT"
 
 VERSION=		1.52
 DISTNAME=		task-${VERSION}
 CATEGORIES=		sysutils security
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sleuthkit/} \
-			${MASTER_SITE_PACKETSTORM:=UNIX/utilities/}
 
 HOMEPAGE=		http://www.atstake.com/research/tools/task/	
 
-MAINTAINER=		Margarida Sequeira <niness@devilness.org>
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sleuthkit/} \
+			${MASTER_SITE_PACKETSTORM:=UNIX/utilities/}
+
+MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # IBM & GPL
 PERMIT_PACKAGE_CDROM=	"commercial contributor must indemnify all others"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2002/11/09 23:14:48 henning Exp $
+# $OpenBSD: Makefile,v 1.2 2002/11/22 02:37:37 margarida Exp $
 
 COMMENT=		"low-calorie MIME generator"
 
@@ -8,7 +8,7 @@ CATEGORIES=		mail perl5
 
 HOMEPAGE=		http://www.zeegee.com/code/perl/MIME-Lite/
 
-MAINTAINER=		Margarida Sequeira <niness@devilness.org>
+MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

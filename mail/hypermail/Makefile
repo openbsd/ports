@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.18 2002/11/05 05:24:36 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2002/11/22 02:37:37 margarida Exp $
 
 COMMENT=		"generate a cross-referenced HTML mail archive"
 
-DISTNAME=		hypermail-2.1.5
+VERSION=		2.1.5
+DISTNAME=		hypermail-${VERSION}
 CATEGORIES=		mail www
 
 HOMEPAGE=		http://www.hypermail.org/
 
 MASTER_SITES=		${HOMEPAGE}dist/
 
-MAINTAINER=		Margarida Sequeira <niness@devilness.org>
+MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
