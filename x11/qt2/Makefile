@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2001/02/20 13:55:52 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2001/02/23 14:36:55 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
-VERSION=	2.3
+VERSION=	2.4
 DISTNAME=	qt-2.${VERSION}
 PKGNAME=	qt2-${VERSION}
 CATEGORIES=	x11
@@ -94,9 +94,9 @@ do-install:
 	@if [ -f ${WRKBUILD}/lib/libqt.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.a ${PREFIX}/lib/qt2; \
 	fi
-	@if [ -f ${WRKBUILD}/lib/libqt.so.2.2.3 ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.2.2.3 \
-		${PREFIX}/lib/qt2/libqt.so.2.23; \
+	@if [ -f ${WRKBUILD}/lib/libqt.so.2.2.4 ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.2.2.4 \
+		${PREFIX}/lib/qt2/libqt.so.2.24; \
 	fi
 	@if [ -f ${WRKBUILD}/lib/libqutil.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqutil.a ${PREFIX}/lib/qt2; \
