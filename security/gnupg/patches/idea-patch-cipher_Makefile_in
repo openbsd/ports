@@ -1,4 +1,4 @@
-$OpenBSD: patch-cipher_Makefile_in,v 1.2 2002/07/05 07:13:01 reinhard Exp $
+$OpenBSD: idea-patch-cipher_Makefile_in,v 1.1 2002/07/19 19:27:42 fgsch Exp $
 --- cipher/Makefile.in.orig	Mon Apr 29 17:06:11 2002
 +++ cipher/Makefile.in	Fri May 31 17:31:50 2002
 @@ -136,7 +136,7 @@ INCLUDES = -I.. -I$(top_srcdir)/include 
