@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2002/04/03 02:25:06 espie Exp $
-lib/libb3style.so.0.0
-lib/libksgistyle.so.0.0
-lib/libkstephighcolor.so.0.0
-DYNLIBDIR(%D/lib)

@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2002/04/03 02:25:07 espie Exp $
-lib/libkeyesapplet.so.1.0
-lib/libkfifteenapplet.so.1.0
-lib/libkscoreapplet.so.1.0
-lib/libkwwapplet.so.1.0
-DYNLIBDIR(%D/lib)

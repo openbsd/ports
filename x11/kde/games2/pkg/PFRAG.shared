@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2002/04/03 02:25:07 espie Exp $
-lib/libkbackgammon.so.0.0
-lib/libkdegames.so.1.1
-DYNLIBDIR(%D/lib)
