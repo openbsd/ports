@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/24 14:27:19 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/01/02 18:48:43 couderc Exp $
 
 COMMENT=		"dependency configuration tool"
 
-VERSION=		0.8.2
+VERSION=		0.9.0
 DISTNAME=		pmk-${VERSION}
 CATEGORIES=		devel
 
@@ -24,6 +24,5 @@ CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	/bin/sh pmkcfg.sh -p ${PREFIX}
 
 NO_REGRESS=	Yes
-
 
 .include <bsd.port.mk>
