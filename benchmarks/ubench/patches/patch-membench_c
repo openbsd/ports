@@ -1,0 +1,12 @@
+$OpenBSD: patch-membench_c,v 1.1 2004/06/03 07:52:30 xsa Exp $
+--- membench.c.orig	2000-07-31 19:23:27.000000000 +0200
++++ membench.c	2004-06-03 09:40:49.000000000 +0200
+@@ -42,7 +42,7 @@ extern char *_sys_errlist[];
+ #define sys_errlist _sys_errlist
+ #endif
+ 
+-#ifdef SunOS
++#if defined(SunOS) || defined(__OpenBSD__)
+ extern		sigjmp_buf	env;
+ #else
+ extern		jmp_buf	env;

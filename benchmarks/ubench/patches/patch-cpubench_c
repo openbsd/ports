@@ -1,0 +1,20 @@
+$OpenBSD: patch-cpubench_c,v 1.1 2004/06/03 07:52:30 xsa Exp $
+--- cpubench.c.orig	2000-05-29 05:21:13.000000000 +0200
++++ cpubench.c	2004-06-03 09:40:21.000000000 +0200
+@@ -25,6 +25,7 @@
+ #include <sys/types.h>
+ #include <sys/times.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <unistd.h>
+ #include <signal.h>
+ #include <setjmp.h>
+@@ -41,7 +42,7 @@ extern char *_sys_errlist[];
+ #define sys_errlist _sys_errlist
+ #endif
+ 
+-#ifdef SunOS
++#if defined(SunOS) || defined(__OpenBSD__)
+ extern		sigjmp_buf	env;
+ #else
+ extern		jmp_buf	env;
