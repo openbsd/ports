@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2001/02/06 08:10:23 obecian Exp $
+# $OpenBSD: Makefile,v 1.59 2001/02/12 19:53:00 jakob Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -48,6 +48,7 @@
      SUBDIR += radiusniff
      SUBDIR += rdp
      SUBDIR += scanlogd
+     SUBDIR += scanssh
      SUBDIR += sftp
      SUBDIR += shash
      SUBDIR += shash:static
