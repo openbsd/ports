@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2000/07/08 08:45:36 fgsch Exp $
+# $OpenBSD: Makefile,v 1.34 2000/07/08 08:55:59 fgsch Exp $
 
 DISTNAME=	mutt-1.2.4i
 CATEGORIES=     mail
@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.iks-jena.de/pub/mitarb/lutz/crypt/software/pgp/mutt/
 
 MAINTAINER=	fgsch@openbsd.org
+
+HOMEPAGE=	http://www.mutt.org/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
