@@ -3,7 +3,7 @@
 # Date created:				10 Nov 1997
 # Whom:	      				ejovi
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:35 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1998/01/18 17:20:07 niklas Exp $
 #
 
 #DISTNAME=	radius-970424
@@ -48,13 +48,13 @@ do-install:
 		${INSTALL_DATA} ${DISTDIR}/rradius.pdf ${PREFIX}/share/doc/ascend-radius
 .endif
 		@ ${MKDIR} ${PREFIX}/etc/raddb
-		@ chown root.wheel ${PREFIX}/etc/raddb
+		@ /usr/sbin/chown root.wheel ${PREFIX}/etc/raddb
 		@ chmod 700 ${PREFIX}/etc/raddb
 		for file in clients.example dictionary users.example; do \
 			${INSTALL} -c -o root -g wheel -m 0400 ${WRKDIR}/${WRKPREFIX}/raddb/$$file ${PREFIX}/etc/raddb; \
 		done
 		@ ${MKDIR} /var/log/radacct
-		@ chown root.wheel /var/log/radacct
+		@ /usr/sbin/chown root.wheel /var/log/radacct
 		@ chmod 700 /var/log/radacct
 
 .include <bsd.port.mk>
