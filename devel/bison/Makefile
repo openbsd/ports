@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/03/10 17:57:03 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.7 1999/04/01 06:20:06 brad Exp $
 
 DISTNAME=       bison-1.25
 CATEGORIES=	devel

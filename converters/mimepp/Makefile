@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/08 03:35:18 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 06:20:04 brad Exp $
 
 DISTNAME=		mimepp-1.0
 CATEGORIES=		converters

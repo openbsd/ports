@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/08 23:18:35 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 06:20:11 brad Exp $
 
 DISTNAME=	textedit
 PKGNAME=	textedit-1.0
@@ -9,7 +8,7 @@ MAINTAINER=	ian@OpenBSD.ORG
 
 MASTER_SITES=	http://www.darwinsys.com/freeware/
 
-LIB_DEPENDS=    xview.3.:${PORTSDIR}/x11/xview-lib
+LIB_DEPENDS=    xview.3:${PORTSDIR}/x11/xview-lib
 
 USE_IMAKE=	yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/01 02:57:54 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/04/01 06:20:03 brad Exp $
 
 DISTNAME=	lunar-2.1
 PKGNAME=	zh-lunar-2.1
@@ -13,7 +13,6 @@ MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/c-utils/  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
 
 ALL_TARGET=
-MAN1=		lunar.1
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/chinese

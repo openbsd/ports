@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1998/10/18 05:02:03 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.7 1999/04/01 06:20:05 brad Exp $
 
 DISTNAME=	db-2.3.16
 CATEGORIES=	databases

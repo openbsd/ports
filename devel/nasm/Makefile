@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/01/22 16:58:06 rohee Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/04/01 06:20:08 brad Exp $
 
 DISTNAME=	nasm-0.97
 CATEGORIES=	devel lang

@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/03/30 16:53:36 niklas Exp $
-#
+# $OpenBSD: Makefile,v 1.2 1999/04/01 06:20:06 brad Exp $
 
 PKGNAME=	electricfence-2.0.5
 DISTNAME=	ElectricFence-2.0.5

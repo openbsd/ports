@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/08 03:05:04 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 06:20:04 brad Exp $
 
 DISTNAME=	btoa-5.2
 PKGNAME=	btoa-5.2.1

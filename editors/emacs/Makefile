@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1999/03/07 01:38:59 brad Exp $
-#
+# $OpenBSD: Makefile,v 1.11 1999/04/01 06:20:11 brad Exp $
 
 VER=		20.3
 DISTNAME=	emacs-${VER}

@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/11/20 04:58:05 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/04/01 06:20:11 brad Exp $
 
 DISTNAME=       jed0.98-7
 PKGNAME=        jed-0.98.7

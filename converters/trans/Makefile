@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/08 04:09:12 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 06:20:05 brad Exp $
 
 DISTNAME=       trans120
 PKGNAME=        trans-1.20

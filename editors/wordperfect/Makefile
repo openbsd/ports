@@ -1,11 +1,4 @@
-# OpenBSD makefile for:	wordperfect
-# Version required:	8.0
-# Date created:		1998-Dec-10
-# Whom:			dugsong@OpenBSD.ORG
-#
-# Relevant URLs:	http://www.corel.com/
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/12/19 05:10:28 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 1999/04/01 06:20:12 brad Exp $
 
 PKGNAME=	wordperfect-8.0
 CATEGORIES=     editors
@@ -24,7 +17,7 @@ RUN_DEPENDS=    /emul/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
 
 ONLY_FOR_ARCHS=	i386
 
-IS_INTERACTIVE=	yes - requires X
+IS_INTERACTIVE=	yes
 
 NO_WRKSUBDIR=	yes
 NO_CONFIGURE=	yes
@@ -70,6 +63,3 @@ do-install:
 
 
 .include <bsd.port.mk>
-
-
-

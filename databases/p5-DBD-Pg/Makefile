@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/02/25 21:10:22 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.6 1999/04/01 06:20:05 brad Exp $
 
 DISTNAME=	DBD-Pg-0.69
 PKGNAME=	p5-DBD-Pg-0.69
@@ -7,7 +6,7 @@ CATEGORIES=	databases perl5
 
 #BROKEN=	"newer version available"
 
-MAINTAINER=	jfitz@FreeBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/04/01 02:57:51 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/04/01 06:20:02 brad Exp $
 
 DISTNAME=       rplay-3.3.0
 CATEGORIES=	audio
@@ -7,7 +7,7 @@ MAINTAINER=	angelos@openbsd.org
 
 MASTER_SITES=	http://rplay.doit.org/dist/
 
-LIB_DEPENDS=    gsm\\.1\\.0:${PORTSDIR}/audio/gsm
+LIB_DEPENDS=    gsm.1.0:${PORTSDIR}/audio/gsm
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

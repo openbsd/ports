@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/03/10 17:55:21 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.10 1999/04/01 06:20:06 brad Exp $
 
 DISTNAME=       autoconf-2.13
 CATEGORIES=	devel

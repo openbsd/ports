@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/03/07 01:38:59 brad Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/04/01 06:20:05 brad Exp $
 
 DISTNAME=	gdbm-1.7.3
 CATEGORIES=	databases

@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.2 1999/03/07 00:14:43 brad Exp $
-# FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 06:20:07 brad Exp $
+# $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
 DISTNAME=	libtool-1.2
 CATEGORIES=	devel

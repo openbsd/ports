@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/02/21 04:26:10 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.8 1999/04/01 06:20:07 brad Exp $
 
 DISTNAME=       slang1.2.2
 PKGNAME=        libslang-1.2.2

@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/12/17 21:15:34 niklas Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/04/01 06:20:08 brad Exp $
 
 DISTNAME=	tkcvs-6.0
 CATEGORIES=	devel

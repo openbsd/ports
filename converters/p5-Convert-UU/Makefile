@@ -1,5 +1,4 @@
-#   $OpenBSD: Makefile,v 1.5 1999/01/14 01:39:29 angelos Exp $
-#
+# $OpenBSD: Makefile,v 1.6 1999/04/01 06:20:04 brad Exp $
 
 DISTNAME=	Convert-UU-0.20
 PKGNAME=	p5-Convert-UU-0.20

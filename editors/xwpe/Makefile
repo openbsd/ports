@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/10/18 05:02:06 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/04/01 06:20:12 brad Exp $
 
 DISTNAME=	xwpe-1.5.9a
 CATEGORIES=	editors

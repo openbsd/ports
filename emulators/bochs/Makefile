@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 1999/03/10 21:48:24 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/04/01 06:20:12 brad Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 DISTNAME=		bochs-990219a
 CATEGORIES=		emulators
 MASTER_SITES=		ftp://ftp.bochs.com/pub/
 
-MAINTAINER=		form@OpenBSD.ORG
+MAINTAINER=		brad@openbsd.org
 HOMEPAGE=		http://www.bochs.com/
 
 LICENSE=		shareware

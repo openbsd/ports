@@ -1,5 +1,4 @@
-#   $OpenBSD: Makefile,v 1.5 1999/03/09 05:55:44 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.6 1999/04/01 06:20:05 brad Exp $
 
 DISTNAME=       MIME-Base64-2.10
 PKGNAME=        p5-MIME-Base64-2.10

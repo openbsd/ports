@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/03/21 07:18:36 fgsch Exp $
-#
+# $OpenBSD: Makefile,v 1.8 1999/04/01 06:20:06 brad Exp $
 
 DISTNAME=	ddd-3.1.3
 CATEGORIES=	devel

@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/10/08 22:56:33 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/04/01 06:20:08 brad Exp $
 
 DISTNAME=	aXe-6.1.2
 CATEGORIES=	editors

@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/01 03:06:51 brad Exp $
-# $ FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
+# $OpenBSD: Makefile,v 1.4 1999/04/01 06:20:05 brad Exp $
+# $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 DISTNAME=	mysql-3.22.19b
 PKGNAME=	mysql-3.22.19
@@ -7,8 +7,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	ports@openbsd.org
 
-MASTER_SITES=	\
-		ftp://mirror.aarnet.edu.au/mysql/Downloads/MySQL-3.22/ \
+MASTER_SITES=	ftp://mirror.aarnet.edu.au/mysql/Downloads/MySQL-3.22/ \
 		http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.22/ \
 		ftp://ftp.digex.net/pub/database/mysql/Downloads/MySQL-3.22/ \
 		ftp://ftp.bse.bg/pub/Unix/database/MySQL/ \

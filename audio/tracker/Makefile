@@ -1,10 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/01 02:57:52 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/04/01 06:20:03 brad Exp $
 
 DISTNAME=       tracker-5.3
 CATEGORIES=     audio
-
-# No restriction, but ONLY for OpenBSD, not Free, nor NetBSD.
-#RESTRICTED=     "Non-redistributable beta"
 
 MAINTAINER=     espie@openbsd.org
 

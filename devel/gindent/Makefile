@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/03/07 00:14:42 brad Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/04/01 06:20:07 brad Exp $
 
 DISTNAME=	indent-1.9.1
 CATEGORIES=	devel

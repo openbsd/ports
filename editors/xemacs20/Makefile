@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 1999/03/30 03:59:52 fgsch Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/04/01 06:20:12 brad Exp $
 
 # If MULE extensions are desired use
-#
-#	make USE_MULE=YES
+# make USE_MULE=YES
 
 DISTNAME=	xemacs-20.4
 CATEGORIES=	editors
@@ -19,7 +17,6 @@ MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/${DISTNAME}/ \
 LIB_DEPENDS=	jpeg.62.:${PORTSDIR}/graphics/jpeg \
 		png.1.:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	${PREFIX}/lib/libcompface.a:${PORTSDIR}/graphics/compface
-#RUN_DEPENDS=	pgmtopbm:${PORTSDIR}/graphics/netpbm
 
 IS_INTERACTIVE= yes
 HAS_CONFIGURE=	yes

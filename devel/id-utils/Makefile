@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/03/15 02:42:44 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.7 1999/04/01 06:20:07 brad Exp $
 
 DISTNAME=	id-utils-3.2
 CATEGORIES=	devel

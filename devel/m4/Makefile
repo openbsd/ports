@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.4 1999/03/24 23:58:55 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1999/04/01 06:20:07 brad Exp $
 # $FreeBSD: Makefile,v 1.7 1997/06/16 08:22:35 max Exp $
-#
 
 DISTNAME=       m4-1.4
 CATEGORIES=	devel

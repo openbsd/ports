@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/11/20 08:40:48 jasoni Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/04/01 06:20:11 brad Exp $
 
 DISTNAME=	vim-5.3
 CATEGORIES=	editors

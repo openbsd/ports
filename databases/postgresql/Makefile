@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.13 1999/02/21 04:26:10 marc Exp $
-# FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp
-#
+# $OpenBSD: Makefile,v 1.14 1999/04/01 06:20:06 brad Exp $
+# $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 DISTNAME=	postgresql-6.3.2
 CATEGORIES=	databases
@@ -8,7 +7,7 @@ CATEGORIES=	databases
 NEED_VERSION=	1.64
 NO_PACKAGE=	"Requires pgsql uid"
 
-MAINTAINER=	form@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/
 
@@ -19,8 +18,8 @@ BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 .if defined(USE_TCL)
 MAKE_ENV=	USE_TCL=true TCL_INCDIR=${PREFIX}/include/tcl8.0
-LIB_DEPENDS=	tcl80\\.1\\.:${PORTSDIR}/lang/tcl80 \
-		tk80\\.1\\.:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=	tcl80:${PORTSDIR}/lang/tcl80 \
+		tk80:${PORTSDIR}/x11/tk80
 WITH_TCL=	--with-tcl
 .endif
 

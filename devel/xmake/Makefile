@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/08 18:52:26 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 06:20:08 brad Exp $
 
 DISTNAME=	xmake-1.01
 CATEGORIES=	devel
 
-MAINTAINER=	joey@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 MASTER_SITES=	http://www.backplane.com/xmake/ \
 		ftp://atari.saturn5.com/pub/dlowe/
