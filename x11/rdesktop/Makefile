@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2002/01/17 04:15:04 jcs Exp $
+# $OpenBSD: Makefile,v 1.8 2002/03/21 02:07:30 jcs Exp $
 
 COMMENT=	"open source client for Windows Terminal Server"
 
 DISTNAME=	rdesktop-1.1.0
-PATCHLEVEL=	19.8.3
+PATCHLEVEL=	19.8.4
 PKGNAME=	${DISTNAME}.p${PATCHLEVEL}
 CATEGORIES=	x11 net
 NEED_VERSION=	1.504
@@ -26,7 +26,6 @@ MAINTAINER=	Joshua Stein <jcs@rt.fm>
 USE_GMAKE=	Yes
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
-LIB_DEPENDS=	gmp.4.1::devel/gmp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rdesktop ${PREFIX}/bin
