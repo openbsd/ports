@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/10/15 13:12:04 todd Exp $
+# $OpenBSD: Makefile,v 1.16 2003/11/16 21:11:10 todd Exp $
 
 COMMENT=		"OpenCM change management system"
 COMMENT-docs=		"OpenCM Documentation"
@@ -63,8 +63,7 @@ FAKE_FLAGS+= LIBZ=-lz USOURCE_SUBDIRS="libgdiff src"
 MAKE_FLAGS+= LIBGC=
 FAKE_FLAGS+= LIBGC=
 LDFLAGS+= -L/usr/local/lib -lgc
-BUILD_DEPENDS=		gc.1:boehm-gc->=6.2:devel/boehm-gc
-LIB_DEPENDS=		gc.1::devel/boehm-gc
+LIB_DEPENDS=		gc.1:boehm-gc->=6.2:devel/boehm-gc
 
 PLIST=			${PKGDIR}/PLIST${SUBPACKAGE}
 
