@@ -3,7 +3,7 @@
 # Date created:		28 Jan 2000
 # Whom:			Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.3 2000/03/19 16:59:11 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/23 22:14:37 turan Exp $
 #
 
 DISTNAME=	xfce-3.2.5
@@ -12,6 +12,11 @@ NEED_VERSION=	1.223
 MASTER_SITES=	http://www.xfce.org/archive/
 
 MAINTAINER=	kevlo@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	Imlib.19:graphics/imlib \
 		gtk.1:x11/gtk+
