@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2004/06/26 18:36:25 xsa Exp $
+# $OpenBSD: Makefile,v 1.41 2004/06/26 18:40:03 xsa Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
 COMMENT=	"alternative ircII color client"
@@ -10,8 +10,7 @@ CATEGORIES=	net
 
 HOMEPAGE=	http://www.bitchx.org/
 
-MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/old/ \
-		ftp://ftp.bitchx.org/pub/BitchX/source/old/
+MASTER_SITES=	ftp://ftp.bitchx.org/pub/BitchX/source/old/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
