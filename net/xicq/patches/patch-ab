@@ -1,0 +1,18 @@
+--- src/libXicq/Makefile.orig	Mon Jun 29 13:57:08 1998
++++ src/libXicq/Makefile	Mon Jun 29 13:57:28 1998
+@@ -1,6 +1,6 @@
+ CC	= g++
+ SHELL	= /bin/sh
+-INCLUDE	= -I.
++INCLUDE	= -I. -I/usr/include/g++
+ CFLAGS	= -g -Wall $(INCLUDE)
+ CXXFLAGS= -g -Wall $(INCLUDE)
+ 
+@@ -15,6 +15,7 @@
+ 
+ all:	dep $(OBJECTS)
+ 	ar rc libXicq.a $(OBJECTS)
++	ranlib libXicq.a
+ 
+ clean:
+ 	rm -f *~ *.a *.o
