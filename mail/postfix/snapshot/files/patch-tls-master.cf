@@ -1,11 +1,11 @@
---- conf/master.cf.orig	Thu Oct 25 22:22:08 2001
-+++ conf/master.cf	Thu Oct 25 22:24:18 2001
-@@ -69,6 +69,8 @@
- # 		(yes)	(yes)	(yes)	(never)	(50)
+--- conf/master.cf.orig	Tue Jan 28 17:28:45 2003
++++ conf/master.cf	Tue Jan 28 17:30:06 2003
+@@ -70,6 +70,8 @@
+ #               (yes)   (yes)   (yes)   (never) (100)
  # ==========================================================================
- smtp	  inet	n	-	-	-	-	smtpd
+ smtp      inet  n       -       -       -       -       smtpd
 +#smtps     inet  n	-	-	-	-	smtpd -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes
 +#submission inet n	-	-	-	-	smtpd -o smtpd_enforce_tls=yes -o smtpd_sasl_auth_enable=yes
- #628	  inet	n	-	-	-	-	qmqpd
- pickup	  fifo	n	n	-	60	1	pickup
- cleanup	  unix	-	-	-	-	0	cleanup
+ #628      inet  n       -       -       -       -       qmqpd
+ pickup    fifo  n       -       -       60      1       pickup
+ cleanup   unix  n       -       -       -       0       cleanup
