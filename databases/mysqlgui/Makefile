@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/03 06:57:18 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/15 10:33:09 wilfried Exp $
 
 COMMENT=		'graphical sql client for MySQL'
 
@@ -23,11 +23,11 @@ DIST_SUBDIR=		mysqlgui
 
 PATCHFILES=		single.cc:0
 
-BUILD_DEPENDS=		${LOCALBASE}/lib/libfltk.a::x11/fltk \
-			${LOCALBASE}/lib/libflvw.a::x11/flvw \
-			${LOCALBASE}/lib/libfleditor.a::x11/fleditor
+BUILD_DEPENDS=		${LOCALBASE}/lib/libflvw.a::x11/flvw
 LIB_DEPENDS=		intl::devel/gettext \
 			jpeg::graphics/jpeg \
+			fltk::x11/fltk \
+			fleditor::x11/fleditor \
 			mysqlclient::databases/mysql \
 			sqlplus::devel/mysql++
 
