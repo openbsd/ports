@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 1999/08/01 14:17:25 brad Exp $
+# $OpenBSD: Makefile,v 1.10 1999/09/30 23:54:11 brad Exp $
 
-DISTNAME=	indent-2.2.0
+DISTNAME=	indent-2.2.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= indent
