@@ -1,0 +1,16 @@
+*** pbmplus.h.orig	Thu May 14 11:50:42 1998
+--- pbmplus.h	Thu May 14 11:51:59 1998
+***************
+*** 120,128 ****
+--- 120,130 ----
+  #include <unistd.h>
+  #endif
+  extern int atoi();
++ #ifndef __OpenBSD__
+  extern void exit();
+  extern long time();
+  extern int write();
++ #endif
+  #endif
+  
+  /* CONFIGURE: On most BSD systems, malloc() gets declared in stdlib.h, on

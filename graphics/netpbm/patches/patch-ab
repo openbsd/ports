@@ -1,0 +1,23 @@
+--- pgm/Makefile.orig	Fri Jan 28 11:14:02 1994
++++ pgm/Makefile	Sat Dec 20 22:51:17 1997
+@@ -39,10 +39,10 @@
+ LIBPGM =	libpgm.a
+ 
+ PORTBINARIES =	asciitopgm bioradtopgm fstopgm hipstopgm \
+-		lispmtopgm pbmtopgm pgmbentley pgmenhance pgmhist pgmkernel \
++		lispmtopgm pbmtopgm pgmbentley pgmenhance pgmhist \
+ 		pgmnoise pgmnorm pgmoil pgmramp pgmtofs pgmtolispm \
+ 		pgmtopbm psidtopgm spottopgm
+-MATHBINARIES =	pgmcrater pgmedge pgmtexture rawtopgm
++MATHBINARIES =	pgmcrater pgmedge pgmtexture rawtopgm pgmkernel
+ BINARIES =	$(PORTBINARIES) $(MATHBINARIES)
+ 
+ OBJECTS =	asciitopgm.o bioradtopgm.o fstopgm.o hipstopgm.o \
+@@ -134,7 +134,6 @@
+ pgmedge pgmedge.o:		pgmedge.c
+ pgmenhance pgmenhance.o:	pgmenhance.c
+ pgmhist pgmhist.o:		pgmhist.c
+-pgmkernel pgmkernel.o:		pgmkernel.c
+ pgmnoise pgmnoise.o:		pgmnoise.c
+ pgmnorm pgmnorm.o:		pgmnorm.c
+ pgmoil pgmoil.o:		pgmoil.c

@@ -1,0 +1,66 @@
+*** pnm/Makefile.orig	Mon Jan 31 23:47:32 1994
+--- pnm/Makefile	Thu May 14 12:01:28 1998
+***************
+*** 60,69 ****
+  		pnmcut pnmdepth pnmenlarge pnmfile pnmflip pnmhistmap \
+  		pnminvert pnmnoraw pnmpad pnmpaste \
+  		pnmtile pnmtoddif pnmtofits pnmtops pnmtorast \
+! 		pnmtosgi pnmtosir pnmtoxwd \
+! 		rasttopnm sgitopnm sirtopnm xwdtopnm zeisstopnm
+  MATHBINARIES =	pnmgamma pnmnlfilt pnmrotate pnmscale pnmshear
+! BINARIES =      $(PORTBINARIES) $(MATHBINARIES) $(TIFFBINARIES)
+  SCRIPTS =	anytopnm pnmindex pnmmargin pnmsmooth pstopnm
+  
+  PORTOBJECTS =	fitstopnm.o giftopnm.o \
+--- 60,70 ----
+  		pnmcut pnmdepth pnmenlarge pnmfile pnmflip pnmhistmap \
+  		pnminvert pnmnoraw pnmpad pnmpaste \
+  		pnmtile pnmtoddif pnmtofits pnmtops pnmtorast \
+! 		pnmtorle pnmtosgi pnmtosir pnmtoxwd \
+! 		rasttopnm rletopnm sgitopnm sirtopnm xwdtopnm zeisstopnm
+  MATHBINARIES =	pnmgamma pnmnlfilt pnmrotate pnmscale pnmshear
+! PNGBINARIES =	pngtopnm pnmtopng
+! BINARIES =      $(PORTBINARIES) $(MATHBINARIES) $(PNGBINARIES) $(TIFFBINARIES)
+  SCRIPTS =	anytopnm pnmindex pnmmargin pnmsmooth pstopnm
+  
+  PORTOBJECTS =	fitstopnm.o giftopnm.o \
+***************
+*** 74,80 ****
+  		pnmtosgi.o pnmtosir.o pnmtoxwd.o \
+  		rasttopnm.o sgitopnm.o sirtopnm.o xwdtopnm.o zeisstopnm.o \
+  		pnmgamma.o pnmnlfilt.o pnmrotate.o pnmscale.o pnmshear.o
+! OBJECTS =	$(PORTOBJECTS) $(TIFFOBJECTS)
+  
+  MANUALS1 =	$(BINARIES) $(SCRIPTS)
+  MANUALS3 =	libpnm
+--- 75,81 ----
+  		pnmtosgi.o pnmtosir.o pnmtoxwd.o \
+  		rasttopnm.o sgitopnm.o sirtopnm.o xwdtopnm.o zeisstopnm.o \
+  		pnmgamma.o pnmnlfilt.o pnmrotate.o pnmscale.o pnmshear.o
+! OBJECTS =	$(PORTOBJECTS)
+  
+  MANUALS1 =	$(BINARIES) $(SCRIPTS)
+  MANUALS3 =	libpnm
+***************
+*** 128,134 ****
+  
+  
+  # Rules for plain programs.
+! $(PORTBINARIES) $(TIFFBINARIES):	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM) $(TIFFLIB)
+  	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM) $(TIFFLIB)
+  
+  # Rule for math-dependent programs.
+--- 129,141 ----
+  
+  
+  # Rules for plain programs.
+! $(PORTBINARIES):	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
+! 	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
+! 
+! $(PNGBINARIES):	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
+! 	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM) -L/usr/local/lib -lpng -lz
+! 
+! $(TIFFBINARIES):	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
+  	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM) $(TIFFLIB)
+  
+  # Rule for math-dependent programs.
