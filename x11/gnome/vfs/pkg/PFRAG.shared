@@ -1,7 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/15 21:48:24 espie Exp $
-@lib lib/libgnomevfs.so.0.2
+@comment $OpenBSD: PFRAG.shared,v 1.6 2004/10/11 04:27:25 marcm Exp $
 lib/libgnomevfs-pthread.so
-lib/vfs/modules/libnntp.so
+@lib lib/libgnomevfs.so.0.2
 lib/vfs/modules/libbzip2.so
 lib/vfs/modules/libdesktop.so
 lib/vfs/modules/libextfs.so
@@ -9,6 +8,7 @@ lib/vfs/modules/libfile.so
 lib/vfs/modules/libftp.so
 lib/vfs/modules/libgzip.so
 lib/vfs/modules/libhttp.so
+lib/vfs/modules/libnntp.so
 lib/vfs/modules/libvfs-pipe.so
 lib/vfs/modules/libvfs-test.so
 lib/vfs/modules/libvfs-translate.so

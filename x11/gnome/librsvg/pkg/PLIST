@@ -1,16 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/06/23 03:26:17 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/10/11 04:27:24 marcm Exp $
 bin/rsvg
+include/librsvg-2/
+include/librsvg-2/librsvg/
 include/librsvg-2/librsvg/librsvg-features.h
 include/librsvg-2/librsvg/rsvg-gz.h
 include/librsvg-2/librsvg/rsvg.h
+lib/gtk-2.0/
+lib/gtk-2.0/2.4.0/
+lib/gtk-2.0/2.4.0/engines/
 lib/gtk-2.0/2.4.0/engines/libsvg.a
 lib/gtk-2.0/2.4.0/engines/libsvg.la
+lib/gtk-2.0/2.4.0/loaders/
 lib/gtk-2.0/2.4.0/loaders/svg_loader.a
 lib/gtk-2.0/2.4.0/loaders/svg_loader.la
 lib/librsvg-2.a
 lib/librsvg-2.la
+lib/pkgconfig/
 lib/pkgconfig/librsvg-2.0.pc
-man/man1/rsvg.1
+@man man/man1/rsvg.1
+share/doc/librsvg/
+share/doc/librsvg/html/
 share/doc/librsvg/html/home.png
 share/doc/librsvg/html/i1073.html
 share/doc/librsvg/html/index.html
@@ -26,9 +35,5 @@ share/doc/librsvg/html/rsvg-creating-a-svgz-reader.html
 share/doc/librsvg/html/rsvg.html
 share/doc/librsvg/html/up.png
 %%SHARED%%
-@dirrm share/doc/librsvg/html
-@dirrm share/doc/librsvg
-@dirrm include/librsvg-2/librsvg
-@dirrm include/librsvg-2
 @exec %D/bin/gdk-pixbuf-query-loaders > /var/db/gtk-2.0/gdk-pixbuf.loaders
 @unexec %D/bin/gdk-pixbuf-query-loaders > /var/db/gtk-2.0/gdk-pixbuf.loaders

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/06/23 03:26:12 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/10/11 04:27:23 marcm Exp $
 bin/gnome-accessibility-keyboard-properties
 bin/gnome-at-properties
 bin/gnome-background-properties
@@ -18,14 +18,19 @@ bin/gnome-thumbnail-font
 bin/gnome-ui-properties
 bin/gnome-window-properties
 bin/themus-theme-applier
+include/gnome-window-settings-2.0/
 include/gnome-window-settings-2.0/gnome-window-manager.h
 include/gnome-window-settings-2.0/gnome-wm-manager.h
+lib/bonobo/
 lib/bonobo/libthemus-theme-properties-view.a
 lib/bonobo/libthemus-theme-properties-view.la
 lib/bonobo/libthemus-theme-properties-view.so
+lib/bonobo/servers/
 lib/bonobo/servers/GNOME_SettingsDaemon.server
 lib/bonobo/servers/Themus_Properties_View.server
 lib/bonobo/servers/fontilus.server
+lib/gnome-vfs-2.0/
+lib/gnome-vfs-2.0/modules/
 lib/gnome-vfs-2.0/modules/libfont-method.a
 lib/gnome-vfs-2.0/modules/libfont-method.la
 lib/gnome-vfs-2.0/modules/libfont-method.so
@@ -34,15 +39,21 @@ lib/gnome-vfs-2.0/modules/libtheme-method.la
 lib/gnome-vfs-2.0/modules/libtheme-method.so
 lib/libgnome-window-settings.a
 lib/libgnome-window-settings.la
+lib/pkgconfig/
 lib/pkgconfig/gnome-window-settings-2.0.pc
+lib/window-manager-settings/
 lib/window-manager-settings/libmetacity.a
 lib/window-manager-settings/libmetacity.la
 lib/window-manager-settings/libmetacity.so
 libexec/fontilus-context-menu
 libexec/gnome-settings-daemon
+share/application-registry/
 share/application-registry/fontilus.applications
 share/application-registry/themus.applications
+share/applications/
 share/applications/gnomecc.desktop
+share/control-center-2.0/
+share/control-center-2.0/capplets/
 share/control-center-2.0/capplets/accessibility-keyboard.desktop
 share/control-center-2.0/capplets/at-properties.desktop
 share/control-center-2.0/capplets/background.desktop
@@ -57,6 +68,7 @@ share/control-center-2.0/capplets/gtk-theme-selector.desktop
 share/control-center-2.0/capplets/keybinding.desktop
 share/control-center-2.0/capplets/keyboard.desktop
 share/control-center-2.0/capplets/window-properties.desktop
+share/control-center-2.0/interfaces/
 share/control-center-2.0/interfaces/acme.glade
 share/control-center-2.0/interfaces/apply-font.glade
 share/control-center-2.0/interfaces/at-enable-dialog.glade
@@ -74,6 +86,7 @@ share/control-center-2.0/interfaces/gnome-window-properties.glade
 share/control-center-2.0/interfaces/sound-properties.glade
 share/control-center-2.0/interfaces/theme-install.glade
 share/control-center-2.0/interfaces/theme-properties.glade
+share/control-center-2.0/pixmaps/
 share/control-center-2.0/pixmaps/accessibility-keyboard-bouncekey.png
 share/control-center-2.0/pixmaps/accessibility-keyboard-mousekey.png
 share/control-center-2.0/pixmaps/accessibility-keyboard-slowkey.png
@@ -104,65 +117,130 @@ share/control-center-2.0/pixmaps/subpixel-vbgr.png
 share/control-center-2.0/pixmaps/subpixel-vrgb.png
 share/control-center-2.0/pixmaps/theme-thumbnailing.png
 share/control-center-2.0/pixmaps/visual-bell.png
+share/control-center-2.0/xrdb/
 share/control-center-2.0/xrdb/Editres.ad
 share/control-center-2.0/xrdb/Emacs.ad
 share/control-center-2.0/xrdb/General.ad
 share/control-center-2.0/xrdb/Motif.ad
 share/control-center-2.0/xrdb/Tk.ad
 share/control-center-2.0/xrdb/Xaw.ad
+share/examples/controlcenter2/
+share/examples/controlcenter2/gnome-vfs-2.0/
+@sample ${SYSCONFDIR}/gnome-vfs-2.0/
+share/examples/controlcenter2/gnome-vfs-2.0/modules/
+@sample ${SYSCONFDIR}/gnome-vfs-2.0/modules/
+share/examples/controlcenter2/gnome-vfs-2.0/modules/font-method.conf
+@sample ${SYSCONFDIR}/gnome-vfs-2.0/modules/font-method.conf
+share/examples/controlcenter2/gnome-vfs-2.0/modules/theme-method.conf
+@sample ${SYSCONFDIR}/gnome-vfs-2.0/modules/theme-method.conf
+share/gnome/
+share/gnome-2.0/
+share/gnome-2.0/ui/
 share/gnome-2.0/ui/gnomecc-ui.xml
+share/gnome-background-properties/
+share/gnome/cursor-fonts/
 share/gnome/cursor-fonts/cursor-large-white.pcf
 share/gnome/cursor-fonts/cursor-large.pcf
 share/gnome/cursor-fonts/cursor-white.pcf
+share/gnome/vfolders/
 share/gnome/vfolders/Accessibility.directory
 share/gnome/vfolders/Advanced.directory
 share/gnome/vfolders/font-method.directory
 share/gnome/vfolders/theme-method.directory
+share/icons/
+share/icons/gnome/
+share/icons/gnome/48x48/
+share/icons/gnome/48x48/apps/
 share/icons/gnome/48x48/apps/accessibility-directory.png
+share/idl/
 share/idl/ConfigArchiver.idl
 share/idl/GNOME_SettingsDaemon.idl
+share/locale/af/
+share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/control-center-2.0.mo
+share/locale/am/
+share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/control-center-2.0.mo
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/control-center-2.0.mo
+share/locale/az/
+share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/control-center-2.0.mo
+share/locale/be/
+share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/control-center-2.0.mo
 share/locale/bg/LC_MESSAGES/control-center-2.0.mo
+share/locale/bn/
+share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/control-center-2.0.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/control-center-2.0.mo
 share/locale/cs/LC_MESSAGES/control-center-2.0.mo
+share/locale/cy/
+share/locale/cy/LC_MESSAGES/
 share/locale/cy/LC_MESSAGES/control-center-2.0.mo
 share/locale/da/LC_MESSAGES/control-center-2.0.mo
 share/locale/de/LC_MESSAGES/control-center-2.0.mo
 share/locale/el/LC_MESSAGES/control-center-2.0.mo
+share/locale/en_CA/
+share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/control-center-2.0.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/control-center-2.0.mo
 share/locale/es/LC_MESSAGES/control-center-2.0.mo
 share/locale/et/LC_MESSAGES/control-center-2.0.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/control-center-2.0.mo
+share/locale/fa/
+share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/control-center-2.0.mo
 share/locale/fi/LC_MESSAGES/control-center-2.0.mo
 share/locale/fr/LC_MESSAGES/control-center-2.0.mo
+share/locale/ga/
+share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/control-center-2.0.mo
 share/locale/gl/LC_MESSAGES/control-center-2.0.mo
+share/locale/gu/
+share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/control-center-2.0.mo
 share/locale/he/LC_MESSAGES/control-center-2.0.mo
+share/locale/hi/
+share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/control-center-2.0.mo
 share/locale/hr/LC_MESSAGES/control-center-2.0.mo
 share/locale/hu/LC_MESSAGES/control-center-2.0.mo
 share/locale/id/LC_MESSAGES/control-center-2.0.mo
+share/locale/is/
+share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/control-center-2.0.mo
 share/locale/it/LC_MESSAGES/control-center-2.0.mo
 share/locale/ja/LC_MESSAGES/control-center-2.0.mo
 share/locale/ko/LC_MESSAGES/control-center-2.0.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/control-center-2.0.mo
 share/locale/lv/LC_MESSAGES/control-center-2.0.mo
+share/locale/mk/
+share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/control-center-2.0.mo
+share/locale/ml/
+share/locale/ml/LC_MESSAGES/
 share/locale/ml/LC_MESSAGES/control-center-2.0.mo
+share/locale/mn/
+share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/control-center-2.0.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/control-center-2.0.mo
 share/locale/nl/LC_MESSAGES/control-center-2.0.mo
 share/locale/nn/LC_MESSAGES/control-center-2.0.mo
 share/locale/no/LC_MESSAGES/control-center-2.0.mo
+share/locale/pa/
+share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/control-center-2.0.mo
 share/locale/pl/LC_MESSAGES/control-center-2.0.mo
 share/locale/pt/LC_MESSAGES/control-center-2.0.mo
@@ -171,26 +249,45 @@ share/locale/ro/LC_MESSAGES/control-center-2.0.mo
 share/locale/ru/LC_MESSAGES/control-center-2.0.mo
 share/locale/sk/LC_MESSAGES/control-center-2.0.mo
 share/locale/sl/LC_MESSAGES/control-center-2.0.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/control-center-2.0.mo
+share/locale/sr/
+share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/control-center-2.0.mo
+share/locale/sr@Latn/
+share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/control-center-2.0.mo
 share/locale/sv/LC_MESSAGES/control-center-2.0.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/control-center-2.0.mo
+share/locale/th/
+share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/control-center-2.0.mo
 share/locale/tr/LC_MESSAGES/control-center-2.0.mo
 share/locale/uk/LC_MESSAGES/control-center-2.0.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/control-center-2.0.mo
+share/locale/wa/
+share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/control-center-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/control-center-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/control-center-2.0.mo
+share/mime-info/
 share/mime-info/fontilus.keys
 share/mime-info/fontilus.mime
 share/mime-info/themus.keys
+share/pixmaps/
 share/pixmaps/control-center2.png
+share/pixmaps/gnomecc-2/
 share/pixmaps/gnomecc-2/active.png
 share/pixmaps/gnomecc-2/bcg_top.png
 share/pixmaps/gnomecc-2/blank.png
 share/pixmaps/gnomecc-2/title.png
+share/schemas/
+share/schemas/control-center2/
 share/schemas/control-center2/apps_gnome_settings_daemon_default_editor.schemas
 share/schemas/control-center2/apps_gnome_settings_daemon_keybindings.schemas
 share/schemas/control-center2/apps_gnome_settings_daemon_screensaver.schemas
@@ -199,15 +296,4 @@ share/schemas/control-center2/desktop_gnome_peripherals_keyboard_xkb.schemas
 share/schemas/control-center2/fontilus.schemas
 share/schemas/control-center2/themus.schemas
 %%SHARED%%
-@dirrm share/schemas/control-center2
-@dirrm share/pixmaps/gnomecc-2
-@dirrm share/icons/gnome/48x48/apps
-@dirrm share/gnome/cursor-fonts
-@exec mkdir -p %D/share/gnome-background-properties
-@dirrm share/gnome-background-properties
-@dirrm share/control-center-2.0/xrdb
-@dirrm share/control-center-2.0/pixmaps
-@dirrm share/control-center-2.0/interfaces
-@dirrm lib/window-manager-settings
-@dirrm include/gnome-window-settings-2.0
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/control-center2/*.schemas > /dev/null

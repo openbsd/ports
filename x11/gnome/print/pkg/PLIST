@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/20 15:17:04 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/10/11 04:27:24 marcm Exp $
 bin/gnome-font-install
+include/gnome-1.0/
+include/gnome-1.0/libgnomeprint/
 include/gnome-1.0/libgnomeprint/gnome-font-dialog.h
 include/gnome-1.0/libgnomeprint/gnome-font-face-private.h
 include/gnome-1.0/libgnomeprint/gnome-font-face.h
@@ -26,8 +28,11 @@ include/gnome-1.0/libgnomeprint/gnome-text.h
 lib/libgnomeprint.a
 lib/libgnomeprint.la
 lib/printConf.sh
+share/fonts/
 @comment share/fonts/README.binaries
 @comment share/fonts/README.installer
+share/fonts/afms/
+share/fonts/afms/adobe/
 share/fonts/afms/adobe/pagd8a.afm
 share/fonts/afms/adobe/pagdo8a.afm
 share/fonts/afms/adobe/pagk8a.afm
@@ -69,21 +74,16 @@ share/fonts/afms/adobe/putr8a.afm
 share/fonts/afms/adobe/putri8a.afm
 share/fonts/afms/adobe/pzcmi8a.afm
 share/fonts/afms/adobe/pzdr.afm
+share/gnome/
+share/gnome-print/
+share/gnome-print/profiles/
 share/gnome-print/profiles/PostscriptOptimized.profile
 share/gnome-print/profiles/fax-g3.profile
 share/gnome-print/profiles/pdf.profile
+share/gnome/fonts/
 share/gnome/fonts/adobe-urw.font
 share/gnome/fonts/defaults.fontmap
 %%SHARED%%
-@dirrm share/gnome-print/profiles
-@dirrm share/gnome-print
-@dirrm share/gnome/fonts
-@dirrm share/gnome
-@dirrm share/fonts/afms/adobe
-@dirrm share/fonts/afms
-@dirrm share/fonts
-@dirrm include/gnome-1.0/libgnomeprint
 @exec %D/bin/gnome-font-install --smart
-@cwd /var/db
 @extraunexec rm -rf %D/gnome/gnome-print
 @extraunexec rmdir %D/gnome 2>/dev/null || true

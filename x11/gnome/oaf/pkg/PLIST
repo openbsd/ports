@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/12/15 20:35:20 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/10/11 04:27:24 marcm Exp $
 bin/oaf-client
 bin/oaf-config
 bin/oaf-empty-server
@@ -6,6 +6,7 @@ bin/oaf-run-query
 bin/oaf-slay
 bin/oaf-sysconf
 bin/oafd
+include/liboaf/
 include/liboaf/liboaf-version.h
 include/liboaf/liboaf.h
 include/liboaf/oaf-actid.h
@@ -21,114 +22,113 @@ include/liboaf/oaf-util.h
 include/liboaf/oaf.h
 lib/liboaf.la
 lib/oafConf.sh
-man/man1/oafd.1
+@man man/man1/oafd.1
+share/aclocal/
 share/aclocal/oaf.m4
+share/examples/oaf/
+share/examples/oaf/oaf/
+@sample ${SYSCONFDIR}/oaf/
 share/examples/oaf/oaf/oaf-config.xml
+@sample ${SYSCONFDIR}/oaf/oaf-config.xml
 @comment share/examples/oaf/oaf/oaf-config.xml.sample
+share/idl/
 share/idl/oaf-factory.idl
 share/idl/oaf.idl
+share/locale/
+share/locale/az/
+share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/oaf.mo
+share/locale/bg/
+share/locale/bg/LC_MESSAGES/
 share/locale/bg/LC_MESSAGES/oaf.mo
+share/locale/da/
+share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/oaf.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/oaf.mo
+share/locale/el/
+share/locale/el/LC_MESSAGES/
 share/locale/el/LC_MESSAGES/oaf.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/oaf.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/oaf.mo
+share/locale/fi/
+share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/oaf.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/oaf.mo
+share/locale/ga/
+share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/oaf.mo
+share/locale/gl/
+share/locale/gl/LC_MESSAGES/
 share/locale/gl/LC_MESSAGES/oaf.mo
+share/locale/hu/
+share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/oaf.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/oaf.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/oaf.mo
+share/locale/ko/
+share/locale/ko/LC_MESSAGES/
 share/locale/ko/LC_MESSAGES/oaf.mo
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/oaf.mo
+share/locale/nn/
+share/locale/nn/LC_MESSAGES/
 share/locale/nn/LC_MESSAGES/oaf.mo
+share/locale/no/
+share/locale/no/LC_MESSAGES/
 share/locale/no/LC_MESSAGES/oaf.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/oaf.mo
+share/locale/pt/
+share/locale/pt/LC_MESSAGES/
 share/locale/pt/LC_MESSAGES/oaf.mo
+share/locale/pt_BR/
+share/locale/pt_BR/LC_MESSAGES/
 share/locale/pt_BR/LC_MESSAGES/oaf.mo
+share/locale/ro/
+share/locale/ro/LC_MESSAGES/
 share/locale/ro/LC_MESSAGES/oaf.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/oaf.mo
+share/locale/sk/
+share/locale/sk/LC_MESSAGES/
 share/locale/sk/LC_MESSAGES/oaf.mo
+share/locale/sl/
+share/locale/sl/LC_MESSAGES/
 share/locale/sl/LC_MESSAGES/oaf.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/oaf.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/oaf.mo
+share/locale/tr/
+share/locale/tr/LC_MESSAGES/
 share/locale/tr/LC_MESSAGES/oaf.mo
+share/locale/uk/
+share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/oaf.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/oaf.mo
+share/locale/zh_TW/
+share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/oaf.mo
+share/oaf/
 share/oaf/OAF_naming-service.oaf
 share/oaf/empty.oafinfo
 %%SHARED%%
-@dirrm share/oaf
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/ta/LC_MESSAGES
-@dirrm share/locale/ta
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nn/LC_MESSAGES
-@dirrm share/locale/nn
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/gl/LC_MESSAGES
-@dirrm share/locale/gl
-@dirrm share/locale/ga/LC_MESSAGES
-@dirrm share/locale/ga
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/eu/LC_MESSAGES
-@dirrm share/locale/eu
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/bg/LC_MESSAGES
-@dirrm share/locale/bg
-@dirrm share/locale/az/LC_MESSAGES
-@dirrm share/locale/az
-@dirrm share/locale
-@dirrm share/examples/oaf/oaf
-@dirrm share/examples/oaf
-@dirrm share/aclocal
-@dirrm include/liboaf
-@cwd ${SYSCONFDIR}
-@extra oaf/oaf-config.xml
-@extra oaf/

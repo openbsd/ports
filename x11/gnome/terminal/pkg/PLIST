@@ -1,87 +1,136 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/06/23 03:26:19 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/10/11 04:27:24 marcm Exp $
 bin/gnome-terminal
+lib/bonobo/
+lib/bonobo/servers/
 lib/bonobo/servers/gnome-terminal.server
+share/application-registry/
 share/application-registry/gnome-terminal.applications
+share/applications/
 share/applications/gnome-terminal.desktop
+share/gnome/
+share/gnome-terminal/
+share/gnome-terminal/glade/
 share/gnome-terminal/glade/gnome-terminal.glade2
+share/gnome/help/
+share/gnome/help/gnome-terminal/
+share/gnome/help/gnome-terminal/C/
+share/gnome/help/gnome-terminal/C/figures/
 share/gnome/help/gnome-terminal/C/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/C/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/C/figures/terminal_window.png
 share/gnome/help/gnome-terminal/C/gnome-terminal.xml
 share/gnome/help/gnome-terminal/C/legal.xml
+share/gnome/help/gnome-terminal/de/
+share/gnome/help/gnome-terminal/de/figures/
 share/gnome/help/gnome-terminal/de/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/de/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/de/figures/terminal_window.png
 share/gnome/help/gnome-terminal/de/gnome-terminal.xml
 share/gnome/help/gnome-terminal/de/legal.xml
+share/gnome/help/gnome-terminal/es/
+share/gnome/help/gnome-terminal/es/figures/
 share/gnome/help/gnome-terminal/es/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/es/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/es/figures/terminal_window.png
 share/gnome/help/gnome-terminal/es/gnome-terminal.xml
 share/gnome/help/gnome-terminal/es/legal.xml
+share/gnome/help/gnome-terminal/fr/
+share/gnome/help/gnome-terminal/fr/figures/
 share/gnome/help/gnome-terminal/fr/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/fr/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/fr/figures/terminal_window.png
 share/gnome/help/gnome-terminal/fr/gnome-terminal.xml
 share/gnome/help/gnome-terminal/fr/legal.xml
+share/gnome/help/gnome-terminal/it/
+share/gnome/help/gnome-terminal/it/figures/
 share/gnome/help/gnome-terminal/it/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/it/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/it/figures/terminal_window.png
 share/gnome/help/gnome-terminal/it/gnome-terminal.xml
 share/gnome/help/gnome-terminal/it/legal.xml
+share/gnome/help/gnome-terminal/ja/
+share/gnome/help/gnome-terminal/ja/figures/
 share/gnome/help/gnome-terminal/ja/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/ja/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/ja/figures/terminal_window.png
 share/gnome/help/gnome-terminal/ja/gnome-terminal.xml
 share/gnome/help/gnome-terminal/ja/legal.xml
+share/gnome/help/gnome-terminal/ko/
+share/gnome/help/gnome-terminal/ko/figures/
 share/gnome/help/gnome-terminal/ko/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/ko/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/ko/figures/terminal_window.png
 share/gnome/help/gnome-terminal/ko/gnome-terminal.xml
 share/gnome/help/gnome-terminal/ko/legal.xml
+share/gnome/help/gnome-terminal/ro/
+share/gnome/help/gnome-terminal/ro/figures/
 share/gnome/help/gnome-terminal/ro/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/ro/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/ro/figures/terminal_window.png
 share/gnome/help/gnome-terminal/ro/gnome-terminal.xml
 share/gnome/help/gnome-terminal/ro/legal.xml
+share/gnome/help/gnome-terminal/sv/
+share/gnome/help/gnome-terminal/sv/figures/
 share/gnome/help/gnome-terminal/sv/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/sv/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/sv/figures/terminal_window.png
 share/gnome/help/gnome-terminal/sv/gnome-terminal.xml
 share/gnome/help/gnome-terminal/sv/legal.xml
+share/gnome/help/gnome-terminal/zh_CN/
+share/gnome/help/gnome-terminal/zh_CN/figures/
 share/gnome/help/gnome-terminal/zh_CN/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/zh_CN/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/zh_CN/figures/terminal_window.png
 share/gnome/help/gnome-terminal/zh_CN/gnome-terminal.xml
 share/gnome/help/gnome-terminal/zh_CN/legal.xml
+share/gnome/help/gnome-terminal/zh_TW/
+share/gnome/help/gnome-terminal/zh_TW/figures/
 share/gnome/help/gnome-terminal/zh_TW/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/zh_TW/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/zh_TW/figures/terminal_window.png
 share/gnome/help/gnome-terminal/zh_TW/gnome-terminal.xml
 share/gnome/help/gnome-terminal/zh_TW/legal.xml
 share/locale/am/LC_MESSAGES/gnome-terminal.mo
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gnome-terminal.mo
 share/locale/az/LC_MESSAGES/gnome-terminal.mo
 share/locale/be/LC_MESSAGES/gnome-terminal.mo
 share/locale/bg/LC_MESSAGES/gnome-terminal.mo
+share/locale/bn/
+share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/gnome-terminal.mo
 share/locale/ca/LC_MESSAGES/gnome-terminal.mo
 share/locale/cs/LC_MESSAGES/gnome-terminal.mo
+share/locale/cy/
+share/locale/cy/LC_MESSAGES/
 share/locale/cy/LC_MESSAGES/gnome-terminal.mo
 share/locale/da/LC_MESSAGES/gnome-terminal.mo
 share/locale/de/LC_MESSAGES/gnome-terminal.mo
 share/locale/el/LC_MESSAGES/gnome-terminal.mo
+share/locale/en_CA/
+share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/gnome-terminal.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gnome-terminal.mo
 share/locale/es/LC_MESSAGES/gnome-terminal.mo
 share/locale/et/LC_MESSAGES/gnome-terminal.mo
+share/locale/fa/
+share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/gnome-terminal.mo
 share/locale/fi/LC_MESSAGES/gnome-terminal.mo
 share/locale/fr/LC_MESSAGES/gnome-terminal.mo
+share/locale/ga/
+share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/gnome-terminal.mo
 share/locale/gl/LC_MESSAGES/gnome-terminal.mo
+share/locale/gu/
+share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/gnome-terminal.mo
 share/locale/he/LC_MESSAGES/gnome-terminal.mo
+share/locale/hi/
+share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/gnome-terminal.mo
 share/locale/hr/LC_MESSAGES/gnome-terminal.mo
 share/locale/hu/LC_MESSAGES/gnome-terminal.mo
@@ -89,15 +138,27 @@ share/locale/id/LC_MESSAGES/gnome-terminal.mo
 share/locale/it/LC_MESSAGES/gnome-terminal.mo
 share/locale/ja/LC_MESSAGES/gnome-terminal.mo
 share/locale/ko/LC_MESSAGES/gnome-terminal.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/gnome-terminal.mo
 share/locale/lv/LC_MESSAGES/gnome-terminal.mo
+share/locale/mk/
+share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/gnome-terminal.mo
+share/locale/ml/
+share/locale/ml/LC_MESSAGES/
 share/locale/ml/LC_MESSAGES/gnome-terminal.mo
+share/locale/mn/
+share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/gnome-terminal.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/gnome-terminal.mo
 share/locale/nl/LC_MESSAGES/gnome-terminal.mo
 share/locale/nn/LC_MESSAGES/gnome-terminal.mo
 share/locale/no/LC_MESSAGES/gnome-terminal.mo
+share/locale/pa/
+share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/gnome-terminal.mo
 share/locale/pl/LC_MESSAGES/gnome-terminal.mo
 share/locale/pt/LC_MESSAGES/gnome-terminal.mo
@@ -106,18 +167,27 @@ share/locale/ro/LC_MESSAGES/gnome-terminal.mo
 share/locale/ru/LC_MESSAGES/gnome-terminal.mo
 share/locale/sk/LC_MESSAGES/gnome-terminal.mo
 share/locale/sl/LC_MESSAGES/gnome-terminal.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gnome-terminal.mo
 share/locale/sr/LC_MESSAGES/gnome-terminal.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-terminal.mo
 share/locale/sv/LC_MESSAGES/gnome-terminal.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/gnome-terminal.mo
+share/locale/th/
+share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gnome-terminal.mo
 share/locale/tr/LC_MESSAGES/gnome-terminal.mo
 share/locale/uk/LC_MESSAGES/gnome-terminal.mo
 share/locale/vi/LC_MESSAGES/gnome-terminal.mo
+share/locale/wa/
+share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
+share/omf/gnome-terminal/
 share/omf/gnome-terminal/gnome-terminal-C.omf
 share/omf/gnome-terminal/gnome-terminal-de.omf
 share/omf/gnome-terminal/gnome-terminal-es.omf
@@ -129,38 +199,11 @@ share/omf/gnome-terminal/gnome-terminal-ro.omf
 share/omf/gnome-terminal/gnome-terminal-sv.omf
 share/omf/gnome-terminal/gnome-terminal-zh_CN.omf
 share/omf/gnome-terminal/gnome-terminal-zh_TW.omf
+share/pixmaps/
 share/pixmaps/gnome-terminal.png
+share/schemas/
+share/schemas/gnome-terminal/
 share/schemas/gnome-terminal/gnome-terminal.schemas
-@dirrm share/schemas/gnome-terminal
-@dirrm share/omf/gnome-terminal
-@dirrm share/gnome/help/gnome-terminal/zh_TW/figures
-@dirrm share/gnome/help/gnome-terminal/zh_TW
-@dirrm share/gnome/help/gnome-terminal/zh_CN/figures
-@dirrm share/gnome/help/gnome-terminal/zh_CN
-@dirrm share/gnome/help/gnome-terminal/sv/figures
-@dirrm share/gnome/help/gnome-terminal/sv
-@dirrm share/gnome/help/gnome-terminal/ro/figures
-@dirrm share/gnome/help/gnome-terminal/ro
-@dirrm share/gnome/help/gnome-terminal/ko/figures
-@dirrm share/gnome/help/gnome-terminal/ko
-@dirrm share/gnome/help/gnome-terminal/ja/figures
-@dirrm share/gnome/help/gnome-terminal/ja
-@dirrm share/gnome/help/gnome-terminal/it/figures
-@dirrm share/gnome/help/gnome-terminal/it
-@dirrm share/gnome/help/gnome-terminal/fr/figures
-@dirrm share/gnome/help/gnome-terminal/fr
-@dirrm share/gnome/help/gnome-terminal/es/figures
-@dirrm share/gnome/help/gnome-terminal/es
-@dirrm share/gnome/help/gnome-terminal/de/figures
-@dirrm share/gnome/help/gnome-terminal/de
-@dirrm share/gnome/help/gnome-terminal/C/figures
-@dirrm share/gnome/help/gnome-terminal/C
-@dirrm share/gnome/help/gnome-terminal
-@dirrm share/gnome/help
-@dirrm share/gnome-terminal/glade
-@dirrm share/gnome-terminal
-@dirrm share/gnome
-@dirrm share/applications
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-terminal/*.schemas > /dev/null

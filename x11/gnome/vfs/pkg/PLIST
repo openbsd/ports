@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/12/15 20:35:20 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/10/11 04:27:25 marcm Exp $
 bin/gnome-vfs-config
+@comment doc/
+include/gnome-vfs-1.0/
+include/gnome-vfs-1.0/libgnomevfs/
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-application-registry.h
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-async-ops.h
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-backend.h
@@ -48,11 +51,15 @@ include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-utils.h
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-xfer.h
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs.h
 @comment lib/charset.alias
+lib/gnome-vfs-1.0/
+lib/gnome-vfs-1.0/include/
 lib/gnome-vfs-1.0/include/gnome-vfs-file-size.h
 lib/libgnomevfs-pthread.a
 lib/libgnomevfs-pthread.la
 lib/libgnomevfs.a
 lib/libgnomevfs.la
+lib/vfs/
+lib/vfs/extfs/
 lib/vfs/extfs/README
 lib/vfs/extfs/a
 lib/vfs/extfs/ar
@@ -70,6 +77,7 @@ lib/vfs/extfs/tar
 lib/vfs/extfs/trpm
 lib/vfs/extfs/zip
 lib/vfs/extfs/zoo
+lib/vfs/modules/
 lib/vfs/modules/libbzip2.a
 lib/vfs/modules/libbzip2.la
 lib/vfs/modules/libdesktop.a
@@ -93,25 +101,11 @@ lib/vfs/modules/libvfs-test.la
 lib/vfs/modules/libvfs-translate.a
 lib/vfs/modules/libvfs-translate.la
 lib/vfsConf.sh
+share/examples/gnome-vfs/
+share/examples/gnome-vfs/vfs/
+@sample ${SYSCONFDIR}/vfs/
+share/examples/gnome-vfs/vfs/modules/
+@sample ${SYSCONFDIR}/vfs/modules/
 share/examples/gnome-vfs/vfs/modules/default-modules.conf
+@sample ${SYSCONFDIR}/vfs/modules/default-modules.conf
 %%SHARED%%
-@comment @exec mkdir -p %D/share/gtk-doc/html/gnome-vfs
-@comment @dirrm share/gtk-doc/html/gnome-vfs
-@comment @dirrm share/gtk-doc/html
-@comment @dirrm share/gtk-doc
-@dirrm share/examples/gnome-vfs/vfs/modules
-@dirrm share/examples/gnome-vfs/vfs
-@dirrm share/examples/gnome-vfs
-@dirrm lib/vfs/modules
-@dirrm lib/vfs/extfs
-@dirrm lib/vfs
-@dirrm lib/gnome-vfs-1.0/include
-@dirrm lib/gnome-vfs-1.0
-@dirrm include/gnome-vfs-1.0/libgnomevfs
-@dirrm include/gnome-vfs-1.0
-@comment @exec mkdir -p %D/doc
-@comment @dirrm doc
-@cwd ${SYSCONFDIR}
-@extra vfs/modules/default-modules.conf
-@extra vfs/modules/
-@extra vfs/

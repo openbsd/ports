@@ -1,13 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/06/23 03:26:19 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/10/11 04:27:24 marcm Exp $
 bin/gnome-desktop-item-edit
 bin/gnome-panel
 bin/gnome-panel-preferences
 bin/gnome-panel-screenshot
 bin/panel-test-applets
+include/panel-2.0/
 include/panel-2.0/GNOME_Panel.h
 include/panel-2.0/panel-applet-enums.h
 include/panel-2.0/panel-applet-gconf.h
 include/panel-2.0/panel-applet.h
+lib/bonobo/
+lib/bonobo/servers/
 lib/bonobo/servers/GNOME_ClockApplet_Factory.server
 lib/bonobo/servers/GNOME_FishApplet_Factory.server
 lib/bonobo/servers/GNOME_NotificationAreaApplet.server
@@ -15,14 +18,20 @@ lib/bonobo/servers/GNOME_Panel.server
 lib/bonobo/servers/GNOME_Wncklet_Factory.server
 lib/libpanel-applet-2.a
 lib/libpanel-applet-2.la
+lib/pkgconfig/
 lib/pkgconfig/libpanelapplet-2.0.pc
 libexec/clock-applet
 libexec/fish-applet-2
 libexec/notification-area-applet
 libexec/wnck-applet
-man/man1/gnome-panel-preferences.1
-man/man1/gnome-panel.1
+@man man/man1/gnome-panel-preferences.1
+@man man/man1/gnome-panel.1
+share/control-center-2.0/
+share/control-center-2.0/capplets/
 share/control-center-2.0/capplets/gnome-panel-preferences.desktop
+share/gnome/
+share/gnome-2.0/
+share/gnome-2.0/ui/
 share/gnome-2.0/ui/GNOME_ClockApplet.xml
 share/gnome-2.0/ui/GNOME_FishApplet.xml
 share/gnome-2.0/ui/GNOME_NotificationAreaApplet.xml
@@ -31,169 +40,260 @@ share/gnome-2.0/ui/GNOME_ShowDesktopApplet.xml
 share/gnome-2.0/ui/GNOME_WindowListApplet.xml
 share/gnome-2.0/ui/GNOME_WindowMenuApplet.xml
 share/gnome-2.0/ui/GNOME_WorkspaceSwitcherApplet.xml
+share/gnome-panel/
+share/gnome-panel/glade/
 share/gnome-panel/glade/fish.glade
 share/gnome-panel/glade/panel-test-applets.glade
 share/gnome-panel/glade/window-list.glade
 share/gnome-panel/glade/workspace-switcher.glade
 share/gnome-panelrc
+share/gnome/help/
+share/gnome/help/clock/
+share/gnome/help/clock/C/
 share/gnome/help/clock/C/clock.xml
+share/gnome/help/clock/C/figures/
 share/gnome/help/clock/C/figures/clock_applet.png
 share/gnome/help/clock/C/legal.xml
+share/gnome/help/clock/de/
 share/gnome/help/clock/de/clock.xml
+share/gnome/help/clock/de/figures/
 share/gnome/help/clock/de/figures/clock_applet.png
 share/gnome/help/clock/de/legal.xml
+share/gnome/help/clock/es/
 share/gnome/help/clock/es/clock.xml
+share/gnome/help/clock/es/figures/
 share/gnome/help/clock/es/figures/clock_applet.png
 share/gnome/help/clock/es/legal.xml
+share/gnome/help/clock/fr/
 share/gnome/help/clock/fr/clock.xml
+share/gnome/help/clock/fr/figures/
 share/gnome/help/clock/fr/figures/clock_applet.png
 share/gnome/help/clock/fr/legal.xml
+share/gnome/help/clock/it/
 share/gnome/help/clock/it/clock.xml
+share/gnome/help/clock/it/figures/
 share/gnome/help/clock/it/figures/clock_applet.png
 share/gnome/help/clock/it/legal.xml
+share/gnome/help/clock/ja/
 share/gnome/help/clock/ja/clock.xml
+share/gnome/help/clock/ja/figures/
 share/gnome/help/clock/ja/figures/clock_applet.png
 share/gnome/help/clock/ja/legal.xml
+share/gnome/help/clock/ko/
 share/gnome/help/clock/ko/clock.xml
+share/gnome/help/clock/ko/figures/
 share/gnome/help/clock/ko/figures/clock_applet.png
 share/gnome/help/clock/ko/legal.xml
+share/gnome/help/clock/sv/
 share/gnome/help/clock/sv/clock.xml
+share/gnome/help/clock/sv/figures/
 share/gnome/help/clock/sv/figures/clock_applet.png
 share/gnome/help/clock/sv/legal.xml
+share/gnome/help/clock/zh_CN/
 share/gnome/help/clock/zh_CN/clock.xml
+share/gnome/help/clock/zh_CN/figures/
 share/gnome/help/clock/zh_CN/figures/clock_applet.png
 share/gnome/help/clock/zh_CN/legal.xml
+share/gnome/help/clock/zh_TW/
 share/gnome/help/clock/zh_TW/clock.xml
+share/gnome/help/clock/zh_TW/figures/
 share/gnome/help/clock/zh_TW/figures/clock_applet.png
 share/gnome/help/clock/zh_TW/legal.xml
+share/gnome/help/fish-applet-2/
+share/gnome/help/fish-applet-2/C/
+share/gnome/help/fish-applet-2/C/figures/
 share/gnome/help/fish-applet-2/C/figures/fish_applet.png
 share/gnome/help/fish-applet-2/C/fish-applet-2.xml
 share/gnome/help/fish-applet-2/C/legal.xml
+share/gnome/help/fish-applet-2/de/
+share/gnome/help/fish-applet-2/de/figures/
 share/gnome/help/fish-applet-2/de/figures/fish_applet.png
 share/gnome/help/fish-applet-2/de/figures/fish_settings.png
 share/gnome/help/fish-applet-2/de/fish-applet-2.xml
 share/gnome/help/fish-applet-2/de/legal.xml
+share/gnome/help/fish-applet-2/es/
+share/gnome/help/fish-applet-2/es/figures/
 share/gnome/help/fish-applet-2/es/figures/fish_applet.png
 share/gnome/help/fish-applet-2/es/figures/fish_settings.png
 share/gnome/help/fish-applet-2/es/fish-applet-2.xml
 share/gnome/help/fish-applet-2/es/legal.xml
+share/gnome/help/fish-applet-2/fr/
+share/gnome/help/fish-applet-2/fr/figures/
 share/gnome/help/fish-applet-2/fr/figures/fish_applet.png
 share/gnome/help/fish-applet-2/fr/figures/fish_settings.png
 share/gnome/help/fish-applet-2/fr/fish-applet-2.xml
 share/gnome/help/fish-applet-2/fr/legal.xml
+share/gnome/help/fish-applet-2/it/
+share/gnome/help/fish-applet-2/it/figures/
 share/gnome/help/fish-applet-2/it/figures/fish_applet.png
 share/gnome/help/fish-applet-2/it/figures/fish_settings.png
 share/gnome/help/fish-applet-2/it/fish-applet-2.xml
 share/gnome/help/fish-applet-2/it/legal.xml
+share/gnome/help/fish-applet-2/ja/
+share/gnome/help/fish-applet-2/ja/figures/
 share/gnome/help/fish-applet-2/ja/figures/fish_applet.png
 share/gnome/help/fish-applet-2/ja/fish-applet-2.xml
 share/gnome/help/fish-applet-2/ja/legal.xml
+share/gnome/help/fish-applet-2/ko/
+share/gnome/help/fish-applet-2/ko/figures/
 share/gnome/help/fish-applet-2/ko/figures/fish_applet.png
 share/gnome/help/fish-applet-2/ko/figures/fish_settings.png
 share/gnome/help/fish-applet-2/ko/fish-applet-2.xml
 share/gnome/help/fish-applet-2/ko/legal.xml
+share/gnome/help/fish-applet-2/sv/
+share/gnome/help/fish-applet-2/sv/figures/
 share/gnome/help/fish-applet-2/sv/figures/fish_applet.png
 share/gnome/help/fish-applet-2/sv/figures/fish_settings.png
 share/gnome/help/fish-applet-2/sv/fish-applet-2.xml
 share/gnome/help/fish-applet-2/sv/legal.xml
+share/gnome/help/fish-applet-2/zh_CN/
+share/gnome/help/fish-applet-2/zh_CN/figures/
 share/gnome/help/fish-applet-2/zh_CN/figures/fish_applet.png
 share/gnome/help/fish-applet-2/zh_CN/figures/fish_settings.png
 share/gnome/help/fish-applet-2/zh_CN/fish-applet-2.xml
 share/gnome/help/fish-applet-2/zh_CN/legal.xml
+share/gnome/help/fish-applet-2/zh_TW/
+share/gnome/help/fish-applet-2/zh_TW/figures/
 share/gnome/help/fish-applet-2/zh_TW/figures/fish_applet.png
 share/gnome/help/fish-applet-2/zh_TW/figures/fish_settings.png
 share/gnome/help/fish-applet-2/zh_TW/fish-applet-2.xml
 share/gnome/help/fish-applet-2/zh_TW/legal.xml
+share/gnome/help/window-list/
+share/gnome/help/window-list/C/
+share/gnome/help/window-list/C/figures/
 share/gnome/help/window-list/C/figures/window_list_applet.png
 share/gnome/help/window-list/C/figures/window_list_group_applet.png
 share/gnome/help/window-list/C/legal.xml
 share/gnome/help/window-list/C/window-list.xml
+share/gnome/help/window-list/de/
+share/gnome/help/window-list/de/figures/
 share/gnome/help/window-list/de/figures/window_list_applet.png
 share/gnome/help/window-list/de/figures/window_list_group.png
 share/gnome/help/window-list/de/figures/window_list_group_applet.png
 share/gnome/help/window-list/de/legal.xml
 share/gnome/help/window-list/de/window-list.xml
+share/gnome/help/window-list/es/
+share/gnome/help/window-list/es/figures/
 share/gnome/help/window-list/es/figures/window_list_applet.png
 share/gnome/help/window-list/es/figures/window_list_group.png
 share/gnome/help/window-list/es/figures/window_list_group_applet.png
 share/gnome/help/window-list/es/legal.xml
 share/gnome/help/window-list/es/window-list.xml
+share/gnome/help/window-list/fr/
+share/gnome/help/window-list/fr/figures/
 share/gnome/help/window-list/fr/figures/window_list_applet.png
 share/gnome/help/window-list/fr/figures/window_list_group.png
 share/gnome/help/window-list/fr/figures/window_list_group_applet.png
 share/gnome/help/window-list/fr/legal.xml
 share/gnome/help/window-list/fr/window-list.xml
+share/gnome/help/window-list/it/
+share/gnome/help/window-list/it/figures/
 share/gnome/help/window-list/it/figures/window_list_applet.png
 share/gnome/help/window-list/it/figures/window_list_group.png
 share/gnome/help/window-list/it/figures/window_list_group_applet.png
 share/gnome/help/window-list/it/legal.xml
 share/gnome/help/window-list/it/window-list.xml
+share/gnome/help/window-list/ja/
+share/gnome/help/window-list/ja/figures/
 share/gnome/help/window-list/ja/figures/window_list_applet.png
 share/gnome/help/window-list/ja/figures/window_list_group_applet.png
 share/gnome/help/window-list/ja/legal.xml
 share/gnome/help/window-list/ja/window-list.xml
+share/gnome/help/window-list/ko/
+share/gnome/help/window-list/ko/figures/
 share/gnome/help/window-list/ko/figures/window_list_applet.png
 share/gnome/help/window-list/ko/figures/window_list_group.png
 share/gnome/help/window-list/ko/figures/window_list_group_applet.png
 share/gnome/help/window-list/ko/legal.xml
 share/gnome/help/window-list/ko/window-list.xml
+share/gnome/help/window-list/sv/
+share/gnome/help/window-list/sv/figures/
 share/gnome/help/window-list/sv/figures/window_list_applet.png
 share/gnome/help/window-list/sv/figures/window_list_group.png
 share/gnome/help/window-list/sv/figures/window_list_group_applet.png
 share/gnome/help/window-list/sv/legal.xml
 share/gnome/help/window-list/sv/window-list.xml
+share/gnome/help/window-list/zh_CN/
+share/gnome/help/window-list/zh_CN/figures/
 share/gnome/help/window-list/zh_CN/figures/window_list_applet.png
 share/gnome/help/window-list/zh_CN/figures/window_list_group.png
 share/gnome/help/window-list/zh_CN/figures/window_list_group_applet.png
 share/gnome/help/window-list/zh_CN/legal.xml
 share/gnome/help/window-list/zh_CN/window-list.xml
+share/gnome/help/window-list/zh_TW/
+share/gnome/help/window-list/zh_TW/figures/
 share/gnome/help/window-list/zh_TW/figures/window_list_applet.png
 share/gnome/help/window-list/zh_TW/figures/window_list_group.png
 share/gnome/help/window-list/zh_TW/figures/window_list_group_applet.png
 share/gnome/help/window-list/zh_TW/legal.xml
 share/gnome/help/window-list/zh_TW/window-list.xml
+share/gnome/help/workspace-switcher/
+share/gnome/help/workspace-switcher/C/
+share/gnome/help/workspace-switcher/C/figures/
 share/gnome/help/workspace-switcher/C/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/C/legal.xml
 share/gnome/help/workspace-switcher/C/workspace-switcher.xml
+share/gnome/help/workspace-switcher/de/
+share/gnome/help/workspace-switcher/de/figures/
 share/gnome/help/workspace-switcher/de/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/de/figures/workspacelist_applet.png
 share/gnome/help/workspace-switcher/de/legal.xml
 share/gnome/help/workspace-switcher/de/workspace-switcher.xml
+share/gnome/help/workspace-switcher/es/
+share/gnome/help/workspace-switcher/es/figures/
 share/gnome/help/workspace-switcher/es/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/es/figures/workspacelist_applet.png
 share/gnome/help/workspace-switcher/es/legal.xml
 share/gnome/help/workspace-switcher/es/workspace-switcher.xml
+share/gnome/help/workspace-switcher/fr/
+share/gnome/help/workspace-switcher/fr/figures/
 share/gnome/help/workspace-switcher/fr/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/fr/figures/workspacelist_applet.png
 share/gnome/help/workspace-switcher/fr/legal.xml
 share/gnome/help/workspace-switcher/fr/workspace-switcher.xml
+share/gnome/help/workspace-switcher/it/
+share/gnome/help/workspace-switcher/it/figures/
 share/gnome/help/workspace-switcher/it/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/it/figures/workspacelist_applet.png
 share/gnome/help/workspace-switcher/it/legal.xml
 share/gnome/help/workspace-switcher/it/workspace-switcher.xml
+share/gnome/help/workspace-switcher/ja/
+share/gnome/help/workspace-switcher/ja/figures/
 share/gnome/help/workspace-switcher/ja/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/ja/legal.xml
 share/gnome/help/workspace-switcher/ja/workspace-switcher.xml
+share/gnome/help/workspace-switcher/ko/
+share/gnome/help/workspace-switcher/ko/figures/
 share/gnome/help/workspace-switcher/ko/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/ko/figures/workspacelist_applet.png
 share/gnome/help/workspace-switcher/ko/legal.xml
 share/gnome/help/workspace-switcher/ko/workspace-switcher.xml
+share/gnome/help/workspace-switcher/sv/
+share/gnome/help/workspace-switcher/sv/figures/
 share/gnome/help/workspace-switcher/sv/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/sv/figures/workspacelist_applet.png
 share/gnome/help/workspace-switcher/sv/legal.xml
 share/gnome/help/workspace-switcher/sv/workspace-switcher.xml
+share/gnome/help/workspace-switcher/zh_CN/
+share/gnome/help/workspace-switcher/zh_CN/figures/
 share/gnome/help/workspace-switcher/zh_CN/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/zh_CN/figures/workspacelist_applet.png
 share/gnome/help/workspace-switcher/zh_CN/legal.xml
 share/gnome/help/workspace-switcher/zh_CN/workspace-switcher.xml
+share/gnome/help/workspace-switcher/zh_TW/
+share/gnome/help/workspace-switcher/zh_TW/figures/
 share/gnome/help/workspace-switcher/zh_TW/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/zh_TW/figures/workspacelist_applet.png
 share/gnome/help/workspace-switcher/zh_TW/legal.xml
 share/gnome/help/workspace-switcher/zh_TW/workspace-switcher.xml
+share/gnome/panel/
 share/gnome/panel/gnome-panel-preferences.glade
 share/gnome/panel/gnome-panel-screenshot.glade
 share/gnome/panel/panel-properties-dialog.glade
 share/gnome/panel/panel-run-dialog.glade
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/panel-applet/
 share/gtk-doc/html/panel-applet/PanelApplet.html
 share/gtk-doc/html/panel-applet/applet-popups.html
 share/gtk-doc/html/panel-applet/applet-porting.html
@@ -212,33 +312,57 @@ share/gtk-doc/html/panel-applet/server-files.html
 share/gtk-doc/html/panel-applet/session-saving.html
 share/gtk-doc/html/panel-applet/style.css
 share/gtk-doc/html/panel-applet/up.png
+share/idl/
+share/idl/gnome-panel-2.0/
 share/idl/gnome-panel-2.0/GNOME_Panel.idl
+share/locale/af/
+share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/bn/
+share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/cy/
+share/locale/cy/LC_MESSAGES/
 share/locale/cy/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/da/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/de/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/el/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/en_CA/
+share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/eo/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/es/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/et/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/fa/
+share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/fi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ga/
+share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/gu/
+share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/he/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/hi/
+share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/hr/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/hu/LC_MESSAGES/gnome-panel-2.0.mo
@@ -246,18 +370,36 @@ share/locale/id/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/li/
+share/locale/li/LC_MESSAGES/
 share/locale/li/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/mi/
+share/locale/mi/LC_MESSAGES/
 share/locale/mi/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/mk/
+share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ml/
+share/locale/ml/LC_MESSAGES/
 share/locale/ml/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/mn/
+share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/mr/
+share/locale/mr/LC_MESSAGES/
 share/locale/mr/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/no/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/pa/
+share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/pl/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/pt/LC_MESSAGES/gnome-panel-2.0.mo
@@ -266,20 +408,33 @@ share/locale/ro/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ru/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sk/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sr/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/sr@ije/
+share/locale/sr@ije/LC_MESSAGES/
 share/locale/sr@ije/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sv/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/th/
+share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/vi/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/wa/
+share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/yi/
+share/locale/yi/LC_MESSAGES/
 share/locale/yi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
+share/omf/gnome-panel/
 share/omf/gnome-panel/clock-C.omf
 share/omf/gnome-panel/clock-de.omf
 share/omf/gnome-panel/clock-es.omf
@@ -320,7 +475,9 @@ share/omf/gnome-panel/workspace-switcher-ko.omf
 share/omf/gnome-panel/workspace-switcher-sv.omf
 share/omf/gnome-panel/workspace-switcher-zh_CN.omf
 share/omf/gnome-panel/workspace-switcher-zh_TW.omf
+share/pixmaps/
 share/pixmaps/cdeappmenu.png
+share/pixmaps/fish/
 share/pixmaps/fish/fishanim.png
 share/pixmaps/fish/footguy.png
 share/pixmaps/fish/monkey.png
@@ -342,6 +499,8 @@ share/pixmaps/gnome-run.png
 share/pixmaps/gnome-screenshot.png
 share/pixmaps/panel-drawer.png
 share/pixmaps/panel-force-quit.png
+share/schemas/
+share/schemas/gnome-panel/
 share/schemas/gnome-panel/clock.schemas
 share/schemas/gnome-panel/fish.schemas
 share/schemas/gnome-panel/gnome-panel-screenshot.schemas
@@ -354,99 +513,6 @@ share/schemas/gnome-panel/panel-toplevel.schemas
 share/schemas/gnome-panel/window-list.schemas
 share/schemas/gnome-panel/workspace-switcher.schemas
 %%SHARED%%
-@dirrm share/schemas/gnome-panel
-@dirrm share/pixmaps/fish
-@dirrm share/omf/gnome-panel
-@dirrm share/idl/gnome-panel-2.0
-@dirrm share/gtk-doc/html/panel-applet
-@dirrm share/gnome/panel
-@dirrm share/gnome/help/workspace-switcher/zh_TW/figures
-@dirrm share/gnome/help/workspace-switcher/zh_TW
-@dirrm share/gnome/help/workspace-switcher/zh_CN/figures
-@dirrm share/gnome/help/workspace-switcher/zh_CN
-@dirrm share/gnome/help/workspace-switcher/sv/figures
-@dirrm share/gnome/help/workspace-switcher/sv
-@dirrm share/gnome/help/workspace-switcher/ko/figures
-@dirrm share/gnome/help/workspace-switcher/ko
-@dirrm share/gnome/help/workspace-switcher/ja/figures
-@dirrm share/gnome/help/workspace-switcher/ja
-@dirrm share/gnome/help/workspace-switcher/it/figures
-@dirrm share/gnome/help/workspace-switcher/it
-@dirrm share/gnome/help/workspace-switcher/fr/figures
-@dirrm share/gnome/help/workspace-switcher/fr
-@dirrm share/gnome/help/workspace-switcher/es/figures
-@dirrm share/gnome/help/workspace-switcher/es
-@dirrm share/gnome/help/workspace-switcher/de/figures
-@dirrm share/gnome/help/workspace-switcher/de
-@dirrm share/gnome/help/workspace-switcher/C/figures
-@dirrm share/gnome/help/workspace-switcher/C
-@dirrm share/gnome/help/workspace-switcher
-@dirrm share/gnome/help/window-list/zh_TW/figures
-@dirrm share/gnome/help/window-list/zh_TW
-@dirrm share/gnome/help/window-list/zh_CN/figures
-@dirrm share/gnome/help/window-list/zh_CN
-@dirrm share/gnome/help/window-list/sv/figures
-@dirrm share/gnome/help/window-list/sv
-@dirrm share/gnome/help/window-list/ko/figures
-@dirrm share/gnome/help/window-list/ko
-@dirrm share/gnome/help/window-list/ja/figures
-@dirrm share/gnome/help/window-list/ja
-@dirrm share/gnome/help/window-list/it/figures
-@dirrm share/gnome/help/window-list/it
-@dirrm share/gnome/help/window-list/fr/figures
-@dirrm share/gnome/help/window-list/fr
-@dirrm share/gnome/help/window-list/es/figures
-@dirrm share/gnome/help/window-list/es
-@dirrm share/gnome/help/window-list/de/figures
-@dirrm share/gnome/help/window-list/de
-@dirrm share/gnome/help/window-list/C/figures
-@dirrm share/gnome/help/window-list/C
-@dirrm share/gnome/help/window-list
-@dirrm share/gnome/help/fish-applet-2/zh_TW/figures
-@dirrm share/gnome/help/fish-applet-2/zh_TW
-@dirrm share/gnome/help/fish-applet-2/zh_CN/figures
-@dirrm share/gnome/help/fish-applet-2/zh_CN
-@dirrm share/gnome/help/fish-applet-2/sv/figures
-@dirrm share/gnome/help/fish-applet-2/sv
-@dirrm share/gnome/help/fish-applet-2/ko/figures
-@dirrm share/gnome/help/fish-applet-2/ko
-@dirrm share/gnome/help/fish-applet-2/ja/figures
-@dirrm share/gnome/help/fish-applet-2/ja
-@dirrm share/gnome/help/fish-applet-2/it/figures
-@dirrm share/gnome/help/fish-applet-2/it
-@dirrm share/gnome/help/fish-applet-2/fr/figures
-@dirrm share/gnome/help/fish-applet-2/fr
-@dirrm share/gnome/help/fish-applet-2/es/figures
-@dirrm share/gnome/help/fish-applet-2/es
-@dirrm share/gnome/help/fish-applet-2/de/figures
-@dirrm share/gnome/help/fish-applet-2/de
-@dirrm share/gnome/help/fish-applet-2/C/figures
-@dirrm share/gnome/help/fish-applet-2/C
-@dirrm share/gnome/help/fish-applet-2
-@dirrm share/gnome/help/clock/zh_TW/figures
-@dirrm share/gnome/help/clock/zh_TW
-@dirrm share/gnome/help/clock/zh_CN/figures
-@dirrm share/gnome/help/clock/zh_CN
-@dirrm share/gnome/help/clock/sv/figures
-@dirrm share/gnome/help/clock/sv
-@dirrm share/gnome/help/clock/ko/figures
-@dirrm share/gnome/help/clock/ko
-@dirrm share/gnome/help/clock/ja/figures
-@dirrm share/gnome/help/clock/ja
-@dirrm share/gnome/help/clock/it/figures
-@dirrm share/gnome/help/clock/it
-@dirrm share/gnome/help/clock/fr/figures
-@dirrm share/gnome/help/clock/fr
-@dirrm share/gnome/help/clock/es/figures
-@dirrm share/gnome/help/clock/es
-@dirrm share/gnome/help/clock/de/figures
-@dirrm share/gnome/help/clock/de
-@dirrm share/gnome/help/clock/C/figures
-@dirrm share/gnome/help/clock/C
-@dirrm share/gnome/help/clock
-@dirrm share/gnome-panel/glade
-@dirrm share/gnome-panel
-@dirrm include/panel-2.0
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-panel/*.schemas > /dev/null

@@ -1,6 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/06/23 03:26:20 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/10/11 04:27:25 marcm Exp $
+share/gnome/
+share/gnome/help/
+share/gnome/help/gnome-access-guide/
+share/gnome/help/gnome-access-guide/C/
 share/gnome/help/gnome-access-guide/C/accessintro.xml
 share/gnome/help/gnome-access-guide/C/dtconfig.xml
+share/gnome/help/gnome-access-guide/C/figures/
 share/gnome/help/gnome-access-guide/C/figures/button.png
 share/gnome/help/gnome-access-guide/C/figures/check_box.png
 share/gnome/help/gnome-access-guide/C/figures/dropdown_combination_box.png
@@ -23,6 +28,8 @@ share/gnome/help/gnome-access-guide/C/keynav.xml
 share/gnome/help/gnome-access-guide/C/legal.xml
 share/gnome/help/gnome-access-guide/C/preface.xml
 share/gnome/help/gnome-access-guide/C/themes.xml
+share/gnome/help/system-admin-guide/
+share/gnome/help/system-admin-guide/C/
 share/gnome/help/system-admin-guide/C/appendixa.xml
 share/gnome/help/system-admin-guide/C/appendixb.xml
 share/gnome/help/system-admin-guide/C/fontconfig.xml
@@ -38,6 +45,9 @@ share/gnome/help/system-admin-guide/C/screensavers.xml
 share/gnome/help/system-admin-guide/C/sessions.xml
 share/gnome/help/system-admin-guide/C/system-admin-guide.xml
 share/gnome/help/system-admin-guide/C/themes.xml
+share/gnome/help/user-guide/
+share/gnome/help/user-guide/C/
+share/gnome/help/user-guide/C/figures/
 share/gnome/help/user-guide/C/figures/applet_popup.png
 share/gnome/help/user-guide/C/figures/ask_pointer.png
 share/gnome/help/user-guide/C/figures/caution.png
@@ -139,20 +149,10 @@ share/gnome/help/user-guide/C/wgosnautilus.xml
 share/gnome/help/user-guide/C/wgosoverview.xml
 share/gnome/help/user-guide/C/wgospanel.xml
 share/gnome/help/user-guide/C/wgosstartsession.xml
+share/omf/gnome2-user-docs/
 share/omf/gnome2-user-docs/gnome-access-guide-C.omf
 share/omf/gnome2-user-docs/system-admin-guide-C.omf
+share/omf/user-guide/
 share/omf/user-guide/user-guide-C.omf
-@dirrm share/omf/user-guide
-@dirrm share/omf/gnome2-user-docs
-@dirrm share/gnome/help/user-guide/C/figures
-@dirrm share/gnome/help/user-guide/C
-@dirrm share/gnome/help/user-guide
-@dirrm share/gnome/help/system-admin-guide/C
-@dirrm share/gnome/help/system-admin-guide
-@dirrm share/gnome/help/gnome-access-guide/C/figures
-@dirrm share/gnome/help/gnome-access-guide/C
-@dirrm share/gnome/help/gnome-access-guide
-@dirrm share/gnome/help
-@dirrm share/gnome
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
