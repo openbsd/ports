@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2001/01/03 19:36:09 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2001/01/16 22:29:52 brad Exp $
 
 DISTNAME=	bash-1.14.7
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	shells
 NEED_VERSION=	1.336
 MASTER_SITES=	${MASTER_SITE_GNU}
