@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/10/06 23:58:33 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/12/22 05:24:12 form Exp $
 #
 
 DISTNAME=       rplay-3.3.0
@@ -12,16 +12,22 @@ LIB_DEPENDS=    gsm\\.1\\.0:${PORTSDIR}/audio/gsm
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+SYSCONFDIR=	/etc/rplay
+CONFIGURE_ARGS+=--sysconfdir=${SYSCONFDIR}
+
+post-configure:
+.for ff in rplay.conf.5 rplay.helpers.5 rplay.hosts.5 rplayd.8
+	@cd ${WRKSRC}/doc; \
+		${SED} -e "s,/usr/local/etc,${SYSCONFDIR},g" ${ff} >${ff}.tmp; \
+		${MV} ${ff}.tmp ${ff}
+.endfor
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/rc.d/rplayd.sh ]; then \
-		echo "Installing ${PREFIX}/etc/rc.d/rplayd.sh startup file."; \
-		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/rplayd.sh; \
-		echo "[ -x /usr/local/sbin/rplayd ] && ( /usr/local/sbin/rplayd & ) && echo -n ' rplayd'" >> ${PREFIX}/etc/rc.d/rplayd.sh; \
-		chmod 751 ${PREFIX}/etc/rc.d/rplayd.sh; \
-	fi
-	@if [ ! -f ${PREFIX}/etc/rplay.hosts ]; then \
-		echo localhost > ${PREFIX}/etc/rplay.hosts; \
+	@if [ ! -d /etc/rplay ]; then \
+		${ECHO} "Installing default configs..."; \
+		${MKDIR} /etc/rplay; \
+		${ECHO} localhost >/etc/rplay/rplay.hosts; \
+		touch /etc/rplay/rplay.{conf,helpers,servers}; \
 	fi
 
 .include <bsd.port.mk>
