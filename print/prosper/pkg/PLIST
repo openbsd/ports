@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/29 09:17:10 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/02/18 16:10:53 sturm Exp $
 share/examples/prosper/Example.tex
 share/examples/prosper/ExampleAlienglow.tex
 share/examples/prosper/ExampleAutumn.tex
@@ -11,39 +11,39 @@ share/examples/prosper/ExampleNuanceGris.tex
 share/examples/prosper/ExampleTroisPoints.tex
 share/examples/prosper/prosper-tour.pdf
 share/examples/prosper/prosper-tour.tex
-share/texmf.local/doc/latex/prosper/prosper-doc.pdf
-share/texmf.local/tex/latex/prosper/PPRalcatel.sty
-share/texmf.local/tex/latex/prosper/PPRalienglow.sty
-share/texmf.local/tex/latex/prosper/PPRautumn.sty
-share/texmf.local/tex/latex/prosper/PPRazure.sty
-share/texmf.local/tex/latex/prosper/PPRcontemporain.sty
-share/texmf.local/tex/latex/prosper/PPRdarkblue.sty
-share/texmf.local/tex/latex/prosper/PPRdefault.sty
-share/texmf.local/tex/latex/prosper/PPRframes.sty
-share/texmf.local/tex/latex/prosper/PPRgyom.sty
-share/texmf.local/tex/latex/prosper/PPRlignesbleues.sty
-share/texmf.local/tex/latex/prosper/PPRnuancegris.sty
-share/texmf.local/tex/latex/prosper/PPRpascal.sty
-share/texmf.local/tex/latex/prosper/PPRrico.sty
-share/texmf.local/tex/latex/prosper/PPRtroispoints.sty
-share/texmf.local/tex/latex/prosper/img/angleHG.ps
-share/texmf.local/tex/latex/prosper/img/arrow-glow.ps
-share/texmf.local/tex/latex/prosper/img/barre-rico.ps
-share/texmf.local/tex/latex/prosper/img/bullet-glow.ps
-share/texmf.local/tex/latex/prosper/img/green-bullet-on-blue.ps
-share/texmf.local/tex/latex/prosper/img/green-bullet-on-white.ps
-share/texmf.local/tex/latex/prosper/img/red-bullet-on-blue.ps
-share/texmf.local/tex/latex/prosper/img/red-bullet-on-white.ps
-share/texmf.local/tex/latex/prosper/img/rico_bullet1.ps
-share/texmf.local/tex/latex/prosper/img/rico_bullet2.ps
-share/texmf.local/tex/latex/prosper/img/rico_bullet3.ps
-share/texmf.local/tex/latex/prosper/img/rule-glow.ps
-share/texmf.local/tex/latex/prosper/img/yellow-bullet-on-blue.ps
-share/texmf.local/tex/latex/prosper/img/yellow-bullet-on-white.ps
-share/texmf.local/tex/latex/prosper/prosper.cls
-@dirrm share/texmf.local/tex/latex/prosper/img
-@dirrm share/texmf.local/tex/latex/prosper
-@dirrm share/texmf.local/doc/latex/prosper
+share/texmf-local/doc/latex/prosper/prosper-doc.pdf
+share/texmf-local/tex/latex/prosper/PPRalcatel.sty
+share/texmf-local/tex/latex/prosper/PPRalienglow.sty
+share/texmf-local/tex/latex/prosper/PPRautumn.sty
+share/texmf-local/tex/latex/prosper/PPRazure.sty
+share/texmf-local/tex/latex/prosper/PPRcontemporain.sty
+share/texmf-local/tex/latex/prosper/PPRdarkblue.sty
+share/texmf-local/tex/latex/prosper/PPRdefault.sty
+share/texmf-local/tex/latex/prosper/PPRframes.sty
+share/texmf-local/tex/latex/prosper/PPRgyom.sty
+share/texmf-local/tex/latex/prosper/PPRlignesbleues.sty
+share/texmf-local/tex/latex/prosper/PPRnuancegris.sty
+share/texmf-local/tex/latex/prosper/PPRpascal.sty
+share/texmf-local/tex/latex/prosper/PPRrico.sty
+share/texmf-local/tex/latex/prosper/PPRtroispoints.sty
+share/texmf-local/tex/latex/prosper/img/angleHG.ps
+share/texmf-local/tex/latex/prosper/img/arrow-glow.ps
+share/texmf-local/tex/latex/prosper/img/barre-rico.ps
+share/texmf-local/tex/latex/prosper/img/bullet-glow.ps
+share/texmf-local/tex/latex/prosper/img/green-bullet-on-blue.ps
+share/texmf-local/tex/latex/prosper/img/green-bullet-on-white.ps
+share/texmf-local/tex/latex/prosper/img/red-bullet-on-blue.ps
+share/texmf-local/tex/latex/prosper/img/red-bullet-on-white.ps
+share/texmf-local/tex/latex/prosper/img/rico_bullet1.ps
+share/texmf-local/tex/latex/prosper/img/rico_bullet2.ps
+share/texmf-local/tex/latex/prosper/img/rico_bullet3.ps
+share/texmf-local/tex/latex/prosper/img/rule-glow.ps
+share/texmf-local/tex/latex/prosper/img/yellow-bullet-on-blue.ps
+share/texmf-local/tex/latex/prosper/img/yellow-bullet-on-white.ps
+share/texmf-local/tex/latex/prosper/prosper.cls
+@dirrm share/texmf-local/tex/latex/prosper/img
+@dirrm share/texmf-local/tex/latex/prosper
+@dirrm share/texmf-local/doc/latex/prosper
 @dirrm share/examples/prosper
 @exec texhash
 @unexec texhash

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/11/29 09:17:10 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/02/18 16:10:53 sturm Exp $
 
 COMMENT=	"LaTeX class to produce high quality slides"
 
 DISTNAME=	prosper-1.00.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	print
 
 MAINTAINER=	Sebastian Stark <seb@todesplanet.de>
@@ -19,8 +20,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=prosper/}
 RUN_DEPENDS=	:teTeX_base-*:print/teTeX/base
 
 WRKDIST=	${WRKDIR}/prosper
-CLS_DIR=	${PREFIX}/share/texmf.local/tex/latex/prosper
-DOC_DIR=	${PREFIX}/share/texmf.local/doc/latex/prosper
+CLS_DIR=	${PREFIX}/share/texmf-local/tex/latex/prosper
+DOC_DIR=	${PREFIX}/share/texmf-local/doc/latex/prosper
 EXAMPLES_DIR=	${PREFIX}/share/examples/prosper
 
 NO_REGRESS=	Yes
