@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST-server,v 1.7 2004/11/08 20:27:34 biorn Exp $
+@comment $OpenBSD: PLIST-server,v 1.8 2005/03/22 09:13:48 jakob Exp $
 libexec/slapd
 libexec/slurpd
 @man man/man5/slapd-bdb.5
 @man man/man5/slapd-dnssrv.5
+@man man/man5/slapd-hdb.5
 @man man/man5/slapd-ldap.5
 @man man/man5/slapd-ldbm.5
 @man man/man5/slapd-meta.5
+@man man/man5/slapd-monitor.5
 @man man/man5/slapd-null.5
 @man man/man5/slapd-passwd.5
 @man man/man5/slapd-perl.5
@@ -14,16 +16,15 @@ libexec/slurpd
 @man man/man5/slapd-tcl.5
 @man man/man5/slapd.access.5
 @man man/man5/slapd.conf.5
-@man man/man5/slapd.replog.5
-@man man/man5/slapd-monitor.5
 @man man/man5/slapd.plugin.5
-@man man/man8/slapdn.8
-@man man/man8/slaptest.8
+@man man/man5/slapd.replog.5
 @man man/man8/slapadd.8
 @man man/man8/slapcat.8
 @man man/man8/slapd.8
+@man man/man8/slapdn.8
 @man man/man8/slapindex.8
 @man man/man8/slappasswd.8
+@man man/man8/slaptest.8
 @man man/man8/slurpd.8
 sbin/slapadd
 sbin/slapcat
