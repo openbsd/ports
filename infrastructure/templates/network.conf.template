@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.50 2002/09/18 21:02:43 jsyn Exp $
+# $OpenBSD: network.conf.template,v 1.51 2002/09/23 04:22:50 marcm Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -125,20 +125,19 @@ MASTER_SITE_SOURCEFORGE+=	\
 MASTER_SITE_GNOME+=	\
 	ftp://archive.progeny.com/GNOME/ \
 	ftp://ftp.acc.umu.se/pub/GNOME/	\
-	ftp://ftp.twoguys.org/GNOME/ \
+	ftp://ftp.rpmfind.net/linux/gnome.org/ \
 	http://east.dl.sourceforge.net/mirrors/gnome/ \
 	http://west.dl.sourceforge.net/mirrors/gnome/ \
 	ftp://planetmirror.com/pub/gnome/ \
 	ftp://ftp.easynet.nl/mirror/GNOME/ \
 	ftp://ftp.unina.it/pub/linux/GNOME/ \
-	ftp://ftp.belnet.be/mirror/ftp.gnome.org/pub/GNOME/ \
+	ftp://ftp.belnet.be/mirror/ftp.gnome.org/ \
 	ftp://ftp.codefactory.se/pub/GNOME/ \
 	ftp://ftp.sunet.se/pub/X11/GNOME/ \
 	ftp://ftp.dit.upm.es/linux/gnome/ \
 	ftp://ftp.tr.gnome.org/pub/GNOME/ \
 	ftp://ftp.no.gnome.org/pub/GNOME/ \
 	ftp://ftp.dataplus.se/pub/linux/gnome/ \
-	ftp://ftp.yggdrasil.com/mirrors/site/ftp.gnome.org/pub/GNOME/ \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/
 
 MASTER_SITE_PERL_CPAN+=	\
