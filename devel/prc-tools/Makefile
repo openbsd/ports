@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/08/22 18:37:33 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2001/08/22 18:53:34 pvalchev Exp $
 
 BROKEN=		"very old and with broken build system"
 
@@ -64,7 +64,7 @@ pre-build:
 
 # before we apply freebsd patches, apply prc-tools' patches to gcc/gdb/...
 pre-patch:
-		(cd ${WRKSRC}/${PKGNAME} && ${MAKE_PROGRAM} patch)
+		(cd ${WRKSRC}/${PKGNAME} && cat *.palmos.diff | (cd .. ; patch --quiet -p0); touch stamp.patch)
 		find ${WRKDIR}/ -name \*.orig -exec rm -f {} \;
 
 # the info files are redundant
@@ -86,4 +86,5 @@ post-install:
 		@echo "	Also, you should edit PalmOS3/System/Unix/unix_string.h "
 		@echo "	and change the include from StdArg.h to stdarg.h "
 		@echo ""
+
 .include <bsd.port.mk>
