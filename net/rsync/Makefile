@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2000/03/04 01:59:27 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/03/04 08:17:37 brad Exp $
 
 DISTNAME=	rsync-2.4.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://rsync.samba.org/pub/rsync/
 
-NEED_VERSION=	1.60
+NEED_VERSION=	1.216
 
 MAINTAINER=	espie@openbsd.org
 
-FAKE=Yes
-LICENSE_TYPE=		GPL
+FAKE=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -25,10 +24,10 @@ post-build:
 	@echo "(this use of mktemp is actually correct)"
 
 do-install:
+	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_PROGRAM} ${WRKBUILD}/rsync ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/rsync.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/rsyncd.conf.5 ${PREFIX}/man/man5
-	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/tech_report.tex ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/test.sh ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/rsyncstats ${DOCDIR}
