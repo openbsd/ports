@@ -1,0 +1,20 @@
+$OpenBSD: gcc-configure,v 1.1 2003/06/01 15:10:11 sturm Exp $
+--- configure.orig	Thu May 29 22:57:16 2003
++++ configure	Thu May 29 22:58:11 2003
+@@ -4622,6 +4622,8 @@ exit (malloc (0) ? 0 : 1);
+ }
+ _ACEOF
+ rm -f conftest$ac_exeext
++_SAVE_CFLAGS=$CFLAGS
++CFLAGS=-O0
+ if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
+   (eval $ac_link) 2>&5
+   ac_status=$?
+@@ -4641,6 +4643,7 @@ sed 's/^/| /' conftest.$ac_ext >&5
+ ( exit $ac_status )
+ ac_cv_func_malloc_0_nonnull=no
+ fi
++CFLAGS=$_SAVE_CFLAGS
+ rm -f core core.* *.core gmon.out bb.out conftest$ac_exeext conftest.$ac_objext conftest.$ac_ext
+ fi
+ fi
