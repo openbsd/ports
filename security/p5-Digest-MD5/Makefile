@@ -1,0 +1,19 @@
+#   $OpenBSD: Makefile,v 1.1.1.1 2000/09/17 14:17:16 espie Exp $
+
+DISTNAME=	Digest-MD5-2.09
+PKGNAME=	p5-Digest-MD5-2.09
+CATEGORIES=	security perl5
+NEED_VERSION=	1.308
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	MD5
+
+MAINTAINER=	quisar@quisar.ambre.net
+
+# Artistic licence
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+CONFIGURE_STYLE=	perl
+
+.include <bsd.port.mk>
