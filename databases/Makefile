@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2000/10/04 21:23:45 jakob Exp $
+# $OpenBSD: Makefile,v 1.16 2000/11/22 17:52:38 dugsong Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
      SUBDIR += db:java
      SUBDIR += gdbm
 #    SUBDIR += gnats
+     SUBDIR += iodbc
 #    SUBDIR += msql
      SUBDIR += mysql
      SUBDIR += mysql:pth
