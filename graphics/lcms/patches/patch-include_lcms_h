@@ -1,6 +1,24 @@
-$OpenBSD: patch-include_lcms_h,v 1.1 2004/02/03 05:15:16 brad Exp $
---- include/lcms.h.orig	2003-12-20 10:00:11.000000000 -0500
-+++ include/lcms.h	2004-02-02 22:05:58.000000000 -0500
+$OpenBSD: patch-include_lcms_h,v 1.2 2005/03/14 08:46:54 espie Exp $
+--- include/lcms.h.orig	Sat Dec 20 16:00:11 2003
++++ include/lcms.h	Mon Mar 14 09:27:50 2005
+@@ -75,7 +75,7 @@
+ 
+ // Metroworks CodeWarrior
+ 
+-#if __MWERKS__ 
++#ifdef __MWERKS__ 
+ #   define unlink remove
+ #   if WIN32 
+ #       define USE_CUSTOM_SWAB 1
+@@ -100,7 +100,7 @@
+ #   define USE_BIG_ENDIAN      1
+ #endif
+ 
+-#if TARGET_CPU_PPC
++#ifdef TARGET_CPU_PPC
+ #   define USE_BIG_ENDIAN   1
+ #endif
+ 
 @@ -114,6 +114,9 @@
  
  #if defined(__OpenBSD__) || defined(__NetBSD__) || defined(__FreeBSD__)
