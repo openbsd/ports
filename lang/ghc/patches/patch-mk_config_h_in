@@ -1,0 +1,17 @@
+Same silly bug as acconfig.h			-- fixed in HEAD
+$OpenBSD: patch-mk_config_h_in,v 1.1.1.1 2003/05/29 16:38:31 avsm Exp $
+--- mk/config.h.in.orig	Fri Dec  6 20:56:03 2002
++++ mk/config.h.in	Wed Apr 23 12:57:02 2003
+@@ -83,10 +83,10 @@
+ #undef HAVE_RTLDLOCAL
+ 
+ /* Define if RTLD_GLOBAL is available */
+-#undef RTLD_GLOBAL
++#undef HAVE_RTLDGLOBAL
+ 
+ /* Define if RTLD_NOW is available */
+-#undef RTLD_NOW
++#undef HAVE_RTLDNOW
+ 
+ /*Define if in_addr_t available */
+ #undef HAVE_IN_ADDR_T

@@ -1,0 +1,19 @@
+In -current, mmap'd data wants to start at 0x60089000, on my
+build machine. I presume this is because data all got moved above the
+1G line for W^X...pushing everything up?
+
+Anyway, MBlock.c is implemented properly (i.e. always gets MBLOCK_SIZE
+aligned data) in 5.04.3, so this is just a quick hack for the
+bootstrap compiler.
+
+--- ../ghc-4.08.2/ghc/rts/MBlock.c.orig	Thu Apr 24 21:52:20 2003
++++ ../ghc-4.08.2/ghc/rts/MBlock.c	Thu Apr 24 21:52:35 2003
+@@ -52,7 +52,7 @@
+  */
+ #define ASK_FOR_MEM_AT 0x50000000
+ #elif openbsd_TARGET_OS
+-#define ASK_FOR_MEM_AT 0x50000000
++#define ASK_FOR_MEM_AT 0x7d000000
+ #elif linux_TARGET_OS
+ /* Any ideas?
+  */

@@ -1,0 +1,18 @@
+My fault...         -- fixed in HEAD
+
+$OpenBSD: patch-acconfig_h,v 1.1.1.1 2003/05/29 16:38:31 avsm Exp $
+--- acconfig.h.orig	Fri Dec  6 07:47:04 2002
++++ acconfig.h	Fri Dec  6 07:47:37 2002
+@@ -88,10 +88,10 @@
+ #undef HAVE_RTLDLOCAL
+  
+ /* Define if RTLD_GLOBAL is available */
+-#undef RTLD_GLOBAL
++#undef HAVE_RTLDGLOBAL
+ 
+ /* Define if RTLD_NOW is available */
+-#undef RTLD_NOW
++#undef HAVE_RTLDNOW
+ 
+ /* Define if C compiler supports long long types */
+ #undef HAVE_LONG_LONG

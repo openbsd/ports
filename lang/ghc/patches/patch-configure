@@ -1,0 +1,116 @@
+--- configure.orig	Tue Mar 11 06:40:06 2003
++++ configure	Thu May  1 09:59:57 2003
+@@ -969,6 +969,15 @@ sparc-sun-solaris2*)
+         HostVendor_CPP='sun'
+         HostOS_CPP='solaris2'
+         ;;
++sparc-*-openbsd*) #hack
++    HostPlatform=sparc-sun-openbsd #hack
++    TargetPlatform=sparc-sun-openbsd #hack
++    BuildPlatform=sparc-sun-openbsd #hack
++        HostPlatform_CPP='sparc_sun_openbsd'
++        HostArch_CPP='sparc'
++        HostVendor_CPP='sun'
++        HostOS_CPP='openbsd'
++        ;;
+ *)
+         echo "Unrecognised platform: $HostPlatform"
+         exit 1
+@@ -2051,7 +2060,7 @@ else
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-    $WhatCmd $YACC > conftest.out
++    $WhatCmd `which $YACC` > conftest.out
+     if egrep 'y1\.c 1\..*SMI' conftest.out >/dev/null 2>&1; then
+         echo "I don't trust your $YaccCmd; it looks like an old Sun yacc"
+         if test -f /usr/lang/yacc; then
+@@ -11719,8 +11728,6 @@ cross_compiling=$ac_cv_prog_cc_cross
+ 
+ 
+ 
+-dl HaskellSupport.framework
+-
+ if test $HaveFrameworkHaskellSupport = YES; then
+     HaveLibDL = NO
+     HaveRtldNext=NO
+@@ -11901,6 +11908,71 @@ else
+       
+ fi
+ rm -f conftest*
++
++echo $ac_n "checking for RTLD_GLOBAL from dlfcn.h""... $ac_c" 1>&6
++echo "configure:11901: checking for RTLD_GLOBAL from dlfcn.h" >&5
++cat > conftest.$ac_ext <<EOF
++#line 11903 "configure"
++#include "confdefs.h"
++
++ #include <dlfcn.h>
++ #ifdef RTLD_GLOBAL
++        yes
++ #endif
++
++EOF
++if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
++  egrep "yes" >/dev/null 2>&1; then
++  rm -rf conftest*
++
++  echo "$ac_t""yes" 1>&6
++  cat >> confdefs.h <<\EOF
++#define HAVE_RTLDGLOBAL 1
++EOF
++
++  HaveRtldGlobal=YES
++
++else
++  rm -rf conftest*
++
++  echo "$ac_t""no" 1>&6
++  HaveRtldGlobal=NO
++
++fi
++rm -f conftest*
++
++echo $ac_n "checking for RTLD_NOW from dlfcn.h""... $ac_c" 1>&6
++echo "configure:11936: checking for RTLD_NOW from dlfcn.h" >&5
++cat > conftest.$ac_ext <<EOF
++#line 11938 "configure"
++#include "confdefs.h"
++
++ #include <dlfcn.h>
++ #ifdef RTLD_NOW
++        yes
++ #endif
++
++EOF
++if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
++  egrep "yes" >/dev/null 2>&1; then
++  rm -rf conftest*
++
++  echo "$ac_t""yes" 1>&6
++  cat >> confdefs.h <<\EOF
++#define HAVE_RTLDNOW 1
++EOF
++
++  HaveRtldNow=YES
++
++else
++  rm -rf conftest*
++
++  echo "$ac_t""no" 1>&6
++  HaveRtldNow=NO
++
++fi
++rm -f conftest*
++
+     
+     
+ fi
+@@ -12578,6 +12650,7 @@ if eval "test \"`echo '$''{'fptools_cv_l
+ else
+   
+ case $HostPlatform in
++*openbsd) fptools_cv_lead_uscore='no';;
+ alpha-dec-osf*) fptools_cv_lead_uscore='no';;
+ *cygwin32) fptools_cv_lead_uscore='yes';;
+ *mingw32) fptools_cv_lead_uscore='yes';;

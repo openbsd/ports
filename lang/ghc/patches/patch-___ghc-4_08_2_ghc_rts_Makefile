@@ -1,0 +1,16 @@
+
+Fixes known bug of target arch incorrectly passed to gmp.
+This has been backported from 5.0x series GHC
+
+--- ../ghc-4.08.2/ghc/rts/Makefile.orig	Thu Jan 30 13:34:07 2003
++++ ../ghc-4.08.2/ghc/rts/Makefile	Thu Jan 30 13:34:38 2003
+@@ -132,7 +132,8 @@ boot ::
+ 	if [ ! -f gmp/configure ] ; then ( cd gmp && autoconf ); fi;
+ 	if [ ! -f gmp/mpn/configure ] ; then ( cd gmp/mpn && autoconf ); fi;
+ 	if [ ! -f gmp/mpz/configure ] ; then ( cd gmp/mpz && autoconf ); fi;
+-	cd gmp && ./configure --target=$(HOSTPLATFORM)
++	cd gmp && ./configure \
++        --host=`echo $(HOSTPLATFORM) | sed 's/i[567]86/i486/g'`
+ # Slight cheatage here to past host as target, but x-compilation isn't supported by ghc.
+ 
+ # make sure the various configure files are included in a source dist.

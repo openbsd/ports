@@ -1,0 +1,28 @@
+Let asm mangler know of the ELF OpenBSD x86
+
+--- ../ghc-4.08.2/ghc/driver/ghc-asm.lprl.orig	Wed Apr 23 14:01:48 2003
++++ ../ghc-4.08.2/ghc/driver/ghc-asm.lprl	Wed Apr 23 14:02:52 2003
+@@ -116,7 +116,7 @@
+     $T_HDR_direct   = "\t.SPACE \$TEXT\$\n\t.SUBSPA \$CODE\$\n\t\.align 4\n";
+ 
+     #--------------------------------------------------------#
+-    } elsif ( $TargetPlatform =~ /^i386-.*-(linuxaout|freebsd2|netbsd|openbsd|nextstep3|cygwin32|mingw32)$/ ) {
++    } elsif ( $TargetPlatform =~ /^i386-.*-(linuxaout|freebsd2|netbsd|openbsdaout|nextstep3|cygwin32|mingw32)$/ ) {
+ 				# NeXT added but not tested. CaS
+ 
+     $T_STABBY	    = 1; # 1 iff .stab things (usually if a.out format)
+@@ -147,12 +147,12 @@
+     $T_HDR_direct   = "\.text\n\t\.align 2,0x90\n";
+ 
+     #--------------------------------------------------------#
+-    } elsif ( $TargetPlatform =~ /^i386-.*-(solaris2|linux|freebsd|netbsd_elf)$/ ) {
++    } elsif ( $TargetPlatform =~ /^i386-.*-(solaris2|linux|freebsd|netbsd_elf|openbsd)$/ ) {
+ 
+     $T_STABBY	    = 0; # 1 iff .stab things (usually if a.out format)
+     $T_US	    = ''; # _ if symbols have an underscore on the front
+     $T_PRE_APP	    = # regexp that says what comes before APP/NO_APP
+-		      ($TargetPlatform =~ /-(linux|freebsd|netbsd_elf)$/) ? '#' : '/' ;
++		      ($TargetPlatform =~ /-(linux|freebsd|netbsd_elf|openbsd)$/) ? '#' : '/' ;
+     $T_CONST_LBL    = '^\.LC(\d+):$'; # regexp for what such a lbl looks like
+     $T_POST_LBL	    = ':';
+     $T_X86_PRE_LLBL_PAT = '\.L';

@@ -1,0 +1,61 @@
+--- ../ghc-4.08.2/configure.orig	Wed Jan 31 02:04:23 2001
++++ ../ghc-4.08.2/configure	Thu Apr 24 20:25:39 2003
+@@ -938,6 +938,15 @@
+         HostVendor_CPP='sun'
+         HostOS_CPP='solaris2'
+         ;;
++sparc-*-openbsd*) #hack
++    HostPlatform=sparc-sun-openbsd #hack
++    TargetPlatform=sparc-sun-openbsd #hack
++    BuildPlatform=sparc-sun-openbsd #hack
++         HostPlatform_CPP='sparc_sun_openbsd'
++         HostArch_CPP='sparc'
++         HostVendor_CPP='sun'
++         HostOS_CPP='openbsd'
++         ;;
+ *)
+         echo "Unrecognised platform: $HostPlatform"
+         exit 1
+@@ -1249,7 +1258,7 @@
+       exit 1
+    else
+    $PerlCmd -v >conftest.out 2>&1
+-if grep "version 5" conftest.out >/dev/null 2>&1; then
++if grep "version 5.8" conftest.out >/dev/null 2>&1; then
+    :
+ else
+    if grep "version 6" conftest.out >/dev/null 2>&1; then
+@@ -1615,7 +1624,6 @@
+ fi
+ echo "$ac_t""$CPP" 1>&6
+ 
+-
+ echo $ac_n "checking for ok way to do context diffs""... $ac_c" 1>&6
+ echo "configure:1621: checking for ok way to do context diffs" >&5
+ if eval "test \"`echo '$''{'fptools_cv_context_diffs'+set}'`\" = set"; then
+@@ -1750,7 +1758,7 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-    $WhatCmd $YACC > conftest.out
++    $WhatCmd `which $YACC` > conftest.out
+     if egrep 'y1\.c 1\..*SMI' conftest.out >/dev/null 2>&1; then
+         echo "I don't trust your $YaccCmd; it looks like an old Sun yacc"
+         if test -f /usr/lang/yacc; then
+@@ -2356,7 +2364,7 @@
+ else
+    fptools_cv_happy_version="";
+ fi;
+-if expr "$fptools_cv_happy_version" "<" 1.6 > /dev/null 2>&1; then
++if expr "$fptools_cv_happy_version" "<" 1.13 > /dev/null 2>&1; then
+    if test -d $srcdir/ghc; then
+      echo
+      echo "Happy version 1.6 or later is required to compile GHC."
+@@ -7364,6 +7372,7 @@
+ else
+   
+ case $HostPlatform in
++*openbsd) fptools_cv_lead_uscore='no';;
+ alpha-dec-osf*) fptools_cv_lead_uscore='no';;
+ *cygwin32) fptools_cv_lead_uscore='yes';;
+ *mingw32) fptools_cv_lead_uscore='yes';;
