@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/12/27 21:54:19 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2002/01/01 19:57:45 lebel Exp $
 
 COMMENT=		"agent for Razor spam filtering networks"
 
 VERSION=		1.19
 DISTNAME=		razor-agents-${VERSION}
 CATEGORIES=		mail
-NEED_VERSION=   	1.475
+NEED_VERSION=   	1.503
 HOMEPAGE=		http://razor.sourceforge.net/
 
 MAINTAINER=		Marc Matteo <marcm@lectroid.net>
@@ -22,7 +22,7 @@ MASTER_SITE_SUBDIR=	razor
 # ports tree (yet)
 BUILD_DEPENDS=		:p5-Net-DNS->=0.12:net/p5-Net-DNS \
 			:p5-Time-HiRes->=1.20:devel/p5-Time-HiRes \
-			:p5-Digest-MD5->=2.00:security/p5-Digest-MD5 \
+			:p5-Digest-SHA1->=2.00:security/p5-Digest-SHA1 \
 			:p5-Mail-Tools->=1.15:mail/p5-Mail-Tools
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
