@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2004/02/04 07:38:59 xsa Exp $
+# $OpenBSD: Makefile,v 1.9 2004/05/15 09:25:17 xsa Exp $
 
-COMMENT=	"python implementation of the Rijndael encryption algorithm"
+COMMENT=	"Python implementation of the Rijndael encryption algorithm"
 
 VERSION=	1.3
 DISTNAME=	pyrijndael-${VERSION}-src
@@ -27,8 +27,8 @@ do-build:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	${INSTALL_DATA_DIR} ${MODPY_SITEPKG}
-	${INSTALL_DATA} ${WRKSRC}/pyRijndael.* ${MODPY_SITEPKG} 
+	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_SITEPKG}
+	${INSTALL_DATA} ${WRKSRC}/pyRijndael.* ${WRKINST}${MODPY_SITEPKG} 
 
 do-regress:
 	@cd ${WRKSRC} && ${MODPY_BIN} ./pyRijndael.py
