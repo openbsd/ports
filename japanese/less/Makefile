@@ -1,0 +1,30 @@
+# imported from FreeBSD on 28 jul 98
+# New ports collection makefile for:	jless
+# Version required:	332
+# Date created:		7 March 1995
+# Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
+#
+# $FreeBSD: Makefile,v 1.13 1998/07/17 20:36:13 steve Exp $
+# $OpenBSD: Makefile,v 1.1 1998/07/29 01:31:17 espie Exp $
+#
+
+DISTNAME=	less-332
+PKGNAME=	ja-less-332-245
+CATEGORIES=	japanese
+MASTER_SITES=	${MASTER_SITE_GNU}
+
+PATCH_SITES=	ftp://ftp.big.or.jp/pub/usr2/jam/less/
+PATCHFILES=	less-332-iso242.patch.gz \
+		less-332-iso242-243.patch.gz \
+		less-332-iso243-244.patch.gz \
+		less-332-iso244-245.patch.gz
+
+PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=espie@openbsd.org
+#MAINTAINER=	nobu@psrc.isac.co.jp
+
+GNU_CONFIGURE=	yes
+MAN1=		jless.1 jlesskey.1
+
+.include <bsd.port.mk>

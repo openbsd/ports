@@ -1,0 +1,16 @@
+--- Makefile.in.orig	Sat Sep  6 16:49:17 1997
++++ Makefile.in	Sat Sep  6 16:55:37 1997
+@@ -22,11 +22,11 @@
+ 
+ # Where the installed binary goes.
+ bindir = ${exec_prefix}/bin
+-binprefix = 
++binprefix = j
+ 
+ mandir = ${prefix}/man/man${manext}
+ manext = 1
+-manprefix = 
++manprefix = j
+ 
+ #### End of system configuration section. ####
+ 

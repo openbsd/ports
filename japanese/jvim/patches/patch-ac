@@ -1,0 +1,29 @@
+--- src/vim.h.orig	Wed Jul 29 02:16:07 1998
++++ src/vim.h	Wed Jul 29 02:17:15 1998
+@@ -92,7 +92,7 @@
+ # include <stdlib.h>
+ #endif
+ 
+-#if defined(__FreeBSD__) || defined(__NetBSD__)
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ # include <unistd.h>
+ # include <sys/signal.h>
+ #endif
+@@ -153,7 +153,7 @@
+ #endif
+ 
+ #ifdef UNIX
+-# if !defined(DOMAIN) && !defined(MACH) && !defined(PureBSD43) && !defined(__FreeBSD__) && !defined(__NetBSD__)
++# if !defined(DOMAIN) && !defined(MACH) && !defined(PureBSD43) && !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+ #  ifndef _POSIX_SOURCE
+ #   define _POSIX_SOURCE
+ #  endif
+@@ -191,7 +191,7 @@
+ # endif
+ #endif
+ 
+-#if defined(UNICOS) || defined(__FreeBSD__) || defined(__NetBSD__)		/* would make sense for other systems too */
++#if defined(UNICOS) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)		/* would make sense for other systems too */
+ # include <errno.h>
+ #endif
+ 
