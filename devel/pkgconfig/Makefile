@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/11/24 00:11:03 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2004/12/08 04:32:11 marcm Exp $
 
 COMMENT=		"tool for managing library compile/link flags"
 
@@ -18,13 +18,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
-
-# hppa's segfault with the included glib, so for them we'll
-# statically link with devel/glib.
-.if (${MACHINE_ARCH} == "hppa")
-PATCH_LIST=     patch-* sup-hppa-*
-BUILD_DEPENDS=	:glib-*:devel/glib
-.endif
 
 CONFIGURE_STYLE=	gnu
 
