@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/11/08 19:45:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/11/09 16:01:05 naddy Exp $
 
 COMMENT=	"decode MS-TNEF MIME attachments"
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SEPARATE_BUILD=		simple
 CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
