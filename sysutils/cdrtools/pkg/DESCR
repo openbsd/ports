@@ -5,7 +5,9 @@ disc.
 This package contains the following software:
   cdda2wav (digital CD audio extraction program)
   cdrecord (CD recording program)
-  devdup (dump a device or file in hex)
+  devdump (dump a device or file in hex)
+  isodebug (analyze or list an ISO-9660 image)
+  isodump (analyze or list an ISO-9660 image)
   isoinfo (analyze or list an ISO-9660 image)
   isovrfy (verify an ISO-9660 image)
   mkisofs (ISO-9660 filesystem image creator)

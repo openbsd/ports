@@ -1,0 +1,12 @@
+$OpenBSD: patch-libschily_printf_c,v 1.1 2003/02/17 15:32:58 naddy Exp $
+--- libschily/printf.c.orig	Sun Nov 10 23:19:50 2002
++++ libschily/printf.c	Sun Nov 10 23:20:22 2002
+@@ -23,7 +23,7 @@
+ #ifdef	printf
+ #	define	__no_undef__
+ #else
+-#	define	printf		__nothing__
++#	define	printf		__printf__
+ #endif
+ #ifdef	fprintf
+ #	define	__no_undef2__

@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/06/05 21:41:07 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/02/17 15:32:58 naddy Exp $
 @pkgcfl cdrecord-*
 bin/cdda2wav
 bin/cdrecord
 bin/devdump
-@comment bin/isodump
+bin/isodebug
+bin/isodump
 bin/isoinfo
 bin/isovfy
 @comment bin/mkhybrid
@@ -13,8 +14,10 @@ bin/readcd
 @comment include/align.h
 @comment include/avoffset.h
 @comment lib/libdeflt.a
+@comment lib/libedc_ecc.a
 @comment lib/libfile.a
 @comment lib/libhfs.a
+@comment lib/libparanoia.a
 @comment lib/librscg.a
 @comment lib/libscg.a
 @comment lib/libschily.a
@@ -24,10 +27,10 @@ man/man1/cdrecord.1
 man/man1/devdump.1
 man/man1/isoinfo.1
 man/man1/isovfy.1
-@comment man/man1/makefiles.1
-@comment man/man1/makerules.1
 @comment man/man1/mkhybrid.1
 man/man1/mkisofs.1
 man/man1/readcd.1
 @comment man/man1/scgcheck.1
 @comment sbin/rscsi
+share/doc/cdrtools/README.OpenBSD
+@dirrm share/doc/cdrtools

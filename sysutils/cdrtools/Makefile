@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/29 20:19:10 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2003/02/17 15:32:58 naddy Exp $
 
 COMMENT=		"ISO 9660 filesystem and CD creation tools"
 
-DISTNAME=		cdrtools-1.10
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		cdrtools-2.0
 CATEGORIES=		sysutils
 HOMEPAGE=		http://www.fokus.gmd.de/research/cc/glone/employees/joerg.schilling/private/cdrecord.html
 
@@ -15,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/
+MASTER_SITES=		ftp://ftp.berlios.de/pub/cdrecord/
 
 USE_GMAKE=		Yes
 
@@ -39,6 +38,8 @@ do-configure:
 .endif
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cdrtools
+	${INSTALL_DATA} ${WRKSRC}/README.OpenBSD ${PREFIX}/share/doc/cdrtools
 	@strip ${PREFIX}/bin/* 
 	@cd ${PREFIX}/man/man1; \
 		for i in devdump.1 isovfy.1 ; do \
