@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/08/30 12:47:10 camield Exp $
 bin/ezmlm-list
 bin/ezmlm-make
 bin/ezmlm-manage
@@ -30,3 +31,4 @@ man/man1/ezmlm-unsub.1
 man/man1/ezmlm-warn.1
 man/man1/ezmlm-weed.1
 man/man5/ezmlm.5
+%%idx%%

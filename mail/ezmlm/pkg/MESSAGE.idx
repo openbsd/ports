@@ -1,0 +1,8 @@
+==============================================================
+The locale files for your ezmlmrc file have been installed
+in ${PREFIX}/share/examples/ezmlm-idx.
+
+ezmlm-make(1) will search for this file in /etc/ezmlmrc.
+Please refer to the ezmlmrc(5) man page for further help.
+==============================================================
+
