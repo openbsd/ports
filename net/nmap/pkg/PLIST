@@ -1,0 +1,3 @@
+bin/nmap
+man/man1/nmap.1
+lib/nmap-os-fingerprints
