@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.63 2004/11/13 11:49:03 espie Exp $
+# $OpenBSD: make-plist,v 1.64 2004/11/14 19:42:04 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -94,14 +94,6 @@ sub add_to_mtree
 
 sub register
 {
-	my ($self, $plist, $files, $comments) = @_;
-
-	$self->{plist} = $plist;
-	my $fullname = $self->fullname();
-	if (defined $fullname) {
-		my $n = main::var_backsubst($fullname);
-		$files->{$n} = $self;
-	}
 }
 
 sub copy_extra
@@ -200,6 +192,17 @@ sub deduce_fragment
 sub stringize
 {
 	return '!%%'.shift->{name}.'%%';
+}
+
+package OpenBSD::PackingElement::FileObject;
+sub register
+{
+	my ($self, $plist, $files, $comments) = @_;
+
+	$self->{plist} = $plist;
+	my $fullname = $self->fullname();
+	my $n = main::var_backsubst($fullname);
+	$files->{$n} = $self;
 }
 
 package OpenBSD::PackingElement::FileBase;
