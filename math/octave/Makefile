@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/15 18:07:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/12 23:59:20 naddy Exp $
 
 COMMENT=	"High-level language for numerical computations"
 VERSION=	2.0.16
@@ -26,7 +26,7 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} ${GCCARCH}
-CONFIGURE_ENV= 		FFLAGS="${CFLAGS}" SOREV="${SHLIB_VER}"
+CONFIGURE_ENV= 		FFLAGS="${FFLAGS}" SOREV="${SHLIB_VER}"
 
 # need shared library version for machines which support shared libraries.
 SHLIB_VER=	1.0
