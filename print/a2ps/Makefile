@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2000/04/09 17:37:49 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.20 2000/04/11 06:09:57 turan Exp $
+
+BROKEN=		sources missing
 
 DISTNAME=	a2ps-4.12g
 PKGNAME=	a2ps
