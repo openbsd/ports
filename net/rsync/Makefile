@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/04/18 20:59:00 espie Exp $
+# $OpenBSD: Makefile,v 1.10 1999/06/24 18:36:23 espie Exp $
 #
 
 DISTNAME= rsync-2.3.1
@@ -23,8 +23,6 @@ DOCDIR=${PREFIX}/share/doc/rsync
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/rsync ${PREFIX}/bin
-	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
-	${INSTALL_MAN_DIR} ${PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/rsync.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/rsyncd.conf.5 ${PREFIX}/man/man5
 	${INSTALL_DATA_DIR} ${DOCDIR}
