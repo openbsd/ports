@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/10 22:21:21 avsm Exp $
+# $OpenBSD: Makefile,v 1.7 2001/06/12 16:05:55 avsm Exp $
 
 COMMENT=		extendable encryption program that supports many ciphers
 
-DISTNAME=		mcrypt-2.5.6
+DISTNAME=		mcrypt-2.5.7
 CATEGORIES=     	security
 NEED_VERSION=		1.363
 
@@ -18,6 +18,7 @@ MASTER_SITES=		ftp://mcrypt.hellug.gr/pub/mcrypt/ \
 			ftp://argeas.cs-net.gr/pub/unix/mcrypt
 
 USE_LIBTOOL=		Yes
+USE_GMAKE=		Yes
 LIB_DEPENDS=		mcrypt.6::security/libmcrypt \
 			intl.1::devel/gettext
 
