@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2001/06/10 17:36:00 brad Exp $
+# $OpenBSD: Makefile,v 1.34 2001/11/19 02:40:52 brad Exp $
 
 COMMENT=	"library for manipulating PNG images"
 
-DISTNAME=	libpng-1.0.12
+DISTNAME=	libpng-1.2.0
 PKGNAME=	${DISTNAME:S/lib//}
 CATEGORIES=	graphics
-NEED_VERSION=	1.413
+NEED_VERSION=	1.489
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= libpng
 
@@ -18,23 +18,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="-L. -lpng -lz -lm"
-FAKE_FLAGS+=	${MAKE_FLAGS} prefix="${PREFIX}"
+FAKE_FLAGS=	DESTDIR="${WRKINST}" PREFIX="${PREFIX}"
 
-MAKE_FILE=	scripts/makefile.std
+MAKE_FILE=	scripts/makefile.openbsd
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/png
-	cd ${WRKSRC}; ${INSTALL_MAN} libpng.3 libpngpf.3 ${PREFIX}/man/man3
-	${INSTALL_MAN} ${WRKSRC}/png.5 ${PREFIX}/man/man5
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/png
-	${INSTALL_DATA} ${WRKSRC}/libpng.txt ${PREFIX}/share/doc/png
+REGRESS_TARGET=	test
 
-test:	build
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} test
+post-extract:
+	@cp -f ${FILESDIR}/makefile.openbsd ${WRKSRC}/scripts
 
 .include <bsd.port.mk>
-
-.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-MAKE_ENV+=	NO_SHARED_LIBS=Yes
-.endif
