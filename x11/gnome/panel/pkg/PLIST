@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/12/10 20:36:45 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/12/14 01:14:44 marcm Exp $
 bin/gnome-desktop-item-edit
 bin/gnome-panel
 bin/gnome-panel-screenshot
@@ -355,6 +355,12 @@ share/locale/nb/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/no/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/nso/
+share/locale/nso/LC_MESSAGES/
+share/locale/nso/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/or/
+share/locale/or/LC_MESSAGES/
+share/locale/or/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/pa/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/pl/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/pt/LC_MESSAGES/gnome-panel-2.0.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/12/10 20:36:45 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/12/14 01:14:44 marcm Exp $
 bin/nautilus
 bin/nautilus-file-management-properties
 include/libnautilus/
@@ -81,8 +81,6 @@ share/locale/az/LC_MESSAGES/nautilus.mo
 share/locale/be/LC_MESSAGES/nautilus.mo
 share/locale/bg/LC_MESSAGES/nautilus.mo
 share/locale/bn/LC_MESSAGES/nautilus.mo
-share/locale/bs/
-share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/nautilus.mo
 share/locale/ca/LC_MESSAGES/nautilus.mo
 share/locale/cs/LC_MESSAGES/nautilus.mo

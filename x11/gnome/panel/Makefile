@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2004/12/10 20:36:45 marcm Exp $
+# $OpenBSD: Makefile,v 1.13 2004/12/14 01:14:44 marcm Exp $
 
 COMMENT=		"GNOME panel"
 
-DISTNAME=		gnome-panel-2.8.1
+DISTNAME=		gnome-panel-2.8.2
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org

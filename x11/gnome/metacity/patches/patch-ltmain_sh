@@ -1,6 +1,6 @@
---- ltmain.sh.orig	Mon Aug  9 13:07:34 2004
-+++ ltmain.sh	Wed Dec  1 18:12:31 2004
-@@ -1374,6 +1374,17 @@
+--- ltmain.sh.orig	Mon Dec  6 10:34:27 2004
++++ ltmain.sh	Sun Dec 12 19:36:06 2004
+@@ -1492,6 +1492,17 @@ EOF
  	continue
  	;;
  
@@ -18,7 +18,7 @@
        -module)
  	module=yes
  	continue
-@@ -2024,6 +2035,21 @@
+@@ -2153,6 +2164,21 @@ EOF
  	  fi
  	  continue
  	  ;;
@@ -40,7 +40,7 @@
  	%DEPLIBS%)
  	  alldeplibs=yes
  	  continue
-@@ -2274,10 +2300,6 @@
+@@ -2410,10 +2436,6 @@ EOF
  	link_static=no # Whether the deplib will be linked statically
  	if test -n "$library_names" &&
  	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
@@ -51,7 +51,7 @@
  	  # This is a shared library
  
  	  # Warn about portability, can't link against -module's on
-@@ -5827,40 +5849,6 @@
+@@ -5800,40 +5822,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  

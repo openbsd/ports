@@ -1,6 +1,6 @@
---- libgnomevfs/gnome-vfs-dns-sd.c.orig	Wed Dec  1 17:56:06 2004
-+++ libgnomevfs/gnome-vfs-dns-sd.c	Wed Dec  1 18:04:28 2004
-@@ -60,7 +60,7 @@
+--- libgnomevfs/gnome-vfs-dns-sd.c.orig	Tue Sep 21 01:05:42 2004
++++ libgnomevfs/gnome-vfs-dns-sd.c	Sun Dec 12 16:24:37 2004
+@@ -60,7 +60,7 @@ typedef struct {
  } dns_message_header;
  
  typedef struct {
@@ -9,7 +9,7 @@
  	guint16 type;
  	guint16 class;
  	guint32 ttl;
-@@ -225,7 +225,7 @@
+@@ -225,7 +225,7 @@ parse_header (char *reply, int reply_len
  	      unsigned char *p,
  	      dns_message_header *header)
  {
@@ -18,7 +18,7 @@
  		return -1;
  
  	header->id = decode_16 (p); p += 2;
-@@ -235,7 +235,7 @@
+@@ -235,7 +235,7 @@ parse_header (char *reply, int reply_len
  	header->nscount = decode_16 (p); p += 2;
  	header->arcount = decode_16 (p); p += 2;
  
@@ -27,7 +27,7 @@
  }
  
  
-@@ -308,7 +308,7 @@
+@@ -308,7 +308,7 @@ unicast_list_domains_sync (const char *d
  	unsigned char reply[DNS_REPLY_SIZE];
  	unsigned char *p;
  	char *searchdomain;
@@ -36,7 +36,7 @@
  	dns_message_header header;
  	dns_message_rr rr;
  	int res;
-@@ -324,7 +324,7 @@
+@@ -324,7 +324,7 @@ unicast_list_domains_sync (const char *d
  	/* Use TCP to support large queries */
  	_res.options |= RES_USEVC;
  	searchdomain = g_strconcat ("_browse._dns-sd._udp.", domain, NULL);
@@ -45,7 +45,7 @@
  				reply, sizeof (reply));
  	g_free (searchdomain);
  	if (reply_len == -1) {
-@@ -368,7 +368,7 @@
+@@ -368,7 +368,7 @@ unicast_list_domains_sync (const char *d
  			goto error;
  		p += len;
  		
@@ -54,7 +54,7 @@
  			len = dn_expand (reply, reply + reply_len, p, name, sizeof(name));
  			if (len < 0) 
  				goto error;
-@@ -419,7 +419,7 @@
+@@ -419,7 +419,7 @@ unicast_browse_sync (const char *domain,
  	unsigned char reply[DNS_REPLY_SIZE];
  	unsigned char *p;
  	char *searchdomain;
@@ -63,7 +63,7 @@
  	dns_message_header header;
  	dns_message_rr rr;
  	GArray *array;
-@@ -436,7 +436,7 @@
+@@ -436,7 +436,7 @@ unicast_browse_sync (const char *domain,
  	/* Use TCP to support large queries */
  	_res.options |= RES_USEVC;
  	searchdomain = g_strconcat (type, ".", domain, NULL);
@@ -72,7 +72,7 @@
  				reply, sizeof (reply));
  	g_free (searchdomain);
  	if (reply_len == -1) {
-@@ -482,11 +482,12 @@
+@@ -482,11 +482,12 @@ unicast_browse_sync (const char *domain,
  			goto error;
  		p += len;
  		
@@ -89,7 +89,7 @@
  			
  			len = dn_expand (reply, reply + reply_len, p, name, sizeof(name));
  			if (len < 0) 
-@@ -580,7 +581,7 @@
+@@ -580,7 +581,7 @@ unicast_resolve_sync (const char *name,
  	int reply_len, len, i;
  	unsigned char reply[DNS_REPLY_SIZE];
  	unsigned char *p;
@@ -98,7 +98,7 @@
  	dns_message_header header;
  	dns_message_rr rr;
  	char *full_name;
-@@ -600,7 +601,7 @@
+@@ -600,7 +601,7 @@ unicast_resolve_sync (const char *name,
  	_res.options |= RES_USEVC;
    
  	full_name = service_to_dns_name (name, type, domain);
@@ -107,7 +107,7 @@
  				reply, sizeof (reply));
  	g_free (full_name);
  	if (reply_len == -1) {
-@@ -644,7 +645,7 @@
+@@ -644,7 +645,7 @@ unicast_resolve_sync (const char *name,
  			goto error;
  		p += len;
  		
@@ -116,7 +116,7 @@
  			unsigned char *pp;
  			int priority, weight, port;
  			
-@@ -665,7 +666,7 @@
+@@ -665,7 +666,7 @@ unicast_resolve_sync (const char *name,
  			}
  		}
  		

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_terminal-screen_c,v 1.1 2004/07/25 00:21:13 marcm Exp $
---- src/terminal-screen.c.orig	Mon Jul 12 23:19:39 2004
-+++ src/terminal-screen.c	Mon Jul 12 23:19:43 2004
-@@ -1057,7 +1057,7 @@ get_child_environment (GtkWidget      *t
+$OpenBSD: patch-src_terminal-screen_c,v 1.2 2004/12/14 01:14:44 marcm Exp $
+--- src/terminal-screen.c.orig	Mon Jun 28 00:44:02 2004
++++ src/terminal-screen.c	Sun Dec 12 08:06:03 2004
+@@ -1069,7 +1069,7 @@ get_child_environment (GtkWidget      *t
  
    retval[i] = g_strdup ("COLORTERM="EXECUTABLE_NAME);
    ++i;

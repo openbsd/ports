@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.7 2004/06/23 03:26:21 marcm Exp $
---- configure.orig	2004-04-20 03:54:46.000000000 -0600
-+++ configure	2004-06-20 00:56:24.000000000 -0600
-@@ -22807,6 +22807,7 @@ echo "${ECHO_T}$LINGUAS" >&6
+$OpenBSD: patch-configure,v 1.8 2004/12/14 01:14:44 marcm Exp $
+--- configure.orig	Thu Oct 28 07:16:54 2004
++++ configure	Sun Dec 12 16:24:37 2004
+@@ -22960,6 +22960,7 @@ echo "${ECHO_T}$LINGUAS" >&6
  
  
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.7 2004/06/23 03:26:21 marcm Exp $
  for ac_func in ngettext
  do
  as_ac_var=`echo "ac_cv_func_$ac_func" | $as_tr_sh`
-@@ -25724,6 +25725,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+@@ -25884,6 +25885,7 @@ cat >>conftest.$ac_ext <<_ACEOF
  #include <sys/vfs.h>
  #endif
  #ifdef HAVE_SYS_MOUNT_H
@@ -17,7 +17,7 @@ $OpenBSD: patch-configure,v 1.7 2004/06/23 03:26:21 marcm Exp $
  #include <sys/mount.h>
  #endif
  #ifdef HAVE_SYS_STATFS_H
-@@ -27943,7 +27945,7 @@ if test "${openssl_libs+set}" = set; the
+@@ -33518,7 +33520,7 @@ if test "${openssl_libs+set}" = set; the
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-configure,v 1.7 2004/06/23 03:26:21 marcm Exp $
  		cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -29691,6 +29693,7 @@ _ACEOF
+@@ -36841,6 +36843,7 @@ _ACEOF
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -34,7 +34,7 @@ $OpenBSD: patch-configure,v 1.7 2004/06/23 03:26:21 marcm Exp $
  #include <sys/mount.h>
  
  _ACEOF
-@@ -29711,6 +29714,7 @@ _ACEOF
+@@ -36862,6 +36865,7 @@ _ACEOF
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2004/12/10 20:36:46 marcm Exp $
+# $OpenBSD: Makefile,v 1.13 2004/12/14 01:14:44 marcm Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
-VERSION=		2.8.2
+VERSION=		2.8.3
 DISTNAME=		gnome-vfs-${VERSION}
 PKGNAME=		gnome-vfs2-${VERSION}
 CATEGORIES=		devel x11/gnome
