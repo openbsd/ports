@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.555 2003/07/16 21:22:15 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.556 2003/07/18 18:18:15 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1752,10 +1752,8 @@ _package: ${_PKG_PREREQ}
 	@cd ${.CURDIR} && exec ${MAKE} post-package
 .endif
 
-.if !target(fetch-all)
 fetch-all:
 	@cd ${.CURDIR} && exec ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes fetch
-.endif
 
 # Separate target for each file fetch will retrieve
 
@@ -1824,16 +1822,8 @@ list-distfiles:
 	 done
 	@echo ""
 
-# Obj
-#
-.if !target(obj)
-obj:
-.endif
-
-
 # Some support rules for do-package
 
-.if !target(package-links)
 package-links:
 	@cd ${.CURDIR} && exec ${MAKE} delete-package-links
 	@for cat in ${CATEGORIES}; do \
@@ -1846,27 +1836,20 @@ package-links:
 		case $$cat in */*/*) parent=../../..;; */*) parent=../..;; *) parent=..;; esac; \
 		ln -s $$parent/${PKGREPOSITORYSUBDIR}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX} ${PACKAGES}/$$cat; \
 	done;
-.endif
 
-.if !target(delete-package-links)
 delete-package-links:
 	@cd ${PACKAGES} && find . -type l -name ${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}|xargs rm -f
-.endif
 
-.if !target(delete-package)
 delete-package:
 	@cd ${.CURDIR} && exec ${MAKE} delete-package-links
 	@rm -f ${PKGFILE${SUBPACKAGE}}
-.endif
 
 # Checkpatch
 #
 # Special target to verify patches
 
-.if !target(checkpatch)
 checkpatch:
 	@cd ${.CURDIR} && exec ${MAKE} PATCH_CHECK_ONLY=Yes patch
-.endif
 
 # Reinstall
 #
@@ -1903,54 +1886,52 @@ uninstall deinstall:
 
 # Cleaning up
 
-.if !target(clean)
 clean: 
-.  if ${clean:L:Mdepends}
+.if ${clean:L:Mdepends}
 	@cd ${.CURDIR} && exec ${MAKE} clean-depends
-.  endif
+.endif
 	@${ECHO_MSG} "===>  Cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
-.  if ${clean:L:Mfake}
+.if ${clean:L:Mfake}
 	@if cd ${WRKINST} 2>/dev/null; then ${SUDO} rm -rf ${WRKINST}; fi
-.  endif
-.  if ${clean:L:Mwork}
-.    if ${clean:L:Mflavors}
+.endif
+.if ${clean:L:Mwork}
+.  if ${clean:L:Mflavors}
 	@for i in ${.CURDIR}/w-*; do \
 		if [ -L $$i ]; then ${SUDO} rm -rf `readlink $$i`; fi; \
 		${SUDO} rm -rf $$i; \
 	done
-.    else
+.  else
 	@if [ -L ${WRKDIR} ]; then rm -rf `readlink ${WRKDIR}`; fi
 	@rm -rf ${WRKDIR}
-.    endif 
-.  endif
-.  if ${clean:L:Mdist}
+.  endif 
+.endif
+.if ${clean:L:Mdist}
 	@${ECHO_MSG} "===>  Dist cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
 	@if cd ${FULLDISTDIR} 2>/dev/null; then \
 		if [ "${_DISTFILES}" -o "${_PATCHFILES}" ]; then \
 			rm -f ${_DISTFILES} ${_PATCHFILES}; \
 		fi \
 	fi
-.    if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
+.  if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
 	-@rmdir ${FULLDISTDIR}  
-.    endif
 .  endif
-.  if ${clean:L:Minstall}
-.    if ${clean:L:Msub}
-.	   for _s in ${MULTI_PACKAGES}
+.endif
+.if ${clean:L:Minstall}
+.  if ${clean:L:Msub}
+.    for _s in ${MULTI_PACKAGES}
 	-${SUDO} ${PKG_DELETE} ${clean:M-f} ${FULLPKGNAME${_s}}
-.      endfor
-.    else
+.    endfor
+.  else
 	-${SUDO} ${PKG_DELETE} ${clean:M-f} ${FULLPKGNAME${SUBPACKAGE}}
-.    endif
 .  endif
-.  if ${clean:L:Mpackages} || ${clean:L:Mpackage} && ${clean:L:Msub}
+.endif
+.if ${clean:L:Mpackages} || ${clean:L:Mpackage} && ${clean:L:Msub}
 	rm -f ${_PACKAGE_COOKIES}
-.  elif ${clean:L:Mpackage}
+.elif ${clean:L:Mpackage}
 	rm -f ${PKGFILE${SUBPACKAGE}}
-.  endif
-.  if ${clean:L:Mbulk}
+.endif
+.if ${clean:L:Mbulk}
 	rm -f ${_BULK_COOKIE}
-.  endif
 .endif
 
 distclean: 
@@ -2114,9 +2095,8 @@ _LIB_DEP2= ${LIB_DEPENDS}
 _RUN_DEP2+= ${_ALWAYS_DEP3}
 _BUILD_DEP2+=${_ALWAYS_DEP3}
 
-.if !target(clean-depends)
 clean-depends:
-.  if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
+.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
 	@unset FLAVOR SUBPACKAGE || true; \
 	for dir in \
 	   `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
@@ -2124,7 +2104,6 @@ clean-depends:
 		${_flavor_fragment}; \
 		eval $$toset ${MAKE} CLEANDEPENDS=No ${_DEPEND_THRU} clean clean-depends; \
 	done
-.  endif
 .endif
 
 # This target generates an index entry suitable for aggregation into
@@ -2231,30 +2210,25 @@ README.html:
 		>> $@
 	@rm -f $@.tmp*
 
-.if !target(print-depends-list)
 print-depends-list:
-.  if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || target(depends-list)
+.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || target(depends-list)
 	@echo -n 'This port requires package(s) "'
 	@unset FLAVOR SUBPACKAGE || true; \
 	echo -n `cd ${.CURDIR} && ${MAKE} ${_DEPEND_THRU} depends-list | ${_SORT_DEPENDS}`
 	@echo '" to build.'
-.  endif
 .endif
 
-.if !target(print-package-depends)
 print-package-depends:
-.  if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP) || target(package-depends)
+.if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP) || target(package-depends)
 	@echo -n 'This port requires package(s) "'
 	@unset FLAVOR SUBPACKAGE || true; \
 	echo -n `cd ${.CURDIR} && ${MAKE} ${_DEPEND_THRU} package-depends | ${_SORT_DEPENDS}`
 	@echo '" to run.'
-.  endif
 .endif
 
 
-.if !target(recurse-build-depends)
 recurse-build-depends:
-.  if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
+.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
 	@pname=`cd ${.CURDIR} && ${MAKE} _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
 	unset FLAVOR SUBPACKAGE || true; \
 	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
@@ -2265,14 +2239,12 @@ recurse-build-depends:
 			exit 1; \
 		fi; \
 	done 
-.  else
+.else
 	@pname=`cd ${.CURDIR} && ${MAKE} _DEPEND_ECHO='echo -n' package-name`; echo $$pname $$pname
-.  endif
 .endif
 
-.if !target(depends-list)
 depends-list:
-.  if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP)
+.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP)
 	@unset FLAVOR SUBPACKAGE || true; \
 	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
@@ -2282,13 +2254,11 @@ depends-list:
 			exit 1; \
 		fi; \
 	done 
-.  endif
 .endif
 
 # Build (recursively) a list of package dependencies suitable for tsort
-.if !target(recurse-package-depends)
 recurse-package-depends:
-.  if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
+.if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
 	@pname=`cd ${.CURDIR} && ${MAKE} _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
 	unset FLAVOR SUBPACKAGE || true; \
 	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
@@ -2299,9 +2269,8 @@ recurse-package-depends:
 			exit 1; \
 		fi; \
 	done
-.  else
+.else
 	@pname=`cd ${.CURDIR} && ${MAKE} _DEPEND_ECHO='echo -n' package-name`; echo $$pname $$pname
-.  endif
 .endif
 
 # Print list of all libraries we're allowed to depend upon.
@@ -2324,9 +2293,8 @@ _recurse-lib-depends:
 	}
 .endfor
 
-.if !target(package-depends)
 package-depends:
-.  if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
+.if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
 	@unset FLAVOR SUBPACKAGE || true; \
 	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
@@ -2336,7 +2304,6 @@ package-depends:
 			exit 1; \
 		fi; \
 	done
-.  endif
 .endif
 
 # recursively build a list of dirs to pass to tsort...
@@ -2489,36 +2456,14 @@ _solve-package-depends:
 
 README_NAME?=	${TEMPLATES}/README.port
 
-.if !target(readmes)
-readmes:	readme
-.endif
-
-.if !target(readme)
-readme:
+readme readmes:
 	@rm -f README.html
 	@cd ${.CURDIR} && exec ${MAKE} README_NAME=${README_NAME} README.html
-.endif
-
 
 HTMLIFY=	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
 
-.if !target(print-depends)
 print-depends: 
 	@cd ${.CURDIR} && exec ${MAKE} FULL_PACKAGE_NAME=Yes print-depends-list print-package-depends
-.endif
-
-# Depend is generally meaningless for arbitrary ports, but if someone wants
-# one they can override this.  This is just to catch people who've gotten into
-# the habit of typing `make depend all install' as a matter of course.
-#
-.if !target(depend)
-depend:
-.endif
-
-# Same goes for tags
-.if !target(tags)
-tags:
-.endif
 
 link-categories:
 .for _CAT in ${CATEGORIES}
@@ -2566,7 +2511,7 @@ homepage-links:
 .PHONY: \
    addsum all build build-depends regress regress-depends checkpatch \
    checksum clean clean-depends configure deinstall \
-   delete-package delete-package-links depend depends depends-list \
+   delete-package delete-package-links depends depends-list \
    describe distclean do-build do-configure do-extract \
    do-fetch do-install do-package do-patch extract list-distfiles \
    fetch fetch-depends install lib-depends makesum \
@@ -2578,9 +2523,9 @@ homepage-links:
    pre-extract pre-fetch pre-install pre-package pre-patch \
    print-depends-list print-package-depends readme \
    readmes rebuild reinstall \
-   repackage run-depends tags uninstall fetch-all print-depends \
+   repackage run-depends uninstall fetch-all print-depends \
    recurse-build-depends recurse-package-depends \
-   distpatch real-distpatch do-distpatch post-distpatch show \
+   distpatch do-distpatch post-distpatch show \
    link-categories unlink-categories _package _solve-package-depends \
    dir-depends _recurse-dir-depends package-dir-depends \
    _package-recurse-dir-depends recursebuild-depends-list run-depends-list \

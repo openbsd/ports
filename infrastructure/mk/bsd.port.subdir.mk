@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.49 2003/02/16 15:16:17 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.50 2003/07/18 18:18:15 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -30,7 +30,7 @@
 #
 #	afterinstall, all, beforeinstall, build, checksum, clean,
 #	configure, depend, describe, extract, fetch, fetch-list,
-#	install, package, readmes, realinstall, deinstall, reinstall,
+#	install, package, readmes, deinstall, reinstall,
 #	tags
 #
 
@@ -132,7 +132,7 @@ _SUBDIRUSE: .USE
 	    if eval  $$toset \
 		PKGPATH=${PKGPATH}${_SEP}$$edir \
 		RECURSIVE_FETCH_LIST=${RECURSIVE_FETCH_LIST} \
-		${MAKE} ${.TARGET:realinstall=install}; \
+		${MAKE} ${.TARGET}; \
 	    then :; else ${REPORT_PROBLEM}; fi; \
 	    set -e; \
 	done
@@ -146,40 +146,22 @@ ${SUBDIR}::
 	${MAKE} all
 
 .for __target in all fetch fetch-list package fake extract configure \
-		 build clean depend describe distclean deinstall \
+		 build clean describe distclean deinstall \
 		 reinstall tags checksum mirror-distfiles list-distfiles \
-		 show obj fetch-makefile all-packages cdrom-packages \
+		 show fetch-makefile all-packages cdrom-packages \
 		 dir-depends package-dir-depends \
 		 ftp-packages packageinstall link-categories \
 		 unlink-categories regress lib-depends-check \
 		 homepage-links manpages-check
 
-.if !target(${__target})
 ${__target}: _SUBDIRUSE
-.endif
 .endfor
 
-.if !target(install)
-.if !target(beforeinstall)
-beforeinstall:
-.endif
-.if !target(afterinstall)
-afterinstall:
-.endif
-install: afterinstall
-afterinstall: realinstall
-realinstall: beforeinstall _SUBDIRUSE
-.endif
-
-.if !target(readmes)
 readmes: readme _SUBDIRUSE
-.endif
 
-.if !target(readme)
 readme:
 	@rm -f README.html
-	@make README.html
-.endif
+	@${MAKE} README.html
 
 PORTSDIR ?= /usr/ports
 TEMPLATES ?= ${PORTSDIR}/infrastructure/templates
@@ -193,11 +175,11 @@ README.html:
 	@> $@.tmp
 .for entry in ${SUBDIR}
 	@echo -n '<dt><a href="'${entry}/README.html'">'"`cd ${entry} && make package-name 2>/dev/null||echo ${entry}`</a><dd>" >> $@.tmp
-.if exists(${entry}/pkg/COMMENT)
+.  if exists(${entry}/pkg/COMMENT)
 	@cat ${entry}/pkg/COMMENT >> $@.tmp
-.else
+.  else
 	@echo "(no description)" >> $@.tmp
-.endif
+.  endif
 .endfor
 	@sort -t '>' +1 -2 $@.tmp > $@.tmp2
 	@cat ${README} | \
@@ -211,10 +193,10 @@ _print-packagename:
 	@echo 1>&2 "Error in dependency: ${PKGPATH} is not a package location"
 	@exit 1
 
-.PHONY: all fetch fetch-list package extract configure build clean depend \
-	describe distclean deinstall reinstall tags checksum mirror-distfiles \
-	list-distfiles obj show readmes readme \
-	beforeinstall afterinstall install realinstall fake \
+.PHONY: all fetch fetch-list package extract configure build clean \
+	describe distclean deinstall reinstall checksum mirror-distfiles \
+	list-distfiles show readmes readme \
+	install fake \
 	all-packages cdrom-packages ftp-packages packageinstall \
 	link-categories unlink-categories dir-depends package-dir-depends \
 	regress lib-depends-check homepage-links manpages-check \
