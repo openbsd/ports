@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.38 1999/10/09 01:15:27 brad Exp $
+$OpenBSD: LICENSE,v 1.39 1999/10/09 01:24:51 brad Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -66,7 +66,7 @@ N	archivers/nulib			nulib325.tar.Z			NOFEE
 Y	archivers/p5-Compress-Zlib	Compress-Zlib-1.01.tar.gz	PERL
 N	archivers/rar			rarbsd				NOFEE
 Y	archivers/unace			unacepub.zip			NONE
-Y	archivers/unarj			unarj2.43.tgz			COPY
+Y	archivers/unarj			unarj-2.43.tgz			COPY
 N	archivers/unrar			unrar-2.50.tar.gz		COPY
 Y	archivers/unzip			unzip540.tar.gz			COPY
 Y	archivers/zip			zip22.tar.gz			COPY
@@ -229,8 +229,8 @@ Y	games/xbat			xev111.tar.gz			COPY
 Y	games/xbattle			xbattle-5.4.1.tar.gz		COPY
 Y	games/xbill			xbill-2.0.tgz			GPL
 Y	games/xbl			xbl-1.0j.tar.Z			GPL
-Y	games/xblast			xblast-2.6.tar.gz		GPL
-Y	games/xboard			xboard-4.0.0.tar.gz		GPL
+Y	games/xblast			xblast-2.6.beta.tar.gz		GPL
+Y	games/xboard			xboard-4.0.2.tar.gz		GPL
 Y	games/xboing			xboing2.4.tar.gz		X
 Y	games/xchomp			xchomp-pl1.tar.gz		NONE
 Y	games/xcubes			xcubes-5.4.4.tar.gz		BSD
@@ -280,9 +280,9 @@ Y	graphics/mpeg_play		mpeg_play-2.4-src.tar.gz	BSD
 N	graphics/netpbm			netpbm-1mar1994.tar.gz		COPY
 N	graphics/netpbm			pcxtoppm.tar.gz			COPY
 N	graphics/netpbm			rletopnm.tar.gz			COPY
-N	graphics/netpbm			pnmtopng-2.36.tar.gz		COPY
+N	graphics/netpbm			pnmtopng-2.37.2.tar.gz		COPY
 Y	graphics/png			libpng-1.0.3.tar.gz		BSD
-Y	graphics/tiff34			tiff-v3.4-tar.gz		BSD
+Y	graphics/tiff34			tiff-v3.4beta037.tar.gz		BSD
 -	graphics/xanim			xanim2801.tar.gz
 -	graphics/xanim			xa1.0_cyuv_sparcAOUT.o.Z
 -	graphics/xanim			xa2.0_cvid_sparcCOFF.o.Z
@@ -290,7 +290,6 @@ Y	graphics/tiff34			tiff-v3.4-tar.gz		BSD
 Y	graphics/xbmbrowser		xbmbrowser5.1.tar.gz		COPY
 Y	graphics/xfig			xfig.3.2.2.tar.gz		X
 Y	graphics/xpaint			xpaint-2.5.5.tar.gz		BSD
-Y	graphics/xpm			xpm-3.4k.tar.gz			BSD
 N	graphics/xv		xv-3.10a/xv-3.10a.tar.gz		NOFEE
 N	graphics/xv		xv-3.10a/xv-3.10a-png-1.2d.tar.gz	NOFEE
 N	graphics/xv		xv-3.10a/xv-3.10a.JPEG-patch		NOFEE
@@ -369,7 +368,7 @@ N	math/wingz			Wingz-142.tgz			SHARE
 Y	math/xspread			xspread2.1.tar.gz		GPL
 Y	mbone/imm			imm.source.tar.Z		COPY
 Y	mbone/rtptools			rtptools-1.9.tar.gz		NONE
-Y	mbone/sdr			sdr.V2.4a7n.tar.gz		BSD
+Y	mbone/sdr			sdr-2.7e.tar.gz			BSD
 N	mbone/speak_freely		speak_freely-7.1.tar.gz		CRYPTO
 Y	mbone/wb			i386-wb-1.59.tar.Z		NONE
 Y	misc/amanda			amanda-2.4.1p1.tar.gz		BSD
@@ -434,7 +433,7 @@ Y	net/ntop			ntop-1.1-src.tar.gz		GPL
 Y	net/proftpd			proftpd-1.2.0pre7.tar.gz	GPL
 Y	net/queso			queso-980922.tar.gz		GPL
 Y	net/rsync			rsync-2.3.1.tar.gz		GPL
-Y	net/samba			samba-2.0.3.tar.gz		GPL
+Y	net/samba			samba-2.0.5a.tar.gz		GPL
 Y	net/sharity-light		Sharity-Light.1.2.tar.gz	GPL
 Y	net/slirp			slirp-1.0c.tar.gz		BSD
 Y	net/sniffit			sniffit.0.3.5.tar.gz		COPY
@@ -443,7 +442,7 @@ Y	net/tcpshow			tcpshow.c			COPY
 Y	net/tintin++			tintin++v1.5pl6.tar.Z		NONE
 Y	net/tinyfugue			tf-40s1.tar.gz			GPL
 Y	net/trafshow			trafshow-3.1.tgz		BSD
-Y	net/ucd-snmp			ucd-snmp-3.2.tar.gz		BSD
+Y	net/ucd-snmp			ucd-snmp-3.6.2.tar.gz		BSD
 Y	net/wget			wget-1.5.3.tar.gz		GPL
 Y	net/wide-dhcp			dhcp-1.4.0p3.tar.gz		BSD
 N	net/xarchie			xarchie-2.0.10.tar.gz		NOFEE
@@ -461,7 +460,7 @@ Y	plan9/9menu			9menu-1.5.shar.gz		COPY
 Y	plan9/9wm			9wm-1.1.shar.gz			COPY
 Y	plan9/sam			sam.shar.gz			COPY
 Y	plan9/tcs			tcs.shar.Z			NONE
-Y	plan9/wily			wily-0.13.36.tgz		COPY
+Y	plan9/wily			wily-0.13.41.tgz		COPY
 Y	print/a2ps			a2ps-4.10.4.tar.gz		GPL
 Y	print/acroread			acroread_linux_301.tar.gz	COPY
 Y	print/afm			afm-tar.Z			COPY
@@ -484,7 +483,7 @@ Y	print/teTeX			teTeX/teTeX-src-0.4pl7.tar.gz	GPL
 Y	print/teTeX			teTeX/teTeX-lib-0.4pl8.tar.gz	GPL
 Y	print/transfig			transfig.3.2.1.tar.gz		X
 Y	russian/xcyrillic		xcyrillic-1.1.tar.gz		COPY
-Y	russian/xruskb			xruskb-1.5.3.tar.gz		GPL
+Y	russian/xruskb			xruskb-1.9.3.tar.gz		GPL
 Y	security/ADMsnmp		ADMsnmp.0.1.tar.gz		NONE
 N	security/SSLeay			SSLeay-0.9.0b.tar.gz		CRYPTO
 -	security/bounix			bo121unix.tar.gz
@@ -501,11 +500,11 @@ N	security/pgp			rsaref2.tar.gz			CRYPTO
 N	security/pgplib			PGPlib-1.1.tar.gz		CRYPTO
 Y	security/portscanner		PortScanner-1.0.tar.gz		COPY
 N	security/rsaref			rsaref20.1996.tar.Z		CRYPTO
-N	security/socks5			socks5-v1.0r9.tar.gz		LIC
+N	security/socks5			socks5-v1.0r10.tar.gz		LIC
 N	security/ssh			ssh-1.2.27.tar.gz		CRYPTO
 N	security/ssh			rsaref2.tar.gz			CRYPTO
 N	security/stel			stel.tar.gz			CRYPTO
--	security/strobe			strobe-1.06.tar.gz
+-	security/strobe			strobe-1.06.tgz
 N	security/swatch			swatch-2.2.tar.gz		NOFEE
 Y	shells/bash			bash-1.14.7.tar.gz		GPL
 Y	shells/bash2			bash-2.03.tar.gz		GPL
@@ -528,8 +527,8 @@ Y	sysutils/socket			socket-1.1.tar.gz		GPL
 Y	sysutils/stat			stat-1.3.tar.gz			NONE
 Y	sysutils/tcplist		tcplist-2.2.shar		BSD
 Y	sysutils/xbatt			xbatt-1.2.tar.gz		COPY
-Y	sysutils/xntpd			xntp3-5.93-export.tar.gz	BSD
-Y	sysutils/xosview		xosview-1.6.2.a.tar.gz		GPL/BSD
+Y	sysutils/xntpd			xntp3-5.93e-export.tar.gz	BSD
+Y	sysutils/xosview		xosview-1.7.2.a.tar.gz		GPL/BSD
 Y	sysutils/zap			zap-1.1.tar.gz			BSD
 N	textproc/agrep			agrep-2.04.tar.Z		NOFEE
 Y	textproc/c2html			c2html-0.6.1.tar.gz		GPL
@@ -560,8 +559,8 @@ Y	textproc/sp			sp-1.2.1.tar.gz			BSD
 N	textproc/spiff			spiff-1.0.tar.gz		NOFEE
 Y	textproc/texi2html		texi2html.shar.Z		GPL
 Y	textproc/wdiff			wdiff-0.5.tar.gz		GPL
-Y	textproc/xpdf			xpdf-0.80.tgz			GPL
-N	textproc/xpdf			xpdf-0.80-decrypt.patch		CRYPTO
+Y	textproc/xpdf			xpdf-0.90.tgz			GPL
+N	textproc/xpdf			xpdf-0.90-fefe-diff2.gz		CRYPTO
 -	www/amaya			amaya/amaya-src-2.1.tar.gz
 -	www/amaya-english-dict		amaya/English.tar.gz
 -	www/amaya-french-dict		amaya/French.tar.gz
