@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/08 18:27:43 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/03/07 00:14:41 brad Exp $
 #
 
 DISTNAME=       dejagnu-1.3
@@ -7,6 +7,7 @@ CATEGORIES=	devel
 MAINTAINER=	niklas@openbsd.org
 
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= dejagnu
 
 BUILD_DEPENDS=	expect:${PORTSDIR}/lang/expect
 

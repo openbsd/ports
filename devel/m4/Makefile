@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/08 18:31:46 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/03/07 00:14:44 brad Exp $
 # $FreeBSD: Makefile,v 1.7 1997/06/16 08:22:35 max Exp $
 #
 
@@ -8,6 +8,7 @@ CATEGORIES=	devel
 MAINTAINER=	niklas@openbsd.org
 
 MASTER_SITES=   ${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= m4
 
 GNU_CONFIGURE=yes
 CONFIGURE_ARGS= --program-prefix=g

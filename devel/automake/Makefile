@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 1999/03/02 23:34:15 jasoni Exp $
+# $OpenBSD: Makefile,v 1.6 1999/03/07 00:14:40 brad Exp $
 #
 
 DISTNAME=	automake-1.4
 CATEGORIES=	devel
 
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= automake
 
 MAINTAINER=	jasoni@openbsd.org
 
