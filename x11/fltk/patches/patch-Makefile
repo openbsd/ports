@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1 2001/04/15 03:14:15 matt Exp $
+--- Makefile.orig	Fri Jun 30 00:23:12 2000
++++ Makefile	Thu Apr 12 19:00:30 2001
+@@ -25,7 +25,7 @@
+ 
+ SHELL=/bin/sh
+ 
+-DIRS	=	src fluid test
++DIRS	=	src fluid
+ 
+ all: makeinclude
+ 	@for dir in $(DIRS); do\
