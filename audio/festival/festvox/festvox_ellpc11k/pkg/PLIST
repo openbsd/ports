@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/11 06:21:51 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/06 03:36:25 jolan Exp $
+lib/festival/voices/
+lib/festival/voices/spanish/
+lib/festival/voices/spanish/el_diphone/
 lib/festival/voices/spanish/el_diphone/COPYING
+lib/festival/voices/spanish/el_diphone/festvox/
 lib/festival/voices/spanish/el_diphone/festvox/el_diphone.scm
 lib/festival/voices/spanish/el_diphone/festvox/spanint.scm
 lib/festival/voices/spanish/el_diphone/festvox/spanlex.scm
 lib/festival/voices/spanish/el_diphone/festvox/sptoken.scm
+lib/festival/voices/spanish/el_diphone/group/
 lib/festival/voices/spanish/el_diphone/group/ellpc11k.group
-@dirrm lib/festival/voices/spanish/el_diphone/group
-@dirrm lib/festival/voices/spanish/el_diphone/festvox
-@dirrm lib/festival/voices/spanish/el_diphone
-@dirrm lib/festival/voices/spanish
-@dirrm lib/festival/voices

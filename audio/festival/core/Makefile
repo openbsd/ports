@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2004/07/31 18:54:24 naddy Exp $
-
-# doesn't compile with gcc3
-NOT_FOR_ARCHS=	amd64 hppa sparc64
+# $OpenBSD: Makefile,v 1.3 2004/08/06 03:36:24 jolan Exp $
 
 COMMENT=	"general multi-lingual speech synthesis system"
-V=		1.4.3
-DISTNAME=	festival-${V}-release
-PKGNAME=	${DISTNAME:S/-release//}
+V=		1.95
+DISTNAME=	festival-${V}-beta
+PKGNAME=	${DISTNAME:S/-beta/beta/}
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cstr.ed.ac.uk/download/festival/${V}/ \
 		http://festvox.org/packed/festival/${V}/ \
 		http://www.speech.cs.cmu.edu/festival/cstr/festival/${V}/
 MASTER_SITES0=  http://mirrors.protection.cx/~jolan/
 DIST_SUBDIR=	festival
-DISTFILES=	${DISTNAME}.tar.gz speech_tools-1.2.3-release.tar.gz
+DISTFILES=	${DISTNAME}.tar.gz speech_tools-1.2.95-beta.tar.gz
 SUPDISTFILES=	OGIresLPC-2.0.9.tar.gz:0
 
 HOMEPAGE=	http://www.cstr.ed.ac.uk/projects/festival/
@@ -37,7 +34,8 @@ MAKE_ENV+=	CC="${CC}" \
 		CXXFLAGS="${CXXFLAGS}" \
 		PKG_EST_HOME="${SPEECH}" \
 		EST_HOME="${SPEECH}" \
-		FESTIVAL_BUILD_HOME="${FESTIVAL}"
+		FESTIVAL_BUILD_HOME="${FESTIVAL}" \
+		FTLIBDIRC="${PREFIX}/lib/festival"
 
 CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=${SPEECH} ${FESTIVAL}
@@ -69,12 +67,19 @@ post-build:
 	@perl -pi -e s,'/bin/festival','${PREFIX}/bin/festival', ${WRKBUILD}/festival/bin/text2wave
 
 do-install:
+.if ${FLAVOR:L:Mogi}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/festival-ogi
+	${INSTALL_DATA} ${WRKDIR}/{README-OGIresLPC-2.0,license_ogi_tts.txt} \
+		${PREFIX}/share/doc/festival-ogi
+.endif
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/songs
-	${INSTALL_DATA_DIR} ${SHAREDIR}
+	${INSTALL_DATA_DIR} ${SHAREDIR}/multisyn
 .for EXT in dtd el ent gram ngrambin properties scm
 	${INSTALL_DATA} ${WRKSRC}/festival/lib/*.${EXT} ${SHAREDIR}
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/festival/lib/multisyn/*.scm \
+		${SHAREDIR}/multisyn
 	${INSTALL_PROGRAM} ${FESTIVAL}/lib/etc/OpenBSD/audsp ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${FESTIVAL}/src/main/festival ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${FESTIVAL}/src/main/festival_client ${PREFIX}/bin

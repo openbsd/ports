@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/11 06:21:51 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/06 03:36:25 jolan Exp $
+lib/festival/dicts/
 lib/festival/dicts/COPYING.poslex
 lib/festival/dicts/wsj.wp39.poslexR
 lib/festival/dicts/wsj.wp39.tri.ngrambin
-@dirrm lib/festival/dicts

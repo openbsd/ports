@@ -1,7 +1,7 @@
-$OpenBSD: patch-festival_lib_voices_scm,v 1.1 2004/07/11 06:27:07 jolan Exp $
---- festival/lib/voices.scm.orig	2003-01-20 06:07:00.000000000 -0600
-+++ festival/lib/voices.scm	2004-05-20 01:42:08.000000000 -0500
-@@ -182,6 +182,10 @@ the default voice. [see Site initializat
+$OpenBSD: patch-festival_lib_voices_scm,v 1.2 2004/08/06 03:36:24 jolan Exp $
+--- festival/lib/voices.scm.orig	Sun Jun 27 10:04:07 2004
++++ festival/lib/voices.scm	Wed Aug  4 20:02:41 2004
+@@ -335,6 +335,10 @@ the default voice. [see Site initializat
      ked_diphone
      don_diphone
      rab_diphone

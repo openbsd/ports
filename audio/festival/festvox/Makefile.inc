@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2004/07/11 06:21:51 jolan Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2004/08/06 03:36:25 jolan Exp $
 
-V?=		1.4.3
-PKGNAME?=	${DISTNAME}-20040511
+V?=		1.95
+PKGNAME?=	${DISTNAME}-20040804
 CATEGORIES=	audio
 MASTER_SITES?=	http://www.cstr.ed.ac.uk/download/festival/${V}/ \
 		http://festvox.org/packed/festival/${V}/ \

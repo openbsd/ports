@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/11 06:21:51 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/06 03:36:25 jolan Exp $
+lib/festival/dicts/
+lib/festival/dicts/oald/
 lib/festival/dicts/oald/COPYING
 lib/festival/dicts/oald/cuvoald710-0.2.scm
 lib/festival/dicts/oald/oald-0.4.out
 lib/festival/dicts/oald/oald_extensions.scm
 lib/festival/dicts/oald/oald_lts_rules.scm
 lib/festival/dicts/oald/oaldlex.scm
-@dirrm lib/festival/dicts/oald
-@dirrm lib/festival/dicts

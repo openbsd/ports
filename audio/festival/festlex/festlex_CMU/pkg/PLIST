@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/11 06:21:51 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/06 03:36:25 jolan Exp $
+lib/festival/dicts/
+lib/festival/dicts/cmu/
+lib/festival/dicts/cmu/COPYING
+lib/festival/dicts/cmu/allowables.scm
 lib/festival/dicts/cmu/cmu_lts_rules.scm
 lib/festival/dicts/cmu/cmudict-0.4.out
 lib/festival/dicts/cmu/cmudict-0.4.scm
 lib/festival/dicts/cmu/cmudict_extensions.scm
 lib/festival/dicts/cmu/cmulex.scm
-@dirrm lib/festival/dicts/cmu
-@dirrm lib/festival/dicts

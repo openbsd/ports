@@ -1,7 +1,7 @@
-$OpenBSD: patch-speech_tools_audio_voxware_cc,v 1.1 2004/07/11 06:27:07 jolan Exp $
---- speech_tools/audio/voxware.cc.orig	2002-12-02 08:14:58.000000000 -0600
-+++ speech_tools/audio/voxware.cc	2004-05-13 21:13:03.000000000 -0500
-@@ -61,7 +61,7 @@
+$OpenBSD: patch-speech_tools_audio_voxware_cc,v 1.2 2004/08/06 03:36:24 jolan Exp $
+--- speech_tools/audio/voxware.cc.orig	Fri Apr 30 11:56:49 2004
++++ speech_tools/audio/voxware.cc	Wed Aug  4 20:05:58 2004
+@@ -61,11 +61,12 @@
  #include "EST_error.h"
  
  #ifdef SUPPORT_FREEBSD16
@@ -10,7 +10,12 @@ $OpenBSD: patch-speech_tools_audio_voxware_cc,v 1.1 2004/07/11 06:27:07 jolan Ex
  #include <fcntl.h>
  int freebsd16_supported = TRUE;
  int linux16_supported = FALSE;
-@@ -150,7 +150,7 @@ int play_voxware_wave(EST_Wave &inwave, 
+ static char *aud_sys_name = "FreeBSD";
++static int stereo_only = 0;
+ #endif
+ 
+ #ifdef SUPPORT_LINUX16
+@@ -157,7 +158,7 @@ int play_voxware_wave(EST_Wave &inwave, 
      if (al.present("-audiodevice"))
  	audiodevice = al.val("-audiodevice");
      else
@@ -19,7 +24,7 @@ $OpenBSD: patch-speech_tools_audio_voxware_cc,v 1.1 2004/07/11 06:27:07 jolan Ex
  
      if ((audio = open(audiodevice,O_WRONLY)) == -1)
      {
-@@ -262,7 +262,7 @@ int record_voxware_wave(EST_Wave &inwave
+@@ -284,7 +285,7 @@ int record_voxware_wave(EST_Wave &inwave
      if (al.present("-audiodevice"))
  	audiodevice = al.val("-audiodevice");
      else

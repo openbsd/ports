@@ -1,25 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/11 06:21:51 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/06 03:36:25 jolan Exp $
+lib/festival/voices/
+lib/festival/voices/english/
+lib/festival/voices/english/mwm2jph_diphone/
+lib/festival/voices/english/mwm2jph_diphone/convert/
 lib/festival/voices/english/mwm2jph_diphone/convert/mwm2jph_gmmjd_set_q32.gmm
+lib/festival/voices/english/mwm2jph_diphone/festvox/
 lib/festival/voices/english/mwm2jph_diphone/festvox/mwm2jph_diphone.scm
+lib/festival/voices/english/mwm2tll_diphone/
+lib/festival/voices/english/mwm2tll_diphone/convert/
 lib/festival/voices/english/mwm2tll_diphone/convert/mwm2tll.vcn
 lib/festival/voices/english/mwm2tll_diphone/convert/mwm2tll_gmmjd_set_q32.gmm
+lib/festival/voices/english/mwm2tll_diphone/festvox/
 lib/festival/voices/english/mwm2tll_diphone/festvox/mwm2tll_diphone.scm
+lib/festival/voices/english/mwm_diphone/
+lib/festival/voices/english/mwm_diphone/dic/
 lib/festival/voices/english/mwm_diphone/dic/mwmdemi.ms
 lib/festival/voices/english/mwm_diphone/dic/mwmdiph.ms
 lib/festival/voices/english/mwm_diphone/dic/mwmgain.dat
+lib/festival/voices/english/mwm_diphone/festvox/
 lib/festival/voices/english/mwm_diphone/festvox/mwm_diphone.scm
 lib/festival/voices/english/mwm_diphone/festvox/mwmdiph.ms
 lib/festival/voices/english/mwm_diphone/festvox/mwmgain.dat
+lib/festival/voices/english/mwm_diphone/group/
 lib/festival/voices/english/mwm_diphone/group/mwm_di_resLPC.group
-@dirrm lib/festival/voices/english/mwm_diphone/group
-@dirrm lib/festival/voices/english/mwm_diphone/festvox
-@dirrm lib/festival/voices/english/mwm_diphone/dic
-@dirrm lib/festival/voices/english/mwm_diphone
-@dirrm lib/festival/voices/english/mwm2tll_diphone/festvox
-@dirrm lib/festival/voices/english/mwm2tll_diphone/convert
-@dirrm lib/festival/voices/english/mwm2tll_diphone
-@dirrm lib/festival/voices/english/mwm2jph_diphone/festvox
-@dirrm lib/festival/voices/english/mwm2jph_diphone/convert
-@dirrm lib/festival/voices/english/mwm2jph_diphone
-@dirrm lib/festival/voices/english
-@dirrm lib/festival/voices

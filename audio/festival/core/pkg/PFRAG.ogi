@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.ogi,v 1.1 2004/07/11 06:27:08 jolan Exp $
+@comment $OpenBSD: PFRAG.ogi,v 1.2 2004/08/06 03:36:24 jolan Exp $
 lib/festival/ogi_effect.scm
 lib/festival/ogi_enhance.scm
 lib/festival/ogi_gswdurtreeZ_wb.scm
@@ -15,3 +15,6 @@ lib/festival/ogi_token.scm
 lib/festival/ogi_unitsel.scm
 lib/festival/ogi_wordsynth.scm
 lib/festival/ogi_worldbet_phones.scm
+share/doc/festival${FLAVOR_EXT}/
+share/doc/festival${FLAVOR_EXT}/README-OGIresLPC-2.0
+share/doc/festival${FLAVOR_EXT}/license_ogi_tts.txt

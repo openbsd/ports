@@ -1,15 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1 2004/07/11 06:27:08 jolan Exp $
-%%ogi%%
+@comment $OpenBSD: PLIST,v 1.2 2004/08/06 03:36:24 jolan Exp $
 bin/audsp
 bin/festival
 bin/festival_client
 bin/festival_server
 bin/festival_server_control
 bin/text2wave
+lib/festival/
 lib/festival/Sable.v0_2.dtd
 lib/festival/Singing.v0_1.dtd
 lib/festival/apml.scm
 lib/festival/apml_f2bf0lr.scm
+lib/festival/apml_kaldurtreeZ.scm
 lib/festival/cart_aux.scm
 lib/festival/clunits.scm
 lib/festival/clunits_build.scm
@@ -31,6 +32,7 @@ lib/festival/festtest.scm
 lib/festival/fringe.scm
 lib/festival/gswdurtreeZ.scm
 lib/festival/holmes_phones.scm
+lib/festival/hts.scm
 lib/festival/init.scm
 lib/festival/intonation.scm
 lib/festival/java.scm
@@ -45,6 +47,12 @@ lib/festival/module_description.scm
 lib/festival/mrpa_allophones.scm
 lib/festival/mrpa_durs.scm
 lib/festival/mrpa_phones.scm
+lib/festival/multisyn/
+lib/festival/multisyn/multisyn.scm
+lib/festival/multisyn/multisyn_pauses.scm
+lib/festival/multisyn/radio_phones_multisyn.scm
+lib/festival/multisyn/send_xwaves.scm
+lib/festival/multisyn/target_cost.scm
 lib/festival/ogimarkup-mode.scm
 lib/festival/pauses.scm
 lib/festival/phoneset.scm
@@ -60,6 +68,7 @@ lib/festival/sec.B.hept.ngrambin
 lib/festival/sec.ts20.quad.ngrambin
 lib/festival/singing-mode.scm
 lib/festival/siod.scm
+lib/festival/siteinit.scm
 lib/festival/soleml-mode.scm
 lib/festival/speech.properties
 lib/festival/synthesis.scm
@@ -71,8 +80,9 @@ lib/festival/tokenpos.scm
 lib/festival/tts.scm
 lib/festival/voices.scm
 lib/festival/web.scm
-man/man1/festival.1
-man/man1/festival_client.1
+@man man/man1/festival.1
+@man man/man1/festival_client.1
+share/examples/festival/
 share/examples/festival/addr-mode.scm
 share/examples/festival/apml.dtd
 share/examples/festival/benchmark.text
@@ -92,6 +102,7 @@ share/examples/festival/latest
 share/examples/festival/make_utts
 share/examples/festival/saytime
 share/examples/festival/scfg_parse_text
+share/examples/festival/songs/
 share/examples/festival/songs/america1.xml
 share/examples/festival/songs/america2.xml
 share/examples/festival/songs/america3.xml
@@ -111,6 +122,4 @@ share/examples/festival/th-mode.scm
 share/examples/festival/tobi.stml
 share/examples/festival/toksearch.scm
 share/examples/festival/webdemo.scm
-@dirrm share/examples/festival/songs
-@dirrm share/examples/festival
-@dirrm lib/festival
+%%ogi%%
