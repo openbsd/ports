@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/22 17:44:40 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/07/24 14:56:09 naddy Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/diff.info
 bin/gcmp
 bin/gdiff
@@ -9,4 +9,53 @@ man/man1/gcmp.1
 man/man1/gdiff.1
 man/man1/gdiff3.1
 man/man1/gsdiff.1
+share/locale/cs/LC_MESSAGES/diffutils.mo
+share/locale/da/LC_MESSAGES/diffutils.mo
+share/locale/de/LC_MESSAGES/diffutils.mo
+share/locale/en_GB/LC_MESSAGES/diffutils.mo
+share/locale/eo/LC_MESSAGES/diffutils.mo
+share/locale/es/LC_MESSAGES/diffutils.mo
+share/locale/fr/LC_MESSAGES/diffutils.mo
+share/locale/gl/LC_MESSAGES/diffutils.mo
+share/locale/he/LC_MESSAGES/diffutils.mo
+share/locale/id/LC_MESSAGES/diffutils.mo
+share/locale/ja/LC_MESSAGES/diffutils.mo
+share/locale/pl/LC_MESSAGES/diffutils.mo
+share/locale/ru/LC_MESSAGES/diffutils.mo
+share/locale/sv/LC_MESSAGES/diffutils.mo
+share/locale/tr/LC_MESSAGES/diffutils.mo
+share/locale/zh_TW/LC_MESSAGES/diffutils.mo
+@comment @dirrm share/locale/zh_TW/LC_MESSAGES
+@comment @dirrm share/locale/zh_TW
+@comment @dirrm share/locale/tr/LC_MESSAGES
+@comment @dirrm share/locale/tr
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale/pl/LC_MESSAGES
+@comment @dirrm share/locale/pl
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/id/LC_MESSAGES
+@comment @dirrm share/locale/id
+@comment @dirrm share/locale/he/LC_MESSAGES
+@comment @dirrm share/locale/he
+@comment @dirrm share/locale/gl/LC_MESSAGES
+@comment @dirrm share/locale/gl
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/eo/LC_MESSAGES
+@comment @dirrm share/locale/eo
+@comment @dirrm share/locale/en_GB/LC_MESSAGES
+@comment @dirrm share/locale/en_GB
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale/cs/LC_MESSAGES
+@comment @dirrm share/locale/cs
+@comment @dirrm share/locale
 @exec install-info --info-dir=%D/info %D/info/diff.info

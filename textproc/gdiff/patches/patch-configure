@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2003/07/23 23:30:14 naddy Exp $
---- configure.orig	Thu Jul 24 00:12:59 2003
-+++ configure	Thu Jul 24 00:13:07 2003
+$OpenBSD: patch-configure,v 1.2 2003/07/24 14:56:09 naddy Exp $
+--- configure.orig	Sun Mar 24 08:54:40 2002
++++ configure	Thu Jul 24 16:36:52 2003
 @@ -3722,7 +3722,7 @@
  
  
@@ -10,3 +10,20 @@ $OpenBSD: patch-configure,v 1.1 2003/07/23 23:30:14 naddy Exp $
  _ACEOF
  
  
+@@ -5793,7 +5793,6 @@
+ #include "confdefs.h"
+ #include <libintl.h>
+ extern int _nl_msg_cat_cntr;
+-extern int *_nl_domain_bindings;
+ extern
+ #ifdef __cplusplus
+ "C"
+@@ -5809,7 +5808,7 @@
+ main ()
+ {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
++return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias (0)
+   ;
+   return 0;
+ }
