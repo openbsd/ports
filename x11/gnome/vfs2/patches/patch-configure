@@ -1,0 +1,53 @@
+$OpenBSD: patch-configure,v 1.6 2004/02/22 05:34:26 marcm Exp $
+--- configure.orig	2004-01-26 14:03:20.000000000 -0800
++++ configure	2004-02-07 23:15:54.000000000 -0800
+@@ -8669,7 +8669,7 @@ nto-qnx*)
+ openbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+-  need_version=yes
++  need_version=no
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+@@ -22440,6 +22440,7 @@ echo "${ECHO_T}$LINGUAS" >&6
+ 
+ 
+ 
++LIBS="$LIBS $INTLLIBS"
+ for ac_func in ngettext
+ do
+ as_ac_var=`echo "ac_cv_func_$ac_func" | $as_tr_sh`
+@@ -24655,6 +24656,7 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <sys/param.h>
+ #include <$ac_header>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -26529,7 +26531,7 @@ if test "${openssl_libs+set}" = set; the
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+ 
+-		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto -ldl"
++		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto"
+ 		cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -27595,6 +27597,7 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/param.h>
+ #include <sys/mount.h>
+ 
+ _ACEOF
+@@ -27615,6 +27618,7 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/param.h>
+ #include <sys/mount.h>
+ #include <sys/fs_types.h>
+ _ACEOF

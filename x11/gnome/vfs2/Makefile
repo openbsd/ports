@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2004/01/29 18:23:40 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/02/22 05:34:26 marcm Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
-VERSION=		2.4.1
+VERSION=		2.4.2
 DISTNAME=		gnome-vfs-${VERSION}
 PKGNAME=		gnome-vfs2-${VERSION}
 CATEGORIES=		devel x11/gnome
@@ -20,6 +20,7 @@ LIB_DEPENDS=		bonobo-2,bonobo-activation::x11/gnome/libbonobo \
 			gconf-2::devel/gconf2
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
+			:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 RUN_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 
