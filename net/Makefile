@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.224 2002/07/18 06:19:52 kevlo Exp $
+# $OpenBSD: Makefile,v 1.225 2002/07/26 11:38:35 dhartmei Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -138,6 +138,7 @@
      SUBDIR += pchar
      SUBDIR += pdnsd
      SUBDIR += pen
+     SUBDIR += pfstat
      SUBDIR += plushs
      SUBDIR += pop3gwd
      SUBDIR += pptp
