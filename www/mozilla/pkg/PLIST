@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2004/01/18 10:48:38 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.26 2004/02/15 19:44:01 wilfried Exp $
 bin/mozilla
 mozilla/LICENSE
 mozilla/chrome/US.jar
@@ -252,8 +252,6 @@ mozilla/defaults/wallet/SchemaConcat.tbl
 mozilla/defaults/wallet/SchemaStrings.tbl
 mozilla/defaults/wallet/StateSchema.tbl
 mozilla/defaults/wallet/VcardSchema.tbl
-mozilla/icons/mozicon16.xpm
-mozilla/icons/mozicon50.xpm
 mozilla/mozilla-bin
 mozilla/mozilla-config
 mozilla/regchrome
@@ -468,8 +466,6 @@ share/pixmaps/mozilla-mail-icon.gif
 @dirrm mozilla/res/dtd
 @dirrm mozilla/res/builtin
 @dirrm mozilla/res
-@dirrm mozilla/plugins
-@dirrm mozilla/icons
 @dirrm mozilla/defaults/wallet
 @dirrm mozilla/defaults/profile/chrome
 @dirrm mozilla/defaults/profile/US/chrome

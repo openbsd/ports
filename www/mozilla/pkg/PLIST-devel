@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.6 2004/02/02 04:53:50 marcm Exp $
+@comment $OpenBSD: PLIST-devel,v 1.7 2004/02/15 19:44:01 wilfried Exp $
 lib/pkgconfig/mozilla-gtkmozembed.pc
 lib/pkgconfig/mozilla-js.pc
 lib/pkgconfig/mozilla-nspr.pc
@@ -2507,4 +2507,3 @@ mozilla/lib/libxpwidgets_s.a
 @dirrm mozilla/include/addrbook
 @dirrm mozilla/include/accessibility
 @dirrm mozilla/include
-@dirrm lib/pkgconfig

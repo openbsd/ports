@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2004/02/02 04:53:49 marcm Exp $
+# $OpenBSD: Makefile,v 1.66 2004/02/15 19:44:01 wilfried Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64
 
@@ -20,7 +20,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://ftp.mozilla.org/pub/mozilla/releases/mozilla${VER}/src/
+MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla${VER}/src/ \
+		http://ftp.mozilla.org/pub/mozilla/releases/mozilla${VER}/src/
 
 MULTI_PACKAGES=	-devel
 
@@ -36,7 +37,7 @@ SUBPACKAGE?=
 RUN_DEPENDS=	::www/mozilla
 .else
 MODULES=	gcc3
-MODGCC3_ARCHES=	alpha sparc64 powerpc
+MODGCC3_ARCHES=	alpha sparc64
 MODGCC3_LANGS=	C++
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig
@@ -59,7 +60,7 @@ CONFIGURE_ARGS=					\
 		--with-system-zlib=/usr/lib	\
 		--with-pthreads			\
 		--enable-xft			\
-		--enable-optimize=-O2		\
+		--enable-optimize=-Os		\
 		--enable-crypto			\
 		--enable-extensions=default	\
 		--disable-pedantic		\
@@ -90,13 +91,14 @@ do-install:
 .endfor
 	@cd ${MOB}/public && ${TAR} -chf - nss | \
 		${TAR} -xf - -C ${MOZ}/include
-.for dir in chrome components defaults icons res plugins searchplugins
+.for dir in chrome components defaults res searchplugins
 	${INSTALL_DATA_DIR} ${MOZ}/${dir}
 	@cd ${MOB}/bin && ${TAR} -chf - ${dir} | \
 		${TAR} -xf - -C ${MOZ}
 .endfor
 	@cd ${MOB}/bin && ${TAR} -chf - *.so.1.0 | \
 		${TAR} -xf - -C ${MOZ}
+	@chmod 444 ${MOZ}/*.so.1.0 ${MOZ}/components/*.so.1.0
 	${INSTALL_DATA} ${MOB}/bin/LICENSE ${MOZ}
 	${INSTALL_SCRIPT} ${MOB}/bin/mozilla ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${MOB}/bin/run-mozilla.sh ${MOB}/bin/mozilla-config ${MOZ}

@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.7 2004/01/18 10:49:33 wilfried Exp $
+$OpenBSD: patch-configure_in,v 1.8 2004/02/15 19:44:01 wilfried Exp $
 --- configure.in.orig	2003-12-03 00:19:34.000000000 +0100
 +++ configure.in	2003-12-12 15:43:28.000000000 +0100
 @@ -1286,12 +1286,11 @@ case "$target" in
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure_in,v 1.7 2004/01/18 10:49:33 wilfried Exp $
 -	DSO_LDOPTS="-Bshareable /usr/lib/c++rt0.o"
 -    fi
 +    DSO_LDOPTS='-shared -fPIC'
-+    MKSHLIB='$(CC) $(DSO_LDOPTS) -o $@'
++    MKSHLIB='$(CXX) $(DSO_LDOPTS) -o $@'
 +    MKCSHLIB='$(CC) $(DSO_LDOPTS) -o $@'
 +    MKSHLIB_FORCE_ALL=''
 +    MKSHLIB_UNFORCE_ALL=''
