@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2003/05/15 14:35:45 wilfried Exp $
+# $OpenBSD: Makefile,v 1.29 2003/05/16 03:56:41 wilfried Exp $
 # Uses pthreads
 
 COMMENT=	"open source version of the Netscape browser"
@@ -7,8 +7,6 @@ VER=		1.4a
 DISTNAME=	mozilla
 PKGNAME=	mozilla-${VER}
 DISTFILES=	mozilla-source-${VER}.tar.bz2
-
-BROKEN=		More debugging needed
 
 CATEGORIES=	www
 
@@ -39,6 +37,8 @@ CONFIGURE_ARGS=					\
 		--with-system-mng=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
+		--disable-debug			\
+		--disable-tests			\
 		--disable-profilesharing        \
 		--disable-ldap
 # disable this for now
@@ -46,9 +46,7 @@ CONFIGURE_ARGS=					\
 # does not pass NSPR tests
 #		--with-pthreads			\
 # enable these once Mozilla actually runs
-#		--disable-debug			\
 #		--enable-optimize="${CFLAGS}"	\
-#		--disable-tests			\
 
 CONFIGURE_ENV=	BSD_PTHREAD_LIBS="-pthread" \
 		CFLAGS="" CXXFLAGS=""
