@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2005/02/13 16:40:59 alek Exp $
+--- configure.orig	Sun Feb 13 17:21:26 2005
++++ configure	Sun Feb 13 17:24:35 2005
+@@ -7930,7 +7930,7 @@ int
+ main ()
+ {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias (0)
++return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias ()
+   ;
+   return 0;
+ }
+@@ -7976,7 +7976,7 @@ int
+ main ()
+ {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias (0)
++return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias ()
+   ;
+   return 0;
+ }
