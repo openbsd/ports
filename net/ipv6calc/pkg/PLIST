@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/05/19 20:02:05 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/05/24 23:05:40 naddy Exp $
 bin/ipv6calc
-bin/ipv6logcon
+bin/ipv6logconv
