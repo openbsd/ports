@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/19 06:20:58 jasoni Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/23 15:52:11 brad Exp $
 
-DISTNAME=	rxvt-2.4.5
+DISTNAME=	rxvt-2.4.11
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.math.fu-berlin.de/pub/rxvt/
+MASTER_SITES=	ftp://babayaga.math.fu-berlin.de/rxvt/
 
 MAINTAINER=	jasoni@openbsd.org
 
