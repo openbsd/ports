@@ -6,5 +6,4 @@ This port features per-user config: when you first start Falcon's Eye,
 it creates $HOME/.falcon and copies default configuration files there,
 that you can then edit.
 
-WWW: ${HOMEPAGE}
-
+You may wish to install timidity to get music instead of sound effects.
