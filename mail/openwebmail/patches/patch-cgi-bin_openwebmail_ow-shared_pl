@@ -1,16 +1,14 @@
-$OpenBSD: patch-cgi-bin_openwebmail_ow-shared_pl,v 1.4 2003/11/03 06:15:15 kevlo Exp $
---- cgi-bin/openwebmail/ow-shared.pl.orig	Mon Jun 16 18:12:48 2003
-+++ cgi-bin/openwebmail/ow-shared.pl	Wed Jul 16 18:00:18 2003
-@@ -264,16 +264,16 @@ sub openwebmail_exit {
+$OpenBSD: patch-cgi-bin_openwebmail_ow-shared_pl,v 1.5 2003/11/13 05:55:56 kevlo Exp $
+--- cgi-bin/openwebmail/ow-shared.pl.orig	Sun Nov  9 10:06:44 2003
++++ cgi-bin/openwebmail/ow-shared.pl	Thu Nov 13 10:40:47 2003
+@@ -368,14 +368,14 @@
+ ###################### USERENV_INIT ###################
  # init user globals, switch euid
  sub userenv_init {
-    if (!defined(%default_config_raw)) {	# read default only once if persistent mode
--      readconf(\%default_config, \%default_config_raw, "$SCRIPT_DIR/etc/openwebmail.conf.default");
-+      readconf(\%default_config, \%default_config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf.default");
-    }
-    %config=%default_config; %config_raw =%default_config_raw;
--   readconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf") if (-f "$SCRIPT_DIR/etc/openwebmail.conf");
-+   readconf(\%config, \%config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf") if (-f "%%SYSCONFDIR%%/openwebmail/openwebmail.conf");
+-   load_rawconf(\%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf.default");
+-   readconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf");
++   load_rawconf(\%config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf.default");
++   readconf(\%config, \%config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf");
     readlang($config{'default_language'});	# so %lang... can be used in error msg
  
     if ($config{'smtpauth'}) {	# load smtp auth user/pass

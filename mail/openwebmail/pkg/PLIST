@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/11/03 06:15:20 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/11/13 05:56:00 kevlo Exp $
 cgi-bin/openwebmail/auth_ldap.pl
 cgi-bin/openwebmail/auth_mysql.pl
 cgi-bin/openwebmail/auth_mysql_vmail.pl
+cgi-bin/openwebmail/auth_nis.pl
 cgi-bin/openwebmail/auth_pam.pl
 cgi-bin/openwebmail/auth_pam_cobalt.pl
 cgi-bin/openwebmail/auth_pg.pl
@@ -57,7 +58,6 @@ cgi-bin/openwebmail/uty/g2b.pl
 cgi-bin/openwebmail/uty/gettimeofday.pl
 cgi-bin/openwebmail/uty/htmlarea.addcharset.pl
 cgi-bin/openwebmail/uty/iconv.pl.fake
-cgi-bin/openwebmail/uty/install-owm-suse.sh
 cgi-bin/openwebmail/uty/jcode.pl
 cgi-bin/openwebmail/uty/mkcool3d_en.sh
 cgi-bin/openwebmail/uty/mkcool3d_it.sh
@@ -72,7 +72,6 @@ cgi-bin/openwebmail/uty/profadd.pl
 cgi-bin/openwebmail/uty/profdel.pl
 cgi-bin/openwebmail/uty/replacestr.pl
 cgi-bin/openwebmail/uty/speedy2suidperl.diff
-cgi-bin/openwebmail/uty/speedysrc.diff
 cgi-bin/openwebmail/uty/suidperl2speedy.diff
 cgi-bin/openwebmail/uty/umlaut-encoder.sh
 cgi-bin/openwebmail/uty/virtualconvert.pl
@@ -1863,7 +1862,6 @@ conf/openwebmail/templates/zh_TW.Big5/viewfolder.template
 conf/openwebmail/templates/zh_TW.Big5/weekview.template
 conf/openwebmail/templates/zh_TW.Big5/yearview.template
 conf/openwebmail/users.conf/SAMPLE
-conf/openwebmail/users.conf/guest
 htdocs/openwebmail/applet/mindterm/CHANGES
 htdocs/openwebmail/applet/mindterm/COPYING
 htdocs/openwebmail/applet/mindterm/FAQ
@@ -2972,6 +2970,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Bulgarian/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Bulgarian/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Bulgarian/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Bulgarian/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Bulgarian/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Bulgarian/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Bulgarian/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Bulgarian/home.gif
@@ -3059,6 +3058,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Catalan/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Catalan/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Catalan/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Catalan/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Catalan/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Catalan/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Catalan/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Catalan/home.gif
@@ -3147,6 +3147,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/home.gif
@@ -3235,6 +3236,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/home.gif
@@ -3323,6 +3325,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Czech/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Czech/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Czech/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Czech/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Czech/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Czech/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Czech/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Czech/home.gif
@@ -3411,6 +3414,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Danish/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Danish/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Danish/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Danish/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Danish/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Danish/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Danish/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Danish/home.gif
@@ -3499,6 +3503,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Deutsch/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Deutsch/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Deutsch/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Deutsch/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Deutsch/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Deutsch/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Deutsch/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Deutsch/home.gif
@@ -3587,6 +3592,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Dutch/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Dutch/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Dutch/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Dutch/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Dutch/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Dutch/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Dutch/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Dutch/home.gif
@@ -3675,6 +3681,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.English/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.English/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.English/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.English/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.English/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.English/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.English/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.English/home.gif
@@ -3762,6 +3769,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Francais/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Francais/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Francais/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Francais/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Francais/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Francais/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Francais/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Francais/home.gif
@@ -3850,6 +3858,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Hebrew/home.gif
@@ -3937,6 +3946,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Hellenic/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Hellenic/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Hellenic/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Hellenic/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Hellenic/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Hellenic/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Hellenic/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Hellenic/home.gif
@@ -4024,6 +4034,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Italian/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Italian/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Italian/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Italian/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Italian/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Italian/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Italian/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Italian/home.gif
@@ -4068,6 +4079,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Italian/vdusers.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Italian/webdisk.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Italian/weekview.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Italian/yearview.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Korean/Thumbs.db
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/addrbook.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/addrbook.s.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/adduser.gif
@@ -4078,6 +4090,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Korean/arrowright-grey.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/arrowright.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/attach.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/backtofolder.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Korean/blank.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/blockemail.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/blockrelay.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/cal-delete.gif
@@ -4088,6 +4101,8 @@ htdocs/openwebmail/images/iconsets/Cool3D.Korean/clearaddress.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/clearst.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/compose.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/dayview.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Korean/delete.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Korean/deluser.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/down.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/download.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/download.s.gif
@@ -4095,7 +4110,6 @@ htdocs/openwebmail/images/iconsets/Cool3D.Korean/download.s.ow.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/earth.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/editdraft.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/editfroms.gif
-htdocs/openwebmail/images/iconsets/Cool3D.Korean/editfroms.s.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/editst.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/editst.s.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/email.gif
@@ -4111,6 +4125,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Korean/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Korean/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/home.gif
@@ -4128,12 +4143,14 @@ htdocs/openwebmail/images/iconsets/Cool3D.Korean/left.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/left.s.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/listview.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/logout.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Korean/modify.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/monthview.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/owm.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/pop3.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/pop3setup.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/prefs.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/print.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Korean/pubdisk.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/read.a.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/read.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Korean/refresh.gif
@@ -4198,6 +4215,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Large.English/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Large.English/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Large.English/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Large.English/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Large.English/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Large.English/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Large.English/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Large.English/home.gif
@@ -4286,6 +4304,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Norwegian/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Norwegian/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Norwegian/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Norwegian/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Norwegian/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Norwegian/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Norwegian/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Norwegian/home.gif
@@ -4373,6 +4392,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Polish/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Polish/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Polish/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Polish/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Polish/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Polish/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Polish/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Polish/home.gif
@@ -4461,6 +4481,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/home.gif
@@ -4548,6 +4569,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Romanian/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Romanian/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Romanian/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Romanian/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Romanian/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Romanian/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Romanian/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Romanian/home.gif
@@ -4636,6 +4658,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Slovak/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Slovak/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Slovak/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Slovak/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Slovak/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Slovak/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Slovak/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Slovak/home.gif
@@ -4724,6 +4747,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Soumi/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Soumi/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Soumi/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Soumi/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Soumi/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Soumi/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Soumi/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Soumi/home.gif
@@ -4811,6 +4835,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Spanish/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Spanish/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Spanish/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Spanish/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Spanish/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Spanish/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Spanish/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Spanish/home.gif
@@ -4899,6 +4924,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Turkish/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Turkish/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Turkish/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Turkish/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Turkish/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Turkish/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Turkish/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Turkish/home.gif
@@ -4987,6 +5013,7 @@ htdocs/openwebmail/images/iconsets/Cool3D.Urdu/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Urdu/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Urdu/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Urdu/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D.Urdu/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Urdu/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Urdu/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D.Urdu/home.gif
@@ -5075,6 +5102,7 @@ htdocs/openwebmail/images/iconsets/Cool3D/follow.up.gif
 htdocs/openwebmail/images/iconsets/Cool3D/forward.gif
 htdocs/openwebmail/images/iconsets/Cool3D/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Cool3D/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Cool3D/gotop.gif
 htdocs/openwebmail/images/iconsets/Cool3D/group.gif
 htdocs/openwebmail/images/iconsets/Cool3D/history.gif
 htdocs/openwebmail/images/iconsets/Cool3D/home.gif
@@ -5162,6 +5190,7 @@ htdocs/openwebmail/images/iconsets/Default.Chinese.Traditional/follow.up.gif
 htdocs/openwebmail/images/iconsets/Default.Chinese.Traditional/forward.gif
 htdocs/openwebmail/images/iconsets/Default.Chinese.Traditional/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Default.Chinese.Traditional/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Default.Chinese.Traditional/gotop.gif
 htdocs/openwebmail/images/iconsets/Default.Chinese.Traditional/group.gif
 htdocs/openwebmail/images/iconsets/Default.Chinese.Traditional/history.gif
 htdocs/openwebmail/images/iconsets/Default.Chinese.Traditional/home.gif
@@ -5250,6 +5279,7 @@ htdocs/openwebmail/images/iconsets/Default.Deutsch/follow.up.gif
 htdocs/openwebmail/images/iconsets/Default.Deutsch/forward.gif
 htdocs/openwebmail/images/iconsets/Default.Deutsch/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Default.Deutsch/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Default.Deutsch/gotop.gif
 htdocs/openwebmail/images/iconsets/Default.Deutsch/group.gif
 htdocs/openwebmail/images/iconsets/Default.Deutsch/history.gif
 htdocs/openwebmail/images/iconsets/Default.Deutsch/home.gif
@@ -5337,6 +5367,7 @@ htdocs/openwebmail/images/iconsets/Default.English/follow.up.gif
 htdocs/openwebmail/images/iconsets/Default.English/forward.gif
 htdocs/openwebmail/images/iconsets/Default.English/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Default.English/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Default.English/gotop.gif
 htdocs/openwebmail/images/iconsets/Default.English/group.gif
 htdocs/openwebmail/images/iconsets/Default.English/history.gif
 htdocs/openwebmail/images/iconsets/Default.English/home.gif
@@ -5424,6 +5455,7 @@ htdocs/openwebmail/images/iconsets/Default.Norwegian/follow.up.gif
 htdocs/openwebmail/images/iconsets/Default.Norwegian/forward.gif
 htdocs/openwebmail/images/iconsets/Default.Norwegian/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Default.Norwegian/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Default.Norwegian/gotop.gif
 htdocs/openwebmail/images/iconsets/Default.Norwegian/group.gif
 htdocs/openwebmail/images/iconsets/Default.Norwegian/history.gif
 htdocs/openwebmail/images/iconsets/Default.Norwegian/home.gif
@@ -5511,6 +5543,7 @@ htdocs/openwebmail/images/iconsets/Default.Slovak/follow.up.gif
 htdocs/openwebmail/images/iconsets/Default.Slovak/forward.gif
 htdocs/openwebmail/images/iconsets/Default.Slovak/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Default.Slovak/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Default.Slovak/gotop.gif
 htdocs/openwebmail/images/iconsets/Default.Slovak/group.gif
 htdocs/openwebmail/images/iconsets/Default.Slovak/history.gif
 htdocs/openwebmail/images/iconsets/Default.Slovak/home.gif
@@ -5598,6 +5631,7 @@ htdocs/openwebmail/images/iconsets/Default.Spanish/follow.up.gif
 htdocs/openwebmail/images/iconsets/Default.Spanish/forward.gif
 htdocs/openwebmail/images/iconsets/Default.Spanish/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Default.Spanish/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Default.Spanish/gotop.gif
 htdocs/openwebmail/images/iconsets/Default.Spanish/group.gif
 htdocs/openwebmail/images/iconsets/Default.Spanish/history.gif
 htdocs/openwebmail/images/iconsets/Default.Spanish/home.gif
@@ -5685,6 +5719,7 @@ htdocs/openwebmail/images/iconsets/Default/follow.up.gif
 htdocs/openwebmail/images/iconsets/Default/forward.gif
 htdocs/openwebmail/images/iconsets/Default/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/Default/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/Default/gotop.gif
 htdocs/openwebmail/images/iconsets/Default/group.gif
 htdocs/openwebmail/images/iconsets/Default/history.gif
 htdocs/openwebmail/images/iconsets/Default/home.gif
@@ -5778,6 +5813,7 @@ htdocs/openwebmail/images/iconsets/XP.Blue/follow.up.gif
 htdocs/openwebmail/images/iconsets/XP.Blue/forward.gif
 htdocs/openwebmail/images/iconsets/XP.Blue/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/XP.Blue/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/XP.Blue/gotop.gif
 htdocs/openwebmail/images/iconsets/XP.Blue/group.gif
 htdocs/openwebmail/images/iconsets/XP.Blue/history.gif
 htdocs/openwebmail/images/iconsets/XP.Blue/home.gif
@@ -5867,6 +5903,7 @@ htdocs/openwebmail/images/iconsets/XP.Green/follow.up.gif
 htdocs/openwebmail/images/iconsets/XP.Green/forward.gif
 htdocs/openwebmail/images/iconsets/XP.Green/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/XP.Green/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/XP.Green/gotop.gif
 htdocs/openwebmail/images/iconsets/XP.Green/group.gif
 htdocs/openwebmail/images/iconsets/XP.Green/history.gif
 htdocs/openwebmail/images/iconsets/XP.Green/home.gif
@@ -5956,6 +5993,7 @@ htdocs/openwebmail/images/iconsets/XP.Purple/follow.up.gif
 htdocs/openwebmail/images/iconsets/XP.Purple/forward.gif
 htdocs/openwebmail/images/iconsets/XP.Purple/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/XP.Purple/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/XP.Purple/gotop.gif
 htdocs/openwebmail/images/iconsets/XP.Purple/group.gif
 htdocs/openwebmail/images/iconsets/XP.Purple/history.gif
 htdocs/openwebmail/images/iconsets/XP.Purple/home.gif
@@ -6045,6 +6083,7 @@ htdocs/openwebmail/images/iconsets/XP.Red/follow.up.gif
 htdocs/openwebmail/images/iconsets/XP.Red/forward.gif
 htdocs/openwebmail/images/iconsets/XP.Red/forwardasatt.gif
 htdocs/openwebmail/images/iconsets/XP.Red/forwardasorig.gif
+htdocs/openwebmail/images/iconsets/XP.Red/gotop.gif
 htdocs/openwebmail/images/iconsets/XP.Red/group.gif
 htdocs/openwebmail/images/iconsets/XP.Red/history.gif
 htdocs/openwebmail/images/iconsets/XP.Red/home.gif
@@ -6296,6 +6335,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/plugins/TableOperations/table
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popupdiv.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.CP1256/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.CP1256/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.CP1256/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.CP1256/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.CP1256/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.CP1256/insert_sound.html
@@ -6304,6 +6344,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.CP1256/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.CP1256/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.ISO8859-6/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.ISO8859-6/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.ISO8859-6/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.ISO8859-6/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.ISO8859-6/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.ISO8859-6/insert_sound.html
@@ -6312,6 +6353,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.ISO8859-6/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ar.ISO8859-6/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/bg/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/bg/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/bg/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/bg/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/bg/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/bg/insert_sound.html
@@ -6320,6 +6362,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/bg/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/bg/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ca/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ca/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ca/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ca/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ca/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ca/insert_sound.html
@@ -6328,6 +6371,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ca/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ca/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/cs/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/cs/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/cs/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/cs/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/cs/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/cs/insert_sound.html
@@ -6336,6 +6380,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/cs/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/cs/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/da/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/da/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/da/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/da/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/da/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/da/insert_sound.html
@@ -6344,6 +6389,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/da/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/da/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/de/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/de/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/de/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/de/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/de/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/de/insert_sound.html
@@ -6352,6 +6398,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/de/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/de/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/el/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/el/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/el/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/el/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/el/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/el/insert_sound.html
@@ -6360,6 +6407,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/el/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/el/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/en/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/en/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/en/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/en/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/en/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/en/insert_sound.html
@@ -6369,6 +6417,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/en/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/es/README
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/es/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/es/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/es/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/es/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/es/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/es/insert_sound.html
@@ -6377,6 +6426,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/es/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/es/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fi/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fi/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fi/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fi/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fi/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fi/insert_sound.html
@@ -6385,6 +6435,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fi/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fi/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fr/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fr/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fr/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fr/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fr/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fr/insert_sound.html
@@ -6393,6 +6444,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fr/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/fr/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.CP1255/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.CP1255/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.CP1255/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.CP1255/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.CP1255/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.CP1255/insert_sound.html
@@ -6401,6 +6453,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.CP1255/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.CP1255/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.ISO8859-8/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.ISO8859-8/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.ISO8859-8/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.ISO8859-8/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.ISO8859-8/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.ISO8859-8/insert_sound.html
@@ -6409,6 +6462,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.ISO8859-8/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/he.ISO8859-8/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/hu/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/hu/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/hu/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/hu/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/hu/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/hu/insert_sound.html
@@ -6417,6 +6471,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/hu/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/hu/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/id/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/id/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/id/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/id/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/id/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/id/insert_sound.html
@@ -6425,6 +6480,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/id/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/id/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/it/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/it/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/it/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/it/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/it/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/it/insert_sound.html
@@ -6433,6 +6489,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/it/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/it/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ja_JP.Shift_JIS/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ja_JP.Shift_JIS/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ja_JP.Shift_JIS/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ja_JP.Shift_JIS/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ja_JP.Shift_JIS/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ja_JP.Shift_JIS/insert_sound.html
@@ -6441,6 +6498,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ja_JP.Shift_JIS/popup.
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ja_JP.Shift_JIS/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ja_JP.eucJP/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ja_JP.eucJP/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ja_JP.eucJP/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ja_JP.eucJP/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ja_JP.eucJP/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ja_JP.eucJP/insert_sound.html
@@ -6449,6 +6507,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ja_JP.eucJP/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ja_JP.eucJP/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/kr/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/kr/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/kr/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/kr/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/kr/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/kr/insert_sound.html
@@ -6457,6 +6516,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/kr/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/kr/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/lt/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/lt/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/lt/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/lt/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/lt/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/lt/insert_sound.html
@@ -6465,6 +6525,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/lt/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/lt/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/nl/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/nl/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/nl/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/nl/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/nl/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/nl/insert_sound.html
@@ -6473,6 +6534,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/nl/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/nl/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/no/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/no/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/no/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/no/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/no/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/no/insert_sound.html
@@ -6481,6 +6543,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/no/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/no/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pl/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pl/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pl/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pl/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pl/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pl/insert_sound.html
@@ -6489,6 +6552,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pl/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pl/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pt/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pt/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pt/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pt/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pt/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pt/insert_sound.html
@@ -6497,6 +6561,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pt/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pt/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pt_BR/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pt_BR/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pt_BR/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pt_BR/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pt_BR/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pt_BR/insert_sound.html
@@ -6505,6 +6570,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pt_BR/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/pt_BR/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ro/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ro/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ro/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ro/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ro/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ro/insert_sound.html
@@ -6513,6 +6579,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ro/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ro/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ru/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ru/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ru/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ru/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ru/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ru/insert_sound.html
@@ -6521,6 +6588,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ru/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ru/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sk/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sk/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sk/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sk/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sk/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sk/insert_sound.html
@@ -6529,6 +6597,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sk/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sk/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sr/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sr/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sr/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sr/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sr/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sr/insert_sound.html
@@ -6537,6 +6606,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sr/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sr/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sv/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sv/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sv/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sv/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sv/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sv/insert_sound.html
@@ -6545,6 +6615,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sv/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/sv/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/th/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/th/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/th/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/th/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/th/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/th/insert_sound.html
@@ -6553,6 +6624,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/th/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/th/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/tr/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/tr/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/tr/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/tr/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/tr/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/tr/insert_sound.html
@@ -6561,6 +6633,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/tr/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/tr/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/uk/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/uk/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/uk/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/uk/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/uk/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/uk/insert_sound.html
@@ -6569,6 +6642,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/uk/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/uk/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ur/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ur/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ur/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ur/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ur/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ur/insert_sound.html
@@ -6577,6 +6651,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ur/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/ur/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_CN.GB2312/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_CN.GB2312/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_CN.GB2312/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_CN.GB2312/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_CN.GB2312/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_CN.GB2312/insert_sound.html
@@ -6585,6 +6660,7 @@ htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_CN.GB2312/popup.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_CN.GB2312/select_color.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_TW.Big5/about.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_TW.Big5/blank.html
+htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_TW.Big5/editor_help.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_TW.Big5/htmlarea-lang.js
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_TW.Big5/insert_image.html
 htdocs/openwebmail/javascript/htmlarea.openwebmail/popups/zh_TW.Big5/insert_sound.html

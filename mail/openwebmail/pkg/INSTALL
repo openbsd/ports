@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.10 2003/11/03 06:15:20 kevlo Exp $
+# $OpenBSD: INSTALL,v 1.11 2003/11/13 05:56:00 kevlo Exp $
 #
 # Pre/post-installation setup of openwebmail
 
@@ -52,18 +52,14 @@ do_notice()
 #
 do_install()
 {
-    chgrp -R $OPENWEBMAILGROUP $CGI_DIR
+    chgrp -R $OPENWEBMAILGROUP $CGI_DIR/*
     for file in $SCRIPTFILES
     do
-	chgrp wheel $CGI_DIR/$file
-	chmod 4755 $CGI_DIR/$file
+	chmod 4555 $CGI_DIR/$file
     done
-    chgrp wheel $CGI_DIR/ow-shared.pl
     chmod 771 $CONFIG_DIR/{sessions,users}
     chgrp -R $OPENWEBMAILGROUP $CONFIG_DIR
-    chgrp -R wheel $CONFIG_DIR/{users.conf,templates,styles,lang}
-    chown root.wheel $SAMPLE_CONFIG_FILE
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_FILE $CONFIG_FILE
+    install -o root -g $OPENWEBMAILGROUP -m 644 $SAMPLE_CONFIG_FILE $CONFIG_FILE
     echo "/var/www/cgi-bin/openwebmail/" | cat > $CONFIG_DIR/openwebmail_path.conf
     perl $CGI_DIR/openwebmail-tool.pl --init --no
     echo
