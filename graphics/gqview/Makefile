@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/09/08 00:45:02 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/10/27 01:30:05 brad Exp $
 # $FreeBSD: Makefile,v 1.15 1999/08/25 06:14:08 obrien Exp $
 
 DISTNAME=	gqview-0.7.0.src
@@ -11,12 +11,11 @@ MAINTAINER=	brad@openbsd.org
 
 LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib \
 		gtk.1.2:${PORTSDIR}/x11/gtk+ \
-		Imlib.1.9:${PORTSDIR}/graphics/imlib
+		Imlib.19:${PORTSDIR}/graphics/imlib
 
 USE_X11=	yes
 
 ALL_TARGET=	gqview
-
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
 post-install:
