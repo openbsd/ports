@@ -1,6 +1,15 @@
-$OpenBSD: patch-src_unix-gcc_mak,v 1.1 2003/12/30 02:29:12 espie Exp $
---- src/unix-gcc.mak.orig	2003-12-30 03:22:53.000000000 +0100
-+++ src/unix-gcc.mak	2003-12-30 03:23:20.000000000 +0100
+$OpenBSD: patch-src_unix-gcc_mak,v 1.2 2004/05/31 16:23:25 sturm Exp $
+--- src/unix-gcc.mak.orig	2002-04-20 00:23:09.000000000 +0200
++++ src/unix-gcc.mak	2004-05-31 18:15:57.000000000 +0200
+@@ -196,7 +196,7 @@ RANLIB=ranlib
+ 
+ # Define the name of the C compiler.
+ 
+-CC=gcc
++#CC=gcc
+ 
+ # Define the name of the linker for the final link step.
+ # Normally this is the same as the C compiler.
 @@ -208,7 +208,7 @@ CCLD=$(CC)
  # the 2.7.0-2.7.2 optimizer bug, either "-Dconst=" or
  # "-Wcast-qual -Wwrite-strings" is automatically included.
