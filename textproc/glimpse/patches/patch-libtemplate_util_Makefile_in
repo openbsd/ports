@@ -1,0 +1,11 @@
+$OpenBSD: patch-libtemplate_util_Makefile_in,v 1.1 2004/01/04 18:42:42 espie Exp $
+--- libtemplate/util/Makefile.in.orig	2004-01-04 19:34:53.000000000 +0100
++++ libtemplate/util/Makefile.in	2004-01-04 19:35:05.000000000 +0100
+@@ -19,7 +19,6 @@ INSTALL_FILE 	= @INSTALL_DATA@
+ RANLIB		= @RANLIB@
+ 
+ INCLUDE         = -I$(srcdir)/../include
+-CFLAGS                = -O
+ ALL_CFLAGS	= $(CFLAGS) $(DEBUG) $(INCLUDE)
+ 
+ .c.o:

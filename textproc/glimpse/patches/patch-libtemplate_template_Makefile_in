@@ -1,0 +1,11 @@
+$OpenBSD: patch-libtemplate_template_Makefile_in,v 1.1 2004/01/04 18:42:42 espie Exp $
+--- libtemplate/template/Makefile.in.orig	2004-01-04 19:37:15.000000000 +0100
++++ libtemplate/template/Makefile.in	2004-01-04 19:37:19.000000000 +0100
+@@ -24,7 +24,6 @@ LN_S		= @LN_S@
+ DEBUG		= $(DEBUG_TOP) #-O #-g #-DDEBUG
+ DEBUG_LIBS	=
+ 
+-CFLAGS		= -O
+ INCLUDE		= -I$(srcdir)/../include
+ ALL_CFLAGS	= $(CFLAGS) $(DEBUG) $(INCLUDE)
+ 

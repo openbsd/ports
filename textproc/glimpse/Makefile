@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/28 22:43:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2004/01/04 18:42:42 espie Exp $
 
 COMMENT=	"text search engine"
 
@@ -20,6 +20,7 @@ CONFIGURE_STYLE=	gnu dest old
 pre-configure:
 	chmod ugo+x ${WRKSRC}/configure
 
+CFLAGS+=-D__STRICT_ANSI__ -Dlog=mylog
 VMEM_WARNING=	Yes
 NO_REGRESS=	Yes
 
