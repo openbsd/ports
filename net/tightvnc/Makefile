@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/25 11:57:45 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2002/04/15 06:55:57 espie Exp $
 
 COMMENT=	"cross-platform remote desktop access"
 COMMENT-viewer=	"client for cross-platform remote desktop access"
@@ -38,6 +38,9 @@ ALL_TARGET=    	World
 
 NO_REGRESS=	Yes
 
+DOCUMENTATION=vncpasswd/vncpasswd.man vncconnect/vncconnect.man \
+    Xvnc/programs/Xserver/Xvnc.man vncviewer/vncviewer.man
+
 # We have to frob a few things, and we want our own permissions, so it's easier
 # to do the install ourselves.
 post-install:
@@ -56,5 +59,8 @@ post-install:
 # Go install Java classes
 	${INSTALL_DATA_DIR} ${PREFIX}/share/vnc
 	cp -R ${WRKSRC}/classes ${PREFIX}/share/vnc
+.for i in ${DOCUMENTATION}
+	${INSTALL_MAN} ${WRKSRC}/$i ${PREFIX}/man/man1/${i:T:R}.1
+.endfor
 
 .include <bsd.port.mk>
