@@ -1,0 +1,23 @@
+@comment $OpenBSD: PFRAG.shared-modules,v 1.1 2001/06/03 01:01:38 lebel Exp $
+lib/zsh/${VERSION}/zsh/cap.so
+lib/zsh/${VERSION}/zsh/clone.so
+lib/zsh/${VERSION}/zsh/compctl.so
+lib/zsh/${VERSION}/zsh/complete.so
+lib/zsh/${VERSION}/zsh/complist.so
+lib/zsh/${VERSION}/zsh/computil.so
+lib/zsh/${VERSION}/zsh/deltochar.so
+lib/zsh/${VERSION}/zsh/example.so
+lib/zsh/${VERSION}/zsh/files.so
+lib/zsh/${VERSION}/zsh/mapfile.so
+lib/zsh/${VERSION}/zsh/mathfunc.so
+lib/zsh/${VERSION}/zsh/parameter.so
+lib/zsh/${VERSION}/zsh/rlimits.so
+lib/zsh/${VERSION}/zsh/sched.so
+lib/zsh/${VERSION}/zsh/stat.so
+lib/zsh/${VERSION}/zsh/termcap.so
+lib/zsh/${VERSION}/zsh/terminfo.so
+lib/zsh/${VERSION}/zsh/zle.so
+lib/zsh/${VERSION}/zsh/zleparameter.so
+lib/zsh/${VERSION}/zsh/zprof.so
+lib/zsh/${VERSION}/zsh/zpty.so
+lib/zsh/${VERSION}/zsh/zutil.so

@@ -1,29 +1,50 @@
-$OpenBSD: patch-Doc_Makefile_in,v 1.1 2001/05/10 19:50:28 lebel Exp $
---- Doc/Makefile.in.orig	Mon Aug  2 01:54:25 1999
-+++ Doc/Makefile.in	Thu May 10 15:46:53 2001
-@@ -27,7 +27,7 @@
- SHELL = /bin/sh
+$OpenBSD: patch-Doc_Makefile_in,v 1.2 2001/06/03 01:01:37 lebel Exp $
+--- Doc/Makefile.in.orig	Tue Dec  5 09:32:09 2000
++++ Doc/Makefile.in	Mon May 14 10:06:59 2001
+@@ -37,7 +37,7 @@ INSTALL         = @INSTALL@
  
- # Program to format Texinfo source into Info files.
+ @DEFS_MK@
+ 
 -MAKEINFO = makeinfo
 +MAKEINFO = makeinfo --no-split
- # Program to format Texinfo source into DVI files.
  TEXI2DVI = texi2dvi
- # Program to convert DVI files to PostScript
-@@ -91,6 +91,7 @@ all: $(MAN) zsh.info
- everything: all zsh_us.ps zsh_a4.ps zsh_toc.html
+ DVIPS = dvips
+ TEXI2HTML = texi2html -expandinfo -split_chapter
+@@ -97,6 +97,7 @@ info: zsh.info
+ .PHONY: info
  
- zsh.info: zsh.texi
+ zsh.info: $(sdir)/zsh.texi
 +	@rm -f zsh.info*
- 	@$(MAKEINFO) -I$(srcdir) $(srcdir)/zsh.texi || { \
- 	echo Info documentation cannot be compiled without $(MAKEINFO). ; \
- 	echo You can find precompiled info files in zsh-doc.tar.gz. ; }
-@@ -125,7 +126,7 @@ install.man: $(MAN)
- # install info pages, creating install directory if necessary
- install.info: zsh.info
- 	$(top_srcdir)/mkinstalldirs $(infodir)
--	for file in zsh.info zsh.info-[1-9]*; do \
-+	for file in zsh.info; do \
- 	  [ -f "$$file" ] && $(INSTALL_DATA) $$file $(infodir) ; \
- 	done
+ 	$(MAKEINFO) $(sdir)/zsh.texi
  
+ .yo.1:
+@@ -241,11 +242,11 @@ Zsh/manmodmenu.yo: $(MODDOCSRC)
+ # ========== DEPENDENCIES FOR INSTALLING ==========
+ 
+ # install just installs the manual pages
+-install: install.man
++install: install.man install.info
+ .PHONY: install
+ 
+ # uninstall just unistalls the manual pages
+-uninstall: uninstall.man
++uninstall: uninstall.man uninstall.info
+ .PHONY: uninstall
+ 
+ # install man pages, creating install directory if necessary
+@@ -265,13 +266,13 @@ install.info: texi
+ 	    sed '/^@setfilename/s|zsh|$(tzsh)|' \
+ 		< $(sdir)/zsh.texi > infodir/tzsh.texi && \
+ 	    (cd infodir && $(MAKEINFO) tzsh.texi) && \
+-	    for file in infodir/$(tzsh).info*; do \
++	    for file in infodir/$(tzsh).info; do \
+ 		$(INSTALL_DATA) $$file $(DESTDIR)$(infodir) || exit 1; \
+ 	    done \
+ 	); then \
+ 	    if $(SHELL) -c 'install-info --version' >/dev/null 2>&1; then \
+ 	      install-info --dir-file=$(DESTDIR)$(infodir)/dir \
+-	        $(infodir)/$(tzsh).info; \
++	        $(DESTDIR)$(infodir)/$(tzsh).info; \
+ 	    else true; fi; \
+ 	    rm -rf infodir; \
+ 	    exit 0; \

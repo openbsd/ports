@@ -1,10 +1,10 @@
-$OpenBSD: patch-Doc_zsh_texi,v 1.1 2001/05/10 19:50:28 lebel Exp $
---- Doc/zsh.texi.orig	Tue Feb 29 03:28:45 2000
-+++ Doc/zsh.texi	Thu May 10 15:46:54 2001
-@@ -2,6 +2,10 @@
- @c %**start of header
+$OpenBSD: patch-Doc_zsh_texi,v 1.2 2001/06/03 01:01:37 lebel Exp $
+--- Doc/zsh.texi.orig	Wed May  9 05:52:45 2001
++++ Doc/zsh.texi	Mon May 14 09:56:09 2001
+@@ -7,6 +7,10 @@
+ @end iftex
  @setfilename zsh.info
- @settitle    zsh
+ @settitle zsh
 +@dircategory Shells
 +@direntry
 +* Zsh: (zsh).			The Z shell.
@@ -12,49 +12,129 @@ $OpenBSD: patch-Doc_zsh_texi,v 1.1 2001/05/10 19:50:28 lebel Exp $
  @c %**end of header
  
  @ifinfo
-@@ -834,7 +838,7 @@ to prevent an alias being defined for @s
- A character may be @dfn{quoted} (that is, made to stand for itself) by
- preceding it with a @code{\}.  @code{\} followed by a newline is
- ignored.  All characters enclosed between a pair of single quotes
--(@t{@value{dsq}}) are quoted, except the first character of @code{histchars}
-+(@t{'}@t{'}) are quoted, except the first character of @code{histchars}
- (@code{!} by default).  A single quote cannot appear within single
- quotes.  Inside double quotes (@code{""}), parameter and command
- substitution occurs, and @code{\} quotes the characters @code{\},
-@@ -1622,7 +1626,7 @@ case.  A history substitution begins wit
- @code{histchars} parameter which is @code{!} by default and may occur 
- anywhere on the command line; history substitutions do not nest.  The 
- @code{!} can be escaped with @code{\} or can be enclosed between a pair of 
--single quotes (@t{@value{dsq}}) 
-+single quotes (@t{'}@t{'}) 
- to suppress its special meaning. Double quotes will not work for this.
+@@ -1271,14 +1275,14 @@ entirely quoted.  A literal `@t{'}' char
+ string by using the `@t{\'}' escape.
  
  @noindent
-@@ -5183,7 +5187,7 @@ Array expansions of the form @code{foo$@
- @cindex rc, quoting style
- @cindex quoting style, rc
- @pindex RC_QUOTES
--Allow the character sequence @t{@value{dsq}} to signify a single quote within
-+Allow the character sequence @t{'}@t{'} to signify a single quote within
- singly quoted strings.
+-All characters enclosed between a pair of single quotes (@t{@value{dsq}}) that
++All characters enclosed between a pair of single quotes (@t{'}@t{'}) that
+ is not preceded by a `@t{$}' are quoted.  A single quote cannot appear
+ within single quotes unless the option @t{RC_QUOTES} is set, in which case
+ a pair of single quotes are turned into a single quote.  For example,
  
- @item RCS (+f)
-@@ -7008,7 +7012,8 @@ the empty string all words are taken (as
- use is
- 
+ @noindent
  @example
--compctl -D -f + -H 0 @value{dsq} -X '(No file found; using history)'
-+
-+compctl -D -f + -H 0 @t{'}@t{'} -X '(No file found; using history)'
+-print @value{dsq}@value{dsq}
++print @t{'}@t{'}@t{'}@t{'}
  @end example
  
- which forces completion to look back in the history list for a word if no
-@@ -7071,7 +7076,7 @@ first word in the range is instead taken
- name completion performed on the first word in the range.  For example,
+ @noindent
+@@ -2780,7 +2784,7 @@ that is to be assigned to the @emph{next
+ A history expansion begins with the first character of the @t{histchars}
+ parameter, which is `@t{!}' by default, and may occur anywhere on the
+ command line; history expansions do not nest.  The `@t{!}' can be escaped
+-with `@t{\}' or can be enclosed between a pair of single quotes (@t{@value{dsq}})
++with `@t{\}' or can be enclosed between a pair of single quotes (@t{'}@t{'})
+ to suppress its special meaning.  Double quotes will @emph{not} work for
+ this.  Following this history character is an optional event designator
+ (@ref{Event Designators}) and then an optional word
+@@ -6670,7 +6674,7 @@ For example,
+ @example
+ unsetopt localtraps
+ trap - INT
+-fn() @{ setopt localtraps; trap @value{dsq} INT; sleep 3; @}
++fn() @{ setopt localtraps; trap @t{'}@t{'} INT; sleep 3; @}
+ @end example
  
+ @noindent
+@@ -6899,7 +6903,8 @@ Array expansions of the form
+ @cindex rc, quoting style
+ @cindex quoting style, rc
+ @item @t{RC_QUOTES}
+-Allow the character sequence `@t{@value{dsq}}' to signify a single quote
++Allow the character sequence `@t{'}@t{'}' to signify a single
++quote
+ within singly quoted strings.  Note this does not apply in quoted strings
+ using the format @t{$'}@var{...}@t{'}, where a backslashed single quote can
+ be used.
+@@ -10456,7 +10461,7 @@ An interrupt character will not be inser
+ @item @t{quote-line} (ESC-') (unbound) (unbound)
+ Quote the current line; that is, put a `@t{'}' character at the
+ beginning and the end, and convert all `@t{'}' characters
+-to `@t{'\@value{dsq}}'.
++to `@t{'\}@t{'}@t{'}'.
+ 
+ @tindex quote-region
+ @item @t{quote-region} (ESC-") (unbound) (unbound)
+@@ -13473,7 +13478,7 @@ different types of matches displayed sep
+ 
+ @noindent
+ @example
+-zstyle ':completion:*' group-name @value{dsq}
++zstyle ':completion:*' group-name @t{'}@t{'}
+ @end example
+ 
+ @noindent
+@@ -13740,7 +13745,7 @@ zstyle ':completion:*:default' list-colo
+ 
+ @noindent
+ The default colors are the same as for the GNU @t{ls} command and can be
+-obtained by setting the style to an empty string (i.e. @t{@value{dsq}}).
++obtained by setting the style to an empty string (i.e. @t{'}@t{'}).
+ 
+ @kindex list-packed, completion style
+ @item @t{list-packed}
+@@ -13825,7 +13830,7 @@ completion one would do:
+ 
+ @noindent
+ @example
+-zstyle ':completion:*' matcher-list @value{dsq} 'm:@{a-zA-Z@}=@{A-Za-z@}'
++zstyle ':completion:*' matcher-list @t{'}@t{'} 'm:@{a-zA-Z@}=@{A-Za-z@}'
+ @end example
+ 
+ @noindent
+@@ -13850,7 +13855,7 @@ the @t{_complete} completer, one would d
+ @example
+ zstyle ':completion:*' completer _complete _prefix
+ zstyle ':completion:*:complete:*' matcher-list \ 
+-       @value{dsq} 'm:@{a-zA-Z@}=@{A-Za-z@}'
++       @t{'}@t{'} 'm:@{a-zA-Z@}=@{A-Za-z@}'
+ @end example
+ 
+ @noindent
+@@ -13868,7 +13873,7 @@ match specifications for each occurrence
+ @example
+ zstyle ':completion:*' completer _complete _correct _complete:foo
+ zstyle ':completion:*:complete:*' matcher-list \ 
+-    @value{dsq} 'm:@{a-zA-Z@}=@{A-Za-z@}'
++    @t{'}@t{'} 'm:@{a-zA-Z@}=@{A-Za-z@}'
+ zstyle ':completion:*:foo:*' matcher-list \ 
+     'm:@{a-zA-Z@}=@{A-Za-z@} r:|[-_./]=* r:|=*'
+ @end example
+@@ -16799,7 +16804,7 @@ generates at least one match. E.g.:
+ 
+ @noindent
+ @example
+-compctl -M @value{dsq} 'm:@{a-zA-Z@}=@{A-Za-z@}'
++compctl -M @t{'}@t{'} 'm:@{a-zA-Z@}=@{A-Za-z@}'
+ @end example
+ 
+ @noindent
+@@ -17011,7 +17016,7 @@ use is
+ 
+ @noindent
+ @example
+-compctl -D -f + -H 0 @value{dsq}
++compctl -D -f + -H 0 @t{'}@t{'}
+ @end example
+ 
+ @noindent
+@@ -17099,7 +17104,7 @@ performed on the first word in the range
+ 
+ @noindent
  @example
 -compctl -x 'r[-exec,;]' -l @value{dsq} -- find
 +compctl -x 'r[-exec,;]' -l @t{'}@t{'} -- find
  @end example
  
- completes arguments between @code{-exec} and the following @code{;} (or the
+ @noindent
