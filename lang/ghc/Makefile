@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2005/02/19 03:42:11 dons Exp $
+# $OpenBSD: Makefile,v 1.20 2005/02/21 19:30:34 alek Exp $
 # 
 # Based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
@@ -34,9 +34,12 @@ LIB_DEPENDS=	gmp::devel/gmp
 
 MULTI_PACKAGES=	-doc
 SUBPACKAGE?=
-FULLPKGNAME-doc=ghc-doc-${V}
+FULLPKGNAME-doc=ghc-doc-${V}p0
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-doc"
 PKG_ARCH=	*
+LIB_DEPENDS=
+.else
+WANTLIB=	c m ncurses readline
 .endif
 
 HASKELL=	http://www.haskell.org
