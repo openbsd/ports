@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/10/22 14:02:51 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/03/06 21:04:54 rohee Exp $
 # Original from: Bruno Rohée
 
 DISTNAME=	gqmpeg-0.6.3.src
@@ -11,7 +11,7 @@ LIB_DEPENDS=	gdk_imlib.19::graphics/imlib
 BUILD_DEPENDS=	mpg123::audio/mpg123
 RUN_DEPENDS=	mpg123::audio/mpg123
 
-HOMEPAGE=	http://www.netpedia.net/hosting/gqview/mpeg-index.html
+HOMEPAGE=	http://gqmpeg.sourceforge.net
 
 MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 
