@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.238 2004/06/10 02:33:12 msf Exp $
+# $OpenBSD: Makefile,v 1.239 2004/06/10 07:52:43 xsa Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -253,6 +253,7 @@
      SUBDIR += tclcl
      SUBDIR += tcllib
      SUBDIR += tkcvs
+     SUBDIR += tla
      SUBDIR += tmake
      SUBDIR += ucpp
      SUBDIR += uuid
