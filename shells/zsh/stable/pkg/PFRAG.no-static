@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-static,v 1.3 2003/07/03 12:56:52 lebel Exp $
+@comment $OpenBSD: PFRAG.no-static,v 1.4 2003/07/04 11:25:18 lebel Exp $
 lib/zsh/${VERSION}/zsh/cap.so
 lib/zsh/${VERSION}/zsh/clone.so
 lib/zsh/${VERSION}/zsh/compctl.so
@@ -27,6 +27,22 @@ lib/zsh/${VERSION}/zsh/zprof.so
 lib/zsh/${VERSION}/zsh/zpty.so
 lib/zsh/${VERSION}/zsh/zselect.so
 lib/zsh/${VERSION}/zsh/zutil.so
+share/zsh/${VERSION}/functions/tcp_alias
+share/zsh/${VERSION}/functions/tcp_close
+share/zsh/${VERSION}/functions/tcp_command
+share/zsh/${VERSION}/functions/tcp_expect
+share/zsh/${VERSION}/functions/tcp_fd_handler
+share/zsh/${VERSION}/functions/tcp_log
+share/zsh/${VERSION}/functions/tcp_open
+share/zsh/${VERSION}/functions/tcp_output
+share/zsh/${VERSION}/functions/tcp_proxy
+share/zsh/${VERSION}/functions/tcp_read
+share/zsh/${VERSION}/functions/tcp_rename
+share/zsh/${VERSION}/functions/tcp_send
+share/zsh/${VERSION}/functions/tcp_sess
+share/zsh/${VERSION}/functions/tcp_spam
+share/zsh/${VERSION}/functions/tcp_talk
+share/zsh/${VERSION}/functions/tcp_wait
 @dirrm lib/zsh/${VERSION}/zsh/net
 @dirrm lib/zsh/${VERSION}/zsh
 @dirrm lib/zsh/${VERSION}

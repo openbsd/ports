@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/07/03 12:56:52 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/07/04 11:25:18 lebel Exp $
 
 bin/zsh
 bin/zsh-${VERSION}
@@ -455,22 +455,6 @@ share/zsh/${VERSION}/functions/replace-string
 share/zsh/${VERSION}/functions/run-help
 share/zsh/${VERSION}/functions/select-word-style
 share/zsh/${VERSION}/functions/smart-insert-last-word
-share/zsh/${VERSION}/functions/tcp_alias
-share/zsh/${VERSION}/functions/tcp_close
-share/zsh/${VERSION}/functions/tcp_command
-share/zsh/${VERSION}/functions/tcp_expect
-share/zsh/${VERSION}/functions/tcp_fd_handler
-share/zsh/${VERSION}/functions/tcp_log
-share/zsh/${VERSION}/functions/tcp_open
-share/zsh/${VERSION}/functions/tcp_output
-share/zsh/${VERSION}/functions/tcp_proxy
-share/zsh/${VERSION}/functions/tcp_read
-share/zsh/${VERSION}/functions/tcp_rename
-share/zsh/${VERSION}/functions/tcp_send
-share/zsh/${VERSION}/functions/tcp_sess
-share/zsh/${VERSION}/functions/tcp_spam
-share/zsh/${VERSION}/functions/tcp_talk
-share/zsh/${VERSION}/functions/tcp_wait
 share/zsh/${VERSION}/functions/tetris
 share/zsh/${VERSION}/functions/transpose-words-match
 share/zsh/${VERSION}/functions/up-case-word-match
