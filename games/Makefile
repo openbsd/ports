@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1997/12/20 04:09:34 don Exp $
+# $OpenBSD: Makefile,v 1.5 1998/02/05 17:53:01 angelos Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -73,7 +73,7 @@
 #    SUBDIR += xminehunter
 #    SUBDIR += xminesweep
 #    SUBDIR += xmj
-#    SUBDIR += xmris
+     SUBDIR += xmris
 #    SUBDIR += xneko
 #    SUBDIR += xonix
 #    SUBDIR += xpacman
