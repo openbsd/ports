@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/22 15:42:50 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/23 01:11:18 matt Exp $
 
 DISTNAME=		pdmenu_1.2.61
 PKGNAME=		pdmenu-1.2.61
@@ -7,7 +7,7 @@ NEED_VERSION=		1.305
 
 HOMEPAGE=		http://kitenet.net/programs/pdmenu/
 
-MAINTAINER=		matt@zigg.com
+MAINTAINER=		Matt Behrens <matt@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
