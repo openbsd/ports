@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/01 02:16:35 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/08/13 06:09:32 brad Exp $
 
 DISTNAME=       bzip-0.21
 CATEGORIES=	archivers
@@ -11,9 +11,9 @@ pre-install:
 	@${CAT} ${FILESDIR}/COPYRIGHT
 
 do-install:
-	${RM} -f ${PREFIX}/bin/bzip ${PREFIX}/bin/bunzip
+	@${RM} -f ${PREFIX}/bin/bzip ${PREFIX}/bin/bunzip
 	${INSTALL_PROGRAM} ${WRKSRC}/bzip ${PREFIX}/bin/bzip
-	ln -fs ${PREFIX}/bin/bzip ${PREFIX}/bin/bunzip
+	@${LN} -fs ${PREFIX}/bin/bzip ${PREFIX}/bin/bunzip
 	${INSTALL_MAN} ${WRKSRC}/bzip.1 ${PREFIX}/man/man1/bzip.1
 	${INSTALL_MAN} ${WRKSRC}/bzip.1 ${PREFIX}/man/man1/bunzip.1
 
