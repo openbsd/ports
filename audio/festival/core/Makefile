@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2004/07/11 06:27:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/31 18:54:24 naddy Exp $
 
 # doesn't compile with gcc3
 NOT_FOR_ARCHS=	amd64 hppa sparc64
@@ -40,6 +40,7 @@ MAKE_ENV+=	CC="${CC}" \
 		FESTIVAL_BUILD_HOME="${FESTIVAL}"
 
 CONFIGURE_STYLE=gnu
+MODGNU_CONFIG_GUESS_DIRS=${SPEECH} ${FESTIVAL}
 
 EXAMPLEDIR=	${PREFIX}/share/examples/festival
 SHAREDIR=	${PREFIX}/lib/festival
