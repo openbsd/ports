@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/06/03 23:02:23 marc Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/11 14:47:11 naddy Exp $
 #
 
-    SUBDIR += spice
+     SUBDIR += qcad
+     SUBDIR += spice
 
 .include <bsd.port.subdir.mk>
