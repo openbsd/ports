@@ -1,0 +1,16 @@
+$OpenBSD: gcc-lib_Makefile_in,v 1.1 2002/03/23 19:52:08 lebel Exp $
+--- lib/Makefile.in.orig	Sun Apr 29 04:25:37 2001
++++ lib/Makefile.in	Sat Mar 23 14:39:34 2002
+@@ -742,6 +742,12 @@ distclean-depend:
+ 
+ @AMDEP@CCDEPMODE = @CCDEPMODE@
+ 
++sha.o: sha.c
++@AMDEP@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
++@AMDEP@	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' @AMDEPBACKSLASH@
++@AMDEP@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++	$(COMPILE) -c -O0 -o $@ `test -f $< || echo '$(srcdir)/'`$<
++
+ .c.o:
+ @AMDEP@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+ @AMDEP@	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' @AMDEPBACKSLASH@

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/03/04 18:31:46 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2002/03/23 19:52:08 lebel Exp $
 
 COMMENT= 		"GNU versions of common file management utilities"
 COMMENT-ls=		"colorized GNU 'ls'"
@@ -24,7 +24,7 @@ MODULES=		gettext
 
 # XXX workaround gcc bugs on sparc64
 .if ${MACHINE_ARCH:Msparc64}
-CFLAGS+=		-O0
+PATCH_LIST=		gcc-* patch-*
 .endif
 
 SEPARATE_BUILD=		concurrent
