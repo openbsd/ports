@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/02/04 07:39:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.22 2004/08/16 23:34:02 pvalchev Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=			"hangs indefinitely until machine panics/hangs"
@@ -42,6 +42,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 				  -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="${ELF_TOOLCHAIN:L:S/yes/-Z/:S/no//} \
 				 -L${LOCALBASE}/lib"
+
+MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}"
 
 SUBST_VARS=		GCCARCH VERSION
 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2004/08/11 21:14:01 pvalchev Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2004/08/16 23:34:02 pvalchev Exp $
 --- Makefile.in.orig	Tue Aug  3 02:14:28 2004
 +++ Makefile.in	Tue Aug  3 02:15:39 2004
 @@ -328,7 +328,7 @@ install-arch-dep: mkdir
@@ -6,7 +6,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2004/08/11 21:14:01 pvalchev Exp $
  	    libexecdir=${libexecdir} archlibdir=${archlibdir} \
  	    INSTALL_STRIP=${INSTALL_STRIP})
 -	${INSTALL_PROGRAM} $(INSTALL_STRIP) src/emacs ${bindir}/emacs-${version}
-+	${INSTALL_PROGRAM} src/emacs ${bindir}/emacs-${version}
++	${INSTALL_EMACS} src/emacs ${bindir}/emacs-${version}
  	-chmod 1755  ${bindir}/emacs-${version}
  	rm -f ${bindir}/$(EMACS)
  	-ln ${bindir}/emacs-${version} ${bindir}/$(EMACS)
