@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2003/12/27 04:17:01 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2004/01/19 11:20:07 brad Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
-DISTNAME=		Mail-SpamAssassin-2.61
+DISTNAME=		Mail-SpamAssassin-2.62
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		mail perl5
 
@@ -19,8 +19,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}released/ \
 			${MASTER_SITE_PERL_CPAN:=Mail/}
 
+BUILD_DEPENDS=		:p5-HTML-Parser-*:www/p5-HTML-Parser
 RUN_DEPENDS=		:p5-Net-DNS-*:net/p5-Net-DNS \
 			:p5-HTML-Parser-*:www/p5-HTML-Parser
+
+MAKE_ENV+=		CC="${CC}"
 
 CONFIGURE_STYLE=	perl
 CONFIGURE_ARGS+=	RUN_RAZOR_TESTS="no" \
@@ -46,7 +49,7 @@ DOCS=	README procmailrc.example \
 LOCALCF=	rules/local.cf
 
 post-patch:
-	perl -pi -e "s#\@\@LOCAL_RULES_DIR\@\@#${CONFDIR}#" ${WRKSRC}/rules/*
+	@perl -pi -e "s#\@\@LOCAL_RULES_DIR\@\@#${CONFDIR}#" ${WRKSRC}/rules/*
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/SpamAssassin
