@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/02/23 14:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2001/03/07 21:42:00 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 VERSION=	2.4
@@ -94,16 +94,14 @@ do-install:
 	@if [ -f ${WRKBUILD}/lib/libqt.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.a ${PREFIX}/lib/qt2; \
 	fi
-	@if [ -f ${WRKBUILD}/lib/libqt.so.2.2.4 ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.2.2.4 \
-		${PREFIX}/lib/qt2/libqt.so.2.24; \
+	@if [ -f ${WRKBUILD}/lib/libqt.so.2.24 ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.2.24 ${PREFIX}/lib/qt2; \
 	fi
 	@if [ -f ${WRKBUILD}/lib/libqutil.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqutil.a ${PREFIX}/lib/qt2; \
 	fi
-	@if [ -f ${WRKBUILD}/lib/libqutil.so.1.0.0 ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqutil.so.1.0.0 \
-		${PREFIX}/lib/qt2/libqutil.so.1.0; \
+	@if [ -f ${WRKBUILD}/lib/libqutil.so.1.0 ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqutil.so.1.0 ${PREFIX}/lib/qt2; \
 	fi
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/moc ${QT_LIBDIR}/bin
 	@ln -sf ${TRUEPREFIX}/lib/qt2/bin/moc ${PREFIX}/bin/moc2
