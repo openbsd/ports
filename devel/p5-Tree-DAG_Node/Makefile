@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/09 01:35:14 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2005/03/27 20:29:12 msf Exp $
 
 COMMENT=	"superclass for representing nodes in a tree"
 
-DISTNAME=	Tree-DAG_Node-1.04
+DISTNAME=	Tree-DAG_Node-1.05
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
