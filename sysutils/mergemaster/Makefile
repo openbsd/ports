@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/07/23 19:12:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2004/02/01 19:48:14 naddy Exp $
 
 COMMENT=	"aids with merging configuration files during an upgrade"
 
@@ -21,6 +21,8 @@ RUN_DEPENDS=	::textproc/gdiff
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
+
 WRKDIST=	${WRKDIR}/mergemaster
 
 do-install:
