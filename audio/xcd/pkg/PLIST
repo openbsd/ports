@@ -15,6 +15,7 @@ lib/xcd/prev_s.xbm
 lib/xcd/rewind.xbm   
 lib/xcd/rewind_s.xbm 
 lib/xcd/stop.xbm     
-lib/xcd/stop_s.xbm   
+lib/xcd/stop_s.xbm
 man/man1/cdplayer.1
 man/man1/xcd.1
+@dirrm lib/xcd
