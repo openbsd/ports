@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2002/08/02 17:34:30 jakob Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/05 13:22:23 jakob Exp $
 
 COMMENT=	processes logfiles and perform certain actions
 
-DISTNAME=	logsurfer-1.5a
+DISTNAME=	logsurfer-1.5b
 CATEGORIES=	security
 EXTRACT_SUFX=	.tar
 
