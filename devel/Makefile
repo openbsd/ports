@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.183 2003/08/09 03:24:58 jolan Exp $
+# $OpenBSD: Makefile,v 1.184 2003/08/18 18:29:43 avsm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
      SUBDIR += ORBit
      SUBDIR += ORBit2
+     SUBDIR += alex
      SUBDIR += asp2php
      SUBDIR += asp2php,no_x11
      SUBDIR += astyle
