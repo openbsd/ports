@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.31 2001/01/21 17:09:12 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2001/01/23 00:48:45 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
-DISTNAME=	mysql-3.23.31
+DISTNAME=	mysql-3.23.32
 CATEGORIES=	databases
 NEED_VERSION=	1.336
 MASTER_SITES=	http://www.mysql.net/Downloads/MySQL-3.23/ \
