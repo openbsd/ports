@@ -1,0 +1,95 @@
+#! /bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2000/05/22 16:33:49 espie Exp $
+#
+# Pre/post-installation setup of majordomo
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+do_create_user()
+{
+  echo "Majordomo requires a user majordom for its wrapper program."
+  echo -n "Let's see if there already is a user majordom... "
+  if id -u majordom >/dev/null 2>/dev/null
+  then
+    echo "yes"
+  else
+    echo "no"
+    group add majordom
+    user add -d /root -g majordom -c Majordomo -s /sbin/nologin majordom 
+  fi
+}
+
+do_create_local_dirs()
+{
+  echo -n "Creating local directories... "
+  if [ ! -d /var/spool/majordomo ]; then
+    mkdir /var/spool/majordomo
+    chmod 755 /var/spool/majordomo
+  fi
+  if [ ! -d /var/spool/majordomo/lists ]; then
+    mkdir /var/spool/majordomo/lists
+    chmod 755 /var/spool/majordomo/lists
+  fi
+  if [ ! -d /var/spool/majordomo/digests ]; then
+    mkdir /var/spool/majordomo/digests
+    chmod 750 /var/spool/majordomo/digests
+  fi
+  if [ ! -d /var/spool/majordomo/tmp ]; then
+    mkdir /var/spool/majordomo/tmp
+    chmod 750 /var/spool/majordomo/tmp
+  fi
+  chown -R majordom.majordom /var/spool/majordomo
+  echo "ok"
+}
+
+do_set_file_permissions()
+{
+  echo -n "Changing ownership of majordomo files... "
+  chown -R majordom.majordom ${PREFIX}/lib/majordomo
+  chmod -R 755 ${PREFIX}/lib/majordomo
+  echo "ok"
+  echo -n "Making wrapper suid & guid majordom... "
+  chmod 6555 ${PREFIX}/lib/majordomo/wrapper
+  echo "ok"
+}
+
+do_install_configuration()
+{
+  echo -n "Let's see if there is already a configuration file... "
+  if [ -f /etc/mail/majordomo.cf ]; then
+    echo "yes"
+    echo "Please compare your existing configuration with"
+    echo "${PREFIX}/lib/majordomo/sample.cf"
+  else
+    echo "no"
+    echo -n "Copying sample configuration file... "
+    sed -e "s/example.com/$(hostname)/" ${PREFIX}/lib/majordomo/sample.cf > /etc/mail/majordomo.cf
+    echo "ok"
+    echo "Please review new configuration /etc/mail/majordomo.cf"
+  fi
+}
+
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+case $2 in
+    PRE-INSTALL)
+	do_create_user
+	;;
+    POST-INSTALL)
+	do_create_local_dirs
+	do_set_file_permissions
+	do_install_configuration
+	cat ${PREFIX}/share/doc/majordomo/post-install-notes
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

@@ -1,0 +1,47 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/05/22 16:33:49 espie Exp $
+lib/majordomo/archive2.pl
+lib/majordomo/bounce-remind
+lib/majordomo/config_parse.pl
+lib/majordomo/config-test
+lib/majordomo/digest
+lib/majordomo/majordomo
+lib/majordomo/majordomo.pl
+lib/majordomo/majordomo_version.pl
+lib/majordomo/request-answer
+lib/majordomo/resend
+lib/majordomo/shlock.pl
+lib/majordomo/wrapper
+lib/majordomo/sample.cf
+lib/majordomo/bin/approve
+lib/majordomo/bin/bounce
+lib/majordomo/bin/medit
+lib/majordomo/Tools/archive.pl
+lib/majordomo/Tools/archive_mh.pl
+lib/majordomo/Tools/digest.send
+lib/majordomo/Tools/makeindex.pl
+lib/majordomo/Tools/logsummary.pl
+lib/majordomo/Tools/new-list
+lib/majordomo/Tools/sequencer
+man/man1/approve.1
+man/man1/bounce.1
+man/man1/bounce-remind.1
+man/man1/digest.1
+man/man1/resend.1
+man/man8/majordomo.8
+share/doc/majordomo/Changelog
+share/doc/majordomo/FUTURE
+share/doc/majordomo/INSTALL
+share/doc/majordomo/LICENSE
+share/doc/majordomo/NEWLIST
+share/doc/majordomo/README
+share/doc/majordomo/FAQ
+share/doc/majordomo/README.sequencer
+share/doc/majordomo/list-owner-info
+share/doc/majordomo/majordomo-faq.html
+share/doc/majordomo/majordomo.lisa6.ps
+share/doc/majordomo/majordomo.ora
+share/doc/majordomo/post-install-notes
+@dirrm lib/majordomo/bin
+@dirrm lib/majordomo/Tools
+@dirrm lib/majordomo
+@dirrm share/doc/majordomo

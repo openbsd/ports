@@ -1,0 +1,11 @@
+Majordomo is a program which automates the management of Internet mailing
+lists. Commands are sent to Majordomo via electronic mail to handle all
+aspects of list maintenance. Once a list is set up, virtually all operations
+can be performed remotely, requiring no intervention upon the postmaster of
+the list site.
+
+     majordomo - n: a person who speaks, makes arrangements, or takes
+     charge for another. From latin "major domus" - "master of the
+     house".
+
+See http://www.greatcircle.com/majordomo/

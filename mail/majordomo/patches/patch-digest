@@ -1,0 +1,21 @@
+$OpenBSD: patch-digest,v 1.1.1.1 2000/05/22 16:33:43 espie Exp $
+--- digest.orig	Mon May 15 02:41:18 2000
++++ digest	Mon May 15 02:48:55 2000
+@@ -335,7 +335,7 @@
+ # Define all of the mailer properties:
+ # It is possible that one or both of $sendmail_command and $bounce_mailer
+ # are not defined, so we provide reasonable defaults.
+-$sendmail_command = "/usr/lib/sendmail"
++$sendmail_command = "/usr/sbin/sendmail"
+   unless defined $sendmail_command;
+ $mailer = "$sendmail_command -oi -oee -f\$sender"
+   unless defined $mailer;
+@@ -414,7 +414,7 @@
+ 
+ # Define all of the mailer properties:
+ # The majordomo.cf file isn't used in this option, so fake everything.
+-$sendmail_command = "/usr/lib/sendmail"
++$sendmail_command = "/usr/sbin/sendmail"
+   unless defined $sendmail_command;
+ $mailer = "$sendmail_command -oi -oee -f\$sender"
+   unless defined $mailer;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-archive2_pl,v 1.1.1.1 2000/05/22 16:33:49 espie Exp $
+--- archive2.pl.orig	Mon May 15 02:40:47 2000
++++ archive2.pl	Mon May 15 02:41:06 2000
+@@ -88,7 +88,7 @@
+     exit 1;
+ }
+ 
+-$sendmail_command = $sendmail_command || "/usr/lib/sendmail";
++$sendmail_command = $sendmail_command || "/usr/sbin/sendmail";
+ $bounce_mailer = $bounce_mailer || "$sendmail_command -f\$sender -t";
+ &set_abort_addr($whoami_owner);
+ &set_mail_from($whoami);

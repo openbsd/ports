@@ -1,0 +1,44 @@
+$OpenBSD: patch-config-test,v 1.1.1.1 2000/05/22 16:33:43 espie Exp $
+--- config-test.orig	Wed Aug 27 17:17:13 1997
++++ config-test	Mon May 22 16:58:08 2000
+@@ -125,6 +125,7 @@ if (eval "require '$cf'") { 
+     &bad("something's wrong with $cf: $@");
+ }
+ 
++unshift(@INC, $homedir);
+ foreach (@requires) {
+     if (require $_) {
+ 	&good("found $_ okay.");
+@@ -237,9 +238,9 @@ elsif ($sendmail_command) {
+ else {
+     print "You have defined neither \$mailer, nor \$sendmail_command.\n";
+     print "Majordomo will use\n";
+-    print "/usr/lib/sendmail -f\\\$sender\n";
++    print "/usr/sbin/sendmail -f\\\$sender\n";
+     print "to deliver mail to the list.\n";
+-    $x = "/usr/lib/sendmail";
++    $x = "/usr/sbin/sendmail";
+ }
+     
+ print "Attempting to verify that this is a valid mailer...";
+@@ -266,9 +267,9 @@ elsif ($sendmail_command) {
+ else {
+     print "You have defined neither \$mailer, nor \$sendmail_command.\n";
+     print "Majordomo will use\n";
+-    print "/usr/lib/sendmail -f\\\$sender -t\n";
++    print "/usr/sbin/sendmail -f\\\$sender -t\n";
+     print "to deliver administrative mail.\n";
+-    $x = "/usr/lib/sendmail";
++    $x = "/usr/sbin/sendmail";
+ }
+     
+ print "Attempting to verify that this is a valid mailer...";
+@@ -375,7 +376,7 @@ ZOT
+ 	    print RF $majordomo_version;
+ 	    close RF;
+ 
+-	    $sendmail_command = "/usr/lib/sendmail"
++	    $sendmail_command = "/usr/sbin/sendmail"
+ 		unless defined $sendmail_command;
+ 	    $bounce_mailer = "$sendmail_command -f\$sender -t"
+ 		unless defined $bounce_mailer;
