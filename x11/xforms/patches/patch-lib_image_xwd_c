@@ -1,0 +1,25 @@
+$RuOBSD: patch-lib_image_xwd_c,v 1.1.1.1 2002/05/18 02:35:56 form Exp $
+--- lib/image_xwd.c.orig	Mon May  6 15:10:18 2002
++++ lib/image_xwd.c	Mon May  6 15:11:54 2002
+@@ -77,6 +77,7 @@ typedef union
+ }
+ tLong;
+ 
++#ifndef swap32
+ static CARD32
+ swap32(CARD32 in)
+ {
+@@ -93,10 +94,11 @@ swap32(CARD32 in)
+ 
+     return t.l;
+ }
++#endif
+ 
++#ifndef swap16
+ #define swap16(a)  ((((a)&0xff)<<8)|(((a)>>8)&0xff))
+-
+-
++#endif
+ 
+ static void
+ swap_header(XWDFileHeader * h)
