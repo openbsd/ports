@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2000/08/29 05:20:46 fgsch Exp $
+# $OpenBSD: Makefile,v 1.16 2000/09/12 15:55:52 fgsch Exp $
 
-DISTNAME=	leafnode-1.9.16
+DISTNAME=	leafnode-1.9.17
 CATEGORIES=	news
-NEED_VERSION=	1.310
+NEED_VERSION=	1.326
 MASTER_SITES=	ftp://wpxx02.toxi.uni-wuerzburg.de/pub/			\
 		ftp://ftp.karlsruhe.org/pub/news/servers/leafnode/	\
 		ftp://ftp.unixpower.org/pub/leafnode/			\
