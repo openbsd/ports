@@ -1,0 +1,31 @@
+*** Makefile.orig	Sun Sep 15 12:30:13 1996
+--- Makefile	Sat Sep  5 14:42:55 1998
+***************
+*** 17,24 ****
+  # binaries and man pages. Probably /usr/bin and /usr/man on
+  # Linux, /usr/local/{bin,man} on other systems.
+  
+! BINDIR=/usr/bin
+! MANDIR=/usr/man
+  
+  .c.o:
+  	$(CC) $(CFLAGS) -c $<
+--- 17,24 ----
+  # binaries and man pages. Probably /usr/bin and /usr/man on
+  # Linux, /usr/local/{bin,man} on other systems.
+  
+! BINDIR=/usr/local/bin
+! MANDIR=/usr/local/man
+  
+  .c.o:
+  	$(CC) $(CFLAGS) -c $<
+***************
+*** 27,33 ****
+  
+  efax:	efax.o efaxlib.o efaxio.o efaxos.o efaxmsg.o
+  	$(CC) -o efax $(LDFLAGS) efax.o efaxlib.o efaxio.o efaxos.o efaxmsg.o
+- 	strip efax
+  
+  efix:	efix.o efaxlib.o efaxmsg.o
+  	$(CC) -o efix $(LDFLAGS) efix.o efaxlib.o efaxmsg.o
+--- 27,32 ----

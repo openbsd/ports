@@ -1,0 +1,19 @@
+*** efaxio.c.orig	Sat Sep  5 14:33:45 1998
+--- efaxio.c	Sat Sep  5 14:42:17 1998
+***************
+*** 147,153 ****
+      if ( strlen(s) >= CMDBUFSIZE-4 ) {
+        msg ( "E modem command \"%s\" too long", s ) ;
+      } else {
+!       sprintf ( buf, "AT%s\r", s ) ;
+        tputs ( f, buf, t ) ;
+      }
+    }
+--- 147,153 ----
+      if ( strlen(s) >= CMDBUFSIZE-4 ) {
+        msg ( "E modem command \"%s\" too long", s ) ;
+      } else {
+!       snprintf ( buf, sizeof buf, "AT%s\r", s ) ;
+        tputs ( f, buf, t ) ;
+      }
+    }

@@ -1,0 +1,76 @@
+*** fax.orig	Mon Aug 26 03:41:29 1996
+--- fax	Sat Sep  5 14:46:00 1998
+***************
+*** 22,34 ****
+  # /dev/modem is a link to /dev/cua1, then getty, uucp, kermit,
+  # pppd, dip, etc. must *all* use either /dev/modem or /dev/cua1.
+  
+! DEV=cua1
+  
+  # The type of fax modem commands to use.  Un-comment one of the
+  # following lines depending on your modem.
+  
+! # CLASS=1
+! CLASS=2
+  # CLASS=2.0
+  
+  # Your fax number in international format, 20 characters maximum.
+--- 22,34 ----
+  # /dev/modem is a link to /dev/cua1, then getty, uucp, kermit,
+  # pppd, dip, etc. must *all* use either /dev/modem or /dev/cua1.
+  
+! DEV=cua01
+  
+  # The type of fax modem commands to use.  Un-comment one of the
+  # following lines depending on your modem.
+  
+! CLASS=1
+! # CLASS=2
+  # CLASS=2.0
+  
+  # Your fax number in international format, 20 characters maximum.
+***************
+*** 50,57 ****
+  # The type of printer. Use 'pcl' for HP-PCL or 'ps' for
+  # Postscript.  See definition of PRINT (below) for more options.
+  
+! PRTYPE=pcl				# HP-PCL (e.g. HP LaserJet) 
+! # PRTYPE=ps				# Postscript (e.g. Apple LaserWriter)
+  
+  # The command to print image files from standard input.  Typically
+  # this is "lpr" or "lp".
+--- 50,57 ----
+  # The type of printer. Use 'pcl' for HP-PCL or 'ps' for
+  # Postscript.  See definition of PRINT (below) for more options.
+  
+! # PRTYPE=pcl				# HP-PCL (e.g. HP LaserJet) 
+! PRTYPE=ps				# Postscript (e.g. Apple LaserWriter)
+  
+  # The command to print image files from standard input.  Typically
+  # this is "lpr" or "lp".
+***************
+*** 82,92 ****
+  # conventions. Protect with single quotes for delayed evaluation.
+  # Add a leading '#' to the file name to use HDB (ASCII) format.
+  
+! LOCK='-x /usr/spool/uucp/LCK..$DEV'		# "normal" systems
+  # LOCK=''					# no lock file
+  # LOCK='-x /usr/spool/locks/LK.047.040.011'	# SysV style names
+  # LOCK='-x #/usr/spool/uucp/LCK..$DEV'		# HDB format (ASCII pid)
+  # LOCK='-x /usr/spool/uucp/LCK/LCK..$DEV'	# NeXT
+  
+  # Uncomment one of the following lines to force xon/xoff flow
+  # control if you have one of the types of modems listed.  
+--- 82,93 ----
+  # conventions. Protect with single quotes for delayed evaluation.
+  # Add a leading '#' to the file name to use HDB (ASCII) format.
+  
+! # LOCK='-x /usr/spool/uucp/LCK..$DEV'		# "normal" systems
+  # LOCK=''					# no lock file
+  # LOCK='-x /usr/spool/locks/LK.047.040.011'	# SysV style names
+  # LOCK='-x #/usr/spool/uucp/LCK..$DEV'		# HDB format (ASCII pid)
+  # LOCK='-x /usr/spool/uucp/LCK/LCK..$DEV'	# NeXT
++ LOCK="-x /var/spool/lock/LCK..$DEV"		# OpenBSD cu et al
+  
+  # Uncomment one of the following lines to force xon/xoff flow
+  # control if you have one of the types of modems listed.  

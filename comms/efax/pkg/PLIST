@@ -1,0 +1,6 @@
+bin/fax
+bin/efax
+bin/efix
+man/man1/fax.1
+man/man1/efax.1
+man/man1/efix.1

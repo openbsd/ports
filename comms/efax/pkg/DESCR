@@ -1,0 +1,18 @@
+Efax
+
+efax is a relatively small ANSI C/POSIX program that provides the
+data transport function for fax applications.  A simple shell
+script (``fax'') is included in the distribution to let you
+create, send, receive, view and print faxes.
+
+efax is smaller and easier to install than HylaFax(FlexFax), NetFax, or
+mgetty+sendfax.  It uses your system's own getty to handle
+incoming data calls. As one user put it, ``EFAX is a nice simple
+program for single user systems.''
+
+The package now includes the ``efix'' program to convert text,
+fax or PBM files into fax, PBM, PGM, HP-PCL or Postscript files.
+To fax Postscript images you will need Ghostscript.  To preview
+faxes you will need a PGM file viewer (e.g. xv or xloadimage).
+If you don't have a PCL or Postscript printer you will need an
+appropriate conversion program (e.g. pbmtoepson or Ghostscript) .
