@@ -1,14 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/13 20:48:53 todd Exp $
-share/gtk/themes/engines/libmetal.la
-share/gtk/themes/engines/libmetal.so
-share/gtk/themes/engines/libnotif.la
-share/gtk/themes/engines/libnotif.so
-share/gtk/themes/engines/libpixmap.la
-share/gtk/themes/engines/libpixmap.so
-share/gtk/themes/engines/libraleigh.la
-share/gtk/themes/engines/libraleigh.so
-share/gtk/themes/engines/libredmond95.la
-share/gtk/themes/engines/libredmond95.so
+@comment $OpenBSD: PLIST,v 1.2 2001/09/20 01:08:11 naddy Exp $
 share/themes/Metal/ICON.png
 share/themes/Metal/README.html
 share/themes/Metal/gtk/gtkrc
@@ -104,6 +94,4 @@ share/themes/Redmond95/gtk/gtkrc
 @dirrm share/themes/Notif
 @dirrm share/themes/Metal/gtk
 @dirrm share/themes/Metal
-@dirrm share/gtk/themes/engines
-@dirrm share/gtk/themes
-@dirrm share/gtk
+@dirrm share/themes

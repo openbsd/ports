@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/14 14:41:30 todd Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/20 01:08:11 naddy Exp $
 
 COMMENT=		"sample theme engines for GTK+ provided with GNOME"
 V=			0.12
@@ -22,15 +22,5 @@ USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
-
-post-patch:
-	@cd ${WRKSRC}; \
-	perl -pi -e 's|/lib/gtk/themes/engines/|/share/gtk/themes/engines|' gtk-engines.spec; \
-	perl -pi -e 's|\$$\(libdir\)/gtk/themes/engines|\$$\(datadir\)/gtk/themes/engines|' \
-	     {metal,notif,pixmap,raleigh,redmond95}/Makefile.in;
-
-post-install:
-	@cd ${PREFIX}/share/gtk/themes/engines; \
-	for l in *.so*; do ln -s $$l $${l%.?.?}; done
 
 .include <bsd.port.mk>

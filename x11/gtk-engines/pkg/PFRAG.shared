@@ -1,7 +1,9 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/09/13 20:48:53 todd Exp $
-share/gtk/themes/engines/libmetal.so.0.0
-share/gtk/themes/engines/libnotif.so.0.0
-share/gtk/themes/engines/libpixmap.so.0.0
-share/gtk/themes/engines/libraleigh.so.0.0
-share/gtk/themes/engines/libredmond95.so.0.0
-NEWDYNLIBDIR(%D/share/gtk/themes/engines)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2001/09/20 01:08:11 naddy Exp $
+lib/gtk/themes/engines/libmetal.so
+lib/gtk/themes/engines/libnotif.so
+lib/gtk/themes/engines/libpixmap.so
+lib/gtk/themes/engines/libraleigh.so
+lib/gtk/themes/engines/libredmond95.so
+@dirrm lib/gtk/themes/engines
+@dirrm lib/gtk/themes
+@dirrm lib/gtk
