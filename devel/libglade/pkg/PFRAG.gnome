@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.gnome,v 1.1.1.1 2001/09/13 20:44:34 todd Exp $
+lib/libglade-gnome.a
+lib/libglade-gnome.la
+lib/pkgconfig/libglade-gnome.pc
+lib/libglade-gnome.so.4.2
