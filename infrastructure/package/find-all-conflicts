@@ -1,0 +1,111 @@
+#!/usr/bin/perl
+
+# $OpenBSD: find-all-conflicts,v 1.1 2000/04/19 14:31:18 espie Exp $
+# Copyright (c) 2000
+# Marc Espie.  All rights reserved.
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Neither the name of OpenBSD nor the names of its contributors
+#    may be used to endorse or promote products derived from this software
+#    without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY ITS AUTHOR AND THE OpenBSD project ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+
+# check all packages in the current directory, and report conflicts which
+# are not apparent in @pkgcfl.
+
+use File::Spec;
+
+sub analyze {
+	my $fh = shift;
+	my $all = shift;
+	my $conflicts = shift;
+	my ($name, $cwd);
+	my $default_conflict=1;
+	my $conflict_list = [];
+	local $_;
+	while (<$fh>) {
+		chomp;
+		if (m/^\@(?:comment|exec|unexec|dirrm|mtree|src|pkgdep|mode|group|owner|display)/) {
+			next; 
+		} elsif (m/^\@ignore/) {
+			$_ = <$fh>;
+			next;
+		} elsif (m/^\@name\s+/) {
+			$name = $';
+		} elsif (m/^\@cwd\s+/) {
+			my $newpath = $';
+			if (File::Spec->file_name_is_absolute($newpath)) {
+				$cwd = $newpath;
+			} else {
+				$cwd = File::Spec->catfile($cwd, $newpath);
+			}
+		} elsif (m/^\@pkgcfl\s+(.*?)\s*$/) {
+			my $conflict="\Q$1\E";
+			$conflict =~ s/\\\*/\.\*/g;
+			push @$conflict_list, "$conflict";
+		} elsif (m/^\@option\s+no-default-conflict/) {
+			$default_conflict=0;
+		} elsif (m/^\@/) {
+			print $_, "\n";
+		} else {
+			my $file= File::Spec->catfile($cwd, $_);
+			$file = File::Spec->canonpath($file);
+			unless (defined $all->{$file}) {
+				$all->{$file} = [];
+			}
+			push @{$all->{$file}}, $name;
+		}
+	}
+	if ($default_conflict) {
+		$name =~ m/^(.*)-\d/ or $name =~ m/^(.*)-/;
+		push @$conflict_list, "\Q$1\E\-.*";
+	}
+	$conflicts{$name}=$conflict_list;
+}
+
+
+%hash=();
+%conflicts=();
+
+for my $pkgname (<*.tgz>) {
+	print STDERR "$pkgname\n";
+	system "tar zxqf $pkgname +CONTENTS";
+	if (open(my $fh, '<+CONTENTS')) {
+	    analyze($fh, \%hash, \%conflicts);
+	    unlink("+CONTENTS");
+	} else {
+	    warn "Problem with $pkgname";
+	}
+}
+
+while (my ($key, $l) = each %hash) {
+	if (@$l > 1) {
+	    my $notfound = 0;
+	    for my $pkg (@$l) {
+	    	FOUND: for my $pkg2 (@$l) {
+			next FOUND if $pkg2 eq $pkg;
+			for my $check (@{$conflicts{$pkg}}) {
+				next FOUND if ($pkg2 =~ m/^$check$/);
+			}
+			$notfound = 1;
+		}
+	    }
+	    if ($notfound) {
+		print "$key: ", join(',', @$l), "\n";
+	    }
+	}
+}
