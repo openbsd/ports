@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2002/05/08 01:40:45 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.21 2002/05/29 05:24:12 kevlo Exp $
 bin/xml2-config
 bin/xmlcatalog
 bin/xmllint
@@ -99,6 +99,7 @@ share/libxml2-python/examples/error.py
 share/libxml2-python/examples/invalid.xml
 share/libxml2-python/examples/push.py
 share/libxml2-python/examples/pushSAX.py
+share/libxml2-python/examples/pushSAXhtml.py
 share/libxml2-python/examples/serialize.py
 share/libxml2-python/examples/tst.py
 share/libxml2-python/examples/tst.xml
