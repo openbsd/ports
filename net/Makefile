@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2000/09/13 08:42:23 camield Exp $
+# $OpenBSD: Makefile,v 1.90 2000/09/15 05:25:48 form Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -80,6 +80,7 @@
      SUBDIR += tinyfugue
      SUBDIR += tircproxy
      SUBDIR += totd
+     SUBDIR += trafd
      SUBDIR += trafshow
      SUBDIR += ucd-snmp
      SUBDIR += ucspi-tcp
