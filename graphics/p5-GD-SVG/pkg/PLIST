@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/03 00:32:50 espie Exp $
+${P5SITE}/GD/
+${P5SITE}/GD/SVG.pm
+@man man/man3p/GD::SVG.3p

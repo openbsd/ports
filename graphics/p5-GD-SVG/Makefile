@@ -1,0 +1,22 @@
+#	$OpenBSD: Makefile,v 1.1.1.1 2005/03/03 00:32:50 espie Exp $
+
+COMMENT=	"allow GD perl scripts to output SVG"
+
+PKG_ARCH=	*
+DISTNAME=	GD-SVG-0.25
+PKGNAME=	p5-${DISTNAME}
+CATEGORIES=	graphics perl5
+
+# perl licence
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+RUN_DEPENDS=	:p5-SVG-*:graphics/p5-SVG
+
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=GD/}
+
+CONFIGURE_STYLE= perl
+
+.include <bsd.port.mk>
