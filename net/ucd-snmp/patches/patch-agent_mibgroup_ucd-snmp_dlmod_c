@@ -1,0 +1,21 @@
+$OpenBSD: patch-agent_mibgroup_ucd-snmp_dlmod_c,v 1.1 2002/02/18 14:53:50 danh Exp $
+--- agent/mibgroup/ucd-snmp/dlmod.c.orig	Sat Feb 16 00:38:29 2002
++++ agent/mibgroup/ucd-snmp/dlmod.c	Sat Feb 16 00:38:54 2002
+@@ -175,7 +175,7 @@
+ 	if (dlm->status == DLMOD_ERROR) 
+ 	    return;
+     }
+-    snprintf(sym_init, sizeof(sym_init), "init_%s", dlm->name);
++    snprintf(sym_init, sizeof(sym_init), "_init_%s", dlm->name);
+     dl_init = dlsym(dlm->handle, sym_init);
+     if (dl_init == NULL) {
+ 	dlclose(dlm->handle);
+@@ -199,7 +199,7 @@
+     if (!dlm || dlm->status != DLMOD_LOADED) 
+ 	return;
+ 
+-    snprintf(sym_deinit, sizeof(sym_deinit), "deinit_%s", dlm->name);
++    snprintf(sym_deinit, sizeof(sym_deinit), "_deinit_%s", dlm->name);
+     dl_deinit = dlsym(dlm->handle, sym_deinit);
+     if (dl_deinit == NULL) {
+ 	snprintf(dlm->error, sizeof(dlm->error), 
