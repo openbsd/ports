@@ -1,0 +1,15 @@
+$OpenBSD: patch-gdk-pixbuf_io-ico_c,v 1.1 2004/09/19 23:41:32 brad Exp $
+--- gdk-pixbuf/io-ico.c.orig	Sat Sep 18 22:16:41 2004
++++ gdk-pixbuf/io-ico.c	Sat Sep 18 22:17:54 2004
+@@ -330,6 +330,11 @@ DecodeHeader (guchar *Data, gint Bytes, 
+ 
+ 	State->HeaderSize+=I;
+ 
++	if (State->HeaderSize < 0) {
++		g_error ("DecodeHeader(): Invalid header in icon");
++		return;
++	}
++
+  	if (State->HeaderSize>State->BytesInHeaderBuf) {
+ 		guchar *tmp=realloc(State->HeaderBuf,State->HeaderSize);
+ 		if (!tmp)

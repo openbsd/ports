@@ -1,0 +1,15 @@
+$OpenBSD: patch-gdk-pixbuf_io-bmp_c,v 1.1 2004/09/19 23:41:32 brad Exp $
+--- gdk-pixbuf/io-bmp.c.orig	Sat Sep 18 22:08:18 2004
++++ gdk-pixbuf/io-bmp.c	Sat Sep 18 22:16:29 2004
+@@ -870,8 +870,10 @@ DoCompressed(struct bmp_progressive_stat
+ 	guchar c;
+ 	gint idx;
+ 
+-	if (context->compr.y >= context->Header.height)
++	if (context->compr.y >= context->Header.height) {
++		context->BufferDone = 0;
+ 		return TRUE;
++	}
+ 
+ 	y = context->compr.y;
+ 
