@@ -1,0 +1,11 @@
+--- configure.orig	Thu Oct  3 14:46:22 2002
++++ configure	Mon Nov  4 13:12:09 2002
+@@ -402,7 +402,7 @@ PRINTF=`which printf`
+ 
+ # Subdirectories of theories/ added in coq_config.ml
+ subdirs () {
+-    (cd $1; find . -type d ! -name CVS ! -regex ".*extraction/test.*" ! -name .  -exec $PRINTF "\"%s\";\n" {} \; >> $mlconfig_file)
++    (cd $1; find . -type d ! -name CVS ! -path "*extraction/test*" ! -name .  -exec $PRINTF "\"%s\";\n" {} \; >> $mlconfig_file)
+ }
+ 
+ echo "let theories_dirs = [" >> $mlconfig_file

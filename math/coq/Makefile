@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2002/09/07 23:43:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/11/04 21:10:44 naddy Exp $
 
 COMMENT=		"proof assistant based on a typed lambda calculus"
 
-DISTNAME=		coq-7.0
+DISTNAME=		coq-7.3.1
 CATEGORIES=		math
 HOMEPAGE=		http://coq.inria.fr/
 
@@ -13,12 +13,23 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.inria.fr/INRIA/coq/V7.0/
+MASTER_SITES=		ftp://ftp.inria.fr/INRIA/coq/V7.3.1/
 MASTER_SITES0=		${MASTER_SITES:S@$@doc/@}
+MASTER_SITES1=		http://coq.inria.fr/
+MASTER_SITES2=		http://coq.inria.fr/ps/
 DISTFILES=		${DISTNAME}.tar.gz \
 			doc-html.tar.gz:0 \
-			all-ps-docs.tar.gz:0
+			Changes.html:0 \
+			Reference-Manual-all.ps.gz:0 \
+			library.tar.gz:1 \
+			RecTutorial.v.ps:2
+
+IGNOREFILES=		doc-html.tar.gz
+
 DIST_SUBDIR=		coq
+EXTRACT_ONLY=		${DISTNAME}.tar.gz \
+			doc-html.tar.gz \
+			library.tar.gz  \
 
 BUILD_DEPENDS=		::lang/ocaml
 
@@ -27,22 +38,29 @@ FAKE_FLAGS=		COQINSTALLPREFIX=${WRKINST}
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	simple
-## add -opt option if there is ocamlc.opt.
+## ## add -opt option if there is ocamlc.opt.
+## CONFIGURE_ARGS=		-prefix ${PREFIX} \
+## 			-emacslib ${PREFIX}/share/emacs/site-lisp ## -opt
+## -byteonly for architectures without Ocaml native-code compiler.
 CONFIGURE_ARGS=		-prefix ${PREFIX} \
-			-emacslib ${PREFIX}/share/emacs/site-lisp ## -opt
+			-emacslib ${PREFIX}/share/emacs/site-lisp -byteonly
 
 ALL_TARGET=		world
+REGRESS_TARGET=		check
 
-COQ_DOCPSFILES=         Changes.ps Library.ps Tutorial.ps \
-                        Reference-Manual-addendum.ps Reference-Manual-base.ps
+COQ_DOCHTMLFILES=       Changes.html
+COQ_DOCPSFILES=         RecTutorial.v.ps Reference-Manual-all.ps.gz
 
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/coq/html
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/coq/html/library
 	@${INSTALL_DATA} ${WRKDIR}/coq-docs-html/* ${PREFIX}/share/doc/coq/html
+	@${INSTALL_DATA} ${WRKDIR}/library/* ${PREFIX}/share/doc/coq/html/library
+	@for ff in ${COQ_DOCHTMLFILES} ; do \
+	  ${INSTALL_DATA} ${FULLDISTDIR}/$${ff} ${PREFIX}/share/doc/coq/html ; \
+	done
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/coq/ps
 	@for ff in ${COQ_DOCPSFILES} ; do \
-	  ${INSTALL_DATA} ${WRKDIR}/$${ff} ${PREFIX}/share/doc/coq/ps ; \
+	  ${INSTALL_DATA} ${FULLDISTDIR}/$${ff} ${PREFIX}/share/doc/coq/ps ; \
 	done
-	@strip ${PREFIX}/bin/*
 
 .include <bsd.port.mk>
