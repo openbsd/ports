@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.11 2002/10/12 13:04:22 reinhard Exp $
-lib/libhosts_gatherer.so.3.6
-lib/libnasl.so.3.6
-lib/libnessus.so.3.6
+@comment $OpenBSD: PFRAG.shared,v 1.12 2003/02/08 13:21:19 reinhard Exp $
+lib/libhosts_gatherer.so.3.7
+lib/libnasl.so.3.7
+lib/libnessus.so.3.7
 DYNLIBDIR(%D/lib)

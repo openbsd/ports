@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2002/10/28 17:35:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2003/02/08 13:21:19 reinhard Exp $
 
 COMMENT=	"network security scanner"
 
 PKGNAME=	nessus-${VERS}
 CATEGORIES=	security
 
-VERS=		1.2.6
+VERS=		1.2.7
 
 DIST_SUBDIR=	nessus
 
