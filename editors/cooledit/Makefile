@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/10/19 00:11:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2002/02/15 19:53:43 matt Exp $
 
 COMMENT=	"easy to use, graphical editor"
 
@@ -14,8 +14,8 @@ FLAVORS=	python
 FLAVOR?=
 
 .if ${FLAVOR:L:Mpython}
-BUILD_DEPENDS+=	:python-2.*-!threads:lang/python,
-RUN_DEPENDS+=	:python-2.*-!threads:lang/python,
+BUILD_DEPENDS+=	:python-2.1*:lang/python/2.1
+RUN_DEPENDS+=	:python-2.1*:lang/python/2.1
 .else
 CONFIGURE_ENV+=	NOPYTHON=Yes
 .endif

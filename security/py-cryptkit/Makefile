@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/01/03 23:34:39 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2002/02/15 19:53:43 matt Exp $
 
 COMMENT=		"python Cryptographic Toolkit"
 
@@ -23,7 +23,7 @@ MASTER_SITE_SUBDIR=	cryptkit
 
 PYTHON_VER=	2.1
 
-BUILD_DEPENDS+=	::lang/python
+BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 NO_REGRESS=	Yes
 

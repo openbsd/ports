@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/01/04 05:10:05 shell Exp $
+# $OpenBSD: Makefile,v 1.4 2002/02/15 19:53:43 matt Exp $
 
 COMMENT=	"python interface to cURL library"
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 PYTHON_VER=	2.1
 LIB_DEPENDS=	curl.2::net/curl
-BUILD_DEPENDS=	::lang/python
+BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 SUBST_VARS=	PYTHON_VER

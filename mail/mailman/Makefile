@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/12/02 08:21:53 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/02/15 19:53:43 matt Exp $
 
 COMMENT=	"mailing list manager with web interface"
 
@@ -20,7 +20,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mailman
 EXTRACT_SUFX=		.tgz
 
-BUILD_DEPENDS=		::lang/python
+BUILD_DEPENDS=		:python-2.1*:lang/python/2.1
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
 NO_REGRESS=		Yes

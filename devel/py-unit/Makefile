@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/10 15:00:47 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/02/15 19:53:43 matt Exp $
 
 
 COMMENT=		"unit testing framework for python"
@@ -29,10 +29,9 @@ PYTHON_VER=	2.1
 
 .if ${FLAVOR} != "no_x11"
 PY_MODULE=	${LOCALBASE}/lib/python${PYTHON_VER}/lib-dynload/_tkinter.so
-BUILD_DEPENDS=	::lang/python,tk
-.else
-BUILD_DEPENDS=	::lang/python
+BUILD_DEPENDS=	:python-tkinter-${PYTHON_VER}*:lang/python/${PYTHON_VER},-tkinter
 .endif
+BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 SUBST_VARS=	PYTHON_VER

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/01/31 17:40:44 shell Exp $
+# $OpenBSD: Makefile,v 1.3 2002/02/15 19:53:42 matt Exp $
 
 COMMENT=	"Python Unicode codecs for Chinese charsets"
 
@@ -22,7 +22,7 @@ MASTER_SITES=	ftp://ftp.shellhung.org/pub/OpenBSD/packages/chinese/ \
 
 PYTHON_VER=	2.1
 
-BUILD_DEPENDS+=	::lang/python
+BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/01/02 02:53:25 shell Exp $
+# $OpenBSD: Makefile,v 1.5 2002/02/15 19:53:43 matt Exp $
 
 COMMENT=		"OpenSSL Wrappers for Python"
 
@@ -22,7 +22,7 @@ MASTER_SITE_SUBDIR=	pow
 
 PYTHON_VER=	2.1
 
-BUILD_DEPENDS+=	::lang/python
+BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 NO_REGRESS=	Yes
 

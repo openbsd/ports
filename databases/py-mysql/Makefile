@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/11/11 05:42:02 shell Exp $
+# $OpenBSD: Makefile,v 1.12 2002/02/15 19:53:42 matt Exp $
 
 COMMENT=		"python interface to MySQL"
 
@@ -24,7 +24,7 @@ LIB_DEPENDS=		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
 
 PYTHON_VER=	2.1
 
-RUN_DEPENDS+=	::lang/python
+RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 SUBST_VARS=	PYTHON_VER

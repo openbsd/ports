@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/02/01 14:49:11 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2002/02/15 19:53:43 matt Exp $
 
 COMMENT=	"Date and Time types for Python"
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 PYTHON_VER=	2.1
 
-RUN_DEPENDS+=	::lang/python
+RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 
 SUBST_VARS=	PYTHON_VER

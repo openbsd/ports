@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/12/14 15:33:00 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/02/15 19:53:42 matt Exp $
 
 COMMENT=	"convert Big5 encoded files to PDF"
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=     Yes
 
 MASTER_SITES=	${HOMEPAGE}/bg5ps/bg5pdf/
 
-BUILD_DEPENDS=	::lang/python
+BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		::chinese/taipeifonts
 LIB_DEPENDS=	pdf.2::print/pdflib

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/12/31 09:41:29 shell Exp $
+# $OpenBSD: Makefile,v 1.11 2002/02/15 19:53:43 matt Exp $
 
 COMMENT=	"python module for writing basic XML applications"
 
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PYTHON_VER=     2.1
 
 LIB_DEPENDS=	expat.2::textproc/expat
-BUILD_DEPENDS=	::lang/python
+BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 SUBST_VARS=     PYTHON_VER

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/02/12 16:29:34 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2002/02/15 19:53:43 matt Exp $
 
 COMMENT=		"reduce the amount of SPAM/UCE (junk-mail)"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://software.libertine.org/tmda/releases/
 EXTRACT_SUFX=		.tgz
 
-RUN_DEPENDS+=   ::lang/python
+RUN_DEPENDS+=   :python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
 PYTHON_VER=     2.1

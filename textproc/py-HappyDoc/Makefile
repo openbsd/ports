@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/01/04 18:11:45 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2002/02/15 19:53:43 matt Exp $
 
 COMMENT=	"python tool for generate Python API documents"
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 PYTHON_VER=	2.1
-BUILD_DEPENDS=	::lang/python
+BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 SUBST_VARS=	PYTHON_VER

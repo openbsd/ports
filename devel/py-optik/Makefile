@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/12/19 06:45:12 shell Exp $
+# $OpenBSD: Makefile,v 1.4 2002/02/15 19:53:43 matt Exp $
 
 
 COMMENT=	"command line parsing library for Python"
@@ -23,7 +23,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	optik
 
 PYTHON_VER=	2.1
-BUILD_DEPENDS=	::lang/python
+BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 SUBST_VARS=	PYTHON_VER

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/01/05 22:08:02 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2002/02/15 19:53:43 matt Exp $
 
 COMMENT=	"python implementation of the Rijndael encryption algorithm"
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 HOMEPAGE=	http://www.bluesine.com/Projects/mods-python/pyrijndael
 MASTER_SITES=	http://ftp.bluesine.com/pub/bluesine.com/python-mods/rijndael/
 
-BUILD_DEPENDS+=	::lang/python
+BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PYTHON_VER=	2.1

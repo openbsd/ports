@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/11/10 15:44:57 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2002/02/15 19:53:43 matt Exp $
 
 COMMENT=		"python imaging library"
 
@@ -22,10 +22,11 @@ MASTER_SITES=		http://www.pythonware.com/downloads/
 
 NO_REGRESS=		Yes
 
-PYTHON_VER=		python2.1
-PY_MODULE=		${LOCALBASE}/lib/${PYTHON_VER}/lib-dynload/_tkinter.so
+PYTHON_VER=		2.1
+PY_MODULE=		${LOCALBASE}/lib/python${PYTHON_VER}/lib-dynload/_tkinter.so
 
-BUILD_DEPENDS=		::lang/python,tk
+BUILD_DEPENDS=		:python-tkinter-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
+			:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=		${BUILD_DEPENDS}
 LIB_DEPENDS=		jpeg.62::graphics/jpeg
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/01/12 08:39:39 shell Exp $
+# $OpenBSD: Makefile,v 1.8 2002/02/15 19:53:43 matt Exp $
 
 
 COMMENT=	"python module for GnuPG interface"
@@ -23,7 +23,7 @@ MASTER_SITE_SUBDIR=	py-gnupg
 
 PYTHON_VER=	2.1
 
-BUILD_DEPENDS+=	::lang/python \
+BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
 		::security/gnupg
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

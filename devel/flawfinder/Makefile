@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/01/24 06:48:03 jsyn Exp $
+# $OpenBSD: Makefile,v 1.12 2002/02/15 19:53:43 matt Exp $
 
 COMMENT=		"c/c++ source code auditing tool"
 
@@ -19,7 +19,7 @@ MASTER_SITES=		http://www.dwheeler.com/flawfinder/ \
 			${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	UNIX/misc
 
-RUN_DEPENDS=		::lang/python
+RUN_DEPENDS=		:python-2.1*:lang/python/2.1
 
 NO_BUILD=		Yes
 

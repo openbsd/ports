@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/12/22 14:33:39 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2002/02/15 19:53:43 matt Exp $
 
 COMMENT=	"fast array facility to the Python language"
 COMMENT-module=	"extra modules for py-Numeric"
@@ -25,7 +25,7 @@ PYTHON_VER=	2.1
 SUBST_VARS=	PYTHON_VER
 NO_REGRESS=	Yes
 
-BUILD_DEPENDS=	::lang/python
+BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MULTI_PACKAGES=	-module

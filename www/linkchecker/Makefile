@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/12/05 21:53:31 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2002/02/15 19:53:43 matt Exp $
 
 COMMENT=	checks HTML documents for broken links
 
@@ -17,8 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	python21::lang/python
-RUN_DEPENDS=	python21::lang/python
+BUILD_DEPENDS=	:python-2.1*:lang/python/2.1
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 do-configure:
 	cd ${WRKSRC}; python setup.py config
