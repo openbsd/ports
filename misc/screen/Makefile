@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2003/10/19 03:59:27 brad Exp $
+# $OpenBSD: Makefile,v 1.50 2003/11/22 00:56:58 espie Exp $
 
 COMMENT=	"multi-screen window manager"
 
@@ -23,11 +23,14 @@ SUBST_VARS=	VERSION
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-sys-screenrc="${SYSCONFDIR}/screenrc"
 
-FLAVORS=	static
+FLAVORS=	static shm
 FLAVOR?=
 
 .if ${FLAVOR:L} == "static"
 CONFIGURE_ENV=	LDFLAGS="-static"
+.endif
+.if ${FLAVOR:L} == "shm"
+PATCH_LIST=	patch-* shmpatch-*
 .endif
 
 ALL_TARGET=	screen screen.info
