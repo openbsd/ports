@@ -1,16 +1,12 @@
-# OpenBSD makefile for:	vat
-# Version required:	4.0b2
-# Date created:		June 15 1999
-# Whom:			Angelos D. Keromytis
-#
 # $FreeBSD: Makefile,v 1.9 1998/12/02 05:56:01 asami Exp $
-# $OpenBSD: Makefile,v 1.1.1.1 1999/08/05 00:45:50 niklas Exp $
-#
+# $OpenBSD: Makefile,v 1.2 1999/09/02 22:00:02 brad Exp $
 
-DISTNAME=	vat-4.0b2
-CATEGORIES=	mbone tk80
+DISTNAME=	vatsrc-4.0b2
+PKGNAME=	vat-4.0b2
+CATEGORIES=	mbone
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
-DISTFILES=	vatsrc-4.0b2.tar.gz
+
+NEED_VERSION=	1.114
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -21,14 +17,15 @@ GSM_WORK=       ${WRKDIRPREFIX}${GSM_DIR}/work/gsm-1.0-pl10
 # we can use this first BUILD_DEPENDS and save some work.
 #BUILD_DEPENDS= ${GSM_WORK}/inc/private.h:${GSM_DIR}:patch
 BUILD_DEPENDS=  ${GSM_WORK}/lib/libgsm.a:${GSM_DIR}:build
-LIB_DEPENDS=    tk80.1:${PORTSDIR}/x11/tk80 \
-                gsm.1:${GSM_DIR}
+LIB_DEPENDS=	tcl80.1.5:${PORTSDIR}/lang/tcl80 \
+		tk80.1.5:${PORTSDIR}/x11/tk80 \
+		gsm.1:${GSM_DIR}
 
-USE_X_PREFIX=   yes
+USE_X11=	yes
 USE_AUTOCONF=   yes
 CONFIGURE_ARGS= --with-gsm=${GSM_WORK}
 
 post-install:
-	strip ${PREFIX}/bin/vat
+	@${STRIP} ${PREFIX}/bin/vat
 
 .include <bsd.port.mk>
