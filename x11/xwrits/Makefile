@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/04/04 20:29:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/12 19:24:25 lebel Exp $
 
 COMMENT=	"typing break alarm and timer"
 
-DISTNAME=	xwrits-2.14
+DISTNAME=	xwrits-2.15
 CATEGORIES=	x11
-NEED_VERSION=	1.363
+NEED_VERSION=	1.434
 HOMEPAGE=	http://www.lcdf.org/~eddietwo/xwrits/
 
 MAINTAINER=	Dan Weeks <danimal@danimal.org>
