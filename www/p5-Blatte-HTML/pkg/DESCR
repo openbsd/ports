@@ -1,0 +1,26 @@
+The Blatte-HTML module defines Blatte functions corresponding to HTML tags,
+making it possible to write Blatte that looks like this:
+
+  Here is a {\a \href=http://www.blatte.org/ link}
+
+that can be translated to this:
+
+  Here is a <a href="http://www.blatte.org/">link</a>
+
+The beauty is that you can use Blatte functions to encapsulate repeated
+constructs.  For instance, this definition:
+
+  {\define {\mypagestyle \=name \&content}
+    {\html {\head {\title \name}}
+           {\body {\h1 \name} \content}}}
+
+allows you to write
+
+  {\mypagestyle \name={A page I wrote} This is my page.}
+
+which saves you from having to write:
+
+  <html><head><title>A page I wrote</title></head>
+  <body><h1>A page I wrote</h1>This is my page.</body></html>
+
+WWW: ${HOMEPAGE}
