@@ -1,0 +1,67 @@
+#!/usr/bin/perl
+
+# $OpenBSD: logger,v 1.1 2001/03/01 00:00:26 espie Exp $
+# Copyright (c) 2001 Marc Espie.  All rights reserved.
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Neither the name of OpenBSD nor the names of its contributors
+#    may be used to endorse or promote products derived from this software
+#    without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY ITS AUTHOR AND THE OpenBSD project ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+
+# This critter recognizes context switch changes in the ports tree
+# and logs its output accordingly, as a kind of `super-tee'
+
+use File::Path;
+
+$directory = shift;
+
+mkpath $directory;
+
+$logfile='';
+
+sub changelogfile {
+	my $n = shift;
+	print LOGFILE "--- ", `date` if $logfile ne '';
+	close LOGFILE;
+	open LOGFILE, '>>', "$directory/$n.log";
+	print LOGFILE "+++ ", `date`;
+	$oldfh = select(LOGFILE); $|=1; select($oldfh);
+	$logfile = $n;
+}
+
+while (<>) {
+	if (m/^\=\=\=\>\s+(?:(?:Extracting|Applying distribution patches|\
+Patching|Configuring|Building|Faking installation|Building package|\
+Desinstalling|Cleaning|Dist cleaning|Checking files)\s+for|\
+Returning to build of)\s+/o) {
+		$context = $';
+		chomp $context;
+		if ($context ne $logfile) {
+			changelogfile($context);
+		}
+	}
+	if ($logfile eq '') {
+		changelogfile('default');
+	}
+	print LOGFILE $_;
+	print;
+}
+
+
+print LOGFILE "--- ", `date` if $logfile ne '';
+close LOGFILE;
