@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/12/01 04:08:56 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/02/10 00:47:57 espie Exp $
 
 COMMENT=		"portable library for obtaining system information"
 
@@ -37,5 +37,9 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-extract:
 	@mv ${WRKDIR}/${SYSDEPS} ${WRKSRC}/sysdeps/openbsd
+
+post-configure:
+	@touch ${WRKSRC}/Makefile.in
+	@touch ${WRKBUILD}/Makefile
 
 .include <bsd.port.mk>
