@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/13 20:27:19 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/13 21:07:28 todd Exp $
 
 COMMENT=		"libraries for the GNOME project"
 V=			1.2.13
@@ -29,6 +29,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= 	--with-kde-datadir=${LOCALBASE}/share
 CONFIGURE_ARGS+= 	--localstatedir=/var/run
 CONFIGURE_ARGS+= 	--disable-test-gnome
+CONFIGURE_ARGS+=	--disable-gtk-doc
 
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
