@@ -1,14 +1,11 @@
 OpenBSD$
---- src/pty.c.orig	Thu May 29 22:06:01 2003
-+++ src/pty.c	Thu May 29 22:06:03 2003
-@@ -48,6 +48,10 @@
+--- src/pty.c.orig	Sat May  1 00:12:51 2004
++++ src/pty.c	Sat Jul 31 15:33:41 2004
+@@ -48,6 +48,7 @@
+ #include "pty.h"
+ 
+ #ifdef VTE_USE_GNOME_PTY_HELPER
++#include "../gnome-pty-helper/config.h"
  #include "../gnome-pty-helper/gnome-pty.h"
  #endif
  
-+#ifdef __OpenBSD__
-+#define HAVE_RECVMSG 1
-+#endif
-+
- #ifdef MSG_NOSIGNAL
- #define PTY_RECVMSG_FLAGS MSG_NOSIGNAL
- #else

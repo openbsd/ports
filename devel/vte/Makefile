@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2003/12/05 08:20:40 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2004/08/01 06:10:09 marcm Exp $
 
-COMMENT=		"experimental terminal emulator"
+COMMENT=		"terminal emulatation library"
 
-DISTNAME=		vte-0.11.10
+DISTNAME=		vte-0.11.11
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
@@ -19,9 +19,8 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/vte/0.11/}
 EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		:pkgconfig->=0.14.0p1:devel/pkgconfig
-LIB_DEPENDS=		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+LIB_DEPENDS=		gdk-x11-2.0.0.8,gdk_pixbuf-2.0.0.8,gtk-x11-2.0.0.8::x11/gtk+2
 
-#SEPARATE_BUILD= 	concurrent
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
@@ -29,6 +28,6 @@ CONFIGURE_ARGS+=	--disable-gtk-doc
 CONFIGURE_ARGS+=	--disable-python
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
+			PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
 
 .include <bsd.port.mk>

@@ -1,0 +1,23 @@
+$OpenBSD: patch-gnome-pty-helper_configure,v 1.1 2004/08/01 06:10:09 marcm Exp $
+--- gnome-pty-helper/configure.orig	Sat Jul 24 23:59:52 2004
++++ gnome-pty-helper/configure	Sun Jul 25 00:00:22 2004
+@@ -6269,19 +6269,10 @@ fi
+ rm -f conftest*
+ 
+ 
+-cat >>confdefs.h <<\_ACEOF
+-#define _XOPEN_SOURCE_EXTENDED 1
+-_ACEOF
+ 
+ 
+-cat >>confdefs.h <<\_ACEOF
+-#define _XOPEN_SOURCE 1
+-_ACEOF
+ 
+ 
+-cat >>confdefs.h <<\_ACEOF
+-#define __EXTENSIONS__ 1
+-_ACEOF
+ 
+ 
+           ac_config_headers="$ac_config_headers config.h"
