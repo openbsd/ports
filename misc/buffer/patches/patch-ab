@@ -1,5 +1,34 @@
---- buffer.c.orig	Wed Jul 14 17:59:17 1993
-+++ buffer.c	Thu Mar 11 02:55:42 1999
+--- buffer.c.orig	Wed Jul 14 10:59:17 1993
++++ buffer.c	Fri Oct 29 02:59:03 1999
+@@ -128,7 +128,7 @@
+ void byee();
+ void start_reader_and_writer();
+ 
+-/* When showing print a note every this many bytes writen */
++/* When showing print a note every this many bytes written */
+ int showevery = 0;
+ #define PRINT_EVERY 10 K
+ 
+@@ -242,7 +242,7 @@
+ 
+ 	while( (c = getopt( argc, argv, "BS:Zdm:s:b:p:u:ti:o:z:" )) != -1 ){
+ 		switch( c ){
+-		case 't': /* Print to stderr the total no of bytes writen */
++		case 't': /* Print to stderr the total no of bytes written */
+ 			print_total++;
+ 			break;
+ 		case 'u': /* pause after write for given microseconds */
+@@ -339,8 +339,8 @@
+ 			fprintf( stderr, "Usage: %s [-B] [-t] [-S size] [-m memsize] [-b blocks] [-p percent] [-s blocksize] [-u pause] [-i infile] [-o outfile] [-z size]\n",
+ 				progname );
+ 			fprintf( stderr, "-B = blocked device - pad out last block\n" );
+-			fprintf( stderr, "-t = show total amount writen at end\n" );
+-			fprintf( stderr, "-S size = show amount writen every size bytes\n" );
++			fprintf( stderr, "-t = show total amount written at end\n" );
++			fprintf( stderr, "-S size = show amount written every size bytes\n" );
+ 			fprintf( stderr, "-m size = size of shared mem chunk to grab\n" );
+ 			fprintf( stderr, "-b num = number of blocks in queue\n" );
+ 			fprintf( stderr, "-p percent = don't start writing until percent blocks filled\n" );
 @@ -384,6 +384,7 @@
  }
  
