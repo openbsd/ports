@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2002/05/15 09:30:22 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2002/08/10 20:04:16 wilfried Exp $
 
 COMMENT=		'Text Editor for FLTK'
 
-DISTNAME=		fl_editor-0.4.3
-PKGNAME=		fleditor-0.4.3
+V=			0.4.4
+DISTNAME=		fl_editor-${V}
+PKGNAME=		fleditor-${V}
 CATEGORIES=		x11
-NEED_VERSION=		1.482
 
 HOMEPAGE=		http://www.robertk.com/source/
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.robertk.com/source/fl_editor/
 EXTRACT_SUFX=		.tgz
 
-LIB_DEPENDS=		fltk.::x11/fltk
+LIB_DEPENDS=		fltk.1::x11/fltk
 
 USE_X11=		Yes
 REGRESS_TARGET=		test
@@ -38,6 +38,13 @@ REGRESS_IS_INTERACTIVE= Yes
 post-patch:
 	@rmdir ${WRKSRC}/obj
 
+pre-regress:
+.for t in DISPLAY XAUTHORITY
+.if !defined($t)
+	@echo "$t needs to be set to run regress"; exit 1
+.endif
+.endfor
+
 do-install:
 	@${install_shared_frag}
 	${INSTALL_DATA} ${WRKBUILD}/libfleditor.a ${PREFIX}/lib
@@ -52,4 +59,3 @@ install_shared_frag= :
 install_shared_frag=\
 	${INSTALL_DATA} ${WRKBUILD}/libfleditor.so* ${PREFIX}/lib
 .endif
-

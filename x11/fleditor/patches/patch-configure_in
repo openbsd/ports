@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.4 2001/10/26 23:36:17 wilfried Exp $
+$OpenBSD: patch-configure_in,v 1.5 2002/08/10 20:04:16 wilfried Exp $
 --- configure.in.orig	Wed Jan 10 00:11:25 2001
-+++ configure.in	Sat Oct 27 01:24:19 2001
++++ configure.in	Fri Aug  9 15:52:32 2002
 @@ -18,7 +18,7 @@ AC_PATH_PROG(AR,ar)
  AC_PATH_PROG(RM,rm)
  
@@ -43,7 +43,7 @@ $OpenBSD: patch-configure_in,v 1.4 2001/10/26 23:36:17 wilfried Exp $
 -          DSOCOMMAND="\$(CXX) -Wl,-soname,\$@ -shared $DEBUGFLAG -o"
 -	  ;;
 -  esac
-+  DSOEXT=".so.1.1"
++  DSOEXT=".so.2.0"
 +  DSOCOMMAND="\$(CXX) -Wl,-soname,\$@ \$(LDLIBS) -fPIC -shared $DEBUGFLAG -o"
  fi],
  [
@@ -58,7 +58,7 @@ $OpenBSD: patch-configure_in,v 1.4 2001/10/26 23:36:17 wilfried Exp $
 -    [   if test " x$withval = xyes"; then ac_fltk2="-DFLTK2"; fi ])
 +    [   if test x$withval = xyes; then ac_fltk2="-DFL_MAJOR_VERSION=2"; fi ])
  
- AC_CHECK_LIB(fltk,numericsort)
+-AC_CHECK_LIB(fltk,numericsort)
 -
 -dnl# test to see if OpenGL is on this machine:
 -GLLIB=
@@ -66,6 +66,7 @@ $OpenBSD: patch-configure_in,v 1.4 2001/10/26 23:36:17 wilfried Exp $
 -    AC_CHECK_LIB(MesaGL,glXMakeCurrent, AC_DEFINE(HAVE_GL) GLLIB=" -lMesaGLU -lMesaGL",,\
 -	-lX11 -lXext $X_EXTRA_LIBS -lm), \
 -    -lX11 -lXext $X_EXTRA_LIBS -lm)
++AC_CHECK_LIB(fltk,fl_numericsort)
  
  AC_SUBST(GLLIB)
  AC_SUBST(DSOCOMMAND)

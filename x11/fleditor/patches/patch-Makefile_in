@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2001/10/26 23:36:17 wilfried Exp $
---- Makefile.in.orig	Wed Aug 29 21:15:08 2001
-+++ Makefile.in	Sat Oct 27 00:51:31 2001
+$OpenBSD: patch-Makefile_in,v 1.6 2002/08/10 20:04:16 wilfried Exp $
+--- Makefile.in.orig	Fri Jun 14 23:12:25 2002
++++ Makefile.in	Sat Aug 10 19:49:59 2002
 @@ -29,7 +29,7 @@ FLTKLIBDIR	=	@ac_fltk_libraries@
  # Program options...
  #
@@ -9,7 +9,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2001/10/26 23:36:17 wilfried Exp $
 +ARFLAGS	=	r
  CFLAGS	=	-I. -I.. -I$(FLTKROOT)/include @CFLAGS@ @ac_fltk2@
  CXXFLAGS =	-I. -I.. -I$(FLTKROOT)/include @CXXFLAGS@ @ac_fltk2@
- LIBS	=	@ac_fltk_static@ -L$(FLTKROOT)/lib @LIBS@ -lXext -lX11 -lm @ac_fltk_dso@ $(GLLIB)
+ LIBS	=	@ac_fltk_static@ -L$(FLTKROOT)/lib @LIBS@ -lXext -lX11 -lm -ljpeg -lpng @ac_fltk_dso@ $(GLLIB)
 @@ -39,15 +39,15 @@ LDFLAGS	=	@LDFLAGS@
  # Rules...
  #
@@ -57,27 +57,27 @@ $OpenBSD: patch-Makefile_in,v 1.5 2001/10/26 23:36:17 wilfried Exp $
 -	echo $(CXX) $(LDFLAGS) $^ libfleditor.a $(LIBS) -o $@
 -	$(CXX) $(LDFLAGS) $^ libfleditor.a $(LIBS) -o $@
 +	echo $(CXX) $(LDFLAGS) test/progress.o libfleditor.a $(LIBS) -o $@
-+	$(CXX) $(LDFLAGS) test/progress.o libfleditor.a $(LIBS) -o $@
++	$(CXX) $(LDFLAGS) test/progress.o -R. -L. -lfleditor $(LIBS) -o $@
  
  test/simple: test/simple.o 
  	echo Building $@ test program
 -	$(CXX) $(LDFLAGS) $^ libfleditor.a $(LIBS) -o $@
-+	$(CXX) $(LDFLAGS) test/simple.o libfleditor.a $(LIBS) -o $@
++	$(CXX) $(LDFLAGS) test/simple.o -R. -L. -lfleditor $(LIBS) -o $@
  
  test/status: test/status.o 
  	echo Building $@ test program
 -	$(CXX) $(LDFLAGS) $^ libfleditor.a $(LIBS) -o $@
-+	$(CXX) $(LDFLAGS) test/status.o libfleditor.a $(LIBS) -o $@
++	$(CXX) $(LDFLAGS) test/status.o -R. -L. -lfleditor $(LIBS) -o $@
  
  test/single: test/single.o 
  	echo Building $@ test program
 -	$(CXX) $(LDFLAGS) $^ libfleditor.a $(LIBS) -o $@
-+	$(CXX) $(LDFLAGS) test/single.o libfleditor.a $(LIBS) -o $@
++	$(CXX) $(LDFLAGS) test/single.o -R. -L. -lfleditor $(LIBS) -o $@
  
  test/multiple: test/multiple.o test/multfunc.o
  	echo Building $@ test program
 -	$(CXX) $(LDFLAGS) $^ libfleditor.a $(LIBS) -o $@
-+	$(CXX) $(LDFLAGS) test/multiple.o test/multfunc.o libfleditor.a $(LIBS) -o $@
++	$(CXX) $(LDFLAGS) test/multiple.o test/multfunc.o -R. -L. -lfleditor $(LIBS) -o $@
  
  #
  # Make the editor widget library.
@@ -91,7 +91,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2001/10/26 23:36:17 wilfried Exp $
  	$(RANLIB) libfleditor.a
  
 -libfleditor.so:	$(EDITOR_OBJS)
-+libfleditor.so.1.1:	$(EDITOR_OBJS)
++libfleditor.so.2.0:	$(EDITOR_OBJS)
  	echo Building library $@...
  	$(RM) libfleditor.so
  	@DSOCOMMAND@ @DSOLIBNAME@@DSOEXT@ $(EDITOR_OBJS)

@@ -1,7 +1,24 @@
-$OpenBSD: patch-configure,v 1.4 2001/10/26 23:36:17 wilfried Exp $
---- configure.orig	Wed Aug 29 21:13:56 2001
-+++ configure	Sat Oct 27 01:24:21 2001
-@@ -998,7 +998,7 @@ else
+$OpenBSD: patch-configure,v 1.5 2002/08/10 20:04:16 wilfried Exp $
+--- configure.orig	Mon Apr 22 18:23:58 2002
++++ configure	Fri Aug  9 15:52:32 2002
+@@ -20,7 +20,7 @@ ac_help="$ac_help
+ ac_help="$ac_help
+   --with-fltk=DIR         fltk root (for lib and include) [default=/usr/local]"
+ ac_help="$ac_help
+-  --with-fltk2            build for FLTK version 2 [default=no]"
++  --with-fltk2            build for \"FLTK 2 Pure\" [default=no]"
+ 
+ # Initialize some variables set by options.
+ # The variables have the same names as the options, with
+@@ -531,6 +531,7 @@ else
+ fi
+ 
+ 
++
+ # Extract the first word of "gcc", so it can be a program name with args.
+ set dummy gcc; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+@@ -997,7 +998,7 @@ else
  fi
  
  
@@ -10,7 +27,7 @@ $OpenBSD: patch-configure,v 1.4 2001/10/26 23:36:17 wilfried Exp $
  
  
  echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
-@@ -1348,33 +1348,12 @@ if test "${enable_shared+set}" = set; th
+@@ -1347,33 +1348,12 @@ if test "${enable_shared+set}" = set; th
    enableval="$enable_shared"
    
  if eval "test x$enable_shared = xyes"; then
@@ -43,12 +60,12 @@ $OpenBSD: patch-configure,v 1.4 2001/10/26 23:36:17 wilfried Exp $
 -          DSOCOMMAND="\$(CXX) -Wl,-soname,\$@ -shared $DEBUGFLAG -o"
 -	  ;;
 -  esac
-+  DSOEXT=".so.1.1"
++  DSOEXT=".so.2.0"
 +  DSOCOMMAND="\$(CXX) -Wl,-soname,\$@ \$(LDLIBS) -fPIC -shared $DEBUGFLAG -o"
  fi
  else
    
-@@ -1399,15 +1378,16 @@ else
+@@ -1398,36 +1378,35 @@ else
  fi
  
  
@@ -56,18 +73,22 @@ $OpenBSD: patch-configure,v 1.4 2001/10/26 23:36:17 wilfried Exp $
  # Check whether --with-fltk2 or --without-fltk2 was given.
  if test "${with_fltk2+set}" = set; then
    withval="$with_fltk2"
--     if test " x$withval = xyes"; then ac_fltk2="-DFLTK2"; fi 
+-     if eval "test  x$withval = xyes"; then 
+-        ac_fltk2="-DFLTK2=1 "; 
+-     fi 
 +     if test x$withval = xyes; then ac_fltk2="-DFL_MAJOR_VERSION=2"; fi 
  fi
  
  
- echo $ac_n "checking for numericsort in -lfltk""... $ac_c" 1>&6
+-echo $ac_n "checking for numericsort in -lfltk""... $ac_c" 1>&6
 -echo "configure:1411: checking for numericsort in -lfltk" >&5
-+echo "configure:1391: checking for numericsort in -lfltk" >&5
- ac_lib_var=`echo fltk'_'numericsort | sed 'y%./+-%__p_%'`
+-ac_lib_var=`echo fltk'_'numericsort | sed 'y%./+-%__p_%'`
++echo $ac_n "checking for fl_numericsort in -lfltk""... $ac_c" 1>&6
++echo "configure:1391: checking for fl_numericsort in -lfltk" >&5
++ac_lib_var=`echo fltk'_'fl_numericsort | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
-@@ -1415,7 +1395,7 @@ else
+ else
    ac_save_LIBS="$LIBS"
  LIBS="-lfltk  $LIBS"
  cat > conftest.$ac_ext <<EOF
@@ -76,8 +97,13 @@ $OpenBSD: patch-configure,v 1.4 2001/10/26 23:36:17 wilfried Exp $
  #include "confdefs.h"
  /* Override any gcc2 internal prototype to avoid an error.  */
  /* We use char because int might match the return type of a gcc2
-@@ -1426,7 +1406,7 @@ int main() {
- numericsort()
+     builtin and then its argument prototype would still apply.  */
+-char numericsort();
++char fl_numericsort();
+ 
+ int main() {
+-numericsort()
++fl_numericsort()
  ; return 0; }
  EOF
 -if { (eval echo configure:1430: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
@@ -85,7 +111,7 @@ $OpenBSD: patch-configure,v 1.4 2001/10/26 23:36:17 wilfried Exp $
    rm -rf conftest*
    eval "ac_cv_lib_$ac_lib_var=yes"
  else
-@@ -1451,97 +1431,6 @@ EOF
+@@ -1452,97 +1431,6 @@ EOF
  
  else
    echo "$ac_t""no" 1>&6
@@ -132,7 +158,7 @@ $OpenBSD: patch-configure,v 1.4 2001/10/26 23:36:17 wilfried Exp $
 -  cat >> confdefs.h <<\EOF
 -#define HAVE_GL 1
 -EOF
-- GLLIB=" -lGLU -lGL"
+- GLLIB=" -lGL"
 -else
 -  echo "$ac_t""no" 1>&6
 -\
