@@ -1,5 +1,0 @@
-OS=OpenBSD
-CC=gcc
-CFLAGS=-O2 
-XINC=/usr/X11R6/include
-XLIB=/usr/X11R6/lib
