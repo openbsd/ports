@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2005/03/29 21:18:34 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2005/03/30 08:15:04 espie Exp $
 
 COMMENT=		"K Desktop Environment, aRTs"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.4
 DISTNAME=		arts-1.4.0
 MODKDE_VERSION?=	3.4
+PKGNAME=		${DISTNAME}p0
 
 SHARED_ONLY=		No
 LIB_DEPENDS= 	audiofile::devel/libaudiofile \
@@ -19,19 +20,9 @@ SEPARATE_BUILD=flavored
 BUILD_DEPENDS=	::devel/pkgconfig
 
 CONFIGURE_ENV=LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
-PATCH_LIST=patch-*
+CONFIGURE_ARGS+=	${ENABLE_SHARED} --enable-static
 
 WANTLIB=	ICE SM X11 Xext c iconv intl jpeg m ossaudio png pthread \
 		stdc++ vorbisenc z
 		
-#pre-build:
-#	@if pkg dependencies check kdelibs-\*; then \
-#		if pkg dependencies check ${DISTNAME}; then \
-#			:; \
-#		else \
-#			echo 1>&2 "Error: you must remove your old kdelibs first"; \
-#			exit 1; \
-#		fi; \
-#    	fi
-
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2005/03/29 21:18:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2005/03/30 08:15:04 espie Exp $
 @conflict kdelibs-<3
 bin/artsc-config
 bin/artscat
@@ -95,21 +95,37 @@ include/arts/weakreference.h
 include/artsc/
 include/artsc/artsc.h
 include/artsc/artsc_export.h
+lib/libartsc.a
 lib/libartsc.la
+lib/libartscbackend.a
 lib/libartscbackend.la
+lib/libartsdsp.a
 lib/libartsdsp.la
+lib/libartsdsp_st.a
 lib/libartsdsp_st.la
+lib/libartsflow.a
 lib/libartsflow.la
+lib/libartsflow_idl.a
 lib/libartsflow_idl.la
+lib/libartsgslplayobject.a
 lib/libartsgslplayobject.la
+lib/libartswavplayobject.a
 lib/libartswavplayobject.la
+lib/libgmcop.a
 lib/libgmcop.la
+lib/libkmedia2.a
 lib/libkmedia2.la
+lib/libkmedia2_idl.a
 lib/libkmedia2_idl.la
+lib/libmcop.a
 lib/libmcop.la
+lib/libmcop_mt.a
 lib/libmcop_mt.la
+lib/libqtmcop.a
 lib/libqtmcop.la
+lib/libsoundserver_idl.a
 lib/libsoundserver_idl.la
+lib/libx11globalcomm.a
 lib/libx11globalcomm.la
 lib/mcop/
 lib/mcop/Arts/
