@@ -1,7 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.2 2000/08/29 17:49:10 danh Exp $
 --- configure.in.orig	Fri May  5 12:46:26 2000
-+++ configure.in	Tue Aug 29 13:23:30 2000
-@@ -400,22 +400,10 @@ if test "x$prefix" = "xNONE"; then
++++ configure.in	Wed Oct 25 16:35:10 2000
+@@ -400,22 +400,10 @@
    prefix=/usr/local
  fi
  
@@ -24,25 +23,39 @@ $OpenBSD: patch-configure_in,v 1.2 2000/08/29 17:49:10 danh Exp $
  dnl Set SNMPLIBPATH & SNMPSHAREPATH
  
  SNMPLIBPATH=""
-@@ -460,7 +448,7 @@ if test "x$with_shared" = "xyes"; then
-       SHLIB_CFLAGS="-KPIC"
-     fi
-     SHLIB_EXTENSION="so"
--    SHLIB_VERSION=
-+    SHLIB_VERSION=.41.2
-     SHLIB_LD_CMD="ld -r -o"
-     SHLIB_LDCONFIG_CMD=
-     SHLIB_LD_LIBS=
-@@ -498,7 +486,7 @@ yes
- 		AC_MSG_RESULT([no])
- 		SHLIB_LD_CMD="ld -Bshareable -o"
- 		CC_RUNTIME_ARG="-R$libdir"
--		SHLIB_LDCONFIG_CMD='PATH="$$PATH:/sbin" ldconfig -m $(libdir)'
-+		SHLIB_LDCONFIG_CMD=
+@@ -484,7 +472,7 @@
+ 	fi
+ 	;;
+ 
+-    netbsd*|openbsd*)
++    netbsd*)
+ 	AC_MSG_CHECKING(if this is ELF system)
+ 	AC_EGREP_CPP(yes, [dnl
+ #ifdef __ELF__
+@@ -502,6 +490,22 @@
  	])
  	;;
  
-@@ -1256,29 +1244,17 @@ AC_CHECK_STRUCT_FOR([
++    openbsd2.[01234567])
++	SHLIB_CFLAGS="-fPIC"	
++	SHLIB_LD_CMD="ld -Bshareable -o"
++	CC_RUNTIME_ARG="-R$libdir"
++	SHLIB_LDCONFIG_CMD='PATH="$$PATH:/sbin" ldconfig -m $(libdir)'
++	SHLIB_VERSION=.41.2
++	;;
++
++    openbsd*)
++	SHLIB_CFLAGS="-fPIC"
++	SHLIB_LD_CMD='$(CC) -shared -o'
++	CC_RUNTIME_ARG="-Wl,-rpath,$libdir"
++	SHLIB_LDCONFIG_CMD='PATH="$$PATH:/sbin" ldconfig -m $(libdir)'
++	SHLIB_VERSION=.41.2
++	;;
++
+     hpux*)
+ 	SHLIB_EXTENSION="sl"
+         if test "x$GCC" != "xyes"; then
+@@ -1256,29 +1260,17 @@
  
  AC_CHECK_STRUCT_FOR([
  #include <sys/types.h>
@@ -72,7 +85,7 @@ $OpenBSD: patch-configure_in,v 1.2 2000/08/29 17:49:10 danh Exp $
  #include <net/route.h>
  ], rtentry, rt_dst, no)
  
-@@ -1289,11 +1265,7 @@ AC_CACHE_CHECK(type of rtentry structure
+@@ -1289,11 +1281,7 @@
  dnl 4.4 compat
  AC_TRY_COMPILE([
  #include <sys/types.h>
@@ -84,7 +97,7 @@ $OpenBSD: patch-configure_in,v 1.2 2000/08/29 17:49:10 danh Exp $
  #include <net/route.h>
  ],[
  
-@@ -1310,11 +1282,7 @@ dnl 4.3 compat
+@@ -1310,11 +1298,7 @@
  if test "x$ac_cv_RTENTRY_TYPE" = "x"; then
  AC_TRY_COMPILE([
  #include <sys/types.h>
@@ -96,7 +109,7 @@ $OpenBSD: patch-configure_in,v 1.2 2000/08/29 17:49:10 danh Exp $
  #include <net/route.h>
  ],[
  struct rtentry rt; 
-@@ -1364,11 +1332,7 @@ AC_CACHE_CHECK(for struct rtentry has a 
+@@ -1364,11 +1348,7 @@
  [
  AC_TRY_COMPILE([
  #include <sys/types.h>
@@ -108,7 +121,7 @@ $OpenBSD: patch-configure_in,v 1.2 2000/08/29 17:49:10 danh Exp $
  #include <net/route.h>
  ],[
  struct rtentry rt; 
-@@ -1385,41 +1349,25 @@ fi
+@@ -1385,41 +1365,25 @@
  dnl Check struct rtentry for various things.
  AC_CHECK_STRUCT_FOR([
  #include <sys/types.h>
