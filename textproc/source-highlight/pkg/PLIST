@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/01/21 02:43:01 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/04/19 07:27:37 kevlo Exp $
 bin/cpp2html
 bin/java2html
+bin/source-highlight
+man/man1/source-highlight.1
 share/doc/source-highlight/COPYING
 share/doc/source-highlight/ChangeLog
 share/doc/source-highlight/Hello.css
@@ -25,8 +27,11 @@ share/doc/source-highlight/colors.html
 share/doc/source-highlight/cpp2html.css
 share/doc/source-highlight/mono-alt.css
 share/doc/source-highlight/mono.css
+share/doc/source-highlight/old_changes.html
 share/doc/source-highlight/source-highlight.html
 share/doc/source-highlight/startapp.cc.html
+share/doc/source-highlight/test.pl.html
+share/doc/source-highlight/test.pm.html
 share/source-highlight/tags.j2h 
 share/source-highlight/tags2.j2h 
 @dirrm share/source-highlight
