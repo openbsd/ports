@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/12 07:10:45 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/29 01:01:17 jolan Exp $
+@pkgcfl faad-*
 bin/playfair
 include/drmserr.h
 include/mp4.h
