@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2001/02/08 20:08:55 todd Exp $
+# $OpenBSD: Makefile,v 1.41 2001/03/14 21:56:06 wilfried Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -24,6 +24,8 @@
 #    SUBDIR += fd
 #    SUBDIR += fep
      SUBDIR += figlet
+     SUBDIR += fileutils
+     SUBDIR += findutils
      SUBDIR += gacc
 #    SUBDIR += git
      SUBDIR += gnuls
@@ -56,6 +58,7 @@
      SUBDIR += remind
      SUBDIR += rpm
      SUBDIR += screen
+     SUBDIR += sh-utils
      SUBDIR += splitvt
 #    SUBDIR += team
      SUBDIR += tkcron
