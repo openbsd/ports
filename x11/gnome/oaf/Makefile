@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/24 12:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/02/15 19:20:07 nino Exp $
 
 COMMENT=		"Object Activation Framework for GNOME"
-V=			0.6.5
-DISTNAME=		oaf-${V}
+
+DISTNAME=		oaf-0.6.8
 CATEGORIES=		devel
-NEED_VERSION=   	1.473
-HOMEPAGE=		http://www.gnome.org
+NEED_VERSION=   	1.504
+HOMEPAGE=		http://www.gnome.org/
+
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR= 	unstable/sources/oaf
-
-PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-                        ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
-                        patch-*
+MASTER_SITE_SUBDIR= 	stable/sources/oaf
+EXTRACT_SUFX=           .tar.bz2
 
 LIB_DEPENDS=		ORBit.5,IIOP,ORBitCosNaming,ORBitutil::devel/ORBit \
 			xml.9::textproc/libxml1 \
 			popt::devel/popt
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -28,10 +27,10 @@ USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${WRKSRC}/liboaf/.libs -L${LOCALBASE}/lib"
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/oaf; \
-	cp -rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/oaf/
+	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/oaf/
 
 .include <bsd.port.mk>
