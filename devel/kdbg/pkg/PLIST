@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/07/13 18:06:18 danh Exp $
 bin/kdbg
 share/applnk/Development/kdbg.kdelnk
 share/apps/kdbg/pics/brkcond.xpm
@@ -29,6 +30,20 @@ share/doc/HTML/ru/kdbg/index.html
 share/doc/HTML/ru/kdbg/types.html
 share/icons/kdbg.xpm
 share/icons/mini/mini-kdbg.xpm
+share/locale/cs/LC_MESSAGES/kdbg.mo
+share/locale/da/LC_MESSAGES/kdbg.mo
+share/locale/de/LC_MESSAGES/kdbg.mo
+share/locale/es/LC_MESSAGES/kdbg.mo
+share/locale/fr/LC_MESSAGES/kdbg.mo
+share/locale/hr/LC_MESSAGES/kdbg.mo
+share/locale/it/LC_MESSAGES/kdbg.mo
+share/locale/no/LC_MESSAGES/kdbg.mo
+share/locale/pl/LC_MESSAGES/kdbg.mo
+share/locale/pt/LC_MESSAGES/kdbg.mo
+share/locale/ro/LC_MESSAGES/kdbg.mo
+share/locale/ru/LC_MESSAGES/kdbg.mo
+share/locale/sk/LC_MESSAGES/kdbg.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kdbg.mo
 @dirrm share/doc/HTML/ru/kdbg
 @dirrm share/doc/HTML/en/kdbg
 @dirrm share/doc/HTML/de/kdbg

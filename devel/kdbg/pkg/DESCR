@@ -1,26 +1,29 @@
-KDbg is a graphical frontend for GDB and KDE.  
+KDbg is a graphical frontend for GDB and KDE.
 
-Features (From the webpage at http://members.telecom.at/~johsixt/kdbg.html)
+Features:
 
-Inspection of variable values in a tree structure. 
+Inspection of variable values in a tree structure.
 
-Direct member: For certain compound data types the most important member values are 
-displayed next to the variable name, so that it is not necessary to expand the
-subtree of that variable in order to see the member value. For example, you don't 
-need to go into a variable of type QString if you want to see the string that the variable
-holds. (BTW, this is of course not hardcoded, but can be extended to new types.) KDbg 
-can also display Qt 2.0's QString values, which are Unicode strings. 
+Direct member: For certain compound data types the most important member
+values are displayed next to the variable name, so that it is not
+necessary to expand the subtree of that variable in order to see the
+member value. For example, you don't need to go into a variable of type
+QString if you want to see the string that the variable holds. (BTW,
+this is of course not hardcoded, but can be extended to new types.) KDbg
+can also display Qt 2.0's QString values, which are Unicode strings.
 
-Debugger at your finger tips: The basic debugger functions (step, next, run, finish, until, 
-set/clear/enable/disable breakpoint) are bound to function keys F5 through F10.
+Debugger at your finger tips: The basic debugger functions (step, next,
+run, finish, until, set/clear/enable/disable breakpoint) are bound to
+function keys F5 through F10.
 
-Quick and easy. 
+Quick and easy.
 
-Of course, lots of other basic functions: View source code, search text, set program 
-arguments and environment variables, display arbitrary expressions. Everything you
-need to debug a program, eh! 
+Of course, lots of other basic functions: View source code, search text,
+set program arguments and environment variables, display arbitrary
+expressions. Everything you need to debug a program, eh!
 
-Debugging of core dumps, attaching to running processes is possible. 
+Debugging of core dumps, attaching to running processes is possible.
 
-Conditional breakpoints. 
+Conditional breakpoints.
 
+WWW: ${HOMEPAGE}
