@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/08/11 21:14:48 jakob Exp $
+# $OpenBSD: Makefile,v 1.16 2001/08/13 08:15:14 mpech Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
@@ -26,7 +26,8 @@ MASTER_SITES=	ftp://stunnel.mirt.net/stunnel/ \
 BUILD_DEPENDS=  sdf::textproc/p5-sdf
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-tcp-wrappers
+CONFIGURE_ARGS+=	--with-tcp-wrappers \
+			--with-pem-dir=${SYSCONFDIR}/ssl
 ALL_TARGET=		stunnel stunnel.8
 
 post-configure:
