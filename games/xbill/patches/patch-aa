@@ -1,0 +1,18 @@
+-
+- Imakefile.orig	Thu Jan 23 08:38:35 1997
++++ Imakefile	Tue Feb 11 22:05:59 1997
+@@ -1,4 +1,4 @@
+-XBILL_DIR = /var/lib/games/xbill/
++XBILL_DIR = $(PREFIX)/share/xbill/
+ XCOMM XBILL_DIR = $(HOME)/.xbill/
+ 
+ XCOMM Which widget set?  Motif looks slightly better; Athena is free.
+@@ -136,6 +136,7 @@
+ 
+ ComplexProgramTarget($(TARGET))
+ 
+-InstallProgramWithFlags(scores, $(XBILL_DIR), -m 777)
++# need to pick something with "Flags", but Program ==> strip
++InstallMultipleFlags(scores,$(XBILL_DIR),-m 666)
+ InstallMultiple ($(XPMS), $(XBILL_DIR)pixmaps)
+ InstallMultiple ($(XBMS), $(XBILL_DIR)bitmaps)
