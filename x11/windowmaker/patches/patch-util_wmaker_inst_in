@@ -1,6 +1,7 @@
---- util/wmaker.inst.in	2001/01/08 01:41:27	1.1
-+++ util/wmaker.inst.in	2001/01/08 01:48:25
-@@ -65,12 +65,18 @@
+$OpenBSD: patch-util_wmaker_inst_in,v 1.1 2001/02/07 13:28:09 wilfried Exp $
+--- util/wmaker.inst.in.orig	Sun Jan  7 02:46:56 2001
++++ util/wmaker.inst.in	Wed Feb  7 09:59:26 2001
+@@ -65,12 +65,18 @@ copy() {
  	elif [ "$file" = "WMRootMenu" ]; then
  		if [ "$LOCALE" ]; then
              	    if [ -f $GLOBALDIR/plmenu.${LOCALE%_*} ]; then
