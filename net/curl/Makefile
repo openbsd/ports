@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 1999/06/13 19:25:03 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/08/01 15:44:34 brad Exp $
 
-DISTNAME=	curl-5.9
+DISTNAME=	curl-5.9.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
 		ftp://ftp.all.de/pub2/unix/network/www/curl/ \
