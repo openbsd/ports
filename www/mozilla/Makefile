@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2003/07/04 06:59:15 marcm Exp $
+# $OpenBSD: Makefile,v 1.55 2003/07/16 16:41:24 jason Exp $
 
 NOT_FOR_ARCHS=	vax m68k hppa
 
@@ -22,6 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://ftp.mozilla.org/pub/mozilla/releases/mozilla${VER}/src/
 
 MULTI_PACKAGES=	-devel
+
+VMEM_WARNING=yes
 
 .for i in ${MULTI_PACKAGES}
 PKGNAME$i=	mozilla${i}-${VER}
