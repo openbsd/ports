@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2004/10/27 09:22:43 xsa Exp $
+# $OpenBSD: Makefile,v 1.127 2004/10/27 10:12:19 xsa Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -103,8 +103,8 @@
      SUBDIR += pornview
      SUBDIR += povray
      SUBDIR += povray,no_x11
-     SUBDIR += py-gd
      SUBDIR += py-Imaging
+     SUBDIR += py-gd
      SUBDIR += qiv
 #    SUBDIR += qvplay
      SUBDIR += ruby-gdk-imlib
