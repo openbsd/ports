@@ -1,0 +1,24 @@
+$OpenBSD: patch-manman8-psf8,v 1.1 2001/03/19 13:47:37 wilfried Exp $
+--- man/man8/psf.8.orig	Fri Mar 16 15:07:03 2001
++++ man/man8/psf.8	Fri Mar 16 15:11:16 2001
+@@ -90,13 +90,13 @@ and print the burst page last.
+ .RS
+ .nf
+ laser|lp|LaserWriter Plus on AppleTalk:\\
+-    :sd=/usr/spool/lpd/laser:\\
+-    :lp=/usr/spool/lpd/laser/null:\\
+-    :lf=/var/adm/lpd-errs:pw#80:hl:\\
+-    :of=:LIBDIR:/filters/ofpap:\\
+-    :if=:LIBDIR:/filters/ifpaprev:\\
+-    :tf=:LIBDIR:/filters/tfpaprev:\\
+-    :df=:LIBDIR:/filters/dfpaprev:
++    :sd=/var/spool/lpd/laser:\\
++    :lp=/var/spool/lpd/laser/null:\\
++    :lf=/var/log/lpd-errs:pw#80:hl:\\
++    :of=:RESDIR:/filters/ofpap:\\
++    :if=:RESDIR:/filters/ifpaprev:\\
++    :tf=:RESDIR:/filters/tfpaprev:\\
++    :df=:RESDIR:/filters/dfpaprev:
+ .fi
+ .RE
+ .sp
