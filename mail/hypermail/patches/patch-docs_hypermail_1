@@ -1,6 +1,6 @@
-$OpenBSD: patch-docs_hypermail_1,v 1.1 2001/05/23 02:58:53 form Exp $
---- docs/hypermail.1.orig	Wed May 23 09:21:26 2001
-+++ docs/hypermail.1	Wed May 23 09:21:38 2001
+$OpenBSD: patch-docs_hypermail_1,v 1.2 2001/10/11 08:05:47 mpech Exp $
+--- docs/hypermail.1.orig	Wed May  2 21:09:02 2001
++++ docs/hypermail.1	Thu Oct 11 10:55:21 2001
 @@ -156,7 +156,7 @@ sign, such as:
  Settings are read in this order: from the program's hard-wired internal defaults, from environment variables, from command-line options, from the configuration file.
  .LP
@@ -10,3 +10,8 @@ $OpenBSD: patch-docs_hypermail_1,v 1.1 2001/05/23 02:58:53 form Exp $
  for more information on configuration file usage.
  .LP
  Below is a list of variables that Hypermail understands.  Boolean numbers can have the value of
+@@ -538,4 +538,3 @@ Hisashi Gotoh <gotoh@horae.dti.ne.jp>
+ David Eisner <cradle@glue.umd.edu>
+ Andy Yoder <ayoder@heisenbug.org>
+ .nr
+-.TP

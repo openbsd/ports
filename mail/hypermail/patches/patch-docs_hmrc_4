@@ -1,9 +1,14 @@
-$OpenBSD: patch-docs_hmrc_4,v 1.1 2001/05/23 02:58:53 form Exp $
---- docs/hmrc.4.orig	Wed May 23 09:21:48 2001
-+++ docs/hmrc.4	Wed May 23 09:22:00 2001
+$OpenBSD: patch-docs_hmrc_4,v 1.2 2001/10/11 08:05:47 mpech Exp $
+--- docs/hmrc.4.orig	Wed Mar 14 20:59:56 2001
++++ docs/hmrc.4	Thu Oct 11 10:55:32 2001
 @@ -1,4 +1,4 @@
 -.TH hmrc 4 "October 27, 1999"
 +.TH hmrc 5 "October 27, 1999"
  .SH NAME
  hmrc \- Hypermail configuration file 
  .SH DESCRIPTION
+@@ -606,4 +606,3 @@ files so appropriate information can be 
+      %A - Author META TAG - Not valid on index pages
+      %S - Subject META TAG 
+ .nr
+-.TP
