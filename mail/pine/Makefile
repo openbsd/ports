@@ -4,15 +4,19 @@
 # Date created:		10 Nov 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.5 1998/08/03 04:11:48 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1998/08/14 20:27:07 marc Exp $
 #
 
-DISTNAME=       pine4.02
-PKGNAME=        pine-4.02
-CATEGORIES=     mail news
-MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
+DISTNAME=       	pine4.02
+PKGNAME=        	pine-4.02A
+CATEGORIES=     	mail news
 
-MAINTAINER=	marc@OpenBSD.ORG
+MAINTAINER=		marc@OpenBSD.ORG
+
+MASTER_SITES=		ftp://ftp.cac.washington.edu/pine/
+PATCH_SITES=		ftp://ftp.cac.washington.edu/pine/
+PATCHFILES=		pine4.02A.patch
+PATCH_DIST_STRIP=	-p1
 
 do-install:
 	@${INSTALL_PROGRAM} \
