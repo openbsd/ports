@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2001/01/18 18:01:28 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2001/03/14 21:06:55 brad Exp $
 
-DISTNAME=	gif2png-2.4.0
+DISTNAME=	gif2png-2.4.2
 CATEGORIES=	graphics
 NEED_VERSION=	1.336
 MASTER_SITES=	http://www.tuxedo.org/~esr/gif2png/ \
@@ -17,9 +17,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-png-inc="${LOCALBASE}/include" \
 		--with-png-lib="${LOCALBASE}/lib"
+
+
+DOCS=	COPYING README
 
 pre-patch:
 	@sed -e "s|@PREFIX@|${LOCALBASE}|" \
@@ -27,8 +31,7 @@ pre-patch:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gif2png
-	cd ${WRKSRC}; ${INSTALL_DATA} COPYING README \
-	 ${PREFIX}/share/doc/gif2png
+	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/gif2png
 	${INSTALL_SCRIPT} ${WRKSRC}/web2png ${PREFIX}/libexec/web2png.bin
 	${INSTALL_SCRIPT} ${WRKDIR}/web2png ${PREFIX}/bin
 
