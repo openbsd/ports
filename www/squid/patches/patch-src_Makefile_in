@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.7 2004/07/11 17:00:47 brad Exp $
---- src/Makefile.in.orig	Tue Jun  8 07:37:22 2004
-+++ src/Makefile.in	Sun Jul 11 12:23:14 2004
+$OpenBSD: patch-src_Makefile_in,v 1.8 2004/10/20 21:44:21 brad Exp $
+--- src/Makefile.in.orig	Sat Sep 25 17:37:59 2004
++++ src/Makefile.in	Wed Oct 20 16:45:55 2004
 @@ -33,7 +33,7 @@ bindir = @bindir@
  sbindir = @sbindir@
  libexecdir = @libexecdir@
@@ -18,7 +18,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.7 2004/07/11 17:00:47 brad Exp $
 -DEFAULT_MIME_TABLE = $(sysconfdir)/mime.conf
 +DEFAULT_CONFIG_FILE = $(prefix)/share/examples/squid/squid.conf
 +DEFAULT_MIME_TABLE = $(prefix)/share/examples/squid/mime.conf
- DEFAULT_DNSSERVER = $(libexecdir)/dnsserver$(EXEEXT)
+ DEFAULT_DNSSERVER = $(libexecdir)/`echo dnsserver | sed '$(transform);s/$$/$(EXEEXT)/'`
  DEFAULT_LOG_PREFIX = $(localstatedir)/logs
  DEFAULT_CACHE_LOG = $(DEFAULT_LOG_PREFIX)/cache.log
 @@ -389,7 +389,7 @@ DEFAULT_ICON_DIR = $(datadir)/icons
