@@ -1,8 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:02 espie Exp $
-libdata/perl5/site_perl/Authen/SASL.pm
-libdata/perl5/site_perl/Authen/SASL.pod
-libdata/perl5/site_perl/Authen/SASL/CRAM_MD5.pm
-libdata/perl5/site_perl/Authen/SASL/EXTERNAL.pm
+@comment $OpenBSD: PLIST,v 1.5 2002/06/27 03:34:57 kevlo Exp $
 libdata/perl5/site_perl/Bundle/Net/LDAP.pm
 libdata/perl5/site_perl/LWP/Protocol/ldap.pm
 libdata/perl5/site_perl/Net/LDAP.pm
@@ -41,7 +37,6 @@ libdata/perl5/site_perl/Net/LDAP/Search.pod
 libdata/perl5/site_perl/Net/LDAP/Security.pod
 libdata/perl5/site_perl/Net/LDAP/Util.pm
 libdata/perl5/site_perl/Net/LDAPS.pm
-man/man3p/Authen::SASL.3p
 man/man3p/Bundle::Net::LDAP.3p
 man/man3p/Net::LDAP.3p
 man/man3p/Net::LDAP::Constant.3p
@@ -71,4 +66,3 @@ man/man3p/Net::LDAPS.3p
 @dirrm libdata/perl5/site_perl/Net/LDAP/Control
 @dirrm libdata/perl5/site_perl/Net/LDAP
 @dirrm libdata/perl5/site_perl/Bundle/Net
-@dirrm libdata/perl5/site_perl/Authen/SASL
