@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2004/08/03 10:22:40 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2004/11/21 17:51:47 espie Exp $
 
 COMMENT=		"Multimedia player for the X Window System"
 COMMENT-esd=		"Esound output plugin for XMMS"
@@ -22,6 +22,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		GL ICE SM X11 Xext Xi Xxf86vm c glib gmodule m pthread z
 
 V=			1.2.x
 MASTER_SITES=		${HOMEPAGE}/files/$V/ \
@@ -72,10 +73,12 @@ DOCS=			README NEWS FAQ
 . if ${SUBPACKAGE} == "-esd"
 LIB_DEPENDS=		esd.2::audio/esound
 RUN_DEPENDS=		::audio/xmms
+WANTLIB+=		audiofile
 . endif
 . if ${SUBPACKAGE} == "-vorbis"
 LIB_DEPENDS=		vorbis.0,vorbisfile.1::audio/libvorbis
 RUN_DEPENDS=		::audio/xmms
+WANTLIB+=		ogg
 . endif
 . if ${SUBPACKAGE} == "-mikmod"
 LIB_DEPENDS=		mikmod.0::audio/libmikmod

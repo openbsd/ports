@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/12/29 19:29:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2004/11/21 17:51:45 espie Exp $
 
 COMMENT=	"curses-based mp3 player"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext c curses iberty m pthread usbhid
 
 LIB_DEPENDS=	SDL::devel/sdl \
 		smpeg.1.3:smpeg-*:devel/smpeg

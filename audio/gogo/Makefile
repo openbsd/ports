@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/24 22:20:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2004/11/21 17:51:45 espie Exp $
 
 COMMENT=	"686 class CPU optimized mp3 encoder"
 DISTNAME=	gogo226a	
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	MP3 patent, mp3licensing.com/details/software.html
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	MP3 patent. decoders are free. encoders are not.
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 USE_GMAKE=	Yes
 MAKE_FLAGS=	E3DN=''

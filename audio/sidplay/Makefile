@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/01/23 01:56:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/11/21 17:51:46 espie Exp $
 
 COMMENT=	"Commodore 64 music player and SID chip emulator"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m ossaudio stdc++
 
 MASTER_SITES=	${HOMEPAGE}packages/
 EXTRACT_SUFX=	.tgz

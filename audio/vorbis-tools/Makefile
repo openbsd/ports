@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/09/14 23:15:30 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2004/11/21 17:51:47 espie Exp $
 
 COMMENT=	"play, encode, and manage Ogg Vorbis files"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto m ogg pthread ssl z
 
 MASTER_SITES=	http://www.vorbis.com/files/1.0.1/unix/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/10/08 08:22:28 xsa Exp $
+# $OpenBSD: Makefile,v 1.22 2004/11/21 17:51:47 espie Exp $
 
 COMMENT=	"Motif-based audio mixer"
 DISTNAME=	xmmix-1.2.2
@@ -9,6 +9,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xext Xt c ossaudio
 
 MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmmix/src/
 

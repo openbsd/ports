@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/05/12 18:02:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.22 2004/11/21 17:51:47 espie Exp $
 
 COMMENT=	"MOD player"
 DISTNAME=	tracker-5.3
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 WRKDIST=		${WRKDIR}/tracker
 MAKE_FLAGS=	MACHINE=openbsd CC=$(CC) INSTALL="$(INSTALL)" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/04/05 20:26:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/11/21 17:51:46 espie Exp $
 
 # not very useful with static libao
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mpg321/}
 

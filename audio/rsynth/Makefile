@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/03/02 07:57:21 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2004/11/21 17:51:46 espie Exp $
 
 COMMENT=	"speech synthesizer"
 DISTNAME=	rsynth-2.0
@@ -9,6 +9,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
+WANTLIB=		c m ossaudio
 
 FAKE_FLAGS=		PREFIX=${WRKINST}${PREFIX}
 

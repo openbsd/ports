@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/12/27 23:42:03 jose Exp $
+# $OpenBSD: Makefile,v 1.19 2004/11/21 17:51:47 espie Exp $
 
 COMMENT=	"Tcl/Tk CD player"
 DISTNAME=	xcd-1.6
@@ -9,6 +9,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
+
 MAKE_FLAGS=BINDIR=${PREFIX}/bin \
 	CDDIR=${PREFIX}/lib/xcd \
 	MANDIR=${PREFIX}/man/man1

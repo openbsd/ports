@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/07/23 17:33:30 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2004/11/21 17:51:44 espie Exp $
 
 COMMENT=	"text to speech utility"
 
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_CDROM=   No, mods have to be clearly marked
 PERMIT_PACKAGE_FTP=     No, mods have to be clearly marked
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		c m
 
 MASTER_SITES=	http://www.speech.cs.cmu.edu/flite/packed/flite-${VERSION}/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2003/09/22 22:53:36 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.29 2004/11/21 17:51:45 espie Exp $
 
 COMMENT=	"u-law to gsm encoding audio converter and library"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	"no redistribution"
 PERMIT_PACKAGE_FTP=	"no redistribution"
 PERMIT_DISTFILES_CDROM=	"no redistribution"
 PERMIT_DISTFILES_FTP=	"no redistribution"
+WANTLIB=		c
 
 MAKE_FLAGS=	CC="${CC}" DEBUG="${CFLAGS}" LDINC='-L$$(LIB)'
 FAKE_FLAGS=	${MAKE_FLAGS} INSTALL_ROOT="${WRKINST}${PREFIX}"

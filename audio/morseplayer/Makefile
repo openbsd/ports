@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/02/04 17:27:37 jason Exp $
+# $OpenBSD: Makefile,v 1.3 2004/11/21 17:51:45 espie Exp $
 
 COMMENT=		"morse player"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 MASTER_SITES=		http://www.thought.net/jason/radio/
 

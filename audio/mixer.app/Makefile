@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/09/17 14:58:51 wilfried Exp $
+# $OpenBSD: Makefile,v 1.12 2004/11/21 17:51:45 espie Exp $
 
 COMMENT=		'wm-dockapp; sound mixer'
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xpm c m ossaudio stdc++
 
 MASTER_SITES=		${HOMEPAGE}
 

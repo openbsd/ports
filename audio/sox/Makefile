@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2004/10/19 16:19:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2004/11/21 17:51:46 espie Exp $
 
 COMMENT=	"SOund eXchange - universal sound sample translator"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	"no redistribution"
 PERMIT_PACKAGE_FTP=	"no redistribution"
 PERMIT_DISTFILES_CDROM=	"no redistribution"
 PERMIT_DISTFILES_FTP=	"no redistribution"
+WANTLIB=		c m
 
 MASTER_SITES=	http://www.cnpbagwell.com/ \
 		${MASTER_SITE_SOURCEFORGE:=sox/}
@@ -28,6 +29,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mvorbis}
 LIB_DEPENDS+=	vorbis.3,vorbisenc.2,vorbisfile.4::audio/libvorbis
+WANTLIB+=	ogg
 .else
 CONFIGURE_ARGS+= --disable-ogg-vorbis
 .endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/04/15 12:40:45 jakob Exp $
+# $OpenBSD: Makefile,v 1.23 2004/11/21 17:51:45 espie Exp $
 
 COMMENT=	"lame ain't an MP3 encoder"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	MP3 patent, http://mp3licensing.com/royalty/swenc.html
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	MP3 patent, http://mp3licensing.com/royalty/swenc.html
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m ncurses
 
 USE_GMAKE=	Yes
 
@@ -40,6 +41,7 @@ CONFIGURE_ARGS+= --disable-nasm
 CONFIGURE_ARGS+=	--enable-mp3x \
 			--with-gtk-prefix=${LOCALBASE}
 LIB_DEPENDS+=		gtk.1.2,gdk.1.2::x11/gtk+
+WANTLIB+=		X11 Xext Xi glib gmodule iconv intl
 .endif
 
 .include <bsd.port.mk>

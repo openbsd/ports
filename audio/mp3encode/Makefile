@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/04/20 22:40:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2004/11/21 17:51:45 espie Exp $
 
 COMMENT=	"MPEG layer I, II and III audio file encoder"
 DISTNAME=	dist10
@@ -10,6 +10,7 @@ PERMIT_PACKAGE_CDROM=	MP3 patent, http://mp3licensing.com/royalty/swenc.html
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	MP3 patent, http://mp3licensing.com/royalty/swenc.html
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=simple

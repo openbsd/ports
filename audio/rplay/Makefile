@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/09/22 10:02:18 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2004/11/21 17:51:46 espie Exp $
 
 COMMENT=	"network audio player"
 DISTNAME=	rplay-3.3.2
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 MASTER_SITES=	${HOMEPAGE}/dist/
 

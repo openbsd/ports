@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/10/09 16:51:44 jolan Exp $
+# $OpenBSD: Makefile,v 1.27 2004/11/21 17:51:47 espie Exp $
 
 COMMENT=	"MIDI to WAV renderer and player"
 DISTNAME=	timidity-0.2i
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	"copyrighted patches"
 PERMIT_PACKAGE_FTP=	"copyrighted patches"
 PERMIT_DISTFILES_CDROM=	"copyrighted patches"
 PERMIT_DISTFILES_FTP=	"copyrighted patches"
+WANTLIB=		c m ossaudio
 
 
 FLAVORS=motif curses slang
@@ -21,14 +22,17 @@ FLAVOR?=motif
 
 .if ${FLAVOR:L:Mcurses}
 MAKE_FLAGS+=-DCURSES
+WANTLIB+=		curses
 .endif
 .if ${FLAVOR:L:Mmotif} || ${FLAVOR:L:Mlesstif}
 MAKE_FLAGS+=-DMOTIF
 USE_MOTIF=	any
+WANTLIB+=		X11 Xext Xt
 .endif
 .if ${FLAVOR:L:Mslang}
 MAKE_FLAGS+=-DSLANG
 LIB_DEPENDS+=slang.::devel/libslang
+WANTLIB+=		curses
 .endif
 
 MAKE_ENV=	CC="${CC}"

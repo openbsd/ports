@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2003/02/12 00:35:20 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2004/11/21 17:51:44 espie Exp $
 
 COMMENT=	"high-quality MP3 encoder"
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	"MP3 patent, http://mp3licensing.com/royalty/swenc.html"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"MP3 patent, http://mp3licensing.com/royalty/swenc.html"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 CONFIGURE_STYLE= gnu
 

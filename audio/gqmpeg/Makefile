@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2004/10/01 22:38:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2004/11/21 17:51:45 espie Exp $
 
 COMMENT=		"front-end to various audio players"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xi c gdk glib gmodule gtk jpeg m png tiff z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gqmpeg/}
 

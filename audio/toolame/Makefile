@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/11 08:11:38 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/11/21 17:51:47 espie Exp $
 # $FreeBSD: ports/audio/toolame/Makefile,v 1.9 2004/02/08 01:13:48 lioux Exp $
 #
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=	c m
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=toolame/}
 EXTRACT_SUFX=		.tgz

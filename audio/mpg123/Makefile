@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2004/09/15 20:38:07 brad Exp $
+# $OpenBSD: Makefile,v 1.34 2004/11/21 17:51:46 espie Exp $
 
 COMMENT=	"mpeg audio 1/2 layer 1, 2 and 3 player"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 MASTER_SITES=	http://www.mpg123.de/mpg123/ \
 		http://www-ti.informatik.uni-tuebingen.de/~hippm/mpg123/ \
@@ -28,6 +29,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Mesd}
 LIB_DEPENDS=	esd.2::audio/esound
 ALL_TARGET=	openbsd-esd
+WANTLIB+=	audiofile
 .else
 ALL_TARGET=	openbsd
 .endif

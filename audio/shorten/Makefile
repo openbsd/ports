@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/05/04 16:42:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2004/11/21 17:51:46 espie Exp $
 
 COMMENT=	"fast compression for waveform files"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 MASTER_SITES=	${HOMEPAGE}source/
 

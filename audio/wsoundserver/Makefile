@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/04/19 13:36:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.21 2004/11/21 17:51:47 espie Exp $
 
 COMMENT=		'sound server for Window Maker'
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xpm c m ossaudio
 
 MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
 

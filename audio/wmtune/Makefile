@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/10/24 22:20:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2004/11/21 17:51:47 espie Exp $
 
 COMMENT=	"premier dockable radio tuner"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xpm c
 
 MASTER_SITES=		${HOMEPAGE}dl/
 

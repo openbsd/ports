@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/09/30 19:39:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/11/21 17:51:45 espie Exp $
 
 COMMENT=	"audio compression codec library"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		m
 
 MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
 
