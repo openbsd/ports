@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/13 08:18:20 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/15 08:02:52 wilfried Exp $
 
 COMMENT=		"GNU awk"
 
-DISTNAME=		gawk-3.1.0
+DISTNAME=		gawk-3.1.1
 CATEGORIES=		lang
 NEED_VERSION=		1.528
 
