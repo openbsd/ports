@@ -1,0 +1,10 @@
+LibNet implements the following interfaces:
+
+Net::FTP 	RFC959		File Transfer Protocol
+Net::SMTP	RFC821		Simple Mail Transfer Protocol
+Net::Time	RFC867		Daytime Protocol
+Net::Time	RFC868		Time Protocol
+Net::NNTP	RFC977		Network News Transfer Protocol
+Net::POP3	RFC1939		Post Office Protocol 3
+Net::SNPP	RFC1861		Simple Network Pager Protocol
+
