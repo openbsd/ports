@@ -1,6 +1,6 @@
-$OpenBSD: patch-pdftops_XRef_cxx,v 1.1.1.1 2005/01/16 12:36:51 mbalmer Exp $
+$OpenBSD: patch-pdftops_XRef_cxx,v 1.2 2005/01/22 17:12:43 mbalmer Exp $
 --- pdftops/XRef.cxx.orig	Wed Oct 13 22:55:53 2004
-+++ pdftops/XRef.cxx	Sat Dec 25 12:03:27 2004
++++ pdftops/XRef.cxx	Sat Jan 22 17:42:31 2005
 @@ -16,6 +16,7 @@
  #include <stddef.h>
  #include <string.h>
@@ -45,3 +45,13 @@ $OpenBSD: patch-pdftops_XRef_cxx,v 1.1.1.1 2005/01/16 12:36:51 mbalmer Exp $
            error(-1, "Invalid 'endstream' parameter.");
            return gFalse;
          }
+@@ -526,6 +527,9 @@ GBool XRef::checkEncrypted(GString *owne
+ 	  keyLength = lengthObj.getInt() / 8;
+ 	} else {
+ 	  keyLength = 5;
++	}
++	if (keyLength > 16) {
++	  keyLength = 16;
+ 	}
+ 	permFlags = permissions.getInt();
+ 	if (encVersion >= 1 && encVersion <= 2 &&
