@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/04 09:47:22 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/08 20:12:16 espie Exp $
 
 DISTNAME=	lmbench
 PKGNAME=	lmbench-1.1
@@ -7,10 +7,11 @@ CATEGORIES=	benchmarks
 MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+FAKE=			Yes
 
 # this is the new home site
 #
@@ -52,5 +53,9 @@ do-install:
 .for man in ${MAN8}
 	${INSTALL_MAN} ${WRKSRC}/doc/${man} ${PREFIX}/man/man8
 .endfor
+
+# Fix packaging for non-root
+post-install:
+	@chmod -R a+rX * ${PREFIX}/lib/lmbench
 
 .include <bsd.port.mk>
