@@ -1,0 +1,21 @@
+$OpenBSD: patch-env_env_open_c,v 1.1.1.1 2003/12/08 17:37:55 sturm Exp $
+--- env/env_open.c.orig	Tue Jun 17 01:25:53 2003
++++ env/env_open.c	Tue Jun 17 01:26:27 2003
+@@ -784,7 +784,7 @@ illegal:	__db_err(dbenv, "mis-formatted 
+ 		return (dbenv->set_lg_dir(dbenv, value));
+ 
+ 	if (!strcasecmp(name, "set_lk_detect")) {
+-		if (sscanf(value, "%40s %c", arg, &v4) != 1)
++		if (sscanf(value, "%39s %c", arg, &v4) != 1)
+ 			goto badarg;
+ 		if (!strcasecmp(value, "db_lock_default"))
+ 			flags = DB_LOCK_DEFAULT;
+@@ -840,7 +840,7 @@ illegal:	__db_err(dbenv, "mis-formatted 
+ 	}
+ 
+ 	if (!strcasecmp(name, "set_verbose")) {
+-		if (sscanf(value, "%40s %c", arg, &v4) != 1)
++		if (sscanf(value, "%39s %c", arg, &v4) != 1)
+ 			goto badarg;
+ 
+ 		if (!strcasecmp(value, "db_verb_chkpoint"))

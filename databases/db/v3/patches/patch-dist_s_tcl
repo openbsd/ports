@@ -1,0 +1,12 @@
+$OpenBSD: patch-dist_s_tcl,v 1.1.1.1 2003/12/08 17:37:55 sturm Exp $
+--- dist/s_tcl.orig	Thu May 11 21:36:08 2000
++++ dist/s_tcl	Thu Aug 30 21:01:38 2001
+@@ -11,7 +11,7 @@ f=../test/include.tcl
+ echo "Building $f"
+ rm -f $f
+ (echo "set tclsh_path @TCL_TCLSH@"		&& \
+- echo "set tcllib .libs/libdb_tcl-@DB_VERSION_MAJOR@.@DB_VERSION_MINOR@.@SOSUFFIX@" && \
++ echo "set tcllib .libs/libdb_tcl.@SOSUFFIX@.@DB_VERSION_MAJOR@.@DB_VERSION_MINOR@" && \
+  echo "set rpc_server localhost"	 	&& \
+  echo "set test_path @srcdir@/../test"		&& \
+  echo ""					&& \

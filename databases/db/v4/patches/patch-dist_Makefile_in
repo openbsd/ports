@@ -1,0 +1,134 @@
+$OpenBSD: patch-dist_Makefile_in,v 1.1.1.1 2003/12/08 17:37:52 sturm Exp $
+--- dist/Makefile.in.orig	2002-08-30 20:11:56.000000000 +0200
++++ dist/Makefile.in	2003-11-24 23:47:21.000000000 +0100
+@@ -11,7 +11,7 @@ exec_prefix=@exec_prefix@
+ bindir=	@bindir@
+ includedir=@includedir@
+ libdir=	@libdir@
+-docdir=	$(prefix)/docs
++docdir=	$(prefix)/share/doc/db4
+ 
+ dmode=	755
+ emode=	555
+@@ -61,11 +62,11 @@ LIBSO_LIBS=	@LIBSO_LIBS@
+ 
+ libdb=		libdb.a
+ libso_base=	libdb
+-libso=		$(libso_base)-$(SOVERSION).@SOSUFFIX@
++libso=		$(libso_base).@SOSUFFIX@.$(SOVERSION)
+ libso_static=	$(libso_base)-$(SOVERSION).a
+-libso_target=	$(libso_base)-$(SOVERSION).la
++libso_target=	$(libso_base).la
+ libso_default=	$(libso_base).@SOSUFFIX@
+-libso_major=	$(libso_base)-$(SOMAJOR).@SOSUFFIX@
++libso_major=	$(libso_base).@SOSUFFIX@.$(SOMAJOR)
+ 
+ ##################################################
+ # C++ API.
+@@ -80,11 +81,11 @@ LIBXSO_LIBS=	@LIBXSO_LIBS@
+ 
+ libcxx=		libdb_cxx.a
+ libxso_base=	libdb_cxx
+-libxso=		$(libxso_base)-$(SOVERSION).@SOSUFFIX@
++libxso=		$(libxso_base).@SOSUFFIX@.$(SOVERSION)
+ libxso_static=	$(libxso_base)-$(SOVERSION).a
+-libxso_target=	$(libxso_base)-$(SOVERSION).la
++libxso_target=	$(libxso_base).la
+ libxso_default=	$(libxso_base).@SOSUFFIX@
+-libxso_major=	$(libxso_base)-$(SOMAJOR).@SOSUFFIX@
++libxso_major=	$(libxso_base).@SOSUFFIX@.$(SOMAJOR)
+ 
+ ##################################################
+ # Java API.
+@@ -126,11 +127,11 @@ libjso_g=	$(libjso_base)-$(SOVERSION)_g.
+ TCFLAGS=	@TCFLAGS@
+ LIBTSO_LIBS=	@LIBTSO_LIBS@
+ libtso_base=	libdb_tcl
+-libtso=		$(libtso_base)-$(SOVERSION).@MODSUFFIX@
+-libtso_static=	$(libtso_base)-$(SOVERSION).a
+-libtso_target=	$(libtso_base)-$(SOVERSION).la
++libtso=		$(libtso_base).@MODSUFFIX@.$(SOVERSION)
++libtso_static=	$(libtso_base).a
++libtso_target=	$(libtso_base).la
+ libtso_default=	$(libtso_base).@MODSUFFIX@
+-libtso_major=	$(libtso_base)-$(SOMAJOR).@MODSUFFIX@
++libtso_major=	$(libtso_base).@MODSUFFIX@.$(SOMAJOR)
+ 
+ ##################################################
+ # db_dump185 UTILITY
+@@ -364,8 +365,8 @@ RPC_JAVASRV_SRCS=\
+ 
+ UTIL_PROGS=\
+ 	@ADDITIONAL_PROGS@ \
+-	db_archive db_checkpoint db_deadlock \
+-	db_dump db_load db_printlog db_recover db_stat db_upgrade db_verify
++	db4_archive db4_checkpoint db4_deadlock \
++	db4_dump db4_load db4_printlog db4_recover db4_stat db4_upgrade db4_verify
+ 
+ ##################################################
+ # List of files installed into the library directory.
+@@ -481,53 +482,53 @@ berkeley_db_javasvc: $(rpc_jarfile)
+ 	echo >> $@ exec java com.sleepycat.db.rpcserver.DbServer \$$@
+ 	chmod +x $@
+ 
+-db_archive: db_archive@o@ util_sig@o@ $(DEF_LIB)
++db4_archive: db_archive@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_archive@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_checkpoint: db_checkpoint@o@ util_log@o@ util_sig@o@ $(DEF_LIB)
++db4_checkpoint: db_checkpoint@o@ util_log@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_checkpoint@o@ util_log@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_deadlock: db_deadlock@o@ util_log@o@ util_sig@o@ $(DEF_LIB)
++db4_deadlock: db_deadlock@o@ util_log@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_deadlock@o@ util_log@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_dump: db_dump@o@ util_cache@o@ util_sig@o@ $(DEF_LIB)
++db4_dump: db_dump@o@ util_cache@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) db_dump@o@ util_cache@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_dump185: db_dump185@o@ @LTLIBOBJS@
++db4_dump185: db_dump185@o@ @LTLIBOBJS@
+ 	$(CCLINK) -o $@ $(LDFLAGS) db_dump185@o@ @LTLIBOBJS@ $(DB185LIB)
+ 	$(POSTLINK) $@
+ 
+-db_load: db_load@o@ util_cache@o@ util_sig@o@ $(DEF_LIB)
++db4_load: db_load@o@ util_cache@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) db_load@o@ util_cache@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_printlog: db_printlog@o@ util_sig@o@ $(DEF_LIB)
++db4_printlog: db_printlog@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_printlog@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_recover: db_recover@o@ util_sig@o@ $(DEF_LIB)
++db4_recover: db_recover@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_recover@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_stat: db_stat@o@ util_cache@o@ util_sig@o@ $(DEF_LIB)
++db4_stat: db_stat@o@ util_cache@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) db_stat@o@ util_cache@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_upgrade: db_upgrade@o@ util_sig@o@ $(DEF_LIB)
++db4_upgrade: db_upgrade@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_upgrade@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_verify: db_verify@o@ util_cache@o@ util_sig@o@ $(DEF_LIB)
++db4_verify: db_verify@o@ util_cache@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_verify@o@ util_cache@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@

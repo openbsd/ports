@@ -1,0 +1,11 @@
+--- dist/Makefile.in.orig	Fri Aug 30 20:11:56 2002
++++ dist/Makefile.in	Wed Dec  3 20:44:10 2003
+@@ -1203,7 +1206,7 @@
+ rijndael-api-fst@o@: $(srcdir)/crypto/rijndael/rijndael-api-fst.c
+ 	$(CC) $(CFLAGS) $?
+ sha1@o@: $(srcdir)/hmac/sha1.c
+-	$(CC) $(CFLAGS) $?
++	$(CC) $(CFLAGS) -O0 $?
+ txn@o@: $(srcdir)/txn/txn.c
+ 	 $(CC) $(CFLAGS) $?
+ txn_auto@o@: $(srcdir)/txn/txn_auto.c
