@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_parse_c,v 1.1 2001/05/23 02:58:54 form Exp $
---- src/parse.c.orig	Wed May 23 09:27:09 2001
-+++ src/parse.c	Wed May 23 09:28:03 2001
+$OpenBSD: patch-src_parse_c,v 1.2 2002/03/21 09:28:04 form Exp $
+--- src/parse.c.orig	Thu Mar 21 14:46:43 2002
++++ src/parse.c	Thu Mar 21 14:47:28 2002
 @@ -43,7 +43,7 @@
  #include <sys/dir.h>
  #endif
@@ -10,19 +10,3 @@ $OpenBSD: patch-src_parse_c,v 1.1 2001/05/23 02:58:54 form Exp $
  
  typedef enum {
      ENCODE_NORMAL,
-@@ -241,6 +241,7 @@ void print_progress(int num, char *msg, 
-     fflush(stdout);
- }
- 
-+#if 0
- char *tmpname(char *dir, char *pfx)
- {
-     char *f, *name;
-@@ -257,6 +258,7 @@ char *tmpname(char *dir, char *pfx)
-     free(name);
-     return (NULL);
- }
-+#endif
- 
- char *safe_filename(char *name)
- {
