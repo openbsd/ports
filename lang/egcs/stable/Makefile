@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.5 1998/12/04 00:24:31 espie Exp $
+# $OpenBSD: Makefile,v 1.6 1998/12/10 12:24:21 d Exp $
 #
 
 # This is a configuration file for egcs, stable release
@@ -63,6 +63,7 @@ DISTFILES+=egcs-objc-${VERSION}${EXTRACT_SUFX}
 
 MASTER_SITES=	ftp://egcs.cygnus.com/pub/${DIRECTORY} 
 MASTER_SITES+=	ftp://ftp.lip6.fr/pub/${DIRECTORY}
+MASTER_SITES+=	ftp://mirror.aarnet.edu.au/pub/${DIRECTORY}
 MASTER_SITES+= ftp://go.cygnus.com/pub/ftp.cygnus.com/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.goof.com/pub/pcg/${DIRECTORY}
 MASTER_SITES+= ftp://cambridge.cygnus.com/pub/${DIRECTORY}
