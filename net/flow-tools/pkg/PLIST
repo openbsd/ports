@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/08/26 06:58:20 jakob Exp $
+bin/flow-capture
+bin/flow-cat
+bin/flow-dscan
+bin/flow-expire
+bin/flow-export
+bin/flow-fanout
+bin/flow-filter
+bin/flow-gen
+bin/flow-print
+bin/flow-profile
+bin/flow-receive
+bin/flow-send
+bin/flow-stat
+man/man1/flow-capture.1
+man/man1/flow-cat.1
+man/man1/flow-dscan.1
+man/man1/flow-expire.1
+man/man1/flow-export.1
+man/man1/flow-fanout.1
+man/man1/flow-filter.1
+man/man1/flow-gen.1
+man/man1/flow-print.1
+man/man1/flow-profile.1
+man/man1/flow-stat.1
