@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/11/28 07:39:35 shell Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/01/04 17:29:51 shell Exp $
 bin/pychecker
 lib/python${PYTHON_VER}/site-packages/pychecker/CodeChecks.py
 lib/python${PYTHON_VER}/site-packages/pychecker/CodeChecks.pyc
@@ -37,5 +37,3 @@ share/doc/py-Checker/README
 share/doc/py-Checker/TODO
 @dirrm share/doc/py-Checker
 @dirrm lib/python${PYTHON_VER}/site-packages/pychecker
-@dirrm lib/python${PYTHON_VER}/site-packages
-@dirrm lib/python${PYTHON_VER}
