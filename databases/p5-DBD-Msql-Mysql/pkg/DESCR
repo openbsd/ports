@@ -9,5 +9,3 @@ provided by the respective programming API's are supported.
 Flavor: dbimon
         Installs dbimon - an interactive shell with readline for
         DBI
-
-WWW: ${HOMEPAGE}
