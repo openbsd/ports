@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/18 10:08:24 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/21 23:43:57 espie Exp $
 # $FreeBSD: Makefile,v 1.4 1997/07/10 03:25:28 jfieber Exp $
 
 DISTNAME=	isoENTS
 PKGNAME=	iso8879-1986
 CATEGORIES=	textproc
 NEED_VERSION=	1.191
-FAKE=No
 MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 
 MAINTAINER=	matthieu@laas.fr
@@ -15,13 +14,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-NO_MTREE=       yes
 EXTRACT_ONLY=	# empty
-NO_BUILD=       yes
-NO_PATCH=	yes
-NO_CONFIGURE=	yes
+NO_BUILD=       Yes
+NO_PATCH=	Yes
+NO_CONFIGURE=	Yes
 WRKDIST=	${WRKDIR}
-USE_ZIP=	yes
+USE_ZIP=	Yes
+FAKE=		Yes
 
 INSTDIR=	${PREFIX}/share/sgml/iso8879
 
