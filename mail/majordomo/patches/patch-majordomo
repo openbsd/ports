@@ -5,7 +5,7 @@
  while ($ARGV[0]) {	# parse for config file or default list
      if ($ARGV[0] =~ /^-C$/i) {	# sendmail v8 clobbers case
 -        $cf = $ARGV[1];
-+        $cf = "$ENV{'MAJORDOMO_CFDIR'}/$ARGV[1]" unless $ARGV[1] ~= /\//;
++        $cf = "$ENV{'MAJORDOMO_CFDIR'}/$ARGV[1]" unless $ARGV[1] =~ /\//;
          shift(@ARGV); 
          shift(@ARGV); 
      } elsif ($ARGV[0] eq "-l") {
