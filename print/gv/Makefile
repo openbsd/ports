@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 1999/09/06 23:09:40 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/09/26 22:51:37 espie Exp $
 
 DISTNAME=	gv-3.5.8
 CATEGORIES=	print
-MASTER_SITES=	ftp://thep.physik.uni-mainz.de/pub/gv/unix/
+MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/gv/unix/
 
 NEED_VERSION=	1.88
 
