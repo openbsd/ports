@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2000/04/18 09:48:01 turan Exp $
+# $OpenBSD: Makefile,v 1.19 2000/07/20 05:14:47 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1997/07/17 15:12:58 max Exp $
 
 PKGNAME=	rsaref-2.0
 DISTNAME=	rsaref20.1996
 CATEGORIES=	security
-NEED_VERSION=	1.234
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.zedz.net/pub/crypto/crypto/LIBS/rsa/ \
 		http://the.wiretapped.net/security/cryptography/libs/rsa/ \
 		ftp://utopia.hacktic.nl/pub/replay/pub/crypto/LIBS/rsa/
@@ -17,8 +17,6 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
-
-FAKE=	Yes
 
 WRKDIST=	${WRKDIR}/source
 
