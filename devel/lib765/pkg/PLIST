@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/12/16 14:28:54 grange Exp $
+include/765.h
+lib/lib765.a
+lib/lib765.la
+share/doc/lib765/765.txt
+%%SHARED%%
+@dirrm share/doc/lib765
