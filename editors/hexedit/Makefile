@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 1998/10/20 08:39:45 form Exp $
+# $OpenBSD: Makefile,v 1.5 1998/12/05 21:59:15 jasoni Exp $
 # FreeBSD: Makefile,v 1.1.1.1 1998/08/10 00:31:40 steve Exp
 #
 
-DISTNAME=	hexedit-0.9.3
+DISTNAME=	hexedit-1.0.0
 CATEGORIES=	editors
-
-#BROKEN=	"newer version available"
 
 MAINTAINER=	form@OpenBSD.ORG
 
 MASTER_SITES=	http://www.chez.com/prigaux/
 EXTRACT_SUFX=	.src.tgz
 
-ALL_TARGET=
+GNU_CONFIGURE=	YES
 WRKSRC=		${WRKDIR}/hexedit
 
 do-install:
