@@ -1,7 +1,7 @@
-$OpenBSD: patch-noatun-plugins_luckytag_Makefile_in,v 1.1 2002/04/21 13:50:29 espie Exp $
---- noatun-plugins/luckytag/Makefile.in.orig	Sun Apr 21 00:15:20 2002
-+++ noatun-plugins/luckytag/Makefile.in	Sun Apr 21 02:24:24 2002
-@@ -237,7 +237,7 @@ kde_module_LTLIBRARIES = noatunluckytag.
+$OpenBSD: patch-noatun-plugins_luckytag_Makefile_in,v 1.2 2003/01/27 19:29:15 espie Exp $
+--- noatun-plugins/luckytag/Makefile.in.orig	Thu Jan 16 21:50:26 2003
++++ noatun-plugins/luckytag/Makefile.in	Sat Jan 18 15:40:18 2003
+@@ -255,7 +255,7 @@ kde_module_LTLIBRARIES = noatunluckytag.
  
  noatunluckytag_la_SOURCES = luckytag.cpp parsedmp3filename.cpp
  noatunluckytag_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined

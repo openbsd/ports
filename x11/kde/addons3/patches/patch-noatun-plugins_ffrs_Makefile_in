@@ -1,0 +1,12 @@
+$OpenBSD: patch-noatun-plugins_ffrs_Makefile_in,v 1.1 2003/01/27 19:29:15 espie Exp $
+--- noatun-plugins/ffrs/Makefile.in.orig	Sat Jan 18 15:59:08 2003
++++ noatun-plugins/ffrs/Makefile.in	Sat Jan 18 15:59:12 2003
+@@ -256,7 +256,7 @@ kde_module_LTLIBRARIES = noatun_ffrs.la
+ noatun_ffrs_la_SOURCES = ffrs.cpp
+ 
+ noatun_ffrs_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_ffrs_la_LIBADD = $(LIB_KFILE) -lnoatun -lm
++noatun_ffrs_la_LIBADD = $(LIB_KFILE) -lknoatun -lm
+ 
+ #>- noatun_ffrs_la_METASOURCES = AUTO
+ 

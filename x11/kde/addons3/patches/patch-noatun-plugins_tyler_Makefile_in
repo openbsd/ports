@@ -1,21 +1,12 @@
-$OpenBSD: patch-noatun-plugins_tyler_Makefile_in,v 1.1 2002/04/21 13:50:29 espie Exp $
---- noatun-plugins/tyler/Makefile.in.orig	Sun Apr 21 00:15:20 2002
-+++ noatun-plugins/tyler/Makefile.in	Sun Apr 21 02:23:06 2002
-@@ -240,7 +240,7 @@ kde_module_LTLIBRARIES = noatuntyler.la
+$OpenBSD: patch-noatun-plugins_tyler_Makefile_in,v 1.2 2003/01/27 19:29:15 espie Exp $
+--- noatun-plugins/tyler/Makefile.in.orig	Thu Jan 16 21:50:26 2003
++++ noatun-plugins/tyler/Makefile.in	Sat Jan 18 15:47:29 2003
+@@ -258,7 +258,7 @@ kde_module_LTLIBRARIES = noatuntyler.la
  
  noatuntyler_la_SOURCES = tyler.cpp
  noatuntyler_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
--noatuntyler_la_LIBADD = $(LIB_KFILE) $(kde_libraries)/libnoatun.so -lm
+-noatuntyler_la_LIBADD = $(LIB_KFILE) -lnoatun -lm
 +noatuntyler_la_LIBADD = $(LIB_KFILE) -lknoatun -lm
  
  bin_PROGRAMS = noatuntyler.bin
  
-@@ -255,7 +255,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
- CONFIG_CLEAN_FILES =
- LTLIBRARIES = $(kde_module_LTLIBRARIES)
- 
--noatuntyler_la_DEPENDENCIES = $(kde_libraries)/libnoatun.so
-+noatuntyler_la_DEPENDENCIES = 
- am_noatuntyler_la_OBJECTS = tyler.lo
- #>- noatuntyler_la_OBJECTS = $(am_noatuntyler_la_OBJECTS)
- #>+ 5

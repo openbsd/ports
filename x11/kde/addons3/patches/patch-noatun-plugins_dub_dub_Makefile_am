@@ -1,12 +1,12 @@
-$OpenBSD: patch-noatun-plugins_dub_dub_Makefile_am,v 1.1 2002/04/21 13:50:29 espie Exp $
---- noatun-plugins/dub/dub/Makefile.am.orig	Sun Apr 21 00:15:20 2002
-+++ noatun-plugins/dub/dub/Makefile.am	Sun Apr 21 00:15:38 2002
-@@ -30,7 +30,7 @@ EXTRA_DIST = main.cpp dub.cpp dub.h dubd
- INCLUDES += -I$(kde_includes)/noatun $(all_includes)
+$OpenBSD: patch-noatun-plugins_dub_dub_Makefile_am,v 1.2 2003/01/27 19:29:15 espie Exp $
+--- noatun-plugins/dub/dub/Makefile.am.orig	Mon Jul  1 20:53:03 2002
++++ noatun-plugins/dub/dub/Makefile.am	Sat Jan 18 15:46:02 2003
+@@ -7,7 +7,7 @@ noatundub_la_SOURCES = dubprefs.ui dubpl
+ EXTRA_DIST = main.cpp dub.cpp dub.h dubdoc.cpp dubdoc.h dubview.cpp dubview.h dubui.rc dub.plugin fileselectorwidget.cpp fileselectorwidget.h dubplaylist.cpp dubplaylist.h dubplaylistitem.cpp dubplaylistitem.h BUGS dubprefs.ui 
  
  noatundub_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
--noatundub_la_LIBADD = $(LIB_KFILE) -lnoatun
-+noatundub_la_LIBADD = $(LIB_KFILE) -lknoatun
+-noatundub_la_LIBADD = $(LIB_KIO) -lnoatun
++noatundub_la_LIBADD = $(LIB_KIO) -lknoatun
  
- #libnoatungeneric_la_METASOURCES = AUTO
- 
+ data_DATA = dub.plugin
+ datadir = $(kde_datadir)/noatun

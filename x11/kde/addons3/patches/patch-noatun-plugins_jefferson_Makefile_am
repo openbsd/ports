@@ -1,12 +1,12 @@
-$OpenBSD: patch-noatun-plugins_jefferson_Makefile_am,v 1.1 2002/04/21 13:50:29 espie Exp $
---- noatun-plugins/jefferson/Makefile.am.orig	Sun Apr 21 00:15:20 2002
-+++ noatun-plugins/jefferson/Makefile.am	Sun Apr 21 00:18:00 2002
+$OpenBSD: patch-noatun-plugins_jefferson_Makefile_am,v 1.2 2003/01/27 19:29:15 espie Exp $
+--- noatun-plugins/jefferson/Makefile.am.orig	Sun Sep 15 23:07:19 2002
++++ noatun-plugins/jefferson/Makefile.am	Sat Jan 18 15:46:26 2003
 @@ -6,7 +6,7 @@ noatunjefferson_la_SOURCES = cmodule.cpp
  	plugininterface.cpp \
  	kosd.cpp
  noatunjefferson_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
--noatunjefferson_la_LIBADD = $(LIB_KFILE) -lnoatun
-+noatunjefferson_la_LIBADD = $(LIB_KFILE) -lknoatun
+-noatunjefferson_la_LIBADD = $(LIB_KIO) -lnoatun
++noatunjefferson_la_LIBADD = $(LIB_KIO) -lknoatun
  
  noatunjefferson_la_METASOURCES = AUTO
  
