@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $OpenBSD: license-check,v 1.3 1998/09/24 04:27:04 marc Exp $
+# $OpenBSD: license-check,v 1.4 1998/09/25 02:34:31 marc Exp $
 #
 # This script verifies that all files in a given directory are
 # mentioned in the ports LICENSE file as Distribution allowed.
@@ -95,6 +95,16 @@ END {
     header = 0
     for ( f in good_files ) {
 	if ( good_files[ f ] == 0 ) {
+	    if ( ! header ) {
+		print "You are missing the following files:"
+		print
+		header = 1
+	    }
+	    print f
+	}
+    }
+    for ( f in unk_files ) {
+	if ( unk_files[ f ] == 0 ) {
 	    if ( ! header ) {
 		print "You are missing the following files:"
 		print

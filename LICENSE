@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.5 1998/09/24 04:27:04 marc Exp $
+$OpenBSD: LICENSE,v 1.6 1998/09/25 02:34:31 marc Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -8,7 +8,8 @@ OpenBSD FTP server.
 	As a safety measure a distribution MUST be listed in this
 	file and MUST be marked as Distribution allowed = Y for it
 	to be in the distfiles directory of either the FTP server
-	or the OpenBSD CD-ROM.
+	or the OpenBSD CD-ROM.  (These files can be found in the 
+	licensed directory of the ftp server).
 
 License types:
 
@@ -29,7 +30,7 @@ LIC:	Requires license for redistribution.
 	Note: a license may only be required for a `commercial' distribution
 	which is how I'm treating the OpenBSD CD-ROMs.
 NONE:	No license/copyright found in source code or related documentation.
-NOFEE:	Can not sell
+NOFEE:	Can not charge for distribution
 	The software may be `free', but the copyright states `may not charge
 	for distribution' or words to that effect.
 PD:	Explicitly stated to be in the Public Domain.
@@ -47,7 +48,7 @@ TOG:	The Open Group license.  Not to be confused with X or XFree86.
 	BE RESTRICTIVE WITH RESPECT TO USE OF THE BINARY AND/OR
 	SOURCE CODE.  PLEASE READ ALL LICENSES/COPYRIGHTS CAREFULLY.
 
-+- Distribution allowed (Y/N)
++- Distribution allowed (Y or N)
 |
 v	port name			distfile name			License
 
@@ -93,7 +94,7 @@ Y	benchmarks/bonnie		Bonnie.tar.Z			BSD
 Y	benchmarks/bytebench		bytebench-3.1.tar.Z		NONE
 Y	benchmarks/iozone		iozone-2.01.shar.gz		COPY
 Y	benchmarks/lmbench		lmbench.tar.Z			GPL
-Y	benchmarks/tcpblast		-none-				NONE
+N	benchmarks/tcpblast		-none-				NONE
 N	benchmarks/xengine		xengine				NOFEE
 ?	cad/spice/			sp3f4.kit.tar.Z			???
 ?	cad/spice/			sp3f4.patch.tar.Z		???
@@ -116,6 +117,7 @@ Y	comms/xcept			xcept-2.1.2.tar.gz		BSD
 Y	comms/zmtx-zmrx			zmtx-zmrx.shar.gz		COPY
 ?	converters/btoa			btoa-5.2.tar.gz			???
 ?	converters/btoa			btoa-5.2-patch1.gz		???
+?	converters/base64		base64.tar.gz			???
 ?	converters/ish			ish-1.11.tar.gz			???
 ?	converters/mimepp		mimepp-1.0.tar.gz		???
 ?	converters/mpack		mpack-1.5-src.tar.Z		???
@@ -141,7 +143,7 @@ Y	devel/libslang			slang0.99-38.tar.gz		GPL/PERL
 Y	devel/m4			m4-1.4.tar.gz			GPL
 ?	devel/nasm			nasm-0.97.tar.gz		???
 Y	devel/swig			swig1.1.tar.gz			BSD
-?	devel/tkcvs			tkcvs-6.0.tar.gz		???
+N	devel/tkcvs			-none-				NONE
 Y	devel/xmake			xmake-1.01.tgz			NONE
 N	editors/axe			aXe-6.1.2.tar.Z			NOFEE
 Y	editors/beav			beav_140-7.tar.gz		GPL
@@ -171,7 +173,7 @@ Y	games/abuse			abuse_pd.tar.gz			PD
 ?	games/gnushogi			gnushogi-1.2p03.tar.gz		???
 ?	games/nethack			nethack-3.2.2.tar.gz		???
 ?	games/netris			netris-0.4.tar.gz		???
-?	games/slash			slash-e8.tar.gz			???
+N	games/slash			-none-				???
 ?	games/spider			spider.tar.gz			???
 ?	games/starlanes			starlanes-1.2.2.tar.gz		???
 ?	games/xasteroids		xasteroids.sh.Z			???
@@ -233,13 +235,18 @@ N	graphics/xv			xv-3.10a			NOFEE
 ?	japanese/Wnn			Wnn4.2.patch.tar.gz		???
 ?	japanese/jvim			jvim2.0r+onew2.2.10.tar.gz	???
 ?	japanese/kterm			kterm-6.2.0.tar.gz		???
+?	japanese/kterm			kterm-6.2.0.NFS-xauth.patch	???
 ?	japanese/less			less-332.tar.gz			???
+?	japanese/less			less-332-iso242.patch.gz	???
+?	japanese/less			less-332-iso242-243.patch.gz	???
+?	japanese/less			less-332-iso243-244.patch.gz	???
+?	japanese/less			less-332-iso244-245.patch.gz	???
 ?	japanese/onew-wnn4		jvim2.0r+onew2.2.10.tar.gz	???
 Y	lang/Gofer			gofer230a.tar.gz		BSD
 N	lang/STk			STk-3.1.tar.gz			NOFEE
 Y	lang/expect			expect.tar.gz			PD
 ?	lang/guavac			guavac-1.2.tar.gz		GPL
-?	lang/kaffe			kaffe-0.8.4.tgz			???
+?	lang/kaffe			kaffe-0.8.4			???
 ?	lang/kaffe1			kaffe-1.0.b1.tar.gz		???
 Y	lang/ocaml			ocaml-1.07.tar.gz		COPY
 Y	lang/ocaml			ocaml-1.07-refman.html.tar.gz	COPY
@@ -252,7 +259,7 @@ Y	lang/tcl80			tcl8.0p2.tar.gz			BSD
 Y	mail/elm			elm-2.4ME+32.tar.gz		ELM
 Y	mail/exim			exim-1.82.tar.gz		GPL
 Y	mail/exim			exim-texinfo-1.80.tar.gz	COPY
-?	mail/exmh			exmh-1.6.9.tar.Z		???
+N	mail/exmh			-none-				NONE
 ?	mail/exmh2			exmh-2.0.2.tar.Z		???
 N	mail/faces			faces-1.6.1.tar.Z		NOFEE
 ?	mail/fetchmail			fetchmail-4.5.4.tar.gz		GP{L
@@ -272,7 +279,7 @@ Y	mail/xfaces			xfaces-sounds.tar.gz		NONE
 ?	mail/xfmail			xfmail-1.3.tar.gz		???
 ?	mail/xlbiff			xlbiff-3.0.tar.Z		???
 ?	math/gnuplot			gnuplot-3.5.tar.gz		???
-?	math/hoc			hoc-1.1.sh			???
+?	math/hoc			hoc.sh				???
 ?	math/wingz			Wingz-142.tgz			???
 ?	math/xspread			xspread2.1.tar.gz		???
 ?	mbone/imm			imm.source.tar.Z		???
@@ -444,7 +451,7 @@ Y	x11/lesstif			lesstif-0.86.0.tar.gz		GPL
 ?	x11/mouseclock			mouseclock-1.0.tar.gz		???
 Y	x11/piewm			piewm.tar.Z			X
 Y	x11/qt				qt-1.40.tar.gz			REST
-?	x11/rclock			rclock-2.20.tar.gz		???
+?	x11/rclock			rxvt-2.20.tar.gz		???
 ?	x11/rxvt			rxvt-2.20.tar.gz		???
 Y	x11/sliderule			sliderule.tar.gz		X
 Y	x11/swisswatch			swisswatch-0.06.tar.Z		X
@@ -479,7 +486,7 @@ Y	x11/xtacy			Xtacy113.tar.gz			GPL
 Y	x11/xtattr			xtattr-1.0.tar.gz		NONE
 Y	x11/xtestpicture		xtestpicture-1.1.tar.gz		BSD
 Y	x11/xtoolwait			xtoolwait-1.1.tar.gz		GPL
-?	x11/xview-clients		xview-clients.tar.gz		???
+N	x11/xview-clients		-none-				???
 ?	x11/xview-config		xview3.2p1-X11R6.tar.gz		???
-?	x11/xview-lib			xview-lib.tar.gz		???
+N	x11/xview-lib			-none-				???
 Y	x11/xzoom			xzoom-0.3.tgz			COPY
