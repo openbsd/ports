@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/01 07:31:29 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/07/01 07:45:15 shell Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Atoms.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/CListModel.pm
@@ -44,7 +44,6 @@ man/man3/Gtk::CListModel.3pm
 man/man3/Gtk::cookbook.3pm
 man/man3/Gtk::objects.3pm
 man/man3/Gtk::reference.3pm
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/base
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/Gdk
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/LWP
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/Install
