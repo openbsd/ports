@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/01/30 15:38:15 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/03/05 20:47:05 alek Exp $
 bin/mail-notification
 lib/bonobo/
 lib/bonobo/servers/
@@ -14,25 +14,33 @@ share/control-center-2.0/capplets/mail-notification-properties.desktop
 share/examples/mail-notification/
 share/examples/mail-notification.soundlist
 @sample ${CONFDIR}/sound/events/mail-notification.soundlist
-share/help/
-share/help/mail-notification/
-share/help/mail-notification/C/
-share/help/mail-notification/C/documentation-license.xml
-share/help/mail-notification/C/figures/
-share/help/mail-notification/C/figures/mail.png
-share/help/mail-notification/C/mail-notification.xml
-share/help/mail-notification/C/software-license.xml
+share/gnome/
+share/gnome/help/
+share/gnome/help/mail-notification/
+share/gnome/help/mail-notification/C/
+share/gnome/help/mail-notification/C/documentation-license.xml
+share/gnome/help/mail-notification/C/figures/
+share/gnome/help/mail-notification/C/figures/mail.png
+share/gnome/help/mail-notification/C/mail-notification.xml
+share/gnome/help/mail-notification/C/software-license.xml
+share/locale/bg/LC_MESSAGES/mail-notification.mo
 share/locale/de/LC_MESSAGES/mail-notification.mo
 share/locale/fr/LC_MESSAGES/mail-notification.mo
+share/locale/pl/LC_MESSAGES/mail-notification.mo
 share/locale/pt/LC_MESSAGES/mail-notification.mo
 share/locale/ru/LC_MESSAGES/mail-notification.mo
+share/locale/sr/LC_MESSAGES/mail-notification.mo
+share/locale/sr@Latn/LC_MESSAGES/mail-notification.mo
 share/mail-notification/
 share/mail-notification/ui/
+share/mail-notification/ui/authentication.glade
 share/mail-notification/ui/gmail.png
 share/mail-notification/ui/logo.png
 share/mail-notification/ui/mail-notification.png
 share/mail-notification/ui/mailbox-properties.glade
 share/mail-notification/ui/properties.glade
+share/mail-notification/ui/summary-dialog.glade
+share/mail-notification/ui/summary-popup.glade
 share/mail-notification/ui/unsupported.png
 share/mail-notification/ui/welcome.glade
 share/omf/mail-notification/

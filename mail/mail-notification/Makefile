@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2004/11/13 10:29:32 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2005/03/05 20:47:05 alek Exp $
 
 COMMENT=		"mail notification for freedesktop.org-compliant system trays"
-DISTNAME=		mail-notification-0.6.2
+DISTNAME=		mail-notification-1.0
 CATEGORIES=		mail	
 
 HOMEPAGE=		http://www.nongnu.org/mailnotify/
@@ -16,19 +16,19 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://savannah.nongnu.org/download/mailnotify/
 
-MODULES=		gettext 
+MODULES=		devel/gettext 
 BUILD_DEPENDS+=         :pkgconfig-*:devel/pkgconfig \
 			:scrollkeeper-*:textproc/scrollkeeper \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS+=		:scrollkeeper-*:textproc/scrollkeeper \
 			:gnome-icon-theme-*:x11/gnome/icon-theme
 LIB_DEPENDS+=		eel-2::x11/gnome/eel
-USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=        --sysconfdir="${CONFDIR}"
 CONFIGURE_ARGS+=	--disable-schemas-install \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/mail-notification
+			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/mail-notification \
+			--disable-mime --disable-sasl --disable-gmail
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -36,22 +36,14 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFDIR=		${SYSCONFDIR}/gnome
 SUBST_VARS=		CONFDIR
 
-FLAVORS=		gmail sasl
-FLAVOR?=
-
-.if ${FLAVOR:L:Msasl}
-CONFIGURE_ARGS+=	--enable-sasl
-LIB_DEPENDS+=		sasl2::security/cyrus-sasl2
-.else
-CONFIGURE_ARGS+=	--disable-sasl
-.endif
-
-.if ${FLAVOR:L:Mgmail}
-CONFIGURE_ARGS+=	--enable-gmail
-LIB_DEPENDS+=		soup-2.2.0.0::devel/libsoup
-.else
-CONFIGURE_ARGS+=	--disable-gmail
-.endif
+WANTLIB=		pthread Xrender ICE Xinerama c z xml2 X11 \
+			SM Xext popt fontconfig crypto freetype ssl m Xft Xcursor \
+			art_lgpl_2 atk-1.0.0.0 bonobo-2 bonobo-activation bonoboui-2 \
+			gconf-2 gdk-x11-2.0.0.0 ORBit-2 gailutil gnomeui-2 \
+			gdk_pixbuf-2.0.0.0 glade-2.0.0.0 glib-2.0.0.0 \
+			gmodule-2.0.0.0 gnome-2 gnomecanvas-2 gnomevfs-2 \
+			gobject-2.0.0.0 gthread-2.0.0.0 gtk-x11-2.0.0.0 \
+			pango-1.0.0.0 pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
 
 post-patch: 
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
