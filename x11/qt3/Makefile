@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/29 19:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2002/11/13 22:55:54 naddy Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		C++ X11 GUI toolkit
@@ -33,6 +33,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 #CXXFLAGS+=	-g
+
+MODULES=	gcc3
+MODGCC3_ARCHES=	sparc64
+MODGCC3_LANGS=	C++
 
 USE_X11=	Yes
 #USE_GMAKE=	Yes
