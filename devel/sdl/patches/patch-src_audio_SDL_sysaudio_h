@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_audio_SDL_sysaudio_h,v 1.1.1.1 2001/04/19 18:55:40 obecian Exp $
---- src/audio/SDL_sysaudio.h.orig	Wed Mar 21 10:19:56 2001
-+++ src/audio/SDL_sysaudio.h	Fri Mar 30 08:44:02 2001
-@@ -123,6 +123,9 @@ extern AudioBootStrap NAS_bootstrap;
- #ifdef ENABLE_DIRECTX
- extern AudioBootStrap DSOUND_bootstrap;
+$OpenBSD: patch-src_audio_SDL_sysaudio_h,v 1.2 2001/06/23 19:05:39 pvalchev Exp $
+--- src/audio/SDL_sysaudio.h.orig	Fri Jun 22 09:53:10 2001
++++ src/audio/SDL_sysaudio.h	Fri Jun 22 09:53:17 2001
+@@ -106,9 +106,6 @@ extern AudioBootStrap DMA_bootstrap;
+ #ifdef ALSA_SUPPORT
+ extern AudioBootStrap ALSA_bootstrap;
  #endif
-+#ifdef __OpenBSD__
-+extern AudioBootStrap AUDIO_bootstrap;
-+#endif
- #ifdef ENABLE_WINDIB
- extern AudioBootStrap WAVEOUT_bootstrap;
- #endif
+-#ifdef __OpenBSD__
+-extern AudioBootStrap OBSD_bootstrap;
+-#endif
+ #if (defined(unix) && !defined(__CYGWIN32__)) && \
+     !defined(OSS_SUPPORT) && !defined(ALSA_SUPPORT)
+ extern AudioBootStrap AUDIO_bootstrap;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_audio_openbsd_SDL_openbsdaudio_c,v 1.1 2001/06/23 19:05:40 pvalchev Exp $
+--- src/audio/openbsd/SDL_openbsdaudio.c.orig	Fri Jun 22 09:54:25 2001
++++ src/audio/openbsd/SDL_openbsdaudio.c	Fri Jun 22 09:54:42 2001
+@@ -131,7 +131,7 @@ static SDL_AudioDevice
+     return this;
+ }
+ 
+-AudioBootStrap OBSD_bootstrap = {
++AudioBootStrap AUDIO_bootstrap = {
+ 	OBSD_DRIVER_NAME, "Native OpenBSD audio",
+ 	Audio_Available, Audio_CreateDevice
+ };

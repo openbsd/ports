@@ -1,12 +1,13 @@
-$OpenBSD: patch-src_audio_SDL_audio_c,v 1.2 2001/05/24 05:54:57 pvalchev Exp $
---- src/audio/SDL_audio.c.orig	Wed Mar 21 10:19:56 2001
-+++ src/audio/SDL_audio.c	Sat May 19 12:01:58 2001
-@@ -185,7 +185,7 @@ int SDL_AudioInit(const char *driver_nam
- 	/* Select the proper audio driver */
- 	audio = NULL;
- 	idx = 0;
--#ifdef unix
-+#if defined(unix) || defined (__OpenBSD__)
- 	if ( (driver_name == NULL) && (getenv("ESPEAKER") != NULL) ) {
- 		/* Ahem, we know that if ESPEAKER is set, user probably wants
- 		   to use ESD, but don't start it if it's not already running.
+$OpenBSD: patch-src_audio_SDL_audio_c,v 1.3 2001/06/23 19:05:37 pvalchev Exp $
+--- src/audio/SDL_audio.c.orig	Fri Jun 15 19:51:42 2001
++++ src/audio/SDL_audio.c	Fri Jun 22 09:52:25 2001
+@@ -47,9 +47,6 @@ static AudioBootStrap *bootstrap[] = {
+ #ifdef ALSA_SUPPORT
+ 	&ALSA_bootstrap,
+ #endif
+-#ifdef __OpenBSD__
+-	&OBSD_bootstrap,
+-#endif
+ #if (defined(unix) && !defined(__CYGWIN32__)) && \
+     !defined(OSS_SUPPORT) && !defined(ALSA_SUPPORT)
+ 	&AUDIO_bootstrap,

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/24 05:54:55 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2001/06/23 19:05:33 pvalchev Exp $
 
 COMMENT=	"cross-platform multimedia library"
 
-VER=		1.2.0
-DISTNAME=	SDL-${VER}
+VERSION=	1.2.1
+DISTNAME=	SDL-${VERSION}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	devel
-NEED_VERSION=	1.378
+NEED_VERSION=	1.417
 
 HOMEPAGE=	http://www.libsdl.org
 
@@ -19,10 +19,6 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}/release/ \
 		http://www.devolution.com/~slouken/SDL/release/
-MASTER_SITES0=	http://vedge.com.ar/hack/ \
-		http://hobbiton.org/~pvalchev/sdl/
-
-DISTFILES=	${DISTNAME}.tar.gz SDL_obsd_audio-1.2.0.tar.gz:0
 
 FLAVORS=	sun oss esd gl arts no_x11
 FLAVOR?=	sun
@@ -74,10 +70,10 @@ CONFIGURE_ARGS+= --without-x \
 		 --disable-video-x11
 .else
 USE_X11=	Yes
+LDFLAGS=	"-Wl,R${X11BASE}/lib -L${X11BASE}/lib"
 .endif
 
 post-patch:
 	@touch ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
-	@ln -sf ${WRKSRC}/../src/audio/obsd ${WRKSRC}/src/audio/obsd
 
 .include <bsd.port.mk>
