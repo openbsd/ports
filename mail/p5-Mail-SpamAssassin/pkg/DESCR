@@ -46,5 +46,3 @@ for further installation instructions.
 
 Or if you are in a hurry you can read:
 ${PREFIX}/share/doc/SpamAssassin/OpenBSD-SpamAssassin-mini-howto.html
-
-WWW: ${HOMEPAGE}
