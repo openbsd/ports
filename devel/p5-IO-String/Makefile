@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/11 17:11:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2004/11/15 15:04:58 naddy Exp $
 
 COMMENT=		"emulate IO::File interface for in-core strings"
 
@@ -6,7 +6,7 @@ DISTNAME=		IO-String-1.06
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
 
-MAINTAINER=		Shell Hung <shell@openbsd.org>
+MAINTAINER=		Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
