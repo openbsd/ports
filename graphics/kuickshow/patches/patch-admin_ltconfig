@@ -1,6 +1,15 @@
---- admin/ltconfig.orig	Tue Jun 26 14:02:58 2001
-+++ admin/ltconfig	Tue Jun 26 14:03:47 2001
-@@ -1140,6 +1140,8 @@
+--- admin/ltconfig.orig	Sat Apr 14 20:07:54 2001
++++ admin/ltconfig	Sat Oct  6 12:08:59 2001
+@@ -1131,15 +1131,13 @@ netbsd*)
+ 
+ openbsd*)
+   version_type=sunos
+-  if test "$with_gnu_ld" = yes; then
+-    need_lib_prefix=no
+-    need_version=no
+-  fi
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
    # OpenBSD 2.7 the overriding is needed for fast-install
    shlibpath_overrides_runpath=yes
