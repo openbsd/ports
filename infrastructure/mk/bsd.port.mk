@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.285 2000/05/30 14:44:23 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.286 2000/05/30 14:51:59 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -405,7 +405,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 .include "${.CURDIR}/../Makefile.inc"
 .endif
 
-FAKE?=No
+FAKE?=Yes
 WRKINST?=${WRKDIR}/fake-${ARCH}${_FEXT}
 
 # Get the architecture
