@@ -7,7 +7,7 @@ bin/hinotes
 bin/iambicexample
 bin/ietf2datebook
 bin/install-datebook
-bin/install-hinote 
+bin/install-hinote
 bin/install-memo
 bin/install-todos
 bin/install-user
@@ -20,7 +20,6 @@ bin/pi-nredir
 bin/pi-port
 bin/pilot-addresses
 bin/pilot-clip
-bin/pilot-debug
 bin/pilot-dedupe
 bin/pilot-file
 bin/pilot-mail
@@ -38,15 +37,15 @@ include/pi-appinfo.h
 include/pi-appinfo.hxx
 include/pi-args.h
 include/pi-cmp.h
+include/pi-config-win32.h
 include/pi-config.h
-include/pi-config-win32.h 
 include/pi-datebook.h
 include/pi-datebook.hxx
 include/pi-dlp.h
 include/pi-dlp.hxx
 include/pi-expense.h
 include/pi-file.h
-include/pi-hinote.h 
+include/pi-hinote.h
 include/pi-iambicExpense.h
 include/pi-iambicExpense.hxx
 include/pi-inet.h
@@ -59,9 +58,9 @@ include/pi-money.h
 include/pi-padp.h
 include/pi-serial.h
 include/pi-slp.h
-include/pi-socket.h
-include/pi-sockaddr.h
 include/pi-sockaddr-win32.h
+include/pi-sockaddr.h
+include/pi-socket.h
 include/pi-source.h
 include/pi-sync.h
 include/pi-syspkt.h
@@ -90,4 +89,7 @@ man/man1/install-memo.1
 man/man1/install-user.1
 man/man1/pilot-xfer.1
 man/man1/read-ical.1
+man/man7/pilot-link.7
 @dirrm lib/pix
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
+@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
