@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/08/12 01:28:32 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.2 2002/08/17 01:51:08 avsm Exp $ 
 
 COMMENT=	"task list manager for Horde"
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.horde.org/pub/${HORDE_MODULE}/tarballs/
+MASTER_SITES=	${MASTER_SITE_HORDE:=nag/tarballs/}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

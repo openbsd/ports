@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/08/12 01:21:19 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.2 2002/08/17 01:51:08 avsm Exp $ 
 
 COMMENT=	"calendar and scheduling application for Horde"
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.horde.org/pub/${HORDE_MODULE}/tarballs/
+MASTER_SITES=	${MASTER_SITE_HORDE:=kronolith/tarballs/}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

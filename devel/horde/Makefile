@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/08/12 00:56:51 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.5 2002/08/17 01:51:08 avsm Exp $ 
 
 COMMENT=	"modular framework for web-based applications"
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.horde.org/pub/horde/tarballs/ \
-		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/horde/tarballs
+MASTER_SITES=	${MASTER_SITE_HORDE:=horde/tarballs/}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
