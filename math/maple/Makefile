@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/10/29 17:29:31 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/02/16 14:51:16 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
@@ -15,7 +15,7 @@ DISTNAME=	maple-5.5
 CATEGORIES=     math
 NEED_VERSION=	1.223
 
-RUN_DEPENDS=	/emul/linux/lib/libc.so.5::emulators/linux_lib
+RUN_DEPENDS=	/emul/linux/usr/i486-linux-libc5/lib/libc.so.5::emulators/redhat_base
 
 # if someone wants to buy the sparc version and check it, be my guest...
 
