@@ -1,0 +1,11 @@
+--- configure.in.orig	Fri Nov  2 22:56:11 2001
++++ configure.in	Fri Nov  2 22:56:36 2001
+@@ -19,7 +19,7 @@
+     codepagedir="\$(LIBDIR)/codepages"
+     configdir="\$(LIBDIR)"
+     lockdir="\$(VARDIR)/locks"
+-    logfilebase="\$(VARDIR)"
++    logfilebase="\$(VARDIR)/log"
+     privatedir="\${prefix}/private"
+     swatdir="\${prefix}/swat")
+ 
