@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/02/03 03:43:16 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2003/02/23 17:57:29 espie Exp $
 
 COMMENT=		"office suite"
 
@@ -27,7 +27,7 @@ CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS+=	--with-docdir=${PREFIX}/share/doc
 
-CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV+=		LDFLAGS="-L${WRKBUILD}/common -L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 
 NO_REGRESS=		Yes
