@@ -1,0 +1,12 @@
+$OpenBSD: patch-gnats_pr_c,v 1.1 2002/12/12 20:08:39 pvalchev Exp $
+--- gnats/pr.c.orig	Thu Dec 12 00:55:26 2002
++++ gnats/pr.c	Thu Dec 12 00:56:30 2002
+@@ -367,7 +367,7 @@ get_pr_enum_field (filename, default_val
+   int len = 0, capacity = 80;
+   int meaningful_line;
+   FILE *fp;
+-  char c;
++  int c;
+   
+   sprintf (path, "%s/gnats-adm/%s", gnats_root, filename);
+   fp = fopen (path, "r");
