@@ -1,0 +1,4 @@
+BridgeQuery polls a device which responds to SNMP Bridge Table queries and
+generates a hash reference with each polled MAC address as the key and the
+associated port as the value. The specific MIBs that are polled are described
+in RFC1493. On layer 3 switches, one can additionally poll IP addresses.
