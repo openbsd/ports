@@ -1,13 +1,13 @@
-$OpenBSD: patch-libtiff_tif_write_c,v 1.1 2004/10/20 20:37:48 brad Exp $
+$OpenBSD: patch-libtiff_tif_write_c,v 1.2 2005/03/27 05:12:15 brad Exp $
 --- libtiff/tif_write.c.orig	Tue Aug  5 04:49:13 2003
-+++ libtiff/tif_write.c	Wed Oct 20 14:38:50 2004
++++ libtiff/tif_write.c	Sat Mar 26 23:08:30 2005
 @@ -542,7 +542,11 @@ TIFFWriteCheck(TIFF* tif, int tiles, con
  		    tif->tif_name, isTiled(tif) ? "tile" : "strip");
  		return (0);
  	}
 -	tif->tif_tilesize = TIFFTileSize(tif);
 +	if (isTiled(tif)) 
-+		tif->tif_tilesize = TIFFTileSize(tif);
++		tif->tif_tilesize = isTiled(tif) ? TIFFTileSize(tif) : (tsize_t) -1;
 +	else
 +		tif->tif_tilesize = (tsize_t) -1;
 +		

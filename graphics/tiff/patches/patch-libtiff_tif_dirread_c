@@ -1,6 +1,6 @@
-$OpenBSD: patch-libtiff_tif_dirread_c,v 1.2 2005/03/27 03:57:26 brad Exp $
+$OpenBSD: patch-libtiff_tif_dirread_c,v 1.3 2005/03/27 05:12:15 brad Exp $
 --- libtiff/tif_dirread.c.orig	Mon Dec 22 03:22:15 2003
-+++ libtiff/tif_dirread.c	Sat Mar 26 22:45:43 2005
++++ libtiff/tif_dirread.c	Sat Mar 26 23:18:01 2005
 @@ -62,11 +62,17 @@ static	int TIFFFetchShortPair(TIFF*, TIF
  static	void ChopUpSingleUncompressedStrip(TIFF*);
  
@@ -112,25 +112,37 @@ $OpenBSD: patch-libtiff_tif_dirread_c,v 1.2 2005/03/27 03:57:26 brad Exp $
  	if (!TIFFFieldSet(tif, FIELD_MAXSAMPLEVALUE))
  		td->td_maxsamplevalue = (uint16)((1L<<td->td_bitspersample)-1);
  	/*
-@@ -603,6 +619,17 @@ TIFFReadDirectory(TIFF* tif)
+@@ -601,8 +617,28 @@ TIFFReadDirectory(TIFF* tif)
+ 	tif->tif_curstrip = (tstrip_t) -1;
+ 	tif->tif_col = (uint32) -1;
  	tif->tif_curtile = (ttile_t) -1;
- 	tif->tif_tilesize = TIFFTileSize(tif);
+-	tif->tif_tilesize = TIFFTileSize(tif);
++	tif->tif_tilesize = (tsize_t) -1;
  	tif->tif_scanlinesize = TIFFScanlineSize(tif);
 +
-+	if (!tif->tif_tilesize) {
-+		TIFFError(module, "%s: cannot handle zero tile size",
-+			  tif->tif_name);
-+		return (0);
-+	}
 +	if (!tif->tif_scanlinesize) {
 +		TIFFError(module, "%s: cannot handle zero scanline size",
 +			  tif->tif_name);
 +		return (0);
 +	}
++	if (isTiled(tif)) {
++		tif->tif_tilesize = TIFFTileSize(tif);
++		if (!tif->tif_tilesize) {
++			TIFFError(module, "%s: cannot handle zero tile size",
++				tif->tif_name);
++			return (0);
++		}
++	} else {
++		if (!TIFFStripSize(tif)) {
++			TIFFError(module, "%s: cannot handle zero strip size",
++				tif->tif_name);
++			return (0);
++		}
++	}
  	return (1);
  bad:
  	if (dir)
-@@ -622,7 +649,7 @@ EstimateStripByteCounts(TIFF* tif, TIFFD
+@@ -622,7 +658,7 @@ EstimateStripByteCounts(TIFF* tif, TIFFD
  	if (td->td_stripbytecount)
  		_TIFFfree(td->td_stripbytecount);
  	td->td_stripbytecount = (uint32*)
@@ -139,7 +151,7 @@ $OpenBSD: patch-libtiff_tif_dirread_c,v 1.2 2005/03/27 03:57:26 brad Exp $
  		"for \"StripByteCounts\" array");
  	if (td->td_compression != COMPRESSION_NONE) {
  		uint32 space = (uint32)(sizeof (TIFFHeader)
-@@ -931,7 +958,7 @@ TIFFFetchRationalArray(TIFF* tif, TIFFDi
+@@ -931,7 +967,7 @@ TIFFFetchRationalArray(TIFF* tif, TIFFDi
  	uint32* l;
  
  	l = (uint32*)CheckMalloc(tif,
@@ -148,7 +160,7 @@ $OpenBSD: patch-libtiff_tif_dirread_c,v 1.2 2005/03/27 03:57:26 brad Exp $
  	    "to fetch array of rationals");
  	if (l) {
  		if (TIFFFetchData(tif, dir, (char *)l)) {
-@@ -1087,35 +1114,35 @@ TIFFFetchNormalTag(TIFF* tif, TIFFDirEnt
+@@ -1087,35 +1123,35 @@ TIFFFetchNormalTag(TIFF* tif, TIFFDirEnt
  		case TIFF_SBYTE:
  			/* NB: always expand BYTE values to shorts */
  			cp = CheckMalloc(tif,
@@ -190,7 +202,7 @@ $OpenBSD: patch-libtiff_tif_dirread_c,v 1.2 2005/03/27 03:57:26 brad Exp $
  			ok = cp && TIFFFetchDoubleArray(tif, dp, (double*) cp);
  			break;
  		case TIFF_ASCII:
-@@ -1124,7 +1151,7 @@ TIFFFetchNormalTag(TIFF* tif, TIFFDirEnt
+@@ -1124,7 +1160,7 @@ TIFFFetchNormalTag(TIFF* tif, TIFFDirEnt
  			 * Some vendors write strings w/o the trailing
  			 * NULL byte, so always append one just in case.
  			 */
@@ -199,7 +211,7 @@ $OpenBSD: patch-libtiff_tif_dirread_c,v 1.2 2005/03/27 03:57:26 brad Exp $
  			if( (ok = (cp && TIFFFetchString(tif, dp, cp))) != 0 )
  				cp[dp->tdir_count] = '\0';	/* XXX */
  			break;
-@@ -1226,8 +1253,9 @@ TIFFFetchPerSampleShorts(TIFF* tif, TIFF
+@@ -1226,8 +1262,9 @@ TIFFFetchPerSampleShorts(TIFF* tif, TIFF
  		uint16* v = buf;
  
  		if (samples > NITEMS(buf))
@@ -211,7 +223,7 @@ $OpenBSD: patch-libtiff_tif_dirread_c,v 1.2 2005/03/27 03:57:26 brad Exp $
  			int i;
  			for (i = 1; i < samples; i++)
  				if (v[i] != v[0]) {
-@@ -1240,7 +1268,7 @@ TIFFFetchPerSampleShorts(TIFF* tif, TIFF
+@@ -1240,7 +1277,7 @@ TIFFFetchPerSampleShorts(TIFF* tif, TIFF
  			status = 1;
  		}
  	bad:
@@ -220,7 +232,7 @@ $OpenBSD: patch-libtiff_tif_dirread_c,v 1.2 2005/03/27 03:57:26 brad Exp $
  			_TIFFfree((char*) v);
  	}
  	return (status);
-@@ -1262,8 +1290,9 @@ TIFFFetchPerSampleAnys(TIFF* tif, TIFFDi
+@@ -1262,8 +1299,9 @@ TIFFFetchPerSampleAnys(TIFF* tif, TIFFDi
  		double* v = buf;
  
  		if (samples > NITEMS(buf))
@@ -232,7 +244,7 @@ $OpenBSD: patch-libtiff_tif_dirread_c,v 1.2 2005/03/27 03:57:26 brad Exp $
  			int i;
  			for (i = 1; i < samples; i++)
  				if (v[i] != v[0]) {
-@@ -1276,7 +1305,7 @@ TIFFFetchPerSampleAnys(TIFF* tif, TIFFDi
+@@ -1276,7 +1314,7 @@ TIFFFetchPerSampleAnys(TIFF* tif, TIFFDi
  			status = 1;
  		}
  	bad:
@@ -241,7 +253,7 @@ $OpenBSD: patch-libtiff_tif_dirread_c,v 1.2 2005/03/27 03:57:26 brad Exp $
  			_TIFFfree(v);
  	}
  	return (status);
-@@ -1301,7 +1330,7 @@ TIFFFetchStripThing(TIFF* tif, TIFFDirEn
+@@ -1301,7 +1339,7 @@ TIFFFetchStripThing(TIFF* tif, TIFFDirEn
  	 */
  	if (*lpp == NULL &&
  	    (*lpp = (uint32 *)CheckMalloc(tif,
@@ -250,7 +262,7 @@ $OpenBSD: patch-libtiff_tif_dirread_c,v 1.2 2005/03/27 03:57:26 brad Exp $
  		return (0);
  	lp = *lpp;
          memset( lp, 0, sizeof(uint32) * nstrips );
-@@ -1311,7 +1340,7 @@ TIFFFetchStripThing(TIFF* tif, TIFFDirEn
+@@ -1311,7 +1349,7 @@ TIFFFetchStripThing(TIFF* tif, TIFFDirEn
  		 * Handle uint16->uint32 expansion.
  		 */
  		uint16* dp = (uint16*) CheckMalloc(tif,
@@ -259,7 +271,7 @@ $OpenBSD: patch-libtiff_tif_dirread_c,v 1.2 2005/03/27 03:57:26 brad Exp $
  		if (dp == NULL)
  			return (0);
  		if( (status = TIFFFetchShortArray(tif, dir, dp)) != 0 ) {
-@@ -1328,7 +1357,7 @@ TIFFFetchStripThing(TIFF* tif, TIFFDirEn
+@@ -1328,7 +1366,7 @@ TIFFFetchStripThing(TIFF* tif, TIFFDirEn
              /* Special case to correct length */
  
              uint32* dp = (uint32*) CheckMalloc(tif,
@@ -268,7 +280,7 @@ $OpenBSD: patch-libtiff_tif_dirread_c,v 1.2 2005/03/27 03:57:26 brad Exp $
              if (dp == NULL)
                  return (0);
  
-@@ -1360,8 +1389,12 @@ TIFFFetchExtraSamples(TIFF* tif, TIFFDir
+@@ -1360,8 +1398,12 @@ TIFFFetchExtraSamples(TIFF* tif, TIFFDir
  	uint16* v = buf;
  	int status;
  
@@ -283,7 +295,7 @@ $OpenBSD: patch-libtiff_tif_dirread_c,v 1.2 2005/03/27 03:57:26 brad Exp $
  	if (dir->tdir_type == TIFF_BYTE)
  		status = TIFFFetchByteArray(tif, dir, v);
  	else
-@@ -1390,10 +1423,10 @@ TIFFFetchRefBlackWhite(TIFF* tif, TIFFDi
+@@ -1390,10 +1432,10 @@ TIFFFetchRefBlackWhite(TIFF* tif, TIFFDi
  	/*
  	 * Handle LONG's for backward compatibility.
  	 */
@@ -296,7 +308,7 @@ $OpenBSD: patch-libtiff_tif_dirread_c,v 1.2 2005/03/27 03:57:26 brad Exp $
  		if( (ok = (fp != NULL)) != 0 ) {
  			uint32 i;
  			for (i = 0; i < dir->tdir_count; i++)
-@@ -1444,9 +1477,9 @@ ChopUpSingleUncompressedStrip(TIFF* tif)
+@@ -1444,9 +1486,9 @@ ChopUpSingleUncompressedStrip(TIFF* tif)
  	if (rowsperstrip >= td->td_rowsperstrip)
  		return;
  	nstrips = (tstrip_t) TIFFhowmany(bytecount, stripbytes);

@@ -1,6 +1,6 @@
-$OpenBSD: patch-libtiff_tif_luv_c,v 1.1 2004/10/20 20:37:48 brad Exp $
+$OpenBSD: patch-libtiff_tif_luv_c,v 1.2 2005/03/27 05:12:15 brad Exp $
 --- libtiff/tif_luv.c.orig	Thu Nov 27 10:08:10 2003
-+++ libtiff/tif_luv.c	Wed Oct 20 14:38:11 2004
++++ libtiff/tif_luv.c	Sat Mar 26 23:06:29 2005
 @@ -212,11 +212,11 @@ LogL16Decode(TIFF* tif, tidata_t op, tsi
  				rc = *bp++ + (2-128);
  				b = (int16)(*bp++ << shft);
@@ -73,3 +73,12 @@ $OpenBSD: patch-libtiff_tif_luv_c,v 1.1 2004/10/20 20:37:48 brad Exp $
  		TIFFError(module, "%s: No space for SGILog translation buffer",
  		    tif->tif_name);
  		return (0);
+@@ -1497,7 +1508,7 @@ LogLuvVSetField(TIFF* tif, ttag_t tag, v
+ 		/*
+ 		 * Must recalculate sizes should bits/sample change.
+ 		 */
+-		tif->tif_tilesize = TIFFTileSize(tif);
++		tif->tif_tilesize = isTiled(tif) ? TIFFTileSize(tif) : (tsize_t) -1;
+ 		tif->tif_scanlinesize = TIFFScanlineSize(tif);
+ 		return (1);
+ 	case TIFFTAG_SGILOGENCODE:
