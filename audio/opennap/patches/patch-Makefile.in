@@ -1,0 +1,16 @@
+--- Makefile.in.orig	Mon Sep 11 01:53:36 2000
++++ Makefile.in	Mon Sep 11 01:55:31 2000
+@@ -186,11 +186,11 @@
+ 
+ metaserver: $(metaserver_OBJECTS) $(metaserver_DEPENDENCIES)
+ 	@rm -f metaserver
+-	$(LINK) $(metaserver_LDFLAGS) $(metaserver_OBJECTS) $(metaserver_LDADD) $(LIBS)
++	$(LINK) $(metaserver_LDFLAGS) $(metaserver_OBJECTS) $(metaserver_LDADD)
+ 
+ setup: $(setup_OBJECTS) $(setup_DEPENDENCIES)
+ 	@rm -f setup
+-	$(LINK) $(setup_LDFLAGS) $(setup_OBJECTS) $(setup_LDADD) $(LIBS)
++	$(LINK) $(setup_LDFLAGS) $(setup_OBJECTS) $(setup_LDADD)
+ 
+ tags: TAGS
+ 
