@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_nc_man,v 1.1 2001/10/31 08:03:19 form Exp $
+$OpenBSD: patch-doc_nc_man,v 1.2 2002/08/26 04:23:24 pvalchev Exp $
 --- doc/nc.man.orig	Wed Oct 31 13:27:55 2001
 +++ doc/nc.man	Wed Oct 31 13:29:09 2001
 @@ -137,26 +137,26 @@
@@ -63,7 +63,7 @@ $OpenBSD: patch-doc_nc_man,v 1.1 2001/10/31 08:03:19 form Exp $
 -long as X windows is set up and working properly, \fBnc\fR will work properly
 -as well. \fBnc\fR uses the \f(CW\*(C`DISPLAY\*(C'\fR environment variable, the machine name and
 +Communication between \fBncl\fR and \fBnedit\fR(1) is through the X display. So as
-+long as X windows is set up and working properly, \fBncl\fR will work properly
++long as X is set up and working properly, \fBncl\fR will work properly
 +as well. \fBncl\fR uses the \f(CW\*(C`DISPLAY\*(C'\fR environment variable, the machine name and
  your user name to find the appropriate server, meaning, if you have several
 -machines sharing a common file system, \fBnc\fR will not be able to find a server
