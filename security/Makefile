@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2001/07/27 18:49:18 jsyn Exp $
+# $OpenBSD: Makefile,v 1.82 2001/07/29 18:28:00 shell Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -24,6 +24,7 @@
      SUBDIR += dsniff
      SUBDIR += fragrouter
      SUBDIR += gnupg,idea
+     SUBDIR += gpgme
      SUBDIR += gpa
      SUBDIR += heimdal
      SUBDIR += heimdal,no_x11
