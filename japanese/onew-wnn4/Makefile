@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/24 23:28:12 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.10 2000/03/25 00:48:09 turan Exp $
+
+BROKEN=		depend wnn is broken.
 
 DISTNAME=	jvim2.0r+onew2.2.10
 PKGNAME?=	ja-onew-wnn4-2.2.10

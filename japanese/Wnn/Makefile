@@ -5,7 +5,9 @@
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.14 2000/03/24 22:11:46 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/03/25 00:48:09 turan Exp $
+
+BROKEN=		compile problems.  bombs while trying to create accounts.
 
 DISTNAME=	Wnn4.2
 PKGNAME?=	ja-Wnn-4.2
