@@ -1,0 +1,24 @@
+--- rsaglue.c.orig	Wed May 12 07:19:28 1999
++++ rsaglue.c	Wed Nov 10 09:30:32 1999
+@@ -139,6 +139,10 @@
+ 
+   input_bits = mpz_sizeinbase(input, 2);
+   input_len = (input_bits + 7) / 8;
++  if (input_len > sizeof(input_data))
++    fatal("Attempted to encrypt a block too large (%d bytes, %d max).",
++    	input_len, sizeof(input_data));
++
+   gmp_to_rsaref(input_data, input_len, input);
+ 
+   rsaref_public_key(&public_key, key);
+@@ -172,6 +176,10 @@
+   
+   input_bits = mpz_sizeinbase(input, 2);
+   input_len = (input_bits + 7) / 8;
++  if (input_len > sizeof(input_data))
++    fatal("Received session key too long (%d bytes, %d max).",
++    	input_len, sizeof(input_data));
++
+   gmp_to_rsaref(input_data, input_len, input);
+ 
+   rsaref_private_key(&private_key, key);
