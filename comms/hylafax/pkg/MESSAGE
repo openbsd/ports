@@ -14,7 +14,7 @@ Setting up: (for the impatient)
 	For accepting incoming FAX/data calls, modify /etc/ttys(5) to
 	contain something like this:
 
-	    cua00	"/usr/local/sbin/faxgetty"	dialup	on
+	    cua00	"${PREFIX}/sbin/faxgetty"	dialup	on
 
 	and send a SIGHUP to init(8).
 

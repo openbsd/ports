@@ -15,8 +15,8 @@
 | installed using the following instructions.
 |
 |   # ftp ftp://ftp.microsoft.com/products/frontpage/fp50.bsdi.tar.Z
-|   # tar -C /usr/local -xzpvf fp50.bsdi.tar.Z
-|   # cd /usr/local/frontpage/version5.0
+|   # tar -C ${PREFIX} -xzpvf fp50.bsdi.tar.Z
+|   # cd ${PREFIX}/frontpage/version5.0
 |   # dd if=/dev/arandom of=apache-fp/suidkey bs=129 count=1
 |   # sh set_default_perms.sh
 |   # find . -type f -perm -4000 -exec chmod u-s {} \;

@@ -8,8 +8,8 @@ To activate the new printing system do the following:
 
 - add the following lines to /etc/rc.local:
 
-if [ -x /usr/local/sbin/lpd ]; then
-       echo -n ' LPRng';       /usr/local/sbin/lpd
+if [ -x ${PREFIX}/sbin/lpd ]; then
+       echo -n ' LPRng';       ${PREFIX}/sbin/lpd
 fi
 
 - reboot or kill the old lpd and start the new one 

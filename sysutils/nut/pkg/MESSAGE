@@ -5,11 +5,11 @@
 | following block can be added to your /etc/rc.local file to start nut.
 |
 | # Start Nut
-| if [ -x /usr/local/bin/upsdrvctl ]; then
+| if [ -x ${PREFIX}/bin/upsdrvctl ]; then
 |     echo -n ' nut'
-|     /usr/local/bin/upsdrvctl start > /dev/null
-|     /usr/local/sbin/upsd > /dev/null 2>&1
-|     /usr/local/sbin/upsmon > /dev/null 2>&1
+|     ${PREFIX}/bin/upsdrvctl start > /dev/null
+|     ${PREFIX}/sbin/upsd > /dev/null 2>&1
+|     ${PREFIX}/sbin/upsmon > /dev/null 2>&1
 | fi
 |
 | You may also be interested in the "-i" flag to upsd, see upsd(8).
