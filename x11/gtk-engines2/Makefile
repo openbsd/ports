@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/11/21 02:34:00 margarida Exp $
+# $OpenBSD: Makefile,v 1.3 2002/12/01 19:59:31 marcm Exp $
 
 COMMENT=		"collection of theme engines for GTK+2"
 
@@ -7,7 +7,7 @@ PKGNAME=		gtk-engines2-1.9.0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.gnome.org
-MAINTAINER=		Nils Nordman <nino@openbsd.org>
+MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

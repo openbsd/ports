@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/09/20 08:15:16 nino Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/01 19:59:31 marcm Exp $
 
 COMMENT=		"sample theme engines for GTK+ provided with GNOME"
 
@@ -6,7 +6,7 @@ DISTNAME=		gtk-engines-0.12
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.gnome.org
-MAINTAINER=		Nils Nordman <nino@openbsd.org>
+MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtk-engines/0.12/}
 
