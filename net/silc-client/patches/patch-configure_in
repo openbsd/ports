@@ -1,0 +1,45 @@
+$OpenBSD: patch-configure_in,v 1.1 2003/04/18 03:22:23 brad Exp $
+--- configure.in.orig	Thu Apr  3 09:39:09 2003
++++ configure.in	Thu Apr  3 09:41:02 2003
+@@ -40,7 +40,6 @@ AM_INIT_AUTOMAKE(silc-client, 0.9.12)
+ AC_PREREQ(2.52)
+ AC_CONFIG_HEADERS(includes/silcdefs.h)
+ 
+-CFLAGS=
+ AC_PROG_CC
+ AC_C_INLINE
+ AC_C_CONST
+@@ -339,33 +338,6 @@ AC_DEFUN(SILC_ADD_CFLAGS,
+ 				       $2])
+   unset tmp_CFLAGS
+ ])
+-
+-if test "$GCC"; then
+-  # GCC specific options
+-  if test "x$summary_debug" = "xyes"; then
+-    SILC_ADD_CFLAGS(-g -O)
+-  else
+-    SILC_ADD_CFLAGS(-g -O2)
+-  fi
+-  SILC_ADD_CFLAGS(-Wall -finline-functions)
+-else
+-  # Other compilers
+-  case "$target" in
+-    alpha*-dec-osf*)
+-      SILC_ADD_CFLAGS(-g3 -O2, SILC_ADD_CFLAGS(-g3 -O, SILC_ADD_CFLAGS(-O)))
+-      ;;
+-    *)
+-      SILC_ADD_CFLAGS(-g)
+-      SILC_ADD_CFLAGS(-O2, SILC_ADD_CFLAGS(-O))
+-      ;;
+-  esac
+-
+-  # Intel C++ Compiler needs -restrict
+-  if test "x$CC" = "xicc"; then
+-    SILC_ADD_CFLAGS(-restrict)
+-  fi
+-fi
+-
+ 
+ ##
+ ##  Installation

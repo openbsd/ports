@@ -1,0 +1,28 @@
+$OpenBSD: patch-aclocal_m4,v 1.1 2003/04/18 03:22:23 brad Exp $
+--- aclocal.m4.orig	Mon Mar 17 12:39:02 2003
++++ aclocal.m4	Thu Apr  3 09:43:27 2003
+@@ -43,7 +43,7 @@
+ # CC etc. in the Makefile, will ask for an AC_PROG_CC use...
+ 
+ 
+-AC_PREREQ([2.54])
++AC_PREREQ([2.52])
+ 
+ # Autoconf 2.50 wants to disallow AM_ names.  We explicitly allow
+ # the ones we care about.
+@@ -2403,13 +2403,13 @@ else
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+       hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
+       export_dynamic_flag_spec='${wl}-E'
+     else
+       case "$host_os" in
+       openbsd[[01]].* | openbsd2.[[0-7]] | openbsd2.[[0-7]].*)
+-	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
++	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $compiler_flags'
+ 	hardcode_libdir_flag_spec='-R$libdir'
+         ;;
+       *)
