@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2001/12/25 12:23:51 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2002/01/19 16:00:55 kevlo Exp $
 
 COMMENT=	"modules to implement the irc protocol"
 
-DISTNAME=	Net-IRC-0.72
+DISTNAME=	Net-IRC-0.73
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
 NEED_VERSION=	1.503
