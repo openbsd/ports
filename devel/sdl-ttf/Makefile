@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2003/03/02 05:25:39 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2003/04/05 22:24:36 margarida Exp $
 
 COMMENT=	"SDL TrueType fonts library"
 
-VER=		2.0.5
-PROJ=		SDL_ttf
-DISTNAME=	${PROJ}-${VER}
-PKGNAME=	sdl-ttf-${VER}
+DISTNAME=	SDL_ttf-2.0.6
+PKGNAME=	${DISTNAME:L:S/_/-/}
 CATEGORIES=	devel graphics
-MASTER_SITES=	http://www.libsdl.org/projects/${PROJ}/release/
+MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/release/
 
 HOMEPAGE=	http://www.libsdl.org/projects/SDL_ttf/
 
@@ -19,7 +17,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-LIB_DEPENDS=	SDL.::devel/sdl
+LIB_DEPENDS=	SDL::devel/sdl
 
 USE_X11=	Yes
 

@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/03/02 05:25:39 pvalchev Exp $
-bin/glfont
-bin/sdl-showfont
+@comment $OpenBSD: PLIST,v 1.5 2003/04/05 22:24:36 margarida Exp $
 include/SDL/SDL_ttf.h
 lib/libSDL_ttf.a
 lib/libSDL_ttf.la
