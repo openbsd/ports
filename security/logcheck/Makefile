@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/01/24 21:51:59 jsyn Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/13 09:06:08 jsyn Exp $
 
 COMMENT=	"logfile auditing tool"
 
 DISTNAME=	logcheck-1.1.1
 CATEGORIES=	security
-NEED_VERSION=	1.504
+NEED_VERSION=	1.528
 
 HOMEPAGE=	http://www.psionic.com/abacus/logcheck
 
@@ -16,8 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP= 	Yes
 
 MASTER_SITES=	http://www.psionic.com/tools/ \
-		${MASTER_SITE_PACKETSTORM}
-MASTER_SITE_SUBDIR=	UNIX/IDS
+		${MASTER_SITE_PACKETSTORM:=UNIX/IDS/}
 
 NO_REGRESS=	Yes
 

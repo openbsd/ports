@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/02/20 16:55:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/13 09:06:08 jsyn Exp $
 
 COMMENT=		"automated password generator"
 
 DISTNAME=		apg-2.1.0a0
 CATEGORIES=     	security
-NEED_VERSION=		1.504
+NEED_VERSION=		1.528
 
 HOMEPAGE=		http://www.adel.nursat.kz/apg/
 
@@ -17,8 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes 
 
 MASTER_SITES=		http://www.adel.nursat.kz/apg/download/ \
-			${MASTER_SITE_PACKETSTORM}
-MASTER_SITE_SUBDIR=	UNIX/misc
+			${MASTER_SITE_PACKETSTORM:=UNIX/misc/}
 
 MAKE_FLAGS=		CC="${CC}" FLAGS="${CFLAGS}" \
 			LIBS="" USE_SHA=APG_USE_SHA

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2002/01/24 14:32:30 jsyn Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/13 09:06:08 jsyn Exp $
 
 COMMENT=	"simple port scan detector"
 
 DISTNAME=	courtney-1.3
 CATEGORIES=	net security
-NEED_VERSION=	1.504
+NEED_VERSION=	1.528
 MASTER_SITES=	ftp://ciac.llnl.gov/pub/ciac/sectools/unix/courtney/ \
-		${MASTER_SITE_PACKETSTORM}
-MASTER_SITE_SUBDIR=	UNIX/audit
+		${MASTER_SITE_PACKETSTORM:=UNIX/audit/}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	Brian Caswell <bmc@openbsd.org>

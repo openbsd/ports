@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/01/24 06:51:00 jsyn Exp $
+# $OpenBSD: Makefile,v 1.20 2002/05/13 09:06:08 jsyn Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	'sensible unix password cracker'
@@ -6,14 +6,12 @@ COMMENT=	'sensible unix password cracker'
 DISTNAME=	crack5.0
 PKGNAME=	crack-5.0
 CATEGORIES=	security
-NEED_VERSION=	1.504
+NEED_VERSION=	1.528
 
 HOMEPAGE=	http://www.users.dircon.co.uk/~crypto/
 
 MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/unix/pwdutils/crack/ \
-		${MASTER_SITE_PACKETSTORM}
-MASTER_SITE_SUBDIR=	Crackers/crack
-		
+		${MASTER_SITE_PACKETSTORM:=Crackers/crack/}
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
