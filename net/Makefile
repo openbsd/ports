@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2000/08/14 08:03:43 kevlo Exp $
+# $OpenBSD: Makefile,v 1.83 2000/08/16 07:44:52 camield Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -56,7 +56,8 @@
      SUBDIR += p5-libnet
      SUBDIR += pchar
      SUBDIR += pop3gwd
-     SUBDIR += popa3d
+     SUBDIR += popa3d:
+     SUBDIR += popa3d:apop
      SUBDIR += proxy-suite
      SUBDIR += publicfile
      SUBDIR += queso
