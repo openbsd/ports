@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2003/06/06 12:50:30 wilfried Exp $
+# $OpenBSD: Makefile,v 1.49 2003/06/19 19:07:59 jolan Exp $
 
 COMMENT=	"open source version of the Netscape browser"
 COMMENT-devel=	"devel files for Gecko"
@@ -67,6 +67,8 @@ MOZ=		${PREFIX}/mozilla
 
 pre-configure:
 	@cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
+	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g' \
+		${WRKSRC}/xpfe/bootstrap/mozilla.in
 
 do-install:
 .for dir in include lib

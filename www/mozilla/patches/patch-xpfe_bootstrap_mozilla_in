@@ -1,0 +1,20 @@
+$OpenBSD: patch-xpfe_bootstrap_mozilla_in,v 1.3 2003/06/19 19:07:59 jolan Exp $
+--- xpfe/bootstrap/mozilla.in.orig	Wed Aug  7 06:46:15 2002
++++ xpfe/bootstrap/mozilla.in	Wed Jun 18 21:35:00 2003
+@@ -33,6 +33,7 @@
+ #set -x
+ 
+ moz_libdir=%MOZAPPDIR%
++MOZ_PLUGIN_PATH=_LOCALBASE_/lib/mozilla-plugins
+ MRE_HOME=%MREDIR%
+ 
+ # honor MOZILLA_FIVE_HOME if it's there
+@@ -111,7 +112,7 @@ do
+   esac
+ done
+ 
+-export MRE_HOME
++export MOZ_PLUGIN_PATH MRE_HOME
+ eval "set -- $moreargs"
+ if [ $debugging = 1 ]
+ then
