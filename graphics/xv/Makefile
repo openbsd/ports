@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/11/09 21:49:00 rohee Exp $
+# $OpenBSD: Makefile,v 1.8 1999/11/10 09:53:57 jakob Exp $
 # Original from: Marco S Hyman <marc@OpenBSD.ORG>
 
 DISTNAME=	xv-3.10a
@@ -33,7 +33,7 @@ MAINTAINER=	rohee@OpenBSD.ORG
 HOMEPAGE=	http://www.trilon.com/xv/index.html
 
 LIB_DEPENDS=    jpeg.62.:${PORTSDIR}/graphics/jpeg \
-		tiff.3.5:${PORTSDIR}/graphics/tiff \
+		tiff.35.:${PORTSDIR}/graphics/tiff \
 		png.1.:${PORTSDIR}/graphics/png
 
 USE_IMAKE=	yes
