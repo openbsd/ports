@@ -21,8 +21,11 @@ PKGNAME=${SUBPACKAGE:S/^-//}-1.1.2
 .endif
 
 LIB_DEPENDS=		kdecore.1.::x11/kde/libs \
-			qt.1.45::x11/qt	\
-			QwSpriteField.6.::x11/kde/support
+			qt.1.45::x11/qt	
+
+.if !defined(SUBPACKAGE) || ${SUBPACKAGE}=="-kasteroids"
+LIB_DEPENDS+= 		QwSpriteField.6.::x11/kde/support
+.endif
 
 FAKE=			Yes
 USE_BZIP2=		Yes
