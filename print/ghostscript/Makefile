@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2004/07/10 18:57:13 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2004/07/11 17:04:29 brad Exp $
 
-    SUBDIR  = afpl
+    SUBDIR += afpl
     SUBDIR += afpl,a4
     SUBDIR += afpl,gtk
     SUBDIR += afpl,gtk,a4
