@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2002/07/17 22:40:00 lebel Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/24 23:05:53 naddy Exp $
 
 COMMENT=	"Simulation Program for Integrated Circuit Electronics"
 
 DISTNAME=		sp3f4.kit
 PKGNAME=		spice-3f5
 CATEGORIES=     	cad
-NEED_VERSION=		1.515
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
@@ -15,9 +14,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ic.eecs.berkeley.edu/pub/Spice3/
 DISTFILES=		sp3f4.kit.tar.Z sp3f4.patch.tar.Z
 
-USE_X11=		yes
+USE_X11=		Yes
 WRKDIST=		${WRKDIR}
 MAKE_ENV=		MAKE_PROGRAM='${MAKE_PROGRAM}' CC="${CC}"
+
+NO_REGRESS=		Yes
 
 # Apply the patches that make this 3f5
 #
