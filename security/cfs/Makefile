@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/12/21 18:51:21 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/16 23:15:51 angelos Exp $
 
 DISTNAME=	cfs-1.3.3
 CATEGORIES=	security
@@ -27,5 +27,6 @@ do-install:
 	    ${PREFIX}/man/man8
 	cd ${WRKSRC} && ${INSTALL_DATA} README.install notes.ms \
 	    ${PREFIX}/share/doc/cfs
+	echo Note that your machine MUST be setup as an NFS client and server. 
 
 .include <bsd.port.mk>
