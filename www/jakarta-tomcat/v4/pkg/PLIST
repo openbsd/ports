@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/02/15 09:31:03 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/09/26 23:59:44 brad Exp $
 ${DISTNAME}/LICENSE
 ${DISTNAME}/RELEASE-NOTES-4.0-B1.txt
 ${DISTNAME}/RELEASE-NOTES-4.0-B2.txt
@@ -16,13 +16,23 @@ ${DISTNAME}/RELEASE-PLAN-4.0.1.txt
 ${DISTNAME}/RELEASE-PLAN-4.0.txt
 ${DISTNAME}/RUNNING.txt
 ${DISTNAME}/bin/bootstrap.jar
+@comment ${DISTNAME}/bin/catalina.bat
 ${DISTNAME}/bin/catalina.sh
+@comment ${DISTNAME}/bin/cpappend.bat
+@comment ${DISTNAME}/bin/digest.bat
 ${DISTNAME}/bin/digest.sh
+@comment ${DISTNAME}/bin/jasper.bat
 ${DISTNAME}/bin/jasper.sh
+@comment ${DISTNAME}/bin/jspc.bat
 ${DISTNAME}/bin/jspc.sh
+@comment ${DISTNAME}/bin/setclasspath.bat
 ${DISTNAME}/bin/setclasspath.sh
+@comment ${DISTNAME}/bin/shutdown.bat
 ${DISTNAME}/bin/shutdown.sh
+@comment ${DISTNAME}/bin/startup.bat
 ${DISTNAME}/bin/startup.sh
+@comment ${DISTNAME}/bin/tomcat.exe
+@comment ${DISTNAME}/bin/tool-wrapper.bat
 ${DISTNAME}/bin/tool-wrapper.sh
 ${DISTNAME}/common/lib/activation.jar
 ${DISTNAME}/common/lib/jdbc2_0-stdext.jar
@@ -45,16 +55,18 @@ ${DISTNAME}/lib/jasper-compiler.jar
 ${DISTNAME}/lib/jasper-runtime.jar
 ${DISTNAME}/lib/naming-factory.jar
 ${DISTNAME}/server/lib/catalina.jar
+${DISTNAME}/server/lib/commons-logging.jar
 ${DISTNAME}/server/lib/jakarta-regexp-1.2.jar
 ${DISTNAME}/server/lib/servlets-cgi.renametojar
 ${DISTNAME}/server/lib/servlets-common.jar
 ${DISTNAME}/server/lib/servlets-default.jar
 ${DISTNAME}/server/lib/servlets-invoker.jar
 ${DISTNAME}/server/lib/servlets-manager.jar
-${DISTNAME}/server/lib/servlets-snoop.jar
 ${DISTNAME}/server/lib/servlets-ssi.renametojar
 ${DISTNAME}/server/lib/servlets-webdav.jar
 ${DISTNAME}/server/lib/tomcat-ajp.jar
+${DISTNAME}/server/lib/tomcat-coyote.jar
+${DISTNAME}/server/lib/tomcat-http11.jar
 ${DISTNAME}/server/lib/tomcat-util.jar
 ${DISTNAME}/server/lib/warp.jar
 ${DISTNAME}/webapps/ROOT/WEB-INF/web.xml
@@ -71,12 +83,14 @@ ${DISTNAME}/webapps/examples/WEB-INF/classes/JndiServlet.java
 ${DISTNAME}/webapps/examples/WEB-INF/classes/LocalStrings.properties
 ${DISTNAME}/webapps/examples/WEB-INF/classes/LocalStrings_en.properties
 ${DISTNAME}/webapps/examples/WEB-INF/classes/LocalStrings_es.properties
+${DISTNAME}/webapps/examples/WEB-INF/classes/LocalStrings_fr.properties
 ${DISTNAME}/webapps/examples/WEB-INF/classes/RequestHeaderExample.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/RequestHeaderExample.java
 ${DISTNAME}/webapps/examples/WEB-INF/classes/RequestInfoExample.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/RequestInfoExample.java
 ${DISTNAME}/webapps/examples/WEB-INF/classes/RequestParamExample.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/RequestParamExample.java
+${DISTNAME}/webapps/examples/WEB-INF/classes/SendMailServlet.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/SendMailServlet.java
 ${DISTNAME}/webapps/examples/WEB-INF/classes/SessionExample.class
 ${DISTNAME}/webapps/examples/WEB-INF/classes/SessionExample.java
@@ -241,380 +255,6 @@ ${DISTNAME}/webapps/tomcat-docs/appdev/sample/web/images/tomcat.gif
 ${DISTNAME}/webapps/tomcat-docs/appdev/sample/web/index.html
 ${DISTNAME}/webapps/tomcat-docs/appdev/source.html
 ${DISTNAME}/webapps/tomcat-docs/appdev/web.xml.txt
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/allclasses-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/deprecated-list.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/help-doc.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/index-all.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/index.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Authenticator.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Cluster.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Connector.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Contained.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Container.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ContainerEvent.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ContainerListener.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ContainerServlet.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Context.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Deployer.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Engine.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Globals.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Host.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/HttpRequest.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/HttpResponse.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/InstanceEvent.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/InstanceListener.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Lifecycle.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/LifecycleEvent.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/LifecycleException.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/LifecycleListener.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Loader.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Logger.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Manager.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Mapper.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Pipeline.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Realm.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Request.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Response.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Server.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ServerFactory.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Service.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Session.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/SessionEvent.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/SessionListener.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Store.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Valve.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ValveContext.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/Wrapper.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/AuthenticatorBase.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/BasicAuthenticator.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/Constants.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/DigestAuthenticator.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/FormAuthenticator.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/NonLoginAuthenticator.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/SSLAuthenticator.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/SavedRequest.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/SingleSignOn.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/ClusterMemberInfo.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/ClusterReceiver.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/ClusterSender.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/ClusterSessionBase.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/Constants.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/MulticastReceiver.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/MulticastSender.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/ReplicationWrapper.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/StandardCluster.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/Constants.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/HttpRequestBase.PrivilegedGetSession.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/HttpRequestBase.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/HttpRequestFacade.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/HttpRequestWrapper.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/HttpResponseBase.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/HttpResponseFacade.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/HttpResponseWrapper.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/RequestBase.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/RequestFacade.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/RequestStream.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/RequestWrapper.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/ResponseBase.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/ResponseFacade.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/ResponseStream.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/ResponseWrapper.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/ResponseWriter.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/Constants.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/HttpConnector.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/HttpRequestStream.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/HttpResponseStream.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/SocketInputStream.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/Constants.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/HttpConnector.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/Constants.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpCertificates.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpConfigurationHandler.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpConnection.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpConnector.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpEngine.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpHost.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpLogger.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpPacket.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpRequest.Stream.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpRequest.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpRequestHandler.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpResponse.Stream.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpResponse.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpSSLData.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedGetRequestDispatcher.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedGetResource.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedGetResourcePaths.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedLogException.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedLogMessage.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedLogThrowable.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContextFacade.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/Constants.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ContainerBase.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/DefaultContext.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/FastEngineMapper.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardContext.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardContextMapper.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardEngine.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardEngineMapper.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardHost.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardHostMapper.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardPipeline.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardServer.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardService.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardWrapper.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/StandardWrapperFacade.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/ApplicationParameter.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/ContextEjb.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/ContextEnvironment.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/ContextLocalEjb.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/ContextResource.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/ErrorPage.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/FilterDef.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/FilterMap.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/LoginConfig.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/ResourceParams.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/SecurityCollection.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/SecurityConstraint.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/Test.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/Constants.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/Extension.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/Reloader.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/StandardClassLoader.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/StandardLoader.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/WebappClassLoader.PrivilegedFindResource.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/WebappClassLoader.ResourceEntry.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/WebappClassLoader.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/WebappLoader.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/Constants.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/FileLogger.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/SystemErrLogger.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/SystemOutLogger.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net/DefaultServerSocketFactory.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net/SSLServerSocketFactory.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net/ServerSocketFactory.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/Constants.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/GenericPrincipal.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/JDBCRealm.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/JNDIRealm.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/MemoryRealm.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/RealmBase.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.CGIEnvironment.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.CGIRunner.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/Constants.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/DefaultServlet.ResourceInfo.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/DefaultServlet.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/HTMLManagerServlet.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/InvokerServlet.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/ManagerServlet.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/SnoopAllServlet.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/SsiInvokerServlet.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/WebdavServlet.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/Constants.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/DistributedManager.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/FileStore.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/JDBCStore.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/ManagerBase.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/PersistentManager.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/PersistentManagerBase.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/StandardManager.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/StandardSessionFacade.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/StoreBase.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/Bootstrap.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/BootstrapService.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/Catalina.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/CatalinaManager.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/CatalinaManagerMBean.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/CatalinaService.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/ClassLoaderFactory.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/Constants.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/ContextConfig.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/Embedded.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/EmbeddedManager.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/EmbeddedManagerMBean.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/EngineConfig.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/HomesUserDatabase.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/HostConfig.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/PasswdUserDatabase.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/UserConfig.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/UserDatabase.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/Base64.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/CGIProcessEnvironment.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/CharsetMapper.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/CookieTools.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/CustomObjectInputStream.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/DOMWriter.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/DateTool.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/Enumerator.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/FastDateFormat.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/HexUtils.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/InstanceSupport.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/LifecycleSupport.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/MD5Encoder.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/MIME2Java.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ParameterMap.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ProcessEnvironment.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ProcessHelper.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/Queue.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/RequestUtil.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ResourceSet.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/StringManager.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/StringParser.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/URL.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/XMLWriter.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/ResponseIncludeWrapper.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/ServletOutputStreamWrapper.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/SsiCommand.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/SsiConfig.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/SsiEcho.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/SsiExec.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/SsiFlastmod.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/SsiFsize.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/SsiInclude.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/SsiMediator.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/xml/SaxContext.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/xml/XmlAction.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/xml/XmlMapper.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/xml/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/xml/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/xml/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/AccessLogValve.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/CertificatesValve.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/Constants.AccessLog.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/Constants.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/ErrorDispatcherValve.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/ErrorReportValve.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/RemoteAddrValve.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/RemoteHostValve.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/RequestDumperValve.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/RequestFilterValve.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/ValveBase.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/Constants.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/ContextAccessController.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/ContextBindings.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/EjbRef.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/JndiPermission.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/NameParserImpl.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/NamingContext.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/NamingContextBindingsEnumeration.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/NamingContextEnumeration.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/NamingEntry.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/NamingService.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/NamingServiceMBean.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/ResourceEnvRef.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/ResourceRef.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/SelectorContext.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/StringManager.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/TransactionRef.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/BeanFactory.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/Constants.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/EjbFactory.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/MailSessionFactory.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/ResourceEnvFactory.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/ResourceFactory.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/SendMailFactory.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/TransactionFactory.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/TyrexDataSourceFactory.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/TyrexTransactionFactory.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/java/javaURLContextFactory.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/java/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/java/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/java/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/BaseDirContext.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/Constants.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/DirContextURLConnection.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/DirContextURLStreamHandler.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/DirContextURLStreamHandlerFactory.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/FileDirContext.FileResource.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/FileDirContext.FileResourceAttributes.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/FileDirContext.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/ProxyDirContext.CacheEntry.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/ProxyDirContext.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/RecyclableNamingEnumeration.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/Resource.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/ResourceAttributes.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/WARDirContext.Entry.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/WARDirContext.WARResource.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/WARDirContext.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/jndi/Handler.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/jndi/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/jndi/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/jndi/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/package-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/package-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/package-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/overview-frame.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/overview-summary.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/overview-tree.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/package-list
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/packages.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/serialized-form.html
-${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/stylesheet.css
 ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/fs-admin-apps.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/fs-admin-objects.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/fs-admin-opers.html
@@ -646,6 +286,8 @@ ${DISTNAME}/webapps/tomcat-docs/images/tomcat.gif
 ${DISTNAME}/webapps/tomcat-docs/index.html
 ${DISTNAME}/webapps/tomcat-docs/introduction.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/allclasses-frame.html
+${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/allclasses-noframe.html
+${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/constant-values.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/deprecated-list.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/help-doc.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/index-all.html
@@ -653,7 +295,6 @@ ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/index.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/CommandLineContext.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/Constants.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/EmbededServletOptions.html
-${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/JasperError.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/JasperException.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/JspC.html
 ${DISTNAME}/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/JspCompilationContext.Interface1.html
@@ -782,6 +423,8 @@ ${DISTNAME}/webapps/tomcat-docs/proxy-howto.html
 ${DISTNAME}/webapps/tomcat-docs/realm-howto.html
 ${DISTNAME}/webapps/tomcat-docs/security-manager-howto.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/allclasses-frame.html
+${DISTNAME}/webapps/tomcat-docs/servletapi/allclasses-noframe.html
+${DISTNAME}/webapps/tomcat-docs/servletapi/constant-values.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/deprecated-list.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/help-doc.html
 ${DISTNAME}/webapps/tomcat-docs/servletapi/index-all.html
@@ -969,35 +612,6 @@ ${DISTNAME}/webapps/webdav/tomcat.gif
 @dirrm ${DISTNAME}/webapps/tomcat-docs/images
 @dirrm ${DISTNAME}/webapps/tomcat-docs/config
 @dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/jndi
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/java
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming/factory
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/naming
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/valves
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/xml
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util/ssi
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/session
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/cluster
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api
-@dirrm ${DISTNAME}/webapps/tomcat-docs/catalina/docs
 @dirrm ${DISTNAME}/webapps/tomcat-docs/catalina
 @dirrm ${DISTNAME}/webapps/tomcat-docs/appdev/sample/web/images
 @dirrm ${DISTNAME}/webapps/tomcat-docs/appdev/sample/web/WEB-INF
