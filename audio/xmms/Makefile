@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2004/11/21 17:51:47 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2005/01/02 20:11:01 robert Exp $
 
 COMMENT=		"Multimedia player for the X Window System"
 COMMENT-esd=		"Esound output plugin for XMMS"
@@ -6,8 +6,9 @@ COMMENT-vorbis=		"Ogg Vorbis input plugin for XMMS"
 COMMENT-mikmod=		"Mikmod input plugin for XMMS"
 COMMENT-mp3=		"MP3 input plugin for XMMS"
 
-VERSION=		1.2.10
-DISTNAME=		xmms-${VERSION}
+VERSION=		1.2.10p0
+DISTNAME=		xmms-${VERSION:S,p0,,}
+PKGNAME=		xmms-${VERSION}
 PKGNAME-esd=		xmms-esd-${VERSION}
 PKGNAME-vorbis=		xmms-vorbis-${VERSION}
 PKGNAME-mikmod=		xmms-mikmod-${VERSION}
@@ -51,8 +52,7 @@ SUBPACKAGE?=
 MODULES=		devel/gettext
 RUN_DEPENDS=		:unzip-*:archivers/unzip
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
-			gthread.1.2::devel/glib \
-			xml.9::textproc/libxml1
+			gthread.1.2::devel/glib
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	autoconf
@@ -63,8 +63,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			XML_CONFIG="${LOCALBASE}/bin/xml-config" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 DOCS=			README NEWS FAQ
 
