@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/02/25 08:04:05 form Exp $
+# $OpenBSD: Makefile,v 1.24 2001/02/27 03:46:23 form Exp $
 
 DISTNAME=	analog-4.16
 CATEGORIES=	www
@@ -23,9 +23,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-ETCDIR=		/etc
 ANALOGDIR=	${PREFIX}/share/analog
-CONFIGFILE=	${ETCDIR}/analog.cfg
+CONFIGFILE=	${SYSCONFDIR}/analog.cfg
 DOCDIR=		${PREFIX}/share/doc/analog
 HTTPDIR=	/var/www
 IMAGEDIR=	/analog-images
