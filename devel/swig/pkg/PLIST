@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/09/02 13:53:45 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/10/31 08:08:55 kevlo Exp $
 bin/swig
 lib/libswigguile.a
 lib/libswigguile.la
@@ -26,6 +26,7 @@ lib/swig1.3/guile/list-vector.i
 lib/swig1.3/guile/pointer-in-out.i
 lib/swig1.3/guile/ports.i
 lib/swig1.3/guile/typemaps.i
+lib/swig1.3/java/java.i
 lib/swig1.3/java/java.swg
 lib/swig1.3/java/java_arrays.i
 lib/swig1.3/java/stl_string.i
@@ -64,6 +65,7 @@ lib/swig1.3/ruby/rubydec.swg
 lib/swig1.3/ruby/rubydef.swg
 lib/swig1.3/ruby/typemaps.i
 lib/swig1.3/stdlib.i
+lib/swig1.3/swig.swg
 lib/swig1.3/tcl/constarray.i
 lib/swig1.3/tcl/consthash.i
 lib/swig1.3/tcl/object.swg

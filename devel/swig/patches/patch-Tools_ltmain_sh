@@ -1,47 +1,52 @@
-$OpenBSD: patch-Tools_ltmain_sh,v 1.1 2001/02/19 18:32:11 danh Exp $
---- Tools/ltmain.sh.orig	Mon Feb 19 13:20:03 2001
-+++ Tools/ltmain.sh	Mon Feb 19 13:27:41 2001
-@@ -1079,7 +1079,18 @@ compiler."
+--- Tools/ltmain.sh.orig	Wed Oct 31 14:08:59 2001
++++ Tools/ltmain.sh	Wed Oct 31 14:18:57 2001
+@@ -1079,6 +1079,17 @@
  	    # These systems don't actually have c library (as such)
  	    continue
  	    ;;
 +          *-*-openbsd*)
-+            # Do not include libc due to us having libc/libc_r.
-+            continue
-+            ;;
- 	  esac
-+        elif test "$arg" = "-lc_r"; then
-+          case "$host" in
-+          *-*-openbsd*)
-+            # Do not include libc_r directly, use -pthread flag.
-+            continue
-+            ;;
++	    # Do not include libc due to us having libc/libc_r.
++	    continue
++	    ;;
 +          esac
++        elif test "$arg" = "-lc_r"; then
++	  case "$host" in
++	  *-*-openbsd*)
++	    # Do not include libc_r directly, use -pthread flag.
++	    continue
++	    ;;
+ 	  esac
  	elif test "$arg" = "-lm"; then
  	  case "$host" in
- 	  *-*-cygwin* | *-*-beos*)
-@@ -1091,6 +1102,10 @@ compiler."
+@@ -1091,6 +1102,17 @@
  	deplibs="$deplibs $arg"
  	;;
  
-+       -?thread)
-+        deplibs="$deplibs $arg"
-+        ;;
++      -pthread)
++       case $host in
++       *-*-openbsd*)
++	 deplibs="$deplibs $arg"
++	 ;;
++       *)
++	 continue
++	 ;;
++       esac
++       ;;
 +
        -module)
  	module=yes
  	continue
-@@ -1795,6 +1810,9 @@ compiler."
+@@ -1795,6 +1817,9 @@
  	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
  	  # these systems don't actually have a c library (as such)!
  	  ;;
-+        *-*-openbsd*)
-+          # Do not include libc due to us having libc/libc_r.
-+          ;;
++	*-*-openbsd*)
++	  # Do not include libc due to us having libc/libc_r.
++	  ;;
  	*)
  	  # Add libc to deplibs on all other systems.
  	  deplibs="$deplibs -lc"
-@@ -3554,41 +3572,6 @@ libdir='$install_libdir'\
+@@ -3554,41 +3579,7 @@
  
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
@@ -67,7 +72,7 @@ $OpenBSD: patch-Tools_ltmain_sh,v 1.1 2001/02/19 18:32:11 danh Exp $
 -    if test -n "$hardcode_libdir_flag_spec"; then
 -      libdir=LIBDIR
 -      eval flag=\"$hardcode_libdir_flag_spec\"
--
+ 
 -      echo "   - use the \`$flag' linker flag"
 -    fi
 -    if test -n "$admincmds"; then

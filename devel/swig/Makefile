@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2001/09/28 06:02:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2001/10/31 08:08:50 kevlo Exp $
 
 COMMENT=		"simplified wrapper and interface generator"
 COMMENT-examples=	"examples for swig"
 
-VERSION=	1.3.6
+VERSION=	1.3.9
 
 DISTNAME=	swig-${VERSION}
 PKGNAME-examples= swig-examples-${VERSION}
 CATEGORIES=	devel
-NEED_VERSION=	1.448
+NEED_VERSION=	1.488
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= swig
 
@@ -21,10 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS+=	python2.1::lang/python \
-		tclsh8.3::lang/tcl/8.3 \
-		guile::lang/guile \
-		ruby::lang/ruby
+BUILD_DEPENDS=	::lang/python ::lang/tcl/8.3 ::lang/guile ::lang/ruby
 
 MULTI_PACKAGES=	-examples
 
