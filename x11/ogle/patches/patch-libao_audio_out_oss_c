@@ -1,0 +1,12 @@
+$OpenBSD: patch-libao_audio_out_oss_c,v 1.1 2001/10/14 23:02:06 espie Exp $
+--- libao/audio_out_oss.c.orig	Mon Oct 15 00:37:08 2001
++++ libao/audio_out_oss.c	Mon Oct 15 00:37:17 2001
+@@ -270,7 +270,7 @@ ao_instance_t * oss_open (int flags)
+     instance->set_params = 1;
+     instance->flags = flags;
+ 
+-    instance->fd = open ("/dev/dsp", O_WRONLY);
++    instance->fd = open ("/dev/audio", O_WRONLY);
+     if (instance->fd < 0) {
+ 	fprintf (stderr, "Can not open /dev/dsp\n");
+ 	instance->fd = open ("/dev/dsp0", O_WRONLY);
