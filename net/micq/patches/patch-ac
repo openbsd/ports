@@ -1,0 +1,11 @@
+--- mreadline.c.orig	Thu Jun 24 00:42:41 1999
++++ mreadline.c	Thu Jun 24 00:42:46 1999
+@@ -324,7 +324,7 @@
+ }
+ 
+ static struct termios saved_attr;
+-static attrs_saved = 0;
++static int attrs_saved = 0;
+ 
+ static void tty_restore (void)
+ {

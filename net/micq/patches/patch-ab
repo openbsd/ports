@@ -1,0 +1,15 @@
+--- ui.c.orig	Thu Jun 24 00:41:20 1999
++++ ui.c	Thu Jun 24 00:41:59 1999
+@@ -45,10 +45,10 @@
+ 
+ USER_INFO_STRUCT user;
+ 
+-#ifdef 0
++/* #ifdef 0
+ char *strdup( const char * );
+ int strcasecmp( const char *, const char * );
+-#endif
++#endif */
+ 
+ BOOL Do_Multiline( SOK_T sok, char *buf )
+ {
