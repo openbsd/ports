@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.20 2004/04/18 12:13:58 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.21 2004/05/15 06:43:23 sturm Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -154,7 +154,8 @@ FULLPKGNAME-tools=	python-tools-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 
 CONFIGURE_STYLE?=	autoconf dest no-autoheader
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--with-fpectl --with-threads
+# --srcdir is needed for systrace to work correctly
+CONFIGURE_ARGS+=	--with-fpectl --with-threads --srcdir=${WRKSRC}
 
 REGRESS_TARGET=	test
 
@@ -180,7 +181,7 @@ FAKE_FLAGS+=	MAJOR=0 MINOR=0 LDLIBRARY=libpython${VERSION}.so.0.0 \
 		LD_LIBRARY_PATH=${WRKSRC} RANLIB=:
 .endif
 
-ALL_TARGET=	all ./Lib/plat-openbsd3
+ALL_TARGET=	all ${WRKSRC}/Lib/plat-openbsd3
 
 post-configure:
 	@sed -e 's,@NOSHARED@,${NOSHARED},g' \
