@@ -1,7 +1,7 @@
-$OpenBSD: patch-libmpdemux_stream_c,v 1.5 2002/10/14 09:50:48 pvalchev Exp $
---- libmpdemux/stream.c.orig	Sun Aug  4 15:35:25 2002
-+++ libmpdemux/stream.c	Tue Sep 10 22:47:17 2002
-@@ -22,7 +22,7 @@ extern int verbose; // defined in mplaye
+$OpenBSD: patch-libmpdemux_stream_c,v 1.6 2003/02/16 07:25:18 brad Exp $
+--- libmpdemux/stream.c.orig	Sun Jan 12 21:16:28 2003
++++ libmpdemux/stream.c	Mon Jan 20 00:35:46 2003
+@@ -24,7 +24,7 @@ extern int verbose; // defined in mplaye
  
  #ifdef HAVE_VCD
  

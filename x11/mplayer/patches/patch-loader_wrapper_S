@@ -1,9 +1,11 @@
-$OpenBSD: patch-loader_wrapper_S,v 1.1 2002/12/22 14:19:47 espie Exp $
---- loader/wrapper.S.orig	Sun Dec  8 21:11:05 2002
-+++ loader/wrapper.S	Sun Dec  8 21:11:19 2002
-@@ -1,27 +1,32 @@
+$OpenBSD: patch-loader_wrapper_S,v 1.2 2003/02/16 07:25:18 brad Exp $
+--- loader/wrapper.S.orig	Mon Nov 25 21:37:12 2002
++++ loader/wrapper.S	Tue Jan 21 23:02:18 2003
+@@ -1,27 +1,36 @@
 +#include "../mangle.h"
-+#if !defined(__OpenBSD__) && !defined(__ELF__)
++#if defined(__OpenBSD__) && !defined(__ELF__)
++.data
++#else
  .section .data
 -.globl caller_return
 -caller_return:
@@ -20,6 +22,7 @@ $OpenBSD: patch-loader_wrapper_S,v 1.1 2002/12/22 14:19:47 espie Exp $
 -.global wrapper_target
 -wrapper_target:	
 -	.long null_call
+-
 +.globl MANGLEA(report_entry)
 +MANGLEA(report_entry):
 +	.long MANGLEA(null_call)
@@ -29,8 +32,10 @@ $OpenBSD: patch-loader_wrapper_S,v 1.1 2002/12/22 14:19:47 espie Exp $
 +.global MANGLEA(wrapper_target)
 +MANGLEA(wrapper_target):	
 +	.long MANGLEA(null_call)
- 
-+#if !defined(__OpenBSD__) && !defined(__ELF__)
++
++#if defined(__OpenBSD__) && !defined(__ELF__)
++.text
++#else
  .section .text
 -.globl null_call
 -	.type null_call, @function
@@ -51,7 +56,7 @@ $OpenBSD: patch-loader_wrapper_S,v 1.1 2002/12/22 14:19:47 espie Exp $
  	pusha			# store registers (EAX, ECX, EDX, EBX, ESP, EBP, ESI, EDI) 
  	pushf			# store flags
  	
-@@ -39,7 +44,7 @@ wrapper:
+@@ -39,7 +48,7 @@ wrapper:
  	push %eax
  	push %edx
  	
@@ -60,7 +65,7 @@ $OpenBSD: patch-loader_wrapper_S,v 1.1 2002/12/22 14:19:47 espie Exp $
  	
  	test %eax, %eax
  	jnz .Ldone
-@@ -48,14 +53,14 @@ wrapper:
+@@ -48,14 +57,14 @@ wrapper:
  	popf			# restore flags
  	popa			# restore registers
  	
@@ -78,7 +83,7 @@ $OpenBSD: patch-loader_wrapper_S,v 1.1 2002/12/22 14:19:47 espie Exp $
  	pusha			# more for reference sake here
  	pushf
  	
-@@ -73,7 +78,7 @@ wrapper:
+@@ -73,7 +82,7 @@ wrapper:
  	push %eax
  	push %edx
  

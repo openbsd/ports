@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.45 2003/01/21 23:07:38 sturm Exp $
+# $OpenBSD: Makefile,v 1.46 2003/02/16 07:25:18 brad Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
 
 COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
-DISTNAME=		MPlayer-0.90rc2
+
+DISTNAME=		MPlayer-0.90rc4
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}p1
+PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -51,7 +52,7 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 		--disable-alsa \
 		--disable-ossaudio \
 		--disable-arts \
-		--disable-dvdnav \
+		--disable-nas \
 		--enable-select \
 		--enable-vidix \
 		--enable-vorbis \
@@ -142,11 +143,13 @@ pre-fetch:
 	@echo
 .  endif
 
-RUN_DEPENDS+=	win32/divx.dll:win32-codecs-*:graphics/win32-codecs
+RUN_DEPENDS+=	:win32-codecs-*:graphics/win32-codecs
 BUILD_DEPENDS+=	${RUN_DEPENDS}
-CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32
+CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32 \
+		--enable-qtx-codecs
 .else
-CONFIGURE_ARGS+=--disable-win32
+CONFIGURE_ARGS+=--disable-win32 \
+		--disable-qtx-codecs
 .endif
 
 .if ${FLAVOR:L:Mcdda}
@@ -172,6 +175,10 @@ NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mplayer/Skin/${SKIN}
-	${INSTALL_DATA} ${WRKDIR}/${SKIN}/* ${PREFIX}/share/mplayer/Skin/${SKIN}/
+	${INSTALL_DATA} ${WRKDIR}/${SKIN}/* ${PREFIX}/share/mplayer/Skin/${SKIN}
+	cd ${WRKDIST}/etc; ${INSTALL_DATA} input.conf menu.conf \
+			${PREFIX}/share/mplayer
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mplayer
+	${INSTALL_DATA} ${WRKDIST}/DOCS/*.html ${PREFIX}/share/doc/mplayer
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/01/03 23:06:36 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/02/16 07:25:18 brad Exp $
 bin/mencoder
 bin/mplayer
 lib/mplayer/vidix/cyberblade_vid.so
@@ -12,7 +12,22 @@ lib/mplayer/vidix/rage128_vid.so
 man/man1/mencoder.1
 man/man1/mplayer.1
 share/mplayer/codecs.conf
+share/mplayer/input.conf
+share/mplayer/menu.conf
+share/doc/mplayer/bugreports.html
+share/doc/mplayer/cd-dvd.html
+share/doc/mplayer/codecs-in.html
+share/doc/mplayer/codecs.html
+share/doc/mplayer/documentation.html
+share/doc/mplayer/encoding.html
+share/doc/mplayer/faq.html
+share/doc/mplayer/formats.html
+share/doc/mplayer/skin.html
+share/doc/mplayer/sound.html
+share/doc/mplayer/users_against_developers.html
+share/doc/mplayer/video.html
 !%%no_x11%%
-@exec rmdir share/mplayer 2>/dev/null || true
+@unexec rmdir %D/share/mplayer 2>/dev/null || true
+@dirrm share/doc/mplayer
 @dirrm lib/mplayer/vidix
 @dirrm lib/mplayer
