@@ -1,30 +1,33 @@
-# $OpenBSD: Makefile,v 1.25 2002/10/28 01:38:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2003/06/06 00:35:12 naddy Exp $
 
 COMMENT=	"virtual tunnels over TCP/IP networks with traffic shaping"
 
-DISTNAME=	vtun-2.5
+DISTNAME=	vtun-2.6
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vtun/}
-
 HOMEPAGE=	http://vtun.sourceforge.net/
 
-LIB_DEPENDS=	lzo.1.0::archivers/lzo
-
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vtun/}
+
+LIB_DEPENDS=	lzo.1::archivers/lzo
+
 LOG_DIR=	/var
 SUBST_VARS=	LOG_DIR
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.13
 CONFIGURE_ARGS=	--localstatedir="${LOG_DIR}" \
 		--with-ssl-headers="/usr/include/openssl" \
 		--with-lzo-headers="${LOCALBASE}/include" \
 		--with-lzo-lib="${LOCALBASE}/lib"
 
 WRKDIST=	${WRKDIR}/vtun
+ALL_TARGET=	vtund
 
 NO_REGRESS=	Yes
 
@@ -34,6 +37,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vtun
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vtun
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/vtun
-	${INSTALL_DATA} ${WRKSRC}/vtund.conf ${PREFIX}/share/examples/vtun/vtund.conf-sample
+	${INSTALL_DATA} ${WRKSRC}/vtund.conf \
+		${PREFIX}/share/examples/vtun/vtund.conf-sample
 
 .include <bsd.port.mk>
