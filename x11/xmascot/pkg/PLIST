@@ -20,3 +20,5 @@ lib/X11/xmascot/mi2.au
 lib/X11/xmascot/mi2.raw
 lib/X11/xmascot/mitime.au
 lib/X11/xmascot/mitime.raw
+man/cat1/xmascot.0
+@dirrm lib/X11/xmascot
