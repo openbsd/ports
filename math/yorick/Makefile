@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2002/12/29 19:43:50 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2003/02/12 07:37:35 pvalchev Exp $
 
 COMMENT=	"interpreted language for scientific computing"
 
 VERSION=	1.5
 DISTNAME=	yorick-${VERSION}.08
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	math devel
 MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/
 EXTRACT_SUFX=	.tgz
@@ -19,8 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
 
+Y_SITE=		${PREFIX}/share/yorick
 CONFIGURE_STYLE= simple
-Y_DIR=		${PREFIX}/share/yorick
+MAKE_FLAGS=	Y_SITE="${Y_SITE}"
 
 WRKDIST=	${WRKDIR}/yorick-${VERSION}
 
@@ -40,10 +42,12 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/gist.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/yorick
 	${INSTALL_DATA} ${WRKSRC}/doc/*.{doc,tex,ps,pdf} ${PREFIX}/share/doc/yorick
-	${INSTALL_DATA_DIR} ${Y_DIR}
-	${INSTALL_DATA_DIR} ${Y_DIR}/g
-	${INSTALL_DATA_DIR} ${Y_DIR}/i
-	${INSTALL_DATA} ${WRKSRC}/g/* ${Y_DIR}/g
-	${INSTALL_DATA} ${WRKSRC}/i/* ${Y_DIR}/i
+	${INSTALL_DATA_DIR} ${Y_SITE}
+	${INSTALL_DATA_DIR} ${Y_SITE}/g
+	${INSTALL_DATA_DIR} ${Y_SITE}/i
+	${INSTALL_DATA_DIR} ${Y_SITE}/i0
+	${INSTALL_DATA} ${WRKSRC}/g/* ${Y_SITE}/g
+	${INSTALL_DATA} ${WRKSRC}/i/* ${Y_SITE}/i
+	${INSTALL_DATA} ${WRKSRC}/i0/* ${Y_SITE}/i0
 
 .include <bsd.port.mk>
