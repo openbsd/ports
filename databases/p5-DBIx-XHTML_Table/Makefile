@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/20 05:46:42 shell Exp $
+# $OpenBSD: Makefile,v 1.16 2003/06/14 10:08:57 shell Exp $
 
 COMMENT=	"create HTML table from sql queries"
 
-VERSION=	1.14
+VERSION=	1.22
 DISTNAME=	DBIx-XHTML_Table-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases www perl5
