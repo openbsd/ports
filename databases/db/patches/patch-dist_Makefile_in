@@ -1,6 +1,6 @@
-$OpenBSD: patch-dist_Makefile_in,v 1.1 2000/09/04 17:17:46 matt Exp $
+$OpenBSD: patch-dist_Makefile_in,v 1.2 2001/07/28 02:56:56 brad Exp $
 --- dist/Makefile.in.orig	Tue Jul 18 11:37:57 2000
-+++ dist/Makefile.in	Wed Aug 30 19:33:44 2000
++++ dist/Makefile.in	Fri Jul 27 22:55:30 2001
 @@ -112,7 +112,7 @@ exec_prefix=@exec_prefix@
  bindir=	@bindir@
  includedir=@includedir@
@@ -10,3 +10,11 @@ $OpenBSD: patch-dist_Makefile_in,v 1.1 2000/09/04 17:17:46 matt Exp $
  
  dmode=	755
  emode=	555
+@@ -426,7 +426,6 @@ install_dynamic: install_setup
+ 	@$(INSTALLER) $(libso_target) $(libdir)
+ 	@cd $(libdir) && $(ln) -s $(libso) $(libso_default)
+ 	@cd $(libdir) && $(ln) -s $(libso) $(libso_major)
+-	@$(LIBTOOL) --mode=finish $(libdir)
+ 
+ install_dynamic_cxx: install_setup
+ 	@echo "Installing DB C++ library: $(libdir) ..."
