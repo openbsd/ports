@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/06/12 20:41:47 marcm Exp $
+# $OpenBSD: Makefile,v 1.9 2003/08/07 02:22:44 marcm Exp $
 
      SUBDIR += applets
      SUBDIR += applets2
@@ -30,6 +30,7 @@
      SUBDIR += terminal
      SUBDIR += themes
      SUBDIR += users-guide
+     SUBDIR += utils
      SUBDIR += vfs
      SUBDIR += vfs2
      SUBDIR += yelp
