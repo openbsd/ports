@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/15 18:05:18 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/08/08 20:01:36 nino Exp $
 
 COMMENT=		"MIME and Application database for GNOME"
 
-DISTNAME=		gnome-mime-data-1.0.1
+DISTNAME=		gnome-mime-data-2.0.0
 CATEGORIES=		x11 x11/gnome
-NEED_VERSION=   	1.504
 HOMEPAGE=		http://www.gnome.org/
 
-MAINTAINER=		Nils Nordman <nino@nforced.com>
+MAINTAINER=		Nils Nordman <nino@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/gnome-mime-data/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=2.0.0/sources/gnome-mime-data/}
 EXTRACT_SUFX=		.tar.bz2
-CONFIGURE_STYLE= 	gnu
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+SEPARATE_BUILD=		concurrent
+CONFIGURE_STYLE= 	gnu
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-mime-data; \
