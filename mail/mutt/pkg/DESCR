@@ -3,18 +3,15 @@ The Mutt Mail User Agent
 This is a nifty e-mail client that includes excellent PGP hooks.
 Other features include:
 
-- color support 
-- message threading 
-- MIME support (including RFC2047 support for encoded headers) 
-- POP3 support 
-- support for multiple mailbox formats (mbox, MMDF, MH, maildir) 
-- highly customizable, including key bindings 
-- searches using regular expression 
-- Delivery Status Notification (DSN) support 
-- PGP/MIME (RFC2015) 
-- small and efficient 
+- color support
+- message threading
+- MIME support (including RFC2047 support for encoded headers)
+- POP3 support
+- support for multiple mailbox formats (mbox, MMDF, MH, maildir)
+- highly customizable, including key bindings
+- searches using regular expression
+- Delivery Status Notification (DSN) support
+- PGP/MIME (RFC2015)
+- small and efficient
 
-Port maintained by:
-Christopher Turan
-turan@cvs.openbsd.org
-
+WWW: ${HOMEPAGE}
