@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/07 13:19:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/09 13:13:03 peter Exp $
 
-IS_INTERACTIVE=	Yes
 DISTNAME=	HTML-Embperl-1.3.1
 PKGNAME=	p5-HTML-Embperl-1.3.1
 CATEGORIES=	www perl5
@@ -15,7 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=    ${LOCALBASE}/lib/mod_perl.so::www/mod_perl
+BUILD_DEPENDS=	${LOCALBASE}/lib/mod_perl.so::www/mod_perl
+RUN_DEPENDS=	${LOCALBASE}/lib/mod_perl.so::www/mod_perl
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ENV=	EPHTTPD="/usr/sbin/httpd" APACHE_SRC="/usr/lib/apache"
