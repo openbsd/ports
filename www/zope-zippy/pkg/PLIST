@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/04 22:00:39 naddy Exp $
+lib/zope/lib/python/Products/Zippy/README.txt
+lib/zope/lib/python/Products/Zippy/ZippyTag.py
+lib/zope/lib/python/Products/Zippy/__init__.py
+lib/zope/lib/python/Products/Zippy/yow.lines
+@dirrm lib/zope/lib/python/Products/Zippy
