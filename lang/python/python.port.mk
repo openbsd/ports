@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.1 2003/07/28 17:48:13 sturm Exp $
+# $OpenBSD: python.port.mk,v 1.2 2003/07/29 19:35:32 sturm Exp $
 
 MODPY_VERSION?=		2.2
 
@@ -16,7 +16,8 @@ MODPY_SETUP?=		setup.py
 MODPY_DISTUTILS_BUILD?=		build --build-base=${WRKSRC}
 MODPY_DISTUTILS_INSTALL?=	install --prefix=${PREFIX}
 
-MODPY_CMD=	@cd ${WRKSRC} && ${MODPY_BIN} ./${MODPY_SETUP}
+MODPY_CMD=	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+			${MODPY_BIN} ./${MODPY_SETUP}
 
 SUBST_VARS+=	MODPY_VERSION
 
