@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/08/13 04:46:29 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/12/08 02:57:25 brad Exp $
 # $FreeBSD: Makefile,v 1.4 1998/11/18 15:09:35 vanilla Exp $
 
 DISTNAME=	gettext-0.10.35
@@ -13,15 +13,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
-pre-configure:
-	@${RM} ${WRKSRC}/doc/gettext.info*
-
 post-install:
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
+	@mkdir -p ${X11BASE}/share/locale
 	@install-info ${PREFIX}/info/gettext.info ${PREFIX}/info/dir
-	@${MKDIR} ${X11BASE}/share/locale
 	${INSTALL_DATA} ${WRKSRC}/misc/po-mode.el \
 		${PREFIX}/share/gettext/po-mode.el
 
