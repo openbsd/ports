@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2003/10/08 17:13:15 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2004/09/28 01:24:41 jcs Exp $
 
 COMMENT=	"Advanced Power Management monitor utility for X"
 
-DISTNAME=	asapm-2.11
+DISTNAME=	asapm-2.13
 HOMEPAGE=	http://www.tigr.net/afterstep/
 
 CATEGORIES=	x11
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 ONLY_FOR_ARCHS=	i386 macppc
 
