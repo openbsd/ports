@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2000/11/30 04:41:55 dugsong Exp $
+# $OpenBSD: Makefile,v 1.9 2001/04/07 01:34:19 brad Exp $
+
+COMMENT=	"universal digital camera picture control tool"
 
 DISTNAME=	gphoto-0.4.3
-
 CATEGORIES=	graphics
+NEED_VERSION=	1.384
+MASTER_SITES=	http://www.gphoto.org/dist/
 
-MASTER_SITES=	http://www.gphoto.net/dist/
+HOMEPAGE=	http://www.gphoto.org/
+
+LIB_DEPENDS=	Imlib.19::graphics/imlib \
+		Magick.5::graphics/ImageMagick
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
@@ -13,10 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
-		Imlib.19::graphics/imlib \
-		Magick.5::graphics/ImageMagick
-
-CONFIGURE_STYLE=autoconf
+CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	CPPFLAGS='-DDOCDIR="${PREFIX}/share/doc/gphoto"'
 
 .include <bsd.port.mk>
