@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.19 2000/06/09 21:15:18 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2000/06/20 20:56:49 jakob Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 
-DISTNAME=	xchat-1.2.1
+DISTNAME=	xchat-1.4.2
 CATEGORIES=	x11
-NEED_VERSION=	 1.230
-MASTER_SITES=	http://xchat.org/files/source/1.2/ \
-		http://xchat.linuxpower.org/files/source/1.2/
+NEED_VERSION=	1.302
+
+MASTER_SITES=	http://xchat.org/files/source/1.4/ \
+		http://xchat.linuxpower.org/files/source/1.4/
+
+HOMEPAGE=	http://www.xchat.org/
 
 MAINTAINER=	chris@dqc.org
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -20,11 +22,12 @@ LIB_DEPENDS=	intl::devel/gettext \
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
-GNU_CONFIGURE=	Yes
-CONFIGURE_ARGS+= --disable-gnome --disable-imlib --disable-panel
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		GTK_CONFIG="${LOCALBASE}/bin/gtk-config"
+
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--disable-gnome --disable-imlib --disable-panel
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			GTK_CONFIG="${LOCALBASE}/bin/gtk-config"
 
 post-install:
 	@strip ${PREFIX}/bin/xchat
