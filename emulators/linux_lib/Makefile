@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1999/04/08 18:46:40 marc Exp $
+# $OpenBSD: Makefile,v 1.12 1999/05/03 04:49:42 brad Exp $
 # $NetBSD: Makefile,v 1.10 1998/04/24 09:07:55 agc Exp $
 # $FreeBSD Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp $
 
@@ -27,7 +27,7 @@ pre-install:
 	@[ -d ${PREFIX} ] || ${MKDIR} ${PREFIX}
 
 do-install:
-	@zcat ${DISTDIR}/${DISTNAME}.tar.gz |(cd ${PREFIX}; pax -r)
+	@zcat ${DISTDIR}/${DISTNAME}.tar.gz | (cd ${PREFIX}; pax -r)
 
 post-install:
 # Creating usr/local/lib to prevent linux ldconfig from scanning OpenBSD
@@ -37,6 +37,8 @@ post-install:
 	-@${RMDIR} ${PREFIX}/usr/local/lib ${PREFIX}/usr/local
 	${MKDIR} ${PREFIX}/usr/lib/zoneinfo
 	${LN} -sf /etc/localtime ${PREFIX}/usr/lib/zoneinfo/localtime
+	${MKDIR} ${PREFIX}/dev
+	${LN} -sf /dev/sound0 ${PREFIX}/dev/dsp
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>

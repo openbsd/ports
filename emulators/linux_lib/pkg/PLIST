@@ -1,6 +1,7 @@
 .linux_lib-version
 bin/bash
 bin/sh
+dev/dsp
 etc/host.conf
 etc/ld.so.cache
 etc/ld.so.conf
@@ -765,7 +766,9 @@ var/X11R6/lib/nls/wr_WR.ct
 var/X11R6/lib/nls/zh_CN.ugb
 var/X11R6/lib/nls/zh_TW.big5
 var/X11R6/lib/rgb.txt
+@unexec rm -rf %D/dev
 @dirrm bin
+@dirrm dev
 @dirrm etc
 @dirrm lib
 @dirrm sbin
