@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/02/15 19:53:42 matt Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/25 23:03:00 espie Exp $
 
 COMMENT=	"convert Big5 encoded files to PDF"
 
@@ -11,9 +11,9 @@ HOMEPAGE=	http://students.washington.edu/cschin/
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
-PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_CDROM= No
 PERMIT_DISTFILES_FTP=   Yes
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_CDROM=   No
 PERMIT_PACKAGE_FTP=     Yes
 
 MASTER_SITES=	${HOMEPAGE}/bg5ps/bg5pdf/
