@@ -4,7 +4,7 @@
 # Date created:		18 November 1997
 # Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.7 2000/02/11 00:37:35 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/22 17:08:44 espie Exp $
 #
 
 DISTNAME=		tinpre-1.4-19990216
@@ -21,7 +21,7 @@ MASTER_SITES=		ftp://nuxi.ucdavis.edu/pub/tin/pre-v1.4/ \
 			ftp://ftp.nuxi.com/pub/tin/
 
 EXTRACT_SUFX=		.tgz
-NEED_VERSION=	1.191
+NEED_VERSION=	1.210
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-spooldir=/var/news  \
@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=	--enable-nntp-only
 .endif
 CONFIGURE_ENV=		${SETENV}
 
-MAKEFILE=		makefile
+MAKE_FILE=		makefile
 WRKDIST=         	${WRKDIR}/${DISTNAME:S/pre-1.4//}
 
 ALL_TARGET=		build

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:04:07 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/22 17:08:38 espie Exp $
 
 DISTNAME=	ish-1.11
 CATEGORIES=	converters
 
 MAINTAINER=	angelos@openbsd.org
+NEED_VERSION=	1.210
 
 LICENSE_TYPE=		PD
 PERMIT_PACKAGE_CDROM=	YES
@@ -13,7 +14,7 @@ PERMIT_DISTFILES_FTP=	YES
 
 #MASTER_SITES=	ftp://jaz.jp.freebsd.org/pub/incoming/distfiles/
 
-MAKEFILE=	makefile
+MAKE_FILE=	makefile
 ALL_TARGET=	ish
 
 .include <bsd.port.mk>

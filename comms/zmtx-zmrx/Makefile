@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/10 23:14:29 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/22 17:08:37 espie Exp $
 
 DISTNAME=	zmtx-zmrx
 PKGNAME=	zmtx-zmrx-1.02
@@ -10,7 +10,7 @@ MAINTAINER=	ports@openbsd.org
 
 MASTER_SITES=	ftp://ftp.inria.fr/network/modem/  \
 		${MASTER_SITE_LOCAL}
-NEED_VERSION=	1.191
+NEED_VERSION=	1.210
 # see also comp.unix.sources for version 1.0
 # ftp://ftp.lth.se/pub/usenet/comp.sources.unix/volume28/zm/part01.gz
 EXTRACT_SUFX=	.shar.gz
@@ -19,7 +19,7 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh
 
 WRKDIST=	${WRKDIR}
-MAKEFILE=	makefile
+MAKE_FILE=	makefile
 
 PKG_CMD=	/usr/sbin/pkg_create -D ${PKGDIR}/licence
 

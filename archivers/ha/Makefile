@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/15 05:03:53 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/22 17:08:33 espie Exp $
 
 DISTNAME=	ha0999
 PKGNAME=	ha-0.999b
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP=	YES
 USE_GMAKE=	yes
 
 ALL_TARGET=	ha
-MAKEFILE=	makefile.nix
-NEED_VERSION=	1.191
+MAKE_FILE=	makefile.nix
+NEED_VERSION=	1.210
 WRKDIST=	${WRKDIR}
 
 do-install:

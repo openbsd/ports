@@ -5,9 +5,9 @@
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.10 2000/02/15 05:04:35 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/02/22 17:08:40 espie Exp $
 
-NEED_VERSION=	1.195
+NEED_VERSION=	1.210
 DISTNAME=	Wnn4.2
 PKGNAME?=	ja-Wnn-4.2
 CATEGORIES?=	japanese
@@ -80,7 +80,7 @@ pre-install:
 post-install:
 # This package uses imake's "install.man" target to install man pages but
 #  I can't define USE_IMAKE because it doesn't involve xmkmf
-	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} -f ${MAKEFILE} install.man)
+	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} -f Makefile install.man)
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/15 05:04:45 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/22 17:08:43 espie Exp $
 
 BROKEN=		dependency mbone/wbd is also broken
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
-NEED_VERSION=	1.111
+NEED_VERSION=	1.210
 
 LIB_DEPENDS=	tcl80:${PORTSDIR}/lang/tcl80 \
 		tk80:${PORTSDIR}/x11/tk80 \
@@ -25,7 +25,7 @@ RUN_DEPENDS=	nte:${PORTSDIR}/mbone/nte \
 		rat:${PORTSDIR}/mbone/rat
 
 USE_GMAKE=	yes
-MAKEFILE=	makefile
+MAKE_FILE=	makefile
 ALL_TARGET=		
 
 do-install:

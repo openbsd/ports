@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2000/02/15 05:04:47 turan Exp $
+# $OpenBSD: Makefile,v 1.15 2000/02/22 17:08:43 espie Exp $
 
 BROKEN=		new distsites needed.  sources do not fetch consistantly.
 
 DISTNAME=	wbd-1.0ucl4
 CATEGORIES=	mbone
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/wbd/1.0ucl4/
-NEED_VERSION=	1.191
+NEED_VERSION=	1.210
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	YES
 BUILD_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
 
-MAKEFILE=	makefile
+MAKE_FILE=	makefile
 WRKDIST=	${WRKDIR}/wbd
 
 pre-build:

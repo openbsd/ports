@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.209 2000/02/22 14:07:09 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.210 2000/02/22 17:08:31 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -541,7 +541,7 @@ PORTPATH?= /usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${X11BASE}/bin
 CFLAGS+=		${COPTS}
 
 MAKE_FLAGS?=	
-MAKEFILE?=		Makefile
+MAKE_FILE?=		Makefile
 MAKE_ENV+=		PATH=${PORTPATH} PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} MOTIFLIB="${MOTIFLIB}" CFLAGS="${CFLAGS}"
 
 FETCH_CMD?=		/usr/bin/ftp
@@ -1371,7 +1371,7 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 	@cd ${.CURDIR} && make do-build
 .  else
 # What BUILD normally does:
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKEFILE} ${ALL_TARGET}
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
 # End of BUILD
 .  endif
 .  if target(post-build)
@@ -1428,7 +1428,7 @@ ${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
 	@cd ${.CURDIR} && make do-install
 .  else
 # What INSTALL normally does:
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKEFILE} ${INSTALL_TARGET}
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${INSTALL_TARGET}
 # End of INSTALL.
 .  endif
 .  if target(post-install)

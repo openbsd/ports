@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:04:23 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/22 17:08:39 espie Exp $
 #
 
 DISTNAME=	gnushogi-1.2p03
@@ -6,6 +6,7 @@ PKGNAME=	gnushogi-1.2.3
 CATEGORIES=	games
 
 MAINTAINER=	angelos@openbsd.org
+NEED_VERSION=	1.210
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	YES
@@ -20,8 +21,8 @@ DOCFILES= BOOKFILES CHANGES CONTRIB COPYING GENERAL INSTALL PORTING \
 	README-FIRST listserv.ref shogi.rules tutorial1.gam tutorial2.gam
 
 post-configure:
-	echo "DISTDIR=${WRKDIR}" >> ${WRKSRC}/src/${MAKEFILE}
-	echo "prefix=${PREFIX}" >> ${WRKSRC}/src/${MAKEFILE}
+	echo "DISTDIR=${WRKDIR}" >> ${WRKSRC}/src/Makefile
+	echo "prefix=${PREFIX}" >> ${WRKSRC}/src/Makefile
 
 do-build:
 	(cd ${WRKSRC}/src; \

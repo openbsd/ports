@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/15 05:05:12 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/22 17:08:46 espie Exp $
 
 DISTNAME=	stel
 CATEGORIES=	security
 MASTER_SITES=	ftp://idea.sec.dsi.unimi.it/pub/security/cert-it/
 
-NEED_VERSION=	1.195
+NEED_VERSION=	1.210
 
 MAINTAINER=	turan@openbsd.org
 
@@ -18,7 +18,7 @@ NO_CONFIGURE=	yes
 WRKDIST=	${WRKDIR}
 
 do-build:
-	@(cd ${WRKSRC}/stel; ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKEFILE} bsdi)
+	@(cd ${WRKSRC}/stel; ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} bsdi)
 	nroff -mandoc ${WRKSRC}/man/stel.1 > ${WRKSRC}/man/stel.cat1
 	nroff -mandoc ${WRKSRC}/man/steld.8 > ${WRKSRC}/man/steld.cat8
 

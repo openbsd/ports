@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2000/02/15 05:04:37 turan Exp $
+# $OpenBSD: Makefile,v 1.30 2000/02/22 17:08:41 espie Exp $
 
 # This is a configuration file for egcs, stable release.
 
@@ -226,7 +226,7 @@ ALL_TARGET=bootstrap
 # XXX we need to override do-build to get the warnings from within make
 do-build:
 	@(cd ${WRKBUILD}; \
-	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKEFILE} ${ALL_TARGET} 2>warnings) || \
+	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f Makefile ${ALL_TARGET} 2>warnings) || \
 	(echo "*** Make bootstrap failed."; \
 	echo "*** Look at ${WRKBUILD}/warnings for errors"; exit 1)
 
@@ -240,7 +240,7 @@ TEST_RESULT=${WRKBUILD}/test.result
 
 post-build:
 	@(cd ${WRKBUILD}; ulimit -c 0; \
-	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKEFILE} check && \
+	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f Makefile check && \
 	${WRKSRC}/contrib/test_summary >${TEST_RESULT})
 	@echo "Please send the tests results to the egcs project"
 	@echo "By invoking make send-results"

@@ -7,7 +7,7 @@
 # Date created:		4 January 1997
 # Whom:			mike@binghamton.edu
 #
-# $OpenBSD: Makefile,v 1.7 2000/02/15 05:05:00 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/22 17:08:44 espie Exp $
 # $FreeBSD: Makefile,v 1.16 1999/02/16 03:06:21 jseger Exp $
 #
 
@@ -18,6 +18,7 @@ MASTER_SITES=	ftp://tf.tcp.com/pub/tinyfugue/ \
 		ftp://ftp.demon.co.uk/pub/games/mud/
 
 MAINTAINER=	ports@openbsd.org
+NEED_VERSION=	1.210
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	YES
@@ -25,7 +26,7 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
-MAKEFILE=	${WRKSRC}/unix/Makefile
+MAKE_FILE=	${WRKSRC}/unix/Makefile
 MAKE_ENV=	TFVER=${DISTNAME:S/^tf-//}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/11 01:10:01 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/22 17:08:38 espie Exp $
 
 DISTNAME=		mimepp-1.0
 CATEGORIES=		converters
@@ -7,11 +7,12 @@ NO_CDROM=		"LIC: obnoxious license"
 RESTRICTED=		"many, many restrictions: read license"
 
 MAINTAINER=		angelos@openbsd.org
+NEED_VERSION=		1.210
 
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/c++
 
-MAKEFILE=		makefile.unx
+MAKE_FILE=		makefile.unx
 ALL_TARGET=		lib
 
 INCLUDE=	address.h addrlist.h binhex.h body.h bodypart.h boyermor.h \

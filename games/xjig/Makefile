@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:04:27 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/22 17:08:40 espie Exp $
 
 DISTNAME=	xjig-2.4
 CATEGORIES=	games
@@ -7,6 +7,7 @@ MASTER_SITE_SUBDIR=	games
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	angelos@openbsd.org
+NEED_VERSION=	1.210
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	YES
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
-MAKEFILE=	Makefile.Linux
+MAKE_FILE=	Makefile.Linux
 
 do-install:
 	@mkdir -p ${PREFIX}/share/xjig

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/12 01:00:28 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/22 17:08:48 espie Exp $
 
 DISTNAME=	xview-clients
 PKGNAME=	xview-clients-3.2.1
 CATEGORIES=	x11
-NEED_VERSION=	1.195
+NEED_VERSION=	1.210
 
 DEPENDS=        ${PORTSDIR}/x11/xview-lib
 
@@ -17,6 +17,6 @@ post-configure:
 	cd $(WRKSRC)/.. && make SUBDIRS=clients depend
 
 pre-install:
-	@cd ${WRKSRC} && make ${MAKE_FLAGS} -f ${MAKEFILE} install.man
+	@cd ${WRKSRC} && make ${MAKE_FLAGS} -f ${MAKE_FILE} install.man
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/02/15 05:03:54 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/02/22 17:08:33 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1999/04/02 04:19:20 steve Exp $
 
 DISTNAME=	unacepub
@@ -6,7 +6,7 @@ PKGNAME=	unace-1.2b
 CATEGORIES=	archivers
 MASTER_SITES=	http://members.aol.com/mlemke6413/
 
-NEED_VERSION=	1.191
+NEED_VERSION=	1.210
 
 MAINTAINER=	brad@openbsd.org
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	yes
 
 USE_ZIP=	yes
 
-MAKEFILE=	unix/makefile
+MAKE_FILE=	unix/makefile
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall -DUNIX -DCASEINSENSE"
 
 ALL_TARGET=	unace

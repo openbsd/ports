@@ -3,7 +3,7 @@
 # Date created:		2 Apr 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.7 2000/02/11 01:10:12 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/22 17:08:47 espie Exp $
 #
 
 DISTNAME=		LPRng-3.6.12
@@ -13,6 +13,7 @@ MAINTAINER=		marc@openbsd.org
 
 MASTER_SITES=		ftp://ftp.astart.com/pub/LPRng/LPRng/
 EXTRACT_SUFX=		.tgz
+NEED_VERSION=		1.210
 
 NO_CDROM=		"To many copyrights/licences to verify destribution OK"
 
@@ -24,7 +25,7 @@ CONFIGURE_ARGS=         \
 			--with-lpd_perms_path=/etc/lpd.perms \
 			--with-printcap_path=/etc/printcap
 
-MAKEFILE=		Makefile.bsd
+MAKE_FILE=		Makefile.bsd
 
 HTMLFILES=		LPRng-HOWTO-1.html LPRng-HOWTO-2.html \
 			LPRng-HOWTO-3.html LPRng-HOWTO-4.html \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/12 00:44:00 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/22 17:08:45 espie Exp $
 
 BROKEN=		does not install cleanly, major fixups required.
 
@@ -7,10 +7,10 @@ PKGNAME=	cnews-cr.g
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.zoo.toronto.edu/pub/
 EXTRACT_SUFX=	.tar.Z
-NEED_VERSION=	1.195
+NEED_VERSION=	1.210
 
 WRKDIST=	${WRKDIR}
-MAKEFILE=	makefile
+MAKE_FILE=	makefile
 MAN1=		checknews.1cn inews.1cn postnews.1cn readnews.1cn
 MAN5=		controlperm.5 news.5 newsctl.5 newsdb.5 newsoverview.5 \
 		newssys.5
@@ -34,13 +34,13 @@ do-install:
 	chown news.news ${NEWSSPOOL} ${NEWSLIB}
 	chown bin.bin ${NEWSBIN}
 	cd ${WRKSRC}; \
-		echo ${MAKE} ${MAKE_FLAGS} -f ${MAKEFILE} install | \
+		echo ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} install | \
 		su -m bin
 	cd ${WRKSRC}; \
-		echo ${MAKE} ${MAKE_FLAGS} -f ${MAKEFILE} setup | \
+		echo ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} setup | \
 		su -m news
 	cd ${WRKSRC}; \
-		echo ${MAKE} ${MAKE_FLAGS} -f ${MAKEFILE} ui readpostcheck | \
+		echo ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} ui readpostcheck | \
 		su -m bin
 	chown news.news ${NEWSBIN}/input/newsspool
 	chmod 6755 ${NEWSBIN}/input/newsspool

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2000/02/15 05:04:09 turan Exp $
+# $OpenBSD: Makefile,v 1.25 2000/02/22 17:08:38 espie Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 DISTNAME=	postgresql-6.5.3
 CATEGORIES=	databases
 
-NEED_VERSION=	1.191
+NEED_VERSION=	1.210
 
 MAINTAINER=	form@OpenBSD.ORG
 
@@ -73,7 +73,7 @@ PKGNAME=	${DISTNAME}
 .endif
 
 USE_GMAKE=	yes
-MAKEFILE=	GNUmakefile
+MAKE_FILE=	GNUmakefile
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS= --prefix=${PREFIX}/pgsql \
 		--enable-locale \

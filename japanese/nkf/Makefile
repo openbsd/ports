@@ -1,11 +1,12 @@
 # very loosely based on FreeBSD 2.2.7
-# $OpenBSD: Makefile,v 1.4 2000/02/15 05:04:36 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/22 17:08:41 espie Exp $
 
 
 DISTNAME=	nkf-1.62
 PKGNAME=	ja-nkf-1.62
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.sfc.wide.ad.jp/~max/FreeBSD/ports/distfiles/
+NEED_VERSION=	1.210
 
 MAINTAINER=	espie@openbsd.org
 
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	YES
 PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
-MAKEFILE=${FILESDIR}/Makefile
+MAKE_FILE=${FILESDIR}/Makefile
 
 ALL_TARGET=nkf
 

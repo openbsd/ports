@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/02/12 00:43:59 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/22 17:08:42 espie Exp $
 #
 
 DISTNAME=		erlang-47.4.0
@@ -9,10 +9,10 @@ MAINTAINER=		marc@openbsd.org
 MASTER_SITES=		http://erlang.stacken.kth.se/download/ \
 			http://www.erlang.org/download/
 EXTRACT_SUFX=		.base.tar.gz
-NEED_VERSION=		1.195
+NEED_VERSION=		1.210
 
-USE_GMAKE=		yes
-USE_AUTOCONF=		yes
+USE_GMAKE=		Yes
+USE_AUTOCONF=		Yes
 
 ALL_TARGET=		emulator new_libraries
 
@@ -23,6 +23,6 @@ post-configure:
 	@cd ${WRKSRC}/erts-47.4.0/autoconf && \
 		${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
-	  ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKEFILE} autoconf )
+	  ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} autoconf )
 
 .include <bsd.port.mk>

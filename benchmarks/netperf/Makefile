@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 1999/09/23 21:01:50 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/22 17:08:37 espie Exp $
 
 DISTNAME=	netperf-2.1pl3
 CATEGORIES=	benchmarks net
 
 MAINTAINER=     jakob@openbsd.org
+NEED_VERSION=	1.210
 
 MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/ \
 		ftp://ftp.sunet.se/pub/network/monitoring/netperf/
 
-MAKEFILE=	makefile
+MAKE_FILE=	makefile
 
 SHAREDIR=	${PREFIX}/share/netperf
 SCRIPTS=	tcp_range_script tcp_stream_script tcp_rr_script \

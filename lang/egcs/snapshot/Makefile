@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.66 2000/02/16 10:52:11 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2000/02/22 17:08:41 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
 # for experimentations and testing.
 
 # it only works right with a recent bsd.port.mk.
-NEED_VERSION=1.178
+NEED_VERSION=1.210
 
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
@@ -361,7 +361,7 @@ TEST_RESULT=${WRKBUILD}/test.result
 
 post-install:
 	@(cd ${WRKBUILD}; ulimit -c 0; \
-	${MAKE_ENV} make -f ${MAKEFILE} check && \
+	${MAKE_ENV} make -f Makefile check && \
 	${WRKSRC}/contrib/test_summary >${TEST_RESULT})
 	@echo "Please send the tests results to the egcs project"
 	@echo "By invoking make send-results"
