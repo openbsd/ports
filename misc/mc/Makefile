@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/04/11 00:40:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2004/04/11 10:06:00 sturm Exp $
 
 COMMENT=		"free Norton Commander clone with many useful features"
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		gettext
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		glib-2.0.0.8,gmodule-2.0.0.8::devel/glib2
 RUN_DEPENDS=		:unzip-*:archivers/unzip \
 			:zip-*:archivers/zip
