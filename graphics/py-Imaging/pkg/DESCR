@@ -3,6 +3,4 @@ capabilities to your Python interpreter. This library
 supports many file formats, and provides powerful image
 processing and graphics capabilities.
 
-FLAVOR will be set automatically if python already installed.
-
-${HOMEPAGE}
+WWW: ${HOMEPAGE}

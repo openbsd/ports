@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/08/02 06:30:28 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2001/09/03 07:57:18 shell Exp $
 
 COMMENT=		"python imaging library"
 
 DISTNAME=		Imaging-1.1.2
 PKGNAME=		py-${DISTNAME}
-	
 CATEGORIES=		graphics
-NEED_VERSION=		1.433
+NEED_VERSION=		1.448
 
 HOMEPAGE=		http://www.pythonware.com/products/pil/
 
@@ -21,36 +20,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.pythonware.com/downloads/
 
-# can be built with python2.x xor python1.5
-# change PY2 according to the current python port
-PY2=			2.1
-FLAVORS=		${PY2} 1.5
+PYTHON_VER=		python2.1
+PY_MODULE=		${LOCALBASE}/lib/${PYTHON_VER}/lib-dynload/_tkinter.so
 
-# try to determine python version, if installed.
-.if exists(${LOCALBASE}/bin/python)
-V!= echo 'import sys, string; print string.split(sys.version)[0]' | python
-.endif
-FLAVOR?=		${V}
-
-# set -deps corresponding
-CHOICE=${FLAVOR:L:N"2.?":N"1.5"}
-.if ${CHOICE} == "${PY2}"
-BUILD_DEPENDS=          python${PY2}::lang/python,tk
-PYTHON_VER=		python${PY2}
-.elif ${CHOICE} == "1.5"
-BUILD_DEPENDS=          python1.5::lang/python15,tk
-PYTHON_VER=		python1.5
-.else
-# no FLAVOR has been set nor python is installed
-ERRORS+=	"Fatal: Conflicting flavor: ${FLAVOR}" \
-		"   You have to select either ${PY2} or 1.5, not both." \
-		"   This can also mean that you have no python installed at all." \
-		"   If you specify FLAVOR, the corresponding python version" \
-		"   will be installed for you automatically. (man ports(7))"
-.endif
-
+BUILD_DEPENDS=		${PY_MODULE}::lang/python,tk
 RUN_DEPENDS=		${BUILD_DEPENDS}
-LIB_DEPENDS=		jpeg.6::graphics/jpeg
+LIB_DEPENDS=		jpeg.62::graphics/jpeg
 
 SUBST_VARS=		PYTHON_VER
 
