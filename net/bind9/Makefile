@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/01/18 14:25:15 jakob Exp $
+# $OpenBSD: Makefile,v 1.11 2001/02/12 17:13:17 brad Exp $
 
 VERSION=	9.1.0
 DISTNAME=	bind-${VERSION}
@@ -42,8 +42,8 @@ CONFIGURE_ARGS+=	--enable-threads
 CONFIGURE_ARGS+=	--disable-threads
 .endif
 
-EXAMPLEFILES=		named.conf named.root \
-			named.localhost named.loopback
+EXAMPLEFILES=	named.conf named.root \
+		named.localhost named.loopback
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bind9/arm
@@ -60,9 +60,9 @@ post-install:
 .for file in ${EXAMPLEFILES}
 	${INSTALL_DATA} ${FILESDIR}/${file} ${PREFIX}/share/examples/bind9
 .endfor
-	sed s,y0y0y0,${TRUEPREFIX}, < ${FILESDIR}/bind9-enable \
-		> ${PREFIX}/sbin/bind9-enable
-	${CHMOD} 555 ${PREFIX}/sbin/bind9-enable
-	${CHOWN} root:wheel ${PREFIX}/sbin/bind9-enable
+	@sed s,y0y0y0,${TRUEPREFIX}, < ${FILESDIR}/bind9-enable > \
+		${PREFIX}/sbin/bind9-enable
+	@chmod 555 ${PREFIX}/sbin/bind9-enable
+	@chown root:wheel ${PREFIX}/sbin/bind9-enable
 
 .include <bsd.port.mk>
