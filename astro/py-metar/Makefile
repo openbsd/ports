@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/08/02 20:59:38 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2004/08/03 09:35:25 espie Exp $
 
 COMMENT=	"Python module to access the NOAA's METAR weather reports"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.schwarzvogel.de/pkgs/
 
-MODULES=	python
+MODULES=	lang/python
 
 NO_REGRESS=	Yes
 
