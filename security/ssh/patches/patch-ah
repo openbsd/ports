@@ -1,0 +1,14 @@
+*** config.h.in.orig	Wed Apr 23 08:40:06 1997
+--- config.h.in	Fri Apr 25 12:40:48 1997
+***************
+*** 527,532 ****
+--- 527,535 ----
+  /* Define if you have the <lastlog.h> header file.  */
+  #undef HAVE_LASTLOG_H
+  
++ /* Define if you have the <login_cap.h> header file.  */
++ #undef HAVE_LOGIN_CAP_H
++ 
+  /* Define if you have the <machine/endian.h> header file.  */
+  #undef HAVE_MACHINE_ENDIAN_H
+  

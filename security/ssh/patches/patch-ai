@@ -1,0 +1,40 @@
+*** userfile.c.orig	Thu Mar 27 09:04:13 1997
+--- userfile.c	Sat Mar 29 01:16:51 1997
+***************
+*** 166,171 ****
+--- 166,175 ----
+  #endif
+  
+  
++ #ifdef HAVE_LOGIN_CAP_H
++ #include <login_cap.h>
++ #endif
++ 
+  /* Protocol message types. */
+  #define USERFILE_OPEN		1
+  #define USERFILE_OPEN_REPLY	2
+***************
+*** 626,631 ****
+--- 630,641 ----
+    /* Child.  We will start serving request. */
+    if (uid != geteuid() || uid != getuid())
+      {
++ #ifdef HAVE_LOGIN_CAP_H
++       struct passwd * pw = getpwuid(uid);
++       login_cap_t * lc = login_getuserclass(pw);
++       if (setusercontext(lc, pw, uid, LOGIN_SETALL&~(LOGIN_SETLOGIN|LOGIN_SETPATH|LOGIN_SETENV)) < 0)
++ 	fatal("setusercontext: %s", strerror(errno));
++ #else
+        if (setgid(gid) < 0)
+  	fatal("setgid: %s", strerror(errno));
+  
+***************
+*** 636,641 ****
+--- 646,652 ----
+  
+        if (setuid(uid) < 0)
+  	fatal("setuid: %s", strerror(errno));
++ #endif /* HAVE_LOGIN_CAP_H */
+      }
+  
+    /* Enter the server main loop. */
