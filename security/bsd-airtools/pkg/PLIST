@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/06/08 05:50:50 jsyn Exp $
+sbin/dstumbler
+sbin/dwepcrack
+sbin/dwepdump
+sbin/dwepkeygen
+sbin/prism2ctl
+sbin/prism2dump
+share/doc/bsd-airtools/OVERVIEW.dstumbler
+share/doc/bsd-airtools/README.dstumbler
+share/doc/bsd-airtools/README.dwepcrack
+share/doc/bsd-airtools/README.dwepdump
+share/doc/bsd-airtools/README.dwepkeygen
+share/doc/bsd-airtools/README.prism2ctl
+share/doc/bsd-airtools/README.prism2dump
+@dirrm share/doc/bsd-airtools
