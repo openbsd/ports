@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2000/05/19 14:04:37 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/05/22 13:59:32 espie Exp $
 
 CATEGORIES=x11
 HOMEPAGE=http://wwwrzstud.rz.uni-karlsruhe.de/%7Euddn/xglobe/
 MASTER_SITES=${HOMEPAGE}
 DISTNAME=xglobe-0.5
+NEED_VERSION=1.283
 
 MAINTAINER=espie@cvs.openbsd.org
 
@@ -17,26 +18,40 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
 
-FLAVORS=no_map
+MAKE_FLAGS=XGLOBE_DIR=${PREFIX}
+MAKE_FLAGS+=QT_INCLUDE_DIR=${LOCALBASE}/include/X11/qt
+MAKE_FLAGS+=QT_LIB_DIR=${LOCALBASE}/lib
+
+
+FLAVORS=no_map gfx
 FLAVOR?=
-.if ${FLAVOR:L} == "no_map"
+.if ${FLAVOR:L:Mno_map}
 DISTFILES=${DISTNAME}-no-map${EXTRACT_SUFX}
 
 # Kludge install for no map around
 pre-install:
-	touch ${WRKSRC}/map.bmp
+	@touch ${WRKSRC}/map.bmp
 
-post-install:
-	rm ${PREFIX}/lib/xglobe/map.bmp
+post-install::
+	@rm ${PREFIX}/lib/xglobe/map.bmp
 .endif
-
-SUPDISTFILES=${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-no-map${EXTRACT_SUFX}
 
 LIB_DEPENDS=qt.1.45::x11/qt
 
-MAKE_FLAGS=XGLOBE_DIR=${PREFIX}
-MAKE_FLAGS+=QT_INCLUDE_DIR=${LOCALBASE}/include/X11/qt
-MAKE_FLAGS+=QT_LIB_DIR=${LOCALBASE}/lib
+.if ${FLAVOR:L:Mgfx}
+MAKE_FLAGS+=WITH_QIMGIO=-DWITH_QIMAGEIO
+MAKE_FLAGS+=LIBS='-lX11 -lqt -lm -lqimgio -lpng -lz -ljpeg'
+LIB_DEPENDS+=jpeg.::graphics/jpeg
+LIB_DEPENDS+=png.::graphics/png
+.endif
+
+post-install::
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xglobe
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xglobe
+	${INSTALL_DATA} ${WRKSRC}/README.maps ${PREFIX}/share/doc/xglobe
+	${INSTALL_SCRIPT} ${FILESDIR}/getcloudmap ${PREFIX}/bin
+
+SUPDISTFILES=${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-no-map${EXTRACT_SUFX}
 
 FAKE_FLAGS=XGLOBE_DIR=${WRKINST}${PREFIX}
 

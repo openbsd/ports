@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/05/19 13:49:35 espie Exp $
-bin/xglobe
-lib/xglobe/map.bmp
-lib/xglobe/xglobe-markers
-@dirrm lib/xglobe

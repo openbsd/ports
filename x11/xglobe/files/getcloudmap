@@ -1,0 +1,9 @@
+#! /bin/sh
+# Marc Espie, 2000
+# Public domain
+
+x=`ftp -o - \
+'http://www.fourmilab.ch/cgi-bin/uncgi/Earth?imgsize=640&opt=-p&lat=-21&ns=North&lon=-134&ew=West&alt=986&img=irsat.bmp&daynight=-d' \
+| grep "/earthview/cache/[0-9]*.gif" | awk -F\" '{ print $2 }'`
+ftp -o clouds.gif "http://www.fourmilab.ch$x"
+convert clouds.gif clouds.png
