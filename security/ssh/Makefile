@@ -3,7 +3,7 @@
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.9 1997/12/17 22:57:32 joey Exp $
+# $OpenBSD: Makefile,v 1.10 1997/12/17 22:59:11 joey Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -33,7 +33,6 @@ MASTER_SITES=	\
 RESTRICTED=	"Crypto; export-controlled"
 IS_INTERACTIVE=	YES
 USE_PERL=	YES
-USA_RESIDENT=	YES
 GNU_CONFIGURE=	YES
 
 CONFIGURE_ARGS= --prefix=${PREFIX} --with-etcdir=${ETCDIR}
