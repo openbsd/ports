@@ -1,4 +1,4 @@
-/* $OpenBSD: openbsd.h,v 1.6 1999/01/22 22:40:17 espie Exp $ */
+/* $OpenBSD: openbsd.h,v 1.7 1999/01/24 13:12:40 espie Exp $ */
 /* vi:ts=8: 
  */
 
@@ -13,6 +13,10 @@
 #define OBSD_HAS_DECLARE_OBJECT_NAME
 #include <openbsd.h>
 #undef ASM_WEAKEN_LABEL
+/* alpha needs __start */
+#undef LINK_SPEC
+#define LINK_SPEC \
+  "%{!nostdlib:%{!r*:%{!e*:-e __start}}} -dc -dp %{assert*}"
 
 /* run-time target specifications */
 #define CPP_PREDEFINES "-D__unix__ -D__ANSI_COMPAT -Asystem(unix) \
