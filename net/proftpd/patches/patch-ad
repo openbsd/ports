@@ -1,5 +1,5 @@
---- src/log.c.orig	Sat Oct 17 22:24:41 1998
-+++ src/log.c	Mon Dec 14 15:14:12 1998
+--- src/log.c.orig	Fri Sep 10 17:17:02 1999
++++ src/log.c	Sun Sep 12 10:32:18 1999
 @@ -44,7 +44,7 @@
  static int syslog_discard = FALSE;
  static int logstderr = TRUE;
@@ -9,7 +9,16 @@
  static int set_facility = -1;
  static char *syslog_fn = NULL;
  static char *syslog_hostname;
-@@ -718,7 +718,7 @@
+@@ -710,7 +710,7 @@
+   log(priority,facility,buf);
+ }
+ 
+-/* Like log_pri(), but sends the log entry in the LOG_AUTHPRIV
++/* Like log_pri(), but sends the log entry in the LOG_FTP
+  * facility (presumable it doesn't need to be seen by everyone
+  */
+ 
+@@ -725,7 +725,7 @@
  
    buf[1023] = '\0';
  

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 1999/09/08 19:12:57 brad Exp $
+# $OpenBSD: Makefile,v 1.12 1999/09/12 15:02:31 brad Exp $
 # $FreeBSD: Makefile,v 1.7 1999/02/12 21:55:04 obrien Exp $
 
-DISTNAME=	proftpd-1.2.0pre5
+DISTNAME=	proftpd-1.2.0pre6
 PKGNAME=	proftpd-1.2.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.tos.net/pub/proftpd/ \
