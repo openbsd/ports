@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/10 23:14:33 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/22 21:36:08 turan Exp $
 # Original from: Angelos D. Keromytis
 
 DISTNAME=	mshell
@@ -11,6 +11,11 @@ WRKDIST=	${WRKDIR}
 EXTRACT_ONLY=	
 
 MAINTAINER=	angelos@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no explict license"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no explict license"
+PERMIT_DISTFILES_FTP=	Yes
 
 post-extract:
 	zcat ${DISTDIR}/${DISTFILES} |(cd ${WRKDIR}; \

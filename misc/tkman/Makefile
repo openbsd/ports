@@ -3,7 +3,7 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 2000/03/19 16:43:41 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/22 21:36:09 turan Exp $
 #
 
 DISTNAME=	tkman-2.0.6
@@ -13,6 +13,11 @@ MASTER_SITES=	ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	angelos@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	tk80.1.:x11/tk80
 RUN_DEPENDS=	rman:textproc/rman \
