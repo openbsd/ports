@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2000/12/31 19:22:56 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2001/02/08 18:29:39 brad Exp $
 
 DISTNAME=	${PKGNAME:R}
 PKGNAME=	tcsh-6.10.00
@@ -25,7 +25,7 @@ CONFIGURE_ENV=	LDFLAGS="-static"
 
 ALL_TARGET=	all catalogs
 
-WRKDIST=	${WRKDIR}/${PKGNAME}
+WRKDIST=	${WRKDIR}/tcsh-6.10.00
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nls/el_GR.ISO_8859-7
