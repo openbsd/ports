@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/03 10:31:14 avsm Exp $
-lib/php/.registry/Log.reg
-lib/php/Log.php
-lib/php/Log/composite.php
-lib/php/Log/console.php
-lib/php/Log/file.php
-lib/php/Log/mail.php
-lib/php/Log/mcal.php
-lib/php/Log/observer.php
-lib/php/Log/sql.php
-lib/php/Log/syslog.php
+@comment $OpenBSD: PLIST,v 1.2 2003/05/02 19:51:12 avsm Exp $
+pear/lib/.registry/Log.reg
+pear/lib/Log.php
+pear/lib/Log/composite.php
+pear/lib/Log/console.php
+pear/lib/Log/file.php
+pear/lib/Log/mail.php
+pear/lib/Log/mcal.php
+pear/lib/Log/observer.php
+pear/lib/Log/sql.php
+pear/lib/Log/syslog.php
+@dirrm pear/lib/Log

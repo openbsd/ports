@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/03 10:56:50 avsm Exp $
-lib/php/.registry/Date.reg
-lib/php/Date.php
-lib/php/Date/Calc.php
-lib/php/Date/Human.php
-lib/php/Date/TimeZone.php
-@dirrm lib/php/Date
+@comment $OpenBSD: PLIST,v 1.2 2003/05/02 19:52:11 avsm Exp $
+pear/lib/.registry/Date.reg
+pear/lib/Date.php
+pear/lib/Date/Calc.php
+pear/lib/Date/Human.php
+pear/lib/Date/TimeZone.php
+@dirrm pear/lib/Date

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/03 10:36:22 avsm Exp $
-lib/php/.registry/Mail_Mime.reg
-lib/php/Mail/mime.php
-lib/php/Mail/mimeDecode.php
-lib/php/Mail/mimePart.php
-share/pear/Mail_Mime/xmail.dtd
-share/pear/Mail_Mime/xmail.xsl
-@dirrm share/pear/Mail_Mime
+@comment $OpenBSD: PLIST,v 1.2 2003/05/02 19:51:41 avsm Exp $
+pear/data/Mail_Mime/xmail.dtd
+pear/data/Mail_Mime/xmail.xsl
+pear/lib/.registry/Mail_Mime.reg
+pear/lib/Mail/mime.php
+pear/lib/Mail/mimeDecode.php
+pear/lib/Mail/mimePart.php
+@dirrm pear/data/Mail_Mime
