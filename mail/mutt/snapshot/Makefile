@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.10 2002/01/08 15:46:21 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2002/01/11 04:06:38 lebel Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
 VERSION=	1.3.25
 DISTNAME=	mutt-${VERSION}i
-CATEGORIES=     mail
+CATEGORIES=	mail
 NEED_VERSION=	1.460
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
-                ftp://ftp.gbnet.net/pub/mutt-international/ \
-                ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
-                ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/ \
+		ftp://ftp.gbnet.net/pub/mutt-international/ \
+		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
+		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/ \
 		ftp://ftp.iks-jena.de/pub/mitarb/lutz/crypt/software/pgp/mutt/
+MASTER_SITES0=	http://www.spinnaker.de/mutt/compressed/
 
 HOMEPAGE=	http://www.mutt.org/
 
@@ -45,12 +46,12 @@ CONFIGURE_ARGS+= --with-curses
 # compressed folder support provided by
 # http://www.spinnaker.de/mutt/compressed/
 .if ${FLAVOR:L:Mcompressed}
-MASTER_SITES0=	http://www.spinnaker.de/mutt/compressed/
-PATCHFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
+PATCHFILES+=	patch-${VERSION}.rr.compressed.2.gz:0
 PATCH_DIST_STRIP=-p1
 CONFIGURE_ARGS+= --enable-compressed
 CONFIGURE_STYLE= autoconf
 .else
+SUPDISTFILES+=	patch-${VERSION}.rr.compressed.2.gz:0
 CONFIGURE_STYLE= gnu
 .endif
 
@@ -67,9 +68,8 @@ CONFIGURE_ARGS+= --enable-pop --with-ssl
 .endif
 
 .if ${FLAVOR:L:Mmixmaster}
-MIXMASTER=             ${LOCALBASE}/sbin/mixmaster
-CONFIGURE_ARGS+=       --with-mixmaster="${MIXMASTER}"
-RUN_DEPENDS+=          ${MIXMASTER}::mail/mixmaster
+CONFIGURE_ARGS+= --with-mixmaster="${LOCALBASE}/sbin/mixmaster"
+RUN_DEPENDS+=	::mail/mixmaster
 .endif
 
 .if defined(HOMESPOOL)
