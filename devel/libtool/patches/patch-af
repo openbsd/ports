@@ -1,0 +1,17 @@
+--- libltdl/configure.orig	Tue May  4 22:48:38 1999
++++ libltdl/configure	Tue May  4 22:48:44 1999
+@@ -2970,10 +2970,10 @@
+     top_srcdir="$ac_dots$ac_given_srcdir" ;;
+   esac
+ 
+-  case "$ac_given_INSTALL" in
+-  [/$]*) INSTALL="$ac_given_INSTALL" ;;
+-  *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
+-  esac
++#  case "$ac_given_INSTALL" in
++#  [/$]*) INSTALL="$ac_given_INSTALL" ;;
++#  *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
++#  esac
+ 
+   echo creating "$ac_file"
+   rm -f "$ac_file"
