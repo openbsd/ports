@@ -1,46 +1,45 @@
-$OpenBSD: patch-ltmain.sh,v 1.2 2001/09/17 20:54:41 naddy Exp $
+$OpenBSD: patch-ltmain.sh,v 1.3 2001/09/18 17:27:44 naddy Exp $
 --- ltmain.sh.orig	Fri Mar  2 04:16:08 2001
-+++ ltmain.sh	Mon Sep 17 20:33:14 2001
-@@ -1079,7 +1079,18 @@ compiler."
++++ ltmain.sh	Tue Sep 18 18:31:11 2001
+@@ -1079,6 +1079,17 @@ compiler."
  	    # These systems don't actually have c library (as such)
  	    continue
  	    ;;
-+          *-*-openbsd*)
-+            # Do not include libc due to us having libc/libc_r.
-+            continue
-+            ;;
++	  *-*-openbsd*)
++	    # Do not include libc due to us having libc/libc_r.
++	    continue
++	    ;;
++	  esac
++	elif test "$arg" = "-lc_r"; then
++	  case "$host" in
++	  *-*-openbsd*)
++	    # Do not include libc_r directly, use -pthread flag.
++	    continue
++	    ;;
  	  esac
-+        elif test "$arg" = "-lc_r"; then
-+          case "$host" in
-+          *-*-openbsd*)
-+            # Do not include libc_r directly, use -pthread flag.
-+            continue
-+            ;;
-+          esac
  	elif test "$arg" = "-lm"; then
  	  case "$host" in
- 	  *-*-cygwin* | *-*-beos*)
 @@ -1091,6 +1102,10 @@ compiler."
  	deplibs="$deplibs $arg"
  	;;
  
 +      -?thread)
-+        deplibs="$deplibs $arg"
-+        ;;
++	deplibs="$deplibs $arg"
++	;;
 +
        -module)
  	module=yes
  	continue
-@@ -1799,6 +1814,9 @@ compiler."
+@@ -1795,6 +1810,9 @@ compiler."
+ 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
+ 	  # these systems don't actually have a c library (as such)!
+ 	  ;;
++	*-*-openbsd*)
++	  # Do not include libc due to us having libc/libc_r.
++	  ;;
+         *-*-rhapsody*)
  	  # rhapsody is a little odd...
  	  deplibs="$deplibs -framework System"
- 	  ;;
-+        *-*-openbsd*)
-+          # Do not include libc due to us having libc/libc_r.
-+          ;;
- 	*)
- 	  # Add libc to deplibs on all other systems.
- 	  deplibs="$deplibs -lc"
 @@ -3571,40 +3589,6 @@ libdir='$install_libdir'\
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
