@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/09 17:37:04 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/06/06 22:33:00 espie Exp $
 
 BROKEN=		dependency mbone/wbd is also broken
 
@@ -6,7 +6,6 @@ DISTNAME=       relate
 DISTFILES=	relate-2.0.tar.gz
 CATEGORIES=	mbone
 NEED_VERSION=	1.230
-FAKE=No
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/relate-ui/2.0/
 MAINTAINER=	angelos@openbsd.org
 
