@@ -1,3 +1,4 @@
+@pkgcfl jade-*
 bin/nsgmls
 bin/sgmlnorm
 bin/spam

@@ -1,3 +1,4 @@
+@pkgcfl sp-*
 bin/jade
 bin/nsgmls
 bin/sgmlnorm
