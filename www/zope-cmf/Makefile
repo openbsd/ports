@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/05/25 22:02:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2003/05/25 22:14:13 naddy Exp $
 
 COMMENT=	"Zope content management framework"
 
@@ -13,15 +13,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/download/CMF-${VERSION}/
+MASTER_SITES=	${HOMEPAGE}download/CMF-${VERSION}/
 
 DISTNAME=	CMF-${VERSION}
 
 # Zope Public License (ZPL) 2.0 <http://www.zope.org/Resources/ZPL>
 BUILD_DEPENDS=	:python-2.1*:lang/python/2.1 \
-		:zope->=2.4.0:www/zope
+		:zope->=2.4.3:www/zope
 RUN_DEPENDS=	:python-2.1*:lang/python/2.1 \
-		:zope->=2.4.0:www/zope
+		:zope->=2.4.3:www/zope
 
 NO_REGRESS=	Yes
 
