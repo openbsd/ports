@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2002/06/11 22:32:12 jsyn Exp $
+# $OpenBSD: Makefile,v 1.45 2002/06/26 02:33:51 kevlo Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -14,6 +14,7 @@
      SUBDIR += idled
      SUBDIR += libretto-config
      SUBDIR += lsof
+     SUBDIR += mencal
      SUBDIR += mergemaster
      SUBDIR += mkhybrid
      SUBDIR += mtools
