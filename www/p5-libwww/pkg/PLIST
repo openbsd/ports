@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/04/16 19:25:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/05/16 04:43:42 avsm Exp $
 bin/GET
 bin/HEAD
 bin/POST
@@ -6,53 +6,55 @@ bin/lwp-download
 bin/lwp-mirror
 bin/lwp-request
 bin/lwp-rget
-libdata/perl5/site_perl/Bundle/LWP.pm
-libdata/perl5/site_perl/File/Listing.pm
-libdata/perl5/site_perl/HTML/Form.pm
-libdata/perl5/site_perl/HTTP/Cookies.pm
-libdata/perl5/site_perl/HTTP/Daemon.pm
-libdata/perl5/site_perl/HTTP/Date.pm
-libdata/perl5/site_perl/HTTP/Headers.pm
-libdata/perl5/site_perl/HTTP/Headers/Auth.pm
-libdata/perl5/site_perl/HTTP/Headers/ETag.pm
-libdata/perl5/site_perl/HTTP/Headers/Util.pm
-libdata/perl5/site_perl/HTTP/Message.pm
-libdata/perl5/site_perl/HTTP/Negotiate.pm
-libdata/perl5/site_perl/HTTP/Request.pm
-libdata/perl5/site_perl/HTTP/Request/Common.pm
-libdata/perl5/site_perl/HTTP/Response.pm
-libdata/perl5/site_perl/HTTP/Status.pm
-libdata/perl5/site_perl/LWP.pm
-libdata/perl5/site_perl/LWP/Authen/Basic.pm
-libdata/perl5/site_perl/LWP/Authen/Digest.pm
-libdata/perl5/site_perl/LWP/ConnCache.pm
-libdata/perl5/site_perl/LWP/Debug.pm
-libdata/perl5/site_perl/LWP/MediaTypes.pm
-libdata/perl5/site_perl/LWP/MemberMixin.pm
-libdata/perl5/site_perl/LWP/Protocol.pm
-libdata/perl5/site_perl/LWP/Protocol/GHTTP.pm
-libdata/perl5/site_perl/LWP/Protocol/data.pm
-libdata/perl5/site_perl/LWP/Protocol/file.pm
-libdata/perl5/site_perl/LWP/Protocol/ftp.pm
-libdata/perl5/site_perl/LWP/Protocol/gopher.pm
-libdata/perl5/site_perl/LWP/Protocol/http.pm
-libdata/perl5/site_perl/LWP/Protocol/http10.pm
-libdata/perl5/site_perl/LWP/Protocol/https.pm
-libdata/perl5/site_perl/LWP/Protocol/https10.pm
-libdata/perl5/site_perl/LWP/Protocol/mailto.pm
-libdata/perl5/site_perl/LWP/Protocol/nntp.pm
-libdata/perl5/site_perl/LWP/Protocol/nogo.pm
-libdata/perl5/site_perl/LWP/RobotUA.pm
-libdata/perl5/site_perl/LWP/Simple.pm
-libdata/perl5/site_perl/LWP/UserAgent.pm
-libdata/perl5/site_perl/LWP/media.types
-libdata/perl5/site_perl/Net/HTTP.pm
-libdata/perl5/site_perl/Net/HTTP/Methods.pm
-libdata/perl5/site_perl/Net/HTTP/NB.pm
-libdata/perl5/site_perl/Net/HTTPS.pm
-libdata/perl5/site_perl/WWW/RobotRules.pm
-libdata/perl5/site_perl/WWW/RobotRules/AnyDBM_File.pm
-libdata/perl5/site_perl/lwpcook.pod
+${P5SITE}/Bundle/LWP.pm
+${P5SITE}/File/Listing.pm
+${P5SITE}/HTML/Form.pm
+${P5SITE}/HTTP/Cookies.pm
+${P5SITE}/HTTP/Daemon.pm
+${P5SITE}/HTTP/Date.pm
+${P5SITE}/HTTP/Headers.pm
+${P5SITE}/HTTP/Headers/Auth.pm
+${P5SITE}/HTTP/Headers/ETag.pm
+${P5SITE}/HTTP/Headers/Util.pm
+${P5SITE}/HTTP/Message.pm
+${P5SITE}/HTTP/Negotiate.pm
+${P5SITE}/HTTP/Request.pm
+${P5SITE}/HTTP/Request/Common.pm
+${P5SITE}/HTTP/Response.pm
+${P5SITE}/HTTP/Status.pm
+${P5SITE}/LWP.pm
+${P5SITE}/LWP/Authen/Basic.pm
+${P5SITE}/LWP/Authen/Digest.pm
+${P5SITE}/LWP/ConnCache.pm
+${P5SITE}/LWP/Debug.pm
+${P5SITE}/LWP/MediaTypes.pm
+${P5SITE}/LWP/MemberMixin.pm
+${P5SITE}/LWP/Protocol.pm
+${P5SITE}/LWP/Protocol/GHTTP.pm
+${P5SITE}/LWP/Protocol/data.pm
+${P5SITE}/LWP/Protocol/file.pm
+${P5SITE}/LWP/Protocol/ftp.pm
+${P5SITE}/LWP/Protocol/gopher.pm
+${P5SITE}/LWP/Protocol/http.pm
+${P5SITE}/LWP/Protocol/http10.pm
+${P5SITE}/LWP/Protocol/https.pm
+${P5SITE}/LWP/Protocol/https10.pm
+${P5SITE}/LWP/Protocol/mailto.pm
+${P5SITE}/LWP/Protocol/nntp.pm
+${P5SITE}/LWP/Protocol/nogo.pm
+${P5SITE}/LWP/RobotUA.pm
+${P5SITE}/LWP/Simple.pm
+${P5SITE}/LWP/UserAgent.pm
+${P5SITE}/LWP/media.types
+${P5SITE}/Net/HTTP.pm
+${P5SITE}/Net/HTTP/Methods.pm
+${P5SITE}/Net/HTTP/NB.pm
+${P5SITE}/Net/HTTPS.pm
+${P5SITE}/WWW/RobotRules.pm
+${P5SITE}/WWW/RobotRules/AnyDBM_File.pm
+man/man1/GET.1
+man/man1/HEAD.1
+man/man1/POST.1
 man/man1/lwp-download.1
 man/man1/lwp-mirror.1
 man/man1/lwp-request.1
@@ -85,9 +87,9 @@ man/man3p/Net::HTTP::NB.3p
 man/man3p/WWW::RobotRules.3p
 man/man3p/WWW::RobotRules::AnyDBM_File.3p
 man/man3p/lwpcook.3p
-@dirrm libdata/perl5/site_perl/WWW/RobotRules
-@dirrm libdata/perl5/site_perl/LWP/Protocol
-@dirrm libdata/perl5/site_perl/LWP/Authen
-@dirrm libdata/perl5/site_perl/LWP
-@dirrm libdata/perl5/site_perl/HTTP/Request
-@dirrm libdata/perl5/site_perl/HTTP/Headers
+@dirrm ${P5SITE}/WWW/RobotRules
+@dirrm ${P5SITE}/LWP/Protocol
+@dirrm ${P5SITE}/LWP/Authen
+@dirrm ${P5SITE}/LWP
+@dirrm ${P5SITE}/HTTP/Headers
+@dirrm ${P5SITE}/HTTP/Request
