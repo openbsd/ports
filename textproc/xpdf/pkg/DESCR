@@ -1,3 +1,5 @@
 Xpdf is a PDF (also known as Acrobat files) for the X window system.
 It includes other pdf programs such as pdftotext, pdftoops, etc.
 Xpdf does not use motif or Xt libraries it only uses standard X fonts.
+
+WWW: ${HOMEPAGE}

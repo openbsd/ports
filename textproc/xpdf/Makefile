@@ -1,17 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2000/07/04 13:12:04 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2000/08/30 23:07:30 brad Exp $
 
-DISTNAME=	xpdf-0.90
+DISTNAME=	xpdf-0.91
 CATEGORIES=	textproc x11
-NEED_VERSION=	1.311
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
-		ftp://ftp.duke.edu/pub/X11/contrib/applications/ \
-		ftp://ftp.foolabs.com/pub/xpdf/
-MASTER_SITES0=	http://www.fefe.de/
+NEED_VERSION=	1.320
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR= support/xpdf
 EXTRACT_SUFX=	.tgz
 
-PATCH_DIST_STRIP=	-p1
-PATCHFILES=	xpdf-0.90-fefe-diff2.gz:0
+HOMEPAGE=	http://www.foolabs.com/xpdf/
 
 MAINTAINER=	eep@inconnect.com
 
@@ -20,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	gnu dest
-CONFIGURE_ARGS=		--with-gzip
+CONFIGURE_STYLE= autoconf
+CONFIGURE_ARGS=	--with-gzip --without-freetype-library
 
 post-install:
 	@cd ${PREFIX}/bin && \

@@ -1,0 +1,12 @@
+--- configure.in.orig	Wed Aug 30 17:38:50 2000
++++ configure.in	Wed Aug 30 17:41:01 2000
+@@ -173,7 +173,8 @@
+ dnl # include file (e.g., in cygwin 1.1.2).
+ AC_CACHE_CHECK([for mkstemp],
+ xpdf_cv_func_mkstemp,
+-[AC_TRY_COMPILE([#include <stdlib.h>],
++[AC_TRY_COMPILE([#include <stdlib.h>
++#include <unistd.h>],
+ [mkstemp("foo");],
+ xpdf_cv_func_mkstemp=yes, xpdf_cv_func_mkstemp=no)])
+ if test "$xpdf_cv_func_mkstemp" = yes; then
