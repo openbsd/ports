@@ -1,5 +1,14 @@
---- src/Makefile.in.orig	Wed Feb 24 16:30:33 1999
-+++ src/Makefile.in	Thu Jun  1 01:23:23 2000
+--- src/Makefile.in.orig	Wed Feb 24 01:30:33 1999
++++ src/Makefile.in	Fri Jun 16 00:15:23 2000
+@@ -60,7 +60,7 @@
+ sample.phs.out: phs_out sample.phs
+ 	./phs_out sample.phs
+ tsin_pin.map: pin2tsin pin_pho
+-	./pin2tsin pin_pho
++	./pin2tsin pin_pho &  
+ tsin.rel: tsa2rel tsin.rel.src
+ 	./tsa2rel tsin.rel.src > tsin.rel
+ 
 @@ -152,29 +152,29 @@
  
  install_xcin: xcin $(KBMS) $(INPUT0) tsintab
