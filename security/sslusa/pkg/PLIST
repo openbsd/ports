@@ -1,3 +1,5 @@
+@option no-default-conflict
+@pkgcfl ssl-*-intl
 lib/libcrypto.a
 lib/libcrypto.so.2.3
 lib/libcrypto_p.a
@@ -6,3 +8,4 @@ lib/libssl.a
 lib/libssl.so.2.3
 lib/libssl_p.a
 lib/libssl_pic.a
+@exec /sbin/ldconfig -m %B
