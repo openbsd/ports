@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.16 1999/09/19 13:06:24 turan Exp $
+$OpenBSD: LICENSE,v 1.17 1999/09/19 13:58:47 turan Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -109,15 +109,18 @@ Y	chinese/c2t			TONEPY.tit			NONE
 N	chinese/lunar			lunar-2.1.tar.gz		NOFEE
 Y	comms/bpl+			bpl+.tar.gz			COPY
 Y	comms/conserver			conserver-5.21-Beta.shar.gz	BSD
-Y	comms/efax			efax08a.tar.gz			GPL
+Y	comms/efax			efax-0.9.tar.gz			GPL
 Y	comms/hylafax			hylafax-v4.0pl2-tar.gz		BSD
+Y	comms/hylafax			gcc-2.8.x.patch			NONE
 N	comms/kermit			cku192src.tar.gz		NOFEE
--	comms/lrzsz			lrzsz-0.12.19.tar.gz
-Y	comms/mgetty+sendfax		mgetty1.1.20-Jan17.tar.gz	COPY
-Y	comms/minicom			minicom-1.82.src.tar.gz		GPL
-Y	comms/pilot-link		pilot-link.0.9.0.tar.gz		GPL
+-	comms/lrzsz			lrzsz-0.12.20.tar.gz
+N	comms/malsync			malsync_1_6.source.tar.gz	COPY
+N	comms/malsync			mal-0_7_tar.gz			COPY
+N	comms/mgetty+sendfax		mgetty1.1.21-Jul24.tar.gz	COPY
+Y	comms/minicom			minicom-1.82.1.src.tar.gz	GPL
+Y	comms/pilot-link		pilot-link.0.9.3.tar.gz		GPL
 Y	comms/qpage			qpage-3.2.tar.Z			COPY
-N	comms/rzsz			rzsz.zip			COMM
+-	comms/rzsz			rzsz.zip
 Y	comms/seyon			Seyon-2.14b-tar.Z		BSD
 Y	comms/tkhylafax			tkhylafax-3.0b2.tar.gz		BSD
 Y	comms/xcept			xcept-2.1.2.tar.gz		BSD
