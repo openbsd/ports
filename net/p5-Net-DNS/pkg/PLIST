@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2003/12/19 13:24:16 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/04/18 20:09:57 wilfried Exp $
 ${P5ARCH}/Net/DNS.pm
 @comment ${P5ARCH}/Net/DNS/FAQ.pod
 ${P5ARCH}/Net/DNS/Header.pm
@@ -44,7 +44,6 @@ ${P5ARCH}/Net/DNS/Resolver/Cygwin.pm
 ${P5ARCH}/Net/DNS/Resolver/Recurse.pm
 ${P5ARCH}/Net/DNS/Resolver/UNIX.pm
 ${P5ARCH}/Net/DNS/Resolver/Win32.pm
-${P5ARCH}/Net/DNS/Select.pm
 ${P5ARCH}/Net/DNS/Update.pm
 @comment ${P5ARCH}/auto/Net/DNS/.packlist
 ${P5ARCH}/auto/Net/DNS/DNS.bs
@@ -94,14 +93,10 @@ man/man3p/Net::DNS::Resolver::Cygwin.3p
 man/man3p/Net::DNS::Resolver::Recurse.3p
 man/man3p/Net::DNS::Resolver::UNIX.3p
 man/man3p/Net::DNS::Resolver::Win32.3p
-man/man3p/Net::DNS::Select.3p
 man/man3p/Net::DNS::Update.3p
-@dirrm man/man3p
 @dirrm ${P5ARCH}/auto/Net/DNS
 @dirrm ${P5ARCH}/auto/Net
-@dirrm ${P5ARCH}/auto
 @dirrm ${P5ARCH}/Net/DNS/Resolver
 @dirrm ${P5ARCH}/Net/DNS/RR
 @dirrm ${P5ARCH}/Net/DNS
 @dirrm ${P5ARCH}/Net
-@dirrm ${P5ARCH}
