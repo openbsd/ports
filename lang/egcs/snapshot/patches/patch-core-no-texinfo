@@ -1,5 +1,6 @@
---- configure.in.orig	Wed Jun 23 00:44:40 1999
-+++ configure.in	Sun Aug 22 13:07:33 1999
+--- configure.in.orig	Tue Aug 31 17:17:09 1999
++++ configure.in	Tue Aug 31 17:17:48 1999
+@@ -50,8 +50,13 @@ fi
  # these tools are built for the host environment
  # Note, the powerpc-eabi build depends on sim occurring before gdb in order to
  # know that we are building the simulator.
