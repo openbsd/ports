@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.546 2003/07/08 21:51:26 pvalchev Exp $
+#	$OpenBSD: bsd.port.mk,v 1.547 2003/07/08 22:01:23 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -40,20 +40,15 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 #
 # DON'T USE IN INDIVIDUAL PORTS !!!
 #
-# Variables that typically apply to all ports:
+# Some variables that typically apply to all ports:
 # 
 # MASTER_SITES	- Primary location(s) for distribution files if not found
 #				  locally.
 # MASTER_SITESn	- Primary location(s) for more distribution files, in case
 #				  some distfiles must be fetched from elsewhere.
 #
-# Variables that typically apply to an individual port.  Non-Boolean
+# Some variables that typically apply to an individual port.  Non-Boolean
 # variables without defaults are *mandatory*.
-#
-# COMES_WITH	- The first version that a port was made part of the
-#				  standard OpenBSD distribution.  If the current OpenBSD
-#				  version is >= this version then a notice will be
-#				  displayed instead of the port being generated.
 #
 # NO_DESCRIBE	- Use a dummy (do-nothing) describe target.
 # NO_PACKAGE	- Use a dummy (do-nothing) package target.
@@ -62,8 +57,6 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 # RESTRICTED	- Port is restricted.  Set this string to the reason why.
 #
 # PKG_DBDIR		- Where package installation is recorded (default: /var/db/pkg)
-#
-# USE_X11		- Port uses X11.
 #
 # SCRIPTS_ENV	- Additional environment vars passed to scripts in
 #                 ${SCRIPTDIR} executed by bsd.port.mk.
@@ -113,20 +106,8 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 #
 # Other variables:
 #
-# Default targets and their behaviors:
+# Some targets and their behaviors:
 #
-# fetch			- Retrieves ${DISTFILES} (and ${PATCHFILES} if defined, and
-#                 ${SUPDISTFILES} if needed) into ${DISTDIR} as necessary.
-# extract		- Unpacks ${EXTRACT_ONLY} (${DISTFILES} by default)
-#                 into ${WRKDIR}.
-# patch			- Apply any provided patches to the source.
-# distpatch     - Intermediate patch target, apply only distribution patches.
-# configure		- Runs either GNU configure, one or more local configure
-#				  scripts or nothing, depending on what's available.
-# build			- Actually compile the sources.
-#
-# If ${FAKE} == Yes
-# fake			- Perform a fake installation into ${WRKINST}.
 # package	    - Build package from the fake installation.
 # install       - Install the resulting package.
 #
@@ -134,17 +115,11 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 # There is also a special pre-fake target that gets run after mtree but
 # before making the INSTALL_PRECOOKIE, to finish setting up the fake tree.
 #
-# plist			- create a file suitable for use as a packing list.  This
-#				  is for port maintainers.
 # describe		- Try to generate a one-line description for each port for
 #				  use in INDEX files and the like.
 # checkpatch	- Do a "patch -C" instead of a "patch".  Note that it may
 #				  give incorrect results if multiple patches deal with
 #				  the same file.
-# checksum		- Use ${CHECKSUM_FILE} to ensure that your distfiles are valid.
-# makesum		- Generate ${CHECKSUM_FILE} (only do this for your own ports!).
-# addsum		- update ${CHECKSUM_FILE} in a non-destructive way 
-#				  (your own ports only!)
 # obj			- pre-build ${WRKDIR} -> ${WRKOBJDIR}/${PKGPATH} links
 #
 # readme		- Create a README.html file describing the category or package
@@ -175,9 +150,6 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 #
 # pre-patch `real distpatch' post-distpatch `real patch' post-patch
 #
-# For historical reasons, you shouldn't override pre-extract and
-# do-extract. Rely on EXTRACT_ONLY and post-extract instead.
-
 
 
 .if exists(${.CURDIR}/../Makefile.inc)
