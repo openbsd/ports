@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2004/05/07 20:28:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.138 2004/05/14 13:35:30 sturm Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -129,6 +129,7 @@
      SUBDIR += uvscan
      SUBDIR += uvscan_dat
      SUBDIR += vomit
+     SUBDIR += vpnc
      SUBDIR += whisker
      SUBDIR += xmlsec
      SUBDIR += zebedee
