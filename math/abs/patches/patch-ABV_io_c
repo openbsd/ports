@@ -1,0 +1,12 @@
+$OpenBSD: patch-ABV_io_c,v 1.1 2002/02/23 23:32:31 pvalchev Exp $
+--- ABV/io.c.orig	Wed Nov 15 14:09:54 2000
++++ ABV/io.c	Sat Feb 23 16:26:54 2002
+@@ -178,7 +178,7 @@ obj io_input (int unit)
+   obj o;
+   FILE *fp;
+   char buf[256];
+-  char c;
++  int c;
+   int instr = 0;
+   int dot = 0;
+   o.type = DOUBLE;
