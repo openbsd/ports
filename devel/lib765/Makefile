@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/12/16 14:28:54 grange Exp $
+# $OpenBSD: Makefile,v 1.2 2003/01/09 22:36:01 pvalchev Exp $
 
 COMMENT=		"library for the floppy controller emulation"
 
@@ -22,6 +22,7 @@ LIB_DEPENDS=		dsk.2::devel/libdsk
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include"
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lib765
