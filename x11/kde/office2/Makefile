@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/03/30 00:12:20 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/03/30 02:22:25 espie Exp $
 
 COMMENT=		"office applications for kde"
 CATEGORIES=		x11 x11/kde productivity
@@ -24,7 +24,7 @@ CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-debug
 #CONFIGURE_ARGS+=--enable-static --enable-debug --disable-shared
-PATCH_LIST=${PORTSDIR}/x11/kde/libs2/patches/p-* patch-*
+PATCH_LIST=	p-* patch-*
 
 # Not yet, too much time to compile
 #CONFIGURE_ARGS+=	--enable-static

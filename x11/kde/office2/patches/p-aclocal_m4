@@ -1,0 +1,48 @@
+$OpenBSD: p-aclocal_m4,v 1.1 2002/03/30 02:22:25 espie Exp $
+--- aclocal.m4.orig	Thu Aug 23 06:48:31 2001
++++ aclocal.m4	Fri Mar 29 18:23:25 2002
+@@ -2960,6 +2960,11 @@ LIBDL="-ldl"
+ ac_cv_have_dlfcn=yes
+ ])
+ 
++AC_CHECK_LIB(c, dlopen, [
++LIBDL=
++ac_cv_have_dlfcn=yes
++])
++
+ AC_CHECK_LIB(dld, shl_unload, [
+ LIBDL="-ldld"
+ ac_cv_have_shload=yes
+@@ -3459,9 +3464,11 @@ fi
+ 
+ AC_DEFUN(KDE_CHECK_PYTHON,
+ [
++  KDE_CHECK_PYTHON_INTERN("2.2", [
+   KDE_CHECK_PYTHON_INTERN("2.1", [KDE_CHECK_PYTHON_INTERN("2.0",
+         [ KDE_CHECK_PYTHON_INTERN($1, $2) ])
+   ])
++  ])
+ ])
+ 
+ AC_DEFUN(KDE_CHECK_STL_SGI,
+@@ -4722,19 +4729,7 @@ netbsd*)
+   ;;
+ 
+ openbsd* )
+-  if echo __ELF__ | $CC -E - | grep __ELF__ > /dev/null; then
+-    case "$host_cpu" in
+-    i*86 )
+-      changequote(,)dnl
+-      lt_cv_deplibs_check_method='file_magic OpenBSD/i[3-9]86 demand paged shared library'
+-      changequote([, ])dnl
+-      lt_cv_file_magic_cmd=/usr/bin/file
+-      lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
+-      ;;
+-    esac
+-  else
+-    lt_cv_deplibs_check_method=pass_all
+-  fi
++  lt_cv_deplibs_check_method=pass_all
+   ;;
+ 
+ newsos6)

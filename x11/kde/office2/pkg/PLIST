@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/09/06 13:01:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/03/30 02:22:25 espie Exp $
 bin/filter_wrapper
 bin/kchart
 bin/kformula
@@ -1490,10 +1490,18 @@ share/templates/TextDocument.desktop
 @dirrm share/icons/hicolor/48x48
 @dirrm share/icons/hicolor/32x32/mimetypes
 @dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32/actions
+@dirrm share/icons/hicolor/32x32
 @dirrm share/icons/hicolor/22x22/mimetypes
 @dirrm share/icons/hicolor/22x22/apps
+@dirrm share/icons/hicolor/22x22/actions
+@dirrm share/icons/hicolor/22x22
 @dirrm share/icons/hicolor/16x16/mimetypes
 @dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16/actions
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor
+@dirrm share/icons
 @dirrm share/doc/HTML/en/kword
 @dirrm share/doc/HTML/en/kugar
 @dirrm share/doc/HTML/en/kspread
@@ -1502,6 +1510,8 @@ share/templates/TextDocument.desktop
 @dirrm share/doc/HTML/en/koshell
 @dirrm share/doc/HTML/en/kontour
 @dirrm share/doc/HTML/en/koffice
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
 @dirrm share/apps/kword/templates/Publishing/.source
 @dirrm share/apps/kword/templates/Publishing/.icon
 @dirrm share/apps/kword/templates/Publishing
@@ -1580,6 +1590,7 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/kontour/icons/hicolor
 @dirrm share/apps/kontour/icons
 @dirrm share/apps/kontour
+@dirrm share/apps/koffice/pics
 @dirrm share/apps/koffice/icons/hicolor/48x48/apps
 @dirrm share/apps/koffice/icons/hicolor/48x48
 @dirrm share/apps/koffice/icons/hicolor/32x32/apps
@@ -1593,8 +1604,34 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/koffice/icons/hicolor/16x16
 @dirrm share/apps/koffice/icons/hicolor
 @dirrm share/apps/koffice/icons
+@dirrm share/apps/koffice
+@dirrm share/apps/kivio/stencils/Flowcharting/BasicFlowcharting
+@dirrm share/apps/kivio/stencils/Flowcharting
+@dirrm share/apps/kivio/stencils
 @dirrm share/apps/kivio/pics
 @dirrm share/apps/kivio/kpartplugins
+@dirrm share/apps/kivio/icons/hicolor/32x32/actions
+@dirrm share/apps/kivio/icons/hicolor/32x32
+@dirrm share/apps/kivio/icons/hicolor/22x22/actions
+@dirrm share/apps/kivio/icons/hicolor/22x22
+@dirrm share/apps/kivio/icons/hicolor/16x16/actions
+@dirrm share/apps/kivio/icons/hicolor/16x16
+@dirrm share/apps/kivio/icons/hicolor
+@dirrm share/apps/kivio/icons
 @dirrm share/apps/kivio/autoloadStencils
+@dirrm share/apps/kivio
+@dirrm share/apps/kformula/pics
+@dirrm share/apps/kformula
+@dirrm share/apps/kchart/pics
+@dirrm share/apps/kchart/icons/locolor/16x16/actions
+@dirrm share/apps/kchart/icons/locolor/16x16
+@dirrm share/apps/kchart/icons/locolor
+@dirrm share/apps/kchart/icons/hicolor/22x22/actions
+@dirrm share/apps/kchart/icons/hicolor/22x22
+@dirrm share/apps/kchart/icons/hicolor
+@dirrm share/apps/kchart/icons
+@dirrm share/apps/kchart
+@dirrm share/apps
 @dirrm share/applnk/Office
+@dirrm share/applnk
 @dirrm lib/kde2

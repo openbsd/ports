@@ -1,0 +1,37 @@
+$OpenBSD: p-admin_ltconfig,v 1.1 2002/03/30 02:22:25 espie Exp $
+--- admin/ltconfig.orig	Sat May 19 09:19:10 2001
++++ admin/ltconfig	Fri Mar 29 18:01:52 2002
+@@ -625,7 +625,12 @@ old_postuninstall_cmds=
+ 
+ if test -n "$RANLIB"; then
+   old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
+-  old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
++  case $host_os in 
++  openbsd*)
++      old_postinstall_cmds="\$RANLIB -t \$oldlib~$old_postinstall_cmds";;
++  *)
++      old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds";;
++  esac
+ fi
+ 
+ # Source the script associated with the $tagname tag configuration.
+@@ -1245,15 +1250,15 @@ newsos6)
+ 
+ openbsd*)
+   version_type=sunos
+-  if test "$with_gnu_ld" = yes; then
+-    need_lib_prefix=no
+-    need_version=no
+-  fi
++  need_lib_prefix=yes
++  need_version=yes
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   # OpenBSD 2.7 the overriding is needed for fast-install
+   shlibpath_overrides_runpath=yes
++  deplibs_check_method=pass_all
++  sys_lib_dlsearch_path_spec='/usr/lib /usr/local/lib /usr/X11R6/lib /usr/local/lib/qt2'
+   ;;
+ 
+ os2*)
