@@ -1,0 +1,12 @@
+$OpenBSD: patch-print_c,v 1.1 2002/11/28 20:34:58 pvalchev Exp $
+--- print.c.orig	Thu Nov 28 13:30:26 2002
++++ print.c	Thu Nov 28 13:30:42 2002
+@@ -89,8 +89,6 @@ static void intconv(Format *format, unsi
+ 	flags = format->flags;
+ 	if (flags & FMT_long)
+ 		n = va_arg(format->args, long);
+-	else if (flags & FMT_short)
+-		n = va_arg(format->args, short);
+ 	else
+ 		n = va_arg(format->args, int);
+ 
