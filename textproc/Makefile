@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 1999/11/08 14:03:27 dugsong Exp $
+# $OpenBSD: Makefile,v 1.25 2000/03/02 21:23:40 aaron Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -8,6 +8,7 @@
      SUBDIR += catdoc
      SUBDIR += docbook
      SUBDIR += expat
+     SUBDIR += figlet
      SUBDIR += glimpse
      SUBDIR += html
      SUBDIR += info2html
