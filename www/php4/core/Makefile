@@ -1,7 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2003/05/07 14:13:01 avsm Exp $
+# $OpenBSD: Makefile,v 1.11 2003/05/23 20:06:22 avsm Exp $
+
+MULTI_PACKAGES=	-pear
+SUBPACKAGE?=
 
 COMMENT=	"server-side HTML-embedded scripting language"
+COMMENT-pear=	"base classes for common PHP tasks"
 PKGNAME=	php4-core-${V}
+FULLPKGNAME-pear= php4-pear-${V}
 
 CONFIGURE_ARGS+= --with-apxs=/usr/sbin/apxs \
 		--without-mysql \
@@ -35,11 +40,24 @@ PHP_VERSION=	${V}
 PHPXS_SUBST+= -e 's,${i},${${i}},'
 .endfor
 
+.if ${MACHINE_ARCH} == "i386"
+LIB_DEPENDS+=	recode.0::converters/recode
+CONFIGURE_ARGS+= --with-recode=${LOCALBASE}
+.endif
+
+.if defined(PACKAGING) && !empty(SUBPACKAGE)
+PREFIX=${CHROOT_DIR}
+RUN_DEPENDS=  # pear doesnt need anything to run
+.endif
+
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/${APACHE_MODULE_SUBDIR}
 
-INSTALL_TARGET=	install-programs install-pear
+INSTALL_TARGET= install-pear install-headers install-build install-programs
 FAKE_FLAGS= 	INSTALL_ROOT=${DESTDIR}
+
+post-patch:
+	@perl -p -i.orig -e "s,OPENBSD_PEAR_ROOT,'${CHROOT_DIR}/pear',g" ${WRKSRC}/pear/PEAR/Config.php
 
 post-install:
 	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp4.so ${PREFIX}/${APACHE_MODULE_SUBDIR}
@@ -54,10 +72,5 @@ post-install:
 	@sed ${PHPXS_SUBST} <${FILESDIR}/phpxs >${PREFIX}/sbin/phpxs
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/sbin/phpxs
 	@chmod ${BINMODE} ${PREFIX}/sbin/phpxs
-
-.if ${MACHINE_ARCH} == "i386"
-LIB_DEPENDS+=	recode.0::converters/recode
-CONFIGURE_ARGS+= --with-recode=${LOCALBASE}
-.endif
 
 .include <bsd.port.mk>
