@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:17:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/02/19 20:53:13 alek Exp $
+@option no-default-conflict
+@conflict ices-0.*
 bin/ices
 @man man/man1/ices.1
 share/doc/ices/
