@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Fri Apr 30 15:31:02 1999
-+++ doc/Makefile.in	Fri Apr 30 15:31:15 1999
-@@ -72,7 +72,7 @@
+--- doc/Makefile.in.orig	Fri May 28 00:34:52 1999
++++ doc/Makefile.in	Fri May 28 00:35:09 1999
+@@ -70,7 +70,7 @@
  LIBTOOL = @LIBTOOL@
  LIBTOOL_FLAGS = @LIBTOOL_FLAGS@
  LN_S = @LN_S@
