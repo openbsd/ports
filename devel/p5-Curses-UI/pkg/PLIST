@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/04/11 15:01:21 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/06/26 04:35:35 xsa Exp $
 ${P5SITE}/Curses/UI.pm
 ${P5SITE}/Curses/UI/Buttonbox.pm
 ${P5SITE}/Curses/UI/Calendar.pm
@@ -15,6 +15,7 @@ ${P5SITE}/Curses/UI/Dialog/Progress.pm
 ${P5SITE}/Curses/UI/Dialog/Status.pm
 ${P5SITE}/Curses/UI/Label.pm
 ${P5SITE}/Curses/UI/Language.pm
+${P5SITE}/Curses/UI/Language/chinese.pm
 ${P5SITE}/Curses/UI/Language/dutch.pm
 ${P5SITE}/Curses/UI/Language/english.pm
 ${P5SITE}/Curses/UI/Language/french.pm
@@ -24,6 +25,8 @@ ${P5SITE}/Curses/UI/Language/norwegian.pm
 ${P5SITE}/Curses/UI/Language/polish.pm
 ${P5SITE}/Curses/UI/Language/portuguese.pm
 ${P5SITE}/Curses/UI/Language/russian.pm
+${P5SITE}/Curses/UI/Language/spanish.pm
+${P5SITE}/Curses/UI/Language/turkish.pm
 ${P5SITE}/Curses/UI/Listbox.pm
 ${P5SITE}/Curses/UI/Menubar.pm
 ${P5SITE}/Curses/UI/PasswordEntry.pm
@@ -47,6 +50,7 @@ man/man3p/Curses::UI::Common.3p
 man/man3p/Curses::UI::Container.3p
 man/man3p/Curses::UI::Dialog::Basic.3p
 man/man3p/Curses::UI::Dialog::Calendar.3p
+man/man3p/Curses::UI::Dialog::Dirbrowser.3p
 man/man3p/Curses::UI::Dialog::Error.3p
 man/man3p/Curses::UI::Dialog::Filebrowser.3p
 man/man3p/Curses::UI::Dialog::Progress.3p

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2004/04/11 15:01:20 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2004/06/26 04:35:35 xsa Exp $
 
 COMMENT=	"curses based user interface framework for Perl"
 
-DISTNAME=	Curses-UI-0.92
+DISTNAME=	Curses-UI-0.93
 PKGNAME=	p5-${DISTNAME}
 
 CATEGORIES=	devel perl5
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
+
+REGRESS_DEPENDS=::devel/p5-Test-Pod	
 
 EXAMPLE_DIR=	${PREFIX}/share/examples/p5-Curses-UI
 
