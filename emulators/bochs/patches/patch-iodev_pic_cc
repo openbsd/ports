@@ -1,6 +1,6 @@
-$OpenBSD: patch-iodev_pic_cc,v 1.1 2001/02/02 16:59:11 todd Exp $
+$OpenBSD: patch-iodev_pic_cc,v 1.2 2001/02/02 22:07:46 todd Exp $
 --- iodev/pic.cc.orig	Sat Mar 25 21:28:49 2000
-+++ iodev/pic.cc	Thu Oct 19 10:53:07 2000
++++ iodev/pic.cc	Fri Feb  2 16:07:23 2001
 @@ -121,11 +121,11 @@ bx_pic_c::read(Bit32u address, unsigned 
    UNUSED(this_ptr);
  #endif // !BX_USE_PIC_SMF
