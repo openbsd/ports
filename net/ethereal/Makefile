@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2003/10/05 22:24:16 jakob Exp $
+# $OpenBSD: Makefile,v 1.77 2003/10/08 19:35:30 jcs Exp $
 
 COMMENT=	"network protocol analyzer"
 
@@ -39,11 +39,11 @@ CONFIGURE_ARGS+=	--enable-ethereal
 .endif
 
 .if ${FLAVOR:L:Msnmp}
-CONFIGURE_ARGS+=	--with-ucdsnmp
+CONFIGURE_ARGS+=	--with-ucd-snmp
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" LIBS="-lsnmp -lcrypto -ldes"
 LIB_DEPENDS+=		snmp::net/ucd-snmp
 .else
-CONFIGURE_ARGS+=	--without-ucdsnmp
+CONFIGURE_ARGS+=	--without-ucd-snmp
 .endif
 
 .if ${FLAVOR:L:Madns}
