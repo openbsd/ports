@@ -1,0 +1,12 @@
+$OpenBSD: patch-amor_data_bsdrc,v 1.1 2001/08/21 14:10:10 espie Exp $
+--- amor/data/bsdrc.orig	Tue Aug 21 16:02:04 2001
++++ amor/data/bsdrc	Tue Aug 21 16:02:09 2001
+@@ -2,7 +2,7 @@
+ [Config]
+ PixmapPath=static
+ Static=true
+-Description=BSD Mascot
++Description=FreeBSD Mascot
+ About=Static window sitter
+ Icon=bsd.png
+ 
