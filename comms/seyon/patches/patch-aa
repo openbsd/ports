@@ -1,26 +1,16 @@
---- Imakefile.orig	Thu Oct 21 16:55:03 1999
-+++ Imakefile	Thu Oct 21 16:54:51 1999
-@@ -11,6 +11,9 @@
- DEPLIBS = 
- LOCAL_LIBRARIES = XawClientLibs
- 
-+/* We need seyon to be sgid dialer */
-+INSTPGMFLAGS = -s -m 2755 -o bin -g dialer
-+
- /* SYS_LIBRARIES = -lm */
- 
- SRCS  = Seyon.c SeActions.c SeScan.c SeDial.c SeErr.c SeGeneric.c \
-@@ -45,13 +48,6 @@
- InstallAppDefaults(Seyon)
+--- Imakefile.orig	Sat Mar 27 16:20:12 1993
++++ Imakefile	Mon Nov 29 16:29:36 1999
+@@ -46,13 +46,6 @@
  InstallAppDefaultsLong(Seyon-co,Seyon-color)
  InstallNonExecFile(seyon.help,$(LIBDIR))
--
+ 
 -install::
 -	@if [ ! -d $(HOME)/.seyon ]; then mkdir $(HOME)/.seyon; fi; \
 -	echo "=== Copying example files (no overwrite) to $(HOME)/.seyon ..."; \
 -	for i in phonelist protocols startup script.*; do \
 -		if [ ! -f $(HOME)/.seyon/$$i ]; then cp $$i $(HOME)/.seyon; fi;\
 -	done;
- 
+-
  clean::
  	rm -f version.h y.tab.* SeParse.c
+ 
