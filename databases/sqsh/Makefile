@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2003/05/12 18:02:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/02/16 18:18:25 jcs Exp $
 
 DISTNAME=	sqsh-2.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	databases shells
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,7 +17,7 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 MODULES=	gettext
-LIB_DEPENDS=	tds.0,ct.0::databases/freetds
+LIB_DEPENDS=	tds.3,ct.2::databases/freetds
 
 CONFIGURE_STYLE= gnu old
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autoconf

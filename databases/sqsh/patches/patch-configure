@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.2 2001/12/23 23:27:23 jcs Exp $
+$OpenBSD: patch-configure,v 1.3 2004/02/16 18:18:25 jcs Exp $
 --- configure.orig	Sun Dec 23 16:40:32 2001
 +++ configure	Sun Dec 23 16:41:14 2001
 @@ -1209,6 +1209,8 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-configure,v 1.2 2001/12/23 23:27:23 jcs Exp $
  			aix*)
  				SYBASE_OS="-lm";;
 +			openbsd*)
-+				SYBASE_OS="-lm";;
++				SYBASE_OS="-lm -liconv";;
  			*)
  				SYBASE_OS="-lm -ldl";;
  		esac
