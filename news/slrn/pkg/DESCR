@@ -1,4 +1,14 @@
-slrn (not to be confused with slnr) is a SLang-based NNTP newsreader with a 
-nice interface.
+slrn (``s-lang read news'') is a newsreader, i.e. a program that
+accesses a newsserver to read messages from the Internet News service
+(also known as ``Usenet''). It runs in console mode on various
+Unix-like systems (including Linux), 32-bit Windows, OS/2, BeOS and
+VMS.
+
+Beside the usual features of a newsreader, slrn supports scoring
+rules to highlight, sort or kill articles based on information from
+their header. It is highly customizable, allows free key-bindings
+and can easily be extended using the sophisticated s-lang macro
+language. Offline reading is possible by using either slrnpull
+(shipped with slrn) or a local newsserver (like leafnode or INN).
 
 WWW: ${HOMEPAGE}

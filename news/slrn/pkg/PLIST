@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.6 2001/04/10 14:59:17 lebel Exp $
 bin/slrn
 man/man1/slrn.1
 share/doc/slrn/COPYING
@@ -9,7 +10,6 @@ share/doc/slrn/README.GroupLens
 share/doc/slrn/README.macros
 share/doc/slrn/README.os2
 share/doc/slrn/README.vms
-share/doc/slrn/README.w95
 share/doc/slrn/SCORE_FAQ
 share/doc/slrn/changes.txt
 share/doc/slrn/help.txt
@@ -29,6 +29,7 @@ share/doc/slrn/slrnpull/slrnpull.conf
 share/doc/slrn/slrnpull/slrnpull.sh
 share/slrn/color.sl
 share/slrn/ispell.sl
+share/slrn/latin2.sl
 share/slrn/nn.sl
 share/slrn/posthook.sl
 share/slrn/search.sl
