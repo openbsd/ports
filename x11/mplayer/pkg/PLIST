@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/05/28 11:49:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/08/18 11:26:48 espie Exp $
 bin/gmplayer
 bin/mencoder
 bin/mplayer
-lib/mplayer/vidix/genfb_vid.so
 lib/mplayer/vidix/mach64_vid.so
 lib/mplayer/vidix/mga_crtc2_vid.so
 lib/mplayer/vidix/mga_vid.so
-lib/mplayer/vidix/nvidia_vid.so
+lib/mplayer/vidix/pm3_vid.so
 lib/mplayer/vidix/radeon_vid.so
 lib/mplayer/vidix/rage128_vid.so
 %%SHARED%%

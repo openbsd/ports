@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2002/08/16 19:20:54 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.28 2002/08/18 11:26:48 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
 
 COMMENT=		"Movie player"
-DISTNAME=		MPlayer-0.90pre5
+DISTNAME=		MPlayer-0.90pre6
+DIST_SUBDIR=		mplayer
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
@@ -17,6 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www2.mplayerhq.hu/MPlayer/releases/
+MASTER_SITES+=		http://www.mplayerhq.hu/MPlayer/releases/
 #MASTER_SITES0=		http://www2.mplayerhq.hu/MPlayer/Skin/
 MASTER_SITES0=		http://www.sightly.net/mplayer/
 
@@ -70,6 +72,7 @@ CONFIGURE_ARGS+=--disable-gui \
 	--disable-xv \
 	--disable-x11 \
 	--disable-sunaudio
+PLIST=pkg/PLIST-no_x11
 .  endif
 .else
 CONFIGURE_ARGS+=--enable-gui \

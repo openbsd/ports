@@ -1,24 +1,19 @@
-$OpenBSD: patch-configure,v 1.11 2002/06/27 22:03:49 espie Exp $
---- configure.orig	Sat Jun  8 00:41:25 2002
-+++ configure	Mon Jun 17 20:17:52 2002
-@@ -1611,7 +1611,7 @@ else
+$OpenBSD: patch-configure,v 1.12 2002/08/18 11:26:48 espie Exp $
+--- configure.orig	Tue Aug  6 22:13:17 2002
++++ configure	Tue Aug  6 22:23:29 2002
+@@ -1728,6 +1728,11 @@ if test "$_soundcard" = yes ; then
+ else
+   _def_soundcard='#undef HAVE_SOUNDCARD_H'
  fi
- echores "$_sys_soundcard"
- 
--if test "$_sys_soundcard" != yes ; then
-+if test "$_sys_soundcard" != yes -a "$_ossaudio" != no; then
- echocheck "soundcard.h"
- cat > $TMPC << EOF
- #include <soundcard.h>
-@@ -2720,6 +2720,7 @@ if test "$_ossaudio" = yes ; then
-   else
-      if netbsd || openbsd ; then
-        _def_ossaudio_devdsp='#define PATH_DEV_DSP "/dev/sound"'
-+       _ld_arch="$_ld_arch -lossaudio"
-      else
-        _def_ossaudio_devdsp='#define PATH_DEV_DSP "/dev/dsp"'
-      fi
-@@ -2875,7 +2876,7 @@ echores "$_sgiaudio"
++if test openbsd && test "$_ossaudio" = no ; then
++  _def_soundcard='#undef HAVE_SOUNDCARD_H'
++  _inc_soundcard=''
++  _soundcard='no'
++fi
+ echores "$_soundcard"
+ else
+   _def_soundcard='#undef HAVE_SOUNDCARD_H'
+@@ -2955,7 +2960,7 @@ echores "$_sgiaudio"
  
  
  echocheck "VCD support"
@@ -27,52 +22,12 @@ $OpenBSD: patch-configure,v 1.11 2002/06/27 22:03:49 espie Exp $
    _inputmodules="vcd $_inputmodules"
    _def_vcd='#define HAVE_VCD 1'
    echores "ok"
-@@ -2888,7 +2889,7 @@ fi
+@@ -2968,7 +2973,7 @@ fi
  echocheck "DVD support (libmpdvdkit)"
  if test "$_dvdkit" = auto ; then
   _dvdkit=no
-- if linux || freebsd || netbsd ; then
-+ if linux || freebsd || netbsd || openbsd; then
+- if linux || freebsd || netbsd || darwin || cygwin; then
++ if linux || freebsd || netbsd || openbsd || darwin || cygwin; then
    test -f "./libmpdvdkit/Makefile" && _dvdkit=yes
   fi
  fi
-@@ -3258,7 +3259,7 @@ EOF
-   _iconv=no
-   if freebsd ; then
-     cc_check  -lm -lgiconv && _iconv=yes
--  elif bsdos ; then
-+  elif bsdos || openbsd; then
-     cc_check  -lm -liconv && _iconv=yes
-   else
-     cc_check -lm && _iconv=yes
-@@ -3268,6 +3269,7 @@ if test "$_iconv" = yes ; then
-   _def_iconv='#define USE_ICONV 1'
-   freebsd && _ld_iconv='-lgiconv'
-   bsdos && _ld_iconv='-liconv'
-+  openbsd && _ld_iconv='-liconv'
- else
-   _def_iconv='#undef USE_ICONV'
- fi
-@@ -3778,7 +3780,6 @@ test "$_xanim" = yes && _ld_dl_dynamic='
- _ld_arch="$_ld_arch $_ld_pthread $_ld_dl $_ld_dl_dynamic"
- bsdos && _ld_arch="$_ld_arch -ldvd"
- if netbsd || openbsd ; then
--  _ld_arch="$_ld_arch -lossaudio"
-   x86 && _ld_arch="$_ld_arch -li386"
- fi
- 
-@@ -3847,10 +3848,10 @@ cat > config.mak << EOF
- 
- LANG = C
- TARGET_OS = $system_name
--prefix = $_prefix
--DATADIR = $_datadir
--CONFDIR = $_confdir
--LIBDIR = $_libdir
-+prefix = \$(DESTDIR)$_prefix
-+DATADIR = \$(DESTDIR)$_datadir
-+CONFDIR = \$(DESTDIR)$_confdir
-+LIBDIR = \$(DESTDIR)$_libdir
- #AR = ar
- CC = $_cc
- AWK = $_awk
