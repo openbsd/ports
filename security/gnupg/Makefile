@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/05/24 20:55:44 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/06/03 13:49:50 brad Exp $
 
 DISTNAME=	gnupg-0.9.7
 CATEGORIES=	security
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/ \
 
 MAINTAINER=	markus.friedl@informatik.uni-erlangen.de
 
-SEPARATE_BUILD=	yes
+SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
