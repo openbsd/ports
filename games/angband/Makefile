@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/04/16 21:03:12 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/04/19 00:17:18 espie Exp $
 
 DISTNAME=		angband-283
 PKGNAME=		angband-2.8.3
@@ -18,13 +18,24 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 
-MAKE_FLAGS=		CC=${CC} CFLAGS+='-Wall ${CFLAGS} -DUSE_XAW -DUSE_GCU -DDEFAULT_PATH=\"${PREFIX}/share/angband/\" -I$(X11BASE)/include'  LIBS+='-L${X11BASE}/lib -lXaw -lXmu -lXt -lX11 -lcurses -ltermcap'
+MAKE_FLAGS=		CC='${CC}' CFLAGS='${CFLAGS}' LIBS="${LIBS}"
 FAKE=			Yes
 
 WRKSRC=			${WRKDIST}/src
 HOMEPAGE=		http://www.phial.com/angband/
 
 ALL_TARGET=		angband
+
+FLAVORS=no_x11
+FLAVOR?=
+
+CFLAGS+= -Wall -DDEFAULT_PATH=\"${PREFIX}/share/angband/\" -DUSE_GCU 
+LIBS= -lcurses -ltermcap
+
+.if !${FLAVOR:L:Mno_x11}
+CFLAGS+= -DUSE_XAW -I$(X11BASE)/include
+LIBS+= -L${X11BASE}/lib -lXaw -lXmu -lXt -lX11
+.endif
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/angband
