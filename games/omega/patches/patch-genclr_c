@@ -1,15 +1,73 @@
-$OpenBSD: patch-genclr_c,v 1.1.1.1 2001/07/28 16:31:47 lebel Exp $
---- genclr.c.orig	Sat Aug  8 08:53:38 1998
-+++ genclr.c	Fri Jul 27 20:59:03 2001
-@@ -281,7 +281,11 @@ int main (int argc, char **argv)
+$OpenBSD: patch-genclr_c,v 1.2 2004/01/02 18:49:33 espie Exp $
+--- genclr.c.orig	1998-08-08 14:53:59.000000000 +0200
++++ genclr.c	2004-01-02 19:43:38.000000000 +0100
+@@ -280,30 +280,33 @@ int main (int argc, char **argv)
+      * Emit .c file.
       */
      fp = emitopen (cfile, argv);
-     fprintf (fp, "\
-+#ifdef __FreeBSD__\n\
-+#include <ncurses.h>\n\
-+#else\n\
- #include <curses.h>\n\
-+#endif\n\
- #include <stdio.h>\n\
- #include <stdlib.h>\n\
+-    fprintf (fp, "\
+-#include <curses.h>\n\
+-#include <stdio.h>\n\
+-#include <stdlib.h>\n\
+-
+-#include \"%s\"\n\
+-
+-void clrgen_init (void)\n\
+-""{\n\
+-    if (%d > COLOR_PAIRS - 1) {\n\
+-	endwin();
+-	fputs (\"Too many color pairs!\\n\", stderr);\n\
+-	exit (1);\n\
+-    }\n\
+-",
++    fprintf (fp, 
++"#ifdef __FreeBSD__\n"
++"#include <ncurses.h>\n"
++"#else\n"
++"#include <curses.h>\n"
++"#endif\n"
++"#include <stdio.h>\n"
++"#include <stdlib.h>\n"
++"\n"
++"#include \"%s\"\n"
++"\n"
++"void clrgen_init (void)\n"
++"{\n"
++"    if (%d > COLOR_PAIRS - 1) {\n"
++"	endwin();\n"
++"	fputs (\"Too many color pairs!\\n\", stderr);\n"
++"	exit (1);\n"
++"    }\n"
++"",
+ 	     hfile, ncpairs);
+     for (i = 0; i < ncpairs; i++)
+-	fprintf (fp, "\
+-    init_pair (%d, COLOR_%s, COLOR_%s);\n\
+-",
++	fprintf (fp, 
++"    init_pair (%d, COLOR_%s, COLOR_%s);\n",
++
+ 		 cpairs[i]->idx, cpairs[i]->cfg, cpairs[i]->cbg);
+-    fputs ("\
+-""}\n\
+-",
++    fputs (
++"}\n",
+ 	   fp);
+     emitclose (fp, cfile);
+ 
+@@ -318,10 +321,10 @@ void clrgen_init (void)\n\
+ 		 strlen (pair->ofg) + strlen (pair->obg) > 10 ? "" : "\t",
+ 		 pair->idx, pair->boldfg ? "|A_BOLD" : "");
+     }
+-    fputs ("\
+-\n\
+-extern void clrgen_init (void);\n\
+-",
++    fputs (
++"\n"
++"extern void clrgen_init (void);\n"
++,
+ 	    fp);
+     emitclose (fp, hfile);
  
