@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/26 12:52:18 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/27 11:45:07 naddy Exp $
 
-DISTNAME=	gdk-pixbuf-0.9.0
+DISTNAME=	gdk-pixbuf-0.10.1
 CATEGORIES=	graphics
 NEED_VERSION=	1.346
 MASTER_SITES=	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gdk-pixbuf/

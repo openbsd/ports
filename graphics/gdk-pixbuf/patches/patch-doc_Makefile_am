@@ -1,6 +1,7 @@
---- doc/Makefile.am.orig	Mon Dec 25 17:00:21 2000
-+++ doc/Makefile.am	Mon Dec 25 17:00:32 2000
-@@ -97,8 +97,6 @@
+$OpenBSD: patch-doc_Makefile_am,v 1.1 2001/03/27 11:45:10 naddy Exp $
+--- doc/Makefile.am.orig	Wed Mar 14 09:51:24 2001
++++ doc/Makefile.am	Wed Mar 14 09:52:01 2001
+@@ -97,8 +97,6 @@ install-data-local:
  	    echo '-- Installing '$$i ; \
  	    $(INSTALL_DATA) $$i $(DESTDIR)$(TARGET_DIR); \
  	  done; \
