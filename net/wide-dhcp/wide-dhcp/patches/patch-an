@@ -1,0 +1,71 @@
+*** server/dhcps.c.orig	Tue Aug 19 14:14:39 1997
+--- server/dhcps.c	Wed Apr 29 15:39:18 1998
+***************
+*** 126,132 ****
+  
+  char **argv_orig;
+  
+! void
+  main(argc, argv)
+    int argc;
+    char **argv;
+--- 126,132 ----
+  
+  char **argv_orig;
+  
+! int
+  main(argc, argv)
+    int argc;
+    char **argv;
+***************
+*** 211,219 ****
+  #define LOG_PERROR	0	/* Don't bother if not defined... */
+  #endif
+    if (debug == 1) {
+!     openlog("dhcps", LOG_PID | LOG_CONS | LOG_PERROR, LOG_LOCAL0);
+    } else {
+!     openlog("dhcps", LOG_PID | LOG_CONS, LOG_LOCAL0);
+    }
+  
+    init_db();               /* initialize databases */
+--- 211,219 ----
+  #define LOG_PERROR	0	/* Don't bother if not defined... */
+  #endif
+    if (debug == 1) {
+!     openlog("dhcps", LOG_PID | LOG_CONS | LOG_PERROR, LOG_LOCAL1);
+    } else {
+!     openlog("dhcps", LOG_PID | LOG_CONS, LOG_LOCAL1);
+    }
+  
+    init_db();               /* initialize databases */
+***************
+*** 2290,2296 ****
+--- 2290,2300 ----
+    char *inserted;
+    char flag;
+  {
++ #if defined(__OpenBSD__)
++   u_int32_t *addr = 0;
++ #else
+    u_Long *addr = 0;
++ #endif
+    char option[6];
+    int symbol = 0;
+    int retval = 0;
+***************
+*** 2927,2933 ****
+      return(GOOD);
+    }
+  
+! #if defined(__bsdi__) || defined(__FreeBSD__)
+    delarp(ip);
+  #else
+    delarp(ip, sockfd);
+--- 2931,2937 ----
+      return(GOOD);
+    }
+  
+! #if defined(__bsdi__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+    delarp(ip);
+  #else
+    delarp(ip, sockfd);

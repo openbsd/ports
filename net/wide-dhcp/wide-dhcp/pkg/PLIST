@@ -1,0 +1,33 @@
+sbin/dhcpc
+sbin/dhcpm
+sbin/relay
+sbin/dhcps
+man/man8/dhcpc.8.gz
+man/man8/relay.8.gz
+man/man8/dhcps.8.gz
+man/man8/dhcpm.8.gz
+man/man5/dhcpdb.server.5.gz
+man/man5/dhcpdb.pool.5.gz
+man/man5/dhcpdb.relay.5.gz
+share/doc/dhcp/README
+share/doc/dhcp/README.jis
+share/doc/dhcp/intro.dhcp
+share/doc/dhcp/intro.dhcp.jis
+@dirrm share/doc/dhcp
+share/examples/dhcp/dhcpdb.pool.sample
+share/examples/dhcp/dhcpdb.relay.sample
+share/examples/dhcp/dhcpdb.server.sample
+@dirrm share/examples/dhcp
+@exec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^dhcps /etc/services.bak ; echo "dhcps		67/udp    # dhcp server") > /etc/services
+@exec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^dhcpc /etc/services.bak ; echo "dhcpc		68/udp    # dhcp client") > /etc/services
+@exec touch -f /var/db/dhcpdb.bind
+@exec echo "***"
+@exec echo "*** Don't forget to enable kernel BPF support!"
+@exec echo "***"
+@unexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^dhcps /etc/services.bak ) > /etc/services
+@unexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^dhcpc /etc/services.bak ) > /etc/services
+@unexec rm -f /var/db/dhcp_cache /var/db/dhcpdb.bind*
+@unexec echo "***"
+@unexec echo "*** Remove /etc/dhcpdb.pool and /etc/dhcpdb.relay manually"
+@unexec echo "*** to complete uninstallation."
+@unexec echo "***"

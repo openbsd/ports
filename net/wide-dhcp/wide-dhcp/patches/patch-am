@@ -1,0 +1,40 @@
+*** server/delarp.c.orig	Thu Apr 10 22:16:30 1997
+--- server/delarp.c	Wed Apr 29 15:43:28 1998
+***************
+*** 37,45 ****
+   * SUCH DAMAGE.
+   */
+  
+! #ifndef lint
+  static char sccsid[] = "@(#)arp.c       8.2 (Berkeley) 1/2/94";
+! #endif /* not lint */
+  
+  #include <sys/param.h>
+  #include <sys/socket.h>
+--- 37,45 ----
+   * SUCH DAMAGE.
+   */
+  
+! #if defined(LIBC_SCCS) && !defined(lint)
+  static char sccsid[] = "@(#)arp.c       8.2 (Berkeley) 1/2/94";
+! #endif /* LIBC_SCCS and not lint */
+  
+  #include <sys/param.h>
+  #include <sys/socket.h>
+***************
+*** 60,66 ****
+  #include <syslog.h>
+  
+  
+! #if defined(__bsdi__) || defined(__FreeBSD__)
+  /*
+   * delarp for BSD/OS 2.*
+   */
+--- 60,66 ----
+  #include <syslog.h>
+  
+  
+! #if defined(__bsdi__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+  /*
+   * delarp for BSD/OS 2.*
+   */
