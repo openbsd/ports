@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2003/12/27 23:35:45 jose Exp $
+# $OpenBSD: Makefile,v 1.28 2004/06/19 20:42:30 jakob Exp $
 
 COMMENT=	"convert memos written in XML to the RFC format"
 
-VERSION=	1.17
+VERSION=	1.24
 DISTNAME=	xml2rfc-${VERSION}
 CATEGORIES=	textproc
 
@@ -44,7 +44,7 @@ do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/xml2rfc
 	@${INSTALL_DATA} ${WRKSRC}/xml2rfc.tcl ${PREFIX}/share/xml2rfc
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xml2rfc
-.for file in *.html *.txt *.xml *.dtd *.xslt
+.for file in *.html *.txt *.xml *.dtd *.xsd *.rnc
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/xml2rfc
 .endfor
 
