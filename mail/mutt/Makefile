@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 1999/11/03 01:10:37 turan Exp $
+# $OpenBSD: Makefile,v 1.19 2000/01/13 04:35:59 kevlo Exp $
 
 DISTNAME=	mutt-0.95.7i
 CATEGORIES=     mail
-MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
+MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/historic/ \
 		ftp://riemann.iam.uni-bonn.de/pub/mutt/ \
 		ftp://ftp.gbnet.net/pub/mutt-international/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
