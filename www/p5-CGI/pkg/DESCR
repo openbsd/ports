@@ -1,0 +1,6 @@
+These are the CGI::modules for perl5, for use in writing cgi scripts.
+Many examples of cgi scripts of various degrees of comlexity can be
+found at:
+http://www-genome.wi.mit.edu/WWW/examples/Ch9/
+
+WWW: ${HOMEPAGE}
