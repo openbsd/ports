@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/29 20:19:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2004/01/02 18:06:32 espie Exp $
 
 COMMENT=	"C++ wrapper for the Simple DirectMedia Layer"
 
@@ -25,6 +25,13 @@ USE_X11=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+.include <bsd.own.mk>
+USE_GCC3?= No
+
+.if ${USE_GCC3:L} == "yes"
+CONFIGURE_ENV=	LIBS="${LIBS} -lstdc++ -lm"
+.else
 CONFIGURE_ENV=	LIBS="${LIBS} -lstdc++"
+.endif
 
 .include <bsd.port.mk>
