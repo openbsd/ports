@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/11/15 21:57:29 couderc Exp $
+# $OpenBSD: Makefile,v 1.4 2003/03/29 15:02:21 couderc Exp $
 
 COMMENT=		"Virtual desktop manager for X11"
 
@@ -17,6 +17,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=waimea/}
+
+MODULES=		gcc3
+MODGCC3_ARCHES=		sparc64
+MODGCC3_LANGS=		C++
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
