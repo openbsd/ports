@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2002/06/25 02:41:03 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2002/09/28 18:24:14 naddy Exp $
 
 COMMENT=	"xml editor for KDE"
 
 DISTNAME=	kxmleditor-0.7.2
 CATEGORIES=	editors
-NEED_VERSION=	1.531
 
 HOMEPAGE=	http://kxmleditor.sourceforge.net/
 
@@ -20,7 +19,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kxmleditor/}
 LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio,kparts::x11/kde/libs3
 
 MODULES=	qt3
-PATCH_LIST=	{PORTSDIR}/x11/kde/arts3/patches/p-*
+PATCH_LIST=	${PORTSDIR}/x11/kde/arts3/patches/p-* patch-*
 
 MAKE_ENV=	${CONFIGURE_ENV}
 # Ensure qt2 will always be at the front

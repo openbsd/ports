@@ -1,0 +1,12 @@
+$OpenBSD: patch-part_dlgxmlelement_cpp,v 1.1 2002/09/28 18:24:15 naddy Exp $
+--- part/dlgxmlelement.cpp.orig	Sat Sep 28 20:06:49 2002
++++ part/dlgxmlelement.cpp	Sat Sep 28 20:07:27 2002
+@@ -24,7 +24,7 @@
+ #include <klineedit.h>
+ #include <kdebug.h>
+ 
+-DlgXMLElement::DlgXMLElement( QWidget * pParent = 0, const char * pszName = 0, bool fModal = true, WFlags fl = 0 )
++DlgXMLElement::DlgXMLElement( QWidget * pParent, const char * pszName, bool fModal, WFlags fl)
+ 	: DlgXMLElementBase( pParent, pszName, fModal, fl )
+ {
+ 	connect( m_pEditTagName, SIGNAL(textChanged(const QString&)), this, SLOT(slotTagNameChanged(const QString&)) );
