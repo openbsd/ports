@@ -1,12 +1,19 @@
-$OpenBSD: patch-src_md_c,v 1.1.1.1 2002/01/31 12:21:54 naddy Exp $
---- src/md.c.orig	Mon Jan 28 17:00:06 2002
-+++ src/md.c	Mon Jan 28 17:00:51 2002
-@@ -222,7 +222,7 @@ void md5tostr(const unsigned char md5sum
+$OpenBSD: patch-src_md_c,v 1.2 2003/09/01 16:51:39 avsm Exp $
+--- src/md.c.orig	2002-01-05 03:47:34.000000000 -0500
++++ src/md.c	2003-08-30 22:31:22.000000000 -0400
+@@ -216,13 +216,13 @@ void md5_process_block (const void *buff
+ /****************************************************/
+ /* convert the given md5sum into a printable string */
+ /****************************************************/
+-void md5tostr(const unsigned char md5sum[MD5SUMLEN],char str[3*MD5SUMLEN+1])
++void md5tostr(const unsigned char md5sum[MD5SUMLEN],char str[3*MD5SUMLEN+1], size_t len)
+ {
+ 	int i;
  	for(i=0;i<MD5SUMLEN;i++)
  	{
  		unsigned int v=md5sum[i];
 -		sprintf(str+3*i,"%1u%1u%1u",v/100,(v%100)/10,v%10);
-+		snprintf(str+3*i,sizeof(str),"%1u%1u%1u",v/100,(v%100)/10,v%10);
++		snprintf(str+3*i,len-3*i,"%1u%1u%1u",v/100,(v%100)/10,v%10);
  	}
  }
  

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_md_h,v 1.1 2003/09/01 16:51:39 avsm Exp $
+--- src/md.h.orig	2003-08-29 11:48:07.000000000 -0400
++++ src/md.h	2003-08-29 11:48:19.000000000 -0400
+@@ -22,7 +22,7 @@ void md5_process_block (const void *buff
+ /****************************************************/
+ /* convert the given md5sum into a printable string */
+ /****************************************************/
+-void md5tostr(const unsigned char md5sum[MD5SUMLEN],char str[3*MD5SUMLEN+1]);
++void md5tostr(const unsigned char md5sum[MD5SUMLEN],char str[3*MD5SUMLEN+1], size_t len);
+ 
+ /****************************************/
+ /* convert the given string into md5sum */
