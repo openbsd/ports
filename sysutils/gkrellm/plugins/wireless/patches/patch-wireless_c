@@ -1,7 +1,7 @@
-$OpenBSD: patch-wireless_c,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
---- wireless.c.orig	Fri Feb 21 22:31:34 2003
-+++ wireless.c	Fri Feb 21 22:31:50 2003
-@@ -90,7 +90,7 @@ wcard_t *found_wcard(gchar *interface) {
+$OpenBSD: patch-wireless_c,v 1.2 2004/08/10 13:54:55 robert Exp $
+--- wireless.c.orig	Sat Dec  6 14:19:55 2003
++++ wireless.c	Tue Aug 10 15:49:13 2004
+@@ -91,7 +91,7 @@
  }
  
  /* system specific stuff */
@@ -10,3 +10,21 @@ $OpenBSD: patch-wireless_c,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
  /* FreeBSD & NetBSD specific */
  
  static int
+@@ -212,7 +212,7 @@
+  return TRUE;
+ }
+ 
+-#if !defined(__NetBSD__)
++#if !defined(__NetBSD__) && !defined(__OpenBSD__)
+ static int
+ get_an_link_quality(wcard_t *card, float *quality, float *level, float *noise) {
+   int nr,s;
+@@ -258,7 +258,7 @@
+ static int
+ get_link_quality(wcard_t *card, float *quality, float *level, float *noise) {
+   switch (card->ifname[0]) { 
+-#if !defined(__NetBSD__)
++#if !defined(__NetBSD__) && !defined(__OpenBSD__)
+     case 'a': /* an card */
+       return get_an_link_quality(card,quality,level,noise);
+ #endif /* !defined(__NetBSD__) */
