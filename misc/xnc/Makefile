@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/03/05 22:48:08 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2003/03/06 00:45:24 pvalchev Exp $
 
 COMMENT=	"filemanager for X Window"
 
@@ -18,7 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=    jpeg.62.::graphics/jpeg \
-                png.2.::graphics/png
+		tiff.::graphics/tiff \
+                png.::graphics/png
 
 USE_X11=	Yes
 NO_REGRESS=	Yes
