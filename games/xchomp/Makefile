@@ -1,20 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 1998/12/18 03:46:20 jasoni Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/09/27 13:31:25 brad Exp $
 
-DISTNAME=       xchomp-pl1
+DISTNAME=	xchomp-pl1
 CATEGORIES=	games
-
-#BROKEN=		"What should the master site be?"
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	angelos@openbsd.org
-
-MASTER_SITES=		${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	../../R5contrib
-#
-# Original sources in multi-part compressed shell archive
-#
-#DISTFILES=	part01.Z part02.Z part03.Z part04.Z part05.Z patch1.Z
-#MASTER_SITES=	ftp://ftp.wustl.edu/usenet/comp.sources.x/volume06
 
 WRKSRC=		${WRKDIR}/xchomp
 USE_IMAKE=	yes
