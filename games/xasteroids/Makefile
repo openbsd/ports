@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2000/04/09 17:36:33 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/06/02 19:03:24 espie Exp $
 
 DISTNAME=	xasteroids
 PKGNAME=	xasteroids-5.0
 CATEGORIES=	games
 NEED_VERSION=	1.191
-FAKE=No
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/X11/R5contrib/
 EXTRACT_SUFX=	.sh.Z
 
