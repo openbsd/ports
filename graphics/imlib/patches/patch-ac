@@ -1,11 +1,17 @@
---- gdk_imlib/Makefile.in.orig	Wed Mar 17 01:21:32 1999
-+++ gdk_imlib/Makefile.in	Wed Mar 17 01:21:43 1999
-@@ -157,7 +157,7 @@
+--- gdk_imlib/Makefile.in.orig	Mon Sep  6 19:53:25 1999
++++ gdk_imlib/Makefile.in	Sat Oct 16 18:00:36 1999
+@@ -152,12 +152,12 @@
  libgdk_imlib_la_SOURCES =  	cache.c      			colors.c     			globals.c    			load.c       			misc.c       			rend.c       			utils.c      			save.c				modules.c
  
  
--libgdk_imlib_la_LDFLAGS = -version-info 10:4:9
-+libgdk_imlib_la_LDFLAGS = -version-info 1:9:0
+-libgdk_imlib_la_LDFLAGS = -version-info 10:7:9
++libgdk_imlib_la_LDFLAGS = -version-info 19:7:0
  libgdk_imlib_la_LIBADD = $(GMODULE_LIBS)
  
  include_HEADERS = gdk_imlib.h gdk_imlib_private.h gdk_imlib_types.h
+ 
+-DEFS = -DDJPEG_PROG=\"@DJPEG_PROG@\"  -DCJPEG_PROG=\"@CJPEG_PROG@\" 	-DCONVERT_PATH=\"@CONVERT_PATH@\" 	-DNETPBM_PATH=\"@NETPBM_PATH@\" -DSYSTEM_IMRC=\"@sysconfdir@/imrc\" 	-DIMLIB_LIB=\""$(libdir)"\"
++DEFS = -DDJPEG_PROG=\"@DJPEG_PROG@\"  -DCJPEG_PROG=\"@CJPEG_PROG@\" 	-DCONVERT_PATH=\"@CONVERT_PATH@\" 	-DNETPBM_PATH=\"@NETPBM_PATH@\" -DSYSTEM_IMRC=\"$(pkglibdir)/imrc\" 	-DIMLIB_LIB=\""$(libdir)"\"
+ 
+ 
+ INCLUDES = -I. -I$(srcdir) -I.. -I$(srcdir)/.. 	$(GTK_CFLAGS) $(X_CFLAGS) $(GMODULE_FLAGS) 

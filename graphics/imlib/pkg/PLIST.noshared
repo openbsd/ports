@@ -1,13 +1,15 @@
 bin/imlib-config
 bin/imlib_config
-lib/imlib/im_palette.pal
-lib/imlib/imrc
 include/Imlib.h
 include/Imlib_private.h
 include/Imlib_types.h
 include/gdk_imlib.h
 include/gdk_imlib_private.h
 include/gdk_imlib_types.h
+lib/imlib/im_palette-small.pal
+lib/imlib/im_palette-tiny.pal
+lib/imlib/im_palette.pal
+lib/imlib/imrc
 lib/libImlib.a
 lib/libImlib.la
 lib/libgdk_imlib.a

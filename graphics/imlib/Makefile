@@ -1,29 +1,31 @@
-# $OpenBSD: Makefile,v 1.7 1999/10/09 17:28:50 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/10/27 01:27:21 brad Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
-DISTNAME=	imlib-1.9.4
+DISTNAME=	imlib-1.9.7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= sources/imlib
+
+NEED_VERSION=	1.73
 
 MAINTAINER=	brad@openbsd.org
 
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		giftopnm:${PORTSDIR}/graphics/netpbm
-LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
-		intl:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
 		glib.1.2:${PORTSDIR}/devel/glib \
 		gtk.1.2:${PORTSDIR}/x11/gtk+ \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff34
+		gif.4.1:${PORTSDIR}/graphics/giflib \
+		jpeg.62:${PORTSDIR}/graphics/jpeg \
+		png.1.3:${PORTSDIR}/graphics/png \
+		tiff.35:${PORTSDIR}/graphics/tiff
 
 USE_GMAKE=	yes
 USE_X11=	yes
-SYSCONFDIR=	${PREFIX}/lib/imlib
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR}
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GTK_CONFIG="${X11BASE}/bin/gtk-config"
@@ -40,6 +42,6 @@ pre-build:
 post-install:
 	@${MKDIR} ${LOCALBASE}/share/aclocal
 	${INSTALL_DATA} ${WRKSRC}/imlib.m4 ${LOCALBASE}/share/aclocal/
-	${LDCONFIG} -m ${PREFIX}/lib
+	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
