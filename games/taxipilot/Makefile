@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/01/19 03:40:32 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2004/08/10 10:36:37 xsa Exp $
 
 COMMENT=	"silly little game based on Spacetaxi for the C64"
 
@@ -19,7 +19,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=taxipilot/}
 
 LIB_DEPENDS=	kdecore.4,DCOP,kdecore,kdefx,kdesu,kdeui,kio::x11/kde/libs3
 
-MODULES=	qt3
+MODULES=	x11/qt3
 MODQT_MT=	Yes
 
 PORTHOME=	${WRKDIR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/01/21 22:58:03 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2004/08/10 10:36:36 xsa Exp $
 
 COMMENT=	"graphically improved game of yore"
 
@@ -29,7 +29,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=heroes/}
 USE_X11=	Yes
 USE_GMAKE=	Yes
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 FLAVORS=	sdl ggi
 FLAVOR?=	sdl

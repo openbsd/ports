@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/03/02 07:57:21 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2004/08/10 10:36:36 xsa Exp $
 
 COMMENT=	"gtk+ chess board interface"
 
@@ -19,7 +19,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=eboard/}
 
 LIB_DEPENDS=		Imlib.19,gdk_imlib::graphics/imlib
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 USE_X11=		Yes
 AUTOCONF_VERSION=	2.52

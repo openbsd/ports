@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/05/22 19:54:10 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/10 10:36:37 xsa Exp $
 
 COMMENT=	"Ouranos (Weather War) clone; multiplayer"
 DISTNAME=	tornado-1.3
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tornado

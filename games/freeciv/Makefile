@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2004/06/10 07:41:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.38 2004/08/10 10:36:36 xsa Exp $
 
 COMMENT=	"Civilization clone for X11; multiplayer; game server"
 COMMENT-client=	"Freeciv client"
@@ -36,7 +36,7 @@ SUBPACKAGE?=
 
 .if !defined(PACKAGING) || ${SUBPACKAGE} != "-share"
 # -client and -server
-MODULES=	gettext
+MODULES=	devel/gettext
 
 .  if !${FLAVOR:L:Mno_x11}
 # -client

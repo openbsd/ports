@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/01/19 02:50:32 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2004/08/10 10:36:36 xsa Exp $
 
 COMMENT=	"puzzle game for KDE"
 
@@ -20,7 +20,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3
 
-MODULES=	qt3
+MODULES=	x11/qt3
 MODQT_MT=	Yes
 
 MAKE_ENV=	${CONFIGURE_ENV}
