@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/05/22 05:37:24 form Exp $
+# $OpenBSD: Makefile,v 1.22 2002/05/22 05:44:28 form Exp $
 # $RuOBSD: Makefile,v 1.2 2002/05/21 12:19:30 form Exp $
 
 COMMENT=		"GUI toolkit for X11"
@@ -11,6 +11,7 @@ EXTRACT_SUFX=		.tgz
 
 HOMEPAGE=		http://world.std.com/~xforms/
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-$RuOBSD: patch-lib_image_xwd_c,v 1.1.1.1 2002/05/18 02:35:56 form Exp $
+$OpenBSD: patch-lib_image_xwd_c,v 1.2 2002/05/22 05:44:28 form Exp $
 --- lib/image_xwd.c.orig	Mon May  6 15:10:18 2002
 +++ lib/image_xwd.c	Mon May  6 15:11:54 2002
 @@ -77,6 +77,7 @@ typedef union
