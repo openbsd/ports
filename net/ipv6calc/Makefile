@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/02/27 01:35:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/02/28 13:34:22 naddy Exp $
 
 COMMENT=	"tool for manipulating IPv6 addresses"
 
@@ -8,9 +8,11 @@ NEED_VERSION=	1.504
 HOMEPAGE=	http://www.bieringer.de/linux/IPv6/index.html
 
 MAINTAINER=	Vladimir Kotal <vlada@openbsd.cz>
-WRKSRC=         ${WRKDIR}/${PKGNAME}
 
-MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/
+MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/ \
+		ftp://ftp.uni-muenster.de/pub/IPv6/mirrors/ftp.bieringer.de/pub/linux/IPv6/ipv6calc/ \
+		ftp://ftp.nvg.ntnu.no/pub/IPv6/bieringer/ipv6calc/ \
+		ftp://ftp3.linux.it/pub/mirrors/IPv6/bieringer/ipv6calc/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
