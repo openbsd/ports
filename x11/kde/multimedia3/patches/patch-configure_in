@@ -1,38 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.13 2004/02/07 01:46:24 espie Exp $
+$OpenBSD: patch-configure_in,v 1.14 2004/02/19 22:40:42 espie Exp $
 --- configure.in.orig	2004-01-25 20:07:55.000000000 +0100
-+++ configure.in	2004-02-06 19:44:51.000000000 +0100
-@@ -40,7 +40,7 @@ dnl Perform program name transformation
- AC_ARG_PROGRAM
- 
- dnl Automake doc recommends to do this only here. (Janos)
--AM_INIT_AUTOMAKE(kdemultimedia, "3.2.0") dnl searches for some needed programs
-+AM_INIT_AUTOMAKE(kdemultimedia-3.1.95, "3.2.0") dnl searches for some needed programs
- 
- KDE_SET_PREFIX
- 
-@@ -169,11 +169,11 @@ AC_CHECK_HEADER(vorbis/vorbisfile.h,
- 
- AC_CHECK_LIB(vorbisfile, ov_open,
- 	[USELESS_VAR=1],
--	[HAVE_VORBIS=""], -lvorbis -logg)
-+	[HAVE_VORBIS=""], -lvorbis -logg -lm)
- 
- AC_CHECK_LIB(vorbis, vorbis_info_init,
- 	[USELESS_VAR=1],
--	[HAVE_VORBIS=""])
-+	[HAVE_VORBIS=""], -logg -lm)
- 
- AC_CHECK_LIB(ogg, ogg_page_version,
- 	[USELESS_VAR=1],
-@@ -591,7 +591,7 @@ AC_DEFUN([AC_CHECK_LIBFLAC],
-   AC_LANG_SAVE
-   AC_LANG_C
-   kde_has_flac_lib=no
--  AC_CHECK_HEADER(FLAC/metadata.h,
-+  KDE_CHECK_HEADER(FLAC/metadata.h,
-   [ 
-      kde_has_flac_lib=yes
-     ])
++++ configure.in	2004-02-06 19:51:43.000000000 +0100
 @@ -1411,6 +1411,9 @@ case "$OS_TYPE" in
    NetBSD)
      kde_mpeglib_compiles=yes
