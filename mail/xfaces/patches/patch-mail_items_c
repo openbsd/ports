@@ -1,0 +1,32 @@
+$OpenBSD: patch-mail_items_c,v 1.1 2000/06/05 01:09:25 espie Exp $
+--- mail_items.c.orig	Sun Mar 13 01:38:44 1994
++++ mail_items.c	Mon Jun  5 02:43:44 2000
+@@ -351,9 +351,18 @@ void
+ MailBoxClean()
+ {
+     MailItem *item;
+-    
+-    for (item = TheMailItems; item != NULL; item = item->next)
++    MailItem *next_item;
++   
++    for (item = TheMailItems; item != NULL; item = next_item)
+     {
++	/*
++	 * Save item->next here because if MailItemFree() is called, it will
++	 * free item and we won't be able to access it after the call.
++	 * Found by phkmalloc. Philippe Charnier (charnier@xp11.frmug.org)
++	 * 11/96.
++	 */
++	next_item = item->next;
++
+ 	if (item->in_use == 0)
+ 	{
+ 	    MailItemFree(item);
+@@ -651,6 +660,7 @@ char** annotations;
+     {
+ 	item->prev = TheMailItemsTail;
+ 	item->prev->next = item;
++	TheMailItemsTail = item;
+     }
+     
+     item->face = FaceDisplay(item);

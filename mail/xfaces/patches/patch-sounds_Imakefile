@@ -1,0 +1,10 @@
+--- sounds/Imakefile.orig	Mon Jun  5 02:56:12 2000
++++ sounds/Imakefile	Mon Jun  5 02:56:15 2000
+@@ -1,5 +1,5 @@
+ 
+-InstallNonExec( *.au, /usr/local/share/sounds)
++InstallNonExec( *.au,/usr/local/share/sounds)
+ 
+ clean::
+-	rm -f Makefile.*
++	rm -f Makefile.*

@@ -1,0 +1,132 @@
+$OpenBSD: patch-face_search_facedb_c,v 1.1 2000/06/05 01:09:24 espie Exp $
+--- face_search_facedb.c.orig	Sun Mar 13 01:38:42 1994
++++ face_search_facedb.c	Mon Jun  5 02:43:44 2000
+@@ -483,6 +483,10 @@ FacedbInfo*	info;
+     int			parts;
+     char*		username;
+     FacedbMap*		map;
++
++#ifdef FACEDB_DEBUG
++    fprintf(stderr, "facedb: searching in path %s\n", path);
++#endif
+     
+     if (buffer1 == NULL)
+     {
+@@ -535,7 +539,7 @@ FacedbInfo*	info;
+ 	*/
+ 	
+ 	FaceSearchFacedbMakeName(file, info, i, buffer1);
+-	
++#ifndef FACE_FILES_ONLY
+ 	/*
+ 	 * Try to load this guy.
+ 	*/
+@@ -550,7 +554,7 @@ FacedbInfo*	info;
+ 	    XtFree(hostdata);
+ 	    return 1;
+ 	}
+-	
++#endif
+ 	/*
+ 	 *  try adding "/face" and see what we find.
+ 	*/
+@@ -570,29 +574,12 @@ FacedbInfo*	info;
+ 	    return 1;
+ 	}
+ 	
+-#if 0
+-	/*
+-	 *  Finally if we are looking for an image try "/48x48x1".
+-	*/
+-	
+-	if (info->data->format == FormatImage)
+-	{
+-	    strcpy(tail, "/48x48x1");
+-	    
+-	    if (FaceSearchLoad(buffer1, info->item, info->data))
+-	    {
+-		XtFree((char*) host);
+-		XtFree(hostdata);
+-		return 1;
+-	    }
+-	}
+-#endif
+     }
+     
+     /*
+      *   try for user in the MISC directory.
+     */
+-    
++#ifndef FACE_FILES_ONLY
+     sprintf(buffer1, "%sMISC/%s", file, username);
+     
+ #ifdef FACEDB_DEBUG
+@@ -605,7 +592,7 @@ FacedbInfo*	info;
+ 	XtFree(hostdata);
+ 	return 1;
+     }
+-    
++#endif
+     sprintf(buffer1, "%sMISC/%s/face", file, username);
+     
+ #ifdef FACEDB_DEBUG
+@@ -632,7 +619,7 @@ FacedbInfo*	info;
+ 	*/
+ 	
+ 	FaceSearchFacedbMakeName(file, info, i, buffer1);
+-	
++#ifndef FACE_FILES_ONLY
+ 	/*
+ 	 * Try to load this guy.
+ 	*/
+@@ -653,7 +640,7 @@ FacedbInfo*	info;
+ 	    
+ 	    return 1;
+ 	}
+-	
++#endif
+ 	/*
+ 	 *  try adding "/face" and see what we find.
+ 	*/
+@@ -679,23 +666,6 @@ FacedbInfo*	info;
+ 	    return 1;
+ 	}
+ 	
+-#if 0
+-	/*
+-	 *  Finally if we are looking for an image try "/48x48x1".
+-	*/
+-	
+-	if (info->data->format == FormatImage)
+-	{
+-	    strcpy(tail, "/48x48x1");
+-	    
+-	    if (FaceSearchLoad(buffer1, info->item, info->data))
+-	    {
+-		XtFree((char*) host);
+-		XtFree(hostdata);
+-		return 1;
+-	    }
+-	}
+-#endif
+     }
+     
+     XtFree((char*) host);
+@@ -704,7 +674,7 @@ FacedbInfo*	info;
+     /*
+      *   One last try.  The MISC directory. Look for "unknown"
+     */
+-    
++#ifndef FACE_FILES_ONLY
+     sprintf(buffer1, "%sMISC/unknown", file);
+     
+ #ifdef FACEDB_DEBUG
+@@ -721,7 +691,7 @@ FacedbInfo*	info;
+ 	
+ 	return 1;
+     }
+-    
++#endif
+     sprintf(buffer1, "%sMISC/unknown/face", file);
+     
+ #ifdef FACEDB_DEBUG

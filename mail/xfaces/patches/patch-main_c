@@ -1,0 +1,40 @@
+$OpenBSD: patch-main_c,v 1.1 2000/06/05 01:09:25 espie Exp $
+--- main.c.orig	Sun Mar 13 01:38:45 1994
++++ main.c	Mon Jun  5 02:43:45 2000
+@@ -124,7 +124,7 @@ static XtResource FacesResourcesList[] =
+     },
+     {
+ 	"spoolDir", "SpoolDir", XtRString, sizeof(String),
+-	offset(spool_dir), XtRString, "/usr/spool/mail"
++	offset(spool_dir), XtRString, "/var/mail/"
+     },
+     {
+ 	"popHost", "PopHost", XtRString, sizeof(String),
+@@ -144,15 +144,15 @@ static XtResource FacesResourcesList[] =
+     },
+     {
+ 	"imagePath", "Path", XtRString, sizeof(String),
+-	offset(image_path), XtRString, "/usr/images"
++	offset(image_path), XtRString, "/usr/X11R6/include/X11/pixmaps"
+     },
+     {
+ 	"soundPath", "Path", XtRString, sizeof(String),
+-	offset(sound_path), XtRString, "/usr/sounds"
++	offset(sound_path), XtRString, "/usr/local/share/sounds"
+     },
+     {
+ 	"facedbPath", "Path", XtRString, sizeof(String),
+-	offset(facedb_path), XtRString, "/usr/local/faces"
++	offset(facedb_path), XtRString, "/usr/local/share/faces"
+     },
+     {
+ 	"machine", "Path", XtRString, sizeof(String),
+@@ -297,7 +297,7 @@ static XtResource FacesResourcesList[] =
+ static XrmOptionDescRec options[] =
+ {
+     {
+-	"-c", "frame.setWidth", XrmoptionSepArg, NULL
++	"-c", "frame.maxWidth", XrmoptionSepArg, NULL
+     },
+     {
+ 	"-e", "listCommand", XrmoptionSepArg, NULL

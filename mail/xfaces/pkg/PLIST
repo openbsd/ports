@@ -1,4 +1,5 @@
-lib/X11/app-defaults/XFaces
+@comment $OpenBSD: PLIST,v 1.3 2000/06/05 01:09:25 espie Exp $
+bin/xfaces
 include/X11/pixmaps/andrew-shape.xpm
 include/X11/pixmaps/andrew.xpm
 include/X11/pixmaps/asterix.xpm
@@ -32,18 +33,20 @@ include/X11/pixmaps/taz.xpm
 include/X11/pixmaps/texas-shape.xpm
 include/X11/pixmaps/texas.xpm
 include/X11/pixmaps/unido-shape.xpm
+include/X11/pixmaps/unknown.xpm
 include/X11/pixmaps/uucp-shape.xpm
 include/X11/pixmaps/uucp.xpm
 include/X11/pixmaps/window.xpm
 include/X11/pixmaps/www-shape.xpm
 include/X11/pixmaps/x.xpm
 include/X11/pixmaps/xconq.xpm
-bin/xfaces
-man/man1/xfaces.1
-@cwd /usr/local
+lib/X11/app-defaults/XFaces
+man/cat1/xfaces.0
 share/sounds/bong.au
 share/sounds/busy.au
 share/sounds/computer.au
 share/sounds/ding.au
 share/sounds/drip.au
 share/sounds/train.au
+@dirrm share/sounds
+@dirrm include/X11/pixmaps

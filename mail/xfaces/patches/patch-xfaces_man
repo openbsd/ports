@@ -1,0 +1,54 @@
+$OpenBSD: patch-xfaces_man,v 1.1 2000/06/05 01:09:25 espie Exp $
+--- xfaces.man.orig	Sun Mar 13 01:38:54 1994
++++ xfaces.man	Mon Jun  5 02:43:45 2000
+@@ -171,7 +171,7 @@ is to append the users name onto the \fB
+ .TP 8
+ .BI XFaces.spoolDir: " <mail spool directory>"
+ This resource specifies the directory that contains user mail spool
+-files.  The default is \fI/usr/spool/mail\fP.  On some machines (SVR4?)
++files.  The default is \fI/var/mail\fP.  On some machines (SVR4?)
+ you may want to set this to \fI/usr/mail\fP.
+ .TP 8
+ .BI XFaces.popHost: " <hostname>"
+@@ -198,12 +198,12 @@ COMMANDS\fP section for a description of
+ .BI XFaces.imagePath: " <image path>"
+ This resource specifies a colon-separated list of directories that
+ specify the default directories to use for image files.  The default
+-is \fI/usr/images\fP.
++is \fI/usr/X11/include/X11/pixmaps\fP.
+ .TP 8
+ .BI XFaces.soundPath: " <sound path>"
+ This resource specifies a colon-separated list of directories that
+ specify the default directories to use for sound files.  The default
+-is \fI/usr/sounds\fP.
++is \fI/usr/local/share/sounds\fP.
+ .TP 8
+ .BI XFaces.facedbPath: " <facedb path>"
+ This is a list of directories that contain a multi-level directory hierarchy.
+@@ -289,7 +289,7 @@ of the \fIXFaces\fP main window to becom
+ no image.  This defaults to \fITrue\fP.
+ .TP 8
+ .BI XFaces.useCommands: " <flag>"
+-This resource tells \FIXFaces\fP if it needs to search for shell commands to
++This resource tells \fIXFaces\fP if it needs to search for shell commands to
+ run in addition to image and sounds.  The default is \fIFalse\fP.
+ .TP 8
+ .BI XFaces.useContentLength: " <flag>"
+@@ -318,7 +318,7 @@ types are attempted. Valid types are:
+ .TP 8
+ .B xpm-shaped
+ This is a shaped color image.  Shaped xpm files should be named
+-\fIface-shaped.xpm\fP.
++\fIface-shape.xpm\fP.
+ .TP 8
+ .B xpm
+ This is a non shaped color image. These files should be named
+@@ -357,7 +357,7 @@ search.  Each line is constructed as fol
+ The \fI<format list>\fP is currently ignored for the \fBsoundSearch\fP
+ resource. Both the \fI<format list>\fP and the <search path> are 
+ (except if you use the \fIfacedb\fP search) for the \fBcommandSearch\fP
+-resoiurce.  If the \fI<format list>\fP is empty then the list in the
++resource.  If the \fI<format list>\fP is empty then the list in the
+ \fBimageFormats\fP resource is used.  If the \fI<search path>\fP is
+ empty then the \fBfacedbPath\fP is used for \fIfacedb\fP searches for
+ both sounds and images and one of the \fBsoundPath\fP or

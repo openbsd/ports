@@ -1,0 +1,69 @@
+$OpenBSD: patch-XFaces_ad,v 1.1 2000/06/05 01:09:24 espie Exp $
+--- XFaces.ad.orig	Sun Mar 13 01:38:54 1994
++++ XFaces.ad	Mon Jun  5 02:43:44 2000
+@@ -71,8 +71,8 @@
+ ! lists.
+ !
+ 
+-XFaces.soundPath:	/usr/sounds:/usr/demo/SOUND/sounds
+-XFaces.imagePath:	/usr/images
++XFaces.soundPath:	/usr/local/share/sounds
++XFaces.imagePath:	/usr/X11R6/include/X11/pixmaps
+ 
+ !
+ !  This is where we look for sounds/images in the "faces" format.
+@@ -100,7 +100,7 @@ XFaces.imagePath:	/usr/images
+ ! image types are set in the imageTypes resource.
+ !
+ 
+-XFaces.facedbPath:	/usr/faces
++XFaces.facedbPath:	/usr/local/share/faces
+ 
+ !
+ !  Tell how many different annotations there are. We can support any number.
+@@ -244,7 +244,7 @@ XFaces.fromField:	From:
+ !
+ 
+ weather.listCommand:	wx.faces wbc
+-weather.facedbPath:	/usr/faces/weather
++weather.facedbPath:	/usr/local/share/faces/weather
+ weather.compressImages:	False
+ weather.keepOrder:	True
+ weather.shapeExtra:	False
+@@ -337,22 +337,22 @@ XFaces.beforeImageBindings:	\
+ ! Could setup special sounds for mailing lists.
+ !
+ 
+-!XFaces.beforeSoundBindings:	\
+-!	Cc:	foo:		train
++|Faces.beforeSoundBindings:	\
++|	Cc:	foo:		train
+ 
+ !
+ ! Could use this to show a special face for users that we have no face for.
+ !
+ 
+-!XFaces.afterImageBindings:	\
+-!	*	.*:		unknown
++XFaces.afterImageBindings:	\
++	*	.*:		unknown
+ 
+ !
+ ! Could setup default sounds if no sound is specified.
+ !
+ 
+-!XFaces.afterSoundBindings:	\
+-!	*	.*:			train
++XFaces.afterSoundBindings:	\
++	*	.*:			train
+ 
+ !
+ ! This set of bindings is run after the all of the image search has 
+@@ -382,6 +382,5 @@ XFaces.sound.uucp:		computer
+ !  Mail from root.
+ !
+ 
+-XFaces.image.root:		root
++XFaces.image.root		root
+ XFaces.sound.root:		busy
+-

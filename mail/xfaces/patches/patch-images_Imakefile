@@ -1,0 +1,9 @@
+$OpenBSD: patch-images_Imakefile,v 1.1 2000/06/05 01:09:24 espie Exp $
+--- images/Imakefile.orig	Mon Jun  5 02:43:45 2000
++++ images/Imakefile	Mon Jun  5 02:52:50 2000
+@@ -0,0 +1,5 @@
++
++InstallNonExec( *.xpm,$(INCDIR)/X11/pixmaps)
++
++clean::
++	rm -f Makefile.*
