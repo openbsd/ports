@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.14 2000/02/15 05:17:22 turan Exp $
+# $OpenBSD: Makefile.template,v 1.15 2000/02/15 07:05:59 brad Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -112,7 +112,7 @@ MASTER_SITES=		???
 
 # build/configuration variables
 #
-# requires bsd.port.mk 1.71 or later
+# requires bsd.port.mk 1.89 or later
 #
 # when using USE_AUTOCONF/GNU_CONFIGURE/HAS_CONFIGURE only use ONE of
 # them
@@ -123,7 +123,7 @@ MASTER_SITES=		???
 #USE_IMAKE=		yes
 #USE_X11=		yes (assumed if USE_IMAKE is yes)
 #USE_AUTOCONF=		yes
-#USE_LIBTOOL=		yes # require 1.89 or later
+#USE_LIBTOOL=		yes
 #GNU_CONFIGURE=		yes (assumed if USE_AUTOCONF is yes)
 #HAS_CONFIGURE=		yes (assumed if GNU_CONFIGURE is yes)
 #CONFIGURE_SCRIPT=	??? (if other than configure)
@@ -174,6 +174,6 @@ MASTER_SITES=		???
 # This target may be necessary if a shared library may have been created
 #
 #post-install:
-#	${LDCONFIG} -m ${PREFIX}/lib
+#	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
