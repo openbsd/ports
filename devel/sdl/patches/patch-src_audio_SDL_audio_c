@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_audio_SDL_audio_c,v 1.1.1.1 2001/04/19 18:55:40 obecian Exp $
+--- src/audio/SDL_audio.c.orig	Wed Mar 21 10:19:56 2001
++++ src/audio/SDL_audio.c	Fri Mar 30 08:44:02 2001
+@@ -185,7 +185,7 @@ int SDL_AudioInit(const char *driver_nam
+ 	/* Select the proper audio driver */
+ 	audio = NULL;
+ 	idx = 0;
+-#ifdef unix
++#if defined(unix) || defined (__OpenBSD__)
+ 	if ( (driver_name == NULL) && (getenv("ESPEAKER") != NULL) ) {
+ 		/* Ahem, we know that if ESPEAKER is set, user probably wants
+ 		   to use ESD, but don't start it if it's not already running.

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_audio_SDL_sysaudio_h,v 1.1.1.1 2001/04/19 18:55:40 obecian Exp $
+--- src/audio/SDL_sysaudio.h.orig	Wed Mar 21 10:19:56 2001
++++ src/audio/SDL_sysaudio.h	Fri Mar 30 08:44:02 2001
+@@ -123,6 +123,9 @@ extern AudioBootStrap NAS_bootstrap;
+ #ifdef ENABLE_DIRECTX
+ extern AudioBootStrap DSOUND_bootstrap;
+ #endif
++#ifdef __OpenBSD__
++extern AudioBootStrap AUDIO_bootstrap;
++#endif
+ #ifdef ENABLE_WINDIB
+ extern AudioBootStrap WAVEOUT_bootstrap;
+ #endif

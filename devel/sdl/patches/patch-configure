@@ -1,0 +1,56 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2001/04/19 18:55:40 obecian Exp $
+--- configure.orig	Mon Mar 26 20:39:34 2001
++++ configure	Sun Apr  1 19:16:00 2001
+@@ -3303,6 +3303,9 @@ echo "configure:3292: checking for OSS a
+           #ifdef __bsdi__
+           #include <sys/soundcard.h>
+           #endif
++          #ifdef __OpenBSD__
++          #include <soundcard.h>
++          #endif
+           #ifdef __USLC__
+           #include <sys/soundcard.h>
+           #endif
+@@ -5460,7 +5463,7 @@ fi
+             ;;
+         *-*-solaris*)
+             pthread_cflags="-D_REENTRANT"
+-            pthread_lib="-lpthread -lposix4"
++            pthread_lib="-pthread -lposix4"
+             ;;
+         *-*-sysv5*)
+             pthread_cflags="-D_REENTRANT -Kthread"
+@@ -5468,11 +5471,11 @@ fi
+             ;;
+         *-*-irix*)
+             pthread_cflags="-D_SGI_MP_SOURCE"
+-            pthread_lib="-lpthread"
++            pthread_lib="-pthread"
+             ;;
+         *-*-aix*)
+             pthread_cflags="-D_REENTRANT -mthreads"
+-            pthread_lib="-lpthread"
++            pthread_lib="-pthread"
+             ;;
+         *-*-qnx*)
+             pthread_cflags=""
+@@ -5480,7 +5483,7 @@ fi
+             ;;
+         *)
+             pthread_cflags="-D_REENTRANT"
+-            pthread_lib="-lpthread"
++            pthread_lib="-pthread"
+             ;;
+     esac
+     LIBS="$LIBS $pthread_lib"
+@@ -8633,6 +8636,10 @@ fi
+ 
+ if test $ARCH = solaris; then
+   SDL_RLD_FLAGS="-R\${exec_prefix}/lib"
++fi
++
++if test $ARCH = openbsd; then
++  SDL_RLD_FLAGS="-Wl,-R\${exec_prefix}/lib -Wl,-R\${X11BASE}/lib"
+ fi
+ 
+ if test x$enable_video = xtrue; then

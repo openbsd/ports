@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_timer_linux_SDL_systimer_c,v 1.1.1.1 2001/04/19 18:55:40 obecian Exp $
+--- src/timer/linux/SDL_systimer.c.orig	Wed Mar 21 10:19:56 2001
++++ src/timer/linux/SDL_systimer.c	Fri Mar 30 08:44:02 2001
+@@ -36,6 +36,10 @@ static char rcsid =
+ #include "SDL_timer.h"
+ #include "SDL_timer_c.h"
+ 
++#if _POSIX_THREAD_SYSCALL_SOFT
++#include <pthread.h>
++#endif
++
+ #if defined(DISABLE_THREADS) || defined(FORK_HACK)
+ #define USE_ITIMER
+ #endif
+@@ -96,6 +100,9 @@ void SDL_Delay (Uint32 ms)
+ 	do {
+ 		errno = 0;
+ 
++#if _POSIX_THREAD_SYSCALL_SOFT
++		pthread_yield_np();
++#endif
+ #ifdef USE_NANOSLEEP
+ 		tv.tv_sec = elapsed.tv_sec;
+ 		tv.tv_nsec = elapsed.tv_nsec;
