@@ -1,0 +1,11 @@
+--- wiretap/libpcap.c.orig	Sat Aug 12 00:09:40 2000
++++ wiretap/libpcap.c	Sat Aug 12 00:09:52 2000
+@@ -83,7 +83,7 @@
+ 	WTAP_ENCAP_FDDI,
+ #endif
+ 	WTAP_ENCAP_ATM_RFC1483,	/* or, on BSD/OS, Frame Relay */
+-	WTAP_ENCAP_RAW_IP,	/* or, on OpenBSD, DLT_LOOP, and on BSD/OS,
++	WTAP_ENCAP_NULL,	/* or, on OpenBSD, DLT_LOOP, and on BSD/OS,
+ 				   Cisco HDLC */
+ 	WTAP_ENCAP_UNKNOWN,	/* In LBL BPF and FreeBSD, BSD/OS SLIP;
+ 				   on OpenBSD, DLT_ENC; on BSD/OS,
