@@ -1,4 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/10/25 10:38:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2000/10/25 18:13:32 espie Exp $
+@mode u+s 
+@owner root
+bin/konsole_grantpty
+bin/kcheckpass
+@mode
+@owner
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -10,7 +16,6 @@ bin/kblankscrn.kss
 bin/kblob.kss
 bin/kbouboule.kss
 bin/kbsod.kss
-bin/kcheckpass
 bin/kcminit
 bin/kcmshell
 bin/kcontrol
@@ -39,7 +44,6 @@ bin/kmatrix.kss
 bin/kmenuedit
 bin/konqueror
 bin/konsole
-bin/konsole_grantpty
 bin/kpager
 bin/kpolygon.kss
 bin/kpyro.kss
