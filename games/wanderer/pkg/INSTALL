@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# Pre/post-installation setup of wanderer
+# Based on Install for dopewars
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+SCORE_FILE=/var/games/wandererscores
+
+do_install_scorefile()
+{
+  touch $SCORE_FILE
+  chown root:games $SCORE_FILE
+  chmod 664 $SCORE_FILE
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	if [ ! -f $SCORE_FILE ]; then
+	    do_install_scorefile
+	fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
