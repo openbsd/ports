@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/06/10 20:58:44 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2000/07/10 01:28:38 brad Exp $
 
-DISTNAME=	dopewars-1.4.7
+DISTNAME=	dopewars-1.4.8
 CATEGORIES=	games
-NEED_VERSION=	1.301
-MASTER_SITES=	http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/
+NEED_VERSION=	1.310
+MASTER_SITES=	http://www.evansville.net/~goatpop/ \
+		http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/
 
 MAINTAINER=	brad@openbsd.org
 
