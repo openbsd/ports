@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/05/12 04:28:52 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/04/07 20:00:49 sturm Exp $
 bin/antiword
 man/man1/antiword.1
 share/antiword/8859-1.txt
@@ -19,13 +19,16 @@ share/antiword/Default
 share/antiword/Example
 share/antiword/MacRoman.txt
 share/antiword/UTF-8.txt
-share/antiword/Unicode
+share/antiword/Unicode01
+share/antiword/Unicode15
 share/antiword/cp1250.txt
 share/antiword/cp1251.txt
 share/antiword/cp1252.txt
 share/antiword/cp437.txt
 share/antiword/cp850.txt
 share/antiword/cp852.txt
+share/antiword/cp862.txt
+share/antiword/cp866.txt
 share/antiword/fontnames
 share/antiword/fontnames.russian
 share/antiword/koi8-r.txt
