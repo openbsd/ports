@@ -1,0 +1,8 @@
+To completely deinstall the package you need to
+perform these steps as root:
+
+    edit /var/www/conf/httpd.conf
+    remove the line LoadModule php5_module
+
+Do not do this if you plan on re-installing php5
+package at some future time.
