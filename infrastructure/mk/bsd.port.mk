@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.201 2000/02/15 18:19:12 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.202 2000/02/18 22:54:27 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2177,6 +2177,12 @@ fake-pkg:
 	fi
 .endif
 
+.if defined(VARNAME)
+show:
+.  for _var in ${VARNAME}
+	@echo ${${_var}}
+.  endfor
+.endif
 # Depend is generally meaningless for arbitrary ports, but if someone wants
 # one they can override this.  This is just to catch people who've gotten into
 # the habit of typing `make depend all install' as a matter of course.
@@ -2207,4 +2213,4 @@ tags:
    readmes reinstall \
    repackage run-depends tags uninstall fetch-all print-depends \
    recurse-build-depends recurse-package-depends \
-   distpatch real-distpatch do-distpatch post-distpatch
+   distpatch real-distpatch do-distpatch post-distpatch show
