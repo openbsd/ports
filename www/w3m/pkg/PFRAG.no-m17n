@@ -1,8 +1,0 @@
-@comment $OpenBSD: PFRAG.no-m17n,v 1.1 2002/11/27 22:25:02 naddy Exp $
-libexec/w3m/dirlist.cgi
-libexec/w3m/multipart.cgi
-libexec/w3m/w3mbookmark
-libexec/w3m/w3mhelp.cgi
-libexec/w3m/w3mhelperpanel
-libexec/w3m/w3mmail.cgi
-libexec/w3m/w3mman2html.cgi

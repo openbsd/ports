@@ -1,12 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.15 2002/11/27 22:25:02 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.16 2002/12/12 01:10:53 naddy Exp $
 %%japanese%%
 !%%japanese%%
 %%image%%
 %%m17n%%
-!%%m17n%%
 bin/w3m
 bin/w3mman
+libexec/w3m/dirlist.cgi
 libexec/w3m/inflate
+libexec/w3m/multipart.cgi
+libexec/w3m/w3mbookmark
+libexec/w3m/w3mhelp.cgi
+libexec/w3m/w3mhelperpanel
+libexec/w3m/w3mmail.cgi
+libexec/w3m/w3mman2html.cgi
 libexec/w3m/xface2xpm
 man/man1/w3m.1
 man/man1/w3mman.1
