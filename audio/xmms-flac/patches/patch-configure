@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2002/02/01 15:44:31 naddy Exp $
+$OpenBSD: patch-configure,v 1.2 2002/04/06 23:21:30 naddy Exp $
 --- configure.orig	Tue Dec  4 08:10:10 2001
-+++ configure	Fri Feb  1 16:23:29 2002
++++ configure	Sun Apr  7 01:01:05 2002
+@@ -4641,7 +4641,7 @@ else
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+       hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
+       export_dynamic_flag_spec='${wl}-E'
+     else
 @@ -8240,13 +8240,13 @@ echo "$as_me: error: No unsigned 64 bit 
  fi
  
