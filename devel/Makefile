@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2001/03/14 11:52:12 wilfried Exp $
+# $OpenBSD: Makefile,v 1.63 2001/03/21 23:29:20 avsm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -6,6 +6,8 @@
      SUBDIR += ORBit
 #    SUBDIR += SWIG
 #    SUBDIR += SpecTcl
+     SUBDIR += asp2php
+     SUBDIR += asp2php:gui
 #    SUBDIR += asl
      SUBDIR += autobook
      SUBDIR += autoconf
