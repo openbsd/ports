@@ -1,6 +1,6 @@
---- src/plugin.c.orig	Mon Aug  2 23:11:18 1999
-+++ src/plugin.c	Mon Aug  2 23:11:27 1999
-@@ -196,7 +196,7 @@
+--- src/plugin.c.orig	Wed Aug  4 02:22:45 1999
++++ src/plugin.c	Tue Aug 10 20:59:34 1999
+@@ -198,7 +198,7 @@
     int (*module_init) (int version, struct module * mod,
                 struct session * sess);
  
