@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.20 2001/07/21 06:10:29 brad Exp $
+# $OpenBSD: network.conf.template,v 1.21 2001/07/21 06:14:43 brad Exp $
 
 #
 # NEVER EDIT THAT FILE DIRECTLY !!!! ALWAYS COPY IT TO ../db FIRST.
@@ -58,7 +58,7 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.chg.ru/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
 	ftp://sunsite.org.uk/Mirrors/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.freesoftware.com/pub/gnu/%SUBDIR%/
+	ftp://ftp.freesoftware.com/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.shellhung.org/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.uvsq.fr/pub/gnu/%SUBDIR%/ \
   	ftp://ftp.sunet.se/pub/gnu/%SUBDIR%/
