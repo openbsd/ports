@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 1999/02/27 15:36:02 rohee Exp $
+# $OpenBSD: Makefile,v 1.15 1999/03/14 16:27:12 rohee Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -32,9 +32,11 @@
      SUBDIR += gettext
      SUBDIR += glib
      SUBDIR += gmake
+     SUBDIR += gsl
      SUBDIR += id-utils
 #    SUBDIR += ilu
 #    SUBDIR += lclint
+     SUBDIR += libaudiofile
 #    SUBDIR += libdlmalloc
 #    SUBDIR += libmalloc
      SUBDIR += libproplist
