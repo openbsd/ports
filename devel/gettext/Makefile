@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2000/09/24 01:23:43 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/10/19 00:52:47 brad Exp $
 # $FreeBSD: Makefile,v 1.4 1998/11/18 15:09:35 vanilla Exp $
 
 DISTNAME=	gettext-0.10.35
 CATEGORIES=	devel
-NEED_VERSION=	1.310
+NEED_VERSION=	1.336
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gettext
 
@@ -21,7 +21,6 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
 post-install:
-	${INSTALL_DATA_DIR} ${X11BASE}/share/locale
 	${INSTALL_DATA} ${WRKSRC}/misc/po-mode.el \
 		${PREFIX}/share/gettext/po-mode.el
 
