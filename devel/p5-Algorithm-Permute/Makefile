@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/08 07:07:20 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/14 09:39:20 kevlo Exp $
 
 COMMENT=	"interface to handy and fast permutation"
 
-DISTNAME=	Algorithm-Permute-0.03
+DISTNAME=	Algorithm-Permute-0.04
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
-NEED_VERSION=	1.407
+NEED_VERSION=	1.510
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= Algorithm
+MASTER_SITE_SUBDIR=	Algorithm
 
 CONFIGURE_STYLE= perl
 
