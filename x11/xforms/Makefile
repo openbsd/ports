@@ -3,7 +3,7 @@
 # Date created:				08 July 1998
 # Whom:					form@vs.itam.nsc.ru
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/07/08 09:47:15 form Exp $
+# $OpenBSD: Makefile,v 1.2 1998/07/09 07:07:57 form Exp $
 #
 DISTNAME=		bxform-088
 PKGNAME=		xforms-0.88
@@ -11,12 +11,18 @@ WRKSRC=			${WRKDIR}/xforms
 CATEGORIES=		x11
 MASTER_SITES=		ftp://bragg.phys.uwm.edu/pub/xforms/%SUBDIR%/
 
-MASTER_SITE_SUBDIR=	openBSD-${MACHINE_ARCH}
+.if (${MACHINE_ARCH} == "hp300")
+XFORMS_ARCH=		m68k
+.else
+XFORMS_ARCH=		${MACHINE_ARCH}
+.endif
+
+MASTER_SITE_SUBDIR=	openBSD-${XFORMS_ARCH}
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		form@vs.itam.nsc.ru
 
-ONLY_FOR_ARCHS=		i386 sparc m68k
+ONLY_FOR_ARCHS=		i386 sparc m68k hp300
 
 DIST_SUBDIR=		xforms/${MASTER_SITE_SUBDIR}
 
