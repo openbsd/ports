@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2003/10/18 19:44:54 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/01/16 02:39:20 kevlo Exp $
 
 COMMENT=	"HTML output stream class"
 
-DISTNAME=	HTML-Stream-1.54
+DISTNAME=	HTML-Stream-1.55
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
 
