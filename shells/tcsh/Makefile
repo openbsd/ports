@@ -3,7 +3,7 @@
 # Date created:		17 November 1997
 # Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.4 1997/12/14 01:08:53 gene Exp $
+# $OpenBSD: Makefile,v 1.5 1997/12/14 02:02:58 gene Exp $
 #
 
 DISTNAME=       tcsh-6.07
@@ -20,8 +20,8 @@ INSTALL_TARGET= install install.man
 MAN1=		tcsh.1
 
 post-install:
-	$(CHOWN) $(BINOWN):$(BINGRP) ${PREFIX}/bin/tcsh
-	$(CHOWN) $(BINOWN):$(BINGRP) ${PREFIX}/man/man1/$(MAN1)
+	chown $(BINOWN):$(BINGRP) ${PREFIX}/bin/tcsh
+	chown $(BINOWN):$(BINGRP) ${PREFIX}/man/man1/$(MAN1)
 	cd ${WRKSRC}; ${INSTALL_DATA} tcsh.C.cat ${PREFIX}/share/nls/C/tcsh.cat
 	cd ${WRKSRC}; ${INSTALL_DATA} tcsh.french.cat ${PREFIX}/share/nls/fr_FR.ISO_8859-1/tcsh.cat
 	$(LN) -sf ${PREFIX}/share/nls/fr_FR.ISO_8859-1/tcsh.cat ${PREFIX}/share/nls/fr_BE.ISO_8859-1/tcsh.cat
@@ -32,5 +32,12 @@ post-install:
 	$(LN) -sf ${PREFIX}/share/nls/de_DE.ISO_8859-1/tcsh.cat ${PREFIX}/share/nls/de_CH.ISO_8859-1/tcsh.cat
 	$(INSTALL) -d -o ${BINOWN} -g ${BINGRP} -m 755 ${PREFIX}/share/nls/el_GR.ISO_8859-7
 	cd ${WRKSRC}; ${INSTALL_DATA} tcsh.greek.cat ${PREFIX}/share/nls/el_GR.ISO_8859-7/tcsh.cat
+	@$(ECHO)
+	@$(ECHO) "Finished installing $(DISTNAME)"
+	@$(ECHO) "To complete the install, you should notify the system"
+	@$(ECHO) "that $(PREFIX)/bin/tcsh is a valid shell by adding it to"
+	@$(ECHO) "/etc/shells."
+	@$(ECHO) "If you are unfamiliar with this file, consult the shells(5)"
+	@$(ECHO) "manual page."
 
 .include <bsd.port.mk>
