@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/28 00:02:09 margarida Exp $
+bin/pfm
+man/man1/pfm.1

@@ -1,0 +1,8 @@
+pfm is a terminal-based file manager written in Perl. It
+features colored filenames according to extension or type,
+a single-file and multiple-file mode, support for executing
+user-defined commands (including wildcards) with only two 
+keystrokes, and use of the ReadLine library for friendly
+commandline editing
+
+WWW: ${HOMEPAGE}
