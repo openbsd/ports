@@ -1,0 +1,16 @@
+$OpenBSD: patch-smoke_qt_generate_pl,v 1.1.1.1 2003/01/27 20:24:28 espie Exp $
+--- smoke/qt/generate.pl.orig	Thu Jan 16 19:44:47 2003
++++ smoke/qt/generate.pl	Sat Jan 18 14:58:33 2003
+@@ -60,7 +60,11 @@ my %excludes = (
+ 
+ # List Qt headers, and exclude the ones listed above
+ my @headers = ();
+-$qtinc=$ENV{"QTDIR"} . "/include";
++if (defined $ENV{'QTINCDIR'}) {
++	$qtinc = $ENV{'QTINCDIR'};
++} else {
++	$qtinc=$ENV{"QTDIR"} . "/include";
++}
+ opendir (QT, $qtinc) or die "Couldn't find $qtinc";
+ foreach $filename (readdir(QT)) {
+     $entry = $qtinc."/".$filename;

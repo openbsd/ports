@@ -1,0 +1,10 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/01/27 20:24:28 espie Exp $
+lib/libdcopc.so.1.0
+lib/libgtkxparts.so.0.0
+lib/libkdec.so.1.0
+lib/libkdexparts.so.1.0
+lib/libkjsembed.so.1.0
+lib/libqtc.so.1.0
+lib/libsmokeqt.so.1.0
+lib/libxp_notepadpart.so.0.0
+DYNLIBDIR(%D/lib)

@@ -1,0 +1,5 @@
+kde bindings for other programming languages.
+includes the smoke compiler, that can be used to produce qt perl
+bindings, for instance.
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/27 20:24:28 espie Exp $
+bin/clib
+bin/shell_xparthost
+bin/xp_notepad
+include/dcopc/dcopc.h
+include/dcopc/dcopobject.h
+include/dcopc/marshal.h
+include/dcopc/util.h
+include/kjsembed/dialogfactory.h
+include/kjsembed/jsconsolepart.h
+include/kjsembed/jsconsolewidget.h
+include/kjsembed/jshookloader.h
+include/kjsembed/jsobjectproxy.h
+include/kjsembed/messagelogwidget.h
+include/smoke.h
+include/xkparts/gtkbrowserextension.h
+include/xkparts/gtkpart.h
+include/xkparts/xpart.h
+include/xkparts/xparthost.h
+lib/libdcopc.la
+lib/libgtkxparts.la
+lib/libkdec.la
+lib/libkdexparts.la
+lib/libkjsembed.la
+lib/libqtc.la
+lib/libsmokeqt.la
+lib/libxp_notepadpart.la
+share/services/xp_notepad.desktop
+%%SHARED%%
+@dirrm share/services
+@dirrm include/xkparts
+@dirrm include/kjsembed
+@dirrm include/dcopc
