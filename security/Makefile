@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2001/12/01 12:52:57 kevlo Exp $
+# $OpenBSD: Makefile,v 1.93 2001/12/03 19:20:15 jsyn Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -40,6 +40,7 @@
      SUBDIR += l0phtcrack
      SUBDIR += libident
      SUBDIR += libmcrypt
+     SUBDIR += logcheck
      SUBDIR += logsurfer
      SUBDIR += lxnb
      SUBDIR += mcrypt
