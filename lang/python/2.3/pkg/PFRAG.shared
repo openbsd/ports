@@ -1,8 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/05 21:50:25 xsa Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2004/11/14 11:48:19 espie Exp $
 %%mm%%
 @comment lib/libpython2.3.so
-lib/libpython2.3.so.0.0
-lib/python2.3/config/libpython2.3.so.0.0
+@lib lib/libpython2.3.so.0.0
+@lib lib/python2.3/config/libpython2.3.so.0.0
 lib/python2.3/lib-dynload/
 @comment lib/python2.3/lib-dynload/_bsddb.so
 lib/python2.3/lib-dynload/_csv.so
