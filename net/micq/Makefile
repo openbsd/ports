@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2005/02/20 06:57:14 david Exp $
+# $OpenBSD: Makefile,v 1.35 2005/02/26 21:26:44 david Exp $
 # $FreeBSD: Makefile,v 1.6 1999/06/03 08:31:06 ache Exp $
 
 COMMENT=	"text-based ICQ implementation"
 
-DISTNAME=       micq-0.5
+DISTNAME=	micq-0.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 MAINTAINER=	David Krause <david@openbsd.org>
@@ -22,7 +23,9 @@ MASTER_SITES=	${HOMEPAGE}source/ \
 
 EXTRACT_SUFX=	.tgz
 
-CONFIGURE_ARGS+= --disable-iconv --enable-ssl=openssl
+MODULES=	converters/libiconv
+
+CONFIGURE_ARGS+=--enable-ssl=openssl
 CONFIGURE_ENV+=	MICQ_EXTRAVERSION="OpenBSD Ports Tree"
 
 USE_GMAKE=	Yes
