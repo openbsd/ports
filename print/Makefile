@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.21 2000/07/11 14:48:21 espie Exp $
+#	$OpenBSD: Makefile,v 1.22 2000/09/13 15:05:37 avsm Exp $
 #
 
     SUBDIR += a2ps:a4
@@ -26,6 +26,7 @@
     SUBDIR += ghostview
     SUBDIR += gv
 #   SUBDIR += html2latex
+    SUBDIR += jadetex
 #   SUBDIR += latex
 #   SUBDIR += lout
 #   SUBDIR += lprps
