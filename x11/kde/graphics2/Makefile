@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/12/31 15:30:08 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/03/05 14:09:00 espie Exp $
 
 COMMENT= 		"X11 toolkit, graphics applications"
 CATEGORIES=		x11 x11/kde
@@ -15,7 +15,7 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=	qt2
 LIB_DEPENDS= kdecore.3,DCOP,kdeprint,kdesu,kdeui,kfile,kio,kparts,kssl,ksycoca::x11/kde/libs2
 
-BUILD_DEPENDS=	::x11/qt2-designer :zsh-*:shells/zsh/stable
+BUILD_DEPENDS=	::x11/qt2-designer
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_NEW=		Yes
@@ -40,13 +40,9 @@ CONFIGURE_ENV=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 CONFIGURE_ENV+=		ac_aux_files=''
 MAKE_ENV=		${CONFIGURE_ENV}
 
-pre-build:
-	# Let zsh act as an sh replacement
-	ln -sf $(LOCALBASE)/bin/zsh ${WRKBUILD}/sh
 
 # Ensure qt2 will always be at the front
 MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${LOCALBASE}/lib/qt2'
-MAKE_FLAGS+=LIBTOOL='$(WRKBUILD)/sh $(WRKBUILD)/libtool'
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/12/31 12:30:54 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2002/03/05 14:09:00 espie Exp $
 
 COMMENT=		games for KDE
 COMMENT-cards=		faces for kde card games
@@ -43,7 +43,7 @@ EXTRACT_SUFX=		.tar.bz2
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
 LIB_DEPENDS= kdecore.3,DCOP,artsflow,artsflow_idl,kdeprint,kdesu,kdeui,kfile,kio,kmedia2_idl,kparts,kssl,ksycoca,mcop,qtmcop,soundserver_idl::x11/kde/libs2
-BUILD_DEPENDS=	::x11/qt2-designer :zsh-*:shells/zsh/stable
+BUILD_DEPENDS=	::x11/qt2-designer
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_NEW=		Yes
@@ -85,13 +85,8 @@ CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2 \
 CONFIGURE_ENV+=		ac_aux_files=''
 MAKE_ENV=		${CONFIGURE_ENV}
 
-pre-build:
-	# Let zsh act as an sh replacement
-	ln -sf $(LOCALBASE)/bin/zsh ${WRKBUILD}/sh
-
 # Ensure qt2 will always be at the front
 MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${LOCALBASE}/lib/qt2'
-MAKE_FLAGS+=LIBTOOL='$(WRKBUILD)/sh $(WRKBUILD)/libtool'
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
