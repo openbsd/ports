@@ -1,6 +1,6 @@
-# $OpenBSD $
+# $OpenBSD: Makefile,v 1.2 2003/04/22 14:10:11 danh Exp $
 
-COMMENT=		"Lightweight GTK+ based mail/news client"
+COMMENT=		"lightweight GTK+ based mail/news client"
 COMMENT-spamassassin=	"Spamassassin plugin for sylpheed-claws"
 
 VERSION=		0.8.11
@@ -83,7 +83,9 @@ SUBPACKAGE?=
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
 RUN_DEPENDS=            ::mail/sylpheed-claws
-.else
+.endif
+
+.if ${SUBPACKAGE:M-spamassassin}
 RUN_DEPENDS+=		:p5-Mail-SpamAssassin-*:mail/p5-Mail-SpamAssassin
 .endif
 
@@ -97,8 +99,8 @@ DATADIR=	${PREFIX}/share/sylpheed-claws
 DOCSDIR=	${PREFIX}/share/doc/sylpheed-claws
 
 post-patch:
-	@(cd ${WRKSRC} && mv sylpheed.png sylpheed-claws.png && \
-		mv sylpheed.desktop sylpheed-claws.desktop)
+	@cd ${WRKSRC} && mv sylpheed.png sylpheed-claws.png && \
+		mv sylpheed.desktop sylpheed-claws.desktop
 	@perl -pi -e 's|pheed|pheed-claws|g' ${WRKSRC}/sylpheed-claws.desktop
 
 post-install:

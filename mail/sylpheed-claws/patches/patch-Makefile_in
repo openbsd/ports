@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/04/17 10:13:58 wilfried Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2003/04/22 14:10:11 danh Exp $
 --- Makefile.in.orig	Wed Mar 12 18:17:53 2003
-+++ Makefile.in	Mon Apr 14 00:05:38 2003
++++ Makefile.in	Mon Apr 21 04:06:23 2003
 @@ -192,7 +192,7 @@ target_alias = @target_alias@
  target_cpu = @target_cpu@
  target_os = @target_os@
@@ -10,17 +10,22 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/04/17 10:13:58 wilfried Exp $
  
  EXTRA_DIST = \
  	ChangeLog.jp \
-@@ -213,11 +213,11 @@ EXTRA_DIST = \
+@@ -211,14 +211,10 @@ EXTRA_DIST = \
+ 	autogen.sh 
  
- @SYLPHEED_GNOME_TRUE@pixmapdir = $(gnomedatadir)/pixmaps
- @SYLPHEED_GNOME_FALSE@pixmapdir = 
+ 
+-@SYLPHEED_GNOME_TRUE@pixmapdir = $(gnomedatadir)/pixmaps
+-@SYLPHEED_GNOME_FALSE@pixmapdir = 
 -@SYLPHEED_GNOME_TRUE@pixmap_DATA = sylpheed.png
-+@SYLPHEED_GNOME_TRUE@pixmap_DATA = sylpheed-claws.png
- @SYLPHEED_GNOME_FALSE@pixmap_DATA = 
- @SYLPHEED_GNOME_TRUE@gnomapdir = $(gnomedatadir)/gnome/apps/Internet
- @SYLPHEED_GNOME_FALSE@gnomapdir = 
+-@SYLPHEED_GNOME_FALSE@pixmap_DATA = 
+-@SYLPHEED_GNOME_TRUE@gnomapdir = $(gnomedatadir)/gnome/apps/Internet
+-@SYLPHEED_GNOME_FALSE@gnomapdir = 
 -@SYLPHEED_GNOME_TRUE@gnomap_DATA = sylpheed.desktop
-+@SYLPHEED_GNOME_TRUE@gnomap_DATA = sylpheed-claws.desktop
- @SYLPHEED_GNOME_FALSE@gnomap_DATA = 
+-@SYLPHEED_GNOME_FALSE@gnomap_DATA = 
++pixmapdir = $(datadir)/pixmaps
++pixmap_DATA = sylpheed-claws.png
++gnomapdir = $(datadir)/gnome/apps/Internet
++gnomap_DATA = sylpheed-claws.desktop
  
  BZIP2_ENV = 
+ subdir = .

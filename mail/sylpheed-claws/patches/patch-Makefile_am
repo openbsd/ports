@@ -1,21 +1,31 @@
-$OpenBSD: patch-Makefile_am,v 1.1.1.1 2003/04/17 10:13:58 wilfried Exp $
---- Makefile.am.orig	Mon Apr 14 00:06:00 2003
-+++ Makefile.am	Mon Apr 14 00:06:24 2003
+$OpenBSD: patch-Makefile_am,v 1.2 2003/04/22 14:10:11 danh Exp $
+--- Makefile.am.orig	Tue Feb 25 16:10:31 2003
++++ Makefile.am	Mon Apr 21 04:04:51 2003
 @@ -1,4 +1,4 @@
 -SUBDIRS = ac po intl src man manual faq tools config
 +SUBDIRS = ac po src man manual faq tools config
  
  EXTRA_DIST = \
  	ChangeLog.jp \
-@@ -18,9 +18,9 @@ EXTRA_DIST = \
+@@ -16,17 +16,10 @@ EXTRA_DIST = \
+ 	sylpheed-64x64.png \
+ 	autogen.sh 
  
- if SYLPHEED_GNOME
- pixmapdir=$(gnomedatadir)/pixmaps
+-if SYLPHEED_GNOME
+-pixmapdir=$(gnomedatadir)/pixmaps
 -pixmap_DATA=sylpheed.png
-+pixmap_DATA=sylpheed-claws.png
- gnomapdir=$(gnomedatadir)/gnome/apps/Internet
+-gnomapdir=$(gnomedatadir)/gnome/apps/Internet
 -gnomap_DATA=sylpheed.desktop
+-else
+-pixmapdir=
+-pixmap_DATA=
+-gnomapdir=
+-gnomap_DATA=
+-endif
++pixmapdir=$(datadir)/pixmaps
++pixmap_DATA=sylpheed-claws.png
++gnomapdir=$(datadir)/gnome/apps/Internet
 +gnomap_DATA=sylpheed-claws.desktop
- else
- pixmapdir=
- pixmap_DATA=
+ 
+ BZIP2_ENV =
+ 
