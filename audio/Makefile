@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2003/04/23 06:34:19 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.96 2003/06/12 00:53:02 naddy Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -79,6 +79,7 @@
      SUBDIR += soundtracker,esd
      SUBDIR += soundtracker,gnome,esd
      SUBDIR += sox
+     SUBDIR += speex
 #    SUBDIR += splay
      SUBDIR += streamripper
      SUBDIR += teknap
