@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/04/04 21:51:41 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/04/11 01:37:57 ian Exp $
 
 DISTNAME=	olvwm4
 PKGNAME=	olvwm-4.2
@@ -9,9 +9,9 @@ DISTFILES=	olvwm4.tar.Z
 
 MAINTAINER=	ian@openbsd.org
 
-PERMIT_PACKAGE_CDROM=	"missing license"
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"missing license"
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 # The Patch01 and Patch02 patches are included in the patches directory.
