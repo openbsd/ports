@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2002/12/29 20:19:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2003/11/27 02:22:20 pvalchev Exp $
+
+.if ${MACHINE_ARCH} == "hppa"
+BROKEN=		"signal-related bug? any program linked with this hangs"
+.endif
 
 COMMENT=	"callback framework for C++"
 
