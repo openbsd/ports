@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 16:59:24 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/03/29 10:05:41 form Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/03/27 11:56:44 tg Exp $
+
+COMMENT=	"Demos Commander, a free Norton Commander clone"
 
 DISTNAME=	deco383
 PKGNAME=	deco-3.8.3

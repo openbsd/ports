@@ -1,6 +1,8 @@
 # $NetBSD: Makefile,v 1.3 2000/01/10 14:35:22 hubertf Exp $
 # $FreeBSD: ports/www/hypermail/Makefile,v 1.4 1999/08/31 02:42:53 peter Exp $
-# $OpenBSD: Makefile,v 1.5 2000/10/22 15:42:32 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2001/03/29 10:05:40 form Exp $
+
+COMMENT=	"generate a cross-referenced HTML mail archive"
 
 DISTNAME=	hypermail-2b30
 CATEGORIES=	mail www

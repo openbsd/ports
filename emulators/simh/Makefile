@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:11 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/03/29 10:05:39 form Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
+
+COMMENT=	"PDP, IBM 1401, and Nova CPU simulator"
 
 DISTNAME=	sim_2.3d
 PKGNAME=	simh-2.3d
