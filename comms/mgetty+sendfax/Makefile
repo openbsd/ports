@@ -19,7 +19,7 @@ MAN4=		mgettydefs.4
 MAN5=		faxqueue.5
 MAN8=		sendfax.8 mgetty.8 callback.8 faxrunqd.8
 
-MGETTY_ETC?=	/etc/mgetty
+MGETTY_ETC?=	/etc/mgetty+sendfax
 
 pre-build:
 .if defined(AUTO_PPP)
