@@ -1,4 +1,4 @@
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2003/12/15 06:11:34 jolan Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2004/01/02 07:52:56 sturm Exp $
 #!/bin/sh
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
@@ -6,7 +6,7 @@ SYSCONFDIR=${SYSCONFDIR:-/etc}
 CONFDIR=${SYSCONFDIR}/xfce4
 CONF=$CONFDIR/xfce4rc
 
-if [ -f ${CONFFILE} ];
+if [ "$PKG_DELETE_EXTRA" != Yes -a -f ${CONF} ];
 then
     echo
     echo "+---------------"
