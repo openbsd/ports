@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:43:04 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.11 2001/03/21 22:57:23 avsm Exp $
 
-DISTNAME=		netpipes-4.1.1-export
+DISTNAME=		netpipes-4.2-export
 CATEGORIES=		net
-NEED_VERSION=		1.191
+NEED_VERSION=		1.362
 
-MAINTAINER=		ports@openbsd.org
+MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.purplefrog.com/pub/netpipes/
+HOMEPAGE=		http://web.purplefrog.com/~thoth/netpipes/netpipes.html
 
 WRKDIST=		${WRKDIR}
 

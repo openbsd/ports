@@ -1,14 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.5 2001/03/21 22:57:24 avsm Exp $
+bin/encapsulate
 bin/faucet
+bin/getpeername
+bin/getsockname
 bin/hose
 bin/sockdown
-bin/getpeername
 bin/timelimit
-bin/encapsulate
-bin/getsockname
-man/man1/netpipes.1
-man/man1/faucet.1
-man/man1/hose.1
-man/man1/sockdown.1
-man/man1/getpeername.1
-man/man1/timelimit.1
 man/man1/encapsulate.1
+man/man1/faucet.1
+man/man1/getpeername.1
+man/man1/hose.1
+man/man1/netpipes.1
+man/man1/sockdown.1
+man/man1/timelimit.1
