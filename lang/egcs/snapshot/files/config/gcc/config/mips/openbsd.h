@@ -1,9 +1,17 @@
 /* GCC configuration for  OpenBSD Mips ABI32 */
-/* $OpenBSD: openbsd.h,v 1.3 1999/02/06 21:49:02 espie Exp $ */
+/* $OpenBSD: openbsd.h,v 1.4 1999/02/12 03:58:16 espie Exp $ */
 
 /* Default mips is little endian, unless otherwise specified */
 
-#define OBJECT_FORMAT_ELF
+
+/* Definitions needed for OpenBSD, avoid picking mips 'defaults' */
+
+/* GAS must know this */
+#define SUBTARGET_ASM_SPEC "%{fPIC:-KPIC} %|"
+
+/* Needed for ELF (inspired by netbsd-elf) */
+#define PREFERRED_DEBUGGING_TYPE DBX_DEBUG
+#define LOCAL_LABEL_PREFIX	"."
 
 #include <mips/mips.h>
 
@@ -49,15 +57,6 @@
    %{!nostdlib:%{!r*:%{!e*:-e __start}}} -dc -dp \
    %{static:-Bstatic} %{!static:-Bdynamic} %{assert*}"
 
-/* GAS needs to know this */
-#define SUBTARGET_ASM_SPEC "%{fPIC:-KPIC} %|"
-
-/* Some comment say that this is needed for ELF */
-#define PREFERRED_DEBUGGING_TYPE DBX_DEBUG
-
-/* Some comment say that we need to redefine this for ELF */
-#define LOCAL_LABEL_PREFIX	"."
-
 /* -G is incompatible with -KPIC which is the default, so only allow objects
    in the small data section if the user explicitly asks for it.  */
 #undef MIPS_DEFAULT_GVALUE
@@ -84,3 +83,10 @@ do {                                                                         \
   else                                                                       \
     fprintf (F, "\t.section %s,\"aw\",@progbits\n", (NAME));                 \
 } while (0)
+
+/* collect2 support (Macros for initialization)
+ * -------------------------------------------- */
+
+/* Mips default configuration is COFF-only, and confuses collect2. */
+#undef OBJECT_FORMAT_COFF
+#undef EXTENDED_COFF
