@@ -1,20 +1,28 @@
---- Makefile.in.~1~	Tue Jan  5 05:27:16 1999
-+++ Makefile.in	Wed Jan  6 13:18:48 1999
-@@ -141,7 +141,7 @@
+--- Makefile.in.orig	Wed Nov 17 15:22:11 1999
++++ Makefile.in	Wed Nov 17 15:22:43 1999
+@@ -22,6 +22,7 @@ srcdir = @srcdir@
+ VPATH = @srcdir@
+ 
+ INSTALL = @INSTALL@
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA = @INSTALL_DATA@
+ MAKEINFO = makeinfo
+@@ -141,7 +142,7 @@ installdirs:
  
  install: all $(M4FILES) acconfig.h installdirs install-info
  	for p in $(ASCRIPTS); do \
 -	  $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p|sed '$(transform)'`; \
-+	  $(INSTALL) $$p $(bindir)/`echo $$p|sed '$(transform)'`; \
++	  $(INSTALL_SCRIPT) $$p $(bindir)/`echo $$p|sed '$(transform)'`; \
  	done
  	for i in $(M4FROZEN); do \
  	  $(INSTALL_DATA) $$i $(acdatadir)/$$i; \
-@@ -150,7 +150,7 @@
+@@ -150,7 +151,7 @@ install: all $(M4FILES) acconfig.h insta
  	  $(INSTALL_DATA) $(srcdir)/$$i $(acdatadir)/$$i; \
  	done
  	-if test -f autoscan; then \
 -	$(INSTALL_PROGRAM) autoscan $(bindir)/`echo autoscan|sed '$(transform)'`; \
-+	$(INSTALL) autoscan $(bindir)/`echo autoscan|sed '$(transform)'`; \
++	$(INSTALL_SCRIPT) autoscan $(bindir)/`echo autoscan|sed '$(transform)'`; \
  	for i in acfunctions acheaders acidentifiers acprograms \
  	  acmakevars; do \
  	$(INSTALL_DATA) $(srcdir)/$$i $(acdatadir)/$$i; \
