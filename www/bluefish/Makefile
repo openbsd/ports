@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/07/18 13:58:41 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2002/11/24 18:28:24 couderc Exp $
 
 COMMENT=	"HTML editor for experienced web designers"
 
@@ -9,11 +9,10 @@ HOMEPAGE=	http://bluefish.openoffice.nl/
 MAINTAINER=	Damien Couderc <couderc@openbsd.org>
 
 MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/downloads/ \
-		ftp://bluefish.advancecreations.com/pub/bluefish/downloads/ \
+		ftp://bluefish.advancecreations.com/bluefish/downloads/ \
 		http://bluefish.mrball.net/downloads/ \
 		ftp://ftp.ratisbona.com/pub/bluefish/downloads/ \
-		http://bluefish.shellhung.org/downloads/ \
-		ftp://ftp.europeanservers.net/pub/bluefish
+		http://bluefish.shellhung.org/downloads/
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
