@@ -3,13 +3,18 @@
 # Date created:         12 Jan 2000
 # Whom:                 dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.1.1.1 2000/01/13 01:50:24 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2000/03/23 21:41:24 turan Exp $
 
 DISTNAME=	x2vnc-1.0
 
 CATEGORIES=     x11
 
 MAINTAINER=	dugsong@monkey.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.hubbe.net/~hubbe/
 

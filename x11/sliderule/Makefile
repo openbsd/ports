@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/22 20:27:35 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/23 21:41:24 turan Exp $
 #
 
 DISTNAME=	sliderule
@@ -6,6 +6,11 @@ PKGNAME=	sliderule-1.0
 CATEGORIES=	x11
 
 MAINTAINER=	ports@OpenBSD.ORG
+
+PERMIT_PACKAGE_CDROM=	"no license"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no license"
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 

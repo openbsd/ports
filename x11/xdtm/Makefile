@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/11 00:37:40 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/23 21:41:24 turan Exp $
 
 
 DISTNAME=		xdtm-2.5.8
@@ -8,6 +8,11 @@ MASTER_SITE_SUBDIR=	applications
 NEED_VERSION=	1.191
 
 MAINTAINER=		angelos@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 USE_IMAKE=		yes
 WRKDIST=		${WRKDIR}/xdtm
