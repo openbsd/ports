@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.17 2003/04/09 16:39:46 brad Exp $
+@comment $OpenBSD: PLIST,v 1.18 2003/05/04 02:47:19 brad Exp $
 bin/gaim
 bin/gaim-remote
 man/man1/gaim.1
 share/applications/gaim.desktop
+share/locale/am/LC_MESSAGES/gaim.mo
 share/locale/bg/LC_MESSAGES/gaim.mo
+share/locale/ca/LC_MESSAGES/gaim.mo
 share/locale/cs/LC_MESSAGES/gaim.mo
 share/locale/da/LC_MESSAGES/gaim.mo
 share/locale/de/LC_MESSAGES/gaim.mo
@@ -133,7 +135,6 @@ share/pixmaps/gaim/smileys/default/yahoo_chicken.gif
 share/pixmaps/gaim/smileys/default/yahoo_clap.gif
 share/pixmaps/gaim/smileys/default/yahoo_clown.gif
 share/pixmaps/gaim/smileys/default/yahoo_coffee.gif
-share/pixmaps/gaim/smileys/default/yahoo_confused.gif
 share/pixmaps/gaim/smileys/default/yahoo_cry.gif
 share/pixmaps/gaim/smileys/default/yahoo_dance.gif
 share/pixmaps/gaim/smileys/default/yahoo_devil.gif
@@ -186,6 +187,7 @@ share/pixmaps/gaim/status/default/aim.png
 share/pixmaps/gaim/status/default/aol.png
 share/pixmaps/gaim/status/default/away.png
 share/pixmaps/gaim/status/default/dnd.png
+share/pixmaps/gaim/status/default/extendedaway.png
 share/pixmaps/gaim/status/default/freeforchat.png
 share/pixmaps/gaim/status/default/gadu-gadu.png
 share/pixmaps/gaim/status/default/game.png
@@ -198,6 +200,7 @@ share/pixmaps/gaim/status/default/logout.png
 share/pixmaps/gaim/status/default/msn.png
 share/pixmaps/gaim/status/default/na.png
 share/pixmaps/gaim/status/default/napster.png
+share/pixmaps/gaim/status/default/notauthorized.png
 share/pixmaps/gaim/status/default/occupied.png
 share/pixmaps/gaim/status/default/offline.png
 share/pixmaps/gaim/status/default/wireless.png
