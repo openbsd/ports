@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/02/04 17:06:45 kurt Exp $
+# $OpenBSD: Makefile,v 1.3 2005/02/06 22:06:34 sturm Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/java/jdk14/Makefile,v 1.79 2004/08/18 07:06:03 glewis Exp $
 
 ONLY_FOR_ARCHS= 	i386
@@ -114,6 +114,7 @@ JDKHOME=		jdk-${V}
 JREHOME=		jre-${V}
 
 SUBST_VARS=		JDKHOME JREHOME
+SYSTRACE_SUBST_VARS=	LOCALBASE
 
 # Deal with Sun's internal build structure
 WRKDIST=		${WRKDIR}
