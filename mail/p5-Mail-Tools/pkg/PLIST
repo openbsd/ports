@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2000/06/28 13:55:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/07/10 23:13:40 espie Exp $
 libdata/perl5/site_perl/Mail/Address.pm
 libdata/perl5/site_perl/Mail/Alias.pm
 libdata/perl5/site_perl/Mail/Cap.pm
@@ -30,7 +30,7 @@ libdata/perl5/site_perl/auto/Mail/Util/autosplit.ix
 libdata/perl5/site_perl/auto/Mail/Util/mailaddress.al
 libdata/perl5/site_perl/auto/Mail/Util/maildomain.al
 libdata/perl5/site_perl/auto/Mail/Util/read_mbox.al
-libdata/perl5/site_perl/@ARCH@-openbsd/auto/Mail/.packlist
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Mail/.packlist
 man/man3/Mail::Address.3p
 man/man3/Mail::Alias.3p
 man/man3/Mail::Cap.3p
@@ -47,7 +47,7 @@ share/examples/p5-MailTools/forwd_demo
 share/examples/p5-MailTools/rplyto_demo
 share/examples/p5-MailTools/send_demo
 @dirrm share/examples/p5-MailTools
-@dirrm libdata/perl5/site_perl/@ARCH@-openbsd/auto/Mail
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Mail
 @dirrm libdata/perl5/site_perl/auto/Mail/Util
 @dirrm libdata/perl5/site_perl/auto/Mail/Internet
 @dirrm libdata/perl5/site_perl/auto/Mail

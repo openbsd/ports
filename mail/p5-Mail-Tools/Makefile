@@ -1,9 +1,9 @@
-#   $OpenBSD: Makefile,v 1.3 2000/06/28 13:55:04 espie Exp $
+#   $OpenBSD: Makefile,v 1.4 2000/07/10 23:13:40 espie Exp $
 
 DISTNAME=	MailTools-1.1401
 PKGNAME=	p5-Mail-Tools-1.1401
 CATEGORIES=	devel mail perl5
-NEED_VERSION=	1.308
+NEED_VERSION=	1.312
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 
