@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Dec 18 01:26:57 2000
++++ Makefile.in	Mon Dec 18 01:27:15 2000
+@@ -9,7 +9,7 @@ exec_prefix=@exec_prefix@
+ sbindir=@sbindir@
+ libdir=@libdir@
+ man8dir=@mandir@/man8
+-piddir=@localstatedir@/stunnel/
++piddir=/var/run
+ ssldir=@ssldir@
+ PEM_DIR=@PEM_DIR@
+ @SET_MAKE@

@@ -1,0 +1,12 @@
+--- stunnel.8.in.orig	Mon Dec 18 01:32:09 2000
++++ stunnel.8.in	Mon Dec 18 01:34:27 2000
+@@ -332,7 +332,8 @@ of the FTP protocol which utilizes multi
+ There are available SSL enabled versions of FTP and telnet daemons, however.
+ .SH SEE ALSO
+ .BR tcpd (8),
+-.BR inetd (8)
++.BR inetd (8),
++.BR ssl (8)
+ .PP
+ .BI http://stunnel.mirt.net/
+ Stunnel homepage

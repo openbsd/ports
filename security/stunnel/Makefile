@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2000/10/22 15:43:27 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/12/19 05:46:03 obecian Exp $
 
-DISTNAME=	stunnel-3.8
+DISTNAME=	stunnel-3.9
 CATEGORIES=	security
 NEED_VERSION=	1.305
 
@@ -11,9 +11,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-HOMEPAGE=	http://mike.daewoo.com.pl/computer/stunnel/
+HOMEPAGE=	http://stunnel.mirt.net/
 
-MASTER_SITES=	http://opensores.thebunker.net/pub/mirrors/stunnel/ \
+MASTER_SITES=	ftp://stunnel.mirt.net/stunnel/ \
+                http://opensores.thebunker.net/pub/mirrors/stunnel/ \
 		http://mike.daewoo.com.pl/computer/stunnel/ \
 		http://opensores.thebunker.net/pub/mirrors/stunnel/ \
 		ftp://ftp.fu-berlin.de/unix/security/stunnel/ \
