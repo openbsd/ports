@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/11/04 07:50:19 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2003/12/06 13:38:09 espie Exp $
 
 COMMENT=	"audio/video converter and streamer"
 DISTNAME=	ffmpeg-0.4.8
@@ -36,7 +36,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/ffmpeg ${PREFIX}/bin/ffmpeg
 	${INSTALL_DATA_DIR} ${PREFIX}/include/ffmpeg
 	${INSTALL_DATA_DIR} ${PREFIX}/include/postproc
-	${INSTALL_DATA} ${WRKBUILD}/libavcodec/{avcodec,common}.h \
+	${INSTALL_DATA} ${WRKSRC}/libavcodec/{avcodec,common}.h \
+		${PREFIX}/include/ffmpeg
+	${INSTALL_DATA} ${WRKSRC}/libavformat/{avformat.h,avio.h,rtp.h,rtsp.h,rtspcodes.h} \
 		${PREFIX}/include/ffmpeg
 	${INSTALL_DATA} ${WRKBUILD}/libavcodec/libpostproc/postprocess.h \
 		${PREFIX}/include/postproc
