@@ -1,13 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/09/15 00:50:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2005/01/14 19:56:47 todd Exp $
 bin/mhub
 bin/xsendbut
 include/ggi/
 include/ggi/errors.h
 include/ggi/events.h
+include/ggi/gg-defs.h
 include/ggi/gg.h
+include/ggi/gii-defs.h
 include/ggi/gii-unix.h
 include/ggi/gii.h
 include/ggi/input/
+include/ggi/input/cocoa.h
+include/ggi/input/directx.h
+include/ggi/input/kii.h
 include/ggi/input/lin_kbd.h
 include/ggi/input/xwin.h
 include/ggi/internal/
@@ -49,6 +54,36 @@ lib/libgg.la
 lib/libgii.a
 lib/libgii.la
 @man man/man1/mhub.1
+@man man/man1/xsendbut.1
+@man man/man3/GG_SCHED_TICKS2USECS.3
+@man man/man3/GG_SCHED_USECS2TICKS.3
+@man man/man3/gg-error.3
+@man man/man3/gg-types.3
+@man man/man3/ggAddTask.3
+@man man/man3/ggCleanupForceExit.3
+@man man/man3/ggCurTime.3
+@man man/man3/ggDelTask.3
+@man man/man3/ggExit.3
+@man man/man3/ggFreeModule.3
+@man man/man3/ggGetSwarType.3
+@man man/man3/ggGetSymbolAddress.3
+@man man/man3/ggGetUserDir.3
+@man man/man3/ggInit.3
+@man man/man3/ggLoadModule.3
+@man man/man3/ggLock.3
+@man man/man3/ggLockCreate.3
+@man man/man3/ggLockDestroy.3
+@man man/man3/ggRegisterCleanup.3
+@man man/man3/ggTimeBase.3
+@man man/man3/ggTryLock.3
+@man man/man3/ggUSleep.3
+@man man/man3/ggUSlumber.3
+@man man/man3/ggUnlock.3
+@man man/man3/ggUnregisterCleanup.3
+@man man/man3/ggi-error.3
+@man man/man3/ggstrlcat.3
+@man man/man3/ggstrlcpy.3
+@man man/man3/gii-error.3
 @man man/man3/giiAddEventMask.3
 @man man/man3/giiClose.3
 @man man/man3/giiEventPoll.3
@@ -97,6 +132,7 @@ lib/libgii.la
 @man man/man7/input-lk201.7
 @man man/man7/input-mouse.7
 @man man/man7/input-tcp.7
+@man man/man7/libgg.7
 @man man/man7/libgii.7
 share/doc/gii/
 share/doc/gii/README

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2004/11/30 01:06:35 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2005/01/14 19:56:47 todd Exp $
 # Uses pthreads
 
 COMMENT=	"General Input Library (used by libggi)"
-DISTNAME=	libgii-0.8.4
+DISTNAME=	libgii-0.9.0
 CATEGORIES=	graphics
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 c m pthread
 
-MASTER_SITES=	ftp://ftp.ggi-project.org/pub/packages/ggi/ggi/v2.0/
+MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.1/
 EXTRACT_SUFX=	.src.tar.bz2
 
 USE_X11=	Yes
