@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2004/12/16 07:40:20 jolan Exp $
+# $OpenBSD: Makefile,v 1.18 2004/12/30 16:14:35 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"videolan client; multimedia player"
 V=		0.8.1
 DISTNAME=	vlc-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -25,7 +26,7 @@ MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig	
 
 LIB_DEPENDS=	SDL.3.0::devel/sdl \
-		wx_gtk2.2.4::x11/wxWidgets/gtk2 \
+		wx_gtk2.2.4:wxWidgets-gtk-*-gtk2:x11/wxWidgets/gtk2 \
 		png.4.1::graphics/png \
 		id3tag.3.0::audio/libid3tag \
 		mad.2.1::audio/libmad \
