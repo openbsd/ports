@@ -1,7 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2002/02/21 20:26:09 angelos Exp $
---- Makefile.in.orig	Tue Nov 30 03:20:09 1999
-+++ Makefile.in	Mon Nov 12 17:04:58 2001
-@@ -66,7 +66,7 @@ INCLUDES = \
+--- Makefile.in.orig	Thu Feb 28 14:05:02 2002
++++ Makefile.in	Thu Feb 28 14:15:09 2002
+@@ -66,7 +66,7 @@
  LIB	= \
  	@V_LIBS@
  
@@ -10,15 +9,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2002/02/21 20:26:09 angelos Exp $
  
  # Explicitly define compilation rules since SunOS 4's make doesn't like gcc.
  # Also, gcc does not remove the .o before forking 'as', which can be a
-@@ -99,6 +99,11 @@ TCL_82_LIBRARY_FILES = \
- 	$(LIBRARY_TCL)/history.tcl \
- 	$(LIBRARY_TCL)/word.tcl \
+@@ -103,7 +103,7 @@
  	$(LIBRARY_TCL)/http2.1/http.tcl
-+TCL_83_LIBRARY_FILES = \
-+	$(LIBRARY_TCL)/init.tcl \
-+	$(LIBRARY_TCL)/history.tcl \
-+	$(LIBRARY_TCL)/word.tcl \
-+	$(LIBRARY_TCL)/http2.3/http.tcl
- TCL_76_LIBRARY_FILES = \
- 	$(LIBRARY_TCL)/init.tcl
+ TCL_83_LIBRARY_FILES = \
+ 	$(TCL_BASE_LIBRARY_FILES) \
+-	$(LIBRARY_TCL)/http2.3/http.tcl
++	$(LIBRARY_TCL)/http2.4/http.tcl
  
+ TCL_LIBRARY_FILES = \
+ 	@V_TCL_LIBRARY_FILES@
