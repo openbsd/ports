@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/12/09 14:14:57 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2003/09/23 15:29:41 sturm Exp $
 
 COMMENT=		"python imaging library"
 COMMENT-examples=	"examples for python imaging library"
@@ -9,8 +9,6 @@ PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://www.pythonware.com/products/pil/
-
-MAINTAINER=		Sebastian Stark <seb@todesplanet.de>
 
 # PIL Software License
 # Permission to use, copy, modify and distribute freely.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/22 23:41:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2003/09/23 15:29:41 sturm Exp $
 
 COMMENT=	"curses-based URL ripper"
 
@@ -10,8 +10,6 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/contrib/ \
 		ftp://ftp.ilog.fr/pub/Mirrors/mutt/contrib/ \
 		ftp://ftp.etri.re.kr/pub/mail/mutt/ \
 		ftp://ftp.pnm.net/pub/unix/mutt/contrib/
-
-MAINTAINER=	Sebastian Stark <seb@todesplanet.de>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/11/28 12:43:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2003/09/23 15:29:41 sturm Exp $
 
 COMMENT=		"boustrophedon text reader"
 DISTNAME=		boust-0.161
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://traevoli.com/boust/
-
-MAINTAINER=		Sebastian Stark <seb@todesplanet.de>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

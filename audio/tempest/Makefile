@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/22 20:23:55 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2003/09/23 15:29:41 sturm Exp $
 
 COMMENT=	"sends AM radio signals using a monitor"
 
@@ -8,8 +8,6 @@ PKGNAME=	tempest-${VERSION}p1
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.erikyyy.de/tempest/
-
-MAINTAINER=	Sebastian Stark <seb@todesplanet.de>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

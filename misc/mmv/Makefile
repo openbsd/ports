@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/08/12 20:19:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2003/09/23 15:29:41 sturm Exp $
 
 COMMENT=	"move/copy/append/link multiple files with wildcards"
 
@@ -11,8 +11,6 @@ DISTFILES=	part01.Z part02.Z
 
 MASTER_SITES0=	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.unix/volume22/
 PATCHFILES=	mmv.pch.Z:0
-
-MAINTAINER=	Sebastian Stark <seb@todesplanet.de>
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

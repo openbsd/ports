@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/02/21 20:56:22 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2003/09/23 15:29:41 sturm Exp $
 
 COMMENT=	"provide ldap authentication type"
 
@@ -8,7 +8,7 @@ CATEGORIES=    	sysutils
 HOMEPAGE=	http://www.ifost.org.au/~peterw/	
 MASTER_SITES=	${HOMEPAGE}
 
-MAINTAINER=	Sebastian Stark <seb@todesplanet.de>
+MAINTAINER=	Peter Werner <peterw@ifost.org.au>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes 

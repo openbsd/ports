@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/06/29 17:25:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2003/09/23 15:29:41 sturm Exp $
 
 COMMENT=		"Type1 font installation helper"
 DISTNAME=		type1inst-0.6.1
 CATEGORIES=		x11 print
-
-MAINTAINER=		Sebastian Stark <seb@todesplanet.de>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

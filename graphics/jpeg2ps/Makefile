@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/11 16:52:29 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/09/23 15:29:41 sturm Exp $
 
 COMMENT=	"convert jpeg to compressed PostScript"
 
@@ -11,7 +11,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"may not sell"
 PERMIT_DISTFILES_FTP=	Yes
 
-MAINTAINER=	Sebastian Stark <seb@todesplanet.de>
 MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://www.pdflib.com/jpeg2ps/
 
