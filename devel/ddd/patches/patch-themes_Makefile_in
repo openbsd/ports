@@ -1,0 +1,12 @@
+$OpenBSD: patch-themes_Makefile_in,v 1.1 2003/04/17 10:45:23 wilfried Exp $
+--- themes/Makefile.in.orig	Mon Apr 30 18:39:13 2001
++++ themes/Makefile.in	Tue Apr  8 08:01:12 2003
+@@ -88,7 +88,7 @@ NORMAL_UNINSTALL = :
+ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ 
+-dddrootdir = $(pkgdatadir)-@VERSION@
++dddrootdir = $(pkgdatadir)
+ 
+ # -----------------------------------------------------------------------------
+ # DDD themes.

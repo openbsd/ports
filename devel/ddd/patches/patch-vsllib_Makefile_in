@@ -1,0 +1,12 @@
+$OpenBSD: patch-vsllib_Makefile_in,v 1.1 2003/04/17 10:45:23 wilfried Exp $
+--- vsllib/Makefile.in.orig	Mon Apr 30 18:39:12 2001
++++ vsllib/Makefile.in	Tue Apr  8 07:56:59 2003
+@@ -88,7 +88,7 @@ NORMAL_UNINSTALL = :
+ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ 
+-dddrootdir = $(pkgdatadir)-@VERSION@
++dddrootdir = $(pkgdatadir)
+ 
+ # -----------------------------------------------------------------------------
+ # VSL files.

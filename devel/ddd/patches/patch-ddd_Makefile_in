@@ -1,7 +1,18 @@
-$OpenBSD: patch-ddd_Makefile_in,v 1.2 2002/03/21 05:28:21 fgsch Exp $
+$OpenBSD: patch-ddd_Makefile_in,v 1.3 2003/04/17 10:45:23 wilfried Exp $
 --- ddd/Makefile.in.orig	Fri Feb  2 12:47:11 2001
-+++ ddd/Makefile.in	Wed Mar 13 04:36:12 2002
-@@ -2608,17 +2608,8 @@ configinfo.C: USERINFO $(srcdir)/config-
++++ ddd/Makefile.in	Tue Apr  8 07:55:23 2003
+@@ -186,8 +186,8 @@ SUFFIXES = .C .c .Y .L .txt .xbm .xbmxx 
+ 
+ 
+ # Shared data installation
+-dddrootdir = $(pkgdatadir)-$(VERSION)
+-dddappdir = $(pkgdatadir)-$(VERSION)/$(ddd)
++dddrootdir = $(pkgdatadir)
++dddappdir = $(pkgdatadir)/$(ddd)
+ 
+ # -----------------------------------------------------------------------------
+ # DDD Sources.
+@@ -2616,17 +2616,8 @@ configinfo.C: USERINFO $(srcdir)/config-
  	$(MV) $@~ $@
  
  # If `~/.ddd_userinfo' exists, use this file as personal identification.
