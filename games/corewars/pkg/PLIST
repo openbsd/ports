@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/03/20 02:12:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/03/20 16:20:11 espie Exp $
 bin/corewars
+bin/corewars-cmd
 man/man6/corewars.6
 share/corewars/abez.cw
 share/corewars/agent.cw
