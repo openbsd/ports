@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2003/07/04 20:53:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.112 2003/07/17 22:08:07 naddy Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -50,6 +50,7 @@
      SUBDIR += indexpage
      SUBDIR += iview
      SUBDIR += jbigkit
+     SUBDIR += jhead
      SUBDIR += jpeg
      SUBDIR += jpeg2ps
      SUBDIR += lcms
