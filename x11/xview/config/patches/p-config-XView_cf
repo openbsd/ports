@@ -1,5 +1,17 @@
---- config/XView.cf.orig	Mon Jun 27 04:09:19 1994
-+++ config/XView.cf	Tue Apr  4 18:15:05 2000
+--- config/XView.cf.orig	1994-06-27 04:09:19.000000000 +0200
++++ config/XView.cf	2003-12-29 22:21:48.000000000 +0100
+@@ -1,8 +1,8 @@
+ #ifndef XViewCf
+ #define XViewCf YES
+-/**/###########################################################################
+-/**/# @(#)XView.cf	1.10 09 Feb 1992 SMI
+-/**/# XView.cf for XView release 3.0.  Specify site preferences here.
++/**/XCOMM
++/**/XCOMM @(#)XView.cf	1.10 09 Feb 1992 SMI
++/**/XCOMM XView.cf for XView release 3.0.  Specify site preferences here.
+ 
+ /*
+  *      When anything is changed here, you must remake all the Makefiles
 @@ -101,7 +101,7 @@
   *	the appropriate value.
   */
