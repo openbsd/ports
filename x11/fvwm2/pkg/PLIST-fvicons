@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-fvicons,v 1.5 2004/09/18 13:19:26 espie Exp $
+@comment $OpenBSD: PLIST-fvicons,v 1.6 2005/03/06 14:16:58 espie Exp $
 @conflict fvwm2+fvicons-*
+share/pixmaps/
 share/pixmaps/fvwm/
 share/pixmaps/fvwm/Jlock.xpm
 share/pixmaps/fvwm/Jnews.xpm
