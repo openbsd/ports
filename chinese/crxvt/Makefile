@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/05/31 02:23:56 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/20 01:57:17 kevlo Exp $
 
 DISTNAME=       crxvt-2.10-2
 PKGNAME=        zh-${DISTNAME}
 CATEGORIES=     chinese 
-NEED_VERSION=	1.230
+NEED_VERSION=	1.307
 MASTER_SITES=   ftp://ftp.linux.org.tw/pub/xcin/crxvt/old/
 
 MAINTAINER=     kevlo@openbsd.org
@@ -15,9 +15,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/chinese/taipei16.pcf.gz::chinese/taipeifonts
 
-HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}' --os=OpenBSD --no-menu
-FAKE=		Yes
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=	--os=OpenBSD --no-menu
 
 post-configure:
 	@cp ${FILESDIR}/config.status ${WRKSRC}
