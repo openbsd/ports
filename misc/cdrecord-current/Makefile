@@ -3,7 +3,7 @@
 # Date created:				15 Dec 1997
 # Whom:					niklas
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/17 22:41:23 niklas Exp $
+# $OpenBSD: Makefile,v 1.2 1997/12/17 23:05:06 niklas Exp $
 #
 
 DISTNAME=	cdrecord-1.6a7
@@ -29,9 +29,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cdrecord/${OBJDIR}/cdrecord ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/mkisofs-1.11/${OBJDIR}/mkisofs \
 	    ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/cdrecord/${OBJDIR}/man/cdrecord.1 \
-	    ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/mkisofs-1.11/${OBJDIR}/man/mkisofs.8 \
-	    ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/mkisofs-1.11/mkisofs.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
