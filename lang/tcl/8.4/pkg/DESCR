@@ -1,4 +1,10 @@
-This is Tcl8.4, an embeddable tool command language.
+This is Tcl8.4, an embeddable tool command language. It is an easy-to-use
+scripting language with clear syntax. Because it is a scripting
+language, programs written in it are easily portable to other operating 
+systems. Feature include networking functionality, string and number
+manipulation, and regular expression support.
+
+A rich set of extensions to the language are available, as well.
 
 The best way to get started with Tcl is to read ``Tcl and the Tk
 Toolkit'' by John K. Ousterhout, Addison-Wesley, ISBN 0-201-63337-X.

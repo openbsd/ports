@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/19 15:47:15 jose Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/01 05:48:00 jose Exp $
 @option no-default-conflict
 @pkgcfl tcl-8.4.*
 bin/tclsh8.4
@@ -840,6 +840,8 @@ lib/tcl8.4/word.tcl
 @dirrm lib/tcl8.4/man/man3
 @dirrm lib/tcl8.4/man/man1
 @dirrm lib/tcl8.4/man
+@exec echo "tcl8.4 manpages are in %D/lib/tcl8.4/man; you may wish to add this directory to /etc/man.conf"
+@unexec echo "Please remove %D/lib/tcl8.4/man from /etc/man.conf manually if needed"
 @dirrm lib/tcl8.4/http2.4
 @dirrm lib/tcl8.4/http1.0
 @dirrm lib/tcl8.4/encoding
