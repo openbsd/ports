@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2001/12/26 23:24:52 marc Exp $
+# $OpenBSD: Makefile,v 1.74 2002/02/04 15:06:47 naddy Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -111,9 +111,11 @@
 #    SUBDIR += w3
 #    SUBDIR += w3c-httpd
      SUBDIR += w3m
+     SUBDIR += w3m,image
      SUBDIR += w3m,japanese
-     SUBDIR += w3m-m17n
-     SUBDIR += w3m-m17n,japanese
+     SUBDIR += w3m,japanese,image
+     SUBDIR += w3m,m17n
+     SUBDIR += w3m,m17n,image
      SUBDIR += w3mir
      SUBDIR += webalizer
 #    SUBDIR += webcopy
