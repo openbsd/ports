@@ -8,7 +8,6 @@ bin/orbit-ird
 bin/orbit-config
 @unexec install-info --delete %D/info/libIDL.info %D/info/dir
 info/libIDL.info
-@exec [ -f %D/info/dir -o ! -f /usr/share/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/libIDL.info %D/info/dir
 share/aclocal/libIDL.m4
 include/orbit-idl2.h
@@ -71,25 +70,25 @@ include/ORBitservices/CosEventComm.idl
 include/ORBitservices/CosEventChannel.idl
 include/ORBitservices/CosTypedEventComm.idl
 include/ORBitservices/CosTypedEventChannel.idl
-lib/libIDL.so.0.4
-lib/libIDL.la
-lib/libIDL.a
 lib/libIDLConf.sh
-lib/libORBit.so.0.4
-lib/libORBit.la
+lib/libIDL.a
+lib/libIDL.la
+lib/libIDL.so.5.0
 lib/libORBit.a
-lib/libORBitutil.so.0.4
-lib/libORBitutil.la
+lib/libORBit.la
+lib/libORBit.so.5.0
 lib/libORBitutil.a
-lib/libIIOP.so.0.4
-lib/libIIOP.la
+lib/libORBitutil.la
+lib/libORBitutil.so.5.0
 lib/libIIOP.a
+lib/libIIOP.la
+lib/libIIOP.so.5.0
+lib/libORBitCosNaming.a
+lib/libORBitCosNaming.la
+lib/libORBitCosNaming.so.5.0
+@exec /sbin/ldconfig -m %B
 lib/libname-server.a
 lib/liborbit-c-backend.a
-lib/libORBitCosNaming.so.0.4
-@exec /sbin/ldconfig -m %B
-lib/libORBitCosNaming.la
-lib/libORBitCosNaming.a
 @dirrm include/ORBitservices
 @dirrm include/IIOP
 @dirrm include/ORBitutil

@@ -5,7 +5,7 @@
  
  
 -libORBitCosNaming_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libORBitCosNaming_la_LDFLAGS =  	-version-info 0:4:0
++libORBitCosNaming_la_LDFLAGS =  	-version-info 5:0:0
  
  
  INCLUDES = -I. -I$(top_builddir)/src -I$(top_srcdir)/src  @GLIB_CFLAGS@

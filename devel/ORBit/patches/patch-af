@@ -5,7 +5,7 @@
  
  
 -libORBitutil_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libORBitutil_la_LDFLAGS = -version-info 0:4:0
++libORBitutil_la_LDFLAGS = -version-info 5:0:0
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../../config.h
  CONFIG_CLEAN_FILES = 

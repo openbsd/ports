@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 1999/10/02 17:54:40 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/10/29 21:35:00 brad Exp $
 
-DISTNAME=	ORBit-0.4.96
+DISTNAME=	ORBit-0.5.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= ORBit
@@ -24,21 +24,22 @@ CONFIGURE_ENV=	GLIB_CONFIG="${LOCALBASE}/bin/glib-config"
 # sources). Check that out here (and bitch if necessary).
 pre-extract:
 	@if [ -f ${LOCALBASE}/lib/libORBit.so.4.0 ]; then \
-	echo "+-------------------"; \
-		echo "| ERROR: you MUST remove the existing ORBit installation"; \
-		echo "| before installing this version. To fully remove run"; \
-		echo "| these commands as user root"; \
-		echo "|"; \
-		echo "|      pkg_delete -f `pkg_info -e 'ORBit-*'`"; \
-		echo "|      ldconfig ${LOCALBASE}/lib"; \
-		echo "|"; \
-		echo "+-------------------"; \
-		exit 1; \
+	   echo "+-------------------"; \
+	   echo "| ERROR: you MUST remove the existing ORBit installation"; \
+	   echo "| before installing this version. To fully remove run"; \
+	   echo "| these commands as user root"; \
+	   echo "|"; \
+	   echo "|      pkg_delete -f `pkg_info -e 'ORBit-*'`"; \
+	   echo "|      ldconfig ${LOCALBASE}/lib"; \
+	   echo "|"; \
+	   echo "+-------------------"; \
+	   exit 1; \
 	fi
 
 post-install:
 	@if [ -d ${PREFIX}/info -a ! -f ${PREFIX}/info/dir -a -f /usr/share/info/dir ]; then \
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
+	@install-info ${PREFIX}/info/libIDL.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

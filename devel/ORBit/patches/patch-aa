@@ -16,7 +16,7 @@
  BUILT_SOURCES = $(libwrap_files)
  
 -libIIOP_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libIIOP_la_LDFLAGS = -version-info 0:4:0
++libIIOP_la_LDFLAGS = -version-info 5:0:0
  
  EXTRA_DIST = IIOP-design.txt
  
