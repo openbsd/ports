@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/09 14:28:46 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:12 wilfried Exp $
 # $FreeBSD: ports/audio/ascd/Makefile,v 1.17 2000/09/25 12:21:17 asami Exp $
 
 DISTNAME=		ascd-0.13.2
@@ -14,7 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://worldserver.oleane.com/rsn/Archives/
+MASTER_SITES=		http://worldserver.oleane.com/rsn/Archives/ \
+			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
+			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 DISTFILES=		${DISTNAME}-src.tgz ${DATAFILES}
 DATAFILES=		ascd-0.13pr6-themes.tgz
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/09 14:28:47 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:12 wilfried Exp $
 
 DISTNAME=		libworkman-1999-06-20
 PKGNAME=		libworkman-1.4
@@ -14,7 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.midwinter.com/WorkMan/SNAPSHOTS/
+MASTER_SITES=		ftp://ftp.midwinter.com/WorkMan/SNAPSHOTS/ \
+			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
+			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	imake

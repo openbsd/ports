@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/03/09 14:28:47 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2001/03/14 12:23:14 wilfried Exp $
 
 DISTNAME=		WSoundPrefs-1.1.1
 PKGNAME=		${DISTNAME:L}
@@ -14,7 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
+MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/ \
+			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
+			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 RUN_DEPENDS=		wsoundserver::audio/wsoundserver
 LIB_DEPENDS=		PropList.2::devel/libproplist \

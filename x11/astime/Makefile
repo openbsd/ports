@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/09 14:28:52 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:20 wilfried Exp $
 
 DISTNAME=		astime-2.8
 CATEGORIES=		x11 x11/windowmaker
@@ -13,7 +13,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.tigr.net/afterstep/download/astime/
+MASTER_SITES=		http://www.tigr.net/afterstep/download/astime/ \
+			ftp://ftp.darenet.dk/mirrors/mirror.linuxberg.com/files/x11/dock/ \
+			ftp://ftp.proxad.net/mirrors/ftp.linuxberg.com/files/x11/dock/
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu

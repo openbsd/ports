@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/09 14:28:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:17 wilfried Exp $
 
 DISTNAME=		WMPop3-0.5.6a
 PKGNAME=		${DISTNAME:L}
@@ -14,7 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}download/
+MASTER_SITES=		${HOMEPAGE}download/ \
+			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
+			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 USE_X11=		Yes
 

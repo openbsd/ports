@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/09 14:28:48 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:16 wilfried Exp $
 
 DISTNAME=		miniCHESS-0.8
 PKGNAME=		wm${DISTNAME:L}
@@ -14,7 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		${HOMEPAGE} \
+			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
+			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 RUN_DEPENDS=		gnuchessx::games/gnuchess
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/03/09 14:28:53 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2001/03/14 12:23:22 wilfried Exp $
 
 DISTNAME=		wmdate-0.7
 CATEGORIES=		x11 x11/windowmaker
@@ -13,7 +13,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://wit401310.student.utwente.nl/~dalroi/apps/apps/
+MASTER_SITES=		http://wit401310.student.utwente.nl/~dalroi/apps/apps/ \
+			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
+			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 LIB_DEPENDS=		dockapp::devel/libdockapp
 

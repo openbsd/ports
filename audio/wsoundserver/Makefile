@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/03/09 14:28:47 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2001/03/14 12:23:15 wilfried Exp $
 
 DISTNAME=		WSoundServer-0.4.0
 PKGNAME=		${DISTNAME:L}
@@ -14,7 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
+MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/ \
+			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
+			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 RUN_DEPENDS=		wmaker::x11/windowmaker
 LIB_DEPENDS=		wraster.2::x11/windowmaker \

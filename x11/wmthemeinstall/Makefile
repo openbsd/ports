@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/09 14:28:54 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:24 wilfried Exp $
 # $FreeBSD: ports/x11-wm/wmthemeinstall/Makefile,v 1.5 2000/10/05 06:42:57 reg Exp $
 
 DISTNAME=		wmthemeinstall-0.62
@@ -15,7 +15,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/will/ \
-			ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/will/
+			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
+			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 RUN_DEPENDS=		wmaker::x11/windowmaker
 LIB_DEPENDS=		gtk.1::x11/gtk+

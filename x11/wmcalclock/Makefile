@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/03/09 14:28:53 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2001/03/14 12:23:22 wilfried Exp $
 
 DISTNAME=		wmCalClock-1.25
 PKGNAME=		${DISTNAME:L}
@@ -14,7 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/
+MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/ \
+			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
+			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 USE_X11=		Yes
 

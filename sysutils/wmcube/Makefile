@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/03/09 14:28:51 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2001/03/14 12:23:19 wilfried Exp $
 
 DISTNAME=		wmcube-0.98
 CATEGORIES=		sysutils x11 x11/windowmaker
@@ -13,7 +13,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://boombox.campus.luth.se/files/
+MASTER_SITES=		http://boombox.campus.luth.se/files/ \
+			ftp://ftp.darenet.dk/mirrors/mirror.linuxberg.com/files/x11/dock/ \
+			ftp://ftp.proxad.net/mirrors/ftp.linuxberg.com/files/x11/dock/
 
 USE_X11=		Yes
 

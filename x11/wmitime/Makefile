@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/09 14:28:53 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:23 wilfried Exp $
 
 DISTNAME=		wmitime-0.3
 CATEGORIES=		x11 x11/windowmaker
@@ -13,7 +13,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}downloads/
+MASTER_SITES=		${HOMEPAGE}downloads/ \
+			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
+			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 USE_X11=		Yes
 

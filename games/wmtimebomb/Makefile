@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/09 14:28:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:16 wilfried Exp $
 
 DISTNAME=		wmtimebomb.20
 PKGNAME=		wmtimebomb-0.2.0
@@ -15,7 +15,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/mharo/ \
-			ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/mharo/
+			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
+			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 LIB_DEPENDS=		wraster.2::x11/windowmaker \
 			PropList.2::devel/libproplist \

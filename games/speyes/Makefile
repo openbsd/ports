@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/09 14:28:48 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:15 wilfried Exp $
 
 DISTNAME=		speyes-1.2.0
 CATEGORIES=		games x11 x11/windowmaker
@@ -13,7 +13,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.halcyon.com/amalmin/speyes/
+MASTER_SITES=		http://www.halcyon.com/amalmin/speyes/ \
+			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
+			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	imake noman

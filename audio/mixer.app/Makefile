@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/09 14:28:47 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/14 12:23:12 wilfried Exp $
 
 DISTNAME=		Mixer.app-1.5.0
 PKGNAME=		${DISTNAME:L}
@@ -14,7 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		${HOMEPAGE} \
+			ftp://ftp.darenet.dk/mirrors/mirror.linuxberg.com/files/x11/dock/ \
+			ftp://ftp.netis.com/pub/mirrors2/linuxberg/files/x11/dock/
 
 MAKE_FLAGS=		CC=g++
 

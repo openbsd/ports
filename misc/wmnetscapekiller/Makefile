@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/03/09 14:28:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2001/03/14 12:23:18 wilfried Exp $
 
 DISTNAME=		wmNetscapeKiller-0.3
 PKGNAME=		${DISTNAME:L}
@@ -14,7 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}wmNetscapeKiller-0.3/
+MASTER_SITES=		${HOMEPAGE}wmNetscapeKiller-0.3/ \
+			ftp://ftp.darenet.dk/mirrors/mirror.linuxberg.com/files/x11/dock/ \
+			ftp://ftp.proxad.net/mirrors/ftp.linuxberg.com/files/x11/dock/
 
 RUN_DEPENDS=		skill::sysutils/skill
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/09 14:28:52 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:21 wilfried Exp $
 
 DISTNAME=		dnd.1.1
 PKGNAME=		libdnd-1.1
@@ -12,7 +12,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://leb.net/OffiX/
+MASTER_SITES=		http://leb.net/OffiX/ \
+			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
+			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 EXTRACT_SUFX=		.tgz
 
 USE_X11=		Yes

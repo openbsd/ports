@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/09 14:28:47 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:13 wilfried Exp $
 
 DISTNAME=		wmmixer-1.0-beta1
 PKGNAME=		wmmixer-1.0b1
@@ -14,7 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.geocities.com/SiliconValley/Vista/2471/files/
+MASTER_SITES=		http://www.geocities.com/SiliconValley/Vista/2471/files/ \
+			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
+			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 EXTRACT_SUFX=		.tgz
 
 USE_X11=		Yes
