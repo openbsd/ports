@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/03/03 02:23:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2004/05/06 14:39:49 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64 amd64 powerpc
 
@@ -40,7 +40,8 @@ USE_GMAKE=	Yes
 # Regression tests are too hard to adapt to run here
 NO_REGRESS=	Yes
 
-CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.13
+CONFIGURE_STYLE= autoconf no-autoheader
 CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
