@@ -3,10 +3,26 @@ man/man1/tcsh.1
 share/nls/C/tcsh.cat
 share/nls/fr_FR.ISO_8859-1/tcsh.cat
 @exec ln -fs %D/%F %D/share/nls/fr_BE.ISO_8859-1/tcsh.cat
+@unexec rm -f %D/share/nls/fr_BE.ISO_8859-1/tcsh.cat
 @exec ln -fs %D/%F %D/share/nls/fr_CA.ISO_8859-1/tcsh.cat
+@unexec rm -f %D/share/nls/fr_CA.ISO_8859-1/tcsh.cat
 @exec ln -fs %D/%F %D/share/nls/fr_CH.ISO_8859-1/tcsh.cat
+@unexec rm -f %D/share/nls/fr_CH.ISO_8859-1/tcsh.cat
 share/nls/de_DE.ISO_8859-1/tcsh.cat
 @exec ln -fs %D/%F %D/share/nls/de_AT.ISO_8859-1/tcsh.cat
+@unexec rm -f %D/share/nls/de_AT.ISO_8859-1/tcsh.cat
 @exec ln -fs %D/%F %D/share/nls/de_CH.ISO_8859-1/tcsh.cat
+@unexec rm -f %D/share/nls/de_CH.ISO_8859-1/tcsh.cat
 share/nls/el_GR.ISO_8859-7/tcsh.cat
-@unexec echo "Don't forget to update /etc/shells!"
+@exec echo ""
+@exec echo "*** Finished installing tcsh-6.07.02"
+@exec echo "*** To complete the install, you should notify the system"
+@exec echo "*** that %D/bin/tcsh is a valid shell by adding it to"
+@exec echo "*** the file /etc/shells."
+@exec echo "***"
+@exec echo "*** If you are unfamiliar with this file, consult the"
+@exec echo "*** shells(5) manual page."
+@exec echo ""
+@unexec echo ""
+@unexec echo "*** Don't forget to remove tcsh from /etc/shells"
+@unexec echo ""
