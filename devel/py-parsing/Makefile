@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2004/10/23 16:48:12 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2005/03/27 17:44:10 xsa Exp $
 
 COMMENT=	"Python parsing module"
 
-DISTNAME=	pyparsing-1.2.2
+DISTNAME=	pyparsing-1.3
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	devel
 
@@ -30,6 +30,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/HowToUsePyparsing.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/htmldoc/* ${DOCSDIR}
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 
