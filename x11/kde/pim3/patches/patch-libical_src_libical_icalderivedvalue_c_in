@@ -1,0 +1,12 @@
+$OpenBSD: patch-libical_src_libical_icalderivedvalue_c_in,v 1.1 2003/01/06 02:19:56 espie Exp $
+--- libical/src/libical/icalderivedvalue.c.in.orig	Tue Dec 31 15:04:41 2002
++++ libical/src/libical/icalderivedvalue.c.in	Tue Dec 31 15:04:45 2002
+@@ -60,7 +60,7 @@ struct icalvalue_kind_map {
+ 	char name[20];
+ };
+ 
+-extern struct icalvalue_kind_map value_map[]; 
++static struct icalvalue_kind_map value_map[]; 
+ 
+ const char* icalvalue_kind_to_string(icalvalue_kind kind)
+ {

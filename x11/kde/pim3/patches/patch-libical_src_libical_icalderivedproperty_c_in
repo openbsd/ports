@@ -1,0 +1,21 @@
+$OpenBSD: patch-libical_src_libical_icalderivedproperty_c_in,v 1.1 2003/01/06 02:19:56 espie Exp $
+--- libical/src/libical/icalderivedproperty.c.in.orig	Tue Dec 31 15:03:24 2002
++++ libical/src/libical/icalderivedproperty.c.in	Tue Dec 31 15:04:08 2002
+@@ -59,7 +59,7 @@ struct  icalproperty_map {
+ 
+ };
+ 
+-extern struct icalproperty_map property_map[];
++static struct icalproperty_map property_map[];
+ 
+ const char* icalproperty_kind_to_string(icalproperty_kind kind)
+ {
+@@ -139,7 +139,7 @@ struct icalproperty_enum_map {
+     const char* str;
+ }; 
+ 
+-extern struct icalproperty_enum_map enum_map[];
++static struct icalproperty_enum_map enum_map[];
+ 
+ 
+ const char* icalproperty_enum_to_string(int e)

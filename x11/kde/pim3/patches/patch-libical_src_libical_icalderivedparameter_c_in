@@ -1,0 +1,21 @@
+$OpenBSD: patch-libical_src_libical_icalderivedparameter_c_in,v 1.1 2003/01/06 02:19:56 espie Exp $
+--- libical/src/libical/icalderivedparameter.c.in.orig	Tue Dec 31 15:02:20 2002
++++ libical/src/libical/icalderivedparameter.c.in	Tue Dec 31 15:03:04 2002
+@@ -55,7 +55,7 @@ struct icalparameter_kind_map {
+     
+ };
+ 
+-extern  struct icalparameter_kind_map parameter_map[];
++static  struct icalparameter_kind_map parameter_map[];
+ 
+ 
+ const char* icalparameter_kind_to_string(icalparameter_kind kind)
+@@ -129,7 +129,7 @@ struct icalparameter_map {
+ };
+ 
+ 
+-extern struct icalparameter_map icalparameter_map[];
++static struct icalparameter_map icalparameter_map[];
+ 
+ 
+ const char* icalparameter_enum_to_string(int e) 
