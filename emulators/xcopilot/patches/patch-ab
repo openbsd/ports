@@ -1,0 +1,19 @@
+*** Makefile.in.orig	Mon Aug 31 22:00:32 1998
+--- Makefile.in	Mon Aug 31 22:30:34 1998
+***************
+*** 92,98 ****
+  xcopilot.o display.o main.o pdebug.o ser-tcp.o open_app.o
+  xcopilot_DEPENDENCIES =  mc68k/libmc68k.a mx/libmx.a
+  xcopilot_LDFLAGS = 
+! CFLAGS = @CFLAGS@
+  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+  LINK = $(CC) $(CFLAGS) $(LDFLAGS) -o $@
+  man1dir = $(mandir)/man1
+--- 92,98 ----
+  xcopilot.o display.o main.o pdebug.o ser-tcp.o open_app.o
+  xcopilot_DEPENDENCIES =  mc68k/libmc68k.a mx/libmx.a
+  xcopilot_LDFLAGS = 
+! CFLAGS = @CFLAGS@ $(X_CFLAGS)
+  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+  LINK = $(CC) $(CFLAGS) $(LDFLAGS) -o $@
+  man1dir = $(mandir)/man1
