@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2004/12/16 07:25:25 alek Exp $
+# $OpenBSD: Makefile,v 1.28 2005/02/07 11:30:05 espie Exp $
 
 COMMENT= 		"K Desktop Environment, network applications"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.3.2
 DISTNAME=		kdenetwork-${VERSION}
+PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION=		3.3.0
 FLAVORS=debug
 

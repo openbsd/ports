@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2005/01/31 16:58:22 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2005/02/07 11:30:05 espie Exp $
 
 COMMENT= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.3.2
 DISTNAME=		kdebase-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 MODKDE_VERSION?=	3.3.0
 
 FLAVORS=		debug
@@ -41,7 +41,6 @@ post-install:
 
 FAKE_FLAGS=DESTDIR=${WRKINST} sysconfdir=${SAMPLECONFDIR}
 
-CFLAGS+=	-g
 CONFIGURE_ARGS+=--without-motif
 
 WANTLIB=	ICE SM X11 Xcursor Xext Xrandr Xrender Xss Xt Xtst Xxf86misc \
