@@ -1,0 +1,13 @@
+$OpenBSD: patch-nap_c,v 1.1.1.1 2001/02/04 18:55:33 reinhard Exp $
+--- nap.c.orig	Tue Jan 23 19:33:00 2001
++++ nap.c	Tue Jan 23 19:33:37 2001
+@@ -14,6 +14,9 @@
+ #ifndef MCURSES
+   #include <ncurses.h>
+ #endif
++#ifndef __OpenBSD__
++#include <curses.h>
++#endif
+ #include <stdlib.h>
+ #include <signal.h>
+ #include <string.h>

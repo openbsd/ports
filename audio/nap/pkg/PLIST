@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/04 18:55:33 reinhard Exp $
+bin/nap
+share/doc/nap/README
+share/examples/nap/nap.conf.dist
+@dirrm share/examples/nap
+@dirrm share/doc/nap

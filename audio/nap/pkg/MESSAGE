@@ -1,0 +1,6 @@
+NOTES on OpenBSD post-installation of GNU napster client v1.4:
+
+By default the configuration file (nap.conf) must be in the
+working dir, where you invoke the program from.
+
+For an example see ${PREFIX}/share/examples/nap/nap.conf.dist
