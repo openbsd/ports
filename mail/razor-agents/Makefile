@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2003/05/24 21:57:32 marcm Exp $
+# $OpenBSD: Makefile,v 1.11 2003/11/18 20:57:49 millert Exp $
 
 COMMENT=		"agent for Razor spam filtering networks"
 
-DISTNAME=		razor-agents-2.34
+DISTNAME=		razor-agents-2.36
 CATEGORIES=		mail
 HOMEPAGE=		http://razor.sourceforge.net/
 
@@ -15,11 +15,12 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=razor/}
 
 BUILD_DEPENDS=		:p5-Digest-Nilsimsa->=0.06:security/p5-Digest-Nilsimsa \
+			:p5-Digest-SHA1->=1.0:security/p5-Digest-SHA1 \
 			:p5-Net-DNS->=0.23:net/p5-Net-DNS \
 			:p5-URI->=1.19:www/p5-URI
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
-FAKE_FLAGS=		PERL5LIB=${WRKINST}/${PREFIX}/${P5ARCH}
+FAKE_FLAGS=		${DESTDIRNAME}=${WRKINST} PERL5LIB=${WRKINST}/${PREFIX}/${P5ARCH}
 
 CONFIGURE_STYLE= 	perl
 

@@ -7,5 +7,3 @@ spot mutating spam content. User input is validated through reputation
 assignments based on consensus on report and revoke assertions which
 in turn is used for computing confidence values associated with
 individual signatures.
-
-WWW: ${HOMEPAGE}
