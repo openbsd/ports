@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.22 2004/01/26 21:18:41 jakob Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.23 2004/02/24 15:52:17 jakob Exp $
 lib/ethereal/plugins/${VERSION}/acn.a
 lib/ethereal/plugins/${VERSION}/acn.la
 lib/ethereal/plugins/${VERSION}/acn.so
@@ -23,6 +23,9 @@ lib/ethereal/plugins/${VERSION}/enttec.so
 lib/ethereal/plugins/${VERSION}/gryphon.a
 lib/ethereal/plugins/${VERSION}/gryphon.la
 lib/ethereal/plugins/${VERSION}/gryphon.so
+lib/ethereal/plugins/${VERSION}/irda.a
+lib/ethereal/plugins/${VERSION}/irda.la
+lib/ethereal/plugins/${VERSION}/irda.so
 lib/ethereal/plugins/${VERSION}/lwres.a
 lib/ethereal/plugins/${VERSION}/lwres.la
 lib/ethereal/plugins/${VERSION}/lwres.so
@@ -41,3 +44,6 @@ lib/ethereal/plugins/${VERSION}/rdm.so
 lib/ethereal/plugins/${VERSION}/rtnet.a
 lib/ethereal/plugins/${VERSION}/rtnet.la
 lib/ethereal/plugins/${VERSION}/rtnet.so
+lib/ethereal/plugins/${VERSION}/v5ua.a
+lib/ethereal/plugins/${VERSION}/v5ua.la
+lib/ethereal/plugins/${VERSION}/v5ua.so
