@@ -1,0 +1,6 @@
+LogJam is a GTK client for LiveJournal.com, which can link with XMMS. The 
+gnome flavor (broken) creates a gnome style gui for the program, while the 
+xmms flavor (working) links to your playlist so you can dump it to the 
+journal with a click.
+
+WWW: ${HOMEPAGE}
