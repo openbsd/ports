@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/07/28 10:05:53 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/07/28 10:29:30 brad Exp $
 
 DISTNAME=	jftpgw-0.0.10b
 CATEGORIES=	net
@@ -19,9 +19,8 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-crypt \
 		--with-logpath="/var/log" --with-confpath="${SYSCONFDIR}"
 
-do-install:
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/jftpgw
-	${INSTALL_PROGRAM} ${WRKBUILD}/jftpgw ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKBUILD}/jftpgw.conf.sample ${PREFIX}/lib/jftpgw
 	${INSTALL_DATA} ${WRKBUILD}/jftpgw.access.sample ${PREFIX}/lib/jftpgw
 
