@@ -1,0 +1,21 @@
+*** anlgform.c.orig	Tue Aug 11 15:44:56 1998
+--- anlgform.c	Tue Aug 11 15:45:21 1998
+***************
+*** 1,7 ****
+  /* anlgform.c 3.0 -- a cgi front end for analog */
+  
+  /* You must uncomment the next line, and put where the analog executable is */
+! /* #define ANALOG "/usr/local/etc/httpd/analog/analog" */
+  
+  #include <string.h>
+  #include <ctype.h>
+--- 1,9 ----
+  /* anlgform.c 3.0 -- a cgi front end for analog */
+  
+  /* You must uncomment the next line, and put where the analog executable is */
+! #ifndef ANALOG
+! #define ANALOG "/usr/local/bin/analog"
+! #endif
+  
+  #include <string.h>
+  #include <ctype.h>

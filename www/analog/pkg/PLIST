@@ -1,0 +1,84 @@
+bin/analog
+lib/analog/lang/bra.lng
+lib/analog/lang/brh.lng
+lib/analog/lang/cz1250.lng
+lib/analog/lang/cza.lng
+lib/analog/lang/czh.lng
+lib/analog/lang/dea.lng
+lib/analog/lang/deh.lng
+lib/analog/lang/dka.lng
+lib/analog/lang/dkh.lng
+lib/analog/lang/domdea.tab
+lib/analog/lang/domdeh.tab
+lib/analog/lang/domfra.tab
+lib/analog/lang/domfrh.tab
+lib/analog/lang/fra.lng
+lib/analog/lang/frh.lng
+lib/analog/lang/hua.lng
+lib/analog/lang/huh.lng
+lib/analog/lang/ita.lng
+lib/analog/lang/ith.lng
+lib/analog/lang/pta.lng
+lib/analog/lang/pth.lng
+lib/analog/lang/ro.lng
+lib/analog/lang/sea.lng
+lib/analog/lang/seh.lng
+lib/analog/lang/si1250.lng
+lib/analog/lang/sia.lng
+lib/analog/lang/sih.lng
+lib/analog/lang/ska.lng
+lib/analog/lang/skh.lng
+lib/analog/lang/uk.lng
+lib/analog/lang/us.lng
+lib/analog/analog.cfg
+lib/analog/domains.tab
+lib/analog/anlgform.cgi
+share/doc/analog/Licence.txt
+share/doc/analog/Readme.html
+share/doc/analog/acknow.html
+share/doc/analog/alias.html
+share/doc/analog/basiccmd.html
+share/doc/analog/bugs.html
+share/doc/analog/cache.html
+share/doc/analog/compout.html
+share/doc/analog/custom.html
+share/doc/analog/debug.html
+share/doc/analog/defns.html
+share/doc/analog/dns.html
+share/doc/analog/domfile.html
+share/doc/analog/errors.html
+share/doc/analog/faq.html
+share/doc/analog/form.html
+share/doc/analog/hierreps.html
+share/doc/analog/include.html
+share/doc/analog/indx.html
+share/doc/analog/logfile.html
+share/doc/analog/lowmem.html
+share/doc/analog/mailing.html
+share/doc/analog/map.html
+share/doc/analog/meaning.html
+share/doc/analog/othreps.html
+share/doc/analog/output.html
+share/doc/analog/start.html
+share/doc/analog/startmac.html
+share/doc/analog/startos2.html
+share/doc/analog/startpc.html
+share/doc/analog/startux.html
+share/doc/analog/syntax.html
+share/doc/analog/timereps.html
+share/doc/analog/update.html
+share/doc/analog/wasnew1.html
+share/doc/analog/wasnew2.html
+share/doc/analog/webworks.html
+share/doc/analog/whatsnew.html
+share/doc/analog/whole.html
+@dirrm share/doc/analog
+@dirrm lib/analog/lang
+@dirrm lib/analog
+@exec [ -f /etc/analog.cfg ] || cp -f %D/lib/analog/analog.cfg /etc
+@exec cp -fp %D/lib/analog/anlgform.cgi /var/www/cgi-bin
+@unexec rm -f /var/www/cgi-bin/anlgform.cgi
+@unexec echo "***"
+@unexec echo "*** Please remove /etc/analog.cfg manually to complete"
+@unexec echo "*** uninstall procedure."
+@unexec echo "***"

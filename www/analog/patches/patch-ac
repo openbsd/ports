@@ -1,0 +1,19 @@
+*** analog.cfg.orig	Tue Aug 11 14:06:50 1998
+--- analog.cfg	Tue Aug 11 14:07:57 1998
+***************
+*** 6,12 ****
+  #
+  #
+  # REQINCLUDE pages
+! LOGFILE logfile.log
+  HOSTNAME "[my organisation]"
+  LINKINCLUDE pages
+  UNCOMPRESS *.gz,*.Z "gzip -cd"
+--- 6,12 ----
+  #
+  #
+  # REQINCLUDE pages
+! LOGFILE /var/www/logs/access_log
+  HOSTNAME "[my organisation]"
+  LINKINCLUDE pages
+  UNCOMPRESS *.gz,*.Z "gzip -cd"

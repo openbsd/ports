@@ -1,0 +1,50 @@
+*** Makefile.orig	Tue Jun 16 00:57:00 1998
+--- Makefile	Tue Aug 11 15:44:44 1998
+***************
+*** 2,8 ****
+  # Please read docs/Readme.html, or http://www.statslab.cam.ac.uk/~sret1/analog/
+  CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
+  #                    compilers need different CFLAGS, e.g., -O instead of -O2.
+! CFLAGS = -O2       # options, e.g. for optimisation or ANSI compilation.
+  #                    HP/UX cc needs -Aa
+  #                    Some Linuces might need -I/usr/src/linux/include
+  DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT -DNOSTRCMP -DEBCDIC
+--- 2,8 ----
+  # Please read docs/Readme.html, or http://www.statslab.cam.ac.uk/~sret1/analog/
+  CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
+  #                    compilers need different CFLAGS, e.g., -O instead of -O2.
+! #CFLAGS = -O2 ${CFLAGS}      # options, e.g. for optimisation or ANSI compilation.
+  #                    HP/UX cc needs -Aa
+  #                    Some Linuces might need -I/usr/src/linux/include
+  DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT -DNOSTRCMP -DEBCDIC
+***************
+*** 27,39 ****
+  FORMPROG = anlgform.cgi     # The program that processes the data from the form
+  FORMSRC = anlgform.c        # The source code for that program
+  
+! $(PROGRAM): $(OBJS) $(HEADERS) Makefile
+  	$(CC) $(CFLAGS) $(OBJS) -o $(PROGRAM) $(LIBS)
+  	@echo '***'
+  	@echo '***IMPORTANT: You must read the licence before using analog'
+  	@echo '***'
+  
+! $(OBJS): $(HEADERS) Makefile
+  	$(CC) $(CFLAGS) $(DEFS) -D$(OS) -c $*.c
+  
+  $(FORMPROG): $(FORMSRC) Makefile
+--- 27,41 ----
+  FORMPROG = anlgform.cgi     # The program that processes the data from the form
+  FORMSRC = anlgform.c        # The source code for that program
+  
+! all:	$(FORMPROG) $(PROGRAM)
+! 
+! $(PROGRAM): $(OBJS) $(HEADERS)
+  	$(CC) $(CFLAGS) $(OBJS) -o $(PROGRAM) $(LIBS)
+  	@echo '***'
+  	@echo '***IMPORTANT: You must read the licence before using analog'
+  	@echo '***'
+  
+! $(OBJS): $(HEADERS)
+  	$(CC) $(CFLAGS) $(DEFS) -D$(OS) -c $*.c
+  
+  $(FORMPROG): $(FORMSRC) Makefile
