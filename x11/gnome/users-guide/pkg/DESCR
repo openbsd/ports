@@ -1,5 +1,2 @@
-This is the official Users Guide for GNOME.
-
-For more information about the GNOME project, visit:
-
-WWW: ${HOMEPAGE}
+This package contains general GNOME user documentation which is not 
+directly associated with any particular GNOME application or package.
