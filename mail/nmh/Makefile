@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/01 10:08:07 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/01 16:16:27 turan Exp $
+
+BROKEN=		security problems.  needs to be fixed.
 
 DISTNAME=		nmh-1.0
 CATEGORIES=     	mail
