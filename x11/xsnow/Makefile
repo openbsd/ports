@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/11/21 19:01:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/12/17 15:03:18 alek Exp $
 
 COMMENT=		"snowy and Santa-y desktop"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	"vague license"
 PERMIT_PACKAGE_FTP=	"vague license"
 PERMIT_DISTFILES_CDROM=	"vague license"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xpm c m 
 
 MASTER_SITES=		${HOMEPAGE}
 

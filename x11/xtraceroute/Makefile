@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2003/10/08 17:13:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2004/12/17 15:03:18 alek Exp $
 # $NetBSD: Makefile,v 1.4 1999/03/04 08:58:42 tron Exp $
 
 COMMENT=	"graphical version of traceroute"
@@ -19,6 +19,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		GL GLU X11 Xext Xi c gdk glib gmodule gtk iconv intl \
+			jpeg m tiff z 
 
 USE_X11=	Yes
 CONFIGURE_STYLE= autoconf

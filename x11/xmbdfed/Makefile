@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/04/05 21:41:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2004/12/17 15:03:18 alek Exp $
 
 COMMENT=	"Motif tool for editing X11 bitmap fonts"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xext Xmu Xp Xpm Xt c freetype 
 
 MASTER_SITES=	http://crl.nmsu.edu/~mleisher/
 EXTRACT_SUFX=	.tar.bz2

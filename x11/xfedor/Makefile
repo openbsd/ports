@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2003/10/08 17:13:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2004/12/17 15:03:18 alek Exp $
 # ATTENTION: It does not work in > 256 color modes, please fix
 # it if you can.
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xpm c m
 
 USE_X11=	Yes
 NO_REGRESS=	Yes

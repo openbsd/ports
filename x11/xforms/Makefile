@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2003/05/12 06:48:20 margarida Exp $
+# $OpenBSD: Makefile,v 1.28 2004/12/17 15:03:18 alek Exp $
 
 COMMENT=		"GUI toolkit for X11"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		GL X11 Xext Xpm c jpeg m
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	imake

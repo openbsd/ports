@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/05/24 08:31:13 xsa Exp $
+# $OpenBSD: Makefile,v 1.16 2004/12/17 15:03:18 alek Exp $
 
 COMMENT=	"mold spreading over your X11 screen"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
+WANTLIB=		X11 Xext c m 
 
 MASTER_SITES=	ftp://cclub.cc.tut.ac.jp/pub/xwin/
 

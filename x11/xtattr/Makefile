@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/10/08 17:13:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2004/12/17 15:03:18 alek Exp $
 
 COMMENT=	"changing xterm attributes"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
+WANTLIB=		c 
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	imake

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/03/31 14:59:29 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/12/17 15:03:18 alek Exp $
 
 COMMENT=	"X11 keyboard accessibility tool"
 COMMENT-gui=	"GUI for xkbset"
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 c 
 
 HOMEPAGE=	http://www.math.missouri.edu/~stephen/software/#xkbset
 MASTER_SITES=	http://www.math.missouri.edu/~stephen/software/xkbset/
