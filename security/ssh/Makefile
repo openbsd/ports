@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2000/04/11 06:02:29 turan Exp $
+# $OpenBSD: Makefile,v 1.57 2000/04/11 06:06:29 turan Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
@@ -24,6 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FLAVORS=	intl usa
 
+.if defined(FLAVOR)
 .if ${FLAVOR} == "intl"
 USA_RESIDENT=No
 .elif ${FLAVOR} == "usa"
@@ -31,6 +32,7 @@ USA_RESIDENT=Yes
 .else
 	echo "Bad Flavor"
 	exit 1
+.endif
 .endif
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
