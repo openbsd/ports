@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/09 17:37:29 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/18 10:34:09 turan Exp $
 
 DISTNAME=       netatalk-990130
 CATEGORIES=	net
@@ -6,6 +6,11 @@ FAKE=No
 MASTER_SITES=   ftp://terminator.rs.itd.umich.edu/unix/netatalk/
 
 MAINTAINER=	ianm@cit.nepean.uws.edu.au	
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 # NOTES:
 # Will compile with kerberos support in apfd and papd.
