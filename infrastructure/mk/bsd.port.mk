@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.549 2003/07/11 16:46:20 pvalchev Exp $
+#	$OpenBSD: bsd.port.mk,v 1.550 2003/07/12 12:50:06 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -40,23 +40,13 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 #
 # DON'T USE IN INDIVIDUAL PORTS !!!
 #
-# Some variables that typically apply to all ports:
-# 
-# MASTER_SITES	- Primary location(s) for distribution files if not found
-#				  locally.
-# MASTER_SITESn	- Primary location(s) for more distribution files, in case
-#				  some distfiles must be fetched from elsewhere.
-#
 # Some variables that typically apply to an individual port.  Non-Boolean
 # variables without defaults are *mandatory*.
 #
 # NO_DESCRIBE	- Use a dummy (do-nothing) describe target.
 # NO_PACKAGE	- Use a dummy (do-nothing) package target.
 # NO_PKG_REGISTER - Don't register a port install as a package.
-# BROKEN		- Port is broken.  Set this string to the reason why.
 # RESTRICTED	- Port is restricted.  Set this string to the reason why.
-#
-# PKG_DBDIR		- Where package installation is recorded (default: /var/db/pkg)
 #
 # SCRIPTS_ENV	- Additional environment vars passed to scripts in
 #                 ${SCRIPTDIR} executed by bsd.port.mk.
@@ -67,10 +57,6 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 #				  Arguments to ${FETCH_CMD} before filename (default: none).
 # FETCH_AFTER_ARGS -
 #				  Arguments to ${FETCH_CMD} following filename (default: none).
-# NO_IGNORE     - Set this to Yes (most probably in a "make fetch" in
-#                 ${PORTSDIR}) if you want to fetch all distfiles,
-#                 even for packages not built due to limitation by
-#                 absent X or ONLY_FOR_ARCHS...
 # NO_WARNINGS	- Set this to Yes to disable warnings regarding variables
 #				  to define to control the build.  Automatically set
 #				  from the "mirror-distfiles" target.
