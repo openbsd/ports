@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/02/01 04:46:17 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2004/04/09 07:10:27 jolan Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc
 
@@ -12,7 +12,7 @@ MAINTAINER=	Robert Nagy <thuglife@bsd.hu>
 
 HOMEPAGE=	http://bytesex.org/xawtv/
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	http://dl.bytesex.org/releases/xawtv/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
