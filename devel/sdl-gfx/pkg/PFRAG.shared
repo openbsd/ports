@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/05/23 23:07:40 jolan Exp $
-lib/libSDL_gfx.so.11.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/08/10 09:43:46 espie Exp $
+@lib lib/libSDL_gfx.so.11.0
