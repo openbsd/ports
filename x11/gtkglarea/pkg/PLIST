@@ -1,0 +1,11 @@
+include/gtkgl/gdkgl.h
+include/gtkgl/gtkglarea.h
+@dirrm include/gtkgl
+lib/libgtkgl.so.3.0
+lib/libgtkgl.la
+lib/libgtkgl.a
+share/doc/gtkglarea/HOWTO.txt
+share/doc/gtkglarea/gdkgl.txt
+share/doc/gtkglarea/gtkglarea.txt
+@dirrm share/doc/gtkglarea
+@exec /sbin/ldconfig -m %B
