@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/09/24 18:05:46 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2002/04/08 21:13:49 naddy Exp $
 
 COMMENT=		"finds and then operates on files"
 
@@ -20,10 +20,16 @@ MASTER_SITE_SUBDIR=	findutils
 
 MODULES=		gettext
 
-SEPARATE_BUILD=		concurrent
-CONFIGURE_STYLE=	gnu old
+CONFIGURE_STYLE=	gnu dest old
 CONFIGURE_ARGS=		--program-prefix="g"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_FLAGS=		localstatedir=/var/db
+FAKE_FLAGS=		DESTDIR=${WRKINST} \
+			MAKEINFO="makeinfo --no-split"
+
+# regenerate in one piece
+post-extract:
+	@rm -f ${WRKSRC}/doc/find.info*
 
 .include <bsd.port.mk>

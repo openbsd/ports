@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/09/02 18:48:08 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/04/08 21:13:49 naddy Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/find.info
 bin/gfind
 bin/glocate
 bin/gupdatedb
 bin/gxargs
+info/find.info
 libexec/gbigram
 libexec/gcode
 libexec/gfrcode
@@ -11,3 +13,4 @@ man/man1/glocate.1
 man/man1/gupdatedb.1
 man/man1/gxargs.1
 man/man5/glocatedb.5
+@exec install-info --info-dir=%D/info %D/info/find.info
