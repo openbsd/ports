@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_s_openbsd_h,v 1.1 2003/07/05 00:27:08 naddy Exp $
---- src/s/openbsd.h.orig	Wed Mar 22 13:08:18 2000
-+++ src/s/openbsd.h	Fri Jun 27 01:17:51 2003
-@@ -9,3 +9,8 @@
+$OpenBSD: patch-src_s_openbsd_h,v 1.2 2004/09/15 17:55:25 espie Exp $
+--- src/s/openbsd.h.orig	Wed Mar 22 13:08:40 2000
++++ src/s/openbsd.h	Mon Aug 30 12:04:49 2004
+@@ -9,3 +9,16 @@
  /*  David Mazieres <dm@reeducation-labor.lcs.mit.edu> says this
      is necessary.  Otherwise Emacs dumps core when run -nw.  */
  #undef LIBS_TERMCAP
@@ -10,3 +10,11 @@ $OpenBSD: patch-src_s_openbsd_h,v 1.1 2003/07/05 00:27:08 naddy Exp $
 +    Needs testing and then commiting to emacs developers */
 +#define TERMINFO
 +#define LIBS_TERMCAP -lncurses
++
++/*  We don't need rpath */
++#ifdef __ELF__
++#undef LD_SWITCH_SYSTEM
++#define LD_SWITCH_SYSTEM -L/usr/X11R6/lib -L/usr/local/lib
++#undef C_SWITCH_SYSTEM
++#define C_SWITCH_SYSTEM -I/usr/X11R6/include -I/usr/local/include -L/usr/local/lib
++#endif
