@@ -1,0 +1,28 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2001/02/22 15:08:54 danh Exp $
+--- configure.orig	Sat Sep 16 06:03:44 2000
++++ configure	Thu Feb 22 09:36:37 2001
+@@ -1097,10 +1097,6 @@ else
+   fi
+ fi
+ 
+-if test -n "$GCC"; then
+-      CFLAGS="-O3 -Wall"
+-fi
+-
+ echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
+ echo "configure:1104: checking how to run the C preprocessor" >&5
+ # On Suns, sometimes $CPP names a directory.
+@@ -1566,11 +1562,11 @@ fi
+ 
+ PCAP_CLEAN="pcap_clean"
+ PCAP_DISTCLEAN="pcap_distclean"
+-CFLAGS="$CFLAGS -I$libpcapdir"
++CFLAGS="$CFLAGS"
+ 
+ if test $have_libpcap = yes; then
+   PCAP_COMPILE=""
+-  LIBS="-L/usr/local/lib $LIBS"
++  LIBS="$LIBS"
+ else
+   PCAP_COMPILE="pcap_compile"
+   LIBS="-L/usr/local/lib -L$libpcapdir $LIBS"

@@ -1,0 +1,31 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/02/22 15:08:54 danh Exp $
+--- Makefile.in.orig	Sat Sep 16 06:03:43 2000
++++ Makefile.in	Thu Feb 22 09:09:05 2001
+@@ -72,7 +72,7 @@ getopt_OBJECTS = @getopt_OBJECTS@
+ getopt_SOURCES = @getopt_SOURCES@
+ libpcapdir = @libpcapdir@
+ 
+-INCLUDES = -I$(includedir) -I$(libpcapdir)
++INCLUDES = -I$(includedir)
+ 
+ LIBS = @LIBS@ -lpcap
+ 
+@@ -108,7 +108,7 @@ NROFF = nroff
+ SOURCES = $(sing_SOURCES)
+ OBJECTS = $(sing_OBJECTS)
+ 
+-all: libpcap all-redirect
++all: all-redirect
+ .SUFFIXES:
+ .SUFFIXES: .S .c .o .s
+ 
+@@ -223,8 +223,7 @@ uninstall-man:
+ 
+ 
+ help.o: help.c config.h
+-sing.o: sing.c config.h libpcap-0.4/pcap.h libpcap-0.4/net/bpf.h \
+-	sing.h ipcompat.h misc.h packet.h dev_struct.h
++sing.o: sing.c config.h sing.h ipcompat.h misc.h packet.h dev_struct.h
+ ip_options.o: ip_options.c config.h ip_options.h ipcompat.h packet.h \
+ 	misc.h
+ device.o: device.c config.h device.h misc.h packet.h dev_struct.h
