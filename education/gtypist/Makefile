@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/01/22 13:32:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/04/15 20:59:49 naddy Exp $
 
 COMMENT=	"interactive typing tutor"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gtypist
 
-MODULE=	gettext
+MODULES=	gettext
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
