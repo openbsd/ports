@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/04/15 17:39:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/12/20 14:26:12 naddy Exp $
 @pkgcfl icon_interp-*
 @pkgcfl icon-interp-*
 @pkgcfl icon_lib-*
@@ -397,3 +397,4 @@ share/ipl/lib/xrotate.u
 share/ipl/lib/xutils.u
 @dirrm share/ipl/lib
 @dirrm share/ipl/include
+@dirrm share/ipl
