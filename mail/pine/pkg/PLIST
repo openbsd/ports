@@ -1,3 +1,5 @@
+@cwd /usr/local
+@name pine-4.02
 bin/pico
 bin/pilot
 bin/pine
@@ -7,7 +9,11 @@ bin/pgpsign
 man/man1/pico.1
 man/man1/pilot.1
 man/man1/pine.1
-@exec mkdir -p %D/share/doc/pine
 share/doc/pine/tech-notes.txt
 share/doc/pine/dot.pinerc.pgp.sample
 @dirrm share/doc/pine
+@unexec echo ""
+@unexec echo "*** to completly delete this package issue the command:"
+@unexec echo "***     rm -f /etc/pine.conf /etc/pine.conf.fixed"
+@unexec echo "*** when logged in as root"
+@unexec echo ""

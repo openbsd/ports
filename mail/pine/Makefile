@@ -1,30 +1,39 @@
 # OpenBSD makefile for:	pine
 # http://www.washington.edu/pine/
-# Version required:     3.96
+# Version required:     4.02
 # Date created:		10 Nov 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.4 1998/03/31 05:59:41 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/08/03 04:11:48 marc Exp $
 #
 
-DISTNAME=       pine3.96
-PKGNAME=        pine-3.96
+DISTNAME=       pine4.02
+PKGNAME=        pine-4.02
 CATEGORIES=     mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 
-MAINTAINER=	ports@OpenBSD.ORG
+MAINTAINER=	marc@OpenBSD.ORG
 
-post-install:
-	install -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
-		files/pgpencrypt ${PREFIX}/bin/pgpencrypt
-	install -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
-		files/pgpdecode ${PREFIX}/bin/pgpdecode
-	install -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
-		files/pgpsign ${PREFIX}/bin/pgpsign
-	install -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
-		${PREFIX}/share/doc/pine
-	cd ${WRKSRC} && ${INSTALL_DATA} \
-		doc/tech-notes.txt ${FILESDIR}/dot.pinerc.pgp.sample \
-		${PREFIX}/share/doc/pine
+do-install:
+	@${INSTALL_PROGRAM} \
+		${WRKSRC}/bin/pico \
+		${WRKSRC}/bin/pilot \
+		${WRKSRC}/bin/pine \
+			${PREFIX}/bin
+	@${INSTALL_SCRIPT} \
+		${FILESDIR}/pgpencrypt \
+		${FILESDIR}/pgpdecode \
+		${FILESDIR}/pgpsign \
+			${PREFIX}/bin
+	@${INSTALL_MAN} \
+		${WRKSRC}/doc/pico.1 \
+		${WRKSRC}/doc/pilot.1 \
+		${WRKSRC}/doc/pine.1 \
+			${PREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/share/doc/pine
+	@${INSTALL_DATA} \
+		${WRKSRC}/doc/tech-notes.txt \
+		${FILESDIR}/dot.pinerc.pgp.sample \
+			${PREFIX}/share/doc/pine
 
 .include <bsd.port.mk>
