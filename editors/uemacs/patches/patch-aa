@@ -1,0 +1,15 @@
+--- Makefile.orig	Wed Mar 25 14:28:24 1998
++++ Makefile	Wed Mar 25 14:41:41 1998
+@@ -0,0 +1,12 @@
++#
++# simple makefile for uemacs 
++#
++
++all:
++	(cd openbsd; make emacs)
++
++install:	all
++	${BSD_INSTALL_PROGRAM} openbsd/emacs ${PREFIX}/bin/uemacs
++	mkdir -p ${PREFIX}/share/uemacs
++	${BSD_INSTALL_DATA} cmd/* ${PREFIX}/share/uemacs
++	mv ${PREFIX}/share/uemacs/emacs.rc ${PREFIX}/share/uemacs/.emacsrc

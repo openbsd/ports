@@ -1,0 +1,254 @@
+Only in src.old: bind.c.orig
+diff -ur src.old/char.c src/char.c
+--- src.old/char.c	Sun Nov 19 03:09:20 1995
++++ src/char.c	Tue Jun  9 23:35:26 1998
+@@ -142,14 +142,14 @@
+ 		lowcase[index] = index ^ DIFCASE;
+ 		upcase[index ^ DIFCASE] = index;
+ 	}
+-#if BSD || FREEBSD || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || AVIION
++#if BSD || FREEBSD || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || AVIION || OPENBSD
+ 	/* and for those international characters! */
+ 	for (index = (unsigned char)'\340';
+ 	     index <= (unsigned char)'\375'; index++) {
+ 		lowcase[index] = index ^ DIFCASE;
+ 		upcase[index ^ DIFCASE] = index;
+ 	}
+-#endif /*  BSD || FREEBSD || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || AVIION */
++#endif /*  BSD || FREEBSD || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || AVIION || OPENBSD */
+ 
+ #if	MSDOS
+ 	/* setup various extended IBM-PC characters */
+diff -ur src.old/dolock.c src/dolock.c
+--- src.old/dolock.c	Sun Nov 19 03:09:20 1995
++++ src/dolock.c	Tue Jun  9 23:35:38 1998
+@@ -53,8 +53,8 @@
+ }
+ #endif
+ 
+-#if	FILOCK && (MSDOS || WINNT || OS2 || SUN || USG || AIX || AUX || AVIION || BSD || FREEBSD || HPUX8 || HPUX9 || AMIGA)
+-#if	OS2 || ((MSDOS || WINNT) && MSC) || BSD || FREEBSD
++#if	FILOCK && (MSDOS || WINNT || OS2 || SUN || USG || AIX || AUX || AVIION || BSD || FREEBSD || HPUX8 || HPUX9 || AMIGA || OPENBSD)
++#if	OS2 || ((MSDOS || WINNT) && MSC) || BSD || FREEBSD || OPENBSD
+ #include	<sys/types.h>
+ #endif
+ #include	<sys/stat.h>
+diff -ur src.old/file.c src/file.c
+--- src.old/file.c	Sat Nov 18 16:36:58 1995
++++ src/file.c	Tue Jun  9 23:36:55 1998
+@@ -11,7 +11,7 @@
+ #include	"eproto.h"
+ #include	"edef.h"
+ #include	"elang.h"
+-#if	BSD | FREEBSD | SUN | USG | AIX
++#if	BSD || FREEBSD || SUN || USG || AIX || OPENBSD
+ #include	<sys/types.h>
+ #include	<sys/stat.h>
+ #endif
+@@ -323,7 +323,7 @@
+ 	}
+ 	ffclose();				/* Ignore errors.	*/
+ 
+-#if	BSD || FREEBSD || USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || AVION
++#if	BSD || FREEBSD || USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || AVION || OPENBSD
+ 	/* if we don't have write priviledges, make this in VIEW mode */
+ 	if (s !=FIOERR && s != FIOFNF) {
+ 		if (access(fname, 2 /* W_OK*/) != 0)
+@@ -428,7 +428,7 @@
+ 	while (cp1!=&fname[0] && cp1[-1]!=':' && cp1[-1]!='\\'&&cp1[-1]!='/')
+ 		--cp1;
+ #endif
+-#if	USG | AIX | AUX | SMOS | HPUX8 | HPUX9 | BSD | FREEBSD | SUN | XENIX | AVIION
++#if	USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || BSD || FREEBSD || SUN || XENIX || AVIION || OPENBSD
+ 	while (cp1!=&fname[0] && cp1[-1]!='/')
+ 		--cp1;
+ #endif
+@@ -600,7 +600,7 @@
+ 	int sflag;		/* are we safe saving? */
+ 	char tname[NSTRING];	/* temporary file name */
+ 	char buf[NSTRING];	/* message buffer */
+-#if	BSD | FREEBSD | SUN | XENIX | USG | AIX
++#if	BSD || FREEBSD || SUN || XENIX || USG || AIX || OPENBSD
+ 	struct stat st;		/* we need info about the file permisions */
+ #endif
+ 
+@@ -680,14 +680,14 @@
+ 			strcat(buf, "s");
+ 
+ 		if (sflag) {
+-#if	BSD | FREEBSD | SUN | XENIX | USG | AIX
++#if	BSD || FREEBSD || SUN || XENIX || USG || AIX || OPENBSD
+ 			/* get the permisions on the original file */
+ 			stat(fn, &st);
+ #endif
+ 			/* erase original file */
+ 			/* rename temporary file to original name */
+ 			if (unlink(fn) == 0 && rename(tname, fn) == 0) {
+-#if	BSD | FREEBSD | SUN | XENIX | USG | AIX
++#if	BSD || FREEBSD || SUN || XENIX || USG || AIX || OPENBSD
+ 				chown(fn, (int)st.st_uid, (int)st.st_gid);
+ 				chmod(fn, (int)st.st_mode);
+ #else
+diff -ur src.old/fileio.c src/fileio.c
+--- src.old/fileio.c	Sun Nov 19 03:09:22 1995
++++ src/fileio.c	Tue Jun  9 23:37:40 1998
+@@ -106,7 +106,7 @@
+ 	putc(26, ffp);		/* add a ^Z at the end of the file */
+ #endif
+ 	
+-#if     USG | AIX | AUX | SMOS | HPUX8 | HPUX9 | SUN | XENIX | BSD || FREEBSD | WMCS | VMS | (MSDOS & (LATTICE | MSC | TURBO | IC | ZTC)) | WINNT | OS2 | (TOS & MWC) | AVIION
++#if     USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || BSD || FREEBSD || OPENBSD || WMCS || VMS || (MSDOS && (LATTICE || MSC || TURBO || IC || ZTC)) || WINNT || OS2 || (TOS && MWC) || AVIION
+         if (fclose(ffp) != FALSE) {
+                 mlwrite(TEXT156);
+ /*                      "Error closing file" */
+diff -ur src.old/input.c src/input.c
+--- src.old/input.c	Fri Dec 29 19:10:12 1995
++++ src/input.c	Tue Jun  9 23:38:44 1998
+@@ -47,7 +47,7 @@
+ #include	"edef.h"
+ #include	"elang.h"
+ 
+-#if USG | AIX | AUX | BSD | FREEBSD | SUN | HPUX8 | HPUX9
++#if USG || AIX || AUX || BSD || FREEBSD || SUN || HPUX8 || HPUX9 || OPENBSD
+ #include	<pwd.h>
+ extern struct passwd *getpwnam();
+ #endif
+@@ -244,7 +244,7 @@
+ 	char *ptr;		/* string pointer */
+ 	char user_name[NSTRING]; /* user name for directory */
+ 	static char buf[NSTRING];/* buffer to hold tentative name */
+-#if USG | AIX | AUX | BSD | FREEBSD | SUN | HPUX8 | HPUX9
++#if USG || AIX || AUX || BSD || FREEBSD || SUN || HPUX8 || HPUX9 || OPENBSD
+ 	struct passwd *pwd;	/* password structure */
+ #endif
+ 
+@@ -353,7 +353,7 @@
+ 				--ttcol;
+ 			}
+ 
+-#if USG | AIX | AUX | BSD | FREEBSD | SUN | HPUX8 | HPUX9
++#if USG || AIX || AUX || BSD || FREEBSD || SUN || HPUX8 || HPUX9 || OPENBSD
+ 			/* lookup someone else's home directory! */
+ 			if (user_name[0] != 0) {
+ 				pwd = getpwnam(user_name);
+diff -ur src.old/keyboard.c src/keyboard.c
+--- src.old/keyboard.c	Sat Nov 18 16:36:58 1995
++++ src/keyboard.c	Tue Jun  9 23:38:51 1998
+@@ -224,7 +224,7 @@
+ #endif
+ #endif
+ 
+-#if BSD || FREEBSD || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || (AVVION || TERMIOS) || (VMS && SMG) || MPE
++#if BSD || FREEBSD || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || (AVVION || TERMIOS) || (VMS && SMG) || MPE || OPENBSD
+ 
+ #define NKEYSEQ		300		/* Number of keymap entries	*/
+ 
+diff -ur src.old/lock.c src/lock.c
+--- src.old/lock.c	Tue Jun  9 22:59:50 1998
++++ src/lock.c	Tue Jun  9 23:33:21 1998
+@@ -15,7 +15,7 @@
+ #include <sys/param.h>
+ #endif
+ 
+-#if	BSD || FREEBSD || WMCS || SUN || XENIX || HPUX8 || HPUX9 || AVIION || USG || AIX || AUX
++#if	BSD || FREEBSD || WMCS || SUN || XENIX || HPUX8 || HPUX9 || AVIION || USG || AIX || AUX || OPENBSD
+ #include <sys/errno.h>
+ #if !(defined(BSD) && (BSD >= 199103))
+ extern int sys_nerr;		/* number of system error messages defined */
+@@ -165,7 +165,7 @@
+ 
+ 	strcpy(obuf, errstr);
+ 	strcat(obuf, " - ");
+-#if	BSD || FREEBSD || WMCS || SUN || XENIX || HPUX8 || HPUX9 || AVIION || USG || AIX || AUX
++#if	BSD || FREEBSD || WMCS || SUN || XENIX || HPUX8 || HPUX9 || AVIION || USG || AIX || AUX || OPENBSD
+ 	if (errno < sys_nerr)
+ 		strcat(obuf, sys_errlist[errno]);
+ 	else
+Only in src.old: lock.c.orig
+diff -ur src.old/unix.c src/unix.c
+--- src.old/unix.c	Sat Nov 18 16:36:58 1995
++++ src/unix.c	Tue Jun  9 23:34:23 1998
+@@ -81,7 +81,7 @@
+ }
+ 
+ /** Only compile for UNIX machines **/
+-#if BSD || FREEBSD || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || (AVVION || TERMIOS)
++#if BSD || FREEBSD || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || (AVVION || TERMIOS) || OPENBSD
+ 
+ /** Include files **/
+ #include "eproto.h"			/* Function definitions		*/
+@@ -98,7 +98,7 @@
+ #include <sys/ioctl.h>			/* I/O control definitions	*/
+ 
+ /** Additional include files **/
+-#if	FREEBSD
++#if	FREEBSD || OPENBSD
+ #define TERMIOS 1
+ #include <sys/time.h>
+ #undef	BSD
+@@ -109,9 +109,9 @@
+ #if (BSD && !TERMIOS)
+ #include <sys/time.h>			/* Timer definitions		*/
+ #endif /* (BSD && !TERMIOS) */
+-#if BSD || FREEBSD || SUN || HPUX8 || HPUX9 || (AVVION || TERMIOS) || AIX
++#if BSD || FREEBSD || SUN || HPUX8 || HPUX9 || (AVVION || TERMIOS) || AIX || OPENBSD
+ #include <signal.h>			/* Signal definitions		*/
+-#endif /* BSD || FREEBSD || SUN || HPUX8 || HPUX9 || (AVVION || TERMIOS) */
++#endif /* BSD || FREEBSD || SUN || HPUX8 || HPUX9 || (AVVION || TERMIOS) || OPENBSD */
+ #if USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX
+ #include <termio.h>			/* Terminal I/O definitions	*/
+ #endif /* USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX */
+@@ -126,7 +126,7 @@
+ 
+ /** Completion include files **/
+ /** Directory accessing: Try and figure this out... if you can! **/
+-#if ((BSD || FREEBSD) && !TERMIOS)
++#if ((BSD || FREEBSD || OPENBSD) && !TERMIOS)
+ #include <sys/dir.h>			/* Directory entry definitions	*/
+ #define DIRENTRY	direct
+ #endif /* (BSD && !TERMIOS) */
+@@ -485,7 +485,7 @@
+ /** Close terminal device **/
+ int ttclose()
+ {
+-#if ((AIX == 0) && (TERMIOS == 0)) || (FREEBSD == 1)
++#if ((AIX == 0) && (TERMIOS == 0)) || FREEBSD || OPENBSD
+ 	/* Restore original terminal modes */
+ 	if (reset != (char*)NULL)
+ 		write(1, reset, strlen(reset));
+@@ -1202,7 +1202,7 @@
+ 	return(0);
+ }
+ 
+-#if BSD || FREEBSD || SUN || HPUX8 || HPUX9 || (AVVION || TERMIOS)
++#if BSD || FREEBSD || SUN || HPUX8 || HPUX9 || (AVVION || TERMIOS) || OPENBSD
+ /* Surely more than just BSD systems do this */
+ 
+ /** Perform a stop signal **/
+@@ -1225,7 +1225,7 @@
+ 	return(0);
+ }
+ 
+-#endif /* BSD || FREEBSD || SUN || HPUX8 || HPUX9 || (AVVION || TERMIOS) */
++#endif /* BSD || FREEBSD || SUN || HPUX8 || HPUX9 || (AVVION || TERMIOS) || OPENBSD */
+ 
+ /** Get time of day **/
+ char * timeset()
+@@ -1327,9 +1327,9 @@
+ 	/* Get shell path */
+ 	sh = getenv("SHELL");
+ 	if (!sh)
+-#if BSD || FREEBSD || SUN
++#if BSD || FREEBSD || SUN || OPENBSD
+ 		sh = "/bin/csh";
+-#endif /* BSD || FREEBSD || SUN */
++#endif /* BSD || FREEBSD || SUN || OPENBSD */
+ #if USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || XENIX || (AVVION || TERMIOS)
+ 		sh = "/bin/sh";
+ #endif /* USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || XENIX || (AVVION || TERMIOS) */
+@@ -1726,4 +1726,4 @@
+ }
+ #endif
+ 
+-#endif /* BSD || FREEBSD || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || (AVVION || TERMIOS) */
++#endif /* BSD || FREEBSD || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || (AVVION || TERMIOS) || OPENBSD */

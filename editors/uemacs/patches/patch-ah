@@ -1,0 +1,13 @@
+--- openbsd/makefile.old	Sat Nov 18 13:19:02 1995
++++ openbsd/makefile	Tue Jun  9 23:04:56 1998
+@@ -14,8 +14,8 @@
+ 
+ # options and arguments to the C compiler
+ 
+-#CFLAGS += -I. -I$(HDIR)
+-CFLAGS = -O -I. -I$(HDIR)
++CFLAGS += -I. -I$(HDIR)
++#CFLAGS = -O -I. -I$(HDIR)
+ 
+ # list of header files
+ 

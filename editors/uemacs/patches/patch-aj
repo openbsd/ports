@@ -1,0 +1,33 @@
+diff -ur h.old/ebind.h h/ebind.h
+--- h.old/ebind.h	Sun Dec 31 15:04:34 1995
++++ h/ebind.h	Tue Jun  9 23:42:33 1998
+@@ -93,7 +93,7 @@
+ 	{CTLX|'A',		BINDFNC,	setvar},
+ 	{CTLX|'B',		BINDFNC,	usebuffer},
+ 	{CTLX|'C',		BINDFNC,	spawncli},
+-#if	BSD || FREEBSD || VMS || SUN || HPUX8 || HPUX9 || AVIION
++#if	BSD || FREEBSD || VMS || SUN || HPUX8 || HPUX9 || AVIION || OPENBSD
+ 	{CTLX|'D',		BINDFNC,	bktoshell},
+ #endif
+ 	{CTLX|'E',		BINDFNC,	ctlxe},
+@@ -155,7 +155,7 @@
+ 	{META|'P',		BINDFNC,	gotobop},
+ 	{META|'Q',		BINDFNC,	fillpara},
+ 	{META|'R',		BINDFNC,	sreplace},
+-#if	BSD || FREEBSD || HPUX8 || HPUX9 || VMS || SUN || AVIION
++#if	BSD || FREEBSD || HPUX8 || HPUX9 || VMS || SUN || AVIION || OPENBSD
+ 	{META|'S',		BINDFNC,	bktoshell},
+ #endif
+ 	{META|'U',		BINDFNC,	upperword},
+diff -ur h.old/epath.h h/epath.h
+--- h.old/epath.h	Tue Jun  9 22:59:50 1998
++++ h/epath.h	Tue Jun  9 23:42:57 1998
+@@ -64,7 +64,7 @@
+ };
+ #endif
+ 
+-#if	V7 | BSD | FREEBSD | USG | AIX | SMOS | HPUX8 | HPUX9 | XENIX | SUN | AVIION
++#if	V7 || BSD || FREEBSD || USG || AIX || SMOS || HPUX8 || HPUX9 || XENIX || SUN || AVIION || OPENBSD
+ {
+ 	".emacsrc",
+ 	"emacs.hlp",
