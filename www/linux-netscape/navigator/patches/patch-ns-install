@@ -1,5 +1,5 @@
---- navigator-v477.x86-unknown-linux2.2/ns-install.orig	Thu Jun 21 10:52:00 2001
-+++ navigator-v477.x86-unknown-linux2.2/ns-install	Thu Jun 21 11:01:52 2001
+--- navigator-v478.x86-unknown-linux2.2/ns-install.orig	Thu Jul 30 20:10:00 2001
++++ navigator-v478.x86-unknown-linux2.2/ns-install	Thu Jul 30 20:21:32 2001
 @@ -84,22 +84,10 @@
  	exit 1
  fi
