@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/12 09:04:15 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/11 16:11:17 kevlo Exp $
 
 COMMENT=	"load modules and create objects on demand"
 
-DISTNAME=	Class-Loader-2.00
+DISTNAME=	Class-Loader-2.02
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
 NEED_VERSION=	1.419
