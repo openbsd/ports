@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2002/04/02 18:16:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2002/04/02 23:51:45 espie Exp $
 @pkgcfl arts-*
 bin/artsc-config
 bin/artscat
@@ -2624,6 +2624,10 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/apps/ksgmltools2/customization/af
 @dirrm share/apps/ksgmltools2/customization
 @dirrm share/apps/ksgmltools2
+@exec mkdir -p %D/share/apps/konqueror/dirtree/remote
+@dirrm share/apps/konqueror/dirtree/remote
+@dirrm share/apps/konqueror/dirtree
+@dirrm share/apps/konqueror
 @dirrm share/apps/knotify
 @dirrm share/apps/kjava
 @dirrm share/apps/kio_uiserver/icons/hicolor/16x16/apps
@@ -2631,6 +2635,9 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/apps/kio_uiserver/icons/hicolor
 @dirrm share/apps/kio_uiserver/icons
 @dirrm share/apps/kio_uiserver
+@exec mkdir -p %D/share/apps/kicker/applets
+@dirrm share/apps/kicker/applets
+@dirrm share/apps/kicker
 @dirrm share/apps/khtml/icons/hicolor/32x32/actions
 @dirrm share/apps/khtml/icons/hicolor/32x32
 @dirrm share/apps/khtml/icons/hicolor/22x22/actions
@@ -2641,8 +2648,14 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/apps/khtml/icons
 @dirrm share/apps/khtml/css
 @dirrm share/apps/khtml
+@exec mkdir -p %D/share/apps/kdisplay/color-schemes
+@dirrm share/apps/kdisplay/color-schemes
+@dirrm share/apps/kdisplay
 @dirrm share/apps/kdeui/pics
 @dirrm share/apps/kdeui
+@exec mkdir -p %D/share/apps/kdesktop/programs
+@dirrm share/apps/kdesktop/programs
+@dirrm share/apps/kdesktop
 @dirrm share/apps/kdeprint/plugins
 @dirrm share/apps/kdeprint/pics
 @dirrm share/apps/kdeprint/icons/hicolor/32x32/apps
@@ -2656,54 +2669,44 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/apps/kdeprint/filters
 @dirrm share/apps/kdeprint
 @dirrm share/apps/kconf_update
-@exec mkdir -p %D/share/apps/kdesktop
-@dirrm share/apps/kdesktop
-@exec mkdir -p %D/share/apps/kdesktop/programs
-@dirrm share/apps/kdesktop/programs
 @exec mkdir -p %D/share/apps/kab/pics
 @dirrm share/apps/kab/pics
 @dirrm share/apps/kab
 @dirrm share/apps/LICENSES
 @dirrm share/apps
-@exec mkdir -p %D/share/applnk/.hidden
-@dirrm %D/share/applnk/.hidden
-@exec mkdir -p %D/share/applnk/Games/Arcade
-@dirrm %D/share/applnk/Games/Arcade
-@exec mkdir -p %D/share/applnk/Games/Board
-@dirrm %D/share/applnk/Games/Board
-@exec mkdir -p %D/share/applnk/Games/Card
-@dirrm %D/share/applnk/Games/Card
-@exec mkdir -p %D/share/applnk/Games/TacticStrategy
-@dirrm %D/share/applnk/Games/TacticStrategy
-@exec mkdir -p %D/share/applnk/Games
-@dirrm %D/share/applnk/Games
-@exec mkdir -p %D/share/applnk/Graphics
-@dirrm %D/share/applnk/Graphics
-@exec mkdir -p %D/share/applnk/Internet
-@dirrm %D/share/applnk/Internet
-@exec mkdir -p %D/share/applnk/Office
-@dirrm %D/share/applnk/Office
-@exec mkdir -p %D/share/applnk/Settings/FileBrowsing
-@dirrm %D/share/applnk/Settings/FileBrowsing
-@exec mkdir -p %D/share/applnk/Settings/LookNFeel
-@dirrm %D/share/applnk/Settings/LookNFeel
-@exec mkdir -p %D/share/applnk/Settings/Network
-@dirrm %D/share/applnk/Settings/Network
-@exec mkdir -p %D/share/applnk/Settings/Personalization
-@dirrm %D/share/applnk/Settings/Personalization
-@exec mkdir -p %D/share/applnk/Settings/System
-@dirrm %D/share/applnk/Settings/System
-@exec mkdir -p %D/share/applnk/Settings
-@dirrm %D/share/applnk/Settings
-@exec mkdir -p %D/share/applnk/System/ScreenSavers
-@dirrm %D/share/applnk/System/ScreenSavers
-@exec mkdir -p %D/share/applnk/System
-@dirrm %D/share/applnk/System
-@exec mkdir -p %D/share/applnk/Toys
-@dirrm %D/share/applnk/Toys
 @exec mkdir -p %D/share/applnk/Utilities
-@dirrm %D/share/applnk/Utilities
-@exec mkdir -p %D/share/applnk
+@dirrm share/applnk/Utilities
+@exec mkdir -p %D/share/applnk/Toys
+@dirrm share/applnk/Toys
+@exec mkdir -p %D/share/applnk/Settings/System/ScreenSavers
+@dirrm share/applnk/Settings/System/ScreenSavers
+@dirrm share/applnk/Settings/System
+@exec mkdir -p %D/share/applnk/Settings/Personalization
+@dirrm share/applnk/Settings/Personalization
+@exec mkdir -p %D/share/applnk/Settings/Network
+@dirrm share/applnk/Settings/Network
+@exec mkdir -p %D/share/applnk/Settings/LookNFeel
+@dirrm share/applnk/Settings/LookNFeel
+@exec mkdir -p %D/share/applnk/Settings/FileBrowsing
+@dirrm share/applnk/Settings/FileBrowsing
+@dirrm share/applnk/Settings
+@exec mkdir -p %D/share/applnk/Office
+@dirrm share/applnk/Office
+@exec mkdir -p %D/share/applnk/Internet
+@dirrm share/applnk/Internet
+@exec mkdir -p %D/share/applnk/Graphics
+@dirrm share/applnk/Graphics
+@exec mkdir -p %D/share/applnk/Games/TacticStrategy
+@dirrm share/applnk/Games/TacticStrategy
+@exec mkdir -p %D/share/applnk/Games/Card
+@dirrm share/applnk/Games/Card
+@exec mkdir -p %D/share/applnk/Games/Board
+@dirrm share/applnk/Games/Board
+@exec mkdir -p %D/share/applnk/Games/Arcade
+@dirrm share/applnk/Games/Arcade
+@dirrm share/applnk/Games
+@exec mkdir -p %D/share/applnk/.hidden
+@dirrm share/applnk/.hidden
 @dirrm share/applnk
 @dirrm lib/mcop/Arts
 @dirrm lib/mcop

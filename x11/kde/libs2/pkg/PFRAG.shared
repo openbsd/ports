@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2001/12/31 12:30:53 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.10 2002/04/02 23:51:45 espie Exp $
 lib/kde2/libkbzip2filter.so.0.0
 lib/kde2/libkded_kdeprintd.so.0.0
 lib/kde2/libkdeprint_ext.so.0.0

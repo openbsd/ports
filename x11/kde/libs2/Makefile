@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2002/03/02 23:59:52 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2002/04/02 23:51:45 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -78,5 +78,34 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
+# These are necessary because of packages dependent on kde2 that don't
+# really `own' the dir. Creating it in kdelibs is the easiest way.
+
+EXTRA_DIRECTORIES= \
+	share/apps/konqueror/dirtree/remote \
+	share/apps/kicker/applets \
+	share/apps/kdisplay/color-schemes \
+	share/apps/kdesktop/programs \
+	share/apps/kab/pics \
+	share/applnk/.hidden \
+	share/applnk/Games/Arcade \
+	share/applnk/Games/Board \
+	share/applnk/Games/Card \
+	share/applnk/Games/TacticStrategy \
+	share/applnk/Graphics \
+	share/applnk/Internet \
+	share/applnk/Office \
+	share/applnk/Settings/FileBrowsing \
+	share/applnk/Settings/LookNFeel \
+	share/applnk/Settings/Network \
+	share/applnk/Settings/Personalization \
+	share/applnk/Settings/System/ScreenSavers \
+	share/applnk/Toys \
+	share/applnk/Utilities
+
+post-install:
+.for i in ${EXTRA_DIRECTORIES}
+	@${INSTALL_DATA_DIR} ${PREFIX}/$i
+.endfor
 
 .include <bsd.port.mk>
