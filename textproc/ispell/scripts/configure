@@ -22,6 +22,20 @@ if [ -f $WRKDIR/extra_dict ]; then
     (echo RM=rm -f; echo LIBDIR=$PREFIX/lib; echo HASH=../../buildhash) \
            >> $WRKSRC/languages/francais-IREQ/Makefile
     ;;
+    hk2-deutsch*)
+    OPT="worte.txt verben.txt adjektive.txt klein.txt imperat.txt"
+    OPT="$OPT abkuerz.txt vornamen.txt geographie.txt latein.txt"
+    OPT="$OPT informatik.txt infoabk.txt elektronik.txt alphabeta.txt"
+    OPT="$OPT roemisch.txt orgabk.txt marken.txt worte2.txt zusammen.txt"
+    OPT="$OPT technik.txt compeng.txt geogra2.txt vornam2.txt namen.txt"
+    LOCAL=" {deutsch,DICTOPTIONS=$OPT}"
+    for i in $WRKDIR/*.txt $WRKDIR/*.aff; do
+      if [ -f $i ]; then cp $i  $WRKSRC/languages/deutsch/; fi
+    done
+    M=$WRKSRC/languages/deutsch/Makefile
+    cp $M $M.orig
+    sed -e '/7bit/s/^/##/' < $M.orig > $M
+    ;;
     *)
     echo "I don't now how to configure ispell with $extra_dict"
     exit 1;
