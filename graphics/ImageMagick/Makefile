@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2001/11/10 15:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2002/08/04 21:04:48 brad Exp $
 
 COMMENT=	"display and manipulate images under X11"
 
 DISTNAME=	ImageMagick-5.2.9
 CATEGORIES=     graphics
-NEED_VERSION=	1.489
 MASTER_SITES=	ftp://openbsd.comstyle.com/pub/brad/source/ \
 		ftp://ftp.dqc.org/pub/brad/source/
 
@@ -36,7 +35,7 @@ CONFIGURE_ARGS+= --enable-static --enable-lzw --enable-16bit-pixel \
 		 --without-perl --without-modules --without-dps \
 		 --without-fpx --without-hdf --without-lcms \
 		 --without-ttf --without-wmf --without-threads
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/freetype -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
