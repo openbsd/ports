@@ -1,22 +1,22 @@
-# $OpenBSD: patch-aa,v 1.4 1999/12/13 17:26:55 form Exp $
+# $OpenBSD: patch-aa,v 1.5 2000/04/01 17:23:54 form Exp $
 
---- Makefile.orig	Mon Dec 13 22:46:44 1999
-+++ Makefile	Mon Dec 13 22:49:42 1999
+--- Makefile.orig	Sun Apr  2 00:32:47 2000
++++ Makefile	Sun Apr  2 00:35:40 2000
 @@ -1,8 +1,8 @@
- # Makefile for analog 4.0
- # Please read docs/Readme.html, or http://www.statslab.cam.ac.uk/~sret1/analog/
+ # Makefile for analog 4.1
+ # Please read docs/Readme.html, or http://www.analog.cx/
 -CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
 +#CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
  #                    compilers need different CFLAGS, e.g., -O instead of -O2.
 -CEXTRAFLAGS = -O2  # options, e.g. for optimisation or ANSI compilation.
 +#CEXTRAFLAGS = -O2  # options, e.g. for optimisation or ANSI compilation.
  #                    HP/UX cc requires CEXTRAFLAGS = -Aa (HP/UX 9) or ...
- #                    -Ae (HP/UX 10);       BS2000/OSD requires -XLLML -XLLMK
- DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT -DNOOPEN -DNOREGEX ...
-@@ -25,7 +25,9 @@
- 	input.o macinput.o macstuff.o output.o output2.o process.o settings.o \
- 	sort.o tree.o utils.o win32.o
- HEADERS = anlghead.h anlghea2.h anlghea3.h anlghea4.h macdir.h
+ #                    -Ae (HP/UX 10);       BS2000/OSD requires -XLLML -XLLMK;
+ #                    NeXTSTEP apparently needs...
+@@ -29,7 +29,9 @@
+ 	input.o macinput.o macstuff.o output.o output2.o pcre.o process.o \
+ 	settings.o sort.o tree.o utils.o win32.o
+ HEADERS = anlghead.h anlghea2.h anlghea3.h anlghea4.h macdir.h pcre.h
 -CFLAGS = $(CEXTRAFLAGS) $(DEFS) -D$(OS)
 +CFLAGS += $(CEXTRAFLAGS) $(DEFS) -D$(OS)
 +
@@ -24,7 +24,7 @@
  
  $(PROGRAM): $(OBJS) $(HEADERS) Makefile
  	$(CC) $(CEXTRAFLAGS) $(OBJS) -o $(PROGRAM) $(LIBS)
-@@ -35,61 +37,61 @@
+@@ -39,64 +41,64 @@
  
  # There doesn't seem to be a good way to write all these rules in a generic
  # form that works for all "make" programs
@@ -79,6 +79,10 @@
 -output2.o: output2.c $(HEADERS) Makefile
 +output2.o: output2.c $(HEADERS)
  	$(CC) $(CFLAGS) -c output2.c
+ 
+-pcre.o: pcre.c pcre.h pcrechar.c pcreintl.h Makefile
++pcre.o: pcre.c pcre.h pcrechar.c pcreintl.h
+ 	$(CC) $(CFLAGS) -c pcre.c
  
 -process.o: process.c $(HEADERS) Makefile
 +process.o: process.c $(HEADERS)

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2000/03/22 10:37:15 form Exp $
+# $OpenBSD: Makefile,v 1.16 2000/04/01 17:23:54 form Exp $
 
-DISTNAME=	analog-4.04
+DISTNAME=	analog-4.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://www.magma.ca/~brendanr/analog/ \
