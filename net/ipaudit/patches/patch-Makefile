@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2003/05/14 12:53:19 margarida Exp $
+--- Makefile.orig	Tue Oct 17 11:38:27 2000
++++ Makefile	Tue May 13 18:39:51 2003
+@@ -5,13 +5,13 @@
+ #  Change this variables to match your installation
+ #
+ # Binary files compiled in src/
+-BIN=ipaudit ipstrings total pdate
++BIN=ipaudit ipstrings total
+ 
+ MAKE=make
+ CIDIR=-I/usr/include/pcap
+ 
+ all:
+-	$(MAKE) -C src all
++	cd src && $(MAKE) all
+ 
+ clean:
+ 	$(MAKE) -C src clean
