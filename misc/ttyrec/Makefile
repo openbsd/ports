@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/15 11:15:02 reinhard Exp $
+# $OpenBSD: Makefile,v 1.5 2002/11/23 12:15:20 reinhard Exp $
 
 COMMENT=	"tty recorder"
 
-DISTNAME=	ttyrec-1.0.5
+DISTNAME=	ttyrec-1.0.6
 CATEGORIES=	misc
-NEED_VERSION=	1.510
 MASTER_SITES=	http://namazu.org/~satoru/ttyrec/
 
 HOMEPAGE=	http://namazu.org/~satoru/ttyrec/index.html.en
