@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/10/11 04:27:24 marcm Exp $
-@conflict libgtop-*
+@comment $OpenBSD: PLIST,v 1.16 2004/11/07 14:46:32 sturm Exp $
+@conflict libgtop-*-!gnome
 bin/dns-helper
 bin/gconfigger
 bin/gnome-bug
