@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 1998/02/13 02:09:56 angelos Exp $
+# $OpenBSD: Makefile,v 1.7 1998/04/09 21:07:35 marc Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
-#    SUBDIR += Gofer
-#    SUBDIR += STk
+     SUBDIR += Gofer
+     SUBDIR += STk
 #    SUBDIR += Sather
 #    SUBDIR += atlast
 #    SUBDIR += bwbasic
