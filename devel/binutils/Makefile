@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1 2002/02/19 04:22:05 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2002/04/21 21:40:57 fgsch Exp $
 
+     SUBDIR += devel
      SUBDIR += stable
 
 .include <bsd.port.subdir.mk>
