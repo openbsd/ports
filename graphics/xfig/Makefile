@@ -1,11 +1,19 @@
-# $OpenBSD: Makefile,v 1.16 2000/10/22 15:42:20 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2001/03/25 08:33:13 jakob Exp $
 
-DISTNAME=	xfig.3.2.3a
-PKGNAME=	xfig-3.2.3a
+COMMENT=	CAD drawing program for X11
+
+VERSION=	3.2.3c
+DISTNAME=	xfig.${VERSION}.full
+PKGNAME=	xfig-${VERSION}
 CATEGORIES=	graphics x11
-NEED_VERSION=	1.305
-MASTER_SITES=	ftp://www-epb.lbl.gov/xfig/
+NEED_VERSION=	1.363
+
+MASTER_SITES=	http://www.xfig.org/xfigdist/ \
+		ftp://www-epb.lbl.gov/xfig/ \
+		ftp://www-epb.lbl.gov/xfig/previous_versions/
 MASTER_SITE_SUBDIR= applications/drawing_tools/xfig
+
+HOMEPAGE=	http://www.xfig.org/
 
 MAINTAINER=	ports@openbsd.org
 
@@ -18,6 +26,8 @@ LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		Xaw3d.6.1::x11/Xaw3d
 RUN_DEPENDS=	fig2dev::print/transfig \
 		gv::print/gv
+
+WRKDIST=	${WRKDIR}/xfig.${VERSION}
 
 CONFIGURE_STYLE=	imake
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
