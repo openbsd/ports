@@ -1,10 +1,8 @@
---- src/impress.tcl.orig	Wed Feb 28 20:25:05 2001
-+++ src/impress.tcl	Wed Feb 28 20:25:21 2001
-@@ -2,9 +2,8 @@
+--- src/impress.tcl.orig	Mon Feb 26 17:06:26 2001
++++ src/impress.tcl	Wed Apr 18 11:03:34 2001
+@@ -4,7 +4,7 @@
  #
- # Copyright © 1996,1997,1998,1999,2000 Christopher Jay Cox, All rights reserved.
- #
--# $Header: /home/cvs/ports/misc/impress/patches/Attic/patch-aa,v 1.4 2001/02/28 12:34:02 kevlo Exp $
+ # $Header: /home/cvs/ports/misc/impress/patches/Attic/patch-aa,v 1.5 2001/04/18 03:13:40 kevlo Exp $
  # restart trick \
 -exec wish "$0" "$@"
 +exec wish8.3 "$0" "$@"

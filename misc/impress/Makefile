@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/28 12:33:55 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/18 03:13:37 kevlo Exp $
 
+COMMENT=	"publishing and presentation tool"
 DISTNAME=	imp1.1b8
 PKGNAME=	impress-1.1b8
 CATEGORIES=	misc
-NEED_VERSION=	1.338
+NEED_VERSION=	1.399
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://www.ntlug.org/~ccox/impress/
