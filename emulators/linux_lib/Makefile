@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2000/10/01 03:18:00 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2000/10/01 04:31:57 brad Exp $
 # $NetBSD: Makefile,v 1.10 1998/04/24 09:07:55 agc Exp $
 # $FreeBSD Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp $
 
@@ -22,8 +22,8 @@ NO_BUILD=	Yes
 PREFIX=		/usr/local/emul/linux
 
 pre-install:
-	install -d -o root -g wheel -m 755 ${PREFIX}
-	install -d -o root -g wheel -m 755 ${WRKINST}/emul
+	${INSTALL_DATA_DIR} ${PREFIX}
+	${INSTALL_DATA_DIR} ${WRKINST}/emul
 	@ln -sf ${TRUEPREFIX} ${WRKINST}/emul/linux
 
 do-install:
@@ -32,10 +32,10 @@ do-install:
 post-install:
 # Creating usr/local/lib to prevent linux ldconfig from scanning OpenBSD
 # local libraries...
-	install -d -o root -g wheel -m 755 ${PREFIX}/usr/local/lib
+	${INSTALL_DATA_DIR} ${PREFIX}/usr/local/lib
 	-chroot ${WRKINST} ${TRUEPREFIX}/sbin/ldconfig
 	-@rmdir ${PREFIX}/usr/local/lib ${PREFIX}/usr/local
-	install -d -o root -g wheel -m 755 ${PREFIX}/usr/lib/zoneinfo
+	${INSTALL_DATA_DIR} ${PREFIX}/usr/lib/zoneinfo
 	@ln -sf /etc/localtime ${PREFIX}/usr/lib/zoneinfo/localtime
 
 .include <bsd.port.mk>
