@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 1999/05/05 13:08:21 espie Exp $
+# $OpenBSD: Makefile,v 1.44 1999/05/14 01:15:29 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -244,7 +244,6 @@ post-patch:
 		# avoid packaging include copies along...
 	find ${WRKSRC} -name \*.orig|xargs ${RM}
 	${CP} -R ${FILESDIR}/config/* ${WRKSRC}
-	-${RM} -rf ${WRKSRC}/texinfo 
 	cd ${WRKSRC}; \
 	for f in `cat ${FILESDIR}/fixdepend`; \
 	do \
@@ -295,6 +294,7 @@ CONFIGURE_ENV=LANGUAGES='${LANGS}'
 
 CONFIGURE_ARGS= --prefix=${PREFIX} \
 --verbose --program-transform-name=s,^,e, \
+--disable-subdir-texinfo
 
 
 # This is needed, as internal cpp is no longer compatible with the

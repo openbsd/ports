@@ -1,0 +1,31 @@
+From: Franz.Sirl-kernel@lauterbach.com (Franz Sirl)
+Hi,
+
+I got bored of the useless texinfo rebuilds on my machine and made this small
+patch to disable it.
+
+Franz.
+
+	* configure.in: add support for --disable-subdir-texinfo
+
+Index: configure.in
+===================================================================
+RCS file: /egcs/carton/cvsfiles/egcs/configure.in,v
+retrieving revision 1.36
+diff -u -p -r1.36 configure.in
+--- configure.in	1999/04/02 14:17:42	1.36
++++ configure.in	1999/05/13 16:31:59
+@@ -50,7 +50,11 @@ fi
+ # these tools are built for the host environment
+ # Note, the powerpc-eabi build depends on sim occurring before gdb in order to
+ # know that we are building the simulator.
+-host_tools="texinfo byacc flex bison binutils ld gas gcc sim gdb make patch prms send-pr gprof gdbtest tgas etc expect dejagnu ash bash bzip2 m4 autoconf automake libtool ispell grep diff rcs cvssrc fileutils shellutils time textutils wdiff find emacs emacs19 uudecode hello tar gzip indent recode release sed utils guile perl apache inet gawk findutils snavigator libtool gettext"
++host_tools="byacc flex bison binutils ld gas gcc sim gdb make patch prms send-pr gprof gdbtest tgas etc expect dejagnu ash bash bzip2 m4 autoconf automake libtool ispell grep diff rcs cvssrc fileutils shellutils time textutils wdiff find emacs emacs19 uudecode hello tar gzip indent recode release sed utils guile perl apache inet gawk findutils snavigator libtool gettext"
++
++if [ "${enable_subdir_texinfo}" != "no" ] ; then
++	host_tools="texinfo ${host_tools}"
++fi
+ 
+ 
+ # these libraries are built for the target environment, and are built after
+
