@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.30 2002/01/24 06:45:22 jsyn Exp $
+# $OpenBSD: network.conf.template,v 1.31 2002/03/18 20:04:07 jsyn Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -245,9 +245,10 @@ MASTER_SITE_FREEBSD_LOCAL+=	\
 	ftp://ftp.nectec.or.th/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
 
 MASTER_SITE_PACKETSTORM+=	\
-	http://packetstorm.widexs.nl/%SUBDIR%/ \
 	http://packetstorm.linuxsecurity.com/%SUBDIR%/ \
+	http://packetstormsecurity.nl/%SUBDIR%/ \
 	http://packetstorm.decepticons.org/%SUBDIR%/ \
 	http://packetstorm.dnsi.info/%SUBDIR%/ \
 	http://packetstormsecurity.be/%SUBDIR%/ \
-	http://packetstorm.bjstuff.com/%SUBDIR%/
+	http://packetstorm.bjstuff.com/%SUBDIR%/ \
+	http://packetstormsecurity.packetstorm.org/%SUBDIR%/
