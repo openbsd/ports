@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2000/12/06 19:22:20 jakob Exp $
+# $OpenBSD: Makefile,v 1.13 2001/01/18 20:21:18 jakob Exp $
 
-DISTNAME=	imap-2000a
+DISTNAME=	imap-2000b
 
-PKGNAME=	imap-uw-2000a
+PKGNAME=	imap-uw-2000b
 CATEGORIES=	mail
 NEED_VERSION=	1.302
 
