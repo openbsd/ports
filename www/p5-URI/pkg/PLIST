@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/05/16 04:10:48 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/11/30 22:09:50 margarida Exp $
 ${P5SITE}/URI.pm
 ${P5SITE}/URI/Escape.pm
-${P5SITE}/URI/Escape.pm.orig
 ${P5SITE}/URI/Heuristic.pm
+${P5SITE}/URI/QueryParam.pm
 ${P5SITE}/URI/URL.pm
 ${P5SITE}/URI/WithBase.pm
 ${P5SITE}/URI/_foreign.pm
@@ -32,14 +32,24 @@ ${P5SITE}/URI/nntp.pm
 ${P5SITE}/URI/pop.pm
 ${P5SITE}/URI/rlogin.pm
 ${P5SITE}/URI/rsync.pm
+${P5SITE}/URI/rtsp.pm
+${P5SITE}/URI/rtspu.pm
+${P5SITE}/URI/sip.pm
+${P5SITE}/URI/sips.pm
 ${P5SITE}/URI/snews.pm
 ${P5SITE}/URI/ssh.pm
 ${P5SITE}/URI/telnet.pm
+${P5SITE}/URI/urn.pm
+${P5SITE}/URI/urn/isbn.pm
+${P5SITE}/URI/urn/oid.pm
 man/man3p/URI.3p
 man/man3p/URI::Escape.3p
 man/man3p/URI::Heuristic.3p
+man/man3p/URI::QueryParam.3p
 man/man3p/URI::URL.3p
 man/man3p/URI::WithBase.3p
 man/man3p/URI::data.3p
 man/man3p/URI::file.3p
 man/man3p/URI::ldap.3p
+@dirrm ${P5SITE}/URI/urn
+@dirrm ${P5SITE}/URI/file

@@ -1,0 +1,30 @@
+$OpenBSD: patch-URI_QueryParam_pm,v 1.1 2002/11/30 22:09:50 margarida Exp $
+--- URI/QueryParam.pm.orig	Tue Sep  3 10:31:13 2002
++++ URI/QueryParam.pm	Sat Nov 30 22:24:47 2002
+@@ -117,7 +117,7 @@ Loading the C<URI::QueryParam> module wi
+ URIs that support query methods.  These methods provide an alternative
+ interface to the $u->query_form data.
+ 
+-The provided query_param_* methods on pupose made identical to the
++The provided query_param_* methods on purpose made identical to the
+ interface of the corresponding C<CGI.pm> methods.
+ 
+ The following additional methods are made available:
+@@ -132,7 +132,7 @@ The following additional methods are mad
+ 
+ =item $u->query_param( $key, $value,... )
+ 
+-If $u->query_param is called with no argments it returns all the
++If $u->query_param is called with no arguments it returns all the
+ distinct parameter keys of the URI.  In scalar context it returns the
+ number of distinct keys.
+ 
+@@ -176,7 +176,7 @@ the equivalent:
+ =item $u->query_form_hash( \%new_form )
+ 
+ This method will return a reference to a hash that represents the
+-query form's key/value pairs.  If a key occurs multiple times, then the hash
++query forms key/value pairs.  If a key occurs multiple times, then the hash
+ value will become an array reference.
+ 
+ Note that sequence information is lost.  It means that:

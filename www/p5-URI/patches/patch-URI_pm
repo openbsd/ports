@@ -1,6 +1,6 @@
-$OpenBSD: patch-URI_pm,v 1.1 2001/02/28 03:28:47 avsm Exp $
---- URI.pm.orig	Wed Feb 28 02:53:01 2001
-+++ URI.pm	Wed Feb 28 02:54:22 2001
+$OpenBSD: patch-URI_pm,v 1.2 2002/11/30 22:09:50 margarida Exp $
+--- URI.pm.orig	Tue Sep  3 10:35:23 2002
++++ URI.pm	Sat Nov 30 22:22:26 2002
 @@ -400,7 +400,7 @@ argument it will update the correspondin
  returning the old value of the component.  Passing an undefined
  argument will remove the component (if possible).  The description of
@@ -19,7 +19,7 @@ $OpenBSD: patch-URI_pm,v 1.1 2001/02/28 03:28:47 avsm Exp $
  
  For some schemes this will be a user name and a password separated by
  a colon.  This practice is not recommended. Embedding passwords in
-@@ -710,7 +710,7 @@ userinfo components: $uri->user and $uri
+@@ -709,7 +709,7 @@ userinfo components: $uri->user and $uri
  
  =item B<rlogin>:
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-URI_pm,v 1.1 2001/02/28 03:28:47 avsm Exp $
  1738. C<URI> objects belonging to the rlogin scheme support the
  common, generic and server methods.
  
-@@ -800,7 +800,7 @@ Copyright 1995 Martijn Koster.
+@@ -876,7 +876,7 @@ Copyright 1995 Martijn Koster.
  This program is free software; you can redistribute it and/or modify
  it under the same terms as Perl itself.
  
