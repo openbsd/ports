@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2003/08/18 19:00:05 fgsch Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.2 2003/08/19 16:48:00 fgsch Exp $
 --- src/Makefile.in.orig	2003-07-24 11:18:45.000000000 -0300
-+++ src/Makefile.in	2003-08-18 15:48:35.000000000 -0300
++++ src/Makefile.in	2003-08-19 13:47:24.000000000 -0300
 @@ -36,6 +36,7 @@ VERSION = @VERSION@
  
  SHELL		= /bin/sh
@@ -17,7 +17,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1 2003/08/18 19:00:05 fgsch Exp $
  INS_MANUAL_DIR	= @mandir@/man
  INS_SYSDEF_DIR	= @TIN_DEFAULTS_DIR@
  INS_MANUAL_EXT	= 1
-@@ -318,16 +320,17 @@ help:
+@@ -318,16 +320,15 @@ help:
  $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) \
  $(DESTDIR)$(INS_MANUAL_DIR)5 \
  $(DESTDIR)$(INS_BINARY_DIR) \
@@ -33,12 +33,10 @@ $OpenBSD: patch-src_Makefile_in,v 1.1 2003/08/18 19:00:05 fgsch Exp $
  	@$(INSTALL) -m 444 $(DOCDIR)/tin.5 $(DESTDIR)$(INS_MANUAL_DIR)5/$(PROJECT).5
 -	@-if test ! -f $(DESTDIR)$(INS_MANUAL_DIR)5/mbox.5 ; then $(INSTALL) -m 444 $(DOCDIR)/mbox.5 $(DESTDIR)$(INS_MANUAL_DIR)5/mbox.5 ; else $(ECHO) "  ... skipping $(DESTDIR)$(INS_MANUAL_DIR)5/mbox.5 - file already exists" ; fi
 -	@-if test ! -f $(DESTDIR)$(INS_MANUAL_DIR)5/mmdf.5 ; then $(INSTALL) -m 444 $(DOCDIR)/mmdf.5 $(DESTDIR)$(INS_MANUAL_DIR)5/mmdf.5 ; else $(ECHO) "  ... skipping $(DESTDIR)$(INS_MANUAL_DIR)5/mmdf.5 - file already exists" ; fi
-+#	@-if test ! -f $(DESTDIR)$(INS_MANUAL_DIR)5/mbox.5 ; then $(INSTALL) -m 444 $(DOCDIR)/mbox.5 $(DESTDIR)$(INS_MANUAL_DIR)5/mbox.5 ; else $(ECHO) "  ... skipping $(DESTDIR)$(INS_MANUAL_DIR)5/mbox.5 - file already exists" ; fi
-+#	@-if test ! -f $(DESTDIR)$(INS_MANUAL_DIR)5/mmdf.5 ; then $(INSTALL) -m 444 $(DOCDIR)/mmdf.5 $(DESTDIR)$(INS_MANUAL_DIR)5/mmdf.5 ; else $(ECHO) "  ... skipping $(DESTDIR)$(INS_MANUAL_DIR)5/mmdf.5 - file already exists" ; fi
  
  uninstall_manpage:
  	@$(ECHO) "Uninstalling $(PROJECT) manual page in $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) ..."
-@@ -349,14 +352,14 @@ uninstall_sysdefs:
+@@ -349,14 +350,14 @@ uninstall_sysdefs:
  	@-$(RM) -f $(DESTDIR)$(INS_SYSDEF_DIR)/tin.defaults
  	@-$(RM) -f $(DESTDIR)$(INS_SYSDEF_DIR)/mime.types
  
