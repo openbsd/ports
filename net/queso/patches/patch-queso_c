@@ -1,0 +1,132 @@
+$OpenBSD: patch-queso_c,v 1.1 2003/04/16 19:36:46 avsm Exp $
+--- queso.c.orig	Tue Sep 22 21:35:43 1998
++++ queso.c	Mon Apr 14 23:53:09 2003
+@@ -58,19 +58,19 @@ char *DEVICE=NULL, DEVBUFF[255];
+ static char CFGFILE[255] = DFLT_CONFIG_FILE;
+ 
+ /*------------- Prototiping -----------------*/
+-void debugtcp (unsigned long, tcprec);
++void debugtcp (u_int32_t, tcprec);
+ void usage (const char *);
+ int checkos (struct sockaddr_in, short);
+ 
+ /*------------- Print TCP HDR ---------------*/
+ void
+-debugtcp (unsigned long myseq, tcprec tcp)
++debugtcp (u_int32_t myseq, tcprec tcp)
+ {
+   fprintf (stderr, "%d->%d S:%1d A:%s%lX W:%04X U:%X F: ",
+ 	   ntohs (tcp.sport), ntohs (tcp.dport),
+ 	   (tcp.seqnum?1:0),
+ 	   tcp.acknum?"+":" ",
+-	   (tcp.acknum?(unsigned long) ntohl (tcp.acknum)-myseq:0),
++	   (unsigned long) (tcp.acknum?(u_int32_t) ntohl (tcp.acknum)-myseq:0),
+ 	   ntohs (tcp.window), ntohs (tcp.urgentptr));
+ 
+   if (tcp.flags & URG)
+@@ -142,12 +142,12 @@ usage (const char *progname)
+ 
+ typedef struct
+ {
+-  unsigned short set;
+-  unsigned long seq;
+-  unsigned long ack;
+-  unsigned short urg;
+-  unsigned short win;
+-  unsigned short flag;
++  u_int16_t set;
++  u_int32_t seq;
++  u_int32_t ack;
++  u_int16_t urg;
++  u_int16_t win;
++  u_int16_t flag;
+ }
+ OSRES;
+ 
+@@ -158,12 +158,12 @@ check_os (struct sockaddr_in from, struc
+ {
+   spoofrec spoof;
+   tcprec tcp;
+-  unsigned short start, s;
++  u_int16_t start, s;
+   int n;
+   long timeout;
+   FILE *f;
+   char line[1024];
+-  unsigned long myseq;
++  u_int32_t myseq;
+ #ifdef PCAP
+   char fromtxt[16], desttxt[16];
+   char bpftxt[4096];
+@@ -284,8 +284,8 @@ check_os (struct sockaddr_in from, struc
+   if ((f = fopen (CFGFILE, "r")))
+     {
+       char osname[256];		/* should be smaller than line[], 256 should suffice */
+-      unsigned short flag1 = 0, found = 0, linez = 0;
+-      unsigned short pn = 0, ps = 0, pa = 0, pw = 0, pf = 0, pu = 0;
++      u_int16_t flag1 = 0, found = 0, linez = 0;
++      u_int16_t pn = 0, ps = 0, pa = 0, pw = 0, pf = 0, pu = 0;
+       char *p;
+ 
+       while (fgets (line, sizeof (osname) - 1, f))
+@@ -412,7 +412,7 @@ check_os (struct sockaddr_in from, struc
+ 	      if (CONFIGDEBUG)
+ 		fprintf (stderr, " ** FAILED %d,%d,%d,%d,%02X != %ld,%ld,%d,%d,%02X\n", 
+ 			 ps, pa, pw, pu, pf, 
+-			 r[pn].seq,r[pn].ack,r[pn].win,r[pn].urg,r[pn].flag);
++			 (unsigned long) r[pn].seq,(unsigned long) r[pn].ack,r[pn].win,r[pn].urg,r[pn].flag);
+ 	      found = 0;
+ 	      flag1 = 0;
+ 	      continue;
+@@ -483,9 +483,9 @@ check_os (struct sockaddr_in from, struc
+ 	      if (r[pn].set) 
+ 		{
+ 		  fprintf ( f, "%d %ld %s",
+-			   pn, r[pn].seq, (r[pn].ack==RANDOM_ACK?"R":((r[pn].ack>=ACK_HACK)?"+":"")) );
++			   pn, (long) r[pn].seq, (r[pn].ack==RANDOM_ACK?"R":((r[pn].ack>=ACK_HACK)?"+":"")) );
+ 		  if(r[pn].ack!=RANDOM_ACK) 
+-		      fprintf ( f, "%ld", (r[pn].ack>=ACK_HACK)?r[pn].ack-ACK_HACK:r[pn].ack);
++		    fprintf ( f, "%ld", (long) /* shut up a warning */ ((r[pn].ack>=ACK_HACK)?r[pn].ack-ACK_HACK:r[pn].ack));
+ 		  fprintf ( f, " %d %s\n", r[pn].win ? 1 : 0, line);
+ 		}
+ 	      else
+@@ -516,13 +516,13 @@ int
+ main (int argc, char *argv[])
+ {
+   struct sockaddr_in dest, from;
+-  unsigned short port;
++  u_int16_t port;
+   char *s, *p;
+   int c;
+   int accuracy;
+   int limit = 0;
+   int bits = 32;		/* single host */
+-  unsigned long firsthost, lasthost, netmask, host;
++  u_int32_t firsthost, lasthost, netmask, host;
+   
+   /*
+    * Unbuffer stdout and stderr
+@@ -576,7 +576,7 @@ main (int argc, char *argv[])
+ 	  Zzz = atoi (optarg);
+ 	  break;
+ 	case 'i':
+-	  strncpy(DEVBUFF,optarg,sizeof(DEVBUFF-1));
++	  strncpy(DEVBUFF,optarg,sizeof(DEVBUFF)-1);
+ 	  DEVICE=DEVBUFF;
+ 	  break;
+ 	default:
+@@ -652,7 +652,13 @@ main (int argc, char *argv[])
+       }
+     
+     host = ntohl (dest.sin_addr.s_addr);
+-    netmask = ~(0xFFFFFFFFL >> bits);
++    netmask = 0xFFFFFFFFL;
++    if(bits >= 1){
++       netmask >>= 1;
++       bits--;
++    }
++    netmask >>= bits;
++    netmask = ~netmask;
+     /*-- WARNING: 32bit arquitectures have problems when bits==32 --*/
+     firsthost = (host & netmask) + 1;
+     lasthost = (host | ~(netmask)) - 1;
