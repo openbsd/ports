@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/21 17:22:53 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/22 15:49:36 todd Exp $
 
 COMMENT= 		"embedded documentation in C++"
 CATEGORIES=		x11 x11/kde devel
@@ -9,7 +9,7 @@ DIST_SUBDIR=		kde
 
 HOMEPAGE=		http://www.kde.org
 MASTER_SITES=		${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${VERSION}/distribution/tar/generic/src/
+MASTER_SITE_SUBDIR=	stable/${VERSION}/src/
 EXTRACT_SUFX=		.tar.bz2
 
 CONFIGURE_STYLE=	gnu
