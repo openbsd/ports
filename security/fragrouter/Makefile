@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/08/07 22:07:38 dugsong Exp $
+# $OpenBSD: Makefile,v 1.16 2001/09/28 06:02:14 pvalchev Exp $
 
 COMMENT=	"tool for testing network IDS implementations"
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/libpcap-0.4 ${WRKSRC}/Libnet-0.99b
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fragrouter ${PREFIX}/sbin

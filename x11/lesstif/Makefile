@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2001/05/06 04:41:18 lebel Exp $
+# $OpenBSD: Makefile,v 1.47 2001/09/28 06:02:15 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp $
 
 COMMENT=	"API compatible clone of the Motif toolkit"
@@ -23,6 +23,7 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/lib/Xlt ${WRKSRC}/lib/Xbae
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=--enable-static --enable-production --enable-build-12 \
 		--disable-build-20 --disable-build-21 --enable-default-12 \

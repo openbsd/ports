@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/13 18:53:55 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/28 06:02:14 pvalchev Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
@@ -25,6 +25,7 @@ MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/ \
 FAKE_FLAGS=	GRACE_HOME=${WRKINST}${PREFIX}/grace
 
 CONFIGURE_STYLE=	gnu dest
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/ac-tools
 CONFIGURE_ARGS+=	--with-bundled-xbae \
 			--with-extra-incpath=${LOCALBASE}/include \
 			--with-extra-ldpath=${LOCALBASE}/lib \

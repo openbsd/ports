@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/12 23:59:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/28 06:02:14 pvalchev Exp $
 
 COMMENT=	"High-level language for numerical computations"
 VERSION=	2.0.16
@@ -25,6 +25,7 @@ RUN_DEPENDS=	gnuplot:gnuplot-*:math/gnuplot
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=	gnu dest
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/kpathsea ${WRKSRC}/readline ${WRKSRC}/readline/support
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} ${GCCARCH}
 CONFIGURE_ENV= 		FFLAGS="${FFLAGS}" SOREV="${SHLIB_VER}"
 

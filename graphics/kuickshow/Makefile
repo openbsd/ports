@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/02 13:54:52 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/28 06:02:13 pvalchev Exp $
 
 COMMENT=	"image viewer similar to ACDSee for Windows"
 
@@ -29,6 +29,7 @@ MAKE_FLAGS=	CXXLD='--tag CXX ${CXX} -L${LOCALBASE}/lib/qt2'
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 CONFIGURE_ARGS=  --with-qt-includes=${LOCALBASE}/include/X11/qt2
 CONFIGURE_ARGS+= --with-qt-libraries=${LOCALBASE}/lib/qt2
 CONFIGURE_ARGS+= --with-extra-libs=${LOCALBASE}/lib

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2001/07/03 07:57:46 reinhard Exp $
+# $OpenBSD: Makefile,v 1.25 2001/09/28 06:02:14 pvalchev Exp $
 
 COMMENT=	"network security scanner"
 
@@ -47,6 +47,7 @@ FLAVOR?=
 # Can't do CONFIGURE_STYLE=autoconf because of configure wrapper
 # that builds each tarball in succession.
 CONFIGURE_STYLE=gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/nessus-core ${WRKSRC}/nessus-plugins ${WRKSRC}/libnasl ${WRKSRC}/nessus-libraries/libpcap-nessus ${WRKSRC}/nessus-libraries/libpeks/gmp3 ${WRKSRC}/nessus-libraries/libpeks ${WRKSRC}/nessus-libraries
 CONFIGURE_ARGS+=--localstatedir=/var --enable-gmp=${LOCALBASE} \
 		--disable-nessuspcap
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/05/12 16:41:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2001/09/28 06:02:14 pvalchev Exp $
 
 COMMENT=	"network-capable tape backup (client and tape server)"
 COMMENT-client=	"network-capable tape backup (client only)"
@@ -55,6 +55,7 @@ MULTI_PACKAGES=	-client
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/config
 
 # Because Amanda does not conform to shared library naming standards,
 # and knowing that no software outside of Amanda attempts to use the

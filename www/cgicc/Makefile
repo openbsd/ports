@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/25 03:03:31 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/28 06:02:15 pvalchev Exp $
 
 COMMENT=	"c++ compliant CGI applications libraries"
 
@@ -20,5 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/example ${WRKSRC}/support
 
 .include <bsd.port.mk>

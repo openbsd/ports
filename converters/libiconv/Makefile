@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/23 03:08:50 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2001/09/28 06:02:13 pvalchev Exp $
 
 COMMENT=	"character set conversion library"
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autoconf ${WRKSRC}/libcharset/autoconf
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 

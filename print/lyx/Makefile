@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/08/10 04:49:22 obecian Exp $
+# $OpenBSD: Makefile,v 1.20 2001/09/28 06:02:14 pvalchev Exp $
 
 COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
 
@@ -27,6 +27,7 @@ RUN_DEPENDS=	latex::print/teTeX/base \
 LIB_DEPENDS=	xforms::x11/xforms
 
 CONFIGURE_STYLE=	gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 STRIP=
 CONFIGURE_ARGS+=--with-extra-lib=${LOCALBASE}/lib \
 	--with-extra-inc="${LOCALBASE}/include \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/03/25 18:17:19 jakob Exp $
+# $OpenBSD: Makefile,v 1.11 2001/09/28 06:02:14 pvalchev Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/config
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
 		 --enable-login \

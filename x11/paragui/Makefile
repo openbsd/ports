@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/11 17:25:30 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/28 06:02:15 pvalchev Exp $
 
 COMMENT=	"cross-platform high-level application framework"
 
@@ -28,6 +28,7 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LIBS=-pthread
 

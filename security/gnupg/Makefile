@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2001/07/12 16:07:17 reinhard Exp $
+# $OpenBSD: Makefile,v 1.32 2001/09/28 06:02:14 pvalchev Exp $
 
 COMMENT=	'GNU privacy guard - a free PGP replacement'
 
@@ -40,6 +40,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/scripts
 CONFIGURE_ARGS=	--with-included-gettext
 
 FLAVORS=	idea

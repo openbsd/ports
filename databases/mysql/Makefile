@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2001/09/10 02:59:35 brad Exp $
+# $OpenBSD: Makefile,v 1.56 2001/09/28 06:02:13 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -48,6 +48,8 @@ CONFIGURE_ARGS+= --enable-static \
 		 --without-gemini
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/pth" \
 		LDFLAGS="-L${LOCALBASE}/lib/pth"
+
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/mit-pthreads/config
 
 FLAVORS=	max
 FLAVOR?=

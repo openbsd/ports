@@ -1,6 +1,6 @@
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.13 2001/05/24 02:28:23 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2001/09/28 06:02:14 pvalchev Exp $
 
 COMMENT=	"TeX distribution, executables"
 
@@ -33,6 +33,7 @@ LIB_DEPENDS= png.2::graphics/png
 PNGDIR=${PREFIX}
 
 CONFIGURE_STYLE=gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/texk ${WRKSRC}/config ${WRKSRC}/libs/ncurses ${WRKSRC}/texinfo ${WRKSRC}
 CONFIGURE_ARGS= --disable-multiplatform --without-texinfo \
 	--with-system-ncurses --with-system-zlib --with-system-pnglib \
 	--with-pnglib-libdir=${PNGDIR}/lib --with-pnglib-include=${PNGDIR}/include

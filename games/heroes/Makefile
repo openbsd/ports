@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/23 06:57:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/28 06:02:13 pvalchev Exp $
 
 COMMENT=	"graphically improved game of yore"
 
@@ -65,6 +65,7 @@ CONFIGURE_ARGS+= --without-ggi
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/tools
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+= --disable-optimizations \

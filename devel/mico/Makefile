@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/28 19:59:03 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/28 06:02:13 pvalchev Exp $
 
 COMMENT=	"free and complete CORBA-compliant implementation"
 
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
+
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/admin
 
 FAKE_FLAGS=		prefix="${WRKINST}${PREFIX}"
 WRKDIST=        	${WRKDIR}/mico

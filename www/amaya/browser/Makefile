@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/06 04:22:45 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2001/09/28 06:02:15 pvalchev Exp $
 # Original from: Bruno Rohee <rohee@OpenBSD.ORG>
 #
 # Many variables moved to ../Makefile.inc
@@ -19,6 +19,7 @@ WRKBUILD=		${WRKSRC}/obj
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu dest
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/../libwww/config
 CONFIGURE_SCRIPT=	../configure
 
 pre-install:

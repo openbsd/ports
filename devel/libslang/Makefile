@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2001/05/11 23:19:53 drahn Exp $
+# $OpenBSD: Makefile,v 1.30 2001/09/28 06:02:13 pvalchev Exp $
 
 COMMENT=	"stack-based interpreter for terminal applications"
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autoconf
 
 test:	build
 	@cd ${WRKSRC} && ${MAKE} runtests

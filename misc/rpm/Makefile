@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/09/23 19:27:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2001/09/28 06:02:14 pvalchev Exp $
 
 COMMENT=	"redhat package manager"
 
@@ -22,6 +22,7 @@ LIB_DEPENDS+=	intl.::devel/gettext
 LIB_DEPENDS+=	popt.0.::devel/popt
 
 CONFIGURE_STYLE=	gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/popt
 
 # Enforce check for pgp, so no build-time depend is needed
 CONFIGURE_ENV=		PGPBIN=$(LOCALBASE)/bin/pgp

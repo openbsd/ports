@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/19 15:20:12 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/28 06:02:15 pvalchev Exp $
 
 COMMENT= 		"embedded documentation in C++"
 CATEGORIES=		x11 x11/kde devel
@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	stable/${VERSION}/src/
 EXTRACT_SUFX=		.tar.bz2
 
 CONFIGURE_STYLE=	gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/admin
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes

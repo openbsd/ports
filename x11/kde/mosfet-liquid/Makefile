@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/09/27 10:55:00 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/09/28 06:02:15 pvalchev Exp $
 V=0.5.1
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.461
@@ -28,6 +28,7 @@ PERMIT_PACKAGE_CDROM=	"Not without the source"
 
 
 CONFIGURE_STYLE=	gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include

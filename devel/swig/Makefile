@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/09/02 13:53:34 kevlo Exp $
+# $OpenBSD: Makefile,v 1.20 2001/09/28 06:02:13 pvalchev Exp $
 
 COMMENT=		"simplified wrapper and interface generator"
 COMMENT-examples=	"examples for swig"
@@ -34,6 +34,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-tclincl=${LOCALBASE}/include/tcl8.3 \
 		 --with-tcllib==${LOCALBASE}/lib/tcl8.3 \
 		 --with-guilelib=${LOCALBASE}/lib
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/Tools
 
 ALL_TARGET=	swig runtime
 

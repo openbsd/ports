@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/06/22 20:53:19 jasoni Exp $
+# $OpenBSD: Makefile,v 1.11 2001/09/28 06:02:15 pvalchev Exp $
 
 COMMENT=	"analog clock for X11 w/appoint. reminder and mail notif"
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/autoconf
 
 ALL_TARGET=	clock
 

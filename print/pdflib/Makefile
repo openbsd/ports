@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/09/11 13:54:35 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2001/09/28 06:02:14 pvalchev Exp $
 
 COMMENT=		"C library to produce PDF files"
 
@@ -22,6 +22,7 @@ LIB_DEPENDS=		jpeg.62::graphics/jpeg \
 			tiff.35::graphics/tiff
 
 CONFIGURE_STYLE=	gnu dest
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/config
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-tifflib \
 			--with-pnglib \

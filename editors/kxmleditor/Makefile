@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/12 07:08:22 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/28 06:02:13 pvalchev Exp $
 
 COMMENT=	"xml editor for KDE"
 
@@ -34,5 +34,6 @@ CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ENV=	KDEDIR=${LOCALBASE} 
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 
 .include <bsd.port.mk>

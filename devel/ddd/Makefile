@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2001/05/06 00:12:57 lebel Exp $
+# $OpenBSD: Makefile,v 1.27 2001/09/28 06:02:13 pvalchev Exp $
 
 COMMENT=	"Data Display Debugger, graphical front-end for GDB, etc"
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_MOTIF=	any
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu dest
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/libiberty ${WRKSRC}/readline/support
 CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/09/24 18:16:28 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2001/09/28 06:02:15 pvalchev Exp $
 
 COMMENT=		"fast, compact and portable XSL/XSLT processor"
 
@@ -24,6 +24,7 @@ LIB_DEPENDS=		expat.2::textproc/expat
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/tools
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} --enable-static
 CONFIGURE_ENV+=         CPPFLAGS="-I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2001/09/27 10:52:15 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2001/09/28 06:02:15 pvalchev Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -30,6 +30,8 @@ BUILD_DEPENDS=	:zsh-*:shells/zsh/stable ::x11/qt2,-html
 # glib2.0 
 # qt docs
 # CUPS
+
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/admin
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS}

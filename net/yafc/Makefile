@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/08/11 00:53:58 avsm Exp $
+# $OpenBSD: Makefile,v 1.10 2001/09/28 06:02:14 pvalchev Exp $
 
 COMMENT=	"powerful console ftp client with many features"
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes 
 
 CONFIGURE_STYLE= gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/support
 CONFIGURE_ARGS=	--with-readline --with-catgets
 
 DOCS=	NEWS README TODO

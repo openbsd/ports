@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/04/20 17:35:34 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2001/09/28 06:02:12 pvalchev Exp $
 # $FreeBSD: ports/archivers/lzop/Makefile,v 1.3 2000/06/22 05:51:49 will Exp $
 
 COMMENT=	"fast file compressor similar to gzip"
@@ -23,5 +23,7 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/acconfig
 
 .include <bsd.port.mk>

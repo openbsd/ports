@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/08/28 01:03:00 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2001/09/28 06:02:13 pvalchev Exp $
 
 COMMENT=	"Type 1 rasterizer library for UNIX/X11"
 
@@ -23,6 +23,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/ac-tools
 
 ALL_TARGET=	without_doc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/04/06 15:04:13 danh Exp $
+# $OpenBSD: Makefile,v 1.15 2001/09/28 06:02:14 pvalchev Exp $
 
 COMMENT=	"system to store and display time-series data"
 
@@ -25,6 +25,7 @@ FLAVORS=	tcl
 FLAVOR?=
 
 CONFIGURE_STYLE= gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/config ${WRKSRC}/contrib/php4
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static
 
 .if ${FLAVOR:L:Mtcl}

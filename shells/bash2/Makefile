@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/04/10 15:32:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2001/09/28 06:02:15 pvalchev Exp $
 
 COMMENT=	"GNU Bourne Again Shell"
 
@@ -21,6 +21,7 @@ FLAVORS=	static
 FLAVOR?=
 
 CONFIGURE_STYLE= gnu dest
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/support
 
 .if ${FLAVOR:L} == "static"
 CONFIGURE_ARGS=	--enable-static-link

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/08/17 12:28:37 form Exp $
+# $OpenBSD: Makefile,v 1.24 2001/09/28 06:02:15 pvalchev Exp $
 # $NetBSD: Makefile,v 1.9 1998/04/15 10:38:50 agc Exp $
 
 COMMENT=	"graphical performance meter"
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/config
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-L${X11BASE}/lib" \
 		UVM=Yes
 

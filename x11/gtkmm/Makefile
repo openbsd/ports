@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/07/09 17:11:08 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2001/09/28 06:02:15 pvalchev Exp $
 
 COMMENT=	"C++ interface for gtk+"
 
@@ -23,5 +23,6 @@ USE_X11=	Yes
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/scripts
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/06/14 11:41:12 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2001/09/28 06:02:13 pvalchev Exp $
 
 COMMENT=		"Napster client for KDE 2"
 VERSION=		0.3
@@ -30,6 +30,8 @@ CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 
 CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2
+
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/admin
 
 pre-build:
 	@echo ""

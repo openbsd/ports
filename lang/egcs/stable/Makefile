@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2001/09/15 11:51:35 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2001/09/28 06:02:13 pvalchev Exp $
 
 # This is a configuration file for egcs
 
@@ -178,6 +178,7 @@ post-patch:
 # snapshot, you know what you're doing, don't you ?
 
 CONFIGURE_STYLE=	gnu dest
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gcc
 
 #CONFIGURE_SCRIPT=../source/configure
 

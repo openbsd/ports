@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/06/20 11:12:34 shell Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/28 06:02:13 pvalchev Exp $
 
 COMMENT=	"callback framework for C++"
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/scripts
 
 DOCFILE=	API FAQ UML conventions diagrams marshal \
 		powerusers requirements riscos signals

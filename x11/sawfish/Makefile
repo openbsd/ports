@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/07/09 17:11:18 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2001/09/28 06:02:16 pvalchev Exp $
 
 COMMENT=	"extensible window manager for the X Window System."
 
@@ -30,6 +30,7 @@ SUBST_VARS=	OPSYS_VER VERSION
 USE_X11=	Yes
 USE_GMAKE=      Yes
 CONFIGURE_STYLE= gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/etc
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --disable-capplet --disable-themer \
 		 --disable-gnome-widgets --disable-linguas

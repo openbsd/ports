@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/09/11 22:36:34 heko Exp $
+# $OpenBSD: Makefile,v 1.15 2001/09/28 06:02:13 pvalchev Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
@@ -28,6 +28,7 @@ FLAVOR?=
 PATCH_DIST_STRIP=-p1
 WRKSRC=	${WRKDIR}/${DISTNAME}/build
 CONFIGURE_STYLE=gnu dest
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build
 CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"/etc/vi.exrc\"' 
 CONFIGURE_ARGS+=--enable-multibyte --program-prefix=n --host=${ARCH}-unknown-netbsd
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/10 03:21:59 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2001/09/28 06:02:14 pvalchev Exp $
 
 COMMENT=	"write audio/data CD-Rs in disk-at-once mode"
 
@@ -22,6 +22,7 @@ BUILD_DEPENDS=		${PREFIX}/bin/antlr::devel/pccts
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf dest
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/paranoia ${WRKSRC}/scsilib
 CONFIGURE_ARGS+=	--with-posix-threads=no
 
 post-install:

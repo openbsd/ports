@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/02 13:54:57 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/28 06:02:14 pvalchev Exp $
 
 COMMENT=	"file monitor"
 
@@ -24,6 +24,7 @@ MAKE_ENV=	${CONFIGURE_ENV}
 MAKE_FLAGS=	CXXLD='--tag CXX ${CXX} -L${LOCALBASE}/lib/qt2'
 
 CONFIGURE_STYLE=	gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 CONFIGURE_ARGS=         --with-qt-includes=${LOCALBASE}/include/X11/qt2
 CONFIGURE_ARGS+=        --with-qt-libraries=${LOCALBASE}/lib/qt2
 CONFIGURE_ARGS+=        --with-extra-libs=${LOCALBASE}/lib

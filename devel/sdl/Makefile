@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/08/30 02:24:52 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2001/09/28 06:02:13 pvalchev Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
@@ -28,6 +28,7 @@ USE_GMAKE=	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test
 CONFIGURE_ENV+=	X11BASE="${X11BASE}"
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --disable-pthread-sem \

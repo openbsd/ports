@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/09/19 15:20:12 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/09/28 06:02:15 pvalchev Exp $
 
 COMMENT=		"office applications for kde"
 CATEGORIES=		x11 x11/kde productivity
@@ -18,6 +18,7 @@ LIB_DEPENDS=	kdecore.3::x11/kde/libs2
 
 MODULES=	qt2
 CONFIGURE_STYLE=	autoconf
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include

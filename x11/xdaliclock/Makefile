@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/07/10 21:38:46 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/09/28 06:02:16 pvalchev Exp $
 
 COMMENT=	"rather neat animated clock"
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/X11
 WRKSRC=			${WRKDIST}/X11
 
 .include <bsd.port.mk>

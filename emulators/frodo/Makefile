@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/07/25 11:50:14 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/09/28 06:02:13 pvalchev Exp $
 
 COMMENT=	"Commodore 64 emulator"
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
 CONFIGURE_STYLE=	gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/Frodo/Src
 USE_X11=		Yes
 
 RUN_DEPENDS=	${WISH}::x11/tk/8.3

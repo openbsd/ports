@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/15 23:26:38 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/28 06:02:13 pvalchev Exp $
 
 DISTNAME=	sqsh-1.7
 CATEGORIES=	databases shells
@@ -20,6 +20,7 @@ LIB_DEPENDS=	intl.1::devel/gettext \
 		tds.0::databases/freetds
 
 CONFIGURE_STYLE= gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		SYBASE="${LOCALBASE}"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2001/08/30 02:24:52 brad Exp $
+# $OpenBSD: Makefile,v 1.36 2001/09/28 06:02:15 pvalchev Exp $
 # Uses pthreads (can but does not at the moment)
 
 COMMENT=	"WWW and FTP proxy cache and accelerator"
@@ -26,6 +26,7 @@ STATEDIR?=	/var/squid
 SUBST_VARS=	STATEDIR
 
 CONFIGURE_STYLE= gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/cfgaux
 CONFIGURE_ARGS=	--localstatedir="${STATEDIR}" \
 		--enable-heap-replacement
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/04/13 20:29:14 todd Exp $
+# $OpenBSD: Makefile,v 1.7 2001/09/28 06:02:13 pvalchev Exp $
 # Original from: Yannick Cote
 
 DISTNAME=		lam-6.5.1
@@ -23,6 +23,7 @@ MASTER_SITE_SUBDIR=	files
 HOMEPAGE=		http://www.lam-mpi.org/
 
 CONFIGURE_STYLE=	gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config ${WRKSRC}/mpi2c++
 CONFIGURE_ARGS+=	--with-rsh="ssh -x"
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2001/05/06 03:19:44 lebel Exp $
+# $OpenBSD: Makefile,v 1.27 2001/09/28 06:02:14 pvalchev Exp $
 
 COMMENT=	"format ascii files for printing on PostScript printers"
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/
 
 CONFIGURE_STYLE=	gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/auxdir
 
 FLAVORS=	a4 letter letterdj
 FLAVOR?=	letter
