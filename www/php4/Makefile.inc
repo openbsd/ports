@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2003/04/30 19:15:57 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2003/05/02 19:54:22 avsm Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -6,11 +6,9 @@ ONLY_FOR_ARCHS=	alpha i386 m68k powerpc sparc sparc64
 
 V=		4.3.1
 DISTNAME=	php-${V}
-
 CATEGORIES=	www lang
 
 MAINTAINER=     Anil Madhavapeddy <avsm@openbsd.org>
-
 HOMEPAGE=	http://www.php.net/
 
 MASTER_SITES=	http://www.php.net/distributions/ \
@@ -29,9 +27,15 @@ PERMIT_DISTFILES_FTP=   Yes
 PHP_CONFIG_PATH=	/var/www/conf
 PHP_CONFIG_FILE=	${PHP_CONFIG_PATH}/php.ini
 
+# where the main php4 module is stored (outside the chroot)
+APACHE_MODULE_SUBDIR=	lib/php
+APACHE_MODULE_DIR=	${LOCALBASE}/${APACHE_MODULE_SUBDIR}
+
+# where the PEAR and extension modules are (inside the chroot)
+CHROOT_DIR?=		/var/www
+PEAR_DIR?=		${CHROOT_DIR}/pear
 MODULES_SUBDIR=		lib/php/modules
-MODULES_DIR=		${LOCALBASE}/${MODULES_SUBDIR}
-PEAR_DIR=		${LOCALBASE}/lib/php
+MODULES_DIR=		${CHROOT_DIR}/${MODULES_SUBDIR}
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV=          CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
@@ -59,3 +63,6 @@ post-configure:
 
 REGRESS_TARGET=		test
 REGRESS_FLAGS=		NO_INTERACTION=1
+
+PATCH_LIST=		${PORTSDIR}/www/php4/patches/patch-* \
+			patch-*
