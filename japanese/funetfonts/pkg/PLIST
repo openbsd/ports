@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/04/24 18:25:23 espie Exp $
+lib/X11/fonts/ja/7x14maru.pcf.gz
+lib/X11/fonts/ja/7x14rkmaru.pcf.gz
+lib/X11/fonts/ja/a16.pcf.gz
+lib/X11/fonts/ja/a16rk.pcf.gz
+lib/X11/fonts/ja/a18.pcf.gz
+lib/X11/fonts/ja/fonts.alias-funet
+lib/X11/fonts/ja/kanji16.pcf.gz
+lib/X11/fonts/ja/kanji18.pcf.gz
+lib/X11/fonts/ja/kanji24.pcf.gz
+lib/X11/fonts/ja/kanji26.pcf.gz
+lib/X11/fonts/ja/maru14.pcf.gz
+lib/X11/fonts/ja/maru16.pcf.gz
+lib/X11/fonts/ja/maru18.pcf.gz
+@exec cat %B/fonts.alias-* >%B/fonts.alias
+@exec echo "Remember to add %B to your font path."
+@exec /usr/X11R6/bin/mkfontdir %B || true
+@unexec cat %B/fonts.alias-* >%B/fonts.alias
+@unexec /usr/X11R6/bin/mkfontdir %B || true
+@unexec echo "Remove %B manually if it's now empty"

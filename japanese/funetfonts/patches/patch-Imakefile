@@ -1,0 +1,45 @@
+$OpenBSD: patch-Imakefile,v 1.1.1.1 2000/04/24 18:25:23 espie Exp $
+--- Imakefile.orig	Mon Apr 24 20:21:02 2000
++++ Imakefile	Mon Apr 24 20:21:56 2000
+@@ -1,13 +1,13 @@
+-SRCS =  7x14maru.bdf 7x14rkmaru.bdf a16.bdf a16rk.bdf a18.bdf a18rk.bdf \
+-	kanji16.bdf kanji18.bdf maru14.bdf maru16.bdf maru18.bdf
+-
+-OBJS =  7x14maru.snf 7x14rkmaru.snf a16.snf a16rk.snf a18.snf a18rk.snf \
+-	kanji16.snf kanji18.snf maru14.snf maru16.snf maru18.snf
++OBJS =  FontObj(7x14maru) FontObj(7x14rkmaru) \
++	FontObj(a16) FontObj(a16rk) FontObj(a18) \
++	FontObj(kanji16) FontObj(kanji18) FontObj(kanji24) FontObj(kanji26) \
++	FontObj(maru14) FontObj(maru16) FontObj(maru18) \
+ 
+ ALIASFILE = 7x14maru.alias a16.alias a18.alias kanji16.alias kanji18.alias \
++	    kanji24.alias kanji26.alias \
+ 	    maru14.alias maru16.alias maru18.alias
+ 
+-FONTINSTDIR = $(FONTDIR)/local
++FONTINSTDIR = $(FONTDIR)/ja
+ 
+ FONTCFLAGS = -t -i
+ 
+@@ -21,9 +21,11 @@ FontTarget(7x14rkmaru)
+ FontTarget(a16)
+ FontTarget(a16rk)
+ FontTarget(a18)
+-FontTarget(a18rk)
++XCOMM FontTarget(a18rk)
+ FontTarget(kanji16)
+ FontTarget(kanji18)
++FontTarget(kanji24)
++FontTarget(kanji26)
+ FontTarget(maru14)
+ FontTarget(maru16)
+ FontTarget(maru18)
+@@ -31,7 +33,7 @@ FontTarget(maru18)
+ all:: fonts.alias
+ 
+ fonts.alias:  $(ALIASFILE)
+-    cat  $(ALIASFILE) > fonts.alias
++	cat  $(ALIASFILE) > fonts.alias
+ 
+ clean::
+ 	$(RM) fonts.alias
