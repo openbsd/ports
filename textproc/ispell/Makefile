@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/02/02 17:02:38 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/02/10 20:40:19 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 NEED_VERSION=	1.163
@@ -21,7 +21,7 @@ MAINTAINER=	ports@openbsd.org
 
 MAKE_FLAGS=	TMPDIR=${WRKDIR} -f 
 
-WRKSRC=	${WRKDIR}/ispell-3.1
+WRKDIST=	${WRKDIR}/ispell-3.1
 
 pre-fetch pre-build pre-install:
 .if !defined(NO_WARNINGS)
