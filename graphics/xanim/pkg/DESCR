@@ -1,0 +1,13 @@
+Xanim is probably the most versatile X11 animation player currently
+available. It's fast, and supports lots of options, even though
+dithering, for instance, is not available for all codecs and for all sizes.
+
+Depending upon your architecture, some more codecs may be recognized,
+as these are handled by binary-only object files.
+
+Audio support should now work correctly on most platforms.
+
+IMPORTANT: some recent animations have improper 16 bits sound, that does 
+only use a very small range of the available values. This will sound like
+crap on an 8 bit machine, unless you use +AS<mult> to scale the audio
+samples by mult.

@@ -1,0 +1,130 @@
+--- xa_audio.c.orig	Tue Mar 24 00:54:59 1998
++++ xa_audio.c	Wed Dec  2 03:08:24 1998
+@@ -4436,6 +4436,8 @@
+ /*
+  * NetBSD port provided by Roland C Dowdeswell
+  * roland@imrryr.org
++ * Sloppiness fixed for OpenBSD by Marc Espie
++ * espie@openbsd.org
+  * Heavily stolen from the Sparc port (like the others)
+  * Tuesday 9/May 1995 -- very early -- still dark.
+  */
+@@ -4483,12 +4485,13 @@
+ 
+ 
+ /********** NetBSD_Audio_Init **********************
+- * Open /dev/audio and NetBSD.
++ * Open /dev/audio, patched for OpenBSD
+  *
+  *****/
+ void NetBSD_Audio_Init()
+ { int ret;
+   int type;
++  struct audio_encoding query;
+   audio_info_t a_info;
+   DEBUG_LEVEL2 fprintf(stderr,"NetBSD_Audio_Init\n");
+   if (xa_audio_present != XA_AUDIO_UNK) return;
+@@ -4506,29 +4509,85 @@
+ 
+   AUDIO_INITINFO(&a_info);
+   a_info.blocksize = 1024;
+-  ioctl(devAudio, AUDIO_SETINFO, &a_info);
+-  AUDIO_INITINFO(&a_info);
+-
+-#ifndef AUDIO_ENCODING_SLINEAR
+-  a_info.play.encoding = AUDIO_ENCODING_PCM16;
+-#else
+-	/* NetBSD-1.3 */
+-  a_info.play.encoding = AUDIO_ENCODING_SLINEAR; /* Signed, nativeorder */
+-#endif
+-  ioctl(devAudio, AUDIO_SETINFO, &a_info);
+-  AUDIO_INITINFO(&a_info);
+   a_info.mode = AUMODE_PLAY | AUMODE_PLAY_ALL;
+-  ioctl(devAudio, AUDIO_SETINFO, &a_info);
+-  AUDIO_INITINFO(&a_info);
+-  a_info.play.precision = 16;
+-  ioctl(devAudio, AUDIO_SETINFO, &a_info);
+-  AUDIO_INITINFO(&a_info);
+   a_info.play.sample_rate = 11025;
++  /* find true native formats */
++  for (query.index = 0;
++  	ioctl(devAudio, AUDIO_GETENC, &query) != -1;
++	query.index++)
++	{
++	if (query.flags & AUDIO_ENCODINGFLAG_EMULATED)
++	   	continue;
++	if (query.precision == 16)
++		{
++		a_info.play.encoding = query.encoding;
++		a_info.play.precision = query.precision;
++		break;
++		}
++	if ((query.precision == 8) && (
++		(query.encoding == AUDIO_ENCODING_SLINEAR) || 
++		(query.encoding == AUDIO_ENCODING_ULINEAR)) )
++		{
++		a_info.play.encoding = query.encoding;
++		a_info.play.precision = query.precision;
++		}
++		/* no linear format -> resort to log formats */
++	if (a_info.play.precision != 8)
++		{
++		if ( query.encoding == AUDIO_ENCODING_ULAW) 
++			a_info.play.encoding = query.encoding;
++		}
++	}
++	
+   ioctl(devAudio, AUDIO_SETINFO, &a_info);
+   ioctl(devAudio, AUDIO_GETINFO, &a_info);
+ 
+-  xa_audio_hard_type  = (a_info.play.precision==8)?XA_AUDIO_LINEAR_1M
+-						  :XA_AUDIO_SIGNED_2ML;
++  switch(a_info.play.encoding)
++  	{
++  case AUDIO_ENCODING_SLINEAR:
++  	xa_audio_hard_type = a_info.play.precision == 8 ? XA_AUDIO_SIGNED_1M :
++#if BYTE_ORDER == BIG_ENDIAN
++	XA_AUDIO_SIGNED_2MB;
++#else
++	XA_AUDIO_SIGNED_2ML;
++#endif
++	break;
++  case AUDIO_ENCODING_ULINEAR:
++  	xa_audio_hard_type = a_info.play.precision == 8 ? XA_AUDIO_LINEAR_1M :
++#if BYTE_ORDER == BIG_ENDIAN
++	XA_AUDIO_LINEAR_2MB;
++#else
++	XA_AUDIO_LINEAR_2ML;
++#endif
++	break;
++  case AUDIO_ENCODING_ULAW:
++   xa_audio_hard_type = XA_AUDIO_SUN_AU;
++  	break;
++  case AUDIO_ENCODING_ULINEAR_LE:
++  	xa_audio_hard_type = a_info.play.precision == 8 ? XA_AUDIO_LINEAR_1M :
++		XA_AUDIO_LINEAR_2ML;
++	break;
++  case AUDIO_ENCODING_ULINEAR_BE:
++  	xa_audio_hard_type = a_info.play.precision == 8 ? XA_AUDIO_LINEAR_1M :
++		XA_AUDIO_LINEAR_2MB;
++	break;
++  case AUDIO_ENCODING_SLINEAR_LE:
++  	xa_audio_hard_type = a_info.play.precision == 8 ? XA_AUDIO_SIGNED_1M :
++		XA_AUDIO_SIGNED_2ML;
++	break;
++  case AUDIO_ENCODING_SLINEAR_BE:
++  	xa_audio_hard_type = a_info.play.precision == 8 ? XA_AUDIO_SIGNED_1M :
++		XA_AUDIO_SIGNED_2MB;
++	break;
++  default:
++    fprintf(stderr,"Audio_Init: Weird audio format %d\n",
++	 a_info.play.encoding);
++    fprintf(stderr,"Will continue without audio\n");
++    xa_audio_present = XA_AUDIO_ERR;
++	 close(devAudio);
++	 return;
++   }
++  	
+   xa_audio_hard_freq  = a_info.play.sample_rate;
+   xa_audio_hard_buff  = a_info.blocksize;
+   xa_audio_hard_bps   = (a_info.play.precision==8)?1:2;

@@ -1,0 +1,38 @@
+--- Imakefile.orig	Tue Mar 24 00:55:08 1998
++++ Imakefile	Tue Dec  1 17:37:03 1998
+@@ -165,7 +165,7 @@
+ XCOMM XA_AUDIO_DEFS =
+ XCOMM
+ XCOMM -- Sun Sparcs -----------------------------------------------------------
+-XA_AUDIO_DEFS = -DXA_SPARC_AUDIO
++XCOMM XA_AUDIO_DEFS = -DXA_SPARC_AUDIO
+ XCOMM
+ XCOMM NOTE: Imakefile should add the -DSVR4 to Sun Solaris machines, if not
+ XCOMM       use the following:
+@@ -195,7 +195,7 @@
+ XCOMM XA_AUDIO_DEFS = -DXA_SONY_AUDIO
+ XCOMM
+ XCOMM -- NetBSD-current (as of 30/April 1995)----------------------------------
+-XCOMM XA_AUDIO_DEFS = -DXA_NetBSD_AUDIO
++XA_AUDIO_DEFS = -DXA_NetBSD_AUDIO
+ XCOMM
+ XCOMM -- QNX 4.2 PC's ---------------------------------------------------------
+ XCOMM XA_AUDIO_DEFS = -DXA_LINUX_AUDIO -DXA_LINUX_NEWER_SND -DXA_SELECT
+@@ -325,7 +325,7 @@
+ XCOMM   -- following symbols(XmbufDisplayBuffers, XmbufQueryExtension,
+ XCOMM   --  XmbufCreateBuffers).
+ XCOMM   -- NOTE_7: HP-UX machines need to comment this out.
+-XCOMM XA_MULTIBUF = -DXMBUF
++XA_MULTIBUF = -DXMBUF
+ XCOMM
+ XCOMM ********************
+  
+@@ -345,7 +345,7 @@
+ 
+ PROGRAMS = xanim
+ 
+-INCLUDES = -I$(INCDIR) $(XA_INCS)
++INCLUDES = -I$(INCDIR)/X11 $(XA_INCS)
+ 
+ 
+    LIBS1 = $(XA_LIBS) $(EXTENSIONLIB) $(XTOOLLIB) $(XLIB) -lm

@@ -1,0 +1,22 @@
+--- xa_audio.h.orig	Tue Mar 24 00:55:02 1998
++++ xa_audio.h	Tue Dec  1 16:55:38 1998
+@@ -112,6 +112,7 @@
+ #include <sys/stat.h>
+ #include <sys/ioctl.h>
+ #include <sys/ioccom.h>
++#include <machine/endian.h>
+ #endif
+ 
+ 
+@@ -138,8 +139,10 @@
+ #else
+ #define _FILE_DSP "/dev/dsp"
+ #define _FILE_MIXER "/dev/mixer"
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) 
+ #include <machine/soundcard.h>
++#elif defined(__OpenBSD__)
++#include <soundcard.h>
+ #else
+ #include <sys/soundcard.h>
+ #endif

@@ -1,0 +1,28 @@
+--- xanim.c.orig	Wed Dec  2 03:04:57 1998
++++ xanim.c	Wed Dec  2 03:07:18 1998
+@@ -620,6 +620,7 @@
+  fprintf(stdout,"      Ak    Enables video frame skipping to keep in sync with audio.\n");
+  fprintf(stdout,"      Ap#   Play Audio from output port #(Sparc only).\n");
+ /* fprintf(stdout,"      As#   Scale Audio playback speed by #.\n"); */
++ fprintf(stdout,"      AS#   Scale Audio playback amplitude by #.\n");
+  fprintf(stdout,"      Av#   Set Audio volume to #. range 0 to 100.\n");
+  fprintf(stdout,"\n  C[copts]  Color SubMenu\n");
+  fprintf(stdout,"      C1    Create cmap from 1st TrueColor frame. Map\n");
+@@ -853,6 +854,7 @@
+ 
+  vaudiof->device		= DEFAULT_AUDIO_DEVICE_NAME;
+  vaudiof->scale		= 1.0;
++ vaudiof->amp_scale	= 0.0;
+  vaudiof->mute		= xaFALSE;
+  vaudiof->volume		= DEFAULT_XA_AUDIO_VOLUME;
+  if (vaudiof->volume > XA_AUDIO_MAXVOL) vaudiof->volume = XA_AUDIO_MAXVOL;
+@@ -1159,6 +1161,9 @@
+ 		fprintf(stdout,"XAnim: +As# temporarily disabled.\n");
+ 		if (vaudiof->scale < 0.125) vaudiof->scale = 0.125;
+ 		if (vaudiof->scale > 8.000) vaudiof->scale = 8.000;
++		break;
++	      case 'S':   /* snd amplitude */
++	        j++; vaudiof->amp_scale = XA_Read_Float(in, &j);
+ 		break;
+ 	      case 'v':
+ 		j++; vaudiof->volume = XA_Read_Int(in,&j);

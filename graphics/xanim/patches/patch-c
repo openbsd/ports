@@ -1,0 +1,29 @@
+--- xanim.h.orig	Tue Mar 24 00:55:04 1998
++++ xanim.h	Wed Dec  2 03:05:30 1998
+@@ -28,10 +28,6 @@
+ 
+ #ifdef __bsdi__
+ #include <sys/malloc.h>
+-#else
+-#ifndef __FreeBSD__
+-#include <malloc.h>
+-#endif
+ #endif
+ 
+ #include <unistd.h>
+@@ -281,6 +277,7 @@
+   xaULONG fromfile;
+   xaULONG bufferit;
+   double scale;
++  double amp_scale;
+   char *device;
+ } XA_AUD_FLAGS;
+ 
+@@ -414,6 +411,7 @@
+   xaUBYTE *snd;		/* sound if present */
+   struct XA_SND_STRUCT *prev;
+   struct XA_SND_STRUCT *next;
++  xaUBYTE volume_boost;
+ } XA_SND;
+ 
+ #define XA_SND_CHUNK_SIZE 65536

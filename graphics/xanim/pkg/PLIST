@@ -1,0 +1,18 @@
+@cwd /usr/X11R6
+@name xanim-2.70.7.0
+bin/xanim
+man/cat1/xanim.0
+share/doc/xanim/Codecs.doc
+share/doc/xanim/Copyright
+share/doc/xanim/Examples.doc
+share/doc/xanim/Formats.doc
+share/doc/xanim/Problems.doc
+share/doc/xanim/Remote_Window.doc
+share/doc/xanim/Rev_History.doc
+share/doc/xanim/WWW_Helper.doc
+share/doc/xanim/cinepak.readme
+share/doc/xanim/creative.readme
+share/doc/xanim/ijg.readme
+share/doc/xanim/indeo.readme
+share/doc/xanim/xanim.readme
+@dirrm share/doc/xanim
