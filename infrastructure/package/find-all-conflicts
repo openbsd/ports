@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: find-all-conflicts,v 1.4 2002/03/11 22:00:37 naddy Exp $
+# $OpenBSD: find-all-conflicts,v 1.5 2002/03/19 22:20:50 espie Exp $
 # Copyright (c) 2000
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -27,19 +27,23 @@
 # check all packages in the current directory, and report conflicts which
 # are not apparent in @pkgcfl.
 
+use strict;
+
 use File::Spec;
 
 sub analyze {
 	my $fh = shift;
 	my $all = shift;
+	my $dir = shift;
 	my $conflicts = shift;
 	my ($name, $cwd);
 	my $default_conflict=1;
 	my $conflict_list = [];
+	my $basedir;
 	local $_;
 	while (<$fh>) {
 		chomp;
-		if (m/^\@(?:newdepend|libdepend|comment|exec|unexec|dirrm|mtree|src|pkgdep|mode|group|owner|display)/) {
+		if (m/^\@(?:newdepend|libdepend|comment|exec|unexec|mtree|src|pkgdep|mode|group|owner|display)/) {
 			next; 
 		} elsif (m/^\@ignore/) {
 			$_ = <$fh>;
@@ -53,6 +57,7 @@ sub analyze {
 			} else {
 				$cwd = File::Spec->catfile($cwd, $newpath);
 			}
+			$basedir = $cwd unless defined $basedir;
 		} elsif (m/^\@pkgcfl\s+(.*?)\s*$/) {
 			my $conflict=$1;
 			$conflict =~ s/\*/\.\*/g;
@@ -61,6 +66,16 @@ sub analyze {
 			push @$conflict_list, "$conflict";
 		} elsif (m/^\@option\s+no-default-conflict/) {
 			$default_conflict=0;
+		} elsif (m/^\@dirrm\s+/) {
+			my $d = $';
+			if (!File::Spec->file_name_is_absolute($d)) {
+				$d = File::Spec->catfile($basedir, $d);
+			}
+			$d = File::Spec->canonpath($d);
+			unless (defined $dir->{$d}) {
+				$dir->{$d} = [];
+			}
+			push @{$dir->{$d}}, $name;
 		} elsif (m/^\@/) {
 			print $_, "\n";
 		} else {
@@ -79,38 +94,52 @@ sub analyze {
 			push @$conflict_list, "\Q$1\E\\-.*";
 		}
 	}
-	$conflicts{$name}=$conflict_list;
+	$conflicts->{$name}=$conflict_list;
 }
 
+sub show_problems
+{
+    my $h = shift;
+    my $conflicts = shift;
+    while (my ($key, $l) = each %$h) {
+	    if (@$l > 1) {
+		my $notfound = 0;
+		for my $pkg (@$l) {
+		    FOUND: for my $pkg2 (@$l) {
+			    next FOUND if $pkg2 eq $pkg;
+			    for my $check (@{$conflicts->{$pkg}}) {
+				    next FOUND if ($pkg2 =~ m/^$check$/);
+			    }
+			    $notfound = 1;
+		    }
+		}
+		if ($notfound) {
+		    print "$key: ", join(',', @$l), "\n";
+		}
+	    }
+    }
+}
 
-%hash=();
-%conflicts=();
+my %hash=();
+my %dirhash=();
+my %conflicts=();
 
+print "Scanning packages\n";
+print "-----------------\n";
 for my $pkgname (<*.tgz>) {
 	print STDERR "$pkgname\n";
 	system "tar zxqf $pkgname +CONTENTS";
 	if (open(my $fh, '<+CONTENTS')) {
-	    analyze($fh, \%hash, \%conflicts);
+	    analyze($fh, \%hash, \%dirhash, \%conflicts);
 	    unlink("+CONTENTS");
 	} else {
 	    warn "Problem with $pkgname";
 	}
 }
 
-while (my ($key, $l) = each %hash) {
-	if (@$l > 1) {
-	    my $notfound = 0;
-	    for my $pkg (@$l) {
-	    	FOUND: for my $pkg2 (@$l) {
-			next FOUND if $pkg2 eq $pkg;
-			for my $check (@{$conflicts{$pkg}}) {
-				next FOUND if ($pkg2 =~ m/^$check$/);
-			}
-			$notfound = 1;
-		}
-	    }
-	    if ($notfound) {
-		print "$key: ", join(',', @$l), "\n";
-	    }
-	}
-}
+print "File problems:\n";
+print "-------------\n";
+show_problems(\%hash, \%conflicts);
+print "\@dirrm problems:\n";
+print  "---------------\n";
+show_problems(\%dirhash, \%conflicts);
