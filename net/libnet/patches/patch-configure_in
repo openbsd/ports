@@ -1,6 +1,22 @@
---- configure.in.orig	Fri Mar 10 00:36:04 2000
-+++ configure.in	Sat Jun 24 19:41:53 2000
-@@ -177,7 +177,7 @@
+$OpenBSD: patch-configure_in,v 1.2 2001/01/10 01:00:37 naddy Exp $
+--- configure.in.orig	Fri Mar 10 06:36:04 2000
++++ configure.in	Wed Jan 10 00:14:10 2001
+@@ -49,10 +49,10 @@ AC_C_CONST
+ dnl
+ dnl Use these compiler flags if we have gcc.
+ dnl
+-if test $ac_cv_prog_gcc = yes; then
+-    CCOPTS='-O3 -funroll-loops -fomit-frame-pointer -Wall'
+-    CFLAGS="$CCOPTS"
+-fi
++dnl if test $ac_cv_prog_gcc = yes; then
++dnl     CCOPTS='-O3 -funroll-loops -fomit-frame-pointer -Wall'
++dnl     CFLAGS="$CCOPTS"
++dnl fi
+ 
+ dnl
+ dnl Check for package inclusion/exclusion
+@@ -177,7 +177,7 @@ required to spoof ethernet frames)
      AC_DEFINE(LIBNET_BSDISH_OS)
      AC_DEFINE(HAVE_SOCKADDR_SA_LEN)
      LIBNET_CONFIG_DEFINES="-DLIBNET_BSDISH_OS"

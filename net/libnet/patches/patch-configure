@@ -1,6 +1,19 @@
---- configure.orig	Sat Jun 24 20:06:07 2000
-+++ configure	Sat Jun 24 20:06:17 2000
-@@ -1532,7 +1532,7 @@
+$OpenBSD: patch-configure,v 1.2 2001/01/10 01:00:37 naddy Exp $
+--- configure.orig	Wed Oct 27 20:47:27 1999
++++ configure	Wed Jan 10 00:14:20 2001
+@@ -901,11 +901,6 @@ fi
+ 
+ 
+ 
+-if test $ac_cv_prog_gcc = yes; then
+-    CCOPTS='-O3 -funroll-loops -fomit-frame-pointer -Wall'
+-    CFLAGS="$CCOPTS"
+-fi
+-
+ # Check whether --with-pf_packet or --without-pf_packet was given.
+ if test "${with_pf_packet+set}" = set; then
+   withval="$with_pf_packet"
+@@ -1532,7 +1527,7 @@ EOF
  EOF
  
      LIBNET_CONFIG_DEFINES="-DLIBNET_BSDISH_OS"
