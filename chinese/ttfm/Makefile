@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2003/04/19 13:30:47 espie Exp $ 
+# $OpenBSD: Makefile,v 1.13 2004/02/11 08:42:14 kevlo Exp $ 
 
 COMMENT=	"big5/gb enhanced truetype font manager"
 
-DISTNAME=       ttfm-0.9.3
+DISTNAME=       ttfm-0.9.5
 PKGNAME=        zh-${DISTNAME}
 CATEGORIES=     chinese 
 
@@ -13,17 +13,15 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/ttfm/ \
-		ftp://ftp.shellhung.org/pub/OpenBSD/packages/chinese/ 
-
-LIB_DEPENDS=	ttf.1::print/freetype
+MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/ttfm/
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS='${CFLAGS} -Wall -I$$(FREETYPE_INCL)' \
-	FREETYPE_INCL=${LOCALBASE}/include/freetype1
+	FREETYPE_INCL=${X11BASE}/include/freetype2
 
 NO_REGRESS=	Yes
 
 DOCS=	README USAGE
+SCRIPTS=	gscjk.ttfm xttfm.ttfm
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ttfm
@@ -31,7 +29,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/ttfinfo ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKBUILD}/ttfm.sh ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ttfm.sh.1 ${PREFIX}/man/man1
-	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/ttfm 
-	cp ${WRKSRC}/modules/* ${PREFIX}/share/ttfm
+	@cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/ttfm 
+	@cd ${WRKSRC}/modules; ${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/share/ttfm
 
 .include <bsd.port.mk>
