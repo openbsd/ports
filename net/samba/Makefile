@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2000/03/24 22:11:53 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2000/07/19 10:15:42 peter Exp $
 
-DISTNAME=	samba-2.0.6
+DISTNAME=	samba-2.0.7
 CATEGORIES=	net
 NEED_VERSION=	1.213
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
