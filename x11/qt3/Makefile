@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/23 17:35:12 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/23 23:35:46 lebel Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt3
@@ -214,11 +214,11 @@ do-install:
 	    ${QT_PLUGINSDIR}/imageformats
 	${INSTALL_DATA} ${WRKBUILD}/plugins/imageformats/libqmng.so \
 	    ${QT_PLUGINSDIR}/imageformats
-.if !empty(FLAVOR:Mno_postgresql)
+.if empty(FLAVOR:Mno_postgresql)
 	${INSTALL_DATA} ${WRKBUILD}/plugins/sqldrivers/libqsqlpsql.so \
 	    ${QT_PLUGINSDIR}/sqldrivers
 .endif
-.if !empty(FLAVOR:Mno_mysql)
+.if empty(FLAVOR:Mno_mysql)
 	${INSTALL_DATA} ${WRKBUILD}/plugins/sqldrivers/libqsqlmysql.so \
 	    ${QT_PLUGINSDIR}/sqldrivers
 .endif
