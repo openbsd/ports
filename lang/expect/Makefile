@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2000/03/28 11:54:14 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2000/07/18 07:14:15 turan Exp $
 
 DISTNAME=	expect-5.31
 CATEGORIES=	lang
@@ -13,7 +13,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+# autoconf is required by this port. it is not need to generate the 
+# configure script.
 LIB_DEPENDS=	tk83.1.3:x11/tk/8.3
+BUILD_DEPENDS=	autoconf::devel/autoconf
 
 SEPARATE_BUILD=	concurrent
 HAS_CONFIGURE=	Yes
