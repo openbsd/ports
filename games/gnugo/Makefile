@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/11/28 22:41:18 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2005/01/26 16:41:04 naddy Exp $
 
 COMMENT=	"GNU version of Go"
 
@@ -17,8 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m ncurses
 
 CONFIGURE_STYLE=	gnu
-
-MAKE_FLAGS=		MAKEINFO="makeinfo --no-split"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/gnugo

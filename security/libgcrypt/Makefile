@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/06/21 20:05:06 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2005/01/26 16:41:04 naddy Exp $
 
 COMMENT=		"crypto library based on code used in GnuPG"
 
@@ -30,9 +30,5 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-static \
 			--disable-asm
-CONFIGURE_ENV=		MAKEINFO="makeinfo --no-split"
-
-pre-configure:
-	@rm -f ${WRKSRC}/doc/gcrypt.info
 
 .include <bsd.port.mk>

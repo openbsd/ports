@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2004/12/18 23:30:36 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2005/01/26 16:41:04 naddy Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
 COMMENT=	"generic shared library support script"
@@ -24,8 +24,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
-
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 
@@ -37,9 +35,6 @@ SUBPACKAGE?=
 RUN_DEPENDS+=	::devel/libtool,-ltdl
 . endif
 .endif
-
-pre-configure:
-	@rm -f ${WRKSRC}/doc/libtool.info*
 
 do-regress:
 	cd ${WRKDIR}/bin && ln -sf ${LOCALBASE}/bin/autoconf-2.59 autoconf

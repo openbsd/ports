@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/11 07:11:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/01/26 16:41:03 naddy Exp $
 
 COMMENT=	"GNU Standards-compliant Makefile generator"
 
@@ -19,9 +19,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=gnu
-
-MAKE_FLAGS=	MAKEINFO="makeinfo --no-split"
-FAKE_FLAGS=	${MAKE_FLAGS} ${DESTDIRNAME}="${WRKINST}"
 
 REGRESS_DEPENDS=:gmake-*:devel/gmake
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/06/26 07:35:09 xsa Exp $
+# $OpenBSD: Makefile,v 1.12 2005/01/26 16:41:04 naddy Exp $
 
 COMMENT=		"GnuPG Made Easy"
 
@@ -19,12 +19,8 @@ MASTER_SITES=		ftp://ftp.gnupg.org/gcrypt/gpgme/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-gpgsm
-CONFIGURE_ENV=		MAKEINFO="makeinfo --no-split"
 
 RUN_DEPENDS=		:gnupg->=1.2.*:security/gnupg
 BUILD_DEPENDS=		${RUN_DEPENDS}
-
-pre-build:
-	@rm -f ${WRKSRC}/doc/gpgme.info*
 
 .include <bsd.port.mk>

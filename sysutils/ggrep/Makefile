@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/20 10:35:35 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2005/01/26 16:41:04 naddy Exp $
 
 COMMENT=	GNU versions of grep pattern matching utilities
 
@@ -25,8 +25,7 @@ SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		MAKEINFO="makeinfo --no-split"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-build:
 	@perl -i -pe 's/\bgrep\b/ggrep/g' ${WRKBUILD}/src/[ef]grep

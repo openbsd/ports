@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2004/11/23 11:22:02 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2005/01/26 16:41:04 naddy Exp $
 
 COMMENT=	"GNU make"
 
@@ -23,12 +23,8 @@ SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --program-prefix="g"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		MAKEINFO="makeinfo --no-split"
+		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/config
-
-post-extract:
-	@rm -f ${WRKSRC}/doc/make.info*
 
 post-install:
 	@chmod ${BINMODE} ${PREFIX}/bin/gmake

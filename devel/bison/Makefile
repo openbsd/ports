@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2004/11/23 11:22:00 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2005/01/26 16:41:04 naddy Exp $
 
 COMMENT=	"GNU parser generator"
 
@@ -17,8 +17,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
-
-MAKE_ENV=	MAKEINFOFLAGS="--no-split"
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

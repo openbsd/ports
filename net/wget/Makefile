@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2004/12/16 00:31:27 alek Exp $
+# $OpenBSD: Makefile,v 1.38 2005/01/26 16:41:04 naddy Exp $
 
 COMMENT=	"retrieve files from the 'net via HTTP and FTP"
 
@@ -26,8 +26,7 @@ WANTLIB=		c crypto ssl
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		MAKEINFO="makeinfo --no-split"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-build:
 	@perl -pi -e s#/usr/local/etc#${SYSCONFDIR}#g ${WRKSRC}/doc/wget.texi

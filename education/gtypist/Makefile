@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/11/24 11:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2005/01/26 16:41:04 naddy Exp $
 
 COMMENT=	"interactive typing tutor"
 
@@ -21,7 +21,6 @@ MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		MAKEINFO="makeinfo --no-split"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
