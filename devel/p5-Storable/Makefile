@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2002/10/30 04:38:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2002/11/27 21:36:43 pvalchev Exp $
+
+IGNORE=		"comes with ${OPSYS} as of release 3.3"
 
 COMMENT=	"persistency for perl data structures"
 
