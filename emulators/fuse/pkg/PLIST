@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/12/16 23:36:47 grange Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/10/17 06:27:04 grange Exp $
 @comment $RuOBSD: PLIST,v 1.3 2002/02/12 02:37:09 grange Exp $
 bin/fuse
 man/man1/fuse.1
 share/fuse/128-0.rom
 share/fuse/128-1.rom
+share/fuse/128p-0.rom
+share/fuse/128p-1.rom
 share/fuse/48.rom
+share/fuse/disk_plus3.z80
 share/fuse/keyboard.scr
 share/fuse/plus2-0.rom
 share/fuse/plus2-1.rom
@@ -13,10 +16,16 @@ share/fuse/plus3-1.rom
 share/fuse/plus3-2.rom
 share/fuse/plus3-3.rom
 share/fuse/tape_128.z80
+share/fuse/tape_16.z80
 share/fuse/tape_2048.z80
+share/fuse/tape_2068.z80
 share/fuse/tape_48.z80
+share/fuse/tape_pentagon.z80
 share/fuse/tape_plus2.z80
 share/fuse/tape_plus2a.z80
 share/fuse/tape_plus3.z80
 share/fuse/tc2048.rom
+share/fuse/tc2068-0.rom
+share/fuse/tc2068-1.rom
+share/fuse/trdos.rom
 @dirrm share/fuse
