@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/11/22 02:37:37 margarida Exp $
+# $OpenBSD: Makefile,v 1.3 2003/04/27 17:29:35 margarida Exp $
 
 COMMENT=		"low-calorie MIME generator"
 
-DISTNAME=		MIME-Lite-2.117
+DISTNAME=		MIME-Lite-3.01
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		mail perl5
 
