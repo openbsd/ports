@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2001/04/22 16:07:12 avsm Exp $
+# $OpenBSD: Makefile,v 1.37 2001/04/23 23:58:52 avsm Exp $
 
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
@@ -47,7 +47,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mcurl}
 CONFIGURE_ARGS+=	--with-curl
-LIB_DEPENDS+=		curl.1::net/curl
+LIB_DEPENDS+=		curl.2::net/curl
 .else
 CONFIGURE_ARGS+=	--without-curl
 .endif
