@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2001/01/21 19:19:59 jakob Exp $
+# $OpenBSD: Makefile,v 1.26 2001/01/21 21:07:16 brad Exp $
 
 VERSION=	4.32
 DISTNAME=	pine${VERSION}
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 
 HOMEPAGE=	http://www.washington.edu/pine/
 
-MAINTAINER=	Marco S Hyman <marc@openbsd.org>
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
@@ -36,7 +36,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mldap}
 LIB_DEPENDS+=	ldap.2::databases/openldap
-MAKE_FLAGS+=	LDAPLIBS="-lldap -llber" \
+MAKE_FLAGS=	LDAPLIBS="-lldap -llber" \
 		LDAPCFLAGS="-DENABLE_LDAP -I${PREFIX}/include"
 .endif
 
