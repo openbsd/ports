@@ -1,0 +1,16 @@
+$OpenBSD: patch-vncviewer_Imakefile,v 1.1.1.1 2001/09/08 00:38:11 lebel Exp $
+--- vncviewer/Imakefile.orig	Mon Jun 18 09:16:53 2001
++++ vncviewer/Imakefile	Wed Sep  5 08:47:31 2001
+@@ -13,10 +13,10 @@ XCOMM seems to cause problems on Digital
+ DEFINES = -DMITSHM
+ #endif
+ 
+-INCLUDES = -I../include -I. -I/usr/include
++INCLUDES = -I../include -I. -I/usr/include -I${LOCALBASE}/include
+ VNCAUTH_LIB = ../libvncauth/libvncauth.a
+ ZLIB_LIB = /usr/lib/libz.a
+-JPEG_LIB = /usr/lib/libjpeg.a
++JPEG_LIB = ${LOCALBASE}/lib/libjpeg.a
+ 
+ DEPLIBS = XawClientDepLibs $(VNCAUTH_LIB) $(ZLIB_LIB) $(JPEG_LIB)
+ LOCAL_LIBRARIES = XawClientLibs $(VNCAUTH_LIB) $(ZLIB_LIB) $(JPEG_LIB)

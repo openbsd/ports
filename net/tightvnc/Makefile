@@ -1,0 +1,58 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2001/09/08 00:38:11 lebel Exp $
+
+COMMENT=	"cross-platform remote desktop access"
+COMMENT-viewer=	"client for cross-platform remote desktop access"
+
+VERSION=	1.2.0
+PKGNAME=        tightvnc-${VERSION}
+DISTNAME=       ${PKGNAME}_unixsrc
+CATEGORIES=	net
+NEED_VERSION=	1.448
+MASTER_SITES=   http://prdownloads.sourceforge.net/vnc-tight/ \
+		ftp://ftp.sourceforge.net/pub/sourceforge/vnc-tight/
+MASTER_SITES0=	http://www.uk.research.att.com/vnc/dist/
+DOCDIST=	vnc-latest_doc.tgz
+DISTFILES=	${DISTNAME}.tar.gz ${DOCDIST}:0
+
+HOMEPAGE=	http://www.tightvnc.org/
+MAINTAINER=	Rob Casey <rob@minauros.com>
+
+LIB_DEPENDS=	jpeg.62.::graphics/jpeg
+
+# GPL
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+EXTRACT_ONLY=	${DISTNAME}.tar.gz
+WRKDIST=	${WRKDIR}/vnc_unixsrc
+IGNOREFILES=	${DOCDIST}
+
+MULTI_PACKAGES= -viewer
+SUBPACKAGE?=
+
+CONFIGURE_STYLE=	imake
+
+ALL_TARGET=    	World
+
+# We have to frob a few things, and we want our own permissions, so it's easier
+# to do the install ourselves.
+post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/Xvnc/programs/Xserver/Xvnc ${PREFIX}/bin/Xvnc
+	${INSTALL_PROGRAM} ${WRKSRC}/vncviewer/vncviewer ${PREFIX}/bin/vncviewer
+	${INSTALL_PROGRAM} ${WRKSRC}/vncpasswd/vncpasswd ${PREFIX}/bin/vncpasswd
+	${INSTALL_PROGRAM} ${WRKSRC}/vncconnect/vncconnect ${PREFIX}/bin/vncconnect
+	sed  -e s%/usr/local/vnc/classes%${TRUEPREFIX}/share/vnc/classes% \
+		< ${WRKSRC}/vncserver \
+		> ${WRKSRC}/vncserver.local
+	${INSTALL_SCRIPT} ${WRKSRC}/vncserver.local ${PREFIX}/bin/vncserver
+# The documentation comes with bogus ownerships; this is a little leaky security-wise
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vnc
+	tar -C ${PREFIX}/share/doc/vnc -xzf ${DISTDIR}/${DOCDIST}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/vnc
+# Go install Java classes
+	${INSTALL_DATA_DIR} ${PREFIX}/share/vnc
+	cp -R ${WRKSRC}/classes ${PREFIX}/share/vnc
+
+.include <bsd.port.mk>

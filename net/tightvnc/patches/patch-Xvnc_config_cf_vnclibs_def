@@ -1,0 +1,11 @@
+$OpenBSD: patch-Xvnc_config_cf_vnclibs_def,v 1.1.1.1 2001/09/08 00:38:11 lebel Exp $
+--- Xvnc/config/cf/vnclibs.def.orig	Mon Jan 29 16:23:52 2001
++++ Xvnc/config/cf/vnclibs.def	Wed Sep  5 08:47:31 2001
+@@ -5,5 +5,5 @@
+  * and programs/Xserver/hw/vnc whenever you change this file.
+  */
+ 
+-VNCLIBS = $(TOP)/../libvncauth/libvncauth.a /usr/lib/libjpeg.a
+-VNCCPPFLAGS = -I$(TOP)/../include
++VNCLIBS = $(TOP)/../libvncauth/libvncauth.a ${LOCALBASE}/lib/libjpeg.a
++VNCCPPFLAGS = -I$(TOP)/../include -I${LOCALBASE}/include
