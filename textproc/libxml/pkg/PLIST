@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2002/02/19 06:44:55 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.18 2002/03/12 15:47:17 kevlo Exp $
 bin/xml2-config
 bin/xmlcatalog
 bin/xmllint
@@ -6,6 +6,7 @@ include/libxml/DOCBparser.h
 include/libxml/HTMLparser.h
 include/libxml/HTMLtree.h
 include/libxml/SAX.h
+include/libxml/c14n.h
 include/libxml/catalog.h
 include/libxml/debugXML.h
 include/libxml/encoding.h
@@ -39,7 +40,7 @@ lib/xml2Conf.sh
 man/man1/xml2-config.1
 man/man1/xmlcatalog.1
 man/man1/xmllint.1
-man/man4/libxml.4
+man/man3/libxml.3
 share/aclocal/libxml.m4
 share/libxml2/Copyright
 share/libxml2/examples/testHTML.c
@@ -78,8 +79,31 @@ share/libxml2/html/libxml-xmlmemory.html
 share/libxml2/html/libxml-xpath.html
 share/libxml2/html/libxml-xpathinternals.html
 share/libxml2/html/libxml-xpointer.html
+share/libxml2/html/libxml.gif
+share/libxml2/html/redhat.gif
+share/libxml2/html/smallfootonly.gif
 share/libxml2/html/structure.gif
+share/libxml2/html/w3c.png
 share/libxml2/html/xml.html
+share/libxml2-python/examples/attribs.py
+share/libxml2-python/examples/build.py
+share/libxml2-python/examples/cutnpaste.py
+share/libxml2-python/examples/error.py
+share/libxml2-python/examples/invalid.xml
+share/libxml2-python/examples/push.py
+share/libxml2-python/examples/pushSAX.py
+share/libxml2-python/examples/serialize.py
+share/libxml2-python/examples/tst.py
+share/libxml2-python/examples/tst.xml
+share/libxml2-python/examples/tstURI.py
+share/libxml2-python/examples/tstxpath.py
+share/libxml2-python/examples/valid.xml
+share/libxml2-python/examples/validate.py
+share/libxml2-python/examples/xpath.py
+share/libxml2-python/examples/xpathext.py
+share/libxml2-python/examples/xpathret.py
+@dirrm share/libxml2-python/examples
+@dirrm share/libxml2-python
 @dirrm share/libxml2/html
 @dirrm share/libxml2/examples
 @dirrm share/libxml2
