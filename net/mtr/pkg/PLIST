@@ -1,2 +1,3 @@
 sbin/mtr
 man/man8/mtr.8
+@exec chmod 4555 %D/sbin/mtr
