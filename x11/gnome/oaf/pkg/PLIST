@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/09/17 20:54:41 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2001/09/20 20:01:22 naddy Exp $
 bin/oaf-client
 bin/oaf-config
 bin/oaf-run-query
@@ -21,6 +21,8 @@ include/liboaf/oaf.h
 lib/liboaf.la
 lib/oafConf.sh
 share/aclocal/oaf.m4
+share/examples/oaf/oaf/oaf-config.xml
+share/examples/oaf/oaf/oaf-config.xml.sample
 share/idl/oaf-factory.idl
 share/idl/oaf.idl
 share/locale/da/LC_MESSAGES/oaf.mo
@@ -46,12 +48,11 @@ share/locale/tr/LC_MESSAGES/oaf.mo
 share/locale/uk/LC_MESSAGES/oaf.mo
 share/oaf/OAF_naming-service.oaf
 share/oaf/empty.oafinfo
-share/oaf/oaf/oaf-config.xml
-share/oaf/oaf/oaf-config.xml.sample
 %%SHARED%%
 @exec mkdir -p %D/share/oaf/html/liboaf
 @dirrm share/oaf/html/liboaf
 @dirrm share/oaf/html
-@dirrm share/oaf/oaf
 @dirrm share/oaf
+@dirrm share/examples/oaf/oaf
+@dirrm share/examples/oaf
 @dirrm include/liboaf

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/09/20 18:39:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/09/20 20:01:22 naddy Exp $
 
 COMMENT=		"Object Activation Framework for GNOME"
 V=			0.6.5
@@ -27,6 +27,7 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
-	cp -r ${PREFIX}/../../etc/* ${PREFIX}/share/oaf/
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/oaf; \
+	cp -rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/oaf/
 
 .include <bsd.port.mk>
