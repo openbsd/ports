@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.2 1999/03/29 18:32:16 rohee Exp $
+# $OpenBSD: Makefile,v 1.3 1999/03/31 12:02:53 niklas Exp $
 
 DISTNAME=		ORBit-0.4.0
 CATEGORIES=		devel
 
-NEED_VERSION=		1.78
+NEED_VERSION=		1.79
 
 MAINTAINER=		rohee@OpenBSD.ORG
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	ORBit
 
-BUILD_DEPENDS=		libtool:${PORTSDIR}/devel/libtool
+BUILD_DEPENDS=		libtool:${PORTSDIR}/devel/libtool \
+			gindent:${PORTSDIR}/devel/gindent
 LIB_DEPENDS+=		glib\.1\.2:${PORTSDIR}/devel/glib
-RUN_DEPENDS+=		gindent:${PORTSDIR}/devel/gindent
 
 USE_GMAKE=		yes
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} # does not honour it
-CONFIGURE_ARGS+=	--sysconfdir=/etc
 
 CONFIGURE_ENV+=		LIBTOOL=/usr/local/bin/libtool
 
