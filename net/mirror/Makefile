@@ -3,14 +3,14 @@
 # Date created:		4 Dec 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/01/04 18:17:05 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1998/06/10 10:26:22 form Exp $
 #
 
-DISTNAME=	mirror-2.8
+DISTNAME=	mirror-2.9
 CATEGORIES=	net
 MASTER_SITES=	ftp://src.doc.ic.ac.uk/computing/archiving/mirror/
 
-MAINTAINER=	joey@OpenBSD.ORG
+MAINTAINER=	form@vs.itam.nsc.ru
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile

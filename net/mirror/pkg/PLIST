@@ -6,7 +6,7 @@ lib/mirror/lchat.pl
 lib/mirror/dateconv.pl
 lib/mirror/ftp.pl
 lib/mirror/lsparse.pl
-lib/mirror/mirror.pl
 lib/mirror/mirror.defaults.sample
+@dirrm lib/mirror
 man/man1/mirror.1
 man/man1/mirrormaster.1
