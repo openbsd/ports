@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 1999/02/23 09:28:23 espie Exp $
+# $OpenBSD: Makefile,v 1.35 1999/02/23 16:54:48 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -302,9 +302,6 @@ pre-configure:
 # use bootstrap-lean if you're pressed for space
 ALL_TARGET=bootstrap
 # ALL_TARGET=bootstrap-lean
-.if defined(MAKE_TESTS)
-ALL_TARGET+=check
-.endif
 
 # XXX we need to override do-build to get the warnings from within make
 do-build:
@@ -313,6 +310,12 @@ do-build:
 	(echo "Make bootstrap failed."; \
 	echo "Don't forget to look at ${WRKBUILD}/warnings"; ${FALSE})
 
+.if defined(MAKE_TESTS)
+post-build:
+	@(cd ${WRKBUILD}; \
+	${MAKE_ENV} LD_LIBRARY_PATH=${PREFIX}/lib \
+	${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} check)
+.endif
 
 ####
 # Install section
