@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 1999/04/25 18:49:03 brad Exp $
+# $OpenBSD: Makefile,v 1.21 1999/05/05 19:17:59 brad Exp $
 
 DISTNAME=	gtk+-1.2.2
 CATEGORIES=     x11
-
-NEED_VERSION=	1.79
-
-MAINTAINER=	marc@openbsd.org
-
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
 		http://www.ameth.org/gimp/gtk/v1.2/
+
+NEED_VERSION=	1.79
+
+MAINTAINER=	brad@openbsd.org
 
 LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib \
 		intl:${PORTSDIR}/devel/gettext
