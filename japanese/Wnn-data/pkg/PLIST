@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/04/21 02:54:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2000/04/22 12:05:58 espie Exp $
 lib/wnn/install-script
 lib/wnn/cvt_key_empty
 lib/wnn/cvt_key_tbl
@@ -8,4 +8,15 @@ lib/wnn/cvt_key_tbl.kt
 lib/wnn/cvt_key_tbl.mv
 lib/wnn/cvt_key_tbl.vt
 lib/wnn/serverdefs
+@comment Make those dirs in the common data part because of xwnmo
+@exec mkdir -p %D/lib/wnn/ja_JP
+@exec mkdir -p %D/lib/wnn/lt_LN
+@exec mkdir -p %D/lib/wnn/zh_TW
+@exec mkdir -p %D/lib/wnn/zh_CN
+@exec mkdir -p %D/lib/wnn/ko_KR
+@dirrm lib/wnn/ja_JP
+@dirrm lib/wnn/lt_LN
+@dirrm lib/wnn/zh_TW
+@dirrm lib/wnn/zh_CN
+@dirrm lib/wnn/ko_KR
 @dirrm lib/wnn

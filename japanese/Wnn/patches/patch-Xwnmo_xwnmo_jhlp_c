@@ -1,0 +1,11 @@
+$OpenBSD: patch-Xwnmo_xwnmo_jhlp_c,v 1.1 2000/04/22 12:05:57 espie Exp $
+--- Xwnmo/xwnmo/jhlp.c.orig	Fri Apr 21 17:55:01 2000
++++ Xwnmo/xwnmo/jhlp.c	Fri Apr 21 17:55:12 2000
+@@ -415,7 +415,6 @@ char **argv;
+     XLCd xlc;
+ #endif /* X11R5 */
+     extern char *get_server_env();
+-    extern char *index();
+ 
+     prgname = argv[0];
+     if (create_arg_string(argv, argc) == -1) exit(1);

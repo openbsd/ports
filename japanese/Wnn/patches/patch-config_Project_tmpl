@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_Project_tmpl,v 1.5 2000/04/21 15:09:52 espie Exp $
+$OpenBSD: patch-config_Project_tmpl,v 1.6 2000/04/22 12:05:58 espie Exp $
 --- config/Project.tmpl.orig	Mon Aug 29 10:40:17 1994
-+++ config/Project.tmpl	Fri Apr 21 16:51:46 2000
++++ config/Project.tmpl	Fri Apr 21 18:04:48 2000
 @@ -14,6 +14,20 @@ XCOMM $XConsortium: Project.tmpl,v 1.242
   *                                                                          *
   ***************************************************************************/
@@ -22,6 +22,18 @@ $OpenBSD: patch-config_Project_tmpl,v 1.5 2000/04/21 15:09:52 espie Exp $
  #define ProjectX		6	/* do *not* change this line */
  
  /* The following project-specific rules are defined at the end of this file:
+@@ -70,9 +84,9 @@ XCOMM $XConsortium: Project.tmpl,v 1.242
+ #ifndef BuildXKB
+ #define BuildXKB		NO
+ #endif
+-#ifndef BuildXKBlib
++# needed for correct link
++#undef  BuildXKBlib
+ #define BuildXKBlib		NO	/* not yet a standard part of Xlib */
+-#endif
+ #ifndef BuildFresco
+ #if HasCplusplus && !HasGcc2ForCplusplus
+ #define BuildFresco		YES
 @@ -1085,13 +1099,8 @@ clean::									@@\
  /* */# OMRON INPUT MATHOD MAKE ENV
  /* */#

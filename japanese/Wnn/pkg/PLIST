@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2000/04/21 15:09:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2000/04/22 12:05:58 espie Exp $
 bin/atod
 bin/atof
 bin/dtoa
@@ -517,8 +517,6 @@ share/doc/ja-Wnn/manual/v3tov4/v3tov4
 @dirrm share/doc/ja-Wnn/manual
 @dirrm share/doc/ja-Wnn
 @dirrm lib/wnn/lt_LN/rk
-@dirrm lib/wnn/lt_LN
 @dirrm lib/wnn/ja_JP/rk.vi
 @dirrm lib/wnn/ja_JP/rk
-@dirrm lib/wnn/ja_JP
 @dirrm include/wnn

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ko,v 1.3 2000/04/21 15:09:52 espie Exp $
+@comment $OpenBSD: PLIST-ko,v 1.4 2000/04/22 12:05:58 espie Exp $
 bin/katod
 bin/katof
 bin/kdtoa
@@ -46,73 +46,6 @@ lib/wnn/ko_KR/uumrc
 lib/wnn/ko_KR/wnnenvrc
 lib/wnn/ko_KR/wnnenvrc_R
 lib/wnn/ko_KR/wnnstat.msg
-share/doc/zh-cWnn/manual.en/README
-share/doc/zh-cWnn/manual.en/Table-a-2.1.Z
-share/doc/zh-cWnn/manual.en/Table-a-2.2.Z
-share/doc/zh-cWnn/manual.en/Table-a-2.3.Z
-share/doc/zh-cWnn/manual.en/Table-a-3.1.Z
-share/doc/zh-cWnn/manual.en/Table-a-3.2.Z
-share/doc/zh-cWnn/manual.en/Table-a-3.3.Z
-share/doc/zh-cWnn/manual.en/Table-a-4.1.Z
-share/doc/zh-cWnn/manual.en/Table-a-4.2.Z
-share/doc/zh-cWnn/manual.en/Table-a-4.3.Z
-share/doc/zh-cWnn/manual.en/Table-a-4.4.Z
-share/doc/zh-cWnn/manual.en/Table-a-6.1.Z
-share/doc/zh-cWnn/manual.en/Table-a-6.2.Z
-share/doc/zh-cWnn/manual.en/Table-c-2.1.Z
-share/doc/zh-cWnn/manual.en/Table-c-2.2.Z
-share/doc/zh-cWnn/manual.en/Table-c-2.3.Z
-share/doc/zh-cWnn/manual.en/Table-c-2.4.Z
-share/doc/zh-cWnn/manual.en/Table-c-2.5.Z
-share/doc/zh-cWnn/manual.en/Table-c-2.6.Z
-share/doc/zh-cWnn/manual.en/Table-c-2.7.Z
-share/doc/zh-cWnn/manual.en/Table-c-2.8.Z
-share/doc/zh-cWnn/manual.en/Table-c-3.1.Z
-share/doc/zh-cWnn/manual.en/Table-c-3.2.Z
-share/doc/zh-cWnn/manual.en/Table-c-3.3.Z
-share/doc/zh-cWnn/manual.en/Table-c-3.4.Z
-share/doc/zh-cWnn/manual.en/Table-c-3.5.Z
-share/doc/zh-cWnn/manual.en/Table-c-5.1.Z
-share/doc/zh-cWnn/manual.en/Table-c-6.1.Z
-share/doc/zh-cWnn/manual.en/Table-c-6.2.Z
-share/doc/zh-cWnn/manual.en/Table-c-6.3.Z
-share/doc/zh-cWnn/manual.en/Table-c-6.4.Z
-share/doc/zh-cWnn/manual.en/Table-c-6.5.Z
-share/doc/zh-cWnn/manual.en/Table-c-6.6.Z
-share/doc/zh-cWnn/manual.en/Table-c-6.7.Z
-share/doc/zh-cWnn/manual.en/Table-c-6.8.Z
-share/doc/zh-cWnn/manual.en/Table-c-7.1.Z
-share/doc/zh-cWnn/manual.en/Table-c-7.2.Z
-share/doc/zh-cWnn/manual.en/app
-share/doc/zh-cWnn/manual.en/chap1
-share/doc/zh-cWnn/manual.en/chap2
-share/doc/zh-cWnn/manual.en/chap3
-share/doc/zh-cWnn/manual.en/chap4
-share/doc/zh-cWnn/manual.en/chap5
-share/doc/zh-cWnn/manual.en/chap6
-share/doc/zh-cWnn/manual.en/chap7
-share/doc/zh-cWnn/manual.en/content
-share/doc/zh-cWnn/manual.en/cover
-share/doc/zh-cWnn/manual.en/index
-share/doc/zh-cWnn/manual.en/preface
-share/doc/zh-cWnn/manual/README
-share/doc/zh-cWnn/manual/app
-share/doc/zh-cWnn/manual/chap1
-share/doc/zh-cWnn/manual/chap2
-share/doc/zh-cWnn/manual/chap3
-share/doc/zh-cWnn/manual/chap4
-share/doc/zh-cWnn/manual/chap5
-share/doc/zh-cWnn/manual/chap6
-share/doc/zh-cWnn/manual/chap7
-share/doc/zh-cWnn/manual/chap8
-share/doc/zh-cWnn/manual/contents
-share/doc/zh-cWnn/manual/glossary
-share/doc/zh-cWnn/manual/index
-share/doc/zh-cWnn/manual/preface
 @exec /usr/local/lib/wnn/install-script
-@dirrm share/doc/zh-cWnn/manual.en
-@dirrm share/doc/zh-cWnn/manual
-@dirrm share/doc/zh-cWnn
 @dirrm lib/wnn/ko_KR/rk
-@dirrm lib/wnn/ko_KR
 @dirrm include/kwnn

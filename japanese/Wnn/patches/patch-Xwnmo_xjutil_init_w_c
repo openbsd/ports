@@ -1,0 +1,11 @@
+$OpenBSD: patch-Xwnmo_xjutil_init_w_c,v 1.1 2000/04/22 12:05:57 espie Exp $
+--- Xwnmo/xjutil/init_w.c.orig	Fri Apr 21 17:57:14 2000
++++ Xwnmo/xjutil/init_w.c	Fri Apr 21 17:57:21 2000
+@@ -76,7 +76,6 @@ env_state()
+     char *p;
+     char ret = '\0';
+ #ifndef SYSVR2
+-    extern char *index();
+ #else
+     extern char *strchr();
+ #endif

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zh,v 1.3 2000/04/21 15:09:52 espie Exp $
+@comment $OpenBSD: PLIST-zh,v 1.4 2000/04/22 12:05:58 espie Exp $
 bin/catod
 bin/catof
 bin/cdtoa
@@ -202,9 +202,7 @@ share/doc/zh-cWnn/manual/preface
 @dirrm lib/wnn/zh_TW/rk_z
 @dirrm lib/wnn/zh_TW/rk_p
 @dirrm lib/wnn/zh_TW/rk
-@dirrm lib/wnn/zh_TW
 @dirrm lib/wnn/zh_CN/rk_z
 @dirrm lib/wnn/zh_CN/rk_p
 @dirrm lib/wnn/zh_CN/rk
-@dirrm lib/wnn/zh_CN
 @dirrm include/cwnn

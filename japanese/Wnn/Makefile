@@ -1,11 +1,11 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.25 2000/04/21 15:09:51 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2000/04/22 12:05:57 espie Exp $
 
 DISTNAME=	Wnn4.2
 
-MULTI_PACKAGES=-dict -zh -zhdict -ko -kodict
+MULTI_PACKAGES=-dict -zh -zhdict -ko -kodict -xwnmo
 NEED_VERSION=	1.270
 SUBPACKAGE?=
 
@@ -30,6 +30,9 @@ PKGNAME=	ko-Wnn-4.2
 CATEGORIES=	korean
 PREFIX=${WNNDICDIR}
 PKGNAME=	ko-Wnn-dict-4.2
+.elif ${SUBPACKAGE} == "-wnmo"
+CATEGORIES=	japanese chinese korean
+PKGNAME=	Wnn-xwnmo-4.2
 .else
 CATEGORIES=	japanese
 PKGNAME=	ja-Wnn-4.2
@@ -88,6 +91,7 @@ do-configure:
 	@echo "   WNNDICDIR = ${WNNDICDIR}"   >${CONFIG_FILE}
 	@echo "  WNNBASEDIR = ${PREFIX}"     >>${CONFIG_FILE}
 	@echo "#define BuildWnn		YES" >>${CONFIG_FILE}
+	@echo "#define BuildJlibV3	YES" >>${CONFIG_FILE}
 .if ${MULTI_PACKAGES:M-zh}
 	@echo "#define BuildCWnn	YES" >>${CONFIG_FILE}
 .else
@@ -98,8 +102,11 @@ do-configure:
 .else
 	@echo "#define BuildKWnn	NO"  >>${CONFIG_FILE}
 .endif
+.if ${MULTI_PACKAGES:M-xwnmo}
+	@echo "#define BuildXwnmo	YES" >>${CONFIG_FILE}
+.else
 	@echo "#define BuildXwnmo	NO"  >>${CONFIG_FILE}
-	@echo "#define BuildJlibV3	YES" >>${CONFIG_FILE}
+.endif
 	@cd ${WRKSRC}/config && ln -sf Project.tmpl X11.tmpl
 
 MAKE_FLAGS=IMAKE='imake -DPorts' WNNOWNER_INDIRECT=wnn
