@@ -1,12 +1,22 @@
-$OpenBSD: patch-runtime_syntax_c_vim,v 1.1 2004/02/04 14:29:38 lebel Exp $
---- runtime/syntax/c.vim.orig	2003-01-23 14:42:06.000000000 -0500
-+++ runtime/syntax/c.vim	2004-02-04 09:13:56.000000000 -0500
+$OpenBSD: patch-runtime_syntax_c_vim,v 1.2 2004/02/09 18:01:40 lebel Exp $
+--- runtime/syntax/c.vim.orig	2003-01-23 22:42:06.000000000 +0300
++++ runtime/syntax/c.vim	2004-02-08 11:33:48.000000000 +0300
 @@ -33,7 +33,7 @@ if exists("c_no_cformat")
    " cCppString: same as cString, but ends at end of line
    syn region	cCppString	start=+L\="+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end='$' contains=cSpecial
  else
 -  syn match	cFormat		display "%\(\d\+\$\)\=[-+' #0*]*\(\d*\|\*\|\*\d\+\$\)\(\.\(\d*\|\*\|\*\d\+\$\)\)\=\([hlL]\|ll\)\=\([diuoxXDOUfeEgGcCsSpn]\|\[\^\=.[^]]*\]\)" contained
-+  syn match	cFormat		display "%\(\d\+\$\)\=[-+' #0*]*\(\d*\|\*\|\*\d\+\$\)\(\.\(\d*\|\*\|\*\d\+\$\)\)\=\([hlL]\|ll\)\=\([bdiuoxXDOUfeEgGcCsSpn]\|\[\^\=.[^]]*\]\)" contained
++  syn match	cFormat		display "%\(\d\+\$\)\=[-+' #0*]*\(\d*\|\*\|\*\d\+\$\)\(\.\(\d*\|\*\|\*\d\+\$\)\)\=\([hlL]\|ll\)\=\([bdiuoxXDOUfeEgGcCsSpnrz]\|\[\^\=.[^]]*\]\)" contained
    syn match	cFormat		display "%%" contained
    syn region	cString		start=+L\="+ skip=+\\\\\|\\"+ end=+"+ contains=cSpecial,cFormat
    " cCppString: same as cString, but ends at end of line
+@@ -228,7 +228,8 @@ if !exists("c_no_ansi") || exists("c_ans
+   syn keyword cConstant EMFILE EMLINK EMSGSIZE ENAMETOOLONG ENFILE ENODEV
+   syn keyword cConstant ENOENT ENOEXEC ENOLCK ENOMEM ENOSPC ENOSYS
+   syn keyword cConstant ENOTDIR ENOTEMPTY ENOTSUP ENOTTY ENXIO EPERM
+-  syn keyword cConstant EPIPE ERANGE EROFS ESPIPE ESRCH ETIMEDOUT EXDEV
++  syn keyword cConstant EPIPE ERANGE EROFS ESPIPE ESRCH ETIMEDOUT EWOULDBLOCK
++  syn keyword cConstant EXDEV
+   " math.h
+   syn keyword cConstant M_E M_LOG2E M_LOG10E M_LN2 M_LN10 M_PI M_PI_2 M_PI_4
+   syn keyword cConstant M_1_PI M_2_PI M_2_SQRTPI M_SQRT2 M_SQRT1_2
