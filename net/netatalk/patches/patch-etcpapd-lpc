@@ -1,6 +1,6 @@
-$OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
+$OpenBSD: patch-etcpapd-lpc,v 1.3 2001/04/18 13:17:44 brad Exp $
 --- etc/papd/lp.c.orig	Sun Aug 17 09:20:25 1997
-+++ etc/papd/lp.c	Fri May 19 11:09:43 2000
++++ etc/papd/lp.c	Thu Mar 29 16:31:06 2001
 @@ -44,6 +44,8 @@
  #include <sys/time.h>
  #include <sys/socket.h>
@@ -25,7 +25,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
  
  #include "printer.h"
  #include "file.h"
-@@ -100,20 +104,26 @@
+@@ -100,20 +104,26 @@ struct lp {
  #define LP_CONNECT	(1<<3)
  #define LP_QUEUE	(1<<4)
  
@@ -54,7 +54,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
  lp_pagecost()
  {
      char	cost[ 22 ];
-@@ -131,19 +141,25 @@
+@@ -131,19 +141,25 @@ lp_pagecost()
  }
  #endif ABS_PRINT
  
@@ -82,7 +82,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
  lp_job( job )
      char	*job;
  {
-@@ -164,12 +180,14 @@
+@@ -164,12 +180,14 @@ lp_job( job )
  	}
      }
      *q = '\0';
@@ -98,7 +98,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
      char	*cp, buf[ BUFSIZ ];
      struct stat	st;
  #ifdef ABS_PRINT
-@@ -209,12 +227,27 @@
+@@ -209,12 +227,27 @@ lp_init( out )
      lp.lp_letter = 'A';
  
      if ( printer->p_flags & P_SPOOLED ) {
@@ -130,7 +130,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
  	if ( st.st_mode & 010 ) {
  	    syslog( LOG_INFO, "lp_init: queuing is disabled" );
  	    spoolerror( out, "Queuing is disabled." );
-@@ -250,7 +283,7 @@
+@@ -250,7 +283,7 @@ lp_init( out )
  	lp.lp_seq = n;
  
  	n = ( n + 1 ) % 1000;
@@ -139,7 +139,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
  	lseek( fd, 0L, 0 );
  	write( fd, buf, strlen( buf ));
  	close( fd );
-@@ -263,6 +296,7 @@
+@@ -263,6 +296,7 @@ lp_init( out )
      return( 0 );
  }
  
@@ -147,7 +147,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
  lp_open( out )
      struct papfile	*out;
  {
-@@ -285,7 +319,7 @@
+@@ -285,7 +319,7 @@ lp_open( out )
  	    return( -1 );
  	}
      } else {
@@ -156,7 +156,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
  
  	if (( fd = open( name, O_WRONLY|O_CREAT|O_EXCL, 0660 )) < 0 ) {
  	    syslog( LOG_ERR, "lp_open %s: %m", name );
-@@ -303,17 +337,19 @@
+@@ -303,17 +337,19 @@ lp_open( out )
      return( 0 );
  }
  
@@ -178,7 +178,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
  lp_write( buf, len )
      char	*buf;
      int		len;
-@@ -329,13 +365,14 @@
+@@ -329,13 +365,14 @@ lp_write( buf, len )
      return( 0 );
  }
  
@@ -194,7 +194,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
      }
  
      if ( lp.lp_flags & LP_OPEN ) {
-@@ -343,13 +380,13 @@
+@@ -343,13 +380,13 @@ lp_cancel()
      }
  
      for ( letter = 'A'; letter < lp.lp_letter; letter++ ) {
@@ -210,7 +210,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
  }
  
  /*
-@@ -358,6 +395,7 @@
+@@ -358,6 +395,7 @@ lp_cancel()
   *
   * XXX piped?
   */
@@ -218,7 +218,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
  lp_print()
  {
      char		buf[ MAXPATHLEN ];
-@@ -368,19 +406,19 @@
+@@ -368,19 +406,19 @@ lp_print()
      FILE		*cfile;
  
      if (( lp.lp_flags & LP_INIT ) == 0 || lp.lp_letter == 'A' ) {
@@ -242,7 +242,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
  	}
  	fprintf( cfile, "H%s\n", hostname );	/* XXX lp_host? */
  
-@@ -418,60 +456,63 @@
+@@ -418,46 +456,48 @@ lp_print()
  	}
  	fclose( cfile );
  
@@ -299,10 +299,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
  lp_conn_unix()
  {
      int			s;
-     struct sockaddr_un	saun;
-+    size_t		len;
- 
-     if (( s = socket( AF_UNIX, SOCK_STREAM, 0 )) < 0 ) {
+@@ -467,11 +507,11 @@ lp_conn_unix()
  	syslog( LOG_ERR, "lp_conn_unix socket: %m" );
  	return( -1 );
      }
@@ -317,7 +314,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
  	syslog( LOG_ERR, "lp_conn_unix connect %s: %m", saun.sun_path );
  	close( s );
  	return( -1 );
-@@ -480,11 +521,13 @@
+@@ -480,11 +520,13 @@ lp_conn_unix()
      return( s );
  }
  
@@ -331,7 +328,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
  lp_conn_inet()
  {
      int			privfd, port = IPPORT_RESERVED - 1;
-@@ -513,10 +556,10 @@
+@@ -513,10 +555,10 @@ lp_conn_inet()
  	return( -1 );
      }
  
@@ -344,7 +341,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
      sin.sin_port = sp->s_port;
  
      if ( connect( privfd, (struct sockaddr *)&sin,
-@@ -529,6 +572,7 @@
+@@ -529,6 +571,7 @@ lp_conn_inet()
      return( privfd );
  }
  
@@ -352,7 +349,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
  lp_rmjob( job )
      int		job;
  {
-@@ -544,7 +588,7 @@
+@@ -544,7 +587,7 @@ lp_rmjob( job )
  	return( -1 );
      }
  
@@ -361,7 +358,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
      n = strlen( buf );
      if ( write( s, buf, n ) != n ) {
  	syslog( LOG_ERR, "lp_rmjob write: %m" );
-@@ -569,6 +613,7 @@
+@@ -569,6 +612,7 @@ char	*tag_files = "files: ";
  char	*tag_size = "size: ";
  char	*tag_status = "status: ";
  
@@ -369,7 +366,7 @@ $OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
  lp_queue( out )
      struct papfile	*out;
  {
-@@ -581,7 +626,7 @@
+@@ -581,7 +625,7 @@ lp_queue( out )
  	return( -1 );
      }
  

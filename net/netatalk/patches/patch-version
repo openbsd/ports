@@ -1,6 +1,6 @@
-$OpenBSD: patch-version,v 1.2 2001/03/19 13:51:21 wilfried Exp $
+$OpenBSD: patch-version,v 1.3 2001/04/18 13:17:44 brad Exp $
 --- VERSION.orig	Sun Jan 31 09:49:05 1999
-+++ VERSION	Thu Mar 15 19:34:56 2001
++++ VERSION	Wed Apr 18 14:04:32 2001
 @@ -1 +1 @@
 -990130
-+990130-OpenBSD-1.1
++990130-OpenBSD-1.1.2
