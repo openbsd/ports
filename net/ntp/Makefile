@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2001/02/11 06:16:33 danh Exp $
+# $OpenBSD: Makefile,v 1.6 2001/02/13 20:50:30 brad Exp $
 
 VERSION=	4.0.99k
 DISTNAME=	ntp-${VERSION}
 CATEGORIES=	net
 NEED_VERSION=	1.352
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
+		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ \
 		ftp://ftp.cs.umn.edu/mirrors00/ftp.udel.edu/pub/ntp/ntp4/
 
-HOMEPAGE=	http://www.eecis.udel.edu/~ntp/
+HOMEPAGE=	http://www.ntp.org/
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
