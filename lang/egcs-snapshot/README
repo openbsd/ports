@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 1999/01/24 21:36:12 espie Exp $
+$OpenBSD: README,v 1.3 1999/02/01 23:34:08 espie Exp $
 
 Warning: highly experimental port.
 
@@ -58,12 +58,15 @@ play with -fsquangle: since this is an option you need to activate for
 building the library, you had better decide from the start.
 
 On the other hand, there are several known situations which confuse our
-specific flavor of gas. For instance, recent snapshots build fine on the
+specific flavor of gas. For instance, some recent snapshots built fine on the
 older machines with default CFLAGS (-O2 -g), but crash when -g is removed.
+This seems to be fixed as of 19990131
 
 As of 19990117, I personally built egcs for m68k, i386, alpha, and sparc.
 So all those archs *do* work. If it doesn't work for you, you've been doing
 something wrong.
+
+As of 19990131, I checked that i386 and m68k did work.
 
 Once you get through all those caveats, and manage to build egcs, one
 nice point is that you get fairly good C, C++, f77, objective-C, and

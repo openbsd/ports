@@ -20,13 +20,23 @@ Running target unix
 
 
 Running target unix
-FAIL: gcc.c-torture/execute/980526-1.c execution,  -O2 -fomit-frame-pointer -finline-functions 
+FAIL: gcc.c-torture/execute/930603-1.c execution,  -O0 
+FAIL: gcc.c-torture/execute/930603-1.c execution,  -O1 
+FAIL: gcc.c-torture/execute/930603-1.c execution,  -O2 
+FAIL: gcc.c-torture/execute/930603-1.c execution,  -O2 -g 
+FAIL: gcc.c-torture/execute/930603-1.c execution,  -Os 
 FAIL: gcc.c-torture/execute/990119-1.c execution,  -O0 
 FAIL: gcc.c-torture/execute/990119-1.c execution,  -O1 
 FAIL: gcc.c-torture/execute/990119-1.c execution,  -O2 
 FAIL: gcc.c-torture/execute/990119-1.c execution,  -O2 -fomit-frame-pointer -finline-functions 
 FAIL: gcc.c-torture/execute/990119-1.c execution,  -O2 -g 
 FAIL: gcc.c-torture/execute/990119-1.c execution,  -Os 
+FAIL: gcc.c-torture/execute/990128-1.c execution,  -O2 
+FAIL: gcc.c-torture/execute/990128-1.c execution,  -O2 -fomit-frame-pointer -finline-functions 
+FAIL: gcc.c-torture/execute/990128-1.c execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-loops 
+FAIL: gcc.c-torture/execute/990128-1.c execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-all-loops 
+FAIL: gcc.c-torture/execute/990128-1.c execution,  -O2 -g 
+FAIL: gcc.c-torture/execute/990128-1.c execution,  -Os 
 FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O1 
 FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O2 
 FAIL: gcc.c-torture/execute/ieee/980619-1.c execution,  -O2 -fomit-frame-pointer -finline-functions 
@@ -45,10 +55,12 @@ FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -O2
 FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -O2 -fomit-frame-pointer -finline-functions 
 FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -O2 -g 
 FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -Os 
+FAIL: gcc.c-torture/noncompile/951227-1.c
 FAIL: gcc.c-torture/special/981006-1.c  (test for bogus messages, line 11)
 FAIL: gcc.c-torture/special/981006-1.c  (test for bogus messages, line 12)
 FAIL: gcc.dg/980414-1.c (test for excess errors)
 FAIL: gcc.dg/990117-1.c (test for excess errors)
+FAIL: gcc.dg/990130-1.c (test for excess errors)
 FAIL: gcc.dg/cpp-if1.c invalid number (test for errors, line 12)
 FAIL: gcc.dg/cpp-if1.c invalid number (test for errors, line 15)
 FAIL: gcc.dg/cpp-if1.c invalid number (test for errors, line 18)
@@ -56,14 +68,17 @@ FAIL: gcc.dg/cpp-if1.c floating point in #if (test for errors, line 21)
 FAIL: gcc.dg/cpp-if1.c too many suffixes (test for errors, line 24)
 FAIL: gcc.dg/cpp-if1.c too many suffixes (test for errors, line 27)
 FAIL: gcc.dg/cpp-if1.c (test for excess errors)
+FAIL: gcc.misc-tests/m-un-2.c warning regression (test for warnings, line 18)
+FAIL: gcc.misc-tests/m-un-2.c warning regression (test for warnings, line 23)
+FAIL: gcc.misc-tests/m-un-2.c (test for excess errors)
 
 		=== gcc Summary ===
 
-# of expected passes		7886
-# of unexpected failures	36
+# of expected passes		7928
+# of unexpected failures	51
 # of expected failures		13
 # of unsupported tests		12
-/vbig/ports/lang/egcs-snapshot/egcs-19990124/gcc/xgcc version egcs-2.93.03 19990124 (gcc2 ss-980609 experimental)
+/vbig/ports/lang/egcs-snapshot/egcs-19990131/gcc/xgcc version egcs-2.93.04 19990131 (gcc2 ss-980929 experimental)
 
 		=== g++ tests ===
 
@@ -71,13 +86,7 @@ FAIL: gcc.dg/cpp-if1.c (test for excess errors)
 Running target unix
 FAIL: g++.law/profile1.C (test for excess errors)
 FAIL: g++.mike/p6610a.C  Execution test
-FAIL: g++.ns/using12.C candidates (test for errors, line 6)
-FAIL: g++.ns/using12.C candidates (test for errors, line 7)
-FAIL: g++.ns/using12.C candidates (test for errors, line 8)
-FAIL: g++.ns/using12.C candidates (test for errors, line 9)
-FAIL: g++.ns/using12.C candidates (test for errors, line 12)
-FAIL: g++.ns/using12.C ambiguous (test for errors, line 18)
-FAIL: g++.ns/using12.C (test for excess errors)
+FAIL: g++.ns/template6.C (test for excess errors)
 FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 21)
 FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 22)
 FAIL: g++.other/null1.C NULL used in arithmetic (test for warnings, line 25)
@@ -93,24 +102,29 @@ FAIL: g++.other/null1.C converting NULL to int (test for warnings, line 36)
 FAIL: g++.other/null1.C NULL bound to integer template parameter (test for warnings, line 37)
 FAIL: g++.other/null1.C converting NULL to int (test for warnings, line 38)
 FAIL: g++.pt/instantiate4.C (test for excess errors)
+FAIL: g++.robertl/eb83.C caused compiler crash
 
 		=== g++ Summary ===
 
-# of expected passes		4812
-# of unexpected failures	24
+# of expected passes		4818
+# of unexpected failures	19
 # of expected failures		90
 # of untested testcases		7
-/vbig/ports/lang/egcs-snapshot/egcs-19990124/gcc/testsuite/../xgcc version egcs-2.93.03 19990124 (gcc2 ss-980609 experimental)
+/vbig/ports/lang/egcs-snapshot/egcs-19990131/gcc/testsuite/../xgcc version egcs-2.93.04 19990131 (gcc2 ss-980929 experimental)
 
 		=== g77 tests ===
 
 
 Running target unix
+FAIL: g77.f-torture/execute/auto0.f execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-loops 
+FAIL: g77.f-torture/execute/auto0.f execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-all-loops 
+FAIL: g77.f-torture/execute/auto1.f execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-loops 
+FAIL: g77.f-torture/execute/auto1.f execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-all-loops 
 
 		=== g77 Summary ===
 
-# of expected passes		100
-# of unresolved testcases	186
+# of expected passes		468
+# of unexpected failures	4
 		=== objc tests ===
 
 
@@ -119,3 +133,9 @@ Running target unix
 		=== objc Summary ===
 
 # of expected passes		38
+/vbig/ports/lang/egcs-snapshot/egcs-19990131/gcc/xgcc version egcs-2.93.04 19990131 (gcc2 ss-980929 experimental)
+
+
+Compiler version: egcs-2.93.04 19990131 (gcc2 ss-980929 experimental) 
+Platform: i386-unknown-openbsd2.4
+configure flags: --with-gcc-version-trigger=/usr/ports/lang/egcs-snapshot/work/source/gcc/version.c --host=i386-unknown-openbsd2.4 --prefix=/usr/local --verbose --program-transform-name=s,^,e, --with-gnu-as --with-gnu-ld --enable-shared --prefix=/usr/local --norecursion

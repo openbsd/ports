@@ -32,13 +32,28 @@ FAIL: gcc.c-torture/execute/921215-1.c execution,  -O2
 FAIL: gcc.c-torture/execute/921215-1.c execution,  -O2 -fomit-frame-pointer -finline-functions 
 FAIL: gcc.c-torture/execute/921215-1.c execution,  -O2 -g 
 FAIL: gcc.c-torture/execute/921215-1.c execution,  -Os 
+FAIL: gcc.c-torture/execute/930603-1.c execution,  -O0 
+FAIL: gcc.c-torture/execute/930603-1.c execution,  -O1 
+FAIL: gcc.c-torture/execute/930603-1.c execution,  -O2 
+FAIL: gcc.c-torture/execute/930603-1.c execution,  -O2 -g 
+FAIL: gcc.c-torture/execute/930603-1.c execution,  -Os 
 FAIL: gcc.c-torture/execute/931002-1.c execution,  -O0 
 FAIL: gcc.c-torture/execute/931002-1.c execution,  -O1 
 FAIL: gcc.c-torture/execute/931002-1.c execution,  -O2 
 FAIL: gcc.c-torture/execute/931002-1.c execution,  -O2 -fomit-frame-pointer -finline-functions 
 FAIL: gcc.c-torture/execute/931002-1.c execution,  -O2 -g 
 FAIL: gcc.c-torture/execute/931002-1.c execution,  -Os 
-FAIL: gcc.c-torture/execute/980526-1.c execution,  -O2 -fomit-frame-pointer -finline-functions 
+FAIL: gcc.c-torture/execute/990119-1.c execution,  -O0 
+FAIL: gcc.c-torture/execute/990119-1.c execution,  -O1 
+FAIL: gcc.c-torture/execute/990119-1.c execution,  -O2 
+FAIL: gcc.c-torture/execute/990119-1.c execution,  -O2 -fomit-frame-pointer -finline-functions 
+FAIL: gcc.c-torture/execute/990119-1.c execution,  -O2 -g 
+FAIL: gcc.c-torture/execute/990119-1.c execution,  -Os 
+FAIL: gcc.c-torture/execute/990128-1.c execution,  -O2 
+FAIL: gcc.c-torture/execute/990128-1.c execution,  -O2 -fomit-frame-pointer -finline-functions 
+FAIL: gcc.c-torture/execute/990128-1.c execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-loops 
+FAIL: gcc.c-torture/execute/990128-1.c execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-all-loops 
+FAIL: gcc.c-torture/execute/990128-1.c execution,  -O2 -g 
 FAIL: gcc.c-torture/execute/nestfunc-1.c execution,  -O0 
 FAIL: gcc.c-torture/execute/nestfunc-1.c execution,  -O1 
 FAIL: gcc.c-torture/execute/nestfunc-1.c execution,  -O2 
@@ -58,14 +73,25 @@ FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -O2
 FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -O2 -fomit-frame-pointer -finline-functions 
 FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -O2 -g 
 FAIL: gcc.c-torture/execute/memcheck/blkarg.c execution,  -Os 
+FAIL: gcc.c-torture/noncompile/951227-1.c
+FAIL: gcc.dg/cpp-if1.c invalid number (test for errors, line 12)
+FAIL: gcc.dg/cpp-if1.c invalid number (test for errors, line 15)
+FAIL: gcc.dg/cpp-if1.c invalid number (test for errors, line 18)
+FAIL: gcc.dg/cpp-if1.c floating point in #if (test for errors, line 21)
+FAIL: gcc.dg/cpp-if1.c too many suffixes (test for errors, line 24)
+FAIL: gcc.dg/cpp-if1.c too many suffixes (test for errors, line 27)
+FAIL: gcc.dg/cpp-if1.c (test for excess errors)
+FAIL: gcc.misc-tests/m-un-2.c warning regression (test for warnings, line 18)
+FAIL: gcc.misc-tests/m-un-2.c warning regression (test for warnings, line 23)
+FAIL: gcc.misc-tests/m-un-2.c (test for excess errors)
 
 		=== gcc Summary ===
 
-# of expected passes		7858
-# of unexpected failures	32
+# of expected passes		7911
+# of unexpected failures	58
 # of expected failures		13
-# of unsupported tests		19
-/vbig/ports/lang/egcs-snapshot/egcs-19990117/gcc/xgcc version egcs-2.93.02 19990117 (gcc2 ss-980609 experimental)
+# of unsupported tests		21
+/vbig/ports/lang/egcs-snapshot/egcs-19990131/gcc/xgcc version egcs-2.93.04 19990131 (gcc2 ss-980929 experimental)
 
 		=== g++ tests ===
 
@@ -79,6 +105,7 @@ FAIL: g++.jason/temporary8.C  Execution test
 FAIL: g++.jason/thunk3.C (test for excess errors)
 FAIL: g++.law/profile1.C (test for excess errors)
 FAIL: g++.mike/p6610a.C  Execution test
+FAIL: g++.ns/template6.C (test for excess errors)
 FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 21)
 FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 22)
 FAIL: g++.other/null1.C NULL used in arithmetic (test for warnings, line 25)
@@ -97,24 +124,31 @@ FAIL: g++.pt/instantiate4.C (test for excess errors)
 FAIL: g++.pt/mi1.C caused compiler crash
 FAIL: g++.pt/vaarg.C  Execution test
 FAIL: g++.robertl/eb44.C (test for excess errors)
+FAIL: g++.robertl/eb83.C caused compiler crash
 
 		=== g++ Summary ===
 
-# of expected passes		4772
-# of unexpected failures	26
-# of expected failures		91
+# of expected passes		4806
+# of unexpected failures	28
+# of expected failures		92
 # of untested testcases		7
-/vbig/ports/lang/egcs-snapshot/egcs-19990117/gcc/testsuite/../xgcc version egcs-2.93.02 19990117 (gcc2 ss-980609 experimental)
+/vbig/ports/lang/egcs-snapshot/egcs-19990131/gcc/testsuite/../xgcc version egcs-2.93.04 19990131 (gcc2 ss-980929 experimental)
 
 		=== g77 tests ===
 
 
 Running target unix
+FAIL: g77.f-torture/execute/auto0.f execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-loops 
+FAIL: g77.f-torture/execute/auto0.f execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-all-loops 
+FAIL: g77.f-torture/execute/auto1.f execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-loops 
+FAIL: g77.f-torture/execute/auto1.f execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-all-loops 
+FAIL: g77.f-torture/execute/dnrm2.f execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-loops 
+FAIL: g77.f-torture/execute/dnrm2.f execution,  -O2 -fomit-frame-pointer -finline-functions -funroll-all-loops 
 
 		=== g77 Summary ===
 
-# of expected passes		100
-# of unresolved testcases	186
+# of expected passes		466
+# of unexpected failures	6
 		=== objc tests ===
 
 
@@ -123,9 +157,9 @@ Running target unix
 		=== objc Summary ===
 
 # of expected passes		38
-/vbig/ports/lang/egcs-snapshot/egcs-19990117/gcc/xgcc version egcs-2.93.02 19990117 (gcc2 ss-980609 experimental)
+/vbig/ports/lang/egcs-snapshot/egcs-19990131/gcc/xgcc version egcs-2.93.04 19990131 (gcc2 ss-980929 experimental)
 
 
-Compiler version: egcs-2.93.02 19990117 (gcc2 ss-980609 experimental) 
+Compiler version: egcs-2.93.04 19990131 (gcc2 ss-980929 experimental) 
 Platform: m68k-unknown-openbsd2.4
-
+c
