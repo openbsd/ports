@@ -1,0 +1,21 @@
+$OpenBSD: patch-gphoto2_shell_c,v 1.1 2004/01/16 01:12:32 brad Exp $
+--- gphoto2/shell.c.orig	2003-12-29 00:10:11.000000000 -0500
++++ gphoto2/shell.c	2003-12-29 00:10:30.000000000 -0500
+@@ -362,7 +362,7 @@ shell_completion_function (const char *t
+ 
+ 	if (!start) {
+ 		/* Complete command */
+-		matches = rl_completion_matches (text, shell_command_generator);
++		matches = completion_matches (text, shell_command_generator);
+ 	} else {
+ 		current = strdup (rl_copy_text (0, end));
+ 
+@@ -374,7 +374,7 @@ shell_completion_function (const char *t
+ 		free (current);
+ 
+ 		/* Complete remote path */
+-		matches = rl_completion_matches (text, shell_path_generator);
++		matches = completion_matches (text, shell_path_generator);
+ 	}
+ 
+ 	return (matches);

@@ -1,0 +1,47 @@
+$OpenBSD: patch-configure_in,v 1.1 2004/01/16 01:12:32 brad Exp $
+--- configure.in.orig	2003-10-19 13:10:01.000000000 -0400
++++ configure.in	2003-12-29 00:20:36.000000000 -0500
+@@ -320,26 +320,41 @@ AC_ARG_WITH(readline, [  --without-readl
+ )
+ if $try_readline; then
+         AC_CHECK_HEADER(readline/readline.h, [
++            LIBS_save="$LIBS"
++            LDFLAGS_save="$LDFLAGS"
++            LIBS=""
++            LDFLAGS=""
+             AC_CHECK_LIB(readline, rl_completion_append_character, [
+-                AC_CHECK_LIB(readline, rl_completion_matches, [
++                LIBS_save="$LIBS"
++                LDFLAGS_save="$LDFLAGS"
++                LIBS=""
++                LDFLAGS=""
++                AC_CHECK_LIB(readline, completion_matches, [
+                     have_readline=true
+                     rl_msg="yes (doesn't require explicit -lncurses)"
+                     RL_LIBS="-lreadline"
+                     RL_CFLAGS=""
+                     AC_DEFINE(HAVE_RL,1,[whether we use readline])
+                 ], [rl_msg="no (available version too old)"])
++                LIBS="$LIBS_save"
++                LDFLAGS="$LDFLAGS_save"
+             ], [
++                LIBS_save="$LIBS"
+                 LDFLAGS_save="$LDFLAGS"
++                LIBS=""
+                 LDFLAGS="-lncurses"
+-                AC_CHECK_LIB(readline, rl_completion_matches, [
++                AC_CHECK_LIB(readline, completion_matches, [
+                     have_readline=true
+                     rl_msg="yes (requires explicit -lncurses)"
+                     RL_LIBS="-lreadline -lncurses"
+                     RL_CFLAGS=""
+                     AC_DEFINE(HAVE_RL,1,[whether we use readline])
+                 ], [rl_msg="no (couldn't link against it or version too old)"])
++                LIBS="$LIBS_save"
+                 LDFLAGS="$LDFLAGS_save"
+             ])
++            LIBS="$LIBS_save"
++            LDFLAGS="$LDFLAGS_save"
+         ])
+ fi
+ AM_CONDITIONAL(HAVE_RL, $have_readline)
