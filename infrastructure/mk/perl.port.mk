@@ -1,14 +1,11 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.8 2004/06/02 09:20:43 sturm Exp $
+# $OpenBSD: perl.port.mk,v 1.9 2004/06/08 20:28:19 sturm Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
 REGRESS_TARGET ?=	test
 MODPERL_BUILD ?= Build
-
-CONFIGURE_ARGS+=CCFLAGS="-fno-strict-aliasing -I${LOCALBASE}/include ${CFLAGS}" \
-		OPTIMIZE=" "
 
 .if ${CONFIGURE_STYLE:L:Mmodbuild}
 .  if !${PKGNAME:Mp5-Module-Build*}
