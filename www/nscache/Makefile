@@ -1,29 +1,24 @@
-# Makefile for:		nscache
-# Version required:	0.2p1
-# Date created:		14 Dec 1999
-# Whom:			dugsong@openbsd.org
-#
-# $OpenBSD: Makefile,v 1.7 2001/05/06 04:22:51 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2001/06/02 22:47:38 dugsong Exp $
 
 COMMENT=	"Netscape cache browser"
 
-PKGNAME=	nscache-0.2p1
-
+DISTNAME=	nscache-0.6
 CATEGORIES=	www
 NEED_VERSION=	1.402
-FAKE=No
+MASTER_SITES=	http://prdownloads.sourceforge.net/nscache/ \
+		http://www.idata.sk/~ondrej/sw/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
-MASTER_SITES=	http://www.idata.sk/~ondrej/sw/
-
-DISTNAME=	nscache-0.2pl1
-
-EXTRACT_SUFX=	.tgz
+# GPL
+PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE_FTP=	yes
+PERMIT_DISTFILES_CDROM=	yes
+PERMIT_DISTFILES_FTP=	yes
 
 LIB_DEPENDS=	gtk.1.2::x11/gtk+
-CONFIGURE_STYLE=autoconf
 
-
+CONFIGURE_STYLE=gnu
 
 .include <bsd.port.mk>
