@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.5 2002/04/19 21:11:29 jakob Exp $
+# $OpenBSD: INSTALL,v 1.6 2002/06/22 08:59:13 jakob Exp $
 #
 # Pre/post-installation setup of postfix
 
@@ -95,6 +95,14 @@ do_configs()
 
 	# The correct files will be installed later.
 	rm -f $CONFIG_DIR/{postfix-script,postfix-files,post-install}
+
+	# Change group owner
+	chgrp postdrop ${PREFIX}/sbin/postqueue
+	chgrp postdrop ${PREFIX}/sbin/postdrop
+
+	# Fix setgid
+	chmod g+s ${PREFIX}/sbin/postqueue
+	chmod g+s ${PREFIX}/sbin/postdrop
 
 	echo ""
 	echo "+---------------"
