@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/12/13 20:45:52 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/01/22 09:56:49 mbalmer Exp $
 @newgroup _nostromo:536
 @newuser _nostromo:536:_nostromo:daemon:Nostromo Account:/nonexistent:/sbin/nologin
 @man man/man8/nhttpd.8
@@ -7,6 +7,7 @@ sbin/nhttpd
 share/doc/nostromo/
 share/doc/nostromo/ChangeLog
 share/doc/nostromo/README
+share/doc/nostromo/TODO
 @sample /var/nostromo/
 @sample /var/nostromo/cgi-bin/
 @sample /var/nostromo/conf/
@@ -19,7 +20,7 @@ share/examples/nostromo/
 share/examples/nostromo/dir.gif
 @sample /var/nostromo/icons/dir.gif
 share/examples/nostromo/file.gif
-@sample /var/nostromo/htdocs/file.gif
+@sample /var/nostromo/icons/file.gif
 share/examples/nostromo/index.html
 @sample /var/nostromo/htdocs/index.html
 share/examples/nostromo/mimes
