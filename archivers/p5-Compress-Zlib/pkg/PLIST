@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/08/04 16:36:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2004/09/14 23:12:43 espie Exp $
 ${P5ARCH}/
 ${P5ARCH}/Compress/
 ${P5ARCH}/Compress/Zlib.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Compress/
 ${P5ARCH}/auto/Compress/Zlib/
-@comment ${P5ARCH}/auto/Compress/Zlib/.packlist
 ${P5ARCH}/auto/Compress/Zlib/Zlib.bs
 ${P5ARCH}/auto/Compress/Zlib/Zlib.so
 ${P5ARCH}/auto/Compress/Zlib/autosplit.ix
@@ -16,4 +15,3 @@ share/examples/p5-Compress-Zlib/filtinf
 share/examples/p5-Compress-Zlib/gzcat
 share/examples/p5-Compress-Zlib/gzgrep
 share/examples/p5-Compress-Zlib/gzstream
-%%SHARED%%

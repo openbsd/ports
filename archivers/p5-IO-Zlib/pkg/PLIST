@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/03 11:30:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:12:43 espie Exp $
 ${P5SITE}/IO/
 ${P5SITE}/IO/Zlib.pm
-@comment ${P5ARCH}/auto/IO/
-@comment ${P5ARCH}/auto/IO/Zlib/
-@comment ${P5ARCH}/auto/IO/Zlib/.packlist
 @man man/man3p/IO::Zlib.3p
