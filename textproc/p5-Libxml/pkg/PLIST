@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/05 14:52:09 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/01/05 15:13:08 shell Exp $
 libdata/perl5/site_perl/Data/Grove.pm
 libdata/perl5/site_perl/Data/Grove/Parent.pm
 libdata/perl5/site_perl/Data/Grove/Visitor.pm
@@ -32,6 +32,5 @@ man/man3/XML::PatAct::ToObjects.3p
 man/man3/XML::Perl2SAX.3p
 man/man3/XML::SAX2Perl.3p
 @dirrm libdata/perl5/site_perl/XML/PatAct
-@dirrm libdata/perl5/site_perl/XML/Parser
 @dirrm libdata/perl5/site_perl/XML/Handler
 @dirrm libdata/perl5/site_perl/Data/Grove
