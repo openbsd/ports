@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	Tue Jul 13 16:30:40 1999
-+++ src/Makefile.in	Wed Jul 14 21:05:39 1999
+--- src/Makefile.in.orig	Thu Sep 23 03:25:58 1999
++++ src/Makefile.in	Fri Oct  1 16:54:16 1999
 @@ -2,8 +2,8 @@
  #---------------------------------------------------------------------------
  # ANSI C compiler
@@ -46,7 +46,7 @@
  	@echo ""
  $(OBJDIR) :
  	-$(MKDIR) $(OBJDIR)
-@@ -141,15 +139,10 @@
+@@ -146,15 +144,10 @@
  install-elf: install elf $(install_lib_dir) $(install_include_dir) $(ELFDIR_ELF_LIB)
  	$(INSTALL_DATA) $(SRCDIR)/slang.h $(install_include_dir)
  	$(INSTALL_DATA) $(SRCDIR)/slcurses.h $(install_include_dir)
