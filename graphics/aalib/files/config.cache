@@ -1,0 +1,21 @@
+# This file is a shell script that caches the results of configure
+# tests run on this system so they can be shared between configure
+# scripts and configure runs.  It is not useful on other systems.
+# If it contains results you don't want to keep, you may remove or edit it.
+#
+# By default, configure uses ./config.cache as the cache file,
+# creating it if it does not exist already.  You can give configure
+# the --cache-file=FILE option to use a different cache file; that is
+# what configure does when it calls configure scripts in
+# subdirectories, so they share the cache.
+# Giving --cache-file=/dev/null disables caching, for debugging configure.
+# config.status only pays attention to the cache file if you give it the
+# --recheck option to rerun configure.
+#
+ac_cv_func_curs_set=${ac_cv_func_curs_set=yes}
+ac_cv_func_mousemask=${ac_cv_func_mousemask=yes}
+ac_cv_func_redrawwin=${ac_cv_func_redrawwin=yes}
+ac_cv_func_termattrs=${ac_cv_func_termattrs=yes}
+ac_cv_func_wredrawln=${ac_cv_func_wredrawln=yes}
+ac_cv_header_malloc_h=${ac_cv_header_malloc_h=no}
+ac_cv_lib_gpm_Gpm_Repeat=${ac_cv_lib_gpm_Gpm_Repeat=no}

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2000/09/27 21:09:05 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2001/01/16 15:16:31 brad Exp $
 # $FreeBSD: Makefile,v 1.6 1998/09/22 15:30:37 vanilla Exp $
 
 DISTNAME=	aalib-1.2
 CATEGORIES=	graphics
-NEED_VERSION=	1.330
-MASTER_SITES=	ftp://ftp.ta.jcu.cz/pub/aa/
+NEED_VERSION=	1.336
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR= libs/graphics
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -23,5 +24,9 @@ FLAVOR?=
 .if ${FLAVOR:L} == "no_x11"
 CONFIGURE_ARGS+= --without-x
 .endif
+
+post-extract:
+	@cd ${WRKSRC}; rm -f {config.cache,config.h,config.log,config.status}
+	@cp -f ${FILESDIR}/config.cache ${WRKSRC}
 
 .include <bsd.port.mk>
