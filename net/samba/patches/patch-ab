@@ -1,6 +1,6 @@
---- configure.in.orig	Mon May 17 18:28:10 1999
-+++ configure.in	Mon May 24 23:10:26 1999
-@@ -349,7 +349,7 @@
+--- configure.in.orig	Wed Jul 21 19:42:00 1999
++++ configure.in	Wed Jul 21 19:42:44 1999
+@@ -342,7 +342,7 @@
  AC_CHECK_FUNCS(fstat strchr utime utimes getrlimit fsync bzero memset)
  AC_CHECK_FUNCS(memmove vsnprintf snprintf setsid glob strpbrk pipe crypt16 getauthuid)
  AC_CHECK_FUNCS(strftime sigprocmask sigblock sigaction innetgr setnetgrent getnetgrent endnetgrent)

@@ -118,11 +118,11 @@ share/doc/samba/README.OpenBSD
 share/doc/samba/THANKS
 share/doc/samba/history
 share/doc/samba/announce
-share/doc/samba/NT4-Locking.reg
 share/doc/samba/NT4_PlainPassword.reg
 share/doc/samba/Win95_PlainPassword.reg
 share/doc/samba/Win98_PlainPassword.reg
 share/doc/samba/Win9X-CacheHandling.reg
+share/doc/samba/Win2000_PlainPassword.reg
 share/doc/samba/README
 share/examples/samba/autofs/mount.smb
 share/examples/samba/autofs/mount-smb.doc
