@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2000/02/12 08:35:59 turan Exp $
+# $OpenBSD: Makefile,v 1.50 2000/02/13 06:57:21 turan Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
@@ -18,7 +18,7 @@ RESTRICTED=	"Crypto; export-controlled"
 
 MAINTAINER=	todd@openbsd.org
 
-LICENSE_TYPE=		CRYPTO
+LICENSE_TYPE=		"CRYPTO NONE"
 PERMIT_PKG_CDROM=	NO
 PERMIT_PKG_FTP=		YES
 PERMIT_DISTF_CDROM=	NO
