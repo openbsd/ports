@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 1999/02/27 15:59:36 rohee Exp $
+# $OpenBSD: Makefile,v 1.3 1999/09/18 21:19:01 rohee Exp $
 #
-DISTNAME=		vrfy_980820
-PKGNAME=		vrfy-98.08.20
+DISTNAME=		vrfy_990522
+PKGNAME=		vrfy-99.05.22
 CATEGORIES=		mail
 
 MAINTAINER=		rohee@OpenBSD.ORG
