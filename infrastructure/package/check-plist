@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $OpenBSD: check-plist,v 1.3 2001/10/06 01:09:08 naddy Exp $
+# $OpenBSD: check-plist,v 1.4 2003/09/03 21:43:59 espie Exp $
 # Copyright (c) 2001
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -48,7 +48,7 @@ trimmed="$initial.trimmed"
 cd ${PORTSDIR} 
 
 make ECHO_MSG='echo >&2' SUBDIRLIST=$initial show=FULLPKGPATH >$trimmed
-make ECHO_MSG='echo >&2' SUBDIRLIST=$trimmed package-dir-depends >$depends
+make ECHO_MSG='echo >&2' SUBDIRLIST=$trimmed run-dir-depends >$depends
 tsort -h $trimmed -r $depends >$list
 make ECHO_MSG='echo >&2' show='FULLPKGNAME${SUBPACKAGE}' SUBDIRLIST=$list|sed -e 's,$,.tgz,' >$packages
 echo "Packages with distribution problems:"
