@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/06/20 21:46:13 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2002/07/07 15:07:20 jakob Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
 DISTNAME=		Mail-SpamAssassin-2.31
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		mail perl5
-NEED_VERSION=		1.515
 
 HOMEPAGE=		http://spamassassin.org
 
@@ -25,15 +24,8 @@ RUN_DEPENDS=		:p5-Net-DNS-*:net/p5-Net-DNS \
 
 CONFIGURE_STYLE=	perl
 
-FLAVORS=		no_procmail
-FLAVOR?=
-
 # regress insists on creating files in $HOME
 PORTHOME=		${WRKDIR}/temp-home
-
-.if ! ${FLAVOR:L:Mno_procmail}
-RUN_DEPENDS+=		:procmail-*:mail/procmail
-.endif
 
 FAQS=	${FILESDIR}/OpenBSD-SpamAssassin-mini-howto.html
 DOCS=	README procmailrc.example \
