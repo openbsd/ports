@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/07/22 13:48:56 jakob Exp $
+# $OpenBSD: Makefile,v 1.9 2001/08/01 19:29:09 jakob Exp $
 
 COMMENT=	"Lame Ain't an MP3 Encoder"
 
@@ -24,7 +24,6 @@ WRKDIST=	${WRKDIR}/lame-${VERSION}
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=	gnu
-ALL_TARGET=		all
 
 FLAVORS=	no_x11
 FLAVOR?=
