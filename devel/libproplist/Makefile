@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/12/08 22:36:52 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/01/06 15:57:37 jasoni Exp $
 
 DISTNAME=	libPropList-0.9.1
 PKGNAME=	libproplist-0.9.1	
@@ -10,7 +10,7 @@ NEED_VERSION=	1.73
 
 MAINTAINER=	jasoni@openbsd.org
 
-SEPARATE_BUILD=	concurrent
+#SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
