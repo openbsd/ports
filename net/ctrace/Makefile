@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/14 14:29:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/30 12:29:14 naddy Exp $
 
 COMMENT=	"multiprotocol traceroute tool"
 
-DISTNAME=	ctrace-0.6
+DISTNAME=	ctrace-0.8
 CATEGORIES=	net
 NEED_VERSION=	1.402
 HOMEPAGE=	http://www.pratyeka.org/ctrace/
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 NO_BUILD=	Yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ctrace ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/ctrace ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/ctrace.man ${PREFIX}/man/man1/ctrace.1
 
 .include <bsd.port.mk>
