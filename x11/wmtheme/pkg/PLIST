@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/10/24 13:48:11 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/04/22 14:40:09 lebel Exp $
 bin/apply-gtk-theme
 bin/astheme
 bin/bbtheme
@@ -22,9 +22,7 @@ lib/wmtheme/oroborus.pl
 lib/wmtheme/sawfish.pl
 lib/wmtheme/wm_config.pl
 lib/wmtheme/wm_data.pl
-lib/wmtheme/wm_download.pl
 lib/wmtheme/wm_fonts.pl
-lib/wmtheme/wm_update.pl
 lib/wmtheme/wmaker.pl
 lib/wmtheme/xmms.pl
 man/man1/astheme.1.gz
