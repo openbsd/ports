@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2001/05/12 16:57:17 jakob Exp $
+# $OpenBSD: Makefile,v 1.16 2001/11/06 08:32:19 shell Exp $
 
 COMMENT=	"creating & editing GIF images and animations"
 
-DISTNAME=	gifsicle-1.27
+DISTNAME=	gifsicle-1.30
 CATEGORIES=    	graphics
-NEED_VERSION=	1.363
+NEED_VERSION=	1.488
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
@@ -13,14 +13,23 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.lcdf.org/gifsicle/ \
-			ftp://ftp.lcdf.org/pub/ \
-			ftp://ftp.lcdf.org/pub/OLD-VERSIONS/
+HOMEPAGE=	http://www.lcdf.org/gifsicle/
 
-HOMEPAGE=		http://www.lcdf.org/gifsicle/
+MASTER_SITES=	${HOMEPAGE}/ \
+		ftp://ftp.lcdf.org/pub/ \
+		ftp://ftp.lcdf.org/pub/OLD-VERSIONS/
+
+FLAVORS=	no_x11
+FLAVOR?=
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--enable-gifdiff
+
 SEPARATE_BUILD=		concurrent
-USE_X11=		Yes
+
+.if ${FLAVOR:L:Mno_x11}
+USE_X11=	Yes
+CONFIGURE_ARGS+=	--disable-gifview
+.endif
 
 .include <bsd.port.mk>
