@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/04/04 12:13:02 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/04/04 16:43:14 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -72,5 +72,32 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
+EXTRA_DIRECTORIES= \
+	share/applnk/Edutainment \
+	share/applnk/Games/Arcade \
+	share/applnk/Games/Board \
+	share/applnk/Games/Card \
+	share/applnk/Games/TacticStrategy \
+	share/applnk/Graphics \
+	share/applnk/System/ScreenSavers \
+	share/applnk/Toys \
+	share/apps/kdesktop/programs \
+	share/apps/kicker/applets \
+	share/apps/kscreensaver \
+	share/apps/kthememgr/Themes \
+	share/apps/kwin/icewm-themes \
+	share/apps/kworldclock/maps/depths \
+	share/icons/hicolor/22x22/apps \
+	share/icons/hicolor/32x32/apps \
+	share/icons/hicolor/48x48/apps \
+	share/icons/locolor/16x16/apps \
+	share/icons/locolor/32x32/apps \
+	share/sounds \
+	share/wallpapers
+
+post-install:
+.for i in ${EXTRA_DIRECTORIES}
+	@${INSTALL_DATA_DIR} ${PREFIX}/$i
+.endfor
 
 .include <bsd.port.mk>
