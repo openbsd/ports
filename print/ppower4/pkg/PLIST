@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:32:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/12/26 14:01:37 sturm Exp $
 bin/ppower4
 share/java/
 share/java/pp4p.jar
-share/texmf-local/
 share/texmf-local/doc/
 share/texmf-local/doc/latex/
 share/texmf-local/doc/latex/ppower4/

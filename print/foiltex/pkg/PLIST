@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:32:14 espie Exp $
-share/texmf-local/
+@comment $OpenBSD: PLIST,v 1.5 2004/12/26 14:01:37 sturm Exp $
 share/texmf-local/doc/
 share/texmf-local/doc/latex/
 share/texmf-local/doc/latex/foiltex/

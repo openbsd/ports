@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:32:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/12/26 14:01:37 sturm Exp $
 bin/jadetex
 bin/pdfjadetex
 @man man/man1/jadetex.1
 @man man/man1/pdfjadetex.1
-share/texmf-local/
 share/texmf-local/tex/
 share/texmf-local/tex/jadetex/
 share/texmf-local/tex/jadetex/dsssl.def

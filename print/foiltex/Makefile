@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2003/03/31 17:16:52 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/12/26 14:01:37 sturm Exp $
 
 COMMENT=	"LaTeX2e class for overhead transparencies"
 
 DISTNAME=	foiltex-2.1.4a
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	print
 
 MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>

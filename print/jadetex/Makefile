@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2004/06/26 07:35:08 xsa Exp $
+# $OpenBSD: Makefile,v 1.15 2004/12/26 14:01:37 sturm Exp $
 
 COMMENT=		"macros for the OpenJade DSSSL TeX backend"
 
 DISTNAME=		jadetex-3.11
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	print
 
 HOMEPAGE=		http://jadetex.sourceforge.net/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2004/10/13 18:09:03 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.18 2004/12/26 14:01:36 sturm Exp $
 @conflict dvipdfm-*
 bin/MakeTeXPK
 bin/access
@@ -392,6 +392,8 @@ share/texmf/web2c/tex.log
 share/texmf/web2c/tex.pool
 share/texmf/web2c/texmf.cnf.dist
 @sample share/texmf/web2c/texmf.cnf
+@sample share/texmf-local/
+@extra share/texmf-local/ls-R
 @exec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
 !%%no_x11%%
 @extraunexec rm -f %D/share/texmf/web2c/texmf.cnf.dist

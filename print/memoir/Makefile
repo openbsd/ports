@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2004/06/21 19:27:09 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/12/26 14:01:37 sturm Exp $
 
 COMMENT=	"typeset fiction, non-fiction and mathematical books"
 
 DISTNAME=	memoir-1.61p1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	print
 
 MAINTAINER=	Morten Liebach <m@mongers.org>
