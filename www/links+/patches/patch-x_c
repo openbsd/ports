@@ -1,0 +1,11 @@
+$OpenBSD: patch-x_c,v 1.1 2002/07/29 14:41:49 fgsch Exp $
+--- x.c.orig	Mon Jul 29 00:07:39 2002
++++ x.c	Mon Jul 29 00:08:27 2002
+@@ -694,7 +694,6 @@ static void x_process_events(void *data)
+ 
+ 					case 2:
+ 					a=B_MIDDLE;
+-					if (shift_pressed) /* paste */
+ 					{
+ 						int num=0;
+ 						unsigned char *buffer,*p;
