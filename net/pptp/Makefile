@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/21 14:02:52 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/04 14:57:29 reinhard Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/04/10 01:14:01 jtk Exp $
 
 DISTNAME=	pptp-linux-1.0.2
@@ -15,6 +15,15 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes 
 PERMIT_DISTFILES_CDROM= Yes 
 PERMIT_DISTFILES_FTP=   Yes
+
+FLAVORS+=	bbaa
+FLAVOR?= 
+
+.if ${FLAVOR:L:Mbbaa}
+pre-patch:
+		@cp ${PATCHDIR}/patch-pptc_ctrl_c ${PATCHDIR}/patch-pptc_ctrl_c.orig
+		@cp ${FILESDIR}/patch-pptc_ctrl_c ${PATCHDIR}/patch-pptc_ctrl_c
+.endif
 
 post-patch:
 		@cp files/pptp_8 files/pptp_reconnect ${WRKSRC}
