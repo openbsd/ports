@@ -1,0 +1,29 @@
+--- type1afm/Makefile.in.orig	Thu Aug 31 00:54:02 2000
++++ type1afm/Makefile.in	Thu Aug 31 00:54:47 2000
+@@ -38,6 +38,8 @@
+ SUBMAKE   = $(MAKE) 'CC=$(CC)' 'CFLAGS=$(ALLCFLAGS)' 'OPTIONS=$(OPTIONS)'
+ @SET_MAKE@
+ 
++DESTDIR = 
++
+ INSTALL         = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA    = @INSTALL_DATA@
+@@ -87,14 +89,14 @@
+ 	-rmdir .libs
+ 
+ install: dummy
+-	$(MKINSTALLDIRS) $(bindir)
++	$(MKINSTALLDIRS) $(DESTDIR)$(bindir)
+ 	$(LIBTOOL) --mode=install \
+-		$(INSTALL_PROGRAM) type1afm $(bindir)/type1afm
++		$(INSTALL_PROGRAM) type1afm $(DESTDIR)$(bindir)/type1afm
+ 
+ 
+ uninstall: dummy
+ 	$(LIBTOOL) --mode=uninstall \
+-		$(RM) $(bindir)/type1afm	
++		$(RM) $(DESTDIR)$(bindir)/type1afm
+ 
+ 
+ dummy:

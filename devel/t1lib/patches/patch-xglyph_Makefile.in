@@ -1,0 +1,27 @@
+--- xglyph/Makefile.in.orig	Thu Aug 31 01:49:54 2000
++++ xglyph/Makefile.in	Thu Aug 31 01:50:34 2000
+@@ -38,6 +38,8 @@
+ SUBMAKE   = $(MAKE) 'CC=$(CC)' 'CFLAGS=$(ALLCFLAGS)' 'OPTIONS=$(OPTIONS)'
+ @SET_MAKE@
+ 
++DESTDIR = 
++
+ INSTALL         = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA    = @INSTALL_DATA@
+@@ -94,12 +96,12 @@
+ 
+ 
+ install: dummy
+-	$(MKINSTALLDIRS) $(bindir)
+-	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) xglyph $(bindir)/xglyph
++	$(MKINSTALLDIRS) $(DESTDIR)$(bindir)
++	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) xglyph $(DESTDIR)$(bindir)/xglyph
+ 
+ 
+ uninstall: dummy
+-	$(LIBTOOL) --mode=uninstall $(RM) -f $(bindir)/xglyph	
++	$(LIBTOOL) --mode=uninstall $(RM) -f $(DESTDIR)$(bindir)/xglyph	
+ 
+ 
+ dummy:

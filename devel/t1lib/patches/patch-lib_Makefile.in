@@ -1,0 +1,51 @@
+--- lib/Makefile.in.orig	Thu Aug 31 00:51:05 2000
++++ lib/Makefile.in	Thu Aug 31 00:52:52 2000
+@@ -36,6 +36,8 @@
+ LEXLIB    = @LEXLIB@
+ ALLCFLAGS = $(CFLAGS)
+ 
++DESTDIR = 
++
+ INSTALL         = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA    = @INSTALL_DATA@
+@@ -158,27 +160,27 @@
+ 
+ 
+ install: dummy
+-	$(MKINSTALLDIRS) $(libdir)
+-	$(MKINSTALLDIRS) $(includedir)
+-	$(MKINSTALLDIRS) @T1LIB_DATA_DIR@
++	$(MKINSTALLDIRS) $(DESTDIR)$(libdir)
++	$(MKINSTALLDIRS) $(DESTDIR)$(includedir)
++	$(MKINSTALLDIRS) $(DESTDIR)@T1LIB_DATA_DIR@
+ 	$(LIBTOOL) --mode=install \
+-		$(INSTALL_DATA) $(MAIN_TARGET) $(libdir)
++		$(INSTALL_DATA) $(MAIN_TARGET) $(DESTDIR)$(libdir)
+ 	$(LIBTOOL) --mode=install \
+-		$(INSTALL_DATA) $(MAIN_HEADER) $(includedir)
+-	if (test -f @T1LIB_DATA_DIR@/t1lib.config) \
++		$(INSTALL_DATA) $(MAIN_HEADER) $(DESTDIR)$(includedir)
++	if (test -f $(DESTDIR)@T1LIB_DATA_DIR@/t1lib.config) \
+ 	then \
+ 	  echo "Alert: Global configuration file exists, installation skipped!"; \
+ 	else \
+-	  $(LIBTOOL) --mode=install $(INSTALL_DATA) t1lib.config @T1LIB_DATA_DIR@; \
++	  $(LIBTOOL) --mode=install $(INSTALL_DATA) t1lib.config $(DESTDIR)@T1LIB_DATA_DIR@; \
+ 	fi;
+ 
+ 
+ uninstall: dummy
+-	-$(LIBTOOL) --mode=uninstall $(RM) $(libdir)/libt1.la
+-	-$(LIBTOOL) --mode=uninstall $(RM) $(libdir)/libt1x.la
+-	-$(LIBTOOL) --mode=uninstall $(RM) $(includedir)/t1lib.h
+-	-$(LIBTOOL) --mode=uninstall $(RM) $(includedir)/t1libx.h
+-	-$(LIBTOOL) --mode=uninstall $(RM) @T1LIB_DATA_DIR@/t1lib.config
++	-$(LIBTOOL) --mode=uninstall $(RM) $(DESTDIR)$(libdir)/libt1.la
++	-$(LIBTOOL) --mode=uninstall $(RM) $(DESTDIR)$(libdir)/libt1x.la
++	-$(LIBTOOL) --mode=uninstall $(RM) $(DESTDIR)$(includedir)/t1lib.h
++	-$(LIBTOOL) --mode=uninstall $(RM) $(DESTDIR)$(includedir)/t1libx.h
++	-$(LIBTOOL) --mode=uninstall $(RM) $(DESTDIR)@T1LIB_DATA_DIR@/t1lib.config
+ 
+ 
+ dummy:
