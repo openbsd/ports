@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.18 2001/08/10 17:05:41 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2001/09/02 04:11:00 pvalchev Exp $
+# Uses pthreads
 
 COMMENT=	"General Input Library (used by libggi)"
 DISTNAME=	libgii-0.7
