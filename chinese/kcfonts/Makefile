@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/29 05:43:30 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/26 04:11:29 kevlo Exp $
 
 DISTNAME=       zh-fonts-kc-1.05
 CATEGORIES=     chinese x11
 NEED_VERSION=	1.352
 DIST_SUBDIR=    zh-kcfonts
 
-MAINTAINER=     kevlo@openbsd.org
+MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
