@@ -1,5 +1,5 @@
 
-scanlogd requires a seperate user and group named 'scanlogd' to
+scanlogd requires a separate user and group named 'scanlogd' to
 run. You will need to create these manually. For example:
 
 groupadd scanlogd
