@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/21 21:09:17 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/09/09 16:07:10 pvalchev Exp $
+
+# XXX crashes & hangs on macppc, to be dealt with
+NOT_FOR_ARCHS=	powerpc
 
 COMMENT=	"programming language with generators, X11 graphics and more"
 
