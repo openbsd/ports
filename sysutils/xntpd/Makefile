@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/07/01 17:14:31 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/08/05 02:06:44 brad Exp $
 
 DISTNAME=	xntp3-5.93e-export
 CATEGORIES=	sysutils
@@ -21,8 +21,8 @@ CONFIGURE_ARGS=	--enable-accurate-adjtime --disable-IRIG \
 		--bindir="${PREFIX}/sbin"
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ntp
-	@ln -sf xntpd ${PREFIX}/sbin/ntpd
-	@cd ${WRKSRC}/html; tar cf - . | (cd ${PREFIX}/share/doc/ntp; tar xfBp -)
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xntpd
+	@cd ${PREFIX}/sbin && ln -sf xntpd ntpd
+	@cd ${WRKSRC}/html; tar cf - . | (cd ${PREFIX}/share/doc/xntpd; tar xfBp -)
 
 .include <bsd.port.mk>
