@@ -1,0 +1,19 @@
+Icon is a program language that looks superficially like Pascal,
+but which supports generators. It also include some very reasonable
+X11 support.
+
+The port has not yet been tested on all architectures. In particular,
+most will need coexpr support (see openbsd/${ARCH}_coexpr.c and
+openbsd/define.h), but we can probably steal that from an existing 
+architecture.
+
+The graphics picture loader can also be improved to handle gifs, jpeg, png,
+tiff, along with xpm.
+
+The icon compiler is actually no longer supported by the icon project,
+though it is nice to have it along. 
+
+The icon variant translators could be rather simply installed.
+
+There is a patch floating around for some unix functions support (sockets,
+mainly) that is crying to be adapted...

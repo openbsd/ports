@@ -1,0 +1,340 @@
+Script started on Tue Sep 29 21:28:30 1998
+[m[m[m[J[1mtetto-~ports/lang/icon#[m [Kmmalke   ke
+>> Checksum OK for icon/unix.tgz.
+===>  Extracting for icon-9.3
+/usr/ports/lang/icon/work -> /vbig/ports/lang/icon
+===>  Patching for icon-9.3
+===>   Ignoring empty patch directory
+===>  Configuring for icon-9.3
+cp -R /usr/ports/lang/icon/files/openbsd /usr/ports/lang/icon/work/config/unix
+ln /usr/ports/lang/icon/work/config/unix/openbsd/i386_rswitch.c /usr/ports/lang/icon/work/config/unix/openbsd/rswitch.c
+PATH=/home/espie/bin:/usr/local/egcs/bin:/usr/games:/usr/local/bin:/usr/local/maple/bin:/bin:/usr/bin:/usr/X11R6/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11R6/bin
+SHELL=/usr/local/bin/zsh
+BSD_INSTALL_PROGRAM_DIR=install -d -o root -g bin -m 555
+USER=espie
+LESSCHARSET=latin1
+BSD_INSTALL_MAN_DIR=install -d -o root -g bin -m 555
+SUDO_USER=espie
+TERM=xterm
+_=/usr/bin/make
+BSD_INSTALL_MAN=install -c -o root -g bin -m 444
+DISTDIR=/usr/ports/distfiles
+ARCH=i386
+WRKDIR=/usr/ports/lang/icon/work
+X11BASE=/usr/X11R6
+PORTSDIR=/usr/ports
+TERMCAP=xterm|vs100|xterms|xterm terminal emulator (X Window System):   :       :am:bs:km:mi:ms:xn:     :co#80:it#8:li#24:      :*6=\E[4~:@0=\E[1~:AL=\E[%dL:DC=\E[%dP:DL=\E[%dM:       :DO=\E[%dB:F1=\E[23~:F2=\E[24~:F3=\E[25~:F4=\E[26~:     :F5=\E[28~:F6=\E[29~:F7=\E[31~:F8=\E[32~:F9=\E[33~:     :FA=\E[34~:LE=\E[%dD:RI=\E[%dC:UP=\E[%dA:       :ac=``aaffggjjkkllmmnnooppqqrrssttuuvvwwxxyyzz{{||}}~~: :ae=^O:al=\E[L:as=^N:bl=^G:cd=\E[J:ce=\E[K:cl=\E[H\E[2J:        :cm=\E[%i%d;%dH:cr=^M:cs=\E[%i%d;%dr:ct=\E[3g:dc=\E[P:  :dl=\E[M:do=^J:eA=\E)0:ei=\E[4l:ho=\E[H:im=\E[4h:       :is=\E7\E[r\E[m\E[?7h\E[?1;3;4;6l\E[4l\E8\E>:k1=\EOP:   :k2=\EOQ:k3=\EOR:k4=\EOS:k5=\E[15~:k6=\E[17~:k7=\E[18~: :k8=\E[19~:k9=\E[20~:k;=\E[21~:kD=\E[3~:kI=\E[2~:kN=\E[6~:      :kP=\E[5~:kb=^H:kd=\EOB:ke=\E[?1l\E>:kl=\EOD:kr=\EOC:   :ks=\E[?1h\E=:ku=\EOA:le=^H:md=\E[1m:me=\E[m:ml=\El:    :mr=\E[7m:mu=\Em:nd=\E[C:       :r2=\E7\E[r\E[m\E[?7h\E[?1;3;4;6l\E[4l\E8\E>:rc=\E8:    :sc=\E7:se=\E[m:sf=^J:so=\E[7m:sr=\EM:ta=^I:    :te=\E[2J\E[?47l\E8:ti=\E7\E[?47h:ue=\E[m:up=\E[A:      :us=\E[4m:
+LOGNAME=espie
+CURDIR=/usr/ports/lang/icon
+SCRIPTDIR=/usr/ports/lang/icon/scripts
+CVSROOT=/home/espie/.cvsroot
+WRKSRC=/usr/ports/lang/icon/work
+BSD_INSTALL_PROGRAM=install -c -s -o root -g bin -m 555
+FILESDIR=/usr/ports/lang/icon/files
+PREFIX=/usr/X11R6
+IPATH=/usr/local/icon/ipl/ucode
+DISPLAY=:0.0
+HOME=/home/espie
+DEPENDS=
+BSD_INSTALL_SCRIPT=install -c -o root -g bin -m 555
+PWD=/usr/ports/lang/icon
+BSD_INSTALL_SCRIPT_DIR=install -d -o root -g bin -m 555
+SUDO_GID=10
+BSD_INSTALL_DATA=install -c -o root -g bin -m 444
+SUDO_COMMAND=/usr/local/bin/zsh
+LOCALBASE=/usr/local
+BSD_INSTALL_DATA_DIR=install -d -o root -g bin -m 555
+WINDOWID=20971534
+PATCHDIR=/usr/ports/lang/icon/patches
+SHLVL=4
+SUDO_UID=500
+make Clean
+cd src;         make Clean
+cd iconc; rm -f *.o iconc
+cd common; rm -f *.o doincl patchstr
+cd preproc; rm -f *.o pp
+cd rtt; rm -f *.o rtt
+cd runtime; rm -f *.c *.o rt.db rt.a rttcur.lst rttfull.lst iconx
+cd icont; rm -f *.o icont iconx.hdr hdr.h newhdr
+cd xpm; rm -f *.o *.a
+touch h/define.h
+cd tests;               make Clean
+cd bench;       make Clean
+rm -f *.out concord-[ct] deal-[ct] ipxref-[ct] queens-[ct]  rsg-[ct] *.u?
+cd calling;     make Clean
+cd extcall; make Clean
+rm -f *.o
+cd loadfunc; make Clean
+rm -f *.o *.so *.out so_locations btest
+rm -f foo
+cd general;     make Clean
+rm -f local/*
+touch local/.placeholder
+cd graphics;    make Clean
+rm -f foo gpxtest
+cd preproc;     make Clean
+cd samples;     make Clean
+rm -f local/*
+touch local/.placeholder
+cd special;     make Clean
+rm -f keyboard save
+echo '#define BinPath' \"`pwd`/bin/\" >src/h/path.h
+cp config/unix/Common/Makefile config/unix/openbsd
+cd config/unix/openbsd; make X-Icon
+make -f ../Config/Makefile Setup-X-Icon
+make -f ../Config/Makefile Clean
+rm -f ../../../src/common/rswitch.[csS]
+make -f ../Config/Makefile Localcode
+cp define.h ../../../src/h
+cp rswitch.[csS] ../../../src/common
+if grep -s NoRanlib define.h;  then touch ../../../NoRanlib;  else rm -rf ../../../NoRanlib; fi
+make -f ../Config/Makefile Makefiles
+cat rtt.hdr ../Config/rtt.make  > ../../../src/rtt/Makefile
+cat common.hdr ../Config/common.make  > ../../../src/common/Makefile
+cat iconc.hdr ../Config/iconc.make  > ../../../src/iconc/Makefile
+cat preproc.hdr ../Config/preproc.make  > ../../../src/preproc/Makefile
+cat icont.hdr ../Config/icont.make  > ../../../src/icont/Makefile
+cat runtime.hdr ../Config/runtime.make  > ../../../src/runtime/Makefile
+echo "#define Graphics 1" >>../../../src/h/define.h
+if [ -f xiconc.def ];  then cat xiconc.def >> ../../../src/h/define.h; fi
+echo "XPMLIB=-L../../bin -lXpm" > ../../../src/runtime/Makefile
+if [ -f xiconx.mak ];  then cat xiconx.mak >> ../../../src/runtime/Makefile;  else echo "XLIB= -lX11"  >> ../../../src/runtime/Makefile; fi
+echo "XPM = xpm" >> ../../../src/runtime/Makefile
+cat runtime.hdr ../Config/runtime.make  >> ../../../src/runtime/Makefile
+cat xpm.hdr ../Config/xpm.make  > ../../../src/xpm/Makefile
+echo "XPM = xpm" > ../../../src/iconc/Makefile
+cat iconc.hdr ../Config/iconc.make  >> ../../../src/iconc/Makefile
+rm -f config/unix/openbsd/Makefile
+===>  Building for icon-9.3
+cd src/common;          make
+cc -O2  -DNOTHING -I/usr/X11R6/include -Wall  -c doincl.c
+doincl.c:23: warning: return-type defaults to `int'
+doincl.c: In function `main':
+doincl.c:30: warning: suggest parentheses around assignment used as truth value
+doincl.c: In function `doinclude':
+doincl.c:59: warning: suggest parentheses around assignment used as truth value
+cc -O2  -DNOTHING -I/usr/X11R6/include -Wall  -c patchstr.c
+patchstr.c:44: warning: return-type defaults to `int'
+patchstr.c: In function `patchstr':
+patchstr.c:117: warning: double format, different type arg (arg 3)
+patchstr.c:117: warning: too few arguments for format
+patchstr.c: At top level:
+patchstr.c:179: warning: return-type defaults to `int'
+cc  -o doincl doincl.o
+cc  -o patchstr patchstr.o
+./doincl -o ../../bin/rt.h ../h/rt.h
+cp patchstr ../../bin
+cd src/rtt;             make
+cd ../common; make getopt.o time.o filepart.o memory.o identify.o strtbl.o rtdb.o mlocal.o literals.o alloc.o
+cc -O2  -DNOTHING -I/usr/X11R6/include -Wall  -c getopt.c
+getopt.c:68: warning: `junk' defined but not used
+cc -O2  -DNOTHING -I/usr/X11R6/include -Wall  -c time.c
+cc -O2  -DNOTHING -I/usr/X11R6/include -Wall  -c filepart.c
+filepart.c: In function `pathfind':
+filepart.c:123: warning: suggest parentheses around assignment used as truth value
+cc -O2  -DNOTHING -I/usr/X11R6/include -Wall  -c memory.c
+memory.c:33: warning: `x' defined but not used
+cc -O2  -DNOTHING -I/usr/X11R6/include -Wall  -c identify.c
+identify.c: In function `id_comment':
+identify.c:17: warning: type defaults to `int' in declaration of `first_time'
+cc -O2  -DNOTHING -I/usr/X11R6/include -Wall  -c strtbl.c
+cc -O2  -DNOTHING -I/usr/X11R6/include -Wall  -c rtdb.c
+rtdb.c: In function `db_inlin':
+rtdb.c:455: warning: `il' might be used uninitialized in this function
+rtdb.c:516: warning: `ret_val' might be used uninitialized in this function
+rtdb.c:518: warning: `rslt' might be used uninitialized in this function
+rtdb.c: In function `db_abstr':
+rtdb.c:938: warning: `il' might be used uninitialized in this function
+rtdb.c: In function `db_ilc':
+rtdb.c:1238: warning: control reaches end of non-void function
+rtdb.c: In function `db_tndtyp':
+rtdb.c:1310: warning: control reaches end of non-void function
+rtdb.c: In function `db_icntyp':
+rtdb.c:1382: warning: control reaches end of non-void function
+cc -O2  -DNOTHING -I/usr/X11R6/include -Wall  -c mlocal.c
+cc -O2  -DNOTHING -I/usr/X11R6/include -Wall  -c literals.c
+cc -O2  -DNOTHING -I/usr/X11R6/include -Wall  -c alloc.c
+make rtt
+cc -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6  -c rttparse.c
+cc -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6  -c rttmain.c
+cc -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6  -c rttlex.c
+cc -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6  -c rttsym.c
+cc -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6  -c rttnode.c
+cc -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6  -c rttout.c
+cc -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6  -c rttmisc.c
+cc -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6  -c rttdb.c
+cc -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6  -c rttinlin.c
+cc -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6  -c rttilc.c
+cc -c -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6 ../preproc/pout.c
+cc -c -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6 ../preproc/pchars.c
+cc -c -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6 ../preproc/perr.c
+cc -c -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6 ../preproc/pmem.c
+cc -c -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6 ../preproc/bldtok.c
+cc -c -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6 ../preproc/macro.c
+cc -c -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6 ../preproc/preproc.c
+cc -c -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6 ../preproc/evaluate.c
+cc -c -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6 ../preproc/files.c
+cc -c -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6 ../preproc/gettok.c
+cc -c -O2  -DTokDotH="\"../rtt/ltoken.h\"" -O2 -I/usr/include/X11R6 ../preproc/pinit.c
+cc  -o rtt rttparse.o rttmain.o rttlex.o rttsym.o rttnode.o rttout.o rttmisc.o rttdb.o rttinlin.o rttilc.o pout.o pchars.o  perr.o pmem.o  bldtok.o macro.o preproc.o evaluate.o files.o gettok.o pinit.o ../common/getopt.o ../common/time.o ../common/filepart.o ../common/memory.o ../common/identify.o ../common/strtbl.o ../common/rtdb.o ../common/mlocal.o ../common/literals.o  ../common/alloc.o
+cp rtt ../../bin
+strip ../../bin/rtt
+cd src/icont;           make
+cc -O2  -I/usr/X11R6/include -Wall -O -c ixhdr.c
+ixhdr.c:31: warning: return type of `main' is not `int'
+ixhdr.c: In function `main':
+ixhdr.c:44: warning: implicit declaration of function `getuid'
+ixhdr.c:44: warning: implicit declaration of function `geteuid'
+ixhdr.c:44: warning: implicit declaration of function `getgid'
+ixhdr.c:44: warning: implicit declaration of function `getegid'
+ixhdr.c:60: warning: implicit declaration of function `findcmd'
+ixhdr.c: In function `doiconx':
+ixhdr.c:97: warning: implicit declaration of function `execv'
+ixhdr.c: In function `hsyserr':
+ixhdr.c:134: warning: implicit declaration of function `write'
+ixhdr.c: In function `findcmd':
+ixhdr.c:168: warning: suggest parentheses around assignment used as truth value
+ixhdr.c:170: warning: implicit declaration of function `chkcmd'
+cc  -O2  -I/usr/X11R6/include -Wall  ixhdr.o  -o iconx.hdr 
+strip iconx.hdr
+cc -O2  -I/usr/X11R6/include -Wall -o newhdr newhdr.c
+newhdr.c:17: warning: return-type defaults to `int'
+./newhdr <iconx.hdr >hdr.h
+cc -O2  -I/usr/X11R6/include -Wall  -c tmain.c
+tmain.c:394: warning: return type of `main' is not `int'
+tmain.c: In function `main':
+tmain.c:890: warning: implicit declaration of function `unlink'
+tmain.c: In function `execute':
+tmain.c:969: warning: suggest parentheses around assignment used as truth value
+tmain.c:1091: warning: implicit declaration of function `execv'
+tmain.c:1106: warning: implicit declaration of function `execvp'
+cc -O2  -I/usr/X11R6/include -Wall  -c util.c
+util.c: In function `trealloc':
+util.c:72: warning: `free_offset' might be used uninitialized in this function
+cc -O2  -I/usr/X11R6/include -Wall  -c tlocal.c
+tlocal.c:390: warning: `tjunk' defined but not used
+cc -O2  -I/usr/X11R6/include -Wall  -c trans.c
+trans.c: In function `trans1':
+trans.c:149: warning: implicit declaration of function `unlink'
+cc -O2  -I/usr/X11R6/include -Wall  -c tcode.c
+tcode.c: In function `binop':
+tcode.c:670: warning: `name' might be used uninitialized in this function
+tcode.c: In function `unopb':
+tcode.c:921: warning: `name' might be used uninitialized in this function
+cc -O2  -I/usr/X11R6/include -Wall  -c tlex.c
+In file included from tlex.c:22:
+../h/parserr.h:14: warning: missing braces around initializer for `errtab[0]'
+In file included from tlex.c:23:
+../common/lextab.h:16: warning: missing braces around initializer for `toktab[0]'
+../common/yylex.h: In function `nextchar':
+In file included from tlex.c:24:
+../common/yylex.h:642: warning: suggest parentheses around assignment used as truth value
+../common/error.h: In function `quitf':
+In file included from tlex.c:25:
+../common/error.h:225: warning: implicit declaration of function `unlink'
+cc -O2  -I/usr/X11R6/include -Wall  -c lnklist.c
+cc -O2  -I/usr/X11R6/include -Wall  -c tparse.c
+/usr/lib/yaccpar: In function `yyparse':
+/usr/lib/yaccpar:284: warning: label `yyerrlab' defined but not used
+/usr/lib/yaccpar:96: warning: label `yynewstate' defined but not used
+cc -O2  -I/usr/X11R6/include -Wall  -c tsym.c
+In file included from tsym.c:52:
+../h/kdefs.h:7: warning: missing braces around initializer for `keytab[0]'
+cc -O2  -I/usr/X11R6/include -Wall  -c tmem.c
+cc -O2  -I/usr/X11R6/include -Wall  -c tree.c
+cc -O2  -I/usr/X11R6/include -Wall  -c link.c
+link.c: In function `ilink':
+link.c:412: warning: suggest parentheses around assignment used as truth value
+cc -O2  -I/usr/X11R6/include -Wall  -c lglob.c
+lglob.c: In function `readglob':
+lglob.c:32: warning: unused variable `progname'
+lglob.c:29: warning: `implicit' might be used uninitialized in this function
+lglob.c: In function `scanrefs':
+lglob.c:162: warning: suggest parentheses around assignment used as truth value
+lglob.c: In function `scanfile':
+lglob.c:305: warning: `nrefs' might be used uninitialized in this function
+lglob.c:306: warning: `procid' might be used uninitialized in this function
+lglob.c:308: warning: `gp' might be used uninitialized in this function
+lglob.c: In function `reference':
+lglob.c:382: warning: suggest parentheses around assignment used as truth value
+cc -O2  -I/usr/X11R6/include -Wall  -c lcode.c
+lcode.c: In function `gencode':
+lcode.c:81: warning: `nargs' might be used uninitialized in this function
+lcode.c:81: warning: `implicit' might be used uninitialized in this function
+lcode.c:83: warning: `procname' might be used uninitialized in this function
+lcode.c:85: warning: `gp' might be used uninitialized in this function
+lcode.c: At top level:
+lcode.c:29: warning: `charout' declared `static' but never defined
+lcode.c:30: warning: `shortout' declared `static' but never defined
+cc -O2  -I/usr/X11R6/include -Wall  -c llex.c
+llex.c: In function `getint':
+llex.c:277: warning: suggest parentheses around assignment used as truth value
+cc -O2  -I/usr/X11R6/include -Wall  -c lmem.c
+cc -O2  -I/usr/X11R6/include -Wall  -c lsym.c
+lsym.c: In function `instid':
+lsym.c:54: warning: suggest parentheses around assignment used as truth value
+lsym.c: In function `putfield':
+lsym.c:302: warning: `rp2' might be used uninitialized in this function
+cc -O2  -I/usr/X11R6/include -Wall  -c opcode.c
+opcode.c:10: warning: missing braces around initializer for `optable[0]'
+cd ../common; make long.o getopt.o alloc.o filepart.o strtbl.o ipp.o
+cc -O2  -DNOTHING -I/usr/X11R6/include -Wall  -c long.c
+`getopt.o' is up to date.
+`alloc.o' is up to date.
+`filepart.o' is up to date.
+`strtbl.o' is up to date.
+cc -O2  -DNOTHING -I/usr/X11R6/include -Wall  -c ipp.c
+ipp.c: In function `ppch':
+ipp.c:403: warning: implicit declaration of function `quit'
+ipp.c: In function `wskip':
+ipp.c:836: warning: suggest parentheses around assignment used as truth value
+cc -O2  -I/usr/X11R6/include -Wall  -o icont tmain.o util.o tlocal.o trans.o tcode.o tlex.o lnklist.o tparse.o tsym.o tmem.o tree.o link.o lglob.o lcode.o llex.o lmem.o lsym.o opcode.o ../common/long.o ../common/getopt.o ../common/alloc.o  ../common/filepart.o ../common/strtbl.o ../common/ipp.o 
+cp icont ../../bin
+strip ../../bin/icont
+cd src/runtime;         make interp_all
+cd ../common; make long.o memory.o time.o save.o rswitch.o redirerr.o xwindow.o alloc.o xpm
+`long.o' is up to date.
+`memory.o' is up to date.
+`time.o' is up to date.
+cc -O2  -DNOTHING -I/usr/X11R6/include -Wall  -c save.c
+save.c:335: warning: `junk' defined but not used
+cc -c  rswitch.c
+cc -O2  -DNOTHING -I/usr/X11R6/include -Wall  -c redirerr.c
+redirerr.c: In function `redirerr':
+redirerr.c:71: warning: implicit declaration of function `close'
+redirerr.c:72: warning: implicit declaration of function `dup'
+cc -O2  -DNOTHING -I/usr/X11R6/include -Wall  -c xwindow.c
+`alloc.o' is up to date.
+cd ../xpm; make libXpm.a
+cc -c -O2  -DZPIPE data.c
+In file included from data.c:17:
+xpmP.h:25: X11/Xlib.h: No such file or directory
+xpmP.h:26: X11/Intrinsic.h: No such file or directory
+In file included from xpmP.h:33,
+                 from data.c:17:
+xpm.h:20: X11/Xlib.h: No such file or directory
+xpm.h:21: X11/Intrinsic.h: No such file or directory
+xpm.h:29: X11/Xutil.h: No such file or directory
+In file included from data.c:17:
+xpmP.h:40: X11/Xutil.h: No such file or directory
+*** Error code 1
+
+Stop.
+*** Error code 1
+
+Stop.
+*** Error code 1
+
+Stop.
+*** Error code 1
+
+Stop.
+*** Error code 1
+
+Stop.
+*** Error code 1
+
+Stop.
+*** Error code 1
+
+Stop.
