@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2000/10/16 13:30:33 fgsch Exp $
+# $OpenBSD: Makefile,v 1.43 2001/04/19 22:26:31 brad Exp $
+
+COMMENT=	"tty-based e-mail client"
 
 DISTNAME=	mutt-1.2.5i
 CATEGORIES=     mail
-NEED_VERSION=	1.324
+NEED_VERSION=	1.384
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
                 ftp://ftp.gbnet.net/pub/mutt-international/ \
                 ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -43,10 +45,6 @@ CONFIGURE_ARGS+= --with-curses
 	echo "Bad choice FLAVOR=${FLAVOR}"; exit 1
 .endif
 
-.if defined(HOMESPOOL)
-CONFIGURE_ARGS+= --with-homespool="${HOMESPOOL}"
-.endif
-
 # If you need IMAP or POP, you may want to enable those.
 .if ${FLAVOR:L:Mimap}
 CONFIGURE_ARGS+= --enable-imap --with-ssl
@@ -59,17 +57,11 @@ CONFIGURE_ARGS+= --enable-imap --with-ssl
 CONFIGURE_ARGS+= --enable-pop
 .endif
 
-WRKDIST=	${WRKDIR}/${DISTNAME:S/i$//}
-
-.if !defined(NO_WARNINGS)
-pre-fetch:
-	@echo
-	@echo '**********************************************************'
-	@echo '* This software contains cryptographic enabling code.    *'
-	@echo '* It is illegal to export outside of the United States.  *'
-	@echo '**********************************************************'
-	@echo
+.if defined(HOMESPOOL)
+CONFIGURE_ARGS+= --with-homespool="${HOMESPOOL}"
 .endif
+
+WRKDIST=	${WRKDIR}/${DISTNAME:S/i$//}
 
 post-install:
 	@strip ${PREFIX}/bin/mutt

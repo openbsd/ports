@@ -14,4 +14,10 @@ Other features include:
 - PGP/MIME (RFC2015)
 - small and efficient
 
+Flavors:
+	curses	- build using the curses library for screen handling.
+	slang	- build using the S-Lang library for screen handling.
+	imap	- build with IMAP & SSL support.
+	pop	- build with POP3 support.
+
 WWW: ${HOMEPAGE}
