@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2001/05/08 00:54:39 matt Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/13 13:08:30 matt Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -30,6 +30,14 @@ JDK_HOME=	${PREFIX}/jdk1.2-blackdown
 post-extract:
 	@chmod o+r ${WRKSRC}/jre/lib/i386/libsunwjit.so
 	@chmod o+r ${WRKSRC}/jre/lib/fonts/*.ttf
+
+# Add OpenBSD resource bundle for javah
+post-patch:
+	@mkdir -p ${WRKSRC}/lib/com/sun/tools/javah/resources
+	@cp ${FILESDIR}/OpenBSD_i386.properties \
+	    ${WRKSRC}/lib/com/sun/tools/javah/resources/
+	@${WRKSRC}/bin/jar -0uvf ${WRKSRC}/lib/tools.jar -C ${WRKSRC}/lib \
+	    com/sun/tools/javah/resources/OpenBSD_i386.properties
 
 pre-install:
 	@${INSTALL_DATA_DIR} ${JDK_HOME}
