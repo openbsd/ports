@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.331 2004/10/08 19:02:40 sturm Exp $
+# $OpenBSD: Makefile,v 1.332 2004/10/09 18:56:22 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -263,6 +263,7 @@
      SUBDIR += vicq
      SUBDIR += vsftpd
      SUBDIR += vtun
+     SUBDIR += weex
      SUBDIR += wget
      SUBDIR += wide-dhcp
      SUBDIR += wmifinfo
