@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_nedit_doc,v 1.3 2004/01/14 23:42:53 djm Exp $
---- doc/nedit.doc.orig	2003-11-21 05:40:11.000000000 +1100
-+++ doc/nedit.doc	2003-12-04 22:24:52.000000000 +1100
+$OpenBSD: patch-doc_nedit_doc,v 1.4 2004/10/17 21:23:50 djm Exp $
+--- doc/nedit.doc.orig	Fri Oct  1 07:03:56 2004
++++ doc/nedit.doc	Sat Oct 16 17:42:51 2004
 @@ -4,6 +4,10 @@
  
- NEdit 5.4                                               November 20, 2003
+ NEdit 5.5                                               September 30, 2004
  
 +  NOTE: Due to conflict with the program nc - Arbitrary tcp and udp
 +  connections and listens - the NEdit Client program, called nc in this

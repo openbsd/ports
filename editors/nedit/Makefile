@@ -1,16 +1,19 @@
-# $OpenBSD: Makefile,v 1.28 2004/01/14 23:42:53 djm Exp $
+# $OpenBSD: Makefile,v 1.29 2004/10/17 21:23:50 djm Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		"X11/Motif GUI text editor"
 
-DISTNAME=		nedit-5.4-source
-PKGNAME=		nedit-5.4
+DISTNAME=		nedit-5.5-src
+PKGNAME=		nedit-5.5
 WRKDIST=		${WRKDIR}/${PKGNAME}
 CATEGORIES=		editors x11
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nedit/}
+MASTER_SITES=		http://www.nedit.org/ftp/v5_5/ \
+			${MASTER_SITE_SOURCEFORGE:=nedit/}
 
 HOMEPAGE=		http://www.nedit.org/
+
+MAINTAINER=		Damien Miller <djm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

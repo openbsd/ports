@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_file_c,v 1.4 2004/01/14 23:42:53 djm Exp $
---- source/file.c.orig	2003-09-29 00:18:12.000000000 +1000
-+++ source/file.c	2003-12-04 22:24:52.000000000 +1100
-@@ -1218,7 +1218,12 @@ void PrintWindow(WindowInfo *window, int
+$OpenBSD: patch-source_file_c,v 1.5 2004/10/17 21:23:50 djm Exp $
+--- source/file.c.orig	Tue Aug 24 19:37:24 2004
++++ source/file.c	Sat Oct 16 17:42:51 2004
+@@ -1314,7 +1314,12 @@ void PrintWindow(WindowInfo *window, int
  */
  void PrintString(const char *string, int length, Widget parent, const char *jobName)
  {
@@ -14,7 +14,7 @@ $OpenBSD: patch-source_file_c,v 1.4 2004/01/14 23:42:53 djm Exp $
      FILE *fp;
      int fd;
  
-@@ -1229,6 +1234,10 @@ void PrintString(const char *string, int
+@@ -1325,6 +1330,10 @@ void PrintString(const char *string, int
  	    1. Create a filename
  	    2. Open the file with the O_CREAT|O_EXCL flags
  	So all an attacker can do is a DoS on the print function. */
@@ -25,11 +25,11 @@ $OpenBSD: patch-source_file_c,v 1.4 2004/01/14 23:42:53 djm Exp $
      tmpnam(tmpFileName);
  
      /* open the temporary file */
-@@ -1237,6 +1246,7 @@ void PrintString(const char *string, int
+@@ -1333,6 +1342,7 @@ void PrintString(const char *string, int
  #else
      if ((fd = open(tmpFileName, O_CREAT|O_EXCL|O_WRONLY, S_IRUSR | S_IWUSR)) < 0 || (fp = fdopen(fd, "w")) == NULL)
  #endif /* VMS */
 +#endif /* HAVE_MKSTEMP */
      {
          DialogF(DF_WARN, parent, 1, "Error while Printing",
-                 "Unable to write file for printing:\n%s", "Dismiss",
+                 "Unable to write file for printing:\n%s", "OK",

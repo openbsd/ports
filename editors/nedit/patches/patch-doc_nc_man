@@ -1,9 +1,14 @@
-$OpenBSD: patch-doc_nc_man,v 1.3 2004/01/14 23:42:53 djm Exp $
---- doc/nc.man.orig	2003-11-21 05:40:13.000000000 +1100
-+++ doc/nc.man	2003-12-04 22:27:20.000000000 +1100
-@@ -141,10 +141,10 @@
- .TH NC 1 "NEdit 5.4" "2003-10-14" "NEdit documentation"
- .UC
+$OpenBSD: patch-doc_nc_man,v 1.4 2004/10/17 21:23:50 djm Exp $
+--- doc/nc.man.orig	Fri Oct  1 07:03:59 2004
++++ doc/nc.man	Sat Oct 16 17:45:26 2004
+@@ -128,13 +128,13 @@
+ .rm #[ #] #H #V #F C
+ .\" ========================================================================
+ .\"
+-.IX Title "NC 1"
+-.TH NC 1 "2004-07-21" "NEdit 5.5" "NEdit documentation"
++.IX Title "NC1 1"
++.TH NC1 1 "2004-07-21" "NEdit 5.5" "NEdit documentation"
  .SH "NAME"
 -nc \- Client program for NEdit text editor
 +nc1 \- Client program for NEdit text editor
@@ -14,8 +19,8 @@ $OpenBSD: patch-doc_nc_man,v 1.3 2004/01/14 23:42:53 djm Exp $
     [\fB\-ask\fR] [\fB\-noask\fR] [\fB\-svrname\fR \fIname\fR] [\fB\-svrcmd\fR \fIcommand\fR] 
     [\fB\-lm\fR \fIlanguagemode\fR] 
     [\fB\-geometry\fR \fIgeometry\fR | \fB\-g\fR \fIgeometry\fR] [\fB\-icon\fR | \fB\-iconic\fR] 
-@@ -154,13 +154,13 @@ nc [\fB\-read\fR] [\fB\-create\fR] [\fB\
-    [\fB\--\fR] [file...]
+@@ -144,14 +144,14 @@ nc [\fB\-read\fR] [\fB\-create\fR] [\fB\
+    [\fB\-V\fR | \fB\-version\fR] [\fB\-\-\fR] [file...]
  .SH "DESCRIPTION"
  .IX Header "DESCRIPTION"
 -\&\fBnc\fR is the client interface to the NEdit text editor. A server can be started
@@ -25,40 +30,41 @@ $OpenBSD: patch-doc_nc_man,v 1.3 2004/01/14 23:42:53 djm Exp $
  .Vb 1
  \& nedit -server
  .Ve
+ .PP
 -If no server is running, \fBnc\fR will start one unless configured otherwise.
 +If no server is running, \fBnc1\fR will start one unless configured otherwise.
  Client/server mode is useful for integrating NEdit with software development
  environments, mailers, and other programs; or just as a quick way to open files
  from the shell command line without starting a new NEdit session.
-@@ -181,21 +181,21 @@ Execute an NEdit macro or action on the 
- command line. Note that other files mentioned in the command line are not
- affected. 
+@@ -171,21 +171,21 @@ Go to line number \fIn\fR.
+ Execute an NEdit macro or action on the file following the \-do argument on the
+ command line.
  .Sp
 -If you use this command without a filename, \fBnc\fR would randomly choose one
 +If you use this command without a filename, \fBnc1\fR would randomly choose one
  window to focus and execute the macro in.
- .Ip "\fB\-ask\fR, \fB\-noask\fR" 4
+ .IP "\fB\-ask\fR, \fB\-noask\fR" 4
  .IX Item "-ask, -noask"
 -Instructs \fBnc\fR whether to automatically start a server if one is not
 +Instructs \fBnc1\fR whether to automatically start a server if one is not
  available. This overrides the X resource `nc.autoStart'.
- .Ip "\fB\-svrname\fR \fIname\fR" 4
+ .IP "\fB\-svrname\fR \fIname\fR" 4
  .IX Item "-svrname name"
 -Explicitly instructs \fBnc\fR which server to connect to, an instance of
 +Explicitly instructs \fBnc1\fR which server to connect to, an instance of
  \&\fInedit\fR\|(1) with a corresponding \fB\-svrname\fR argument.  By naming servers, you
  can run several simultaneously, and direct files and commands specifically to
  any one.
- .Ip "\fB\-svrcmd\fR \fIcommand\fR" 4
+ .IP "\fB\-svrcmd\fR \fIcommand\fR" 4
  .IX Item "-svrcmd command"
 -The command which \fBnc\fR uses to start an NEdit server. It is also settable via
 +The command which \fBnc1\fR uses to start an NEdit server. It is also settable via
  the X resource `nc.serverCommand', by default, \fI\*(L"nedit \-server\*(R"\fR.
- .Ip "\fB\-lm\fR \fIlanguagemode\fR" 4
+ .IP "\fB\-lm\fR \fIlanguagemode\fR" 4
  .IX Item "-lm languagemode"
-@@ -230,11 +230,11 @@ Under rare conditions (such as a slow co
+@@ -221,11 +221,11 @@ Under rare conditions (such as a slow co
  increase the time-out period. In most cases, the default is fine. 
- .Ip "\fB\-wait\fR" 4
+ .IP "\fB\-wait\fR" 4
  .IX Item "-wait"
 -Instructs \fBnc\fR not to return to the shell until all files given
 +Instructs \fBnc1\fR not to return to the shell until all files given
@@ -88,13 +94,13 @@ $OpenBSD: patch-doc_nc_man,v 1.3 2004/01/14 23:42:53 djm Exp $
  perfectly appropriate for editing a given file.
  .PP
 @@ -275,12 +275,12 @@ command line, for example:
- .Ip "incorrect:" 4
+ .IP "incorrect:" 4
  .IX Item "incorrect:"
  .Vb 1
 -\&  nc file.c -line 25
 +\&  nc1 file.c -line 25
  .Ve
- .Ip "correct:" 4
+ .IP "correct:" 4
  .IX Item "correct:"
  .Vb 1
 -\&  nc -line 25 file.c
