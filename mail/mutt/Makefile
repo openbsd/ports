@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2000/08/04 17:55:26 brad Exp $
+# $OpenBSD: Makefile,v 1.40 2000/08/12 13:29:55 brad Exp $
 
 DISTNAME=	mutt-1.2.5i
 CATEGORIES=     mail
@@ -24,6 +24,8 @@ FLAVORS=	slang curses imap pop
 FLAVOR?=	curses
 
 SYSCONFDIR=	/etc/mutt
+SUBST_VARS=	SYSCONFDIR
+
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-sharedir="${PREFIX}/share/mutt" \
 		--with-docdir="${PREFIX}/share/doc/mutt" \
