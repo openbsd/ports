@@ -1,7 +1,7 @@
-$OpenBSD: patch-bsd_kernel_cc,v 1.1 2000/07/17 16:24:47 form Exp $
---- bsd/kernel.cc.orig	Mon Jul 17 22:56:11 2000
-+++ bsd/kernel.cc	Mon Jul 17 23:01:09 2000
-@@ -72,7 +72,7 @@ int DevStat_Get();
+$OpenBSD: patch-bsd_kernel_cc,v 1.2 2001/12/06 03:40:07 form Exp $
+--- bsd/kernel.cc.orig	Tue Jul 18 01:52:31 2000
++++ bsd/kernel.cc	Thu Dec  6 09:33:22 2001
+@@ -76,7 +76,7 @@ int DevStat_Get();
  
  #ifdef HAVE_SWAPCTL
  #include <unistd.h>		/*  For swapctl proto.  */
@@ -10,7 +10,7 @@ $OpenBSD: patch-bsd_kernel_cc,v 1.1 2000/07/17 16:24:47 form Exp $
  #include <sys/swap.h>		/*  For swapent, SWAP_*.  */
  #else
  #include <vm/vm_swap.h>		/* swapent, SWAP_*. */
-@@ -162,9 +162,9 @@ static struct nlist nlst[] =
+@@ -166,9 +166,9 @@ static struct nlist nlst[] =
  { "_eintrcnt" },
  #define EINTRCNT_SYM_INDEX 	8
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-bsd_kernel_cc,v 1.1 2000/07/17 16:24:47 form Exp $
  { "_intrhand" },
  #define INTRHAND_SYM_INDEX    9
  { "_intrstray" },
-@@ -781,7 +781,7 @@ BSDGetDiskXFerBytes (unsigned long long 
+@@ -786,7 +786,7 @@ BSDGetDiskXFerBytes (unsigned long long 
  }
  
  /*  ---------------------- Interrupt Meter stuff  -----------------  */
@@ -31,7 +31,7 @@ $OpenBSD: patch-bsd_kernel_cc,v 1.1 2000/07/17 16:24:47 form Exp $
  static unsigned long kvm_intrcnt[128];// guess at space needed
  #endif
  
-@@ -801,9 +801,9 @@ int
+@@ -806,9 +806,9 @@ int
  BSDIntrInit() {
      OpenKDIfNeeded();
  
@@ -43,7 +43,7 @@ $OpenBSD: patch-bsd_kernel_cc,v 1.1 2000/07/17 16:24:47 form Exp $
      return ValidSymbol(IVP_SYM_INDEX);
  #elif defined (XOSVIEW_BSDI)
  #if _BSDI_VERSION >= 199802 /* BSD/OS 4.x */
-@@ -816,7 +816,7 @@ BSDIntrInit() {
+@@ -821,7 +821,7 @@ BSDIntrInit() {
  #endif
  }
  
@@ -52,7 +52,7 @@ $OpenBSD: patch-bsd_kernel_cc,v 1.1 2000/07/17 16:24:47 form Exp $
  int
  BSDNumInts() {
    int nintr;
-@@ -877,8 +877,8 @@ BSDGetIntrStats (unsigned long intrCount
+@@ -882,8 +882,8 @@ BSDGetIntrStats (unsigned long intrCount
    //  counts.  We'll just use the intrcnt array here.  If anyone
    //  has problems, please mail me.  bgrayson
    {
@@ -63,7 +63,7 @@ $OpenBSD: patch-bsd_kernel_cc,v 1.1 2000/07/17 16:24:47 form Exp $
    struct intrhand *intrhand[16], *ihp, ih;
    int intrstray[16];
  
-@@ -911,7 +911,7 @@ BSDGetIntrStats (unsigned long intrCount
+@@ -916,7 +916,7 @@ BSDGetIntrStats (unsigned long intrCount
        intrCount[i] = 0;
    }
  # endif /* pc532 */
