@@ -1,0 +1,11 @@
+--- sys/regex.c.orig	Wed Jul 29 02:05:30 1998
++++ sys/regex.c	Wed Jul 29 02:04:46 1998
+@@ -35,7 +35,7 @@
+ #else
+ #if defined(hpux) \
+  || defined(bsdi) \
+- || defined(__FreeBSD__)
++ || defined(__FreeBSD__) || defined(__OpenBSD__)
+ 
+ #ifdef bsdi
+ #include <stdio.h>
