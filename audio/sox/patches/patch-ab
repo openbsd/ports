@@ -1,5 +1,5 @@
---- Makefile.unx.orig	Wed Sep 30 23:06:13 1998
-+++ Makefile.unx	Thu Jun  3 16:28:24 1999
+--- Makefile.unx.orig	Thu Oct  1 05:06:13 1998
++++ Makefile.unx	Thu Jun  3 23:48:07 1999
 @@ -95,7 +95,7 @@
  # Chose the best compiler you got from the following:
  #
@@ -14,11 +14,11 @@
  # also has its own getopt.h file (Such as the case with GNU libc 2.0)
  # then uncomment the following line:
 -GETOPT_DEFINES	= -DHAS_GETOPT_H
-+# GETOPT_DEFINES	= -DHAS_GETOPT_H
++#GETOPT_DEFINES	= -DHAS_GETOPT_H
  
  # Uncomment the following if your system does not have a built in
  # strerror().  This includes SunOS.
-@@ -217,13 +217,13 @@
+@@ -217,7 +217,7 @@
  ##############################################################################
  
  SOX_PRE_LIBS	= $(GSM_PRE_LIBS)
@@ -27,10 +27,3 @@
  SOX_INCLUDES	= $(GSM_INCLUDES)
  SOX_DEFINES	= $(GSM_DEFINES) $(OSS_DEFINES) $(SUNAUDIO_DEFINES) \
    $(BLASTER) $(GETOPT_DEFINES) $(STRERR_DEFINES) $(MEMMOVE_DEFINES) \
-   $(NEXT_DEFINES) $(MAC_DEFINES) $(MISC_DEFINES)
- 
--CFLAGS  = $O $(SOX_DEFINES) $(SOX_INCLUDES)
-+CFLAGS += $(SOX_DEFINES) $(SOX_INCLUDES)
- 
- all: sox
- 
