@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/08/23 19:00:04 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2001/08/23 19:05:36 brad Exp $
 
 COMMENT=		"C++ API for MySQL"
 COMMENT-docs=		"C++ API for MySQL documentation"
@@ -21,7 +21,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/mysql++/ \
 			ftp://ftp.mysql.com/mysql++/
 
+.if ${SUBPACKAGE} != "-docs"
 LIB_DEPENDS=		mysqlclient.10:mysql-client-3.23.*:databases/mysql
+.endif
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
