@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 1999/09/16 01:26:00 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/08 04:10:23 kevlo Exp $
 
 SUBDIR+= libs
-#SUBDIR+= base
+SUBDIR+= base
 
 .include <bsd.port.subdir.mk>

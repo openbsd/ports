@@ -1,0 +1,29 @@
+--- kdm/resource.c.orig	Thu Jan 28 15:10:02 1999
++++ kdm/resource.c	Sat Feb 13 19:44:33 1999
+@@ -92,7 +92,7 @@
+ #define DEF_SESSION XDMDIR"/Xsession" /* QUOTE(XBINDIR) "xterm -ls" */
+ #endif
+ #ifndef DEF_USER_PATH
+-#  ifdef __FreeBSD__
++#  if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #    define DEF_USER_PATH "/bin:/usr/bin:" QUOTE(XBINDIR) ":/usr/local/bin"
+ #  elif __linux__
+ #    define DEF_USER_PATH "/bin:/usr/bin:" QUOTE(XBINDIR) ":/usr/local/bin"
+@@ -101,7 +101,7 @@
+ #  endif
+ #endif
+ #ifndef DEF_SYSTEM_PATH
+-#  ifdef __FreeBSD__
++#  if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #    define DEF_SYSTEM_PATH "/sbin:/usr/sbin:/bin:/usr/bin:" QUOTE(XBINDIR) ":/usr/local/bin"
+ #  elif __linux__
+ #    define DEF_SYSTEM_PATH "/sbin:/usr/sbin:/bin:/usr/bin:" QUOTE(XBINDIR) ":/usr/local/bin"
+@@ -153,7 +153,7 @@
+ #define DEF_GREETER_LIB ""
+ #endif
+ #ifndef DEF_PID_FILE
+-#  ifdef __FreeBSD__
++#  if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #    define DEF_PID_FILE _PATH_VARRUN"kdm.pid"
+ #  else
+ /* this may be readonly
