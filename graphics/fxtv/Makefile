@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/10/26 11:31:40 downsj Exp $
+# $OpenBSD: Makefile,v 1.6 1999/11/28 06:13:46 brad Exp $
 # $FreeBSD: Makefile,v 1.17 1999/03/16 14:01:06 roger Exp $
 
 DISTNAME=	fxtv-0.48
@@ -8,7 +8,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@openbsd.org
 
-LIB_DEPENDS=	tiff.3.4:${PORTSDIR}/graphics/tiff34 \
+LIB_DEPENDS=	tiff.35:${PORTSDIR}/graphics/tiff \
 		jpeg.62:${PORTSDIR}/graphics/jpeg \
 		Xaw3d.6.1:${PORTSDIR}/x11/Xaw3d
 
