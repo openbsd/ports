@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/07/29 14:48:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/02 13:17:45 naddy Exp $
 
 COMMENT=	"official AT&T release of KornShell 93"
 
@@ -24,6 +24,7 @@ FLAVOR?=
 MAKE_FLAGS=	CC='${CC}' CCFLAGS='${CFLAGS}'
 .if ${FLAVOR:L} == "static"
 MAKE_FLAGS+=	LDFLAGS=-static
+BROKEN=		"does not build"
 .endif
 
 WRKDIST=	${WRKDIR}
