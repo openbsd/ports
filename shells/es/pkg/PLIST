@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 08:57:23 espie Exp $
-@pkgcfl xnc-[0-9]*
+@comment $OpenBSD: PLIST,v 1.6 2004/09/18 13:07:23 espie Exp $
+@conflict xnc-*
 @shell bin/es
 @man man/man1/es.1
