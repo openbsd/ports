@@ -1,24 +1,17 @@
 #!/usr/bin/perl
+$confdir = "/etc/mgetty+sendfax";
+$defport = "tty00";
 
-exit 0 if $ARGV[1] ne "POST-INSTALL";
+print STDERR "\n\n*** mgetty+sendfax configuration program ***\n\n";
 
-print STDERR "\n\n\n =========== mgetty+sendfax configuration ================\n\n";
-$prefix = $ENV{'PKG_PREFIX'} ? $ENV{'PKG_PREFIX'} : "/usr/local";
-$etcdir = $ENV{'MGETTY_ETC'} ? $ENV{'MGETTY_ETC'} : "/etc";
 $sep = "~";
-
-&read_config ("$etcdir/mgetty+sendfax/mgetty.config");
-foreach (keys(%var)) {
-    $var_m{$_} = $var{$_};
-    delete $var{$_};
-}
-&read_config ("$etcdir/mgetty+sendfax/sendfax.config");
-foreach (keys(%var)) {
-    $var_f{$_} = $var{$_};
-}
+&read_config ("$confdir/mgetty.config");
+foreach (keys(%var)) { $var_m{$_} = $var{$_}; delete $var{$_}; }
+&read_config ("$confdir/sendfax.config");
+foreach (keys(%var)) { $var_f{$_} = $var{$_}; }
 
 $a = 1;
-$devices = $var{'ports'} ? $var{'ports'} : "cuaa1";
+$devices = $var{'ports'} ? $var{'ports'} : "${defport}";
 while ($a) {
     $devices = &ask ("list of devices", $devices);
 
@@ -60,19 +53,19 @@ again:
 
 close (TMP1);
 close (TMP2);
-if ( -e "$etcdir/mgetty+sendfax/mgetty.config") {
-    system ("mv -f $etcdir/mgetty+sendfax/mgetty.config $etcdir/mgetty+sendfax/mgetty.config.old");
-    system ("rm -f $etcdir/mgetty+sendfax/mgetty.config");
+if ( -e "$confdir/mgetty.config") {
+    system ("mv -f $confdir/mgetty.config $confdir/mgetty.config.old");
+    system ("rm -f $confdir/mgetty.config");
 }
-if ( -e "$etcdir/mgetty+sendfax/sendfax.config") {
-    system ("mv -f $etcdir/mgetty+sendfax/sendfax.config $etcdir/mgetty+sendfax/sendfax.config.old");
-    system ("rm -f $etcdir/mgetty+sendfax/sendfax.config");
+if ( -e "$confdir/sendfax.config") {
+    system ("mv -f $confdir/sendfax.config $confdir/sendfax.config.old");
+    system ("rm -f $confdir/sendfax.config");
 }
-system ("mv -f /tmp/mgetty.config.$$ $etcdir/mgetty+sendfax/mgetty.config");
-system ("mv -f /tmp/sendfax.config.$$ $etcdir/mgetty+sendfax/sendfax.config");
+system ("mv -f /tmp/mgetty.config.$$ $confdir/mgetty.config");
+system ("mv -f /tmp/sendfax.config.$$ $confdir/sendfax.config");
 
-open (F, ">$etcdir/mgetty+sendfax/faxheader");
-print F "\n      FAX  FROM:  **not configured** $def{fax-id}     TO: \@T@    PAGE: \@P@ OF \@M@ \n";
+open (F, ">$confdir/faxheader");
+print F "\n      FAX  FROM:  **not configured** $def{fax-id}     TO: \@T\@    PAGE: \@P\@ OF \@M\@ \n";
 close (F);
 
 
@@ -87,7 +80,7 @@ foreach $tty (@ttys) {
     foreach $port (split) {
 	if ($tty =~ /^\s*$port/) {
 	    print STDERR "replacing line $tty";
-	    $tty = "$port\t\"$prefix/sbin/mgetty\"\tunknown on insecure\n";
+	    $tty = "$port\t\"@prefix@/sbin/mgetty\"\tunknown\ton\n";
 	    $replaced{$port} = 1;
 	}
     }
@@ -96,7 +89,7 @@ $_ = $devices;
 foreach $port (split) {
     if (!$replaced{$port}) {
 	print STDERR "adding port $port\n";
-	push (@ttys, "$port\t\"$prefix/sbin/mgetty\"\tunknown on insecure\n");
+	push (@ttys, "$port\t\"@prefix@/sbin/mgetty\"\tunknown\ton\n");
     }
 }
 system ("mv -f /etc/ttys /etc/ttys.old");
@@ -331,7 +324,7 @@ sub inq_m {
      modem setup command.", $def{'answer-chat-timeout'});
 
     $settings .= " autobauding";
-    $def{'autobauding'} = "YES" if !$def{'autobauding'};
+    $def{'autobauding'} = "NO" if !$def{'autobauding'};
     $def{'autobauding'} = &ask ("  - `autobauding'
      Some modems switch their DTE line speed to the communication line
      speed after connecting, e.g., after sending `CONNECT 2400', the

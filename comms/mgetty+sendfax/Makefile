@@ -1,46 +1,33 @@
-# $OpenBSD: Makefile,v 1.7 1998/12/07 20:47:27 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1998/12/18 02:55:46 form Exp $
 # $FreeBSD: Makefile,v 1.25 1998/07/16 06:44:37 vanilla Exp $
-#
 
-DISTNAME=	mgetty1.1.17-Aug07
-PKGNAME=	mgetty-1.1.17
+DISTNAME=	mgetty1.1.19-Nov24
+PKGNAME=	mgetty-1.1.19
 CATEGORIES=	comms
-
-#BROKEN=	"newer version available"
+MASTER_SITES=	ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
 
 MAINTAINER=	form@OpenBSD.ORG
 
-MASTER_SITES=	ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
+WRKSRC=		${WRKDIR}/${PKGNAME}
+MAKE_ENV+=	prefix=${PREFIX} spool=/var/spool \
+		CONFDIR=/etc/mgetty+sendfax \
+		PHONE_GROUP=wheel PHONE_PERMS=700
 
-IS_INTERACTIVE=	yes
+MAN1=		coverpg.1 fax.1 faxq.1 faxrm.1 faxrunq.1 faxspool.1 g3cat.1 \
+		g32pbm.1 pbm2g3.1 pvf.1 zplay.1
+MAN4=		mgettydefs.4
+MAN5=		faxqueue.5
+MAN8=		callback.8 faxrunqd.8 mgetty.8 sendfax.8 
 
-# Needs site specific setup info
-#
-NO_PACKAGE=	yes
+post-build:
+	${SED} -e "s,@prefix@,${PREFIX},g" ${FILESDIR}/setup >${WRKDIR}/setup
 
-WRKSRC=		${WRKDIR}/mgetty-1.1.17
-MAKE_FLAGS=	prefix=${PREFIX} -f
-
-MGETTY_ETC?=	/etc
-
-pre-build:
-.if defined(AUTO_PPP)
-CFLAGS+= "-DAUTO_PPP"
-.else
-	@${ECHO} "***"
-	@${ECHO} "*** You're building mgetty without PPP detection support."
-	@${ECHO} "*** If you want to enable it, type \"make AUTO_PPP=yes\""
-	@${ECHO} "***"
-.endif
-
-pre-install:
-	@(cd ${WRKSRC}/doc; ${MAKE} manpages)
-
-.if !defined(BATCH)
 post-install:
-	@(cd ${PKGDIR}; \
-	  export PKG_PREFIX=${PREFIX} MGETTY_ETC=${MGETTY_ETC}; \
-	  /usr/bin/perl INSTALL _ POST-INSTALL)
-.endif
+	${INSTALL_SCRIPT} ${WRKDIR}/setup ${PREFIX}/lib/mgetty+sendfax
+	@${ECHO} "***"
+	@${ECHO} "*** Finished installing mgetty+sendfax."
+	@${ECHO} "*** To complete the install, run ${PREFIX}/lib/mgetty+sendfax/setup"
+	@${ECHO} "*** script."
+	@${ECHO} "***"
 
 .include <bsd.port.mk>
