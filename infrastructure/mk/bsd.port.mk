@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.446 2001/08/27 08:47:37 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.447 2001/08/27 08:50:30 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -593,12 +593,10 @@ MODULES+=${_i}
 .endfor
 
 .for _m in ${MODULES:L}
-.  if exists(${FILESDIR}/${_m}.port.mk)
-.    include "${FILESDIR}/${_m}.port.mk"
-.  elif exists(${LOCALBASE}/share/mk/${_m}.port.mk)
-.    include "${LOCALBASE}/share/mk/${_m}.port.mk"
-.  elif exists(${PORTSDIR}/infrastructure/mk/${_m}.port.mk)
+.  if exists(${PORTSDIR}/infrastructure/mk/${_m}.port.mk)
 .    include "${PORTSDIR}/infrastructure/mk/${_m}.port.mk"
+.  else
+ERRORS+="Missing support for modules ${_m}."
 .  endif
 .endfor
 
