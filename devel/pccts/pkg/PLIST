@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/06/12 17:45:19 fgsch Exp $
+bin/antlr
+bin/dlg
+bin/genmk
+bin/sor
+include/pccts/AParser.h
+include/pccts/ASTBase.h
+include/pccts/ATokPtr.h
+include/pccts/AToken.h
+include/pccts/ATokenBuffer.h
+include/pccts/ATokenStream.h
+include/pccts/AToken_traditional.h
+include/pccts/BufFileInput.h
+include/pccts/DLG_stream_input.h
+include/pccts/DLexerBase.h
+include/pccts/PBlackBox.h
+include/pccts/PCCTSAST.h
+include/pccts/SList.h
+include/pccts/antlr.h
+include/pccts/ast.h
+include/pccts/charbuf.h
+include/pccts/charptr.h
+include/pccts/config.h
+include/pccts/dlgauto.h
+include/pccts/dlgdef.h
+include/pccts/err.h
+include/pccts/int.h
+include/pccts/pccts_assert.h
+include/pccts/pccts_iostream.h
+include/pccts/pccts_istream.h
+include/pccts/pccts_setjmp.h
+include/pccts/pccts_stdarg.h
+include/pccts/pccts_stdio.h
+include/pccts/pccts_stdlib.h
+include/pccts/pccts_string.h
+include/pccts/pcctscfg.h
+@dirrm include/pccts
