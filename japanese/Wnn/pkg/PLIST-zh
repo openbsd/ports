@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zh,v 1.1 2000/04/21 00:45:30 espie Exp $
+@comment $OpenBSD: PLIST-zh,v 1.2 2000/04/21 02:01:52 espie Exp $
 bin/catod
 bin/catof
 bin/cdtoa
@@ -29,8 +29,6 @@ lib/wnn/cvt_key_tbl.gm
 lib/wnn/cvt_key_tbl.kt
 lib/wnn/cvt_key_tbl.mv
 lib/wnn/cvt_key_tbl.vt
-lib/wnn/install-script
-lib/wnn/serverdefs
 lib/wnn/zh_CN/cixing.data
 lib/wnn/zh_CN/cserverrc
 lib/wnn/zh_CN/libwnn.msg

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2000/04/21 00:45:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2000/04/21 02:01:52 espie Exp $
 bin/atod
 bin/atof
 bin/dtoa
@@ -80,7 +80,6 @@ lib/wnn/lt_LN/uum.msg
 lib/wnn/lt_LN/uumkey
 lib/wnn/lt_LN/uumkey_e
 lib/wnn/lt_LN/uumrc
-lib/wnn/serverdefs
 man/ja_JP.EUC/cat1/atod.0
 man/ja_JP.EUC/cat1/atof.0
 man/ja_JP.EUC/cat1/dtoa.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/04/20 23:58:24 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/04/21 02:01:50 espie Exp $
 
 CATEGORIES= japanese chinese korean
 DISTNAME= Wnn-data-4.2
@@ -20,7 +20,7 @@ post-extract:
 	mkdir -p ${WRKDIST}
 	cd `cd ${PORTSDIR} && cd japanese/Wnn && \
 		make show VARNAME=WRKDIST`; \
-	cp Wnn/jd/sysV/* ${WRKDIST}
+	cp Wnn/jd/sysV/* Wnn/jd/serverdefs ${WRKDIST}
 
 
 do-install:

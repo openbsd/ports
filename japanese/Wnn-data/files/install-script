@@ -46,10 +46,24 @@ else
     fi
 fi
 
-sys_dirs="/var/dict/ja_JP/pubdic var/dict/ja_JP/wnncons"
-usr_dirs=/var/dict/ja_JP/usr
-wnntouch=/usr/local/bin/wnntouch
-wnnserver=/usr/local/bin/jserver
+case "$1" in
+japanese)
+	sys_dirs="/var/dict/ja_JP/pubdic var/dict/ja_JP/wnncons"
+	usr_dirs=/var/dict/ja_JP/usr
+	wnntouch=/usr/local/bin/wnntouch
+	wnnserver=/usr/local/bin/jserver;;
+chinese)
+	sys_dirs="/var/dict/sys var/dict/zh_TW/sys"
+	usr_dirs=/var/dict/zh_TW/usr
+	wnntouch=/usr/local/bin/cwnntouch
+	wnnserver=/usr/local/bin/cserver;;
+korean)
+	sys_dirs="/var/dict/ko_KR/sys"
+	usr_dirs=/var/dict/ko_KR/usr
+	wnntouch=/usr/local/bin/kwnntouch
+	wnnserver=/usr/local/bin/kserver;;
+	;;
+esac
 
 # installation not yet complete, bail out
 [ -e $wnntouch ] || exit 0
@@ -62,7 +76,7 @@ chmod u+s $wnnserver
 [ -d /var/dict/ja_JP ] || exit 0
 
 for dir in $sys_dirs; do
-  $wnntouch $dir/*
+  [ -d $dir ] && $wnntouch $dir/*
 done
 
 for dir in $usr_dirs; do

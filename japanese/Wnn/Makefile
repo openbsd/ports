@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.22 2000/04/21 01:01:32 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2000/04/21 02:01:51 espie Exp $
 
 DISTNAME=	Wnn4.2
 MULTI_PACKAGES=-dict
@@ -17,12 +17,14 @@ CATEGORIES=	chinese
 PKGNAME=	zh-Wnn-4.2
 .elif ${SUBPACKAGE} == "-zhdict"
 CATEGORIES=	chinese
+PREFIX=/var/dict
 PKGNAME=	zh-Wnn-dict-4.2
 .elif ${SUBPACKAGE} == "-ko"
 CATEGORIES=	korean
 PKGNAME=	ko-Wnn-4.2
 .elif ${SUBPACKAGE} == "-kodict"
 CATEGORIES=	korean
+PREFIX=/var/dict
 PKGNAME=	ko-Wnn-dict-4.2
 .else
 CATEGORIES=	japanese
@@ -63,7 +65,7 @@ do-distpatch:
 	cd ${WRKDIR} && tar zxf ${FULLDISTDIR}/Wnn4.2.patch.tar.gz
 	cd ${WRKSRC} && patch ${PATCH_DIST_ARGS} < ${WRKDIR}/Wnn4.2.patch
 
-# do those as post-patch, because of the $Id: Makefile,v 1.22 2000/04/21 01:01:32 espie Exp $
+# do those as post-patch, because of the $Id: Makefile,v 1.23 2000/04/21 02:01:51 espie Exp $
 post-patch:
 	@cd ${WRKDIST}; \
 	for file in Wnn/jd/jserverrc cWnn/cd/cserverrc kWnn/kd/kserverrc; do\
@@ -82,7 +84,7 @@ do-configure:
 	@echo "#define BuildKWnn	NO"  >>${CONFIG_FILE}
 .endif
 	@echo "#define BuildXwnmo	NO"  >>${CONFIG_FILE}
-	@echo "#define BuildJlibV3	NO"  >>${CONFIG_FILE}
+	@echo "#define BuildJlibV3	YES" >>${CONFIG_FILE}
 	@cd ${WRKSRC}/config && ln -sf Project.tmpl X11.tmpl
 
 MAKE_FLAGS=IMAKE='imake -DPorts' WNNOWNER_INDIRECT=wnn
@@ -103,11 +105,11 @@ post-install:
 	@(cd ${JDOC_FROM}; tar cf - manual manual.en | \
 		(cd ${PORT_JDOCDIR}; tar xf -))
 	@chown -R ${SHAREOWN}.${SHAREGRP} ${PORT_JDOCDIR}
-.if ${MULTI_PACKAGES:M-zo}
-	${INSTALL_DATA_DIR} ${PORT_JDOCDIR}
-	@(cd ${JDOC_FROM}; tar cf - manual manual.en | \
-		(cd ${PORT_JDOCDIR}; tar xf -))
-	@chown -R ${SHAREOWN}.${SHAREGRP} ${PORT_JDOCDIR}
+.if ${MULTI_PACKAGES:M-zh}
+	${INSTALL_DATA_DIR} ${PORT_CDOCDIR}
+	@(cd ${CDOC_FROM}; tar cf - manual manual.en | \
+		(cd ${PORT_CDOCDIR}; tar xf -))
+	@chown -R ${SHAREOWN}.${SHAREGRP} ${PORT_CDOCDIR}
 .endif
 
 .include <bsd.port.mk>
