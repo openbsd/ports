@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/04/25 22:40:53 ish Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/05/11 05:24:10 ish Exp $
 @pkgcfl linux_lib-*
 @exec mkdir -p %D/dev
 @exec ln -sf /dev/console %D/dev/tty0
@@ -363,7 +363,6 @@ usr/bin/kill
 usr/bin/ld
 usr/bin/ld-2.3.2-olf.so
 usr/bin/ldd
-usr/bin/ldd.orig
 usr/bin/lddlibc4
 usr/bin/locale
 usr/bin/localedef
