@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 14:02:51 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/03/08 18:22:00 espie Exp $
 
 DISTNAME=	mp3cddb
 CATEGORIES=	audio
@@ -12,7 +12,7 @@ RUN_DEPENDS=	${PREFIX}/libdata/perl5/site_perl/MPEG/MP3Info.pm::audio/p5-MP3-Inf
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 
-LICENSE_TYPE=   NONE
+#LICENSE_TYPE=   NONE
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

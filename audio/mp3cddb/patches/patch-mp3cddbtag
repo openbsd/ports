@@ -1,6 +1,7 @@
---- mp3cddbtag.orig	Tue Feb 29 21:37:26 2000
-+++ mp3cddbtag	Tue Feb 29 21:37:33 2000
-@@ -29,7 +29,7 @@
+$OpenBSD: patch-mp3cddbtag,v 1.1 2001/03/08 18:22:00 espie Exp $
+--- mp3cddbtag.orig	Fri Nov 26 20:40:20 1999
++++ mp3cddbtag	Thu Mar  8 15:07:00 2001
+@@ -29,7 +29,7 @@ echo "($artist_album / $album)..."
      
  echo tagging $files tracks...
      

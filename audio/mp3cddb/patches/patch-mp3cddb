@@ -1,0 +1,11 @@
+$OpenBSD: patch-mp3cddb,v 1.1 2001/03/08 18:22:00 espie Exp $
+--- mp3cddb.orig	Thu Mar  8 15:07:21 2001
++++ mp3cddb	Thu Mar  8 15:07:38 2001
+@@ -122,6 +122,7 @@ sub textamp_info {
+     push (@toreturn,
+ 	  "ARTIST_ALBUM: $artist",
+ 	  "ALBUM: $real_title",
++	  "GENRE: $genre",
+ 	  "",
+ 	  );
+     
