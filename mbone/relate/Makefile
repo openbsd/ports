@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/04/19 10:41:16 wilfried Exp $
+# $OpenBSD: Makefile,v 1.15 2001/04/20 08:30:31 wilfried Exp $
 
 DISTNAME=       relate-2.0
 CATEGORIES=	mbone
@@ -23,6 +23,7 @@ RUN_DEPENDS=	nte::mbone/nte \
 USE_GMAKE=	Yes
 MAKE_FILE=	makefile
 ALL_TARGET=		
+WRKDIST=	${WRKDIR}/relate
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/relate ${PREFIX}/bin
