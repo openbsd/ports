@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2001/11/21 14:13:58 brad Exp $
+# $OpenBSD: Makefile,v 1.86 2001/12/03 16:44:27 brad Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -50,6 +50,7 @@
      SUBDIR += jbigkit
      SUBDIR += jpeg
      SUBDIR += kuickshow
+     SUBDIR += lcms
      SUBDIR += libart
      SUBDIR += libmng
      SUBDIR += libungif
