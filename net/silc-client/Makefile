@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2003/10/25 23:14:41 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2003/10/31 15:17:04 brad Exp $
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) client"
 
-DISTNAME=	silc-client-0.9.14
+DISTNAME=	silc-client-0.9.15
 CATEGORIES=	net
 HOMEPAGE=	http://www.silcnet.org/
 
@@ -27,13 +27,16 @@ LIB_DEPENDS+=	glib.1.2,gmodule.1.2::devel/glib
 
 MODULES=	iconv
 
+CONFDIR=	${SYSCONFDIR}/silc
+SUBST_VARS=	CONFDIR
+
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.54
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/irssi ${WRKSRC}/lib/silcmath/mpi
 CONFIGURE_ARGS+=--enable-ipv6 \
 		--with-helpdir=${PREFIX}/share/silc/help \
 		--with-docdir=${PREFIX}/share/doc/silc \
-		--with-etcdir=${SYSCONFDIR}/silc \
+		--with-etcdir=${CONFDIR} \
 		--with-iconv=${LOCALBASE} \
 		--with-perl-lib=${DESTDIR}${PREFIX}/libdata/perl5/site_perl
 
@@ -43,7 +46,7 @@ CONFIGURE_ARGS+= --disable-asm
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/silc
-	mv -f ${PREFIX}/share/doc/silc/example_silc.conf \
+	@mv -f ${PREFIX}/share/doc/silc/example_silc.conf \
 		${PREFIX}/share/examples/silc/silc.conf
 	${INSTALL_DATA} ${WRKSRC}/doc/silcalgs.conf \
 		${PREFIX}/share/examples/silc

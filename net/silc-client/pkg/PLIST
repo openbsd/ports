@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2003/10/25 23:14:42 brad Exp $
+@comment $OpenBSD: PLIST,v 1.12 2003/10/31 15:17:04 brad Exp $
 bin/silc
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi.pm
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/TextUI.pm
@@ -24,7 +24,6 @@ share/doc/silc/README
 @comment share/doc/silc/TODO
 share/doc/silc/draft-riikonen-presence-attrs-02.txt
 share/doc/silc/draft-riikonen-silc-commands-06.txt
-share/doc/silc/draft-riikonen-silc-flags-payloads-03.txt
 share/doc/silc/draft-riikonen-silc-flags-payloads-04.txt
 share/doc/silc/draft-riikonen-silc-ke-auth-07.txt
 share/doc/silc/draft-riikonen-silc-pp-08.txt
@@ -82,6 +81,7 @@ share/silc/help/list
 share/silc/help/load
 share/silc/help/log
 share/silc/help/me
+share/silc/help/mmsg
 share/silc/help/motd
 share/silc/help/msg
 share/silc/help/names
@@ -144,4 +144,4 @@ share/silc/themes/default.theme
 @comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto
 @comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi
 @comment @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
-@extraunexec rm -rf ${SYSCONFDIR}/silc
+@extraunexec rm -rf ${CONFDIR}
