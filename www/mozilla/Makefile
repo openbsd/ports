@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.68 2004/03/01 23:51:58 drahn Exp $
+# $OpenBSD: Makefile,v 1.69 2004/03/02 08:32:13 pvalchev Exp $
 
-ONLY_FOR_ARCHS= alpha i386 sparc sparc64 powerpc
+ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
 COMMENT=	"open source version of the Netscape browser"
 COMMENT-devel=	"devel files for Gecko"
@@ -68,7 +68,12 @@ CONFIGURE_ARGS=					\
 		--disable-tests			\
 		--disable-ldap
 
+# There is no problem with the propolice-enabled gcc3 on amd64,
+# but it is reported to still be broken on others.
+.if ${MACHINE_ARCH} != "amd64"
 CFLAGS+=	-fno-stack-protector
+.endif
+
 CONFIGURE_ENV=	PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin"
 

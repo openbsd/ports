@@ -1,8 +1,21 @@
-$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.1.1.1 2004/01/18 11:47:42 wilfried Exp $
---- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	2003-08-15 06:00:23.000000000 +0200
-+++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	2003-12-12 11:07:27.000000000 +0100
-@@ -106,6 +106,12 @@ CPPSRCS		:= xptcinvoke_osf1_alpha.cpp xp
- ASFILES		:= xptcinvoke_asm_osf1_alpha.s xptcstubs_asm_osf1_alpha.s
+$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.2 2004/03/02 08:34:11 pvalchev Exp $
+--- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	2004-03-01 18:06:12.000000000 -0700
++++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	2004-03-01 18:08:07.000000000 -0700
+@@ -51,6 +51,12 @@ CPPSRCS		:= xptcinvoke_unixish_x86.cpp x
+ endif
+ endif
+ #
++# OpenBSD/amd64
++#
++ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDamd64)
++CPPSRCS		:= xptcinvoke_openbsd_amd64.cpp xptcstubs_openbsd_amd64.cpp
++endif
++#
+ # New code for Linux, et. al., with gcc
+ # Migrate other platforms here after testing
+ #
+@@ -112,6 +118,12 @@ ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDalpha)
+ CPPSRCS		:= xptcinvoke_openbsd_alpha.cpp xptcstubs_openbsd_alpha.cpp
  endif
  #
 +# OpenBSD/Alpha
@@ -14,7 +27,7 @@ $OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.1.1.1 2004/01/
  # Linux/Alpha
  #
  ifneq (,$(filter Linuxalpha FreeBSDalpha NetBSDalpha,$(OS_ARCH)$(OS_TEST)))                           
-@@ -250,6 +256,14 @@ ASFILES		:= xptcinvoke_asm_ppc_netbsd.s 
+@@ -264,6 +276,14 @@ ASFILES		:= xptcinvoke_asm_ppc_openbsd.s
  endif
  
  #
@@ -29,8 +42,8 @@ $OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.1.1.1 2004/01/
  # Darwin/PPC
  #
  ifeq ($(OS_ARCH),Darwin)
-@@ -322,6 +336,20 @@ endif
- 
+@@ -276,6 +296,20 @@ CPPSRCS		:= xptcinvoke_ppc_rhapsody.cpp 
+ ASFILES		:= xptcinvoke_asm_ppc_rhapsody.s xptcstubs_asm_ppc_darwin.s
  endif
  endif
 +#
@@ -49,4 +62,4 @@ $OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.1.1.1 2004/01/
 +endif
  
  ######################################################################
- # S/390
+ # SPARC

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2004/02/29 20:51:32 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2004/03/02 08:34:11 pvalchev Exp $
 
-ONLY_FOR_ARCHS=	alpha i386 sparc sparc64
+ONLY_FOR_ARCHS=	alpha i386 sparc sparc64 amd64
 
 COMMENT=	"redesign of the integrated Mozilla App-Suite mail component"
 
@@ -67,7 +67,12 @@ CONFIGURE_ARGS+=--disable-mathml		\
 		--enable-crypto			\
 		--disable-ldap
 
+# There is no problem with the propolice-enabled gcc3 on amd64,
+# but it is reported to still be broken on others.
+.if ${MACHINE_ARCH} != "amd64"
 CFLAGS+=	-fno-stack-protector
+.endif
+
 CONFIGURE_ENV=	MOZ_THUNDERBIRD=1 \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
 MAKE_ENV=	MOZ_THUNDERBIRD=1 \
