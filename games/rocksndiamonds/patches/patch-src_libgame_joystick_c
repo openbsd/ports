@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libgame_joystick_c,v 1.1 2003/08/09 04:36:42 jolan Exp $
+--- src/libgame/joystick.c.orig	2003-07-02 16:06:00.000000000 -0500
++++ src/libgame/joystick.c	2003-08-08 23:06:46.000000000 -0500
+@@ -11,6 +11,8 @@
+ * joystick.c                                               *
+ ***********************************************************/
+ 
++#include <string.h>
++
+ #if defined(PLATFORM_FREEBSD)
+ #include <machine/joystick.h>
+ #endif
