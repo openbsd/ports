@@ -1,0 +1,2 @@
+File::Find::Rule::Filesys::Virtual is File::Find::Rule adapted to
+Filesys::Virtual.
