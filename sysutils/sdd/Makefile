@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/09/17 00:23:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2004/12/09 07:16:12 espie Exp $
 
 COMMENT=	"faster and improved version of dd"
 
@@ -18,6 +18,9 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/sdd/
 USE_GMAKE=	Yes
 MAKE_ENV=	MAKEPROG="${MAKE_PROGRAM}" CCOM="${CC}" COPTX="${CFLAGS}"
 
+post-patch:
+	@perl -pi.bak -e 's/\x07//g' ${WRKDIST}/RULES/gmake.wrn
+	
 .if ${MACHINE} != "i386" || ${CC} != "cc"
 do-configure:
 	@ln -sf ${WRKSRC}/RULES/i386-openbsd-cc.rul \
