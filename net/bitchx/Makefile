@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/03/25 08:34:48 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/05/18 00:30:32 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
 DISTNAME=	BitchX-1.0c16
@@ -8,7 +8,7 @@ PKGNAME=	bitchx-1.0c16-socks5
 PKGNAME=	bitchx-1.0c16
 .endif
 CATEGORIES=	net
-NEED_VERSION=	1.230
+NEED_VERSION=	1.234
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://bitchx.dimension6.com/pub/BitchX/source/
 
@@ -39,6 +39,8 @@ FAKE_FLAGS=	INSTALL="${INSTALL_PROGRAM}" INSTALL_DATA="${INSTALL_DATA}"
 WRKDIST=	${WRKDIR}/BitchX
 
 post-install:
+	@rm -f ${PREFIX}/bin/BitchX
+	@cd ${PREFIX}/bin; ln -sf BitchX-1.0c16 BitchX
 	@find ${PREFIX}/share/bitchx/help -name 'CVS' -print | xargs rm -rf
 	@chown -R root.wheel ${PREFIX}/share/bitchx
 
