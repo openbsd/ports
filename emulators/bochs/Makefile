@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2003/04/25 21:15:43 todd Exp $
+# $OpenBSD: Makefile,v 1.31 2003/05/30 19:59:52 todd Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 COMMENT=	"x86 machine simulator"
@@ -34,25 +34,51 @@ CONFIGURE_ARGS+= --enable-readline
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --with-nogui
-.elif ${FLAVOR:L:Mterm}
-CONFIGURE_ARGS+= --with-term
+. if ${FLAVOR:L:Mterm}
+ERRORS +=	"Fatal: term and no_x11 are mutually exclusive"
+. endif
 .else
 CONFIGURE_ARGS+= --with-x11
 .endif
 
+.if ${FLAVOR:L:Mterm}
+CONFIGURE_ARGS+= --with-term
+. if ${FLAVOR:L:Mno_x11}
+ERRORS +=	"Fatal: term and no_x11 are mutually exclusive"
+. endif
+.endif
+
 .if ${FLAVOR:L:Mi386}
 CONFIGURE_ARGS+= --enable-cpu-level="3" --disable-mmx
-.elif ${FLAVOR:L:Mi486}
+. if ${FLAVOR:L:Mi486} || ${FLAVOR:L:Mi686} || ${FLAVOR:L:Mx86_64}
+ERRORS +=	"Fatal: cannot use i486, i686, or x86_64 flavors with i386"
+. endif
+.endif
+
+.if ${FLAVOR:L:Mi486}
 CONFIGURE_ARGS+= --enable-cpu-level="4" --disable-mmx
-.elif ${FLAVOR:L:Mi686}
-CONFIGURE_ARGS+= --enable-cpu-level="6"
-.elif ${FLAVOR:L:Mx86_64}
-CONFIGURE_ARGS+= --enable-x86-64
-.else
+. if ${FLAVOR:L:Mi386} ||  ${FLAVOR:L:Mi686} || ${FLAVOR:L:Mx86_64}
+ERRORS +=	"Fatal: cannot use i386, i686, or x86_64 flavors with i486"
+. endif
+.endif
+
+.if ! ${FLAVOR:L:Mi386} && ! ${FLAVOR:L:Mi486} && ! ${FLAVOR:L:Mi686}
 CONFIGURE_ARGS+= --enable-cpu-level="5"
 .endif
 
-.if !${FLAVOR:L:Mx86_64}
+.if ${FLAVOR:L:Mi686}
+CONFIGURE_ARGS+= --enable-cpu-level="6"
+. if ${FLAVOR:L:Mi386} ||  ${FLAVOR:L:Mi486}
+ERRORS +=	"Fatal: cannot use i386 or i486 flavors with i686"
+. endif
+.endif
+
+.if ${FLAVOR:L:Mx86_64}
+CONFIGURE_ARGS+= --enable-x86-64
+. if ! ${FLAVOR:L:Mi686}
+ERRORS +=	"Fatal: x86_64 emulation requires i686 flavor"
+. endif
+.else
 CONFIGURE_ARGS+= --disable-x86-64
 .endif
 
@@ -61,8 +87,8 @@ CONFIGURE_ARGS+= --enable-pci
 .endif
 
 .if ${FLAVOR:L:Msmp} || ${FLAVOR:L:Msmp_4} || ${FLAVOR:L:Msmp_8}
-. if ! ( ${FLAVOR:L:Mi686} || ${FLAVOR:L:Mx86_64} )
-BROKEN= "must use i686 or x86_64 flavor for smp"
+. if ! ${FLAVOR:L:Mi686}
+ERRORS += "Fatal: i686 flavor required for smp"
 . endif
 . if ${FLAVOR:L:Msmp_8}
 CONFIGURE_ARGS+= --enable-processors=8
