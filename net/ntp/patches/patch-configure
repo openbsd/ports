@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2001/03/24 17:31:23 danh Exp $
---- configure.orig	Sat Mar 24 12:03:37 2001
-+++ configure	Sat Mar 24 12:04:36 2001
+$OpenBSD: patch-configure,v 1.2 2001/03/30 17:49:03 wilfried Exp $
+--- configure.orig	Thu Jul 20 06:09:42 2000
++++ configure	Fri Mar 30 19:04:30 2001
 @@ -2540,7 +2540,7 @@ if test "${ac_cv_lib_readline_readline+s
    echo $ac_n "(cached) $ac_c" 1>&6
  else
@@ -19,3 +19,13 @@ $OpenBSD: patch-configure,v 1.1 2001/03/24 17:31:23 danh Exp $
  
  fi
  
+@@ -6072,6 +6072,9 @@ fi
+ done
+ 
+ case "$target" in
++ i386-*-openbsd*)
++    # mlockall broken
++    ;;
+  *-*-aix4*)
+     # Just a stub.  Idiots.
+     ;;
