@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/10/04 14:16:22 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.9 2005/01/25 20:32:22 xsa Exp $
 lib/zope/lib/python/Products/ZWiki/
 @comment lib/zope/lib/python/Products/ZWiki/.cvsignore
 lib/zope/lib/python/Products/ZWiki/Admin.py
@@ -89,6 +89,7 @@ lib/zope/lib/python/Products/ZWiki/i18n/zwiki-fi.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-fr-CA.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-fr.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-ga.po
+lib/zope/lib/python/Products/ZWiki/i18n/zwiki-he.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-hu.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-it.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-manual.pot
@@ -101,20 +102,25 @@ lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-fi.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-fr-CA.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-fr.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-ga.po
+lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-he.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-hu.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-it.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-nl.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-pl.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-pt-BR.po
+lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-ru.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-zh-CN.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-zh-TW.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone.pot
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-pt-BR.po
+lib/zope/lib/python/Products/ZWiki/i18n/zwiki-ru.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-zh-CN.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-zh-TW.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki.pot
 lib/zope/lib/python/Products/ZWiki/images/
 lib/zope/lib/python/Products/ZWiki/images/ZWikiPage_icon.gif
+lib/zope/lib/python/Products/ZWiki/images/blank_star.png
+lib/zope/lib/python/Products/ZWiki/images/star.png
 lib/zope/lib/python/Products/ZWiki/pagetypes/
 lib/zope/lib/python/Products/ZWiki/pagetypes/__init__.py
 lib/zope/lib/python/Products/ZWiki/pagetypes/__init__.pyc
@@ -124,6 +130,8 @@ lib/zope/lib/python/Products/ZWiki/pagetypes/html.py
 lib/zope/lib/python/Products/ZWiki/pagetypes/html.pyc
 lib/zope/lib/python/Products/ZWiki/pagetypes/moin.py
 lib/zope/lib/python/Products/ZWiki/pagetypes/moin.pyc
+lib/zope/lib/python/Products/ZWiki/pagetypes/moin_support.py
+lib/zope/lib/python/Products/ZWiki/pagetypes/moin_support.pyc
 lib/zope/lib/python/Products/ZWiki/pagetypes/plaintext.py
 lib/zope/lib/python/Products/ZWiki/pagetypes/plaintext.pyc
 lib/zope/lib/python/Products/ZWiki/pagetypes/rst.py
@@ -131,6 +139,8 @@ lib/zope/lib/python/Products/ZWiki/pagetypes/rst.pyc
 lib/zope/lib/python/Products/ZWiki/pagetypes/stx.py
 lib/zope/lib/python/Products/ZWiki/pagetypes/stx.pyc
 lib/zope/lib/python/Products/ZWiki/pagetypes/tests/
+lib/zope/lib/python/Products/ZWiki/pagetypes/tests/framework.py
+lib/zope/lib/python/Products/ZWiki/pagetypes/tests/framework.pyc
 lib/zope/lib/python/Products/ZWiki/pagetypes/tests/testPageTypes.py
 lib/zope/lib/python/Products/ZWiki/pagetypes/tests/testPageTypes.pyc
 lib/zope/lib/python/Products/ZWiki/pagetypes/tests/testcommon.py
@@ -152,6 +162,8 @@ lib/zope/lib/python/Products/ZWiki/plugins/Tracker.pyc
 lib/zope/lib/python/Products/ZWiki/plugins/__init__.py
 lib/zope/lib/python/Products/ZWiki/plugins/__init__.pyc
 lib/zope/lib/python/Products/ZWiki/plugins/tests/
+lib/zope/lib/python/Products/ZWiki/plugins/tests/framework.py
+lib/zope/lib/python/Products/ZWiki/plugins/tests/framework.pyc
 lib/zope/lib/python/Products/ZWiki/plugins/tests/testPurpleNumbers.py
 lib/zope/lib/python/Products/ZWiki/plugins/tests/testPurpleNumbers.pyc
 lib/zope/lib/python/Products/ZWiki/plugins/tests/testRating.py
@@ -249,4 +261,13 @@ lib/zope/lib/python/Products/ZWiki/tests/testZWikiWeb.py
 lib/zope/lib/python/Products/ZWiki/tests/testZWikiWeb.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testmailin.py
 lib/zope/lib/python/Products/ZWiki/tests/testmailin.pyc
+lib/zope/lib/python/Products/ZWiki/tools/
+lib/zope/lib/python/Products/ZWiki/tools/README
+lib/zope/lib/python/Products/ZWiki/tools/test_zwikiexport.py
+lib/zope/lib/python/Products/ZWiki/tools/test_zwikiexport.pyc
+lib/zope/lib/python/Products/ZWiki/tools/test_zwikiimport.py
+lib/zope/lib/python/Products/ZWiki/tools/test_zwikiimport.pyc
+lib/zope/lib/python/Products/ZWiki/tools/zwikiexport.py
+lib/zope/lib/python/Products/ZWiki/tools/zwikiimport.py
+lib/zope/lib/python/Products/ZWiki/tools/zwikiimport.pyc
 lib/zope/lib/python/Products/ZWiki/version.txt
