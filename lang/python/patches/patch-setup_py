@@ -1,0 +1,13 @@
+$OpenBSD: patch-setup_py,v 1.1 2001/06/05 17:00:25 jasoni Exp $
+--- setup.py.orig	Tue Jun  5 08:43:34 2001
++++ setup.py	Tue Jun  5 08:44:07 2001
+@@ -607,7 +607,8 @@ def main():
+           ext_modules=[Extension('struct', ['structmodule.c'])],
+ 
+           # Scripts to install
+-          scripts = ['Tools/scripts/pydoc']
++          #scripts = ['Tools/scripts/pydoc']
++          scripts = []
+         )
+ 
+ # --install-platlib

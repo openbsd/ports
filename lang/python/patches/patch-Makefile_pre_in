@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_pre_in,v 1.1 2001/06/05 17:00:23 jasoni Exp $
+--- Makefile.pre.in.orig	Sat Apr 14 10:57:07 2001
++++ Makefile.pre.in	Sun Jun  3 09:16:44 2001
+@@ -552,7 +552,7 @@ maninstall:
+ 		fi; \
+ 	done
+ 	$(INSTALL_DATA) $(srcdir)/Misc/python.man \
+-		$(MANDIR)/man1/python.1
++		$(MANDIR)/man1/python2.1
+ 
+ # Install the library
+ PLATDIR=	plat-$(MACHDEP)

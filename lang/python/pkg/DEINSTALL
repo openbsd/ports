@@ -10,7 +10,7 @@ PREFIX=${PKG_PREFIX:-/usr/local}
 
 if [ -L ${PREFIX}/bin/python ]; then
 	LINK=`readlink ${PREFIX}/bin/python`
-	if [ ${LINK} == "python2.0" ]; then
+	if [ ${LINK} == "python2.1" ]; then
 		rm -f ${PREFIX}/bin/python
 	fi
 fi

@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.29 2001/03/29 16:54:05 jasoni Exp $
+# $OpenBSD: Makefile,v 1.30 2001/06/05 17:00:21 jasoni Exp $
 
 COMMENT= 	"interpreted object-oriented programming language"
 COMMENT-tools=	"extra tools for python"
 
-VERSION=	2.0
-DISTNAME=	python-${VERSION}
+VERSION=	2.1
+PKGNAME=	python-${VERSION}
+DISTNAME=	Python-${VERSION}
 CATEGORIES=	lang
 NEED_VERSION=	1.363
-MASTER_SITES=	ftp://www.python.org/pub/python/src/ 
+MASTER_SITES=	ftp://ftp.python.org/pub/python/${VERSION}/
+EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.python.org/
 
@@ -42,7 +44,7 @@ MAKE_FLAGS+=	OPT="${CFLAGS}"
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a::devel/gmp
 
-WRKDIST=	${WRKDIR}/Python-${VERSION}
+#WRKDIST=	${WRKDIR}/Python-${VERSION}
 
 # If libc_r exists, thread support is compiled in by default unless this
 # is a SPARC system where threads are currently non functional.
@@ -75,10 +77,14 @@ pre-configure:
 post-configure:
 	cd ${.CURDIR} && make finish-setup
 
+patch:
+
 post-install:
+	@${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/pydoc ${PREFIX}/bin
 	@strip ${PREFIX}/bin/python
-	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python${VERSION}; tar -xf -)
-	
+	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python${VERSION}; \
+		tar -xf -)
+
 .include <bsd.port.mk>
 
 .if defined(NO64BIT)
@@ -99,3 +105,4 @@ finish-setup:
 	@sed -e 's,@NOSHARED@,${NOSHARED},g' \
 		${FILESDIR}/${file} >> ${WRKSRC}/Modules/Setup.local
 .endfor
+	(cd ${WRKSRC}; make Makefile)

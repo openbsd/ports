@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $OpenBSD: INSTALL,v 1.1 2000/12/13 05:26:48 jasoni Exp $
+# $OpenBSD: INSTALL,v 1.2 2001/06/05 17:00:25 jasoni Exp $
 #
 # python2 installation
 
@@ -22,7 +22,7 @@ do_notice_oldpython()
 {
 	echo "|    - there appears to another version of python installed, to avoid"
 	echo "|      conflict, this python binary has been installed as:"
-	echo "|          ${PREFIX}/bin/python2.0"
+	echo "|          ${PREFIX}/bin/python2.1"
 }
 
 do_notice_bottom()
@@ -48,7 +48,7 @@ case $2 in
     POST-INSTALL)
     	do_notice_top $1
 	if [ ! -e ${PREFIX}/bin/python ]; then
-		ln -s python2.0 ${PREFIX}/bin/python
+		ln -s python2.1 ${PREFIX}/bin/python
 	else
 		do_notice_oldpython $1
 	fi
