@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/12/17 15:18:31 alek Exp $
+# $OpenBSD: Makefile,v 1.13 2005/02/26 10:11:34 matthieu Exp $
 
 COMMENT=	"Advanced Power Management monitor utility for X"
 
@@ -7,7 +7,7 @@ HOMEPAGE=	http://www.tigr.net/afterstep/
 
 CATEGORIES=	x11
 
-ONLY_FOR_ARCHS=	i386 macppc
+ONLY_FOR_ARCHS=	i386 macppc zaurus
 
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asapm/ \
 		ftp://rt.fm/pub/asapm/
