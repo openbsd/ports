@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/17 11:57:18 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/19 17:44:52 danh Exp $
 
 DISTNAME=		heimdal-0.3e
 CATEGORIES=     	security
@@ -19,7 +19,6 @@ PREFIX=			${LOCALBASE}/heimdal
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--localstatedir=/var/heimdal \
 		        --x-includes=/usr/X11R6/include \
