@@ -1,0 +1,19 @@
+*** nmbd_subnetdb.c.orig	Tue Apr 21 18:09:01 1998
+--- nmbd_subnetdb.c	Tue Apr 21 18:09:39 1998
+***************
+*** 186,192 ****
+      struct subnet_record *subrec;
+      struct interface *iface = get_interface(i);
+  
+!     if((subrec = make_subnet(inet_ntoa(iface->ip), NORMAL_SUBNET,
+                   iface->ip, iface->bcast,iface->nmask)) == NULL)
+        return False;
+      add_subnet(subrec);
+--- 186,192 ----
+      struct subnet_record *subrec;
+      struct interface *iface = get_interface(i);
+  
+!     if((subrec = make_subnet((char *)inet_ntoa(iface->ip), NORMAL_SUBNET,
+                   iface->ip, iface->bcast,iface->nmask)) == NULL)
+        return False;
+      add_subnet(subrec);
