@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2003/06/11 21:42:29 jolan Exp $
+--- Makefile.in.orig	Fri May 23 11:54:34 2003
++++ Makefile.in	Wed Jun 11 01:07:02 2003
+@@ -119,7 +119,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ EXTRA_DIST = crimson.spec.in README.bi2cf README.CoMET
+-SUBDIRS = doc editor gfx sfx src tools levels
++SUBDIRS = editor gfx sfx src tools levels
+ subdir = .
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
