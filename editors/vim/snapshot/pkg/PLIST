@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2001/05/22 18:26:52 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.9 2001/05/28 18:32:16 lebel Exp $
 bin/ex
 bin/rview
 bin/rvim
@@ -7,7 +7,6 @@ bin/vim
 bin/vimdiff
 bin/vimtutor
 bin/xxd
-!%%no_x11%%
 man/man1/ex.1
 man/man1/rview.1
 man/man1/rvim.1
@@ -22,6 +21,7 @@ share/vim/vim60${V}/colors/default.vim
 share/vim/vim60${V}/colors/evening.vim
 share/vim/vim60${V}/colors/morning.vim
 share/vim/vim60${V}/colors/peachpuff.vim
+share/vim/vim60${V}/colors/shine.vim
 share/vim/vim60${V}/doc/autocmd.txt
 share/vim/vim60${V}/doc/change.txt
 share/vim/vim60${V}/doc/cmdline.txt
@@ -96,12 +96,34 @@ share/vim/vim60${V}/doc/usr_01.txt
 share/vim/vim60${V}/doc/usr_02.txt
 share/vim/vim60${V}/doc/usr_03.txt
 share/vim/vim60${V}/doc/usr_04.txt
+share/vim/vim60${V}/doc/usr_05.txt
 share/vim/vim60${V}/doc/usr_06.txt
 share/vim/vim60${V}/doc/usr_07.txt
+share/vim/vim60${V}/doc/usr_08.txt
+share/vim/vim60${V}/doc/usr_09.txt
+share/vim/vim60${V}/doc/usr_10.txt
+share/vim/vim60${V}/doc/usr_11.txt
+share/vim/vim60${V}/doc/usr_12.txt
+share/vim/vim60${V}/doc/usr_20.txt
+share/vim/vim60${V}/doc/usr_21.txt
+share/vim/vim60${V}/doc/usr_22.txt
+share/vim/vim60${V}/doc/usr_23.txt
+share/vim/vim60${V}/doc/usr_24.txt
+share/vim/vim60${V}/doc/usr_25.txt
+share/vim/vim60${V}/doc/usr_26.txt
+share/vim/vim60${V}/doc/usr_27.txt
 share/vim/vim60${V}/doc/usr_28.txt
+share/vim/vim60${V}/doc/usr_29.txt
+share/vim/vim60${V}/doc/usr_30.txt
+share/vim/vim60${V}/doc/usr_31.txt
 share/vim/vim60${V}/doc/usr_40.txt
+share/vim/vim60${V}/doc/usr_41.txt
+share/vim/vim60${V}/doc/usr_42.txt
 share/vim/vim60${V}/doc/usr_43.txt
+share/vim/vim60${V}/doc/usr_44.txt
+share/vim/vim60${V}/doc/usr_45.txt
 share/vim/vim60${V}/doc/usr_90.txt
+share/vim/vim60${V}/doc/usr_91.txt
 share/vim/vim60${V}/doc/usr_toc.txt
 share/vim/vim60${V}/doc/various.txt
 share/vim/vim60${V}/doc/version4.txt
@@ -286,6 +308,7 @@ share/vim/vim60${V}/syntax/hb.vim
 share/vim/vim60${V}/syntax/help.vim
 share/vim/vim60${V}/syntax/hercules.vim
 share/vim/vim60${V}/syntax/hitest.vim
+share/vim/vim60${V}/syntax/hog.vim
 share/vim/vim60${V}/syntax/html.vim
 share/vim/vim60${V}/syntax/htmlm4.vim
 share/vim/vim60${V}/syntax/htmlos.vim
@@ -361,6 +384,7 @@ share/vim/vim60${V}/syntax/pascal.vim
 share/vim/vim60${V}/syntax/pcap.vim
 share/vim/vim60${V}/syntax/pccts.vim
 share/vim/vim60${V}/syntax/perl.vim
+share/vim/vim60${V}/syntax/pfmain.vim
 share/vim/vim60${V}/syntax/php.vim
 share/vim/vim60${V}/syntax/phtml.vim
 share/vim/vim60${V}/syntax/pic.vim
@@ -486,7 +510,6 @@ share/vim/vim60${V}/tools/ccfilter_README.txt
 share/vim/vim60${V}/tools/efm_filter.pl
 share/vim/vim60${V}/tools/efm_filter.txt
 share/vim/vim60${V}/tools/efm_perl.pl
-share/vim/vim60${V}/tools/gvimdiff
 share/vim/vim60${V}/tools/mve.awk
 share/vim/vim60${V}/tools/mve.txt
 share/vim/vim60${V}/tools/pltags.pl
