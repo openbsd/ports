@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.29 2000/06/11 01:53:45 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2000/10/10 00:40:35 espie Exp $
 
 DISTNAME=	Wnn4.2
 
@@ -42,9 +42,9 @@ MASTER_SITES=	ftp://ftp.u-tokyo.ac.jp/pub/Japanese/Wnn/ \
 		ftp://ports.jp.FreeBSD.org/pub/incoming/distfiles/
 DISTFILES=	Wnn4.2.tar.gz Wnn4.2.patch.tar.gz
 
-MAINTAINER=	espie@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-LICENSE_TYPE=		BSD
+#		BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

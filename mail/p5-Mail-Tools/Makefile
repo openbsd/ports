@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.5 2000/08/21 02:25:46 brad Exp $
+#   $OpenBSD: Makefile,v 1.6 2000/10/10 00:40:49 espie Exp $
 
 DISTNAME=	MailTools-1.1401
 PKGNAME=	p5-Mail-Tools-1.1401
@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR= Mail
 
 RUN_DEPENDS= ${LOCALBASE}/libdata/perl5/site_perl/Net/SMTP.pm::net/p5-libnet
 
-MAINTAINER=	espie@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/06/11 01:53:48 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/10 00:40:44 espie Exp $
 
 CATEGORIES=japanese print
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAINTAINER=		espie@openbsd.org
+MAINTAINER=		Marc Espie <espie@openbsd.org>
 
 MAKE_FLAGS=	CFLAGS='${CFLAGS} -I..'
 ALL_TARGET=	kanjips

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/05/19 09:59:37 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/10 00:40:56 espie Exp $
 
 CATEGORIES=	textproc print
 NEED_VERSION=	1.281
@@ -18,8 +18,7 @@ MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/para/hevea/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-manual${EXTRACT_SUFX}
 
-MAINTAINER=	espie@cvs.openbsd.org
-FAKE=		Yes
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 HOMEPAGE=	http://para.inria.fr/%7Emaranget/hevea/
 
 MAKE_FLAGS=LIBDIR='${PREFIX}/lib/hevea' BINDIR='${PREFIX}/bin'

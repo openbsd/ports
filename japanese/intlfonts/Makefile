@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/06/11 01:53:47 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/10 00:40:40 espie Exp $
 
 CATEGORIES=	japanese x11
 NEED_VERSION=	1.300
@@ -8,7 +8,7 @@ PKGNAME=	ja-fonts-gnu-1.2
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=intlfonts
 
-MAINTAINER=	espie@cvs.openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/06/25 07:22:45 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2000/10/10 00:40:28 espie Exp $
 
 DISTNAME=	autoconf-2.13
 CATEGORIES=	devel
@@ -8,7 +8,7 @@ MASTER_SITE_SUBDIR= autoconf
 
 HOMEPAGE=	http://www.gnu.org/software/autoconf/
 
-MAINTAINER=	espie@cvs.openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes

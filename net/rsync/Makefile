@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2000/09/08 07:16:24 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2000/10/10 00:40:54 espie Exp $
 
 DISTNAME=	rsync-2.4.6
 CATEGORIES=	net
@@ -7,7 +7,7 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/rsync/
 MASTER_SITES+=	ftp://ftp.samba.org/pub/rsync/old-versions/
 
 
-MAINTAINER=	espie@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

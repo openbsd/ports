@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/07/04 01:57:18 krw Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/10 00:40:39 espie Exp $
 # FreeBSD Id: Makefile,v 1.14 1998/04/05 04:46:33 max Exp $
 
 DISTNAME=	kakasi-2.3.1
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://kakasi.namazu.org/pub/kakasi/
 
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	espie@cvs.openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 HOMEPAGE=	http://kakasi.namazu.org/
 
 # GPL

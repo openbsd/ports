@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/08/21 02:49:44 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/10 00:40:28 espie Exp $
 
 DISTNAME=	AsciiDB-TagFile-1.05
 PKGNAME=	p5-AsciiDB-TagFile-1.05
@@ -7,7 +7,7 @@ NEED_VERSION=	1.310
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= AsciiDB
 
-MAINTAINER=	espie@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

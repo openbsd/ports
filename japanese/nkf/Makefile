@@ -1,5 +1,5 @@
 # very loosely based on FreeBSD 2.2.7
-# $OpenBSD: Makefile,v 1.7 2000/06/11 01:53:49 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/10 00:40:45 espie Exp $
 
 
 DISTNAME=	nkf-1.62
@@ -8,9 +8,9 @@ CATEGORIES=	japanese textproc
 NEED_VERSION=	1.210
 MASTER_SITES=	http://www.sfc.wide.ad.jp/~max/FreeBSD/ports/distfiles/
 
-MAINTAINER=	espie@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-LICENSE_TYPE=		BSD
+#		BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

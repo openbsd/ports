@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/07/07 14:34:30 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/10 00:40:36 espie Exp $
 
 DISTNAME=	Canna35b2
 PKGNAME=	cannalib-3.5b2p1
@@ -14,7 +14,7 @@ PATCHFILES=	Canna35b2-unoff1.patch.gz:0 Canna35b2-unoff2.patch.gz:0 \
 		Canna35b2-hack1.patch.gz:0
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	espie@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # Will turn into a RUN_DEPENDS when we install non-formatted manpages
 BUILD_DEPENDS=	jgroff::japanese/groff

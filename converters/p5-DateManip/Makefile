@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/08/21 00:49:01 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/10 00:40:26 espie Exp $
 
 DISTNAME=	DateManip-5.39
 PKGNAME=	p5-DateManip-5.39
@@ -7,7 +7,7 @@ NEED_VERSION=	1.310
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Date
 
-MAINTAINER=	espie@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

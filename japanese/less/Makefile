@@ -5,7 +5,7 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
 # $FreeBSD: Makefile,v 1.13 1998/07/17 20:36:13 steve Exp $
-# $OpenBSD: Makefile,v 1.10 2000/06/11 01:53:48 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/10 00:40:45 espie Exp $
 #
 
 DISTNAME=	less-332
@@ -26,9 +26,9 @@ PATCHFILES=	less-332-iso242.patch.gz:0 \
 
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=espie@openbsd.org
+MAINTAINER=Marc Espie <espie@openbsd.org>
 
-LICENSE_TYPE=		BSD
+#		BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

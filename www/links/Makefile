@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2000/08/01 10:43:35 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/10 00:40:56 espie Exp $
 
 CATEGORIES=		www
 NEED_VERSION=		1.317
 
 HOMEPAGE=	http://artax.karlin.mff.cuni.cz/%7Emikulas/links/
-MAINTAINER=	espie@cvs.openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/07/10 17:08:14 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/10 00:40:30 espie Exp $
 
 DISTNAME=	FrodoV4_1a.Src
 PKGNAME=	frodo-4.1a
@@ -6,7 +6,7 @@ PKGNAME=	frodo-4.1a
 CATEGORIES=	emulators games
 NEED_VERSION=	1.310
 
-MAINTAINER=	espie@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 HOMEPAGE=	http://www.uni-mainz.de/~bauec002/FRMain.html
 

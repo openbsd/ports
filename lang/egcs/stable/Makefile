@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2000/09/12 16:15:44 brad Exp $
+# $OpenBSD: Makefile,v 1.35 2000/10/10 00:40:46 espie Exp $
 
 # This is a configuration file for egcs, stable release.
 
@@ -11,9 +11,9 @@ NEED_VERSION=	 1.328
 FAKE=No
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	espie@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-LICENSE_TYPE=		GPL
+#	GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/09/05 13:56:24 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/10 00:40:48 espie Exp $
 
 VERSION=1.4.6
 DISTNAME=ruby-${VERSION}
@@ -17,7 +17,7 @@ DISTFILES=${BINARCH} ${MANARCH}:0
 EXTRACT_ONLY=${BINARCH}
 
 HOMEPAGE=http://www.netlab.co.jp/ruby/
-MAINTAINER=	espie@cvs.openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

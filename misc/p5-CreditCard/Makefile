@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/08/21 02:13:22 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/10 00:40:51 espie Exp $
 
 DISTNAME=	Business-CreditCard-0.21
 CATEGORIES=	misc perl5
@@ -6,7 +6,7 @@ NEED_VERSION=	1.310
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Business
 
-MAINTAINER=	espie@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/06/11 01:53:47 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/10 00:40:42 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
 
 DISTNAME=	jvim2.0r+onew2.2.10
@@ -8,7 +8,7 @@ NEED_VERSION=	1.230
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/editor/jvim/
 
-MAINTAINER=	espie@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

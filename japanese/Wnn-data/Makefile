@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2000/06/22 20:59:57 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/10 00:40:36 espie Exp $
 
 CATEGORIES= japanese chinese korean
 DISTNAME= Wnn-data-4.2
 DISTFILES=
 
-MAINTAINER=	espie@cvs.openbsd.org
-LICENSE_TYPE=		BSD
+MAINTAINER=	Marc Espie <espie@openbsd.org>
+#		BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

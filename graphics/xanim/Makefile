@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/24 22:11:45 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/10 00:40:34 espie Exp $
 
 CDROM=        "NOFEE: can not sell"
 
@@ -7,7 +7,7 @@ WRKDIST=${WRKDIR}/xanim2801
 CATEGORIES= graphics x11
 NEED_VERSION=	1.218
 
-MAINTAINER=espie@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 
 DIST_SUBDIR=xanim

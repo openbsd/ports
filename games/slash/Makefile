@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/06/28 13:28:47 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/10/10 00:40:33 espie Exp $
 
 DISTNAME=	slash-e8
 PKGNAME=	slash-3.2.2-e8
@@ -16,9 +16,9 @@ DISTFILES=	nethack-3.2.2.tar.gz Slash-Unix.tar.gz:1
 PATCHFILES=nh-3.2.2-3.2.3.diff:0
 
 
-MAINTAINER=	espie@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-LICENSE_TYPE=		GPL
+#	GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

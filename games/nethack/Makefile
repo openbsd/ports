@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/06/23 15:05:34 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/10 00:40:32 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 DISTNAME=	nethack-3.3.0
@@ -10,15 +10,14 @@ MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/src/ \
 
 MASTER_SITE_SUBDIR= nethack
 
-MAINTAINER=	espie@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-LICENSE_TYPE=		GPL
+#		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=		Yes
 FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
 
 NHDIR=	${DESTDIR}${PREFIX}/lib/nethackdir

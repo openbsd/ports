@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/09/06 05:48:48 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2000/10/10 00:40:55 espie Exp $
 
 DISTNAME=	ytalk-3.1.1
 CATEGORIES=	net
@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.iagora.com/~espel/ytalk/ \
 
 HOMEPAGE=	http://www.iagora.com/~espel/ytalk/
 
-MAINTAINER=	espie@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

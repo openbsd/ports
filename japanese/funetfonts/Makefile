@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/06/11 01:53:47 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/10 00:40:41 espie Exp $
 
 CATEGORIES=	japanese x11
 DIST_SUBDIR=	ja-fonts
@@ -22,7 +22,7 @@ DISTFILES=${FONTS} ${ALIASES} ${OTHER}
 
 EXTRACT_ONLY=
 
-MAINTAINER=	espie@cvs.openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 PERMIT_DISTFILES_CDROM=	No fee
 PERMIT_DISTFILES_FTP=	Yes

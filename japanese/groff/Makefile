@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/06/11 01:53:47 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/10 00:40:41 espie Exp $
 
 CATEGORIES=	japanese textproc print
 NEED_VERSION=	1.300
@@ -34,6 +34,6 @@ CONFIGURE_STYLE=	gnu old dest
 #	@cd ${WRKBUILD}/xditview && ${SETENV} ${MAKE_ENV} \
 #	    make ${FAKE_FLAGS} -f ${MAKE_FILE} install install.man
 
-MAINTAINER=	espie@cvs.openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 .include <bsd.port.mk>

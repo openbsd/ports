@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/07/08 18:31:53 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/10 00:40:57 espie Exp $
 
 CATEGORIES=x11
 HOMEPAGE=http://wwwrzstud.rz.uni-karlsruhe.de/%7Euddn/xglobe/
@@ -8,7 +8,7 @@ MASTER_SITES=ftp://quatramaran.ens.fr/pub/espie/
 DISTNAME=xglobe-0.5p1
 NEED_VERSION=1.295
 
-MAINTAINER=espie@cvs.openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # GPL, included map is free
 PERMIT_PACKAGE_CDROM=	Yes

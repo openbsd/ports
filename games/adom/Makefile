@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2000/05/17 01:21:21 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/10 00:40:30 espie Exp $
 # Author: Thomas Biskup <rpg@saranxis.ruhr.de>
 
 DISTNAME=	adom-g15
 CATEGORIES=	games
 NEED_VERSION=	1.191
-FAKE=No
 MASTER_SITES=   http://www.adom.de/adom/download/linux/
 DISTFILES=	adom-099g15-elf.tar.gz
 
@@ -12,7 +11,7 @@ ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	binary port
 
-MAINTAINER=	espie@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no modify"
 PERMIT_PACKAGE_FTP=	"no modify"
@@ -25,8 +24,6 @@ ADOM_DOC=	${PREFIX}/share/doc/adom
 
 # cage adom into its specific group if you don't trust the binary
 ADOMOWN?=	games
-
-FAKE=		Yes
 
 # can't be changed except by patching the binary
 HISCORE_DIR=	/var/lib/adom

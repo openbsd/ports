@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/08/01 15:41:13 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2000/10/10 00:40:29 espie Exp $
 
 DISTNAME=	lclint-2.5q
 CATEGORIES=	devel
@@ -11,7 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}.src.tar.gz
 GUIDE=		lclint-guide.tar.gz
 DISTFILES=	${EXTRACT_ONLY} ${GUIDE}:0
 
-MAINTAINER=	espie@cvs.openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # guide.tar.gz can be redistributed freely provided its contents are not
 # altered.
