@@ -10,6 +10,9 @@ The kanji flavor provides Japanese menus and documentation, and
 properly displays Japanese characters in kterm.
 
 The multilingualization (m17n) flavor allows to display pages in
-all kinds of scripts and encodings in a UTF-8 xterm.
+all kinds of scripts and encodings in a UTF-8 xterm.  (Experimental.)
+
+The image flavor supports displaying inline images when run from
+an X11 terminal emulator.  (Experimental.)
 
 WWW: ${HOMEPAGE}

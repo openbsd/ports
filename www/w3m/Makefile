@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile,v 1.20 2001/07/30 00:24:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2001/07/31 15:27:08 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
 COMMENT=		"text-based web browser/pager"
 COMMENT-kanji=		"text-based web browser/pager, japanese flavor"
+COMMENT-image=		"text-based web browser/pager with inline image support"
 COMMENT-m17n=		"multi-script text-based web browser/pager"
 COMMENT-kanji-m17n=	"multi-script text-based web browser/pager, japanese flavor"
+COMMENT-image-kanji=	"text-based web browser/pager with image support, japanese flavor"
 
-V_AITO=		0.2.1
-V_HSAKA=	0.19
+V_BASE=		0.2.1
+V_IMG=		1.9
+V_M17N=		0.19
 
-DISTNAME=	w3m-${V_AITO}
+DISTNAME=	w3m-${V_BASE}
 PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www
-NEED_VERSION=	1.364
+NEED_VERSION=	1.427
 HOMEPAGE=	http://ei5nazha.yz.yamagata-u.ac.jp/~aito/w3m/eng/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -28,11 +31,15 @@ MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
 		http://www.instinct.org/w3m/
 MASTER_SITES0=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
 
-M17NPATCH=	w3m-${V_AITO}-m17n-${V_HSAKA}.patch.gz:0
-SUPDISTFILES=	${DISTFILES} ${M17NPATCH}
+IMG_PATCH=	w3m-${V_BASE}-img-${V_IMG}.patch:0
+M17N_PATCH=	w3m-${V_BASE}-m17n-${V_M17N}.patch.gz:0
+PATCH_DIST_STRIP= -p1
+SUPDISTFILES=	${DISTFILES} ${IMG_PATCH} ${M17N_PATCH}
 
-FLAVORS=	kanji m17n
+FLAVORS=	kanji image m17n
 FLAVOR?=
+
+PATCH_LIST=	patch-*
 
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS= -nonstop -prefix="${PREFIX}" -cflags="${CFLAGS}" \
@@ -45,35 +52,52 @@ DOCS=	FAQ.html HISTORY MANUAL.html \
 	README README.dict README.func STORY.html \
 	keymap.default keymap.lynx menu.default menu.submenu
 
-.if ${FLAVOR:L:Mm17n}
-PKGNAME=		${DISTNAME}.${V_HSAKA}
-PATCHFILES=		${M17NPATCH}
-PATCH_DIST_STRIP=	-p1
-CONFIGURE_ARGS+=	-suffix="" -charset=UTF-8
-DOCS+=			README.m17n
+.if ${FLAVOR:L:Mimage} && ${FLAVOR:L:Mm17n}
+ERRORS+=	"Fatal: Flavors 'image' and 'm17n' are mutually exclusive."
+.endif
+
+.if  ${FLAVOR:L:Mimage}
+
+PKGNAME=	${DISTNAME}.${V_IMG}
+PATCHFILES=	${IMG_PATCH}
+HOMEPAGE=	http://www2u.biglobe.ne.jp/~hsaka/w3m/
+DOCS+=		README.img
+PATCH_LIST+=	base-mimehead_c
+LIB_DEPENDS+=	Imlib.19::graphics/imlib
+
+.elif ${FLAVOR:L:Mm17n}
+
+PKGNAME=	${DISTNAME}.${V_M17N}
+PATCHFILES=	${M17N_PATCH}
+HOMEPAGE=	http://www2u.biglobe.ne.jp/~hsaka/w3m/
+CONFIGURE_ARGS+= -suffix="" -charset=UTF-8
+DOCS+=		README.m17n
+
 .else
-PATCH_LIST=		patch-* no_m17n-*
+
+PATCH_LIST+=	base-*
+
 .endif
 
 .if ${FLAVOR:L:Mkanji}
 
-. if ${FLAVOR:L:Mm17n}
-FULLPKGNAME=		ja-${PKGNAME}-m17n
-. else
-FULLPKGNAME=		ja-${PKGNAME}
-. endif
-CATEGORIES+=		japanese
-CONFIGURE_ARGS+=	-lang=ja
-# XXX w3m resets kterm to jis before displaying a page anyway.
-CONFIGURE_ARGS+=	-code=n
-DOCS+=			README.SSL README.cookie README.keymap \
-			README.mailcap README.menu
-DOCSRC=			${WRKSRC}/doc-jp
+.  if   ${FLAVOR:L:Mimage}
+FULLPKGNAME=	ja-${PKGNAME}-img
+.  elif ${FLAVOR:L:Mm17n}
+FULLPKGNAME=	ja-${PKGNAME}-m17n
+.  else
+FULLPKGNAME=	ja-${PKGNAME}
+.  endif
+CATEGORIES+=	japanese
+CONFIGURE_ARGS+= -lang=ja -code=n
+DOCS+=		README.SSL README.cookie README.keymap \
+		README.mailcap README.menu
+DOCSRC=		${WRKSRC}/doc-jp
 
 .else
 
-CONFIGURE_ARGS+=	-lang=en
-DOCSRC=			${WRKSRC}/doc
+CONFIGURE_ARGS+= -lang=en
+DOCSRC=		${WRKSRC}/doc
 
 .endif
 

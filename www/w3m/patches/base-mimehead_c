@@ -1,4 +1,4 @@
-$OpenBSD: no_m17n-mimehead_c,v 1.1 2001/06/22 01:15:40 naddy Exp $
+$OpenBSD: base-mimehead_c,v 1.1 2001/07/31 15:27:08 naddy Exp $
 --- mimehead.c.orig	Fri Jun 22 02:51:21 2001
 +++ mimehead.c	Fri Jun 22 02:51:45 2001
 @@ -174,7 +174,7 @@ decodeWord(char **ow)

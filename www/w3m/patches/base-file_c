@@ -1,4 +1,4 @@
-$OpenBSD: no_m17n-file_c,v 1.1 2001/07/30 00:24:19 naddy Exp $
+$OpenBSD: base-file_c,v 1.1 2001/07/31 15:27:08 naddy Exp $
 --- file.c.orig	Fri Mar 23 03:19:54 2001
 +++ file.c	Mon Jul 30 02:14:54 2001
 @@ -176,7 +176,8 @@ int
