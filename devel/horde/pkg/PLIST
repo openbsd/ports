@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/03/09 07:07:16 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.9 2005/03/29 14:57:53 mbalmer Exp $
 horde/
 horde/COPYING
 horde/README
@@ -58,7 +58,6 @@ horde/docs/CREDITS
 horde/docs/HACKING
 horde/docs/INSTALL
 horde/docs/PERFORMANCE
-horde/docs/RELEASE
 horde/docs/RELEASE_NOTES
 horde/docs/SECURITY
 horde/docs/TODO
@@ -104,6 +103,7 @@ horde/lib/File/PDF/fonts/timesb.php
 horde/lib/File/PDF/fonts/timesbi.php
 horde/lib/File/PDF/fonts/timesi.php
 horde/lib/File/PDF/fonts/zapfdingbats.php
+horde/lib/File/tests/
 horde/lib/Horde/
 horde/lib/Horde.php
 horde/lib/Horde/Array.php
@@ -421,6 +421,7 @@ horde/lib/Horde/Tree/
 horde/lib/Horde/Tree.php
 horde/lib/Horde/Tree/html.php
 horde/lib/Horde/Tree/javascript.php
+horde/lib/Horde/Tree/select.php
 horde/lib/Horde/UI/
 horde/lib/Horde/UI/Language.php
 horde/lib/Horde/UI/Pager.php
@@ -750,6 +751,7 @@ horde/scripts/temp-cleanup.cron
 horde/scripts/themes_check.php
 horde/scripts/upgrades/
 horde/scripts/upgrades/2.2_to_3.0.mysql.sql
+horde/scripts/upgrades/2.2_to_3.0.pgsql.sql
 horde/services/
 horde/services/cacheview.php
 horde/services/download/
@@ -1564,6 +1566,7 @@ horde/themes/lucblue/info.php
 horde/themes/lucblue/screen.css
 horde/themes/mobile/
 horde/themes/mobile/screen.css
+horde/themes/moz14.css
 horde/themes/mozilla/
 horde/themes/mozilla/graphics/
 horde/themes/mozilla/graphics/header.png
@@ -1580,6 +1583,7 @@ horde/themes/print/screen.css
 horde/themes/purple/
 horde/themes/purple/info.php
 horde/themes/purple/screen.css
+horde/themes/safari.css
 horde/themes/screen.css
 horde/themes/simplex/
 horde/themes/simplex/graphics/
