@@ -1,0 +1,37 @@
+--- Imakefile.orig	Tue Dec 11 15:38:52 2001
++++ Imakefile	Fri Jul  5 14:54:29 2002
+@@ -11,7 +11,7 @@
+ #undef  USE_SOUND
+ #define XPM
+ #define USEM4
+-#undef X11R6
++#define X11R6
+ #undef I18N
+ 
+          YFLAGS = -d
+@@ -19,8 +19,8 @@
+        LINTLIBS = $(LINTXMU) $(LINTEXTENSIONLIB) $(LINTXLIB)
+ 
+ #ifdef XPM
+-      XPMLIBDIR = 
+-      XPMINCDIR = 
++      XPMLIBDIR = -L/usr/X11R6/lib
++      XPMINCDIR = -I/usr/X11R6/include
+ 
+      XPMDEFINES = -DXPM
+          XPMLIB = $(XPMLIBDIR) -lXpm
+@@ -145,14 +145,6 @@
+ NormalLibraryTarget(ctwm, libctwm.o)
+ ComplexProgramTarget(ctwm)
+ InstallNonExecFile(system.ctwmrc,$(TWMDIR))
+-#ifdef XPM
+-install:: xpm
+-	MakeDir($(DESTDIR)$(TWMDIR)/images)
+-	@case '${MFLAGS}' in *[i]*) set +e;; esac; \
+-	for i in xpm/?* ; do \
+-		(set -x; $(INSTALL) -c $(INSTLIBFLAGS) $$i $(DESTDIR)$(TWMDIR)/images); \
+-	done
+-#endif
+ 
+ gram.h gram.c: gram.y
+ 	$(YACC) $(YFLAGS) gram.y
