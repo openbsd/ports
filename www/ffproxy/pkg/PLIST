@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/25 04:52:45 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/08/15 14:44:05 jolan Exp $
 bin/ffproxy
+man/man5/ffproxy.conf.5
+man/man7/ffproxy.quick.7
 man/man8/ffproxy.8
 share/doc/ffproxy/README
 share/examples/ffproxy/db/access.dyndns
@@ -18,7 +20,6 @@ share/examples/ffproxy/ffproxy.conf
 share/examples/ffproxy/html/connect
 share/examples/ffproxy/html/filtered
 share/examples/ffproxy/html/invalid
-share/examples/ffproxy/html/notcached
 share/examples/ffproxy/html/post
 share/examples/ffproxy/html/resolve
 @dirrm share/examples/ffproxy/html
