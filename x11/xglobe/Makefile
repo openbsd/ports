@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/04/15 09:12:11 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/09/30 15:01:37 naddy Exp $
 
 COMMENT=	"display the Earth on X11"
 
@@ -8,7 +8,6 @@ HOMEPAGE=	http://www.cs.unc.edu/~scheuerm/xglobe/
 # Temporary release
 MASTER_SITES=	ftp://quatramaran.ens.fr/pub/espie/
 DISTNAME=	xglobe-0.5p2
-NEED_VERSION=	1.500
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -39,6 +38,9 @@ post-install::
 
 MAKE_FLAGS+=	QT_INCLUDE_DIR=${MODQT_INCDIR}
 MAKE_FLAGS+=	QT_LIB_DIR=${MODQT_LIBDIR}
+
+MAKE_FLAGS+=	CPP="${CXX}" LINK="${CXX}"
+MAKE_FLAGS+=	OPTIONS="${CXXFLAGS} -fno-exceptions -funroll-loops"
 
 # for linking against libpng
 MAKE_FLAGS+=	'LIB_DIRS=-L$$(QT_LIB_DIR) -L$$(X11_LIB_DIR) -L$(LOCALBASE)/lib'
