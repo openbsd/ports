@@ -876,8 +876,8 @@ metamail-2.7|mail/metamail||MIME implementation|mail/metamail/pkg/DESCR|The Open
 mh-6.8.4|mail/mh||Rand MH mail handling system|mail/mh/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|mail||||any|y|y|y|y
 mixmaster-2.9.0|mail/mixmaster||client for anonymous remailing|mail/mixmaster/pkg/DESCR|Nikolay Sturm <sturm@openbsd.org>|mail security||||any|n|n|y|y
 movemail-1.0|mail/movemail||move your mail box to another location|mail/movemail/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|mail||||any|y|y|y|y
-mutt-1.4i|mail/mutt/stable||tty-based e-mail client|mail/mutt/stable/pkg/DESCR|Federico Schwindt <fgsch@openbsd.org>|mail|iconv.2::converters/libiconv intl.1:gettext->=0.10.38:devel/gettext|gettext->=0.10.38:devel/gettext|gettext->=0.10.38:devel/gettext|any|y|y|y|y
-mutt-1.5.3i|mail/mutt/snapshot||tty-based e-mail client, development version|mail/mutt/snapshot/pkg/DESCR|David Lebel <lebel@openbsd.org>|mail|iconv.2::converters/libiconv intl.1:gettext->=0.10.38:devel/gettext|gettext->=0.10.38:devel/gettext|gettext->=0.10.38:devel/gettext|any|y|y|y|y
+mutt-1.4.1i|mail/mutt/stable||tty-based e-mail client|mail/mutt/stable/pkg/DESCR|Federico Schwindt <fgsch@openbsd.org>|mail|iconv.2::converters/libiconv intl.1:gettext->=0.10.38:devel/gettext|gettext->=0.10.38:devel/gettext|gettext->=0.10.38:devel/gettext|any|y|y|y|y
+mutt-1.5.4i|mail/mutt/snapshot||tty-based e-mail client, development version|mail/mutt/snapshot/pkg/DESCR|David Lebel <lebel@openbsd.org>|mail|iconv.2::converters/libiconv intl.1:gettext->=0.10.38:devel/gettext|gettext->=0.10.38:devel/gettext|gettext->=0.10.38:devel/gettext|any|y|y|y|y
 nail-10.4|mail/nail||enhanced, MIME capable Berkeley Mail|mail/nail/pkg/DESCR|Jeffrey Neitzel <jneitzel@bluemarble.net>|mail|iconv.2::converters/libiconv|:devel/autoconf/2.13 :devel/metaauto|libiconv-*:converters/libiconv|any|y|y|y|y
 nmh-1.0.4p1|mail/nmh||new MH mail handling program|mail/nmh/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|mail||||any|y|y|y|y
 openwebmail-1.81|mail/openwebmail|/var/www|highly configurable webmail client|mail/openwebmail/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|mail|||:databases/p5-ldap :textproc/ispell p5-Text-Iconv->=1.2:converters/p5-Text-Iconv|any|y|y|y|y
@@ -900,19 +900,19 @@ pilot-2.0|mail/pine,-pilot||file system browser|mail/pine/pkg/DESCR-pilot|Jakob 
 popclient-3.0b6|mail/popclient||client for pop2, pop3, apop, rpop|mail/popclient/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|mail||||any|y|y|y|y
 poppassd-4.0|mail/poppassd||server: allow users to change password from within Eudora|mail/poppassd/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|mail||||any|n|n|n|n
 poppy-3.1|mail/poppy||client to perform simple tasks with a POP3/IMAP server|mail/poppy/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|mail||||any|y|y|y|y
-postfix-2.0.5|mail/postfix/stable||fast, secure sendmail replacement|mail/postfix/stable/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail||||any|y|y|y|y
-postfix-2.0.5-ldap|mail/postfix/stable,ldap||fast, secure sendmail replacement|mail/postfix/stable/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|ldap.2,lber:openldap-client-2.*:databases/openldap|||any|y|y|y|y
-postfix-2.0.5-mysql|mail/postfix/stable,mysql||fast, secure sendmail replacement|mail/postfix/stable/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|mysqlclient.10:mysql-client-3.23.*:databases/mysql|||any|y|y|y|y
-postfix-2.0.5-pcre|mail/postfix/stable,pcre||fast, secure sendmail replacement|mail/postfix/stable/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|pcre::devel/pcre|||any|y|y|y|y
-postfix-2.0.5-sasl2|mail/postfix/stable,sasl2||fast, secure sendmail replacement|mail/postfix/stable/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|sasl2::security/cyrus-sasl2|||any|y|y|y|y
-postfix-2.0.5.tls0.8.13-tls|mail/postfix/stable,tls||fast, secure sendmail replacement|mail/postfix/stable/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail||||any|y|y|y|y
-postfix-2.0.5.tls0.8.13-sasl2-tls|mail/postfix/stable,sasl2,tls||fast, secure sendmail replacement|mail/postfix/stable/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|sasl2::security/cyrus-sasl2|||any|y|y|y|y
-postfix-2.0.5.tls0.8.13-pcre-sasl2-tls|mail/postfix/stable,pcre,sasl2,tls||fast, secure sendmail replacement|mail/postfix/stable/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|pcre::devel/pcre sasl2::security/cyrus-sasl2|||any|y|y|y|y
-postfix-2.0.3-20030126|mail/postfix/snapshot||fast, secure sendmail replacement|mail/postfix/snapshot/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail||||any|y|y|y|y
-postfix-2.0.3-20030126-ldap|mail/postfix/snapshot,ldap||fast, secure sendmail replacement|mail/postfix/snapshot/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|ldap.2,lber:openldap-client-2.*:databases/openldap|||any|y|y|y|y
-postfix-2.0.3-20030126-mysql|mail/postfix/snapshot,mysql||fast, secure sendmail replacement|mail/postfix/snapshot/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|mysqlclient.10:mysql-client-3.23.*:databases/mysql|||any|y|y|y|y
-postfix-2.0.3-20030126-pcre|mail/postfix/snapshot,pcre||fast, secure sendmail replacement|mail/postfix/snapshot/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|pcre::devel/pcre|||any|y|y|y|y
-postfix-2.0.3-20030126-sasl2|mail/postfix/snapshot,sasl2||fast, secure sendmail replacement|mail/postfix/snapshot/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|sasl2::security/cyrus-sasl2|||any|y|y|y|y
+postfix-2.0.5|mail/postfix/stable||fast, secure sendmail replacement|mail/postfix/stable/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail||||any|n|y|n|y
+postfix-2.0.5-ldap|mail/postfix/stable,ldap||fast, secure sendmail replacement|mail/postfix/stable/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|ldap.2,lber:openldap-client-2.*:databases/openldap|||any|n|y|n|y
+postfix-2.0.5-mysql|mail/postfix/stable,mysql||fast, secure sendmail replacement|mail/postfix/stable/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|mysqlclient.10:mysql-client-3.23.*:databases/mysql|||any|n|y|n|y
+postfix-2.0.5-pcre|mail/postfix/stable,pcre||fast, secure sendmail replacement|mail/postfix/stable/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|pcre::devel/pcre|||any|n|y|n|y
+postfix-2.0.5-sasl2|mail/postfix/stable,sasl2||fast, secure sendmail replacement|mail/postfix/stable/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|sasl2::security/cyrus-sasl2|||any|n|y|n|y
+postfix-2.0.5.tls0.8.13-tls|mail/postfix/stable,tls||fast, secure sendmail replacement|mail/postfix/stable/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail||||any|n|y|n|y
+postfix-2.0.5.tls0.8.13-sasl2-tls|mail/postfix/stable,sasl2,tls||fast, secure sendmail replacement|mail/postfix/stable/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|sasl2::security/cyrus-sasl2|||any|n|y|n|y
+postfix-2.0.5.tls0.8.13-pcre-sasl2-tls|mail/postfix/stable,pcre,sasl2,tls||fast, secure sendmail replacement|mail/postfix/stable/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|pcre::devel/pcre sasl2::security/cyrus-sasl2|||any|n|y|n|y
+postfix-2.0.3-20030126|mail/postfix/snapshot||fast, secure sendmail replacement|mail/postfix/snapshot/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail||||any|n|y|n|y
+postfix-2.0.3-20030126-ldap|mail/postfix/snapshot,ldap||fast, secure sendmail replacement|mail/postfix/snapshot/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|ldap.2,lber:openldap-client-2.*:databases/openldap|||any|n|y|n|y
+postfix-2.0.3-20030126-mysql|mail/postfix/snapshot,mysql||fast, secure sendmail replacement|mail/postfix/snapshot/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|mysqlclient.10:mysql-client-3.23.*:databases/mysql|||any|n|y|n|y
+postfix-2.0.3-20030126-pcre|mail/postfix/snapshot,pcre||fast, secure sendmail replacement|mail/postfix/snapshot/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|pcre::devel/pcre|||any|n|y|n|y
+postfix-2.0.3-20030126-sasl2|mail/postfix/snapshot,sasl2||fast, secure sendmail replacement|mail/postfix/snapshot/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|sasl2::security/cyrus-sasl2|||any|n|y|n|y
 prepop-0.1b7|mail/prepop||simple interactive POP3 client|mail/prepop/pkg/DESCR|Patroklos Argyroudis <argp@ieee.org>|mail||||any|y|y|y|y
 procmail-3.22|mail/procmail||filtering local mail delivery agent|mail/procmail/pkg/DESCR|Bruno Rohee <rohee@openbsd.org>|mail||||any|y|y|y|y
 razor-agents-2.14|mail/razor-agents||agent for Razor spam filtering networks|mail/razor-agents/pkg/DESCR|Marc Matteo <marcm@openbsd.org>|mail||p5-Digest-Nilsimsa->=0.06:security/p5-Digest-Nilsimsa p5-Net-DNS->=0.23:net/p5-Net-DNS p5-URI->=1.19:www/p5-URI|p5-Digest-Nilsimsa->=0.06:security/p5-Digest-Nilsimsa p5-Net-DNS->=0.23:net/p5-Net-DNS p5-URI->=1.19:www/p5-URI|any|y|y|y|y
@@ -1328,8 +1328,8 @@ dvi2tty-5.3.1|print/dvi2tty||converts .dvi files to plain text|print/dvi2tty/pkg
 enscript-1.6.3|print/enscript||convert ASCII files to PostScript|print/enscript/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|print||:devel/automake||any|y|y|y|y
 enscript-1.6.3-a4|print/enscript,a4||convert ASCII files to PostScript|print/enscript/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|print||:devel/automake||any|y|y|y|y
 foiltex-2.1.4ap0|print/foiltex||LaTeX2e class for overhead transparencies|print/foiltex/pkg/DESCR|Nikolay Sturm <sturm@openbsd.org>|print||teTeX_base-*:print/teTeX/base|teTeX_base-*:print/teTeX/base|any|n|y|n|y
-freetype-1.3.1|print/freetype||free and portable TrueType font rendering engine|print/freetype/pkg/DESCR|Shell Hung <shell@openbsd.org>|print||:devel/gmake||any|y|y|y|y
-freetype-doc-1.3.1|print/freetype,-doc||documentation for FreeType|print/freetype/pkg/DESCR-doc|Shell Hung <shell@openbsd.org>|print||:devel/gmake||any|y|y|y|y
+freetype-1.3.1|print/freetype||free and portable TrueType font rendering engine|print/freetype/pkg/DESCR|Shell Hung <shell@openbsd.org>|print||:devel/gmake||any|n|y|n|y
+freetype-doc-1.3.1|print/freetype,-doc||documentation for FreeType|print/freetype/pkg/DESCR-doc|Shell Hung <shell@openbsd.org>|print||:devel/gmake||any|n|y|n|y
 ghostscript-7.00|print/ghostscript/afpl||AFPL PostScript interpreter|print/ghostscript/afpl/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|print lang|png.2::graphics/png|:graphics/jpeg :graphics/png||any|n|y|n|y
 ghostscript-7.00-a4|print/ghostscript/afpl,a4||AFPL PostScript interpreter|print/ghostscript/afpl/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|print lang|png.2::graphics/png|:graphics/jpeg :graphics/png||any|n|y|n|y
 ghostscript-7.05|print/ghostscript/gnu||GNU PostScript interpreter|print/ghostscript/gnu/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|print lang|png.2::graphics/png|:graphics/jpeg :graphics/png||any|y|y|y|y
