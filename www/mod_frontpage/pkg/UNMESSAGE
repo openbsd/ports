@@ -1,0 +1,16 @@
+To completely deinstall this package, you need edit
+/var/www/conf/httpd.conf and perform the following tasks.
+
+  * remove, or comment out, the LoadModule directive that refers to
+    this module
+
+  * remove, or comment out, the following directives:
+
+      FrontpageEnable, FrontpageDisable,
+      FrontpageAdminEnable, FrontpageAdminDisable
+
+Optionally, you may also delete the Microsoft FrontPage Server
+Extensions located in ${PREFIX}/frontpage.
+
+Do not do this if you plan on re-installing the package at some future
+time.
