@@ -67,21 +67,15 @@ include/ORBitservices/CosEventChannel.idl
 include/ORBitservices/CosTypedEventComm.idl
 include/ORBitservices/CosTypedEventChannel.idl
 lib/libIIOP.a
-lib/libIDL-0.6.so.0.0
 lib/libIDL.la
 lib/libIDL.a
 lib/libIDLConf.sh
-lib/libORBit.so.4.0
 lib/libORBit.la
 lib/libORBit.a
-lib/libORBitutil.so.4.0
 lib/libORBitutil.la
 lib/libORBitutil.a
-lib/libIIOP.so.4.0
 lib/libIIOP.la
 lib/libname-server.a
-lib/libORBitCosNaming.so.4.0
-@exec /sbin/ldconfig -m %B
 lib/libORBitCosNaming.la
 lib/libORBitCosNaming.a
 @dirrm include/ORBitservices
