@@ -1,3 +1,4 @@
-Mozilla is the freely available version of Netscape's browser. Because
-only freely distributable code is included, some features are not
-present. But that will change.
+Mozilla is an open-source web browser, designed for standards
+compliance, performance and portability.
+
+WWW: ${HOMEPAGE}
