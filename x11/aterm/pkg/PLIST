@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/07/03 04:43:55 brad Exp $
+@comment $OpenBSD: PLIST,v 1.4 2000/07/05 01:02:30 brad Exp $
+@mode 4755
 bin/aterm
-@exec chmod 4755 %D/bin/aterm
+@mode
 man/man1/aterm.1
