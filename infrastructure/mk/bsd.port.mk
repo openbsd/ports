@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.607 2004/02/07 22:02:40 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.608 2004/02/07 22:14:21 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -191,44 +191,36 @@ FULLDISTDIR?=	${DISTDIR}
 
 .if exists(${.CURDIR}/patches.${ARCH})
 PATCHDIR?=		${.CURDIR}/patches.${ARCH}
-.else
-.if exists(${.CURDIR}/patches.${MACHINE_ARCH})
+.elif exists(${.CURDIR}/patches.${MACHINE_ARCH})
 PATCHDIR?=		${.CURDIR}/patches.${MACHINE_ARCH}
 .else
 PATCHDIR?=		${.CURDIR}/patches
-.endif
 .endif
 
 PATCH_LIST?=    patch-*
 
 .if exists(${.CURDIR}/scripts.${ARCH})
 SCRIPTDIR?=		${.CURDIR}/scripts.${ARCH}
-.else
-.  if exists(${.CURDIR}/scripts.${MACHINE_ARCH})
+.elif exists(${.CURDIR}/scripts.${MACHINE_ARCH})
 SCRIPTDIR?=		${.CURDIR}/scripts.${MACHINE_ARCH}
-.  else
+.else
 SCRIPTDIR?=		${.CURDIR}/scripts
-.  endif
 .endif
 
 .if exists(${.CURDIR}/files.${ARCH})
 FILESDIR?=		${.CURDIR}/files.${ARCH}
-.else
-.if exists(${.CURDIR}/files.${MACHINE_ARCH})
+.elif exists(${.CURDIR}/files.${MACHINE_ARCH})
 FILESDIR?=		${.CURDIR}/files.${MACHINE_ARCH}
 .else
 FILESDIR?=		${.CURDIR}/files
 .endif
-.endif
 
 .if exists(${.CURDIR}/pkg.${ARCH})
 PKGDIR?=		${.CURDIR}/pkg.${ARCH}
-.else
-.if exists(${.CURDIR}/pkg.${MACHINE_ARCH})
+.elif exists(${.CURDIR}/pkg.${MACHINE_ARCH})
 PKGDIR?=		${.CURDIR}/pkg.${MACHINE_ARCH}
 .else
 PKGDIR?=		${.CURDIR}/pkg
-.endif
 .endif
 
 PREFIX?=		${LOCALBASE}
