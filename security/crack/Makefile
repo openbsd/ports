@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/11 01:10:12 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/23 04:28:18 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	crack5.0
@@ -12,7 +12,12 @@ NEED_VERSION=	1.191
 
 MAINTAINER=     ports@OpenBSD.ORG
 
-RESTRICTED=	"contains crypto (libdes)"
+# This port contains crypto
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
 WRKDIST=	${WRKDIR}/c50a
 
 pre-configure:
