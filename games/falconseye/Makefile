@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/08/28 20:38:09 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2004/08/10 10:04:57 espie Exp $
 
 COMMENT=	"NetHack derivative"
 
@@ -24,8 +24,10 @@ RUN_DEPENDS=	:hackdata-*:games/hackdata
 
 FAKE_FLAGS=	PREFIX="${PREFIX}" DESTDIR="${WRKINST}"
 
-NHDIR=		"${PREFIX}/lib/falconseyedir"
+GAMEDIR=	lib/falconseyedir
+NHDIR=		${PREFIX}/${GAMEDIR}
 MAKE_ENV=	NHDIR="${NHDIR}" NETHACKCONFIG="${NETHACKCONFIG}"
+SUBST_VARS=	GAMEDIR
 
 WRKDIST=	${WRKDIR}
 
