@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/27 18:48:18 jsyn Exp $
+man/man1/chrootuid.1
+sbin/chrootuid
+share/doc/chrootuid/README
+@dirrm share/doc/chrootuid
