@@ -1,19 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/06/05 16:56:39 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/08/10 22:00:36 naddy Exp $
 @pkgcfl jakarta-ant-*
 bin/ant
 bin/antRun
 bin/runant.pl
+lib/java/
+lib/java/ant/
 lib/java/ant/ant-antlr.jar
+lib/java/ant/ant-apache-bcel.jar
 lib/java/ant/ant-apache-bsf.jar
+lib/java/ant/ant-apache-log4j.jar
+lib/java/ant/ant-apache-oro.jar
+lib/java/ant/ant-apache-regexp.jar
 lib/java/ant/ant-apache-resolver.jar
 lib/java/ant/ant-commons-logging.jar
 lib/java/ant/ant-commons-net.jar
 lib/java/ant/ant-icontract.jar
 lib/java/ant/ant-jai.jar
-lib/java/ant/ant-jakarta-bcel.jar
-lib/java/ant/ant-jakarta-log4j.jar
-lib/java/ant/ant-jakarta-oro.jar
-lib/java/ant/ant-jakarta-regexp.jar
 lib/java/ant/ant-javamail.jar
 lib/java/ant/ant-jdepend.jar
 lib/java/ant/ant-jmf.jar
@@ -29,14 +31,20 @@ lib/java/ant/ant-trax.jar
 lib/java/ant/ant-vaj.jar
 lib/java/ant/ant-weblogic.jar
 lib/java/ant/ant-xalan1.jar
-lib/java/ant/ant-xalan2.jar
 lib/java/ant/ant-xslp.jar
 lib/java/ant/ant.jar
 lib/java/ant/xercesImpl.jar
 lib/java/ant/xml-apis.jar
+share/doc/java/
+share/doc/java/ant/
 share/doc/java/ant/LICENSE
+share/doc/java/ant/LICENSE.dom
+share/doc/java/ant/LICENSE.sax
+share/doc/java/ant/LICENSE.xerces
+share/doc/java/ant/NOTICE
 share/doc/java/ant/README
 share/doc/java/ant/WHATSNEW
+share/doc/java/ant/ant2/
 share/doc/java/ant/ant2/FunctionalRequirements.html
 share/doc/java/ant/ant2/VFS.txt
 share/doc/java/ant/ant2/actionlist.html
@@ -55,6 +63,7 @@ share/doc/java/ant/cvs.html
 share/doc/java/ant/external.html
 share/doc/java/ant/faq.html
 share/doc/java/ant/favicon.ico
+share/doc/java/ant/images/
 share/doc/java/ant/images/JDJEditorsChoiceAward.jpg
 share/doc/java/ant/images/ant_logo.ico
 share/doc/java/ant/images/ant_logo_large.gif
@@ -84,6 +93,8 @@ share/doc/java/ant/index.html
 share/doc/java/ant/legal.html
 share/doc/java/ant/license.html
 share/doc/java/ant/mail.html
+share/doc/java/ant/manual/
+share/doc/java/ant/manual/CoreTasks/
 share/doc/java/ant/manual/CoreTasks/ant.html
 share/doc/java/ant/manual/CoreTasks/antcall.html
 share/doc/java/ant/manual/CoreTasks/antstructure.html
@@ -133,6 +144,7 @@ share/doc/java/ant/manual/CoreTasks/mail.html
 share/doc/java/ant/manual/CoreTasks/manifest.html
 share/doc/java/ant/manual/CoreTasks/mkdir.html
 share/doc/java/ant/manual/CoreTasks/move.html
+share/doc/java/ant/manual/CoreTasks/nice.html
 share/doc/java/ant/manual/CoreTasks/pack.html
 share/doc/java/ant/manual/CoreTasks/parallel.html
 share/doc/java/ant/manual/CoreTasks/patch.html
@@ -165,6 +177,7 @@ share/doc/java/ant/manual/CoreTasks/war.html
 share/doc/java/ant/manual/CoreTasks/whichresource.html
 share/doc/java/ant/manual/CoreTasks/xmlproperty.html
 share/doc/java/ant/manual/CoreTasks/zip.html
+share/doc/java/ant/manual/CoreTypes/
 share/doc/java/ant/manual/CoreTypes/antlib.html
 share/doc/java/ant/manual/CoreTypes/assertions.html
 share/doc/java/ant/manual/CoreTypes/custom-programming.html
@@ -179,10 +192,12 @@ share/doc/java/ant/manual/CoreTypes/namespace.html
 share/doc/java/ant/manual/CoreTypes/patternset.html
 share/doc/java/ant/manual/CoreTypes/permissions.html
 share/doc/java/ant/manual/CoreTypes/propertyset.html
+share/doc/java/ant/manual/CoreTypes/redirector.html
 share/doc/java/ant/manual/CoreTypes/selectors-program.html
 share/doc/java/ant/manual/CoreTypes/selectors.html
 share/doc/java/ant/manual/CoreTypes/xmlcatalog.html
 share/doc/java/ant/manual/CoreTypes/zipfileset.html
+share/doc/java/ant/manual/Integration/
 share/doc/java/ant/manual/Integration/Antidote.html
 share/doc/java/ant/manual/Integration/VAJAntTool.html
 share/doc/java/ant/manual/Integration/anttool1.gif
@@ -190,6 +205,7 @@ share/doc/java/ant/manual/Integration/jext-plugin.html
 share/doc/java/ant/manual/Integration/remacc.gif
 share/doc/java/ant/manual/Integration/toolmenu.gif
 share/doc/java/ant/manual/LICENSE
+share/doc/java/ant/manual/OptionalTasks/
 share/doc/java/ant/manual/OptionalTasks/BorlandEJBTasks.html
 share/doc/java/ant/manual/OptionalTasks/BorlandGenerateClient.html
 share/doc/java/ant/manual/OptionalTasks/antlr.html
@@ -259,11 +275,13 @@ share/doc/java/ant/manual/OptionalTasks/vss.html
 share/doc/java/ant/manual/OptionalTasks/wljspc.html
 share/doc/java/ant/manual/OptionalTasks/wsdltodotnet.html
 share/doc/java/ant/manual/OptionalTasks/xmlvalidate.html
+share/doc/java/ant/manual/OptionalTypes/
 share/doc/java/ant/manual/OptionalTypes/classfileset.html
 share/doc/java/ant/manual/OptionalTypes/extension.html
 share/doc/java/ant/manual/OptionalTypes/extensionset.html
 share/doc/java/ant/manual/antexternal.html
 share/doc/java/ant/manual/anttaskslist.html
+share/doc/java/ant/manual/api/
 share/doc/java/ant/manual/api/allclasses-frame.html
 share/doc/java/ant/manual/api/allclasses-noframe.html
 share/doc/java/ant/manual/api/constant-values.html
@@ -271,6 +289,10 @@ share/doc/java/ant/manual/api/deprecated-list.html
 share/doc/java/ant/manual/api/help-doc.html
 share/doc/java/ant/manual/api/index-all.html
 share/doc/java/ant/manual/api/index.html
+share/doc/java/ant/manual/api/org/
+share/doc/java/ant/manual/api/org/apache/
+share/doc/java/ant/manual/api/org/apache/tools/
+share/doc/java/ant/manual/api/org/apache/tools/ant/
 share/doc/java/ant/manual/api/org/apache/tools/ant/AntClassLoader.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/AntTypeDefinition.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/BuildEvent.html
@@ -283,8 +305,14 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/DemuxInputStream.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/DemuxOutputStream.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/Diagnostics.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/DirectoryScanner.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/DynamicAttribute.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/DynamicAttributeNS.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/DynamicConfigurator.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/DynamicConfiguratorNS.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/DynamicElement.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/DynamicElementNS.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/ExitException.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/ExitStatusException.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/FileScanner.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/IntrospectionHelper.Creator.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/IntrospectionHelper.html
@@ -298,6 +326,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/ProjectComponent.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/ProjectHelper.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/PropertyHelper.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/RuntimeConfigurable.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/SubBuildListener.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/Target.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/Task.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/TaskAdapter.html
@@ -305,6 +334,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/TaskContainer.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/TypeAdapter.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/UnknownElement.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/XmlLogger.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/filters/
 share/doc/java/ant/manual/api/org/apache/tools/ant/filters/BaseFilterReader.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/filters/BaseParamFilterReader.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/filters/ChainableReader.html
@@ -341,11 +371,13 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/filters/TokenFilter.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/filters/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/filters/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/filters/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/filters/util/
 share/doc/java/ant/manual/api/org/apache/tools/ant/filters/util/ChainReaderHelper.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/filters/util/JavaClassHelper.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/filters/util/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/filters/util/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/filters/util/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/helper/
 share/doc/java/ant/manual/api/org/apache/tools/ant/helper/AntXMLContext.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/helper/ProjectHelper2.AntHandler.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/helper/ProjectHelper2.ElementHandler.html
@@ -358,6 +390,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/helper/ProjectHelperImpl.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/helper/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/helper/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/helper/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/input/
 share/doc/java/ant/manual/api/org/apache/tools/ant/input/DefaultInputHandler.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/input/InputHandler.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/input/InputRequest.html
@@ -366,6 +399,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/input/PropertyFileInputHandle
 share/doc/java/ant/manual/api/org/apache/tools/ant/input/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/input/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/input/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/launch/
 share/doc/java/ant/manual/api/org/apache/tools/ant/launch/AntMain.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/launch/LaunchException.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/launch/Launcher.html
@@ -373,6 +407,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/launch/Locator.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/launch/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/launch/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/launch/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/listener/
 share/doc/java/ant/manual/api/org/apache/tools/ant/listener/AnsiColorLogger.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/listener/CommonsLoggingListener.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/listener/Log4jListener.html
@@ -380,6 +415,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/listener/MailLogger.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/listener/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/listener/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/listener/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/loader/
 share/doc/java/ant/manual/api/org/apache/tools/ant/loader/AntClassLoader2.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/loader/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/loader/package-summary.html
@@ -387,6 +423,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/loader/package-tree.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/AbstractCvsTask.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/Ant.Reference.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/Ant.html
@@ -484,6 +521,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/ManifestTask.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/MatchingTask.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/Mkdir.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/Move.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/Nice.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/Pack.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/Parallel.TaskList.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/Parallel.html
@@ -553,6 +591,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/Zip.ArchiveState.htm
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/Zip.Duplicate.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/Zip.WhenEmpty.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/Zip.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/compilers/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/compilers/CompilerAdapter.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/compilers/CompilerAdapterFactory.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/compilers/DefaultCompilerAdapter.html
@@ -567,6 +606,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/compilers/Sj.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/compilers/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/compilers/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/compilers/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/condition/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/condition/And.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/condition/Condition.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/condition/ConditionBase.html
@@ -585,6 +625,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/condition/Socket.htm
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/condition/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/condition/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/condition/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/cvslib/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/cvslib/ChangeLogTask.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/cvslib/CvsTagDiff.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/cvslib/CvsUser.html
@@ -592,6 +633,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/cvslib/CvsVersion.ht
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/cvslib/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/cvslib/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/cvslib/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/email/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/email/EmailAddress.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/email/EmailTask.Encoding.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/email/EmailTask.html
@@ -601,6 +643,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/email/MimeMailer.htm
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/email/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/email/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/email/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ANTLR.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/Cab.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/EchoProperties.FormatAttribute.html
@@ -626,10 +669,12 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/Test.Testle
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/Test.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/TraXLiaison.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/XMLValidateTask.Attribute.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/XMLValidateTask.Property.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/XMLValidateTask.ValidatorErrorHandler.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/XMLValidateTask.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/XalanLiaison.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/XslpLiaison.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/CCMCheck.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/CCMCheckin.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/CCMCheckinDefault.html
@@ -640,6 +685,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/Continu
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCCheckin.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCCheckout.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCLock.html
@@ -657,6 +703,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/C
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/depend/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/depend/AntAnalyzer.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/depend/ClassFile.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/depend/ClassFileIterator.html
@@ -664,6 +711,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/depend/Clas
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/depend/Depend.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/depend/DirectoryIterator.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/depend/JarFileIterator.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ClassCPInfo.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantCPInfo.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantPool.html
@@ -684,6 +732,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/depend/cons
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/depend/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/depend/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/depend/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/CSharp.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/DotnetBaseMatchingTask.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/DotnetCompile.TargetTypes.html
@@ -703,6 +752,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/Wsdl
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/BorlandDeploymentTool.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/BorlandGenerateClient.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/DDCreator.html
@@ -732,6 +782,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/Websphe
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/extension/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/extension/Compatability.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/extension/Compatibility.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/extension/DeweyDecimal.html
@@ -750,16 +801,19 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/extension/S
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/extension/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/extension/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/extension/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/AntResolver.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/LocationResolver.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/URLResolver.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/i18n/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/i18n/Translate.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/i18n/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/i18n/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/i18n/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ide/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJAntTool.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJAntToolGUI.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJBuildInfo.BuildInterruptedException.html
@@ -776,10 +830,12 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJTool
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ide/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ide/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ide/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/image/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/image/Image.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/image/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/image/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/image/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/AbstractHotDeploymentTool.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/GenericHotDeploymentTool.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/HotDeploymentTool.html
@@ -789,29 +845,34 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/WebLog
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/JJDoc.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/JJTree.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/JavaCC.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/JDependTask.FormatAttribute.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/JDependTask.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/ClassNameReader.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/JlinkTask.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/jlink.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/Jasper41Mangler.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/JspC.WebAppParameter.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/JspC.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/JspMangler.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/JspNameMangler.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/WLJspc.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/DefaultJspCompilerAdapter.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/JasperC.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/JspCompilerAdapter.html
@@ -822,6 +883,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compile
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/junit/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/junit/AggregateTransformer.Format.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/junit/AggregateTransformer.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/junit/BaseTest.html
@@ -834,6 +896,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/junit/Enume
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/junit/FormatterElement.TypeAttribute.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/junit/FormatterElement.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/junit/JUnitResultFormatter.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/junit/JUnitTask.ForkMode.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/junit/JUnitTask.SummaryAttribute.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/junit/JUnitTask.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/junit/JUnitTest.html
@@ -849,6 +912,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/junit/Xalan
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/junit/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/junit/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/junit/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/AbstractMetamataTask.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/MAudit.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/MMetrics.GranularityAttribute.html
@@ -858,6 +922,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/MP
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/net/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/net/FTP.Action.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/net/FTP.FTPDirectoryScanner.AntFTPFile.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/net/FTP.FTPDirectoryScanner.AntFTPRootFile.html
@@ -881,6 +946,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/net/package
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Add.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Base.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Change.html
@@ -906,15 +972,18 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/Si
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs/Pvcs.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs/PvcsProject.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/scm/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/scm/AntStarTeamCheckOut.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/scm/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/scm/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/scm/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/script/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/script/ScriptDef.Attribute.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/script/ScriptDef.NestedElement.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/script/ScriptDef.html
@@ -922,6 +991,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/script/Scri
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/script/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/script/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/script/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/CovBase.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/CovMerge.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/CovReport.Reference.html
@@ -945,11 +1015,13 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Str
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Triggers.Method.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Triggers.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/XMLReport.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/ClassFile.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/ClassPathLoader.FileLoader.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/ClassPathLoader.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/MethodInfo.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/Utils.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/attributes/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/attributes/AttributeInfo.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/attributes/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/attributes/package-summary.html
@@ -960,6 +1032,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/byt
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sos/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sos/SOS.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sos/SOSCheckin.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sos/SOSCheckout.html
@@ -969,16 +1042,19 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sos/SOSLabe
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sos/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sos/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sos/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sound/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sound/AntSoundPlayer.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sound/SoundTask.BuildAlert.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sound/SoundTask.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sound/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sound/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sound/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/splash/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/splash/SplashTask.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/splash/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/splash/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/splash/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/AbstractSshMessage.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/Directory.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/LogListener.html
@@ -991,6 +1067,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/ScpToMe
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/StarTeamCheckin.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/StarTeamCheckout.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/StarTeamLabel.html
@@ -1001,6 +1078,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/Tr
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/unix/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/unix/AbstractAccessTask.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/unix/Chgrp.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/unix/Chown.html
@@ -1008,6 +1086,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/unix/Symlin
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/unix/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/unix/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/unix/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/vss/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSS.CurrentModUpdated.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSS.WritableFiles.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSS.html
@@ -1024,6 +1103,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSLA
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/vss/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/vss/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/vss/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/windows/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/windows/Attrib.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/windows/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/windows/package-summary.html
@@ -1031,6 +1111,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/windows/pac
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/rmic/
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/rmic/DefaultRmicAdapter.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/rmic/KaffeRmic.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/rmic/RmicAdapter.html
@@ -1040,6 +1121,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/rmic/WLRmic.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/rmic/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/rmic/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/rmic/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/types/
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/AbstractFileSet.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/AntFilterReader.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/Assertions.BaseAssertion.html
@@ -1058,6 +1140,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/types/DirSet.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/EnumeratedAttribute.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/Environment.Variable.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/Environment.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/types/FileList.FileName.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/FileList.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/FileSet.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/FilterChain.html
@@ -1079,6 +1162,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/types/Permissions.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/PropertySet.BuiltinPropertySetName.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/PropertySet.PropertyRef.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/PropertySet.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/types/RedirectorElement.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/Reference.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/RegularExpression.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/Resource.html
@@ -1088,13 +1172,16 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/types/Substitution.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/XMLCatalog.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/ZipFileSet.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/ZipScanner.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/types/optional/
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/optional/ScriptFilter.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/types/optional/depend/
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/optional/depend/ClassfileSet.ClassRoot.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/optional/depend/ClassfileSet.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/optional/depend/DependScanner.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/optional/depend/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/optional/depend/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/optional/depend/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/types/optional/image/
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/optional/image/Arc.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/optional/image/BasicShape.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/optional/image/ColorMapper.html
@@ -1117,11 +1204,13 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/types/optional/package-tree.h
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/types/resolver/
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/resolver/ApacheCatalog.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/resolver/ApacheCatalogResolver.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/resolver/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/resolver/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/resolver/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/types/selectors/
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/selectors/AndSelector.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/selectors/BaseExtendSelector.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/selectors/BaseSelector.html
@@ -1153,6 +1242,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/types/selectors/SizeSelector.
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/selectors/SizeSelector.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/selectors/TypeSelector.FileType.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/selectors/TypeSelector.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/Algorithm.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/Cache.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/DigestAlgorithm.html
@@ -1169,10 +1259,15 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/types/selectors/modifiedselec
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/selectors/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/selectors/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/types/selectors/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/util/
+share/doc/java/ant/manual/api/org/apache/tools/ant/util/ChainedMapper.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/ClasspathUtils.Delegate.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/ClasspathUtils.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/CollectionUtils.EmptyEnumeration.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/CollectionUtils.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/util/CompositeMapper.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/util/ConcatFileInputStream.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/util/ContainerMapper.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/DOMElementWriter.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/DateUtils.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/FileNameMapper.html
@@ -1186,10 +1281,13 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/util/KeepAliveInputStream.htm
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/KeepAliveOutputStream.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/LazyFileOutputStream.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/LazyHashtable.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/util/LeadPipeInputStream.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/LineTokenizer.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/LoaderUtils.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/MergingMapper.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/util/OutputStreamFunneler.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/PackageNameMapper.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/util/ReaderInputStream.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/RegexpPatternMapper.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/ResourceUtils.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/ScriptRunner.html
@@ -1203,8 +1301,10 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/util/UnPackageNameMapper.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/Watchdog.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/WeakishReference.HardReference.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/WeakishReference.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/util/depend/
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/depend/AbstractAnalyzer.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/depend/DependencyAnalyzer.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/util/depend/bcel/
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/depend/bcel/AncestorAnalyzer.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/depend/bcel/DependencyVisitor.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/depend/bcel/FullAnalyzer.html
@@ -1214,11 +1314,13 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/util/depend/bcel/package-tree
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/depend/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/depend/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/depend/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/util/facade/
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/facade/FacadeTaskHelper.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/facade/ImplementationSpecificArgument.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/facade/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/facade/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/facade/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/util/optional/
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/optional/NoExitSecurityManager.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/optional/WeakishReference12.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/optional/package-frame.html
@@ -1227,6 +1329,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/util/optional/package-tree.ht
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/util/regexp/
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/regexp/JakartaOroMatcher.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/regexp/JakartaOroRegexp.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/regexp/JakartaRegexpMatcher.html
@@ -1241,18 +1344,21 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/util/regexp/RegexpUtil.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/regexp/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/regexp/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/util/regexp/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/bzip2/
 share/doc/java/ant/manual/api/org/apache/tools/bzip2/BZip2Constants.html
 share/doc/java/ant/manual/api/org/apache/tools/bzip2/CBZip2InputStream.html
 share/doc/java/ant/manual/api/org/apache/tools/bzip2/CBZip2OutputStream.html
 share/doc/java/ant/manual/api/org/apache/tools/bzip2/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/bzip2/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/bzip2/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/mail/
 share/doc/java/ant/manual/api/org/apache/tools/mail/ErrorInQuitException.html
 share/doc/java/ant/manual/api/org/apache/tools/mail/MailMessage.html
 share/doc/java/ant/manual/api/org/apache/tools/mail/SmtpResponseReader.html
 share/doc/java/ant/manual/api/org/apache/tools/mail/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/mail/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/mail/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/tar/
 share/doc/java/ant/manual/api/org/apache/tools/tar/TarBuffer.html
 share/doc/java/ant/manual/api/org/apache/tools/tar/TarConstants.html
 share/doc/java/ant/manual/api/org/apache/tools/tar/TarEntry.html
@@ -1262,6 +1368,7 @@ share/doc/java/ant/manual/api/org/apache/tools/tar/TarUtils.html
 share/doc/java/ant/manual/api/org/apache/tools/tar/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/tar/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/tar/package-tree.html
+share/doc/java/ant/manual/api/org/apache/tools/zip/
 share/doc/java/ant/manual/api/org/apache/tools/zip/AsiExtraField.html
 share/doc/java/ant/manual/api/org/apache/tools/zip/ExtraFieldUtils.html
 share/doc/java/ant/manual/api/org/apache/tools/zip/UnixStat.html
@@ -1303,6 +1410,7 @@ share/doc/java/ant/manual/optionaltasklist.html
 share/doc/java/ant/manual/platform.html
 share/doc/java/ant/manual/running.html
 share/doc/java/ant/manual/runninglist.html
+share/doc/java/ant/manual/stylesheets/
 share/doc/java/ant/manual/stylesheets/antmanual.css
 share/doc/java/ant/manual/sysclasspath.html
 share/doc/java/ant/manual/tasksoverview.html
@@ -1314,11 +1422,15 @@ share/doc/java/ant/manual/usinglist.html
 share/doc/java/ant/mission.html
 share/doc/java/ant/page.css
 share/doc/java/ant/problems.html
+share/doc/java/ant/projects/
 share/doc/java/ant/projects.html
+share/doc/java/ant/projects/antidote/
 share/doc/java/ant/projects/antidote/design.html
+share/doc/java/ant/projects/antidote/images/
 share/doc/java/ant/projects/antidote/images/screenshot.jpg
 share/doc/java/ant/projects/antidote/index.html
 share/doc/java/ant/projects/antidote/module.html
+share/doc/java/ant/projects/antlib/
 share/doc/java/ant/projects/antlib/antlib_classloaders.html
 share/doc/java/ant/projects/antlib/antlib_contract.html
 share/doc/java/ant/projects/antlib/antlib_descriptors.html
@@ -1328,91 +1440,3 @@ share/doc/java/ant/projects/antlib/index.html
 share/doc/java/ant/projects/antlib/roles.html
 share/doc/java/ant/projects/index.html
 share/doc/java/ant/resources.html
-@dirrm share/doc/java/ant/projects/antlib
-@dirrm share/doc/java/ant/projects/antidote/images
-@dirrm share/doc/java/ant/projects/antidote
-@dirrm share/doc/java/ant/projects
-@dirrm share/doc/java/ant/manual/stylesheets
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/zip
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/tar
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/mail
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/bzip2
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/util/regexp
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/util/optional
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/util/facade
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/util/depend/bcel
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/util/depend
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/util
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/types/selectors/modifiedselector
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/types/selectors
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/types/resolver
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/types/optional/image
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/types/optional/depend
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/types/optional
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/types
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/rmic
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/windows
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/vss
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/unix
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/starteam
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ssh
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/splash
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sound
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sos
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/attributes
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/script
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/scm
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/perforce
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/net
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/metamata
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/junit
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jsp
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jlink
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/javacc
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/image
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ide
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/i18n
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/extension
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ejb
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/depend
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ccm
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/email
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/cvslib
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/condition
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/compilers
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/loader
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/listener
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/launch
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/input
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/helper
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/filters/util
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant/filters
-@dirrm share/doc/java/ant/manual/api/org/apache/tools/ant
-@dirrm share/doc/java/ant/manual/api/org/apache/tools
-@dirrm share/doc/java/ant/manual/api/org/apache
-@dirrm share/doc/java/ant/manual/api/org
-@dirrm share/doc/java/ant/manual/api
-@dirrm share/doc/java/ant/manual/OptionalTypes
-@dirrm share/doc/java/ant/manual/OptionalTasks
-@dirrm share/doc/java/ant/manual/Integration
-@dirrm share/doc/java/ant/manual/CoreTypes
-@dirrm share/doc/java/ant/manual/CoreTasks
-@dirrm share/doc/java/ant/manual
-@dirrm share/doc/java/ant/images
-@dirrm share/doc/java/ant/ant2
-@dirrm share/doc/java/ant
-@dirrm share/doc/java
-@dirrm lib/java/ant
-@dirrm lib/java

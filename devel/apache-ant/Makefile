@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.2 2004/06/05 16:56:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/10 22:00:36 naddy Exp $
 
 ONLY_FOR_ARCHS= i386
 
 COMMENT=        "java equivalent to make"
 
-DISTNAME=	apache-ant-1.6.1
+DISTNAME=	apache-ant-1.6.2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://ant.apache.org/
 
 MAINTAINER=	Kurt Miller <truk@apache.org>
 
-# Apache Software License
+# Apache Software License 2.0 &
+# W3C Consortium License (August 14 1998)
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -31,7 +32,7 @@ NO_REGRESS=	Yes
 TAR=		${LOCALBASE}/bin/gtar
 
 ANTDOCS=	${PREFIX}/share/doc/java/ant
-TXT=		README WHATSNEW LICENSE
+TXT=		README WHATSNEW LICENSE NOTICE LICENSE.dom LICENSE.sax LICENSE.xerces
 
 do-install:
 	@cd ${WRKDIST}/bin; \
