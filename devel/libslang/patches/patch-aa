@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	Sun Jan  9 14:38:29 2000
-+++ src/Makefile.in	Sat Mar 25 11:04:23 2000
+--- src/Makefile.in.orig	Tue Jun 13 17:40:10 2000
++++ src/Makefile.in	Tue Jun 13 17:42:56 2000
 @@ -2,8 +2,8 @@
  #---------------------------------------------------------------------------
  # ANSI C compiler
@@ -7,7 +7,7 @@
 -CC              = @CC@
 -CFLAGS 		= @CFLAGS@
 +#CC              = @CC@
-+#CFLAGS 	= @CFLAGS@
++#CFLAGS 		= @CFLAGS@
  LDFLAGS		= @LDFLAGS@ @DYNAMIC_LINK_FLAGS@
  #-----------------------------------------------------------------------------
  # System library that contains functions for dynamic linking (-ldl)
@@ -39,7 +39,7 @@
  	-$(RM) $(ELFDIR_ELF_LIB)
 -	cd $(ELFDIR); $(ELF_LINK_CMD) -o $(ELFLIB_MAJOR_MINOR) $(OFILES) $(ELF_DEP_LIBS)
 -	cd $(ELFDIR); $(RM) $(ELFLIB); $(LN) $(ELFLIB_MAJOR_MINOR) $(ELFLIB)
-+	cd $(ELFDIR); $(ELF_LINK) -o $(ELFLIB_MAJOR_MINOR) $(OFILES) $(ELF_DEP_LIBS)
++	cd $(ELFDIR); $(ELF_LINK) -o $(ELFLIB_MAJOR_MINOR) $(OFILES) $(ELF_DEP_LLIBS)
  	@echo ""
  	@echo $(ELFLIB_MAJOR_MINOR) created in $(ELFDIR).
 -	@echo The link $(ELFLIB) to $(ELFLIB_MAJOR_MINOR) was also created.
