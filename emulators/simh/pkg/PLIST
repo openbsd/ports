@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.3 2000/06/15 05:23:49 form Exp $
 bin/simh-i1401
 bin/simh-nova
 bin/simh-pdp1
