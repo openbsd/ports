@@ -1,0 +1,3 @@
+BRS is a bible reader and fulltext search utility.  It runs
+interactively as well as the more useful function of returning a
+passage requested via command line.  Text is King James Version.

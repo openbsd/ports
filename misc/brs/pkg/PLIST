@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/05/30 14:20:10 espie Exp $
+bin/bible
+lib/bible.data
+lib/bible.data.conc
+man/man1/bible.1
