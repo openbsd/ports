@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2003/12/16 13:12:32 sturm Exp $
+# $OpenBSD: Makefile,v 1.199 2004/01/03 13:41:18 sturm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -6,6 +6,7 @@
      SUBDIR += ORBit2
      SUBDIR += ald
      SUBDIR += alex
+     SUBDIR += apache-ant
      SUBDIR += asp2php
      SUBDIR += asp2php,no_x11
      SUBDIR += astyle
@@ -63,7 +64,6 @@
      SUBDIR += horde
      SUBDIR += id-utils
      SUBDIR += jad
-     SUBDIR += jakarta-ant
      SUBDIR += jakarta-servletapi
      SUBDIR += jam
      SUBDIR += jdk
