@@ -1,0 +1,17 @@
+--- ltk/LTKButtonDialog.cc.orig	Sat Nov 28 00:41:42 1998
++++ ltk/LTKButtonDialog.cc	Thu Aug  5 02:07:48 1999
+@@ -93,11 +93,12 @@
+     labelBox = new LTKBox(NULL, 1, 1, 2, 2, 2, 2, ltkBorderNone, 0, 0,
+ 			  new LTKEmpty());
+   }
+-  trueBtn = new LTKButton(NULL, 1, trueBtnLabel ? trueBtnLabel : "Ok",
++  trueBtn = new LTKButton(NULL, 1, trueBtnLabel ? trueBtnLabel : (char *)"Ok",
+ 			  ltkButtonClick, &buttonCbk);
+   trueBtnBox = new LTKBox(NULL, 1, 1, 0, 0, 0, 0, ltkBorderNone, 0, 0,
+ 			  trueBtn);
+-  falseBtn = new LTKButton(NULL, 0, falseBtnLabel ? falseBtnLabel : "Cancel",
++  falseBtn = new LTKButton(NULL, 0,
++			   falseBtnLabel ? falseBtnLabel : (char *)"Cancel",
+ 			   ltkButtonClick, &buttonCbk);
+   falseBtnBox = new LTKBox(NULL, 1, 1, 0, 0, 0, 0, ltkBorderNone, 0, 0,
+ 			   falseBtn);
