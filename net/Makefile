@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.241 2002/11/10 20:05:15 jakob Exp $
+# $OpenBSD: Makefile,v 1.242 2002/11/15 20:21:39 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -85,6 +85,7 @@
      SUBDIR += libnids
      SUBDIR += libst
      SUBDIR += licq
+     SUBDIR += maradns
      SUBDIR += micq
      SUBDIR += mirror
      SUBDIR += mrtd
