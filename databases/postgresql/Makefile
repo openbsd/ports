@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2000/08/25 21:12:44 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2000/09/11 06:38:45 brad Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 VERSION=	7.0.2
@@ -70,8 +70,7 @@ USE_GMAKE=	yes
 MAKE_FILE=	GNUmakefile
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS= --prefix="${PREFIX}/pgsql" --enable-locale \
-		--with-template=openbsd --with-libraries="${PREFIX}/lib" \
-		--srcdir="${WRKSRC}"
+		--with-template="openbsd" --with-libraries="${PREFIX}/lib"
 CONFIGURE_ENV=	POSTGRESDIR="${PREFIX}/pgsql"
 
 FLAVORS=	tcl
