@@ -1,0 +1,36 @@
+$OpenBSD: patch-gcc_rtl_h,v 1.1 2002/06/09 00:31:52 espie Exp $
+--- gcc/rtl.h.orig	Sat Jun  8 14:47:57 2002
++++ gcc/rtl.h	Sat Jun  8 16:08:54 2002
+@@ -1515,12 +1515,30 @@ extern rtx find_first_parameter_load	PAR
+ 
+ extern rtx find_use_as_address		PARAMS ((rtx, rtx, HOST_WIDE_INT));
+ void init_EXPR_INSN_LIST_cache		PARAMS ((void));
+-void free_EXPR_LIST_list 		PARAMS ((rtx *));
+-void free_INSN_LIST_list 		PARAMS ((rtx *));
+ void free_EXPR_LIST_node 		PARAMS ((rtx));
+ void free_INSN_LIST_node 		PARAMS ((rtx));
+ rtx alloc_INSN_LIST			PARAMS ((rtx, rtx));
+ rtx alloc_EXPR_LIST			PARAMS ((int, rtx, rtx));
++
++/* An INSN_LIST containing all INSN_LISTs allocated but currently unused.  */
++extern rtx unused_insn_list;
++
++/* An EXPR_LIST containing all EXPR_LISTs allocated but currently unused.  */
++extern rtx unused_expr_list;
++
++void free_list PARAMS ((rtx *, rtx *));
++
++#define free_EXPR_LIST_list(p) do { 			\
++	rtx *myp = (p); 				\
++	if (*myp) 					\
++		free_list(myp, &unused_expr_list); 	\
++	} while(0)
++
++#define free_INSN_LIST_list(p) do { 			\
++	rtx *myp = (p); 				\
++	if (*myp) 					\
++		free_list(myp, &unused_insn_list); 	\
++	} while(0)
+ 
+ /* regclass.c */
+ 

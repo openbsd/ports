@@ -1,0 +1,57 @@
+$OpenBSD: patch-gcc_lists_c,v 1.1 2002/06/09 00:31:52 espie Exp $
+--- gcc/lists.c.orig	Sat Jun  8 14:47:57 2002
++++ gcc/lists.c	Sat Jun  8 16:08:39 2002
+@@ -25,23 +25,22 @@ Software Foundation, 59 Temple Place - S
+ #include "rtl.h"
+ #include "ggc.h"
+ 
+-static void free_list PARAMS ((rtx *, rtx *));
+ static void zap_lists PARAMS ((void *));
+ 
+ /* Functions for maintaining cache-able lists of EXPR_LIST and INSN_LISTs.  */
+ 
+ /* An INSN_LIST containing all INSN_LISTs allocated but currently unused.  */
+-static rtx unused_insn_list;
++rtx unused_insn_list;
+ 
+ /* An EXPR_LIST containing all EXPR_LISTs allocated but currently unused.  */
+-static rtx unused_expr_list;
++rtx unused_expr_list;
+ 
+ 
+ /* This function will free an entire list of either EXPR_LIST or INSN_LIST
+    nodes. This is to be used only only lists that consist exclusively of
+    nodes of one type only.  This is only called by free_EXPR_LIST_list
+    and free_INSN_LIST_list.  */
+-static void
++void
+ free_list (listp, unused_listp)
+      rtx *listp, *unused_listp;
+ {
+@@ -122,26 +121,6 @@ void 
+ init_EXPR_INSN_LIST_cache ()
+ {
+   ggc_add_root (&unused_expr_list, 1, 1, zap_lists);
+-}
+-
+-/* This function will free up an entire list of EXPR_LIST nodes.  */
+-void 
+-free_EXPR_LIST_list (listp)
+-     rtx *listp;
+-{
+-  if (*listp == 0)
+-    return;
+-  free_list (listp, &unused_expr_list);
+-}
+-
+-/* This function will free up an entire list of INSN_LIST nodes.  */
+-void 
+-free_INSN_LIST_list (listp)
+-     rtx *listp;
+-{
+-  if (*listp == 0)
+-    return;
+-  free_list (listp, &unused_insn_list);
+ }
+ 
+ /* This function will free up an individual EXPR_LIST node.  */
