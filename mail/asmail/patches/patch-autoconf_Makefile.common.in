@@ -1,0 +1,34 @@
+--- autoconf/Makefile.common.in.orig	Thu Apr 13 05:55:58 2000
++++ autoconf/Makefile.common.in	Mon Jun 26 17:48:09 2000
+@@ -8,14 +8,14 @@
+ 
+ install:	$(PROG)
+ 		$(STRIP) $(PROG)
+-		$(INSTALL_PROGRAM) $(PROG) $(AFTER_BIN_DIR)
++		$(INSTALL_PROGRAM) $(PROG) $(DESTDIR)$(AFTER_BIN_DIR)
+ 
+ install.man:
+-		$(INSTALL_DATA) $(PROG).man $(AFTER_MAN_DIR)/$(PROG).1x
++		$(INSTALL_DATA) $(PROG).man $(DESTDIR)$(AFTER_MAN_DIR)/$(PROG).1x
+ 
+ uninstall:
+-		$(RMF) $(AFTER_BIN_DIR)/$(PROG)
+-		$(RMF) $(AFTER_MAN_DIR)/$(PROG).1x
++		$(RMF) $(DESTDIR)$(AFTER_BIN_DIR)/$(PROG)
++		$(RMF) $(DESTDIR)$(AFTER_MAN_DIR)/$(PROG).1x
+ 
+ clean:
+ 		$(RMF) $(PROG) *.o *~ *% *.bak \#* core
+@@ -32,10 +32,10 @@
+ 		done
+ 
+ $(PROG):        $(OBJS)
+-		$(CC) $(OBJS) $(LIBRARIES) $(EXTRA_LIBRARIES) -o $(@)
++		$(CC) $(OBJS) $(LDFLAGS) $(LIBRARIES) $(EXTRA_LIBRARIES) -o $(@)
+ 
+ .c.o:
+-		$(CC) $(CCFLAGS) $(EXTRA_DEFINES) $(INCLUDES) $(EXTRA_INCLUDES) -c $*.c
++		$(CC) $(CCFLAGS) $(CPPFLAGS) $(EXTRA_DEFINES) $(INCLUDES) $(EXTRA_INCLUDES) -c $*.c
+ 
+ #
+ # End of Make.common

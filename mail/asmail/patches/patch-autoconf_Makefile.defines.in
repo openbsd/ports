@@ -1,0 +1,20 @@
+--- autoconf/Makefile.defines.in.orig	Thu Apr 13 05:55:58 2000
++++ autoconf/Makefile.defines.in	Mon Jun 26 17:46:46 2000
+@@ -4,6 +4,8 @@
+ 
+ CC		= @CC@
+ CCFLAGS         = @CFLAGS@
++CPPFLAGS        = @CPPFLAGS@
++LDFLAGS         = @LDFLAGS@
+ # -march=pentiumpro -mcpu=pentiumpro
+ 
+ RANLIB		= @RANLIB@
+@@ -45,6 +47,8 @@
+ AFTER_SAVE	= @with_afterdir@/.workspace_state
+ AFTER_NONCF	= @with_afterdir@/non-configurable
+ 
++
++DESTDIR         = 
+ #
+ # End of Make.defines
+ #

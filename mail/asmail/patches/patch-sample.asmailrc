@@ -1,0 +1,44 @@
+--- sample.asmailrc.orig	Mon Jun 26 16:24:30 2000
++++ sample.asmailrc	Mon Jun 26 16:26:56 2000
+@@ -70,7 +70,7 @@
+ #########################################################
+ # Turns off shaped window				#
+ #########################################################
+-#NoShape
++NoShape
+ 
+ 
+ #########################################################
+@@ -116,7 +116,7 @@
+ #########################################################
+ # Assign frame if not shaped				#
+ #########################################################
+-#Frame ~/GNUstep/Library/AfterStep/desktop/icons/8bpp/frame.xpm
++#Frame !!PREFIX!!/include/X11/pixmaps/frame.xpm
+ 
+ 
+ #########################################################
+@@ -124,17 +124,18 @@
+ #########################################################
+ NoMail  
+ #        /usr/local/share/afterstep/desktop/icons/common/Mail1.xpm
++        !!PREFIX!!/include/X11/pixmaps/nomail_s.xpm
+ End
+ 
+ OldMail  	
+-#        /usr/local/share/afterstep/desktop/icons/common/Mail2.xpm
++        !!PREFIX!!/include/X11/pixmaps/oldmail_s.xpm
+ End
+ 
+ NewMail  
+-#        /usr/local/share/afterstep/desktop/icons/common/Mail1.xpm
+-#        /usr/local/share/afterstep/desktop/icons/common/Mail2.xpm
+-#        /usr/local/share/afterstep/desktop/icons/common/Mail3.xpm
+-#        /usr/local/share/afterstep/desktop/icons/common/Mail2.xpm
++        !!PREFIX!!/include/X11/pixmaps/oldmail_s.xpm
++        !!PREFIX!!/include/X11/pixmaps/newmail_s.xpm
++        !!PREFIX!!/include/X11/pixmaps/oldmail_s.xpm
++        !!PREFIX!!/include/X11/pixmaps/newmail_s.xpm
+ End
+ 
+ #########################################################
