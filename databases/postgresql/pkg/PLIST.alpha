@@ -43,15 +43,11 @@ pgsql/lib/global1.bki.source
 pgsql/lib/global1.description
 pgsql/lib/libecpg.a
 pgsql/lib/libecpg.so
-pgsql/lib/libecpg.so.1.1
 @comment this is bogus: if a package is created it will not contain
 @comment the libpgtcl libraries
 @unexec rm -f %D/pgsql/lib/libpgtcl.a
-@unexec rm -f %D/pgsql/lib/libpgtcl.so.1.0
 @unexec rm -f %D/pgsql/lib/libpgtcl.so
 pgsql/lib/libpq.a
-pgsql/lib/libpq.so.1.1
-@exec /sbin/ldconfig -m %B
 pgsql/lib/libpq.so
 pgsql/lib/local1_template1.bki.source
 pgsql/lib/local1_template1.description
