@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.323 2004/06/04 23:44:35 jolan Exp $
+# $OpenBSD: Makefile,v 1.324 2004/06/22 15:32:31 xsa Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -203,6 +203,7 @@
      SUBDIR += py-dns
      SUBDIR += py-libpcap
      SUBDIR += py-msnp
+     SUBDIR += py-snmp
      SUBDIR += quagga
      SUBDIR += queso
      SUBDIR += quirc
