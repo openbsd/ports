@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2002/09/18 15:35:39 espie Exp $
+# $OpenBSD: Makefile,v 1.91 2002/09/19 11:57:36 naddy Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64
 
@@ -9,7 +9,7 @@ MAKE_OBJC=Yes
 
 # Java is still mostly broken (boehm-gc)
 MAKE_JAVA=Yes
-BROKEN="Waiting for a recent snapshot that #??#@ works"
+BROKEN=	Waiting for a recent snapshot that #??#@ works
 
 
 # This is a configuration file for gcc
