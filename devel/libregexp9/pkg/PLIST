@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/16 14:59:42 markus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/09 15:34:08 espie Exp $
 include/regexp9.h
 lib/libregexp9.a
-man/man3/regexp9.3
-man/man7/regexp9.7
+@man man/man3/regexp9.3
+@man man/man7/regexp9.7

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/16 14:58:49 markus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/09 15:34:08 espie Exp $
 include/bio.h
 lib/libbio.a
-man/man3/bio.3
+@man man/man3/bio.3
