@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/13 13:26:11 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/12 10:09:01 espie Exp $
 
 
 COMMENT=	"X11 based RTF editor"
@@ -18,7 +18,7 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 WRKDIST=	${WRKDIR}/Ted-$V
 LIB_DEPENDS=	png.2.::graphics/png \
-		jpeg.6::graphics/jpeg \
+		jpeg.62::graphics/jpeg \
 		tiff.35::graphics/tiff
 
 USE_MOTIF=	openmotif
