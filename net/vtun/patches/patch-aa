@@ -1,0 +1,15 @@
+--- Makefile.in.orig	Mon Feb  7 03:04:08 2000
++++ Makefile.in	Mon Feb  7 03:07:18 2000
+@@ -109,10 +109,8 @@
+ 	ln -s vtund.8 $(MAN_DIR)/man8/vtun.8 
+ 
+ install_config: 
+-	$(INSTALL) -d -m 755 -o root -g 0 $(ETC_DIR)
+-	if [ ! -f $(ETC_DIR)/vtund.conf ]; then \
+-	  $(INSTALL) -m 600 -o root -g 0 vtund.conf $(ETC_DIR); \
+-	fi
++	$(INSTALL) -d -m 755 -o root -g 0 $(prefix)/lib/vtun
++	$(INSTALL) -m 600 -o root -g 0 vtund.conf $(prefix)/lib/vtun/vtund.conf-sample
+ 
+ install: vtund install_config install_man
+ 	$(INSTALL) -d -m 755 -o root -g 0 $(VAR_DIR)/run

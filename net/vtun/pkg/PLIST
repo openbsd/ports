@@ -1,5 +1,5 @@
 sbin/vtund
+lib/vtun/vtund.conf-sample
 man/man8/vtund.8
 man/man8/vtun.8
-@exec mkdir /var/log/vtund
-@unexec rm -rf /var/log/vtund
+@dirrm lib/vtun
