@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2001/04/21 14:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2001/05/05 22:45:49 naddy Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -34,6 +34,7 @@
      SUBDIR += mp3info
      SUBDIR += mpegaudio
      SUBDIR += mpg123
+     SUBDIR += mpg123,esd
 #    SUBDIR += mxv
      SUBDIR += nap
 #    SUBDIR += nas
