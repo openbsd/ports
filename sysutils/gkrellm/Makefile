@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/15 21:37:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/17 18:25:42 naddy Exp $
 
-DISTNAME=	gkrellm-1.0.6
+DISTNAME=	gkrellm-1.0.7
 HOMEPAGE=	http://web.wt.net/~billw/gkrellm/gkrellm.html
 
 CATEGORIES=	sysutils

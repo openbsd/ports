@@ -1,13 +1,17 @@
-$OpenBSD: patch-Makefile_top,v 1.1.1.1 2001/02/15 21:37:42 naddy Exp $
---- Makefile.top.orig	Sat Jan  6 17:08:34 2001
-+++ Makefile.top	Thu Feb 15 18:56:45 2001
-@@ -65,18 +65,18 @@ GTOP_INCLUDE = -I$(GTOP_PREFIX)/include
+$OpenBSD: patch-Makefile_top,v 1.2 2001/03/17 18:25:44 naddy Exp $
+--- Makefile.top.orig	Wed Mar 14 13:43:13 2001
++++ Makefile.top	Sat Mar 17 18:41:24 2001
+@@ -65,22 +65,22 @@ GTOP_INCLUDE = -I$(GTOP_PREFIX)/include
  GTOP_LIBS = -L$(GTOP_PREFIX)/lib -lgtop -lgtop_common -lgtop_sysdeps -lXau
  
  
 -INSTALLDIR=/usr/local/bin
--INCLUDEDIR=/usr/local/include
+-MANDIR=/usr/local/share/man/man1
 +INSTALLDIR=${PREFIX}/bin
++MANDIR=${PREFIX}/man/man1
+ MANMODE = 644
+ MANDIRMODE = 755
+-INCLUDEDIR=/usr/local/include
 +INCLUDEDIR=${PREFIX}/include
  INCLUDEMODE = 644
  INCLUDEDIRMODE = 755
@@ -17,6 +21,7 @@ $OpenBSD: patch-Makefile_top,v 1.1.1.1 2001/02/15 21:37:42 naddy Exp $
  
  export GTK_CONFIG GTOP_INCLUDE GTOP_LIBS SYS_LIBS BINMODE
  export INSTALLDIR INCLUDEDIR INCLUDEMODE INCLUDEDIRMODE LOCALEDIR
+ export MANDIR MANDIRMODE MANMODE
  
 -#enable_nls=1
 -#export enable_nls
@@ -25,7 +30,7 @@ $OpenBSD: patch-Makefile_top,v 1.1.1.1 2001/02/15 21:37:42 naddy Exp $
  
  all gkrellm:
  	(cd locale && ${MAKE} all)
-@@ -116,7 +116,7 @@ netbsd:
+@@ -120,7 +120,7 @@ netbsd:
  openbsd:
  	(cd locale && ${MAKE} all)
  	(cd src && ${MAKE} GTK_CONFIG=gtk-config GTOP_LIBS= GTOP_INCLUDE= \

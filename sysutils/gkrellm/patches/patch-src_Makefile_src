@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_src,v 1.1.1.1 2001/02/15 21:37:42 naddy Exp $
---- src/Makefile.src.orig	Sun Jan 14 21:18:32 2001
-+++ src/Makefile.src	Thu Feb 15 18:36:17 2001
-@@ -1,7 +1,7 @@
+$OpenBSD: patch-src_Makefile_src,v 1.2 2001/03/17 18:25:45 naddy Exp $
+--- src/Makefile.src.orig	Wed Mar 14 13:43:35 2001
++++ src/Makefile.src	Sat Mar 17 18:53:56 2001
+@@ -1,10 +1,10 @@
  GTK_CONFIG ?= gtk-config
  BINMODE ?= 755
 -INSTALLDIR ?= /usr/local/bin
@@ -10,8 +10,12 @@ $OpenBSD: patch-src_Makefile_src,v 1.1.1.1 2001/02/15 21:37:42 naddy Exp $
 +INCLUDEDIR ?= ${PREFIX}/include
  INCLUDEMODE ?= 644
  INCLUDEDIRMODE ?= 755
+-MANDIR ?= /usr/local/share/man/man1
++MANDIR ?= ${PREFIX}/man/man1
+ MANMODE ?= 644
+ MANDIRMODE ?= 755
  
-@@ -13,7 +13,7 @@ IMLIB_INCLUDE = `imlib-config --cflags-g
+@@ -16,7 +16,7 @@ IMLIB_INCLUDE = `imlib-config --cflags-g
  GTK_LIB = `$(GTK_CONFIG) --libs gthread`
  IMLIB_LIB = `imlib-config --libs-gdk`
  
@@ -20,10 +24,11 @@ $OpenBSD: patch-src_Makefile_src,v 1.1.1.1 2001/02/15 21:37:42 naddy Exp $
  FLAGS+= $(PTHREAD_INC)
  
  LIBS = $(GTK_LIB) $(IMLIB_LIB) $(GTOP_LIBS) $(SYS_LIBS)
-@@ -31,7 +31,7 @@ ifeq ($(HAVE_GETADDRINFO),1)
+@@ -33,8 +33,7 @@ ifeq ($(HAVE_GETADDRINFO),1)
+     FLAGS += -DHAVE_GETADDRINFO
  endif
  
- 
+-
 -CC = gcc -Wall $(FLAGS) $(CFLAGS)
 +CFLAGS += $(FLAGS)
  
