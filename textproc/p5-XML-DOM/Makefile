@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 04:11:49 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/10 22:11:28 naddy Exp $
 
 COMMENT=	"perl module to build DOM Level 1 structures"
 
@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR= XML
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
-PERL_MODULES=   ${LOCALBASE}/libdata/perl5/site_perl/${ARCH}-openbsd
+PERL_MODULES=   ${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
 BUILD_DEPENDS=  ${PERL_MODULES}/XML/Parser.pm::textproc/p5-XML-Parser
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 00:13:22 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/10 22:11:27 naddy Exp $
 
 COMMENT=	"curses(3) based terminal widgets"
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-PERL_MODULES=   ${LOCALBASE}/libdata/perl5/site_perl/${ARCH}-openbsd
+PERL_MODULES=   ${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
 BUILD_DEPENDS=  ${PERL_MODULES}/Curses.pm::devel/p5-Curses
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 

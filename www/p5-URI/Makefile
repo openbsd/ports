@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/06 04:22:56 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/10 22:11:30 naddy Exp $
 
 COMMENT=	"library to parse Uniform Resource Identifiers"
 
@@ -9,7 +9,7 @@ NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= URI
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/${ARCH}-openbsd/MIME/Base64.pm::converters/p5-MIME-Base64
+BUILD_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/MIME/Base64.pm::converters/p5-MIME-Base64
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

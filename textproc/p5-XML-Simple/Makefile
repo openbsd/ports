@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 04:11:49 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/10 22:11:29 naddy Exp $
 
 COMMENT=	"trivial perl API for reading/writing XML"
 
@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR= XML
 HOMEPAGE=	http://www.web.co.nz/~grantm/cpan/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
-PERL_MODULES=   ${LOCALBASE}/libdata/perl5/site_perl/${ARCH}-openbsd
+PERL_MODULES=   ${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
 BUILD_DEPENDS=  ${PERL_MODULES}/XML/Parser.pm::textproc/p5-XML-Parser \
 		${PERL_MODULES}/Storable.pm::devel/p5-Storable
 RUN_DEPENDS=    ${BUILD_DEPENDS}

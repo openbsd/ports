@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/04/18 21:47:47 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/10 22:11:30 naddy Exp $
 
 COMMENT=	"library for WWW access in Perl"
 
@@ -11,11 +11,11 @@ MASTER_SITE_SUBDIR= LWP
 
 PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
 BUILD_DEPENDS=  ${PERL_MODULES}/URI.pm::www/p5-URI \
-		${PERL_MODULES}/${ARCH}-openbsd/HTML/Entities.pm::www/p5-HTML-Parser \
+		${PERL_MODULES}/${MACHINE_ARCH}-openbsd/HTML/Entities.pm::www/p5-HTML-Parser \
 		${PERL_MODULES}/Net/Cmd.pm::net/p5-libnet \
-		${PERL_MODULES}/${ARCH}-openbsd/MD5.pm::security/p5-Digest-MD5 \
-		${PERL_MODULES}/${ARCH}-openbsd/Crypt/SSLeay.pm::security/p5-Crypt-SSLeay \
-		${PERL_MODULES}/${ARCH}-openbsd/HTTP/GHTTP.pm::www/p5-HTTP-GHTTP
+		${PERL_MODULES}/${MACHINE_ARCH}-openbsd/MD5.pm::security/p5-Digest-MD5 \
+		${PERL_MODULES}/${MACHINE_ARCH}-openbsd/Crypt/SSLeay.pm::security/p5-Crypt-SSLeay \
+		${PERL_MODULES}/${MACHINE_ARCH}-openbsd/HTTP/GHTTP.pm::www/p5-HTTP-GHTTP
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

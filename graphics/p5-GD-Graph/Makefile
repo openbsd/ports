@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/06 05:05:49 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2001/05/10 22:11:27 naddy Exp $
 
 COMMENT=	"module for graph plotting"
 
@@ -9,7 +9,7 @@ NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= GD
 
-RUN_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/${ARCH}-openbsd/GD.pm::graphics/p5-GD \
+RUN_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/GD.pm::graphics/p5-GD \
 		${LOCALBASE}/libdata/perl5/site_perl/GD/Text.pm::graphics/p5-GD-TextUtil
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

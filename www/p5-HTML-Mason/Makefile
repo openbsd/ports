@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/18 23:17:28 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/10 22:11:30 naddy Exp $
 
 COMMENT=	"high-performance dynamic web authoring system"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
-BUILD_DEPENDS=	${PERL_MODULES}/${ARCH}-openbsd/Time/HiRes.pm::devel/p5-Time-HiRes \
+BUILD_DEPENDS=	${PERL_MODULES}/${MACHINE_ARCH}-openbsd/Time/HiRes.pm::devel/p5-Time-HiRes \
 		${PERL_MODULES}/MLDBM.pm::devel/p5-MLDBM \
 		${PERL_MODULES}/Params/Validate.pm::devel/p5-Params-Validate \
 		${LOCALBASE}/lib/mod_perl.so::www/mod_perl

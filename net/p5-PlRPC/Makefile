@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/05 13:15:06 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/10 22:11:28 naddy Exp $
 
 COMMENT=	"module for writing rpc servers and clients"
 
@@ -19,7 +19,7 @@ MASTER_SITE_SUBDIR= RPC
 
 PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
 BUILD_DEPENDS=	${PERL_MODULES}/Net/Daemon.pm::net/p5-Net-Daemon \
-		${PERL_MODULES}/${ARCH}-openbsd/Storable.pm::devel/p5-Storable
+		${PERL_MODULES}/${MACHINE_ARCH}-openbsd/Storable.pm::devel/p5-Storable
 
 CONFIGURE_STYLE= perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/04/17 06:37:35 shell Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/10 22:11:28 naddy Exp $
 
 COMMENT=	'perl module to manage XML RSS files'
 
@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR= XML
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERL_MODULES=   ${LOCALBASE}/libdata/perl5/site_perl
-BUILD_DEPENDS=  ${PERL_MODULES}/${ARCH}-openbsd/XML/Parser.pm::textproc/p5-XML-Parser
+BUILD_DEPENDS=  ${PERL_MODULES}/${MACHINE_ARCH}-openbsd/XML/Parser.pm::textproc/p5-XML-Parser
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes

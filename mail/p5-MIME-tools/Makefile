@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/04/17 06:37:33 shell Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/10 22:11:27 naddy Exp $
 
 COMMENT=		"modules for parsing (and creating!) MIME entities"
 
@@ -19,7 +19,7 @@ MASTER_SITE_SUBDIR= 	MIME
 
 PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
 BUILD_DEPENDS=	${PERL_MODULES}/Mail/Mailer.pm::mail/p5-Mail-Tools  \
-		${PERL_MODULES}/${ARCH}-openbsd/MIME/Base64.pm::converters/p5-MIME-Base64 \
+		${PERL_MODULES}/${MACHINE_ARCH}-openbsd/MIME/Base64.pm::converters/p5-MIME-Base64 \
 		${PERL_MODULES}/IO/Stringy.pm::devel/p5-IO-stringy
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/19 04:33:12 danh Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/10 22:11:28 naddy Exp $
 
 COMMENT=	"cryptographic cipher block chaining mode"
 
@@ -10,8 +10,8 @@ NEED_VERSION=	1.362
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Crypt
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/${ARCH}-openbsd/MD5.pm::security/p5-Digest-MD5
-RUN_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/${ARCH}-openbsd/MD5.pm::security/p5-Digest-MD5
+BUILD_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/MD5.pm::security/p5-Digest-MD5
+RUN_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/MD5.pm::security/p5-Digest-MD5
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 

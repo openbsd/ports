@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 04:11:50 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/10 22:11:29 naddy Exp $
 
 COMMENT=	"perl module to perform XSLT transformations"
 
@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR= XML
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 PERL_MODULES=   ${LOCALBASE}/libdata/perl5/site_perl
-BUILD_DEPENDS=  ${PERL_MODULES}/${ARCH}-openbsd/XML/Parser.pm::textproc/p5-XML-Parser \
+BUILD_DEPENDS=  ${PERL_MODULES}/${MACHINE_ARCH}-openbsd/XML/Parser.pm::textproc/p5-XML-Parser \
 		${PERL_MODULES}/XML/DOM.pm::textproc/p5-XML-DOM
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 

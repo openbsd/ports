@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/06 04:22:52 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/10 22:11:29 naddy Exp $
 
 COMMENT=	"DBI persistent connection, authentication and authorization"
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Apache
 
 RUN_DEPENDS=	${LOCALBASE}/lib/mod_perl.so::www/mod_perl \
-		${LOCALBASE}/libdata/perl5/site_perl/${ARCH}-openbsd/DBI.pm::databases/p5-DBI
+		${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/DBI.pm::databases/p5-DBI
 
 MAINTAINER=	Peter Galbavy <peter.galbavy@knowledge.com>
 		
