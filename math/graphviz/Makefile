@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/07/18 15:15:05 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2003/02/15 14:35:39 espie Exp $
 
 CATEGORIES=	math devel graphics
 
@@ -28,6 +28,7 @@ CONFIGURE_ENV=TCLCONFIG=${LOCALBASE}/lib/tcl8.3/tclConfig.sh \
 CONFIGURE_ARGS=	--with-freetypeincludedir=${X11BASE}/include/freetype2 \
 		--with-pngincludedir=${LOCALBASE}/include/libpng
 CONFIGURE_SCRIPT=autogen.sh
+CONFIGURE_ENV+=AUTOCONF_VERSION=${AUTOCONF_VERSION}
 USE_GMAKE=	Yes
 
 .include <bsd.own.mk>
@@ -46,7 +47,9 @@ LIB_DEPENDS=	tcl83.::lang/tcl/8.3 \
 		jpeg.62::graphics/jpeg \
 		png.2::graphics/png
 
-BUILD_DEPENDS=	::devel/autoconf \
+AUTOCONF_VERSION=	2.13
+BUILD_DEPENDS=	::devel/autoconf/${AUTOCONF_VERSION} \
+		::devel/metaauto \
 		::devel/automake
 
 pre-configure:
