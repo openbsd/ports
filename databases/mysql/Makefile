@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/05/11 21:25:17 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/06/03 14:06:32 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 DISTNAME=	mysql-3.22.22
@@ -16,6 +16,10 @@ MASTER_SITES=	http://www.mysql.org/Downloads/MySQL-3.22/ \
 
 MAINTAINER=	ports@openbsd.org
 
+.if ${MACHINE_ARCH} == "sparc"
+BROKEN=		"pthread's are currently not working SPARC"
+.endif
+
 PERL?=		perl
 
 USE_EGCC=	yes
@@ -25,16 +29,13 @@ CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-perl \
 		--without-debug \
 		--without-readline \
-		--without-bench
+		--without-bench \
+		--without-mit-threads
 
 CONFIGURE_ENV+=	PERL=${PERL} \
-		PERL5=${PERL}
-
-.if defined(NATIVE_THREADS)
-CONFIGURE_ARGS+= --without-mit-threads
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -pthread" \
+		PERL5=${PERL} \
+		CFLAGS="${CFLAGS} -pthread" \
 		CXXFLAGS="${CFLAGS} -pthread"
-.endif
 
 pre-install:
 .if !defined(PACKAGE_BUILDING)
