@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/04/20 18:14:35 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2002/04/21 11:03:58 espie Exp $
 
 COMMENT= 		"X11 toolkit, multimedia applications"
 CATEGORIES=		x11 x11/kde
@@ -12,7 +12,7 @@ LIB_DEPENDS= DCOP,kdefx,kdesu,kdeui,kio,kmid,kparts::x11/kde/libs3 \
 	vorbis,vorbisfile::audio/libvorbis \
 	cdda_paranoia,cdda_interface::audio/cdparanoia
 
-RUN_DEPENDS=:xanim-*:x11/xanim
+RUN_DEPENDS=:xanim-*:graphics/xanim
 
 
 post-install:
