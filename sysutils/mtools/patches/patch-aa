@@ -1,0 +1,49 @@
+--- Makefile.in.orig	Sun Feb 28 07:17:39 1999
++++ Makefile.in	Sun Feb 28 07:22:16 1999
+@@ -25,7 +25,7 @@
+ srcdir=@srcdir@
+ VPATH=@srcdir@
+ 
+-prefix      = @prefix@
++prefix      = ${PREFIX}
+ exec_prefix = @exec_prefix@
+ bindir      = @bindir@
+ infodir     = @infodir@
+@@ -45,9 +45,10 @@
+ MACHDEPLIBS = @MACHDEPLIBS@	
+ LN_S        = @LN_S@
+ 
+-INSTALL         = @INSTALL@
+-INSTALL_PROGRAM = @INSTALL_PROGRAM@
+-INSTALL_DATA    = @INSTALL_DATA@
++INSTALL_PROGRAM = ${BSD_INSTALL_PROGRAM}
++INSTALL_DATA    = ${BSD_INSTALL_DATA}
++INSTALL_SCRIPT  = ${BSD_INSTALL_SCRIPT}
++INSTALL_MAN     = ${BSD_INSTALL_MAN}
+ 
+ .SUFFIXES:
+ .SUFFIXES: .o .c
+@@ -200,7 +201,7 @@
+ install-scripts: $(bindir)/mtools
+ 	@$(top_srcdir)/mkinstalldirs $(bindir)
+ 	@for j in $(SCRIPTS) ; do \
+-		$(INSTALL_PROGRAM) $(srcdir)/scripts/$$j $(bindir)/$$j ; \
++		$(INSTALL_SCRIPT) $(srcdir)/scripts/$$j $(bindir)/$$j ; \
+ 		echo $(bindir)/$$j ; \
+ 	done
+ 	rm -f $(bindir)/lz
+@@ -209,12 +210,12 @@
+ install-man:
+ 	@$(top_srcdir)/mkinstalldirs $(MAN1DIR)
+ 	@for j in $(MAN1); do \
+-		$(INSTALL_DATA) $(srcdir)/$$j $(MAN1DIR)/$$j ; \
++		$(INSTALL_MAN) $(srcdir)/$$j $(MAN1DIR)/$$j ; \
+ 		echo $(MAN1DIR)/$$j ; \
+ 	done
+ 	@$(top_srcdir)/mkinstalldirs $(MAN5DIR)
+ 	@for j in $(MAN5); do \
+-		$(INSTALL_DATA) $(srcdir)/$$j $(MAN5DIR)/$$j ; \
++		$(INSTALL_MAN) $(srcdir)/$$j $(MAN5DIR)/$$j ; \
+ 		echo $(MAN5DIR)/$$j ; \
+ 	done
+ 
