@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/15 17:58:50 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/07 21:37:12 wilfried Exp $
 
 COMMENT=	"Blatte functions to generate (X)HTML"
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
 BUILD_DEPENDS=	::textproc/p5-Blatte \
 		::www/p5-HTML-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}

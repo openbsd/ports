@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/12/22 10:22:39 obecian Exp $
+# $OpenBSD: Makefile,v 1.5 2002/06/07 21:37:11 wilfried Exp $
 
 DISTNAME=	cadubi_1.2
 PKGNAME=	${DISTNAME:S/_/-/g}
@@ -16,7 +16,6 @@ MASTER_SITES=	ftp://ftp.logicallemon.com/pub/cadubi/
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
-PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
 RUN_DEPENDS=	::devel/p5-Term-ReadKey
 
 NO_BUILD=	Yes

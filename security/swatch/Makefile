@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/03/21 21:25:52 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/06/07 21:37:12 wilfried Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	"Simple WATCHdog log filtering program"
@@ -12,7 +12,6 @@ MASTER_SITES=	ftp://ftp.cert.dfn.de/pub/tools/audit/swatch/ \
 
 HOMEPAGE=	http://www.stanford.edu/~atkins/swatch/
 
-PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
 BUILD_DEPENDS=	::devel/p5-Date-Calc \
 		::devel/p5-File-Tail \
 		::devel/p5-Time-TimeDate

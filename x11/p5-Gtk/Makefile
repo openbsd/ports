@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/15 18:05:19 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/06/07 21:37:12 wilfried Exp $
 
 COMMENT=	"set of modules to use Gtk+ libraries from Perl"
 
@@ -23,8 +23,6 @@ MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 USE_X11=	Yes
 
-PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl/
-PERL_MODULES2=	${PERL_MODULES}/${MACHINE_ARCH}-openbsd
 LIB_DEPENDS=	gtk.1.2,glib.1.2::x11/gtk+ \
 		gdk_pixbuf.2::graphics/gdk-pixbuf \
 		gdk_imlib.19::graphics/imlib

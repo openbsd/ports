@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/11 00:31:22 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/06/07 21:37:11 wilfried Exp $
 
 COMMENT=	"multiprotocol traceroute tool"
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}download/
 
-PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
 BUILD_DEPENDS=	::net/p5-Net-RawIP
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

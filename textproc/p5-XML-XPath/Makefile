@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/14 12:07:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2002/06/07 21:37:12 wilfried Exp $
 
 COMMENT=	"modules for parsing and evaluating XPath statements"
 
@@ -10,7 +10,6 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
-PERL_MODULES=   ${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
 BUILD_DEPENDS=  ::textproc/p5-XML-Parser
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 
