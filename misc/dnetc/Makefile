@@ -1,21 +1,31 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/06 14:36:05 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/06/13 15:52:52 lebel Exp $
 
 COMMENT=		"official distributed.net client"
 
+.if ${MACHINE_ARCH:L} == "i386"
 V=			2.8010
 SV=			463
+A=			x86-aout
+.endif
+
+.if ${MACHINE_ARCH:L} == "sparc"
+V=			2.8015
+SV=			469
+A=			sparc-aout
+.endif
+
 PKGNAME=		dnetc-${V}.${SV}
-DISTNAME=		dnetc${SV}-openbsd-x86-aout
+DISTNAME=		dnetc${SV}-openbsd-${A}
 CATEGORIES=		misc
 NEED_VERSION=		1.402
 
 HOMEPAGE=		http://www.distributed.net/
 
-MASTER_SITES=		http.distributed.net:/pub/dcti/v${V}/
+MASTER_SITES=		http://http.distributed.net/pub/dcti/v${V}/
 
 MAINTAINER=		David Lebel <lebel@openbsd.org>
 
-ONLY_FOR_ARCHS=		i386
+ONLY_FOR_ARCHS=		i386 sparc
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
