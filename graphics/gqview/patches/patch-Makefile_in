@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2003/01/17 04:26:57 brad Exp $
+$OpenBSD: patch-Makefile_in,v 1.5 2003/04/29 00:32:14 margarida Exp $
 --- Makefile.in.orig	Thu Dec 12 21:49:20 2002
 +++ Makefile.in	Thu Jan 16 21:12:04 2003
 @@ -114,8 +114,8 @@ EXTRA_DIST = config.rpath  \
@@ -8,7 +8,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2003/01/17 04:26:57 brad Exp $
 -helpdir = $(prefix)/share/gqview
 -help_DATA = README
 +helpdir = $(prefix)/share/doc/gqview
-+help_DATA = README COPYING ChangeLog TODO
++help_DATA = README
  
  @HAVE_GNOME_TRUE@desktopdir = @HAVE_GNOME_TRUE@$(GNOME_DATADIR)/gnome/apps/Graphics
  @HAVE_GNOME_TRUE@desktop_DATA = @HAVE_GNOME_TRUE@gqview.desktop

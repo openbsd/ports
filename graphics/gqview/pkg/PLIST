@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2003/01/18 22:03:22 brad Exp $
+@comment $OpenBSD: PLIST,v 1.13 2003/04/29 00:32:14 margarida Exp $
 bin/gqview
 man/man1/gqview.1
 share/doc/gqview/README
@@ -17,12 +17,14 @@ share/locale/nl/LC_MESSAGES/gqview.mo
 share/locale/no/LC_MESSAGES/gqview.mo
 share/locale/pl/LC_MESSAGES/gqview.mo
 share/locale/pt_BR/LC_MESSAGES/gqview.mo
+share/locale/ro/LC_MESSAGES/gqview.mo
 share/locale/ru/LC_MESSAGES/gqview.mo
 share/locale/sk/LC_MESSAGES/gqview.mo
 share/locale/sl/LC_MESSAGES/gqview.mo
 share/locale/th/LC_MESSAGES/gqview.mo
 share/locale/tr/LC_MESSAGES/gqview.mo
 share/locale/uk/LC_MESSAGES/gqview.mo
+share/locale/vi/LC_MESSAGES/gqview.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gqview.mo
 share/locale/zh_TW/LC_MESSAGES/gqview.mo
 @comment share/pixmaps/gqview.png
