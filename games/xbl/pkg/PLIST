@@ -8,5 +8,5 @@ lib/X11/xbl/xbl-menu.gif
 lib/X11/xbl/xbl-score.gif
 lib/X11/xbl/xbl-zoo.gif
 lib/X11/xbl/xbl.html
-man/mann/xbl.n
+man/man1/xbl.1
 @dirrm lib/X11/xbl
