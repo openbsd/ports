@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.179 2000/02/02 18:33:42 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.180 2000/02/03 22:03:00 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1190,8 +1190,9 @@ addsum: fetch-all
 .endif
 
 ${_EXTRACT_COOKIE}:
+	@cd ${.CURDIR} && make checksum build-depends lib-depends misc-depends
 .if !defined(NO_EXTRACT)
-	@cd ${.CURDIR} && make checksum real-extract
+	@cd ${.CURDIR} && make real-extract
 .endif
 	@${_MAKE_COOKIE} ${_EXTRACT_COOKIE}
 
@@ -1228,7 +1229,7 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 .endif
 	@${_MAKE_COOKIE} ${_BUILD_COOKIE}
 
-${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
+${_INSTALL_COOKIE}: ${_BUILD_COOKIE} run-depends lib-depends 
 .if !defined(NO_INSTALL)
 	@cd ${.CURDIR} && make real-install
 .endif
@@ -1428,7 +1429,7 @@ real-fetch: fetch-depends
 .endif
 
 
-real-extract: build-depends lib-depends misc-depends
+real-extract: 
 	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
 .if target(pre-extract)
 	@cd ${.CURDIR} && make pre-extract
@@ -1597,7 +1598,7 @@ real-build:
 .endif
 
 
-real-install: run-depends lib-depends 
+real-install: 
 	@${ECHO_MSG} "===>  Installing for ${PKGNAME}"
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
 	@if [ -d ${PKG_DBDIR}/${PKGNAME} -o "X$$(ls -d ${PKG_DBDIR}/${PKGNAME:C/-[0-9].*//g}-* 2> /dev/null)" != "X" ]; then \
