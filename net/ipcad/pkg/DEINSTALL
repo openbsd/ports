@@ -1,4 +1,5 @@
 #!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.2 2002/04/29 04:30:16 form Exp $
 # $RuOBSD: DEINSTALL,v 1.2 2002/04/08 02:48:06 form Exp $
 #
 # ipcad de-installation
