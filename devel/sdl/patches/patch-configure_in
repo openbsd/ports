@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.17 2002/05/06 04:26:08 pvalchev Exp $
---- configure.in.orig	Sat Apr 13 17:57:24 2002
-+++ configure.in	Sun May  5 22:14:47 2002
+$OpenBSD: patch-configure_in,v 1.18 2002/05/26 04:11:16 wcobb Exp $
+--- configure.in.orig	Sat Apr 13 20:57:24 2002
++++ configure.in	Sun May 26 01:07:30 2002
 @@ -468,7 +468,12 @@ CheckNASM()
                    NASMFLAGS="-f elf"
                    ;;
@@ -28,10 +28,19 @@ $OpenBSD: patch-configure_in,v 1.17 2002/05/06 04:26:08 pvalchev Exp $
    SDL_RLD_FLAGS="-R\${exec_prefix}/lib"
  fi
 -if test $ARCH = openbsd -o $ARCH = bsdi; then
-+if test $ARCH = openbsd -o x$enable_x11 = xtrue; then
++if test $ARCH = openbsd -a x$enable_video_x11 = xyes; then
 +  SDL_RLD_FLAGS="-L${X11BASE}/lib"
 +fi
 +if test $ARCH = bsdi; then
      SHARED_SYSTEM_LIBS="$SYSTEM_LIBS"
  else
      SHARED_SYSTEM_LIBS=""
+@@ -2363,7 +2372,7 @@ fi
+ STATIC_SYSTEM_LIBS="$SYSTEM_LIBS"
+ 
+ dnl Output the video drivers we use
+-if test x$enable_video = xtrue; then
++if test x$enable_video = xyes; then
+     if test "$VIDEO_SUBDIRS" = ""; then
+         AC_MSG_ERROR(*** No video drivers are enabled!)
+     fi
