@@ -1,3 +1,4 @@
+
 		Welcome to the OpenBSD ports collection.  
 	For more information on the OpenBSD ports tree please visit
         	   http://www.openbsd.org/ports.html
@@ -24,7 +25,7 @@ using the command:
 	make NO_IGNORE=yes
 	sudo make NO_IGNORE=yes install
 
-If youre feeling generous a better solution is to update the port
+If you're feeling generous a better solution is to update the port
 to use the new sources and feed the changes back to the project.
 If you are interested in contributing (or creating a new port)
 please visit
@@ -49,5 +50,7 @@ it all over your network connection again if you ever try to build the
 associated port.
 
 For help or other information 
-Please sendmail to 
+Please send mail to 
 ports@OpenBSD.ORG
+
+$OpenBSD: README,v 1.4 1998/10/09 00:15:35 marc Exp $
