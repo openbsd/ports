@@ -1,0 +1,12 @@
+$OpenBSD: patch-drgeo_adaptDialog_cc,v 1.1.1.1 2004/02/21 12:31:02 espie Exp $
+--- drgeo_adaptDialog.cc.orig	2004-02-12 01:19:01.000000000 +0100
++++ drgeo_adaptDialog.cc	2004-02-12 01:19:06.000000000 +0100
+@@ -24,7 +24,7 @@
+ #include <stdio.h>
+ #include <time.h>
+ #include <unistd.h>
+-#include <crypt.h>
++//#include <crypt.h>
+ #include <string.h>
+ 
+ #include <glade/glade.h>

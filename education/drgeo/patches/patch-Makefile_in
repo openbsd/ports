@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2004/02/21 12:31:02 espie Exp $
+--- Makefile.in.orig	2004-02-12 01:31:23.000000000 +0100
++++ Makefile.in	2004-02-12 01:31:29.000000000 +0100
+@@ -218,8 +218,7 @@ drgeo_LDADD = \
+    $(top_builddir)/geo/libgeo.a \
+ 	$(INTLLIBS) \
+ 	$(DRGEO_LIBS) \
+-	$(GUILE_LDFLAGS) \
+-	-lcrypt 		
++	$(GUILE_LDFLAGS)
+ 
+ 
+ #	-lefence
