@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/21 15:11:33 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/12 02:06:20 kevlo Exp $
 
 DISTNAME=       bg5ps-1.3.0
 PKGNAME=	zh-${DISTNAME}
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=     Yes
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
 
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf::chinese/arphicttf \
-		python::lang/python
+		python2.0::lang/python
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/bg5ps
