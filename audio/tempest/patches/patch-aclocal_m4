@@ -1,18 +1,12 @@
-$OpenBSD: patch-aclocal_m4,v 1.1.1.1 2001/08/13 17:27:10 pvalchev Exp $
---- aclocal.m4.orig	Tue Aug  7 15:12:37 2001
-+++ aclocal.m4	Tue Aug  7 15:13:18 2001
-@@ -1,4 +1,4 @@
--dnl aclocal.m4 generated automatically by aclocal 1.4
-+dnl aclocal.m4 generated automatically by aclocal 1.4-p4
- 
- dnl Copyright (C) 1994, 1995-8, 1999 Free Software Foundation, Inc.
- dnl This file is free software; the Free Software Foundation
-@@ -140,6 +140,8 @@ if test "$yyynowarnerror" = "yes"; then
- else
+$OpenBSD: patch-aclocal_m4,v 1.2 2001/08/14 23:02:58 pvalchev Exp $
+--- aclocal.m4.orig	Tue Aug 14 11:03:11 2001
++++ aclocal.m4	Tue Aug 14 16:50:38 2001
+@@ -141,6 +141,8 @@ else
    YYY_CXXFLAGS="$YYY_CXXFLAGS -Wall -Werror"
  fi
-+
-+YYY_CXXFLAGS="$CXXFLAGS"
  
++YYY_CXXFLAGS="$CXXFLAGS"
++
  ])
+ 
  

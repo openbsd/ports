@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2001/08/13 17:27:10 pvalchev Exp $
---- configure.orig	Tue Aug  7 15:12:44 2001
-+++ configure	Tue Aug  7 15:13:19 2001
+$OpenBSD: patch-configure,v 1.2 2001/08/14 23:02:58 pvalchev Exp $
+--- configure.orig	Tue Aug 14 16:51:14 2001
++++ configure	Tue Aug 14 16:51:15 2001
 @@ -1076,6 +1076,8 @@ else
    YYY_CXXFLAGS="$YYY_CXXFLAGS -Wall -Werror"
  fi
@@ -55,12 +55,12 @@ $OpenBSD: patch-configure,v 1.1.1.1 2001/08/13 17:27:10 pvalchev Exp $
  #include "confdefs.h"
  
  #include <stdio.h>
-@@ -1290,7 +1292,7 @@ int main() {
+@@ -1295,7 +1297,7 @@ int main() {
   return 0; 
  ; return 0; }
  EOF
--if { (eval echo configure:1294: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-+if { (eval echo configure:1296: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+-if { (eval echo configure:1299: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++if { (eval echo configure:1301: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
    rm -rf conftest*
     echo "*** The test program compiled, but did not run. This usually means"
            echo "*** that the run-time linker is not finding SDL or finding the wrong"
