@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/07/21 15:42:09 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/02/23 19:14:49 alek Exp $
 
 
 COMMENT=	"smalltalk system, vm"
@@ -6,8 +6,7 @@ COMMENT=	"smalltalk system, vm"
 
 DISTFILES=Squeak-$V-${SRC_V}.src.tar.gz 
 
-PKGNAME=squeak-vm-$V.${SRC_V}
-PKG_ARCH=*
+PKGNAME=squeak-vm-$V.${SRC_V}p0
 
 WRKDIST=${WRKDIR}/Squeak-$V-${SRC_V}
 WRKSRC=${WRKDIST}/platforms/unix/config
@@ -20,6 +19,8 @@ DESTDIRNAME=ROOT
 CONFIGURE_ENV=RANLIB=ranlib
 USE_GMAKE=yes
 USE_X11=yes
+
+WANTLIB=GL X11 m c SM util Xext ICE
 
 .if ${MACHINE_ARCH} != "powerpc"
 MAKE_FLAGS+=INTERP=gnu-interp
