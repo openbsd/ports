@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/04/14 09:39:18 avsm Exp $
+# $OpenBSD: Makefile,v 1.18 2003/04/20 22:40:13 naddy Exp $
 
 COMMENT=	"MPEG layer I, II and III audio file encoder"
 DISTNAME=	dist10
@@ -29,7 +29,7 @@ TABLE_FILES=	1cb0 1cb1 1cb2 1cb4 1cb5 1cb6 1th0 1th1 1th2 1th4 1th5 1th6 \
 post-extract:
 	@cd ${WRKDIST} && chmod -R a+rX,u+w .
 
-post-patch:
+post-configure:
 	@sed -e s,ZAP,${TABLE_LIB_SED}, ${WRKSRC}/common.h > ${WRKSRC}/common.h.sed
 	@mv ${WRKSRC}/common.h.sed ${WRKSRC}/common.h
 
