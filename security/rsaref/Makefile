@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2000/03/24 22:11:58 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/03/25 06:03:12 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1997/07/17 15:12:58 max Exp $
 
 PKGNAME=	rsaref-2.0
 DISTNAME=	rsaref20.1996
 CATEGORIES=	security
-NEED_VERSION=	1.191
+NEED_VERSION=	1.234
 MASTER_SITES=	ftp://ftp.zedz.net/pub/crypto/crypto/LIBS/rsa/ \
 		http://the.wiretapped.net/security/cryptography/libs/rsa/ \
 		ftp://utopia.hacktic.nl/pub/replay/pub/crypto/LIBS/rsa/
@@ -13,8 +13,9 @@ EXTRACT_SUFX=	.tar.Z
 NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 RESTRICTED=	"Crypto"
 
-
 MAINTAINER=	niklas@openbsd.org
+
+FAKE=	Yes
 
 WRKDIST=	${WRKDIR}/source
 
@@ -35,7 +36,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/librsaref.a ${PREFIX}/lib
 	@if [ -f ${WRKSRC}/librsaref.so.2.0 ]; then \
 	 ${INSTALL_DATA} ${WRKSRC}/librsaref.so.2.0 ${PREFIX}/lib; \
-	 ${LDCONFIG} -m ${PREFIX}/lib; \
 	fi
 
 .include <bsd.port.mk>
