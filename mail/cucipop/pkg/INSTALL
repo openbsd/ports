@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/03/28 08:46:25 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 2001/02/23 00:15:35 brad Exp $
 #
 # Pre/post-installation setup of cucipop
 
@@ -14,8 +14,8 @@ SPOOL_DIR=/var/spool/cucipop
 #
 do_install()
 {
-    install -d -o root -g wheel -m 755 ${SPOOL_DIR}
-    install -d -o root -g wheel -m 755 ${SPOOL_DIR}/bulletins
+    install -d -o root -g wheel -m 755 $SPOOL_DIR
+    install -d -o root -g wheel -m 755 $SPOOL_DIR/bulletins
 }
 
 # verify proper execution
