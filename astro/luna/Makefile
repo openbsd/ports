@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/07/17 20:25:06 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2002/08/02 01:40:18 wcobb Exp $
 
 COMMENT=	"display the moon's phase"
 
@@ -28,7 +28,7 @@ NO_REGRESS=	Yes
 post-extract:
 .for f in famplan.c luna.c luna.h makefile pyramid.c pyramid.h iprintf/makefile
 	@cd ${WRKSRC} && sed -e \
-	s###g < ${f} > ${f}.new && mv -f ${f}.new ${f}
+	's#[[:cntrl:]]$$##g' < ${f} > ${f}.new && mv -f ${f}.new ${f}
 .endfor
 
 .include <bsd.port.mk>
