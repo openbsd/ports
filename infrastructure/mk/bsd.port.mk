@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.231 2000/03/19 16:46:18 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.232 2000/03/21 21:06:58 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1452,9 +1452,6 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	fi
 .      endfor
 .    endif
-.  endif
-.  if exists(${PKGDIR}/MESSAGE)
-	@cat	${PKGDIR}/MESSAGE
 .  endif
 	@${_MAKE_COOKIE} ${_FAKE_COOKIE}
 
