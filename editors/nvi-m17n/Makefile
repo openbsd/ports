@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/19 17:07:46 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/22 13:03:59 espie Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
@@ -21,8 +21,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-# NetBSD stuff, no support in Open yet.
-#CONFLICTS=	vigor-*
+
+FLAVORS= canna
+FLAVOR?=
 
 PATCH_DIST_STRIP=-p1
 WRKSRC=	${WRKDIR}/${DISTNAME}/build
@@ -34,10 +35,10 @@ CONFIGURE_ARGS+=--enable-multibyte --program-prefix=n --host=${ARCH}-unknown-net
 
 PATCH_FUZZ_FACTOR=	-F1
 
-#.if defined(USE_CANNA) && ${USE_CANNA} == YES
-#DEPENDS+=	Canna-lib-3.5b2:japanese/canna-lib
-#CONFIGURE_ARGS+=--enable-canna=${LOCALBASE}
-#.endif
+.if ${FLAVOR:L} == "canna"
+LIB_DEPENDS+=	canna.1.::japanese/canna
+CONFIGURE_ARGS+=--enable-canna=${LOCALBASE}
+.endif
 
 PLIST=	${WRKDIR}/PLIST
 
@@ -63,14 +64,12 @@ ENCODING+=	iso-2022-cn iso-2022-jp iso-2022-kr
 ENCODING+=	euc-jp euc-cn euc-kr sjis big5 euc-tw hz
 
 post-build:
-	@cp ${FILESDIR}/PLIST ${PLIST}
 .for encoding in ${ENCODING}
 	@sed -e 's|$${CANNA_OPT}|${CANNA_OPT.${encoding}}|'		\
 		-e 's|$${AUTODETECT}|${AUTODETECT.${encoding}}|'	\
 		-e 's|$${ENCODING}|${encoding}|g'			\
 		-e 's|$${PREFIX}|${PREFIX}|'				\
 		${FILESDIR}/nvi-m17n > ${WRKDIR}/nvi-${encoding}
-	@echo "bin/nvi-${encoding}" >> ${PLIST}
 .endfor
 
 post-install:
@@ -83,3 +82,10 @@ post-install:
 		${PREFIX}/share/vi/
 
 .include <bsd.port.mk>
+
+${PLIST}:
+	@cp ${FILESDIR}/PLIST ${PLIST}
+.for encoding in ${ENCODING}
+	@echo "bin/nvi-${encoding}" >> ${PLIST}
+.endfor
+
