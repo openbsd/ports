@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/06 16:48:26 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/06 21:17:45 brad Exp $
 
 DISTNAME=	tiff-v3.5.4
 PKGNAME=	tiff-3.5.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libtiff.org/
 
-NEED_VERSION=	1.64
+NEED_VERSION=	1.223
 
 MAINTAINER=	brad@openbsd.org
 
@@ -15,7 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=    jpeg.62:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=    jpeg.62:graphics/jpeg
+
+FAKE=	Yes
 
 HAS_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN='$${DESTDIR}${PREFIX}/bin' \
@@ -32,13 +34,10 @@ CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN='$${DESTDIR}${PREFIX}/bin'
 
 DOCDIR=	${PREFIX}/share/doc/tiff
 
-FAKE=Yes
-
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/html/*.html ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/html/images/*.gif ${DOCDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/html/images/*.jpg ${DOCDIR}/images
-	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
