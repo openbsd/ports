@@ -1,32 +1,40 @@
-# $OpenBSD: Makefile,v 1.2 2000/02/10 23:14:30 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/20 00:35:43 brad Exp $
 
 DISTNAME=	freebsd_lib-2.2.8
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.dqc.org/pub/brad/
 EXTRACT_ONLY=
+
 NEED_VERSION=	1.191
 
 ONLY_FOR_ARCHS=	i386
 
 MAINTAINER=	brad@openbsd.org
 
+LICENSE_TYPE=	BSD
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
 PREFIX=		/emul/freebsd
 
-NO_BUILD=	yes
-NO_CONFIGURE=	yes
-NO_MTREE=	yes
-NO_PACKAGE=	yes
-NO_PATCH=	yes
+NO_BUILD=	Yes
+NO_CONFIGURE=	Yes
+NO_MTREE=	Yes
+NO_PACKAGE=	Yes
+NO_PATCH=	Yes
+
 WRKDIST=	${WRKDIR}
 
 pre-install:
-	@mkdir -p ${PREFIX}
+	${INSTALL_DATA_DIR} ${PREFIX}
 
 do-install:
 	@cd ${PREFIX} && tar -zpxf ${DISTDIR}/${DISTNAME}.tar.gz
 
 post-install:
-	@mkdir -p ${PREFIX}/var/run
+	${INSTALL_DATA_DIR} ${PREFIX}/var/run
 	@${PREFIX}/sbin/ldconfig /usr/lib/compat /usr/X11R6/lib
 
 .include <bsd.port.mk>
