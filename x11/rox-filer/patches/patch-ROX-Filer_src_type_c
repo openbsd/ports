@@ -1,12 +1,14 @@
-$OpenBSD: patch-ROX-Filer_src_type_c,v 1.1.1.1 2001/11/17 00:11:40 pvalchev Exp $
---- ROX-Filer/src/type.c.orig	Tue Oct 16 16:45:15 2001
-+++ ROX-Filer/src/type.c	Mon Nov  5 10:06:48 2001
-@@ -94,7 +94,7 @@ void type_init()
- 	int		i;
- 	GPtrArray	*list;
- 	
--	re_set_syntax(RE_SYNTAX_POSIX_EGREP);
-+	/* re_set_syntax(RE_SYNTAX_POSIX_EGREP); */
+$OpenBSD: patch-ROX-Filer_src_type_c,v 1.2 2002/01/11 01:08:36 naddy Exp $
+--- ROX-Filer/src/type.c.orig	Thu Dec 27 14:41:53 2001
++++ ROX-Filer/src/type.c	Sat Jan  5 16:14:21 2002
+@@ -283,10 +283,6 @@ static void add_regex(char *type_name, c
+ 	g_return_if_fail(slash != NULL);	/* XXX: Report nicely */
  
- 	extension_hash = g_hash_table_new(g_str_hash, g_str_equal);
+ 	pattern = g_new(Pattern, 1);
+-	pattern->buffer.buffer = NULL;
+-	pattern->buffer.allocated = 0;
+-	pattern->buffer.fastmap = NULL;
+-	pattern->buffer.translate = NULL;
  
+         if (regcomp(&pattern->buffer, reg, REG_EXTENDED | REG_NOSUB))
+ 	{

@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/11/17 00:11:40 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2002/01/11 01:08:35 naddy Exp $
+
 COMMENT=		"gtk file manager with desktop features"
 
-VERSION=		1.1.8
+VERSION=		1.1.10
 DISTNAME=		rox-${VERSION}
 PKGNAME=		rox-filer-${VERSION}
-ROXBASE=		rox-base-1.0.1
+ROXBASE=		rox-base-1.0.2
 CATEGORIES=		x11
-NEED_VERSION=		1.498
+NEED_VERSION=		1.503
 
 HOMEPAGE=		http://rox.sourceforge.net/
 
@@ -32,9 +33,13 @@ post-patch:
 	@sed -e s:/usr/local/share/Choices:${PREFIX}/share/rox/Choices: \
 		${FILE_TO_PATCH} > ${FILE_TO_PATCH}.tmp && \
 		mv ${FILE_TO_PATCH}.tmp ${FILE_TO_PATCH}
+	@rm -r ${WRKDIR}/${ROXBASE}/Choices/MIME-icons/CVS
+	@rm -r ${WRKDIR}/${ROXBASE}/Choices/MIME-info/CVS
+	@rm -r ${WRKDIR}/${ROXBASE}/Choices/MIME-types/CVS
 
 do-build:
-	@cd ${WRKSRC} && ROX-Filer/AppRun --compile
+	@cd ${WRKSRC} && ${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" \
+		ROX-Filer/AppRun --compile
 
 do-install:
 # base install

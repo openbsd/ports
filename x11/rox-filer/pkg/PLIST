@@ -1,16 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/11/17 00:11:40 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/01/11 01:08:36 naddy Exp $
 bin/rox
 man/man1/ROX-Filer.1
 man/man1/rox.1
+rox/ROX-Filer/Action.png
 rox/ROX-Filer/AppIcon.xpm
 rox/ROX-Filer/AppInfo.xml
 rox/ROX-Filer/AppRun
 rox/ROX-Filer/AppRun.orig
 rox/ROX-Filer/Help/COPYING
 rox/ROX-Filer/Help/Changes
-rox/ROX-Filer/Help/Manual-fr.ps
 rox/ROX-Filer/Help/Manual.html
 rox/ROX-Filer/Help/README
+rox/ROX-Filer/Help/README-es
 rox/ROX-Filer/Help/TODO
 rox/ROX-Filer/Messages/README
 rox/ROX-Filer/Messages/de.gmo
@@ -20,16 +21,17 @@ rox/ROX-Filer/Messages/it.gmo
 rox/ROX-Filer/Messages/nl.gmo
 rox/ROX-Filer/Messages/pl.gmo
 rox/ROX-Filer/Messages/ru.gmo
+rox/ROX-Filer/Messages/sp.gmo
 rox/ROX-Filer/OpenBSD-${MACHINE_ARCH}/ROX-Filer
 rox/ROX-Filer/Options.xml
-rox/ROX-Filer/Prune.png
-rox/ROX-Filer/Structs.png
 rox/ROX-Filer/Styles
 rox/ROX-Filer/pixmaps/application.xpm
 rox/ROX-Filer/pixmaps/close.xpm
 rox/ROX-Filer/pixmaps/details.xpm
+rox/ROX-Filer/pixmaps/dirs.xpm
 rox/ROX-Filer/pixmaps/error.xpm
 rox/ROX-Filer/pixmaps/help.xpm
+rox/ROX-Filer/pixmaps/hidden.xpm
 rox/ROX-Filer/pixmaps/home.xpm
 rox/ROX-Filer/pixmaps/mount.xpm
 rox/ROX-Filer/pixmaps/mounted.xpm
@@ -42,9 +44,8 @@ rox/ROX-Filer/pixmaps/zoom.xpm
 rox/ROX-Filer/src/Docs/Makefile
 rox/ROX-Filer/src/Docs/Manual-fr.lyx
 rox/ROX-Filer/src/Docs/Manual.xml
-rox/ROX-Filer/src/Docs/Prune.dia
-rox/ROX-Filer/src/Docs/Structs.dia
 rox/ROX-Filer/src/Docs/to_html.xsl
+rox/ROX-Filer/src/Docs/to_man.xsl
 rox/ROX-Filer/src/Makefile
 rox/ROX-Filer/src/Makefile.in
 rox/ROX-Filer/src/action.c
@@ -120,6 +121,7 @@ rox/ROX-Filer/src/po/make-mo
 rox/ROX-Filer/src/po/nl.po
 rox/ROX-Filer/src/po/pl.po
 rox/ROX-Filer/src/po/ru.po
+rox/ROX-Filer/src/po/sp.po
 rox/ROX-Filer/src/po/tips.py
 rox/ROX-Filer/src/po/update-po
 rox/ROX-Filer/src/remote.c
@@ -144,10 +146,13 @@ rox/ROX-Filer/style.css
 share/rox/Choices/MIME-icons/application.xpm
 share/rox/Choices/MIME-icons/application_pdf.xpm
 share/rox/Choices/MIME-icons/application_postscript.xpm
+share/rox/Choices/MIME-icons/application_x-bzip-compressed-tar.xpm
+share/rox/Choices/MIME-icons/application_x-bzip.xpm
 share/rox/Choices/MIME-icons/application_x-class-file.xpm
 share/rox/Choices/MIME-icons/application_x-compressed-postscript.xpm
+share/rox/Choices/MIME-icons/application_x-compressed-tar.xpm
 share/rox/Choices/MIME-icons/application_x-deb.xpm
-share/rox/Choices/MIME-icons/application_x-gunzip.xpm
+share/rox/Choices/MIME-icons/application_x-gzip.xpm
 share/rox/Choices/MIME-icons/application_x-jar-file.xpm
 share/rox/Choices/MIME-icons/application_x-rpm.xpm
 share/rox/Choices/MIME-icons/application_x-staroffice.xpm
@@ -179,6 +184,7 @@ share/rox/Choices/MIME-icons/text_x-python.xpm
 share/rox/Choices/MIME-icons/video.xpm
 share/rox/Choices/MIME-icons/video_mpeg.xpm
 share/rox/Choices/MIME-info/Standard
+share/rox/Choices/MIME-info/gnome-vfs.mime
 share/rox/Choices/MIME-types/application_postscript
 share/rox/Choices/MIME-types/text
 @dirrm share/rox/Choices/MIME-types
