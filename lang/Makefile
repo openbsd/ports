@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 1999/02/27 15:42:28 rohee Exp $
+# $OpenBSD: Makefile,v 1.15 1999/03/12 17:02:23 brad Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -36,6 +36,7 @@
      SUBDIR += kaffe1
 #    SUBDIR += lcc
 #    SUBDIR += logo
+     SBUDIR += mawk
 #    SUBDIR += mit-scheme
 #    SUBDIR += mixal
 #    SUBDIR += mocka
