@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: check_register,v 1.1 2001/04/08 17:01:31 espie Exp $
+# $OpenBSD: check_register,v 1.2 2003/08/02 10:53:52 espie Exp $
 # Copyright (c) 2001
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -33,18 +33,19 @@
 
 known1=`mktemp ${TMPDIR}/known.XXXXXXXXX`
 known2=`mktemp ${TMPDIR}/known.XXXXXXXXX`
-cd ${PORTSDIR} && make show ECHO_MSG=: VARNAME=FULLPKGPATH | tee ${known1}
+cd ${PORTSDIR} && make show=FULLPKGPATH ECHO_MSG=: | tee ${known1}
 sort -o ${known1} -u ${known1}
 
 cd ${PORTSDIR} && find . -path ./distfiles -prune -o \
-	-path ./packages\* -prune -o -path ./logs\* -prune -o \
-	-name work\* -prune -o -name Makefile -print | \
+	-path ./packages\* -prune -o -path ./logs\* -prune -o 
+	-path ./bulk\* -prune -o \
+	-name w-\* -prune -o -name Makefile -print | \
 	xargs fgrep -l bsd.port.mk| \
 	while read f
 	do
 		d=`dirname $f`
 		echo $d
-		cd ${PORTSDIR} && cd $d && make show VARNAME=FULLPKGPATH >>${known2}
+		cd ${PORTSDIR} && cd $d && make show=FULLPKGPATH >>${known2}
 	done
 sort -o ${known2} -u ${known2}
 diff $diffopts ${known1} ${known2}
