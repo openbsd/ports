@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.4 2003/02/19 18:37:57 marcm Exp $
+$OpenBSD: patch-configure,v 1.5 2004/10/24 07:39:31 alek Exp $
 --- configure.orig	Sat Nov 30 18:32:08 2002
 +++ configure	Fri Jan 24 16:10:19 2003
 @@ -3910,6 +3910,16 @@ newos6*)
@@ -96,13 +96,31 @@ $OpenBSD: patch-configure,v 1.4 2003/02/19 18:37:57 marcm Exp $
    fi
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+@@ -9628,7 +9671,7 @@ if test "${ac_cv_lib_intl_bindtextdomain
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 9633 "configure"
+ #include "confdefs.h"
+@@ -9683,7 +9726,7 @@ if test "${ac_cv_lib_intl_gettext+set}" 
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 9688 "configure"
+ #include "confdefs.h"
 @@ -9738,6 +9781,10 @@ echo "${ECHO_T}$gt_cv_func_gettext_libin
  fi
  
  	   fi
 +
 +	   if test "$gt_cv_func_gettext_libintl" = "yes"; then
-+	     LIBS="$LIBS -lintl";
++	     LIBS="$LIBS -lintl -liconv";
 + 	   fi
  
  	   if test "$gt_cv_func_gettext_libc" = "yes" \
