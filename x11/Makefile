@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2002/07/23 07:58:32 wilfried Exp $
+# $OpenBSD: Makefile,v 1.143 2002/07/25 09:44:49 nino Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -60,6 +60,7 @@
      SUBDIR += gnomemm
      SUBDIR += golem
      SUBDIR += gtk+
+     SUBDIR += gtk+2
      SUBDIR += gtk-engines
      SUBDIR += gtkglarea
      SUBDIR += gtkmm
