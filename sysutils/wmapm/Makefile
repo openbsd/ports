@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/03/28 10:07:53 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2001/07/13 11:24:46 naddy Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/ \
-			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 USE_X11=		Yes

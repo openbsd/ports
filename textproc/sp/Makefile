@@ -3,14 +3,15 @@
 # Date created:		May 21 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.10 2001/06/20 01:43:36 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2001/07/13 11:24:50 naddy Exp $
 #
 
 COMMENT=	"OO toolkit for SGML parsing and entity management"
 
 DISTNAME=	sp-1.2.1
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
+MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.jclark.com/pub/sp/
 MAINTAINER=	ports@openbsd.org
 NEED_VERSION=	1.402
 

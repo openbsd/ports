@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/05 23:24:59 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/07/13 11:23:58 naddy Exp $
 
 COMMENT=	"GNU Problem Report Management System"
 
@@ -7,7 +7,8 @@ CATEGORIES=	databases devel
 MASTER_SITES=	ftp://sourceware.cygnus.com/pub/gnats/snapshots/ \
 		ftp://ftp.freesoftware.com/pub/sourceware/gnats/snapshots/ \
 		ftp://gd.tuwien.ac.at/gnu/sourceware/gnats/snapshots/ \
-		ftp://ftp.chg.ru/pub/sourceware/gnats/snapshots/
+		ftp://ftp.chg.ru/pub/sourceware/gnats/snapshots/ \
+      		ftp://ftp.funet.fi/pub/mirrors/sourceware.cygnus.com/pub/gnats/snapshots/
 HOMEPAGE=	http://sources.redhat.com/gnats/
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 NEED_VERSION=	1.402

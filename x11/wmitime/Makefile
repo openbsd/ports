@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/28 10:08:53 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2001/07/13 11:25:06 naddy Exp $
 
 COMMENT=		'wm-dockapp; shows the date, time, and Internet time'
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}downloads/ \
-			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 USE_X11=		Yes

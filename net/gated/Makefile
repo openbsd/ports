@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/05/14 18:25:24 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2001/07/13 11:24:28 naddy Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	"routing protocol daemon"
@@ -7,7 +7,8 @@ DISTNAME=	gated-3-6
 PKGNAME=	gated-3.6
 CATEGORIES=	net
 NEED_VERSION=	1.402
-MASTER_SITES=	ftp://ftp.gated.merit.edu/net-research/gated/
+MASTER_SITES=	ftp://ftp.gated.merit.edu/net-research/gated/ \
+   		ftp://ftp.funet.fi/pub/mirrors/ftp.gated.merit.edu/research.and.development/gated/
 
 HOMEPAGE=	http://www.gated.org/
 

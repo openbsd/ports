@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2000/10/22 14:03:53 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2001/07/13 11:24:52 naddy Exp $
 
 DIST_SUBDIR?=			amaya
 CATEGORIES?=			www
@@ -14,4 +14,5 @@ PERMIT_DISTFILES_FTP?=		Yes
 
 MASTER_SITES?=			http://www.w3.org/Amaya/Distribution/ \
 				ftp://ftp.w3.org/pub/amaya/ \
-				ftp://mirror.aarnet.edu.au/pub/amaya
+				ftp://mirror.aarnet.edu.au/pub/amaya \
+            			ftp://ftp.funet.fi/pub/mirrors/ftp.w3.org/pub/afs/w3.org/ftp/pub/amaya

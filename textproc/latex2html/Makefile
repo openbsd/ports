@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/05/06 04:11:46 lebel Exp $
+# $OpenBSD: Makefile,v 1.15 2001/07/13 11:24:48 naddy Exp $
 
 COMMENT=	"LaTeX to HTML converter"
 
@@ -13,7 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.tex.ac.uk/ctan/tex-archive/support/latex2html/sources/
+MASTER_SITES=	ftp://ftp.tex.ac.uk/ctan/tex-archive/support/latex2html/sources/ \
+   		ftp://ftp.funet.fi/pub/mirrors/ftp.tex.ac.uk/ctan/tex-archive/support/latex2html/sources/
 
 RUN_DEPENDS=	ppmtogif::graphics/netpbm \
 		pnmtopng::graphics/netpbm \

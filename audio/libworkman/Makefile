@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/28 10:01:12 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2001/07/13 11:23:47 naddy Exp $
 
 COMMENT=		'multi-platform CD-Player library'
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.midwinter.com/WorkMan/SNAPSHOTS/ \
-			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 USE_X11=		Yes

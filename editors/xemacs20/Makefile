@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/05/24 02:27:16 kevlo Exp $
+# $OpenBSD: Makefile,v 1.23 2001/07/13 11:24:06 naddy Exp $
 
 COMMENT=	"extensible, customizable real-time display editor"
 
@@ -11,9 +11,10 @@ NEED_VERSION=	1.402
 FAKE=		No
 MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/${DISTNAME}/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/${DISTNAME}/ \
-                ftp://ftp.usyd.edu.au:/pub/Xemacs/${DISTNAME}/ \
+      		ftp://ftp.usyd.edu.au:/pub/Xemacs/${DISTNAME}/ \
 		ftp://ftp.lab.kdd.co.jp/xemacs/${DISTNAME}/ \
-		ftp://ftp.th-darmstadt.de:/pub/editors/xemacs/${DISTNAME}/
+		ftp://ftp.th-darmstadt.de:/pub/editors/xemacs/${DISTNAME}/ \
+      		ftp://ftp.funet.fi/pub/mirrors/ftp.xemacs.org/pub/tux/xemacs/Attic/releases/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} 
 
 MAINTAINER=	Hans-Guenter Weigand <hgw@d1906.inka.de>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/03/28 09:59:41 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2001/07/13 11:23:44 naddy Exp $
 
 COMMENT=		'wm-dockapp; shows sunrise/sunset times'
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/ \
-			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 USE_X11=		Yes

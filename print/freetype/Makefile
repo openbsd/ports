@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/03/25 17:24:35 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2001/07/13 11:24:39 naddy Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 COMMENT=	"free and portable TrueType font rendering engine"
@@ -11,7 +11,8 @@ MASTER_SITES=	ftp://ftp.tux.org/pub/devel/freetype/ \
 		ftp://ftp.shellhung.org/pub/Mirror/enlightenment/enlightenment/libs/ \
 		ftp://ftp.kddlabs.co.jp/.6/graphics/freetype/ \
 		ftp://ring.aist.go.jp/pub/graphics/freetype/ \
-		ftp://ftp.unina.it/pub/Unix/pkgs/font/freetype/
+		ftp://ftp.unina.it/pub/Unix/pkgs/font/freetype/ \
+      		ftp://ftp.funet.fi/pub/mirrors/ftp.freetype.org/freetype1/
 
 MAINTAINER=	Jason Ish <jasoni@openbsd.org>
 

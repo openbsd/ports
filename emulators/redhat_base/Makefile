@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/07/11 00:34:02 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2001/07/13 11:24:09 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -9,11 +9,13 @@ CATEGORIES=	emulators
 NEED_VERSION=	1.413
 MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
 		ftp://sunsite.ualberta.ca/pub/unix/Linux/redhat/%SUBDIR%/ \
-		ftp://ftp.sourceforge.net/pub/mirrors/redhat/redhat/linux/%SUBDIR%/
+		ftp://ftp.sourceforge.net/pub/mirrors/redhat/redhat/linux/%SUBDIR%/ \
+      		ftp://ftp.funet.fi/pub/mirrors/ftp.redhat.com/pub/redhat/linux/%SUBDIR%/
 MASTER_SITE_SUBDIR= 6.2/en/os/i386/RedHat/RPMS
 MASTER_SITES0=	ftp://updates.redhat.com/6.2/en/os/i386/ \
 		ftp://sunsite.ualberta.ca/pub/unix/Linux/redhat/updates/6.2/en/os/i386/ \
-		ftp://ftp.sourceforge.net/pub/mirrors/redhat/redhat/linux/updates/6.2/en/os/i386/
+		ftp://ftp.sourceforge.net/pub/mirrors/redhat/redhat/linux/updates/6.2/en/os/i386/ \
+      		ftp://ftp.funet.fi/pub/mirrors/ftp.redhat.com/pub/redhat/linux/updates/6.2/en/os/i386/
 DISTFILES=	${RPM_SET1} ${RPM_SET2}
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=	

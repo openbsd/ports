@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2001/06/25 15:14:26 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.42 2001/07/13 11:24:33 naddy Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
@@ -19,7 +19,8 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 		http://us1.samba.org/samba/ftp/ \
 		ftp://ca.samba.org/pub/samba/ \
 		ftp://ftp.uni-trier.de/pub/unix/network/samba/ \
-		ftp://ring.asahi-net.or.jp/pub/net/samba/
+		ftp://ring.asahi-net.or.jp/pub/net/samba/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.samba.org/pub/samba/old-versions/
 
 FAKE_FLAGS+=	prefix="${WRKINST}${PREFIX}" \
 		BASEDIR="${WRKINST}${PREFIX}" \

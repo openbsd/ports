@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/28 10:08:55 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2001/07/13 11:25:08 naddy Exp $
 # $FreeBSD: ports/x11-wm/wmthemeinstall/Makefile,v 1.5 2000/10/05 06:42:57 reg Exp $
 
 COMMENT=		'neat theme manager for Window Maker'
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/will/ \
-			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 RUN_DEPENDS=		wmaker::x11/windowmaker

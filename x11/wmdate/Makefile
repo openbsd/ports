@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/03/28 10:08:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2001/07/13 11:25:05 naddy Exp $
 
 COMMENT=		'wm-dockapp; shows the current date'
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://wit401310.student.utwente.nl/~dalroi/apps/apps/ \
-			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 LIB_DEPENDS=		dockapp::devel/libdockapp

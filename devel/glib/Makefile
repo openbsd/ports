@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2001/06/03 04:24:53 brad Exp $
+# $OpenBSD: Makefile,v 1.40 2001/07/13 11:23:59 naddy Exp $
 
 COMMENT=	"useful routines for C programming"
 
@@ -7,7 +7,8 @@ CATEGORIES=	devel
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
-		http://www.ameth.org/gimp/gtk/v1.2/
+		http://www.ameth.org/gimp/gtk/v1.2/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.gimp.org/gtk/v1.2/
 
 HOMEPAGE=	http://www.gtk.org/
 

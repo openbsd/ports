@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/05/06 03:46:24 lebel Exp $
+# $OpenBSD: Makefile,v 1.17 2001/07/13 11:24:43 naddy Exp $
 
 COMMENT=	"Secure Telnet, encrypted version of the telnet daemon"
 
@@ -8,7 +8,8 @@ CATEGORIES=	security
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.ox.ac.uk/pub/crypto/misc/ \
 		ftp://ftp.mupad.de/pub/crypto/misc/ \
-		ftp://ftp.st.ryukoku.ac.jp/pub/security/tool/stel/
+		ftp://ftp.st.ryukoku.ac.jp/pub/security/tool/stel/ \
+      		ftp://ftp.funet.fi/pub/mirrors/ftp.ox.ac.uk/pub/crypto/misc/ 
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes

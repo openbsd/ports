@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/05/24 02:27:22 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2001/07/13 11:24:07 naddy Exp $
 
 # 
 # Description
@@ -28,7 +28,8 @@ MASTER_SITES= 	ftp://ftp.xemacs.org/pub/xemacs/xemacs-21.1/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/xemacs-21.1/ \
 		ftp://ftp.usyd.edu.au/pub/Xemacs/xemacs-21.1/ \
 		ftp://ftp.lab.kdd.co.jp/xemacs/xemacs-21.1/ \
-		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/xemacs-21.1/
+		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/xemacs-21.1/ \
+      		ftp://ftp.funet.fi/pub/mirrors/ftp.xemacs.org/pub/tux/xemacs/xemacs-21.1/
 
 # Dependencies are very flavors-specific, you have
 # to select a flavor set to know them

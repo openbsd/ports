@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/28 10:04:17 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2001/07/13 11:24:11 naddy Exp $
 
 COMMENT=		'wm-dockapp; xeyes clone using South Park characters'
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.halcyon.com/amalmin/speyes/ \
-			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 USE_X11=		Yes

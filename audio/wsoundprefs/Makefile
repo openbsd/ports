@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/05/21 14:11:29 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2001/07/13 11:23:52 naddy Exp $
 
 COMMENT=		'preferences program for wsoundserver'
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/ \
-			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 RUN_DEPENDS=		wsoundserver::audio/wsoundserver

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/05/06 00:28:59 lebel Exp $
+# $OpenBSD: Makefile,v 1.16 2001/07/13 11:24:03 naddy Exp $
 
 COMMENT=	"binary editor and viewer"
 
@@ -7,7 +7,8 @@ PKGNAME=	beav-1.40.13
 CATEGORIES=	editors
 NEED_VERSION=	1.402
 
-MASTER_SITES=   ftp://ftp.debian.org/debian/dists/stable/main/source/editors/
+MASTER_SITES=   ftp://ftp.debian.org/debian/dists/stable/main/source/editors/ \ 
+   		ftp://ftp.funet.fi/pub/mirrors/ftp.debian.org/debian/dists/stable/main/source/editors/ 
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2001/06/20 01:43:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.30 2001/07/13 11:23:56 naddy Exp $
 
 COMMENT=	"send/receive faxes and share modems"
 
@@ -17,7 +17,8 @@ NEED_VERSION=	1.406
 FAKE=No
 MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/ \
 		ftp://ftp.leo.org/pub/comp/os/unix/networking/fax/hylafax/source/ \
-		ftp://ftp.sisis.de/pub/hylafax/source/
+		ftp://ftp.sisis.de/pub/hylafax/source/ \
+      		ftp://ftp.funet.fi/pub/mirrors/sgi.com/fax/source/
 MASTER_SITES0=	http://www.hylafax.org/patches/
 EXTRACT_SUFX=	-tar.gz
 

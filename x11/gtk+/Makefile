@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2001/07/09 17:11:06 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.47 2001/07/13 11:24:58 naddy Exp $
 
 COMMENT=	"General Toolkit for X11 GUI"
 
@@ -7,7 +7,8 @@ CATEGORIES=	x11 devel
 NEED_VERSION=	1.384
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
-		http://www.ameth.org/gimp/gtk/v1.2/
+		http://www.ameth.org/gimp/gtk/v1.2/ \
+      		ftp://ftp.funet.fi/pub/mirrors/ftp.gimp.org/gtk/v1.2/
 
 HOMEPAGE=	http://www.gtk.org/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/21 14:11:29 wilfried Exp $
+# $OpenBSD: Makefile,v 1.13 2001/07/13 11:23:55 naddy Exp $
 
 COMMENT=		'sound server for Window Maker'
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/ \
-			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 RUN_DEPENDS=		wmaker::x11/windowmaker

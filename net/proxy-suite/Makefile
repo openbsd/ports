@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/05/06 05:00:23 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2001/07/13 11:24:30 naddy Exp $
 
 COMMENT=	"set of programs to enhance firewall security"
 
@@ -12,7 +12,7 @@ MASTER_SITES= \
 	ftp://ftp.suse.com/pub/projects/proxy-suite/ \
 	ftp://ftp.crc.ca/pub/systems/linux/suse/projects/proxy-suite/ \
 	ftp://ftp.gwdg.de/pub/linux/suse/ftp.suse.com/projects/proxy-suite/ \
-	ftp://ftp.funet.fi/pub/mirrors/ftp.suse.com/pub/projects/proxy-suite/
+   	ftp://ftp.funet.fi/pub/mirrors/ftp.gwdg.de/pub/linux/suse/ftp.suse.com/projects/proxy-suite/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

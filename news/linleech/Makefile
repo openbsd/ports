@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/06 02:59:33 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/07/13 11:24:36 naddy Exp $
 # Original from: Curtiss Howard, cereal@schizo.com
 #
 
@@ -20,7 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.grolier.fr/pub/mirrors/ftp.debian.org/debian/dists/potato/main/source/news/ \
 			ftp://ftp.cs.wisc.edu/pub/mirrors/linux/debian/dists/potato/main/source/news/ \
-			ftp://ftp.gigabell.net/pub/unix/linux/debian/dists/potato/main/source/news/
+			ftp://ftp.gigabell.net/pub/unix/linux/debian/dists/potato/main/source/news/ \
+         		ftp://ftp.funet.fi/pub/mirrors/ftp.debian.org/debian/dists/potato/main/source/news/
 
 LIB_DEPENDS=    	slang.::devel/libslang
 WRKDIST=		${WRKDIR}/linleech-2.2.1.orig

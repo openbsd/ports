@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2001/07/10 09:38:32 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2001/07/13 11:24:22 naddy Exp $
 
 # This is a configuration file for egcs
 
@@ -114,7 +114,6 @@ SITES+= ftp://ftp.dti.ad.jp/pub/lang/egcs/${DIRECTORY}
 SITES+= ftp://ftp.win.or.jp/pub/lang/egcs/${DIRECTORY}
 SITES+= ftp://ftp.telewaynet.ad.jp/pub/lang/egcs/${DIRECTORY}
 SITES+= ftp://ftp.lab.kdd.co.jp/lang/egcs/${DIRECTORY}
-SITES+= ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/egcs/${DIRECTORY}
 SITES+= ftp://ftp.crc.ca/pub/packages/egcs/${DIRECTORY}
 SITES+= ftp://ftp.nc.orc.ru/pub/egcs/${DIRECTORY}
 SITES+= ftp://ftp.u-aizu.ac.jp/pub/lang/C/pcg/egcs/${DIRECTORY}
@@ -131,6 +130,10 @@ SITES+= ftp://cair-archive.kaist.ac.kr/pub/gnu/egcs/${DIRECTORY}
 SITES+= ftp://linux.ihep.su/pub/cygnus/egcs/${DIRECTORY}
 SITES+= ftp://linux.cis.nctu.edu.tw/pub/packages/pcg/egcs/${DIRECTORY}
 SITES+= ftp://ftp.ninemoons.com/pub/mirrors/egcs/${DIRECTORY}
+
+# Only contains empty gcc-3.0 directory - maybe it gets updated at 
+# some point?
+SITES+= ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/egcs/${DIRECTORY}
 
 # Bad mirrors (no snapshot)
 # ftp.lip6.fr, ftp.ilog.fr, ftp.irisa.fr

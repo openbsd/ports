@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/28 10:01:16 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2001/07/13 11:23:49 naddy Exp $
 
 COMMENT=		'wm-dockapp; audio mixer'
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.geocities.com/SiliconValley/Vista/2471/files/ \
-			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
+			ftp://ftp.funet.fi/pub/FreeBSD/distfiles/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 EXTRACT_SUFX=		.tgz
 
