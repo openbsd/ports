@@ -1,6 +1,8 @@
+bin/envdir
 bin/envuidgid
 bin/fghack
 bin/multilog
+bin/setlock
 bin/setuidgid
 bin/softlimit
 bin/supervise
