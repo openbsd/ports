@@ -1,0 +1,15 @@
+$OpenBSD: patch-input_c,v 1.1 2000/07/26 20:57:20 rohee Exp $
+
+Match patch-input_hpp
+
+--- imlib/input.c.orig	Wed Jul 26 22:10:46 2000
++++ imlib/input.c	Wed Jul 26 22:11:41 2000
+@@ -318,7 +318,7 @@
+ }
+ 
+ text_field::text_field(int X, int Y, int ID, char *Prompt, char *Format, 
+-                                                     char *Data, ifield *Next)
++                                                     const char *Data, ifield *Next)
+ {
+   int slen=(strlen(Format)>strlen(Data) ? strlen(Format) : strlen(Data));
+ 

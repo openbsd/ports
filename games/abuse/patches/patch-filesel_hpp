@@ -1,0 +1,15 @@
+$OpenBSD: patch-filesel_hpp,v 1.1 2000/07/26 20:57:20 rohee Exp $
+
+"foobar" is now a const char *, so adjust the proto.
+
+--- imlib/include/filesel.hpp.orig	Wed Jul 26 21:44:47 2000
++++ imlib/include/filesel.hpp	Wed Jul 26 21:45:52 2000
+@@ -5,7 +5,7 @@
+ 
+ 
+ 
+-jwindow *file_dialog(window_manager *wm, char *prompt, char *def,
++jwindow *file_dialog(window_manager *wm, char *prompt, const char *def,
+ 		     int ok_id, char *ok_name, int cancel_id, char *cancel_name,
+ 		     char *FILENAME_str,
+ 		     int filename_id);

@@ -1,0 +1,15 @@
+$OpenBSD: patch-filesel_c,v 1.1 2000/07/26 20:57:20 rohee Exp $
+
+Match patch-filesel_hpp
+
+--- imlib/filesel.c.orig	Wed Jul 26 22:04:25 2000
++++ imlib/filesel.c	Wed Jul 26 22:04:55 2000
+@@ -108,7 +108,7 @@
+   reconfigure();  
+ }
+ 
+-jwindow *file_dialog(window_manager *wm, char *prompt, char *def,
++jwindow *file_dialog(window_manager *wm, char *prompt, const char *def,
+ 		     int ok_id, char *ok_name, int cancel_id, char *cancel_name, char *FILENAME_str, int filename_id)
+ {
+   int wl=WINDOW_FRAME_LEFT,wh=WINDOW_FRAME_TOP;
