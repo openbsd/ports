@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/01/31 18:52:44 todd Exp $
+lib/bonobo/monikers/libmoniker_extra_2.so
+lib/gnome-vfs-2.0/modules/libvfs-help.so
+lib/libgnome-2.so.0.0
+DYNLIBDIR(%D/lib)

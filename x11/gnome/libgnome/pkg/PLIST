@@ -1,0 +1,196 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/31 18:52:44 todd Exp $
+include/libgnome-2.0/libgnome/gnome-config.h
+include/libgnome-2.0/libgnome/gnome-exec.h
+include/libgnome-2.0/libgnome/gnome-gconf.h
+include/libgnome-2.0/libgnome/gnome-help.h
+include/libgnome-2.0/libgnome/gnome-i18n.h
+include/libgnome-2.0/libgnome/gnome-init.h
+include/libgnome-2.0/libgnome/gnome-macros.h
+include/libgnome-2.0/libgnome/gnome-program.h
+include/libgnome-2.0/libgnome/gnome-score.h
+include/libgnome-2.0/libgnome/gnome-sound.h
+include/libgnome-2.0/libgnome/gnome-triggers.h
+include/libgnome-2.0/libgnome/gnome-url.h
+include/libgnome-2.0/libgnome/gnome-util.h
+include/libgnome-2.0/libgnome/libgnome.h
+include/libgnome-2.0/libgnome/libgnometypebuiltins.h
+lib/bonobo/monikers/libmoniker_extra_2.a
+lib/bonobo/monikers/libmoniker_extra_2.la
+lib/bonobo/servers/GNOME_Moniker_std.server
+lib/gnome-vfs-2.0/modules/libvfs-help.a
+lib/gnome-vfs-2.0/modules/libvfs-help.la
+lib/libgnome-2.a
+lib/libgnome-2.la
+lib/pkgconfig/libgnome-2.0.pc
+libexec/gnome2-db2html
+libexec/gnome2-info2html
+libexec/gnome2-man2html
+share/examples/libgnome/gnome-vfs-2.0/modules/help-methods.conf
+share/examples/libgnome/sound/events/gnome-2.soundlist
+share/examples/libgnome/sound/events/gtk-events-2.soundlist
+share/gtk-doc/html/libgnome/index.html
+share/gtk-doc/html/libgnome/index.sgml
+share/gtk-doc/html/libgnome/libgnome-gnome-config.html
+share/gtk-doc/html/libgnome/libgnome-gnome-exec.html
+share/gtk-doc/html/libgnome/libgnome-gnome-gconf.html
+share/gtk-doc/html/libgnome/libgnome-gnome-help.html
+share/gtk-doc/html/libgnome/libgnome-gnome-i18n.html
+share/gtk-doc/html/libgnome/libgnome-gnome-init.html
+share/gtk-doc/html/libgnome/libgnome-gnome-program.html
+share/gtk-doc/html/libgnome/libgnome-gnome-score.html
+share/gtk-doc/html/libgnome/libgnome-gnome-sound.html
+share/gtk-doc/html/libgnome/libgnome-gnome-triggers.html
+share/gtk-doc/html/libgnome/libgnome-gnome-url.html
+share/gtk-doc/html/libgnome/libgnome-gnome-util.html
+share/gtk-doc/html/libgnome/libgnome-libgnometypebuiltins.html
+share/gtk-doc/html/libgnome/libgnome.html
+share/gtk-doc/html/libgnome/x1311.html
+share/gtk-doc/html/libgnome/x2881.html
+share/gtk-doc/html/libgnome/x3341.html
+share/gtk-doc/html/libgnome/x4188.html
+share/locale/am/LC_MESSAGES/libgnome-2.0.mo
+share/locale/ar/LC_MESSAGES/libgnome-2.0.mo
+share/locale/az/LC_MESSAGES/libgnome-2.0.mo
+share/locale/be/LC_MESSAGES/libgnome-2.0.mo
+share/locale/bg/LC_MESSAGES/libgnome-2.0.mo
+share/locale/bs/LC_MESSAGES/libgnome-2.0.mo
+share/locale/cs/LC_MESSAGES/libgnome-2.0.mo
+share/locale/da/LC_MESSAGES/libgnome-2.0.mo
+share/locale/de/LC_MESSAGES/libgnome-2.0.mo
+share/locale/el/LC_MESSAGES/libgnome-2.0.mo
+share/locale/es/LC_MESSAGES/libgnome-2.0.mo
+share/locale/eu/LC_MESSAGES/libgnome-2.0.mo
+share/locale/fi/LC_MESSAGES/libgnome-2.0.mo
+share/locale/fr/LC_MESSAGES/libgnome-2.0.mo
+share/locale/hi/LC_MESSAGES/libgnome-2.0.mo
+share/locale/it/LC_MESSAGES/libgnome-2.0.mo
+share/locale/ja/LC_MESSAGES/libgnome-2.0.mo
+share/locale/ko/LC_MESSAGES/libgnome-2.0.mo
+share/locale/lv/LC_MESSAGES/libgnome-2.0.mo
+share/locale/ms/LC_MESSAGES/libgnome-2.0.mo
+share/locale/nn/LC_MESSAGES/libgnome-2.0.mo
+share/locale/no/LC_MESSAGES/libgnome-2.0.mo
+share/locale/pl/LC_MESSAGES/libgnome-2.0.mo
+share/locale/pt/LC_MESSAGES/libgnome-2.0.mo
+share/locale/pt_BR/LC_MESSAGES/libgnome-2.0.mo
+share/locale/ro/LC_MESSAGES/libgnome-2.0.mo
+share/locale/ru/LC_MESSAGES/libgnome-2.0.mo
+share/locale/sk/LC_MESSAGES/libgnome-2.0.mo
+share/locale/sl/LC_MESSAGES/libgnome-2.0.mo
+share/locale/sv/LC_MESSAGES/libgnome-2.0.mo
+share/locale/ta/LC_MESSAGES/libgnome-2.0.mo
+share/locale/tr/LC_MESSAGES/libgnome-2.0.mo
+share/locale/uk/LC_MESSAGES/libgnome-2.0.mo
+share/locale/vi/LC_MESSAGES/libgnome-2.0.mo
+share/locale/wa/LC_MESSAGES/libgnome-2.0.mo
+share/locale/zh_CN/LC_MESSAGES/libgnome-2.0.mo
+share/locale/zh_TW/LC_MESSAGES/libgnome-2.0.mo
+share/schemas/libgnome/desktop_gnome_accessibility_keyboard.schemas
+share/schemas/libgnome/desktop_gnome_applications_browser.schemas
+share/schemas/libgnome/desktop_gnome_applications_help_viewer.schemas
+share/schemas/libgnome/desktop_gnome_applications_terminal.schemas
+share/schemas/libgnome/desktop_gnome_applications_window_manager.schemas
+share/schemas/libgnome/desktop_gnome_background.schemas
+share/schemas/libgnome/desktop_gnome_file_views.schemas
+share/schemas/libgnome/desktop_gnome_interface.schemas
+share/schemas/libgnome/desktop_gnome_peripherals_keyboard.schemas
+share/schemas/libgnome/desktop_gnome_peripherals_mouse.schemas
+share/schemas/libgnome/desktop_gnome_sound.schemas
+share/schemas/libgnome/desktop_gnome_url_handlers.schemas
+share/sgml/docbook/gnome-customization-0.1/gnome-custom.xsl
+share/sgml/docbook/gnome-customization-0.1/gnome-customization.xsl
+share/sgml/docbook/gnome-customization-0.1/l10n.xml
+%%SHARED%%
+@dirrm share/sgml/docbook/gnome-customization-0.1
+@comment @dirrm share/sgml/docbook
+@comment @dirrm share/sgml
+@dirrm share/schemas/libgnome
+@comment @dirrm share/locale/zh_TW/LC_MESSAGES
+@comment @dirrm share/locale/zh_TW
+@comment @dirrm share/locale/zh_CN/LC_MESSAGES
+@comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/wa/LC_MESSAGES
+@comment @dirrm share/locale/wa
+@comment @dirrm share/locale/vi/LC_MESSAGES
+@comment @dirrm share/locale/vi
+@comment @dirrm share/locale/uk/LC_MESSAGES
+@comment @dirrm share/locale/uk
+@comment @dirrm share/locale/tr/LC_MESSAGES
+@comment @dirrm share/locale/tr
+@comment @dirrm share/locale/ta/LC_MESSAGES
+@comment @dirrm share/locale/ta
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sl/LC_MESSAGES
+@comment @dirrm share/locale/sl
+@comment @dirrm share/locale/sk/LC_MESSAGES
+@comment @dirrm share/locale/sk
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale/ro/LC_MESSAGES
+@comment @dirrm share/locale/ro
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/pt/LC_MESSAGES
+@comment @dirrm share/locale/pt
+@comment @dirrm share/locale/pl/LC_MESSAGES
+@comment @dirrm share/locale/pl
+@comment @dirrm share/locale/no/LC_MESSAGES
+@comment @dirrm share/locale/no
+@comment @dirrm share/locale/nn/LC_MESSAGES
+@comment @dirrm share/locale/nn
+@comment @dirrm share/locale/ms/LC_MESSAGES
+@comment @dirrm share/locale/ms
+@comment @dirrm share/locale/lv/LC_MESSAGES
+@comment @dirrm share/locale/lv
+@comment @dirrm share/locale/ko/LC_MESSAGES
+@comment @dirrm share/locale/ko
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/hi/LC_MESSAGES
+@comment @dirrm share/locale/hi
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/fi/LC_MESSAGES
+@comment @dirrm share/locale/fi
+@comment @dirrm share/locale/eu/LC_MESSAGES
+@comment @dirrm share/locale/eu
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/el/LC_MESSAGES
+@comment @dirrm share/locale/el
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale/cs/LC_MESSAGES
+@comment @dirrm share/locale/cs
+@comment @dirrm share/locale/bs/LC_MESSAGES
+@comment @dirrm share/locale/bs
+@comment @dirrm share/locale/bg/LC_MESSAGES
+@comment @dirrm share/locale/bg
+@comment @dirrm share/locale/be/LC_MESSAGES
+@comment @dirrm share/locale/be
+@comment @dirrm share/locale/az/LC_MESSAGES
+@comment @dirrm share/locale/az
+@comment @dirrm share/locale/ar/LC_MESSAGES
+@comment @dirrm share/locale/ar
+@comment @dirrm share/locale/am/LC_MESSAGES
+@comment @dirrm share/locale/am
+@comment @dirrm share/locale
+@dirrm share/gtk-doc/html/libgnome
+@comment @dirrm share/gtk-doc/html
+@comment @dirrm share/gtk-doc
+@dirrm share/examples/libgnome/sound/events
+@dirrm share/examples/libgnome/sound
+@dirrm share/examples/libgnome/gnome-vfs-2.0/modules
+@dirrm share/examples/libgnome/gnome-vfs-2.0
+@dirrm share/examples/libgnome
+@comment @dirrm lib/pkgconfig
+@comment @dirrm lib/bonobo/monikers
+@comment @dirrm lib/bonobo
+@dirrm include/libgnome-2.0/libgnome
+@dirrm include/libgnome-2.0
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/libgnome/*.schemas > /dev/null

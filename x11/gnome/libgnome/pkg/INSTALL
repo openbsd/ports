@@ -1,0 +1,102 @@
+#!/bin/sh
+#
+# $OpenBSD: INSTALL,v 1.1.1.1 2003/01/31 18:52:44 todd Exp $
+
+P_NAME=libgnome
+
+DIRS='
+gnome-vfs-2.0/modules
+sound/events
+'
+
+FILES='
+gnome-vfs-2.0/modules/help-methods.conf
+sound/events/gnome-2.soundlist
+sound/events/gtk-events-2.soundlist
+'
+
+set -e
+PREFIX=${PKG_PREFIX:-/usr/local}
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+
+do_post() {
+
+	DEST_PFX=${SYSCONFDIR}
+	SOURCE_PFX=${PREFIX}/share/examples/${P_NAME}
+
+	echo 
+	echo "+--------------- ${P_NAME}"
+
+	# install dirs if neccessary
+	for d in ${DIRS}; do
+		if [ ! -d "${DEST_PFX}/$d" ]; then
+			install -d ${DEST_PFX}/$d
+		fi
+	done
+
+
+	# install or take note of existing config files
+	for f in ${FILES}; do
+		if [ -f "${DEST_PFX}/$f" ]; then
+			OLD_CONFS="${OLD_CONFS} $f"
+		else
+			if ! install -m 644 ${SOURCE_PFX}/$f ${DEST_PFX}/$f; then
+				echo "| ERROR: The following file could not be installed, exiting: ${DEST_PFX}/$f"
+				exit 1
+			fi
+			NEW_CONFS="${NEW_CONFS} $f"
+		fi
+	done
+
+	# print status report
+	if [ -n "${NEW_CONFS}" ]; then
+		echo "| The following NEW configuration files have been installed:"
+		echo "|"
+		for f in ${NEW_CONFS}; do
+			echo "| ${DEST_PFX}/$f"
+		done 
+	fi
+	
+	if [ -n "${OLD_CONFS}" ]; then
+		if [ -n "${NEW_CONFS}" ]; then
+			echo "|"
+		fi
+		echo "| The following OLD configuration files were found and have NOT been"
+		echo "| overwritten:"
+		echo "|"
+		for f in ${OLD_CONFS}; do
+			echo "| ${DEST_PFX}/$f"
+		done
+		echo "|"
+		echo "| You should however manually compare them to their equivalents in"
+		echo "|"
+		echo "| ${SOURCE_PFX}"
+		echo "|"
+		echo "| and update your configuration as needed." 
+	fi
+	echo "+--------------- ${P_NAME}"
+	echo 
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+	PRE-INSTALL)
+		;;
+	POST-INSTALL)
+		do_post
+		;;
+	*)
+		echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+		exit 1
+		;;
+esac
+
+exit 0
