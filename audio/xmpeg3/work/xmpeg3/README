@@ -1,0 +1,45 @@
+   MPEG3 player graphical interface, version 1.0
+
+0 Copyright
+
+	This program is free for you to copy, modify, under the terms of the
+GNU Public Licence (GPL).
+
+	The random number generation routine was taken from somewhere I don't
+remember, bu it wasn't written by me.
+
+I To make it work:
+
+	You need the program "AMP" to make this player work...
+	xmpeg3 works well with tk4.1 and tcl7.5
+
+	xmpeg3 was written with Visual Tcl.
+
+II Launch it
+
+     To launch the program, simply type "wish xmpeg3 &"
+     You can use the tcl/tk interpreter you want, for example wishstep, which
+looks very good with this player.
+
+III Functions:
+
+	xmpeg3 opens a window. Choose  "Browse" in the "File" menu. 
+	You can then browse into your directories. When a file with the ".mp3"
+extension appears, double-click on it to play...
+	You can select multiple files, then press "Play".
+
+III Advanced operation:
+
+	The "Rplay" (Random Play) button allows you to play the selected files in random order.
+
+	You can also use "tracks.idx" files like the one given in example.
+Simply put such a file in a directory, it's easy to understand how it works.
+
+
+IV Known bugs:
+
+	- Needs a man page... 
+	- The link between amp and xmpeg3 is not very clean:
+		* Sometimes xmpeg3 stops with no reason after a track...
+	- The random number generation routine is not very efficient...
+

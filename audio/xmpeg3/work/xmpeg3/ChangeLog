@@ -1,0 +1,5 @@
+0.1 -> 1.0.0
+  * Many bugs fixed in the amp/xmpeg3 link:
+    - no zombies anymore (I hope)
+  * Unused menu items deleted
+
