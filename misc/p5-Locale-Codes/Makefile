@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2002/08/06 01:56:14 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2002/11/27 22:26:34 pvalchev Exp $
+
+IGNORE=		"comes with ${OPSYS} as of release 3.3"
 
 COMMENT=	"module to provide access to ISO3166 and ISO639 codes"
 
