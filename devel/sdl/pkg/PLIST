@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/19 18:55:40 obecian Exp $ 
+@comment $OpenBSD: PLIST,v 1.2 2001/12/28 23:42:27 pvalchev Exp $
 bin/sdl-config
 include/SDL/SDL.h
 include/SDL/SDL_active.h
@@ -16,6 +16,7 @@ include/SDL/SDL_keysym.h
 include/SDL/SDL_main.h
 include/SDL/SDL_mouse.h
 include/SDL/SDL_mutex.h
+include/SDL/SDL_opengl.h
 include/SDL/SDL_quit.h
 include/SDL/SDL_rwops.h
 include/SDL/SDL_syswm.h
@@ -77,6 +78,7 @@ man/man3/SDL_EnableKeyRepeat.3
 man/man3/SDL_EnableUNICODE.3
 man/man3/SDL_Event.3
 man/man3/SDL_EventState.3
+man/man3/SDL_ExposeEvent.3
 man/man3/SDL_FillRect.3
 man/man3/SDL_Flip.3
 man/man3/SDL_FreeCursor.3
@@ -93,6 +95,7 @@ man/man3/SDL_GetAppState.3
 man/man3/SDL_GetAudioStatus.3
 man/man3/SDL_GetClipRect.3
 man/man3/SDL_GetCursor.3
+man/man3/SDL_GetError.3
 man/man3/SDL_GetEventFilter.3
 man/man3/SDL_GetGamma.3
 man/man3/SDL_GetGammaRamp.3

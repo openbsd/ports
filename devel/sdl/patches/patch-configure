@@ -1,24 +1,24 @@
-$OpenBSD: patch-configure,v 1.12 2001/08/14 22:42:03 pvalchev Exp $
---- configure.orig	Tue Aug 14 16:33:39 2001
-+++ configure	Tue Aug 14 16:33:43 2001
-@@ -7007,8 +7007,6 @@ __EOF__
-   cat >>$new <$old
+$OpenBSD: patch-configure,v 1.13 2001/12/28 23:42:26 pvalchev Exp $
+--- configure.orig	Thu Nov  8 00:28:08 2001
++++ configure	Thu Dec 27 01:26:30 2001
+@@ -670,7 +670,7 @@ LT_AGE=`expr $SDL_BINARY_AGE - $SDL_INTE
  
-         fi
--        # OpenBSD does not define "unix"
--        CFLAGS="$CFLAGS -Dunix"
-         ;;
-     *-*-sysv5*)
-         ARCH=sysv5
-@@ -9015,7 +9013,11 @@ if test $ARCH = solaris; then
+ 
+ ac_aux_dir=
+-for ac_dir in $srcdir $srcdir/.. $srcdir/../..; do
++for ac_dir in ${GNUSYSTEM_AUX_DIR} $srcdir $srcdir/.. $srcdir/../..; do
+   if test -f $ac_dir/install-sh; then
+     ac_aux_dir=$ac_dir
+     ac_install_sh="$ac_aux_dir/install-sh -c"
+@@ -8845,7 +8845,11 @@ if test $ARCH = solaris; then
  fi
  
  if test $ARCH = openbsd; then
 -  SDL_RLD_FLAGS="-Wl,-rpath,\${exec_prefix}/lib $SYSTEM_LIBS"
 +	if test x$have_x = xyes; then
-+	    SDL_RLD_FLAGS="-Wl,-rpath,\${exec_prefix}/lib -Wl,-rpath,${X11BASE}/lib $SYSTEM_LIBS"
++		SDL_RLD_FLAGS="-Wl,-rpath,\${exec_prefix}/lib -Wl,-rpath,${X11BASE}/lib $SYSTEM_LIBS"
 +	else
-+	    SDL_RLD_FLAGS="-Wl,-rpath,\${exec_prefix}/lib $SYSTEM_LIBS"
++		SDL_RLD_FLAGS="-Wl,-rpath,\${exec_prefix}/lib $SYSTEM_LIBS"
 +	fi
  fi
  

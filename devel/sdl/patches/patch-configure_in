@@ -1,24 +1,15 @@
-$OpenBSD: patch-configure_in,v 1.12 2001/08/14 22:42:03 pvalchev Exp $
---- configure.in.orig	Mon Jul 23 13:54:03 2001
-+++ configure.in	Tue Jul 24 23:05:55 2001
-@@ -1450,8 +1450,6 @@ case "$target" in
-         if test x$enable_timers = xyes; then
-             COPY_ARCH_SRC(src/timer, linux, SDL_systimer.c)
-         fi
--        # OpenBSD does not define "unix"
--        CFLAGS="$CFLAGS -Dunix"
-         ;;
-     *-*-sysv5*)
-         ARCH=sysv5
-@@ -2024,7 +2022,11 @@ if test $ARCH = solaris; then
+$OpenBSD: patch-configure_in,v 1.13 2001/12/28 23:42:27 pvalchev Exp $
+--- configure.in.orig	Thu Nov  8 00:28:00 2001
++++ configure.in	Thu Dec 27 01:26:30 2001
+@@ -2160,7 +2160,11 @@ if test $ARCH = solaris; then
  fi
  
  if test $ARCH = openbsd; then
 -  SDL_RLD_FLAGS="-Wl,-rpath,\${exec_prefix}/lib $SYSTEM_LIBS"
 +	if test x$have_x = xyes; then
-+	    SDL_RLD_FLAGS="-Wl,-rpath,\${exec_prefix}/lib -Wl,-rpath,${X11BASE}/lib $SYSTEM_LIBS"
++		SDL_RLD_FLAGS="-Wl,-rpath,\${exec_prefix}/lib -Wl,-rpath,${X11BASE}/lib $SYSTEM_LIBS"
 +	else
-+	    SDL_RLD_FLAGS="-Wl,-rpath,\${exec_prefix}/lib $SYSTEM_LIBS"
++		SDL_RLD_FLAGS="-Wl,-rpath,\${exec_prefix}/lib $SYSTEM_LIBS"
 +	fi
  fi
  
