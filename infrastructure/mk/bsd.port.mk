@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.614 2004/05/16 23:14:44 pvalchev Exp $
+#	$OpenBSD: bsd.port.mk,v 1.615 2004/05/31 12:27:07 sturm Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -97,6 +97,7 @@ X11BASE?=		/usr/X11R6
 DISTDIR?=		${PORTSDIR}/distfiles
 BULK_COOKIES_DIR?= ${PORTSDIR}/bulk/${MACHINE_ARCH}
 TEMPLATES?=		${PORTSDIR}/infrastructure/templates
+TMPDIR?=		/tmp
 
 PKGREPOSITORYBASE?=	${PORTSDIR}/packages/${MACHINE_ARCH}
 PKGREPOSITORY?=		${PKGREPOSITORYBASE}/all
@@ -593,7 +594,7 @@ _SYSTRACE_CMD=
 SYSTRACE_FILTER?=		${PORTSDIR}/infrastructure/db/systrace.filter
 _SYSTRACE_POLICIES+=	/bin/sh /usr/bin/env /usr/bin/make \
 	${LOCALBASE}/bin/gmake
-SYSTRACE_SUBST_VARS+=	WRKDIR PORTSDIR DISTDIR
+SYSTRACE_SUBST_VARS+=	WRKDIR PORTSDIR DISTDIR TMPDIR PKG_TMPDIR
 .for _v in ${SYSTRACE_SUBST_VARS}
 _SYSTRACE_SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
 .endfor

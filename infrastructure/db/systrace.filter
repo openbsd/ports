@@ -1,6 +1,7 @@
 	native-__sysctl: permit
 	native-accept: true then permit log
 	native-bind: sockaddr match "/tmp" then permit
+	native-bind: sockaddr match "${TMPDIR}" then permit
 	native-break: permit
 	native-chdir: permit
 	native-chflags: permit
@@ -16,6 +17,7 @@
 	native-connect: sockaddr eq "family(0)" then permit
 	native-connect: sockaddr match "/dev/log" then permit
 	native-connect: sockaddr match "/tmp" then permit
+	native-connect: sockaddr match "${TMPDIR}" then permit
 	native-dup2: permit
 	native-dup: permit
 	native-execve: true then permit
@@ -37,11 +39,12 @@
 	native-fswrite: filename eq "/dev/tty" then permit
 	native-fswrite: filename eq "/dev/zero" then permit
 	native-fswrite: filename match "/tmp" then permit
+	native-fswrite: filename match "${TMPDIR}" then permit
 	native-fswrite: filename match "${DISTDIR}" then permit
 	native-fswrite: filename match "${WRKDIR}" then permit
 	native-fswrite: filename match "${PORTSDIR}/bulk" then permit
 	native-fswrite: filename match "${PORTSDIR}/packages" then permit
-	native-fswrite: filename match "/var/tmp" then permit
+	native-fswrite: filename match "${PKG_TMPDIR}" then permit
 	native-fswrite: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-fsync: permit
 	native-ftruncate: permit
