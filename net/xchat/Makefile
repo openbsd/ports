@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2001/10/08 04:48:19 shell Exp $
+# $OpenBSD: Makefile,v 1.35 2001/10/15 15:51:44 espie Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 # Uses pthreads
 
@@ -29,7 +29,8 @@ CONFIGURE_STYLE= gnu
 FLAVORS=	no_ssl
 FLAVOR?=
 
-CONFIGURE_ARGS+= --disable-imlib --disable-python
+CONFIGURE_ARGS+= --disable-imlib --disable-python --disable-gnome \
+    --disable-zvt
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
