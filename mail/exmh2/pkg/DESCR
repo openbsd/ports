@@ -1,10 +1,10 @@
 Exmh is an X user interface for MH mail. MH provides a set of UNIX
 commands that manage folders and mail messages. MH has a zillion
-features as a result of several years of availability. Exmh provides a
-graphical interface to many of these features, but not everything. You
-can do all the ordinary things like viewing the messages in a folder,
-and reading, deleting, and refiling messages. In addition, the
-interface handles arbitrary nesting of your folder hierarchy.
+features as a result of several years of availability. Exmh provides
+a graphical interface to many of these features, but not everything.
+You can do all the ordinary things like viewing the messages in a
+folder, and reading, deleting, and refiling messages. In addition,
+the interface handles arbitrary nesting of your folder hierarchy.
 
 Exmh has a number of optional features that require additional
 software to be installed. You may want to consider some or all of
@@ -19,3 +19,5 @@ In addition, exmh supports various flavours of pgp. There are
 packages available for:
     gnupg
     pgp5
+
+WWW: ${HOMEPAGE}
