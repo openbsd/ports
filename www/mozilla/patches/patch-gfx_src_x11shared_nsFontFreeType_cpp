@@ -1,6 +1,6 @@
-$OpenBSD: patch-gfx_src_x11shared_nsFontFreeType_cpp,v 1.1 2004/11/07 00:46:10 naddy Exp $
---- gfx/src/x11shared/nsFontFreeType.cpp.orig	Sat May 24 00:18:07 2003
-+++ gfx/src/x11shared/nsFontFreeType.cpp	Sun Nov  7 00:08:54 2004
+$OpenBSD: patch-gfx_src_x11shared_nsFontFreeType_cpp,v 1.2 2005/03/13 05:02:17 kurt Exp $
+--- gfx/src/x11shared/nsFontFreeType.cpp.orig	Thu Dec 25 03:24:52 2003
++++ gfx/src/x11shared/nsFontFreeType.cpp	Mon Jan 12 22:58:34 2004
 @@ -177,7 +177,7 @@ nsFreeTypeFont::getFTFace()
    FTC_Manager mgr;
    nsresult rv;
@@ -19,9 +19,9 @@ $OpenBSD: patch-gfx_src_x11shared_nsFontFreeType_cpp,v 1.1 2004/11/07 00:46:10 n
 -  mImageDesc.font.pix_height = aPixelSize;
 -  mImageDesc.image_type = 0;
 +  mImageDesc->face_id = (FTC_FaceID)&mFaceID;
-+  mImageDesc->width  = aPixelSize;
-+  mImageDesc->height = aPixelSize;
-+  mImageDesc->flags = 0;
++  mImageDesc->width   = aPixelSize;
++  mImageDesc->height  = aPixelSize;
++  mImageDesc->flags   = 0;
  
    if (aPixelSize < nsFreeType2::gAntiAliasMinimum) {
 -    mImageDesc.image_type |= ftc_image_mono;
@@ -63,7 +63,7 @@ $OpenBSD: patch-gfx_src_x11shared_nsFontFreeType_cpp,v 1.1 2004/11/07 00:46:10 n
    mFt2->GetImageCache(&icache);
    if (!icache)
      return 0;
-@@ -725,7 +717,7 @@ nsFreeTypeXImage::DrawString(nsRendering
+@@ -723,7 +715,7 @@ nsFreeTypeXImage::DrawString(nsRendering
      if (y%4==0) (*blendPixelFunc)(sub_image, y, ascent-1, black, 255/2);
  #endif
  

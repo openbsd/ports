@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2005/01/11 04:26:45 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.29 2005/03/13 05:02:17 kurt Exp $
 %%SHARED%%
 %%gtk2%%
 !%%gtk2%%
@@ -43,6 +43,7 @@ mozilla/chrome/classic/skin/classic/communicator/brand/
 mozilla/chrome/classic/skin/classic/communicator/cookie/
 mozilla/chrome/classic/skin/classic/communicator/directory/
 mozilla/chrome/classic/skin/classic/communicator/icons/
+mozilla/chrome/classic/skin/classic/communicator/icons/smileys/
 mozilla/chrome/classic/skin/classic/communicator/profile/
 mozilla/chrome/classic/skin/classic/communicator/related/
 mozilla/chrome/classic/skin/classic/communicator/search/
@@ -294,6 +295,7 @@ mozilla/chrome/modern/skin/modern/communicator/cookie/
 mozilla/chrome/modern/skin/modern/communicator/directory/
 mozilla/chrome/modern/skin/modern/communicator/help/
 mozilla/chrome/modern/skin/modern/communicator/icons/
+mozilla/chrome/modern/skin/modern/communicator/icons/smileys/
 mozilla/chrome/modern/skin/modern/communicator/profile/
 mozilla/chrome/modern/skin/modern/communicator/related/
 mozilla/chrome/modern/skin/modern/communicator/search/
@@ -367,7 +369,6 @@ mozilla/components/bookmarks.xpt
 mozilla/components/caps.xpt
 mozilla/components/chardet.xpt
 mozilla/components/chatzilla-service.js
-mozilla/components/chrome.xpt
 mozilla/components/commandhandler.xpt
 mozilla/components/composer.xpt
 mozilla/components/content_base.xpt
@@ -384,6 +385,7 @@ mozilla/components/dom_core.xpt
 mozilla/components/dom_css.xpt
 mozilla/components/dom_events.xpt
 mozilla/components/dom_html.xpt
+mozilla/components/dom_loadsave.xpt
 mozilla/components/dom_range.xpt
 mozilla/components/dom_stylesheets.xpt
 mozilla/components/dom_traversal.xpt
@@ -469,7 +471,6 @@ mozilla/components/p3p.xpt
 mozilla/components/pipboot.xpt
 mozilla/components/pipnss.xpt
 mozilla/components/pippki.xpt
-mozilla/components/plugin.xpt
 mozilla/components/pref.xpt
 mozilla/components/prefetch.xpt
 mozilla/components/prefmigr.xpt
@@ -488,12 +489,10 @@ mozilla/components/spellchecker.xpt
 mozilla/components/txmgr.xpt
 mozilla/components/txtsvc.xpt
 mozilla/components/typeaheadfind.xpt
-mozilla/components/ucnative.xpt
 mozilla/components/uconv.xpt
 mozilla/components/unicharutil.xpt
 mozilla/components/uriloader.xpt
 mozilla/components/urlbarhistory.xpt
-mozilla/components/util.xpt
 mozilla/components/venkman-service.js
 mozilla/components/wallet.xpt
 mozilla/components/walleteditor.xpt
@@ -532,16 +531,12 @@ mozilla/defaults/messenger/US/
 mozilla/defaults/messenger/US/mailViews.dat
 mozilla/defaults/messenger/mailViews.dat
 mozilla/defaults/pref/
-mozilla/defaults/pref/all.js
-mozilla/defaults/pref/editor.js
+mozilla/defaults/pref/browser-prefs.js
+mozilla/defaults/pref/composer.js
 mozilla/defaults/pref/inspector.js
 mozilla/defaults/pref/mailnews.js
 mozilla/defaults/pref/mdn.js
-mozilla/defaults/pref/non-shared.txt
-mozilla/defaults/pref/security-prefs.js
 mozilla/defaults/pref/smime.js
-mozilla/defaults/pref/unix.js
-mozilla/defaults/pref/xpinstall.js
 mozilla/defaults/profile/
 mozilla/defaults/profile/US/
 mozilla/defaults/profile/US/bookmarks.html
@@ -568,6 +563,11 @@ mozilla/defaults/wallet/SchemaConcat.tbl
 mozilla/defaults/wallet/SchemaStrings.tbl
 mozilla/defaults/wallet/StateSchema.tbl
 mozilla/defaults/wallet/VcardSchema.tbl
+mozilla/greprefs/
+mozilla/greprefs/all.js
+mozilla/greprefs/non-shared.txt
+mozilla/greprefs/security-prefs.js
+mozilla/greprefs/xpinstall.js
 mozilla/mozilla-bin
 mozilla/mozilla-config
 mozilla/regchrome
@@ -579,7 +579,6 @@ mozilla/res/arrowd.gif
 mozilla/res/bloatcycle.html
 mozilla/res/broken-image.gif
 mozilla/res/builtin/
-mozilla/res/builtin/htmlBindings.xml
 mozilla/res/builtin/platformHTMLBindings.xml
 mozilla/res/charsetData.properties
 mozilla/res/charsetalias.properties
@@ -595,7 +594,6 @@ mozilla/res/entityTables/htmlEntityVersions.properties
 mozilla/res/entityTables/mathml20.properties
 mozilla/res/entityTables/transliterate.properties
 mozilla/res/fonts/
-mozilla/res/fonts/fontEncoding.properties
 mozilla/res/fonts/mathfont.properties
 mozilla/res/fonts/mathfontCMEX10.properties
 mozilla/res/fonts/mathfontCMSY10.properties
@@ -761,23 +759,11 @@ mozilla/res/viewer.properties
 mozilla/res/viewsource.css
 mozilla/run-mozilla.sh
 mozilla/searchplugins/
-mozilla/searchplugins/bugzilla.gif
-mozilla/searchplugins/bugzilla.src
 mozilla/searchplugins/dmoz.gif
 mozilla/searchplugins/dmoz.src
 mozilla/searchplugins/google.gif
 mozilla/searchplugins/google.src
 mozilla/searchplugins/jeeves.gif
 mozilla/searchplugins/jeeves.src
-mozilla/searchplugins/lxrmozilla.gif
-mozilla/searchplugins/lxrmozilla.src
-mozilla/searchplugins/mozilla.gif
-mozilla/searchplugins/mozilla.src
 share/applications/
-share/applications/mozilla-compose.desktop
-share/applications/mozilla-mail.desktop
-share/applications/mozilla.desktop
 share/pixmaps/
-share/pixmaps/mozilla-compose-icon.gif
-share/pixmaps/mozilla-icon.png
-share/pixmaps/mozilla-mail-icon.gif

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.gtk2-devel,v 1.1 2005/01/11 04:26:45 kurt Exp $
+@comment $OpenBSD: PFRAG.gtk2-devel,v 1.2 2005/03/13 05:02:17 kurt Exp $
 mozilla/include/accessibility/nsAccessibleText.h
 mozilla/include/accessibility/nsIAccessibleAction.h
 mozilla/include/accessibility/nsIAccessibleEditableText.h
@@ -12,6 +12,7 @@ mozilla/include/system-pref/nsSystemPrefLog.h
 mozilla/include/system-pref/nsSystemPrefService.h
 mozilla/include/widget/mozcontainer.h
 mozilla/include/widget/mozdrawingarea.h
+@comment @lib mozilla/lib/components/libnkgnomevfs.so.1.0
 @comment @lib mozilla/lib/components/libsystem-pref.so.1.0
 @comment @lib mozilla/lib/components/libwidget_gtk2.so.1.0
 mozilla/lib/libsystem-pref_s.a

@@ -1,7 +1,7 @@
-$OpenBSD: patch-gfx_src_ps_nsFontMetricsPS_cpp,v 1.1 2004/11/07 00:46:10 naddy Exp $
---- gfx/src/ps/nsFontMetricsPS.cpp.orig	Fri Oct 24 00:43:04 2003
-+++ gfx/src/ps/nsFontMetricsPS.cpp	Sun Nov  7 00:08:54 2004
-@@ -1126,10 +1126,10 @@ nsFontPSFreeType::Init(nsITrueTypeFontCa
+$OpenBSD: patch-gfx_src_ps_nsFontMetricsPS_cpp,v 1.2 2005/03/13 05:02:17 kurt Exp $
+--- gfx/src/ps/nsFontMetricsPS.cpp.orig	Wed Feb  4 20:57:05 2004
++++ gfx/src/ps/nsFontMetricsPS.cpp	Mon Jan 12 22:11:11 2004
+@@ -1141,10 +1141,10 @@ nsFontPSFreeType::Init(nsITrueTypeFontCa
    
    mPixelSize = NSToIntRound(app2dev * mFont->size);
  
@@ -10,13 +10,13 @@ $OpenBSD: patch-gfx_src_ps_nsFontMetricsPS_cpp,v 1.1 2004/11/07 00:46:10 naddy E
 -  mImageDesc.font.pix_height = mPixelSize;
 -  mImageDesc.image_type = 0;
 +  mImageDesc->face_id = (FTC_FaceID)&mEntry;
-+  mImageDesc->width  = mPixelSize;
-+  mImageDesc->height = mPixelSize;
-+  mImageDesc->flags = 0;
++  mImageDesc->width   = mPixelSize;
++  mImageDesc->height  = mPixelSize;
++  mImageDesc->flags   = 0;
  
    nsresult rv;
    mFt2 = do_GetService(NS_FREETYPE2_CONTRACTID, &rv);
-@@ -1175,7 +1175,7 @@ nsFontPSFreeType::GetWidth(const PRUnich
+@@ -1190,7 +1190,7 @@ nsFontPSFreeType::GetWidth(const PRUnich
    if (!face)
      return 0;
  
@@ -25,7 +25,7 @@ $OpenBSD: patch-gfx_src_ps_nsFontMetricsPS_cpp,v 1.1 2004/11/07 00:46:10 naddy E
    nsresult rv = mFt2->GetImageCache(&iCache);
    if (NS_FAILED(rv)) {
      NS_ERROR("Failed to get Image Cache");
-@@ -1213,8 +1213,8 @@ nsFontPSFreeType::getFTFace()
+@@ -1228,8 +1228,8 @@ nsFontPSFreeType::getFTFace()
    
    FTC_Manager cManager;
    mFt2->GetFTCacheManager(&cManager);
@@ -36,12 +36,12 @@ $OpenBSD: patch-gfx_src_ps_nsFontMetricsPS_cpp,v 1.1 2004/11/07 00:46:10 naddy E
    NS_ASSERTION(rv==0, "failed to get face/size");
    if (rv)
      return nsnull;
-@@ -1609,16 +1609,16 @@ void nsFT2Type8Generator::GeneratePSFont
+@@ -1622,16 +1622,16 @@ void nsFT2Type8Generator::GeneratePSFont
    mEntry->GetFamilyName(fontName);
    mEntry->GetStyleName(styleName);
    
 -  mImageDesc.font.face_id    = (void*)mEntry;
-+  mImageDesc->face_id = (FTC_FaceID)&mEntry;
++  mImageDesc->face_id    = (FTC_FaceID)&mEntry;
    // TT glyph has no relation to size
 -  mImageDesc.font.pix_width  = 16;
 -  mImageDesc.font.pix_height = 16;

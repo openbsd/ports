@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpfe_bootstrap_mozilla_in,v 1.5 2004/01/19 14:36:48 wilfried Exp $
---- xpfe/bootstrap/mozilla.in.orig	2002-08-07 13:46:15.000000000 +0200
-+++ xpfe/bootstrap/mozilla.in	2004-01-19 15:29:17.000000000 +0100
-@@ -33,6 +33,7 @@
+$OpenBSD: patch-xpfe_bootstrap_mozilla_in,v 1.6 2005/03/13 05:02:17 kurt Exp $
+--- xpfe/bootstrap/mozilla.in.orig	Tue Jan 11 23:29:52 2005
++++ xpfe/bootstrap/mozilla.in	Tue Jan 11 23:31:51 2005
+@@ -73,6 +73,7 @@ moz_pis_startstop_scripts()
  #set -x
  
  moz_libdir=%MOZAPPDIR%
@@ -9,7 +9,7 @@ $OpenBSD: patch-xpfe_bootstrap_mozilla_in,v 1.5 2004/01/19 14:36:48 wilfried Exp
  MRE_HOME=%MREDIR%
  
  # honor MOZILLA_FIVE_HOME if it's there
-@@ -111,7 +112,11 @@ do
+@@ -151,7 +152,11 @@ do
    esac
  done
  
@@ -20,5 +20,5 @@ $OpenBSD: patch-xpfe_bootstrap_mozilla_in,v 1.5 2004/01/19 14:36:48 wilfried Exp
 +
 +export MOZ_PLUGIN_PATH MRE_HOME
  eval "set -- $moreargs"
- if [ $debugging = 1 ]
- then
+ 
+ ## Start addon scripts

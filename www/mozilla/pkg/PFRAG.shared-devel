@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-devel,v 1.5 2005/01/11 04:26:45 kurt Exp $
+@comment $OpenBSD: PFRAG.shared-devel,v 1.6 2005/03/13 05:02:17 kurt Exp $
 @comment @lib mozilla/lib/components/libaccessibility.so.1.0
 @comment @lib mozilla/lib/components/libaddrbook.so.1.0
 @comment @lib mozilla/lib/components/libappcomps.so.1.0
@@ -27,7 +27,6 @@
 @comment @lib mozilla/lib/components/libipcdc.so.1.0
 @comment @lib mozilla/lib/components/libjar50.so.1.0
 @comment @lib mozilla/lib/components/libjsd.so.1.0
-@comment @lib mozilla/lib/components/libjsdom.so.1.0
 @comment @lib mozilla/lib/components/liblocalmail.so.1.0
 @comment @lib mozilla/lib/components/libmailnews.so.1.0
 @comment @lib mozilla/lib/components/libmailview.so.1.0
