@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/06/20 19:32:44 jakob Exp $
 sbin/usbctl
 sbin/usbdebug
 sbin/usbgen
