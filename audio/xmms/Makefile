@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/07/25 15:24:56 espie Exp $
-# $Id: Makefile,v 1.5 2001/07/25 15:24:56 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2001/07/25 15:48:26 naddy Exp $
 
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
@@ -50,21 +49,19 @@ SUBPACKAGE?=
 
 RUN_DEPENDS=		unzip::archivers/unzip
 LIB_DEPENDS=		gtk.1.2::x11/gtk+ \
-			iconv.2::converters/libiconv \
-			intl.1::devel/gettext \
 			xml.9::textproc/libxml1
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} --without-gnome
 
-CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			XML_CONFIG="${LOCALBASE}/bin/xml-config" \
-			LIBMIKMOD_CONFIG=/usr/bin/false
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		XML_CONFIG="${LOCALBASE}/bin/xml-config" \
+		LIBMIKMOD_CONFIG=/usr/bin/false
 
 DISTFILES=		${DISTNAME}.tar.gz \
 			${DISTDRIVER}.tar.gz:0
@@ -77,23 +74,23 @@ SUBST_VARS=		MAINTAINER	PKGNAME-vorbis PKGNAME-esd
 .if defined(PACKAGING) 
 
 .  if ${SUBPACKAGE} == "-esd"
-LIB_DEPENDS=		esd.::audio/esound
+LIB_DEPENDS=		esd.2::audio/esound
 RUN_DEPENDS=		xmms::audio/xmms
 .  endif
 .  if ${SUBPACKAGE} == "-vorbis"
-LIB_DEPENDS=		vorbis.::audio/libvorbis
+LIB_DEPENDS=		vorbis.0::audio/libvorbis
 RUN_DEPENDS=		xmms::audio/xmms
 .  endif
 .else
 .  if ${MULTI_PACKAGES:M-esd}
-LIB_DEPENDS +=		esd.::audio/esound
+LIB_DEPENDS +=		esd.2::audio/esound
 CONFIGURE_ARGS+=	--with-esd-prefix=${LOCALBASE}
 .  else
 CONFIGURE_ENV+=		ESD_CONFIG=/usr/bin/false
 .  endif
 
 .  if ${MULTI_PACKAGES:M-vorbis}
-LIB_DEPENDS +=		vorbis.::audio/libvorbis
+LIB_DEPENDS +=		vorbis.0::audio/libvorbis
 CONFIGURE_ARGS+=	--with-ogg-prefix=${LOCALBASE}	\
 			--with-vorbis-prefix=${LOCALBASE}
 .  else
@@ -103,9 +100,6 @@ CONFIGURE_ENV+=		OGG_LIBS=its-not-my-godamn-planet-understand-monkey-boy
 
 post-extract:
 	@mv -f ${WRKDIR}/${DISTDRIVER}/Output/sun ${WRKSRC}/Output/sun
-
-pre-build:
-	@ln -sf ${LOCALBASE}/include/libintl.h ${WRKSRC}/intl
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xmms

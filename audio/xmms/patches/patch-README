@@ -1,6 +1,7 @@
---- README.orig	Thu Jul  5 21:19:17 2001
-+++ README	Thu Jul  5 21:18:19 2001
-@@ -31,6 +31,7 @@
+$OpenBSD: patch-README,v 1.2 2001/07/25 15:48:26 naddy Exp $
+--- README.orig	Wed Dec 20 15:30:36 2000
++++ README	Wed Jul 25 16:47:42 2001
+@@ -31,6 +31,7 @@ TABLE OF CONTENTS
              3.6.2.1 OSS Driver
              3.6.2.2 Disk Writer
              3.6.2.3 eSound Output
@@ -8,7 +9,7 @@
        3.6.3 Effect plugins
              3.6.3.1 Echo
              3.6.3.2 Extra Stereo
-@@ -763,6 +764,37 @@
+@@ -763,6 +764,37 @@ and port to send to. This is probably on
  the audio data is sent uncompressed to the remote ESD.
  
  The 'Buffering' tab works just like the 'OSS Driver' one.

@@ -1,6 +1,7 @@
---- xmms/main.c.orig	Thu Jul  5 21:58:03 2001
-+++ xmms/main.c	Thu Jul  5 21:58:31 2001
-@@ -3204,14 +3204,6 @@
+$OpenBSD: patch-xmms_main_c,v 1.2 2001/07/25 15:48:26 naddy Exp $
+--- xmms/main.c.orig	Sun Jun 17 01:05:47 2001
++++ xmms/main.c	Wed Jul 25 16:47:43 2001
+@@ -3204,14 +3204,6 @@ gboolean handle_cmd_line_options(struct 
  	return FALSE;
  }
  
@@ -15,7 +16,7 @@
  static gboolean pposition_configure(GtkWidget *w, GdkEventConfigure *event, gpointer data)
  {
  	gint x,y;
-@@ -3340,15 +3332,6 @@
+@@ -3340,15 +3332,6 @@ int main(int argc, char **argv)
  	textdomain(PACKAGE);
  #endif
  

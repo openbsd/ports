@@ -1,6 +1,7 @@
---- xmms/plugin.h.orig	Thu Jul  5 21:09:52 2001
-+++ xmms/plugin.h	Thu Jul  5 21:10:20 2001
-@@ -58,6 +58,7 @@
+$OpenBSD: patch-xmms_plugin_h,v 1.2 2001/07/25 15:48:26 naddy Exp $
+--- xmms/plugin.h.orig	Wed Mar  1 21:28:06 2000
++++ xmms/plugin.h	Wed Jul 25 16:47:43 2001
+@@ -58,6 +58,7 @@ typedef struct
  	int (*output_time) (void);	/* Return the current playing time */
  	int (*written_time) (void);	/* Return the length of all the data that has been written to
  					   the buffer */
