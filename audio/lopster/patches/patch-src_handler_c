@@ -1,5 +1,6 @@
---- src/handler.c~	Mon May 28 16:11:51 2001
-+++ src/handler.c	Sat Dec 22 18:51:32 2001
+$OpenBSD: patch-src_handler_c,v 1.3 2002/04/08 19:23:18 naddy Exp $
+--- src/handler.c.orig	Tue May 29 01:11:51 2001
++++ src/handler.c	Mon Apr  8 21:11:07 2002
 @@ -1220,7 +1220,7 @@ HANDLER(cmd_banlist_entry) {
    pos[0] = 0;
    strcpy(tstr[3], data);
@@ -9,4 +10,3 @@
    sprintf(tstr[2], "%s", ctime(&l1));
    gtk_clist_append(GTK_CLIST(temp), list);
  }
-

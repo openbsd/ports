@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/12/23 03:38:01 obecian Exp $
+# $OpenBSD: Makefile,v 1.10 2002/04/08 19:23:18 naddy Exp $
 
 COMMENT=	"full featured GTK Napster client"
 DISTNAME=	lopster-0.9.9
@@ -19,9 +19,12 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
+MODULES=	gettext
+
 USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/12/23 03:38:01 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/04/08 19:23:18 naddy Exp $
 bin/lopster
+lib/locale/de/LC_MESSAGES/lopster.mo
+lib/locale/fr/LC_MESSAGES/lopster.mo
 share/lopster/pixmaps/arrowd.xpm
 share/lopster/pixmaps/arrowl.xpm
 share/lopster/pixmaps/arrowr.xpm
