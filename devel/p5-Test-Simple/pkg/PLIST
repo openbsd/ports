@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:04 espie Exp $
-libdata/perl5/site_perl/Test/Builder.pm
-libdata/perl5/site_perl/Test/More.pm
-libdata/perl5/site_perl/Test/Simple.pm
-libdata/perl5/site_perl/Test/Tutorial.pod
+@comment $OpenBSD: PLIST,v 1.5 2002/04/18 14:24:59 shell Exp $
+${P5SITE}/Test/Builder.pm
+${P5SITE}/Test/More.pm
+${P5SITE}/Test/Simple.pm
+${P5SITE}/Test/Tutorial.pod
 man/man3p/Test::Builder.3p
 man/man3p/Test::More.3p
 man/man3p/Test::Simple.3p
