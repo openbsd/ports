@@ -1,9 +1,7 @@
-# $OpenBSD: network.conf.template,v 1.11 2000/09/24 14:13:47 espie Exp $
+# $OpenBSD: network.conf.template,v 1.12 2001/01/18 15:48:04 brad Exp $
 
 #
-#
 # NEVER EDIT THAT FILE DIRECTLY !!!! ALWAYS COPY IT TO ../db FIRST.
-#
 #
 
 # Default OpenBSD backup site
@@ -12,7 +10,7 @@ _MASTER_SITE_OPENBSD?=	\
 	ftp://ftp.openbsd.org/pub/OpenBSD/licensed/${DIST_SUBDIR}/
 
 # Default FreeBSD backup site
-_MASTER_SITE_FREEBSD?=  \
+_MASTER_SITE_FREEBSD?=	\
 	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/${DIST_SUBDIR}/
 
 # Default NetBSD backup site
@@ -20,18 +18,18 @@ _MASTER_SITE_NETBSD?=	\
 	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/${DIST_SUBDIR}/
 
 # Uncomment to retrieve from the OpenBSD sites only
-# MASTER_SITE_OPENBSD=Yes
+# MASTER_SITE_OPENBSD=	Yes
 # Uncomment to retrieve from the FreeBSD sites only
-# MASTER_SITE_FREEBSD=Yes
+# MASTER_SITE_FREEBSD=	Yes
 # Uncomment to retrieve from the NetBSD sites only
-# MASTER_SITE_NETBSD= Yes
+# MASTER_SITE_NETBSD=	Yes
 
 .if defined(MASTER_SITE_OPENBSD)
-MASTER_SITE_BACKUP= ${_MASTER_SITE_OPENBSD}
+MASTER_SITE_BACKUP=	${_MASTER_SITE_OPENBSD}
 .elsif defined(MASTER_SITE_FREEBSD)
-MASTER_SITE_BACKUP= ${_MASTER_SITE_FREEBSD}
+MASTER_SITE_BACKUP=	${_MASTER_SITE_FREEBSD}
 .elsif defined(MASTER_SITE_NETBSD)
-MASTER_SITE_BACKUP= ${_MASTER_SITE_NETBSD}
+MASTER_SITE_BACKUP=	${_MASTER_SITE_NETBSD}
 .endif
 
 # default backup master site
@@ -40,7 +38,7 @@ MASTER_SITE_BACKUP?=	\
 	${_MASTER_SITE_FREEBSD}
 
 # Uncomment to retrieve from the MASTER_SITE_BACKUP first
-# MASTER_SITE_OVERRIDE=${MASTER_SITE_BACKUP}
+# MASTER_SITE_OVERRIDE=	${MASTER_SITE_BACKUP}
 
 # Uncomment to make symlinks off a CD-Rom instead of copies
 # FETCH_SYMLINK_DISTFILES=Yes
@@ -95,11 +93,12 @@ MASTER_SITE_SUNSITE+=	\
 MASTER_SITE_SOURCEFORGE+=	\
 	ftp://download.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
 	http://download.sourceforge.net/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/
+	ftp://projects.sourceforge.net/pub/%SUBDIR%/ \
+	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/ \
+	ftp://ftp.mirror.ac.uk/sites/download.sourceforge.net/pub/sourceforge/%SUBDIR%/
 
 MASTER_SITE_GNOME+=	\
 	ftp://ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
-	ftp://download.sourceforge.net/pub/mirrors/gnome/%SUBDIR%/ \
 	ftp://rpmfind.net/linux/gnome.org/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	ftp://slave.opensource.captech.com/gnome/%SUBDIR%/ \
@@ -111,7 +110,9 @@ MASTER_SITE_GNOME+=	\
 	ftp://gnomeftp.blue-labs.org/pub/gnome/%SUBDIR%/ \
 	ftp://ftp.informatik.uni-bonn.de/pub/os/unix/gnome/%SUBDIR%/ \
 	ftp://ftp.tas.gov.au/gnome/%SUBDIR%/ \
-	ftp://ftp.uvsq.fr/pub/X11/gnome/%SUBDIR%/
+	ftp://ftp.uvsq.fr/pub/X11/gnome/%SUBDIR%/ \
+	ftp://download.sourceforge.net/pub/mirrors/gnome/%SUBDIR%/ \
+
 
 MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/%SUBDIR%/ \
@@ -133,7 +134,9 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.cs.colorado.edu/pub/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.uvsq.fr/pub/perl/CPAN/modules/by-module/%SUBDIR%/
+	ftp://ftp.uvsq.fr/pub/perl/CPAN/modules/by-module/%SUBDIR%/ \
+	ftp://ftp.mirror.ac.uk/sites/ftp.cpan.org/CPAN/modules/by-module/%SUBDIR%/ \
+	ftp://sunsite.org.uk/packages/perl/CPAN/modules/by-module/%SUBDIR%/
 
 MASTER_SITE_TEX_CTAN+=	\
 	ftp://ftp.freesoftware.com/pub/tex/ctan/%SUBDIR%/ \
@@ -148,25 +151,23 @@ MASTER_SITE_TEX_CTAN+=	\
 	ftp://ctan.tug.org/tex-archive/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/TeX/CTAN/%SUBDIR%/ \
 	ftp://ftp.dante.de/tex-archive/%SUBDIR%/ \
-	ftp://ftp.uvsq.fr/pub/TeX/CTAN/%SUBDIR%/
+	ftp://ftp.uvsq.fr/pub/TeX/CTAN/%SUBDIR%/ \
+	ftp://ftp.mirror.ac.uk/sites/ftp.cpan.org/CPAN/modules/by-module/%SUBDIR%/ \
+	ftp://sunsite.org.uk/packages/perl/CPAN/modules/by-module/%SUBDIR%/
 
 MASTER_SITE_KDE+=	\
 	ftp://ftp.us.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.sourceforge.net/pub/sourceforge/kde/%SUBDIR%/ \
+	ftp://ftp.sourceforge.net/pub/mirrors/kde/%SUBDIR%/ \
 	ftp://ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.tuniv.szczecin.pl/pub/kde/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/X11/kde/%SUBDIR%/ \
-	ftp://ftp2.sinica.edu.tw/pub5/wmgrs/kde/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/kde/%SUBDIR%/ \
 	ftp://ftp.synesis.net/pub/mirrors/kde/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/hci/kde/%SUBDIR%/ \
-	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/ \
 	ftp://ftp.twoguys.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.dataplus.se/pub/linux/kde/%SUBDIR%/ \
-	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/ \
 	ftp://ftp.uvsq.fr/pub/X11/kde/%SUBDIR%/
 
-MASTER_SITE_TCLTK+= \
+MASTER_SITE_TCLTK+=	\
 	ftp://ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
 	ftp://mirror.neosoft.com/pub/tcl/mirror/ftp.scriptics.com/%SUBDIR%/ \
 	ftp://sunsite.utk.edu/pub/tcl/%SUBDIR%/ \
@@ -178,14 +179,13 @@ MASTER_SITE_TCLTK+= \
 MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/%SUBDIR%/ \
 	ftp://ftp.digex.net/pub/X11/window-managers/afterstep/%SUBDIR%/ \
-	ftp://ftp.alpha1.net/pub/mirrors/ftp.afterstep.org/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/X11/AfterStep/%SUBDIR%/ \
 	ftp://ftp.math.uni-bonn.de/pub/mirror/ftp.afterstep.org/pub/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/ \
 	ftp://ftp.linux.co.za/pub/windowmanagers/afterstep/%SUBDIR%/ \
 	ftp://ftp.uvsq.fr/pub/X11/window-managers/afterstep/%SUBDIR%/
 
-MASTER_SITE_WINDOWMAKER+= \
+MASTER_SITE_WINDOWMAKER+=	\
 	ftp://ftp.windowmaker.org/pub/%SUBDIR%/ \
 	ftp://ftp.goldweb.com.au/pub/WindowMaker/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/X11/window_managers/windowmaker/%SUBDIR%/ \
