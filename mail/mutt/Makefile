@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2000/02/05 22:48:46 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2000/02/09 01:11:42 espie Exp $
 
 DISTNAME=	mutt-1.0.1i
 CATEGORIES=     mail
@@ -12,9 +12,10 @@ MAINTAINER=	turan@openbsd.org
 
 TTY_LIB?=slang
 
+NEED_VERSION=1.187
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext 
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=	Yes
 SYSCONFDIR=	${PREFIX}/share/mutt
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-sharedir=${PREFIX}/share/mutt \
@@ -48,25 +49,25 @@ CONFIGURE_ARGS+= --enable-imap
 CONFIGURE_ARGS+= --enable-pop
 .endif
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
+WRKDIST=	${WRKDIR}/${DISTNAME:S/i$//}
 
 .if !defined(NO_WARNINGS)
 pre-fetch:
-	@${ECHO}
-	@${ECHO} '**********************************************************'
-	@${ECHO} '* This software contains cryptographic enabling code.    *'
-	@${ECHO} '* It is illegal to export outside of the United States.  *'
-	@${ECHO} '**********************************************************'
-	@${ECHO}
+	@echo
+	@echo '**********************************************************'
+	@echo '* This software contains cryptographic enabling code.    *'
+	@echo '* It is illegal to export outside of the United States.  *'
+	@echo '**********************************************************'
+	@echo
 .endif
 
 post-install:
 	strip ${PREFIX}/bin/mutt
-	@${ECHO} 
-	@${ECHO} '************************************************************'
-	@${ECHO} ' A sample muttrc and mime.types is available in '
-	@${ECHO} ' ${PREFIX}/share/mutt/{Muttrc,mime.types}       '        
-	@${ECHO} '************************************************************'
-	@${ECHO}
+	@echo 
+	@echo '************************************************************'
+	@echo ' A sample muttrc and mime.types is available in '
+	@echo ' ${PREFIX}/share/mutt/{Muttrc,mime.types}       '        
+	@echo '************************************************************'
+	@echo
 
 .include <bsd.port.mk>
