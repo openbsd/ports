@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.353 2005/02/20 06:58:24 david Exp $
+# $OpenBSD: Makefile,v 1.354 2005/02/21 16:12:39 alek Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -223,6 +223,7 @@
      SUBDIR += roxirc
      SUBDIR += rrdtool
      SUBDIR += rrdtool,tcl
+     SUBDIR += rsnapshot
      SUBDIR += rsync
      SUBDIR += ruby-pcap
      SUBDIR += samba
