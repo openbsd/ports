@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.26 2004/09/25 11:17:46 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.27 2004/12/18 14:15:55 robert Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-V=		4.3.9
+V=		4.3.10
 DISTNAME=	php-${V}
 CATEGORIES=	www lang
 
@@ -62,5 +62,6 @@ CONFIGURE_ARGS+= 	--with-openssl \
 REGRESS_TARGET=		test
 REGRESS_FLAGS=		NO_INTERACTION=1
 
+CHECKSUM_FILE?=		${PORTSDIR}/www/php4/distinfo
 PATCH_LIST=		${PORTSDIR}/www/php4/patches/patch-* \
 			patch-*
