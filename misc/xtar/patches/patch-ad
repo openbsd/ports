@@ -1,6 +1,6 @@
---- common/tmpfile.c.orig	Tue May  9 04:06:46 1995
-+++ common/tmpfile.c	Thu Oct 21 20:43:13 1999
-@@ -90,7 +90,12 @@
+--- common/tmpfile.c.orig	Tue May  9 10:06:46 1995
++++ common/tmpfile.c	Wed Jun  7 00:29:15 2000
+@@ -90,7 +90,12 @@ void tmpfile_free()
  char *tmpfile_create()
  {
      TMP_FILE *ptr, *tf;

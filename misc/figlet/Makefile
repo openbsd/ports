@@ -3,13 +3,12 @@
 # Date created:		15 Dec 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.5 2000/04/09 17:37:09 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/06/06 22:31:53 espie Exp $
 
 PKGNAME=	figlet-2.2
 
 CATEGORIES=	misc
 NEED_VERSION=	1.191
-FAKE=No
 
 MAINTAINER=	dugsong@monkey.org
 
@@ -27,9 +26,9 @@ MASTER_SITES0=	http://www.internexus.net/pub/figlet/fonts/ \
 DISTFILES=	figlet22${EXTRACT_SUFX} \
 		contributed${EXTRACT_SUFX}:0
 
-WRKDIST=		${WRKDIR}/figlet22
+FAKE_FLAGS=PREFIX=${WRKINST}/${PREFIX}
 
-NO_CONFIGURE=	yes
+WRKDIST=		${WRKDIR}/figlet22
 
 post-install:
 		${INSTALL_DATA} ${WRKDIR}/contributed/*.flf \

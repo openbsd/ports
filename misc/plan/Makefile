@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2000/04/09 17:37:12 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/06/06 22:31:53 espie Exp $
 #
 
 DISTNAME=	plan-1.6.1
 CATEGORIES=	misc
-FAKE=No
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -15,6 +14,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
-USE_MOTIF=	yes
+USE_MOTIF=	Yes
+
+WRKSRC=	${WRKDIST}/src
+ALL_TARGET=openbsd
+MAKE_FLAGS=PLANBASE=${PREFIX}
+FAKE_FLAGS=PLANBASE=${WRKINST}${PREFIX}
 
 .include <bsd.port.mk>

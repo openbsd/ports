@@ -1,6 +1,6 @@
---- common/str.c.orig	Tue May  9 04:06:46 1995
-+++ common/str.c	Thu Oct 21 17:18:00 1999
-@@ -283,7 +283,6 @@
+--- common/str.c.orig	Tue May  9 10:06:46 1995
++++ common/str.c	Wed Jun  7 00:29:15 2000
+@@ -283,7 +283,6 @@ char *str_word(char **string)
  char *str_error(int errnum)
  {
          extern int sys_nerr;

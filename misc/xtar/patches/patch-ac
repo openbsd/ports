@@ -1,6 +1,6 @@
---- XTar.tmpl.orig	Mon Jul 17 08:04:17 1995
-+++ XTar.tmpl	Thu Oct 21 17:18:02 1999
-@@ -27,7 +27,7 @@
+--- XTar.tmpl.orig	Mon Jul 17 14:04:17 1995
++++ XTar.tmpl	Wed Jun  7 00:29:15 2000
+@@ -27,7 +27,7 @@ CCOPTIONS = -Ae
  XMINC = -I/usr/include/Motif1.2
  XMLIB = -L/usr/lib/Motif1.2 -lXm -lPW
  #else

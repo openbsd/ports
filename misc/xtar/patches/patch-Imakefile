@@ -1,0 +1,10 @@
+$OpenBSD: patch-Imakefile,v 1.1 2000/06/06 22:31:55 espie Exp $
+--- Imakefile.orig	Wed Jun  7 00:29:54 2000
++++ Imakefile	Wed Jun  7 00:29:58 2000
+@@ -30,5 +30,5 @@ OBJS = $(SRCS:.c=.o)
+ MakeSubdirs($(SUBDIRS))
+ ComplexProgramTarget(xtar)
+ MakeDirectories(install,$(LIBDIR)/xtar)
+-InstallNonExec(xtar.doc, $(LIBDIR)/xtar)
++InstallNonExec(xtar.doc,$(LIBDIR)/xtar)
+ InstallAppDefaults(XTar)
