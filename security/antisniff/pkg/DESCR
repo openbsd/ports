@@ -1,5 +1,3 @@
-[ http://www.l0pht.com/antisniff/ ]
-                
 AntiSniff is a new class of proactive security monitoring tool. It has
 the ability to scan a network and detect whether or not any computers
 are in promiscuous mode. This is often a sign that a computer has been
@@ -12,4 +10,4 @@ not designed to detect hardware based network probes or special
 purpose network analyzers which an attacker would need physical access
 to install.
 
--d.
+WWW: ${HOMEPAGE}

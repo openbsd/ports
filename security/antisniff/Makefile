@@ -1,20 +1,16 @@
-# Makefile for:		antisniff
-# Version required:	1.0
-# Date created:		27 Oct 1999
-# Whom:			dugsong@monkey.org
-#
-# $OpenBSD: Makefile,v 1.12 2001/05/06 03:45:36 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/08/27 13:40:20 dugsong Exp $
 
 COMMENT=	"promiscuous mode interface detector"
 
-PKGNAME=	antisniff-1.1
+PKGNAME=	antisniff-1.1.2
 
 CATEGORIES=	security
 NEED_VERSION=	1.402
 
-MASTER_SITES=	http://www.l0pht.com/antisniff/dist/
+MASTER_SITES=	http://www.securitysoftwaretech.com/antisniff/dist/
+HOMEPAGE=	http://www.securitysoftwaretech.com/antisniff/
 
-DISTNAME=	anti_sniff_researchv1-1
+DISTNAME=	anti_sniff_researchv1-1-2
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
