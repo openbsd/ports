@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/06/04 22:00:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2003/07/17 15:11:38 naddy Exp $
 
 COMMENT=	"insert random 'Zippy the Pinhead' quotes in your documents"
 
@@ -21,23 +21,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::www/zope        
-
-NO_BUILD=	Yes
-NO_REGRESS=	Yes
+MODULES=	zope
 
 WRKDIST=	${WRKDIR}/lib/python/Products/Zippy
 
-ZOPEHOME=	${PREFIX}/lib/zope
-PRODUCTSDIR=	${ZOPEHOME}/lib/python/Products
-
-ITEMS=	README.txt ZippyTag.py __init__.py yow.lines
+INSTALL_LOC=	${MODZOPE_PRODUCTSDIR}/Zippy
+ITEMS=		ZippyTag __init__
 
 do-install:
-	${INSTALL_DATA_DIR} ${PRODUCTSDIR}/Zippy
-	for p in ${ITEMS}; do \
-		cp ${WRKDIST}/$$p ${PRODUCTSDIR}/Zippy; \
-	done
-	chown -R ${LIBOWN}:${LIBGRP} ${PRODUCTSDIR}
+	${INSTALL_DATA_DIR} ${INSTALL_LOC}
+.for f in ${ITEMS}
+	${INSTALL_DATA} ${WRKDIST}/$f.{py,pyc} ${INSTALL_LOC}
+.endfor
+	${INSTALL_DATA} ${WRKDIST}/README.txt ${INSTALL_LOC}
+	${INSTALL_DATA} ${WRKDIST}/yow.lines ${INSTALL_LOC}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/06/04 21:59:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2003/07/17 15:11:38 naddy Exp $
 
 COMMENT=	"insert randomly-selected fortunes in your documents"
 
@@ -18,23 +18,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	::www/zope        
-
-NO_BUILD=	Yes
-NO_REGRESS=	Yes
+MODULES=	zope
 
 WRKDIST=	${WRKDIR}/lib/python/Products/Fortune
 
-ZOPEHOME=	${PREFIX}/lib/zope
-PRODUCTSDIR=	${ZOPEHOME}/lib/python/Products
-
-FORTUNEITEMS=	FortuneTag.py fortunesetup.py README.txt __init__.py
+FORTUNEITEMS=	FortuneTag fortunesetup __init__
 
 do-install:
-	${INSTALL_DATA_DIR} ${PRODUCTSDIR}/Fortune
-	for p in ${FORTUNEITEMS}; do \
-		cp ${WRKDIST}/$$p ${PRODUCTSDIR}/Fortune; \
-	done
-	chown -R ${LIBOWN}:${LIBGRP} ${PRODUCTSDIR}
+	${INSTALL_DATA_DIR} ${MODZOPE_PRODUCTSDIR}/Fortune
+.for f in ${FORTUNEITEMS}
+	${INSTALL_DATA} ${WRKDIST}/$f.{py,pyc} ${MODZOPE_PRODUCTSDIR}/Fortune
+.endfor
+	${INSTALL_DATA} ${WRKDIST}/README.txt ${MODZOPE_PRODUCTSDIR}/Fortune
 
 .include <bsd.port.mk>

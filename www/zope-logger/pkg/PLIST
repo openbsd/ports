@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/29 23:25:11 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/07/17 15:11:38 naddy Exp $
 lib/zope/lib/python/Products/Logger/Logger.py
+lib/zope/lib/python/Products/Logger/Logger.pyc
 lib/zope/lib/python/Products/Logger/README.txt
 lib/zope/lib/python/Products/Logger/__init__.py
+lib/zope/lib/python/Products/Logger/__init__.pyc
 @dirrm lib/zope/lib/python/Products/Logger

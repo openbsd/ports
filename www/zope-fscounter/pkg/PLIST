@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/18 01:31:30 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/07/17 15:11:38 naddy Exp $
 lib/zope/lib/python/Products/FSCounter/FSCounter.py
+lib/zope/lib/python/Products/FSCounter/FSCounter.pyc
 lib/zope/lib/python/Products/FSCounter/FSCounterAdd.dtml
 lib/zope/lib/python/Products/FSCounter/FSCounterEdit.dtml
 lib/zope/lib/python/Products/FSCounter/FSCounterHelp.dtml
 lib/zope/lib/python/Products/FSCounter/__init__.py
+lib/zope/lib/python/Products/FSCounter/__init__.pyc
 lib/zope/lib/python/Products/FSCounter/changes.txt
 lib/zope/lib/python/Products/FSCounter/refresh.txt
 lib/zope/lib/python/Products/FSCounter/version.txt

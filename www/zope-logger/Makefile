@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/30 17:44:12 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2003/07/17 15:11:38 naddy Exp $
 
 COMMENT=	"logging product for Zope"
 
@@ -19,23 +19,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:zope->=2.1:www/zope	
+MODULES=	zope
 
-NO_BUILD=	Yes
-NO_REGRESS=	Yes
+WRKDIST=	${WRKDIR}/Logger
 
-WRKSRC=		${WRKDIR}/Logger
-
-ZOPEHOME=	${PREFIX}/lib/zope
-PRODUCTSDIR=	${ZOPEHOME}/lib/python/Products
-
-LOGGERITEMS=	Logger.py README.txt __init__.py
+INSTALL_LOC=	${MODZOPE_PRODUCTSDIR}/Logger
+LOGGERITEMS=	Logger __init__
 
 do-install:
-	${INSTALL_DATA_DIR} ${PRODUCTSDIR}/Logger
-	for p in ${LOGGERITEMS}; do \
-		cp ${WRKSRC}/$$p ${PRODUCTSDIR}/Logger; \
-	done
-	chown -R ${LIBOWN}:${LIBGRP} ${PRODUCTSDIR}
+	${INSTALL_DATA_DIR} ${INSTALL_LOC}
+.for f in ${LOGGERITEMS}
+	${INSTALL_DATA} ${WRKDIST}/$f.{py,pyc} ${INSTALL_LOC} 
+.endfor
+	${INSTALL_DATA} ${WRKDIST}/README.txt ${INSTALL_LOC}
 
 .include <bsd.port.mk>
