@@ -1,27 +1,24 @@
-# $OpenBSD: Makefile,v 1.9 1999/03/14 18:15:02 espie Exp $
+# $OpenBSD: Makefile,v 1.10 1999/03/28 23:11:53 brad Exp $
 # $NetBSD: Makefile,v 1.10 1998/04/24 09:07:55 agc Exp $
 # $FreeBSD Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp $
-#
 
-DISTNAME=		linux_lib-2.6.1
-CATEGORIES=		emulators
+DISTNAME=	linux_lib-2.6.1
+CATEGORIES=	emulators
 
-ONLY_FOR_ARCHS=		i386
-NO_CDROM=		"GPL: must distribute with source"
-MIRROR_DISTFILE=	no
+ONLY_FOR_ARCHS=	i386
+NO_CDROM=	"GPL: must distribute with source"
 
-MAINTAINER=		form@OpenBSD.ORG
+MAINTAINER=	brad@openbsd.org
 
-MASTER_SITES=		${MASTER_SITE_LOCAL} \
-			ftp://relay.nuxi.com/pub/FreeBSD/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
 
-PREFIX=			/emul/linux
-NO_MTREE=		yes
-NO_BUILD=		yes
-NO_EXTRACT=		yes
-NO_PATCH=		yes
-NO_WRKDIR=		yes
-NO_CONFIGURE=		yes
+PREFIX=		/emul/linux
+NO_MTREE=	yes
+NO_BUILD=	yes
+NO_EXTRACT=	yes
+NO_PATCH=	yes
+NO_WRKDIR=	yes
+NO_CONFIGURE=	yes
 
 pre-install:
 	@[ -d ${PREFIX} ] || ${MKDIR} ${PREFIX}
