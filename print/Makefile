@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.33 2003/01/21 17:12:55 avsm Exp $
+#	$OpenBSD: Makefile,v 1.34 2003/02/18 16:51:42 sturm Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -13,7 +13,6 @@
     SUBDIR += detex
     SUBDIR += dvi2tty
 #   SUBDIR += dvi2xx
-    SUBDIR += dvipdfm
 #   SUBDIR += dvips
 #   SUBDIR += dvips2ascii
 #   SUBDIR += dviselect
