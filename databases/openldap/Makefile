@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/02/18 22:22:30 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2001/03/12 15:13:14 brad Exp $
 
 MULTI_PACKAGES=	-client
 SUBPACKAGE?=
@@ -6,13 +6,7 @@ SUBPACKAGE?=
 VERSION=	2.0.7
 DISTNAME=	openldap-${VERSION}
 CATEGORIES=	databases net
-NEED_VERSION=	1.338
-
-.if ${SUBPACKAGE} == "-client"
-PKGNAME=	openldapclient-${VERSION}
-.else
-PKGNAME=	openldap-${VERSION}
-.endif
+NEED_VERSION=	1.336
 
 HOMEPAGE=	http://www.openldap.org/
 
@@ -53,8 +47,8 @@ FLAVOR?=
 .if ${FLAVOR:L} == "sasl"
 CONFIGURE_ARGS+=	--with-cyrus-sasl \
 			--enable-spasswd
-CONFIGURE_ENV+=		CPPFLAGS="-I${PREFIX}/include/sasl" \
-			LIBS="-L${PREFIX}/lib -lkrb"
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/sasl"
+			LIBS="-L${LOCALBASE}/lib -lkrb"
 LIB_DEPENDS+=		sasl::security/cyrus-sasl
 .else
 CONFIGURE_ARGS+=	--without-cyrus-sasl \
@@ -62,7 +56,7 @@ CONFIGURE_ARGS+=	--without-cyrus-sasl \
 .endif
 
 pre-build:
-	cd ${WRKBUILD} ; make depend
+	@cd ${WRKBUILD}; ${MAKE_PROGRAM} depend
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openldap
@@ -73,3 +67,7 @@ post-install:
 		 ${PREFIX}/share/examples/openldap/schema
 
 .include <bsd.port.mk>
+
+.if ${SUBPACKAGE} == "-client"
+PKGNAME:=	openldap-client-${VERSION}
+.endif

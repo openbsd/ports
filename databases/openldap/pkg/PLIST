@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/10/22 18:43:59 espie Exp $
-@pkgcfl openldapclient-*
+@comment $OpenBSD: PLIST,v 1.4 2001/03/12 15:13:14 brad Exp $
+@pkgcfl openldap-client-*
 bin/ldapadd
 bin/ldapdelete
 bin/ldapmodify
