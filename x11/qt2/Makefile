@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/22 23:53:43 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/23 01:25:35 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-2.1.1
@@ -64,6 +64,7 @@ do-install:
 	fi
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/moc ${QT_LIBDIR}/bin
 	# avoid installing broken links
+	rm ${WRKSRC}/include/qt_{mac,window}.h
 	-${INSTALL_DATA} ${WRKSRC}/include/* ${QT_INCDIR}
 	@for i in ${WRKSRC}/doc/man/man3/*; do \
 	  j=$${i%qt}; \
