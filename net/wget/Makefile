@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/03/31 22:24:39 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/03/31 23:39:55 brad Exp $
 
 DISTNAME=	wget-1.5.3
 CATEGORIES=	net
@@ -25,7 +25,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/sample.wgetrc ${PREFIX}/lib/wget/wgetrc.sample
 	@${ECHO} ""
 	@${ECHO} "*** The latest version of the wgetrc file"
-	@${ECHO} "*** can be found ${PREFIX}/lib/wget"
+	@${ECHO} "*** can be found in ${PREFIX}/lib/wget"
 	@if [ -f /etc/wgetrc ]; then \
 	  ${ECHO} "*** Your /etc/wgetrc has NOT been changed"; \
 	 else \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/03/31 23:25:50 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/03/31 23:40:29 brad Exp $
 
 DISTNAME=	mrtg-2.7.2
 CATEGORIES=	net
@@ -39,7 +39,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/sample-mrtg.cfg ${PREFIX}/lib/mrtg/mrtg.cfg.sample
 	@${ECHO} ""
 	@${ECHO} "*** The latest sample config file"
-	@${ECHO} "*** can be found ${PREFIX}/lib/mrtg"
+	@${ECHO} "*** can be found in ${PREFIX}/lib/mrtg"
 	@if [ -f /etc/mrtg.cfg ]; then \
 	  ${ECHO} "*** Your /etc/mrtg.cfg has NOT been changed"; \
 	 else \
