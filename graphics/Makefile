@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 1999/01/31 00:42:58 marc Exp $
+# $OpenBSD: Makefile,v 1.18 1999/02/01 09:31:37 todd Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -13,6 +13,7 @@
 #    SUBDIR += gd
 #    SUBDIR += geomview
 #    SUBDIR += gfont
+     SUBDIR += ggi
      SUBDIR += giflib
 #    SUBDIR += gifmerge
 #    SUBDIR += giftool
