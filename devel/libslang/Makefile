@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.16 2000/03/24 22:11:39 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/03/25 15:28:04 kevlo Exp $
 
-DISTNAME=	slang-1.3.10
-PKGNAME=	libslang-1.3.10
+DISTNAME=	slang-1.4.0
+PKGNAME=	libslang-1.4.0
 CATEGORIES=	devel
 NEED_VERSION=	1.218
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.3/ \
-		http://gd.tuwien.ac.at/editors/davis/slang/v1.3/
+MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.4/ \
+		http://gd.tuwien.ac.at/editors/davis/slang/v1.4/
 
 
 MAINTAINER=	todd@openbsd.org
 
-LICENSE_TYPE=	Artistic GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 FAKE=		Yes
+USE_BZIP2=      Yes
 GNU_CONFIGURE=  Yes
 
 do-install:
