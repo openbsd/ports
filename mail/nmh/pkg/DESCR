@@ -4,3 +4,5 @@ a (mostly) compatible drop-in replacement for MH.
 
 Although development of nmh is ongoing, it appears to be generally
 stable and is in current use.
+
+WWW: ${HOMEPAGE}
