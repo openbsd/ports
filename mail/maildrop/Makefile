@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2005/01/02 10:44:03 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2005/03/26 18:31:45 joel Exp $
 
 COMMENT=	"local mail delivery agent with filtering abilities"
 COMMENT-utils=	"userdb and quota tools for the Courier mail suite"
@@ -37,7 +37,7 @@ CONFIGURE_ARGS=		--datadir=${PREFIX}/share/doc \
 			--enable-maildrop-gid=bin \
 			--disable-tempdir --enable-restricted-trusted=1 \
 			--enable-syslog=1 --with-etcdir=${SYSCONFDIR} \
-			-with-db=gdbm --enable-userdb --enable-maildirquota
+			--with-db=gdbm --enable-userdb --enable-maildirquota
 
 DOCFILES=		README INSTALL UPGRADE README.postfix
 
