@@ -1,0 +1,2 @@
+Filesys::Virtual::Plain is used by other modules to provide a pluggable
+filesystem.
