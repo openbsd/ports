@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2001/07/18 21:59:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.59 2001/07/20 18:20:06 lebel Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -80,6 +80,7 @@
      SUBDIR += xmcd
      SUBDIR += xmix
      SUBDIR += xmmix
+     SUBDIR += xmms
      SUBDIR += xmp
 
 .include <bsd.port.subdir.mk>
