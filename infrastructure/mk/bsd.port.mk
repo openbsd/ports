@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.655 2004/11/10 10:16:41 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.656 2004/11/10 23:40:42 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -408,6 +408,7 @@ _INSTALL_PRE_COOKIE=${WRKDIR}/.install_started
 _FAKE_COOKIE=		${WRKDIR}/.fake_done
 .endif
 _PACKAGE_COOKIE=	${PKGFILE}
+_UPDATE_COOKIE=		${WRKDIR}/.update_${FULLPKGNAME${SUBPACKAGE}}
 .if defined(SEPARATE_BUILD)
 _CONFIGURE_COOKIE=	${WRKBUILD}/.configure_done
 _BUILD_COOKIE=		${WRKBUILD}/.build_done
@@ -416,7 +417,6 @@ _REGRESS_COOKIE=	${WRKBUILD}/.regress_done
 _CONFIGURE_COOKIE=	${WRKDIR}/.configure_done
 _BUILD_COOKIE=		${WRKDIR}/.build_done
 _REGRESS_COOKIE=	${WRKDIR}/.regress_done
-_UPDATE_COOKIE=     ${WRKDIR}/.update_done
 .endif
 
 _ALL_COOKIES=${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
