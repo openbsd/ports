@@ -1,60 +1,34 @@
-$OpenBSD: patch-abcde,v 1.2 2002/07/09 10:52:24 wilfried Exp $
---- abcde.orig	Mon Jan 28 06:44:02 2002
-+++ abcde	Sun Jul  7 17:35:39 2002
-@@ -12,6 +12,25 @@
- 
- VERSION=2.0.3
- 
-+f_seq_row () {
-+	i=$1
-+	while [ $i -ne `expr $2 + 1` ]
-+		do      
-+			echo $i
-+			i=`expr $i + 1`
-+		done
-+	}
-+
-+f_seq_line () {
-+	i=$1
-+	while [ $i -ne `expr $2 + 1` ]
-+		do      
-+			printf $i" "
-+			i=`expr $i + 1`
-+		done
-+		echo
-+	}
-+
- usage ()
- {
- echo "This is abcde v$VERSION."
-@@ -574,7 +593,7 @@ do_cddbread ()
+$OpenBSD: patch-abcde,v 1.3 2003/05/13 16:40:00 wilfried Exp $
+--- abcde.orig	Sun Jan 27 22:44:02 2002
++++ abcde	Tue May 13 07:11:24 2003
+@@ -574,7 +574,7 @@ do_cddbread ()
  			fi
  			# List out disc title/author and contents
  			echo ---- "$(cut '-d ' -f4- "$ABCDETEMPDIR/cddbquery")" ---- >> "$ABCDETEMPDIR/cddbchoices"
 -			for TRACK in $(seq 1 $TRACKS)
-+			for TRACK in $(f_seq_row 1 $TRACKS)
++			for TRACK in $(jot $TRACKS)
  			do
  				echo $TRACK: "$(grep ^TTITLE$(expr $TRACK - 1)= "$ABCDETEMPDIR/cddbread.1" | cut -f2- -d= | tr -d \\r\\n)" >> "$ABCDETEMPDIR/cddbchoices"
  			done
-@@ -590,7 +609,7 @@ do_cddbread ()
+@@ -590,7 +590,7 @@ do_cddbread ()
  			$CDDBTOOL template $(cat "$ABCDETEMPDIR/discid") > "$ABCDETEMPDIR/cddbread.1"
  			# List out disc title/author and contents of template
  			echo ---- Unknown Artist / Unknown Album ---- >> "$ABCDETEMPDIR/cddbchoices"
 -			for TRACK in $(seq 1 $TRACKS)
-+			for TRACK in $(f_seq_row 1 $TRACKS)
++			for TRACK in $(jot $TRACKS)
  			do
  				echo $TRACK: "$(grep ^TTITLE$(expr $TRACK - 1)= "$ABCDETEMPDIR/cddbread.1" | cut -f2- -d= | tr -d \\r\\n)" >> "$ABCDETEMPDIR/cddbchoices"
  			done
-@@ -620,7 +639,7 @@ do_cddbread ()
+@@ -620,7 +620,7 @@ do_cddbread ()
  				fi
  				# List out disc title/author and contents
  				echo \#$X: ---- "$DISCINFO" ---- >> "$ABCDETEMPDIR/cddbchoices"
 -				for TRACK in $(seq 1 $TRACKS)
-+				for TRACK in $(f_seq_row 1 $TRACKS)
++				for TRACK in $(jot $TRACKS)
  				do
  					echo $TRACK: "$(grep ^TTITLE$(expr $TRACK - 1)= "$ABCDETEMPDIR/cddbread.$X" | cut -f2- -d= | tr -d \\r\\n)" >> "$ABCDETEMPDIR/cddbchoices"
  				done
-@@ -717,20 +736,16 @@ do_cddbedit ()
+@@ -717,20 +717,16 @@ do_cddbedit ()
  		EDITCDDB=n
  	fi
  	if [ "$EDITCDDB" = "y" ]; then
@@ -80,7 +54,7 @@ $OpenBSD: patch-abcde,v 1.2 2002/07/09 10:52:24 wilfried Exp $
  		# bomb out
  		else
  			echo "No editor available. Check your EDITOR environment variable." >&2
-@@ -889,12 +904,12 @@ INTERACTIVE=y
+@@ -889,12 +885,12 @@ INTERACTIVE=y
  CDROMREADERSYNTAX=cdparanoia
  OUTPUTTYPE=ogg
  ENCODERSYNTAX=default
@@ -95,7 +69,7 @@ $OpenBSD: patch-abcde,v 1.2 2002/07/09 10:52:24 wilfried Exp $
  ENCNICE=10
  READNICE=10
  VARIOUSARTISTS=n
-@@ -964,13 +979,7 @@ if [ -z "$WAVOUTPUTDIR" ]; then
+@@ -964,13 +960,7 @@ if [ -z "$WAVOUTPUTDIR" ]; then
  	WAVOUTPUTDIR="$OUTPUTDIR"
  fi
  
@@ -110,16 +84,16 @@ $OpenBSD: patch-abcde,v 1.2 2002/07/09 10:52:24 wilfried Exp $
  
  # Load system defaults
  if [ -r /etc/abcde.conf ]; then
-@@ -1010,7 +1019,7 @@ while [ $# -gt 0 ]; do
+@@ -1010,7 +1000,7 @@ while [ $# -gt 0 ]; do
  	if [ "$RSTART" = "$REND" ]; then 
  		NEWTRACKS="$RSTART"
  	else
 -		NEWTRACKS=$(seq -s ' ' $RSTART $REND)
-+		NEWTRACKS=$(f_seq_line $RSTART $REND)
++		NEWTRACKS=$(jot -s ' ' $(expr $REND - $RSTART + 1) $RSTART)
  	fi
  	TRACKQUEUE=$(echo "$TRACKQUEUE" "$NEWTRACKS")
  
-@@ -1101,15 +1110,12 @@ if [ "$OUTPUTTYPE" = "ogg" ]; then NEEDC
+@@ -1101,15 +1091,12 @@ if [ "$OUTPUTTYPE" = "ogg" ]; then NEEDC
  
  # Make sure a buncha things exist
  for X in $CDROMREADER $CDDISCID ${NEEDTAGGER+$TAGGER} $ENCODER $WGET \
@@ -138,12 +112,12 @@ $OpenBSD: patch-abcde,v 1.2 2002/07/09 10:52:24 wilfried Exp $
  		exit 1
  	fi 
  done
-@@ -1191,7 +1197,7 @@ fi
+@@ -1191,7 +1178,7 @@ fi
  # Figure out where each track is going to be encoded
  ENCODELOCATIONS="$(echo $REMOTEHOSTS | tr , ' ')"
  if [ "$MAXPROCS" != "0" ]; then
 -	for NUM in $(seq 1 "$MAXPROCS")
-+	for NUM in $(f_seq_row 1 "$MAXPROCS")
++	for NUM in $(jot "$MAXPROCS")
  	do
  		ENCODELOCATIONS="$ENCODELOCATIONS %local$NUM%"
  	done
