@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/18 10:55:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/26 11:19:08 espie Exp $
 @option no-default-conflict
 @conflict jdk->=1.3,<1.4
-@pkgcfl jre->=1.3,<1.4
+@conflict jre->=1.3,<1.4
 ${JDKHOME}/
 ${JDKHOME}/COPYRIGHT
 ${JDKHOME}/LICENSE
