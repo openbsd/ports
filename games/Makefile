@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2002/11/26 08:59:51 sturm Exp $
+# $OpenBSD: Makefile,v 1.80 2002/12/14 17:06:00 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -19,6 +19,7 @@
 #    SUBDIR += bs
      SUBDIR += castle-combat
      SUBDIR += cgoban
+     SUBDIR += circuit
      SUBDIR += connect4
      SUBDIR += corewars
 #    SUBDIR += cosmo
