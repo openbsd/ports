@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2001/05/11 00:42:21 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.75 2001/05/20 14:24:52 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -121,6 +121,7 @@
 #    SUBDIR += p5-Proc-Simple
 #    SUBDIR += p5-Religion
 #    SUBDIR += p5-Resources
+     SUBDIR += p5-Set-Scalar
 #    SUBDIR += p5-Sort-Versions
      SUBDIR += p5-Storable
      SUBDIR += p5-Term-ReadKey
