@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.34 1999/10/02 18:48:01 brad Exp $
+$OpenBSD: LICENSE,v 1.35 1999/10/02 23:10:45 brad Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -257,7 +257,7 @@ Y	games/xpat2			xpat2-1.04-src.tar.gz		GPL
 Y	games/xripple			xripple.tar.gz			COPY
 Y	games/xroach			xroach.tar			COPY
 N	games/xscrabble			xscrabble.tar.gz		NOFEE
-Y	games/xskat			xskat-1.6.tar.gz		COPY
+Y	games/xskat			xskat-3.2.tar.gz		COPY
 Y	games/xsol			xsol-new.tar.gz			BSD
 Y	games/xsoldier			xsoldier-0.96.tar.gz		GPL
 N	games/xteddy			xteddy-1.0.tar.gz		NOFEE
