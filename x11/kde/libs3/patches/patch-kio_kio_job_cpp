@@ -1,0 +1,18 @@
+$OpenBSD: patch-kio_kio_job_cpp,v 1.1 2005/02/27 07:42:03 brad Exp $
+--- kio/kio/job.cpp.orig	Sun Feb 27 02:34:21 2005
++++ kio/kio/job.cpp	Sun Feb 27 02:35:28 2005
+@@ -3121,10 +3121,10 @@ void CopyJob::copyNextFile()
+                            f.close();
+                            KSimpleConfig config( path );
+                            config.setDesktopGroup();
+-                           config.writePathEntry( QString::fromLatin1("URL"), (*it).uSource.url() );
+-                           KURL urlName = (*it).uSource;
+-                           urlName.setPass( "" );
+-                           config.writeEntry( QString::fromLatin1("Name"), urlName.url() );
++                           KURL url = (*it).uSource;
++                           url.setPass( "" );
++                           config.writePathEntry( QString::fromLatin1("URL"), url.url() );
++                           config.writeEntry( QString::fromLatin1("Name"), url.url() );
+                            config.writeEntry( QString::fromLatin1("Type"), QString::fromLatin1("Link") );
+                            QString protocol = (*it).uSource.protocol();
+                            if ( protocol == QString::fromLatin1("ftp") )
