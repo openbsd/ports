@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2003/11/03 15:45:20 marcm Exp $
+# $OpenBSD: Makefile,v 1.194 2003/11/13 18:52:22 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -35,6 +35,7 @@
      SUBDIR += ectags
      SUBDIR += ffcall
      SUBDIR += flawfinder
+     SUBDIR += fox
      SUBDIR += gal
      SUBDIR += gal2
      SUBDIR += gconf
