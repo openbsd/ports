@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/02/28 13:34:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/19 20:02:05 naddy Exp $
 
 COMMENT=	"tool for manipulating IPv6 addresses"
 
-DISTNAME=	ipv6calc-0.37
+DISTNAME=	ipv6calc-0.41
 CATEGORIES=	net
 NEED_VERSION=	1.504
 HOMEPAGE=	http://www.bieringer.de/linux/IPv6/index.html
@@ -24,6 +24,7 @@ CONFIGURE_STYLE= gnu
 MAKE_FLAGS=	CC="${CC}" COPTS="${CFLAGS}"
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ipv6calc ${PREFIX}/bin/ipv6calc
+	${INSTALL_PROGRAM} ${WRKSRC}/ipv6calc/ipv6calc ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/ipv6logconv/ipv6logconv ${PREFIX}/bin/
 
 .include <bsd.port.mk>
