@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 1999/09/04 21:54:06 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/09/09 02:54:30 brad Exp $
 
-DISTNAME=	gnupg-0.9.11
+DISTNAME=	gnupg-1.0.0
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 		ftp://ftp.progsoc.uts.edu.au/pub/gnupg/gnupg/ \
@@ -16,7 +16,6 @@ MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 MAINTAINER=	markus.friedl@informatik.uni-erlangen.de
 
 USE_GMAKE=	yes
-SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -28,8 +27,10 @@ GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
 
 post-install:
 	@${MKDIR} ${GNUPGDOCDIR}
+	@${MKDIR} ${GNUPGDOCDIR}/html
 	@for f in ${GNUPGDOCFILES}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${f} ${GNUPGDOCDIR}/; \
 	done
+	@${CP} ${WRKSRC}/doc/gph/manual/* ${GNUPGDOCDIR}/html
 
 .include <bsd.port.mk>

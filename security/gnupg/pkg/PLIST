@@ -13,7 +13,53 @@ share/doc/gnupg/DETAILS
 share/doc/gnupg/FAQ
 share/doc/gnupg/OpenPGP
 share/doc/gnupg/HACKING
+share/doc/gnupg/html/armor.html
+share/doc/gnupg/html/book1.html
+share/doc/gnupg/html/clearsign.html
+share/doc/gnupg/html/completes-needed.html
+share/doc/gnupg/html/concepts.html
+share/doc/gnupg/html/decrypt.html
+share/doc/gnupg/html/detach-sig.html
+share/doc/gnupg/html/distfiles
+share/doc/gnupg/html/docbook.css
+share/doc/gnupg/html/edit-key.html
+share/doc/gnupg/html/encrypt.html
+share/doc/gnupg/html/export.html
+share/doc/gnupg/html/fingerprint.html
+share/doc/gnupg/html/gen-key.html
+share/doc/gnupg/html/gen-revoke.html
+share/doc/gnupg/html/import.html
+share/doc/gnupg/html/intro.html
+share/doc/gnupg/html/keyserver.html
+share/doc/gnupg/html/list-keys.html
+share/doc/gnupg/html/local-user.html
+share/doc/gnupg/html/management.html
+share/doc/gnupg/html/marginals-needed.html
+share/doc/gnupg/html/modules.html
+share/doc/gnupg/html/no-greeting.html
+share/doc/gnupg/html/output.html
+share/doc/gnupg/html/r566.html
+share/doc/gnupg/html/r882.html
+share/doc/gnupg/html/recipient.html
+share/doc/gnupg/html/recv-keys.html
+share/doc/gnupg/html/send-keys.html
+share/doc/gnupg/html/signatures.jpg
+share/doc/gnupg/html/symmetric.html
+share/doc/gnupg/html/verify.html
+share/doc/gnupg/html/wise.html
+share/doc/gnupg/html/x108.html
+share/doc/gnupg/html/x131.html
+share/doc/gnupg/html/x191.html
+share/doc/gnupg/html/x205.html
+share/doc/gnupg/html/x211.html
+share/doc/gnupg/html/x330.html
+share/doc/gnupg/html/x454.html
+share/doc/gnupg/html/x535.html
+share/doc/gnupg/html/x545.html
+share/doc/gnupg/html/x56.html
+share/doc/gnupg/html/x563.html
 share/gnupg/options.skel
 @dirrm lib/gnupg
+@dirrm share/doc/gnupg/html
 @dirrm share/doc/gnupg
 @dirrm share/gnupg
