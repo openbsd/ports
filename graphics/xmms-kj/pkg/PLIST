@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/07/30 17:23:24 wcobb Exp $
+lib/xmms/Visualization/libkjofol.so
+share/xmms/kjofol/default.zip
+@dirrm share/xmms/kjofol

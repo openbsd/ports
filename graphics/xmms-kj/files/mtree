@@ -1,0 +1,17 @@
+/set type=dir uname=root gname=wheel mode=0755
+usr
+  local
+    share
+      xmms
+        kjofol
+        ..
+      ..
+    ..
+    lib
+      xmms
+        Visualization
+        ..
+      ..
+    ..
+  ..
+..

@@ -1,0 +1,27 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2002/07/30 17:23:24 wcobb Exp $
+--- makefile.orig	Tue Dec  5 00:36:20 2000
++++ makefile	Tue Jul 30 01:14:49 2002
+@@ -6,6 +6,7 @@
+ # Set these for your systems locations.
+ # xmmsdir=/usr/local/share/xmms
+ # xmmsvislib=/usr/local/lib/xmms/Visualization
++
+ xmmsdir=`xmms-config --data-dir`
+ xmmsvislib=`xmms-config --visualization-plugin-dir`
+ 
+@@ -36,13 +37,11 @@ dist: clean
+ vislib:
+ 	make VFLAGS=-DXMMS_VIS=1 VLDFLAGS=-shared
+ 	mv kj libkjofol.so
+-	cp libkjofol.so $(xmmsvislib)
+ 
+ install:
+ 	make clean
+-	make vislib
+-	mkdir -p $(xmmsdir)/kjofol
+-	cp default.zip $(xmmsdir)/kjofol
++	mkdir -p $(WRKINST)/$(xmmsdir)/kjofol
++	cp default.zip $(WRKINST)/$(xmmsdir)/kjofol
+ 
+ remote:
+ 	make VFLAGS= VLDFLAGS=

@@ -1,0 +1,42 @@
+$OpenBSD: patch-playlist_c,v 1.1.1.1 2002/07/30 17:23:24 wcobb Exp $
+--- playlist.c.orig	Tue Dec  5 00:36:20 2000
++++ playlist.c	Tue Jul 30 01:22:20 2002
+@@ -224,24 +224,6 @@ GList *n;
+ #endif
+ }
+ 
+-
+-/* ---------------------------------------------------------------------- */
+-static void tpl_dump_playlist(GList *pl)
+-{
+-plist_entry *ent;
+-int i;
+-
+-	for(i = 1; pl != NULL; pl = g_list_next(pl), i++)
+-		{
+-		printf("%d. ", i);
+-		ent = (plist_entry *)pl->data;
+-		if(ent->filename) printf("%s ", ent->filename);
+-		if(ent->title) printf("%s ", ent->title);
+-		printf("%d\n", ent->length);
+-		}
+-}
+-
+-
+ /* ---------------------------------------------------------------------- */
+ static void tpl_refresh_playlist(GList *pl)
+ {
+@@ -251,10 +233,10 @@ static void tpl_refresh_playlist(GList *
+ 
+ 
+ /* ---------------------------------------------------------------------- */
+-static int tpl_int_compare_func(const void *a, const void *b)
++static gint tpl_int_compare_func(gconstpointer a, gconstpointer b)
+ {
+-	if((gint) a < (gint) b) return -1;
+-	if((gint) a > (gint) b) return 1;
++	if(GPOINTER_TO_INT(a) < GPOINTER_TO_INT(b)) return -1;
++	if(GPOINTER_TO_INT(a) > GPOINTER_TO_INT(b)) return 1;
+ 	else return 0;
+ }
+ 
