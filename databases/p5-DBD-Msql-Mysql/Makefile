@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2001/11/14 13:58:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2001/12/13 15:22:15 wilfried Exp $
 
 COMMENT=		'mysql drivers for the perl DBI'
 
-DISTNAME=		Msql-Mysql-modules-1.2216
-PKGNAME=		p5-DBD-Msql-Mysql-1.22.16
+DISTNAME=		Msql-Mysql-modules-1.2219
+PKGNAME=		p5-DBD-Msql-Mysql-1.22.19
 CATEGORIES=		databases perl5
-NEED_VERSION=		1.482
+NEED_VERSION=		1.500
+
+HOMEPAGE=		http://dbi.symbolstone.org
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
