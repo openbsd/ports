@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/07/20 20:18:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2002/08/03 21:08:19 naddy Exp $
 
 COMMENT=	"mailing list manager with web interface"
 
@@ -45,6 +45,10 @@ CONFIGURE_ARGS+=--with-mail-gid=nobody
 .else
 CONFIGURE_ARGS+=--with-mail-gid=daemon
 .endif
+
+post-configure:
+	@perl -i -pe 's#\$${${DESTDIRNAME}}##g' \
+		${WRKSRC}/misc/paths.py ${WRKSRC}/Mailman/Defaults.py
 
 post-install:
 	@${INSTALL_DATA_DIR} ${MMDOC}
