@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_osdep_unix_Makefile.gss,v 1.1 2001/09/24 22:01:49 jakob Exp $
+$OpenBSD: patch-src_osdep_unix_Makefile.gss,v 1.2 2001/12/16 23:27:01 pvalchev Exp $
 
---- src/osdep/unix/Makefile.gss.orig	Wed Oct 25 01:59:31 2000
-+++ src/osdep/unix/Makefile.gss	Sun Aug 26 14:30:52 2001
+--- src/osdep/unix/Makefile.gss.orig	Fri Sep 28 18:57:10 2001
++++ src/osdep/unix/Makefile.gss	Sun Dec 16 01:20:04 2001
 @@ -21,11 +21,10 @@
  # Extended flags needed for additional authenticators.  You may need to modify.
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_osdep_unix_Makefile.gss,v 1.1 2001/09/24 22:01:49 jakob Exp 
 -GSSOLDLDFLAGS= -L$(GSSDIR)/lib -lgssapi_krb5 -lkrb5 -lcrypto -lcom_err
 -GSSNEWLDFLAGS= -L$(GSSDIR)/lib -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err
 +GSSCFLAGS= -I/usr/include/kerberosV -DHEIMDAL
-+GSSLDFLAGS= -lgssapi -lkrb5 -lasn1 -lcom_err -ldes -lcrypto
++GSSLDFLAGS= -lkafs -lkrb -lgssapi -lkrb5 -lasn1 -lcom_err -ldes -lcrypto
  
  gss:	# GSSAPI Kerberos V flags
  	echo $(GSSCFLAGS) >> OSCFLAGS

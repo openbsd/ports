@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/18 16:57:08 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2001/12/16 23:27:01 pvalchev Exp $
 
 COMMENT=	University of Washington IMAP utilities
 
@@ -29,7 +29,7 @@ SUBDIRS=	chkmail dmail icat ifrom imapcopy imapxfer \
 CFLAGS+=	-I${LOCALBASE}/include/c-client
 LIBS+=		-L${LOCALBASE}/lib -lc-client \
 		-lssl -lcrypto \
-		-lgssapi -lkrb5 -lasn1 -lcom_err
+		-lkrb -lkafs -lgssapi -lkrb5 -lasn1 -lcom_err
 
 do-build:
 .for prog in ${SUBDIRS}
