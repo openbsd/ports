@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2003/05/14 04:52:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2003/08/13 23:41:02 naddy Exp $
 
 COMMENT=	"stack-based interpreter for terminal applications"
 
@@ -18,6 +18,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+# work around an optimizer bug in gcc 2.95
+.if ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=	gcc-patch-* patch-*
+.endif
 
 CONFIGURE_STYLE=	autoconf
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/autoconf
