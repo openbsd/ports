@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:31:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/18 10:35:36 espie Exp $
 @option no-default-conflict
-@pkgcfl db-4*
+@conflict db->=4,<5
 bin/db4_archive
 bin/db4_checkpoint
 bin/db4_deadlock
