@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sed,v 1.1.1.1 2000/06/02 14:15:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.1 2000/06/28 13:55:04 espie Exp $
 libdata/perl5/site_perl/Mail/Address.pm
 libdata/perl5/site_perl/Mail/Alias.pm
 libdata/perl5/site_perl/Mail/Cap.pm
