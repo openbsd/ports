@@ -3,8 +3,12 @@
 # Date created:		25 January 1998
 # Whom:			Angelos
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/01/25 22:28:49 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/10/31 07:59:26 turan Exp $
 #
+
+BROKEN=		bad packing lists, man/man1/xcb.1
+
+MAINTAINER=	angelos@openbsd.org
 
 DISTNAME=	xcb-2.3
 CATEGORIES=	x11
