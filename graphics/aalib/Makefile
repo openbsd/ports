@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/06/15 18:20:06 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2000/07/04 02:09:18 krw Exp $
 # $FreeBSD: Makefile,v 1.6 1998/09/22 15:30:37 vanilla Exp $
 
 DISTNAME=	aalib-1.2
 CATEGORIES=	graphics
-NEED_VERSION=	1.301
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.ta.jcu.cz/pub/aa/
 
 MAINTAINER=	brad@openbsd.org

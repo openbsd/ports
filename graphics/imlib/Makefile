@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2000/06/25 22:21:05 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2000/07/04 02:09:23 krw Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 DISTNAME=	imlib-1.9.8
 CATEGORIES=	graphics
-NEED_VERSION=	1.301
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://beaver.its.vu.edu.au/pub/enlightenment/enlightenment/libs/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/imlib/ \
 		ftp://ftp.squish.org/pub/enlightenment/imlib/

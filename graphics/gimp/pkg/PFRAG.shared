@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2000/06/15 19:02:37 brad Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2000/07/04 02:09:22 krw Exp $
 lib/gimp/1.1/modules/libcdisplay_gamma.so.0.0
 lib/gimp/1.1/modules/libcdisplay_highcontrast.so.0.0
 lib/gimp/1.1/modules/libcolorsel_gtk.so.0.0
@@ -7,4 +7,4 @@ lib/gimp/1.1/modules/libcolorsel_water.so.0.0
 lib/libgck.so.1.1
 lib/libgimp.so.1.1
 lib/libgimpui.so.1.1
-@exec /sbin/ldconfig -m %B
+DYNLIBDIR(%B)

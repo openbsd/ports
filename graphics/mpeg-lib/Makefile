@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2000/06/15 18:48:57 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/07/04 02:09:24 krw Exp $
 
 DISTNAME=	mpeg_lib-1.3.1
 CATEGORIES=	graphics
-NEED_VERSION=	1.301
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.bic.mni.mcgill.ca/pub/mpeg/ \
 		http://starship.python.net/~gward/mpeglib/
 

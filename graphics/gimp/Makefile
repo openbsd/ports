@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2000/06/28 02:15:54 brad Exp $
+# $OpenBSD: Makefile,v 1.49 2000/07/04 02:09:21 krw Exp $
 
 DISTNAME=	gimp-1.1.24
 CATEGORIES=	graphics
-NEED_VERSION=	1.301
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/v1.1/v1.1.24/ \
 		ftp://ftp.sunet.se/pub/gnu/gimp/v1.1/v1.1.24/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/v1.1/v1.1.24/

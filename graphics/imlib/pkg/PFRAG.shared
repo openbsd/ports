@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2000/06/15 19:08:55 brad Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2000/07/04 02:09:23 krw Exp $
 lib/libImlib.so.19.8
 lib/libgdk_imlib.so.19.8
 lib/libimlib-bmp.so.0.0
@@ -9,4 +9,4 @@ lib/libimlib-ppm.so.0.0
 lib/libimlib-ps.so.0.0
 lib/libimlib-tiff.so.0.0
 lib/libimlib-xpm.so.0.0
-@exec /sbin/ldconfig -m %B
+DYNLIBDIR(%B)

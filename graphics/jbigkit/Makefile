@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2000/06/20 19:03:56 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/07/04 02:09:24 krw Exp $
 # $FreeBSD: Makefile,v 1.5 1998/09/14 22:19:05 smace Exp $
 
 DISTNAME=	jbigkit-1.2
 CATEGORIES=	graphics
-NEED_VERSION=	1.301
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.informatik.uni-erlangen.de/local/cip/mskuhn/ISO/JBIG/ \
 		http://www.cl.cam.ac.uk/~mgk25/download/
 
