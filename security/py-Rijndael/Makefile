@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/08/22 06:14:39 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2003/08/29 20:34:54 sturm Exp $
 
 COMMENT=	"python implementation of the Rijndael encryption algorithm"
 
@@ -6,6 +6,8 @@ VERSION=	1.1
 DISTNAME=	pyrijndael-snapshot
 PKGNAME=	py-Rijndael-${VERSION}
 CATEGORIES=     security devel
+
+HOMEPAGE=	http://jclement.ca/software/pyrijndael/
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
@@ -15,30 +17,21 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-HOMEPAGE=	http://jclement.ca/software/pyrijndael/
 MASTER_SITES=	${HOMEPAGE}
+DIST_SUBDIR=	${PKGNAME}
 
-BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-RUN_DEPENDS=	${BUILD_DEPENDS}
+MODULES=	python
 
-WRKDIST=	${WRKDIR}/pyrijndael
-
-PYTHON_VER=	2.2
-PY_CMD=		@cd ${WRKSRC}; python${PYTHON_VER}
-PY_SITEPKG=	${PREFIX}/lib/python${PYTHON_VER}/site-packages/
-PY_MODNAME=	pyRijndael.py
-
-SUBST_VARS=	PYTHON_VER
+WRKSRC=	${WRKDIR}/pyrijndael
 
 do-build:
-	${PY_CMD} -c 'import pyRijndael'
-	${PY_CMD} -O -c 'import pyRijndael'
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	${INSTALL_DATA_DIR} ${PY_SITEPKG}
-	${INSTALL_DATA} ${WRKSRC}/pyRijndael.* ${PY_SITEPKG}
+	${INSTALL_DATA_DIR} ${MODPY_SITEPKG}
+	${INSTALL_DATA} ${WRKSRC}/pyRijndael.* ${MODPY_SITEPKG} 
 
 do-regress:
-	@${PY_CMD} ${PY_MODNAME}
+	@cd ${WRKSRC} && ${MODPY_BIN} ./pyRijndael.py
 
 .include <bsd.port.mk>
