@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/09/28 08:11:34 shell Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/03/13 09:53:36 shell Exp $
 bin/check_attach.plx
 bin/eurofix.plx
 bin/hackos2.plx
@@ -60,9 +60,11 @@ libdata/perl5/site_perl/Font/TTF/Segarr.pm
 libdata/perl5/site_perl/Font/TTF/Table.pm
 libdata/perl5/site_perl/Font/TTF/Ttc.pm
 libdata/perl5/site_perl/Font/TTF/Ttopen.pm
+libdata/perl5/site_perl/Font/TTF/Useall.pm
 libdata/perl5/site_perl/Font/TTF/Utils.pm
 libdata/perl5/site_perl/Font/TTF/Vhea.pm
 libdata/perl5/site_perl/Font/TTF/Vmtx.pm
+libdata/perl5/site_perl/Font/TTF/Win32.pm
 libdata/perl5/site_perl/Font/TTF/XMLparse.pm
 libdata/perl5/site_perl/ttfmod.pl
 man/man1/ttfbuilder.plx.1
@@ -125,6 +127,7 @@ share/examples/p5-Font-TTF/StripCmap.plx
 share/examples/p5-Font-TTF/addpclt.plx
 share/examples/p5-Font-TTF/makemono.plx
 share/examples/p5-Font-TTF/symbol.rmp
+share/examples/p5-Font-TTF/ttfaddname.plx
 share/examples/p5-Font-TTF/ttfdeltable.plx
 share/examples/p5-Font-TTF/ttfenc.plx
 share/examples/p5-Font-TTF/ttfwidth.plx
@@ -134,3 +137,4 @@ share/examples/p5-Font-TTF/zerohyph.plx
 @dirrm share/examples/p5-Font-TTF
 @dirrm libdata/perl5/site_perl/Font/TTF/Mort
 @dirrm libdata/perl5/site_perl/Font/TTF/Kern
+@dirrm libdata/perl5/site_perl/Font/TTF

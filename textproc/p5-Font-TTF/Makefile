@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/09/28 08:11:33 shell Exp $
+# $OpenBSD: Makefile,v 1.8 2002/03/13 09:53:36 shell Exp $
 
 COMMENT=	"perl module for TrueType font hacking"
 
-DISTNAME=	Font-TTF-0.26
+DISTNAME=	Font-TTF-0.28
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
-NEED_VERSION=	1.433
+NEED_VERSION=	1.508
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Font
