@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/01/06 01:58:44 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/01/07 18:15:37 brad Exp $
 # $FreeBSD: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
 
 DISTNAME=	tcl8.0.5
@@ -21,7 +21,7 @@ CONFIGURE_ARGS+= --disable-load
 .endif
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
 
-WRKSRC=	${WRKDIR}/tcl8.0.5/unix
+WRKSRC=	${WRKDIR}/${DISTNAME}/unix
 
 post-install:
 	@${LDCONFIG} -m ${PREFIX}/lib

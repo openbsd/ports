@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/01/06 02:08:37 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/01/07 18:17:44 brad Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 
 DISTNAME=	tk8.0.5
@@ -19,7 +19,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} 
 
-WRKSRC=	${WRKDIR}/tk8.0.5/unix
+WRKSRC=	${WRKDIR}/${DISTNAME}/unix
 
 post-install:
 	@${LDCONFIG} -m ${PREFIX}/lib
