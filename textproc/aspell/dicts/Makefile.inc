@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2003/11/21 05:29:37 jolan Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2003/11/22 05:34:58 jolan Exp $
 
 DIST_SUBDIR?=	aspell
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP?=	Yes
 PERMIT_PACKAGE_CDROM?=	Yes
 PERMIT_PACKAGE_FTP?=	Yes
 
-NO_REGRESS=	Yes
+NO_REGRESS?=	Yes
 
 CONFIGURE_STYLE?=simple
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/11/21 03:41:35 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2003/11/22 05:34:58 jolan Exp $
 
 COMMENT=	"spell checker designed to eventually replace Ispell"
 VER=		0.50.4.1
@@ -6,7 +6,7 @@ DISTNAME=	aspell-${VER}
 DIST_SUBDIR=	aspell
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU:=aspell/}
-MASTER_SITES0=	${MASTER_SITE_GNU:=aspell/dicts/en/}
+MASTER_SITES0=	${MASTER_SITE_GNU:=aspell/dict/en/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} aspell-en-0.51-0.tar.bz2:0
 
 HOMEPAGE=	http://aspell.sourceforge.net/
