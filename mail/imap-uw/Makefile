@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2000/05/03 07:44:56 jakob Exp $
+# $OpenBSD: Makefile,v 1.7 2000/05/31 07:29:36 jakob Exp $
 
-DISTNAME=	imap-4.7c1
-PKGNAME=	imap-uw-4.7c1
+DISTNAME=	imap-4.7c2
+PKGNAME=	imap-uw-4.7c2
 CATEGORIES=	mail
 
 MAINTAINER=     jakob@openbsd.org
@@ -12,9 +12,7 @@ PERMIT_DISTFILES_CDROM=	no
 PERMIT_DISTFILES_FTP=	yes
 
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
-		ftp://ftp.cac.washington.edu/imap/old/ \
-		ftp://ftp.sunet.se/pub/unix/mail/imap/ \
-		ftp://ftp.sunet.se/pub/unix/mail/imap/old/
+		ftp://ftp.cac.washington.edu/imap/old/
 EXTRACT_SUFX=	.tar.Z
 
 FAKE=		yes
