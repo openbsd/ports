@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2000/04/22 12:12:07 turan Exp $
+# $OpenBSD: Makefile,v 1.21 2000/05/27 22:57:27 espie Exp $
 
 DISTNAME=       pgp263is
 PKGNAME=	pgp-2.6.3
@@ -22,19 +22,39 @@ FAKE=		Yes
 
 FLAVORS=	usa intl
 
-.if defined(FLAVOR)
-.if ${FLAVOR} == "usa"
-USA_RESIDENT=	yes
-.elif ${FLAVOR} == "intl"
-USA_RESIDENT=	no
+.if defined(USA_RESIDENT)
+.if ${USA_RESIDENT:L} == "yes"
+FLAVOR=usa
+.elif ${USA_RESIDENT:L} == "no"
+FLAVOR=intl
 .endif
 .endif
+
+# No default flavor, error.
+FLAVOR?=
+.if empty(FLAVOR)
+.BEGIN:
+	@echo ""
+	@echo "The variable USA_RESIDENT must be set to either Yes or No"
+	@echo "in order to build this package.  USA residents that are"
+	@echo "not licensees of the RSA algorithm MUST set this variable"
+	@echo "to Yes.  Users outside the USA MUST set this variable to"
+	@echo "No.  Licensees may choose -- No is faster."
+	@echo ""
+	@echo "RSAREF2 will be automatically obtained and used to generate"
+	@echo "this program when given the command \"make USA_RESIDENT=Yes\""
+	@echo ""
+	@echo "The new port flavor system also allows you to use "
+	@echo "FLAVOR=usa or FLAVOR=intl"
+	@false
+.endif
+
 
 # common C flags
 CFLAGS+=-DUNIX -DPORTABLE -DMERIT -DIDEA32 -DMAX_NAMELEN=255 \
 	-DPGP_DOC_DIR=\\\"${PGP_DOC_DIR}\\\"
 
-.if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
+.if ${FLAVOR:L} == "usa"
 LIB_DEPENDS=	rsaref.2::security/rsaref
 RSAOBJS= rsaglue2.o
 RSAINCDIR= -I${LOCALBASE}/include
@@ -54,23 +74,6 @@ DOCFILES= appnote.doc blurb.txt changes.doc faq.txt keyserv.doc \
 	mitlicen.txt pgformat.doc pgp262i.dif pgp263i.dif \
 	pgp_vms.hlp pgpdoc1.txt pgpdoc2.txt politic.doc przon26i.asc
 
-fetch-depends:
-.if !defined(NO_WARNINGS)
-.if !defined(USA_RESIDENT) || ${USA_RESIDENT:U} != YES && ${USA_RESIDENT:U} != NO
-	@echo ""
-	@echo "You must set variable USA_RESIDENT to YES if you are a USA"
-	@echo "resident or NO otherwise.  USA residents must obtain the"
-	@echo "RSAREF2 library to generate this program.  \(RSA Inc. holds"
-	@echo "a patent on RSA in the USA - using RSA implementations"
-	@echo "other than RSAREF in the USA will violate the US patent\)."
-	@echo ""
-	@echo "RSAREF2 will be automatically obtained and used to generate"
-	@echo "this program when given the command \"make USA_RESIDENT=yes\""
-	@echo ""
-	@false
-.endif
-.endif
-
 # 2nd level extract required
 post-extract:
 	@if ! (cd ${WRKDIR} && tar -xf pgp263ii.tar); then \
@@ -89,13 +92,13 @@ pre-build:
 	 fi
 
 do-build:
-	@(cd ${WRKSRC} && env ${MAKE_ENV} make -f makefile all \
+	@cd ${WRKSRC} && env -i ${MAKE_ENV} make -f makefile all \
 	  RSAOBJS="${RSAOBJS}" RSALIBS="${RSALIBS}" \
-	  CFLAGS="${CFLAGS} `cat ${WRKDIR}/.endian`" )
+	  CFLAGS="${CFLAGS} `cat ${WRKDIR}/.endian`" 
 
 do-install:
-	@mkdir -p ${PREFIX}/lib/pgp
-	@mkdir -p ${PGP_DOC_DIR}
+	@${INSTALL_DATA_DIR} ${PREFIX}/lib/pgp
+	@${INSTALL_DATA_DIR} ${PGP_DOC_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/pgp ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/doc/pgp.1 ${PREFIX}/man/man1
 .for libfile in ${LIBFILES}
