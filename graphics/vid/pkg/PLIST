@@ -1,2 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/19 03:25:08 angelos Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/01/20 18:54:14 sturm Exp $
 bin/vid
+share/doc/vid/README
+@dirrm share/doc/vid

@@ -1,6 +1,6 @@
-$OpenBSD: patch-vid_h,v 1.1.1.1 2001/06/19 03:25:08 angelos Exp $
---- vid.h.orig	Mon May  8 00:59:03 2000
-+++ vid.h	Sat Jun  9 01:33:37 2001
+$OpenBSD: patch-vid_h,v 1.2 2003/01/20 18:54:14 sturm Exp $
+--- vid.h.orig	Sun May  7 22:59:03 2000
++++ vid.h	Sun Jan 19 11:41:56 2003
 @@ -37,6 +37,8 @@
  #define OV511_REG_CLKDIV	0x51
  #define OV511_REG_SNAP		0x52

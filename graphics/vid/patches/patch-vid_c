@@ -1,6 +1,6 @@
-$OpenBSD: patch-vid_c,v 1.2 2002/05/24 22:47:13 naddy Exp $
+$OpenBSD: patch-vid_c,v 1.3 2003/01/20 18:54:14 sturm Exp $
 --- vid.c.orig	Mon May  8 06:59:03 2000
-+++ vid.c	Sat May 25 00:36:03 2002
++++ vid.c	Mon Jan 20 17:56:47 2003
 @@ -48,15 +48,15 @@ ov511_reg_read(int fd, int reg) {
    struct usb_ctl_request ur;
    unsigned char data[1024];
@@ -49,13 +49,21 @@ $OpenBSD: patch-vid_c,v 1.2 2002/05/24 22:47:13 naddy Exp $
    
    if(ioctl(fd, USB_DO_REQUEST, &ur) < 0) {
      return -1;
-@@ -217,12 +217,15 @@ main(int argc, char *argv[]) {
+@@ -213,16 +213,23 @@ main(int argc, char *argv[]) {
+   char dev[FILENAME_MAX];	/* for constructing device names */
+   char isocdev[FILENAME_MAX];	/* for constructing endpoint 1 device names */
+   char *devname = NULL;		/* device name */
++  char *p = NULL;               /* for string ops */
++  int slen = -1;                 /* string length holder */
++  int plen = -1;                 /* string length holder */
+   int len = -1;			/* isochronous input read length */
    struct vidstate vs;		/* current read state */
    int small = 0;		/* use 320x240 */
    int frmnm = 0;		/* cyclic frame number key */
-+  int isplus;			/* bridge is OV511+ if true, else OV511 */
-+  int is20;			/* sensor is OV7620 if true, else OV7610 */
-+  int bufsize;			/* size of packet buffer */
++  int isplus;                  /* bridge is OV511+ if true, else OV511 */
++  int is20;                    /* sensor is OV7620 if true, else OV7610 */
++  int bufsize;                 /* size of packet buffer */
++
  
    /* pnm_init(&argc, argv); */	/* required for PNM programs? */
  
@@ -66,7 +74,7 @@ $OpenBSD: patch-vid_c,v 1.2 2002/05/24 22:47:13 naddy Exp $
  	      "\nCopyright 2000 Peter S. Housel"
  	      "\nThis program is free software; "
  	      "you may redistribute it under the terms of"
-@@ -235,7 +238,7 @@ main(int argc, char *argv[]) {
+@@ -235,7 +242,7 @@ main(int argc, char *argv[]) {
        exit(0);
      } else if(strcmp(*argv, "--help") == 0) {
        fprintf(stderr, "usage: vid [options]\n"
@@ -75,34 +83,47 @@ $OpenBSD: patch-vid_c,v 1.2 2002/05/24 22:47:13 naddy Exp $
  	      "and write image data to standard output in PNM format\n\n"
  	      "--version              print program version information\n"
  	      "--usage                summarize command line options\n"
-@@ -287,8 +290,9 @@ main(int argc, char *argv[]) {
+@@ -243,6 +250,7 @@ main(int argc, char *argv[]) {
+ 	      "--small                capture as 320x240 image (default is 640x480)\n"
+ 	      "-d device, --device-name=device\n"
+ 	      "                       specify OV511 ugen device\n");
++      fprintf(stderr, "example: vid | pnmtojpeg > ~/public_html/mywebcam.jpg\n");
+       exit(0);
+     } else if(strcmp(*argv, "--small") == 0) {
+       small = 1;
+@@ -287,18 +295,21 @@ main(int argc, char *argv[]) {
        exit(1);
      }
  
 -    if(udi.vendorNo != 0x05A9 || udi.productNo != 0x0511) {
 -      fprintf(stderr, "device %s is not an OmniVision OV511\n", devname);
-+    if(udi.udi_vendorNo != 0x05A9 || (udi.udi_productNo != 0x0511 &&
-+				  udi.udi_productNo != 0xa511)) {
-+      fprintf(stderr, "device %s is not an OmniVision OV511 or OV511+\n", devname);
++   if(udi.udi_vendorNo != 0x05A9 ||
++     (udi.udi_productNo != 0x0511 && udi.udi_productNo != 0xa511)) {
++      fprintf(stderr, "device %s is not an OmniVision OV511/OV511+\n", devname);
        exit(1);
      }
    } else {
-@@ -298,7 +302,8 @@ main(int argc, char *argv[]) {
+     int i = 0;
+     for(i = 0; i < 15; ++i) {
+-      sprintf(dev, "/dev/ugen%d", i);
++      snprintf(dev, sizeof(dev), "/dev/ugen%d.00", i);
        if((fd = open(dev, O_RDWR)) < 0)
  	continue;
-       if(ioctl(fd, USB_GET_DEVICEINFO, &udi) < 0
+-      if(ioctl(fd, USB_GET_DEVICEINFO, &udi) < 0
 -	 || udi.vendorNo != 0x05A9 || udi.productNo != 0x0511) {
-+	 || udi.udi_vendorNo != 0x05A9 || (udi.udi_productNo != 0x0511 &&
-+				       udi.udi_productNo != 0xa511)) {
++      if(ioctl(fd, USB_GET_DEVICEINFO, &udi) < 0 ||
++	  udi.udi_vendorNo != 0x05A9 ||
++         (udi.udi_productNo != 0x0511 &&
++          udi.udi_productNo != 0xa511)) {
  	close(fd);
  	fd = -1;
  	continue;
-@@ -308,12 +313,15 @@ main(int argc, char *argv[]) {
+@@ -308,12 +319,15 @@ main(int argc, char *argv[]) {
      }
  
      if(fd < 0) {
 -      fprintf(stderr, "vid: couldn't locate an OV511 device\n");
-+      fprintf(stderr, "vid: couldn't locate an OV511 or OV511+ device\n");
++      fprintf(stderr, "vid: couldn't locate an OV511/OV511+ device\n");
        exit(1);
      }
  
@@ -114,7 +135,7 @@ $OpenBSD: patch-vid_c,v 1.2 2002/05/24 22:47:13 naddy Exp $
    
    /* reset the OV511 */
    if(ov511_reg_write(fd, OV511_REG_RST, 0x7f) < 0)
-@@ -398,23 +406,55 @@ main(int argc, char *argv[]) {
+@@ -398,23 +412,56 @@ main(int argc, char *argv[]) {
    if(ov511_reg_write(fd, OV511_REG_CE_EN, 0x0) < 0)
      exit(1);
  
@@ -179,14 +200,15 @@ $OpenBSD: patch-vid_c,v 1.2 2002/05/24 22:47:13 naddy Exp $
 +    ov511_i2c_write(fd, OV7610_REG_COMJ, 0x93);
 +    ov511_i2c_write(fd, OV7610_REG_BADJ, 0x48);
 +    ov511_i2c_write(fd, OV7610_REG_COMK, 0x81);
- 
--  ov511_i2c_write(fd, OV7610_REG_GAM, 0x04);
++
 +    ov511_i2c_write(fd, OV7610_REG_GAM, 0x04);
 +  }
  
+-  ov511_i2c_write(fd, OV7610_REG_GAM, 0x04);
+ 
    if(small) {
      vs.width = 320;
-@@ -442,14 +482,14 @@ main(int argc, char *argv[]) {
+@@ -442,14 +489,14 @@ main(int argc, char *argv[]) {
    ov511_reg_write(fd, OV511_REG_LNDV, 0x00);
  
    /* set FIFO format (993-byte packets) */
@@ -204,7 +226,32 @@ $OpenBSD: patch-vid_c,v 1.2 2002/05/24 22:47:13 naddy Exp $
    if(ioctl(fd, USB_SET_ALTINTERFACE, &alt) < 0) {
      perror("USB_SET_ALTINTERFACE");
      exit(1);
-@@ -475,36 +515,38 @@ main(int argc, char *argv[]) {
+@@ -468,43 +515,62 @@ main(int argc, char *argv[]) {
+   vs.xels = pnm_allocarray(vs.width, vs.height);
+ 
+   /* open the isochronous endpoint (endpoint 1) */
+-  sprintf(isocdev, "%s.1", devname);
++  /* first we need to construct the endpoint device from */
++  /* the given device */
++  p    = strchr(devname, '.');
++  slen = strlen(devname);
++  if(p == NULL) {
++    /* there is no dot, just append the isoc endpoint */
++    /* this is horribly contrived and needs some work, */
++    /* at this point OpenBSD doesn't use /dev/ugenX so */
++    /* it will get fixed if soon */
++    snprintf(isocdev, sizeof(isocdev), "%s.01", devname);
++  } else {
++    /* there is a dot */
++    plen = strlen(p);
++    snprintf(isocdev, sizeof(isocdev), "%s", devname);
++    isocdev[slen - plen] = NULL;
++    snprintf(isocdev, sizeof(isocdev), "%s.01", isocdev);
++  }
++
+   if((isoc = open(isocdev, O_RDONLY)) < 0) {
+     perror(isocdev);
+     exit(1);
    }
  
    /* read, looking for start and end frames */
