@@ -1,21 +1,52 @@
-diff -ur man/Makefile.in.orig man/Makefile.in
---- man/Makefile.in.orig	Mon Mar  3 12:21:07 1997
-+++ man/Makefile.in	Mon Dec 22 19:14:58 1997
-@@ -55,13 +55,13 @@
- 	cd $(srcdir) && for file in $(PRODUCT).1; do \
- 	  $(INSTALL_DATA) $$file $(mandir)/man1/$$file; \
- 	done
--	cd $(srcdir) && for file in $(PRODUCT).man; do \
--	  $(INSTALL_DATA) $$file $(mandir)/cat1/$$file; \
+--- man/Makefile.in.~1~	Mon Mar  3 10:21:07 1997
++++ man/Makefile.in	Fri Aug 28 11:30:14 1998
+@@ -32,12 +32,12 @@
+ prefix = @prefix@
+ mandir = @mandir@
+ 
+-DISTFILES = Makefile.in version.in $(PRODUCT).1 version.n stamp-vnr $(PRODUCT).man $(PRODUCT).ps
++DISTFILES = Makefile.in version.in $(PRODUCT).1 version.n stamp-vnr $(PRODUCT).0 $(PRODUCT).ps
+ 
+-all manpage: $(PRODUCT).man $(PRODUCT).ps
++all manpage: $(PRODUCT).0 $(PRODUCT).ps
+ 
+-$(PRODUCT).man: $(PRODUCT).1 version.n
+-	cd $(srcdir) && $(TROFF) $(TROFFOPTS) -Tascii $(PRODUCT).1 >$(PRODUCT).man
++$(PRODUCT).0: $(PRODUCT).1 version.n
++	cd $(srcdir) && $(TROFF) $(TROFFOPTS) -Tascii $(PRODUCT).1 >$(PRODUCT).0
+ $(PRODUCT).ps: $(PRODUCT).1 version.n
+ 	cd $(srcdir) && $(TROFF) $(TROFFOPTS) -Tps $(PRODUCT).1 >$(PRODUCT).ps
+ 
+@@ -51,17 +51,17 @@
+ 	date > $<
+ 
+ install: all
+-	$(srcdir)/../mkinstalldirs $(mandir) $(mandir)/man1 $(mandir)/cat1
+-	cd $(srcdir) && for file in $(PRODUCT).1; do \
+-	  $(INSTALL_DATA) $$file $(mandir)/man1/$$file; \
 -	done
-+#	cd $(srcdir) && for file in $(PRODUCT).man; do \
-+#	  $(INSTALL_DATA) $$file $(mandir)/cat1/$$file; \
+-	cd $(srcdir) && for file in $(PRODUCT).man; do \
++	$(srcdir)/../mkinstalldirs $(mandir) $(mandir)/cat1
++#	cd $(srcdir) && for file in $(PRODUCT).1; do \
++#	  $(INSTALL_DATA) $$file $(mandir)/man1/$$file; \
 +#	done
++	cd $(srcdir) && for file in $(PRODUCT).0; do \
+ 	  $(INSTALL_DATA) $$file $(mandir)/cat1/$$file; \
+ 	done
  
  uninstall:
  	rm -f $(mandir)/man1/$(PRODUCT).1
 -	rm -f $(mandir)/cat1/$(PRODUCT).man
-+#	rm -f $(mandir)/cat1/$(PRODUCT).man
++	rm -f $(mandir)/cat1/$(PRODUCT).0
  
  mostlyclean:
  	rm -f *.tmp
+@@ -72,7 +72,7 @@
+ 	rm -f Makefile
+ 
+ realclean: distclean
+-	rm -f stamp-vti $(PRODUCT).man $(PRODUCT).n $(PRODUCT).ps
++	rm -f stamp-vti $(PRODUCT).0 $(PRODUCT).n $(PRODUCT).ps
+ 
+ dist: $(DISTFILES)
+ 	@echo "Copying distribution files"

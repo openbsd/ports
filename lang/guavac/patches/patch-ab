@@ -1,9 +1,0 @@
-diff -ur common/string.h.orig common/string.h
---- common/string.h.orig	Sat Jan 13 20:40:28 1996
-+++ common/string.h	Mon Dec 22 19:14:57 1997
-@@ -5,4 +5,5 @@
- #ifndef __SINST__
- #define __SINST__
- #endif
-+#include_next <string.h>	// Get missing memmove() prototype for libg++
- #include <string>

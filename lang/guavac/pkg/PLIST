@@ -1,6 +1,8 @@
+@cwd /usr/local
+@name guavac-1.2
 bin/guavac
 bin/guavad
 bin/gcok
-man/man1/guavac.1
+man/cat1/guavac.0
 share/guavac/classes.zip
 @dirrm share/guavac
