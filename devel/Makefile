@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.292 2005/01/11 00:03:24 fgsch Exp $
+# $OpenBSD: Makefile,v 1.293 2005/01/12 08:59:57 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -187,6 +187,7 @@
      SUBDIR += p5-File-Type
      SUBDIR += p5-FreezeThaw
      SUBDIR += p5-Getargs-Long
+     SUBDIR += p5-IO-Capture
      SUBDIR += p5-IO-Digest
      SUBDIR += p5-IO-Multiplex
      SUBDIR += p5-IO-String
