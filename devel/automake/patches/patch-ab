@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Mar 29 15:32:50 1999
-+++ Makefile.in	Mon Mar 29 15:33:00 1999
+--- Makefile.in.orig	Fri Jan 15 07:55:38 1999
++++ Makefile.in	Sat Mar 18 23:43:54 2000
 @@ -57,7 +57,7 @@
  NORMAL_UNINSTALL = :
  PRE_UNINSTALL = :
@@ -9,3 +9,12 @@
  PACKAGE = @PACKAGE@
  PERL = @PERL@
  TAR = @TAR@
+@@ -564,7 +564,7 @@
+ 
+ install-data-hook:
+ 	@for prog in $(script_DATA); do \
+-	  chmod +x $(scriptdir)/$$prog; \
++	  chmod +x $(DESTDIR)$(scriptdir)/$$prog; \
+ 	done
+ 
+ installcheck-local:
