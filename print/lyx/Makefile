@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/04/09 17:37:52 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/04/14 07:59:55 turan Exp $
 
 DISTNAME=	lyx-1.0.0
 CATEGORIES=	print
@@ -21,7 +21,7 @@ LIB_DEPENDS=	xforms::x11/xforms
 
 GNU_CONFIGURE=	Yes
 STRIP=
-CONFIGURE_ARGS+=--with-extra-lib=${X11BASE}/lib --with-extra-inc="${X11BASE}/include ${X11BASE}/include/X11"
+CONFIGURE_ARGS+=--with-extra-lib=${LOCALBASE}/lib --with-extra-inc="${LOCALBASE}/include ${LOCALBASE}/include/X11"
 
 post-install:
 	@strip ${PREFIX}/bin/lyx
