@@ -1,9 +1,0 @@
-$OpenBSD: patch-vncviewer_Imakefile,v 1.1 2001/05/22 19:30:17 matt Exp $
---- vncviewer/Imakefile.orig	Fri Aug 13 05:29:34 1999
-+++ vncviewer/Imakefile	Tue May 22 10:39:24 2001
-@@ -35,4 +35,4 @@ SRCS = \
- 
- OBJS = $(SRCS:.c=.o)
- 
--ComplexProgramTarget(vncviewer)
-+ComplexProgramTargetNoMan(vncviewer)
