@@ -1,9 +1,8 @@
-# vim:ts=8
-# $OpenBSD: Makefile,v 1.13 2001/07/30 10:41:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2001/09/22 05:45:26 jcs Exp $
 
-DISTNAME=	gaim-0.11.0pre14
+DISTNAME=	gaim-0.44
 CATEGORIES=	net
-NEED_VERSION=	1.427
+NEED_VERSION=	1.457
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -23,7 +22,7 @@ LIB_DEPENDS=	gdk_pixbuf.2::graphics/gdk-pixbuf
 RUN_DEPENDS=	ispell::textproc/ispell
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} --disable-gnome
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} --disable-gnome --disable-artsc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

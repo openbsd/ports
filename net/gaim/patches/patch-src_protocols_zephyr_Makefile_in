@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_protocols_zephyr_Makefile_in,v 1.1 2001/09/22 05:45:27 jcs Exp $
+--- src/protocols/zephyr/Makefile.in.orig	Sat Sep 22 00:25:32 2001
++++ src/protocols/zephyr/Makefile.in	Sat Sep 22 00:25:43 2001
+@@ -200,7 +200,7 @@
+ AR = ar
+ LTLIBRARIES =  $(pkg_LTLIBRARIES)
+ 
+-libzephyr_la_LDFLAGS = 
++libzephyr_la_LDFLAGS = -export-dynamic -avoid-version
+ libzephyr_la_LIBADD = 
+ @STATIC_ZEPHYR_FALSE@libzephyr_la_OBJECTS =  ZAsyncLocate.lo ZCkAuth.lo \
+ @STATIC_ZEPHYR_FALSE@ZCkIfNot.lo ZClosePort.lo ZCmpUID.lo ZCmpUIDP.lo \

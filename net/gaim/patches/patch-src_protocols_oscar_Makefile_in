@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_protocols_oscar_Makefile_in,v 1.1 2001/09/22 05:45:27 jcs Exp $
+--- src/protocols/oscar/Makefile.in.orig	Sat Sep 22 00:23:42 2001
++++ src/protocols/oscar/Makefile.in	Sat Sep 22 00:23:50 2001
+@@ -185,7 +185,7 @@
+ AR = ar
+ LTLIBRARIES =  $(pkg_LTLIBRARIES)
+ 
+-liboscar_la_LDFLAGS = 
++liboscar_la_LDFLAGS = -export-dynamic -avoid-version
+ liboscar_la_LIBADD = 
+ @STATIC_OSCAR_FALSE@liboscar_la_OBJECTS =  admin.lo adverts.lo auth.lo \
+ @STATIC_OSCAR_FALSE@bos.lo buddylist.lo chat.lo chatnav.lo conn.lo \
