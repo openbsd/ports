@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/02/28 14:32:08 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2001/03/07 19:05:34 brad Exp $
 
 DISTNAME=	snort-1.7
 CATEGORIES=	net security
@@ -28,14 +28,14 @@ CONFIGURE_ARGS+= --enable-flexresp
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
-LIB_DEPENDS+=	pg::databases/postgresql
+LIB_DEPENDS+=	pg.2::databases/postgresql
 CONFIGURE_ARGS+= --with-postgresql="${PREFIX}/pgsql"
 .else
 CONFIGURE_ARGS+= --without-postgresql
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-LIB_DEPENDS+=	mysqlclient.10::databases/mysql
+LIB_DEPENDS+=	mysqlclient::databases/mysql
 CONFIGURE_ARGS+= --with-mysql="${PREFIX}"
 .else
 CONFIGURE_ARGS+= --without-mysql

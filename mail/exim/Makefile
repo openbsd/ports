@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/02/28 15:13:19 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2001/03/07 19:05:34 brad Exp $
 
 DISTNAME=	exim-3.22
 CATEGORIES=	mail
@@ -45,7 +45,7 @@ EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib -lldap -llber
 
 .if ${FLAVOR:L:Mmysql}
 LIBS+=		${LOCALBASE}/lib/mysql
-LIB_DEPENDS+=	mysqlclient.10::databases/mysql
+LIB_DEPENDS+=	mysqlclient::databases/mysql
 EXIM_MAKECAT+=	"LOOKUP_MYSQL=yes\n"
 EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include/mysql
 EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
