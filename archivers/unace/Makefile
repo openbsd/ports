@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/04/18 22:11:20 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/05/21 00:51:52 brad Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1999/04/02 04:19:20 steve Exp $
 
-DISTNAME=	unacepub
+DISTNAME=	ace12b
 PKGNAME=	unace-1.2b
 CATEGORIES=	archivers
 MASTER_SITES=	http://members.aol.com/mlemke6413/
-EXTRACT_SUFX=	.zip
+
+NEED_VERSION=	1.91
 
 MAINTAINER=	brad@openbsd.org
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
+NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
+USE_ZIP=	yes
 ALL_TARGET=	unace
 MAKEFILE=	unix/makefile
 
@@ -21,12 +22,6 @@ CFLAGS= -DLO_HI_BYTE_ORDER
 .else
 CFLAGS= -DHI_LO_BYTE_ORDER
 .endif
-
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@${MKDIR} ${WRKSRC}
-	@unzip -q -o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} -d ${WRKSRC}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unace ${PREFIX}/bin
