@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.242 2000/03/31 18:05:28 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.243 2000/03/31 18:51:09 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -728,21 +728,28 @@ SED_PLIST+=-e '/%%${_i}%%/r${PKGDIR}/PFRAG.${FLAVOR}' -e '//d'
 .  endfor
 .endif
 
-.if exists(${PKGDIR}/PLIST.sed)
+.if !defined(PLIST) && exists(${PKGDIR}/PLIST.sed)
 PLIST=${WRKBUILD}/PLIST
 
 ${PLIST}: ${PKGDIR}/PLIST.sed
 	@sed ${SED_PLIST} <$? >${PLIST}.tmp && mv -f ${PLIST}.tmp ${PLIST}
-
-.elif exists(${PKGDIR}/PLIST.${ARCH})
-PLIST?=		${PKGDIR}/PLIST.${ARCH}
-.else
-.  if defined(NO_SHARED_LIBS) && exists(${PKGDIR}/PLIST.noshared)
-PLIST?=		${PKGDIR}/PLIST.noshared
-.  else
-PLIST?=		${PKGDIR}/PLIST
-.  endif
 .endif
+.if !defined(PLIST) && exists(${PKGDIR}/PLIST${_FEXT}.${ARCH})
+PLIST=		${PKGDIR}/PLIST${_FEXT}.${ARCH}
+.endif
+.if !defined(PLIST) && defined(NO_SHARED_LIBS) && exists(${PKGDIR}/PLIST${_FEXT}.noshared)
+PLIST=		${PKGDIR}/PLIST${_FEXT}.noshared
+.endif
+.if !defined(PLIST) && exists(${PKGDIR}/PLIST${_FEXT})
+PLIST=		${PKGDIR}/PLIST${_FEXT}
+.endif
+.if !defined(PLIST) && exists(${PKGDIR}/PLIST.${ARCH})
+PLIST=		${PKGDIR}/PLIST.${ARCH}
+.endif
+.if !defined(PLIST) && defined(NO_SHARED_LIBS) && exists(${PKGDIR}/PLIST.noshared)
+PLIST=		${PKGDIR}/PLIST.noshared
+.endif
+PLIST?=		${PKGDIR}/PLIST
 
 .if !defined(COMMENT)
 .  if exists(${PKGDIR}/COMMENT${_FEXT})
