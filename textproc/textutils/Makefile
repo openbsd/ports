@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/24 17:54:50 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/11 22:10:02 lebel Exp $
 
 COMMENT=		"GNU text utilities"
 
@@ -20,5 +20,13 @@ MODULES=		gettext
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--program-prefix="g"
+
+# since we got a conflict with graphviz regarding the name gpr, rename that
+# binary to ggpr
+
+post-install:
+	@[ -x ${PREFIX}/bin/gpr ] && mv ${PREFIX}/bin/gpr ${PREFIX}/bin/ggpr
+	@[ -f ${PREFIX}/man/man1/gpr.1 ] && mv ${PREFIX}/man/man1/gpr.1 \
+                                               ${PREFIX}/man/man1/ggpr.1
 
 .include <bsd.port.mk>
