@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_mikmod_h_in,v 1.1 2004/09/14 22:42:30 brad Exp $
+--- include/mikmod.h.in.orig	Wed Sep  1 15:31:40 2004
++++ include/mikmod.h.in	Wed Sep  1 15:32:10 2004
+@@ -85,7 +85,7 @@ typedef char CHAR;
+ 
+ @DOES_NOT_HAVE_SIGNED@
+ 
+-#if defined(__arch64__) || defined(__alpha)
++#if defined(__arch64__) || defined(__alpha) || defined(__LP64__)
+ /* 64 bit architectures */
+ 
+ typedef signed char     SBYTE;      /* 1 byte, signed */
