@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/26 10:45:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/27 00:57:30 naddy Exp $
 
 COMMENT=	"free clone of mpg123, a command-line mp3 player"
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://gemini.woot.net/~hosehead/packages/ \
-		http://www.linuxberg.com/files/
+		ftp://ftp.debian.org/debian/pool/main/m/mpg321/
 DISTFILES=	${DISTNAME:S/-/_/}${EXTRACT_SUFX}
 
 LIB_DEPENDS=	ao.1::audio/libao \
