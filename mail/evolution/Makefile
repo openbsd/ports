@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/09/26 08:07:10 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/18 20:53:01 naddy Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 COMMENT-devguide=	"Evolution Developer's Guide"
@@ -22,8 +22,7 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/evolution/1.0/}
 
 MODULES=		gettext
 
-BUILD_DEPENDS=		:gtar-*:archivers/gtar \
-			:bison-*:devel/bison \
+BUILD_DEPENDS=		:bison-*:devel/bison \
 			:db-3.1.17:databases/db \
 			:scrollkeeper->=0.1.4:textproc/scrollkeeper
 RUN_DEPENDS=		:db-3.1.17:databases/db \
@@ -36,7 +35,6 @@ LIB_DEPENDS=		bonobo.2,bonobo-print.2,bonobox.2::x11/gnome/bonobo \
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
-TAR=			gtar
 YACC=			bison
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

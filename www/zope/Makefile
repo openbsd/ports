@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/09/29 06:02:18 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2002/10/18 20:53:01 naddy Exp $
 
 COMMENT=	"object-oriented web application server"
 
@@ -21,7 +21,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.zope.org/Products/Zope/${VERSION}/
 EXTRACT_SUFX=	.tgz
-EXTRACT_CASES=	*.tgz) gtar zxf ${FULLDISTDIR}/$$archive ;;
 
 DIST_SUBDIR=	zope
 
@@ -35,8 +34,7 @@ MASTER_SITES1= 	http://www.zope.org/Products/Zope/Hotfix_${HOTFIX_DATE1}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		Hotfix_${HOTFIX_DATE1}.tgz:1
 
-BUILD_DEPENDS=	:python->=2.1.2,<2.2:lang/python/2.1 \
-		:gtar-*:archivers/gtar					
+BUILD_DEPENDS=	:python->=2.1.2,<2.2:lang/python/2.1
 RUN_DEPENDS=	:python->=2.1.2,<2.2:lang/python/2.1
 
 # Note that the configure script is really just for pcgi, but it's
