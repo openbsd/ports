@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/09/28 06:02:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/06 21:54:38 naddy Exp $
 
 COMMENT=	"dejagnu snapshot, needed for gcc"
 
@@ -20,7 +20,7 @@ WRKSRC=${WRKDIST}/dejagnu
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-tclinclude=${PREFIX}/include/tcl8.3/generic \
 		--with-tkinclude=${PREFIX}/include/tk8.3/generic
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/dejagnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKDIST} ${WRKSRC}
 
 post-extract:
 	@rm -rf ${WRKSRC}/{expect,tcl}
