@@ -1,0 +1,51 @@
+*** Makefile.orig	Thu Jan 22 13:28:32 1998
+--- Makefile	Tue May 11 23:20:08 1999
+***************
+*** 2,12 ****
+  # If you're not using background pixmaps, remove -lXpm from the LIBS.
+  # If your X libraries are somewhere other than /usr/X11/lib, give their
+  # location here.
+! LIBS	=  -L/usr/X11/lib -lXpm -lXext -lX11 -lXmu -lm
+  
+  CC	= gcc
+  CCC	= gcc
+! CFLAGS	= -g -O2
+  OBJECTS	= Border.o Buttons.o Channel.o Client.o Events.o Main.o Manager.o Menu.o Rotated.o
+  
+  .c.o:
+--- 2,12 ----
+  # If you're not using background pixmaps, remove -lXpm from the LIBS.
+  # If your X libraries are somewhere other than /usr/X11/lib, give their
+  # location here.
+! LIBS	=  -L${PREFIX}/lib -lXpm -lXext -lX11 -lXmu -lm
+  
+  CC	= gcc
+  CCC	= gcc
+! CFLAGS	= -g -O2 -I${PREFIX}/include
+  OBJECTS	= Border.o Buttons.o Channel.o Client.o Events.o Main.o Manager.o Menu.o Rotated.o
+  
+  .c.o:
+***************
+*** 16,23 ****
+  	$(CCC) -c $(CFLAGS) $<
+  
+  wmx:	$(OBJECTS)
+! 	mv -f wmx wmx.old >& /dev/null || true
+  	$(CCC) -o wmx $(OBJECTS) $(LIBS)
+  
+  depend:
+  	makedepend -- $(CFLAGS) -- *.C
+--- 16,27 ----
+  	$(CCC) -c $(CFLAGS) $<
+  
+  wmx:	$(OBJECTS)
+! 	mv -f wmx wmx.old > /dev/null 2>&1 || true
+  	$(CCC) -o wmx $(OBJECTS) $(LIBS)
++ 
++ install:
++ 	${BSD_INSTALL_PROGRAM} wmx ${PREFIX}/bin
++ 	${BSD_INSTALL_DATA_DIR} ${PREFIX}/share/doc/wmx
++ 	${BSD_INSTALL_DATA} README ${PREFIX}/share/doc/wmx
+  
+  depend:
+  	makedepend -- $(CFLAGS) -- *.C
