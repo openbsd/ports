@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2000/08/05 01:25:32 matt Exp $
+# $OpenBSD: Makefile,v 1.16 2000/10/01 00:41:45 matt Exp $
 
 PKGNAME=	nessus-${VERS}
 
 CATEGORIES=	security
 NEED_VERSION=	1.316
 
-VERS=		1.0.4
+VERS=		1.0.5
 
-DIST_SUBDIR=	nessus-${VERS}
+DIST_SUBDIR=	nessus
 
 DISTFILES=	nessus-libraries-${VERS}${EXTRACT_SUFX} \
 		libnasl-${VERS}${EXTRACT_SUFX} \
@@ -23,7 +23,7 @@ MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${VERS}/src/ \
 		ftp://ftp.sekure.net/pub/nessus/nessus-${VERS}/src/ \
 		ftp://ftp.nectec.or.th/pub/mirrors/nessus/nessus-${VERS}/src/
 
-MAINTAINER=	matt@openbsd.org
+MAINTAINER=	Matt Behrens <matt@openbsd.org>
 
 HOMEPAGE=	http://www.nessus.org/
 
