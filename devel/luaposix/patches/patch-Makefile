@@ -1,0 +1,38 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2004/12/16 21:21:14 pedro Exp $
+--- Makefile.orig	Wed Nov  5 22:26:49 2003
++++ Makefile	Thu Dec 16 16:33:18 2004
+@@ -7,29 +7,23 @@ LUALIB= $(LUA)/lib
+ LUABIN= $(LUA)/bin
+ 
+ # no need to change anything below here
+-CFLAGS= -fPIC $(INCS) $(WARN) -O2 $G
+-WARN= -pedantic -Wall
+-INCS= -I$(LUAINC)
+-
++CFLAGS+= -I$(LOCALBASE)/include
+ MYNAME= posix
+-MYLIB= l$(MYNAME)
++MYLIB= lua$(MYNAME)
+ 
+-OBJS= $(MYLIB).o
++OBJS= l$(MYNAME).o
+ 
+ T= $(MYLIB).so
+ 
+-all:	test
++all:	$T
+ 
+-test:	$T
+-	$(LUABIN)/lua -l$(MYNAME) test.lua
+-
+ $T:	$(OBJS)
+ 	$(CC) -o $@ -shared $(OBJS)
+ 
+ $(OBJS): modemuncher.c
+ 
+ tree:	$T
+-	$(LUABIN)/lua -l$(MYNAME) tree.lua .
++	lua -l$(MYNAME) tree.lua .
+ 
+ clean:
+ 	rm -f $(OBJS) $T core core.* a.out
