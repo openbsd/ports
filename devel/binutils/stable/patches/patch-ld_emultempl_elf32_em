@@ -1,6 +1,6 @@
-$OpenBSD: patch-ld_emultempl_elf32_em,v 1.5 2003/11/23 22:06:25 brad Exp $
+$OpenBSD: patch-ld_emultempl_elf32_em,v 1.6 2004/01/12 06:26:22 brad Exp $
 --- ld/emultempl/elf32.em.orig	2003-02-28 17:55:11.000000000 -0500
-+++ ld/emultempl/elf32.em	2003-11-23 16:54:10.000000000 -0500
++++ ld/emultempl/elf32.em	2004-01-11 19:03:23.000000000 -0500
 @@ -87,6 +87,159 @@ static char *gld${EMULATION_NAME}_get_sc
    PARAMS ((int *isfile));
  
@@ -86,13 +86,13 @@ $OpenBSD: patch-ld_emultempl_elf32_em,v 1.5 2003/11/23 22:06:25 brad Exp $
 +      if (entry->d_name[6 + len] == '\0')
 +	;
 +      else if (entry->d_name[6 + len] == '.'
-+	       && isdigit ((unsigned char) entry->d_name[7 + len]))
++	       && ISDIGIT ((unsigned char) entry->d_name[7 + len]))
 +	;
 +      else
 +	continue;
 +
 +      for (s = entry->d_name + 6 + len; *s != '\0'; s++)
-+	if (*s != '.' && ! isdigit ((unsigned char) *s))
++	if (*s != '.' && ! ISDIGIT ((unsigned char) *s))
 +	  break;
 +      if (*s != '\0')
 +	continue;
@@ -179,7 +179,15 @@ $OpenBSD: patch-ld_emultempl_elf32_em,v 1.5 2003/11/23 22:06:25 brad Exp $
  
    if (trace_file_tries)
      info_msg (_("found %s at %s\n"), soname, name);
-@@ -684,7 +837,7 @@ gld${EMULATION_NAME}_after_open ()
+@@ -370,6 +523,7 @@ cat >>e${EMULATION_NAME}.c <<EOF
+     {
+       /* Return TRUE to indicate that we found the file, even though
+          we aren't going to do anything with it.  */
++      free(soname);
+       return TRUE;
+     }
+ 
+@@ -684,7 +838,7 @@ gld${EMULATION_NAME}_after_open ()
  	 rpath_link, rpath, then the environment variable
  	 LD_LIBRARY_PATH (native only), then the DT_RPATH/DT_RUNPATH
  	 entries (native only), then the linker script LIB_SEARCH_DIRS.
@@ -188,7 +196,7 @@ $OpenBSD: patch-ld_emultempl_elf32_em,v 1.5 2003/11/23 22:06:25 brad Exp $
  
  	 We search twice.  The first time, we skip objects which may
  	 introduce version mismatches.  The second time, we force
-@@ -696,7 +849,7 @@ gld${EMULATION_NAME}_after_open ()
+@@ -696,7 +850,7 @@ gld${EMULATION_NAME}_after_open ()
  EOF
  if [ "x${USE_LIBPATH}" = xyes ] ; then
  cat >>e${EMULATION_NAME}.c <<EOF
@@ -197,7 +205,49 @@ $OpenBSD: patch-ld_emultempl_elf32_em,v 1.5 2003/11/23 22:06:25 brad Exp $
  	  struct bfd_link_needed_list *rp;
  	  int found;
  EOF
-@@ -976,7 +1129,17 @@ gld${EMULATION_NAME}_open_dynamic_archiv
+@@ -716,15 +870,38 @@ EOF
+ fi
+ if [ "x${NATIVE}" = xyes ] ; then
+ cat >>e${EMULATION_NAME}.c <<EOF
+-	  if (command_line.rpath_link == NULL
++	  if (getenv("LD_RUN_PATH") != NULL
++	      && command_line.rpath_link == NULL
+ 	      && command_line.rpath == NULL)
+ 	    {
+-	      lib_path = (const char *) getenv ("LD_RUN_PATH");
++	      lib_path = getenv ("LD_RUN_PATH");
+ 	      if (gld${EMULATION_NAME}_search_needed (lib_path, l->name,
+ 						      force))
+ 		break;
+ 	    }
+-	  lib_path = (const char *) getenv ("LD_LIBRARY_PATH");
++
++	  len = strlen(search_head->name);
++	  lib_path = xstrdup(search_head->name);
++	  for (search = search_head->next; search != NULL;
++	       search = search->next)
++	    {
++	      size_t nlen;
++
++	      nlen = strlen(search->name);
++	      lib_path = xrealloc(lib_path, len + nlen + 2);
++	      lib_path[len] = ':';
++	      strcpy(lib_path + len + 1, search->name);
++	      len += nlen + 1;
++	    }
++
++	  if (gld${EMULATION_NAME}_search_needed (lib_path, l->name, force))
++	    {
++	      free(lib_path);
++	      break;
++	    }
++	  free(lib_path);
++
++	  lib_path = getenv ("LD_LIBRARY_PATH");
+ 	  if (gld${EMULATION_NAME}_search_needed (lib_path, l->name, force))
+ 	    break;
+ EOF
+@@ -976,7 +1153,17 @@ gld${EMULATION_NAME}_open_dynamic_archiv
      return FALSE;
  
    filename = entry->filename;
@@ -216,7 +266,7 @@ $OpenBSD: patch-ld_emultempl_elf32_em,v 1.5 2003/11/23 22:06:25 brad Exp $
    /* This allocates a few bytes too many when EXTRA_SHLIB_EXTENSION
       is defined, but it does not seem worth the headache to optimize
       away those two bytes of space.  */
-@@ -990,6 +1153,10 @@ gld${EMULATION_NAME}_open_dynamic_archiv
+@@ -990,6 +1177,10 @@ gld${EMULATION_NAME}_open_dynamic_archiv
  
    sprintf (string, "%s/lib%s%s.so", search->name, filename, arch);
  
@@ -227,3 +277,21 @@ $OpenBSD: patch-ld_emultempl_elf32_em,v 1.5 2003/11/23 22:06:25 brad Exp $
  #ifdef EXTRA_SHLIB_EXTENSION
    /* Try the .so extension first.  If that fails build a new filename
       using EXTRA_SHLIB_EXTENSION.  */
+@@ -1486,6 +1677,8 @@ if test -n "$GENERATE_COMBRELOC_SCRIPT" 
+ echo '  ; else if (link_info.combreloc) return'        >> e${EMULATION_NAME}.c
+ sed $sc ldscripts/${EMULATION_NAME}.xc                 >> e${EMULATION_NAME}.c
+ fi
++echo '  ; else if (config.data_bss_contig == TRUE) return' >> e${EMULATION_NAME}.c
++sed $sc ldscripts/${EMULATION_NAME}.xz                 >> e${EMULATION_NAME}.c
+ echo '  ; else return'                                 >> e${EMULATION_NAME}.c
+ sed $sc ldscripts/${EMULATION_NAME}.x                  >> e${EMULATION_NAME}.c
+ echo '; }'                                             >> e${EMULATION_NAME}.c
+@@ -1530,6 +1723,8 @@ cat >>e${EMULATION_NAME}.c <<EOF
+ EOF
+ fi
+ cat >>e${EMULATION_NAME}.c <<EOF
++  else if (config.data_bss_contig == TRUE)
++    return "ldscripts/${EMULATION_NAME}.xz";
+   else
+     return "ldscripts/${EMULATION_NAME}.x";
+ }
