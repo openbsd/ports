@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2004/09/25 13:01:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2005/03/06 14:17:45 espie Exp $
 bin/findtr
 bin/moc2
 bin/qt20fix
@@ -286,6 +286,7 @@ include/X11/qt2/qwmatrix.h
 include/X11/qt2/qworkspace.h
 include/X11/qt2/qxml.h
 include/X11/qt2/qxt.h
+lib/qt2/
 lib/qt2/bin/
 lib/qt2/bin/moc
 @mandir lib/qt2/man/
@@ -958,6 +959,7 @@ lib/qt2/man/man3/
 @man lib/qt2/man/man3/qxmlsimplereader.3
 @man lib/qt2/man/man3/qxtapplication.3
 @man lib/qt2/man/man3/qxtwidget.3
+share/doc/qt2/
 share/doc/qt2/ANNOUNCE
 share/doc/qt2/FAQ
 share/doc/qt2/LICENSE.GPL
@@ -966,6 +968,5 @@ share/doc/qt2/README.QT
 share/doc/qt2/changes-2.3.0
 share/doc/qt2/changes-2.3.1
 share/doc/qt2/changes-2.${VERSION}
-@unexec echo "Please remove %D/lib/qt2/man from /etc/man.conf manually if needed"
 %%SHARED%%
 !%%SHARED%%

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2004/12/19 14:01:17 alek Exp $
+# $OpenBSD: Makefile,v 1.47 2005/03/06 14:17:45 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples and tutorial for qt2"
@@ -146,10 +146,12 @@ do-install:
 	fi; done
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${QT_DOC}
 	cp -R ${WRKSRC}/doc/html/* ${QT_DOC}/html
+	${INSTALL_DATA_DIR} ${QT_LIBDIR}/doc
+	ln -s ${TRUEPREFIX}/share/doc/qt2/html ${QT_LIBDIR}/doc/html
 
-PKGNAME=		qt2-${VERSION}
+PKGNAME=		qt2-${VERSION}p0
 PKGNAME-examples=	qt2-examples-${VERSION}
-PKGNAME-html=		qt2-html-${VERSION}
+PKGNAME-html=		qt2-html-${VERSION}p0
 
 .include <bsd.port.mk>
 
