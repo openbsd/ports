@@ -11,7 +11,7 @@ Find your CD device(s), e.g.:
 	cd1 at scsibus1 targ 0 lun 0: <PLEXTOR, CD-R PX-W8432T, 1.09>
 
 Specify your devices (:bus,targ,lun is optional):
-	# xcdroast -f /dev/rcd0c,/dev/rcd1c
+	# xcdroast -f "/dev/rcd0c;/dev/rcd1c"
 
 To begin generating a configuration file, simply run xcdroast as root
 with the correct options.  If you wish to enable CD burning for
