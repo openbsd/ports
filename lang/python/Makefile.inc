@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.19 2004/04/06 02:39:23 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.20 2004/04/18 12:13:58 sturm Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -175,7 +175,7 @@ CONFIGURE_ENV+=	OPT='${CFLAGS}' LDFLAGS='-L${WRKSRC}'
 CONFIGURE_ENV+= OPT='${CFLAGS} -DTHREAD_STACK_SIZE=0x20000 -fPIC' \
 		LDFLAGS='-L${WRKSRC}'
 MAKE_FLAGS+=	MAJOR=0 MINOR=0 LDLIBRARY=libpython${VERSION}.so.0.0 \
-		LD_LIBRARY_PATH=${WRKSRC}
+		LD_LIBRARY_PATH=${WRKSRC} PATH="${WRKDIST}:${PORTPATH}"
 FAKE_FLAGS+=	MAJOR=0 MINOR=0 LDLIBRARY=libpython${VERSION}.so.0.0 \
 		LD_LIBRARY_PATH=${WRKSRC} RANLIB=:
 .endif
