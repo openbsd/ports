@@ -2,7 +2,7 @@
 # Date created:         17 March 1998
 # Whom:                 mickey@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.8 2000/03/12 18:03:57 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/23 04:12:05 turan Exp $
 #
 
 DISTNAME=	psutils-p17
@@ -11,6 +11,11 @@ NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk/pub/ajcd/
 
 MAINTAINER=	ports@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/psutils
 

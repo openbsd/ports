@@ -3,7 +3,7 @@
 # Date created:		June 7 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.7 2000/03/09 01:58:24 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/23 04:12:04 turan Exp $
 #
 
 DISTNAME=	linux-ar-40
@@ -15,6 +15,11 @@ MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/4.x/
 ONLY_FOR_ARCHS=	i386
 
 MAINTAINER=	angelos@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"commercial software"
+PERMIT_PACKAGE_FTP=	"commercial software"
+PERMIT_DISTFILES_CDROM=	"commercial software"
+PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	/emul/linux/lib/libc.so.5:emulators/linux_lib
 
