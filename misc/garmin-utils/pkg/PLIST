@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/10/31 19:39:04 marc Exp $
+bin/gardump
+bin/garload
+man/cat1/gardump.0
+man/cat1/garload.0
