@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2000/10/22 15:51:12 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2000/10/22 22:15:18 marc Exp $
 
 DISTNAME=	gimp-1.1.27
 CATEGORIES=	graphics
@@ -27,8 +27,8 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-perl
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+#		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/aclocal
