@@ -1,54 +1,36 @@
-$OpenBSD: patch-tcpflow_1_in,v 1.1 2002/10/16 21:27:50 pvalchev Exp $
---- tcpflow.1.in.orig	Wed Apr 21 02:57:20 1999
-+++ tcpflow.1.in	Wed Oct 16 15:19:23 2002
-@@ -21,6 +21,9 @@ tcpflow \- TCP flow recorder 
- .BI \-i \ iface\fR\c
- ]
- [\c
-+.BI \-r \ file\fR\c
-+]
-+[\c
- .BI expression\fR\c
- ]
- .SH DESCRIPTION
-@@ -29,7 +32,7 @@ tcpflow \- TCP flow recorder 
+$OpenBSD: patch-tcpflow_1_in,v 1.2 2002/10/17 15:37:41 naddy Exp $
+--- tcpflow.1.in.orig	Wed Oct 16 20:37:43 2002
++++ tcpflow.1.in	Wed Oct 16 20:41:41 2002
+@@ -32,7 +32,7 @@ tcpflow \- TCP flow recorder 
  is a program that captures data transmitted as part of TCP connections
- (flows), and stores it in a way that is convenient for protocol
+ (flows), and stores the data in a way that is convenient for protocol
  analysis or debugging.  A program like
--.IR tcpdump (4)
-+.IR tcpdump (1)
- only shows a summary of packets seen on the wire, but usually doesn't
- store the data that's actually being transmitted.  In contrast,
- tcpflow reconstructs the actual data streams and stores each flow in a
-@@ -93,6 +96,13 @@ named \fIiface\fP.  If no interface is s
- .B \-i
- , a reasonable default will be used by libpcap automatically.
- .TP
-+.B \-r
-+Read packets from \fIfile\fP, which was created using the
-+.B \-w
-+option of
-+.IR tcpdump (1).
-+Standard input is used if \fIfile\fP is ``-''.
-+.TP
- .B \-p
- No promiscuous mode.  Normally, tcpflow attempts to put the network
- interface into promiscuous mode before capturing packets.  The
-@@ -118,7 +128,7 @@ The
+-.IR tcpdump(4)
++.IR tcpdump(8)
+ shows a summary of packets seen on the wire, but usually doesn't store
+ the data that's actually being transmitted.  In contrast, tcpflow
+ reconstructs the actual data streams and stores each flow in a
+@@ -109,7 +109,7 @@ already be in promiscuous mode for some 
+ Read from file.  Read packets from \fIfile\fP, which was created using the
+ .B \-w
+ option of
+-.IR tcpdump (1).
++.IR tcpdump (8).
+ Standard input is used if \fIfile\fP is ``-''.
+ Note that for this option to be useful, tcpdump's
+ .B \-s
+@@ -132,7 +132,7 @@ The
  specified on the command-line specifies which packets should be
  captured.  Because tcpflow uses the the libpcap library, tcpflow has
  the same powerful filtering language available as programs such as
--.IR tcpdump (4).
-+.IR tcpdump (1).
+-.IR tcpdump (1).
++.IR tcpdump (8).
  .LP
  .B The following part of the man page is excerpted from the tcpdump man page.
  .LP
-@@ -259,7 +269,7 @@ which can be used with either names or n
- .IP "\fBdst net \fInet\fR"
- True if the IP destination address of the packet has a network
- number of \fInet\fP. \fINet\fP may be either a name from /etc/networks
--or a network number (see \fInetworks(4)\fP for details).
-+or a network number (see \fInetworks(5)\fP for details).
- .IP "\fBsrc net \fInet\fR"
- True if the IP source address of the packet has a network
- number of \fInet\fP.
+@@ -539,4 +539,4 @@ The current version of this software is 
+ .I http://www.circlemud.org/~jelson/software/tcpflow
+ .RE
+ .SH "SEE ALSO"
+-tcpdump(1), nit(4P), bpf(4), pcap(3)
++tcpdump(8), nit(4P), bpf(4), pcap(3)

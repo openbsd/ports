@@ -11,8 +11,4 @@ data streams regardless of retransmissions or out-of-order delivery.
 However, it currently does not understand IP fragments; flows
 containing IP fragments will not be recorded properly.
 
-Note: this port includes a small patch that adds the capability of
-      reading the packets from a tcpdump(1) capture file, using
-      a new option (-r).
-
 WWW: ${HOMEPAGE}

@@ -1,0 +1,12 @@
+$OpenBSD: patch-util_c,v 1.1 2002/10/17 15:37:41 naddy Exp $
+--- util.c.orig	Wed Oct 16 22:02:06 2002
++++ util.c	Wed Oct 16 22:02:34 2002
+@@ -133,7 +133,7 @@ char *flow_filename(flow_t flow)
+ 
+   ring_pos = (ring_pos + 1) % RING_SIZE;
+ 
+-  sprintf(ring_buffer[ring_pos],
++  snprintf(ring_buffer[ring_pos], sizeof(ring_buffer[ring_pos]),
+ 	  "%03d.%03d.%03d.%03d.%05d-%03d.%03d.%03d.%03d.%05d",
+ 	  (u_int8_t) ((flow.src & 0xff000000) >> 24),
+ 	  (u_int8_t) ((flow.src & 0x00ff0000) >> 16),
