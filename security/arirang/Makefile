@@ -1,3 +1,5 @@
+# $OpenBSD: Makefile,v 1.3 2002/01/11 04:59:43 mark Exp $
+
 COMMENT=	"powerful webserver security scanner"
 
 DISTNAME=	arirang-1.6beta
