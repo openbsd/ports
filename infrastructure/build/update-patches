@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $OpenBSD: update-patches,v 1.10 2004/06/20 19:11:08 sturm Exp $
+# $OpenBSD: update-patches,v 1.11 2004/09/21 09:27:15 espie Exp $
 # Copyright (c) 2000
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -25,8 +25,10 @@
 # SUCH DAMAGE.
 
 # Find out all $PATCHORIG files and strip the name to what diff will use
-cd $WRKDIST && find . -type f -name '*'${PATCHORIG} | fgrep -v $DISTORIG | \
-sed -e "s,^./\(.*\)\.${PATCHORIG#.*}\$,\1," | {
+cd $WRKDIST && find . -type f -name '*'${PATCHORIG} | \
+    fgrep -v Oops.rej.orig | \
+    fgrep -v $DISTORIG | \
+    sed -e "s,^./\(.*\)\.${PATCHORIG#.*}\$,\1," | {
 while read file 
 do
     if cmp $WRKDIST/$file $WRKDIST/$file$PATCHORIG >/dev/null 2>&1; then
@@ -102,7 +104,7 @@ do
     esac
 done
 
-# Check for $Id: update-patches,v 1.10 2004/06/20 19:11:08 sturm Exp $ and similar bugs in all those patch files.
+# Check for $Id: update-patches,v 1.11 2004/09/21 09:27:15 espie Exp $ and similar bugs in all those patch files.
 for i in $accounted
 do
     if sed -e '/1,^---/ d' $i|grep '$(Id|OpenBSD'
