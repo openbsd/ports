@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/09/17 20:01:40 avsm Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/09 00:18:49 avsm Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	swatch-3.0.1
@@ -13,8 +13,9 @@ PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
 BUILD_DEPENDS=	${PERL_MODULES}/${ARCH}-openbsd/Date/Calc.pm::devel/p5-Date-Calc \
 		${PERL_MODULES}/File/Tail.pm::devel/p5-File-Tail \
 		${PERL_MODULES}/Date/Format.pm::devel/p5-Time-TimeDate
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-MAINTAINER=	avsm@openbsd.org
+MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

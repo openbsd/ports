@@ -3,15 +3,15 @@
 # Date created:		15 Dec 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.7 2000/09/15 16:07:07 avsm Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/09 00:18:49 avsm Exp $
 
 PKGNAME=	figlet-2.2
 DISTNAME=	figlet22
 CATEGORIES=	misc graphics
-NEED_VERSION=	1.330
+NEED_VERSION=	1.338
 
 HOMEPAGE=	http://st-www.cs.uiuc.edu/users/chai/figlet.html
-MAINTAINER=	avsm@openbsd.org
+MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

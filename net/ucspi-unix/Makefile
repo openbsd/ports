@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/12 14:58:26 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/09 00:18:49 avsm Exp $
 
 DISTNAME=		ucspi-unix-0.34
 CATEGORIES=     	net
-NEED_VERSION=		1.328
+NEED_VERSION=		1.338
 
 HOMEPAGE=		http://em.ca/~bruceg/ucspi-unix/
-MAINTAINER=		avsm@openbsd.org
+MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
