@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/01/24 08:26:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2001/02/22 19:48:38 avsm Exp $
 # $FreeBSD: Makefile,v 1.32 1997/11/16 04:58:09 fenner Exp $
 #
 
@@ -17,6 +17,8 @@
 #    SUBDIR += nntp
 #    SUBDIR += nntpbtr
 #    SUBDIR += nntpcache
+     SUBDIR += p5-Gateway
+     SUBDIR += p5-News-Article
      SUBDIR += p5-News-Newsrc
      SUBDIR += plor
 #    SUBDIR += rkive
