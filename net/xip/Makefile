@@ -1,11 +1,11 @@
 # Makefile for:		xip
-# Version required:	1.3.1
+# Version required:	1.3.2
 # Date created:		21 Jun 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.2 1999/06/26 20:19:23 dugsong Exp $
+# $OpenBSD: Makefile,v 1.3 1999/09/05 00:40:35 angelos Exp $
 
-DISTNAME=	xip-1.3.1
+DISTNAME=	xip-1.3.2
 
 CATEGORIES=	net
 
@@ -28,7 +28,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/xip.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/xip/Xip.ad ${PREFIX}/lib/X11/app-defaults/Xip
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/xip
-	for dir in pkb pkc pkt ; do \
+	for dir in pkc pkt ; do \
 	   ${INSTALL_DATA_DIR} ${PREFIX}/lib/xip/$$dir ; \
 	   ${INSTALL_DATA} ${WRKSRC}/lib/$$dir/* ${PREFIX}/lib/xip/$$dir ; \
 	done
