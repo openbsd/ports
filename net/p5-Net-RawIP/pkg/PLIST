@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/29 21:01:13 danh Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/Net/RawIP.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Net/RawIP/libpcap.pod
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/RawIP/RawIP.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/RawIP/RawIP.so
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/RawIP/autosplit.ix
+man/man3/Net::RawIP.3p
+man/man3/Net::RawIP::libpcap.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/RawIP
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/Net/RawIP

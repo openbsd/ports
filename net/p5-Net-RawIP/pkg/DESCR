@@ -1,0 +1,3 @@
+Net::RawIP is a perl module that can manipulate raw IP
+packets with an optional feature for manipulating Ethernet
+headers. 
