@@ -1,0 +1,11 @@
+$OpenBSD: patch-test_seek_c,v 1.1 2003/09/30 10:31:35 naddy Exp $
+--- test/seek.c.orig	2003-09-29 14:36:01.000000000 +0200
++++ test/seek.c	2003-09-29 14:36:13.000000000 +0200
+@@ -31,6 +31,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ 
+ #include <audiofile.h>
+ 
