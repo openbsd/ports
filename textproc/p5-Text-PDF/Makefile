@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2001/11/10 15:00:50 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/12/01 14:58:32 shell Exp $
 
 COMMENT=	"perl modules for creating and manipulating PDF"
 
-DISTNAME=	Text-PDF-0.16
+DISTNAME=	Text-PDF-0.18
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 NEED_VERSION=	1.489
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Text
 
-PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
 BUILD_DEPENDS=	::archivers/p5-Compress-Zlib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
