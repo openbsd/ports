@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/10 19:26:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/10 19:40:09 pvalchev Exp $
 
 # XXX might not be hard to add more (macppc at least)
 ONLY_FOR_ARCHS=		i386
@@ -18,7 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www2.mplayerhq.hu/MPlayer/releases/
-MASTER_SITES0=		http://www2.mplayerhq.hu/MPlayer/Skin/
+#MASTER_SITES0=		http://www2.mplayerhq.hu/MPlayer/Skin/
+MASTER_SITES0=		http://www.sightly.net/mplayer/
 
 SKIN=		default
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKIN}${EXTRACT_SUFX}:0
