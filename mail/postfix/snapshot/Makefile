@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.36 2002/01/25 08:12:19 jakob Exp $
+# $OpenBSD: Makefile,v 1.37 2002/04/19 21:11:29 jakob Exp $
 
-BROKEN=		"no postfix snapshot currently availible"
+VERSION=	1.1.7
+SNAPSHOT=	20020331
 
-DISTNAME=	snapshot-20020115
-PKGNAME=	postfix-${DISTNAME}
+DISTNAME=	postfix-${VERSION}-${SNAPSHOT}
+PKGNAME=	postfix-${VERSION}-${SNAPSHOT}
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 MASTER_SITE_SUBDIR=	experimental
-
-TLSVERSION=	0.7.14
-TLSDISTNAME=	pfixtls-${TLSVERSION}-snap20020107-0.9.6c
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2002/01/08 20:22:12 jakob Exp $
+# $OpenBSD: INSTALL,v 1.5 2002/04/19 21:11:29 jakob Exp $
 #
 # Pre/post-installation setup of postfix
 
@@ -49,6 +49,7 @@ do_spooldir()
     echo "-> Creating Postfix spool directory and chroot area under $SPOOL_DIR"
     [ -d $SPOOL_DIR ] || install -d -o root -g wheel -m 755 $SPOOL_DIR
     [ -d $SPOOL_DIR/etc ] || install -d -o root -g wheel -m 755 $SPOOL_DIR/etc
+    [ -d $SPOOL_DIR/dev ] || install -d -o root -g wheel -m 755 $SPOOL_DIR/dev
     for file in localtime services resolv.conf ; do
 	install -o root -g wheel -m 755 /etc/$file $SPOOL_DIR/etc
     done
@@ -91,12 +92,9 @@ do_configs()
 	# Install config files.
 	install -d -o root -g wheel -m 755 $CONFIG_DIR
 	install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/* $CONFIG_DIR
-	sed "s@y0y0y0@$PREFIX@g" $CONFIG_DIR/main.cf > $CONFIG_DIR/main.cf.$$
-	install -o root -g wheel -m 644 $CONFIG_DIR/main.cf.$$ $CONFIG_DIR/main.cf
-	rm -f $CONFIG_DIR/main.cf.$$
 
-	# The correct postfix-script will be installed later.
-	rm -f $CONFIG_DIR/postfix-script*
+	# The correct files will be installed later.
+	rm -f $CONFIG_DIR/{postfix-script,postfix-files,post-install}
 
 	echo ""
 	echo "+---------------"
@@ -107,10 +105,21 @@ do_configs()
 	echo ""
     fi
 
-    # Configure setgid postdrop
-    install -o root -g wheel -m 555 $SAMPLE_CONFIG_DIR/postfix-script $CONFIG_DIR/postfix-script
-    chgrp postdrop $PREFIX/sbin/postdrop $PREFIX/sbin/postqueue
-    chmod 2755 $PREFIX/sbin/postdrop $PREFIX/sbin/postqueue
+    install -o root -g wheel -m 544 \
+	$SAMPLE_CONFIG_DIR/{postfix-script,post-install} $CONFIG_DIR
+    install -o root -g wheel -m 444 \
+	$SAMPLE_CONFIG_DIR/postfix-files $CONFIG_DIR
+
+    $CONFIG_DIR/post-install command_directory=${PREFIX}/sbin set-permissions
+
+    grep syslogd_flags /etc/rc.conf /etc/rc.conf.local | grep postfix >/dev/null
+    if [ $? -eq 1 ]; then
+        echo ""
+	echo "+---------------"
+        echo "| Don't forget to add \"-a /var/spool/postfix/dev/log\" to syslogd_flags"
+        echo "| in /etc/rc.conf.local (or /etc/rc.conf) and restart syslogd."
+	echo "+---------------"
+    fi
 }
 
 # Function: tell the user what s/he needs to do to use the port just installed
