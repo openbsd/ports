@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/10/09 17:59:10 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.22 2003/10/14 17:02:37 pvalchev Exp $
 
 COMMENT=	"curses-based icq client implementation"
 
@@ -26,8 +26,12 @@ MODGCC3_ARCHES=	sparc64
 MODGCC3_LANGS=	c++
 
 USE_GMAKE=	Yes
-CONFIGURE_STYLE= autoconf
-BUILD_DEPENDS=	:automake-*:devel/automake
+#CONFIGURE_STYLE= autoconf automake
+CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	CXXFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBS="-liconv"
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include"
 
 post-install:
