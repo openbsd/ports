@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2002/11/30 05:35:46 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2003/01/17 04:26:57 brad Exp $
 # $FreeBSD: Makefile,v 1.15 1999/08/25 06:14:08 obrien Exp $
 
 COMMENT=	"Gtk-based graphic file viewer"
 
-DISTNAME=	gqview-1.1.6
+DISTNAME=	gqview-1.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gqview/}
 
