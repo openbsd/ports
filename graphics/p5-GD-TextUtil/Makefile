@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.1.1.1 2000/09/19 17:03:45 mickey Exp $
+#	$OpenBSD: Makefile,v 1.2 2000/09/19 17:24:52 mickey Exp $
 
 DISTNAME=	GDTextUtil-0.80
 PKGNAME=	p5-${DISTNAME}
@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	GD
 
 MAINTAINER=	ports@openbsd.org
 
-RUN_DEPENDS=	p5-GD::graphics/p5-GD
+RUN_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/${ARCH}-openbsd/auto/GD/GD.so::graphics/p5-GD
 
 CONFIGURE_STYLE=	perl
 
