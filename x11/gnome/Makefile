@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/10/08 15:57:54 marcm Exp $
+# $OpenBSD: Makefile,v 1.15 2004/06/22 03:28:35 marcm Exp $
 
      SUBDIR += applets2
      SUBDIR += bonobo
@@ -10,6 +10,7 @@
      SUBDIR += gail
      SUBDIR += gdm
      SUBDIR += icon-theme
+     SUBDIR += keyring
      SUBDIR += libbonobo
      SUBDIR += libbonoboui
      SUBDIR += libgnome
@@ -20,6 +21,7 @@
      SUBDIR += libgtkhtml
      SUBDIR += librsvg
      SUBDIR += libs
+     SUBDIR += libxklavier
      SUBDIR += metacity
      SUBDIR += mime-data
      SUBDIR += nautilus
