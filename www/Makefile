@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2001/03/30 21:43:33 danh Exp $
+# $OpenBSD: Makefile,v 1.49 2001/04/05 12:11:21 espie Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -41,6 +41,8 @@
      SUBDIR += p5-CGI
 #    SUBDIR += p5-CGI_Lite
      SUBDIR += p5-HTML-Base
+     SUBDIR += p5-HTML-Embperl
+     SUBDIR += p5-HTML-FromText
      SUBDIR += p5-HTML-Mason
      SUBDIR += p5-HTML-Parser
 #    SUBDIR += p5-HTML-QuickCheck
@@ -53,32 +55,32 @@
 #    SUBDIR += p5-WWW-Search
      SUBDIR += p5-libwww
      SUBDIR += php3
-     SUBDIR += php3:gd
-     SUBDIR += php3:gd,mysql,imap
-     SUBDIR += php3:gd,postgresql,imap
-     SUBDIR += php3:imap
-     SUBDIR += php3:mysql
-     SUBDIR += php3:mysql,imap
-     SUBDIR += php3:postgresql
-     SUBDIR += php3:postgresql,imap
+     SUBDIR += php3,gd
+     SUBDIR += php3,gd,mysql,imap
+     SUBDIR += php3,gd,postgresql,imap
+     SUBDIR += php3,imap
+     SUBDIR += php3,mysql
+     SUBDIR += php3,mysql,imap
+     SUBDIR += php3,postgresql
+     SUBDIR += php3,postgresql,imap
      SUBDIR += php4
-     SUBDIR += php4:gd
-     SUBDIR += php4:imap
-     SUBDIR += php4:ldap
-     SUBDIR += php4:mcrypt
-     SUBDIR += php4:mysql
-     SUBDIR += php4:mysql,imap
-     SUBDIR += php4:mysql,imap,ldap
-     SUBDIR += php4:mysql,imap,ldap,no_x11
-     SUBDIR += php4:mysql,imap,no_x11
-     SUBDIR += php4:no_x11
-     SUBDIR += php4:pdflib
-     SUBDIR += php4:postgresql
-     SUBDIR += php4:postgresql,imap
-     SUBDIR += php4:postgresql,imap,ldap
-     SUBDIR += php4:postgresql,imap,ldap,no_x11
-     SUBDIR += php4:postgresql,imap,no_x11
-     SUBDIR += php4:snmp
+     SUBDIR += php4,gd
+     SUBDIR += php4,imap
+     SUBDIR += php4,ldap
+     SUBDIR += php4,mcrypt
+     SUBDIR += php4,mysql
+     SUBDIR += php4,mysql,imap
+     SUBDIR += php4,mysql,imap,ldap
+     SUBDIR += php4,mysql,imap,ldap,no_x11
+     SUBDIR += php4,mysql,imap,no_x11
+     SUBDIR += php4,no_x11
+     SUBDIR += php4,pdflib
+     SUBDIR += php4,postgresql
+     SUBDIR += php4,postgresql,imap
+     SUBDIR += php4,postgresql,imap,ldap
+     SUBDIR += php4,postgresql,imap,ldap,no_x11
+     SUBDIR += php4,postgresql,imap,no_x11
+     SUBDIR += php4,snmp
      SUBDIR += shttpd
      SUBDIR += squid
      SUBDIR += surfraw
@@ -89,8 +91,8 @@
 #    SUBDIR += w3
 #    SUBDIR += w3c-httpd
      SUBDIR += w3m
-     SUBDIR += w3m:kanji
-     SUBDIR += w3m:m17n
+     SUBDIR += w3m,kanji
+     SUBDIR += w3m,m17n
      SUBDIR += w3mir
      SUBDIR += webalizer
 #    SUBDIR += webcopy
