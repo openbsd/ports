@@ -1,6 +1,6 @@
-$OpenBSD: patch-unix_unix_c,v 1.1 2003/07/02 16:03:59 brad Exp $
---- unix/unix.c.orig	Mon Jan 21 17:54:42 2002
-+++ unix/unix.c	Wed Jul  2 11:48:50 2003
+$OpenBSD: patch-unix_unix_c,v 1.2 2003/08/17 23:48:40 brad Exp $
+--- unix/unix.c.orig	2002-01-21 17:54:42.000000000 -0500
++++ unix/unix.c	2003-08-17 19:25:19.000000000 -0400
 @@ -421,7 +421,8 @@ int mapname(__G__ renamed)
   */
  {
@@ -11,25 +11,35 @@ $OpenBSD: patch-unix_unix_c,v 1.1 2003/07/02 16:03:59 brad Exp $
      char *lastsemi=(char *)NULL;   /* pointer to last semi-colon in pathcomp */
  #ifdef ACORN_FTYPE_NFS
      char *lastcomma=(char *)NULL;  /* pointer to last comma in pathcomp */
-@@ -429,6 +430,7 @@ int mapname(__G__ renamed)
+@@ -429,6 +430,8 @@ int mapname(__G__ renamed)
  #endif
      int quote = FALSE;             /* flags */
      int killed_ddot = FALSE;       /* is set when skipping "../" pathcomp */
++    int killed_qslash = FALSE;     /* is set when skipping "^V/" pathcomp */
 +    int snarf_ddot = FALSE;	   /* Is set while scanning for "../" */
      int error = MPN_OK;
      register unsigned workch;      /* hold the character being tested */
  
-@@ -467,6 +469,9 @@ int mapname(__G__ renamed)
+@@ -467,6 +470,18 @@ int mapname(__G__ renamed)
      while ((workch = (uch)*cp++) != 0) {
  
          if (quote) {                 /* if character quoted, */
-+	    if ((pp == pathcomp) && (workch == '.'))
-+		/* Oh no you don't... */
-+		goto ddot_hack;
++	    if (pp == pathcomp) {
++		quote = FALSE;
++		if (workch == '.')
++		    /* Oh no you don't... */
++	   	    goto ddot_hack;
++	        if (workch == '/') {
++		    /* We *never* allow quote-slash at the beginning */
++		    killed_qslash = TRUE;
++		    continue;
++		}
++	    }
++		
              *pp++ = (char)workch;    /*  include it literally */
              quote = FALSE;
          } else
-@@ -481,15 +486,44 @@ int mapname(__G__ renamed)
+@@ -481,15 +496,45 @@ int mapname(__G__ renamed)
                  break;
  
              case '.':
@@ -50,7 +60,8 @@ $OpenBSD: patch-unix_unix_c,v 1.1 2003/07/02 16:03:59 brad Exp $
 +			/*
 +			 * SECURITY: Skip past control characters if the user
 +			 * didn't OK use of absolute pathnames. lhh - this is
-+			 * a very quick, ugly, inefficient fix.
++			 * a very quick, ugly, inefficient fix; it traverses
++			 * the WHOLE path, eating up these as it comes to it.
 +			 */
 +			dp = cp;
 +			do {
@@ -80,3 +91,20 @@ $OpenBSD: patch-unix_unix_c,v 1.1 2003/07/02 16:03:59 brad Exp $
                      }
                  }
                  *pp++ = '.';
+@@ -534,6 +579,16 @@ int mapname(__G__ renamed)
+             error = (error & MPN_MASK) | PK_WARN;
+     }
+ 
++    /* Show warning when stripping insecure quoted-slash at beginning of
++       path components */
++    if (killed_qslash && QCOND2) {
++        Info(slide, 0, ((char *)slide,
++          "warning:  skipped root directory component(s) in %s\n",
++          FnFilter1(G.filename)));
++        if (!(error & ~MPN_MASK))
++            error = (error & MPN_MASK) | PK_WARN;
++    }
++
+ /*---------------------------------------------------------------------------
+     Report if directory was created (and no file to create:  filename ended
+     in '/'), check name to be sure it exists, and combine path and name be-

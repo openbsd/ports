@@ -1,0 +1,18 @@
+$OpenBSD: patch-man_unzip_1,v 1.1 2003/08/17 23:48:40 brad Exp $
+--- man/unzip.1.orig	2002-02-10 17:09:20.000000000 -0500
++++ man/unzip.1	2003-08-17 19:25:19.000000000 -0400
+@@ -396,7 +396,13 @@ version 5.50) prevents \fIunzip\fP from 
+ \fB\-:\fP option lets \fIunzip\fP switch back to its previous, more liberal
+ behaviour, to allow exact extraction of (older) archives that used ``../''
+ components to create multiple directory trees at the level of the current
+-extraction folder.
++extraction folder.  Use of this will not enable writing explicitly to the
++root directory (``/'').  To do this, it is necessary to unzip the file from
++within the root directory itself.  However, when the \fB\-:\fP option is
++specified, it is still possible to write to implicitly write to the root
++directory by specifiying enough ``../'' path components within the zip file.
++Use this option with extreme caution.
++
+ .PD
+ .\" =========================================================================
+ .SH "ENVIRONMENT OPTIONS"
