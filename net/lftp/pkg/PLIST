@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/13 05:41:49 kevlo Exp $
+bin/lftp
+bin/lftpget
+lib/lftp/lftp.conf.sample
+@exec if [ -f /etc/lftp.conf ]; then echo "Update /etc/lftp.conf manually"; else cp %D/%F /etc/lftp.conf; fi
+@unexec echo "Remove the /etc/lftp.conf file manually"
+man/man1/lftp.1
+share/lftp/import-ncftp
+share/lftp/import-netscape
+share/locale/es/LC_MESSAGES/lftp.mo
+share/locale/ru/LC_MESSAGES/lftp.mo
+share/locale/it/LC_MESSAGES/lftp.mo
+share/locale/pt_BR/LC_MESSAGES/lftp.mo
+share/locale/pl/LC_MESSAGES/lftp.mo
+share/locale/de/LC_MESSAGES/lftp.mo
+share/locale/zh_CN/LC_MESSAGES/lftp.mo
+share/locale/ko/LC_MESSAGES/lftp.mo
+@dirrm lib/lftp
+@dirrm share/lftp
