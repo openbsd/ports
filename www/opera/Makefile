@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2001/06/02 21:22:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/16 17:10:29 naddy Exp $
 
-COMMENT=	"fast and customizable WWW browser"
 ONLY_FOR_ARCHS=	i386
 
-PKGNAME=	opera-5.0
-DISTNAME=	opera-5.0-static.i386
+COMMENT=	"fast and customizable WWW browser"
+
+PKGNAME=	opera-5.05tp1
+DISTNAME=	opera-5.05_tp1-static_qt-libnpp-0.1.1
 CATEGORIES=	www
-NEED_VERSION=	1.405
+NEED_VERSION=	1.435
 HOMEPAGE=	http://www.opera.com/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -16,24 +17,22 @@ PERMIT_PACKAGE_FTP=	"Commercial software"
 PERMIT_DISTFILES_CDROM=	"Commercial software"
 PERMIT_DISTFILES_FTP=	"Commercial software"
 
-MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/500/ \
-		http://opera.online.no/linux/tgz/500/ \
-		ftp://gd.tuwien.ac.at/infosys/browsers/opera/linux/500/ \
-		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/500/ \
-		ftp://ftp.planetmirror.com/pub/opera/linux/500/
+MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/505/ \
+		http://opera.online.no/linux/tgz/505/
+EXTRACT_SUFX=	.x86.tar.gz
 
-RUN_DEPENDS=	/emul/linux/usr/lib/libpng.so.2:redhat_base->=6.2p1:emulators/redhat_base
+RUN_DEPENDS=	/emul/linux/usr/lib/libpng.so.2:redhat_base->=6.2p1:emulators/redhat/base \
+		/emul/linux/usr/X11R6/lib/libXm.so.2::emulators/redhat/motif
 
 do-build:
-	sed 's,@PREFIX@,${PREFIX},g' ${FILESDIR}/opera.sh >${WRKBUILD}/opera.sh
+	sed -e 's,@PREFIX@,${PREFIX},g' \
+	    -e 's,@LOCALBASE@,${LOCALBASE},g' \
+	    ${FILESDIR}/opera.sh >${WRKBUILD}/wrapper.sh
 
 do-install:
 	cd ${WRKBUILD} && ./install.sh \
-		--exec_prefix=${PREFIX}/libexec \
-		--docdir=${PREFIX}/share/doc/opera \
-		--sharedir=${PREFIX}/share/opera
-	${INSTALL_SCRIPT} ${WRKBUILD}/opera.sh ${PREFIX}/bin/opera
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/opera
-	${INSTALL_DATA} ${FILESDIR}/operarc ${PREFIX}/share/examples/opera
+	    --prefix=${PREFIX} \
+	    --exec_prefix=${PREFIX}/libexec \
+	    --docdir=${PREFIX}/share/doc/opera
 
 .include <bsd.port.mk>

@@ -6,6 +6,7 @@ Opera is a fast and customizable WWW browser.  Features:
 - 128-bit encryption, TLS 1.0, SSL 2 and 3
 - ECMAScript, JavaScript 1.3
 - partial DOM and WAP/WML
+- support for Netscape plug-ins
 - fast rendering of pages
 - instant toggling of image and documents settings
 - extensive drag-and-drop features

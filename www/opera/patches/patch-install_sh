@@ -1,9 +1,15 @@
-$OpenBSD: patch-install_sh,v 1.1.1.1 2001/05/16 14:44:27 naddy Exp $
---- install.sh.orig	Tue May 15 21:09:35 2001
-+++ install.sh	Tue May 15 21:10:28 2001
-@@ -159,10 +159,10 @@ runinstall()
- 	cp $v -fp opera.xpm opera.wmconfig opera.desktop opera_*.png $share_dir/
- 	cp $v -fp opera.adr $share_dir/
+$OpenBSD: patch-install_sh,v 1.2 2001/09/16 17:10:29 naddy Exp $
+--- install.sh.orig	Fri Aug 10 14:29:05 2001
++++ install.sh	Tue Aug 14 22:38:06 2001
+@@ -186,14 +186,14 @@ runinstall()
+ 	mkdir $v -p $plugin_dir/
+ 	chmod $vv 755 $plugin_dir
+ 
+-	cp $v -fdp plugins/* $plugin_dir
++	(cd plugins; pax -r -w -pe * $plugin_dir)
+         chmod $vv 755 $plugin_dir/operamotifwrapper
+-        chmod $vv 755 $plugin_dir/libnpp.so.0.1.0
++        chmod $vv 755 $plugin_dir/libnpp.so.0.1.1
  
 -	icons
 -	gnome
@@ -14,5 +20,5 @@ $OpenBSD: patch-install_sh,v 1.1.1.1 2001/05/16 14:44:27 naddy Exp $
 +#	kde2
 +#	kde
  
-     # Uninstallation
- #	echo '' > $share_dir/uninstall.sh
+ # Add uninstallation here
+ 
