@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/07/04 21:26:17 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2001/01/03 19:36:09 brad Exp $
 
 DISTNAME=	bash-2.04
 CATEGORIES=	shells
@@ -22,14 +22,11 @@ CONFIGURE_STYLE= gnu dest
 # Work-around for curses bug, which makes trace visible...
 #CFLAGS+=-Dtrace=bash_trace
 
-FLAVORS=static
+FLAVORS=	static
 FLAVOR?=
 
-.if defined(STATIC) && ${STATIC:U} == YES
-FLAVOR=static
-.endif
 .if ${FLAVOR:L} == "static"
-CONFIGURE_ARGS+= --enable-static-link
+CONFIGURE_ARGS=	--enable-static-link
 .endif
 
 post-install:

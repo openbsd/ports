@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2000/07/05 02:05:28 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2001/01/03 19:36:10 brad Exp $
 
 DISTNAME=	zsh-3.0.8
 CATEGORIES=	shells
-NEED_VERSION=	1.310
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		ftp://ftp.sterling.com/zsh/ \
 		ftp://ftp.rge.com/pub/zsh/ \
@@ -24,14 +24,11 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free
 
-FLAVORS=static
+FLAVORS=	static
 FLAVOR?=
 
-.if defined(STATIC) && ${STATIC:U} == YES
-FLAVOR=static
-.endif
 .if ${FLAVOR:L} == "static"
-CONFIGURE_ENV+=	LDFLAGS=-static
+CONFIGURE_ENV=	LDFLAGS="-static"
 .endif
 
 .include <bsd.port.mk>
