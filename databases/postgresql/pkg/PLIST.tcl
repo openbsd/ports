@@ -75,6 +75,8 @@ pgsql/lib/pg_geqo.sample
 pgsql/lib/pg_hba.conf.sample
 pgsql/lib/plpgsql.so
 pgsql/lib/pltcl.so
+@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/pgsql/lib
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/pgsql/lib
 pgsql/man/man1/cleardbdir.1
 pgsql/man/man1/createdb.1
 pgsql/man/man1/createuser.1
@@ -181,7 +183,6 @@ share/doc/pgsql/user.ps.gz
 @dirrm pgsql/man/man3
 @dirrm pgsql/man/man1
 @dirrm pgsql/man
-@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/pgsql/lib
 @dirrm pgsql/lib
 @dirrm pgsql/include/utils
 @dirrm pgsql/include/libpq++
@@ -193,4 +194,3 @@ share/doc/pgsql/user.ps.gz
 @dirrm pgsql/include
 @dirrm pgsql/bin
 @dirrm pgsql
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/pgsql/lib

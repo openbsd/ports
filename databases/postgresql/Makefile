@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 1999/12/07 05:09:41 form Exp $
+# $OpenBSD: Makefile,v 1.18 1999/12/07 08:26:41 form Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 DISTNAME=	postgresql-6.5.3
@@ -123,6 +123,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/../doc/TODO* ${PREFIX}/share/doc/pgsql
 	${INSTALL_DATA} ${WRKSRC}/../doc/*ps.gz ${PREFIX}/share/doc/pgsql
 	${INSTALL_DATA} ${WRKSRC}/../INSTALL ${PREFIX}/share/doc/pgsql
+	@${LDCONFIG} -m ${PREFIX}/pgsql/lib
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
