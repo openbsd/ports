@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2002/12/23 18:54:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.22 2003/06/18 20:24:55 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"view, distribute and print PDF documents"
 
-DISTNAME=	linux-506
-PKGNAME=	acroread-5.06
+DISTNAME=	linux-507
+PKGNAME=	acroread-5.07
 CATEGORIES=	print
 
 MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
