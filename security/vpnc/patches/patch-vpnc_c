@@ -1,0 +1,14 @@
+$OpenBSD: patch-vpnc_c,v 1.1 2005/03/08 06:38:08 sturm Exp $
+--- vpnc.c.orig	Mon Nov 22 01:12:02 2004
++++ vpnc.c	Mon Mar  7 23:06:44 2005
+@@ -468,8 +468,8 @@ static uint16_t unpack_verify_phase2(str
+ 	*r_p = NULL;
+ 
+ 	if (r_length < ISAKMP_PAYLOAD_O || ((r_length - ISAKMP_PAYLOAD_O) % s->ivlen != 0)) {
+-		DEBUG(2, printf("payload to short or not padded: len=%d, min=%d (ivlen=%d)\n",
+-			r_length, ISAKMP_PAYLOAD_O, s->ivlen));
++		DEBUG(2, printf("payload to short or not padded: len=%lu, min=%d (ivlen=%lu)\n",
++			(unsigned long)r_length, ISAKMP_PAYLOAD_O, (unsigned long)s->ivlen));
+ 		return ISAKMP_N_UNEQUAL_PAYLOAD_LENGTHS;
+ 	}
+ 
