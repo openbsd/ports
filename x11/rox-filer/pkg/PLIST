@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/01/11 01:08:36 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/01/28 02:41:57 naddy Exp $
 bin/rox
 man/man1/ROX-Filer.1
 man/man1/rox.1
@@ -9,6 +9,7 @@ rox/ROX-Filer/AppRun
 rox/ROX-Filer/AppRun.orig
 rox/ROX-Filer/Help/COPYING
 rox/ROX-Filer/Help/Changes
+rox/ROX-Filer/Help/Manual-fr.html
 rox/ROX-Filer/Help/Manual.html
 rox/ROX-Filer/Help/README
 rox/ROX-Filer/Help/README-es
@@ -42,7 +43,7 @@ rox/ROX-Filer/pixmaps/unknown.xpm
 rox/ROX-Filer/pixmaps/up.xpm
 rox/ROX-Filer/pixmaps/zoom.xpm
 rox/ROX-Filer/src/Docs/Makefile
-rox/ROX-Filer/src/Docs/Manual-fr.lyx
+rox/ROX-Filer/src/Docs/Manual-fr.xml
 rox/ROX-Filer/src/Docs/Manual.xml
 rox/ROX-Filer/src/Docs/to_html.xsl
 rox/ROX-Filer/src/Docs/to_man.xsl
@@ -81,11 +82,14 @@ rox/ROX-Filer/src/find.c
 rox/ROX-Filer/src/find.h
 rox/ROX-Filer/src/fscache.c
 rox/ROX-Filer/src/fscache.h
+rox/ROX-Filer/src/gconvert.c
+rox/ROX-Filer/src/gconvert.h
 rox/ROX-Filer/src/global.h
 rox/ROX-Filer/src/gtksavebox.c
 rox/ROX-Filer/src/gtksavebox.h
 rox/ROX-Filer/src/gui_support.c
 rox/ROX-Filer/src/gui_support.h
+rox/ROX-Filer/src/gunicode.h
 rox/ROX-Filer/src/i18n.c
 rox/ROX-Filer/src/i18n.h
 rox/ROX-Filer/src/icon.c
