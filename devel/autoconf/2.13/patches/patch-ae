@@ -1,0 +1,33 @@
+--- acgeneral.m4.orig	Tue Jan  5 14:27:37 1999
++++ acgeneral.m4	Sun Sep 16 15:31:16 2001
+@@ -733,8 +733,8 @@ ac_help="$ac_help
+ [$2]"
+ AC_DIVERT_POP()dnl
+ [#] Check whether --enable-[$1] or --disable-[$1] was given.
+-if test "[${enable_]patsubst([$1], -, _)+set}" = set; then
+-  enableval="[$enable_]patsubst([$1], -, _)"
++if test "[${enable_]translit([$1], -, _)+set}" = set; then
++  enableval="[$enable_]translit([$1], -, _)"
+   ifelse([$3], , :, [$3])
+ ifelse([$4], , , [else
+   $4
+@@ -758,8 +758,8 @@ ac_help="$ac_help
+ [$2]"
+ AC_DIVERT_POP()dnl
+ [#] Check whether --with-[$1] or --without-[$1] was given.
+-if test "[${with_]patsubst([$1], -, _)+set}" = set; then
+-  withval="[$with_]patsubst([$1], -, _)"
++if test "[${with_]translit([$1], -, _)+set}" = set; then
++  withval="[$with_]translit([$1], -, _)"
+   ifelse([$3], , :, [$3])
+ ifelse([$4], , , [else
+   $4
+@@ -859,7 +859,7 @@ dnl do not automatically need to distrib
+ dnl AC_CONFIG_AUX_DIRS(DIR ...)
+ AC_DEFUN(AC_CONFIG_AUX_DIRS,
+ [ac_aux_dir=
+-for ac_dir in $1; do
++for ac_dir in ${GNUSYSTEM_AUX_DIR} $1; do
+   if test -f $ac_dir/install-sh; then
+     ac_aux_dir=$ac_dir
+     ac_install_sh="$ac_aux_dir/install-sh -c"

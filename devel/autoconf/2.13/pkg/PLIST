@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/15 14:02:54 espie Exp $
+@option no-default-conflict
+@pkgcfl autoconf-2.0*
+@pkgcfl autoconf-2.1*
+@pkgcfl autoconf-1.*
+@unexec install-info --delete --info-dir=%D/info %D/info/autoconf${SUFFIX}.info
+bin/autoconf${SUFFIX}
+bin/autoheader${SUFFIX}
+bin/autoreconf${SUFFIX}
+bin/autoscan${SUFFIX}
+bin/autoupdate${SUFFIX}
+bin/ifnames${SUFFIX}
+info/autoconf${SUFFIX}.info
+share/autoconf${SUFFIX}/acconfig.h
+share/autoconf${SUFFIX}/acfunctions
+share/autoconf${SUFFIX}/acgeneral.m4
+share/autoconf${SUFFIX}/acheaders
+share/autoconf${SUFFIX}/acidentifiers
+share/autoconf${SUFFIX}/acmakevars
+share/autoconf${SUFFIX}/acoldnames.m4
+share/autoconf${SUFFIX}/acprograms
+share/autoconf${SUFFIX}/acspecific.m4
+share/autoconf${SUFFIX}/autoconf.m4
+share/autoconf${SUFFIX}/autoheader.m4
+@dirrm share/autoconf${SUFFIX}
+@exec install-info --info-dir=%D/info %D/info/autoconf${SUFFIX}.info

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+a=`mktemp /tmp/$1.XXXXXXXXXX`
+b=`mktemp /tmp/$2.XXXXXXXXXX`
+trap 'rm $a $b; exit 0' 0 1 2 3 13 15
+sed -e 's,configure:[0-9]*:,configure:####:,' 	\
+	-e 's,^#line [0-9]*,#line ####,'	\
+	-e 's,$as_me:[0-9]*:,$as_me::,'		\
+	<$1 >$a
+sed -e 's,configure:[0-9]*:,configure:####:,' 	\
+	-e 's,^#line [0-9]*,#line ####,'	\
+	-e 's,$as_me:[0-9]*:,$as_me::,'		\
+	<$2 >$b
+diff -u $a $b|sed -e s,$a,$1, -e s,$b,$2,
