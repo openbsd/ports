@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/05/08 02:01:31 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/06/14 16:31:56 brad Exp $
 # $FreeBSD: Makefile,v 1.6 1999/04/06 12:02:41 flathill Exp $
 
 DISTNAME=	gicq-0.33
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
+MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/
 
 MAINTAINER=	brad@openbsd.org
 
