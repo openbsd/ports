@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/03/01 22:43:49 todd Exp $
+# $OpenBSD: Makefile,v 1.18 2001/03/02 14:51:35 todd Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 DISTNAME=	bochs-2000_0325a
@@ -19,8 +19,8 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-vga \
 		--enable-fpu --enable-cdrom
 
-FLAVORS=	debug i386 i486 i586 pci smp net no_x11 term
-FLAVOR?=	i586
+FLAVORS=	debug i386 i486 pci smp net no_x11 term
+FLAVOR?=
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+= --enable-debugger --enable-disasm --enable-x86-debugger
@@ -28,22 +28,18 @@ CONFIGURE_ARGS+= --enable-debugger --enable-disasm --enable-x86-debugger
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --with-nogui
-.else
-.if ${FLAVOR:L:Mterm}
+.elif ${FLAVOR:L:Mterm}
 CONFIGURE_ARGS+= --with-term
 .else
 CONFIGURE_ARGS+= --with-x11
 .endif
-.endif
 
 .if ${FLAVOR:L:Mi386}
 CONFIGURE_ARGS+= --enable-cpu-level="3"
-.else
-. if ${FLAVOR:L:Mi486}
+.elif ${FLAVOR:L:Mi486}
 CONFIGURE_ARGS+= --enable-cpu-level="4"
-. else
+.else
 CONFIGURE_ARGS+= --enable-cpu-level="5"
-. endif
 .endif
 
 .if ${FLAVOR:L:Mpci}
