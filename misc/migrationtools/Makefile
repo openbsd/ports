@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/02/12 06:49:43 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/12 14:09:49 kevlo Exp $
 
 COMMENT=	"perl scripts for migrating system information to LDAP"
 
@@ -6,7 +6,7 @@ DISTNAME=	MigrationTools
 PKGNAME=	migrationtools-45
 CATEGORIES=	misc
 
-MASTER_SITES=	http://www.padl.com/downloa/
+MASTER_SITES=	http://www.padl.com/download/
 HOMEPAGE=	http://www.padl.com/OSS/MigrationTools.html
 
 # BSD license, included with the source files
