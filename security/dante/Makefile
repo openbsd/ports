@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2000/11/21 10:38:25 jakob Exp $
+# $OpenBSD: Makefile,v 1.14 2001/01/22 17:15:28 brad Exp $
+
+ONLY_FOR_ARCHS=	i386 sparc m68k powerpc
 
 DISTNAME=	dante-1.1.6
 CATEGORIES=	security
-NEED_VERSION=	1.310
-
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/
 
 HOMEPAGE=	http://www.inet.no/dante/
@@ -15,8 +16,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	gnu
-SEPARATE_BUILD=		concurrent
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= --enable-static
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dante
