@@ -1,3 +1,5 @@
+# $OpenBSD: Makefile,v 1.2 1999/06/11 19:14:44 dugsong Exp $
+
 PKGNAME=	malsync-1.6
 DISTNAME=	malsync_1_6
 
