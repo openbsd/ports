@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/07/26 12:29:25 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/07/27 17:37:38 espie Exp $
 
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
@@ -98,6 +98,9 @@ CONFIGURE_ENV+=		VORBIS_LIBS=its-not-my-godamn-planet-understand-monkey-boy
 
 post-extract:
 	@mv -f ${WRKDIR}/${DISTDRIVER}/Output/sun ${WRKSRC}/Output/sun
+
+pre-configure:
+	@cd ${WRKSRC}/libxmms && autoconf
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xmms
