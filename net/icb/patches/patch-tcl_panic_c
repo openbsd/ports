@@ -1,0 +1,36 @@
+$OpenBSD: patch-tcl_panic_c,v 1.1 2004/01/04 20:36:49 espie Exp $
+--- tcl/panic.c.orig	2004-01-04 21:31:21.000000000 +0100
++++ tcl/panic.c	2004-01-04 21:32:25.000000000 +0100
+@@ -19,7 +19,7 @@ static char rcsid[] = "$Header: /home/ag
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <varargs.h>
++#include <stdarg.h>
+ 
+ /*
+  *----------------------------------------------------------------------
+@@ -39,19 +39,18 @@ static char rcsid[] = "$Header: /home/ag
+ 
+ #ifndef lint
+ void
+-panic(va_alist)
+-    va_dcl			/* char *format, then any number of additional
++panic(const char *format, ...)
++    				/* char *format, then any number of additional
+ 				 * values to be printed under the control of
+ 				 * format.  This is all just the same as you'd
+ 				 * pass to printf. */
+ {
+-    char *format;
+     va_list args;
+ 
+-    va_start(args);
+-    format = va_arg(args, char *);
++    va_start(args, format);
+     (void) vfprintf(stderr, format, args);
+     (void) fflush(stderr);
++    va_end(args);
+     abort();
+ }
+ #else
