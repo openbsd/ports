@@ -1,5 +1,10 @@
-bin/nedit
-bin/nc
-man/man1/nedit.1
-man/man1/nc.1
+@cwd /usr/X11R6
+@name nedit-5.0.2
+@pkgdep lesstif-0.85
 lib/X11/app-defaults/NEdit
+bin/nedit
+bin/ncl
+man/man1/nedit.1
+man/man1/ncl.1
+share/doc/nedit/nedit.doc
+@dirrm share/doc/nedit

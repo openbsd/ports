@@ -4,7 +4,7 @@
 #
 # Whom:	Oleg Safiullin <form@vs.itam.nsc.ru>
 #
-# $OpenBSD: Makefile,v 1.2 1998/06/13 23:26:39 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/07/16 03:40:48 marc Exp $
 # FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp
 #
 
@@ -16,19 +16,29 @@ DISTFILES=	nedit_source.tar.gz nedit.app-defaults
 
 MAINTAINER=	form@vs.itam.nsc.ru
 
+LIB_DEPENDS=	Xm\\.1\\.:${PORTSDIR}/x11/lesstif
 OS_RELEASE!=	uname -r
 OS_HAS_XPM=	2.3
 .if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS+=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 .endif
 
-REQUIRES_MOTIF=	yes
 USE_X11=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	nedit_source.tar.gz
-MAN1=		nedit.1 nc.1
+
+ALL_TARGET=	openbsd_nedit
 
 post-extract:
-	${CP} ${DISTDIR}/nedit.app-defaults ${WRKSRC}/NEdit.ad
+	@${CP} ${DISTDIR}/nedit.app-defaults ${WRKSRC}/NEdit.ad
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/source/nedit ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/source/nc ${PREFIX}/bin/ncl
+	@${INSTALL_MAN} ${WRKSRC}/nedit.man ${PREFIX}/man/man1/nedit.1
+	@${INSTALL_MAN} ${WRKSRC}/nc.man ${PREFIX}/man/man1/ncl.1
+	@${INSTALL_DATA} ${WRKSRC}/NEdit.ad ${PREFIX}/lib/X11/app-defaults/NEdit
+	@${INSTALL} -d ${PREFIX}/share/doc/nedit
+	@${INSTALL_DATA} ${WRKSRC}/nedit.doc ${PREFIX}/share/doc/nedit
 
 .include <bsd.port.mk>
