@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2002/11/03 18:07:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.92 2002/11/13 17:51:54 espie Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -14,6 +14,7 @@
      SUBDIR += disc-cover
      SUBDIR += easytag
      SUBDIR += esound
+     SUBDIR += faad
      SUBDIR += flac
      SUBDIR += gkrellm-volume
      SUBDIR += gkrellmms
