@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2002/03/21 20:57:06 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/10/26 20:44:38 naddy Exp $
 
 COMMENT=	"fast anagram generator"
 
 DISTNAME=	an-0.93
 CATEGORIES=	games
 MASTER_SITES=	ftp://suburbia.net/pub/rmj/
-NEED_VERSION=	1.515
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -16,6 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_ENV=	DEFS=-DDEFDICT=\\\"/usr/share/dict/words\\\"
 ALL_TARGET=	with-getopt
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/an ${PREFIX}/bin

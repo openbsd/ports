@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2002/10/05 21:11:09 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/26 20:44:38 naddy Exp $
 
-COMMENT=	X11 Go Toolset
+COMMENT=	"X11 Go Toolset"
 
 DISTNAME=	cgoban-1.9.12
 CATEGORIES=	games x11
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
 ALL_TARGET=
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cgoban ${PREFIX}/bin

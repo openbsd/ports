@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/03/21 20:57:07 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/26 20:44:39 naddy Exp $
 #
 
 COMMENT=	"graphical multi-player real-time strategy game for X11"
@@ -6,7 +6,6 @@ COMMENT=	"graphical multi-player real-time strategy game for X11"
 DISTNAME=       xblast-2.6.beta
 PKGNAME=	xblast-2.6b
 CATEGORIES=	games
-NEED_VERSION=	1.515
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,5 +21,7 @@ MASTER_SITES=   http://www.ikp.uni-koeln.de/~vogel/archive/
 
 WRKDIST=	${WRKDIR}/XBlast-2.6.beta
 CONFIGURE_STYLE=imake
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

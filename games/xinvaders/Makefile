@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/07/18 21:50:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/10/26 20:44:39 naddy Exp $
 
 NOT_FOR_ARCHS=	alpha sparc64
 
@@ -8,7 +8,6 @@ DISTNAME=       xinvaders
 DIST_SUBDIR=	xinvaders
 PKGNAME=	xinvaders-2.0
 CATEGORIES=	games
-NEED_VERSION=	1.515
 
 MAINTAINER=	Paul Janzen <pjanzen@openbsd.org>
 
@@ -29,5 +28,7 @@ WRKDIST=	${WRKDIR}
 
 pre-patch:
 	@cd $(WRKSRC) ; mv xinvaders.ma xinvaders.man
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

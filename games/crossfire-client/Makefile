@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/09/13 22:54:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/26 20:44:38 naddy Exp $
 
 COMMENT=	"graphical networked AD&D style game"
 
@@ -29,5 +29,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/utils
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

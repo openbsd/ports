@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 20:57:06 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/26 20:44:39 naddy Exp $
 # $NetBSD: Makefile,v 1.2 2000/01/15 18:46:28 jlam Exp $
 # Original from: Stefan Jokisch
 
@@ -7,7 +7,6 @@ COMMENT=	"Curses-based interpreter for Infocom-compatible games"
 DISTNAME=		UnixFrotz232R2Std10
 PKGNAME=		frotz-2.32
 CATEGORIES=     	games
-NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.geocities.com/SiliconValley/Heights/3222/frotz.html
 
@@ -26,6 +25,8 @@ WRKDIST=		${WRKDIR}/frotz-2.32
 ALL_TARGET=		frotz
 
 CFLAGS+=		-DUSE_UNISTD_H -DCOLOR_SUPPORT -DEMACS_EDITING
+
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/frotz ${PREFIX}/bin

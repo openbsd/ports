@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2002/03/21 20:57:08 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/26 20:44:40 naddy Exp $
 
 COMMENT=	"solitaire"
 
 DISTNAME=       xsol-new
 PKGNAME=	xsol-2.1.1
 CATEGORIES=	games
-NEED_VERSION=	1.515
+
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 # License: BSD
@@ -15,5 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=imake
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

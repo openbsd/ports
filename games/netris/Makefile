@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2002/03/21 20:57:07 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/26 20:44:39 naddy Exp $
 
 COMMENT=	"network head-to-head version of T*tris"
 
 DISTNAME=	netris-0.5
 CATEGORIES=	games
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.netris.org/pub/netris/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=simple
 CONFIGURE_SCRIPT= Configure
+
+NO_REGRESS=	Yes
 
 FAKE_FLAGS=DESTDIR=${WRKINST}${PREFIX}/bin
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/09/16 08:18:11 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2002/10/26 20:44:40 naddy Exp $
 
 COMMENT=	"shooting game for X11"
 
@@ -15,5 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://www.surfline.ne.jp/hachi/xsoldier/
 
 CONFIGURE_STYLE=	imake noman
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2002/03/21 20:57:08 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/10/26 20:44:40 naddy Exp $
 
 COMMENT=	"screen bottom ripples like a pool of water"
 
 DISTNAME=	xripple
 PKGNAME=	xripple-1.0
 CATEGORIES=	games
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://crydee.sai.msu.ru/zeus/X11/contrib/ \
 		ftp://ftp.cin.nihon-u.ac.jp/pub/X11/enlightenment/misc/ \
 		ftp://ftp.dataplus.se/pub/linux/enlightenment/misc/ \
@@ -24,6 +24,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=imake
 ALL_TARGET=	xripple
+
+NO_REGRESS=	Yes
 
 post-configure:
 	@cd ${WRKSRC}; ${MAKE} clean

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2002/05/13 18:50:43 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/26 20:44:39 naddy Exp $
 
 COMMENT=	"X11 arcade"
 
 DISTNAME=	xboing2.4
 PKGNAME=	xboing-2.4
 CATEGORIES=	games
-NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -16,5 +15,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
 
 CONFIGURE_STYLE=imake
 WRKDIST= ${WRKDIR}/xboing
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2002/06/09 05:36:39 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/26 20:44:38 naddy Exp $
 
 COMMENT=	"eboard extra piece sets and sounds"
 
 DISTNAME=	eboard-extras-1pl2
 CATEGORIES=	games
-NEED_VERSION=	1.528
 
 HOMEPAGE=	http://eboard.sourceforge.net
 
@@ -18,6 +17,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=eboard/}
 RUN_DEPENDS=	:eboard->=0.3.1:games/eboard
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	$(INSTALL_DATA_DIR) $(PREFIX)/share/eboard

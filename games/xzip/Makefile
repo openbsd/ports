@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/21 20:57:08 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/26 20:44:40 naddy Exp $
 # $NetBSD: Makefile,v 1.4 1999/01/30 23:18:49 agc Exp $
 # Original from: Andrew Plotkin, Mark Howell
 
@@ -7,7 +7,6 @@ COMMENT=	"z-code interpreter for X11 (Infocom game format)"
 DISTNAME=	xzip182
 PKGNAME=	xzip-1.8.2
 CATEGORIES=     games x11
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://www.eblong.com/zarf/xzip.html
 
@@ -29,6 +28,8 @@ WRKDIST=	${WRKDIR}/xzip
 ALL_TARGET=	xzip
 
 CFLAGS+=	-DAUTO_END_MODE -I${X11BASE}/include
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xzip ${PREFIX}/bin

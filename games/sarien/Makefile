@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/13 18:50:43 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/26 20:44:39 naddy Exp $
 
 COMMENT=		"interpreter for old Sierra AGI games"
 
 DISTNAME=		sarien-0.7.0
 CATEGORIES=		games emulators
-NEED_VERSION=		1.504
 
 MAINTAINER=		Aaron Campbell <aaron@openbsd.org>
 
@@ -20,6 +19,8 @@ CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sarien/}
+
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/sarien ${PREFIX}/bin

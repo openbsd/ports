@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/09/28 22:04:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/26 20:44:39 naddy Exp $
 #
 
 COMMENT=	"side-view, fast-action, kill everything type of game"
@@ -6,7 +6,6 @@ COMMENT=	"side-view, fast-action, kill everything type of game"
 DISTNAME=	xevil1.5
 PKGNAME=	xevil-1.5
 CATEGORIES=	games
-NEED_VERSION=	1.515
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/xevil1.5/}
 EXTRACT_SUFX=	.tar.Z
@@ -23,6 +22,8 @@ WRKDIST=	${WRKDIR}
 
 ALL_TARGET=	freebsd
 MAKE_ENV=	CXX="${CXX}"
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/xevil $(PREFIX)/bin

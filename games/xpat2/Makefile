@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/09/19 07:00:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/26 20:44:40 naddy Exp $
 
 COMMENT=	"X11 solitaire with 14 variations"
 
@@ -20,5 +20,7 @@ USE_X11=	Yes
 
 WRKSRC=${WRKDIST}/src
 CONFIGURE_STYLE=imake
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

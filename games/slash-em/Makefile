@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/08 15:33:01 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/26 20:44:39 naddy Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Hard"
 DISTNAME=	se006e4f8
 CATEGORIES=	games
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://slashem.sourceforge.net
 MASTER_SITES=	http://avrc.city.ac.uk/nethack/slashem/
@@ -41,6 +40,8 @@ USE_X11=	Yes
 .endif
 
 RUN_DEPENDS=:hackdata-*:games/hackdata
+
+NO_REGRESS=	Yes
 
 do-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh symlinks

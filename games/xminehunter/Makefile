@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2002/05/13 18:50:43 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/26 20:44:39 naddy Exp $
 
 COMMENT=	"Motif minesweeper game"
 
 DISTNAME=	xminehunter-0.4
 CATEGORIES=	games
-NEED_VERSION=	1.515
+
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
@@ -21,5 +21,7 @@ WRKDIST=	${WRKDIR}/xminehunter
 ALL_TARGET=	xminehunter
 FAKE_FLAGS=	INSTALL_BIN_PATH=${WRKINST}${PREFIX}/bin \
 	INSTALL_SCORE_PATH=${WRKINST}${PREFIX}/lib/X11/xminehunter
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

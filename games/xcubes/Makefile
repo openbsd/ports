@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2002/05/13 18:50:43 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/26 20:44:39 naddy Exp $
 #
 
 COMMENT=	"cube puzzle for X11"
 
 DISTNAME=	xcubes-5.5.2
 CATEGORIES=	games
-NEED_VERSION=	1.515
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,6 +16,8 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/xpuzzles/}
 
 WRKDIST=	${WRKDIR}/xcubes
 CONFIGURE_STYLE=	imake
+
+NO_REGRESS=	Yes
 
 post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/xcubes ${PREFIX}/bin

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2002/03/21 20:57:08 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/10/26 20:44:40 naddy Exp $
 
 COMMENT=	"skat card game"
 
 DISTNAME=	xskat-3.4
 CATEGORIES=	games
-NEED_VERSION=	1.515
+
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://www.gulu.net/xskat/ 
@@ -15,5 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	imake
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

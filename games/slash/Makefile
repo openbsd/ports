@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2002/05/13 18:50:43 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2002/10/26 20:44:39 naddy Exp $
 
 COMMENT=	"dungeon explorin', hackin' game, but harder than nethack"
 
 DISTNAME=	slash-e8
 PKGNAME=	slash-3.2.2-e8
 CATEGORIES=	games
-NEED_VERSION=	1.515
+
 MASTER_SITES=   ftp://ftp.nethack.org/pub/nethack/oldver/3.2.2/src/ \
                 ftp://ftp.uu.net/pub/games/nethack/sources/ \
                 ${MASTER_SITE_GNU:=nethack/}
@@ -41,6 +41,8 @@ USE_X11=	Yes
 .endif
 
 RUN_DEPENDS=:hackdata-*:games/hackdata
+
+NO_REGRESS=	Yes
 
 post-extract:
 	@cd ${WRKDIR} && mv nethack-3.2.2 ${DISTNAME}

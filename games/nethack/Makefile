@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2002/05/13 18:50:43 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2002/10/26 20:44:39 naddy Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Piece of cake"
 DISTNAME=	nethack-3.4.0
 CATEGORIES=	games
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh340/src/ \
 		ftp://ftp.uu.net/pub/games/nethack/sources/ \
 		${MASTER_SITE_GNU:=nethack/}
@@ -40,6 +40,8 @@ USE_X11=	Yes
 .endif
 
 RUN_DEPENDS=:hackdata-*:games/hackdata
+
+NO_REGRESS=	Yes
 
 do-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh symlinks

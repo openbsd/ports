@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2002/05/08 18:32:02 millert Exp $
+# $OpenBSD: Makefile,v 1.20 2002/10/26 20:44:38 naddy Exp $
 
 COMMENT=	"curses version of the classic game"
 
 DISTNAME=	connect4
 PKGNAME=	connect4-3.2
 CATEGORIES=	games
-NEED_VERSION=	1.413
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -27,6 +26,8 @@ MAKE_FLAGS=	CFLAGS='${CFLAGS} -DSCOREFILE=\"/var/games/connect4.scores\"'
 ALL_TARGET=	c4
 
 WRKDIST=	${WRKDIR}
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/c4 ${PREFIX}/bin/connect4

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2002/05/13 18:50:42 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/26 20:44:38 naddy Exp $
 #
 
 COMMENT=		"AnaGram search utility"
 
 DISTNAME=		agm-1.3.1
 CATEGORIES=		games
-NEED_VERSION=		1.515
 
 MAINTAINER=		Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -15,6 +14,8 @@ PERMIT_DISTFILES_CDROM=	"no license available"
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SUNSITE:=games/amusements/}
+
+NO_REGRESS=		Yes
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/agm ${PREFIX}/bin

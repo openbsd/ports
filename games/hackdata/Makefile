@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/13 18:50:43 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/10/26 20:44:39 naddy Exp $
 
 COMMENT=	'common data for the nethack/slash ports'
 DISTNAME=	nethack-3.4.0
 PKGNAME=	hackdata-3.4.0
 CATEGORIES=	games
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh340/src/ \
 		ftp://ftp.uu.net/pub/games/nethack/sources/ \
 		${MASTER_SITE_GNU:=nethack/}
@@ -30,6 +30,8 @@ do-build:
 	cd ${WRKSRC}/win/X11 && \
 	${X11BASE}/bin/bdftopcf ibm.bdf | /usr/bin/gzip > ibm.pcf.gz && \
 	${X11BASE}/bin/bdftopcf nh10.bdf | /usr/bin/gzip > nh10.pcf.gz
+
+NO_REGRESS=	Yes
 
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nethack

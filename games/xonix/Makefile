@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2002/03/21 20:57:08 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/26 20:44:40 naddy Exp $
 
 COMMENT=	"win land without colliding with 'flyers' and 'eaters'"
 
 DISTNAME=	xonix-1.4
 CATEGORIES=	games
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,5 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	imake
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/03/21 20:57:07 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/10/26 20:44:39 naddy Exp $
 #
 
 COMMENT=	"XEVIOUS-like shooting game"
@@ -6,7 +6,6 @@ COMMENT=	"XEVIOUS-like shooting game"
 DISTNAME=	xev111
 PKGNAME=        xbat-1.11
 CATEGORIES=     games
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://www.nemoto.ecei.tohoku.ac.jp/~wai/index_e.html
 
@@ -20,5 +19,7 @@ MASTER_SITES=   http://www.nemoto.ecei.tohoku.ac.jp/~wai/Xbat/
 CONFIGURE_STYLE=imake
 WRKDIST=	${WRKDIR}/Xev111
 ALL_TARGET=	xbat
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

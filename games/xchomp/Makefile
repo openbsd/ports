@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2002/03/21 20:57:07 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/10/26 20:44:39 naddy Exp $
 
 COMMENT=	"Pac-man-like game under X11"
 
 DISTNAME=	xchomp-pl1
 CATEGORIES=	games
-NEED_VERSION=	1.515
+
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 # License: NONE
@@ -18,5 +18,7 @@ CONFIGURE_STYLE=imake noman
 
 # Change -DFRAME_DELAY=40000 in patchfile/Imakefile value to adjust
 # speed of play depending on X server.
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

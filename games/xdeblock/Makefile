@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2002/03/21 20:57:07 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/10/26 20:44:39 naddy Exp $
 
 COMMENT=	"block action game"
 
 DISTNAME=	xdeblock
 PKGNAME=	xdeblock-1.0
 CATEGORIES=	games
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://www.vector.co.jp/pack/unix/game/action/block/
 EXTRACT_SUFX=	.tgz
-
 
 # License: NONE
 PERMIT_PACKAGE_CDROM=	"no license"
@@ -18,6 +17,8 @@ PERMIT_DISTFILES_FTP=	"no license"
 
 CONFIGURE_STYLE=	imake noman
 WRKDIST=		${WRKDIR}/xdeblo_v1.0
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/xdeblock/mapf
