@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gtkblist_c,v 1.1 2003/11/23 22:39:27 brad Exp $
+--- src/gtkblist.c.orig	2003-11-23 17:11:50.000000000 -0500
++++ src/gtkblist.c	2003-11-23 17:12:48.000000000 -0500
+@@ -3036,8 +3036,6 @@ gaim_gtk_blist_request_add_buddy(GaimAcc
+ 
+ 	gtkblist = GAIM_GTK_BLIST(gaim_get_blist());
+ 
+-	GAIM_DIALOG(data->window);
+-
+ 	data->window = gtk_dialog_new_with_buttons(_("Add Buddy"),
+ 			(gtkblist->window ? GTK_WINDOW(gtkblist->window) : NULL), 0,
+ 			GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
