@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/04/25 22:37:10 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/06 22:55:07 drahn Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -43,6 +43,7 @@ FILES=			ar nm-new objdump ranlib size strings strip-new
 
 post-patch:
 	@cd ${WRKSRC}/bfd && autoconf
+	@cd ${WRKSRC}/binutils && autoconf
 	@-cd ${WRKSRC}/gas && { automake; autoconf; }
 	@cd ${WRKSRC}/ld && automake
 
