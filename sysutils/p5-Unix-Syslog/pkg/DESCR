@@ -1,0 +1,2 @@
+This Module provides access to the system logger available on most
+UNIX systems via Perl's XSUBs (Perl's C interface).
