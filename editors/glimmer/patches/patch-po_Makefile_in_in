@@ -1,33 +1,15 @@
-$OpenBSD: patch-po_Makefile_in_in,v 1.1.1.1 2002/06/13 12:37:07 nino Exp $
---- po/Makefile.in.in.orig	Tue Jun 11 10:26:29 2002
-+++ po/Makefile.in.in	Tue Jun 11 10:29:02 2002
-@@ -6,6 +6,8 @@
- # but which still want to provide support for the GNU gettext functionality.
- # Please note that the actual code is *not* freely available.
+$OpenBSD: patch-po_Makefile_in_in,v 1.2 2002/10/11 18:40:46 naddy Exp $
+--- po/Makefile.in.in.orig	Sat Sep  2 05:07:51 2000
++++ po/Makefile.in.in	Fri Oct 11 22:40:33 2002
+@@ -24,6 +24,8 @@ gnulocaledir = $(prefix)/share/locale
+ gettextsrcdir = $(prefix)/share/gettext/po
+ subdir = po
  
 +DESTDIR =
 +
- PACKAGE = @PACKAGE@
- VERSION = @VERSION@
- 
-@@ -19,7 +21,7 @@ VPATH = @srcdir@
- prefix = @prefix@
- exec_prefix = @exec_prefix@
- datadir = $(prefix)/@DATADIRNAME@
--localedir = $(datadir)/locale
-+localedir = $(prefix)/share/locale
- gnulocaledir = $(prefix)/share/locale
- gettextsrcdir = $(prefix)/share/gettext/po
- subdir = po
-@@ -52,7 +54,7 @@ stamp-cat-id $(POFILES) $(GMOFILES) $(SO
- POTFILES = \
- 
- CATALOGS = @CATALOGS@
--CATOBJEXT = @CATOBJEXT@
-+CATOBJEXT = .g*mo
- INSTOBJEXT = @INSTOBJEXT@
- 
- .SUFFIXES:
+ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
+ MKINSTALLDIRS = $(top_srcdir)/@MKINSTALLDIRS@
 @@ -111,16 +113,16 @@ install-data: install-data-@USE_NLS@
  install-data-no: all
  install-data-yes: all

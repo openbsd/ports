@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2002/06/13 12:37:07 nino Exp $
---- configure.orig	Sat Jan 12 19:42:09 2002
-+++ configure	Thu Jun 13 14:03:02 2002
+$OpenBSD: patch-configure,v 1.2 2002/10/11 18:40:46 naddy Exp $
+--- configure.orig	Sun Jan 13 01:42:09 2002
++++ configure	Fri Oct 11 23:24:50 2002
+@@ -9011,7 +9011,7 @@ echo $ECHO_N "checking Python configurat
+     PY_MAJOR=`$pythonpath -c 'import sys ; print sys.version[0:2]'`
+ 
+     if test -f $PY_PREFIX/include/python$PY_VERSION/Python.h; then
+-      PY_LIBS="-L$PY_EXEC_PREFIX/lib/python$PY_VERSION/config -lpython$PY_VERSION"
++      PY_LIBS="-L$PY_EXEC_PREFIX/lib/python$PY_VERSION/config -lpython$PY_VERSION -lssl -lcrypto -lutil -lreadline"
+       PY_CFLAGS="-I$PY_PREFIX/include/python$PY_VERSION"
+       echo "$as_me:9016: result: ok" >&5
+ echo "${ECHO_T}ok" >&6
 @@ -9133,66 +9133,8 @@ EOF
    LIBS="-lutil $LIBS"
  
