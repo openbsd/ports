@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2000/07/22 23:51:19 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2000/07/27 22:27:59 brad Exp $
 
 DISTNAME=	mutt-1.2.4i
 CATEGORIES=     mail
@@ -20,13 +20,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=slang curses imap pop
-FLAVOR?=curses
+FLAVORS=	slang curses imap pop
+FLAVOR?=	curses
 
-CONFIGURE_STYLE= gnu
 SYSCONFDIR=	/etc/mutt
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-sharedir="${PREFIX}/share/mutt" \
 		--with-docdir="${PREFIX}/share/doc/mutt" \
+		--enable-flock --disable-fcntl \
 		--enable-external_dotlock
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -47,20 +48,21 @@ CONFIGURE_ARGS+= --with-homespool="${HOMESPOOL}"
 .endif
 
 # If you need IMAP or POP, you may want to enable those.
-# NOTE: read mutt documentation !!! those `features' are not very
-# useful, it's likely you would be better off using fetchmail...
 .if ${FLAVOR:L:Mimap}
-CONFIGURE_ARGS+= --enable-imap
+CONFIGURE_ARGS+= --enable-imap --with-ssl
 .endif
 
+# Note: The POP3 support is there only for convenience, and it's rather
+# limited.  If you need more functionality you should consider using a
+# specialized program, such as fetchmail.
 .if ${FLAVOR:L:Mpop}
 CONFIGURE_ARGS+= --enable-pop
 .endif
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/i$//}
 
-pre-fetch:
 .if !defined(NO_WARNINGS)
+pre-fetch:
 	@echo
 	@echo '**********************************************************'
 	@echo '* This software contains cryptographic enabling code.    *'

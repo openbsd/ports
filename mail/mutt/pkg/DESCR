@@ -6,7 +6,7 @@ Other features include:
 - color support
 - message threading
 - MIME support (including RFC2047 support for encoded headers)
-- POP3 support
+- IMAP (also over SSL) and POP3 support
 - support for multiple mailbox formats (mbox, MMDF, MH, maildir)
 - highly customizable, including key bindings
 - searches using regular expression

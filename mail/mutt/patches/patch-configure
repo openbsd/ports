@@ -1,3 +1,4 @@
+$OpenBSD: patch-configure,v 1.5 2000/07/27 22:28:00 brad Exp $
 --- configure.orig	Thu Jul  6 19:07:35 2000
 +++ configure	Sat Jul 22 13:22:30 2000
 @@ -3819,7 +3819,7 @@
