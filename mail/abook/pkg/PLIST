@@ -1,3 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/05/29 16:46:51 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/12/31 10:37:17 reinhard Exp $
 bin/abook
 man/man1/abook.1
+share/examples/abook/mail2abook.py
+share/examples/abook/vcard2abook.pl
+@dirrm share/examples/abook
