@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 1999/10/26 04:56:35 turan Exp $
-
-BROKEN=		bad packing lists
+# $OpenBSD: Makefile,v 1.5 1999/10/27 12:24:46 brad Exp $
 
 DISTNAME=	Seyon-2.14b
 PKGNAME=	seyon-2.14b
 CATEGORIES=	comms x11
-
-MAINTAINER=	ports@openbsd.org
-
 MASTER_SITES=	ftp://sipb.mit.edu/pub/seyon/
 EXTRACT_SUFX=	-tar.Z
 
-WRKSRC=		${WRKDIR}/seyon
+MAINTAINER=	ports@openbsd.org
+
 USE_IMAKE=	yes
+
+WRKSRC=	${WRKDIR}/seyon
 
 .include <bsd.port.mk>
