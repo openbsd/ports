@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2003/01/05 01:12:40 lebel Exp $
+# $OpenBSD: Makefile,v 1.19 2003/01/26 19:26:25 fgsch Exp $
 
 COMMENT=	"gtk+ chess board interface"
 
-DISTNAME=	eboard-0.7.0
+DISTNAME=	eboard-0.7.1pl1
 CATEGORIES=	games
 
 HOMEPAGE=	http://eboard.sourceforge.net
@@ -24,11 +24,12 @@ MODGCC3_ARCHES=         sparc64
 MODGCC3_LANGS+=         c++
 
 USE_X11=		Yes
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+AUTOCONF_NEW=		Yes
+CONFIGURE_STYLE=	autoconf
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
                 LDFLAGS="-L${LOCALBASE}/lib"
 
-MAKE_FLAGS+=		CXXFLAGS="${CXXFLAGS}" CFLAGS="${CFLAGS}"
+MAKE_FLAGS+=	CXXFLAGS="${CXXFLAGS}" CFLAGS="${CFLAGS}"
 
 DOCS=	Crafty.txt FICS-Timeseal.txt GNUChess4.txt GNUChess5.txt \
 	Scripts.txt Sjeng.txt Themes.txt
