@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 1999/08/02 07:25:26 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/08/17 12:15:35 brad Exp $
 
-DISTNAME=	bladeenc-084-src-unstable
-PKGNAME=	bladeenc-0.84
+DISTNAME=	bladeenc-085-src-unstable
+PKGNAME=	bladeenc-0.85
 CATEGORIES=	audio
 MASTER_SITES=	http://home8.swipnet.se/~w-82625/encoder/source/
 
