@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/11/20 10:02:04 camield Exp $
+@comment $OpenBSD: PLIST,v 1.4 2000/12/23 17:57:47 avsm Exp $
 bin/axfr-get
 bin/axfrdns
 bin/axfrdns-conf
@@ -27,5 +27,30 @@ bin/tinydns-edit
 bin/tinydns-get
 bin/walldns
 bin/walldns-conf
+man/man1/dnsfilter.1
+man/man1/dnsip.1
+man/man1/dnsipq.1
+man/man1/dnsmx.1
+man/man1/dnsname.1
+man/man1/dnsq.1
+man/man1/dnsqr.1
+man/man1/dnstrace.1
+man/man1/dnstxt.1
+man/man5/qualification.5
+man/man8/axfr-get.8
+man/man8/axfrdns.8
+man/man8/dnscache-conf.8
+man/man8/dnscache.8
+man/man8/pickdns-conf.8
+man/man8/pickdns-data.8
+man/man8/pickdns.8
+man/man8/rbldns-conf.8
+man/man8/rbldns-data.8
+man/man8/rbldns.8
+man/man8/tinydns-conf.8
+man/man8/tinydns-data.8
+man/man8/tinydns.8
+man/man8/walldns-conf.8
+man/man8/walldns.8
 share/dnscache/dnsroots.global
 @dirrm share/dnscache
