@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2001/05/06 04:22:46 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2001/06/01 08:25:43 kevlo Exp $
 
 COMMENT=	"html editor designed for the experienced web designer"
 
-DISTNAME=	august0.62b.src
-PKGNAME=	august-0.62b
+DISTNAME=	august0.63b.src
+PKGNAME=	august-0.63b
 CATEGORIES=     www
 NEED_VERSION=	1.402
 
