@@ -1,0 +1,15 @@
+$OpenBSD: patch-sql_sql_parse_cc,v 1.1 2004/10/20 04:47:29 brad Exp $
+--- sql/sql_parse.cc.orig	Thu May 13 20:53:18 2004
++++ sql/sql_parse.cc	Tue Oct 19 22:22:11 2004
+@@ -3155,7 +3155,10 @@ bool add_field_to_list(char *field_name,
+     break;
+   case FIELD_TYPE_DECIMAL:
+     if (!length)
+-      new_field->length= 10;			// Default length for DECIMAL
++      if (new_field->length= new_field->decimals)
++        new_field->length++;
++      else
++        new_field->length=10;                   // Default length for DECIMAL
+     if (new_field->length < MAX_FIELD_WIDTH)	// Skip wrong argument
+     {
+       new_field->length+=sign_len;
