@@ -1,0 +1,9 @@
+Please note: If you intend to use Evolution to read local mail-spool
+mbox files then you will need to set the setuid bit for the
+camel-lock-helper program.
+
+You can do this by: 'chmod u+s ${PREFIX}/sbin/camel-lock-helper'
+
+While there are no known security problems at this time with
+camel-lock-helper, setting the setuid bit on any program is a
+potential security risk.

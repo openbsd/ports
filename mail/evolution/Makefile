@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/22 15:37:35 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2002/09/26 08:07:10 marcm Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 COMMENT-devguide=	"Evolution Developer's Guide"
@@ -91,5 +91,6 @@ post-patch:
 
 post-install:
 	find ${PREFIX}/share/evolution/default_user -perm 444 -exec chmod 644 {} \;
+	chmod u-s ${PREFIX}/sbin/camel-lock-helper
 
 .include <bsd.port.mk>
