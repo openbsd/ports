@@ -1,10 +1,16 @@
-@comment $OpenBSD: PFRAG.gnome,v 1.1.1.1 2001/09/18 06:01:58 shell Exp $
+@comment $OpenBSD: PFRAG.gnome,v 1.2 2001/10/26 00:39:48 shell Exp $
 lib/python${PYTHON_VER}/site-packages/gnome/__init__.py
 lib/python${PYTHON_VER}/site-packages/gnome/__init__.pyc
 lib/python${PYTHON_VER}/site-packages/gnome/__init__.pyo
 lib/python${PYTHON_VER}/site-packages/gnome/affine.py
 lib/python${PYTHON_VER}/site-packages/gnome/affine.pyc
 lib/python${PYTHON_VER}/site-packages/gnome/affine.pyo
+lib/python${PYTHON_VER}/site-packages/gnome/applet.py
+lib/python${PYTHON_VER}/site-packages/gnome/applet.pyc
+lib/python${PYTHON_VER}/site-packages/gnome/applet.pyo
+lib/python${PYTHON_VER}/site-packages/gnome/capplet.py
+lib/python${PYTHON_VER}/site-packages/gnome/capplet.pyc
+lib/python${PYTHON_VER}/site-packages/gnome/capplet.pyo
 lib/python${PYTHON_VER}/site-packages/gnome/config.py
 lib/python${PYTHON_VER}/site-packages/gnome/config.pyc
 lib/python${PYTHON_VER}/site-packages/gnome/config.pyo
@@ -47,6 +53,15 @@ lib/python${PYTHON_VER}/site-packages/gnome/xmhtml.pyo
 lib/python${PYTHON_VER}/site-packages/gnome/zvt.py
 lib/python${PYTHON_VER}/site-packages/gnome/zvt.pyc
 lib/python${PYTHON_VER}/site-packages/gnome/zvt.pyo
+lib/python${PYTHON_VER}/site-packages/_appletmodule.a
+lib/python${PYTHON_VER}/site-packages/_appletmodule.la
+lib/python${PYTHON_VER}/site-packages/_appletmodule.so
+lib/python${PYTHON_VER}/site-packages/_cappletmodule.a
+lib/python${PYTHON_VER}/site-packages/_cappletmodule.la
+lib/python${PYTHON_VER}/site-packages/_cappletmodule.so
+lib/python${PYTHON_VER}/site-packages/_gladegnomemodule.a
+lib/python${PYTHON_VER}/site-packages/_gladegnomemodule.la
+lib/python${PYTHON_VER}/site-packages/_gladegnomemodule.so
 lib/python${PYTHON_VER}/site-packages/_gnomemodule.a
 lib/python${PYTHON_VER}/site-packages/_gnomemodule.la
 lib/python${PYTHON_VER}/site-packages/_gnomemodule.so
