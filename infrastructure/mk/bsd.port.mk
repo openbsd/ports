@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.281 2000/05/17 12:41:28 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.282 2000/05/18 19:59:21 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1977,7 +1977,7 @@ fetch-list-one-pkg:
 #
 .if ${FAKE:U} == "YES"
 plist: fake
-	DESTDIR=${WRKINST} PREFIX=${WRKINST}${PREFIX} LDCONFIG="${LDCONFIG}" \
+	@DESTDIR=${WRKINST} PREFIX=${WRKINST}${PREFIX} LDCONFIG="${LDCONFIG}" \
 	MTREE_FILE=${PORTSDIR}/infrastructure/db/fake.mtree \
 	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
 	perl ${PORTSDIR}/infrastructure/install/make-plist > ${PLIST}-auto
