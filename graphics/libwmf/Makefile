@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/08 11:55:35 avsm Exp $
+# $OpenBSD: Makefile,v 1.6 2002/09/12 00:58:51 naddy Exp $
 
 COMMENT=	"WMF handling and conversion library"
 
@@ -22,5 +22,6 @@ CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static
 CONFIGURE_ARGS+= --with-png=${LOCALBASE} --with-freetype=${X11BASE}
 CONFIGURE_ARGS+= --with-jpeg=${LOCALBASE} --with-zlib=/usr
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng"
 
 .include <bsd.port.mk>
