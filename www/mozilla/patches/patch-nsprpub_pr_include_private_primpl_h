@@ -1,0 +1,11 @@
+$OpenBSD: patch-nsprpub_pr_include_private_primpl_h,v 1.1 2003/05/16 15:32:46 wilfried Exp $
+--- nsprpub/pr/include/private/primpl.h.orig	Sat Mar 22 07:55:25 2003
++++ nsprpub/pr/include/private/primpl.h	Fri May 16 07:41:08 2003
+@@ -1856,6 +1856,7 @@
+         && !defined(DARWIN) \
+         && !defined(NEXTSTEP) \
+         && !defined(QNX) \
++        && !defined(__OpenBSD__) \
+         && !(defined (UNIXWARE) && defined (USE_SVR4_THREADS))
+ #define _PR_OVERRIDE_MALLOC
+ #endif
