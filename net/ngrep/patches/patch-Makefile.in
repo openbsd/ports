@@ -1,9 +1,11 @@
---- Makefile.in.orig	Wed Jul 12 00:32:18 2000
-+++ Makefile.in	Wed Jul 12 00:32:35 2000
-@@ -18,7 +18,7 @@ TARGET=ngrep
+--- Makefile.in.orig	Tue May  8 23:14:40 2001
++++ Makefile.in	Tue May  8 23:15:02 2001
+@@ -19,7 +19,7 @@
  MANPAGE=ngrep.8
  
  INSTALL=./install-sh
 -BINDEST=@prefix@/bin
 +BINDEST=@prefix@/sbin
  MANDEST=@prefix@/man/man8
+ 
+ REGEX_TARGET=@REGEX_TARGET@

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 05:00:12 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/09 15:26:00 kevlo Exp $
 
 COMMENT=	"network grep"
 
-DISTNAME=	ngrep-1.38
+DISTNAME=	ngrep-1.39.2
 CATEGORIES=     net
-NEED_VERSION=	1.402
-MASTER_SITES=	http://www.packetfactory.net/Projects/ngrep/
+NEED_VERSION=	1.408
+MASTER_SITES=	http://prdownloads.sourceforge.net/ngrep/
 
-HOMEPAGE=	http://www.packetfactory.net/Projects/ngrep/
+HOMEPAGE=	http://ngrep.sourceforge.net/
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no obvious license"
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_GMAKE=  yes
 CONFIGURE_STYLE= gnu dest
 
 WRKDIST=	${WRKDIR}/ngrep
