@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/11/18 23:34:23 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/02/12 15:45:48 espie Exp $
 
 DISTNAME=		MHonArc2.4.7
 PKGNAME=		mhonarc-2.4.7
@@ -21,6 +21,9 @@ MASTER_SITES=		http://www.mhonarc.org/tar/ \
 PERL_MODULES=		${LOCALBASE}/libdata/perl5/site_perl
 BUILD_DEPENDS=		${PERL_MODULES}/${ARCH}-openbsd/MD5.pm::security/p5-Digest-MD5
 RUN_DEPENDS=		${BUILD_DEPENDS}
+
+post-extract:
+			@chmod -R u+w ${WRKDIST}
 
 CONFIGURE_STYLE=	perl
 ALL_TARGET=		default
