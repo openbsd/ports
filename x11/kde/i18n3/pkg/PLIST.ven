@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST.ven,v 1.1.1.1 2002/04/04 17:41:18 espie Exp $
+${LOC}appletproxy.mo
+${LOC}childpanelextension.mo
+${LOC}clockapplet.mo
+${LOC}desktop.mo
+${LOC}extensionproxy.mo
+${LOC}filetypes.mo
+${LOC}fontinst.mo
+${LOC}htmlsearch.mo
+${LOC}kaccess.mo
+${LOC}kaddressbook.mo
+${LOC}kappfinder.mo
+${LOC}kasbarextension.mo
+${LOC}kate.mo
+${LOC}kcmlaunch.mo
+${LOC}kdelibs.mo
+${LOC}kdeprintfax.mo
+${LOC}kdesktop.mo
+${LOC}khelpcenter.mo
+${LOC}kicker.mo
+${LOC}klipper.mo
+${LOC}klock.mo
+${LOC}knotify.mo
+${LOC}konqueror.mo
+${LOC}konsole.mo
+${LOC}kpartapp.mo
+${LOC}kpersonalizer.mo
+${LOC}kprinter.mo
+${LOC}ksmserver.mo
+${LOC}ksplash.mo
+${LOC}ktaskbarapplet.mo
+${LOC}ktip.mo
+${LOC}kwin.mo
+${LOC}kwin_default_config.mo
+${LOC}kwin_modernsys_config.mo
+${LOC}libkicker.mo
+${LOC}libkickermenu_kdeprint.mo
+${LOC}libkonq.mo
+${LOC}libtaskbar.mo
+${LOC}libtaskmanager.mo
+${LOC}lockout.mo
+${LOC}nsplugin.mo
+${LOC}taskbarextension.mo
+share/locale/ven/charset
+share/locale/ven/entry.desktop
+@dirrm share/locale/ven/LC_MESSAGES
+@dirrm share/locale/ven
+@dirrm share/locale
