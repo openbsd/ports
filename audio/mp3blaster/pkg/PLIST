@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/05/23 15:36:06 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/05/23 16:14:01 naddy Exp $
 bin/mp3blaster
 bin/mp3tag
 bin/nmixer
@@ -14,4 +14,5 @@ share/mp3blaster/makefile
 share/mp3blaster/maketbl.c
 share/mp3blaster/sample.mp3blasterrc
 share/mp3blaster/win1251
+share/mp3blaster/win2koi.tbl
 @dirrm share/mp3blaster

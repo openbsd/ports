@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/23 15:36:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/23 16:14:01 naddy Exp $
 
 COMMENT=	"text console audio player with an interactive interface"
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}src/ \
-		${MASTER_SITE_SUNSITE:=apps/sound/players/mp3/}
+MASTER_SITES=	${HOMEPAGE}src/
 
 LIB_DEPENDS=	sidplay.1::audio/libsidplay \
 		vorbis.1,vorbisfile.2::audio/libvorbis
