@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/11 06:21:51 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/11 22:14:21 jolan Exp $
 
      SUBDIR += core
+     SUBDIR += core,ogi
      SUBDIR += festlex
      SUBDIR += festvox
      SUBDIR += ogi
