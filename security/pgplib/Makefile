@@ -3,12 +3,11 @@
 # Date created:		September 28, 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:43:26 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/04/19 10:41:17 wilfried Exp $
 
 #BROKEN=		inconsistant build failures
 
 DISTNAME=       PGPlib-1.1
-PKGNAME=	PGPlib
 CATEGORIES=	security
 NEED_VERSION=	1.305
 FAKE=No

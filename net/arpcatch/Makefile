@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2000/10/22 15:42:55 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/04/19 10:41:17 wilfried Exp $
 
 DISTNAME=	arpcatch
-PKGNAME=	arpcatch
+PKGNAME=	${DISTNAME}-19970824
 CATEGORIES=	net
 NEED_VERSION=	1.191
 MASTER_SITES=	http://www.enteract.com/~tqbf/

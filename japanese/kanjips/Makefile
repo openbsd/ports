@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/10 00:40:44 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/04/19 10:41:15 wilfried Exp $
 
 CATEGORIES=japanese print
 
-# No version indication. Dates back to 1989
 DISTNAME=kanjips
+PKGNAME=${DISTNAME}-19900310
 
 MASTER_SITES=ftp://ftp.funet.fi/pub/culture/japan/unix/
 MASTER_SITES0=ftp://ftp.funet.fi/pub/culture/japan/fonts/

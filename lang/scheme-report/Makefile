@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/03 20:45:37 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/19 10:41:16 wilfried Exp $
 
 CATEGORIES=	lang
 NEED_VERSION=	1.352
 
 DISTNAME=	r5rs
+PKGNAME=	${DISTNAME}-19980421
 EXTRACT_SUFX=	.txi
 
 EXTRACT_CASES=	*.txi) cp ${FULLDISTDIR}/$$archive ${WRKDIR};;

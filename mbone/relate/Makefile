@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/22 14:03:27 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/04/19 10:41:16 wilfried Exp $
 
-DISTNAME=       relate
-DISTFILES=	relate-2.0.tar.gz
+DISTNAME=       relate-2.0
 CATEGORIES=	mbone
 NEED_VERSION=	1.230
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/relate-ui/2.0/

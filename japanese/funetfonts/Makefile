@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/22 15:42:22 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/04/19 10:41:14 wilfried Exp $
 
 CATEGORIES=	japanese x11
 DIST_SUBDIR=	ja-fonts
 NEED_VERSION=	1.305
 
 DISTNAME=		ja-fonts-funet
+PKGNAME=		${DISTNAME}-19911117
 
 MASTER_SITES=	ftp://ftp.funet.fi/pub/culture/japan/fonts/bdf/
 

@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2001/04/10 14:01:20 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/04/19 10:41:18 wilfried Exp $
 
 DISTNAME=	stel
+PKGNAME=	${DISTNAME}-19960505
 CATEGORIES=	security
 NEED_VERSION=	1.210
 MASTER_SITES=	ftp://ftp.ox.ac.uk/pub/crypto/misc/ \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2000/06/16 23:06:16 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/19 10:41:19 wilfried Exp $
 # Original from: Bruno Rohee <rohee@OpenBSD.ORG>
 #
 # Many variables moved to ../Makefile.inc
 #
 DISTNAME=		English
-PKGNAME=		amaya-english-dict
+PKGNAME=		amaya-english-dict-20000321
 NEED_VERSION=		1.223
 
 RUN_DEPENDS=		${PREFIX}/bin/amaya:www/amaya/browser
