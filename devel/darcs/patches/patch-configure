@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.1 2004/04/29 03:49:51 dons Exp $
+$OpenBSD: patch-configure,v 1.2 2004/07/31 03:18:29 dons Exp $
 
 Don't build the postscript manual
 
---- configure.orig	2004-04-04 02:57:07.000000000 +1000
-+++ configure	2004-04-23 20:06:46.000000000 +1000
-@@ -3848,7 +3848,7 @@ if test "$enable_mmap" = "no"; then
+--- configure.orig	2004-07-27 20:42:06.000000000 +1000
++++ configure	2004-07-31 11:52:21.000000000 +1000
+@@ -3706,7 +3706,7 @@ if test "$enable_mmap" = "no"; then
  fi
  
  
@@ -13,7 +13,7 @@ Don't build the postscript manual
  INSTALLWHAT="installbin"
  BUILDDOC="no"
  
-@@ -4016,7 +4016,7 @@ if test -z "$DVIPS"; then
+@@ -3894,7 +3894,7 @@ if test -z "$DVIPS"; then
  echo "$as_me: WARNING: Cannot find dvips in your path!" >&2;}
  fi
  if test ! '(' '(' -z "$LATEX" ')' -o '(' -z "$DVIPS" ')' ')'; then
@@ -22,7 +22,7 @@ Don't build the postscript manual
     INSTALLWHAT="$INSTALLWHAT installdocs"
     BUILDDOC="yes"
  fi
-@@ -4135,15 +4135,15 @@ fi
+@@ -4013,15 +4013,15 @@ fi
            { echo "$as_me:$LINENO: WARNING: Cannot find hevea in your path either!" >&5
  echo "$as_me: WARNING: Cannot find hevea in your path either!" >&2;}
          else
