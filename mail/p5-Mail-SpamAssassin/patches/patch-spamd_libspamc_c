@@ -1,0 +1,12 @@
+$OpenBSD: patch-spamd_libspamc_c,v 1.3 2003/06/17 16:33:04 avsm Exp $
+--- spamd/libspamc.c.orig	Tue Jun 17 17:12:54 2003
++++ spamd/libspamc.c	Tue Jun 17 17:14:24 2003
+@@ -602,7 +602,7 @@ _handle_spamd_header (struct message *m,
+      * May  7 2003 jm: using %f is bad where LC_NUMERIC is "," in the locale.
+      * work around using our own locale-independent float-parser code.
+      */
+-    if (sscanf(buf, "Spam: %5s ; %20s / %20s", is_spam, s_str, t_str) == 3)
++    if (sscanf(buf, "Spam: %5s ; %19s / %19s", is_spam, s_str, t_str) == 3)
+     {
+ 	m->score = _locale_safe_string_to_float (s_str, 20);
+ 	m->threshold = _locale_safe_string_to_float (t_str, 20);
