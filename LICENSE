@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.15 1999/09/17 09:01:23 turan Exp $
+$OpenBSD: LICENSE,v 1.16 1999/09/19 13:06:24 turan Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -144,24 +144,24 @@ Y	devel/ORBit			ORBit-0.4.94.tar.gz		GPL
 Y	devel/autoconf			autoconf-2.13.tar.gz		GPL
 Y	devel/automake			automake-1.4.tar.gz		GPL
 Y	devel/bison			bison-1.27.tar.gz		GPL
-	devel/boehm-gc			
+Y	devel/boehm-gc			gc4.12.tar.gz			BSD
 Y	devel/ddd			ddd-3.1.6.tar.gz		GPL
 Y	devel/dejagnu			dejagnu-1.3.tar.gz		GPL
 Y	devel/gettext			gettext-0.10.35.tar.gz		GPL
 Y	devel/gindent			indent-2.2.0.tar.gz		GPL
 Y	devel/glib			glib-1.2.4.tar.gz		GPL
 Y	devel/gmake			make-3.77.tar.gz		GPL
--	devel/gperf			gperf-2.7-19981006.pat
--	devel/gperf			gperf-2.7.tar.gz		
+Y	devel/gperf			gperf-2.7-19981006.pat		NONE
+Y	devel/gperf			gperf-2.7.tar.gz		GPL
 Y	devel/gsl			gsl-0.3b.tar.gz			GPL
 Y	devel/id-utils			id-utils-3.2d.tar.gz		GPL
--	devel/lclint			lclint/guide.tar.gz
--	devel/lclint			lclint/lclint-2.4b.src.tar.gz
+Y	devel/lclint			lclint/guide.tar.gz		NONE
+Y	devel/lclint			lclint/lclint-2.4b.src.tar.gz	GPL
 Y	devel/libIDL			libIDL-0.6.3.tar.gz		GPL
 Y	devel/libaudiofile		audiofile-0.1.7.tar.gz		GPL
 Y	devel/libicq			libicq-0.33.tar.gz		GPL
 Y	devel/libproplist		libPropList-0.8.3.tar.gz	GPL
-Y	devel/libslang			slang1.2.2.tar.gz		GPL/PERL
+Y	devel/libslang			slang-1.3.8.tar.gz		GPL/PERL
 Y	devel/libtool			libtool-1.3.3.tar.gz		GPL
 Y	devel/m4			m4-1.4.tar.gz			GPL
 Y	devel/mm			mm-1.0.11.tar.gz		COPY
@@ -170,6 +170,7 @@ Y	devel/prc-tools			prc-tools.0.5.0.tar.gz		GPL
 Y	devel/prc-tools			binutils-2.7.tar.gz		GPL
 Y	devel/prc-tools			gdb-4.16.tar.gz			GPL
 Y	devel/prc-tools			gcc-2.7.2.2.tar.gz		GPL
+Y	devel/shtool			shtool-1.4.6.tar.gz		GPL
 Y	devel/swig			swig1.1.tar.gz			BSD
 Y	devel/tkcvs			tkcvs-6.0.tar.gz		NONE
 Y	devel/xmake			xmake-1.01.tgz			NONE
