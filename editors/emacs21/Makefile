@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/13 12:37:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2002/11/24 00:49:50 mark Exp $
 # Original from A B <obsdfaq30@yahoo.com>
 
 COMMENT=	"GNU editor: extensible, customizable, self documenting"
@@ -6,7 +6,6 @@ COMMENT=	"GNU editor: extensible, customizable, self documenting"
 VERSION=	21.2
 DISTNAME=	emacs-${VERSION}
 CATEGORIES=	editors
-NEED_VERSION=	1.528
 MASTER_SITES=	${MASTER_SITE_GNU:=emacs/}
 
 MAINTAINER=	Mark Grimes <mark@openbsd.org>
@@ -21,7 +20,8 @@ SUBST_VARS=	GCCARCH VERSION
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${GCCARCH}
-CONFIGURE_ENV= CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV= CPPFLAGS="-I${LOCALBASE}/include \
+			 -I${LOCALBASE}/include/libpng" \
 	       LDFLAGS="-L${LOCALBASE}/lib"
 
 # X11 flavors
