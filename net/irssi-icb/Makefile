@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.5 2002/06/09 05:37:04 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/16 13:49:17 lebel Exp $
 
 NOT_FOR_ARCHS=  ${NO_SHARED_ARCHS}
 
 COMMENT=	"icb plugin for irssi"
 
 DISTNAME=	irssi-icb-0.13
-MASTER_SITES=   http://www.irssi.org/files/icb/ \
-                http://nl.irssi.org/files/icb/ \
-                http://fi.irssi.org/files/icb/ \
-                http://no.irssi.org/files/icb/ \
-                http://de.irssi.org/files/icb/ \
-                http://uk.irssi.org/files/icb/ \
-                http://pl.irssi.org/files/icb/ \
-                http://us.irssi.org/files/icb/
+MASTER_SITES=   http://www.irssi.org/files/plugins/icb/ \
+                http://fi.irssi.org/files/plugins/icb/ \
+                http://no.irssi.org/files/plugins/icb/ \
+                http://de.irssi.org/files/plugins/icb/ \
+                http://uk.irssi.org/files/plugins/icb/ \
+                http://pl.irssi.org/files/plugins/icb/ \
+                http://us.irssi.org/files/plugins/icb/
 
 CATEGORIES=     net
-NEED_VERSION=   1.525
 
 MAINTAINER=	David Lebel <lebel@openbsd.org>
 
