@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2003/09/22 22:53:37 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.25 2004/11/28 22:41:14 espie Exp $
 
 COMMENT=	"full color 320x200 arcade quality platform shooter"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	"unclear"
 PERMIT_PACKAGE_FTP=	"unclear"
 PERMIT_DISTFILES_CDROM=	"unclear"
 PERMIT_DISTFILES_FTP=	"unclear"
+WANTLIB=		X11 Xext c m stdc++
 
 .if ${MACHINE_ARCH} == "sparc"
 BROKEN=		"Does not work on SPARC"

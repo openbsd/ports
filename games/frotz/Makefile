@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/02/21 01:18:08 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2004/11/28 22:41:17 espie Exp $
 # $NetBSD: Makefile,v 1.2 2000/01/15 18:46:28 jlam Exp $
 # Original from: Stefan Jokisch
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c curses
 
 MASTER_SITES=		ftp://ftp.gmd.de/if-archive/infocom/interpreters/frotz/
 

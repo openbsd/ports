@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/01/09 21:16:48 sturm Exp $
+# $OpenBSD: Makefile,v 1.21 2004/11/28 22:41:25 espie Exp $
 
 COMMENT=	"block action game"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
+WANTLIB=		X11 Xext Xpm c
 
 CONFIGURE_STYLE=	imake noman
 WRKDIST=		${WRKDIR}/xdeblo_v1.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/07/31 23:23:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2004/11/28 22:41:18 espie Exp $
 
 COMMENT=	"simple gtk+ pool simulation game"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		glib gmodule iconv intl X11 Xext Xi c m ossaudio stdc++
 
 USE_X11=	Yes
 NO_REGRESS=	Yes

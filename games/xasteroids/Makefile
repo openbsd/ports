@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/05/18 08:45:33 xsa Exp $
+# $OpenBSD: Makefile,v 1.23 2004/11/28 22:41:22 espie Exp $
 
 COMMENT=	"X11-based asteroids-style arcade"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext c m
 
 CONFIGURE_STYLE=	imake
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/12/16 19:55:15 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2004/11/28 22:41:16 espie Exp $
 
 COMMENT=	"finish-the-cycle logic puzzle"
 CATEGORIES=	games
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
+WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m
 
 LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 

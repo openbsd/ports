@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/09/30 22:15:42 xsa Exp $
+# $OpenBSD: Makefile,v 1.17 2004/11/28 22:41:22 espie Exp $
 
 COMMENT=	"save your computers from the evil clutches of Bill"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xaw Xext Xmu Xpm Xt c m stdc++
 
 CONFIGURE_STYLE=	imake
 

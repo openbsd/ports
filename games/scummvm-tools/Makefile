@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/28 11:56:57 jsg Exp $
+# $OpenBSD: Makefile,v 1.5 2004/11/28 22:41:21 espie Exp $
 
 COMMENT=	"collection of various tools for scummvm"
 # this tarball is horribly packaged
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m stdc++ z
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes

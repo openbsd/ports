@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/03/31 13:07:46 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/11/28 22:41:20 espie Exp $
 
 COMMENT=		"interpreter for old Sierra AGI games"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext c pthread
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/09/30 22:31:06 xsa Exp $
+# $OpenBSD: Makefile,v 1.17 2004/11/28 22:41:27 espie Exp $
 
 COMMENT=	"X11 version of the popular board game"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c
 
 CONFIGURE_STYLE=imake noman
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/09/24 10:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2004/11/28 22:41:16 espie Exp $
 
 COMMENT=	"game where you deal drugs on the streets of NY"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c ncurses
 
 MODULES+=	gettext
 
@@ -43,6 +44,7 @@ LIB_DEPENDS+=	gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2 \
 		atk-1.0.0.0::devel/atk \
 		pango-1.0.0.0,pangox-1.0.0.0,pangoxft-1.0.0.0::devel/pango \
 		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+WANTLIB+=	X11 Xext Xft Xinerama Xrender fontconfig freetype m
 .endif
 
 post-install:

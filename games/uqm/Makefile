@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/10/16 00:28:22 jolan Exp $
+# $OpenBSD: Makefile,v 1.13 2004/11/28 22:41:22 espie Exp $
 
 # 64-bit issues, unaligned memory access
 ONLY_FOR_ARCHS=	i386 powerpc
@@ -42,6 +42,7 @@ PERMIT_PACKAGE_CDROM=	"Unresolved licensing issues"
 PERMIT_PACKAGE_FTP=	"Unresolved licensing issues"
 PERMIT_DISTFILES_CDROM=	"Unresolved licensing issues"
 PERMIT_DISTFILES_FTP=	"Unresolved licensing issues"
+WANTLIB=		SDL X11 Xext c m ogg pthread usbhid z
 
 LIB_DEPENDS=	SDL_image::devel/sdl-image \
 		vorbis.0,vorbisfile.1::audio/libvorbis

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/05/06 10:26:21 robert Exp $
+# $OpenBSD: Makefile,v 1.18 2004/11/28 22:41:27 espie Exp $
 
 COMMENT=	"win land without colliding with 'flyers' and 'eaters'"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c m
 
 CONFIGURE_STYLE=	imake
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/06/04 20:09:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2004/11/28 22:41:27 espie Exp $
 
 COMMENT=	"skat card game"
 
@@ -10,6 +10,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 c
 
 MASTER_SITES=	http://www.xskat.de/
 

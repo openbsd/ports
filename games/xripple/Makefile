@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/10/26 20:44:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2004/11/28 22:41:27 espie Exp $
 
 COMMENT=	"screen bottom ripples like a pool of water"
 
@@ -21,6 +21,7 @@ PERMIT_PACKAGE_CDROM=	"no license available"
 PERMIT_PACKAGE_FTP=	"no license available"
 PERMIT_DISTFILES_CDROM=	"no license available"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext c m
 
 CONFIGURE_STYLE=imake
 ALL_TARGET=	xripple

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/10/01 12:51:40 xsa Exp $
+# $OpenBSD: Makefile,v 1.9 2004/11/28 22:41:21 espie Exp $
 
 COMMENT=	"Nebulous rewrite of Tower Toppler"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		SDL X11 Xext c m pthread stdc++ subhid
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=toppler/}
 

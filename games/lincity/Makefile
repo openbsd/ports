@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/28 21:25:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/11/28 22:41:19 espie Exp $
 
 COMMENT=		"Rich city simulation game for X"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext c m stdc++
 
 MASTER_SITES=		ftp://ftp.demon.co.uk/pub/unix/linux/games/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/

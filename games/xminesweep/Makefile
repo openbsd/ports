@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/26 20:44:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/11/28 22:41:26 espie Exp $
 
 COMMENT=	"Windows minesweeper"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c
 
 CONFIGURE_STYLE=	imake
 

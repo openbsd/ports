@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/08/10 10:36:37 xsa Exp $
+# $OpenBSD: Makefile,v 1.7 2004/11/28 22:41:21 espie Exp $
 
 COMMENT=	"silly little game based on Spacetaxi for the C64"
 
@@ -14,10 +14,12 @@ PERMIT_PACKAGE_CDROM=  Yes
 PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
+WANTLIB=		art_lgpl_2.0.0 jpeg ICE SM X11 Xext Xrender c m \
+			png pthread stdc++ util z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=taxipilot/}
 
-LIB_DEPENDS=	kdecore.4,DCOP,kdecore,kdefx,kdesu,kdeui,kio::x11/kde/libs3
+LIB_DEPENDS=	kdecore.4,DCOP,kdecore,kdefx,kdesu,kdeui,kio,kwalletclient::x11/kde/libs3
 
 MODULES=	x11/qt3
 MODQT_MT=	Yes

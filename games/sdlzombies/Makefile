@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/08/10 20:00:53 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2004/11/28 22:41:21 espie Exp $
 
 COMMENT=	"zombies clone"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		SDL X11 Xext c m pthread usbhid
 
 MASTER_SITES=	http://hocwp.free.fr/
 

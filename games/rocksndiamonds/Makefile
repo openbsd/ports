@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/01/25 20:30:28 biorn Exp $
+# $OpenBSD: Makefile,v 1.7 2004/11/28 22:41:20 espie Exp $
 
 COMMENT=	"maze game resembling boulderdash"
 DISTNAME=	rocksndiamonds-3.0.8
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		SDL X11 Xext c m pthread usbhid
 
 LIB_DEPENDS=	SDL_mixer::devel/sdl-mixer \
 		SDL_image::devel/sdl-image

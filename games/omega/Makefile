@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/09/15 00:49:19 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2004/11/28 22:41:20 espie Exp $
 
 COMMENT=	"complex rogue-style game of dungeon exploration"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		c curses termcap
 
 WRKDIST=        ${WRKDIR}/omega
 WRKSRC=         ${WRKDIST}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2004/09/15 19:08:47 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2004/11/28 22:41:19 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Piece of cake"
@@ -21,6 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c termlib
 
 FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
 
@@ -37,9 +38,11 @@ NETHACKCONFIG=${FILESDIR}/simple-config
 NETHACKCONFIG=${FILESDIR}/qt-config
 MODULES=	x11/qt3
 MODQT_MT=	Yes
+WANTLIB+=	SM m pthread stdc++
 .else
 NETHACKCONFIG=${FILESDIR}/x-config
 USE_X11=	Yes
+WANTLIB+=	X11 Xaw Xext Xmu Xpm Xt
 .endif
 
 RUN_DEPENDS=:hackdata-*:games/hackdata

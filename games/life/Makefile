@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/05/22 19:54:10 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2004/11/28 22:41:19 espie Exp $
 
 COMMENT=	"SDL clone of the popular Game of Life"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext c m pthread stdc++ subhid
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/09/24 10:45:37 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2004/11/28 22:41:18 espie Exp $
 
 COMMENT=	"jezzball-style, penguin puzzle game"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		SDL X11 Xext c m pthread usbhid
 
 LIB_DEPENDS=	SDL_mixer::devel/sdl-mixer \
 		smpeg.1.3:smpeg-*:devel/smpeg

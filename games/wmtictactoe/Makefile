@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/02/26 12:00:43 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2004/11/28 22:41:22 espie Exp $
 
 COMMENT=		'wm-dockapp; TicTacToe game'
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xpm c
 
 USE_X11=		Yes
 NO_REGRESS=		Yes

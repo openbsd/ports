@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/06/18 21:43:40 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2004/11/28 22:41:20 espie Exp $
 
 COMMENT=	"displays the status of multi-player Internet Game servers"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=	http://www.qstat.org/
 

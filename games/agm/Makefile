@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/12/23 08:05:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2004/11/28 22:41:15 espie Exp $
 #
 
 COMMENT=		"AnaGram search utility"
@@ -10,6 +10,7 @@ PERMIT_PACKAGE_CDROM=	"no license available"
 PERMIT_PACKAGE_FTP=	"no license available"
 PERMIT_DISTFILES_CDROM=	"no license available"
 PERMIT_DISTFILES_FTP=	"no license available"
+WANTLIB=		c
 
 MASTER_SITES=		${MASTER_SITE_SUNSITE:=games/amusements/}
 

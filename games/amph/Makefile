@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/01/11 21:44:26 biorn Exp $
+# $OpenBSD: Makefile,v 1.11 2004/11/28 22:41:15 espie Exp $
 
 COMMENT=	"jump'n run game with unique video effects"
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		X11 Xext Xpm Xt c m pthread stdc++ usbhid
 
 DISTFILES=	amphetamine-data-${DVERSION}${EXTRACT_SUFX} \
 		${DISTNAME}${EXTRACT_SUFX}

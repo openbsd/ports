@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/09/15 00:46:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2004/11/28 22:41:28 espie Exp $
 
 COMMENT=	"Zangband (Zelazny Angband) with color, X11 support"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	"not-for-profit redistribution only"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"not-for-profit redistribution only"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c ncurses
 
 HOMEPAGE=		http://www.zangband.org/
 
@@ -32,6 +33,7 @@ FLAVOR?=
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-x
+WANTLIB+=		ICE SM X11 Xaw Xmu Xt
 .else
 CONFIGURE_ARGS+=	--without-x
 .endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/12/23 00:37:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2004/11/28 22:41:21 espie Exp $
 
 COMMENT=	"classic space-age stock trading game"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	YES
 PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
+WANTLIB=		c curses
 
 MAKE_FLAGS=	CC="${CC}"
 ALL_TARGET=

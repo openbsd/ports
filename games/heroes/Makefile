@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/08/12 22:46:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2004/11/28 22:41:18 espie Exp $
 
 COMMENT=	"graphically improved game of yore"
 
@@ -23,6 +23,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		c m
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=heroes/}
 
@@ -47,15 +48,18 @@ LIB_DEPENDS+=	SDL::devel/sdl \
 		SDL_mixer::devel/sdl-mixer
 
 CONFIGURE_ARGS+= --with-sdl="${LOCALBASE}"
+WANTLIB+=	X11 Xext pthread usbhid
 .else
 CONFIGURE_ARGS+= --without-sdl --without-sdl-mixer
+WANTLIB+=	gii
 .endif
 
 .if ${FLAVOR:L:Mggi}
 # Sound support is disabled with the ggi flavor since it is dependent
 # on sdl-mixer.  No alternatives for now.
-LIB_DEPENDS+=	ggi.2.0:ggi-*:graphics/ggi
+LIB_DEPENDS+=	ggi.2.0::graphics/ggi
 CONFIGURE_ARGS+= --with-ggi="${LOCALBASE}"
+PKGNAME=	heroes-${VERSION}p0
 .else
 CONFIGURE_ARGS+= --without-ggi
 .endif

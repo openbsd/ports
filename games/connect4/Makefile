@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2004/09/24 09:08:22 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2004/11/28 22:41:16 espie Exp $
 
 COMMENT=	"curses version of the classic game"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
+WANTLIB=		c curses termcap
 
 MASTER_SITES= 	ftp://ftp.uu.net/usenet/comp.sources.games/volume6/
 EXTRACT_SUFX=	.Z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/29 15:10:07 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2004/11/28 22:41:17 espie Exp $
 
 COMMENT=	"one-player puzzle game for x11"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		X11 Xext c m pthread usbhid
 
 MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/gemdropx/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/04/24 09:30:32 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/11/28 22:41:17 espie Exp $
 
 COMMENT=	"Settlers of Catan for GNOME/Gtk"
 
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xext Xi audiofile c esd gdk gdk_imlib \
+			glib gmodule gtk iconv intl jpeg m png tiff ungif z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gnocatan/}
 

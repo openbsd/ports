@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/05/12 22:39:27 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2004/11/28 22:41:17 espie Exp $
 
 COMMENT= 	"Pac-Man clone"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=  	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext c m pthread usbhid
 
 MASTER_SITES=	http://mirror.csoft.org/glutton/
 

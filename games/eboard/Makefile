@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/08/10 10:36:36 xsa Exp $
+# $OpenBSD: Makefile,v 1.28 2004/11/28 22:41:17 espie Exp $
 
 COMMENT=	"gtk+ chess board interface"
 
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		X11 Xext Xi c gdk glib gmodule gtk jpeg m png \
+			stdc++ tiff ungif z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=eboard/}
 

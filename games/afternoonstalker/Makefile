@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/02/25 02:35:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/11/28 22:41:14 espie Exp $
 
 COMMENT=	"Night Stalker clone for X"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		SDL SDL_image X11 Xext c m pthread stdc++ usbhid
 
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 

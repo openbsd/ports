@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/09/23 15:29:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2004/11/28 22:41:19 espie Exp $
 
 COMMENT=	"network head-to-head version of T*tris"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c ncurses termcap
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	Configure

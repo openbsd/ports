@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/12/23 00:37:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2004/11/28 22:41:26 espie Exp $
 
 COMMENT=	"Motif minesweeper game"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xpm Xt c m stdc++
 
 USE_X11=	Yes
 USE_MOTIF=	any

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/26 20:44:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/11/28 22:41:22 espie Exp $
 
 COMMENT=	"concurrent multi-player battle strategy game"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext c m
 
 CONFIGURE_STYLE=imake
 

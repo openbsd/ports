@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/05/16 23:37:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2004/11/28 22:41:25 espie Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xaw Xext Xmu Xt c
 
 MASTER_SITES=	ftp://ftp.uu.net/usenet/comp.sources.x/volume19/xinvaders/ \
 		ftp://unix.hensa.ac.uk/archive/usenet/comp.sources.x/volume19/xinvaders/

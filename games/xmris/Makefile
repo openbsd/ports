@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/10/26 20:44:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2004/11/28 22:41:27 espie Exp $
 
 COMMENT=	"Mr Do video arcade game for X11"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xaw Xext Xmu Xt c m
 
 USE_GMAKE=	yes
 CONFIGURE_STYLE=imake
