@@ -1,0 +1,8 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2000/09/02 14:54:33 espie Exp $
+lib/stk/${STK_VERSION}/${STK_ARCH}/sregexp.so
+lib/stk/${STK_VERSION}/${STK_ARCH}/html.so
+lib/stk/${STK_VERSION}/${STK_ARCH}/process.so
+lib/stk/${STK_VERSION}/${STK_ARCH}/pixmap.so
+lib/stk/${STK_VERSION}/${STK_ARCH}/socket.so
+lib/stk/${STK_VERSION}/${STK_ARCH}/posix.so
+lib/stk/${STK_VERSION}/${STK_ARCH}/hash.so
