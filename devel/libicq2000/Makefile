@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/04/21 03:19:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2002/04/21 06:43:12 fgsch Exp $
 
 COMMENT=	"protocol icq2000/2001 library"
 
@@ -19,10 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	sigc::devel/libsigc++
 
-USE_X11=	Yes
-
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	LDFLAGS="-L${WRKBUILD}/src/.libs -L${LOCALBASE}/lib"
-CONFIGURE_ARGS= --with-gnome=no
 
 .include <bsd.port.mk>
