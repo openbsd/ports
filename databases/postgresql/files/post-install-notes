@@ -8,32 +8,6 @@ You may wish to subscribe to the PostgreSQL user-support mailing list.
 Send an e-mail to pgsql-questions-request@postgresql.org with the
 text "subscribe" in the message body.
 
-The user pgsql has been created with a home directory of
-!!PREFIX!!/pgsql.  A sample startup script, rc.pgsql, can be
-found in that directory.  Other directories used by PostgreSQL are:
-
-executables		!!PREFIX!!/bin
-libraries		!!PREFIX!!/lib
-pgsql lib directory	!!PREFIX!!/lib/pgsql
-include files		!!PREFIX!!/include/pgsql
-man pages		!!PREFIX!!/man
-doc files		!!PREFIX!!/share/doc/pgsql
-database files		!!PREFIX!!/pgsql
-
-PostgreSQL has a section for SQL man pages.  These pages have
-been installed in !!PREFIX!!/pgsql/man/manl.  To access these
-pages use the command:
-
-	man -C !!PREFIX!!/pgsql/man.conf man-page
-
-If this does not work you must also add !!PREFIX!!/pgsql/man
-to your MANPATH.
-
-If you build PostgreSQL with TCL support you can use the TCL/TK based
-database frontend "pgaccess" for database operations.  See:
-
-	!!PREFIX!!/pgsql/pgaccess/README.pga
-
-for more information on pgaccess.
-
+If you build PostgreSQL with TCL support, then you can use the
+TCL/TK based database frontend "pgaccess" for database operations.
 
