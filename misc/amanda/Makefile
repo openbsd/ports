@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/02/21 04:26:15 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1999/03/11 22:48:16 niklas Exp $
 #
 
 DISTNAME=	amanda-2.4.1p1
@@ -12,7 +12,8 @@ MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/amanda/
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--sysconfdir=/etc \
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--sysconfdir=/etc \
 		--localstatedir=/var \
 		--with-user=operator \
 		--with-group=operator
