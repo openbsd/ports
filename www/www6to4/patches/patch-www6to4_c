@@ -1,0 +1,12 @@
+$OpenBSD: patch-www6to4_c,v 1.1.1.1 2004/04/20 19:59:53 naddy Exp $
+--- www6to4.c.orig	2004-04-20 20:59:38.000000000 +0200
++++ www6to4.c	2004-04-20 20:59:54.000000000 +0200
+@@ -59,7 +59,7 @@ char hostport[MAXPORT] = "8000";
+ char *patterns[MAXPATTERNS];
+ int lastpattern = -1;
+ 
+-char *default_configfile = "/etc/www6to4.conf";
++char *default_configfile = SYSCONFDIR "/www6to4.conf";
+ char *configfile = NULL;
+ char *forwardfile = NULL;
+ int debug = 0;
