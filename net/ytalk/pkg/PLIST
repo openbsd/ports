@@ -1,3 +1,4 @@
 bin/ytalk
 man/man1/ytalk.1
-share/ytalkrc.sample
+lib/ytalk/ytalkrc.sample
+@dirrm lib/ytalk

@@ -1,4 +1,0 @@
-ytalk works better with an /etc/ytalkrc configuration file.
-You can customize yours by basing yourself on
-${PREFIX}/share/ytalkrc.sample and the man page.
-

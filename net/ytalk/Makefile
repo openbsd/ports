@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.3 1999/03/16 23:38:35 espie Exp $
+# $OpenBSD: Makefile,v 1.4 1999/04/22 15:26:59 brad Exp $
 
 DISTNAME=	ytalk-3.1
 CATEGORIES=	net
+MASTER_SITES=	http://www.eleves.ens.fr:8080/home/espel/ytalk/
 
-MASTER_SITES=http://www.eleves.ens.fr:8080/home/espel/ytalk/	
+NEED_VERSION=	1.79
 
 MAINTAINER=	espie@cvs.openbsd.org
 
-GNU_CONFIGURE=yes
+GNU_CONFIGURE=	yes
 
-NEED_VERSION=1.79
-
-# No SEPARATE_BUILD
-
-INSTALL_TARGET=install.bin install.man
+INSTALL_TARGET=	install.bin install.man
 
 post-install:
-	${INSTALL_DATA} ${WRKBUILD}/ytalkrc	${PREFIX}/share/ytalkrc.sample
+	${MKDIR} ${PREFIX}/lib/ytalk
+	${INSTALL_DATA} ${WRKBUILD}/ytalkrc ${PREFIX}/lib/ytalk/ytalkrc.sample
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
