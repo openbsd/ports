@@ -666,6 +666,8 @@ lib/irc/help/MLIST
 lib/irc/help/UNLESS
 lib/irc/help/UNTIL
 bin/irc-2.8.2-EPIC3.004
+@exec ln -sf %f %B/irc
+@unexec rm -f %B/irc
 bin/ircserv
 bin/ircflush
 bin/wserv
