@@ -1,18 +1,34 @@
-$OpenBSD: patch-configure_in,v 1.3 2002/05/23 14:37:22 espie Exp $
---- configure.in.orig	Tue May 14 02:33:04 2002
-+++ configure.in	Thu May 16 18:36:21 2002
-@@ -910,6 +910,14 @@ else
+$OpenBSD: patch-configure_in,v 1.4 2002/05/28 03:56:03 todd Exp $
+--- configure.in.orig	Tue May 21 09:40:54 2002
++++ configure.in	Sat May 25 11:28:20 2002
+@@ -510,6 +510,7 @@ AC_CHECK_FUNC(getaddrinfo,
+       {
+         struct addrinfo hint, *res;
+         int err;
++	memset(&hint, 0, sizeof hint);
+         hint.ai_family = AF_INET;
+         hint.ai_protocol = 0;
+         hint.ai_socktype = SOCK_STREAM;
+@@ -545,6 +546,7 @@ AC_CHECK_FUNC(getaddrinfo,
+ 	{
+ 	  struct addrinfo hint, *res;
+ 	  int err;
++	  memset(&hint, 0, sizeof hint);
+ 	  hint.ai_family = AF_UNSPEC;
+ 	  hint.ai_protocol = 0;
+ 	  hint.ai_socktype = SOCK_STREAM;
+@@ -908,6 +910,14 @@ if test "$path_su" = "no"; then
+     AC_MSG_WARN(su was not found)
+ else
      AC_DEFINE_UNQUOTED(__PATH_SU, "$path_su", [path to su])
- fi
- 
++fi
++
 +dnl Check for sudo
 +AC_PATH_PROG(path_sudo, "sudo", "no")
 +if test "$path_sudo" = "no"; then
 +    AC_MSG_WARN(sudo was not found)
 +else
 +    AC_DEFINE_UNQUOTED(__PATH_SUDO, "$path_sudo", [path to sudo])
-+fi
-+
+ fi
+ 
  dnl Check for POSIX.1b scheduling
- AC_MSG_CHECKING([POSIX.1b scheduling])
- AC_TRY_LINK([
