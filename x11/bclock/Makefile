@@ -3,8 +3,9 @@
 # Date created:		8 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.4 2000/03/31 21:35:49 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.5 2000/04/11 07:47:16 turan Exp $
+
+BROKEN=		sources moved
 
 DISTNAME=	bclock-1.0
 CATEGORIES=	x11
