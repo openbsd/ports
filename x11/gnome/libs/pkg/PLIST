@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/01/02 03:32:25 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/06/23 18:57:07 marcm Exp $
 @pkgcfl libgtop-*
 bin/dns-helper
 bin/gconfigger
@@ -549,11 +549,11 @@ share/locale/zh_CN/LC_MESSAGES/gnome-libs.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-libs.mo
 share/mime-info/gnome.mime
 share/pixmaps/calculator-font.png
-share/pixmaps/gnome-default-dlg.png
-share/pixmaps/gnome-error.png
-share/pixmaps/gnome-info.png
-share/pixmaps/gnome-question.png
-share/pixmaps/gnome-warning.png
+share/pixmaps/gnome-default-dlg1.png
+share/pixmaps/gnome-error1.png
+share/pixmaps/gnome-info1.png
+share/pixmaps/gnome-question1.png
+share/pixmaps/gnome-warning1.png
 share/pixmaps/no.xpm
 share/pixmaps/yes.xpm
 share/type-convert/gnome-make-postscript-mimes

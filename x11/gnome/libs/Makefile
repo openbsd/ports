@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/01/02 03:32:25 marcm Exp $
+# $OpenBSD: Makefile,v 1.21 2003/06/23 18:57:07 marcm Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
@@ -52,5 +52,12 @@ pre-build:
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-libs; \
 	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/gnome-libs/
+# Fix conflict with Gnome 2
+	@mv ${PREFIX}/share/pixmaps/gnome-default-dlg.png ${PREFIX}/share/pixmaps/gnome-default-dlg1.png
+	@mv ${PREFIX}/share/pixmaps/gnome-error.png ${PREFIX}/share/pixmaps/gnome-error1.png
+	@mv ${PREFIX}/share/pixmaps/gnome-info.png ${PREFIX}/share/pixmaps/gnome-info1.png
+	@mv ${PREFIX}/share/pixmaps/gnome-question.png ${PREFIX}/share/pixmaps/gnome-question1.png
+	@mv ${PREFIX}/share/pixmaps/gnome-warning.png ${PREFIX}/share/pixmaps/gnome-warning1.png
+
 
 .include <bsd.port.mk>
