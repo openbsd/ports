@@ -74,6 +74,7 @@ Other significant features of interest
 
 Flavors
 
+ipv6	Include support for IPv6
 pcre	Include support for Perl-compatible regular expressions
 sasl	Include support for authenticated SMTP using Cyrus SASL v1 (deprecated)
 sasl2	Include support for authenticated SMTP using Cyrus SASL v2 (recommended)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2003/11/24 18:52:06 jakob Exp $
+# $OpenBSD: Makefile,v 1.56 2004/01/14 17:45:45 jakob Exp $
 
 VERSION=	2.0.16
 
@@ -12,5 +12,8 @@ MASTER_SITES=	${MASTER_SITE_POSTFIX:=official/}
 TLSVERSION=	0.8.16
 TLSPFIXVERSION=	2.0.16
 TLSSSLVERSION=	0.9.7b
+
+IPV6VERSION=	1.20
+IPV6PFIXVERSION=2.0.16
 
 .include <bsd.port.mk>
