@@ -1,0 +1,20 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2003/01/13 18:48:19 naddy Exp $
+--- Makefile.orig	Mon Jan 13 19:33:36 2003
++++ Makefile	Mon Jan 13 19:34:12 2003
+@@ -23,13 +23,13 @@ OBJECTS := mterm.o
+ SOURCES := mterm.c
+ 
+ $(TARGET): $(OBJECTS) 
+-	$(CC) $(DEFINES) $(INCLUDES) $(LIB_DIRS) $(LIBS) -o $@ $<
++	$(CC) $(DEFINES) $(INCLUDES) $(LIB_DIRS) $(LIBS) -o $@ $(OBJECTS)
+ 
+ debug: $(SOURCES)
+-	$(CC) $(DEBUG) $(DEFINES) $(INCLUDES) $(LIB_DIRS) $(LIBS) -o $(TARGET) $<
++	$(CC) $(DEBUG) $(DEFINES) $(INCLUDES) $(LIB_DIRS) $(LIBS) -o $(TARGET) $(SOURCES)
+ 
+ $(OBJECTS): $(SOURCES) 
+-	$(CC) $(FLAGS)  $(DEFINES) $(INCLUDES) $(LIB_DIRS) -c -o $@ $<
++	$(CC) $(FLAGS)  $(DEFINES) $(INCLUDES) $(LIB_DIRS) -c -o $@ $(SOURCES)
+ 
+ clean:
+ 	rm -rf $(TARGET) $(OBJECTS)

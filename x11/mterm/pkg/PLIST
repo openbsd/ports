@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/13 18:48:19 naddy Exp $
+bin/mterm
+man/man1/mterm.1
+share/examples/mterm/dot.mtermrc
+@dirrm share/examples/mterm

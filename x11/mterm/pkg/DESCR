@@ -1,0 +1,5 @@
+mterm is a small X11 application that lets a user enter commands and
+run them without opening a terminal. It can be withdrawn into the
+dock/wharf/slit or run in windowed mode.
+
+WWW: ${HOMEPAGE}
