@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.16 2003/01/06 00:28:14 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2003/01/06 16:34:18 espie Exp $
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/@}
@@ -18,8 +18,6 @@ AUTOCONF_NEW=		Yes
 CONFIGURE_ARGS+=	${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--with-extra-libs="${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-extra-includes="${LOCALBASE}/include/libpng:${LOCALBASE}/include"
-CONFIGURE_ARGS+=	--disable-threading
-CONFIGURE_ARGS+=	--disable-mt
 CONFIGURE_ARGS+=	--with-xdmdir=/var/X11/kdm
 CONFIGURE_ARGS+=	--enable-mitshm
 #CONFIGURE_ARGS+=	--enable-debug=full
@@ -47,4 +45,5 @@ PERMIT_DISTFILES_CDROM?=	Yes
 PERMIT_DISTFILES_FTP?=		Yes
 PERMIT_PACKAGE_CDROM?=		Yes
 PERMIT_PACKAGE_FTP?=		Yes
-#COPTS+=-fno-stack-protector
+CFLAGS+=-fno-stack-protector
+CXXFLAGS+=-fno-stack-protector
