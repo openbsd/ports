@@ -1,29 +1,54 @@
---- src/command.c.orig	Tue Apr 17 10:27:59 2001
-+++ src/command.c	Tue Apr 17 10:31:19 2001
-@@ -2128,11 +2128,17 @@
+--- src/command.c.orig	Thu Sep  6 10:38:07 2001
++++ src/command.c	Wed Sep 15 20:38:55 2004
+@@ -477,6 +477,16 @@ get_pty(void)
+     ptydev = ttydev = _getpty(&fd, O_RDWR | O_NDELAY, 0622, 0);
+     if (ptydev == NULL)
+ 	goto Failed;
++#elif defined (__OpenBSD__)
++    int sfd;
++    static char     tty_name[16];
++
++    ptydev = ttydev = tty_name;
++
++    if (openpty(&fd, &sfd, tty_name, NULL, NULL) < 0)
++	goto Failed;
++    close(sfd);
++
+ #elif defined (__svr4__) || defined(__CYGWIN32__) || defined(__lnx21__)
+     {
+ 	extern char    *ptsname();
+@@ -2148,11 +2158,23 @@ process_x_event(XEvent * ev)
      static int      bypass_keystate = 0;
      int             reportmode;
      static int      csrO = 0;	/* Hops - csr offset in thumb/slider      */
++#ifdef ZH
 +    int             k_status;
 +    char            kbuf[256];
++#endif
  
  /*        to give proper Scroll behaviour */
      switch (ev->type) {
      case KeyPress:
 -	lookup_key(ev);
++#ifdef ZH
 +	k_status = send_key(Xdisplay, TermWin.parent, &ev->xkey, kbuf);
 +	if (!k_status)
 +	     lookup_key(ev);
 +        else if (kbuf[0])
 +	    tt_write(kbuf, strlen(kbuf));
++#else
++	 lookup_key(ev);
++#endif
  	break;
  
      case ClientMessage:
-@@ -2197,6 +2203,7 @@
+@@ -2217,6 +2239,9 @@ process_x_event(XEvent * ev)
  
      case FocusIn:
  	if (!TermWin.focus) {
++#ifdef ZH
 +	    send_FocusIn(Xdisplay, TermWin.parent);
++#endif
  	    TermWin.focus = 1;
  #ifdef OFF_FOCUS_FADING
  	    if( rs_fade != NULL )
