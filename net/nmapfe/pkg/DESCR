@@ -1,0 +1,9 @@
+NmapFE is a frontend for the much loved scanner Nmap.
+Nmap is a portscanner that is able to do remote OS
+detection via TCP/IP fingerprinting as well. You can
+use Nmap to scan a large network, or a single host.
+This frontend provides a simple GUI interface to the
+complexity of Nmap. The GUI supports color coding for
+various services, and enables you to append one scan
+to the end of others, to create somewhat of a database
+of scans.
