@@ -1,6 +1,6 @@
 bin/tclsh8.0
 lib/libtcl80.a
-lib/libtcl80.so.1.4
+lib/libtcl80.so.1.5
 @exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %B
 include/tcl8.0/tcl.h
 include/tcl8.0/generic/tcl.h

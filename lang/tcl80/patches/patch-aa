@@ -1,6 +1,6 @@
---- configure.orig	Wed Nov 18 14:54:26 1998
-+++ configure	Sun Jan 10 16:34:17 1999
-@@ -4063,8 +4063,13 @@
+--- configure.orig	Fri Mar 19 14:20:39 1999
++++ configure	Fri Mar 19 14:23:25 1999
+@@ -4095,8 +4095,13 @@
  fi
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -11,17 +11,17 @@
 +	    sparc)
 +		SHLIB_CFLAGS="-fPIC";;
 +	    *)
-+	    	SHLIB_CFLAGS="-fpic";;
++		SHLIB_CFLAGS="-fpic";;
 +	    esac
  	    SHLIB_LD="ld -Bshareable -x"
  	    SHLIB_LD_LIBS=""
  	    SHLIB_SUFFIX=".so"
-@@ -4072,7 +4077,7 @@
+@@ -4104,7 +4109,7 @@
  	    DL_LIBS=""
  	    LD_FLAGS=""
  	    LD_SEARCH_FLAGS=""
 -	    TCL_SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
-+	    TCL_SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.4'
++	    TCL_SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.5'
  	
  else
    echo "$ac_t""no" 1>&6
