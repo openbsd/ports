@@ -1,7 +1,7 @@
-$OpenBSD: patch-gobject_Makefile_in,v 1.1 2002/08/07 13:11:53 nino Exp $
---- gobject/Makefile.in.orig	Wed Aug  7 13:37:04 2002
-+++ gobject/Makefile.in	Wed Aug  7 13:37:26 2002
-@@ -176,7 +176,7 @@ lib_LTLIBRARIES = libgobject-2.0.la
+$OpenBSD: patch-gobject_Makefile_in,v 1.2 2003/04/17 05:55:42 marcm Exp $
+--- gobject/Makefile.in.orig	Tue Jan 28 14:20:33 2003
++++ gobject/Makefile.in	Tue Feb 25 07:46:00 2003
+@@ -166,7 +166,7 @@ lib_LTLIBRARIES = libgobject-2.0.la
  # libtool stuff: set version and export symbols for resolving
  libgobjectincludedir = $(includedir)/glib-2.0/gobject
  libgobject_2_0_la_LDFLAGS = @STRIP_BEGIN@ \

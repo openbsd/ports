@@ -1,7 +1,7 @@
-$OpenBSD: patch-gmodule_Makefile_in,v 1.1 2002/08/07 13:11:53 nino Exp $
---- gmodule/Makefile.in.orig	Wed Aug  7 13:35:21 2002
-+++ gmodule/Makefile.in	Wed Aug  7 13:35:51 2002
-@@ -194,7 +194,7 @@ lib_LTLIBRARIES = libgmodule-2.0.la
+$OpenBSD: patch-gmodule_Makefile_in,v 1.2 2003/04/17 05:55:42 marcm Exp $
+--- gmodule/Makefile.in.orig	Tue Jan 28 14:20:34 2003
++++ gmodule/Makefile.in	Tue Feb 25 07:46:00 2003
+@@ -183,7 +183,7 @@ lib_LTLIBRARIES = libgmodule-2.0.la
  libgmodule_2_0_la_SOURCES = gmodule.c
  libgmodule_2_0_la_LDFLAGS = \
  	@G_MODULE_LDFLAGS@ \

@@ -1,7 +1,7 @@
-$OpenBSD: patch-gthread_Makefile_in,v 1.1 2002/08/07 13:11:53 nino Exp $
---- gthread/Makefile.in.orig	Wed Aug  7 13:35:56 2002
-+++ gthread/Makefile.in	Wed Aug  7 13:36:42 2002
-@@ -183,7 +183,7 @@ lib_LTLIBRARIES = libgthread-2.0.la
+$OpenBSD: patch-gthread_Makefile_in,v 1.2 2003/04/17 05:55:42 marcm Exp $
+--- gthread/Makefile.in.orig	Tue Jan 28 14:20:35 2003
++++ gthread/Makefile.in	Tue Feb 25 07:46:00 2003
+@@ -172,7 +172,7 @@ lib_LTLIBRARIES = libgthread-2.0.la
  
  libgthread_2_0_la_SOURCES = gthread-impl.c
  libgthread_2_0_la_LDFLAGS = \

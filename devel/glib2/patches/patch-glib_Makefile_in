@@ -1,8 +1,8 @@
-$OpenBSD: patch-glib_Makefile_in,v 1.1 2002/08/07 13:11:53 nino Exp $
---- glib/Makefile.in.orig	Wed Aug  7 13:29:33 2002
-+++ glib/Makefile.in	Wed Aug  7 13:30:17 2002
-@@ -294,7 +294,7 @@ libglib_2_0_la_LIBADD = libcharset/libch
- libglib_2_0_la_DEPENDENCIES = libcharset/libcharset.la @GIO@ @GSPAWN@ @PLATFORMDEP@ @G_LIB_WIN32_RESOURCE@ @GLIB_DEF@
+$OpenBSD: patch-glib_Makefile_in,v 1.2 2003/04/17 05:55:42 marcm Exp $
+--- glib/Makefile.in.orig	Tue Jan 28 14:20:30 2003
++++ glib/Makefile.in	Tue Feb 25 07:46:00 2003
+@@ -291,7 +291,7 @@ libglib_2_0_la_LIBADD = libcharset/libch
+ libglib_2_0_la_DEPENDENCIES = libcharset/libcharset.la $(trio_libtrio_la) @GIO@ @GSPAWN@ @PLATFORMDEP@ @G_LIB_WIN32_RESOURCE@ @GLIB_DEF@
  
  libglib_2_0_la_LDFLAGS = \
 -	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
