@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2002/12/29 21:14:10 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2003/03/29 00:33:47 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 COMMENT=	"network file distribution system"
 COMMENT-server=	"network file distribution server"
 
-VERSION=	16.1f
+VERSION=	16.1g
 DISTNAME=	cvsup-snap-${VERSION}
 PKGNAME=	cvsup-${VERSION}
 PKGNAME-server=	cvsupd-${VERSION}
