@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/04/27 16:27:51 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/08/22 19:52:21 naddy Exp $
 bin/opera
 lib/opera/plugins/libnpp.so
 lib/opera/plugins/libnpp.so.0
@@ -401,3 +401,6 @@ share/opera/styles/wml.css
 @dirrm share/doc/opera
 @dirrm lib/opera/plugins
 @dirrm lib/opera
+@cwd /etc
+@extra opera6rc
+@extra opera6rc.fixed

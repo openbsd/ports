@@ -18,8 +18,6 @@ Opera is a fast and customizable WWW browser.  Features:
 - a powerful search capability with the added possibility of searching
   the user's own Hotlist
 
-WWW: ${HOMEPAGE}
-
 Other packages that might be useful in conjunction with Opera:
 
     flashplugin         - Macromedia Flash Player plugin
