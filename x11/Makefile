@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2002/11/20 01:14:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.154 2002/11/24 00:48:35 brad Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -197,7 +197,6 @@
      SUBDIR += xkbset
      SUBDIR += xkeycaps
      SUBDIR += xloadimage
-     SUBDIR += xlockmore
      SUBDIR += xlogout
      SUBDIR += xmascot
      SUBDIR += xmbdfed
