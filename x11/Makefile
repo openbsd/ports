@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2003/12/24 05:05:06 brad Exp $
+# $OpenBSD: Makefile,v 1.180 2004/02/16 21:13:55 xsa Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -112,6 +112,7 @@
      SUBDIR += pwm
      SUBDIR += py-Gtk
      SUBDIR += py-Gtk,gnome
+     SUBDIR += py-gtk2
 #    SUBDIR += pythonqt
      SUBDIR += qinx
      SUBDIR += qlwm
