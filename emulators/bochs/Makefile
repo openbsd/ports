@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2004/05/12 22:40:11 pedro Exp $
+# $OpenBSD: Makefile,v 1.37 2004/08/11 04:46:49 brad Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 COMMENT=	"x86 machine simulator"
@@ -102,7 +102,7 @@ ERRORS +=	"Fatal: cannot use i386 or i486 with mmx"
 CONFIGURE_ARGS+= --enable-compressed-hd
 .endif
 
-post-configure:
+pre-build:
 	@sed -e 's@!!PREFIX!!@${PREFIX}@' \
 		< ${WRKSRC}/.bochsrc > ${WRKSRC}/bochsrc
 
