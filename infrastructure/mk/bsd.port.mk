@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.578 2003/08/04 14:37:10 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.579 2003/08/11 18:42:07 sturm Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -585,8 +585,8 @@ _SYSTRACE_CMD?=	/bin/systrace -i -a -f ${_SYSTRACE_COOKIE}
 _SYSTRACE_CMD=
 .endif
 SYSTRACE_FILTER?=		${PORTSDIR}/infrastructure/db/systrace.filter
-_SYSTRACE_POLICIES+=	/bin/sh /bin/tar /usr/bin/env /usr/bin/make \
-	${LOCALBASE}/bin/gmake ${LOCALBASE}/bin/unzip
+_SYSTRACE_POLICIES+=	/bin/sh /usr/bin/env /usr/bin/make \
+	${LOCALBASE}/bin/gmake
 SYSTRACE_SUBST_VARS+=	WRKOBJDIR PORTSDIR DISTDIR
 .for _v in ${SYSTRACE_SUBST_VARS}
 _SYSTRACE_SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
@@ -1408,9 +1408,14 @@ ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
 .if target(pre-extract)
 	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} pre-extract
 .endif
-.if target(do-extract)
 	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} do-extract
-.else
+.if target(post-extract)
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} post-extract
+.endif
+	@${_MAKE_COOKIE} $@
+
+.if !target(do-extract)
+do-extract:
 # What EXTRACT normally does:
 	@PATH=${PORTPATH}; set -e; cd ${WRKDIR}; \
 	for archive in ${EXTRACT_ONLY}; do \
@@ -1420,11 +1425,6 @@ ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
 	done
 # End of EXTRACT
 .endif
-.if target(post-extract)
-	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} post-extract
-.endif
-	@${_MAKE_COOKIE} $@
-
 
 
 # Both distpatch and patch invoke pre-patch, if it's defined.
