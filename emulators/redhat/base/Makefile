@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2003/09/25 06:50:21 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2003/12/12 01:32:09 margarida Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 8.0"
 
-PKGNAME=	redhat_base-8.0p3
+PKGNAME=	redhat_base-8.0p4
 
 MAINTAINER=	Jason Ish <ish@openbsd.org>
 
@@ -13,8 +13,8 @@ DISTFILES=	${RPMS}
 
 RPMDIR=		${FULLDISTDIR}
 
-RPMS=		glibc-2.3.2-4.80.6.i386.rpm:0 \
-		glibc-common-2.3.2-4.80.6.i386.rpm:0 \
+RPMS=		glibc-2.3.2-4.80.8.i386.rpm:0 \
+		glibc-common-2.3.2-4.80.8.i386.rpm:0 \
 		libattr-2.0.8-3.i386.rpm \
 		libacl-2.0.11-2.i386.rpm \
 		termcap-11.0.1-13.noarch.rpm \
@@ -22,14 +22,14 @@ RPMS=		glibc-2.3.2-4.80.6.i386.rpm:0 \
 		bash-2.05b-5.1.i386.rpm:0 \
 		ncurses-5.2-28.i386.rpm \
 		zlib-1.1.4-8.8x.i386.rpm:0 \
-		fileutils-4.1.9-11.i386.rpm \
+		fileutils-4.1.9-11.2.i386.rpm:0 \
 		binutils-2.13.90.0.2-2.i386.rpm \
 		compat-libstdc++-7.3-2.96.110.i386.rpm \
 		libstdc++-3.2-7.i386.rpm \
 		sh-utils-2.0.12-3.i386.rpm \
 		readline-4.3-3.i386.rpm \
 		rpm-4.1-1.06.i386.rpm \
-		XFree86-libs-4.2.1-21.i386.rpm:0 \
+		XFree86-libs-4.2.1-23.i386.rpm:0 \
 		glib-1.2.10-8.i386.rpm \
 		gtk+-1.2.10-22.i386.rpm \
 		libjpeg-6b-21.i386.rpm \
