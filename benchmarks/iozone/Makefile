@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2001/01/19 15:01:09 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2001/02/10 00:08:36 brad Exp $
 
 DISTNAME=	iozone3_51
 PKGNAME=	iozone-3.51
@@ -6,6 +6,8 @@ CATEGORIES=	benchmarks
 NEED_VERSION=	1.336
 MASTER_SITES=	http://www.iozone.org/src/current/
 EXTRACT_SUFX=	.tar
+
+HOMEPAGE=	http://www.iozone.org/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
