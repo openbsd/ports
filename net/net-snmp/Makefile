@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/08/10 13:36:08 danh Exp $
+# $OpenBSD: Makefile,v 1.4 2004/10/08 16:30:52 danh Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,6 +42,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} --with-libwrap --with-perl-modules \
 REGRESS_TARGET=	test
 
 post-install:
+	@perl -pi -e 's,^(#define[ ]PACKAGE_.*)$$,/* $$1 */,' \
+	    ${PREFIX}/include/net-snmp/net-snmp-config.h
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/net-snmp
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/net-snmp
 	${INSTALL_DATA} ${WRKSRC}/README.snmpv3 ${PREFIX}/share/doc/net-snmp
