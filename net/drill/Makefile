@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/25 12:16:07 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2005/03/02 07:20:20 jakob Exp $
 
 COMMENT=	"dns debugger"
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB=		c crypto
 
 CONFIGURE_STYLE=	gnu
 WRKDIST=		${WRKDIR}/drill
