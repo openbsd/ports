@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/30 09:45:37 nino Exp $
+# $OpenBSD: Makefile,v 1.2 2002/06/02 17:34:46 nino Exp $
 
 COMMENT=		"architecture for creating reusable software components"
+COMMENT-docs=		"documentation for the bonobo architecture"
 
-DISTNAME=		bonobo-1.0.20
+VERSION=		1.0.20
+DISTNAME=		bonobo-${VERSION}
+PKGNAME-docs=		bonobo-docs-${VERSION}
 CATEGORIES=    		x11/gnome
 NEED_VERSION=		1.530
 HOMEPAGE=		http://developer.gnome.org/arch/component/bonobo.html
@@ -20,9 +23,14 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		gettext
 
+MULTI_PACKAGES=		-docs
+SUBPACKAGE?=		
+
+.if ${SUBPACKAGE} != "-docs"
 LIB_DEPENDS=		art_lgpl.4,gnome.36,gnomesupport,gnomeui.46::x11/gnome/libs \
 			oaf::x11/gnome/oaf \
 			gnomeprint.16::x11/gnome/print
+.endif
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
