@@ -1,0 +1,6 @@
+This module provides the Perl API to the Sablotron XSLT engine
+(textproc/sablotron).  For more information about it, refer to the
+XSLT standard at http://w3.org/TR/XSLT/, or the Sablotron homepage
+below.
+
+WWW: ${HOMEPAGE}
