@@ -1,7 +1,7 @@
-$OpenBSD: patch-uta_blitters_cc,v 1.1.1.1 2001/07/28 07:16:23 pvalchev Exp $
---- uta/blitters.cc.orig	Tue Apr 10 01:46:28 2001
-+++ uta/blitters.cc	Mon Jul 23 12:44:54 2001
-@@ -1,9 +1,9 @@
+$OpenBSD: patch-uta_blitters_cc,v 1.2 2001/09/06 23:23:56 pvalchev Exp $
+--- uta/blitters.cc.orig	Mon Apr  9 17:25:05 2001
++++ uta/blitters.cc	Wed Sep  5 16:45:59 2001
+@@ -1,9 +1,12 @@
  #include "blitters.h"
 -#include <uta/painter.h>
 +#include <painter.h>
@@ -9,7 +9,28 @@ $OpenBSD: patch-uta_blitters_cc,v 1.1.1.1 2001/07/28 07:16:23 pvalchev Exp $
  namespace uta {
  
 -#ifndef X86_ASSEMBLER
-+#if !defined(X86_ASSEMBLER) || (defined(__OpenBSD__) && defined(__i386__))
++#ifdef __OpenBSD__
++#undef X86_ASSEMBLER
++#endif
++#if !defined(X86_ASSEMBLER)
  
  /** Apply const gamma value.
      Blit just copies alpha value of the source to the destination surface.
+@@ -1599,7 +1602,7 @@ void gammablit(Surface* dst, const Surfa
+       gammablit_C(dst,src,g,srcRect,dstPoint);
+     }
+ #else
+-  gammablit_C(dst,src,g,srcRect,dstPoint)
++  gammablit_C(dst,src,g,srcRect,dstPoint);
+ #endif
+ }
+ 
+@@ -1626,7 +1629,7 @@ void gammablit(Surface* dst, const Surfa
+       gammablit_C(dst,src,func,srcRect,dstPoint);
+     }
+ #else
+-  gammablit_C(dst,src,func,srcRect,dstPoint)
++  gammablit_C(dst,src,func,srcRect,dstPoint);
+ #endif
+ }
+ 
