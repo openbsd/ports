@@ -1,0 +1,12 @@
+$OpenBSD$
+--- help2man.texi.orig	Sun Aug 26 18:04:33 2001
++++ help2man.texi	Sun Aug 26 18:05:11 2001
+@@ -9,7 +9,7 @@
+ 
+ @dircategory GNU admin
+ @direntry
+-* help2man: (help2man).      Automatic manual page generation.
++* Help2man: (help2man).         Automatic manual page generation.
+ @end direntry
+ 
+ @ifinfo
