@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 1999/06/22 14:23:38 brad Exp $
+# $OpenBSD: Makefile,v 1.16 1999/09/26 22:47:53 espie Exp $
 
 DISTNAME=	ghostscript-5.10
 CATEGORIES=	print
-MASTER_SITES=	http://www.ozemail.com.au/~geoffk/pdfencrypt/ \
-		$(MASTER_SITE_GNU)
+MASTER_SITES= $(MASTER_SITE_GNU)
+
+MASTER_SITES0=	http://www.ozemail.com.au/~geoffk/pdfencrypt/ 
+MASTER_SITES1= http://www.erdw.ethz.ch/~bonk/ftp/gs-driver-distrib/
+
 MASTER_SITE_SUBDIR=     ghostscript
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
-		${HP850_DRV} ${PDFENCRYPT}
+		${HP850_DRV}:1 ${PDFENCRYPT}:0
 
 NEED_VERSION=	1.92
 
@@ -31,8 +34,8 @@ GS_SOURCES=	ghostscript-5.10.tar.gz
 GS_FONTS_STD=	ghostscript-fonts-std-5.10.tar.gz
 GS_FONTS_OTHER=	ghostscript-fonts-other-5.10.tar.gz
 
-# Additional driver HP 850, see http://bonk.ethz.ch/hp850/hp850.html
-HP850_DRV=	hp850.zip
+# Additional driver for HP, see http://www.erdw.ethz.ch/~bonk/hp850/hp850.html
+HP850_DRV=	hp8xxs13.zip
 
 # PDF Encryption support, see http://www.ozemail.com.au/~geoffk/pdfencrypt/
 PDFENCRYPT=	pdf_sec.ps
@@ -49,6 +52,7 @@ PNG_DIR=	${PORTSDIR}/graphics/png/work/libpng-1.0.3
 
 .if defined(A4)
 CFLAGS+=	-DA4
+PKGNAME=${DISTNAME}-A4
 .endif
 
 .if !defined(NO_WARNINGS)
@@ -69,7 +73,9 @@ post-extract:
 	@${TOUCH} ${WRKSRC}/trees.o
 	@${LN} -sf ${JPEG_DIR} ${WRKSRC}/jpeg-6b
 	@${LN} -sf ${PNG_DIR} ${WRKSRC}/libpng
+	@cd ${WRKSRC} && ${MV} devs.mak devs.mak.keep
 	@cd ${WRKSRC} && ${SETENV} unzip -La ${DISTDIR}/${HP850_DRV}
+	@cd ${WRKSRC} && ${RM} devs.mak && ${MV} devs.mak.keep devs.mak
 	@cp ${DISTDIR}/${PDFENCRYPT} ${WRKSRC}
 
 do-configure:
