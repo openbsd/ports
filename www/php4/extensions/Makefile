@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/06/24 19:27:46 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2002/06/26 22:16:40 avsm Exp $
 
 PKGNAME=	php4-gd-${V}
 
 MULTI_PACKAGES=	-bz2 -curl -dba -dbase -filepro \
-		-gmp -imap -ldap -mcrypt -mhash -mysql -odbc \
-		-pdf -pgsql -shmop -sybase_ct -xml -xslt
+		-gmp -imap -ldap -mcrypt -mhash -mysql -ncurses \
+		-odbc -pdf -pgsql -shmop -sybase_ct -xml -xslt
 SUBPACKAGE?=
 
 FLAVORS+=	no_x11
@@ -91,6 +91,10 @@ MHASH_DEPENDS=		mhash.2::security/mhash
 COMMENT-mysql=		"mysql database access extensions for php4"
 CONFIGURE_ARGS+=	--with-mysql=shared,${LOCALBASE}
 MYSQL_DEPENDS=		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
+
+# ncurses
+COMMENT-ncurses=	"ncurses extensions for php4"
+CONFIGURE_ARGS+=	--with-ncurses=shared,${LOCALBASE}
 
 # odbc
 COMMENT-odbc=		"odbc database access extensions for php4"

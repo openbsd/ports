@@ -1,0 +1,27 @@
+$OpenBSD: patch-ext_ncurses_config_m4,v 1.1 2002/06/26 22:16:40 avsm Exp $
+--- ext/ncurses/config.m4.orig	Sun Jan 20 02:30:17 2002
++++ ext/ncurses/config.m4	Wed Jun 26 23:33:40 2002
+@@ -32,7 +32,7 @@ if test "$PHP_NCURSES" != "no"; then
+    PHP_ADD_INCLUDE($NCURSES_DIR/include)
+ 
+    # --with-ncurses -> chech for lib and symbol presence
+-   LIBNAME=ncurses 
++   LIBNAME=curses 
+    LIBSYMBOL=initscr 
+ 
+    PHP_CHECK_LIBRARY($LIBNAME, $LIBSYMBOL, [
+@@ -44,10 +44,10 @@ if test "$PHP_NCURSES" != "no"; then
+      -L$NCURSES_DIR/lib -lm
+    ])
+   
+-   AC_CHECK_LIB(ncurses, color_set,   [AC_DEFINE(HAVE_NCURSES_COLOR_SET,  1, [ ])])
+-   AC_CHECK_LIB(ncurses, slk_color,   [AC_DEFINE(HAVE_NCURSES_SLK_COLOR,  1, [ ])])
+-   AC_CHECK_LIB(ncurses, asume_default_colors,   [AC_DEFINE(HAVE_NCURSES_ASSUME_DEFAULT_COLORS,  1, [ ])])
+-   AC_CHECK_LIB(ncurses, use_extended_names,   [AC_DEFINE(HAVE_NCURSES_USE_EXTENDED_NAMES,  1, [ ])])
++   AC_CHECK_LIB($LIBNAME, color_set,   [AC_DEFINE(HAVE_NCURSES_COLOR_SET,  1, [ ])])
++   AC_CHECK_LIB($LIBNAME, slk_color,   [AC_DEFINE(HAVE_NCURSES_SLK_COLOR,  1, [ ])])
++   AC_CHECK_LIB($LIBNAME, asume_default_colors,   [AC_DEFINE(HAVE_NCURSES_ASSUME_DEFAULT_COLORS,  1, [ ])])
++   AC_CHECK_LIB($LIBNAME, use_extended_names,   [AC_DEFINE(HAVE_NCURSES_USE_EXTENDED_NAMES,  1, [ ])])
+ 
+    PHP_EXTENSION(ncurses, $ext_shared, cli)
+    PHP_SUBST(NCURSES_SHARED_LIBADD)
