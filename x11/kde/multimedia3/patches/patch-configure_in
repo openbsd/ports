@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure_in,v 1.16 2004/09/18 09:36:44 espie Exp $
---- configure.in.orig	Mon Aug 16 11:39:44 2004
-+++ configure.in	Tue Sep  7 17:25:44 2004
+$OpenBSD: patch-configure_in,v 1.17 2005/01/27 16:17:43 naddy Exp $
+--- configure.in.orig	Mon Nov 29 08:19:16 2004
++++ configure.in	Thu Jan 27 08:38:39 2005
+@@ -173,7 +173,7 @@ AC_CHECK_LIB(vorbisfile, ov_open,
+ 
+ AC_CHECK_LIB(vorbis, vorbis_info_init,
+ 	[USELESS_VAR=1],
+-	[oggv_have_vorbis=""])
++	[oggv_have_vorbis=""], -logg)
+ 
+ AC_CHECK_LIB(ogg, ogg_page_version,
+ 	[USELESS_VAR=1],
 @@ -1703,6 +1703,9 @@ case "$OS_TYPE" in
    NetBSD)
      kde_mpeglib_compiles=yes
