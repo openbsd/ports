@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2003/03/31 14:36:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.21 2004/01/04 20:24:49 espie Exp $
 
 COMMENT=	"X11 over a low bandwidth link"
-VERSION=	3.8.1
+VERSION=	3.8.2
 DISTNAME=	dxpc-${VERSION}
 CATEGORIES=	net x11
 
@@ -13,11 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://ftp.ecrc.de/pub/netsw/x11/extensions/dxpc/ \
-		http://www.netsw.org/x11/extensions/dxpc/
-# domain is gone
-#		http://www.vigor.nu/dxpc/${VERSION}/
-#HOMEPAGE=	http://www.vigor.nu/dxpc/
+MASTER_SITES=	http://www.vigor.nu/dxpc/${VERSION}/
+HOMEPAGE=	http://www.vigor.nu/dxpc/
 
 LIB_DEPENDS=	lzo::archivers/lzo
 
