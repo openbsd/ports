@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/14 01:55:42 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/20 15:25:33 naddy Exp $
 
 DISTNAME=	libogg-1.0beta4
 CATEGORIES=    	audio
 NEED_VERSION=	1.359
 HOMEPAGE=	http://www.xiph.org/ogg/
 
-MAINTAINER=	Todd Fries <todd@fries.net>
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

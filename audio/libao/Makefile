@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/17 23:45:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/20 15:25:33 naddy Exp $
 
 DISTNAME=	libao-0.6.0
 CATEGORIES=    	audio
 NEED_VERSION=	1.359
 HOMEPAGE=	http://www.vorbis.com
 
-MAINTAINER=	Todd Fries <todd@fries.net>
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
