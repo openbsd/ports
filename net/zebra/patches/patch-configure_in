@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure_in,v 1.1 2001/08/18 08:46:38 peter Exp $
+--- configure.in.orig	Wed Aug 15 10:25:57 2001
++++ configure.in	Wed Aug 15 10:26:09 2001
+@@ -596,6 +596,8 @@ dnl check SNMP library
+ dnl ------------------
+ if test "${enable_snmp}" = "yes";then
+ dnl  AC_CHECK_LIB(snmp, asn_parse_int, HAVE_SNMP=yes)
++  old_libs="${LIBS}"
++  LIBS="-L/usr/local/lib"
+   unset ac_cv_lib_snmp_asn_parse_int
+   AC_CHECK_LIB(snmp, asn_parse_int, HAVE_SNMP=yes, )
+   if test "${HAVE_SNMP}" = ""; then
+@@ -607,6 +609,7 @@ dnl  AC_CHECK_LIB(snmp, asn_parse_int, H
+ 	    AC_CHECK_LIB(snmp, asn_parse_int, [HAVE_SNMP=yes; NEED_CRYPTO=yes;LIBS="$LIBS -lcrypto" ],,"-lcrypto")
+ 	fi
+   fi
++  LIBS="${old_libs}"
+ 
+   if test "${HAVE_SNMP}" = ""; then
+ 	old_libs="${LIBS}"
