@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/15 06:11:34 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/22 21:48:00 jolan Exp $
 bin/xfdesktop
 lib/xfce4/mcs-plugins/backdrop_settings.a
 lib/xfce4/mcs-plugins/backdrop_settings.la
@@ -7,14 +7,17 @@ lib/xfce4/mcs-plugins/workspaces_settings.a
 lib/xfce4/mcs-plugins/workspaces_settings.la
 lib/xfce4/mcs-plugins/workspaces_settings.so
 share/examples/xfdesktop/menu.xml
+share/examples/xfdesktop/menu.xml.az
 share/examples/xfdesktop/menu.xml.ca
 share/examples/xfdesktop/menu.xml.de
 share/examples/xfdesktop/menu.xml.fr
 share/examples/xfdesktop/menu.xml.hu
 share/examples/xfdesktop/menu.xml.nl
 share/examples/xfdesktop/menu.xml.ta
+share/examples/xfdesktop/menu.xml.vi
 share/examples/xfdesktop/menu.xml.zh_CN
 share/examples/xfdesktop/menu.xml.zh_TW
+share/locale/az/LC_MESSAGES/xfdesktop.mo
 share/locale/ca/LC_MESSAGES/xfdesktop.mo
 share/locale/cs/LC_MESSAGES/xfdesktop.mo
 share/locale/de/LC_MESSAGES/xfdesktop.mo
@@ -24,6 +27,7 @@ share/locale/fi/LC_MESSAGES/xfdesktop.mo
 share/locale/fr/LC_MESSAGES/xfdesktop.mo
 share/locale/hi/LC_MESSAGES/xfdesktop.mo
 share/locale/hu/LC_MESSAGES/xfdesktop.mo
+share/locale/it/LC_MESSAGES/xfdesktop.mo
 share/locale/ja/LC_MESSAGES/xfdesktop.mo
 share/locale/ko/LC_MESSAGES/xfdesktop.mo
 share/locale/lt/LC_MESSAGES/xfdesktop.mo
@@ -60,61 +64,7 @@ share/xfce4/doc/fr/images/xfdesktop-background.png
 share/xfce4/doc/fr/images/xfdesktop-list.png
 share/xfce4/doc/fr/images/xfdesktop-workspace.png
 share/xfce4/doc/fr/xfdesktop.html
-@dirrm share/xfce4/doc/fr/images
-@dirrm share/xfce4/doc/fr
-@dirrm share/xfce4/doc/C/images
-@dirrm share/xfce4/doc/C
-@dirrm share/xfce4/doc
 @dirrm share/xfce4/backdrops
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/vi/LC_MESSAGES
-@dirrm share/locale/vi
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/ta/LC_MESSAGES
-@dirrm share/locale/ta
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/pt_PT/LC_MESSAGES
-@dirrm share/locale/pt_PT
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/ms/LC_MESSAGES
-@dirrm share/locale/ms
-@dirrm share/locale/lt/LC_MESSAGES
-@dirrm share/locale/lt
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/hi/LC_MESSAGES
-@dirrm share/locale/hi
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/es_MX/LC_MESSAGES
-@dirrm share/locale/es_MX
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale
 @dirrm share/examples/xfdesktop
 @dirrm lib/xfce4/mcs-plugins
 @dirrm lib/xfce4

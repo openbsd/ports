@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/15 06:11:41 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/22 21:48:00 jolan Exp $
 bin/fgr
 bin/scramble
 bin/xfapps
@@ -26,6 +26,7 @@ lib/pkgconfig/xffm-1.0.pc
 lib/xfce4/mcs-plugins/libxffmsettings.la
 lib/xfce4/mcs-plugins/libxffmsettings.so
 man/man1/fgr.1
+share/locale/az/LC_MESSAGES/xffm.mo
 share/locale/ca/LC_MESSAGES/xffm.mo
 share/locale/cs/LC_MESSAGES/xffm.mo
 share/locale/de/LC_MESSAGES/xffm.mo
@@ -39,6 +40,7 @@ share/locale/lt/LC_MESSAGES/xffm.mo
 share/locale/ms/LC_MESSAGES/xffm.mo
 share/locale/nl/LC_MESSAGES/xffm.mo
 share/locale/pt_PT/LC_MESSAGES/xffm.mo
+share/locale/sv/LC_MESSAGES/xffm.mo
 share/locale/ta/LC_MESSAGES/xffm.mo
 share/locale/tr/LC_MESSAGES/xffm.mo
 share/locale/uk/LC_MESSAGES/xffm.mo
@@ -150,48 +152,5 @@ share/xffm/pixmaps/xffm_icon.xpm
 @dirrm share/xffm/pixmaps/no_icons
 @dirrm share/xffm/pixmaps
 @dirrm share/xffm
-@dirrm share/xfce4/doc/fr
-@dirrm share/xfce4/doc/C
-@dirrm share/xfce4/doc
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/vi/LC_MESSAGES
-@dirrm share/locale/vi
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/ta/LC_MESSAGES
-@dirrm share/locale/ta
-@dirrm share/locale/pt_PT/LC_MESSAGES
-@dirrm share/locale/pt_PT
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/ms/LC_MESSAGES
-@dirrm share/locale/ms
-@dirrm share/locale/lt/LC_MESSAGES
-@dirrm share/locale/lt
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/hi/LC_MESSAGES
-@dirrm share/locale/hi
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/es_MX/LC_MESSAGES
-@dirrm share/locale/es_MX
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale
-@dirrm lib/pkgconfig
 @dirrm lib/xfce4/mcs-plugins
 @dirrm lib/xfce4

@@ -1,13 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/15 06:11:44 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/22 21:48:00 jolan Exp $
 bin/xfce4-tips
 lib/xfce4/panel-plugins/libeyes.a
 lib/xfce4/panel-plugins/libeyes.la
 lib/xfce4/panel-plugins/libeyes.so
+share/locale/az/LC_MESSAGES/xfce4-toys.mo
 share/locale/ca/LC_MESSAGES/xfce4-toys.mo
 share/locale/cs/LC_MESSAGES/xfce4-toys.mo
 share/locale/de/LC_MESSAGES/xfce4-toys.mo
+share/locale/fr/LC_MESSAGES/xfce4-toys.mo
 share/locale/hi/LC_MESSAGES/xfce4-toys.mo
 share/locale/hu/LC_MESSAGES/xfce4-toys.mo
+share/locale/it/LC_MESSAGES/xfce4-toys.mo
 share/locale/ko/LC_MESSAGES/xfce4-toys.mo
 share/locale/lt/LC_MESSAGES/xfce4-toys.mo
 share/locale/ms/LC_MESSAGES/xfce4-toys.mo
@@ -46,43 +49,3 @@ share/xfce4/tips/tips.dat
 @dirrm share/xfce4/eyes/themes/Bizarre
 @dirrm share/xfce4/eyes/themes
 @dirrm share/xfce4/eyes
-@dirrm share/xfce4
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/vi/LC_MESSAGES
-@dirrm share/locale/vi
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/ta/LC_MESSAGES
-@dirrm share/locale/ta
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/pt_PT/LC_MESSAGES
-@dirrm share/locale/pt_PT
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/ms/LC_MESSAGES
-@dirrm share/locale/ms
-@dirrm share/locale/lt/LC_MESSAGES
-@dirrm share/locale/lt
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/hi/LC_MESSAGES
-@dirrm share/locale/hi
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale
-@dirrm lib/xfce4/panel-plugins
-@dirrm lib/xfce4

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/12/15 06:11:44 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2003/12/22 21:48:00 jolan Exp $
 
 COMMENT=	"notification area/system tray for the panel"
-DISTNAME=	xfce4-systray-4.0.1
+DISTNAME=	xfce4-systray-4.0.2
 
 MASTER_SITES=	${MASTER_SITE_EXTRAS}
 

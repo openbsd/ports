@@ -1,6 +1,6 @@
 CATEGORIES?=	x11 x11/xfce4 x11/xfce4/themes
 
-MASTER_SITES?=	http://www.xfce.org/archive/xfce-4.0.1/src/
+MASTER_SITES?=	http://www.xfce.org/archive/xfce-4.0.2/src/
 DIST_SUBDIR?=	xfce4
 
 HOMEPAGE?=	http://www.xfce.org/

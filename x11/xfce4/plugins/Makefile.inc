@@ -1,6 +1,6 @@
 CATEGORIES?=	x11 x11/xfce4 x11/xfce4-plugins
 
-MASTER_SITE_EXTRAS=	http://www.xfce.org/archive/xfce-4.0.1/src/
+MASTER_SITE_EXTRAS=	http://www.xfce.org/archive/xfce-4.0.2/src/
 MASTER_SITE_GOODIES=	http://download.berlios.de/xfce-goodies/
 DIST_SUBDIR?=	xfce4
 
@@ -25,8 +25,8 @@ USE_X11?=	Yes
 DBH=	dbh.1.0::databases/dbh
 GTK2=	gdk_pixbuf-2.0.0.14,gdk-x11-2.0.0.14,gtk-x11-2.0.0.14::x11/gtk+2
 GTHREAD=gthread-2.0.0.11::devel/glib2
-GUI=	xfcegui4.1.5::x11/xfce4/libraries/libxfcegui4
-MCS=	xfce4mcs-client.1.0,xfce4mcs-manager.1.0::x11/xfce4/libraries/libxfce4mcs
+GUI=	xfcegui4.1.6::x11/xfce4/libraries/libxfcegui4
+MCS=	xfce4mcs-client.1.1,xfce4mcs-manager.1.1::x11/xfce4/libraries/libxfce4mcs
 PANEL=	:xfce4-panel-*:x11/xfce4/desktop/xfce4-panel
 PKG=	:pkgconfig-*:devel/pkgconfig
 STARTUP=startup-notification-1.0.0::devel/startup-notification

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/12/15 06:11:34 jolan Exp $
---- Makefile.in.orig	2003-11-11 09:04:59.000000000 -0600
-+++ Makefile.in	2003-12-02 20:05:31.000000000 -0600
+$OpenBSD: patch-Makefile_in,v 1.2 2003/12/22 21:47:59 jolan Exp $
+--- Makefile.in.orig	2003-12-16 15:34:36.000000000 -0600
++++ Makefile.in	2003-12-21 17:31:05.000000000 -0600
 @@ -174,7 +174,7 @@ sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
@@ -9,4 +9,4 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/12/15 06:11:34 jolan Exp $
 +confdir = $(prefix)/share/examples/xfce4-panel
  conf_DATA = \
  	xfce4rc 							\
- 	xfce4rc.nl 							\
+ 	xfce4rc.az 							\

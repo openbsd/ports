@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/15 06:11:43 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/22 21:48:00 jolan Exp $
 bin/xfprint-manager
 bin/xfprint4
 lib/libxfprint.a
 lib/libxfprint.la
+share/locale/az/LC_MESSAGES/xfprint.mo
 share/locale/ca/LC_MESSAGES/xfprint.mo
 share/locale/cs/LC_MESSAGES/xfprint.mo
 share/locale/de/LC_MESSAGES/xfprint.mo
@@ -18,6 +19,7 @@ share/locale/nl/LC_MESSAGES/xfprint.mo
 share/locale/pl/LC_MESSAGES/xfprint.mo
 share/locale/pt_PT/LC_MESSAGES/xfprint.mo
 share/locale/ru/LC_MESSAGES/xfprint.mo
+share/locale/sv/LC_MESSAGES/xfprint.mo
 share/locale/ta/LC_MESSAGES/xfprint.mo
 share/locale/tr/LC_MESSAGES/xfprint.mo
 share/locale/uk/LC_MESSAGES/xfprint.mo
@@ -25,46 +27,7 @@ share/locale/vi/LC_MESSAGES/xfprint.mo
 share/locale/zh_CN/LC_MESSAGES/xfprint.mo
 share/locale/zh_TW/LC_MESSAGES/xfprint.mo
 %%SHARED%%
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/vi/LC_MESSAGES
-@dirrm share/locale/vi
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/ta/LC_MESSAGES
-@dirrm share/locale/ta
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
 @dirrm share/locale/pt_PT/LC_MESSAGES
 @dirrm share/locale/pt_PT
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/ms/LC_MESSAGES
-@dirrm share/locale/ms
-@dirrm share/locale/lt/LC_MESSAGES
-@dirrm share/locale/lt
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/hi/LC_MESSAGES
-@dirrm share/locale/hi
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
 @dirrm share/locale/es_MX/LC_MESSAGES
 @dirrm share/locale/es_MX
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale

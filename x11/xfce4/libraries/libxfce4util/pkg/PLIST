@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/15 06:11:52 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/22 21:48:00 jolan Exp $
 include/xfce4/libxfce4util/debug.h
 include/xfce4/libxfce4util/i18n.h
 include/xfce4/libxfce4util/utf8.h
@@ -15,6 +15,5 @@ share/xfce4/m4/i18n.m4
 @dirrm share/xfce4/m4
 @dirrm share/xfce4/i18n
 @dirrm share/xfce4
-@dirrm lib/pkgconfig
 @dirrm include/xfce4/libxfce4util
 @dirrm include/xfce4

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/15 06:11:52 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/22 21:48:00 jolan Exp $
 include/xfce4/libxfce4mcs/mcs-client.h
 include/xfce4/libxfce4mcs/mcs-common.h
 include/xfce4/libxfce4mcs/mcs-manager.h
@@ -9,5 +9,4 @@ lib/libxfce4mcs-manager.la
 lib/pkgconfig/libxfce4mcs-client-1.0.pc
 lib/pkgconfig/libxfce4mcs-manager-1.0.pc
 %%SHARED%%
-@dirrm lib/pkgconfig
 @dirrm include/xfce4/libxfce4mcs
