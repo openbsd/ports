@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/03/17 15:39:25 wilfried Exp $
+--- Makefile.in.orig	Thu Jan  6 20:08:23 2000
++++ Makefile.in	Fri Mar 16 20:04:02 2001
+@@ -67,7 +67,7 @@ LIB	= \
+ 	-lm @LIBS@
+ #	-L@libdir@ \
+ 
+-CFLAGS	= $(CCOPT) $(DEFINE)
++CFLAGS	= @CFLAGS@ $(DEFINE)
+ 
+ # Explicitly define compilation rules since SunOS 4's make doesn't like gcc.
+ # Also, gcc does not remove the .o before forking 'as', which can be a
