@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.33 2001/01/17 02:06:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2001/03/15 19:38:49 obecian Exp $
 
-DISTNAME=	nmap-2.54BETA7
-PKGNAME=	nmap-2.54b7
+DISTNAME=	nmap-2.54BETA22
+PKGNAME=	nmap-2.54b22
 CATEGORIES=	net security
 NEED_VERSION=	1.348
 MASTER_SITES=	${HOMEPAGE}dist/
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu dest
 
 FLAVORS=	no_x11
-FLAVOR?=
+FLAVOR?=	
 
 .if ${FLAVOR:L:Mno_x11}
 ALL_TARGET=	nmap
