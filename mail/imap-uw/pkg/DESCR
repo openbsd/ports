@@ -7,7 +7,7 @@ Included are backwards-compatible (almost) POP2 and POP3 servers.
 
 Flavors
 
-	noplain		Disable plaintext passwords except when using TLS
+	plaintext	Enable unencrypted plaintext passwords
 
 
 WWW: ${HOMEPAGE}

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.33 2002/11/20 03:42:21 jakob Exp $
+# $OpenBSD: Makefile,v 1.34 2002/11/29 19:07:47 jakob Exp $
 
-COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
-COMMENT-mailutil=	University of Washington IMAP4rev1/POP2/POP3 mail utility
+COMMENT=		"University of Washington IMAP4rev1/POP2/POP3 mail servers"
+COMMENT-mailutil=	"University of Washington IMAP4rev1/POP2/POP3 mail utility"
 
 VERSION=		2002.332
 DISTNAME=		imap-2002
@@ -29,13 +29,13 @@ MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" EXTRAAUTHENTICATORS="gss"
 MULTI_PACKAGES=	-mailutil
 SUBPACKAGE?=
 
-FLAVORS=	noplain
+FLAVORS=	plaintext
 FLAVOR?=
 
-.if ${FLAVOR:L:Mnoplain}
-MAKE_FLAGS+=	SSLTYPE="unix.nopwd"
-.else
+.if ${FLAVOR:L:Mplaintext}
 MAKE_FLAGS+=	SSLTYPE="unix"
+.else
+MAKE_FLAGS+=	SSLTYPE="unix.nopwd"
 .endif
 
 NO_REGRESS=	Yes

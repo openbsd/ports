@@ -2,7 +2,7 @@ This is the IMAP4rev1 server utility from the University of Washington.
 
 Flavors
 
-	noplain		Disable plaintext passwords except when using TLS
+	plaintext	Enable unencrypted plaintext passwords
 
 
 WWW: ${HOMEPAGE}
