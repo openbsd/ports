@@ -1,15 +1,19 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/04 12:50:49 reinhard Exp $
+# $OpenBSD: Makefile,v 1.5 2001/03/07 14:39:59 reinhard Exp $
+# Original from: Timo Sirainen <tss@iki.fi>
 
-DISTNAME=	irssi-0.7.97.2
+DISTNAME=	irssi-0.7.98.2
 CATEGORIES=	net
 NEED_VERSION=	1.358
-
-MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
+MASTER_SITES=	${HOMEPAGE}/files/ \
+		http://nl.irssi.org/files/ \
+		http://fi.irssi.org/files/ \
+		http://no.irssi.org/files/ \
+		http://pl.irssi.org/files/ \
+		http://us.irssi.org/files/ 
 
 HOMEPAGE=	http://www.irssi.org
 
-MASTER_SITES=	${HOMEPAGE}/files/ \
-		http://www.pl.irssi.org/files/
+MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -23,11 +27,11 @@ SEPARATE_BUILD=		Concurrent
 
 CONFIGURE_STYLE=	gnu
 
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --datadir=${PREFIX}/share/doc
 CONFIGURE_ARGS+=	--enable-ipv6 
 CONFIGURE_ARGS+=	--with-proxy --with-socks 
 CONFIGURE_ARGS+=	--with-textui --enable-curses-windows
 CONFIGURE_ARGS+=	--enable-perl=no
-CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/doc
 
 FLAVORS+=		gettext 
 FLAVOR?=
@@ -38,8 +42,6 @@ LIB_DEPENDS+=		intl.1::devel/gettext
 .else
 CONFIGURE_ARGS+=	--with-included-gettext
 .endif
-
-WRKDIST=		${WRKDIR}/irssi-0.7.97
 
 SAMPLE=		config default.theme colorless.theme
 
