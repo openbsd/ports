@@ -1,14 +1,5 @@
 --- kadmin/random_password.c	1999/12/02 17:04:58	1.3
 +++ kadmin/random_password.c	2001/02/15 04:20:53	1.4
-@@ -33,7 +33,7 @@
- 
- #include "kadmin_locl.h"
- 
--RCSID("$Id: patch-random_password.c,v 1.1 2001/02/28 16:26:46 jakob Exp $");
-+RCSID("$Id: patch-random_password.c,v 1.1 2001/02/28 16:26:46 jakob Exp $");
- 
- /* This file defines some a function that generates a random password,
-    that can be used when creating a large amount of principals (such
 @@ -57,9 +57,9 @@
  {
  #ifdef OTP_STYLE
