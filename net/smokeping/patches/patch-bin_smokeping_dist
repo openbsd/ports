@@ -1,0 +1,18 @@
+$OpenBSD: patch-bin_smokeping_dist,v 1.1.1.1 2002/11/10 20:04:49 jakob Exp $
+--- bin/smokeping.dist.orig	Sun Oct 13 23:58:14 2002
++++ bin/smokeping.dist	Sun Nov 10 13:25:25 2002
+@@ -1,12 +1,9 @@
+-#!/usr/sepp/bin/perl -w
++#!/usr/bin/perl -w
+ # -*-perl-*-
+ 
+-use lib qw(/usr/pack/rrdtool-1.0.33-to/lib/perl);
+-use lib qw(/home/oetiker/data/projects/AADJ-smokeping/dist/lib);
+-
+ use Smokeping 1.16;
+ 
+-Smokeping::main("/home/oetiker/.smokeping/config");
++Smokeping::main("/var/smokeping/config");
+ 
+ =head1 NAME
+ 

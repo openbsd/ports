@@ -1,0 +1,20 @@
+SmokePing is a latency logging and graphing system. It consists of a
+daemon process which organizes the latency measurements and a CGI which
+presents the graphs.
+
+ * quite fast because it uses FPing todo the actual pinging
+
+ * easy to customize through a webtemplate and an extensive
+   configuration file.
+
+ * written in perl and should readily port to any unix system
+
+ * extensible through plug-in modules
+
+ * an RRDtool frontend
+
+ * able to deal with DYNAMIC IP addresses as used with Cable
+   and ADSL internet.
+
+
+WWW: ${HOMEPAGE}

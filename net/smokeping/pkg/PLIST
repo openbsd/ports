@@ -1,0 +1,50 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/10 20:04:49 jakob Exp $
+bin/smokeping
+lib/smokeping/smokeping.cgi
+libdata/perl5/site_perl/ISG/ParseConfig.pm
+libdata/perl5/site_perl/Smokeping.pm
+libdata/perl5/site_perl/probes/EchoPing.pm
+libdata/perl5/site_perl/probes/EchoPingChargen.pm
+libdata/perl5/site_perl/probes/EchoPingDiscard.pm
+libdata/perl5/site_perl/probes/EchoPingHttp.pm
+libdata/perl5/site_perl/probes/EchoPingHttps.pm
+libdata/perl5/site_perl/probes/EchoPingIcp.pm
+libdata/perl5/site_perl/probes/EchoPingSmtp.pm
+libdata/perl5/site_perl/probes/FPing.pm
+libdata/perl5/site_perl/probes/FPing6.pm
+libdata/perl5/site_perl/probes/IOSPing.pm
+libdata/perl5/site_perl/probes/base.pm
+libdata/perl5/site_perl/probes/basefork.pm
+libdata/perl5/site_perl/probes/basevars.pm
+man/man1/smokeping.1
+man/man1/smokeping.cgi.1
+man/man1/smokeping_config.1
+man/man1/smokeping_install.1
+share/doc/smokeping/EchoPing.pm.txt
+share/doc/smokeping/EchoPingChargen.pm.txt
+share/doc/smokeping/EchoPingDiscard.pm.txt
+share/doc/smokeping/EchoPingHttp.pm.txt
+share/doc/smokeping/EchoPingHttps.pm.txt
+share/doc/smokeping/EchoPingIcp.pm.txt
+share/doc/smokeping/EchoPingSmtp.pm.txt
+share/doc/smokeping/FPing.pm.txt
+share/doc/smokeping/FPing6.pm.txt
+share/doc/smokeping/IOSPing.pm.txt
+share/doc/smokeping/ParseConfig.pm.txt
+share/doc/smokeping/Smokeping.pm.txt
+share/doc/smokeping/base.pm.txt
+share/doc/smokeping/basefork.pm.txt
+share/doc/smokeping/basevars.pm.txt
+share/doc/smokeping/smokeping.cgi.txt
+share/doc/smokeping/smokeping.txt
+share/doc/smokeping/smokeping_config.txt
+share/doc/smokeping/smokeping_install.txt
+share/examples/smokeping/basepage.html
+share/examples/smokeping/config
+share/examples/smokeping/config-echoping
+share/examples/smokeping/smokemail
+@dirrm share/examples/smokeping
+@dirrm share/doc/smokeping
+@dirrm libdata/perl5/site_perl/probes
+@dirrm libdata/perl5/site_perl/ISG
+@dirrm lib/smokeping
