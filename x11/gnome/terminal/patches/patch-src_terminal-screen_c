@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_terminal-screen_c,v 1.1 2004/07/25 00:21:13 marcm Exp $
+--- src/terminal-screen.c.orig	Mon Jul 12 23:19:39 2004
++++ src/terminal-screen.c	Mon Jul 12 23:19:43 2004
+@@ -1057,7 +1057,7 @@ get_child_environment (GtkWidget      *t
+ 
+   retval[i] = g_strdup ("COLORTERM="EXECUTABLE_NAME);
+   ++i;
+-  retval[i] = g_strdup ("TERM=xterm"); /* FIXME configurable later? */
++  retval[i] = g_strdup ("TERM=gnome"); /* FIXME configurable later? */
+   ++i;
+   retval[i] = g_strdup_printf ("WINDOWID=%ld",
+                                GDK_WINDOW_XWINDOW (term->window));
