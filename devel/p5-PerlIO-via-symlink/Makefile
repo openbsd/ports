@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/02/04 04:22:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2005/03/08 06:34:29 kevlo Exp $
 
 COMMENT=	"create symlink from IO handle"
 
-DISTNAME=	PerlIO-via-symlink-0.04
+DISTNAME=	PerlIO-via-symlink-0.05
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=PerlIO/}
