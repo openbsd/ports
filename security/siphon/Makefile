@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/12/29 20:31:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2004/12/27 13:28:35 alek Exp $
 			
 COMMENT=		"passive network mapping tool"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c pcap pthread
 
 MASTER_SITES=		http://siphon.datanerds.net/ \
 			${MASTER_SITE_PACKETSTORM:=UNIX/utilities/}

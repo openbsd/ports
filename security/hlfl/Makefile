@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/29 20:31:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2004/12/27 13:28:34 alek Exp $
 
 COMMENT=		"high level firewall language"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=		http://www.hlfl.org/hlfl/ \
 			ftp://ftp.hlfl.org/pub/hlfl/

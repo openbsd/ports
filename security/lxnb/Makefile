@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/01/25 21:10:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2004/12/27 13:28:34 alek Exp $
 
 COMMENT=	"NetBus client"
 
@@ -10,6 +10,7 @@ PERMIT_PACKAGE_CDROM=	"no obvious license"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no obvious license"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=	http://ns2.crw.se/~tm/projects/lxnb/
 EXTRACT_SUFX=	.tgz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/12/29 20:31:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2004/12/27 13:28:33 alek Exp $
 
 COMMENT=		"Samba security scanner"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
+WANTLIB=		c
 
 MASTER_SITES=   	ftp://adm.freelsd.net/pub/ADM/ \
                 	http://adm.freelsd.net/ADM/ \

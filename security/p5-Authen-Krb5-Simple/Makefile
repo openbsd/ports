@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/26 05:07:53 sk Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/27 13:28:34 alek Exp $
 
 COMMENT=		"Perl module to authenticate against a Kerberos server"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		com_err crypto krb5
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Authen/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/10/28 17:35:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2004/12/27 13:28:36 alek Exp $
 
 COMMENT=	"Secure Telnet, encrypted version of the telnet daemon"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c des m skey
 
 LIB_DEPENDS=	gmp.::devel/gmp
 

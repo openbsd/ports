@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/12/29 20:31:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2004/12/27 13:28:33 alek Exp $
 
 COMMENT=		"control chroot and su access rights by application"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=		ftp://ftp.porcupine.org/pub/security/ \
 			ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/chrootuid/

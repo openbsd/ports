@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/05/07 15:28:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2004/12/27 13:28:33 alek Exp $
 
 COMMENT=	"sniffing tools for penetration testing"
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto des pcap ssl
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-db="${LOCALBASE}"
@@ -30,6 +31,7 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--without-x
 .else
 USE_X11=	Yes
+WANTLIB+=	ICE SM X11 Xmu
 .endif
 
 NO_REGRESS=	Yes

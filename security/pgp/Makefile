@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2003/01/30 22:46:26 margarida Exp $
+# $OpenBSD: Makefile,v 1.30 2004/12/27 13:28:35 alek Exp $
 
 COMMENT=	"Pretty Good Privacy 2.6.3ia"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	"no commercial use"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no commercial use"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 PGP_DOC_DIR=	${PREFIX}/share/doc/pgp
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/05/07 15:28:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2004/12/27 13:28:34 alek Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c des pcap
 
 WRKDIST=	${WRKDIR}
 

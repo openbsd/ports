@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/05/07 15:28:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2004/12/27 13:28:34 alek Exp $
 
 COMMENT=	"scan C/C++ source code for security problems"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	"commercial. licensing restrictions."
 PERMIT_PACKAGE_FTP=	"commercial. licensing restrictions."
 PERMIT_DISTFILES_CDROM=	"commercial. licensing restrictions."
 PERMIT_DISTFILES_FTP=	"commercial. licensing restrictions."
+WANTLIB=		c m stdc++
 
 CONFIGURE_STYLE= gnu dest old
 

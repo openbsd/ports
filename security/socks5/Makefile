@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/02/21 01:18:08 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.33 2004/12/27 13:28:35 alek Exp $
 
 COMMENT=	"SOCKS v5 application layer gateway and clients"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	commercial
 PERMIT_PACKAGE_FTP=	commercial
 PERMIT_DISTFILES_CDROM=	commercial
 PERMIT_DISTFILES_FTP=	commercial
+WANTLIB=		c termcap
 
 # here are some extra configure args you may wish to use
 # see the readme file before screwing with them

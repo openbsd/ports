@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/01/17 15:58:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/12/27 13:28:34 alek Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	"No license"
 PERMIT_PACKAGE_FTP=	"No license"
 PERMIT_DISTFILES_CDROM=	"No license"
 PERMIT_DISTFILES_FTP=	"No license"
+WANTLIB=		crypto ssl
 
 CONFIGURE_STYLE=	perl
 

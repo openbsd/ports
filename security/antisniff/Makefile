@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/06/21 20:11:23 xsa Exp $
+# $OpenBSD: Makefile,v 1.21 2004/12/27 13:28:33 alek Exp $
 
 COMMENT=	"promiscuous mode interface detector"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	"commercial software"
 PERMIT_PACKAGE_FTP=	"commercial software"
 PERMIT_DISTFILES_CDROM=	"commercial software"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c kvm pcap
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/09/25 06:25:14 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2004/12/27 13:28:35 alek Exp $
 
 COMMENT=	"steganography detection tool"
 DISTNAME=	stegdetect-0.5
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xi c crypto gmodule iconv intl m
 
 LIB_DEPENDS=	gdk.1.2,gtk.1.2,glib.1.2::x11/gtk+
 

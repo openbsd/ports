@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/09/23 20:05:43 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2004/12/27 13:28:35 alek Exp $
 
 COMMENT=	"watch a tcpdump trace in real-time"
 
@@ -10,6 +10,7 @@ PERMIT_PACKAGE_CDROM=	"commercial. licensing restrictions."
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"commercial. licensing restrictions."
 PERMIT_DISTFILES_FTP=	Yes       
+WANTLIB=		c pcap
 
 MASTER_SITES=	ftp://ftp.sdsc.edu/pub/security/PICS/parse/
 EXTRACT_SUFX=	.t.gz

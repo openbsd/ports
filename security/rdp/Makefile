@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/09/23 20:05:43 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2004/12/27 13:28:35 alek Exp $
 
 COMMENT=	"ICMP router discovery protocol spoofer"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c pcap
 
 WRKDIST=	${WRKDIR}
 

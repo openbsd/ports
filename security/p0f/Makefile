@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/05/07 15:28:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2004/12/27 13:28:34 alek Exp $
 # $NetBSD: Makefile,v 1.1.1.2 2001/03/26 11:59:15 hubertf Exp $
 
 COMMENT=		"passive OS fingerprinting tool"
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM= Yes 
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c pcap
 
 MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=		.tgz

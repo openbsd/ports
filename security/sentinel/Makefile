@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/02/03 06:38:22 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2004/12/27 13:28:35 alek Exp $
 
 COMMENT=		"remote promiscous mode detection tool"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
+WANTLIB=		c pcap pthread
 
 MASTER_SITES=		http://www.packetfactory.net/projects/sentinel/ \
 			${MASTER_SITE_PACKETSTORM:=UNIX/IDS/sentinel/}

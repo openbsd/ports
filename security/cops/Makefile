@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/28 17:35:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2004/12/27 13:28:33 alek Exp $
 
 COMMENT=	"system secureness checker"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 EXECUTABLE = home.chk user.chk is_writable crc crc_check \
              addto clearfiles filewriters members tilde is_able

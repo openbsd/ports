@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/01/25 21:10:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2004/12/27 13:28:34 alek Exp $
 
 COMMENT=	"NFS auditing tool"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	"no obvious license"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no obvious license"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c readline termcap
 
 ALL_TARGET=	nfs
 

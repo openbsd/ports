@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/10/28 17:35:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/27 13:28:35 alek Exp $
 # $FreeBSD: ports/security/slurpie/Makefile,v 1.4 2000/11/06 00:09:26 obrien Exp $
 
 COMMENT=	"distributed passwd file cracker"
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		c
 
 NO_REGRESS=	Yes
 

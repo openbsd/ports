@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2004/11/18 23:24:45 fgsch Exp $
+# $OpenBSD: Makefile,v 1.34 2004/12/27 13:28:35 alek Exp $
 
 COMMENT=	"Pretty Good Privacy 5.0i (world wide use)"
 
@@ -26,6 +26,7 @@ PERMIT_PACKAGE_CDROM=	"no commercial use"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no commercial use"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
