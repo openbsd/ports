@@ -1,0 +1,12 @@
+$OpenBSD: patch-gifread_c,v 1.1.1.1 2001/04/04 20:29:31 naddy Exp $
+--- gifread.c.orig	Mon Mar 19 20:29:27 2001
++++ gifread.c	Mon Mar 19 20:29:29 2001
+@@ -828,7 +828,7 @@ read_gif(Gif_Reader *grr, int read_flags
+      default:
+        if (!unknown_block_type) {
+ 	 char buf[256];
+-	 sprintf(buf, "unknown block type %d at file offset %d", block, gifgetoffset(grr) - 1);
++	 snprintf(buf, sizeof(buf), "unknown block type %d at file offset %d", block, gifgetoffset(grr) - 1);
+ 	 gif_read_error(&gfc, buf);
+ 	 unknown_block_type = 1;
+        }

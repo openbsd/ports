@@ -1,0 +1,23 @@
+$OpenBSD: patch-pictures_c,v 1.1.1.1 2001/04/04 20:29:31 naddy Exp $
+--- pictures.c.orig	Mon Mar 19 20:10:40 2001
++++ pictures.c	Mon Mar 19 20:11:42 2001
+@@ -223,7 +223,7 @@ parse_slideshow(const char *slideshowtex
+   int i;
+   
+   if (strlen(slideshowtext) >= BUFSIZ) return 0;
+-  strcpy(buf, slideshowtext);
++  strlcpy(buf, slideshowtext, sizeof(buf));
+   s = buf;
+   
+   gfs = Gif_NewStream();
+@@ -240,8 +240,8 @@ parse_slideshow(const char *slideshowtex
+     
+     if (n[0] == '&') {
+       /* built-in image */
+-      strcpy(name, n + 1);
+-      if (mono) strcat(name, "mono");
++      strlcpy(name, n + 1, sizeof(name));
++      if (mono) strlcat(name, "mono", sizeof(name));
+       i = strlen(name);
+       add = get_built_in_image(name);
+       /* some images don't have monochromatic versions; fall back on color */
