@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/29 07:14:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2001/08/02 06:30:28 shell Exp $
 
 COMMENT=		"python imaging library"
 
@@ -6,7 +6,7 @@ DISTNAME=		Imaging-1.1.2
 PKGNAME=		py-${DISTNAME}
 	
 CATEGORIES=		graphics
-NEED_VERSION=		1.422
+NEED_VERSION=		1.433
 
 HOMEPAGE=		http://www.pythonware.com/products/pil/
 
@@ -44,9 +44,9 @@ PYTHON_VER=		python1.5
 # no FLAVOR has been set nor python is installed
 ERRORS+=	"Fatal: Conflicting flavor: ${FLAVOR}" \
 		"   You have to select either ${PY2} or 1.5, not both." \
-		"   This can also mean, you have no python installed at all." \
+		"   This can also mean that you have no python installed at all." \
 		"   If you specify FLAVOR, the corresponding python version" \
-		"   will be installed. (man ports)"
+		"   will be installed for you automatically. (man ports(7))"
 .endif
 
 RUN_DEPENDS=		${BUILD_DEPENDS}
