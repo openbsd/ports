@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 1999/03/21 07:51:08 espie Exp $
+# $OpenBSD: Makefile,v 1.19 1999/03/25 21:51:27 espie Exp $
 
 # This is a configuration file for egcs, stable release.
 
@@ -159,6 +159,9 @@ CONFIGURE_ARGS= --prefix=${PREFIX} \
 
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 
+# Not really stable yet
+# CONFIGURE_ARGS+= --enable-threads=yes
+
 SEPARATE_BUILD=simple
 
 # rebuild configure files after patching, then move source around !!!
@@ -177,19 +180,24 @@ pre-configure:
 # use bootstrap-lean if you're pressed for space
 ALL_TARGET=bootstrap
 # ALL_TARGET=bootstrap-lean
-.if defined(MAKE_TESTS)
-ALL_TARGET+=check
-.endif
-
 # XXX we need to override do-build to get the warnings from within make
 do-build:
 	@(cd ${WRKBUILD}; \
 	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET} 2>warnings) || \
-	(echo "Make bootstrap failed."; \
-	echo "Don't forget to look at ${WRKBUILD}/warnings"; ${FALSE})
+	(echo "*** Make bootstrap failed."; \
+	echo "*** Look at ${WRKBUILD}/warnings for errors"; ${FALSE})
 
 ####
-# Install section
+# Install & tests section 
+
+# Tests should be performed at the end of install, since they depend upon
+# having the correct flavor of libstdc++.so.
+
+.if defined(MAKE_TESTS)
+post-install:
+	@(cd ${WRKBUILD}; \
+	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} check)
+.endif
 
 PLIST=${WRKBUILD}/PLIST
 
