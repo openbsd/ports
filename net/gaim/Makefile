@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2004/09/15 18:17:40 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2004/09/17 02:07:35 brad Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"Gtk AIM, ICQ, IRC, Jabber, MSN, Yahoo, SILC and Zephyr client"
 
-DISTNAME=	gaim-0.79
+DISTNAME=	gaim-0.82.1
 CATEGORIES=	net
 
 HOMEPAGE=	http://gaim.sourceforge.net/

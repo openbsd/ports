@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.5 2004/08/29 12:53:57 espie Exp $
---- ltmain.sh.orig	Thu Jun 24 20:50:52 2004
-+++ ltmain.sh	Sat Aug 28 20:32:44 2004
-@@ -2089,10 +2089,17 @@ EOF
+$OpenBSD: patch-ltmain_sh,v 1.6 2004/09/17 02:07:35 brad Exp $
+--- ltmain.sh.orig	Fri Aug 27 00:32:24 2004
++++ ltmain.sh	Thu Sep 16 21:59:34 2004
+@@ -2154,10 +2154,17 @@ EOF
  	    absdir="$libdir"
  	  fi
  	else
@@ -23,7 +23,7 @@ $OpenBSD: patch-ltmain_sh,v 1.5 2004/08/29 12:53:57 espie Exp $
  	fi # $installed = yes
  	name=`$echo "X$laname" | $Xsed -e 's/\.la$//' -e 's/^lib//'`
  
-@@ -2403,7 +2410,7 @@ EOF
+@@ -2471,7 +2478,7 @@ EOF
  	    add_dir=
  	    add=
  	    # Finalize command for both is simple: just hardcode it.
@@ -32,9 +32,9 @@ $OpenBSD: patch-ltmain_sh,v 1.5 2004/08/29 12:53:57 espie Exp $
  	      add="$libdir/$linklib"
  	    elif test "$hardcode_minus_L" = yes; then
  	      add_dir="-L$libdir"
-@@ -5705,40 +5712,6 @@ relink_command=\"$relink_command\""
+@@ -5827,40 +5834,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
-     test "$show" = : && exit 0
+     test "$show" = : && exit $EXIT_SUCCESS
  
 -    $echo "----------------------------------------------------------------------"
 -    $echo "Libraries have been installed in:"
@@ -70,6 +70,6 @@ $OpenBSD: patch-ltmain_sh,v 1.5 2004/08/29 12:53:57 espie Exp $
 -    $echo "See any operating system documentation about shared libraries for"
 -    $echo "more information, such as the ld(1) and ld.so(8) manual pages."
 -    $echo "----------------------------------------------------------------------"
-     exit 0
+     exit $EXIT_SUCCESS
      ;;
  

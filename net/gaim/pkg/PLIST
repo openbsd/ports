@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2004/09/15 18:17:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.35 2004/09/17 02:07:35 brad Exp $
 bin/gaim
 bin/gaim-remote
 include/gaim/
@@ -24,11 +24,12 @@ include/gaim/gtkcellrendererprogress.h
 include/gaim/gtkconn.h
 include/gaim/gtkconv.h
 include/gaim/gtkdebug.h
+include/gaim/gtkdialogs.h
 include/gaim/gtkeventloop.h
 include/gaim/gtkft.h
+include/gaim/gtkgaim.h
 include/gaim/gtkimhtml.h
 include/gaim/gtkimhtmltoolbar.h
-include/gaim/gtkinternal.h
 include/gaim/gtklog.h
 include/gaim/gtknotify.h
 include/gaim/gtkplugin.h
@@ -45,7 +46,6 @@ include/gaim/imgstore.h
 include/gaim/internal.h
 include/gaim/log.h
 include/gaim/md5.h
-include/gaim/multi.h
 include/gaim/network.h
 include/gaim/notify.h
 include/gaim/plugin.h
@@ -67,40 +67,68 @@ include/gaim/sslconn.h
 include/gaim/status.h
 include/gaim/stock.h
 include/gaim/stringref.h
-include/gaim/ui.h
 include/gaim/util.h
 include/gaim/value.h
 include/gaim/xmlnode.h
+lib/gaim/
 @comment lib/gaim/autorecon.la
+lib/gaim/autorecon.so
 @comment lib/gaim/docklet.la
+lib/gaim/docklet.so
 @comment lib/gaim/extplacement.la
+lib/gaim/extplacement.so
 @comment lib/gaim/gaim-remote.la
+lib/gaim/gaim-remote.so
 @comment lib/gaim/gestures.la
+lib/gaim/gestures.so
 @comment lib/gaim/history.la
+lib/gaim/history.so
 @comment lib/gaim/iconaway.la
+lib/gaim/iconaway.so
 @comment lib/gaim/idle.la
+lib/gaim/idle.so
 @comment lib/gaim/libgg.la
+lib/gaim/libgg.so
 @comment lib/gaim/libirc.la
+lib/gaim/libirc.so
 @comment lib/gaim/libjabber.la
+lib/gaim/libjabber.so
 @comment lib/gaim/libmsn.la
+lib/gaim/libmsn.so
 @comment lib/gaim/libnapster.la
+lib/gaim/libnapster.so
 @comment lib/gaim/libnovell.la
+lib/gaim/libnovell.so
 @comment lib/gaim/liboscar.la
+lib/gaim/liboscar.so
 @comment lib/gaim/libsilcgaim.la
+lib/gaim/libsilcgaim.so
 @comment lib/gaim/libyahoo.la
+lib/gaim/libyahoo.so
 @comment lib/gaim/libzephyr.la
+lib/gaim/libzephyr.so
 @comment lib/gaim/notify.la
+lib/gaim/notify.so
 @comment lib/gaim/relnot.la
+lib/gaim/relnot.so
 @comment lib/gaim/spellchk.la
+lib/gaim/spellchk.so
 @comment lib/gaim/ssl-gnutls.la
+lib/gaim/ssl-gnutls.so
 @comment lib/gaim/ssl-nss.la
+lib/gaim/ssl-nss.so
 @comment lib/gaim/ssl-openssl.la
+lib/gaim/ssl-openssl.so
 @comment lib/gaim/ssl.la
+lib/gaim/ssl.so
 @comment lib/gaim/statenotify.la
+lib/gaim/statenotify.so
 @comment lib/gaim/ticker.la
+lib/gaim/ticker.so
 @comment lib/gaim/timestamp.la
-@comment lib/libgaim-remote.la
-lib/pkgconfig/
+lib/gaim/timestamp.so
+lib/libgaim-remote.la
+@lib lib/libgaim-remote.so.0.0
 lib/pkgconfig/gaim.pc
 @man man/man1/gaim-remote.1
 @man man/man1/gaim.1
@@ -109,6 +137,8 @@ share/applications/gaim.desktop
 share/locale/am/
 share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/gaim.mo
+share/locale/bg/
+share/locale/bg/LC_MESSAGES/
 share/locale/bg/LC_MESSAGES/gaim.mo
 share/locale/ca/
 share/locale/ca/LC_MESSAGES/
@@ -123,16 +153,25 @@ share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gaim.mo
 share/locale/es/LC_MESSAGES/gaim.mo
+share/locale/fi/
+share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/gaim.mo
 share/locale/fr/LC_MESSAGES/gaim.mo
+share/locale/he/
+share/locale/he/LC_MESSAGES/
 share/locale/he/LC_MESSAGES/gaim.mo
 share/locale/hi/
 share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/gaim.mo
+share/locale/hu/
+share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/gaim.mo
 share/locale/it/LC_MESSAGES/gaim.mo
 share/locale/ja/LC_MESSAGES/gaim.mo
 share/locale/ko/LC_MESSAGES/gaim.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/gaim.mo
 share/locale/mk/
 share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/gaim.mo
@@ -141,8 +180,12 @@ share/locale/no/LC_MESSAGES/gaim.mo
 share/locale/pl/LC_MESSAGES/gaim.mo
 share/locale/pt/LC_MESSAGES/gaim.mo
 share/locale/pt_BR/LC_MESSAGES/gaim.mo
+share/locale/ro/
+share/locale/ro/LC_MESSAGES/
 share/locale/ro/LC_MESSAGES/gaim.mo
 share/locale/ru/LC_MESSAGES/gaim.mo
+share/locale/sk/
+share/locale/sk/LC_MESSAGES/
 share/locale/sk/LC_MESSAGES/gaim.mo
 share/locale/sl/LC_MESSAGES/gaim.mo
 share/locale/sr/
@@ -155,7 +198,11 @@ share/locale/sv/LC_MESSAGES/gaim.mo
 share/locale/vi/
 share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/gaim.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
+share/locale/zh_TW/
+share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/gaim.mo
 share/pixmaps/
 share/pixmaps/gaim/
@@ -389,11 +436,14 @@ share/pixmaps/gaim/status/default/away.png
 share/pixmaps/gaim/status/default/dnd.png
 share/pixmaps/gaim/status/default/extendedaway.png
 share/pixmaps/gaim/status/default/female.png
+share/pixmaps/gaim/status/default/founder.png
 share/pixmaps/gaim/status/default/freeforchat.png
 share/pixmaps/gaim/status/default/gadu-gadu.png
 share/pixmaps/gaim/status/default/game.png
+share/pixmaps/gaim/status/default/halfop.png
 share/pixmaps/gaim/status/default/hiptop.png
 share/pixmaps/gaim/status/default/icq.png
+share/pixmaps/gaim/status/default/ignored.png
 share/pixmaps/gaim/status/default/invisible.png
 share/pixmaps/gaim/status/default/irc.png
 share/pixmaps/gaim/status/default/jabber.png
@@ -407,10 +457,12 @@ share/pixmaps/gaim/status/default/notauthorized.png
 share/pixmaps/gaim/status/default/novell.png
 share/pixmaps/gaim/status/default/occupied.png
 share/pixmaps/gaim/status/default/offline.png
+share/pixmaps/gaim/status/default/op.png
 share/pixmaps/gaim/status/default/rendezvous.png
 share/pixmaps/gaim/status/default/secure.png
 share/pixmaps/gaim/status/default/silc.png
 share/pixmaps/gaim/status/default/trepia.png
+share/pixmaps/gaim/status/default/voice.png
 share/pixmaps/gaim/status/default/wireless.png
 share/pixmaps/gaim/status/default/yahoo.png
 share/pixmaps/gaim/status/default/zephyr.png
@@ -427,4 +479,3 @@ share/sounds/gaim/leave.wav
 share/sounds/gaim/receive.wav
 share/sounds/gaim/redalert.wav
 share/sounds/gaim/send.wav
-%%SHARED%%

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_proxy_c,v 1.6 2004/06/25 20:52:10 brad Exp $
---- src/proxy.c.orig	2004-06-06 22:00:57.000000000 -0600
-+++ src/proxy.c	2004-06-25 13:20:21.000000000 -0600
+$OpenBSD: patch-src_proxy_c,v 1.7 2004/09/17 02:07:35 brad Exp $
+--- src/proxy.c.orig	Tue Aug  3 21:51:22 2004
++++ src/proxy.c	Fri Aug 20 23:57:04 2004
 @@ -318,7 +318,7 @@ static void host_resolved(gpointer data,
  	int rc, err;
  	GSList *hosts = NULL;
@@ -19,22 +19,22 @@ $OpenBSD: patch-src_proxy_c,v 1.6 2004/06/25 20:52:10 brad Exp $
  	_exit(1);
  }
  
-@@ -480,7 +480,7 @@ int gaim_gethostbyname_async(const char 
- 			char servname[20];
+@@ -427,7 +427,7 @@ gaim_dns_childthread(int child_out, int 
+ 	char servname[20];
  #else
- 			struct sockaddr_in sin;
--			const size_t addrlen = sizeof(sin);
-+			const socklen_t addrlen = sizeof(sin);
+ 	struct sockaddr_in sin;
+-	const size_t addrlen = sizeof(sin);
++	const socklen_t addrlen = sizeof(sin);
  #endif
+ 
  #ifdef HAVE_SIGNAL_H
- 			signal(SIGHUP, SIG_DFL);
-@@ -549,8 +549,7 @@ int gaim_gethostbyname_async(const char 
- 				write(child_out[1], &zero, sizeof(zero));
- 				tmp = res;
- 				while(res) {
--					size_t ai_addrlen = res->ai_addrlen;
--					write(child_out[1], &ai_addrlen, sizeof(ai_addrlen));
-+					write(child_out[1], &(res->ai_addrlen), sizeof(res->ai_addrlen));
- 					write(child_out[1], res->ai_addr, res->ai_addrlen);
- 					res = res->ai_next;
- 				}
+@@ -493,8 +493,7 @@ gaim_dns_childthread(int child_out, int 
+ 		write(child_out, &zero, sizeof(zero));
+ 		tmp = res;
+ 		while(res) {
+-			size_t ai_addrlen = res->ai_addrlen;
+-			write(child_out, &ai_addrlen, sizeof(ai_addrlen));
++			write(child_out, &(res->ai_addrlen), sizeof(res->ai_addrlen));
+ 			write(child_out, res->ai_addr, res->ai_addrlen);
+ 			res = res->ai_next;
+ 		}
