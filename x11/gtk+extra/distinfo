@@ -1,0 +1,4 @@
+#$OpenBSD: distinfo,v 1.1.1.1 2003/01/22 17:10:59 margarida Exp $
+MD5 (gtk+extra-0.99.17.tar.gz) = 390e622c12a5c7f7845ee144ae13ab93
+RMD160 (gtk+extra-0.99.17.tar.gz) = f306384bdd15f64d2009d3b6a4183e6b27f90e51
+SHA1 (gtk+extra-0.99.17.tar.gz) = 5dec008ef56469024f51d6631856b5b31f2158e7
