@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/07/01 15:43:42 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/09/06 13:02:04 lebel Exp $
 bin/zsh
 bin/zsh-${VERSION}
 @unexec install-info --delete --info-dir=%D/info %D/info/zsh.info
@@ -362,6 +362,3 @@ share/zsh/${VERSION}/functions/zstyle+
 @dirrm share/zsh/${VERSION}/functions
 @dirrm share/zsh/${VERSION}
 @dirrm share/zsh
-@dirrm lib/zsh/${VERSION}/zsh
-@dirrm lib/zsh/${VERSION}
-@dirrm lib/zsh
