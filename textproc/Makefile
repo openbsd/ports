@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2001/04/05 12:13:30 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2001/04/14 00:47:01 lebel Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -50,6 +50,7 @@
      SUBDIR += sp
      SUBDIR += spiff
      SUBDIR += texi2html
+     SUBDIR += textutils
 #    SUBDIR += unroff
      SUBDIR += urlview
      SUBDIR += wdiff
