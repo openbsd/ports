@@ -1,6 +1,6 @@
-$OpenBSD: patch-af,v 1.2 2000/06/07 00:52:09 espie Exp $
---- samterm/Makefile.orig	Wed Jun  7 02:38:21 2000
-+++ samterm/Makefile	Wed Jun  7 02:42:31 2000
+$OpenBSD: patch-af,v 1.3 2001/03/17 17:11:56 wilfried Exp $
+--- samterm/Makefile.orig	Fri Mar 16 17:22:40 2001
++++ samterm/Makefile	Fri Mar 16 17:23:49 2001
 @@ -8,7 +8,7 @@
  #	
  #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
@@ -10,7 +10,7 @@ $OpenBSD: patch-af,v 1.2 2000/06/07 00:52:09 espie Exp $
  
  #	add -Iincludedir for any include directories that need to be searched
  #	for posix header files (for UMIPS, add -I/usr/include/posix)
-@@ -16,11 +16,11 @@ INCS=-I../include
+@@ -16,16 +16,15 @@ INCS=-I../include
  
  #	SAMTERM contains the name of the file containing the samterm
  #	executable.
@@ -22,9 +22,15 @@ $OpenBSD: patch-af,v 1.2 2000/06/07 00:52:09 espie Exp $
 -XLIBS=-lXt -lX11
 +XLIBS=-L/usr/X11R6/lib -lXt -lX11
  
- CFLAGS=$(OS) $(INCS) -D_LIBXG_EXTENSION
+-CFLAGS=$(OS) $(INCS) -D_LIBXG_EXTENSION
++CFLAGS+=$(OS) $(INCS) -D_LIBXG_EXTENSION
  
-@@ -41,6 +41,6 @@ nuke:	clean
+ LIBS=../libframe/libframe.a ../libXg/libXg.a
+-CC=cc
+ 
+ OBJ=main.o flayer.o icons.o io.o menu.o mesg.o rasp.o scroll.o unix.o
+ 
+@@ -41,6 +40,6 @@ nuke:	clean
  	rm -f samterm
  
  install:	samterm
