@@ -1,0 +1,20 @@
+--- nuetc.c.orig	Mon Dec 29 08:52:42 1997
++++ nuetc.c	Mon Dec 29 08:53:00 1997
+@@ -525,7 +525,7 @@
+ 
+ #ifdef UNIX
+     strcpy(buffer, "nulb.tmpXXXXXX");
+-    return mktemp(buffer);
++    return mkstemp(buffer);
+ 
+ #elif defined(__ORCAC__)
+     return tmpnam(NULL);
+@@ -542,7 +542,7 @@
+     extern char *mktemp();
+ 
+     strcpy(buffer, "nulbXXXX.tmp");
+-    return (mktemp(buffer));
++    return (mkstemp(buffer));
+ 
+ #else
+     strcpy(buffer, "nulb.tmp");  /* +PORT+ */
