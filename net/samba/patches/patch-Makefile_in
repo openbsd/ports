@@ -1,6 +1,7 @@
---- Makefile.in.orig	Sat Mar  6 02:25:16 1999
-+++ Makefile.in	Sat Mar  6 02:44:42 1999
-@@ -25,7 +25,9 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/04/10 01:47:00 brad Exp $
+--- Makefile.in.orig	Tue Apr 25 19:06:11 2000
++++ Makefile.in	Mon Apr  9 19:34:56 2001
+@@ -25,7 +25,9 @@ BASEDIR= @prefix@
  BINDIR = @bindir@
  # we don't use sbindir because we want full compatibility with
  # the previous releases of Samba
@@ -11,7 +12,7 @@
  LIBDIR = @libdir@
  VARDIR = @localstatedir@
  MANDIR = @mandir@
-@@ -36,16 +38,16 @@
+@@ -37,16 +39,16 @@ INSTALLPERMS = 0755
  # set these to where to find various files
  # These can be overridden by command line switches (see smbd(8))
  # or in smb.conf (see smb.conf(5))
