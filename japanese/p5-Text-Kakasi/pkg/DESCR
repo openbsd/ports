@@ -1,0 +1,4 @@
+Perl API to kakasi (kanji kana simple inverter).
+It mostly provides one single conversion function
+that does more or less what the kakasi program does,
+complete with the same options.

@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/27 21:02:16 espie Exp $
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/Text/
+${P5ARCH}/Text/Kakasi/
+${P5ARCH}/Text/Kakasi.pm
+${P5ARCH}/Text/Kakasi/JP.pod
+${P5ARCH}/auto/
+${P5ARCH}/auto/Text/
+${P5ARCH}/auto/Text/Kakasi/
+${P5ARCH}/auto/Text/Kakasi/Kakasi.bs
+@man man/man3p/Text::Kakasi.3p
+@man man/man3p/Text::Kakasi::JP.3p
