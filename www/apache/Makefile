@@ -3,11 +3,12 @@
 # Date created:         17 Nov 1997
 # Whom:                 ejovi
 #
-# $OpenBSD: Makefile,v 1.4 1998/03/16 15:15:29 mickey Exp $
+# $OpenBSD: Makefile,v 1.5 1998/03/27 05:19:26 marc Exp $
 #
 
 DISTNAME=       apache_1.3b5
 PKGNAME=	apache-1.3b5
+COMES_WITH=	2.3
 CATEGORIES=	www
 MASTER_SITES=   ftp://www.apache.org/apache/dist/
 
