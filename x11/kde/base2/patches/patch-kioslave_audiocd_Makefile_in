@@ -1,0 +1,12 @@
+$OpenBSD: patch-kioslave_audiocd_Makefile_in,v 1.1 2001/08/26 12:04:44 espie Exp $
+--- kioslave/audiocd/Makefile.in.orig	Sun Aug 26 13:16:25 2001
++++ kioslave/audiocd/Makefile.in	Sun Aug 26 13:17:01 2001
+@@ -278,7 +278,7 @@ kde_module_LTLIBRARIES = kio_audiocd.la
+ 
+ kio_audiocd_la_SOURCES = cddb.cpp audiocd.cpp
+ 
+-kio_audiocd_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(CDPARANOIA_RPATH)  $(LAME_RPATH) $(VORBIS_RPATH) -module $(KDE_PLUGIN)
++kio_audiocd_la_LDFLAGS = -L${LAMEDIR} $(all_libraries) $(KDE_RPATH) $(CDPARANOIA_RPATH)  $(LAME_RPATH) $(VORBIS_RPATH) -module $(KDE_PLUGIN)
+ 
+ 
+ kio_audiocd_la_LIBADD = $(LIB_KIO) $(CDPARANOIA_LIBS) $(LAME_LIBS) $(VORBISENC_LIBS) $(VORBIS_LIBS)

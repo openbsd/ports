@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.12 2001/08/23 22:25:49 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.13 2001/08/26 12:04:44 espie Exp $
 lib/kde2/libgsthumbnail.so.0.0
 lib/kde2/libhtmlthumbnail.so.0.0
 lib/kde2/libimagethumbnail.so.0.0
@@ -136,6 +136,7 @@ lib/libkwrite.so.0.0
 lib/libkwrited.so.0.0
 lib/libkxkb.so.0.0
 lib/libkxmlrpcd.so.0.0
+lib/libmp3lame.so.0.0
 lib/libnaughtyapplet.so.1.0
 lib/libquicklauncher.so.1.0
 lib/libtaskbar.so.1.0

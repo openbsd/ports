@@ -1,8 +1,8 @@
-$OpenBSD: patch-konsole_src_Makefile_in,v 1.3 2001/08/23 22:25:49 espie Exp $
+$OpenBSD: patch-konsole_src_Makefile_in,v 1.4 2001/08/26 12:04:44 espie Exp $
 --- konsole/src/Makefile.in.orig	Mon Aug  6 03:32:12 2001
-+++ konsole/src/Makefile.in	Thu Aug 23 23:41:09 2001
++++ konsole/src/Makefile.in	Sat Aug 25 14:10:15 2001
 @@ -1,7 +1,7 @@
- # KDE tags expanded automatically by am_edit - $Revision: 1.3 $ 
+ # KDE tags expanded automatically by am_edit - $Revision: 1.4 $ 
 -# Makefile.in generated automatically by automake 1.4 from Makefile.am
 +# Makefile.in generated automatically by automake 1.4-p5 from Makefile.am
  

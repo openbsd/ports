@@ -1,6 +1,16 @@
---- kioslave/audiocd/configure.in.in.orig	Sun Jul 29 06:56:35 2001
-+++ kioslave/audiocd/configure.in.in	Sat Aug 25 14:14:01 2001
-@@ -38,6 +38,11 @@ if test "x$with_cdparanoia" = "xCHECK" ;
+$OpenBSD: patch-configure_in,v 1.1 2001/08/26 12:04:44 espie Exp $
+--- configure.in.orig	Mon Aug  6 03:30:14 2001
++++ configure.in	Sat Aug 25 14:15:36 2001
+@@ -35,7 +35,7 @@ dnl Perform program name transformation
+ AC_ARG_PROGRAM
+ 
+ dnl Automake doc recommends to do this only here. (Janos)
+-AM_INIT_AUTOMAKE(kdebase, "2.2") dnl searches for some needed programs
++AM_INIT_AUTOMAKE(kdebase-2.2, "2.2") dnl searches for some needed programs
+ 
+ KDE_SET_PREFIX
+ 
+@@ -789,6 +789,11 @@ if test "x$with_cdparanoia" = "xCHECK" ;
          break
        fi
      done
@@ -12,19 +22,18 @@
      if test "$with_cdparanoia" = FOUND; then
        if test "$ext" = la; then
          grep "^library_names='*[a-z]*'" $para_libdir/libcdda_paranoia.$ext 2>&1 > /dev/null || with_cdparanoia=NOTFOUND
-@@ -139,9 +144,11 @@ NOTFOUND) AC_MSG_RESULT(searched but not
-   fi
+@@ -891,8 +896,10 @@ NOTFOUND) AC_MSG_RESULT(searched but not
    non_compile=no
    if test "x$enable_lametest" = xyes ; then
-+    ac_save_CXXFLAGS="$CXXFLAGS"
      ac_save_CFLAGS="$CFLAGS"
++    ac_save_CXXFLAGS="$CXXFLAGS"
      ac_save_LIBS="$LIBS"
      CFLAGS="$CFLAGS $all_includes $LAME_INCS"
 +    CXXFLAGS="$CFLAGS $all_includes $LAME_INCS"
      LIBS="$LIBS $all_libraries $LAME_LIBS"
      rm -f conf.lametest conf.wrongver
      AC_TRY_RUN([
-@@ -164,6 +171,7 @@ int main ()
+@@ -915,6 +922,7 @@ int main ()
  }
  ], , non_compile=yes , [echo $ac_n "cross compiling; assumed OK... $ac_c"])
      CFLAGS="$ac_save_CFLAGS"
@@ -32,7 +41,7 @@
      LIBS="$ac_save_LIBS"
      # bogus return value, but it _did_ run correctly
      test -f conf.lametest && non_compile=no
-@@ -181,6 +189,7 @@ int main ()
+@@ -932,6 +940,7 @@ int main ()
        # only do this test, if it really didn't run
        echo "*** Could not run Lame test program, checking why..."
        CFLAGS="$CFLAGS $all_includes $LAME_INCS"
@@ -40,7 +49,7 @@
        LIBS="$LIBS $all_libraries $LAME_LIBS"
        AC_TRY_LINK([
  #include <stdio.h>
-@@ -207,6 +216,7 @@ echo "*** or that you have moved Lame si
+@@ -958,6 +967,7 @@ echo "*** or that you have moved Lame si
        # ac_save_* still set, because this else part is only entered if the
        # enable_lametest was yes, in which case also ac_save_* was set.
        CFLAGS="$ac_save_CFLAGS"
@@ -48,7 +57,7 @@
        LIBS="$ac_save_LIBS"
      fi
      LAME_INCS=
-@@ -266,7 +276,7 @@ no) AC_MSG_RESULT(no) ;;
+@@ -1017,7 +1027,7 @@ no) AC_MSG_RESULT(no) ;;
  NOTFOUND) AC_MSG_RESULT(searched but not found) ;;
  *)
    if test "x$with_vorbis" = "xFOUND" ; then
@@ -57,7 +66,7 @@
    else
      msg="$with_vorbis"
      VORBIS_ROOT="$with_vorbis"
-@@ -280,8 +290,10 @@ NOTFOUND) AC_MSG_RESULT(searched but not
+@@ -1031,8 +1041,10 @@ NOTFOUND) AC_MSG_RESULT(searched but not
    non_compile=no
    if test "x$enable_vorbistest" = xyes ; then
      ac_save_CFLAGS="$CFLAGS"
@@ -68,7 +77,7 @@
      LIBS="$LIBS $all_libraries $VORBIS_LIBS"
      rm -f conf.vorbistest
      AC_TRY_RUN([
-@@ -298,6 +310,7 @@ int main ()
+@@ -1049,6 +1061,7 @@ int main ()
  
  ], , non_compile=yes , [echo $ac_n "cross compiling; assumed OK... $ac_c"])
      CFLAGS="$ac_save_CFLAGS"
@@ -76,7 +85,7 @@
      LIBS="$ac_save_LIBS"
      # bogus return value, but it _did_ run
      test -f conf.vorbistest && non_compile="no"
-@@ -308,12 +321,13 @@ int main ()
+@@ -1059,12 +1072,13 @@ int main ()
       AC_MSG_RESULT($msg)
       AC_DEFINE_UNQUOTED(HAVE_VORBIS, 1, [Define if you have vorbis])
       VORBISFILE_LIBS="-lvorbisfile"
@@ -91,7 +100,7 @@
       LIBS="$LIBS $all_libraries $VORBIS_LIBS"
       AC_TRY_LINK([
  #include <stdio.h>
-@@ -332,6 +346,7 @@ int main ()
+@@ -1083,6 +1097,7 @@ int main ()
       echo "*** exact error that occured. This usually means Vorbis was incorrectly installed"
       echo "*** or that you have moved Vorbis since it was installed." ])
       CFLAGS="$ac_save_CFLAGS"
@@ -99,3 +108,13 @@
       LIBS="$ac_save_LIBS"
       VORBIS_INCS=""
       VORBIS_LIBS=""
+@@ -1655,8 +1670,8 @@ kdcop/Makefile \
+ kdebugdialog/Makefile \
+ kdeprint/Makefile \
+ kdeprint/descriptions/Makefile \
+-kdeprint/kdeprintfax/Makefile \
+ kdeprint/kdeprint_part/Makefile \
++kdeprint/kdeprintfax/Makefile \
+ kdeprint/kjobviewer/Makefile \
+ kdeprint/kprinter/Makefile \
+ kdeprint/printmgr/Makefile \
