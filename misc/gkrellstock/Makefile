@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2002/06/09 05:36:59 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/23 23:57:18 jcs Exp $
 
-DISTNAME=	gkrellstock-0.2
+DISTNAME=	gkrellstock-0.4
 CATEGORIES=	misc
 NEED_VERSION=	1.515
 
@@ -10,8 +10,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 COMMENT=	"gkrellm plugin to display stock quotes"
-HOMEPAGE=	http://www.geocities.com/m_muthukumar/gkrellstock.html
-MASTER_SITES=	http://www.geocities.com/m_muthukumar/
+HOMEPAGE=	http://gkrellstock.sourceforge.net/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gkrellstock/}
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
@@ -20,7 +20,7 @@ NO_REGRESS=	Yes
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-WRKDIST=	${WRKDIR}/gkrellStock-0.2
+WRKDIST=	${WRKDIR}/gkrellStock-0.4
 BUILD_DEPENDS=	:gkrellm-*:sysutils/gkrellm
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		:p5-Finance-Quote-*:misc/p5-Finance-Quote
