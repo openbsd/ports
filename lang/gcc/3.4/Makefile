@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/09/23 22:13:31 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2004/09/24 18:00:58 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -56,7 +56,7 @@ DISTNAME=   gcc-${FULL_VERSION}
 
 DISTFILES=  ${DISTNAME}.tar.bz2
 
-MASTER_SITES=	${MASTER_SITE_GCC:=releases/gcc-${FULL_VERSION}/}
+MASTER_SITES=	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gcc
