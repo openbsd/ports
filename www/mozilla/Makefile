@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2003/06/25 12:01:16 wilfried Exp $
+# $OpenBSD: Makefile,v 1.51 2003/07/01 02:28:42 pvalchev Exp $
 
 COMMENT=	"open source version of the Netscape browser"
 COMMENT-devel=	"devel files for Gecko"
@@ -44,6 +44,8 @@ LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+# Regression tests are too hard to adapt to run here
+NO_REGRESS=	Yes
 
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=					\

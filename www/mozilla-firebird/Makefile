@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/06/26 07:42:59 wilfried Exp $
+# $OpenBSD: Makefile,v 1.14 2003/07/01 02:28:42 pvalchev Exp $
 
 COMMENT=	"redesign of Mozilla's browser component"
 
@@ -31,6 +31,8 @@ LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+# Regression tests are too hard to adapt to run here
+NO_REGRESS=	Yes
 
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=					\
