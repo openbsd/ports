@@ -3,7 +3,7 @@ should be adequate for most people.
 
 Selected changes:
 
-* gcc 3.1 is much slower compiling than gcc 2.95.
+* gcc 3.2 is much slower compiling than gcc 2.95.
 * integrated preprocessor, somewhat better diagnostics.
 * much better C++ support, almost fully ISO compliant.
 * better C++ template diagnostics.
