@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/16 21:01:36 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2005/02/13 10:56:23 sturm Exp $
 
 COMMENT=	"C++ cross-platform GUI toolkit - header files"
-PKGNAME=		wxWidgets-headers-${VERSION}
+PKGNAME=		wxWidgets-headers-${VERSION}p0
 
 NO_REGRESS=    Yes
 

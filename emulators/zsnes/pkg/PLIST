@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/08/31 03:54:58 wcobb Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/02/13 10:56:23 sturm Exp $
 bin/zsnes
-man/man1/zsnes.1
+@man man/man1/zsnes.1
+share/doc/zsnes/
 share/doc/zsnes/opengl.txt
 share/doc/zsnes/whatsnew.txt
-@dirrm share/doc/zsnes

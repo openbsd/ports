@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2005/01/25 22:00:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2005/02/13 10:56:23 sturm Exp $
 
 COMMENT=	"full featured DVD copy program"
 
 VERSION=	0.50.18
-PKGNAME=	dvdrip-${VERSION}p0
+PKGNAME=	dvdrip-${VERSION}p1
 DISTNAME=	Video-DVDRip-${VERSION}
 CATEGORIES=	graphics audio perl
 

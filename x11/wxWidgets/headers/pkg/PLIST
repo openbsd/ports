@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/16 21:01:36 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/02/13 10:56:23 sturm Exp $
 bin/wx-config
+include/wx/
 include/wx/accel.h
 include/wx/app.h
 include/wx/arrimpl.cpp
@@ -90,6 +91,7 @@ include/wx/fs_zip.h
 include/wx/gauge.h
 include/wx/gdicmn.h
 include/wx/gdiobj.h
+include/wx/generic/
 include/wx/generic/accel.h
 include/wx/generic/calctrl.h
 include/wx/generic/caret.h
@@ -141,6 +143,7 @@ include/wx/help.h
 include/wx/helpbase.h
 include/wx/helphtml.h
 include/wx/helpwin.h
+include/wx/html/
 include/wx/html/forcelnk.h
 include/wx/html/helpctrl.h
 include/wx/html/helpdata.h
@@ -215,6 +218,7 @@ include/wx/progdlg.h
 include/wx/prop.h
 include/wx/propform.h
 include/wx/proplist.h
+include/wx/protocol/
 include/wx/protocol/file.h
 include/wx/protocol/ftp.h
 include/wx/protocol/http.h
@@ -274,6 +278,7 @@ include/wx/treebase.h
 include/wx/treectrl.h
 include/wx/txtstrm.h
 include/wx/types.h
+include/wx/univ/
 include/wx/univ/app.h
 include/wx/univ/bmpbuttn.h
 include/wx/univ/button.h
@@ -312,6 +317,7 @@ include/wx/univ/theme.h
 include/wx/univ/toolbar.h
 include/wx/univ/toplevel.h
 include/wx/univ/window.h
+include/wx/unix/
 include/wx/unix/execute.h
 include/wx/unix/fontutil.h
 include/wx/unix/gsockunx.h
@@ -341,7 +347,12 @@ include/wx/wxprec.h
 include/wx/xpmdecod.h
 include/wx/zipstrm.h
 include/wx/zstream.h
+share/aclocal/
 share/aclocal/wxwin.m4
+share/locale/
+share/wx/
+share/wx/2.4/
+share/wx/2.4/afm/
 share/wx/2.4/afm/Cour.afm
 share/wx/2.4/afm/CourBo.afm
 share/wx/2.4/afm/CourBoO.afm
@@ -355,6 +366,7 @@ share/wx/2.4/afm/TimesBoO.afm
 share/wx/2.4/afm/TimesO.afm
 share/wx/2.4/afm/TimesRo.afm
 share/wx/2.4/afm/Zapf.afm
+share/wx/2.4/gs_afm/
 share/wx/2.4/gs_afm/Cour.afm
 share/wx/2.4/gs_afm/CourBo.afm
 share/wx/2.4/gs_afm/CourBoO.afm
@@ -368,14 +380,3 @@ share/wx/2.4/gs_afm/TimesBoO.afm
 share/wx/2.4/gs_afm/TimesO.afm
 share/wx/2.4/gs_afm/TimesRo.afm
 share/wx/2.4/gs_afm/Zapf.afm
-@dirrm share/wx/2.4/gs_afm
-@dirrm share/wx/2.4/afm
-@dirrm share/wx/2.4
-@dirrm share/wx
-@exec mkdir -p %D/share/locale
-@dirrm include/wx/unix
-@dirrm include/wx/univ
-@dirrm include/wx/protocol
-@dirrm include/wx/html
-@dirrm include/wx/generic
-@dirrm include/wx

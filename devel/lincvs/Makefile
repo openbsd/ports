@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/11/23 21:40:35 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2005/02/13 10:56:23 sturm Exp $
 
 COMMENT=	"graphical CVS front-end using QT2"
 
@@ -6,6 +6,7 @@ COMMENT=	"graphical CVS front-end using QT2"
 NOT_FOR_ARCHS=	sparc
 
 DISTNAME=	lincvs-0.4.90
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.lincvs.org

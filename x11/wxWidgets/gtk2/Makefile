@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/18 21:12:42 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/02/13 10:56:23 sturm Exp $
 COMMENT=	"C++ cross-platform GUI toolkit - GTK2 version"
-PKGNAME=		wxWidgets-gtk-${VERSION}-gtk2
+PKGNAME=		wxWidgets-gtk-${VERSION}p0-gtk2
 # Name must conflict with gtk because both install headers in the same dir
 
 CONFIGURE_ARGS=	--enable-gtk2
