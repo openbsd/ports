@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.25 2001/07/25 08:18:48 peter Exp $
+# $OpenBSD: Makefile,v 1.26 2001/09/07 22:15:50 peter Exp $
 
 COMMENT=	"MTA for systems connected to the Internet"
 
-VERSION=	3.30
+VERSION=	3.33
+VERSION_DOC=	3.30
 DISTNAME=	exim-${VERSION}
 CATEGORIES=	mail
 NEED_VERSION=	1.405
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/ \
 		ftp://ftp.exim.org/pub/exim/ \
 		ftp://ftp.fu-berlin.de/unix/mail/exim/
-DISTFILES=	exim-${VERSION}.tar.gz exim-texinfo-${VERSION}.tar.gz
+DISTFILES=	exim-${VERSION}.tar.gz exim-texinfo-${VERSION_DOC}.tar.gz
 
 HOMEPAGE=	http://www.exim.org/
 
@@ -76,7 +77,7 @@ do-configure:
 	@echo "LOOKUP_INCLUDE=${EXIM_LOOKUP_INCLUDE}">>${WRKSRC}/Local/Makefile
 	@echo "LOOKUP_LIBS=${EXIM_LOOKUP_LIBS}">>${WRKSRC}/Local/Makefile
 	@cd ${WRKSRC}/doc ; \
-	for i in ../../exim-texinfo-${VERSION}/doc/* ; do \
+	for i in ../../exim-texinfo-${VERSION_DOC}/doc/* ; do \
 		ln -sf $$i ; \
 	done
 
