@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 1998/05/07 09:22:49 form Exp $
+# $OpenBSD: Makefile,v 1.4 1998/05/20 07:29:23 form Exp $
 
+    SUBDIR += bochs
     SUBDIR += linux_lib
     SUBDIR += wine
     SUBDIR += x48
