@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_contact_c,v 1.1 2003/01/22 07:30:26 pvalchev Exp $
+--- src/contact.c.orig	Tue Jan  7 10:12:05 2003
++++ src/contact.c	Fri Jan 10 03:03:00 2003
+@@ -885,9 +885,9 @@ void ContactSetVersion (Contact *cont)
+         if (cont->v1 || cont->v2 || cont->v3 || cont->v4)
+         {
+             strcat (buf, " ");
+-                                      sprintf (buf + strlen (buf), "%d.%d", cont->v1, cont->v2);
+-            if (cont->v3 || cont->v4) sprintf (buf + strlen (buf), ".%d", cont->v3);
+-            if (cont->v4)             sprintf (buf + strlen (buf), ".%d", cont->v4);
++                                      snprintf (buf + strlen (buf), sizeof(buf) - strlen (buf), "%d.%d", cont->v1, cont->v2);
++            if (cont->v3 || cont->v4) snprintf (buf + strlen (buf), sizeof(buf) - strlen (buf), ".%d", cont->v3);
++            if (cont->v4)             snprintf (buf + strlen (buf), sizeof(buf) - strlen (buf), ".%d", cont->v4);
+         }
+         if (tail) strcat (buf, tail);
+     }

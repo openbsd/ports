@@ -1,6 +1,15 @@
-$OpenBSD: patch-src_mreadline_c,v 1.5 2003/01/09 08:26:37 pvalchev Exp $
+$OpenBSD: patch-src_mreadline_c,v 1.6 2003/01/22 07:30:26 pvalchev Exp $
 --- src/mreadline.c.orig	Tue Jan  7 13:17:51 2003
-+++ src/mreadline.c	Tue Jan  7 15:28:41 2003
++++ src/mreadline.c	Fri Jan 10 02:42:40 2003
+@@ -392,7 +392,7 @@ void R_process_input_tab (void)
+     if (bytelen < strlen (msgcmd) &&
+         !strncmp (s, msgcmd, bytelen < strlen (msgcmd) ? bytelen : strlen (msgcmd)))
+     {
+-        sprintf (s, "%s ", msgcmd);
++        snprintf (s, sizeof(s), "%s ", msgcmd);
+         bytepos = bytelen = strlen (s);
+ #ifdef ENABLE_UTF8
+         curpos = curlen = c_strlen (s);
 @@ -414,9 +414,9 @@ void R_process_input_tab (void)
          }
  
