@@ -1,12 +1,12 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2000/09/23 23:55:52 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/10/30 16:51:58 todd Exp $
 #
 # gii de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=${SYSCONFDIR}/ggi
+CONFIG_DIR=${CONFDIR}
 
 if [ -d $CONFIG_DIR ]; then
     echo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/12/28 19:10:50 todd Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/10/30 16:51:58 todd Exp $
 bin/mhub
 bin/xsendbut
 include/ggi/errors.h
@@ -100,3 +100,4 @@ share/examples/gii/libgii.conf.example
 @dirrm include/ggi/internal
 @dirrm include/ggi/input
 @dirrm include/ggi
+@extraunexec rm -rf ${CONFDIR}

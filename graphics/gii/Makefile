@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/12/28 19:10:50 todd Exp $
+# $OpenBSD: Makefile,v 1.23 2003/10/30 16:51:58 todd Exp $
 # Uses pthreads
 
 COMMENT=	"General Input Library (used by libggi)"
@@ -22,6 +22,9 @@ SEPARATE_BUILD= concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --enable-mutexes="int"
+
+CONFDIR=	${SYSCONFDIR}/ggi
+SUBST_VARS=	CONFDIR
 
 DOCS=	README
 

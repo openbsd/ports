@@ -11,5 +11,3 @@ library for your non-LibGGI applications. Also you might be interrested in
 the mhub utility found in the demos directory. mhub is a mouse event repeater
 and converter. See mhub(1) and the files doc/env.txt and doc/input.txt for
 more info.
-
-WWW: ${HOMEPAGE}
