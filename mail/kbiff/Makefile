@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/06/03 16:19:31 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/07/19 23:39:05 lebel Exp $
 
 COMMENT=		"new mail notification utility"
 
 DISTNAME=		kbiff-3.4.2
 CATEGORIES=		mail
-NEED_VERSION=		1.396
+NEED_VERSION=		1.410
 EXTRACT_SUFX=		.tar.bz2
 
 HOMEPAGE=		http://www.granroth.org/kbiff/
@@ -25,7 +25,6 @@ MAKE_ENV=		${CONFIGURE_ENV}
 MAKE_FLAGS=		CXXLD='--tag CXX ${CXX} -L${LOCALBASE}/lib/qt2'
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
 CONFIGURE_ARGS+=	--with-qt-libraries=${LOCALBASE}/lib/qt2
