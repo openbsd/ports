@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/07/18 15:15:05 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2003/12/18 03:56:19 naddy Exp $
 
 COMMENT=	"breakout game with many levels, powerups, good graphics" 
 
@@ -21,11 +21,15 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		SDL_mixer::devel/sdl-mixer \
 		png.2.0::graphics/png
 		
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+
+# avoid triggering aclocal/automake
+post-patch:
+	@touch -r ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure.in
 
 .include <bsd.port.mk>
