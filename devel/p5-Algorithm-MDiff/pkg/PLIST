@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/09 05:43:43 kevlo Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/Algorithm/MDiff.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Algorithm/MDiff/MDiff.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Algorithm/MDiff/MDiff.so
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Algorithm/MDiff/autosplit.ix
+man/man3/Algorithm::MDiff.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Algorithm/MDiff
