@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/04/06 01:11:39 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1999/04/06 03:49:21 marc Exp $
 #
 
 DISTNAME=	mpeg_lib-1.2.1
@@ -15,6 +15,12 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} ${CONFIGURE_SHARED}
 
 WRKSRC=		${WRKDIR}/mpeg_lib
 
+# post-patch must be defined before bsd.port.mk is included so it will
+# be called.  However, we need to have the body of the target after
+# bsd.port.mk is included so NO_SHARED_LIBS is defined.
+# Define the target twice, using ::
+#
+post-patch::
 
 pre-install:
 	@${MKDIR} -p ${PREFIX}/bin ${PREFIX}/lib ${PREFIX}/include
@@ -28,7 +34,7 @@ post-install:
 # on a host that does not support shared libs, e.g. the alpha,
 # apply one more patch.
 #
+post-patch::
 .if defined(NO_SHARED_LIBS)
-post-patch:
 	@(cd ${DISTDIR}; ${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/patch)
 .endif
