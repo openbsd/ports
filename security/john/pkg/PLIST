@@ -2,7 +2,7 @@ bin/john
 bin/unshadow
 bin/unafs
 bin/unique
-etc/john.ini
+lib/john/john.ini
 lib/john/all.chr
 lib/john/alpha.chr
 lib/john/digits.chr

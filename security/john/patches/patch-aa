@@ -4,7 +4,7 @@
  NULL = /dev/null
  CPPFLAGS = -E
  CFLAGS = -c -Wall -O2 -fomit-frame-pointer
-+CFLAGS += -DCFG_NAME=\\\"$(PREFIX)/etc/john.ini\\\"
++CFLAGS += -DCFG_NAME=\\\"$(PREFIX)/lib/john/john.ini\\\"
  ASFLAGS = -c
  LDFLAGS = -s
  OPT_NORMAL = -funroll-loops

@@ -3,7 +3,7 @@
 # Date created:		1999-Apr-7
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1999/05/31 16:12:22 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 1999/06/02 02:04:37 dugsong Exp $
 
 DISTNAME=	john-1.6
 CATEGORIES=     security
@@ -42,11 +42,11 @@ do-install:
 	${LN} -sf ${PREFIX}/bin/john ${PREFIX}/bin/unshadow
 	${LN} -sf ${PREFIX}/bin/john ${PREFIX}/bin/unafs
 	${LN} -sf ${PREFIX}/bin/john ${PREFIX}/bin/unique
-	${SED} "s%~/%${PREFIX}/lib/john/%g" ${WRKSRC}/../run/john.ini > \
-	${PREFIX}/etc/john.ini
-	${RM} -f ${WRKSRC}/../run/john* ${WRKSRC}/../run/un*
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/john
 	${INSTALL_DATA} ${WRKSRC}/../run/* ${PREFIX}/lib/john
+	${SED} "s%~/%${PREFIX}/lib/john/%g" ${WRKSRC}/../run/john.ini > \
+	${PREFIX}/lib/john/john.ini
+	${RM} -f ${PREFIX}/lib/john/un* ${PREFIX}/lib/john/john
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/john
 	${INSTALL_DATA} ${WRKSRC}/../doc/* ${PREFIX}/share/doc/john
 
