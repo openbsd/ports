@@ -3,13 +3,12 @@
 # Date created:		25 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.5 2000/04/29 00:01:41 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/30 10:08:03 kevlo Exp $
 
 PKGNAME=	l0phtcrack-2.52
 
 CATEGORIES=	security
 NEED_VERSION=	1.191
-FAKE=No
 
 MAINTAINER=	dugsong@monkey.org
 
@@ -21,13 +20,14 @@ PERMIT_DISTFILES_FTP=	Yes
 DIST_SUBDIR=	l0phtcrack
 DISTFILES=	lcsrc${EXTRACT_SUFX} readsmb.c
 EXTRACT_ONLY=	lcsrc${EXTRACT_SUFX}
-USE_ZIP=	yes
+USE_ZIP=	Yes
 
 MASTER_SITES=	http://www.l0pht.com/l0phtcrack/dist/
 
 WRKDIST=	${WRKDIR}
 
-NO_CONFIGURE=	yes
+NO_CONFIGURE=	Yes
+FAKE=		Yes
 
 post-extract:
 		@cp ${FULLDISTDIR}/readsmb.c ${WRKSRC}
