@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2003/05/29 22:46:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.115 2003/05/29 23:27:26 naddy Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -134,5 +134,6 @@
      SUBDIR += xmhtml
      SUBDIR += zope
      SUBDIR += zope-cmf
+     SUBDIR += zope-logger
 
 .include <bsd.port.subdir.mk>
