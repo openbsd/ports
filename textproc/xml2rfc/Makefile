@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2001/02/02 13:04:29 jakob Exp $
+# $OpenBSD: Makefile,v 1.13 2001/03/08 19:32:22 jakob Exp $
 #
 
-DISTNAME=	xml2rfc
+VERSION=	1.2
+DISTNAME=	xml2rfc.${VERSION}
+PKGNAME=	xml2rfc-${VERSION}
 CATEGORIES=	textproc
 NEED_VERSION=	1.230
 MASTER_SITES=	http://xml.resource.org/authoring/
