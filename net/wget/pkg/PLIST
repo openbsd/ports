@@ -1,7 +1,6 @@
 bin/wget
 @unexec install-info --delete %D/info/wget.info %D/info/dir
 info/wget.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/wget.info %D/info/dir
 lib/wget/sample.wgetrc
 share/locale/cs/LC_MESSAGES/wget.mo

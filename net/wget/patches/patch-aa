@@ -1,16 +1,14 @@
-*** doc/wget.texi.orig	Sat Jun 27 18:58:29 1998
---- doc/wget.texi	Sat Jun 27 18:58:08 1998
-***************
-*** 9,14 ****
---- 9,19 ----
-  @setchapternewpage on
-  @c %**end of header
-  
-+ @dircategory Networking tools
-+ @direntry
-+ * Wget: (wget.info).            A utility for network download.
-+ @end direntry
-+ 
-  @iftex
-  @c Remove this if you don't use A4 paper.
-  @afourpaper
+--- doc/wget.texi.orig	Thu Sep 10 20:34:56 1998
++++ doc/wget.texi	Mon Dec 13 22:43:14 1999
+@@ -9,6 +9,11 @@
+ @setchapternewpage on
+ @c %**end of header
+ 
++@dircategory Networking tools
++@direntry
++* Wget: (wget.info).            A utility for network download.
++@end direntry
++
+ @iftex
+ @c Remove this if you don't use A4 paper.
+ @afourpaper

@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	Sat May 23 19:40:42 1998
-+++ doc/Makefile.in	Fri Apr  9 18:49:50 1999
+--- doc/Makefile.in.orig	Sat May 23 22:40:42 1998
++++ doc/Makefile.in	Mon Dec 13 22:45:54 1999
 @@ -22,7 +22,7 @@
  SHELL = /bin/sh
  
@@ -18,7 +18,15 @@
  
  #
  # Dependencies for building
-@@ -99,19 +99,8 @@
+@@ -56,6 +56,7 @@
+ everything: all wget_us.ps wget_a4.ps wget_toc.html
+ 
+ wget.info: wget.texi
++	@rm -f wget.info*
+ 	-$(MAKEINFO)
+ 
+ #wget.cat: $(MAN)
+@@ -99,19 +100,8 @@
  
  # install sample.wgetrc
  install.wgetrc:
