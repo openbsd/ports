@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_kernel_qpngio_cpp,v 1.1 2004/09/26 17:23:34 brad Exp $
+--- src/kernel/qpngio.cpp.orig	Sun Sep 26 00:31:42 2004
++++ src/kernel/qpngio.cpp	Sun Sep 26 00:33:10 2004
+@@ -110,10 +110,18 @@ void CALLBACK_CALL_TYPE qpiw_flush_fn( p
+ static
+ void setup_qt( QImage& image, png_structp png_ptr, png_infop info_ptr, float screen_gamma=0.0 )
+ {
+-    if ( screen_gamma != 0.0 && png_get_valid(png_ptr, info_ptr, PNG_INFO_gAMA) ) {
++    if ( 0.0 == screen_gamma )
++	// PNG docs say this is a good guess for a PC monitor
++	// in a dark room
++	screen_gamma = 2.2;
++    if ( png_get_valid(png_ptr, info_ptr, PNG_INFO_gAMA) ) {
++	// the file has a gAMA attribute
+ 	double file_gamma;
+-	png_get_gAMA(png_ptr, info_ptr, &file_gamma);
+-	png_set_gamma( png_ptr, screen_gamma, file_gamma );
++	if ( png_get_gAMA(png_ptr, info_ptr, &file_gamma))
++	    png_set_gamma( png_ptr, screen_gamma, file_gamma );
++    } else {
++	// no file gamma, use a reasonable default
++	png_set_gamma( png_ptr, screen_gamma, 0.45455 );
+     }
+ 
+     png_uint_32 width;
