@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/01/14 21:00:10 djm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/05/31 15:34:01 jakob Exp $
 lib/mailman/Mailman/Archiver/Archiver.py
 lib/mailman/Mailman/Archiver/Archiver.pyc
 lib/mailman/Mailman/Archiver/HyperArch.py
@@ -414,6 +414,8 @@ lib/mailman/messages/sr/LC_MESSAGES/mailman.po
 lib/mailman/messages/sv/LC_MESSAGES/mailman.mo
 lib/mailman/messages/sv/LC_MESSAGES/mailman.po
 lib/mailman/messages/sv/README.sv
+lib/mailman/messages/tr/LC_MESSAGES/mailman.mo
+lib/mailman/messages/tr/LC_MESSAGES/mailman.po
 lib/mailman/messages/uk/LC_MESSAGES/mailman.mo
 lib/mailman/messages/uk/LC_MESSAGES/mailman.po
 lib/mailman/pythonlib/email/Charset.py
@@ -761,6 +763,7 @@ lib/mailman/templates/en/postack.txt
 lib/mailman/templates/en/postauth.txt
 lib/mailman/templates/en/postheld.txt
 lib/mailman/templates/en/private.html
+lib/mailman/templates/en/probe.txt
 lib/mailman/templates/en/refuse.txt
 lib/mailman/templates/en/roster.html
 lib/mailman/templates/en/subauth.txt
@@ -1060,6 +1063,7 @@ lib/mailman/templates/hu/postack.txt
 lib/mailman/templates/hu/postauth.txt
 lib/mailman/templates/hu/postheld.txt
 lib/mailman/templates/hu/private.html
+lib/mailman/templates/hu/probe.txt
 lib/mailman/templates/hu/refuse.txt
 lib/mailman/templates/hu/roster.html
 lib/mailman/templates/hu/subauth.txt
@@ -1126,6 +1130,7 @@ lib/mailman/templates/ja/archlistend.html
 lib/mailman/templates/ja/archliststart.html
 lib/mailman/templates/ja/archtoc.html
 lib/mailman/templates/ja/archtocentry.html
+lib/mailman/templates/ja/archtocnombox.html
 lib/mailman/templates/ja/article.html
 lib/mailman/templates/ja/bounce.txt
 lib/mailman/templates/ja/checkdbs.txt
@@ -1629,6 +1634,49 @@ lib/mailman/templates/sv/unsub.txt
 lib/mailman/templates/sv/unsubauth.txt
 lib/mailman/templates/sv/userpass.txt
 lib/mailman/templates/sv/verify.txt
+lib/mailman/templates/tr/admindbdetails.html
+lib/mailman/templates/tr/admindbpreamble.html
+lib/mailman/templates/tr/admindbsummary.html
+lib/mailman/templates/tr/adminsubscribeack.txt
+lib/mailman/templates/tr/adminunsubscribeack.txt
+lib/mailman/templates/tr/admlogin.html
+lib/mailman/templates/tr/approve.txt
+lib/mailman/templates/tr/archidxentry.html
+lib/mailman/templates/tr/archidxfoot.html
+lib/mailman/templates/tr/archidxhead.html
+lib/mailman/templates/tr/archlistend.html
+lib/mailman/templates/tr/archliststart.html
+lib/mailman/templates/tr/archtoc.html
+lib/mailman/templates/tr/archtocentry.html
+lib/mailman/templates/tr/archtocnombox.html
+lib/mailman/templates/tr/article.html
+lib/mailman/templates/tr/bounce.txt
+lib/mailman/templates/tr/checkdbs.txt
+lib/mailman/templates/tr/convert.txt
+lib/mailman/templates/tr/cronpass.txt
+lib/mailman/templates/tr/disabled.txt
+lib/mailman/templates/tr/emptyarchive.html
+lib/mailman/templates/tr/headfoot.html
+lib/mailman/templates/tr/help.txt
+lib/mailman/templates/tr/invite.txt
+lib/mailman/templates/tr/listinfo.html
+lib/mailman/templates/tr/masthead.txt
+lib/mailman/templates/tr/newlist.txt
+lib/mailman/templates/tr/nomoretoday.txt
+lib/mailman/templates/tr/options.html
+lib/mailman/templates/tr/postack.txt
+lib/mailman/templates/tr/postauth.txt
+lib/mailman/templates/tr/postheld.txt
+lib/mailman/templates/tr/private.html
+lib/mailman/templates/tr/refuse.txt
+lib/mailman/templates/tr/roster.html
+lib/mailman/templates/tr/subauth.txt
+lib/mailman/templates/tr/subscribe.html
+lib/mailman/templates/tr/subscribeack.txt
+lib/mailman/templates/tr/unsub.txt
+lib/mailman/templates/tr/unsubauth.txt
+lib/mailman/templates/tr/userpass.txt
+lib/mailman/templates/tr/verify.txt
 lib/mailman/templates/uk/admindbdetails.html
 lib/mailman/templates/uk/admindbpreamble.html
 lib/mailman/templates/uk/admindbsummary.html
@@ -1758,6 +1806,7 @@ share/doc/mailman/UPGRADING
 @dirrm lib/mailman/tests/bounces
 @dirrm lib/mailman/tests
 @dirrm lib/mailman/templates/uk
+@dirrm lib/mailman/templates/tr
 @dirrm lib/mailman/templates/sv
 @dirrm lib/mailman/templates/sr
 @dirrm lib/mailman/templates/sl
@@ -1803,6 +1852,8 @@ share/doc/mailman/UPGRADING
 @dirrm lib/mailman/pythonlib
 @dirrm lib/mailman/messages/uk/LC_MESSAGES
 @dirrm lib/mailman/messages/uk
+@dirrm lib/mailman/messages/tr/LC_MESSAGES
+@dirrm lib/mailman/messages/tr
 @dirrm lib/mailman/messages/sv/LC_MESSAGES
 @dirrm lib/mailman/messages/sv
 @dirrm lib/mailman/messages/sr/LC_MESSAGES
