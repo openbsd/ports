@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/04/15 00:01:50 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2003/06/20 17:20:01 espie Exp $
 
 COMMENT=	"screen saver that displays a countdown to a selected date"
 
@@ -26,6 +26,7 @@ MODULES=	kde
 PORTHOME=	${WRKDIR}
 
 MAKE_ENV=	KDEDIR="${LOCALBASE}"
+MAKE_ENV+= 	UIC_PATH="${MODQT_UIC}" UIC="${MODQT_UIC}"
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
 USE_X11=	Yes
