@@ -1,0 +1,6 @@
+This module is made for CGI scripting. It decodes the parameters
+passed to the CGI. It does nothing more, so it's much smaller and
+loads more quickly than CGI.pm.
+
+Can be used outside of CGI by passing NOTCGI in the initial 'use'
+statement.
