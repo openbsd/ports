@@ -1,5 +1,5 @@
---- navigator-v46.sparc-sun-sunos4.1.3_U1/ns-install.orig	Wed May  5 14:31:44 1999
-+++ navigator-v46.sparc-sun-sunos4.1.3_U1/ns-install	Thu May 20 12:03:01 1999
+--- navigator-v461.sparc-sun-sunos4.1.3_U1/ns-install.orig	Wed May  5 14:31:44 1999
++++ navigator-v461.sparc-sun-sunos4.1.3_U1/ns-install	Thu May 20 12:03:01 1999
 @@ -84,22 +84,10 @@
  	exit 1
  fi

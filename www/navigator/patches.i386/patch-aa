@@ -1,5 +1,5 @@
---- navigator-v46.x86-bsdi-bsd2/ns-install.orig	Tue May  4 17:18:33 1999
-+++ navigator-v46.x86-bsdi-bsd2/ns-install	Thu May 20 12:48:26 1999
+--- navigator-v461.x86-bsdi-bsd2/ns-install.orig	Tue May  4 17:18:33 1999
++++ navigator-v461.x86-bsdi-bsd2/ns-install	Thu May 20 12:48:26 1999
 @@ -84,22 +84,10 @@
  	exit 1
  fi
