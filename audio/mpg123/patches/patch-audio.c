@@ -1,6 +1,7 @@
---- audio.c.orig	Tue Apr  6 11:53:05 1999
-+++ audio.c	Wed Aug  2 06:10:39 2000
-@@ -68,41 +68,42 @@
+$OpenBSD: patch-audio.c,v 1.2 2001/04/24 00:48:12 naddy Exp $
+--- audio.c.orig	Tue Apr  6 17:53:05 1999
++++ audio.c	Sat Apr 14 22:58:42 2001
+@@ -68,41 +68,42 @@ void audio_capabilities(struct audio_inf
  {
  	int fmts;
  	int i,j,k,k1=NUM_RATES-1;
@@ -63,7 +64,7 @@
  		fprintf(stderr,"\nAudio capabilities:\n        |");
  		for(j=0;j<NUM_ENCODINGS;j++) {
  			fprintf(stderr," %5s |",audio_val2name[j].sname);
-@@ -144,7 +145,19 @@
+@@ -144,7 +145,19 @@ static int audio_fit_cap_helper(struct a
  
          if(rn >= 0) {
                  for(i=f0;i<f2;i++) {
@@ -84,7 +85,7 @@
                                  ai->rate = rates[rn];
                                  ai->format = encodings[i];
                                  ai->channels = channels[c];
-@@ -160,7 +173,11 @@
+@@ -160,7 +173,11 @@ static int audio_fit_cap_helper(struct a
   * c=num of channels of stream
   * r=rate of stream
   */
@@ -97,7 +98,7 @@
  {
  	int rn;
  	int f0=0;
-@@ -247,6 +264,23 @@
+@@ -247,6 +264,23 @@ void audio_fit_capabilities(struct audio
  	exit(1);
  }
  
@@ -121,7 +122,7 @@
  char *audio_encoding_name(int format)
  {
  	int i;
-@@ -258,7 +292,7 @@
+@@ -258,7 +292,7 @@ char *audio_encoding_name(int format)
  	return "Unknown";
  }
  

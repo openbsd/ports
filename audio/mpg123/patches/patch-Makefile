@@ -1,19 +1,16 @@
---- Makefile.orig	Wed Aug  2 06:10:36 2000
-+++ Makefile	Wed Aug  2 06:11:51 2000
-@@ -9,8 +9,10 @@
+$OpenBSD: patch-Makefile,v 1.2 2001/04/24 00:48:12 naddy Exp $
+--- Makefile.orig	Sat Apr 21 16:00:12 2001
++++ Makefile	Sat Apr 21 16:02:43 2001
+@@ -4,7 +4,7 @@
+ 
+ # Where to install binary and manpage on "make install":
+ 
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ BINDIR=$(PREFIX)/bin
  MANDIR=$(PREFIX)/man
  SECTION=1
- 
--# Enable the below line If your plathome support IPv6
--#CFLAGS+= -DINET6
-+# Enable the below line if your platform supports IPv6
-+.if defined(USE_INET6) && ${USE_INET6:U} == YES
-+CFLAGS+= -DINET6
-+.endif
- # Additional LIBDIR and libraries if exist
- IPV6LIBDIR=
- IPV6LIB=
-@@ -54,6 +56,7 @@
+@@ -54,6 +54,7 @@ nothing-specified:
  	@echo "make aix-tk3play    IBM AIX"
  	@echo "make os2            IBM OS/2"
  	@echo "make netbsd         NetBSD"
@@ -21,25 +18,34 @@
  	@echo "make bsdos          BSDI BSD/OS"
  	@echo "make bsdos4         BSDI BSD/OS 4.0"
  	@echo "make bsdos-nas      BSDI BSD/OS with NAS support"
-@@ -508,6 +511,21 @@
- 		CFLAGS='$(CFLAGS) -Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
+@@ -509,6 +510,30 @@ netbsd-i386:
  			-funroll-all-loops -ffast-math -DROT_I386 \
  			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DNETBSD' \
-+		mpg123-make
+ 		mpg123-make
++
++.if ${MACHINE_ARCH} == "i386"
++ARCHOPTS=	-DROT_I386 -DI386_ASSEM
++ARCHOBJS=	decode_i386.o dct64_i386.o
++.else
++ARCHOPTS=
++ARCHOBJS=	decode.o dct64.o
++.endif
 +
 +openbsd:
-+	$(MAKE) CC="$(CC)" LDFLAGS= \
-+		OBJECTS='decode.o dct64.o audio_openbsd.o term.o' \
-+		CFLAGS='$(CFLAGS) -Wall -ansi -pedantic -fomit-frame-pointer \
-+			-funroll-all-loops -ffast-math -DTERM_CONTROL \
-+			-DREAL_IS_FLOAT -DUSE_MMAP -DOPENBSD' mpg123-make
++	${MAKE} CC="${CC}" LDFLAGS= \
++		OBJECTS='${ARCHOBJS} audio_openbsd.o term.o' \
++		CFLAGS='-O3 -funroll-all-loops -ffast-math ${COPTS} \
++			${ARCHOPTS} -DREAL_IS_FLOAT -DTERM_CONTROL \
++			-DINET6 -DUSE_MMAP -DOPENBSD' mpg123-make
 +
-+openbsd-i386:
-+	$(MAKE) CC="$(CC)" LDFLAGS= \
-+		OBJECTS='decode_i386.o dct64_i386.o audio_openbsd.o term.o' \
-+		CFLAGS='$(CFLAGS) -Wall -ansi -pedantic -fomit-frame-pointer \
-+			-funroll-all-loops -ffast-math -DROT_I386 -DTERM_CONTROL \
-+			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOPENBSD' \
- 		mpg123-make
++openbsd-esd:
++	${MAKE} CC="${CC}" LDFLAGS='-L${LOCALBASE}/lib' \
++		AUDIO_LIB='-lesd -laudiofile' \
++		OBJECTS='${ARCHOBJS} audio_esd.o term.o' \
++		CFLAGS='-O3 -funroll-all-loops -ffast-math ${COPTS} \
++			${ARCHOPTS} -I${LOCALBASE}/include \
++			-DREAL_IS_FLOAT -DTERM_CONTROL \
++			-DINET6 -DUSE_MMAP -DOPENBSD' mpg123-make
  
  bsdos:
+ 	$(MAKE) CC=shlicc2 LDFLAGS= \
