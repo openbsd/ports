@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/09 10:11:18 reinhard Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/24 12:51:51 reinhard Exp $
+
+COMMENT=	'solving toolkit for linear equalities and inequalities'
 
 DISTNAME=	cassowary-0.60
 CATEGORIES=	math
-NEED_VERSION=	1.353
+NEED_VERSION=	1.363
 
-MAINTAINER=	Peter Valchev <pvalchev@toxiclinux.org>
+MAINTAINER=	Peter Valchev <pvalchev@home.com>
 
 HOMEPAGE=	http://www.cs.washington.edu/research/constraints/cassowary/
 

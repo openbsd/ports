@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/17 12:41:41 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/24 12:51:53 reinhard Exp $
+
+COMMENT=	'interpreted language for scientific computing'
 
 DISTNAME=	yorick-1.4
 CATEGORIES=	math devel
-NEED_VERSION=	1.353
+NEED_VERSION=	1.363
 MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/
 
 HOMEPAGE=	ftp://ftp-icf.llnl.gov/pub/Yorick/yorick-ad.html
 
-MAINTAINER=	Peter Valchev <pvalchev@toxiclinux.org>
+MAINTAINER=	Peter Valchev <pvalchev@home.com>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

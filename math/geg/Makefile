@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/12 16:03:48 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/24 12:51:51 reinhard Exp $
+
+COMMENT=	'simple program for plotting 2d mathematical functions'
 
 DISTNAME=	geg-1.0.2
 CATEGORIES=	math
-NEED_VERSION=	1.351
+NEED_VERSION=	1.363
 
 MASTER_SITES=	http://www.infolaunch.com/~daveb/ \
 		${MASTER_SITE_SUNSITE}
 
 MASTER_SITE_SUBDIR= science/visualization/plotting
 
-MAINTAINER=	Peter Valchev <pvalchev@toxiclinux.org>
+MAINTAINER=	Peter Valchev <pvalchev@home.com>
 
 HOMEPAGE=	http://www.infolaunch.com/~daveb/
 

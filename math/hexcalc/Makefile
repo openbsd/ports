@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/12 15:59:05 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/24 12:51:52 reinhard Exp $
+
+COMMENT=	'multi-radix calculator for x11'
 
 DISTNAME=	hexcalc
 CATEGORIES=	math
 EXTRACT_SUFX=	..tar.Z
-NEED_VERSION=	1.351
+NEED_VERSION=	1.363
 
 MASTER_SITES=	ftp://aixpdslib.seas.ucla.edu/pub/hexcalc/RISC/3.2/src/ \
 		http://toxiclinux.org/binary
 
-MAINTAINER=	Peter Valchev <pvalchev@toxiclinux.org>
+MAINTAINER=	Peter Valchev <pvalchev@home.com>
 
 USE_X11=	Yes
 

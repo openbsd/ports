@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/29 21:01:12 danh Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/24 12:51:54 reinhard Exp $
+
+COMMENT=	'module to manipulate raw ip packets'
 
 DISTNAME=	Net-RawIP-0.09d
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
-NEED_VERSION=	1.352
+NEED_VERSION=	1.363
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Net
 
-MAINTAINER=	Peter Valchev <pvalchev@toxiclinux.org>
+MAINTAINER=	Peter Valchev <pvalchev@home.com>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/10 18:56:16 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/24 12:51:49 reinhard Exp $
+
+COMMENT=	'multiplayer 2d space battles game'
 
 DISTNAME=	xpilot-4.3.0
 CATEGORIES=	games x11
-NEED_VERSION=	1.353
+NEED_VERSION=	1.363
 
 HOMEPAGE=	http://www.xpilot.org/
 
@@ -11,7 +13,7 @@ MASTER_SITES=	ftp://ftp.xpilot.org/pub/xpilot/ \
 		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= games/multiplayer
 
-MAINTAINER=	Peter Valchev <pvalchev@toxiclinux.org>
+MAINTAINER=	Peter Valchev <pvalchev@home.com>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/09 09:43:21 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/24 12:51:54 reinhard Exp $
+
+COMMENT=	'curses-based icq client implementation'
 
 DISTNAME=	centericq-3.20.5
 CATEGORIES=	net	
-NEED_VERSION=	1.359
+NEED_VERSION=	1.363
 MASTER_SITES=	http://download.konst.org.ua/ \
 		${MASTER_SITE_FREEBSD} \
 		http://konst.org.ua/download/
@@ -11,7 +13,7 @@ HOMEPAGE=	http://konst.org.ua/software.centericq.html
 
 LIB_DEPENDS=	intl.1::devel/gettext
 
-MAINTAINER=	Peter Valchev <pvalchev@toxiclinux.org>
+MAINTAINER=	Peter Valchev <pvalchev@home.com>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

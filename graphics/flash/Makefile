@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/02 12:04:18 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/24 12:51:49 reinhard Exp $
+
+COMMENT=	'open source standalone flash(tm) player'
 
 DISTNAME=	flash-0.4.10
 CATEGORIES=	graphics	
 EXTRACT_SUFX=	.tgz
-NEED_VERSION=	1.348
+NEED_VERSION=	1.363
 MASTER_SITES=	http://www.swift-tools.com/Flash/ \
 		http://toxiclinux.org/binary
 
 HOMEPAGE=	http://www.swift-tools.com/Flash/
 
-MAINTAINER=	Peter Valchev <pvalchev@toxiclinux.org>
+MAINTAINER=	Peter Valchev <pvalchev@home.com>
 
 FAKE_FLAGS=	PREFIX="${WRKINST}${PREFIX}"
 

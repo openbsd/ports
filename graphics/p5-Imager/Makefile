@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/08 11:11:19 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/24 12:51:50 reinhard Exp $
+
+COMMENT=	'module for generating images'
 
 DISTNAME=	Imager-0.37
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	graphics perl5
-NEED_VERSION=	1.353
+NEED_VERSION=	1.363
 MASTER_SITES=	http://www.eecs.umich.edu/~addi/perl/Imager/ \
 		http://www.cpan.org/authors/${AUTHOR_DIR} \
 		ftp://ftp.cpan.org/CPAN/authors/${AUTHOR_DIR} \
@@ -14,7 +16,7 @@ AUTHOR_DIR=	id/A/AD/ADDI/
 
 HOMEPAGE=	http://www.eecs.umich.edu/~addi/perl/Imager/
 
-MAINTAINER=	Peter Valchev <pvalchev@toxiclinux.org>
+MAINTAINER=	Peter Valchev <pvalchev@home.com>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
