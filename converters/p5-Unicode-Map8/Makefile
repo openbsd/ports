@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/07 15:34:10 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/01/19 16:40:22 kevlo Exp $
 
 COMMENT=	"module to implement efficient mapping tables"
 
-DISTNAME=	Unicode-Map8-0.10
+DISTNAME=	Unicode-Map8-0.11
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
-NEED_VERSION=	1.474
+NEED_VERSION=	1.504
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -20,5 +20,7 @@ MASTER_SITE_SUBDIR= Unicode
 BUILD_DEPENDS=	::converters/p5-Unicode-String
 
 CONFIGURE_STYLE= perl
+
+REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>
