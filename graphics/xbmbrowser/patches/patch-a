@@ -1,21 +1,30 @@
-*** Imakefile.orig	Fri Aug  4 05:19:36 1995
---- Imakefile	Wed Sep  6 13:53:32 1995
-***************
-*** 17,24 ****
-  #    -DNO_TRANS_COLOR    Turn off setting the `none' color in xpixmaps
-  
-          DO_XPMS = -DDO_XPMS
-!         XPM_INC = -I/usr/include/X11
-!         XPM_LIB = -L$(LIBDIR)/xpm -lXpm
-  
-  
-  # If you need this uncomment (particularly on decstations)
---- 17,24 ----
-  #    -DNO_TRANS_COLOR    Turn off setting the `none' color in xpixmaps
-  
-          DO_XPMS = -DDO_XPMS
-!         XPM_INC = -I/usr/X11R6/include/X11
-!         XPM_LIB = -lXpm
-  
-  
-  # If you need this uncomment (particularly on decstations)
+$OpenBSD: patch-a,v 1.2 2000/06/02 18:19:06 espie Exp $
+--- Imakefile.orig	Fri Aug  4 05:19:36 1995
++++ Imakefile	Fri Jun  2 20:15:40 2000
+@@ -17,8 +17,8 @@
+ #    -DNO_TRANS_COLOR    Turn off setting the `none' color in xpixmaps
+ 
+         DO_XPMS = -DDO_XPMS
+-        XPM_INC = -I/usr/include/X11
+-        XPM_LIB = -L$(LIBDIR)/xpm -lXpm
++        XPM_INC = -I/usr/X11R6/include/X11
++        XPM_LIB = -lXpm
+ 
+ 
+ # If you need this uncomment (particularly on decstations)
+@@ -48,6 +48,7 @@ LOCAL_LIBRARIES = $(XPM_LIB) XawClientLi
+     CCOPTIONS = -Aa -D_HPUX_SOURCE
+ #endif
+ 
++.SUFFIXES: .sed
+ # Sed substitions rule
+ .sed: 
+ 	@echo 'SED SUBSTITUTIONS "$@.sed" ==> "$@"'
+@@ -57,7 +58,6 @@ LOCAL_LIBRARIES = $(XPM_LIB) XawClientLi
+ 	     -e 's|==X_BITMAPS==|$(X_BITMAPS)|'   \
+ 	     -e '/==COLOR_SETTINGS_DIVIDER==/d'   \
+ 	     < $@.sed  >$@
+-.SUFFIXES: .sed
+ 
+ # ---------------------------------------
+ # Rules for the actual build
