@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.403 2001/04/19 22:15:05 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.404 2001/04/20 15:06:19 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -514,7 +514,7 @@ ${_PACKAGE_COOKIE}: ${_FAKE_COOKIE}
 .  else
 ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE}
 .  endif
-	@cd ${.CURDIR} && SUBPACKAGE='' FLAVOR='${FLAVOR}' exec ${MAKE} _package
+	@cd ${.CURDIR} && SUBPACKAGE='' FLAVOR='${FLAVOR}' PACKAGING=true exec ${MAKE} _package
 .if !defined(PACKAGE_NOINSTALL)
 	@${_MAKE_COOKIE} $@
 .endif
@@ -527,7 +527,7 @@ ${_PACKAGE_COOKIE${_sub}}: ${_FAKE_COOKIE}
 .  else
 ${_PACKAGE_COOKIE${_sub}}: ${_INSTALL_COOKIE}
 .  endif
-	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' exec ${MAKE} _package
+	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' PACKAGING=true exec ${MAKE} _package
 .  if !defined(PACKAGE_NOINSTALL)
 	@${_MAKE_COOKIE} $@
 .  endif
@@ -1142,7 +1142,7 @@ _run_depends_fragment = ${_fetch_depends_fragment}; earlyexit=true
 _lib_depends_fragment = \
 	lib=`echo $$dep | sed -e 's|\([^\\]\)[\\\.].*|\1|'`; \
 	tmp=`mktemp /tmp/bpmXXXXXXXXXX`; \
-	if ${LD} -r -o $$tmp -L${LOCALBASE}/lib -L${X11BASE}/lib -l$$lib; then \
+	if ${LD} -r -o $$tmp ${EXTRA_LIBDIRS:S/^/-L/} -L${LOCALBASE}/lib -L${X11BASE}/lib -l$$lib; then \
 		found=true; \
 	fi
 .else
@@ -2106,12 +2106,15 @@ clean-depends:
 #
 describe:
 .if !defined(NO_DESCRIBE) 
-	@echo -n "${FULLPKGNAME}|${FULLPKGPATH}|"
-.  if ${PREFIX} == ${LOCALBASE}
-	@echo -n "|"
+.  if !defined(PACKAGING) && ${SUBPACKAGE} != ""
+	@cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' FLAVOR='${FLAVOR}' PACKAGING=true exec ${MAKE} describe
 .  else
+	@echo -n "${FULLPKGNAME}|${FULLPKGPATH}|"
+.    if ${PREFIX} == ${LOCALBASE}
+	@echo -n "|"
+.    else
 	@echo -n "${PREFIX}|"
-.  endif
+.    endif
 	@echo -n "`${_COMMENT}`|"; \
 	if [ -f ${DESCR} ]; then \
 		echo -n "${DESCR:S,^${PORTSDIR}/,,}|"; \
@@ -2119,25 +2122,25 @@ describe:
 		echo -n "/dev/null|"; \
 	fi; \
 	echo -n "${MAINTAINER}|${CATEGORIES}|"
-.if ${NEW_DEPENDS:L} == "yes"
-.  if !empty(_ALWAYS_DEP2) || !empty(_BUILD_DEP2)
+.    if ${NEW_DEPENDS:L} == "yes"
+.      if !empty(_ALWAYS_DEP2) || !empty(_BUILD_DEP2)
 	@cd ${.CURDIR} && _FINAL_ECHO=: _INITIAL_ECHO=: exec ${MAKE} build-depends-list
-.  endif
-.else
-.  if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || target(depends-list)
+.      endif
+.    else
+.      if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || target(depends-list)
 	@cd ${.CURDIR} && echo -n `${MAKE} depends-list|${_SORT_DEPENDS}`
-.  endif
-.endif
+.      endif
+.    endif
 	@echo -n "|"
-.if ${NEW_DEPENDS:L} == "yes"
-.  if !empty(_ALWAYS_DEP2) || !empty(_RUN_DEP2)
+.    if ${NEW_DEPENDS:L} == "yes"
+.      if !empty(_ALWAYS_DEP2) || !empty(_RUN_DEP2)
 	@cd ${.CURDIR} && _FINAL_ECHO=: _INITIAL_ECHO=: exec ${MAKE} run-depends-list
-.  endif
-.else
-.  if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP) || target(package-depends)
+.      endif
+.    else
+.      if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP) || target(package-depends)
 	@cd ${.CURDIR} && echo -n `${MAKE} package-depends|${_SORT_DEPENDS}`
-.  endif
-.endif
+.      endif
+.    endif
 	@echo -n "|"
 	@case "${ONLY_FOR_ARCHS}" in \
 	 "") case "${NOT_FOR_ARCHS}" in \
@@ -2147,53 +2150,54 @@ describe:
 	 *) echo -n "${ONLY_FOR_ARCHS}|";; \
 	 esac
 
-.	if defined(PERMIT_PACKAGE_CDROM)
-.     if ${PERMIT_PACKAGE_CDROM:L} == "yes"
+.    if defined(PERMIT_PACKAGE_CDROM)
+.      if ${PERMIT_PACKAGE_CDROM:L} == "yes"
 	@echo -n "y|"
-.     else
+.      else
 	@echo -n "n|"
-.     endif
-.	else
+.      endif
+.  	 else
 	@echo -n "?|"
-.	endif	
+.	 endif	
 
-.	if defined(PERMIT_PACKAGE_FTP)
-.     if ${PERMIT_PACKAGE_FTP:L} == "yes"
+.	 if defined(PERMIT_PACKAGE_FTP)
+.      if ${PERMIT_PACKAGE_FTP:L} == "yes"
 	@echo -n "y|"
-.     else
+.      else
 	@echo -n "n|"
-.     endif
-.	else
+.      endif
+.	 else
 	@echo -n "?|"
-.	endif	
+.	 endif	
 
 
-.	if defined(PERMIT_DISTFILES_CDROM)
-.	  if ${PERMIT_DISTFILES_CDROM:L} == "yes"
+.	 if defined(PERMIT_DISTFILES_CDROM)
+.	   if ${PERMIT_DISTFILES_CDROM:L} == "yes"
 	@echo -n "y|"
-.     else
+.      else
 	@echo -n "n|"
-.     endif
-.	else
+.      endif
+.	 else
 		@echo -n "?|"
-.	endif	
+.	 endif	
 
 
-.	if defined(PERMIT_DISTFILES_FTP)
-.	  if ${PERMIT_DISTFILES_FTP:L} == "yes"
+.	 if defined(PERMIT_DISTFILES_FTP)
+.	   if ${PERMIT_DISTFILES_FTP:L} == "yes"
 	@echo "y"
-.     else
+.      else
 	@echo "n"
-.     endif
-.	else
+.      endif
+.	 else
 	@echo "?"
-.   endif
+.    endif
+.  endif
 .endif
-.if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
-.  for _sub in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' exec ${MAKE} describe
-.  endfor
-.endif	
+.  if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
+.    for _sub in ${MULTI_PACKAGES}
+	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' PACKAGING=true exec ${MAKE} describe
+.    endfor
+.  endif
 
 
 README.html:
