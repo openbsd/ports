@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/04/19 22:32:58 lebel Exp $
+# $OpenBSD: Makefile,v 1.9 2002/04/20 00:14:08 lebel Exp $
 
 COMMENT=		"spell checker designed to eventually replace Ispell"
 COMMENT-br=		"aspell dictionary for Breton"
@@ -19,7 +19,8 @@ COMMENT-sv=		"aspell dictionary for Swedish"
 
 V=			0
 SV=			.33.7
-PKGNAME=		aspell-${V}${SV}p1
+SP=			p1
+PKGNAME=		aspell-${V}${SV}${SP}
 DISTNAME=		aspell-${SV}
 CATEGORIES=		textproc
 NEED_VERSION=		1.402
@@ -55,7 +56,7 @@ DISTFILES+=	aspell-$i.tar.bz2:1
 MULTI_PACKAGES=		-br -ca -da -de -eo -es -fo -fr -it -nl -no -pl -pt \
 		 	-ru -sv
 .for i in ${MULTI_PACKAGES}
-PKGNAME$i=      	aspell$i-${V}${SV}
+PKGNAME$i=      	aspell$i-${V}${SV}${SP}
 .endfor
 
 SUBPACKAGE?=
