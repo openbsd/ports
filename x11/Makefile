@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2004/06/25 00:05:57 marcm Exp $
+# $OpenBSD: Makefile,v 1.190 2004/06/25 18:54:25 sturm Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -10,7 +10,7 @@
      SUBDIR += afterstep
      SUBDIR += amiwm
      SUBDIR += asapm
-     SUBDIR += asclock,classic,english
+     SUBDIR += asclock
      SUBDIR += asfiles
      SUBDIR += astime
      SUBDIR += aterm
