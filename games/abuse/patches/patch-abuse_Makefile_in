@@ -1,6 +1,6 @@
-$OpenBSD: patch-abuse_Makefile_in,v 1.1 2004/01/14 17:18:12 naddy Exp $
+$OpenBSD: patch-abuse_Makefile_in,v 1.2 2004/01/14 17:32:01 naddy Exp $
 --- abuse/Makefile.in.orig	1997-07-09 09:55:21.000000000 +0200
-+++ abuse/Makefile.in	2004-01-14 18:14:33.000000000 +0100
++++ abuse/Makefile.in	2004-01-14 18:16:09.000000000 +0100
 @@ -37,10 +37,10 @@ AUTOCONF = @AUTOCONF@
  AUTOMAKE = @AUTOMAKE@
  AUTOHEADER = @AUTOHEADER@
@@ -25,6 +25,15 @@ $OpenBSD: patch-abuse_Makefile_in,v 1.1 2004/01/14 17:18:12 naddy Exp $
  
  COMPILE = $(CXX) $(DEFS) $(MYDEFS) $(INCLUDES) $(CPPFLAGS) $(CXXFLAGS) $(ADDCXXFLAGS) -o $@
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -170,7 +170,7 @@ abuse_x11R6_LDFLAGS = 
+ SCRIPTS =  $(bin_SCRIPTS)
+ 
+ CFLAGS = @CFLAGS@
+-LINK = $(CC) $(CFLAGS) $(LDFLAGS) -o $@
++LINK = $(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@
+ DATA =  $(pkgdata_DATA)
+ 
+ DIST_COMMON =  Makefile.am Makefile.in abuse.in acinclude.m4 aclocal.m4 \
 @@ -239,11 +239,11 @@ maintainer-clean-pkglibPROGRAMS:
  
  install-pkglibPROGRAMS: $(pkglib_PROGRAMS)
