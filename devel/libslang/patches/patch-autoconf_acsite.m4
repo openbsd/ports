@@ -1,5 +1,5 @@
---- autoconf/acsite.m4.orig	Tue Feb 20 21:17:29 2001
-+++ autoconf/acsite.m4	Fri Dec  7 23:37:35 2001
+--- autoconf/acsite.m4.orig	Tue Feb 20 19:17:29 2001
++++ autoconf/acsite.m4	Tue Feb 12 16:09:10 2002
 @@ -94,6 +94,9 @@ case "$host_os" in
        RPATH="-rpath "
      fi
@@ -10,14 +10,21 @@
  esac
  ])
  
-@@ -543,6 +546,18 @@ case "$host_os" in
+@@ -543,6 +546,25 @@ case "$host_os" in
         CC_SHARED="cc \$(CFLAGS) -shared -K pic"
       fi
       ;;
 +  *openbsd* )
 +    DYNAMIC_LINK_FLAGS=""
 +    ELF_CC="$CC"
-+    ELF_CFLAGS="$CFLAGS -fpic"
++    case `arch -s` in
++      sparc*)
++        ELF_CFLAGS="$CFLAGS -fPIC"
++	;;
++      *)
++        ELF_CFLAGS="$CFLAGS -fpic"
++	;;
++    esac
 +    ELF_LINK="$CC -shared $ELF_CFLAGS"
 +    ELF_LINK_CMD="\$(ELF_LINK)"
 +    ELF_DEP_LIBS="\$(DL_LIB) -lm"
