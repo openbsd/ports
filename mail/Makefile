@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2001/08/14 21:14:19 camield Exp $
+# $OpenBSD: Makefile,v 1.74 2001/08/14 22:05:55 lebel Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -64,7 +64,6 @@
      SUBDIR += sylpheed
      SUBDIR += tkrat
      SUBDIR += tnef
-     SUBDIR += vmailmgr
      SUBDIR += vrfy
      SUBDIR += wmbiff
      SUBDIR += wmmail
