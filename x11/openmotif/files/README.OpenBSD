@@ -1,0 +1,6 @@
+The licensing of OpenMotif is a bit weird. The actual copyright refers
+to the web site, which is quite nasty, as they can come back and change
+the licence when they want.
+
+This port works around that problem by grabbing the licensing at the time
+of build and including it in the actual package.
