@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/18 13:01:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/10/08 18:41:39 danh Exp $
 @conflict ucd-snmp-*
-@unexec rm -f %D/share/snmp/mibs/.index
 bin/encode_keychange
 bin/fixproc
 @comment bin/ipf-mod.pl
@@ -312,6 +311,8 @@ share/snmp/mib2c.notify.conf
 share/snmp/mib2c.old-api.conf
 share/snmp/mib2c.scalar.conf
 share/snmp/mibs/
+@comment no checksum
+share/snmp/mibs/.index
 share/snmp/mibs/AGENTX-MIB.txt
 share/snmp/mibs/DISMAN-EVENT-MIB.txt
 share/snmp/mibs/DISMAN-SCHEDULE-MIB.txt
@@ -386,7 +387,7 @@ share/snmp/snmpconf-data/snmptrapd-data/
 share/snmp/snmpconf-data/snmptrapd-data/formatting
 share/snmp/snmpconf-data/snmptrapd-data/snmpconf-config
 share/snmp/snmpconf-data/snmptrapd-data/traphandle
-@exec /usr/bin/install -d -m 755 -o root -g wheel /var/net-snmp
+@sample /var/net-snmp/
 @extra ${SYSCONFDIR}/snmp/snmp.conf
 @extra ${SYSCONFDIR}/snmp/snmptrapd.conf
-@extraunexec rm -rf /var/net-snmp
+@extraunexec rm -rf /var/net-snmp/
