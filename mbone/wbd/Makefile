@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 1999/10/30 21:58:26 brad Exp $
+# $OpenBSD: Makefile,v 1.11 1999/11/03 01:11:49 turan Exp $
+
+BROKEN=		new distsites needed.  sources do not fetch consistantly.
 
 DISTNAME=	wbd-1.0ucl4
 CATEGORIES=	mbone
