@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/05/07 05:26:57 form Exp $
+# $OpenBSD: Makefile,v 1.4 1998/07/21 14:37:45 niklas Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
@@ -24,7 +24,7 @@
      SUBDIR += tcplist
 #    SUBDIR += top
 #    SUBDIR += tua
-#    SUBDIR += xbatt
+     SUBDIR += xbatt
 #    SUBDIR += xcpustate
 #    SUBDIR += xdu
 #    SUBDIR += xloadface
