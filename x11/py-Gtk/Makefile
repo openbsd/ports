@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/11/21 02:34:00 margarida Exp $
+# $OpenBSD: Makefile,v 1.13 2003/09/26 05:00:19 marcm Exp $
 
 COMMENT=	"Gtk bindings for Python"
 COMMENT-gnome=	"Gtk and Gnome bindings for Python"
@@ -47,6 +47,7 @@ RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 
 .if ${FLAVOR:L:Mgnome}
+BROKEN=		"needs update to newer Gnome"
 LIB_DEPENDS+=	glade-gnome.4,glade::devel/libglade,gnome \
 		capplet::x11/gnome/controlcenter \
 		gnorba,gtkxmhtml,zvt::x11/gnome/libs \
