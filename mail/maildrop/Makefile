@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/06 23:06:01 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.15 2005/01/02 10:44:03 alek Exp $
 
 COMMENT=	"local mail delivery agent with filtering abilities"
 COMMENT-utils=	"userdb and quota tools for the Courier mail suite"
@@ -19,7 +19,7 @@ FLAVOR?=
 MULTI_PACKAGES=	-utils
 SUBPACKAGE?=
 
-FULLPKGNAME-utils= courier-utils-${VERSION}
+FULLPKGNAME-utils= courier-utils-${VERSION}p0
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -50,6 +50,14 @@ CONFIGURE_ARGS+=	--enable-maildropldap \
 .if ${FLAVOR:L:Mmysql}
 LIB_DEPENDS+=           mysqlclient::databases/mysql
 CONFIGURE_ARGS+=        --enable-maildropmysql
+WANTLIB=		crypto ssl z
+.endif
+
+.if defined(PACKAGING) && $(SUBPACKAGE) == "-utils"
+LIB_DEPENDS=
+WANTLIB+=		c
+.else
+WANTLIB+=		c m stdc++
 .endif
 
 post-install:
