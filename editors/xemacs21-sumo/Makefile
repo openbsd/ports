@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/22 07:19:44 jasoni Exp $
+# $OpenBSD: Makefile,v 1.6 2002/06/17 00:33:29 naddy Exp $
 
 # 
 # What port/package will be created
 #
-VERSION=		2001-02-04
+VERSION=		2002-05-22
 PKGNAME=		xemacs-sumo-21.${VERSION:S/-//g}
 DISTFILES=		xemacs-sumo-${VERSION}.tar.gz
 
 CATEGORIES=     	editors
-NEED_VERSION=		1.515
+NEED_VERSION=		1.531
 
 HOMEPAGE=		http://www.xemacs.org/
 
@@ -53,10 +53,12 @@ EXTRACT_ONLY=
 NO_BUILD=		Yes
 
 do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/xemacs
 .for archive in ${DISTFILES}
-	pax -rzs '%^\.%${PREFIX}/lib/xemacs%' \
-		-f ${FULLDISTDIR}/${archive} 
+	tar -C ${PREFIX}/lib/xemacs -xzf ${FULLDISTDIR}/${archive} 
 .endfor
+# XXX for some reason the file rights are incorrect in the archive
+	chmod 0644 ${PREFIX}/lib/xemacs/xemacs-packages/lisp/edit-utils/avoid.el
 # cruft in the main archive ... (GNU tar, GNU as in 'compatible' - with itself)
 	rm -f ${PREFIX}/lib/xemacs/@LongLink
 
