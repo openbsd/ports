@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/06/03 20:07:17 lebel Exp $
+--- Makefile.orig	Sun Jun  3 14:57:12 2001
++++ Makefile	Sun Jun  3 14:57:12 2001
+@@ -15,13 +15,13 @@
+ #XINERAMA_CFLAGS = -DHAVE_XINERAMA
+ #XINERAMA_LIBS = -lXinerama -lXext
+ 
+-PREFIX = /usr/local
+-X11DIR = /usr/X11R6
++#PREFIX = /usr/local
++#X11DIR = /usr/X11R6
+ 
+-CC     = gcc
+-COFLAGS = -funroll-loops -fexpensive-optimizations -ffast-math -fomit-frame-pointer -frerun-cse-after-loop
+-CFLAGS = -O2 $(COFLAGS) -Wall $(DEBUG) $(XINERAMA_CFLAGS) -I$(X11DIR)/include
+-LDFLAGS   = -L$(X11DIR)/lib -lX11 $(XINERAMA_LIBS) -lgmp -lcrypto
++#CC     = gcc
++#COFLAGS = -funroll-loops -fexpensive-optimizations -ffast-math -fomit-frame-pointer -frerun-cse-after-loop
++#CFLAGS = -O2 $(COFLAGS) -Wall $(DEBUG) $(XINERAMA_CFLAGS) -I$(X11DIR)/include
++#LDFLAGS   = -L$(X11DIR)/lib -lX11 $(XINERAMA_LIBS) -lgmp -lcrypto
+ #-c flag doesn't seem to be needed at gnu platforms
+ #it's only ignored. but at others the manual file will be lost if it's not used.
+ INSTALL= install -c -m 755 -s
