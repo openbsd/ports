@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/03/27 01:28:27 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2002/03/27 02:53:59 lebel Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
@@ -18,6 +18,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.jwz.org/xscreensaver/
 
+# depends on XML (it needs both of them!)
+LIB_DEPENDS+=		xml2.6::textproc/libxml xml.9::textproc/libxml1
+CONFIGURE_ARGS+=	--with-xml
+
+# gdk pixbuf
+LIB_DEPENDS+=		gdk_pixbuf.2,gdk_pixbuf_xlib.2::graphics/gdk-pixbuf
+CONFIGURE_ARGS+=	--with-pixbuf
+
 NO_REGRESS=		Yes
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
@@ -32,26 +40,11 @@ FLAVORS=		no_gle
 FLAVOR?=		
 
 .if !${FLAVOR:L:Mno_gle}
-LIB_DEPENDS=		gle.3::graphics/gle
+LIB_DEPENDS+=		gle.3::graphics/gle
 CONFIGURE_ARGS+=	--with-gle
 .else
 CONFIGURE_ARGS+=	--without-gle
 .endif
-
-LIB_DEPENDS+=		jpeg.62::graphics/jpeg
-CONFIGURE_ARGS+=	--with-jpeg
-
-# depends on XML (it needs both of them!)
-LIB_DEPENDS+=		xml2.6::textproc/libxml xml.9::textproc/libxml1
-CONFIGURE_ARGS+=	--with-xml
-
-# gtk
-CONFIGURE_ARGS+=	--with-gtk --without-motif
-LIB_DEPENDS+=		gtk.1.2,gdk::x11/gtk+
-
-# gdk pixbuf
-LIB_DEPENDS+=		gdk_pixbuf.2,gdk_pixbuf_xlib.2::graphics/gdk-pixbuf
-CONFIGURE_ARGS+=	--with-pixbuf
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
