@@ -1,5 +1,5 @@
---- pixmap.c.orig	Thu Jan 13 16:36:12 1994
-+++ pixmap.c	Tue Sep 29 22:08:30 1998
+--- pixmap.c.orig	Thu Jan 13 22:36:12 1994
++++ pixmap.c	Fri Jul 16 22:19:54 1999
 @@ -4,7 +4,7 @@
   */
  
@@ -13,6 +13,8 @@
  #include <X11/XWDFile.h>
  
  #ifdef XPM
+-#include <xpm.h>
+-#endif
 +#ifndef NO_PIXEL_FIX
 +/* The problem with xpm.h is that it includes <X11/Intrinsic.h> to get
 + * the typedef for Pixel.  Intrinsic.h, however, also typedefs Boolean
@@ -25,8 +27,7 @@
 +#define _XtIntrinsic_h
 +typedef unsigned long   Pixel;      /* Index into colormap              */
 +#endif  /* NO_PIXEL_FIX */
- #include <xpm.h>
--#endif
++#include <X11/xpm.h>
 +#endif XPM
  
  #include "i18n.h"
@@ -39,3 +40,11 @@
      int ncolors;
      XColor *colors;
      Colormap *colormap;
+@@ -612,6 +625,7 @@
+                             &(pixinfo->pixmap),
+                             (Pixmap *)0, /* ignore shape mask for now */
+                             &xpmAttr)) != PixmapSuccess) {
++		    fprintf(stderr, "olvwm: XpmRedFileToPixmap failed\n");
+                         goto FAILURE;
+                 }
+                 pixinfo->width = xpmAttr.width;
