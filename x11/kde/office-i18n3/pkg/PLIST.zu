@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.zu,v 1.1.1.1 2002/09/14 15:47:04 espie Exp $
+@comment $OpenBSD: PLIST.zu,v 1.2 2002/12/15 16:21:32 espie Exp $
 ${LOC}csvfilter.mo
 ${LOC}desktop_koffice.mo
 ${LOC}example.mo
@@ -8,6 +8,7 @@ ${LOC}kchart.mo
 ${LOC}kfile_koffice.mo
 ${LOC}kformula.mo
 ${LOC}kformulalatexfilter.mo
+${LOC}kformulalib.mo
 ${LOC}kformulapngfilter.mo
 ${LOC}kivio.mo
 ${LOC}koconverter.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sv,v 1.1.1.1 2002/09/14 15:47:04 espie Exp $
+@comment $OpenBSD: PLIST.sv,v 1.2 2002/12/15 16:21:32 espie Exp $
 ${DOC}kchart/common
 ${DOC}kchart/${C}
 ${DOC}kchart/${I}

@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST.de,v 1.1.1.1 2002/09/14 15:47:04 espie Exp $
+@comment $OpenBSD: PLIST.de,v 1.2 2002/12/15 16:21:32 espie Exp $
+${DOC}kchart/common
+${DOC}kchart/${C}
+${DOC}kchart/${I}
 ${DOC}kformula/common
 ${DOC}kformula/${C}
 ${DOC}kformula/${I}
@@ -56,5 +59,6 @@ ${LOC}xsltimportfilter.mo
 @dirrm ${DOC}kpresenter
 @dirrm ${DOC}koshell
 @dirrm ${DOC}kformula
+@dirrm ${DOC}kchart
 @dirrm share/doc/HTML/de
 @dirrm share/doc/HTML
