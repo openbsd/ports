@@ -1,6 +1,33 @@
---- configure.orig	Fri Mar  2 14:34:37 2001
-+++ configure	Wed Mar  7 09:56:34 2001
-@@ -3733,7 +3733,7 @@
+--- configure.orig	Wed Mar 28 13:11:45 2001
++++ configure	Fri May 16 21:31:31 2003
+@@ -3463,7 +3463,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 3469 "configure"
+ #include "confdefs.h"
+@@ -3503,7 +3503,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 3509 "configure"
+ #include "confdefs.h"
+@@ -3547,7 +3547,7 @@ fi
+ 	   fi
+ 
+            if test "$gt_cv_func_dgettext_libintl" = "yes"; then
+-	     LIBS="$LIBS -lintl";
++	     LIBS="$LIBS -lintl -liconv";
+            fi
+ 
+ 	   if test "$gt_cv_func_dgettext_libc" = "yes" \
+@@ -3733,7 +3733,7 @@ else
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -9,3 +36,12 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
+@@ -3743,7 +3743,7 @@ rm -f conftest*
+ 	    # Added by Martin Baulig 12/15/98 for libc5 systems
+ 	    if test "$gt_cv_func_dgettext_libc" != "yes" \
+ 	       && test "$gt_cv_func_dgettext_libintl" = "yes"; then
+-	       INTLLIBS=-lintl
++	       INTLLIBS="-lintl -liconv"
+ 	       LIBS=`echo $LIBS | sed -e 's/-lintl//'`
+ 	    fi
+ 	
