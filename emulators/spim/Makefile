@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2003/07/03 06:16:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/10/01 06:18:14 robert Exp $
 
 COMMENT=	"MIPS R2000/R3000 simulator"
 
 DISTNAME=	spim
-PKGNAME=	spim-6.5
+PKGNAME=	spim-7.0
 CATEGORIES=	emulators
 
 HOMEPAGE=	http://www.cs.wisc.edu/~larus/spim.html
@@ -28,12 +28,12 @@ ALL_TARGET=	spim xspim
 REGRESS_DEPENDS=::emulators/spim
 REGRESS_TARGET=	test
 
-DOCS=	spim.ps cycle.ps
+DOCS=	cycle.ps
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/spim
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/spim
-	${INSTALL_DATA} ${WRKSRC}/trap.handler ${PREFIX}/share/spim
+	${INSTALL_DATA} ${WRKSRC}/exceptions.s ${PREFIX}/share/spim
 	${INSTALL_PROGRAM} ${WRKSRC}/spim ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/xspim ${PREFIX}/bin
 	cd ${WRKSRC}/Documentation; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/spim

@@ -1,11 +1,12 @@
---- Imakefile.orig	Mon Jul 23 10:38:05 2001
-+++ Imakefile	Mon Jul 23 10:40:11 2001
+$OpenBSD: patch-Imakefile,v 1.2 2004/10/01 06:18:14 robert Exp $
+--- Imakefile.orig	Thu Jul  8 03:24:00 2004
++++ Imakefile	Wed Sep 29 11:41:36 2004
 @@ -44,13 +44,13 @@
  #
  
- # Full path for directory that will hold the trap handler file:
--TRAP_DIR = .
-+TRAP_DIR = $(PREFIX)/share/spim
+ # Full path for directory that will hold the exception handler file:
+-EXCEPTION_DIR = .
++EXCEPTION_DIR = $(PREFIX)/share/spim
  
  # Full path for the directory that will hold the executable files:
 -BIN_DIR = /usr/unsup/bin
@@ -13,11 +14,11 @@
  
  # Full path for the directory that will hold the man files:
 -MAN_DIR = /var/unsup/man
-+MAN_DIR = $(PREFIX)/man/man1
++MAN_DIR = $(PREFIX)/man
  
  
  # If you have flex, use it instead of lex.  If you use flex, define this
-@@ -255,9 +255,9 @@
+@@ -250,9 +250,9 @@ shar:
  	mv -f lex.yy.c.xx lex.yy.c
  
  depend::
