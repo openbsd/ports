@@ -1,5 +1,23 @@
 --- Makefile.in.orig	Fri May 12 13:59:44 2000
-+++ Makefile.in	Tue Sep  5 20:42:05 2000
++++ Makefile.in	Tue Sep  5 23:26:50 2000
+@@ -24,7 +24,7 @@
+ TCL_LIBRARY = @TCL_LIBRARY@
+ 
+ # Tcl library uninstalled.  Should be something like -ltcl or ../tcl/libtcl.a
+-TCLLIB = @TCL_BUILD_LIB_SPEC@
++TCLLIB = @TCL_LIB_SPEC@
+ # Tcl library installed.  Should be something like -ltcl or ../tcl/libtcl.a
+ TCLLIB_INSTALLED = @TCL_LIB_SPEC@
+ 
+@@ -32,7 +32,7 @@
+ # Tk include files
+ TKHDIRDASHI = @TKHDIRDASHI@
+ # Tk library
+-TKLIB = @TK_BUILD_LIB_SPEC@
++TKLIB = @TK_LIB_SPEC@
+ TKLIB_INSTALLED = @TK_LIB_SPEC@
+ # X11 include files and other flags to compiler
+ X11_CFLAGS = @TK_XINCLUDES@
 @@ -191,6 +191,7 @@
  
  INSTALL = @INSTALL@
