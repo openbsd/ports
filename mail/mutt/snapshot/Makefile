@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/19 14:37:00 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/24 17:39:16 lebel Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
 VERSION=	1.3.21
 DISTNAME=	mutt-${VERSION}i
 CATEGORIES=     mail
-NEED_VERSION=	1.384
+NEED_VERSION=	1.460
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/devel/ \
                 ftp://ftp.gbnet.net/pub/mutt-international/devel/ \
                 ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/devel/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/devel/ \
 
 HOMEPAGE=	http://www.mutt.org/
 
-LIB_DEPENDS=	intl.1::devel/gettext 
+MODULES=	gettext
 
 MAINTAINER=	David Lebel <lebel@openbsd.org>
 
