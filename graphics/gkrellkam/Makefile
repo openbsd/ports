@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 20:57:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/09 02:10:52 lebel Exp $
 
 COMMENT=	"image and webcam display plugin for gkrellm"
 
-DISTNAME=	gkrellkam-0.2.3b
+DISTNAME=	gkrellkam-0.3.4
 CATEGORIES=	graphics
-NEED_VERSION=	1.515
+NEED_VERSION=	1.527
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -14,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 HOMEPAGE=	http://gkrellkam.sourceforge.net/
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= gkrellkam
-DISTFILES=       gkrellkam_0.2.3b.tar.gz
+DISTFILES=       gkrellkam_0.3.4.tar.gz
 
 MAINTAINER=	Dan Weeks <danimal@danimal.org>
 
@@ -23,7 +24,7 @@ USE_GMAKE=	Yes
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-WRKDIST=	${WRKDIR}/gkrellkam-0.2.3b
+WRKDIST=	${WRKDIR}/gkrellkam-0.3.4
 BUILD_DEPENDS=	::sysutils/gkrellm
 RUN_DEPENDS=	::sysutils/gkrellm \
 		::net/wget
