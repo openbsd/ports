@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/06/10 17:39:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2000/08/06 08:42:10 brad Exp $
 bin/esd
 bin/esd-config
 bin/esdcat
@@ -14,3 +14,4 @@ lib/libesd.a
 lib/libesd.la
 %%SHARED%%
 share/aclocal/esd.m4
+share/examples/esound/esd.conf-sample

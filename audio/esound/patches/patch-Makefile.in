@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Tue Jul 18 12:35:17 2000
-+++ Makefile.in	Sun Aug  6 03:25:18 2000
++++ Makefile.in	Sun Aug  6 04:24:05 2000
 @@ -135,7 +135,7 @@
  	genrand.h
  
@@ -18,3 +18,12 @@
  
  libesddsp_la_LIBADD = @DL_LIB@ -lm
  
+@@ -236,7 +236,7 @@
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = esd.m4
+ 
+-esdconfdir = $(sysconfdir)
++esdconfdir = $(prefix)/share/examples/esound
+ esdconf_DATA = esd.conf
+ 
+ CLEANFILES = esound.spec

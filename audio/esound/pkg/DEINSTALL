@@ -1,0 +1,25 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1 2000/08/06 08:42:10 brad Exp $
+#
+# esound de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_FILE=/etc/esd.conf
+
+if [ -f $CONFIG_FILE ]; then
+    echo
+    echo "+---------------"
+    echo "| To completely deinstall the $1 package you need to perform"
+    echo "| this step as root:"
+    echo "|"
+    echo "|           rm -f $CONFIG_FILE"
+    echo "|"
+    echo "| Do not do this if you plan on re-installing $1"
+    echo "| at some future time."
+    echo "+---------------"
+    echo
+fi
+
+exit 0
