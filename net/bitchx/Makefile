@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2003/06/24 20:04:14 avsm Exp $
+# $OpenBSD: Makefile,v 1.39 2004/03/03 23:53:03 xsa Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
 COMMENT=	"alternative ircII color client"
@@ -22,6 +22,7 @@ SUBST_VARS=	VERSION
 SEPARATE_BUILD=	concurrent
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu dest
+CONFIGURE_ARGS+=--with-ssl
 
 WRKDIST=	${WRKDIR}/BitchX
 
