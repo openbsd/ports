@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/02/15 11:34:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2002/03/03 13:39:10 naddy Exp $
 
 COMMENT=	"serial and network communications package"
 
@@ -22,7 +22,7 @@ WRKDIST=	${WRKDIR}
 
 MAKE_FILE=	makefile
 ALL_TARGET=	krbmit
-MAKE_FLAGS=	KTARGET=openbsd \
+MAKE_FLAGS=	KTARGET=openbsd CC="${CC}" CC2="${CC}" \
 		CFLAGS="${CFLAGS} -DBSD44 -DCK_CURSES -DCK_NEWTERM \
 		-DTCPSOCKET -DOPENBSD -DUSE_UU_LOCK -DFNFLOAT -DUSE_STRERROR \
 		-DCKHTTP \
