@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/02/22 14:55:51 lebel Exp $
+# $OpenBSD: Makefile,v 1.19 2003/03/06 21:23:47 sturm Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
@@ -24,6 +24,7 @@ RUN_DEPENDS=		:p5-Net-DNS-*:net/p5-Net-DNS \
 			:procmail-*:mail/procmail
 
 CONFIGURE_STYLE=	perl
+CONFIGURE_ARGS+=	RUN_RAZOR1_TESTS=n RUN_RAZOR2_TESTS=n
 
 SAMPLE_CONFIG_DIR=	${PREFIX}/share/examples/SpamAssassin
 CONFIG_DIR=		${SYSCONFDIR}/mail/spamassassin
