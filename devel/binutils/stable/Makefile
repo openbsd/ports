@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/06/05 23:39:47 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2003/06/08 19:02:58 brad Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -51,7 +51,6 @@ FILES=			ar nm-new objdump ranlib size strings strip-new
 post-extract:
 	@cp -f ${FILESDIR}/{i386obsd.sh,sparcobsd.sh,m68kobsd.sh} \
 		${WRKSRC}/ld/emulparams
-	@cp -f ${FILESDIR}/te-obsd.h ${WRKSRC}/gas/config
 
 post-patch:
 	@cd ${WRKSRC}/bfd && AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
