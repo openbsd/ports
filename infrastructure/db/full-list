@@ -1,3 +1,4 @@
+# $Id: full-list,v 1.3 1999/09/26 13:19:00 turan Exp $
 # This is a full list of everything that should currently build okay,
 # and be built routinely by ports/packages people
 archivers/bzip2
@@ -17,6 +18,7 @@ devel/gmake
 devel/id-utils
 devel/libslang
 devel/m4
+devel/mm
 editors/emacs
 editors/jove
 editors/vim
