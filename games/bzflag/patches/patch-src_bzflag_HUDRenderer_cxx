@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_bzflag_HUDRenderer_cxx,v 1.1.1.1 2003/02/03 04:09:56 pvalchev Exp $
+--- src/bzflag/HUDRenderer.cxx.orig	Mon Jul  1 13:47:53 2002
++++ src/bzflag/HUDRenderer.cxx	Mon Jul  1 13:48:31 2002
+@@ -23,9 +23,6 @@
+ #include "World.h"
+ #include "OpenGLGState.h"
+ #include "texture.h"
+-#if !defined(_MACOSX_)
+-#include <malloc.h>
+-#endif
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <ctype.h>

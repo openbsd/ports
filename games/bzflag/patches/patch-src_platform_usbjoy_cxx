@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_platform_usbjoy_cxx,v 1.1.1.1 2003/02/03 04:09:56 pvalchev Exp $
+--- src/platform/usbjoy.cxx.orig	Tue Jun  4 07:40:35 2002
++++ src/platform/usbjoy.cxx	Mon Jul  1 17:01:33 2002
+@@ -46,7 +46,7 @@ private:
+ 	int data_buf_offset;
+ };
+ 
+-usb_joystick *stick;
++usb_joystick *stick=NULL;
+ 
+ usb_joystick::usb_joystick(const char *name)
+ {
+@@ -67,7 +67,7 @@ usb_joystick::usb_joystick(const char *n
+ 		return;
+ 	}
+ 
+-	data_buf_size = hid_report_size(rd, hid_input, &report_id);
++	data_buf_size = hid_report_size(rd, hid_input, report_id);
+ 	if ((data_buf = (char *)malloc(data_buf_size)) == NULL) {
+ 		hid_dispose_report_desc(rd);
+ 	}
+@@ -75,7 +75,7 @@ usb_joystick::usb_joystick(const char *n
+ 
+ 	int is_joystick = 0;
+ 	int interesting_hid = FALSE;
+-	for (d = hid_start_parse(rd, 1 << hid_input); hid_get_item(d, &h); ) {
++	for (d = hid_start_parse(rd, 1 << hid_input, NULL); hid_get_item(d, &h); ) {
+ 		int page = HID_PAGE(h.usage);
+ 		int usage = HID_USAGE(h.usage);
+ 		is_joystick = is_joystick ||

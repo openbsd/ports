@@ -1,0 +1,15 @@
+$OpenBSD: patch-config,v 1.1.1.1 2003/02/03 04:09:56 pvalchev Exp $
+--- config.orig	Wed Jun 19 05:19:22 2002
++++ config	Mon Jul  1 17:01:33 2002
+@@ -34,9 +34,9 @@ VERSIONID = 1.7e6
+ #
+ # uncomment to enable debug render modes
+ #
+-ifdef DEBUG
++.ifdef DEBUG
+ DEBUG_RENDERING = -DDEBUG_RENDERING
+-endif
++.endif
+ 
+ #
+ # uncomment to enable robot tanks

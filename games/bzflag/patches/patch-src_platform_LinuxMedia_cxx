@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_platform_LinuxMedia_cxx,v 1.1.1.1 2003/02/03 04:09:56 pvalchev Exp $
+--- src/platform/LinuxMedia.cxx.orig	Tue Jun  4 00:40:34 2002
++++ src/platform/LinuxMedia.cxx	Sun Jul 14 21:49:05 2002
+@@ -23,7 +23,7 @@
+ #include <unistd.h>
+ #include <sys/wait.h>
+ #include "bzsignal.h"
+-#include <sys/soundcard.h>
++#include <soundcard.h>
+ #include <sys/ioctl.h>
+ #include <TimeKeeper.h>
+ #include <errno.h>
+@@ -119,7 +119,7 @@ boolean			LinuxMedia::openAudio()
+ boolean			LinuxMedia::checkForAudioHardware()
+ {
+   boolean flag=False;
+-  if (!access("/dev/dsp", W_OK)) flag=True;
++  if (!access("/dev/audio", W_OK)) flag=True;
+   if (!access("/dev/sound/dsp", W_OK)) flag=True;
+   return flag;
+ }
+@@ -176,11 +176,11 @@ boolean			LinuxMedia::openAudioHardware(
+   audioLowWaterMark = 2;
+ 
+   // open device (but don't wait for it)
+-  audioPortFd = open("/dev/dsp", O_WRONLY | O_NDELAY, 0);
++  audioPortFd = open("/dev/audio", O_WRONLY | O_NDELAY, 0);
+   if (audioPortFd == -1) {
+     audioPortFd = open("/dev/sound/dsp", O_WRONLY | O_NDELAY, 0);
+     if (audioPortFd == -1) {
+-      fprintf(stderr, "Failed to open audio device /dev/dsp or /dev/sound/dsp (%d)\n", errno);
++      fprintf(stderr, "Failed to open audio device /dev/audio or /dev/sound/dsp (%d)\n", errno);
+       return False;
+ 	}
+   }

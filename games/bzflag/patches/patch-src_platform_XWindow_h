@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_platform_XWindow_h,v 1.1.1.1 2003/02/03 04:09:56 pvalchev Exp $
+--- src/platform/XWindow.h.orig	Thu Nov 15 02:27:08 2001
++++ src/platform/XWindow.h	Wed May 15 10:39:33 2002
+@@ -36,11 +36,10 @@ extern "C" {
+ #endif
+ #ifdef __FreeBSD__
+ #include <libusb.h>
+-#else
+-#include <usb.h>
+ #endif
+ #include <dev/usb/usb.h>
+ #include <dev/usb/usbhid.h>
++#include <usbhid.h>
+ #ifdef __cplusplus
+ #undef class
+ }

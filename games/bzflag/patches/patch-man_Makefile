@@ -1,0 +1,33 @@
+$OpenBSD: patch-man_Makefile,v 1.1.1.1 2003/02/03 04:09:56 pvalchev Exp $
+--- man/Makefile.orig	Tue Jun  4 07:40:27 2002
++++ man/Makefile	Mon Jul  1 17:01:33 2002
+@@ -25,25 +25,25 @@ TARGETS = *.[1-8] *.z *.gz
+ PRINTSRC = find . \( -name '*.[1-8]s' \) -print |		\
+ 	sed -e 's/^\.\///' -e '/\//d'
+ 
+-targets: sourceform packed gzipped
++targets: sourceform
+ 
+ # generate nroff source
+ sourceform:
+ 	$(PRINTSRC) |						\
+ 	sed -e 's/\.\([1-8]\)s$$/.\1/' |			\
+-	xargs -l10 $(MAKE) $(MFLAGS)
++	xargs -n10 $(MAKE) $(MFLAGS)
+ 
+ # generate packed compiled nroff
+ packed: sourceform
+ 	$(PRINTSRC) |						\
+ 	sed -e 's/\.[1-8]s$$/\.z/' |				\
+-	xargs -l10 $(MAKE) $(MFLAGS)
++	xargs -n10 $(MAKE) $(MFLAGS)
+ 
+ # generate gzipped compiled nroff
+ gzipped: sourceform
+ 	$(PRINTSRC) |						\
+ 	sed -e 's/\.[1-8]s$$/\.gz/' |				\
+-	xargs -l10 $(MAKE) $(MFLAGS)
++	xargs -n10 $(MAKE) $(MFLAGS)
+ 
+ # replace tokens in source to make nroff source
+ .1s.1 .2s.2 .3s.3 .4s.4 .5s.5 .6s.6 .7s.7 .8s.8:

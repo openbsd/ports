@@ -1,0 +1,20 @@
+$OpenBSD: patch-Make-common,v 1.1.1.1 2003/02/03 04:09:56 pvalchev Exp $
+--- Make-common.orig	Thu Nov 15 02:29:07 2001
++++ Make-common	Wed May 15 10:39:32 2002
+@@ -167,13 +167,13 @@ $(COMMONPREF)clobber: clean $(_FORCE)
+ #
+ # default to optimized build
+ #
+-ifdef DEBUG
++.ifdef DEBUG
+ COPTIMIZER    = $(CDEBUG)
+ CXXOPTIMIZER  = $(CXXDEBUG)
+-else
++.else
+ COPTIMIZER    = $(COPT)
+ CXXOPTIMIZER  = $(CXXOPT)
+-endif
++.endif
+ 
+ #
+ # slurp up configuration

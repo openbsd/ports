@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_net_Makefile,v 1.1.1.1 2003/02/03 04:09:56 pvalchev Exp $
+--- src/net/Makefile.orig	Tue Feb 13 02:25:30 2001
++++ src/net/Makefile	Wed May 15 10:39:33 2002
+@@ -16,8 +16,8 @@ TARGETS  = $(LIBDIR)/libNet.a
+ 
+ CXXFILES =				\
+ 	Address.cxx			\
+-	Pack.cxx			\
+ 	Ping.cxx			\
++	Pack.cxx			\
+ 	multicast.cxx			\
+ 	udpnetwork.cxx			\
+ 	network.cxx			\

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_bzflag_ServerLink_cxx,v 1.1.1.1 2003/02/03 04:09:56 pvalchev Exp $
+--- src/bzflag/ServerLink.cxx.orig	Tue Jun  4 07:40:31 2002
++++ src/bzflag/ServerLink.cxx	Mon Jul  1 17:01:33 2002
+@@ -775,7 +775,7 @@ void			ServerLink::sendUDPlinkRequest()
+   if ((urecvfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
+ 	return; // we cannot comply
+   }
+-  for (int portno=17200; portno < 65000; portno++) {
++  for (int portno=49152; portno < 65535; portno++) {
+   	::memset((unsigned char *)&serv_addr, 0, sizeof(serv_addr));
+   	serv_addr.sin_family = AF_INET;
+   	serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);

@@ -1,0 +1,23 @@
+$OpenBSD: patch-include_network_h,v 1.1.1.1 2003/02/03 04:09:56 pvalchev Exp $
+--- include/network.h.orig	Tue Jun  4 07:40:27 2002
++++ include/network.h	Mon Jul  1 17:05:30 2002
+@@ -41,7 +41,7 @@
+ #include <netinet/tcp.h>
+ #include <arpa/inet.h>
+ #include <netdb.h>
+-#if defined(_old_linux_) || (!defined(__linux__) && !defined(sun) && !defined(__FreeBSD__) && !defined(macintosh))
++#if defined(_old_linux_) || (!defined(__linux__) && !defined(sun) && !defined(__FreeBSD__) && !defined(macintosh)) && !defined(__OpenBSD__)
+ #include <bstring.h>
+ #endif
+ 
+@@ -68,6 +68,10 @@
+ #endif
+ 
+ #if defined(__FreeBSD__) && !defined(_MACOSX_)
++#define AddrLen		socklen_t
++#endif
++
++#if defined(__OpenBSD__) && !defined(_MACOSX_)
+ #define AddrLen		socklen_t
+ #endif
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_bzflag_Makefile,v 1.1.1.1 2003/02/03 04:09:56 pvalchev Exp $
+--- src/bzflag/Makefile.orig	Fri Feb  2 03:04:25 2001
++++ src/bzflag/Makefile	Wed May 15 10:39:32 2002
+@@ -64,7 +64,7 @@ LLDLIBS =				\
+ 	$(GL_LIBS)			\
+ 	$(DISPLAY_LIBS)			\
+ 	$(WINDOW_LIBS)			\
+-	-lm				\
++	-lm	-lusbhid -lossaudio			\
+ 	$(NULL)
+ 
+ targets: $(TARGETS)
