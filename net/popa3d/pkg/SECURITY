@@ -1,19 +1,17 @@
 Security issues:
 
-This port does not use "shadow" password authentication, because things
-work a bit differently on BSD systems. The 'normal' authentication function
-is patched to zero-out the password after authentication. Because OpenBSD's
-getpwnam takes great care to cleanup, I'm fairly positive this patch achieves
-the same level of security as all the trickery in function do_shadow_auth.
-
+The author recommends that a seperate user 'popa3d' is created. However,
+for ease of installation this port uses 'nobody'. Don't use 'nobody' for
+anything else, or recompile popa3d to use 'popa3d' and create that user
+yourself.
 
 The onetime use of strcmp seems correct. One parameter is 'pw->passwd',
 obtained from a call to getpwnam. The other parameter is 'pass', which is
-derived from an input-buffer of which apop3d takes care not to overrun.
+derived from an input-buffer of which popa3d takes care not to overrun.
 
 sprintf is used once. Its parameters are 'MAIL_SPOOL_PATH', which is a
 compile-time constant and 'mailbox', which is the username, derived from
 the password-file. 
 
 One more time: POP3 is inherently insecure. Passwords are sent in cleartext, 
-everytime a user checks his mailbox. apop3d does not have APOP support. 
+everytime a user checks his mailbox. popa3d does not have APOP support. 
