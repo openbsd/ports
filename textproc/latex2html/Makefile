@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/10/11 17:13:22 espie Exp $
+# $OpenBSD: Makefile,v 1.3 1999/10/29 09:40:17 turan Exp $
 #
 
 DISTNAME=	latex2html-97.1
@@ -16,6 +16,7 @@ RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm \
 NO_CONFIGURE=	YES
 NO_BUILD=	YES
 IS_INTERACTIVE=	YES
+NO_PACKAGE=	interactive port
 
 DOCS=		userman.tex manual.tex manual.gls manual.dvi manual.bbl \
 		manual.aux manual.ind manhtml.tex eform.ps changebar.sty \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/07/09 04:06:40 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/10/29 09:40:16 turan Exp $
 
 DISTNAME=	camlp4
 PKGNAME=	camlp4-2.02
@@ -10,6 +10,7 @@ MAINTAINER=	angelos@openbsd.org
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 IS_INTERACTIVE=	yes
+NO_PACKAGE=	interactive port
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	world bootstrap opt

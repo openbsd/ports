@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1999/08/21 19:15:00 alex Exp $
+# $OpenBSD: Makefile,v 1.13 1999/10/29 09:40:17 turan Exp $
 
 DISTNAME=	socks5-v1.0r10
 PKGNAME=	socks5-1.0.10
@@ -10,6 +10,7 @@ NO_CDROM=	"NEC has a funky license for this software"
 RESTRICTED=	"no commercial use"
 MIRROR_DISTFILE=no
 IS_INTERACTIVE=	yes
+NO_PACKAGE=	interactive port
 
 # here are some extra configure args you may wish to use
 # see the readme file before screwing with them

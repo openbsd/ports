@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/04/09 04:12:00 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/10/29 09:40:17 turan Exp $
 
 # WWW site: http://www.fccc.edu/users/muquit/Count.html
 # For digit images look at:
@@ -13,6 +13,7 @@ MAINTAINER=	ports@openbsd.org
 
 GNU_CONFIGURE=	yes
 IS_INTERACTIVE=	yes
+NO_PACKAGE=	interactive port
 
 .if defined(USE_RELOAD)
 MAKE_FLAGS+=	COUNT_RELOAD=-DCOUNT_RELOAD=1

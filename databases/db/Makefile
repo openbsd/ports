@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/06/18 04:06:16 marc Exp $
+# $OpenBSD: Makefile,v 1.10 1999/10/29 09:40:15 turan Exp $
 
 DISTNAME=	db-2.7.5
 CATEGORIES=	databases
@@ -22,6 +22,7 @@ EXAMPLES_CPP=	AccessExample.cpp AppinitExample.cpp LockExample.cpp \
 		MpoolExample.cpp TpcbExample.cpp
 
 IS_INTERACTIVE=		yes
+NO_PACKAGE=		interactive port
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \

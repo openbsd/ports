@@ -3,7 +3,7 @@
 # Date created:		1998-Jul-4
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.5 1999/03/27 17:06:25 niklas Exp $
+# $OpenBSD: Makefile,v 1.6 1999/10/29 09:40:16 turan Exp $
 
 DISTNAME=		nfr-2.0.3-research-src
 PKGNAME=		nfr-2.0.3
@@ -18,6 +18,7 @@ MASTER_SITES=		see_do-fetch_target
 EXTRACT_SUFX=		.tar.Z
 
 IS_INTERACTIVE=		yes
+NO_PACKAGE=		interactive port
 
 WRKSRC=			${WRKDIR}/nfr-2.0.3-research/nfr
 

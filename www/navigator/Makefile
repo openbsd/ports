@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 1999/10/28 20:21:16 dugsong Exp $
+# $OpenBSD: Makefile,v 1.24 1999/10/29 09:40:17 turan Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -80,6 +80,7 @@ OBJMACHINE=	"yes"
 NO_WRKSUBDIR=	"No work subdirectory"
 NO_CONFIGURE=	"No configure scripts"
 IS_INTERACTIVE= "Netscape installer"
+NO_PACKAGE=	interactive port
 
 MAINTAINER=	brad@openbsd.org
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/07/21 20:12:13 hugh Exp $
+# $OpenBSD: Makefile,v 1.3 1999/10/29 09:40:16 turan Exp $
 #
 
 DISTNAME=	ucd-snmp-3.6.2
@@ -14,6 +14,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-defaults --with-sys-contact=nobody@no.where --with-logfile="/var/log/snmpd"
 .else
 IS_INTERACTIVE= yes
+NO_PACKAGE=	interactive port
 CONFIGURE_ARGS=	--with-logfile="/var/log/snmpd"
 .endif
 

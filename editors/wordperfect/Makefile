@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/05/31 17:35:09 dugsong Exp $
+# $OpenBSD: Makefile,v 1.4 1999/10/29 09:40:15 turan Exp $
 
 PKGNAME=	wordperfect-8.0
 CATEGORIES=     editors
@@ -21,6 +21,7 @@ IS_INTERACTIVE=	yes
 NO_WRKSUBDIR=	yes
 NO_CONFIGURE=	yes
 NO_BUILD=	yes
+NO_PACKAGE=	interactive port
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \

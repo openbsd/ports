@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1999/10/26 04:56:39 turan Exp $
+# $OpenBSD: Makefile,v 1.12 1999/10/29 09:40:16 turan Exp $
 #
 
 BROKEN=		bad packing lists
@@ -27,6 +27,7 @@ RUN_DEPENDS=	gv:${PORTSDIR}/print/gv \
 		convert:${PORTSDIR}/graphics/ImageMagick
 
 IS_INTERACTIVE=		yes
+NO_PACKAGE=		interactive port
 MANUAL_PACKAGE_BUILD=	PAPERSIZE has to be set to Letter or A4
 GNU_CONFIGURE=	yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/05/26 00:52:35 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/10/29 09:40:16 turan Exp $
 
 # If MULE extensions are desired use
 # make USE_MULE=YES
@@ -20,6 +20,7 @@ LIB_DEPENDS=	jpeg.62:${PORTSDIR}/graphics/jpeg \
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 IS_INTERACTIVE= yes
+NO_PACKAGE=	interactive port
 
 # Put generated PLIST into WRKDIR to avoid collisions in a shared ports tree.
 PLIST=		${WRKDIR}/PLIST
