@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2001/07/18 15:26:11 lebel Exp $
+# $OpenBSD: Makefile,v 1.51 2001/07/20 02:12:05 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -35,6 +35,7 @@
 #    SUBDIR += golddig
      SUBDIR += gtkballs
      SUBDIR += gtkpool
+     SUBDIR += icebreaker
 #    SUBDIR += imaze
 #    SUBDIR += jetpack
 #    SUBDIR += kdegames
