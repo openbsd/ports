@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 1999/06/22 19:48:29 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/07/04 21:39:48 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/28 11:55:25 rse Exp $
 
-DISTNAME=	mm-1.0.7
+DISTNAME=	mm-1.0.9
 CATEGORIES=	devel
-MASTER_SITES=	http://www.engelschall.com/sw/mm/
+MASTER_SITES=	http://www.engelschall.com/sw/mm/ \
+		ftp://ftp.engelschall.com/sw/mm/
 
 NEED_VERSION=	1.73
 
@@ -13,10 +14,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
-post-install:
-	@${LDCONFIG} -m ${PREFIX}/lib
+post-build:
+	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
 
 test:
 	@cd ${WRKSRC} && ${MAKE} test
+
+post-install:
+	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
