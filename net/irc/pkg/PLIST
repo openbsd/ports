@@ -1,11 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.5 2000/06/09 16:28:28 form Exp $
 bin/irc
-lib/ircd/users
+lib/ircd/example.conf
+lib/ircd/ircd.m4
 lib/ircd/opers
 lib/ircd/rejects
-lib/ircd/ircd.m4
-lib/ircd/example.conf
-sbin/ircd
+lib/ircd/users
+man/man1/irc.1
+man/man5/iauth.conf.5
+man/man8/iauth.8
+man/man8/ircd.8
+man/man8/ircdwatch.8
 sbin/chkconf
 sbin/iauth
+sbin/ircd
 sbin/ircd-mkpasswd
+sbin/ircdwatch
 @dirrm lib/ircd
