@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/05/17 04:34:27 form Exp $
+@comment $OpenBSD: PLIST,v 1.8 2001/04/16 11:12:01 form Exp $
 bin/extdgts
 bin/mkstrip
 lib/wwwcount/Count.cgi
@@ -121,7 +121,6 @@ share/doc/wwwcount/prehtml/changelog_link.prehtml
 share/doc/wwwcount/prehtml/compile_NT.prehtml
 share/doc/wwwcount/prehtml/compile_unix.prehtml
 share/doc/wwwcount/prehtml/composite.prehtml
-share/doc/wwwcount/prehtml/composite.prehtml.bak
 share/doc/wwwcount/prehtml/config.prehtml
 share/doc/wwwcount/prehtml/copyright.prehtml
 share/doc/wwwcount/prehtml/count_faq.prehtml
