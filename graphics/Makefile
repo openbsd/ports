@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 1999/05/31 17:06:39 brad Exp $
+# $OpenBSD: Makefile,v 1.29 1999/06/20 23:41:22 brad Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
      SUBDIR += ImageMagick
-     SUBDIR += MesaGL
+     SUBDIR += Mesa
      SUBDIR += aalib
 #    SUBDIR += aero
 #    SUBDIR += camediaplay
