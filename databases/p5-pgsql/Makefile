@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/08/09 13:28:30 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2005/01/02 08:02:27 sturm Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,6 +23,9 @@ CONFIGURE_ENV+=	POSTGRES_HOME="${LOCALBASE}" \
 		POSTGRES_LIB="${LOCALBASE}/lib" \
 		POSTGRES_INCLUDE="${LOCALBASE}/include/postgresql"
 
-CONFIGURE_STYLE= perl
+CONFIGURE_STYLE=perl
+
+# needs a database properly set up
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
