@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/11/11 22:08:48 margarida Exp $
+# $OpenBSD: Makefile,v 1.11 2004/03/11 18:01:27 sturm Exp $
 
 COMMENT=	"cross-platform remote desktop access"
 COMMENT-viewer=	"client for cross-platform remote desktop access"
@@ -35,6 +35,10 @@ NO_REGRESS=	Yes
 
 DOCUMENTATION=vncpasswd/vncpasswd.man vncconnect/vncconnect.man \
     Xvnc/programs/Xserver/Xvnc.man vncviewer/vncviewer.man
+
+.if ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=	patch-* gcc-*
+.endif
 
 # We have to frob a few things, and we want our own permissions, so it's easier
 # to do the install ourselves.
