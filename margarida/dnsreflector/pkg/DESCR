@@ -1,6 +1,0 @@
-dnsreflector is a daemon that listens for DNS queries on a 
-local UDP port and answers with records pointing back to 
-localhost. 
-Combined with pf(4) this works as a bandwidth efficient spamtrap.
-
-WWW: ${HOMEPAGE}
