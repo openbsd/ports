@@ -1,6 +1,6 @@
---- pine/pine.hlp.orig	Wed Sep 23 12:22:43 1998
-+++ pine/pine.hlp	Tue Jan 19 19:51:17 1999
-@@ -847,9 +847,9 @@
+--- pine/pine.hlp.orig	Fri Oct 22 19:43:53 1999
++++ pine/pine.hlp	Fri Oct 22 19:58:31 1999
+@@ -489,9 +489,9 @@
  
   executable     &lt;Unix search path&gt;/pine
   persnl cfg     ~/.pinerc
@@ -9,7 +9,40 @@
 - local help     /usr/local/lib/pine.info
 + global cfg     /etc/pine.conf
 + fixed cfg      /etc/pine.conf.fixed
-+ local help     /usr/local/share/doc/pine/
++ local help     /etc/pine.info
  
   interrupted    ~/.pine-interrupted-mail
   debug          ~/.pine-debugN
+@@ -929,9 +929,9 @@
+ this link now to send a message to it:<BR>
+ <A HREF="X-Pine-Gripe:_LOCAL_ADDRESS_?local"><!--#echo var="_LOCAL_FULLNAME_"--></A><P>
+ <!--chtml endif-->
+-<!--chtml if [ -r /usr/local/lib/pine.info ]-->
++<!--chtml if [ -r /etc/pine.info ]-->
+ <HR WIDTH="75%">Local Support Contacts:<P>
+-<!--#include file="/usr/local/lib/pine.info"-->
++<!--#include file="/etc/pine.info"-->
+ <HR WIDTH="75%">
+ <!--chtml endif-->
+ <P> 
+@@ -1019,7 +1019,7 @@
+ <OL>
+   <LI> <A HREF="#intro">Introduction</A>
+   <LI> <A HREF="#pine_help">Pine Help</A>
+-<!--chtml if [ -r /usr/local/lib/pine.info ]-->
++<!--chtml if [ -r /etc/pine.info ]-->
+   <LI> <A HREF="#local_support">Local Support Contacts</A>
+ <!--chtml endif-->
+   <LI> <A HREF="#giving_cmds">Giving Commands in Pine</A>
+@@ -1132,9 +1132,9 @@
+ at your site.)
+ 
+ 
+-<!--chtml if [ -r /usr/local/lib/pine.info ]-->
++<!--chtml if [ -r /etc/pine.info ]-->
+ <H2><A NAME="local_support">Local Support Contacts</A></H2>
+-<!--#include file="/usr/local/lib/pine.info"-->
++<!--#include file="/etc/pine.info"-->
+ <!--chtml endif-->
+ 
+ <H2><A NAME="giving_cmds">Giving Commands in Pine</A></H2>

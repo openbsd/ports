@@ -1,33 +1,25 @@
---- pine/mailcap.c.orig	Wed Nov 18 13:00:15 1998
-+++ pine/mailcap.c	Mon Feb  8 09:17:46 1999
-@@ -905,14 +905,18 @@
+--- pine/mailcap.c.orig	Fri Oct 22 19:36:41 1999
++++ pine/mailcap.c	Fri Oct 22 19:42:53 1999
+@@ -915,14 +915,18 @@
  		     * have to put those outside of the single quotes.
  		     * (The parm+1000 nonsense is to protect against
  		     * malicious mail trying to overlow our buffer.)
-+				 *
-+				 * TCH - Change 2/8/1999
-+				 * Also quote the ` slash to prevent execution of arbirtrary code
++		     *
++		     * TCH - Change 2/8/1999
++		     * Also quote the ` slash to prevent execution of arbirtrary code
  		     */
  		    for(p = parm; *p && p < parm+1000; p++){
 -			if(*p == '\''){
-+			if((*p == '\'')||(*p=='`')){ 
++			if((*p == '\'')||(*p=='`')){
  			    *to++ = '\'';  /* closing quote */
  			    *to++ = '\\';
 -			    *to++ = '\'';  /* below will be opening quote */
 -			}
 -			*to++ = *p;
-+					*to++ = *p; /* quoted character */
++			    *to++ = *p;  /* quoted character */
 +			    *to++ = '\'';  /* opening quote */
 +			} else
-+				*to++ = *p;
++			    *to++ = *p;
  		    }
  
  		    fs_give((void **) &parm);
-@@ -954,7 +958,7 @@
-      */
-     if(!used_tmp_file && tmp_file)
-       sprintf(to, MC_ADD_TMP, tmp_file);
--
-+		
-     return(cpystr(tmp_20k_buf));
- } 

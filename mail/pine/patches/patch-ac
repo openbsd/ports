@@ -1,6 +1,15 @@
---- doc/pine.1.~1~	Thu Feb  4 10:42:05 1999
-+++ doc/pine.1	Thu Apr  8 10:16:05 1999
-@@ -294,11 +294,11 @@
+--- doc/pine.1.orig	Fri Oct 22 19:45:41 1999
++++ doc/pine.1	Fri Oct 22 20:00:55 1999
+@@ -272,7 +272,7 @@
+ .if n .ta 2.8i
+ .if t .ta 2.1i
+ 
+-/usr/spool/mail/xxxx	Default folder for incoming mail.
++/var/mail/xxxx	Default folder for incoming mail.
+ .br
+ ~/mail	Default directory for mail folders.
+ .br
+@@ -296,13 +296,13 @@
  .br
  /etc/mime.types	System-wide file ext. to MIME type mapping
  .br
@@ -13,5 +22,8 @@
 -/usr/local/lib/pine.conf.fixed	 Non-overridable configuration file.
 +/etc/pine.conf.fixed	 Non-overridable configuration file.
  .br
- /tmp/.\\usr\\spool\\mail\\xxxx	Per-folder mailbox lock files.
+-/tmp/.\\usr\\spool\\mail\\xxxx	Per-folder mailbox lock files.
++/tmp/.\\var\\mail\\xxxx	Per-folder mailbox lock files.
+ .br
+ ~/.pine-interrupted-mail	Message which was interrupted.
  .br
