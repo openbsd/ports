@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.319 2000/07/21 02:38:33 miod Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.320 2000/08/22 23:10:38 brad Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -907,7 +907,7 @@ GZCAT?=		/usr/bin/gzcat
 GZIP?=		-9
 GZIP_CMD?=	/usr/bin/gzip -nf ${GZIP}
 LDCONFIG?=	[ ! -x /sbin/ldconfig ] || /sbin/ldconfig
-LDCONFIG_SED_SCRIPT?=${PORTSDIR}/infrastructure/install/ldconfig.sed
+LDCONFIG_SED_SCRIPT?=${PORTSDIR}/infrastructure/install/ldconfig-new.sed
 M4?=		/usr/bin/m4
 STRIP?=		/usr/bin/strip
 
