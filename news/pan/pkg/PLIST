@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/07/31 20:45:20 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/10/05 20:25:50 fgsch Exp $
 bin/pan
 share/doc/pan/faq.html
 share/doc/pan/pan_acccelerators.txt
 share/locale/ca/LC_MESSAGES/pan.mo
+share/locale/cs/LC_MESSAGES/pan.mo
 share/locale/da/LC_MESSAGES/pan.mo
 share/locale/de/LC_MESSAGES/pan.mo
 share/locale/el/LC_MESSAGES/pan.mo
