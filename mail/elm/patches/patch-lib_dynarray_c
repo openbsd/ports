@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_dynarray_c,v 1.1 2001/10/08 11:14:00 wilfried Exp $
+--- lib/dynarray.c.orig	Tue Nov  9 20:42:41 1999
++++ lib/dynarray.c	Mon Oct  8 00:19:51 2001
+@@ -3,6 +3,8 @@
+  * Initially written by: Michael Elkins <elkins@aero.org>, 1995/06/01
+  */
+ 
++#include "defs.h"
++
+ /** routines for handling of dynamic arrays **/
+ 
+ char **
