@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2002/10/26 12:52:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2003/10/31 18:12:10 naddy Exp $
 
 COMMENT=	"Motif toolkit Linux libraries"
 
 PKGNAME=	redhat_motif-2.1.30
-
-MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 MASTER_SITES=	${MASTER_SITE_REDHAT:=contrib/openmotif/linux-rpm/}
 DISTFILES=	openmotif-2.1.30-1_ICS.i386.rpm
