@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/28 01:38:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/02/20 23:51:29 pvalchev Exp $
 
 COMMENT=	"programmable small perl irc client"
 
 DISTNAME=	sirc-2.211
 CATEGORIES=	net
 
-MASTER_SITES=	${HOMEPAGE}
-MASTER_SITES0=	${HOMEPAGE}scripts/
+MASTER_SITES=	http://www.iagora.com/~espel/sirc/
+MASTER_SITES0=	${MASTER_SITES}scripts/
 
 PATCHFILES=	ssfe.diff:0
 
-HOMEPAGE=	http://www.iagora.com/~espel/sirc/
+HOMEPAGE=	http://www.iagora.com/~espel/sirc/sirc.html
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
