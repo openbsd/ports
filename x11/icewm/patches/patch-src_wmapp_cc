@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_wmapp_cc,v 1.4 2004/06/13 12:25:08 sturm Exp $
---- src/wmapp.cc.orig	2004-05-23 08:18:19.000000000 +0200
-+++ src/wmapp.cc	2004-06-13 13:38:32.000000000 +0200
+$OpenBSD: patch-src_wmapp_cc,v 1.5 2004/08/11 22:48:26 naddy Exp $
+--- src/wmapp.cc.orig	Sun May 23 08:18:19 2004
++++ src/wmapp.cc	Thu Aug 12 00:13:20 2004
 @@ -923,11 +923,11 @@ void runRestart(const char *path, char *
          if (args) {
              execvp(path, args);
@@ -24,12 +24,12 @@ $OpenBSD: patch-src_wmapp_cc,v 1.4 2004/06/13 12:25:08 sturm Exp $
      for (char ** arg = argv + 1; arg < argv + argc; ++arg) {
          if (**arg == '-') {
  #ifdef DEBUG
-@@ -1493,6 +1495,8 @@ int main(int argc, char **argv) {
+@@ -1492,6 +1494,8 @@ int main(int argc, char **argv) {
+         themeName = newstr(overrideTheme);
  #endif
      YWMApp app(&argc, &argv);
- 
-+    app.runProgram(bg[0], bg);
 +
++    app.runProgram(bg[0], bg);
+ 
  #ifdef CONFIG_GUIEVENTS
      app.signalGuiEvent(geStartup);
- #endif

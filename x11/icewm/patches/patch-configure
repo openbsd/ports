@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.3 2004/06/13 12:25:08 sturm Exp $
---- configure.orig	2004-05-23 08:18:27.000000000 +0200
-+++ configure	2004-06-13 13:43:27.000000000 +0200
+$OpenBSD: patch-configure,v 1.4 2004/08/11 22:48:26 naddy Exp $
+--- configure.orig	Sun May 23 08:18:27 2004
++++ configure	Thu Aug 12 00:15:48 2004
 @@ -1438,7 +1438,7 @@ test -n "$target_alias" &&
      NONENONEs,x,x, &&
    program_prefix=${target_alias}-
@@ -18,3 +18,21 @@ $OpenBSD: patch-configure,v 1.3 2004/06/13 12:25:08 sturm Exp $
  else
    ice_prog_gxx=no
  fi
+@@ -10077,7 +10076,7 @@ if test "${ac_cv_lib_intl_bindtextdomain
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -10126,7 +10125,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_lib_intl_bindtextdomain" >&5
+ echo "${ECHO_T}$ac_cv_lib_intl_bindtextdomain" >&6
+ if test $ac_cv_lib_intl_bindtextdomain = yes; then
+-   CORE_LIBS="${CORE_LIBS} -lintl"
++   CORE_LIBS="${CORE_LIBS} -lintl -liconv"
+ 
+ else
+    { { echo "$as_me:$LINENO: error: NLS (national language support) has been requested but
