@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2003/05/13 22:53:59 sturm Exp $
+# $OpenBSD: INSTALL,v 1.5 2003/07/24 01:30:51 naddy Exp $
 #
 # Pre/post-installation setup of cvsweb
 
@@ -33,7 +33,7 @@ do_notice()
 do_install()
 {
     install -o root -g wheel -d $CONFIG_DIR
-    install -o root -g wheel $SAMPLE_CONFIG_FILE $CONFIG_FILE
+    install -o root -g wheel -m 0644 $SAMPLE_CONFIG_FILE $CONFIG_FILE
     echo
     echo "+---------------"
     echo "| The $1 configuration file,"
