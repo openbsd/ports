@@ -1,7 +1,7 @@
-$OpenBSD: patch-PerlMagick_Makefile_PL,v 1.2 2004/07/09 19:44:14 brad Exp $
---- PerlMagick/Makefile.PL.orig	Wed Apr 14 22:14:18 2004
-+++ PerlMagick/Makefile.PL	Fri Jul  9 15:17:29 2004
-@@ -32,13 +32,13 @@ WriteMakefile
+$OpenBSD: patch-PerlMagick_Makefile_PL,v 1.3 2005/03/31 04:24:34 pvalchev Exp $
+--- PerlMagick/Makefile.PL.orig	Fri Mar  4 23:01:01 2005
++++ PerlMagick/Makefile.PL	Fri Mar  4 23:00:14 2005
+@@ -44,13 +44,13 @@ WriteMakefile
     'DEFINE'	=> ' -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H',     # e.g., '-DHAVE_SOMETHING' 
  
     # Header search specfication and preprocessor flags
@@ -13,16 +13,16 @@ $OpenBSD: patch-PerlMagick_Makefile_PL,v 1.2 2004/07/09 19:44:14 brad Exp $
 +   # 'CPPFLAGS'    => "$Config{'cppflags'} -I/usr/X11R6/include -I/usr/X11R6/include/X11",
  
     # C compiler flags (e.g. -O -g)
--   'CCFLAGS'     => "$Config{'ccflags'} -g -O2 -Wall -pthread",
+-   'CCFLAGS'     => "$Config{'ccflags'} -O3 -g -Wall -pthread",
 +   'CCFLAGS'     => "$Config{'ccflags'} -O2 -Wall",
  
     # Linker flags for building an executable
     'LDFLAGS'    =>  "-L/usr/local/lib $Config{'ldflags'}",
-@@ -50,7 +50,7 @@ WriteMakefile
+@@ -62,7 +62,7 @@ WriteMakefile
     'INSTALLBIN'	=> '/usr/local/bin',
  
     # Library specification
--   'LIBS'	=> ['-L/usr/local/lib -L../magick/.libs -lMagick -L/usr/X11R6/lib -L/usr/lib -L/usr/lib -llcms -ltiff -lfreetype -ljpeg -lpng -ldpstk -ldps -lXext -lSM -lICE -lX11 -lbz2 -lxml2 -lz -lpthread -lm -lpthread'],
+-   'LIBS'	=> ['-L/usr/local/lib -lMagick -L/usr/X11R6/lib -lfreetype -lz -L/usr/lib -llcms -ltiff -lfreetype -ljpeg -lpng -ldpstk -ldps -lXext -lXt -lSM -lICE -lX11 -lbz2 -lxml2 -lz -lpthread -lm -lpthread'],
 +   'LIBS'	=> ['-L/usr/local/lib -lMagick -L/usr/X11R6/lib -ljbig -llcms -ltiff -lfreetype -ljasper -ljpeg -lpng -lXext -lSM -lICE -lX11 -lbz2 -lxml2 -liconv -lz -lm'],
  
     # Perl binary name (if a Perl binary is built)
