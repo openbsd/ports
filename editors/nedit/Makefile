@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/10/31 12:24:01 form Exp $
+# $OpenBSD: Makefile,v 1.22 2001/12/27 03:37:36 form Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=	"X11/Motif GUI text editor"
@@ -13,12 +13,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-HOMEPAGE=	http://www.nedit.org/
+#HOMEPAGE=	http://www.nedit.org/
+HOMEPAGE=	http://216.242.72.41/
 
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
-DIST_SUBDIR=	nedit
 
-MASTER_SITES=	http://nedit.org/ftp/v5_2/
+MASTER_SITES=	http://216.242.72.41/ftp/v5_2/ \
+		ftp://ftp.openbsd.ru/pub/OpenBSD/distfiles/
+#		http://nedit.org/ftp/v5_2/
 
 USE_MOTIF=	any
 
