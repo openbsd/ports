@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2000/08/18 20:45:07 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2000/08/19 16:32:33 kevlo Exp $
+
+BROKEN=		"Lots of genuine tmpnam() warnings"
 
 DISTNAME=	ddd-3.2.1
 CATEGORIES=	devel
