@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/11 01:10:11 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/04 08:39:37 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	cops_104
@@ -10,6 +10,11 @@ MASTER_SITES=	ftp://ftp.cert.org/pub/tools/cops/1.04/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@OpenBSD.ORG
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 EXECUTABLE = home.chk user.chk is_writable crc crc_check \
              addto clearfiles filewriters members tilde is_able
