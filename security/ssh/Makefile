@@ -3,7 +3,7 @@
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.7 1997/12/13 00:06:01 angelos Exp $
+# $OpenBSD: Makefile,v 1.8 1997/12/17 05:05:33 imp Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -124,5 +124,5 @@ LIB_DEPENDS+=   wrap\\.7\\.:${PORTSDIR}/security/tcp_wrapper
 
 # Include SOCKS firewall support
 .if defined(USE_SOCKS) && ${USE_SOCKS} == YES
-CONFIGURE_ARGS+= --with-socks="-L${PREFIX}/lib -lsocks5"
+CONFIGURE_ARGS+= --with-socks="-L${PREFIX}/lib -lsocks5" --with-socks5
 .endif
