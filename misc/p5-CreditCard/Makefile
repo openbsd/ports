@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2000/10/10 00:40:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/06 02:30:26 lebel Exp $
+
+COMMENT=	"verify credit card pins"
 
 DISTNAME=	Business-CreditCard-0.21
 CATEGORIES=	misc perl5
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Business
 

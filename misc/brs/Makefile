@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/25 17:17:41 danh Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/06 02:29:44 lebel Exp $
+
+COMMENT=	"bible reader"
 
 DISTNAME=	brs.4.00.l1
 
@@ -6,6 +8,7 @@ PKGNAME=	brs-4.00l1
 CATEGORIES=	misc
 MASTER_SITE_SUBDIR=apps/religion
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
+NEED_VERSION=	1.402
 
 MAINTAINER=	J Shoemaker <shoemaker@softhome.net>
 

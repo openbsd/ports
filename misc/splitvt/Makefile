@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2000/10/22 15:42:52 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/05/06 02:30:58 lebel Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
+
+COMMENT=	"run two shells in a split window/terminal"
 
 DISTNAME=	splitvt-1.6.3
 CATEGORIES=	misc
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/console
 

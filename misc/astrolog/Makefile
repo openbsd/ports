@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2001/01/05 16:35:59 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2001/05/06 02:29:41 lebel Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
+
+COMMENT=	"astrology program for X11 and alpha-numeric terminals"
 
 DISTNAME=       ast53unx
 PKGNAME=        astrolog-5.30
 CATEGORIES=     misc
-NEED_VERSION=	1.336
+NEED_VERSION=	1.402
 
 MASTER_SITES=   http://www.astrolog.org/ftp/ephem/ \
 		http://www.astrolog.org/ftp/ \

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/16 23:08:47 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 02:30:29 lebel Exp $
+
+COMMENT=	"module to obtain financial quotes from exchanges"
 
 DISTNAME=	Finance-Quote-1.05
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	misc perl5
-NEED_VERSION=	1.351
+NEED_VERSION=	1.402
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Finance

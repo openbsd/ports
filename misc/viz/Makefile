@@ -3,12 +3,14 @@
 # Date created:                      10 Nov 1999
 # Whom:                              Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.6 2000/10/09 07:44:35 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2001/05/06 02:31:16 lebel Exp $
 #
+
+COMMENT=	"Convert invisible (binary) characters to a visible form"
 
 DISTNAME=	viz-1.1.1
 CATEGORIES=	misc
-NEED_VERSION=   1.319
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 EXTRACT_SUFX=	.tgz
 

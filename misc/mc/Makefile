@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2001/03/05 06:37:48 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 02:30:12 lebel Exp $
+
+COMMENT=	"free Norton Commander Clone with many useful features"
 
 DISTNAME=		mc-4.5.51
 CATEGORIES=		misc
-NEED_VERSION=		1.355
+NEED_VERSION=		1.402
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/mc
 

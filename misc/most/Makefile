@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/01/02 15:47:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/06 02:30:19 lebel Exp $
+
+COMMENT=	"browse or page through a text file"
 
 DISTNAME=	most-4.9.0
 CATEGORIES=	misc
-NEED_VERSION=	1.330
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/most/ \
 		http://openbsd.rutgers.edu/
 

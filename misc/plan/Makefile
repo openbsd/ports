@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/04/18 15:01:15 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/05/06 02:30:47 lebel Exp $
 #
+
+COMMENT=	"X11/Motif schedule planner with calendar"
 
 DISTNAME=	plan-1.6.1
 CATEGORIES=	misc
-NEED_VERSION=	1.400
+NEED_VERSION=	1.402
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

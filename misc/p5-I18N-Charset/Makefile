@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/27 09:34:53 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 02:30:32 lebel Exp $
+
+COMMENT=	"module to map charset names registered with IANA"
 
 DISTNAME=	I18N-Charset-1.07
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	misc perl5
-NEED_VERSION=	1.351
+NEED_VERSION=	1.402
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

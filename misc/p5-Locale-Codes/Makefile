@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/27 09:31:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 02:30:40 lebel Exp $
+
+COMMENT=	"module to provide access to ISO3166 and ISO639 codes"
 
 DISTNAME=	Locale-Codes-1.06
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	misc perl5
-NEED_VERSION=	1.351
+NEED_VERSION=	1.402
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

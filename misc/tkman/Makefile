@@ -3,13 +3,15 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:32 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 02:31:09 lebel Exp $
 #
+
+COMMENT=	"Tcl/Tk-based manual browser"
 
 DISTNAME=	tkman
 PKGNAME=	tkman-2.1
 CATEGORIES=	misc 
-NEED_VERSION=	1.309
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://tkman.sourceforge.net/pub/tkman/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>

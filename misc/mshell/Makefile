@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:42:50 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 02:30:22 lebel Exp $
 # Original from: Angelos D. Keromytis
+
+COMMENT=	"Unix menuing shell"
 
 DISTNAME=	mshell
 PKGNAME=	mshell-1.0
 CATEGORIES=	misc
-NEED_VERSION=	1.191
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://src.doc.ic.ac.uk/usenet/alt.sources/articles/07000-07999/
 DISTFILES=	7432.Z
 WRKDIST=	${WRKDIR}

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2001/03/23 15:56:04 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2001/05/06 02:29:54 lebel Exp $
+
+COMMENT=	"creates CD's on a CD-Recorder"
 
 # It's pretty easy to add other architectures,
 # mail me if you miss a particular one.
@@ -6,7 +8,7 @@ ONLY_FOR_ARCHS=	alpha amiga arc i386 mac68k mvme68k powerpc sparc sun3
 
 DISTNAME=	cdrecord-1.9
 CATEGORIES=	misc
-NEED_VERSION=	1.336
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/
 
 MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
@@ -26,7 +28,9 @@ OBJDIR=		OBJ/${MACHINE}-openbsd-$(CC)
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cdrecord
 	${INSTALL_PROGRAM} ${WRKSRC}/cdrecord/${OBJDIR}/cdrecord ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/cdda2wav/${OBJDIR}/cdda2wav ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cdda2wav/cdda2wav.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/cdrecord
 
 .include <bsd.port.mk>

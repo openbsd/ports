@@ -2,13 +2,15 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 2000/12/28 03:31:20 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 02:31:26 lebel Exp $
 #
+
+COMMENT=	"animated simulation of an ideal gas"
 
 DISTNAME=	xgas
 PKGNAME=        xgas-1.0
 CATEGORIES=     misc
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/demos
 

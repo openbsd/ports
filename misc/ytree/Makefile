@@ -1,9 +1,11 @@
 # $OpenBSD:
 # $FreeBSD: ports/misc/ytree/Makefile,v 1.10 2000/04/30 20:15:23 steve Exp $
 
+COMMENT=	"DOS-XTREE(tm) look-a-like file manager"
+
 DISTNAME=	ytree-1.71
 CATEGORIES=	misc
-NEED_VERSION=	1.348
+NEED_VERSION=	1.402
 HOMEPAGE=	http://www.han.de/~werner/ytree.html
 
 MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/16 18:03:51 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 02:31:35 lebel Exp $
+
+COMMENT=	"filemanager for X Window"
 
 DISTNAME=	xnc-4.4.0
 DISTFILES=      ${DISTNAME}.src${EXTRACT_SUFX}
 CATEGORIES=	misc x11
-NEED_VERSION=	1.348
+NEED_VERSION=	1.402
 
 MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 

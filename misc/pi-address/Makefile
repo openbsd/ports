@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/04 21:54:10 jakob Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 02:30:44 lebel Exp $
+
+COMMENT=	"PalmPilot address database editor"
 
 DISTNAME=	pi-address-0.4.0
 CATEGORIES=	misc x11
-NEED_VERSION=	1.322
+NEED_VERSION=	1.402
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2001/02/27 22:32:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 02:30:15 lebel Exp $
+
+COMMENT=	"move/copy/append/link multiple files with wildcards"
 
 DISTNAME=	mmv
 PKGNAME=	mmv-1.01b
 CATEGORIES=	misc
-NEED_VERSION=	1.191
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.unix/volume21/mmv/
 DISTFILES=	part01.Z part02.Z
 

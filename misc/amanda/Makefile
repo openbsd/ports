@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2001/03/16 05:55:38 beck Exp $
+# $OpenBSD: Makefile,v 1.16 2001/05/06 02:29:37 lebel Exp $
+
+COMMENT=	"Advanced Maryland Automatic Network Disk Archiver"
 
 DISTNAME=	amanda-2.4.1p1
 CATEGORIES=	misc
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 FAKE=No
 
 
