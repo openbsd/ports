@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/06/23 14:17:40 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/07/08 18:36:23 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-2.1.1
@@ -69,7 +69,6 @@ do-install:
 	if [ -f libqt.so.2.1.1 ]; then \
 		ln -f libqt.so.2.1.1 libqt.so.2.11; \
 		${INSTALL_DATA} libqt.so.2.11 ${PREFIX}/lib/qt2; \
-		ln -s ${TRUEPREFIX}/lib/qt2/libqt.so.2.11 ${PREFIX}/lib; \
 	fi
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/moc ${QT_LIBDIR}/bin
 	ln -s ${TRUEPREFIX}/lib/qt2/bin/moc ${PREFIX}/bin/moc2

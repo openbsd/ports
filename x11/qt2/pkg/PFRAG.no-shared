@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.no-shared,v 1.1.1.1 2000/06/22 23:53:44 espie Exp $
-@pkgcfl qt-*
-lib/libqt.a
+@comment $OpenBSD: PFRAG.no-shared,v 1.2 2000/07/08 18:36:23 espie Exp $
+lib/qt2/libqt.a

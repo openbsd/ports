@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2000/06/25 01:43:19 brad Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.4 2000/07/08 18:36:23 espie Exp $
 lib/qt2/libqt.so.2.11
-lib/libqt.so.2.11
-@exec /sbin/ldconfig -m %B
+NEWDYNLIBDIR(%B)
