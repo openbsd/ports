@@ -3,7 +3,7 @@
 # Date created:         18 Nov 1997
 # Whom:                 ejovi
 #
-# $OpenBSD: Makefile,v 1.5 1998/05/20 08:22:48 angelos Exp $
+# $OpenBSD: Makefile,v 1.6 1998/05/31 00:42:17 angelos Exp $
 #
 
 DISTNAME=       rman-3.0.5
@@ -19,8 +19,8 @@ NO_CDROM=	"License required"
 MAN1=		rman.1
 
 post-install:
-	@strip ${PREFIX}/bin/rman
-	@chmod 755 $(PREFIX}/bin/rman
-	@chmod 644 ${PREFIX}/man/man1/rman.1
+	strip ${PREFIX}/bin/rman
+	chmod 755 ${PREFIX}/bin/rman
+	chmod 644 ${PREFIX}/man/man1/rman.1
 
 .include <bsd.port.mk>
