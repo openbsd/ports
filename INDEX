@@ -545,6 +545,7 @@ portscanner-1.0|security/portscanner||simple and easy to use TCP port scanner|se
 radiusniff-0.2|security/radiusniff||radius sniffer|security/radiusniff/pkg/DESCR|nny@sinister.com|security|||any|n|y|n|y
 rdp-1.0|security/rdp||ICMP router discovery protocol spoofer|security/rdp/pkg/DESCR|dugsong@monkey.org|security|libnet-1.0||any|n|y|n|y
 rsaref-2.0|security/rsaref||encryption/authentication library, RSA/MDX/DES|security/rsaref/pkg/DESCR|niklas@openbsd.org|security|||any|n|y|n|y
+sftp-0.8.1|security/sftp||Ftp replacement that runs over a ssh tunnel|security/sftp/pkg/DESCR|markus@openbsd.org|net security|||any|y|y|y|y
 smurflog-2.1|security/smurflog||a program to assist logging of smurf attacks|security/smurflog/pkg/DESCR|todd@OpenBSD.ORG|net security|||any|y|y|y|y
 socks5-1.0.10|security/socks5||SOCKS v5 application layer gateway and clients|security/socks5/pkg/DESCR|ports@openbsd.org|security net|||any|n|n|n|n
 ssh-1.2.27-intl|security/ssh,intl||secure shell client and server (remote login program)|security/ssh/pkg/DESCR|todd@openbsd.org|security net|||any|n|y|n|y
