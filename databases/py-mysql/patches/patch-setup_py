@@ -1,0 +1,11 @@
+--- setup.py.orig	Fri Apr  6 00:05:43 2001
++++ setup.py	Fri Apr  6 00:06:01 2001
+@@ -24,7 +24,7 @@
+     libraries = [mysqlclient, "z"]
+     runtime_library_dirs = []
+     extra_objects = []
+-elif sys.platform == "freebsd4": 
++elif sys.platform in ("freebsd4", "openbsd2"): 
+     include_dirs = ['/usr/local/include/mysql']
+     library_dirs = ['/usr/local/lib/mysql']
+     libraries = [mysqlclient, "z"]
