@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/02/01 23:55:49 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2004/02/02 00:47:20 espie Exp $
 
 COMMENT=		"X11 toolkit, graphic applications"
 COMMENT-kamera=		"kde interface to digital cameras"
@@ -26,7 +26,7 @@ RUN_DEPENDS+=	::graphics/povray
 .  elif ${SUBPACKAGE} == ""
 RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
 LIB_DEPENDS+=	Imlib::graphics/imlib \
-		ungif::graphics/libungif \
+		ungif::graphics/libungif
 .  endif
 .else
 LIB_DEPENDS+=Imlib::graphics/imlib \
