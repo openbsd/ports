@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/09/03 16:33:49 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/09/04 01:55:58 angelos Exp $
 
 DISTNAME=       relate
 DISTFILES=	relate-2.0.tar.gz
@@ -13,7 +13,8 @@ LIB_DEPENDS=	tcl80:${PORTSDIR}/lang/tcl80 \
 
 RUN_DEPENDS=	nte:${PORTSDIR}/mbone/nte \
 		vic:${PORTSDIR}/mbone/vic \
-		wbd:${PORTSDIR}/mbone/wbd
+		wbd:${PORTSDIR}/mbone/wbd \
+		rat:${PORTSDIR}/mbone/rat
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile
