@@ -1,5 +1,4 @@
-$OpenBSD
-
+$OpenBSD: patch-nsd_c,v 1.4 2003/02/25 17:46:39 brad Exp $
 Index: nsd.c
 ===================================================================
 RCS file: /cvs/nsd/nsd.c,v
