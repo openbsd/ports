@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.15 1999/05/03 06:41:08 fgsch Exp $
+# $OpenBSD: Makefile,v 1.16 1999/06/12 23:07:44 brad Exp $
 
-DISTNAME=       fetchmail-5.0.3
+DISTNAME=       fetchmail-5.0.4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ccil.org/pub/esr/fetchmail/
 
-MAINTAINER=	ports@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --disable-nls
 .if exists(/usr/lib/libkrb.a) && defined(MAKE_EBONES)
-CONFIGURE_ARGS += --with-kerberos=/usr/include/kerberosIV
+CONFIGURE_ARGS+= --with-kerberos=/usr/include/kerberosIV
 .endif
-CONFIGURE_ENV+= ${SETENV} LDFLAGS="${CFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${CFLAGS}"
 
 FDOC=   ${PREFIX}/share/doc/fetchmail
 

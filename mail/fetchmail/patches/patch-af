@@ -1,6 +1,6 @@
---- imap.c.orig	Mon Feb  1 17:08:33 1999
-+++ imap.c	Wed Feb 10 01:21:12 1999
-@@ -282,7 +282,7 @@
+--- imap.c.orig	Sat Jun 12 18:22:38 1999
++++ imap.c	Sat Jun 12 18:23:19 1999
+@@ -293,7 +293,7 @@
  
      memcpy(session, credentials.session, sizeof session);
      memset(&credentials, 0, sizeof credentials);
