@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2002/12/23 00:37:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.22 2003/04/27 21:00:21 avsm Exp $
 
 COMMENT=	"convert files between character sets and usages"
 
 DISTNAME=	recode-3.6
+PKGNAME=	${DISTNAME}p1
+
 CATEGORIES=	converters textproc
 
 HOMEPAGE=	http://www.gnu.org/software/recode/
@@ -27,6 +29,9 @@ PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
 		patch-*
 
 REGRESS_DEPENDS=	:python-*:lang/python
+
+post-extract:
+	@cd ${WRKSRC}/lib && cp -p error.c ../src
 
 post-regress:
 	@cd ${WRKBUILD}/tests && ${MAKE} \
