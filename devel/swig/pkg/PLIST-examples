@@ -1,0 +1,495 @@
+@comment $OpenBSD: PLIST-examples,v 1.1 2001/09/02 13:53:45 kevlo Exp $
+share/examples/swig/C++/Java/Makefile
+share/examples/swig/C++/Python/Makefile
+share/examples/swig/C++/class/cpptest.H
+share/examples/swig/C++/common.mk
+share/examples/swig/C++/interface/cpptest.i
+share/examples/swig/C++/test_conf.py
+share/examples/swig/C++/test_conf.py.in
+share/examples/swig/C++/test_repo/constructor.py
+share/examples/swig/C++/test_repo/constructor_user_type.py
+share/examples/swig/C++/test_repo/inheritence_map_to_base_class.py
+share/examples/swig/C++/test_repo/object_method.py
+share/examples/swig/C++/test_repo/object_method_user_type.py
+share/examples/swig/C++/test_repo/primitive_method.py
+share/examples/swig/C++/test_repo/primitive_method_user_type.py
+share/examples/swig/C++/typemaps/MyString_typemap.i
+share/examples/swig/GIFPlot/Guile/full/Makefile
+share/examples/swig/GIFPlot/Guile/full/README
+share/examples/swig/GIFPlot/Guile/full/cmap
+share/examples/swig/GIFPlot/Guile/full/gifplot.i
+share/examples/swig/GIFPlot/Guile/full/runme.scm
+share/examples/swig/GIFPlot/Guile/simple/Makefile
+share/examples/swig/GIFPlot/Guile/simple/README
+share/examples/swig/GIFPlot/Guile/simple/runme.scm
+share/examples/swig/GIFPlot/Guile/simple/simple.i
+share/examples/swig/GIFPlot/Include/gifplot.h
+share/examples/swig/GIFPlot/Interface/gifplot.i
+share/examples/swig/GIFPlot/Java/Makefile
+share/examples/swig/GIFPlot/Java/README
+share/examples/swig/GIFPlot/Java/cm15
+share/examples/swig/GIFPlot/Java/cmap
+share/examples/swig/GIFPlot/Java/gifplot.i
+share/examples/swig/GIFPlot/Java/ortho.java
+share/examples/swig/GIFPlot/Java/shadow.java
+share/examples/swig/GIFPlot/Java/simple.java
+share/examples/swig/GIFPlot/LICENSE
+share/examples/swig/GIFPlot/Lib/Makefile
+share/examples/swig/GIFPlot/Lib/Makefile.in
+share/examples/swig/GIFPlot/Lib/color.c
+share/examples/swig/GIFPlot/Lib/font.c
+share/examples/swig/GIFPlot/Lib/frame.c
+share/examples/swig/GIFPlot/Lib/gif.c
+share/examples/swig/GIFPlot/Lib/makefile.msc
+share/examples/swig/GIFPlot/Lib/matrix.c
+share/examples/swig/GIFPlot/Lib/pixmap.c
+share/examples/swig/GIFPlot/Lib/plot2d.c
+share/examples/swig/GIFPlot/Lib/plot3d.c
+share/examples/swig/GIFPlot/Makefile
+share/examples/swig/GIFPlot/Makefile.in
+share/examples/swig/GIFPlot/Perl/full/Makefile
+share/examples/swig/GIFPlot/Perl/full/README
+share/examples/swig/GIFPlot/Perl/full/cmap
+share/examples/swig/GIFPlot/Perl/full/gifplot.i
+share/examples/swig/GIFPlot/Perl/full/runme.pl
+share/examples/swig/GIFPlot/Perl/shadow/Makefile
+share/examples/swig/GIFPlot/Perl/shadow/README
+share/examples/swig/GIFPlot/Perl/shadow/cmap
+share/examples/swig/GIFPlot/Perl/shadow/runme.pl
+share/examples/swig/GIFPlot/Perl/simple/Makefile
+share/examples/swig/GIFPlot/Perl/simple/README
+share/examples/swig/GIFPlot/Perl/simple/runme.pl
+share/examples/swig/GIFPlot/Perl/simple/simple.i
+share/examples/swig/GIFPlot/Python/full/Makefile
+share/examples/swig/GIFPlot/Python/full/README
+share/examples/swig/GIFPlot/Python/full/cmap
+share/examples/swig/GIFPlot/Python/full/gifplot.i
+share/examples/swig/GIFPlot/Python/full/runme.py
+share/examples/swig/GIFPlot/Python/shadow/Makefile
+share/examples/swig/GIFPlot/Python/shadow/README
+share/examples/swig/GIFPlot/Python/shadow/cmap
+share/examples/swig/GIFPlot/Python/shadow/runme.py
+share/examples/swig/GIFPlot/Python/simple/Makefile
+share/examples/swig/GIFPlot/Python/simple/README
+share/examples/swig/GIFPlot/Python/simple/runme.py
+share/examples/swig/GIFPlot/Python/simple/simple.i
+share/examples/swig/GIFPlot/README
+share/examples/swig/GIFPlot/Ruby/full/Makefile
+share/examples/swig/GIFPlot/Ruby/full/README
+share/examples/swig/GIFPlot/Ruby/full/cmap
+share/examples/swig/GIFPlot/Ruby/full/gifplot.i
+share/examples/swig/GIFPlot/Ruby/full/runme.rb
+share/examples/swig/GIFPlot/Ruby/shadow/Makefile
+share/examples/swig/GIFPlot/Ruby/shadow/README
+share/examples/swig/GIFPlot/Ruby/shadow/cmap
+share/examples/swig/GIFPlot/Ruby/shadow/runme.rb
+share/examples/swig/GIFPlot/Ruby/simple/Makefile
+share/examples/swig/GIFPlot/Ruby/simple/README
+share/examples/swig/GIFPlot/Ruby/simple/runme.rb
+share/examples/swig/GIFPlot/Ruby/simple/simple.i
+share/examples/swig/GIFPlot/Tcl/full/Makefile
+share/examples/swig/GIFPlot/Tcl/full/README
+share/examples/swig/GIFPlot/Tcl/full/cmap
+share/examples/swig/GIFPlot/Tcl/full/gifplot.i
+share/examples/swig/GIFPlot/Tcl/full/runme.tcl
+share/examples/swig/GIFPlot/Tcl/mandel/Makefile
+share/examples/swig/GIFPlot/Tcl/mandel/README
+share/examples/swig/GIFPlot/Tcl/mandel/cmap
+share/examples/swig/GIFPlot/Tcl/mandel/display.tcl
+share/examples/swig/GIFPlot/Tcl/mandel/mandel.i
+share/examples/swig/GIFPlot/Tcl/mandel/mandel.tcl
+share/examples/swig/GIFPlot/Tcl/simple/Makefile
+share/examples/swig/GIFPlot/Tcl/simple/README
+share/examples/swig/GIFPlot/Tcl/simple/runme.tcl
+share/examples/swig/GIFPlot/Tcl/simple/simple.i
+share/examples/swig/GIFPlot/config.log
+share/examples/swig/GIFPlot/config.status
+share/examples/swig/GIFPlot/configure
+share/examples/swig/GIFPlot/configure.in
+share/examples/swig/Makefile
+share/examples/swig/Makefile.in
+share/examples/swig/README
+share/examples/swig/guile/Makefile
+share/examples/swig/guile/Makefile.in
+share/examples/swig/guile/README
+share/examples/swig/guile/matrix/Makefile
+share/examples/swig/guile/matrix/README
+share/examples/swig/guile/matrix/main.c
+share/examples/swig/guile/matrix/matrix.c
+share/examples/swig/guile/matrix/matrix.h
+share/examples/swig/guile/matrix/matrix.i
+share/examples/swig/guile/matrix/matrix.scm
+share/examples/swig/guile/matrix/package.i
+share/examples/swig/guile/matrix/vector.c
+share/examples/swig/guile/matrix/vector.h
+share/examples/swig/guile/matrix/vector.i
+share/examples/swig/guile/port/Makefile
+share/examples/swig/guile/port/README
+share/examples/swig/guile/port/port.c
+share/examples/swig/guile/port/port.i
+share/examples/swig/guile/port/port.scm
+share/examples/swig/guile/simple/Makefile
+share/examples/swig/guile/simple/README
+share/examples/swig/guile/simple/example.c
+share/examples/swig/guile/simple/example.i
+share/examples/swig/guile/simple/example.scm
+share/examples/swig/guile/test-suite/Makefile
+share/examples/swig/guile/test-suite/Makefile.in
+share/examples/swig/guile/test-suite/README
+share/examples/swig/guile/test-suite/casts.i
+share/examples/swig/guile/test-suite/casts.scm
+share/examples/swig/guile/test-suite/char-constant.i
+share/examples/swig/guile/test-suite/char-constant.scm
+share/examples/swig/guile/test-suite/const-const.i
+share/examples/swig/guile/test-suite/cplusplus-throw.i
+share/examples/swig/guile/test-suite/import-a.h
+share/examples/swig/guile/test-suite/import-a.i
+share/examples/swig/guile/test-suite/import-b.h
+share/examples/swig/guile/test-suite/import-b.i
+share/examples/swig/guile/test-suite/import-main.cc
+share/examples/swig/guile/test-suite/import.scm
+share/examples/swig/guile/test-suite/long-long.i
+share/examples/swig/guile/test-suite/macro-2.i
+share/examples/swig/guile/test-suite/name.i
+share/examples/swig/guile/test-suite/name.scm
+share/examples/swig/guile/test-suite/pointer-reference.i
+share/examples/swig/guile/test-suite/template-whitespace.i
+share/examples/swig/index.html
+share/examples/swig/java/class/Makefile
+share/examples/swig/java/class/example.cxx
+share/examples/swig/java/class/example.h
+share/examples/swig/java/class/example.i
+share/examples/swig/java/class/index.html
+share/examples/swig/java/class/main.java
+share/examples/swig/java/constants/Makefile
+share/examples/swig/java/constants/example.i
+share/examples/swig/java/constants/index.html
+share/examples/swig/java/constants/main.java
+share/examples/swig/java/enum/Makefile
+share/examples/swig/java/enum/example.cxx
+share/examples/swig/java/enum/example.h
+share/examples/swig/java/enum/example.i
+share/examples/swig/java/enum/index.html
+share/examples/swig/java/enum/main.java
+share/examples/swig/java/index.html
+share/examples/swig/java/native/Makefile
+share/examples/swig/java/native/example.i
+share/examples/swig/java/native/index.html
+share/examples/swig/java/native/main.java
+share/examples/swig/java/reference/Makefile
+share/examples/swig/java/reference/example.cxx
+share/examples/swig/java/reference/example.h
+share/examples/swig/java/reference/example.i
+share/examples/swig/java/reference/index.html
+share/examples/swig/java/reference/main.java
+share/examples/swig/java/simple/Makefile
+share/examples/swig/java/simple/example.c
+share/examples/swig/java/simple/example.i
+share/examples/swig/java/simple/index.html
+share/examples/swig/java/simple/main.java
+share/examples/swig/java/typemap/Makefile
+share/examples/swig/java/typemap/example.i
+share/examples/swig/java/typemap/index.html
+share/examples/swig/java/typemap/main.java
+share/examples/swig/mzscheme/simple/Makefile
+share/examples/swig/mzscheme/simple/README
+share/examples/swig/mzscheme/simple/example.c
+share/examples/swig/mzscheme/simple/example.i
+share/examples/swig/mzscheme/simple/example.scm
+share/examples/swig/perl5/class/Makefile
+share/examples/swig/perl5/class/example.cxx
+share/examples/swig/perl5/class/example.h
+share/examples/swig/perl5/class/example.i
+share/examples/swig/perl5/class/example.pl
+share/examples/swig/perl5/class/index.html
+share/examples/swig/perl5/constants/Makefile
+share/examples/swig/perl5/constants/example.i
+share/examples/swig/perl5/constants/example.pl
+share/examples/swig/perl5/constants/index.html
+share/examples/swig/perl5/funcptr/Makefile
+share/examples/swig/perl5/funcptr/example.c
+share/examples/swig/perl5/funcptr/example.h
+share/examples/swig/perl5/funcptr/example.i
+share/examples/swig/perl5/funcptr/example.pl
+share/examples/swig/perl5/funcptr/index.html
+share/examples/swig/perl5/index.html
+share/examples/swig/perl5/pointer-cxx/Makefile
+share/examples/swig/perl5/pointer-cxx/README
+share/examples/swig/perl5/pointer-cxx/example.c
+share/examples/swig/perl5/pointer-cxx/example.i
+share/examples/swig/perl5/pointer-cxx/example.pl
+share/examples/swig/perl5/pointer/Makefile
+share/examples/swig/perl5/pointer/example.c
+share/examples/swig/perl5/pointer/example.i
+share/examples/swig/perl5/pointer/example.pl
+share/examples/swig/perl5/pointer/index.html
+share/examples/swig/perl5/reference/Makefile
+share/examples/swig/perl5/reference/example.cxx
+share/examples/swig/perl5/reference/example.h
+share/examples/swig/perl5/reference/example.i
+share/examples/swig/perl5/reference/example.pl
+share/examples/swig/perl5/reference/index.html
+share/examples/swig/perl5/simple/Makefile
+share/examples/swig/perl5/simple/example.c
+share/examples/swig/perl5/simple/example.i
+share/examples/swig/perl5/simple/example.pl
+share/examples/swig/perl5/simple/index.html
+share/examples/swig/perl5/value/Makefile
+share/examples/swig/perl5/value/example.c
+share/examples/swig/perl5/value/example.h
+share/examples/swig/perl5/value/example.i
+share/examples/swig/perl5/value/example.pl
+share/examples/swig/perl5/value/index.html
+share/examples/swig/perl5/variables/Makefile
+share/examples/swig/perl5/variables/example.c
+share/examples/swig/perl5/variables/example.h
+share/examples/swig/perl5/variables/example.i
+share/examples/swig/perl5/variables/example.pl
+share/examples/swig/perl5/variables/index.html
+share/examples/swig/python/class/Makefile
+share/examples/swig/python/class/example.cxx
+share/examples/swig/python/class/example.h
+share/examples/swig/python/class/example.i
+share/examples/swig/python/class/example.py
+share/examples/swig/python/class/index.html
+share/examples/swig/python/constants/Makefile
+share/examples/swig/python/constants/example.i
+share/examples/swig/python/constants/example.py
+share/examples/swig/python/constants/index.html
+share/examples/swig/python/enum/Makefile
+share/examples/swig/python/enum/example.cxx
+share/examples/swig/python/enum/example.h
+share/examples/swig/python/enum/example.i
+share/examples/swig/python/enum/example.py
+share/examples/swig/python/enum/index.html
+share/examples/swig/python/funcptr/Makefile
+share/examples/swig/python/funcptr/example.c
+share/examples/swig/python/funcptr/example.h
+share/examples/swig/python/funcptr/example.i
+share/examples/swig/python/funcptr/example.py
+share/examples/swig/python/funcptr/index.html
+share/examples/swig/python/index.html
+share/examples/swig/python/pointer/Makefile
+share/examples/swig/python/pointer/example.c
+share/examples/swig/python/pointer/example.i
+share/examples/swig/python/pointer/example.py
+share/examples/swig/python/pointer/index.html
+share/examples/swig/python/reference/Makefile
+share/examples/swig/python/reference/example.cxx
+share/examples/swig/python/reference/example.h
+share/examples/swig/python/reference/example.i
+share/examples/swig/python/reference/example.py
+share/examples/swig/python/reference/index.html
+share/examples/swig/python/shadow/Makefile
+share/examples/swig/python/shadow/example.cxx
+share/examples/swig/python/shadow/example.h
+share/examples/swig/python/shadow/example.i
+share/examples/swig/python/shadow/index.html
+share/examples/swig/python/shadow/runme.py
+share/examples/swig/python/simple/Makefile
+share/examples/swig/python/simple/example.c
+share/examples/swig/python/simple/example.i
+share/examples/swig/python/simple/example.py
+share/examples/swig/python/simple/index.html
+share/examples/swig/python/value/Makefile
+share/examples/swig/python/value/example.c
+share/examples/swig/python/value/example.h
+share/examples/swig/python/value/example.i
+share/examples/swig/python/value/index.html
+share/examples/swig/python/variables/Makefile
+share/examples/swig/python/variables/example.c
+share/examples/swig/python/variables/example.h
+share/examples/swig/python/variables/example.i
+share/examples/swig/python/variables/example.py
+share/examples/swig/python/variables/index.html
+share/examples/swig/ruby/class/Makefile
+share/examples/swig/ruby/class/example.cxx
+share/examples/swig/ruby/class/example.h
+share/examples/swig/ruby/class/example.i
+share/examples/swig/ruby/class/index.html
+share/examples/swig/ruby/class/runme.rb
+share/examples/swig/ruby/constants/Makefile
+share/examples/swig/ruby/constants/example.i
+share/examples/swig/ruby/constants/index.html
+share/examples/swig/ruby/constants/run.rb
+share/examples/swig/ruby/enum/Makefile
+share/examples/swig/ruby/enum/example.cxx
+share/examples/swig/ruby/enum/example.h
+share/examples/swig/ruby/enum/example.i
+share/examples/swig/ruby/enum/index.html
+share/examples/swig/ruby/enum/runme.rb
+share/examples/swig/ruby/funcptr/Makefile
+share/examples/swig/ruby/funcptr/example.c
+share/examples/swig/ruby/funcptr/example.h
+share/examples/swig/ruby/funcptr/example.i
+share/examples/swig/ruby/funcptr/index.html
+share/examples/swig/ruby/funcptr/runme.rb
+share/examples/swig/ruby/index.html
+share/examples/swig/ruby/pointer/Makefile
+share/examples/swig/ruby/pointer/example.c
+share/examples/swig/ruby/pointer/example.i
+share/examples/swig/ruby/pointer/index.html
+share/examples/swig/ruby/pointer/runme.rb
+share/examples/swig/ruby/reference/Makefile
+share/examples/swig/ruby/reference/example.cxx
+share/examples/swig/ruby/reference/example.h
+share/examples/swig/ruby/reference/example.i
+share/examples/swig/ruby/reference/index.html
+share/examples/swig/ruby/reference/runme.rb
+share/examples/swig/ruby/simple/Makefile
+share/examples/swig/ruby/simple/example.c
+share/examples/swig/ruby/simple/example.i
+share/examples/swig/ruby/simple/index.html
+share/examples/swig/ruby/simple/run.rb
+share/examples/swig/ruby/value/Makefile
+share/examples/swig/ruby/value/example.c
+share/examples/swig/ruby/value/example.h
+share/examples/swig/ruby/value/example.i
+share/examples/swig/ruby/value/index.html
+share/examples/swig/ruby/value/runme.rb
+share/examples/swig/ruby/variables/Makefile
+share/examples/swig/ruby/variables/example.c
+share/examples/swig/ruby/variables/example.h
+share/examples/swig/ruby/variables/example.i
+share/examples/swig/ruby/variables/index.html
+share/examples/swig/ruby/variables/runme.rb
+share/examples/swig/tcl/class/Makefile
+share/examples/swig/tcl/class/example.cxx
+share/examples/swig/tcl/class/example.h
+share/examples/swig/tcl/class/example.i
+share/examples/swig/tcl/class/example1.tcl
+share/examples/swig/tcl/class/example2.tcl
+share/examples/swig/tcl/class/index.html
+share/examples/swig/tcl/constants/Makefile
+share/examples/swig/tcl/constants/example.i
+share/examples/swig/tcl/constants/example.tcl
+share/examples/swig/tcl/constants/index.html
+share/examples/swig/tcl/enum/Makefile
+share/examples/swig/tcl/enum/example.cxx
+share/examples/swig/tcl/enum/example.h
+share/examples/swig/tcl/enum/example.i
+share/examples/swig/tcl/enum/example.tcl
+share/examples/swig/tcl/enum/index.html
+share/examples/swig/tcl/funcptr/Makefile
+share/examples/swig/tcl/funcptr/example.c
+share/examples/swig/tcl/funcptr/example.h
+share/examples/swig/tcl/funcptr/example.i
+share/examples/swig/tcl/funcptr/example.tcl
+share/examples/swig/tcl/funcptr/index.html
+share/examples/swig/tcl/index.html
+share/examples/swig/tcl/pointer/Makefile
+share/examples/swig/tcl/pointer/example.c
+share/examples/swig/tcl/pointer/example.i
+share/examples/swig/tcl/pointer/example.tcl
+share/examples/swig/tcl/pointer/index.html
+share/examples/swig/tcl/reference/Makefile
+share/examples/swig/tcl/reference/example.cxx
+share/examples/swig/tcl/reference/example.h
+share/examples/swig/tcl/reference/example.i
+share/examples/swig/tcl/reference/example.tcl
+share/examples/swig/tcl/reference/index.html
+share/examples/swig/tcl/simple/Makefile
+share/examples/swig/tcl/simple/example.c
+share/examples/swig/tcl/simple/example.i
+share/examples/swig/tcl/simple/example.tcl
+share/examples/swig/tcl/simple/index.html
+share/examples/swig/tcl/value/Makefile
+share/examples/swig/tcl/value/example.c
+share/examples/swig/tcl/value/example.h
+share/examples/swig/tcl/value/example.i
+share/examples/swig/tcl/value/example.tcl
+share/examples/swig/tcl/value/index.html
+share/examples/swig/tcl/variables/Makefile
+share/examples/swig/tcl/variables/example.c
+share/examples/swig/tcl/variables/example.h
+share/examples/swig/tcl/variables/example.i
+share/examples/swig/tcl/variables/example.tcl
+share/examples/swig/tcl/variables/index.html
+@dirrm share/examples/swig/tcl/variables
+@dirrm share/examples/swig/tcl/value
+@dirrm share/examples/swig/tcl/simple
+@dirrm share/examples/swig/tcl/reference
+@dirrm share/examples/swig/tcl/pointer
+@dirrm share/examples/swig/tcl/funcptr
+@dirrm share/examples/swig/tcl/enum
+@dirrm share/examples/swig/tcl/constants
+@dirrm share/examples/swig/tcl/class
+@dirrm share/examples/swig/tcl
+@dirrm share/examples/swig/ruby/variables
+@dirrm share/examples/swig/ruby/value
+@dirrm share/examples/swig/ruby/simple
+@dirrm share/examples/swig/ruby/reference
+@dirrm share/examples/swig/ruby/pointer
+@dirrm share/examples/swig/ruby/funcptr
+@dirrm share/examples/swig/ruby/enum
+@dirrm share/examples/swig/ruby/constants
+@dirrm share/examples/swig/ruby/class
+@dirrm share/examples/swig/ruby
+@dirrm share/examples/swig/python/variables
+@dirrm share/examples/swig/python/value
+@dirrm share/examples/swig/python/simple
+@dirrm share/examples/swig/python/shadow
+@dirrm share/examples/swig/python/reference
+@dirrm share/examples/swig/python/pointer
+@dirrm share/examples/swig/python/funcptr
+@dirrm share/examples/swig/python/enum
+@dirrm share/examples/swig/python/constants
+@dirrm share/examples/swig/python/class
+@dirrm share/examples/swig/python
+@dirrm share/examples/swig/perl5/variables
+@dirrm share/examples/swig/perl5/value
+@dirrm share/examples/swig/perl5/simple
+@dirrm share/examples/swig/perl5/reference
+@dirrm share/examples/swig/perl5/pointer-cxx
+@dirrm share/examples/swig/perl5/pointer
+@dirrm share/examples/swig/perl5/funcptr
+@dirrm share/examples/swig/perl5/constants
+@dirrm share/examples/swig/perl5/class
+@dirrm share/examples/swig/perl5
+@dirrm share/examples/swig/mzscheme/simple
+@dirrm share/examples/swig/mzscheme
+@dirrm share/examples/swig/java/typemap
+@dirrm share/examples/swig/java/simple
+@dirrm share/examples/swig/java/reference
+@dirrm share/examples/swig/java/native
+@dirrm share/examples/swig/java/enum
+@dirrm share/examples/swig/java/constants
+@dirrm share/examples/swig/java/class
+@dirrm share/examples/swig/java
+@dirrm share/examples/swig/guile/test-suite
+@dirrm share/examples/swig/guile/simple
+@dirrm share/examples/swig/guile/port
+@dirrm share/examples/swig/guile/matrix
+@dirrm share/examples/swig/guile
+@dirrm share/examples/swig/GIFPlot/Tcl/simple
+@dirrm share/examples/swig/GIFPlot/Tcl/mandel
+@dirrm share/examples/swig/GIFPlot/Tcl/full
+@dirrm share/examples/swig/GIFPlot/Tcl
+@dirrm share/examples/swig/GIFPlot/Ruby/simple
+@dirrm share/examples/swig/GIFPlot/Ruby/shadow
+@dirrm share/examples/swig/GIFPlot/Ruby/full
+@dirrm share/examples/swig/GIFPlot/Ruby
+@dirrm share/examples/swig/GIFPlot/Python/simple
+@dirrm share/examples/swig/GIFPlot/Python/shadow
+@dirrm share/examples/swig/GIFPlot/Python/full
+@dirrm share/examples/swig/GIFPlot/Python
+@dirrm share/examples/swig/GIFPlot/Perl/simple
+@dirrm share/examples/swig/GIFPlot/Perl/shadow
+@dirrm share/examples/swig/GIFPlot/Perl/full
+@dirrm share/examples/swig/GIFPlot/Perl
+@dirrm share/examples/swig/GIFPlot/Lib
+@dirrm share/examples/swig/GIFPlot/Java
+@dirrm share/examples/swig/GIFPlot/Interface
+@dirrm share/examples/swig/GIFPlot/Include
+@dirrm share/examples/swig/GIFPlot/Guile/simple
+@dirrm share/examples/swig/GIFPlot/Guile/full
+@dirrm share/examples/swig/GIFPlot/Guile
+@dirrm share/examples/swig/GIFPlot
+@dirrm share/examples/swig/C++/typemaps
+@dirrm share/examples/swig/C++/test_repo
+@dirrm share/examples/swig/C++/interface
+@dirrm share/examples/swig/C++/class
+@dirrm share/examples/swig/C++/Python
+@dirrm share/examples/swig/C++/Java
+@dirrm share/examples/swig/C++
+@dirrm share/examples/swig

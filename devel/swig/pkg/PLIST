@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/10/05 03:16:20 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/09/02 13:53:45 kevlo Exp $
 bin/swig
+lib/libswigguile.a
+lib/libswigguile.la
 lib/libswigpl.a
 lib/libswigpl.la
 lib/libswigpy.a
@@ -20,14 +22,20 @@ lib/swig1.3/guile/guile.swg
 lib/swig1.3/guile/guiledec.swg
 lib/swig1.3/guile/guilemain.i
 lib/swig1.3/guile/interpreter.i
+lib/swig1.3/guile/list-vector.i
+lib/swig1.3/guile/pointer-in-out.i
 lib/swig1.3/guile/ports.i
 lib/swig1.3/guile/typemaps.i
 lib/swig1.3/java/java.swg
+lib/swig1.3/java/java_arrays.i
+lib/swig1.3/java/stl_string.i
 lib/swig1.3/java/typemaps.i
 lib/swig1.3/malloc.i
 lib/swig1.3/math.i
 lib/swig1.3/memory.i
+lib/swig1.3/mzscheme/mzscheme.i
 lib/swig1.3/mzscheme/mzscheme.swg
+lib/swig1.3/mzscheme/mzschemedec.swg
 lib/swig1.3/mzscheme/typemaps.i
 lib/swig1.3/objc.i
 lib/swig1.3/perl5/Makefile.pl
@@ -45,6 +53,7 @@ lib/swig1.3/python/ptrlang.i
 lib/swig1.3/python/python.swg
 lib/swig1.3/python/typemaps.i
 lib/swig1.3/python/typemaps_old.i
+lib/swig1.3/ruby/Makefile.swig
 lib/swig1.3/ruby/embed.i
 lib/swig1.3/ruby/exception.i
 lib/swig1.3/ruby/extconf.rb
