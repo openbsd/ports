@@ -36,3 +36,5 @@ x13	Start a program defined by CalcStart variable in
 		if yy = 0,1,2,3,4,5,6,7,8,9.
 1zz	Hopefully the other functions are obvious from
         their button graphics.
+
+WWW: ${HOMEPAGE}

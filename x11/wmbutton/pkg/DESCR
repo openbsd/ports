@@ -10,3 +10,5 @@ window manager.
 You need a ~/.wmbutton file, copy a sample from ${SAMPLE_DIR}.
 
 wmbutton -h gives you usage info.
+
+WWW: ${HOMEPAGE}
