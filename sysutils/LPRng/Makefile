@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2003/04/01 12:35:38 avsm Exp $
+# $OpenBSD: Makefile,v 1.23 2003/05/09 22:50:15 avsm Exp $
 
 COMMENT=	"enhanced printer spooler"
 
-DISTNAME=	LPRng-3.8.20
+DISTNAME=	LPRng-3.8.21
 CATEGORIES=	sysutils print
 MASTER_SITES=	ftp://ftp.lprng.com/pub/LPRng/LPRng/ \
 		ftp://sunsite.ualberta.ca/pub/Mirror/LPRng/ \
