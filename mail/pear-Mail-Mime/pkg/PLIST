@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/05/02 19:51:41 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/08/28 22:33:36 avsm Exp $
 pear/data/Mail_Mime/xmail.dtd
 pear/data/Mail_Mime/xmail.xsl
-pear/lib/.registry/Mail_Mime.reg
+pear/lib/.registry/mail_mime.reg
 pear/lib/Mail/mime.php
 pear/lib/Mail/mimeDecode.php
 pear/lib/Mail/mimePart.php
