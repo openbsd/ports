@@ -2,7 +2,7 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 1999/09/22 10:44:21 espie Exp $
+# $OpenBSD: Makefile,v 1.4 1999/10/31 06:27:48 turan Exp $
 #
 
 NEED_VERSION=	1.116
@@ -18,7 +18,9 @@ MAINTAINER=	angelos@openbsd.org
 
 MANUAL_PACKAGE_BUILD=	RESOLUTION has to be set to 118 240 300 360 400 600
 DIST_SUBDIR=	pkfonts
-EXTRACT_CMD=	/usr/bin/true # extracted directly in install target
+# NO_EXTRACT is waiting for a bsd.port.mk fix to be approved.
+# For the interim, redefine do-extract.
+#NO_EXTRACT=	extracted in install target
 NO_BUILD=	yes
 
 .if !defined(RESOLUTION)
@@ -45,6 +47,9 @@ pre-fetch:
 	@/usr/bin/false
 .endif
 .endif
+
+do-extract:
+	${MKDIR} ${WRKDIR}
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/fonts
