@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/22 22:05:35 brad Exp $
+bin/most
+man/man1/most.1
+share/doc/most/README
+share/doc/most/changes.txt
+share/doc/most/default.rc
+share/doc/most/lesskeys.rc
+share/doc/most/most-fun.txt
+share/doc/most/most.doc
+@dirrm share/doc/most

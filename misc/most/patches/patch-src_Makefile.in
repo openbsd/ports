@@ -1,0 +1,37 @@
+--- src/Makefile.in.orig	Mon May 17 01:27:07 1999
++++ src/Makefile.in	Fri Sep 22 17:42:00 2000
+@@ -39,12 +39,15 @@
+ #----------------------------------------------------------------------------
+ INSTALL		= @INSTALL@
+ INSTALL_DATA	= @INSTALL_DATA@
++
++DESTDIR		= 
++
+ prefix		= @prefix@
+ BIN_DIR		= $(prefix)/bin
+ MAN_DIR		= $(prefix)/man/man1
+ DOC_DIR		= $(prefix)/doc/most
+ 
+-SYS_INITFILE	= $(prefix)/etc/most.conf
++SYS_INITFILE	= @sysconfdir@/most.conf
+ 
+ DOC_FILES = ../most.doc ../README ../most-fun.txt \
+   ../lesskeys.rc ../default.rc ../changes.txt
+@@ -85,12 +88,12 @@
+ distclean: clean
+ 	/bin/rm -rf $(OBJDIR) Makefile sysconf.h
+ install: all $(BIN_DIR)
+-	$(INSTALL) -s $(OBJDIR)/most $(BIN_DIR)
+-	$(INSTALL_DATA) ../most.1 $(MAN_DIR)
+-	$(INSTALL) -d $(DOC_DIR) -m 755
+-	$(INSTALL_DATA) $(DOC_FILES) $(DOC_DIR)
++	$(INSTALL) -s $(OBJDIR)/most $(DESTDIR)$(BIN_DIR)
++	$(INSTALL_DATA) ../most.1 $(DESTDIR)$(MAN_DIR)
++	$(INSTALL) -d -m 755 $(DESTDIR)$(DOC_DIR)
++	$(INSTALL_DATA) $(DOC_FILES) $(DESTDIR)$(DOC_DIR)
+ $(BIN_DIR):
+-	- ../mkinsdir.sh $(BIN_DIR)
++	- ../mkinsdir.sh $(DESTDIR)$(BIN_DIR)
+ # The symlinks target is for my own private use.  It simply creates the object
+ # directory as a symbolic link to a local disk instead of an NFS mounted one.
+ symlinks:

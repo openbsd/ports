@@ -1,0 +1,13 @@
+most is a paging program that displays, one windowful at a
+time,  the  contents  of  a file on a terminal.  It pauses
+after each windowful and prints on the window status  line
+the  screen  the  file  name, current line number, and the
+percentage of the file so far displayed.
+
+Unlike other paging programs, most is capable of  display-
+ing  an arbitrary number of windows as long as each window
+occupies at least two screen lines.  Each window may  con-
+tain the same file or a different file.  In addition, each
+window has its own mode.  For example, one window may dis-
+play  a  file  with its lines wrapped while another may be
+truncating the lines...
