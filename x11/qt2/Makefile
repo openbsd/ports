@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/07/13 21:26:45 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/08/23 01:21:12 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-2.1.1
 PKGNAME=	qt2-1.1
 CATEGORIES=	x11
-NEED_VERSION=	1.310
+NEED_VERSION=	1.320
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 DISTFILES=	qt-x11-2.1.1.tar.gz
 

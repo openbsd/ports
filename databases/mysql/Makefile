@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2000/08/15 18:24:24 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2000/08/23 01:21:11 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 DISTNAME=	mysql-3.22.32
 CATEGORIES=	databases
-NEED_VERSION=	1.310
+NEED_VERSION=	1.320
 MASTER_SITES=	http://web.tryc.on.ca/mysql/Downloads/MySQL-3.22/ \
 		http://mysql.he.net/Downloads/MySQL-3.22/ \
 		http://www.buoy.com/mysql/Downloads/MySQL-3.22/ \
