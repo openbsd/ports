@@ -1,4 +1,4 @@
-y.linux_lib-version
+.linux_lib-version
 bin/bash
 bin/sh
 @exec mkdir -p %D/dev
