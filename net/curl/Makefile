@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2001/09/25 15:00:00 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2001/11/10 04:24:44 brad Exp $
 
 COMMENT=	"get files from FTP, Gopher, HTTP or HTTPS servers"
 
-DISTNAME=	curl-7.9
+DISTNAME=	curl-7.9.1
 CATEGORIES=	net
-NEED_VERSION=	1.460
+NEED_VERSION=	1.486
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/ \
 		ftp://cool.haxx.se/curl/ \
