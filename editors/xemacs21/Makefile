@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2004/06/23 06:29:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2004/06/24 17:21:49 sturm Exp $
 
 COMMENT=		"heavily customizable and extensible editor"
 
-VERSION=		21.4.12
+VERSION=		21.4.15
 DISTNAME=		xemacs-${VERSION}
 CATEGORIES=     	editors
 
@@ -87,7 +87,7 @@ FAKE_FLAGS=	prefix='$${WRKINST}$${DESTDIR}${PREFIX}' \
 GCCARCH=        ${MACHINE_ARCH}-unknown-openbsd${OSREV}
 
 CONFIGURE_ARGS+=	${GCCARCH}
-SUBST_VARS=	GCCARCH
+SUBST_VARS=	GCCARCH VERSION
 
 #### Flavors
 

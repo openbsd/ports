@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib-src_gnuserv_h,v 1.1 2004/06/24 17:21:49 sturm Exp $
+--- lib-src/gnuserv.h.orig	Tue Jun 22 20:56:27 2004
++++ lib-src/gnuserv.h	Tue Jun 22 20:57:41 2004
+@@ -52,7 +52,7 @@
+  */
+ 
+ 
+-#define INTERNET_DOMAIN_SOCKETS
++#undef INTERNET_DOMAIN_SOCKETS
+ #ifdef HAVE_SYS_UN_H
+ #define UNIX_DOMAIN_SOCKETS 
+ /* #define SYSV_IPC  */
