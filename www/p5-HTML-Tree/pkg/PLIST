@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/21 19:39:53 avsm Exp $
+libdata/perl5/site_perl/HTML/AsSubs.pm
+libdata/perl5/site_perl/HTML/Element.pm
+libdata/perl5/site_perl/HTML/Element/traverse.pm
+libdata/perl5/site_perl/HTML/Parse.pm
+libdata/perl5/site_perl/HTML/Tree.pm
+libdata/perl5/site_perl/HTML/TreeBuilder.pm
+man/man3/HTML::AsSubs.3p
+man/man3/HTML::Element.3p
+man/man3/HTML::Element::traverse.3p
+man/man3/HTML::Parse.3p
+man/man3/HTML::Tree.3p
+man/man3/HTML::TreeBuilder.3p
+@dirrm libdata/perl5/site_perl/HTML/Element
