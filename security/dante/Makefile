@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2000/06/27 13:44:38 jakob Exp $
+# $OpenBSD: Makefile,v 1.9 2000/07/04 01:29:29 krw Exp $
 
 DISTNAME=	dante-1.1.2
 CATEGORIES=	security
-NEED_VERSION=	1.302
+NEED_VERSION=	1.310
 
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/
 

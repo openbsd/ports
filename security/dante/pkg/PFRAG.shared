@@ -4,5 +4,4 @@ lib/libsocks.so.1.0
 lib/libdsocks.la
 lib/libdsocks.so
 lib/libdsocks.so.1.0
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
-@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
+DYNLIBDIR(%B)

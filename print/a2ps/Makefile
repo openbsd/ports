@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2000/06/11 02:17:22 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2000/07/04 01:33:56 krw Exp $
 
 DISTNAME=	a2ps-4.13b
 WRKDIST=	${WRKDIR}/a2ps-4.13
 CATEGORIES=	print
-NEED_VERSION=	1.300
+NEED_VERSION=	1.310
 
 MAINTAINER=	weingart@OpenBSD.org
 
