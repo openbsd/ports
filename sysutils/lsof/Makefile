@@ -3,16 +3,13 @@
 # Date created:         25 November 1997
 # Whom:                 Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.1 1997/11/25 23:16:33 angelos Exp $
+# $Id: Makefile,v 1.2 1997/12/21 18:11:37 angelos Exp $
 #
 
 DISTNAME=	lsof_4.15_W
 PKGNAME=	lsof-4.15
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
-		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/  \
-		ftp://ftp.auscert.org.au/pub/mirrors/vic.cc.purdue.edu/lsof/  \
-		ftp://ftp.web.ad.jp/pub/UNIX/tools/lsof/  \
+MASTER_SITES=	ftp://ftp.web.ad.jp/pub/UNIX/tools/lsof/  \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/
 
 MAINTAINER=     angelos@openbsd.org
