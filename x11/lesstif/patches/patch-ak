@@ -1,0 +1,15 @@
+--- lib/Makefile.in.~1~	Tue Aug 11 18:37:09 1998
++++ lib/Makefile.in	Sat Aug 22 00:56:27 1998
+@@ -100,9 +100,9 @@
+ MAINTAINERCLEANFILES=Makefile.in
+ SUBDIRS=	config \
+ 		Xm Mrm Uil \
+-		Xm-2.0 Mrm-2.0 Uil-2.0 \
+-		Xm-2.1 Mrm-2.1 \
+-		Xm-CDE Mrm-CDE 
++#		Xm-2.0 Mrm-2.0 Uil-2.0 \
++#		Xm-2.1 Mrm-2.1 \
++#		Xm-CDE Mrm-CDE 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../include/LTconfig.h
+ CONFIG_CLEAN_FILES = 

@@ -3,7 +3,7 @@
 # Date created:		December 10, 1996
 # Whom:			form@vs.itam.nsc.ru
 #
-# $OpenBSD: Makefile,v 1.12 1998/08/20 20:56:47 marc Exp $
+# $OpenBSD: Makefile,v 1.13 1998/08/22 17:59:53 marc Exp $
 # FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp
 #
 
@@ -22,6 +22,7 @@ USE_X11=	yes
 #
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-debug
+CONFIGURE_ARGS+=	--enable-build-12
 .if (${MACHINE_ARCH} != "alpha")
 CONFIGURE_ARGS+=	--enable-shared
 .endif
@@ -48,21 +49,6 @@ pre-install:
 	        ;; \
 	  esac)
 .endif
-
-post-install:
-	${MKDIR} ${PREFIX}/lib/X11/mwm ${PREFIX}/lib/X11/app-defaults
-	${INSTALL_DATA} ${WRKSRC}/clients/Motif-1.2/mwm/system.mwmrc \
-		${PREFIX}/lib/X11/mwm
-	${INSTALL_DATA} ${WRKSRC}/clients/Motif-1.2/mwm/alt.map ${PREFIX}/lib/X11/mwm
-	${INSTALL_DATA} ${WRKSRC}/clients/Motif-1.2/mwm/Mwm \
-		${PREFIX}/lib/X11/app-defaults/Mwm
-	[ ! -f ${PREFIX}/lib/libXm.so.1.2 ] || \
-		/usr/bin/strip ${PREFIX}/lib/libXm.so.1.2
-	[ ! -f ${PREFIX}/lib/libMrm.so.1.2 ] || \
-		/usr/bin/strip ${PREFIX}/lib/libMrm.so.1.2
-	[ ! -f ${PREFIX}/lib/libXm.so.2.0 ] || \
-		/usr/bin/strip ${PREFIX}/lib/libXm.so.2.0
-	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
 
