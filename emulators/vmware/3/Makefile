@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/11/27 10:39:14 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/01/07 17:28:20 todd Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -6,9 +6,7 @@ COMMENT=	"VMware emulator"
 DISTNAME=	VMware-workstation-3.2.1-2242
 PKGNAME=	vmware-3.2.1_2242p1
 CATEGORIES=	emulators
-MASTER_SITES=	http://vmware-chil.www.conxion.com/software/ \
-		http://vmware-svca.www.conxion.com/software/ \
-		http://vmware-heva.www.conxion.com/software/
+MASTER_SITES=	http://download3.vmware.com/software/wkst/
 MASTER_SITES0=	http://monkey.org/~marius/vmware-openbsd/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		vmware-openbsd-1.3${EXTRACT_SUFX}:0
