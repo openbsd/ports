@@ -2,12 +2,6 @@
 dsniff
 ------
 
-i wrote these tools with honest intentions - to audit my own network,
-and to demonstrate the insecurity of plaintext network protocols.
-please do not abuse this software.
-
-what's here:
-
 arpredirect
 	redirect packets from a target host (or all hosts) on the LAN
 	intended for another host on the LAN by forging ARP replies.
@@ -18,9 +12,7 @@ arpredirect
 
 findgw
 	determine the local gateway of an unknown network via passive
-	sniffing. the results of this program may be used in
-	conjunction with arpredirect to intercept all outgoing traffic
-	on a switch.
+	sniffing.
 
 macof
 	flood the local network with random MAC addresses (causing
@@ -28,12 +20,19 @@ macof
 	sniffing). a straight C port of the original Perl Net::RawIP
 	macof program.
 
+tcpkill
+	kill specified in-progress TCP connections (useful for
+	libnids-based applications which require a full TCP 3-whs for
+	TCB creation).
+
 dsniff
 	simple password sniffer. handles FTP, Telnet, HTTP, POP, IMAP,
-	SNMP, NFS mountd. goes beyond most sniffers in that it
-	minimally parses each application protocol, only saving the
-	"interesting" bits.  also supports full TCP/IP reassembly,
-	courtesy of libnids (all of the following tools do, as well).
+	SNMP, Rlogin, NFS, X11 auth info. goes beyond most sniffers in
+	that it minimally parses each application protocol, only
+	saving the "interesting" bits. uses Berkeley DB as its output
+	file format, logging only unique auth info. supports full
+	TCP/IP reassembly, courtesy of libnids (all of the following
+	tools do, as well).
 
 mailsnarf
 	a fast and easy way to violate the Electronic Communications

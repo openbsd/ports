@@ -3,5 +3,7 @@ sbin/findgw
 sbin/macof
 sbin/dsniff
 sbin/mailsnarf
+sbin/tcpkill
 sbin/urlsnarf
 sbin/webspy
+man/man8/dsniff.8
