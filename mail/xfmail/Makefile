@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/01/25 03:24:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2004/07/19 14:21:39 naddy Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 # $RuOBSD: Makefile,v 1.4 2002/05/18 04:21:36 form Exp $
 
@@ -13,7 +13,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 HOMEPAGE=		http://www.xfmail.org/
 
-AUTOCONF_VERSION=	2.13
+AUTOCONF_VERSION=	2.59
 BUILD_DEPENDS=		::devel/autoconf/${AUTOCONF_VERSION} \
 			::devel/metaauto \
 			::devel/automake
