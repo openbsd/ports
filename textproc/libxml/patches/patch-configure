@@ -1,6 +1,6 @@
---- configure.orig	Tue Jun 19 12:31:45 2001
-+++ configure	Tue Jun 19 12:32:12 2001
-@@ -4026,7 +4026,7 @@
+--- configure.orig	Sat Jun 30 10:54:48 2001
++++ configure	Sat Jun 30 10:55:22 2001
+@@ -4071,7 +4071,7 @@
  /* Override any gcc2 internal prototype to avoid an error.  */
  /* We use char because int might match the return type of a gcc2
      builtin and then its argument prototype would still apply.  */
@@ -9,7 +9,7 @@
  
  int main() {
  
-@@ -4036,7 +4036,7 @@
+@@ -4081,7 +4081,7 @@
  #if defined (__stub_iconv) || defined (__stub___iconv)
  choke me
  #else
@@ -18,7 +18,7 @@
  #endif
  
  ; return 0; }
-@@ -4072,10 +4072,10 @@
+@@ -4117,10 +4117,10 @@
  /* Override any gcc2 internal prototype to avoid an error.  */
  /* We use char because int might match the return type of a gcc2
      builtin and then its argument prototype would still apply.  */
@@ -30,4 +30,4 @@
 +libiconv()
  ; return 0; }
  EOF
- if { (eval echo configure:4082: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+ if { (eval echo configure:4127: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
