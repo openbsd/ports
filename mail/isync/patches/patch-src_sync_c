@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sync_c,v 1.1 2004/04/20 19:11:34 sturm Exp $
+--- src/sync.c.orig	2003-05-06 20:06:37.000000000 -0400
++++ src/sync.c	2004-04-20 00:45:43.000000000 -0400
+@@ -325,7 +325,7 @@ sync_mailbox (mailbox_t * mbox, imap_t *
+ 	    for (;;)
+ 	    {
+ 		/* create new file */
+-		snprintf (path, sizeof (path), "%s/tmp/%ld_%d.%d.%s%s",
++		snprintf (path, sizeof (path), "%s/tmp/%d_%d.%d.%s%s",
+ 			  mbox->path, time (0), MaildirCount++, getpid (),
+ 			  Hostname, suffix);
+ 

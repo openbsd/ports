@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2002/09/12 14:45:33 danh Exp $
+# $OpenBSD: Makefile,v 1.8 2004/04/20 19:11:34 sturm Exp $
 
 COMMENT= 	"synchronize IMAP4 and maildir mailboxes"
 
-DISTNAME=	isync-0.8
+DISTNAME=	isync-0.9.2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.cs.hmc.edu/~me/isync/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=isync/}
 
-HOMEPAGE=	http://www.cs.hmc.edu/~me/isync/
+HOMEPAGE=	http://isync.sourceforge.net/
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -20,6 +21,6 @@ CONFIGURE_STYLE= gnu
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/isync
-	${INSTALL_DATA} ${WRKSRC}/sample.isyncrc ${PREFIX}/share/examples/isync
+	${INSTALL_DATA} ${WRKSRC}/isyncrc.sample ${PREFIX}/share/examples/isync
 
 .include <bsd.port.mk>
