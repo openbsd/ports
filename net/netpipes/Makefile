@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/21 21:09:20 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/07/10 20:48:15 avsm Exp $
 
 COMMENT=	"shell utilities to connect programs to sockets"
 
@@ -7,7 +7,6 @@ CATEGORIES=	net
 NEED_VERSION=	1.515
 
 HOMEPAGE=	http://web.purplefrog.com/~thoth/netpipes/netpipes.html
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/06/07 22:17:56 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2002/07/10 20:48:13 avsm Exp $
 
 COMMENT=	"perl module to validate function/method parameters"
 
@@ -7,8 +7,6 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Attribute/}
-
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

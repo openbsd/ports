@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/09 05:31:40 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2002/07/10 20:48:13 avsm Exp $
 
 COMMENT=	"curses(3) based terminal widgets"
 
@@ -10,7 +10,6 @@ NEED_VERSION=	1.502
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Curses/}
 
 HOMEPAGE=	http://www.odinicfoundation.org/arthur/
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/03/05 22:26:40 angelos Exp $
+# $OpenBSD: Makefile,v 1.8 2002/07/10 20:48:15 avsm Exp $
 
 COMMENT=	"convert HTML pages to PDF/PS format"
 
@@ -7,7 +7,6 @@ CATEGORIES=     	print www
 NEED_VERSION=	1.474
 
 HOMEPAGE=		http://www.easysw.com/htmldoc
-MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

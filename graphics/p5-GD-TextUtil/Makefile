@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/06/09 05:31:44 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2002/07/10 20:48:14 avsm Exp $
 
 COMMENT=	"text utilities for use with GD drawing package"
 
@@ -10,8 +10,6 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=GD/}
 
 BUILD_DEPENDS=	:p5-GD-*:graphics/p5-GD
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

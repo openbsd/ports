@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/07/05 17:15:28 avsm Exp $
+# $OpenBSD: Makefile,v 1.13 2002/07/10 20:48:15 avsm Exp $
 
 COMMENT=	"library to provide LWP https support via OpenSSL"
 
@@ -8,8 +8,6 @@ CATEGORIES=	security perl5
 NEED_VERSION=	1.503
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Crypt/}
-
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

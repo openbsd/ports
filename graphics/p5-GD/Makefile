@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.11 2002/07/09 01:52:09 kevlo Exp $
+#	$OpenBSD: Makefile,v 1.12 2002/07/10 20:48:13 avsm Exp $
 
 COMMENT=	"module to interface with the GD graphics library"
 
@@ -8,8 +8,6 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=GD/}
 
 LIB_DEPENDS=	gd.18::graphics/gd
-
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/06/10 03:14:35 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2002/07/10 20:48:16 avsm Exp $
 
 COMMENT=		"highly customizable e-mail to HTML converter"
 
@@ -8,7 +8,6 @@ CATEGORIES=     	www mail
 NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.mhonarc.org/
-MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

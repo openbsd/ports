@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/09 05:31:51 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2002/07/10 20:48:14 avsm Exp $
 
 COMMENT=	"module to obtain financial quotes from exchanges"
 
@@ -10,7 +10,6 @@ NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Finance/}
 
 HOMEPAGE=	http://finance-quote.sourceforge.net
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 BUILD_DEPENDS=	:p5-HTML-TableExtract-*:www/p5-HTML-TableExtract \
 		:p5-libwww-*:www/p5-libwww

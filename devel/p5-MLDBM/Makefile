@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/06/09 05:31:40 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2002/07/10 20:48:13 avsm Exp $
 
 COMMENT=	"store multi-level hash structure in single-level tied hash"
 
@@ -8,8 +8,6 @@ CATEGORIES=	devel perl5
 NEED_VERSION=	1.515
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=MLDBM/}
-
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 BUILD_DEPENDS=	:p5-FreezeThaw->=0.3:devel/p5-FreezeThaw
 RUN_DEPENDS=	${BUILD_DEPENDS}

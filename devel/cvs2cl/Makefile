@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/03/21 20:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/07/10 20:48:12 avsm Exp $
 # $FreeBSD: ports/devel/cvs2cl/Makefile,v 1.8 2000/07/09 03:15:07 knu Exp $
 
 COMMENT=	"generate GNU-style ChangeLogs from CVS repositories"
@@ -7,8 +7,6 @@ DISTNAME=	cvs2cl-2.30
 CATEGORIES=     devel
 NEED_VERSION=	1.515
 HOMEPAGE=	http://www.red-bean.com/cvs2cl/
-
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 

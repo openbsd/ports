@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/07/09 01:42:45 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2002/07/10 20:48:14 avsm Exp $
 
 COMMENT=	"perl module for an IMAP Client API"
 
@@ -6,8 +6,6 @@ DISTNAME=	Mail-IMAPClient-2.1.4
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Mail/}
-
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 BUILD_DEPENDS=	:p5-Parse-RecDescent-*:devel/p5-Parse-RecDescent
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/06/10 03:14:35 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2002/07/10 20:48:16 avsm Exp $
 
 COMMENT=	"high-performance dynamic web authoring system"
 
@@ -9,7 +9,6 @@ NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
 
 HOMEPAGE=	http://www.masonhq.com/
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

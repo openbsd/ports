@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/06/09 05:32:08 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2002/07/10 20:48:15 avsm Exp $
 
 COMMENT=	"modules for parsing and evaluating XPath statements"
 
@@ -7,8 +7,6 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
-
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 BUILD_DEPENDS=  :p5-XML-Parser->=2.23:textproc/p5-XML-Parser
 RUN_DEPENDS=    ${BUILD_DEPENDS}
