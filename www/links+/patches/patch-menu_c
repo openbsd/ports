@@ -1,0 +1,84 @@
+$OpenBSD: patch-menu_c,v 1.1 2002/09/16 04:11:23 fgsch Exp $
+--- menu.c.orig	Sun Sep 15 10:16:34 2002
++++ menu.c	Sun Sep 15 10:19:02 2002
+@@ -324,7 +324,7 @@ void flush_caches(struct terminal *term,
+ /* jde v historii o psteps polozek dozadu */
+ void go_backwards(struct terminal *term, void *psteps, struct session *ses)
+ {
+-	int steps = (int) psteps;
++	int steps = (intptr_t) psteps;
+ 
+ 	/*if (ses->tq_goto_position)
+ 		--steps;
+@@ -358,7 +358,7 @@ void history_menu(struct terminal *term,
+ 	foreach(l, ses->history) {
+ 		if (n/* || ses->tq_goto_position*/) {
+ 			if (!mi && !(mi = new_menu(3))) return;
+-			add_to_menu(&mi, stracpy(l->url), "", "", MENU_FUNC go_backwards, (void *) n, 0);
++			add_to_menu(&mi, stracpy(l->url), "", "", MENU_FUNC go_backwards, (void *)(intptr_t) n, 0);
+ 		}
+ 		n++;
+ 	}
+@@ -400,7 +400,7 @@ void menu_toggle(struct terminal *term, 
+ 
+ void display_codepage(struct terminal *term, void *pcp, struct session *ses)
+ {
+-	int cp = (int)pcp;
++	int cp = (intptr_t)pcp;
+ 	struct term_spec *t = new_term_spec(term->term);
+ 	if (t) t->charset = cp;
+ 	cls_redraw_all_terminals();
+@@ -408,7 +408,7 @@ void display_codepage(struct terminal *t
+ 
+ void assumed_codepage(struct terminal *term, void *pcp, struct session *ses)
+ {
+-	int cp = (int)pcp;
++	int cp = (intptr_t)pcp;
+ 	ses->ds.assume_cp = cp;
+ 	redraw_terminal_cls(term);
+ }
+@@ -421,7 +421,7 @@ void charset_list(struct terminal *term,
+ 	if (!(mi = new_menu(1))) return;
+ 	for (i = 0; (n = get_cp_name(i)); i++) {
+ 		if (is_cp_special(i)) continue;
+-		add_to_menu(&mi, get_cp_name(i), "", "", MENU_FUNC display_codepage, (void *)i, 0);
++		add_to_menu(&mi, get_cp_name(i), "", "", MENU_FUNC display_codepage, (void *)(intptr_t)i, 0);
+ 	}
+ 	sel = ses->term->spec->charset;
+ 	if (sel < 0) sel = 0;
+@@ -430,7 +430,7 @@ void charset_list(struct terminal *term,
+ 
+ void set_val(struct terminal *term, void *ip, int *d)
+ {
+-	*d = (int)ip;
++	*d = (intptr_t)ip;
+ }
+ 
+ void charset_sel_list(struct terminal *term, struct session *ses, int *ptr)
+@@ -440,7 +440,7 @@ void charset_sel_list(struct terminal *t
+ 	struct menu_item *mi;
+ 	if (!(mi = new_menu(1))) return;
+ 	for (i = 0; (n = get_cp_name(i)); i++) {
+-		add_to_menu(&mi, get_cp_name(i), "", "", MENU_FUNC set_val, (void *)i, 0);
++		add_to_menu(&mi, get_cp_name(i), "", "", MENU_FUNC set_val, (void *)(intptr_t)i, 0);
+ 	}
+ 	sel = *ptr;
+ 	if (sel < 0) sel = 0;
+@@ -1729,7 +1729,7 @@ void miscelaneous_options(struct termina
+ 
+ void menu_set_language(struct terminal *term, void *pcp, struct session *ses)
+ {
+-	set_language((int)pcp);
++	set_language((intptr_t)pcp);
+ 	cls_redraw_all_terminals();
+ }
+ 
+@@ -1741,7 +1741,7 @@ void menu_language_list(struct terminal 
+ 	if (!(mi = new_menu(1))) return;
+ 	for (i = 0; i < n_languages(); i++) {
+ 		n = language_name(i);
+-		add_to_menu(&mi, n, "", "", MENU_FUNC menu_set_language, (void *)i, 0);
++		add_to_menu(&mi, n, "", "", MENU_FUNC menu_set_language, (void *)(intptr_t)i, 0);
+ 	}
+ 	sel = current_language;
+ 	do_menu_selected(term, mi, ses, sel);

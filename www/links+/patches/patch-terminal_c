@@ -1,0 +1,29 @@
+$OpenBSD: patch-terminal_c,v 1.1 2002/09/16 04:11:23 fgsch Exp $
+--- terminal.c.orig	Sun Sep 15 09:39:28 2002
++++ terminal.c	Sun Sep 15 09:42:14 2002
+@@ -1053,14 +1053,14 @@ void exec_thread(unsigned char *path, in
+ 
+ void close_handle(void *p)
+ {
+-	int h = (int)p;
++	int h = (intptr_t)p;
+ 	close(h);
+ 	set_handlers(h, NULL, NULL, NULL, NULL);
+ }
+ 
+ void unblock_terminal(struct terminal *term)
+ {
+-	close_handle((void *)term->blocked);
++	close_handle((void *)(intptr_t)term->blocked);
+ 	term->blocked = -1;
+ 	if (!F) {
+ 		set_handlers(term->fdin, (void (*)(void *))in_term, NULL, (void (*)(void *))destroy_terminal, term);
+@@ -1121,7 +1121,7 @@ void exec_on_terminal(struct terminal *t
+ 				if (!F) set_handlers(term->fdin, NULL, NULL, (void (*)(void *))destroy_terminal, term);
+ 				/*block_itrm(term->fdin);*/
+ 			} else {
+-				set_handlers(blockh, close_handle, NULL, close_handle, (void *)blockh);
++				set_handlers(blockh, close_handle, NULL, close_handle, (void *)(intptr_t)blockh);
+ 			}
+ 		}
+ 	} else {

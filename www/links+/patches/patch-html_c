@@ -1,11 +1,29 @@
-$OpenBSD: patch-html_c,v 1.1 2002/08/05 23:32:24 fgsch Exp $
---- html.c.orig	Mon Aug  5 19:25:52 2002
-+++ html.c	Mon Aug  5 19:26:12 2002
-@@ -772,6 +772,7 @@ void html_a(unsigned char *a)
- 			format.target = stracpy(format.target_base);
+$OpenBSD: patch-html_c,v 1.2 2002/09/16 04:11:23 fgsch Exp $
+--- html.c.orig	Sun Sep 15 10:07:09 2002
++++ html.c	Sun Sep 15 10:12:38 2002
+@@ -1637,7 +1637,7 @@ void new_menu_item(unsigned char *name, 
+ 		item->rtext = data == -1 ? ">" : "";
+ 		item->hotkey = fullname ? "\000\001" : "\000\000"; /* dirty */
+ 		item->func = data == -1 ? MENU_FUNC do_select_submenu : MENU_FUNC selected_item;
+-		item->data = data == -1 ? nmenu : (void *)data;
++		item->data = data == -1 ? nmenu : (void *)(intptr_t)data;
+ 		item->in_m = data == -1 ? 1 : 0;
+ 		item->free_i = 0;
+ 		item++;
+@@ -1697,14 +1697,14 @@ void menu_labels(struct menu_item *m, un
+ 			}
+ 		} else {
+ 			if ((bs = stracpy(m->hotkey[1] ? (unsigned char *)"" : base))) add_to_strn(&bs, m->text);
+-			lbls[(int)m->data] = bs;
++			lbls[(intptr_t)m->data] = bs;
  		}
- 		/*format.attr ^= AT_BOLD;*/
-+		format.attr |= AT_UNDERLINE;
- 		memcpy(&format.fg, &format.clink, sizeof(struct rgb));
- 	} else if (!ev) kill_html_stack_item(&html_top);
- 	if ((al = get_attr_val(a, "name"))) {
+ 	}
+ }
+ 
+ int menu_contains(struct menu_item *m, int f)
+ {
+-	if (m->func != MENU_FUNC do_select_submenu) return (int)m->data == f;
++	if (m->func != MENU_FUNC do_select_submenu) return (intptr_t)m->data == f;
+ 	for (m = m->data; m->text; m++) if (menu_contains(m, f)) return 1;
+ 	return 0;
+ }

@@ -1,0 +1,41 @@
+$OpenBSD: patch-ipret_c,v 1.1 2002/09/16 04:11:23 fgsch Exp $
+--- ipret.c.orig	Sun Sep 15 10:26:23 2002
++++ ipret.c	Sun Sep 15 10:27:56 2002
+@@ -3218,22 +3218,22 @@ void for3(js_context*context) 
+ 			 */
+ 			debug("For3 vracim identifier\n");
+ 			if(!context->current->arg[6])
+-nebo_skrtnem_sirkou:		while(!context->current->arg[6] && ((int)context->current->arg[5])<HASHNUM)
++nebo_skrtnem_sirkou:		while(!context->current->arg[6] && ((intptr_t)context->current->arg[5])<HASHNUM)
+ 				{
+-					context->current->arg[6]=((plns*)((lns*)context->current->arg[3])->value)->ns[(int)context->current->arg[5]];
++					context->current->arg[6]=((plns*)((lns*)context->current->arg[3])->value)->ns[(intptr_t)context->current->arg[5]];
+ 					/* co tim chtel basnik rict ?? */
+ /* Basnik: context->ptr->arg[3] je typu lns*, jeho value je plns* a my
+    koukneme do namespacu pod timto plns (to znamena pointer na localnamespace)
+    a to konkretne do context->current->arg[5]-te pozice. */
+ 					/*(int)context->current->arg[5]=(int)context->current->arg[5]+1;*/
+-					context->current->arg[5]=(void *)((int)context->current->arg[5]+1);
++					context->current->arg[5]=(void *)((intptr_t)context->current->arg[5]+1);
+ 				}
+ 			else {	context->current->arg[6]=((lns*)context->current->arg[6])->next;
+-				while(!context->current->arg[6] && ((int)context->current->arg[5])<HASHNUM)
+-				{	context->current->arg[6]=((plns*)((lns*)context->current->arg[3])->value)->ns[(int)context->current->arg[5]];
++				while(!context->current->arg[6] && ((intptr_t)context->current->arg[5])<HASHNUM)
++				{	context->current->arg[6]=((plns*)((lns*)context->current->arg[3])->value)->ns[(intptr_t)context->current->arg[5]];
+ 					/* co tim chtel basnik rict ?? */
+ 					/*(int)context->current->arg[5]=(int)context->current->arg[5]+1;*/
+-					context->current->arg[5]=(void *)((int)context->current->arg[5]+1);
++					context->current->arg[5]=(void *)((intptr_t)context->current->arg[5]+1);
+ 				}
+ 			}
+ 			if(!context->current->arg[6])
+@@ -3258,7 +3258,7 @@ nebo_skrtnem_sirkou:		while(!context->cu
+ 			{	context->current->arg[6]=((lns*)context->current->arg[6])->next;
+ 				goto nebo_skrtnem_sirkou;
+ 			}
+-			pna=context->namespace[((int)context->current->arg[5])-1];
++			pna=context->namespace[((intptr_t)context->current->arg[5])-1];
+ 			while(pna && (pna->klic!=((lns*)context->current->arg[6])->identifier/HASHNUM))pna=pna->next;
+ 			if(!pna){ my_internal("Kalim mimo misu!\n",context);
+ 				retval=js_mem_alloc(sizeof(abuf));

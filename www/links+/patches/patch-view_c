@@ -1,0 +1,21 @@
+$OpenBSD: patch-view_c,v 1.1 2002/09/16 04:11:23 fgsch Exp $
+--- view.c.orig	Sun Sep 15 09:38:18 2002
++++ view.c	Sun Sep 15 09:45:13 2002
+@@ -1652,7 +1652,7 @@ void back(struct session *ses, struct f_
+ 
+ void selected_item(struct terminal *term, void *pitem, struct session *ses)
+ {
+-	int item = (int)pitem;
++	int item = (intptr_t)pitem;
+ 	int old_item=item;
+ 	struct f_data_c *f = current_frame(ses);
+ 	struct link *l;
+@@ -2493,7 +2493,7 @@ void send_event(struct session *ses, str
+ 			goto x;
+ 		}
+ 		if ((upcase(ev->x) == 'Q' && !ev->y) || ev->x == KBD_CTRL_C) {
+-			exit_prog(ses->term, (void *)(ev->x == KBD_CTRL_C), ses);
++			exit_prog(ses->term, (void *)(intptr_t)(ev->x == KBD_CTRL_C), ses);
+ 			goto x;
+ 		}
+ 		if (ev->x == KBD_CLOSE){

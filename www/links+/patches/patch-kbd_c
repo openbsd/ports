@@ -1,0 +1,16 @@
+$OpenBSD: patch-kbd_c,v 1.1 2002/09/16 04:11:23 fgsch Exp $
+--- kbd.c.orig	Sun Sep 15 09:46:19 2002
++++ kbd.c	Sun Sep 15 09:46:37 2002
+@@ -384,10 +384,10 @@ void in_sock(struct itrm *itrm)
+ 		}
+ 		mem_free(param);
+ 		if (fg == 1) {
+-			set_handlers(blockh, (void (*)(void *))unblock_itrm_x, NULL, (void (*)(void *))unblock_itrm_x, (void *)blockh);
++			set_handlers(blockh, (void (*)(void *))unblock_itrm_x, NULL, (void (*)(void *))unblock_itrm_x, (void *)(intptr_t)blockh);
+ 			/*block_itrm(itrm->ctl_in);*/
+ 		} else {
+-			set_handlers(blockh, close_handle, NULL, close_handle, (void *)blockh);
++			set_handlers(blockh, close_handle, NULL, close_handle, (void *)(intptr_t)blockh);
+ 		}
+ 	}
+ 	to_je_ale_hnus:

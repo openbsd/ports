@@ -1,0 +1,12 @@
+$OpenBSD: patch-html_gr_c,v 1.1 2002/09/16 04:11:23 fgsch Exp $
+--- html_gr.c.orig	Sun Sep 15 10:29:25 2002
++++ html_gr.c	Sun Sep 15 10:30:11 2002
+@@ -606,7 +606,7 @@ void *g_html_special(struct g_part *p, i
+ 			return convert_table;
+ 		case SP_USED:
+ 			va_end(l);
+-			return (void *)!!p->data;
++			return (void *)(intptr_t)!!p->data;
+ 		case SP_FRAMESET:
+ 			fsp = va_arg(l, struct frameset_param *);
+ 			va_end(l);

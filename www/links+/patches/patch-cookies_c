@@ -1,0 +1,12 @@
+$OpenBSD: patch-cookies_c,v 1.1 2002/09/16 04:11:23 fgsch Exp $
+--- cookies.c.orig	Sun Sep 15 08:51:52 2002
++++ cookies.c	Sun Sep 15 08:52:03 2002
+@@ -177,7 +177,7 @@ void delete_cookie(struct cookie *c)
+ 
+ struct cookie *find_cookie_id(void *idp)
+ {
+-	int id = (int)idp;
++	int id = (intptr_t)idp;
+ 	struct cookie *c;
+ 	foreach(c, cookies) if (c->id == id) return c;
+ 	return NULL;
