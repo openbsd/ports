@@ -1,9 +1,11 @@
-@comment $OpenBSD: PFRAG.shared,v 1.14 2004/09/15 19:25:12 espie Exp $
-@lib lib/libqt${MT_SUFX}.so.${VERSION}3
-@lib lib/libqui${MT_SUFX}.so.1.0
-@lib lib/qt3/libqt${MT_SUFX}.so.${VERSION}3
-@lib lib/qt3/libqui${MT_SUFX}.so.1.0
-lib/qt3/plugins${MT_SUFX}/designer/libcppeditor.so
-lib/qt3/plugins${MT_SUFX}/designer/libdlgplugin.so
-lib/qt3/plugins${MT_SUFX}/designer/librcplugin.so
-lib/qt3/plugins${MT_SUFX}/designer/libwizards.so
+@comment $OpenBSD: PFRAG.shared,v 1.15 2004/10/30 09:12:35 espie Exp $
+@lib lib/libqt-mt.so.3.33
+@lib lib/libqui-mt.so.1.0
+@lib lib/libqui.so.1.0
+@lib lib/qt3/libqt-mt.so.3.33
+@lib lib/qt3/libqui-mt.so.1.0
+@lib lib/qt3/libqui.so.1.0
+lib/qt3/plugins/designer/libcppeditor.so
+lib/qt3/plugins/designer/libdlgplugin.so
+lib/qt3/plugins/designer/librcplugin.so
+lib/qt3/plugins/designer/libwizards.so

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2004/10/27 19:57:16 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2004/10/30 09:12:35 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -6,13 +6,11 @@ COMMENT-examples=	"examples and tutorial for qt3"
 COMMENT-html=		"off-line html documentation for qt3"
 COMMENT-postgresql=	"PostgresSQL plugin for qt3"
 COMMENT-mysql=		"MySQL plugin for qt3"
-COMMENT-base=		"include and docs for qt3"
 
-PKGNAME=		qt3-${VERSION}p2
+PKGNAME=		qt3-${VERSION}p3
 PKGNAME-mysql=		qt3-mysql-${VERSION}
 PKGNAME-postgresql=	qt3-postgresql-${VERSION}
 PKGNAME-examples=	qt3-examples-${VERSION}
-FULLPKGNAME-base=	qt3-base-${VERSION}
 FULLPKGNAME-html=	qt3-html-${VERSION}
 
 VERSION=	3.3
@@ -24,19 +22,16 @@ HOMEPAGE=	http://www.trolltech.com/qt/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-FLAVORS=mt debug
+FLAVORS=debug
 
-PSEUDO_FLAVORS=	no_mysql no_postgresql no_examples
-FLAVOR?=mt
-COMPAT=Yes
+PSEUDO_FLAVORS=	no_mysql no_postgresql no_examples mt
+FLAVOR?=
 
 # GPL/QPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-PKG_ARGS=-Dcompat=1
 
 USE_X11=	Yes
 MAKE_ENV=	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
@@ -60,7 +55,7 @@ CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg -system-zl
 		-L${WRKSRC}/lib \
 		-L${LOCALBASE}/lib
 
-MULTI_PACKAGES+=-base -html
+MULTI_PACKAGES+=-html
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+=-debug
@@ -69,14 +64,10 @@ PKGDEBUG=-debug
 PKGDEBUG=
 .endif
 
-.if ${FLAVOR:L:Mmt}
-FULLPKGNAME=		qt3-mt-${VERSION}p2${PKGDEBUG}
+FULLPKGNAME=		qt3-mt-${VERSION}p3${PKGDEBUG}
 CONFIGURE_ARGS+=-thread
-.else
-CONFIGURE_ARGS+=-no-thread
-.endif
 
-.if ${FLAVOR:L:Mmt} && !${FLAVOR:L:Mdebug} && !${FLAVOR:L:Mno_examples}
+.if !${FLAVOR:L:Mdebug} && !${FLAVOR:L:Mno_examples}
 MULTI_PACKAGES+=	-examples
 .else
 ALL_TARGET=sub-src sub-tools
@@ -99,9 +90,6 @@ e:=$e,no_mysql
 .endif
 .if ${FLAVOR:L:Mno_postgresql}
 e:=$e,no_postgresql
-.endif
-.if ${FLAVOR:L:Mmt}
-e:=$e,mt
 .endif
 
 .if !empty(FLAVOR:L:Mno_mysql)
@@ -129,17 +117,13 @@ CONFIGURE_ARGS+= -I${LOCALBASE}/include/postgresql \
 	    -I${LOCALBASE}/include -plugin-sql-psql
 .endif
 
-.if defined(PACKAGING) && ${SUBPACKAGE} != "-html" && ${SUBPACKAGE} != "-base"
-RUN_DEPENDS+=::x11/qt3,-base
-.endif
-
-.if !defined(PACKAGING) || ${SUBPACKAGE} != "-html" && ${SUBPACKAGE} != "-base"
+.if !defined(PACKAGING) || ${SUBPACKAGE} != "-html"
 LIB_DEPENDS+=	png.2::graphics/png \
 		mng.1::graphics/libmng
 .endif
 
-.if defined(PACKAGING) && ${SUBPACKAGE} != "-html" && ${SUBPACKAGE} != "" && ${SUBPACKAGE} != "-base"
-LIB_DEPENDS+=	qt${MT_SUFX}.3::x11/qt3$e
+.if defined(PACKAGING) && ${SUBPACKAGE} != "-html" && ${SUBPACKAGE} != ""
+LIB_DEPENDS+=	qt-mt.3::x11/qt3$e
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-html"
@@ -153,11 +137,11 @@ QT_MANDIR=	${QT_LIBDIR}/man
 QT_EXAMPLES=	${QT_LIBDIR}/examples
 QT_TUTORIAL=	${QT_LIBDIR}/tutorial
 QT_DOC=		${PREFIX}/share/doc/qt3
-QT_PLUGINSDIR=	${QT_LIBDIR}/plugins${MT_SUFX}
-QT_BINDIR=	${QT_LIBDIR}/bin${MT_SUFX}
+QT_PLUGINSDIR=	${QT_LIBDIR}/plugins
+QT_BINDIR=	${QT_LIBDIR}/bin
 
 # for manpages in MESSAGE
-SUBST_VARS=	VERSION QT_LIBDIR QT_DOC MT_SUFX
+SUBST_VARS=	QT_LIBDIR QT_DOC
 
 DOCS=	FAQ LICENSE.GPL README README-QT.TXT \
 	changes-3*
@@ -168,16 +152,10 @@ NO_REGRESS=	Yes
 PROGRAMS3=designer findtr moc qt20fix qtrename140 uic
 PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig 
 
-LIBRARIES=qt${MT_SUFX}.so.3.33 qui${MT_SUFX}.so.1.0 \
+LIBRARIES=qt-mt.so.3.33 qui.so.1.0 \
 	editor.a designercore.a qassistantclient.a
 
-.if ${FLAVOR:L:Mmt}
-MT_SUFX=-mt
-.else
-MT_SUFX=
-.endif
-
-.if ${FLAVOR:L:Mmt} && !${FLAVOR:L:Mdebug}
+.if !${FLAVOR:L:Mdebug}
 post-configure:
 	@cd ${WRKSRC} && cp -R examples examples-src
 	@find ${WRKSRC}/examples-src -name '*.orig' |xargs rm
@@ -249,11 +227,11 @@ do-install:
 .endfor
 .for p in ${PROGRAMS3}
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/$p ${QT_BINDIR}/$p
-	@ln -sf ${TRUEPREFIX}/lib/qt3/bin${MT_SUFX}/$p ${PREFIX}/bin/$p3${MT_SUFX}
+	@ln -sf ${TRUEPREFIX}/lib/qt3/bin/$p ${PREFIX}/bin/$p3
 .endfor
 .for p in ${PROGRAMS}
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/$p ${QT_BINDIR}/$p
-	@ln -sf ${TRUEPREFIX}/lib/qt3/bin${MT_SUFX}/$p ${PREFIX}/bin/$p${MT_SUFX}
+	@ln -sf ${TRUEPREFIX}/lib/qt3/bin/$p ${PREFIX}/bin/$p
 .endfor
 	# plugins
 	${INSTALL_DATA_DIR} ${QT_PLUGINSDIR}/designer \
@@ -274,16 +252,19 @@ do-install:
 	    ${QT_PLUGINSDIR}/designer
 	${INSTALL_DATA} ${WRKBUILD}/plugins/designer/librcplugin.so \
 	    ${QT_PLUGINSDIR}/designer
-.if ${COMPAT:L} == "yes" && ${FLAVOR:L:Mmt}
-.  for p in ${PROGRAMS}
-	cd ${PREFIX}/bin && ln -sf $p${MT_SUFX} $p
+# compatibility transition
+.for p in ${PROGRAMS}
+	cd ${PREFIX}/bin && ln -sf $p $p-mt
 .  endfor
-.  for p in ${PROGRAMS3}
-	cd ${PREFIX}/bin && ln -sf $p3${MT_SUFX} $p3
-.  endfor
-	cd ${PREFIX}/lib && ln -sf libqui${MT_SUFX}.so.1.0 libqui.so.1.0
-	cd ${PREFIX}/lib/qt3 && ln -sf libqui${MT_SUFX}.so.1.0 libqui.so.1.0
-.endif
-	cd ${PREFIX}/lib/qt3 && ln -sf bin${MT_SUFX} bin
+.for p in ${PROGRAMS3}
+	cd ${PREFIX}/bin && ln -sf $p3 $p3-mt
+.endfor
+	cd ${PREFIX}/lib && ln -sf libqui.so.1.0 libqui-mt.so.1.0
+	cd ${PREFIX}/lib/qt3 && ln -sf libqui.so.1.0 libqui-mt.so.1.0
+# links for qtdir
+	cd ${PREFIX}/lib/qt3 && ln -sf . lib
+	cd ${PREFIX}/lib/qt3 && ln -sf ../../include/X11/qt3 include
+# fix for qmake
+	${INSTALL_DATA} ${WRKBUILD}/.qmake.cache ${PREFIX}/lib/qt3
 
 .include <bsd.port.mk>

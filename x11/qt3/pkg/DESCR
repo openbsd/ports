@@ -13,17 +13,17 @@ should note that qt3's installation conforms to OpenBSD habits, not
 TrollTech's recommendations.
 Accordingly:
 - libs are separated from includes.
-- moc is installed as ${PREFIX}/bin/moc3${MT_SUFX}, in order not to conflict 
+- moc is installed as ${PREFIX}/bin/moc3, in order not to conflict 
   with other qt versions.
-- uic is installed as ${PREFIX}/bin/uic3${MT_SUFX}
+- uic is installed as ${PREFIX}/bin/uic3
 
 Generally, it's just a question of invoking 
 
-env MOC=moc3${MT_SUFX} UIC=uic3${MT_SUFX} configure --with-qt-includes=${PREFIX}/include/X11/qt3 
+env MOC=moc3 UIC=uic3 configure --with-qt-includes=${PREFIX}/include/X11/qt3 
 	--with-qt-libraries=${PREFIX}/lib/qt3
 
 Or to force MOC/UIC in your make/gmake invocation:
-make MOC=moc3${MT_SUFX} UIC=uic3${MT_SUFX}
+make MOC=moc3 UIC=uic3
 will override the Makefile contents.
 
 Warning: the qt3 library also appears under ${PREFIX}/lib, but you
