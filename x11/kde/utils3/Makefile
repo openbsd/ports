@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/04/04 14:23:48 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2002/04/04 14:27:32 espie Exp $
 
 COMMENT= 		"X11 toolkit, utilities"
 CATEGORIES=		x11 x11/kde
@@ -19,11 +19,7 @@ NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 MODULES=qt3
 
 
-#LIB_DEPENDS= kdecore.4,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjava,kparts,kspell,vcard::x11/kde/libs3
-#BUILD_DEPENDS=	::audio/lame
-
-# for kaddressbook
-#RUN_DEPENDS+=	::x11/kde/base3
+LIB_DEPENDS= kdecore.4,DCOP,kabc,kdefakes,kdefx,kdeprint,kdesu,kdeui,kio,kparts,kspell,vcard::x11/kde/libs3
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_NEW=		Yes
