@@ -35,6 +35,9 @@ include/netatalk/endian.h
 include/netatalk/phase2.h
 lib/libatalk.a
 lib/libatalk_p.a
+lib/netatalk/AppleVolumes.system
+lib/netatalk/AppleVolumes.default
+lib/netatalk/rc.atalk
 libexec/afpd
 libexec/atalkd
 libexec/etc2ps
@@ -86,8 +89,5 @@ share/filters/tfwpaprev
 share/pagecount.ps
 @dirrm include/atalk
 @dirrm include/netatalk
+@dirrm lib/netatalk
 @dirrm share/filters
-@unexec echo ""
-@unexec echo "** remove the directory /etc/netatalk (and its contents)"
-@unexec echo "** to completely delete this package"
-@unexec echo ""

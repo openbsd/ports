@@ -1,7 +1,8 @@
 # OpenBSD specific defines, passed to subdirectories.
 DEFS=	-DBSD4_4
-INSTALL=	install
+INSTALL= install
 ADDLIBS=
+DATADIR= ${DESTDIR}/lib/netatalk
 
 ALL=	../../libatalk ../../include ../../bin ../../etc ../../man
 
@@ -19,7 +20,7 @@ ${ALL}:	FRC
 FRC:
 
 install :
-	-mkdir ${DESTDIR} ${SBINDIR} ${BINDIR} ${ETCDIR} ${LIBDIR}
+	-mkdir -p ${DESTDIR} ${SBINDIR} ${BINDIR} ${LIBDIR} ${DATADIR}
 	for i in ${ALL}; \
 	    do (cd $$i; ${MAKE} ${MFLAGS} CC="${CC}" \
 		ADDLIBS="${ADDLIBS}" DEFS="${DEFS}" OPTOPTS="${CFLAGS}" \
@@ -28,19 +29,12 @@ install :
 		AFSDIR="${AFSDIR}" KRBDIR="${KRBDIR}" \
 		INSTALL="${INSTALL}" $@); \
 	done
-	rm -f ${ETCDIR}/rc.atalk
+	rm -f ${DATADIR}/rc.atalk
 	sed -e s@:DESTDIR:@${DESTDIR}@ -e s@:SBINDIR:@${SBINDIR}@ \
 		-e s@:BINDIR:@${BINDIR}@ -e s@:RESDIR:@${RESDIR}@ \
 		-e s@:ETCDIR:@${ETCDIR}@ -e s@:LIBDIR:@${LIBDIR}@ \
 		-e s@:INCDIR:@${INCDIR}@ \
-	    < ../../rc.atalk.bsd > ${ETCDIR}/rc.atalk
-	@echo
-	@echo "Install is done.  Don't forget to call /etc/netatalk/rc.atalk"
-	@echo "in /etc/rc.local. Example:-" 
-	@echo "# Netatalk stuff"
-	@echo ". /etc/netatalk/rc.atalk"
-	@echo "See README and README.FREEBSD for more"
-	@echo "information."
+	    < ../../rc.atalk.bsd > ${DATADIR}/rc.atalk
 
 clean :
 	for i in ${ALL}; \
