@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/03 10:31:14 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/07 14:04:46 avsm Exp $
 
 COMMENT=	"logging utilities for PHP"
 
-V=		1.5.3
+V=		1.6.5
 DISTNAME=	Log-${V}
 PKGNAME=	pear-${DISTNAME}
 CATEGORIES=	devel pear
