@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/17 19:35:14 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/01/04 19:55:58 sturm Exp $
 
 COMMENT=	"Convert singular to plural. Select a or an."
 
-DISTNAME=	Lingua-EN-Inflect-1.86
+DISTNAME=	Lingua-EN-Inflect-1.88
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 
