@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/09/24 08:30:09 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2004/07/31 23:23:13 naddy Exp $
 
 COMMENT=	"enhanced clone of Id Software's Doom game; multiplayer"
 DISTNAME=	prboom-2.2.4
@@ -22,5 +22,6 @@ LIB_DEPENDS=	SDL_mixer.::devel/sdl-mixer \
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-cpu-opt
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
 .include <bsd.port.mk>
