@@ -1,23 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/07/11 07:47:11 jakob Exp $
-bin/knapster
-share/applnk/Applications/knapster.kdelnk
-share/doc/HTML/en/knapster/index.html
-share/doc/HTML/en/knapster/index-1.html
-share/doc/HTML/en/knapster/index-2.html
-share/doc/HTML/en/knapster/index-3.html
-share/doc/HTML/en/knapster/index-4.html
-share/doc/HTML/en/knapster/index-5.html
-share/doc/HTML/en/knapster/index-6.html
-share/doc/HTML/en/knapster/index-7.html
-share/doc/HTML/en/knapster/index-8.html
-share/doc/HTML/en/knapster/index-9.html
-share/doc/HTML/en/knapster/index-10.html
-share/doc/HTML/en/knapster/index-11.html
-share/doc/HTML/en/knapster/logotp3.png
-share/icons/knapster.xpm
-share/icons/mini/knapster.xpm
-share/locale/fr/LC_MESSAGES/knapster.mo
-share/locale/ja/LC_MESSAGES/knapster.mo
-share/locale/pt_BR/LC_MESSAGES/knapster.mo
-share/locale/sv/LC_MESSAGES/knapster.mo
-@dirrm share/doc/HTML/en/knapster
+@comment $OpenBSD: PLIST,v 1.6 2001/06/05 10:06:46 reinhard Exp $
+bin/knapster2
+share/applnk/Applications/knapster2.desktop
+share/apps/knapster2/knapster2ui.rc
+share/doc/HTML/en/knapster2/knapster-title.gif
+share/doc/HTML/en/knapster2/knapster-welcome.html
+share/icons/locolor/16x16/apps/knapster2.png
+share/icons/locolor/32x32/apps/knapster2.xpm
+@dirrm share/doc/HTML/en/knapster2
+@dirrm share/apps/knapster2
