@@ -1,6 +1,6 @@
-$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.11 2004/09/18 09:36:44 espie Exp $
---- kscd/libwm/Makefile.in.orig	Mon Aug 16 11:41:48 2004
-+++ kscd/libwm/Makefile.in	Wed Sep  8 08:54:48 2004
+$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.12 2005/03/29 21:18:36 espie Exp $
+--- kscd/libwm/Makefile.in.orig	Fri Mar  4 13:31:49 2005
++++ kscd/libwm/Makefile.in	Sat Mar 26 10:35:17 2005
 @@ -16,11 +16,11 @@
  @SET_MAKE@
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.11 2004/09/18 09:36:44 espie Exp $
  am__DEPENDENCIES_1 =
 -libworkman_la_DEPENDENCIES = audio/libworkmanaudio.la \
 +libkworkman_la_DEPENDENCIES = audio/libworkmanaudio.la \
- 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ 	$(am__DEPENDENCIES_1)
 -am_libworkman_la_OBJECTS = cddb.lo cdinfo.lo cdrom.lo wm_helpers.lo \
 +am_libkworkman_la_OBJECTS = cddb.lo cdinfo.lo cdrom.lo wm_helpers.lo \
  	cdtext.lo database.lo index.lo scsi.lo cdda.lo \
@@ -61,22 +61,22 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.11 2004/09/18 09:36:44 espie Exp $
  #>- RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
  #>- 	html-recursive info-recursive install-data-recursive \
  #>- 	install-exec-recursive install-info-recursive \
-@@ -473,10 +473,10 @@ xine_artsplugin_SUBDIR_included_TRUE = @
+@@ -504,10 +504,10 @@ xine_artsplugin_SUBDIR_included_TRUE = @
  subdirs = include
  SUBDIRS = audio
  INCLUDES = $(all_includes) 
 -noinst_LTLIBRARIES = libworkman.la
--libworkman_la_LDFLAGS = $(all_libraries)
--libworkman_la_LIBADD = audio/libworkmanaudio.la $(ARTSC_LIBS) $(ARTS_LIBASOUND)
+-libworkman_la_LDFLAGS = $(ARTSC_LIBS) $(all_libraries)
+-libworkman_la_LIBADD = audio/libworkmanaudio.la $(ARTS_LIBASOUND)
 -libworkman_la_SOURCES = cddb.c cdinfo.c cdrom.c wm_helpers.c cdtext.c\
 +noinst_LTLIBRARIES = libkworkman.la
-+libkworkman_la_LDFLAGS = $(all_libraries)
-+libkworkman_la_LIBADD = audio/libworkmanaudio.la $(ARTSC_LIBS) $(ARTS_LIBASOUND)
++libkworkman_la_LDFLAGS = $(ARTSC_LIBS) $(all_libraries)
++libkworkman_la_LIBADD = audio/libworkmanaudio.la $(ARTS_LIBASOUND)
 +libkworkman_la_SOURCES = cddb.c cdinfo.c cdrom.c wm_helpers.c cdtext.c\
  database.c index.c scsi.c cdda.c plat_linux_cdda.c plat_sun_cdda.c\
  plat_aix.c plat_bsd386.c plat_freebsd.c plat_hpux.c plat_irix.c \
  plat_linux.c plat_svr4.c plat_ultrix.c plat_news.c plat_openbsd.c \
-@@ -540,8 +540,8 @@ clean-noinstLTLIBRARIES:
+@@ -571,8 +571,8 @@ clean-noinstLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done
@@ -87,7 +87,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.11 2004/09/18 09:36:44 espie Exp $
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT)
-@@ -871,8 +871,8 @@ uninstall-info: uninstall-info-recursive
+@@ -902,8 +902,8 @@ uninstall-info: uninstall-info-recursive
  	tags tags-recursive uninstall uninstall-am uninstall-info-am
  
  
@@ -98,7 +98,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.11 2004/09/18 09:36:44 espie Exp $
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
-@@ -923,19 +923,19 @@ bcheck-am:
+@@ -954,19 +954,19 @@ bcheck-am:
  
  #>+ 3
  final:

@@ -1,6 +1,6 @@
-$OpenBSD: patch-kscd_libwm_Makefile_am,v 1.6 2004/09/18 09:36:44 espie Exp $
---- kscd/libwm/Makefile.am.orig	Sat May 22 22:56:56 2004
-+++ kscd/libwm/Makefile.am	Wed Sep  8 08:54:39 2004
+$OpenBSD: patch-kscd_libwm_Makefile_am,v 1.7 2005/03/29 21:18:36 espie Exp $
+--- kscd/libwm/Makefile.am.orig	Thu Feb  3 23:48:26 2005
++++ kscd/libwm/Makefile.am	Sat Mar 26 10:34:19 2005
 @@ -1,5 +1,5 @@
  #
 -# Makefile.am for libworkman. Based on the example Makefile.am for a
@@ -8,27 +8,20 @@ $OpenBSD: patch-kscd_libwm_Makefile_am,v 1.6 2004/09/18 09:36:44 espie Exp $
  # shared library.
  #
  
-@@ -7,17 +7,17 @@ subdirs = include
+@@ -7,12 +7,12 @@ subdirs = include
  SUBDIRS = audio
  INCLUDES = $(all_includes) 
  
 -noinst_LTLIBRARIES  = libworkman.la
 +noinst_LTLIBRARIES  = libkworkman.la
  
--libworkman_la_LDFLAGS = $(all_libraries)
--libworkman_la_LIBADD = audio/libworkmanaudio.la $(ARTSC_LIBS) $(ARTS_LIBASOUND)
-+libkworkman_la_LDFLAGS = $(all_libraries)
-+libkworkman_la_LIBADD = audio/libworkmanaudio.la $(ARTSC_LIBS) $(ARTS_LIBASOUND)
+-libworkman_la_LDFLAGS = $(ARTSC_LIBS) $(all_libraries)
+-libworkman_la_LIBADD = audio/libworkmanaudio.la $(ARTS_LIBASOUND)
++libkworkman_la_LDFLAGS = $(ARTSC_LIBS) $(all_libraries)
++libkworkman_la_LIBADD = audio/libworkmanaudio.la $(ARTS_LIBASOUND)
  
 -libworkman_la_SOURCES = cddb.c cdinfo.c cdrom.c wm_helpers.c cdtext.c\
 +libkworkman_la_SOURCES = cddb.c cdinfo.c cdrom.c wm_helpers.c cdtext.c\
  database.c index.c scsi.c cdda.c plat_linux_cdda.c plat_sun_cdda.c\
  plat_aix.c plat_bsd386.c plat_freebsd.c plat_hpux.c plat_irix.c \
  plat_linux.c plat_svr4.c plat_ultrix.c plat_news.c plat_openbsd.c \
- plat_osf1.c plat_sun.c plat_scor5.c \
- drv_sony.c drv_toshiba.c
- 
--#libworkmanincludedir = $(includedir)/libwm
--#libworkmaninclude_HEADERS = include/wm_cdrom.h include/wm_cdtext.h
-+#libkworkmanincludedir = $(includedir)/libwm
-+#libkworkmaninclude_HEADERS = include/wm_cdrom.h include/wm_cdtext.h

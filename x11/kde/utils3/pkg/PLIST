@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/12/12 11:33:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2005/03/29 21:18:37 espie Exp $
 bin/ark
 bin/irkick
 bin/kcalc
@@ -56,6 +56,8 @@ ${KDE}/kded_kmilod.la
 ${KDE}/kded_kmilod.so
 ${KDE}/kedit.la
 ${KDE}/kedit.so
+${KDE}/kmilo_asus.la
+${KDE}/kmilo_asus.so
 ${KDE}/kmilo_generic.la
 ${KDE}/kmilo_generic.so
 ${KDE}/kmilo_thinkpad.la
@@ -78,6 +80,8 @@ ${KDE}/libarkpart.la
 ${KDE}/libarkpart.so
 ${KDE}/libkbyteseditwidget.la
 ${KDE}/libkbyteseditwidget.so
+${KDE}/libkhexedit2part.la
+${KDE}/libkhexedit2part.so
 ${KDE}/libkregexpeditorgui.la
 ${KDE}/libkregexpeditorgui.so
 lib/libkcmlaptop.la
@@ -90,6 +94,8 @@ lib/libkdeinit_kcalc.la
 lib/libkdeinit_kcalc.so
 lib/libkdeinit_kedit.la
 lib/libkdeinit_kedit.so
+lib/libkhexeditcommon.la
+@lib lib/libkhexeditcommon.so.0.0
 lib/libkmilo.la
 @lib lib/libkmilo.so.1.0
 lib/libkregexpeditorcommon.la
@@ -112,6 +118,7 @@ share/applications/kde/kregexpeditor.desktop
 share/applications/kde/ksim.desktop
 share/applications/kde/ktimer.desktop
 share/applications/kde/kwalletconfig.desktop
+share/applications/kde/kwalletmanager-kwalletd.desktop
 share/applications/kde/kwalletmanager.desktop
 share/applications/kde/kwikdisk.desktop
 share/applications/kde/laptop.desktop
@@ -170,6 +177,8 @@ share/apps/irkick/icons/hicolor/32x32/actions/ledred.png
 share/apps/irkick/icons/hicolor/32x32/actions/ledyellow.png
 share/apps/kcalc/
 share/apps/kcalc/kcalcui.rc
+share/apps/kcharselect/
+share/apps/kcharselect/kcharselectui.rc
 share/apps/kconf_update/kcalcrc.upd
 share/apps/kconf_update/kcharselect.upd
 share/apps/kdf/
@@ -215,6 +224,8 @@ share/apps/khexedit/pics/
 share/apps/khexedit/pics/hexdrag.png
 share/apps/khexedit/pics/hexmask.png
 share/apps/khexedit/pics/hexwrite.png
+share/apps/khexedit2part/
+share/apps/khexedit2part/khexedit2partui.rc
 share/apps/kicker/applets/kcharselectapplet.desktop
 share/apps/kicker/extensions/ksim.desktop
 share/apps/kjots/
@@ -467,7 +478,6 @@ share/icons/crystalsvg/16x16/apps/kfloppy.png
 share/icons/crystalsvg/16x16/apps/kgpg.png
 share/icons/crystalsvg/16x16/apps/khexedit.png
 share/icons/crystalsvg/16x16/apps/kjots.png
-share/icons/crystalsvg/16x16/apps/klaptopdaemon.png
 share/icons/crystalsvg/16x16/apps/kregexpeditor.png
 share/icons/crystalsvg/16x16/apps/ksim.png
 share/icons/crystalsvg/16x16/apps/ktimer.png
@@ -478,6 +488,7 @@ share/icons/crystalsvg/16x16/apps/laptop_pcmcia.png
 share/icons/crystalsvg/16x16/devices/ksim_cpu.png
 share/icons/crystalsvg/22x22/apps/kgpg.png
 share/icons/crystalsvg/22x22/apps/kwalletmanager.png
+share/icons/crystalsvg/22x22/apps/kwikdisk.png
 share/icons/crystalsvg/32x32/apps/ark.png
 share/icons/crystalsvg/32x32/apps/kcalc.png
 share/icons/crystalsvg/32x32/apps/kcmdf.png
@@ -520,18 +531,27 @@ share/icons/crystalsvg/64x64/apps/kregexpeditor.png
 share/icons/crystalsvg/64x64/apps/kwalletmanager.png
 share/icons/crystalsvg/64x64/apps/kwikdisk.png
 share/icons/crystalsvg/64x64/apps/laptop_battery.png
+share/icons/crystalsvg/scalable/apps/ark.svgz
+share/icons/crystalsvg/scalable/apps/kcalc.svgz
+share/icons/crystalsvg/scalable/apps/laptop_battery.svgz
 share/icons/hicolor/16x16/apps/irkick.png
-share/icons/hicolor/22x22/
 share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/irkick.png
 share/icons/hicolor/32x32/apps/irkick.png
+share/icons/locolor/
+share/icons/locolor/16x16/
+share/icons/locolor/16x16/apps/
 share/icons/locolor/16x16/apps/irkick.png
+share/icons/locolor/32x32/
+share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/irkick.png
 share/services/ark_part.desktop
 share/services/kbyteseditwidget.desktop
 share/services/kded/klaptopdaemon.desktop
 share/services/kded/kmilod.desktop
+share/services/khexedit2part.desktop
 share/services/kmilo/
+share/services/kmilo/kmilo_asus.desktop
 share/services/kmilo/kmilo_generic.desktop
 share/services/kmilo/kmilo_thinkpad.desktop
 share/services/kregexpeditorgui.desktop

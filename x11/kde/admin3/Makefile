@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/16 07:25:25 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2005/03/29 21:18:34 espie Exp $
 
 COMMENT= 		"K Desktop Environment, admin tools"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.3.2
+VERSION=		3.4.0
 DISTNAME=		kdeadmin-${VERSION}
-MODKDE_VERSION?=	3.3.0
+MODKDE_VERSION?=	3.4
 
 LIB_DEPENDS=	DCOP,kdecore.6,kdefx,kdeprint,kdesu,kdeui,kio,kparts::x11/kde/libs3
 FLAVORS=		debug

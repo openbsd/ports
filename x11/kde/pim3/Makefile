@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2005/03/17 01:34:52 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2005/03/29 21:18:37 espie Exp $
 
 COMMENT= 		"KDE personal information applications"
 COMMENT-kpilot=		"KDE interface to sync with Palm Pilot"
 CATEGORIES=		x11 x11/kde productivity
-VERSION=		3.3.2
+VERSION=		3.4.0
 DISTNAME=		kdepim-${VERSION}
-PKGNAME=		${DISTNAME}p1
-MODKDE_VERSION=		3.3.0
+PKGNAME=		${DISTNAME}
+MODKDE_VERSION=		3.4
 
 LIB_DEPENDS+= 		kdecore.6,artskde,kmedia2_idl,knewstuff,DCOP,kabc,kabc_file,kdefx,kdeprint,kdesasl,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell,kutils,kwalletclient,vcard::x11/kde/libs3
 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-kdeui_kmainwindow_cpp,v 1.2 2004/02/01 14:59:23 espie Exp $
---- kdeui/kmainwindow.cpp.orig	2004-01-17 13:53:06.000000000 +0100
-+++ kdeui/kmainwindow.cpp	2004-01-19 13:21:50.000000000 +0100
-@@ -197,7 +197,7 @@ void KMainWindow::initKMainWindow(const 
+$OpenBSD: patch-kdeui_kmainwindow_cpp,v 1.3 2005/03/29 21:18:36 espie Exp $
+--- kdeui/kmainwindow.cpp.orig	Fri Feb  4 00:33:10 2005
++++ kdeui/kmainwindow.cpp	Wed Mar 23 09:35:08 2005
+@@ -199,7 +199,7 @@ void KMainWindow::initKMainWindow(const 
          s = objname + '1'; // start adding number immediately
          unusedNumber = 1;
          }

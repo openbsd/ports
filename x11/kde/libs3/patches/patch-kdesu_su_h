@@ -1,7 +1,7 @@
-$OpenBSD: patch-kdesu_su_h,v 1.2 2004/02/01 14:59:23 espie Exp $
---- kdesu/su.h.orig	2003-10-26 11:53:31.000000000 +0100
-+++ kdesu/su.h	2004-01-19 13:21:50.000000000 +0100
-@@ -45,6 +45,7 @@ public:
+$OpenBSD: patch-kdesu_su_h,v 1.3 2005/03/29 21:18:36 espie Exp $
+--- kdesu/su.h.orig	Mon Nov 15 23:43:23 2004
++++ kdesu/su.h	Wed Mar 23 09:35:07 2005
+@@ -47,6 +47,7 @@ public:
       * Checks if a password is needed.
       */
      int checkNeedPassword();

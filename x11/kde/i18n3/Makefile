@@ -1,9 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2005/03/07 23:09:53 espie Exp $
-
-#FLAVORS=ar az bg bn bs ca cs cy da de el en_GB es et eu fa fi fr gl he hi \
-#	hr hsb hu is it ja lt mn ms nb nds nl nn pl pt pt_BR ro ru sk sl \
-#	sr sr@Latn sv tg tr uk uz zh_CN zh_TW
-#FLAVOR?=fr
+# $OpenBSD: Makefile,v 1.27 2005/03/29 21:18:36 espie Exp $
 
 LANGS=  af ar bg bn bs ca cs cy da de el en_GB eo es et eu fa fi fr gl he hi \
 	hr hsb hu is it ja mn ms nb nds nl nn pa pl pt pt_BR ro ru sk sl \
@@ -26,10 +21,9 @@ SUBST_VARS+=DOC-$l LOC-$l
 COMMENT="all translations for KDE"
 
 CATEGORIES=		x11 x11/kde
-VERSION=		3.3.2
+VERSION=		3.4.0
 DISTNAME=		kde-i18n-${VERSION}
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}
-MASTER_SITES= ${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/@}
 
 BUILD_DEPENDS = ::x11/kde/libs3
 RUN_DEPENDS = ::x11/kde/libs3

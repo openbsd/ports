@@ -1,6 +1,6 @@
---- mpeglib/configure.in.in.orig	Sun Oct 27 00:20:37 2002
-+++ mpeglib/configure.in.in	Wed Jan  1 16:18:39 2003
-@@ -216,6 +216,9 @@ case "$OS_TYPE" in
+--- mpeglib/configure.in.in.orig	Thu Feb  3 23:48:26 2005
++++ mpeglib/configure.in.in	Sat Mar 26 10:30:28 2005
+@@ -217,6 +217,9 @@ case "$OS_TYPE" in
    NetBSD)
      kde_mpeglib_compiles=yes
      ;;
@@ -10,7 +10,7 @@
    Linux)
      kde_mpeglib_compiles=yes
      ;;
-@@ -245,6 +248,12 @@ case "$OS_TYPE" in
+@@ -244,6 +247,12 @@ case "$OS_TYPE" in
      AC_DEFINE(OS_Linux,1,[Define if you have linux pthread])
      ;;
  
@@ -22,8 +22,8 @@
 +
    FreeBSD)
      OS_TYPE="BSD"
-     AC_CHECK_LIB(c_r, pthread_create, [LIBPTHREAD="-lc_r"]) dnl name of pthread lib in FreeBSD
-@@ -291,5 +300,5 @@ KDE_MPEGLIB_COMPILES
+     AC_DEFINE(OS_BSD,1,[Define if you have BSD pthread])
+@@ -287,5 +296,5 @@ KDE_MPEGLIB_COMPILES
  
  THIS_LIB_LIBS="-lX11 -lXext -lm -lstdc++ ${XVLIBS} ${DGALIBS} "
  THIS_LIB_LIBS="${THIS_LIB_LIBS} ${XVIDMODELIBS} ${SDLLIB} ${CDDALIBS} "

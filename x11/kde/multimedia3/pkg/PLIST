@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/12/14 10:48:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2005/03/29 21:18:36 espie Exp $
 bin/artsbuilder
 bin/artscontrol
 bin/kaboodle
@@ -23,6 +23,8 @@ include/akode/akodelib.h
 include/akode/audiobuffer.h
 include/akode/audioconfiguration.h
 include/akode/audioframe.h
+include/akode/auto_sink.h
+include/akode/converter.h
 include/akode/crossfader.h
 include/akode/decoder.h
 include/akode/encoder.h
@@ -31,12 +33,15 @@ include/akode/file.h
 include/akode/framedecoder.h
 include/akode/frametostream_decoder.h
 include/akode/localfile.h
+include/akode/magic.h
 include/akode/mmapfile.h
+include/akode/player.h
 include/akode/pluginhandler.h
 include/akode/resampler.h
 include/akode/sink.h
 include/akode/streamdecoder.h
 include/akode/streamtoframe_decoder.h
+include/akode/volumefilter.h
 include/akode/wav_decoder.h
 include/arts/artsbuilder.h
 include/arts/artsbuilder.idl
@@ -277,6 +282,10 @@ lib/libakode.la
 @lib lib/libakode.so.1.0
 lib/libakode_mpc_decoder.la
 lib/libakode_mpc_decoder.so
+lib/libakode_mpeg_decoder.la
+lib/libakode_mpeg_decoder.so
+lib/libakode_oss_sink.la
+lib/libakode_oss_sink.so
 lib/libakode_xiph_decoder.la
 lib/libakode_xiph_decoder.so
 lib/libarts_akode.la
@@ -399,6 +408,7 @@ lib/mcop/Arts/Synth_COMPRESSOR.mcopclass
 lib/mcop/Arts/Synth_DATA.mcopclass
 lib/mcop/Arts/Synth_DEBUG.mcopclass
 lib/mcop/Arts/Synth_DELAY.mcopclass
+lib/mcop/Arts/Synth_DIV.mcopclass
 lib/mcop/Arts/Synth_ENVELOPE_ADSR.mcopclass
 lib/mcop/Arts/Synth_FM_SOURCE.mcopclass
 lib/mcop/Arts/Synth_FREEVERB.mcopclass
@@ -457,6 +467,7 @@ lib/mcop/SplayPlayObject.mcopclass
 lib/mcop/VoiceRemoval.mcopclass
 lib/mcop/WAVPlayObject.mcopclass
 lib/mcop/akodeMPCPlayObject.mcopclass
+lib/mcop/akodeMPEGPlayObject.mcopclass
 lib/mcop/akodePlayObject.mcopclass
 lib/mcop/akodeSpeexStreamPlayObject.mcopclass
 lib/mcop/akodeVorbisStreamPlayObject.mcopclass
@@ -572,6 +583,7 @@ share/apps/artsbuilder/pics/Synth_ATAN_SATURATE.xpm
 share/apps/artsbuilder/pics/Synth_BUS_DOWNLINK.xpm
 share/apps/artsbuilder/pics/Synth_BUS_UPLINK.xpm
 share/apps/artsbuilder/pics/Synth_DEBUG.xpm
+share/apps/artsbuilder/pics/Synth_DIV.xpm
 share/apps/artsbuilder/pics/Synth_ENVELOPE_ADSR.xpm
 share/apps/artsbuilder/pics/Synth_FILEPLAY.xpm
 share/apps/artsbuilder/pics/Synth_MIDI_DEBUG.xpm
@@ -633,6 +645,7 @@ share/apps/kaudiocreator/pics/check.png
 share/apps/kconf_update/audiocd.upd
 share/apps/kconf_update/kaudiocreator-libkcddb.upd
 share/apps/kconf_update/kaudiocreator-meta.upd
+share/apps/kconf_update/kcmcddb-emailsettings.upd
 share/apps/kconf_update/noatun.upd
 share/apps/kconf_update/noatun20update
 share/apps/kconf_update/upgrade-kaudiocreator-metadata.sh
@@ -706,6 +719,9 @@ share/apps/kmix/pics/mix_treble.png
 share/apps/kmix/pics/mix_unknown.png
 share/apps/kmix/pics/mix_video.png
 share/apps/kmix/pics/mix_volume.png
+share/apps/konqueror/
+share/apps/konqueror/servicemenus/
+share/apps/konqueror/servicemenus/audiocd_play.desktop
 share/apps/krec/
 share/apps/krec/icons/
 share/apps/krec/icons/crystalsvg/
@@ -801,6 +817,7 @@ share/apps/noatun/monoscope.plugin
 share/apps/noatun/net.plugin
 share/apps/noatun/noatunui.plugin
 share/apps/noatun/simple.plugin
+share/apps/noatun/simpleui.rc
 share/apps/noatun/skins/
 share/apps/noatun/skins/kaiman/
 share/apps/noatun/skins/kaiman/car-preset/
@@ -997,6 +1014,7 @@ share/apps/noatun/systray.plugin
 share/apps/noatun/systrayui.rc
 share/apps/noatun/voiceprint.plugin
 share/apps/noatun/winskin.plugin
+share/apps/noatun/yhconfig.kcfg
 share/apps/profiles/
 share/apps/profiles/kscd.profile.xml
 share/autostart/restore_kmix_volumes.desktop
@@ -1041,6 +1059,7 @@ share/doc/HTML/en/artsbuilder/images/Synth_CDELAY.png
 share/doc/HTML/en/artsbuilder/images/Synth_COMPRESSOR.png
 share/doc/HTML/en/artsbuilder/images/Synth_DEBUG.png
 share/doc/HTML/en/artsbuilder/images/Synth_DELAY.png
+share/doc/HTML/en/artsbuilder/images/Synth_DIV.png
 share/doc/HTML/en/artsbuilder/images/Synth_ENVELOPE_ADSR.png
 share/doc/HTML/en/artsbuilder/images/Synth_FILEPLAY.png
 share/doc/HTML/en/artsbuilder/images/Synth_FM_SOURCE.png
@@ -1098,6 +1117,8 @@ share/doc/HTML/en/kcontrol/kmixcfg/
 share/doc/HTML/en/kcontrol/kmixcfg/common
 share/doc/HTML/en/kcontrol/kmixcfg/index.cache.bz2
 share/doc/HTML/en/kcontrol/kmixcfg/index.docbook
+share/doc/HTML/en/kio_audiocd/
+share/doc/HTML/en/kio_audiocd/audiocd.docbook
 share/doc/HTML/en/kmid/
 share/doc/HTML/en/kmid/common
 share/doc/HTML/en/kmid/index.cache.bz2
@@ -1106,6 +1127,9 @@ share/doc/HTML/en/kmix/
 share/doc/HTML/en/kmix/common
 share/doc/HTML/en/kmix/index.cache.bz2
 share/doc/HTML/en/kmix/index.docbook
+share/doc/HTML/en/kmix/kmix-channel-playback.png
+share/doc/HTML/en/kmix/kmix-channel-record.png
+share/doc/HTML/en/kmix/kmix-window.png
 share/doc/HTML/en/krec/
 share/doc/HTML/en/krec/common
 share/doc/HTML/en/krec/index.cache.bz2
@@ -1167,7 +1191,6 @@ share/icons/crystalsvg/22x22/actions/artsenvironment.png
 share/icons/crystalsvg/22x22/actions/artsfftscope.png
 share/icons/crystalsvg/22x22/actions/artsmediatypes.png
 share/icons/crystalsvg/22x22/actions/artsmidimanager.png
-share/icons/crystalsvg/22x22/apps/
 share/icons/crystalsvg/22x22/apps/artscontrol.png
 share/icons/crystalsvg/22x22/apps/kaboodle.png
 share/icons/crystalsvg/22x22/apps/krec.png
@@ -1214,6 +1237,7 @@ share/icons/crystalsvg/scalable/actions/artsfftscope.svg
 share/icons/crystalsvg/scalable/actions/artsmediatypes.svg
 share/icons/crystalsvg/scalable/actions/artsmidimanager.svg
 share/icons/crystalsvg/scalable/apps/
+share/icons/crystalsvg/scalable/apps/artsbuilder.svgz
 share/icons/crystalsvg/scalable/apps/artscontrol.svg
 share/icons/locolor/
 share/icons/locolor/16x16/

@@ -1,16 +1,16 @@
-$OpenBSD: patch-mpeglib_example_cddaplay_Makefile_in,v 1.11 2004/09/18 09:36:44 espie Exp $
---- mpeglib/example/cddaplay/Makefile.in.orig	Mon Aug 16 11:41:48 2004
-+++ mpeglib/example/cddaplay/Makefile.in	Tue Sep  7 17:25:44 2004
-@@ -171,7 +171,7 @@ KDE_XSL_STYLESHEET = @KDE_XSL_STYLESHEET
- LAME_INCS = @LAME_INCS@
+$OpenBSD: patch-mpeglib_example_cddaplay_Makefile_in,v 1.12 2005/03/29 21:18:36 espie Exp $
+--- mpeglib/example/cddaplay/Makefile.in.orig	Fri Mar  4 13:31:49 2005
++++ mpeglib/example/cddaplay/Makefile.in	Sat Mar 26 10:35:57 2005
+@@ -178,7 +178,7 @@ LAME_INCS = @LAME_INCS@
  LAME_LIBS = @LAME_LIBS@
  LAME_RPATH = @LAME_RPATH@
+ LDADD_GST = @LDADD_GST@
 -LDFLAGS = @LDFLAGS@
 +LDFLAGS = @LDFLAGS@ -L../../lib/.libs
- LIBALIB = @LIBALIB@
- LIBASOUND = @LIBASOUND@
- LIBAUDIO = @LIBAUDIO@
-@@ -454,7 +454,7 @@ xine_artsplugin_SUBDIR_included_TRUE = @
+ LDFLAGS_AS_NEEDED = @LDFLAGS_AS_NEEDED@
+ LDFLAGS_GST = @LDFLAGS_GST@
+ LDFLAGS_NEW_DTAGS = @LDFLAGS_NEW_DTAGS@
+@@ -485,7 +485,7 @@ xine_artsplugin_SUBDIR_included_TRUE = @
  INCLUDES = -I../../include $(all_includes)
  cddaplay_SOURCES = cddaplay.cpp
  noinst_HEADERS = 

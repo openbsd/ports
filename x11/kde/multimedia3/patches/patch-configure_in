@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.17 2005/01/27 16:17:43 naddy Exp $
---- configure.in.orig	Mon Nov 29 08:19:16 2004
-+++ configure.in	Thu Jan 27 08:38:39 2005
-@@ -173,7 +173,7 @@ AC_CHECK_LIB(vorbisfile, ov_open,
+$OpenBSD: patch-configure_in,v 1.18 2005/03/29 21:18:36 espie Exp $
+--- configure.in.orig	Fri Mar  4 13:29:23 2005
++++ configure.in	Sat Mar 26 10:49:00 2005
+@@ -187,7 +187,7 @@ AC_CHECK_LIB(vorbisfile, ov_open,
  
  AC_CHECK_LIB(vorbis, vorbis_info_init,
  	[USELESS_VAR=1],
@@ -10,7 +10,16 @@ $OpenBSD: patch-configure_in,v 1.17 2005/01/27 16:17:43 naddy Exp $
  
  AC_CHECK_LIB(ogg, ogg_page_version,
  	[USELESS_VAR=1],
-@@ -1703,6 +1703,9 @@ case "$OS_TYPE" in
+@@ -579,7 +579,7 @@ AC_DEFUN([AC_CHECK_LIBOGGFLAC],
+   KDE_CHECK_HEADER(OggFLAC/seekable_stream_decoder.h,
+   [
+      KDE_CHECK_LIB(OggFLAC,OggFLAC__seekable_stream_decoder_process_single,
+-	          have_libOggFLAC=yes,,[-lm -lOggFLAC -lFLAC])
++	          have_libOggFLAC=yes,,[-lm -lOggFLAC -lFLAC -logg])
+ 
+     ])
+   if test "x$have_libOggFLAC" = "xyes"; then
+@@ -1928,6 +1928,9 @@ case "$OS_TYPE" in
    NetBSD)
      kde_mpeglib_compiles=yes
      ;;
@@ -20,7 +29,7 @@ $OpenBSD: patch-configure_in,v 1.17 2005/01/27 16:17:43 naddy Exp $
    Linux)
      kde_mpeglib_compiles=yes
      ;;
-@@ -1732,6 +1735,12 @@ case "$OS_TYPE" in
+@@ -1955,6 +1958,12 @@ case "$OS_TYPE" in
      AC_DEFINE(OS_Linux,1,[Define if you have linux pthread])
      ;;
  
@@ -32,8 +41,8 @@ $OpenBSD: patch-configure_in,v 1.17 2005/01/27 16:17:43 naddy Exp $
 +
    FreeBSD)
      OS_TYPE="BSD"
-     AC_CHECK_LIB(c_r, pthread_create, [LIBPTHREAD="-lc_r"]) dnl name of pthread lib in FreeBSD
-@@ -1778,7 +1787,7 @@ KDE_MPEGLIB_COMPILES
+     AC_DEFINE(OS_BSD,1,[Define if you have BSD pthread])
+@@ -1998,7 +2007,7 @@ KDE_MPEGLIB_COMPILES
  
  THIS_LIB_LIBS="-lX11 -lXext -lm -lstdc++ ${XVLIBS} ${DGALIBS} "
  THIS_LIB_LIBS="${THIS_LIB_LIBS} ${XVIDMODELIBS} ${SDLLIB} ${CDDALIBS} "

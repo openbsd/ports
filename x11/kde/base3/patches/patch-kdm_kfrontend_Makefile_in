@@ -1,7 +1,7 @@
-$OpenBSD: patch-kdm_kfrontend_Makefile_in,v 1.9 2004/09/18 09:36:43 espie Exp $
---- kdm/kfrontend/Makefile.in.orig	Mon Aug 16 11:23:27 2004
-+++ kdm/kfrontend/Makefile.in	Mon Sep  6 11:36:26 2004
-@@ -1153,7 +1153,7 @@ uninstall-info: uninstall-info-recursive
+$OpenBSD: patch-kdm_kfrontend_Makefile_in,v 1.10 2005/03/29 21:18:35 espie Exp $
+--- kdm/kfrontend/Makefile.in.orig	Fri Mar  4 14:14:56 2005
++++ kdm/kfrontend/Makefile.in	Wed Mar 23 11:50:59 2005
+@@ -1098,7 +1098,7 @@ uninstall-info: uninstall-info-recursive
  
  
  install-data-local: genkdmconf
@@ -9,4 +9,4 @@ $OpenBSD: patch-kdm_kfrontend_Makefile_in,v 1.9 2004/09/18 09:36:43 espie Exp $
 +#	./genkdmconf --in $(DESTDIR)$(kde_confdir)/kdm --face-src $(srcdir)/pics $(GENKDMCONF_FLAGS)
  
  messages:
- 	$(XGETTEXT) $(kdm_greet_SOURCES) -o $(podir)/kdmgreet.pot
+ 	$(XGETTEXT) `find . -name "*.cpp"` -o $(podir)/kdmgreet.pot

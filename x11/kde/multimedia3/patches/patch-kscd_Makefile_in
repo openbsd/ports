@@ -1,21 +1,21 @@
-$OpenBSD: patch-kscd_Makefile_in,v 1.11 2004/09/18 09:36:44 espie Exp $
---- kscd/Makefile.in.orig	Mon Aug 16 11:41:48 2004
-+++ kscd/Makefile.in	Tue Sep  7 17:25:44 2004
-@@ -71,7 +71,7 @@ kscd_OBJECTS = kvolumecontrol.$(OBJEXT) 
- 	ledlamp.$(OBJEXT) docking.$(OBJEXT) mgconfdlg.$(OBJEXT) \
- 	bwlednum.$(OBJEXT) configWidget.$(OBJEXT) cddbdlg.$(OBJEXT) kscd_skel.$(OBJEXT) panel.$(OBJEXT) cddbdlgbase.$(OBJEXT) configWidgetUI.$(OBJEXT) prefs.$(OBJEXT)
+$OpenBSD: patch-kscd_Makefile_in,v 1.12 2005/03/29 21:18:36 espie Exp $
+--- kscd/Makefile.in.orig	Fri Mar  4 13:31:49 2005
++++ kscd/Makefile.in	Sat Mar 26 10:33:28 2005
+@@ -72,7 +72,7 @@ kscd_OBJECTS = kvolumecontrol.$(OBJEXT) 
+ 	ledlamp.$(OBJEXT) docking.$(OBJEXT) bwlednum.$(OBJEXT) \
+ 	configWidget.$(OBJEXT) cddbdlg.$(OBJEXT) kscd_skel.$(OBJEXT) panel.$(OBJEXT) configWidgetUI.$(OBJEXT) prefs.$(OBJEXT)
  am__DEPENDENCIES_1 =
 -kscd_DEPENDENCIES = $(top_builddir)/kscd/libwm/libworkman.la \
 +kscd_DEPENDENCIES = $(top_builddir)/kscd/libwm/libkworkman.la \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
  	$(top_builddir)/libkcddb/libkcddb.la
-@@ -511,7 +511,7 @@ kscd_SOURCES=kvolumecontrol.cpp  kscd.cp
+@@ -544,7 +544,7 @@ kscd_SOURCES=kvolumecontrol.cpp  kscd.cp
  
  kde_kcfg_DATA = kscd.kcfg
- kscd_LDFLAGS = $(all_libraries) -lkutils
+ kscd_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 -kscd_LDADD = $(top_builddir)/kscd/libwm/libworkman.la \
 +kscd_LDADD = $(top_builddir)/kscd/libwm/libkworkman.la \
-              $(LIBCDROM) $(LIBCDAUDIO) $(LIBFPE) $(LIB_KIO) $(top_builddir)/libkcddb/libkcddb.la
+              $(LIBCDROM) $(LIBCDAUDIO) $(LIBFPE) $(LIB_KIO) -lkutils $(top_builddir)/libkcddb/libkcddb.la
  
  profiledata_DATA = kscd.profile.xml

@@ -1,7 +1,7 @@
-$OpenBSD: patch-kcontrol_clock_main_cpp,v 1.3 2004/09/18 09:36:43 espie Exp $
---- kcontrol/clock/main.cpp.orig	Thu Aug  5 20:57:01 2004
-+++ kcontrol/clock/main.cpp	Mon Sep  6 11:35:54 2004
-@@ -72,8 +72,13 @@ KclockModule::KclockModule(QWidget *pare
+$OpenBSD: patch-kcontrol_clock_main_cpp,v 1.4 2005/03/29 21:18:35 espie Exp $
+--- kcontrol/clock/main.cpp.orig	Tue Nov  2 17:25:42 2004
++++ kcontrol/clock/main.cpp	Wed Mar 23 11:50:58 2005
+@@ -80,8 +80,13 @@ KclockModule::KclockModule(QWidget *pare
  void KclockModule::save()
  {
  //  The order here is important
@@ -13,5 +13,5 @@ $OpenBSD: patch-kcontrol_clock_main_cpp,v 1.3 2004/09/18 09:36:43 espie Exp $
    tzone->save();
 +#endif
  
- // it syncs up nicely without restarting
- //    // restart kicker to sync up the time
+   // Tell the clock applet about the change so that it can update its timezone
+   kapp->dcopClient()->send( "kicker", "ClockApplet", "reconfigure()", QByteArray() );

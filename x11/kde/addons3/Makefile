@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.32 2004/12/17 09:24:32 alek Exp $
+# $OpenBSD: Makefile,v 1.33 2005/03/29 21:18:34 espie Exp $
 
 COMMENT=		"K Desktop Environment, addons"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.3.2
+VERSION=		3.4.0
 DISTNAME=		kdeaddons-${VERSION}
-MODKDE_VERSION=		3.3.0
+MODKDE_VERSION=		3.4
 
-LIB_DEPENDS= kdecore.6,DCOP,artskde,kabc,katepartinterfaces,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmdi,kmediaplayer,kparts,kresources,kscript,ktexteditor,kutils,kwalletclient,vcard::x11/kde/libs3 \
+LIB_DEPENDS= kdecore.6,kdnssd,kmdi2.1.0,knewstuff,DCOP,artskde,kabc,katepartinterfaces,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmediaplayer,kparts,kresources,kscript,ktexteditor,kutils,kwalletclient,vcard::x11/kde/libs3 \
 	SDL.1:sdl-*-!no_x11:devel/sdl \
 	artsbuilder,artsgui,artsgui_idl,artsgui_kde,artsmidi_idl,artsmodules,artsmodulescommon,artsmoduleseffects,artsmodulesmixers,artsmodulessynth,noatun,noatuncontrols,noatuntags::x11/kde/multimedia3 \
 	atlantic,atlantikui,kdegames::x11/kde/games3 \
 	kateinterfaces,kateutils,konq,konqsidebarplugin::x11/kde/base3 \
-	kabinterfaces,kdepim,kpinterfaces::x11/kde/pim3 \
+	kabinterfaces::x11/kde/pim3 \
 	gdk,gtk::x11/gtk+ \
 	xmms::audio/xmms
 

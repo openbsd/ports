@@ -1,26 +1,26 @@
-# $OpenBSD: Makefile,v 1.45 2005/02/27 08:20:34 brad Exp $
+# $OpenBSD: Makefile,v 1.46 2005/03/29 21:18:36 espie Exp $
 
 COMMENT=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
 COMMENT-kpov=		"KDE modeller for povray"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.3.2
+VERSION=		3.4.0
 DISTNAME=		kdegraphics-${VERSION}
-MODKDE_VERSION=		3.3.0
+MODKDE_VERSION=		3.4
 
 FLAVORS=debug
 SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-kpov -kamera
-PKGNAME=${DISTNAME}p2
-FULLPKGNAME-kamera=kamera-${VERSION}p0
-FULLPKGNAME-kpov=kpovmodeller-${VERSION}p0
+PKGNAME=${DISTNAME}
+FULLPKGNAME-kamera=kamera-${VERSION}
+FULLPKGNAME-kpov=kpovmodeller-${VERSION}
 SUBPACKAGE?=
 
 LIB_DEPENDS= \
 	kdecore.6,DCOP,kdefx,kdeprint,kdesu,kdeui,khtml,kjs,kio,kparts,kutils,kwalletclient::x11/kde/libs3 \
 	fribidi::devel/fribidi \
 	t1.5::devel/t1lib
-WANTLIB=	X11 art_lgpl_2 pthread ICE png util jpeg z SM Xext m
+WANTLIB=	X11 art_lgpl_2 pthread ICE png util jpeg z SM Xext m Xft
 
 .if defined(PACKAGING)
 .  if ${SUBPACKAGE} == "-kamera"

@@ -1,9 +1,9 @@
-$OpenBSD: patch-kioslave_ftp_ftp_cc,v 1.1 2005/02/27 07:42:03 brad Exp $
---- kioslave/ftp/ftp.cc.orig	Sun Feb 27 02:35:57 2005
-+++ kioslave/ftp/ftp.cc	Sun Feb 27 02:36:44 2005
-@@ -751,6 +751,14 @@ bool Ftp::ftpSendCmd( const QCString& cm
- {
-   assert(m_control != NULL);    // must have control connection socket
+$OpenBSD: patch-kioslave_ftp_ftp_cc,v 1.2 2005/03/29 21:18:36 espie Exp $
+--- kioslave/ftp/ftp.cc.orig	Wed Feb 23 12:57:14 2005
++++ kioslave/ftp/ftp.cc	Wed Mar 23 09:35:08 2005
+@@ -759,6 +759,14 @@ bool Ftp::ftpSendCmd( const QCString& cm
+     return false;
+   }
  
 +  if ( cmd.find( '\r' ) != -1 || cmd.find( '\n' ) != -1)
 +  {

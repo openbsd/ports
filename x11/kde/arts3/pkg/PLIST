@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/09/18 13:19:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2005/03/29 21:18:34 espie Exp $
 @conflict kdelibs-<3
 bin/artsc-config
 bin/artscat
@@ -11,6 +11,7 @@ bin/artswrapper
 bin/mcopidl
 include/arts/
 include/arts/anyref.h
+include/arts/arts_export.h
 include/arts/artsflow.h
 include/arts/artsflow.idl
 include/arts/artsversion.h
@@ -93,6 +94,7 @@ include/arts/unixserver.h
 include/arts/weakreference.h
 include/artsc/
 include/artsc/artsc.h
+include/artsc/artsc_export.h
 lib/libartsc.la
 lib/libartscbackend.la
 lib/libartsdsp.la

@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/12/12 11:33:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2005/03/29 21:18:35 espie Exp $
+bin/embedjs
 bin/jsaccess
 bin/kjscmd
 bin/krubyinit
 bin/qtrubyinit
+bin/rbkconfig_compiler
 bin/rbkdeapi
 bin/rbkdesh
 bin/rbqtapi
@@ -40,8 +42,12 @@ ${KDE}/libcustomobjectplugin.la
 ${KDE}/libcustomobjectplugin.so
 ${KDE}/libcustomqobjectplugin.la
 ${KDE}/libcustomqobjectplugin.so
+${KDE}/libfileitemplugin.la
+${KDE}/libfileitemplugin.so
 ${KDE}/libimagefxplugin.la
 ${KDE}/libimagefxplugin.so
+${KDE}/libjavascript.la
+${KDE}/libjavascript.so
 ${KDE}/libjsconsoleplugin.la
 ${KDE}/libjsconsoleplugin.so
 ${KDE}/libqprocessplugin.la
@@ -63,18 +69,34 @@ lib/ruby/site_ruby/1.8/Korundum.rb
 lib/ruby/site_ruby/1.8/Qt/
 lib/ruby/site_ruby/1.8/Qt.rb
 lib/ruby/site_ruby/1.8/Qt/qtruby.rb
-lib/ruby/site_ruby/1.8/${MACHINE_ARCH}-openbsd3.6/korundum.la
-lib/ruby/site_ruby/1.8/${MACHINE_ARCH}-openbsd3.6/korundum.so.0.0
-lib/ruby/site_ruby/1.8/${MACHINE_ARCH}-openbsd3.6/qtruby.la
-lib/ruby/site_ruby/1.8/${MACHINE_ARCH}-openbsd3.6/qtruby.so.0.0
-lib/ruby/site_ruby/1.8/${MACHINE_ARCH}-openbsd3.6/qui.la
-lib/ruby/site_ruby/1.8/${MACHINE_ARCH}-openbsd3.6/qui.so.0.0
+lib/ruby/site_ruby/1.8/${MACHINE_ARCH}-openbsd3.7/korundum.la
+lib/ruby/site_ruby/1.8/${MACHINE_ARCH}-openbsd3.7/korundum.so.0.0
+lib/ruby/site_ruby/1.8/${MACHINE_ARCH}-openbsd3.7/qtruby.la
+lib/ruby/site_ruby/1.8/${MACHINE_ARCH}-openbsd3.7/qtruby.so.0.0
+lib/ruby/site_ruby/1.8/${MACHINE_ARCH}-openbsd3.7/qui.la
+lib/ruby/site_ruby/1.8/${MACHINE_ARCH}-openbsd3.7/qui.so.0.0
 @man man/man1/kjscmd.1
 share/applications/kde/kjscmd.desktop
+share/applnk/
+share/applnk/Utilities/
+share/applnk/Utilities/embedjs.desktop
+share/apps/embedjs/
+share/apps/embedjs/embedjsui.rc
+share/apps/kate/
+share/apps/kate/scripts/
+share/apps/kate/scripts/swaptabs.desktop
+share/apps/kate/scripts/swaptabs.js
+share/apps/kate/scripts/swaptabs.ui
 share/apps/kjsembed/
 share/apps/kjsembed/cmdline.js
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/embedjs.png
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/embedjs.png
 share/services/customobject_plugin.desktop
 share/services/customqobject_plugin.desktop
 share/services/imagefx_plugin.desktop
+share/services/javascript.desktop
+share/services/kfileitem_plugin.desktop
 share/services/qprocess_plugin.desktop
 share/servicetypes/binding_type.desktop

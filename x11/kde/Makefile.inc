@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.31 2005/01/26 10:56:11 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.32 2005/03/29 21:18:34 espie Exp $
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
 .if defined(VERSION) && ${VERSION} == "3.1.95"
@@ -7,6 +7,8 @@ MASTER_SITES?=	${MASTER_SITE_KDE:S@$@unstable/${VERSION}/src/@}
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/3.2/src/@}
 .elif defined(VERSION) && ${VERSION} == "3.3.0"
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/3.3/src/@}
+.elif defined(VERSION) && ${VERSION} == "3.4.0"
+MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/3.4/src/@}
 .else
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/@}
 .endif
@@ -23,7 +25,7 @@ MODULES?=	x11/kde
 MODGNU_CONFIG_GUESS_DIRS?=	${MODKDE_CONFIG_GUESS_DIRS}
 
 CONFIGURE_STYLE?=	autoconf
-.if defined(MODKDE_VERSION) && (${MODKDE_VERSION} == "3.2.3" || ${MODKDE_VERSION} == "3.3.0")
+.if defined(MODKDE_VERSION) && (${MODKDE_VERSION} == "3.2.3" || ${MODKDE_VERSION} == "3.3.0" || ${MODKDE_VERSION} == "3.4")
 AUTOCONF_VERSION?=	2.59
 .endif
 AUTOCONF_VERSION?=	2.57

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2004/12/16 07:25:25 alek Exp $
+# $OpenBSD: Makefile,v 1.28 2005/03/29 21:18:36 espie Exp $
 
 COMMENT= 		"K Desktop Environment, multimedia applications"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.3.2
+VERSION=		3.4.0
 DISTNAME=		kdemultimedia-${VERSION}
-MODKDE_VERSION=		3.3.0
+MODKDE_VERSION=		3.4
 
 LIB_DEPENDS= DCOP,kdecore.6,kdefakes,kdefx,kdesu,kdeui,kio,kmid,kparts,kmediaplayer,kutils,kwalletclient::x11/kde/libs3 \
 	artsc,artskde::x11/kde/arts3 \

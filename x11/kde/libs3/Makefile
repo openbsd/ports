@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.48 2005/02/27 07:25:50 brad Exp $
+# $OpenBSD: Makefile,v 1.49 2005/03/29 21:18:36 espie Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.3.2
+VERSION=		3.4.0
 DISTNAME=		kdelibs-${VERSION}
-PKGNAME=		${DISTNAME}p4
-MODKDE_VERSION?=	3.3.0
+PKGNAME=		${DISTNAME}
+MODKDE_VERSION?=	3.4
 
 FLAVORS=debug
 VMEM_WARNING=	Yes
@@ -56,6 +56,7 @@ post-install:
 	@for i in ${EXTRA_MANPAGES}; do \
 		${INSTALL_MAN} ${WRKBUILD}/man/man1/$$i.1 ${PREFIX}/man/man1; \
 	done
+	${INSTALL_PROGRAM} ${WRKBUILD}/libtool ${PREFIX}/bin/kdelibtool
 
 .include <bsd.port.mk>
 MODGNU_AUTOCONF_FILES+= dcop/dcop-path.h.in

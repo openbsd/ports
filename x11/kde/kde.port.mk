@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.14 2005/02/07 11:30:04 espie Exp $
+# $OpenBSD: kde.port.mk,v 1.15 2005/03/29 21:18:34 espie Exp $
 
 SHARED_ONLY?=	Yes
 
@@ -34,6 +34,15 @@ MODKDE_CONFIGURE_ENV+=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 MODKDE_MAKE_FLAGS=		CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 MODKDE_MAKE_FLAGS+=		LIBRESOLV=
 
+MODKDE_LIBTOOL?=No
+.if ${MODKDE_LIBTOOL:L} == "yes"
+LIBTOOL?=${LOCALBASE}/bin/kdelibtool
+BUILD_DEPENDS+=		::x11/kde/libs3
+CONFIGURE_ENV+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
+MAKE_ENV+=			LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
+MAKE_FLAGS+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
+.endif
+
 KDE=lib/kde3
 SUBST_VARS+=	KDE
 
@@ -51,6 +60,10 @@ AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
 LIB_DEPENDS+=lib/qt3/qt-mt.3.20::x11/qt3,mt
 .elif ${MODKDE_VERSION} == "3.3.0"
 PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.2.3/patch-* patch-* ${SUP_PATCH_LIST}
+AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
+LIB_DEPENDS+=lib/qt3/qt-mt.3.33::x11/qt3,mt
+.elif ${MODKDE_VERSION} == "3.4"
+PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.4/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
 LIB_DEPENDS+=lib/qt3/qt-mt.3.33::x11/qt3,mt
 .elif ${MODKDE_VERSION} == "2.2.2"
