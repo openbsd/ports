@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2004/11/21 17:51:47 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2005/01/04 10:58:16 alek Exp $
 
 COMMENT=		'sound server for Window Maker'
 
 DISTNAME=		WSoundServer-0.4.0
-PKGNAME=		${DISTNAME:L}
+PKGNAME=		${DISTNAME:L}p0
 CATEGORIES=		audio
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
@@ -22,8 +22,8 @@ PATCH_LIST=		${PORTSDIR}/infrastructure/patches/patch-lt1.3.0-ltconfig \
 			patch-*
 
 RUN_DEPENDS=		:windowmaker-*:x11/windowmaker
-LIB_DEPENDS=		wraster.4::x11/windowmaker \
-			PropList.2::devel/libproplist \
+BUILD_DEPENDS=		${RUN_DEPENDS}
+LIB_DEPENDS=		PropList.2::devel/libproplist \
 			audiofile::devel/libaudiofile \
 			dockapp::devel/libdockapp
 
