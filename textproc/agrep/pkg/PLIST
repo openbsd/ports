@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.3 2000/10/24 01:34:02 naddy Exp $
 @pkgcfl glimpse-*
 bin/agrep
 man/man1/agrep.1
