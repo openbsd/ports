@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/24 12:10:24 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/12/23 11:32:08 shell Exp $
 
 COMMENT=	"convert Big5/GB encoded files to postscript"
 
@@ -14,7 +14,8 @@ PERMIT_DISTFILES_FTP=   Yes
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
+MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/	\
+		ftp://ftp.shellhung.org/pub/OpenBSD/packages/chinese/bg5ps/
 
 RUN_DEPENDS=	::chinese/arphicttf \
 		::lang/python
