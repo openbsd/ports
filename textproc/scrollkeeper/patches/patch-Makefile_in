@@ -1,11 +1,10 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2002/11/30 04:41:29 marcm Exp $
---- Makefile.in.orig	Sun Sep  8 00:21:43 2002
-+++ Makefile.in	Sun Sep  8 00:21:54 2002
-@@ -448,14 +448,6 @@ dist-hook: scrollkeeper.spec
- 	cp scrollkeeper.spec $(distdir)
+$OpenBSD: patch-Makefile_in,v 1.2 2003/07/12 06:24:49 marcm Exp $
+--- Makefile.in.orig	Sun Jun 15 16:13:10 2003
++++ Makefile.in	Sun Jun 15 16:13:21 2003
+@@ -536,13 +536,6 @@ dist-hook: scrollkeeper.spec
  
+ # Build/rebuild the catalog
  install-data-hook:
--	# Build/rebuild the catalog
 -	rm -rf $(DESTDIR)$(scrollkeeper_localstate_dir)
 -	$(mkinstalldirs) $(DESTDIR)$(scrollkeeper_localstate_dir)
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/log
@@ -14,5 +13,5 @@ $OpenBSD: patch-Makefile_in,v 1.1 2002/11/30 04:41:29 marcm Exp $
 -	PATH="$(PATH):$(DESTDIR)$(bindir)" ; \
 -		$(DESTDIR)$(bindir)/scrollkeeper-rebuilddb -q -p $(DESTDIR)$(scrollkeeper_localstate_dir)
  
+ # Remove generated files
  uninstall-local:
- 	# Remove generated files

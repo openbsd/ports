@@ -1,7 +1,7 @@
-$OpenBSD: patch-cl_src_Makefile_in,v 1.1 2002/11/30 04:41:29 marcm Exp $
---- cl/src/Makefile.in.orig	Wed Jul 24 19:27:37 2002
-+++ cl/src/Makefile.in	Sat Sep  7 18:23:12 2002
-@@ -135,6 +135,7 @@ INCLUDES = \
+$OpenBSD: patch-cl_src_Makefile_in,v 1.2 2003/07/12 06:24:49 marcm Exp $
+--- cl/src/Makefile.in.orig	Sun Jun 15 15:58:30 2003
++++ cl/src/Makefile.in	Sun Jun 15 15:59:11 2003
+@@ -150,6 +150,7 @@ INCLUDES = \
  LDADD = \
          $(XML_LIBS) \
  	$(XSLT_LIBS) \
@@ -9,12 +9,3 @@ $OpenBSD: patch-cl_src_Makefile_in,v 1.1 2002/11/30 04:41:29 marcm Exp $
  	$(top_builddir)/libs/libscrollkeeper.la
  
  
-@@ -170,7 +171,7 @@ PROGRAMS =  $(bin_PROGRAMS)
- 
- DEFS = @DEFS@ -I. -I$(srcdir) -I../..
- CPPFLAGS = @CPPFLAGS@
--LDFLAGS = @LDFLAGS@
-+LDFLAGS = -L$(top_builddir)/libs/.libs @LDFLAGS@
- LIBS = @LIBS@
- scrollkeeper_preinstall_OBJECTS =  preinstall.$(OBJEXT)
- scrollkeeper_preinstall_LDADD = $(LDADD)

@@ -1,13 +1,22 @@
-$OpenBSD: patch-extract_dtds_Makefile_in,v 1.1 2002/11/30 04:41:29 marcm Exp $
---- extract/dtds/Makefile.in.orig	Sun Sep  8 16:53:19 2002
-+++ extract/dtds/Makefile.in	Sun Sep  8 17:00:14 2002
-@@ -282,9 +282,6 @@ install-data-hook:
- 	#
+$OpenBSD: patch-extract_dtds_Makefile_in,v 1.2 2003/07/12 06:24:49 marcm Exp $
+--- extract/dtds/Makefile.in.orig	Wed Jan 22 22:12:02 2003
++++ extract/dtds/Makefile.in	Sun Jun 15 10:13:26 2003
+@@ -138,7 +138,7 @@ XSLT_LIBS = @XSLT_LIBS@
+ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+-CATALOG = $(sysconfdir)/xml/catalog
++CATALOG = /var/db/xmlcatalog
+ dtdsdir = $(datadir)/xml/scrollkeeper/dtds
+ dtds_HEADERS = scrollkeeper-omf.dtd scrollkeeper-cl.dtd
+ subdir = extract/dtds
+@@ -335,9 +335,6 @@ uninstall-am: uninstall-dtdsHEADERS unin
  
- 	# ScrollKeeper OMF Variation DTD V1.0
+ # ScrollKeeper OMF Variation DTD V1.0
+ install-data-hook:
 -	-/usr/bin/xmlcatalog --noout --add "public" \
 -		"-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" \
 -		"$(dtdsdir)/scrollkeeper-omf.dtd" $(CATALOG)
  
- uninstall-local:
- 	#
+ #
+ # Unregister the DTD(s) in the system XML Catalog
