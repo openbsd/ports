@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/06/16 15:36:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/09/06 04:27:43 jsyn Exp $
 			
 COMMENT=		"intercept, modify, and rewrite egress traffic"
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.monkey.org/~dugsong/fragroute/ \
+MASTER_SITES=		http://monkey.org/~dugsong/fragroute/ \
 			${MASTER_SITE_PACKETSTORM:=UNIX/security/}
 
 CONFIGURE_STYLE=	gnu

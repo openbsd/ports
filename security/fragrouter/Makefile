@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/09/28 06:02:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2002/09/06 04:27:43 jsyn Exp $
 
 COMMENT=	"tool for testing network IDS implementations"
 
@@ -7,7 +7,7 @@ DISTNAME=	fragrouter-1.6
 CATEGORIES=	security
 NEED_VERSION=	1.402
 
-MASTER_SITES=	http://www.monkey.org/~dugsong/
+MASTER_SITES=	http://monkey.org/~dugsong/
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
