@@ -1,6 +1,6 @@
---- unix/Makefile.orig	Fri Oct 24 14:38:04 1997
-+++ unix/Makefile	Fri Dec 17 20:40:11 1999
-@@ -16,7 +16,6 @@
+--- unix/Makefile.orig	Mon Nov 29 13:22:42 1999
++++ unix/Makefile	Thu Mar 16 19:23:06 2000
+@@ -17,7 +17,6 @@
  LN = ln -s
  
  # (to use the Gnu compiler, change cc to gcc in CC)
@@ -8,33 +8,34 @@
  BIND = $(CC)
  AS = $(CC) -c
  E =
-@@ -28,7 +27,7 @@
- INSTALL_D = mkdir -p
+@@ -33,7 +32,7 @@
+ MANFLAGS = 444
  
  # target directories - where to install executables and man pages to
 -prefix = /usr/local
-+prefix = $(PREFIX)
++prefix = ${PREFIX}
  BINDIR = $(prefix)/bin
  manext=1
  MANDIR = $(prefix)/man/man$(manext)
-@@ -40,7 +39,7 @@
+@@ -45,7 +44,7 @@
  #   CFLAGS    flags for C compile
  #   LFLAGS1   flags after output file spec, before obj file list
  #   LFLAGS2   flags after obj file list (libraries, etc)
--CFLAGS = -O -I. -DUNIX $(LOCAL_ZIP)
+-CFLAGS = -O2 -I. -DUNIX $(LOCAL_ZIP)
 +CFLAGS += -I. -DUNIX
  LFLAGS1 =
  LFLAGS2 = -s
  
-@@ -120,9 +119,9 @@
+@@ -125,10 +124,10 @@
  # install
  install:        $(ZIPS)
  	-$(INSTALL_D) $(BINDIR)
 -	$(INSTALL) $(ZIPS) $(BINDIR)
 +	$(BSD_INSTALL_PROGRAM) $(ZIPS) $(BINDIR)
+ 	-cd $(BINDIR); $(CHMOD) $(BINFLAGS) $(ZIPS)
  	-$(INSTALL_D) $(MANDIR)
 -	$(INSTALL) man/zip.1 $(MANDIR)/zip.$(manext)
 +	$(BSD_INSTALL_MAN) man/zip.1 $(MANDIR)/zip.$(manext)
+ 	$(CHMOD) $(MANFLAGS) $(MANDIR)/zip.$(manext)
  
  uninstall:
- 	-cd $(BINDIR); rm -f $(ZIPS)
