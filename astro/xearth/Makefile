@@ -1,20 +1,17 @@
-# $OpenBSD: Makefile,v 1.8 2000/06/26 15:09:19 pjanzen Exp $
+# $OpenBSD: Makefile,v 1.9 2000/09/12 13:13:15 brad Exp $
 
 DISTNAME=	xearth-1.1
 CATEGORIES=	astro x11
+NEED_VERSION=	1.320
 MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/
 
-NO_CDROM=	"NOFEE:	Cannot sell"
+MAINTAINER=	pjanzen@openbsd.org
 
-LICENSE_TYPE=   NOFEE
 PERMIT_PACKAGE_CDROM=   "Cannot sell."
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= "Cannot sell."
 PERMIT_DISTFILES_FTP=   Yes
 
-MAINTAINER=	pjanzen@openbsd.org
-
-USE_IMAKE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE= imake
 
 .include <bsd.port.mk>
