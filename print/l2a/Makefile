@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/12/09 12:46:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/16 05:41:02 jsyn Exp $
 
 COMMENT=		"filter for removing (La)TeX markup"
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes 
 PERMIT_DISTFILES_FTP=	Yes 
 
-MASTER_SITES=		http://www.crimelabs.net/~jose/openbsd/distfiles/
+MASTER_SITES=		http://monkey.org/~jose/openbsd/ports/
 
 MAKE_FLAGS=		CC='${CC}' OBJ=l2a.o EXE=l2a LLL=-ll
 
