@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/03/29 00:30:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2004/02/22 22:21:01 naddy Exp $
 
 COMMENT=	"library for arbitrary precision arithmetic"
 
@@ -16,11 +16,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=gmp/}
-
-# work around optimizer bug in gcc 2.95
-.if ${MACHINE_ARCH} == "sparc64"
-PATCH_LIST=	patch-* gcc-patch-*
-.endif
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
