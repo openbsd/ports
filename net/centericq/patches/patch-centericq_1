@@ -1,0 +1,12 @@
+$OpenBSD: patch-centericq_1,v 1.1 2001/08/19 07:25:00 pvalchev Exp $
+--- centericq.1.orig	Fri Aug  3 05:37:45 2001
++++ centericq.1	Sun Aug 19 01:18:09 2001
+@@ -33,7 +33,7 @@ use ascii characters to draw lines and b
+ display command line usage
+ 
+ .SH VERSION
+-centericq 3.34.15
++centericq 3.35.22
+ 
+ .SH BUG REPORT
+ Report any bugs to centericq-bugs@konst.org.ua
