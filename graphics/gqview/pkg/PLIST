@@ -1,10 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.11 2002/05/31 23:33:15 brad Exp $
+@comment $OpenBSD: PLIST,v 1.12 2003/01/18 22:03:22 brad Exp $
 bin/gqview
 man/man1/gqview.1
-share/doc/gqview/COPYING
-share/doc/gqview/ChangeLog
 share/doc/gqview/README
-share/doc/gqview/TODO
 @comment share/gnome/apps/Graphics/gqview.desktop
 share/locale/cs/LC_MESSAGES/gqview.mo
 share/locale/da/LC_MESSAGES/gqview.mo
