@@ -1,0 +1,12 @@
+$OpenBSD: patch-amavisd,v 1.1.1.1 2004/04/23 15:24:54 robert Exp $
+--- amavisd.orig	2004-04-21 21:29:30.000000000 -0500
++++ amavisd	2004-04-21 21:31:06.000000000 -0500
+@@ -109,7 +109,7 @@ sub fetch_modules($$@) {
+ 
+ BEGIN {
+     fetch_modules('REQUIRED BASIC MODULES', 1, qw(
+-	Exporter POSIX Fcntl Socket Errno Carp Time::HiRes
++	Exporter POSIX Fcntl Socket Errno Carp Carp::Heavy Time::HiRes
+ 	IO::File IO::Socket IO::Socket::UNIX IO::Socket::INET
+ 	IO::Handle IO::Wrap IO::Stringy
+ 	Digest::MD5 Unix::Syslog File::Basename File::Copy

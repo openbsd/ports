@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/23 15:24:54 robert Exp $
+sbin/amavisd
+share/doc/amavisd-new/AAAREADME.first
+share/doc/amavisd-new/INSTALL
+share/doc/amavisd-new/LDAP.schema
+share/doc/amavisd-new/LICENSE
+share/doc/amavisd-new/MANIFEST
+share/doc/amavisd-new/README.chroot
+share/doc/amavisd-new/README.contributed
+share/doc/amavisd-new/README.courier
+share/doc/amavisd-new/README.customize
+share/doc/amavisd-new/README.exim_v3
+share/doc/amavisd-new/README.exim_v4
+share/doc/amavisd-new/README.exim_v4_app
+share/doc/amavisd-new/README.exim_v4_app2
+share/doc/amavisd-new/README.lookups
+share/doc/amavisd-new/README.milter
+share/doc/amavisd-new/README.old.scanners
+share/doc/amavisd-new/README.performance
+share/doc/amavisd-new/README.policy-on-notifications
+share/doc/amavisd-new/README.postfix
+share/doc/amavisd-new/README.protocol
+share/doc/amavisd-new/README.sendmail
+share/doc/amavisd-new/README.sendmail-dual
+share/doc/amavisd-new/RELEASE_NOTES
+share/doc/amavisd-new/amavisd.conf
+@dirrm share/doc/amavisd-new
