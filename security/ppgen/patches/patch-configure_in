@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure_in,v 1.1 2001/12/19 00:17:52 matt Exp $
+--- configure.in.orig	Tue Aug 29 05:10:18 1995
++++ configure.in	Tue Dec 18 19:10:51 2001
+@@ -8,16 +8,6 @@ AC_INIT(ppgen.c)
+ 
+ AC_PROG_CC
+ AC_PROG_INSTALL
+-AC_PATH_PROG(PGP, pgp, false)
+-if test "$PGP" != false; then
+-    AC_MSG_CHECKING(for pgp +makerandom)
+-    if $PGP +makerandom=1 /dev/null > /dev/null 2>&1; then
+-	AC_MSG_RESULT(yes)
+-	AC_DEFINE_UNQUOTED(PATH_PGP, "$PGP")
+-    else
+-	AC_MSG_RESULT(no)
+-    fi
+-fi
+ 
+ AC_HEADER_STDC
+ AC_CHECK_HEADERS(getopt.h malloc.h string.h strings.h unistd.h)
