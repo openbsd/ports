@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/10/08 23:47:18 naddy Exp $
 man/man1/privoxy.1
 sbin/privoxy
 share/doc/privoxy/README
@@ -43,3 +43,45 @@ share/examples/privoxy/user.action
 @dirrm share/examples/privoxy/templates
 @dirrm share/examples/privoxy
 @dirrm share/doc/privoxy
+@cwd ${SYSCONFDIR}
+@extra privoxy/templates/blocked
+@extra privoxy/templates/cgi-error-404
+@extra privoxy/templates/cgi-error-bad-param
+@extra privoxy/templates/cgi-error-disabled
+@extra privoxy/templates/cgi-error-file
+@extra privoxy/templates/cgi-error-file-read-only
+@extra privoxy/templates/cgi-error-modified
+@extra privoxy/templates/cgi-error-parse
+@extra privoxy/templates/cgi-style.css
+@extra privoxy/templates/connect-failed
+@extra privoxy/templates/default
+@extra privoxy/templates/edit-actions-add-url-form
+@extra privoxy/templates/edit-actions-for-url
+@extra privoxy/templates/edit-actions-for-url-filter
+@extra privoxy/templates/edit-actions-list
+@extra privoxy/templates/edit-actions-list-button
+@extra privoxy/templates/edit-actions-list-section
+@extra privoxy/templates/edit-actions-list-url
+@extra privoxy/templates/edit-actions-remove-url-form
+@extra privoxy/templates/edit-actions-url-form
+@extra privoxy/templates/mod-local-help
+@extra privoxy/templates/mod-support-and-service
+@extra privoxy/templates/mod-title
+@extra privoxy/templates/mod-unstable-warning
+@extra privoxy/templates/no-such-domain
+@extra privoxy/templates/show-request
+@extra privoxy/templates/show-status
+@extra privoxy/templates/show-status-file
+@extra privoxy/templates/show-url-info
+@extra privoxy/templates/show-version
+@extra privoxy/templates/toggle
+@extra privoxy/templates/toggle-mini
+@extra privoxy/templates/untrusted
+@extra privoxy/templates/
+@extra privoxy/config
+@extra privoxy/default.action
+@extra privoxy/standard.action
+@extra privoxy/user.action
+@extra privoxy/default.filter
+@extra privoxy/
+@extraunexec rm -rf /var/log/privoxy
