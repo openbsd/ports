@@ -1,0 +1,96 @@
+#!/bin/sh
+
+
+cd $WRKDIR/teTeX
+
+patch -s <<'END-OF-INPUT'
+--- texmf.cnf,orig	Thu Dec  5 07:44:03 1996
++++ texmf.cnf	Thu Dec  5 07:45:35 1996
+@@ -15,10 +15,10 @@
+ % to find out which of the two is "correct" for your installation.
+ % The TETEXDIR normally holds this texmf.cnf file.
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-TETEXDIR           = $SELFAUTOPARENT
++TETEXDIR           = $SELFAUTODIR
+ 
+ % The name of the main texmf directory. ls-R is searched there.
+-TEXMF		= $TETEXDIR/texmf
++TEXMF		= $TETEXDIR/share/texmf
+ 
+ % Set this to the name of your local tree. You can have none, one or
+ % even more local texmf trees. Just make sure to list them in the TEXMFS
+@@ -82,4 +82,4 @@
+ 
+ % The following line shows the compile-time default value. It does not
+ % make any sense to change it for run-time.
+-TEXMFCNF	= $SELFAUTODIR:$SELFAUTOPARENT:/.$TETEXDIR
++TEXMFCNF	= .:$SELFAUTODIR/share/texmf/web2c
+END-OF-INPUT
+
+
+cd $WRKSRC/kpse-2.6/kpathsea
+
+patch -s <<END-OF-INPUT
+--- texmf.cnf.in.orig	Mon Aug 19 23:35:35 1996
++++ texmf.cnf.in	Thu Dec  5 08:06:17 1996
+@@ -15,10 +15,10 @@
+ % to find out which of the two is "correct" for your installation.
+ % The TETEXDIR normally holds this texmf.cnf file.
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-TETEXDIR           = \$SELFAUTOPARENT
++TETEXDIR           = \$SELFAUTODIR
+ 
+ % The name of the main texmf directory. ls-R is searched there.
+-TEXMF		= \$TETEXDIR/texmf
++TEXMF		= \$TETEXDIR/share/texmf
+ 
+ % Set this to the name of your local tree. You can have none, one or
+ % even more local texmf trees. Just make sure to list them in the TEXMFS
+@@ -82,4 +82,4 @@
+ 
+ % The following line shows the compile-time default value. It does not
+ % make any sense to change it for run-time.
+-TEXMFCNF	= \$SELFAUTODIR:\$SELFAUTOPARENT:/.\$TETEXDIR
++TEXMFCNF	= .:\$SELFAUTODIR/share/texmf/web2c:$WRKDIR/teTeX
+END-OF-INPUT
+
+cd $WRKDIR/teTeX
+
+patch -s <<'END-OF-INPUT'
+--- info/fontname.info.orig	Sun Aug 11 12:01:20 1996
++++ info/fontname.info	Thu Jul 10 12:04:47 1997
+@@ -1,6 +1,7 @@
+ This is Info file fontname.info, produced by Makeinfo-1.64 from the
+ input file fontname.texi.
+ 
++INFO-DIR-SECTION TeX & friends
+ START-INFO-DIR-ENTRY
+ * Naming TeX fonts: (fontname). Filenames for TeX fonts.
+ END-INFO-DIR-ENTRY
+--- info/kpathsea.info.orig	Sun Aug 11 21:26:21 1996
++++ info/kpathsea.info	Thu Jul 10 12:04:51 1997
+@@ -1,6 +1,7 @@
+ This is Info file kpathsea.info, produced by Makeinfo-1.64 from the
+ input file kpathsea.texi.
+ 
++INFO-DIR-SECTION TeX & friends
+ START-INFO-DIR-ENTRY
+ * Kpathsea: (kpathsea).		File lookup along search paths.
+ END-INFO-DIR-ENTRY
+--- info/latex.orig	Thu Jan  2 01:33:07 1997
++++ info/latex	Thu Jul 10 12:06:37 1997
+@@ -36,6 +36,11 @@
+ Public License" may be included in a translation approved by the author
+ instead of in the original English.
+ 
++INFO-DIR-SECTION TeX & friends
++START-INFO-DIR-ENTRY
++* LaTeX2e: (latex).	 	LaTeX2e, a document preparation system.
++END-INFO-DIR-ENTRY
++
+ 
+ Indirect:
+ latex-1: 1558
+END-OF-INPUT
+
+exit 0

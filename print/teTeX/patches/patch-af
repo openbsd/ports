@@ -1,0 +1,134 @@
+*** texinfo-3.9/util/texindex.c.orig	Thu Dec  4 20:21:10 1997
+--- texinfo-3.9/util/texindex.c	Thu Dec  4 20:52:04 1997
+***************
+*** 59,65 ****
+  #endif
+  
+  
+! char *mktemp ();
+  
+  #if defined (VMS)
+  #  include <file.h>
+--- 59,65 ----
+  #endif
+  
+  
+! int mkstemp ();
+  
+  #if defined (VMS)
+  #  include <file.h>
+***************
+*** 96,101 ****
+--- 96,110 ----
+  extern char *strerror ();
+  #endif
+  
++ struct tempfiles
++ {
++   char             *t_filename;
++   int               t_fd;
++   struct tempfiles *t_next;
++ };
++ 
++ struct tempfiles *tempfileshead = NULL;
++ 
+  /* When sorting in core, this structure describes one line
+     and the position and length of its first keyfield.  */
+  struct lineinfo
+***************
+*** 235,242 ****
+  
+    decode_command (argc, argv);
+  
+-   tempbase = mktemp (concat ("txiXXXXXX", "", ""));
+- 
+    /* Process input files completely, one by one.  */
+  
+    for (i = 0; i < num_infiles; i++)
+--- 244,249 ----
+***************
+*** 419,427 ****
+  maketempname (count)
+       int count;
+  {
+!   char tempsuffix[10];
+!   sprintf (tempsuffix, "%d", count);
+!   return concat (tempdir, tempbase, tempsuffix);
+  }
+  
+  /* Delete all temporary files up to TO_COUNT. */
+--- 426,464 ----
+  maketempname (count)
+       int count;
+  {
+!   struct tempfiles *tmp, *tmp2;
+! 
+!   tmp = (struct tempfiles *) calloc(1, sizeof(struct tempfiles));
+!   if (tmp == NULL)
+!     return NULL;
+! 
+!   tmp->t_filename = strdup("/tmp/txiXXXXXX");
+!   if (tmp->t_filename == NULL)
+!   {
+!     free(tmp);
+!     return NULL;
+!   }
+! 
+!   tmp->t_fd = mkstemp(tmp->t_filename);
+!   if (tmp->t_fd == -1)
+!   {
+!     free(tmp->t_filename);
+!     free(tmp);
+!     return NULL;
+!   }
+! 
+!   close(tmp->t_fd);
+! 
+!   if (tempfileshead == NULL)
+!     tempfileshead = tmp;
+!   else
+!   {
+!     for (tmp2 = tempfileshead; tmp2->t_next != NULL; tmp2 = tmp2->t_next)
+!       ;
+! 
+!     tmp2->t_next = tmp;
+!   }
+!   return tmp->t_filename;
+  }
+  
+  /* Delete all temporary files up to TO_COUNT. */
+***************
+*** 430,439 ****
+  flush_tempfiles (to_count)
+       int to_count;
+  {
+    if (keep_tempfiles)
+      return;
+!   while (last_deleted_tempcount < to_count)
+!     unlink (maketempname (++last_deleted_tempcount));
+  }
+  
+  /* Copy the input file open on IDESC into a temporary file
+--- 467,488 ----
+  flush_tempfiles (to_count)
+       int to_count;
+  {
++   struct tempfiles *tmp = tempfileshead;
++ 
+    if (keep_tempfiles)
+      return;
+! 
+!   if (tmp == NULL)
+!     return;
+! 
+!   while (--to_count)
+!   {
+!     last_deleted_tempcount++;
+!     tempfileshead = tempfileshead->t_next;
+!     unlink (tmp->t_filename);
+!     free(tmp->t_filename);
+!     free(tmp);
+!   }
+  }
+  
+  /* Copy the input file open on IDESC into a temporary file

@@ -1,0 +1,26 @@
+--- kpse-2.6/dvipsk/dvips.texi.orig	Sun Jan  8 18:17:04 1995
++++ kpse-2.6/dvipsk/dvips.texi	Tue Jul 15 14:36:55 1997
+@@ -2,6 +2,11 @@
+ @setfilename dvips.info
+ @settitle Dvips: A DVI driver
+ 
++@dircategory TeX & friends
++@direntry
++* DVIps: (dvips).	 	DVI-to-PostScript translator.
++@end direntry
++
+ @set version 5.58f
+ @set month-year January 1995
+ 
+@@ -30,11 +35,6 @@
+ @end titlepage
+ 
+ @ifinfo 
+-@format
+-START-INFO-DIR-ENTRY
+-* DVIps: (dvips).	 	DVI-to-PostScript translator.
+-END-INFO-DIR-ENTRY
+-@end format
+ 
+ @node Top
+ @top Dvips

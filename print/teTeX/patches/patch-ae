@@ -1,0 +1,26 @@
+--- kpse-2.6/kpathsea/kpathsea.texi.orig	Tue Aug 15 05:02:07 1995
++++ kpse-2.6/kpathsea/kpathsea.texi	Tue Jul 15 14:38:05 1997
+@@ -2,6 +2,11 @@
+ @setfilename kpathsea.info
+ @settitle Kpathsea: A library for path searching
+ 
++@dircategory TeX & friends
++@direntry
++* Kpathsea: (kpathsea).		File lookup along search paths.
++@end direntry
++
+ @set version 2.6
+ @set month-year January 1995
+ 
+@@ -21,11 +26,6 @@
+ @syncodeindex vr cp
+ 
+ @ifinfo
+-@format
+-START-INFO-DIR-ENTRY
+-* Kpathsea: (kpathsea).		File lookup along search paths.
+-END-INFO-DIR-ENTRY
+-@end format
+ 
+ This file documents the Kpathsea library for path searching.
+ 

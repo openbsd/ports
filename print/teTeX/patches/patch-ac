@@ -1,0 +1,16 @@
+--- kpse-2.6/kpathsea/Makefile.in,orig	Tue Dec 10 09:13:33 1996
++++ kpse-2.6/kpathsea/Makefile.in	Tue Dec 10 09:20:37 1996
+@@ -138,10 +138,10 @@
+ uninstall-exec:
+ 
+ install-data: texmf.cnf kpathsea.info
+-	$(SHELL) $(top_srcdir)/../mkdirchain $(texmf) $(infodir) $(TETEXDIR)
++	$(SHELL) $(top_srcdir)/../mkdirchain $(texmf) $(infodir) $(web2cdir)
+ 	if grep 'original texmf.cnf --' $(web2cdir)/texmf.cnf >/dev/null 2>&1 \
+-	   || test ! -r $(TETEXDIR)/texmf.cnf; then \
+-	  $(INSTALL_DATA) texmf.cnf $(TETEXDIR)/texmf.cnf; \
++	   || test ! -r $(web2cdir)/texmf.cnf; then \
++	  $(INSTALL_DATA) texmf.cnf $(web2cdir)/texmf.cnf; \
+ 	else true; fi
+ 	$(INSTALL_DATA) $(srcdir)/kpathsea.info $(infodir)/kpathsea.info
+ uninstall-data:
