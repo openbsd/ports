@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2000/03/26 20:43:10 brad Exp $
+# $OpenBSD: Makefile,v 1.34 2000/03/26 21:36:09 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.45
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_FTP=
 
 FAKE=	Yes
 
+USE_X11=	Yes
 USE_GMAKE=	Yes
 MAKE_ENV=	QTDIR="${WRKSRC}" SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}"
 MAKE_FLAGS=	VER_MAJ="1" VER_MIN="45"
