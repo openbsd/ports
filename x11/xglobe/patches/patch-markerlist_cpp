@@ -1,0 +1,15 @@
+$OpenBSD: patch-markerlist_cpp,v 1.1 2001/02/24 21:09:23 espie Exp $
+--- markerlist.cpp.orig	Sat Feb 24 22:04:28 2001
++++ markerlist.cpp	Sat Feb 24 22:05:04 2001
+@@ -398,7 +398,11 @@ void MarkerList::render_monochrome(unsig
+     
+     for(int wx=0 ; wx<visiblerect.width(); wx++)
+     {
++#if QT_VERSION >= 200
++      switch(*src++ & 0x00FFFFFF)
++#else
+       switch(*src++)
++#endif
+       {
+         case 0x00000000:
+           *dest++ = 0;
