@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2001/12/21 21:00:02 fgsch Exp $
+# $OpenBSD: Makefile,v 1.65 2002/01/24 17:07:28 aaron Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -64,6 +64,7 @@
 #    SUBDIR += oneko
 #    SUBDIR += oonsoo
 #    SUBDIR += qcc
+     SUBDIR += qstat
      SUBDIR += quake
      SUBDIR += quake,ggi
      SUBDIR += quake,
