@@ -1,7 +1,20 @@
 @cwd /usr/X11R6
-@name blackbox-0.50.2
+@name blackbox-0.50.3
 bin/bsetroot
 bin/blackbox
+share/Blackbox/brueghel/babel
+share/Blackbox/brueghel/babel.gif
+share/Blackbox/brueghel/babel.txt
+share/Blackbox/brueghel/icarus
+share/Blackbox/brueghel/icarus.gif
+share/Blackbox/brueghel/icarus.txt
+share/Blackbox/brueghel/littlebabel
+share/Blackbox/brueghel/littlebabel.gif
+share/Blackbox/brueghel/littlebabel.txt
+share/Blackbox/brueghel/rebelangels
+share/Blackbox/brueghel/rebelangels.gif
+share/Blackbox/brueghel/rebelangels.txt
+share/Blackbox/brueghel/stylesmenu
 share/Blackbox/styles/blackmagic
 share/Blackbox/styles/coldsteel
 share/Blackbox/styles/colorpurple
@@ -18,4 +31,5 @@ share/Blackbox/styles/stylesmenu
 share/Blackbox/rc
 share/Blackbox/menu
 @dirrm share/Blackbox/styles
+@dirrm share/Blackbox/brueghel
 @dirrm share/Blackbox
