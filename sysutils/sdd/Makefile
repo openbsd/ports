@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/07/21 01:00:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2003/02/12 15:40:39 naddy Exp $
 
 COMMENT=	"faster and improved version of dd"
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/sdd/
+MASTER_SITES=	ftp://ftp.berlios.de/pub/sdd/
 
 USE_GMAKE=	Yes
 MAKE_ENV=	MAKEPROG="${MAKE_PROGRAM}" CCOM="${CC}" COPTX="${CFLAGS}"
