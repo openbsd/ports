@@ -1,4 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.5 2000/08/16 16:34:19 naddy Exp $
 bin/ytalk
 man/man1/ytalk.1
-lib/ytalk/ytalkrc.sample
-@dirrm lib/ytalk
+share/examples/ytalkrc

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2000/03/25 06:51:47 brad Exp $
+# $OpenBSD: INSTALL,v 1.3 2000/08/16 16:34:19 naddy Exp $
 #
 # Pre/post-installation setup of ytalk
 
@@ -8,7 +8,8 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_FILE=/etc/ytalkrc
+CONFIG_FILE=${SYSCONFDIR}/ytalkrc
+SAMPLE_CONFIG_FILE=$PREFIX/share/examples/ytalkrc
 
 # Function: tell the user what s/he needs to do to use the port just installed
 #
@@ -18,7 +19,7 @@ do_notice()
     echo "+---------------"
     echo "| The existing $1 configuration file, ${CONFIG_FILE},"
     echo "| has NOT been changed.  You may want to compare it to the"
-    echo "| current sample file, ${PREFIX}/lib/ytalk/ytalkrc.sample,"
+    echo "| current sample file, ${SAMPLE_CONFIG_FILE},"
     echo "| and update your configuration as needed."
     echo "+---------------"
     echo
@@ -28,7 +29,7 @@ do_notice()
 #
 do_install()
 {
-    install -o root -g wheel -m 644 ${PREFIX}/lib/ytalk/ytalkrc.sample ${CONFIG_FILE}
+    install -o root -g wheel -m 644 ${SAMPLE_CONFIG_FILE} ${CONFIG_FILE}
     echo
     echo "+---------------"
     echo "| The $1 configuration file, ${CONFIG_FILE},"
