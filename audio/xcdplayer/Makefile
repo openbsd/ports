@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/24 22:20:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2003/08/24 22:15:55 naddy Exp $
 
 COMMENT=	"CD player for X11"
 DISTNAME=	xcdplayer-2.2
@@ -14,11 +14,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
-CONFIGURE_STYLE=	imake
+CONFIGURE_STYLE=imake
 NO_REGRESS=	Yes
 
 pre-patch:
-	@cp ${FILESDIR}/cdrom_freebsd.{c,h} ${WRKSRC}
+	@cp ${FILESDIR}/*.[ch] ${WRKSRC}
 	@mv ${WRKSRC}/xcdplayer.1 ${WRKSRC}/xcdplayer.man
 
 .include <bsd.port.mk>

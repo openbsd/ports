@@ -1,5 +1,6 @@
---- Imakefile.orig	Tue Jan 12 13:59:29 1993
-+++ Imakefile	Sun Jan 23 00:06:48 2000
+$OpenBSD: patch-Imakefile,v 1.1 2003/08/24 22:15:56 naddy Exp $
+--- Imakefile.orig	1993-01-12 19:59:29.000000000 +0100
++++ Imakefile	2003-08-24 22:38:23.000000000 +0200
 @@ -15,6 +15,11 @@
  
  LOCAL_LIBRARIES = XawClientLibs
