@@ -1,6 +1,6 @@
-$OpenBSD: patch-runjob_c,v 1.1.1.1 2003/08/23 19:24:50 sturm Exp $
+$OpenBSD: patch-runjob_c,v 1.2 2003/08/23 21:58:46 sturm Exp $
 --- runjob.c.orig	2000-06-21 01:11:56.000000000 +0200
-+++ runjob.c	2003-08-13 20:27:20.000000000 +0200
++++ runjob.c	2003-08-23 23:52:52.000000000 +0200
 @@ -34,11 +34,34 @@
  #include <stdio.h>
  #include <string.h>
@@ -28,7 +28,7 @@ $OpenBSD: patch-runjob_c,v 1.1.1.1 2003/08/23 19:24:50 sturm Exp $
 +	die_e("Temporary filename too long.");
 +    }
 +    if ((fd = mkstemp(template)) == -1) { 
-+	return (NULL);
++	die_e("Could not create temporary file.");
 +    }
 +    return fd;
 +
