@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2004/06/02 21:39:59 brad Exp $
+# $OpenBSD: Makefile,v 1.63 2004/06/11 08:00:35 brad Exp $
 
 COMMENT=	"WWW and FTP proxy cache and accelerator"
 
 DISTNAME=	squid-2.5.STABLE5
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}Versions/v2/2.5/
 MASTER_SITES0=	${HOMEPAGE}Versions/v2/2.5/bugs/
@@ -30,7 +30,9 @@ PATCHFILES=	${DISTNAME}-helper_warning.patch:0 \
 		${DISTNAME}-openbsd_m88k.patch:0 \
 		${DISTNAME}-ftp_html_doctype.patch:0 \
 		${DISTNAME}-dns_localhost.patch:0 \
-		${DISTNAME}-va_copy.patch:0
+		${DISTNAME}-va_copy.patch:0 \
+		${DISTNAME}-CONNECT_log_size.patch:0 \
+		${DISTNAME}-proxy_abuse.patch:0
 
 HOMEPAGE=	http://www.squid-cache.org/
 
@@ -45,7 +47,7 @@ PERMIT_DISTFILES_FTP=	Yes
 SQUIDDIR?=	/var/squid
 SUBST_VARS=	SQUIDDIR
 
-FLAVORS=	transparent
+FLAVORS=	transparent snmp
 FLAVOR?=
 
 .include <bsd.own.mk>
@@ -60,14 +62,22 @@ PATCH_LIST=     patch-* gcc-*
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/cfgaux
-CONFIGURE_ARGS=	--enable-removal-policies="lru heap" \
-		--enable-storeio="ufs diskd" \
+CONFIGURE_ARGS+=--datadir="${PREFIX}/share/squid" \
+		--enable-auth="basic digest" \
+		--enable-basic-auth-helpers="NCSA YP" \
+		--enable-digest-auth-helpers="password" \
+		--enable-external-acl-helpers="ip_user unix_group" \
+		--enable-removal-policies="lru heap" \
 		--enable-ssl \
-		--datadir="${PREFIX}/share/squid" \
+		--enable-storeio="ufs diskd" \
 		--localstatedir="${SQUIDDIR}"
 
 .if ${FLAVOR:L:Mtransparent}
-CONFIGURE_ARGS+= --enable-pf-transparent
+CONFIGURE_ARGS+=--enable-pf-transparent
+.endif
+
+.if${FLAVOR:L:Msnmp}
+CONFIGURE_ARGS+=--enable-snmp
 .endif
 
 post-install:
