@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST.noshared,v 1.1.1.1 2000/12/26 12:22:53 reinhard Exp $
+bin/ncdump
+bin/ncgen
+include/ncvalues.h
+include/netcdf.h
+include/netcdf.hh
+include/netcdfcpp.h
+lib/libnetcdf.a
+lib/libnetcdf_c++.a
+man/man1/ncdump.1
+man/man1/ncgen.1
+man/man3/netcdf.3
