@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/02/22 22:24:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2005/03/08 10:04:45 alek Exp $
 
 COMMENT=		"Quasar DV codec"
 
@@ -19,12 +19,13 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libdv/}
 
 BUILD_DEPENDS=		::devel/pkgconfig
 
+MODULES=		devel/gettext
 LIB_DEPENDS=		SDL.2::devel/sdl \
 			gdk.1.2,gtk.1.2::x11/gtk+ \
 			glib.1.2,gmodule.1.2::devel/glib \
 			popt.0::devel/popt
 
-WANTLIB=		X11 Xext Xi Xv c iconv intl m ossaudio pthread usbhid
+WANTLIB=		X11 Xext Xi Xv c m ossaudio pthread usbhid
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
