@@ -1,12 +1,12 @@
 # OpenBSD makefile for:	rman
-# Version required:     3.0.3a12
+# Version required:     3.0.5
 # Date created:         18 Nov 1997
 # Whom:                 ejovi
 #
-# $OpenBSD: Makefile,v 1.3 1998/04/12 23:23:07 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/05/20 08:20:58 angelos Exp $
 #
 
-DISTNAME=       rman-3.0.3a12
+DISTNAME=       rman-3.0.5
 CATEGORIES=	textproc
 NO_CDROM=	"LIC: Requires licence for redistribution."
 
