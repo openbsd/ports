@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/28 13:55:13 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 01:58:40 lebel Exp $
+
+COMMENT=	"free spreadsheet with graphical user interface"
 
 DISTNAME=	abs-src-0.8
 PKGNAME=	abs-0.8
 CATEGORIES=	math
-NEED_VERSION=	1.348
+NEED_VERSION=	1.402
 
 HOMEPAGE=	http://www.ping.be/bertin/abs.shtml
 

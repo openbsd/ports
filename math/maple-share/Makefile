@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/11/19 20:02:12 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 01:58:57 lebel Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
+
+COMMENT=	"libraries for maple V 5; commercial"
 
 # Directory where the maple CDROM was mounted
 .if !defined(MAPLE_CDROM)
@@ -13,7 +15,7 @@ TRUEMAPLE_DIR?=${TRUEPREFIX}/maple
 
 DISTNAME=	mapleshare-5.5
 CATEGORIES=     math
-NEED_VERSION=	1.223
+NEED_VERSION=	1.402
 
 # if someone wants to buy the sparc version and check it, be my guest...
 

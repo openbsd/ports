@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2000/08/19 04:40:57 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2001/05/06 01:59:36 lebel Exp $
 #
+
+COMMENT=	"spreadsheet program under X11"
 
 DISTNAME=	xspread3.1.1c
 PKGNAME=	xspread-3.1.1c
 CATEGORIES=	math
-NEED_VERSION=	1.319
+NEED_VERSION=	1.402
 
 MAINTAINER=	ports@openbsd.org
 

@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2001/02/16 14:51:16 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/05/06 01:58:53 lebel Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
+
+COMMENT=	"algebraic and symbolic computations; commercial"
 
 # Directory where the maple CDROM was mounted
 .if !defined(MAPLE_CDROM)
@@ -13,7 +15,7 @@ TRUEMAPLE_DIR?=${TRUEPREFIX}/maple
 
 DISTNAME=	maple-5.5
 CATEGORIES=     math
-NEED_VERSION=	1.223
+NEED_VERSION=	1.402
 
 RUN_DEPENDS=	/emul/linux/usr/i486-linux-libc5/lib/libc.so.5::emulators/redhat_base
 

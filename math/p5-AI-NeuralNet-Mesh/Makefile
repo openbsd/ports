@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/23 15:06:45 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 01:59:16 lebel Exp $
+
+COMMENT=	"module to implement an accurate neural network mesh"
 
 DISTNAME=	AI-NeuralNet-Mesh-0.44
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	math perl5
-NEED_VERSION=	1.352
+NEED_VERSION=	1.402
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

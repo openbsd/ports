@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2001/02/24 06:04:21 angelos Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 01:59:31 lebel Exp $
 #
+
+COMMENT=	"commercial spreadsheet"
 
 ONLY_FOR_ARCHS=	i386
 DISTNAME=	Wingz-142
 CATEGORIES=	math
-NEED_VERSION=	1.230
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/financial/spreadsheet
 EXTRACT_SUFX=	.tgz
