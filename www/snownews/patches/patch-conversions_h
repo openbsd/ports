@@ -1,9 +1,0 @@
-$OpenBSD: patch-conversions_h,v 1.2 2003/11/05 01:13:53 jolan Exp $
---- conversions.h.orig	2003-11-02 14:41:22.000000000 -0600
-+++ conversions.h	2003-11-04 18:27:51.000000000 -0600
-@@ -1,4 +1,4 @@
--char * iconvert (char * inbuf, char * from, char * to);
-+char * iconvert (const char * inbuf, char * from, char * to);
- char * UIDejunk (char * feed_description);
- char * WrapText (char * text, int width);
- void *zlib_uncompress(void *in_buf, int in_size, int *out_size, int voodoo_magic);
