@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/17 00:42:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/01/08 07:32:51 shell Exp $
 
 COMMENT=            "Gtk bindings for Python"
 COMMENT-gnome=      "Gtk and Gnome bindings for Python"
@@ -7,15 +7,14 @@ COMMENT-gnome=      "Gtk and Gnome bindings for Python"
 # overlaps py-gtk. Because of this version number inconsistency, we use
 # py-gnome's version number, even for py-gtk.
 
-V=              1.4.1           ## For py-gtk, this really is 0.6.8
+V=              1.4.2           ## For py-gtk, this really is 0.6.9
 PKGNAME=        py-Gtk-${V}
 DISTNAME=       gnome-python-${V}
 CATEGORIES=     x11 devel
-NEED_VERSION=   1.474
+NEED_VERSION=   1.504
 
 MASTER_SITES=       ${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/gnome-python
-
 
 HOMEPAGE=       http://www.daa.com.au/~james/gnome/
 
