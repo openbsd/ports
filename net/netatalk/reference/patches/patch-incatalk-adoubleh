@@ -1,0 +1,56 @@
+--- include/atalk/adouble.h.orig	Wed Sep 25 01:23:07 1996
++++ include/atalk/adouble.h	Fri Nov 19 11:55:08 1999
+@@ -75,19 +75,19 @@
+  */
+ 
+ struct ad_entry {
+-    long	ade_off;
+-    long	ade_len;
++    int32_t	ade_off;
++    int32_t	ade_len;
+ };
+ 
+ struct ad_fd {
+     int		adf_fd;
+-    long	adf_off;
++    off_t	adf_off;
+     int		adf_flags;
+ };
+ 
+ struct adouble {
+-    int			ad_magic;
+-    int			ad_version;
++    int32_t			ad_magic;
++    int32_t			ad_version;
+     char		ad_homefs[ 16 ];
+     struct ad_entry	ad_eid[ ADEID_MAX ];
+     char		ad_data[ AD_DATASZ ];
+@@ -103,7 +103,7 @@
+ #define ad_getversion(ad)	((ad)->ad_version)
+ #define ad_gethomefs(ad)	((ad)->ad_homefs);
+ #define ad_sethomefs(ad,buf) \
+-	(bcopy(buf,(ad)->ad_homefs,sizeof((ad)->ad_homefs)))
++	(memcpy((ad)->ad_homefs,buf,sizeof((ad)->ad_homefs)))
+ #define ad_getentrylen(ad,eid)	((ad)->ad_eid[(eid)].ade_len)
+ #define ad_setentrylen(ad,eid,len) \
+ 	((ad)->ad_eid[(eid)].ade_len = (len))
+@@ -115,3 +115,19 @@
+ #define ad_dtruncate(ad,size)	(ftruncate((ad)->ad_df.adf_fd,size))
+ 
+ extern char	*ad_path();
++extern int	ad_open();
++extern int	ad_close();
++extern int	ad_read();
++extern int	ad_write();
++extern int	ad_refresh();
++extern int	ad_flush();
++extern int	ad_rtruncate();
++extern int	ad_mode();
++extern int	ad_mkdir();
++ 
++ /*
++ * Bits in the finderinfo data.
++ */
++ 
++#define FINDERINFO_CUSTOMICON 0x4
++

@@ -1,0 +1,30 @@
+--- libatalk/adouble/ad_write.c.orig	Sat Mar 15 07:08:05 1997
++++ libatalk/adouble/ad_write.c	Wed Nov 10 15:12:05 1999
+@@ -8,8 +8,10 @@
+ #include <sys/param.h>
+ #include <sys/stat.h>
+ #include <unistd.h>
++#include <string.h>
+ #include <atalk/adouble.h>
+ 
++int
+ ad_write( ad, eid, off, end, buf, buflen )
+     struct adouble	*ad;
+     int			eid, off, end, buflen;
+@@ -54,7 +56,7 @@
+ 
+ 	if ( ad->ad_hf.adf_off < sizeof( ad->ad_data )) {
+ #define min(a,b)	((a)<(b)?(a):(b))
+-	    bcopy( buf, ad->ad_data + ad->ad_hf.adf_off,
++	    memcpy( ad->ad_data + ad->ad_hf.adf_off, buf,
+ 		    min( sizeof( ad->ad_data ) - ad->ad_hf.adf_off, cc ));
+ 	}
+ 
+@@ -67,6 +69,7 @@
+     return( cc );
+ }
+ 
++int
+ ad_rtruncate( ad, size )
+     struct adouble	*ad;
+     off_t		size;

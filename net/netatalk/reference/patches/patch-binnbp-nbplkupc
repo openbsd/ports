@@ -1,0 +1,109 @@
+--- bin/nbp/nbplkup.c.orig	Wed Jul 28 07:13:29 1993
++++ bin/nbp/nbplkup.c	Wed Nov 10 14:06:37 1999
+@@ -25,6 +25,7 @@
+ #include <netatalk/endian.h>
+ #include <netatalk/at.h>
+ #include <atalk/nbp.h>
++#include <string.h>
+ #include <strings.h>
+ #include <stdio.h>
+ #if !defined( sun ) || !defined( i386 )
+@@ -35,12 +36,15 @@
+ char *Type = "=";
+ char *Zone = "*";
+ 
++void	asciize();
++
++void
+ Usage( av0 )
+     char	*av0;
+ {
+     char	*p;
+ 
+-    if (( p = rindex( av0, '/' )) == 0 ) {
++    if (( p = strrchr( av0, '/' )) == 0 ) {
+ 	p = av0;
+     } else {
+ 	p++;
+@@ -50,6 +54,7 @@
+     exit( 1 );
+ }
+ 
++int
+ main( ac, av )
+     int		ac;
+     char	**av;
+@@ -58,7 +63,7 @@
+     char		*name;
+     int			i, c, nresp = 1000;
+     extern char		*optarg;
+-    extern int		optind, opterr;
++    extern int		optind;
+ 
+     while (( c = getopt( ac, av, "r:" )) != EOF ) {
+ 	switch ( c ) {
+@@ -101,21 +106,21 @@
+ 	    perror( "malloc" );
+ 	    exit( 1 );
+ 	}
+-	strcpy( name, Obj );
++	(void)strlcpy( name, Obj, sizeof ( name ) );
+ 	Obj = name;
+ 
+ 	if (( name = (char *)malloc( strlen( Type ) + 1 )) == NULL ) {
+ 	    perror( "malloc" );
+ 	    exit( 1 );
+ 	}
+-	strcpy( name, Type );
++	(void)strlcpy( name, Type, sizeof ( name ) );
+ 	Type = name;
+ 
+ 	if (( name = (char *)malloc( strlen( Zone ) + 1 )) == NULL ) {
+ 	    perror( "malloc" );
+ 	    exit( 1 );
+ 	}
+-	strcpy( name, Zone );
++	(void)strlcpy( name, Zone, sizeof ( name ) );
+ 	Zone = name;
+ 
+     }
+@@ -142,11 +147,12 @@
+ 		nn[ i ].nn_sat.sat_addr.s_node,
+ 		nn[ i ].nn_sat.sat_port );
+     }
+-
++	return (0);
+ }
+ 
+ #include <ctype.h>
+ 
++void
+ asciize( i, p )
+     int		i;
+     char	*p;
+@@ -160,6 +166,7 @@
+ #define BPLEN	48
+ char	hexdig[] = "0123456789abcdef";
+ 
++void
+ bprint( data, len )
+     char	*data;
+     int		len;
+@@ -167,7 +174,7 @@
+     char	out[ BPLEN ];
+     int		i = 0;
+ 
+-    bzero( out, BPLEN );
++    memset( out, 0,  BPLEN );
+     for ( ;; ) {
+ 	if ( len < 1 ) {
+ 	    printf( "%s\n", ( i == 0 ) ? "(end)" : out );
+@@ -187,7 +194,7 @@
+ 
+ 	if ( i > BPLEN - 2 ) {
+ 	    printf( "%s\n", out );
+-	    bzero( out, BPLEN );
++	    memset( out, 0, BPLEN );
+ 	    i = 0;
+ 	    continue;
+ 	}

@@ -1,0 +1,24 @@
+--- include/Makefile.orig	Tue Feb 20 11:38:02 1996
++++ include/Makefile	Wed Aug  9 08:41:44 2000
+@@ -1,16 +1,15 @@
+-TARGETS=	atalk netatalk
++TARGETS=	atalk
+ 
+ INSTALL=	install
+ 
+ all :
+ 
+ install : all
+-	-mkdir ${DESTDIR}
+-	-mkdir ${INCDIR}
++	-mkdir ${DESTDIR}${INCDIR}
+ 	for i in ${TARGETS}; do \
+-	    rm -rf ${INCDIR}/$$i ; \
+-	    mkdir ${INCDIR}/$$i ; \
+-	    cp $$i/*.h ${INCDIR}/$$i ; \
++	    rm -rf ${DESTDIR}${INCDIR}/$$i ; \
++	    mkdir ${DESTDIR}${INCDIR}/$$i ; \
++	    cp $$i/*.h ${DESTDIR}${INCDIR}/$$i ; \
+ 	done
+ 
+ clean :

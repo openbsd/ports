@@ -1,0 +1,11 @@
+--- bin/aecho/Makefile.orig	Wed Aug  9 08:18:08 2000
++++ bin/aecho/Makefile	Wed Aug  9 08:18:34 2000
+@@ -15,7 +15,7 @@
+ 	${CC} ${CFLAGS} -o aecho ${OBJ} ${LIBDIRS} ${LIBS}
+ 
+ install : all
+-	${INSTALL} -c aecho ${BINDIR}
++	${INSTALL} -c aecho ${DESTDIR}${BINDIR}
+ 
+ clean :
+ 	rm -f a.out core* *.o *.bak *[Ee]rrs tags

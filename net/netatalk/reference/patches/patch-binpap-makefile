@@ -1,0 +1,11 @@
+--- bin/pap/Makefile.orig	Wed Aug  9 08:23:35 2000
++++ bin/pap/Makefile	Wed Aug  9 08:23:19 2000
+@@ -19,7 +19,7 @@
+ 	${CC} ${CFLAGS} -o papstatus papstatus.o ${LIBDIRS} ${LIBS}
+ 
+ install : all
+-	for i in ${TARGETS}; do ${INSTALL} -c $$i ${BINDIR}; done
++	for i in ${TARGETS}; do ${INSTALL} -c $$i ${DESTDIR}${BINDIR}; done
+ 
+ clean :
+ 	rm -f a.out core* *.o *.bak *[Ee]rrs tags

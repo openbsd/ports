@@ -1,0 +1,54 @@
+--- bin/pap/papstatus.c.orig	Fri Oct 30 10:36:33 1992
++++ bin/pap/papstatus.c	Tue Nov 16 20:14:19 1999
+@@ -31,16 +31,21 @@
+ #include <atalk/pap.h>
+ #include <atalk/nbp.h>
+ #include <stdio.h>
+-#include <strings.h>
++#include <stdlib.h>
++#include <string.h>
++#include <unistd.h>
+ 
+ #define _PATH_PAPRC	".paprc"
+ 
++int	getstatus();
++
++int
+ usage( path )
+     char	*path;
+ {
+     char	*p;
+ 
+-    if (( p = rindex( path, '/' )) == NULL ) {
++    if (( p = strrchr( path, '/' )) == NULL ) {
+ 	p = path;
+     } else {
+ 	p++;
+@@ -77,6 +82,7 @@
+ char			cbuf[ 8 ];
+ struct nbpnve		nn;
+ 
++int
+ main( ac, av )
+     int		ac;
+     char	**av;
+@@ -144,6 +150,7 @@
+     }
+ }
+ 
++int
+ getstatus( atp, sat )
+     ATP			atp;
+     struct sockaddr_at	*sat;
+@@ -179,8 +186,9 @@
+     if ( iov.iov_len < 8 ||
+ 	    rbuf[ 1 ] != PAP_STATUS ) {
+ 	fprintf( stderr, "Bad response!\n" );
+-	return;	/* This is weird, since TIDs must match... */
++	return (-1);	/* This is weird, since TIDs must match... */
+     }
+ 
+-    printf( "%.*s\n", iov.iov_len - 9, iov.iov_base + 9 );
++    printf( "%.*s\n", (int)iov.iov_len - 9, (char *)iov.iov_base + 9 );
++	return(0);
+ }

@@ -1,0 +1,597 @@
+--- etc/afpd/desktop.c.orig	Sun Aug 17 12:00:44 1997
++++ etc/afpd/desktop.c	Thu Nov 25 13:09:01 1999
+@@ -3,6 +3,7 @@
+  * All Rights Reserved.  See COPYRIGHT.
+  */
+ 
++#include <sys/stat.h>
+ #include <sys/syslog.h>
+ #include <sys/errno.h>
+ #include <sys/types.h>
+@@ -18,7 +19,7 @@
+ #include <dirent.h>
+ #include <fcntl.h>
+ #include <stdio.h>
+-#include <strings.h>
++#include <string.h>
+ #include <ctype.h>
+ #include <unistd.h>
+ 
+@@ -29,26 +30,30 @@
+ 
+ extern int	errno;
+ 
++int	iconopen();
++
++int
+ afp_opendt( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+ {
+     struct vol	*vol;
+-    u_short	vid;
++    u_int16_t	vid;
+ 
+     ibuf += 2;
+ 
+-    bcopy( ibuf, &vid, sizeof( u_short ));
++    memcpy( &vid, ibuf, sizeof( vid ));
+     if (( vol = getvolbyvid( vid )) == NULL ) {
+ 	*rbuflen = 0;
+ 	return( AFPERR_PARAM );
+     }
+ 
+-    bcopy( &vid, rbuf, sizeof( u_short ));
+-    *rbuflen = sizeof( u_short );
++    memcpy( rbuf, &vid, sizeof( vid ));
++    *rbuflen = sizeof( vid );
+     return( AFP_OK );
+ }
+ 
++int
+ afp_closedt( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+@@ -57,8 +62,9 @@
+     return( AFP_OK );
+ }
+ 
+-struct savedt	si = { { 0, 0, 0, 0 }, -1, 0 };
++struct savedt	si = { { 0, 0, 0, 0 }, -1, 0, 0 };
+ 
++int
+ afp_addicon( ibuf, ibuflen, rbuf, rbuflen, asp )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+@@ -67,31 +73,32 @@
+     struct vol		*vol;
+     struct iovec	iov[ 2 ];
+     u_char		fcreator[ 4 ], imh[ 12 ], irh[ 12 ], *p;
+-    int			ftype, itype, itag, cc, iovcnt = 0, buflen;
+-    u_short		bsize, rsize, vid;
++    int			itype, cc, iovcnt = 0, buflen;
++    int32_t		ftype, itag;
++    u_int16_t		bsize, rsize, vid;
+ 
+     *rbuflen = 0;
+     ibuf += 2;
+ 
+-    bcopy( ibuf, &vid, sizeof( u_short ));
+-    ibuf += sizeof( u_short );
++    memcpy( &vid, ibuf, sizeof( vid ));
++    ibuf += sizeof( vid );
+     if (( vol = getvolbyvid( vid )) == NULL ) {
+ 	return( AFPERR_PARAM );
+     }
+ 
+-    bcopy( ibuf, fcreator, sizeof( fcreator ));
+-    ibuf += sizeof( int );
++    memcpy( fcreator, ibuf, sizeof( fcreator ));
++    ibuf += sizeof( fcreator );
+ 
+-    bcopy( ibuf, &ftype, sizeof( int ));
+-    ibuf += sizeof( int );
++    memcpy( &ftype, ibuf, sizeof( ftype ));
++    ibuf += sizeof( ftype );
+ 
+     itype = *ibuf;
+     ibuf += 2;
+ 
+-    bcopy( ibuf, &itag, sizeof( int ));
+-    ibuf += sizeof( int );
++    memcpy( &itag, ibuf, sizeof( itag ));
++    ibuf += sizeof( itag );
+ 
+-    bcopy( ibuf, &bsize, sizeof( u_short ));
++    memcpy( &bsize, ibuf, sizeof( bsize ));
+     bsize = ntohs( bsize );
+ 
+     if ( si.sdt_fd != -1 ) {
+@@ -102,7 +109,8 @@
+ 	return( AFPERR_NOITEM );
+     }
+ 
+-    if ( lseek( si.sdt_fd, 0L, SEEK_SET ) < 0 ) {
++    if ( lseek( si.sdt_fd, (off_t)0L, SEEK_SET ) < 0 ) {
++	close(si.sdt_fd);
+ 	si.sdt_fd = -1;
+ 	return( AFPERR_PARAM );
+     }
+@@ -112,22 +120,22 @@
+      * we get to the end to insert.
+      */
+     p = imh;
+-    bcopy( &itag, p, sizeof( int ));
+-    p += sizeof( int );
+-    bcopy( &ftype, p, sizeof( int ));
+-    p += sizeof( int );
++    memcpy( p, &itag, sizeof( itag ));
++    p += sizeof( itag );
++    memcpy( p, &ftype, sizeof( ftype ));
++    p += sizeof( ftype );
+     *p++ = itype;
+     *p++ = 0;
+     bsize = htons( bsize );
+-    bcopy( &bsize, p, sizeof( u_short ));
++    memcpy( p, &bsize, sizeof( bsize ));
+     bsize = ntohs( bsize );
+     while (( cc = read( si.sdt_fd, irh, sizeof( irh ))) > 0 ) {
+-	bcopy( irh + 10, &rsize, sizeof( u_short ));
++	memcpy( &rsize, irh + 10, sizeof( rsize ));
+ 	rsize = ntohs( rsize );
+ 	/*
+ 	 * Is this our set of headers?
+ 	 */
+-	if ( bcmp( irh, imh, sizeof( irh ) - sizeof( u_short )) == 0 ) {
++	if ( memcmp( irh, imh, sizeof( irh ) - sizeof( rsize )) == 0 ) {
+ 	    /*
+ 	     * Is the size correct?
+ 	     */
+@@ -137,7 +145,7 @@
+ 		return( AFPERR_ITYPE );
+ 	    }
+ 	}
+-	if ( lseek( si.sdt_fd, (long)rsize, SEEK_CUR ) < 0 ) {
++	if ( lseek( si.sdt_fd, (off_t)rsize, SEEK_CUR ) < 0 ) {
+ 	    syslog( LOG_ERR, "afp_addicon: lseek: %m" );
+ 	    return( AFPERR_PARAM );
+ 	}
+@@ -225,39 +233,40 @@
+ 0x1F, 0xFF, 0xFF, 0xF0, 0x1F, 0xFF, 0xFF, 0xF0,
+ };
+ 
++int
+ afp_geticoninfo( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+ {
+     struct vol	*vol;
+     u_char	fcreator[ 4 ], ih[ 12 ];
+-    u_short	vid, iindex, bsize;
++    u_int16_t	vid, iindex, bsize;
+ 
+     *rbuflen = 0;
+     ibuf += 2;
+ 
+-    bcopy( ibuf, &vid, sizeof( u_short ));
+-    ibuf += sizeof( u_short );
++    memcpy( &vid, ibuf, sizeof( vid ));
++    ibuf += sizeof( vid );
+     if (( vol = getvolbyvid( vid )) == NULL ) {
+ 	return( AFPERR_PARAM );
+     }
+ 
+-    bcopy( ibuf, fcreator, sizeof( fcreator ));
++    memcpy( fcreator, ibuf, sizeof( fcreator ));
+     ibuf += sizeof( fcreator );
+-    bcopy( ibuf, &iindex, sizeof( u_short ));
++    memcpy( &iindex, ibuf, sizeof( iindex ));
+     iindex = ntohs( iindex );
+ 
+-    if ( bcmp( fcreator, ucreator, sizeof( ucreator )) == 0 ) {
++    if ( memcmp( fcreator, ucreator, sizeof( ucreator )) == 0 ) {
+ 	if ( iindex > 1 ) {
+ 	    return( AFPERR_NOITEM );
+ 	}
+-	bcopy( utag, ih, sizeof( utag ));
+-	bcopy( utype, ih + sizeof( utag ), sizeof( utype ));
++	memcpy( ih, utag, sizeof( utag ));
++	memcpy( ih + sizeof( utag ), utype, sizeof( utype ));
+ 	*( ih + sizeof( utag ) + sizeof( utype )) = 1;
+ 	*( ih + sizeof( utag ) + sizeof( utype ) + 1 ) = 0;
+-	bcopy( &usize, ih + sizeof( utag ) + sizeof( utype ) + 2,
+-		sizeof( usize ));
+-	bcopy( ih, rbuf, sizeof( ih ));
++	memcpy( ih + sizeof( utag ) + sizeof( utype ) + 2,
++		&usize, sizeof( usize ));
++	memcpy( rbuf, ih, sizeof( ih ));
+ 	*rbuflen = sizeof( ih );
+ 	return( AFP_OK );
+     }
+@@ -267,7 +276,7 @@
+     }
+ 
+     if ( iindex < si.sdt_index ) {
+-	if ( lseek( si.sdt_fd, 0L, SEEK_SET ) < 0 ) {
++	if ( lseek( si.sdt_fd, (off_t)0L, SEEK_SET ) < 0 ) {
+ 	    return( AFPERR_PARAM );
+ 	}
+ 	si.sdt_index = 1;
+@@ -282,14 +291,14 @@
+ 	    si.sdt_fd = -1;
+ 	    return( AFPERR_NOITEM );
+ 	}
+-	bcopy( ih + 10, &bsize, sizeof( u_short ));
++	memcpy( &bsize, ih + 10, sizeof( bsize ));
+ 	bsize = ntohs( bsize );
+-	if ( lseek( si.sdt_fd, (long)bsize, SEEK_CUR ) < 0 ) {
++	if ( lseek( si.sdt_fd, (off_t)bsize, SEEK_CUR ) < 0 ) {
+ 	    syslog( LOG_ERR, "afp_iconinfo: lseek: %m" );
+ 	    return( AFPERR_PARAM );
+ 	}
+ 	if ( si.sdt_index == iindex ) {
+-	    bcopy( ih, rbuf, sizeof( ih ));
++	    memcpy( rbuf, ih, sizeof( ih ));
+ 	    *rbuflen = sizeof( ih );
+ 	    return( AFP_OK );
+ 	}
+@@ -297,6 +306,7 @@
+     }
+ }
+ 
++int
+ afp_geticon( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+@@ -304,31 +314,31 @@
+     struct vol	*vol;
+     int		rc;
+     u_char	fcreator[ 4 ], ftype[ 4 ], itype, ih[ 12 ];
+-    u_short	vid, bsize, rsize;
++    u_int16_t	vid, bsize, rsize;
+ 
+     *rbuflen = 0;
+     ibuf += 2;
+ 
+-    bcopy( ibuf, &vid, sizeof( u_short ));
+-    ibuf += sizeof( u_short );
++    memcpy( &vid, ibuf, sizeof( vid ));
++    ibuf += sizeof( vid );
+     if (( vol = getvolbyvid( vid )) == NULL ) {
+ 	return( AFPERR_PARAM );
+     }
+ 
+-    bcopy( ibuf, fcreator, sizeof( fcreator ));
++    memcpy( fcreator, ibuf, sizeof( fcreator ));
+     ibuf += sizeof( fcreator );
+-    bcopy( ibuf, ftype, sizeof( ftype ));
++    memcpy( ftype, ibuf, sizeof( ftype ));
+     ibuf += sizeof( ftype );
+     itype = *ibuf++;
+     ibuf++;
+-    bcopy( ibuf, &bsize, sizeof( u_short ));
++    memcpy( &bsize, ibuf, sizeof( bsize ));
+     bsize = ntohs( bsize );
+ 
+-    if ( bcmp( fcreator, ucreator, sizeof( ucreator )) == 0 &&
+-	    bcmp( ftype, utype, sizeof( utype )) == 0 &&
++    if ( memcmp( fcreator, ucreator, sizeof( ucreator )) == 0 &&
++	    memcmp( ftype, utype, sizeof( utype )) == 0 &&
+ 	    itype == 1 &&
+ 	    bsize == usize ) {
+-	bcopy( uicon, rbuf, sizeof( uicon ));
++	memcpy( rbuf, uicon, sizeof( uicon ));
+ 	*rbuflen = sizeof( uicon );
+ 	return( AFP_OK );
+     }
+@@ -337,28 +347,30 @@
+ 	return( AFPERR_NOITEM );
+     }
+ 
+-    if ( lseek( si.sdt_fd, 0L, SEEK_SET ) < 0 ) {
++    if ( lseek( si.sdt_fd, (off_t)0L, SEEK_SET ) < 0 ) {
++	close(si.sdt_fd);
+ 	si.sdt_fd = -1;
++	syslog(LOG_ERR, "afp_geticon: lseek: %m");
+ 	return( AFPERR_PARAM );
+     }
+ 
+     si.sdt_index = 1;
+-
+     while (( rc = read( si.sdt_fd, ih, sizeof( ih ))) > 0 ) {
+ 	si.sdt_index++;
+-	if ( bcmp( ih + sizeof( int ), ftype, sizeof( ftype )) == 0 &&
++	if ( memcmp( ih + sizeof( int ), ftype, sizeof( ftype )) == 0 &&
+ 		*(ih + sizeof( int ) + sizeof( ftype )) == itype ) {
+ 	    break;
+ 	}
+-	bcopy( ih + 10, &rsize, sizeof( u_short ));
++	memcpy( &rsize, ih + 10, sizeof( &rsize ));
+ 	rsize = ntohs( rsize );
+-	if ( lseek( si.sdt_fd, (long)rsize, SEEK_CUR ) < 0 ) {
++	if ( lseek( si.sdt_fd, (off_t)rsize, SEEK_CUR ) < 0 ) {
+ 	    syslog( LOG_ERR, "afp_geticon: lseek: %m" );
+ 	    return( AFPERR_PARAM );
+ 	}
+     }
+ 
+     if ( rc < 0 ) {
++	syslog(LOG_ERR, "afp_geticon: read: %m");
+ 	return( AFPERR_PARAM );
+     }
+ 
+@@ -366,7 +378,7 @@
+ 	return( AFPERR_NOITEM );
+     }
+ 
+-    bcopy( ih + 10, &rsize, sizeof( u_short ));
++    memcpy( &rsize, ih + 10, sizeof( rsize ));
+     rsize = ntohs( rsize );
+ #define min(a,b)	((a)<(b)?(a):(b))
+     rc = min( bsize, rsize );
+@@ -383,12 +395,12 @@
+     u_char	creator[ 4 ];
+     char	*ext;
+ {
+-    static char	path[ MAXPATHLEN ];
++    static char	path[ MAXPATHLEN + 1 ];
+     char	*p;
+     int		i;
+ 
+-    strcpy( path, vol->v_path );
+-    strcat( path, "/.AppleDesktop/" );
++    (void)strlcpy( path, vol->v_path, sizeof (path) );
++    (void)strlcat( path, "/.AppleDesktop/", sizeof(path) );
+     for ( p = path; *p != '\0'; p++ )
+ 	;
+ 
+@@ -401,8 +413,8 @@
+ 
+     *p++ = '/';
+ 
+-    for ( i = 0; i < sizeof( creator ); i++ ) {
+-	if ( !isascii( creator[ i ] ) || creator[ i ] == '/' ) {
++    for ( i = 0; i < 4; i++ ) {
++	if ( !isprint( creator[ i ] ) || creator[ i ] == '/' ) {
+ 	    *p++ = hexdig[ ( creator[ i ] & 0xf0 ) >> 4 ];
+ 	    *p++ = hexdig[ creator[ i ] & 0x0f ];
+ 	} else {
+@@ -410,7 +422,7 @@
+ 	}
+     }
+     *p = '\0';
+-    strcat( path, ext );
++    (void)strlcat( path, ext, sizeof(path) );
+ 
+     return( path );
+ }
+@@ -419,7 +431,7 @@
+ mtoupath( mpath )
+     char	*mpath;
+ {
+-    static char	upath[ MAXNAMLEN ];
++    static char	upath[ MAXPATHLEN + 1];
+     char	*m, *u;
+     int		i = 0;
+ 
+@@ -451,11 +463,17 @@
+ #define hextoint( c )	( isdigit( c ) ? c - '0' : c + 10 - 'a' )
+ #define islxdigit(x)	(!isupper(x)&&isxdigit(x))
+ 
++ /* ProDOS-8 doesn't know about lower case, so if ucflag is set, force
++    alpha chars in file name to upper. If clear, leave them as found.
++    In either case, convert strings of the form ":xy" (xy are valid hex
++    digits), to a single literal character. <shirsch@ibm.net> */
++
+ char *
+-utompath( upath )
++utompath( upath, ucflag )
+     char	*upath;
++    int	ucflag;
+ {
+-    static char	mpath[ MAXNAMLEN ];
++    static char	mpath[ MAXPATHLEN + 1 ];
+     char	*m, *u;
+     int		h;
+ 
+@@ -470,6 +488,9 @@
+ 	    h |= hextoint( *u );
+ 	    *m++ = h;
+ 	} else {
++		if ( ucflag )
++			*m++ = ( !isupper ( *u)) ? toupper ( *u ) : *u;
++		else
+ 	    *m++ = *u;
+ 	}
+ 	u++;
+@@ -478,6 +499,7 @@
+     return( mpath );
+ }
+ 
++int
+ iconopen( vol, creator, flags, mode )
+     struct vol	*vol;
+     u_char	creator[ 4 ];
+@@ -485,8 +507,11 @@
+     char	*dtf, *adt, *adts;
+ 
+     if ( si.sdt_fd != -1 ) {
+-	if ( bcmp( si.sdt_creator, creator, sizeof( creator )) == 0 &&
+-		si.sdt_vid == vol->v_vid ) {
++	if ( si.sdt_creator[0] == creator[0] &&
++	     si.sdt_creator[1] == creator[1] &&
++	     si.sdt_creator[2] == creator[2] &&
++	     si.sdt_creator[3] == creator[3] &&
++	     si.sdt_vid == vol->v_vid ) {	
+ 	    return( AFP_OK );
+ 	}
+ 	close( si.sdt_fd );
+@@ -497,17 +522,17 @@
+ 
+     if (( si.sdt_fd = open( dtf, flags, ad_mode( dtf, mode ))) < 0 ) {
+ 	if ( errno == ENOENT && ( flags & O_CREAT )) {
+-	    if (( adts = rindex( dtf, '/' )) == NULL ) {
++	    if (( adts = strrchr( dtf, '/' )) == NULL ) {
+ 		return( AFPERR_PARAM );
+ 	    }
+ 	    *adts = '\0';
+-	    if (( adt = rindex( dtf, '/' )) == NULL ) {
++	    if (( adt = strrchr( dtf, '/' )) == NULL ) {
+ 		return( AFPERR_PARAM );
+ 	    }
+ 	    *adt = '\0';
+-	    (void) ad_mkdir( dtf, 0777 );
++	    (void) ad_mkdir( dtf, S_ISGID | 0777 );
+ 	    *adt = '/';
+-	    (void) ad_mkdir( dtf, 0777 );
++	    (void) ad_mkdir( dtf, S_ISGID | 0777 );
+ 	    *adts = '/';
+ 
+ 	    if (( si.sdt_fd = open( dtf, flags, ad_mode( dtf, mode ))) < 0 ) {
+@@ -518,12 +543,16 @@
+ 	    return( AFPERR_PARAM );
+ 	}
+     }
+-    bcopy( creator, si.sdt_creator, sizeof( creator ));
++    si.sdt_creator[0] = creator[0];
++    si.sdt_creator[1] = creator[1];
++    si.sdt_creator[2] = creator[2];
++    si.sdt_creator[3] = creator[3];
+     si.sdt_vid = vol->v_vid;
+     si.sdt_index = 1;
+     return( AFP_OK );
+ }
+ 
++int
+ afp_addcomment( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+@@ -532,20 +561,21 @@
+     struct vol		*vol;
+     struct dir		*dir;
+     char		*path, *name;
+-    int			did, clen;
+-    u_short		vid;
++    int			clen;
++    u_int16_t		vid;
++    int32_t		did;
+ 
+     *rbuflen = 0;
+     ibuf += 2;
+ 
+-    bcopy( ibuf, &vid, sizeof( u_short ));
+-    ibuf += sizeof( u_short );
++    memcpy( &vid, ibuf, sizeof( vid ));
++    ibuf += sizeof( vid );
+     if (( vol = getvolbyvid( vid )) == NULL ) {
+ 	return( AFPERR_PARAM );
+     }
+ 
+-    bcopy( ibuf, &did, sizeof( int ));
+-    ibuf += sizeof( int );
++    memcpy( &did, ibuf, sizeof( did ));
++    ibuf += sizeof( did );
+     if (( dir = dirsearch( vol, did )) == NULL ) {
+ 	return( AFPERR_NOOBJ );
+     }
+@@ -554,7 +584,7 @@
+ 	return( AFPERR_NOOBJ );
+     }
+ 
+-    if ((long)ibuf & 1 ) {
++    if ((int32_t)ibuf & 1 ) {
+ 	ibuf++;
+     }
+ 
+@@ -574,17 +604,18 @@
+ 	    name = path;
+ 	}
+ 	ad_setentrylen( &ad, ADEID_NAME, strlen( name ));
+-	bcopy( name, ad_entry( &ad, ADEID_NAME ),
+-		ad_getentrylen( &ad, ADEID_NAME ));
++	memcpy( ad_entry( &ad, ADEID_NAME ),
++		name, ad_getentrylen( &ad, ADEID_NAME ));
+     }
+ 
+     ad_setentrylen( &ad, ADEID_COMMENT, clen );
+-    bcopy( ibuf, ad_entry( &ad, ADEID_COMMENT ), clen );
++    memcpy( ad_entry( &ad, ADEID_COMMENT ), ibuf, clen );
+     ad_flush( &ad, ADFLAGS_HF );
+     ad_close( &ad, ADFLAGS_HF );
+     return( AFP_OK );
+ }
+ 
++int
+ afp_getcomment( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+@@ -593,20 +624,20 @@
+     struct vol		*vol;
+     struct dir		*dir;
+     char		*path;
+-    int			did;
+-    u_short		vid;
++    int32_t		did;
++    u_int16_t		vid;
+ 
+     *rbuflen = 0;
+     ibuf += 2;
+ 
+-    bcopy( ibuf, &vid, sizeof( u_short ));
+-    ibuf += sizeof( u_short );
++    memcpy( &vid, ibuf, sizeof( vid ));
++    ibuf += sizeof( vid );
+     if (( vol = getvolbyvid( vid )) == NULL ) {
+ 	return( AFPERR_PARAM );
+     }
+ 
+-    bcopy( ibuf, &did, sizeof( int ));
+-    ibuf += sizeof( int );
++    memcpy( &did, ibuf, sizeof( did ));
++    ibuf += sizeof( did );
+     if (( dir = dirsearch( vol, did )) == NULL ) {
+ 	return( AFPERR_NOOBJ );
+     }
+@@ -631,13 +662,14 @@
+     }
+ 
+     *rbuf++ = ad_getentrylen( &ad, ADEID_COMMENT );
+-    bcopy( ad_entry( &ad, ADEID_COMMENT ), rbuf,
++    memcpy( rbuf, ad_entry( &ad, ADEID_COMMENT ),
+ 	    ad_getentrylen( &ad, ADEID_COMMENT ));
+     *rbuflen = ad_getentrylen( &ad, ADEID_COMMENT ) + 1;
+     ad_close( &ad, ADFLAGS_HF );
+     return( AFP_OK );
+ }
+ 
++int
+ afp_rmvcomment( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+@@ -646,20 +678,20 @@
+     struct vol		*vol;
+     struct dir		*dir;
+     char		*path;
+-    int			did;
+-    u_short		vid;
++    int32_t		did;
++    u_int16_t		vid;
+ 
+     *rbuflen = 0;
+     ibuf += 2;
+ 
+-    bcopy( ibuf, &vid, sizeof( u_short ));
+-    ibuf += sizeof( u_short );
++    memcpy( &vid, ibuf, sizeof( vid ));
++    ibuf += sizeof( vid );
+     if (( vol = getvolbyvid( vid )) == NULL ) {
+ 	return( AFPERR_PARAM );
+     }
+ 
+-    bcopy( ibuf, &did, sizeof( int ));
+-    ibuf += sizeof( int );
++    memcpy( &did, ibuf, sizeof( did ));
++    ibuf += sizeof( did );
+     if (( dir = dirsearch( vol, did )) == NULL ) {
+ 	return( AFPERR_NOOBJ );
+     }

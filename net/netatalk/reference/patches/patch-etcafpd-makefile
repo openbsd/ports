@@ -1,0 +1,20 @@
+--- etc/afpd/Makefile.orig	Thu Jun 25 10:07:32 1998
++++ etc/afpd/Makefile	Wed Aug  9 08:33:25 2000
+@@ -21,7 +21,7 @@
+ 	if [ x"${KRBDIR}" != x ]; then \
+ 	    KRBLIBS="-lkrb -ldes"; \
+ 	    KRBLIBDIRS="-L${KRBDIR}/lib"; \
+-	    KRBINCPATH="-I${KRBDIR}/include"; \
++	    KRBINCPATH="-I${KRBDIR}/include/kerberosIV"; \
+ 	    KRBDEFS="-DKRB"; \
+ 	fi; \
+ 	if [ x"${AFSDIR}" != x ]; then \
+@@ -52,7 +52,7 @@
+ 	    ${CPPFLAGS} -c main.c
+ 
+ install : all
+-	${INSTALL} -c afpd ${SBINDIR}
++	${INSTALL} -c afpd ${DESTDIR}${SBINDIR}
+ 
+ clean :
+ 	rm -f a.out core* *.o *.bak *[Ee]rrs tags

@@ -1,0 +1,333 @@
+--- etc/papd/main.c.orig	Wed Jun 24 00:41:53 1998
++++ etc/papd/main.c	Wed Nov 24 12:30:19 1999
+@@ -3,6 +3,7 @@
+  * All Rights Reserved.  See COPYRIGHT.
+  */
+ 
++#include <sys/ioctl.h>
+ #include <sys/param.h>
+ #include <sys/types.h>
+ #include <sys/time.h>
+@@ -17,12 +18,14 @@
+ #include <sys/wait.h>
+ #include <sys/errno.h>
+ 
+-#include <strings.h>
++#include <curses.h>
++#include <string.h>
+ #include <signal.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <netdb.h>
+ #include <fcntl.h>
++#include <term.h>
+ #include <termios.h>
+ #include <unistd.h>
+ 
+@@ -37,7 +40,7 @@
+ 
+ #define _PATH_PAPDPPDFILE	".ppd"
+ 
+-#define PIPED_STATUS	"status: print spooler processing job"
++#define PIPED_STATUS	"status: Netatalk print spooler processing job"
+ 
+ struct printer	defprinter;
+ struct printer	*printers = NULL;
+@@ -50,6 +53,13 @@
+ struct printer	*printer = NULL;
+ char		*version = VERSION;
+ 
++int		getprinters(), getstatus(), rprintcap();
++extern	int	getprent(), nbp_unrgstr(), nbp_rgstr();
++extern	int	nbp_name(), session();
++extern	int	pgetent(), pgetnum(), pgetflag(), pnchktc();	
++extern void	endprent();
++
++
+ #if !defined( ibm032 ) && !defined( _IBMR2 )
+     void
+ #endif ibm032 _IBMR2
+@@ -102,6 +112,7 @@
+ 
+ char		rbuf[ 255 + 1 + 8 ];
+ 
++int
+ main( ac, av )
+     int		ac;
+     char	**av;
+@@ -118,30 +129,32 @@
+     int			c, pidfd;
+     extern char		*optarg;
+     extern int		optind, errno;
++    size_t		len;
+ 
+     if ( gethostname( hostname, sizeof( hostname )) < 0 ) {
+ 	perror( "gethostname" );
+ 	exit( 1 );
+     }
+-    if (( p = index( hostname, '.' )) != 0 ) {
++    if (( p = strchr( hostname, '.' )) != 0 ) {
+ 	*p = '\0';
+     }
+-    if (( defprinter.p_name = (char *)malloc( strlen( hostname ) + 1 ))
++        len = (strlen( hostname) + 1);
++    if (( defprinter.p_name = (char *)malloc( len ))
+ 	    == NULL ) {
+ 	perror( "malloc" );
+ 	exit( 1 );
+     }
+-    strcpy( defprinter.p_name, hostname );
++    (void)strlcpy( defprinter.p_name, hostname, len );
+     defprinter.p_type = "LaserWriter";
+     defprinter.p_zone = "*";
+     defprinter.p_ppdfile = _PATH_PAPDPPDFILE;
+ #ifdef __svr4__
+     defprinter.p_flags = P_PIPED;
+     defprinter.p_printer = "/usr/bin/lp -T PS";
+-#else __svr4__
++#else
+     defprinter.p_flags = P_SPOOLED;
+     defprinter.p_printer = "lp";
+-#endif __svr4__
++#endif
+     defprinter.p_operator = "operator";
+     defprinter.p_spool = _PATH_PAPDSPOOLDIR;
+ #ifdef ABS_PRINT
+@@ -248,7 +261,7 @@
+     /*
+      * Start logging.
+      */
+-    if (( p = rindex( av[ 0 ], '/' )) == NULL ) {
++    if (( p = strrchr( av[ 0 ], '/' )) == NULL ) {
+ 	p = av[ 0 ];
+     } else {
+ 	p++;
+@@ -280,6 +293,7 @@
+ 	pr->p_flags |= P_REGISTERED;
+     }
+ 
++    memset(&sv, 0, sizeof(sv));
+     sv.sa_handler = die;
+     sigemptyset( &sv.sa_mask );
+     sv.sa_flags = SA_RESTART;
+@@ -316,7 +330,7 @@
+ 	    if ( FD_ISSET( atp_fileno( pr->p_atp ), &fdset )) {
+ 		int		err = 0;
+ 
+-		bzero( &sat, sizeof( struct sockaddr_at ));
++		memset( &sat, 0, sizeof( struct sockaddr_at ));
+ #ifdef BSD4_4
+ 		sat.sat_len = sizeof( struct sockaddr_at );
+ #endif BSD4_4
+@@ -347,7 +361,7 @@
+ 		    rbuf[ 1 ] = PAP_OPENREPLY;
+ 		    rbuf[ 2 ] = rbuf[ 3 ] = 0;
+ 
+-		    if (( pr->p_flags & P_SPOOLED ) && rprintcap( pr ) < 0 ) {
++		    if (( pr->p_flags & P_SPOOLED ) && rprintcap( pr ) != 0 ) {
+ 			syslog( LOG_ERR, "printcap problem: %s",
+ 				pr->p_printer );
+ 			rbuf[ 2 ] = rbuf[ 3 ] = 0xff;
+@@ -484,10 +498,10 @@
+     char		path[ MAXPATHLEN ];
+     int			fd = -1, rc;
+ 
+-    if (( pr->p_flags & P_SPOOLED ) && ( pr->p_spool != NULL )) {
+-	strcpy( path, pr->p_spool );
+-	strcat( path, "/status" );
+-	fd = open( path, O_RDONLY, 0 );
++    if ( pr->p_flags & P_SPOOLED && ( pr->p_spool != NULL )) {
++	(void)strlcpy( path, pr->p_spool, sizeof(path) );
++	(void)strlcat( path, "/status", sizeof(path) );
++	fd = open( path, O_RDONLY );
+     }
+ 
+     if (( pr->p_flags & P_PIPED ) || ( fd < 0 )) {
+@@ -510,12 +524,14 @@
+ char	*pgetstr();
+ char	*getpname();
+ 
++int
+ getprinters( cf )
+     char	*cf;
+ {
+     char		buf[ 1024 ], area[ 1024 ], *a, *p, *name, *type, *zone;
+     struct printer	*pr;
+     int			c;
++    size_t		len;
+ 
+     while (( c = getprent( cf, buf )) > 0 ) {
+ 	a = area;
+@@ -532,7 +548,7 @@
+ 	    perror( "malloc" );
+ 	    exit( 1 );
+ 	}
+-	bzero( pr, sizeof( struct printer ));
++	memset( pr, 0, sizeof( struct printer ));
+ 
+ 	name = defprinter.p_name;
+ 	type = defprinter.p_type;
+@@ -542,29 +558,32 @@
+ 	    exit( 1 );
+ 	}
+ 	if ( name != defprinter.p_name ) {
+-	    if (( pr->p_name = (char *)malloc( strlen( name ) + 1 )) == NULL ) {
++		len = (strlen( name ) + 1);
++	    if (( pr->p_name = (char *)malloc( len )) == NULL ) {
+ 		perror( "malloc" );
+ 		exit( 1 );
+ 	    }
+-	    strcpy( pr->p_name, name );
++	    (void)strlcpy( pr->p_name, name, len );
+ 	} else {
+ 	    pr->p_name = name;
+ 	}
+ 	if ( type != defprinter.p_type ) {
+-	    if (( pr->p_type = (char *)malloc( strlen( type ) + 1 )) == NULL ) {
++		len = (strlen( type ) + 1 );
++	    if (( pr->p_type = (char *)malloc( len )) == NULL ) {
+ 		perror( "malloc" );
+ 		exit( 1 );
+ 	    }
+-	    strcpy( pr->p_type, type );
++	    (void)strlcpy( pr->p_type, type, len);
+ 	} else {
+ 	    pr->p_type = type;
+ 	}
+ 	if ( zone != defprinter.p_zone ) {
+-	    if (( pr->p_zone = (char *)malloc( strlen( zone ) + 1 )) == NULL ) {
++		len = (strlen( zone ) + 1 );
++	    if (( pr->p_zone = (char *)malloc( len )) == NULL ) {
+ 		perror( "malloc" );
+ 		exit( 1 );
+ 	    }
+-	    strcpy( pr->p_zone, zone );
++	    (void)strlcpy( pr->p_zone, zone, len );
+ 	} else {
+ 	    pr->p_zone = zone;
+ 	}
+@@ -580,11 +599,12 @@
+ 	if (( p = pgetstr( "pd", &a )) == NULL ) {
+ 	    pr->p_ppdfile = defprinter.p_ppdfile;
+ 	} else {
+-	    if (( pr->p_ppdfile = (char *)malloc( strlen( p ) + 1 )) == NULL ) {
++		len = (strlen( p ) + 1);
++	    if (( pr->p_ppdfile = (char *)malloc( len )) == NULL ) {
+ 		perror( "malloc" );
+ 		exit( 1 );
+ 	    }
+-	    strcpy( pr->p_ppdfile, p );
++	    (void)strlcpy( pr->p_ppdfile, p, len);
+ 	}
+ 
+ 	/*
+@@ -600,11 +620,12 @@
+ 	    } else {
+ 		pr->p_flags = P_SPOOLED;
+ 	    }
+-	    if (( pr->p_printer = (char *)malloc( strlen( p ) + 1 )) == NULL ) {
++		len = (strlen( p ) + 1);
++	    if (( pr->p_printer = (char *)malloc( len )) == NULL ) {
+ 		perror( "malloc" );
+ 		exit( 1 );
+ 	    }
+-	    strcpy( pr->p_printer, p );
++	    (void)strlcpy( pr->p_printer, p, len );
+ 	}
+ 
+ 	if ( pr->p_flags & P_SPOOLED ) {
+@@ -614,12 +635,13 @@
+ 	    if (( p = pgetstr( "op", &a )) == NULL ) {
+ 		pr->p_operator = defprinter.p_operator;
+ 	    } else {
+-		if (( pr->p_operator = (char *)malloc( strlen( p ) + 1 ))
++			len = (strlen( p ) + 1);
++		if (( pr->p_operator = (char *)malloc( len ))
+ 			== NULL ) {
+ 		    perror( "malloc" );
+ 		    exit( 1 );
+ 		}
+-		strcpy( pr->p_operator, p );
++		(void)strlcpy( pr->p_operator, p, len );
+ 	    }
+ 	}
+ 
+@@ -631,13 +653,16 @@
+     } else {			/* No capability file, do default */
+ 	printers = &defprinter;
+     }
++	return(0);
+ }
+ 
++int
+ rprintcap( pr )
+     struct printer	*pr;
+ {
+     char		buf[ 1024 ], area[ 1024 ], *a, *p;
+     int			c;
++    size_t		len;
+ 
+     /*
+      * Spool directory from printcap file.
+@@ -658,11 +683,12 @@
+ 	if (( p = pgetstr( "sd", &a )) == NULL ) {
+ 	    pr->p_spool = defprinter.p_spool;
+ 	} else {
+-	    if (( pr->p_spool = (char *)malloc( strlen( p ) + 1 )) == NULL ) {
++		len = (strlen( p ) + 1);
++	    if (( pr->p_spool = (char *)malloc( len )) == NULL ) {
+ 		syslog( LOG_ERR, "malloc: %m" );
+ 		exit( 1 );
+ 	    }
+-	    strcpy( pr->p_spool, p );
++	    (void)strlcpy( pr->p_spool, p, len );
+ 	}
+ 
+ 	/*
+@@ -681,12 +707,13 @@
+ 	    if (( p = pgetstr( "ro", &a )) == NULL ) {
+ 		pr->p_role = defprinter.p_role;
+ 	    } else {
++		len = (strlen( p ) + 1);
+ 		if (( pr->p_role =
+-			(char *)malloc( strlen( p ) + 1 )) == NULL ) {
++			(char *)malloc( len )) == NULL ) {
+ 		    syslog( LOG_ERR, "malloc: %m" );
+ 		    exit( 1 );
+ 		}
+-		strcpy( pr->p_role, p );
++		(void)strlcpy( pr->p_role, p, len );
+ 	    }
+ 
+ 	    if (( c = pgetnum( "si" )) < 0 ) {
+@@ -707,12 +734,13 @@
+ 	}
+ 	a = area;
+ 	if (( p = pgetstr( "pc", &a )) != NULL ) {
++		len = (strlen( p ) + 1);
+ 	    if (( pr->p_pagecost_msg =
+-		    (char *)malloc( strlen( p ) + 1 )) == NULL ) {
++		    (char *)malloc( len )) == NULL ) {
+ 		syslog( LOG_ERR, "malloc: %m" );
+ 		exit( 1 );
+ 	    }
+-	    strcpy( pr->p_pagecost_msg, p );
++	    (void)strlcpy( pr->p_pagecost_msg, p, len );
+ 	    pr->p_pagecost = 0;
+ 	} else if ( pr->p_flags & P_ACCOUNT ) {
+ 	    if (( c = pgetnum( "pc" )) < 0 ) {
+@@ -733,11 +761,12 @@
+ 	if (( p = pgetstr( "lo", &a )) == NULL ) {
+ 	    pr->p_lock = defprinter.p_lock;
+ 	} else {
+-	    if (( pr->p_lock = (char *)malloc( strlen( p ) + 1 )) == NULL ) {
++		len = (strlen( p ) + 1);
++	    if (( pr->p_lock = (char *)malloc( len )) == NULL ) {
+ 		syslog( LOG_ERR, "malloc: %m" );
+ 		exit( 1 );
+ 	    }
+-	    strcpy( pr->p_lock, p );
++	    (void)strlcpy( pr->p_lock, p, len );
+ 	}
+ 
+ #ifdef KRB

@@ -1,0 +1,91 @@
+--- etc/afpd/kuam.c.orig	Thu Nov 17 09:04:23 1994
++++ etc/afpd/kuam.c	Thu Nov 11 15:20:18 1999
+@@ -11,7 +11,7 @@
+ #include <prot.h>
+ 
+ #include <stdio.h>
+-#include <strings.h>
++#include <string.h>
+ #include <errno.h>
+ 
+ /* use the bsd time.h struct defs for PC too! */
+@@ -81,7 +81,7 @@
+     int msg_byte_order;
+     int kerror;
+     struct timeval t_local;
+-    unsigned long rep_err_code;
++    u_int32_t rep_err_code;
+ 
+ 
+     /* BUILD REQUEST PACKET */
+@@ -102,7 +102,7 @@
+ 
+     (void) gettimeofday(&t_local,(struct timezone *) 0);
+     /* timestamp */
+-    bcopy((char *)&(t_local.tv_sec),(char *)(pkt->dat+pkt->length), 4);
++    memcpy((char *)(pkt->dat+pkt->length), (char *)&(t_local.tv_sec), 4);
+     pkt->length += 4;
+ 
+     *(pkt->dat+(pkt->length)++) = (char) life;
+@@ -132,8 +132,8 @@
+     case AUTH_MSG_KDC_REPLY:
+         break;
+     case AUTH_MSG_ERR_REPLY:
+-        bcopy(pkt_err_code(rpkt),(char *) &rep_err_code,4);
+-        if (swap_bytes) swap_u_long(rep_err_code);
++        memcpy((char *) &rep_err_code, pkt_err_code(rpkt), 4);
++        if (swap_bytes) rep_err_code = swap32(rep_err_code);
+         return((int)rep_err_code);
+     default:
+         return(INTK_PROT);
+@@ -149,25 +149,25 @@
+     KTEXT		tkt = &tkt_st;
+     struct timeval	t_local;
+     int			lifetime, kvno, kerror;
+-    u_long		kdc_time;
++    u_int32_t		kdc_time;
+     C_Block		ses;
+     char		s_name[ SNAME_SZ ], s_instance[ INST_SZ ];
+     char		rlm[ REALM_SZ ];
+ 
+     /* extract session key */
+-    bcopy(ptr,(char *)ses,8);
++    memcpy((char *)ses, ptr, 8);
+     ptr += 8;
+ 
+     /* extract server's name */
+-    (void) strcpy(s_name,ptr);
++    (void)strlcpy(s_name, ptr, sizeof(s_name));
+     ptr += strlen(s_name) + 1;
+ 
+     /* extract server's instance */
+-    (void) strcpy(s_instance,ptr);
++    (void)strlcpy(s_instance, ptr, sizeof(s_instance) );
+     ptr += strlen(s_instance) + 1;
+ 
+     /* extract server's realm */
+-    (void) strcpy(rlm,ptr);
++    (void)strlcpy(rlm, ptr, sizeof(rlm) );
+     ptr += strlen(rlm) + 1;
+ 
+     /* extract ticket lifetime, server key version, ticket length */
+@@ -178,7 +178,7 @@
+     ptr += 3;
+ 
+     /* extract ticket itself */
+-    bcopy(ptr,(char *)(tkt->dat),tkt->length);
++    memcpy((char *)(tkt->dat), ptr, tkt->length);
+     ptr += tkt->length;
+ 
+     if (strcmp(s_name, service) || strcmp(s_instance, sinstance) ||
+@@ -186,8 +186,8 @@
+ 	return(INTK_ERR);	/* we need a better code here XXX */
+ 
+     /* check KDC time stamp */
+-    bcopy(ptr,(char *)&kdc_time,4); /* Time (coarse) */
+-    if (swap_bytes) swap_u_long(kdc_time);
++    memcpy((char *)&kdc_time, ptr, 4); /* Time (coarse) */
++    if (swap_bytes) kdc_time = swap32(kdc_time);
+ 
+     ptr += 4;
+ 

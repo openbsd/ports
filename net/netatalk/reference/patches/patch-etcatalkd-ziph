@@ -1,0 +1,18 @@
+--- etc/atalkd/zip.h.orig	Tue Oct 19 12:08:12 1999
++++ etc/atalkd/zip.h	Tue Oct 19 12:08:56 1999
+@@ -6,11 +6,13 @@
+ struct ziptab {
+     struct ziptab	*zt_next,
+ 			*zt_prev;
+-    u_char		zt_len;
++    u_int8_t		zt_len;
+     char		*zt_name;
+-    u_char		*zt_bcast;
++    u_int8_t		*zt_bcast;
+     struct list		*zt_rt;
+ };
+ 
+ extern struct ziptab	*ziptab, *ziplast;
+ struct ziptab	*newzt();
++void		addzone();
++void		zip_getnetinfo();

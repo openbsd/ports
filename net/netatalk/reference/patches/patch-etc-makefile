@@ -1,0 +1,11 @@
+--- etc/Makefile.orig	Wed Aug  9 08:33:52 2000
++++ etc/Makefile	Wed Aug  9 08:34:06 2000
+@@ -21,7 +21,7 @@
+ 	done
+ 
+ install:
+-	-mkdir ${ETCDIR}
++	-mkdir ${DESTDIR}${ETCDIR}
+ 	for i in ${ALL}; \
+ 	    do (cd $$i; ${MAKE} ${MFLAGS} CC="${CC}" \
+ 		ADDLIBS="${ADDLIBS}" DEFS="${DEFS}" OPTOPTS="${OPTOPTS}" \

@@ -1,0 +1,41 @@
+--- etc/papd/bprint.c.orig	Sat Dec 17 07:44:49 1994
++++ etc/papd/bprint.c	Fri Nov 19 11:30:02 1999
+@@ -1,9 +1,12 @@
+ #define BPXLEN	50
+ #define BPALEN	18
+ #include <ctype.h>
++#include <string.h>
+ #include <syslog.h>
++
+ char	hexdig[] = "0123456789ABCDEF";
+ 
++void
+ bprint( data, len )
+     char	*data;
+     int		len;
+@@ -11,14 +14,14 @@
+     char	xout[ BPXLEN ], aout[ BPALEN ];
+     int		i = 0;
+ 
+-    bzero( xout, BPXLEN );
+-    bzero( aout, BPALEN );
++    memset( xout, 0, BPXLEN );
++    memset( aout, 0, BPALEN );
+ 
+-    for ( i = 0; len; len--, *data++, i++ ) {
++    for ( i = 0; len; len--, data++, i++ ) {
+ 	if ( i == 16 ) {
+ 	    syslog( LOG_DEBUG, "%-48s\t%-16s", xout, aout );
+-	    bzero( xout, BPXLEN );
+-	    bzero( aout, BPALEN );
++	    memset( xout, 0, BPXLEN );
++	    memset( aout, 0, BPALEN );
+ 	    i = 0;
+ 	}
+ 
+@@ -39,5 +42,4 @@
+     }
+     syslog( LOG_DEBUG, "%s", "(end)" );
+ 
+-    return;
+ }

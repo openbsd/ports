@@ -1,0 +1,19 @@
+--- libatalk/Makefile.orig	Wed Aug  9 08:11:50 2000
++++ libatalk/Makefile	Wed Aug  9 08:14:52 2000
+@@ -44,11 +44,11 @@
+ 	done
+ 
+ install: all
+-	-mkdir ${LIBDIR}
+-	${INSTALL} -c libatalk.a ${LIBDIR}/libatalk.a
+-	(cd ${LIBDIR}; ranlib ${LIBDIR}/libatalk.a)
+-	${INSTALL} -c libatalk_p.a ${LIBDIR}/libatalk_p.a
+-	(cd ${LIBDIR}; ranlib ${LIBDIR}/libatalk_p.a)
++	-mkdir ${DESTDIR}${LIBDIR}
++	${INSTALL} -c libatalk.a ${DESTDIR}${LIBDIR}/libatalk.a
++	(cd ${DESTDIR}${LIBDIR}; ranlib ${DESTDIR}${LIBDIR}/libatalk.a)
++	${INSTALL} -c libatalk_p.a ${DESTDIR}${LIBDIR}/libatalk_p.a
++	(cd ${DESTDIR}${LIBDIR}; ranlib ${DESTDIR}${LIBDIR}/libatalk_p.a)
+ 
+ clean:
+ 	for i in ${ALL}; \

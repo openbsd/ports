@@ -1,0 +1,11 @@
+--- bin/getzones/Makefile.orig	Wed Aug  9 08:19:13 2000
++++ bin/getzones/Makefile	Wed Aug  9 08:19:30 2000
+@@ -15,7 +15,7 @@
+ 	${CC} ${CFLAGS} -o getzones ${OBJ} ${LIBDIRS} ${LIBS}
+ 
+ install : all
+-	${INSTALL} -c getzones ${BINDIR}
++	${INSTALL} -c getzones ${DESTDIR}${BINDIR}
+ 
+ clean :
+ 	rm -f a.out core* *.o *.bak *[Ee]rrs tags

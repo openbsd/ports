@@ -1,0 +1,13 @@
+--- etc/atalkd/multicast.h.orig	Mon Oct 18 20:04:57 1999
++++ etc/atalkd/multicast.h	Mon Oct 18 20:04:17 1999
+@@ -9,7 +9,7 @@
+ #define PROTOTYPE(x)	()
+ #endif __STDC__
+ 
+-extern unsigned char	ethermulti[ 6 ];
++extern u_int8_t		ethermulti[ 6 ];
+ 
+-int			addmulti PROTOTYPE(( char *, u_char * ));
+-u_char			*zone_mcast PROTOTYPE(( char *, u_char ));
++int			addmulti PROTOTYPE(( char *, u_int8_t * ));
++u_int8_t		*zone_mcast PROTOTYPE(( char *, u_int8_t ));

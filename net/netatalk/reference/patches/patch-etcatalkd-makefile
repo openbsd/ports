@@ -1,0 +1,11 @@
+--- etc/atalkd/Makefile.orig	Wed Aug  9 08:35:10 2000
++++ etc/atalkd/Makefile	Wed Aug  9 08:35:22 2000
+@@ -23,7 +23,7 @@
+ 	    ${CPPFLAGS} -c config.c
+ 
+ install : all
+-	${INSTALL} -c atalkd ${SBINDIR}
++	${INSTALL} -c atalkd ${DESTDIR}${SBINDIR}
+ 
+ clean :
+ 	rm -f a.out core* *.o *.bak *[Ee]rrs tags

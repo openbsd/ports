@@ -1,0 +1,67 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2002/07/23 11:47:35 naddy Exp $
+#
+# Pre/post-installation setup of netatalk
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=${SYSCONFDIR}
+SAMPLE_CONFIG_DIR=$PREFIX/share/examples/netatalk
+
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration files in $CONFIG_DIR,"
+    echo "| have NOT been changed.  You may want to compare them to the"
+    echo "| current sample files in $SAMPLE_CONFIG_DIR,"
+    echo "| and update your configuration as needed."
+    echo "+---------------"
+    echo
+}
+
+do_install()
+{
+    install -d -o root -g wheel -m 750 $CONFIG_DIR
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/* $CONFIG_DIR
+    echo
+    echo "+---------------"
+    echo "| The $1 configuration files in $CONFIG_DIR,"
+    echo "| have been installed.  Please view these files and change"
+    echo "| the configuration to meet your needs."
+    echo "+---------------"
+    echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	if [ ! -d $CONFIG_DIR ]; then
+	   do_install $1
+	elif [ ! -f $CONFIG_DIR/rc.atalk ]; then
+	    do_install $1
+	else
+	    do_notice $1
+	fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

@@ -1,0 +1,653 @@
+--- etc/afpd/directory.c.orig	Sun Aug 17 09:20:04 1997
++++ etc/afpd/directory.c	Fri Nov 26 11:52:00 1999
+@@ -16,18 +16,24 @@
+ #include <atalk/afp.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <strings.h>
++#include <unistd.h>
++#include <string.h>
+ #include <dirent.h>
+ #include <fcntl.h>
+ #include <grp.h>
+ #include <pwd.h>
++#include <ctype.h>
+ 
++#include "unix.h"
+ #include "directory.h"
+ #include "desktop.h"
+ #include "volume.h"
+ #include "file.h"
+ #include "globals.h"
+ 
++#define FINDERINFO_FRVIEWOFF  14 
++#define FINDERINFO_CLOSEDVIEW 0x100
++
+ extern int	errno;
+ 
+ struct dir	*curdir;
+@@ -67,19 +73,21 @@
+     return( dir );
+ }
+ 
++void
+ dirfree( vol, dir )
+     struct vol	*vol;
+     struct dir	*dir;
+ {
+ }
+ 
++int
+ dirinsert( vol, dir )
+     struct vol	*vol;
+     struct dir	*dir;
+ {
+     struct dir	*pdir;
+ 
+-    pdir = vol->v_did;
++    pdir = vol->v_dir;
+     for (;;) {
+ 	if ( pdir->d_did == dir->d_did ) {
+ 	    syslog( LOG_ERR, "panic: dirinsert: DID problem!" );
+@@ -119,7 +127,7 @@
+     if ( stat( p, &st ) != 0 ) {
+ 	return( NULL );
+     }
+-    if (( st.st_mode & S_IFMT ) != S_IFDIR ) {
++    if (!S_ISDIR(st.st_mode)) {
+ 	return( NULL );
+     }
+ 
+@@ -141,7 +149,7 @@
+     char	**cpath;
+ {
+     struct dir		*cdir;
+-    static char		path[ MAXPATHLEN ];
++    static char		path[ MAXPATHLEN + 1 ];
+     char		*data, *p;
+     int			extend = 0;
+     int			len;
+@@ -181,6 +189,14 @@
+ 	    *p++ = *data++;
+ 	    len--;
+ 	}
++
++	/* asun@zoology.washington.edu
++	 * short cut bits by chopping off a trailing \0. this also
++         *  makes the traversal happy w/ filenames at the end of the
++         *  cname. */
++	if (len == 1) 
++	  len--;
++
+ #ifdef notdef
+ 	/*
+ 	 * Dung Nguyen <ntd@adb.fr>
+@@ -201,7 +217,7 @@
+ 	if ( p != path ) {
+ 	    if ( !extend ) {
+ 		for ( cdir = dir->d_child; cdir; cdir = cdir->d_next ) {
+-		    if ( strcmp( cdir->d_name, path ) == 0 ) {
++		    if ( strcasecmp( cdir->d_name, path ) == 0 ) {
+ 			break;
+ 		    }
+ 		}
+@@ -233,12 +249,13 @@
+ /*
+  * Move curdir to dir, with a possible chdir()
+  */
++int
+ movecwd( vol, dir )
+     struct vol	*vol;
+     struct dir	*dir;
+ {
+     struct dir	*d;
+-    char	path[ MAXPATHLEN ], *p, *u;
++    char	path[ MAXPATHLEN + 1], *p, *u;
+     int		n;
+ 
+     if ( dir == curdir ) {
+@@ -271,8 +288,9 @@
+     return( 0 );
+ }
+ 
++int
+ getdirparams( bitmap, upath, dir, st, buf, buflen )
+-    u_short		bitmap;
++    u_int16_t		bitmap;
+     char		*upath;
+     struct dir		*dir;
+     struct stat		*st;
+@@ -284,10 +302,13 @@
+     char		*data, *nameoff = 0;
+     DIR			*dp;
+     struct dirent	*de;
+-    int			bit = 0, aint, isad = 1;
+-    u_short		ashort;
++    int			bit = 0, isad = 1; 
++    int32_t		aint;
++    u_int16_t		ashort;
++    u_int8_t		achar;
+ 
+-    if ( ad_open( upath, ADFLAGS_HF|ADFLAGS_DIR, O_RDONLY, 0777, &ad ) < 0 ) {
++    if ( ad_open( upath, ADFLAGS_HF|ADFLAGS_DIR, O_RDONLY,
++		S_ISGID | 0777, &ad ) < 0 ) {
+ 	isad = 0;
+     }
+ 
+@@ -301,13 +322,13 @@
+ 	switch ( bit ) {
+ 	case DIRPBIT_ATTR :
+ 	    if ( isad ) {
+-		bcopy( ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_ATTR, &ashort,
+-			sizeof( u_short ));
++		memcpy( &ashort, ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_ATTR,
++			sizeof( ashort ));
+ 	    } else {
+ 		ashort = 0;
+ 	    }
+-	    bcopy( &ashort, data, sizeof( u_short ));
+-	    data += sizeof( u_short );
++	    memcpy( data, &ashort, sizeof( ashort ));
++	    data += sizeof( ashort );
+ 	    break;
+ 
+ 	case DIRPBIT_PDID :
+@@ -316,63 +337,66 @@
+ 	    } else {
+ 		aint = dir->d_parent->d_did;
+ 	    }
+-	    bcopy( &aint, data, sizeof( int ));
+-	    data += sizeof( int );
++	    memcpy( data, &aint, sizeof( aint ));
++	    data += sizeof( aint );
+ 	    break;
+ 
+ 	case DIRPBIT_CDATE :
+ 	    if ( isad ) {
+-		bcopy( ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_CREATE, &aint,
+-			sizeof( int ));
++		memcpy( &aint, ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_CREATE,
++			sizeof( aint ));
+ 		if ( aint == 0 ) {
+ 		    aint = htonl( st->st_mtime );
+ 		}
+ 	    } else {
+ 		aint = htonl( st->st_mtime );
+ 	    }
+-	    bcopy( &aint, data, sizeof( int ));
+-	    data += sizeof( int );
++	    memcpy( data, &aint, sizeof( aint ));
++	    data += sizeof( aint );
+ 	    break;
+ 
+ 	case DIRPBIT_MDATE :
+ 	    aint = htonl( st->st_mtime );
+-	    bcopy( &aint, data, sizeof( int ));
+-	    data += sizeof( int );
++	    memcpy( data, &aint, sizeof( aint ));
++	    data += sizeof( aint );
+ 	    break;
+ 
+ 	case DIRPBIT_BDATE :
+ 	    if ( isad ) {
+-		bcopy( ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_BACKUP, &aint,
+-			sizeof( int ));
++		memcpy( &aint, ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_BACKUP,
++			sizeof( aint ));
+ 	    } else {
+ 		aint = 0;
+ 	    }
+-	    bcopy( &aint, data, sizeof( int ));
+-	    data += sizeof( int );
++	    memcpy( data, &aint, sizeof( aint ));
++	    data += sizeof( aint );
+ 	    break;
+ 
+ 	case DIRPBIT_FINFO :
+ 	    if ( isad ) {
+-		bcopy( ad_entry( &ad, ADEID_FINDERI ), data, 32 );
++		memcpy( data, ad_entry( &ad, ADEID_FINDERI ), 32 );
+ 	    } else {
+-		bzero( data, 32 );
++		memset( data, 0, 32 );
++	/* set default view -- this also gets done in ad_open() */
++		ashort = htons(FINDERINFO_CLOSEDVIEW);
++		memcpy(data + FINDERINFO_FRVIEWOFF, &ashort, sizeof(ashort));
+ 	    }
+ 	    data += 32;
+ 	    break;
+ 
+ 	case DIRPBIT_LNAME :
+ 	    nameoff = data;
+-	    data += sizeof( u_short );
++	    data += sizeof( u_int16_t );
+ 	    break;
+ 
+ 	case DIRPBIT_SNAME :
+ 	    ashort = 0;
+-	    bcopy( &ashort, data, sizeof( u_short ));
+-	    data += sizeof( u_short );
++	    memcpy( data, &ashort, sizeof( ashort ));
++	    data += sizeof( ashort );
+ 	    break;
+ 
+ 	case DIRPBIT_DID :
+-	    bcopy( &dir->d_did, data, sizeof( int ));
++	    memcpy( data, &dir->d_did, sizeof( int ));
+ 	    data += sizeof( int );
+ 	    break;
+ 
+@@ -390,20 +414,20 @@
+ 	    }
+ 
+ 	    ashort = htons( ashort );
+-	    bcopy( &ashort, data, sizeof( u_short ));
+-	    data += sizeof( u_short );
++	    memcpy( data, &ashort, sizeof( ashort ));
++	    data += sizeof( ashort );
+ 	    break;
+ 
+ 	case DIRPBIT_UID :
+ 	    aint = st->st_uid;
+-	    bcopy( &aint, data, sizeof( int ));
+-	    data += sizeof( int );
++	    memcpy( data, &aint, sizeof(aint ));
++	    data += sizeof( aint );
+ 	    break;
+ 
+ 	case DIRPBIT_GID :
+ 	    aint = st->st_gid;
+-	    bcopy( &aint, data, sizeof( int ));
+-	    data += sizeof( int );
++	    memcpy( data, &aint, sizeof( aint ));
++	    data += sizeof( aint );
+ 	    break;
+ 
+ 	case DIRPBIT_ACCESS :
+@@ -411,28 +435,49 @@
+ #ifdef AFS
+ 	    afsmode( upath, &ma, dir );
+ #endif AFS
+-	    bcopy( &ma, data, sizeof( int ));
+-	    data += sizeof( int );
++	    memcpy( data, &ma, sizeof( aint ));
++	    data += sizeof( aint );
+ 	    break;
+ 
++ 	    /* Client has requested the ProDOS information block.
++ 	       Just pass back the same basic block for all
++ 	       directories. <shirsch@ibm.net> */
++ 	case DIRPBIT_PDINFO :			  /* ProDOS Info Block */
++ 	    achar = 0x0f;
++ 	    memcpy( data, &achar, sizeof( achar ));
++ 	    data += sizeof( achar );
++ 
++ 	    achar = 0x0;
++ 	    memcpy( data, &achar, sizeof( achar ));
++ 	    data += sizeof( achar );
++ 
++ 	    ashort = htons( 0x0200 );
++ 	    memcpy( data, &ashort, sizeof( ashort ));
++ 	    data += sizeof( ashort );
++ 
++ 	    ashort = htons( 0x0000 );
++ 	    memcpy( data, &ashort, sizeof( ashort ));
++ 	    data += sizeof( ashort );
++ 	    break;
++
+ 	default :
+ 	    if ( isad ) {
+ 		ad_close( &ad, ADFLAGS_HF );
+ 	    }
+-	    return( AFPERR_PARAM );
++	    return( AFPERR_BITMAP );
+ 	}
+ 	bitmap = bitmap>>1;
+ 	bit++;
+     }
+-    if ( nameoff != 0 ) {
++    if ( nameoff ) {
+ 	ashort = htons( data - buf );
+-	bcopy( &ashort, nameoff, sizeof( u_short ));
++	memcpy( nameoff, &ashort, sizeof( ashort ));
+ 
+ 	aint = strlen( dir->d_name );
+ 	aint = ( aint > 31 ) ? 31 : aint;
+ 
+ 	*data++ = aint;
+-	bcopy( dir->d_name, data, aint );
++	memcpy( data, dir->d_name, aint );
+ 	data += aint;
+     }
+     if ( isad ) {
+@@ -442,6 +487,7 @@
+     return( AFP_OK );
+ }
+ 
++int
+ afp_setdirparams( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+@@ -449,28 +495,28 @@
+     struct vol	*vol;
+     struct dir	*dir;
+     char	*path;
+-    u_short	vid, bitmap;
++    u_int16_t	vid, bitmap;
+     int		did, rc;
+ 
+     *rbuflen = 0;
+     ibuf += 2;
+-    bcopy( ibuf, &vid, sizeof( u_short ));
+-    ibuf += sizeof( u_short );
++    memcpy( &vid, ibuf, sizeof( vid ));
++    ibuf += sizeof( vid );
+ 
+     if (( vol = getvolbyvid( vid )) == NULL ) {
+ 	return( AFPERR_PARAM );
+     }
+ 
+-    bcopy( ibuf, &did, sizeof( int ));
+-    ibuf += sizeof( int );
++    memcpy( &did, ibuf, sizeof( did ));
++    ibuf += sizeof( did );
+ 
+     if (( dir = dirsearch( vol, did )) == NULL ) {
+ 	return( AFPERR_NOOBJ );
+     }
+ 
+-    bcopy( ibuf, &bitmap, sizeof( u_short ));
++    memcpy( &bitmap, ibuf, sizeof( bitmap ));
+     bitmap = ntohs( bitmap );
+-    ibuf += sizeof( u_short );
++    ibuf += sizeof( bitmap );
+ 
+     if (( path = cname( vol, dir, &ibuf )) == NULL ) {
+ 	return( AFPERR_NOOBJ );
+@@ -489,6 +535,7 @@
+     return( rc );
+ }
+ 
++int
+ setdirparams( path, bitmap, buf )
+     char		*path, *buf;
+     short		bitmap;
+@@ -496,7 +543,7 @@
+     struct maccess	ma;
+     struct adouble	ad;
+     int			bit = 0, aint, isad = 1;
+-    u_short		ashort, bshort;
++    u_int16_t		ashort, bshort;
+ 
+     if ( ad_open( mtoupath( path ), ADFLAGS_HF|ADFLAGS_DIR,
+ 	    O_RDWR|O_CREAT, 0666, &ad ) < 0 ) {
+@@ -506,7 +553,8 @@
+ 	 * three, we don't need the ad to be open, so just continue.
+ 	 */
+ 	if ( bitmap &
+-		~((1<<DIRPBIT_ACCESS)|(1<<DIRPBIT_UID)|(1<<DIRPBIT_GID))) {
++		~((1<<DIRPBIT_ACCESS)|(1<<DIRPBIT_UID)|(1<<DIRPBIT_GID)|
++			(1<<DIRPBIT_MDATE)|(1<<DIRPBIT_PDINFO))) {
+ 	    return( AFPERR_ACCESS );
+ 	}
+ 	isad = 0;
+@@ -517,7 +565,7 @@
+ 	 */
+ 	if ( ad_getoflags( &ad, ADFLAGS_HF ) & O_CREAT ) {
+ 	    ad_setentrylen( &ad, ADEID_NAME, strlen( curdir->d_name ));
+-	    bcopy( curdir->d_name, ad_entry( &ad, ADEID_NAME ),
++	    memcpy( ad_entry( &ad, ADEID_NAME ), curdir->d_name,
+ 		    ad_getentrylen( &ad, ADEID_NAME ));
+ 	}
+     }
+@@ -530,33 +578,33 @@
+ 
+ 	switch( bit ) {
+ 	case DIRPBIT_ATTR :
+-	    bcopy( buf, &ashort, sizeof( u_short ));
+-	    bcopy( ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_ATTR, &bshort,
+-		    sizeof( u_short ));
++	    memcpy( &ashort, buf, sizeof( ashort ));
++	    memcpy( &bshort, ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_ATTR,
++		    sizeof( bshort ));
+ 	    if ( ntohs( ashort ) & ATTRBIT_SETCLR ) {
+ 		bshort |= htons( ntohs( ashort ) & ~ATTRBIT_SETCLR );
+ 	    } else {
+ 		bshort &= ~ashort;
+ 	    }
+-	    bcopy( &bshort, ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_ATTR,
+-		    sizeof( u_short ));
+-	    buf += sizeof( u_short );
++	    memcpy( ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_ATTR, &bshort,
++		    sizeof( bshort ));
++	    buf += sizeof( bshort );
+ 	    break;
+ 
+ 	case DIRPBIT_CDATE :
+-	    bcopy( buf, ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_CREATE,
++	    memcpy( ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_CREATE, buf,
+ 		    sizeof( int ));
+ 	    buf += sizeof( int );
+ 	    break;
+ 
+ 	case DIRPBIT_MDATE :
+-	    bcopy( buf, ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_MODIFY,
++	    memcpy( ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_MODIFY, buf,
+ 		    sizeof( int ));
+ 	    buf += sizeof( int );
+ 	    break;
+ 
+ 	case DIRPBIT_BDATE :
+-	    bcopy( buf, ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_BACKUP,
++	    memcpy( ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_BACKUP, buf,
+ 		    sizeof( int ));
+ 	    buf += sizeof( int );
+ 	    break;
+@@ -571,10 +619,10 @@
+ 	     * point.
+ 	     */
+ 	    if ( ntohl( curdir->d_did ) == 2 ) {
+-		bcopy( buf, ad_entry( &ad, ADEID_FINDERI ), 10 );
+-		bcopy( buf + 14, ad_entry( &ad, ADEID_FINDERI ) + 14, 18 );
++		memcpy( ad_entry( &ad, ADEID_FINDERI ), buf, 10 );
++		memcpy( ad_entry( &ad, ADEID_FINDERI ) + 14, buf + 14, 18 );
+ 	    } else {
+-		bcopy( buf, ad_entry( &ad, ADEID_FINDERI ), 32 );
++		memcpy( ad_entry( &ad, ADEID_FINDERI ), buf, 32 );
+ 	    }
+ 	    buf += 32;
+ 	    break;
+@@ -584,8 +632,8 @@
+ 	    break;
+ 
+ 	case DIRPBIT_GID :
+-	    bcopy( buf, &aint, sizeof( int ));
+-	    buf += sizeof( int );
++	    memcpy( &aint, buf, sizeof(aint ));
++	    buf += sizeof( aint );
+ 	    if ( ntohl( curdir->d_did ) == 2 ) {
+ 		setdeskowner( -1, aint );
+ 	    }
+@@ -601,10 +649,17 @@
+ 		    return( AFPERR_PARAM );
+ 		}
+ 	    }
++ 	    break;
++ 	    
++ 	    /* Ignore what the client thinks we should do to the
++ 	       ProDOS information block.  Skip over the data and
++ 	       report nothing amiss. <shirsch@ibm.net> */
++ 	case DIRPBIT_PDINFO :
++ 	    buf += 6;
+ 	    break;
+ 
+ 	case DIRPBIT_ACCESS :
+-	    bcopy( buf, &ma, sizeof( struct maccess ));
++	    memcpy( &ma, buf, sizeof( struct maccess ));
+ 	    buf += sizeof( int );
+ 	    if ( ntohl( curdir->d_did ) == 2 ) {
+ 		setdeskmode( mtoumode( &ma ));
+@@ -638,6 +693,7 @@
+     return( AFP_OK );
+ }
+ 
++int
+ afp_createdir( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+@@ -648,18 +704,18 @@
+     struct dir		*dir;
+     char		*path, *upath;
+     int			did;
+-    u_short		vid;
++    u_int16_t		vid;
+ 
+     *rbuflen = 0;
+     ibuf += 2;
+ 
+-    bcopy( ibuf, &vid, sizeof( u_short ));
+-    ibuf += sizeof( u_short );
++    memcpy( &vid, ibuf, sizeof( vid ));
++    ibuf += sizeof( vid );
+     if (( vol = getvolbyvid( vid )) == NULL ) {
+ 	return( AFPERR_PARAM );
+     }
+ 
+-    bcopy( ibuf, &did, sizeof( int ));
++    memcpy( &did, ibuf, sizeof( did ));
+     ibuf += sizeof( int );
+     if (( dir = dirsearch( vol, did )) == NULL ) {
+ 	return( AFPERR_NOOBJ );
+@@ -670,7 +726,7 @@
+     }
+ 
+     upath = mtoupath( path );
+-    if ( ad_mkdir( upath, 0777 ) < 0 ) {
++    if ( ad_mkdir( upath, S_ISGID | 0777 ) < 0 ) {
+ 	switch ( errno ) {
+ 	case ENOENT :
+ 	    return( AFPERR_NOOBJ );
+@@ -697,25 +753,26 @@
+ 	return( AFPERR_ACCESS );
+     }
+     ad_setentrylen( &ad, ADEID_NAME, strlen( path ));
+-    bcopy( path, ad_entry( &ad, ADEID_NAME ),
++    memcpy( ad_entry( &ad, ADEID_NAME ), path,
+ 	    ad_getentrylen( &ad, ADEID_NAME ));
+     if ( gettimeofday( &tv, 0 ) < 0 ) {
+ 	return( AFPERR_PARAM );
+     }
+     tv.tv_sec = htonl( tv.tv_sec );
+-    bcopy( &tv.tv_sec, ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_CREATE,
++    memcpy( ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_CREATE, &tv.tv_sec,
+ 	    sizeof( int ));
+-    bcopy( &tv.tv_sec, ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_MODIFY,
++    memcpy( ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_MODIFY, &tv.tv_sec,
+ 	    sizeof( int ));
+     ad_flush( &ad, ADFLAGS_HF );
+     ad_close( &ad, ADFLAGS_HF );
+ 
+-    bcopy( &dir->d_did, rbuf, sizeof( int ));
++    memcpy( rbuf, &dir->d_did, sizeof( int ));
+     *rbuflen = sizeof( int );
+     setvoltime( vol );
+     return( AFP_OK );
+ }
+ 
++int
+ renamedir( src, dst, dir, newparent, newname )
+     char	*src, *dst, *newname;
+     struct dir	*dir, *newparent;
+@@ -752,7 +809,7 @@
+     }
+     len = strlen( newname );
+     ad_setentrylen( &ad, ADEID_NAME, len );
+-    bcopy( newname, ad_entry( &ad, ADEID_NAME ), len );
++    memcpy( ad_entry( &ad, ADEID_NAME ), newname, len );
+     ad_flush( &ad, ADFLAGS_HF );
+     ad_close( &ad, ADFLAGS_HF );
+ 
+@@ -760,7 +817,7 @@
+ 	syslog( LOG_ERR, "renamedir: realloc: %m" );
+ 	exit( 1 );
+     }
+-    strcpy( dir->d_name, newname );
++    (void)strlcpy( dir->d_name, newname, sizeof(dir->d_name) );
+ 
+     if (( parent = dir->d_parent ) == NULL ) {
+ 	return( AFP_OK );
+@@ -789,6 +846,7 @@
+     return( AFP_OK );
+ }
+ 
++int
+ deletecurdir( vol )
+     struct vol	*vol;
+ {
+@@ -862,6 +920,7 @@
+     return( AFP_OK );
+ }
+ 
++int
+ afp_mapid( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+@@ -873,7 +932,7 @@
+ 
+     ibuf++;
+     sfunc = *ibuf++;
+-    bcopy( ibuf, &id, sizeof( int ));
++    memcpy( &id, ibuf, sizeof( id ));
+ 
+     if ( id != 0 ) {
+ 	switch ( sfunc ) {
+@@ -907,32 +966,34 @@
+ 
+     *rbuf++ = len;
+     if ( len > 0 ) {
+-	bcopy( name, rbuf, len );
++	memcpy( rbuf, name, len );
+     }
+     *rbuflen = len + 1;
+     return( AFP_OK );
+ }
+ 
++int
+ afp_mapname( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+ {
+     struct passwd	*pw;
+     struct group	*gr;
+-    int			len, ibl, sfunc, id;
++    int			len, sfunc, id; /* ibl */
+ 
+     ibuf++;
+-    sfunc = *(unsigned char *)ibuf++;
+-    len = *(unsigned char *)ibuf++;
++    sfunc = (unsigned char)*ibuf++;
++    len = (unsigned char)*ibuf++;
+     ibuf[ len ] = '\0';
+-    ibl = len;
++/*    ibl = len;
+     while ( ibl-- ) {
+ 	ibuf[ ibl ] = tolower( ibuf[ ibl ] );
+     }
+-
++*/
+     if ( len != 0 ) {
+ 	switch ( sfunc ) {
+ 	case 3 :
++		if (len == 0) /* null user name */
+ 	    if (( pw = (struct passwd *)getpwnam( ibuf )) == NULL ) {
+ 		*rbuflen = 0;
+ 		return( AFPERR_NOITEM );
+@@ -955,7 +1016,7 @@
+ 	id = 0;
+     }
+ 
+-    bcopy( &id, rbuf, sizeof( int ));
++    memcpy( rbuf, &id, sizeof( int ));
+     *rbuflen = sizeof( int );
+     return( AFP_OK );
+ }

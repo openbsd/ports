@@ -1,0 +1,11 @@
+--- bin/nbp/Makefile.orig	Wed Aug  9 08:22:16 2000
++++ bin/nbp/Makefile	Wed Aug  9 08:22:32 2000
+@@ -21,7 +21,7 @@
+ 	${CC} ${CFLAGS} -o nbpunrgstr nbpunrgstr.o ${LIBDIRS} ${LIBS}
+ 
+ install	: all
+-	for i in ${TARGETS}; do ${INSTALL} -c $$i ${BINDIR}; done
++	for i in ${TARGETS}; do ${INSTALL} -c $$i ${DESTDIR}${BINDIR}; done
+ 
+ clean:
+ 	rm -f a.out core* *.o *.bak *[Ee]rrs tags

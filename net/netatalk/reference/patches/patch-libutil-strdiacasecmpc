@@ -1,0 +1,24 @@
+--- libatalk/util/strdicasecmp.c.orig	Sat Sep 28 02:23:24 1996
++++ libatalk/util/strdicasecmp.c	Tue Oct 19 13:00:40 1999
+@@ -1,4 +1,4 @@
+-unsigned char	_diacasemap[] = {
++unsigned char	_diacasemap[] = {
+ 	/* map	value	name */
+ 	0	/* 0	NUL*/,
+ 	1	/* 1	SOH*/,
+@@ -258,6 +258,7 @@
+ 	255	/* 255	caron*/,
+ };
+ 
++int
+ strdiacasecmp( s1, s2 )
+     unsigned char	*s1, *s2;
+ {
+@@ -269,6 +270,7 @@
+     return( _diacasemap[ *s1 ] - _diacasemap[ *--s2 ] );
+ }
+ 
++int
+ strndiacasecmp( s1, s2, n )
+     unsigned char	*s1, *s2;
+     int			n;

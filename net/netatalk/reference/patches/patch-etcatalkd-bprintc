@@ -1,0 +1,48 @@
+--- etc/atalkd/bprint.c.orig	Wed Nov 10 08:09:18 1993
++++ etc/atalkd/bprint.c	Thu Nov 18 18:06:39 1999
+@@ -1,8 +1,11 @@
+ #define BPXLEN	50
+ #define BPALEN	18
+ #include <ctype.h>
++#include <string.h>
++#include <stdio.h>
+ char	hexdig[] = "0123456789ABCDEF";
+ 
++void
+ bprint( data, len )
+     char	*data;
+     int		len;
+@@ -10,14 +13,14 @@
+     char	xout[ BPXLEN ], aout[ BPALEN ];
+     int		i = 0;
+ 
+-    bzero( xout, BPXLEN );
+-    bzero( aout, BPALEN );
++    memset( xout, 0,  BPXLEN );
++    memset( aout, 0, BPALEN );
+ 
+-    for ( i = 0; len; len--, *data++, i++ ) {
++    for ( i = 0; len; len--, i++ ) {
+ 	if ( i == 16 ) {
+ 	    printf( "%-48s\t%-16s\n", xout, aout );
+-	    bzero( xout, BPXLEN );
+-	    bzero( aout, BPALEN );
++	    memset( xout, 0, BPXLEN );
++	    memset( aout, 0, BPALEN );
+ 	    i = 0;
+ 	}
+ 
+@@ -31,6 +34,7 @@
+ 	xout[ (i*3) ] = hexdig[ ( *data & 0xf0 ) >> 4 ];
+ 	xout[ (i*3) + 1 ] = hexdig[ *data & 0x0f ];
+ 	xout[ (i*3) + 2 ] = ' ';
++	++*data;
+     }
+ 
+     if ( i ) {
+@@ -38,5 +42,4 @@
+     }
+     printf( "%s\n", "(end)" );
+ 
+-    return;
+ }

@@ -1,0 +1,175 @@
+--- etc/papd/queries.c.orig	Tue Mar 31 01:41:45 1998
++++ etc/papd/queries.c	Fri Nov 19 11:27:38 1999
+@@ -7,7 +7,10 @@
+ #include <sys/param.h>
+ #include <sys/time.h>
+ #include <sys/types.h>
+-#include <strings.h>
++#include <ctype.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include <netatalk/at.h>
+ #include <atalk/atp.h>
+ 
+@@ -24,6 +27,10 @@
+ #include "printer.h"
+ #include "ppd.h"
+ 
++extern int	comcmp(), compop(), comswitch();
++extern int	lp_host(), lp_person();
++
++int
+ cq_default( in, out )
+     struct papfile	*in, *out;
+ {
+@@ -78,6 +85,7 @@
+ 
+ #define h2b(x)	(isdigit((x))?(x)-'0':(isupper((x))?(x)-'A':(x)-'a')+10)
+ 
++int
+ cq_k4login( in, out )
+     struct papfile	*in, *out;
+ {
+@@ -101,7 +109,7 @@
+ 	p++;
+     }
+ 
+-    bzero( &tkt, sizeof( tkt ));
++    memset( &tkt, 0, sizeof( tkt ));
+     for ( i = 0, t = tkt.dat; p < stop; p += 2, t++, i++ ) {
+ 	*t = ( h2b( (unsigned char)*p ) << 4 ) +
+ 		h2b( (unsigned char)*( p + 1 ));
+@@ -129,11 +137,12 @@
+ 
+ char	*uameth = "UMICHKerberosIV\n*\n";
+ 
++int
+ cq_uameth( in, out )
+     struct papfile	*in, *out;
+ {
+     char		*start, *stop;
+-    struct comment	*c, *comment = compeek();
++    struct comment	*comment = compeek();
+ 
+     for (;;) {
+ 	switch ( markline( &start, &stop, in )) {
+@@ -166,6 +175,7 @@
+ }
+ #endif KRB
+ 
++int
+ gq_true( out )
+     struct papfile	*out;
+ {
+@@ -177,6 +187,7 @@
+     }
+ }
+ 
++int
+ gq_pagecost( out )
+     struct papfile	*out;
+ {
+@@ -190,7 +201,7 @@
+ #ifdef ABS_PRINT
+ 	lp_pagecost();
+ #endif ABS_PRINT
+-	sprintf( cost, "%d", printer->p_pagecost );
++	snprintf( cost, sizeof ( cost ), "%d", printer->p_pagecost );
+ 	APPEND( out, cost, strlen( cost ));
+     } else {
+ 	return( -1 );
+@@ -200,6 +211,7 @@
+ }
+ 
+ #ifdef ABS_PRINT
++int
+ gq_balance( out )
+     struct papfile	*out;
+ {
+@@ -208,7 +220,7 @@
+     if ( lp_pagecost() != 0 ) {
+ 	return( -1 );
+     }
+-    sprintf( balance, "$%1.2f\n", printer->p_balance );
++    snprintf( balance, sizeof ( balance ), "$%1.2f\n", printer->p_balance );
+     APPEND( out, balance, strlen( balance ));
+     return( 0 );
+ }
+@@ -227,11 +239,12 @@
+     { NULL },
+ };
+ 
++int
+ cq_query( in, out )
+     struct papfile	*in, *out;
+ {
+     char		*start, *stop, *p, *q;
+-    struct comment	*comment = compeek(), *c;
++    struct comment	*comment = compeek();
+     struct genquery	*gq;
+ 
+ 
+@@ -291,6 +304,7 @@
+     }
+ }
+ 
++void
+ cq_font_answer( start, stop, out )
+     char		*start, *stop;
+     struct papfile	*out;
+@@ -325,9 +339,9 @@
+ 	}
+     }
+ 
+-    return;
+ }
+ 
++int
+ cq_font( in, out )
+     struct papfile	*in, *out;
+ {
+@@ -382,11 +396,12 @@
+     }
+ }
+ 
++int
+ cq_feature( in, out )
+     struct papfile	*in, *out;
+ {
+     char		*start, *stop, *p;
+-    struct comment	*c, *comment = compeek();
++    struct comment	*comment = compeek();
+     struct ppd_feature	*pfe;
+ 
+     for (;;) {
+@@ -437,11 +452,12 @@
+ char	*psver = "*PSVersion\n";
+ char	*prod = "*Product\n";
+ 
++int
+ cq_printer( in, out )
+     struct papfile	*in, *out;
+ {
+     char		*start, *stop, *p;
+-    struct comment	*c, *comment = compeek();
++    struct comment	*comment = compeek();
+     struct ppd_feature	*pdpsver, *pdprod;
+ 
+     for (;;) {
+@@ -512,6 +528,7 @@
+ char	*rmjobfailed = "Failed\n";
+ char	*rmjobok = "Ok\n";
+ 
++int
+ cq_rmjob( in, out )
+     struct papfile	*in, *out;
+ {
+@@ -550,6 +567,7 @@
+     return( CH_DONE );
+ }
+ 
++int
+ cq_listq( in, out )
+     struct papfile	*in, *out;
+ {

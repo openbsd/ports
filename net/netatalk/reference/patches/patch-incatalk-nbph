@@ -1,0 +1,33 @@
+--- include/atalk/nbp.h.orig	Fri Oct 15 15:52:53 1999
++++ include/atalk/nbp.h	Fri Oct 15 15:54:08 1999
+@@ -37,7 +37,7 @@
+ #define SZ_NBPHDR	2
+ 
+ struct nbptuple {
+-    u_short	nt_net;
++    u_int16_t	nt_net;
+     u_char	nt_node;
+     u_char	nt_port;
+     u_char	nt_enum;
+@@ -50,11 +50,11 @@
+  */
+ struct nbpnve {
+     struct sockaddr_at	nn_sat;
+-    u_char		nn_objlen;
++    u_int8_t		nn_objlen;
+     char		nn_obj[ NBPSTRLEN ];
+-    u_char		nn_typelen;
++    u_int8_t		nn_typelen;
+     char		nn_type[ NBPSTRLEN ];
+-    u_char		nn_zonelen;
++    u_int8_t		nn_zonelen;
+     char		nn_zone[ NBPSTRLEN ];
+ };
+ 
+@@ -79,3 +79,6 @@
+ extern int nbp_lookup();
+ extern int nbp_rgstr();
+ extern int nbp_unrgstr();
++extern int nbp_parse();
++extern int nbp_match();
++extern int nbp_name();

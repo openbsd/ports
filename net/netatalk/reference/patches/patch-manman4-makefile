@@ -1,0 +1,20 @@
+--- man/man4/Makefile.orig	Tue Feb 20 12:02:27 1996
++++ man/man4/Makefile	Wed Aug  9 08:30:05 2000
+@@ -10,14 +10,14 @@
+ all :
+ 
+ install : all
+-	-mkdir ${MANDIR}/man4
++	-mkdir ${DESTDIR}${MANDIR}/man4
+ 	for i in ${SRC} ; do \
+-	    rm -f ${MANDIR}/man4/$$i; \
++	    rm -f ${DESTDIR}${MANDIR}/man4/$$i; \
+ 	    sed -e s@:DESTDIR:@${DESTDIR}@ -e s@:SBINDIR:@${SBINDIR}@ \
+ 		    -e s@:BINDIR:@${BINDIR}@ -e s@:RESDIR:@${RESDIR}@ \
+ 		    -e s@:ETCDIR:@${ETCDIR}@ -e s@:LIBDIR:@${LIBDIR}@ \
+ 		    -e s@:INCDIR:@${INCDIR}@ \
+-		    < $$i > ${MANDIR}/man4/$$i; \
++		    < $$i > ${DESTDIR}${MANDIR}/man4/$$i; \
+ 	done
+ 
+ clean :

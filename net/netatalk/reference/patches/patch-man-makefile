@@ -1,0 +1,11 @@
+--- man/Makefile.orig	Wed Aug  9 08:26:04 2000
++++ man/Makefile	Wed Aug  9 08:26:14 2000
+@@ -21,7 +21,7 @@
+ 	done
+ 
+ install:
+-	-mkdir ${MANDIR}
++	-mkdir ${DESTDIR}${MANDIR}
+ 	for i in ${ALL}; \
+ 	    do (cd $$i; ${MAKE} ${MFLAGS} \
+ 		DESTDIR="${DESTDIR}"  MANDIR="${MANDIR}" \

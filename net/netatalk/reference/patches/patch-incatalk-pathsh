@@ -1,0 +1,36 @@
+--- include/atalk/paths.h.orig	Fri Oct  3 14:00:48 1997
++++ include/atalk/paths.h	Fri Nov 19 18:06:07 1999
+@@ -2,20 +2,8 @@
+  * papd paths
+  */
+ #define _PATH_PAPDPRINTCAP	"/etc/printcap"
+-#ifdef ultrix
+-#define _PATH_PAPDSPOOLDIR	"/usr/spool/lpd"
+-#else ultrix
+-#ifdef __svr4__
+-#define _PATH_PAPDSPOOLDIR	"/var/tmp"
+-#else __svr4__
+-#define _PATH_PAPDSPOOLDIR	"/var/spool/lpd"
+-#endif __svr4__
+-#endif ultrix
+-#ifdef BSD4_4
++#define _PATH_PAPDSPOOLDIR	"/var/spool/papd"
+ #define _PATH_DEVPRINTER	"/var/run/printer"
+-#else BSD4_4
+-#define _PATH_DEVPRINTER	"/dev/printer"
+-#endif BSD4_4
+ 
+ /*
+  * atalkd paths
+@@ -26,9 +14,9 @@
+ /*
+  * psorder paths
+  */
+-#define _PATH_TMPPAGEORDER	"/tmp/psorderXXXXXX"
++#define _PATH_TMPPAGEORDER	"/tmp/psorderXXXXXXXXX"
+ 
+ /*
+  * afpd paths
+  */
+-#define _PATH_AFPTKT		"/tmp/AFPtktXXXXXX"
++#define _PATH_AFPTKT		"/tmp/AFPtktXXXXXXXXX"

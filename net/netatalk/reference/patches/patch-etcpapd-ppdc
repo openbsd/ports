@@ -1,0 +1,119 @@
+--- etc/papd/ppd.c.orig	Tue Mar 31 01:41:44 1998
++++ etc/papd/ppd.c	Wed Nov 24 12:35:47 1999
+@@ -5,7 +5,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <strings.h>
++#include <string.h>
+ #include <sys/syslog.h>
+ #include <sys/types.h>
+ #include <sys/param.h>
+@@ -29,6 +29,8 @@
+     { "*ColorDevice",	0 },
+     { "*FaxSupport",	0 },
+     { "*TTRasterizer",	0 },
++    { "*DefaultInstalledMemory", 0 },
++    { "*DefaultResolution", 0 },
+     { 0, 0 },
+ };
+ 
+@@ -40,6 +42,7 @@
+ };
+ 
+ #ifdef notdef
++int
+ main( ac, av )
+     int		ac;
+     char	**av;
+@@ -66,6 +69,7 @@
+ 
+ int ppd_inited = 0;
+ 
++int
+ ppd_init()
+ {
+     if ( ppd_inited ) {
+@@ -74,6 +78,7 @@
+     ppd_inited++;
+ 
+     read_ppd( printer->p_ppdfile, 0 );
++	return(0);
+ }
+ 
+     struct ppdent *
+@@ -176,6 +181,7 @@
+     return( NULL );
+ }
+ 
++int
+ read_ppd( file, fcnt )
+     char	*file;
+     int		fcnt;
+@@ -184,6 +190,7 @@
+     struct ppdent	*pe;
+     struct ppd_feature	*pfe;
+     struct ppd_font	*pfo;
++    size_t		len;
+ 
+     if ( fcnt > 20 ) {
+ 	syslog( LOG_ERR, "read_ppd: %s: Too many files!", file );
+@@ -218,12 +225,13 @@
+ 		syslog( LOG_ERR, "malloc: %m" );
+ 		exit( 1 );
+ 	    }
++		len = (strlen( pe->pe_option ) + 1);
+ 	    if (( pfo->pd_font =
+-		    (char *)malloc( strlen( pe->pe_option ) + 1 )) == NULL ) {
++		    (char *)malloc( len )) == NULL ) {
+ 		syslog( LOG_ERR, "malloc: %m" );
+ 		exit( 1 );
+ 	    }
+-	    strcpy( pfo->pd_font, pe->pe_option );
++	    (void)strlcpy( pfo->pd_font, pe->pe_option, len );
+ 	    pfo->pd_next = ppd_fonts;
+ 	    ppd_fonts = pfo;
+ 	    continue;
+@@ -237,13 +245,14 @@
+ 	    }
+ 	}
+ 	if ( pfe->pd_name && pfe->pd_value == NULL ) {
++		len = (strlen(pe->pe_value ) + 1);
+ 	    if (( pfe->pd_value =
+-		    (char *)malloc( strlen( pe->pe_value ) + 1 )) == NULL ) {
++		    (char *)malloc( len )) == NULL ) {
+ 		syslog( LOG_ERR, "malloc: %m" );
+ 		exit( 1 );
+ 	    }
+ 
+-	    strcpy( pfe->pd_value, pe->pe_value );
++	    (void)strlcpy( pfe->pd_value, pe->pe_value, len );
+ 	    continue;
+ 	}
+     }
+@@ -276,14 +285,14 @@
+     int		len;
+ {
+     struct ppd_feature	*pfe;
+-    char		main[ 256 ];
++    char		xmain[ 256 ];
+     char		*end, *p, *q;
+ 
+     if ( ! ppd_inited ) {
+ 	ppd_init();
+     }
+ 
+-    for ( end = feature + len, p = feature, q = main;
++    for ( end = feature + len, p = feature, q = xmain;
+ 	    p <= end && *p != '\n' && *p != '\r'; p++, q++ ) {
+ 	*q = *p;
+     }
+@@ -293,7 +302,7 @@
+     *q = '\0';
+ 
+     for ( pfe = ppd_features; pfe->pd_name; pfe++ ) {
+-	if ( strcmp( pfe->pd_name, main ) == 0 && pfe->pd_value ) {
++	if ( strcmp( pfe->pd_name, xmain ) == 0 && pfe->pd_value ) {
+ 	    return( pfe );
+ 	}
+     }

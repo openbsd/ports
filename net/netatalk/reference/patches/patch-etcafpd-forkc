@@ -1,0 +1,609 @@
+--- etc/afpd/fork.c.orig	Fri Oct  3 11:14:45 1997
++++ etc/afpd/fork.c	Thu Nov 11 16:28:07 1999
+@@ -21,7 +21,8 @@
+ #include <atalk/asp.h>
+ #include <atalk/adouble.h>
+ #include <stdio.h>
+-#include <strings.h>
++#include <unistd.h>
++#include <string.h>
+ #include <fcntl.h>
+ #include <dirent.h>
+ 
+@@ -36,6 +37,9 @@
+ 
+ struct ofork		*writtenfork;
+ 
++int			getforkparams(), flushfork();
++
++int
+ afp_openfork( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+@@ -45,33 +49,33 @@
+     struct ofork	*ofork;
+     int			did, buflen, oflags, ret, adflags;
+     int			lockop = 0, lockfd;
+-    u_short		vid, bitmap, access, ofrefnum;
++    u_int16_t		vid, bitmap, access, ofrefnum;
+     char		fork, *path;
+ 
+     ibuf++;
+     fork = *ibuf++;
+-    bcopy( ibuf, &vid, sizeof( u_short ));
+-    ibuf += sizeof( u_short );
++    memcpy( &vid, ibuf, sizeof( vid ));
++    ibuf += sizeof( vid );
+ 
+     if (( vol = getvolbyvid( vid )) == NULL ) {
+ 	*rbuflen = 0;
+ 	return( AFPERR_PARAM );
+     }
+ 
+-    bcopy( ibuf, &did, sizeof( int ));
+-    ibuf += sizeof( int );
++    memcpy( &did, ibuf, sizeof( did ));
++    ibuf += sizeof( did );
+ 
+     if (( dir = dirsearch( vol, did )) == NULL ) {
+ 	*rbuflen = 0;
+ 	return( AFPERR_NOOBJ );
+     }
+ 
+-    bcopy( ibuf, &bitmap, sizeof( u_short ));
++    memcpy( &bitmap, ibuf, sizeof( bitmap ));
+     bitmap = ntohs( bitmap );
+-    ibuf += sizeof( u_short );
+-    bcopy( ibuf, &access, sizeof( u_short ));
++    ibuf += sizeof( bitmap );
++    memcpy( &access, ibuf, sizeof( access ));
+     access = ntohs( access );
+-    ibuf += sizeof( u_short );
++    ibuf += sizeof( access );
+ 
+     if (( path = cname( vol, dir, &ibuf )) == NULL ) {
+ 	*rbuflen = 0;
+@@ -131,8 +135,8 @@
+ 	ad_flush( &ofork->of_ad, adflags );
+     }
+ 
+-    buflen = *rbuflen - 2 * sizeof( u_short );
+-    if (( ret = getforkparams( ofork, bitmap, rbuf + 2 * sizeof( u_short ),
++    buflen = *rbuflen - 2 * sizeof( u_int16_t );
++    if (( ret = getforkparams( ofork, bitmap, rbuf + 2 * sizeof( u_int16_t ),
+ 	    &buflen )) != AFP_OK ) {
+ 	*rbuflen = 0;
+ 	ad_close( &ofork->of_ad, adflags );
+@@ -140,10 +144,10 @@
+ 	return( ret );
+     }
+ 
+-    *rbuflen = buflen + 2 * sizeof( u_short );
++    *rbuflen = buflen + 2 * sizeof( u_int16_t );
+     bitmap = htons( bitmap );
+-    bcopy( &bitmap, rbuf, sizeof( u_short ));
+-    rbuf += sizeof( u_short );
++    memcpy( rbuf, &bitmap, sizeof( bitmap ));
++    rbuf += sizeof( bitmap );
+ 
+     /*
+      * Perform synchronization locks.  There are a couple of ways of
+@@ -184,7 +188,7 @@
+ 	of_dealloc( ofork );
+ 	if ( ret == EWOULDBLOCK ) {			/* return data anyway */
+ 	    ofrefnum = 0;
+-	    bcopy( &ofrefnum, rbuf, sizeof( u_short ));
++	    memcpy( rbuf, &ofrefnum, sizeof( ofrefnum ));
+ 	    return( AFPERR_DENYCONF );
+ 	} else {
+ 	    *rbuflen = 0;
+@@ -193,25 +197,26 @@
+ 	}
+     }
+ 
+-    bcopy( &ofrefnum, rbuf, sizeof( u_short ));
++    memcpy( rbuf, &ofrefnum, sizeof( ofrefnum ));
+     return( AFP_OK );
+ }
+ 
++int
+ afp_setforkparams( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+ {
+     struct ofork	*ofork;
+-    long		intime;
++    int32_t		intime;
+     off_t		size;
+     int			isize;
+-    u_short		ofrefnum;
++    u_int16_t		ofrefnum;
+ 
+     ibuf += 2;
+-    bcopy( ibuf, &ofrefnum, sizeof( u_short ));
+-    ibuf += sizeof( u_short );
+-    ibuf += sizeof( u_short );
+-    bcopy( ibuf, &isize, sizeof( int ));
++    memcpy( &ofrefnum, ibuf, sizeof( ofrefnum ));
++    ibuf += sizeof( ofrefnum );
++    ibuf += sizeof( ofrefnum );
++    memcpy( &isize, ibuf, sizeof( isize ));
+     size = ntohl( isize );
+ 
+     *rbuflen = 0;
+@@ -226,11 +231,11 @@
+ 	    return( AFPERR_PARAM );
+ 	}
+     } else if ( ad_hfileno( &ofork->of_ad ) != -1 ) {
+-	bcopy( ad_entry( &ofork->of_ad, ADEID_FILEI ) +
+-		FILEIOFF_MODIFY, &intime, sizeof( intime ));
+-	ad_refresh( &ofork->of_ad, ADFLAGS_HF );
+-	bcopy( &intime, ad_entry( &ofork->of_ad, ADEID_FILEI ) +
++	memcpy( &intime, ad_entry( &ofork->of_ad, ADEID_FILEI ) +
+ 		FILEIOFF_MODIFY, sizeof( intime ));
++	ad_refresh( &ofork->of_ad, ADFLAGS_HF );
++	memcpy( ad_entry( &ofork->of_ad, ADEID_FILEI ) +
++		FILEIOFF_MODIFY, &intime, sizeof( intime ));
+ 	if ( ad_rtruncate( &ofork->of_ad, size ) < 0 ) {
+ 	    syslog( LOG_ERR, "afp_setforkparams: ad_rtruncate: %m" );
+ 	    return( AFPERR_PARAM );
+@@ -250,20 +255,21 @@
+     return( AFP_OK );
+ }
+ 
++int
+ afp_bytelock( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+ {
+     int		off;
+-    u_short	ofrefnum;
++    u_int16_t	ofrefnum;
+     
+     ibuf += 2;
+-    bcopy( ibuf, &ofrefnum, sizeof( u_short ));
+-    ibuf += sizeof( u_short );
+-    bcopy( ibuf, &off, sizeof( int ));
++    memcpy( &ofrefnum, ibuf, sizeof( ofrefnum ));
++    ibuf += sizeof( ofrefnum );
++    memcpy( &off, ibuf, sizeof( off ));
+ 
+-    bcopy( &off, rbuf, sizeof( int ));
+-    *rbuflen = sizeof( int );
++    memcpy( rbuf, &off, sizeof( off ));
++    *rbuflen = sizeof( off );
+     return( AFP_OK );
+ }
+ 
+@@ -274,15 +280,15 @@
+     struct extmap	*em;
+ 
+     if ( ad_hfileno( &of->of_ad ) == -1 ||
+-	    bcmp( ufinderi, ad_entry( &of->of_ad, ADEID_FINDERI ), 8 ) == 0 ) {
++	 memcmp( ufinderi, ad_entry( &of->of_ad, ADEID_FINDERI ), 8 ) == 0 ) {
+ 	if (( em = getextmap( of->of_name )) == NULL ||
+-		bcmp( "TEXT", em->em_type, sizeof( em->em_type )) == 0 ) {
++		memcmp( "TEXT", em->em_type, sizeof( em->em_type )) == 0 ) {
+ 	    return( 1 );
+ 	} else {
+ 	    return( 0 );
+ 	}
+     } else {
+-	if ( bcmp( ufinderi, ad_entry( &of->of_ad, ADEID_FINDERI ), 4 ) == 0 ) {
++	if ( memcmp( ufinderi, ad_entry( &of->of_ad, ADEID_FINDERI ), 4 ) == 0 ) {
+ 	    return( 1 );
+ 	} else {
+ 	    return( 0 );
+@@ -291,20 +297,21 @@
+ }
+ #endif CRLF
+ 
++int
+ afp_read( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+ {
+     struct ofork	*ofork;
+-    long		offset;
+-    int			reqcount, cc, rc, eid, eof = 0;
+-    u_short		ofrefnum;
++    int32_t		offset, reqcount;
++    int			cc, rc, eid, eof = 0;
++    u_int16_t		ofrefnum;
+     u_char		nlmask, nlchar;
+     register char	*p, *q;
+ 
+     ibuf += 2;
+-    bcopy( ibuf, &ofrefnum, sizeof( u_short ));
+-    ibuf += sizeof( u_short );
++    memcpy( &ofrefnum, ibuf, sizeof( ofrefnum ));
++    ibuf += sizeof( ofrefnum );
+ 
+     if (( ofork = of_find( ofrefnum )) == NULL ) {
+ 	*rbuflen = 0;
+@@ -312,12 +319,12 @@
+ 	return( AFPERR_PARAM );
+     }
+ 
+-    bcopy( ibuf, &offset, sizeof( long ));
++    memcpy( &offset, ibuf, sizeof( offset ));
+     offset = ntohl( offset );
+-    ibuf += sizeof( long );
+-    bcopy( ibuf, &reqcount, sizeof( long ));
++    ibuf += sizeof( offset );
++    memcpy( &reqcount, ibuf, sizeof( reqcount ));
+     reqcount = ntohl( reqcount );
+-    ibuf += sizeof( long );
++    ibuf += sizeof( reqcount );
+ 
+     nlmask = *ibuf++;
+     nlchar = *ibuf++;
+@@ -382,27 +389,27 @@
+     return( AFP_OK );
+ }
+ 
++int
+ afp_flush( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+ {
+-    u_short	ofrefnum;
+-
+     *rbuflen = 0;
+     of_flush();
+     return( AFP_OK );
+ }
+ 
++int
+ afp_flushfork( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+ {
+     struct ofork	*ofork;
+-    u_short		ofrefnum;
++    u_int16_t		ofrefnum;
+ 
+     *rbuflen = 0;
+     ibuf += 2;
+-    bcopy( ibuf, &ofrefnum, sizeof( u_short ));
++    memcpy( &ofrefnum, ibuf, sizeof( ofrefnum ));
+ 
+     if (( ofork = of_find( ofrefnum )) == NULL ) {
+ 	syslog( LOG_ERR, "afp_flushfork: of_find: %m" );
+@@ -416,6 +423,7 @@
+     return( AFP_OK );
+ }
+ 
++int
+ flushfork( ofork )
+     struct ofork	*ofork;
+ {
+@@ -434,18 +442,19 @@
+     return( err );
+ }
+ 
++int
+ afp_closefork( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+ {
+     struct ofork	*ofork;
+-    long		intime, filetime;
++    int32_t		intime, filetime;
+     int			adflags, aint, doflush = 0;
+-    u_short		ofrefnum;
++    u_int16_t		ofrefnum;
+ 
+     *rbuflen = 0;
+     ibuf += 2;
+-    bcopy( ibuf, &ofrefnum, sizeof( u_short ));
++    memcpy( &ofrefnum, ibuf, sizeof( ofrefnum ));
+ 
+     if (( ofork = of_find( ofrefnum )) == NULL ) {
+ 	syslog( LOG_ERR, "afp_closefork: of_find: %m" );
+@@ -460,14 +469,14 @@
+ 	adflags |= ADFLAGS_HF;
+ 
+ 	aint = ad_getentrylen( &ofork->of_ad, ADEID_RFORK );
+-	bcopy( ad_entry( &ofork->of_ad, ADEID_FILEI ) +
+-		FILEIOFF_MODIFY, &intime, sizeof( intime ));
++	memcpy( &intime, ad_entry( &ofork->of_ad, ADEID_FILEI ) +
++		FILEIOFF_MODIFY, sizeof( intime ));
+ 	ad_refresh( &ofork->of_ad, adflags );
+-	bcopy( ad_entry( &ofork->of_ad, ADEID_FILEI ) +
+-		FILEIOFF_MODIFY, &filetime, sizeof( filetime ));
++	memcpy( &filetime, ad_entry( &ofork->of_ad, ADEID_FILEI ) +
++		FILEIOFF_MODIFY, sizeof( filetime ));
+ 	if ( intime != filetime ) {
+-	    bcopy( &intime, ad_entry( &ofork->of_ad, ADEID_FILEI )
+-		    + FILEIOFF_MODIFY, sizeof( filetime ));
++	    memcpy( ad_entry( &ofork->of_ad, ADEID_FILEI )
++		    + FILEIOFF_MODIFY, &intime, sizeof( filetime ));
+ 	    doflush++;
+ 	}
+ 
+@@ -492,6 +501,7 @@
+     return( AFP_OK );
+ }
+ 
++int
+ afp_write( ibuf, ibuflen, rbuf, rbuflen, asp )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+@@ -499,20 +509,19 @@
+ {
+     struct ofork	*ofork;
+     struct timeval	tv;
+-    register char	*p, *q;
+     int			endflag, offset, reqcount, cc, eid;
+-    u_short		ofrefnum;
++    u_int16_t		ofrefnum;
+ 
+     ibuf += 1;
+     endflag = *ibuf++;
+-    bcopy( ibuf, &ofrefnum, sizeof( u_short ));
+-    ibuf += sizeof( u_short );
+-    bcopy( ibuf, &offset, sizeof( int ));
++    memcpy( &ofrefnum, ibuf, sizeof( ofrefnum ));
++    ibuf += sizeof( ofrefnum );
++    memcpy( &offset, ibuf, sizeof( offset ));
+     offset = ntohl( offset );
+-    ibuf += sizeof( int );
+-    bcopy( ibuf, &reqcount, sizeof( int ));
++    ibuf += sizeof( offset );
++    memcpy( &reqcount, ibuf, sizeof( reqcount ));
+     reqcount = ntohl( reqcount );
+-    ibuf += sizeof( int );
++    ibuf += sizeof( reqcount );
+ 
+     if (( ofork = of_find( ofrefnum )) == NULL ) {
+ 	*rbuflen = 0;
+@@ -569,31 +578,32 @@
+ 	    exit( 1 );
+ 	}
+ 	tv.tv_sec = htonl( tv.tv_sec );
+-	bcopy( &tv.tv_sec, ad_entry( &ofork->of_ad, ADEID_FILEI ) +
+-		FILEIOFF_MODIFY, sizeof( tv.tv_sec ));
++	memcpy( ad_entry( &ofork->of_ad, ADEID_FILEI ) +
++		FILEIOFF_MODIFY, &tv.tv_sec, sizeof( tv.tv_sec ));
+     }
+ 
+     offset += cc;
+     offset = htonl( offset );
+-    bcopy( &offset, rbuf, sizeof( int ));
++    memcpy( rbuf, &offset, sizeof( offset ));
+     *rbuflen = 4;
+     return( AFP_OK );
+ }
+ 
++int
+ afp_getforkparams( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+ {
+     struct ofork	*ofork;
+     int			buflen, ret;
+-    u_short		ofrefnum, bitmap;
++    u_int16_t		ofrefnum, bitmap;
+ 
+     ibuf += 2;
+-    bcopy( ibuf, &ofrefnum, sizeof( u_short ));
+-    ibuf += sizeof( u_short );
+-    bcopy( ibuf, &bitmap, sizeof( u_short ));
++    memcpy( &ofrefnum, ibuf, sizeof( ofrefnum ));
++    ibuf += sizeof( ofrefnum );
++    memcpy( &bitmap, ibuf, sizeof( bitmap ));
+     bitmap = ntohs( bitmap );
+-    ibuf += sizeof( u_short );
++    ibuf += sizeof( bitmap );
+ 
+     if (( ofork = of_find( ofrefnum )) == NULL ) {
+ 	*rbuflen = 0;
+@@ -601,31 +611,32 @@
+ 	return( AFPERR_PARAM );
+     }
+ 
+-    buflen = *rbuflen - sizeof( u_short );
++    buflen = *rbuflen - sizeof( u_int16_t );
+     if (( ret = getforkparams( ofork, bitmap,
+-	    rbuf + sizeof( u_short ), &buflen )) != AFP_OK ) {
++	    rbuf + sizeof( bitmap ), &buflen )) != AFP_OK ) {
+ 	*rbuflen = 0;
+ 	return( ret );
+     }
+ 
+-    *rbuflen = buflen + sizeof( u_short );
++    *rbuflen = buflen + sizeof( u_int16_t );
+     bitmap = htons( bitmap );
+-    bcopy( &bitmap, rbuf, sizeof( u_short ));
++    memcpy( rbuf, &bitmap, sizeof( bitmap ));
+     return( AFP_OK );
+ }
+ 
++int
+ getforkparams( ofork, bitmap, buf, buflen )
+     struct ofork	*ofork;
+-    u_short		bitmap;
++    u_int16_t		bitmap;
+     char		*buf;
+     int			*buflen;
+ {
+     struct stat		st;
+     struct extmap	*em;
+     char		*data, *nameoff = 0;
+-    long		intime;
++    int32_t		intime;
+     int			bit = 0, isad = 1, aint;
+-    u_short		ashort;
++    u_int16_t		ashort;
+ 
+     if ( ad_hfileno( &ofork->of_ad ) == -1 ) {
+ 	isad = 0;
+@@ -633,16 +644,16 @@
+ 
+     if ( isad ) {
+ 	aint = ad_getentrylen( &ofork->of_ad, ADEID_RFORK );
+-	bcopy( ad_entry( &ofork->of_ad, ADEID_FILEI ) +
+-		FILEIOFF_MODIFY, &intime, sizeof( intime ));
++	memcpy( &intime, ad_entry( &ofork->of_ad, ADEID_FILEI ) +
++		FILEIOFF_MODIFY, sizeof( intime ));
+ 	if ( ad_refresh( &ofork->of_ad ) < 0 ) {
+ 	    syslog( LOG_ERR, "getforkparams: ad_refresh: %m" );
+ 	    return( AFPERR_PARAM );
+ 	}
+ 	/* See afp_closefork() for why this is bad */
+ 	ad_setentrylen( &ofork->of_ad, ADEID_RFORK, aint );
+-	bcopy( &intime, ad_entry( &ofork->of_ad, ADEID_FILEI ) +
+-		FILEIOFF_MODIFY, sizeof( intime ));
++	memcpy( ad_entry( &ofork->of_ad, ADEID_FILEI ) +
++		FILEIOFF_MODIFY, &intime, sizeof( intime ));
+     }
+ 
+     if (( bitmap & ( 1<<FILPBIT_DFLEN )) &&
+@@ -671,76 +682,77 @@
+ 	switch ( bit ) {
+ 	case FILPBIT_ATTR :
+ 	    if ( isad ) {
+-		bcopy( ad_entry( &ofork->of_ad, ADEID_FILEI ) + FILEIOFF_ATTR,
+-			&ashort, sizeof( u_short ));
++		memcpy( &ashort, 
++		ad_entry( &ofork->of_ad, ADEID_FILEI ) + FILEIOFF_ATTR,
++			sizeof( ashort ));
+ 	    } else {
+ 		ashort = 0;
+ 	    }
+-	    bcopy( &ashort, data, sizeof( u_short ));
+-	    data += sizeof( u_short );
++	    memcpy( data, &ashort, sizeof( ashort ));
++	    data += sizeof( ashort );
+ 	    break;
+ 
+ 	case FILPBIT_PDID :
+-	    bcopy( &ofork->of_dir->d_did, data, sizeof( int ));
++	    memcpy( data, &ofork->of_dir->d_did, sizeof( int ));
+ 	    data += sizeof( int );
+ 	    break;
+ 
+ 	case FILPBIT_CDATE :
+ 	    if ( isad ) {
+-		bcopy( ad_entry( &ofork->of_ad, ADEID_FILEI )
+-			+ FILEIOFF_CREATE, &aint, sizeof( int ));
++		memcpy( &aint, ad_entry( &ofork->of_ad, ADEID_FILEI )
++			+ FILEIOFF_CREATE, sizeof( aint ));
+ 	    } else {
+ 		aint = 0;
+ 	    }
+-	    bcopy( &aint, data, sizeof( int ));
+-	    data += sizeof( int );
++	    memcpy( data, &aint, sizeof( aint ));
++	    data += sizeof( aint );
+ 	    break;
+ 
+ 	case FILPBIT_MDATE :
+ 	    if ( isad ) {
+-		bcopy( ad_entry( &ofork->of_ad, ADEID_FILEI )
+-			+ FILEIOFF_MODIFY, &aint, sizeof( int ));
++		memcpy( &aint, ad_entry( &ofork->of_ad, ADEID_FILEI )
++			+ FILEIOFF_MODIFY, sizeof( aint ));
+ 	    } else {
+ 		aint = 0;
+ 	    }
+-	    bcopy( &aint, data, sizeof( int ));
+-	    data += sizeof( int );
++	    memcpy( data, &aint, sizeof( aint ));
++	    data += sizeof( aint );
+ 	    break;
+ 
+ 	case FILPBIT_BDATE :
+ 	    if ( isad ) {
+-		bcopy( ad_entry( &ofork->of_ad, ADEID_FILEI )
+-			+ FILEIOFF_BACKUP, &aint, sizeof( int ));
++		memcpy( &aint, ad_entry( &ofork->of_ad, ADEID_FILEI )
++			+ FILEIOFF_BACKUP, sizeof( aint ));
+ 	    } else {
+ 		aint = 0;
+ 	    }
+-	    bcopy( &aint, data, sizeof( int ));
+-	    data += sizeof( int );
++	    memcpy( data, &aint, sizeof( aint ));
++	    data += sizeof( aint );
+ 	    break;
+ 
+ 	case FILPBIT_FINFO :
+ 	    if ( !isad ) {
+-		bcopy( ufinderi, data, 32 );
++		memcpy( data, ufinderi, 32 );
+ 	    } else {
+-		bcopy( ad_entry( &ofork->of_ad, ADEID_FINDERI ), data, 32 );
++		memcpy( data, ad_entry( &ofork->of_ad, ADEID_FINDERI ), 32 );
+ 	    }
+-	    if ( bcmp( data, ufinderi, 8 ) == 0 &&
++	    if ( memcmp( data, ufinderi, 8 ) == 0 &&
+ 		    ( em = getextmap( ofork->of_name )) != NULL ) {
+-		bcopy( em->em_type, data, sizeof( em->em_type ));
+-		bcopy( em->em_creator, data + 4, sizeof( em->em_creator ));
++		memcpy( data, em->em_type, sizeof( em->em_type ));
++		memcpy( data + 4, em->em_creator, sizeof( em->em_creator ));
+ 	    }
+ 	    data += 32;
+ 	    break;
+ 
+ 	case FILPBIT_LNAME :
+ 	    nameoff = data;
+-	    data += sizeof( u_short );
++	    data += sizeof( ashort );
+ 	    break;
+ 
+ 	case FILPBIT_SNAME :
+ 	    ashort = 0;
+-	    bcopy( &ashort, data, sizeof( u_short ));
+-	    data += sizeof( u_short );
++	    memcpy( data, &ashort, sizeof( ashort ));
++	    data += sizeof( ashort );
+ 	    break;
+ 
+ 	case FILPBIT_FNUM :
+@@ -753,14 +765,14 @@
+ #else AFS
+ 	    aint = ( st.st_dev << 16 ) | ( st.st_ino & 0x0000ffff );
+ #endif AFS
+-	    bcopy( &aint, data, sizeof( int ));
+-	    data += sizeof( int );
++	    memcpy( data, &aint, sizeof( aint ));
++	    data += sizeof( aint );
+ 	    break;
+ 
+ 	case FILPBIT_DFLEN :
+ 	    aint = htonl( st.st_size );
+-	    bcopy( &aint, data, sizeof( int ));
+-	    data += sizeof( int );
++	    memcpy( data, &aint, sizeof( aint ));
++	    data += sizeof( aint );
+ 	    break;
+ 
+ 	case FILPBIT_RFLEN :
+@@ -769,8 +781,8 @@
+ 	    } else {
+ 		aint = 0;
+ 	    }
+-	    bcopy( &aint, data, sizeof( int ));
+-	    data += sizeof( int );
++	    memcpy( data, &aint, sizeof( aint ));
++	    data += sizeof( aint );
+ 	    break;
+ 
+ 	default :
+@@ -782,11 +794,11 @@
+ 
+     if ( nameoff != 0 ) {
+ 	ashort = htons( data - buf );
+-	bcopy( &ashort, nameoff, sizeof( u_short ));
++	memcpy( nameoff, &ashort, sizeof( ashort ));
+ 	aint = strlen( ofork->of_name );
+ 	aint = ( aint > 31 ) ? 31 : aint;
+ 	*data++ = aint;
+-	bcopy( ofork->of_name, data, aint );
++	memcpy( data, ofork->of_name, aint );
+ 	data += aint;
+     }
+ 

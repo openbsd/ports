@@ -1,0 +1,10 @@
+--- libatalk/asp/asp_init.c.orig	Fri Oct 15 16:09:38 1999
++++ libatalk/asp/asp_init.c	Fri Oct 15 16:10:17 1999
+@@ -57,6 +57,7 @@
+     return( asp );
+ }
+ 
++void
+ asp_setstatus( asp, status, slen )
+     ASP		asp;
+     char	*status;

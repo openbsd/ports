@@ -1,0 +1,36 @@
+--- libatalk/asp/asp_getreq.c.orig	Wed Nov  3 06:32:51 1993
++++ libatalk/asp/asp_getreq.c	Wed Nov 10 14:56:44 1999
+@@ -21,6 +21,7 @@
+  *	netatalk@itd.umich.edu
+  */
+ 
++#include <string.h>
+ #include <sys/types.h>
+ #include <sys/time.h>
+ #include <sys/uio.h>
+@@ -29,6 +30,7 @@
+ #include <atalk/atp.h>
+ #include <atalk/asp.h>
+ 
++int
+ asp_getrequest( asp, buf, buflenp )
+     ASP		asp;
+     char	**buf;
+@@ -36,7 +38,7 @@
+ {
+     struct atp_block	atpb;
+     u_char		*p;
+-    u_short		seq;
++    u_int16_t		seq;
+ 
+     p = (u_char *)*buf;
+     asp->asp_sat.sat_port = ATADDR_ANYPORT;
+@@ -49,7 +51,7 @@
+     }
+     *buflenp = atpb.atp_rreqdlen - 4;
+     *buf += 4;
+-    bcopy( &p[ 2 ], &seq, sizeof( u_short ));
++    memcpy( &seq, &p[ 2 ], sizeof( seq ));
+     seq = ntohs( seq );
+     if ( p[ 0 ] != ASPFUNC_CLOSE && seq != asp->asp_seq ) {
+ 	return( -2 );

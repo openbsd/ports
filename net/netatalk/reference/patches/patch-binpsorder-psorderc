@@ -1,0 +1,77 @@
+--- bin/psorder/psorder.c.orig	Sun Aug 17 09:20:01 1997
++++ bin/psorder/psorder.c	Wed Nov 24 14:11:43 1999
+@@ -31,7 +31,7 @@
+ #include <fcntl.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <strings.h>
++#include <unistd.h>
+ #include <string.h>
+ #include <dirent.h>
+ #include "pa.h"
+@@ -45,21 +45,19 @@
+  *			Global Variables
+  */
+ 
+-u_char			psbuf[ 8192 ];
++u_int8_t		psbuf[ 8192 ];
+ struct psinfo_st	psinfo;
+ int			orderflag, forceflag;
+ 
++int
+ main( argc, argv )
+     int		argc;
+     char	**argv;
+ {
+-    extern char	*optarg;
+-    extern int	optind, opterr;
+     char	*progname;
+     int		errflag = 0;
+     int		c;
+ 
+-    opterr = 0;
+     while (( c = getopt( argc, argv, OPTSTR )) != -1 ) {
+ 	switch ( c ) {
+ 	case REVCHAR:
+@@ -77,7 +75,7 @@
+ 	}
+     }
+     if ( errflag ) {
+-	if (( progname = rindex( argv[ 0 ], '/' )) == NULL ) {
++	if (( progname = strrchr( argv[ 0 ], '/' )) == NULL ) {
+ 	    progname = argv[ 0 ];
+ 	} else progname++;
+ 	fprintf( stderr, "usage: %s [-duf] [sourcefile]\n", progname );
+@@ -242,7 +240,7 @@
+ #endif
+ 	    pa_match( pb );
+ 	    ccmatch = ccread - 1;
+-	    while ( c = pa_getchar( pb )) {
++	    while ( (c = pa_getchar( pb ))) {
+ 		if ( c != 0 ) {
+ 		    ccread++;
+ 		    (void)putc( c, tempstream );
+@@ -385,11 +383,12 @@
+     } else if (( strncmp( psinfo.pages.order, "", ORDERLEN ) == 0 ) ||
+ 	    ( strncmp( psinfo.pages.order, "1", ORDERLEN ) == 0 )) {
+ 	order = orderflag;
+-	if ( order == REVERSE ) strcpy( psinfo.pages.order, "-1" );
++	if ( order == REVERSE ) strlcpy( psinfo.pages.order, "-1", 
++		ORDERLEN );
+     } else if ( strncmp( psinfo.pages.order, "-1", ORDERLEN ) == 0 ) {
+ 	if ( orderflag == FORWARD ) {
+ 	    order = REVERSE;
+-	    strcpy( psinfo.pages.order, "1" );
++	    strlcpy( psinfo.pages.order, "1", ORDERLEN );
+ 	} else order = FORWARD;
+     } else if (( strncmp( psinfo.pages.order, "0", ORDERLEN ) == 0 ) &&
+ 	    forceflag ) {
+@@ -475,7 +474,7 @@
+     } else {
+ 	argone = argtwo = NULL;
+     }
+-    (void)sprintf( line, "%s %s %s", lable, argone, argtwo );
++    (void)snprintf( line, sizeof ( line ), "%s %s %s", lable, argone, argtwo );
+     linelen = strlen( line );
+ 
+     ccwrite = write( 1, line, linelen );
