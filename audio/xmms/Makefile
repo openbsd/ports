@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2002/05/13 18:50:37 espie Exp $
-# Uses pthreads
+# $OpenBSD: Makefile,v 1.25 2002/08/07 22:34:54 naddy Exp $
 
 COMMENT=		"Multimedia player for the X Window System"
 COMMENT-gnome=		"GNOME applet for XMMS"
@@ -9,14 +8,12 @@ COMMENT-mikmod=		"Mikmod input plugin for XMMS"
 
 VERSION=		1.2.7
 DISTNAME=		xmms-${VERSION}
-FULLPKGNAME=		xmms-${VERSION}
-FULLPKGNAME-gnome=	xmms-gnome-${VERSION}
-FULLPKGNAME-esd=	xmms-esd-${VERSION}
-FULLPKGNAME-vorbis=	xmms-vorbis-${VERSION}
-FULLPKGNAME-mikmod=	xmms-mikmod-${VERSION}
+PKGNAME-gnome=		xmms-gnome-${VERSION}
+PKGNAME-esd=		xmms-esd-${VERSION}
+PKGNAME-vorbis=		xmms-vorbis-${VERSION}
+PKGNAME-mikmod=		xmms-mikmod-${VERSION}
 SUNDRIVER=		xmms_sun-${VERSION}
 CATEGORIES=		audio
-NEED_VERSION=		1.507
 HOMEPAGE=		http://www.xmms.org
 
 MAINTAINER=		Wilbern Cobb <wcobb@openbsd.org>
@@ -36,7 +33,7 @@ MASTER_SITES=		http://www.xmms.org/files/$V/ \
 MASTER_SITES0=		http://vedge.com.ar/hack/ \
 			http://mirror.csoft.org/xmms/
 
-FLAVORS=		no_gnome no_esd no_vorbis no_mikmod
+PSEUDO_FLAVORS=		no_gnome no_esd no_vorbis no_mikmod
 FLAVOR?=
 MULTI_PACKAGES=
 .if !${FLAVOR:L:Mno_gnome}
@@ -73,7 +70,6 @@ DISTFILES=		${DISTNAME}.tar.gz \
 			${SUNDRIVER}.tar.gz:0
 
 DOCS=			README NEWS
-SUBST_VARS=		PKGNAME-gnome PKGNAME-vorbis PKGNAME-esd PKGNAME-mikmod
 
 
 .if defined(PACKAGING)
