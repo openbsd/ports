@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/11/04 20:46:23 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/02/26 08:54:35 kevlo Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -7,7 +7,6 @@ DISTNAME=	swing1_1_1
 PKGNAME=	jfc-1.1.1
 CATEGORIES=	devel
 NEED_VERSION=	1.328
-MASTER_SITES=	http://java.sun.com/products/jfc/
 EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://java.sun.com/products/jfc/
