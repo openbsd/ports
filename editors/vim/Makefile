@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.35 2001/03/18 22:38:12 miod Exp $
+# $OpenBSD: Makefile,v 1.36 2001/03/26 04:04:49 jasoni Exp $
 
-PKGNAME=	vim-5.7.23
+PKGNAME=	vim-5.7.25
 DISTNAME=	vim-5.7
 CATEGORIES=	editors
 NEED_VERSION=	1.305
@@ -16,7 +16,7 @@ DIST_SUBDIR=	vim
 
 HOMEPAGE=	http://www.vim.org
 
-.for p in 01 02 03 04 05 06 07 08 10 12 13 14 15 16 17 18 19 21 22 23
+.for p in 01 02 03 04 05 06 07 08 10 12 13 14 15 16 17 18 19 21 22 23 24 25
 PATCHFILES+=	5.7.0${p}:0
 .endfor
 .if defined(PATCH_DEBUG)
