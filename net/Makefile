@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.215 2002/05/20 22:24:15 jsyn Exp $
+# $OpenBSD: Makefile,v 1.216 2002/05/21 22:00:18 jsyn Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -131,6 +131,7 @@
      SUBDIR += pchar
      SUBDIR += pdnsd
      SUBDIR += pen
+     SUBDIR += plushs
      SUBDIR += pop3gwd
      SUBDIR += pptp
      SUBDIR += proxy-suite
