@@ -3,7 +3,7 @@
 # Date created:		1998-Sep-1
 # Whom:			Yannick Cote
 # 
-# $OpenBSD: Makefile,v 1.1.1.1 1998/11/23 18:56:55 yanick Exp $
+# $OpenBSD: Makefile,v 1.2 1999/06/10 15:55:13 brad Exp $
 #
 
 DISTNAME=		kdebase-1.0
@@ -13,9 +13,7 @@ MASTER_SITES=		ftp://ftp.kde.org/pub/kde/stable/1.0/distribution/tar/generic/sou
 
 MAINTAINER=		yanick@fries.net
 
-.if ( ${MACHINE_ARCH} == "sparc" )
-BROKEN=         "Currently doesn't build QT on sparc due to g++ bug"
-.endif                                                            
+BROKEN=		"newer version available soon: kdebase-1.1.1"
 
 LIB_DEPENDS=		qt\\.1\\.:${PORTSDIR}/x11/qt \
 			jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
