@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/02/02 19:35:35 jakob Exp $
+# $OpenBSD: Makefile,v 1.15 2001/02/02 19:36:28 jakob Exp $
 
 DISTNAME=	imap-2000c
 
@@ -19,7 +19,6 @@ EXTRACT_SUFX=	.tar.Z
 
 ALL_TARGET=	bso
 MAKE_FLAGS=	SPECIALAUTHENTICATORS=ssl
-MAKE_FLAGS+=	EXTRACFLAGS=-g
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/imapd/imapd  ${PREFIX}/libexec
