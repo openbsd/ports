@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/08 18:26:32 msf Exp $
+bin/maketext
+${P5SITE}/Locale/
+${P5SITE}/Locale/Maketext/
+${P5SITE}/Locale/Maketext/Gettext/
+${P5SITE}/Locale/Maketext/Gettext.pm
+${P5SITE}/Locale/Maketext/Gettext/Functions.pm
+@man man/man1/maketext.1
+@man man/man3p/Locale::Maketext::Gettext.3p
+@man man/man3p/Locale::Maketext::Gettext::Functions.3p
