@@ -1,0 +1,49 @@
+$OpenBSD: patch-po_zh_TW_Big5_po,v 1.1 2001/05/14 21:04:14 brad Exp $
+--- po/zh_TW.Big5.po.orig	Mon May 14 22:24:00 2001
++++ po/zh_TW.Big5.po	Mon May 14 22:24:46 2001
+@@ -526,11 +526,11 @@ msgid ""
+ " %s\n"
+ " with:\n"
+ " %s"
+-msgstr "½Æ»\\ÀÉ®×:\n"
++msgstr "½Æ»\ÀÉ®×:\n"
+ 
+ #: src/utilops.c:183 src/utilops.c:289 src/utilops.c:651 src/utilops.c:835
+ msgid "Overwrite file"
+-msgstr "½Æ»\\ÀÉ®×"
++msgstr "½Æ»\ÀÉ®×"
+ 
+ #: src/utilops.c:186
+ msgid "Skip"
+@@ -589,11 +589,11 @@ msgid ""
+ "%s\n"
+ " with:\n"
+ "%s"
+-msgstr "½Æ»\\ÀÉ®×:\n"
++msgstr "½Æ»\ÀÉ®×:\n"
+ 
+ #: src/utilops.c:292 src/utilops.c:654 src/utilops.c:838
+ msgid "Overwrite"
+-msgstr "½Æ»\\"
++msgstr "½Æ»\"
+ 
+ #: src/utilops.c:318
+ #, fuzzy, c-format
+@@ -736,7 +736,7 @@ msgid ""
+ "%s\n"
+ "by renaming:\n"
+ "%s"
+-msgstr "½Æ»\\ÀÉ®×:\n"
++msgstr "½Æ»\ÀÉ®×:\n"
+ 
+ #: src/utilops.c:663
+ #, fuzzy, c-format
+@@ -840,7 +840,7 @@ msgstr "GQview ¤u¨ã"
+ #~ "%s\n"
+ #~ "with:\n"
+ #~ "%s"
+-#~ msgstr "½Æ»\\ÀÉ®×:\n"
++#~ msgstr "½Æ»\ÀÉ®×:\n"
+ 
+ #~ msgid "Save"
+ #~ msgstr "Àx¦s"

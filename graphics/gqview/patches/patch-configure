@@ -1,6 +1,7 @@
---- configure.orig	Sat Aug 12 07:14:21 2000
-+++ configure	Sat Aug 12 07:15:13 2000
-@@ -3324,7 +3324,7 @@
+$OpenBSD: patch-configure,v 1.2 2001/05/14 21:04:13 brad Exp $
+--- configure.orig	Tue Jun  6 01:32:01 2000
++++ configure	Mon May 14 22:22:22 2001
+@@ -3324,7 +3324,7 @@ else
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -9,7 +10,7 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -3586,7 +3586,7 @@
+@@ -3586,7 +3586,7 @@ fi
  		 USE_INCLUDED_LIBINTL=yes
  		 CATOBJEXT=.cat
  		 INSTOBJEXT=.cat

@@ -1,0 +1,12 @@
+$OpenBSD: patch-po_fr_po,v 1.1 2001/05/14 21:04:14 brad Exp $
+--- po/fr.po.orig	Mon May 14 22:23:13 2001
++++ po/fr.po	Mon May 14 22:23:32 2001
+@@ -10,7 +10,7 @@ msgstr ""
+ "Last-Translator: Jean-pierre PEDRON <jppedron@club-internet.fr>\n"
+ "Language-Team: french <jppedron@club-internet.fr>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=iso8859-1\n"
++"Content-Type: text/plain; charset=iso-8859-1\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+ #: src/config.c:294
