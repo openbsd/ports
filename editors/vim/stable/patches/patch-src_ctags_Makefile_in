@@ -1,5 +1,6 @@
---- ctags/Makefile.in.orig	Mon Sep 27 00:18:29 1999
-+++ ctags/Makefile.in	Mon Sep 27 00:18:41 1999
+$OpenBSD: patch-src_ctags_Makefile_in,v 1.1 2001/05/06 07:09:34 jasoni Exp $
+--- src/ctags/Makefile.in.orig	Thu Sep 30 21:11:06 1999
++++ src/ctags/Makefile.in	Sun May  6 00:09:24 2001
 @@ -6,8 +6,8 @@
  # These are the names of the installed programs, in case you wish to change
  # them.

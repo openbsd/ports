@@ -1,34 +1,29 @@
-# $OpenBSD: Makefile,v 1.4 2001/04/18 15:01:10 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/06 07:09:33 jasoni Exp $
 
 COMMENT= 	"vi clone, many additional features"
 
-PKGNAME=	vim-5.7.27
+PKGNAME=	vim-5.7.30
 DISTNAME=	vim-5.7
 CATEGORIES=	editors
 NEED_VERSION=	1.400
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unix/ \
-		ftp://ftp.home.vim.org/pub/vim/unix/  \
+		ftp://ftp.home.vim.org/pub/vim/unix/ \
 		ftp://ftp.berlin.de.vim.org/misc/editors/vim/unix/ \
-		ftp://ftp.is.co.za/applications/editors/vim/  \
-		ftp://ftp.progsoc.uts.edu.au/pub/vim/ 
+		ftp://ftp.is.co.za/applications/editors/vim/ \
+		ftp://ftp.progsoc.uts.edu.au/pub/vim/
 MASTER_SITES0=	${MASTER_SITES:S/unix/patches/}
 DISTFILES=	${DISTNAME}-src.tar.gz ${DISTNAME}-rt.tar.gz
 DIST_SUBDIR=	vim
 
-HOMEPAGE=	http://www.vim.org
-
-.for p in 01 02 03 04 05 06 07 08 10 12 13 14 15 16 17 18 19 21 22 23 24 25 27 28
-PATCHFILES+=	5.7.0${p}:0
-.endfor
-.if defined(PATCH_DEBUG)
-PATCH_DIST_ARGS=-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
-.else
-PATCH_DIST_ARGS=-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRIP}
-.endif
-
+HOMEPAGE=	http://www.vim.org/
 
 MAINTAINER=	Jason Ish <jasoni@openbsd.org>
+
+.for p in 01 02 03 04 05 06 07 08 10 12 13 14 15 16 17 18 19 21 22 23 24 25 \
+	  27 28 29 30
+PATCHFILES+=	5.7.0${p}:0
+.endfor
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
@@ -61,9 +56,7 @@ USE_MOTIF=any
 CONFIGURE_ARGS+=--enable-gui="athena"
 .elif ${FLAVOR:L} == "gtk"
 LIB_DEPENDS=	gtk.1.2::x11/gtk+
-CONFIGURE_ARGS+=--enable-gui="gtk" 
+CONFIGURE_ARGS+=--enable-gui="gtk"
 .endif
-
-WRKDIST=		${WRKDIR}/${DISTNAME}/src
 
 .include <bsd.port.mk>
