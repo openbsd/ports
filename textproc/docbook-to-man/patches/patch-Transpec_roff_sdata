@@ -1,0 +1,421 @@
+$OpenBSD: patch-Transpec_roff_sdata,v 1.1.1.1 2005/02/14 11:56:38 espie Exp $
+--- Transpec/roff.sdata.orig	Mon Jun 17 05:50:28 1996
++++ Transpec/roff.sdata	Fri Feb 11 12:01:20 2005
+@@ -55,9 +55,9 @@
+ [frac38]		3/8
+ [frac58]		5/8
+ [frac78]		7/8
+-[sup1  ]		\\u1\\l
+-[sup2  ]		\\u2\\l
+-[sup3  ]		\\u3\\l
++[sup1  ]		\\(S1
++[sup2  ]		\\(S2
++[sup3  ]		\\(S3
+ [plus  ]		\\(pl
+ [plusmn]		\\(+-
+ [lt    ]		<
+@@ -66,10 +66,12 @@
+ [divide]		\\(di
+ [times ]		\\(ti
+ # [curren]		=general currency sign
+-[pound ]		#
++[curren]		\\(Cs
++[euro  ]		\\(Cs
++[pound ]		\\(Po
+ [dollar]		$
+ [cent  ]		\\(ct
+-[yen   ]		yen
++[yen   ]		\\(Ye
+ [num   ]		#
+ [percnt]		%
+ [amp   ]		&
+@@ -78,7 +80,7 @@
+ [lsqb  ]		[
+ [bsol  ]		\\e
+ [rsqb  ]		]
+-[lcub  ]		{	/lbrace O: =left curly bracket
++[lcub  ]		{
+ # [horbar]		horizontal bar
+ [horbar]		_
+ [verbar]		\\(or
+@@ -88,9 +90,13 @@
+ [deg   ]		\\(de
+ # [ordm  ]		=ordinal indicator, masculine
+ # [ordf  ]		=ordinal indicator, feminine
++[ordf  ]		\\(Of
++[ordm  ]		\\(Om
+ [sect  ]		\\(sc
+ # [para  ]		=pilcrow (paragraph sign)
++[para  ]		\\(ps
+ # [middot]		/centerdot B: =middle dot
++[middot]		\\(pc
+ [larr  ]		\\(<-
+ [rarr  ]		\\(->
+ [uarr  ]		\\(ua
+@@ -103,8 +109,9 @@
+ [brvbar]		|
+ [not   ]		\\(no
+ # [sung  ]		=music note (sung text sign)
+-[excl  ]		!
++[excl  ]		\!
+ # [iexcl ]		=inverted exclamation mark
++[iexcl ]		\\(r!
+ [quot  ]		"
+ [apos  ]		\\&'
+ [lpar  ]		(
+@@ -118,14 +125,15 @@
+ [semi  ]		;
+ [quest ]		?
+ # [iquest]		=inverted question mark
++[iquest]		\\(r?
+ # [laquo ]		=angle quotation mark, left
+-[laquo ]		<<
++[laquo ]		\\(Fo
+ # [raquo ]		=angle quotation mark, right
+-[raquo ]		>>
++[raquo ]		\\(Fc
+ [lsquo ]		`
+ [rsquo ]		\\&'
+-[ldquo ]		"
+-[rdquo ]		"
++[ldquo ]		\\(lq
++[rdquo ]		\\(rq
+ [nbsp  ]		\\ 
+ [shy   ]		\\%
+ #
+@@ -134,8 +142,12 @@
+ # 			trailing space here
+ [emsp  ]		\\ \\ 
+ [ensp  ]		\\ 
++# The next two entities are the only ones I can find where the SGML entity
++# doesn't match. From sgml-iso-entities-8879.1986/ISOpub.ent:
++# <!ENTITY emsp13 SDATA "[emsp3 ]"--=1/3-em space-->
+ [emsp3 ]		\\ 
+ [emsp4 ]		\\ 
++#
+ [numsp ]		\\0
+ [puncsp]		\\|
+ [thinsp]		\\!
+@@ -155,6 +167,7 @@
+ [frac16]		1/6
+ [frac56]		5/6
+ # [incare]		=in-care-of symbol
++[incare]		c/o
+ # [block ]		=full block
+ # [uhblk ]		=upper half block
+ # [lhblk ]		=lower half block
+@@ -167,7 +180,7 @@
+ # [rect  ]		=rectangle, open
+ # [utri  ]		/triangle =up triangle, open
+ # [dtri  ]		/triangledown =down triangle, open
+-[star  ]		\\(**	=star, open
++[star  ]		\\(**
+ [bull  ]		\\(bu
+ # [squf  ]		/blacksquare =sq bullet, filled
+ # [utrif ]		/blacktriangle =up tri, filled
+@@ -205,6 +218,7 @@
+ # [vellip]		vertical ellipsis
+ # [hybull]		rectangle, filled (hyphen bullet)
+ # [loz   ]		/lozenge - lozenge or total mark
++[rsquor]		\\(lz
+ # [lozf  ]		/blacklozenge - lozenge, filled
+ # [ltri  ]		/triangleleft B: l triangle, open
+ # [rtri  ]		/triangleright B: r triangle, open
+@@ -220,68 +234,100 @@
+ #
+ #       Added Latin 1   ________________________________
+ #
+-[aacute]	\\(a'
+-[Aacute]	\\(A'
+-[acirc ]	\\(a^
+-[Acirc ]	\\(A^
+-[agrave]	\\(a`
+-[Agrave]	\\(A`
++[aacute]	\\('a
++[Aacute]	\\('A
++# It's not clear why, but the ^ must be escaped
++[acirc ]	\\(\^a
++[Acirc ]	\\(\^A
++[agrave]	\\(`a
++[Agrave]	\\(`A
++[aring ]	\\(oa
++[Aring ]	\\(oA
++[atilde]	\\(~a
++[Atilde]	\\(~A
+ # [aring ]	=small a, ring
+ # [Aring ]	=capital A, ring
+ # [atilde]	=small a, tilde
+ # [Atilde]	=capital A, tilde
+-[auml  ]	\\(a:
++[auml  ]	\\(:a
++[Auml  ]	\\(:A
+ # [Auml  ]	=capital A, dieresis or umlaut mark
+ [aelig ]	\\(ae
+ [AElig ]	\\(AE
+ # [ccedil]	=small c, cedilla
+ # [Ccedil]	=capital C, cedilla
++[ccedil]	\\(,c
++[Ccedil]	\\(,C
+ # [eth   ]	=small eth, Icelandic
+ # [ETH   ]	=capital Eth, Icelandic
+-[eacute]	\\(e'
+-[Eacute]	\\(E'
++[eth   ]	\\(Sd
++[ETH   ]	\\(-D
++[eacute]	\\('e
++[Eacute]	\\('E
+ # [ecirc ]	=small e, circumflex accent
+ # [Ecirc ]	=capital E, circumflex accent
+-[egrave]	\\(e`
+-[Egrave]	\\(E`
++[ecirc ]	\\(\^e
++[Ecirc ]	\\(\^E
++[egrave]	\\(`e
++[Egrave]	\\(`E
+ # [euml  ]	=small e, dieresis or umlaut mark
+ # [Euml  ]	=capital E, dieresis or umlaut mark
+-[iacute]	\\(i'
+-[Iacute]	\\(I'
++[euml  ]	\\(:e
++[Euml  ]	\\(:E
++[iacute]	\\('i
++[Iacute]	\\('I
+ # [icirc ]	=small i, circumflex accent
+ # [Icirc ]	=capital I, circumflex accent
+-[igrave]	\\(i`
+-[Igrave]	\\(I`
++[iuml  ]	\\(:i
++[Iuml  ]	\\(:I
++[icirc ]	\\(\^i
++[Icirc ]	\\(\^I
++[igrave]	\\(`i
++[Igrave]	\\(`I
+ # [iuml  ]	=small i, dieresis or umlaut mark
+ # [Iuml  ]	=capital I, dieresis or umlaut mark
+-[ntilde]	\\(n~
+-[Ntilde]	\\(N~
+-[oacute]	\\(o'
+-[Oacute]	\\(O'
++[ntilde]	\\(~n
++[Ntilde]	\\(~N
++[otilde]	\\(~o
++[Otilde]	\\(~O
++[oacute]	\\('o
++[Oacute]	\\('O
+ # [ocirc ]	=small o, circumflex accent
+ # [Ocirc ]	=capital O, circumflex accent
+-[ograve]	\\(o`
+-[Ograve]	\\(O`
+-[oslash]	\\(o/
+-[Oslash]	\\(O/
++[ocirc ]	\\(\^o
++[Ocirc ]	\\(\^O
++[ograve]	\\(`o
++[Ograve]	\\(`O
++[oslash]	\\(/o
++[Oslash]	\\(/O
+ # [otilde]	=small o, tilde
+ # [Otilde]	=capital O, tilde
+ # [ouml  ]	=small o, dieresis or umlaut mark
+ # [Ouml  ]	=capital O, dieresis or umlaut mark
+ [szlig ]	\\(ss
+-[thorn ]	\\(th
++[thorn ]	\\(Tp
+ # [THORN ]	=capital THORN, Icelandic
+-[uacute]	\\(u'
+-[Uacute]	\\(U'
++[uacute]	\\('u
++[Uacute]	\\('U
+ # [ucirc ]	=small u, circumflex accent
+ # [Ucirc ]	=capital U, circumflex accent
+-[ugrave]	\\(u`
+-[Ugrave]	\\(U`
++[ucirc ]	\\(\^u
++[Ucirc ]	\\(\^U
++[ugrave]	\\(`u
++[Ugrave]	\\(`U
+ # [uuml  ]	=small u, dieresis or umlaut mark
+ # [Uuml  ]	=capital U, dieresis or umlaut mark
++[uuml  ]	\\(:u
++[Uuml  ]	\\(:U
+ # [yacute]	=small y, acute accent
+ # [Yacute]	=capital Y, acute accent
++[yacute]	\\('y
++[Yacute]	\\('Y
+ # [yuml  ]	=small y, dieresis or umlaut mark
++[yuml  ]	\\(:y
++# The character value for Y with diaeresis seems to have been commandeered
++# for 3/4; see iso_8859_15(7) for an example
++[Yuml  ]	Y
+ #
+ #       Added Latin 2   ________________________________
+ #
+@@ -329,6 +375,7 @@
+ # [ijlig ]	=small ij ligature
+ # [IJlig ]	=capital IJ ligature
+ # [inodot]	=small i without dot
++[inodot]	\\(.i
+ # [iogon ]	=small i, ogonek
+ # [Iogon ]	=capital I, ogonek
+ # [itilde]	=small i, tilde
+@@ -347,7 +394,9 @@
+ # [lmidot]	=small l, middle dot
+ # [Lmidot]	=capital L, middle dot
+ # [lstrok]	=small l, stroke
++[lstrok]	\\(/l
+ # [Lstrok]	=capital L, stroke
++[Lstrok]	\\(/L
+ # [nacute]	=small n, acute accent
+ # [Nacute]	=capital N, acute accent
+ # [eng   ]	=small eng, Lapp
+@@ -362,7 +411,9 @@
+ # [Omacr ]	=capital O, macron
+ # [omacr ]	=small o, macron
+ # [oelig ]	=small oe ligature
++[oelig ]	\\(oe
+ # [OElig ]	=capital OE ligature
++[OElig ]	\\(OE
+ # [racute]	=small r, acute accent
+ # [Racute]	=capital R, acute accent
+ # [rcaron]	=small r, caron
+@@ -508,45 +559,71 @@
+ #	General Technical ________________________________
+ #
+ # [aleph ]		/aleph =aleph, Hebrew
++[aleph ]	\\(Ah
+ # [and   ]		/wedge /land B: =logical and
++[and   ]	\\(AN
+ # [ang90 ]		=right (90 degree) angle
+ # [angsph]		/sphericalangle =angle-spherical
+-[ap    ]		\\(ap
++[ap    ]		\\(~~
+ # [becaus]		/because R: =because
+ # [bottom]		/bot B: =perpendicular
++[bottom]		\\(pp
+ # [cap   ]		/cap B: =intersection
++[cap   ]		\\(ca
+ # [cong  ]		/cong R: =congruent with
++[cong  ]		\\(=~
+ # [conint]		/oint L: =contour integral operator
+ # [cup   ]		/cup B: =union or logical sum
++[cup   ]		\\(cu
+ [equiv ]		\\(==
+ # [exist ]		/exists =at least one exists
++[exist ]		\\(te
+ # [forall]		/forall =for all
++[forall]		\\(fa
+ # [fnof  ]		=function of (italic small f)
++[fnof  ]		\\(Fn
+ [ge    ]		\\(>=
+ # [iff   ]		/iff =if and only if
++[iff   ]		<=>
+ [infin ]		\\(if
+ # [int   ]		/int L: =integral operator
++[int   ]		\\(is
+ [isin  ]		\\(sb
+ # [lang  ]		/langle O: =left angle bracket
++[lang  ]		<
+ # [lArr  ]		/Leftarrow A: =is implied by
++[lArr  ]		\\(lA
+ [le    ]		\\(<=
+ [minus ]		\\(mi
+ # [mnplus]		/mp B: =minus-or-plus sign
+ # [nabla ]		/nabla =del, Hamilton operator
++[nabla ]		\\(gr
+ [ne    ]		\\(!=
+ # [ni    ]		/ni /owns R: =contains
++[ni    ]		\\(st
+ # [or    ]		/vee /lor B: =logical or
++[or    ]		\\(OR
+ # [par   ]		/parallel R: =parallel
++[par   ]		||
+ # [part  ]		/partial =partial differential
++[part  ]		\\(pd
+ # [permil]		=per thousand
++[permil]		\\(%0
+ # [perp  ]		/perp R: =perpendicular
++[perp  ]		\\(pp
+ # [prime ]		/prime =prime or minute
++[prime ]		\\(fm
+ # [Prime ]		=double prime or second
++[Prime ]		\\(sd
+ [prop  ]		\\(pt
+ # [radic ]		/surd =radical
++[radic ]		\\(sr
+ # [rang  ]		/rangle C: =right angle bracket
++[rang  ]		>
+ # [rArr  ]		/Rightarrow A: =implies
++[rArr  ]		\\(rA
+ # [sim   ]		/sim R: =similar
++[sim   ]		\\(ti
+ # [sime  ]		/simeq R: =similar, equals
+ [square]		\\(sq
+ [sub   ]		\\(sb
+@@ -554,16 +631,24 @@
+ [sup   ]		\\(sp
+ [supe  ]		\\(ip
+ # [there4]		/therefore R: =therefore
++[there4]		\\(tf
+ # [Verbar]		/Vert =dbl vertical bar
++[Verbar]		||
+ # [angst ]		Angstrom =capital A, ring
++[angst ]	\\(\^A
+ # [bernou]		Bernoulli function (script capital B)
++# A less than desirable solution
++[angst ]	B
+ # [compfn]		B: composite function (small circle)
+ # [Dot   ]		=dieresis or umlaut mark
++[Dot   ]	\\(ad
+ # [DotDot]		four dots above
+ # [hamilt]		Hamiltonian (script capital H)
+ # [lagran]		Lagrangian (script capital L)
+ # [lowast]		low asterisk
++[lowast]	\\(**
+ # [notin ]		N: negated set membership
++[notin ]	\\(nm
+ # [order ]		order of (script small o)
+ # [phmmat]		physics M-matrix (script capital M)
+ # [tdot  ]		three dots above
+@@ -572,18 +657,33 @@
+ #
+ #	Diacritical Marks ________________________________
+ #
+-[acute ]		\\&'
+-[breve ]		\\(be
+-[caron ]		\\(hc
+-[cedil ]		\\(cd
++[acute ]		\\aa
++[breve ]		\\(ab
++[caron ]		\\(ah
++[cedil ]		\\(ac
+ # [circ  ]		=circumflex accent
++[circ  ]		\\(a\^
+ # [dblac ]		=double acute accent
++[dblac ]		\\(a"
+ # [die   ]		=dieresis
+-[dot   ]		\\(dt
++[die   ]		\\(ad
++[dot   ]		\\(a.
+ [grave ]		`
+-[macr  ]		\\(ma
+-[ogon  ]		\\(og
+-[ring  ]		\\(ri
++[macr  ]		\\(a-
++[ogon  ]		\\(ho
++[ring  ]		\\(ao
+ [tilde ]		~
+-[uml   ]		\\(..
++[uml   ]		\\(ad
++#
++#       Added Math Symbols: Delimiters
++#
++[rceil ]		\\(rc
++[lceil ]		\\(lc
++[rfloor]		\\(rf
++[lfloor]		\\(lf
++# [rpargt]		??
++# [urcorn]		Top right corner
++# [drcorn]		Bottom right corner
++# [ulcorn]		Top left corner
++# [dlcorn]		Bottom left corner
+ #

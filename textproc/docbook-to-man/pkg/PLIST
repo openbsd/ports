@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/14 11:56:38 espie Exp $
+bin/docbook-to-man
+bin/instant2
+lib/tpt/
+lib/tpt/docbook-to-man.ts
+lib/tpt/roff.cmap
+lib/tpt/roff.sdata

@@ -1,0 +1,85 @@
+$OpenBSD: patch-Transpec_docbook-to-man_ts,v 1.1.1.1 2005/02/14 11:56:38 espie Exp $
+--- Transpec/docbook-to-man.ts.orig	Mon Jun 17 05:50:28 1996
++++ Transpec/docbook-to-man.ts	Fri Feb 11 12:01:19 2005
+@@ -67,7 +67,27 @@ GI:		TITLE
+ Context:	DOCINFO
+ #	inside DocInfo, which we're ignoring
+ -
++GI:		COPYRIGHT
++Context:	DOCINFO
++#	inside DocInfo, which we're ignoring
++-
++GI:		HOLDER
++Context:	COPYRIGHT
++#	inside DocInfo, which we're ignoring
++-
++GI:		YEAR
++Context:	COPYRIGHT
++#	inside DocInfo, which we're ignoring
++-
+ #
++GI:		REFENTRYINFO
++Ignore:		all
++-
++#
++GI:		COPYRIGHT
++Context:	REFENTRYINFO
++-
++#
+ GI:		REFMETA
+ Ignore:		all
+ -
+@@ -1603,6 +1623,9 @@ GI:		EMPHASIS
+ StartText:	\\fI
+ EndText:	\\fP
+ -
++GI:		ENVAR
++#	no special presentation
++-
+ #
+ GI:		FIRSTTERM
+ StartText:	\\fI
+@@ -1646,7 +1669,8 @@ EndText:	\\fP
+ #
+ GI:		COMMAND
+ StartText:	\\fB
+-EndText:	\\fP
++#EndText:	\\fP
++EndText:	\\fR
+ -
+ #
+ GI:		COMPUTEROUTPUT
+@@ -1654,6 +1678,11 @@ StartText:	\\f(CW
+ EndText:	\\fP
+ -
+ #
++GI:		CONSTANT
++StartText:	\\fB
++EndText:	\\fP
++-
++#
+ GI:		DATABASE
+ #	no special presentation
+ -
+@@ -1787,7 +1816,8 @@ EndText:	\\fP
+ #
+ GI:		REPLACEABLE
+ StartText:	\\fI
+-EndText:	\\fP
++#EndText:	\\fP
++EndText:	\\fR
+ -
+ #
+ GI:		RETURNVALUE
+@@ -1861,6 +1891,11 @@ EndText:	\\fP
+ -
+ #
+ GI:		USERINPUT
++StartText:	\\fB
++EndText:	\\fP
++-
++#
++GI:		VARNAME
+ StartText:	\\fB
+ EndText:	\\fP
+ -

@@ -1,0 +1,5 @@
+batch converter that transforms UNIX-style manpages from the DocBook
+SGML DTD into nroff/troff -man macros.
+
+This port is mostly intended for quick-and-dirty conversion of some
+extra documentation written for some software by the debian project.

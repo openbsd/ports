@@ -1,0 +1,27 @@
+$OpenBSD: patch-Instant_tptregexp_regexp_c,v 1.1.1.1 2005/02/14 11:56:38 espie Exp $
+--- Instant/tptregexp/regexp.c.orig	Mon Jun 17 05:50:29 1996
++++ Instant/tptregexp/regexp.c	Fri Feb 11 12:00:53 2005
+@@ -196,7 +196,6 @@ char *exp;
+ 	register char *longest;
+ 	register int len;
+ 	int flags;
+-	extern char *malloc();
+ 
+ 	if (exp == NULL)
+ 		FAIL("NULL argument");
+@@ -705,7 +704,6 @@ register regexp *prog;
+ register char *string;
+ {
+ 	register char *s;
+-	extern char *strchr();
+ 
+ 	/* Be paranoid... */
+ 	if (prog == NULL || string == NULL) {
+@@ -804,7 +802,6 @@ char *prog;
+ {
+ 	register char *scan;	/* Current node. */
+ 	char *next;		/* Next node. */
+-	extern char *strchr();
+ 
+ 	scan = prog;
+ #ifdef DEBUG
