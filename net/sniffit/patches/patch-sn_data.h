@@ -1,6 +1,6 @@
---- sn_data.h.orig	Thu Jul 16 12:17:10 1998
-+++ sn_data.h	Wed Aug 30 19:34:57 2000
-@@ -43,6 +43,32 @@
+--- sn_data.h.orig	Thu Jul 16 10:17:10 1998
++++ sn_data.h	Tue Sep 10 23:02:18 2002
+@@ -43,6 +43,36 @@ char *NETDEV[]={"ed"};		
  int HEADSIZE[]={14}; 
  #endif
  
@@ -25,6 +25,10 @@
 +#define NETDEV_NR    5
 +char *NETDEV[]={"ppp","bm","de","fxp","gm"};
 +int HEADSIZE[]={4,14,14,14,14};
++#elif defined(__alpha__)
++#define NETDEV_NR 23
++char *NETDEV[]={"ppp","dc","de","ne","fxp","fpa","bge","stge","rl","vr","gx","sis","en","tl","le","lmc","wb","sf","ste","ti","skc","sk","an"};
++int HEADSIZE[]={4,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14};
 +#else
 +#error Unknown network devices for this OpenBSD architecture.
 +#endif
