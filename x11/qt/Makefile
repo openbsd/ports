@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2000/08/25 03:55:24 brad Exp $
+# $OpenBSD: Makefile,v 1.48 2000/08/30 02:37:52 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.45
@@ -19,12 +19,16 @@ PERMIT_PACKAGE_FTP=
 PERMIT_DISTFILES_CDROM=
 PERMIT_DISTFILES_FTP=
 
-MULTI_PACKAGES=	-examples -html
-SUBPACKAGE?=
+VER_MAJ=	1
+VER_MIN=	45
+
+MAKE_FLAGS=	VER_MAJ="${VER_MAJ}" VER_MIN="${VER_MIN}"
 
 USE_GMAKE=	Yes
 MAKE_ENV=	QTDIR="${WRKSRC}" SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}"
-MAKE_FLAGS=	VER_MAJ="1" VER_MIN="45"
+
+MULTI_PACKAGES=	-examples -html
+SUBPACKAGE?=
 
 QT_INCDIR=	${PREFIX}/include/X11/qt
 QT_LIBDIR=	${PREFIX}/lib/qt
@@ -66,14 +70,14 @@ do-install:
 	@if [ -f ${WRKBUILD}/lib/libqt.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.a ${PREFIX}/lib; \
 	fi
-	@if [ -f ${WRKBUILD}/lib/libqt.so.1.45 ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.1.45 ${PREFIX}/lib; \
+	@if [ -f ${WRKBUILD}/lib/libqt.so.${VER_MAJ}.${VER_MIN} ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.${VER_MAJ}.${VER_MIN} ${PREFIX}/lib; \
 	fi
 	@if [ -f ${WRKBUILD}/lib/libqimgio.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqimgio.a ${PREFIX}/lib; \
 	fi
-	@if [ -f ${WRKBUILD}/lib/libqimgio.so.1.45 ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqimgio.so.1.45 ${PREFIX}/lib; \
+	@if [ -f ${WRKBUILD}/lib/libqimgio.so.${VER_MAJ}.${VER_MIN} ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqimgio.so.${VER_MAJ}.${VER_MIN} ${PREFIX}/lib; \
 	fi
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/moc ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/include/* ${QT_INCDIR}
