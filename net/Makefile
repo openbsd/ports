@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.307 2004/02/16 21:17:01 xsa Exp $
+# $OpenBSD: Makefile,v 1.308 2004/04/08 05:00:50 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -98,7 +98,6 @@
      SUBDIR += libnids
      SUBDIR += libshout
      SUBDIR += libst
-     SUBDIR += licq
      SUBDIR += maradns
      SUBDIR += mbrowse
      SUBDIR += micq
