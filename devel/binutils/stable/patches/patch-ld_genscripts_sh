@@ -1,16 +1,26 @@
-$OpenBSD: patch-ld_genscripts_sh,v 1.3 2003/06/05 04:29:16 brad Exp $
---- ld/genscripts.sh.orig	Wed Mar 19 23:00:26 2003
-+++ ld/genscripts.sh	Thu Mar 20 18:18:09 2003
-@@ -175,6 +175,12 @@ if test -n "$GENERATE_SHLIB_SCRIPT"; the
+$OpenBSD: patch-ld_genscripts_sh,v 1.4 2003/07/09 20:47:11 brad Exp $
+--- ld/genscripts.sh.orig	Sat Jul 13 21:14:44 2002
++++ ld/genscripts.sh	Wed Jul  9 15:47:49 2003
+@@ -60,9 +60,6 @@ if [ "x${LIB_PATH}" = "x" ] ; then
    fi
  fi
  
+-# Always search $(tooldir)/lib, aka /usr/local/TARGET/lib.
+-LIB_PATH=${tool_lib}:${LIB_PATH}
+-
+ LIB_SEARCH_DIRS=`echo ${LIB_PATH} | sed -e 's/:/ /g' -e 's/\([^ ][^ ]*\)/SEARCH_DIR(\\"\1\\");/g'`
+ 
+ # Generate 5 or 6 script files from a master script template in
+@@ -174,6 +171,12 @@ if test -n "$GENERATE_SHLIB_SCRIPT"; the
+     COMBRELOC=
+   fi
+ fi
++
 +LD_FLAG=Z
 +DATA_ALIGNMENT=${DATA_ALIGNMENT_}
 +RELOCATING=" "
 +(. ${srcdir}/scripttempl/${SCRIPT_NAME}.sc) | sed -e '/^ *$/d' > \
 +  ldscripts/${EMULATION_NAME}.xz
-+
+ 
  case " $EMULATION_LIBPATH " in
      *" ${EMULATION_NAME} "*) COMPILE_IN=true;;
- esac

@@ -1,6 +1,6 @@
-$OpenBSD: patch-ld_configure_host,v 1.1 2003/06/05 04:03:55 brad Exp $
---- ld/configure.host.orig	Mon Mar 17 00:06:54 2003
-+++ ld/configure.host	Mon Mar 17 00:17:55 2003
+$OpenBSD: patch-ld_configure_host,v 1.2 2003/07/09 20:47:11 brad Exp $
+--- ld/configure.host.orig	Wed Dec  4 10:13:10 2002
++++ ld/configure.host	Tue Jul  8 19:31:46 2003
 @@ -30,6 +30,11 @@ case "${host}" in
    HOSTING_LIBS='-L`dirname \`${CC} --print-file-name=libc.so\`` '"$HOSTING_LIBS"' `if [ -f ../gcc/crtend.o ]; then echo ../gcc/crtend.o; else ${CC} --print-file-name=crtend.o; fi` `${CC} --print-file-name=crtn.o`'
    ;;
@@ -13,3 +13,13 @@ $OpenBSD: patch-ld_configure_host,v 1.1 2003/06/05 04:03:55 brad Exp $
  *-*-linux*aout* | *-*-linux*oldld)
    HOSTING_CRT0=/usr/lib/crt0.o
    ;;
+@@ -215,6 +220,9 @@ x86_64-*-linux-gnu*)
+   ;;
+ 
+ *-*-freebsd*)
++  ;;
++
++*-*-openbsd*)
+   ;;
+ 
+ *-*-linux*)
