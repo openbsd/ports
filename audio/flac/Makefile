@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2002/07/07 19:09:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2002/10/31 21:15:08 naddy Exp $
 
 COMMENT=	"free lossless audio codec"
 
-DISTNAME=	flac-1.0.3
+DISTNAME=	flac-1.0.4
 CATEGORIES=	audio archivers
 HOMEPAGE=	http://flac.sourceforge.net/
 
@@ -15,17 +15,31 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=flac/}
 
-LIB_DEPENDS=	ogg.3::audio/libogg
+MODULES=	iconv
+BUILD_DEPENDS=	::converters/libiconv:extract
+LIB_DEPENDS=	ogg.4::audio/libogg
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	::devel/nasm
 .endif
 
 CONFIGURE_STYLE= gnu
+
+# id3lib is only used by the XMMS plugin
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-ogg=${LOCALBASE} \
-		--enable-sse --enable-3dnow
+		--enable-sse --enable-3dnow \
+		--with-libiconv-prefix="${LOCALBASE}" \
+		--with-ogg="${LOCALBASE}"
 CONFIGURE_ENV=	XMMS_CONFIG=/usr/bin/false
+
+# missing auxiliary script
+post-extract:
+	@cp ${WRKDIR}/converters/libiconv/libiconv-*/autoconf/config.rpath \
+		${WRKSRC}
+
+# "obj" is magic to our make(1)
+post-configure:
+	@rm -rf ${WRKSRC}/obj
 
 post-install:
 	@cd ${PREFIX}/share/doc && mv ${DISTNAME} flac

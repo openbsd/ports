@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2002/07/07 19:09:29 naddy Exp $
---- configure.orig	Sat Jul  6 02:35:16 2002
-+++ configure	Sat Jul  6 02:35:57 2002
-@@ -9995,7 +9995,7 @@ OUR_CFLAGS_HEAD='-I$(top_builddir) -I$(s
+$OpenBSD: patch-configure,v 1.6 2002/10/31 21:15:08 naddy Exp $
+--- configure.orig	Wed Sep 25 06:53:08 2002
++++ configure	Thu Oct 31 16:51:04 2002
+@@ -11113,7 +11113,7 @@ OUR_CFLAGS_HEAD='-I$(top_builddir) -I$(s
  if test x$debug = xtrue; then
  	OUR_CFLAGS_TAIL="-g -O0 -DDEBUG"
  else

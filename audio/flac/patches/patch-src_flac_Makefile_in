@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_flac_Makefile_in,v 1.1 2002/10/31 21:15:08 naddy Exp $
+--- src/flac/Makefile.in.orig	Thu Oct 31 16:51:49 2002
++++ src/flac/Makefile.in	Thu Oct 31 16:52:25 2002
+@@ -155,7 +155,7 @@ flac_SOURCES = \
+ 	vorbiscomment.h
+ 
+ 
+-flac_LDADD = $(NEED_OGGFLAC_LIB) $(top_builddir)/src/libFLAC/libFLAC.la @OGG_LIBS@ @SHARE_LIBS@ -lm
++flac_LDADD = $(NEED_OGGFLAC_LIB) $(top_builddir)/src/libFLAC/libFLAC.la @OGG_LIBS@ @SHARE_LIBS@ @LIBICONV@ -lm
+ subdir = src/flac
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES =
