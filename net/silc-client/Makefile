@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/30 17:33:04 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2002/07/04 10:56:08 fgsch Exp $
 
 COMMENT=	"Secure Live Internet Conferencing (SILC) client"
 
-DISTNAME=	silc-client-0.9.1
+DISTNAME=	silc-client-0.9.4
 CATEGORIES=	net
 NEED_VERSION=	1.507
 HOMEPAGE=	http://www.silcnet.org/
@@ -50,6 +50,5 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/irssi ${WRKSRC}/lib/silcmath/mpi
 FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} \
 		silc_etcdir=${PREFIX}/share/examples/silc-client \
 		${INSTALLARCHLIB}=${WRKINST}/${INSTALLARCHLIB}
-
 
 .include <bsd.port.mk>

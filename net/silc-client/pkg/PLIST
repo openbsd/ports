@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/05/16 11:54:53 mark Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/07/04 10:56:08 fgsch Exp $
 bin/silc
+share/doc/silc/CHANGES
+share/doc/silc/CREDITS
 share/doc/silc/FAQ
 share/doc/silc/README
 share/doc/silc/formats.txt
@@ -7,6 +9,7 @@ share/doc/silc/manual.txt
 share/doc/silc/signals.txt
 share/doc/silc/silc.conf.default
 share/doc/silc/startup-HOWTO.html
+share/examples/silc-client/silc.conf
 share/silc/help/action
 share/silc/help/admin
 share/silc/help/alias
@@ -51,15 +54,15 @@ share/silc/help/levels
 share/silc/help/list
 share/silc/help/load
 share/silc/help/log
-share/silc/help/me   
+share/silc/help/me
 share/silc/help/motd
 share/silc/help/msg
 share/silc/help/names
 share/silc/help/nick
 share/silc/help/note
 share/silc/help/notice
-share/silc/help/oper 
-share/silc/help/part 
+share/silc/help/oper
+share/silc/help/part
 share/silc/help/perlflush
 share/silc/help/ping
 share/silc/help/query
@@ -73,10 +76,10 @@ share/silc/help/sconnect
 share/silc/help/script
 share/silc/help/scrollback
 share/silc/help/server
-share/silc/help/set 
-share/silc/help/shutdown 
+share/silc/help/set
+share/silc/help/shutdown
 share/silc/help/silcoper
-share/silc/help/statusbar 
+share/silc/help/statusbar
 share/silc/help/toggle
 share/silc/help/topic
 share/silc/help/umode
@@ -85,9 +88,9 @@ share/silc/help/unignore
 share/silc/help/unload
 share/silc/help/unquery
 share/silc/help/upgrade
-share/silc/help/users 
+share/silc/help/users
 share/silc/help/version
-share/silc/help/watch 
+share/silc/help/watch
 share/silc/help/whois
 share/silc/help/whowas
 share/silc/help/window
@@ -103,4 +106,5 @@ share/silc/themes/default.theme
 @dirrm share/silc/scripts
 @dirrm share/silc/help
 @dirrm share/silc
+@dirrm share/examples/silc-client
 @dirrm share/doc/silc

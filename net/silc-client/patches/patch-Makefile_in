@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2002/05/22 09:58:37 mark Exp $
---- Makefile.in.orig	Sat May 18 01:40:58 2002
-+++ Makefile.in	Tue May 21 20:07:34 2002
-@@ -533,51 +533,25 @@ install-dirs:
+$OpenBSD: patch-Makefile_in,v 1.2 2002/07/04 10:56:08 fgsch Exp $
+--- Makefile.in.orig	Sun Jun 23 16:25:10 2002
++++ Makefile.in	Fri Jun 28 03:17:10 2002
+@@ -536,51 +536,25 @@ install-dirs:
  	-mkdir -p $(docdir)
  	-mkdir -p $(logsdir)
  
