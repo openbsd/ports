@@ -1,6 +1,6 @@
-$OpenBSD: patch-xpdf_XRef_cc,v 1.1 2004/10/23 02:24:37 brad Exp $
---- xpdf/XRef.cc.orig	Wed Jan 21 20:26:45 2004
-+++ xpdf/XRef.cc	Fri Oct 22 21:54:48 2004
+$OpenBSD: patch-xpdf_XRef_cc,v 1.2 2005/01/19 16:23:16 naddy Exp $
+--- xpdf/XRef.cc.orig	Thu Jan 22 02:26:45 2004
++++ xpdf/XRef.cc	Wed Jan 19 14:23:39 2005
 @@ -96,7 +96,7 @@ ObjectStream::ObjectStream(XRef *xref, i
    }
    nObjects = obj1.getInt();
@@ -264,3 +264,13 @@ $OpenBSD: patch-xpdf_XRef_cc,v 1.1 2004/10/23 02:24:37 brad Exp $
  	streamEnds = (Guint *)grealloc(streamEnds,
  				       streamEndsSize * sizeof(int));
        }
+@@ -756,6 +816,9 @@ GBool XRef::checkEncrypted(GString *owne
+ 	  keyLength = lengthObj.getInt() / 8;
+ 	} else {
+ 	  keyLength = 5;
++	}
++	if (keyLength > 16) {
++	  keyLength = 16;
+ 	}
+ 	permFlags = permissions.getInt();
+ 	if (encVersion >= 1 && encVersion <= 2 &&
