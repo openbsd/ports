@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/07/11 10:21:10 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/08/05 00:13:59 fgsch Exp $
 # $FreeBSD: Makefile,v 1.32 1997/11/16 04:58:09 fenner Exp $
 #
 
@@ -23,6 +23,7 @@
 #    SUBDIR += slurp
 #    SUBDIR += suck
      SUBDIR += tin
+     SUBDIR += tin:nntp_only
 #    SUBDIR += trn
 #    SUBDIR += xvnews
 
