@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:48 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/09/11 05:53:39 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/04/04 04:58:25 obrien Exp $
+
+.if ${MACHINE_ARCH} == "alpha"
+BROKEN=		"alignment issues"
+.endif
 
 COMMENT=	"packet sniffer program; for educational use"
 
 DISTNAME=	sniffit.0.3.7.beta
 PKGNAME=	sniffit-0.3.7b
 CATEGORIES=	net security
-NEED_VERSION=	1.402
 MASTER_SITES=	http://reptile.rug.ac.be/~coder/sniffit/files/
 MASTER_SITES0=	http://ftp.debian.org/debian/dists/stable/main/source/net/ \
    		http://ftp.funet.fi/pub/mirrors/ftp.debian.org/debian/dists/stable/main/source/net/
