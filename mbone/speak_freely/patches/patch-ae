@@ -1,113 +1,101 @@
-*** soundbyte.c.orig	Wed Mar  5 15:04:49 1997
---- soundbyte.c	Wed Sep  9 19:21:21 1998
+*** soundbyte.c.orig	Fri Jan 15 23:13:23 1999
+--- soundbyte.c	Fri Jan 15 23:17:36 1999
 ***************
-*** 15,21 ****
---- 15,23 ----
-  #ifdef Solaris
-  #include <sys/filio.h>
-  #else
-+ #ifndef __FreeBSD__
-  #include <sys/dir.h>
-+ #endif
-  #include <sys/file.h>
-  #endif
-  
-***************
-*** 33,38 ****
---- 35,42 ----
+*** 33,39 ****
   #else /* FreeBSD / Linux */
   #ifdef LINUX
   #include <linux/soundcard.h>
-+ #elif __OpenBSD__
-+ #include <soundcard.h>
-  #else
+! #else
   #include <machine/soundcard.h>
   #endif
+  #define AUDIO_MIN_GAIN 0
+--- 33,41 ----
+  #else /* FreeBSD / Linux */
+  #ifdef LINUX
+  #include <linux/soundcard.h>
+! #elif __OpenBSD__
+! #include <soundcard.h>
+! #else 
+  #include <machine/soundcard.h>
+  #endif
+  #define AUDIO_MIN_GAIN 0
 ***************
-*** 72,77 ****
---- 76,83 ----
-  static unsigned char *playbuf= NULL;  /* Current play pointer */
-  static int squelch = 0; 	      /* Squelch value */
+*** 62,67 ****
+--- 64,77 ----
+  
+  #define MAX_GAIN	100
   
 + void soundplayvol();
 + 
-  /* Convert local gain into device parameters */
-  
-  static unsigned scale_gain(g)
-***************
-*** 96,101 ****
---- 102,112 ----
-  }
-  #endif
-  
 + #ifndef sun
 + #ifdef  HALF_DUPLEX
 + static int oldvol = -1;
 + #endif
 + #endif
-  
-  /*  SOUNDINIT  --  Open the sound peripheral and initialise for
-  		   access.  Return TRUE if successful, FALSE
++ 
+  struct sound_buf {
+      struct sound_buf *snext;	      /* Next sound buffer */
+      int sblen;			      /* Length of this sound buffer */
 ***************
-*** 145,150 ****
---- 156,176 ----
+*** 157,162 ****
+--- 167,187 ----
   	    }
   	    ioctl(Audio_fd, AUDIO_SETINFO, &Audio_info);
   #endif
 + #ifndef sun
 + #ifdef  HALF_DUPLEX
-+ 	    if (iomode == O_RDONLY) {
-+ 		if (oldvol == -1)
-+ 		    oldvol = soundgetvol();
-+ 		soundplayvol(0);
-+ 	    } else if (   iomode == O_WRONLY
-+ 		       && oldvol != -1
-+ 		      ) {
-+ 		if (soundgetvol() == 0)
-+ 		    soundplayvol(oldvol);
-+ 		oldvol = -1;
-+ 	    }
++           if (iomode == O_RDONLY) {
++               if (oldvol == -1)
++                   oldvol = soundgetvol();
++               soundplayvol(0);
++           } else if (   iomode == O_WRONLY
++                      && oldvol != -1
++                     ) {
++               if (soundgetvol() == 0)
++                   soundplayvol(oldvol);
++               oldvol = -1;
++           }
 + #endif
 + #endif
   	    return TRUE;
   	}
   	if (errno != EINTR) {
 ***************
-*** 160,165 ****
---- 186,200 ----
+*** 172,177 ****
+--- 197,211 ----
   void soundterm()
   {
   	if (audiof >= 0) {
 + #ifndef sun
 + #ifdef  HALF_DUPLEX
-+ 	    if (oldvol != -1) {
-+ 		if (soundgetvol() == 0)
-+ 		    soundplayvol(oldvol);
-+ 		oldvol = -1;
-+ 	    }
++           if (oldvol != -1) {
++               if (soundgetvol() == 0)
++                   soundplayvol(oldvol);
++               oldvol = -1;    
++           }  
 + #endif
 + #endif
   	    if (close(audiof) < 0) {
-  		perror("closing audio device");
+                  perror("closing audio device");
   	    }
 ***************
-*** 210,219 ****
+*** 222,231 ****
   
      arg	 = (value << 8) | value;
   
 !    if (ioctl(Audio_fd, MIXER_WRITE(SOUND_MIXER_PCM), &arg) < 0)
-! 	perror("SOUND_MIXER_PCM");
+!         perror("SOUND_MIXER_PCM");
   #endif
   }
   
   /*  SOUNDRECGAIN  --  Set recording gain from 0 (minimum) to 100 (maximum).  */
   
---- 245,274 ----
+--- 256,285 ----
   
      arg	 = (value << 8) | value;
   
 !    if (ioctl(Audio_fd, SOUND_MIXER_WRITE_PCM, &arg) < 0)
-! 	perror("SOUND_MIXER_WRITE_PCM");
+!         perror("SOUND_MIXER_WRITE_PCM");
   #endif
   }
 + 

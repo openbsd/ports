@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/09/14 02:48:34 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1999/01/16 04:25:07 angelos Exp $
 #
 
-DISTNAME=       speak_freely-6.1c
+DISTNAME=       speak_freely-6.1e
 CATEGORIES=     mbone audio security
 MASTER_SITES=   http://www.fourmilab.ch/speakfree/unix/
 
 MAINTAINER=     angelos@openbsd.org
-
-LIB_DEPENDS=    gsm\\.1\\.0:${PORTSDIR}/audio/gsm
 
 UTILS=   sfspeaker sfmike sflwl
 DEMNS=   sfecho sflwld
