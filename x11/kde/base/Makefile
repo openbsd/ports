@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/05/06 04:41:15 lebel Exp $
+# $OpenBSD: Makefile,v 1.15 2001/06/12 23:43:18 pvalchev Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 COMMENT=	"X11 libraries + a windows manager and much more"
@@ -15,7 +15,6 @@ HOMEPAGE=	http://www.kde.org/
 
 BUILD_DEPENDS=	msgfmt::devel/gettext
 LIB_DEPENDS=	qt.1.45::x11/qt \
-		MesaGL.3::graphics/Mesa \
 		jpeg.62::graphics/jpeg \
 		gif.4.1::graphics/giflib \
 		kdecore.1::x11/kde/libs
