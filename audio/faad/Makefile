@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/13 05:40:55 jcs Exp $
+# $OpenBSD: Makefile,v 1.16 2005/01/05 11:40:04 alek Exp $
 
 COMMENT=	"MPEG2 and MPEG-4 AAC decoder"
 COMMENT-xmms=	"XMMS input plugin for AAC files"
 DISTNAME=	faad2-2.0
-PKGNAME=	faad-2.0p0
-PKGNAME-xmms=	faad-xmms-2.0p0
+PKGNAME=	faad-2.0p1
+PKGNAME-xmms=	faad-xmms-2.0p1
 CATEGORIES=    	audio
 MASTER_SITES=	http://users.codefusionis.com/~jolan/
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	"Patents"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"Patents"
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m stdc++
+WANTLIB=		m stdc++
 
 BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS}
 USE_GMAKE=	Yes
@@ -42,8 +42,11 @@ SUBPACKAGE?=
 .if defined(PACKAGING)
 . if ${SUBPACKAGE} == "-xmms"
 LIB_DEPENDS=	xmms.3::audio/xmms \
-		faad::audio/faad
+		faad.0,mp4v2.0::audio/faad
 RUN_DEPENDS=	::audio/xmms
+WANTLIB+=	X11 Xext Xi pthread iconv intl glib gmodule gtk gdk
+. else
+WANTLIB+=	c
 . endif
 .else
 . if ${MULTI_PACKAGES:M-xmms}
@@ -51,7 +54,6 @@ LIB_DEPENDS=	xmms.3::audio/xmms
 BUILD_DEPENDS=	xmms-config::audio/xmms \
 		::audio/id3lib
 CONFIGURE_ARGS+= --with-xmms
-WANTLIB+=	X11 Xext Xi pthread
 . endif
 .endif
 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_in,v 1.3 2005/01/05 11:40:04 alek Exp $
+--- configure.in.orig	Fri Feb  6 17:04:39 2004
++++ configure.in	Wed Jan  5 12:38:10 2005
+@@ -67,10 +67,7 @@ MY_CHECK_TYPEDEF_FROM_INCLUDE([fpos_t fo
+         [HAVE_FPOS_T_POS])
+ 
+ 
+-external_mp4v2=yes
+-AC_CHECK_LIB(mp4v2, MP4Create, , external_mp4v2=no, -lstdc++)
+-AC_CHECK_LIB(mp4v2, MP4MetadataDelete, , external_mp4v2=no, -lstdc++)
+-AC_CHECK_HEADER(mp4.h, , external_mp4v2=no)
++external_mp4v2=no
+ 
+ AM_CONDITIONAL(WITH_MP4V2, false)
+ 
