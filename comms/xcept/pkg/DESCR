@@ -16,14 +16,4 @@ been the last version distributed under a BSD-style copyright; the
 package went commercial in later versions.  The authors no longer
 distribute or support version 2.
 
-After installing the package, you must add
-
-xcept		20005/tcp #XCEPT
-
-to /etc/services, and
-
-xcept	stream	tcp	nowait	root	/usr/local/libexec/ceptd ceptd
-
-to /etc/inetd.conf on your server host.
-
 Jörg Wunsch  <joerg@FreeBSD.org>

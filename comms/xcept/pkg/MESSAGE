@@ -1,0 +1,16 @@
+After installing this package, you must create
+${SYSCONFDIR}/cept.init ${SYSCONFDIR}/cept.users files.
+
+Samples exist in ${PREFIX}/share/cept.
+
+
+You must also add
+
+xcept		20005/tcp #XCEPT
+
+to /etc/services, and
+
+xcept	stream	tcp	nowait	root	/usr/local/libexec/ceptd ceptd
+
+to /etc/inetd.conf on your server host,
+and restart inetd on the server host.
