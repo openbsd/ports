@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST-java,v 1.6 2004/01/31 14:58:04 espie Exp $
+@comment $OpenBSD: PLIST-java,v 1.7 2004/08/09 00:02:22 espie Exp $
 @pkgcfl egcs-*-core
-@unexec install-info --delete --info-dir=%D/info %D/info/gcj.info
-@unexec install-info --delete --info-dir=%D/info %D/info/fastjar.info
 bin/${CONFIG}-egcj
 bin/eaddr2name.awk
 bin/egcj
@@ -17,6 +15,7 @@ bin/ermiregistry
 include/ffi.h
 include/ffi_mips.h
 include/fficonfig.h
+@comment include/gc/
 @comment include/gc.h
 @comment include/gc/gc.h
 @comment include/gc/gc_alloc.h
@@ -39,20 +38,27 @@ include/fficonfig.h
 @comment include/gc_local_alloc.h
 @comment include/gc_pthread_redirects.h
 @comment include/gc_typed.h
+include/gcj/
 include/gcj/array.h
 include/gcj/cni.h
 include/gcj/field.h
 include/gcj/javaprims.h
 include/gcj/method.h
+include/gnu/
+include/gnu/awt/
 include/gnu/awt/LightweightRedirector.h
+include/gnu/awt/j2d/
 include/gnu/awt/j2d/AbstractGraphicsState.h
 include/gnu/awt/j2d/DirectRasterGraphics.h
 include/gnu/awt/j2d/Graphics2DImpl.h
 include/gnu/awt/j2d/IntegerGraphicsState.h
 include/gnu/awt/j2d/MappedRaster.h
+include/gnu/classpath/
 include/gnu/classpath/Configuration.h
+include/gnu/gcj/
 include/gnu/gcj/Core.h
 include/gnu/gcj/RawData.h
+include/gnu/gcj/convert/
 include/gnu/gcj/convert/BytesToUnicode.h
 include/gnu/gcj/convert/Convert.h
 include/gnu/gcj/convert/IOConverter.h
@@ -71,18 +77,25 @@ include/gnu/gcj/convert/Output_SJIS.h
 include/gnu/gcj/convert/Output_UTF8.h
 include/gnu/gcj/convert/Output_iconv.h
 include/gnu/gcj/convert/UnicodeToBytes.h
+include/gnu/gcj/io/
 include/gnu/gcj/io/DefaultMimeTypes.h
 include/gnu/gcj/io/MimeTypes.h
 include/gnu/gcj/io/SimpleSHSStream.h
+include/gnu/gcj/protocol/
+include/gnu/gcj/protocol/core/
 include/gnu/gcj/protocol/core/Connection.h
 include/gnu/gcj/protocol/core/CoreInputStream.h
 include/gnu/gcj/protocol/core/Handler.h
+include/gnu/gcj/protocol/file/
 include/gnu/gcj/protocol/file/Connection.h
 include/gnu/gcj/protocol/file/Handler.h
+include/gnu/gcj/protocol/http/
 include/gnu/gcj/protocol/http/Connection.h
 include/gnu/gcj/protocol/http/Handler.h
+include/gnu/gcj/protocol/jar/
 include/gnu/gcj/protocol/jar/Connection.h
 include/gnu/gcj/protocol/jar/Handler.h
+include/gnu/gcj/runtime/
 include/gnu/gcj/runtime/FileDeleter.h
 include/gnu/gcj/runtime/FinalizerThread.h
 include/gnu/gcj/runtime/FirstThread.h
@@ -93,17 +106,22 @@ include/gnu/gcj/runtime/SharedLibLoader.h
 include/gnu/gcj/runtime/StackTrace.h
 include/gnu/gcj/runtime/StringBuffer.h
 include/gnu/gcj/runtime/VMClassLoader.h
+include/gnu/java/
+include/gnu/java/awt/
 include/gnu/java/awt/BitMaskExtent.h
 include/gnu/java/awt/Buffers.h
 include/gnu/java/awt/ComponentDataBlitOp.h
 include/gnu/java/awt/EventModifier.h
 include/gnu/java/awt/GLightweightPeer.h
+include/gnu/java/awt/image/
 include/gnu/java/awt/image/ImageDecoder.h
 include/gnu/java/awt/image/XBMDecoder.h
+include/gnu/java/beans/
 include/gnu/java/beans/BeanInfoEmbryo.h
 include/gnu/java/beans/EmptyBeanInfo.h
 include/gnu/java/beans/ExplicitBeanInfo.h
 include/gnu/java/beans/IntrospectionIncubator.h
+include/gnu/java/beans/editors/
 include/gnu/java/beans/editors/ColorEditor.h
 include/gnu/java/beans/editors/FontEditor.h
 include/gnu/java/beans/editors/NativeBooleanEditor.h
@@ -114,14 +132,19 @@ include/gnu/java/beans/editors/NativeIntEditor.h
 include/gnu/java/beans/editors/NativeLongEditor.h
 include/gnu/java/beans/editors/NativeShortEditor.h
 include/gnu/java/beans/editors/StringEditor.h
+include/gnu/java/beans/info/
 include/gnu/java/beans/info/ComponentBeanInfo.h
+include/gnu/java/io/
 include/gnu/java/io/ClassLoaderObjectInputStream.h
 include/gnu/java/io/NullOutputStream.h
 include/gnu/java/io/ObjectIdentityWrapper.h
+include/gnu/java/lang/
 include/gnu/java/lang/ArrayHelper.h
 include/gnu/java/lang/CharData.h
 include/gnu/java/lang/ClassHelper.h
+include/gnu/java/lang/reflect/
 include/gnu/java/lang/reflect/TypeSignature.h
+include/gnu/java/locale/
 include/gnu/java/locale/Calendar.h
 include/gnu/java/locale/Calendar_de.h
 include/gnu/java/locale/Calendar_en.h
@@ -261,7 +284,9 @@ include/gnu/java/locale/LocaleInformation_zh_CN.h
 include/gnu/java/locale/LocaleInformation_zh_HK.h
 include/gnu/java/locale/LocaleInformation_zh_SG.h
 include/gnu/java/locale/LocaleInformation_zh_TW.h
+include/gnu/java/math/
 include/gnu/java/math/MPN.h
+include/gnu/java/nio/
 include/gnu/java/nio/ByteBufferImpl.h
 include/gnu/java/nio/CharBufferImpl.h
 include/gnu/java/nio/DatagramChannelImpl.h
@@ -277,6 +302,7 @@ include/gnu/java/nio/SelectorProviderImpl.h
 include/gnu/java/nio/ServerSocketChannelImpl.h
 include/gnu/java/nio/ShortBufferImpl.h
 include/gnu/java/nio/SocketChannelImpl.h
+include/gnu/java/nio/charset/
 include/gnu/java/nio/charset/ISO_8859_1.h
 include/gnu/java/nio/charset/Provider.h
 include/gnu/java/nio/charset/US_ASCII.h
@@ -286,19 +312,24 @@ include/gnu/java/nio/charset/UTF_16Decoder.h
 include/gnu/java/nio/charset/UTF_16Encoder.h
 include/gnu/java/nio/charset/UTF_16LE.h
 include/gnu/java/nio/charset/UTF_8.h
+include/gnu/java/rmi/
 include/gnu/java/rmi/RMIMarshalledObjectInputStream.h
 include/gnu/java/rmi/RMIMarshalledObjectOutputStream.h
+include/gnu/java/rmi/dgc/
 include/gnu/java/rmi/dgc/DGCImpl.h
 include/gnu/java/rmi/dgc/DGCImpl_Skel.h
 include/gnu/java/rmi/dgc/DGCImpl_Stub.h
+include/gnu/java/rmi/registry/
 include/gnu/java/rmi/registry/RegistryImpl.h
 include/gnu/java/rmi/registry/RegistryImpl_Skel.h
 include/gnu/java/rmi/registry/RegistryImpl_Stub.h
+include/gnu/java/rmi/rmic/
 include/gnu/java/rmi/rmic/Compile_gcj.h
 include/gnu/java/rmi/rmic/Compiler.h
 include/gnu/java/rmi/rmic/CompilerProcess.h
 include/gnu/java/rmi/rmic/RMIC.h
 include/gnu/java/rmi/rmic/TabbedWriter.h
+include/gnu/java/rmi/server/
 include/gnu/java/rmi/server/ConnectionRunnerPool.h
 include/gnu/java/rmi/server/ProtocolConstants.h
 include/gnu/java/rmi/server/RMIDefaultSocketFactory.h
@@ -312,7 +343,10 @@ include/gnu/java/rmi/server/UnicastRemoteCall.h
 include/gnu/java/rmi/server/UnicastRemoteStub.h
 include/gnu/java/rmi/server/UnicastServer.h
 include/gnu/java/rmi/server/UnicastServerRef.h
+include/gnu/java/security/
+include/gnu/java/security/der/
 include/gnu/java/security/der/DEREncodingException.h
+include/gnu/java/security/provider/
 include/gnu/java/security/provider/DERReader.h
 include/gnu/java/security/provider/DERWriter.h
 include/gnu/java/security/provider/DSAKeyPairGenerator.h
@@ -326,18 +360,24 @@ include/gnu/java/security/provider/GnuDSAPublicKey.h
 include/gnu/java/security/provider/MD5.h
 include/gnu/java/security/provider/SHA.h
 include/gnu/java/security/provider/SHA1PRNG.h
+include/gnu/java/security/util/
 include/gnu/java/security/util/Prime.h
+include/gnu/java/text/
 include/gnu/java/text/BaseBreakIterator.h
 include/gnu/java/text/CharacterBreakIterator.h
 include/gnu/java/text/LineBreakIterator.h
 include/gnu/java/text/SentenceBreakIterator.h
 include/gnu/java/text/WordBreakIterator.h
+include/gnu/java/util/
 include/gnu/java/util/DoubleEnumeration.h
 include/gnu/java/util/EmptyEnumeration.h
+include/java/
+include/java/applet/
 include/java/applet/Applet.h
 include/java/applet/AppletContext.h
 include/java/applet/AppletStub.h
 include/java/applet/AudioClip.h
+include/java/awt/
 include/java/awt/AWTError.h
 include/java/awt/AWTEvent.h
 include/java/awt/AWTEventMulticaster.h
@@ -438,6 +478,7 @@ include/java/awt/TexturePaint.h
 include/java/awt/Toolkit.h
 include/java/awt/Transparency.h
 include/java/awt/Window.h
+include/java/awt/color/
 include/java/awt/color/CMMException.h
 include/java/awt/color/ColorSpace.h
 include/java/awt/color/ICC_ColorSpace.h
@@ -445,6 +486,7 @@ include/java/awt/color/ICC_Profile.h
 include/java/awt/color/ICC_ProfileGray.h
 include/java/awt/color/ICC_ProfileRGB.h
 include/java/awt/color/ProfileDataException.h
+include/java/awt/datatransfer/
 include/java/awt/datatransfer/Clipboard.h
 include/java/awt/datatransfer/ClipboardOwner.h
 include/java/awt/datatransfer/DataFlavor.h
@@ -455,6 +497,7 @@ include/java/awt/datatransfer/StringSelection.h
 include/java/awt/datatransfer/SystemFlavorMap.h
 include/java/awt/datatransfer/Transferable.h
 include/java/awt/datatransfer/UnsupportedFlavorException.h
+include/java/awt/dnd/
 include/java/awt/dnd/Autoscroll.h
 include/java/awt/dnd/DnDConstants.h
 include/java/awt/dnd/DragGestureEvent.h
@@ -477,8 +520,10 @@ include/java/awt/dnd/DropTargetEvent.h
 include/java/awt/dnd/DropTargetListener.h
 include/java/awt/dnd/InvalidDnDOperationException.h
 include/java/awt/dnd/MouseDragGestureRecognizer.h
+include/java/awt/dnd/peer/
 include/java/awt/dnd/peer/DragSourceContextPeer.h
 include/java/awt/dnd/peer/DropTargetContextPeer.h
+include/java/awt/event/
 include/java/awt/event/AWTEventListener.h
 include/java/awt/event/AWTEventListenerProxy.h
 include/java/awt/event/ActionEvent.h
@@ -522,7 +567,9 @@ include/java/awt/event/WindowEvent.h
 include/java/awt/event/WindowFocusListener.h
 include/java/awt/event/WindowListener.h
 include/java/awt/event/WindowStateListener.h
+include/java/awt/font/
 include/java/awt/font/TextHitInfo.h
+include/java/awt/geom/
 include/java/awt/geom/AffineTransform.h
 include/java/awt/geom/Arc2D.h
 include/java/awt/geom/Area.h
@@ -540,13 +587,16 @@ include/java/awt/geom/QuadCurve2D.h
 include/java/awt/geom/Rectangle2D.h
 include/java/awt/geom/RectangularShape.h
 include/java/awt/geom/RoundRectangle2D.h
+include/java/awt/im/
 include/java/awt/im/InputContext.h
 include/java/awt/im/InputMethodHighlight.h
 include/java/awt/im/InputMethodRequests.h
 include/java/awt/im/InputSubset.h
+include/java/awt/im/spi/
 include/java/awt/im/spi/InputMethod.h
 include/java/awt/im/spi/InputMethodContext.h
 include/java/awt/im/spi/InputMethodDescriptor.h
+include/java/awt/image/
 include/java/awt/image/AreaAveragingScaleFilter.h
 include/java/awt/image/BufferStrategy.h
 include/java/awt/image/BufferedImage.h
@@ -582,6 +632,7 @@ include/java/awt/image/TileObserver.h
 include/java/awt/image/VolatileImage.h
 include/java/awt/image/WritableRaster.h
 include/java/awt/image/WritableRenderedImage.h
+include/java/awt/image/renderable/
 include/java/awt/image/renderable/ContextualRenderedImageFactory.h
 include/java/awt/image/renderable/ParameterBlock.h
 include/java/awt/image/renderable/RenderContext.h
@@ -589,6 +640,7 @@ include/java/awt/image/renderable/RenderableImage.h
 include/java/awt/image/renderable/RenderableImageOp.h
 include/java/awt/image/renderable/RenderableImageProducer.h
 include/java/awt/image/renderable/RenderedImageFactory.h
+include/java/awt/peer/
 include/java/awt/peer/ButtonPeer.h
 include/java/awt/peer/CanvasPeer.h
 include/java/awt/peer/CheckboxMenuItemPeer.h
@@ -615,6 +667,7 @@ include/java/awt/peer/TextAreaPeer.h
 include/java/awt/peer/TextComponentPeer.h
 include/java/awt/peer/TextFieldPeer.h
 include/java/awt/peer/WindowPeer.h
+include/java/awt/print/
 include/java/awt/print/Book.h
 include/java/awt/print/PageFormat.h
 include/java/awt/print/Pageable.h
@@ -625,6 +678,7 @@ include/java/awt/print/PrinterException.h
 include/java/awt/print/PrinterGraphics.h
 include/java/awt/print/PrinterIOException.h
 include/java/awt/print/PrinterJob.h
+include/java/beans/
 include/java/beans/AppletInitializer.h
 include/java/beans/BeanDescriptor.h
 include/java/beans/BeanInfo.h
@@ -653,6 +707,7 @@ include/java/beans/VetoableChangeListener.h
 include/java/beans/VetoableChangeListenerProxy.h
 include/java/beans/VetoableChangeSupport.h
 include/java/beans/Visibility.h
+include/java/beans/beancontext/
 include/java/beans/beancontext/BeanContext.h
 include/java/beans/beancontext/BeanContextChild.h
 include/java/beans/beancontext/BeanContextChildComponentProxy.h
@@ -669,6 +724,7 @@ include/java/beans/beancontext/BeanContextServiceRevokedEvent.h
 include/java/beans/beancontext/BeanContextServiceRevokedListener.h
 include/java/beans/beancontext/BeanContextServices.h
 include/java/beans/beancontext/BeanContextServicesListener.h
+include/java/io/
 include/java/io/BufferedInputStream.h
 include/java/io/BufferedOutputStream.h
 include/java/io/BufferedReader.h
@@ -744,6 +800,7 @@ include/java/io/UnsupportedEncodingException.h
 include/java/io/VMObjectStreamClass.h
 include/java/io/WriteAbortedException.h
 include/java/io/Writer.h
+include/java/lang/
 include/java/lang/AbstractMethodError.h
 include/java/lang/ArithmeticException.h
 include/java/lang/ArrayIndexOutOfBoundsException.h
@@ -828,11 +885,13 @@ include/java/lang/VMThrowable.h
 include/java/lang/VerifyError.h
 include/java/lang/VirtualMachineError.h
 include/java/lang/Void.h
+include/java/lang/ref/
 include/java/lang/ref/PhantomReference.h
 include/java/lang/ref/Reference.h
 include/java/lang/ref/ReferenceQueue.h
 include/java/lang/ref/SoftReference.h
 include/java/lang/ref/WeakReference.h
+include/java/lang/reflect/
 include/java/lang/reflect/AccessibleObject.h
 include/java/lang/reflect/Array.h
 include/java/lang/reflect/Constructor.h
@@ -845,8 +904,10 @@ include/java/lang/reflect/Modifier.h
 include/java/lang/reflect/Proxy.h
 include/java/lang/reflect/ReflectPermission.h
 include/java/lang/reflect/UndeclaredThrowableException.h
+include/java/math/
 include/java/math/BigDecimal.h
 include/java/math/BigInteger.h
+include/java/net/
 include/java/net/Authenticator.h
 include/java/net/BindException.h
 include/java/net/ConnectException.h
@@ -893,6 +954,7 @@ include/java/net/URLStreamHandler.h
 include/java/net/URLStreamHandlerFactory.h
 include/java/net/UnknownHostException.h
 include/java/net/UnknownServiceException.h
+include/java/nio/
 include/java/nio/Buffer.h
 include/java/nio/BufferOverflowException.h
 include/java/nio/BufferUnderflowException.h
@@ -907,6 +969,7 @@ include/java/nio/LongBuffer.h
 include/java/nio/MappedByteBuffer.h
 include/java/nio/ReadOnlyBufferException.h
 include/java/nio/ShortBuffer.h
+include/java/nio/channels/
 include/java/nio/channels/AlreadyConnectedException.h
 include/java/nio/channels/AsynchronousCloseException.h
 include/java/nio/channels/ByteChannel.h
@@ -942,11 +1005,13 @@ include/java/nio/channels/SocketChannel.h
 include/java/nio/channels/UnresolvedAddressException.h
 include/java/nio/channels/UnsupportedAddressTypeException.h
 include/java/nio/channels/WritableByteChannel.h
+include/java/nio/channels/spi/
 include/java/nio/channels/spi/AbstractInterruptibleChannel.h
 include/java/nio/channels/spi/AbstractSelectableChannel.h
 include/java/nio/channels/spi/AbstractSelectionKey.h
 include/java/nio/channels/spi/AbstractSelector.h
 include/java/nio/channels/spi/SelectorProvider.h
+include/java/nio/charset/
 include/java/nio/charset/CharacterCodingException.h
 include/java/nio/charset/Charset.h
 include/java/nio/charset/CharsetDecoder.h
@@ -958,7 +1023,9 @@ include/java/nio/charset/IllegalCharsetNameException.h
 include/java/nio/charset/MalformedInputException.h
 include/java/nio/charset/UnmappableCharacterException.h
 include/java/nio/charset/UnsupportedCharsetException.h
+include/java/nio/charset/spi/
 include/java/nio/charset/spi/CharsetProvider.h
+include/java/rmi/
 include/java/rmi/AccessException.h
 include/java/rmi/AlreadyBoundException.h
 include/java/rmi/ConnectException.h
@@ -979,6 +1046,7 @@ include/java/rmi/StubNotFoundException.h
 include/java/rmi/UnexpectedException.h
 include/java/rmi/UnknownHostException.h
 include/java/rmi/UnmarshalException.h
+include/java/rmi/activation/
 include/java/rmi/activation/Activatable.h
 include/java/rmi/activation/ActivateFailedException.h
 include/java/rmi/activation/ActivationDesc.h
@@ -993,12 +1061,15 @@ include/java/rmi/activation/ActivationSystem.h
 include/java/rmi/activation/Activator.h
 include/java/rmi/activation/UnknownGroupException.h
 include/java/rmi/activation/UnknownObjectException.h
+include/java/rmi/dgc/
 include/java/rmi/dgc/DGC.h
 include/java/rmi/dgc/Lease.h
 include/java/rmi/dgc/VMID.h
+include/java/rmi/registry/
 include/java/rmi/registry/LocateRegistry.h
 include/java/rmi/registry/Registry.h
 include/java/rmi/registry/RegistryHandler.h
+include/java/rmi/server/
 include/java/rmi/server/ExportException.h
 include/java/rmi/server/LoaderHandler.h
 include/java/rmi/server/LogStream.h
@@ -1025,6 +1096,7 @@ include/java/rmi/server/SocketSecurityException.h
 include/java/rmi/server/UID.h
 include/java/rmi/server/UnicastRemoteObject.h
 include/java/rmi/server/Unreferenced.h
+include/java/security/
 include/java/security/AccessControlContext.h
 include/java/security/AccessControlException.h
 include/java/security/AccessController.h
@@ -1091,6 +1163,7 @@ include/java/security/SignedObject.h
 include/java/security/Signer.h
 include/java/security/UnrecoverableKeyException.h
 include/java/security/UnresolvedPermission.h
+include/java/security/acl/
 include/java/security/acl/Acl.h
 include/java/security/acl/AclEntry.h
 include/java/security/acl/AclNotFoundException.h
@@ -1099,6 +1172,7 @@ include/java/security/acl/LastOwnerException.h
 include/java/security/acl/NotOwnerException.h
 include/java/security/acl/Owner.h
 include/java/security/acl/Permission.h
+include/java/security/cert/
 include/java/security/cert/CRL.h
 include/java/security/cert/CRLException.h
 include/java/security/cert/CertPath.h
@@ -1117,6 +1191,7 @@ include/java/security/cert/X509CRL.h
 include/java/security/cert/X509CRLEntry.h
 include/java/security/cert/X509Certificate.h
 include/java/security/cert/X509Extension.h
+include/java/security/interfaces/
 include/java/security/interfaces/DSAKey.h
 include/java/security/interfaces/DSAKeyPairGenerator.h
 include/java/security/interfaces/DSAParams.h
@@ -1126,6 +1201,7 @@ include/java/security/interfaces/RSAKey.h
 include/java/security/interfaces/RSAPrivateCrtKey.h
 include/java/security/interfaces/RSAPrivateKey.h
 include/java/security/interfaces/RSAPublicKey.h
+include/java/security/spec/
 include/java/security/spec/AlgorithmParameterSpec.h
 include/java/security/spec/DSAParameterSpec.h
 include/java/security/spec/DSAPrivateKeySpec.h
@@ -1140,6 +1216,7 @@ include/java/security/spec/RSAPrivateCrtKeySpec.h
 include/java/security/spec/RSAPrivateKeySpec.h
 include/java/security/spec/RSAPublicKeySpec.h
 include/java/security/spec/X509EncodedKeySpec.h
+include/java/sql/
 include/java/sql/Array.h
 include/java/sql/BatchUpdateException.h
 include/java/sql/Blob.h
@@ -1169,6 +1246,7 @@ include/java/sql/Struct.h
 include/java/sql/Time.h
 include/java/sql/Timestamp.h
 include/java/sql/Types.h
+include/java/text/
 include/java/text/Annotation.h
 include/java/text/AttributedCharacterIterator.h
 include/java/text/AttributedString.h
@@ -1192,6 +1270,7 @@ include/java/text/ParsePosition.h
 include/java/text/RuleBasedCollator.h
 include/java/text/SimpleDateFormat.h
 include/java/text/StringCharacterIterator.h
+include/java/util/
 include/java/util/AbstractCollection.h
 include/java/util/AbstractList.h
 include/java/util/AbstractMap.h
@@ -1251,6 +1330,7 @@ include/java/util/TreeMap.h
 include/java/util/TreeSet.h
 include/java/util/Vector.h
 include/java/util/WeakHashMap.h
+include/java/util/jar/
 include/java/util/jar/Attributes.h
 include/java/util/jar/JarEntry.h
 include/java/util/jar/JarException.h
@@ -1258,9 +1338,11 @@ include/java/util/jar/JarFile.h
 include/java/util/jar/JarInputStream.h
 include/java/util/jar/JarOutputStream.h
 include/java/util/jar/Manifest.h
+include/java/util/regex/
 include/java/util/regex/Matcher.h
 include/java/util/regex/Pattern.h
 include/java/util/regex/PatternSyntaxException.h
+include/java/util/zip/
 include/java/util/zip/Adler32.h
 include/java/util/zip/CRC32.h
 include/java/util/zip/CheckedInputStream.h
@@ -1279,6 +1361,8 @@ include/java/util/zip/ZipException.h
 include/java/util/zip/ZipFile.h
 include/java/util/zip/ZipInputStream.h
 include/java/util/zip/ZipOutputStream.h
+include/javax/
+include/javax/accessibility/
 include/javax/accessibility/Accessible.h
 include/javax/accessibility/AccessibleAction.h
 include/javax/accessibility/AccessibleBundle.h
@@ -1302,6 +1386,7 @@ include/javax/accessibility/AccessibleTable.h
 include/javax/accessibility/AccessibleTableModelChange.h
 include/javax/accessibility/AccessibleText.h
 include/javax/accessibility/AccessibleValue.h
+include/javax/naming/
 include/javax/naming/AuthenticationException.h
 include/javax/naming/AuthenticationNotSupportedException.h
 include/javax/naming/BinaryRefAddr.h
@@ -1343,6 +1428,7 @@ include/javax/naming/ServiceUnavailableException.h
 include/javax/naming/SizeLimitExceededException.h
 include/javax/naming/StringRefAddr.h
 include/javax/naming/TimeLimitExceededException.h
+include/javax/naming/directory/
 include/javax/naming/directory/Attribute.h
 include/javax/naming/directory/AttributeInUseException.h
 include/javax/naming/directory/AttributeModificationException.h
@@ -1361,6 +1447,7 @@ include/javax/naming/directory/NoSuchAttributeException.h
 include/javax/naming/directory/SchemaViolationException.h
 include/javax/naming/directory/SearchControls.h
 include/javax/naming/directory/SearchResult.h
+include/javax/naming/event/
 include/javax/naming/event/EventContext.h
 include/javax/naming/event/EventDirContext.h
 include/javax/naming/event/NamespaceChangeListener.h
@@ -1368,6 +1455,7 @@ include/javax/naming/event/NamingEvent.h
 include/javax/naming/event/NamingExceptionEvent.h
 include/javax/naming/event/NamingListener.h
 include/javax/naming/event/ObjectChangeListener.h
+include/javax/naming/ldap/
 include/javax/naming/ldap/Control.h
 include/javax/naming/ldap/ControlFactory.h
 include/javax/naming/ldap/ExtendedRequest.h
@@ -1379,6 +1467,7 @@ include/javax/naming/ldap/LdapReferralException.h
 include/javax/naming/ldap/UnsolicitedNotification.h
 include/javax/naming/ldap/UnsolicitedNotificationEvent.h
 include/javax/naming/ldap/UnsolicitedNotificationListener.h
+include/javax/naming/spi/
 include/javax/naming/spi/DirObjectFactory.h
 include/javax/naming/spi/DirStateFactory.h
 include/javax/naming/spi/DirectoryManager.h
@@ -1390,6 +1479,7 @@ include/javax/naming/spi/ObjectFactoryBuilder.h
 include/javax/naming/spi/ResolveResult.h
 include/javax/naming/spi/Resolver.h
 include/javax/naming/spi/StateFactory.h
+include/javax/sql/
 include/javax/sql/ConnectionEvent.h
 include/javax/sql/ConnectionEventListener.h
 include/javax/sql/ConnectionPoolDataSource.h
@@ -1404,6 +1494,7 @@ include/javax/sql/RowSetReader.h
 include/javax/sql/RowSetWriter.h
 include/javax/sql/XAConnection.h
 include/javax/sql/XADataSource.h
+include/javax/swing/
 include/javax/swing/AbstractAction.h
 include/javax/swing/AbstractButton.h
 include/javax/swing/AbstractCellEditor.h
@@ -1513,6 +1604,7 @@ include/javax/swing/UIManager.h
 include/javax/swing/UnsupportedLookAndFeelException.h
 include/javax/swing/ViewportLayout.h
 include/javax/swing/WindowConstants.h
+include/javax/swing/border/
 include/javax/swing/border/AbstractBorder.h
 include/javax/swing/border/BevelBorder.h
 include/javax/swing/border/Border.h
@@ -1522,10 +1614,12 @@ include/javax/swing/border/EtchedBorder.h
 include/javax/swing/border/LineBorder.h
 include/javax/swing/border/MatteBorder.h
 include/javax/swing/border/TitledBorder.h
+include/javax/swing/colorchooser/
 include/javax/swing/colorchooser/AbstractColorChooserPanel.h
 include/javax/swing/colorchooser/ColorChooserComponentFactory.h
 include/javax/swing/colorchooser/ColorSelectionModel.h
 include/javax/swing/colorchooser/DefaultColorSelectionModel.h
+include/javax/swing/event/
 include/javax/swing/event/AncestorEvent.h
 include/javax/swing/event/AncestorListener.h
 include/javax/swing/event/CaretEvent.h
@@ -1569,9 +1663,11 @@ include/javax/swing/event/TreeSelectionListener.h
 include/javax/swing/event/TreeWillExpandListener.h
 include/javax/swing/event/UndoableEditEvent.h
 include/javax/swing/event/UndoableEditListener.h
+include/javax/swing/filechooser/
 include/javax/swing/filechooser/FileFilter.h
 include/javax/swing/filechooser/FileSystemView.h
 include/javax/swing/filechooser/FileView.h
+include/javax/swing/plaf/
 include/javax/swing/plaf/ActionMapUIResource.h
 include/javax/swing/plaf/BorderUIResource.h
 include/javax/swing/plaf/ButtonUI.h
@@ -1612,6 +1708,7 @@ include/javax/swing/plaf/ToolTipUI.h
 include/javax/swing/plaf/TreeUI.h
 include/javax/swing/plaf/UIResource.h
 include/javax/swing/plaf/ViewportUI.h
+include/javax/swing/plaf/basic/
 include/javax/swing/plaf/basic/BasicBorders.h
 include/javax/swing/plaf/basic/BasicButtonUI.h
 include/javax/swing/plaf/basic/BasicCheckBoxUI.h
@@ -1630,7 +1727,9 @@ include/javax/swing/plaf/basic/BasicTextUI.h
 include/javax/swing/plaf/basic/BasicToggleButtonUI.h
 include/javax/swing/plaf/basic/BasicTreeUI.h
 include/javax/swing/plaf/basic/BasicViewportUI.h
+include/javax/swing/plaf/metal/
 include/javax/swing/plaf/metal/MetalLookAndFeel.h
+include/javax/swing/table/
 include/javax/swing/table/AbstractTableModel.h
 include/javax/swing/table/DefaultTableCellRenderer.h
 include/javax/swing/table/DefaultTableColumnModel.h
@@ -1640,6 +1739,7 @@ include/javax/swing/table/TableCellRenderer.h
 include/javax/swing/table/TableColumn.h
 include/javax/swing/table/TableColumnModel.h
 include/javax/swing/table/TableModel.h
+include/javax/swing/text/
 include/javax/swing/text/AbstractDocument.h
 include/javax/swing/text/AttributeSet.h
 include/javax/swing/text/BadLocationException.h
@@ -1665,8 +1765,11 @@ include/javax/swing/text/StyledEditorKit.h
 include/javax/swing/text/TextAction.h
 include/javax/swing/text/View.h
 include/javax/swing/text/ViewFactory.h
+include/javax/swing/text/html/
 include/javax/swing/text/html/HTML.h
+include/javax/swing/text/html/parser/
 include/javax/swing/text/html/parser/ParserDelegator.h
+include/javax/swing/tree/
 include/javax/swing/tree/AbstractLayoutCache.h
 include/javax/swing/tree/DefaultMutableTreeNode.h
 include/javax/swing/tree/DefaultTreeCellEditor.h
@@ -1684,6 +1787,7 @@ include/javax/swing/tree/TreeNode.h
 include/javax/swing/tree/TreePath.h
 include/javax/swing/tree/TreeSelectionModel.h
 include/javax/swing/tree/VariableHeightLayoutCache.h
+include/javax/swing/undo/
 include/javax/swing/undo/AbstractUndoableEdit.h
 include/javax/swing/undo/CannotRedoException.h
 include/javax/swing/undo/CannotUndoException.h
@@ -1693,6 +1797,7 @@ include/javax/swing/undo/StateEditable.h
 include/javax/swing/undo/UndoManager.h
 include/javax/swing/undo/UndoableEdit.h
 include/javax/swing/undo/UndoableEditSupport.h
+include/javax/transaction/
 include/javax/transaction/HeuristicCommitException.h
 include/javax/transaction/HeuristicMixedException.h
 include/javax/transaction/HeuristicRollbackException.h
@@ -1707,14 +1812,16 @@ include/javax/transaction/TransactionManager.h
 include/javax/transaction/TransactionRequiredException.h
 include/javax/transaction/TransactionRolledbackException.h
 include/javax/transaction/UserTransaction.h
+include/javax/transaction/xa/
 include/javax/transaction/xa/XAException.h
 include/javax/transaction/xa/XAResource.h
 include/javax/transaction/xa/Xid.h
 include/jni.h
 include/jvmpi.h
 @comment include/leak_detector.h
-info/gcj.info
-info/fastjar.info
+@info info/gcj.info
+@info info/fastjar.info
+lib/gcc-lib/${CONFIG}/${V}/include/gcj/
 lib/gcc-lib/${CONFIG}/${V}/include/gcj/libgcj-config.h
 lib/gcc-lib/${CONFIG}/${V}/jc1
 lib/gcc-lib/${CONFIG}/${V}/jvgenmain
@@ -1735,18 +1842,20 @@ lib/libffi.a
 lib/libffi.la
 @comment lib/libgc.a
 @comment lib/libgc.la
+lib/security/
 lib/security/classpath.security
 lib/security/libgcj.security
-man/man1/egcj.1
-man/man1/egrepjar.1
-man/man1/ejar.1
-man/man1/gcjh.1
-man/man1/gij.1
-man/man1/jcf-dump.1
-man/man1/jv-convert.1
-man/man1/jv-scan.1
-man/man1/rmic.1
-man/man1/rmiregistry.1
+@man man/man1/egcj.1
+@man man/man1/egrepjar.1
+@man man/man1/ejar.1
+@man man/man1/gcjh.1
+@man man/man1/gij.1
+@man man/man1/jcf-dump.1
+@man man/man1/jv-convert.1
+@man man/man1/jv-scan.1
+@man man/man1/rmic.1
+@man man/man1/rmiregistry.1
+@comment share/gc/
 @comment share/gc/README
 @comment share/gc/README.DGUX386
 @comment share/gc/README.Mac
@@ -1778,119 +1887,6 @@ man/man1/rmiregistry.1
 @comment share/gc/leak.html
 @comment share/gc/scale.html
 @comment share/gc/tree.html
-@comment @dirrm share/gc
+share/java/
 share/java/libgcj-${V}.jar
 %%SHARED%%
-@dirrm share/java
-@dirrm lib/security
-@dirrm lib/gcc-lib/${CONFIG}/${V}/include/gcj
-@dirrm include/javax/transaction/xa
-@dirrm include/javax/transaction
-@dirrm include/javax/swing/undo
-@dirrm include/javax/swing/tree
-@dirrm include/javax/swing/text/html/parser
-@dirrm include/javax/swing/text/html
-@dirrm include/javax/swing/text
-@dirrm include/javax/swing/table
-@dirrm include/javax/swing/plaf/metal
-@dirrm include/javax/swing/plaf/basic
-@dirrm include/javax/swing/plaf
-@dirrm include/javax/swing/filechooser
-@dirrm include/javax/swing/event
-@dirrm include/javax/swing/colorchooser
-@dirrm include/javax/swing/border
-@dirrm include/javax/swing
-@dirrm include/javax/sql
-@dirrm include/javax/naming/spi
-@dirrm include/javax/naming/ldap
-@dirrm include/javax/naming/event
-@dirrm include/javax/naming/directory
-@dirrm include/javax/naming
-@dirrm include/javax/accessibility
-@dirrm include/javax
-@dirrm include/java/util/zip
-@dirrm include/java/util/regex
-@dirrm include/java/util/jar
-@dirrm include/java/util
-@dirrm include/java/text
-@dirrm include/java/sql
-@dirrm include/java/security/spec
-@dirrm include/java/security/interfaces
-@dirrm include/java/security/cert
-@dirrm include/java/security/acl
-@dirrm include/java/security
-@dirrm include/java/rmi/server
-@dirrm include/java/rmi/registry
-@dirrm include/java/rmi/dgc
-@dirrm include/java/rmi/activation
-@dirrm include/java/rmi
-@dirrm include/java/nio/charset/spi
-@dirrm include/java/nio/charset
-@dirrm include/java/nio/channels/spi
-@dirrm include/java/nio/channels
-@dirrm include/java/nio
-@dirrm include/java/net
-@dirrm include/java/math
-@dirrm include/java/lang/reflect
-@dirrm include/java/lang/ref
-@dirrm include/java/lang
-@dirrm include/java/io
-@dirrm include/java/beans/beancontext
-@dirrm include/java/beans
-@dirrm include/java/awt/print
-@dirrm include/java/awt/peer
-@dirrm include/java/awt/image/renderable
-@dirrm include/java/awt/image
-@dirrm include/java/awt/im/spi
-@dirrm include/java/awt/im
-@dirrm include/java/awt/geom
-@dirrm include/java/awt/font
-@dirrm include/java/awt/event
-@dirrm include/java/awt/dnd/peer
-@dirrm include/java/awt/dnd
-@dirrm include/java/awt/datatransfer
-@dirrm include/java/awt/color
-@dirrm include/java/awt
-@dirrm include/java/applet
-@dirrm include/java
-@dirrm include/gnu/java/util
-@dirrm include/gnu/java/text
-@dirrm include/gnu/java/security/util
-@dirrm include/gnu/java/security/provider
-@dirrm include/gnu/java/security/der
-@dirrm include/gnu/java/security
-@dirrm include/gnu/java/rmi/server
-@dirrm include/gnu/java/rmi/rmic
-@dirrm include/gnu/java/rmi/registry
-@dirrm include/gnu/java/rmi/dgc
-@dirrm include/gnu/java/rmi
-@dirrm include/gnu/java/nio/charset
-@dirrm include/gnu/java/nio
-@dirrm include/gnu/java/math
-@dirrm include/gnu/java/locale
-@dirrm include/gnu/java/lang/reflect
-@dirrm include/gnu/java/lang
-@dirrm include/gnu/java/io
-@dirrm include/gnu/java/beans/info
-@dirrm include/gnu/java/beans/editors
-@dirrm include/gnu/java/beans
-@dirrm include/gnu/java/awt/image
-@dirrm include/gnu/java/awt
-@dirrm include/gnu/java
-@dirrm include/gnu/gcj/runtime
-@dirrm include/gnu/gcj/protocol/jar
-@dirrm include/gnu/gcj/protocol/http
-@dirrm include/gnu/gcj/protocol/file
-@dirrm include/gnu/gcj/protocol/core
-@dirrm include/gnu/gcj/protocol
-@dirrm include/gnu/gcj/io
-@dirrm include/gnu/gcj/convert
-@dirrm include/gnu/gcj
-@dirrm include/gnu/classpath
-@dirrm include/gnu/awt/j2d
-@dirrm include/gnu/awt
-@dirrm include/gnu
-@dirrm include/gcj
-@dirrm include/gc
-@exec install-info --info-dir=%D/info %D/info/gcj.info
-@exec install-info --info-dir=%D/info %D/info/fastjar.info

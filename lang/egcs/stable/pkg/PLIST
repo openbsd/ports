@@ -1,31 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.19 2004/01/31 14:58:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2004/08/09 00:02:22 espie Exp $
 @pkgcfl egcs-*-core
-@unexec install-info --delete --info-dir=%D/info %D/info/cpp.info
-@unexec install-info --delete --info-dir=%D/info %D/info/cppinternals.info
-@unexec install-info --delete --info-dir=%D/info %D/info/gcc.info
-@unexec install-info --delete --info-dir=%D/info %D/info/gccint.info
 bin/ecpp
 bin/egcc
 bin/egccbug
 bin/egcov
 bin/${CONFIG}-egcc
 bin/${CONFIG}-gcc-${V}
-info/cpp.info
-info/cppinternals.info
-info/gcc.info
-info/gccint.info
+@info info/cpp.info
+@info info/cppinternals.info
+@info info/gcc.info
+@info info/gccint.info
+lib/gcc-lib/
+lib/gcc-lib/${CONFIG}/
+lib/gcc-lib/${CONFIG}/${V}/
+IFPIC:lib/gcc-lib/${CONFIG}/${V}/fpic/
 lib/gcc-lib/${CONFIG}/${V}/cc1
 lib/gcc-lib/${CONFIG}/${V}/collect2
+lib/fpic/
 IFPIC:lib/gcc-lib/${CONFIG}/${V}/fpic/libgcc.a
+lib/gcc-lib/${CONFIG}/${V}/include/
 lib/gcc-lib/${CONFIG}/${V}/include/README
 lib/gcc-lib/${CONFIG}/${V}/include/limits.h
+lib/gcc-lib/${CONFIG}/${V}/include/machine/
 lib/gcc-lib/${CONFIG}/${V}/include/machine/ansi.h
 lib/gcc-lib/${CONFIG}/${V}/include/stdarg.h
 lib/gcc-lib/${CONFIG}/${V}/include/stdbool.h
 lib/gcc-lib/${CONFIG}/${V}/include/syslimits.h
 lib/gcc-lib/${CONFIG}/${V}/include/varargs.h
+lib/gcc-lib/${CONFIG}/${V}/install-tools/
 lib/gcc-lib/${CONFIG}/${V}/install-tools/fixinc.sh
 lib/gcc-lib/${CONFIG}/${V}/install-tools/gsyslimits.h
+lib/gcc-lib/${CONFIG}/${V}/install-tools/include/
 lib/gcc-lib/${CONFIG}/${V}/install-tools/include/README
 lib/gcc-lib/${CONFIG}/${V}/install-tools/include/limits.h
 lib/gcc-lib/${CONFIG}/${V}/install-tools/mkheaders
@@ -34,23 +39,9 @@ lib/gcc-lib/${CONFIG}/${V}/libgcc.a
 IFPPC:lib/gcc-lib/${CONFIG}/${V}/crtsavres.o
 lib/gcc-lib/${CONFIG}/${V}/specs
 lib/libiberty.a
-man/man1/cpp.1
-man/man1/egcc.1
-man/man1/gcov.1
-@comment man/man7/fsf-funding.7
-@comment man/man7/gfdl.7
-@comment man/man7/gpl.7
-@dirrm lib/gcc-lib/${CONFIG}/${V}/install-tools/include
-@dirrm lib/gcc-lib/${CONFIG}/${V}/install-tools
-@dirrm lib/gcc-lib/${CONFIG}/${V}/include/machine
-@dirrm lib/gcc-lib/${CONFIG}/${V}/include
-IFPIC:@dirrm lib/gcc-lib/${CONFIG}/${V}/fpic
-@dirrm lib/gcc-lib/${CONFIG}/${V}
-@dirrm lib/gcc-lib/${CONFIG}
-@dirrm lib/gcc-lib
-IFPIC:@exec mkdir -p %D/lib/fpic
-IFPIC:@dirrm lib/fpic
-@exec install-info --info-dir=%D/info %D/info/cpp.info
-@exec install-info --info-dir=%D/info %D/info/cppinternals.info
-@exec install-info --info-dir=%D/info %D/info/gcc.info
-@exec install-info --info-dir=%D/info %D/info/gccint.info
+@man man/man1/cpp.1
+@man man/man1/egcc.1
+@man man/man1/gcov.1
+@comment @man man/man7/fsf-funding.7
+@comment @man man/man7/gfdl.7
+@comment @man man/man7/gpl.7

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ada,v 1.4 2004/01/31 14:58:04 espie Exp $
+@comment $OpenBSD: PLIST-ada,v 1.5 2004/08/09 00:02:22 espie Exp $
 bin/gnat
 bin/gnatbind
 bin/gnatbl
@@ -12,6 +12,7 @@ bin/gnatprep
 bin/gnatpsta
 bin/gnatpsys
 bin/gnatxref
+lib/gcc-lib/${CONFIG}/${V}/adainclude/
 lib/gcc-lib/${CONFIG}/${V}/adainclude/a-astaco.adb
 lib/gcc-lib/${CONFIG}/${V}/adainclude/a-astaco.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/a-caldel.adb
@@ -719,6 +720,7 @@ lib/gcc-lib/${CONFIG}/${V}/adainclude/system.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/text_io.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/unchconv.ads
 lib/gcc-lib/${CONFIG}/${V}/adainclude/unchdeal.ads
+lib/gcc-lib/${CONFIG}/${V}/adalib/
 lib/gcc-lib/${CONFIG}/${V}/adalib/Makefile.adalib
 lib/gcc-lib/${CONFIG}/${V}/adalib/a-caldel.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/a-calend.ali
@@ -1084,5 +1086,3 @@ lib/gcc-lib/${CONFIG}/${V}/adalib/s-wwdwch.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/system.ali
 lib/gcc-lib/${CONFIG}/${V}/adalib/text_io.ali
 lib/gcc-lib/${CONFIG}/${V}/gnat1
-@dirrm lib/gcc-lib/${CONFIG}/${V}/adalib
-@dirrm lib/gcc-lib/${CONFIG}/${V}/adainclude
