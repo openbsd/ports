@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/25 17:17:41 danh Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 02:59:33 lebel Exp $
 # Original from: Curtiss Howard, cereal@schizo.com
 #
+
+COMMENT=		"retrieve usenet posts via script"
 
 DISTNAME=		linleech_2.2.1.orig
 
 PKGNAME=		linleech-2.2.1
 CATEGORIES=     	news
-NEED_VERSION=		1.230
+NEED_VERSION=		1.402
 
 MAINTAINER=		J Shoemaker <shoemaker@softhome.net>
 

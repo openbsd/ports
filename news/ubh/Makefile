@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/24 08:25:37 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 02:59:36 lebel Exp $
+
+COMMENT=	"download and decode binaries posted to Usenet"
 
 DISTNAME=	ubh-1.5
 CATEGORIES=	news
-NEED_VERSION=	1.352
+NEED_VERSION=	1.402
 
 HOMEPAGE=	http://ubh.sourceforge.net/
 

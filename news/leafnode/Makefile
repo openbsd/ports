@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2001/02/24 18:04:53 fgsch Exp $
+# $OpenBSD: Makefile,v 1.18 2001/05/06 02:59:32 lebel Exp $
+
+COMMENT=	"USENET software package designed for small sites"
 
 DISTNAME=	leafnode-1.9.18
 CATEGORIES=	news
-NEED_VERSION=	1.355
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://wpxx02.toxi.uni-wuerzburg.de/pub/			\
 		ftp://ftp.karlsruhe.org/pub/news/servers/leafnode/	\
 		ftp://ftp.unixpower.org/pub/leafnode/			\

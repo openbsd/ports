@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/22 16:27:03 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 02:59:31 lebel Exp $
+
+COMMENT=	"frontend to dejanews for searching usenet archives"
 
 DISTNAME=	dejasearch-1.9.0
 CATEGORIES=	news
-NEED_VERSION=	1.352
+NEED_VERSION=	1.402
 
 HOMEPAGE=	http://homemade.hypermart.net/dejasearch/
 
