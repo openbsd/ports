@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2004/06/02 05:48:09 brad Exp $
+# $OpenBSD: Makefile,v 1.54 2004/06/05 11:15:42 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 COMMENT=	"(E)nhanced (P)rogrammable (I)RC-II (C)lient"
@@ -6,6 +6,7 @@ COMMENT=	"(E)nhanced (P)rogrammable (I)RC-II (C)lient"
 VERSION=	2.0
 HELP_DATE=	20040308
 DISTNAME=	epic4-${VERSION}
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/
 DISTFILES=	epic4-${VERSION}.tar.bz2 epic4-help-${HELP_DATE}.tar.gz
@@ -28,7 +29,9 @@ FAKE_FLAGS=	IP="${WRKINST}" \
 
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= gnu 
-CONFIGURE_ARGS+= --without-perl --without-tcl
+CONFIGURE_ARGS+= --program-transform-name=s,epic,epic4, \
+		 --without-perl \
+		 --without-tcl
 
 INSTALL_TARGET=	install installhelp
 
@@ -41,8 +44,9 @@ post-extract:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/epic4
-	@cd ${PREFIX}/bin && mv -f epic-EPIC4-${VERSION} epic
+	@cd ${PREFIX}/bin && mv -f epic4-EPIC4-${VERSION} epic4
+	@cd ${PREFIX}/libexec && mv -f wserv4 epic4-wserv4
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/epic4
-	@find ${PREFIX}/share/epic -name 'CVS' -print0 | xargs -0 rm -rf
+	@find ${PREFIX}/share/epic4 -name 'CVS' -print0 | xargs -0 rm -rf
 
 .include <bsd.port.mk>
