@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/23 05:13:21 pvalchev Exp $
+bin/life
+share/doc/life/README
+@dirrm share/doc/life

@@ -1,0 +1,27 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2003/04/23 05:13:21 pvalchev Exp $
+--- Makefile.orig	Sun Apr 13 06:02:01 2003
++++ Makefile	Mon Apr 21 14:54:10 2003
+@@ -1,8 +1,8 @@
+ # YAM, Yet Another Makefile
+ 
+ TARGET = life
+-CC     = g++
+-CFLAGS = -Wall -O3 -g `sdl-config --cflags`
++#CC     = g++
++CXXFLAGS+= -Wall `sdl-config --cflags`
+ LIBS   = `sdl-config --libs`
+ 
+ OBJ    = main.o Field.o Video.o Surface.o
+@@ -10,10 +10,10 @@ OBJ    = main.o Field.o Video.o Surface.
+ all: $(TARGET)
+ 
+ $(TARGET): $(OBJ)
+-	$(CC) $(CFLAGS) $(OBJ) $(LIBS) -o $(TARGET)
++	$(CXX) $(CXXFLAGS) $(OBJ) $(LIBS) -o $(TARGET)
+ 
+ %.o: %.cc
+-	$(CC) -c $(CFLAGS) $?
++	$(CXX) -c $(CXXFLAGS) $?
+ 
+ clean:
+ 	rm -f $(OBJ) $(TARGET)
