@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/12/03 16:53:01 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2001/12/25 09:10:05 pvalchev Exp $
 
 COMMENT=	"Multiple-image Network Graphics (MNG) reference library"
 
@@ -27,7 +27,7 @@ CONFIGURE_ARGS+= --enable-static \
 		--with-jpeg="${LOCALBASE}"
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -DMNG_FULL_CMS" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -llcms"
+		LDFLAGS="-L${LOCALBASE}/lib -llcms -lm"
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
