@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2002/06/09 16:24:57 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2002/10/26 12:52:48 naddy Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 COMMENT=	"x86 machine simulator"
 
 DISTNAME=	bochs-1.4
 CATEGORIES=	emulators
-NEED_VERSION=	1.525
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
 
 HOMEPAGE=	http://bochs.sourceforge.net/
@@ -60,6 +60,8 @@ CONFIGURE_ARGS+= --enable-processors=2
 post-configure:
 	@sed -e 's@!!PREFIX!!@${PREFIX}@' \
 		< ${WRKSRC}/.bochsrc > ${WRKSRC}/bochsrc
+
+NO_REGRESS=	Yes
 
 BIOS  = BIOS-bochs-4-processors BIOS-bochs-2-processors
 BIOS += BIOS-bochs-latest

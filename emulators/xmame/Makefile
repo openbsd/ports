@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/22 06:38:35 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/26 12:52:48 naddy Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -7,7 +7,6 @@ COMMENT-mess=	"emulates game consoles and old home computers"
 VERSION=	0.56.2
 DISTNAME=	xmame-${VERSION}
 
-NEED_VERSION=	1.500
 CATEGORIES=	emulators games
 MASTER_SITES=	${HOMEPAGE}/download/ \
 		ftp://ftp.kaupp.cx/pub/xmame/
@@ -142,6 +141,8 @@ MAKE_FLAGS+=	MY_CPU=${MACHINE_ARCH}
       ${MACHINE_ARCH} == "sparc"
 MAKE_FLAGS+=	MY_CPU=risc
 .endif
+
+NO_REGRESS=	Yes
 
 post-extract:
 	${UNZIP} -u ${FULLDISTDIR}/${HISCORE_FILE} -d ${WRKDIR}

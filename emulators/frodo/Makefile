@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/03/22 00:23:24 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/10/26 12:52:48 naddy Exp $
 
 COMMENT=	"Commodore 64 emulator"
 
@@ -7,7 +7,6 @@ PKGNAME=	frodo-4.1bp1
 DISTFILES=	FrodoV4_1b.Src${EXTRACT_SUFX}
 
 CATEGORIES=	emulators games
-NEED_VERSION=	1.496
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -41,7 +40,9 @@ WRKSRC=${WRKDIST}/Src
 
 post-patch:
 	cp ${FILESDIR}/SID_openbsd.i	${WRKSRC}
-	
+
+NO_REGRESS=	Yes
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/Frodo ${PREFIX}/bin/frodo
 	${INSTALL_PROGRAM} ${WRKDIST}/FrodoSC ${PREFIX}/bin/frodoSC

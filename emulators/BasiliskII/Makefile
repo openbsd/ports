@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/19 17:37:43 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/26 12:52:48 naddy Exp $
 # $RuOBSD: Makefile,v 1.4 2002/04/29 11:07:18 grange Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2001/12/29 00:22:02 abs Exp $
 
@@ -30,6 +30,8 @@ CONFIGURE_STYLE=	autoconf
 
 WRKDIST=		${WRKDIR}/BasiliskII-0.9
 WRKSRC=			${WRKDIR}/BasiliskII-0.9/src/Unix
+
+NO_REGRESS=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/BasiliskII

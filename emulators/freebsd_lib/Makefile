@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2002/08/25 23:05:49 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2002/10/26 12:52:48 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 PREFIX?=	${LOCALBASE}/emul/freebsd
 

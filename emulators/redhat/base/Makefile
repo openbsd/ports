@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/08/02 01:19:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2002/10/26 12:52:48 naddy Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 6.2"
 
@@ -39,6 +39,9 @@ REMOVE_DIRS=	/usr/doc /usr/info /usr/man /usr/share/zoneinfo
 REMOVE_FILES=	/etc/localtime
 
 PATCH_LIST=
+
+NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 pre-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/14 11:00:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/26 12:52:48 naddy Exp $
 
 COMMENT=	"Motif toolkit Linux libraries"
 
@@ -15,6 +15,7 @@ EXTRACT_FILES=	usr/X11R6/lib/libMrm.so.2.1 \
 		usr/X11R6/lib/libUil.so.2.1 \
 		usr/X11R6/lib/libXm.so.2.1
 
+NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
 do-install:

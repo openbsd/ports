@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/06/09 05:36:36 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/26 12:52:48 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -6,7 +6,7 @@ COMMENT=	emulates the Super Nintendo Entertainment System
 
 PKGNAME=	snes9x-1.37c
 DISTNAME=	s9x.linuxc6.137.i386
-NEED_VERSION=	1.496
+
 CATEGORIES=	emulators games
 HOMEPAGE=	http://www.snes9x.com
 
@@ -23,6 +23,7 @@ RUN_DEPENDS=	:redhat_base-*:emulators/redhat/base
 
 USE_X11=	Yes
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 WRKDIST=	${WRKDIR}
 
 do-install:

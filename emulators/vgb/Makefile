@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/06/09 05:36:36 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/26 12:52:48 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -6,7 +6,7 @@ COMMENT=	emulates the Nintendo Gameboy
 
 PKGNAME=	vgb-2.1
 DISTNAME=	VGB21-Linux-80x86-bin
-NEED_VERSION=	1.496
+
 CATEGORIES=	emulators games
 HOMEPAGE=	http://www.komkon.org/fms/VGB/
 
@@ -24,6 +24,7 @@ RUN_DEPENDS=	:redhat_base-*:emulators/redhat/base
 
 USE_X11=	Yes
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 WRKDIST=	${WRKDIR}
 
 do-install:

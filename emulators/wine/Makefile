@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2002/05/11 17:42:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.25 2002/10/26 12:52:48 naddy Exp $
 
 COMMENT=	"MS-Windows 3.1/95/NT emulator for Unix (Alpha release)"
 
@@ -6,7 +6,6 @@ DATE= 		990225
 DISTNAME= 	Wine-${DATE}
 PKGNAME=	wine-${DATE}
 CATEGORIES=	emulators x11
-NEED_VERSION=	1.527
 
 ONLY_FOR_ARCHS= i386
 
@@ -21,6 +20,8 @@ USE_X11=	yes
 CONFIGURE_STYLE=	gnu dest
 
 WRKDIST=	${WRKDIR}/${PKGNAME}
+
+NO_REGRESS=	Yes
 
 .if !defined(NO_WARNINGS)
 pre-fetch:

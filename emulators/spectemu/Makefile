@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/02/18 22:41:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/26 12:52:48 naddy Exp $
 
 COMMENT=		"ZX Spectrum 48k emulator"
 
 DISTNAME=		spectemu-0.94
 CATEGORIES=		emulators
-NEED_VERSION=		1.504
 
 HOMEPAGE=		http://www.inf.bme.hu/~mszeredi/spectemu/
 
@@ -21,6 +20,8 @@ MASTER_SITES=		${HOMEPAGE}
 USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
+
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xspect ${PREFIX}/bin

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/12 08:52:18 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/26 12:52:48 naddy Exp $
 
 COMMENT=	"MIPS R2000/R3000 simulator"
 
 DISTNAME=	spim
 PKGNAME=	spim-6.4
 CATEGORIES=	emulators
-NEED_VERSION=	1.509
 
 HOMEPAGE=	http://www.cs.wisc.edu/~larus/spim.html
 
@@ -24,6 +23,8 @@ CONFIGURE_SCRIPT= Configure
 WRKDIST=	${WRKDIR}/${PKGNAME}
 
 ALL_TARGET=	spim xspim	
+
+NO_REGRESS=	Yes
 
 DOCS=	spim.ps cycle.ps
 
