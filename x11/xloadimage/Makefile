@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/09/23 12:38:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2001/01/18 00:36:31 naddy Exp $
 
 DISTNAME=	xloadimage.4.1
 PKGNAME=	xloadimage-4.1
@@ -22,6 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 		LDFLAGS='-L${LOCALBASE}/lib'

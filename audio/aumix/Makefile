@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/09/23 12:38:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/01/18 00:36:31 naddy Exp $
 
 DISTNAME=	aumix-2.7
 CATEGORIES=	audio
@@ -32,6 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 CONFIGURE_ARGS+= --without-gtk
 .else
 LIB_DEPENDS+=	gtk.1.2::x11/gtk+
+USE_X11=	Yes
 .endif
 .if ${FLAVOR:L:Mno_curses} 
 CONFIGURE_ARGS+= --without-ncurses

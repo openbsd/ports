@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/09/23 12:38:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2001/01/18 00:36:31 naddy Exp $
 
 DISTNAME=	xlogout-1.1
 CATEGORIES=	x11
@@ -14,8 +14,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.tu-darmstadt.de/pub/X11/other/
 EXTRACT_SUFX=	.tar.Z
 
-CONFIGURE_STYLE=	imake
-
 WRKDIST=	${WRKDIR}/xlogout
+USE_X11=	Yes
+CONFIGURE_STYLE= imake
 
 .include <bsd.port.mk>
