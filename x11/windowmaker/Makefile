@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.35 2001/02/07 13:17:04 wilfried Exp $
+# $OpenBSD: Makefile,v 1.36 2001/02/15 17:57:54 wilfried Exp $
 
-DISTNAME=	WindowMaker-0.63.1
-PKGNAME=	windowmaker-0.63.1
+DISTNAME=	WindowMaker-0.64.0
+PKGNAME=	${DISTNAME:L}
 CATEGORIES=	x11 x11/windowmaker
-NEED_VERSION=	1.310
+NEED_VERSION=	1.340
+HOMEPAGE=	http://www.windowmaker.org/
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR= beta/srcs
-DATAFILES=	WindowMaker-extra-0.1.tar.gz
-DISTFILES=	${DISTNAME}.tar.gz ${DATAFILES}
-
-HOMEPAGE=	http://www.windowmaker.org/
 
 LIB_DEPENDS=	PropList.2::devel/libproplist \
 		jpeg.62::graphics/jpeg \
@@ -26,20 +23,18 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 SYSCONFDIR=	${PREFIX}/share/WindowMaker/Defaults
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=--enable-static --with-pixmapdir="${PREFIX}/share/WindowMaker/Pixmaps" \
-		--with-incs-from="-I${PREFIX}/include -I${PREFIX}/include/giflib" \
-		--with-libs-from="-L${PREFIX}/lib" --disable-debug 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
+		--enable-static \
+		--disable-debug \
+		--with-pixmapdir="${PREFIX}/share/WindowMaker/Pixmaps"
 
-post-configure:
-	@cd ${WRKDIR}/WindowMaker-extra-0.1; \
-		./configure --prefix="${PREFIX}"
+post-patch:
+	@perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" \
+		${WRKSRC}/WINGs/wapplication.c \
+		${WRKSRC}/WPrefs.app/Menu.c \
+		${WRKSRC}/WPrefs.app/Paths.c
 
 post-install:
-	@cd ${WRKDIR}/WindowMaker-extra-0.1 && \
-		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${FAKE_FLAGS} -f ${MAKE_FILE} install
+	${INSTALL_DATA_DIR} ${PREFIX}/share/WindowMaker/Sounds
 
 .include <bsd.port.mk>

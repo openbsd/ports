@@ -1,0 +1,21 @@
+$OpenBSD: patch-WPrefs_app_Menu_c,v 1.1 2001/02/15 17:57:55 wilfried Exp $
+--- WPrefs.app/Menu.c.orig	Thu Feb  8 22:54:13 2001
++++ WPrefs.app/Menu.c	Tue Feb 13 15:20:45 2001
+@@ -541,7 +541,7 @@ createPanel(_Panel *p)
+ 	data->param.exec.command = "xv";
+ 
+ 	data = putNewItem(panel, pad, ExecInfo, _("Acrobat Reader"));
+-	data->param.exec.command = "acroread || /usr/local/Acrobat4/bin/acroread";
++	data->param.exec.command = "acroread";
+ 
+ 	data = putNewItem(panel, pad, ExecInfo, _("ghostview"));
+ 	data->param.exec.command = "gv";
+@@ -580,7 +580,7 @@ createPanel(_Panel *p)
+ 
+ 	data = putNewItem(panel, pad, DirectoryInfo, _("Themes"));
+ 	data->param.directory.command = "setstyle";
+-	data->param.directory.directory = "/usr/share/WindowMaker/Themes /usr/local/share/WindowMaker/Themes $HOME/GNUstep/Library/WindowMaker/Themes";
++	data->param.directory.directory = "/usr/share/WindowMaker/Themes %%PREFIX%%/share/WindowMaker/Themes $HOME/GNUstep/Library/WindowMaker/Themes";
+ 	data->param.directory.stripExt = 1;
+ 	
+ 	data = putNewItem(panel, pad, DirectoryInfo, _("Bg Images (scale)"));

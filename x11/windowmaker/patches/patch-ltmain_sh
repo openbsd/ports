@@ -1,9 +1,9 @@
-$OpenBSD: patch-ltmain_sh,v 1.1 2001/02/11 12:10:13 wilfried Exp $
---- ltmain.sh.orig	Sat Jan  6 22:18:47 2001
-+++ ltmain.sh	Sun Feb 11 12:57:20 2001
-@@ -1789,6 +1789,9 @@ compiler."
- 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
- 	  # these systems don't actually have a c library (as such)!
+$OpenBSD: patch-ltmain_sh,v 1.2 2001/02/15 17:57:55 wilfried Exp $
+--- ltmain.sh.orig	Sat Feb 10 20:46:25 2001
++++ ltmain.sh	Tue Feb 13 14:48:57 2001
+@@ -1799,6 +1799,9 @@ compiler."
+ 	  # rhapsody is a little odd...
+ 	  deplibs="$deplibs -framework System"
  	  ;;
 +	*-*-openbsd*)
 +	  # do not include libc due to us having libc/libc_r.
@@ -11,7 +11,7 @@ $OpenBSD: patch-ltmain_sh,v 1.1 2001/02/11 12:10:13 wilfried Exp $
  	*)
  	  # Add libc to deplibs on all other systems.
  	  deplibs="$deplibs -lc"
-@@ -3522,40 +3525,6 @@ libdir='$install_libdir'\
+@@ -3567,40 +3570,6 @@ libdir='$install_libdir'\
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
