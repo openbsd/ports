@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/03/03 00:51:37 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2004/10/10 16:59:04 sturm Exp $
 
 COMMENT=	"Streamlined replacement for make"
 
@@ -12,7 +12,8 @@ EXTRACT_SUFX=	.tgz
 
 BUILD_DEPENDS=	fmt::devel/libfmt \
 		bio::devel/libbio \
-		regexp9::devel/libregexp9
+		regexp9::devel/libregexp9 \
+		utf::devel/libutf
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -21,6 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 NO_REGRESS=	Yes
+MAKE_FLAGS=	CC="${CC}"
 
 pre-build:
 	@cp ${FILESDIR}/Make.OpenBSD ${WRKSRC}
