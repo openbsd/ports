@@ -1,0 +1,33 @@
+$OpenBSD: patch-config_Xsession_in,v 1.1.1.1 2003/10/08 15:57:01 marcm Exp $
+--- config/Xsession.in.orig	2003-08-18 10:31:08.000000000 -0700
++++ config/Xsession.in	2003-08-20 21:04:36.000000000 -0700
+@@ -72,7 +72,7 @@ fi
+ # works for ALL sessions (except ones named 'Failsafe')
+ 
+ # clean up after xbanner
+-freetemp=`which freetemp 2>/dev/null`
++freetemp=`which freetemp >/dev/null`
+ if [ -n "$freetemp" ] ; then
+ 	$freetemp
+ fi
+@@ -200,15 +200,16 @@ if [ "x$command" = "xdefault" ] ; then
+   elif [ -x /etc/X11/Xclients ]; then
+     command="/etc/X11/Xclients"
+   else
+-    echo "$0: Cannot find Xclients"
+-    # FIXME: kind of an evil failsafe
+-    command="xsm"
++    # Load the OpenBSD default Xsession...
++    command="/etc/X11/xdm/Xsession"
++    # hack around running two agents
++    NO_SSH=yes
+   fi
+ fi
+ 
+ # add ssh-agent if found
+ sshagent=`which ssh-agent 2>/dev/null`
+-if [ -n "$sshagent" ] && [ -x "$sshagent" ] && [ -z "$SSH_AUTH_SOCK" ]; then
++if [ -n "$sshagent" ] && [ -x "$sshagent" ] && [ -z "$SSH_AUTH_SOCK" ] && [ -z "$NO_SSH" ]; then
+     command="$sshagent -- $command"
+ elif [ -z "$sshagent" ] ; then
+     echo "$0: ssh-agent not found!"

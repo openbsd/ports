@@ -1,0 +1,23 @@
+$OpenBSD: patch-gui_greeter_greeter_c,v 1.1.1.1 2003/10/08 15:57:01 marcm Exp $
+--- gui/greeter/greeter.c.orig	2003-09-19 14:44:12.000000000 -0700
++++ gui/greeter/greeter.c	2003-09-23 10:04:39.000000000 -0700
+@@ -263,7 +263,7 @@ greeter_ctrl_handler (GIOChannel *source
+ 
+ 	tmp = ve_locale_to_utf8 (buf);
+ 	if (tmp != NULL && strcmp (tmp, _("Username:")) == 0) {
+-		gdk_beep ();
++		/*gdk_beep ();*/
+ 		greeter_probably_login_prompt = TRUE;
+ 	} else {
+ 		greeter_probably_login_prompt = FALSE;
+@@ -1355,8 +1355,8 @@ main (int argc, char *argv[])
+     
+       gtk_dialog_run (GTK_DIALOG (dialog));
+ 
+-      execl (EXPANDED_BINDIR "/gdmlogin", EXPANDED_BINDIR "/gdmlogin", NULL);
+-      execlp ("gdmlogin", "gdmlogin", NULL);
++      execl (EXPANDED_BINDIR "/gdmlogin", EXPANDED_BINDIR "/gdmlogin", (void *)NULL);
++      execlp ("gdmlogin", "gdmlogin", (void *)NULL);
+ 
+       dialog = ve_hig_dialog_new (NULL /* parent */,
+ 				  GTK_DIALOG_MODAL /* flags */,

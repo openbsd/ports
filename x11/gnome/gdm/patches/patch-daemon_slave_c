@@ -1,0 +1,22 @@
+$OpenBSD: patch-daemon_slave_c,v 1.1.1.1 2003/10/08 15:57:01 marcm Exp $
+--- daemon/slave.c.orig	2003-09-25 11:20:26.000000000 -0700
++++ daemon/slave.c	2003-09-26 13:38:25.000000000 -0700
+@@ -2495,7 +2495,7 @@ gdm_slave_greeter (void)
+ 
+ 	exec_command (EXPANDED_BINDIR "/gdmlogin", NULL);
+ 
+-	IGNORE_EINTR (execl (EXPANDED_BINDIR "/gdmlogin", EXPANDED_BINDIR "/gdmlogin", NULL));
++	IGNORE_EINTR (execl (EXPANDED_BINDIR "/gdmlogin", EXPANDED_BINDIR "/gdmlogin", (void *)NULL));
+ 
+ 	gdm_error_box (d,
+ 		       GTK_MESSAGE_ERROR,
+@@ -3287,8 +3287,7 @@ session_child_run (struct passwd *pwent,
+ 	if (setusercontext (NULL, pwent, pwent->pw_uid,
+ 			    LOGIN_SETLOGIN | LOGIN_SETPATH |
+ 			    LOGIN_SETPRIORITY | LOGIN_SETRESOURCES |
+-			    LOGIN_SETUMASK | LOGIN_SETUSER |
+-			    LOGIN_SETENV) < 0)
++			    LOGIN_SETUMASK | LOGIN_SETUSER) < 0)
+ 		gdm_child_exit (DISPLAY_REMANAGE,
+ 				_("%s: setusercontext() failed for %s. "
+ 				  "Aborting."), "gdm_slave_session_start",

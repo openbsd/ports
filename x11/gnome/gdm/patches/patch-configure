@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/10/08 15:57:01 marcm Exp $
+--- configure.orig	2003-09-25 11:31:22.000000000 -0700
++++ configure	2003-09-26 13:38:24.000000000 -0700
+@@ -25163,7 +25163,7 @@ cat >>confdefs.h <<_ACEOF
+ _ACEOF
+ 
+ 
+-AUTHDIR_TMP="$localstatedir/gdm"
++AUTHDIR_TMP="$localstatedir/db/gdm"
+ EXPANDED_AUTHDIR=`eval echo $AUTHDIR_TMP`
+ 
+ cat >>confdefs.h <<_ACEOF

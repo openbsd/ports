@@ -1,0 +1,14 @@
+$OpenBSD: patch-config_gdm_conf_in,v 1.1.1.1 2003/10/08 15:57:01 marcm Exp $
+--- config/gdm.conf.in.orig	2003-08-20 10:40:45.000000000 -0700
++++ config/gdm.conf.in	2003-08-20 21:04:36.000000000 -0700
+@@ -68,8 +68,8 @@ TimedLoginDelay=30
+ # you should create these user and group.  Anyone found running this as
+ # someone too privilaged will get a kick in the ass.  This should have
+ # access to only the gdm directories and files.
+-User=gdm
+-Group=gdm
++User=_x11
++Group=_x11
+ # To try to kill all clients started at greeter time or in the Init script.
+ # doesn't always work, only if those clients have a window of their own
+ #KillInitClients=true
