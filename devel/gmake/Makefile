@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/07/04 01:55:23 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2000/07/19 08:24:53 brad Exp $
 
 DISTNAME=	make-3.79.1
 PKGNAME=	gmake-3.79.1
@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR= make
 
 HOMEPAGE=	http://www.gnu.org/software/make/
 
-LIB_DEPENDS=	intl::devel/gettext
+LIB_DEPENDS=	intl.1::devel/gettext
 
 MAINTAINER=	todd@openbsd.org
 
