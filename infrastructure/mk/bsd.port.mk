@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.576 2003/08/04 13:25:36 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.577 2003/08/04 14:00:46 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -684,11 +684,9 @@ ${WRKPKG}/depends${SUBPACKAGE}:
 	@mkdir -p ${WRKPKG}
 	@>$@
 .if (defined(RUN_DEPENDS) && !empty(RUN_DEPENDS)) || (!defined(NO_SHARED_LIBS) && defined(LIB_DEPENDS) && !empty(LIB_DEPENDS))
-	@: $${_DEPENDS_FILE:=`mktemp /tmp/depends.XXXXXXXXXX`}; \
-	export _DEPENDS_FILE; \
+	@${_depfile_fragment}; \
 	echo "|${FULLPKGNAME${SUBPACKAGE}}|" >>$${_DEPENDS_FILE}; \
-	self=${FULLPKGNAME${SUBPACKAGE}} _depends_result=$@ ${MAKE} _recurse-solve-package-depends; \
-	rm -f $${_DEPENDS_FILE}
+	self=${FULLPKGNAME${SUBPACKAGE}} _depends_result=$@ ${MAKE} _recurse-solve-package-depends
 .endif
 
 MTREE_FILE?=
@@ -1071,6 +1069,11 @@ addsum: fetch-all
 
 # Various dependency styles
 
+_depfile_fragment= \
+	: $${_DEPENDS_FILE:=`mktemp /tmp/depends.XXXXXXXXX|| exit 1`}; \
+	export _DEPENDS_FILE; \
+	trap "rm -f $${_DEPENDS_FILE}" 0 1 2 3 13 15
+
 _build_depends_fragment= \
 	if pkg dependencies check "$$pkg"; then \
 		found=true; \
@@ -1228,10 +1231,11 @@ uninstall deinstall fake package lib-depends-check manpages-check:
 # going to be tweaked as a result of running lib-depends-check.
 #
 lib-depends-check: ${_LIBLIST} ${_BUILDLIBLIST}
-	@_DEPENDS_FILE=`mktemp /tmp/depends.XXXXXXXXX`; export _DEPENDS_FILE; LIB_DEPENDS="`${MAKE} _recurse-lib-depends-check`" PKG_DBDIR='${PKG_DBDIR}' \
+	@${_depfile_fragment}; \
+	LIB_DEPENDS="`${MAKE} _recurse-lib-depends-check`" \
+	PKG_DBDIR='${PKG_DBDIR}' \
 		perl ${PORTSDIR}/infrastructure/install/check-libs \
-		${_LIBLIST} ${_BUILDLIBLIST}; \
-	rm -f ${_DEPENDS_FILE}
+		${_LIBLIST} ${_BUILDLIBLIST}
 
 manpages-check: ${_FAKE_COOKIE}
 	@cd ${WRKINST}${TRUEPREFIX}/man && \
@@ -2281,11 +2285,9 @@ _recurse-run-dir-depends:
 
 run-dir-depends:
 .if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
-	@: $${_DEPENDS_FILE:=`mktemp /tmp/depends.XXXXXXXXXX`}; \
-	export _DEPENDS_FILE; \
+	@${_depfile_fragment}; \
 	echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
-	self=${FULLPKGPATH} ${MAKE} _recurse-run-dir-depends; \
-	rm -f $${_DEPENDS_FILE}
+	self=${FULLPKGPATH} ${MAKE} _recurse-run-dir-depends
 .else
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
 .endif
@@ -2327,22 +2329,18 @@ _build-dir-depends:
 
 build-dir-depends:
 .if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP)
-	@: $${_DEPENDS_FILE:=`mktemp /tmp/depends.XXXXXXXXXX`}; \
-	export _DEPENDS_FILE; \
+	@${_depfile_fragment}; \
 	echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
-	self=${FULLPKGPATH} ${MAKE} _build-dir-depends; \
-	rm -f $${_DEPENDS_FILE}
+	self=${FULLPKGPATH} ${MAKE} _build-dir-depends
 .else
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
 .endif
 
 all-dir-depends:
 .if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
-	@: $${_DEPENDS_FILE:=`mktemp /tmp/depends.XXXXXXXXXX`}; \
-	export _DEPENDS_FILE; \
+	@${_depfile_fragment}; \
 	echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
-	self=${FULLPKGPATH} ${MAKE} _recurse-all-dir-depends; \
-	rm -f $${_DEPENDS_FILE}
+	self=${FULLPKGPATH} ${MAKE} _recurse-all-dir-depends
 .else
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
 .endif
