@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2001/06/07 17:08:56 shell Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/08 10:02:50 shell Exp $
 
-COMMENT=		'python module for writing basic XML applications'
+COMMENT=		"python module for writing basic XML applications"
 
-VERSION=		0.6.5
+VERSION=		0.6.6
 DISTNAME=		PyXML-${VERSION}
 PKGNAME=		py-xml-${VERSION}
-CATEGORIES=		devel
-NEED_VERSION=		1.406
+CATEGORIES=		textproc devel
+NEED_VERSION=		1.434
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pyxml
@@ -20,38 +20,43 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-BUILD_DEPENDS=		python::lang/python
-NO_CONFIGURE=		Yes
+FLAVORS=                python1
+FLAVOR?=
+
+.if ${FLAVOR:L:Mpython1}
+PYTHON_VER=     1.5
+PYTHON_EXT=     15
+PYTHON_PATH=    ${LOCALBASE}/lib/python${PYTHON_VER}
+RUN_DEPENDS=    ${PYTHON_PATH}/site-packages/distutils::devel/py-Distutils
+.else
+PYTHON_VER=     2.1
+.endif
+
+RUN_DEPENDS+=   python${PYTHON_VER}::lang/python${PYTHON_EXT}
+BUILD_DEPENDS=  ${RUN_DEPENDS}
+
+SUBST_VARS=     PYTHON_VER
 
 DOC_DIR=		${PREFIX}/share/doc/PyXML
-DOC_SUB=		4DOM xmlproc
-DOC_FILE=		xml-howto.tex xml-howto.txt \
-			xml-ref.tex xml-ref.txt
-DOC_4DOM=		4DOM.web Extensions.api Extensions.html \
-			Ranges.api Ranges.html index.html
-DOC_XMLPROC=		artikler.css basicapi.gif cmdline.gif \
-			standard.css wxval.gif xmlproc-catalog-doco.html \
-			xmlproc-doco.html xmlproc-dtd-doco.html \
-			xmlproc-license.html xmlproc.html \
-			xmlproc_cmdline.html xmlproc_dtdparser.html \
-			xmlproc_ns.html xmlproc_tut.html
+SRC_DOCDIR=		${WRKSRC}/doc
+SRC_DOCMOD=		4DOM xmlproc
+SRC_DOCFILES=		package-summary.txt xml-howto.tex \
+			xml-howto.txt xml-ref.tex xml-ref.txt
 
 do-build:
-	cd ${WRKSRC}; python ./setup.py build --build-base=${WRKSRC}
+	cd ${WRKSRC}; python${PYTHON_VER} ./setup.py build \
+		--build-base=${WRKSRC}
 
 do-install:
-	cd ${WRKSRC}; python ./setup.py install --prefix=${PREFIX}
-.for i in ${DOC_SUB}
+	cd ${WRKSRC}; python${PYTHON_VER} ./setup.py install \
+		--prefix=${PREFIX}
+	${INSTALL_DATA_DIR} ${DOC_DIR}
+.for i in ${SRC_DOCMOD}
 	${INSTALL_DATA_DIR} ${DOC_DIR}/$i
+	${INSTALL_DATA} ${SRC_DOCDIR}/$i/* ${DOC_DIR}/$i/
 .endfor
-.for i in ${DOC_FILE}
-	${INSTALL_DATA} ${WRKBUILD}/doc/$i ${DOC_DIR}/$i
-.endfor
-.for i in ${DOC_4DOM}
-	${INSTALL_DATA} ${WRKBUILD}/doc/4DOM/$i ${DOC_DIR}/4DOM/$i
-.endfor
-.for i in ${DOC_XMLPROC}
-	${INSTALL_DATA} ${WRKBUILD}/doc/xmlproc/$i ${DOC_DIR}/xmlproc/$i
+.for i in ${SRC_DOCFILES}
+	${INSTALL_DATA} ${SRC_DOCDIR}/$i ${DOC_DIR}/$i
 .endfor
 
 .include <bsd.port.mk>
