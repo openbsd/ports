@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2002/06/15 23:53:50 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/08/18 12:37:14 espie Exp $
 
 CATEGORIES=	x11
 
 COMMENT=	"GUI for ogle"
-DISTNAME=	ogle_gui-0.8.3
+DISTNAME=	ogle_gui-0.8.5
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
 # Authors can be reached at dvd@dtek.chalmers.se
 MASTER_SITES=	${HOMEPAGE}dist/
