@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/04/18 21:47:50 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/12/27 22:06:38 avsm Exp $
 bin/GET
 bin/HEAD
 bin/POST
@@ -25,6 +25,7 @@ libdata/perl5/site_perl/HTTP/Status.pm
 libdata/perl5/site_perl/LWP.pm
 libdata/perl5/site_perl/LWP/Authen/Basic.pm
 libdata/perl5/site_perl/LWP/Authen/Digest.pm
+libdata/perl5/site_perl/LWP/ConnCache.pm
 libdata/perl5/site_perl/LWP/Debug.pm
 libdata/perl5/site_perl/LWP/MediaTypes.pm
 libdata/perl5/site_perl/LWP/MemberMixin.pm
@@ -35,15 +36,20 @@ libdata/perl5/site_perl/LWP/Protocol/file.pm
 libdata/perl5/site_perl/LWP/Protocol/ftp.pm
 libdata/perl5/site_perl/LWP/Protocol/gopher.pm
 libdata/perl5/site_perl/LWP/Protocol/http.pm
-libdata/perl5/site_perl/LWP/Protocol/http11.pm
+libdata/perl5/site_perl/LWP/Protocol/http10.pm
 libdata/perl5/site_perl/LWP/Protocol/https.pm
+libdata/perl5/site_perl/LWP/Protocol/https10.pm
 libdata/perl5/site_perl/LWP/Protocol/mailto.pm
 libdata/perl5/site_perl/LWP/Protocol/nntp.pm
+libdata/perl5/site_perl/LWP/Protocol/nogo.pm
 libdata/perl5/site_perl/LWP/RobotUA.pm
 libdata/perl5/site_perl/LWP/Simple.pm
 libdata/perl5/site_perl/LWP/UserAgent.pm
 libdata/perl5/site_perl/LWP/media.types
 libdata/perl5/site_perl/Net/HTTP.pm
+libdata/perl5/site_perl/Net/HTTP/Methods.pm
+libdata/perl5/site_perl/Net/HTTP/NB.pm
+libdata/perl5/site_perl/Net/HTTPS.pm
 libdata/perl5/site_perl/WWW/RobotRules.pm
 libdata/perl5/site_perl/WWW/RobotRules/AnyDBM_File.pm
 libdata/perl5/site_perl/lwpcook.pod
@@ -66,6 +72,7 @@ man/man3/HTTP::Request::Common.3p
 man/man3/HTTP::Response.3p
 man/man3/HTTP::Status.3p
 man/man3/LWP.3p
+man/man3/LWP::ConnCache.3p
 man/man3/LWP::Debug.3p
 man/man3/LWP::MediaTypes.3p
 man/man3/LWP::MemberMixin.3p
@@ -73,11 +80,14 @@ man/man3/LWP::Protocol.3p
 man/man3/LWP::RobotUA.3p
 man/man3/LWP::Simple.3p
 man/man3/LWP::UserAgent.3p
+man/man3/Net::HTTP.3p
+man/man3/Net::HTTP::NB.3p
 man/man3/WWW::RobotRules.3p
 man/man3/WWW::RobotRules::AnyDBM_File.3p
 man/man3/lwpcook.3p
 @dirrm libdata/perl5/site_perl/WWW/RobotRules
 @dirrm libdata/perl5/site_perl/LWP/Protocol
 @dirrm libdata/perl5/site_perl/LWP/Authen
+@dirrm libdata/perl5/site_perl/LWP
 @dirrm libdata/perl5/site_perl/HTTP/Request
 @dirrm libdata/perl5/site_perl/HTTP/Headers

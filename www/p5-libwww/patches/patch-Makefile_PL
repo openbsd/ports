@@ -1,0 +1,43 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2001/12/27 22:06:38 avsm Exp $
+--- Makefile.PL.orig	Tue Nov 27 17:47:53 2001
++++ Makefile.PL	Thu Dec 27 21:47:24 2001
+@@ -41,13 +41,16 @@ my $some_time_ago = sprintf "%04d-%02d-%
+           sub { ($_[5]+1900, $_[4]+1, $_[3])}->(localtime(time - 45 * 24*60*60));
+ if ($some_time_ago lt $release_date) {
+     # Check if we have internet connection
+-    require IO::Socket;
+-    my $s = IO::Socket::INET->new(PeerAddr => "www.google.com:80",
+-				  Timeout  => 10,
+-				 );
++#    require IO::Socket;
++#    my $s = IO::Socket::INET->new(PeerAddr => "www.google.com:80",
++#				  Timeout  => 10,
++#				 );
++
++my $s = 0;
++
+     if ($s) {
+ 	# XXX could try to send a GET to it???
+-	close($s);
++#	close($s);
+ 
+ 	print <<EOT;
+ 
+@@ -95,7 +98,7 @@ to install in $Config{sitebin}.
+ EOT
+     my @tmp;
+     for (@programs_to_install) {
+-	if (prompt("Do you want to install $_?", "y") =~ /^y/) {
++	if (1) {
+ 	    push(@tmp, $_);
+ 	}
+     }
+@@ -112,7 +115,7 @@ $Config{sitebin}.
+ EOT
+ 	@tmp = ();
+ 	for (@request_aliases) {
+-	    if (prompt("Do you want to install the $_ alias?", "y") =~ /^y/) {
++	    if (1) {
+ 		push(@tmp, $_);
+ 	    }
+ 	}
