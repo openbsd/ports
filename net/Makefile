@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2001/05/05 21:28:10 espie Exp $
+# $OpenBSD: Makefile,v 1.138 2001/05/05 22:20:37 espie Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -21,7 +21,10 @@
      SUBDIR += courtney
      SUBDIR += curl
      SUBDIR += curl,kerberos
-#    SUBDIR += cvsup
+     SUBDIR += cvsup
+     SUBDIR += cvsup,no_x11
+     SUBDIR += cvsup,static
+     SUBDIR += cvsup,static,no_x11
      SUBDIR += cvsup-bin
      SUBDIR += cvsup-bin,no_x11
      SUBDIR += cvsup-bin-old
