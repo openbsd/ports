@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.37 2002/05/12 21:19:31 brad Exp $
+# $OpenBSD: network.conf.template,v 1.38 2002/05/13 07:45:45 jsyn Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -248,6 +248,9 @@ MASTER_SITE_PACKETSTORM+=	\
 	http://packetstorm.linuxsecurity.com/%SUBDIR%/ \
 	http://packetstormsecurity.nl/%SUBDIR%/ \
 	http://packetstorm.decepticons.org/%SUBDIR%/ \
+	http://packetstorm.nulldetector.com/%SUBDIR%/ \
+	http://packetstorm.radisnet.net/%SUBDIR%/ \
+	http://packetstorm.acm.miami.edu/%SUBDIR%/ \
 	http://packetstorm.dnsi.info/%SUBDIR%/ \
 	http://packetstormsecurity.be/%SUBDIR%/ \
 	http://packetstorm.bjstuff.com/%SUBDIR%/ \
