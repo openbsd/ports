@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/20 23:48:50 reinhard Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/21 15:33:01 brad Exp $
 
 COMMENT=	'cross-platform multimedia library'
 
@@ -30,25 +30,28 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --disable-joystick \
 		 --disable-pthread-sem \
-		 --disable-nasm \
-		 --disable-video-opengl \
-		 --disable-arts \
-		 --disable-esd \
-		 --disable-oss
+		 --disable-nasm
 
 .if ${FLAVOR:L:Moss}
 LIB_DEPENDS+=	esd.2::audio/esound
 CONFIGURE_ARGS+= --enable-esd \
 		 --enable-oss
+.else
+CONFIGURE_ARGS+= --disable-esd \
+		 --disable-oss
 .endif
 
 .if ${FLAVOR:L:Mgl}
 CONFIGURE_ARGS+= --enable-video-opengl
+.else
+CONFIGURE_ARGS+= --disable-video-opengl
 .endif
 
 .if ${FLAVOR:L:Marts}
 LIB_DEPENDS+=	artsc::x11/kde/libs2
 CONFIGURE_ARGS+= --enable-arts
+.else
+CONFIGURE_ARGS+= --disable-arts
 .endif
 
 .if ${FLAVOR:L:Mno_x11}
