@@ -1,3 +1,6 @@
+@comment $OpenBSD: PLIST-dpi240,v 1.1 2001/10/02 14:18:49 heko Exp $
+@option no-default-conflict
+@pkgcfl pkfonts-1.0-dpi240
 lib/fonts/pk240/circle10.240pk
 lib/fonts/pk240/circlew10.240pk
 lib/fonts/pk240/cmb10.240pk
@@ -725,3 +728,4 @@ lib/fonts/pk240/linew10.346pk
 lib/fonts/pk240/linew10.415pk
 lib/fonts/pk240/linew10.498pk
 lib/fonts/pk240/linew10.597pk
+@dirrm lib/fonts/pk240

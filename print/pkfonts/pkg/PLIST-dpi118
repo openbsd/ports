@@ -1,3 +1,6 @@
+@comment $OpenBSD: PLIST-dpi118,v 1.1 2001/10/02 14:18:49 heko Exp $
+@option no-default-conflict
+@pkgcfl pkfonts-1.0-dpi118
 lib/fonts/pk118/circle10.118pk
 lib/fonts/pk118/circle10.129pk
 lib/fonts/pk118/circle10.142pk
@@ -899,3 +902,4 @@ lib/fonts/pk118/msym8.142pk
 lib/fonts/pk118/msym9.118pk
 lib/fonts/pk118/msym9.129pk
 lib/fonts/pk118/msym9.142pk
+@dirrm lib/fonts/pk118

@@ -1,3 +1,6 @@
+@comment $OpenBSD: PLIST-dpi360,v 1.1 2001/10/02 14:18:49 heko Exp $
+@option no-default-conflict
+@pkgcfl pkfonts-1.0-dpi360
 lib/fonts/pk360/cmb10.360pk
 lib/fonts/pk360/cmb10.394pk
 lib/fonts/pk360/cmb10.432pk
@@ -623,3 +626,4 @@ lib/fonts/pk360/linew10.518pk
 lib/fonts/pk360/linew10.622pk
 lib/fonts/pk360/linew10.746pk
 lib/fonts/pk360/linew10.896pk
+@dirrm lib/fonts/pk360

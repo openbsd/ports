@@ -2,21 +2,22 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.15 2001/06/27 20:56:27 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2001/10/02 14:18:49 heko Exp $
 #
 
 COMMENT=	"English PK fonts, for ghostscript, xdvi and so on"
 
 DISTNAME=	pkfonts
-PKGNAME=	pkfonts${RESOLUTION}-1.0
+PKGNAME=	pkfonts-1.0
 CATEGORIES=	print
-NEED_VERSION=	1.402
-FAKE=No
-MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/TeX/fonts/ \
-		ftp://ftp.wg.omron.co.jp/pub/tex/
-DISTFILES=	pk${RESOLUTION}.tar.gz
-# see below for RESOLUTION definition
+NEED_VERSION=	1.465
+DISTFILES=	pk${FLAVOR:S/dpi//}.tar.gz
 EXTRACT_ONLY=	
+
+MASTER_SITES=   ftp://ports.jp.FreeBSD.org/pub/%SUBDIR%/ \
+                ftp://ftp4.jp.FreeBSD.org/pub/%SUBDIR%/ \
+                ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/%SUBDIR%/
+MASTER_SITE_SUBDIR=     FreeBSD-jp/ports-jp/LOCAL_PORTS/pkfonts
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -26,41 +27,22 @@ PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
 
-MANUAL_PACKAGE_BUILD=	RESOLUTION has to be set to 118 240 300 360 400 600
 DIST_SUBDIR=	pkfonts
-NO_BUILD=	yes
+NO_BUILD=	Yes
 
-.if !defined(RESOLUTION)
-RESOLUTION=     300
-RESOLUTION_UNSPECIFIED=	yes
-.else
-.if ${RESOLUTION} != 118 && ${RESOLUTION} != 240 && \
-	${RESOLUTION} != 300 && ${RESOLUTION} != 360 && \
-	${RESOLUTION} != 400 && ${RESOLUTION} != 600
-RESOLUTION_INVALID=	yes
-.endif
-.endif
+FLAVORS=	dpi118 dpi240 dpi300 dpi360 dpi400 dpi600
+FLAVOR?=	dpi300
 
-.if !defined(NO_WARNINGS)
-pre-fetch:
-.if defined(RESOLUTION_UNSPECIFIED)
-	@echo "Using ${RESOLUTION}dpi English PK fonts."
-	@echo "Set the environment variable RESOLUTION if you want"
-	@echo "it to use other resolutions."
-	@echo "Possible values are: 118, 240, 300 (default), 360, 400 and 600."
-.elif defined(RESOLUTION_INVALID)
-	@echo "Error: invalid value for RESOLUTION: \"${RESOLUTION}\"" 
-	@echo "Possible values are: 118, 240, 300 (default), 360, 400 and 600."
-	@/usr/bin/false
-.endif
+.for dpi in ${FLAVORS:S/dpi//}
+SUPDISTFILES+=  pk${dpi}.tar.gz
+.endfor    
+
+.if empty(FLAVOR)
+ERRORS+=	"Fatal: You must choose a flavor of: ${FLAVORS}"
 .endif
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/fonts
-	tar -C ${PREFIX}/lib/fonts -xzf ${FULLDISTDIR}/${DISTFILES}
-	@cp ${PKGDIR}/${RESOLUTION}.list ${PKGDIR}/PLIST 
-
-pre-clean:
-	@rm -f ${PKGDIR}/PLIST  # created by do-install above
+	tar -xzf ${FULLDISTDIR}/${DISTFILES} -C ${PREFIX}/lib/fonts
 
 .include <bsd.port.mk>

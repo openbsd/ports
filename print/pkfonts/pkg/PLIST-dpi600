@@ -1,3 +1,6 @@
+@comment $OpenBSD: PLIST-dpi600,v 1.1 2001/10/02 14:18:49 heko Exp $
+@option no-default-conflict
+@pkgcfl pkfonts-1.0-dpi600
 lib/fonts/pk600/cmbsy10.1037pk
 lib/fonts/pk600/cmbsy10.1244pk
 lib/fonts/pk600/cmbsy10.1493pk
@@ -551,3 +554,4 @@ lib/fonts/pk600/linew10.600pk
 lib/fonts/pk600/linew10.657pk
 lib/fonts/pk600/linew10.720pk
 lib/fonts/pk600/linew10.864pk
+@dirrm lib/fonts/pk600

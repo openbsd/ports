@@ -1,3 +1,6 @@
+@comment $OpenBSD: PLIST-dpi400,v 1.1 2001/10/02 14:18:49 heko Exp $
+@option no-default-conflict
+@pkgcfl pkfonts-1.0-dpi400
 lib/fonts/pk400/cmb10.400pk
 lib/fonts/pk400/cmb10.438pk
 lib/fonts/pk400/cmb10.480pk
@@ -695,3 +698,4 @@ lib/fonts/pk400/linew10.691pk
 lib/fonts/pk400/linew10.829pk
 lib/fonts/pk400/linew10.995pk
 lib/fonts/pk400/logo50.400pk
+@dirrm lib/fonts/pk400
