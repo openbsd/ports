@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 1999/08/11 03:28:11 brad Exp $
+# $OpenBSD: Makefile,v 1.12 1999/09/24 13:29:46 brad Exp $
 
-DISTNAME=	bzip2-0.9.5c
+DISTNAME=	bzip2-0.9.5d
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.bzip2.org/bzip2/v095/ \
-		http://www.muraroa.demon.co.uk/ \
-		http://www.digistar.com/bzip2/
+MASTER_SITES=	ftp://sourceware.cygnus.com/pub/bzip2/ \
+		http://www.bzip2.org/bzip2/v095/
 
 MAINTAINER=	angelos@openbsd.org
 
