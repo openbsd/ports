@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/06/18 06:34:10 form Exp $
+# $OpenBSD: Makefile,v 1.5 1998/07/13 00:36:06 marc Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -31,6 +31,7 @@
 #    SUBDIR += netscape3
 #    SUBDIR += netscape4-communicator
 #    SUBDIR += netscape4-navigator
+     SUBDIR += navigator
 #    SUBDIR += p5-Apache
 #    SUBDIR += p5-CGI
 #    SUBDIR += p5-CGI_Lite
