@@ -1,4 +1,4 @@
-@comment $OpenBSD
+@comment $OpenBSD: PLIST,v 1.7 2002/09/19 16:38:43 couderc Exp $
 bin/mirror
 bin/do_unlinks
 bin/pkgs_to_mmin
