@@ -1,0 +1,59 @@
+$OpenBSD: patch-init_c,v 1.1.1.1 2002/07/14 19:34:28 wilfried Exp $
+--- init.c.orig	Tue Jul 17 13:39:11 2001
++++ init.c	Fri Jun  7 09:07:00 2002
+@@ -323,7 +323,8 @@ gint stat;
+ 
+ 	get_spawn_path(CDRECORD,tmp);
+ 	check_executable(tmp,NULL,1);
+-	suid_set(tmp);
++	if (!isroot())
++		suid_set(tmp);
+ 	stat = check_version_cdrecord(CDRECORD_VERSION,ver);
+ 	if (stat == 1 && !noversioncheck) {
+ 		g_warning("Invalid cdrecord version %s found. Expecting version %s\n", ver, CDRECORD_VERSION);	
+@@ -337,7 +338,8 @@ gint stat;
+ 
+ 	get_spawn_path(MKISOFS,tmp);
+ 	check_executable(tmp,NULL,1);
+-	suid_set(tmp);
++	if (!isroot())
++		suid_set(tmp);
+ 	stat = check_version_mkisofs(MKISOFS_VERSION,ver);
+ 	if (stat == 1 && !noversioncheck) {
+ 		g_warning("Invalid mkisofs version %s found. Expecting version %s\n", ver, MKISOFS_VERSION);	
+@@ -350,7 +352,8 @@ gint stat;
+ 
+ 	get_spawn_path(READCD,tmp);
+ 	check_executable(tmp,NULL,1);
+-	suid_set(tmp);
++	if (!isroot())
++		suid_set(tmp);
+ 	stat = check_version_readcd(READCD_VERSION,ver);
+ 	if (stat == 1 && !noversioncheck) {
+ 		g_warning("Invalid readcd version %s found. Expecting version %s\n", ver, READCD_VERSION);	
+@@ -364,7 +367,8 @@ gint stat;
+ 
+ 	get_spawn_path(CDDA2WAV,tmp);
+ 	check_executable(tmp,NULL,1);
+-	suid_set(tmp);
++	if (!isroot())
++		suid_set(tmp);
+ 	stat = check_version_cdda2wav(CDDA2WAV_VERSION,ver);
+ 	if (stat == 1 && !noversioncheck) {
+ 		g_warning("Invalid cdda2wav version %s found. Expecting version %s\n", ver, CDDA2WAV_VERSION);	
+@@ -393,12 +397,13 @@ gint stat;
+ 
+ gint check_wrapper_binary() {
+ gchar tmp[MAXLINE];
+-gid_t wrap_gid;
++gid_t wrap_gid=0;
+ gint stat;
+ 
+ 	g_snprintf(tmp,MAXLINE,"%s/%s", sharedir, WRAPPER);
+ 	check_executable(tmp,NULL,1);
+-	wrap_gid = sgid_set(tmp);
++	if (!isroot())
++		wrap_gid = sgid_set(tmp);
+ 
+ 	/* security check. If this fails then the wrapper is wrong */
+ 	stat = check_version_wrapper(tmp);

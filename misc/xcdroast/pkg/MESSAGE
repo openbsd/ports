@@ -1,0 +1,20 @@
+Notes on Preparing X-CD-Roast for Operation
+-------------------------------------------
+
+Due to cdrecord's -scanbus option being wholly unusable under
+OpenBSD, you will need to manually specify the device by using the
+-f option of xcdroast.
+
+Find your CD device:
+	dmesg |grep cd0
+	cd0 at scsibus0 targ 0 lun 0: <PLEXTOR, CD-R PX-W8432T, 1.07> <snip>
+
+Specify the device (:bus,targ,lun is optional):
+	"xcdroast -f /dev/rcd0c"
+
+To begin generating a configuration file, simply run xcdroast with
+the above option as root.  If you wish to learn how to configure
+your system to allow for non-root cd-burning, please consult the
+installed documentation at:
+
+	${PREFIX}/share/doc/xcdroast/README.nonroot

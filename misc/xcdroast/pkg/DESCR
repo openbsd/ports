@@ -1,0 +1,5 @@
+X-CD-Roast is a program dedicated to easy CD creation under most
+UNIX platforms.  It combines command line tools like cdrecord,
+cdda2wav, and mkisofs into a nice graphical user interface.
+
+WWW: ${HOMEPAGE}
