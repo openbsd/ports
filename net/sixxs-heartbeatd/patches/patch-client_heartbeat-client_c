@@ -1,0 +1,12 @@
+$OpenBSD: patch-client_heartbeat-client_c,v 1.1.1.1 2004/04/23 19:32:51 naddy Exp $
+--- client/heartbeat-client.c.orig	2004-04-21 14:07:53.000000000 +0200
++++ client/heartbeat-client.c	2004-04-21 14:08:08.000000000 +0200
+@@ -277,7 +277,7 @@ int main(int argc, char *argv[])
+ 	if (argc != 2)
+ 	{
+ 		fprintf(stderr,
+-			"heartbeat-client <configfile>\n");
++			"heartbeatd <configfile>\n");
+ 		return -1;
+ 	}
+ 
