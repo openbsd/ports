@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/04/15 12:41:25 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/09/28 00:35:11 naddy Exp $
 @group games
 @mode 2555
 bin/xbill
@@ -70,3 +70,5 @@ share/xbill/pixmaps/wingdows.xpm
 @dirrm share/xbill/pixmaps
 @dirrm share/xbill/bitmaps
 @dirrm share/xbill
+@cwd /var/games
+@extra xbill.scores

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/03/06 00:24:56 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/09/28 00:35:11 naddy Exp $
 @group games
 @mode 2755
 bin/xpat2
@@ -95,3 +95,5 @@ man/man6/xpat2.6
 @dirrm lib/X11/xpat/french
 @dirrm lib/X11/xpat/default
 @dirrm lib/X11/xpat
+@cwd /var/games
+@extra xpat.log

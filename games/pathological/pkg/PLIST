@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/08/08 22:01:36 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/09/28 00:35:10 naddy Exp $
 bin/pathological
 bin/write-highscores
 man/man6/pathological.6
@@ -169,3 +169,5 @@ share/pixmaps/pathological.xpm
 @dirrm share/pathological
 @dirrm share/doc/pathological/html
 @dirrm share/doc/pathological
+@cwd /var/games
+@extra pathological_scores

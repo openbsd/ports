@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/09/16 08:18:11 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/09/28 00:35:11 naddy Exp $
 bin/xsoldier
 lib/X11/xsoldier/Boss1.xpm
 lib/X11/xsoldier/Boss2.xpm
@@ -30,3 +30,5 @@ lib/X11/xsoldier/Star1.xpm
 lib/X11/xsoldier/Star2.xpm
 lib/X11/xsoldier/Title.xpm
 @dirrm lib/X11/xsoldier
+@cwd /var/games
+@extra xsoldier.scores

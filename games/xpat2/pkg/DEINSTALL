@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2002/09/19 07:00:42 pvalchev Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/09/28 00:35:11 naddy Exp $
 #
 # xpat2 de-installation script
 
@@ -34,7 +34,7 @@ fi
 #
 case $2 in
     DEINSTALL)
-	if [ -f $SCORE_FILE ]; then
+	if [ "$PKG_DELETE_EXTRA" != Yes -a -f $SCORE_FILE ]; then
 	    do_notice "$1"
 	fi
 	;;

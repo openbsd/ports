@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/03/14 15:04:13 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/09/28 00:35:11 naddy Exp $
 bin/tosha
 bin/pcmplay
 bin/pcmfade
@@ -7,3 +7,5 @@ man/man1/pcmplay.1
 man/man1/pcmfade.1
 share/examples/tosha/tosharc.sample
 @dirrm share/examples/tosha
+@cwd ${SYSCONFDIR}
+@extra tosharc
