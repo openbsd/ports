@@ -1,0 +1,21 @@
+$OpenBSD: patch-Mail_Header_pm,v 1.1 2001/01/07 21:55:13 avsm Exp $
+--- Mail/Header.pm.orig	Sun Jan  7 21:42:06 2001
++++ Mail/Header.pm	Sun Jan  7 21:41:51 2001
+@@ -966,7 +966,7 @@ of tag will be removed.
+ 
+ =item count ( TAG )
+ 
+-Returns the number of times the given atg appears in the header
++Returns the number of times the given tag appears in the header
+ 
+ =item print ( [ FD ] )
+ 
+@@ -991,7 +991,7 @@ a description on how C<Mail::Header> use
+ 
+ =item tags ()
+ 
+-Retruns an array of all the tags that exist in the header. Each tag will
++Returns an array of all the tags that exist in the header. Each tag will
+ only appear in the list once. The order of the tags is not specified.
+ 
+ =item dup ()

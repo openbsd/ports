@@ -1,7 +1,6 @@
 MailTools is a suite of modules to handle various aspects of Mail with perl:
 
 Mail::Address - Parse mail addresses
-Mail::Alias - maniulate mail alias files of various formats
 Mail::Cap - Parse mailcap files
 Mail::Field - Base class for manipulation of mail header fields
 Mail::Filter - Filter mail through multiple subroutines
