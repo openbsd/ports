@@ -1,15 +1,16 @@
-$OpenBSD: patch-compat,v 1.1 2000/09/21 08:14:56 camield Exp $
+$OpenBSD: patch-compat,v 1.2 2000/09/21 08:49:32 camield Exp $
 
 Output in /bin/ls format instead of EPLF. EPLF is not yet compatible
 with some major FTP clients.
 
-For information on EPLF see: http://cr.yp.to/ftp/list/eplf.html
+/bin/ls format complies with: http://cr.yp.to/ftp/list/binls.html
+For information on EPLF see:  http://cr.yp.to/ftp/list/eplf.html
 
 Patch by Camiel Dobbelaar, <cd@sentia.nl>
 
 --- fetch.c.orig	Tue Nov  9 08:23:46 1999
-+++ fetch.c	Tue Sep 19 11:48:13 2000
-@@ -40,24 +40,36 @@
++++ fetch.c	Thu Sep 21 10:35:18 2000
+@@ -40,24 +40,35 @@
  
  static void printstat()
  {
@@ -33,11 +34,11 @@ Patch by Camiel Dobbelaar, <cd@sentia.nl>
 -    substdio_put(&ss,strnum,fmt_ulong(strnum,(unsigned long) st.st_size));
 +  /* rights, links, user, group */
 +  if (((st.st_mode & S_IFMT) == S_IFREG) && ((st.st_mode & 0444) == 0444)) 
-+    substdio_puts(&ss,"-r--r--r--  1 pub  pub ");
++    substdio_puts(&ss,"-rw-r--r--  1 owner group ");
 +  else if ((st.st_mode & S_IFMT) == S_IFDIR)
-+    substdio_puts(&ss,"dr-xr-xr-x  2 pub  pub ");
++    substdio_puts(&ss,"drwxr-xr-x  1 owner group ");
 +  else {
-+    substdio_puts(&ss,"----------  1 pub  pub ");
++    substdio_puts(&ss,"----------  1 owner group ");
 +    /* do not reveal size, the EPLF implementation does not either */
 +    st.st_size = 0;
    }
@@ -45,9 +46,8 @@ Patch by Camiel Dobbelaar, <cd@sentia.nl>
 +
 +  /* size */
 +  len = fmt_ulong(strnum,(unsigned long) st.st_size);
-+  /* Internet Explorer gets deeply confused when using tabs, so */
-+  /* align size using this ugly hack, to suit textmode clients. */
-+  substdio_put(&ss,"          ",((10-len) > 0) ? (10-len):0);
++  /* right justify in 13-byte field */
++  substdio_put(&ss,"             ",((13-len) > 0) ? (13-len):0);
 +  substdio_put(&ss,strnum,len);
 +  substdio_puts(&ss," ");
 +
