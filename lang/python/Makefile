@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2001/10/27 03:01:53 brad Exp $
+# $OpenBSD: Makefile,v 1.46 2001/11/05 22:46:53 shell Exp $
 # Uses threads
 
 COMMENT= 	"interpreted object-oriented programming language"
@@ -11,6 +11,7 @@ CATEGORIES=	lang
 NEED_VERSION=	1.475
 MASTER_SITES=	ftp://ftp.python.org/pub/%SUBDIR%/ \
 		ftp://python.mirrors.netnumina.com/python/pub/%SUBDIR%/
+		http://www.linux.org.hk/mirror/python/ftp/%SUBDIR%/
 MASTER_SITE_SUBDIR= python/${VERSION}
 EXTRACT_SUFX=	.tgz
 
