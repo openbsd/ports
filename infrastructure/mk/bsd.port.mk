@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.256 2000/04/09 12:04:13 turan Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.257 2000/04/09 15:05:52 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1666,7 +1666,7 @@ ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE} ${PLIST}
 
 .if !target(fetch-all)
 fetch-all:
-	@cd ${.CURDIR} && make __FETCH_ALL=Yes fetch
+	@cd ${.CURDIR} && make __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes fetch
 .endif
 
 # Separate target for each file fetch will retrieve
