@@ -1,0 +1,17 @@
+$OpenBSD: patch-renderer_cpp,v 1.3 2001/03/05 02:07:44 espie Exp $
+--- renderer.cpp.orig	Mon Mar  5 02:56:24 2001
++++ renderer.cpp	Mon Mar  5 02:56:59 2001
+@@ -1170,8 +1170,13 @@ void Renderer::drawLabel()
+   labelstring.sprintf("%s, %s %d. %d, %d:%02d %s\n"
+                       "View pos %2.2f° %c %2.2f° %c\n"
+                       "Sun pos %2.2f° %c %2.2f° %c",
++#if QT_VERSION >= 200
++                      dt.date().dayName(dt.date().dayOfWeek()).latin1(),
++                      dt.date().monthName(dt.date().month()).latin1(),
++#else
+                       dt.date().dayName(dt.date().dayOfWeek()),
+                       dt.date().monthName(dt.date().month()),
++#endif
+                       dt.date().day(), dt.date().year(),
+                       dt.time().hour(), dt.time().minute(),
+                       tzname[tm->tm_isdst],
