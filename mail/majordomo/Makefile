@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2002/03/21 21:09:17 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/04/25 07:41:07 dhartmei Exp $
 
 COMMENT=	"mailing list manager"
 
 DISTNAME=	majordomo-1.94.5
 CATEGORIES=     mail
 NEED_VERSION=	1.515
-MASTER_SITES=	ftp://ftp.greatcircle.com/pub/majordomo/1.94.5/
 
 HOMEPAGE=	http://www.greatcircle.com/majordomo/
 
-MAINTAINER=	Daniel Hartmeier <daniel@benzedrine.cx>
+MAINTAINER=	Daniel Hartmeier <dhartmei@openbsd.org>
 
 # I sent a mail to greatcircle.com asking for these permissions.
 # Until I get an answer, I assume nothing. 
@@ -18,6 +17,10 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
+
+MASTER_SITES=	ftp://ftp.sgi.com/other/majordomo/1.94.5/ \
+		ftp://ftp.greatcircle.com/pub/majordomo/1.94.5/
+EXTRACT_SUFX=	.tgz
 
 ALL_TARGET=	wrapper
 MAKE_FLAGS+=	W_HOME=${PREFIX}/lib/majordomo \
