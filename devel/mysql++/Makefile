@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/04/02 15:13:05 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2001/06/03 05:32:16 brad Exp $
 
-COMMENT=		'C++ API for MySQL'
+COMMENT=		"C++ API for MySQL"
 
 DISTNAME=		mysql++-1.7.8
 CATEGORIES=		devel
-NEED_VERSION=		1.380
+NEED_VERSION=		1.402
 
 HOMEPAGE=		http://www.mysql.com/downloads/api-mysql++.html
 
@@ -19,7 +19,7 @@ MASTER_SITES=		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/
 			ftp://ftp.mysql.com/mysql++/
 
 BUILD_DEPENDS=		automake::devel/automake
-LIB_DEPENDS=		mysqlclient::databases/mysql
+LIB_DEPENDS=		mysqlclient.10:mysql-client-3.23.*:databases/mysql
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu autoconf

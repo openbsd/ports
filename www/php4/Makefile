@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2001/05/10 22:58:06 avsm Exp $
+# $OpenBSD: Makefile,v 1.40 2001/06/03 05:32:17 brad Exp $
 
 COMMENT=	"server-side HTML-embedded scripting language"
 
@@ -155,7 +155,7 @@ CONFIGURE_ARGS+=	--disable-filepro
 
 .if ${FLAVOR:L:Mmysql}
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
-LIB_DEPENDS+=		mysqlclient::databases/mysql
+LIB_DEPENDS+=		mysqlclient.10:mysql-client-3.23.*:databases/mysql
 .if ${FLAVOR:L:Mmysql_bundled}
 .BEGIN:
 	@echo "Conflicting flavor: ${FLAVOR}"

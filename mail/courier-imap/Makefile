@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/05/10 22:29:04 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.16 2001/06/03 05:32:16 brad Exp $ 
 
 MULTI_PACKAGES=	-pop3
 
@@ -52,7 +52,7 @@ CONFIGURE_ARGS=	--disable-root-check --datadir=${PREFIX}/sbin \
 
 .if ${FLAVOR:L:Mmysql}
 CONFIGURE_ARGS+=	--with-authmysql
-LIB_DEPENDS+=		mysqlclient::databases/mysql
+LIB_DEPENDS+=		mysqlclient.10:mysql-client-3.23.*:databases/mysql
 .else
 CONFIGURE_ARGS+=	--without-authmysql
 .endif
