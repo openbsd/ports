@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/09/16 14:50:00 brad Exp $
 share/sgml/iso8879/ISOamsa
 share/sgml/iso8879/ISOamsb
 share/sgml/iso8879/ISOamsc

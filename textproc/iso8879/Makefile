@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/09/12 15:37:34 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/09/16 14:49:59 brad Exp $
 # $FreeBSD: Makefile,v 1.4 1997/07/10 03:25:28 jfieber Exp $
 
 DISTNAME=	isoENTS
@@ -20,15 +20,11 @@ NO_BUILD=       Yes
 
 WRKDIST=	${WRKDIR}
 
-INSTDIR=	${PREFIX}/share/sgml/iso8879
-
-pre-install:
-	@mkdir -p ${INSTDIR}
-
 do-install:
-	@unzip -aqod ${INSTDIR} ${DISTDIR}/${DISTFILES}
-	${INSTALL_DATA} ${FILESDIR}/catalog ${INSTDIR}/catalog
-	@chmod ${SHAREMODE} ${INSTDIR}/*
-	@chown -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/sgml/iso8879
+	@unzip -aqod ${PREFIX}/share/sgml/iso8879 ${DISTDIR}/${DISTFILES}
+	${INSTALL_DATA} ${FILESDIR}/catalog ${PREFIX}/share/sgml/iso8879
+	@chmod ${SHAREMODE} ${PREFIX}/share/sgml/iso8879/*
+	@chown -R ${SHAREOWN}.${SHAREGRP} ${PREFIX}/share/sgml/iso8879
 
 .include <bsd.port.mk>
