@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/28 12:30:13 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/13 23:31:24 espie Exp $
 
 COMMENT=	"image viewer similar to ACDSee for Windows"
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= kuickshow
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kuickshow/}
 EXTRACT_SUFX=	.tgz
 
 BUILD_DEPENDS=	::x11/qt2-designer

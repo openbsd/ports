@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/10/26 06:48:13 kevlo Exp $
+# $OpenBSD: Makefile,v 1.16 2002/05/13 23:31:25 espie Exp $
 # Uses pthreads (can but does not at the moment)
 
 COMMENT=	"Tool Command Language"
@@ -7,8 +7,7 @@ DISTNAME=	tcl8.3.4
 PKGNAME=	tcl-8.3.4
 CATEGORIES=	lang lang/tcl
 NEED_VERSION=	1.482
-MASTER_SITES=	${MASTER_SITE_TCLTK}
-MASTER_SITE_SUBDIR= tcl8_3
+MASTER_SITES=	${MASTER_SITE_TCLTK:=tcl8_3/}
 
 HOMEPAGE=	http://dev.scriptics.com/software/tcltk/
 

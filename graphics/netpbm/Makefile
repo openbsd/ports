@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2002/03/01 22:49:19 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2002/05/13 23:31:24 espie Exp $
 # $NetBSD: Makefile,v 1.25 1999/03/04 14:18:54 tron Exp $
 
 COMMENT=	"toolkit for converting images between different formats"
@@ -6,8 +6,7 @@ COMMENT=	"toolkit for converting images between different formats"
 DISTNAME=	netpbm-9.24
 CATEGORIES=	graphics
 NEED_VERSION=	1.500
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= netpbm
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netpbm/}
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://netpbm.sourceforge.net/

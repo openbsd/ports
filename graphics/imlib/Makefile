@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2002/04/26 14:55:21 brad Exp $
+# $OpenBSD: Makefile,v 1.42 2002/05/13 23:31:24 espie Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	"image manipulation library for X11"
@@ -6,8 +6,7 @@ COMMENT=	"image manipulation library for X11"
 DISTNAME=	imlib-1.9.11
 CATEGORIES=	graphics devel
 NEED_VERSION=	1.522
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR= stable/sources/imlib
+MASTER_SITES=	${MASTER_SITE_GNOME:=stable/sources/imlib/}
 
 MODULES=	gettext
 LIB_DEPENDS= 	gtk.1.2,gdk.1.2::x11/gtk+ \

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2001/10/10 15:09:09 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/13 23:31:25 espie Exp $
 
 COMMENT=	"recent dejagnu, needed for gcc"
 
 DISTNAME=	dejagnu-1.4.2
 CATEGORIES=	devel
 NEED_VERSION=	1.474
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= dejagnu
+MASTER_SITES=	${MASTER_SITE_GNU:=dejagnu/}
 
 HOMEPAGE=	http://www.gnu.org/software/dejagnu/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/12/05 08:04:27 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/13 23:31:25 espie Exp $
 
 COMMENT=	"scan mailboxes for messages matching a regular expression"
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mboxgrep
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mboxgrep/}
 
 LIB_DEPENDS=	pcre::devel/pcre
 

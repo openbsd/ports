@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.15 2002/03/21 21:09:17 espie Exp $
+#   $OpenBSD: Makefile,v 1.16 2002/05/13 23:31:25 espie Exp $
 
 COMMENT=	"perl module to talk to a POP3 (RFC1081) server"
 
@@ -7,8 +7,7 @@ PKGNAME=	p5-Mail-POP3Client-2.9
 CATEGORIES=	mail perl5
 NEED_VERSION=	1.515
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= Mail
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Mail/}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

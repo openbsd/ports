@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2002/03/21 21:09:19 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2002/05/13 23:31:26 espie Exp $
 
 COMMENT=	"view and manipulate contents of a tar file"
 
 DISTNAME=	xtar-1.4
 CATEGORIES=	misc
 NEED_VERSION=	1.515
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR= utilities
+MASTER_SITES=	${MASTER_SITE_XCONTRIB:=utilities/}
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/01/01 19:57:45 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/13 23:31:25 espie Exp $
 
 COMMENT=		"agent for Razor spam filtering networks"
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	razor
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=razor/}
 
 # Uh, the razor SDK uses Mail-Tools 1.40... but it's not in the
 # ports tree (yet)

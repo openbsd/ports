@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2002/04/17 16:19:39 naddy Exp $ 
+# $OpenBSD: Makefile,v 1.27 2002/05/13 23:31:25 espie Exp $ 
 
 COMMENT=	"imap server for maildir format mailboxes"
 COMMENT-pop3=	"pop3 server for maildir format mailboxes"
@@ -10,8 +10,7 @@ FULLPKGNAME-pop3= courier-pop3-${COURIERVER}
 CATEGORIES=	mail
 NEED_VERSION=	1.503
 
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= courier
+MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=courier/}
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 HOMEPAGE=	http://www.inter7.com/courierimap/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 21:09:17 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/13 23:31:25 espie Exp $
 
 COMMENT=	"manipulates e-mail alias files of various formats"
 
@@ -6,8 +6,7 @@ DISTNAME=	Mail-Alias-1.12
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	mail perl5
 NEED_VERSION=	1.515
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= Mail
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Mail/}
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 

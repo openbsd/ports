@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/03/10 13:08:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2002/05/13 23:31:25 espie Exp $
 
 COMMENT=	"Gtk-based scientific calculator"
 
@@ -15,9 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=calcoo/} \
 			http://www.physics.umn.edu/~kaminski/calcoo/
-MASTER_SITE_SUBDIR=	calcoo
 
 LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/21 02:30:55 jcs Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/13 23:31:25 espie Exp $
 
 DISTNAME=	grepmail-4.70
 CATEGORIES=	mail perl5
@@ -11,8 +11,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 COMMENT=	"search mailboxes for a particular email"
 HOMEPAGE=	http://grepmail.sourceforge.net/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= grepmail
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grepmail/}
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 

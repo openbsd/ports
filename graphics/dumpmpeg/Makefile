@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/11 06:07:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/13 23:31:24 espie Exp $
 
 COMMENT=	"dump frames from mpeg-1 movies"
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= dumpmpeg
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dumpmpeg/}
 
 LIB_DEPENDS=	smpeg.1.3:smpeg-*:devel/smpeg
 

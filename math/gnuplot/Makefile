@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/11/13 20:14:39 danh Exp $
+# $OpenBSD: Makefile,v 1.20 2002/05/13 23:31:25 espie Exp $
 
 COMMENT=	"command-driven interactive function plotting program"
 
@@ -8,8 +8,7 @@ NEED_VERSION=	1.364
 MASTER_SITES=	ftp://ftp.gnuplot.vt.edu/pub/gnuplot/ \
 		ftp://ftp.irisa.fr/pub/gnuplot/ \
 		ftp://ftp.cc.monash.edu.au/pub/gnuplot/ \
-		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= gnuplot
+		${MASTER_SITE_GNU:=gnuplot/}
 
 HOMEPAGE=	http://www.gnuplot.org/
 

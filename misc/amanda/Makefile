@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/01/05 21:04:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2002/05/13 23:31:26 espie Exp $
 
 COMMENT=	"network-capable tape backup (client and tape server)"
 COMMENT-client=	"network-capable tape backup (client only)"
@@ -28,8 +28,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.amanda.org/pub/amanda/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	amanda
+		${MASTER_SITE_SOURCEFORGE:=amanda/}
 
 # Amanda configure looks for gtar and smbclient so that it can hard-code
 # the pathnames.

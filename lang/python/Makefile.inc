@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2002/05/11 21:35:13 matt Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2002/05/13 23:31:25 espie Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -16,10 +16,10 @@ PKGNAME=	python-${VERSION}${PATCHLEVEL}
 DISTNAME=	Python-${VERSION}${PATCHLEVEL}
 CATEGORIES=	lang
 NEED_VERSION=	1.527
-MASTER_SITES=	ftp://ftp.python.org/pub/%SUBDIR%/ \
-		ftp://python.mirrors.netnumina.com/python/pub/%SUBDIR%/ \
-		http://www.linux.org.hk/mirror/python/ftp/%SUBDIR%/
-MASTER_SITE_SUBDIR= python/${VERSION}${PATCHLEVEL}
+MASTER_SITES=	ftp://ftp.python.org/pub/${PSUBDIR}/ \
+		ftp://python.mirrors.netnumina.com/python/pub/${PSUBDIR}/ \
+		http://www.linux.org.hk/mirror/python/ftp/${PSUBDIR}/
+PSUBDIR= python/${VERSION}${PATCHLEVEL}
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.python.org/

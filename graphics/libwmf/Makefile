@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2002/04/28 16:30:52 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/13 23:31:24 espie Exp $
 
 COMMENT=	"WMF handling and conversion library"
 
 DISTNAME=	libwmf-0.2.0
 CATEGORIES=	graphics devel
 NEED_VERSION=	1.522
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= wvware
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wvware/}
 
 HOMEPAGE=	http://www.wvware.com/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

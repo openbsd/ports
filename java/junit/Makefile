@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 20:57:09 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/13 23:31:24 espie Exp $
 
 COMMENT=	"regression testing utility for use with the Java language"
 
@@ -20,8 +20,7 @@ PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	junit
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=junit/}
 EXTRACT_SUFX=	.zip 
 
 RUN_DEPENDS=	::devel/jdk/1.2-blackdown

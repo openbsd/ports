@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/01/30 21:17:26 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2002/05/13 23:31:25 espie Exp $
 # Original from: John Harper <jsh@users.sourceforge.net>
 
 COMMENT=	"Emacs Lisp-like runtime library"
@@ -11,8 +11,7 @@ VERSION=	0.13.4
 DISTNAME=	librep-${VERSION}
 CATEGORIES=	lang
 NEED_VERSION=	1.474
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= librep
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=librep/}
 
 HOMEPAGE=	http://librep.sourceforge.net/
 

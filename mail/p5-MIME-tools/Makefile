@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/12/26 10:18:33 shell Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/13 23:31:25 espie Exp $
 
 COMMENT=		"modules for parsing (and creating!) MIME entities"
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= 	MIME
+MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=MIME/}
 
 BUILD_DEPENDS=	::mail/p5-Mail-Tools  \
 		::converters/p5-MIME-Base64 \

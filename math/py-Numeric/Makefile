@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/30 19:16:08 shell Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/13 23:31:26 espie Exp $
 
 COMMENT=	"fast array facility to the Python language"
 COMMENT-module=	"extra modules for py-Numeric"
@@ -18,8 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	numpy
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=numpy/}
 HOMEPAGE=	http://www.pfdubois.com/numpy/
 
 PYTHON_VER=	2.1

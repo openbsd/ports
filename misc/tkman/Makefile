@@ -3,7 +3,7 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.13 2002/03/07 09:28:42 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2002/05/13 23:31:26 espie Exp $
 #
 
 COMMENT=	"Tcl/Tk-based manual browser"
@@ -21,8 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	tkman
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tkman/}
 
 LIB_DEPENDS=	tk83.1.::x11/tk/8.3
 RUN_DEPENDS=	::textproc/rman \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 21:09:19 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/13 23:31:26 espie Exp $
 
 COMMENT=	"module to obtain financial quotes from exchanges"
 
@@ -7,8 +7,7 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	misc perl5
 NEED_VERSION=	1.515
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= Finance
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Finance/}
 
 HOMEPAGE=	http://finance-quote.sourceforge.net
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

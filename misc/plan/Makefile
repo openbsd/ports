@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/03/21 21:09:19 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/13 23:31:26 espie Exp $
 #
 
 COMMENT=	"X11/Motif schedule planner with calendar"
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"license requests a copy of the cd"
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	applications
+MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/}
 
 USE_MOTIF=	any
 

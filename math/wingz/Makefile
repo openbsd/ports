@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/11/13 22:13:23 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/05/13 23:31:26 espie Exp $
 #
 
 COMMENT=	"commercial spreadsheet"
@@ -8,8 +8,7 @@ DISTNAME=	Wingz-142
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	math
 NEED_VERSION=	1.496
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/financial/spreadsheet
+MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/financial/spreadsheet/}
 EXTRACT_SUFX=	.tgz
 
 PERMIT_PACKAGE_CDROM=	"shareware"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/21 21:09:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/13 23:31:26 espie Exp $
 
 COMMENT=	"high speed arbitrary-size integer math"
 
@@ -6,8 +6,7 @@ DISTNAME=	Math-GMP-1.06
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	math perl5
 NEED_VERSION=	1.515
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= Math
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Math/}
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 

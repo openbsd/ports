@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/10/07 22:41:46 wilfried Exp $
+# $OpenBSD: Makefile,v 1.12 2002/05/13 23:31:25 espie Exp $
 # $FreeBSD: ports/lang/clisp/Makefile,v 1.4 2000/05/14 05:40:46 billf Exp $
 
 NOT_FOR_ARCHS=	powerpc sparc sparc64
@@ -18,9 +18,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=clisp/} \
 		ftp://clisp.cons.org/pub/lisp/clisp/source/${VERSION}/
-MASTER_SITE_SUBDIR=	clisp
 
 EXTRACT_SUFX=	.tar.bz2
 

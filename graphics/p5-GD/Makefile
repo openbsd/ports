@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.9 2002/03/21 20:57:08 espie Exp $
+#	$OpenBSD: Makefile,v 1.10 2002/05/13 23:31:24 espie Exp $
 
 COMMENT=	"module to interface with the GD graphics library"
 
@@ -6,8 +6,7 @@ DISTNAME=	GD-1.33
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	graphics perl5
 NEED_VERSION=	1.515
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= GD
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=GD/}
 
 LIB_DEPENDS=	gd.18::graphics/gd
 

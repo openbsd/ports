@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2001/10/28 13:05:47 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/05/13 23:31:25 espie Exp $
 
 COMMENT=	"biff-type program, designed to match AfterStep"
 
 DISTNAME=	asmail-0.56
 CATEGORIES=	mail
 NEED_VERSION=	1.402
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=asmail/} \
 		ftp://gates.enemy.at/pub/
-MASTER_SITE_SUBDIR= asmail 
 
 HOMEPAGE=	http://asmail.sourceforge.net/
 

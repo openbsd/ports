@@ -3,7 +3,7 @@
 # Date created:		May 20 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.12 2002/03/21 21:09:19 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/05/13 23:31:26 espie Exp $
 #
 
 COMMENT=	"X11 viewer for text files"
@@ -11,9 +11,8 @@ COMMENT=	"X11 viewer for text files"
 DISTNAME=	xless-1.7
 CATEGORIES=	misc	
 NEED_VERSION=	1.515
-MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
+MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/} \
 		ftp://ftp.cs.berkeley.edu/ucb/people/dglo/xless/
-MASTER_SITE_SUBDIR=     applications
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

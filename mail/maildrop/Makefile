@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/09/30 22:35:44 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2002/05/13 23:31:25 espie Exp $
 
 COMMENT=	"local mail delivery agent with filtering abilities"
 
@@ -9,8 +9,7 @@ NEED_VERSION=	1.463
 HOMEPAGE=	http://www.flounder.net/~mrsam/maildrop/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
-MASTER_SITES=  	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	courier
+MASTER_SITES=  	${MASTER_SITE_SOURCEFORGE:=courier/}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

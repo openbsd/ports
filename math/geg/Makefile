@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/23 06:57:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/13 23:31:25 espie Exp $
 
 COMMENT=	"simple program for plotting 2d mathematical functions"
 
@@ -7,8 +7,7 @@ CATEGORIES=	math
 NEED_VERSION=	1.363
 
 MASTER_SITES=	http://www.infolaunch.com/~daveb/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR= science/visualization/plotting
+		${MASTER_SITE_SUNSITE:=science/visualization/plotting/}
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 

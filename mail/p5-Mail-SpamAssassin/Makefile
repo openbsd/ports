@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/02 15:26:36 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/13 23:31:25 espie Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
@@ -18,8 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/released/ \
-			${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Mail
+			${MASTER_SITE_PERL_CPAN:=Mail/}
 
 RUN_DEPENDS=		:p5-Net-DNS-*:net/p5-Net-DNS
 

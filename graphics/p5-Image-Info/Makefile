@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/12/15 07:35:52 shell Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/13 23:31:24 espie Exp $
 
 COMMENT=	"perl module for getting image information"
 
@@ -10,8 +10,7 @@ NEED_VERSION=	1.500
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
-MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= Image
+MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=Image/}
 
 BUILD_DEPENDS=  ::devel/p5-IO-String
 

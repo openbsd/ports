@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/06 01:11:38 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/13 23:31:24 espie Exp $
 
 COMMENT=	"extra japanese fonts"
 
@@ -7,8 +7,7 @@ NEED_VERSION=	1.402
 DISTNAME=	intlfonts-1.2
 PKGNAME=	ja-fonts-gnu-1.2
 
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=intlfonts
+MASTER_SITES=	${MASTER_SITE_GNU:=intlfonts/}
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

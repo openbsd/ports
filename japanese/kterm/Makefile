@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/03/21 20:57:09 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/05/13 23:31:24 espie Exp $
 
 COMMENT=	"Japanese-capable xterm"
 
@@ -6,8 +6,7 @@ DISTNAME=	kterm-6.2.0
 PKGNAME=	ja-kterm-6.2.0
 CATEGORIES=	japanese x11
 NEED_VERSION=	1.515
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	applications
+MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/}
 
 # License: X
 PERMIT_PACKAGE_CDROM=Yes
