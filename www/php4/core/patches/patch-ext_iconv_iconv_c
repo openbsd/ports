@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_iconv_iconv_c,v 1.1 2002/07/17 22:41:44 naddy Exp $
+--- ext/iconv/iconv.c.orig	Thu Jul 18 00:01:35 2002
++++ ext/iconv/iconv.c	Thu Jul 18 00:01:59 2002
+@@ -87,7 +87,7 @@ ZEND_DECLARE_MODULE_GLOBALS(iconv)
+ ZEND_GET_MODULE(iconv)
+ #endif
+ 
+-static int php_iconv_string(const char * in_str, unsigned int in_len, char ** out_str, unsigned int * out_len, const char * in_encoding, const char * out_encoding, int *err TSRMLS_DC);
++static int php_iconv_string(const char * in_str, size_t in_len, char ** out_str, size_t * out_len, const char * in_encoding, const char * out_encoding, int *err TSRMLS_DC);
+ 
+ /* {{{ PHP_INI
+  */
