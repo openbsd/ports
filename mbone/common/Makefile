@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 1999/09/02 21:43:32 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/09/03 16:10:11 angelos Exp $
 
-DISTNAME=       common-1.0.6
+DISTNAME=       common
+DISTFILES=	common-1.0..tar.gz
 CATEGORIES=	mbone
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/common/
 MAINTAINER=	angelos@openbsd.org
