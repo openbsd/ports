@@ -1,0 +1,11 @@
+$OpenBSD: patch-plugins_Makefile_plugin_in,v 1.1 2004/06/13 04:02:36 pvalchev Exp $
+--- plugins/Makefile.plugin.in.orig	2004-06-12 21:58:41.000000000 -0600
++++ plugins/Makefile.plugin.in	2004-06-12 21:59:11.000000000 -0600
+@@ -1,6 +1,6 @@
+ # plugin makefiles include this
+ CC=		@CC@
+-CFLAGS=		@CFLAGS@ -I../../src/ -I../include/ @X_CFLAGS@
++CFLAGS=		@CFLAGS@ -I../../src/ -I../include/ @X_CFLAGS@ -fPIC
+ CFLAGS+=	@DEFS@
+ LDFLAGS=	@SHARED_FLAG@
+ 
