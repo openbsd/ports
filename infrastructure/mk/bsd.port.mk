@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.163 1999/12/21 21:43:37 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.164 1999/12/24 00:27:58 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -840,6 +840,16 @@ CDROM_OPT=		-f
 .endif
 .endif
 
+.if defined(CDROM_SITE)
+.if defined(FETCH_SYMLINK_DISTFILES)
+_CDROM_OVERRIDE=if ln -s ${CDROM_SITE}/$$f .; then exit 0; fi;
+.else
+_CDROM_OVERRIDE=if cp -f ${CDROM_SITE}/$$f .; then exit 0; fi;
+.endif
+.else
+_CDROM_OVERRIDE=:
+.endif
+
 # Derive names so that they're easily overridable.
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
 PKGNAME?=		${DISTNAME}
@@ -1210,90 +1220,70 @@ ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE}
 # Fetch
 
 .if !target(do-fetch)
-do-fetch:
-	@mkdir -p ${FULLDISTDIR}
-	@cd ${FULLDISTDIR}; \
-	 for fullfile in ${DISTFILES}; do \
-	 	file=`echo $$fullfile|sed -e 's,:[0-9]$$,,'`; \
-		if [ ! -f $$file -a ! -f `basename $$file` ]; then \
-			if [ -L $$file -o -L `basename $$file` ]; then \
-				echo ">> ${FULLDISTDIR}/$$file is a broken symlink."; \
-				echo ">> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
-				echo ">> Please correct this problem and try again."; \
-				exit 1; \
-			fi ; \
-			if [ ! -z ${CDROM_COPY} ]; then \
-				if ${CDROM_COPY} ${CDROM_OPT} ${CDROM_SITE}/$$file .; then \
-					continue; \
-				fi ; \
-			fi ; \
-			${ECHO_MSG} ">> $$file doesn't seem to exist on this system."; \
-			if [ ! -w ${FULLDISTDIR}/. ]; then \
-				${ECHO_MSG} ">> Can't download to ${FULLDISTDIR} (permission denied?)."; \
-				exit 1; \
-			fi; \
-			case $$fullfile in \
-				*:0) sites_list="${MASTER_SITES0}";; \
-				*:1) sites_list="${MASTER_SITES1}";; \
-				*:2) sites_list="${MASTER_SITES2}";; \
-				*:3) sites_list="${MASTER_SITES3}";; \
-				*:4) sites_list="${MASTER_SITES4}";; \
-				*:5) sites_list="${MASTER_SITES5}";; \
-				*:6) sites_list="${MASTER_SITES6}";; \
-				*:7) sites_list="${MASTER_SITES7}";; \
-				*:8) sites_list="${MASTER_SITES8}";; \
-				*:9) sites_list="${MASTER_SITES9}";; \
-				*)   sites_list="${MASTER_SITES}";; \
-			esac; \
-			for site in $$sites_list; do \
-			    ${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
-				if ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} ${FETCH_AFTER_ARGS}; then \
-					continue 2; \
-				fi \
-			done; \
-			echo ">> Couldn't fetch it - please try to retrieve this";\
-			echo ">> port manually into ${FULLDISTDIR} and try again."; \
-			exit 1; \
-	    fi \
-	 done
+do-fetch: ${ALLFILES:S@^@${FULLDISTDIR}/@}
+
+.for _F in ${_DISTFILES:S@^@${FULLDISTDIR}/@}
+${_F}:
+	@mkdir -p ${_F:H}
+	@cd ${_F:H}; \
+	select=${DISTFILES:M*${_F:S@^${FULLDISTDIR}/@@}\:[0-9]}; \
+	f=${_F:S@^${FULLDISTDIR}/@@}; \
+	${ECHO_MSG} ">> $$f doesn't seem to exist on this system."; \
+	${_CDROM_OVERRIDE}; \
+	case $$select in \
+		"") sites="${MASTER_SITES}";; \
+		*:0) sites="${MASTER_SITES0}";; \
+		*:1) sites="${MASTER_SITES1}";; \
+		*:2) sites="${MASTER_SITES2}";; \
+		*:3) sites="${MASTER_SITES3}";; \
+		*:4) sites="${MASTER_SITES4}";; \
+		*:5) sites="${MASTER_SITES5}";; \
+		*:6) sites="${MASTER_SITES6}";; \
+		*:7) sites="${MASTER_SITES7}";; \
+		*:8) sites="${MASTER_SITES8}";; \
+		*:9) sites="${MASTER_SITES9}";; \
+	esac; \
+	for site in $$sites; do \
+		${ECHO_MSG} ">> Attempting to fetch ${_F} from $${site}."; \
+		if ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$$f ${FETCH_AFTER_ARGS}; then \
+				exit 0; \
+		fi; \
+	done; exit 1
+.endfor
+
 .if defined(PATCHFILES)
-	@cd ${FULLDISTDIR}; \
-	 for fullfile in ${PATCHFILES}; do \
-	 	file=`echo $$fullfile|sed -e 's,:[0-9]$$,,'`; \
-		if [ ! -f $$file -a ! -f `basename $$file` ]; then \
-			if [ -L $$file -o -L `basename $$file` ]; then \
-				echo ">> ${FULLDISTDIR}/$$file is a broken symlink."; \
-				echo ">> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
-				echo ">> Please correct this problem and try again."; \
-				exit 1; \
-			fi ; \
-			${ECHO_MSG} ">> $$file doesn't seem to exist on this system."; \
-			case $$fullfile in \
-				*:0) sites_list="${PATCH_SITES0}";; \
-				*:1) sites_list="${PATCH_SITES1}";; \
-				*:2) sites_list="${PATCH_SITES2}";; \
-				*:3) sites_list="${PATCH_SITES3}";; \
-				*:4) sites_list="${PATCH_SITES4}";; \
-				*:5) sites_list="${PATCH_SITES5}";; \
-				*:6) sites_list="${PATCH_SITES6}";; \
-				*:7) sites_list="${PATCH_SITES7}";; \
-				*:8) sites_list="${PATCH_SITES8}";; \
-				*:9) sites_list="${PATCH_SITES9}";; \
-				*)   sites_list="${PATCH_SITES}";; \
-			esac; \
-			for site in $$sites_list; do \
-			    ${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
-				if ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} ${FETCH_AFTER_ARGS}; then \
-					continue 2; \
-				fi \
-			done; \
-			echo ">> Couldn't fetch it - please try to retrieve this";\
-			echo ">> port manually into ${FULLDISTDIR} and try again."; \
-			exit 1; \
-	    fi \
-	 done
-.endif
-.endif
+.for _F in ${_PATCHFILES:S@^@${FULLDISTDIR}/@}
+${_F}:
+	@mkdir -p ${_F:H}
+	@cd ${_F:H}; \
+	${_CDROM_OVERRIDE}; \
+	select=${PATCHFILES:M*${_F:S@^${FULLDISTDIR}/@@}\:[0-9]}; \
+	f=${_F:S@^${FULLDISTDIR}/@@}; \
+	${ECHO_MSG} ">> $$f doesn't seem to exist on this system."; \
+	case $$select in \
+		"") sites="${PATCH_SITES}";; \
+		*:0) sites="${PATCH_SITES0}";; \
+		*:1) sites="${PATCH_SITES1}";; \
+		*:2) sites="${PATCH_SITES2}";; \
+		*:3) sites="${PATCH_SITES3}";; \
+		*:4) sites="${PATCH_SITES4}";; \
+		*:5) sites="${PATCH_SITES5}";; \
+		*:6) sites="${PATCH_SITES6}";; \
+		*:7) sites="${PATCH_SITES7}";; \
+		*:8) sites="${PATCH_SITES8}";; \
+		*:9) sites="${PATCH_SITES9}";; \
+	esac; \
+	for site in $$sites; do \
+		${ECHO_MSG} ">> Attempting to fetch ${_F} from $${site}."; \
+		if ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$$f ${FETCH_AFTER_ARGS}; then \
+				exit 0; \
+		fi; \
+	done; exit 1
+.endfor
+
+.endif	# defined(PATCHFILES)
+
+.endif	# !target(do-fetch)
 
 # This is for the use of sites which store distfiles which others may
 # fetch - only fetch the distfile if it is allowed to be
