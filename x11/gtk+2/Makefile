@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/08/15 21:07:05 marcm Exp $
+# $OpenBSD: Makefile,v 1.10 2003/08/24 20:48:55 sturm Exp $
 
 NOT_FOR_ARCHS=			${NO_SHARED_ARCHS}
 
@@ -46,6 +46,8 @@ CONFIGURE_ARGS+= 		--disable-gtk-doc
 CONFIGURE_ENV=			CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 				LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=			OBSD_LIB_VERSION="${OBSD_LIB_VERSION}"
+
+NO_SYSTRACE=			"normalize_filename: filename too long"
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gtk+2/; \
