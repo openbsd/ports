@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 1999/09/23 21:35:02 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/09/28 17:58:35 brad Exp $
 
 DISTNAME=	connect4
 PKGNAME=	connect4-3.2
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.gu.kiev.ua/pub/cdrom5/games/volume6/ \
-		ftp://scitsc.wlv.ac.uk/pub/infomagic/usenet/games/volume6/
+MASTER_SITES=	ftp://scitsc.wlv.ac.uk/pub/infomagic/usenet/games/volume6/
 EXTRACT_SUFX=		# empty
 
 NEED_VERSION=	1.91
