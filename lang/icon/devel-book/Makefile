@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/12/22 01:34:18 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/02 18:02:22 sturm Exp $
 
 CATEGORIES=	books lang
 COMMENT=	'Icon language implemention reference book'
@@ -34,6 +34,7 @@ PERMIT_DISTFILES_CDROM=Yes
 
 EXTRACT_ONLY=
 NO_BUILD=Yes
+PKG_ARCH=*
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/icon

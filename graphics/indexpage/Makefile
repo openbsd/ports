@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/10/27 00:01:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/02 18:02:22 sturm Exp $
 
 COMMENT=	"generate index pages for displaying images"
 
@@ -20,6 +20,7 @@ RUN_DEPENDS=	::graphics/p5-Image-Size \
 		::graphics/ImageMagick
 
 NO_BUILD=	Yes
+PKG_ARCH=	*
 
 REGRESS_TARGET=	test
 PORTHOME=	${WRKDIR}	# for regress

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/11/22 14:51:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/02/02 18:02:22 sturm Exp $
 
 COMMENT=		"speaking ascii cow"
 DISTNAME=		cowsay-3.03
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.nog.net/~tony/warez/
 NO_REGRESS=		Yes
 NO_BUILD=		Yes
+PKG_ARCH=		*
 
 do-configure:
 	perl -pi -e 's@%BANGPERL%@!/usr/bin/perl@; \

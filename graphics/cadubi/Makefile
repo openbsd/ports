@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/05/19 00:10:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2004/02/02 18:02:22 sturm Exp $
 
 DISTNAME=	cadubi_1.2
 PKGNAME=	${DISTNAME:S/_/-/g}
@@ -19,6 +19,7 @@ RUN_DEPENDS=	::devel/p5-Term-ReadKey
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cadubi ${PREFIX}/bin

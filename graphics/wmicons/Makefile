@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/09/17 14:46:06 wilfried Exp $
+# $OpenBSD: Makefile,v 1.12 2004/02/02 18:02:22 sturm Exp $
 
 COMMENT=		'icons mainly for use in Window Maker'
 
@@ -24,6 +24,8 @@ RUN_DEPENDS=		:windowmaker-*:x11/windowmaker
 NO_REGRESS=		Yes
 
 NO_BUILD=		Yes
+
+PKG_ARCH=		*
 
 WMICONDIR=		${PREFIX}/share/WindowMaker/Pixmaps
 WMDOCDIR=		${PREFIX}/share/doc/wmicons

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/09/30 21:47:44 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2004/02/02 18:02:22 sturm Exp $
 
 COMMENT=	"eboard extra piece sets and sounds"
 
@@ -21,6 +21,7 @@ RUN_DEPENDS=	:eboard->=0.3.1:games/eboard
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 do-install:
 	$(INSTALL_DATA_DIR) $(PREFIX)/share/eboard
