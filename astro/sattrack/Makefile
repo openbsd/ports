@@ -1,18 +1,16 @@
-# OpenBSD makefile for: 	     sattrack
-# Version required:                  3.1.6
-# Date created:                      28 Apr 1998
-# Whom:                              Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/04/29 03:25:30 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/06 22:37:07 marc Exp $
 #
 
-DISTNAME=          sattrack-3.1.6
-CATEGORIES=        astro
-MASTER_SITES=      ${MASTER_SITE_LOCAL}
+DISTNAME=	sattrack-3.1.6
+CATEGORIES=	astro
 
-MAINTAINER=        angelos@openbsd.org
+NO_CDROM=	"COPY: may not be bundled"
 
-WRKSRC=            ${WRKDIR}/SatTrack-3.1.6/src
+MAINTAINER=	angelos@openbsd.org
+
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
+
+WRKSRC=		${WRKDIR}/SatTrack-3.1.6/src
 
 post-install:
 	@${CAT} ${PKGDIR}/MESSAGE
