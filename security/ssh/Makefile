@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 1999/10/07 05:23:58 turan Exp $
+# $OpenBSD: Makefile,v 1.38 1999/10/08 20:04:33 brad Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
-MASTER_SITES= 	ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
-		ftp://ftp.cs.hut.fi/pub/ssh/
+MASTER_SITES=	ftp://ftp.cs.hut.fi/pub/ssh/ \
+		ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
+		ftp://ftp.cert.dfn.de/pub/tools/net/ssh/
 
 PATCH_SITES=	http://www.ssh.fi/sshprotocols2/patches/
 PATCHFILES=	patch-${DISTNAME}-bsd.tty.chown
@@ -17,8 +18,9 @@ RESTRICTED=	"Crypto; export-controlled"
 MAINTAINER=	todd@openbsd.org
 
 .if defined(NO_WARNINGS) || (defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES)
-MASTER_SITES0=	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
-		ftp://idea.dsi.unimi.it/pub/security/crypt/math/
+MASTER_SITES0=	ftp://idea.dsi.unimi.it/pub/security/crypt/math/ \
+		ftp://ftp.it.net.au/mirrors/crypto/misc/ \
+		ftp://ftp.visi.com/disk3/unix/crypto/
 DISTFILES=	${DISTNAME}.tar.gz rsaref2.tar.gz:0
 .endif
 
