@@ -3,12 +3,12 @@
 # Date created:		9 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.6 1998/10/20 08:39:50 form Exp $
+# $OpenBSD: Makefile,v 1.7 1998/11/27 10:42:45 form Exp $
 # FreeBSD: Makefile,v 1.18 1998/07/20 16:51:14 andreas Exp
 #
 
 MAJ=		1
-MIN=		40
+MIN=		41
 DISTNAME=	qt-${MAJ}.${MIN}
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/

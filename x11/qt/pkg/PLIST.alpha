@@ -154,6 +154,7 @@ include/X11/qt/qsemimodal.h
 include/X11/qt/qshared.h
 include/X11/qt/qsignal.h
 include/X11/qt/qsignalmapper.h
+include/X11/qt/qsignalslotimp.h
 include/X11/qt/qsize.h
 include/X11/qt/qslider.h
 include/X11/qt/qsocketnotifier.h
@@ -166,8 +167,8 @@ include/X11/qt/qstring.h
 include/X11/qt/qstrlist.h
 include/X11/qt/qstrvec.h
 include/X11/qt/qtabbar.h
-include/X11/qt/qtabdialog.h
 include/X11/qt/qtabdlg.h
+include/X11/qt/qtabdialog.h
 include/X11/qt/qtableview.h
 include/X11/qt/qtablevw.h
 include/X11/qt/qtextstream.h
@@ -204,7 +205,6 @@ lib/qt/tutorial/t11
 lib/qt/tutorial/t12
 lib/qt/tutorial/t13
 lib/qt/tutorial/t14
-lib/qt/examples/README
 lib/qt/examples/aclock
 lib/qt/examples/application
 lib/qt/examples/biff
@@ -232,11 +232,12 @@ lib/qt/examples/splitter
 lib/qt/examples/table
 lib/qt/examples/tetrix
 lib/qt/examples/tictac
-lib/qt/examples/tooltip
 lib/qt/examples/timestmp
+lib/qt/examples/tooltip
 lib/qt/examples/validator
 lib/qt/examples/widgets
 lib/qt/examples/xform
+lib/qt/examples/README
 bin/moc
 man/man1/moc.1
 man/man3/QAccel.3qt
@@ -277,6 +278,9 @@ man/man3/QDict.3qt
 man/man3/QDictIterator.3qt
 man/man3/QDir.3qt
 man/man3/QDoubleValidator.3qt
+man/man3/QDragMoveEvent.3qt
+man/man3/QDragObject.3qt
+man/man3/QDropEvent.3qt
 man/man3/QEvent.3qt
 man/man3/QFile.3qt
 man/man3/QFileDialog.3qt
@@ -321,8 +325,8 @@ man/man3/QIntDict.3qt
 man/man3/QIntDictIterator.3qt
 man/man3/QIntValidator.3qt
 man/man3/QKeyEvent.3qt
-man/man3/QLNode.3qt
 man/man3/QLCDNumber.3qt
+man/man3/QLNode.3qt
 man/man3/QLabel.3qt
 man/man3/QLayout.3qt
 man/man3/QLineEdit.3qt
@@ -363,8 +367,8 @@ man/man3/QPopupMenu.3qt
 man/man3/QPrintDialog.3qt
 man/man3/QPrinter.3qt
 man/man3/QProgressBar.3qt
-man/man3/QPtrDict.3qt
 man/man3/QProgressDialog.3qt
+man/man3/QPtrDict.3qt
 man/man3/QPtrDictIterator.3qt
 man/man3/QPushButton.3qt
 man/man3/QQueue.3qt
@@ -403,6 +407,7 @@ man/man3/QToolBar.3qt
 man/man3/QToolButton.3qt
 man/man3/QToolTip.3qt
 man/man3/QToolTipGroup.3qt
+man/man3/QUrlDrag.3qt
 man/man3/QVBoxLayout.3qt
 man/man3/QValidator.3qt
 man/man3/QWMatrix.3qt
@@ -450,6 +455,9 @@ man/man3/qdict.3qt
 man/man3/qdictiterator.3qt
 man/man3/qdir.3qt
 man/man3/qdoublevalidator.3qt
+man/man3/qdragmoveevent.3qt
+man/man3/qdragobject.3qt
+man/man3/qdropevent.3qt
 man/man3/qevent.3qt
 man/man3/qfile.3qt
 man/man3/qfiledialog.3qt
@@ -490,8 +498,8 @@ man/man3/qintcache.3qt
 man/man3/qintcacheiterator.3qt
 man/man3/qintdict.3qt
 man/man3/qintdictiterator.3qt
-man/man3/qiodevice.3qt
 man/man3/qintvalidator.3qt
+man/man3/qiodevice.3qt
 man/man3/qiodevicesource.3qt
 man/man3/qkeyevent.3qt
 man/man3/qlabel.3qt
@@ -511,9 +519,9 @@ man/man3/qmainwindow.3qt
 man/man3/qmenubar.3qt
 man/man3/qmenudata.3qt
 man/man3/qmessagebox.3qt
-man/man3/qmovie.3qt
 man/man3/qmouseevent.3qt
 man/man3/qmoveevent.3qt
+man/man3/qmovie.3qt
 man/man3/qmultilineedit.3qt
 man/man3/qnpinstance.3qt
 man/man3/qnplugin.3qt
@@ -542,8 +550,8 @@ man/man3/qptrdictiterator.3qt
 man/man3/qpushbutton.3qt
 man/man3/qqueue.3qt
 man/man3/qradiobutton.3qt
-man/man3/qrangecontrol.3qt
 man/man3/qrect.3qt
+man/man3/qrangecontrol.3qt
 man/man3/qregexp.3qt
 man/man3/qregion.3qt
 man/man3/qresizeevent.3qt
@@ -576,6 +584,7 @@ man/man3/qtoolbar.3qt
 man/man3/qtoolbutton.3qt
 man/man3/qtooltip.3qt
 man/man3/qtooltipgroup.3qt
+man/man3/qurldrag.3qt
 man/man3/qvalidator.3qt
 man/man3/qvboxlayout.3qt
 man/man3/qwhatsthis.3qt
@@ -587,8 +596,6 @@ man/man3/qxtapplication.3qt
 man/man3/qxtwidget.3qt
 share/doc/qt/README
 share/doc/qt/README.QT
-@dirrm include/X11/qt
 @dirrm share/doc/qt
-@dirrm lib/qt/examples
 @dirrm lib/qt/tutorial
-@dirrm lib/qt
+@dirrm include/X11/qt
