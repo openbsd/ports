@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/16 13:44:37 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/09 13:28:31 espie Exp $
 bin/gsl-config
 bin/gsl-histogram
 bin/gsl-randist
+include/gsl/
 include/gsl/gsl_blas.h
 include/gsl/gsl_blas_raw.h
 include/gsl/gsl_blas_raw_L1.h
@@ -192,29 +193,13 @@ include/gsl/gsl_vector_uchar.h
 include/gsl/gsl_vector_uint.h
 include/gsl/gsl_vector_ulong.h
 include/gsl/gsl_vector_ushort.h
-@unexec install-info --delete --info-dir=%D/info %D/info/gsl-ref.info
-info/gsl-ref.info
-info/gsl-ref.info-1
-info/gsl-ref.info-2
-info/gsl-ref.info-3
-info/gsl-ref.info-4
-info/gsl-ref.info-5
-info/gsl-ref.info-6
-info/gsl-ref.info-7
-info/gsl-ref.info-8
-info/gsl-ref.info-9
-info/gsl-ref.info-10
-info/gsl-ref.info-11
-info/gsl-ref.info-12
-info/gsl-ref.info-13
-info/gsl-ref.info-14
-info/gsl-ref.info-15
-info/gsl-ref.info-16
-info/gsl-ref.info-17
-@exec install-info --info-dir=%D/info %D/info/gsl-ref.info
+@info info/gsl-ref.info
 lib/libgsl.a
+lib/libgsl.la
 lib/libgslblascblas.a
+lib/libgslblascblas.la
 lib/libgslblasnative.a
-%%SHARED%%
+lib/libgslblasnative.la
+share/aclocal/
 share/aclocal/gsl.m4
-@dirrm include/gsl
+%%SHARED%%

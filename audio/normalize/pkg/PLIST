@@ -1,13 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/16 15:31:22 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/09 13:28:31 espie Exp $
 bin/normalize
 bin/normalize-mp3
 bin/normalize-ogg
-man/man1/normalize-mp3.1
-man/man1/normalize.1
+@man man/man1/normalize-mp3.1
+@man man/man1/normalize.1
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/normalize.mo
 share/locale/fr/LC_MESSAGES/normalize.mo
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/en_GB/LC_MESSAGES
-@dirrm share/locale/en_GB
-@dirrm share/locale

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/01/04 00:52:35 naddy Exp $
-lib/libdockapp.so.1.0
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/09 13:28:31 espie Exp $
+@lib lib/libdockapp.so.1.0

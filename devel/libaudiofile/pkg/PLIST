@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/12/18 02:15:56 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/08/09 13:28:31 espie Exp $
 bin/audiofile-config
 bin/sfconvert
 bin/sfinfo
@@ -7,8 +7,8 @@ include/audiofile.h
 include/aupvlist.h
 lib/libaudiofile.a
 lib/libaudiofile.la
+lib/pkgconfig/
 lib/pkgconfig/audiofile.pc
+share/aclocal/
 share/aclocal/audiofile.m4
 %%SHARED%%
-@dirrm share/aclocal
-@dirrm lib/pkgconfig

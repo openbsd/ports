@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/12/16 17:34:06 naddy Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/id-utils.info
+@comment $OpenBSD: PLIST,v 1.11 2004/08/09 13:28:31 espie Exp $
 bin/aid
 bin/defid
 bin/eid
@@ -9,20 +8,14 @@ bin/gid
 bin/lid
 bin/mkid
 bin/xtokid
-lib/id-utils/id-utils.el
+@info info/id-utils.info
+lib/id-utils/
 lib/id-utils/elisp-comp
+lib/id-utils/id-utils.el
 lib/id-utils/recompile
 @exec PREFIX=%D %D/%F
 @unexec rm %D/share/emacs/site-lisp/id-utils.{el,elc} 2>/dev/null || true
 @unexec rm %D/lib/xemacs/site-lisp/id-utils.{el,elc} 2>/dev/null || true
-info/id-utils.info
 share/id-lang.map
 share/locale/de/LC_MESSAGES/id-utils.mo
 share/locale/fr/LC_MESSAGES/id-utils.mo
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale
-@dirrm lib/id-utils
-@exec install-info --info-dir=%D/info %D/info/id-utils.info

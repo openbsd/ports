@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2004/07/26 10:15:28 peter Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/09 13:28:30 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"access to PostgreSQL databases perl"
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/07/22 05:50:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/08/09 13:28:31 espie Exp $
 @option no-default-conflict
 bin/autoconf${SUFFIX}
 bin/autoheader${SUFFIX}
@@ -9,22 +9,22 @@ bin/autoupdate${SUFFIX}
 bin/ifnames${SUFFIX}
 @info info/autoconf${SUFFIX}.info
 @comment @info info/standards${SUFFIX}.info
-man/man1/autoconf${SUFFIX}.1
-man/man1/autoheader${SUFFIX}.1
-man/man1/autom4te${SUFFIX}.1
-man/man1/autoreconf${SUFFIX}.1
-man/man1/autoscan${SUFFIX}.1
-man/man1/autoupdate${SUFFIX}.1
-man/man1/config.guess${SUFFIX}.1
-man/man1/config.sub${SUFFIX}.1
-man/man1/ifnames${SUFFIX}.1
-@dir share/autoconf${SUFFIX}
-@dir share/autoconf${SUFFIX}/Autom4te
+@man man/man1/autoconf${SUFFIX}.1
+@man man/man1/autoheader${SUFFIX}.1
+@man man/man1/autom4te${SUFFIX}.1
+@man man/man1/autoreconf${SUFFIX}.1
+@man man/man1/autoscan${SUFFIX}.1
+@man man/man1/autoupdate${SUFFIX}.1
+@man man/man1/config.guess${SUFFIX}.1
+@man man/man1/config.sub${SUFFIX}.1
+@man man/man1/ifnames${SUFFIX}.1
+share/autoconf${SUFFIX}/
+share/autoconf${SUFFIX}/Autom4te/
 share/autoconf${SUFFIX}/Autom4te/General.pm
 share/autoconf${SUFFIX}/Autom4te/Struct.pm
 share/autoconf${SUFFIX}/Autom4te/XFile.pm
 share/autoconf${SUFFIX}/INSTALL
-@dir share/autoconf${SUFFIX}/autoconf
+share/autoconf${SUFFIX}/autoconf/
 share/autoconf${SUFFIX}/autoconf/autoconf.m4
 share/autoconf${SUFFIX}/autoconf/autoheader.m4
 share/autoconf${SUFFIX}/autoconf/autotest.m4
@@ -42,17 +42,17 @@ share/autoconf${SUFFIX}/autoconf/specific.m4
 share/autoconf${SUFFIX}/autoconf/status.m4
 share/autoconf${SUFFIX}/autoconf/types.m4
 share/autoconf${SUFFIX}/autom4te.cfg
-@dir share/autoconf${SUFFIX}/autoscan
+share/autoconf${SUFFIX}/autoscan/
 share/autoconf${SUFFIX}/autoscan/functions
 share/autoconf${SUFFIX}/autoscan/headers
 share/autoconf${SUFFIX}/autoscan/identifiers
 share/autoconf${SUFFIX}/autoscan/libraries
 share/autoconf${SUFFIX}/autoscan/makevars
 share/autoconf${SUFFIX}/autoscan/programs
-@dir share/autoconf${SUFFIX}/autotest
+share/autoconf${SUFFIX}/autotest/
 share/autoconf${SUFFIX}/autotest/autotest.m4
 share/autoconf${SUFFIX}/autotest/general.m4
-@dir share/autoconf${SUFFIX}/m4sugar
+share/autoconf${SUFFIX}/m4sugar/
 share/autoconf${SUFFIX}/m4sugar/m4sh.m4
 share/autoconf${SUFFIX}/m4sugar/m4sugar.m4
 share/autoconf${SUFFIX}/m4sugar/version.m4
