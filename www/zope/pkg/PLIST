@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/09/29 06:02:19 brad Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/05/14 21:35:52 krw Exp $
 bin/zope-instance
 lib/zope/Extensions/README.txt
+lib/zope/Makefile
 lib/zope/ZServer/DebugLogger.py
 lib/zope/ZServer/DebugLogger.pyc
 lib/zope/ZServer/DebugLogger.pyo
@@ -22,6 +23,9 @@ lib/zope/ZServer/HTTPResponse.pyo
 lib/zope/ZServer/HTTPServer.py
 lib/zope/ZServer/HTTPServer.pyc
 lib/zope/ZServer/HTTPServer.pyo
+lib/zope/ZServer/ICPServer.py
+lib/zope/ZServer/ICPServer.pyc
+lib/zope/ZServer/ICPServer.pyo
 lib/zope/ZServer/INSTALL.txt
 lib/zope/ZServer/PCGIServer.py
 lib/zope/ZServer/PCGIServer.pyc
@@ -430,6 +434,7 @@ lib/zope/lib/python/App/__init__.pyo
 lib/zope/lib/python/App/class_init.py
 lib/zope/lib/python/App/class_init.pyc
 lib/zope/lib/python/App/class_init.pyo
+lib/zope/lib/python/App/dtml/activity.dtml
 lib/zope/lib/python/App/dtml/addFactory.dtml
 lib/zope/lib/python/App/dtml/addPermission.dtml
 lib/zope/lib/python/App/dtml/addProduct.dtml
@@ -481,6 +486,7 @@ lib/zope/lib/python/App/www/dbManage.gif
 lib/zope/lib/python/App/www/factory.gif
 lib/zope/lib/python/App/www/help.jpg
 lib/zope/lib/python/App/www/installedProduct.gif
+lib/zope/lib/python/App/www/load_bar.gif
 lib/zope/lib/python/App/www/logo.jpg
 lib/zope/lib/python/App/www/ltab.gif
 lib/zope/lib/python/App/www/permission.gif
@@ -489,6 +495,8 @@ lib/zope/lib/python/App/www/productFolder.gif
 lib/zope/lib/python/App/www/properties.jpg
 lib/zope/lib/python/App/www/rtab.gif
 lib/zope/lib/python/App/www/sp.gif
+lib/zope/lib/python/App/www/store_bar.gif
+lib/zope/lib/python/App/www/transparent_bar.gif
 lib/zope/lib/python/App/www/undo_icon.gif
 lib/zope/lib/python/App/www/vManage.gif
 lib/zope/lib/python/App/www/z_button.jpg
@@ -511,6 +519,7 @@ lib/zope/lib/python/BTrees/Interfaces.pyo
 lib/zope/lib/python/BTrees/Length.py
 lib/zope/lib/python/BTrees/Length.pyc
 lib/zope/lib/python/BTrees/Length.pyo
+lib/zope/lib/python/BTrees/Maintainer.txt
 lib/zope/lib/python/BTrees/MergeTemplate.c
 lib/zope/lib/python/BTrees/OIBTree.py
 lib/zope/lib/python/BTrees/OIBTree.pyc
@@ -535,6 +544,9 @@ lib/zope/lib/python/BTrees/__init__.pyc
 lib/zope/lib/python/BTrees/__init__.pyo
 lib/zope/lib/python/BTrees/_fsBTree.c
 lib/zope/lib/python/BTrees/_fsBTree.so
+lib/zope/lib/python/BTrees/check.py
+lib/zope/lib/python/BTrees/check.pyc
+lib/zope/lib/python/BTrees/check.pyo
 lib/zope/lib/python/BTrees/convert.py
 lib/zope/lib/python/BTrees/convert.pyc
 lib/zope/lib/python/BTrees/convert.pyo
@@ -542,10 +554,13 @@ lib/zope/lib/python/BTrees/intkeymacros.h
 lib/zope/lib/python/BTrees/intvaluemacros.h
 lib/zope/lib/python/BTrees/objectkeymacros.h
 lib/zope/lib/python/BTrees/objectvaluemacros.h
+lib/zope/lib/python/BTrees/sorters.c
 lib/zope/lib/python/BTrees/tests/__init__.py
 lib/zope/lib/python/BTrees/tests/testBTrees.py
 lib/zope/lib/python/BTrees/tests/testBTreesUnicode.py
 lib/zope/lib/python/BTrees/tests/testConflict.py
+lib/zope/lib/python/BTrees/tests/testSetOps.py
+lib/zope/lib/python/BTrees/tests/test_check.py
 lib/zope/lib/python/ComputedAttribute.so
 lib/zope/lib/python/DateTime/DateTime.html
 lib/zope/lib/python/DateTime/DateTime.py
@@ -558,6 +573,7 @@ lib/zope/lib/python/DateTime/Setup
 lib/zope/lib/python/DateTime/__init__.py
 lib/zope/lib/python/DateTime/__init__.pyc
 lib/zope/lib/python/DateTime/__init__.pyo
+lib/zope/lib/python/DateTime/tests/julian_testdata.txt.gz
 lib/zope/lib/python/DateTime/tests/testDateTime.py
 lib/zope/lib/python/DocumentTemplate/DT_HTML.py
 lib/zope/lib/python/DocumentTemplate/DT_HTML.pyc
@@ -636,6 +652,11 @@ lib/zope/lib/python/DocumentTemplate/tests/__init__.py
 lib/zope/lib/python/DocumentTemplate/tests/dealers.dtml
 lib/zope/lib/python/DocumentTemplate/tests/dealers.out
 lib/zope/lib/python/DocumentTemplate/tests/testDTML.py
+lib/zope/lib/python/DocumentTemplate/tests/testDTMLUnicode.py
+lib/zope/lib/python/DocumentTemplate/tests/testustr.py
+lib/zope/lib/python/DocumentTemplate/ustr.py
+lib/zope/lib/python/DocumentTemplate/ustr.pyc
+lib/zope/lib/python/DocumentTemplate/ustr.pyo
 lib/zope/lib/python/ExtensionClass.so
 lib/zope/lib/python/Globals.py
 lib/zope/lib/python/Globals.pyc
@@ -692,62 +713,83 @@ lib/zope/lib/python/IOBTree.so
 lib/zope/lib/python/ImageFile.py
 lib/zope/lib/python/ImageFile.pyc
 lib/zope/lib/python/ImageFile.pyo
-lib/zope/lib/python/Interface/Attr.py
-lib/zope/lib/python/Interface/Attr.pyc
-lib/zope/lib/python/Interface/Attr.pyo
-lib/zope/lib/python/Interface/Basic.py
-lib/zope/lib/python/Interface/Basic.pyc
-lib/zope/lib/python/Interface/Basic.pyo
-lib/zope/lib/python/Interface/CHANGES.txt
+lib/zope/lib/python/Interface/Attribute.py
+lib/zope/lib/python/Interface/Attribute.pyc
+lib/zope/lib/python/Interface/Attribute.pyo
+lib/zope/lib/python/Interface/Common/Mapping.py
+lib/zope/lib/python/Interface/Common/Mapping.pyc
+lib/zope/lib/python/Interface/Common/Mapping.pyo
+lib/zope/lib/python/Interface/Common/__init__.py
+lib/zope/lib/python/Interface/Common/__init__.pyc
+lib/zope/lib/python/Interface/Common/__init__.pyo
+lib/zope/lib/python/Interface/Common/tests/BaseTestMapping.py
+lib/zope/lib/python/Interface/Common/tests/__init__.py
+lib/zope/lib/python/Interface/Document.py
+lib/zope/lib/python/Interface/Document.pyc
+lib/zope/lib/python/Interface/Document.pyo
 lib/zope/lib/python/Interface/Exceptions.py
 lib/zope/lib/python/Interface/Exceptions.pyc
 lib/zope/lib/python/Interface/Exceptions.pyo
-lib/zope/lib/python/Interface/InterfaceBase.py
-lib/zope/lib/python/Interface/InterfaceBase.pyc
-lib/zope/lib/python/Interface/InterfaceBase.pyo
+lib/zope/lib/python/Interface/IAttribute.py
+lib/zope/lib/python/Interface/IAttribute.pyc
+lib/zope/lib/python/Interface/IAttribute.pyo
+lib/zope/lib/python/Interface/IElement.py
+lib/zope/lib/python/Interface/IElement.pyc
+lib/zope/lib/python/Interface/IElement.pyo
+lib/zope/lib/python/Interface/IInterface.py
+lib/zope/lib/python/Interface/IInterface.pyc
+lib/zope/lib/python/Interface/IInterface.pyo
+lib/zope/lib/python/Interface/IMethod.py
+lib/zope/lib/python/Interface/IMethod.pyc
+lib/zope/lib/python/Interface/IMethod.pyo
+lib/zope/lib/python/Interface/Implements.py
+lib/zope/lib/python/Interface/Implements.pyc
+lib/zope/lib/python/Interface/Implements.pyo
 lib/zope/lib/python/Interface/Mapping.py
 lib/zope/lib/python/Interface/Mapping.pyc
 lib/zope/lib/python/Interface/Mapping.pyo
 lib/zope/lib/python/Interface/Method.py
 lib/zope/lib/python/Interface/Method.pyc
 lib/zope/lib/python/Interface/Method.pyo
-lib/zope/lib/python/Interface/Number.py
-lib/zope/lib/python/Interface/Number.pyc
-lib/zope/lib/python/Interface/Number.pyo
-lib/zope/lib/python/Interface/README
-lib/zope/lib/python/Interface/README.txt
-lib/zope/lib/python/Interface/Standard.py
-lib/zope/lib/python/Interface/Standard.pyc
-lib/zope/lib/python/Interface/Standard.pyo
-lib/zope/lib/python/Interface/Util.py
-lib/zope/lib/python/Interface/Util.pyc
-lib/zope/lib/python/Interface/Util.pyo
+lib/zope/lib/python/Interface/Verify.py
+lib/zope/lib/python/Interface/Verify.pyc
+lib/zope/lib/python/Interface/Verify.pyo
+lib/zope/lib/python/Interface/_Element.py
+lib/zope/lib/python/Interface/_Element.pyc
+lib/zope/lib/python/Interface/_Element.pyo
+lib/zope/lib/python/Interface/_Interface.py
+lib/zope/lib/python/Interface/_Interface.pyc
+lib/zope/lib/python/Interface/_Interface.pyo
+lib/zope/lib/python/Interface/_InterfaceClass.py
+lib/zope/lib/python/Interface/_InterfaceClass.pyc
+lib/zope/lib/python/Interface/_InterfaceClass.pyo
 lib/zope/lib/python/Interface/__init__.py
 lib/zope/lib/python/Interface/__init__.pyc
 lib/zope/lib/python/Interface/__init__.pyo
-lib/zope/lib/python/Interface/iclass.py
-lib/zope/lib/python/Interface/iclass.pyc
-lib/zope/lib/python/Interface/iclass.pyo
+lib/zope/lib/python/Interface/_object.py
+lib/zope/lib/python/Interface/_object.pyc
+lib/zope/lib/python/Interface/_object.pyo
 lib/zope/lib/python/Interface/pprint.py
 lib/zope/lib/python/Interface/pprint.pyc
 lib/zope/lib/python/Interface/pprint.pyo
-lib/zope/lib/python/Interface/pyfiles
-lib/zope/lib/python/Interface/release.sh
-lib/zope/lib/python/Interface/test.py
-lib/zope/lib/python/Interface/test.pyc
-lib/zope/lib/python/Interface/test.pyo
-lib/zope/lib/python/Interface/unitfixtures.py
-lib/zope/lib/python/Interface/unitfixtures.pyc
-lib/zope/lib/python/Interface/unitfixtures.pyo
-lib/zope/lib/python/Interface/unittests.py
-lib/zope/lib/python/Interface/unittests.pyc
-lib/zope/lib/python/Interface/unittests.pyo
-lib/zope/lib/python/Interface/verify.py
-lib/zope/lib/python/Interface/verify.pyc
-lib/zope/lib/python/Interface/verify.pyo
+lib/zope/lib/python/Interface/pyskel.py
+lib/zope/lib/python/Interface/pyskel.pyc
+lib/zope/lib/python/Interface/pyskel.pyo
+lib/zope/lib/python/Interface/tests/IFoo.py
+lib/zope/lib/python/Interface/tests/__init__.py
+lib/zope/lib/python/Interface/tests/dummy.py
+lib/zope/lib/python/Interface/tests/testDocument.py
+lib/zope/lib/python/Interface/tests/testImplements.py
+lib/zope/lib/python/Interface/tests/testInterface.py
+lib/zope/lib/python/Interface/tests/testVerify.py
+lib/zope/lib/python/Interface/tests/testVisitImplements.py
+lib/zope/lib/python/Interface/tests/unitfixtures.py
 lib/zope/lib/python/LOG.py
 lib/zope/lib/python/LOG.pyc
 lib/zope/lib/python/LOG.pyo
+lib/zope/lib/python/Lifetime.py
+lib/zope/lib/python/Lifetime.pyc
+lib/zope/lib/python/Lifetime.pyo
 lib/zope/lib/python/Main.py
 lib/zope/lib/python/Main.pyc
 lib/zope/lib/python/Main.pyo
@@ -866,6 +908,7 @@ lib/zope/lib/python/OFS/standard/standard_template.pt
 lib/zope/lib/python/OFS/tests/__init__.py
 lib/zope/lib/python/OFS/tests/testCopySupport.py
 lib/zope/lib/python/OFS/tests/testRanges.py
+lib/zope/lib/python/OFS/tests/testTraverse.py
 lib/zope/lib/python/OFS/www/ControlPanel_icon.gif
 lib/zope/lib/python/OFS/www/Help_icon.gif
 lib/zope/lib/python/OFS/www/Properties_icon.gif
@@ -905,8 +948,6 @@ lib/zope/lib/python/Products/ExternalMethod/tests/__init__.py
 lib/zope/lib/python/Products/ExternalMethod/tests/testExternalMethod.py
 lib/zope/lib/python/Products/ExternalMethod/version.txt
 lib/zope/lib/python/Products/ExternalMethod/www/function.gif
-lib/zope/lib/python/Products/Hotfix_2002-06-14/README.txt
-lib/zope/lib/python/Products/Hotfix_2002-06-14/__init__.py
 lib/zope/lib/python/Products/MIMETools/MIMETag.py
 lib/zope/lib/python/Products/MIMETools/MIMETag.pyc
 lib/zope/lib/python/Products/MIMETools/MIMETag.pyo
@@ -932,6 +973,7 @@ lib/zope/lib/python/Products/MailHost/help/Mail-Host_Edit.stx
 lib/zope/lib/python/Products/MailHost/help/MailHost.py
 lib/zope/lib/python/Products/MailHost/help/MailHost.pyc
 lib/zope/lib/python/Products/MailHost/help/MailHost.pyo
+lib/zope/lib/python/Products/MailHost/tests/testMailHost.py
 lib/zope/lib/python/Products/MailHost/version.txt
 lib/zope/lib/python/Products/MailHost/www/MailHost_icon.gif
 lib/zope/lib/python/Products/OFSP/Draft.py
@@ -981,6 +1023,7 @@ lib/zope/lib/python/Products/OFSP/help/DTMLMethod.py
 lib/zope/lib/python/Products/OFSP/help/DTMLMethod.pyc
 lib/zope/lib/python/Products/OFSP/help/DTMLMethod.pyo
 lib/zope/lib/python/Products/OFSP/help/Database-Management.stx
+lib/zope/lib/python/Products/OFSP/help/Database-Management_Activity.stx
 lib/zope/lib/python/Products/OFSP/help/Database-Management_Cache-Parameters.stx
 lib/zope/lib/python/Products/OFSP/help/Database-Management_Database.stx
 lib/zope/lib/python/Products/OFSP/help/Database-Management_Flush-Cache.stx
@@ -1126,6 +1169,9 @@ lib/zope/lib/python/Products/PageTemplates/CHANGES.txt
 lib/zope/lib/python/Products/PageTemplates/Expressions.py
 lib/zope/lib/python/Products/PageTemplates/Expressions.pyc
 lib/zope/lib/python/Products/PageTemplates/Expressions.pyo
+lib/zope/lib/python/Products/PageTemplates/GlobalTranslationService.py
+lib/zope/lib/python/Products/PageTemplates/GlobalTranslationService.pyc
+lib/zope/lib/python/Products/PageTemplates/GlobalTranslationService.pyo
 lib/zope/lib/python/Products/PageTemplates/HISTORY.txt
 lib/zope/lib/python/Products/PageTemplates/PageTemplate.py
 lib/zope/lib/python/Products/PageTemplates/PageTemplate.pyc
@@ -1184,12 +1230,14 @@ lib/zope/lib/python/Products/PageTemplates/help/tales-string.stx
 lib/zope/lib/python/Products/PageTemplates/help/tales.stx
 lib/zope/lib/python/Products/PageTemplates/tests/__init__.py
 lib/zope/lib/python/Products/PageTemplates/tests/batch.py
-lib/zope/lib/python/Products/PageTemplates/tests/framework.py
 lib/zope/lib/python/Products/PageTemplates/tests/input/CheckBatchIteration.html
+lib/zope/lib/python/Products/PageTemplates/tests/input/CheckI18nTranslate.html
+lib/zope/lib/python/Products/PageTemplates/tests/input/CheckI18nTranslateHooked.html
 lib/zope/lib/python/Products/PageTemplates/tests/input/CheckNotExpression.html
 lib/zope/lib/python/Products/PageTemplates/tests/input/CheckNothing.html
 lib/zope/lib/python/Products/PageTemplates/tests/input/CheckPathAlt.html
 lib/zope/lib/python/Products/PageTemplates/tests/input/CheckPathNothing.html
+lib/zope/lib/python/Products/PageTemplates/tests/input/CheckUnicodeInserts.html
 lib/zope/lib/python/Products/PageTemplates/tests/input/CheckWithXMLHeader.html
 lib/zope/lib/python/Products/PageTemplates/tests/input/DTML1.html
 lib/zope/lib/python/Products/PageTemplates/tests/input/DTML3.html
@@ -1201,10 +1249,13 @@ lib/zope/lib/python/Products/PageTemplates/tests/input/TeeShop1.html
 lib/zope/lib/python/Products/PageTemplates/tests/input/TeeShop2.html
 lib/zope/lib/python/Products/PageTemplates/tests/input/TeeShopLAF.html
 lib/zope/lib/python/Products/PageTemplates/tests/output/CheckBatchIteration.html
+lib/zope/lib/python/Products/PageTemplates/tests/output/CheckI18nTranslate.html
+lib/zope/lib/python/Products/PageTemplates/tests/output/CheckI18nTranslateHooked.html
 lib/zope/lib/python/Products/PageTemplates/tests/output/CheckNotExpression.html
 lib/zope/lib/python/Products/PageTemplates/tests/output/CheckNothing.html
 lib/zope/lib/python/Products/PageTemplates/tests/output/CheckPathAlt.html
 lib/zope/lib/python/Products/PageTemplates/tests/output/CheckPathNothing.html
+lib/zope/lib/python/Products/PageTemplates/tests/output/CheckUnicodeInserts.html
 lib/zope/lib/python/Products/PageTemplates/tests/output/CheckWithXMLHeader.html
 lib/zope/lib/python/Products/PageTemplates/tests/output/DTML1a.html
 lib/zope/lib/python/Products/PageTemplates/tests/output/DTML1b.html
@@ -1228,6 +1279,26 @@ lib/zope/lib/python/Products/PageTemplates/www/exclamation.gif
 lib/zope/lib/python/Products/PageTemplates/www/ptAdd.zpt
 lib/zope/lib/python/Products/PageTemplates/www/ptEdit.zpt
 lib/zope/lib/python/Products/PageTemplates/www/zpt.gif
+lib/zope/lib/python/Products/PluginIndexes/DateIndex/DateIndex.py
+lib/zope/lib/python/Products/PluginIndexes/DateIndex/DateIndex.pyc
+lib/zope/lib/python/Products/PluginIndexes/DateIndex/DateIndex.pyo
+lib/zope/lib/python/Products/PluginIndexes/DateIndex/README.txt
+lib/zope/lib/python/Products/PluginIndexes/DateIndex/__init__.py
+lib/zope/lib/python/Products/PluginIndexes/DateIndex/__init__.pyc
+lib/zope/lib/python/Products/PluginIndexes/DateIndex/__init__.pyo
+lib/zope/lib/python/Products/PluginIndexes/DateIndex/dtml/addDateIndex.dtml
+lib/zope/lib/python/Products/PluginIndexes/DateIndex/dtml/manageDateIndex.dtml
+lib/zope/lib/python/Products/PluginIndexes/DateIndex/tests/test_DateIndex.py
+lib/zope/lib/python/Products/PluginIndexes/DateRangeIndex/DateRangeIndex.py
+lib/zope/lib/python/Products/PluginIndexes/DateRangeIndex/DateRangeIndex.pyc
+lib/zope/lib/python/Products/PluginIndexes/DateRangeIndex/DateRangeIndex.pyo
+lib/zope/lib/python/Products/PluginIndexes/DateRangeIndex/README.txt
+lib/zope/lib/python/Products/PluginIndexes/DateRangeIndex/__init__.py
+lib/zope/lib/python/Products/PluginIndexes/DateRangeIndex/__init__.pyc
+lib/zope/lib/python/Products/PluginIndexes/DateRangeIndex/__init__.pyo
+lib/zope/lib/python/Products/PluginIndexes/DateRangeIndex/dtml/addDateRangeIndex.dtml
+lib/zope/lib/python/Products/PluginIndexes/DateRangeIndex/dtml/manageDateRangeIndex.dtml
+lib/zope/lib/python/Products/PluginIndexes/DateRangeIndex/tests/test_DateRangeIndex.py
 lib/zope/lib/python/Products/PluginIndexes/FieldIndex/FieldIndex.py
 lib/zope/lib/python/Products/PluginIndexes/FieldIndex/FieldIndex.pyc
 lib/zope/lib/python/Products/PluginIndexes/FieldIndex/FieldIndex.pyo
@@ -1308,11 +1379,23 @@ lib/zope/lib/python/Products/PluginIndexes/TextIndex/dtml/manageVocabulary.dtml
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/dtml/manage_vocab.dtml
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/dtml/vocab_query.dtml
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/help/TextIndex_searchResults.stx
-lib/zope/lib/python/Products/PluginIndexes/TextIndex/randid.py
-lib/zope/lib/python/Products/PluginIndexes/TextIndex/randid.pyc
-lib/zope/lib/python/Products/PluginIndexes/TextIndex/randid.pyo
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/tests/testSplitter.py
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/tests/testTextIndex.py
+lib/zope/lib/python/Products/PluginIndexes/TopicIndex/FilteredSet.py
+lib/zope/lib/python/Products/PluginIndexes/TopicIndex/FilteredSet.pyc
+lib/zope/lib/python/Products/PluginIndexes/TopicIndex/FilteredSet.pyo
+lib/zope/lib/python/Products/PluginIndexes/TopicIndex/README.txt
+lib/zope/lib/python/Products/PluginIndexes/TopicIndex/TopicIndex.py
+lib/zope/lib/python/Products/PluginIndexes/TopicIndex/TopicIndex.pyc
+lib/zope/lib/python/Products/PluginIndexes/TopicIndex/TopicIndex.pyo
+lib/zope/lib/python/Products/PluginIndexes/TopicIndex/__init__.py
+lib/zope/lib/python/Products/PluginIndexes/TopicIndex/__init__.pyc
+lib/zope/lib/python/Products/PluginIndexes/TopicIndex/__init__.pyo
+lib/zope/lib/python/Products/PluginIndexes/TopicIndex/dtml/addTopicIndex.dtml
+lib/zope/lib/python/Products/PluginIndexes/TopicIndex/dtml/editFilteredSet.dtml
+lib/zope/lib/python/Products/PluginIndexes/TopicIndex/dtml/manageTopicIndex.dtml
+lib/zope/lib/python/Products/PluginIndexes/TopicIndex/help/TopicIndex_searchResults.stx
+lib/zope/lib/python/Products/PluginIndexes/TopicIndex/tests/testTopicIndex.py
 lib/zope/lib/python/Products/PluginIndexes/__init__.py
 lib/zope/lib/python/Products/PluginIndexes/__init__.pyc
 lib/zope/lib/python/Products/PluginIndexes/__init__.pyo
@@ -1458,6 +1541,15 @@ lib/zope/lib/python/Products/SiteAccess/www/VirtualHostMonster.dtml
 lib/zope/lib/python/Products/SiteAccess/www/VirtualHostMonster.gif
 lib/zope/lib/python/Products/SiteAccess/www/VirtualHostMonsterAdd.dtml
 lib/zope/lib/python/Products/SiteAccess/www/manage_edit.dtml
+lib/zope/lib/python/Products/SiteErrorLog/SiteErrorLog.py
+lib/zope/lib/python/Products/SiteErrorLog/SiteErrorLog.pyc
+lib/zope/lib/python/Products/SiteErrorLog/SiteErrorLog.pyo
+lib/zope/lib/python/Products/SiteErrorLog/__init__.py
+lib/zope/lib/python/Products/SiteErrorLog/__init__.pyc
+lib/zope/lib/python/Products/SiteErrorLog/__init__.pyo
+lib/zope/lib/python/Products/SiteErrorLog/www/error.gif
+lib/zope/lib/python/Products/SiteErrorLog/www/main.pt
+lib/zope/lib/python/Products/SiteErrorLog/www/showEntry.pt
 lib/zope/lib/python/Products/StandardCacheManagers/AcceleratedHTTPCacheManager.py
 lib/zope/lib/python/Products/StandardCacheManagers/AcceleratedHTTPCacheManager.pyc
 lib/zope/lib/python/Products/StandardCacheManagers/AcceleratedHTTPCacheManager.pyo
@@ -1497,6 +1589,7 @@ lib/zope/lib/python/Products/TemporaryFolder/patchfs.pyc
 lib/zope/lib/python/Products/TemporaryFolder/patchfs.pyo
 lib/zope/lib/python/Products/TemporaryFolder/tests/testTemporaryStorage.py
 lib/zope/lib/python/Products/TemporaryFolder/www/tempfolder.gif
+lib/zope/lib/python/Products/Transience/HowTransienceWorks.stx
 lib/zope/lib/python/Products/Transience/Transience.py
 lib/zope/lib/python/Products/Transience/Transience.pyc
 lib/zope/lib/python/Products/Transience/Transience.pyo
@@ -1521,6 +1614,107 @@ lib/zope/lib/python/Products/Transience/tests/testTimeoutRelated.py
 lib/zope/lib/python/Products/Transience/tests/testTransientObject.py
 lib/zope/lib/python/Products/Transience/tests/testTransientObjectContainer.py
 lib/zope/lib/python/Products/Transience/www/datacontainer.gif
+lib/zope/lib/python/Products/ZCTextIndex/BaseIndex.py
+lib/zope/lib/python/Products/ZCTextIndex/BaseIndex.pyc
+lib/zope/lib/python/Products/ZCTextIndex/BaseIndex.pyo
+lib/zope/lib/python/Products/ZCTextIndex/CosineIndex.py
+lib/zope/lib/python/Products/ZCTextIndex/CosineIndex.pyc
+lib/zope/lib/python/Products/ZCTextIndex/CosineIndex.pyo
+lib/zope/lib/python/Products/ZCTextIndex/HTMLSplitter.py
+lib/zope/lib/python/Products/ZCTextIndex/HTMLSplitter.pyc
+lib/zope/lib/python/Products/ZCTextIndex/HTMLSplitter.pyo
+lib/zope/lib/python/Products/ZCTextIndex/IIndex.py
+lib/zope/lib/python/Products/ZCTextIndex/IIndex.pyc
+lib/zope/lib/python/Products/ZCTextIndex/IIndex.pyo
+lib/zope/lib/python/Products/ZCTextIndex/ILexicon.py
+lib/zope/lib/python/Products/ZCTextIndex/ILexicon.pyc
+lib/zope/lib/python/Products/ZCTextIndex/ILexicon.pyo
+lib/zope/lib/python/Products/ZCTextIndex/INBest.py
+lib/zope/lib/python/Products/ZCTextIndex/INBest.pyc
+lib/zope/lib/python/Products/ZCTextIndex/INBest.pyo
+lib/zope/lib/python/Products/ZCTextIndex/IPipelineElement.py
+lib/zope/lib/python/Products/ZCTextIndex/IPipelineElement.pyc
+lib/zope/lib/python/Products/ZCTextIndex/IPipelineElement.pyo
+lib/zope/lib/python/Products/ZCTextIndex/IPipelineElementFactory.py
+lib/zope/lib/python/Products/ZCTextIndex/IPipelineElementFactory.pyc
+lib/zope/lib/python/Products/ZCTextIndex/IPipelineElementFactory.pyo
+lib/zope/lib/python/Products/ZCTextIndex/IQueryParseTree.py
+lib/zope/lib/python/Products/ZCTextIndex/IQueryParseTree.pyc
+lib/zope/lib/python/Products/ZCTextIndex/IQueryParseTree.pyo
+lib/zope/lib/python/Products/ZCTextIndex/IQueryParser.py
+lib/zope/lib/python/Products/ZCTextIndex/IQueryParser.pyc
+lib/zope/lib/python/Products/ZCTextIndex/IQueryParser.pyo
+lib/zope/lib/python/Products/ZCTextIndex/ISplitter.py
+lib/zope/lib/python/Products/ZCTextIndex/ISplitter.pyc
+lib/zope/lib/python/Products/ZCTextIndex/ISplitter.pyo
+lib/zope/lib/python/Products/ZCTextIndex/Lexicon.py
+lib/zope/lib/python/Products/ZCTextIndex/Lexicon.pyc
+lib/zope/lib/python/Products/ZCTextIndex/Lexicon.pyo
+lib/zope/lib/python/Products/ZCTextIndex/NBest.py
+lib/zope/lib/python/Products/ZCTextIndex/NBest.pyc
+lib/zope/lib/python/Products/ZCTextIndex/NBest.pyo
+lib/zope/lib/python/Products/ZCTextIndex/OkapiIndex.py
+lib/zope/lib/python/Products/ZCTextIndex/OkapiIndex.pyc
+lib/zope/lib/python/Products/ZCTextIndex/OkapiIndex.pyo
+lib/zope/lib/python/Products/ZCTextIndex/ParseTree.py
+lib/zope/lib/python/Products/ZCTextIndex/ParseTree.pyc
+lib/zope/lib/python/Products/ZCTextIndex/ParseTree.pyo
+lib/zope/lib/python/Products/ZCTextIndex/PipelineFactory.py
+lib/zope/lib/python/Products/ZCTextIndex/PipelineFactory.pyc
+lib/zope/lib/python/Products/ZCTextIndex/PipelineFactory.pyo
+lib/zope/lib/python/Products/ZCTextIndex/QueryParser.py
+lib/zope/lib/python/Products/ZCTextIndex/QueryParser.pyc
+lib/zope/lib/python/Products/ZCTextIndex/QueryParser.pyo
+lib/zope/lib/python/Products/ZCTextIndex/README.txt
+lib/zope/lib/python/Products/ZCTextIndex/RiceCode.py
+lib/zope/lib/python/Products/ZCTextIndex/RiceCode.pyc
+lib/zope/lib/python/Products/ZCTextIndex/RiceCode.pyo
+lib/zope/lib/python/Products/ZCTextIndex/SetOps.py
+lib/zope/lib/python/Products/ZCTextIndex/SetOps.pyc
+lib/zope/lib/python/Products/ZCTextIndex/SetOps.pyo
+lib/zope/lib/python/Products/ZCTextIndex/Setup
+lib/zope/lib/python/Products/ZCTextIndex/StopDict.py
+lib/zope/lib/python/Products/ZCTextIndex/StopDict.pyc
+lib/zope/lib/python/Products/ZCTextIndex/StopDict.pyo
+lib/zope/lib/python/Products/ZCTextIndex/WidCode.py
+lib/zope/lib/python/Products/ZCTextIndex/WidCode.pyc
+lib/zope/lib/python/Products/ZCTextIndex/WidCode.pyo
+lib/zope/lib/python/Products/ZCTextIndex/ZCTextIndex.py
+lib/zope/lib/python/Products/ZCTextIndex/ZCTextIndex.pyc
+lib/zope/lib/python/Products/ZCTextIndex/ZCTextIndex.pyo
+lib/zope/lib/python/Products/ZCTextIndex/__init__.py
+lib/zope/lib/python/Products/ZCTextIndex/__init__.pyc
+lib/zope/lib/python/Products/ZCTextIndex/__init__.pyo
+lib/zope/lib/python/Products/ZCTextIndex/dtml/addLexicon.dtml
+lib/zope/lib/python/Products/ZCTextIndex/dtml/addZCTextIndex.dtml
+lib/zope/lib/python/Products/ZCTextIndex/dtml/manageLexicon.dtml
+lib/zope/lib/python/Products/ZCTextIndex/dtml/manageZCTextIndex.dtml
+lib/zope/lib/python/Products/ZCTextIndex/dtml/queryLexicon.dtml
+lib/zope/lib/python/Products/ZCTextIndex/help/Lexicon_Add.stx
+lib/zope/lib/python/Products/ZCTextIndex/help/ZCTextIndex_Add.stx
+lib/zope/lib/python/Products/ZCTextIndex/okascore.c
+lib/zope/lib/python/Products/ZCTextIndex/okascore.so
+lib/zope/lib/python/Products/ZCTextIndex/stopper.c
+lib/zope/lib/python/Products/ZCTextIndex/stopper.so
+lib/zope/lib/python/Products/ZCTextIndex/tests/__init__.py
+lib/zope/lib/python/Products/ZCTextIndex/tests/hs-tool.py
+lib/zope/lib/python/Products/ZCTextIndex/tests/indexhtml.py
+lib/zope/lib/python/Products/ZCTextIndex/tests/mailtest.py
+lib/zope/lib/python/Products/ZCTextIndex/tests/mhindex.py
+lib/zope/lib/python/Products/ZCTextIndex/tests/python.txt
+lib/zope/lib/python/Products/ZCTextIndex/tests/queryhtml.py
+lib/zope/lib/python/Products/ZCTextIndex/tests/testIndex.py
+lib/zope/lib/python/Products/ZCTextIndex/tests/testLexicon.py
+lib/zope/lib/python/Products/ZCTextIndex/tests/testNBest.py
+lib/zope/lib/python/Products/ZCTextIndex/tests/testPipelineFactory.py
+lib/zope/lib/python/Products/ZCTextIndex/tests/testQueryEngine.py
+lib/zope/lib/python/Products/ZCTextIndex/tests/testQueryParser.py
+lib/zope/lib/python/Products/ZCTextIndex/tests/testSetOps.py
+lib/zope/lib/python/Products/ZCTextIndex/tests/testStopper.py
+lib/zope/lib/python/Products/ZCTextIndex/tests/testZCTextIndex.py
+lib/zope/lib/python/Products/ZCTextIndex/tests/wordstats.py
+lib/zope/lib/python/Products/ZCTextIndex/www/index.gif
+lib/zope/lib/python/Products/ZCTextIndex/www/lexicon.gif
 lib/zope/lib/python/Products/ZCatalog/CHANGES.txt
 lib/zope/lib/python/Products/ZCatalog/Catalog.gif
 lib/zope/lib/python/Products/ZCatalog/Catalog.py
@@ -1538,6 +1732,9 @@ lib/zope/lib/python/Products/ZCatalog/CatalogBrains.pyo
 lib/zope/lib/python/Products/ZCatalog/CatalogPathAwareness.py
 lib/zope/lib/python/Products/ZCatalog/CatalogPathAwareness.pyc
 lib/zope/lib/python/Products/ZCatalog/CatalogPathAwareness.pyo
+lib/zope/lib/python/Products/ZCatalog/IZCatalog.py
+lib/zope/lib/python/Products/ZCatalog/IZCatalog.pyc
+lib/zope/lib/python/Products/ZCatalog/IZCatalog.pyo
 lib/zope/lib/python/Products/ZCatalog/Lazy.py
 lib/zope/lib/python/Products/ZCatalog/Lazy.pyc
 lib/zope/lib/python/Products/ZCatalog/Lazy.pyo
@@ -1569,8 +1766,6 @@ lib/zope/lib/python/Products/ZCatalog/dtml/catalogStatus.dtml
 lib/zope/lib/python/Products/ZCatalog/dtml/catalogView.dtml
 lib/zope/lib/python/Products/ZCatalog/dtml/editCatalogerForm.dtml
 lib/zope/lib/python/Products/ZCatalog/dtml/edit_stop_syn.dtml
-lib/zope/lib/python/Products/ZCatalog/dtml/manageIndex.dtml
-lib/zope/lib/python/Products/ZCatalog/dtml/manageIndex.dtml.bak
 lib/zope/lib/python/Products/ZCatalog/dtml/manageOldindex.dtml
 lib/zope/lib/python/Products/ZCatalog/dtml/manage_vocab.dtml
 lib/zope/lib/python/Products/ZCatalog/dtml/vocab_manage_main.dtml
@@ -1895,7 +2090,6 @@ lib/zope/lib/python/SearchIndex/randid.py
 lib/zope/lib/python/SearchIndex/randid.pyc
 lib/zope/lib/python/SearchIndex/randid.pyo
 lib/zope/lib/python/SearchIndex/tests/__init__.py
-lib/zope/lib/python/SearchIndex/tests/framework.py
 lib/zope/lib/python/SearchIndex/tests/testSplitter.py
 lib/zope/lib/python/SearchIndex/tests/testUnKeywordIndex.py
 lib/zope/lib/python/SearchIndex/tests/testUnTextIndex.py
@@ -2023,6 +2217,15 @@ lib/zope/lib/python/Shared/DC/xml/xyap.pyo
 lib/zope/lib/python/Shared/__init__.py
 lib/zope/lib/python/Shared/__init__.pyc
 lib/zope/lib/python/Shared/__init__.pyo
+lib/zope/lib/python/Signals/SignalHandler.py
+lib/zope/lib/python/Signals/SignalHandler.pyc
+lib/zope/lib/python/Signals/SignalHandler.pyo
+lib/zope/lib/python/Signals/Signals.py
+lib/zope/lib/python/Signals/Signals.pyc
+lib/zope/lib/python/Signals/Signals.pyo
+lib/zope/lib/python/Signals/__init__.py
+lib/zope/lib/python/Signals/__init__.pyc
+lib/zope/lib/python/Signals/__init__.pyo
 lib/zope/lib/python/StructuredText/ClassicDocumentClass.py
 lib/zope/lib/python/StructuredText/ClassicDocumentClass.pyc
 lib/zope/lib/python/StructuredText/ClassicDocumentClass.pyo
@@ -2097,6 +2300,9 @@ lib/zope/lib/python/TAL/HTMLParser.pyo
 lib/zope/lib/python/TAL/HTMLTALParser.py
 lib/zope/lib/python/TAL/HTMLTALParser.pyc
 lib/zope/lib/python/TAL/HTMLTALParser.pyo
+lib/zope/lib/python/TAL/ITALES.py
+lib/zope/lib/python/TAL/ITALES.pyc
+lib/zope/lib/python/TAL/ITALES.pyo
 lib/zope/lib/python/TAL/README.txt
 lib/zope/lib/python/TAL/TALDefs.py
 lib/zope/lib/python/TAL/TALDefs.pyc
@@ -2110,6 +2316,9 @@ lib/zope/lib/python/TAL/TALInterpreter.pyo
 lib/zope/lib/python/TAL/TALParser.py
 lib/zope/lib/python/TAL/TALParser.pyc
 lib/zope/lib/python/TAL/TALParser.pyo
+lib/zope/lib/python/TAL/TranslationContext.py
+lib/zope/lib/python/TAL/TranslationContext.pyc
+lib/zope/lib/python/TAL/TranslationContext.pyo
 lib/zope/lib/python/TAL/XMLParser.py
 lib/zope/lib/python/TAL/XMLParser.pyc
 lib/zope/lib/python/TAL/XMLParser.pyo
@@ -2190,6 +2399,20 @@ lib/zope/lib/python/TAL/tests/input/test17.html
 lib/zope/lib/python/TAL/tests/input/test17.xml
 lib/zope/lib/python/TAL/tests/input/test18.html
 lib/zope/lib/python/TAL/tests/input/test18.xml
+lib/zope/lib/python/TAL/tests/input/test19.html
+lib/zope/lib/python/TAL/tests/input/test20.html
+lib/zope/lib/python/TAL/tests/input/test21.html
+lib/zope/lib/python/TAL/tests/input/test22.html
+lib/zope/lib/python/TAL/tests/input/test23.html
+lib/zope/lib/python/TAL/tests/input/test24.html
+lib/zope/lib/python/TAL/tests/input/test25.html
+lib/zope/lib/python/TAL/tests/input/test26.html
+lib/zope/lib/python/TAL/tests/input/test27.html
+lib/zope/lib/python/TAL/tests/input/test28.html
+lib/zope/lib/python/TAL/tests/input/test29.html
+lib/zope/lib/python/TAL/tests/input/test30.html
+lib/zope/lib/python/TAL/tests/input/test31.html
+lib/zope/lib/python/TAL/tests/input/test32.html
 lib/zope/lib/python/TAL/tests/input/test_metal1.html
 lib/zope/lib/python/TAL/tests/input/test_metal2.html
 lib/zope/lib/python/TAL/tests/input/test_metal3.html
@@ -2224,6 +2447,20 @@ lib/zope/lib/python/TAL/tests/output/test17.html
 lib/zope/lib/python/TAL/tests/output/test17.xml
 lib/zope/lib/python/TAL/tests/output/test18.html
 lib/zope/lib/python/TAL/tests/output/test18.xml
+lib/zope/lib/python/TAL/tests/output/test19.html
+lib/zope/lib/python/TAL/tests/output/test20.html
+lib/zope/lib/python/TAL/tests/output/test21.html
+lib/zope/lib/python/TAL/tests/output/test22.html
+lib/zope/lib/python/TAL/tests/output/test23.html
+lib/zope/lib/python/TAL/tests/output/test24.html
+lib/zope/lib/python/TAL/tests/output/test25.html
+lib/zope/lib/python/TAL/tests/output/test26.html
+lib/zope/lib/python/TAL/tests/output/test27.html
+lib/zope/lib/python/TAL/tests/output/test28.html
+lib/zope/lib/python/TAL/tests/output/test29.html
+lib/zope/lib/python/TAL/tests/output/test30.html
+lib/zope/lib/python/TAL/tests/output/test31.html
+lib/zope/lib/python/TAL/tests/output/test32.html
 lib/zope/lib/python/TAL/tests/output/test_metal1.html
 lib/zope/lib/python/TAL/tests/output/test_metal2.html
 lib/zope/lib/python/TAL/tests/output/test_metal3.html
@@ -2231,6 +2468,7 @@ lib/zope/lib/python/TAL/tests/run.py
 lib/zope/lib/python/TAL/tests/test_files.py
 lib/zope/lib/python/TAL/tests/test_htmlparser.py
 lib/zope/lib/python/TAL/tests/test_htmltalparser.py
+lib/zope/lib/python/TAL/tests/test_sourcepos.py
 lib/zope/lib/python/TAL/tests/test_talinterpreter.py
 lib/zope/lib/python/TAL/tests/test_xmlparser.py
 lib/zope/lib/python/TAL/tests/utils.py
@@ -2327,6 +2565,9 @@ lib/zope/lib/python/ZLogger/syslogLogger.pyo
 lib/zope/lib/python/ZLogger/test_logger.py
 lib/zope/lib/python/ZLogger/test_logger.pyc
 lib/zope/lib/python/ZLogger/test_logger.pyo
+lib/zope/lib/python/ZODB/ActivityMonitor.py
+lib/zope/lib/python/ZODB/ActivityMonitor.pyc
+lib/zope/lib/python/ZODB/ActivityMonitor.pyo
 lib/zope/lib/python/ZODB/BaseStorage.py
 lib/zope/lib/python/ZODB/BaseStorage.pyc
 lib/zope/lib/python/ZODB/BaseStorage.pyo
@@ -2357,6 +2598,9 @@ lib/zope/lib/python/ZODB/Mount.pyo
 lib/zope/lib/python/ZODB/POSException.py
 lib/zope/lib/python/ZODB/POSException.pyc
 lib/zope/lib/python/ZODB/POSException.pyo
+lib/zope/lib/python/ZODB/PersistentList.py
+lib/zope/lib/python/ZODB/PersistentList.pyc
+lib/zope/lib/python/ZODB/PersistentList.pyo
 lib/zope/lib/python/ZODB/PersistentMapping.py
 lib/zope/lib/python/ZODB/PersistentMapping.pyc
 lib/zope/lib/python/ZODB/PersistentMapping.pyo
@@ -2428,10 +2672,13 @@ lib/zope/lib/python/ZODB/tests/TransactionalUndoVersionStorage.py
 lib/zope/lib/python/ZODB/tests/VersionStorage.py
 lib/zope/lib/python/ZODB/tests/__init__.py
 lib/zope/lib/python/ZODB/tests/speed.py
+lib/zope/lib/python/ZODB/tests/testActivityMonitor.py
 lib/zope/lib/python/ZODB/tests/testCache.py
+lib/zope/lib/python/ZODB/tests/testDB.py
 lib/zope/lib/python/ZODB/tests/testDemoStorage.py
 lib/zope/lib/python/ZODB/tests/testFileStorage.py
 lib/zope/lib/python/ZODB/tests/testMappingStorage.py
+lib/zope/lib/python/ZODB/tests/testPersistentList.py
 lib/zope/lib/python/ZODB/tests/testPersistentMapping.py
 lib/zope/lib/python/ZODB/tests/testTimeStamp.py
 lib/zope/lib/python/ZODB/tests/testTransaction.py
@@ -2476,6 +2723,9 @@ lib/zope/lib/python/ZPublisher/Request.pyo
 lib/zope/lib/python/ZPublisher/Response.py
 lib/zope/lib/python/ZPublisher/Response.pyc
 lib/zope/lib/python/ZPublisher/Response.pyo
+lib/zope/lib/python/ZPublisher/TaintedString.py
+lib/zope/lib/python/ZPublisher/TaintedString.pyc
+lib/zope/lib/python/ZPublisher/TaintedString.pyo
 lib/zope/lib/python/ZPublisher/Test.py
 lib/zope/lib/python/ZPublisher/Test.pyc
 lib/zope/lib/python/ZPublisher/Test.pyo
@@ -2494,6 +2744,7 @@ lib/zope/lib/python/ZPublisher/maybe_lock.pyo
 lib/zope/lib/python/ZPublisher/tests/__init__.py
 lib/zope/lib/python/ZPublisher/tests/testHTTPRangeSupport.py
 lib/zope/lib/python/ZPublisher/tests/testHTTPRequest.py
+lib/zope/lib/python/ZPublisher/tests/testTaintedString.py
 lib/zope/lib/python/ZPublisher/xmlrpc.py
 lib/zope/lib/python/ZPublisher/xmlrpc.pyc
 lib/zope/lib/python/ZPublisher/xmlrpc.pyo
@@ -2520,20 +2771,35 @@ lib/zope/lib/python/ZTUtils/__init__.pyo
 lib/zope/lib/python/ZTUtils/tests/run.py
 lib/zope/lib/python/ZTUtils/tests/testBatch.py
 lib/zope/lib/python/ZTUtils/tests/testIterator.py
+lib/zope/lib/python/ZTUtils/tests/testTree.py
+lib/zope/lib/python/Zope/App/ClassFactory.py
+lib/zope/lib/python/Zope/App/ClassFactory.pyc
+lib/zope/lib/python/Zope/App/ClassFactory.pyo
+lib/zope/lib/python/Zope/App/__init__.py
+lib/zope/lib/python/Zope/App/__init__.pyc
+lib/zope/lib/python/Zope/App/__init__.pyo
+lib/zope/lib/python/Zope/App/startup.py
+lib/zope/lib/python/Zope/App/startup.pyc
+lib/zope/lib/python/Zope/App/startup.pyo
 lib/zope/lib/python/Zope/ClassFactory.py
 lib/zope/lib/python/Zope/ClassFactory.pyc
 lib/zope/lib/python/Zope/ClassFactory.pyo
 lib/zope/lib/python/Zope/__init__.py
 lib/zope/lib/python/Zope/__init__.pyc
 lib/zope/lib/python/Zope/__init__.pyo
+lib/zope/lib/python/ZopeUndo/Prefix.py
+lib/zope/lib/python/ZopeUndo/Prefix.pyc
+lib/zope/lib/python/ZopeUndo/Prefix.pyo
+lib/zope/lib/python/ZopeUndo/__init__.py
+lib/zope/lib/python/ZopeUndo/__init__.pyc
+lib/zope/lib/python/ZopeUndo/__init__.pyo
+lib/zope/lib/python/ZopeUndo/tests/__init__.py
+lib/zope/lib/python/ZopeUndo/tests/testPrefix.py
 lib/zope/lib/python/dcdb.py
 lib/zope/lib/python/dcdb.pyc
 lib/zope/lib/python/dcdb.pyo
 lib/zope/lib/python/initgroups.so
 lib/zope/lib/python/intSet.so
-lib/zope/lib/python/tempfile.py
-lib/zope/lib/python/tempfile.pyc
-lib/zope/lib/python/tempfile.pyo
 lib/zope/lib/python/ts_regex.py
 lib/zope/lib/python/ts_regex.pyc
 lib/zope/lib/python/ts_regex.pyo
@@ -2582,9 +2848,17 @@ lib/zope/lib/python/webdav/xmltools.pyo
 lib/zope/lib/python/xmlrpclib.py
 lib/zope/lib/python/xmlrpclib.pyc
 lib/zope/lib/python/xmlrpclib.pyo
+lib/zope/lib/python/zExceptions/ExceptionFormatter.py
+lib/zope/lib/python/zExceptions/ExceptionFormatter.pyc
+lib/zope/lib/python/zExceptions/ExceptionFormatter.pyo
+lib/zope/lib/python/zExceptions/ITracebackSupplement.py
+lib/zope/lib/python/zExceptions/ITracebackSupplement.pyc
+lib/zope/lib/python/zExceptions/ITracebackSupplement.pyo
 lib/zope/lib/python/zExceptions/__init__.py
 lib/zope/lib/python/zExceptions/__init__.pyc
 lib/zope/lib/python/zExceptions/__init__.pyo
+lib/zope/lib/python/zExceptions/tests/__init__.py
+lib/zope/lib/python/zExceptions/tests/testExceptionFormatter.py
 lib/zope/lib/python/zExceptions/unauthorized.py
 lib/zope/lib/python/zExceptions/unauthorized.pyc
 lib/zope/lib/python/zExceptions/unauthorized.pyo
@@ -2605,13 +2879,17 @@ lib/zope/lib/python/zdaemon/Daemon.pyo
 lib/zope/lib/python/zdaemon/Heartbeat.py
 lib/zope/lib/python/zdaemon/Heartbeat.pyc
 lib/zope/lib/python/zdaemon/Heartbeat.pyo
+lib/zope/lib/python/zdaemon/SignalHandler.py
+lib/zope/lib/python/zdaemon/SignalHandler.pyc
+lib/zope/lib/python/zdaemon/SignalHandler.pyo
 lib/zope/lib/python/zdaemon/ZDaemonLogging.py
 lib/zope/lib/python/zdaemon/ZDaemonLogging.pyc
 lib/zope/lib/python/zdaemon/ZDaemonLogging.pyo
 lib/zope/lib/python/zdaemon/__init__.py
 lib/zope/lib/python/zdaemon/__init__.pyc
 lib/zope/lib/python/zdaemon/__init__.pyo
-lib/zope/lib/python/zlib.so
+lib/zope/lib/python/zdaemon/tests/__init__.py
+lib/zope/lib/python/zdaemon/tests/testDaemon.py
 lib/zope/lib/python2.1
 lib/zope/pcgi/Example/pcgitest
 lib/zope/pcgi/Example/pcgitime.py
@@ -2648,6 +2926,10 @@ lib/zope/pcgi/pcgi.h
 lib/zope/pcgi/pcgi_publisher.py
 lib/zope/pcgi/pcgi_publisher.pyc
 lib/zope/pcgi/pcgi_publisher.pyo
+lib/zope/setup.py
+lib/zope/setup.pyc
+lib/zope/setup.pyo
+lib/zope/stupid_clean
 lib/zope/utilities/ExtensionBuilder.py
 lib/zope/utilities/ExtensionBuilder.pyc
 lib/zope/utilities/ExtensionBuilder.pyo
@@ -2655,11 +2937,36 @@ lib/zope/utilities/FS.py
 lib/zope/utilities/FS.pyc
 lib/zope/utilities/FS.pyo
 lib/zope/utilities/README.txt
+lib/zope/utilities/ZODBTools/checkbtrees.py
+lib/zope/utilities/ZODBTools/checkbtrees.pyc
+lib/zope/utilities/ZODBTools/checkbtrees.pyo
+lib/zope/utilities/ZODBTools/fsdump.py
+lib/zope/utilities/ZODBTools/fsdump.pyc
+lib/zope/utilities/ZODBTools/fsdump.pyo
 lib/zope/utilities/ZODBTools/fstest.py
 lib/zope/utilities/ZODBTools/fstest.pyc
 lib/zope/utilities/ZODBTools/fstest.pyo
+lib/zope/utilities/ZODBTools/netspace.py
+lib/zope/utilities/ZODBTools/netspace.pyc
+lib/zope/utilities/ZODBTools/netspace.pyo
+lib/zope/utilities/ZODBTools/parsezeolog.py
+lib/zope/utilities/ZODBTools/parsezeolog.pyc
+lib/zope/utilities/ZODBTools/parsezeolog.pyo
+lib/zope/utilities/ZODBTools/space.py
+lib/zope/utilities/ZODBTools/space.pyc
+lib/zope/utilities/ZODBTools/space.pyo
 lib/zope/utilities/ZODBTools/tests/test-checker.fs
 lib/zope/utilities/ZODBTools/tests/testfstest.py
+lib/zope/utilities/ZODBTools/tests/testzeopack.py
+lib/zope/utilities/ZODBTools/zeopack.py
+lib/zope/utilities/ZODBTools/zeopack.pyc
+lib/zope/utilities/ZODBTools/zeopack.pyo
+lib/zope/utilities/ZODBTools/zeoreplay.py
+lib/zope/utilities/ZODBTools/zeoreplay.pyc
+lib/zope/utilities/ZODBTools/zeoreplay.pyo
+lib/zope/utilities/ZODBTools/zeoup.py
+lib/zope/utilities/ZODBTools/zeoup.pyc
+lib/zope/utilities/ZODBTools/zeoup.pyo
 lib/zope/utilities/bbb.py
 lib/zope/utilities/bbb.pyc
 lib/zope/utilities/bbb.pyo
@@ -2697,6 +3004,8 @@ share/doc/zope/LICENSE.txt
 share/doc/zope/LOGGING.txt
 share/doc/zope/README.txt
 share/doc/zope/SECURITY.txt
+share/doc/zope/SETUID.txt
+share/doc/zope/SIGNALS.txt
 share/doc/zope/UNITTEST.txt
 share/doc/zope/WEBSERVER.txt
 share/doc/zope/ZODB.txt
@@ -2716,13 +3025,21 @@ share/doc/zope/changenotes/010620-2.4-btreeconflict.stx
 @dirrm lib/zope/pcgi/MrCreosote
 @dirrm lib/zope/pcgi/Example
 @dirrm lib/zope/pcgi
+@dirrm lib/zope/lib/python/zdaemon/tests
 @dirrm lib/zope/lib/python/zdaemon
 @dirrm lib/zope/lib/python/zLOG/tests
 @dirrm lib/zope/lib/python/zLOG
+@dirrm lib/zope/lib/python/zExceptions/tests
 @dirrm lib/zope/lib/python/zExceptions
 @dirrm lib/zope/lib/python/webdav/www
 @dirrm lib/zope/lib/python/webdav/dtml
 @dirrm lib/zope/lib/python/webdav
+@exec mkdir -p %D/lib/zope/lib/python/build/temp.openbsd-3.3-${MACHINE_ARCH}-2.1
+@dirrm lib/zope/lib/python/build/temp.openbsd-3.3-${MACHINE_ARCH}-2.1
+@dirrm lib/zope/lib/python/build
+@dirrm lib/zope/lib/python/ZopeUndo/tests
+@dirrm lib/zope/lib/python/ZopeUndo
+@dirrm lib/zope/lib/python/Zope/App
 @dirrm lib/zope/lib/python/Zope
 @dirrm lib/zope/lib/python/ZTUtils/tests
 @dirrm lib/zope/lib/python/ZTUtils
@@ -2746,6 +3063,7 @@ share/doc/zope/changenotes/010620-2.4-btreeconflict.stx
 @dirrm lib/zope/lib/python/StructuredText/tests
 @dirrm lib/zope/lib/python/StructuredText/regressions
 @dirrm lib/zope/lib/python/StructuredText
+@dirrm lib/zope/lib/python/Signals
 @dirrm lib/zope/lib/python/Shared/DC/xml/pyexpat/expat/xmltok
 @dirrm lib/zope/lib/python/Shared/DC/xml/pyexpat/expat/xmlparse
 @dirrm lib/zope/lib/python/Shared/DC/xml/pyexpat/expat
@@ -2778,6 +3096,11 @@ share/doc/zope/changenotes/010620-2.4-btreeconflict.stx
 @dirrm lib/zope/lib/python/Products/ZCatalog/help
 @dirrm lib/zope/lib/python/Products/ZCatalog/dtml
 @dirrm lib/zope/lib/python/Products/ZCatalog
+@dirrm lib/zope/lib/python/Products/ZCTextIndex/www
+@dirrm lib/zope/lib/python/Products/ZCTextIndex/tests
+@dirrm lib/zope/lib/python/Products/ZCTextIndex/help
+@dirrm lib/zope/lib/python/Products/ZCTextIndex/dtml
+@dirrm lib/zope/lib/python/Products/ZCTextIndex
 @dirrm lib/zope/lib/python/Products/Transience/www
 @dirrm lib/zope/lib/python/Products/Transience/tests
 @dirrm lib/zope/lib/python/Products/Transience/help
@@ -2791,6 +3114,8 @@ share/doc/zope/changenotes/010620-2.4-btreeconflict.stx
 @dirrm lib/zope/lib/python/Products/StandardCacheManagers/help
 @dirrm lib/zope/lib/python/Products/StandardCacheManagers/dtml
 @dirrm lib/zope/lib/python/Products/StandardCacheManagers
+@dirrm lib/zope/lib/python/Products/SiteErrorLog/www
+@dirrm lib/zope/lib/python/Products/SiteErrorLog
 @dirrm lib/zope/lib/python/Products/SiteAccess/www
 @dirrm lib/zope/lib/python/Products/SiteAccess/help
 @dirrm lib/zope/lib/python/Products/SiteAccess/doc
@@ -2811,6 +3136,10 @@ share/doc/zope/changenotes/010620-2.4-btreeconflict.stx
 @dirrm lib/zope/lib/python/Products/PluginIndexes/www
 @dirrm lib/zope/lib/python/Products/PluginIndexes/help
 @dirrm lib/zope/lib/python/Products/PluginIndexes/common
+@dirrm lib/zope/lib/python/Products/PluginIndexes/TopicIndex/tests
+@dirrm lib/zope/lib/python/Products/PluginIndexes/TopicIndex/help
+@dirrm lib/zope/lib/python/Products/PluginIndexes/TopicIndex/dtml
+@dirrm lib/zope/lib/python/Products/PluginIndexes/TopicIndex
 @dirrm lib/zope/lib/python/Products/PluginIndexes/TextIndex/tests
 @dirrm lib/zope/lib/python/Products/PluginIndexes/TextIndex/help
 @dirrm lib/zope/lib/python/Products/PluginIndexes/TextIndex/dtml
@@ -2835,6 +3164,12 @@ share/doc/zope/changenotes/010620-2.4-btreeconflict.stx
 @dirrm lib/zope/lib/python/Products/PluginIndexes/FieldIndex/help
 @dirrm lib/zope/lib/python/Products/PluginIndexes/FieldIndex/dtml
 @dirrm lib/zope/lib/python/Products/PluginIndexes/FieldIndex
+@dirrm lib/zope/lib/python/Products/PluginIndexes/DateRangeIndex/tests
+@dirrm lib/zope/lib/python/Products/PluginIndexes/DateRangeIndex/dtml
+@dirrm lib/zope/lib/python/Products/PluginIndexes/DateRangeIndex
+@dirrm lib/zope/lib/python/Products/PluginIndexes/DateIndex/tests
+@dirrm lib/zope/lib/python/Products/PluginIndexes/DateIndex/dtml
+@dirrm lib/zope/lib/python/Products/PluginIndexes/DateIndex
 @dirrm lib/zope/lib/python/Products/PluginIndexes
 @dirrm lib/zope/lib/python/Products/PageTemplates/www
 @dirrm lib/zope/lib/python/Products/PageTemplates/tests/output
@@ -2848,11 +3183,11 @@ share/doc/zope/changenotes/010620-2.4-btreeconflict.stx
 @dirrm lib/zope/lib/python/Products/OFSP/dtml
 @dirrm lib/zope/lib/python/Products/OFSP
 @dirrm lib/zope/lib/python/Products/MailHost/www
+@dirrm lib/zope/lib/python/Products/MailHost/tests
 @dirrm lib/zope/lib/python/Products/MailHost/help
 @dirrm lib/zope/lib/python/Products/MailHost/dtml
 @dirrm lib/zope/lib/python/Products/MailHost
 @dirrm lib/zope/lib/python/Products/MIMETools
-@dirrm lib/zope/lib/python/Products/Hotfix_2002-06-14
 @dirrm lib/zope/lib/python/Products/ExternalMethod/www
 @dirrm lib/zope/lib/python/Products/ExternalMethod/tests/Extensions
 @dirrm lib/zope/lib/python/Products/ExternalMethod/tests
@@ -2866,6 +3201,9 @@ share/doc/zope/changenotes/010620-2.4-btreeconflict.stx
 @dirrm lib/zope/lib/python/OFS/standard
 @dirrm lib/zope/lib/python/OFS/dtml
 @dirrm lib/zope/lib/python/OFS
+@dirrm lib/zope/lib/python/Interface/tests
+@dirrm lib/zope/lib/python/Interface/Common/tests
+@dirrm lib/zope/lib/python/Interface/Common
 @dirrm lib/zope/lib/python/Interface
 @dirrm lib/zope/lib/python/HelpSys/images
 @dirrm lib/zope/lib/python/HelpSys/dtml
