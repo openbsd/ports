@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/11/09 01:49:59 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1999/03/12 19:22:55 marc Exp $
 #
 
 DISTNAME=	xminehunter-0.4
@@ -9,9 +9,9 @@ MAINTAINER=	angelos@openbsd.org
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 
-LIB_DEPENDS=	Xm.1.:${PORTSDIR}/x11/lesstif
-
 USE_X11=	yes
+USE_MOTIF=	yes
+
 WRKSRC=		${WRKDIR}/xminehunter
 ALL_TARGET=	xminehunter
 
