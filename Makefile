@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2001/08/29 16:09:10 heko Exp $
+# $OpenBSD: Makefile,v 1.34 2001/11/12 14:17:33 espie Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -66,11 +66,11 @@ PORTSTOP?=	yes
 
 index:
 	@rm -f ${.CURDIR}/INDEX
-	@make ${.CURDIR}/INDEX
+	@${MAKE} ${.CURDIR}/INDEX
 
 ${.CURDIR}/INDEX:
 	@echo "Generating INDEX..."
-	@make describe ECHO_MSG="echo 1>&2" > ${.CURDIR}/INDEX
+	@${MAKE} describe ECHO_MSG="echo 1>&2" > ${.CURDIR}/INDEX
 	@echo "Done."
 
 print-index:	${.CURDIR}/INDEX
@@ -97,7 +97,7 @@ mirror-maker:
 	@echo "EXEC=exec" >${MIRROR_MK}
 	@echo "default:: ftp cdrom" >>${MIRROR_MK}
 	@echo ".PHONY: default all ftp cdrom" >>${MIRROR_MK}
-	@make fetch-makefile \
+	@${MAKE} fetch-makefile \
 		ECHO_MSG='echo >&2' \
 		>>${MIRROR_MK}
 
