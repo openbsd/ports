@@ -1,0 +1,30 @@
+$OpenBSD: patch-Src_dynload_c,v 1.1 2003/05/19 08:50:43 naddy Exp $
+--- Src/dynload.c.orig	Sun Sep 26 09:02:14 1999
++++ Src/dynload.c	Mon May 19 01:03:06 2003
+@@ -37,7 +37,7 @@
+ #  define DLOPEN_COMPATIBLE
+ #endif
+ 
+-#if defined(LINUX_ELF)
++#if defined(LINUX_ELF) || defined(OPENBSD)
+ #  include <dlfcn.h>
+ #  define DLOPEN_COMPATIBLE
+ #endif
+@@ -172,7 +172,7 @@ static void load_and_call(char *path, ch
+ #endif /* MSC_VER WIN32 */
+ 
+ 
+-#if defined(SUNOS4) || defined(SUNOS5) || defined(NETBSD1) || defined(FREEBSD) || defined(IRIX5) || defined(OSF1) ||defined(LINUX_ELF)
++#if defined(SUNOS4) || defined(SUNOS5) || defined(NETBSD1) || defined(OPENBSD) || defined(FREEBSD) || defined(IRIX5) || defined(OSF1) ||defined(LINUX_ELF)
+ 
+ #define MAKE_STAT_PTR(p) (STk_make_Cpointer(ANONYMOUS_STAT_PTR_ID, (p), TRUE))
+ #define MAKE_DYN_PTR(p)  (STk_make_Cpointer(ANONYMOUS_DYN_PTR_ID,  (p), FALSE))
+@@ -360,7 +360,7 @@ void STk_load_object_file(char *path)
+   for (p = path, slash = p-1; *p; p++)		/* Find position of last '/' */
+     if (*p == '/') slash = p;
+ 
+-#if defined(NETBSD1)
++#if !defined(__ELF__)
+   sprintf(fct_name, "_STk_init_%s", slash + 1);
+ #else
+   sprintf(fct_name, "STk_init_%s", slash + 1);

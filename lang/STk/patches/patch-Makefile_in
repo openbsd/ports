@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2003/05/19 08:50:43 naddy Exp $
+--- Makefile.in.orig	Mon May 19 01:09:04 2003
++++ Makefile.in	Mon May 19 01:10:59 2003
+@@ -118,7 +118,7 @@ install-no-strip: clean-before
+ 	(cd Extensions; $(MAKE) install prefix=$(root)$(prefix))
+ 	(cd Demos;   	$(MAKE) install root=$(root))
+ 	(cd Help;	$(MAKE) install prefix=$(root)$(prefix))
+-	(cd Doc;	$(MAKE) install prefix=$(root)$(prefix))
++	(cd Doc;	$(MAKE) install.man prefix=$(root)$(prefix))
+ 	(cd Stack;	$(MAKE) install prefix=$(root)$(prefix))
+ 
+ install.libs:

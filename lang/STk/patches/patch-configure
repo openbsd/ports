@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure,v 1.1 2003/05/19 08:50:43 naddy Exp $
+--- configure.orig	Mon May 19 00:51:01 2003
++++ configure	Mon May 19 00:52:15 2003
+@@ -692,6 +692,7 @@ case $MACHINE in
+   HP*)	     OS=HPUX; DFLGS="$DFLGS -Dhpux";;
+   Linux*)    OS=LINUX;;
+   NetBSD-1*) OS=NETBSD1;;
++  OpenBSD*)  OS=OPENBSD;;
+   FreeBSD*)  OS=FREEBSD;;
+   IRIX-5*)   OS=IRIX5;;
+   IRIX*-6*)  OS=IRIX5;;
+@@ -2277,6 +2278,11 @@ case $OS in 
+      SH_CCFLAGS="-fpic"
+      SH_LDFLAGS="-Bshareable -o"
+      SH_LOADER="ld"
++     SH_SUFFIX='so';;
++   OPENBSD)
++     SH_CCFLAGS="-fpic"
++     SH_LDFLAGS="-shared -o"
++     SH_LOADER="${CC}"
+      SH_SUFFIX='so';;
+    HPUX)
+      SH_CCFLAGS="+Z"
