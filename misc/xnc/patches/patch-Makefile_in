@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2000/12/31 12:54:27 reinhard Exp $
---- Makefile.in.orig	Fri Dec 22 07:12:28 2000
-+++ Makefile.in	Sun Dec 31 12:49:38 2000
-@@ -179,6 +179,9 @@ config:	FORCE
- #	$(INSOWN) -m 0600 ./.xlaunch/* $(HOME)/.xlaunch
- #	$(INSOWN) -m 0600 ./.xlaunch/.*a* $(HOME)/.xlaunch
+$OpenBSD: patch-Makefile_in,v 1.2 2001/07/13 14:03:20 reinhard Exp $
+--- Makefile.in.orig	Thu Apr 19 09:13:34 2001
++++ Makefile.in	Thu Jul 12 11:28:35 2001
+@@ -184,6 +184,9 @@ config:	FORCE
+ #INSTMAN=${PREFIX}/man          # for faking                                    
+ #INSTPLUG=${PREFIX}/lib         # for faking                                    
  
 +INSTDIR=${PREFIX}/bin 		# for faking
 +INSTMAN=${PREFIX}/man		# for faking
@@ -11,3 +11,16 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2000/12/31 12:54:27 reinhard Exp $
  install:
  	#Installing X Northern Captain...
  	$(INS) ./users.xnc $(INSTDIR)
+@@ -202,9 +205,9 @@ install:
+ 	$(INS) ./launch/xnlaunch $(INSTDIR)
+ 	/bin/sh ./replace.script
+ 	mkdir -p $(INSTPLUG)
+-	$(INS) ./plugins/five/libxncfive.so $(INSTPLUG)
+-	$(INS) ./plugins/aqua/libxncaqua.so $(INSTPLUG)
+-	echo "Don't foget run 'xncsetup' before starting XNC"
++	$(INS) ./plugins/five/libxncfive.so $(INSTPLUG)/libxncfive.so.0.0
++	$(INS) ./plugins/aqua/libxncaqua.so $(INSTPLUG)/libxncaqua.so.0.0
++	echo "Don't forget run 'xncsetup' before starting XNC"
+ 
+ install-rpm:
+ 	cp ./yo-man/*.1 /usr/local/man/man1

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2001/07/13 14:03:27 reinhard Exp $
+lib/libxncaqua.so.0.0
+lib/libxncfive.so.0.0
+DYNLIBDIR(%D/lib)

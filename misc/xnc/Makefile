@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/24 02:28:05 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2001/07/13 14:03:16 reinhard Exp $
 
 COMMENT=	"filemanager for X Window"
 
-DISTNAME=	xnc-4.4.0
+DISTNAME=	xnc-4.4.4
 DISTFILES=      ${DISTNAME}.src${EXTRACT_SUFX}
 CATEGORIES=	misc x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.419
 
 MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
@@ -28,13 +28,19 @@ CONFIGURE_STYLE=	gnu old
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" 
-CONFIGURE_ARGS=	--with-x --disable-plugins
+CONFIGURE_ARGS=	--with-x 
 
 XNLAUNCHFILES=	.launch.menu .xnlaunch.ini graphs.gif ives.gif kill.gif \
 		map.gif netscape.gif term.gif tnet.gif
 
+post-patch:
+	perl -pi -e 's,\@prefix\@,${PREFIX},g' ${WRKSRC}/xncdirs.h.in
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xnc
-	cd ${WRKSRC}/.xlaunch && ${INSTALL_DATA} ${XNLAUNCHFILES} ${PREFIX}/share/examples/xnc
+	cd ${WRKSRC}/.xlaunch && \
+	${INSTALL_DATA} ${XNLAUNCHFILES} ${PREFIX}/share/examples/xnc
+	cd ${PREFIX}/bin && \
+	${STRIP} es ives vs xjpegroot xnc xnlaunch xncsetup
 
 .include <bsd.port.mk>
