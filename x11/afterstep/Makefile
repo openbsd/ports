@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2000/01/21 15:06:14 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/17 16:11:18 kevlo Exp $
 
-DISTNAME=	AfterStep-1.6.10
-PKGNAME=	afterstep-1.6.10
+DISTNAME=	AfterStep-1.8.0
+PKGNAME=	afterstep-1.8.0
 CATEGORIES=     x11
-MASTER_SITES=   ftp://ftp.afterstep.org/pub/stable/
+MASTER_SITES=   ftp://ftp.afterstep.org/stable/
 
 MAINTAINER=	don@openbsd.org
 
