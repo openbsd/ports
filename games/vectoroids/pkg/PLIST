@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/02/28 05:25:32 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/10/14 10:02:52 pvalchev Exp $
 bin/vectoroids
 share/doc/vectoroids/README
 share/vectoroids/images/icon.png
+share/vectoroids/images/redspot-e.bmp
 share/vectoroids/images/redspot.jpg
 share/vectoroids/music/decision.s3m
 share/vectoroids/music/decision.txt

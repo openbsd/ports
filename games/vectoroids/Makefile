@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/06/08 06:03:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/14 10:02:51 pvalchev Exp $
 
 COMMENT=	"vector-based, pretty, Asteroids clone" 
 
-VERSION=	1.0.7
+VERSION=	1.1.0
 DISTNAME=	vectoroids-${VERSION}
-PROJ=		Vsound
 CATEGORIES=	games x11
-NEED_VERSION=	1.504
 
 HOMEPAGE=	http://www.newbreedsoftware.com/vectoroids/
 
