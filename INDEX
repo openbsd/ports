@@ -104,7 +104,7 @@ xmix-2.1|audio/xmix||X11-based audio mixer|audio/xmix/pkg/DESCR|ports@openbsd.or
 xmmix-1.2|audio/xmmix||Motif-based audio mixer|audio/xmmix/pkg/DESCR|ports@openbsd.org|audio|x11/openmotif|x11/openmotif|any|y|y|y|y
 xmms-1.2.5|audio/xmms||Multimedia player for the X Window System|audio/xmms/pkg/DESCR|Wilbern Cobb <cobb@vedge.com.ar>|audio|devel/autoconf devel/gmake textproc/libxml1 x11/gtk+|archivers/unzip textproc/libxml1 x11/gtk+|!hppa mvme88k vax|y|y|y|y
 xmms-esd-1.2.5|audio/xmms,-esd||Esound output plugin for XMMS|audio/xmms/pkg/DESCR-esd|Wilbern Cobb <cobb@vedge.com.ar>|audio|audio/esound devel/autoconf devel/gmake|audio/esound audio/xmms|!hppa mvme88k vax|y|y|y|y
-xmms-vorbis-1.2.5|audio/xmms,-vorbis||Ogg Vorbis input plugin for XMMS|audio/xmms/pkg/DESCR-vorbis|Wilbern Cobb <cobb@vedge.com.ar>|audio|audio/libvorbis devel/autoconf devel/gmake|audio/libvorbis audio/xmms|!hppa mvme88k vax|y|y|y|y
+xmms-vorbis-1.2.5|audio/xmms,-vorbis||Ogg Vorbis input plugin for XMMS|audio/xmms/pkg/DESCR-vorbis|Wilbern Cobb <cobb@vedge.com.ar>|audio|/tmp/vorbis/libvorbis devel/autoconf devel/gmake|/tmp/vorbis/libvorbis audio/xmms|!hppa mvme88k vax|y|y|y|y
 xmp-1.1.5|audio/xmp||extended Module Player; many formats plus an X11 display|audio/xmp/pkg/DESCR|ports@openbsd.org|audio|devel/gmake||any|y|y|y|y
 bonnie-1.0|benchmarks/bonnie||performance test of filesystem I/O|benchmarks/bonnie/pkg/DESCR|Niklas Hallqvist <niklas@openbsd.org>|benchmarks|||any|y|y|y|y
 bytebench-3.1|benchmarks/bytebench||BYTE magazine benchmark suite|benchmarks/bytebench/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|benchmarks|||any|n|n|n|n
@@ -162,7 +162,6 @@ rpm2cpio-1.1|converters/rpm2cpio||rpm2cpio, simple perl converter|converters/rpm
 trans-1.20|converters/trans||character encoding converter generator package|converters/trans/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|converters russian|||any|n|y|n|y
 wv-0.6.5|converters/wv||convert various Microsoft formats into HTML/PNG|converters/wv/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|converters|converters/libiconv devel/glib devel/gmake graphics/ImageMagick graphics/libwmf graphics/png|converters/libiconv devel/glib graphics/ImageMagick graphics/libwmf graphics/png|any|y|y|y|y
 xlhtml-0.2.9.8|converters/xlhtml||convert Excel and PowerPoint to HTML|converters/xlhtml/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|converters|||any|y|y|y|y
-cdb-0.75|databases/cdb||tools for creating and reading constant databases|databases/cdb/pkg/DESCR|David Lebel <lebel@openbsd.org>|databases|||any|n|n|y|y
 db-3.1.17|databases/db||Berkeley DB package, revision 3|databases/db/pkg/DESCR|ports@openbsd.org|databases|||any|y|y|y|y
 db-3.1.17-java|databases/db,java||Berkeley DB package, revision 3|databases/db/pkg/DESCR|ports@openbsd.org|databases|devel/jdk/1.1||i386|y|y|y|y
 freetds-0.52|databases/freetds||project to document and implement the TDS protocol|databases/freetds/pkg/DESCR|Joshua Stein <jcs@rt.fm>|databases|||any|y|y|y|y
@@ -250,7 +249,6 @@ libevent-0.3d|devel/libevent||asynchronous event library|devel/libevent/pkg/DESC
 libproplist-0.10.1|devel/libproplist||GNUstep/OPENSTEP property lists compatibility library|devel/libproplist/pkg/DESCR|Jason Ish <jasoni@openbsd.org>|devel|devel/gmake||any|y|y|y|y
 libsigc++-1.0.3|devel/libsigc++||callback framework for C++|devel/libsigc++/pkg/DESCR|Shell Hung <shell@openbsd.org>|devel|||any|y|y|y|y
 libslang-1.4.4|devel/libslang||stack-based interpreter for terminal applications|devel/libslang/pkg/DESCR|Brad Smith <brad@openbsd.org>|devel|||any|y|y|y|y
-libtai-0.60|devel/libtai||library for storing and manipulating dates and times|devel/libtai/pkg/DESCR|Brian J. Kifiak <bk@rt.fm>|devel|||any|n|n|y|y
 libtool-1.3.5p1|devel/libtool||generic shared library support script|devel/libtool/pkg/DESCR|Brad Smith <brad@openbsd.org>|devel|||any|y|y|y|y
 libuta-0.3.39|devel/libuta||graphical user interface library for C++|devel/libuta/pkg/DESCR|Peter Valchev <pvalchev@openbsd.org>|devel|libsigc++-*:devel/libsigc++ png-*:graphics/png sdl-mixer-*:devel/sdl-mixer smpeg-*:devel/smpeg|libsigc++-*:devel/libsigc++ png-*:graphics/png sdl-mixer-*:devel/sdl-mixer smpeg-*:devel/smpeg|any|y|y|y|y
 lincvs-0.2.3|devel/lincvs||graphical CVS front-end using QT2|devel/lincvs/pkg/DESCR|Reinhard J. Sammer <reinhard@openbsd.org>|devel|x11/qt2|x11/qt2|any|y|y|y|y
@@ -642,7 +640,6 @@ adcomplain-3.52|mail/adcomplain||complain about SPAM|mail/adcomplain/pkg/DESCR|p
 asmail-0.56|mail/asmail||biff-type program, designed to match AfterStep|mail/asmail/pkg/DESCR|ports@openbsd.org|mail|graphics/jpeg|graphics/jpeg|any|y|y|y|y
 bulk_mailer-1.13|mail/bulk_mailer||speed mail delivery by sorting & batching addresses|mail/bulk_mailer/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|mail|||any|y|y|y|y
 c-client-2000c|mail/c-client||University of Washington's c-client mail access routines|mail/c-client/pkg/DESCR|Brad Smith <brad@openbsd.org>|mail devel|||any|n|y|n|y
-checkpassword-0.90|mail/checkpassword||simple, uniform password-checking interface|mail/checkpassword/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|mail|||any|n|n|y|y
 cmail-3.1|mail/cmail||simple mail counter|mail/cmail/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|mail|archivers/bzip2|net/p5-libnet|any|y|y|y|y
 courier-imap-1.3.8.2|mail/courier-imap||imap server for maildir format mailboxes|mail/courier-imap/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|mail|devel/gmake||any|y|y|y|y
 courier-pop3-1.3.8.2|mail/courier-imap,-pop3||pop3 server for maildir format mailboxes|mail/courier-imap/pkg/DESCR-pop3|Anil Madhavapeddy <avsm@openbsd.org>|mail|devel/gmake||any|y|y|y|y
@@ -651,7 +648,6 @@ courier-pop3-1.3.8.2-ldap|mail/courier-imap,-pop3,ldap||pop3 server for maildir 
 courier-imap-1.3.8.2-mysql|mail/courier-imap,mysql||imap server for maildir format mailboxes|mail/courier-imap/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|mail|devel/gmake mysql-client-3.23.*:databases/mysql|mysql-client-3.23.*:databases/mysql|any|y|y|y|y
 courier-pop3-1.3.8.2-mysql|mail/courier-imap,-pop3,mysql||pop3 server for maildir format mailboxes|mail/courier-imap/pkg/DESCR-pop3|Anil Madhavapeddy <avsm@openbsd.org>|mail|devel/gmake mysql-client-3.23.*:databases/mysql|mysql-client-3.23.*:databases/mysql|any|y|y|y|y
 cucipop-1.31|mail/cucipop||Cubic Circle's POP3 daemon|mail/cucipop/pkg/DESCR|ports@openbsd.org|mail|||any|n|y|n|y
-dot-forward-0.71|mail/dot-forward|/var/qmail|sendmail-style .forward support for qmail|mail/dot-forward/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|mail||mail/qmail|any|n|n|y|y
 elm-2.4ME+66|mail/elm||a once-popular mail user agent|mail/elm/pkg/DESCR|Paul Janzen <pjanzen@openbsd.org>|mail|||any|y|y|y|y
 exim-3.30|mail/exim||MTA for systems connected to the Internet|mail/exim/pkg/DESCR|Peter Galbavy <peter.galbavy@knowledge.com>|mail|||any|y|y|y|y
 exim-3.30-mysql|mail/exim,mysql||MTA for systems connected to the Internet|mail/exim/pkg/DESCR|Peter Galbavy <peter.galbavy@knowledge.com>|mail|mysql-client-3.23.*:databases/mysql|mysql-client-3.23.*:databases/mysql|any|y|y|y|y
@@ -664,10 +660,7 @@ exim-3.30-no_x11-ldap|mail/exim,no_x11,ldap||MTA for systems connected to the In
 exim-3.30-no_x11-mysql-postgresql-ldap|mail/exim,no_x11,mysql,postgresql,ldap||MTA for systems connected to the Internet|mail/exim/pkg/DESCR|Peter Galbavy <peter.galbavy@knowledge.com>|mail|databases/openldap databases/postgresql mysql-client-3.23.*:databases/mysql|databases/openldap databases/postgresql mysql-client-3.23.*:databases/mysql|any|y|y|y|y
 exmh-1.6.9|mail/exmh||-superseded by exmh2|/dev/null|ports@openbsd.org|mail tk80|||any|y|y|n|n
 exmh-2.4|mail/exmh2||TCL/TK based interface to the MH mail system|mail/exmh2/pkg/DESCR|Michael Paddon <michael@paddon.org>|mail|lang/tcl/8.3|lang/expect mail/metamail mail/nmh x11/tk/8.3|any|y|y|y|y
-ezmlm-0.53|mail/ezmlm||easy-to-use, high-speed mailing list manager for qmail|mail/ezmlm/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|mail|||any|n|n|y|y
-ezmlm-0.53-idx|mail/ezmlm,idx||easy-to-use, high-speed mailing list manager for qmail|mail/ezmlm/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|mail|||any|n|n|y|y
 faces-1.6.1|mail/faces||visual mail, user and print face server|mail/faces/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|mail|||any|n|y|n|y
-fastforward-0.51|mail/fastforward|/var/qmail|qmail forwarding, including sendmail-style /etc/aliases|mail/fastforward/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|mail||mail/qmail|any|n|n|y|y
 fetchmail-5.8.17|mail/fetchmail||mail retrieval utility for POP2, POP3, KPOP, IMAP and more|mail/fetchmail/pkg/DESCR|Federico Schwindt <fgsch@openbsd.org>|mail|devel/autoconf||any|y|y|y|y
 fetchmail-5.8.17-kerberos4|mail/fetchmail,kerberos4||mail retrieval utility for POP2, POP3, KPOP, IMAP and more|mail/fetchmail/pkg/DESCR|Federico Schwindt <fgsch@openbsd.org>|mail|devel/autoconf||any|y|y|y|y
 grepmail-4.47|mail/grepmail||search mailboxes for a particular email|mail/grepmail/pkg/DESCR|Joshua Stein <jcs@rt.fm>|mail perl5|converters/p5-DateManip devel/p5-Time-TimeDate|archivers/bzip2 converters/p5-DateManip devel/p5-Time-TimeDate|any|y|y|y|y
@@ -680,7 +673,6 @@ kbiff-3.5|mail/kbiff||new mail notification utility|mail/kbiff/pkg/DESCR|David L
 mailcrypt-3.5.6-emacs-gnupg|mail/mailcrypt,emacs,gnupg||emacs interface to PGP and GnuPG|mail/mailcrypt/pkg/DESCR|Shell Hung <shell@openbsd.org>|mail|editors/emacs|security/gnupg|any|y|y|y|y
 maildrop-1.3.3|mail/maildrop||local mail delivery agent with filtering abilities|mail/maildrop/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|mail|||any|y|y|y|y
 majordomo-1.94.5|mail/majordomo||mailing list manager|mail/majordomo/pkg/DESCR|Daniel Hartmeier <daniel@reichardt.ch>|mail|||any|n|n|n|n
-mess822-0.58|mail/mess822||library for parsing Internet mail messages|mail/mess822/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|mail||mail/qmail|any|n|n|y|y
 metamail-2.7|mail/metamail||MIME implementation|mail/metamail/pkg/DESCR|ports@openbsd.org|mail|||any|y|y|y|y
 mh-6.8.4|mail/mh||Rand MH mail handling system|mail/mh/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|mail|||any|y|y|y|y
 mixmaster-2.0.4b45|mail/mixmaster||client for anonymous remailing|mail/mixmaster/pkg/DESCR|Nikolay Sturm <nikolay.sturm@desy.de>|mail security|||any|y|y|y|y
@@ -696,9 +688,9 @@ p5-Mail-POP3Client-2.7|mail/p5-Mail-POP3Client||perl module to talk to a POP3 (R
 p5-Mail-Tools-1.15|mail/p5-Mail-Tools||modules for handling mail with perl|mail/p5-Mail-Tools/pkg/DESCR|Marc Espie <espie@openbsd.org>|mail devel perl5||net/p5-libnet|any|y|y|y|y
 p5-MIME-tools-5.411|mail/p5-MIME-tools||modules for parsing (and creating!) MIME entities|mail/p5-MIME-tools/pkg/DESCR|Shell Hung <shell@openbsd.org>|mail perl5|converters/p5-MIME-Base64 devel/p5-IO-stringy mail/p5-Mail-Tools|converters/p5-MIME-Base64 devel/p5-IO-stringy mail/p5-Mail-Tools|any|y|y|y|y
 pgpsendmail-1.4.5|mail/pgpsendmail||PGP sign/encrypt/decrypt messages automatically|mail/pgpsendmail/pkg/DESCR|ports@OpenBSD.ORG|mail|security/pgp||any|y|y|y|y
-pine+pico-4.33|mail/pine||Program for Internet E-mail and News, with editor|mail/pine/pkg/DESCR|Brad Smith <brad@openbsd.org>|mail news editors|mail/c-client|mail/c-client|any|n|y|n|y
+pine+pico-4.33|mail/pine||Program for Internet E-mail and News, with pico|mail/pine/pkg/DESCR|Brad Smith <brad@openbsd.org>|mail news editors|mail/c-client|mail/c-client|any|n|y|n|y
 pico-4.33|mail/pine,-pico||small text editor|mail/pine/pkg/DESCR-pico|Brad Smith <brad@openbsd.org>|editors|||any|n|y|n|y
-pine-4.33|mail/pine,-pine||Program for Internet E-mail and News, without editor|mail/pine/pkg/DESCR-pine|Brad Smith <brad@openbsd.org>|mail news|mail/c-client|mail/c-client|any|n|y|n|y
+pine-4.33|mail/pine,-pine||Program for Internet E-mail and News, without pico|mail/pine/pkg/DESCR-pine|Brad Smith <brad@openbsd.org>|mail news|mail/c-client|mail/c-client|any|n|y|n|y
 popclient-3.0b6|mail/popclient||client for pop2, pop3, apop, rpop|mail/popclient/pkg/DESCR|ports@openbsd.org|mail|||any|y|y|y|y
 poppassd-4.0|mail/poppassd||server: allow users to change password from within Eudora|mail/poppassd/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|mail|||any|n|n|n|n
 poppy-3.1|mail/poppy||client to perform simple tasks with a POP3/IMAP server|mail/poppy/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|mail|||any|y|y|y|y
@@ -707,10 +699,6 @@ postfix-20010228.pl04-ldap|mail/postfix/stable,ldap||fast, secure sendmail repla
 postfix-20010228.pl04-pcre|mail/postfix/stable,pcre||fast, secure sendmail replacement|mail/postfix/stable/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|devel/pcre|devel/pcre|any|y|y|y|y
 postfix-snapshot-20010808|mail/postfix/snapshot||fast, secure sendmail replacement|mail/postfix/snapshot/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail|||any|y|y|y|y
 procmail-3.21|mail/procmail||filtering local mail delivery agent|mail/procmail/pkg/DESCR|Bruno Rohee <rohee@openbsd.org>|mail|||any|y|y|y|y
-qmail-1.03|mail/qmail|/var/qmail|secure, reliable, efficient, simple MTA|mail/qmail/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|mail||net/ucspi-tcp|any|n|n|y|y
-qmailanalog-0.70|mail/qmailanalog||tools to analyze qmail-send's activity record|mail/qmailanalog/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|mail||mail/qmail|any|y|y|n|n
-qtools-0.54|mail/qtools||utilities for use with qmail|mail/qtools/pkg/DESCR|Brian J. Kifiak <bk@rt.fm>|mail||mail/ezmlm mail/qmail|any|y|y|y|y
-serialmail-0.75|mail/serialmail||tools for passing mail across serial links|mail/serialmail/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|mail||mail/qmail net/ucspi-tcp sysutils/daemontools|any|n|n|y|y
 smtpclient-1.0.0|mail/smtpclient||simple SMTP client|mail/smtpclient/pkg/DESCR|Patroklos Argyroudis <argp@bsd.gr>|mail|||any|y|y|y|y
 solid-pop3d-0.15|mail/solid-pop3d||flexible POP3 server|mail/solid-pop3d/pkg/DESCR|Dan Harnett <danh@openbsd.org>|mail|||any|y|y|y|y
 solid-pop3d-0.15p1-apop|mail/solid-pop3d,apop||flexible POP3 server|mail/solid-pop3d/pkg/DESCR|Dan Harnett <danh@openbsd.org>|mail|||any|y|y|y|y
@@ -855,7 +843,6 @@ cvsup-16.1ap1-no_x11-static|net/cvsup,no_x11,static||network file distribution s
 cvsupd-16.1ap1-no_x11-static|net/cvsup,-server,no_x11,static||network file distribution server|net/cvsup/pkg/DESCR-server|Christian Weisgerber <naddy@openbsd.org>|net devel|lang/pm3||i386|y|y|y|y
 cvsup-bin-16.0|net/cvsup-bin-old||network file distribution system, optimized for CVS|net/cvsup-bin-old/pkg/DESCR|Christian Weisgerber <naddy@openbsd.org>|net devel|||sparc|y|y|y|y
 cvsup-bin-16.0-no_x11|net/cvsup-bin-old,no_x11||network file distribution system, optimized for CVS|net/cvsup-bin-old/pkg/DESCR|Christian Weisgerber <naddy@openbsd.org>|net devel|||sparc|y|y|y|y
-djbdns-1.05|net/djbdns||collection of Domain Name System tools|net/djbdns/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|net||net/ucspi-tcp sysutils/daemontools|any|n|n|y|y
 dlint-1.4.0|net/dlint||DNS zone verification tool|net/dlint/pkg/DESCR|Jason Peel <jsyn@openbsd.org>|net|||any|y|y|y|y
 doc-2.2.3|net/doc||automated domain testing tool|net/doc/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|net||net/bind9|any|y|y|y|y
 dxpc-3.8.0|net/dxpc||X11 over a low bandwidth link|net/dxpc/pkg/DESCR|Marc Espie <espie@openbsd.org>|net x11|archivers/lzo|archivers/lzo|any|y|y|y|y
@@ -933,8 +920,6 @@ popa3d-0.4|net/popa3d||security first POP3 daemon|net/popa3d/pkg/DESCR|Camiel Do
 popa3d-0.4-apop|net/popa3d,apop||security first POP3 daemon|net/popa3d/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|net mail|||any|y|y|y|y
 proxy-suite-1.7|net/proxy-suite||set of programs to enhance firewall security|net/proxy-suite/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|net security|devel/gmake||any|y|y|y|y
 pptp-1.0.2|net/pptp||PPTP client package for Microsoft VPN servers|net/pptp/pkg/DESCR|Reinhard J. Sammer <reinhard@openbsd.org>|net|||any|y|y|y|y
-publicfile-0.52|net/publicfile||read-only anonymous FTP and HTTP server|net/publicfile/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|net www||net/ucspi-tcp sysutils/daemontools|any|n|n|y|y
-publicfile-0.52-compat|net/publicfile,compat||read-only anonymous FTP and HTTP server|net/publicfile/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|net www||net/ucspi-tcp sysutils/daemontools|any|n|n|y|y
 queso-980922|net/queso||determine remote OS using simple tcp packets|net/queso/pkg/DESCR|Brad Smith <brad@openbsd.org>|net|||any|y|y|y|y
 quirc-0.9.82|net/quirc||irc client that uses Tcl/Tk|net/quirc/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|net|x11/tk/8.3|x11/tk/8.3|any|y|y|y|y
 radiusd-cistron-1.6.4|net/radiusd-cistron||Cistron RADIUS server|net/radiusd-cistron/pkg/DESCR|Dan Harnett <danh@openbsd.org>|net|||any|y|y|y|y
@@ -970,7 +955,6 @@ trafd-3.0.1|net/trafd||the BPF traffic collector|net/trafd/pkg/DESCR|Oleg Safiul
 trafshow-3.1|net/trafshow||full screen visualization of network traffic|net/trafshow/pkg/DESCR|Michael Shalayeff <mickey@openbsd.org>|net|||any|y|y|y|y
 ttcp-1.12|net/ttcp||benchmarking tool for analysing TCP and UDP performance|net/ttcp/pkg/DESCR|ports@openbsd.org|net|||any|y|y|y|y
 ucd-snmp-4.2.1|net/ucd-snmp||extendable SNMP implementation|net/ucd-snmp/pkg/DESCR|Dan Harnett <danh@openbsd.org>|net|devel/autoconf||any|y|y|y|y
-ucspi-tcp-0.88|net/ucspi-tcp||tools for building TCP client-server applications|net/ucspi-tcp/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|net|||any|n|n|y|y
 ucspi-unix-0.34|net/ucspi-unix||tools for building unix domain socket client/servers|net/ucspi-unix/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|net|||any|y|y|y|y
 uucp-1.06.2|net/uucp||UUCP suite|net/uucp/pkg/DESCR|ports@openbsd.org|net mail|||any|y|y|y|y
 vnc-3.3.3r2|net/vnc||cross-platform remote desktop access|net/vnc/pkg/DESCR|Matt Behrens <matt@openbsd.org>|net|||any|y|y|y|y
@@ -1153,9 +1137,7 @@ zsh-4.0.2-static|shells/zsh/stable,static||the Z shell, Bourne shell-compatible,
 LPRng-3.7.4|sysutils/LPRng||enhanced printer spooler|sysutils/LPRng/pkg/DESCR|Jeff Bachtel <jeff@cepheid.org>|sysutils print|databases/gdbm|databases/gdbm|any|n|y|n|y
 apc-upsd-19991128|sysutils/apc-upsd||UPS software for APC UPS models|sysutils/apc-upsd/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|sysutils|||any|y|y|y|y
 cfengine-1.4.12|sysutils/cfengine||GNU system administration tool for networks|sysutils/cfengine/pkg/DESCR|ports@openbsd.org|sysutils|||any|y|y|y|y
-clockspeed-0.62|sysutils/clockspeed||clock synchronization tools|sysutils/clockspeed/pkg/DESCR|Brian Kifiak <bk@rt.fm>|sysutils|||i386|n|n|y|y
 contool-3.3a|sysutils/contool||console tool for openlook|sysutils/contool/pkg/DESCR|Ian Darwin <ian@openbsd.org>|sysutils|x11/xview/config x11/xview/lib|x11/xview/lib|any|n|y|n|y
-daemontools-0.70|sysutils/daemontools||collection of tools for managing UNIX services|sysutils/daemontools/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|sysutils|||any|n|n|y|y
 gkrellm-1.2.1|sysutils/gkrellm||a single process stack of system monitors|sysutils/gkrellm/pkg/DESCR|Joshua Stein <jcs@rt.fm>|sysutils|devel/gmake graphics/imlib|graphics/imlib|any|y|y|y|y
 idled-1.16|sysutils/idled||log out idle users and those hogging resources|sysutils/idled/pkg/DESCR|ports@openbsd.org|sysutils|||any|n|y|n|y
 libretto-config-1.0b5|sysutils/libretto-config||Libretto BIOS Setting Program|sysutils/libretto-config/pkg/DESCR|Todd Miller <millert@openbsd.org>|sysutils|||i386|n|y|y|y
@@ -1169,7 +1151,6 @@ radiusreport-0.3b6|sysutils/radiusreport||RADIUS log file analysis tool|sysutils
 rtty-3.2|sysutils/rtty||multiuser tip/cu replacement with logging|sysutils/rtty/pkg/DESCR|ports@openbsd.org|sysutils|||any|y|y|y|y
 safecat-1.8|sysutils/safecat||copy stdin to a qmail-style maildir|sysutils/safecat/pkg/DESCR|Dan Harnett <danh@openbsd.org>|sysutils|||any|y|y|y|y
 sdd-1.31|sysutils/sdd||faster and improved version of dd|sysutils/sdd/pkg/DESCR|Christian Weisgerber <naddy@openbsd.org>|sysutils|devel/gmake||any|y|y|y|y
-service-config-0.51|sysutils/service-config||create and configure svscan-format service directories|sysutils/service-config/pkg/DESCR|David Lebel <lebel@openbsd.org>|sysutils||sysutils/daemontools|any|y|y|y|y
 setquota-0.1|sysutils/setquota||command line quota tools|sysutils/setquota/pkg/DESCR|ports@OpenBSD.ORG|sysutils|||any|y|y|y|y
 skill-4.0|sysutils/skill||signal or reprioritize specified processes|sysutils/skill/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|sysutils|||any|n|y|n|y
 socket-1.1|sysutils/socket||create tcp socket and connect to stdin/out|sysutils/socket/pkg/DESCR|ports@openbsd.org|sysutils net|||any|y|y|y|y
@@ -1364,7 +1345,6 @@ php4-4.0.6-imap-no_x11-postgresql|www/php4,imap,no_x11,postgresql||server-side H
 php4-pear-4.0.6|www/php4,-pear,imap,no_x11,postgresql||collection of base classes for common PHP tasks|www/php4/pkg/DESCR-pear|Anil Madhavapeddy <avsm@openbsd.org>, Jakob Schlyter <jakob@openbsd.org>|www lang|devel/libtool||i386 m68k sparc|y|y|y|y
 php4-4.0.6-snmp|www/php4,snmp||server-side HTML-embedded scripting language|www/php4/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>, Jakob Schlyter <jakob@openbsd.org>|www lang|devel/libtool net/ucd-snmp|net/ucd-snmp|i386 m68k sparc|y|y|y|y
 php4-pear-4.0.6|www/php4,-pear,snmp||collection of base classes for common PHP tasks|www/php4/pkg/DESCR-pear|Anil Madhavapeddy <avsm@openbsd.org>, Jakob Schlyter <jakob@openbsd.org>|www lang|devel/libtool||i386 m68k sparc|y|y|y|y
-shttpd-0.53|www/shttpd||HTTP daemons designed to complement publicfile|www/shttpd/pkg/DESCR|David Lebel <lebel@openbsd.org>|www||net/publicfile net/ucspi-tcp sysutils/daemontools|any|y|y|y|y
 squid-2.3|www/squid||WWW and FTP proxy cache and accelerator|www/squid/pkg/DESCR|Brad Smith <brad@openbsd.org>|www|||any|y|y|y|y
 surfraw-1.0.3|www/surfraw||command line interface to popular WWW search engines|www/surfraw/pkg/DESCR|Christian Weisgerber <naddy@openbsd.org>|www|||any|y|y|y|y
 thttpd-2.21b|www/thttpd||tiny/turbo/throttling HTTP server|www/thttpd/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|www|||any|y|y|y|y
