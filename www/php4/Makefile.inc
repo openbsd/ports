@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2002/07/24 14:49:03 avsm Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2002/08/20 02:56:48 avsm Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -26,7 +26,9 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-PHP_CONFIG_FILE=	/var/www/conf
+PHP_CONFIG_PATH=	/var/www/conf
+PHP_CONFIG_FILE=	${PHP_CONFIG_PATH}/php.ini
+
 MODULES_SUBDIR=		lib/php/modules
 MODULES_DIR=		${LOCALBASE}/${MODULES_SUBDIR}
 
@@ -39,12 +41,10 @@ MAKE_ENV=               ${CONFIGURE_ENV}
 CONFIGURE_ARGS+=	--enable-shared \
 			--disable-static \
 			--disable-rpath \
-			--with-config-file-path=${PHP_CONFIG_FILE} \
+			--with-config-file-path=${PHP_CONFIG_PATH} \
 			--enable-inline-optimization \
 			--with-pic
 
 # default included extensions
 CONFIGURE_ARGS+= 	--with-openssl \
 			--with-zlib 
-
-USE_LIBTOOL=	Yes
