@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2001/11/01 18:34:51 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2002/03/07 09:55:49 kevlo Exp $
 
-COMMENT=	perl-compatible regular expression library
+COMMENT=	"perl-compatible regular expression library"
 
-DISTNAME=	pcre-3.4
+DISTNAME=	pcre-3.9
 CATEGORIES=	devel
-NEED_VERSION=	1.475
+NEED_VERSION=	1.508
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= pcre
@@ -18,14 +18,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
-		patch-*
-
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 post-install:
-	@strip ${PREFIX}/bin/pcregrep
+	@strip ${PREFIX}/bin/{pcregrep,pcretest}
 
 .include <bsd.port.mk>
