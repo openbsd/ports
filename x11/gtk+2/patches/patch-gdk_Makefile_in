@@ -1,7 +1,7 @@
-$OpenBSD: patch-gdk_Makefile_in,v 1.3 2003/06/12 19:26:36 marcm Exp $
---- gdk/Makefile.in.orig	Sun Feb  2 07:28:41 2003
-+++ gdk/Makefile.in	Thu Apr  3 08:34:08 2003
-@@ -210,7 +210,6 @@ gtarget = @gdktarget@
+$OpenBSD: patch-gdk_Makefile_in,v 1.4 2003/06/30 03:59:03 marcm Exp $
+--- gdk/Makefile.in.orig	Mon Jun  9 14:26:04 2003
++++ gdk/Makefile.in	Thu Jun 19 09:54:26 2003
+@@ -218,7 +218,6 @@ gtarget = @gdktarget@
  # we use the general approach here
  LDFLAGS = @STRIP_BEGIN@ 						\
  	@LDFLAGS@							\
@@ -9,12 +9,12 @@ $OpenBSD: patch-gdk_Makefile_in,v 1.3 2003/06/12 19:26:36 marcm Exp $
  	-export-dynamic 						\
  	-rpath $(libdir) 						\
  	$(no_undefined)							\
-@@ -353,7 +352,7 @@ X_CFLAGS = @X_CFLAGS@
+@@ -361,7 +360,7 @@ X_CFLAGS = @X_CFLAGS@
  X_LIBS = @X_LIBS@
  X_EXTRA_LIBS = @X_EXTRA_LIBS@
  X_PRE_LIBS = @X_PRE_LIBS@
 -libgdk_x11_2_0_la_LDFLAGS = 
-+libgdk_x11_2_0_la_LDFLAGS = -version-info $(LIBGDK_X11_VERSION)
++libgdk_x11_2_0_la_LDFLAGS = -version-info $(OBSD_LIB_VERSION)
  libgdk_x11_2_0_la_DEPENDENCIES =  x11/libgdk-x11.la
  libgdk_x11_2_0_la_OBJECTS =  gdk.lo gdkcolor.lo gdkcursor.lo \
  gdkdisplay.lo gdkdnd.lo gdkdraw.lo gdkevents.lo gdkfont.lo gdkgc.lo \

@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_Makefile_in,v 1.3 2003/06/12 19:26:36 marcm Exp $
---- gtk/Makefile.in.orig	Sun Feb  2 07:28:49 2003
-+++ gtk/Makefile.in	Thu Apr  3 08:34:08 2003
-@@ -210,7 +210,6 @@ gtarget = @gdktarget@
+$OpenBSD: patch-gtk_Makefile_in,v 1.4 2003/06/30 03:59:03 marcm Exp $
+--- gtk/Makefile.in.orig	Mon Jun  9 14:26:09 2003
++++ gtk/Makefile.in	Thu Jun 19 09:54:26 2003
+@@ -218,7 +218,6 @@ gtarget = @gdktarget@
  libgtkincludedir = $(includedir)/gtk-2.0/gtk
  LDFLAGS = @STRIP_BEGIN@ \
  	@LDFLAGS@								\
@@ -9,12 +9,12 @@ $OpenBSD: patch-gtk_Makefile_in,v 1.3 2003/06/12 19:26:36 marcm Exp $
  	-export-dynamic								\
  	-rpath $(libdir)							\
  	$(no_undefined)								\
-@@ -679,7 +678,7 @@ X_CFLAGS = @X_CFLAGS@
+@@ -687,7 +686,7 @@ X_CFLAGS = @X_CFLAGS@
  X_LIBS = @X_LIBS@
  X_EXTRA_LIBS = @X_EXTRA_LIBS@
  X_PRE_LIBS = @X_PRE_LIBS@
 -libgtk_x11_2_0_la_LDFLAGS = 
-+libgtk_x11_2_0_la_LDFLAGS = -version-info $(LIBGTK_X11_VERSION)
++libgtk_x11_2_0_la_LDFLAGS = -version-info $(OBSD_LIB_VERSION)
  libgtk_x11_2_0_la_LIBADD = 
  libgtk_x11_2_0_la_OBJECTS =  gtkaccelgroup.lo gtkaccelmap.lo \
  gtkaccellabel.lo gtkaccessible.lo gtkadjustment.lo gtkalignment.lo \

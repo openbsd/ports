@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2003/06/12 19:26:36 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2003/06/30 03:59:03 marcm Exp $
 
 COMMENT=			"multi-platform graphical toolkit"
 COMMENT-docs=           	"gtk+-2 documentation"
 
-VERSION=			2.2.1
+VERSION=			2.2.2
 DISTNAME=			gtk+-${VERSION}
 PKGNAME=			gtk+2-${VERSION}
 PKGNAME-docs=			gtk+2-docs-${VERSION}
@@ -35,10 +35,7 @@ BUILD_DEPENDS=          	:pkgconfig-*:devel/pkgconfig
 .endif
 
 # library versions (major:minor)
-LIBGDK_X11_VERSION=		0:11
-LIBGDK_PIXBUF_VERSION=		0:11
-LIBGDK_PIXBUF_XLIB_VERSION=	0:11
-LIBGTK_X11_VERSION=		0:11
+OBSD_LIB_VERSION=		0:12
 
 USE_X11=			Yes
 USE_GMAKE=			Yes
@@ -48,10 +45,7 @@ CONFIGURE_ARGS+= 		--enable-static
 CONFIGURE_ARGS+= 		--disable-gtk-doc
 CONFIGURE_ENV=			CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 				LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_ENV=			LIBGDK_X11_VERSION="${LIBGDK_X11_VERSION}" \
-				LIBGDK_PIXBUF_VERSION="${LIBGDK_PIXBUF_VERSION}" \
-				LIBGDK_PIXBUF_XLIB_VERSION="${LIBGDK_PIXBUF_XLIB_VERSION}" \
-				LIBGTK_X11_VERSION="${LIBGTK_X11_VERSION}"
+MAKE_ENV=			OBSD_LIB_VERSION="${OBSD_LIB_VERSION}"
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gtk+2/; \

@@ -1,8 +1,8 @@
-$OpenBSD: patch-demos_Makefile_in,v 1.3 2003/06/12 19:26:36 marcm Exp $
---- demos/Makefile.in.orig	Tue Apr 22 07:25:56 2003
-+++ demos/Makefile.in	Tue Apr 22 07:26:44 2003
-@@ -973,7 +973,7 @@ maintainer-clean-generic clean mostlycle
- test-inline-pixbufs.h: $(top_builddir)/gdk-pixbuf/gdk-pixbuf-csource $(top_builddir)/gdk-pixbuf/gdk-pixbuf.loaders apple-red.png gnome-foot.png
+$OpenBSD: patch-demos_Makefile_in,v 1.4 2003/06/30 03:59:03 marcm Exp $
+--- demos/Makefile.in.orig	Mon Jun  9 14:26:13 2003
++++ demos/Makefile.in	Thu Jun 19 09:54:26 2003
+@@ -983,7 +983,7 @@ maintainer-clean-generic clean mostlycle
+ test-inline-pixbufs.h: $(pixbuf_csource_deps) apple-red.png gnome-foot.png
  	(topdir=`cd $(top_builddir) && pwd` ; curdir=`pwd` ; \
  	  cd $(srcdir) &&				     \
 -	      $(pixbuf_csource) --build-list \
