@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/03/16 01:03:56 krw Exp $
+# $OpenBSD: Makefile,v 1.20 2002/03/24 22:38:50 brad Exp $
 
 COMMENT=	object oriented script language with threads
 VERSION=	1.6.7
@@ -56,7 +56,7 @@ post-install:
 	@strip ${PREFIX}/bin/ruby
 
 REV=1.6
-SUB=${ARCH}-openbsd${OSREV}
+SUB=${MACHINE_ARCH}-openbsd${OSREV}
 SUBST_VARS=SUB REV
 
 .include <bsd.port.mk>
