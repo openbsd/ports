@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1998/10/20 08:39:44 form Exp $
+# $OpenBSD: Makefile,v 1.6 1998/11/30 03:39:06 form Exp $
 #
 
 DISTNAME=		xmmix-1.2
@@ -10,6 +10,6 @@ MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/
 
 USE_IMAKE=		yes
-LIB_DEPENDS=    	Xm.1.:${PORTSDIR}/x11/lesstif
+USE_MOTIF=		yes
 
 .include <bsd.port.mk>

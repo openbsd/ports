@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1998/10/20 08:39:44 form Exp $
+# $OpenBSD: Makefile,v 1.6 1998/11/30 03:39:05 form Exp $
 #
 
 DISTNAME=		xmcd-2.3
@@ -9,7 +9,7 @@ MAINTAINER=		form@OpenBSD.ORG
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/xmcd
 
-LIB_DEPENDS=    	Xm\\.1\\.:${PORTSDIR}/x11/lesstif
+USE_MOTIF=		yes
 USE_IMAKE=		yes
 IS_INTERACTIVE=		yes	# asks a lot of questions
 
