@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/01/24 06:11:16 shell Exp $
+# $OpenBSD: Makefile,v 1.3 2002/01/28 23:03:24 shell Exp $
 
 COMMENT=	"perl module to the SAX2 NamespaceSupport class"
 
-VERSION=	1.03
+VERSION=	1.04
 DISTNAME=	XML-NamespaceSupport-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
