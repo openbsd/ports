@@ -1,13 +1,18 @@
-# $OpenBSD: Makefile,v 1.33 1999/05/14 18:35:25 brad Exp $
+# $OpenBSD: Makefile,v 1.34 1999/09/02 18:59:31 brad Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
 MASTER_SITES= 	ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
 		ftp://ftp.cs.hut.fi/pub/ssh/
-NO_CDROM=	"CRYPTO: Third party crypto not allowed."
-RESTRICTED=	"Crypto; export-controlled"
+
+PATCH_SITES=	http://www.ssh.fi/sshprotocols2/patches/
+PATCHFILES=	patch-${DISTNAME}-bsd.tty.chown
+PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	todd@openbsd.org
+
+NO_CDROM=	"CRYPTO: Third party crypto not allowed."
+RESTRICTED=	"Crypto; export-controlled"
 
 .if defined(NO_WARNINGS) || (defined(USA_RESIDENT) && ${USA_RESIDENT} == YES)
 DISTFILES=	${DISTNAME}.tar.gz rsaref2.tar.gz
