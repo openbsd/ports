@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/03/25 22:04:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/03/28 12:11:18 naddy Exp $
 
 COMMENT=	"portable audio output library"
 DISTNAME=	libao-0.6.0
@@ -52,6 +52,8 @@ MAKE_FLAGS=	PLUGINS='${PLUGINS}'
 FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 post-patch:
-	@cd ${WRKSRC} && automake -i
+	@cd ${WRKSRC} && \
+		touch aclocal.m4 configure.in && \
+		automake -i
 
 .include <bsd.port.mk>
