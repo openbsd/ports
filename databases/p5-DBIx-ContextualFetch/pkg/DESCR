@@ -1,0 +1,3 @@
+DBIx::ContextualFetch redefines some of the various fetch
+methods to add context sensitivity.
+
