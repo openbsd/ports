@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/23 21:25:43 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/06/07 15:22:08 lebel Exp $
 bin/aspell
 bin/run-with-aspell
 bin/word-list-compress
@@ -146,7 +146,7 @@ share/doc/aspell/man-html/3_Basic.html
 share/doc/aspell/man-html/4_Managing.html
 share/doc/aspell/man-html/5_Customizing.html
 share/doc/aspell/man-html/6_Writing.html
-share/doc/aspell/man-html/7_International.html
+share/doc/aspell/man-html/7_Adding.html
 share/doc/aspell/man-html/8_How.html
 share/doc/aspell/man-html/A_Changelog.html
 share/doc/aspell/man-html/About_this.html
@@ -172,7 +172,7 @@ share/doc/aspell/man-text/3_Basic.txt
 share/doc/aspell/man-text/4_Managing.txt
 share/doc/aspell/man-text/5_Customizing.txt
 share/doc/aspell/man-text/6_Writing.txt
-share/doc/aspell/man-text/7_International.txt
+share/doc/aspell/man-text/7_Adding.txt
 share/doc/aspell/man-text/8_How.txt
 share/doc/aspell/man-text/A_Changelog.txt
 share/doc/aspell/man-text/About_this.txt

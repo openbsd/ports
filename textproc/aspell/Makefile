@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/06/07 14:42:51 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/06/07 15:22:06 lebel Exp $
 
 COMMENT=		"spell checker designed to eventually replace Ispell"
 COMMENT-danish=		"aspell dictionary for Danish"
@@ -7,7 +7,7 @@ COMMENT-french=		"aspell dictionary for French"
 COMMENT-swedish=	"aspell dictionary for Swedish"
 
 V=			0
-SV=			.33.6
+SV=			.33.6.3
 PKGNAME=		aspell-${V}${SV}
 DISTNAME=		aspell-${SV}
 CATEGORIES=		textproc
