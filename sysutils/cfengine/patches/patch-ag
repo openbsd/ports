@@ -1,0 +1,19 @@
+--- src/cf.defs.h.orig	Tue Jul 14 07:48:57 1998
++++ src/cf.defs.h	Thu Sep 17 15:39:34 1998
+@@ -228,7 +228,7 @@
+ #define maxvarsize 128
+ #define maxlinksize 256
+ #define maxlinklevel 4
+-#define maxargs 30
++#define maxargs 31
+ #define hashtablesize 119   /* prime number */
+ #define macroalphabet 60    /* a-z, A-Z plus a bit */
+ #define maxshellargs 11
+@@ -481,6 +481,7 @@
+    GnU,
+    cfnt,
+    unix_sv,
++   openbsd,
+    unused1,
+    unused2,
+    unused3

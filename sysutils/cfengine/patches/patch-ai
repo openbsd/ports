@@ -1,0 +1,32 @@
+--- doc/cfengine.texinfo.orig	Sat Aug  1 03:36:35 1998
++++ doc/cfengine.texinfo	Thu Sep 17 15:39:34 1998
+@@ -1713,7 +1713,7 @@
+ 
+ @smallexample
+ ultrix, sun4, sun3, hpux, hpux10, aix, solaris, osf, irix4, irix, irix64
+-        freebsd, netbsd, bsd4_3, newsos, solarisx86, aos,
++        freebsd, netbsd, openbsd, bsd4_3, newsos, solarisx86, aos,
+             nextstep, bsdos, linux, debian, cray, unix_sv, GnU
+ @end smallexample 
+ 
+@@ -11832,7 +11832,7 @@
+ Another problem with GNU/Linux concerns a special socket call to the
+ TCP/IP network interface.  This is a command which configures the static
+ routing table and appears to be absent from all versions of Linux and
+-newer IRIX versions.  There are also problems with NetBSD.  These
++newer IRIX versions.  There are also problems with NetBSD (and therefore, likely, OpenBSD).  These
+ features are undocumented and will be fixed as soon as they have been
+ understood! If you are running in verbose mode a warning message is
+ printed, otherwise cfengine will ignore attempts to set a default route
+@@ -15011,9 +15011,9 @@
+ @c .....................................................
+ 
+ @node cf.freebsd, cfd.conf, cf.linux, Example configuration file
+-@section cf.freebsd / cf.netbsd
++@section cf.freebsd / cf.netbsd /cf.openbsd
+ 
+-FreeBSD and NetBSD are sufficiently similar to have a single
++FreeBSD, NetBSD and OpenBSD are sufficiently similar to have a single
+ file for both.
+ 
+ @smallexample

@@ -1,0 +1,18 @@
+--- src/cfengine.c.orig	Fri Jul 31 05:13:48 1998
++++ src/cfengine.c	Thu Sep 17 15:39:35 1998
+@@ -1153,6 +1153,7 @@
+       case unix_sv:
+       case freebsd:
+       case netbsd:
++      case openbsd:
+       case bsd_i:
+       case nextstep:
+       case bsd4_3:
+@@ -4249,6 +4250,7 @@
+                  break;
+ 
+    case netbsd:
++   case openbsd:
+    case bsd_i:
+    case freebsd: sprintf(fstab,"%s:%s \t %s \t %s \t %s,%s 0 0",host,rmountpt,mountpt,VNFSTYPE,mode,opts);
+                  break;

@@ -1,0 +1,10 @@
+--- acconfig.h.orig	Mon May 25 23:29:17 1998
++++ acconfig.h	Thu Sep 17 15:39:32 1998
+@@ -48,6 +48,7 @@
+ #undef DEBIAN
+ #undef FREEBSD
+ #undef NETBSD
++#undef OPENBSD
+ #undef NEWS_OS
+ #undef BSDOS
+ #undef BSD43

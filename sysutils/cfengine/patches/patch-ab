@@ -1,0 +1,15 @@
+--- configure.orig	Tue Jul 21 06:09:16 1998
++++ configure	Thu Sep 17 15:39:32 1998
+@@ -3924,6 +3924,12 @@
+ EOF
+ 
+         ;;
++   openbsd*)
++	cat >> confdefs.h <<\EOF
++#define OPENBSD 1
++EOF
++
++        ;;
+    newsos*)
+ 	cat >> confdefs.h <<\EOF
+ #define NEWS_OS 1

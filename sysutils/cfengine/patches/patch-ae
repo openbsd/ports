@@ -1,0 +1,10 @@
+--- src/conf.h.in.orig	Tue Jul 21 06:09:30 1998
++++ src/conf.h.in	Thu Sep 17 15:39:35 1998
+@@ -77,6 +77,7 @@
+ #undef DEBIAN
+ #undef FREEBSD
+ #undef NETBSD
++#undef OPENBSD
+ #undef NEWS_OS
+ #undef BSDOS
+ #undef BSD43

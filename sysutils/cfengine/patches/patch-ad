@@ -1,0 +1,11 @@
+--- src/df.c.orig	Sun Mar 22 23:14:49 1998
++++ src/df.c	Thu Sep 17 15:39:35 1998
+@@ -109,7 +109,7 @@
+     avail = buf.f_bavail * (buf.f_frsize / blocksize);
+ #endif
+ 
+-#if defined NETBSD || defined LINUX || defined SUNOS || defined HPuUX
++#if defined NETBSD || defined LINUX || defined SUNOS || defined HPuUX || defined OPENBSD
+     total = buf.f_blocks;
+     used = buf.f_blocks - buf.f_bfree;
+     avail = buf.f_bavail;

@@ -1,0 +1,12 @@
+--- configure.in.orig	Tue Jul 21 06:21:06 1998
++++ configure.in	Thu Sep 17 15:39:32 1998
+@@ -274,6 +274,9 @@
+    netbsd*)
+ 	AC_DEFINE(NETBSD)
+         ;;
++   openbsd*)
++	AC_DEFINE(OPENBSD)
++        ;;
+    newsos*)
+ 	AC_DEFINE(NEWS_OS)
+         ;;
