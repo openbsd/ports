@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.261 2000/04/10 01:11:36 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.262 2000/04/15 18:46:08 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1283,13 +1283,13 @@ ${_EXTRACT_COOKIE}:
 .  else
 # What EXTRACT normally does:
 .    if defined(WRKOBJDIR)
-	@rm -rf ${WRKOBJDIR}/${PORTSUBDIR}
-	@mkdir -p ${WRKOBJDIR}/${PORTSUBDIR}
+	@rm -rf ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT}
+	@mkdir -p ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT}
 	@if [ ! -L ${WRKDIR} ] || \
-	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${PORTSUBDIR} ]; then \
-		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PORTSUBDIR}"; \
+	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${PORTSUBDIR}${_FEXT} ]; then \
+		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT}"; \
 		rm -f ${WRKDIR}; \
-		ln -sf ${WRKOBJDIR}/${PORTSUBDIR} ${WRKDIR}; \
+		ln -sf ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT} ${WRKDIR}; \
 	fi
 .    else
 	@rm -rf ${WRKDIR}
@@ -1758,13 +1758,13 @@ list-distfiles:
 .if !target(obj)
 obj:
 .  if defined(WRKOBJDIR)
-	@rm -rf ${WRKOBJDIR}/${PORTSUBDIR}
-	@mkdir -p ${WRKOBJDIR}/${PORTSUBDIR}
+	@rm -rf ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT}
+	@mkdir -p ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT}
 	@if [ ! -L ${WRKDIR} ] || \
-	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${PORTSUBDIR} ]; then \
-		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PORTSUBDIR}"; \
+	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${PORTSUBDIR}${_FEXT} ]; then \
+		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT}"; \
 		rm -f ${WRKDIR}; \
-		ln -sf ${WRKOBJDIR}/${PORTSUBDIR} ${WRKDIR}; \
+		ln -sf ${WRKOBJDIR}/${PORTSUBDIR}${_FEXT} ${WRKDIR}; \
 	fi
 .  else
 	@echo ">>"
