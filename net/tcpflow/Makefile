@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/08/12 00:59:46 jolan Exp $
+# $OpenBSD: Makefile,v 1.12 2003/08/12 01:24:24 brad Exp $
 
 COMMENT=	"tool for capturing data from TCP connections"
 
@@ -10,6 +10,7 @@ HOMEPAGE=       http://www.circlemud.org/~jelson/software/tcpflow/
 
 MAINTAINER=	Dan Weeks <danimal@danimal.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
