@@ -1,6 +1,46 @@
---- ltmain.sh.orig	Wed Jul 26 03:47:55 2000
-+++ ltmain.sh	Wed Jul 26 03:48:29 2000
-@@ -2626,7 +2626,7 @@
+--- ltmain.sh.orig	Sat Jan 15 06:48:38 2000
++++ ltmain.sh	Tue Feb 20 16:24:03 2001
+@@ -1079,7 +1079,18 @@ compiler."
+ 	    # These systems don't actually have c library (as such)
+ 	    continue
+ 	    ;;
++          *-*-openbsd*)
++            # Do not include libc due to us having libc/libc_r.
++            continue
++            ;;
+ 	  esac
++        elif test "$arg" = "-lc_r"; then
++          case "$host" in
++          *-*-openbsd*)
++            # Do not include libc_r directly, use -pthread flag.
++            continue
++            ;;
++          esac
+ 	elif test "$arg" = "-lm"; then
+ 	  case "$host" in
+ 	  *-*-cygwin* | *-*-beos*)
+@@ -1091,6 +1102,10 @@ compiler."
+ 	deplibs="$deplibs $arg"
+ 	;;
+ 
++      -?thread)
++        deplibs="$deplibs $arg"
++        ;;
++
+       -module)
+ 	module=yes
+ 	continue
+@@ -1802,6 +1817,9 @@ compiler."
+ 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
+ 	  # these systems don't actually have a c library (as such)!
+ 	  ;;
++        *-*-openbsd*)
++          # Do not include libc due to us having libc/libc_r.
++          ;;
+ 	*)
+ 	  # Add libc to deplibs on all other systems.
+ 	  deplibs="$deplibs -lc"
+@@ -2626,7 +2644,7 @@ static const void *lt_preloaded_setup() 
  	  # linked before any other PIC object.  But we must not use
  	  # pic_flag when linking with -static.  The problem exists in
  	  # FreeBSD 2.2.6 and is fixed in FreeBSD 3.1.
@@ -9,7 +49,7 @@
  	    case "$compile_command " in
  	    *" -static "*) ;;
  	    *) pic_flag_for_symtable=" $pic_flag -DPIC -DFREEBSD_WORKAROUND";;
-@@ -3562,40 +3562,6 @@
+@@ -3562,40 +3580,6 @@ libdir='$install_libdir'\
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
