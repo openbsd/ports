@@ -1,16 +1,19 @@
-$OpenBSD: patch-actions_c,v 1.1 2001/03/07 07:55:58 fgsch Exp $
---- actions.c.orig	Mon Feb 12 16:26:23 2001
-+++ actions.c	Wed Mar  7 04:25:01 2001
-@@ -749,10 +749,12 @@ static void TVActionToggleZoomAction(
+$OpenBSD: patch-actions_c,v 1.2 2002/02/02 00:52:18 naddy Exp $
+--- actions.c.orig	Mon Feb 12 15:26:23 2001
++++ actions.c	Wed Aug 15 13:46:30 2001
+@@ -748,11 +748,14 @@ static void TVActionToggleZoomAction(
+     /*  FIXME:  Parameterize the full-screen arg  */
      TVSCREENSetZoomState( !d->zoom_on, fullscreen );
      TVTOOLSSetToggleState( TV_TOOLITEM_FULLSCREEN, d->zoom_on );
-     
-+#if !defined(__OpenBSD__)
+-    
++
++#ifndef __OpenBSD__
      /*  This is an ugly hack.  Changing the video mode can take a while,  */
      /*    If this was initiated by a remote event, this delay messes up   */
      /*    remote key debouncing.  Just flush the buffer of any repeats.   */
      TVREMOTEFlush();
 +#endif
++
  }
  
  

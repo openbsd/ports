@@ -1,6 +1,6 @@
-$OpenBSD: patch-tvutil_c,v 1.1 2001/03/07 07:55:59 fgsch Exp $
+$OpenBSD: patch-tvutil_c,v 1.2 2002/02/02 00:52:18 naddy Exp $
 --- tvutil.c.orig	Sun Oct 22 23:43:46 2000
-+++ tvutil.c	Wed Mar  7 04:29:49 2001
++++ tvutil.c	Wed Aug 15 13:46:30 2001
 @@ -114,7 +114,7 @@ void CleanupChildFileDesc()
  #elif defined(__NetBSD__)
      int    mib[2] = { CTL_KERN, OPEN_MAX };
@@ -10,3 +10,17 @@ $OpenBSD: patch-tvutil_c,v 1.1 2001/03/07 07:55:59 fgsch Exp $
  #endif
      int    i;
      size_t len;
+@@ -194,11 +194,12 @@ void TVUTILCmdStrToArgList(
+         while ( (in_quote || !isspace(*s)) && (*s != '\0') ) {
+             ignore = FALSE;
+ 
+-            if (( *s == '\'' ) || ( *s == '\"' ))
++            if (( *s == '\'' ) || ( *s == '\"' )) {
+                 if ( !in_quote )
+                     in_quote = TRUE , ignore = TRUE, quote_char = *s;
+                 else if ( quote_char == *s )
+                     in_quote = FALSE, ignore = TRUE;
++	    }
+ 
+             if ( !ignore && ( p-arg < sizeof(arg)-1 ) )
+                 *(p++) = *s;

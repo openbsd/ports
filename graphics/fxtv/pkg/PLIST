@@ -1,14 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.3 2002/02/02 00:52:18 naddy Exp $
 bin/fxtv
-man/man1/fxtv.1
 lib/X11/app-defaults/Fxtv
-lib/X11/fxtv/README
-lib/X11/fxtv/bitmaps/mini-camera.xpm
-lib/X11/fxtv/bitmaps/mini-down.xbm
-lib/X11/fxtv/bitmaps/mini-resize.xpm
-lib/X11/fxtv/bitmaps/mini-sound.xbm
-lib/X11/fxtv/bitmaps/mini-up.xbm
-lib/X11/fxtv/bitmaps/radio_off.xbm
-lib/X11/fxtv/bitmaps/radio_on.xbm
-lib/X11/fxtv/fxtv_cnvt.sh
-@dirrm lib/X11/fxtv/bitmaps
-@dirrm lib/X11/fxtv
+man/man1/fxtv.1
+share/doc/fxtv/README
+share/fxtv/bitmaps/mini-camera.xpm
+share/fxtv/bitmaps/mini-down.xbm
+share/fxtv/bitmaps/mini-resize.xpm
+share/fxtv/bitmaps/mini-sound.xbm
+share/fxtv/bitmaps/mini-up.xbm
+share/fxtv/bitmaps/radio_off.xbm
+share/fxtv/bitmaps/radio_on.xbm
+share/fxtv/fxtv_cnvt.sh
+@dirrm share/fxtv/bitmaps
+@dirrm share/fxtv
+@dirrm share/doc/fxtv

@@ -1,18 +1,35 @@
-$OpenBSD: patch-tvaudio_c,v 1.1 2001/03/07 07:55:59 fgsch Exp $
---- tvaudio.c.orig	Mon Feb 12 11:56:29 2001
-+++ tvaudio.c	Wed Mar  7 04:26:42 2001
-@@ -104,12 +104,14 @@ static void TVAUDIOSetMixerMask()
+$OpenBSD: patch-tvaudio_c,v 1.2 2002/02/02 00:52:18 naddy Exp $
+--- tvaudio.c.orig	Mon Feb 12 10:56:29 2001
++++ tvaudio.c	Wed Aug 15 13:46:30 2001
+@@ -104,7 +104,7 @@ static void TVAUDIOSetMixerMask()
          Mixer_dev_mask = SOUND_MASK_MIC;
          Mixer_dev_name = "MIC";
      }
-+#if !defined(__OpenBSD__)
- #ifdef SOUND_MIXER_VIDEO
+-#ifdef SOUND_MIXER_VIDEO
++#if defined(SOUND_MIXER_VIDEO) && !defined(__OpenBSD__)
      else if ( STREQ( buf, "VIDEO" ) ) {
         Mixer_dev_id   = SOUND_MIXER_VIDEO;
         Mixer_dev_mask = SOUND_MASK_VIDEO;
-        Mixer_dev_name = "VIDEO";
+@@ -204,12 +204,22 @@ void TVAUDIOSetMuteState( TV_BOOL       
+ {
+     TV_AUDIO        *a = &G_glob.audio;
+     TV_CAPTURE      *c = &G_glob.capture;
++    static TV_INT32 ov;
+ 
+     /*  Accomplish mute via capture card audio mute  */
+     if ( a->mute_on != mute_on ) {
+         a->mute_on = mute_on;
+         TVCAPTURESetAudioMute( c, a->mute_on );
      }
-+#endif
- #endif
-     else if ( STREQ( buf, "LINE" ) ) {
-         Mixer_dev_id   = SOUND_MIXER_LINE;
++
++    /* Fake mute via line audio */
++    if(a->mute_on) {
++	TVAUDIOGetLineVolume(&ov);
++        TVAUDIOSetLineVolume(0, FALSE);
++    } else {
++        TVAUDIOSetLineVolume(ov, FALSE);
++    }
++   
+     TVTOOLSSetToggleState( TV_TOOLITEM_MUTE, !a->mute_on );
+ }
+ 
