@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/15 09:44:12 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/09/27 14:56:31 brad Exp $
 
 DISTNAME=	imap-4.7c2
 PKGNAME=	c-client-4.7c2
 CATEGORIES=	mail devel
-NEED_VERSION=	1.328
+NEED_VERSION=	1.330
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/old/
 EXTRACT_SUFX=	.tar.Z
 
@@ -38,5 +38,5 @@ do-install:
 .include <bsd.port.mk>
 
 .if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-MAKE_FLAGS+=	NO_SHARED_LIBS=Yes
+MAKE_ENV=	NO_SHARED_LIBS=Yes
 .endif
