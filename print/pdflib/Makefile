@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2002/07/03 16:36:48 jakob Exp $
+# $OpenBSD: Makefile,v 1.10 2002/10/28 13:38:53 naddy Exp $
 
 COMMENT=		"C library to produce PDF files"
 
 DISTNAME=		pdflib-4.0.3
 CATEGORIES=     	print
-NEED_VERSION=		1.525
 
 HOMEPAGE=		http://www.pdflib.com/pdflib/
 
@@ -36,6 +35,8 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 			LIBS="-lm"
 MAKE_ENV=		${CONFIGURE_ENV}
+
+REGRESS_TARGET=		test
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pdflib
