@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.14 2002/12/30 19:31:29 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.15 2002/12/30 19:35:51 espie Exp $
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/@}
@@ -20,8 +20,8 @@ AUTOCONF_NEW=		Yes
 CONFIGURE_ARGS+=	${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--with-extra-libs="${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-extra-includes="${LOCALBASE}/include/libpng:${LOCALBASE}/include"
-#CONFIGURE_ARGS+=	--disable-threading
-#CONFIGURE_ARGS+=	--disable-mt
+CONFIGURE_ARGS+=	--disable-threading
+CONFIGURE_ARGS+=	--disable-mt
 CONFIGURE_ARGS+=	--with-xdmdir=/var/X11/kdm
 CONFIGURE_ARGS+=	--enable-mitshm
 #CONFIGURE_ARGS+=	--enable-debug=full
