@@ -3,7 +3,7 @@
 # Date created:				21 Apr 1998
 # Whom:					form@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.7 1998/12/01 05:10:23 form Exp $
+# $OpenBSD: Makefile,v 1.8 1998/12/16 22:16:00 marc Exp $
 #
 
 DISTNAME=	socks5-v1.0r8
@@ -15,6 +15,7 @@ MAINTAINER=	form@OpenBSD.ORG
 
 NO_CDROM=	"NEC has a funky license for this software"
 RESTRICTED=	"no commercial use"
+MIRROR_DISTFILE=no
 IS_INTERACTIVE=	yes
 
 # here are some extra configure args you may wish to use
