@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/23 23:35:46 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2002/03/27 12:36:35 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt3
@@ -6,7 +6,7 @@ COMMENT-html=		off-line html documentation for qt3
 COMMENT-postgresql=	PostGresql plugin for qt3
 COMMENT-mysql=		MySql plugin for qt3
 
-VERSION=	0.2
+VERSION=	0.3
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
 NEED_VERSION=	1.508
@@ -94,9 +94,9 @@ MULTI_PACKAGES+=	-postgresql
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-postgresql"
 LIB_DEPENDS+=pq::databases/postgresql
 .  endif
-BUILD_DEPENDS+=::databases/postgresql:patch
+BUILD_DEPENDS+=::databases/postgresql
 CONFIGURE_ARGS+= -I${LOCALBASE}/include/postgresql \
-	-I`cd ${PORTSDIR}/databases/postgresql && make show=WRKSRC`/src/include -L${LOCALBASE}/lib \
+	    -L${LOCALBASE}/lib \
 	    -I${LOCALBASE}/include -plugin-sql-psql
 .endif
 
@@ -143,7 +143,7 @@ pre-build:
 	@echo "*** for the 'limit' or 'ulimit' command."
 	@echo ""
 
-LIBRARIES=qt.so.3.2 editor.so.1.0 qui.so.1.0
+LIBRARIES=qt.so.3.3 editor.so.1.0 qui.so.1.0
 PROGRAMS3=moc findtr qt20fix qtrename140 uic designer
 PROGRAMS=assistant linguist lrelease lupdate qm2ts \
 	qtconfig qmake
