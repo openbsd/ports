@@ -1,0 +1,10 @@
+LIB=	grove
+NOPIC=	nopic			# currently boken 
+SRCS=	Node.cxx LocNode.cxx
+NOPROFILE=	noprofile
+CPLUSPLUSLIB=	1         # include c++rt0.o for constructors
+
+install:
+
+.include <bsd.lib.mk>
+

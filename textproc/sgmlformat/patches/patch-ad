@@ -1,0 +1,10 @@
+diff -u -r /tmp/sgmlformat-1.6/Makefile.inc ./Makefile.inc
+--- /tmp/sgmlformat-1.6/Makefile.inc	Wed Jul 16 18:47:09 1997
++++ ./Makefile.inc	Sun Apr  5 10:26:11 1998
+@@ -3,5 +3,5 @@
+ SUBDIR=	
+ PREFIX?=	/usr/local
+ BINDIR=		${PREFIX}/bin
+-MANDIR=		${PREFIX}/man/man
++MANDIR=		${PREFIX}/man/cat
+ TRANSPEC_DIR=	${PREFIX}/share/sgml/transpec

@@ -1,0 +1,18 @@
+bin/instant
+bin/sgmlfmt
+man/cat1/sgmlfmt.0
+man/cat1/instant.0
+man/cat5/transpec.0
+share/sgml/transpec/catalog
+share/sgml/transpec/docbook-html.ts
+share/sgml/transpec/docbook-roff.ts
+share/sgml/transpec/html.cmap
+share/sgml/transpec/html.sdata
+share/sgml/transpec/iso12083article-roff.ts
+share/sgml/transpec/linuxdoc-docbook.ts
+share/sgml/transpec/linuxdoc-html.ts
+share/sgml/transpec/linuxdoc-roff.ts
+share/sgml/transpec/roff.cmap
+share/sgml/transpec/roff.sdata
+share/sgml/transpec/transpec.dtd
+@dirrm share/sgml/transpec

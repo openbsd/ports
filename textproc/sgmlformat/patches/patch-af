@@ -1,0 +1,12 @@
+diff -u -r /tmp/sgmlformat-1.6/sgmlfmt/Makefile ./sgmlfmt/Makefile
+--- /tmp/sgmlformat-1.6/sgmlfmt/Makefile	Tue Jul 22 15:40:33 1997
++++ ./sgmlfmt/Makefile	Sun Apr  5 10:39:14 1998
+@@ -2,7 +2,7 @@
+ 
+ FILES=		sgmlfmt
+ CLEANFILES=	sgmlfmt
+-MAN1=		sgmlfmt.1
++MAN=		sgmlfmt.1
+ 
+ all: sgmlfmt
+ 
