@@ -1,6 +1,7 @@
---- Makefile.orig	Fri Jul 21 08:03:30 1995
-+++ Makefile	Sat Apr 22 05:57:32 2000
-@@ -28,5 +28,5 @@
+$OpenBSD: patch-Makefile,v 1.1 2002/09/17 09:04:05 pvalchev Exp $
+--- Makefile.orig	Thu Jul 20 18:03:30 1995
++++ Makefile	Tue Sep 17 02:57:12 2002
+@@ -28,5 +28,5 @@ clean:
  	$(RM) -f bing bing.ps bing.0
  
  install: bing bing.8
