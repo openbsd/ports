@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.221 2004/05/06 23:18:26 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.222 2004/05/08 07:23:14 dons Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -18,6 +18,7 @@
      SUBDIR += binutils
      SUBDIR += bison
      SUBDIR += boehm-gc
+     SUBDIR += c2hs
      SUBDIR += ccache
      SUBDIR += check
      SUBDIR += chora
