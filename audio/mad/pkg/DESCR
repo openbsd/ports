@@ -17,4 +17,7 @@ MAD has the following special features:
 The software is distributed as a library (libmad) and
 command-line front-end (madplay).
 
+Additionally, packages can be built with "debug" flavor to enable
+debugging.
+
 WWW: ${HOMEPAGE}
