@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2002/04/20 01:01:46 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2002/04/28 17:37:15 pvalchev Exp $
 
 COMMENT=	"multiplayer 2d space battles game"
 
-DISTNAME=	xpilot-4.5.2
+DISTNAME=	xpilot-4.5.3
 CATEGORIES=	games x11
-NEED_VERSION=	1.524
+NEED_VERSION=	1.525
 
 HOMEPAGE=	http://www.xpilot.org/
 
@@ -24,6 +24,5 @@ USE_X11=	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE= imake
-#CONFIGURE_FLAGS= LOCALBASE=${LOCALBASE}
 
 .include <bsd.port.mk>
