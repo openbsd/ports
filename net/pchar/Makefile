@@ -3,11 +3,11 @@
 # Date created:			  Thu Dec 16, 1999
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 2000/10/22 15:43:06 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/02/08 22:53:28 angelos Exp $
 # $FreeBSD: ports/net/pchar/Makefile,v 1.1.1.1 1999/11/04 08:33:26 obrien Exp $
 #
 
-DISTNAME=	pchar-1.2
+DISTNAME=	pchar-1.3.1
 CATEGORIES=	net
 NEED_VERSION=	1.305
 MASTER_SITES=	http://www.employees.org/~bmah/Software/pchar/
