@@ -1,0 +1,4 @@
+GPG.pm is a Perl5 interface for using GnuPG. GPG works with $scalar
+(string), as opposed to the existing Perl5 modules (GnuPG.pm and
+GnuPG::Interface) which communicate with gnupg through filehandles
+or filenames.
