@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.9 1999/07/30 08:57:39 niklas Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.10 1999/09/30 21:07:09 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -124,7 +124,6 @@ README=	${TEMPLATES}/README.category
 .endif
 
 README.html:
-	@echo "===>  Creating README.html"
 	@> $@.tmp
 .for entry in ${SUBDIR}
 	@echo -n '<dt><a href="'${entry}/README.html'">'"`cd ${entry} && make package-name 2>/dev/null||echo ${entry}`</a><dd>" >> $@.tmp

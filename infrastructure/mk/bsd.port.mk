@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.128 1999/09/30 17:34:22 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.129 1999/09/30 21:07:09 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2334,6 +2334,41 @@ describe:
 	fi
 .endif
 
+README.html:
+	@${ECHO} ${PKGNAME} | ${HTMLIFY} > $@.tmp3
+.if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
+   defined(LIB_DEPENDS) || defined(DEPENDS) || target(depends-list)
+	@${MAKE} depends-list FULL_PACKAGE_NAME=Yes | ${SORT_DEPENDS}>$@.tmp1
+.endif
+.if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS) || \
+	target(package-depends)
+	@${MAKE} package-depends FULL_PACKAGE_NAME=Yes | ${SORT_DEPENDS} >$@.tmp2
+.endif
+.for I in 1 2
+	@if [ -s $@.tmp$I ]; then \
+		(${CAT} $@.tmp$I | while read n; do \
+			j=`dirname $$n|${HTMLIFY}`; k=`basename $$n|${HTMLIFY}`; \
+			echo "<A HREF=\"${PKGDEPTH}/$$j/README.html\">$$k</A>"; \
+		 done;) >$@.tmp$Ia; \
+    else \
+    echo "(none)" > $@.tmp$Ia; \
+	fi
+.endfor
+	@${CAT} ${README_NAME} | \
+		${SED} -e 's|%%PORT%%|'"`${MAKE} package-path | ${HTMLIFY}`"'|g' \
+			-e '/%%PKG%%/r$@.tmp3' \
+			-e '/%%PKG%%/d' \
+			-e '/%%COMMENT%%/r${PKGDIR}/COMMENT' \
+			-e '/%%COMMENT%%/d' \
+			-e '/%%DESCR%%/r${PKGDIR}/DESCR' \
+			-e '/%%DESCR%%/d' \
+			-e '/%%BUILD_DEPENDS%%/r$@.tmp1a' \
+			-e '/%%BUILD_DEPENDS%%/d' \
+			-e '/%%RUN_DEPENDS%%/r$@.tmp2a' \
+			-e '/%%RUN_DEPENDS%%/d' \
+		>> $@
+	@rm -f $@.tmp*
+
 .if !target(print-depends-list)
 print-depends-list:
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
@@ -2409,36 +2444,6 @@ HTMLIFY=	${SED} -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
 .if make(README.html) || make(readme) || make(readmes)
 PKGDEPTH!=${MAKE} package-path|${SED} -e 's|[^./][^/]*|..|g'
 .endif
-
-README.html:
-	@${ECHO_MSG} "===>  Creating README.html for ${PKGNAME}"
-	@${ECHO} ${PKGNAME} | ${HTMLIFY} > $@.tmp3
-	@${MAKE} depends-list FULL_PACKAGE_NAME=Yes | ${SORT_DEPENDS}>$@.tmp1
-	@${MAKE} package-depends FULL_PACKAGE_NAME=Yes | ${SORT_DEPENDS} >$@.tmp2
-.for I in 1 2
-	@if [ -s $@.tmp$I ]; then \
-		(${CAT} $@.tmp$I | while read n; do \
-			j=`dirname $$n|${HTMLIFY}`; k=`basename $$n|${HTMLIFY}`; \
-			echo "<A HREF=\"${PKGDEPTH}/$$j/README.html\">$$k</A>"; \
-		 done;) >$@.tmp$Ia; \
-    else \
-    echo "(none)" > $@.tmp$Ia; \
-	fi
-.endfor
-	@${CAT} ${README_NAME} | \
-		${SED} -e 's|%%PORT%%|'"`${MAKE} package-path | ${HTMLIFY}`"'|g' \
-			-e '/%%PKG%%/r$@.tmp3' \
-			-e '/%%PKG%%/d' \
-			-e '/%%COMMENT%%/r${PKGDIR}/COMMENT' \
-			-e '/%%COMMENT%%/d' \
-			-e '/%%DESCR%%/r${PKGDIR}/DESCR' \
-			-e '/%%DESCR%%/d' \
-			-e '/%%BUILD_DEPENDS%%/r$@.tmp1a' \
-			-e '/%%BUILD_DEPENDS%%/d' \
-			-e '/%%RUN_DEPENDS%%/r$@.tmp2a' \
-			-e '/%%RUN_DEPENDS%%/d' \
-		>> $@
-	@rm -f $@.tmp*
 
 .if !target(print-depends)
 print-depends: 
