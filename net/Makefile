@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2000/08/18 01:23:55 danh Exp $
+# $OpenBSD: Makefile,v 1.85 2000/08/18 03:52:02 kevlo Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -88,6 +88,7 @@
      SUBDIR += wide-dhcp
      SUBDIR += xarchie
      SUBDIR += xchat
+     SUBDIR += yafc
      SUBDIR += ytalk
      SUBDIR += zebra
 
