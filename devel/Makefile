@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2001/01/19 16:42:50 reinhard Exp $
+# $OpenBSD: Makefile,v 1.58 2001/02/01 17:42:46 avsm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -104,6 +104,7 @@
 #    SUBDIR += p5-Include
 #    SUBDIR += p5-IniConf
 #    SUBDIR += p5-Ioctl
+     SUBDIR += p5-MLDBM
 #    SUBDIR += p5-PV
 #    SUBDIR += p5-Penguin
 #    SUBDIR += p5-Penguin-Easy
