@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2004/11/24 00:11:03 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2005/02/28 07:36:49 pvalchev Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+.if ${MACHINE_ARCH} == "alpha"
+BROKEN=		"smpeg"
+.endif
 
 COMMENT=	"set of Python modules designed for writing games"
 
