@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/17 10:59:48 sturm Exp $
+include/io.h
+lib/libio.a

@@ -1,0 +1,7 @@
+libio provides an abstraction for general data transport. It creates
+data sources and data sinks. The sources and sinks can be connected with
+multiple filters. As a result encryption and authentication can happen
+completely transparent to the main core of an application. Mutliplex
+nodes can be used to deal with N-fan in and M-fan out.
+
+WWW: ${HOMEPAGE}

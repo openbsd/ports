@@ -1,0 +1,23 @@
+$OpenBSD: patch-io_c,v 1.1.1.1 2003/04/17 10:59:48 sturm Exp $
+--- io.c.orig	Tue Mar 26 22:41:07 2002
++++ io.c	Mon Mar 10 18:48:50 2003
+@@ -704,7 +704,7 @@ io_header_init(struct io_header *hdr, in
+ 
+ struct io_obj *
+ io_new_obj(int fd, int type,
+-	   int (*method)(int, void *, size_t), size_t blocksize)
++	   ssize_t (*method)(int, void *, size_t), size_t blocksize)
+ {
+ 	struct io_obj *obj;
+ 
+@@ -759,8 +759,8 @@ io_duplex_halffree(struct io_duplex *dpl
+  */
+ 
+ struct io_duplex *
+-io_new_duplex(int fd, int (*mthd_read)(int, void *, size_t),
+-	   int (*mthd_write)(int, const void *, size_t), size_t blocksize)
++io_new_duplex(int fd, ssize_t (*mthd_read)(int, void *, size_t),
++	   ssize_t (*mthd_write)(int, const void *, size_t), size_t blocksize)
+ {
+ 	struct io_duplex *dplx;
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-io_method_c,v 1.1.1.1 2003/04/17 10:59:48 sturm Exp $
+--- io_method.c.orig	Tue Mar 26 22:41:23 2002
++++ io_method.c	Sun Apr 13 08:20:08 2003
+@@ -59,7 +59,7 @@ ssize_t
+ io_method_accept(int fd, void *buf, size_t size)
+ {
+ 	struct sockaddr_storage from;
+-	size_t fromlen = sizeof(from);
++	socklen_t fromlen = sizeof(from);
+ 
+ 	if (size < sizeof(int))
+ 		return (0);
