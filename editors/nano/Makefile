@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2003/08/13 23:56:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2003/10/04 23:26:36 naddy Exp $
 
 COMMENT=	"small, easy to use editor"
 
@@ -31,5 +31,9 @@ CONFIGURE_ARGS=	--enable-all
 LIB_DEPENDS+=	slang.14::devel/libslang
 CONFIGURE_ARGS+=--with-slang="${LOCALBASE}"
 .endif
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nano
+	${INSTALL_DATA} ${WRKSRC}/nanorc.sample ${PREFIX}/share/examples/nano
 
 .include <bsd.port.mk>
