@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.23 2001/04/18 02:00:08 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2001/07/22 22:49:47 brad Exp $
 # $FreeBSD: Makefile,v 1.8 1999/03/09 01:08:46 nectar Exp $
 
 COMMENT=	"sound library for Enlightenment"
 
 DISTNAME=	esound-0.2.22
 CATEGORIES=	audio
-NEED_VERSION=	1.384
+NEED_VERSION=	1.413
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/esound
 
 HOMEPAGE=	http://www.tux.org/~ricdude/EsounD.html
 
-LIB_DEPENDS=	audiofile.0.1::devel/libaudiofile
+LIB_DEPENDS=	audiofile::devel/libaudiofile
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
