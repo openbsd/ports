@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2003/12/10 21:31:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.107 2004/02/03 22:08:47 xsa Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -68,6 +68,7 @@
      SUBDIR += p5-cddb
      SUBDIR += p5-libvorbis
 #    SUBDIR += playmidi
+     SUBDIR += py-ao
      SUBDIR += py-cddb
      SUBDIR += py-id3
      SUBDIR += py-ogg
