@@ -1,20 +1,20 @@
-$OpenBSD: patch-configure,v 1.6 2003/04/02 12:58:43 wilfried Exp $
---- configure.orig	Thu Feb 13 22:48:00 2003
-+++ configure	Wed Apr  2 14:36:54 2003
+$OpenBSD: patch-configure,v 1.7 2003/12/26 14:18:30 wilfried Exp $
+--- configure.orig	2003-09-08 21:18:58.000000000 +0200
++++ configure	2003-12-26 14:54:28.000000000 +0100
 @@ -1208,9 +1208,9 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  
  
 -FL_MAJOR_VERSION=1
 -FL_MINOR_VERSION=1
--FL_PATCH_VERSION=3
-+FL_MAJOR_VERSION=3
+-FL_PATCH_VERSION=4
++FL_MAJOR_VERSION=4
 +FL_MINOR_VERSION=0
 +FL_PATCH_VERSION=0
  FL_RELEASE_VERSION=
  FL_API_VERSION=${FL_MAJOR_VERSION}.${FL_MINOR_VERSION}
  
-@@ -8878,7 +8878,7 @@ echo "${ECHO_T}yes" >&6
+@@ -8919,7 +8919,7 @@ echo "${ECHO_T}yes" >&6
  	    ;;
      esac
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure,v 1.6 2003/04/02 12:58:43 wilfried Exp $
  
      # Show all standard warnings + unused variables when compiling...
      OPTIM="-Wall -Wunused $OPTIM"
-@@ -8905,7 +8905,7 @@ echo "${ECHO_T}yes" >&6
+@@ -8946,7 +8946,7 @@ echo "${ECHO_T}yes" >&6
          if test "x$with_optim" != x; then
  	    OPTIM="$with_optim $OPTIM"
  	else
