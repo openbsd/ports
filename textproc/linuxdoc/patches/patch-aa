@@ -1,0 +1,12 @@
+--- catalog.orig	Sat Apr  4 17:00:42 1998
++++ catalog	Sat Apr  4 17:00:59 1998
+@@ -7,5 +7,9 @@
+ PUBLIC "-//FreeBSD//DTD linuxdoc//EN" "freebsd-1.0.dtd"
+ PUBLIC "-//FreeBSD//DTD linuxdoc 1.0//EN" "freebsd-1.0.dtd"
+ PUBLIC "-//FreeBSD//DTD linuxdoc 1.1//EN" "freebsd-1.1.dtd"
++
++-- For the XFree86 customized version --
++PUBLIC "-//XFree86//DTD linuxdoc//EN" "xfree86.dtd"
++
+ -- DTDDECL "-//FreeBSD//DTD linuxdoc//EN" "linuxdoc.dec" --
+ CATALOG "../iso8879/catalog"
