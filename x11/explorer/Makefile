@@ -3,7 +3,7 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.12 2000/10/22 15:43:46 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/03/12 17:46:10 wilfried Exp $
 #
 
 DISTNAME=	explorer-0.72
@@ -19,10 +19,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	qt.1.::x11/qt
+#LIB_DEPENDS=	qt.1.::x11/qt
 
 CONFIGURE_STYLE=gnu dest
-CONFIGURE_ENV=	${SETENV}
 CONFIGURE_ARGS+=	--datadir='$${DESTDIR}${PREFIX}/lib/X11/explorer' \
 			--with-qt-include=${PREFIX}/include/X11/qt
 
