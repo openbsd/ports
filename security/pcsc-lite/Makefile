@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/12/11 19:11:59 shell Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/01 19:57:19 brad Exp $
+# Uses pthreads
 
 COMMENT=	"resource manager for PCSC"
+
 DISTNAME=	pcsc-lite-1.0.1
 CATEGORIES=	security
 NEED_VERSION=	1.500
@@ -15,8 +17,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	lib/pth/pthread.14:pth-1.4.*:devel/pth
-
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}	\
 		--enable-static		\
@@ -24,13 +24,12 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED}	\
 		--enable-debug		\
 		--enable-syslog		\
 		--enable-threadsafe
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/pth"	\
-		LDFLAGS="-L${LOCALBASE}/lib/pth"
+CONFIGURE_ENV=	PTHREAD_LIBS=-pthread
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 
-EXDIR=		${PREFIX}/share/examples/pcscd/
+EXDIR=		${PREFIX}/share/examples/pcscd
 
 post-patch:
 	@cd ${WRKSRC}/build; \
