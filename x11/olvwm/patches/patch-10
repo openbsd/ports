@@ -1,0 +1,20 @@
+--- error.c.rej.orig	Thu Jan  1 01:00:00 1970
++++ ./error.c.rej	Sat Jul 17 10:04:14 1999
+@@ -0,0 +1,17 @@
++***************
++*** 232,239 ****
++  	err->resourceid);
++      FPRINTF(stderr, GetString("  serial number of failed request:  %d\n"),
++  	err->serial);
++-     FPRINTF(stderr, GetString("  current request serial number:  %d\n"),
++- 	dpy->request);
++  }
++  
++  
++--- 232,237 ----
++  	err->resourceid);
++      FPRINTF(stderr, GetString("  serial number of failed request:  %d\n"),
++  	err->serial);
++  }
++  
++  
