@@ -1,17 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/16 16:42:31 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/04/01 08:44:27 jakob Exp $
 bin/gq
 share/gnome/apps/Internet/gq.desktop
-share/locale/de/LC_MESSAGES/gq.mo
 share/pixmaps/gq/bomb.xpm
+share/pixmaps/gq/hide.xpm
 share/pixmaps/gq/line.xpm
 share/pixmaps/gq/logo.xpm
+share/pixmaps/gq/new.xpm
 share/pixmaps/gq/textarea.xpm
 share/pixmaps/gq/warning.xpm
 @dirrm share/pixmaps/gq
-@dirrm share/pixmaps
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale
-@dirrm share/gnome/apps/Internet
-@dirrm share/gnome/apps
-@dirrm share/gnome
