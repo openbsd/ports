@@ -1,0 +1,4 @@
+lib/libgdbm.a
+include/gdbm.h
+man/man3/gdbm.3
+info/gdbm.info
