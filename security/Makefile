@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 1999/05/31 17:13:21 dugsong Exp $
+# $OpenBSD: Makefile,v 1.22 1999/06/10 16:06:03 dugsong Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -17,6 +17,7 @@
      SUBDIR += libident
      SUBDIR += nbaudit
      SUBDIR += nessus
+     SUBDIR += nfsshell
 #    SUBDIR += p5-Authen-Radius
 #    SUBDIR += p5-Crypt-DES
 #    SUBDIR += p5-Crypt-IDEA
