@@ -3,7 +3,7 @@
 # Date created:		December 21, 1997
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.2 2000/02/22 20:27:37 turan Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/23 22:44:37 turan Exp $
 #
 
 DISTNAME=	xzoom-0.3
@@ -13,6 +13,11 @@ MASTER_SITE_SUBDIR=	libs/X
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@OpenBSD.ORG
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 USE_IMAKE=	yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/03/13 07:04:57 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/23 22:44:36 turan Exp $
 
 DISTNAME=	xsnow-1.40
 CATEGORIES=	x11
@@ -7,6 +7,11 @@ MASTER_SITE_SUBDIR=	games
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"vague license"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"vague license"
+PERMIT_DISTFILES_FTP=	Yes
 
 FAKE=		Yes
 USE_IMAKE=	Yes
