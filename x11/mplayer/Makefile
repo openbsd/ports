@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/10 19:42:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/10 19:50:31 pvalchev Exp $
 
 # XXX might not be hard to add more (macppc at least)
 ONLY_FOR_ARCHS=		i386
@@ -44,9 +44,6 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 		--with-extraincdir="${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		--with-extralibdir=${LOCALBASE}/lib
 
-# Optimizations
-CONFIGURE_ARGS+= --enable-mmx --disable-sse --disable-sse2
-
 FLAVORS=	sdl ggi debug mad oss win32 dvd
 FLAVOR?=
 
@@ -83,12 +80,14 @@ CONFIGURE_ARGS+=--disable-ossaudio
 .endif
 
 .if ${FLAVOR:L:Mwin32}
+.if !defined(NO_WARNINGS)
 pre-fetch:
 	@echo
 	@echo "  WARNING: This application requires a kernel compiled with"
 	@echo "           'option USER_LDT' for proper operation. The GENERIC"
 	@echo "           kernel does not have this option enabled by default."
 	@echo
+.endif
 RUN_DEPENDS+=	win32/divx.dll::graphics/win32-codecs
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32
