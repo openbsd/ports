@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/01/18 01:41:36 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/01/18 02:55:03 naddy Exp $
 ${P5SITE}/HTML/AsSubs.pm
 ${P5SITE}/HTML/Element.pm
 ${P5SITE}/HTML/Element/traverse.pm
@@ -18,6 +18,6 @@ man/man3p/HTML::Tree::AboutObjects.3p
 man/man3p/HTML::Tree::AboutTrees.3p
 man/man3p/HTML::Tree::Scanning.3p
 man/man3p/HTML::TreeBuilder.3p
-@dirrm ${P5ARCH}/auto/HTML-Tree
+@comment @dirrm ${P5ARCH}/auto/HTML-Tree
 @dirrm ${P5SITE}/HTML/Tree
 @dirrm ${P5SITE}/HTML/Element
