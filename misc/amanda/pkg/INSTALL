@@ -1,13 +1,13 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2003/04/14 15:02:09 wilfried Exp $
+# $OpenBSD: INSTALL,v 1.5 2003/04/25 19:33:06 sturm Exp $
 #
 # Pre/post-installation setup of amanda
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
-PREFIX=${PREFIX:-/usr/local}
+PREFIX=${PKG_PREFIX:-/usr/local}
 EXAMPLE_DIR=$PREFIX/share/examples/amanda
-CONF_DIR=${SYSCONDFIR:-/etc}/amanda
+CONF_DIR=${SYSCONFDIR}/amanda
 
 if [ $# -ne 2 ]; then
     echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
