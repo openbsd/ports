@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/06/11 08:49:51 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.7 2000/06/14 18:24:55 brad Exp $
 bin/fax2ps
 bin/fax2tiff
 bin/gif2tiff
@@ -21,8 +21,7 @@ include/tiff.h
 include/tiffconf.h
 include/tiffio.h
 lib/libtiff.a
-lib/libtiff.so.35.5
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 man/man1/fax2ps.1
 man/man1/fax2tiff.1
 man/man1/gif2tiff.1

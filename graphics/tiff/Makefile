@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/06/11 08:49:50 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2000/06/14 18:24:55 brad Exp $
 
 DISTNAME=	tiff-v3.5.5
 PKGNAME=	tiff-3.5.5
@@ -6,17 +6,16 @@ CATEGORIES=	graphics
 NEED_VERSION=	1.301
 MASTER_SITES=	http://www.libtiff.org/
 
+LIB_DEPENDS=    jpeg.62::graphics/jpeg
+
 MAINTAINER=	brad@openbsd.org
 
-LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=    jpeg.62::graphics/jpeg
-
-CONFIGURE_STYLE=	simple
+CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	--with-ZIP --with-JPEG \
 		--with-DIR_BIN='$${DESTDIR}${PREFIX}/bin' \
 		--with-DIR_LIB='$${DESTDIR}${PREFIX}/lib' \
