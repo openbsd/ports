@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/04/08 23:32:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2001/08/02 22:53:18 pvalchev Exp $
 
 COMMENT=	"Simulation Program for Integrated Circuit Electronics"
 
@@ -19,7 +19,7 @@ DISTFILES=		sp3f4.kit.tar.Z sp3f4.patch.tar.Z
 
 USE_X11=		yes
 WRKDIST=		${WRKDIR}
-MAKE_FLAGS=		CC='${CC}'
+MAKE_ENV=		MAKE_PROGRAM='${MAKE_PROGRAM}'
 
 # Apply the patches that make this 3f5
 #
