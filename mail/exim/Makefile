@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2001/09/07 22:23:46 peter Exp $
+# $OpenBSD: Makefile,v 1.28 2001/09/28 19:06:30 jakob Exp $
 
 COMMENT=	"MTA for systems connected to the Internet"
 
@@ -41,7 +41,7 @@ EXIM_MAKECAT+=	"EXIM_PERL=perl.o\n"
 .endif
 
 .if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+=	ldap.2::databases/openldap
+LIB_DEPENDS+=	ldap.2:openldap-client-2.*:databases/openldap
 EXIM_MAKECAT+=	"LOOKUP_LDAP=yes\nLDAP_LIB_TYPE=OPENLDAP2\n"
 EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include
 EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib -lldap -llber

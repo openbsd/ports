@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/07/18 10:59:01 naddy Exp $ 
+# $OpenBSD: Makefile,v 1.20 2001/09/28 19:06:30 jakob Exp $ 
 
 MULTI_PACKAGES=	-pop3
 
@@ -57,7 +57,7 @@ CONFIGURE_ARGS+=	--without-authmysql
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--with-authldap
-LIB_DEPENDS+=		ldap.2::databases/openldap
+LIB_DEPENDS+=		ldap.2:openldap-client-2.*:databases/openldap
 .else
 CONFIGURE_ARGS+=	--without-authldap
 .endif

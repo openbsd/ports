@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2001/09/28 13:27:09 brad Exp $
+# $OpenBSD: Makefile,v 1.36 2001/09/28 19:06:29 jakob Exp $
 
 COMMENT=	"Program for Internet E-mail and News, with pico"
 COMMENT-pico=	"small text editor"
@@ -40,7 +40,7 @@ LIB_DEPENDS=	c-client.3:c-client->=4.40p1:mail/c-client
 .endif
 
 .if ${FLAVOR:L} == "ldap" && ${SUBPACKAGE} != "-pico"
-LIB_DEPENDS+=	ldap.2::databases/openldap
+LIB_DEPENDS+=	ldap.2:openldap-client-2.*:databases/openldap
 .endif
 
 .if ${FLAVOR:L} == "ldap"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2001/09/16 20:48:15 avsm Exp $
+# $OpenBSD: Makefile,v 1.51 2001/09/28 19:06:30 jakob Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -87,7 +87,7 @@ CONFIGURE_ARGS+=	--without-imap
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}
-LIB_DEPENDS+=		ldap.2::databases/openldap
+LIB_DEPENDS+=		ldap.2:openldap-client-2.*:databases/openldap
 .else
 CONFIGURE_ARGS+=	--without-ldap
 .endif

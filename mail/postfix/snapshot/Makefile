@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/09/14 23:48:45 jakob Exp $
+# $OpenBSD: Makefile,v 1.24 2001/09/28 19:06:29 jakob Exp $
 
 DISTNAME=	snapshot-20010808
 PKGNAME=	postfix-${DISTNAME}
@@ -25,7 +25,7 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl -lkrb
 .endif
 
 .if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+=	ldap::databases/openldap
+LIB_DEPENDS+=	ldap.2:openldap-client-2.*:databases/openldap
 MAKE_CCARGS+=	-I${LOCALBASE}/include -DHAS_LDAP
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
 .endif

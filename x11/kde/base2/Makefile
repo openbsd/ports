@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2001/09/28 06:02:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.29 2001/09/28 19:06:30 jakob Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 COMMENT-plugins=	"X11 toolkit, netscape plugins"
@@ -27,7 +27,7 @@ USE_MOTIF=	any
 .endif
 
 LIB_DEPENDS=	kdecore.3,kdeui::x11/kde/libs2 \
-		ldap.2::databases/openldap \
+		ldap.2:openldap-client-2.*:databases/openldap \
 		vorbis.::audio/libvorbis \
 		cdda_paranoia.::audio/cdparanoia
 
