@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/07/15 00:49:47 robert Exp $
+# $OpenBSD: Makefile,v 1.33 2004/07/27 11:15:24 robert Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -231,7 +231,7 @@ CONFIGURE_ARGS+=	--without-pgsql
 MULTI_PACKAGES+=	-pgsql
 COMMENT-pgsql=		"pgsql database access extensions for php4"
 CONFIGURE_ARGS+=	--with-pgsql=shared,${LOCALBASE}
-PGSQL_DEPENDS=		pq.2::databases/postgresql
+PGSQL_DEPENDS=		pq.2:postgresql-client-*:databases/postgresql
 .endif
 
 # shmop
