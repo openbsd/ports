@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltcf-c_sh,v 1.1.1.1 2004/09/23 22:13:31 espie Exp $
---- ltcf-c.sh.orig	Tue Apr 27 08:14:30 2004
-+++ ltcf-c.sh	Tue Sep 14 01:24:12 2004
-@@ -509,10 +509,13 @@ else
+$OpenBSD: patch-ltcf-c_sh,v 1.2 2004/11/23 18:17:34 espie Exp $
+--- ltcf-c.sh.orig	Sat Oct  2 18:33:06 2004
++++ ltcf-c.sh	Tue Nov 23 12:44:34 2004
+@@ -513,10 +513,13 @@ else
      ;;
  
    openbsd*)

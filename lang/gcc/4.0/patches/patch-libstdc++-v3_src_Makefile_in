@@ -1,7 +1,7 @@
-$OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.1.1.1 2004/09/23 22:13:31 espie Exp $
---- libstdc++-v3/src/Makefile.in.orig	Tue Sep 14 01:22:33 2004
-+++ libstdc++-v3/src/Makefile.in	Tue Sep 14 01:23:14 2004
-@@ -273,7 +273,7 @@ WARN_CXXFLAGS = \
+$OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.2 2004/11/23 18:17:34 espie Exp $
+--- libstdc++-v3/src/Makefile.in.orig	Tue Nov 16 00:33:05 2004
++++ libstdc++-v3/src/Makefile.in	Tue Nov 23 12:44:34 2004
+@@ -275,7 +275,7 @@ WARN_CXXFLAGS = \
  AM_CPPFLAGS = $(GLIBCXX_INCLUDES)
  
  # Cross compiler support.
@@ -10,7 +10,7 @@ $OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.1.1.1 2004/09/23 22:13:31 espie
  @GLIBCXX_BUILD_VERSIONED_SHLIB_FALSE@version_arg = 
  
  # Symbol versioning for shared libraries.
-@@ -464,7 +464,7 @@ clean-toolexeclibLTLIBRARIES:
+@@ -469,7 +469,7 @@ clean-toolexeclibLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done

@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_tree-vectorizer_c,v 1.1.1.1 2004/09/23 22:13:31 espie Exp $
---- gcc/tree-vectorizer.c.orig	Tue Sep 14 08:55:08 2004
-+++ gcc/tree-vectorizer.c	Tue Sep 14 08:55:18 2004
-@@ -499,7 +499,7 @@ vect_get_new_vect_var (tree type, enum v
+$OpenBSD: patch-gcc_tree-vectorizer_c,v 1.2 2004/11/23 18:17:34 espie Exp $
+--- gcc/tree-vectorizer.c.orig	Sat Nov 20 13:48:13 2004
++++ gcc/tree-vectorizer.c	Tue Nov 23 12:44:33 2004
+@@ -1542,7 +1542,7 @@ vect_get_new_vect_var (tree type, enum v
    prefix_len = strlen (prefix);
  
    if (name)

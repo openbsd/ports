@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/09/23 22:13:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/11/23 18:17:34 espie Exp $
 %%SHARED%%
 bin/ec++
 bin/ecpp
@@ -167,6 +167,7 @@ include/c++/${V}/exception
 include/c++/${V}/exception_defines.h
 include/c++/${V}/ext/
 include/c++/${V}/ext/algorithm
+include/c++/${V}/ext/array_allocator.h
 include/c++/${V}/ext/bitmap_allocator.h
 include/c++/${V}/ext/debug_allocator.h
 include/c++/${V}/ext/enc_filebuf.h
@@ -207,9 +208,13 @@ include/c++/${V}/${CONFIG}/bits/cxxabi_tweaks.h
 include/c++/${V}/${CONFIG}/bits/gthr-default.h
 include/c++/${V}/${CONFIG}/bits/gthr-posix.h
 include/c++/${V}/${CONFIG}/bits/gthr-single.h
+include/c++/${V}/${CONFIG}/bits/gthr-tpf.h
 include/c++/${V}/${CONFIG}/bits/gthr.h
 include/c++/${V}/${CONFIG}/bits/messages_members.h
 include/c++/${V}/${CONFIG}/bits/os_defines.h
+include/c++/${V}/${CONFIG}/bits/stdc++.h.gch/
+include/c++/${V}/${CONFIG}/bits/stdc++.h.gch/O0g.gch
+include/c++/${V}/${CONFIG}/bits/stdc++.h.gch/O2g.gch
 include/c++/${V}/${CONFIG}/bits/time_members.h
 include/c++/${V}/iomanip
 include/c++/${V}/ios
@@ -232,6 +237,9 @@ include/c++/${V}/stack
 include/c++/${V}/stdexcept
 include/c++/${V}/streambuf
 include/c++/${V}/string
+include/c++/${V}/tr1/
+include/c++/${V}/tr1/array
+include/c++/${V}/tr1/tuple
 include/c++/${V}/typeinfo
 include/c++/${V}/utility
 include/c++/${V}/valarray
@@ -246,6 +254,8 @@ lib/gcc/${CONFIG}/
 lib/gcc/${CONFIG}/${V}/
 lib/gcc/${CONFIG}/${V}/include/
 lib/gcc/${CONFIG}/${V}/include/README
+lib/gcc/${CONFIG}/${V}/include/arpa/
+lib/gcc/${CONFIG}/${V}/include/arpa/nameser.h
 lib/gcc/${CONFIG}/${V}/include/com_err.h
 lib/gcc/${CONFIG}/${V}/include/limits.h
 lib/gcc/${CONFIG}/${V}/include/math.h
@@ -269,7 +279,6 @@ lib/gcc/${CONFIG}/${V}/include/stddef.h
 lib/gcc/${CONFIG}/${V}/include/stdio.h
 lib/gcc/${CONFIG}/${V}/include/stdlib.h
 lib/gcc/${CONFIG}/${V}/include/sys/
-lib/gcc/${CONFIG}/${V}/include/sys/limits.h
 lib/gcc/${CONFIG}/${V}/include/sys/types.h
 lib/gcc/${CONFIG}/${V}/include/syslimits.h
 lib/gcc/${CONFIG}/${V}/include/unistd.h
@@ -278,17 +287,18 @@ lib/gcc/${CONFIG}/${V}/install-tools/gsyslimits.h
 lib/gcc/${CONFIG}/${V}/install-tools/include/
 lib/gcc/${CONFIG}/${V}/install-tools/include/README
 lib/gcc/${CONFIG}/${V}/install-tools/include/limits.h
+lib/gcc/${CONFIG}/${V}/install-tools/macro_list
 lib/gcc/${CONFIG}/${V}/install-tools/mkheaders.conf
 lib/gcc/${CONFIG}/${V}/libgcc.a
 lib/gcc/${CONFIG}/${V}/libgcov.a
 lib/gcc/${CONFIG}/${V}/specs
 lib/libestdc++.a
 lib/libestdc++.la
+lib/libesupc++.a
+lib/libesupc++.la
 lib/libiberty.a
 lib/libobjc.a
 lib/libobjc.la
-lib/libesupc++.a
-lib/libesupc++.la
 libexec/gcc/
 libexec/gcc/${CONFIG}/
 libexec/gcc/${CONFIG}/${V}/
