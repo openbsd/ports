@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.76 2003/06/26 00:19:50 espie Exp $
+# $OpenBSD: Makefile,v 1.77 2003/06/26 00:22:01 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc
 
-MAKE_GXX=No
-MAKE_FORTRAN=No
-MAKE_OBJC=No
+MAKE_GXX=Yes
+MAKE_FORTRAN=Yes
+MAKE_OBJC=Yes
 # Java is still mostly broken (boehm-gc)
 MAKE_JAVA=No
 
@@ -12,6 +12,9 @@ MAKE_JAVA=No
 .if ${MACHINE_ARCH} == "i386"
 #MAKE_ADA=Yes
 MAKE_ADA=No
+MAKE_GXX=No
+MAKE_FORTRAN=No
+MAKE_OBJC=No
 #AS_PATH=/usr/bin/as
 #LD_PATH=/usr/bin/ld
 .else
@@ -324,7 +327,7 @@ send-results:
 	[ -f ${TEST_RESULT} ] && sh ${TEST_RESULT}
 
 
-.if ${MACHINE_ARCH} == "7386" || ${MACHINE_ARCH} == "m68k" || ${MACHINE_ARCH} == "sparc"
+.if ${MACHINE_ARCH} == "m68k" || ${MACHINE_ARCH} == "sparc"
 SED_PLIST=|sed -e '/^IFPIC:/s///'
 .else
 SED_PLIST=|sed -e '/^IFPIC:/d'
