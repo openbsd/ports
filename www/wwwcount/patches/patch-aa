@@ -13,7 +13,7 @@
   trap 'echo '';echo "Interrupt Detected..exiting";rm -f "./Config.tmpl" 2>/dev/null;rm -f "./.alfcf" ;rm -f "./strict" 2>/dev/null;echo '';exit 1' 1 2 3 15
   
   Tmpl="./Config.tmpl"
-! CgiBinDir="${PREFIX}/www/cgi-bin"
+! CgiBinDir="/var/www/cgi-bin"
   
   if [ ! -f "./VERSION" ] 
   then
