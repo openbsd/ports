@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/04/17 18:03:21 brad Exp $
+@comment $OpenBSD: PLIST,v 1.10 2002/07/24 18:14:09 brad Exp $
 bin/RunAccel
 bin/RunCache
-bin/squid
 bin/squidclient
-libexec/cachemgr
+libexec/cachemgr.cgi
 libexec/diskd
 libexec/unlinkd
 man/man8/squid.8
+sbin/squid
 share/examples/squid/errors/Bulgarian/ERR_ACCESS_DENIED
 share/examples/squid/errors/Bulgarian/ERR_CACHE_ACCESS_DENIED
 share/examples/squid/errors/Bulgarian/ERR_CACHE_MGR_ACCESS_DENIED
