@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_graphs_Makefile_in,v 1.1.1.1 2003/07/08 10:55:20 sturm Exp $
+--- src/graphs/Makefile.in.orig	Mon Jul  7 10:49:41 2003
++++ src/graphs/Makefile.in	Mon Jul  7 10:51:02 2003
+@@ -82,7 +82,9 @@ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+-exampledir = $(datadir)/doc/$(PACKAGE)/examples
++#exampledir = $(datadir)/doc/$(PACKAGE)/examples
++# OpenBSD wants examples in a different location...
++exampledir = $(datadir)/examples/$(PACKAGE)
+ 
+ example_DATA = falkner.mci proteins.mci small.mci small.png small.ps\
+                   data.raw data.hdr data.tab small.tab fznyy.tab

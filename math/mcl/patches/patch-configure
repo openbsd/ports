@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/07/08 10:55:20 sturm Exp $
+--- configure.orig	Tue Jul  8 12:22:58 2003
++++ configure	Tue Jul  8 12:41:36 2003
+@@ -2956,13 +2956,13 @@ fi
+ 
+ # FIXME: Replace `main' with a function in `-lpthread':
+ 
+-echo "$as_me:$LINENO: checking for main in -lpthread" >&5
+-echo $ECHO_N "checking for main in -lpthread... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for main in -pthread" >&5
++echo $ECHO_N "checking for main in -pthread... $ECHO_C" >&6
+ if test "${ac_cv_lib_pthread_main+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ #include "confdefs.h"
+@@ -3004,7 +3004,7 @@ if test $ac_cv_lib_pthread_main = yes; t
+ #define HAVE_LIBPTHREAD 1
+ _ACEOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ fi
+ 
