@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/11 13:29:22 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2005/02/05 16:54:56 alek Exp $
 
 COMMENT=		"WWW OFFLine Explorer"
 
 DISTNAME=		wwwoffle-2.5e
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.gedanken.demon.co.uk/wwwoffle/
@@ -26,5 +27,14 @@ MAKE_ENV=		FLAVOR="${FLAVOR}"
 MAKE_FLAGS=		prefix="${PREFIX}"
 
 NO_REGRESS=		Yes
+
+# These index.htmls are symlinks and @sample doesn't like that.
+post-install:
+	@rm ${PREFIX}/share/wwwoffle/html/htdig/index.html
+	@${INSTALL_DATA} ${PREFIX}/share/wwwoffle/html/htdig/search.html \
+		${PREFIX}/share/wwwoffle/html/htdig/index.html	
+	@rm ${PREFIX}/share/wwwoffle/html/index.html
+	@${INSTALL_DATA} ${PREFIX}/share/wwwoffle/html/Welcome.html \
+		${PREFIX}/share/wwwoffle/html/index.html	
 
 .include <bsd.port.mk>
