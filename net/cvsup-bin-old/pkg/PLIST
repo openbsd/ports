@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/11 01:04:13 naddy Exp $
+bin/cvpasswd
+bin/cvsup
+man/cat1/cvpasswd.0
+man/cat1/cvsup.0
