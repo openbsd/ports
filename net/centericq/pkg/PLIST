@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/05/19 17:24:00 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.3 2001/06/30 17:34:14 pvalchev Exp $
 bin/centericq
+man/man1/centericq.1
 share/centericq/cont.wav
 share/centericq/email.wav
 share/centericq/file.wav
@@ -8,12 +9,5 @@ share/centericq/online.wav
 share/centericq/url.wav
 share/doc/centericq/FAQ
 share/doc/centericq/README
-share/locale/cs/LC_MESSAGES/centericq.mo
-share/locale/de/LC_MESSAGES/centericq.mo
-share/locale/hu/LC_MESSAGES/centericq.mo
-share/locale/pl/LC_MESSAGES/centericq.mo
-share/locale/ro/LC_MESSAGES/centericq.mo
-share/locale/ru/LC_MESSAGES/centericq.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/centericq.mo
 @dirrm share/doc/centericq
 @dirrm share/centericq
