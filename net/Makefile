@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2001/06/07 18:46:21 lebel Exp $
+# $OpenBSD: Makefile,v 1.145 2001/06/14 14:48:26 camield Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -92,6 +92,7 @@
      SUBDIR += p5-libnet
      SUBDIR += pcapmerge
      SUBDIR += pchar
+     SUBDIR += pdnsd
      SUBDIR += pop3gwd
      SUBDIR += popa3d,
      SUBDIR += popa3d,apop
