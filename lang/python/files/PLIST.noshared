@@ -933,12 +933,12 @@ lib/python1.5/xmllib.py
 lib/python1.5/xmllib.pyc
 lib/python1.5/xmllib.pyo
 man/man1/python.1
-@dirrm lib/python1.5/test/output
-@dirrm lib/python1.5/test
-@dirrm lib/python1.5/plat-openbsd2
-@dirrm lib/python1.5/lib-tk
-@dirrm lib/python1.5/lib-stdwin
+@dirrm include/python1.5
 @dirrm lib/python1.5/config
 @dirrm lib/python1.5/lib-dynload
+@dirrm lib/python1.5/lib-stdwin
+@dirrm lib/python1.5/lib-tk
+@dirrm lib/python1.5/plat-openbsd2
+@dirrm lib/python1.5/test/output
+@dirrm lib/python1.5/test
 @dirrm lib/python1.5
-@dirrm include/python1.5

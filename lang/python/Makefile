@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/12/25 02:34:05 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/12/31 04:22:42 brad Exp $
 
 DISTNAME=	py152
 PKGNAME=	python-1.5.2
@@ -15,6 +15,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-fpectl 
 MAKE_FLAGS+=	OPT="${CFLAGS}"
+
+PLIST=	${WRKDIR}/PLIST
 
 WRKSRC=	${WRKDIR}/Python-1.5.2
 
@@ -78,7 +80,7 @@ post-install:
 	
 .include <bsd.port.mk>
 
-.if defined(NO_SHARED_LIBS)
+.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:U} == YES
 NOSHARED=	\#
 PLIST_PRE=	${FILESDIR}/PLIST.noshared
 .else
@@ -108,4 +110,5 @@ post-configure:
 .if defined(WITH_TOOLS) && ${WITH_TOOLS} == YES
 	@cat ${FILESDIR}/PLIST.Tools >> ${PLIST}
 .endif
-	@sort -r -o ${PLIST} ${PLIST}
+	@sort -r -o ${PLIST}.new ${PLIST}
+	@mv ${PLIST}.new ${PLIST}
