@@ -1,21 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/03/08 22:47:54 dons Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/03/25 05:53:21 dons Exp $
 bin/c2hs
 bin/c2hs-config
-lib/c2hs-0.12.0/
-lib/c2hs-0.12.0/ghc6/
-lib/c2hs-0.12.0/ghc6/c2hs.conf
-lib/c2hs-0.12.0/ghc6/import/
-lib/c2hs-0.12.0/ghc6/import/C2HS.hi
-lib/c2hs-0.12.0/ghc6/import/C2HSBase.hi
-lib/c2hs-0.12.0/ghc6/import/C2HSDeprecated.hi
-lib/c2hs-0.12.0/ghc6/import/C2HSMarsh.hi
-lib/c2hs-0.12.0/ghc6/import/NewStablePtr.hi
-lib/c2hs-0.12.0/ghc6/import/NewStorable.hi
-lib/c2hs-0.12.0/ghc6/libc2hs.a
+lib/c2hs-${V}/
+lib/c2hs-${V}/ghc6/
+lib/c2hs-${V}/ghc6/c2hs.conf
+lib/c2hs-${V}/ghc6/import/
+lib/c2hs-${V}/ghc6/import/C2HS.hi
+lib/c2hs-${V}/ghc6/import/C2HSBase.hi
+lib/c2hs-${V}/ghc6/import/C2HSMarsh.hi
+lib/c2hs-${V}/ghc6/libc2hs.a
 @man man/man1/c2hs-config.1
 @man man/man1/c2hs.1
-@comment call ghc-pkg to register/unregister this library with ghc
-@exec cat %D/lib/c2hs-0.12.0/ghc6/c2hs.conf | /usr/bin/env PREFIX=%D %D/bin/ghc-pkg -u
-@exec /bin/rm -f %D/lib/ghc-6.2.2/package.conf.old
+@exec /usr/bin/sed '1d;$d' %D/lib/c2hs-${V}/ghc6/c2hs.conf | /usr/bin/env PREFIX=%D %D/bin/ghc-pkg -u
+@exec /bin/rm -f %D/lib/ghc-${V}/package.conf.old
 @unexec %D/bin/ghc-pkg -r c2hs
-@unexec /bin/rm -f %D/lib/ghc-6.2.2/package.conf.old
+@unexec /bin/rm -f %D/lib/ghc-${V}/package.conf.old

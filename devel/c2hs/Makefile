@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2004/11/23 11:22:00 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2005/03/25 05:53:21 dons Exp $
 # $FreeBSD: ports/devel/hs-c2hs/Makefile,v 1.20 2004/03/25 08:29:28 obraun Exp $
 
 COMMENT=		"interface generator for Haskell to C bindings"
 
-V=			0.12.0
+V=			0.13.4
 DISTNAME=		c2hs-${V}
 CATEGORIES=		devel
 MAINTAINER=		Don Stewart <dons@openbsd.org>
@@ -15,6 +15,7 @@ MODULES=		lang/ghc
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
+SUBST_VARS=		V
 
 post-build:
 	@(cd ${WRKSRC}/doc/c2hs && ${MAKE_PROGRAM} man1/c2hs-config.1 man1/c2hs.1)
