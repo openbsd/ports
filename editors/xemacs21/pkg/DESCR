@@ -1,22 +1,36 @@
-About XEmacs:
-
-XEmacs (formerly known as Lucid Emacs) is a powerful, extensible text
-editor with full GUI support, initially based on an early version of
-GNU Emacs 19 from the Free Software Foundation and since kept up to
-date with recent versions of that product.
+XEmacs is a powerful, extensible text editor with full GUI support.
 
 XEmacs provides a great number of new features.  More details on
-XEmacs's functionality, including bundled packages, can be obtained
-through the info on-line information system.
+XEmacs's functionality, can be obtained through the info on-line 
+information system.
 
 The XEmacs web page can be browsed, using any WWW browser at
 
-                    http://www.xemacs.org/
+	${HOMEPAGE}
+
+NOTE:
+	This package contains the XEmacs engine.
+	Every major functionnality of XEmacs is a separate module.
+	A complete set of theses modules is bundled in the
+	"xemacs21-sumo" package.
 
 Flavors:
-	mule, MUlti-Lingual Emacs
-	compface
-	nox11
-	clashdetect
-Tested on: i386 sparc
+	mule 		- MUlti-Lingual Emacs
+	wnn 		- input method (needs mule) [4]
+	canna 		- another input method (needs mule) [4]
+	compface	- support for XFaces (needs X11)
+	jpeg		- support for JPEGs (needs X11)
+	no_png		- disable support for PNGs [1] (needs X11)
+	tiff		- support for TIFFs (needs X11)
+	motif		- make use of Motif [2] (needs X11)
+	no_x11		- disable X11 support
+	clashdetect	- prevents multiple editing of the same file [3]
+	gdbm		- support for GNU dbm
 
+[1] NOT RECOMMENDED - XEmacs makes use of PNG files quite a lot.
+[2] Works with LessTif and OpenMotif.
+[3] Even if you don't use this flavor, XEmacs' uses a lesser efficient way
+    to prevent this.  The method this flavor implements involves a world-
+    writeable directory.
+[4] XEmacs coredumps if the {canna,wnn} server is killed before it closes
+    connection.

@@ -1,40 +1,18 @@
-======================================================================
-This package only installs XEmacs engine with very _basic_ functions.
-
-You now have to install XEmacs packages to enable all its features.
-XEmacs packages are commonly put in the /usr/local/lib/xemacs/
-directory.
-
-To create it, do the following (as root) :
-install -d -g wsrc -m 775 -o root /usr/local/lib/xemacs
-
-There are two ways to install packages :
-
-1. You can  fetch a "sumo" tarball  containing  all supported packages
-   for XEmacs      (prefered   way),   those    files    are     named
-   'xemacs-sumo.tar.gz' and 'xemacs-mule-sumo.tar.gz' and are found in
-   the packages/ directory of almost any XEmacs mirror.
-   (like ftp://ftp.xemacs.org/pub/xemacs/packages/)
-
-   Once   you   have    those  files    you    unpack    them in   the
-   /usr/local/lib/xemacs  directory (you must be in  the group wsrc to
-   do this). This creates  a xemacs-packages and, if  you use mule,  a
-   mule-packages subdirectory in "/usr/local/lib/xemacs".
-
-2. You can also use the   user-friendly package installation  frontend
-   integrated into xemacs.  To do this,  run XEmacs being a  user with
-   enough credentials to write into /usr/local/lib/xemacs and type :
-	  M-x list-packages <RET> 
-
-   You can then select packages with the 'return' key and install them
-   with 'x'. Note that you must have access to ftp sites on the net to
-   do this.
-
-More info about packages can be found in XEmacs info tree :
-type "info xemacs" to browse it.
-
---
-	   If you have questions or suggestions, contact :
-			  Jean-Yves Burlett
-		     mailto:jean-yves@burlett.org
-======================================================================
++----------------------
+| 
+| XEmacs is pretty useless as-is.  It is just an engine.
+| You need to install (XE)packages to provide your users full functionnality.
+| There is two methods to achieve this :
+| 1 - install the xemacs21-sumo (O)package.  It contains all the 
+|     (XE)packages currently supported by the XEmacs team.
+|     It's fast, easy and your users won't ever bother you again about this.
+|     On the other hand the (O)package is quite huge.
+| 2 - you have to install by hand every XEmacs' (XE)packages as described
+|     in the XEmacs documentation. (Search for "packages" in the info tree.)
+|     There are a lot of interdependencies between XEmacs' (XE)packages
+|     and you may end up with everything installed just as method 1 would
+|     have (without the hassle).
+|
+| Note: XEmacs (XE)packages are orthogonal to OpenBSD (O)packages.
+|       (Yes, it's confusing.  XE are XEmacs' and (O) are OpenBSD ones)
++----------------------

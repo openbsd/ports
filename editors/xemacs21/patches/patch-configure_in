@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure_in,v 1.1 2001/03/01 21:20:16 naddy Exp $
+--- configure.in.orig	Sat Jan 13 04:07:32 2001
++++ configure.in	Sat Feb 24 14:03:36 2001
+@@ -3514,14 +3514,18 @@ if test "$with_tty" = "yes"  ; then
+ 	done
+       fi
+     else dnl "$have_terminfo" = "no" && "with_ncurses" = "no"
+-      XE_ADD_OBJS(tparam.o)
+       dnl The HP-UX curses library seems to have a badly broken version of select(2)
+       dnl that makes "poll: interrupted system call" messages to appear and
+       dnl Emacs suprocesses to hang (e.g. TeX compilation w/ AUCTeX) */
+       case "$opsys" in *-hp-hpux* ) libs_termcap="-ltermcap" ;; esac
+       if test -n "$libs_termcap"; then
++	dnl We need to check if tgoto does not exist in termcap yet
++	dnl because on OpenBSD libtermcap is another name for libcurses
++	dnl which provide he same tgoto as ncurses
++	AC_CHECK_LIB(termcap, tgoto, , XE_ADD_OBJS(tparam.o))
+ 	XE_PREPEND($libs_termcap, LIBS)
+       else
++        XE_ADD_OBJS(tparam.o)
+ 	AC_CHECK_LIB(curses, tgetent, XE_PREPEND(-lcurses, LIBS),
+ 	  AC_CHECK_LIB(termcap, tgetent, XE_PREPEND(-ltermcap, LIBS),
+             XE_ADD_OBJS(termcap.o)))

@@ -1,10 +1,11 @@
---- lisp/find-paths.el.orig	Sun Jun 11 17:10:10 2000
-+++ lisp/find-paths.el	Sun Jun 11 17:13:42 2000
-@@ -105,6 +105,12 @@
+$OpenBSD: patch-lisp_find-paths_el,v 1.1 2001/03/01 21:20:16 naddy Exp $
+--- lisp/find-paths.el.orig	Fri Nov 17 04:21:24 2000
++++ lisp/find-paths.el	Tue Feb  6 17:03:08 2001
+@@ -105,6 +105,12 @@ from the search."
     (paths-file-readable-directory-p (paths-construct-path (list directory
  								"lib"
  								emacs-program-name)))
-+   ;; Horrible kludge, if you don't like it, burn my car. --jyb
++   ;; kludge, needed on obsd(/sparc?) via ports and no packages installed --jyb
 +   (paths-file-readable-directory-p 
 +	(paths-construct-path 
 +		(list directory "lib"

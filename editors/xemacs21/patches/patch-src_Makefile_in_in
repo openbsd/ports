@@ -1,6 +1,7 @@
---- src/Makefile.in.in.orig	Mon Aug  7 23:15:59 2000
-+++ src/Makefile.in.in	Mon Aug  7 23:17:49 2000
-@@ -304,7 +304,7 @@
+$OpenBSD: patch-src_Makefile_in_in,v 1.1 2001/03/01 21:20:17 naddy Exp $
+--- src/Makefile.in.in.orig	Sun Nov 19 23:08:18 2000
++++ src/Makefile.in.in	Mon Feb  5 14:58:19 2001
+@@ -304,7 +304,7 @@ mo_file = ${mo_dir}emacs.mo
  #endif
  
  LOADPATH =  EMACSBOOTSTRAPLOADPATH="${lispdir}:${blddir}"
