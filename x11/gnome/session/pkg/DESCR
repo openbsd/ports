@@ -8,6 +8,7 @@ environment.
 Other recommended packages for GNOME include:
 
 	x11/bitstream-vera-fonts - a set of True Type fonts
+	x11/gnome/utils - a set of simple utilities for GNOME
 	x11/gnome/yelp - the GNOME help manager
 
 To run the GNOME environment, simply start "gnome-session" from
