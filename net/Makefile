@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1998/05/07 08:40:26 form Exp $
+# $OpenBSD: Makefile,v 1.13 1998/05/17 05:30:15 angelos Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -71,7 +71,7 @@
      SUBDIR += samba
 #    SUBDIR += samba-des
 #    SUBDIR += scotty
-#    SUBDIR += slirp
+     SUBDIR += slirp
      SUBDIR += sniffit
 #    SUBDIR += socks5
 #    SUBDIR += strobe
