@@ -1,4 +1,4 @@
-$OpenBSD: patch-pine_makefile.bso,v 1.7 2001/11/19 02:01:58 brad Exp $
+$OpenBSD: patch-pine_makefile.bso,v 1.8 2002/06/05 19:46:37 brad Exp $
 --- pine/makefile.bso.orig	Tue Oct 23 18:24:45 2001
 +++ pine/makefile.bso	Sat Nov 17 20:22:04 2001
 @@ -50,7 +50,7 @@ OPTIMIZE=    # -O
@@ -19,7 +19,7 @@ $OpenBSD: patch-pine_makefile.bso,v 1.7 2001/11/19 02:01:58 brad Exp $
 -LOCLIBDIR=   -L$(PICODIR)
 -LIBS=        $(LOCLIBDIR) $(LOCLIBS) $(LDAPLIBS) $(STDLIBS) \
 -             `cat $(CCLIENTDIR)/LDFLAGS`
-+STDLIBS=     -ltermlib -lssl -lgssapi -lkrb -lkrb5 -lasn1 -lcrypto -lcom_err -lkafs
++STDLIBS=     -ltermlib -lssl -lgssapi -lkrb -lkrb5 -lasn1 -lcrypto -lcom_err -lkafs -ldes
 +LOCLIBS=     -lpico -lc-client
 +LOCLIBDIR=   -L$(PICODIR) -L$(LOCALBASE)/lib
 +LIBS=        $(LOCLIBDIR) $(LOCLIBS) $(LDAPLIBS) $(STDLIBS)
