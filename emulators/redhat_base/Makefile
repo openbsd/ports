@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/06/05 20:51:30 jasoni Exp $
+# $OpenBSD: Makefile,v 1.10 2001/06/05 21:31:20 jasoni Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -107,7 +107,7 @@ do-install:
 	-chroot ${PREFIX} /sbin/ldconfig
 
 post-install:
-# remote setuid root bits
+# remove setuid root bits
 	@find ${PREFIX} -perm -4000 -exec chmod u-s {} \;
 
 .include <bsd.port.mk>
