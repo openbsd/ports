@@ -3,7 +3,9 @@
 # Date created:		27 Oct 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:35 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/15 16:42:13 turan Exp $
+
+BROKEN=		no checksum, version has changed, patches do not apply
 
 PKGNAME=	antisniff-1.0
 DISTNAME=	anti_sniff_researchv1
