@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2000/07/03 08:12:23 kevlo Exp $
+# $OpenBSD: Makefile,v 1.32 2000/07/11 03:37:13 kevlo Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -55,6 +55,7 @@
      SUBDIR += solid-pop3d
      SUBDIR += tkrat
      SUBDIR += vrfy
+     SUBDIR += wmbiff
      SUBDIR += xfaces
      SUBDIR += xfmail
      SUBDIR += xlbiff
