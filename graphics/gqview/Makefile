@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/08/12 12:40:19 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/08/12 12:50:41 brad Exp $
 # $FreeBSD: Makefile,v 1.15 1999/08/25 06:14:08 obrien Exp $
 
 DISTNAME=	gqview-0.8.2
@@ -22,7 +22,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-DOCS=	README
+DOCS=	COPYING ChangeLog README
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gqview

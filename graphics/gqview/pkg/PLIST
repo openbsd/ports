@@ -1,4 +1,6 @@
 bin/gqview
+share/doc/gqview/COPYING
+share/doc/gqview/ChangeLog
 share/doc/gqview/README
 share/locale/de/LC_MESSAGES/gqview.mo
 share/locale/es/LC_MESSAGES/gqview.mo
