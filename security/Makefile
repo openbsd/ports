@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1998/04/27 19:55:04 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1998/04/27 19:59:50 marc Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -18,7 +18,7 @@
      SUBDIR += pgp
 #    SUBDIR += pidentd
      SUBDIR += rsaref
-     SUBDIR += socks
+     SUBDIR += socks5
      SUBDIR += ssh
 #    SUBDIR += sudo
 #    SUBDIR += super
