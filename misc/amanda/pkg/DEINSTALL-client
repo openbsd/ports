@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL-client,v 1.1 2001/05/12 16:41:09 naddy Exp $
+# $OpenBSD: DEINSTALL-client,v 1.2 2004/09/24 08:43:19 espie Exp $
 #
 # de-installation of amanda
 
@@ -11,13 +11,6 @@ if [ $# -ne 2 -o "$2" != "DEINSTALL" ]; then
     exit 1
 fi
 
-if [ -d /var/amanda ]; then
-   rm -rf /var/amanda
-fi
-
-# Don't actually do anything, but let the user know what can be
-# done to fully de-install the package
-#
 if grep -q -E ^amanda\|^amandaidx\|^amidxtape /etc/inetd.conf ; then
    echo ""
    echo "** Amanda should be removed from /etc/inetd.conf"

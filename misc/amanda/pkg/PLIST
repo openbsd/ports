@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/09/18 12:55:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2004/09/24 08:43:19 espie Exp $
 @conflict amanda-client-*
 libexec/amanda/
 libexec/amanda/amandad
@@ -96,6 +96,8 @@ share/doc/amanda/WISHLIST
 share/doc/amanda/YEAR2000
 share/doc/amanda/ZFTAPE
 share/examples/amanda/
+@sample ${SYSCONFDIR}/amanda/
+@sample ${SYSCONFDIR}/amanda/csd/
 share/examples/amanda/3hole.ps
 share/examples/amanda/8.5x11.ps
 share/examples/amanda/DIN-A4.ps
@@ -103,6 +105,7 @@ share/examples/amanda/DLT.ps
 share/examples/amanda/EXB-8500.ps
 share/examples/amanda/HP-DAT.ps
 share/examples/amanda/amanda.conf
+@sample ${SYSCONFDIR}/amanda/csd/amanda.conf
 share/examples/amanda/amanda.conf.chg-scsi
 share/examples/amanda/chg-multi.conf
 share/examples/amanda/chg-scsi-hpux.conf
@@ -111,4 +114,11 @@ share/examples/amanda/chg-scsi-solaris.conf
 share/examples/amanda/chg-scsi.conf
 share/examples/amanda/crontab.sample
 share/examples/amanda/disklist
+@sample ${SYSCONFDIR}/amanda/csd/disklist
+share/examples/amanda/amandates
+@owner operator
+@group operator
+@sample /etc/amandates
+@sample /var/amanda/
+@sample /var/amanda/gnutar-lists/
 @extraunexec rm -rf ${SYSCONFDIR}/amanda

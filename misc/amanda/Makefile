@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2004/08/02 16:08:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2004/09/24 08:43:19 espie Exp $
 
 COMMENT=	"network-capable tape backup (client and tape server)"
 COMMENT-client=	"network-capable tape backup (client only)"
@@ -89,5 +89,6 @@ post-install:
 	      > ${EXAMPLE_DIR}/$$f; \
 	    done
 	@${INSTALL_DATA} ${FILESDIR}/crontab.sample ${EXAMPLE_DIR}
+	@${INSTALL_DATA} /dev/null ${EXAMPLE_DIR}/amandates
 
 .include <bsd.port.mk>
