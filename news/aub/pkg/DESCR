@@ -17,7 +17,5 @@ also remembers which binaries it has already seen all of the pieces of
 already, so that it does not waste time rebuilding the same binaries
 over and over again.
 
-run:   ``aub -M | more'' for the long form documentation, or
-       ``aub -m | more'' for the short form.
-
--- David (obrien@NUXI.com)
+run:   "aub -M | more" for the long form documentation, or
+       "aub -m | more" for the short form.

@@ -1,7 +1,18 @@
---- aub.orig	Tue Apr  6 00:00:00 1993
-+++ aub	Wed Apr 12 13:51:11 1995
-@@ -38,6 +38,8 @@
- $SUM = "/bin/sum";   &find_pg("sum", 0)  unless (-x $SUM);
+$OpenBSD: patch-aub,v 1.1 2001/04/07 21:45:09 naddy Exp $
+--- aub.orig	Sat Apr  7 23:07:34 2001
++++ aub	Sat Apr  7 23:11:14 2001
+@@ -1,4 +1,4 @@
+-#/usr/local/bin/perl
++#!/usr/bin/perl
+ #
+ #
+ #
+@@ -35,9 +35,11 @@
+ #				    in the standard place.
+ 
+ $ECHO = "/bin/echo"; &find_pg("echo", 0) unless (-x $ECHO);
+-$SUM = "/bin/sum";   &find_pg("sum", 0)  unless (-x $SUM);
++$SUM = "/usr/bin/sum";   &find_pg("sum", 0)  unless (-x $SUM);
  $CAT = "/bin/cat";   &find_pg("cat", 0)  unless (-x $CAT);
  $MV = "/bin/mv";     &find_pg("mv", 0)   unless (-x $MV);
 +$HOSTNAME = "/bin/hostname"; $HOSTNAME = &find_pg("hostname", 0) unless
@@ -9,7 +20,16 @@
  
  # CONSTANTS: 	most likely you want to leave these alone.  
  #
-@@ -149,6 +151,12 @@
+@@ -111,7 +113,7 @@ $aub_config 	    = join("/", $ENV{"HOME"
+ $timeout_interval   = 60;
+ $version	    = "2.0.5";
+ $last_version	    = "1.1";
+-$temp_decode_file   = "/usr/tmp/aub.decode$$";
++$temp_decode_file   = "/var/tmp/aub.decode$$";
+ $nntpserver_file    = "/usr/local/lib/rn/nntpserver";
+ $obsolete_init	    = join("/", $ENV{"HOME"}, ".aubinit");
+ 
+@@ -149,6 +151,12 @@ $obsolete_init	    = join("/", $ENV{"HOM
  # v2.1 will be bug fixes for v2.0.)
  #
  
@@ -22,7 +42,7 @@
  (&Getopts("cd:nCMm")) || (exit(1));
  
  &long_manual if ($opt_M);			# None of these subroutines
-@@ -198,15 +206,21 @@
+@@ -198,15 +206,21 @@ if ($spooldir) {
           "environment variable\nor specify an NNTP server or disk based " .
           "news access in your configuration file.") unless ($server);
  
@@ -52,7 +72,7 @@
  
    print "Using NNTP-based news access; server is $server\n"
      if ($opt_d);
-@@ -929,9 +943,16 @@
+@@ -929,9 +943,16 @@ sub get_nntp_header {
    local($sock) = pop(@_);
    local($line) = &getline($sock);
  
@@ -70,7 +90,7 @@
  
  
  sub setup_socket_io {
-@@ -1022,7 +1043,7 @@
+@@ -1022,7 +1043,7 @@ sub connect_tcp {
    local($protocol) = "tcp";
    local($thishost, $problem, $junk);
  
@@ -79,7 +99,7 @@
  
  # Figure out our address...
    ($name, $junk, $junk, $junk, $ouraddr) = gethostbyname($thishost);
-@@ -1875,6 +1896,12 @@
+@@ -1875,6 +1896,12 @@ EOF
  }
  
  
@@ -92,7 +112,7 @@
  sub long_manual {
  #
  #
-@@ -2463,8 +2490,8 @@
+@@ -2463,8 +2490,8 @@ by the program.
  
  
  						Mark Stantz
@@ -103,7 +123,7 @@
  						8/92
  
  EOF
-@@ -2482,7 +2509,12 @@
+@@ -2482,7 +2509,12 @@ sub tribute {
  # This has some (not much) value as a debugging aid.
  #
  
@@ -117,7 +137,7 @@
    if (open(DECODE, ">&STDOUT"));
  }
  
-@@ -2510,4 +2542,5 @@
+@@ -2510,4 +2542,5 @@ sub debug_parser {
    print "spool $spooldir\nnntp $server\n";
    print "debug $opt_d xhdr $have_gotten_subj_line_before\n";
  }
