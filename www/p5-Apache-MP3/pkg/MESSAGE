@@ -1,0 +1,10 @@
+
++---------------
+| To finish the installation of Apache::MP3, you need to setup
+| your webserver. Add an Alias to your httpd.conf
+|
+|        Alias /apache_mp3/ "${PREFIX}/share/apache_mp3/"
+|
+| and look at the Apache::MP3 manpage for further information.
++---------------
+

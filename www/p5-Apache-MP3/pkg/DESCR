@@ -1,4 +1,4 @@
-Apache::MP3 version 2.x
+Apache::MP3
 
 This module takes a hierarchy of directories containing MP3 or Ogg
 Vorbis files and presents it as a browsable song library for streaming

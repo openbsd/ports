@@ -1,19 +1,62 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:06 espie Exp $
-libdata/perl5/site_perl/Apache/MP3.pm
-libdata/perl5/site_perl/Apache/MP3/Playlist.pm
-libdata/perl5/site_perl/Apache/MP3/Resample.pm
-libdata/perl5/site_perl/Apache/MP3/Sorted.pm
+@comment $OpenBSD: PLIST,v 1.3 2002/08/25 19:26:21 naddy Exp $
+${P5SITE}/Apache/MP3.pm
+${P5SITE}/Apache/MP3/L10N.pm
+${P5SITE}/Apache/MP3/L10N/Aliases.pm
+${P5SITE}/Apache/MP3/L10N/RightToLeft.pm
+${P5SITE}/Apache/MP3/L10N/ar.pm
+${P5SITE}/Apache/MP3/L10N/ca.pm
+${P5SITE}/Apache/MP3/L10N/cs.pm
+${P5SITE}/Apache/MP3/L10N/de.pm
+${P5SITE}/Apache/MP3/L10N/en.pm
+${P5SITE}/Apache/MP3/L10N/es.pm
+${P5SITE}/Apache/MP3/L10N/fa.pm
+${P5SITE}/Apache/MP3/L10N/fi.pm
+${P5SITE}/Apache/MP3/L10N/fr.pm
+${P5SITE}/Apache/MP3/L10N/ga.pm
+${P5SITE}/Apache/MP3/L10N/he.pm
+${P5SITE}/Apache/MP3/L10N/hr.pm
+${P5SITE}/Apache/MP3/L10N/is.pm
+${P5SITE}/Apache/MP3/L10N/it.pm
+${P5SITE}/Apache/MP3/L10N/ja.pm
+${P5SITE}/Apache/MP3/L10N/ko.pm
+${P5SITE}/Apache/MP3/L10N/ms.pm
+${P5SITE}/Apache/MP3/L10N/nb.pm
+${P5SITE}/Apache/MP3/L10N/nb_no.pm
+${P5SITE}/Apache/MP3/L10N/nl.pm
+${P5SITE}/Apache/MP3/L10N/nl_be.pm
+${P5SITE}/Apache/MP3/L10N/nl_nl.pm
+${P5SITE}/Apache/MP3/L10N/nn.pm
+${P5SITE}/Apache/MP3/L10N/nn_no.pm
+${P5SITE}/Apache/MP3/L10N/no.pm
+${P5SITE}/Apache/MP3/L10N/no_no.pm
+${P5SITE}/Apache/MP3/L10N/pl.pm
+${P5SITE}/Apache/MP3/L10N/ru.pm
+${P5SITE}/Apache/MP3/L10N/sh.pm
+${P5SITE}/Apache/MP3/L10N/sk.pm
+${P5SITE}/Apache/MP3/L10N/sl.pm
+${P5SITE}/Apache/MP3/L10N/sr.pm
+${P5SITE}/Apache/MP3/L10N/tr.pm
+${P5SITE}/Apache/MP3/L10N/uk.pm
+${P5SITE}/Apache/MP3/L10N/x_marklar.pm
+${P5SITE}/Apache/MP3/L10N/zh_cn.pm
+${P5SITE}/Apache/MP3/L10N/zh_tw.pm
+${P5SITE}/Apache/MP3/Playlist.pm
+${P5SITE}/Apache/MP3/Resample.pm
+${P5SITE}/Apache/MP3/Sorted.pm
 man/man3p/Apache::MP3.3p
+man/man3p/Apache::MP3::L10N.3p
 man/man3p/Apache::MP3::Playlist.3p
 man/man3p/Apache::MP3::Resample.3p
 man/man3p/Apache::MP3::Sorted.3p
-share/examples/apache_mp3/apache_mp3.css
-share/examples/apache_mp3/apache_mp3_help.gif
-share/examples/apache_mp3/back.gif
-share/examples/apache_mp3/cd_icon.gif
-share/examples/apache_mp3/cd_icon_small.gif
-share/examples/apache_mp3/playlist.gif
-share/examples/apache_mp3/right_arrow.gif
-share/examples/apache_mp3/sound.gif
-@dirrm share/examples/apache_mp3
-@dirrm libdata/perl5/site_perl/Apache/MP3
+share/apache_mp3/apache_mp3.css
+share/apache_mp3/apache_mp3_fig1.gif
+share/apache_mp3/apache_mp3_help.gif
+share/apache_mp3/back.gif
+share/apache_mp3/cd_icon.gif
+share/apache_mp3/cd_icon_small.gif
+share/apache_mp3/playlist.gif
+share/apache_mp3/right_arrow.gif
+share/apache_mp3/sound.gif
+@dirrm share/apache_mp3
+@dirrm ${P5SITE}/Apache/MP3/L10N
+@dirrm ${P5SITE}/Apache/MP3

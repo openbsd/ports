@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/15 17:58:50 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/08/25 19:26:21 naddy Exp $
 
 COMMENT=	"mod_perl class for generating browsable MP3 directory lists"
-DISTNAME=	Apache-MP3-2.22
+DISTNAME=	Apache-MP3-3.01
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www audio perl5
-NEED_VERSION=	1.504
 
 MAINTAINER=	Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>
 
@@ -16,18 +15,16 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
 
-BUILD_DEPENDS=	:p5-MP3-Info-*:audio/p5-MP3-Info \
-		:p5-libvorbis-*:audio/p5-libvorbis
-RUN_DEPENDS=	:mod_perl-*:www/mod_perl \
-		:p5-MP3-Info-*:audio/p5-MP3-Info \
-		:p5-libvorbis-*:audio/p5-libvorbis
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	::www/mod_perl \
+		::audio/p5-MP3-Info \
+		::audio/p5-libvorbis \
+		::devel/p5-Locale-Maketext
 
 CONFIGURE_STYLE= perl
 
-NO_REGRESS=	Yes
-
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/apache_mp3
-	${INSTALL_DATA} ${WRKSRC}/apache_mp3/* ${PREFIX}/share/examples/apache_mp3
+	${INSTALL_DATA_DIR} ${PREFIX}/share/apache_mp3
+	${INSTALL_DATA} ${WRKSRC}/apache_mp3/* ${PREFIX}/share/apache_mp3
 
 .include <bsd.port.mk>
