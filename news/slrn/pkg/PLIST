@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/01/09 22:45:38 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/04/18 18:01:34 lebel Exp $
 bin/slrn
 man/man1/slrn.1
 share/doc/slrn/COPYING
@@ -22,7 +22,10 @@ share/doc/slrn/slrn.rc
 share/doc/slrn/slrnfuns.txt
 share/locale/da/LC_MESSAGES/slrn.mo
 share/locale/de/LC_MESSAGES/slrn.mo
+share/locale/es/LC_MESSAGES/slrn.mo
+share/locale/fr/LC_MESSAGES/slrn.mo
 share/locale/it/LC_MESSAGES/slrn.mo
+share/locale/ko/LC_MESSAGES/slrn.mo
 share/locale/nl/LC_MESSAGES/slrn.mo
 share/locale/pl/LC_MESSAGES/slrn.mo
 share/locale/ru/LC_MESSAGES/slrn.mo

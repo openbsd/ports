@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2002/01/09 22:45:38 lebel Exp $
+# $OpenBSD: Makefile,v 1.30 2002/04/18 18:01:34 lebel Exp $
 
 COMMENT=		"SLang-based newsreader"
 
-VERSION=		0.9.7.3
+VERSION=		0.9.7.4
 DISTNAME=		slrn-${VERSION}
 PKGNAME=		${DISTNAME}
 CATEGORIES=		news
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-PFILES=			mimeenc ssl menu
+PFILES=			strcasecmp link_subjects po mem_leak popup_win
 MASTER_SITES0=  	http://slrn.sourceforge.net/patches/
 .for i in ${PFILES}
 PATCHFILES+=    	slrn-${VERSION}-$i.diff:0
