@@ -1,0 +1,39 @@
+$OpenBSD: patch-xfmenu_xfmenu_c,v 1.1 2003/04/13 07:48:02 pvalchev Exp $
+--- xfmenu/xfmenu.c.orig	Fri Apr 11 23:50:36 2003
++++ xfmenu/xfmenu.c	Fri Apr 11 23:54:32 2003
+@@ -237,7 +237,7 @@ char *convert_code (char *fromcode)
+        cd = iconv_open(charset, "UTF8");
+        if (cd != (iconv_t) (-1))
+        {
+-         iconv (cd, &fromcode, &len, &outptr, &outlen);
++         iconv (cd, (ICONV_CONST char **) &fromcode, &len, &outptr, &outlen);
+          iconv_close(cd);
+        }
+        else
+@@ -495,7 +495,7 @@ get_menu_dirs (MenuType mtype)
+ }
+ 
+ static int
+-select_subs (const struct dirent *dentry)
++select_subs (struct dirent *dentry)
+ {
+   struct stat filestat;
+   char *name = dentry->d_name;
+@@ -515,7 +515,7 @@ select_subs (const struct dirent *dentry
+ }
+ 
+ static int
+-select_items (const struct dirent *dentry)
++select_items (struct dirent *dentry)
+ {
+   struct stat filestat;
+ 
+@@ -529,7 +529,7 @@ select_items (const struct dirent *dentr
+ }
+ 
+ static int
+-select_all (const struct dirent *dentry)
++select_all (struct dirent *dentry)
+ {
+   return 1;
+ }
