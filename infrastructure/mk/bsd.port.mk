@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.135 1999/11/20 17:54:09 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.136 1999/11/21 16:18:30 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1895,7 +1895,7 @@ fetch-list:
 .if !target(fetch-list-recursive)
 fetch-list-recursive:
 	@${MAKE} fetch-list-one-pkg
-.if ${RECURSIVE_FETCH_LIST} != "NO"
+.if ${RECURSIVE_FETCH_LIST:U} != "NO"
 	@for dir in `${ECHO} ${FETCH_DEPENDS:C/^[^:]*://:C/:.*//} \
 	${BUILD_DEPENDS:C/^[^:]*://:C/:.*//} \
 	${LIB_DEPENDS:C/^[^:]*://:C/:.*//} \
