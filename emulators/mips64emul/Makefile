@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/14 21:06:58 grange Exp $
+# $OpenBSD: Makefile,v 1.7 2004/12/17 08:00:34 grange Exp $
 
 COMMENT=		"MIPS machine emulator"
 DISTNAME=		mips64emul-0.2.3
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
-MASTER_SITES=		http://www.mdstud.chalmers.se/~md1gavan/mips64emul/src/
+MASTER_SITES=		${HOMEPAGE}/src/
 
 CONFIGURE_STYLE=	simple
 
