@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2002/01/25 03:21:41 jcs Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2002/03/13 00:50:46 jcs Exp $
 lib/gaim/autorecon.so
 lib/gaim/chatlist.so
 lib/gaim/iconaway.so
@@ -12,4 +12,4 @@ lib/gaim/libyahoo.so
 lib/gaim/libzephyr.so
 lib/gaim/notify.so
 lib/gaim/spellchk.so
-@dirrm lib/gaim
+NEWDYNLIBDIR(%D/lib/gaim)
