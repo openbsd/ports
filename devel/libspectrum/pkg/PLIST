@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/12/16 14:29:55 grange Exp $
+include/libspectrum.h
+lib/libspectrum.a
+lib/libspectrum.la
+share/doc/libspectrum/libspectrum.txt
+%%SHARED%%
+@dirrm share/doc/libspectrum
