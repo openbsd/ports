@@ -17,6 +17,11 @@ man/man1/ssh.1
 @unexec rm -f %B/slogin.1
 man/man8/sshd.8
 sbin/sshd
+lib/ssh/server_config.sample
+@exec if [ ! -f /etc/sshd_config ]; then cp %D/%F /etc/sshd_config; fi
+lib/ssh/host_config.sample
+@exec if [ ! -f /etc/ssh_config ]; then cp %D/%F /etc/ssh_config; fi
 @exec if [ ! -f /etc/ssh_host_key ]; then echo "Generating a secret host key.." ; %D/bin/ssh-keygen -N "" -f /etc/ssh_host_key; fi
+@dirrm lib/ssh
 @unexec echo "ssh configuration files stored in /etc have not been removed."
 @unexec echo "you may wish to remove them manually."

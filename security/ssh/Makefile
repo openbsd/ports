@@ -3,7 +3,7 @@
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.16 1998/04/03 02:33:02 marc Exp $
+# $OpenBSD: Makefile,v 1.17 1998/04/05 07:29:05 marc Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -101,7 +101,16 @@ post-extract:
 	@${MV} ${WRKDIR}/rsaref2 ${WRKSRC}/rsaref2
 .endif
 
+# Put the config files someplace where they can be found to
+# create a package.
+#
 post-install:
+	@${MKDIR} ${PREFIX}/lib/ssh
+	@cat ${WRKSRC}/server_config.sample | \
+	  sed "s#_ETCDIR_#${ETCDIR}#g" >/tmp/ssh_inst.$$$$; \
+	  ${INSTALL_DATA} /tmp/ssh_inst.$$$$ \
+	  ${PREFIX}/lib/ssh/server_config.sample
+	@${INSTALL_DATA} ${WRKSRC}/host_config.sample ${PREFIX}/lib/ssh
 	@if [ ! -f ${ETCDIR}/ssh_host_key ]; then \
 		${ECHO} "Generating a secret host key..."; \
 		${PREFIX}/bin/ssh-keygen -f ${ETCDIR}/ssh_host_key -N ""; \
