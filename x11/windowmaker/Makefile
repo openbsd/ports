@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 1999/12/09 00:03:19 brad Exp $
+# $OpenBSD: Makefile,v 1.20 1999/12/10 20:52:33 jasoni Exp $
 
 DISTNAME=	WindowMaker-0.61.1
 PKGNAME=	windowmaker-0.61.1
@@ -34,6 +34,6 @@ post-configure:
 
 post-install:
 	@cd ${WRKDIR}/WindowMaker-extra-0.1; make install
-	@PKG_PREFIX="${PREFIX} sh ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
+	@PKG_PREFIX="${PREFIX}" sh ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
