@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2005/02/24 23:20:09 mjc Exp $
+# $OpenBSD: Makefile,v 1.12 2005/02/25 22:53:16 alek Exp $
 
 COMMENT=	"modular log analyzer"
 
 DISTNAME=	modlogan-0.8.13
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	sysutils www
 
 HOMEPAGE=	http://jan.kneschke.de/projects/modlogan/
@@ -30,6 +31,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --libdir=${PREFIX}/lib/modlogan
 CONFIGURE_ENV += LOCALBASE="${LOCALBASE}" \
 		 LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_FLAGS=	INTLLIBS="-L${LOCALBASE}/lib -lintl -liconv"
 
 NO_REGRESS=	Yes
 
