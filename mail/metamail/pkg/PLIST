@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 09:09:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/22 22:54:51 espie Exp $
 bin/audiocompose
 bin/audiosend
 bin/extcompose
@@ -29,10 +29,12 @@ lib/metamail/
 @fontdir lib/metamail/fonts/
 @comment lib/metamail/fonts/fonts.alias
 @comment lib/metamail/fonts/fonts.dir
+@fontdir lib/metamail/fonts/
 lib/metamail/fonts/heb6x13.pcf
 lib/metamail/fonts/heb8x13.pcf
 lib/metamail/fonts/heb8x13B.pcf
 lib/metamail/mailcap
+@sample ${SYSCONFDIR}/mailcap
 @man man/man1/audiocompose.1
 @man man/man1/audiosend.1
 @man man/man1/extcompose.1
@@ -53,4 +55,3 @@ lib/metamail/mailcap
 @man man/man1/showpicture.1
 @man man/man1/splitmail.1
 @man man/man4/mailcap.4
-@exec test -d /usr/X11R6 && mkfontdir %D/lib/metamail/fonts
