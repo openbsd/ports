@@ -1,0 +1,15 @@
+$OpenBSD: patch-bmore_h,v 1.1 2002/11/29 01:49:57 naddy Exp $
+--- bmore.h.orig	Fri Nov 29 02:45:19 2002
++++ bmore.h	Fri Nov 29 02:46:29 2002
+@@ -48,7 +48,11 @@
+ #	include <unistd.h>
+ #if HAVE_NCURSES_H
+ #   include <ncurses.h>
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++#	include <term.h>
++#else
+ #	include <ncurses/term.h>
++#endif
+ #else
+ #   include <curses.h>
+ #	include <term.h>
