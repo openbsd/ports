@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2002/12/17 16:38:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.59 2002/12/18 05:13:15 brad Exp $
 
 COMMENT=	"PostgreSQL RDBMS"
 COMMENT-clients="PostgreSQL RDBMS client libraries and utilities"
@@ -45,6 +45,8 @@ CONFIGURE_ARGS=	--disable-rpath \
 		--docdir="${PREFIX}/share/doc/postgresql"
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
+
+INSTALL_TARGET=	install install-all-headers
 
 # Regression tests must be done manually and not as root. Successful
 # runs have been achieved on the i386 using the following:
