@@ -3,7 +3,7 @@
 # Date created:				16 Nov 1997
 # Whom:					ejovi
 #
-# $OpenBSD: Makefile,v 1.5 1998/03/14 22:05:22 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1998/03/30 16:51:35 marc Exp $
 
 DISTNAME=	samba-1.9.18p3
 CATEGORIES=	net
@@ -52,7 +52,7 @@ HTML=		Samba-Server-FAQ-1.html Samba-Server-FAQ-2.html \
 
 post-install:
 	@if [ ! -e /etc/smb.conf ]; then \
-	    @${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/examples/smb.conf.default \
+	    ${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/examples/smb.conf.default \
 		/etc/smb.conf; \
 	fi
 	@${MKDIR} ${PREFIX}/share/doc/samba
