@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2003/01/06 17:33:01 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2003/01/06 20:20:20 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -58,8 +58,7 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 		--enable-menu \
 		--with-extraincdir=${LOCALBASE}/include/libpng:${LOCALBASE}/include \
 		--with-extralibdir=${LOCALBASE}/lib \
-		--confdir=${LOCALBASE}/share/mplayer \
-		--with-reallibdir=/usr/local/lib/win32
+		--confdir=${LOCALBASE}/share/mplayer
 
 .if ${MACHINE_ARCH:Mpowerpc}
 CONFIGURE_ARGS+=--target=ppc-openbsd
