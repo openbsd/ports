@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/11/29 09:45:48 kevlo Exp $
+# $OpenBSD: Makefile,v 1.18 2002/12/04 21:06:31 naddy Exp $
 # Uses pthreads (can but does not at the moment)
 
 COMMENT=	"Tool Command Language"
@@ -43,5 +43,8 @@ TESTHOME=${WRKDIR}/testhome
 REGRESS_FLAGS=	HOME=${TESTHOME}
 pre-regress:
 	@mkdir -p ${TESTHOME}
+
+post-install:
+	ranlib ${PREFIX}/lib/libtcl83.a
 
 .include <bsd.port.mk>
