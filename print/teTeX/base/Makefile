@@ -1,6 +1,6 @@
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.8 2000/09/13 14:22:08 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/09 00:21:14 avsm Exp $
 
 PKGNAME=	teTeX_base-1.0.7
 CATEGORIES=	print/teTeX
@@ -12,7 +12,7 @@ DISTFILES=	${TETEX_SRC}
 WRKDIST=	${WRKDIR}/teTeX-1.0
 
 HOMEPAGE=	http://tug.cs.umb.edu/tetex/
-MAINTAINER=	espie@openbsd.org avsm@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>, Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/09/13 14:22:09 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/09 00:21:14 avsm Exp $
 # Original from: Marc Espie
 
 PKGNAME=	teTeX_texmf-1.0.2
@@ -12,7 +12,7 @@ CATEGORIES=	print/teTeX
 NEED_VERSION=	1.330
 
 HOMEPAGE=	http://tug.cs.umb.edu/tetex/
-MAINTAINER=	espie@openbsd.org avsm@openbsd.org
+MAINTAINER=	Marc Espie <espie@openbsd.org>, Anil Madhavapeddy <avsm@openbsd.org>
 
 DIST_SUBDIR=	teTeX
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
