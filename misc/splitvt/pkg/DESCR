@@ -3,9 +3,7 @@ can do and see two things at once.
 
 Using special keys, the focus may be changed from one window to another.
 Other features include cut & pasting between windows, and the ability to
-the terminal.
+lock the terminal.
 
 Note: users may want to take a look at /usr/bin/window (see ``man window'')
-for a FreeBSD native version this type of program.
-
--- David	(obrien@cs.ucdavis.edu)
+for a BSD native version of this type of program.
