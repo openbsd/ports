@@ -3,7 +3,7 @@
 # Date created:		June 7 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 1999/07/19 18:21:16 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/10 17:40:56 espie Exp $
 #
 
 DISTNAME=	linux-ar-40
@@ -17,22 +17,22 @@ MAINTAINER=	angelos@openbsd.org
 
 RUN_DEPENDS=	/emul/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
 
-WRKSRC=		${WRKDIR}/ILINXR.install
+WRKDIST=	${WRKDIR}/ILINXR.install
 
 do-build:
 	@${ECHO_MSG} "Do a \`make install' as root."
 
 do-install:
-	@${MKDIR} ${PREFIX}/Acrobat4
+	@${INSTALL_DATA_DIR} ${PREFIX}/Acrobat4
 	@ReadInstallDir=${PREFIX}/Acrobat4 ${WRKSRC}/INSTALL
 
 post-install:
 	@cd ${PREFIX}/Acrobat4/bin && \
-	  ${PATCH} --quiet < ${FILESDIR}/acroread.diff && \
+	  patch --quiet < ${FILESDIR}/acroread.diff && \
 	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat4/bin/acroread \
-	     ${PREFIX}/bin/acroread && ${RM} acroread.orig
+	     ${PREFIX}/bin/acroread && rm acroread.orig
 	@chmod +x ${PREFIX}/bin/acroread
-	@${ECHO_MSG} "Be sure to read the license agreement in"
-	@${ECHO_MSG} "${PREFIX}/Acrobat4/Reader/License.pdf"
+	@echo "Be sure to read the license agreement in"
+	@echo "${PREFIX}/Acrobat4/Reader/License.pdf"
 
 .include <bsd.port.mk>
