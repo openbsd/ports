@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.4 2000/01/31 00:12:13 kjell Exp $
+# $OpenBSD: network.conf.template,v 1.5 2000/03/12 19:13:37 brad Exp $
 
 #
 #
@@ -41,7 +41,7 @@ MASTER_SITE_BACKUP?=	\
 # Popular master sites, most useful sites come first.
 MASTER_SITE_GNU+=	\
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
-	ftp://ftp.cdrom.com/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.freesoftware.com/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.digital.com/pub/GNU/%SUBDIR%/ \
 	ftp://ftp.uu.net/archive/systems/gnu/%SUBDIR%/ \
 	ftp://ftp.de.uu.net/pub/gnu/%SUBDIR%/ \
@@ -63,7 +63,7 @@ MASTER_SITE_XCONTRIB+=	\
 MASTER_SITE_SUNSITE+=	\
 	ftp://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
 	ftp://ftp.infomagic.com/pub/mirrors/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.cdrom.com/pub/linux/sunsite/%SUBDIR%/ \
+	ftp://ftp.freesoftware.com/pub/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/linux/sunsite/%SUBDIR%/
 
 MASTER_SITE_GNOME+=	\
@@ -76,10 +76,10 @@ MASTER_SITE_GNOME+=	\
 
 MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/%SUBDIR%/
+	ftp://ftp.freesoftware.com/pub/perl/CPAN/modules/by-module/%SUBDIR%/
 
 MASTER_SITE_TEX_CTAN+=	\
-	ftp://ftp.cdrom.com/pub/tex/ctan/%SUBDIR%/ \
+	ftp://ftp.freesoftware.com/pub/tex/ctan/%SUBDIR%/ \
 	ftp://ftp.wustl.edu/packages/TeX/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/TeX/CTAN/%SUBDIR%/ \
 	ftp://ftp.tex.ac.uk/public/ctan/tex-archive/%SUBDIR%/ \
