@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.42 2002/08/11 20:50:54 jsyn Exp $
+# $OpenBSD: Makefile,v 1.43 2002/08/12 15:58:15 jsyn Exp $
 
-COMMENT=	"tool for port scanning and stack fingerprinting network hosts"
+COMMENT=	"scan ports and fingerprint stack of network hosts"
 
 DISTNAME=	nmap-3.00
 CATEGORIES=	net security
