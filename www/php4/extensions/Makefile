@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2004/01/05 17:02:32 avsm Exp $
+# $OpenBSD: Makefile,v 1.29 2004/02/29 00:25:41 avsm Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -273,6 +273,17 @@ MULTI_PACKAGES+=	-sybase_ct
 COMMENT-sybase_ct=	"sybase database access extensions for php4"
 CONFIGURE_ARGS+=        --with-sybase-ct=shared,${LOCALBASE}
 SYBASE_CT_DEPENDS=	tds.0,ct.0::databases/freetds
+.endif
+
+# xml-rpc
+PSEUDO_FLAVORS+=	no_xmlrpc
+.if ${FLAVOR:L:Mno_xmlrpc}
+CONFIGURE_ARGS+=	--without-xmlrpc
+.else
+MULTI_PACKAGES+=	-xmlrpc
+COMMENT-xmlrpc=		"XML RPC functions for php4"
+CONFIGURE_ARGS+=	--with-xmlrpc=shared
+XMLRPC_DEPENDS=		expat.2::textproc/expat
 .endif
 
 # xslt

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-xmlrpc,v 1.1 2004/02/29 00:25:42 avsm Exp $
+lib/php/modules/xmlrpc.so
