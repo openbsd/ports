@@ -1,25 +1,4 @@
-$OpenBSD: patch-src_bubblemon_c,v 1.1 2003/04/30 14:57:15 avsm Exp $
---- src/bubblemon.c.orig	Wed Apr 30 21:20:16 2003
-+++ src/bubblemon.c	Wed Apr 30 21:20:37 2003
-@@ -177,7 +177,7 @@ const char *bubblemon_getTooltip(void)
- 
-   if (sysload.nCpus == 1)
-     {
--      snprintf(loadstring, 45,
-+      snprintf(loadstring, sizeof loadstring,
-                _("\nCPU load: %d%%"),
-                bubblemon_getCpuLoadPercentage(0));
-       strcat(tooltipstring, loadstring);
-@@ -188,7 +188,7 @@ const char *bubblemon_getTooltip(void)
-            cpu_number < sysload.nCpus;
-            cpu_number++)
-         {
--          snprintf(loadstring, 45,
-+          snprintf(loadstring, sizeof loadstring,
-                    _("\nCPU #%d load: %d%%"),
-                    cpu_number,
-                    bubblemon_getCpuLoadPercentage(cpu_number));
-$OpenBSD: patch-src_bubblemon_c,v 1.1 2003/04/30 14:57:15 avsm Exp $
+$OpenBSD: patch-src_bubblemon_c,v 1.2 2003/04/30 14:59:34 avsm Exp $
 --- src/bubblemon.c.orig	Wed Apr 30 14:53:05 2003
 +++ src/bubblemon.c	Wed Apr 30 14:54:01 2003
 @@ -412,7 +412,7 @@ void update_tooltip(BubbleMonData *bm)
