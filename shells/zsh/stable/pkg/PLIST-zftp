@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-zftp,v 1.6 2003/07/03 12:56:52 lebel Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-zftp,v 1.7 2004/04/26 18:34:31 lebel Exp $
 man/man1/zshzftpsys.1
 share/zsh/${VERSION}/functions/_zftp
 share/zsh/${VERSION}/functions/zfanon
@@ -33,3 +32,4 @@ share/zsh/${VERSION}/functions/zftransfer
 share/zsh/${VERSION}/functions/zftype
 share/zsh/${VERSION}/functions/zfuget
 share/zsh/${VERSION}/functions/zfuput
+%%SHARED%%

@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/03/12 17:42:21 pvalchev Exp $
-
+@comment $OpenBSD: PLIST,v 1.11 2004/04/26 18:34:31 lebel Exp $
 bin/zsh
 bin/zsh-${VERSION}
 
 @unexec install-info --delete --info-dir=%D/info %D/info/zsh.info
 info/zsh.info
-@exec   install-info          --info-dir=%D/info %D/info/zsh.info
+@exec install-info --info-dir=%D/info %D/info/zsh.info
 
 man/man1/zsh.1
 man/man1/zshall.1
@@ -24,6 +23,7 @@ man/man1/zshzle.1
 
 !%%static%%
 share/zsh/${VERSION}/functions/_a2ps
+share/zsh/${VERSION}/functions/_aap
 share/zsh/${VERSION}/functions/_acroread
 share/zsh/${VERSION}/functions/_alias
 share/zsh/${VERSION}/functions/_aliases
@@ -37,13 +37,14 @@ share/zsh/${VERSION}/functions/_apm
 share/zsh/${VERSION}/functions/_approximate
 share/zsh/${VERSION}/functions/_apt
 share/zsh/${VERSION}/functions/_apt-show-versions
-share/zsh/${VERSION}/functions/_archie
+share/zsh/${VERSION}/functions/_aptitude
 share/zsh/${VERSION}/functions/_arg_compile
 share/zsh/${VERSION}/functions/_arguments
 share/zsh/${VERSION}/functions/_arp
 share/zsh/${VERSION}/functions/_arping
 share/zsh/${VERSION}/functions/_arrays
 share/zsh/${VERSION}/functions/_assign
+share/zsh/${VERSION}/functions/_attr
 share/zsh/${VERSION}/functions/_auto-apt
 share/zsh/${VERSION}/functions/_autocd
 share/zsh/${VERSION}/functions/_autoload
@@ -61,8 +62,10 @@ share/zsh/${VERSION}/functions/_call_function
 share/zsh/${VERSION}/functions/_call_program
 share/zsh/${VERSION}/functions/_cd
 share/zsh/${VERSION}/functions/_cdcd
+share/zsh/${VERSION}/functions/_cdrecord
 share/zsh/${VERSION}/functions/_chflags
 share/zsh/${VERSION}/functions/_chkconfig
+share/zsh/${VERSION}/functions/_chmod
 share/zsh/${VERSION}/functions/_chown
 share/zsh/${VERSION}/functions/_combination
 share/zsh/${VERSION}/functions/_command
@@ -91,6 +94,7 @@ share/zsh/${VERSION}/functions/_dd
 share/zsh/${VERSION}/functions/_deb_packages
 share/zsh/${VERSION}/functions/_debchange
 share/zsh/${VERSION}/functions/_debfoster
+share/zsh/${VERSION}/functions/_debsign
 share/zsh/${VERSION}/functions/_default
 share/zsh/${VERSION}/functions/_describe
 share/zsh/${VERSION}/functions/_description
@@ -108,6 +112,7 @@ share/zsh/${VERSION}/functions/_domains
 share/zsh/${VERSION}/functions/_dpkg
 share/zsh/${VERSION}/functions/_dpkg_source
 share/zsh/${VERSION}/functions/_dput
+share/zsh/${VERSION}/functions/_du
 share/zsh/${VERSION}/functions/_dumper
 share/zsh/${VERSION}/functions/_dupload
 share/zsh/${VERSION}/functions/_dvi
@@ -143,11 +148,13 @@ share/zsh/${VERSION}/functions/_gdb
 share/zsh/${VERSION}/functions/_generic
 share/zsh/${VERSION}/functions/_getclip
 share/zsh/${VERSION}/functions/_getconf
+share/zsh/${VERSION}/functions/_getent
 share/zsh/${VERSION}/functions/_getfacl
 share/zsh/${VERSION}/functions/_global
 share/zsh/${VERSION}/functions/_global_tags
 share/zsh/${VERSION}/functions/_gnu_generic
 share/zsh/${VERSION}/functions/_gpg
+share/zsh/${VERSION}/functions/_gphoto2
 share/zsh/${VERSION}/functions/_gprof
 share/zsh/${VERSION}/functions/_gqview
 share/zsh/${VERSION}/functions/_grep
@@ -166,6 +173,7 @@ share/zsh/${VERSION}/functions/_ignored
 share/zsh/${VERSION}/functions/_imagemagick
 share/zsh/${VERSION}/functions/_in_vared
 share/zsh/${VERSION}/functions/_init_d
+share/zsh/${VERSION}/functions/_iptables
 share/zsh/${VERSION}/functions/_irssi
 share/zsh/${VERSION}/functions/_ispell
 share/zsh/${VERSION}/functions/_java
@@ -180,6 +188,7 @@ share/zsh/${VERSION}/functions/_killall
 share/zsh/${VERSION}/functions/_kld
 share/zsh/${VERSION}/functions/_larch
 share/zsh/${VERSION}/functions/_last
+share/zsh/${VERSION}/functions/_less
 share/zsh/${VERSION}/functions/_limit
 share/zsh/${VERSION}/functions/_limits
 share/zsh/${VERSION}/functions/_links
@@ -221,6 +230,7 @@ share/zsh/${VERSION}/functions/_mozilla
 share/zsh/${VERSION}/functions/_mplayer
 share/zsh/${VERSION}/functions/_mt
 share/zsh/${VERSION}/functions/_mtools
+share/zsh/${VERSION}/functions/_mtr
 share/zsh/${VERSION}/functions/_multi_parts
 share/zsh/${VERSION}/functions/_mutt
 share/zsh/${VERSION}/functions/_my_accounts
@@ -234,6 +244,8 @@ share/zsh/${VERSION}/functions/_netscape
 share/zsh/${VERSION}/functions/_newsgroups
 share/zsh/${VERSION}/functions/_next_label
 share/zsh/${VERSION}/functions/_next_tags
+share/zsh/${VERSION}/functions/_nice
+share/zsh/${VERSION}/functions/_nmap
 share/zsh/${VERSION}/functions/_normal
 share/zsh/${VERSION}/functions/_nothing
 share/zsh/${VERSION}/functions/_nslookup
@@ -253,18 +265,19 @@ share/zsh/${VERSION}/functions/_pdf
 share/zsh/${VERSION}/functions/_perforce
 share/zsh/${VERSION}/functions/_perl
 share/zsh/${VERSION}/functions/_perl_basepods
-share/zsh/${VERSION}/functions/_perl_builtin_funcs
 share/zsh/${VERSION}/functions/_perl_modules
 share/zsh/${VERSION}/functions/_perldoc
 share/zsh/${VERSION}/functions/_physical_volumes
 share/zsh/${VERSION}/functions/_pick_variant
 share/zsh/${VERSION}/functions/_pids
 share/zsh/${VERSION}/functions/_pine
+share/zsh/${VERSION}/functions/_pkgtool
 share/zsh/${VERSION}/functions/_ports
 share/zsh/${VERSION}/functions/_prcs
 share/zsh/${VERSION}/functions/_precommand
 share/zsh/${VERSION}/functions/_prefix
 share/zsh/${VERSION}/functions/_print
+share/zsh/${VERSION}/functions/_printenv
 share/zsh/${VERSION}/functions/_printers
 share/zsh/${VERSION}/functions/_prompt
 share/zsh/${VERSION}/functions/_ps
@@ -273,6 +286,8 @@ share/zsh/${VERSION}/functions/_pspdf
 share/zsh/${VERSION}/functions/_psutils
 share/zsh/${VERSION}/functions/_putclip
 share/zsh/${VERSION}/functions/_python
+share/zsh/${VERSION}/functions/_raggle
+share/zsh/${VERSION}/functions/_rar
 share/zsh/${VERSION}/functions/_rcs
 share/zsh/${VERSION}/functions/_read
 share/zsh/${VERSION}/functions/_read_comp
@@ -285,10 +300,12 @@ share/zsh/${VERSION}/functions/_rlogin
 share/zsh/${VERSION}/functions/_rpm
 share/zsh/${VERSION}/functions/_rsync
 share/zsh/${VERSION}/functions/_ruby
+share/zsh/${VERSION}/functions/_sablotron
 share/zsh/${VERSION}/functions/_samba
 share/zsh/${VERSION}/functions/_sccs
 share/zsh/${VERSION}/functions/_sched
 share/zsh/${VERSION}/functions/_screen
+share/zsh/${VERSION}/functions/_sed
 share/zsh/${VERSION}/functions/_sep_parts
 share/zsh/${VERSION}/functions/_service
 share/zsh/${VERSION}/functions/_services
@@ -311,7 +328,9 @@ share/zsh/${VERSION}/functions/_stty
 share/zsh/${VERSION}/functions/_su
 share/zsh/${VERSION}/functions/_sub_commands
 share/zsh/${VERSION}/functions/_subscript
+share/zsh/${VERSION}/functions/_subversion
 share/zsh/${VERSION}/functions/_sudo
+share/zsh/${VERSION}/functions/_suffix_alias_files
 share/zsh/${VERSION}/functions/_sysctl
 share/zsh/${VERSION}/functions/_tags
 share/zsh/${VERSION}/functions/_tar
@@ -327,14 +346,17 @@ share/zsh/${VERSION}/functions/_tilde
 share/zsh/${VERSION}/functions/_tilde_files
 share/zsh/${VERSION}/functions/_time_zone
 share/zsh/${VERSION}/functions/_tin
+share/zsh/${VERSION}/functions/_tla
 share/zsh/${VERSION}/functions/_trap
 share/zsh/${VERSION}/functions/_ttyctl
 share/zsh/${VERSION}/functions/_typeset
 share/zsh/${VERSION}/functions/_ulimit
 share/zsh/${VERSION}/functions/_uml
 share/zsh/${VERSION}/functions/_unhash
+share/zsh/${VERSION}/functions/_uniq
 share/zsh/${VERSION}/functions/_unsetopt
 share/zsh/${VERSION}/functions/_update-alternatives
+share/zsh/${VERSION}/functions/_update-rc.d
 share/zsh/${VERSION}/functions/_urls
 share/zsh/${VERSION}/functions/_urpmi
 share/zsh/${VERSION}/functions/_user_admin
@@ -348,6 +370,8 @@ share/zsh/${VERSION}/functions/_vared
 share/zsh/${VERSION}/functions/_vars
 share/zsh/${VERSION}/functions/_vnc
 share/zsh/${VERSION}/functions/_volume_groups
+share/zsh/${VERSION}/functions/_vorbis
+share/zsh/${VERSION}/functions/_vux
 share/zsh/${VERSION}/functions/_w3m
 share/zsh/${VERSION}/functions/_wait
 share/zsh/${VERSION}/functions/_wanted
@@ -356,6 +380,7 @@ share/zsh/${VERSION}/functions/_wget
 share/zsh/${VERSION}/functions/_whereis
 share/zsh/${VERSION}/functions/_which
 share/zsh/${VERSION}/functions/_whois
+share/zsh/${VERSION}/functions/_wiggle
 share/zsh/${VERSION}/functions/_x_arguments
 share/zsh/${VERSION}/functions/_x_borderwidth
 share/zsh/${VERSION}/functions/_x_color
@@ -413,6 +438,7 @@ share/zsh/${VERSION}/functions/compinit
 share/zsh/${VERSION}/functions/compinstall
 share/zsh/${VERSION}/functions/copy-earlier-word
 share/zsh/${VERSION}/functions/cycle-completion-positions
+share/zsh/${VERSION}/functions/delete-whole-word-match
 share/zsh/${VERSION}/functions/down-case-word-match
 share/zsh/${VERSION}/functions/down-line-or-beginning-search
 share/zsh/${VERSION}/functions/edit-command-line
@@ -430,6 +456,7 @@ share/zsh/${VERSION}/functions/mere
 share/zsh/${VERSION}/functions/narrow-to-region
 share/zsh/${VERSION}/functions/narrow-to-region-invisible
 share/zsh/${VERSION}/functions/nslookup
+share/zsh/${VERSION}/functions/pick-web-browser
 share/zsh/${VERSION}/functions/predict-on
 share/zsh/${VERSION}/functions/prompt_adam1_setup
 share/zsh/${VERSION}/functions/prompt_adam2_setup
@@ -448,6 +475,7 @@ share/zsh/${VERSION}/functions/prompt_walters_setup
 share/zsh/${VERSION}/functions/prompt_zefram_setup
 share/zsh/${VERSION}/functions/promptinit
 share/zsh/${VERSION}/functions/promptnl
+share/zsh/${VERSION}/functions/quote-and-complete-word
 share/zsh/${VERSION}/functions/read-from-minibuffer
 share/zsh/${VERSION}/functions/relative
 share/zsh/${VERSION}/functions/replace-string
@@ -458,15 +486,22 @@ share/zsh/${VERSION}/functions/tetris
 share/zsh/${VERSION}/functions/transpose-words-match
 share/zsh/${VERSION}/functions/up-case-word-match
 share/zsh/${VERSION}/functions/up-line-or-beginning-search
+share/zsh/${VERSION}/functions/url-quote-magic
 share/zsh/${VERSION}/functions/zargs
 share/zsh/${VERSION}/functions/zcalc
 share/zsh/${VERSION}/functions/zed
 share/zsh/${VERSION}/functions/zkbd
 share/zsh/${VERSION}/functions/zmv
 share/zsh/${VERSION}/functions/zrecompile
+share/zsh/${VERSION}/functions/zsh-mime-handler
+share/zsh/${VERSION}/functions/zsh-mime-setup
 share/zsh/${VERSION}/functions/zstyle+
 @exec mkdir -p %D/share/zsh/site-functions
 @dirrm share/zsh/site-functions
 @dirrm share/zsh/${VERSION}/functions
 @dirrm share/zsh/${VERSION}
 @dirrm share/zsh
+@dirrm lib/zsh/${VERSION}/zsh/net
+@dirrm lib/zsh/${VERSION}/zsh
+@dirrm lib/zsh/${VERSION}
+@dirrm lib/zsh

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-static,v 1.4 2003/07/04 11:25:18 lebel Exp $
+@comment $OpenBSD: PFRAG.no-static,v 1.5 2004/04/26 18:34:31 lebel Exp $
 lib/zsh/${VERSION}/zsh/cap.so
 lib/zsh/${VERSION}/zsh/clone.so
 lib/zsh/${VERSION}/zsh/compctl.so
@@ -15,10 +15,10 @@ lib/zsh/${VERSION}/zsh/mathfunc.so
 lib/zsh/${VERSION}/zsh/net/socket.so
 lib/zsh/${VERSION}/zsh/net/tcp.so
 lib/zsh/${VERSION}/zsh/parameter.so
-lib/zsh/${VERSION}/zsh/pcre.so
 lib/zsh/${VERSION}/zsh/rlimits.so
 lib/zsh/${VERSION}/zsh/sched.so
 lib/zsh/${VERSION}/zsh/stat.so
+lib/zsh/${VERSION}/zsh/system.so
 lib/zsh/${VERSION}/zsh/termcap.so
 lib/zsh/${VERSION}/zsh/terminfo.so
 lib/zsh/${VERSION}/zsh/zle.so
@@ -35,15 +35,13 @@ share/zsh/${VERSION}/functions/tcp_fd_handler
 share/zsh/${VERSION}/functions/tcp_log
 share/zsh/${VERSION}/functions/tcp_open
 share/zsh/${VERSION}/functions/tcp_output
+share/zsh/${VERSION}/functions/tcp_point
 share/zsh/${VERSION}/functions/tcp_proxy
 share/zsh/${VERSION}/functions/tcp_read
 share/zsh/${VERSION}/functions/tcp_rename
 share/zsh/${VERSION}/functions/tcp_send
 share/zsh/${VERSION}/functions/tcp_sess
+share/zsh/${VERSION}/functions/tcp_shoot
 share/zsh/${VERSION}/functions/tcp_spam
 share/zsh/${VERSION}/functions/tcp_talk
 share/zsh/${VERSION}/functions/tcp_wait
-@dirrm lib/zsh/${VERSION}/zsh/net
-@dirrm lib/zsh/${VERSION}/zsh
-@dirrm lib/zsh/${VERSION}
-@dirrm lib/zsh
