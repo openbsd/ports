@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2004/07/30 17:02:49 naddy Exp $
+# $OpenBSD: INSTALL,v 1.5 2004/09/14 23:44:27 pvalchev Exp $
 
 # exit on errors, use a sane path and install prefix
 #
@@ -16,7 +16,7 @@ do_notice()
     echo "| For proper use of $1 you should notify the system"
     echo "| that ${PREFIX}/bin/bash is a valid shell by adding it to the"
     echo "| the file /etc/shells.  If you are unfamiliar with this file"
-    echo "| consult the shells(5) manual page"
+    echo "| consult the shells(5) manual page."
     echo "+---------------"
     echo
 }

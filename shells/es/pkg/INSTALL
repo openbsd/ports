@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/03/26 00:36:15 espie Exp $
+# $OpenBSD: INSTALL,v 1.2 2004/09/14 23:44:27 pvalchev Exp $
 #
 # Pre/post-installation setup of es
 
@@ -12,7 +12,7 @@ do_notice()
     echo "| For proper use of $1 you should notify the system"
     echo "| that ${PREFIX}/bin/es is a valid shell by adding it to the"
     echo "| the file /etc/shells.  If you are unfamiliar with this file"
-    echo "| consult the shells(5) manual page"
+    echo "| consult the shells(5) manual page."
     echo "+---------------"
     echo
 }
