@@ -1,0 +1,22 @@
+$OpenBSD: patch-Imakefile,v 1.1 2004/01/25 23:04:34 naddy Exp $
+--- Imakefile.orig	2004-01-25 23:28:50.000000000 +0100
++++ Imakefile	2004-01-25 23:29:54.000000000 +0100
+@@ -1,5 +1,5 @@
+-/**/# Imakefile for xkeycaps;
+-/**/# Copyright (c) 1991, 1992, 1993, 1994, 1995, 1999 Jamie Zawinski.
++XCOMM Imakefile for xkeycaps;
++XCOMM Copyright (c) 1991, 1992, 1993, 1994, 1995, 1999 Jamie Zawinski.
+ 
+ /*
+  *  To specify a different default keyboard (for when the vendor display
+@@ -353,8 +353,8 @@ LOCAL_LIBRARIES = $(XAWLIB) $(XTOOLLIB) 
+             TAR = tar
+        COMPRESS = compress
+    COMPRESS_EXT = Z
+-/**/#      COMPRESS = gzip --verbose --best
+-/**/#  COMPRESS_EXT = gz
++XCOMM      COMPRESS = gzip --verbose --best
++XCOMM  COMPRESS_EXT = gz
+ 
+ ComplexProgramTarget(xkeycaps)
+ 
