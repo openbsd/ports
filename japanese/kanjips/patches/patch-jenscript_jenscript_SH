@@ -1,6 +1,6 @@
-$OpenBSD: patch-jenscript_jenscript_SH,v 1.2 2000/04/23 15:43:17 espie Exp $
+$OpenBSD: patch-jenscript_jenscript_SH,v 1.3 2000/04/23 15:57:06 espie Exp $
 --- jenscript/jenscript.SH.orig	Tue Jan 16 18:20:31 1990
-+++ jenscript/jenscript.SH	Sun Apr 23 17:33:16 2000
++++ jenscript/jenscript.SH	Sun Apr 23 17:50:59 2000
 @@ -20,14 +20,12 @@ echo "Extracting jenscript (with variabl
  : Protect any dollar signs and backticks that you do not want interpreted
  : by putting a backslash in front.  You may delete these comments.
@@ -64,3 +64,12 @@ $OpenBSD: patch-jenscript_jenscript_SH,v 1.2 2000/04/23 15:43:17 espie Exp $
  		shift(@_);
  		next if $language !~ /^($pat)$/;
  		$pb = $bb = $be = $cb = $ce = $sb =
+@@ -445,7 +446,7 @@ sub prologue {
+ 		print "/FK { /$keywordfont findfont [$xfontsize 0 0 $fontsize 0 0] makefont setfont } bind def\n";
+ 		print "/FC { /$commentfont findfont [$xfontsize 0 0 $fontsize 0 0] makefont setfont } bind def\n";
+ 		print "/FS { /$stringfont findfont [$xfontsize 0 0 $fontsize 0 0] makefont setfont } bind def\n";
+-		print "/FL { /$litefalfont findfont [$xfontsize 0 0 $fontsize 0 0] makefont setfont } bind def\n";
++		print "/FL { /$literalfont findfont [$xfontsize 0 0 $fontsize 0 0] makefont setfont } bind def\n";
+ 	}
+ 	print "/FJ { /$kfont findfont $jfontsize scalefont setfont } bind def\n";
+ 	print "/N { FN show } bind def\n";
