@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/16 14:44:23 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2001/08/07 15:13:19 lebel Exp $
 
 COMMENT=		"spell checker designed to eventually replace Ispell"
 COMMENT-danish=		"aspell dictionary for Danish"
@@ -7,7 +7,7 @@ COMMENT-french=		"aspell dictionary for French"
 COMMENT-swedish=	"aspell dictionary for Swedish"
 
 V=			0
-SV=			.33.6.3
+SV=			.33.7
 PKGNAME=		aspell-${V}${SV}
 DISTNAME=		aspell-${SV}
 CATEGORIES=		textproc
@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-doc-dir=${PREFIX}/share/doc/aspell
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" 
 
 MULTI_PACKAGES=		-french -swedish -dutch -danish
 .for i in ${MULTI_PACKAGES}
