@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/10 10:56:42 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/12 06:23:22 sturm Exp $
 
 COMMENT=		"Eye of GNOME: an image viewing and cataloging program"
 DISTNAME=		eog-2.6.1	
@@ -20,6 +20,7 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
+			:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:scrollkeeper-*:textproc/scrollkeeper
 LIB_DEPENDS=		eel-2::x11/gnome/eel \
 			gnomeui-2::x11/gnome/libgnomeui \
