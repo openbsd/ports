@@ -3,18 +3,18 @@
 # Date created:	18 Nov 1997
 # Whom:	mickey
 #
-# $OpenBSD: Makefile,v 1.1 1997/11/18 07:47:24 mickey Exp $
+# $OpenBSD: Makefile,v 1.2 1998/01/16 04:15:39 jason Exp $
 #
 
-DISTNAME=	xntp3-5.90-export
+DISTNAME=	ntp-4.0.71-export
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/
 
-MAINTAINER=     mickey@openbsd.org
+MAINTAINER=     jason@openbsd.org
 NOMAN=		noman
 
 HAS_CONFIGURE=	Yes
 CONFIGURE_SCRIPT=	configure
-CONFIGURE_ARGS+=	--enable-accurate-adjtime
+CONFIGURE_ARGS+=	--enable-accurate-adjtime --bindir=/usr/local/sbin
 
 .include <bsd.port.mk>
