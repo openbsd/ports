@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2003/12/26 10:44:10 jakob Exp $
+# $OpenBSD: Makefile,v 1.36 2004/02/17 01:23:03 kevlo Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
@@ -76,7 +76,6 @@ CONFIGURE_ARGS+=	--with-cyrus-sasl \
 			--enable-spasswd
 LIB_DEPENDS+=		sasl2::security/cyrus-sasl2
 CPPFLAGS+=		-I${LOCALBASE}/include/sasl
-LIBS+=			-lkrb
 .else
 CONFIGURE_ARGS+=	--without-cyrus-sasl \
 			--disable-spasswd
@@ -101,6 +100,11 @@ RUN_DEPENDS=	openldap:openldap-client-${VERSION}:databases/openldap
 
 pre-build:
 	@cd ${WRKBUILD}; ${MAKE_PROGRAM} depend
+
+post-patch:
+.if ${FLAVOR:L:Msasl}
+	perl -pi -e 's,KRB5_LIBS=,KRB5_LIBS="-lgssapi -lkrb5 -lasn1 -lcom_err",g' ${WRKSRC}/configure
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openldap
