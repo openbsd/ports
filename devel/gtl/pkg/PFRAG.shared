@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/01/19 16:33:15 reinhard Exp $
+lib/libGTL.so.0.3
+DYNLIBDIR(%D/lib)

@@ -1,0 +1,15 @@
+Graph Template Library (GTL) is based on the Standart Template Library
+(STL), which is supposed to become a part of the C++ standart library
+and therefore is an ideal basis when writing portable programs.
+
+For the design of the GTL's API the API of LEDA is used as a base. GTL
+contains the classes needed to work with graphs, nodes and edges and
+some basic algorithms as building blocks for more complex graph
+algorithms. Further algorithms are under work.
+
+Unfortunately, STL has no support for graphs and graph algorithms.
+However, graphs are widely used to model complex relational
+structures.
+
+WWW: ${HOMEPAGE}
+LICENSE: Redistribution/commerical use requires written permission 
