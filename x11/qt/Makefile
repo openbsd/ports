@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.38 2000/05/23 21:25:37 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2000/05/24 00:16:03 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.45
 CATEGORIES=	x11
-NEED_VERSION=	1.218
+NEED_VERSION=	1.283
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
+
+# for the qt image extension
+BUILD_DEPENDS=	${PREFIX}/include/jpeglib.h::graphics/jpeg
 
 MAINTAINER=	brad@openbsd.org
 
@@ -25,10 +28,7 @@ EXAMPLES=aclock application biff connect cursor dclock desktop dirview \
 	progress qdir qmag qwerty scrollview showimg splitter table \
 	tetrix tictac timestmp tooltip validator widgets xform
 
-# for the qt image extension
-BUILD_DEPENDS=${PREFIX}/include/jpeglib.h::graphics/jpeg
-
-IMAGEIODIR=${WRKSRC}/extensions/imageio/src
+IMAGEIODIR=	${WRKSRC}/extensions/imageio/src
 
 post-build:
 	@cd ${IMAGEIODIR} && \
