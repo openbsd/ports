@@ -1,0 +1,12 @@
+$OpenBSD: patch-dao_main_cc,v 1.1 2002/06/09 00:41:32 pvalchev Exp $
+--- dao/main.cc.orig	Sat Jun  8 19:33:49 2002
++++ dao/main.cc	Sat Jun  8 19:34:00 2002
+@@ -192,7 +192,7 @@ command:\n\
+   write     - writes CD\n\
+   copy      - copies CD\n");
+     
+-    message (0, "\n Try '%s <command> -h' to get a list of available options\n");
++    message (0, "\n Try '%s <command> -h' to get a list of available options\n", PRGNAME);
+     break;
+     
+   case SHOW_TOC:
