@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_mreadline_c,v 1.4 2002/10/16 22:08:26 pvalchev Exp $
---- src/mreadline.c.orig	Wed Sep 25 08:41:47 2002
-+++ src/mreadline.c	Wed Oct 16 00:58:54 2002
-@@ -261,9 +261,9 @@ void R_process_input_tab (void)
+$OpenBSD: patch-src_mreadline_c,v 1.5 2003/01/09 08:26:37 pvalchev Exp $
+--- src/mreadline.c.orig	Tue Jan  7 13:17:51 2003
++++ src/mreadline.c	Tue Jan  7 15:28:41 2003
+@@ -414,9 +414,9 @@ void R_process_input_tab (void)
          }
  
          if ((uin = TabGetNext ()))
--            sprintf (s, "%s %s ", msgcmd, ContactFindName (uin));
-+            snprintf (s, sizeof(s), "%s %s ", msgcmd, ContactFindName (uin));
+-            sprintf (s, "%s %s ", msgcmd, (cont = ContactFind (NULL, 0, uin, NULL, 1)) ? ConvFromUTF8 (cont->nick, prG->enc_loc) : s_sprintf ("%ld", uin));
++            snprintf (s, sizeof(s), "%s %s ", msgcmd, (cont = ContactFind (NULL, 0, uin, NULL, 1)) ? ConvFromUTF8 (cont->nick, prG->enc_loc) : s_sprintf ("%ld", uin));
          else
 -            sprintf (s, "%s ", msgcmd);
 +            snprintf (s, sizeof(s), "%s ", msgcmd);
  
          R_remprompt ();
-         clen = cpos = strlen (s);
+         curlen = curpos = strlen (s);
