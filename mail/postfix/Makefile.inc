@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2001/03/24 19:55:49 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2001/05/29 06:11:36 jakob Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -21,6 +21,7 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
+MAKE_DEBUG?=
 MAKE_CCARGS?=
 MAKE_AUXLIBS?=
 
@@ -28,6 +29,7 @@ ALL_TARGET=	default
 
 do-configure:
 	cd ${WRKSRC}; ${MAKE_PROGRAM} makefiles \
+		CC="${CC}" OPT="${CFLAGS}" DEBUG="${MAKE_DEBUG}" \
 		CCARGS="${MAKE_CCARGS}" AUXLIBS="${MAKE_AUXLIBS}"
 
 do-install:
