@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/15 17:33:03 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/01/28 16:10:33 marcm Exp $
 bin/gnumeric
 bin/ssconvert
 lib/bonobo/servers/GNOME_Gnumeric.server
@@ -112,6 +112,8 @@ lib/gnumeric/${VERSION}-bonobo/plugins/xml_sax/plugin.xml
 lib/gnumeric/${VERSION}-bonobo/plugins/xml_sax/xml_sax.la
 lib/gnumeric/${VERSION}-bonobo/plugins/xml_sax/xml_sax.so
 libexec/gnumeric-component
+man/man1/gnumeric.1
+man/man1/ssconvert.1
 share/applications/gnumeric.desktop
 share/gnome-2.0/ui/GNOME_Gnumeric.xml
 share/gnome-2.0/ui/GNOME_Gnumeric_Component.xml
@@ -266,6 +268,7 @@ share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistoo
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-covariance-ex1.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-covariance-ex2.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-covariance.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-descstats-ex1-options.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-descstats-ex1.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-descstats-ex2.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/analysistools-descstats.png
@@ -344,6 +347,7 @@ share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-font
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-frame.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-function.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-graph.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-graphEditor-add.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-increase-indent.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-increase-precision.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/button-insert-component.png
@@ -388,6 +392,10 @@ share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/dialog-filt
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/dialog-graphing.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/dialog-insert-object.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/dialog-summary.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/example-colGraph-modified.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/example-colGraph.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/example-columnSelect.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/example-data.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/file-dialog.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/file-formats-import-list.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/files-csv-export-ex1.png
@@ -405,6 +413,7 @@ share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/files-html4
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/files-latex-example.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/files-xml-example.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/gnumeric-empty.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/gnumeric-icon-24.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/gnumeric-labelled.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/gnumeric-power-example.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/gnumeric-rearranged.png
@@ -418,6 +427,7 @@ share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/label-three
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/label-transparent.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/label-two.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-context-col-row-header.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-context-graph.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-context-grid.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-context-object.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/menu-context-tabs.png
@@ -459,6 +469,14 @@ share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_rig
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_text_edit.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_zoom_in.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/pointer_zoom_out.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/preferences-files.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/preferences-font-header.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/preferences-font.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/preferences-sorting.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/preferences-undo.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/preferences-various-internal.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/preferences-various.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/preferences-windows.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-large.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-preview-back.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-preview-first.png
@@ -471,13 +489,13 @@ share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-previ
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-preview-zoomin.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-preview-zoomout.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-preview.png
-share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-worksheet.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-worksheet-job.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-worksheet-paper.png
+share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print-worksheet-printer.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/print.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/printing-preview.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/printing-setup-header-config.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/printing-setup-header.png
-share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/printing-setup-margins.png
-share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/printing-setup-page-1.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/printing-setup-page.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/printing-setup-sheet.png
 share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures/selection-1.png
@@ -680,9 +698,7 @@ share/schemas/gnumeric/gnumeric-general.schemas
 share/schemas/gnumeric/gnumeric-plugins.schemas
 @dirrm share/schemas/gnumeric
 @dirrm share/pixmaps/gnumeric
-@dirrm share/pixmaps
 @dirrm share/omf/gnumeric
-@dirrm share/mime-info
 @dirrm share/mc/templates
 @dirrm share/mc
 @dirrm share/locale/en_CA/LC_MESSAGES
