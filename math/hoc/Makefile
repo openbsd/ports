@@ -1,5 +1,5 @@
 # Ports collection makefile for	"hoc", the High Order Calculator
-# $OpenBSD: Makefile,v 1.11 2000/04/08 22:18:00 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/04/10 00:40:28 espie Exp $
 
 DISTNAME=	hoc
 PKGNAME=	hoc-1.1
@@ -23,6 +23,13 @@ FAKE=			Yes
 
 ALL_TARGET=	hoc
 MAKE_FILE=	makefile
+
+# Bug-fix for gcc 2.95.2
+.if ${MACHINE_ARCH} == "i386"
+pre-build:
+	cd ${WRKSRC} && make code.o CFLAGS=-O0
+.endif
+
 
 WRKDIST=	${WRKDIR}
 

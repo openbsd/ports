@@ -1,5 +1,5 @@
---- makefile.orig	Wed Oct 27 15:58:26 1999
-+++ makefile	Wed Oct 27 16:01:24 1999
+--- makefile.orig	Mon Apr 10 02:37:28 2000
++++ makefile	Mon Apr 10 02:39:09 2000
 @@ -1,11 +1,11 @@
  YFLAGS = -d
 -CFLAGS = -g
@@ -14,14 +14,20 @@
  
  hoc.o code.o init.o symbol.o:	hoc.h
  
-@@ -13,10 +13,6 @@
- 
+@@ -14,13 +14,12 @@ code.o init.o symbol.o:	x.tab.h
  x.tab.h:	y.tab.h
  	-cmp -s x.tab.h y.tab.h || cp y.tab.h x.tab.h
--
+ 
 -pr:	$(SRC)
 -	@prcan $?
 -	@touch pr
- 
+-
  install:	hoc
  	cp hoc /usr/bin
+ 	strip /usr/bin/hoc
++
++y.tab.h y.tab.c: hoc.y
++	yacc ${YFLAGS} hoc.y
+ 
+ clean:
+ 	rm -f $(OBJS) [xy].tab.[ch]  hoc
