@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2001/02/12 09:56:31 espie Exp $ 
+# $OpenBSD: Makefile,v 1.6 2001/03/07 20:18:32 brad Exp $ 
 
 DISTNAME=       ttfm-0.9.3
 PKGNAME=        zh-${DISTNAME}
 CATEGORIES=     chinese 
 NEED_VERSION=	1.351
+MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/ttfm/ \
+		ftp://ftp.shellhung.org/pub/OpenBSD/packages/chinese/
+
+LIB_DEPENDS=	ttf.1.::print/freetype
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
@@ -12,16 +16,15 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/ttfm/ \
-		ftp://ftp.shellhung.org/pub/OpenBSD/packages/chinese/
-
-LIB_DEPENDS=	ttf.1.::print/freetype
+MAKE_FLAGS=	CC="${CC}" CFLAGS='${CFLAGS} -Wall -I$$(FREETYPE_INCL)'
 
 DOCS=	README USAGE
 
-post-install:
+do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ttfm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/ttfm
+	${INSTALL_PROGRAM} ${WRKBUILD}/ttfinfo ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKBUILD}/ttfm.sh ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ttfm.sh.1 ${PREFIX}/man/man1
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/ttfm 
 	cp ${WRKSRC}/modules/* ${PREFIX}/share/ttfm
