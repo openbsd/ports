@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 1999/08/20 14:01:01 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/09/01 15:04:21 brad Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 
-DISTNAME=	xchat-1.1.8
+DISTNAME=	xchat-1.2.0
 CATEGORIES=	x11
-MASTER_SITES=	http://xchat.org/files/beta/ \
-		http://xchat.linuxpower.org/files/beta/
+MASTER_SITES=	http://xchat.org/files/ \
+		http://xchat.linuxpower.org/files/
 
 NEED_VERSION=	1.92
 
@@ -14,10 +14,9 @@ LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
 		glib.1.2:${PORTSDIR}/devel/glib \
 		gtk.1.2:${PORTSDIR}/x11/gtk+
 
-USE_BZIP2=	yes
 USE_X11=	yes
 USE_GMAKE=	yes
-SEPARATE_BUILD=	concurrent
+#SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --disable-gnome --disable-imlib --disable-panel
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

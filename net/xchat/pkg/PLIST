@@ -25,4 +25,5 @@ share/locale/fr_CA/LC_MESSAGES/xchat.mo
 share/locale/no/LC_MESSAGES/xchat.mo
 share/locale/pt_BR/LC_MESSAGES/xchat.mo
 share/locale/sr_YU/LC_MESSAGES/xchat.mo
+share/locale/ko/LC_MESSAGES/xchat.mo
 @dirrm share/doc/xchat
