@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2003/03/03 03:01:58 fgsch Exp $
+# $OpenBSD: Makefile,v 1.24 2004/08/10 08:12:09 xsa Exp $
 
 COMMENT=	"desktop organizer software for the palm pilot"
 
@@ -23,7 +23,7 @@ PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
 LIB_DEPENDS=	pisock.3:pilot-link-*:comms/pilot-link \
 		gtk.1.2,gdk.1.2:gtk+-*:x11/gtk+
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu

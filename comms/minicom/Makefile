@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2003/12/04 05:34:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.41 2004/08/10 08:12:09 xsa Exp $
 
 COMMENT=		"MS-DOS Telix-like serial communication program"
 
@@ -10,7 +10,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE:=apps/serialcomm/dialout/}
 
 HOMEPAGE=		http://www.netsonic.fi/~walker/minicom.html
 
-MODULES=		gettext
+MODULES=		devel/gettext
 RUN_DEPENDS=		::comms/kermit \
 			::comms/lrzsz
 

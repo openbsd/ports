@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/05/15 14:32:26 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2004/08/10 08:12:09 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3
 
-MODULES=	kde
+MODULES=	x11/kde
 
 PORTHOME=	${WRKDIR}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2003/04/27 21:00:21 avsm Exp $
+# $OpenBSD: Makefile,v 1.23 2004/08/10 08:12:09 xsa Exp $
 
 COMMENT=	"convert files between character sets and usages"
 
@@ -9,7 +9,7 @@ CATEGORIES=	converters textproc
 
 HOMEPAGE=	http://www.gnu.org/software/recode/
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes

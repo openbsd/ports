@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/08/06 16:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/10 08:12:09 xsa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=Text/}
 
-MODULES=	iconv
+MODULES=	converters/libiconv
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include" \

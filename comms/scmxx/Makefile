@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/08/21 19:11:37 grange Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/10 08:12:09 xsa Exp $
 # $NetBSD: Makefile,v 1.18 2002/10/22 15:33:10 kleink Exp $
 
 COMMENT=		data exchange utility for Siemens mobile phones
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=http://ma2geo.mathematik.uni-karlsruhe.de/~hendrik/scmxx/download/
 
-MODULES=		iconv
+MODULES=		converters/libiconv
 
 MAKE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -DNO_NL_LANGINFO" \
 			LDFLAGS="-L${LOCALBASE}/lib"

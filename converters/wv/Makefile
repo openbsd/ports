@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/08 12:15:04 avsm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/08/10 08:12:09 xsa Exp $
 
 COMMENT=	"convert various Microsoft formats into HTML/PNG"
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	iconv
+MODULES=	converters/libiconv
 LIB_DEPENDS=	wmf.6,wmflite.6::graphics/libwmf \
 		png.2::graphics/png \
 		Magick.5::graphics/ImageMagick \

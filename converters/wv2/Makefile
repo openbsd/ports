@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/02/25 02:35:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2004/08/10 08:12:09 xsa Exp $
 
 COMMENT=	"library providing routines to access Microsoft Word/Excel files"
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS+=	glib-2.0.0.0,glib-2.0.0.0::devel/glib2 \
