@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2004/11/23 11:22:01 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2005/01/28 12:54:32 alek Exp $
 
 COMMENT=		"GNOME Application Libs"
 
 DISTNAME=		gal-0.24
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=    		devel x11/gnome
 HOMEPAGE=		http://www.gnome.org/
 
@@ -23,7 +24,8 @@ MODULES=		devel/gettext
 BUILD_DEPENDS=		:gnome-libs->1.4:x11/gnome/libs \
 			:gnome-print->=0.25:x11/gnome/print \
 			:libglade->=0.13-gnome:devel/libglade,gnome \
-			:libxml1->=1.8.8:textproc/libxml1
+			:libxml1->=1.8.8:textproc/libxml1 \
+			::graphics/gdk-pixbuf,-gnome
 
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
 			glib.1.2,gmodule.1.2::devel/glib
