@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Thu Nov 26 11:03:29 1998
-+++ Makefile.in	Sat Sep 23 21:44:36 2000
++++ Makefile.in	Mon Oct 16 15:29:06 2000
 @@ -15,11 +15,13 @@
  CPPFLAGS      = $(INCLUDE_DIRS) $(DEFINES)
  
@@ -15,7 +15,7 @@
  
  # Other miscellaneous programs
  AR            = @AR@
-@@ -37,23 +39,27 @@
+@@ -37,23 +39,29 @@
  		mono.c ordered.c ordered2.c mb_ordered.c
  LIBSRC        = @libsrc@
  LIBOBJ        = @libobj@
@@ -30,6 +30,8 @@
  HEADER        = mpeg.h
  EXTRAS        = @extras@
  
++PICFLAG       = -fpic
++
 +.SUFFIXES: .o .so
 +
  # Implicit targets
@@ -37,7 +39,7 @@
  		$(CC) -c $(CFLAGS) $(CPPFLAGS) $<
  
 +.c.so:
-+		$(CC) -c $(CFLAGS) $(CPPFLAGS) -fpic -DPIC $< -o $@
++		$(CC) -c $(CFLAGS) $(CPPFLAGS) $(PICFLAG) -DPIC $< -o $@
  
 -# Library/cleanup targets: 
  
@@ -46,14 +48,14 @@
  
  lib:		$(LIBRARY)
  
-@@ -63,17 +69,24 @@
+@@ -63,17 +71,24 @@
  		$(AR) $(ARFLAGS) $(LIBRARY) $(LIBOBJ)
  		$(RANLIB) $(LIBRARY)
  
 -$(SHLIB):	$(LIBOBJ)
 -		$(CC) -shared -o $(SHLIB) $(LIBOBJ)
 +$(SHLIB):	$(SHLIBOBJ)
-+		$(CC) -shared -o $(SHLIB) $(SHLIBOBJ)
++		$(CC) -shared $(PICFLAG) -o $(SHLIB) $(SHLIBOBJ)
  
 +.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
 +all:		lib $(EXTRAS)
