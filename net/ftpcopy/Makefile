@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/07/04 16:30:32 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/17 12:35:14 naddy Exp $
 
 COMMENT=	"FTP listing and transfer tools"
 
@@ -12,10 +12,10 @@ MAINTAINER=	Brian J. Kifiak <bk@rt.fm>
 MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/ \
 		ftp://rt.fm/pub/ftpcopy/
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	"inscrutable license mix"
+PERMIT_PACKAGE_FTP=	"inscrutable license mix"
+PERMIT_DISTFILES_CDROM=	"inscrutable license mix"
+PERMIT_DISTFILES_FTP=	"inscrutable license mix"
 
 MAKE_FLAGS=	CC="${CC}"
 FAKE_FLAGS=	prefix="${DESTDIR}/${PREFIX}"
