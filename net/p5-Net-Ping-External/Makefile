@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/05/15 17:42:25 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/06/08 18:24:13 wilfried Exp $
 
 COMMENT=		"alternative Perl interface to ping(1)"
 
@@ -20,8 +20,6 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Net/}
 
 CONFIGURE_STYLE=	perl
 
-test: build
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} test
+REGRESS_IS_INTERACTIVE=	Yes
 
 .include <bsd.port.mk>
