@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/06/19 17:26:45 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/04/01 12:35:38 avsm Exp $
 bin/cancel
 bin/lp
 bin/lpq
 bin/lpr
 bin/lprm
 bin/lpstat
+lib/liblpr.a
+lib/liblpr.la
 libexec/filters/lpbanner
 libexec/filters/lpf
 libexec/filters/pclbanner
@@ -16,6 +18,8 @@ man/man1/lpf.1
 man/man1/lpq.1
 man/man1/lpr.1
 man/man1/lprm.1
+man/man1/lprng_certs.1
+man/man1/lprng_index_certs.1
 man/man1/lpstat.1
 man/man1/monitor.1
 man/man1/pclbanner.1
@@ -29,26 +33,12 @@ man/man8/lpd.8
 sbin/checkpc
 sbin/lpc
 sbin/lpd
+sbin/lprng_certs
+sbin/lprng_index_certs
 share/doc/LPRng/LPRng-HOWTO.html
-share/doc/LPRng/LPRng.html
-share/doc/LPRng/LPRng.jpg
-share/doc/LPRng/LPRngLOGO100x30.gif
-share/doc/LPRng/LPRngLOGO2.gif
-share/doc/LPRng/LPRngLOGO334x100.gif
-share/doc/LPRng/LPRngT-L.jpg
-share/doc/LPRng/LPRngT-S.jpg
-share/doc/LPRng/LPRng_20logo.gif
-share/doc/LPRng/REDIRECT.LPRng.html
-share/doc/LPRng/bg.gif
-share/doc/LPRng/linkbanner.gif
-share/doc/LPRng/links.html
-share/doc/LPRng/lisa2000.jpg
-share/doc/LPRng/lprng-small.png
-share/doc/LPRng/lprngtool.png
-share/doc/LPRng/star1.gif
-share/doc/LPRng/topbanner.gif
 share/examples/LPRng/lpd.conf
 share/examples/LPRng/lpd.perms
 share/examples/LPRng/printcap
+%%SHARED%%
 @dirrm share/examples/LPRng
 @dirrm share/doc/LPRng

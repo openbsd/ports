@@ -1,0 +1,48 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2003/04/01 12:35:38 avsm Exp $
+--- src/Makefile.in.orig	Mon Aug  5 22:45:54 2002
++++ src/Makefile.in	Mon Jan 20 18:23:08 2003
+@@ -172,7 +172,7 @@ VPATH=..:.:${SRC}/include:${SRC}/common:
+ ########################################################################
+ 
+ .SUFFIXES: .lo .sh
+-LINK =  $(LIBTOOL) --mode=link $(LDCC) $(LDFLAGS) -o $@
++LINK =  $(LIBTOOL) --mode=link $(LDCC) -o $@ 
+ .c.lo:
+ 	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c $<
+ 
+@@ -264,25 +264,25 @@ liblpr.la: $(LIBLPR_OBJS)
+ 	$(LINK) $(LIBLPR_OBJS) -rpath ${libdir}
+ 
+ lpd: $(LPD_OBJS) liblpr.la
+-	$(LINK) ${LPD_OBJS} liblpr.la $(LIBS)
++	$(LINK) ${LPD_OBJS} liblpr.la $(LIBS) $(LDFLAGS)
+ lpr: $(LPR_OBJS) liblpr.la
+-	$(LINK) ${LPR_OBJS} liblpr.la $(LIBS)
++	$(LINK) ${LPR_OBJS} liblpr.la $(LIBS) $(LDFLAGS)
+ lpq: $(LPQ_OBJS) liblpr.la
+-	$(LINK) ${LPQ_OBJS} liblpr.la $(LIBS)
++	$(LINK) ${LPQ_OBJS} liblpr.la $(LIBS) $(LDFLAGS)
+ lpstat: $(LPSTAT_OBJS) liblpr.la
+-	$(LINK) ${LPSTAT_OBJS} liblpr.la $(LIBS)
++	$(LINK) ${LPSTAT_OBJS} liblpr.la $(LIBS) $(LDFLAGS)
+ lprm: $(LPRM_OBJS) liblpr.la
+-	$(LINK) ${LPRM_OBJS} liblpr.la $(LIBS)
++	$(LINK) ${LPRM_OBJS} liblpr.la $(LIBS) $(LDFLAGS)
+ lpc: $(LPC_OBJS) liblpr.la
+-	$(LINK) ${LPC_OBJS} liblpr.la $(LIBS)
++	$(LINK) ${LPC_OBJS} liblpr.la $(LIBS) $(LDFLAGS)
+ checkpc: $(CHECKPC_OBJS) liblpr.la
+-	$(LINK) ${CHECKPC_OBJS} liblpr.la $(LIBS)
++	$(LINK) ${CHECKPC_OBJS} liblpr.la $(LIBS) $(LDFLAGS)
+ lpf: $(LPF_OBJS) liblpr.la
+-	$(LINK) ${LPF_OBJS} $(LIBS)
++	$(LINK) ${LPF_OBJS} $(LIBS) $(LDFLAGS)
+ lpbanner: $(LPBANNER_OBJS) liblpr.la
+-	$(LINK) ${LPBANNER_OBJS} $(LIBS)
++	$(LINK) ${LPBANNER_OBJS} $(LIBS) $(LDFLAGS)
+ monitor: $(MONITOR_OBJS) liblpr.la
+-	$(LINK) ${MONITOR_OBJS} liblpr.la $(LIBS)
++	$(LINK) ${MONITOR_OBJS} liblpr.la $(LIBS) $(LDFLAGS)
+ 
+ authenticate_pgp: ${SRC}/AUTHENTICATE/authenticate_pgp.sh
+ 	rm -f $@; cp ${SRC}/AUTHENTICATE/authenticate_pgp.sh $@; chmod 555 $@
