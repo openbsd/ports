@@ -1,5 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/12/08 17:37:57 sturm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2003/12/11 06:49:17 sturm Exp $
 lib/db/libdb.so.3.1
 lib/db/libdb_cxx.so.3.1
 lib/libdb.so.3.1
+lib/libdb_cxx.so.3.1
 DYNLIBDIR(%D/lib)

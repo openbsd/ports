@@ -1,6 +1,6 @@
-$OpenBSD: patch-dist_Makefile_in,v 1.1.1.1 2003/12/08 17:37:55 sturm Exp $
+$OpenBSD: patch-dist_Makefile_in,v 1.2 2003/12/11 06:49:17 sturm Exp $
 --- dist/Makefile.in.orig	2000-07-18 17:37:35.000000000 +0200
-+++ dist/Makefile.in	2003-12-07 12:09:59.000000000 +0100
++++ dist/Makefile.in	2003-12-11 07:20:07.000000000 +0100
 @@ -34,11 +34,11 @@ SOVERSION=	@DB_VERSION_MAJOR@.@DB_VERSIO
  libdb=		libdb.a
  
@@ -82,3 +82,11 @@ $OpenBSD: patch-dist_Makefile_in,v 1.1.1.1 2003/12/08 17:37:55 sturm Exp $
  
  install_dynamic_cxx: install_setup
  	@echo "Installing DB C++ library: $(libdir) ..."
+@@ -435,6 +436,7 @@ install_dynamic_cxx: install_setup
+ 	@cd $(libdir) && \
+ 	    $(rm) -f $(libxso) $(libxso_default) $(libxso_major)
+ 	@$(INSTALLER) $(libxso_target) $(libdir)
++	@cd $(libsdir) && $(ln) -s db/$(libxso)
+ 	@cd $(libdir) && $(ln) -s $(libxso) $(libxso_default)
+ 	@cd $(libdir) && $(ln) -s $(libxso) $(libxso_major)
+ 
