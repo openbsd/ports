@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2001/08/27 08:58:28 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2001/10/08 23:20:50 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt2
@@ -145,3 +145,7 @@ PKGNAME-examples=	qt2-examples-${VERSION}
 PKGNAME-html=		qt2-html-${VERSION}
 
 .include <bsd.port.mk>
+
+.if ${MACHINE} == alpha
+CXXFLAGS:=	${CXXFLAGS:N-O*}
+.endif
