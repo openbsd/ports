@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/12/24 07:51:06 mark Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/28 19:53:44 naddy Exp $
 
 COMMENT=	"interactive utility that displays info about online users"
 
 DISTNAME=	whowatch-1.4
 CATEGORIES=	sysutils
-NEED_VERSION=	1.364
+
 MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/ \
 		http://janek.ae.krakow.pl/~suszyckm/download/
 
@@ -18,5 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu dest
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

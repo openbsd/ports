@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 21:25:52 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/28 19:53:44 naddy Exp $
 
 COMMENT=	"Libretto BIOS Setting Program"
 
 DISTNAME=	libapm-linux-1.0beta5
 PKGNAME=	libretto-config-1.0b5
 CATEGORIES=	sysutils
-NEED_VERSION=	1.515
 
 MAINTAINER=	Todd Miller <millert@openbsd.org>
 
@@ -20,6 +19,7 @@ MASTER_SITES=	http://club.pep.ne.jp/~ishioka/Software/Linux/libapm/
 
 WRKDIST=	${WRKDIR}/libapm
 DOCDIR=		${PREFIX}/share/doc/libretto-config
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libapm ${PREFIX}/sbin/libretto-config

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/10/26 01:09:14 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/28 19:53:44 naddy Exp $
 
 COMMENT=		"active monitoring tool"
 V=			2.53
 DISTNAME=		symon-${V}
 CATEGORIES=		net sysutils
-NEED_VERSION=		1.502
+
 MASTER_SITES=		http://www.xs4all.nl/~wpd/symon/
 
 HOMEPAGE=		http://www.xs4all.nl/~wpd/symon/
@@ -51,5 +51,7 @@ LIB_DEPENDS=		rrd:rrdtool-*:net/rrdtool
 
 WRKDIST=		${WRKDIR}/symon
 SUBST_VARS=		V
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

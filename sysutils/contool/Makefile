@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2002/03/21 21:25:52 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2002/10/28 19:53:44 naddy Exp $
 
 COMMENT=	"console tool for openlook"
 
 DISTNAME=	contool-3.3a
 CATEGORIES=	sysutils
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.kfu.com/pub/
 
 MAINTAINER=		Ian Darwin <ian@openbsd.org>
@@ -19,6 +19,8 @@ BUILD_DEPENDS=	::x11/xview/config
 
 WRKDIST=	${WRKDIR}
 CONFIGURE_STYLE=imake
+
+NO_REGRESS=	Yes
 
 pre-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/lib/help

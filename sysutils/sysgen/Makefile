@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/04/21 12:04:24 hugh Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/28 19:53:44 naddy Exp $
 
 COMMENT=		"calculates QBUS CSR and Vector assignments"
 
@@ -21,6 +21,7 @@ WRKDIST=		${WRKDIR}
 MAN1=			sysgen.1
 
 ALL_TARGET=		sysgen
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${ALL_TARGET} ${PREFIX}/bin

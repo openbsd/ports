@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/06/26 02:33:09 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/28 19:53:44 naddy Exp $
 
 COMMENT=	"cal that can use color to display calendar"
 
 DISTNAME=	mencal-2.0
 CATEGORIES=	sysutils
-NEED_VERSION=	1.531
 
 HOMEPAGE=	http://mencal.kyberdigi.cz/english.html
 
@@ -18,6 +17,7 @@ PERMIT_DISTFILES_FTP=  Yes
 MASTER_SITES=	http://mencal.kyberdigi.cz/
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mencal ${PREFIX}/bin

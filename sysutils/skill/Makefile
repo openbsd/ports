@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/09/17 19:50:48 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2002/10/28 19:53:44 naddy Exp $
 
 COMMENT=	"signal or reprioritize specified processes"
 
@@ -18,6 +18,8 @@ MASTER_SITES=		ftp://fast.cs.utah.edu/pub/skill-${VERSION}/
 EXTRACT_SUFX=		.tgz
 
 MAKE_FLAGS=		CC='${CC}' CFLAGS='${CFLAGS}'
+
+NO_REGRESS=		Yes
 
 do-configure:
 	@cd ${WRKDIST}; ./Config

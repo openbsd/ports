@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/10/14 16:14:33 marcm Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/28 19:53:44 naddy Exp $
 
 COMMENT=		"UPS monitoring program supporting many brands"
 COMMENT-cgi=		"CGIs for monitoring Nut-based UPSs"
@@ -56,6 +56,8 @@ ALL_TARGET=		all cgi
 INSTALL_TARGET=		install install-cgi
 . endif
 .endif
+
+NO_REGRESS=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nut

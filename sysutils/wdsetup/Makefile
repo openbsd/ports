@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/21 21:25:52 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/28 19:53:44 naddy Exp $
 
 COMMENT=	"Western Digital and SMC ethernet card configuration program"
 
 DISTNAME=	wdsetup-0.6b
 PKGNAME=	wdsetup-0.6b
 CATEGORIES=	sysutils
-NEED_VERSION=	1.515
 
 MAINTAINER=	Todd Miller <millert@openbsd.org>
 
@@ -20,6 +19,8 @@ MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/system/network/drivers/
 
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/wdsetup ${WRKSRC}/wdsetup.c -li386
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wdsetup ${PREFIX}/sbin

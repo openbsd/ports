@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2002/09/01 18:49:01 mpech Exp $
+# $OpenBSD: Makefile,v 1.28 2002/10/28 19:53:44 naddy Exp $
 # $NetBSD: Makefile,v 1.9 1998/04/15 10:38:50 agc Exp $
 
 COMMENT=	"graphical performance meter"
 
 DISTNAME=	xosview-1.8.0
 CATEGORIES=	sysutils
-NEED_VERSION=	1.528
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xosview/}
 
 HOMEPAGE=	http://xosview.sourceforge.net/
@@ -24,6 +24,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-L${X11BASE}/lib" \
 .if (${MACHINE_ARCH} == "alpha")
 BROKEN=		"compilation errors"
 .endif
+
+NO_REGRESS=	Yes
 
 BINGRP=		kmem
 BINMODE=	2555

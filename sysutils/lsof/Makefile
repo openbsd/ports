@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2002/09/15 19:00:35 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.44 2002/10/28 19:53:44 naddy Exp $
 
 COMMENT=	"list information about open files"
 
@@ -60,6 +60,8 @@ post-extract:
 	    exit 1 ; \
 	fi ; \
 	tar -xf ${SRCBALL_NAME}.tar)
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/lsof

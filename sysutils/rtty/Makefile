@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2002/05/08 18:42:10 millert Exp $
-#
+# $OpenBSD: Makefile,v 1.15 2002/10/28 19:53:44 naddy Exp $
 
 COMMENT=	"multiuser "tip"/"cu" replacement with logging"
 
 DISTNAME=       rtty-4.0
 CATEGORIES=	sysutils
-NEED_VERSION=	1.515
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,7 +16,9 @@ EXTRACT_SUFX=	.shar.gz
 
 WRKDIST=	${WRKDIR}
 
-FAKE_FLAGS=DESTROOT=${WRKINST}
+NO_REGRESS=	Yes
+
+FAKE_FLAGS=	DESTROOT=${WRKINST}
 
 post-install:
 	@${INSTALL_DATA} ${WRKDIR}/README ${PREFIX}/rtty

@@ -1,10 +1,4 @@
-# Ports collection makefile for:        xps
-# Version required:     1.2
-# Date created:         28 April 2001
-# Whom:                 Angelos D. Keromytis (angelos@openbsd.org)
-#
-# $OpenBSD: Makefile,v 1.6 2001/10/28 13:05:49 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.7 2002/10/28 19:53:44 naddy Exp $
 
 DISTNAME=       xps-3.21
 CATEGORIES=     sysutils x11
@@ -28,6 +22,8 @@ CONFIGURE_ARGS=		--x-includes=${LOCALBASE}/include \
 
 USE_X11=		Yes
 USE_MOTIF=		any
+
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/xps ${PREFIX}/bin
