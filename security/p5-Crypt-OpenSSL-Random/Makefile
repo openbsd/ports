@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/10/15 11:16:26 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/11 19:12:46 wilfried Exp $
 
 COMMENT=	"routines for accessing the OpenSSL prng"
 
@@ -6,6 +6,7 @@ VERSION=	0.03
 DISTNAME=	Crypt-OpenSSL-Random-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
+HOMEPAGE=	http://perl-openssl.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Crypt/}
 
 MAINTAINER=	Wesley Griffin <wgriffin@jtan.com>
