@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/07/12 06:27:12 marcm Exp $
+# $OpenBSD: Makefile,v 1.12 2004/02/04 07:39:18 sturm Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 COMMENT-devguide=	"Evolution Developer's Guide"
@@ -77,6 +77,7 @@ SUBPACKAGE?=
 .  if ${SUBPACKAGE} == "-devguide"
 RUN_DEPENDS=
 LIB_DEPENDS=
+PKG_ARCH=		*
 .  endif
 .endif
 

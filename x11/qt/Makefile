@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2004/01/01 15:39:29 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2004/02/04 07:39:19 sturm Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=	"C++ X11 GUI toolkit"
@@ -38,8 +38,12 @@ MAKE_ENV=	QTDIR="${WRKSRC}" SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}"
 MULTI_PACKAGES=	-examples -html
 SUBPACKAGE?=
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-examples"
+.if defined(PACKAGING)
+.  if ${SUBPACKAGE} == "-examples"
 LIB_DEPENDS+=	lib/qt/qt.1::x11/qt
+.  elif ${SUBPACKAGE} == "-html"
+PKG_ARCH=	*
+.  endif
 .endif
 
 NO_REGRESS=	Yes

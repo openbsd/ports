@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2003/12/23 19:40:32 brad Exp $
+# $OpenBSD: Makefile,v 1.68 2004/02/04 07:39:18 sturm Exp $
 
 COMMENT=	"PostgreSQL RDBMS"
 COMMENT-tcl=	"PostgreSQL RDBMS tcl libraries and utilities"
@@ -91,6 +91,9 @@ LIB_DEPENDS+=   tk83::x11/tk/8.3
 . endif
 .else
 CONFIGURE_ARGS+= --without-tcl
+.endif
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
+PKG_ARCH=	*
 .endif
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/01/22 21:03:59 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2004/02/04 07:39:19 sturm Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -140,6 +140,10 @@ LIB_DEPENDS+=	png.2::graphics/png \
 
 .if defined(PACKAGING) && ${SUBPACKAGE} != "-html" && ${SUBPACKAGE} != "" && ${SUBPACKAGE} != "-base"
 LIB_DEPENDS+=	qt${MT_SUFX}.3::x11/qt3$e
+.endif
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-html"
+PKG_ARCH=	*
 .endif
 
 QT_INCDIR=	${PREFIX}/include/X11/qt3

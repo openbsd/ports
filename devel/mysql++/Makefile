@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/01/06 11:16:53 wilfried Exp $
+# $OpenBSD: Makefile,v 1.15 2004/02/04 07:39:18 sturm Exp $
 
 COMMENT=		"C++ API for MySQL"
 COMMENT-docs=		"C++ API for MySQL documentation"
@@ -30,6 +30,9 @@ SUBPACKAGE?=
 
 .if ${SUBPACKAGE} != "-docs"
 LIB_DEPENDS=		lib/mysql/mysqlclient.10::databases/mysql
+.endif
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
+PKG_ARCH=		*
 .endif
 
 NO_REGRESS=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/09/23 06:12:41 marcm Exp $
+# $OpenBSD: Makefile,v 1.11 2004/02/04 07:39:18 sturm Exp $
 
 COMMENT=		"general-purpose utility library"
 COMMENT-docs=           "glib2 documentation"
@@ -27,6 +27,9 @@ SUBPACKAGE?=
 .if ${SUBPACKAGE} != "-docs"
 MODULES=		gettext
 BUILD_DEPENDS=          :pkgconfig->=0.14:devel/pkgconfig
+.endif
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
+PKG_ARCH=		*
 .endif
 
 # library versions (major:minor)

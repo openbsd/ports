@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/01/08 20:33:23 avsm Exp $
+# $OpenBSD: Makefile,v 1.14 2004/02/04 07:39:18 sturm Exp $
 # Based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
 # And on NetBSD's 5.04.3 .hc boot script
@@ -33,6 +33,9 @@ LIB_DEPENDS=	gmp::devel/gmp
 MULTI_PACKAGES=	-doc
 SUBPACKAGE?=
 FULLPKGNAME-doc=ghc-doc-${V}
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-doc"
+PKG_ARCH=	*
+.endif
 
 HASKELL=	http://www.haskell.org
 MASTER_SITES=	${HASKELL}/ghc/dist/${V}/

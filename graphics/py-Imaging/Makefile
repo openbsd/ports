@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/12/27 23:40:18 jose Exp $
+# $OpenBSD: Makefile,v 1.19 2004/02/04 07:39:18 sturm Exp $
 
 COMMENT=		"python imaging library"
 COMMENT-examples=	"examples for python imaging library"
@@ -42,6 +42,7 @@ FULLPKGNAME-examples=	py-Imaging-examples-${VERSION}
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-examples"
 RUN_DEPENDS=		:py-Imaging-*:graphics/py-Imaging
 LIB_DEPENDS=
+PKG_ARCH=		*
 .endif
 
 SUBST_VARS=		PYTHON_VER

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/05/02 04:32:29 margarida Exp $
+# $OpenBSD: Makefile,v 1.7 2004/02/04 07:39:19 sturm Exp $
 
 COMMENT=	"XML security library"
 COMMENT-docs=	"XML security library documentation"
@@ -25,6 +25,10 @@ MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 
 MULTI_PACKAGES=		-docs
 SUBPACKAGE?=
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
+PKG_ARCH=		*
+.endif
 
 .if ${SUBPACKAGE} != "-docs"
 MODULES=		iconv

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/09/22 23:56:38 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2004/02/04 07:39:19 sturm Exp $
 
 COMMENT=		"active monitoring tool"
 V=			2.60
@@ -47,6 +47,10 @@ MESSAGE=                ${PKGDIR}/MESSAGE${SUBPACKAGE}
 BUILD_DEPENDS=		rrd:rrdtool-*:net/rrdtool 
 RUN_DEPENDS=		rrd:rrdtool-*:net/rrdtool php:php4-core->=4.2.3:www/php4/core
 LIB_DEPENDS=		rrd:rrdtool-*:net/rrdtool 
+.endif
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-web"
+PKG_ARCH=		*
 .endif
 
 WRKDIST=		${WRKDIR}/symon

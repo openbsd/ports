@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/07/04 13:06:12 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/04 07:39:18 sturm Exp $
 
 COMMENT=		"lightweight GTK+ based mail/news client"
 COMMENT-dillo=		"Dillo plugin for sylpheed-claws"
@@ -89,6 +89,10 @@ SUBPACKAGE?=
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
 RUN_DEPENDS=            ::mail/sylpheed-claws
+.endif
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-themes"
+PKG_ARCH=		*
 .endif
 
 .if ${SUBPACKAGE:M-spamassassin}

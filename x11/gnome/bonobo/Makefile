@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/02/19 18:37:57 marcm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/02/04 07:39:19 sturm Exp $
 
 COMMENT=		"architecture for creating reusable software components"
 COMMENT-docs=		"documentation for the bonobo architecture"
@@ -28,6 +28,9 @@ MODULES=		gettext
 LIB_DEPENDS=		art_lgpl.4,gnome.36,gnomesupport,gnomeui.46::x11/gnome/libs \
 			oaf::x11/gnome/oaf \
 			gnomeprint.16::x11/gnome/print
+.endif
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
+PKG_ARCH=		*
 .endif
 
 SEPARATE_BUILD=		concurrent

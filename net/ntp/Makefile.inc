@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2003/05/15 03:49:33 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2004/02/04 07:39:18 sturm Exp $
 
 COMMENT=	"network time protocol implementation"
 COMMENT-doc=	"network time protocol documentation"
@@ -22,6 +22,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=	-doc
 SUBPACKAGE?=
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-doc"
+PKG_ARCH=	*
+.endif
 
 SEPARATE_BUILD=	concurrent
 AUTOCONF_VERSION= 2.52

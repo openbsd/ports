@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/12/08 06:08:42 marcm Exp $
+# $OpenBSD: Makefile,v 1.13 2004/02/04 07:39:19 sturm Exp $
 
 NOT_FOR_ARCHS=			${NO_SHARED_ARCHS}
 
@@ -34,6 +34,10 @@ LIB_DEPENDS=			glib-2.0.0.8,gmodule-2.0.0.8,gobject-2.0.0.8::devel/glib2 \
 				png.3::graphics/png \
 				jpeg.62::graphics/jpeg
 BUILD_DEPENDS=          	:pkgconfig-*:devel/pkgconfig
+.endif
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
+PKG_ARCH=			*
 .endif
 
 # library versions (major:minor)

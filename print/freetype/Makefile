@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2003/09/02 18:35:33 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.31 2004/02/04 07:39:18 sturm Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 COMMENT=	"free and portable TrueType font rendering engine"
@@ -35,6 +35,10 @@ PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
 
 MULTI_PACKAGES= -doc
 SUBPACKAGE?=
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-doc"
+PKG_ARCH=	*
+.endif
 
 FT_DOC=		${PREFIX}/share/doc/freetype
 SFT_DOC=	${WRKSRC}/docs

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2003/05/27 14:37:59 lebel Exp $
+# $OpenBSD: Makefile,v 1.52 2004/02/04 07:39:18 sturm Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -52,6 +52,7 @@ SUBPACKAGE?=
 _flavor:=${_flavor},$i
 .  endfor
 RUN_DEPENDS=::editors/vim/snapshot${_flavor}
+PKG_ARCH=*
 .endif
 
 .for i in ${MULTI_PACKAGES}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/12/19 00:11:48 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2004/02/04 07:39:18 sturm Exp $
 
 COMMENT=		"OpenCM change management system"
 COMMENT-docs=		"OpenCM Documentation"
@@ -55,6 +55,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/opencm.html ${PREFIX}/share/doc/opencm
 	${INSTALL_DATA} ${WRKSRC}/doc/opencm.ps ${PREFIX}/share/doc/opencm
 
+.endif
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
+PKG_ARCH=	*
 .endif
 
 MAKE_FLAGS+= LIBZ=-lz USOURCE_SUBDIRS="libgdiff src"

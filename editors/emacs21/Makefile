@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/02/01 07:09:47 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2004/02/04 07:39:18 sturm Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=			"hangs indefinitely until machine panics/hangs"
@@ -59,6 +59,9 @@ LIB_DEPENDS=		ungif.5::graphics/libungif \
 .  if !empty(SUBPACKAGE)
 RUN_DEPENDS=		:emacs-${VERSION}*:editors/emacs21
 LIB_DEPENDS=
+.  endif
+.  if ${SUBPACKAGE} == "-el"
+PKG_ARCH=		*
 .  endif
 .endif
 

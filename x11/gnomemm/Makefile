@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/12/17 09:45:44 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2004/02/04 07:39:19 sturm Exp $
 
 COMMENT=		"C++ interface for the GNOME libraries"
 COMMENT-docs=		"C++ interface for the GNOME libraries documentation"
@@ -26,6 +26,9 @@ SUBPACKAGE?=
 .if ${SUBPACKAGE} != "-docs"
 LIB_DEPENDS=		gdkmm.2,gtkmm.2::x11/gtkmm \
 			art_lgpl.4,gnome.36,gnomesupport.0,gnomeui.46::x11/gnome/libs
+.endif
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
+PKG_ARCH=		*
 .endif
 
 SEPARATE_BUILD=		concurrent
