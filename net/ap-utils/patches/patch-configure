@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/01/20 17:15:57 sturm Exp $
---- configure.orig	Thu Jan 16 21:22:25 2003
-+++ configure	Thu Jan 16 21:23:25 2003
-@@ -3881,7 +3881,7 @@ else
+$OpenBSD: patch-configure,v 1.2 2003/06/02 02:02:36 margarida Exp $
+--- configure.orig	Wed May 28 03:56:16 2003
++++ configure	Thu May 29 08:54:22 2003
+@@ -3893,7 +3893,7 @@ else
  #include "confdefs.h"
  #include <libintl.h>
  extern int _nl_msg_cat_cntr;
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/01/20 17:15:57 sturm Exp $
  extern
  #ifdef __cplusplus
  "C"
-@@ -3889,7 +3889,7 @@ extern
+@@ -3901,7 +3901,7 @@ extern
  const char *_nl_expand_alias ();
  int main() {
  bindtextdomain ("", "");
@@ -18,4 +18,4 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/01/20 17:15:57 sturm Exp $
 +return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings__ + *_nl_expand_alias (0)
  ; return 0; }
  EOF
- if { (eval echo configure:3896: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+ if { (eval echo configure:3908: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then

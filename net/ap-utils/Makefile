@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/20 17:15:57 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/06/02 02:02:35 margarida Exp $
+
 COMMENT=	"wireless access point configuration tools"
 
-DISTNAME=	ap-utils-1.3
+DISTNAME=	ap-utils-1.3.2
 CATEGORIES=	net
+EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://ap-utils.polesye.net/
 MAINTAINER=	Chris Kuethe <ckuethe@ualberta.ca>
@@ -13,10 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://ap-utils.uk.polesye.net/files/ \
-		http://web.cs.cmu.edu/~dpelleg/download/ \
-		http://ap-utils.polesye.net/files/
-EXTRACT_SUFX=	.tar.bz2
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ap-utils/}
 
 MODULES=	gettext iconv
 
