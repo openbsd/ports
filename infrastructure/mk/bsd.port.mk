@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.264 2000/04/16 21:41:07 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.265 2000/04/17 20:12:03 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -517,12 +517,14 @@ LIB_DEPENDS+=		Xm.:x11/lesstif
 .include "${PORTSDIR}/../Makefile.inc"
 .endif
 
+SUBPACKAGE?=
+
 _EXTRACT_COOKIE=	${WRKDIR}/.extract_done
 _PATCH_COOKIE=		${WRKDIR}/.patch_done
 _DISTPATCH_COOKIE=	${WRKDIR}/.distpatch_done
 _PREPATCH_COOKIE=	${WRKDIR}/.prepatch_done
-_FAKE_COOKIE=		${WRKINST}/.fake_done
 .if defined(WRKINST)
+_FAKE_COOKIE=		${WRKINST}/.fake_done
 _INSTALL_PRE_COOKIE=${WRKINST}/.install_started
 .elif defined(SEPARATE_BUILD)
 _INSTALL_PRE_COOKIE=${WRKBUILD}/.install_started
@@ -533,16 +535,17 @@ _INSTALL_PRE_COOKIE=${WRKDIR}/.install_started
 _CONFIGURE_COOKIE=	${WRKBUILD}/.configure_done
 _INSTALL_COOKIE=	${WRKBUILD}/.install_done
 _BUILD_COOKIE=		${WRKBUILD}/.build_done
-_PACKAGE_COOKIE=	${WRKBUILD}/.package_done
+_PACKAGE_COOKIE=	${WRKBUILD}/.package_done${SUBPACKAGE}
 .else
 _CONFIGURE_COOKIE=	${WRKDIR}/.configure_done
 _INSTALL_COOKIE=	${WRKDIR}/.install_done
 _BUILD_COOKIE=		${WRKDIR}/.build_done
-_PACKAGE_COOKIE=	${WRKDIR}/.package_done
+_PACKAGE_COOKIE=	${WRKDIR}/.package_done${SUBPACKAGE}
 .endif
+
 _ALL_COOKIES=${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
 ${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_PACKAGE_COOKIE} \
-${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE}
+${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} ${_SUBPACKAGE_COOKIES}
 
 _MAKE_COOKIE=touch -f
 
@@ -735,12 +738,12 @@ SED_PLIST+=|sed -e '/%%${_i}%%/r${PKGDIR}/PFRAG.${_i}' -e '//d'
 .    endif
 .  endfor
 .endif
-SED_PLIST+=|sed -e 's/@ARCH@/${ARCH}/'
+SED_PLIST+=|sed -e 's/@ARCH@/${ARCH}/' -e 's/@FLAVORS@/${_FEXT}/'
 
-.if !defined(PLIST) && exists(${PKGDIR}/PLIST.sed)
-PLIST=${WRKBUILD}/PLIST
+.if !defined(PLIST) && exists(${PKGDIR}/PLIST.sed${SUBPACKAGE})
+PLIST=${WRKBUILD}/PLIST${SUBPACKAGE}
 
-${PLIST}: ${PKGDIR}/PLIST.sed
+${PLIST}: ${PKGDIR}/PLIST.sed${SUBPACKAGE}
 .  if defined(NO_SHARED_LIBS)
 	@sed -e '/%%SHARED%%/d' <$? \
 		${SED_PLIST} >${PLIST}.tmp && mv -f ${PLIST}.tmp ${PLIST}
@@ -750,49 +753,51 @@ ${PLIST}: ${PKGDIR}/PLIST.sed
 .  endif
 .endif
 
-.if !defined(PLIST) && exists(${PKGDIR}/PLIST${_FEXT}.${ARCH})
-PLIST=		${PKGDIR}/PLIST${_FEXT}.${ARCH}
+.if !defined(PLIST) && exists(${PKGDIR}/PLIST${SUBPACKAGE}${_FEXT}.${ARCH})
+PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}${_FEXT}.${ARCH}
 .endif
-.if !defined(PLIST) && defined(NO_SHARED_LIBS) && exists(${PKGDIR}/PLIST${_FEXT}.noshared)
-PLIST=		${PKGDIR}/PLIST${_FEXT}.noshared
+.if !defined(PLIST) && defined(NO_SHARED_LIBS) && exists(${PKGDIR}/PLIST${SUBPACKAGE}${_FEXT}.noshared)
+PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}${_FEXT}.noshared
 .endif
-.if !defined(PLIST) && exists(${PKGDIR}/PLIST${_FEXT})
-PLIST=		${PKGDIR}/PLIST${_FEXT}
+.if !defined(PLIST) && exists(${PKGDIR}/PLIST${SUBPACKAGE}${_FEXT})
+PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}${_FEXT}
 .endif
-.if !defined(PLIST) && exists(${PKGDIR}/PLIST.${ARCH})
-PLIST=		${PKGDIR}/PLIST.${ARCH}
+.if !defined(PLIST) && exists(${PKGDIR}/PLIST${SUBPACKAGE}.${ARCH})
+PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}.${ARCH}
 .endif
-.if !defined(PLIST) && defined(NO_SHARED_LIBS) && exists(${PKGDIR}/PLIST.noshared)
-PLIST=		${PKGDIR}/PLIST.noshared
+.if !defined(PLIST) && defined(NO_SHARED_LIBS) && exists(${PKGDIR}/PLIST${SUBPACKAGE}.noshared)
+PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}.noshared
 .endif
-PLIST?=		${PKGDIR}/PLIST
+PLIST?=		${PKGDIR}/PLIST${SUBPACKAGE}
 
 .if !defined(COMMENT)
-.  if exists(${PKGDIR}/COMMENT${_FEXT})
-COMMENT=${PKGDIR}/COMMENT${_FEXT}
+.  if exists(${PKGDIR}/COMMENT${SUBPACKAGE}${_FEXT})
+COMMENT=${PKGDIR}/COMMENT${SUBPACKAGE}${_FEXT}
 .  else
-COMMENT=	${PKGDIR}/COMMENT
+COMMENT=	${PKGDIR}/COMMENT${SUBPACKAGE}
 .  endif
 .endif
-DESCR?=		${PKGDIR}/DESCR
+DESCR?=		${PKGDIR}/DESCR${SUBPACKAGE}
 
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_DELETE?=	/usr/sbin/pkg_delete
 _SORT_DEPENDS?=tsort|tail -r
 
 .if !defined(PKG_ARGS)
-PKG_ARGS=		-v -c ${COMMENT} -d ${DESCR} -f ${PLIST} -p ${PREFIX} -P "`cd ${.CURDIR} && make package-depends|${_SORT_DEPENDS}`"
-.  if exists(${PKGDIR}/INSTALL)
-PKG_ARGS+=		-i ${PKGDIR}/INSTALL
+PKG_ARGS= -v -c ${COMMENT} -d ${DESCR}
+PKG_ARGS+=-f ${PLIST} -p ${PREFIX} 
+PKG_ARGS+=-P "`cd ${.CURDIR} && make SUBPACKAGE='${SUBPACKAGE}' package-depends|${_SORT_DEPENDS}`"
+.  if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
+PKG_ARGS+=		-i ${PKGDIR}/INSTALL${SUBPACKAGE}
 .  endif
-.  if exists(${PKGDIR}/DEINSTALL)
-PKG_ARGS+=		-k ${PKGDIR}/DEINSTALL
+.  if exists(${PKGDIR}/DEINSTALL${SUBPACKAGE})
+PKG_ARGS+=		-k ${PKGDIR}/DEINSTALL${SUBPACKAGE}
 .  endif
-.  if exists(${PKGDIR}/REQ)
-PKG_ARGS+=		-r ${PKGDIR}/REQ
+.  if exists(${PKGDIR}/REQ${SUBPACKAGE})
+PKG_ARGS+=		-r ${PKGDIR}/REQ${SUBPACKAGE}
 .  endif
-.  if exists(${PKGDIR}/MESSAGE)
-PKG_ARGS+=		-D ${PKGDIR}/MESSAGE
+.  if exists(${PKGDIR}/MESSAGE${SUBPACKAGE})
+PKG_ARGS+=		-D ${PKGDIR}/MESSAGE${SUBPACKAGE}
 .  endif
 .endif
 .if ${FAKE:U} == "YES"
@@ -915,7 +920,7 @@ _CDROM_OVERRIDE=:
 
 # Derive names so that they're easily overridable.
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
-PKGNAME?=		${DISTNAME}
+PKGNAME?=		${DISTNAME}${SUBPACKAGE}
 PKGNAME:=${PKGNAME}${_FEXT}
 
 _EVERYTHING=${DISTFILES}
@@ -1222,7 +1227,7 @@ package: ${_PACKAGE_COOKIE}
 uninstall deinstall:
 	@${ECHO_MSG} "===> Deinstalling for ${PKGNAME}"
 	@${PKG_DELETE} -f ${PKGNAME}
-	@rm -f ${_INSTALL_COOKIE} ${_PACKAGE_COOKIE}
+	@rm -f ${_INSTALL_COOKIE} ${_PACKAGE_COOKIE} ${_SUBPACKAGE_COOKIES}
 
 .endif # IGNORECMD
 
@@ -1547,7 +1552,7 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIE}
 		ln -sf /var/X11/app-defaults /usr/local/lib/X11/app-defaults; \
 	fi
 .endif
-	@PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} pkg_add ${PKGFILE}
+	@${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} pkg_add ${PKGFILE}
 	@${_MAKE_COOKIE} ${_INSTALL_COOKIE}
 
 .else
@@ -1628,11 +1633,22 @@ ${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
 
 .endif 
 
+_SUBPACKAGE_COOKIES=
+.if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
+.  for _sub in ${MULTI_PACKAGES}
+
+_SUBPACKAGE_COOKIES+= ${_PACKAGE_COOKIE}${_sub}
+${_PACKAGE_COOKIE}${_sub}: 
+	@cd ${.CURDIR} && make package SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}'
+
+.  endfor
+.endif
+
 
 .if ${FAKE:U} == "YES"
-${_PACKAGE_COOKIE}: ${_FAKE_COOKIE} ${PLIST}
+${_PACKAGE_COOKIE}: ${_FAKE_COOKIE} ${_SUBPACKAGE_COOKIES} ${PLIST} 
 .else
-${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE} ${PLIST}
+${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE} ${_SUBPACKAGE_COOKIES} ${PLIST}
 .endif
 .if !defined(NO_PACKAGE)
 .  if target(pre-package)
@@ -2010,7 +2026,7 @@ FULL_PACKAGE_NAME=No
 .endif 
 
 # Make variables to pass along on recursive depends computations
-_DEPEND_THRU=FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME} FLAVOR=''
+_DEPEND_THRU=FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME} FLAVOR='' SUBPACKAGE=''
 
 # Nobody should want to override this unless PKGNAME is simply bogus.
 
@@ -2305,6 +2321,12 @@ describe:
 .     endif
 .	else
 	@echo "?"
+.   endif
+
+.  if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
+.    for SUBPACKAGE in ${MULTI_PACKAGES}
+	@cd ${.CURDIR} && make SUBPACKAGE='${SUBPACKAGE}' FLAVOR='${FLAVOR}' describe
+.    endfor
 .	endif	
 
 .endif
