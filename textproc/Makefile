@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.80 2002/05/11 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.81 2002/06/11 22:43:37 jsyn Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
-#
 
      SUBDIR += TclXML
      SUBDIR += agrep
@@ -18,8 +17,8 @@
      SUBDIR += hevea
      SUBDIR += hgrep
      SUBDIR += html
-     SUBDIR += info2html
      SUBDIR += idiff
+     SUBDIR += info2html
      SUBDIR += isearch
      SUBDIR += iso12083
      SUBDIR += iso8879
@@ -66,9 +65,9 @@
      SUBDIR += py-xml
      SUBDIR += rman
      SUBDIR += rxp
-     SUBDIR += sgmlformat
      SUBDIR += sablotron
      SUBDIR += scrollkeeper
+     SUBDIR += sgmlformat
      SUBDIR += source-highlight
      SUBDIR += sp
      SUBDIR += spiff
