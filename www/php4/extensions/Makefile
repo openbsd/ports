@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/07/24 16:14:27 avsm Exp $
+# $OpenBSD: Makefile,v 1.10 2002/07/24 16:14:56 avsm Exp $
 
 PKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -154,7 +154,6 @@ XSLT_DEPENDS=		sablot.90::textproc/sablotron expat.2::textproc/expat
 
 .for i in ${MULTI_PACKAGES}
 FULLPKGNAME${i}=	php4${i}-${V}
-PSEUDO_FLAVORS+=	no_${i:L:S/-//g}
 .endfor
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
