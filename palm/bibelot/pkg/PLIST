@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/15 22:55:33 pvalchev Exp $
+bin/bibelot
+share/doc/bibelot/README
+@dirrm share/doc/bibelot
