@@ -1,0 +1,7 @@
+ndiff compares two nmap scans and outputs the differences.  It
+allows monitoring of your network(s) for interesting changes in
+port states and visible hosts.  Viewing results in this manner
+eliminates the need to sift through voluminous raw scan output
+in search of the few noteworthy differences.
+
+WWW: ${HOMEPAGE}
