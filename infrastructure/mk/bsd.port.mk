@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.292 2000/06/07 15:46:15 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.293 2000/06/09 16:18:42 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -790,7 +790,7 @@ PKG_DELETE?=	/usr/sbin/pkg_delete
 _SORT_DEPENDS?=tsort|tail -r
 
 .if !defined(PKG_ARGS)
-PKG_ARGS= -v -c ${COMMENT} -d ${DESCR}
+PKG_ARGS= -v -c '${COMMENT}' -d ${DESCR}
 PKG_ARGS+=-f ${PLIST} -p ${PREFIX} 
 PKG_ARGS+=-P "`cd ${.CURDIR} && ${MAKE} SUBPACKAGE='${SUBPACKAGE}' package-depends|${_SORT_DEPENDS}`"
 .  if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
@@ -2344,11 +2344,14 @@ describe:
 .  else
 	@echo -n "${PREFIX}|"
 .  endif
-	@if [ -f ${COMMENT} ]; then \
-		echo -n "`cat ${COMMENT}`|"; \
-	else \
-		echo -n "** No Description|"; \
-	fi; \
+	@case '${COMMENT}' in \
+		-*) echo -n '${COMMENT:S/^-//}|';; \
+		*)if [ -f '${COMMENT}' ]; then \
+			echo -n "`cat ${COMMENT}`|"; \
+		else \
+			echo -n "** No Description|"; \
+		fi;; \
+	esac; \
 	if [ -f ${DESCR} ]; then \
 		echo -n "${DESCR:S,^${PORTSDIR}/,,}|"; \
 	else \
