@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# configure wrapper for nessus
+#
+# why are people aping the stupidity of gtk-config? @#$!$
+#
+# dugsong@monkey.org
+
+for dir in y0y0y0 ; do
+    echo ""
+    echo "===>  Configuring $dir"
+    (cd $dir ; PATH=w00w00:$PATH ./configure $*)
+done
+

@@ -1,47 +1,34 @@
-*** nessus.tmpl.in.orig	Mon Jan 18 11:16:12 1999
---- nessus.tmpl.in	Mon Jan 18 11:17:24 1999
-***************
-*** 18,29 ****
-  
-  # Very important ! These are the modes of Nessus
-  
-! # The server is suid root and can only be launched by people
-! # who are in the same group as root (root under Linux, wheel under
-! # FreeBSD)
-! # Server mode : (rwsr-x---)
-  
-! SERVERMODE=4750
-  
-  # Client mode  (rwxr-xr-x)
-  
---- 18,26 ----
-  
-  # Very important ! These are the modes of Nessus
-  
-! # Server mode : (rwxr-xr-x)
-  
-! SERVERMODE=755
-  
-  # Client mode  (rwxr-xr-x)
-  
-***************
-*** 37,45 ****
-  
-  PLUGINSDIRMODE=755
-  
-! # Reports directory mode (rwxrwx---)
-  
-! REPORTSDIRMODE=770
-  
-  # C compiler options
-  CFLAGS=@CFLAGS@
---- 34,42 ----
-  
-  PLUGINSDIRMODE=755
-  
-! # Reports directory mode (rwxr-x--)
-  
-! REPORTSDIRMODE=750
-  
-  # C compiler options
-  CFLAGS=@CFLAGS@
+--- nessus-libraries/Makefile.orig	Tue Oct 19 10:22:31 1999
++++ nessus-libraries/Makefile	Tue Oct 19 10:23:03 1999
+@@ -3,7 +3,6 @@
+ all: $(CIPHER_MAKE)
+ 	cd libnessus && ${MAKE}
+ 	cd libhosts_gatherer && ${MAKE}
+-	cd libpcap-nessus && ${MAKE}
+ 
+ cipher-make :
+ 	cd cipher && ${MAKE}
+@@ -15,7 +14,6 @@
+ 	test -d ${prefix} || ${INSTALL_DIR} -m 755 ${prefix}
+ 	cd libnessus && ${MAKE} install
+ 	cd libhosts_gatherer && ${MAKE} install
+-	cd libpcap-nessus && ${MAKE} install 
+ 	$(INSTALL) -m 0444 include/libnessus.h ${includedir}/nessus
+ 	$(INSTALL) -m 0444 include/harglists.h ${includedir}/nessus
+ 	$(INSTALL) -m 0755 nessus-config ${bindir}/nessus-config
+@@ -23,7 +21,6 @@
+ clean :
+ 	cd libnessus && ${MAKE} clean
+ 	cd libhosts_gatherer && ${MAKE} clean
+-	cd libpcap-nessus && ${MAKE} clean
+ 	test -z "${CIPHER_MAKE}" || (cd cipher && ${MAKE} $@)
+ 
+ distclean : clean
+@@ -31,7 +28,6 @@
+ 	config.status config.log
+ 	cd libnessus && ${MAKE} distclean
+ 	cd libhosts_gatherer && ${MAKE} distclean
+-	cd libpcap-nessus && ${MAKE} distclean
+ 	test -z "${CIPHER_MAKE}" || (cd cipher && ${MAKE} $@)
+ 	rm -f nessus.tmpl nessus-config
+ 
