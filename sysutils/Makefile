@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2004/06/17 11:22:34 sturm Exp $
+# $OpenBSD: Makefile,v 1.82 2004/06/26 19:01:22 sturm Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -40,6 +40,7 @@
      SUBDIR += proctools
      SUBDIR += pstree
      SUBDIR += radiusreport
+     SUBDIR += radmind
      SUBDIR += rtty
      SUBDIR += safecat
      SUBDIR += sdd
