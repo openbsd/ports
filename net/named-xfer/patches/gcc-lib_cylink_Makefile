@@ -1,0 +1,20 @@
+$OpenBSD: gcc-lib_cylink_Makefile,v 1.1 2002/12/19 15:43:25 lebel Exp $
+--- lib/cylink/Makefile.orig	Tue Aug 14 01:58:00 2001
++++ lib/cylink/Makefile	Thu Dec 19 10:04:56 2002
+@@ -60,6 +60,16 @@ ${LIBBIND}: ${OBJS}
+ 	${AR} ${LIBBIND} ${ARPREF} ${OBJS} ${ARSUFF}
+ 	${RANLIB} ${LIBBIND}
+ 
++sha.${O}:
++	mkdir ${THREADED} 2> /dev/null || test -d ${THREADED} -a -w ${THREADED}
++	${CC} ${CPPFLAGS} ${CFLAGS} -O0 ${BOUNDS} ${REENTRANT} -c $*.c \
++	 -o ${THREADED}/$*.${O}
++	-${LDS} ${LD} ${LD_LIBFLAGS} ${THREADED}/$*.${O} -o ${THREADED}/$*.out && \
++	 ${LDS} mv ${THREADED}/$*.out ${THREADED}/$*.${O}
++	${CC} ${CPPFLAGS} ${CFLAGS} -O0 ${BOUNDS} -c $*.c
++	-${LDS} ${LD} ${LD_LIBFLAGS} $*.${O} -o $*.out && \
++	 ${LDS} mv $*.out $*.${O}
++
+ .c.${O}:
+ 	mkdir ${THREADED} 2> /dev/null || test -d ${THREADED} -a -w ${THREADED}
+ 	${CC} ${CPPFLAGS} ${CFLAGS} ${BOUNDS} ${REENTRANT} -c $*.c \

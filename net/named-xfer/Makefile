@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/10/29 12:22:26 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/19 15:43:25 lebel Exp $
 
 COMMENT=	zone transfer program from BIND v8
 
@@ -25,6 +25,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+
 SEPARATE_BUILD=		simple
 WRKDIST=		${WRKDIR}/src
 PATCH_LIST=
@@ -32,6 +33,10 @@ PATCH_LIST=
 do-configure:
 	cd ${WRKSRC}; ${MAKE_PROGRAM} DST=${WRKBUILD}/obj SRC=${WRKSRC} links
 	cd ${WRKBUILD}/obj; ${PATCH} < ${PATCHDIR}/patch-Makefile
+# XXX workaround gcc bugs on sparc64
+.if ${MACHINE_ARCH:Msparc64}
+	cd ${WRKBUILD}/obj; ${PATCH} < ${PATCHDIR}/gcc-lib_cylink_Makefile
+.endif
 
 do-build:
 	cd ${WRKBUILD}/obj; ${MAKE_PROGRAM}
