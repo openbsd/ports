@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2002/02/19 04:22:45 fgsch Exp $
+# $OpenBSD: Makefile,v 1.119 2002/02/24 00:02:26 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -128,6 +128,7 @@
      SUBDIR += shtool
      SUBDIR += slib
      SUBDIR += smpeg
+     SUBDIR += splint
      SUBDIR += swig
      SUBDIR += t1lib
      SUBDIR += tclcl
