@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-tkinter,v 1.1.1.1 2003/12/31 17:38:29 sturm Exp $
+@option no-default-conflict
+@pkgcfl python-tkinter-2.3*
+%%tkinter_no_shared%%
+lib/python2.3/lib-dynload/_tkinter.so

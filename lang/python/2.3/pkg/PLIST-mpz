@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-mpz,v 1.1.1.1 2003/12/31 17:38:31 sturm Exp $
+@option no-default-conflict
+@pkgcfl python-mpz-2.3*
+lib/python2.3/lib-dynload/mpz.so
+lib/python2.3/lib-dynload/mpzmodule.so

@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2003/12/31 17:38:33 sturm Exp $
+--- setup.py.orig	2003-10-21 22:01:21.000000000 +0200
++++ setup.py	2003-12-31 12:22:59.000000000 +0100
+@@ -1140,7 +1140,7 @@ def main():
+           ext_modules=[Extension('struct', ['structmodule.c'])],
+ 
+           # Scripts to install
+-          scripts = ['Tools/scripts/pydoc', 'Tools/scripts/idle']
++          scripts = []
+         )
+ 
+ # --install-platlib
