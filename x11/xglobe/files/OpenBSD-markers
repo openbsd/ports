@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.27 2002/06/10 03:18:05 wilfried Exp $
+# $OpenBSD: OpenBSD-markers,v 1.28 2002/11/18 00:41:08 mcbride Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -27.48		153.20		"Leonard"	# David
@@ -30,6 +30,7 @@
 44.83		0.52		"Couderc"	# Damien
 45.29		-73.34		"Lebel"		# David
 45.5		-73.5		"Cote"		# Yannick
+45.5165		-73.5671	"McBride"	# Ryan Thomas
 45.78 		3.08		"Vallat"	# Miodrag
 47.25		-61.48		"Cobb"		# Wilbern
 47.50		7.60		"Hartmeier"	# Daniel
