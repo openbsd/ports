@@ -1,12 +1,18 @@
-$OpenBSD: patch-cvsweb_cgi,v 1.10 2003/08/16 18:12:10 naddy Exp $
+$OpenBSD: patch-cvsweb_cgi,v 1.11 2003/08/16 23:18:41 naddy Exp $
 --- cvsweb.cgi.orig	2002-09-26 22:56:05.000000000 +0200
-+++ cvsweb.cgi	2003-08-16 18:22:40.000000000 +0200
++++ cvsweb.cgi	2003-08-17 01:07:29.000000000 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -wT
++#!/usr/bin/perl -w
+ #
+ # cvsweb - a CGI interface to CVS trees.
+ #
 @@ -157,7 +157,7 @@ use File::Basename ();
  
  # == EDIT this ==
  # Locations to search for user configuration, in order:
 -for ("$mydir/cvsweb.conf", '/usr/local/etc/cvsweb/cvsweb.conf') {
-+for ("$mydir/cvsweb.conf", '%%SYSCONFDIR%%/cvsweb/cvsweb.conf') {
++for ("$mydir/cvsweb.conf", '%%CONFDIR%%/cvsweb/cvsweb.conf') {
  	if (defined($_) && -r $_) {
  		$config = $_;
  		last;

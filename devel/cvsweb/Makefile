@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2003/08/16 18:12:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2003/08/16 23:18:41 naddy Exp $
 # $FreeBSD: ports/devel/cvsweb/Makefile,v 1.28 2000/09/23 20:48:45 knu Exp $
 
 COMMENT=	"WWW CGI script to browse CVS repository trees"
@@ -33,7 +33,7 @@ ICONS=		back.gif dir.gif text.gif \
 SUBST_VARS=	CONFDIR
 
 do-configure:
-	@perl -i -pe 's@%%SYSCONFDIR%%@${CONFDIR}@g' ${WRKSRC}/cvsweb.cgi
+	@perl -i -pe 's@%%CONFDIR%%@${CONFDIR}@g' ${WRKSRC}/cvsweb.cgi
 
 do-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/cgi-bin
