@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2000/01/13 01:51:50 dugsong Exp $
+# $OpenBSD: Makefile,v 1.44 2000/01/28 14:22:00 kevlo Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -92,7 +92,7 @@
      SUBDIR += xdaliclock
      SUBDIR += xdtm
      SUBDIR += xdu
-#    SUBDIR += xfce
+     SUBDIR += xfce
      SUBDIR += xfed
      SUBDIR += xfedor
      SUBDIR += xfishtank
