@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/10/27 17:21:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2003/03/31 14:20:03 sturm Exp $
 
 COMMENT=	"xbiff-like Window Maker dock app"
 DISTNAME=	wmbiff-0.2p
@@ -14,6 +14,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}
+
+USE_X11=	Yes
 
 WRKDIST=	${WRKDIR}/wmbiff
 WRKBUILD=	${WRKDIST}/wmbiff
