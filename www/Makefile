@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2001/12/10 16:12:12 jakob Exp $
+# $OpenBSD: Makefile,v 1.73 2001/12/26 23:24:52 marc Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -58,6 +58,7 @@
      SUBDIR += p5-HTML-CGIChecker
      SUBDIR += p5-HTML-Embperl
      SUBDIR += p5-HTML-FromText
+     SUBDIR += p5-HTML-Format
      SUBDIR += p5-HTML-Mason
      SUBDIR += p5-HTML-Parser
 #    SUBDIR += p5-HTML-QuickCheck
