@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2002/04/10 08:45:45 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2002/04/15 06:39:41 espie Exp $
 NEED_VERSION+=	1.504
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
@@ -12,11 +12,13 @@ NOT_FOR_ARCHS?=	${NO_SHARED_ARCHS}
 .if ${VERSION:M2*}
 MODULES?=	qt2
 PATCH_LIST?=	${PORTSDIR}/x11/kde/libs2/patches/p-* patch-*
+KDE=lib/kde2
 .elif ${VERSION:M3*}
 # our linker is insane, at least on some arches
 VMEM_WARNING?=Yes
 MODULES?=	qt3
 PATCH_LIST?=	${PORTSDIR}/x11/kde/arts3/patches/p-* patch-*
+KDE=lib/kde3
 .endif
 
 MODGNU_CONFIG_GUESS_DIRS?=	${WRKSRC} ${WRKSRC}/admin
@@ -43,6 +45,7 @@ PORTHOME?=${WRKDIR}
 CONFIGURE_ENV+=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 MAKE_ENV=		${CONFIGURE_ENV}
 
+SUBST_VARS+=	KDE
 MAKE_FLAGS+=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 FAKE_FLAGS?=	TAR=tar DESTDIR=${WRKINST}
 # GPL
