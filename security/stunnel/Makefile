@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2001/11/10 15:00:50 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2001/11/11 23:04:55 jakob Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
-DISTNAME=	stunnel-3.21b
+DISTNAME=	stunnel-3.21c
 CATEGORIES=	security
 NEED_VERSION=	1.489
 
@@ -27,7 +27,8 @@ BUILD_DEPENDS=  ::textproc/p5-sdf
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
-			--with-pem-dir=${SYSCONFDIR}/ssl
+			--with-pem-dir=${SYSCONFDIR}/ssl \
+			--with-random=/dev/arandom
 ALL_TARGET=		stunnel stunnel.8
 
 post-configure:
