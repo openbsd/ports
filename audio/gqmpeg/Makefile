@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2000/08/18 20:38:50 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/03 07:47:14 brad Exp $
 # Original from: Bruno Rohée
 
 DISTNAME=	gqmpeg-0.6.3.src
 PKGNAME=	gqmpeg-0.6.3
 CATEGORIES=     audio
-NEED_VERSION=	1.230
+NEED_VERSION=	1.336
 MASTER_SITES=	http://www.netpedia.net/hosting/gqview/packages/
 
 LIB_DEPENDS=	gdk_imlib.19::graphics/imlib
@@ -30,7 +30,7 @@ WRKDIST=	${WRKDIR}/${PKGNAME}
 DOCS=	COPYING ChangeLog FAQ README SKIN-SPECS
 
 do-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gqmpeg
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gqmpeg
 	${INSTALL_PROGRAM} ${WRKSRC}/gqmpeg ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/plugin/gqmpeg-shoutcast-plugin.sh ${PREFIX}/bin
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/gqmpeg
