@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/12/01 19:59:31 marcm Exp $
+# $OpenBSD: Makefile,v 1.14 2003/06/21 02:05:58 pvalchev Exp $
 
 COMMENT=		"Object Activation Framework for GNOME"
 
@@ -23,7 +23,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
+			--disable-orbittest # XXX problems with warnings
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${WRKSRC}/liboaf/.libs -L${LOCALBASE}/lib"
 
