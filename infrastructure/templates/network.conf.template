@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.13 2001/03/05 16:49:46 reinhard Exp $
+# $OpenBSD: network.conf.template,v 1.14 2001/03/22 00:23:53 avsm Exp $
 
 #
 # NEVER EDIT THAT FILE DIRECTLY !!!! ALWAYS COPY IT TO ../db FIRST.
@@ -135,7 +135,8 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.uvsq.fr/pub/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.cpan.org/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://sunsite.org.uk/packages/perl/CPAN/modules/by-module/%SUBDIR%/
+	ftp://sunsite.org.uk/packages/perl/CPAN/modules/by-module/%SUBDIR%/ \
+	ftp://ftp.shellhung.org/pub/CPAN/modules/by-module/%SUBDIR%/
 
 MASTER_SITE_TEX_CTAN+=	\
 	ftp://ftp.freesoftware.com/pub/tex/ctan/%SUBDIR%/ \
