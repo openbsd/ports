@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/02/22 22:35:13 jasoni Exp $
+# $OpenBSD: Makefile,v 1.22 2000/03/04 17:58:51 espie Exp $
 
 DISTNAME=	vim-5.6
 DIST_SUBDIR=	vim
@@ -31,7 +31,11 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= No
 PERMIT_DISTFILES_FTP=   Yes
 
-GNU_CONFIGURE=	Yes
+FAKE=Yes
+HAS_CONFIGURE=	Yes
+CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}'
+CONFIGURE_ARGS+=--sysconfdir='$${DESTDIR}${PREFIX}'
+
 CONFIGURE_ARGS+=--with-tliba="curses"
 
 # Internal Compiler Error
