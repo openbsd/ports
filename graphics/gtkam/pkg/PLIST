@@ -1,0 +1,65 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/15 15:59:40 sturm Exp $
+bin/gtkam
+man/man1/gtkam.1
+@comment share/doc/gtkam/AUTHORS
+@comment share/doc/gtkam/COPYING
+share/gtkam/pixmaps/camera.xpm
+share/gtkam/pixmaps/configure.xpm
+share/gtkam/pixmaps/delete_images.xpm
+share/gtkam/pixmaps/exit.xpm
+share/gtkam/pixmaps/folder.xpm
+share/gtkam/pixmaps/save_current_image.xpm
+share/images/gtkam/gtkam-audio.png
+share/images/gtkam/gtkam-camera.png
+share/images/gtkam/gtkam-folder-camera.png
+share/images/gtkam/gtkam-folder.png
+share/images/gtkam/gtkam-lock.png
+share/images/gtkam/gtkam-new.png
+share/locale/da/LC_MESSAGES/gtkam.mo
+share/locale/de/LC_MESSAGES/gtkam.mo
+share/locale/es/LC_MESSAGES/gtkam.mo
+share/locale/fr/LC_MESSAGES/gtkam.mo
+share/locale/hu/LC_MESSAGES/gtkam.mo
+share/locale/it/LC_MESSAGES/gtkam.mo
+share/locale/ja/LC_MESSAGES/gtkam.mo
+share/locale/no/LC_MESSAGES/gtkam.mo
+share/locale/pt_BR/LC_MESSAGES/gtkam.mo
+share/locale/pt_PT/LC_MESSAGES/gtkam.mo
+share/locale/ru/LC_MESSAGES/gtkam.mo
+share/locale/sl/LC_MESSAGES/gtkam.mo
+share/locale/sv/LC_MESSAGES/gtkam.mo
+share/locale/uk/LC_MESSAGES/gtkam.mo
+@comment @dirrm share/locale/uk/LC_MESSAGES
+@comment @dirrm share/locale/uk
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sl/LC_MESSAGES
+@comment @dirrm share/locale/sl
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale/pt_PT/LC_MESSAGES
+@comment @dirrm share/locale/pt_PT
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/no/LC_MESSAGES
+@comment @dirrm share/locale/no
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/hu/LC_MESSAGES
+@comment @dirrm share/locale/hu
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale
+@dirrm share/images/gtkam
+@comment @dirrm share/images
+@dirrm share/gtkam/pixmaps
+@dirrm share/gtkam
+@comment @dirrm share/doc/gtkam
