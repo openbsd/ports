@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/11/05 05:31:18 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/08/08 16:50:45 espie Exp $
 include/gdbm.h
-@unexec install-info --delete --info-dir=%D/info %D/info/gdbm.info
-info/gdbm.info
-@exec install-info --info-dir=%D/info %D/info/gdbm.info
+@info info/gdbm.info
 lib/libgdbm.a
 lib/libgdbm.la
-man/man3/gdbm.3
+@man man/man3/gdbm.3
 %%SHARED%%

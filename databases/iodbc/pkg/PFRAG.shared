@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2001/02/19 17:59:42 danh Exp $
-lib/libiodbc.so.2.50
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/08 16:50:45 espie Exp $
+@lib lib/libiodbc.so.2.50

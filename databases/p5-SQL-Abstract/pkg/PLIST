@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/20 10:48:23 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/08 16:50:46 espie Exp $
+${P5SITE}/SQL/
 ${P5SITE}/SQL/Abstract.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/SQL/
+@comment ${P5ARCH}/auto/SQL/Abstract/
 @comment ${P5ARCH}/auto/SQL/Abstract/.packlist
-man/man3p/SQL::Abstract.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/SQL/Abstract
-@comment @dirrm ${P5ARCH}/auto/SQL
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/SQL
+@man man/man3p/SQL::Abstract.3p
