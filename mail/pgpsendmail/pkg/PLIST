@@ -1,8 +1,15 @@
-lib/pgpsendmail
+@cwd /usr
+sbin/pgpsendmail
+@cwd /usr/local
 bin/pgpdaemon
 bin/pgppipe
 bin/sendpgppass
-man/man8/pgpsendmail.8
+bin/match-email-addr
+bin/extract-addrs
 man/man8/pgpdaemon.8
 man/man1/pgppipe.1
 man/man1/sendpgppass.1
+man/man1/pgpsendmail.1
+man/man1/pgpsign.1
+man/man1/extract-addrs.1
+man/man1/match-email-addr.1

@@ -1,15 +1,16 @@
 # OpenBSD makefile for:    pgpsendmail
-# Version required:     1.4
+# Version required:     1.4.5
 # Date created:         10 Nov 1997
 # Whom:                 ejovi
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:30 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1998/04/10 20:49:14 provos Exp $
 #
 
-DISTNAME=       PGPsendmail-v1.4
-PKGNAME=	pgpsendmail-1.4
+DISTNAME=       PGPsendmail-v1.4.5
+PKGNAME=	pgpsendmail-1.4.5
 CATEGORIES=	mail
-MASTER_SITES=   ftp://ftp.dhp.com/pub/crypto/pgp/PGPsendmail/
+MASTER_SITES=   ftp://ftp.atnf.csiro.au/pub/people/rgooch/ \
+		ftp://ftp.dhp.com/pub/crypto/pgp/PGPsendmail/
 
 MAINTAINER=     joey@OpenBSD.ORG
 
