@@ -1,0 +1,53 @@
+$OpenBSD: patch-base_src_client_opencm_c,v 1.4 2002/11/04 16:01:32 todd Exp $
+--- base/src/client/opencm.c.orig	Wed Oct 23 11:59:05 2002
++++ base/src/client/opencm.c	Mon Nov  4 09:56:43 2002
+@@ -46,6 +46,9 @@
+ #include <opencm-version.h>
+ #include <opencm-editor.h>
+ 
++#include <sys/types.h>
++#include <sys/time.h>
++
+ SSL_CTX *ssl_ctx = NULL;
+ int opencmport = IANAPORT;  /* unless proven otherwise */
+ PubKey *this_user = NULL;
+@@ -2103,14 +2106,21 @@ opencm_logmail(WorkSpace *ws, int argc, 
+ 				      chg->commitInfoTrueName);
+       User *u = (User *) client_GetMutableContent(r, ci->authorURI);
+ 
+-      fprintf(f, "Project: %s\n", res->m->name);
+-      fprintf(f, "New version: %s/%s\n", ci->branchURI, 
+-	      xunsigned64_str(ci->branchVersion));
++      fprintf(f, "Project    : %s\n", res->m->name);
++      fprintf(f, "Author     : %s\t", pubkey_GetEmail(u->pubKey));
++      {                                                                       
++         char buf[64];
++         time_t t;
++         struct tm *tm;
++         t = os_FromISO(ci->time);
++
++         tm = gmtime(&t);
++
++         strftime(buf, 64, "%Y%m%d %H:%M:%S", tm);
++         fprintf(f, "%s\n",buf);
++      }                                                                       
+ 
+-      fprintf(f, "Author: %s\n", pubkey_GetEmail(u->pubKey));
+-      fprintf(f, "Time: %s\n", ci->time);
+-      fprintf(f, "Truename: %s\n", ver->cfgName);
+-      fprintf(f, "Description:\n");
++      fprintf(f, "\nDescription:\n");
+ 
+       {
+ 	ocmoff_t pos = 0;
+@@ -2123,6 +2133,10 @@ opencm_logmail(WorkSpace *ws, int argc, 
+ 	}
+       }
+ 
++      fprintf(f, "\n-------\n");
++      fprintf(f, "Version: %s/%s\n", ci->branchURI, 
++	      xunsigned64_str(ci->branchVersion));
++      fprintf(f, "Truename: %s\n", ver->cfgName);
+       break;
+     }
+   default:
