@@ -24,4 +24,4 @@ Older Creative WebCam 3's use the OV511 but newer ones use the OV511+
 On my OV511+ Trust SpaceCam 300 the image appears orange. I'm investigating.
 
 
-WWW: http://members.home.com/housel/
+WWW: ${HOMEPAGE}
