@@ -1,0 +1,12 @@
+$OpenBSD: patch-help_c,v 1.1 2002/05/22 07:55:29 form Exp $
+--- help.c.orig	Wed May 22 14:51:07 2002
++++ help.c	Wed May 22 14:51:15 2002
+@@ -41,7 +41,7 @@ int help_init(char *filename)
+ 	if (!(fd = fopen(filename, "r")))		/* open the help file */
+ 		return -1;				/* return if we couldn't open the file */
+ 
+-	fprintf(stderr, "Processing '%s'...", filename);
++	fprintf(stderr, "Processing help '%s'...", filename);
+ 	fflush(stderr);
+ 
+ 	while (fgets(buf, sizeof(buf), fd)) {

@@ -1,0 +1,12 @@
+$OpenBSD: patch-rc_c,v 1.1 2002/05/22 07:55:29 form Exp $
+--- rc.c.orig	Wed May 22 14:50:50 2002
++++ rc.c	Wed May 22 14:50:58 2002
+@@ -574,7 +574,7 @@ int procrc(CAP *cap, char *name)
+ 	if (!fd)
+ 		return -1;	/* Return if we couldn't open the rc file */
+ 
+-	fprintf(stderr, "Processing '%s'...", name);
++	fprintf(stderr, "Processing rc '%s'...", name);
+ 	fflush(stderr);
+ 
+ 	while (++line, fgets(buf, 1024, fd))
