@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/05/06 01:46:57 lebel Exp $
+# $OpenBSD: Makefile,v 1.21 2001/08/18 03:52:41 kevlo Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 
 COMMENT=	"xforms-based mail application for Unix"
@@ -15,8 +15,6 @@ HOMEPAGE=	http://xfmail.slappy.org/
 
 LIB_DEPENDS=	forms::x11/xforms \
 		glib.1.2::devel/glib
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
