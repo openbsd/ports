@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/08/02 15:35:21 couderc Exp $
+man/man1/pktstat.1
+sbin/pktstat

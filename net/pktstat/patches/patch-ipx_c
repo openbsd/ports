@@ -1,0 +1,12 @@
+$OpenBSD: patch-ipx_c,v 1.1.1.1 2003/08/02 15:35:21 couderc Exp $
+--- ipx.c.orig	2003-07-26 13:56:09.000000000 +0200
++++ ipx.c	2003-07-26 13:56:19.000000000 +0200
+@@ -2,6 +2,7 @@
+ /* $Id: patch-ipx_c,v 1.1.1.1 2003/08/02 15:35:21 couderc Exp $ */
+ 
+ #include <stdio.h>
++#include <string.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/param.h>
+

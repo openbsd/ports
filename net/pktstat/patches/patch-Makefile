@@ -1,0 +1,9 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2003/08/02 15:35:21 couderc Exp $
+--- Makefile.orig	Sat Jul 26 12:08:37 2003
++++ Makefile	Sat Jul 26 12:08:45 2003
+@@ -15,4 +15,4 @@ SRCS+=	ip6.c ipx.c
+ SRCS+=	tcp_http.c tcp_x11.c tcp_sup.c
+ HDRS+=	tcp.h machendian.h
+ LDADD=	-lpcap -lcurses -lm
+-CFLAGS=	-ggdb
++#CFLAGS=	-ggdb
