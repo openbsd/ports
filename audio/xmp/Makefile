@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/08 18:31:17 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/06/10 17:39:29 espie Exp $
 
 BROKEN=	"Obvious tmp race in api/load.c, to fix"
 DISTNAME=	xmp-1.1.5
 CATEGORIES=	audio
+NEED_VERSION=	1.300
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/sound/players
 
@@ -17,9 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 PATCH_STRIP=	-p1
 PATCH_DIST_STRIP= -p1
 
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=gnu
 USE_GMAKE=	Yes
-FAKE=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/main/xmp ${PREFIX}/bin
@@ -28,5 +28,3 @@ do-install:
 	@ln -sf xmp.1 ${PREFIX}/man/man1/xxmp.1
 
 .include <bsd.port.mk>
-
-

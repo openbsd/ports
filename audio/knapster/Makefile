@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2000/05/17 19:00:04 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2000/06/10 17:39:16 espie Exp $
 
 DISTNAME=		knapster-0.10
 CATEGORIES=     	audio
+NEED_VERSION=		1.300
 
 HOMEPAGE=		http://knapster.netpedia.net/
 
@@ -17,9 +18,8 @@ MASTER_SITES=		http://knapster.netpedia.net/packages/
 LIB_DEPENDS=		kdecore.1::x11/kde/libs
 
 USE_GMAKE=		Yes
-GNU_CONFIGURE=		Yes
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-qt-includes=${PREFIX}/include/X11/qt \
 			--with-qt-libraries=${PREFIX}/lib
-FAKE=			Yes
 
 .include <bsd.port.mk>

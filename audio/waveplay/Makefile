@@ -16,7 +16,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 MAKE_FLAGS=		CFLAGS='${CFLAGS}' LIBS=-lossaudio
-FAKE=			Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/waveplay ${PREFIX}/bin/waveplay

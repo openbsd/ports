@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/03/11 01:08:42 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/06/10 17:39:24 espie Exp $
 
 DISTNAME=	tracker-5.3
 CATEGORIES=	audio
@@ -26,7 +26,6 @@ MAKE_FLAGS=	MACHINE=openbsd CC=$(CC) INSTALL="$(INSTALL)" \
 		PREFIX='$${DESTDIR}/${PREFIX}'
 
 FAKE_FLAGS=	${MAKE_FLAGS}
-FAKE=		Yes
 
 post-extract:
 	@mkdir -p ${WRKSRC}/Arch/OpenBSD

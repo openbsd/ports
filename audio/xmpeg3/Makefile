@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/08 19:47:40 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/06/10 17:39:30 espie Exp $
 
 BROKEN=		unsupported and not working properly
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-FAKE=			Yes
 
 RUN_DEPENDS=	amp::audio/amp \
 		wish8.3::x11/tk/8.3

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/08 15:07:00 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/06/10 17:39:17 espie Exp $
 
 DISTNAME=	mp3info-0.2.16
 CATEGORIES=	audio
+NEED_VERSION=	1.300
 MASTER_SITES=	ftp://bimbo.hive.no/pub/mp3info/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/sound/editors
@@ -13,9 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-FAKE=			Yes
 
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS}"
 
 do-install:

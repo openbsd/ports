@@ -2,3 +2,4 @@
 686 class intel CPU's. It makes use of MMX or 3DNOW stuff if your
 CPU has them. encodes *much* faster than bladeenc.
 
+WWW: ${HOMEPAGE}

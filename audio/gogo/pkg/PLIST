@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/06/10 17:39:13 espie Exp $
 bin/gogo
 share/doc/gogo/readme.txt
 share/doc/gogo/readme_e.txt

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/03/24 22:39:00 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/06/10 17:39:23 espie Exp $
 
 DISTNAME=       timidity-0.2i
 CATEGORIES=     audio
@@ -22,7 +22,6 @@ PERMIT_DISTFILES_FTP=	No
 USE_MOTIF=	Yes
 
 INSTALL_TARGET= install.all
-FAKE=		Yes
 FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
 
 post-install:

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/05/28 20:34:50 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/10 17:39:20 espie Exp $
 
 DISTNAME=		rio500-0.6
 CATEGORIES=     	audio
+NEED_VERSION=		1.300
 MASTER_SITES=		http://download.sourceforge.net/rio500/
 
 HOMEPAGE=		http://rio500.sourceforge.net/
@@ -16,8 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 LIB_DEPENDS=		gtk.1.2::x11/gtk+
 
 USE_GMAKE=		Yes
-GNU_CONFIGURE=		Yes
-FAKE=			Yes
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-devicepath=/dev \
 			--with-deviceentry=urio0 \
 			--with-id3support

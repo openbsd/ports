@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2000/04/08 16:39:14 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/06/10 17:39:21 espie Exp $
 
 DISTNAME=       rplay-3.3.0
 CATEGORIES=	audio
-NEED_VERSION=	1.230
+NEED_VERSION=	1.300
 MASTER_SITES=	http://rplay.doit.org/dist/
 
 MAINTAINER=	angelos@openbsd.org
@@ -17,10 +17,7 @@ LIB_DEPENDS=    gsm.1.0::audio/gsm
 
 USE_GMAKE=	Yes
 SYSCONFDIR=	/etc/rplay
-HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS+=--sysconfdir='$${DESTDIR}${SYSCONFDIR}' \
-	--prefix='$${DESTDIR}${PREFIX}'
-FAKE=		Yes
+CONFIGURE_STYLE=gnu dest
 
 post-configure:
 .for ff in rplay.conf.5 rplay.helpers.5 rplay.hosts.5 rplayd.8

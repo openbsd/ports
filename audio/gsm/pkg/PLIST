@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.4 2000/06/10 17:39:16 espie Exp $
 bin/toast
 @exec ln -fs %f %B/untoast
 @exec ln -fs %f %B/tcat
@@ -8,9 +9,8 @@ man/man1/toast.1
 @exec ln -fs %f %B/tcat.1
 @unexec rm -f %B/untoast.1
 @unexec rm -f %B/tcat.1
-lib/libgsm.so.1.0
-@exec /sbin/ldconfig -m %B
 lib/libgsm.a
+%%SHARED%%
 man/man3/gsm.3
 man/man3/gsm_explode.3
 man/man3/gsm_option.3

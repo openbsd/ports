@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/30 12:14:11 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/06/10 17:39:13 espie Exp $
 
 DISTNAME=	gogo226a	
 PKGNAME=	gogo-2.26a
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_CDROM=	MP3 patent. decoders are free. encoders are not.
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	Yes
-FAKE=		Yes
 MAKE_FLAGS=	E3DN=''
 
 post-install:

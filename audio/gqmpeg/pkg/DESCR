@@ -1,2 +1,4 @@
 GQmpeg is a front-end to mpg123 featuring skin supports (including WinAmp
 skins), play lists and more.
+
+WWW: ${HOMEPAGE}

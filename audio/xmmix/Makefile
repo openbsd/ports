@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2000/04/09 16:38:25 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/06/10 17:39:29 espie Exp $
 
 DISTNAME=	xmmix-1.2
 CATEGORIES=	audio
+NEED_VERSION=	1.300
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= applications
 
@@ -13,8 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	Yes
-USE_MOTIF=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=	imake
+USE_MOTIF=		Yes
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2000/03/11 01:09:02 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/06/10 17:39:12 espie Exp $
 
 DISTNAME=	bladeenc-0.92.0-src-stable
 PKGNAME=	bladeenc-0.92
 CATEGORIES=	audio
-NEED_VERSION=	1.191
+NEED_VERSION=	1.300
 MASTER_SITES=	http://bladeenc.mp3.no/source/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-GNU_CONFIGURE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=	gnu
 
 WRKDIST=	${WRKDIR}/${PKGNAME}.0
 

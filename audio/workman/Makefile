@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2000/04/04 21:37:47 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/06/10 17:39:26 espie Exp $
 
 DISTNAME=	WorkMan-1.3a
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	audio
-NEED_VERSION=	1.230
+NEED_VERSION=	1.300
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= applications/WorkMan
 
@@ -17,9 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	xview.3.2::x11/xview/lib
 BUILD_DEPENDS=	${LOCALBASE}/lib/X11/config/XView.cf::x11/xview/config
-FAKE=		Yes
 
-USE_IMAKE=	Yes
+CONFIGURE_STYLE=imake
 MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
 
 WRKDIST=	${WRKDIR}/workman
