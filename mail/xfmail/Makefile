@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2002/05/22 05:59:33 form Exp $
+# $OpenBSD: Makefile,v 1.25 2002/05/24 02:21:46 form Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 # $RuOBSD: Makefile,v 1.4 2002/05/18 04:21:36 form Exp $
 
@@ -33,14 +33,14 @@ CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--without-nas-sound
 CONFIGURE_ENV=		CPPFLAGS="-DX11FORMS_H"
 
-FLAVORS=		threads esd
+FLAVORS=		esd
 FLAVOR?=
 
-.if ${FLAVOR:L:Mthreads}
-CONFIGURE_ARGS+=	--with-threads
-.else
-CONFIGURE_ARGS+=	--without-threads
-.endif
+#.if ${FLAVOR:L:Mthreads}
+#CONFIGURE_ARGS+=	--with-threads
+#.else
+#CONFIGURE_ARGS+=	--without-threads
+#.endif
 
 .if ${FLAVOR:L:Mesd}
 CONFIGURE_ARGS+=	--with-esd-sound
