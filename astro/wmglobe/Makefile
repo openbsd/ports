@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/05/15 09:30:21 wilfried Exp $
+# $OpenBSD: Makefile,v 1.13 2002/07/17 20:29:40 lebel Exp $
 
 COMMENT=		'wm-dockapp; displays the earth on an icon'
 
@@ -24,6 +24,7 @@ LIB_DEPENDS=		jpeg.62::graphics/jpeg \
 			ungif.5::graphics/libungif \
 			wraster.4::x11/windowmaker
 
+MAKE_ENV=		CC="${CC}"
 USE_X11=		Yes
 NO_REGRESS=		Yes
 
