@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/09/10 08:28:55 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2000/12/04 01:49:22 kevlo Exp $
 
-DISTNAME=	popt-1.5
+DISTNAME=	popt-1.5.1
 CATEGORIES=	devel
 NEED_VERSION=	1.320
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
@@ -13,6 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+WRKDIST=	${WRKDIR}/popt-1.5
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
