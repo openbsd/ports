@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2004/06/25 06:14:08 marcm Exp $
+# $OpenBSD: Makefile,v 1.34 2004/08/10 08:32:35 xsa Exp $
 
 COMMENT=		"open-source, cross-platform WYSIWYG word processor"
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.abisource.com/
 
 MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 

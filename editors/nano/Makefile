@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2004/06/30 22:18:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2004/08/10 08:32:36 xsa Exp $
 
 COMMENT=	"small, easy to use editor"
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 FLAVORS=	slang
 FLAVOR?=
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.59

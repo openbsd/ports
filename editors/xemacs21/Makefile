@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2004/06/24 17:21:49 sturm Exp $
+# $OpenBSD: Makefile,v 1.26 2004/08/10 08:32:36 xsa Exp $
 
 COMMENT=		"heavily customizable and extensible editor"
 
@@ -30,7 +30,7 @@ MASTER_SITES= 	ftp://ftp.xemacs.org/pub/xemacs/xemacs-21.4/ \
 # build/configuration variables
 
 # this one is not "toggle-able" in the configure script
-MODULES=	gettext
+MODULES=	devel/gettext
 
 # XEmacs symlinks a lot of files in its source tree
 # preventing safe SEPARATE_BUILD

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/08/02 07:32:08 kevlo Exp $
+# $OpenBSD: Makefile,v 1.18 2004/08/10 08:32:36 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -21,7 +21,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kxmleditor/}
 
 LIB_DEPENDS=	kdecore.6,DCOP,kdefx,kdesu,kdeui,kio,kparts,kdeprint::x11/kde/libs3
 
-MODULES=	kde
+MODULES=	x11/kde
 MODKDE_VERSION=	3.1
 
 PORTHOME=	${WRKDIR}

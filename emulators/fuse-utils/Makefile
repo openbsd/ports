@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/05/08 06:48:08 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/10 08:32:36 xsa Exp $
 
 COMMENT=		"Free Unix Spectrum Emulator utilities"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 LIB_DEPENDS=	spectrum.3::devel/libspectrum
 

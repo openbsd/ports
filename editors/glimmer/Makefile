@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/09/23 21:14:22 marcm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/08/10 08:32:36 xsa Exp $
 
 COMMENT=		"code editor for GNOME"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=glimmer/}
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 LIB_DEPENDS=		gnomeprint.16::x11/gnome/print \
 			gnomevfs.0::x11/gnome/vfs
