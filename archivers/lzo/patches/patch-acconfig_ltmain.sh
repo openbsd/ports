@@ -1,6 +1,16 @@
---- acconfig/ltmain.sh.orig	Sat Feb  5 11:38:56 2000
-+++ acconfig/ltmain.sh	Sat Feb  5 11:40:44 2000
-@@ -3522,40 +3522,6 @@
+--- acconfig/ltmain.sh.orig	Mon Nov 29 12:37:24 1999
++++ acconfig/ltmain.sh	Sat Nov 11 16:32:09 2000
+@@ -1789,6 +1789,9 @@
+ 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
+ 	  # these systems don't actually have a c library (as such)!
+ 	  ;;
++	*-*-openbsd*)
++	  # do not include libc due to us having libc/libc_r.
++	  ;;
+ 	*)
+ 	  # Add libc to deplibs on all other systems.
+ 	  deplibs="$deplibs -lc"
+@@ -3522,40 +3525,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  

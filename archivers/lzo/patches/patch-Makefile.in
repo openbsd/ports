@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Nov 11 17:01:12 2000
++++ Makefile.in	Sat Nov 11 17:01:36 2000
+@@ -422,7 +422,7 @@
+ 
+ test: all
+ 	./ltest/ltest -mavail -n10 -q $(top_srcdir)/COPYING
+-	$(SHELL) -e util/check.sh $(top_srcdir)
++	$(SHELL) -e $(srcdir)/util/check.sh $(top_srcdir)
+ 	./tests/align
+ 	./tests/chksum
+ 	./examples/simple

@@ -1,6 +1,44 @@
---- acconfig/ltconfig.orig	Thu Aug  3 08:46:37 2000
-+++ acconfig/ltconfig	Thu Aug  3 08:47:04 2000
-@@ -1962,6 +1962,7 @@
+--- acconfig/ltconfig.orig	Mon Nov 29 12:37:24 1999
++++ acconfig/ltconfig	Sat Nov 11 16:32:04 2000
+@@ -1105,6 +1105,9 @@
+     with_gnu_ld=no
+   fi
+   ;;
++openbsd*)
++  with_gnu_ld=no
++  ;;
+ 
+ esac
+ 
+@@ -1391,10 +1394,18 @@
+     ;;
+ 
+   openbsd*)
+-    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linkopts'
+-    hardcode_libdir_flag_spec='-R$libdir'
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
++    case "$host_os" in
++      openbsd2.[01234567])
++	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linkopts'
++	hardcode_libdir_flag_spec='-R$libdir'
++      ;;
++      *)
++	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
++	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      ;;
++    esac
+     ;;
+ 
+   os2*)
+@@ -1955,13 +1966,10 @@
+ 
+ openbsd*)
+   version_type=sunos
+-  if test "$with_gnu_ld" = yes; then
+-    need_lib_prefix=no
+-    need_version=no
+-  fi
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH

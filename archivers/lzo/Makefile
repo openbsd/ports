@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2000/09/24 07:03:59 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2000/11/11 22:33:39 brad Exp $
 
 DISTNAME=	lzo-1.06
 CATEGORIES=	archivers devel
-NEED_VERSION=	1.330
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.rhrz.uni-bonn.de/pub-koeln/util/arc/ \
 		ftp://ftp.fu-berlin.de/pub/unix/tools/archivers/lzo/ \
 		${MASTER_SITE_SUNSITE}
@@ -22,7 +22,10 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
-post-extract:
+test:	build
+	@cd ${WRKBUILD} && ${MAKE} test
+
+post-patch:
 	@chmod +x ${WRKSRC}/acconfig/*
 
 post-install:
