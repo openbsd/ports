@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.3 2005/02/22 13:53:16 alek Exp $
+--- configure.orig	Tue Feb 22 14:30:05 2005
++++ configure	Tue Feb 22 14:30:16 2005
+@@ -8896,6 +8896,7 @@ echo "configure:8896: checking for _nl_m
+ if eval "test \"`echo '$''{'ac_cv_func__nl_msg_cat_cntr'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
++  LIBS="-lintl -liconv ${LIBS}"
+   cat > conftest.$ac_ext <<EOF
+ #line 8901 "configure"
+ #include "confdefs.h"
