@@ -1,4 +1,3 @@
-etc/rc.d/sshd.sh
 bin/scp
 bin/ssh
 @exec ln -fs %f %B/slogin
@@ -19,3 +18,5 @@ man/man1/ssh.1
 man/man8/sshd.8
 sbin/sshd
 @exec if [ ! -f /etc/ssh_host_key ]; then echo "Generating a secret host key.." ; %D/bin/ssh-keygen -N "" -f /etc/ssh_host_key; fi
+@unexec echo "ssh configuration files stored in /etc have not been removed."
+@unexec echo "you may wish to remove them manually."

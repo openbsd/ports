@@ -1,9 +1,9 @@
 # OpenBSD makefile for:	ssh
-# Version required:     1.2.21
+# Version required:     1.2.22
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.13 1998/02/05 19:56:30 marc Exp $
+# $OpenBSD: Makefile,v 1.14 1998/02/23 19:50:15 don Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -74,30 +74,30 @@ pre-patch:
 
 fetch-depends:
 .if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
-	@echo
-	@echo You must set variable USA_RESIDENT to YES if you are a USA
-	@echo resident or NO otherwise.
-	@echo If you are a USA resident you have to get the RSAREF2
-	@echo library \(RSA Inc. holds a patent on RSA and public key
-	@echo cypto in general - using RSA implementations other than
-	@echo RSAREF will violate the US patent law\)
-	@echo and extract it to ${WRKSRC}.
-	@false
+	@${ECHO}
+	@${ECHO} You must set variable USA_RESIDENT to YES if you are a USA
+	@${ECHO} resident or NO otherwise.
+	@${ECHO} If you are a USA resident you have to get the RSAREF2
+	@${ECHO} library \(RSA Inc. holds a patent on RSA and public key
+	@${ECHO} cypto in general - using RSA implementations other than
+	@${ECHO} RSAREF will violate the US patent law\)
+	@${ECHO} and extract it to ${WRKSRC}.
+	@${FALSE}
 .endif
 
 post-extract:
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-	@mv ${WRKDIR}/rsaref2 ${WRKSRC}/rsaref2
+	@${MV} ${WRKDIR}/rsaref2 ${WRKSRC}/rsaref2
 .endif
 
 post-install:
 	@if [ ! -f ${ETCDIR}/ssh_host_key ]; then \
-		echo "Generating a secret host key..."; \
+		${ECHO} "Generating a secret host key..."; \
 		${PREFIX}/bin/ssh-keygen -f ${ETCDIR}/ssh_host_key -N ""; \
 	fi
 .if !defined(NOMANCOMPRESS)
-	rm -f ${PREFIX}/man/man1/slogin.1
-	ln -sf ssh.1 ${PREFIX}/man/man1/slogin.1
+	${RM} -f ${PREFIX}/man/man1/slogin.1
+	${LN} -sf ssh.1 ${PREFIX}/man/man1/slogin.1
 .endif
 
 .include <bsd.port.mk>
@@ -113,12 +113,15 @@ CONFIGURE_ENV+= PERL=/replace_it_with_PERL_path
 .endif
 
 # Include tcp-wrapper support (call remote identd)
-.if defined(USE_TCPWRAP) && ${USE_TCPWRAP} == YES || \
-    exists(${PREFIX}/lib/libwrap.a) && \
-    (!defined(USE_TCPWRAP) || ${USE_TCPWRAP} != NO)
+.if (defined(USE_TCPWRAP) && ${USE_TCPWRAP} == YES) || \
+    (exists(${PREFIX}/lib/libwrap.a) && \
+    (!defined(USE_TCPWRAP) || ${USE_TCPWRAP} != NO)) && \
+    ${OPSYS} != OpenBSD
 CONFIGURE_ENV+= LDFLAGS=-L${PREFIX}/lib CFLAGS="${CFLAGS} -I${PREFIX}/include"
 CONFIGURE_ARGS+= --with-libwrap
 LIB_DEPENDS+=   wrap\\.7\\.:${PORTSDIR}/security/tcp_wrapper
+.elif ${OPSYS} == OpenBSD && (!defined(USE_TCPWRAP) ||  ${USE_TCPWRAP} != NO)
+CONFIGURE_ARGS+= --with-libwrap
 .endif
 
 # Include SOCKS firewall support
