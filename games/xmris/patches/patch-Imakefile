@@ -1,6 +1,6 @@
-$OpenBSD: patch-Imakefile,v 1.1 2000/11/01 16:25:30 espie Exp $
---- Imakefile.orig	Fri Dec 22 13:05:52 1995
-+++ Imakefile	Wed Nov  1 17:11:54 2000
+$OpenBSD: patch-Imakefile,v 1.2 2004/01/09 21:10:34 sturm Exp $
+--- Imakefile.orig	1995-12-22 13:05:52.000000000 +0100
++++ Imakefile	2004-01-09 22:05:46.000000000 +0100
 @@ -122,7 +122,7 @@ FONT = thefont
  
  #ifndef InstallDefaultGardens
@@ -23,6 +23,28 @@ $OpenBSD: patch-Imakefile,v 1.1 2000/11/01 16:25:30 espie Exp $
  
  #endif /* transputerbuild */
  
+@@ -345,16 +345,16 @@ Xmris.ad : Xmris-ad.src
+ 
+ XCOMM score directory install
+ install ::
+-	MakeDir($(SCORE))
++	MakeDir($(DESTDIR)$(SCORE))
+ 	@#not all $(INSTALL) have a -d flag, have to do it explicitly
+-	@echo installing $(INSTSCOREFLAGS) $(SCORE)
++	@echo installing $(INSTSCOREFLAGS) $(DESTDIR)$(SCORE)
+ 	@set -- $(INSTSCOREFLAGS) ; \
+ 	while [ $$# -ne 0 ] ; \
+ 	do \
+ 	case "$$1" in \
+-	"-o") shift ; chown $$1 $(SCORE) ; echo owner is $$1 ;; \
+-	"-m") shift ; chmod $$1 $(SCORE) ;; \
+-	"-g") shift ; chgrp $$1 $(SCORE) ; echo group is $$1 ;; \
++	"-o") shift ; chown $$1 $(DESTDIR)$(SCORE) ; echo owner is $$1 ;; \
++	"-m") shift ; chmod $$1 $(DESTDIR)$(SCORE) ;; \
++	"-g") shift ; chgrp $$1 $(DESTDIR)$(SCORE) ; echo group is $$1 ;; \
+ 	*) echo unknown option '$$1' ;; \
+ 	esac ; \
+ 	shift ; \
 @@ -363,11 +363,11 @@ install ::
  #ifdef InstallDefaultGardens
  XCOMM install default gardens
