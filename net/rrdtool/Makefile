@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2004/06/08 20:21:24 danh Exp $
+# $OpenBSD: Makefile,v 1.26 2004/06/22 22:00:03 sturm Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -40,15 +40,12 @@ LIB_DEPENDS+=	tcl84::lang/tcl/8.4
 USE_GMAKE=	Yes
 CONFIGURE_ARGS+= --with-tcllib="${LOCALBASE}/lib/tcl8.4"
 CFLAGS+=	-I${LOCALBASE}/include/tcl8.4
+INSTALL_TARGET=	install site-tcl-install
+FAKE_FLAGS+=	MACHINE_ARCH="${MACHINE_ARCH}"
 .else
 CONFIGURE_ARGS+= --without-tcllib
 .endif
 
 CFLAGS+=	-I${LOCALBASE}/include/libpng
-
-.if ${FLAVOR:L:Mtcl}
-post-install:
-	cd ${WRKSRC} && ${MAKE} site-tcl-install
-.endif
 
 .include <bsd.port.mk>
