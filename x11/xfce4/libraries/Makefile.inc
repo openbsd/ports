@@ -1,4 +1,4 @@
-V=	4.0.3
+V?=	4.0.3
 
 CATEGORIES?=	x11 x11/xfce4 x11/xfce4/libraries
 
