@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.197 2004/10/15 18:52:58 fgsch Exp $
+# $OpenBSD: Makefile,v 1.198 2004/10/17 07:38:14 sturm Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -173,6 +173,7 @@
      SUBDIR += wmctrl
      SUBDIR += wmdate
      SUBDIR += wmfishtime
+     SUBDIR += wmi
      SUBDIR += wminfo
      SUBDIR += wmitime
      SUBDIR += wmmenu
