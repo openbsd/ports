@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/20 11:43:52 couderc Exp $
+# $OpenBSD: Makefile,v 1.3 2002/04/06 23:54:48 naddy Exp $
 
 COMMENT=		"Fast and light gtk-based web browser"
 
@@ -6,7 +6,7 @@ DISTNAME=		dillo-0.6.4
 CATEGORIES=     	www
 NEED_VERSION=		1.508
 
-HOMEPAGE=		http://dillo.sourceforge.net
+HOMEPAGE=		http://dillo.cipsga.org.br/
 
 MAINTAINER=		Damien Couderc <couderc.damien@wanadoo.fr>
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=		${HOMEPAGE}download/
 MASTER_SITE_SUBDIR=	dillo
 
 LIB_DEPENDS=    jpeg.62::graphics/jpeg \
