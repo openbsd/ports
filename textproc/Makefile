@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2001/05/23 16:42:12 lebel Exp $
+# $OpenBSD: Makefile,v 1.59 2001/05/23 21:26:57 lebel Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
      SUBDIR += TclXML
      SUBDIR += agrep
      SUBDIR += antiword
+     SUBDIR += aspell
      SUBDIR += c2html
      SUBDIR += catdoc
      SUBDIR += clo++
