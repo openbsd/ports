@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/11/25 05:13:02 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/01/16 22:53:44 wilfried Exp $
+bin/firebird
 bin/mozilla-firebird
 mozilla-firebird/MozillaFirebird-bin
 mozilla-firebird/chrome/US.jar

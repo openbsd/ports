@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2004/01/01 02:16:47 jolan Exp $
+# $OpenBSD: Makefile,v 1.26 2004/01/16 22:53:44 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64
 
@@ -81,6 +81,7 @@ do-install:
 	@cd ${MOB} && ${TAR} -chf - *.so.1.0 | \
 		${TAR} -xf - -C ${MOZ}
 	${INSTALL_SCRIPT} ${MOB}/MozillaFirebird ${PREFIX}/bin/mozilla-firebird
+	ln ${PREFIX}/bin/mozilla-firebird ${PREFIX}/bin/firebird
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOB}/mozilla-config ${MOZ}
 	${INSTALL_PROGRAM} ${MOB}/regchrome ${MOB}/regxpcom ${MOB}/MozillaFirebird-bin ${MOZ}
 
