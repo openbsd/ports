@@ -1,19 +1,55 @@
-*** configure.orig	Sat Sep 27 15:04:16 1997
---- configure	Sat Sep 27 15:04:23 1997
+*** Makefile.orig	Mon Jan 12 11:48:03 1998
+--- Makefile	Mon Jan 12 11:52:46 1998
 ***************
-*** 2511,2517 ****
-  	CFLAGS="$CFLAGS -DNEXT -DXMOSAIC_HACK"
-  	;;
-  openbsd*)
-! 	LIBS="$LIBS -lcompat"
-  	;;
-  osf*)
-  	# Increase the maximum size of functions that will be optimized.
---- 2511,2517 ----
-  	CFLAGS="$CFLAGS -DNEXT -DXMOSAIC_HACK"
-  	;;
-  openbsd*)
-! 	LIBS="$LIBS -lcompat -lcurses -ltermlib"
-  	;;
-  osf*)
-  	# Increase the maximum size of functions that will be optimized.
+*** 211,216 ****
+--- 211,217 ----
+  	@echo "news-slang -- for SONY NEWS-OS 4.2.1R with color slang package"
+  	@echo "next       -- for NeXT OS"
+  	@echo "next-ncurses  -- for NeXT OS using ncurses package"
++ 	@echo "openbsd    -- for OpenBSD"
+  	@echo "osf        -- for Alpha OSF/1"
+  	@echo "osf-slang  -- for Alpha OSF/1 with color slang package"
+  	@echo "ptx        -- for Sequent's DYNIX/ptx, version 4, (current version)"
+***************
+*** 987,992 ****
+--- 988,1002 ----
+  		LIBS="-L/usr/local/lib -lncurses \
+  		$(WAISLIB) $(SOCKSLIB) $(SITE_LIBS)" \
+  		WWWLIB="../WWW/Library/next/libwww.a"
++ 
++ openbsd:
++ 	cd WWW/Library/netbsd; $(MAKE) LYFLAGS="$(SITE_LYDEFS)"
++ 	cd src; $(MAKE) all CC="cc" MCFLAGS="-O -DFANCY_CURSES -DNCURSES \
++ 		-DUNIX -DNO_CUSERID -I../$(WWWINC) $(SITE_DEFS) \
++ 		-I/usr/include/ncurses" \
++ 		LIBS="-lcurses -ltermlib -lcompat \
++ 		$(WAISLIB) $(SOCKSLIB) $(SITE_LIBS)" \
++ 		WWWLIB="../WWW/Library/netbsd/libwww.a"
+  
+  # isc - Interactive Unix for i386 and i486 machines
+  # According to Robert Salter (salter1@mster.nsbf.nasa.gov),
+*** WWW/Library/netbsd/Makefile.orig	Mon Jan 12 11:55:09 1998
+--- WWW/Library/netbsd/Makefile	Mon Jan 12 11:58:21 1998
+***************
+*** 2,11 ****
+  #
+  
+  # For W3 distribution, machine type for subdirectories
+! WWW_MACH = netbsd
+  
+  # The ASIS repository's name for the machine we are on
+! ASIS_MACH = i386/NetBSD
+  
+  
+  CFLAGS = -O -DUSE_DIRENT
+--- 2,11 ----
+  #
+  
+  # For W3 distribution, machine type for subdirectories
+! WWW_MACH = $(OPSYS)
+  
+  # The ASIS repository's name for the machine we are on
+! ASIS_MACH = $(ARCH)/$(OPSYS)
+  
+  
+  CFLAGS = -O -DUSE_DIRENT
