@@ -1,0 +1,11 @@
+$OpenBSD: patch-POW_c,v 1.1 2002/06/16 19:59:36 pvalchev Exp $
+--- POW.c.orig	Sun Jun 16 13:58:01 2002
++++ POW.c	Sun Jun 16 13:58:21 2002
+@@ -46,6 +46,7 @@
+ #include <openssl/err.h>
+ #include <openssl/md5.h>
+ #include <openssl/md2.h>
++#include <openssl/ripemd.h>
+ #include <openssl/sha.h>
+ #include <openssl/hmac.h>
+ 
