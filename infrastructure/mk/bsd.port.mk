@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.508 2002/03/04 15:33:16 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.509 2002/03/10 06:02:16 brad Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1757,7 +1757,7 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 	echo "*** for the 'limit' or 'ulimit' command. You may also want to"; \
 	echo "*** see the login.conf(5) manual page."; \
 	echo "*** Some examples are: "; \
-	echo "*** 	csh(1): limit datasize <kbytes of memory>"; \
+	echo "*** 	csh(1) and tcsh(1): limit datasize <kbytes of memory>"; \
 	echo "***	ksh(1), zsh(1) and bash(1): ulimit -d <kbytes of memory>"; \
 	echo ""; 
 .endif
