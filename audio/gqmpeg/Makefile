@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2001/11/18 19:07:51 rohee Exp $
+# $OpenBSD: Makefile,v 1.25 2001/12/31 09:44:45 espie Exp $
 
 COMMENT=		"mpg123 front-end with skin support"
 
 DISTNAME=		gqmpeg-0.11.0		
 CATEGORIES=		audio
-NEED_VERSION=		1.497
+NEED_VERSION=		1.504
 
 HOMEPAGE=		http://gqmpeg.sourceforge.net
 
@@ -25,6 +25,7 @@ RUN_DEPENDS=		::audio/mpg123
 LIB_DEPENDS=		gdk_pixbuf.2::graphics/gdk-pixbuf
 
 CONFIGURE_STYLE=	autoconf
+AUTOCONF_NEW=		Yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

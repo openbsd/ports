@@ -1,6 +1,7 @@
---- configure.in.orig	Tue Nov  8 08:30:51 1994
-+++ configure.in	Tue Jun 22 08:44:36 1999
-@@ -11,8 +11,6 @@
+$OpenBSD: patch-configure_in,v 1.1 2001/12/31 09:44:45 espie Exp $
+--- configure.in.orig	Tue Nov  8 14:30:51 1994
++++ configure.in	Mon Dec 31 10:31:55 2001
+@@ -11,8 +11,6 @@ hplay=dummy
  dbm=none
  make_dist=/dev/null 
  
@@ -9,7 +10,7 @@
  if test -z "$CC" && test -n "$GCC" ; then
  CC=$GCC
  fi 
-@@ -42,6 +40,7 @@
+@@ -42,6 +40,7 @@ case "$host" in
  *-next-*) hplay=NeXT; AC_CHECK_HEADERS(libc.h) ;;
  *-*-linux*) hplay=linux ;;
  *-*-hpux*)  hplay=hpux ;;
