@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: INSTALL,v 1.5 2001/01/19 03:43:02 kevlo Exp $
+# $OpenBSD: INSTALL,v 1.6 2002/07/22 17:09:16 ish Exp $
 #
 # Pre/port-installation setup of xfstt
 
@@ -22,7 +22,7 @@ if [ -x /usr/local/bin/xfstt ]; then
         echo -n ' xfstt';       /usr/local/bin/xfstt &
 fi
 
-You should also add the following to your FontPath in /etc/XF86Config:
+You should also add the following to your FontPath in /etc/X11/XF86Config:
 
 	FontPath "unix/:7101"
 
