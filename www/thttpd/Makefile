@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2000/11/18 09:20:11 jakob Exp $
+# $OpenBSD: Makefile,v 1.7 2001/04/21 06:50:49 jakob Exp $
 
-DISTNAME=		thttpd-2.20b
-CATEGORIES=     	www
-NEED_VERSION=		1.305
+COMMENT=	tiny/turbo/throttling HTTP server
 
-HOMEPAGE=		http://www.acme.com/software/thttpd/
+DISTNAME=	thttpd-2.21
+CATEGORIES=    	www
+NEED_VERSION=	1.363
 
-MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
+HOMEPAGE=	http://www.acme.com/software/thttpd/
+
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
