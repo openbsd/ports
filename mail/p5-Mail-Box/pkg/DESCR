@@ -1,0 +1,10 @@
+The Mail::Box module is a modern mail-folder manager.
+
+The modules are trying to keep messages stored in the mailbox file(s)
+for as long as possible.  Only if the user of a folder really needs
+the content of a message, that message is read from file and parsed.
+
+Demand- or delayed-parsing of messages is implemented using the
+standard AUTOLOAD mechanism, which means that it is not visible to
+the user of the folder!  This mechanism also reduces the memory
+foot-print of the program enormously.

@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/22 23:21:57 avsm Exp $
+libdata/perl5/site_perl/Mail/Box.pm
+libdata/perl5/site_perl/Mail/Box/Index.pm
+libdata/perl5/site_perl/Mail/Box/Locker.pm
+libdata/perl5/site_perl/Mail/Box/MH.pm
+libdata/perl5/site_perl/Mail/Box/MH/Message.pm
+libdata/perl5/site_perl/Mail/Box/Manager.pm
+libdata/perl5/site_perl/Mail/Box/Mbox.pm
+libdata/perl5/site_perl/Mail/Box/Mbox/Message.pm
+libdata/perl5/site_perl/Mail/Box/Message.pm
+libdata/perl5/site_perl/Mail/Box/Thread.pm
+libdata/perl5/site_perl/Mail/Box/Threads.pm
+libdata/perl5/site_perl/Mail/Box/Tie.pm
+man/man3/Mail::Box.3p
+man/man3/Mail::Box::Index.3p
+man/man3/Mail::Box::Locker.3p
+man/man3/Mail::Box::MH.3p
+man/man3/Mail::Box::MH::Message.3p
+man/man3/Mail::Box::Manager.3p
+man/man3/Mail::Box::Mbox.3p
+man/man3/Mail::Box::Mbox::Message.3p
+man/man3/Mail::Box::Message.3p
+man/man3/Mail::Box::Thread.3p
+man/man3/Mail::Box::Threads.3p
+man/man3/Mail::Box::Tie.3p
+@dirrm libdata/perl5/site_perl/Mail/Box/Mbox
+@dirrm libdata/perl5/site_perl/Mail/Box/MH
+@dirrm libdata/perl5/site_perl/Mail/Box
