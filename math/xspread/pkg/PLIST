@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/08/19 04:41:08 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/11/23 07:25:59 pvalchev Exp $
 bin/xspread
 bin/pxspread
-share/xspread/README
-share/xspread/notes
 share/xspread/doc/Sample_Run
 share/xspread/doc/final_rpt
 share/xspread/doc/last_xspread
@@ -27,17 +25,17 @@ share/xspread/documents/report.dvi
 share/xspread/documents/report.log
 share/xspread/documents/report.ps
 share/xspread/documents/report.tex
-share/xspread/sample_files/demo_dates
-share/xspread/sample_files/demo_func
-share/xspread/sample_files/demo_math
-share/xspread/sample_files/demo_matrix
-share/xspread/sample_files/demo_strval
-share/xspread/sample_files/ex1
-share/xspread/sample_files/ex1o
-share/xspread/sample_files/ex2
-share/xspread/sample_files/ex2o
-share/xspread/sample_files/ex3
-share/xspread/sample_files/tutorial
+share/examples/xspread/demo_dates
+share/examples/xspread/demo_func
+share/examples/xspread/demo_math
+share/examples/xspread/demo_matrix
+share/examples/xspread/demo_strval
+share/examples/xspread/ex1
+share/examples/xspread/ex1o
+share/examples/xspread/ex2
+share/examples/xspread/ex2o
+share/examples/xspread/ex3
+share/examples/xspread/tutorial
 share/xspread/tests/Makefile
 share/xspread/tests/READ_ME
 share/xspread/tests/copy.cmp
@@ -61,8 +59,8 @@ share/xspread/tests/tester.sh
 share/xspread/tests/txt.sc
 man/man1/xspread.1
 man/man1/pxspread.1
+@dirrm share/examples/xspread
 @dirrm share/xspread/tests
-@dirrm share/xspread/sample_files
 @dirrm share/xspread/documents
 @dirrm share/xspread/doc
 @dirrm share/xspread

@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 2001/10/28 13:05:48 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.10 2002/11/23 07:25:59 pvalchev Exp $
 
 COMMENT=	"spreadsheet program under X11"
 
 DISTNAME=	xspread3.1.1c
 PKGNAME=	xspread-3.1.1c
 CATEGORIES=	math
-NEED_VERSION=	1.402
 
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://linux.tucows.com/files/x11/office/
+MASTER_SITES=	${MASTER_SITE_OPENBSD}
 
 USE_X11=	Yes
 CONFIGURE_STYLE=	gnu old
@@ -25,13 +24,14 @@ INSTALL_TARGET= install install.man
 post-install:
 	@find ${WRKSRC} -name "*.tmp" -delete || /usr/bin/true
 	${INSTALL_DATA_DIR} \
-		${PREFIX}/share/xspread/{doc,documents,sample_files,tests}
+		${PREFIX}/share/xspread/{doc,documents,tests}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xspread
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/xspread
 	${INSTALL_DATA} ${WRKSRC}/x/notes ${PREFIX}/share/xspread
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/xspread/doc
 	${INSTALL_DATA} ${WRKSRC}/documents/* ${PREFIX}/share/xspread/documents
 	${INSTALL_DATA} ${WRKSRC}/sample_files/* \
-		${PREFIX}/share/xspread/sample_files
+		${PREFIX}/share/examples/xspread
 	${INSTALL_DATA} ${WRKSRC}/tests/* ${PREFIX}/share/xspread/tests
 
 .include <bsd.port.mk>

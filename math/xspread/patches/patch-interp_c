@@ -1,6 +1,7 @@
---- interp.c.orig	Fri Aug 18 07:06:29 2000
-+++ interp.c	Fri Aug 18 07:06:40 2000
-@@ -516,7 +516,7 @@
+$OpenBSD: patch-interp_c,v 1.1 2002/11/23 07:25:59 pvalchev Exp $
+--- interp.c.orig	Tue Nov  7 03:17:26 1995
++++ interp.c	Fri Nov 22 15:31:18 2002
+@@ -516,7 +516,7 @@ int mo, day, yr;
      mdays[1] = 28 + (yr%4 == 0);
  
      if (mo < 1 || mo > 12 || day < 1 || day > mdays[--mo] ||

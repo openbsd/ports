@@ -1,6 +1,7 @@
---- Makefile.in.orig	Fri Aug 18 07:18:30 2000
-+++ Makefile.in	Fri Aug 18 07:50:48 2000
-@@ -19,11 +19,11 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2002/11/23 07:25:59 pvalchev Exp $
+--- Makefile.in.orig	Tue Nov  7 03:17:18 1995
++++ Makefile.in	Fri Nov 22 15:31:18 2002
+@@ -19,11 +19,11 @@ CC	= @CC@
  CFLAGS	= @CFLAGS@
  DEFS	= @DEFS@
  LIBS	= @LIBS@
@@ -14,7 +15,7 @@
  INSTALL_PROGRAM	= $(INSTALL)
  INSTALL_DATA	= $(INSTALL)
  INSTALLFLAGS	= -c
-@@ -81,10 +81,10 @@
+@@ -81,10 +81,10 @@ $(PROGRAM): $(OBJS) $(DEPLIBS) gram.o le
  	$(CCLINK) -o $@ $(LDOPTIONS) $(OBJS) gram.o lex.o $(LOCAL_LIBRARIES) $(LIBS) $(EXTRA_LOAD_FLAGS)
  
  install:: xspread
@@ -27,7 +28,7 @@
  
  uninstall::
  	-$(RM) $(bindir)/xspread
-@@ -92,8 +92,8 @@
+@@ -92,8 +92,8 @@ uninstall::
  
  
  install.man:: xspread.man
