@@ -3,7 +3,7 @@
 # Date created:         17 March 1998
 # Whom:                 mickey@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/03/17 20:41:43 mickey Exp $
+# $OpenBSD: Makefile,v 1.2 1998/08/10 18:19:16 marc Exp $
 #
 
 DISTNAME=	psutils-p17
@@ -16,11 +16,6 @@ MAINTAINER=	ports@openbsd.org
 MANUAL_PACKAGE_BUILD=	PAPERSIZE has to be set to letter a4
 WRKSRC=		${WRKDIR}/psutils
 MAKE_FLAGS?=	PAPER=${PAPERSIZE} -f
-MAN1=		psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1 psresize.1 \
-		getafm.1 fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1 \
-		fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1 fixwwps.1 \
-		extractres.1 includeres.1 fixscribeps.1 psmerge.1
-
 
 ##package::	letter  a4
 
