@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/05 17:03:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/06 13:50:21 danh Exp $
 
 COMMENT=	"web-based java ssh client"
 
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 PREFIX?=	/var/www
 
-NO_CONFIGURE=	Yes
 NO_BUILD=	Yes
 WRKDIST=	${WRKDIR}
 
