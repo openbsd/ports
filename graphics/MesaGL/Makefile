@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/04/14 12:29:12 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/06/11 13:33:27 brad Exp $
 # $FreeBSD: Makefile,v 1.30 1998/11/11 05:37:18 asami Exp $
 
 DISTNAME=       MesaLib-3.0
@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://iris.ssec.wisc.edu/pub/Mesa/ \
 		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/ \
 		ftp://ftp.mesa3d.org/mesa/
 
-DISTFILES=     ${DISTNAME}${EXTRACT_SUFX} MesaDemos-3.0.tar.gz
+DISTFILES=     ${DISTNAME}.tar.gz MesaDemos-3.0.tar.gz
 
 NEEDED_VERSION=	1.64
 
@@ -30,15 +30,15 @@ do-install:
 	${LN} -fs libMesaGLU.a ${PREFIX}/lib/libGLU.a
 	${MKDIR} ${PREFIX}/include/GL
 	${INSTALL_DATA} ${WRKSRC}/include/GL/* ${PREFIX}/include/GL
-	if [ -f ${WRKSRC}/lib/libMesaGL.so.${SHLIB_VERSION} ]; then \
+	@if [ -f ${WRKSRC}/lib/libMesaGL.so.${SHLIB_VERSION} ]; then \
 	 ${INSTALL_DATA} ${WRKSRC}/lib/libMesaGL.so.${SHLIB_VERSION} ${PREFIX}/lib; \
 	 ${LN} -fs libMesaGL.so.${SHLIB_VERSION} ${PREFIX}/lib/libGL.so.${SHLIB_VERSION}; \
 	fi
-	if [ -f ${WRKSRC}/lib/libMesaGLU.so.${SHLIB_VERSION} ]; then \
+	@if [ -f ${WRKSRC}/lib/libMesaGLU.so.${SHLIB_VERSION} ]; then \
 	 ${INSTALL_DATA} ${WRKSRC}/lib/libMesaGLU.so.${SHLIB_VERSION} ${PREFIX}/lib; \
 	 ${LN} -fs libMesaGLU.so.${SHLIB_VERSION} ${PREFIX}/lib/libGLU.so.${SHLIB_VERSION}; \
 	fi
-	if [ -f ${WRKSRC}/lib/libglut.so.${GLUT_VERSION} ]; then \
+	@if [ -f ${WRKSRC}/lib/libglut.so.${GLUT_VERSION} ]; then \
 	 ${INSTALL_DATA} ${WRKSRC}/lib/libglut.so.${GLUT_VERSION} ${PREFIX}/lib; \
 	fi
 	${LDCONFIG} -m ${PREFIX}/lib
