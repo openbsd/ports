@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1998/11/11 08:01:11 form Exp $
+# $OpenBSD: Makefile,v 1.6 1998/12/23 23:16:17 downsj Exp $
 # NetBSD: Makefile,v 1.10 1998/04/24 09:07:55 agc Exp
 # FreeBSD Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp
 #
@@ -34,7 +34,7 @@ post-install:
 # local libraries...
 	@${MKDIR} ${PREFIX}/usr/local/lib
 	${PREFIX}/sbin/ldconfig || /usr/bin/true
-	@${RMDIR} ${PREFIX}/usr/local/lib ${PREFIX}/usr/local
+	-@${RMDIR} ${PREFIX}/usr/local/lib ${PREFIX}/usr/local
 	${MKDIR} ${PREFIX}/usr/lib/zoneinfo
 	${LN} -sf /etc/localtime ${PREFIX}/usr/lib/zoneinfo/localtime
 	@${ECHO} "***"
