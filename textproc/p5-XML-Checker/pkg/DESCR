@@ -1,0 +1,8 @@
+XML::Checker is a different ways to validating XML documents, it
+provides several classes :
+
+XML::Checker         - contains the XML::Checker class that is used
+                       by the others
+XML::Checker::Parser - an XML::Parser that validates at parse time
+XML::DOM::ValParser  - an XML::DOM::Parser that validates at parse
+                       time
