@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/09/25 07:40:11 camield Exp $
+# $OpenBSD: Makefile,v 1.14 2001/02/08 20:06:23 espie Exp $
 
 DISTNAME=	qmail-1.03
 HOMEPAGE=	http://cr.yp.to/qmail.html
@@ -39,7 +39,7 @@ SETUPSCRIPTS=	${WRKSRC}/config	${WRKSRC}/config-fast
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
 	@echo ${PREFIX} > ${WRKSRC}/conf-qmail
-	@PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${DISTNAME} PRE-INSTALL
+	@PREFIX=${PREFIX} ${SUDO} ${SH} ${PKGDIR}/INSTALL ${DISTNAME} PRE-INSTALL
 
 pre-install:
 	# preserve installer with correct prefix so it can be used by the
