@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/02/16 18:28:50 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/04/04 14:35:00 naddy Exp $
 
     SUBDIR += bochs
     SUBDIR += bochs:debug
@@ -10,5 +10,6 @@
     SUBDIR += wine
     SUBDIR += x48
     SUBDIR += xcopilot
+    SUBDIR += xmame
 
 .include <bsd.port.subdir.mk>
