@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/05/15 20:31:49 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/17 00:27:24 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 
@@ -14,7 +14,9 @@ MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unreleased/unix/ \
 		ftp://ftp.berlin.de.vim.org/misc/editors/vim/unreleased/unix/ \
 		ftp://ftp.is.co.za/applications/editors/vim/unreleased/unix/  \
 		ftp://ftp.progsoc.uts.edu.au/pub/vim/unreleased/unix/ 
-DISTFILES=	${DISTNAME}-src.tar.gz ${DISTNAME}-rt.tar.gz
+DISTFILES=	${DISTNAME}-src.tar.bz2 ${DISTNAME}-rt.tar.bz2
+
+USE_BZIP2=	Yes
 
 HOMEPAGE=	http://www.vim.org/
 
