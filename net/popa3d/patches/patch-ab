@@ -1,0 +1,17 @@
+--- pop_root.c.orig	Thu Mar 25 05:25:55 1999
++++ pop_root.c	Fri Sep 10 21:20:11 1999
+@@ -140,8 +140,13 @@
+ 	    *pw->pw_passwd == '*' || *pw->pw_passwd == '!')
+ 		crypt(pass, AUTH_DUMMY_SALT);
+ 	else
+-	if (!strcmp(crypt(pass, pw->pw_passwd), pw->pw_passwd))
++	if (!strcmp(crypt(pass, pw->pw_passwd), pw->pw_passwd)) {
++#if defined(__OpenBSD__)
++		/* zero out the password, obsd getpwnam cleaned up the rest */
++		bzero(pw->pw_passwd, strlen(pw->pw_passwd));
++#endif
+ 		return pw;
++	}
+ 
+ 	return NULL;
+ }

@@ -1,0 +1,3 @@
+# $OpenBSD: DEINSTALL,v 1.1.1.1 1999/09/10 22:07:35 brad Exp $
+
+/bin/echo Remember to remove popa3d from /etc/inetd.conf and restart inetd.

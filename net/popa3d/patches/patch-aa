@@ -1,0 +1,34 @@
+--- params.h.orig	Thu Mar 25 05:25:55 1999
++++ params.h	Fri Sep 10 21:11:11 1999
+@@ -33,7 +33,7 @@
+  * An unprivileged dummy user to run as before authentication. The user
+  * and its UID must not be used for any other purpose.
+  */
+-#define POP_USER			"popa3d"
++#define POP_USER			"nobody"
+ 
+ /*
+  * Sessions will be closed if idle for longer than POP_TIMEOUT seconds.
+@@ -58,19 +58,19 @@
+ /*
+  * Do we have shadow passwords? Note: password aging is not supported.
+  */
+-#define AUTH_SHADOW			1
++#define AUTH_SHADOW			0
+ 
+ /*
+  * A salt used to waste some CPU time on dummy crypt(3) calls and make
+  * it harder to check for valid usernames. Adjust it for your crypt(3).
+  */
+-#define AUTH_DUMMY_SALT			"xx"
++#define AUTH_DUMMY_SALT			"$2a$07$DummyBlowfishSalt"
+ 
+ /*
+  * Your mail spool directory. Note: only local (non-NFS) mode 755 mail
+  * spools are currently supported.
+  */
+-#define MAIL_SPOOL_PATH			"/var/spool/mail"
++#define MAIL_SPOOL_PATH			"/var/mail"
+ 
+ /*
+  * How do we talk to syslogd? These should be fine for most systems.

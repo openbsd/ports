@@ -1,0 +1,13 @@
+# $OpenBSD: INSTALL,v 1.1.1.1 1999/09/10 22:07:35 brad Exp $
+
+PATH=/bin
+
+if [ "X$2" = XPOST-INSTALL ]; then
+    echo
+    echo "To activate popa3d, add the following line to /etc/inetd.conf:"
+    echo "pop3\t\tstream\ttcp\tnowait\troot\t/usr/local/libexec/popa3d popa3d"
+    echo
+    echo "Then let inetd reread its configuration with:"
+    echo "kill -HUP \`cat /var/run/inetd.pid\`"
+    echo
+fi
