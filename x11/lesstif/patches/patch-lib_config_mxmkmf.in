@@ -1,8 +1,0 @@
---- lib/config/mxmkmf.in.orig	Thu Sep  2 19:51:36 1999
-+++ lib/config/mxmkmf.in	Sun Sep 12 18:38:58 1999
-@@ -7,4 +7,4 @@
- #
- prefix=@prefix@
- exec_prefix=@exec_prefix@
--imake -DUseInstalled -I@libdir@/X11/config -I@x_libraries@/X11/config
-+imake -DUseInstalled -I@prefix@/lib/X11/lesstif -I@x_libraries@/X11/config

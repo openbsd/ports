@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2000/07/08 14:11:20 matt Exp $
+@comment $OpenBSD: PLIST,v 1.22 2000/09/11 07:23:19 brad Exp $
 @pkgcfl openmotif-*
 LessTif/Motif1.2/include/Mrm/MrmAppl.h
 LessTif/Motif1.2/include/Mrm/MrmDecls.h
@@ -78,8 +78,8 @@ LessTif/Motif1.2/include/Xm/PushBP.h
 LessTif/Motif1.2/include/Xm/RCUtilsP.h
 LessTif/Motif1.2/include/Xm/RepType.h
 LessTif/Motif1.2/include/Xm/RowColumn.h
-LessTif/Motif1.2/include/Xm/SashP.h
 LessTif/Motif1.2/include/Xm/RowColumnP.h
+LessTif/Motif1.2/include/Xm/SashP.h
 LessTif/Motif1.2/include/Xm/Scale.h
 LessTif/Motif1.2/include/Xm/ScaleP.h
 LessTif/Motif1.2/include/Xm/Screen.h
@@ -123,26 +123,26 @@ LessTif/Motif1.2/include/Xm/XmAll.h
 LessTif/Motif1.2/include/Xm/XmP.h
 LessTif/Motif1.2/include/Xm/XmStrDefs.h
 LessTif/Motif1.2/include/Xm/XmosP.h
-LessTif/Motif1.2/lib/libXm.a
-LessTif/Motif1.2/lib/libXm.la
 LessTif/Motif1.2/lib/libMrm.a
 LessTif/Motif1.2/lib/libMrm.la
-bin/mxmkmf
+LessTif/Motif1.2/lib/libXm.a
+LessTif/Motif1.2/lib/libXm.la
 bin/mwm
+bin/mxmkmf
 bin/uil
 bin/xmbind
-include/Xm
 include/Mrm
-lib/X11/lesstif/Imake.tmpl
-lib/X11/lesstif/Motif.rules
-lib/X11/lesstif/Motif.tmpl
+include/Xm
+lib/X11/config/LessTif.rules
+lib/X11/config/LessTif.tmpl
+lib/X11/config/host.def
 lib/X11/mwm/README
 lib/X11/mwm/alt.map
 lib/X11/mwm/system.mwmrc
-lib/libXm.a
-lib/libXm.la
 lib/libMrm.a
 lib/libMrm.la
+lib/libXm.a
+lib/libXm.la
 %%SHARED%%
 man/man1/lesstif.1
 man/man1/mwm.1
@@ -201,21 +201,22 @@ man/man3/XmText.3
 man/man3/XmTextField.3
 man/man3/XmToggleButton.3
 man/man3/XmToggleButtonGadget.3
-man/man3/XmWorld.3
 man/man3/XmVendorShell.3
+man/man3/XmWorld.3
 man/man5/mwmrc.5
 share/LessTif/AUTHORS
 share/LessTif/BUG-REPORTING
 share/LessTif/COPYING
 share/LessTif/COPYING.LIB
 share/LessTif/CREDITS
-share/LessTif/Install
 share/LessTif/FAQ
+share/LessTif/Install
 share/LessTif/KNOWN_BUGS
 share/LessTif/NEWS
 share/LessTif/README
 share/LessTif/RELEASE-POLICY
 share/LessTif/TODO
+share/LessTif/release-notes.txt
 share/LessTif/doc/html/images/hungry.png
 share/LessTif/doc/html/images/lesstif-realsmall.png
 share/LessTif/doc/html/images/lesstif-small.png
@@ -223,6 +224,10 @@ share/LessTif/doc/html/images/lesstif.jpg
 share/LessTif/doc/html/images/lesstif.png
 share/LessTif/doc/html/images/ltsunlogo.jpg
 share/LessTif/doc/html/images/ltsunlogo.png
+share/LessTif/doc/html/images/vh32.jpg
+share/LessTif/doc/html/images/vh32.png
+share/LessTif/doc/html/images/vh40.jpg
+share/LessTif/doc/html/images/vh40.png
 share/LessTif/doc/html/COPYING.LIB.html
 share/LessTif/doc/html/FAQ.html
 share/LessTif/doc/html/INSTALL.html
@@ -245,6 +250,7 @@ share/LessTif/doc/html/core.html
 share/LessTif/doc/html/current.html
 share/LessTif/doc/html/cvs.html
 share/LessTif/doc/html/download.html
+share/LessTif/doc/html/feedback.html
 share/LessTif/doc/html/help.html
 share/LessTif/doc/html/index.html
 share/LessTif/doc/html/known.html
@@ -252,6 +258,7 @@ share/LessTif/doc/html/links.html
 share/LessTif/doc/html/lists.html
 share/LessTif/doc/html/mirrors.html
 share/LessTif/doc/html/platforms.html
+share/LessTif/doc/html/release-notes.html
 share/LessTif/doc/html/release-policy.html
 share/LessTif/doc/html/test_policy.html
 share/LessTif/doc/html/test_summary.html
@@ -259,7 +266,6 @@ share/LessTif/doc/html/testers.html
 share/LessTif/doc/html/thread.html
 share/LessTif/doc/html/versions.html
 share/LessTif/doc/html/web_button.html
-share/LessTif/doc/html/release-notes.html
 @dirrm LessTif/Motif1.2/include/Mrm
 @dirrm LessTif/Motif1.2/include/Xm
 @dirrm LessTif/Motif1.2/include
