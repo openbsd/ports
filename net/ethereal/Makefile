@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2002/03/22 13:40:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.61 2002/03/23 01:04:32 jakob Exp $
 
 COMMENT=	network protocol analyzer
 
@@ -50,8 +50,9 @@ LIB_DEPENDS+=		snmp::net/ucd-snmp
 CONFIGURE_ARGS+=	--disable-snmp
 .endif
 
-post-patch:
+pre-configure:
 	rm -f ${WRKSRC}/ltconfig ${WRKSRC}/ltmain.sh
-	ln -s ${LOCALBASE}/libtool ${WRKOBJ}/libtool
+	rm -f ${WRKBUILD}/libtool
+	ln -s ${LIBTOOL} ${WRKBUILD}/libtool
 
 .include <bsd.port.mk>
