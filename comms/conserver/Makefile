@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2000/06/16 23:06:03 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/09/15 13:42:00 espie Exp $
 
-DISTNAME=	conserver-5.21-Beta
 PKGNAME=	conserver-5.21
+DISTFILES=	conserver-5.21-Beta.shar.gz
 CATEGORIES=	comms
-NEED_VERSION=	1.191
+NEED_VERSION=	1.330
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -16,10 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.uu.net/vendor/bitsko/config-mgmt/ \
 		ftp://unix.hensa.ac.uk/mirrors/uunet/vendor/bitsko/config-mgmt/
 WRKDIST=	${WRKDIR}
-EXTRACT_SUFX=	.shar.gz
-EXTRACT_CMD=	zcat
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	|sh
+
+EXTRACT_CASES=	*.shar.gz) zcat ${FULLDISTDIR}/$$archive| /bin/sh -;;
 
 # Set this to where you want console(8) to connect to by default
 # or use something like ``make DEFAULTHOST=myserver.mydomain.net''
