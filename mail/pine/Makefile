@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2004/11/28 21:41:31 alek Exp $
+# $OpenBSD: Makefile,v 1.60 2005/01/02 01:05:26 alek Exp $
 
 COMMENT=	"program for Internet E-mail and News"
 COMMENT-pico=	"small text editor"
@@ -11,7 +11,7 @@ PICO_VERSION=	4.8
 PILOT_VERSION=	2.0
 
 DISTNAME=	pine${VERSION}
-PKGNAME=	pine-${VERSION}p0
+PKGNAME=	pine-${VERSION}p1
 PKGNAME-pico=	pico-${PICO_VERSION}
 PKGNAME-pilot=	pilot-${PILOT_VERSION}
 
@@ -26,7 +26,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto ssl termcap termlib
+WANTLIB=		c
 
 NO_REGRESS=	Yes
 VMEM_WARNING=	Yes
@@ -36,6 +36,12 @@ FLAVOR?=
 
 MULTI_PACKAGES=	-pico -pilot
 SUBPACKAGE?=
+
+.if empty(SUBPACKAGE)
+WANTLIB+=	crypto ssl termlib
+.else
+WANTLIB+=	termcap
+.endif
 
 .if ${SUBPACKAGE} == "-pico"
 CATEGORIES=	editors
@@ -48,13 +54,14 @@ PINE_BUILD_FLAGS=	CC="${CC}" EXTRACFLAGS="${CFLAGS}" \
 
 .if ${FLAVOR:L:Mkerberos}
 PINE_BUILD_FLAGS+=	EXTRAAUTHENTICATORS="gss"
+WANTLIB+=		asn1 com_err des gssapi krb5
 .endif
 
 .if ${FLAVOR:L:Mldap}
 PINE_BUILD_FLAGS+=	LDAPLIBS="-L${LOCALBASE}/lib -lldap -llber" \
 			LDAPCFLAGS="-DENABLE_LDAP -I${LOCALBASE}/include"
 .if ${SUBPACKAGE} == ""
-LIB_DEPENDS+=	ldap.2:openldap-client-2.*:databases/openldap
+LIB_DEPENDS+=	lber.2,ldap.2:openldap-client-2.*:databases/openldap
 .endif
 .endif
 
