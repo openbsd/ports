@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.183 2000/02/04 11:15:16 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.184 2000/02/04 12:55:33 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -862,13 +862,14 @@ _CDROM_OVERRIDE=:
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
 PKGNAME?=		${DISTNAME}
 
-_EVERYTHING= ${DISTFILES}
-_DISTFILES=		${DISTFILES:C/:[0-9]$//}
+_EVERYTHING=${DISTFILES}
+_DISTFILES=	${DISTFILES:C/:[0-9]$//}
+ALLFILES=	${_DISTFILES}
 
 .if defined(PATCHFILES)
-_PATCHFILES=	${PATCHFILES:C/:[0-9]$//}
+_PATCHFILES=${PATCHFILES:C/:[0-9]$//}
 _EVERYTHING+=${PATCHFILES}
-ALLFILES+= ${_PATCHFILES}
+ALLFILES+=	${_PATCHFILES}
 .endif
 
 .if make(makesum) || make(addsum) || make(list-distfiles) || defined(__FETCH_ALL)
