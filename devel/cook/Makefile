@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/06/27 06:14:46 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/22 19:14:13 espie Exp $
 # $FreeBSD: Makefile,v 1.5 2000/05/30 23:19:09 jasone Exp $
 
 DISTNAME=	cook-2.15
@@ -10,7 +10,7 @@ HOMEPAGE=       http://www.canb.auug.org.au/~millerp/cook/
 
 LIB_DEPENDS=    intl::devel/gettext
 
-MAINTAINER=	greg@nest.cx
+MAINTAINER=	Gregory Steuck <greg@nest.cx>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
