@@ -1,0 +1,11 @@
+$OpenBSD: patch-bytesex_h,v 1.1 2004/03/03 09:01:29 pvalchev Exp $
+--- bytesex.h.orig	2001-03-13 06:46:18.000000000 -0700
++++ bytesex.h	2004-03-03 01:56:33.000000000 -0700
+@@ -4,6 +4,7 @@
+ #define S10SH_BYTESEX_H
+ 
+ #if 	defined(__i386__) \
++	|| defined(__amd64__) \
+ 	|| defined(__alpha__) \
+ 	|| (defined(__mips__) && (defined(MIPSEL) || defined (__MIPSEL__)))
+ #define BYTE_ORDER_LITTLE_ENDIAN
