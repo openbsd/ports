@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.682 2005/03/06 12:03:58 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.683 2005/03/09 15:21:07 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1837,15 +1837,15 @@ ${_UPDATE_COOKIE}: ${_PACKAGE_COOKIES}
 .if ${FORCE_UPDATE:L} == "yes"
 	@a=`pkg_info -e ${FULLPKGPATH} 2>/dev/null || true`; \
 	case $$a in \
-		'') ;; \
+		'') ${ECHO_MSG} "Not installed, no update";; \
 		*) ${ECHO_MSG} "Upgrading from $$a"; \
 		   ${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} -F update -F updatedepends -F installed -r ${PKGFILE${SUBPACKAGE}};; \
 	esac
 .else
 	@a=`pkg_info -e ${FULLPKGPATH} 2>/dev/null || true`; \
 	case $$a in \
-		'') ;; \
-		'${FULLPKGNAME${SUBPACKAGE}}') ;; \
+		'') ${ECHO_MSG} "Not installed, no update";; \
+		'${FULLPKGNAME${SUBPACKAGE}}') ${ECHO_MSG} "Already installed, no update";; \
 		*) ${ECHO_MSG} "Upgrading from $$a"; \
 		   ${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} -r ${PKGFILE${SUBPACKAGE}};; \
 	esac
