@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/08/09 11:50:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/24 08:50:39 espie Exp $
+@newgroup _opennap:500
+@newuser _opennap:500:_opennap:daemon:Opennap Account:/nonexistent:/sbin/nologin
 sbin/metaserver
 sbin/opennap
 sbin/setup
@@ -15,6 +17,10 @@ share/examples/opennap/sample.filter
 share/examples/opennap/sample.motd
 share/examples/opennap/sample.servers
 share/examples/opennap/sample.users
-@extraunexec rm -rf ${SYSCONFDIR}/opennap
-@extraunexec userdel _opennap
-@extraunexec groupdel _opennap
+@owner _opennap
+@group _opennap
+@mode 700
+@sample ${SYSCONFDIR}/opennap/
+@mode 600
+@sample ${SYSCONFDIR}/opennap/users
+@extraunexec rm ${SYSCONFDIR}/opennap/*
