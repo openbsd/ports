@@ -1,20 +1,22 @@
-fastforward handles qmail forwarding according to a cdb database. It can
-create forwarding databases from a sendmail-style /etc/aliases or from
-user-oriented virtual-domain tables.
+fastforward handles qmail forwarding according to a cdb database.
+It can create forwarding databases from a sendmail-style /etc/aliases
+or from user-oriented virtual-domain tables.
 
-fastforward supports external mailing lists, stored in a binary format
-for fast access. It has a tool to convert sendmail-style include files
-into binary lists.
+fastforward supports external mailing lists, stored in a binary
+format for fast access. It has a tool to convert sendmail-style
+include files into binary lists.
 
-fastforward is more reliable than sendmail. sendmail can't deal with
-long aliases, or deeply nested aliases, or deeply nested include files;
-fastforward has no limits other than memory. sendmail can produce
-corrupted alias files if the system crashes; fastforward is crashproof.
+fastforward is more reliable than sendmail. sendmail can't deal
+with long aliases, or deeply nested aliases, or deeply nested include
+files; fastforward has no limits other than memory. sendmail can
+produce corrupted alias files if the system crashes; fastforward
+is crashproof.
 
 fastforward's database-building tools are much faster than sendmail's
-newaliases. Even better, fastforward deliveries don't pause while the
-database is being rebuilt.
+newaliases. Even better, fastforward deliveries don't pause while
+the database is being rebuilt.
 
-fastforward does not support insecure sendmail-style program deliveries
-from include files; you can use qmail's secure built-in mechanisms
-instead. fastforward does support program deliveries from /etc/aliases.
+fastforward does not support insecure sendmail-style program
+deliveries from include files; you can use qmail's secure built-in
+mechanisms instead. fastforward does support program deliveries
+from /etc/aliases.
