@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2000/06/20 16:21:00 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/07/04 00:20:51 krw Exp $
 
 DISTNAME=	faces-1.6.1
 CATEGORIES=	mail
-NEED_VERSION=	1.301
+NEED_VERSION=	1.310
 
 MAINTAINER=	angelos@openbsd.org
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/12 18:49:41 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/07/04 00:28:39 krw Exp $
 
 DISTNAME=	rpm-3.0.4
 CATEGORIES=	misc archivers emulators
-NEED_VERSION=	1.301
+NEED_VERSION=	1.310
 
 # GPL
 PERMIT_DISTFILES_FTP=	Yes
