@@ -1,76 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.6 2002/04/06 19:32:40 pvalchev Exp $
---- configure.in.orig	Mon Mar  4 14:50:26 2002
-+++ configure.in	Sat Apr  6 12:25:48 2002
-@@ -15,6 +15,10 @@ AC_ARG_ENABLE( user-plugin-dir,
- [  --disable-user-plugin-dir disable per-user plugin dir],,
- 		enable_user_plugin_dir="yes")
- 
-+AC_ARG_WITH( gl-prefix,
-+[  --with-gl-prefix Prefix where OpenGL is installed],,
-+		gl_prefix="$withval", gl_prefix="$X11BASE")
-+
- AC_ARG_WITH(dev-dsp, 
-   [  --with-dev-dsp=path     Path to OSS DSP data pipe, default is /dev/dsp.],
- 	dev_dsp="$withval", dev_dsp="/dev/dsp")
-@@ -54,7 +58,7 @@ AM_PROG_LIBTOOL
- AC_CHECK_HEADER(pthread.h,,AC_MSG_ERROR([*** POSIX thread support not installed - please install first ***]))
- 
- AM_PATH_GLIB(1.2.2,,AC_MSG_ERROR([*** GLIB >= 1.2.2 not installed - please install first ***]))
--AM_PATH_GTK(1.2.2,,AC_MSG_ERROR([*** GTK+ >= 1.2.2 not installed - please install first ***]),gthread)
-+AM_PATH_GTK(1.2.2,,AC_MSG_ERROR([*** GTK+ >= 1.2.2 not installed - please install first ***]))
- AC_PATH_PROG(XMMS_PATH,xmms,no)
- 
- LIBS_save=$LIBS
-@@ -84,7 +88,7 @@ AC_SUBST(VM_LIBS)
- PTHREAD_LIBS=error
- AC_MSG_CHECKING(for old style FreeBSD -pthread flag)
- AC_EGREP_CPP(yes,
--	[#if defined(__FreeBSD_cc_version) && __FreeBSD_cc_version <= 500001
-+	[#if defined(__OpenBSD__) || (defined(__FreeBSD_cc_version) && __FreeBSD_cc_version <= 500001)
- 	  yes
- 	#endif
- 	], AC_MSG_RESULT(yes)
-@@ -117,7 +121,7 @@ AC_ARG_ENABLE( opengl,
- 
- if test "x$enable_opengl" = xyes; then
- 	LIBS_save=$LIBS
--	LIBS="$LIBS $GTK_LIBS"
-+	LIBS="$LIBS $GTK_LIBS -L$gl_prefix/lib"
- 	OPENGL_LIBS=error
- 	AC_CHECK_LIB(GL, glBegin, OPENGL_LIBS="-lGL")
- 
-@@ -126,7 +130,7 @@ if test "x$enable_opengl" = xyes; then
- 	fi
- 
- 	CPPFLAGS_save=$CPPFLAGS
--	CPPFLAGS="$GTK_CFLAGS $CPPFLAGS"
-+	CPPFLAGS="$GTK_CFLAGS $CPPFLAGS -I$gl_prefix/include"
- 	have_opengl_headers=yes
- 	AC_CHECK_HEADERS(GL/gl.h GL/glx.h,,have_opengl_headers=no)
- 
-@@ -473,10 +477,11 @@ fi
- 
- arch_type=other
- have_solaris=no
-+have_sun=no
- ARCH_DEFINES=""
- case "$host" in 
--	*-*-openbsd* | *-*-netbsd* | *-*darwin*)
--		AC_DEFINE(SYMBOL_PREFIX, "_", [Define to symbol prefix, if any])
-+	*-*-openbsd*)
-+		have_sun=yes
- 	;;
- 	i386-*-* | i486-*-* | i586-*-* | i686-*-* | i86pc-*-*)
- 		ARCH_DEFINES="-DI386_ASSEM"
-@@ -497,6 +502,7 @@ AC_SUBST(ARCH_DEFINES)
- AM_CONDITIONAL(ARCH_X86, test "x$arch_type" = "xix86")
- AM_CONDITIONAL(ARCH_PPC, test "x$arch_type" = "xppc")
- AM_CONDITIONAL(HAVE_SOLARIS, test "x$have_solaris" = xyes)
-+AM_CONDITIONAL(HAVE_SUN, test "x$have_sun" = xyes)
- 
- plugindir=$libdir/xmms
- AC_SUBST(plugindir)
-@@ -524,7 +530,7 @@ AC_SUBST(GENERAL_PLUGIN_DIR)
+$OpenBSD: patch-configure_in,v 1.7 2004/04/15 19:23:46 naddy Exp $
+--- configure.in.orig	2004-02-23 22:40:44.000000000 +0100
++++ configure.in	2004-04-14 23:34:14.000000000 +0200
+@@ -549,7 +549,7 @@ AC_SUBST(GENERAL_PLUGIN_DIR)
  AC_SUBST(VISUALIZATION_PLUGIN_DIR)
  AC_SUBST(pluginsubs)
  
@@ -78,20 +9,4 @@ $OpenBSD: patch-configure_in,v 1.6 2002/04/06 19:32:40 pvalchev Exp $
 +XMMS_DEFINES="$CFLAGS -DDATA_DIR=\\\"$datadir/xmms\\\" -DPLUGIN_DIR=\\\"$plugindir\\\" -DPLUGINSUBS=$pluginsubs -DLOCALEDIR=\\\"$localedir\\\" -I$LOCALBASE/include"
  
  if test "x$enable_user_plugin_dir" = "xno"; then
- 	AC_DEFINE(DISABLE_USER_PLUGIN_DIR,, [Define to disable per user plugin directory])
-@@ -554,6 +560,7 @@ Output/OSS/Makefile
- Output/esd/Makefile
- Output/disk_writer/Makefile
- Output/solaris/Makefile
-+Output/sun/Makefile
- Input/Makefile
- Input/wav/Makefile
- Input/mpg123/Makefile
-@@ -591,6 +598,7 @@ echo "  Build esd plugin:           $hav
- echo "  Build mikmod plugin:        $have_mikmod"
- echo "  Build Ogg Vorbis plugin:    $have_oggvorbis"
- echo "  Build Solaris plugin:       $have_solaris"
-+echo "  Build BSD Sun plugin:       $have_sun"
- echo "  Build gnomexmms:            $have_gnome"
- echo "  Build OpenGL plugins:       $have_opengl"
- echo "  Pthread flag:               $PTHREAD_LIBS"
+ 	AC_DEFINE(DISABLE_USER_PLUGIN_DIR,, [Define to disable per user plugin directory])

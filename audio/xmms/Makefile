@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2003/12/12 18:30:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2004/04/15 19:23:46 naddy Exp $
 
 COMMENT=		"Multimedia player for the X Window System"
 COMMENT-esd=		"Esound output plugin for XMMS"
@@ -6,17 +6,16 @@ COMMENT-vorbis=		"Ogg Vorbis input plugin for XMMS"
 COMMENT-mikmod=		"Mikmod input plugin for XMMS"
 COMMENT-mp3=		"MP3 input plugin for XMMS"
 
-VERSION=		1.2.7
+VERSION=		1.2.10
 DISTNAME=		xmms-${VERSION}
 PKGNAME-esd=		xmms-esd-${VERSION}
 PKGNAME-vorbis=		xmms-vorbis-${VERSION}
 PKGNAME-mikmod=		xmms-mikmod-${VERSION}
 PKGNAME-mp3=		xmms-mp3-${VERSION}
-SUNDRIVER=		xmms_sun-${VERSION}
 CATEGORIES=		audio
 HOMEPAGE=		http://www.xmms.org
 
-MAINTAINER=		Wilbern Cobb <wcobb@openbsd.org>
+MAINTAINER=		Robert Nagy <thuglife@bsd.hu>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,13 +24,10 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 V=			1.2.x
-MASTER_SITES=		http://www.xmms.org/files/$V/ \
+MASTER_SITES=		${HOMEPAGE}/files/$V/ \
 			ftp://ftp.xmms.org/xmms/$V/ \
 			ftp://ftp.sunet.se/pub/multimedia/xmms/$V/ \
 			ftp://ftp.stealth.net/xmms/$V/
-
-MASTER_SITES0=		http://vedge.com.ar/hack/ \
-			http://mirror.csoft.org/xmms/
 
 PSEUDO_FLAVORS=		no_esd no_vorbis no_mikmod no_mp3
 FLAVOR?=
@@ -51,24 +47,23 @@ MULTI_PACKAGES+=	-mp3
 
 SUBPACKAGE?=
 
+MODULES=		iconv
 RUN_DEPENDS=		:unzip-*:archivers/unzip
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
 			gthread.1.2::devel/glib \
 			xml.9::textproc/libxml1
 
-USE_LIBTOOL=		Yes
 USE_X11=		Yes
 CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.57
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--without-gnome
+			--without-gnome \
+			--enable-ipv6
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		XML_CONFIG="${LOCALBASE}/bin/xml-config"
-
-DISTFILES=		${DISTNAME}.tar.gz \
-			${SUNDRIVER}.tar.gz:0
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+			CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+			XML_CONFIG="${LOCALBASE}/bin/xml-config" \
 
 DOCS=			README NEWS
 
@@ -113,11 +108,8 @@ CONFIGURE_ARGS+=	--disable-mikmod
 . endif
 .endif
 
-post-extract:
-	@mv -f ${WRKDIR}/${SUNDRIVER} ${WRKSRC}/Output/sun
-
 pre-configure:
-	@cd ${WRKSRC}/libxmms && ${LOCALBASE}/bin/autoconf
+	@cd ${WRKSRC}/libxmms && ${LOCALBASE}/bin/autoconf-${AUTOCONF_VERSION}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xmms

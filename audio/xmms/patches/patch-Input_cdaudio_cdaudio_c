@@ -1,39 +1,23 @@
-$OpenBSD: patch-Input_cdaudio_cdaudio_c,v 1.2 2004/01/22 20:15:22 naddy Exp $
---- Input/cdaudio/cdaudio.c.orig	2002-02-05 15:39:11.000000000 +0100
-+++ Input/cdaudio/cdaudio.c	2004-01-22 20:41:36.000000000 +0100
-@@ -552,6 +552,10 @@ static int get_current_frame(void)
+$OpenBSD: patch-Input_cdaudio_cdaudio_c,v 1.3 2004/04/15 19:23:46 naddy Exp $
+--- Input/cdaudio/cdaudio.c.orig	2004-01-28 00:09:39.000000000 +0100
++++ Input/cdaudio/cdaudio.c	2004-04-15 14:47:46.000000000 +0200
+@@ -333,7 +333,7 @@ static gboolean is_mounted(char * device
+ #elif defined(HAVE_GETMNTINFO)
+  	entries = getmntinfo(&fsp, MNT_NOWAIT);
+  	if (entries < 0)
+- 		return NULL;
++ 		return FALSE;
+ 	
+ 	while (entries-- > 0)
+ 	{
+@@ -817,6 +817,10 @@ static int get_current_frame(void)
  {
  	struct ioc_read_subchannel subchnl;
  	struct cd_sub_channel_info subinfo;
-+	
++
 +	bzero (&subchnl, sizeof (subchnl));
 +	bzero (&subinfo, sizeof (subinfo));
 +
  	subchnl.address_format = CD_MSF_FORMAT;
  	subchnl.data_format = CD_CURRENT_POSITION;
- 	subchnl.data_len = sizeof(subinfo);
-@@ -591,17 +595,23 @@ gboolean cdda_get_toc_lowlevel(int fd, c
- {
- 	struct ioc_toc_header tochdr;
- 	struct ioc_read_toc_entry tocentry;
-+	struct cd_toc_entry entry;
- 	int i;
- 
- 	if (ioctl(fd, CDIOREADTOCHEADER, &tochdr))
- 		return FALSE;
- 
-+	bzero (&tocentry, sizeof (tocentry));
-+	bzero (&entry, sizeof (entry));
-+	tocentry.data_len = sizeof (entry);
-+	tocentry.data = &entry;
-+
- 	for (i = tochdr.starting_track; i <= tochdr.ending_track; i++)
- 	{		
- 		tocentry.address_format = CD_MSF_FORMAT;
- 
- 		tocentry.starting_track = i;
--		if (ioctl(fd, CDIOREADTOCENTRYS, &tocentry))
-+		if (ioctl(fd, CDIOREADTOCENTRYS, &tocentry) < 0)
- 			return FALSE;
- 		info->track[i].minute =
- 		    tocentry.data->addr.msf.minute;
+ 	subchnl.track = 0;

@@ -1,7 +1,0 @@
-$OpenBSD: patch-Output_Makefile_am,v 1.2 2002/02/05 04:07:57 pvalchev Exp $
---- Output/Makefile.am.orig	Thu Jul  5 21:03:08 2001
-+++ Output/Makefile.am	Thu Jul  5 21:03:16 2001
-@@ -1,2 +1,2 @@
--ALL_PLUGINS = OSS esd disk_writer solaris
-+ALL_PLUGINS = OSS esd disk_writer solaris sun
- SUBDIRS = @OUTPUT_PLUGINS@

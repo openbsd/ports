@@ -1,21 +1,19 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2002/09/03 01:22:22 wcobb Exp $
-lib/libxmms.la
-lib/libxmms.so.3.1
-DYNLIBDIR(%B)
-lib/xmms/Output/libdisk_writer.so
-lib/xmms/Output/libsun.so
-lib/xmms/Input/libwav.so
-lib/xmms/Input/libtonegen.so
-lib/xmms/Input/libcdaudio.so
-lib/xmms/Input/libidcin.so
-lib/xmms/Effect/libvoice.so
+@comment $OpenBSD: PFRAG.shared,v 1.9 2004/04/15 19:23:46 naddy Exp $
 lib/xmms/Effect/libecho.so
 lib/xmms/Effect/libstereo.so
+lib/xmms/Effect/libvoice.so
 lib/xmms/General/libir.so
 lib/xmms/General/libsong_change.so
+lib/xmms/Input/libcdaudio.so
+lib/xmms/Input/libtonegen.so
+lib/xmms/Input/libwav.so
+lib/xmms/Output/libdisk_writer.so
+lib/xmms/Output/libsun.so
 lib/xmms/Visualization/libbscope.so
-lib/xmms/Visualization/libsanalyzer.so
 lib/xmms/Visualization/libogl_spectrum.so
+lib/xmms/Visualization/libsanalyzer.so
+lib/libxmms.so.4.1
+DYNLIBDIR(%D/lib)
 @dirrm lib/xmms/Visualization
 @dirrm lib/xmms/Output
 @dirrm lib/xmms/Input
