@@ -1,12 +1,15 @@
---- Python/dynload_shlib.c.orig	Thu Sep 21 22:37:23 2000
-+++ Python/dynload_shlib.c	Thu Sep 21 22:38:05 2000
-@@ -49,7 +49,8 @@ dl_funcptr _PyImport_GetDynLoadFunc(cons
+--- Python/dynload_shlib.c.orig	Mon Nov  6 00:50:29 2000
++++ Python/dynload_shlib.c	Mon Nov  6 00:51:25 2000
+@@ -55,8 +55,10 @@ dl_funcptr _PyImport_GetDynLoadFunc(cons
  	}
  
  	/* ### should there be a leading underscore for some platforms? */
 -	sprintf(funcname, "init%.200s", shortname);
+-
++	/* sprintf(funcname, "init%.200s", shortname); */
 +	/* Like on OpenBSD */
 +	sprintf(funcname, "_init%.200s", shortname);
- 
++	
  	if (fp != NULL) {
  		int i;
+ 		struct stat statb;
