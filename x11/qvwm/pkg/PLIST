@@ -1,0 +1,45 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/02 23:25:19 espie Exp $
+bin/qvwm
+man/man1/qvwm.1x
+share/qvwm/clouds.qvwm-theme
+share/qvwm/default.qvwm-theme
+share/qvwm/french.qvwmrc
+share/qvwm/images/clouds.xpm
+share/qvwm/images/clouds2.xpm
+share/qvwm/images/def16.ani
+share/qvwm/images/def32.ani
+share/qvwm/images/emacs16.ani
+share/qvwm/images/emacs32.ani
+share/qvwm/images/exit32.ani
+share/qvwm/images/find32.ani
+share/qvwm/images/help32.xpm
+share/qvwm/images/icon16.ani
+share/qvwm/images/icon32.ani
+share/qvwm/images/logo_clouds.xpm
+share/qvwm/images/logo_os2.xpm
+share/qvwm/images/netscape16.ani
+share/qvwm/images/netscape32.ani
+share/qvwm/images/quit32.ani
+share/qvwm/images/qvwmdesk.ani
+share/qvwm/images/run32.ani
+share/qvwm/images/setting32.ani
+share/qvwm/images/space.ani
+share/qvwm/images/space2.ani
+share/qvwm/images/taskbar16.ani
+share/qvwm/images/xcalc16.xpm
+share/qvwm/images/xcalc32.ani
+share/qvwm/images/xeyes16.ani
+share/qvwm/images/xeyes32.ani
+share/qvwm/images/xterm16.xpm
+share/qvwm/images/xterm32.ani
+share/qvwm/images/xv16.xpm
+share/qvwm/images/xv32.xpm
+share/qvwm/kanji.qvwmrc
+share/qvwm/korean.qvwmrc
+share/qvwm/light.qvwmrc
+share/qvwm/sounds/chimes.wav
+share/qvwm/space.qvwm-theme
+share/qvwm/system.qvwmrc
+@dirrm share/qvwm/sounds
+@dirrm share/qvwm/images
+@dirrm share/qvwm

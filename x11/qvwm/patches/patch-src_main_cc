@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_main_cc,v 1.1.1.1 2000/07/02 23:25:19 espie Exp $
+--- src/main.cc.orig	Wed May 31 08:21:41 2000
++++ src/main.cc	Mon Jul  3 01:21:59 2000
+@@ -767,11 +767,14 @@ void TrapSignal(int sig)
+       QvwmError("Bus error");
+     }
+     
++// Debugger does not start up correctly on OpenBSD.
++#ifndef __OpenBSD__
+     if (UseDebugger) {
+       Debug debug;
+       QvwmError("Starting %s...", DEBUGGER);
+       debug.TraceStack(DEBUGGER, qvArgv[0]);
+     }
++#endif
+ 
+     // terminate accessory processes
+     //   This is done in FinishQvwm, but it is not called from here...
+@@ -823,7 +826,7 @@ void TrapChild(int sig)
+     if (pid <= 0)
+       break;
+ #ifdef USE_SS
+-    if (scrSaver->NotifyDeadPid(pid))
++    if (scrSaver && scrSaver->NotifyDeadPid(pid))
+       continue;
+ #endif
+     if (Indicator::NotifyDeadPid(pid))

@@ -1,0 +1,23 @@
+Qvwm is a Windows 95/98/NT like window manager for X Window System.  It allows 
+Windows 95/98/NT users to use X Window System without hesitation and X Window 
+System users to use Windows 95/98/NT without hesitation. 
+
+The name qvwm derives from the following: 'q' stands for '9'(same pronunciation 
+in Japanese and almost the same shape) and 'v' for '5'(V is 5 in Roman numerals)
+Also, qvwm is "98 Window Manager" because 'v' stands for '8'(vertically flipped,
+V is similar to 8 in kanji characters). 
+
+Features:
+
+	* Written with C++ from scratch. 
+	* Internationalized without patches. 
+        * The same graphics with Windows 95 at a pixel level. 
+        * Enables the user to switch among windows using the task switcher. 
+          (Alt+Tab) 
+        * Enables the user to make some windows taskbar indicators. 
+        * Enables the user to move and resize a whole window. (full-drag) 
+        * Virtual screen. (extension of Windows 95) 
+        * Dialog box on termination. 
+        * Titlebar animation on minimizing/maximizing a window. 
+
+WWW: ${HOMEPAGE}

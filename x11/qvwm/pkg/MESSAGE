@@ -1,0 +1,11 @@
++------------
+| In order to use qvwm as your window manager, you must change your
+| .xinitrc or .xsession appropriately and add a line similar to the
+| following:
+|
+| 	exec ${PREFIX}/bin/qvwm
+|
+| The default configuration and icons are stored in ${PREFIX}/share/qvwm.
+| To use your own configuration, copy ${PREFIX}/share/qvwm/system.qvwmrc to
+| ~/.qvwmrc and edit as appropriate.
++------------
