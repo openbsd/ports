@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/01/26 14:14:54 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/08/06 14:37:28 espie Exp $
 bin/wmix
-man/man1/wmix.1
+@man man/man1/wmix.1
+share/doc/wmix/
 share/doc/wmix/README
+share/examples/wmix/
 share/examples/wmix/sample.wmixrc
-@dirrm share/examples/wmix
-@dirrm share/doc/wmix

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2004/01/17 15:11:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/08/06 14:37:28 espie Exp $
 
-NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
+SHARED_ONLY=		Yes
 
 COMMENT=		"Perl extension for Ogg Vorbis streams"
 

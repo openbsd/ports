@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/22 02:16:16 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/06 14:37:29 espie Exp $
 bin/ubench
-man/man8/ubench.8
+@man man/man8/ubench.8

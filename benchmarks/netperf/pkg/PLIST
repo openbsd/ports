@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/07/23 18:29:52 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/06 14:37:29 espie Exp $
 bin/netperf
 bin/netserver
-man/man1/netperf.1
-man/man1/netserver.1
-@dir share/netperf
+@man man/man1/netperf.1
+@man man/man1/netserver.1
+share/netperf/
 share/netperf/arr_script
 share/netperf/snapshot_script
 share/netperf/tcp_range_script

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2004/01/17 15:58:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/06 14:37:28 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"interface to libcdaudio"
 DISTNAME=	Audio-CD-0.04

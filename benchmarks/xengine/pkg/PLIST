@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/07 01:54:47 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/06 14:37:29 espie Exp $
 bin/xengine
-man/cat1/xengine.0
+@man man/cat1/xengine.0
+share/doc/xengine/
 share/doc/xengine/README
-@dirrm share/doc/xengine

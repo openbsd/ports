@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/02/21 06:50:49 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/08/06 14:37:29 espie Exp $
 bin/c2t
+@man man/man1/c2t.1
+share/chinese/
+share/chinese/gb/
 share/chinese/gb/TONEPY.tit
-man/man1/c2t.1
-@dirrm share/chinese/gb

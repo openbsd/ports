@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/20 13:21:43 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/08/06 14:37:27 espie Exp $
+GNUstep/
+GNUstep/Apps/
+GNUstep/Apps/Mixer.app/
 GNUstep/Apps/Mixer.app/Mixer
-man/man1/Mixer.1
-@dirrm GNUstep/Apps/Mixer.app
-@dirrm GNUstep/Apps
-@dirrm GNUstep
+@man man/man1/Mixer.1

@@ -1,19 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/18 01:19:56 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/06 14:37:27 espie Exp $
 bin/sndfile-convert
 bin/sndfile-info
 bin/sndfile-play
 include/sndfile.h
 lib/libsndfile.a
 lib/libsndfile.la
+lib/pkgconfig/
 lib/pkgconfig/sndfile.pc
-man/man1/sndfile-convert.1
-man/man1/sndfile-info.1
-man/man1/sndfile-play.1
+@man man/man1/sndfile-convert.1
+@man man/man1/sndfile-info.1
+@man man/man1/sndfile-play.1
+share/octave/
+share/octave/site/
+share/octave/site/m/
 share/octave/site/m/sndfile_load.m
 share/octave/site/m/sndfile_play.m
 share/octave/site/m/sndfile_save.m
 %%SHARED%%
-@dirrm share/octave/site/m
-@dirrm share/octave/site
-@dirrm share/octave
-@dirrm lib/pkgconfig

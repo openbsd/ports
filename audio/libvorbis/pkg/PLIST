@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/14 00:52:22 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/06 14:37:27 espie Exp $
+include/vorbis/
 include/vorbis/codec.h
 include/vorbis/vorbisenc.h
 include/vorbis/vorbisfile.h
@@ -8,10 +9,13 @@ lib/libvorbisenc.a
 lib/libvorbisenc.la
 lib/libvorbisfile.a
 lib/libvorbisfile.la
+lib/pkgconfig/
 lib/pkgconfig/vorbis.pc
 lib/pkgconfig/vorbisenc.pc
 lib/pkgconfig/vorbisfile.pc
+share/aclocal/
 share/aclocal/vorbis.m4
+share/doc/libvorbis/
 share/doc/libvorbis/components.png
 share/doc/libvorbis/draft-kerr-avt-vorbis-rtp-02.txt
 share/doc/libvorbis/eightphase.png
@@ -42,6 +46,7 @@ share/doc/libvorbis/vorbis-clip.txt
 share/doc/libvorbis/vorbis-errors.txt
 share/doc/libvorbis/vorbis-fidelity.html
 share/doc/libvorbis/vorbis.html
+share/doc/libvorbis/vorbisenc/
 share/doc/libvorbis/vorbisenc/index.html
 share/doc/libvorbis/vorbisenc/overview.html
 share/doc/libvorbis/vorbisenc/reference.html
@@ -50,6 +55,7 @@ share/doc/libvorbis/vorbisenc/vorbis_encode_ctl.html
 share/doc/libvorbis/vorbisenc/vorbis_encode_init.html
 share/doc/libvorbis/vorbisenc/vorbis_encode_init_vbr.html
 share/doc/libvorbis/vorbisenc/vorbis_info.html
+share/doc/libvorbis/vorbisfile/
 share/doc/libvorbis/vorbisfile/OggVorbis_File.html
 share/doc/libvorbis/vorbisfile/callbacks.html
 share/doc/libvorbis/vorbisfile/chaining_example_c.html
@@ -115,9 +121,3 @@ share/doc/libvorbis/white-xifish.png
 share/doc/libvorbis/window1.png
 share/doc/libvorbis/window2.png
 %%SHARED%%
-@dirrm share/doc/libvorbis/vorbisfile
-@dirrm share/doc/libvorbis/vorbisenc
-@dirrm share/doc/libvorbis
-@dirrm share/aclocal
-@dirrm lib/pkgconfig
-@dirrm include/vorbis

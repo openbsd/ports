@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2003/08/16 16:52:09 jolan Exp $
-lib/liba52.so.0.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/06 14:37:27 espie Exp $
+@lib lib/liba52.so.0.0

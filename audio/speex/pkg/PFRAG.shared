@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/07/27 19:35:20 naddy Exp $
-lib/libspeex.so.3.0
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/08/06 14:37:28 espie Exp $
+@lib lib/libspeex.so.3.0

@@ -1,29 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.11 2003/09/30 10:36:36 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/08/06 14:37:28 espie Exp $
 bin/rplay
 bin/rptp
 include/rplay.h
-@unexec install-info --delete --info-dir=%D/info %D/info/RPLAY.info
-@unexec install-info --delete --info-dir=%D/info %D/info/RPTP.info
-@unexec install-info --delete --info-dir=%D/info %D/info/librplay.info
-@unexec install-info --delete --info-dir=%D/info %D/info/rplayd.info
-info/RPLAY.info
-info/RPTP.info
-info/librplay.info
-info/rplayd.info
-@exec install-info --info-dir=%D/info %D/info/RPLAY.info
-@exec install-info --info-dir=%D/info %D/info/RPTP.info
-@exec install-info --info-dir=%D/info %D/info/librplay.info
-@exec install-info --info-dir=%D/info %D/info/rplayd.info
+@comment include/rxposix.h
+@info info/RPLAY.info
+@info info/RPTP.info
+@info info/librplay.info
+@info info/rplayd.info
 lib/librplay.a
-%%SHARED%%
-man/man1/rplay.1
-man/man1/rptp.1
-man/man5/rplay.conf.5
-man/man5/rplay.helpers.5
-man/man5/rplay.hosts.5
-man/man5/rplay.servers.5
-man/man8/rplayd.8
+@comment lib/librx.a
+@man man/man1/rplay.1
+@man man/man1/rptp.1
+@man man/man5/rplay.conf.5
+@man man/man5/rplay.helpers.5
+@man man/man5/rplay.hosts.5
+@man man/man5/rplay.servers.5
+@man man/man8/rplayd.8
 sbin/rplayd
+%%SHARED%%
 @cwd ${SYSCONFDIR}
 @extra rplay/rplay.conf
 @extra rplay/rplay.helpers

@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/08/22 17:48:18 espie Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/tracker.info
+@comment $OpenBSD: PLIST,v 1.8 2004/08/06 14:37:28 espie Exp $
 bin/randomize
 bin/tracker
-info/tracker.info
+@info info/tracker.info
+lib/tracker/
 lib/tracker/compression_methods.sample
-@exec if [ ! -f ${SYSCONFDIR}/compression_methods ]; then cp %D/%F ${SYSCONFDIR}/compression_methods; fi
+@sample ${SYSCONFDIR}/compression_methods
+share/doc/tracker/
 share/doc/tracker/FAQ
+share/doc/tracker/Html/
 share/doc/tracker/Html/Accessing_Aminet_on_the_Internet.html
 share/doc/tracker/Html/Accessing_Aminet_without_Internet.html
 share/doc/tracker/Html/Aix.html
@@ -90,9 +92,3 @@ share/doc/tracker/tracker.doc
 share/doc/tracker/tracker.guide
 share/doc/tracker/tracker.readme
 share/doc/tracker/tracker.texinfo
-@dirrm share/doc/tracker/Html
-@dirrm share/doc/tracker
-@dirrm lib/tracker
-@exec install-info --info-dir=%D/info %D/info/tracker.info
-@cwd ${SYSCONFDIR}
-@extra compression_methods

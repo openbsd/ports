@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/28 13:46:17 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/06 14:37:29 espie Exp $
+share/doc/cvs-guide/
+share/doc/cvs-guide/html/
 share/doc/cvs-guide/html/ChangeLog
 share/doc/cvs-guide/html/amazon-boycott.html
 share/doc/cvs-guide/html/anoncvs.html
 share/doc/cvs-guide/html/cvsbook.html
 share/doc/cvs-guide/html/errata.html
 share/doc/cvs-guide/html/index.html
+share/doc/cvs-guide/print/
 share/doc/cvs-guide/print/cvsbook.pdf
 share/doc/cvs-guide/print/cvsbook.ps
-@dirrm share/doc/cvs-guide/print
-@dirrm share/doc/cvs-guide/html
-@dirrm share/doc/cvs-guide

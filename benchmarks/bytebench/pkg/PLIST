@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:47 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/08/06 14:37:29 espie Exp $
 bin/bytebench
+lib/bytebench/
 lib/bytebench/Makefile
 lib/bytebench/README
 lib/bytebench/Run
+lib/bytebench/doc/
 lib/bytebench/doc/bench.doc
 lib/bytebench/doc/bench3.doc
+lib/bytebench/pgms/
 lib/bytebench/pgms/arithoh
 lib/bytebench/pgms/byte.logo
 lib/bytebench/pgms/cleanup.sh
@@ -34,12 +37,9 @@ lib/bytebench/pgms/short
 lib/bytebench/pgms/spawn
 lib/bytebench/pgms/syscall
 lib/bytebench/pgms/tst.sh
+lib/bytebench/results/
 lib/bytebench/results/reports.shar
+lib/bytebench/testdir/
 lib/bytebench/testdir/cctest.c
 lib/bytebench/testdir/dc.dat
 lib/bytebench/testdir/sort.src
-@dirrm lib/bytebench/testdir
-@dirrm lib/bytebench/results
-@dirrm lib/bytebench/pgms
-@dirrm lib/bytebench/doc
-@dirrm lib/bytebench

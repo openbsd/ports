@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/19 03:19:42 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/06 14:37:27 espie Exp $
 bin/libcdaudio-config
 include/cdaudio.h
 lib/libcdaudio.a
 lib/libcdaudio.la
-%%SHARED%%
+share/aclocal/
 share/aclocal/libcdaudio.m4
+%%SHARED%%

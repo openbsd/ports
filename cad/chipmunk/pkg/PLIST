@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/11/18 00:20:31 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/08/06 14:37:29 espie Exp $
 @pkgcfl analog-*
 bin/analog
 bin/cview
@@ -7,6 +7,7 @@ bin/fixfet7
 bin/loged
 bin/until
 bin/wol
+share/chipmunk/
 share/chipmunk/Makefile
 share/chipmunk/actel.gate
 share/chipmunk/actellog.cnf
@@ -71,11 +72,10 @@ share/chipmunk/view.cnf
 share/chipmunk/view.log
 share/chipmunk/vlsi.cnf
 share/chipmunk/zcross.view
+share/doc/chipmunk/
 share/doc/chipmunk/pensps.map
 share/doc/chipmunk/system.untilrc
 share/doc/chipmunk/texstuff.ps
 share/doc/chipmunk/until.pro
 share/doc/chipmunk/until.ps
 share/doc/chipmunk/untilstuff.ps
-@dirrm share/doc/chipmunk
-@dirrm share/chipmunk

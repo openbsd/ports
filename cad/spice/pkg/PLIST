@@ -1,47 +1,46 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/08/02 23:15:00 pvalchev Exp $
-bin/spice3
-bin/nutmeg
-bin/sconvert
+@comment $OpenBSD: PLIST,v 1.3 2004/08/06 14:37:29 espie Exp $
 bin/help
-bin/proc2mod
 bin/multidec
-lib/spice/helpdir/spice.txt
+bin/nutmeg
+bin/proc2mod
+bin/sconvert
+bin/spice3
+lib/spice/
+lib/spice/helpdir/
 lib/spice/helpdir/spice.idx
-lib/spice/scripts/setplot
-lib/spice/scripts/spinit
+lib/spice/helpdir/spice.txt
 lib/spice/mfbcap
 lib/spice/news
-man/cat1/nutmeg.0
-man/cat1/sconvert.0
-man/cat1/spice.0
-@exec ln -sf spice.0 %B/spice3.0
-@unexec rm -f %B/spice3.0
-man/cat3/mfb.0
-man/cat5/mfbcap.0
+lib/spice/scripts/
+lib/spice/scripts/setplot
+lib/spice/scripts/spinit
+@man man/cat1/nutmeg.0
+@man man/cat1/sconvert.0
+@man man/cat1/spice.0
+@man man/cat1/spice3.0
+@man man/cat3/mfb.0
+@man man/cat5/mfbcap.0
+share/examples/spice/
 share/examples/spice/bjtnoise.cir
-share/examples/spice/ltra_1.cir
-share/examples/spice/mos6inv.cir
-share/examples/spice/pz2.cir
-share/examples/spice/rtlinv.cir
 share/examples/spice/bsim1tst.cir
-share/examples/spice/ltra_2.cir
-share/examples/spice/mosamp2.cir
-share/examples/spice/pzt.cir
-share/examples/spice/schmitt.cir
 share/examples/spice/bsim2tst.cir
-share/examples/spice/ltra_3.cir
-share/examples/spice/mosmem.cir
-share/examples/spice/rc.cir
-share/examples/spice/simplepz.cir
 share/examples/spice/diffpair.cir
-share/examples/spice/makedefs
-share/examples/spice/process.mod
-share/examples/spice/rca3040.cir
 share/examples/spice/diodisto.cir
+share/examples/spice/ltra_1.cir
+share/examples/spice/ltra_2.cir
+share/examples/spice/ltra_3.cir
+share/examples/spice/makedefs
 share/examples/spice/mixdisto.cir
+share/examples/spice/mos6inv.cir
+share/examples/spice/mosamp2.cir
+share/examples/spice/mosmem.cir
+share/examples/spice/process.mod
 share/examples/spice/process.pro
+share/examples/spice/pz2.cir
+share/examples/spice/pzt.cir
+share/examples/spice/rc.cir
+share/examples/spice/rca3040.cir
 share/examples/spice/resnoise.cir
-@dirrm share/examples/spice
-@dirrm lib/spice/helpdir
-@dirrm lib/spice/scripts
-@dirrm lib/spice
+share/examples/spice/rtlinv.cir
+share/examples/spice/schmitt.cir
+share/examples/spice/simplepz.cir

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/04 23:24:31 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/06 14:37:29 espie Exp $
+share/doc/autobook/
 share/doc/autobook/autobook.html
 share/doc/autobook/autobook_1.html
 share/doc/autobook/autobook_10.html
@@ -312,4 +313,3 @@ share/doc/autobook/toc.png
 share/doc/autobook/tocon.png
 share/doc/autobook/up.png
 share/doc/autobook/upon.png
-@dirrm share/doc/autobook

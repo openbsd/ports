@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/10 20:37:44 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/06 14:37:28 espie Exp $
 bin/oggtag
-man/man1/oggtag.1
+@man man/man1/oggtag.1

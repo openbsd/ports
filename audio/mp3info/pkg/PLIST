@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/09 02:33:45 margarida Exp $
-!%%no_x11%%
+@comment $OpenBSD: PLIST,v 1.6 2004/08/06 14:37:27 espie Exp $
 bin/mp3info
-man/man1/mp3info.1
+@man man/man1/mp3info.1
+!%%no_x11%%

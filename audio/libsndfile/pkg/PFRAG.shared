@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/02/27 23:35:46 naddy Exp $
-lib/libsndfile.so.1.7
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/08/06 14:37:27 espie Exp $
+@lib lib/libsndfile.so.1.7

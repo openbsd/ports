@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/25 00:46:29 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/06 14:37:29 espie Exp $
 bin/netstrain
 bin/netstraind
+share/doc/netstrain/
 share/doc/netstrain/README
-@dirrm share/doc/netstrain

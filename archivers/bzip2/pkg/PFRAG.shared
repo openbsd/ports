@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2004/07/24 14:20:49 espie Exp $
-lib/libbz2.so.10.2
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.6 2004/08/06 14:37:27 espie Exp $
+@lib lib/libbz2.so.10.2

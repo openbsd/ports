@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/17 18:00:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/06 14:37:29 espie Exp $
+share/doc/grokking-the-gimp/
 ${DOC}Grokking_the_GIMP.css
 ${DOC}Grokking_the_GIMP.html
 ${DOC}background.gif
@@ -468,6 +469,7 @@ ${DOC}node9.html
 ${DOC}node90.html
 ${DOC}previous_motif.gif
 ${DOC}previous_motif_gr.gif
+${DOC}ref-images/
 ${DOC}ref-images/adams_negative.gif
 ${DOC}ref-images/adams_print.gif
 ${DOC}ref-images/haun.gif
@@ -482,4 +484,3 @@ ${DOC}shuttle-animation-opt.gif
 ${DOC}southeast-usa.gif
 ${DOC}up_motif.gif
 ${DOC}up_motif_gr.gif
-@dirrm ${DOC}ref-images

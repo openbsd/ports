@@ -1,13 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/14 00:52:22 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/06 14:37:27 espie Exp $
+include/ogg/
 include/ogg/config_types.h
 include/ogg/ogg.h
 include/ogg/os_types.h
 lib/libogg.a
 lib/libogg.la
+lib/pkgconfig/
 lib/pkgconfig/ogg.pc
+share/aclocal/
 share/aclocal/ogg.m4
+share/doc/libogg/
 share/doc/libogg/framing.html
 share/doc/libogg/index.html
+share/doc/libogg/ogg/
 share/doc/libogg/ogg/bitpacking.html
 share/doc/libogg/ogg/datastructures.html
 share/doc/libogg/ogg/decoding.html
@@ -79,8 +84,3 @@ share/doc/libogg/vorbisword2.png
 share/doc/libogg/white-ogg.png
 share/doc/libogg/white-xifish.png
 %%SHARED%%
-@dirrm share/doc/libogg/ogg
-@dirrm share/doc/libogg
-@dirrm share/aclocal
-@dirrm lib/pkgconfig
-@dirrm include/ogg
