@@ -73,7 +73,7 @@ lib/gcc-lib/ARCH/VERSION/include/new
 lib/gcc-lib/ARCH/VERSION/include/new.h
 lib/libstdc++.a.2.10.0
 ifdef(`DYNAMIC',
-lib/libstdc++.so.30.0
+lib/libstdc++.so.31.0
 lib/libstdc++.so.2.10.0
 lib/gcc-lib/ARCH/VERSION/libstdc++.so
 lib/gcc-lib/ARCH/VERSION/libstdc++.a

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 1999/09/07 15:04:02 espie Exp $
+# $OpenBSD: Makefile,v 1.56 1999/09/09 14:25:11 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -6,8 +6,6 @@
 
 # it only works right with a recent bsd.port.mk.
 NEED_VERSION=1.73
-
-BROKEN="latest (990830) snapshot is broken, but cvs-current works"
 
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
@@ -33,12 +31,13 @@ MIRROR_DISTFILE=no
 # cygnus packaging scheme is now working, though it is weird.
 # namely, testsuite holds all the tests. g++-tests no longer exists,
 # and g77-tests only holds duplicates from the main testsuite archive.
-#MAKE_TESTS=yes
-#MAKE_GXX=yes
-#MAKE_FORTRAN=yes
+MAKE_TESTS=yes
+MAKE_GXX=yes
+MAKE_FORTRAN=yes
+# chill is temporarily broken
 #MAKE_CHILL=yes
-#MAKE_OBJC=yes
-#MAKE_JAVA=yes
+MAKE_OBJC=yes
+MAKE_JAVA=yes
 
 .if defined(MAKE_TESTS)
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
@@ -48,7 +47,7 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1999-08-30
+LATEST_DATE=1999-09-07
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -56,7 +55,7 @@ LATEST_DATE=1999-08-30
 
 # You also may have to remove/add some patches, as these things ARE
 # usually passed along to the egcs ml.
-#NEXT_DATE=1999-06-29
+#NEXT_DATE=1999-09-07
 #PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;
@@ -254,8 +253,8 @@ post-patch:
 	cd ${WRKSRC} && contrib/gcc_update --touch
 # rebuild configure files after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
-	cd ${WRKSRC}/gcc && PATH=${PORTPATH} autoreconf
-	cd ${WRKSRC}/libiberty && PATH=${PORTPATH} autoreconf
+	cd ${WRKSRC}/gcc && PATH=${PORTPATH} autoconf
+	cd ${WRKSRC}/libiberty && PATH=${PORTPATH} autoconf
 
 
 

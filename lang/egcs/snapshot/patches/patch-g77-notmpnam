@@ -1,0 +1,67 @@
+Wed Sep  1 15:14:28 CEST 1999
+	* libI77/configure.in:  Check for mkstemp and getenv.
+	* libI77/configure:  Rebuilt.
+	* libI77/open.c (f_open):  Use safer mkstemp function if available,
+	still providing TMPDIR functionality if getenv is available.
+
+--- libf2c/libI77/configure.in.orig	Wed Sep  1 14:49:56 1999
++++ libf2c/libI77/configure.in	Wed Sep  1 15:11:59 1999
+@@ -129,7 +129,7 @@ else
+   AC_MSG_RESULT(no)
+ fi
+ 
+-AC_CHECK_FUNCS(tempnam)
++AC_CHECK_FUNCS(tempnam mkstemp getenv)
+ 
+ # posix will guarantee the right behaviour for sprintf, else we can't be
+ # sure; HEADER_STDC wouldn't be the right check in sunos4, for instance.
+--- libf2c/libI77/open.c.orig	Wed Sep  1 14:51:55 1999
++++ libf2c/libI77/open.c	Wed Sep  1 15:11:29 1999
+@@ -136,6 +136,7 @@ integer f_open(olist *a)
+ 	char buf[256], *s;
+ 	cllist x;
+ 	int ufmt;
++	int fd;
+ 	FILE *tf;
+ #ifndef NON_UNIX_STDIO
+ 	int n;
+@@ -209,6 +210,23 @@ integer f_open(olist *a)
+ 	 case 's':
+ 	 case 'S':
+ 		b->uscrtch=1;
++#ifdef HAVE_MKSTEMP
++#define TEMPLATE	"/fort.XXXXXXXXXX"
++#ifdef HAVE_GETENV
++		s = getenv ("TMPDIR");
++		if (s && strlen (s) + sizeof (TEMPLATE) + 2 < sizeof (buf))
++		  strcpy (buf, s);
++	        else
++#else
++		  strcpy (buf, "/tmp");
++#endif
++	        strcat (buf, TEMPLATE);
++		fd = mkstemp(buf);
++		if (fd == -1)
++		  err (a->oerr, 132, "open");
++	        close(fd);
++		goto replace2;
++#else
+ #ifdef HAVE_TEMPNAM		/* Allow use of TMPDIR preferentially. */
+ 		s = tempnam (0, buf);
+ 		if (strlen (s) >= sizeof (buf))
+@@ -223,6 +241,7 @@ integer f_open(olist *a)
+ 		(void) mktemp(buf);
+ #endif
+ #endif /* ! defined (HAVE_TEMPNAM) */
++#endif /* ! defined (HAVE_MKSTEMP) */
+ 		goto replace;
+ 	case 'n':
+ 	case 'N':
+@@ -242,6 +261,7 @@ integer f_open(olist *a)
+ 		if (tf = fopen(buf,f__w_mode[0]))
+ 			fclose(tf);
+ 	}
++ replace2:
+ 
+ 	b->ufnm=(char *) malloc((unsigned int)(strlen(buf)+1));
+ 	if(b->ufnm==NULL) opnerr(a->oerr,113,"no space");
