@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/01/27 21:37:06 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2004/02/18 20:05:12 xsa Exp $
 
 COMMENT=		"Quake/Quake-world client"
 COMMENT-server=		"Quake world server"
@@ -13,8 +13,6 @@ PATCH_DIST_STRIP=	-p1
 HOMEPAGE=		http://www.viagenie.qc.ca/en/ipv6-quake.shtml
 MASTER_SITES=		http://www.viagenie.qc.ca/quake/
 MASTER_SITES0=		ftp://ftp.kame.net/pub/kame/misc/
-
-MAINTAINER=		Maurice Nonnekes <maurice@amaze.nl>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes

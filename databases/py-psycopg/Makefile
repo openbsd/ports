@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/06/21 08:15:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2004/02/18 20:05:11 xsa Exp $
 
 COMMENT=	"PostgreSQL database adapter for Python"
 
@@ -9,8 +9,6 @@ CATEGORIES=	databases
 
 MASTER_SITES=	http://initd.org/pub/software/psycopg/
 HOMEPAGE=	http://initd.org/software/psycopg
-
-MAINTAINER=	Maurice Nonnekes <maurice@amaze.nl>
 
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes

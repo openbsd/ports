@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/09/28 10:41:09 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2004/02/18 20:05:12 xsa Exp $
 
 COMMENT=	"Gtk bindings for Python"
 COMMENT-gnome=	"Gtk and Gnome bindings for Python"
@@ -15,8 +15,6 @@ CATEGORIES=	x11 devel
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gnome-python/1.4/}
 
 HOMEPAGE=	http://www.daa.com.au/~james/gnome/
-
-MAINTAINER=	Maurice Nonnekes <maurice@amaze.nl>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes

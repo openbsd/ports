@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/01/29 17:13:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/02/18 20:05:12 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -12,8 +12,6 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.lemburg.com/files/python/
 
 HOMEPAGE=	http://www.lemburg.com/files/python/eGenix-mx-Extensions.html
-
-MAINTAINER=	Maurice Nonnekes <maurice@amaze.nl>
 
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
