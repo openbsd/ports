@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/11/21 01:16:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/02/07 12:51:24 sturm Exp $
 
 COMMENT=	'perl5 module for getting and parsing whois entries'
 
@@ -7,10 +7,9 @@ DISTNAME=	Net-ParseWhois-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
 
-HOMEPAGE=	http://www.dajoba.com/projects/netparsewhois/
+MAINTAINER=	Dan Weeks <danimal@danimal.org>
 
-MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
-
+# GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
