@@ -1,6 +1,6 @@
-$OpenBSD: patch-Xvnc_config_cf_OpenBSD_cf,v 1.1 2001/11/11 01:25:13 lebel Exp $
---- Xvnc/config/cf/OpenBSD.cf.orig	Sun Jun 11 08:00:51 2000
-+++ Xvnc/config/cf/OpenBSD.cf	Sat Nov 10 18:42:55 2001
+$OpenBSD: patch-Xvnc_config_cf_OpenBSD_cf,v 1.2 2003/08/31 21:51:01 naddy Exp $
+--- Xvnc/config/cf/OpenBSD.cf.orig	2000-06-11 14:00:51.000000000 +0200
++++ Xvnc/config/cf/OpenBSD.cf	2003-08-31 23:23:44.000000000 +0200
 @@ -105,6 +105,25 @@ XCOMM operating system:  OSName (OSMajor
  # endif
  #endif
@@ -26,4 +26,13 @@ $OpenBSD: patch-Xvnc_config_cf_OpenBSD_cf,v 1.1 2001/11/11 01:25:13 lebel Exp $
 +
  #define StandardDefines	-DCSRG_BASED
  #define XawI18nDefines	-DUSE_XWCHAR_STRING -DUSE_XMBTOWC
+ 
+@@ -227,7 +246,7 @@ install.man:: 								@@\
+ 
+ # define XF86Contrib
+ # include <xf86.rules>
+-# define BuildServer		NO
++# define BuildServer		YES
+ # define XnestServer		NO
+ # define XVirtualFramebufferServer	NO
  
