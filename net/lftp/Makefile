@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2001/11/01 01:27:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.25 2001/11/19 12:30:17 kevlo Exp $
 
 COMMENT=	"shell-like command line ftp client"
 
-DISTNAME=	lftp-2.4.6
+DISTNAME=	lftp-2.4.7
 CATEGORIES=     net
 NEED_VERSION=	1.460
 MASTER_SITES=	http://the.wiretapped.net/mirrors/lftp/ \
@@ -27,6 +27,8 @@ CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MODULES=	gettext
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/lftp
