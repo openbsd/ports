@@ -1,6 +1,6 @@
 --- mpg123.c.orig	Tue Jun 15 22:21:36 1999
-+++ mpg123.c	Wed Jan 12 11:53:15 2000
-@@ -177,6 +177,9 @@
++++ mpg123.c	Tue Jun 27 00:41:52 2000
+@@ -177,6 +177,9 @@ void init_output(void)
          _exit(0);
        default: /* parent */
          xfermem_init_writer (buffermem);
@@ -10,3 +10,12 @@
          param.outmode = DECODE_BUFFER;
      }
    }
+@@ -918,7 +921,7 @@ int main(int argc, char *argv[])
+ {
+      const char *term_type;
+          term_type = getenv("TERM");
+-         if (!strcmp(term_type,"xterm"))
++         if (term_type && !strcmp(term_type,"xterm"))
+          {
+            fprintf(stderr, "\033]0;%s\007", filename);
+          }
