@@ -1,11 +1,19 @@
 
 Help on configuration: ${HOMEPAGE}
 
-After running dnscache-conf, do the following in your new dnscache
-directory to get a strong(er) random seed:
-  dd if=/dev/srandom of=seed bs=128 count=1
+=> _Before_ running dnscache-conf you need to install the 'dnsroots'
+   file into /etc. This port deliberately does not touch /etc.
+   dnscache-conf tries /etc/dnsroots.local first, then /etc/dnsroots.global.
 
-Create the needed users and groups like this:
+cp ${PREFIX}/share/dnscache/dnsroots.global /etc
+
+=> _After_ running dnscache-conf, do the following in your new
+   dnscache directory to get a strong(er) random seed:
+
+dd if=/dev/srandom of=seed bs=128 count=1
+
+=> The necessary users and groups can be created like this:
+
 groupadd dnscache
 groupadd tinydns
 groupadd dnslog

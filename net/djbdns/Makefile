@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2000/09/25 07:40:13 camield Exp $
+# $OpenBSD: Makefile,v 1.5 2000/11/20 10:02:02 camield Exp $
 
-DISTNAME=	djbdns-1.01
+DISTNAME=	djbdns-1.02
 HOMEPAGE=	http://cr.yp.to/djbdns.html
 CATEGORIES=	net
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
