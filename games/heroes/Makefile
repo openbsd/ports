@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2002/12/29 15:10:08 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2003/01/21 22:58:03 pvalchev Exp $
 
 COMMENT=	"graphically improved game of yore"
 
-VERSION=	0.12
-DATAVERSION=	1.3
+VERSION=	0.21
+DATAVERSION=	1.5
 SOUNDVERSION=	1.0
 MUSICVERSION=	1.0
 DISTNAME=	heroes-${VERSION}
@@ -56,7 +56,6 @@ CONFIGURE_ARGS+= --without-sdl --without-sdl-mixer
 # on sdl-mixer.  No alternatives for now.
 LIB_DEPENDS+=	ggi.2.0:ggi-*:graphics/ggi
 CONFIGURE_ARGS+= --with-ggi="${LOCALBASE}"
-CONFIGURE_ENV+=	LIBS="-pthread"
 .else
 CONFIGURE_ARGS+= --without-ggi
 .endif
@@ -65,7 +64,7 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/tools
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -lm -lintl"
 CONFIGURE_ARGS+= --disable-optimizations \
 		 --disable-debug \
 		 --without-mikmod
