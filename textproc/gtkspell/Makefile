@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/12/22 09:01:20 wilfried Exp $
+# $OpenBSD: Makefile,v 1.12 2005/02/21 14:47:02 alek Exp $
 
 COMMENT=	"gtk2 spelling checker"
 DISTNAME=	gtkspell-2.0.5
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		gmodule-2.0.0.0 pangoxft-1.0.0.0 glib-2.0.0.0 \
 			pangox-1.0.0.0 m X11 Xinerama pango-1.0.0.0 \
 			gobject-2.0.0.0 atk-1.0.0.0 Xft fontconfig freetype \
-			Xext Xrender
+			Xext Xrender Xcursor
 
 USE_X11=	Yes
 
