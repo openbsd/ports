@@ -6,4 +6,4 @@ PHP also has support for talking to other services using protocols
 such as IMAP, SNMP, NNTP, POP3, or even HTTP. You can also open raw
 network sockets and interact using other protocols.
 
-More information availible at http://www.php.net/.
+WWW: ${HOMEPAGE}

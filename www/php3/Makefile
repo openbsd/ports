@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2000/07/18 21:55:43 jakob Exp $
+# $OpenBSD: Makefile,v 1.18 2000/07/20 11:26:13 jakob Exp $
 
 DISTNAME=	php-3.0.16
 PKGNAME=	php3-3.0.16
 CATEGORIES=	www lang
 NEED_VERSION=	1.302
+
+HOMEPAGE=	http://www.php.net/
 
 MAINTAINER=     jakob@openbsd.org
 
