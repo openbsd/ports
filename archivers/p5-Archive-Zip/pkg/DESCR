@@ -1,0 +1,19 @@
+The Archive::Zip module allows a Perl program to create, manipulate,
+read, and write Zip archive files.
+
+Zip archives can be created, or you can read from existing zip
+files. Once created, they can be written to files, streams, or
+strings.
+
+Members can be added, removed, extracted, replaced, rearranged, and
+enumerated. They can also be renamed or have their dates, comments,
+or other attributes queried or modified. Their data can be compressed
+or uncompressed as needed. Members can be created from members in
+existing Zip files, or from existing directories, files, or strings.
+
+This module uses the Compress::Zlib library to read and write the
+compressed streams inside the files.
+
+See Archive::Zip::Tree for easy operations on directories full of
+files, or on entire Zip files. This is included in the Archive::Zip
+distribution.
