@@ -1,6 +1,7 @@
---- Makefile.in.orig	Fri Oct 22 17:27:36 1999
-+++ Makefile.in	Tue Mar 14 23:46:44 2000
-@@ -33,6 +33,7 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2000/09/23 12:51:23 naddy Exp $
+--- Makefile.in.orig	Fri Oct 22 11:27:36 1999
++++ Makefile.in	Sat Sep 23 14:41:11 2000
+@@ -33,6 +33,7 @@ CFLAGS =  @CFLAGS@
  DEFS   =  @DEFS@
  LDFLAGS=  @LDFLAGS@
  LIBS   =  @LIBS@
@@ -8,7 +9,7 @@
  
  INSTALL = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
-@@ -49,7 +50,9 @@
+@@ -49,7 +50,9 @@ bvi: $(OBJS)
  
  install: all installdirs
  	@echo "Installing bvi"

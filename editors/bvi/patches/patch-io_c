@@ -1,6 +1,7 @@
+$OpenBSD: patch-io_c,v 1.1 2000/09/23 12:51:24 naddy Exp $
 --- io.c.orig	Tue Nov  2 10:44:10 1999
-+++ io.c	Sat Nov  6 16:56:15 1999
-@@ -119,7 +119,7 @@
++++ io.c	Sat Sep 23 14:41:11 2000
+@@ -119,7 +119,7 @@ load(fname)
  		} else if (S_ISBLK(buf.st_mode)) {
  			filemode = BLOCK_SPECIAL;
  		} else if (S_ISREG(buf.st_mode)) {
