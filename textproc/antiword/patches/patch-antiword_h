@@ -1,5 +1,6 @@
---- antiword.h~	Tue Aug 13 12:07:24 2002
-+++ antiword.h	Tue Aug 13 12:08:43 2002
+$OpenBSD: patch-antiword_h,v 1.5 2002/09/08 07:55:26 mark Exp $
+--- antiword.h.orig	Thu Jun 20 02:16:22 2002
++++ antiword.h	Sun Sep  8 00:49:28 2002
 @@ -177,7 +177,7 @@
  #define ANTIWORD_DIR		"antiword"
  #define FONTNAMES_FILE		"fontnames"
