@@ -1,0 +1,11 @@
+--- config.sub.orig	Mon Oct 31 14:41:52 1994
++++ config.sub	Sat Apr  8 19:15:47 2000
+@@ -704,7 +704,7 @@ case $os in
+ 	      | -amigados* | -msdos* | -newsos* | -unicos* | -aos* \
+ 	      | -nindy* | -vxworks* | -ebmon* | -hms* | -mvs* | -clix* \
+ 	      | -riscos* | -linux* | -uniplus* | -iris* | -rtu* | -xenix* \
+-	      | -hiux* | -386bsd* | -netbsd* | -riscix* | -lynxos* \
++	      | -hiux* | -386bsd* | -netbsd* | -openbsd* | -riscix* | -lynxos* \
+ 	      | -go32 | -vsta | -sim | -es1800* | -udi | -hms* | -xray | -hds* \
+ 	      | -os68k* | -none* | -v88r* | -aout* | -coff | -elf* | -bosx* \
+ 	      | -abug | -ecoff* | -netware* | -os9* )

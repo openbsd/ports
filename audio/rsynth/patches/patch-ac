@@ -1,36 +1,23 @@
-*** Makefile.in.orig	Tue Nov  8 08:30:52 1994
---- Makefile.in	Sun Jun  7 21:42:00 1998
-***************
-*** 6,12 ****
-  PREFIX       = @prefix@
-  BIN_DIR      = $(PREFIX)/bin
-! LIB_DIR      = $(PREFIX)/lib/dict
-! LDLIBS       = @LIBS@
-  XLIBS        = @XLIBS@
-  CFLAGS       = @CFLAGS@
-  CPPFLAGS     = @CPPFLAGS@ 
---- 6,12 ----
-  PREFIX       = @prefix@
-  BIN_DIR      = $(PREFIX)/bin
-! LIB_DIR      = $(PREFIX)/share/dict
-! LDLIBS       = @LIBS@ -lossaudio
-  XLIBS        = @XLIBS@
-  CFLAGS       = @CFLAGS@
-  CPPFLAGS     = @CPPFLAGS@ 
-***************
-*** 67,73 ****
-  	for f in $(PROGS); do \
-  	$(INSTALL_PROG) $$f $(BIN_DIR); \
-  	done
-! 	$(INSTALL) -d $(LIB_DIR)
-  	for f in $(DICTS); do \
-  	$(INSTALL_DATA) $$f $(LIB_DIR); \
-  	done
---- 67,73 ----
-  	for f in $(PROGS); do \
-  	$(INSTALL_PROG) $$f $(BIN_DIR); \
-  	done
-! 	if [ ! -d $(LIB_DIR) ]; then mkdir -p $(LIB_DIR); fi
-  	for f in $(DICTS); do \
-  	$(INSTALL_DATA) $$f $(LIB_DIR); \
-  	done
+--- Makefile.in.orig	Tue Nov  8 14:30:52 1994
++++ Makefile.in	Sat Apr  8 18:55:14 2000
+@@ -5,8 +5,9 @@ SRCDIR       = @srcdir@
+ CC           = @CC@
+ PREFIX       = @prefix@
+ BIN_DIR      = $(PREFIX)/bin
+-LIB_DIR      = $(PREFIX)/lib/dict
+-LDLIBS       = @LIBS@
++LIB_DIR      = $(PREFIX)/share/dict
++LDLIBS       = @LIBS@ -lossaudio
++LDFLAGS      = @LDFLAGS@
+ XLIBS        = @XLIBS@
+ CFLAGS       = @CFLAGS@
+ CPPFLAGS     = @CPPFLAGS@ 
+@@ -67,7 +68,7 @@ install  : $(PROGS) $(DICTS)
+ 	for f in $(PROGS); do \
+ 	$(INSTALL_PROG) $$f $(BIN_DIR); \
+ 	done
+-	$(INSTALL) -d $(LIB_DIR)
++	if [ ! -d $(LIB_DIR) ]; then mkdir -p $(LIB_DIR); fi
+ 	for f in $(DICTS); do \
+ 	$(INSTALL_DATA) $$f $(LIB_DIR); \
+ 	done
