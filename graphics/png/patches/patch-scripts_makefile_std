@@ -1,6 +1,6 @@
 --- scripts/makefile.std.orig	Wed Dec  8 18:44:40 1999
-+++ scripts/makefile.std	Sat Jun 24 22:06:31 2000
-@@ -8,8 +8,6 @@
++++ scripts/makefile.std	Sat Jul  1 23:33:18 2000
+@@ -8,44 +8,44 @@
  # Where the zlib library and include files are located
  #ZLIBLIB=/usr/local/lib
  #ZLIBINC=/usr/local/include
@@ -9,7 +9,9 @@
  
  CC=cc
  CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=5
-@@ -18,34 +16,35 @@
+ LDFLAGS=-L. -L$(ZLIBLIB) -lpng -lz -lm
++LIBTOOL=libtool --quiet
+ 
  #RANLIB=echo
  RANLIB=ranlib
  
@@ -25,18 +27,18 @@
 +.SUFFIXES: .c .lo
 +
 +.c.lo:
-+	libtool --mode=compile $(CC) $(CFLAGS) -c $(.IMPSRC)
++	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c $(.IMPSRC)
 +
  libpng.a: $(OBJS)
 -	ar rc $@  $(OBJS)
 -	$(RANLIB) $@
-+	libtool --mode=link $(CC) $(CFLAGS) -o libpng.la $(OBJS) \
++	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o libpng.la $(OBJS) \
 +	 -version-info 1:6:0 -rpath $(prefix)/lib
  
 -pngtest: pngtest.o libpng.a
 -	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
 +pngtest: pngtest.lo libpng.a
-+	libtool --mode=link $(CC) -o pngtest $(CFLAGS) pngtest.lo $(LDFLAGS)
++	$(LIBTOOL) --mode=link $(CC) -o pngtest $(CFLAGS) pngtest.lo $(LDFLAGS)
  
  test: pngtest
  	./pngtest
@@ -53,7 +55,7 @@
 +	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(prefix)/include
 +	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(prefix)/lib
 +	${BSD_INSTALL_DATA} png.h pngconf.h $(DESTDIR)$(prefix)/include
-+	libtool --mode=install ${BSD_INSTALL_DATA} libpng.la $(DESTDIR)$(prefix)/lib
++	$(LIBTOOL) --mode=install ${BSD_INSTALL_DATA} libpng.la $(DESTDIR)$(prefix)/lib
  
  clean:
 -	rm -f *.o libpng.a pngtest pngout.png
@@ -61,7 +63,7 @@
  
  DOCS = ANNOUNCE CHANGES INSTALL KNOWNBUG LICENSE README TODO Y2KINFO
  writelock:
-@@ -53,20 +52,19 @@
+@@ -53,20 +53,19 @@
  
  # DO NOT DELETE THIS LINE -- make depend depends on it.
  
