@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/16 16:46:32 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/05/23 00:49:22 lebel Exp $
 bin/kbiff
+lib/kbiff.la
+%%SHARED%%
 share/applnk/Internet/kbiff.desktop
 share/apps/kbiff/pics/delete.png
 share/apps/kbiff/pics/mailbox.png
@@ -21,6 +23,7 @@ share/doc/HTML/es/kbiff/common
 share/doc/HTML/es/kbiff/index.docbook
 share/doc/HTML/fr/kbiff/common
 share/doc/HTML/fr/kbiff/index.docbook
+share/icons/hicolor/16x16/apps/kbiff.png
 share/icons/hicolor/32x32/apps/kbiff.png
 share/icons/hicolor/48x48/apps/kbiff.png
 share/icons/locolor/16x16/apps/kbiff.png
