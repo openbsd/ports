@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.61 2002/03/23 01:04:32 jakob Exp $
+# $OpenBSD: Makefile,v 1.62 2002/03/31 13:44:03 jakob Exp $
 
 COMMENT=	network protocol analyzer
 
-VERSION=	0.9.2
+VERSION=	0.9.3
 DISTNAME=	ethereal-${VERSION}
 CATEGORIES=	net x11
 NEED_VERSION=	1.507
