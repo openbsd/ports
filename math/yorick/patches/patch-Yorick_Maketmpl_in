@@ -1,0 +1,25 @@
+$OpenBSD: patch-Yorick_Maketmpl_in,v 1.1 2001/03/17 12:31:14 wilfried Exp $
+--- Yorick/Maketmpl.in.orig	Wed Dec 11 19:13:44 1996
++++ Yorick/Maketmpl.in	Wed Mar 14 23:36:45 2001
+@@ -125,10 +125,10 @@ GRAPH_O = graph.o graph0.o style.o
+ # Choose C compiler appropriate to this machine - must be an ANSI C compiler
+ CC = @CC@
+ DEFS = @DEFS@
+-CFLAGS = $(C_OPTIMIZE) $(DEFS) $(D_SIZE_T) -I$(srcdir) $(YORINCL)
++CFLAGS = @CFLAGS@ $(DEFS) $(D_SIZE_T) -I$(srcdir) $(YORINCL)
+ 
+ LDOPTS = @LDOPTS@
+-LDFLAGS = $(LD_OPTIMIZE) $(LDOPTS)
++LDFLAGS = @LDFLAGS@ $(LDOPTS)
+ 
+ # Usage:   $(Y_LD) $(OBJS) $(LIBS)
+ Y_LD = $(CC) $(LDFLAGS) -o $@
+@@ -208,7 +208,7 @@ CCFLAGS = $(CXXFLAGS)
+ # Thus, main.o needs a rule to build it:
+ CXXMAIN = fake_main.o
+ $(CXXMAIN):
+-	$(CXX) $(CPPFLAGS) -g -c $(Y_INCDIR)/main.c
++	$(CXX) $(CPPFLAGS) ${CFLAGS} -c $(Y_INCDIR)/main.c
+ 
+ # ---------------------------------------------------------------------------
+ 

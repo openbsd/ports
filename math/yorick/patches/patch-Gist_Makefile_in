@@ -1,0 +1,17 @@
+$OpenBSD: patch-Gist_Makefile_in,v 1.1 2001/03/17 12:31:14 wilfried Exp $
+--- Gist/Makefile.in.orig	Fri Jan  3 19:22:49 1997
++++ Gist/Makefile.in	Wed Mar 14 23:26:54 2001
+@@ -32,11 +32,11 @@ RM = rm -f
+ CP = cp
+ 
+ DEFS = @DEFS@
+-CFLAGS = $(C_OPTIMIZE) $(DEFS) -I$(srcdir)
++CFLAGS = @CFLAGS@ $(DEFS) -I$(srcdir)
+ 
+ LD_OPTIMIZE = $(C_OPTIMIZE)
+ LDOPTS = @LDOPTS@
+-LDFLAGS = $(LD_OPTIMIZE) $(LDOPTS)
++LDFLAGS = @LDFLAGS@ $(LDOPTS)
+ 
+ # The lowest level (last) libraries required on the load line go here.
+ # LOWLIBS = -lm -lc            (if Y_LD is not your C compiler)

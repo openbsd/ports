@@ -1,0 +1,20 @@
+$OpenBSD: patch-Browser_Makefile_in,v 1.1 2001/03/17 12:31:14 wilfried Exp $
+--- Browser/Makefile.in.orig	Fri Jan  3 19:24:16 1997
++++ Browser/Makefile.in	Wed Mar 14 23:26:39 2001
+@@ -23,14 +23,14 @@ RM = rm -f
+ CP = cp
+ 
+ DEFS = @DEFS@
+-CFLAGS = $(C_OPTIMIZE) $(DEFS) -I$(srcdir)
++CFLAGS = @CFLAGS@ $(DEFS) -I$(srcdir)
+ 
+ # Change these to compile gist using installed headers and libraries
+ GISTL = ../Gist
+ GISTI = ../Gist
+ 
+ LDOPTS = @LDOPTS@
+-LDFLAGS = $(LD_OPTIMIZE) $(LDOPTS)
++LDFLAGS = @LDFLAGS@ $(LDOPTS)
+ 
+ # The lowest level (last) libraries required on the load line go here.
+ # LOWLIBS = -lm -lc            (if Y_LD is not your C compiler)

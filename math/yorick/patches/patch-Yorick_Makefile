@@ -1,0 +1,14 @@
+$OpenBSD: patch-Yorick_Makefile,v 1.1 2001/03/17 12:31:14 wilfried Exp $
+--- Yorick/Makefile.orig	Fri Jan  3 01:53:10 1997
++++ Yorick/Makefile	Wed Mar 14 23:39:57 2001
+@@ -174,9 +174,8 @@ style.o: style.c ydata.h defstr.h   bini
+ fortrn.o: fortrn.c defmem.h
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) $(FORTRAN_LINKAGE) -c fortrn.c
+ 
+-# Always compile main.c with -g so new packages can be debugged.
+ main.o: main.c
+-	$(CC) $(CPPFLAGS) -g -c main.c
++	$(CC) $(CPPFLAGS) ${CFLAGS} -c main.c
+ 
+ # ---------------------------------------------------------------------------
+ 
