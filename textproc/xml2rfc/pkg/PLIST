@@ -1,4 +1,5 @@
 bin/xml2rfc
+share/xml2rfc/xml2rfc.tcl
 share/doc/xml2rfc/README.xml
 share/doc/xml2rfc/README.txt
 share/doc/xml2rfc/rfc2629-author.xml

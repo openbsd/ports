@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/03/30 14:49:37 jakob Exp $
+# $OpenBSD: Makefile,v 1.15 2001/03/30 15:53:13 jakob Exp $
 
 COMMENT=	convert memos written in XML to the RFC format
 
@@ -19,18 +19,36 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	wish8.3::x11/tk/8.3 \
-		${PREFIX}/lib/tcl8.3/TclXML::textproc/TclXML \
-
-NO_BUILD=       Yes
 WRKDIST=	${WRKDIR}
 
 DOCS=		README.xml README.txt \
 		rfc2629-author.xml rfc2629-author.txt \
 		rfc2629.dtd
 
+RUN_DEPENDS=	tclsh8.3::lang/tcl/8.3 \
+		${PREFIX}/lib/tcl8.3/TclXML::textproc/TclXML \
+
+FLAVORS=	no_x11
+FLAVOR?=
+
+.if ${FLAVOR:L} == "no_x11"
+USE_X11=	No
+.else
+USE_X11=	Yes
+RUN_DEPENDS+=	wish8.3::x11/tk/8.3
+.endif
+
+do-build:
+.if ${FLAVOR:L} == "no_x11"
+	sed s,y0y0y0,${PREFIX}, ${FILESDIR}/xml2rfc.no_x11 >${WRKSRC}/xml2rfc
+.else
+	sed s,y0y0y0,${PREFIX}, ${FILESDIR}/xml2rfc >${WRKSRC}/xml2rfc
+.endif
+
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/xml2rfc.tcl ${PREFIX}/bin/xml2rfc
+	@${INSTALL_SCRIPT} ${WRKSRC}/xml2rfc ${PREFIX}/bin/xml2rfc
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/xml2rfc
+	@${INSTALL_DATA} ${WRKSRC}/xml2rfc.tcl ${PREFIX}/share/xml2rfc
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xml2rfc
 .for file in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/xml2rfc
