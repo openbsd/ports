@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/29 19:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2003/06/29 19:42:23 naddy Exp $
 
 COMMENT=	"Motif toolkit"
 COMMENT-debuglibs="Motif toolkit debug libraries"
@@ -74,7 +74,7 @@ post-patch:
 	@cd ${WRKSRC}/doc/man/man4 && perl -pi -e "s|special file|5|" *.4
 	@cd ${WRKSRC}/doc/man/man5 && perl -pi -e "s|file formats|5|" *.5
 # Import from our current X installation.
-	@cp -f `ls ${X11BASE}/lib/X11/config/* | grep -v '\(Motif\|bsdLib.tmpl\|cde\|\/site.def\|host.def\)'` ${WRKDIR}/motif/config/cf
+	@cp -f `ls ${X11BASE}/lib/X11/config/* | egrep -v '(Motif|bsdLib.tmpl|cde|\/site.def|host.def)'` ${WRKDIR}/motif/config/cf
 	@mkdir -p ${WRKSRC}/imports/x11
 	@cd ${WRKSRC}/imports/x11 && for i in bin include lib ; do \
 	    if [ -f $$i ] ; then rm $$i; fi; \
