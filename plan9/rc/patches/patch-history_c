@@ -1,0 +1,12 @@
+$OpenBSD: patch-history_c,v 1.1 2002/11/21 17:53:23 pvalchev Exp $
+--- history.c.orig	Wed Nov 20 21:43:31 2002
++++ history.c	Wed Nov 20 21:43:52 2002
+@@ -331,7 +331,7 @@ next:	s = getcommand();
+ 			fprintf(stderr, "%s\n", s);
+ 		if (shell == NULL)
+ 			shell = "/bin/sh";
+-		execl(shell, rc_basename(shell), "-c", s, NULL);
++		execl(shell, rc_basename(shell), "-c", s, (void *)NULL);
+ 		perror(shell);
+ 		exit(1);
+ 	}
