@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/25 00:26:13 avsm Exp $
+bin/haddock
+bin/haddock-0.4
+lib/haddock-0.4/haddock.bin
+lib/haddock-0.4/haddock.css
+lib/haddock-0.4/haskell_icon.gif
+share/doc/haddock/docbook.css
+share/doc/haddock/haddock.html
+share/doc/haddock/introduction.html
+share/doc/haddock/invoking.html
+share/doc/haddock/license.html
+share/doc/haddock/markup.html
+share/doc/haddock/module-attributes.html
+share/doc/haddock/stylesheet-images/caution.gif
+share/doc/haddock/stylesheet-images/home.gif
+share/doc/haddock/stylesheet-images/important.gif
+share/doc/haddock/stylesheet-images/next.gif
+share/doc/haddock/stylesheet-images/note.gif
+share/doc/haddock/stylesheet-images/prev.gif
+share/doc/haddock/stylesheet-images/tip.gif
+share/doc/haddock/stylesheet-images/toc-blank.gif
+share/doc/haddock/stylesheet-images/toc-minus.gif
+share/doc/haddock/stylesheet-images/toc-plus.gif
+share/doc/haddock/stylesheet-images/up.gif
+share/doc/haddock/stylesheet-images/warning.gif
+share/doc/haddock/x331.html
+share/doc/haddock/x355.html
+share/doc/haddock/x360.html
+share/doc/haddock/x403.html
+share/doc/haddock/x418.html
+share/doc/haddock/x486.html
+share/doc/haddock/x57.html
+@dirrm share/doc/haddock/stylesheet-images
+@dirrm share/doc/haddock
+@dirrm lib/haddock-0.4
