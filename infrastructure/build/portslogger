@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: portslogger,v 1.9 2002/04/24 21:35:33 espie Exp $
+# $OpenBSD: portslogger,v 1.10 2002/05/18 18:37:47 espie Exp $
 # Copyright (c) 2001 Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -113,6 +113,8 @@ Returning to build of\s+(.*)|Installing\s+(.*?)\s+from)/o) {
 		$context = default;
 		$logfile = new Logger 'default';
 	}
+	# zap fetch progress bar
+	next if m/^\cM\s*\d+\%/;
 	$logfile->print($_);
 	print;
 }
