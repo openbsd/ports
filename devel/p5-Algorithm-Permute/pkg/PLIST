@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/09 05:46:45 kevlo Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/Algorithm/Permute.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Algorithm/Permute/Permute.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Algorithm/Permute/Permute.so
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Algorithm/Permute/autosplit.ix
+man/man3/Algorithm::Permute.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Algorithm/Permute
