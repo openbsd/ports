@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_protocols_novell_novell_c,v 1.1 2004/04/24 21:01:16 brad Exp $
+--- src/protocols/novell/novell.c.orig	2004-04-24 08:31:39.000000000 -0700
++++ src/protocols/novell/novell.c	2004-04-24 08:32:32.000000000 -0700
+@@ -906,13 +906,14 @@ _add_contacts_to_gaim_blist(NMUser * use
+ 
+ 			name = nm_contact_get_display_id(contact);
+ 			if (name) {
++				GaimGroup *group;
+ 				/* Add it to the gaim buddy list */
+ 				buddy = gaim_buddy_new(user->client_data,
+ 									   name,
+ 									   nm_contact_get_display_name(contact));
+ 
+ 				/* Does the Gaim group exist already? */
+-				GaimGroup *group = gaim_find_group(nm_folder_get_name(folder));
++				group = gaim_find_group(nm_folder_get_name(folder));
+ 
+ 				if (group == NULL) {
+ 					group = gaim_group_new(nm_folder_get_name(folder));
+@@ -2069,6 +2070,7 @@ novell_rename_group(GaimConnection * gc,
+ 
+ 	user = gc->proto_data;
+ 	if (user) {
++		NMFolder *folder;
+ 		/* Does new folder exist already? */
+ 		if (nm_find_folder(user, new_name)) {
+ 			/* Gaim currently calls novell_group_buddy() for
+@@ -2078,7 +2080,7 @@ novell_rename_group(GaimConnection * gc,
+ 			return;
+ 		}
+ 
+-		NMFolder *folder = nm_find_folder(user, old_name);
++		folder = nm_find_folder(user, old_name);
+ 
+ 		if (folder) {
+ 			rc = nm_send_rename_folder(user, folder, new_name,

@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_protocols_novell_nmuser_c,v 1.1 2004/04/24 21:01:16 brad Exp $
+--- src/protocols/novell/nmuser.c.orig	2004-04-24 08:29:39.000000000 -0700
++++ src/protocols/novell/nmuser.c	2004-04-24 08:31:19.000000000 -0700
+@@ -50,10 +50,11 @@ NMUser *
+ nm_initialize_user(const char *name, const char *server_addr,
+ 				   int port, gpointer data, nm_event_cb event_callback)
+ {
++	NMUser *user;
+ 	if (name == NULL || server_addr == NULL || event_callback == NULL)
+ 		return NULL;
+ 
+-	NMUser *user = g_new0(NMUser, 1);
++	user = g_new0(NMUser, 1);
+ 
+ 	user->conn = g_new0(NMConn, 1);
+ 
+@@ -1647,11 +1648,12 @@ char *
+ nm_typed_to_dotted(const char *typed)
+ {
+ 	unsigned i = 0, j = 0;
++	char *dotted;
+ 
+ 	if (typed == NULL)
+ 		return NULL;
+ 
+-	char *dotted = g_new0(char, strlen(typed));
++	dotted = g_new0(char, strlen(typed));
+ 
+ 	do {
+ 
+@@ -1712,8 +1714,9 @@ _update_contact_list(NMUser * user, NMFi
+ 			locate =
+ 				nm_locate_field(NM_A_SZ_OBJECT_ID, (NMField *) cursor->value);
+ 			if (locate != NULL && locate->value != 0) {
++				gpointer item;
+ 				objid1 = atoi((char *) locate->value);
+-				gpointer item =
++				item =
+ 					nm_folder_find_item_by_object_id(user->root_folder, objid1);
+ 				if (item != NULL) {
+ 					if (cursor->method == NMFIELD_METHOD_ADD) {
