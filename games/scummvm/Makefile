@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/09/28 00:44:34 jolan Exp $
+# $OpenBSD: Makefile,v 1.10 2004/11/28 11:56:57 jsg Exp $
 
 COMMENT=	"play games built around LucasArts' SCUMM"
 DISTNAME=	scummvm-0.6.1b
@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
 HOMEPAGE=	http://scummvm.sourceforge.net/
 
-MAINTAINER=	Jonathan Gray <jsg@goblin.cx>
+MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/10/01 18:07:26 jsg Exp $
+# $OpenBSD: Makefile,v 1.4 2004/11/28 11:56:57 jsg Exp $
 
 COMMENT=	"collection of various tools for scummvm"
 # this tarball is horribly packaged
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
 HOMEPAGE=	http://scummvm.sourceforge.net/
 
-MAINTAINER=	Jonathan Gray <jsg@goblin.cx>
+MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
