@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 03:49:22 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/09/04 23:26:31 lebel Exp $
 
 COMMENT=	"Unix shell embedded into Scheme"
 
-DISTNAME=	scsh-0.5.1
+DISTNAME=	scsh-0.5.3
 CATEGORIES=	shells lang
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/su/scsh/
@@ -23,9 +23,9 @@ STRIP=
 DOCS=	README RELEASE NEWS COPYING
 
 post-install:
-	cd ${WRKSRC} && \
-		${INSTALL_DATA} ${DOCS} ${PREFIX}/lib/scsh/doc
-	@rm -f ${PREFIX}/share/doc/scsh
-	@ln -fs ${TRUEPREFIX}/lib/scsh/doc ${PREFIX}/share/doc/scsh
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scsh
+	mv ${PREFIX}/lib/scsh/doc/* ${PREFIX}/share/doc/scsh
+	rmdir ${PREFIX}/lib/scsh/doc
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/scsh
 
 .include <bsd.port.mk>

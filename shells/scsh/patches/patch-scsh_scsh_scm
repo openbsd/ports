@@ -1,0 +1,12 @@
+$OpenBSD: patch-scsh_scsh_scm,v 1.1 2001/09/04 23:26:31 lebel Exp $
+--- scsh/scsh.scm.orig	Sat Jun  2 13:42:50 2001
++++ scsh/scsh.scm	Mon Sep  3 22:31:17 2001
+@@ -301,7 +301,7 @@
+ 				    ".~a"))))))
+ 
+ (define *temp-file-template*
+-  (make-fluid (string-append "/usr/tmp/" (number->string (pid)) ".~a")))
++  (make-fluid (string-append "/var/tmp/" (number->string (pid)) ".~a")))
+ 
+ 
+ (define (temp-file-iterate maker . maybe-template)

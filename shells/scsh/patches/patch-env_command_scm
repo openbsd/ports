@@ -1,0 +1,12 @@
+$OpenBSD: patch-env_command_scm,v 1.1 2001/09/04 23:26:31 lebel Exp $
+--- env/command.scm.orig	Tue Aug 10 14:17:37 1999
++++ env/command.scm	Mon Sep  3 22:28:58 2001
+@@ -546,7 +546,7 @@
+               ((char=? (string-ref line 0) #\n) #f)
+               (else (loop count)))))))
+ 
+-(define *y-or-n-eof-count* 100)
++(define *y-or-n-eof-count* 0)
+ 
+ (define (read-line port)
+   (let loop ((l '()))

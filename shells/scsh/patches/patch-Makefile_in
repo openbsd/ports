@@ -1,0 +1,50 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/09/04 23:26:31 lebel Exp $
+--- Makefile.in.orig	Mon Jun  4 01:18:29 2001
++++ Makefile.in	Mon Sep  3 22:28:07 2001
+@@ -148,7 +148,7 @@ CONFIG_FILES = interfaces.scm low-packag
+ 
+ # The following is the first rule and therefore the "make" command's
+ # default target.
+-enough: $(VM) $(IMAGE) script $(LIBCIG) scsh $(LIBSCSH) $(MANPAGE) .notify
++enough: $(VM) $(IMAGE) script $(LIBCIG) scsh $(LIBSCSH) $(MANPAGE)
+ 
+ # The developers are curious to know.  Don't be concerned if this fails.
+ # You may comment these lines out if you wish to be discourteous.
+@@ -286,6 +286,7 @@ install-dirs:
+ 	$(RM) -r $(LIB).old
+ 	if [ -d $(LIB) ] ; then mv $(LIB) $(LIB).old ; fi
+ 	mkdir $(LIB)
++	mkdir $(LIB)/emacs
+ 	mkdir $(LIB)/big
+ 	mkdir $(LIB)/cig
+ 	mkdir $(LIB)/doc
+@@ -313,8 +314,8 @@ install-inc: scheme48.h
+ 	$(INSTALL_DATA) $(srcdir)/scheme48.h $(incdir)/
+ 
+ install-cig: cig
+-	$(INSTALL_PROGRAM) $(srcdir)/$(CIG) $(LIB)/cig
+-	$(INSTALL_PROGRAM) $(srcdir)/$(CIG).image $(LIB)/cig
++	$(INSTALL_DATA) $(srcdir)/$(CIG) $(LIB)/cig
++	$(INSTALL_DATA) $(srcdir)/$(CIG).image $(LIB)/cig
+ 	$(INSTALL_DATA) $(srcdir)/$(LIBCIG) $(LIB)/cig
+ 	$(INSTALL_DATA) $(srcdir)/cig/libcig.h $(LIB)/cig
+ 
+@@ -322,6 +323,7 @@ install-misc: $(LIB)/rts $(LIB)/env $(LI
+ 	      $(LIB)/misc $(LIB)/link $(LIB)/vm $(LIB)/doc
+ 	for f in $(srcdir)/rts/*num.scm; \
+ 	    do $(INSTALL_DATA) $$f $(LIB)/rts/; done
++	for f in $(srcdir)/emacs/*; do $(INSTALL_DATA) $$f $(LIB)/emacs/; done
+ 	for f in $(srcdir)/env/*.scm; do $(INSTALL_DATA) $$f $(LIB)/env/; done
+ 	for f in $(srcdir)/big/*.scm; do $(INSTALL_DATA) $$f $(LIB)/big/; done
+ 	for f in $(srcdir)/opt/*.scm; do $(INSTALL_DATA) $$f $(LIB)/opt/; done
+@@ -729,8 +731,8 @@ install-scsh: scsh
+ 	$(RM) $(bindir)/$(RUNNABLE)$(EXEEXT)
+ 	$(INSTALL_PROGRAM) $(srcdir)/scsh/scsh$(EXEEXT) \
+ 	    $(bindir)/$(RUNNABLE)$(EXEEXT)
+-	$(INSTALL_PROGRAM) $(srcdir)/scsh/scsh.image $(LIB)/scsh.image
+-	$(INSTALL_PROGRAM) $(srcdir)/$(LIBSCSH) $(libdir)/$(LIBSCSH)
++	$(INSTALL_DATA) $(srcdir)/scsh/scsh.image $(LIB)/scsh.image
++	$(INSTALL_DATA) $(srcdir)/$(LIBSCSH) $(libdir)/$(LIBSCSH)
+ 	$(RANLIB) $(libdir)/$(LIBSCSH)
+ 	for f in $(srcdir)/scsh/*.scm; \
+ 	    do $(INSTALL_DATA) $$f $(LIB)/scsh/; done

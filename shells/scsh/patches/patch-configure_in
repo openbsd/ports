@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2001/09/04 23:26:31 lebel Exp $
+--- configure.in.orig	Sun May 27 19:55:01 2001
++++ configure.in	Mon Sep  3 22:29:29 2001
+@@ -238,7 +238,7 @@ else
+ fi
+ 
+ AR=${AR-"ar cq"}
+-TMPDIR=${TMPDIR-"/usr/tmp"}
++TMPDIR=${TMPDIR-"/var/tmp"}
+ 
+ case "$host" in
+ 
