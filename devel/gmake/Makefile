@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2002/05/13 18:50:39 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2002/10/04 18:06:28 brad Exp $
 
 COMMENT=	"GNU make"
-DISTNAME=	make-3.79.1
-PKGNAME=	gmake-3.79.1
+
+DISTNAME=	make-3.80
+PKGNAME=	g${DISTNAME}
 CATEGORIES=	devel
-NEED_VERSION=	1.460
 MASTER_SITES=	${MASTER_SITE_GNU:=make/}
 
 HOMEPAGE=	http://www.gnu.org/software/make/
@@ -22,7 +22,8 @@ SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --program-prefix="g"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		MAKEINFO="makeinfo --no-split"
 
 # XXX workaround sparc64 gcc optimization bug where gmake built
 # with optimization level > 0 would get random sig11's.
@@ -31,10 +32,10 @@ CFLAGS+=	-O0
 .endif
 
 post-extract:
-	@rm -f ${WRKSRC}/make.info*
+	@rm -f ${WRKSRC}/doc/make.info*
 
 post-install:
-	@chmod g-s ${PREFIX}/bin/gmake
+	@chmod ${BINMODE} ${PREFIX}/bin/gmake
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/gmake
 
 # XXX This is the ONE case where we shouldn't be able to cheat on 

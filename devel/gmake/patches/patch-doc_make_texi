@@ -1,6 +1,7 @@
---- make.texinfo.orig	Tue Jun 20 10:00:17 2000
-+++ make.texinfo	Sun Aug 26 13:19:10 2001
-@@ -24,9 +24,9 @@
+$OpenBSD: patch-doc_make_texi,v 1.1 2002/10/04 18:06:28 brad Exp $
+--- doc/make.texi.orig	Fri Oct  4 10:18:02 2002
++++ doc/make.texi	Fri Oct  4 10:19:00 2002
+@@ -25,9 +25,9 @@
  @c Combine the program and concept indices:
  @syncodeindex pg cp
  
