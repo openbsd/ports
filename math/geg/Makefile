@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/09 23:26:28 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/23 06:57:14 pvalchev Exp $
 
 COMMENT=	"simple program for plotting 2d mathematical functions"
 
@@ -23,8 +23,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	intl.1::devel/gettext \
-		gtk.1.2::x11/gtk+ \
+MODULES=	gettext
+LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		glib.1::devel/glib \
 		gdk_imlib::graphics/imlib
 

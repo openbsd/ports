@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/08/19 07:19:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2001/09/23 06:57:14 pvalchev Exp $
 
 COMMENT=	"curses-based icq client implementation"
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://konst.org.ua/download/ \
 
 HOMEPAGE=	http://konst.org.ua/software.centericq.html
 
-LIB_DEPENDS=	intl.1:gettext-*:devel/gettext
+MODULES=	gettext
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
