@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2003/06/12 00:53:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.97 2003/06/18 21:27:20 naddy Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -56,7 +56,6 @@
 #    SUBDIR += mxv
      SUBDIR += nap
 #    SUBDIR += nas
-     SUBDIR += nomadio
      SUBDIR += normalize
      SUBDIR += nspmod
      SUBDIR += opennap

@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/16 16:42:05 mickey Exp $
-bin/nomadio
-man/cat1/nomadio.0
