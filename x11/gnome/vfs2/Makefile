@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/31 19:08:33 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2003/06/12 19:53:49 marcm Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
-VERSION=		2.0.4.1
+VERSION=		2.2.3
 DISTNAME=		gnome-vfs-${VERSION}
 PKGNAME=		gnome-vfs2-${VERSION}
 CATEGORIES=		devel x11/gnome
@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.gnome.org/
 
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-vfs/2.0/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-vfs/2.2/}
 
 LIB_DEPENDS=		bonobo-2::x11/gnome/libbonobo \
 			bz2::archivers/bzip2 \
@@ -27,16 +27,20 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+CONFDIR=		${SYSCONFDIR}/gnome
 USE_X11=		Yes
 USE_GMAKE=		Yes
-CONFIGURE_STYLE= 	gnu
+CONFIGURE_STYLE= 	gnu old
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=	--sysconfdir="${CONFDIR}"
+CONFIGURE_ARGS+=	--disable-gtk-doc
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-vfs2
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+SUBST_VARS=		CONFDIR
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-vfs2; \
-	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/gnome-vfs2/
+	cp -Rp ${WRKINST}/${CONFDIR}/* ${PREFIX}/share/examples/gnome-vfs2/
 
 .include <bsd.port.mk>

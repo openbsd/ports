@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.2 2003/02/26 15:13:04 david Exp $
+# $OpenBSD: INSTALL,v 1.3 2003/06/12 19:53:49 marcm Exp $
 
 P_NAME=gnome-vfs2
 
@@ -14,6 +14,7 @@ gnome-vfs-2.0/modules/default-modules.conf
 gnome-vfs-2.0/modules/cdda-module.conf
 gnome-vfs-2.0/vfolders/applications-all-users.vfolder-info
 gnome-vfs-2.0/vfolders/favorites.vfolder-info
+gnome-vfs-2.0/vfolders/network.vfolder-info
 gnome-vfs-2.0/vfolders/preferences-all-users.vfolder-info
 gnome-vfs-2.0/vfolders/server-settings.vfolder-info
 gnome-vfs-2.0/vfolders/start-here.vfolder-info
@@ -26,7 +27,7 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 
 do_post() {
 
-	DEST_PFX=${SYSCONFDIR}
+	DEST_PFX=${CONFDIR}
 	SOURCE_PFX=${PREFIX}/share/examples/${P_NAME}
 
 	echo 

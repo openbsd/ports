@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.1.1.1 2003/01/31 19:08:33 todd Exp $
---- ltmain.sh.orig	Wed Nov 13 09:09:29 2002
-+++ ltmain.sh	Thu Dec 12 23:25:21 2002
-@@ -1082,6 +1082,17 @@ compiler."
+$OpenBSD: patch-ltmain_sh,v 1.2 2003/06/12 19:53:49 marcm Exp $
+--- ltmain.sh.orig	Wed Mar  5 06:35:48 2003
++++ ltmain.sh	Thu May  1 19:40:09 2003
+@@ -1073,6 +1073,17 @@ compiler."
  	continue
  	;;
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2003/01/31 19:08:33 todd Exp $
        -module)
  	module=yes
  	continue
-@@ -1522,6 +1533,19 @@ compiler."
+@@ -1530,6 +1541,19 @@ compiler."
  	  fi
  	  continue
  	  ;;
@@ -39,7 +39,7 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2003/01/31 19:08:33 todd Exp $
  	%DEPLIBS%)
  	  alldeplibs=yes
  	  continue
-@@ -1767,11 +1791,6 @@ compiler."
+@@ -1775,11 +1799,6 @@ compiler."
  	    continue
  	  fi
  
@@ -51,9 +51,9 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2003/01/31 19:08:33 todd Exp $
  	  if test -n "$old_archive_from_expsyms_cmds"; then
  	    # figure out the soname
  	    set dummy $library_names
-@@ -4569,40 +4588,6 @@ relink_command=\"$relink_command\""
+@@ -4526,40 +4545,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
-     test "$show" = ":" && exit 0
+     test "$show" = : && exit 0
  
 -    echo "----------------------------------------------------------------------"
 -    echo "Libraries have been installed in:"
