@@ -1,0 +1,57 @@
+*** config.h.orig	Fri Aug  1 08:13:05 1997
+--- config.h	Tue Apr 28 15:11:11 1998
+***************
+*** 1,9 ****
+  /*$Id: patch-ad,v 1.1 1998/04/28 17:23:11 marc Exp $*/
+  
+! #define USEdot_lock	/**/
+  /*#define USEfcntl_lock /**/	    /* to test which combinations make sense */
+  /*#define USElockf	/**/	      /* run the lockingtest program part of */
+! /*#define USEflock	/**/		/* the procmail installation process */
+  
+  /*#define SHADOW_PASSWD /**/		  /* shadow password library support */
+  
+--- 1,9 ----
+  /*$Id: patch-ad,v 1.1 1998/04/28 17:23:11 marc Exp $*/
+  
+! /*#define USEdot_lock	/**/
+  /*#define USEfcntl_lock /**/	    /* to test which combinations make sense */
+  /*#define USElockf	/**/	      /* run the lockingtest program part of */
+! #define USEflock	/**/		/* the procmail installation process */
+  
+  /*#define SHADOW_PASSWD /**/		  /* shadow password library support */
+  
+***************
+*** 12,18 ****
+  #define APOP		/**/
+  #define TOP		/**/
+  
+! /*#define LAST_HACK	/**/		   /* uncomment to enable dummy LAST */
+  							 /* violates RFC1939 */
+  
+  /* to change the MAILSPOOLDIR, edit authenticate.c */
+--- 12,18 ----
+  #define APOP		/**/
+  #define TOP		/**/
+  
+! #define LAST_HACK	/**/		   /* uncomment to enable dummy LAST */
+  							 /* violates RFC1939 */
+  
+  /* to change the MAILSPOOLDIR, edit authenticate.c */
+***************
+*** 62,68 ****
+  \n\t-T\tdisable optional TOP command\
+  \n\t-p port\tspecify port other than %d\n"
+  
+! /*#define LOG_FAILED_PASSWORD			     /* log failed passwords */
+  
+  #define COPYBUF		32768			/* when doing in-situ copies */
+  #define GROWSTEP	16
+--- 62,68 ----
+  \n\t-T\tdisable optional TOP command\
+  \n\t-p port\tspecify port other than %d\n"
+  
+! #define LOG_FAILED_PASSWORD			     /* log failed passwords */
+  
+  #define COPYBUF		32768			/* when doing in-situ copies */
+  #define GROWSTEP	16
