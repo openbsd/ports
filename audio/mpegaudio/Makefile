@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/03/21 20:35:42 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/07/17 20:56:12 lebel Exp $
 
 COMMENT=	"MPEG/audio Layer 1 and Layer 2 encoder/decoder"
 DISTNAME=	mpegaudio
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+MAKE_ENV=	CC="${CC}"
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/mpeg_musicin.1 ${PREFIX}/man/man1
