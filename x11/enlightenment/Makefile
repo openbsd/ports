@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/10/04 03:58:26 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/10/06 01:14:54 brad Exp $
 
 DISTNAME=	enlightenment-0.16.5
 CATEGORIES=     x11
@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
 
 HOMEPAGE=	http://www.enlightenment.org/
 
-LIB_DEPENDS=	esd.2.19::audio/esound \
+LIB_DEPENDS=	esd.2::audio/esound \
 		Fnlib.5::graphics/fnlib \
 		ghttp.1::www/libghttp
 
