@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/16 20:25:02 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/09/26 02:26:47 brad Exp $
 
 DISTNAME=	openjade-1.3
 CATEGORIES=	textproc
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	RANLIB="${RANLIB}"
-FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}"
+FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}" INSTALL="${INSTALL_PROGRAM}"
 
 USE_GMAKE=	Yes
 
