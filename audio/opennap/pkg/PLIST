@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/08/23 07:04:49 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/02/08 19:32:17 espie Exp $
 sbin/opennap
 sbin/metaserver
 sbin/setup
@@ -10,6 +10,7 @@ share/examples/opennap/sample.motd
 share/examples/opennap/sample.servers
 share/examples/opennap/sample.users
 share/opennap/users
+@exec chmod -R og-rwx %B
 @dirrm share/doc/opennap
 @dirrm share/examples/opennap/
 @dirrm share/opennap
