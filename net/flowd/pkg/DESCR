@@ -1,0 +1,7 @@
+flowd is a NetFlow collector daemon intended to be small, fast and 
+secure. It features some basic filtering to limit or tag the flows that 
+are recorded and is privilege separated, to limit security exposure from 
+bugs in flowd itself. Flowd is IPv6 capable - supporting flow export via 
+IPv6 transport and NetFlow v.9 IPv6 flow records. It also supports 
+reception of flow datagrams sent to multicast groups, allowing one to 
+build redundant flow gathering systems.
