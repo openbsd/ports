@@ -18,7 +18,7 @@
 +    DYNAMIC_LINK_FLAGS=""
 +    ELF_CC="$CC"
 +    case `arch -s` in
-+      sparc*)
++      sparc64)
 +        ELF_CFLAGS="$CFLAGS -fPIC"
 +	;;
 +      *)
