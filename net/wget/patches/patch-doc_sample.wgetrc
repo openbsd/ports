@@ -1,5 +1,5 @@
---- doc/sample.wgetrc.~1~	Thu Feb 13 17:16:18 1997
-+++ doc/sample.wgetrc	Fri Apr  9 18:43:05 1999
+--- doc/sample.wgetrc.orig	Thu Apr 20 18:06:43 2000
++++ doc/sample.wgetrc	Thu Jan 11 09:05:41 2001
 @@ -7,7 +7,7 @@
  ## not contain a comprehensive list of commands -- look at the manual
  ## to find out what you can put into this file.
@@ -8,8 +8,8 @@
 +## Wget initialization file can reside in /etc/wgetrc
  ## (global, for all users) or $HOME/.wgetrc (for a single user).
  ##
- ## To use any of the settings in this file, you will have to uncomment
-@@ -15,7 +15,7 @@
+ ## To use the settings in this file, you will have to uncomment them,
+@@ -16,7 +16,7 @@
  
  
  ##

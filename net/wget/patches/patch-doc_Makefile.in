@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	Sat May 23 22:40:42 1998
-+++ doc/Makefile.in	Fri Aug  4 13:14:52 2000
+--- doc/Makefile.in.orig	Sun Dec 31 00:07:09 2000
++++ doc/Makefile.in	Thu Jan 11 09:18:26 2001
 @@ -22,7 +22,7 @@
  SHELL = /bin/sh
  
@@ -18,15 +18,15 @@
  
  #
  # Dependencies for building
-@@ -56,6 +56,7 @@
- everything: all wget_us.ps wget_a4.ps wget_toc.html
+@@ -59,6 +59,7 @@
+ 	sed s/@/@@/g $(srcdir)/sample.wgetrc > sample.wgetrc.munged_for_texi_inclusion
  
- wget.info: wget.texi
+ wget.info: sample.wgetrc.munged_for_texi_inclusion wget.texi
 +	@rm -f wget.info*
  	-$(MAKEINFO)
  
  #wget.cat: $(MAN)
-@@ -99,19 +100,8 @@
+@@ -102,25 +103,8 @@
  
  # install sample.wgetrc
  install.wgetrc:
@@ -36,15 +36,21 @@
 -	     else \
 -	     echo ' $(INSTALL_DATA) $(srcdir)/sample.wgetrc $(WGETRC).new'; \
 -	     $(INSTALL_DATA) $(srcdir)/sample.wgetrc $(WGETRC).new; \
--	     echo "WARNING: File \`$(WGETRC)' already exists and is spared."; \
--	     echo "         You might want to consider \`$(WGETRC).new',"; \
--	     echo "         and merge both into \`$(WGETRC)', for the best."; \
+-	     echo; \
+-	     echo "WARNING: Differing \`$(WGETRC)'"; \
+-	     echo "         exists and has been spared.  You might want to"; \
+-	     echo "         consider merging in the new lines from"; \
+-	     echo "         \`$(WGETRC).new'."; \
+-	     echo; \
+-	     echo "<Hit RETURN to acknowledge>\c"; \
+-	     read user_input; \
+-	     echo; \
 -	  fi; \
 -	else \
 -	  $(INSTALL_DATA) $(srcdir)/sample.wgetrc $(WGETRC); \
 -	fi
 +	$(top_srcdir)/mkinstalldirs $(WGETRCDIR)
-+	$(INSTALL_DATA) $(srcdir)/sample.wgetrc $(WGETRCDIR);
++	$(INSTALL_DATA) $(srcdir)/sample.wgetrc $(WGETRCDIR)
  
  # uninstall info pages
  uninstall.info:
