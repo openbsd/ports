@@ -1,6 +1,7 @@
+$OpenBSD: patch-toconf_h,v 1.1 2001/03/14 15:04:12 naddy Exp $
 --- toconf.h.orig	Sat Jan  2 00:57:43 1999
-+++ toconf.h	Mon Aug 23 08:30:43 1999
-@@ -40,6 +40,7 @@
++++ toconf.h	Wed Mar 14 15:23:38 2001
+@@ -40,6 +40,7 @@ static const char cvsid_toconf_h[]
  
  typedef struct {
  	char *vendor, *product, *version;
@@ -8,7 +9,7 @@
  	byte readcmd;
  	bool mdchng;
  	byte density;
-@@ -50,6 +51,6 @@
+@@ -50,6 +51,6 @@ typedef struct {
  
  int toconf_readconfig (void);
  toconf_entry *toconf_searchentry

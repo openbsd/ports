@@ -1,0 +1,12 @@
+$OpenBSD: patch-pcmplay_1,v 1.1 2001/03/14 15:04:12 naddy Exp $
+--- pcmplay.1.orig	Wed Mar 14 15:29:16 2001
++++ pcmplay.1	Wed Mar 14 15:29:24 2001
+@@ -82,7 +82,7 @@ samples.
+ .TP
+ \fB\-d \fIdevice\fR, \fB\-\^\-device \fIdev
+ Specify the audio device to use.  The default is
+-/dev/dsp.
++/dev/sound.
+ .TP
+ \fB\-b \fIsize\fR, \fB\-\^\-buffer \fIsize
+ Use an audio output buffer of

@@ -1,25 +1,26 @@
---- Makefile.orig	Wed Dec 16 07:34:09 1998
-+++ Makefile	Mon Aug 16 22:44:57 1999
+$OpenBSD: patch-Makefile,v 1.1 2001/03/14 15:04:11 naddy Exp $
+--- Makefile.orig	Wed Dec 16 13:34:09 1998
++++ Makefile	Wed Mar 14 15:55:55 2001
 @@ -5,10 +5,10 @@
- #   @(#)$Id: patch-aa,v 1.3 1999/08/17 03:09:23 brad Exp $
+ #   @(#)$Id: patch-Makefile,v 1.1 2001/03/14 15:04:11 naddy Exp $
  #
  
 -PREFIX?=/usr/local
  BINDIR=$(PREFIX)/bin
 -ETCDIR=$(PREFIX)/etc
  MANDIR=$(PREFIX)/man
-+LIBDIR=$(PREFIX)/lib/tosha
-+ETCDIR=/etc
++SAMPLEDIR=$(PREFIX)/share/examples/tosha
++ETCDIR=$(SYSCONFDIR)
  
  ###################################################
  ######                                       ######
-@@ -16,18 +16,8 @@
+@@ -16,17 +16,7 @@ MANDIR=$(PREFIX)/man
  ######                                       ######
  ###################################################
  
 -CFLAGS?=-O2
- CFLAGS+=-Wall -ansi -DGLOBAL_ETC_DIR=\"$(ETCDIR)\"
- 
+-CFLAGS+=-Wall -ansi -DGLOBAL_ETC_DIR=\"$(ETCDIR)\"
+-
 -.if (exists(/usr/include/camlib.h))
 -CFLAGS+=-DCAM
 -LDFLAGS=-lcam
@@ -28,11 +29,11 @@
 -.endif
 -
 -GZIP_CMD?=gzip -9
--
++CFLAGS+= -DGLOBAL_ETC_DIR=\"$(ETCDIR)\"
+ 
  BINS=tosha pcmplay pcmfade
  OBJS=utils.o getlopt.o tosha.o toscsi.o toform.o toconf.o pcmplay.o pcmfade.o
- 
-@@ -43,25 +33,22 @@
+@@ -43,25 +33,22 @@ pcmplay.o:	pcmplay.c utils.h getlopt.h
  pcmfade.o:	pcmfade.c utils.h
  
  tosha:	tosha.o toscsi.o toform.o toconf.o utils.o getlopt.o
@@ -54,8 +55,8 @@
 -	install -c -g bin -o bin -m 644 tosharc $(ETCDIR)
 -	install -c -g bin -o bin -m 644 tosha.1 pcmplay.1 pcmfade.1 \
 +	install -s -o root -g bin -m 755 $(BINS) $(BINDIR)
-+	install -d -o root -g wheel -m 755 $(LIBDIR)
-+	install -c -o root -g wheel -m 644 tosharc $(LIBDIR)/tosharc.sample
++	install -d -o root -g wheel -m 755 $(SAMPLEDIR)
++	install -c -o root -g wheel -m 644 tosharc $(SAMPLEDIR)/tosharc.sample
 +	install -c -o root -g wheel -m 644 tosha.1 pcmplay.1 pcmfade.1 \
  		$(MANDIR)/man1
 -.if !defined(NOMANCOMPRESS)

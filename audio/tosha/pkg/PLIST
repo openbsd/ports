@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/06/10 17:39:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/03/14 15:04:13 naddy Exp $
 bin/tosha
 bin/pcmplay
 bin/pcmfade
-lib/tosha/tosharc.sample
-@exec if [ ! -f /etc/tosharc ]; then cp %D/%F /etc/tosharc; else echo "===> You might wish to update /etc/tosharc"; echo "===> check %D/%F"; fi
-@unexec echo "===> You need to remove /etc/tosharc manually"
 man/man1/tosha.1
 man/man1/pcmplay.1
 man/man1/pcmfade.1
-@dirrm lib/tosha
+share/examples/tosha/tosharc.sample
+@dirrm share/examples/tosha

@@ -1,6 +1,7 @@
+$OpenBSD: patch-toconf_c,v 1.1 2001/03/14 15:04:12 naddy Exp $
 --- toconf.c.orig	Sat Jan  2 00:57:42 1999
-+++ toconf.c	Mon Aug 23 08:50:20 1999
-@@ -175,6 +175,14 @@
++++ toconf.c	Wed Mar 14 15:23:38 2001
+@@ -175,6 +175,14 @@ readconfigfile (const char *filename)
  		if (!(toconf = (toconf_entry *) realloc(toconf,
  		    sizeof(toconf_entry) * toconf_num)))
  			out_of_memory();
@@ -15,7 +16,7 @@
  		toconf[cn].vendor  = readstring(&cptr, "vendor", &fs);
  		toconf[cn].product = readstring(&cptr, "product", &fs);
  		toconf[cn].version = readstring(&cptr, "version", &fs);
-@@ -257,7 +265,7 @@
+@@ -257,7 +265,7 @@ toconf_readconfig (void)
  
  toconf_entry *
  toconf_searchentry
@@ -24,7 +25,7 @@
  {
  	toconf_entry *te;
  	int i, l1, l2, l3;
-@@ -267,18 +275,20 @@
+@@ -267,18 +275,20 @@ toconf_searchentry
  		l1 = strlen(te->vendor);
  		l2 = strlen(te->product);
  		l3 = strlen(te->version);

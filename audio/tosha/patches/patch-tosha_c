@@ -1,6 +1,7 @@
+$OpenBSD: patch-tosha_c,v 1.1 2001/03/14 15:04:12 naddy Exp $
 --- tosha.c.orig	Sat Jan  2 00:57:49 1999
-+++ tosha.c	Mon Aug 23 08:44:51 1999
-@@ -578,6 +578,7 @@
++++ tosha.c	Wed Mar 14 15:23:38 2001
+@@ -578,6 +578,7 @@ main (int argc, char *argv[])
  	int i;
  	
  	char *vendor, *product, *versid;
@@ -8,7 +9,7 @@
  	char *ofname;	/* output file name */
  	int index;
  	int singlefile = FALSE;
-@@ -634,10 +635,12 @@
+@@ -634,10 +635,12 @@ main (int argc, char *argv[])
  	vendor = justify(strndup((char *) buf + 8, 8));
  	product = justify(strndup((char *) buf + 16, 16));
  	versid = justify(strndup((char *) buf + 32, 4));

@@ -1,6 +1,7 @@
+$OpenBSD: patch-tosha_1,v 1.1 2001/03/14 15:04:12 naddy Exp $
 --- tosha.1.orig	Sat Jan  2 00:57:48 1999
-+++ tosha.1	Mon Aug 23 09:06:35 1999
-@@ -63,10 +63,9 @@
++++ tosha.1	Wed Mar 14 15:23:38 2001
+@@ -63,10 +63,9 @@ reads one or more CD-DA (digital audio) 
  sectors and writes them into a single or multiple files,
  or to the standard output.  VideoCD tracks (digital video)
  are supported, too.  The digital audio / video data is read

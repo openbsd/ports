@@ -1,0 +1,11 @@
+$OpenBSD: patch-global_h,v 1.1 2001/03/14 15:04:12 naddy Exp $
+--- global.h.orig	Sat Jan  2 00:57:37 1999
++++ global.h	Wed Mar 14 15:23:37 2001
+@@ -48,7 +48,6 @@ static const char cvsid_global_h[]
+ #include <unistd.h>
+ 
+ typedef unsigned char byte;
+-typedef unsigned long ulong;
+ 
+ /*
+  *   Uncommenting this define will cause a LOT of output.

@@ -4,5 +4,3 @@ standard output.
 
 Most IDE/ATAPI CD-ROM drives should work through OpenBSD's atapiscsi
 functionality. Some, though, are known to be problematic.
-
-Oliver Fromme <oliver.fromme@heim3.tu-clausthal.de>

@@ -1,6 +1,7 @@
+$OpenBSD: patch-toscsi_c,v 1.1 2001/03/14 15:04:12 naddy Exp $
 --- toscsi.c.orig	Sat Jan  2 00:57:46 1999
-+++ toscsi.c	Fri Jul 23 12:17:12 1999
-@@ -182,6 +182,16 @@
++++ toscsi.c	Wed Mar 14 15:23:38 2001
+@@ -182,6 +182,16 @@ toscsi_readsectors (toscsi_handle *hdl, 
  				(char *) buf, SCCMD_READ,
  				"v 0 0 v:i3 0 0 0 v 0 0",
  				readcmd, sec, secread);

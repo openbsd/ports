@@ -1,0 +1,18 @@
+$OpenBSD: patch-pcmplay_c,v 1.1 2001/03/14 15:04:12 naddy Exp $
+--- pcmplay.c.orig	Sat Jan  2 00:57:41 1999
++++ pcmplay.c	Wed Mar 14 15:29:06 2001
+@@ -44,12 +44,12 @@ static const char cvsid[]
+ #include <sys/types.h>
+ #include <sys/uio.h>
+ #include <unistd.h>
+-#include <machine/soundcard.h>
++#include <soundcard.h>
+ 
+ #include "utils.h"
+ #include "getlopt.h"
+ 
+-char *audevice = "/dev/dsp";
++char *audevice = "/dev/sound";
+ int buffersize = 32;
+ int dsp_samplesize = 16;
+ int dsp_channels = 2;
