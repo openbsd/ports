@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 1999/07/14 17:45:46 fgsch Exp $
+# $OpenBSD: Makefile,v 1.49 1999/09/10 22:10:48 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -76,6 +76,7 @@
 #    SUBDIR += p5-SNMP
 #    SUBDIR += pcnfsd
 #    SUBDIR += pmf
+     SUBDIR += popa3d
      SUBDIR += proftpd
      SUBDIR += queso
 #    SUBDIR += radius
