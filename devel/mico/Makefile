@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/28 06:02:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2001/11/10 16:56:32 shell Exp $
 
 COMMENT=	"free and complete CORBA-compliant implementation"
 
-DISTNAME=	mico-2.3.5
+DISTNAME=	mico-2.3.6
 CATEGORIES=	devel
-NEED_VERSION=	1.417
+NEED_VERSION=	1.482
 
 HOMEPAGE=	http://www.mico.org/
 MASTER_SITES=	${HOMEPAGE}

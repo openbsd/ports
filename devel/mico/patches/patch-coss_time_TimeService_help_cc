@@ -1,26 +1,12 @@
-$OpenBSD: patch-coss_time_TimeService_help_cc,v 1.1.1.1 2001/06/28 19:59:07 shell Exp $
---- coss/time/TimeService_help.cc.orig	Wed Mar 21 01:48:35 2001
-+++ coss/time/TimeService_help.cc	Wed Mar 21 02:22:53 2001
-@@ -27,7 +27,7 @@
- #include <mico/CosNaming.h>
- #include <mico/util.h>
- #include <time.h>
--#include <sys/timeb.h>
-+#include <sys/time.h>
- 
- //
- //Helper functions, mainly wrappers around the time function
-@@ -60,10 +60,10 @@ TimeBase::TimeT getInaccuracy() 
- TimeBase::TimeT getTimezone()
- {
-    //obtain timezone
--   timeb  timestruct;
--   ftime(&timestruct);
-+   struct timezone tzone;
-+   gettimeofday(NULL, &tzone);
-    
--   TimeBase::TdfT displacementV = timestruct.timezone;
-+   TimeBase::TdfT displacementV = tzone.tz_minuteswest;
-    
-    return displacementV;
- }
+$OpenBSD: patch-coss_time_TimeService_help_cc,v 1.2 2001/11/10 16:56:33 shell Exp $
+--- coss/time/TimeService_help.cc.orig	Fri Oct 26 11:21:07 2001
++++ coss/time/TimeService_help.cc	Fri Oct 26 11:20:47 2001
+@@ -70,7 +70,7 @@ TimeBase::TimeT getTimezone()
+    struct timezone tz;
+    int r = gettimeofday (&tv, &tz);
+    assert (r == 0);
+-   TimeBase::TdfT displacementV = timezone.tz_minuteswest;
++   TimeBase::TdfT displacementV = tz.tz_minuteswest;
+ #else
+    // where do we get the timezone from?
+    assert (0);

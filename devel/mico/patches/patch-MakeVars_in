@@ -1,10 +1,13 @@
---- MakeVars.in.orig	Fri Mar 24 11:48:51 2000
-+++ MakeVars.in	Wed Jun 27 02:21:12 2001
-@@ -25,7 +25,7 @@ prefix		= @prefix@
+$OpenBSD: patch-MakeVars_in,v 1.2 2001/11/10 16:56:33 shell Exp $
+--- MakeVars.in.orig	Wed Oct 24 22:12:40 2001
++++ MakeVars.in	Wed Oct 24 22:12:30 2001
+@@ -24,8 +24,8 @@
+ prefix		= @prefix@
  exec_prefix	= @exec_prefix@
  SRCDIR		= @ABSSRCDIR@
- INSTDIR		= $(exec_prefix)
--SHARED_INSTDIR	= $(prefix)
+-INSTDIR		= @ABSEXECDIR@
+-SHARED_INSTDIR	= @ABSSHRDDIR@
++INSTDIR		= $(exec_prefix)
 +SHARED_INSTDIR	= $(prefix)/share
  
  

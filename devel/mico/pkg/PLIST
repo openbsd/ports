@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/28 19:59:06 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/11/10 16:56:33 shell Exp $
 bin/containmentd
 bin/eventd
 bin/idl
@@ -22,6 +22,9 @@ bin/traderd
 bin/traversald
 include/CORBA-SMALL.h
 include/CORBA.h
+include/mico/CCM.h
+include/mico/CCM.idl
+include/mico/CCMContainer.h
 include/mico/CompoundExternalization_impl.h
 include/mico/CosCompoundLifeCycle.idl
 include/mico/CosContainment.h
@@ -113,6 +116,7 @@ include/mico/codec.h
 include/mico/codec_impl.h
 include/mico/codeset.h
 include/mico/codeset_impl.h
+include/mico/config-ppc.h
 include/mico/config-win32.h
 include/mico/config.h
 include/mico/config.h.in
@@ -120,7 +124,6 @@ include/mico/conv_frame.idl
 include/mico/current.h
 include/mico/current.idl
 include/mico/dii.h
-include/mico/dispatch.h
 include/mico/dsi.h
 include/mico/dynany.h
 include/mico/dynany.idl
@@ -132,7 +135,6 @@ include/mico/gtkmico.h
 include/mico/impl.h
 include/mico/imr.h
 include/mico/imr.idl
-include/mico/imr_impl.h
 include/mico/intercept.h
 include/mico/intercept.idl
 include/mico/iop.h
@@ -142,10 +144,11 @@ include/mico/ior.h
 include/mico/ior_impl.h
 include/mico/ir.h
 include/mico/ir.idl
+include/mico/ir3.h
+include/mico/ir3.idl
 include/mico/ir_base.h
 include/mico/ir_base.idl
-include/mico/ir_fwd.h
-include/mico/ir_impl.h
+include/mico/ir_creator.h
 include/mico/lmath.h
 include/mico/magic.h
 include/mico/memtrace.h
@@ -187,7 +190,6 @@ include/mico/shlib_impl.h
 include/mico/ssl.h
 include/mico/ssliop.h
 include/mico/ssliop.idl
-include/mico/static-dispatch.h
 include/mico/static.h
 include/mico/stream.h
 include/mico/stream.idl
@@ -232,10 +234,11 @@ include/ministl/simplevec.h
 include/ministl/string
 include/ministl/vector
 include/ministl/vector.h
-lib/libmico2.3.5.a
-lib/libmicoaux2.3.5.a
-lib/libmicocoss2.3.5.a
-lib/libmicox2.3.5.a
+lib/libmico2.3.6.a
+lib/libmicoaux2.3.6.a
+lib/libmicocoss2.3.6.a
+lib/libmicoir2.3.6.a
+lib/libmicox2.3.6.a
 lib/mico-setup.csh
 lib/mico-setup.sh
 man/man1/idl.1
@@ -560,10 +563,12 @@ share/doc/mico/examples/siegel/store/TaxImpl.cc
 share/doc/mico/examples/siegel/store/TaxImpl.h
 share/doc/mico/examples/siegel/store/store_server.cc
 share/doc/mico/examples/ssl/Makefile
-share/doc/mico/examples/ssl/cert.pem
+share/doc/mico/examples/ssl/c_cert.pem
+share/doc/mico/examples/ssl/c_key.pem
 share/doc/mico/examples/ssl/client.cc
 share/doc/mico/examples/ssl/hello.idl
-share/doc/mico/examples/ssl/key.pem
+share/doc/mico/examples/ssl/s_cert.pem
+share/doc/mico/examples/ssl/s_key.pem
 share/doc/mico/examples/ssl/server.cc
 share/doc/mico/examples/ssl/ssl
 share/doc/mico/manual.ps
