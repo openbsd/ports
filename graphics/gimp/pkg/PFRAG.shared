@@ -1,8 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2001/08/09 01:43:16 brad Exp $
-lib/gimp/modules/libcolorsel_gtk.so
-lib/gimp/modules/libcolorsel_triangle.so
-lib/gimp/modules/libcolorsel_water.so
-lib/libgck.so.2.0
-lib/libgimp.so.2.0
-lib/libgimpui.so.2.0
-DYNLIBDIR(%B)
