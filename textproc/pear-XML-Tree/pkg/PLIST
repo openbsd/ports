@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/23 21:13:15 avsm Exp $
+pear/lib/.registry/XML_Tree.reg
+pear/lib/XML/Tree.php
+pear/lib/XML/Tree/Node.php
+@dirrm pear/lib/XML/Tree
