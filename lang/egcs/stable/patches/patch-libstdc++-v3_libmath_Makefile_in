@@ -1,38 +1,30 @@
-$OpenBSD: patch-libstdc++-v3_libmath_Makefile_in,v 1.1 2001/07/13 14:06:59 espie Exp $
+$OpenBSD: patch-libstdc++-v3_libmath_Makefile_in,v 1.2 2001/08/22 09:03:04 espie Exp $
 --- libstdc++-v3/libmath/Makefile.in.orig	Mon May 14 21:49:10 2001
-+++ libstdc++-v3/libmath/Makefile.in	Fri Jul 13 15:13:06 2001
-@@ -131,7 +131,7 @@ libmath_la_DEPENDENCIES = $(libmath_la_L
++++ libstdc++-v3/libmath/Makefile.in	Sat Jul 14 16:02:28 2001
+@@ -1,4 +1,4 @@
+-# Makefile.in generated automatically by automake 1.4 from Makefile.am
++# Makefile.in generated automatically by automake 1.4-p4 from Makefile.am
+ 
+ # Copyright (C) 1994, 1995-8, 1999 Free Software Foundation, Inc.
+ # This Makefile.in is free software; the Free Software Foundation
+@@ -131,7 +131,11 @@ libmath_la_DEPENDENCIES = $(libmath_la_L
  libmath_la_SOURCES =  	signbit.c signbitf.c
  
  
 -LINK = $(LIBTOOL) --mode=link "$(CCLD)" $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
-+LINK = $(LIBTOOL) --mode=link --tag=CC "$(CCLD)" $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
++LINK = $(LIBTOOL) --mode=link --tag CC "$(CCLD)" $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
++
++# Need to explicitly set LTCOMPILE to make sure libtool uses the correct
++# configuration
++LTCOMPILE = $(LIBTOOL) --mode=compile --tag CC $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  
  # Use common includes from acinclude.m4/GLIBCPP_EXPORT_INCLUDES
  GLIBCPP_INCLUDE_DIR = @GLIBCPP_INCLUDE_DIR@
-@@ -157,7 +157,7 @@ libmath_la_LDFLAGS = 
+@@ -157,7 +161,6 @@ libmath_la_LDFLAGS = 
  libmath_la_OBJECTS =  signbit.lo signbitf.lo
  CFLAGS = @CFLAGS@
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 -LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-+LTCOMPILE = $(LIBTOOL) --mode=compile --tag CC $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
  DIST_COMMON =  Makefile.am Makefile.in
  
-@@ -215,13 +215,13 @@ distclean-compile:
- maintainer-clean-compile:
- 
- .c.lo:
--	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
-+	$(LIBTOOL) --mode=compile --tag CC $(COMPILE) -c $<
- 
- .s.lo:
--	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
-+	$(LIBTOOL) --mode=compile --tag CC $(COMPILE) -c $<
- 
- .S.lo:
--	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
-+	$(LIBTOOL) --mode=compile --tag CC $(COMPILE) -c $<
- 
- mostlyclean-libtool:
- 	-rm -f *.lo

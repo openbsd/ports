@@ -1,6 +1,0 @@
-$OpenBSD: patch-gcc_config_t-libgcc-pic,v 1.1 2001/07/09 10:26:20 espie Exp $
---- gcc/config/t-libgcc-pic.orig	Fri Jul  6 10:49:28 2001
-+++ gcc/config/t-libgcc-pic	Fri Jul  6 10:49:37 2001
-@@ -0,0 +1,2 @@
-+# Compile libgcc2.a with pic.
-+TARGET_LIBGCC2_CFLAGS = -fPIC

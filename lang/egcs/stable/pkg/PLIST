@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/07/09 10:26:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/08/22 09:03:04 espie Exp $
 @option no-default-conflict
 @pkgcfl egcs-*-core
 @pkgcfl gcc-*-core
@@ -10,7 +10,7 @@ bin/eg++
 bin/egcc
 bin/egccbug
 bin/egcov
-bin/${MACHINE_ARCH}-unknown-openbsd2.9-gcc
+bin/${MACHINE_ARCH}-unknown-openbsd${OSREV}-gcc
 info/cpp.info
 info/cpp.info-1
 info/cpp.info-2
@@ -57,32 +57,29 @@ info/gcc.info-7
 info/gcc.info-8
 info/gcc.info-9
 lib/fpic/libiberty.a
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/cc1
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/collect2
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/cpp0
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/fpic/libg2c.a
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/fpic/libgcc.a
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/README
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/float.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/g2c.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/limits.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/machine/ansi.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/stdarg.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/syslimits.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/varargs.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/libg2c.a
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/libgcc.a
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/specs
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/tradcpp0
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/cc1
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/collect2
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/cpp0
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/fpic/libgcc.a
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/README
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/float.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/limits.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/machine/ansi.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/stdarg.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/syslimits.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/varargs.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/libgcc.a
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/specs
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/tradcpp0
 lib/libiberty.a
 man/man1/cpp.1
 man/man1/egcc.1
 man/man1/gcov.1
 %%SHARED%%
-@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/machine
-@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include
-@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/fpic
-@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0
+@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/machine
+@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include
+@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/fpic
+@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}
 @dirrm lib/fpic
 @exec install-info --info-dir=%D/info %D/info/cpp.info
 @exec install-info --info-dir=%D/info %D/info/cppinternals.info

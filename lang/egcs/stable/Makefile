@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2001/08/10 22:58:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2001/08/22 09:03:04 espie Exp $
 
 # This is a configuration file for egcs
 
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	autoconf::devel/autoconf
 BUILD_DEPENDS+= bison:bison-*:devel/bison
 
 CATEGORIES=	lang 
-NEED_VERSION=	1.419
+NEED_VERSION=	1.420
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 
@@ -54,10 +54,10 @@ PERMIT_DISTFILES_CDROM=Yes
 # and g77-tests only holds duplicates from the main testsuite archive.
 #MAKE_TESTS=yes
 MAKE_GXX=Yes
-MAKE_FORTRAN=Yes
+#MAKE_FORTRAN=Yes
 # we don't care about chill
 #MAKE_CHILL=yes
-MAKE_OBJC=Yes
+#MAKE_OBJC=Yes
 #MAKE_JAVA=Yes
 
 MULTI_PACKAGES=
@@ -75,16 +75,16 @@ BUILD_DEPENDS+=bison:bison-*:devel/bison
 
 #### fetch section
 
-LATEST=3.0
+V=3.0.1
 DIRECTORY=releases/${DISTNAME}/
-DISTNAME=   gcc-${LATEST}
+DISTNAME=   gcc-$V
 
 # getting the right archives where they should be
 MASTER_SITE_SUBDIR=${LATEST_DATE}
 
 DIST_SUBDIR=egcs
 
-DISTFILES=  gcc-${LATEST}${EXTRACT_SUFX}
+DISTFILES=  gcc-$V${EXTRACT_SUFX}
 
 SITES=	
 
@@ -236,7 +236,6 @@ CONFIGURE_ARGS += --with-gnu-ld
 CONFIGURE_ARGS += ${CONFIGURE_SHARED}
 
 SEPARATE_BUILD=concurrent
-#WRKBUILD=${WRKDIR}/build-${MACHINE_ARCH}
 
 
 
@@ -300,5 +299,6 @@ RUN_DEPENDS+=egcc::lang/egcs/stable
 .  endif
 .endif
 
+SUBST_VARS=OSREV V
 .include <bsd.port.mk>
 

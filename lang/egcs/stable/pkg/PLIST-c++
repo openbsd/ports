@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST-c++,v 1.2 2001/07/09 10:26:22 espie Exp $
+@comment $OpenBSD: PLIST-c++,v 1.3 2001/08/22 09:03:04 espie Exp $
 @option no-default-conflict
 @pkgcfl egcs-*-c++
 @pkgcfl gcc-*-c++
 bin/ec++
 bin/ec++filt
-bin/${MACHINE_ARCH}-unknown-openbsd2.9-c++
-bin/${MACHINE_ARCH}-unknown-openbsd2.9-g++
+bin/${MACHINE_ARCH}-unknown-openbsd${OSREV}-c++
+bin/${MACHINE_ARCH}-unknown-openbsd${OSREV}-g++
 include/g++-v3/algorithm
 include/g++-v3/backward/algo.h
 include/g++-v3/backward/algobase.h
@@ -103,6 +103,7 @@ include/g++-v3/bits/std_iosfwd.h
 include/g++-v3/bits/std_iostream.h
 include/g++-v3/bits/std_istream.h
 include/g++-v3/bits/std_iterator.h
+include/g++-v3/bits/std_limits.h
 include/g++-v3/bits/std_list.h
 include/g++-v3/bits/std_locale.h
 include/g++-v3/bits/std_map.h
@@ -187,19 +188,19 @@ include/g++-v3/ext/stl_hashtable.h
 include/g++-v3/ext/stl_rope.h
 include/g++-v3/fstream
 include/g++-v3/functional
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd2.9/bits/atomicity.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd2.9/bits/basic_file_model.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd2.9/bits/c++config.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd2.9/bits/c++io.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd2.9/bits/c++locale.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd2.9/bits/ctype_base.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd2.9/bits/ctype_inline.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd2.9/bits/ctype_noninline.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd2.9/bits/gthr-default.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd2.9/bits/gthr-single.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd2.9/bits/gthr.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd2.9/bits/os_defines.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd2.9/bits/std_limits.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/atomicity.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/basic_file_model.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/c++config.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/c++io.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/c++locale.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/ctype_base.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/ctype_inline.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/ctype_noninline.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/gthr-default.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/gthr-single.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/gthr.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/limits.h
+include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits/os_defines.h
 include/g++-v3/iomanip
 include/g++-v3/ios
 include/g++-v3/iosfwd
@@ -229,13 +230,13 @@ lib/fpic/libstdc++.a
 lib/fpic/libstdc++.la
 lib/fpic/libsupc++.a
 lib/fpic/libsupc++.la
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/cc1plus
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/cc1plus
 lib/libstdc++.a
 lib/libstdc++.la
 lib/libsupc++.a
 lib/libsupc++.la
 man/man1/eg++.1
-@dirrm include/g++-v3/${MACHINE_ARCH}-unknown-openbsd2.9/bits
+@dirrm include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits
 @dirrm include/g++-v3/ext
 @dirrm include/g++-v3/bits
 @dirrm include/g++-v3/backward

@@ -1,6 +1,5 @@
-$OpenBSD: patch-libffi_configure_in,v 1.1 2001/07/09 10:26:20 espie Exp $
---- libffi/configure.in.orig	Mon Jul  9 09:33:19 2001
-+++ libffi/configure.in	Mon Jul  9 09:35:39 2001
+--- libffi/configure.in.orig	Mon Jun 25 21:57:42 2001
++++ libffi/configure.in	Wed Aug 22 09:32:45 2001
 @@ -40,6 +40,7 @@ AC_PROG_LIBTOOL
  TARGETDIR="unknown"
  case "$host" in
@@ -15,9 +14,9 @@ $OpenBSD: patch-libffi_configure_in,v 1.1 2001/07/09 10:26:20 espie Exp $
  i*86-*-mingw*) TARGET=X86_WIN32; TARGETDIR=x86;;
 +i*86-*-openbsd*) TARGET=X86; TARGETDIR=x86;;
  sparc-sun-4*) TARGET=SPARC; TARGETDIR=sparc;;
- sparc-sun-*) TARGET=SPARC; TARGETDIR=sparc;;
-+sparc-*-openbsd*) TARGET=SPARC; TARGETDIR=sparc;;
+ sparc*-sun-*) TARGET=SPARC; TARGETDIR=sparc;;
  sparc-*-linux*) TARGET=SPARC; TARGETDIR=sparc;;
++sparc-*-openbsd*) TARGET=SPARC; TARGETDIR=sparc;;
  sparc64-*-linux*) TARGET=SPARC; TARGETDIR=sparc;;
  alpha*-*-linux* | alpha*-*-osf*) TARGET=ALPHA; TARGETDIR=alpha;;
 +alpha*-*-openbsd*) TARGET=ALPHA; TARGETDIR=alpha;;
