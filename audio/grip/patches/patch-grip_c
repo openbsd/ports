@@ -1,6 +1,6 @@
-$OpenBSD: patch-grip_c,v 1.1.1.1 2001/05/19 00:21:00 lebel Exp $
---- grip.c.orig	Wed Oct 18 15:12:53 2000
-+++ grip.c	Tue Apr 10 15:00:59 2001
+$OpenBSD: patch-grip_c,v 1.2 2001/10/03 15:21:42 lebel Exp $
+--- grip.c.orig	Wed Oct 18 21:12:53 2000
++++ grip.c	Wed Oct  3 14:31:34 2001
 @@ -38,7 +38,7 @@
  #if defined(__linux__)
      #include <sys/vfs.h>
@@ -38,6 +38,15 @@ $OpenBSD: patch-grip_c,v 1.1.1.1 2001/05/19 00:21:00 lebel Exp $
  int changer_slots;
  int current_disc=0;
  int volume=255;
+@@ -226,7 +229,7 @@ CDDBServer dbserver2={"","~cddb/cddb.cgi
+ #ifdef SOLARIS
+ char *cddevice = NULL;
+ #else
+-char cddevice[80]="/dev/cdrom";
++char cddevice[80]="/dev/cd0c";
+ #endif
+ int current_discid;
+ int first_time=1;
 @@ -792,7 +795,7 @@ void PlaylistChanged(void)
  
    InitProgram(info.disc_totaltracks,play_mode);
