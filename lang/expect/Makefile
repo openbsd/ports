@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2000/09/06 01:06:26 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2000/09/06 03:46:15 brad Exp $
 
 DISTNAME=	expect-5.32.1
 CATEGORIES=	lang
@@ -21,10 +21,10 @@ FAKE_FLAGS=	INSTALL_ROOT="${WRKINST}"
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=--with-tclconfig=${PREFIX}/lib/tcl8.3 \
-		--with-tclinclude=${PREFIX}/include/tcl8.3 \
-		--with-tkconfig=${PREFIX}/lib/tk8.3 \
-		--with-tkinclude=${PREFIX}/include/tk8.3
+CONFIGURE_ARGS+=--with-tclconfig="${LOCALBASE}/lib/tcl8.3" \
+		--with-tclinclude="${LOCALBASE}/include/tcl8.3" \
+		--with-tkconfig="${LOCALBASE}/lib/tk8.3" \
+		--with-tkinclude="${LOCALBASE}/include/tk8.3"
 
 WRKDIST=	${WRKDIR}/expect-5.32
 
