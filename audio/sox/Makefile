@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/11/21 17:51:46 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2005/02/22 22:04:41 pvalchev Exp $
 
 COMMENT=	"SOund eXchange - universal sound sample translator"
 
@@ -10,9 +10,9 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # gsm library has bad license
 PERMIT_PACKAGE_CDROM=	"no redistribution"
-PERMIT_PACKAGE_FTP=	"no redistribution"
+PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no redistribution"
-PERMIT_DISTFILES_FTP=	"no redistribution"
+PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 MASTER_SITES=	http://www.cnpbagwell.com/ \
