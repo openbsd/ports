@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_cdrom_openbsd_SDL_syscdrom_c,v 1.1.1.1 2001/04/19 18:55:40 obecian Exp $
+$OpenBSD: patch-src_cdrom_openbsd_SDL_syscdrom_c,v 1.2 2001/05/08 05:02:44 pvalchev Exp $
 --- src/cdrom/openbsd/SDL_syscdrom.c.orig	Sat Feb 10 00:20:04 2001
 +++ src/cdrom/openbsd/SDL_syscdrom.c	Fri Mar 30 08:44:02 2001
 @@ -36,6 +36,7 @@ static char rcsid =
@@ -33,7 +33,7 @@ $OpenBSD: patch-src_cdrom_openbsd_SDL_syscdrom_c,v 1.1.1.1 2001/04/19 18:55:40 o
  {
  	static char *checklist[] = {
 +#ifdef __OpenBSD__
-+		"?0 cd?a", "cdrom", NULL
++		"?0 cd?c", "cdrom", NULL
 +#else
  		"?0 cd?c", "?0 acd?c", "cdrom", NULL
 +#endif
