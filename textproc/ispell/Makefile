@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2003/11/15 15:12:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.37 2004/01/14 17:09:08 jakob Exp $
 
 COMMENT=		"interactive spelling checker"
 COMMENT-dutch=		"ispell dictionary for Dutch"
@@ -67,14 +67,20 @@ PKGNAME$i=	ispell$i-${VERSION}
 .endfor
 SUBPACKAGE?=
 
-# dictionaries: GPL or BSD-like
-# XXX no license on german dictionary
 # ispell: BSD-like
+# dictionaries: GPL or BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-german"
+PERMIT_PACKAGE_CDROM=	"no license"
+PERMIT_PACKAGE_FTP=	"no license"
+PERMIT_DISTFILES_CDROM=	"no license"
+PERMIT_DISTFILES_FTP=	"no license"
+.endif
+ 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
 RUN_DEPENDS=	::textproc/ispell
 .endif
