@@ -1,0 +1,33 @@
+$OpenBSD: patch-ab,v 1.1.1.1 1999/09/18 19:44:18 rohee Exp $
+
+We've exactly the same sound API than NetBSD
+
+--- mixer.c.orig	Sat Aug 21 18:56:16 1999
++++ mixer.c	Sat Aug 21 18:57:30 1999
+@@ -24,7 +24,7 @@
+ #include <linux/soundcard.h>
+ #endif
+ 
+-#if defined(sun) && defined(__svr4__) || defined(__NetBSD__)
++#if defined(sun) && defined(__svr4__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #include <sys/audioio.h>
+ #endif
+ 
+@@ -177,7 +177,7 @@
+ 	return vol;
+ }
+ 
+-#elif defined(__NetBSD__)
++#elif defined(__NetBSD__) || defined(__OpenBSD__)
+ mixer_devinfo_t *infos;
+ mixer_ctrl_t *values;
+ void mixer_init(gint init_device_id)
+@@ -595,7 +595,7 @@
+ 
+ #endif
+ 
+-#if defined(sun) && defined(__svr4__) || defined(__NetBSD__)
++#if defined(sun) && defined(__svr4__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ /* from 0 through 100% */
+ void set_volume(gint vol)
+ {

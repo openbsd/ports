@@ -1,0 +1,22 @@
+$OpenBSD: patch-aa,v 1.1.1.1 1999/09/18 19:44:18 rohee Exp $
+
+Actually a FreeBSD related patch :-)
+
+From an email from Marc van Kempen <marc@bowtie.nl>
+
+--- cpu_perc.c.orig	Sat Jul  3 13:39:08 1999
++++ cpu_perc.c	Sat Aug 21 18:52:36 1999
+@@ -70,7 +70,13 @@
+ 	  fs_count = getmntinfo(&mntbufp, MNT_WAIT);
+ 	  
+ 	  while(fs_count--)               
++#ifdef __FreeBSD__ /* FreeBSD prior to 3.0 doesn't have f_fstypename and
++                      f_mntfromname happens to be set to procfs, but
++	              it's a kludge */
++	    if(!strcmp(mntbufp[fs_count].f_mntfromname, "procfs") &&
++#else
+ 	    if(!strcmp(mntbufp[fs_count].f_fstypename, "procfs") &&
++#endif
+ 	       (procfs_found = 1))
+ 	      sprintf(procfs_mountpoint, mntbufp[fs_count].f_mntonname);
+ 	  

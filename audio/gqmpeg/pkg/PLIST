@@ -1,0 +1,8 @@
+bin/gqmpeg
+bin/gqmpeg-shoutcast-plugin.sh
+share/doc/gqmpeg/COPYING
+share/doc/gqmpeg/ChangeLog
+share/doc/gqmpeg/FAQ
+share/doc/gqmpeg/README
+share/doc/gqmpeg/SKIN-SPECS
+@dirrm share/doc/gqmpeg
