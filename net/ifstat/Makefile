@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/04/18 23:33:17 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2004/05/15 15:19:20 sturm Exp $
 
 COMMENT=		"tool to monitor interface bandwidth usage"
 
@@ -21,6 +21,15 @@ CONFIGURE_STYLE=	gnu dest
 
 NO_REGRESS=		Yes
 
+FLAVORS=		snmp
+FLAVOR?=
+
+.if ${FLAVOR:L} == "snmp"
+LIB_DEPENDS=		snmp::net/ucd-snmp
+CONFIGURE_ARGS+=	--with-snmp=${LOCALBASE}
+CONFIGURE_ENV+=		LIBS="-ldes"
+.else
 CONFIGURE_ARGS+=	--without-snmp
+.endif
 
 .include <bsd.port.mk>

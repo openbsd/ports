@@ -1,2 +1,6 @@
 ifstat is a tool to report network interfaces bandwidth just like
 vmstat/iostat do for other system counters.
+
+Flavors:
+	snmp: poll remote hosts through SNMP
+
