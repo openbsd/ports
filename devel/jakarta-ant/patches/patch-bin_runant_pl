@@ -1,0 +1,35 @@
+$OpenBSD: patch-bin_runant_pl,v 1.1.1.1 2001/06/17 12:15:52 reinhard Exp $
+--- bin/runant.pl	Sun Apr 15 17:35:20 2001
++++ bin/runant2.pl	Sun Apr 15 17:38:07 2001
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ #######################################################################
+ #
+ # runant.pl
+@@ -48,6 +48,16 @@ if ($HOME eq "")
+     die "\n\nANT_HOME *MUST* be set!\n\n";
+ 	}
+ 
++my $LIBS = $ENV{ANT_LIBS};
++if ($LIBS eq "")
++{	if (-d _antlibs_ )
++	{	$LIBS = _antlibs_;
++	}
++	else
++	{	die "\n\nANT_LIBS not found!\n\n";
++	}
++}
++
+ my $JAVACMD = $ENV{JAVACMD};
+ $JAVACMD = "java" if $JAVACMD eq "";
+ 
+@@ -69,7 +79,7 @@ if ($localpath eq "")
+ 	}
+ 
+ #add jar files. I am sure there is a perl one liner to do this.
+-my $jarpattern="$HOME/lib/*.jar";
++my $jarpattern="$LIBS/*.jar";
+ my @jarfiles =glob($jarpattern);
+ print "jarfiles=@jarfiles\n" if ($debug);
+ my $jar;
