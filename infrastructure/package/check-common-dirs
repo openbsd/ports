@@ -1,0 +1,201 @@
+#!/usr/bin/perl
+
+# $OpenBSD: check-common-dirs,v 1.1 2004/08/12 18:58:34 espie Exp $
+# Copyright (c) 2004 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+# check all packages in the current directory, and report common directory
+# issues
+
+use strict;
+use warnings;
+
+use File::Spec;
+use File::Path;
+use File::Basename;
+use OpenBSD::PackageLocator;
+use OpenBSD::PackageInfo;
+use OpenBSD::PackingList;
+
+sub register_dir
+{
+	my ($d, $h) = @_;
+	return if defined $h->{$d};
+	$h->{$d} = 1;
+	register_dir(dirname($d), $h);
+}
+
+package OpenBSD::PackingElement;
+sub handle
+{
+}
+
+package OpenBSD::PackingElement::FileBase;
+use File::Basename;
+sub handle
+{
+	my ($item, $t) = @_;
+	my $d = File::Spec->canonpath($item->fullname());
+	main::register_dir(dirname($d), $t->{need_dirs});
+}
+
+package OpenBSD::PackingElement::DirBase;
+sub handle
+{
+	my ($item, $t) = @_;
+	my $d = File::Spec->canonpath($item->fullname());
+	$t->{dirs}->{$d} = 1;
+}
+
+package OpenBSD::PackingElement::DirRm;
+sub handle
+{
+	&OpenBSD::PackingElement::DirBase::handle;
+}
+
+package OpenBSD::PackingElement::PkgDep;
+sub handle
+{
+	my ($item, $t) = @_;
+	$t->{deps}->{$item->{name}} = 1;
+}
+
+package OpenBSD::PackingElement::LibDepend;
+sub handle
+{
+	my ($item, $t) = @_;
+	$t->{deps}->{$item->{def}} = 1;
+}
+
+package OpenBSD::PackingElement::NewDepend;
+sub handle
+{
+	&OpenBSD::PackingElement::LibDepend::handle;
+}
+
+package main;
+
+sub analyze 
+{
+	my ($plist, $db) = @_;
+	my $pkgname = $plist->pkgname();
+	$db->{$pkgname} = {
+		pkgname => $pkgname,
+		missing_deps => {},
+		dirs => {}, 
+		need_dirs => {}, 
+		deps => {} 
+	} unless defined $db->{$pkgname};
+	my $t = $db->{$pkgname};
+
+	for my $listname (qw(pkgdep newdepend libdepend)) {
+		if (defined $plist->{$listname}) {
+			for my $item (@{$plist->{$listname}}) {
+				$item->handle($t);
+			}
+		}
+	}
+	for my $item (@{$plist->{items}}) {
+		$item->handle($t);
+	}
+}
+
+sub parent_has_dir
+{
+	my ($db, $t, $dir) = @_;
+
+	for my $dep (keys %{$t->{deps}}) {
+		if (!defined $db->{$dep}) {
+		    if (!defined $t->{missing_deps}->{$dep}) {
+			    print $t->{pkgname}, ": $dep not found\n";
+			    $t->{missing_deps}->{$dep} = 1;
+		    }
+		    next;
+		}
+		if ($db->{$dep}->{dirs}->{$dir} || 
+		    parent_has_dir($db, $db->{$dep}, $dir)) {
+			$t->{dirs}->{$dir} = 1;
+			return 1;
+		}
+	}
+	return 0;
+}
+
+sub show_results
+{
+	my ($db, $mtree) = @_;
+
+	for my $pkgname (sort keys %$db) {
+		my $t = $db->{$pkgname};
+		my @l=();
+		for my $dir (keys(%{$t->{need_dirs}})) {
+			next if $t->{dirs}->{$dir};
+			next if $mtree->{$dir};
+			next if parent_has_dir($db, $t, $dir);
+			push(@l, $dir);
+		}
+		print "$pkgname: ", join(', ', sort @l), "\n";
+	}
+}
+
+# read an mtree file, and produce the corresponding directory hierarchy
+sub parse_mtree 
+{
+	my ($mtree, $current, $filename) = @_;
+	open my $file, '<', $filename;
+	while(<$file>) {
+		chomp;
+		s/^\s*//;
+		next if /^\#/ || /^\//;
+		s/\s.*$//;
+		next if /^$/;
+		if ($_ eq '..') {
+			$current =~ s|/[^/]*$||;
+			next;
+		} else {
+			$current.="/$_";
+		}
+		$_ = $current;
+		while (s|/\./|/|)	{}
+		$mtree->{File::Spec->canonpath($_)} = 1;
+	}
+	close $file;
+}
+
+print "Scanning packages\n";
+print "-----------------\n";
+if (@ARGV==0) {
+	@ARGV=(<*.tgz>);
+}
+my $db = {};
+my $mtree = {};
+
+parse_mtree($mtree, '/usr/local', '/etc/mtree/BSD.local.dist');
+parse_mtree($mtree, '/', '/etc/mtree/4.4BSD.dist');
+parse_mtree($mtree, '/usr/X11R6', '/etc/mtree/BSD.x11.dist');
+$mtree->{'/usr/local/lib/X11'} = 1;
+$mtree->{'/usr/local/lib/X11/app-defaults'} = 1;
+
+for my $pkgname (@ARGV) {
+	print STDERR "$pkgname\n";
+	my $true_package = OpenBSD::PackageLocator->find($pkgname);
+	next unless $true_package;
+	my $dir = $true_package->info();
+	$true_package->close();
+	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
+	rmtree($dir);
+	analyze($plist, $db);
+}
+
+show_results($db, $mtree);
