@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.12 2002/07/03 16:31:28 couderc Exp $
+@comment $OpenBSD: PFRAG.shared-tk,v 1.1 2002/07/03 16:31:28 couderc Exp $
 lib/libruby.so.${REV}7
 DYNLIBDIR(%B)
 lib/ruby/${REV}/${SUB}/curses.so
@@ -16,3 +16,5 @@ lib/ruby/${REV}/${SUB}/readline.so
 lib/ruby/${REV}/${SUB}/sdbm.so
 lib/ruby/${REV}/${SUB}/socket.so
 lib/ruby/${REV}/${SUB}/syslog.so
+lib/ruby/${REV}/${SUB}/tcltklib.so
+lib/ruby/${REV}/${SUB}/tkutil.so

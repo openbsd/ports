@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/07/03 16:31:28 couderc Exp $
+@comment $OpenBSD: PLIST-tk,v 1.1 2002/07/03 16:31:28 couderc Exp $
 bin/irb
 bin/ruby
 lib/ruby/${REV}/English.rb
@@ -102,12 +102,27 @@ lib/ruby/${REV}/shell/version.rb
 lib/ruby/${REV}/shellwords.rb
 lib/ruby/${REV}/singleton.rb
 lib/ruby/${REV}/sync.rb
+lib/ruby/${REV}/tcltk.rb
 lib/ruby/${REV}/telnet.rb
 lib/ruby/${REV}/tempfile.rb
 lib/ruby/${REV}/thread.rb
 lib/ruby/${REV}/thwait.rb
 lib/ruby/${REV}/time.rb
 lib/ruby/${REV}/timeout.rb
+lib/ruby/${REV}/tk.rb
+lib/ruby/${REV}/tkafter.rb
+lib/ruby/${REV}/tkbgerror.rb
+lib/ruby/${REV}/tkcanvas.rb
+lib/ruby/${REV}/tkclass.rb
+lib/ruby/${REV}/tkdialog.rb
+lib/ruby/${REV}/tkentry.rb
+lib/ruby/${REV}/tkfont.rb
+lib/ruby/${REV}/tkmenubar.rb
+lib/ruby/${REV}/tkmngfocus.rb
+lib/ruby/${REV}/tkpalette.rb
+lib/ruby/${REV}/tkscrollbox.rb
+lib/ruby/${REV}/tktext.rb
+lib/ruby/${REV}/tkvirtevent.rb
 lib/ruby/${REV}/tracer.rb
 lib/ruby/${REV}/uri.rb
 lib/ruby/${REV}/uri/common.rb

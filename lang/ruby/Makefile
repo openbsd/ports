@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/06/29 13:39:26 couderc Exp $
+# $OpenBSD: Makefile,v 1.22 2002/07/03 16:31:28 couderc Exp $
 
 COMMENT=	object oriented script language with threads
 VERSION=	1.6.7
@@ -24,8 +24,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
-LIB_DEPENDS=	tcl83.::lang/tcl/8.3 \
-		tk83.::x11/tk/8.3
+FLAVORS=	tk
+FLAVOR?=
 
 CONFIGURE_STYLE=	autoconf
 SEPARATE_BUILD=		concurrent
@@ -36,10 +36,19 @@ CFLAGS+=	-O0
 .endif
 
 CONFIGURE_ENV=	YACC=yacc
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-tcl-include=${PREFIX}/include/tcl8.3 \
-		--with-tk-include=${PREFIX}/include/tk8.3 \
-		--with-X11-dir=${X11BASE} 
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+
+.if ${FLAVOR:L} == "tk"
+LIB_DEPENDS=	tcl83.::lang/tcl/8.3 \
+		tk83.::x11/tk/8.3
+
+CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.3 \
+			--with-tk-include=${PREFIX}/include/tk8.3 \
+			--with-X11-dir=${X11BASE} 
+.else
+CONFIGURE_ARGS+=	--without-x11
+.endif
+
 
 # Force rebuild of parse.c with yacc
 post-extract: 
