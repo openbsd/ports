@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/11/28 22:41:20 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2005/01/21 13:26:32 naddy Exp $
 
 COMMENT=		"Quake/Quake-world client"
 COMMENT-server=		"Quake world server"
@@ -46,7 +46,7 @@ LIB_DEPENDS=		SDL::devel/sdl
 WANTLIB+=		pthread
 .  endif
 CONFIGURE_ARGS+=	--with-sdl=${LOCALBASE} --without-ggi
-MAKE_FLAGS=	HAS_X11=no
+MAKE_FLAGS=		HAS_X11=no
 CFLAGS+=		-pthread
 .elif ${FLAVOR:L:Mggi}
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == ""
@@ -54,7 +54,8 @@ LIB_DEPENDS=		ggi.::graphics/ggi
 WANTLIB+=		pthread
 .  endif
 CONFIGURE_ARGS+=	--with-ggi=${LOCALBASE} --without-sdl
-MAKE_FLAGS=	HAS_X11=no
+MAKE_FLAGS=		HAS_X11=no
+CFLAGS+=		-pthread
 .else
 CONFIGURE_ARGS+=	--without-sdl --without-ggi
 MAKE_FLAGS=	
