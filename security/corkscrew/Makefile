@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/07/22 05:39:20 jsyn Exp $
+# $OpenBSD: Makefile,v 1.3 2001/07/25 05:43:49 jsyn Exp $
 
 COMMENT=		"http tunneling utility for ssh"
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.agroman.net/corkscrew/
 
 CONFIGURE_STYLE=	gnu 
-CONFIGURE_ENV=		CC="${CC}" CFLAGS="${CFLAGS}"
 
 WRKDIST=		${WRKDIR}/corkscrew
 

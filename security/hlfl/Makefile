@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/07/22 05:44:52 jsyn Exp $
+# $OpenBSD: Makefile,v 1.3 2001/07/25 05:43:49 jsyn Exp $
 
 COMMENT=		"high level firewall language"
 
@@ -19,7 +19,6 @@ MASTER_SITES=		http://www.hlfl.org/hlfl/ \
 			ftp://ftp.hlfl.org/pub/hlfl/
 
 CONFIGURE_STYLE=	gnu 
-CONFIGURE_ENV=		CXX=${CXX} CFLAGS="${CFLAGS}"
 FAKE_FLAGS=		prefix=${WRKINST}${PREFIX} datadir=${WRKINST}${PREFIX}/share/examples
 
 post-extract:

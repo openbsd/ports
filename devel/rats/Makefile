@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/07/22 05:39:20 jsyn Exp $
+# $OpenBSD: Makefile,v 1.4 2001/07/25 05:43:49 jsyn Exp $
 
 COMMENT=		"c source code auditing tool"
 
@@ -22,7 +22,6 @@ LIB_DEPENDS=		expat::textproc/expat
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	--with-expat-lib=${LOCALBASE}/lib \
 			--with-expat-include=${LOCALBASE}/include
-CONFIGURE_ENV=		CC="${CC}" CFLAGS="${CFLAGS}"
 
 ALL_TARGET=		rats
 
