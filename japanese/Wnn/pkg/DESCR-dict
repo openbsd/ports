@@ -1,0 +1,3 @@
+Kana-kanji conversion dictionaries for japanese Wnn-4.2.
+Provided as a separate package so it installs under /var/dict
+instead of /usr/local.

@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_Project_tmpl,v 1.1 2000/04/16 21:53:37 espie Exp $
+$OpenBSD: patch-config_Project_tmpl,v 1.2 2000/04/20 23:32:22 espie Exp $
 --- config/Project.tmpl.orig	Mon Aug 29 10:40:17 1994
-+++ config/Project.tmpl	Sun Apr 16 02:10:53 2000
++++ config/Project.tmpl	Fri Apr 21 01:02:08 2000
 @@ -14,6 +14,20 @@ XCOMM $XConsortium: Project.tmpl,v 1.242
   *                                                                          *
   ***************************************************************************/
@@ -79,7 +79,7 @@ $OpenBSD: patch-config_Project_tmpl,v 1.1 2000/04/16 21:53:37 espie Exp $
  #endif
  #if BuildPubdic || BuildWnnConsDic
  #define BuildWnnDicUtilForCompile	YES
-@@ -1230,7 +1243,7 @@ install:: list								@@\
+@@ -1230,12 +1243,13 @@ install:: list								@@\
   * as YES. Default is that dictionary isn't installed if it exist already.
   */
  
@@ -88,16 +88,56 @@ $OpenBSD: patch-config_Project_tmpl,v 1.1 2000/04/16 21:53:37 espie Exp $
  #ifdef UseInstalled
            IMTOP = $(TOP)
  #else
-@@ -1248,7 +1261,7 @@ install:: list								@@\
+           IMTOP = $(CONTRIBSRC)/programs/Xsi
+ #endif
++      WNNDICDIR = /var/dict
+       WNNWNNDIR = /usr/local/lib/wnn
+       WNNBINDIR = /usr/local/bin
+       WNNINCDIR = $(INCROOT)
+@@ -1248,9 +1262,9 @@ install:: list								@@\
           WNNTOP = $(IMTOP)/Wnn
         JWNNLANG = ja_JP
       JWNNWNNDIR = $(WNNWNNDIR)/$(JWNNLANG)
 -     JWNNBINDIR = $(WNNBINDIR)/Wnn4
 +     JWNNBINDIR = $(WNNBINDIR)
       JWNNINCDIR = $(WNNINCDIR)/wnn
-      JWNNDICDIR = $(JWNNWNNDIR)/dic
+-     JWNNDICDIR = $(JWNNWNNDIR)/dic
++     JWNNDICDIR = $(WNNDICDIR)/$(JWNNLANG)
    JWNNPUBDICDIR = $(JWNNDICDIR)/pubdic
-@@ -1363,3 +1376,44 @@ XWNMOROMKANMSRC = $(XWNMOTOP)/romkan_m
+ JWNNWNNCONSDICDIR = $(JWNNDICDIR)/wnncons
+   JWNNFZKSRCDIR = $(JWNNDICDIR)/src
+@@ -1278,8 +1292,8 @@ WNNWNNCONSDICSRC = $(WNNWNNCONSSRC)/dic
+        CWNNLANG = zh_CN
+      CWNNWNNDIR = $(WNNWNNDIR)/$(CWNNLANG)
+      CWNNINCDIR = $(WNNINCDIR)/cwnn
+-     CWNNBINDIR = $(WNNBINDIR)/cWnn4
+-     CWNNDICDIR = $(CWNNWNNDIR)/dic
++     CWNNBINDIR = $(WNNBINDIR)
++     CWNNDICDIR = $(WNNDICDIR)/$(CWWNLANG)
+   CWNNSYSDICDIR = $(CWNNDICDIR)/sys
+       CWNNCDSRC = $(CWNNTOP)/cd
+     CWNNCDICSRC = $(CWNNTOP)/cdic
+@@ -1301,8 +1315,8 @@ WNNWNNCONSDICSRC = $(WNNWNNCONSSRC)/dic
+        KWNNLANG = ko_KR
+      KWNNWNNDIR = $(WNNWNNDIR)/$(KWNNLANG)
+      KWNNINCDIR = $(WNNINCDIR)/kwnn
+-     KWNNBINDIR = $(WNNBINDIR)/kWnn4
+-     KWNNDICDIR = $(KWNNWNNDIR)/dic
++     KWNNBINDIR = $(WNNBINDIR)
++     KWNNDICDIR = $(WNNDICDIR)/$(KWNNLANG)
+   KWNNSYSDICDIR = $(KWNNDICDIR)/sys
+       KWNNKDSRC = $(KWNNTOP)/kd
+     KWNNKDICSRC = $(KWNNTOP)/kdic
+@@ -1322,7 +1336,7 @@ WNNWNNCONSDICSRC = $(WNNWNNCONSSRC)/dic
+ 
+        TWNNLANG = zh_TW
+      TWNNWNNDIR = $(WNNWNNDIR)/$(TWNNLANG)
+-     TWNNDICDIR = $(TWNNWNNDIR)/dic
++     TWNNDICDIR = $(WNNDICDIR)/$(TWNNLANG)
+   TWNNSYSDICDIR = $(TWNNDICDIR)/sys
+       TWNNTDSRC = $(CWNNTOP)/td
+     TWNNTDICSRC = $(CWNNTOP)/tdic
+@@ -1363,3 +1377,44 @@ XWNMOROMKANMSRC = $(XWNMOTOP)/romkan_m
  #else
        IMAKE_CMD = $(IMAKE) -I$(IMIRULESRC) -I$(IRULESRC) $(IMAKE_DEFINES)
  #endif

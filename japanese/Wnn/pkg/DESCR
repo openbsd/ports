@@ -1,37 +1,12 @@
-This is Wnn4.2, a Japanese/Chinese/Korean input method.  It is
-included primarily so that we can compile mule-2.1, a multilingual
-emacs.
+Wnn4.2 is a Japanese/Chinese/Korean input method.  
+This is the Japanese version.
 
-Only the Japanese version is build for this port.
+This is originally based on the FreeBSD port, with contributions by
 
-Note that binaries and libraries go to /usr/local, while man pages and 
-includes go to /usr/X11R6.  That's the way it was designed, I don't
-know why.
+Satoshi (asami@cs.berkeley.edu)
+Hidekazu Kuroki (hidekazu@cs.titech.ac.jp)
+Yoshio KATAYAMA <kate@pfu.co.jp> 
+S. Taoka <taoka@infonets.hiroshima-u.ac.jp>
 
-- Satoshi
-(asami@cs.berkeley.edu)
-
--------------------------------------------------------------------
-
-This also include some patches for FreeBSD or bugfix.
-If use this patches, you can compile Wnn-4.2 under XFree86 3.1.2E
- or later(X11Release6.1).
-If there are any problem in this patches, please know me via E-mail.
-
-Hidekazu Kuroki
-(hidekazu@cs.titech.ac.jp)
-
--------------------------------------------------------------------
-
-Mr. Yoshio KATAYAMA <kate@pfu.co.jp> fixed many bugs for Wnn4.2.
-Patches for those are in 'Wnn4.2.patch.tar.gz' and are applied in this
-port.
-
-[Notice]
-When compiling by this ports, if $LOCALBASE is not '/usr/local' and/or
-$X11BASE is not '/usr/X11R6' then you should properly change two lines
-'@cwd /usr/local' and '@cwd /usr/X11R6' in
-$PORTSDIR/japanese/Wnn/pkg/PLIST.
-
--- S. Taoka
-<taoka@infonets.hiroshima-u.ac.jp>
+The OpenBSD port separates the dictionaries into a separate package
+(ja-Wnn-dict-4.2) that installs under /var/dict.

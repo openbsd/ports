@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/04/20 23:13:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2000/04/20 23:32:22 espie Exp $
 bin/atod
 bin/atof
 bin/dtoa
@@ -25,50 +25,6 @@ include/wnn/rk_spclval.h
 include/wnn/wnnerror.h
 lib/libjd.a
 lib/libwnn.a
-lib/wnn/cvt_key_empty
-lib/wnn/cvt_key_tbl
-lib/wnn/cvt_key_tbl.ST
-lib/wnn/cvt_key_tbl.gm
-lib/wnn/cvt_key_tbl.kt
-lib/wnn/cvt_key_tbl.mv
-lib/wnn/cvt_key_tbl.vt
-@comment no checksum
-lib/wnn/ja_JP/dic/pubdic/bio.dic
-@comment no checksum
-lib/wnn/ja_JP/dic/pubdic/chimei.dic
-@comment no checksum
-lib/wnn/ja_JP/dic/pubdic/computer.dic
-@comment no checksum
-lib/wnn/ja_JP/dic/pubdic/full.fzk
-@comment no checksum
-lib/wnn/ja_JP/dic/pubdic/jinmei.dic
-@comment no checksum
-lib/wnn/ja_JP/dic/pubdic/kihon.dic
-@comment no checksum
-lib/wnn/ja_JP/dic/pubdic/kougo.fzk
-@comment no checksum
-lib/wnn/ja_JP/dic/pubdic/koyuu.dic
-@comment no checksum
-lib/wnn/ja_JP/dic/pubdic/setsuji.dic
-@comment no checksum
-lib/wnn/ja_JP/dic/pubdic/special.dic
-@comment no checksum
-lib/wnn/ja_JP/dic/pubdic/std.fzk
-@comment no checksum
-lib/wnn/ja_JP/dic/pubdic/symbol.dic
-@comment no checksum
-lib/wnn/ja_JP/dic/pubdic/tankan.dic
-lib/wnn/ja_JP/dic/src/fzk.attr
-lib/wnn/ja_JP/dic/src/fzk.con
-lib/wnn/ja_JP/dic/src/fzk.fzkattr
-lib/wnn/ja_JP/dic/src/fzk.jirattr
-lib/wnn/ja_JP/dic/src/fzk.jircon
-lib/wnn/ja_JP/dic/src/fzk.master
-lib/wnn/ja_JP/dic/src/fzk.shuutan
-@comment no checksum
-lib/wnn/ja_JP/dic/wnncons/tankan2.dic
-@comment no checksum
-lib/wnn/ja_JP/dic/wnncons/tankan3.dic
 lib/wnn/ja_JP/hinsi.data
 lib/wnn/ja_JP/jserverrc
 lib/wnn/ja_JP/libwnn.msg
@@ -537,8 +493,7 @@ share/doc/ja-Wnn/manual/6.jutil/wnntouch
 share/doc/ja-Wnn/manual/7.Protocol/KKTP
 share/doc/ja-Wnn/manual/intro
 share/doc/ja-Wnn/manual/v3tov4/v3tov4
-lib/wnn/install-script
-@exec PREFIX=%D %D/%F
+@exec /usr/local/lib/wnn/install-script
 @dirrm share/doc/ja-Wnn/manual/v3tov4
 @dirrm share/doc/ja-Wnn/manual/7.Protocol
 @dirrm share/doc/ja-Wnn/manual/6.jutil
@@ -566,7 +521,5 @@ lib/wnn/install-script
 @dirrm lib/wnn/lt_LN
 @dirrm lib/wnn/ja_JP/rk.vi
 @dirrm lib/wnn/ja_JP/rk
-@dirrm lib/wnn/ja_JP/dic/src
+@dirrm lib/wnn/ja_JP
 @dirrm include/wnn
-@unexec echo "Don't forget to remove user wnn"
-@unexec echo " and directory %D/lib/wnn manually"

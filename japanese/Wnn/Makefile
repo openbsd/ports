@@ -1,11 +1,19 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.17 2000/04/16 21:53:26 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/04/20 23:32:22 espie Exp $
 
 DISTNAME=	Wnn4.2
+MULTI_PACKAGES=-dict
+SUBPACKAGE?=
+.if ${SUBPACKAGE} == "-dict"
+PREFIX=/var/dict
+PKGNAME=	ja-Wnn-dict-4.2
+.else
 PKGNAME=	ja-Wnn-4.2
-CATEGORIES?=	japanese
+.endif
+
+CATEGORIES=	japanese
 NEED_VERSION=	1.210
 MASTER_SITES=	ftp://ftp.u-tokyo.ac.jp/pub/Japanese/Wnn/ \
 		ftp://ports.jp.FreeBSD.org/pub/incoming/distfiles/
@@ -27,6 +35,10 @@ DOC_FROM=	${WRKSRC}/Wnn
 
 # Will turn into a RUN_DEPENDS when we install non-formatted manpages
 BUILD_DEPENDS=	jgroff::japanese/groff
+# Run depends ensure this does not turn into infinite recursion, since
+# this is not needed before package build time.
+# I'm grateful to having `real' cookies, which means this is possible.
+RUN_DEPENDS=	${LOCALBASE}/lib/wnn/install-script::japanese-keep/Wnn-data
 
 do-distpatch:
 	cd ${WRKDIR} && tar zxf ${FULLDISTDIR}/Wnn4.2.patch.tar.gz
