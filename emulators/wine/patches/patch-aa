@@ -1,0 +1,23 @@
+Do *NOT* submit this patch to Wine developers <rohee@OpenBSD.ORG>
+NetBSD did it the wrong way, don't make the same mistakes :-)
+
+--- multimedia/init.c.orig	Thu Feb 11 20:22:06 1999
++++ multimedia/init.c	Thu Feb 11 20:27:27 1999
+@@ -36,7 +36,7 @@
+ #ifdef HAVE_OSS
+ int unixToWindowsDeviceType(int type)
+ {
+-#ifndef __NetBSD__
++#if !defined(__NetBSD__) && !defined(__OpenBSD__)
+     /* MOD_MIDIPORT     output port 
+      * MOD_SYNTH        generic internal synth 
+      * MOD_SQSYNTH      square wave internal synth 
+@@ -70,7 +70,7 @@
+  */
+ BOOL32 MULTIMEDIA_MidiInit(void)
+ {
+-#if defined(HAVE_OSS) && !defined(__NetBSD__)
++#if defined(HAVE_OSS) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+     int 		i, status, numsynthdevs = 255, nummididevs = 255;
+     struct synth_info 	sinfo;
+     struct midi_info 	minfo;

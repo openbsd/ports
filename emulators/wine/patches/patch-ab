@@ -1,0 +1,29 @@
+This patch seems to be needed on machine without MIDI support because
+midMessage is used in all cases and was not compiled if SNDCTL_MIDI_INFO
+was not defined.
+
+Regards,
+
+Bruno Rohée <rohee@OpenBSD.ORG>
+
+--- multimedia/midi.c.orig	Thu Feb 11 21:52:46 1999
++++ multimedia/midi.c	Thu Feb 11 21:59:31 1999
+@@ -1574,3 +1574,18 @@
+ }
+ 
+ /*-----------------------------------------------------------------------*/
++
++/* needed by OpenBSD 2.4, OpenBSD current has MIDI support */
++
++#ifndef SNDCTL_MIDI_INFO
++
++/**************************************************************************
++ * 			midMessage				[sample driver]
++ */
++DWORD WINAPI midMessage(WORD wDevID, WORD wMsg, DWORD dwUser, 
++			DWORD dwParam1, DWORD dwParam2)
++{
++    return MMSYSERR_NOTSUPPORTED;
++}
++
++#endif
