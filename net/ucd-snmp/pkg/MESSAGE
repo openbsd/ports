@@ -12,5 +12,5 @@
 |	fi
 |
 | This will start snmpd and use ${SYSCONFDIR}/snmpd.conf for the configuration. 
-| (see snmpd(5) for available options)
+| (see snmpd(1) and snmpd.conf(5) for more options)
 +------------
