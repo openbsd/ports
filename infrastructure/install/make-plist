@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.52 2004/08/09 12:35:45 espie Exp $
+# $OpenBSD: make-plist,v 1.53 2004/08/09 12:41:03 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -628,7 +628,7 @@ sub handle_file
 	}
 
 	my $o = create_object($type, $short);
-	next unless defined $o;
+	return unless defined $o;
 	my $s = $o->fullstring();
 	if ($foundcomments->{$s}) {
 		$foundcomments->{$s}->{accounted_for} = 1;
