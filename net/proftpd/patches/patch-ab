@@ -1,0 +1,11 @@
+--- src/main.c.orig	Thu Sep  2 16:58:22 1999
++++ src/main.c	Thu Sep  2 16:59:00 1999
+@@ -359,7 +359,7 @@
+   vsnprintf(statbuf, sizeof(statbuf) - 1, fmt, msg);
+ 
+ #ifdef HAVE_SETPROCTITLE
+-  setproctitle(fmt,msg);
++  setproctitle(statbuf);
+ #endif /* HAVE_SETPROCTITLE */
+ 
+   va_end(msg);
