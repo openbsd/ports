@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2004/07/05 21:48:52 avsm Exp $
+--- configure.in.orig	Mon Jul  5 20:55:51 2004
++++ configure.in	Mon Jul  5 20:55:58 2004
+@@ -318,7 +318,7 @@ dnl Checking -ltiff --------------------
+ SUPPORT_TIFF="false"
+ if test "$NOEXTERNAL" = "false" ; then
+   AC_CHECK_LIB(tiff, TIFFOpen, 
+-  	  AC_DEFINE(HAVE_TIFF) LIBTIFF="-ltiff"; SUPPORTED="$SUPPORTED tiff";
++  	  AC_DEFINE(HAVE_TIFF) LIBTIFF="-ltiff -ljpeg -lz"; SUPPORTED="$SUPPORTED tiff";
+   	  SUPPORT_TIFF="true", SUPPORT_TIFF="false" )
+ fi
+ 

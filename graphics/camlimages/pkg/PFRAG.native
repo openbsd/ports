@@ -1,0 +1,27 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2004/07/05 21:48:52 avsm Exp $
+lib/ocaml/camlimages/ci_bmp.a
+lib/ocaml/camlimages/ci_bmp.cmxa
+lib/ocaml/camlimages/ci_core.a
+lib/ocaml/camlimages/ci_core.cmxa
+lib/ocaml/camlimages/ci_freetype.a
+lib/ocaml/camlimages/ci_freetype.cmxa
+lib/ocaml/camlimages/ci_gif.a
+lib/ocaml/camlimages/ci_gif.cmxa
+lib/ocaml/camlimages/ci_graphics.a
+lib/ocaml/camlimages/ci_graphics.cmxa
+lib/ocaml/camlimages/ci_jpeg.a
+lib/ocaml/camlimages/ci_jpeg.cmxa
+lib/ocaml/camlimages/ci_lablgtk.a
+lib/ocaml/camlimages/ci_lablgtk.cmxa
+lib/ocaml/camlimages/ci_png.a
+lib/ocaml/camlimages/ci_png.cmxa
+lib/ocaml/camlimages/ci_ppm.a
+lib/ocaml/camlimages/ci_ppm.cmxa
+lib/ocaml/camlimages/ci_ps.a
+lib/ocaml/camlimages/ci_ps.cmxa
+lib/ocaml/camlimages/ci_tiff.a
+lib/ocaml/camlimages/ci_tiff.cmxa
+lib/ocaml/camlimages/ci_xpm.a
+lib/ocaml/camlimages/ci_xpm.cmxa
+lib/ocaml/camlimages/ci_xvthumb.a
+lib/ocaml/camlimages/ci_xvthumb.cmxa
