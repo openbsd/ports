@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ldistfp_c,v 1.1.1.1 2001/08/12 20:01:44 naddy Exp $
+--- src/ldistfp.c.orig	Tue Jul 31 14:31:54 2001
++++ src/ldistfp.c	Tue Jul 31 14:34:16 2001
+@@ -24,7 +24,7 @@ typedef struct	fingerprint {
+ } fingerprint;
+ 
+ fingerprint **	fp_list = NULL;
+-char *		fp_filename = "ldistfp-auth-fingerprints";
++char *		fp_filename = FINGERPRINTS;
+ char *		fp_url = FP_URL;
+ int		fp_count = 0;
+ 
