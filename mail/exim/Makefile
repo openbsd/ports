@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2001/02/23 11:30:02 peter Exp $
+# $OpenBSD: Makefile,v 1.21 2001/02/28 15:13:19 brad Exp $
 
 DISTNAME=	exim-3.22
 CATEGORIES=	mail
-NEED_VERSION=	1.324
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/ \
 		ftp://ftp.exim.org/pub/exim/ \
 		ftp://ftp.fu-berlin.de/unix/mail/exim/
@@ -37,7 +37,7 @@ EXIM_MAKECAT+=	"EXIM_PERL=perl.o\n"
 .endif
 
 .if ${FLAVOR:L:Mldap}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libldap.a::databases/openldap
+LIB_DEPENDS+=	ldap.2::databases/openldap
 EXIM_MAKECAT+=	"LOOKUP_LDAP=yes\nLDAP_LIB_TYPE=OPENLDAP2\n"
 EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include
 EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib -lldap -llber
@@ -45,14 +45,14 @@ EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib -lldap -llber
 
 .if ${FLAVOR:L:Mmysql}
 LIBS+=		${LOCALBASE}/lib/mysql
-BUILD_DEPENDS+=	${LOCALBASE}/lib/mysql/libmysqlclient.a::databases/mysql
+LIB_DEPENDS+=	mysqlclient.10::databases/mysql
 EXIM_MAKECAT+=	"LOOKUP_MYSQL=yes\n"
 EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include/mysql
 EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 .endif
 
 .if ${FLAVOR:L:Mpgsql}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/pgsql/libpq.a::databases/postgresql
+LIB_DEPENDS+=	pq.2::databases/postgresql
 EXIM_MAKECAT+=	"LOOKUP_PGSQL=yes\n"
 EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include/pgsql
 EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib/pgsql -lpq
