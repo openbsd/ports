@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.447 2001/08/27 08:50:30 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.448 2001/08/28 08:09:31 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -586,7 +586,7 @@ INSTALL_TARGET?=	install
 
 FAKE_TARGET ?= ${INSTALL_TARGET}
 
-.for _i in perl imake gnu
+.for _i in perl gnu imake
 .  if ${CONFIGURE_STYLE:L:M${_i}}
 MODULES+=${_i}
 .  endif
@@ -1583,6 +1583,18 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .endif
 
 
+MODSIMPLE_configure= \
+	cd ${WRKBUILD} && CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
+		CXX="${CXX}" ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
+		ac_given_INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_MAN="${INSTALL_MAN}" \
+		INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}" \
+		YACC="${YACC}" \
+		${CONFIGURE_ENV} ${_CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+
+MODGNU_configure= ${MODSIMPLE_configure}
+	
 # The real configure
 
 ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
@@ -1599,21 +1611,11 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 		  ${SCRIPTDIR}/configure; \
 	fi
-.  for _m in ${MODULES}
-.    if ${CONFIGURE_STYLE:L:M${_m:L}} && defined(MOD${_m:U}_configure)
-	@${MOD${_m:U}_configure}
+.  for _c in ${CONFIGURE_STYLE:L}
+.    if defined(MOD${_c:U}_configure)
+	@${MOD${_c:U}_configure}
 .    endif
 .  endfor
-.  if ${CONFIGURE_STYLE:L:Msimple} || ${CONFIGURE_STYLE:L:Mgnu}
-	@cd ${WRKBUILD} && CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
-		CXX="${CXX}" ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
-		ac_given_INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_MAN="${INSTALL_MAN}" \
-		INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}" \
-		YACC="${YACC}" \
-		${CONFIGURE_ENV} ${_CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
-.  endif
 # End of CONFIGURE.
 .endif
 .if target(post-configure)
