@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2002/03/21 21:25:55 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/10/29 19:48:58 naddy Exp $
 # $FreeBSD: Makefile,v 1.9 1999/08/31 06:52:30 mharo Exp $
 
 COMMENT=	"digital clock with optional military time and alarm"
 
 PKGNAME=	dclock-pl4
-
 CATEGORIES=	x11
-NEED_VERSION=	1.515
-
 DISTNAME=	dclock
 EXTRACT_SUFX=	.shar.Z
 
@@ -25,6 +22,8 @@ USE_X11=	Yes
 WRKDIST=	${WRKDIR}
 
 ALL_TARGET=	dclock
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dclock ${PREFIX}/bin

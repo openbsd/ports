@@ -1,17 +1,11 @@
-# OpenBSD makefile for:	xtacy
-# Version required:     1.13
-# Date created:         December 21, 1997
-# Whom:                 Don Schmidt
-#
-# $OpenBSD: Makefile,v 1.13 2002/03/21 21:25:57 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.14 2002/10/29 19:49:00 naddy Exp $
 
 COMMENT=	"X11 trippy color-cycling toy"
 
 DISTNAME=	xtacy114
 PKGNAME=	xtacy-1.14
 CATEGORIES=	x11
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://sidehack.gweep.net/pub/software/ \
 		http://www.ultranet.com/~jjohnson/
 
@@ -26,6 +20,8 @@ USE_X11=	Yes
 CONFIGURE_STYLE=imake
 
 WRKDIST=	${WRKDIR}/Xtacy
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/xtacy ${PREFIX}/bin

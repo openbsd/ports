@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/09/19 23:27:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2002/10/29 19:48:58 naddy Exp $
 
 COMMENT=	"tails a given file anywhere on your X11 root window"
 
@@ -19,5 +19,6 @@ MASTER_SITES=	${HOMESITE}/data/
 
 CONFIGURE_STYLE=	imake
 USE_X11=		Yes
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

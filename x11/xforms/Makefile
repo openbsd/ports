@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2002/09/01 18:49:01 mpech Exp $
+# $OpenBSD: Makefile,v 1.25 2002/10/29 19:48:59 naddy Exp $
 # $RuOBSD: Makefile,v 1.2 2002/05/21 12:19:30 form Exp $
 
 COMMENT=		"GUI toolkit for X11"
 
 DISTNAME=		xforms-0.9999
 CATEGORIES=		x11
-NEED_VERSION=		1.527
 MASTER_SITES=		ftp://ncmir.ucsd.edu/pub/xforms/OpenSource/
 EXTRACT_SUFX=		.tgz
 
@@ -21,5 +20,7 @@ USE_X11=		Yes
 CONFIGURE_STYLE=	imake
 
 BUILD_DEPENDS=		::graphics/jpeg
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2002/09/14 16:23:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2002/10/29 19:48:59 naddy Exp $
 
 COMMENT=	"extensible window manager"
 
 VERSION=	0.36
 DISTNAME=	sawfish-${VERSION}
 CATEGORIES=	x11
-NEED_VERSION=	1.489
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sawmill/}
 
 HOMEPAGE=       http://sawmill.sourceforge.net/
@@ -36,5 +36,7 @@ CONFIGURE_ARGS+= --without-audiofile --without-esd \
 		 --disable-gnome-widgets --disable-linguas
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2002/07/05 07:21:50 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/29 19:48:58 naddy Exp $
 
 COMMENT=	"twm, plus support for multiple virtual screens, etc"
 
 DISTNAME=	ctwm-3.6
 CATEGORIES=	x11
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://ctwm.dl.nu/
 
@@ -17,5 +16,7 @@ MASTER_SITES=	${HOMEPAGE}/dist/
 
 USE_X11=	Yes
 CONFIGURE_STYLE= imake
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

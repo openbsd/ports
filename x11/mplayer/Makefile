@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2002/10/28 17:56:08 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2002/10/29 19:48:58 naddy Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -145,6 +145,8 @@ CONFIGURE_ARGS+=--disable-cdparanoia
 post-patch:
 	@ln -s ${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/as ${WRKDIR}/bin/as
 .endif
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mplayer/Skin/${SKIN}

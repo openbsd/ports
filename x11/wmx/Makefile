@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2001/07/09 17:11:29 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/29 19:48:59 naddy Exp $
 
-COMMENT=	minimal window manager
+COMMENT=	"minimal window manager"
 
 DISTNAME=	wmx-6
 CATEGORIES=	x11
-NEED_VERSION=	1.363
 
 HOMEPAGE=	http://www.all-day-breakfast.com/wmx/
 MASTER_SITES=	${HOMEPAGE}
@@ -18,6 +17,8 @@ PERMIT_DISTFILES_FTP=	YES
 
 USE_X11=	Yes
 CONFIGURE_STYLE=	gnu
+
+NO_REGRESS=	Yes
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/wmx ${PREFIX}/bin

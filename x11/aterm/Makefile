@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.29 2002/06/09 06:09:24 jcs Exp $
+# $OpenBSD: Makefile,v 1.30 2002/10/29 19:48:57 naddy Exp $
 
 DISTNAME=	aterm-0.4.2
 CATEGORIES=	x11
-NEED_VERSION=	1.509
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -48,5 +47,7 @@ CONFIGURE_ARGS+= --with-xpm --enable-transparency \
 		--enable-background-image --enable-fading \
 		--with-jpeg --with-png
 .endif
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

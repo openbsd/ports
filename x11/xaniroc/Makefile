@@ -1,17 +1,11 @@
-# OpenBSD makefile for:   xaniroc
-# Version required:    0.3
-# Date created:        May 19 1998
-# Whom:                Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.14 2002/03/21 21:25:56 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.15 2002/10/29 19:48:59 naddy Exp $
 
 COMMENT=	"animate your root-cursor"
 
 DISTNAME=	xaniroc
 PKGNAME=	xaniroc-1.02
 CATEGORIES=	x11
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.freebird.org/unixware/freebird/x11/utils/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/novell/freebird/x11/utils/
 EXTRACT_SUFX=	.src.tar.Z
@@ -27,5 +21,7 @@ CONFIGURE_STYLE=	imake
 
 post-extract:
 	mv ${WRKSRC}/manpage.1 ${WRKSRC}/xaniroc.man
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

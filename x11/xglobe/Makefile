@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/09/30 15:01:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2002/10/29 19:49:00 naddy Exp $
 
 COMMENT=	"display the Earth on X11"
 
@@ -45,6 +45,8 @@ MAKE_FLAGS+=	OPTIONS="${CXXFLAGS} -fno-exceptions -funroll-loops"
 # for linking against libpng
 MAKE_FLAGS+=	'LIB_DIRS=-L$$(QT_LIB_DIR) -L$$(X11_LIB_DIR) -L$(LOCALBASE)/lib'
 MAKE_FLAGS+=	COPTS='${COPTS}'
+
+NO_REGRESS=	Yes
 
 post-install::
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xglobe

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/07/18 02:16:41 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2002/10/29 19:48:57 naddy Exp $
 
 COMMENT=	"Window manager, continuation of the Bowman NeXTSTEP clone"
 
@@ -31,6 +31,8 @@ CONFIGURE_ARGS+= --with-png-includes=${LOCALBASE}/include/libpng
 CONFIGURE_ARGS+= --with-png-library=${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+NO_REGRESS=	Yes
 		
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/monitor_bsd.xpm ${PREFIX}/share/afterstep/desktop/icons/common

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2002/03/21 21:25:55 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/10/29 19:48:58 naddy Exp $
 
 COMMENT=	"interactive X11 proxy with selective X request replacement"
 
 DISTNAME=	mxconns-3.1.4
 CATEGORIES=	x11 security
-NEED_VERSION=	1.515
+
 MASTER_SITES=	http://c.home.cern.ch/c/cons/www/mxconns/
 EXTRACT_SUFX=	.tgz
 
@@ -19,6 +19,8 @@ USE_X11=	Yes
 USE_MOTIF=	any
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	-optim "${CFLAGS}"
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/mxconns ${PREFIX}/bin

@@ -1,17 +1,11 @@
-# OpenBSD makefile for:   xmold
-# Version required:    1.0
-# Date created:        December 21, 1997
-# Whom:                Don Schmidt
-#
-# $OpenBSD: Makefile,v 1.12 2002/03/21 21:25:57 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.13 2002/10/29 19:49:00 naddy Exp $
 
 COMMENT=	"mold spreading over your X11 screen"
 
 DISTNAME=	xmold
 PKGNAME=        xmold-1.0
 CATEGORIES=	x11
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xwin/
 
 HOMEPAGE=	http://cclub.cc.tut.ac.jp/lib/xwin/xmold.html
@@ -23,6 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	imake
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/bin

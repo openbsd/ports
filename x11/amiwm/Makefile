@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/08/27 20:49:58 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/29 19:48:57 naddy Exp $
 
 COMMENT=	"Amiga Workbench lookalike window manager"
 
@@ -22,5 +22,7 @@ USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu dest
 
 CONFIGURE_ENV=		CPPFLAGS='${CPPFLAGS} -I${X11BASE}/include'
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

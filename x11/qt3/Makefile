@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/26 11:45:52 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/10/29 19:48:58 naddy Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		C++ X11 GUI toolkit
@@ -143,6 +143,7 @@ DOCS=	FAQ LICENSE.GPL README README.QT \
 	changes-3*
 
 VMEM_WARNING=	Yes
+NO_REGRESS=	Yes
 
 
 .if ${FLAVOR:L:Mmt}

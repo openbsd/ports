@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.18 2002/09/30 14:47:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2002/10/29 19:48:59 naddy Exp $
 # $FreeBSD Id: Makefile,v 1.2 1999/06/28 02:22:43 billf Exp $
-#
 
 COMMENT=	"TrueType font server for X11"
 
@@ -17,6 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
 MAKE_ENV=	CXX="${CXX}"
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xfstt ${PREFIX}/bin

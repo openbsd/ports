@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 21:25:56 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/29 19:48:59 naddy Exp $
 
 COMMENT=		"create fonts.scale file for the TrueType font server"
 
 PKGNAME=		ttmkfdir-0.0
 DISTNAME=		ttmkfdir
-
 CATEGORIES=		x11
-NEED_VERSION=		1.515
 MAINTAINER=		David Lebel <lebel@openbsd.org>
 
 MASTER_SITES=		http://www.joerg-pommnitz.de/TrueType/
@@ -19,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WRKSRC=			${WRKDIR}
+NO_REGRESS=		Yes
 
 do-build:
 	cd ${WRKSRC}; ${CC} ${CFLAGS} ttmkfdir.c \

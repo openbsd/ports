@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2002/03/21 21:25:57 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/10/29 19:48:59 naddy Exp $
 
 COMMENT=	"X11 File Manager"
 
 DISTNAME=	xfm-1.4.3
 CATEGORIES=	x11
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://www.musikwissenschaft.uni-mainz.de/~ag/xfm/
 
@@ -19,5 +18,7 @@ LIB_DEPENDS=	Xaw3d.6::x11/Xaw3d
 
 USE_X11=	Yes
 CONFIGURE_STYLE= imake
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2002/03/21 21:25:55 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2002/10/29 19:48:58 naddy Exp $
 
 COMMENT=	"OpenLook Virtual Window manager"
 
 DISTNAME=	olvwm4
 PKGNAME=	olvwm-4.2
 CATEGORIES=	x11
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	olvwm4.tar.Z
 
@@ -31,6 +31,8 @@ CONFIGURE_STYLE=imake
 MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
 
 WRKDIST=	${WRKDIR}
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM_DIR}	${PREFIX}/bin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/28 17:56:08 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/29 19:48:58 naddy Exp $
 
 DISTNAME=mplayer-fontmaker-0.90pre9
 CATEGORIES=x11
@@ -24,6 +24,8 @@ OSDDIR=${PREFIX}/libdata/mplayer-osd
 post-build:
 	sed -e 's,^PREFIX=.*,PREFIX=${PREFIX},' \
 	    ${FILESDIR}/mksubfont >${WRKBUILD}/mksubfont
+
+NO_REGRESS=Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/subfont ${PREFIX}/bin

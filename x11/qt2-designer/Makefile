@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/09/11 17:42:01 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/29 19:48:58 naddy Exp $
 
 COMMENT=	designer for qt2
 
@@ -6,7 +6,7 @@ VERSION=	3.2
 DISTNAME=	qt-designer-2.${VERSION}
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11 devel
-NEED_VERSION=	1.525
+
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 DISTFILES=	qt-x11-2.${VERSION}.tar.gz
 EXTRACT_ONLY=	
@@ -53,6 +53,7 @@ QT_EXAMPLES=	${QT_LIBDIR}/examples
 QT_TUTORIAL=	${QT_LIBDIR}/tutorial
 QT_DOC=		${PREFIX}/share/doc/qt2
 
+NO_REGRESS=	Yes
 
 
 do-install:

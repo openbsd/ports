@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/21 21:25:55 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/29 19:48:58 naddy Exp $
 
 COMMENT=	"qt-based window manager"
 
 DISTNAME=	qlwm-1.7
 CATEGORIES=	x11
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://qlwm.get.to/
 MASTER_SITES=	http://www.netcologne.de/~nc-lindenal/qlwm/
@@ -28,6 +27,7 @@ MAKE_FLAGS=INCPATH='-I${X11BASE}/include -I${MODQT_INCDIR}' \
 	MOC=${MODQT_MOC} \
 	DEST=${LIBDIR}
 
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${LIBDIR}/files ${DOCDIR}

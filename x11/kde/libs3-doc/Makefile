@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/10/28 21:44:32 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/29 19:48:58 naddy Exp $
 
 COMMENT=		"X11 toolkit, libraries documentation"
 CATEGORIES=		x11 x11/kde devel
@@ -23,6 +23,8 @@ post-patch:
 do-build:
 	qt2kdoc -u "file:${LOCALBASE}/share/doc/qt3/html" \
 	    -o ${WRKDIST}/qt ${LOCALBASE}/share/doc/qt3/html
+
+NO_REGRESS=	Yes
 
 do-install:
 	mkdir -p ${DDIR}

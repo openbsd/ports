@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2002/05/15 18:05:20 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/29 19:49:00 naddy Exp $
 
 COMMENT=	"PostIt (R) messages onto your X11 screen"
 
 DISTNAME=	XPostitPlus-2.3
 CATEGORIES=	x11
-NEED_VERSION=	1.515
+
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=office/}
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,5 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	imake
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

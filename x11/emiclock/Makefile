@@ -1,16 +1,10 @@
-# OpenBSD makefile for:	EmiClock
-# Version required:	1.0.2
-# Date created:		May 19 1998
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.12 2002/03/21 21:25:55 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.13 2002/10/29 19:48:58 naddy Exp $
 
 COMMENT=	"hyper-animated face analog clock for X11"
 
 DISTNAME=	emiclock-2.0.2
 CATEGORIES=	x11
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.noge.com/pub/EmiClock/X11/
 
 CONFIGURE_STYLE=imake
@@ -24,6 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
 USE_X11=	Yes
+NO_REGRESS=	Yes
 
 LANGRES=	resources/R6/EUC/EmiClock.ad
 LANGDIR=	$(PREFIX)/lib/X11/ja_JP.EUC/app-defaults

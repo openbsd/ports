@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/10/08 15:53:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2002/10/29 19:48:58 naddy Exp $
 
 COMMENT=	"file manager with same look and feel as Windows95(tm)"
 
@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--datadir='$${DESTDIR}${PREFIX}/lib/X11/explorer' \
 
 ALL_TARGET=	explorer
 USE_X11=	Yes
+NO_REGRESS=	Yes
 
 post-install:
 	@/usr/bin/strip ${PREFIX}/bin/explorer

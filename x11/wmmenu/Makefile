@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/09/17 15:22:27 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/29 19:48:59 naddy Exp $
 
 COMMENT=		'wm-dockapp; A popup menu of icons that launch programs'
 
@@ -33,6 +33,8 @@ WRKDIST=		${WRKDIR}/wmmenu
 
 post-patch:
 	@perl -pi -e 's#%%PREFIX%%#${PREFIX}#' ${WRKSRC}/example/defaults
+
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/wmmenu ${PREFIX}/bin

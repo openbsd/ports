@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/09/10 01:15:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/29 19:48:58 naddy Exp $
 
 COMMENT=		"minimalist window manager for the X Window System"
 
@@ -22,6 +22,8 @@ USE_X11=		Yes
 ALL_TARGET=		allinone
 MAKE_FLAGS=		XROOT='${X11BASE}' CC='${CC}'
 FAKE_FLAGS=		prefix='${WRKINST}${PREFIX}'
+
+NO_REGRESS=		Yes
 
 DOCDIR=			${PREFIX}/share/doc/evilwm
 

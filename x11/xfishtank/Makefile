@@ -1,16 +1,10 @@
-# OpenBSD makefile for:   xfishtank
-# Version required:    2.2
-# Date created:        May 19 1998
-# Whom:                Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.13 2002/03/21 21:25:56 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.14 2002/10/29 19:48:59 naddy Exp $
 
 COMMENT=	"fish swim in the background of your screen"
 
 DISTNAME=	xfishtank-2.2
 CATEGORIES=	x11
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/
 
 PERMIT_PACKAGE_CDROM=	"no license"
@@ -24,5 +18,7 @@ WRKDIST=	${WRKDIR}/xfishtank2.0
 
 post-patch:
 	@cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} clean
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

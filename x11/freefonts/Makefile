@@ -1,16 +1,10 @@
-# OpenBSD makefile for:	freefonts
-# Version required:	0.10
-# Date created:		11 January 1998
-# Whom:			Don Schmidt
-#
-# $OpenBSD: Makefile,v 1.13 2002/03/21 21:25:55 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.14 2002/10/29 19:48:58 naddy Exp $
 
 COMMENT=	"collection of ATM fonts from the CICA archives"
 
 DISTNAME=	freefonts-0.10
 CATEGORIES=	x11
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/ \
    		ftp://ftp.funet.fi/pub/mirrors/ftp.gimp.org/gimp/fonts/
 
@@ -24,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WRKDIST=	${WRKDIR}
 USE_X11=	Yes
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 FREEFONTDIR=	${PREFIX}/lib/X11/fonts
 
 do-install:

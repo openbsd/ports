@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/03/21 21:25:55 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/29 19:48:58 naddy Exp $
 
 COMMENT=	"Motif toolkit"
 COMMENT-debuglibs="Motif toolkit debug libraries"
@@ -11,7 +11,7 @@ PKGNAME-demos=	openmotif-demos-${VERSION}.${PATCHLEVEL}
 PKGNAME-debuglibs=openmotif-debuglibs-${VERSION}.${PATCHLEVEL}
 
 CATEGORIES=	x11
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.opengroup.org/pub/openmotif/R${VERSION}/tars/ \
 		ftp://openmotif.opengroup.org/pub/openmotif/R${VERSION}/tars/ \
 		ftp://ftp.kddlabs.co.jp/X11/openmotif/R${VERSION}/tars/
@@ -96,5 +96,8 @@ post-install:
 .if ${SUBPACKAGE} == "-demos" || ${SUBPACKAGE} == "-debuglibs"
 LIB_DEPENDS+=	Xm.2.1::x11/openmotif
 .endif
+
+# XXX  Large, complicated, only partially automated test suite available
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

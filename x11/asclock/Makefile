@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2002/03/21 21:25:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/10/29 19:48:57 naddy Exp $
 
 COMMENT=	"afterstep clock with some language extensions"
 
 DISTNAME=	asclock-2.0.12
 CATEGORIES=	x11
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.afterstep.org/apps/asclock/ \
 		ftp://fuf.sh.cvut.cz/pub/AfterStep/apps/asclock/ \
 		http://www.tigr.net/afterstep/download/asclock/
@@ -33,5 +33,7 @@ pre-fetch:
 pre-configure:
 	@THEMES='${THEMES}' CLASSICS='${CLASSICS}' LANGUAGES='${LANGUAGES}' \
 	     WRKSRC=${WRKSRC} FLAVOR='${FLAVOR}' ${FILESDIR}/configure conf
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 21:25:57 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/29 19:49:00 naddy Exp $
 
 COMMENT=	"keymap editor for the X window system"
 
 DISTNAME=	xkeycaps-2.46
 CATEGORIES=	x11 sysutils
-NEED_VERSION=	1.515
+
 MASTER_SITES=	http://www.jwz.org/xkeycaps/
 EXTRACT_SUFX=	.tar.Z
 
@@ -18,5 +18,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	imake
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2002/09/11 17:42:01 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2002/10/29 19:48:58 naddy Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt2
@@ -7,7 +7,7 @@ COMMENT-html=		off-line html documentation for qt2
 VERSION=	3.2
 DISTNAME=	qt-2.${VERSION}
 CATEGORIES=	x11
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 DISTFILES=	qt-x11-2.${VERSION}.tar.gz
 
@@ -73,6 +73,7 @@ DOCS=	ANNOUNCE FAQ LICENSE.GPL README README.QT \
 	changes-2*
 
 VMEM_WARNING=	Yes
+NO_REGRESS=	Yes
 
 post-patch:
 	@cd ${WRKSRC}/configs; for i in openbsd-*; do \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/28 17:56:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/29 19:48:58 naddy Exp $
 
 COMMENT='subtitle font for mplayer'
 CATEGORIES=x11
@@ -27,6 +27,8 @@ FULLPKGNAME=mplayer-${NAME}-0.90pre9
 
 do-build:
 	cd ${WRKBUILD} && mksubfont ${DIR}/${FONT}.ttf
+
+NO_REGRESS=Yes
 
 FILES=ISO-8859-1-a.raw ISO-8859-1-b.raw font.desc \
 	osd-encoding-a.raw osd-encoding-b.raw

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2002/03/21 21:25:55 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/10/29 19:48:58 naddy Exp $
 
 COMMENT=	"quick start-up utility for applications on an X11 display"
 
 PKGNAME=	bricons-3.0
 DISTNAME=	bricons-athena-3.0
 CATEGORIES=	x11
-NEED_VERSION=	1.515
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,6 +18,7 @@ MASTER_SITES=	ftp://ftp.uni-paderborn.de/unix/X11/ftp.x.org/R5contrib/ \
 CONFIGURE_STYLE= imake
 WRKDIST=	${WRKDIR}/bricons
 USE_X11=	Yes
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/Xbricons ${PREFIX}/lib/X11/app-defaults

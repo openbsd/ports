@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/07/17 11:31:13 couderc Exp $
+# $OpenBSD: Makefile,v 1.9 2002/10/29 19:48:59 naddy Exp $
 
 COMMENT=		"gtk file manager with desktop features"
 
@@ -7,7 +7,6 @@ DISTNAME=		rox-${VERSION}
 PKGNAME=		rox-filer-${VERSION}
 ROXBASE=		rox-base-1.0.2
 CATEGORIES=		x11
-NEED_VERSION=		1.504
 
 HOMEPAGE=		http://rox.sourceforge.net/
 
@@ -39,6 +38,8 @@ post-patch:
 do-build:
 	@cd ${WRKSRC} && ${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" \
 		ROX-Filer/AppRun --compile
+
+NO_REGRESS=	Yes
 
 do-install:
 # base install

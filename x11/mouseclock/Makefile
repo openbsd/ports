@@ -1,16 +1,10 @@
-# OpenBSD makefile for:	mouseclock
-# Version required:	1.0
-# Date created:		May 19 1998
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.16 2002/05/15 18:05:19 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.17 2002/10/29 19:48:58 naddy Exp $
 
 COMMENT=	"display the current time using the X11 root cursor"
 
 DISTNAME=	mouseclock-1.0
 CATEGORIES=	x11
-NEED_VERSION=	1.515
+
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=X11/clocks/}
 
 # License: GPL
@@ -23,6 +17,8 @@ USE_X11=	Yes
 
 CONFIGURE_STYLE=	imake noman
 XMKMF=		xmkmf
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mouseclock
