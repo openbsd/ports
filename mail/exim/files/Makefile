@@ -34,14 +34,14 @@
 # (dynamic run-time library).
 
 # Another area of variability between systems is the type and location of the
-# dbm library package. Exim has support for ndbm, gdbm, and Berkeley db. By
-# default it assumes ndbm; this often works with gdbm or db, provided they
+# dbm library package. Exim has support for ndbm, gdbm, and Berkeley DB. By
+# default it assumes ndbm; this often works with gdbm or DB, provided they
 # are correctly installed, via their compatibility interfaces. However, Exim
-# can also be configured to use the native calls for Berkeley db 1.85, and
-# this is defaulted for some operating systems. The defaults are set in
-# OS/Makefile-Default, and can be changed by putting things into an OS-specific
-# Makefile, or indeed into the main Local/Makefile if Exim is being compiled
-# for a single OS only.
+# can also be configured to use the native calls for Berkeley DB 1.85 or
+# Berkeley DB version 2.x, and this is defaulted for some operating systems.
+# The defaults are set in OS/Makefile-Default, and can be changed by putting
+# things into an OS-specific Makefile, or indeed into the main Local/Makefile
+# if Exim is being compiled for a single OS only.
 
 # See also the file doc/dbm.discuss.txt for discussion about different dbm
 # libraries.
@@ -84,6 +84,15 @@
 # AR=ar cq
 
 
+# Exim has some support for the AUTH extension of SMTP (RFC 2554). If you want
+# to use this you must uncomment at least one of the following macros so that
+# appropriate code is included in the binary. You then need to set up the
+# runtime configuration to make use of the mechanism(s) selected.
+
+AUTH_CRAM_MD5=yes
+AUTH_PLAINTEXT=yes
+
+
 # The binary directory: This variable defines where the exim binary will be
 # installed by "make install" or "exim_install". It is also used internally
 # by exim when it needs to re-invoke itself, either to send an error message,
@@ -111,6 +120,12 @@ INFO_DIRECTORY=/usr/local/info
 
 COMPRESS_COMMAND=/usr/bin/gzip
 COMPRESS_SUFFIX=gz
+
+
+# If the exigrep utility is fed compressed log files, it tries to uncompress
+# them using this command.
+
+ZCAT_COMMAND=/usr/bin/gzcat
 
 
 # The runtime configuration file: This variable defines where Exim's runtime
@@ -194,11 +209,14 @@ DIRECTOR_SMARTUSER=yes
 EXICYCLOG_MAX=10
 
 
-# Running Exim not as root: A uid and gid for Exim can be specified here. These
-# are compiled into the binary, but can be changed by settings in the runtime
-# configuration file. If EXIM_UID is not defined, the default in the code is to
-# run as root unless specified otherwise at run time. Specifying 0 at
-# run time has the effect of unsetting the values build into the binary.
+# Running Exim without it being root all the time: A uid and gid for Exim can
+# be specified here, and this is strongly recommended. These values are
+# compiled into the binary. It is possible to change them by settings in the
+# runtime configuration file, but setting them here is preferred. If EXIM_UID
+# is not defined, the default in the code is to run as root (unless specified
+# otherwise at run time) except when doing local deliveries, when it always
+# runs as the appropriate local user. Specifying 0 at run time has the effect
+# of unsetting the values build into the binary.
 
 # The settings here must be numeric; the run time file allows names to
 # be used. When this uid and gid are set, the Exim binary still has to be
@@ -220,7 +238,7 @@ EXICYCLOG_MAX=10
 # are defaulted in the OS/Makefile-Default file, and can be overridden
 # in local OS-specific make files.
 
-# EXIM_MONITOR=eximon.bin
+EXIM_MONITOR=eximon.bin
 
 
 # Compiling in support for embedded Perl: If you want to be able to
@@ -240,12 +258,13 @@ EXIM_PERL=perl.o
 # PERL_LIBS=
 
 
-# The maximum length of header line that Exim is prepared to process. There
-# is a limit in order to catch rogue mailers out there that might connect to
-# the SMTP port, start off a header line, and then just pump junk for ever
-# at it. The default is 8192.
+# This parameter sets the maximum length of the header portion of a message
+# that Exim is prepared to process. The default setting is one megabyte. There
+# is a limit in order to catch rogue mailers that might connect to your SMTP
+# port, start off a header line, and then just pump junk at it for ever. The
+# message_size_limit option would also catch this, but it may not be set.
 
-# HEADER_MAXLENGTH=8192
+# HEADER_MAXSIZE=(1024*1024)
 
 
 # The mode of the input directory: The input directory is where messages are
@@ -259,10 +278,10 @@ EXIM_PERL=perl.o
 # single log directory. You can define the directory and the form of the
 # log file name here, by setting LOG_FILE_PATH to a path name containing one
 # occurrence of %s. This will be replaced by one of the strings "main",
-# "panic", "process" or "reject" to form the final file name. For example,
-# some installations may want something like this:
+# "panic", or "reject" to form the final file name. For example, some
+# installations may want something like this:
 
-LOG_FILE_PATH=/var/log/exim/%s.log
+# LOG_FILE_PATH=/var/log/exim_%slog
 
 # which results in files with names /var/log/exim_mainlog, etc. The directory
 # in which the log files are placed must exist; Exim does not try to create
@@ -303,17 +322,55 @@ LOG_FILE_PATH=/var/log/exim/%s.log
 LOOKUP_DBM=yes
 LOOKUP_LSEARCH=yes
 
-# LOOKUP_CDB=yes
+LOOKUP_CDB=yes
 # LOOKUP_DNSDB=yes
 # LOOKUP_LDAP=yes
-# LOOKUP_NIS=yes
+# LOOKUP_MYSQL=yes
+LOOKUP_NIS=yes
 # LOOKUP_NISPLUS=yes
+
+# Additional libraries and include directories may be required for some
+# lookup styles, e.g. LDAP or MYSQL. LOOKUP_LIBS is included only on the
+# command for linking Exim itself, not on any auxiliary programs. You
+# don't need to set LOOKUP_INCLUDE if the relevant directories are already
+# specified in INCLUDE.
+
+# LOOKUP_INCLUDE=-I /usr/local/ldap/include -I /usr/local/mysql/include
+# LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient
+
+# If you have set LDAP=yes, you should set LDAP_LIB_TYPE to indicate which LDAP
+# library you have. Unfortunately, though most of their functions are the
+# same, there is a difference in error handling. Currently Exim knows about
+# three LDAP libraries: the one from the University of Michigan, the Netscape
+# SDK library, and the library that comes with Solaris 7. Uncomment whichever
+# of these you are using.
+
+# LDAP_LIB_TYPE=UMICHIGAN
+# LDAP_LIB_TYPE=NETSCAPE
+# LDAP_LIB_TYPE=SOLARIS7
+
+# If you don't set any of these, Exim applies a heuristic to distinguish the
+# University of Michigan library, but it cannot distinguish between the other
+# two.
 
 # The TESTDB lookup is for performing tests on the handling of lookup
 # results, and is not useful for general running. It should be included
 # only when debugging the code of Exim.
 
 # LOOKUP_TESTDB=yes
+
+
+# Network interfaces: Unless you set the local_interfaces option in the runtime
+# configuration file to restrict Exim to certain interfaces only, it will run
+# code to find all the interfaces there are on your host. Unfortunately,
+# the call to the OS that does this requires a buffer large enough to hold
+# data for all the interfaces - it was designed of course in the days when a
+# host rarely had more than three or four at most. Nowadays hosts can have
+# very many virtual interfaces running on the same hardware. If you have more
+# than 250 virtual interfaces, you will need to uncomment this setting and
+# increase the value.
+
+# MAXINTERFACES=250
 
 
 # Per-message logs: While a message is in the process of being delivered,
@@ -345,12 +402,6 @@ PID_FILE_PATH=/var/run/exim%s.pid
 # port. If you run a daemon that does not have both the -bd and -q options,
 # then whichever of the two options it does have is added to the file name,
 # whether obtained from PID_FILE_PATH or by default.
-
-# If you set PID_FILE_PATH, then it is your responsibility to ensure that
-# Exim is capable of writing to the relevant files. If you have defined
-# EXIM_UID and EXIM_GID above, then that uid/gid combination must be able to
-# create and write to the files. If the attempt to open the file fails, Exim
-# just refrains from trying to write the data.
 
 # The pid file path does not have to be set here; it can be also be set by an
 # option in the runtime configuration file, which takes precedence over any
@@ -424,9 +475,30 @@ SPOOL_DIRECTORY=/var/spool/exim
 # of formats. The code for three specialist formats, maildir, mailstore, and
 # MBX, is included only when requested by the following settings:
 
-# SUPPORT_MAILDIR=yes
-# SUPPORT_MAILSTORE=yes
-# SUPPORT_MBX=yes
+SUPPORT_MAILDIR=yes
+SUPPORT_MAILSTORE=yes
+SUPPORT_MBX=yes
+
+
+# Moving frozen messages: If the following is uncommented, Exim is compiled
+# with support for automatically moving frozen messages out of the main spool
+# directory, a facility that is found useful by some large installations. A
+# runtime option is required to cause the moving actually to occur. Such
+# messages become "invisible" to the normal management tools.
+
+SUPPORT_MOVE_FROZEN_MESSAGES=yes
+
+
+# Support for PAM (Pluggable Authentication Modules), a facility
+# which is available in the latest releases of Solaris and in some GNU/Linux
+# distributions (see http://ftp.at.kernel.org/pub/linux/libs/pam/). The Exim
+# support, which is intended for use in conjunction with the SMTP AUTH
+# facilities, is included only when requested by the following setting:
+
+# SUPPORT_PAM=yes
+
+# You probably need to add -lpam to EXTRALIBS, and in some releases of
+# GNU/Linux -ldl is also needed.
 
 
 # Included transports: These variables determine which individual transport
@@ -443,7 +515,9 @@ TRANSPORT_PIPE=yes
 TRANSPORT_SMTP=yes
 
 
-# TCP wrappers:
+# TCP wrappers: If you want to use tcpwrappers from within Exim, uncomment
+# this setting. See the manual section entitled "Use of tcpwrappers" in the
+# chapter on building and installing Exim.
 
 # USE_TCP_WRAPPERS=yes
 
