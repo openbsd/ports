@@ -1,5 +1,8 @@
 bin/bzip2
 bin/bunzip2
 bin/bzip2recover
+bin/bzcat
 man/man1/bzip2.1
 man/man1/bunzip2.1
+man/man1/bzip2recover.1
+man/man1/bzcat.1
