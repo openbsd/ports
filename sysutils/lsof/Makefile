@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 1999/02/18 19:27:35 marc Exp $
+# $OpenBSD: Makefile,v 1.11 1999/03/10 19:33:48 marc Exp $
 #
 
-DISTNAME=	lsof_4.40_W
-DIST_SUBDIR=	lsof
-PKGNAME=	lsof-4.40
+DISTNAME=	lsof_4.41_W
+PKGNAME=	lsof-4.41
 CATEGORIES=	sysutils
+
+NO_PACKAGE=	compile from source to set proper options
 
 MAINTAINER=     angelos@openbsd.org
 
@@ -12,16 +13,9 @@ MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/ \
 		ftp://ftp.crc.doc.ca/packages/lsof/ \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/
 
-PATCH_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/patches/4.40/ \
-		ftp://ftp.crc.doc.ca/packages/lsof/
-
-PATCHFILES=	arg.c.patch
-
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n openbsd
-
-NO_PACKAGE=	compile from source to set proper options
 
 SRCBALL_NAME=	${DISTNAME:S/_W$//}
 WRKSRC=		${WRKDIR}/${SRCBALL_NAME}
