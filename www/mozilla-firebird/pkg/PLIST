@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/01/18 11:49:41 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/01/25 13:39:12 wilfried Exp $
 bin/firebird
 bin/mozilla-firebird
 mozilla-firebird/MozillaFirebird-bin
@@ -60,7 +60,6 @@ mozilla-firebird/components/history.xpt
 mozilla-firebird/components/htmlparser.xpt
 mozilla-firebird/components/imglib2.xpt
 mozilla-firebird/components/intl.xpt
-mozilla-firebird/components/ipcd.xpt
 mozilla-firebird/components/jar.xpt
 mozilla-firebird/components/jsconsole-clhandler.js
 mozilla-firebird/components/jsconsole.xpt
@@ -74,8 +73,6 @@ mozilla-firebird/components/lwbrk.xpt
 mozilla-firebird/components/mimetype.xpt
 mozilla-firebird/components/mozbrwsr.xpt
 mozilla-firebird/components/mozfind.xpt
-mozilla-firebird/components/myspell/en-US.aff
-mozilla-firebird/components/myspell/en-US.dic
 mozilla-firebird/components/necko.xpt
 mozilla-firebird/components/necko_about.xpt
 mozilla-firebird/components/necko_cache.xpt
@@ -114,7 +111,6 @@ mozilla-firebird/components/pref.xpt
 mozilla-firebird/components/prefetch.xpt
 mozilla-firebird/components/prefmigr.xpt
 mozilla-firebird/components/profile.xpt
-mozilla-firebird/components/profilesharingsetup.xpt
 mozilla-firebird/components/progressDlg.xpt
 mozilla-firebird/components/proxyObjInst.xpt
 mozilla-firebird/components/rdf.xpt
@@ -123,8 +119,6 @@ mozilla-firebird/components/satchel.xpt
 mozilla-firebird/components/search.xpt
 mozilla-firebird/components/shistory.xpt
 mozilla-firebird/components/sidebar.xpt
-mozilla-firebird/components/signonviewer.xpt
-mozilla-firebird/components/spellchecker.xpt
 mozilla-firebird/components/timebomb.xpt
 mozilla-firebird/components/txmgr.xpt
 mozilla-firebird/components/txtsvc.xpt
@@ -134,9 +128,6 @@ mozilla-firebird/components/uconv.xpt
 mozilla-firebird/components/unicharutil.xpt
 mozilla-firebird/components/uriloader.xpt
 mozilla-firebird/components/util.xpt
-mozilla-firebird/components/wallet.xpt
-mozilla-firebird/components/walleteditor.xpt
-mozilla-firebird/components/walletpreview.xpt
 mozilla-firebird/components/webBrowser_core.xpt
 mozilla-firebird/components/webbrowserpersist.xpt
 mozilla-firebird/components/webshell_idls.xpt
@@ -163,7 +154,6 @@ mozilla-firebird/defaults/autoconfig/prefcalls.js
 mozilla-firebird/defaults/pref/all.js
 mozilla-firebird/defaults/pref/editor.js
 mozilla-firebird/defaults/pref/mailnews.js
-mozilla-firebird/defaults/pref/non-shared.txt
 mozilla-firebird/defaults/pref/security-prefs.js
 mozilla-firebird/defaults/pref/unix.js
 mozilla-firebird/defaults/pref/xpinstall.js
@@ -181,18 +171,12 @@ mozilla-firebird/defaults/profile/localstore.rdf
 mozilla-firebird/defaults/profile/mimeTypes.rdf
 mozilla-firebird/defaults/profile/panels.rdf
 mozilla-firebird/defaults/profile/search.rdf
-mozilla-firebird/defaults/wallet/DistinguishedSchema.tbl
-mozilla-firebird/defaults/wallet/FieldSchema.tbl
-mozilla-firebird/defaults/wallet/PositionalSchema.tbl
-mozilla-firebird/defaults/wallet/SchemaConcat.tbl
-mozilla-firebird/defaults/wallet/SchemaStrings.tbl
-mozilla-firebird/defaults/wallet/StateSchema.tbl
-mozilla-firebird/defaults/wallet/VcardSchema.tbl
 mozilla-firebird/icons/mozicon16.xpm
 mozilla-firebird/icons/mozicon50.xpm
 mozilla-firebird/mozilla-config
 mozilla-firebird/regchrome
 mozilla-firebird/regxpcom
+mozilla-firebird/res/EditorOverride.css
 mozilla-firebird/res/arrow.gif
 mozilla-firebird/res/arrowd.gif
 mozilla-firebird/res/bloatcycle.html
@@ -221,6 +205,7 @@ mozilla-firebird/res/fonts/mathfontMath4.properties
 mozilla-firebird/res/fonts/mathfontPUA.properties
 mozilla-firebird/res/fonts/mathfontSymbol.properties
 mozilla-firebird/res/forms.css
+mozilla-firebird/res/grabber.gif
 mozilla-firebird/res/html.css
 mozilla-firebird/res/html/gopher-audio.gif
 mozilla-firebird/res/html/gopher-binary.gif
@@ -323,6 +308,24 @@ mozilla-firebird/res/samples/treeTest1.xul
 mozilla-firebird/res/samples/widgets.xul
 mozilla-firebird/res/samples/xpmenu.xul
 mozilla-firebird/res/samples/xulTest.css
+mozilla-firebird/res/table-add-column-after-active.gif
+mozilla-firebird/res/table-add-column-after-hover.gif
+mozilla-firebird/res/table-add-column-after.gif
+mozilla-firebird/res/table-add-column-before-active.gif
+mozilla-firebird/res/table-add-column-before-hover.gif
+mozilla-firebird/res/table-add-column-before.gif
+mozilla-firebird/res/table-add-row-after-active.gif
+mozilla-firebird/res/table-add-row-after-hover.gif
+mozilla-firebird/res/table-add-row-after.gif
+mozilla-firebird/res/table-add-row-before-active.gif
+mozilla-firebird/res/table-add-row-before-hover.gif
+mozilla-firebird/res/table-add-row-before.gif
+mozilla-firebird/res/table-remove-column-active.gif
+mozilla-firebird/res/table-remove-column-hover.gif
+mozilla-firebird/res/table-remove-column.gif
+mozilla-firebird/res/table-remove-row-active.gif
+mozilla-firebird/res/table-remove-row-hover.gif
+mozilla-firebird/res/table-remove-row.gif
 mozilla-firebird/res/throbber/anim.gif
 mozilla-firebird/res/throbber/anims00.gif
 mozilla-firebird/res/throbber/anims01.gif
@@ -374,10 +377,7 @@ mozilla-firebird/searchplugins/google.src
 @dirrm mozilla-firebird/res/builtin
 @dirrm mozilla-firebird/res
 @dirrm mozilla-firebird/plugins
-@dirrm mozilla-firebird/ipc/modules
-@dirrm mozilla-firebird/ipc
 @dirrm mozilla-firebird/icons
-@dirrm mozilla-firebird/defaults/wallet
 @dirrm mozilla-firebird/defaults/profile/chrome
 @dirrm mozilla-firebird/defaults/profile/US/chrome
 @dirrm mozilla-firebird/defaults/profile/US
@@ -385,7 +385,6 @@ mozilla-firebird/searchplugins/google.src
 @dirrm mozilla-firebird/defaults/pref
 @dirrm mozilla-firebird/defaults/autoconfig
 @dirrm mozilla-firebird/defaults
-@dirrm mozilla-firebird/components/myspell
 @dirrm mozilla-firebird/components
 @exec mkdir -p %D/mozilla-firebird/chrome/toolkit/content/passwordmgr
 @dirrm mozilla-firebird/chrome/toolkit/content/passwordmgr
@@ -445,8 +444,6 @@ mozilla-firebird/searchplugins/google.src
 @dirrm mozilla-firebird/chrome/en-mac/locale/en-US
 @dirrm mozilla-firebird/chrome/en-mac/locale
 @dirrm mozilla-firebird/chrome/en-mac
-@exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/wallet
-@dirrm mozilla-firebird/chrome/en-US/locale/en-US/wallet
 @exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/pippki
 @dirrm mozilla-firebird/chrome/en-US/locale/en-US/pippki
 @exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/pipnss
@@ -472,8 +469,6 @@ mozilla-firebird/searchplugins/google.src
 @dirrm mozilla-firebird/chrome/en-US/locale/en-US/communicator/xml
 @exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/communicator/webservices
 @dirrm mozilla-firebird/chrome/en-US/locale/en-US/communicator/webservices
-@exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/communicator/wallet
-@dirrm mozilla-firebird/chrome/en-US/locale/en-US/communicator/wallet
 @exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/communicator/timebomb
 @dirrm mozilla-firebird/chrome/en-US/locale/en-US/communicator/timebomb
 @exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/communicator/sidebar
@@ -525,8 +520,6 @@ mozilla-firebird/searchplugins/google.src
 @dirrm mozilla-firebird/chrome/embed-sample
 @exec mkdir -p %D/mozilla-firebird/chrome/comm/content/xbl-marquee
 @dirrm mozilla-firebird/chrome/comm/content/xbl-marquee
-@exec mkdir -p %D/mozilla-firebird/chrome/comm/content/wallet
-@dirrm mozilla-firebird/chrome/comm/content/wallet
 @exec mkdir -p %D/mozilla-firebird/chrome/comm/content/p3p
 @dirrm mozilla-firebird/chrome/comm/content/p3p
 @exec mkdir -p %D/mozilla-firebird/chrome/comm/content/necko
@@ -543,8 +536,6 @@ mozilla-firebird/searchplugins/google.src
 @dirrm mozilla-firebird/chrome/comm/content/communicator/xpinstall
 @exec mkdir -p %D/mozilla-firebird/chrome/comm/content/communicator/xml
 @dirrm mozilla-firebird/chrome/comm/content/communicator/xml
-@exec mkdir -p %D/mozilla-firebird/chrome/comm/content/communicator/wallet
-@dirrm mozilla-firebird/chrome/comm/content/communicator/wallet
 @exec mkdir -p %D/mozilla-firebird/chrome/comm/content/communicator/timebomb
 @dirrm mozilla-firebird/chrome/comm/content/communicator/timebomb
 @exec mkdir -p %D/mozilla-firebird/chrome/comm/content/communicator/sidebar
@@ -676,8 +667,7 @@ mozilla-firebird/searchplugins/google.src
 @dirrm mozilla-firebird/chrome/US/locale/US/navigator-region
 @exec mkdir -p %D/mozilla-firebird/chrome/US/locale/US/global-region
 @dirrm mozilla-firebird/chrome/US/locale/US/global-region
-@exec mkdir -p %D/mozilla-firebird/chrome/US/locale/US/communicator-region/wallet
-@dirrm mozilla-firebird/chrome/US/locale/US/communicator-region/wallet
+@exec mkdir -p %D/mozilla-firebird/chrome/US/locale/US/communicator-region
 @dirrm mozilla-firebird/chrome/US/locale/US/communicator-region
 @exec mkdir -p %D/mozilla-firebird/chrome/US/locale/US/browser-region
 @dirrm mozilla-firebird/chrome/US/locale/US/browser-region

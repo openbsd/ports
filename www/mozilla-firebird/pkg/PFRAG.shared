@@ -1,10 +1,11 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/01/18 11:51:10 wilfried Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/01/25 13:39:12 wilfried Exp $
 mozilla-firebird/components/libaccessibility.so.1.0
 mozilla-firebird/components/libappcomps.so.1.0
 mozilla-firebird/components/libautoconfig.so.1.0
 mozilla-firebird/components/libbrowsercomps.so.1.0
 mozilla-firebird/components/libcaps.so.1.0
 mozilla-firebird/components/libchrome.so.1.0
+mozilla-firebird/components/libcomposer.so.1.0
 mozilla-firebird/components/libcookie.so.1.0
 mozilla-firebird/components/libdocshell.so.1.0
 mozilla-firebird/components/libeditor.so.1.0
@@ -18,13 +19,11 @@ mozilla-firebird/components/libgkplugin.so.1.0
 mozilla-firebird/components/libhtmlpars.so.1.0
 mozilla-firebird/components/libi18n.so.1.0
 mozilla-firebird/components/libimglib2.so.1.0
-mozilla-firebird/components/libipcdc.so.1.0
 mozilla-firebird/components/libjar50.so.1.0
 mozilla-firebird/components/libjsd.so.1.0
 mozilla-firebird/components/libjsdom.so.1.0
 mozilla-firebird/components/libmork.so.1.0
 mozilla-firebird/components/libmozfind.so.1.0
-mozilla-firebird/components/libmyspell.so.1.0
 mozilla-firebird/components/libnecko.so.1.0
 mozilla-firebird/components/libnecko2.so.1.0
 mozilla-firebird/components/libnsappshell.so.1.0
@@ -37,7 +36,6 @@ mozilla-firebird/components/libpippki.so.1.0
 mozilla-firebird/components/libpref.so.1.0
 mozilla-firebird/components/libprofile.so.1.0
 mozilla-firebird/components/librdf.so.1.0
-mozilla-firebird/components/libspellchecker.so.1.0
 mozilla-firebird/components/libtoolkitcomps.so.1.0
 mozilla-firebird/components/libtransformiix.so.1.0
 mozilla-firebird/components/libtxmgr.so.1.0
@@ -45,8 +43,6 @@ mozilla-firebird/components/libtypeaheadfind.so.1.0
 mozilla-firebird/components/libuconv.so.1.0
 mozilla-firebird/components/libucvmath.so.1.0
 mozilla-firebird/components/libuniversalchardet.so.1.0
-mozilla-firebird/components/libwallet.so.1.0
-mozilla-firebird/components/libwalletviewers.so.1.0
 mozilla-firebird/components/libwebbrwsr.so.1.0
 mozilla-firebird/components/libwebsrvcs.so.1.0
 mozilla-firebird/components/libwidget_gtk.so.1.0
@@ -56,8 +52,6 @@ mozilla-firebird/components/libxpconnect.so.1.0
 mozilla-firebird/components/libxpinstall.so.1.0
 mozilla-firebird/components/libxremote_client.so.1.0
 mozilla-firebird/components/libxremoteservice.so.1.0
-mozilla-firebird/ipc/modules/liblockmodule.so.1.0
-mozilla-firebird/ipc/modules/libtransmngr.so.1.0
 mozilla-firebird/libgkgfx.so.1.0
 mozilla-firebird/libgtkembedmoz.so.1.0
 mozilla-firebird/libgtksuperwin.so.1.0
@@ -79,5 +73,4 @@ mozilla-firebird/libxpistub.so.1.0
 mozilla-firebird/plugins/libnullplugin.so.1.0
 @comment NEWDYNLIBDIR(%D/mozilla-firebird)
 @comment NEWDYNLIBDIR(%D/mozilla-firebird/components)
-@comment NEWDYNLIBDIR(%D/mozilla-firebird/ipc/modules)
 @comment NEWDYNLIBDIR(%D/mozilla-firebird/plugins)

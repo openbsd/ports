@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2004/01/19 14:36:48 wilfried Exp $
+# $OpenBSD: Makefile,v 1.29 2004/01/25 13:39:12 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64
 
@@ -41,23 +41,25 @@ USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE= autoconf
-CONFIGURE_ARGS=					\
-		--with-system-jpeg=${LOCALBASE}	\
+CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--with-system-mng=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
 		--with-pthreads			\
 		--enable-xft			\
 		--enable-optimize=-O2		\
-		--disable-composer		\
-		--disable-mailnews		\
-		--enable-plaintext-editor-only	\
-		--enable-extensions=default,-inspector,-irc,-venkman,-content-packs,-help \
-		--enable-crypto			\
-		--disable-pedantic		\
 		--disable-debug			\
 		--disable-tests			\
-		--disable-ldap
+		--disable-pedantic		\
+		--disable-installer
+
+# from browser/config/mozconfig
+CONFIGURE_ARGS+=--disable-ldap			\
+		--disable-mailnews		\
+		--enable-extensions=cookie,xml-rpc,xmlextras,p3p,pref,transformiix,universalchardet,typeaheadfind,webservices \
+		--enable-crypto			\
+		--disable-composer		\
+		--disable-profilesharing
 
 CFLAGS+=	-fno-stack-protector
 CONFIGURE_ENV=	MOZ_PHOENIX=1 \
@@ -78,7 +80,7 @@ pre-configure:
 
 do-install:
 	${INSTALL_DATA_DIR} ${MOZ}
-.for dir in chrome components defaults icons ipc plugins res searchplugins
+.for dir in chrome components defaults icons plugins res searchplugins
 	@cd ${MOB} && ${TAR} -chf - ${dir} | \
 		${TAR} -xf - -C ${MOZ}
 .endfor
