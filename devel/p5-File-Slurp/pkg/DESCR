@@ -1,0 +1,5 @@
+This module provides subs that allow you to read or write entire files
+with one simple call. They are designed to be simple to use, have
+flexible ways to pass in or get the file contents and to be very
+efficient.  There is also a sub to read in all the files in a directory
+other than "." and ".."
