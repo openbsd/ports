@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2001/09/08 21:24:20 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2001/09/10 04:58:06 fgsch Exp $
 
 COMMENT=	Purdue Compiler Construction Tool Set 
 
-DISTNAME=	pccts133mr
+DISTNAME=	pccts133mr29
 PKGNAME=	pccts-1.33r29
 CATEGORIES=	devel lang
 NEED_VERSION=	1.406
