@@ -3,7 +3,9 @@
 # Date created:		21 Jun 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.7 2000/02/15 05:05:02 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/16 22:55:08 turan Exp $
+
+BROKEN=		sources moved
 
 DISTNAME=	xip-1.3.2
 
