@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 1999/09/06 18:57:52 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/10/28 01:49:35 turan Exp $
+
+BROKEN=		spinlocks in a loop if stdin is null
 
 DISTNAME=	xmcd-2.3
 CATEGORIES=	audio
