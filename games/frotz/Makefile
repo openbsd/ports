@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/25 04:44:00 danh Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/06 01:06:13 lebel Exp $
 # $NetBSD: Makefile,v 1.2 2000/01/15 18:46:28 jlam Exp $
 # Original from: Stefan Jokisch
+
+COMMENT=	"Curses-based interpreter for Infocom-compatible games"
 
 DISTNAME=		UnixFrotz232R2Std10
 PKGNAME=		frotz-2.32
 CATEGORIES=     	games
+NEED_VERSION=		1.402
 
 HOMEPAGE=		http://www.geocities.com/SiliconValley/Heights/3222/frotz.html
 

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2001/03/22 22:06:37 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 01:06:19 lebel Exp $
+
+COMMENT=	"concurrent multi-player battle strategy game"
 
 DISTNAME=	xbattle-5.4.1
 CATEGORIES=	games
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://cns-ftp.bu.edu/pub/xbattle/
 
 MAINTAINER=	ports@openbsd.org

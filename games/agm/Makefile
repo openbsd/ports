@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:41:58 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 01:06:10 lebel Exp $
 #
+
+COMMENT=		"AnaGram search utility"
 
 DISTNAME=		agm-1.3.1
 CATEGORIES=		games
+NEED_VERSION=		1.402
 
 MAINTAINER=		Angelos D. Keromytis <angelos@openbsd.org>
 

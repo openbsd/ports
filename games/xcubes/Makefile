@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2000/07/10 02:06:50 angelos Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 01:06:23 lebel Exp $
 #
+
+COMMENT=	"cube puzzle for X11"
 
 DISTNAME=	xcubes-5.5.2
 CATEGORIES=	games
-NEED_VERSION=	1.307
+NEED_VERSION=	1.402
 
 MAINTAINER=	ports@openbsd.org
 

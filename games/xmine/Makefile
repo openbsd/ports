@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 15:42:09 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 01:06:28 lebel Exp $
+
+COMMENT=	"Athena port of xminesweeper"
 
 DISTNAME=	xmine-1.0.3-Xaw
 PKGNAME=	xmine-1.0.3
 CATEGORIES=	games
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 
 MAINTAINER=	ports@openbsd.org
 

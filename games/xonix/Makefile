@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:42:11 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 01:06:32 lebel Exp $
+
+COMMENT=	"win land without colliding with `flyers' and `eaters'"
 
 DISTNAME=	xonix-1.4
 CATEGORIES=	games
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
 
 MAINTAINER=	ports@openbsd.org

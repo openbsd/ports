@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:42:11 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 01:06:31 lebel Exp $
+
+COMMENT=	"classic BSD4.4 cat-and-mouse"
 
 # The source code for xneko is the same under both directories
 # (4.4BSD-Lite and 4.4BSD-Lite2) on the dist site.
@@ -6,7 +8,7 @@
 DISTNAME=	xneko
 PKGNAME=	xneko-4.4
 CATEGORIES=	x11 games
-NEED_VERSION=	1.234
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/4.4BSD-Lite/4.4BSD-Lite2/usr/src/games/
 EXTRACT_SUFX=	.tar
 IGNOREFILES=	xneko.tar

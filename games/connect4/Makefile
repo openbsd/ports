@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 14:03:13 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 01:06:12 lebel Exp $
+
+COMMENT=	"curses version of the classic game"
 
 DISTNAME=	connect4
 PKGNAME=	connect4-3.2
 CATEGORIES=	games
-NEED_VERSION=	1.330
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://scitsc.wlv.ac.uk/pub/infomagic/usenet/games/volume6/
 EXTRACT_SUFX=		# empty
 

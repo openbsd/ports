@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2001/02/25 04:43:59 danh Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/06 01:06:11 lebel Exp $
 # Original from: Ben Harrison, Robert Ruehlmann
+
+COMMENT=	"rogue-like game with X11 support"
 
 DISTNAME=	angband-291-src
 PKGNAME=	angband-2.9.1
@@ -7,6 +9,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://export.andrew.cmu.edu/angband/Source/ \
 		ftp://ftp.sunet.se/pub/games/Angband/Source/
 EXTRACT_SUFX=	.tgz
+NEED_VERSION=	1.402
 
 HOMEPAGE=	http://thangorodrim.angband.org/
 

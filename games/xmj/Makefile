@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:42:10 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 01:06:30 lebel Exp $
+
+COMMENT=	"Mahjongg"
 
 DISTNAME=       xmj
 PKGNAME=	xmj-1.0
 CATEGORIES=	games
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	ports@openbsd.org

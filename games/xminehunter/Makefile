@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2001/04/18 15:01:13 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 01:06:29 lebel Exp $
+
+COMMENT=	"Motif minesweeper game"
 
 DISTNAME=	xminehunter-0.4
 CATEGORIES=	games
-NEED_VERSION=	1.400
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= games
 

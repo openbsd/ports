@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:42:14 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 01:06:34 lebel Exp $
+
+COMMENT=	"solitaire"
 
 DISTNAME=       xsol-new
 PKGNAME=	xsol-2.1.1
 CATEGORIES=	games
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	ports@openbsd.org

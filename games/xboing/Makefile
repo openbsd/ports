@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:42:05 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 01:06:22 lebel Exp $
+
+COMMENT=	"X11 arcade"
 
 DISTNAME=	xboing2.4
 PKGNAME=	xboing-2.4
 CATEGORIES=	games
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 
 MAINTAINER=	ports@openbsd.org
 

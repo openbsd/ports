@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 15:42:08 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 01:06:27 lebel Exp $
+
+COMMENT=	"jigsaw puzzle game for X11"
 
 DISTNAME=	xjig-2.4
 CATEGORIES=	games
-NEED_VERSION=	1.210
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 EXTRACT_SUFX=	.tgz

@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2000/12/08 15:13:23 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 01:06:18 lebel Exp $
 #
+
+COMMENT=	"XEVIOUS-like shooting game"
 
 DISTNAME=	xev111
 PKGNAME=        xbat-1.11
 CATEGORIES=     games
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 
 HOMEPAGE=	http://www.nemoto.ecei.tohoku.ac.jp/~wai/index_e.html
 

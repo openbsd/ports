@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2000/09/24 07:04:05 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2001/05/06 01:06:13 lebel Exp $
+
+COMMENT=	"game where you deal drugs on the streets of NY"
 
 DISTNAME=	dopewars-1.4.8
 CATEGORIES=	games
-NEED_VERSION=	1.330
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.evansville.net/~goatpop/ \
 		http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/
 

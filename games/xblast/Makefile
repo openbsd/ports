@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:42:03 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 01:06:21 lebel Exp $
 #
+
+COMMENT=	"graphical multi-player real-time strategy game for X11"
 
 DISTNAME=       xblast-2.6.beta
 PKGNAME=	xblast-2.6b
 CATEGORIES=	games
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 
 MAINTAINER=	ports@openbsd.org
 

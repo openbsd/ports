@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2000/10/22 15:42:00 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/05/06 01:06:14 lebel Exp $
+
+COMMENT=	"Classic Gnu Chess"
 
 DISTNAME=	gnuchess-4.0.pl80
 PKGNAME=	gnuchess-4.0.80
 CATEGORIES=	games
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gnuchess
 

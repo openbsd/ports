@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:41:58 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 01:06:11 lebel Exp $
+
+COMMENT=	"fast anagram generator"
 
 DISTNAME=	an-0.93
 CATEGORIES=	games
 MASTER_SITES=	ftp://suburbia.net/pub/rmj/
+NEED_VERSION=	1.402
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

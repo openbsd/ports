@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2000/10/22 15:41:59 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/05/06 01:06:12 lebel Exp $
+
+COMMENT=	"Battle.net(r) server emulator"
 
 DISTNAME=	bnetd-0.4.19
 CATEGORIES=	games 
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.bnetd.org/files/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

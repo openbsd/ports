@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/22 15:42:12 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/05/06 01:06:32 lebel Exp $
+
+COMMENT=	"X11 solitaire with 14 variations"
 
 DISTNAME=	xpat2-1.04
 CATEGORIES=	games
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 EXTRACT_SUFX=	-src.tar.gz
 

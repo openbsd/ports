@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2001/04/09 10:59:41 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2001/05/06 01:06:16 lebel Exp $
+
+COMMENT=	"dungeon explorin', hackin' game, but harder than nethack"
 
 DISTNAME=	slash-e8
 PKGNAME=	slash-3.2.2-e8
 CATEGORIES=	games
-NEED_VERSION=	1.307
+NEED_VERSION=	1.402
 MASTER_SITES=   ftp://ftp.nethack.org/pub/nethack/oldver/3.2.2/src/ \
                 ftp://ftp.uu.net/pub/games/nethack/sources/ \
                 ${MASTER_SITE_GNU}

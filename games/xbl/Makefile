@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:42:03 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 01:06:21 lebel Exp $
+
+COMMENT=	"3D block-dropping game"
 
 DISTNAME=	xbl-1.0j
 CATEGORIES=	games
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp710.univ-lyon1.fr/pub/xbl/
 EXTRACT_SUFX=	.tar.Z
 

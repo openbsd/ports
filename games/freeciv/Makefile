@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2000/10/04 05:39:18 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2001/05/06 01:06:13 lebel Exp $
+
+COMMENT=	"Civilization clone for X; multiplayer"
 
 DISTNAME=	freeciv-1.11.4
 CATEGORIES=	games
-NEED_VERSION=	1.336
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/
 
 HOMEPAGE=	http://www.freeciv.org/

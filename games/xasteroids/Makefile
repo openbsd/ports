@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2000/12/14 13:22:59 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2001/05/06 01:06:17 lebel Exp $
+
+COMMENT=	"X11-based asteroids-style arcade"
 
 DISTNAME=	xasteroids
 PKGNAME=	xasteroids-5.0
 CATEGORIES=	games
-NEED_VERSION=	1.342
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/X11/R5contrib/
 EXTRACT_SUFX=	.sh.Z
 

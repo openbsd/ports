@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:42:05 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 01:06:23 lebel Exp $
+
+COMMENT=	"Pac-man-like game under X11"
 
 DISTNAME=	xchomp-pl1
 CATEGORIES=	games
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	ports@openbsd.org
