@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.55 2002/07/07 02:54:37 lebel Exp $
+# $OpenBSD: Makefile,v 1.56 2002/07/21 20:47:44 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
 
 DISTNAME=	vim-6.1
-REVISION=	125
+REVISION=	141
 VERSION=	6.1.${REVISION}
 PKGNAME=	vim-${VERSION}
 CATEGORIES=	editors
