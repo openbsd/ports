@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/07/25 08:07:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2001/07/26 07:13:08 pvalchev Exp $
 
 COMMENT=	"mpeg video player library with sound support"
 
@@ -28,7 +28,7 @@ USE_X11=	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV+=	 LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+CONFIGURE_ENV+=	 LDFLAGS="-L${X11BASE}/lib"
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --disable-opengl-player
 
