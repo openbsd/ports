@@ -3,7 +3,7 @@
 # Date created:		6 May 1998
 # Whom:			Oleg Safiullin <form@vs.itam.nsc.ru>
 #
-# $OpenBSD: Makefile,v 1.6 1998/06/17 05:41:24 form Exp $
+# $OpenBSD: Makefile,v 1.7 1998/06/17 06:27:17 form Exp $
 # FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp
 #
 
@@ -15,14 +15,14 @@ MAINTAINER=	form@vs.itam.nsc.ru
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
-# if you want to use the tcl/tk frontend pgaccess, then you need to build
-# postgresql with tcl support by typing: make USE_TCL=yes
 .if defined(USE_TCL)
 MAKE_ENV=	USE_TCL=true TCL_INCDIR=${PREFIX}/include/tcl8.0
 LIB_DEPENDS=	tcl80\\.1\\.:${PORTSDIR}/lang/tcl80 \
 		tk80\\.1\\.:${PORTSDIR}/x11/tk80
 WITH_TCL=	--with-tcl
 .endif
+
+DBPREFIX=	/var/db
 
 NO_PACKAGE=	"Requires pgsql uid"
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
@@ -82,7 +82,7 @@ post-install:
 			>> ${PREFIX}/pgsql/.profile; \
 		${ECHO} "# note: PGDATA overwrites the -D startup option" \
 			>> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "PGDATA=${PREFIX}/pgsql/data" \
+		${ECHO} "PGDATA=${DBPREFIX}/pgsql/data" \
 			>> ${PREFIX}/pgsql/.profile; \
 		${ECHO} "DISPLAY=:0" \
 			>> ${PREFIX}/pgsql/.profile; \
@@ -96,10 +96,13 @@ post-install:
 			>> ${PREFIX}/pgsql/.profile; \
 	fi
 	@ chown -R pgsql:pgsql ${PREFIX}/pgsql
-	@ if [ ! -d ${PREFIX}/pgsql/data ]; then \
+	@ if [ ! -d ${DBPREFIX}/pgsql/data ]; then \
+		${MKDIR} -p ${DBPREFIX}/pgsql/data; \
+		chown pgsql:pgsql ${DBPREFIX}/pgsql ${DBPREFIX}/pgsql/data; \
+		chmod 700 ${DBPREFIX}/pgsql/data; \
 		${ECHO} 'Initializing PostgreSQL Databases - this may take a few minutes...'; \
 		${LDCONFIG} -m ${PREFIX}/pgsql/lib; \
-		su -l pgsql -c '${PREFIX}/pgsql/bin/initdb --pglib=${PREFIX}/pgsql/lib --pgdata=${PREFIX}/pgsql/data'; \
+		su -l pgsql -c '${PREFIX}/pgsql/bin/initdb --pglib=${PREFIX}/pgsql/lib --pgdata=${DBPREFIX}/pgsql/data'; \
 	else \
 		${ECHO} 'Found existing PostgreSQL database(s) -- skipping database initializing...'; \
 	fi

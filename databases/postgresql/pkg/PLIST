@@ -19,7 +19,6 @@ pgsql/bin/pg_version
 pgsql/bin/postgres
 pgsql/bin/postmaster
 pgsql/bin/psql
-@unexec rm -f %D/pgsql/errlog
 pgsql/include/access/attnum.h
 pgsql/include/c.h
 pgsql/include/commands/trigger.h
@@ -243,7 +242,7 @@ share/doc/pgsql/userguide.ps
 @dirrm pgsql/man/manl
 @dirrm pgsql/man
 @unexec echo "***"
-@unexec echo "*** Please remove /usr/local/pgsql manually, if you don't"
+@unexec echo "*** Please remove /var/db/pgsql manually, if you don't"
 @unexec echo "*** want to keep existing databases. Also you should remove"
 @unexec echo "*** pgsql entries from /etc/master.passwd and /etc/group"
 @unexec echo "*** if won't install pgsql again."

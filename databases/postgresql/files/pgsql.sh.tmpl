@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $Id: pgsql.sh.tmpl,v 1.4 1998/05/06 16:55:40 form Exp $
+# $Id: pgsql.sh.tmpl,v 1.5 1998/06/17 06:27:18 form Exp $
 
 # pgsql.sh - postgresql startup file for FreeBSD and possibly *BSD (untested)
 
@@ -10,16 +10,15 @@
 # - modified the postmaster startup sequence as suggested in the 
 #   INSTALL file which was given as example for FreeBSD 2.2 (andreas)
 # - removed the commandline option
-#		-D!!PREFIX!!/pgsql/data \
+#		-D/var/db/pgsql/data \
 #   because the postmaster process, which starts up under the
 #   environment of the pgsql user, sets this with the PGDATA
 #   environment variable in !!PREFIX!!/pgsql/.profile
 #
 
-[ -d !!PREFIX!!/pgsql/lib ] && /sbin/ldconfig -m !!PREFIX!!/pgsql/lib
+[ -d !!PREFIX!!/pgsql/lib -a -x /sbin/ldconfig ] && /sbin/ldconfig -m !!PREFIX!!/pgsql/lib
 
-[ -x !!PREFIX!!/pgsql/bin/postmaster ] && {
-	su -l pgsql -c 'exec !!PREFIX!!/pgsql/bin/postmaster -i -S -o -F \
-		-D!!PREFIX!!/pgsql/data > !!PREFIX!!/pgsql/errlog'
+if [ -x !!PREFIX!!/pgsql/bin/postmaster ]; then
+	su -l pgsql -c 'exec !!PREFIX!!/pgsql/bin/postmaster -i -S -o -F -D/var/db/pgsql/data 2>&1 >/var/db/pgsql/errlog'
 	echo -n ' pgsql' 
-}
+fi
