@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/09 23:09:59 avsm Exp $
+bin/g-request
+libdata/perl5/site_perl/${ARCH}-openbsd/HTTP/GHTTP.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/HTTP/GHTTP/GHTTP.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/HTTP/GHTTP/GHTTP.so
+man/man3/HTTP::GHTTP.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/HTTP/GHTTP
