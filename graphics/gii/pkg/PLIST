@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/09/23 23:55:53 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2001/03/26 16:04:00 todd Exp $
 bin/mhub
 bin/xsendbut
 include/ggi/errors.h
@@ -13,10 +13,14 @@ include/ggi/internal/gii.h
 include/ggi/internal/gii_debug.h
 include/ggi/keyboard.h
 include/ggi/system.h
+lib/ggi/filter/keytrans.a
+lib/ggi/filter/keytrans.la
 lib/ggi/filter/mouse.a
 lib/ggi/filter/mouse.la
 lib/ggi/filter/save.a
 lib/ggi/filter/save.la
+lib/ggi/filter/tcp.a
+lib/ggi/filter/tcp.la
 lib/ggi/input/file.a
 lib/ggi/input/file.la
 lib/ggi/input/linux_mouse.a
@@ -29,6 +33,8 @@ lib/ggi/input/spaceorb.a
 lib/ggi/input/spaceorb.la
 lib/ggi/input/stdin.a
 lib/ggi/input/stdin.la
+lib/ggi/input/tcp.a
+lib/ggi/input/tcp.la
 lib/ggi/input/x.a
 lib/ggi/input/x.la
 lib/ggi/input/xwin.a
@@ -37,13 +43,14 @@ lib/libgg.a
 lib/libgg.la
 lib/libgii.a
 lib/libgii.la
-%%SHARED%%
 man/man1/mhub.1
 man/man3/giiAddEventMask.3gii
 man/man3/giiClose.3gii
 man/man3/giiEventPoll.3gii
 man/man3/giiEventRead.3gii
+man/man3/giiEventSelect.3gii
 man/man3/giiEventSend.3gii
+man/man3/giiEventsQueued.3gii
 man/man3/giiExit.3gii
 man/man3/giiGetEventMask.3gii
 man/man3/giiInit.3gii
@@ -52,10 +59,12 @@ man/man3/giiOpen.3gii
 man/man3/giiPanic.3gii
 man/man3/giiRemoveEventMask.3gii
 man/man3/giiSetEventMask.3gii
+man/man7/libgii.7gii
 share/doc/gii/README
 share/examples/gii/libgii.conf.example
-@dirrm share/doc/gii
+%%SHARED%%
 @dirrm share/examples/gii
+@dirrm share/doc/gii
 @dirrm lib/ggi/input
 @dirrm lib/ggi/filter
 @dirrm lib/ggi

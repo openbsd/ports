@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2000/10/31 15:06:42 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/03/26 16:03:57 todd Exp $
 
-DISTNAME=	libgii-0.6
+COMMENT=	"General Input Library (used by libggi)"
+DISTNAME=	libgii-0.7
 CATEGORIES=	graphics
-NEED_VERSION=	1.330
-MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/2_0_beta_2.1/
+NEED_VERSION=	1.364
+MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/2_0_beta_3/
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
@@ -14,6 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+EXTRACT_SUFX=		.tar.bz2
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --enable-mutexes="int"

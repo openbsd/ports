@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2000/10/22 14:03:18 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2001/03/26 16:03:53 todd Exp $
 
-DISTNAME=	libggi-2.0b2.1
+COMMENT=	"Generic Graphics Library"
+DISTNAME=	libggi-2.0b3
 CATEGORIES=	graphics
-NEED_VERSION=	1.330
-MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/2_0_beta_2.1/
+NEED_VERSION=	1.364
+MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/2_0_beta_3/
 
-LIB_DEPENDS=	gii.0.::graphics/gii
+LIB_DEPENDS=	gii.0.7::graphics/gii
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
@@ -14,9 +15,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+EXTRACT_SUFX=	.tar.bz2
 USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
+CONFIGURE_ENV+= CFLAGS=-pthread
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-aa \
 		--with-gii="${PREFIX}"

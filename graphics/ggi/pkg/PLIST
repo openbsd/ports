@@ -1,10 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/09/24 00:01:04 brad Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/03/26 16:03:56 todd Exp $
 bin/cube3d
+bin/ggiteleserver
 bin/monitest
+include/ggi/default/genkgi.h
 include/ggi/display/aa.h
+include/ggi/display/directx.h
 include/ggi/display/fbdev.h
 include/ggi/display/file.h
 include/ggi/display/glide.h
+include/ggi/display/lcd823.h
 include/ggi/display/linvtsw.h
 include/ggi/display/mansync.h
 include/ggi/display/memory.h
@@ -18,6 +22,7 @@ include/ggi/display/tele.h
 include/ggi/display/tile.h
 include/ggi/display/trueemu.h
 include/ggi/display/vcsa.h
+include/ggi/display/vgl.h
 include/ggi/display/x.h
 include/ggi/display/xcommon.h
 include/ggi/display/xf86dga.h
@@ -56,6 +61,8 @@ lib/ggi/default/linear_32.a
 lib/ggi/default/linear_32.la
 lib/ggi/default/linear_4.a
 lib/ggi/default/linear_4.la
+lib/ggi/default/linear_4_r.a
+lib/ggi/default/linear_4_r.la
 lib/ggi/default/linear_8.a
 lib/ggi/default/linear_8.la
 lib/ggi/default/planar.a
@@ -66,10 +73,10 @@ lib/ggi/default/text_16.a
 lib/ggi/default/text_16.la
 lib/ggi/default/text_32.a
 lib/ggi/default/text_32.la
-lib/ggi/display/X-misc.a
-lib/ggi/display/X-misc.la
 lib/ggi/display/X.a
 lib/ggi/display/X.la
+lib/ggi/display/X_misc.a
+lib/ggi/display/X_misc.la
 lib/ggi/display/Xlib.a
 lib/ggi/display/Xlib.la
 lib/ggi/display/file.a
@@ -96,7 +103,7 @@ lib/libggi.a
 lib/libggi.la
 lib/libggimisc.a
 lib/libggimisc.la
-%%SHARED%%
+man/man3/ggiAddEventMask.3ggi
 man/man3/ggiAddFlags.3ggi
 man/man3/ggiCheckGraphMode.3ggi
 man/man3/ggiCheckMode.3ggi
@@ -112,6 +119,10 @@ man/man3/ggiDrawHLine.3ggi
 man/man3/ggiDrawLine.3ggi
 man/man3/ggiDrawPixel.3ggi
 man/man3/ggiDrawVLine.3ggi
+man/man3/ggiEventPoll.3ggi
+man/man3/ggiEventRead.3ggi
+man/man3/ggiEventSend.3ggi
+man/man3/ggiEventsQueued.3ggi
 man/man3/ggiExit.3ggi
 man/man3/ggiFPrintMode.3ggi
 man/man3/ggiFillscreen.3ggi
@@ -119,6 +130,7 @@ man/man3/ggiFlush.3ggi
 man/man3/ggiFlushRegion.3ggi
 man/man3/ggiGetBox.3ggi
 man/man3/ggiGetDisplayFrame.3ggi
+man/man3/ggiGetEventMask.3ggi
 man/man3/ggiGetFlags.3ggi
 man/man3/ggiGetGCBackground.3ggi
 man/man3/ggiGetGCClipping.3ggi
@@ -134,7 +146,10 @@ man/man3/ggiGetPixelFormat.3ggi
 man/man3/ggiGetReadFrame.3ggi
 man/man3/ggiGetVLine.3ggi
 man/man3/ggiGetWriteFrame.3ggi
+man/man3/ggiGetc.3ggi
 man/man3/ggiInit.3ggi
+man/man3/ggiJoinInputs.3ggi
+man/man3/ggiKbhit.3ggi
 man/man3/ggiMapColor.3ggi
 man/man3/ggiOpen.3ggi
 man/man3/ggiPackColors.3ggi
@@ -147,6 +162,7 @@ man/man3/ggiPutPixel.3ggi
 man/man3/ggiPutVLine.3ggi
 man/man3/ggiPutc.3ggi
 man/man3/ggiPuts.3ggi
+man/man3/ggiRemoveEventMask.3ggi
 man/man3/ggiRemoveFlags.3ggi
 man/man3/ggiResourceAcquire.3ggi
 man/man3/ggiResourceMustAcquire.3ggi
@@ -154,6 +170,7 @@ man/man3/ggiResourceRelease.3ggi
 man/man3/ggiSPrintMode.3ggi
 man/man3/ggiSetColorfulPalette.3ggi
 man/man3/ggiSetDisplayFrame.3ggi
+man/man3/ggiSetEventMask.3ggi
 man/man3/ggiSetFlags.3ggi
 man/man3/ggiSetGCBackground.3ggi
 man/man3/ggiSetGCClipping.3ggi
@@ -175,11 +192,13 @@ man/man7/libggi.7ggi
 share/doc/ggi/README
 share/examples/ggi/libggi.conf.example
 share/examples/ggi/libggimisc.conf.example
-@dirrm share/doc/ggi
+%%SHARED%%
 @dirrm share/examples/ggi
+@dirrm share/doc/ggi
 @dirrm lib/ggi/display
 @dirrm lib/ggi/default
 @dirrm lib/ggi
 @dirrm include/ggi/internal
 @dirrm include/ggi/display
+@dirrm include/ggi/default
 @dirrm include/ggi
