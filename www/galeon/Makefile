@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/22 09:01:20 wilfried Exp $
+# $OpenBSD: Makefile,v 1.17 2005/01/18 12:57:52 wilfried Exp $
 
 COMMENT=		"GNOME web browser based on gecko"
 
 V=			1.2.13
 DISTNAME=		galeon-${V}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		www
 MOZ=			1.6
 
@@ -27,15 +27,15 @@ MODULES=		devel/gettext gcc3
 MODGCC3_ARCHES=		alpha
 MODGCC3_LANGS=		C++
 
-BUILD_DEPENDS=		:mozilla-${MOZ}:www/mozilla \
-			:mozilla-devel-${MOZ}:www/mozilla,-devel \
+BUILD_DEPENDS=		:mozilla-${MOZ}-!gtk2:www/mozilla \
+			:mozilla-devel-${MOZ}-!gtk2:www/mozilla,-devel \
 			:scrollkeeper->=0.3.12:textproc/scrollkeeper
 RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper
 LIB_DEPENDS=		art_lgpl,gnomesupport,gnomeui::x11/gnome/libs \
 			gdk_pixbuf::graphics/gdk-pixbuf \
 			glade,glade-gnome:libglade-*-gnome:devel/libglade,gnome \
 			gnomevfs::x11/gnome/vfs
-LIB_DEPENDS+= 		mozilla/gtkembedmoz,mozilla/gtksuperwin,mozilla/xpcom,mozilla/nspr4,mozilla/plc4,mozilla/plds4:mozilla-${MOZ}:www/mozilla
+LIB_DEPENDS+= 		mozilla/gtkembedmoz,mozilla/gtksuperwin,mozilla/xpcom,mozilla/nspr4,mozilla/plc4,mozilla/plds4:mozilla-${MOZ}-!gtk2:www/mozilla
 
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
