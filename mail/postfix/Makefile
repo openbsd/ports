@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/01/02 12:20:03 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2000/01/03 07:37:39 jakob Exp $
 
 DISTNAME=	postfix-19991231
 CATEGORIES=     mail
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.merit.edu/postfix/official/ \
 		ftp://ftp.tau.ac.il/pub/unix/mail/postfix/official/ \
 		ftp://ftp.cs.uu.nl/mirror/postfix/postfix-release/official/
 
-MAINTAINER=	dugsong@monkey.org
+MAINTAINER=	jakob@openbsd.org
 
 NO_CONFIGURE=	yes
 
