@@ -8,7 +8,7 @@ bin/identify
 bin/import
 bin/mogrify
 bin/montage
-lib/libMagick.so.4.24
+lib/libMagick.so.4.25
 @exec /sbin/ldconfig -m %B
 lib/libMagick.la
 lib/libMagick.a
