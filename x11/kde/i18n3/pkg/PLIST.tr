@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.tr,v 1.3 2002/05/23 15:30:14 espie Exp $
+@comment $OpenBSD: PLIST.tr,v 1.4 2002/07/16 13:04:38 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -213,13 +213,11 @@ ${LOC}kfindpart.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
 ${LOC}kfmexec.mo
-${LOC}kformviewer.mo
 ${LOC}kfortune.mo
 ${LOC}kfract.mo
 ${LOC}kgantt.mo
 ${LOC}kgeo.mo
 ${LOC}kghostview.mo
-${LOC}kgnuplot.mo
 ${LOC}khangman.mo
 ${LOC}khelpcenter.mo
 ${LOC}khexedit.mo
@@ -268,7 +266,6 @@ ${LOC}kmidi.mo
 ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
-${LOC}kmms.mo
 ${LOC}kmoon.mo
 ${LOC}knewsticker.mo
 ${LOC}knode.mo
@@ -291,10 +288,8 @@ ${LOC}kpaint.mo
 ${LOC}kpartapp.mo
 ${LOC}kpartsaver.mo
 ${LOC}kpat.mo
-${LOC}kpercentage.mo
 ${LOC}kpersonalizer.mo
 ${LOC}kpf.mo
-${LOC}kphone.mo
 ${LOC}kpilot.mo
 ${LOC}kpixmap2bitmap.mo
 ${LOC}kpoker.mo
@@ -322,7 +317,6 @@ ${LOC}ksplash.mo
 ${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo
-${LOC}kstockticker.mo
 ${LOC}ksync.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
@@ -354,7 +348,6 @@ ${LOC}kwin_glow_config.mo
 ${LOC}kwin_icewm_config.mo
 ${LOC}kwin_modernsys_config.mo
 ${LOC}kwin_quartz_config.mo
-${LOC}kwintv.mo
 ${LOC}kworldclock.mo
 ${LOC}kwuftpd.mo
 ${LOC}kxkb.mo
@@ -373,7 +366,6 @@ ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo
 ${LOC}lskat.mo
-${LOC}mediacontrol.mo
 ${LOC}multiplayers.mo
 ${LOC}naughtyapplet.mo
 ${LOC}noatun.mo

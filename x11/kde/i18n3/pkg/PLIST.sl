@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sl,v 1.3 2002/05/23 15:30:14 espie Exp $
+@comment $OpenBSD: PLIST.sl,v 1.4 2002/07/16 13:04:38 espie Exp $
 share/apps/ktuberling/sounds/sl/cigara.wav
 share/apps/ktuberling/sounds/sl/klobuk.wav
 share/apps/ktuberling/sounds/sl/kravata.wav
@@ -361,14 +361,10 @@ ${LOC}ark.mo
 ${LOC}artsbuilder.mo
 ${LOC}artscontrol.mo
 ${LOC}babelfish.mo
-${LOC}caitoo.mo
 ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
-${LOC}colfind.mo
-${LOC}columbo.mo
 ${LOC}cupsdconf.mo
 ${LOC}desktop.mo
-${LOC}devcenter.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
@@ -377,7 +373,6 @@ ${LOC}extensionproxy.mo
 ${LOC}filetypes.mo
 ${LOC}fontinst.mo
 ${LOC}gideon.mo
-${LOC}gofai.mo
 ${LOC}htmlsearch.mo
 ${LOC}imgalleryplugin.mo
 ${LOC}kab.mo
@@ -385,7 +380,6 @@ ${LOC}kab3.mo
 ${LOC}kaboodle.mo
 ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
-${LOC}kafka.mo
 ${LOC}kalarm.mo
 ${LOC}kalarmd.mo
 ${LOC}kalarmdgui.mo
@@ -395,15 +389,12 @@ ${LOC}kappfinder.mo
 ${LOC}karm.mo
 ${LOC}kasbarextension.mo
 ${LOC}kasteroids.mo
-${LOC}katalog.mo
 ${LOC}kate.mo
 ${LOC}katepart.mo
 ${LOC}katomic.mo
-${LOC}kautorun.mo
 ${LOC}kbabel.mo
 ${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
-${LOC}kbiff.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
 ${LOC}kcalc.mo
@@ -415,21 +406,17 @@ ${LOC}kcmarts.mo
 ${LOC}kcmaudiocd.mo
 ${LOC}kcmbackground.mo
 ${LOC}kcmbell.mo
-${LOC}kcmbind.mo
 ${LOC}kcmcolors.mo
 ${LOC}kcmcrypto.mo
 ${LOC}kcmcss.mo
-${LOC}kcmdhcpd.mo
 ${LOC}kcmemail.mo
 ${LOC}kcmenergy.mo
 ${LOC}kcmfonts.mo
-${LOC}kcmgofai.mo
 ${LOC}kcmhtmlsearch.mo
 ${LOC}kcmicons.mo
 ${LOC}kcminfo.mo
 ${LOC}kcminput.mo
 ${LOC}kcmioslaveinfo.mo
-${LOC}kcmiwatcher.mo
 ${LOC}kcmkamera.mo
 ${LOC}kcmkclock.mo
 ${LOC}kcmkdb.mo
@@ -457,7 +444,6 @@ ${LOC}kcmmidi.mo
 ${LOC}kcmnewsticker.mo
 ${LOC}kcmnic.mo
 ${LOC}kcmnotify.mo
-${LOC}kcmodbc.mo
 ${LOC}kcmsamba.mo
 ${LOC}kcmscreensaver.mo
 ${LOC}kcmsmartcard.mo
@@ -471,7 +457,6 @@ ${LOC}kcmusb.mo
 ${LOC}kcoloredit.mo
 ${LOC}kcontrol.mo
 ${LOC}kcron.mo
-${LOC}kdao.mo
 ${LOC}kdat.mo
 ${LOC}kdcop.mo
 ${LOC}kdebugdialog.mo
@@ -494,7 +479,6 @@ ${LOC}kdvi.mo
 ${LOC}kedit.mo
 ${LOC}keduca.mo
 ${LOC}kenolaba.mo
-${LOC}keystone.mo
 ${LOC}kfax.mo
 ${LOC}kfifteenapplet.mo
 ${LOC}kfile_m3u.mo
@@ -506,18 +490,14 @@ ${LOC}kfile_ps.mo
 ${LOC}kfile_wav.mo
 ${LOC}kfind.mo
 ${LOC}kfindpart.mo
-${LOC}kfinger.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
 ${LOC}kfmexec.mo
-${LOC}kformeditor.mo
-${LOC}kformviewer.mo
 ${LOC}kfortune.mo
 ${LOC}kfract.mo
 ${LOC}kgantt.mo
 ${LOC}kgeo.mo
 ${LOC}kghostview.mo
-${LOC}kgrapher.mo
 ${LOC}khangman.mo
 ${LOC}khelpcenter.mo
 ${LOC}khexedit.mo
@@ -525,7 +505,6 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
 ${LOC}kiconedit.mo
-${LOC}kikbd.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_finger.mo
 ${LOC}kio_floppy.mo
@@ -561,7 +540,6 @@ ${LOC}kmail.mo
 ${LOC}kmailcvt.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuedit.mo
-${LOC}kmessage.mo
 ${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmidi.mo
@@ -573,7 +551,6 @@ ${LOC}knewsticker.mo
 ${LOC}knode.mo
 ${LOC}knotes.mo
 ${LOC}knotify.mo
-${LOC}knu.mo
 ${LOC}kodo.mo
 ${LOC}kolourpicker.mo
 ${LOC}koncd.mo
@@ -583,7 +560,6 @@ ${LOC}konsole.mo
 ${LOC}kooka.mo
 ${LOC}korganizer.mo
 ${LOC}korn.mo
-${LOC}kp.mo
 ${LOC}kpackage.mo
 ${LOC}kpager.mo
 ${LOC}kpaint.mo
@@ -592,7 +568,6 @@ ${LOC}kpartsaver.mo
 ${LOC}kpat.mo
 ${LOC}kpersonalizer.mo
 ${LOC}kpf.mo
-${LOC}kphone.mo
 ${LOC}kpilot.mo
 ${LOC}kpixmap2bitmap.mo
 ${LOC}kpm.mo
@@ -603,7 +578,6 @@ ${LOC}kprinter.mo
 ${LOC}kreadconfig.mo
 ${LOC}kregexpeditor.mo
 ${LOC}kreversi.mo
-${LOC}krn.mo
 ${LOC}kruler.mo
 ${LOC}krunapplet.mo
 ${LOC}ksame.mo
@@ -622,14 +596,11 @@ ${LOC}ksplash.mo
 ${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo
-${LOC}kstockticker.mo
 ${LOC}ksync.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo
 ${LOC}ksysv.mo
-${LOC}ktables.mo
-${LOC}ktalk.mo
 ${LOC}ktalkd.mo
 ${LOC}ktaskbarapplet.mo
 ${LOC}kteatime.mo

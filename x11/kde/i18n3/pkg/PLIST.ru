@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ru,v 1.3 2002/05/23 15:30:14 espie Exp $
+@comment $OpenBSD: PLIST.ru,v 1.4 2002/07/16 13:04:38 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -122,12 +122,6 @@ ${DOC}kicker/${I}
 ${DOC}kmix/common
 ${DOC}kmix/${C}
 ${DOC}kmix/${I}
-${DOC}knu/knu-config.png
-${DOC}knu/knu-finger.png
-${DOC}knu/knu-host.png
-${DOC}knu/knu-mtr.png
-${DOC}knu/knu-ping.png
-${DOC}knu/knu-traceroute.png
 ${DOC}kodo/common
 ${DOC}kodo/${C}
 ${DOC}kodo/${I}
@@ -197,6 +191,7 @@ ${LOC}kab3.mo
 ${LOC}kaboodle.mo
 ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
+${LOC}kalarm.mo
 ${LOC}kandy.mo
 ${LOC}kappfinder.mo
 ${LOC}karm.mo
@@ -215,7 +210,6 @@ ${LOC}katomic.mo
 ${LOC}kbabel.mo
 ${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
-${LOC}kbiff.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
 ${LOC}kcalc.mo
@@ -309,7 +303,6 @@ ${LOC}kfile_pdf.mo
 ${LOC}kfile_png.mo
 ${LOC}kfind.mo
 ${LOC}kfindpart.mo
-${LOC}kfinger.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
 ${LOC}kfmexec.mo
@@ -364,7 +357,6 @@ ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
 ${LOC}kmoon.mo
 ${LOC}kmyapp.mo
-${LOC}knetmgr.mo
 ${LOC}knewsticker.mo
 ${LOC}knode.mo
 ${LOC}knotes.mo
@@ -387,7 +379,6 @@ ${LOC}kpartsaver.mo
 ${LOC}kpat.mo
 ${LOC}kpersonalizer.mo
 ${LOC}kpf.mo
-${LOC}kphone.mo
 ${LOC}kpilot.mo
 ${LOC}kpixmap2bitmap.mo
 ${LOC}kpm.mo
@@ -489,7 +480,6 @@ share/locale/ru/flag.png
 @dirrm ${DOC}kppp
 @dirrm ${DOC}kpager
 @dirrm ${DOC}kodo
-@dirrm ${DOC}knu
 @dirrm ${DOC}kmix
 @dirrm ${DOC}kicker-applets
 @dirrm ${DOC}kicker

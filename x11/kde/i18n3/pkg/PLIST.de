@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.de,v 1.3 2002/05/23 15:30:14 espie Exp $
+@comment $OpenBSD: PLIST.de,v 1.4 2002/07/16 13:04:38 espie Exp $
 share/apps/ktuberling/sounds/de/abzeichen.wav
 share/apps/ktuberling/sounds/de/auge.wav
 share/apps/ktuberling/sounds/de/augenbraue.wav
@@ -40,12 +40,6 @@ ${DOC}artsbuilder/modules.docbook
 ${DOC}artsbuilder/porting.docbook
 ${DOC}artsbuilder/references.docbook
 ${DOC}artsbuilder/tools.docbook
-${DOC}caitoo/config.png
-${DOC}caitoo/docked.png
-${DOC}caitoo/listbox.png
-${DOC}caitoo/progress.png
-${DOC}caitoo/rmb.png
-${DOC}caitoo/toolbar.png
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -114,9 +108,17 @@ ${DOC}kate-plugins/openheader.docbook
 ${DOC}kate-plugins/projectmanager.docbook
 ${DOC}kate-plugins/textfilter.docbook
 ${DOC}kate-plugins/xmltools.docbook
+${DOC}kate/advanced.docbook
 ${DOC}kate/common
+${DOC}kate/configuring.docbook
+${DOC}kate/fundamentals.docbook
+${DOC}kate/highlighting.docbook
 ${DOC}kate/${C}
 ${DOC}kate/${I}
+${DOC}kate/mdi.docbook
+${DOC}kate/menus.docbook
+${DOC}kate/part.docbook
+${DOC}kate/plugins.docbook
 ${DOC}katomic/common
 ${DOC}katomic/${C}
 ${DOC}katomic/${I}
@@ -567,6 +569,9 @@ ${DOC}konqueror/samba.png
 ${DOC}konquest/common
 ${DOC}konquest/${C}
 ${DOC}konquest/${I}
+${DOC}konsole/common
+${DOC}konsole/${C}
+${DOC}konsole/${I}
 ${DOC}konsole/konsole.png
 ${DOC}korganizer/common
 ${DOC}korganizer/datenavigator.png
@@ -794,13 +799,9 @@ ${LOC}ark.mo
 ${LOC}artsbuilder.mo
 ${LOC}artscontrol.mo
 ${LOC}babelfish.mo
-${LOC}caitoo.mo
 ${LOC}cervisia.mo
 ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
-${LOC}colfind.mo
-${LOC}columbo.mo
-${LOC}cookbook.mo
 ${LOC}cupsdconf.mo
 ${LOC}desktop.mo
 ${LOC}dirfilterplugin.mo
@@ -825,11 +826,9 @@ ${LOC}kalarmdgui.mo
 ${LOC}kandy.mo
 ${LOC}kaphorism.mo
 ${LOC}kappfinder.mo
-${LOC}karchiver.mo
 ${LOC}karm.mo
 ${LOC}kasbarextension.mo
 ${LOC}kasteroids.mo
-${LOC}katalog.mo
 ${LOC}kate.mo
 ${LOC}katehelloworld.mo
 ${LOC}katehtmltools.mo
@@ -840,11 +839,9 @@ ${LOC}kateprojectmanager.mo
 ${LOC}katetextfilter.mo
 ${LOC}katexmltools.mo
 ${LOC}katomic.mo
-${LOC}kautorun.mo
 ${LOC}kbabel.mo
 ${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
-${LOC}kbiff.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
 ${LOC}kbugbuster.mo
@@ -852,13 +849,11 @@ ${LOC}kcalc.mo
 ${LOC}kcardchooser.mo
 ${LOC}kcharselect.mo
 ${LOC}kcharselectapplet.mo
-${LOC}kcm_splash.mo
 ${LOC}kcmaccess.mo
 ${LOC}kcmarts.mo
 ${LOC}kcmaudiocd.mo
 ${LOC}kcmbackground.mo
 ${LOC}kcmbell.mo
-${LOC}kcmbind.mo
 ${LOC}kcmcolors.mo
 ${LOC}kcmcrypto.mo
 ${LOC}kcmcss.mo
@@ -935,7 +930,6 @@ ${LOC}kdvi.mo
 ${LOC}kedit.mo
 ${LOC}keduca.mo
 ${LOC}kenolaba.mo
-${LOC}keystone.mo
 ${LOC}kfax.mo
 ${LOC}kfifteenapplet.mo
 ${LOC}kfile_m3u.mo
@@ -947,18 +941,14 @@ ${LOC}kfile_ps.mo
 ${LOC}kfile_wav.mo
 ${LOC}kfind.mo
 ${LOC}kfindpart.mo
-${LOC}kfinger.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
 ${LOC}kfmexec.mo
-${LOC}kformeditor.mo
-${LOC}kformviewer.mo
 ${LOC}kfortune.mo
 ${LOC}kfract.mo
 ${LOC}kgantt.mo
 ${LOC}kgeo.mo
 ${LOC}kghostview.mo
-${LOC}kgrapher.mo
 ${LOC}khangman.mo
 ${LOC}khelpcenter.mo
 ${LOC}khexedit.mo
@@ -966,8 +956,6 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
 ${LOC}kiconedit.mo
-${LOC}kikbd.mo
-${LOC}kim.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_finger.mo
 ${LOC}kio_floppy.mo
@@ -1015,7 +1003,6 @@ ${LOC}knewsticker.mo
 ${LOC}knode.mo
 ${LOC}knotes.mo
 ${LOC}knotify.mo
-${LOC}knu.mo
 ${LOC}kodo.mo
 ${LOC}kolourpicker.mo
 ${LOC}kompare.mo
@@ -1044,7 +1031,6 @@ ${LOC}kprinter.mo
 ${LOC}kreadconfig.mo
 ${LOC}kregexpeditor.mo
 ${LOC}kreversi.mo
-${LOC}krn.mo
 ${LOC}kruler.mo
 ${LOC}krunapplet.mo
 ${LOC}ksame.mo
@@ -1069,8 +1055,6 @@ ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo
 ${LOC}ksysv.mo
-${LOC}ktables.mo
-${LOC}ktalk.mo
 ${LOC}ktalkd.mo
 ${LOC}ktaskbarapplet.mo
 ${LOC}kteatime.mo
@@ -1084,7 +1068,6 @@ ${LOC}ktux.mo
 ${LOC}kuick_plugin.mo
 ${LOC}kuickshow.mo
 ${LOC}kuser.mo
-${LOC}kvidmode.mo
 ${LOC}kview.mo
 ${LOC}kviewshell.mo
 ${LOC}kvoctrain.mo
@@ -1098,7 +1081,6 @@ ${LOC}kwin_glow_config.mo
 ${LOC}kwin_icewm_config.mo
 ${LOC}kwin_modernsys_config.mo
 ${LOC}kwin_quartz_config.mo
-${LOC}kwintv.mo
 ${LOC}kworldclock.mo
 ${LOC}kwuftpd.mo
 ${LOC}kxkb.mo
@@ -1238,7 +1220,6 @@ share/locale/de/flag.png
 @dirrm ${DOC}kaddressbook
 @dirrm ${DOC}kab
 @dirrm ${DOC}common
-@dirrm ${DOC}caitoo
 @dirrm ${DOC}artsbuilder
 @dirrm ${DOC}ark
 @dirrm ${DOC}amor

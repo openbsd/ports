@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sk,v 1.3 2002/05/23 15:30:14 espie Exp $
+@comment $OpenBSD: PLIST.sk,v 1.4 2002/07/16 13:04:38 espie Exp $
 share/apps/ktuberling/sounds/sk/cigara.wav
 share/apps/ktuberling/sounds/sk/fuzy.wav
 share/apps/ktuberling/sounds/sk/hodinky.wav
@@ -436,10 +436,16 @@ ${DOC}kpager/${C}
 ${DOC}kpager/${I}
 ${DOC}kpager/screenshot.png
 ${DOC}kpager/settings.png
+${DOC}kpaint/common
+${DOC}kpaint/${C}
+${DOC}kpaint/${I}
 ${DOC}kreversi/common
 ${DOC}kreversi/${C}
 ${DOC}kreversi/${I}
 ${DOC}kreversi/kreversi1.png
+${DOC}kruler/common
+${DOC}kruler/${C}
+${DOC}kruler/${I}
 ${DOC}ksame/common
 ${DOC}ksame/${C}
 ${DOC}ksame/${I}
@@ -502,7 +508,6 @@ ${LOC}ark.mo
 ${LOC}artsbuilder.mo
 ${LOC}artscontrol.mo
 ${LOC}babelfish.mo
-${LOC}caitoo.mo
 ${LOC}cervisia.mo
 ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
@@ -533,7 +538,6 @@ ${LOC}kappfinder.mo
 ${LOC}karm.mo
 ${LOC}kasbarextension.mo
 ${LOC}kasteroids.mo
-${LOC}katalog.mo
 ${LOC}kate.mo
 ${LOC}katehelloworld.mo
 ${LOC}katehtmltools.mo
@@ -544,11 +548,9 @@ ${LOC}kateprojectmanager.mo
 ${LOC}katetextfilter.mo
 ${LOC}katexmltools.mo
 ${LOC}katomic.mo
-${LOC}kautorun.mo
 ${LOC}kbabel.mo
 ${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
-${LOC}kbiff.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
 ${LOC}kbugbuster.mo
@@ -646,7 +648,6 @@ ${LOC}kfile_ps.mo
 ${LOC}kfile_wav.mo
 ${LOC}kfind.mo
 ${LOC}kfindpart.mo
-${LOC}kfinger.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
 ${LOC}kfmexec.mo
@@ -662,7 +663,6 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
 ${LOC}kiconedit.mo
-${LOC}kikbd.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_finger.mo
 ${LOC}kio_floppy.mo
@@ -709,7 +709,6 @@ ${LOC}knewsticker.mo
 ${LOC}knode.mo
 ${LOC}knotes.mo
 ${LOC}knotify.mo
-${LOC}knu.mo
 ${LOC}kodo.mo
 ${LOC}kolourpicker.mo
 ${LOC}kompare.mo
@@ -761,7 +760,6 @@ ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo
 ${LOC}ksysv.mo
-${LOC}ktalk.mo
 ${LOC}ktalkd.mo
 ${LOC}ktaskbarapplet.mo
 ${LOC}kteatime.mo
@@ -843,7 +841,9 @@ share/locale/sk/flag.png
 @dirrm ${DOC}kshisen
 @dirrm ${DOC}kscore
 @dirrm ${DOC}ksame
+@dirrm ${DOC}kruler
 @dirrm ${DOC}kreversi
+@dirrm ${DOC}kpaint
 @dirrm ${DOC}kpager
 @dirrm ${DOC}kooka
 @dirrm ${DOC}konsole

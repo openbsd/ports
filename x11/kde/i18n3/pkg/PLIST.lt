@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.lt,v 1.3 2002/05/23 15:30:14 espie Exp $
+@comment $OpenBSD: PLIST.lt,v 1.4 2002/07/16 13:04:38 espie Exp $
 ${LOC}aktion.mo
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
@@ -36,7 +36,6 @@ ${LOC}kateprojectmanager.mo
 ${LOC}katetextfilter.mo
 ${LOC}katexmltools.mo
 ${LOC}kbabel.mo
-${LOC}kbiff.mo
 ${LOC}kcalc.mo
 ${LOC}kcardchooser.mo
 ${LOC}kcharselect.mo
@@ -83,7 +82,6 @@ ${LOC}kcmlocale.mo
 ${LOC}kcmmidi.mo
 ${LOC}kcmnic.mo
 ${LOC}kcmnotify.mo
-${LOC}kcmodbc.mo
 ${LOC}kcmsamba.mo
 ${LOC}kcmscreensaver.mo
 ${LOC}kcmsmartcard.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ar,v 1.3 2002/05/23 15:30:14 espie Exp $
+@comment $OpenBSD: PLIST.ar,v 1.4 2002/07/16 13:04:37 espie Exp $
 ${LOC}aktion.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo

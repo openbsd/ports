@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.mt,v 1.3 2002/05/23 15:30:14 espie Exp $
+@comment $OpenBSD: PLIST.mt,v 1.4 2002/07/16 13:04:38 espie Exp $
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
@@ -22,9 +22,7 @@ ${LOC}karm.mo
 ${LOC}kasbarextension.mo
 ${LOC}kate.mo
 ${LOC}katepart.mo
-${LOC}kautorun.mo
 ${LOC}kbabel.mo
-${LOC}kbiff.mo
 ${LOC}kcalc.mo
 ${LOC}kcharselect.mo
 ${LOC}kcharselectapplet.mo
@@ -65,7 +63,6 @@ ${LOC}kcmlayout.mo
 ${LOC}kcmlinuz.mo
 ${LOC}kcmlocale.mo
 ${LOC}kcmmidi.mo
-${LOC}kcmnapster.mo
 ${LOC}kcmnotify.mo
 ${LOC}kcmsamba.mo
 ${LOC}kcmscreensaver.mo
@@ -101,7 +98,6 @@ ${LOC}kfindpart.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
 ${LOC}kfmexec.mo
-${LOC}kformviewer.mo
 ${LOC}kfract.mo
 ${LOC}kghostview.mo
 ${LOC}khelpcenter.mo
@@ -130,12 +126,9 @@ ${LOC}klipper.mo
 ${LOC}klock.mo
 ${LOC}klpq.mo
 ${LOC}kmail.mo
-${LOC}kmake.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuedit.mo
 ${LOC}kminipagerapplet.mo
-${LOC}kmms.mo
-${LOC}kmonop.mo
 ${LOC}kmoon.mo
 ${LOC}knotes.mo
 ${LOC}knotify.mo
@@ -143,7 +136,6 @@ ${LOC}kodo.mo
 ${LOC}kolourpicker.mo
 ${LOC}konqueror.mo
 ${LOC}konsole.mo
-${LOC}konv.mo
 ${LOC}kooka.mo
 ${LOC}korganizer.mo
 ${LOC}kpackage.mo

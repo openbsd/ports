@@ -1,4 +1,25 @@
-@comment $OpenBSD: PLIST.it,v 1.3 2002/05/23 15:30:14 espie Exp $
+@comment $OpenBSD: PLIST.it,v 1.4 2002/07/16 13:04:38 espie Exp $
+share/apps/ktuberling/sounds/it/baffi.wav
+share/apps/ktuberling/sounds/it/bocca.wav
+share/apps/ktuberling/sounds/it/capelli.wav
+share/apps/ktuberling/sounds/it/cappello.wav
+share/apps/ktuberling/sounds/it/collana.wav
+share/apps/ktuberling/sounds/it/corno.wav
+share/apps/ktuberling/sounds/it/cravatta.wav
+share/apps/ktuberling/sounds/it/cravattino.wav
+share/apps/ktuberling/sounds/it/distintivo.wav
+share/apps/ktuberling/sounds/it/naso.wav
+share/apps/ktuberling/sounds/it/occhiali.wav
+share/apps/ktuberling/sounds/it/occhialidasole.wav
+share/apps/ktuberling/sounds/it/occhio.wav
+share/apps/ktuberling/sounds/it/orecchino.wav
+share/apps/ktuberling/sounds/it/orecchio.wav
+share/apps/ktuberling/sounds/it/orologio.wav
+share/apps/ktuberling/sounds/it/patatone.wav
+share/apps/ktuberling/sounds/it/pinguino.wav
+share/apps/ktuberling/sounds/it/sciarpina.wav
+share/apps/ktuberling/sounds/it/sigaro.wav
+share/apps/ktuberling/sounds/it/sopracciglio.wav
 ${DOC}amor/common
 ${DOC}amor/${C}
 ${DOC}amor/${I}
@@ -109,6 +130,32 @@ ${DOC}kicker/${I}
 ${DOC}kiconedit/common
 ${DOC}kiconedit/${C}
 ${DOC}kiconedit/${I}
+${DOC}kioslave/audiocd.docbook
+${DOC}kioslave/bzip.docbook
+${DOC}kioslave/bzip2.docbook
+${DOC}kioslave/file.docbook
+${DOC}kioslave/finger.docbook
+${DOC}kioslave/floppy.docbook
+${DOC}kioslave/ftp.docbook
+${DOC}kioslave/gopher.docbook
+${DOC}kioslave/help.docbook
+${DOC}kioslave/http.docbook
+${DOC}kioslave/https.docbook
+${DOC}kioslave/imap.docbook
+${DOC}kioslave/imaps.docbook
+${DOC}kioslave/info.docbook
+${DOC}kioslave/lan.docbook
+${DOC}kioslave/ldap.docbook
+${DOC}kioslave/mailto.docbook
+${DOC}kioslave/man.docbook
+${DOC}kioslave/news.docbook
+${DOC}kioslave/nfs.docbook
+${DOC}kioslave/nntp.docbook
+${DOC}kioslave/pop3.docbook
+${DOC}kioslave/pop3s.docbook
+${DOC}kit/common
+${DOC}kit/${C}
+${DOC}kit/${I}
 ${DOC}klettres/common
 ${DOC}klettres/${C}
 ${DOC}klettres/${I}
@@ -276,12 +323,9 @@ ${LOC}ark.mo
 ${LOC}artsbuilder.mo
 ${LOC}artscontrol.mo
 ${LOC}babelfish.mo
-${LOC}caitoo.mo
 ${LOC}cervisia.mo
 ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
-${LOC}colfind.mo
-${LOC}columbo.mo
 ${LOC}cupsdconf.mo
 ${LOC}desktop.mo
 ${LOC}dirfilterplugin.mo
@@ -292,7 +336,6 @@ ${LOC}empath.mo
 ${LOC}extensionproxy.mo
 ${LOC}filetypes.mo
 ${LOC}fontinst.mo
-${LOC}gofai.mo
 ${LOC}htmlsearch.mo
 ${LOC}imgalleryplugin.mo
 ${LOC}kab.mo
@@ -322,7 +365,6 @@ ${LOC}katomic.mo
 ${LOC}kbabel.mo
 ${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
-${LOC}kbiff.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
 ${LOC}kcalc.mo
@@ -373,7 +415,6 @@ ${LOC}kcmmidi.mo
 ${LOC}kcmnewsticker.mo
 ${LOC}kcmnic.mo
 ${LOC}kcmnotify.mo
-${LOC}kcmodbc.mo
 ${LOC}kcmsamba.mo
 ${LOC}kcmscreensaver.mo
 ${LOC}kcmsmartcard.mo
@@ -411,7 +452,6 @@ ${LOC}kdvi.mo
 ${LOC}kedit.mo
 ${LOC}keduca.mo
 ${LOC}kenolaba.mo
-${LOC}keystone.mo
 ${LOC}kfax.mo
 ${LOC}kfifteenapplet.mo
 ${LOC}kfile_m3u.mo
@@ -423,11 +463,9 @@ ${LOC}kfile_ps.mo
 ${LOC}kfile_wav.mo
 ${LOC}kfind.mo
 ${LOC}kfindpart.mo
-${LOC}kfinger.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
 ${LOC}kfmexec.mo
-${LOC}kformviewer.mo
 ${LOC}kfortune.mo
 ${LOC}kfract.mo
 ${LOC}kgantt.mo
@@ -486,7 +524,6 @@ ${LOC}knewsticker.mo
 ${LOC}knode.mo
 ${LOC}knotes.mo
 ${LOC}knotify.mo
-${LOC}knu.mo
 ${LOC}kodo.mo
 ${LOC}kolourpicker.mo
 ${LOC}koncd.mo
@@ -494,7 +531,6 @@ ${LOC}konqsidebar_mediaplayer.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
 ${LOC}konsole.mo
-${LOC}konv.mo
 ${LOC}kooka.mo
 ${LOC}korganizer.mo
 ${LOC}korn.mo
@@ -508,7 +544,6 @@ ${LOC}kpersonalizer.mo
 ${LOC}kpf.mo
 ${LOC}kpilot.mo
 ${LOC}kpixmap2bitmap.mo
-${LOC}kpm.mo
 ${LOC}kpoker.mo
 ${LOC}kppp.mo
 ${LOC}kppplogview.mo
@@ -535,7 +570,6 @@ ${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo
 ${LOC}ksync.mo
-${LOC}ksysctrl.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo
@@ -630,6 +664,8 @@ share/locale/it/flag.png
 @dirrm ${DOC}klprfax
 @dirrm ${DOC}klines
 @dirrm ${DOC}klettres
+@dirrm ${DOC}kit
+@dirrm ${DOC}kioslave
 @dirrm ${DOC}kiconedit
 @dirrm ${DOC}kicker-applets
 @dirrm ${DOC}kicker
@@ -653,3 +689,6 @@ share/locale/it/flag.png
 @dirrm ${DOC}common
 @dirrm ${DOC}amor
 @dirrm share/doc/HTML/it
+@dirrm share/apps/ktuberling/sounds/it
+@dirrm share/apps/ktuberling/sounds
+@dirrm share/apps/ktuberling

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.zu,v 1.3 2002/05/23 15:30:14 espie Exp $
+@comment $OpenBSD: PLIST.zu,v 1.4 2002/07/16 13:04:38 espie Exp $
 ${LOC}aktion.mo
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
@@ -78,6 +78,7 @@ ${LOC}kcmlayout.mo
 ${LOC}kcmlinuz.mo
 ${LOC}kcmlocale.mo
 ${LOC}kcmmidi.mo
+${LOC}kcmnewsticker.mo
 ${LOC}kcmnic.mo
 ${LOC}kcmnotify.mo
 ${LOC}kcmsamba.mo
@@ -200,7 +201,6 @@ ${LOC}ksplash.mo
 ${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}ksync.mo
-${LOC}ksysctrl.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo

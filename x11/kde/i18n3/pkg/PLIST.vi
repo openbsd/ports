@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.vi,v 1.3 2002/05/23 15:30:14 espie Exp $
+@comment $OpenBSD: PLIST.vi,v 1.4 2002/07/16 13:04:38 espie Exp $
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
 ${LOC}babelfish.mo
@@ -10,6 +10,7 @@ ${LOC}drkonqi.mo
 ${LOC}extensionproxy.mo
 ${LOC}filetypes.mo
 ${LOC}fontinst.mo
+${LOC}gideon.mo
 ${LOC}htmlsearch.mo
 ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
@@ -18,6 +19,7 @@ ${LOC}kasbarextension.mo
 ${LOC}kate.mo
 ${LOC}kbabel.mo
 ${LOC}kbounce.mo
+${LOC}kbugbuster.mo
 ${LOC}kcalc.mo
 ${LOC}kcharselect.mo
 ${LOC}kchat.mo
@@ -77,6 +79,8 @@ ${LOC}kdelibs.mo
 ${LOC}kdeprintfax.mo
 ${LOC}kdesktop.mo
 ${LOC}kdesu.mo
+${LOC}kdevelop.mo
+${LOC}kdevtipofday.mo
 ${LOC}kdict.mo
 ${LOC}kdictapplet.mo
 ${LOC}kdmchooser.mo
@@ -109,6 +113,7 @@ ${LOC}kio_smbro.mo
 ${LOC}kit.mo
 ${LOC}kjobviewer.mo
 ${LOC}klegacyimport.mo
+${LOC}kless.mo
 ${LOC}klipper.mo
 ${LOC}klock.mo
 ${LOC}kmail.mo
@@ -137,6 +142,7 @@ ${LOC}ksirc.mo
 ${LOC}ksmserver.mo
 ${LOC}ksplash.mo
 ${LOC}kstart.mo
+${LOC}kstartperf.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo
@@ -161,6 +167,7 @@ ${LOC}naughtyapplet.mo
 ${LOC}nsplugin.mo
 ${LOC}passwords.mo
 ${LOC}quicklauncher.mo
+${LOC}spy.mo
 ${LOC}taskbarextension.mo
 share/locale/vi/charset
 share/locale/vi/entry.desktop

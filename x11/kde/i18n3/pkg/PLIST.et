@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.et,v 1.3 2002/05/23 15:30:14 espie Exp $
+@comment $OpenBSD: PLIST.et,v 1.4 2002/07/16 13:04:38 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -59,12 +59,9 @@ ${LOC}ark.mo
 ${LOC}artsbuilder.mo
 ${LOC}artscontrol.mo
 ${LOC}babelfish.mo
-${LOC}caitoo.mo
 ${LOC}cervisia.mo
 ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
-${LOC}colfind.mo
-${LOC}columbo.mo
 ${LOC}cupsdconf.mo
 ${LOC}desktop.mo
 ${LOC}dirfilterplugin.mo
@@ -84,7 +81,6 @@ ${LOC}kappfinder.mo
 ${LOC}karm.mo
 ${LOC}kasbarextension.mo
 ${LOC}kasteroids.mo
-${LOC}katalog.mo
 ${LOC}kate.mo
 ${LOC}katehelloworld.mo
 ${LOC}katehtmltools.mo
@@ -94,11 +90,9 @@ ${LOC}katepart.mo
 ${LOC}kateprojectmanager.mo
 ${LOC}katetextfilter.mo
 ${LOC}katomic.mo
-${LOC}kautorun.mo
 ${LOC}kbabel.mo
 ${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
-${LOC}kbiff.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
 ${LOC}kbugbuster.mo
@@ -179,7 +173,6 @@ ${LOC}kdmgreet.mo
 ${LOC}kdvi.mo
 ${LOC}kedit.mo
 ${LOC}kenolaba.mo
-${LOC}keystone.mo
 ${LOC}kfax.mo
 ${LOC}kfifteenapplet.mo
 ${LOC}kfile_m3u.mo
@@ -202,7 +195,6 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
 ${LOC}kiconedit.mo
-${LOC}kikbd.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_finger.mo
 ${LOC}kio_floppy.mo
@@ -245,7 +237,6 @@ ${LOC}knewsticker.mo
 ${LOC}knode.mo
 ${LOC}knotes.mo
 ${LOC}knotify.mo
-${LOC}knu.mo
 ${LOC}kodo.mo
 ${LOC}kolourpicker.mo
 ${LOC}kompare.mo

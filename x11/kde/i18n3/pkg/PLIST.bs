@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.bs,v 1.3 2002/05/23 15:30:14 espie Exp $
+@comment $OpenBSD: PLIST.bs,v 1.4 2002/07/16 13:04:38 espie Exp $
 ${LOC}aktion.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -68,7 +68,6 @@ ${LOC}kcmlocale.mo
 ${LOC}kcmmidi.mo
 ${LOC}kcmnic.mo
 ${LOC}kcmnotify.mo
-${LOC}kcmodbc.mo
 ${LOC}kcmsamba.mo
 ${LOC}kcmscreensaver.mo
 ${LOC}kcmsmartcard.mo
@@ -79,7 +78,6 @@ ${LOC}kcmstyle.mo
 ${LOC}kcmtaskbar.mo
 ${LOC}kcmthemes.mo
 ${LOC}kcmusb.mo
-${LOC}kcmwidgetsettings.mo
 ${LOC}kcontrol.mo
 ${LOC}kcron.mo
 ${LOC}kdat.mo
@@ -110,7 +108,6 @@ ${LOC}khelpcenter.mo
 ${LOC}khotkeys.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
-${LOC}kikbd.mo
 ${LOC}kio_audiocd.mo
 ${LOC}kio_finger.mo
 ${LOC}kio_floppy.mo
@@ -170,6 +167,11 @@ ${LOC}kuick_plugin.mo
 ${LOC}kuser.mo
 ${LOC}kview.mo
 ${LOC}kwin.mo
+${LOC}kwin_b2_config.mo
+${LOC}kwin_default_config.mo
+${LOC}kwin_icewm_config.mo
+${LOC}kwin_modernsys_config.mo
+${LOC}kwin_quartz_config.mo
 ${LOC}kwuftpd.mo
 ${LOC}kxkb.mo
 ${LOC}kxmlrpcd.mo
@@ -178,11 +180,6 @@ ${LOC}libkicker.mo
 ${LOC}libkickermenu_kdeprint.mo
 ${LOC}libkonq.mo
 ${LOC}libkscreensaver.mo
-${LOC}libkwinb2_config.mo
-${LOC}libkwindefault_config.mo
-${LOC}libkwinicewm_config.mo
-${LOC}libkwinmodernsys_config.mo
-${LOC}libkwinquartz_config.mo
 ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo
