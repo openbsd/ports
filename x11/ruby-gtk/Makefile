@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/16 13:34:34 couderc Exp $
+# $OpenBSD: Makefile,v 1.5 2002/04/17 20:27:13 pvalchev Exp $
 
 COMMENT=		"Ruby extension library for GTK Toolkit"
 
@@ -23,7 +23,7 @@ MASTER_SITES=           ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ruby-gnome
 
 RUN_DEPENDS=		::lang/ruby
-LIB_DEPENDS=		gtk.1.2::x11/gtk+ \
+LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
 			ruby.1.66::lang/ruby
 
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/02/15 19:53:44 matt Exp $
+# $OpenBSD: Makefile,v 1.9 2002/04/17 20:27:13 pvalchev Exp $
 
 COMMENT=            "Gtk bindings for Python"
 COMMENT-gnome=      "Gtk and Gnome bindings for Python"
@@ -30,7 +30,8 @@ FLAVOR?=
 
 LIB_DEPENDS+=   Imlib.19,gdk_imlib::graphics/imlib \
                 gtkgl.1.2::x11/gtkglarea \
-                gdk_pixbuf::graphics/gdk-pixbuf
+                gdk_pixbuf::graphics/gdk-pixbuf \
+		gthread.1.2::devel/glib
 
 USE_X11=        Yes
 USE_GMAKE=      Yes
