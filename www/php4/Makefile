@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2000/12/18 20:29:25 dugsong Exp $
+# $OpenBSD: Makefile,v 1.15 2000/12/26 23:35:43 avsm Exp $
 
-DISTNAME=	php-4.0.3pl1
-PKGNAME=	php4-4.0.3pl1p1
+DISTNAME=	php-4.0.4
+PKGNAME=	php4-4.0.4
 CATEGORIES=	www lang
-NEED_VERSION=	1.319
+NEED_VERSION=	1.346
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
@@ -19,10 +19,6 @@ MASTER_SITES0=	http://www.php.net/extra/ \
 		http://se.php.net/extra/ \
 		http://no.php.net/extra/
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} number4.tar.gz:0
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-DIST_SUBDIR=	php4
-
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -37,7 +33,6 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--enable-calendar \
 			--enable-bcmath \
 			--enable-trans-sid \
-			--enable-versioning \
 			--with-yp \
 			--with-pcre-regex \
 			--with-xml \
@@ -174,9 +169,6 @@ BUILD_DEPENDS+=         ${PREFIX}/lib/libiodbc.a::databases/iodbc
 .else
 CONFIGURE_ARGS+=        --without-iodbc
 .endif        
-
-post-extract:
-	@(cd ${WRKSRC}; tar xzf ${FULLDISTDIR}/number4.tar.gz)
 
 do-install:
 	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp4.so.0.0 \
