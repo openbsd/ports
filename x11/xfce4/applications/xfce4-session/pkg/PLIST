@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/10/26 18:40:58 espie Exp $
 bin/xfce4-session
 lib/xfce4/
 lib/xfce4/mcs-plugins/
@@ -9,9 +9,13 @@ lib/xfce4/mcs-plugins/session_settings.so
 @man man/man1/xfce4-shutdown.1
 sbin/xfce4-shutdown
 share/examples/xfce4-session/
+@sample ${SYSCONFDIR}/xfce4/
 share/examples/xfce4-session/default.session
+@sample ${SYSCONFDIR}/xfce4/default.session
 share/examples/xfce4-session/shutdown.allow
+@sample ${SYSCONFDIR}/xfce4/shutdown.allow
 share/examples/xfce4-session/xinitrc.xfce4-session
+@sample ${SYSCONFDIR}/xfce4/xinitrc.xfce4-session
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/xfce4-session.mo
