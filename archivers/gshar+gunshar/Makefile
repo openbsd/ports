@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2000/06/10 19:10:57 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/08/20 00:12:11 brad Exp $
 
-DISTNAME=	sharutils-4.2
+DISTNAME=	sharutils-4.2.1
 CATEGORIES=	archivers
 NEED_VERSION=	1.301
 MASTER_SITES=	${MASTER_SITE_GNU}
