@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/12/06 06:05:43 form Exp $
+# $OpenBSD: Makefile,v 1.9 2001/12/06 06:25:31 form Exp $
 # $FreeBSD: ports/net/fping/Makefile,v 1.8 2000/03/22 00:26:51 obrien Exp $
 
 COMMENT=		"quickly ping N hosts w/o flooding the network"
@@ -18,7 +18,7 @@ MAINTAINER=		Oleg Safiullin <form@openbsd.org>
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--bindir=${PREFIX}/sbin
-COPTS=			-DHAVE_SNPRINTF -DHAVE_PROGNAME
+COPTS=			-DHAVE_PROGNAME
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/fping ${PREFIX}/sbin

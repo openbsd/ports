@@ -1,4 +1,4 @@
-$OpenBSD: patch-fping_c,v 1.1 2001/12/06 06:05:43 form Exp $
+$OpenBSD: patch-fping_c,v 1.2 2001/12/06 06:25:32 form Exp $
 --- fping.c.orig	Thu Jan  9 02:29:43 1997
 +++ fping.c	Thu Dec  6 11:44:20 2001
 @@ -186,7 +186,11 @@ extern "C" {
@@ -66,20 +66,6 @@ $OpenBSD: patch-fping_c,v 1.1 2001/12/06 06:05:43 form Exp $
           if (strcmp(filename,"-")==0) {
               ping_file=fdopen(0,"r");
           } else {
-@@ -671,8 +693,11 @@ int main(int argc, char **argv)
-          }
-          if (!ping_file) errno_crash_and_burn("fopen");
-          while(fgets(line,132,ping_file)) {
--           if (sscanf(line,"%s",host) != 1)
--	     continue;
-+#ifdef HAVE_SNPRINTF
-+           snprintf(host,sizeof(host),"%s",line);
-+#else
-+           sprintf(host,"%s",line);
-+#endif
-               if ((!*host) || (host[0]=='#'))  /* magic to avoid comments */
-                 continue;
- 	   p = cpystr(host);
 @@ -1099,6 +1124,8 @@ int wait_for_reply()
  
    result=recvfrom_wto(s,buffer,4096,
