@@ -1,0 +1,19 @@
+*** xsnow.c.orig	Thu Nov 23 08:33:50 1995
+--- xsnow.c	Mon Dec 22 12:53:41 1997
+***************
+*** 464,470 ****
+  #ifdef VMS
+      srand((int)time((unsigned long *)NULL));
+  #else
+!     srand((int)time((long *)NULL));
+  #endif
+  
+  
+--- 464,470 ----
+  #ifdef VMS
+      srand((int)time((unsigned long *)NULL));
+  #else
+!     srand((int)time((time_t *)NULL));
+  #endif
+  
+  
