@@ -1,0 +1,39 @@
+$OpenBSD: patch-Programs_api_client_c,v 1.1.1.1 2003/11/22 00:57:55 espie Exp $
+--- Programs/api_client.c.orig	2003-09-01 16:16:41.000000000 +0200
++++ Programs/api_client.c	2003-11-17 20:04:03.000000000 +0100
+@@ -25,10 +25,10 @@
+ #include <unistd.h>
+ #include <stdio.h>
+ #include <stddef.h>
++#include <string.h>
+ #include <inttypes.h>
+ #include <fcntl.h>
+ #include <errno.h>
+-#include <alloca.h>
+ #include <sys/socket.h>
+ #include <sys/un.h>
+ #include <sys/stat.h>
+@@ -39,12 +39,21 @@
+ #include <pthread.h>
+ #include <syslog.h>
+ 
++#ifdef HAVE_ALLOCA_H
++#include <alloca.h>
++#endif /* HAVE_ALLOCA_H */
++
+ #include "brlapi.h"
+ #include "api_common.h"
+ 
+ /* macros */
+-#define MIN(a, b)  (((a) < (b))? (a): (b)) 
+-#define MAX(a, b)  (((a) > (b))? (a): (b)) 
++#ifndef MIN
++#define MIN(a, b)  (((a) < (b))? (a): (b))
++#endif
++
++#ifndef MAX 
++#define MAX(a, b)  (((a) > (b))? (a): (b))
++#endif 
+ 
+ /* for remembering getaddrinfo error code */
+ static int gai_error;

@@ -1,0 +1,11 @@
+$OpenBSD: patch-README,v 1.1.1.1 2003/11/22 00:57:55 espie Exp $
+--- README.orig	2003-09-01 16:16:45.000000000 +0200
++++ README	2003-11-17 19:58:24.000000000 +0100
+@@ -114,6 +114,7 @@ BRLTTY has been tested on:
+ *  all major Linux distributions (including Red Hat, Debian, Slackware, SuSE)
+ *  Solaris/Sparc (release 7 and beyond)
+ *  Solaris/Intel (release 9 and beyond)
++*  OpenBSD/Intel (release 3.4 and beyond)
+ 
+ The following Braille displays are supported (serial communication only for
+ most of them):

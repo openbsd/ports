@@ -1,0 +1,17 @@
+$OpenBSD: patch-absdeps_mk,v 1.1.1.1 2003/11/22 00:57:55 espie Exp $
+--- absdeps.mk.orig	2003-09-01 16:25:50.000000000 +0200
++++ absdeps.mk	2003-11-17 19:58:24.000000000 +0100
+@@ -691,6 +691,13 @@ $(BLD_TOP)Programs/sys_linux.o: $(SRC_TO
+ $(BLD_TOP)Programs/sys_linux.o: $(SRC_TOP)Programs/system.h
+ 	cd $(@D) && $(MAKE) $(@F)
+ 
++# Dependencies for Programs/sys_openbsd.o:
++$(BLD_TOP)Programs/sys_openbsd.o: $(SRC_TOP)Programs/sys_openbsd.c
++$(BLD_TOP)Programs/sys_openbsd.o: $(BLD_TOP)config.h
++$(BLD_TOP)Programs/sys_openbsd.o: $(SRC_TOP)Programs/misc.h
++$(BLD_TOP)Programs/sys_openbsd.o: $(SRC_TOP)Programs/system.h
++	cd $(@D) && $(MAKE) $(@F)
++
+ # Dependencies for Programs/sys_solaris.o:
+ $(BLD_TOP)Programs/sys_solaris.o: $(SRC_TOP)Programs/sys_solaris.c
+ $(BLD_TOP)Programs/sys_solaris.o: $(BLD_TOP)config.h

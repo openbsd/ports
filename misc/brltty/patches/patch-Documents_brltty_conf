@@ -1,0 +1,13 @@
+$OpenBSD: patch-Documents_brltty_conf,v 1.1.1.1 2003/11/22 00:57:55 espie Exp $
+--- Documents/brltty.conf.orig	2003-09-01 16:16:46.000000000 +0200
++++ Documents/brltty.conf	2003-11-17 19:58:24.000000000 +0100
+@@ -59,7 +59,8 @@
+ #braille-device	ttyS0	# Primary Linux serial port (old-style).
+ #braille-device	tts/0	# Primary Linux serial port (devfs).
+ #braille-device	ttya	# Primary Solaris serial port.
+-#braille-device	ty0p0	# Primary HP-UX serial port.
++#braille-device	tty0p0	# Primary HP-UX serial port.
++#braille-device	cua00	# Primary OpenBSD serial port.
+ #braille-device	ttyUSB0	# Primary Linux USB serial converter (old-style).
+ #braille-device	usb/tts/0	# Primary Linux USB serial converter (devfs).
+ #braille-device	brlvger	# Primary Linux USB Voyager port (old-style).

@@ -1,0 +1,5 @@
+BRLTTy is an access program for a blind person using a refreshable braille
+display.
+
+This port allows using BRLTTy in conjunction with a version of screen,
+communicating using shared memory.
