@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.21 2002/07/18 15:15:05 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2002/09/12 15:12:36 danh Exp $
 
 COMMENT=	"command-driven interactive function plotting program"
 
 DISTNAME=	gnuplot-3.7.1
 CATEGORIES=	math graphics
-MASTER_SITES=	ftp://ftp.gnuplot.vt.edu/pub/gnuplot/ \
+MASTER_SITES=	ftp://ftp.gnuplot.info/pub/gnuplot/ \
+		ftp://ftp.gnuplot.vt.edu/pub/gnuplot/ \
 		ftp://ftp.irisa.fr/pub/gnuplot/ \
 		ftp://ftp.cc.monash.edu.au/pub/gnuplot/ \
 		${MASTER_SITE_GNU:=gnuplot/}
 
-HOMEPAGE=	http://www.gnuplot.org/
+HOMEPAGE=	http://www.gnuplot.info/
 
 LIB_DEPENDS=	png.2::graphics/png
 
@@ -26,7 +27,7 @@ FLAVOR?=
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--without-linux-vga --without-gd \
 		--with-png --with-gnu-readline --with-lasergnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/libpng"
 NO_REGRESS=	Yes
 
 .if ${FLAVOR:L:Mno_x11}
