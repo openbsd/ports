@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 1998/05/17 04:17:35 angelos Exp $
+# $OpenBSD: Makefile,v 1.14 1998/05/17 04:21:01 angelos Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
      SUBDIR += adcomplain
      SUBDIR += asmail
-#    SUBDIR += bulk_mailer
+     SUBDIR += bulk_mailer
      SUBDIR += cucipop
 #    SUBDIR += cyrus
      SUBDIR += elm
