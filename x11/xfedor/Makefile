@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 15:44:01 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/12/19 15:31:57 espie Exp $
 # ATTENTION: It does not work in > 256 color modes, please fix
 # it if you can.
 
@@ -30,6 +30,6 @@ do-install:
 	${INSTALL_DATA} * ${XFHELP}
 	${INSTALL_DATA} ${FILESDIR}/default.sos ${XFHELP}
 	cd ${WRKSRC}; \
-	${INSTALL_MAN} xfedor.txt ${XCAT1}/xfedor.1
+	${INSTALL_MAN} xfedor.txt ${XCAT1}/xfedor.0
 
 .include <bsd.port.mk>
