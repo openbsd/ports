@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/19 13:58:12 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2002/04/11 08:15:39 wilfried Exp $
 
 COMMENT=		"GUI client for MySQL"
 
@@ -37,6 +37,9 @@ CONFIGURE_ENV=		QTDIR=${LOCALBASE} \
 			LOCALBASE=${LOCALBASE}
 
 NO_REGRESS=		Yes
+
+post-patch:
+	@rm ${WRKSRC}/include/CSqlEditor/qrichtext_p.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/MyCC ${PREFIX}/bin
