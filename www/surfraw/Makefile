@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2000/09/28 15:56:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/03/01 01:41:18 obecian Exp $
 
-DISTNAME=	surfraw-1.0.2
+DISTNAME=	surfraw-1.0.3
 CATEGORIES=	www
 NEED_VERSION=	1.324
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}

@@ -1,6 +1,5 @@
-$OpenBSD: patch-surfraw_conf_in,v 1.1.1.1 2000/08/21 15:09:32 naddy Exp $
---- surfraw.conf.in.orig	Mon Aug  7 01:09:01 2000
-+++ surfraw.conf.in	Mon Aug 14 01:03:37 2000
+--- surfraw.conf.in.orig	Wed Feb 28 11:43:57 2001
++++ surfraw.conf.in	Wed Feb 28 11:44:51 2001
 @@ -27,7 +27,7 @@ def   SURFRAW_conf		$HOME/.surfraw.conf
  
  # name/path of browser executable
