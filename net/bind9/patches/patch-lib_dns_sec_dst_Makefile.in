@@ -1,0 +1,14 @@
+--- lib/dns/sec/dst/Makefile.in.orig	Wed Jan 24 10:27:06 2001
++++ lib/dns/sec/dst/Makefile.in	Wed Jan 24 10:45:34 2001
+@@ -22,9 +22,9 @@
+ @BIND9_INCLUDES@
+ 
+ CINCLUDES =	-I${srcdir} \
+-		-I${srcdir}/../openssl/include \
++		@DST_OPENSSL_INC@ -I${srcdir}/../openssl/include \
+ 		${DNS_INCLUDES} ${ISC_INCLUDES} \
+-		@DST_OPENSSL_INC@ @DST_GSSAPI_INC@
++		@DST_GSSAPI_INC@
+ 
+ CDEFINES =	-DUSE_MD5 -DOPENSSL @DST_PRIVATEOPENSSL@ @USE_GSSAPI@
+ CWARNINGS =
