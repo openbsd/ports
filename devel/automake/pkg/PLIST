@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.8 2000/06/25 07:31:11 brad Exp $
 bin/automake
 bin/aclocal
 @unexec install-info --delete %D/info/automake.info %D/info/dir
