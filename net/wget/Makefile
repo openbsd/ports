@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2000/10/22 14:03:38 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2000/12/25 06:03:14 brad Exp $
 
 DISTNAME=	wget-1.5.3
 CATEGORIES=	net
@@ -7,7 +7,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
 MASTER_SITE_SUBDIR= wget
 
-PATCHFILES=	wget-153-v6-20000915.diff.gz:0
+PATCHFILES=	wget-153-v6-20001225.diff.gz:0
 PATCH_DIST_STRIP= -p1
 
 HOMEPAGE=	http://www.gnu.org/software/wget/
