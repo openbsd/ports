@@ -1,0 +1,15 @@
+--- tosha.1.orig	Sat Jan  2 00:57:48 1999
++++ tosha.1	Mon Aug 23 09:06:35 1999
+@@ -63,10 +63,9 @@
+ sectors and writes them into a single or multiple files,
+ or to the standard output.  VideoCD tracks (digital video)
+ are supported, too.  The digital audio / video data is read
+-through the SCSI bus; thus
++through the SCSI/ATAPI bus; thus
+ .B tosha
+-does not work with IDE/ATAPI CD-ROM drives nor with
+-proprietary interfaces.
++does not work with proprietary interfaces.
+ .SH OPTIONS
+ .B tosha
+ options may be either the traditional POSIX one letter options,

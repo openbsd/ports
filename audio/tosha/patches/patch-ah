@@ -1,0 +1,18 @@
+--- toconf.h.orig	Sat Jan  2 00:57:43 1999
++++ toconf.h	Mon Aug 23 08:30:43 1999
+@@ -40,6 +40,7 @@
+ 
+ typedef struct {
+ 	char *vendor, *product, *version;
++	bool atapi;
+ 	byte readcmd;
+ 	bool mdchng;
+ 	byte density;
+@@ -50,6 +51,6 @@
+ 
+ int toconf_readconfig (void);
+ toconf_entry *toconf_searchentry
+-    (const char *vendor, const char *product, const char *version);
++    (const char *vendor, const char *product, const char *version, int atapi);
+ 
+ /* EOF */
