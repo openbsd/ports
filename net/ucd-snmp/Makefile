@@ -1,34 +1,34 @@
-# New ports collection makefile for:	ucd-snmp
-# Version required:			3.2
-# Date created:				02 December 1997
-# Whom:					mickey (gpalmer)
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/01/08 22:55:30 mickey Exp $
+# $OpenBSD: Makefile,v 1.2 1999/07/21 20:12:13 hugh Exp $
 #
 
-DISTNAME=	ucd-snmp-3.2
+DISTNAME=	ucd-snmp-3.6.2
 CATEGORIES=	net
-MASTER_SITES= 	ftp://ftp.ece.ucdavis.edu/pub/snmp/
+MASTER_SITES= 	ftp://ucd-snmp.ucdavis.edu/				\
+		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/
 
-MAINTAINER=	mickey@openbsd.org
+MAINTAINER=	hugh@openbsd.org
+
 
 GNU_CONFIGURE=	yes
 .if defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS=	--with-defaults --with-sys-contact=nobody@no.where
+CONFIGURE_ARGS=	--with-defaults --with-sys-contact=nobody@no.where --with-logfile="/var/log/snmpd"
 .else
 IS_INTERACTIVE= yes
+CONFIGURE_ARGS=	--with-logfile="/var/log/snmpd"
 .endif
-MAN1=		snmpget.1 snmpset.1 snmpwalk.1 snmpbulkwalk.1 \
-		snmpgetnext.1 snmptest.1 snmpnetstat.1 snmptranslate.1 \
-		snmptrap.1 snmpstatus.1
-MAN3=		snmp_api.3 mib_api.3
-MAN5=		variables.5 snmpd.conf.5
-MAN8=		snmptrapd.8 snmpd.8
 
-BIN=		snmpbulkwalk snmpget snmpgetnext snmpnetstat \
-		snmpset snmpstatus snmptest snmptranslate \
-		snmptrap snmptrapd snmpwalk
-SBIN=		snmpd
+MAN1=		snmpbulkwalk.1 snmpcmd.1 snmpd.1 snmpdelta.1 snmpget.1	\
+		snmpgetnext.1 snmpnetstat.1 snmpset.1 snmpstatus.1	\
+		snmptable.1 snmptest.1 snmptranslate.1 snmptrap.1	\
+		snmpwalk.1
+MAN3=		mib_api.3 read_config.3 snmp_api.3 snmp_sess_api.3
+MAN5=		
+MAN5=		snmp.conf.5 snmp_config.5 snmpd.conf.5			\
+		snmptrapd.conf.5 variables.5
+MAN8=		snmptrapd.8
+BIN=		snmpbulkwalk snmpget snmpgetnext snmpnetstat snmpset	\
+		snmpstatus snmptest snmptranslate snmptrap snmpwalk
+SBIN=		snmpd snmptrapd
 
 post-install:
 	( cd ${PREFIX}/bin; strip ${BIN} )
