@@ -1,3 +1,4 @@
+$OpenBSD: patch-Makefile,v 1.1 2002/03/24 07:44:53 jsyn Exp $
 --- Makefile.orig	Mon May 31 12:48:45 1999
 +++ Makefile	Mon May 31 12:51:46 1999
 @@ -137,11 +137,11 @@

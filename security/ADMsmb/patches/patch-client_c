@@ -1,3 +1,4 @@
+$OpenBSD: patch-client_c,v 1.1 2002/03/24 07:44:53 jsyn Exp $
 --- client.c-orig	Mon May 31 12:54:36 1999
 +++ client.c	Mon May 31 12:54:43 1999
 @@ -74,8 +74,6 @@
