@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.44 2002/07/02 21:58:21 naddy Exp $
+# $OpenBSD: network.conf.template,v 1.45 2002/07/22 22:44:24 naddy Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -86,8 +86,7 @@ MASTER_SITE_SUNSITE+=	\
 	http://www.ibiblio.org/pub/Linux/ \
 	http://linux.dsi.internet2.edu/ \
 	ftp://ftp.unicamp.br/pub/systems/Linux/ \
-	ftp://ftp.tuwien.ac.at/z3/opsys/linux/ibiblio/ \
-	ftp://ftp.univie.ac.at/systems/linux/metalab/ \
+	ftp://ftp.tuwien.ac.at/pub/linux/ibiblio/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/linux/sunsite/ \
 	ftp://ftp.cs.tu-berlin.de/pub/linux/Mirrors/sunsite.unc.edu/ \
 	ftp://ftp.fu-berlin.de/unix/linux/mirrors/sunsite.unc.edu/ \
