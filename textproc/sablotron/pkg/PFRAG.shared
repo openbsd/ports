@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2000/09/12 12:12:12 avsm Exp $
+lib/libsablot.so.43.0
+lib/libxmlparse.so.2.1
+lib/libxmltok.so.2.1
+DYNLIBDIR(%D/lib)

@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/12 12:12:12 avsm Exp $
+bin/sabcmd
+include/sablot.h
+include/shandler.h
+lib/libsablot.a
+lib/libsablot.la
+lib/libxmlparse.a
+lib/libxmlparse.la
+lib/libxmltok.a
+lib/libxmltok.la
+@comment Shared libraries are disabled until they work
+@comment %%SHARED%%

@@ -1,0 +1,10 @@
+Sablotron is an attempt to develop fast, compact and portable XSLT
+processor.
+
+It is an open project; other users and developers are encouraged
+to use it or to help test or improve it. The goal of this project
+is to create a reliable and fast XSLT processor conforming to the
+W3C specification, which is available for public viewing, and can
+be used as a base for multi-platform XML data distribution systems.
+
+WWW: ${HOMEPAGE}
