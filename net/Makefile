@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2000/01/28 12:31:24 kevlo Exp $
+# $OpenBSD: Makefile,v 1.63 2000/02/03 04:00:06 kevlo Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -101,6 +101,7 @@
      SUBDIR += sharity-light
      SUBDIR += slirp
      SUBDIR += sniffit
+     SUBDIR += snort
 #    SUBDIR += socks5
 #    SUBDIR += strobe
 #    SUBDIR += sup
