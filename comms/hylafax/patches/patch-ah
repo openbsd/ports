@@ -1,14 +1,10 @@
---- util/typerules.orig	Wed Nov 27 00:21:01 1996
-+++ util/typerules	Sun Feb  8 03:38:01 1998
-@@ -128,6 +128,11 @@
- >15     string          ascii		ps	%F/textfmt -B -f Courier-Bold\
- 						    -p 11 -s %s >%o <%i
- #
-+# Japanization (should help other iso-2022 variants too)
-+#
-+#>15	string		asciiesc	ps	a2ps-j -l '' -p -ns -nt <%i >%o
-+#0	asciiesc	x		ps	a2ps-j -l '' -p -ns -nt <%i >%o
-+#
- # This causes anything else with ascii-only data to be treated as text.
- #
- 0	ascii		x		ps	%F/textfmt -B -f Courier-Bold\
+--- util/Types.h.orig	Wed Sep  2 16:36:00 1998
++++ util/Types.h	Wed Sep  2 16:36:20 1998
+@@ -26,6 +26,7 @@
+ #ifndef _Types_
+ #define	_Types_
+ 
++#include <std.h>
+ #include "string.h"
+ #include "assert.h"
+ #include "stdio.h"

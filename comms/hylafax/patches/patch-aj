@@ -1,11 +1,16 @@
---- faxd/FaxModem.h.orig	Wed Nov 27 00:21:18 1996
-+++ faxd/FaxModem.h	Sun Feb  8 03:37:57 1998
-@@ -30,7 +30,7 @@
-  */
- #include "ClassModem.h"
- #include "Class2Params.h"
--#include "tiffio.h"
-+#include "tiffio34.h"
- #include "G3Decoder.h"
- #include "FaxSendStatus.h"
- 
+--- util/SendFaxClient.c++.orig	Wed Sep  2 16:39:51 1998
++++ util/SendFaxClient.c++	Wed Sep  2 16:40:50 1998
+@@ -457,11 +457,11 @@
+ 	if (info.rule->getResult() == TypeRule::TIFF) {
+ 	    fileSent = setFormat(FORM_TIFF)
+ 		    && setType(TYPE_I)
+-		    && sendData(fd, FaxClient::storeTemp, info.doc, emsg);
++		    && sendData(fd, &FaxClient::storeTemp, info.doc, emsg);
+ 	} else {
+ 	    fileSent = setFormat(FORM_PS)
+ 	    	    && setType(TYPE_I)		// XXX TYPE_A???
+-		    && sendZData(fd, FaxClient::storeTemp, info.doc, emsg);
++		    && sendZData(fd, &FaxClient::storeTemp, info.doc, emsg);
+ 	}
+ 	Sys::close(fd);
+ 	if (!fileSent) {

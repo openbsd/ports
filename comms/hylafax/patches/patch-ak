@@ -1,11 +1,25 @@
---- faxd/FaxRecv.c++.orig	Wed Nov 27 00:21:32 1996
-+++ faxd/FaxRecv.c++	Sun Feb  8 03:37:57 1998
-@@ -30,7 +30,7 @@
- #include <errno.h>
+--- util/TextFmt.c++.orig	Wed Sep  2 16:50:49 1998
++++ util/TextFmt.c++	Wed Sep  2 16:58:43 1998
+@@ -47,6 +47,7 @@
+ #if HAS_MMAP
+ #include <sys/mman.h>
+ #endif
++#include <paths.h>
  
- #include "Dispatcher.h"
--#include "tiffio.h"
-+#include "tiffio34.h"
- #include "FaxServer.h"
- #include "FaxRecvInfo.h"
- #include "faxApp.h"			// XXX
+ #define LUNIT 	(72*20)		// local coord system is .05 scale
+ #define	ICVT(x) ((TextCoord)((x)*LUNIT))	// scale inches to local coordinates
+@@ -244,12 +245,11 @@
+     /*
+      * Open the file w+ so that we can reread the temp file.
+      */
+-    tempfile = tmpnam(NULL);
+-    tf = Sys::fopen(tempfile, "w+");
++    tempfile = _PATH_TMP ".hylafax.XXXXXXXXXXXX";
++    tf = Sys::mkstemp(tempfile);
+     if (tf == NULL)
+ 	fatal("%s: Cannot open temporary file: %s",
+ 	    (const char*) tempfile, strerror(errno));
+-    Sys::unlink(tempfile);			// so it'll be removed on exit
+ 
+     numcol = fxmax(1,numcol);
+     if (pointSize == -1)

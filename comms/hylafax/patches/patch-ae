@@ -1,10 +1,25 @@
---- util/TypeRules.h.orig	Wed Nov 27 00:20:56 1996
-+++ util/TypeRules.h	Sun Feb  8 03:38:01 1998
-@@ -130,6 +130,7 @@
-     fxBool	cont;	// continuation
-     enum {
- 	ASCII,		// ascii-only string
-+	ASCIIESC,	// ascii-only string + escape char (iso-2022 variants)
- 	STRING,		// byte string
- 	ADDR,		// address of match
- 	BYTE,		// 8 bits
+--- faxd/UUCPLock.c++.orig	Wed Sep  2 13:07:27 1998
++++ faxd/UUCPLock.c++	Wed Sep  2 13:09:17 1998
+@@ -37,6 +37,7 @@
+ }
+ #endif
+ #include <pwd.h>
++#include <grp.h>
+ 
+ /*
+  * UUCP Device Locking Support.
+@@ -146,8 +147,13 @@
+ 	if (!pwd)
+ 	    faxApp::fatal("Can not deduce identity of UUCP");
+ 	UUCPuid = pwd->pw_uid;
+-	UUCPgid = pwd->pw_gid;
+ 	endpwent();			// paranoia
++
++	const group *grp = getgrnam("dialer");
++	if (!grp)
++	    faxApp::fatal("Can not deduce identity of DIALER");
++	UUCPgid = grp->gr_gid;
++	endgrent();			// paranoia
+     }
+ }
+ uid_t UUCPLock::getUUCPUid() { setupIDs(); return UUCPuid; }

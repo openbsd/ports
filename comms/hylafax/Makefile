@@ -1,61 +1,73 @@
 # OpenBSD makefile for:	hylafax
-# Version required:	v4.0pl1
-# Date created:		8 Feb 1998
+# Version required:	v4.0pl2
+# Date created:		2 Sep 1998
 # Whom:			d
 #
-# $OpenBSD: Makefile,v 1.4 1998/06/14 08:10:23 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/09/04 00:35:54 d Exp $
 #
 
-DISTNAME=	hylafax-v4.0pl1
-PKGNAME=	hylafax-4.0.1
+DISTNAME=	hylafax-v4.0pl2
+PKGNAME=	hylafax-4.0.2
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/
 EXTRACT_SUFX=	-tar.gz
 
 MAINTAINER=	d@openbsd.org
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
-		${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
+BUILD_DEPENDS+= ${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
 
-# no dependency on ghostscript because we don't know which
-# version the user prefers
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
-LIB_DEPENDS=	tiff\\.3\\.4:${PORTSDIR}/graphics/tiff34 \
-		jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg
+RUN_DEPENDS=	ghostscript-5.10:${PORTSDIR}/print/ghostscript5
+LIB_DEPENDS=	tiff\\.3\\.4:${PORTSDIR}/graphics/tiff34 
 
-USE_GMAKE=	yes
+.if !defined(A4)
+PAGESIZE=	North American Letter
+.else
+PAGESIZE=	ISO A4
+.endif
 
-# libtiff34 crashes on this machine when dynamically linked?? (mac68k)
-# so change -ltiff34 to ${PREFIX}/lib/libtiff34.a to avoid this
+FAXUID=uucp
+FAXGID=dialer
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-INSTALL="" \
-		--with-MAKE=gmake --with-CC=/usr/bin/cc \
-		--with-LIBTIFF="-L${PREFIX}/lib -ltiff34 -ljpeg"  \
-		--with-ZLIB=no --with-LIBZ='-lz' \
-		--with-
+		--with-MAKE=${MAKE} \
+		--with-CC=${CC} \
+		--with-CXX=${CXX} \
+		--with-DIR_HTML=/usr/share/doc/html/hylafax \
+		--with-PAGESIZE="${PAGESIZE}" \
+		--with-LIBTIFF="-L${PREFIX}/lib -ltiff"  \
+		--with-ZLIB=no --with-LIBZ='-lz' --with-ZLIBINC=/usr/include \
+		--with-REGEX=no --with-LIBREGEX= --with-REGEXINC=/usr/include \
+		--with-FAXUID=${FAXUID} --with-FAXGID=${FAXGID} \
 
-MAN1=	hylafax.1 faxalter.1 faxcover.1 faxmail.1 faxrm.1 faxstat.1 sendfax.1 \
-	sendpage.1 sgi2fax.1 textfmt.1
-MAN5=	pagesizes.5f typerules.5f \
-	hylafax.5f cid.5f config.5f destctrls.5f dialrules.5f hosts.5f \
-	info.5f log.5f pagermap.5f recvq.5f sendq.5f shutdown.5f status.5f \
-	tsi.5f xferlog.5f
-MAN8=	cqtest.8c choptest.8c dialtest.8c faxabort.8c faxaddmodem.8c \
-	faxanswer.8c faxconfig.8c faxmodem.8c faxstate.8c faxcron.8c \
-	faxgetty.8c faxinfo.8c faxq.8c faxqclean.8c faxquit.8c faxrcvd.8c \
-	faxsend.8c faxsetup.8c faxwatch.8c hfaxd.8c mkcover.8c notify.8c \
-	pagesend.8c pollrcvd.8c ps2fax.8c recvstats.8c tagtest.8c tiff2fax.8c \
-	tiffcheck.8c tsitest.8c wedged.8c xferstats.8c
+MAN1=	choptest.1m cqtest.1m dialtest.1m faxabort.1m faxaddmodem.1m \
+	faxalter.1 faxanswer.1m faxconfig.1m faxcover.1 faxcron.1m \
+	faxgetty.1m faxinfo.1m faxmail.1 faxmodem.1m faxq.1m \
+	faxqclean.1m faxquit.1m faxrcvd.1m faxrm.1 faxsend.1m \
+	faxsetup.1m faxstat.1 faxstate.1m faxwatch.1m hfaxd.1m \
+	hylafax.1 mkcover.1m notify.1m pagesend.1m pollrcvd.1m \
+	ps2fax.1m recvstats.1m sendfax.1 sendpage.1 sgi2fax.1 \
+	tagtest.1m textfmt.1 tiff2fax.1m tiffcheck.1m tsitest.1m \
+	wedged.1m xferstats.1m
+
+MAN4=	cid.4f config.4f destctrls.4f dialrules.4f hosts.4f hylafax.4f \
+	info.4f log.4f pagermap.4f pagesizes.4f recvq.4f sendq.4f \
+	shutdown.4f status.4f tsi.4f typerules.4f xferlog.4f
 
 SUID_EXES= 	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter
 
+pre-fetch:
+.if !defined(A4)
+	@${ECHO_MSG} "Type \"make A4=yes\" if you want A4 as default page size."
+.else
+	@${ECHO_MSG} "Using \"ISO A4\" for default page size."
+.endif
+
 post-install:
-	/usr/sbin/chown uucp ${SUID_EXES}
+	/usr/sbin/chown ${FAXUID}.${FAXGID} ${SUID_EXES}
 	chmod a=rx,u+s ${SUID_EXES}
-	@if [ ! -f ${PREFIX}/etc/rc.d/hylafax.sh.sample ]; then	\
-		cp ${FILESDIR}/hylafax.sh.sample ${PREFIX}/etc/rc.d;	\
-	fi
+	${INSTALL_DATA} ${FILESDIR}/hylafax.sh.sample ${PREFIX}/lib/fax
 	${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>

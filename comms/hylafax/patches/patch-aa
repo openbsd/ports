@@ -1,5 +1,5 @@
---- config/skel.orig	Wed Nov 27 00:20:26 1996
-+++ config/skel	Sun Feb  8 03:37:56 1998
+--- config/skel.orig	Wed Sep  2 13:02:56 1998
++++ config/skel	Wed Sep  2 13:03:15 1998
 @@ -41,8 +41,8 @@
  SessionTracing:		11		# log server-related operations
  RecvFileMode:		0600		# recvd facsimile are not public

@@ -1,67 +1,11 @@
---- util/TypeRules.c++.orig	Wed Nov 27 00:20:45 1996
-+++ util/TypeRules.c++	Sun Feb  8 03:38:01 1998
-@@ -48,7 +48,7 @@
- }
+--- faxd/ModemServer.c++.orig	Wed Sep  2 13:06:37 1998
++++ faxd/ModemServer.c++	Wed Sep  2 13:07:08 1998
+@@ -895,7 +895,7 @@
+     "7 bits, odd parity",	// ODD
+ };
  
- static const char* typeNames[] =
--    { "ascii", "string", "address", "byte", "short", "long" };
-+    { "ascii", "asciiesc", "string", "address", "byte", "short", "long" };
- static const char* opNames[] =
-     { "<any>", "=", "!=", "<", "<=", ">", ">=", "&", "^", "!" };
- static const char* resultNames[] = { "tiff", "postscript", "error" };
-@@ -65,7 +65,7 @@
- 	);
- 	if (type == STRING)
- 	    printf(" \"%s\"", value.s);
--	else if (type != ASCII) {
-+	else if (type != ASCII && type != ASCIIESC) {
- 	    if (op == ANY)
- 		printf(" <any value>");
- 	    else
-@@ -83,6 +83,7 @@
-     const u_char* cp = (const u_char*) data;
-     switch (type) {
-     case ASCII:
-+      {
- 	u_int i;
- 	for (i = 0; i < size; i++)
- 	    if (!isprint(cp[i]) && !isspace(cp[i])) {
-@@ -92,6 +93,19 @@
- 	    }
- 	ok = TRUE;
- 	goto done;
-+       }
-+    case ASCIIESC:
-+       {
-+	u_int i;
-+	for (i = 0; i < size; i++)
-+	    if (!isprint(cp[i]) && !isspace(cp[i]) && cp[i] != '\033') {
-+		if (verbose)
-+		    printf("failed (unprintable char %#x)\n", cp[i]);
-+		return (FALSE);
-+	    }
-+	ok = TRUE;
-+	goto done;
-+       }
-     case STRING:
- 	ok = (strncmp((const char*)(cp+off), value.s,
- 	    fxmin((u_int) strlen(value.s), (u_int)(size-off))) == 0);
-@@ -307,6 +321,8 @@
- 	    rule.type = TypeRule::STRING;
- 	else if (strncasecmp(tp, "ascii", cp-tp) == 0)
- 	    rule.type = TypeRule::ASCII;
-+	else if (strncasecmp(tp, "asciiesc", cp-tp) == 0)
-+	    rule.type = TypeRule::ASCIIESC;
- 	else if (strncasecmp(tp, "addr", cp-tp) == 0)
- 	    rule.type = TypeRule::ADDR;
- 	else {
-@@ -317,7 +333,8 @@
- 	    cp++;
- 	rule.op = TypeRule::EQ;		// default is '='
- 	const char* vp = cp;
--	if (rule.type != TypeRule::STRING && rule.type != TypeRule::ASCII) {
-+	if (rule.type != TypeRule::STRING && rule.type != TypeRule::ASCII
-+	 && rule.type != TypeRule::ASCIIESC) {
- 	    // numeric value
- 	    switch (*vp) {
- 	    case '=':	rule.op = TypeRule::EQ;	cp++; break;
+-#if defined(CCTS_OFLOW) && defined(CRTS_IFLOW) && !defined(__NetBSD__)
++#if defined(CCTS_OFLOW) && defined(CRTS_IFLOW) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+ #undef CRTSCTS				/* BSDi */
+ #define	CRTSCTS	(CCTS_OFLOW|CRTS_IFLOW)
+ #endif

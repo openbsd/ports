@@ -1,11 +1,11 @@
---- faxd/Class1.c++.orig	Wed Nov 27 00:21:26 1996
-+++ faxd/Class1.c++	Sun Feb  8 03:37:57 1998
-@@ -31,7 +31,7 @@
- #include "ModemConfig.h"
- #include "HDLCFrame.h"
- #include "t.30.h"
--#include "tiffio.h"
-+#include "tiffio34.h"
- 
- #include <stdlib.h>
- #include <ctype.h>
+--- util/SendFaxJob.c++.orig	Wed Sep  2 16:37:59 1998
++++ util/SendFaxJob.c++	Wed Sep  2 16:38:55 1998
+@@ -496,7 +496,7 @@
+ 	fxBool fileSent = 
+ 	       client.setFormat(FaxClient::FORM_PS)
+ 	    && client.setType(FaxClient::TYPE_I)	// XXX??? TYPE_A
+-	    && client.sendZData(fd, FaxClient::storeTemp, coverDoc, emsg);
++	    && client.sendZData(fd, &FaxClient::storeTemp, coverDoc, emsg);
+ 	Sys::close(fd);
+ 	if (!fileSent) {
+ 	    if (emsg == "")
