@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/02/23 12:35:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/13 12:23:49 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 COMMENT=	"network file distribution system"
@@ -20,14 +20,14 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-MASTER_SITES= 	ftp://ftp.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
-		ftp://ftp.se.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
-		ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
-		ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
-		ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
-		ftp://ftp.nectec.or.th/pub/FreeBSD/%SUBDIR%/ \
-		ftp://ftp.dnsbalance.ring.gr.jp/pub/FreeBSD/%SUBDIR%/
-MASTER_SITE_SUBDIR=	development/CVSup/snapshots
+MASTER_SITES= 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ \
+		ftp://ftp.se.FreeBSD.org/pub/FreeBSD/ \
+		ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ \
+		ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/ \
+		ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/ \
+		ftp://ftp.nectec.or.th/pub/FreeBSD/ \
+		ftp://ftp.dnsbalance.ring.gr.jp/pub/FreeBSD/
+MASTER_SITES:=	${MASTER_SITES:=development/CVSup/snapshots/}
 
 MULTI_PACKAGES=	-server
 
