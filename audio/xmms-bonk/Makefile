@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/21 17:51:48 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/01/02 20:42:47 alek Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	"XMMS input plugin to play bonk files"
 
 VERSION=	0.12
 DISTNAME=	bonk-xmms-${VERSION}
-PKGNAME=	xmms-bonk-${VERSION}
+PKGNAME=	xmms-bonk-${VERSION}p0
 CATEGORIES=	audio
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -20,7 +20,8 @@ WANTLIB=		stdc++
 
 MASTER_SITES=	http://www.proustmedia.de/bonk-xmms/
 
-LIB_DEPENDS=	xmms.3::audio/xmms
+RUN_DEPENDS=	::audio/xmms
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV=	CXX="${CXX}"
 ALL_TARGET=
