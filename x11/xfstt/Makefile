@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/01/25 05:56:48 jasoni Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/10 15:44:19 jasoni Exp $
 # $FreeBSD Id: Makefile,v 1.2 1999/06/28 02:22:43 billf Exp $
 #
 
@@ -17,7 +17,7 @@ do-install:
 
 post-install:
 	strip ${PREFIX}/bin/xfstt
-	mkdir ${PREFIX}/share/doc/xfstt
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xfstt
 	${INSTALL_DATA} ${WRKSRC}/FAQ ${PREFIX}/share/doc/xfstt
 	${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/xfstt
 	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/xfstt
