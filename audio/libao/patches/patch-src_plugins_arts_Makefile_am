@@ -1,13 +1,28 @@
-$OpenBSD: patch-src_plugins_arts_Makefile_am,v 1.1 2001/03/16 11:58:45 naddy Exp $
---- src/plugins/arts/Makefile.am.orig	Thu Mar 15 18:49:27 2001
-+++ src/plugins/arts/Makefile.am	Thu Mar 15 18:49:43 2001
+$OpenBSD: patch-src_plugins_arts_Makefile_am,v 1.2 2001/04/10 22:56:20 naddy Exp $
+--- src/plugins/arts/Makefile.am.orig	Sat Dec 30 06:03:25 2000
++++ src/plugins/arts/Makefile.am	Wed Apr 11 00:40:35 2001
 @@ -5,7 +5,8 @@ AUTOMAKE_OPTIONS = foreign
  if HAVE_ARTS
  
  artsltlibs = libarts.la
 -artsldflags = -export-dynamic -avoid-version
 +artsldflags = -export-dynamic \
-+              -version-info @LIB_CURRENT@:@LIB_REVISION@:@LIB_AGE@ \
++              -version-info @LIB_CURRENT@:@LIB_REVISION@:@LIB_AGE@
  artssources = ao_arts.c
  
  else
+@@ -16,13 +17,12 @@ artssources =
+ 
+ endif
+ 
+-INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/include
++INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/include @ARTS_CFLAGS@
+ 
+ libdir = $(plugindir)
+ lib_LTLIBRARIES = $(artsltlibs)
+ 
+ libarts_la_LDFLAGS = $(artsldflags)
+-CFLAGS = @ARTS_CFLAGS@
+ libarts_la_LIBADD = @ARTS_LIBS@
+ libarts_la_SOURCES = $(artssources)
+ 
