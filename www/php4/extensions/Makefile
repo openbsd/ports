@@ -1,7 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2002/09/14 15:22:06 avsm Exp $
+# $OpenBSD: Makefile,v 1.18 2003/04/03 10:27:22 avsm Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
+
+PATCH_LIST=	${PORTSDIR}/www/php4/core/patches/patch-* \
+		patch-*
 
 MULTI_PACKAGES=
 SUBPACKAGE?=
@@ -13,15 +16,16 @@ RUN_DEPENDS=	:php4-core-${V}:www/php4/core
 MODULES=	gettext iconv
 
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
-			--with-iconv-dir=${LOCALBASE} --with-iconv=${LOCALBASE}
+			--with-iconv-dir=${LOCALBASE} \
+			--with-iconv=${LOCALBASE}
 
 GRAPHIC_DEPENDS=	jpeg.62::graphics/jpeg \
 			png.3::graphics/png \
 			tiff.35::graphics/tiff
 
-GRAPHIC_CONFIG=		--with-jpeg-dir=shared,${LOCALBASE} \
-			--with-png-dir=shared,${LOCALBASE} \
-			--with-tiff-dir=shared,${LOCALBASE}
+GRAPHIC_CONFIG=		--with-jpeg-dir=${LOCALBASE} \
+			--with-png-dir=${LOCALBASE} \
+			--with-tiff-dir=${LOCALBASE}
 
 # bz2
 PSEUDO_FLAVORS+=	no_bz2
@@ -95,15 +99,14 @@ CONFIGURE_ARGS+=	--without-gd --without-xpm-dir --without-ttf \
 .else
 MULTI_PACKAGES+=	-gd
 COMMENT-gd=		"image manipulation extensions for php4"
-GD_DEPENDS=		gd.18::graphics/gd ${GRAPHIC_DEPENDS} \
-			ttf.1::print/freetype
-CONFIGURE_ARGS+=	--with-gd=shared,${LOCALBASE} ${GRAPHIC_CONFIG} \
+GD_DEPENDS=		ttf.1::print/freetype
+CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
 			--with-ttf=shared,${LOCALBASE} --without-freetype-dir
 .if !${FLAVOR:L:Mno_x11}
-USE_X11=		yes
-CONFIGURE_ARGS+=	--with-xpm-dir=${X11BASE}
+USE_X11=               yes
+CONFIGURE_ARGS+=       --with-xpm-dir=${X11BASE}
 .else
-CONFIGURE_ARGS+=	--without-xpm-dir 
+CONFIGURE_ARGS+=       --without-xpm-dir
 .endif
 .endif
 
@@ -126,7 +129,7 @@ CONFIGURE_ARGS+=	--without-imap --without-kerberos
 MULTI_PACKAGES+=	-imap
 COMMENT-imap=		"imap, pop3 and nntp extensions for php4"
 CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
-			--with-kerberos=/usr/lib --with-imap-ssl
+			--with-kerberos=/usr --with-imap-ssl
 IMAP_DEPENDS=		c-client.3::mail/c-client
 .endif
 
@@ -264,12 +267,12 @@ SYBASE_CT_DEPENDS=	tds.0,ct.0::databases/freetds
 # wddx & xml
 PSEUDO_FLAVORS+=	no_xml
 .if ${FLAVOR:L:Mno_xml}
-CONFIGURE_ARGS+=	--without-wddx --without-xml
+CONFIGURE_ARGS+=	--without-wddx --disable-xml
 .else
 MULTI_PACKAGES+=	-xml
 COMMENT-xml=		"xml parsing extensions for php4"
-CONFIGURE_ARGS+=	--with-wddx=shared --with-xml=shared \
-			--with-expat-dir=shared,${LOCALBASE}
+CONFIGURE_ARGS+=	--with-wddx=shared --enable-xml=shared \
+			--with-expat-dir=${LOCALBASE}
 XML_DEPENDS=		expat.2::textproc/expat
 .endif
 
@@ -281,7 +284,7 @@ CONFIGURE_ARGS+=	--disable-xslt
 MULTI_PACKAGES+=	-xslt
 COMMENT-xslt=		"xslt transformation extensions for php4"
 CONFIGURE_ARGS+=	--enable-xslt=shared --with-xslt-sablot=shared,${LOCALBASE} \
-			--with-expat-dir=shared,${LOCALBASE}
+			--with-expat-dir=${LOCALBASE}
 XSLT_DEPENDS=		sablot.96::textproc/sablotron expat.2::textproc/expat
 .endif
 
