@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/09/06 17:23:19 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/09/23 21:51:42 brad Exp $
 
 DISTNAME=	lzo-1.04
 CATEGORIES=	archivers devel
@@ -9,7 +9,7 @@ MASTER_SITES= 	ftp://ftp.uni-koeln.de/util/arc/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= libs/compression
 
-NEED_VERSION=	1.111
+NEED_VERSION=	1.114
 
 MAINTAINER=	brad@openbsd.org
 
