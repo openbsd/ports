@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/09/23 19:47:41 danh Exp $
+# $OpenBSD: Makefile,v 1.4 2000/09/24 05:26:00 form Exp $
 
 DISTNAME=	fvwm95-2.0.43a-Autoconf
 PKGNAME=	fvwm95-2.0.43a
@@ -22,5 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=	Yes
 
 CONFIGURE_STYLE= gnu dest
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/fvwm/fvwm95.man ${PREFIX}/man/man1/fvwm95.1
 
 .include <bsd.port.mk>
