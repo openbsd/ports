@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/03/04 07:28:02 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2004/08/11 21:36:16 sturm Exp $
 
 COMMENT=	"irc client that uses Tcl/Tk"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-LIB_DEPENDS=	::x11/tk/8.4
+LIB_DEPENDS=	tk84::x11/tk/8.4
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
