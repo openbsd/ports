@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/02/16 20:21:12 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/04/22 00:46:00 margarida Exp $
 bin/mha-dbedit
 bin/mha-dbrecover
 bin/mha-decode
@@ -240,6 +240,7 @@ share/doc/mhonarc/resources/editidx.html
 share/doc/mhonarc/resources/excs.html
 share/doc/mhonarc/resources/expireage.html
 share/doc/mhonarc/resources/expiredate.html
+share/doc/mhonarc/resources/fasttempfiles.html
 share/doc/mhonarc/resources/fieldorder.html
 share/doc/mhonarc/resources/fieldsbeg.html
 share/doc/mhonarc/resources/fieldsend.html
