@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: dpb,v 1.8 2004/11/14 11:25:53 sturm Exp $
+# $OpenBSD: dpb,v 1.9 2004/11/14 11:46:15 sturm Exp $
 # Copyright (c) 2004 Nikolay Sturm <sturm@openbsd.org>.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -67,22 +67,24 @@ our $TIMEOUT = $opt_t || 60;
 push @SSH, "-o ConnectTimeout=$TIMEOUT";
 
 
-# per slave pid: host, port and retval
+# per slave pid: node, port and retval
 our $SLAVES = {};
 
-# indexed by port
-our %childpid = ();
+# per port: slave pid
+our $PORTS = {};
 
 # dependency lists
 our %depend_on = ();
 our %prereqs_of = ();
 
-our @FREE_HOSTS = ();
-our @DOWN_HOSTS = ();
+# per node: fifo, host, pid, shell
+our $NODES = {};
 
-our %FIFO = ();
-our %SHELL = ();
-our %SSH_MASTER = ();
+# per host: down, nodes, ssh_master
+our $HOSTS = {};
+
+our $FREE_NODES = {};
+our @DOWN_HOSTS = ();
 
 our $CHECK_HOSTS;
 our $check_host_ctr = 0;
@@ -151,22 +153,50 @@ sub mark_host_down($)
 
 	warn "*** lost $host\n";
 
+	$HOSTS->{$host}{down} = 1;
 	kill_ssh_master($host);
 	push(@DOWN_HOSTS, $host);
+
+	foreach my $node (@{$HOSTS->{$host}{nodes}}) {
+		my $nodepid = $NODES->{$node}{pid};
+
+		if (defined $nodepid) {
+			kill KILL => $nodepid ;
+			child_handler();
+			reap_slaves();
+		}
+		mark_node_down($node);
+	}
 }
 
-sub mark_as_free($)
+sub mark_node_down($)
 {
-	push(@FREE_HOSTS, shift);
+	my $node = shift;
+	my $nodepid = $NODES->{$node}{pid};
+
+	# active node
+	delete $NODES->{$node}{pid};
+	delete $SLAVES->{$nodepid} if defined $nodepid;
+
+	# free node
+	delete $FREE_NODES->{$node};
+}
+
+sub mark_node_free($)
+{
+	my $node = shift;
+	
+	$FREE_NODES->{$node} = 1;
 }
 
 sub kill_ssh_master($)
 {
 	my $host = shift;
+	my $ssh_mpid = $HOSTS->{$host}{ssh_master};
 	
-	if (defined $SSH_MASTER{$host}) {
-		kill INT => $SSH_MASTER{$host};
-		delete $SSH_MASTER{$host};
+	if (defined $ssh_mpid) {
+		kill INT => $ssh_mpid;
+		delete $HOSTS->{$host}{ssh_master};
 	}
 }
 
@@ -184,7 +214,7 @@ sub start_ssh_master($)
 			
 			sleep 1;
 		}
-		$SSH_MASTER{$host} = $pid;
+		$HOSTS->{$host}{ssh_master} = $pid;
 	} else {
 		# child
 		my @args = (@SSH, "-N", "-M", "-S", "$TMPDIR/ssh-$host",
@@ -209,8 +239,8 @@ sub clear_packages($)
 	} else {
 		# child
 		# beware of format, might not work with /bin/sh -c otherwise
-		my @args = (@{$SHELL{$host}},
-		    "/usr/bin/sudo /usr/sbin/pkg_delete -c -q /var/db/pkg/*");
+		my @args = (@{$NODES->{"$host%0"}{shell}},
+			    "/usr/bin/sudo /usr/sbin/pkg_delete -c -q /var/db/pkg/*");
 		my_exec(\@args, "/dev/null");
 	}
 }
@@ -251,47 +281,25 @@ sub check_hosts()
 	# in regular mode
 	return if defined $opt_d or ($check_host_ctr++ % 60 != 0);
 
-	# any host back up?
-	for (my $i = 0; $i <= $#DOWN_HOSTS; $i++) {
-		my $host = $DOWN_HOSTS[$i];
+	foreach my $host (keys %{$HOSTS}) {
+		next if ($host =~ /^localhost/);
 		my $retval = check_host($host);
 
-		if ($retval == 0) {
+		if ($retval == 0 and $HOSTS->{$host}{down}) {
 			warn "*** $host is back\n";
-			mark_as_free($host);
 			start_ssh_master($host);
-			splice(@DOWN_HOSTS, $i, 1);
-			$i--;
-		}
-	}
-
-	# free hosts still alive?
-	for (my $i = 0; $i <= $#FREE_HOSTS; $i++) {
-		my $host = $FREE_HOSTS[$i];
-		next if ($host =~ /^localhost/);
-		my $retval = check_host($host);
-
-		if ($retval != 0) {
-			mark_host_down($host);
-			splice(@FREE_HOSTS, $i, 1);
-			$i--;
-			next;
-		} elsif ($retval == 0) {
+			foreach my $node (@{$HOSTS->{$host}{nodes}}) {
+				mark_node_free($node);
+			}
+			delete $HOSTS->{$host}{down};
+		} elsif ($retval !=0 and $HOSTS->{$host}{down}) {
+			# host is still down, do nothing
+		} elsif ($retval == 0 and not $HOSTS->{$host}{down}) {
+			# host is still up
 			start_ssh_master($host) if not -e "$TMPDIR/ssh-$host";
-		}
-	}
-
-	# building hosts all still alive?
-	foreach my $pid (keys %{$SLAVES}) {
-		my $host = $SLAVES->{$pid}{host};
-		next if ($host =~ /^localhost/);
-		my $retval = check_host($host);
-
-		if ($retval != 0) {
-			my $port = $SLAVES->{$pid}{port};
+		} elsif ($retval != 0 and not $HOSTS->{$host}{down}) {
+			# host is down
 			mark_host_down($host);
-			delete $childpid{$port};
-			delete $SLAVES->{$pid};
 		}
 	}
 }
@@ -301,11 +309,12 @@ sub update_after_slave($)
 	my $pid = shift;
 	return unless defined $SLAVES->{$pid};
 	
-	my $host = $SLAVES->{$pid}{host};
+	my $node = $SLAVES->{$pid}{node};
 	my $port = $SLAVES->{$pid}{port};
 	my $retval = $SLAVES->{$pid}{retval};
 
 	delete $SLAVES->{$pid};
+	delete $NODES->{$node}{pid};
 
 	if ($retval == 0) {
 		print "<== built $port\n";
@@ -317,34 +326,33 @@ sub update_after_slave($)
 
 		remove_port($port);
 	} elsif ($retval == 255) {
-		delete $childpid{$port};
-		mark_host_down($host);
-
-		return;
+		warn "*** $node died on signal, retrying $port later.\n";
 	} else {
-		warn "*** Unexpected return code $retval from $host "
+		warn "*** Unexpected return code $retval from $node "
 		    . "for $port.\n";
 
 		remove_port($port);
 	}
-	delete $childpid{$port};
-	mark_as_free($host);
+	delete $PORTS->{$port};
+	mark_node_free($node);
 }
 
-sub find_free_host()
+sub find_free_node()
 {
-	child_handler();
-	reap_slaves();
-	check_hosts();
-
-	while (@FREE_HOSTS == 0) {
-		sleep(1);
-
+	while (1) {
 		child_handler();
 		reap_slaves();
 		check_hosts();
+
+		foreach my $n (keys %{$FREE_NODES}) {
+			if (defined $FREE_NODES->{$n}) {
+				delete $FREE_NODES->{$n};
+				return $n;
+			}
+		}
+
+		sleep(1);
 	}
-	return pop @FREE_HOSTS;
 }
 
 # we failed to build $port, thus no $dep can be build (recursive)
@@ -427,28 +435,56 @@ sub parse_dependency_file()
 
 sub parse_hosts_file()
 {
+	my $sysctl = "/sbin/sysctl -n hw.ncpu";
+
 	open(my $fh, "<", $HOSTS_FILE) or die "Could not open $HOSTS_FILE: $!\n";
 
 	while (<$fh>) {
 		chomp;
 		my $host = $_;
-
-		mark_as_free($host);
-
+		my ($ncpu, $local);
+		
 		if (/^localhost/) {
-			@{$SHELL{$host}} = ("/bin/sh", "-c");
+			$ncpu = `$sysctl`;
+			$local = 1;
 		} else {
-			@{$SHELL{$host}} =
-			  (@SSH, "-S", "$TMPDIR/ssh-$host", "$host");
+			$ncpu = `@SSH $host $sysctl`;
+			$local = 0
 		}
-		$FIFO{$host} = "$TMPDIR/dpb-$host.log";
+
+		if (not defined $ncpu or $ncpu eq "") {
+			warn "*** Host $host does not answer, not using it.\n";
+			next;
+		} elsif ($ncpu > 1 and defined $opt_c) {
+			$ncpu = 1;
+			warn "*** Only using one node on $host due to '-c'\n";
+		}
+
+		$HOSTS->{$host}{nodes} = ();
+
+		for (my $i = 0; $i < $ncpu; $i++) {
+			my $node = "$host%$i";
+
+			push @{$HOSTS->{$host}{nodes}}, $node;
+			
+			mark_node_free($node);
+			$NODES->{$node}{fifo} =
+			  "$TMPDIR/dpb-$node.log";
+			$NODES->{$node}{host} = $host;
+			if ($local == 1) {
+				@{$NODES->{$node}{shell}} = ("/bin/sh", "-c");
+			} else {
+				@{$NODES->{$node}{shell}} =
+				  (@SSH, "-S", "$TMPDIR/ssh-$host", "$host");
+			}
+		}
 	}
 	close($fh);
 }
 
 sub build_package($$$$)
 {
-	my ($host, $port, $flavor, $fullport) = @_;
+	my ($node, $port, $flavor, $fullport) = @_;
 
 	my $pid = fork();
 	die "fork: $!" unless defined $pid;
@@ -456,10 +492,11 @@ sub build_package($$$$)
 	if ($pid > 0) {
 		# parent
 		$SLAVES->{$pid} = {};
-		$SLAVES->{$pid}{host} = $host;
+		$SLAVES->{$pid}{node} = $node;
 		$SLAVES->{$pid}{port} = $fullport;
 		$SLAVES->{$pid}{retval} = undef;
-		$childpid{$fullport} = $pid;
+		$PORTS->{$fullport} = $pid;
+		$NODES->{$node}{pid} = $pid;
 
 		return;
 	} else {
@@ -471,7 +508,7 @@ sub build_package($$$$)
 
 		print "==> building $port";
 		print ", FLAVOR \"$flavor\"" if defined $flavor;
-		print " on $host\n";
+		print " on $node\n";
 
 		if (defined $opt_d) {
 			sleep(1);
@@ -479,11 +516,11 @@ sub build_package($$$$)
 			my $arg = "cd $PORTSDIR/$port && ";
 			$arg .= "FLAVOR=\"$flavor\" " if defined $flavor;
 			$arg .= "$MAKE $MAKEFLAGS package";
-			my @args = (@{$SHELL{$host}}, $arg);
+			my @args = (@{$NODES->{$node}{shell}}, $arg);
 			
-			start_logger($host);
-			clear_packages($host) if defined $opt_c;
-			my_exec(\@args, "$FIFO{$host}");
+			start_logger($node);
+			clear_packages($NODES->{$node}{host}) if defined $opt_c;
+			my_exec(\@args, "$NODES->{$node}{fifo}");
 		}
 		exit 0;
 	}
@@ -516,11 +553,12 @@ sub remove_from_list(\@$)
 
 sub start_logger()
 {
-	my $host = shift;
+	my $node = shift;
+	my $fifo = $NODES->{$node}{fifo};
 
-	unless (-p $FIFO{$host}) {
-		system("mkfifo $FIFO{$host}") and
-		  die "Cannot create $FIFO{$host}: $!";
+	unless (-p $fifo) {
+		system("mkfifo $fifo") and
+		  die "Cannot create $fifo: $!";
 	}
 	
 	my $pid = fork();
@@ -533,7 +571,7 @@ sub start_logger()
 	} else {
 		# child
 		# dies on its own on EOF
-		my @args = ("$LOGGER < $FIFO{$host}");
+		my @args = ("$LOGGER < $fifo");
 		my_exec(\@args, "/dev/null");
 	}
 }
@@ -543,12 +581,9 @@ sub clean_up($)
 	# only remove self generated dependency file
 	unlink($opt_T) if ref $opt_T;
 
-	foreach my $h (keys %SSH_MASTER) {
-		kill_ssh_master($h);
-	}
-
-	foreach my $h (keys %FIFO) {
-		unlink($FIFO{$h});
+	foreach my $node (keys %{$NODES}) {
+		kill_ssh_master($NODES->{$node}{host});
+		unlink($NODES->{$node}{fifo}) if -p $NODES->{$node}{fifo};
 	}
 
 	exit(shift);
@@ -594,7 +629,7 @@ parse_hosts_file();
 check_hosts();
 
 my @keys_prereqs = (keys %prereqs_of);
-my @keys_childpid = ();
+my @keys_PORTS = ();
 do {
 	# sort ports by their importance, i.e. by the number of other
 	# ports depending on them
@@ -602,7 +637,7 @@ do {
 	    @keys_prereqs) {
 		# only compile ports that don't have unbuilt dependencies
 		if ($#{$prereqs_of{$k}} == 0) {
-			my $host = find_free_host();
+			my $node = find_free_node();
 			my ($port, $flavor);
 			my @spec = split(/,/, $k);
 
@@ -612,7 +647,7 @@ do {
 			
 			$port = $spec[0];
 			# a build for a different subpackage might be running
-			foreach (keys %childpid) {
+			foreach (keys %{$PORTS}) {
 				my @key_spec = split(/,/);
 				if ($port eq $key_spec[0]) {
 					$build_conflict = 1;
@@ -627,9 +662,10 @@ do {
 			}
 
 			if ($build_conflict == 0) {
-				build_package($host, $port, $flavor, $k);
+				build_package($node, $port, $flavor, $k);
 			} else {
-				mark_as_free($host);
+				mark_node_free($node);
+				next;
 			}
 
 			last;
@@ -642,15 +678,15 @@ do {
 	reap_slaves();
 
 	# create new key set, taking currently building ports into account
-	@keys_childpid = (keys %childpid);
+	@keys_PORTS = (keys %{$PORTS});
 	@keys_prereqs = ();
 	foreach my $k (keys %prereqs_of) {
-		push(@keys_prereqs, $k) unless defined $childpid{$k};
+		push(@keys_prereqs, $k) unless defined $PORTS->{$k};
 	}
 	
 	sleep(1);
 	
-} while ($#keys_prereqs >= 0 or $#keys_childpid >= 0);
+} while ($#keys_prereqs >= 0 or $#keys_PORTS >= 0);
 
 print "==> done, cleaning up\n";
 clean_up(0);
