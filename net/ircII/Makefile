@@ -1,14 +1,17 @@
-# $OpenBSD: Makefile,v 1.24 2003/03/16 17:38:37 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2003/10/18 11:41:22 naddy Exp $
 # $FreeBSD: Makefile,v 1.15 1998/01/25 20:40:00 torstenb Exp $
 
 COMMENT=	"Internet Relay Chat client"
 
-VERSION=	20030314
+VERSION=	20030709
 DISTNAME=	ircii-${VERSION}
 PKGNAME=	ircII-${VERSION}
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.warped.com/pub/ircII/old/ \
+MASTER_SITES=	ftp://ftp.warped.com/pub/ircII/ \
+		ftp://ircftp.au.eterna.com.au/pub/ircII/ \
+		ftp://ftp.warped.com/pub/ircII/old/ \
 		ftp://ircftp.au.eterna.com.au/pub/ircII/old/
+EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -27,11 +30,11 @@ FAKE_FLAGS=	DESTDIR="${WRKINST}" INSTALL_IRC='$${bindir}/ircII' \
 
 NO_REGRESS=	Yes
 
-SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu
+SEPARATE_BUILD=	simple
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-ipv6 --exec-prefix="${PREFIX}"
 
 post-install:
-	@cd ${PREFIX}/bin && ln -sf ircII-${VERSION} ircII
+	@mv ${PREFIX}/bin/ircII-${VERSION} ${PREFIX}/bin/ircII
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.14 2003/03/15 02:28:49 brad Exp $
+@comment $OpenBSD: PLIST,v 1.15 2003/10/18 11:41:23 naddy Exp $
 bin/ircII
-bin/ircII-${VERSION}
 bin/ircbug
 bin/ircflush
 bin/ircio
@@ -277,6 +276,7 @@ share/irc/help/on/notify_signoff
 share/irc/help/on/notify_signon
 share/irc/help/on/numeric
 share/irc/help/on/on
+share/irc/help/on/os_signal
 share/irc/help/on/public
 share/irc/help/on/public_msg
 share/irc/help/on/public_notice
@@ -328,6 +328,7 @@ share/irc/help/set/beep
 share/irc/help/set/beep_max
 share/irc/help/set/beep_on_msg
 share/irc/help/set/beep_when_away
+share/irc/help/set/bind_local_dcchost
 share/irc/help/set/bold_video
 share/irc/help/set/channel_name_width
 share/irc/help/set/client_information
@@ -343,6 +344,7 @@ share/irc/help/set/ctcp_reply_flood_size
 share/irc/help/set/ctcp_reply_ignore_seconds
 share/irc/help/set/dcc_block_size
 share/irc/help/set/dcchost
+share/irc/help/set/dccport
 share/irc/help/set/debug
 share/irc/help/set/decrypt_program
 share/irc/help/set/display
@@ -637,5 +639,3 @@ share/irc/translation/UNITED_KINGDOM_COM
 @dirrm share/irc/help/alias
 @dirrm share/irc/help
 @dirrm share/irc
-@exec echo "The ircII executable has been installed as %D/bin/ircII"
-@exec echo "to avoid conflict with another IRC package"
