@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.230 2002/09/03 18:48:19 lebel Exp $
+# $OpenBSD: Makefile,v 1.231 2002/09/10 21:38:03 fgsch Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -202,6 +202,7 @@
      SUBDIR += xchat
      SUBDIR += xprobe
      SUBDIR += yafc
+     SUBDIR += ysmv7
      SUBDIR += ytalk
      SUBDIR += ytalk,no_x11
      SUBDIR += zebra
