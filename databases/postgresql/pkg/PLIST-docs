@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-docs,v 1.13 2004/07/26 10:10:46 peter Exp $
+@comment $OpenBSD: PLIST-docs,v 1.14 2004/08/09 12:16:55 espie Exp $
+share/doc/postgresql/html/
 share/doc/postgresql/html/LEGALNOTICE.html
 share/doc/postgresql/html/admin.html
 share/doc/postgresql/html/app-clusterdb.html
@@ -600,4 +601,3 @@ share/doc/postgresql/html/xoper-optimization.html
 share/doc/postgresql/html/xoper.html
 share/doc/postgresql/html/xplang.html
 share/doc/postgresql/html/xtypes.html
-@dirrm share/doc/postgresql/html
