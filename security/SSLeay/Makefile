@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/06/19 05:30:11 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/09/04 04:02:55 brad Exp $
 
 DISTNAME=	SSLeay-0.9.0b
 CATEGORIES=     security
@@ -19,9 +19,9 @@ CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS+= -DPERL5
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-LIB_DEPENDS=	rsaref:${PORTSDIR}/security/rsaref
+LIB_DEPENDS=	rsaref.2.0:${PORTSDIR}/security/rsaref
 CONFIGURE_ENV+=	USA_RESIDENT=YES
-CONFIGURE_ARGS+= -I../../rsaref/ -DRSAref
+CONFIGURE_ARGS+= -I../../rsaref -DRSAref
 .endif
 
 .if (${MACHINE_ARCH} == "i386")
@@ -59,12 +59,12 @@ fetch-depends:
 
 post-patch:
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-	${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/rsaref.patch
+	@${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/rsaref.patch
 .endif
 
 pre-build:
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-	${CP} ${FILESDIR}/do-rsaref-ssl ${WRKSRC}
+	@${CP} ${FILESDIR}/do-rsaref-ssl ${WRKSRC}
 .endif
 
 post-install:
