@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.11 1998/11/12 12:09:37 downsj Exp $
+$OpenBSD: LICENSE,v 1.12 1999/04/08 21:56:39 marc Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -55,33 +55,36 @@ v	port name			distfile name			License
 
 N	archivers/arc			arc521e.pl8.tar.Z		NOFEE
 N	archivers/bzip			bzip-0.21.tar.gz		NOFEE
-Y	archivers/bzip2			bzip2-0.9.0b.tar.gz		BSD
+Y	archivers/bzip2			bzip2-0.9.0c.tar.gz		BSD
 Y	archivers/freeze		freeze-2.5.tar.gz		NONE
 Y	archivers/gshar+gunshar		sharutils-4.2.tar.gz		GPL
 Y	archivers/gtar			tar-1.12.tar.gz			GPL
 Y	archivers/ha			ha0999.tgz			GPL
 Y	archivers/lha			lha-114c.tgz			COPY
 N	archivers/nulib			nulib325.tar.Z			NOFEE
-Y	archivers/p5-Compress-Zlib	Compress-Zlib-0.50.tar.gz	PERL
+Y	archivers/p5-Compress-Zlib	Compress-Zlib-1.01.tar.gz	PERL
 N	archivers/rar			rarbsd				NOFEE
-Y	archivers/unarj			unarj241.tar.Z			COPY
+Y	archivers/unarj			unarj2.43.tgz			COPY
 N	archivers/unrar			unrar-2.01.tgz			NOFEE
-Y	archivers/unzip			unzip532.tar.gz			COPY
+Y	archivers/unzip			unzip540.tar.gz			COPY
 Y	archivers/zip			zip22.tar.gz			COPY
 Y	archivers/zoo			zoo-2.10pl1.tar.gz		COPY
 N	astro/sattrack			sattrack-3.1.6.tar.gz		COPY
 N	astro/xearth			xearth-1.0.tar.gz		NOFEE
-N	astro/xephem			xephem-3.1.tar.gz		NOFEE
+N	astro/xephem			xephem-3.2.2.tar.gz		NOFEE
 N	astro/xphoon			xphoon.tar.Z			NOFEE
 Y	audio/amp			amp-0.7.6.tar.gz		COPY
+-	audio/esound			esound-0.2.8.tar.gz
 Y	audio/gsm			gsm-1.0.10.tar.gz		BSD
 Y	audio/mpegaudio			mpegaudio.tar.Z			COPY
-Y	audio/mpg123			mpg123-0.59o.tar.gz		COPY
+Y	audio/mpg123			mpg123-0.59q.tar.gz		COPY
 Y	audio/nspmod			nspmod-0.1.tar.gz		GPL
 Y	audio/rplay			rplay-3.3.0.tar.gz		GPL
 Y	audio/rsynth			rsynth-2.0.tar.gz		NONE
-Y	audio/sox			soxgamma.tar.gz			COPY
-Y	audio/tosha			tosha-0.05.tar.gz		BSD
+Y	audio/sox			sox-12.15.tar.gz		COPY
+-	audio/timidity			goemon.tgz
+-	audio/timidity			timidity-0.2i.tar.gz
+Y	audio/tosha			tosha-0.6.tar.gz		BSD
 Y	audio/tracker			tracker-5.3.tgz			COPY
 Y	audio/workman			WorkMan-1.3a.tar.gz		GPL
 Y	audio/xcd			xcd-1.6.tar.gz			COPY
@@ -95,8 +98,10 @@ Y	benchmarks/bonnie		Bonnie.tar.Z			BSD
 Y	benchmarks/bytebench		bytebench-3.1.tar.Z		NONE
 Y	benchmarks/iozone		iozone-2.01.shar.gz		COPY
 Y	benchmarks/lmbench		lmbench.tar.Z			GPL
+-	benchmarks/netpipe		netpipe-2.3.tar.gz
 N	benchmarks/tcpblast		-none-				NONE
-N	benchmarks/xengine		xengine				NOFEE
+N	benchmarks/xengine		xengine/part01.z		NOFEE
+N	benchmarks/xengine		xengine/patch1.z		NOFEE
 Y	cad/spice/			sp3f4.kit.tar.Z			COPY
 Y	cad/spice/			sp3f4.patch.tar.Z		COPY
 Y	chinese/c2t			c2t.tar.gz			NONE
@@ -107,8 +112,9 @@ Y	comms/conserver			conserver-5.21-Beta.shar.gz	BSD
 Y	comms/efax			efax08a.tar.gz			GPL
 Y	comms/hylafax			hylafax-v4.0pl2-tar.gz		BSD
 N	comms/kermit			cku192src.tar.gz		NOFEE
-Y	comms/mgetty+sendfax		mgetty1.1.17-Aug07.tar.gz	COPY
-Y	comms/minicom			minicom-1.78.src.tar.gz		GPL
+-	comms/lrzsz			lrzsz-0.12.19.tar.gz
+Y	comms/mgetty+sendfax		mgetty1.1.20-Jan17.tar.gz	COPY
+Y	comms/minicom			minicom-1.82.src.tar.gz		GPL
 Y	comms/pilot-link		pilot-link.0.9.0.tar.gz		GPL
 Y	comms/qpage			qpage-3.2.tar.Z			COPY
 N	comms/rzsz			rzsz.zip			COMM
@@ -116,40 +122,53 @@ Y	comms/seyon			Seyon-2.14b-tar.Z		BSD
 Y	comms/tkhylafax			tkhylafax-3.0b2.tar.gz		BSD
 Y	comms/xcept			xcept-2.1.2.tar.gz		BSD
 Y	comms/zmtx-zmrx			zmtx-zmrx.shar.gz		COPY
+Y	converters/base64		base64.tar.gz			PD
 Y	converters/btoa			btoa-5.2.tar.gz			COPY
 Y	converters/btoa			btoa-5.2-patch1.gz		COPY
-Y	converters/base64		base64.tar.gz			PD
 Y	converters/ish			ish-1.11.tar.gz			PD
 N	converters/mimepp		mimepp-1.0.tar.gz		REST
 Y	converters/mpack		mpack-1.5-src.tar.Z		BSD
-Y	converters/p5-Convert-UU	Convert-UU-0.04.tar.gz		PERL
-Y	converters/p5-MIME-Base64	MIME-Base64-2.03.tar.gz		PERL
+Y	converters/p5-Convert-UU	Convert-UU-0.20.tar.gz		PERL
+Y	converters/p5-MIME-Base64	MIME-Base64-2.10.tar.gz		PERL
 Y	converters/recode		recode-3.4.tar.gz		GPL
 N	converters/trans		trans120.tar.gz			LIC
 Y	databases/db			db-2.3.16.tar.gz		BSD
 Y	databases/gdbm			gdbm-1.7.3.tar.gz		GPL
+-	databases/mysql			mysql-3.22.19b.tar.gz
 Y	databases/p5-DBD-Pg		DBD-Pg-0.69.tar.gz		GPL/PERL
 Y	databases/p5-DBI		DBI-0.93.tar.gz			GPL/PERL
 Y	databases/pgaccess		pgaccess-0.88.tar.gz		BSD
 Y	databases/postgresql		postgresql-6.3.2.tar.gz		BSD
-Y	devel/autoconf			autoconf-2.12.tar.gz		GPL
-Y	devel/automake			automake-1.2.tar.gz		GPL
+-	devel/ElectricFence		ElectricFence-2.0.5.tar.gz
+-	devel/ORBit			ORBit-0.4.0.tar.gz
+Y	devel/autoconf			autoconf-2.13.tar.gz		GPL
+Y	devel/automake			automake-1.4.tar.gz		GPL
 Y	devel/bison			bison-1.25.tar.gz		GPL
-Y	devel/ddd			ddd-3.0.tar.gz			GPL
+Y	devel/ddd			ddd-3.1.3.tar.gz		GPL
 Y	devel/dejagnu			dejagnu-1.3.tar.gz		GPL
+Y	devel/gettext			gettext-0.10.35.tar.gz		GPL
 Y	devel/gindent			indent-1.9.1.tar.gz		GPL
-Y	devel/gmake			make-3.76.1.tar.gz		GPL
+Y	devel/glib			glib-1.2.1.tar.gz		GPL
+Y	devel/gmake			make-3.77.tar.gz		GPL
+-	devel/gsl			gsl-0.3b.tar.gz
 Y	devel/id-utils			id-utils-3.2.tar.gz		GPL
-Y	devel/libslang			slang0.99-38.tar.gz		GPL/PERL
+-	devel/libaudiofile		audiofile-0.1.6.tar.gz
+-	devel/libproplist		libPropList-0.8.3.tar.gz
+Y	devel/libslang			slang1.2.2.tar.gz		GPL/PERL
 Y	devel/m4			m4-1.4.tar.gz			GPL
+-	devel/mm			mm-1.0.0.tar.gz
 Y	devel/nasm			nasm-0.97.tar.gz		COPY
+-	devel/prctools			prc-tools.0.5.0.tar.gz
+Y	devel/prctools			binutils-2.7.tar.gz		GPL
+Y	devel/prctools			gdb-4.16.tar.gz			GPL
+Y	devel/prctools			gcc-2.7.2.2.tar.gz		GPL
 Y	devel/swig			swig1.1.tar.gz			BSD
-N	devel/tkcvs			-none-				NONE
+-	devel/tkcvs			tkcvs-6.0.tar.gz
 Y	devel/xmake			xmake-1.01.tgz			NONE
 N	editors/axe			aXe-6.1.2.tar.Z			NOFEE
 Y	editors/beav			beav_140-7.tar.gz		GPL
 Y	editors/emacs			emacs-20.3.tar.gz		GPL
-Y	editors/hexedit			hexedit-0.9.3.src.tgz		GPL
+Y	editors/hexedit			hexedit-1.1.0.src.tgz		GPL
 Y	editors/jed			jed0.98-7.tar.gz		GPL
 Y	editors/joe			joe2.8.tar.Z			GPL
 N	editors/jove			jove-4.16.tar.gz		NOFEE
@@ -157,24 +176,29 @@ N	editors/nedit			nedit.app-defaults		NOFEE
 N	editors/nedit			nedit_source.tar.gz		NOFEE
 Y	editors/textedit		textedit.tar.gz			COPY
 Y	editors/uemacs			ue400dev.zip			NOFEE
-Y	editors/vim			vim-5.1.tar.gz			COPY
+Y	editors/vim			vim-5.3-src.tar.gz		COPY
+Y	editors/vim			vim-5.3-rt.tar.gz		COPY
+-	editors/wordperfect		GUILG00.GZ
+Y	editors/xemacs			xemacs-20.4.tar.gz		GPL
 Y	editors/xwpe			xwpe-1.5.9a.tgz			GPL
-N	emulators/bochs			bochs-980513a.tar.gz		COMM
-N	emulators/linux_lib		linux_lib-2.4.tar.gz		GPL
-Y	emulators/wine			Wine-980628.tar.gz		BSD
+N	emulators/bochs			bochs-990219a.tar.gz		COMM
+N	emulators/linux_lib		linux_lib-2.6.1.tar.gz		GPL
+-	emulators/simh			sim_2.3c.tar.gz
+Y	emulators/wine			Wine-990225.tar.gz		BSD
 Y	emulators/x48			x48-0.4.0.tar.gz		GPL
 Y	emulators/xcopilot		xcopilot-0.6.6.tar.gz		GPL
-Y	games/abuse			abuse_pd.tgz			PD
-N	games/agm			agm-1.1.tar.gz			NOFEE
-
+Y	games/abuse			-none-				
+N	games/agm			agm-1.3.1.tar.gz		NOFEE
 Y	games/an			an-0.93.tar.gz			GPL
+-	games/bnetd			bnetd-0.4.1.tar.gz
 Y	games/connect4			connect4			NONE
-Y	games/freeciv			freeciv-1.7.0.tar.gz		GPL
+Y	games/freeciv			freeciv-1.7.1.tar.gz		GPL
 Y	games/gnuchess			gnuchess-4.0.pl77.tar.gz	GPL
 Y	games/gnugo			gnugo-1.2.tar.gz		GPL
 Y	games/gnushogi			gnushogi-1.2p03.tar.gz		GPL
 Y	games/nethack			nethack-3.2.2.tar.gz		GPL
 Y	games/netris			netris-0.4.tar.gz		GPL
+Y	games/slash			nethack-3.2.2.tar.gz		GPL
 Y	games/slash			Slash-Unix.tar.gz		GPL
 Y	games/spider			spider.tar.gz			BSD
 Y	games/starlanes			starlanes-1.2.2.tar.gz		GPL
@@ -182,17 +206,19 @@ Y	games/xasteroids		xasteroids.sh.Z			COPY
 Y	games/xbat			xev111.tar.gz			COPY
 Y	games/xbattle			xbattle-5.4.1.tar.gz		COPY
 Y	games/xbill			xbill-2.0.tgz			GPL
-Y	games/xbl			xbl-1.0h.tar.Z			GPL
-Y	games/xblast			xblast-2.2.tar.gz		GPL
-Y	games/xboard			xboard-3.6.2.tar.gz		GPL
-Y	games/xboing			xboing2.3.tar.gz		X
+Y	games/xbl			xbl-1.0j.tar.Z			GPL
+Y	games/xblast			xblast-2.6.tar.gz		GPL
+Y	games/xboard			xboard-4.0.0.tar.gz		GPL
+Y	games/xboing			xboing2.4.tar.gz		X
 Y	games/xchomp			xchomp-pl1.tar.gz		NONE
-Y	games/xcubes			xcubes-5.4.1.tar.gz		BSD
+Y	games/xcubes			xcubes-5.4.4.tar.gz		BSD
 Y	games/xdeblock			xdeblock.tgz			NONE
 Y	games/xdino			xdino-5.4.4.tar.gz		BSD
 Y	games/xevil			xevil1.5.tar.Z			GPL
 Y	games/xgolgo			xeyes-g.tar.gz			BSD
-N	games/xinvaders			xinvaders.tar.gz		NOFEE
+N	games/xinvaders			xinvaders/part01.Z		NOFEE
+N	games/xinvaders			xinvaders/part02.Z		NOFEE
+N	games/xinvaders			xinvaders/part03.Z		NOFEE
 Y	games/xjewel			xjewel-1.6.tar.z		COPY
 Y	games/xjig			xjig-2.4.tgz			BSD
 Y	games/xkobo			xkobo-1.11.tar.gz		GPL
@@ -205,7 +231,6 @@ Y	games/xmj			xmj.tar.gz			BSD
 N	games/xmris			xmris.4.04.tgz			NOFEE
 Y	games/xneko			xneko.tar.gz			BSD
 Y	games/xonix			xonix-1.4.tar.gz		BSD
-Y	games/xpacman			pacman10.zip			GPL
 Y	games/xpat2			xpat2-1.04-src.tar.gz		GPL
 Y	games/xripple			xripple.tar.gz			COPY
 Y	games/xroach			xroach.tar.gz			COPY
@@ -214,11 +239,19 @@ Y	games/xskat			xskat-1.6.tar.gz		COPY
 Y	games/xsol			xsol-new.tar.gz			BSD
 Y	games/xsoldier			xsoldier-0.96.tar.gz		GPL
 N	games/xteddy			xteddy-1.0.tar.gz		NOFEE
-Y	graphics/ImageMagick		ImageMagick-4.0.6.tar.gz	BSD
+Y	graphics/ImageMagick		ImageMagick-4.2.0.tar.gz	BSD
+-	graphics/MesaGL			MesaLib-3.0.tar.gz
+-	graphics/MesaGL			MesaDemos-3.0.tar.gz
+Y	graphics/aalib			aalib-1.2.tar.gz		GPL
 Y	graphics/compface		compface.tar.gz			COPY
+-	graphics/fxtv			fxtv-0.48.tgz
+-	graphics/gd			gd1.3.tar.gz
+-	graphics/ggi			libggi-2.0b1.tar.gz
+-	graphics/giflib			giflib-4.1.0.tar.gz
 Y	graphics/giftrans		giftrans.tar.gz			COPY
-Y	graphics/gimp			gimp-1.0.0.tar.gz		GPL
-Y	graphics/gimp			gimp-data-extras-1.0.0.tar.gz	GPL
+-	graphics/gii			libgii-0.1.tar.gz
+Y	graphics/gimp			gimp-1.1.4.tar.gz		GPL
+-	graphics/imlib			imlib-1.9.4.tar.gz
 Y	graphics/jpeg			jpegsrc.v6b.tar.gz		BSD
 Y	graphics/mpeg-lib		mpeg_lib-1.2.1.tar.gz		BSD
 Y	graphics/mpeg_play		mpeg_play-2.4-src.tar.gz	BSD
@@ -226,17 +259,27 @@ N	graphics/netpbm			netpbm-1mar1994.tar.gz		COPY
 N	graphics/netpbm			pcxtoppm.tar.gz			COPY
 N	graphics/netpbm			rletopnm.tar.gz			COPY
 N	graphics/netpbm			pnmtopng-2.36.tar.gz		COPY
-Y	graphics/png			libpng-1.0.2.tar.gz		BSD
+Y	graphics/png			libpng-1.0.3.tar.gz		BSD
 Y	graphics/tiff34			tiff-v3.4-tar.gz		BSD
+-	graphics/xanim			xanim2801.tar.gz
+-	graphics/xanim			xa1.0_cyuv_sparcAOUT.o.Z
+-	graphics/xanim			xa2.0_cvid_sparcCOFF.o.Z
+-	graphics/xanim			xa2.0_iv32_sparcCOFF.o.Z
 Y	graphics/xbmbrowser		xbmbrowser5.1.tar.gz		COPY
 Y	graphics/xfig			xfig.3.2.2.tar.gz		X
 Y	graphics/xpaint			xpaint-2.5.5.tar.gz		BSD
-Y	graphics/xpdf			xpdf-0.7a.tar.gz		COPY
 Y	graphics/xpm			xpm-3.4k.tar.gz			BSD
-N	graphics/xv			xv-3.10a			NOFEE
+N	graphics/xv		xv-3.10a/xv-3.10a.tar.gz		NOFEE
+N	graphics/xv		xv-3.10a/xv-3.10a-png-1.2d.tar.gz	NOFEE
+N	graphics/xv		xv-3.10a/xv-3.10a.JPEG-patch		NOFEE
+N	graphics/xv		xv-3.10a/xv-3.10a.TIFF-patch		NOFEE
+N	graphics/xv		xv-3.10a/grabpatch			NOFEE
+N	graphics/xv		xv-3.10a/vispatch			NOFEE
+N	graphics/xv		xv-3.10a/mp-tiff-patch			NOFEE
 Y	japanese/Wnn			Wnn4.2.tar.gz			BSD
 Y	japanese/Wnn			Wnn4.2.patch.tar.gz		BSD
 Y	japanese/jvim			jvim2.0r+onew2.2.10.tar.gz	COPY
+Y	japanese/jvim-wnn4		jvim2.0r+onew2.2.10.tar.gz	COPY
 Y	japanese/kterm			kterm-6.2.0.tar.gz		X
 Y	japanese/kterm			kterm-6.2.0.NFS-xauth.patch	X
 Y	japanese/less			less-332.tar.gz			BSD
@@ -244,72 +287,89 @@ Y	japanese/less			less-332-iso242.patch.gz	BSD
 Y	japanese/less			less-332-iso242-243.patch.gz	BSD
 Y	japanese/less			less-332-iso243-244.patch.gz	BSD
 Y	japanese/less			less-332-iso244-245.patch.gz	BSD
+-	japanese/nkf			nkf-1.62.tar.gz
 Y	japanese/onew-wnn4		jvim2.0r+onew2.2.10.tar.gz	COPY
-Y	lang/egcs-snapshot		egcs-core-19980921.tar.gz	GPL
-Y	lang/egcs-snapshot		egcs-g++-19980921.tar.gz	GPL
-Y	lang/egcs-snapshot		egcs-tests-19980921.tar.gz	GPL
-Y	lang/egcs-stable		egcs-core-1.1b.tar.gz		GPL
-Y	lang/egcs-stable		egcs-g++-1.1b.tar.gz		GPL
 Y	lang/Gofer			gofer230a.tar.gz		BSD
 N	lang/STk			STk-3.1.tar.gz			NOFEE
+Y	lang/egcs-snapshot	egcs/egcs-19990314.tar.gz		GPL
+Y	lang/egcs-snapshot	egcs/egcs-19990314-19990321.diff.gz	GPL
+Y	lang/egcs-stable	egcs/egcs-core-1.1.2.tar.gz		GPL
+Y	lang/egcs-stable	egcs/egcs-g++-1.1.2.tar.gz		GPL
+Y	lang/egcs-stable	egcs/egcs-g77-1.1.2.tar.gz		GPL
+Y	lang/egcs-stable	egcs/egcs-objc-1.1.2.tar.gz		GPL
+-	lang/erlang			erlang-47.4.0.base.tar.gz
 Y	lang/expect			expect.tar.gz			PD
 Y	lang/guavac			guavac-1.2.tar.gz		GPL
-Y	lang/icon			icon				PD/BSD
-Y	lang/icon_lib			icon				PD/BSD
-Y	lang/kaffe			kaffe-0.8.4			COPY
-Y	lang/kaffe1			kaffe-1.0.b1.tar.gz		COPY
-Y	lang/ocaml			ocaml-1.07.tar.gz		COPY
-Y	lang/ocaml			ocaml-1.07-refman.html.tar.gz	COPY
+-	lang/guile			guile-1.3.tar.gz
+Y	lang/icon			icon/unix.tgz			PD/BSD
+Y	lang/icon_lib			icon/bipl.tgz			PD/BSD
+Y	lang/icon_lib			icon/gipl.tgz			PD/BSD
+Y	lang/icon_lib			icon/info.tgz			PD/BSD
+Y	lang/kaffe		kaffe-1.0.b2/kaffe-1.0.b2.tar.gz	COPY
+Y	lang/kaffe1			kaffe-1.0.b3.tar.gz		COPY
+-	lang/mawk			mawk1.3.3.tar.gz
+Y	lang/ocaml			ocaml-2.01.tar.gz		COPY
+Y	lang/ocaml			ocaml-2.01-refman.html.tar.gz	COPY
 Y	lang/python			python1.5.tar.gz		BSD
-Y	lang/tcl80			tcl8.0p2.tar.gz			BSD
+Y	lang/tcl80			tcl8.0.5.tar.gz			BSD
 Y	mail/adcomplain			adcomplain.pl.uu		GPL
 Y	mail/asmail			asmail-0.50.tar.gz		COPY
 Y	mail/bulk_mailer		bulk_mailer-1.5.tar		NONE
 N	mail/cucipop			cucipop-1.31.tar.gz		NOFEE
 Y	mail/elm			elm-2.4ME+32.tar.gz		ELM
-Y	mail/exim			exim-1.82.tar.gz		GPL
-Y	mail/exim			exim-texinfo-1.80.tar.gz	COPY
+Y	mail/exim			exim-2.12.tar.gz		GPL
+Y	mail/exim			exim-texinfo-2.10.tar.gz	COPY
 N	mail/exmh			-none-				NONE
 Y	mail/exmh2			exmh-2.0.2.tar.Z		COPY
 N	mail/faces			faces-1.6.1.tar.Z		NOFEE
-Y	mail/fetchmail			fetchmail-4.5.4.tar.gz		GPL
+Y	mail/fetchmail			fetchmail-4.7.9.tar.gz		GPL
 Y	mail/metamail			mm2.7.tar.Z			BSD
 Y	mail/mh				mh-6.8.3.tar.Z			PD
 Y	mail/mh				MH.6.8.4.Z			PD
 Y	mail/movemail			movemail-1.0.tar.gz		GPL
-Y	mail/nmh			nmh-0.27.tar.gz			BSD
+-	mail/mutt			mutt-0.95.4i.tar.gz
+Y	mail/nmh			nmh-1.0.tar.gz			BSD
 Y	mail/p5-Mail-POP3Client		POP3Client-1_15.tar.gz		PERL
 Y	mail/pgpsendmail		PGPsendmail-v1.4.5.tar.gz	GPL
-Y	mail/pine			pine4.03.tar.gz			BSD
+Y	mail/pine			pine4.10.tar.gz			BSD
 Y	mail/popclient			popclient-3.0b6.tar.gz		COPY
 Y	mail/poppassd			pwserve-4			NONE
-N	mail/procmail			procmail-3.11pre7.tar.gz	NOFEE
+-	mail/postfix			postfix-beta-19990122.tar.gz
+N	mail/procmail			procmail-3.12.tar.gz		NOFEE
+-	mail/vrfy			vrfy_980820.tar.Z
 Y	mail/xfaces			xfaces-3.3.tar.Z		BSD
 Y	mail/xfaces			xfaces-sounds.tar.gz		NONE
 N	mail/xfmail			xfmail-1.3.tar.gz		COPY
 Y	mail/xlbiff			xlbiff-3.0.tar.Z		COPY
-Y	math/gnuplot			gnuplot-3.5.tar.gz		COPY
+Y	math/gnuplot			gnuplot-3.7.tar.gz		COPY
 Y	math/hoc			hoc.sh				BSD
 N	math/wingz			Wingz-142.tgz			SHARE
 Y	math/xspread			xspread2.1.tar.gz		GPL
 Y	mbone/imm			imm.source.tar.Z		COPY
 Y	mbone/rtptools			rtptools-1.9.tar.gz		NONE
 Y	mbone/sdr			sdr.V2.4a7n.tar.gz		BSD
-N	mbone/speak_freely		speak_freely-6.1c.tar.gz	CRYPTO
+N	mbone/speak_freely		speak_freely-6.1e.tar.gz	CRYPTO
 Y	mbone/wb			i386-wb-1.59.tar.Z		NONE
-Y	misc/amanda			amanda-2.3.0.tar.gz		BSD
-N	misc/astrolog			astrolog			NOFEE
+Y	misc/amanda			amanda-2.4.1p1.tar.gz		BSD
+N	misc/astrolog			astrolog/ast53unx.shr		NOFEE
+N	misc/astrolog			astrolog/LRZ5_24		NOFEE
+N	misc/astrolog			astrolog/CHI_24			NOFEE
+N	misc/astrolog			astrolog/CPJV_24		NOFEE
 Y	misc/buffer			buffer-1.17.tar.gz		GPL
 N	misc/calentool			calentool-2.3.tar.gz		NOFEE
 Y	misc/cbb			cbb-0.73.tar.gz			GPL
-Y	misc/cdrecord			cdrecord-1.6.tar.gz		GPL
+Y	misc/cdrecord			cdrecord-1.6.1.tar.gz		GPL
 Y	misc/deco			deco38.tgz			COPY
+-	misc/delay			delay-1.2a.tar.gz
+-	misc/dialog			dialog-0.6z.tar.gz
 Y	misc/gnuls			fileutils-3.16.tar.gz		GPL
 Y	misc/jive			jive-1.1.tar.gz			NONE
-N	misc/mmv			mmv				NOFEE
+N	misc/mmv			mmv/part01.Z			NOFEE
+N	misc/mmv			mmv/part02.Z			NOFEE
+N	misc/mmv			mmv/mmv.pch.Z			NOFEE
 Y	misc/mshell			7432.Z				COPY
 Y	misc/plan			plan-1.6.1.tar.gz		COPY
-Y	misc/screen			screen-3.7.4.tar.gz		GPL
+Y	misc/screen			screen-3.7.6.tar.gz		GPL
 Y	misc/splitvt			splitvt-1.6.3.tar.gz		NONE
 Y	misc/tkcron			tkcron-2.12.tcl.gz		NONE
 Y	misc/tkinfo			tkinfo-1.8.tar.gz		BSD
@@ -320,42 +380,60 @@ Y	misc/xless			xless-1.7.tar.gz		COPY
 Y	misc/xtar			xtar-1.4.tar.gz			BSD
 Y	misc/xtimer			xtimer-8087.tar.gz		BSD
 N	net/archie			c-archie-1.4.1-FIXED.tar.Z	NOFEE
-Y	net/arpwatch			arpwatch-2.1a3.tar.Z		BSD
+Y	net/arpwatch			arpwatch-2.1a4.tar.Z		BSD
 Y	net/bing			bing-1.0.4.tar.gz		BSD
+-	net/bitchx			ircii-pana-75p3.tar.gz
 Y	net/clog			clog-1.6.tar.gz			NONE
-Y	net/ethereal			ethereal-0.3.16.tar.gz		GPL
+-	net/curl			curl-5.5.1.tar.gz
+-	net/dxpc			dxpc-3.7.0.tar.gz
+Y	net/ethereal			ethereal-0.5.1.tar.gz		GPL
+-	net/firewalk			firewalk-final-0.7c.tar.gz
 N	net/gated			gated-3-5-7.tar.gz		LIC
 Y	net/icb				icb-5.0.9.tar.Z			COPY/GPL
 Y	net/icmpinfo			icmpinfo-1.11.tar.gz		PERL
-Y	net/irc				irc2.9.5.tgz			GPL
+Y	net/irc				irc2.10.1.tgz			GPL
+-	net/ircII			ircii-4.4.tar.gz
 Y	net/ircii-epic			ircii2.8.2-EPIC3.004.tar.gz	COPY
 Y	net/ircii-epic			ircii2.8.2-EPIC3.help.tar.gz	COPY
+-	net/libnet			libnet.tar.gz
+-	net/licq			licq-0.61.tar.gz
 Y	net/mirror			mirror-2.9.tar.gz		COPY
+-	net/mrtg			mrtg-2.7.2.tar.gz
+-	net/mtr				mtr-0.33.tar.gz
 Y	net/ncftp			ncftp-2.4.3.tar.gz		GPL
+-	net/netatalk			netatalk-1.4b2.tar.gz
 Y	net/netpipe			netpipes-4.1.1-export.tar.gz	GPL
 N	net/nfr				-none-				LIC
-Y	net/ntop			ntop-0.4-src.tar.gz		GPL
-Y	net/proftpd			proftpd-1.0.3pl1.tar.gz		GPL
-Y	net/samba			samba-1.9.18p10.tar.gz		GPL
+-	net/nmap			nmap-2.08.tgz
+-	net/ntop			libpcap-0.4.tar.Z
+Y	net/ntop			ntop-1.1cr6.tar.gz		GPL
+Y	net/proftpd			proftpd-1.2.0pre3.tar.gz	GPL
+-	net/queso			libpcap-0.4.tar.Z
+-	net/queso			queso-980922.tar.gz
+-	net/rsync			rsync-2.3.0.tar.gz
+Y	net/samba			samba-2.0.3.tar.gz		GPL
+-	net/sharity-light		Sharity-Light.1.2.tar.gz
 Y	net/slirp			slirp-1.0c.tar.gz		BSD
 Y	net/sniffit			sniffit.0.3.5.tar.gz		COPY
 Y	net/tcpshow			tcpshow.1			COPY
 Y	net/tcpshow			tcpshow.c			COPY
 Y	net/tintin++			tintin++v1.5pl6.tar.Z		NONE
-Y	net/tinyfugue			tf-40a7.tar.gz			GPL
+Y	net/tinyfugue			tf-40s1.tar.gz			GPL
 Y	net/trafshow			trafshow-3.1.tgz		BSD
 Y	net/ucd-snmp			ucd-snmp-3.2.tar.gz		BSD
-Y	net/wget			wget-1.5.2.tar.gz		GPL
+Y	net/wget			wget-1.5.3.tar.gz		GPL
 Y	net/wide-dhcp			dhcp-1.4.0p3.tar.gz		BSD
 N	net/xarchie			xarchie-2.0.10.tar.gz		NOFEE
-Y	net/ytalk			ytalk-v3pl2.tar.gz		COPY
-Y	news/aub			aub				COPY
+Y	net/ytalk			ytalk-3.1.tar.gz		COPY
+Y	news/aub			aub/aub				COPY
+Y	news/aub			aub/aub.1			COPY
+Y	news/aub			aub/BUG_FIXES			COPY
 Y	news/cnews			cnews.tar.Z			COPY
-Y	news/leafnode			leafnode-1.4-7.src.elf.tar.gz	COPY
-Y	news/newsfetch			newsfetch-1.2.tar.gz		NONE
-Y	news/plor			plor-0.3.1.tar.gz		GPL
-Y	news/slrn			slrn0.9.4.3.tar.gz		GPL
-N	news/tin			tinpre-1.4-980818.tgz		NOFEE
+Y	news/leafnode			leafnode-1.9.2.tar.gz		COPY
+Y	news/newsfetch			newsfetch-1.21.tar.gz		NONE
+Y	news/plor			plor-0.3.2.tar.gz		GPL
+Y	news/slrn			slrn0.9.5.4.tar.gz		GPL
+N	news/tin			tinpre-1.4-19990216.tgz		NOFEE
 Y	plan9/9menu			9menu-1.5.shar.gz		COPY
 Y	plan9/9wm			9wm-1.1.shar.gz			COPY
 Y	plan9/sam			sam.shar.gz			COPY
@@ -367,6 +445,7 @@ Y	print/afm			afm-tar.Z			COPY
 Y	print/bibview			bibview-2.2.tar.gz		COPY
 Y	print/detex			detex-2.6.tar			NONE
 Y	print/enscript			enscript-1.6.1.tar.gz		GPL
+-	print/freetype			freetype-1.2.tar.gz
 Y	print/ghostscript5		ghostscript-5.10.tar.gz		COPY
 Y	print/ghostscript5		ghostscript-5.10gnu.tar.gz	GNU
 Y	print/ghostscript5	ghostscript-fonts-other-5.10.tar.gz	COPY
@@ -375,40 +454,48 @@ Y	print/ghostscript5		hp850.zip			NONE
 N	print/ghostscript5		pdf_sec.ps			CRYPTO
 Y	print/ghostview			ghostview-1.5.tar.gz		GPL
 Y	print/gv			gv-3.5.8.tar.gz			GPL
-Y	print/lyx			lyx-0.12.0.tar.gz		GPL
-Y	print/pkfonts			pkfonts				NONE
+Y	print/lyx			lyx-1.0.0.tar.gz		GPL
+Y	print/pkfonts			pkfonts/pk300.tar.gz		NONE
 Y	print/psutils			psutils-p17.tar.gz		COPY
-Y	print/teTeX			teTeX				GPL
+Y	print/teTeX			teTeX/teTeX-src-0.4pl7.tar.gz	GPL
+Y	print/teTeX			teTeX/teTeX-lib-0.4pl8.tar.gz	GPL
 Y	print/transfig			transfig.3.2.1.tar.gz		X
-Y	russian/xcyrillic		xcyrillic-1.0.tar.gz		COPY
+Y	russian/xcyrillic		xcyrillic-1.1.tar.gz		COPY
 Y	russian/xruskb			xruskb-1.5.3.tar.gz		GPL
-N	security/SSLeay			SSLeay-0.8.1b.tar.gz		CRYPTO
+N	security/SSLeay			SSLeay-0.9.0b.tar.gz		CRYPTO
+-	security/bounix			bo121unix.tar.gz
 N	security/cfs			cfs-1.3.3.tar.gz		CRYPTO
 N	security/cops			cops_104.tar.Z			NOFEE
 N	security/crack			crack5.0.tar.gz			CRYPTO
-Y	security/libident		libident-0.20.tar.gz		PD
+Y	security/libident		libident-0.22.tar.gz		PD
 Y	security/nbaudit		nat10.tar.gz			GPL
+-	security/nessus			nessus-990201.tgz
 N	security/pgp			pgp263is.tar.gz			CRYPTO
 N	security/pgp			pgp263i.patch			CRYPTO
 N	security/pgp			rsaref2.tar.gz			CRYPTO
+-	security/pgp5			pgp50i-unix-src.tar.gz
 N	security/pgplib			PGPlib-1.1.tar.gz		CRYPTO
 N	security/rsaref			rsaref20.1996.tar.Z		CRYPTO
-N	security/socks5			socks5-v1.0r6.tar.gz		LIC
+N	security/socks5			socks5-v1.0r9.tar.gz		LIC
 N	security/ssh			ssh-1.2.26.tar.gz		CRYPTO
 N	security/ssh			rsaref2.tar.gz			CRYPTO
+-	security/stel			stel.tar.gz
+-	security/strobe			strobe-1.05.tar.gz
 N	security/swatch			swatch-2.2.tar.gz		NOFEE
 Y	shells/bash			bash-1.14.7.tar.gz		GPL
-Y	shells/bash2			bash-2.02.tar.gz		GPL
-Y	shells/bash2			bash-doc-2.02.tar.gz		GPL
+Y	shells/bash2			bash-2.03.tar.gz		GPL
+Y	shells/bash2			bash-doc-2.03.tar.gz		GPL
 Y	shells/es			es-0.9-alpha1.tar.gz		PD
 N	shells/scsh			scsh-0.5.1.tar.gz		LIC
-Y	shells/tcsh			tcsh-6.07.tar.gz		BSD
+Y	shells/tcsh			tcsh-6.08.tar.gz		BSD
 Y	shells/zsh			zsh-3.0.5.tar.gz		BSD
 N	sysutils/LPRng			LPRng-3.5.1.tgz			MANY!
-Y	sysutils/contool		contool-3.3a.tar.gz		BSD
 Y	sysutils/cfengine		cfengine-1.4.12.tar.gz		GPL
+Y	sysutils/contool		contool-3.3a.tar.gz		BSD
 N	sysutils/idled			idled-1.16.tar.gz		NOFEE
-Y	sysutils/lsof			lsof_4.34_W.tar.gz		BSD
+Y	sysutils/lsof			lsof_4.41_W.tar.gz		BSD
+-	sysutils/mtools			mtools-3.9.4.tar.gz
+-	sysutils/mtools			mtools-3.9.4-2703b.diff.gz
 Y	sysutils/rtty			rtty-3.2.tar.gz			BSD
 Y	sysutils/setquota		setquota-0.1.tar.gz		BSD
 Y	sysutils/socket			socket-1.1.tar.gz		GPL
@@ -416,7 +503,7 @@ Y	sysutils/stat			stat-1.3.tar.gz			NONE
 Y	sysutils/tcplist		tcplist-2.2.shar		BSD
 Y	sysutils/xbatt			xbatt-1.2.tar.gz		COPY
 Y	sysutils/xntpd			xntp3-5.93-export.tar.gz	BSD
-Y	sysutils/xosview		xosview-1.5.1.tar.gz		GPL/BSD
+Y	sysutils/xosview		xosview-1.6.2.a.tar.gz		GPL/BSD
 Y	sysutils/zap			zap-1.0.tar.gz			BSD
 N	textproc/agrep			agrep-2.04.tar.Z		NOFEE
 Y	textproc/c2html			c2html-0.1.tar.gz		GPL
@@ -425,14 +512,18 @@ Y	textproc/docbook		docbk241.tar.Z			COPY
 Y	textproc/docbook		docbk30.tar.Z			COPY
 N	textproc/glimpse		glimpse-4.1.src.tar.gz		NOFEE
 Y	textproc/html			html-4.0b.tar.gz		NONE
-Y	textproc/idiff			idiff-1.0.tar.gz		BSD
 Y	textproc/info2html		info2html-1.1.tar.gz		BSD
+Y	textproc/idiff			idiff-1.0.tar.gz		BSD
 Y	textproc/isearch		Isearch-1.14.tar.gz		BSD
-Y	textproc/iso12083		iso12083			COPY
+Y	textproc/iso12083		iso12083/article.dtd		COPY
+Y	textproc/iso12083		iso12083/book.dtd		COPY
+Y	textproc/iso12083		iso12083/maths.dtd		COPY
+Y	textproc/iso12083		iso12083/serial.dtd		COPY
 Y	textproc/iso8879		isoENTS.zip			COPY
 Y	textproc/ispell			ispell-3.1.20.tar.gz		BSD
-Y	textproc/jade			jade1_1.zip			BSD
+Y	textproc/jade			jade-1.2.1.tar.gz		BSD
 N	textproc/latex2html		latex2html-97.1.tar.gz		NOFEE
+-	textproc/libxml			libxml-1.0.0.tar.gz
 Y	textproc/linuxdoc		linuxdoc-1.1.tar.gz		NONE
 Y	textproc/mgdiff			mgdiff.tar.gz			X
 Y	textproc/par			Par150.tar.gz			COPY
@@ -443,19 +534,27 @@ Y	textproc/sp			sp-1.2.1.tar.gz			BSD
 N	textproc/spiff			spiff-1.0.tar.gz		NOFEE
 Y	textproc/texi2html		texi2html.shar.Z		GPL
 Y	textproc/wdiff			wdiff-0.5.tar.gz		GPL
-Y	www/analog			analog3.0.tar.gz		COPY
+-	textproc/xpdf			xpdf-0.80.tgz
+-	textproc/xpdf			xpdf-0.80-decrypt.patch
+-	www/amaya			amaya/amaya-src-1.4a.tar.gz
+-	www/amaya-english-dict		amaya/English.tar.gz
+-	www/amaya-french-dict		amaya/French.tar.gz
+Y	www/analog			analog3.11.tar.gz		COPY
 N	www/apache			-none-				INC
 Y	www/cgiparse			cgiparse-0.8e.tar.gz		BSD
 N	www/lynx			-none-				INC
 Y	www/mozilla			mozilla-19980728.tar.gz		COPY
-Y	www/navigator			navigator-4.06-fortified	COPY
+Y	www/navigator	navigator-4.06-fortified/navigator-v45-export.x86-bsdi-bsd2.tar.gz	COPY
+Y	www/navigator	navigator-4.06-fortified/Fortify-1.3.0-unix-x86.tar.gz	COPY
 Y	www/squid			squid-1.1.22-src.tar.gz		GPL
 Y	www/transproxy			transproxy-0.4.tgz		GPL
 Y	www/wwwcount			wwwcount2.4.tar.gz		BSD
 Y	x11/Xaw3d			Xaw3d-1.3.tar.gz		X
 Y	x11/afterstep			AfterStep-1.0.tar.gz		X
 Y	x11/asclock			asclock.tgz			COPY
+-	x11/aterm			aterm-0.3.4.tar.gz
 Y	x11/bclock			bclock-1.0.tar.gz		X
+-	x11/blackbox			blackbox-0.50.4.tar.gz
 Y	x11/blast			blast-1.0-ss-9.03.tar.gz	GPL
 Y	x11/bricons			bricons-athena-3.0.tar.gz	NONE
 Y	x11/ctwm			ctwm-3.5.tar.gz			X
@@ -464,20 +563,27 @@ Y	x11/explorer			explorer-0.72.tar.gz		GPL
 Y	x11/freefonts			freefonts-0.10.tar.gz		COPY
 N	x11/fvwm2			-none-				INC
 Y	x11/getbdf			getbdf.tar.Z			NONE
-Y	x11/gtk+			gtk+-1.0.5.tar.gz		GPL
-Y	x11/lesstif			lesstif-0.86.0.tar.gz		GPL
+Y	x11/gtk+			gtk+-1.2.1.tar.gz		GPL
+-	x11/gtkglarea			gtkglarea-1.2.1.tar.gz
+-	x11/kdebase			kdebase-1.0.tar.gz
+-	x11/kdelibs			kdelibs-1.0.tar.gz
+Y	x11/lesstif			lesstif-0.88.0.tar.gz		GPL
 Y	x11/lupe			lupe007.tar.gz			PD
 Y	x11/mouseclock			mouseclock-1.0.tar.gz		GPL
 N	x11/olvwm			olvwm4.tar.Z			PAT
 Y	x11/piewm			piewm.tar.Z			X
-Y	x11/qt				qt-1.40.tar.gz			REST
+Y	x11/qt				qt-1.42.tar.gz			REST
 Y	x11/rclock			rxvt-2.20.tar.gz		COPY
-Y	x11/rxvt			rxvt-2.20.tar.gz		COPY
+Y	x11/rxvt			rxvt-2.4.5.tar.gz		COPY
 Y	x11/sliderule			sliderule.tar.gz		X
 Y	x11/swisswatch			swisswatch-0.06.tar.Z		X
-Y	x11/tk80			tk8.0p2.tar.gz			BSD
+Y	x11/tk80			tk8.0.5.tar.gz			BSD
 Y	x11/viewfax			viewfax-2.3.tar.gz		GPL
+-	x11/windowmaker			WindowMaker-0.51.2.tar.gz
+-	x11/windowmaker			WindowMaker-data.tar.gz
 N	x11/wm2				-none-				INC
+-	x11/wterm			wterm-6.2.6.tar.gz
+-	x11/x2x				x2x-1.27.tar.gz
 Y	x11/xaniroc			xaniroc.src.tar.Z		NONE
 Y	x11/xantfarm			xantfarm23oct91.tar.gz		BSD
 N	x11/xautolock			-none-				INC
@@ -495,6 +601,7 @@ N	x11/xforms			xforms				LIC
 Y	x11/xgrab			xgrabsc.2_41.tar.Z		X
 Y	x11/xloadimage			xloadimage.3.03.tar.Z		X
 N	x11/xlockmore			-none-				INC
+-	x11/xlogout			xlogout-1.1.tar.Z
 Y	x11/xmascot			xmascot2.5p2.tar.gz		COPY
 Y	x11/xmbdfed			xmbdfed-2.7.tar.gz		COPY
 Y	x11/xmold			xmold.tar.gz			NONE
@@ -506,7 +613,9 @@ Y	x11/xtacy			Xtacy113.tar.gz			GPL
 Y	x11/xtattr			xtattr-1.0.tar.gz		NONE
 Y	x11/xtestpicture		xtestpicture-1.1.tar.gz		BSD
 Y	x11/xtoolwait			xtoolwait-1.1.tar.gz		GPL
-N	x11/xview-clients		-none-				NONE
+-	x11/xtraceroute			xtraceroute-0.8.14.tar.gz
+-	x11/xtraceroute			ndg_files.tar.gz
+N	x11/xview-clients		xview-clients.tar.gz
 N	x11/xview-config		xview3.2p1-X11R6.tar.gz		PAT
-N	x11/xview-lib			-none-				NONE
+N	x11/xview-lib			xview-lib.tar.gz
 Y	x11/xzoom			xzoom-0.3.tgz			COPY
