@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/11/18 12:10:25 jsyn Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/10/12 06:28:18 jsyn Exp $
 bin/rats
 man/man1/rats.1
 share/doc/rats/README
 share/rats/rats-c.xml
+share/rats/rats-openssl.xml
 share/rats/rats-perl.xml
 share/rats/rats-php.xml
 share/rats/rats-python.xml
