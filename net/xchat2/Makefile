@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2004/04/10 18:48:30 couderc Exp $
+# $OpenBSD: Makefile,v 1.10 2004/06/20 17:54:58 couderc Exp $
 
 COMMENT=	"GTK+2 IRC client"
 
 MAJOR=		2.0
-VERSION=	${MAJOR}.8
+VERSION=	${MAJOR}.9
 DISTNAME=	xchat-${VERSION}
 PKGNAME=	xchat2-${VERSION}
 CATEGORIES=	net x11
@@ -34,5 +34,9 @@ CONFIGURE_ARGS+= --disable-python --enable-textfe \
 		 --enable-ipv6 --enable-openssl="/usr"
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@mv ${WRKSRC}/xchat.png ${WRKSRC}/xchat2.png
+	@mv ${WRKSRC}/xchat.desktop ${WRKSRC}/xchat2.desktop
 
 .include <bsd.port.mk>

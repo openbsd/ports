@@ -1,30 +1,23 @@
-$OpenBSD: patch-src_fe-gtk_Makefile_in,v 1.2 2003/08/08 05:47:38 marcm Exp $
---- src/fe-gtk/Makefile.in.orig	2003-07-30 22:24:28.000000000 -0700
-+++ src/fe-gtk/Makefile.in	2003-08-07 22:36:14.000000000 -0700
-@@ -202,7 +202,7 @@ xchatlibdir = @xchatlibdir@
- xchatsharedir = @xchatsharedir@
- localedir = $(datadir)/locale
- 
--bin_PROGRAMS = xchat
-+bin_PROGRAMS = $(PACKAGE)
- 
- INCLUDES = $(GUI_CFLAGS) -DG_DISABLE_CAST_CHECKS -DLOCALEDIR=\"$(localedir)\"
- 
-@@ -230,7 +230,7 @@ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = $(top_builddir)/config.h
- CONFIG_CLEAN_FILES =
+$OpenBSD: patch-src_fe-gtk_Makefile_in,v 1.3 2004/06/20 17:54:58 couderc Exp $
+--- src/fe-gtk/Makefile.in.orig	2004-05-31 16:47:05.000000000 +0200
++++ src/fe-gtk/Makefile.in	2004-06-20 17:13:46.000000000 +0200
+@@ -37,7 +37,7 @@ NORMAL_UNINSTALL = :
+ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ host_triplet = @host@
 -bin_PROGRAMS = xchat$(EXEEXT)
 +bin_PROGRAMS = $(PACKAGE)$(EXEEXT)
- PROGRAMS = $(bin_PROGRAMS)
- 
- am__xchat_SOURCES_DIST = about.c ascii.c banlist.c chanlist.c dccgui.c \
-@@ -321,7 +321,7 @@ clean-binPROGRAMS:
+ subdir = src/fe-gtk
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -348,8 +348,8 @@ clean-binPROGRAMS:
  	  echo " rm -f $$p $$f"; \
  	  rm -f $$p $$f ; \
  	done
 -xchat$(EXEEXT): $(xchat_OBJECTS) $(xchat_DEPENDENCIES) 
+-	@rm -f xchat$(EXEEXT)
 +$(PACKAGE)$(EXEEXT): $(xchat_OBJECTS) $(xchat_DEPENDENCIES) 
- 	@rm -f xchat$(EXEEXT)
++	@rm -f $(PACKAGE)$(EXEEXT)
  	$(LINK) $(xchat_LDFLAGS) $(xchat_OBJECTS) $(xchat_LDADD) $(LIBS)
  
+ mostlyclean-compile:
