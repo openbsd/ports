@@ -1,6 +1,1 @@
-mktemp() used in lib/util.c by smbd_mktemp(), which is used by smbd/reply.c
-(passed to open_file_shared(), calls open() with O_CREAT|O_EXCL).
-
-Apart from that, mkstemp() is used (HAVE_SECURE_MKSTEMP is defined).
-
 setreuid() and setregid() used by lib/util_sec.c.
