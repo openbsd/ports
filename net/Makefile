@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.332 2004/10/09 18:56:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.333 2004/10/13 02:06:11 danh Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -255,7 +255,6 @@
      SUBDIR += trafshow
      SUBDIR += trickle
      SUBDIR += ttcp
-     SUBDIR += ucd-snmp
      SUBDIR += ucspi-unix
      SUBDIR += udptunnel
      SUBDIR += unison
