@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.34 2003/01/04 00:05:46 brad Exp $
+# $OpenBSD: Makefile,v 1.35 2003/05/14 04:52:27 naddy Exp $
 
 COMMENT=	"stack-based interpreter for terminal applications"
 
-VERSION=	1.4.6
+VERSION=	1.4.9
 DISTNAME=	slang-${VERSION}
 PKGNAME=	libslang-${VERSION}
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_BACKUP}
-#MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.4/ \
-#		http://gd.tuwien.ac.at/editors/davis/slang/v1.4/
+MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.4/ \
+		http://gd.tuwien.ac.at/editors/davis/slang/v1.4/
 
 HOMEPAGE=	http://www.s-lang.org/
 
