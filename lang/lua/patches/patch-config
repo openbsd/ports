@@ -1,20 +1,37 @@
---- config.orig	Mon Nov  6 21:28:20 2000
-+++ config	Fri Mar 16 18:31:39 2001
-@@ -28,7 +28,7 @@
- # ------------------------------------------------------------------ C compiler
+--- config.orig	2003-04-11 09:00:41.000000000 -0500
++++ config	2003-11-29 16:39:40.000000000 -0600
+@@ -25,7 +25,7 @@ USERCONF=
+ # interface (e.g., Linux, Solaris, IRIX, BSD, AIX, HPUX, and probably others),
+ # uncomment the next two lines.
+ #
+-#LOADLIB= -DUSE_DLOPEN=1
++LOADLIB= -DUSE_DLOPEN=1
+ #DLLIB= -ldl
+ #
+ # In Linux with gcc, you should also uncomment the next definition for
+@@ -59,7 +59,7 @@ USERCONF=
+ # use tmpnam even if you're not compiling with gcc, define USE_TMPNAME=0.
+ #
+ #TMPNAM= -DUSE_TMPNAME=1
+-#TMPNAM= -DUSE_TMPNAME=0
++TMPNAM= -DUSE_TMPNAME=0
  
- # You need an ANSI C compiler. gcc is a popular one.
+ # The Lua math library (src/lib/lmathlib.c) now operates in radians, unlike
+ # previous versions of Lua, which used degrees. To use degrees instead of
+@@ -108,7 +108,7 @@ EXTRA_LIBS= -lm
+ # You need an ANSI C compiler. gcc is a popular one. We do not use -ansi in
+ # WARN because it disables POSIX features used in the libraries.
+ #
 -CC= gcc
 +#CC= gcc
- WARN= -ansi -pedantic -Wall
+ WARN= -Wall
  
- # On IRIX, cc is a good ANSI compiler.
-@@ -93,7 +93,7 @@ LIB= $(LUA)/lib
+ # ------------------------------------------------------------------ C options
+@@ -173,6 +173,6 @@ LIB= $(LUA)/lib
  INCS= -I$(INC) $(EXTRA_INCS)
- DEFS= $(COMPAT) $(NUMBER) $(OLD_ANSI) $(EXTRA_DEFS)
+ DEFS= $(NUMBER) $(EXTRA_DEFS)
  
--CFLAGS= -O2 $(WARN) $(INCS) $(DEFS)
-+CFLAGS+= -fPIC $(WARN) $(INCS) $(DEFS)
+-CFLAGS= $(MYCFLAGS) $(WARN) $(INCS) $(DEFS)
++CFLAGS+= $(WARN) $(INCS) $(DEFS)
  
- V=4.0
- 
+ # (end of config)
