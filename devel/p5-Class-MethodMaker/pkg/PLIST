@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/10/14 05:13:15 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/12/31 15:57:59 naddy Exp $
 ${P5SITE}/Class/MethodMaker.pm
 ${P5SITE}/auto/Class/MethodMaker/_add_hash_methods.al
 ${P5SITE}/auto/Class/MethodMaker/_add_list_methods.al
@@ -41,5 +41,13 @@ ${P5SITE}/auto/Class/MethodMaker/struct.al
 ${P5SITE}/auto/Class/MethodMaker/tie_hash.al
 ${P5SITE}/auto/Class/MethodMaker/tie_list.al
 ${P5SITE}/auto/Class/MethodMaker/tie_scalar.al
+@comment ${P5ARCH}/auto/Class-MethodMaker/.packlist
 man/man3p/Class::MethodMaker.3p
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Class-MethodMaker
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
 @dirrm ${P5SITE}/auto/Class/MethodMaker
+@dirrm ${P5SITE}/auto/Class
+@dirrm ${P5SITE}/auto
+@dirrm ${P5SITE}/Class
