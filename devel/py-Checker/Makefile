@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2001/09/25 06:47:31 shell Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/24 12:53:55 shell Exp $
 
 
 COMMENT=		"python codes checker"
 
-VERSION=		0.8.4
+VERSION=		0.8.5
 DISTNAME=		pychecker-${VERSION}
 PKGNAME=		py-Checker-${VERSION}
 CATEGORIES=     	devel
-NEED_VERSION=		1.460
+NEED_VERSION=		1.481
 
 HOMEPAGE=		http://pychecker.sourceforge.net/
 
@@ -29,7 +29,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 SUBST_VARS=	PYTHON_VER
 
-PY_CMD=	cd ${WRKSRC}; python${PYTHON_VER} ./setup.py
+PY_CMD= @cd ${WRKSRC} && python${PYTHON_VER} ./setup.py
 
 do-build:
 	${PY_CMD} build --build-base=${WRKSRC}
