@@ -4,7 +4,7 @@ the best of the features of most of the "other" biff programs out
 there.
 
 KBiff supports all major mailbox formats: mbox (Berkeley style),
-maildir, mh, POP3, IMAP4, and NNTP.
+maildir, mh, POP3, POP3S, IMAP4, IMAP4S, and NNTP.
 
 KBiff is also part of the KDE project. Among other things, this
 means that it has support for session management (it "remembers"

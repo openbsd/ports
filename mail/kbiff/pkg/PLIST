@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 09:09:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/10/24 14:21:32 naddy Exp $
 bin/kbiff
 @comment lib/kbiff.la
 @man man/man1/kbiff.1
@@ -27,7 +27,7 @@ share/doc/HTML/de/kbiff/index.cache.bz2
 share/doc/HTML/de/kbiff/index.docbook
 share/doc/HTML/en/
 share/doc/HTML/en/kbiff/
-share/doc/HTML/en/kbiff/common/
+share/doc/HTML/en/kbiff/common
 share/doc/HTML/en/kbiff/index.cache.bz2
 share/doc/HTML/en/kbiff/index.docbook
 share/doc/HTML/en/kbiff/kbiff.png
