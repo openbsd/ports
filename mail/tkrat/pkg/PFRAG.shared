@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2001/07/12 08:38:32 kevlo Exp $
+lib/tkrat/blt_busy.so.1.0
+lib/tkrat/ratatosk.so.2.0
+NEWDYNLIBDIR(%B)

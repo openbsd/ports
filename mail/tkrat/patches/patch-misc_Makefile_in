@@ -1,0 +1,11 @@
+--- misc/Makefile.in.orig	Sat Jul  7 16:47:09 2001
++++ misc/Makefile.in	Sat Jul  7 16:47:21 2001
+@@ -11,7 +11,7 @@
+    exec_prefix = @exec_prefix@
+        MAN_DIR = @mandir@
+        BIN_DIR = @bindir@
+-      DATA_DIR = @datadir@/`echo tkrat${VERSION} | sed '${TRANSFORM}'`
++      DATA_DIR = @datadir@/`echo tkrat | sed '${TRANSFORM}'`
+        LIB_DIR = @libdir@/`echo tkrat${VERSION} | sed '${TRANSFORM}'`
+ 
+          SHELL = /bin/sh

@@ -1,0 +1,33 @@
+--- util/Makefile.in.orig	Sat Jul  7 16:40:27 2001
++++ util/Makefile.in	Sat Jul  7 17:46:35 2001
+@@ -37,8 +37,8 @@
+    exec_prefix = @exec_prefix@
+        MAN_DIR = @mandir@
+        BIN_DIR = @bindir@
+-      DATA_DIR = @datadir@/`echo tkrat${VERSION} | sed '${TRANSFORM}'`
+-       LIB_DIR = @libdir@/`echo tkrat${VERSION} | sed '${TRANSFORM}'`
++      DATA_DIR = @datadir@/`echo tkrat | sed '${TRANSFORM}'`
++       LIB_DIR = @libdir@/`echo tkrat | sed '${TRANSFORM}'`
+ 
+              CC = @CC@
+        INCLUDES = @TCL_INCLUDE@ @XINCLUDES@
+@@ -66,7 +66,7 @@
+ DUMMYLIB = rat_dummy${SHLIB_SUFFIX}
+ CFLAGS = ${TK_DEFS} ${EXTRA_CFLAGS} ${FIX_INCLUDE} ${INCLUDES} \
+          ${SHLIB_CFLAGS} -DBUSYLIB_VERSION=\"${BUSYLIB_VERSION}\"
+-BUSYLIB = blt_busy${BUSYLIB_SUFFIX}
++BUSYLIB = blt_busy${SHLIB_SUFFIX}.${BUSYLIB_VERSION}
+ 
+ BUSYSRC = blt_busy.c blt_window.c
+ BUSYOBJ = ${BUSYSRC:.c=.o}
+@@ -101,9 +101,7 @@
+ 	INST=${INSTALL_PREFIX}${LIB_DIR}; \
+ 	    echo "if [catch {load ./${DUMMYLIB}; \
+ 		     cd $$INST; \
+-		     pkg_mkIndex -verbose -load ./*${SHLIB_SUFFIX} . \
+-				 *${SHLIB_SUFFIX}} error] \
+-	  	  {puts \$$error; exit 1}" | ${TCLSH}
++		     pkg_mkIndex -verbose -load ./${BUSYLIB}}]" | ${TCLSH}
+ 
+ install.shared:  ${TARGETS_data}
+ 	if test ! -d ${INSTALL_PREFIX}${DATA_DIR} ; then\

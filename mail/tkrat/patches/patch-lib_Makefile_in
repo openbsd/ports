@@ -1,0 +1,53 @@
+--- lib/Makefile.in.orig	Mon May  1 20:31:01 2000
++++ lib/Makefile.in	Mon Jul  9 20:57:46 2001
+@@ -25,7 +25,7 @@
+        MAN_DIR = @mandir@
+        BIN_DIR = @bindir@
+       DATA_DIR = @datadir@/`echo tkrat${VERSION} | sed '${TRANSFORM}'`
+-       LIB_DIR = @libdir@/`echo tkrat${VERSION} | sed '${TRANSFORM}'`
++       LIB_DIR = @libdir@/`echo tkrat | sed '${TRANSFORM}'`
+ 
+ # Pointer to the imap c-client directory
+       C_CLIENT = ${TOP_DIR}/imap/c-client
+@@ -51,6 +51,7 @@
+       SHLIB_LD_LIBS = @SHLIB_LD_LIBS@
+             VERSION = @VERSION@
+       RATLIB_SUFFIX = @RATLIB_SUFFIX@
++      BUSYLIB_VERSION = @BUSYLIB_VERSION@
+             INSTALL = @INSTALL@
+               TCLSH = @tclsh@
+           TRANSFORM = @program_transform_name@
+@@ -64,7 +65,8 @@
+ CFLAGS = ${TK_DEFS} ${EXTRA_CFLAGS} -I${C_CLIENT} ${FIX_INCLUDE} ${INCLUDES} \
+ 	 ${SHLIB_CFLAGS} -DVERSION=\"${VERSION}\"
+ C_CLIENT_LIB = ${C_CLIENT}/c-client.a
+-RATLIB = ratatosk${RATLIB_SUFFIX}
++RATLIB = ratatosk${SHLIB_SUFFIX}.${VERSION} 
++BUSYLIB = blt_busy${SHLIB_SUFFIX}.${BUSYLIB_VERSION}
+ DUMMYLIB = ratDummy${SHLIB_SUFFIX}
+ 
+ SRC = ratAppInit.c ratFolder.c ratStdFolder.c ratMessage.c ratCode.c \
+@@ -86,9 +88,11 @@
+ 	${SHLIB_LD} -o ${DUMMYLIB} ratDummy.o $(EXTRA_LIBS) ${SHLIB_LD_LIBS}
+ 
+ pkgIndex.tcl: ${RATLIB} ${DUMMYLIB}
++	cp ../util/${BUSYLIB} . ; \
+ 	echo "if [catch {load ./${DUMMYLIB}; \
+ 			 load ./${RATLIB}; \
+-			 pkg_mkIndex -verbose . ${RATLIB}} error] \
++			 load ./${BUSYLIB}; \
++			 pkg_mkIndex -verbose . ${RATLIB} ${BUSYLIB}} error] \
+ 		  {puts \$$error; exit 1}" | ${TCLSH}
+ 
+ install.bin: ${RATLIB} ${DUMMYLIB}
+@@ -99,9 +103,7 @@
+ 	INST=${INSTALL_PREFIX}${LIB_DIR}; \
+ 	    echo "if [catch {load ./${DUMMYLIB}; \
+ 		     cd $$INST; \
+-		     pkg_mkIndex -verbose -load ./*${SHLIB_SUFFIX} . \
+-				 *${SHLIB_SUFFIX}} error] \
+-	  	  {puts \$$error; exit 1}" | ${TCLSH}
++		     pkg_mkIndex -verbose -load ./${RATLIB}} ]" | ${TCLSH}
+ 
+ install: install.data
+ 

@@ -1,5 +1,3 @@
-Excerpted from the BLURB file...
-
 TkRat is a graphical Mail User Agent (MUA) which handles MIME. It is
 mainly written in C but the user interface is done in tcl/tk. The
 following is a non exhaustive list of the capabilities:
@@ -17,9 +15,4 @@ following is a non exhaustive list of the capabilities:
     * MIME support
     * Supports PGP/MIME
 
-
-You can get more information at 
-WWW:	http://www.dtek.chalmers.se/~maf/ratatosk/
-
-- rik
-riks@wni.com
+WWW: ${HOMEPAGE}

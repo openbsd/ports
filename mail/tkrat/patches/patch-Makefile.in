@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Mon Jul  9 20:52:29 2001
++++ Makefile.in	Mon Jul  9 20:52:46 2001
+@@ -23,8 +23,8 @@
+ 	else \
+ 	    ${MAKE} ${OSTYPE} EXTRACFLAGS="${EXTRACFLAGS}"; \
+ 	fi
+-	cd lib; ${MAKE}
+ 	cd util; ${MAKE}
++	cd lib; ${MAKE}
+ 	cd tkrat; ${MAKE}
+ 
+ install.bin:
