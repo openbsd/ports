@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2000/09/24 07:04:02 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/05 21:59:43 espie Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/03 03:48:56 jkoshy Exp $
 
+COMMENT=	"self-scaling network benchmark"
 DISTNAME=	netpipe-2.4
 CATEGORIES=	benchmarks net
 NEED_VERSION=	1.330

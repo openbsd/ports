@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2001/03/01 21:55:20 jakob Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/05 21:59:40 espie Exp $
 
+COMMENT=	"Network performance benchmark"
 DISTNAME=	netperf-2.1pl3
 CATEGORIES=	benchmarks net
 NEED_VERSION=	1.302

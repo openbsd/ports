@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2001/03/22 22:06:35 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2001/05/05 21:59:37 espie Exp $
 
+COMMENT=	"system performance measurement"
 DISTNAME=	lmbench
 PKGNAME=	lmbench-1.1
 CATEGORIES=	benchmarks

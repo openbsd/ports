@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2000/10/22 14:02:58 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/05/05 21:59:48 espie Exp $
 
+COMMENT=	"reciprocating engine for X11"
 PKGNAME=	xengine-1.0.1
 CATEGORIES=	benchmarks x11
 NEED_VERSION=	1.330
