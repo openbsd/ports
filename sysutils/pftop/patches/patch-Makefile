@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2002/09/05 12:39:29 lebel Exp $
+--- Makefile.orig	Wed Sep  4 20:32:03 2002
++++ Makefile	Wed Sep  4 20:32:09 2002
+@@ -1,8 +1,8 @@
+ #	$Id: patch-Makefile,v 1.1.1.1 2002/09/05 12:39:29 lebel Exp $
+ 
+ # set OS level to 32 if using 3.1-current
+-#OSLEVEL=32
+-OSLEVEL=${OSrev}
++OSLEVEL=32
++#OSLEVEL=${OSrev}
+ 
+ PROG=	pftop
+ SRCS=	pftop.c

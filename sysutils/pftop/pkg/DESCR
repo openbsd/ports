@@ -1,0 +1,5 @@
+pfTop is a curses-based utility for real-time display of
+active states and rules for pf. It is a cross between top
+and pfctl -sr and pfctl -ss.
+
+WWW: ${HOMEPAGE}
