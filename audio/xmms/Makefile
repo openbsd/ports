@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/25 14:45:10 espie Exp $
-# $Id: Makefile,v 1.4 2001/07/25 14:45:10 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/07/25 15:24:56 espie Exp $
+# $Id: Makefile,v 1.5 2001/07/25 15:24:56 espie Exp $
 
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
@@ -64,7 +64,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} --without-gnome
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			XML_CONFIG="${LOCALBASE}/bin/xml-config" \
-			LIBMIKMOD_CONFIG=/no
+			LIBMIKMOD_CONFIG=/usr/bin/false
 
 DISTFILES=		${DISTNAME}.tar.gz \
 			${DISTDRIVER}.tar.gz:0
@@ -89,7 +89,7 @@ RUN_DEPENDS=		xmms::audio/xmms
 LIB_DEPENDS +=		esd.::audio/esound
 CONFIGURE_ARGS+=	--with-esd-prefix=${LOCALBASE}
 .  else
-CONFIGURE_ENV+=		ESD_CONFIG=/no
+CONFIGURE_ENV+=		ESD_CONFIG=/usr/bin/false
 .  endif
 
 .  if ${MULTI_PACKAGES:M-vorbis}
