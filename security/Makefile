@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2000/04/22 12:12:07 turan Exp $
+# $OpenBSD: Makefile,v 1.40 2000/05/01 18:46:21 markus Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -44,6 +44,7 @@
      SUBDIR += radiusniff
      SUBDIR += rdp
      SUBDIR += rsaref
+     SUBDIR += sftp
      SUBDIR += smurflog
      SUBDIR += socks5
      SUBDIR += ssh:intl
