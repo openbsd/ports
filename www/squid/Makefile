@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2000/09/06 05:48:49 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2000/09/24 07:04:14 brad Exp $
 
 DISTNAME=	squid-2.3.STABLE4
 PKGNAME=	squid-2.3
 CATEGORIES=	www
-NEED_VERSION=	1.324
+NEED_VERSION=	1.330
 MASTER_SITES=	http://www.squid-cache.org/Versions/v2/2.3/
 MASTER_SITES0=	http://www.squid-cache.org/Versions/v2/2.3/bugs/
 EXTRACT_SUFX=	-src.tar.gz
@@ -16,7 +16,7 @@ PATCHFILES=	squid-2.3.stable4-ftp_icon_not_found.patch:0 \
 
 HOMEPAGE=	http://www.squid-cache.org/
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

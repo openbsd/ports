@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2000/08/20 22:45:21 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2000/09/24 07:04:10 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 VERSION=	0.9.7
 DISTNAME=	epic4-${VERSION}
 CATEGORIES=	net
-NEED_VERSION=	1.310
+NEED_VERSION=	1.330
 MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-BETA/ \
 		ftp://mirror.pipex.net/pub/epic/EPIC4-BETA/ \
 		ftp://totem.fix.no/pub/mirrors/epic/EPIC4-BETA/
@@ -13,7 +13,7 @@ EXTRACT_ONLY=	epic4-${VERSION}.tar.gz
 
 HOMEPAGE=	http://www.epicsol.org/
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

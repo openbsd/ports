@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2000/07/25 10:03:29 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2000/09/24 07:04:12 brad Exp $
 
 DISTNAME=	mrtg-2.8.12
 CATEGORIES=	net
-NEED_VERSION=	1.310
+NEED_VERSION=	1.330
 MASTER_SITES=	ftp://ftp.ou.edu/mirrors/mrtg/ \
 		ftp://ftp.sunet.se/pub/network/monitoring/mrtg/ \
 		http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/pub/
@@ -11,7 +11,7 @@ HOMEPAGE=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/mrtg.html
 
 LIB_DEPENDS=	gd.18::graphics/gd
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

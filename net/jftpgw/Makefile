@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/09/24 00:58:00 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2000/09/24 07:04:12 brad Exp $
 
 DISTNAME=	jftpgw-0.0.11
 CATEGORIES=	net
@@ -7,7 +7,7 @@ MASTER_SITES=	http://www.mcknight.de/jftpgw/
 
 HOMEPAGE=	http://www.mcknight.de/jftpgw/
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

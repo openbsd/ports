@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/07/10 00:19:36 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2000/09/24 07:04:09 brad Exp $
 
 DISTNAME=	tiff2png-0.81
 CATEGORIES=	graphics
-NEED_VERSION=	1.310
+NEED_VERSION=	1.330
 MASTER_SITES=	ftp://ftp.libpng.org/pub/png/src/ \
 		ftp://swrinde.nde.swri.edu/pub/png/applications/
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.libpng.org/pub/png/apps/tiff2png.html
 LIB_DEPENDS=	tiff.35::graphics/tiff \
 		png.1::graphics/png
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

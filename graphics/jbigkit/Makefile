@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/09/24 02:38:01 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2000/09/24 07:04:08 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/09/14 22:19:05 smace Exp $
 
 DISTNAME=	jbigkit-1.2
@@ -7,7 +7,7 @@ NEED_VERSION=	1.330
 MASTER_SITES=	ftp://ftp.informatik.uni-erlangen.de/local/cip/mskuhn/ISO/JBIG/ \
 		http://www.cl.cam.ac.uk/~mgk25/download/
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

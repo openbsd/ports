@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2000/07/03 05:08:56 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/09/24 07:04:16 brad Exp $
 
 DISTNAME=	wterm-6.2.6
 CATEGORIES=	x11
-NEED_VERSION=	1.310
+NEED_VERSION=	1.330
 MASTER_SITES=	ftp://ftp.kddlabs.co.jp/.10/X11/acontrib/wterm/ \
 		ftp://ftp.riken.go.jp/pub/X11/acontrib/wterm/
 
 BUILD_DEPENDS=	wmaker::x11/windowmaker
 RUN_DEPENDS=	wmaker::x11/windowmaker
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

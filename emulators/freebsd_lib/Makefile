@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2000/06/22 19:49:43 brad Exp $
-
-DISTNAME=	freebsd_lib-2.2.8
-CATEGORIES=	emulators
-NEED_VERSION=	1.301
-MASTER_SITES=	ftp://ftp.dqc.org/pub/brad/source/
-EXTRACT_ONLY=
+# $OpenBSD: Makefile,v 1.14 2000/09/24 07:04:05 brad Exp $
 
 ONLY_FOR_ARCHS=	i386
 
-MAINTAINER=	brad@openbsd.org
+DISTNAME=	freebsd_lib-2.2.8
+CATEGORIES=	emulators
+NEED_VERSION=	1.330
+MASTER_SITES=	ftp://ftp.dqc.org/pub/brad/source/
+EXTRACT_ONLY=
+
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

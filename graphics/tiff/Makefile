@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.19 2000/07/04 02:09:25 krw Exp $
+# $OpenBSD: Makefile,v 1.20 2000/09/24 07:04:09 brad Exp $
 
 DISTNAME=	tiff-v3.5.5
 PKGNAME=	tiff-3.5.5
 CATEGORIES=	graphics
-NEED_VERSION=	1.310
+NEED_VERSION=	1.330
 MASTER_SITES=	http://www.libtiff.org/
 
 HOMEPAGE=	http://www.libtiff.org/
 
 LIB_DEPENDS=    jpeg.62::graphics/jpeg
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2000/08/12 12:50:41 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/09/24 07:04:07 brad Exp $
 # $FreeBSD: Makefile,v 1.15 1999/08/25 06:14:08 obrien Exp $
 
 DISTNAME=	gqview-0.8.2
 CATEGORIES=	graphics
-NEED_VERSION=	1.310
+NEED_VERSION=	1.330
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= gqview
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://gqview.sourceforge.net
 
 LIB_DEPENDS=	gdk_imlib.19::graphics/imlib
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

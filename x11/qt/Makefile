@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2000/09/07 00:42:05 brad Exp $
+# $OpenBSD: Makefile,v 1.52 2000/09/24 07:04:16 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.45
 CATEGORIES=	x11
-NEED_VERSION=	1.322
+NEED_VERSION=	1.330
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 HOMEPAGE=	http://www.trolltech.com/products/qt/
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.trolltech.com/products/qt/
 BUILD_DEPENDS=	${PREFIX}/include/jpeglib.h::graphics/jpeg \
 		${PREFIX}/include/png.h::graphics/png
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=
 PERMIT_PACKAGE_FTP=

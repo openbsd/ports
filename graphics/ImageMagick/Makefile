@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2000/08/21 16:42:26 brad Exp $
+# $OpenBSD: Makefile,v 1.42 2000/09/24 07:04:05 brad Exp $
 
 DISTNAME=	ImageMagick-5.2.2
 CATEGORIES=     graphics
-NEED_VERSION=	1.310
+NEED_VERSION=	1.330
 MASTER_SITES=	ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
 		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/ImageMagick/ \
 		ftp://ftp.fifi.org/pub/ImageMagick/ \
@@ -27,7 +27,7 @@ RUN_DEPENDS=	fig2dev::print/transfig \
 		gs::print/ghostscript/gnu \
 		picttoppm::graphics/netpbm
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.19 2000/07/01 22:54:48 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/09/24 07:04:03 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/28 11:55:25 rse Exp $
 
 DISTNAME=	mm-1.1.3
 CATEGORIES=	devel
-NEED_VERSION=	1.310
+NEED_VERSION=	1.330
 MASTER_SITES=	http://www.engelschall.com/sw/mm/ \
 		ftp://ftp.engelschall.com/sw/mm/
 
 HOMEPAGE=	http://www.engelschall.com/sw/mm/
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

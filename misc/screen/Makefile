@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.31 2000/09/06 00:28:05 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2000/09/24 07:04:10 brad Exp $
 
 VERSION=	3.9.8
 DISTNAME=	screen-${VERSION}
 CATEGORIES=	misc
-NEED_VERSION=	1.324
+NEED_VERSION=	1.330
 MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/
 
 HOMEPAGE=	http://www.gnu.org/software/screen/
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

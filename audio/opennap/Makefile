@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/03 07:02:06 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/09/24 07:04:01 brad Exp $
 
 DISTNAME=	opennap-0.36
 CATEGORIES=	audio net
-NEED_VERSION=	1.322
+NEED_VERSION=	1.330
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= opennap
 
 HOMEPAGE=	http://opennap.sourceforge.net/
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

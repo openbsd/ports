@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/25 06:50:03 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2000/09/24 07:04:13 brad Exp $
 
 DISTNAME=	queso-980922
 CATEGORIES=	net
-NEED_VERSION=	1.234
+NEED_VERSION=	1.330
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2000/07/20 05:25:08 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/09/24 07:04:15 brad Exp $
 
 DISTNAME=	gtkglarea-1.2.2
 CATEGORIES=	x11 graphics
-NEED_VERSION=	1.310
+NEED_VERSION=	1.330
 MASTER_SITES=	http://www.student.oulu.fi/~jlof/gtkglarea/download/
 
 HOMEPAGE=	http://www.student.oulu.fi/~jlof/gtkglarea/
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.student.oulu.fi/~jlof/gtkglarea/
 LIB_DEPENDS=	MesaGL.3::graphics/Mesa \
 		gtk.1.2::x11/gtk+
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

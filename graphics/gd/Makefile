@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2000/09/16 11:44:47 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2000/09/24 07:04:06 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
 DISTNAME=	gd-1.8.3
 CATEGORIES=	graphics
-NEED_VERSION=	1.310
+NEED_VERSION=	1.330
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.boutell.com/gd/
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		png.1::graphics/png
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

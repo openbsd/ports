@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2000/07/03 04:43:54 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2000/09/24 07:04:14 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1999/03/08 20:59:19 steve Exp $
 
 DISTNAME=	aterm-0.4.0
 CATEGORIES=	x11
-NEED_VERSION=	1.310
+NEED_VERSION=	1.330
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= aterm
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://aterm.sourceforge.net/
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		png.1::graphics/png
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

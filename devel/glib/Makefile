@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.32 2000/09/13 08:56:30 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2000/09/24 07:04:03 brad Exp $
 
 DISTNAME=	glib-1.2.8
 CATEGORIES=	devel
-NEED_VERSION=	1.320
+NEED_VERSION=	1.330
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
 		http://www.ameth.org/gimp/gtk/v1.2/
 
 HOMEPAGE=	http://www.gtk.org/
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.25 2000/09/16 11:45:25 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2000/09/24 07:04:08 brad Exp $
 
 DISTNAME=	libpng-1.0.8
 PKGNAME=	png-1.0.8
 CATEGORIES=	graphics
-NEED_VERSION=	1.310
+NEED_VERSION=	1.330
 MASTER_SITES=	ftp://ftp.libpng.org/pub/png/src/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= libpng
 
 HOMEPAGE=	http://www.libpng.org/pub/png/
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

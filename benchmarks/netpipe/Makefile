@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2000/08/25 00:11:42 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/09/24 07:04:02 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/03 03:48:56 jkoshy Exp $
 
 DISTNAME=	netpipe-2.4
 CATEGORIES=	benchmarks net
-NEED_VERSION=	1.320
+NEED_VERSION=	1.330
 MASTER_SITES=	ftp://ftp.scl.ameslab.gov/pub/netpipe/
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

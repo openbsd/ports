@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.23 2000/08/17 12:36:26 fgsch Exp $
+# $OpenBSD: Makefile,v 1.24 2000/09/24 07:04:07 brad Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 DISTNAME=	imlib-1.9.8.1
 CATEGORIES=	devel graphics
-NEED_VERSION=	1.310
+NEED_VERSION=	1.330
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/imlib
 
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		gif.4.1::graphics/giflib \
-		jpeg.62::graphics/jpeg \
 		png.1::graphics/png \
 		tiff.35::graphics/tiff
 BUILD_DEPENDS=	convert::graphics/ImageMagick
 RUN_DEPENDS=	convert::graphics/ImageMagick
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

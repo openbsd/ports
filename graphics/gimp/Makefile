@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.51 2000/08/23 02:36:17 brad Exp $
+# $OpenBSD: Makefile,v 1.52 2000/09/24 07:04:07 brad Exp $
 
 DISTNAME=	gimp-1.1.25
 CATEGORIES=	graphics
-NEED_VERSION=	1.320
+NEED_VERSION=	1.330
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/v1.1/v1.1.25/ \
 		ftp://ftp.sunet.se/pub/gnu/gimp/v1.1/v1.1.25/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/v1.1/v1.1.25/
@@ -17,7 +17,7 @@ LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 BUILD_DEPENDS=	wget::net/wget
 RUN_DEPENDS=	wget::net/wget
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

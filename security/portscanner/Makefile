@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2000/06/05 01:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/09/24 07:04:13 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1999/01/26 22:19:07 billf Exp $
 
 DISTNAME=	PortScanner-1.0
 PKGNAME=	portscanner-1.0
 CATEGORIES=	security
-NEED_VERSION=	1.191
+NEED_VERSION=	1.330
 MASTER_SITES=	http://www.ameth.org/~veilleux/ \
 		http://www.FreeBSD.org/~billf/
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	Yes

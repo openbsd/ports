@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.20 2000/06/02 13:38:44 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2000/09/24 07:04:02 brad Exp $
 
 DISTNAME=	iozone3_24
 PKGNAME=	iozone-3.24
 CATEGORIES=	benchmarks
-NEED_VERSION=	1.234
+NEED_VERSION=	1.330
 MASTER_SITES=	http://www.iozone.org/src/current/
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

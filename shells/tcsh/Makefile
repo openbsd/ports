@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2000/08/02 03:25:22 kevlo Exp $
+# $OpenBSD: Makefile,v 1.24 2000/09/24 07:04:13 brad Exp $
 
 DISTNAME=	tcsh-6.09.03
 CATEGORIES=	shells
-NEED_VERSION=	1.310
+NEED_VERSION=	1.330
 MASTER_SITES=	http://www2.wbs.ne.jp/~znc/tcsh/
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

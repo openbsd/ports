@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.28 2000/09/18 12:25:56 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2000/09/24 07:04:10 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
 VERSION=	1.0c17
 DISTNAME=	BitchX-${VERSION}
 PKGNAME=	bitchx-${VERSION}
 CATEGORIES=	net
-NEED_VERSION=	1.320
+NEED_VERSION=	1.330
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.bitchx.org/pub/BitchX/source/ \
 		ftp://bitchx.dimension6.com/pub/BitchX/source/
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
