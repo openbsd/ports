@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.7 2001/11/15 01:22:02 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2002/02/12 19:11:37 nino Exp $
 
 COMMENT=		"free user interface builder for GTK+ and GNOME"
-V=			0.6.2
-DISTNAME=		glade-${V}
+
+DISTNAME=		glade-0.6.4
 CATEGORIES=		devel
-NEED_VERSION=   	1.497
-HOMEPAGE=		http://glade.gnome.org
+NEED_VERSION=   	1.504
+HOMEPAGE=		http://glade.gnome.org/
+
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= 	stable/sources/glade
-
-PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
-                        ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
-                        patch-*
+EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
 BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
@@ -32,7 +30,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= 	--without-bonobo
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
