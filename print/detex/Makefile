@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/12/23 08:51:07 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2005/02/13 16:00:19 alek Exp $
 
 COMMENT=		"strip TeX/LaTeX codes from a file"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
+WANTLIB=		c
 
 WRKDIST=		${WRKDIR}
 
