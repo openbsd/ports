@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.5 2000/08/04 17:49:20 brad Exp $
+# $OpenBSD: INSTALL,v 1.6 2001/02/28 13:57:57 brad Exp $
 #
 # Pre/post-installation setup of vtun
 
@@ -8,7 +8,7 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_FILE=/etc/vtund.conf
+CONFIG_FILE=${SYSCONFDIR}/vtund.conf
 SAMPLE_CONFIG_FILE=$PREFIX/share/examples/vtun/vtund.conf-sample
 
 install -d -m 755 -o root -g wheel /var/log/vtund
