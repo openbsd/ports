@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/06/07 17:00:33 shell Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/24 12:33:49 espie Exp $
 
 COMMENT=		"graphical interface for GnuPG"
 
 DISTNAME=		gpa-0.4.2
 CATEGORIES=     	security x11
-NEED_VERSION=		1.407
+NEED_VERSION=		1.474
 
 HOMEPAGE=		http://www.gnupg.org/gpa.html
 
@@ -19,7 +19,7 @@ MASTER_SITES=		ftp://ftp.gnupg.org/gcrypt/alpha/gpa/
 
 BUILD_DEPENDS=		gpg::security/gnupg
 RUN_DEPENDS=		${BUILD_DEPENDS}
-LIB_DEPENDS=		gtk.1.2::x11/gtk+
+LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
