@@ -1,40 +1,39 @@
-$OpenBSD: patch-src_fw-pf_c,v 1.2 2003/01/02 12:28:49 naddy Exp $
---- src/fw-pf.c.orig	Sun Jan 20 22:23:28 2002
-+++ src/fw-pf.c	Thu Jan  2 13:18:49 2003
-@@ -42,11 +42,11 @@ fr_to_pr(const struct fw_rule *fr, struc
+--- src/fw-pf.c.orig	Tue Jan 21 18:28:49 2003
++++ src/fw-pf.c	Tue Jan 21 18:30:33 2003
+@@ -42,11 +42,11 @@
  	pr->proto = fr->fw_proto;
  
  	pr->af = AF_INET;
 -	pr->src.addr.v4.s_addr = fr->fw_src.addr_ip;
 -	addr_btom(fr->fw_src.addr_bits, &pr->src.mask.v4.s_addr, IP_ADDR_LEN);
-+	pr->src.addr.addr.v4.s_addr = fr->fw_src.addr_ip;
-+	addr_btom(fr->fw_src.addr_bits, &pr->src.addr.mask.v4.s_addr, IP_ADDR_LEN);
++	pr->src.addr.v.a.addr.v4.s_addr = fr->fw_src.addr_ip;
++	addr_btom(fr->fw_src.addr_bits, &pr->src.addr.v.a.mask.v4.s_addr, IP_ADDR_LEN);
  	
 -	pr->dst.addr.v4.s_addr = fr->fw_dst.addr_ip;
 -	addr_btom(fr->fw_dst.addr_bits, &pr->dst.mask.v4.s_addr, IP_ADDR_LEN);
-+	pr->dst.addr.addr.v4.s_addr = fr->fw_dst.addr_ip;
-+	addr_btom(fr->fw_dst.addr_bits, &pr->dst.addr.mask.v4.s_addr, IP_ADDR_LEN);
++	pr->dst.addr.v.a.addr.v4.s_addr = fr->fw_dst.addr_ip;
++	addr_btom(fr->fw_dst.addr_bits, &pr->dst.addr.v.a.mask.v4.s_addr, IP_ADDR_LEN);
  	
  	switch (fr->fw_proto) {
  	case IP_PROTO_ICMP:
-@@ -97,12 +97,12 @@ pr_to_fr(const struct pf_rule *pr, struc
+@@ -97,12 +97,12 @@
  		return (-1);
  	
  	fr->fw_src.addr_type = ADDR_TYPE_IP;
 -	addr_mtob(&pr->src.mask.v4.s_addr, IP_ADDR_LEN, &fr->fw_src.addr_bits);
 -	fr->fw_src.addr_ip = pr->src.addr.v4.s_addr;
-+	addr_mtob(&pr->src.addr.mask.v4.s_addr, IP_ADDR_LEN, &fr->fw_src.addr_bits);
-+	fr->fw_src.addr_ip = pr->src.addr.addr.v4.s_addr;
++	addr_mtob(&pr->src.addr.v.a.mask.v4.s_addr, IP_ADDR_LEN, &fr->fw_src.addr_bits);
++	fr->fw_src.addr_ip = pr->src.addr.v.a.addr.v4.s_addr;
  	
   	fr->fw_dst.addr_type = ADDR_TYPE_IP;
 -	addr_mtob(&pr->dst.mask.v4.s_addr, IP_ADDR_LEN, &fr->fw_dst.addr_bits);
 -	fr->fw_dst.addr_ip = pr->dst.addr.v4.s_addr;
-+	addr_mtob(&pr->dst.addr.mask.v4.s_addr, IP_ADDR_LEN, &fr->fw_dst.addr_bits);
-+	fr->fw_dst.addr_ip = pr->dst.addr.addr.v4.s_addr;
++	addr_mtob(&pr->dst.addr.v.a.mask.v4.s_addr, IP_ADDR_LEN, &fr->fw_dst.addr_bits);
++	fr->fw_dst.addr_ip = pr->dst.addr.v.a.addr.v4.s_addr;
  	
  	switch (fr->fw_proto) {
  	case IP_PROTO_ICMP:
-@@ -147,11 +147,12 @@ fw_open(void)
+@@ -147,11 +147,12 @@
  int
  fw_add(fw_t *fw, const struct fw_rule *rule)
  {
@@ -49,7 +48,7 @@ $OpenBSD: patch-src_fw-pf_c,v 1.2 2003/01/02 12:28:49 naddy Exp $
  	
  	pcr.action = PF_CHANGE_ADD_TAIL;
  	
-@@ -161,11 +162,12 @@ fw_add(fw_t *fw, const struct fw_rule *r
+@@ -161,11 +162,12 @@
  int
  fw_delete(fw_t *fw, const struct fw_rule *rule)
  {
@@ -64,7 +63,7 @@ $OpenBSD: patch-src_fw-pf_c,v 1.2 2003/01/02 12:28:49 naddy Exp $
  	
  	pcr.action = PF_CHANGE_REMOVE;
  
-@@ -180,6 +182,7 @@ fw_loop(fw_t *fw, fw_handler callback, v
+@@ -180,6 +182,7 @@
  	uint32_t n, max;
  	int ret;
  	
