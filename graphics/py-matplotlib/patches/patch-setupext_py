@@ -1,6 +1,6 @@
-$OpenBSD: patch-setupext_py,v 1.1.1.1 2004/11/11 04:05:26 djm Exp $
---- setupext.py.orig	Fri Nov  5 02:27:13 2004
-+++ setupext.py	Tue Nov  9 20:53:10 2004
+$OpenBSD: patch-setupext_py,v 1.2 2005/02/02 23:16:18 djm Exp $
+--- setupext.py.orig	Wed Dec 15 10:16:24 2004
++++ setupext.py	Wed Feb  2 17:03:26 2005
 @@ -35,6 +35,7 @@ basedir = {
      'win32'  : ['win32_static',],
      'linux2' : ['/usr/local', '/usr',],
@@ -9,7 +9,7 @@ $OpenBSD: patch-setupext_py,v 1.1.1.1 2004/11/11 04:05:26 djm Exp $
      'darwin' : ['/usr/local', '/usr', '/sw', '/usr/X11R6'],
      'freebsd4' : ['/usr/local', '/usr'],
      'sunos5' : [os.getenv('MPLIB_BASE') or '/usr/local',],
-@@ -82,6 +83,8 @@ def temp_copy(_from, _to):
+@@ -83,6 +84,8 @@ def temp_copy(_from, _to):
  def add_base_flags(module):
      incdirs = [os.path.join(p, 'include') for p in basedir[sys.platform]
                 if os.path.exists(p)]

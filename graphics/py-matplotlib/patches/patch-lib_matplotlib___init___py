@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_matplotlib___init___py,v 1.1.1.1 2004/11/11 04:05:26 djm Exp $
---- lib/matplotlib/__init__.py.orig	Tue Nov  9 21:59:25 2004
-+++ lib/matplotlib/__init__.py	Tue Nov  9 21:59:48 2004
-@@ -286,15 +286,15 @@ def get_home():
+$OpenBSD: patch-lib_matplotlib___init___py,v 1.2 2005/02/02 23:16:18 djm Exp $
+--- lib/matplotlib/__init__.py.orig	Sat Jan 22 07:22:37 2005
++++ lib/matplotlib/__init__.py	Wed Feb  2 17:06:03 2005
+@@ -294,15 +294,15 @@ def _get_data_path():
+         path = os.environ['MATPLOTLIBDATA']
+         if os.path.isdir(path): return path
  
- def _get_data_path():
-     'get the path to matplotlib data'
 -    path = os.path.join(distutils.sysconfig.PREFIX, 'share', 'matplotlib')
 +    path = os.path.join(distutils.sysconfig.PREFIX, 'share', 'py-matplotlib')
      if os.path.isdir(path): return path
@@ -19,4 +19,4 @@ $OpenBSD: patch-lib_matplotlib___init___py,v 1.1.1.1 2004/11/11 04:05:26 djm Exp
 +                        'share','py-matplotlib')
      if os.path.isdir(path): return path
  
-     if os.environ.has_key('MATPLOTLIBDATA'):
+ 	

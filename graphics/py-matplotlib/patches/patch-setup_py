@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2004/11/11 04:05:26 djm Exp $
---- setup.py.orig	Fri Nov  5 02:41:42 2004
-+++ setup.py	Tue Nov  9 20:53:39 2004
-@@ -67,7 +67,7 @@ data.extend(glob.glob('images/*.png'))
+$OpenBSD: patch-setup_py,v 1.2 2005/02/02 23:16:18 djm Exp $
+--- setup.py.orig	Sat Jan 22 05:42:00 2005
++++ setup.py	Wed Feb  2 17:04:46 2005
+@@ -77,7 +77,7 @@ data.extend(glob.glob('images/*.png'))
  data.extend(glob.glob('images/*.ppm'))
  data.append('.matplotlibrc')
  
@@ -10,18 +10,28 @@ $OpenBSD: patch-setup_py,v 1.1.1.1 2004/11/11 04:05:26 djm Exp $
  
  # Figure out which array packages to provide binary support for
  # and define the NUMERIX value: Numeric, numarray, or both.
-@@ -122,9 +122,11 @@ if havedate: # dates require python23 da
+@@ -148,14 +148,16 @@ if havedate: # dates require python23 da
+ 
  build_transforms(ext_modules, packages, NUMERIX)
-     
- if BUILD_GTKAGG:
--    try: import gtk
--    except ImportError: print 'GTKAgg requires pygtk'
--    else:
+ 
+-if BUILD_GTKAGG:
+-    try:
+-        import gtk
+-    except ImportError:
+-        print 'GTKAgg requires pygtk'
+-        BUILD_GTKAGG=0
+-    except RuntimeError:
+-        print 'pygtk present but import failed'
 +# Dependencies ensure that py-gtk2 exists, so this isn't necessary. Also, 
 +# the "import gtk" tries to access $DISPLAY at build time!
-+#    try: import gtk
-+#    except ImportError: print 'GTKAgg requires pygtk'
-+#    else:
-         BUILD_AGG = 1
-         build_gtkagg(ext_modules, packages)
- 
++#if BUILD_GTKAGG:
++#    try:
++#        import gtk
++#    except ImportError:
++#        print 'GTKAgg requires pygtk'
++#        BUILD_GTKAGG=0
++#    except RuntimeError:
++#        print 'pygtk present but import failed'
+ if BUILD_GTKAGG:
+     BUILD_AGG = 1
+     build_gtkagg(ext_modules, packages)
