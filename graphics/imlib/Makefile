@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2000/10/03 08:18:43 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2001/03/04 04:54:48 brad Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 DISTNAME=	imlib-1.9.8.1
@@ -25,7 +25,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-modules
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 pre-build:
 	@echo ""
