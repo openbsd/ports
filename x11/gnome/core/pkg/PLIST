@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/01/02 08:12:19 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/02/25 03:37:00 marcm Exp $
+@pkgcfl gnome-desktop-*
+@pkgcfl gnome-panel-*
+@pkgcfl gnome-session-*
+@pkgcfl gnome-terminal-*
 bin/deskguide_applet
 bin/gmenu
 bin/gnome-about
