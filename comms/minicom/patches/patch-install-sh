@@ -1,7 +1,7 @@
-# $OpenBSD: patch-install-sh,v 1.3 2000/06/03 11:02:37 form Exp $
+# $OpenBSD: patch-install-sh,v 1.4 2000/08/31 00:21:56 brad Exp $
 
---- install.sh.orig	Wed Mar 15 22:25:21 2000
-+++ install.sh	Sat Jun  3 17:57:11 2000
+--- install.sh.orig	Wed Mar 15 11:25:21 2000
++++ install.sh	Wed Aug 30 20:13:24 2000
 @@ -15,20 +15,20 @@
  	exit 1
  fi
@@ -10,11 +10,7 @@
 -do
 -	mkdir -p $i
 -done
-+#for i in $*
-+#do
-+#	mkdir -p $i
-+#done
- 
+-
 -if test ! -d $1
 -then
 -	mkdir -p $1
@@ -24,6 +20,11 @@
 -		exit 1
 -	fi
 -fi
++#for i in $*
++#do
++#	mkdir -p $i
++#done
++
 +#if test ! -d $1
 +#then
 +#	mkdir -p $1
@@ -36,14 +37,12 @@
  
  if test ! -d $2
  then
-@@ -46,8 +46,8 @@
- then
+@@ -47,7 +47,7 @@
  	echo "Installing minicom in $2"
  	cp minicom $2/minicom
--	chown root $2/minicom
+ 	chown root $2/minicom
 -	chgrp uucp $2/minicom
-+	chown uucp $2/minicom
-+	chgrp dialer $2/minicom
++	chgrp wheel $2/minicom
  	chmod 755 $2/minicom
  fi
  
