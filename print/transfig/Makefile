@@ -3,11 +3,11 @@
 # Date created:		December 2, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 1998/06/13 23:27:02 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/07/04 04:41:22 marc Exp $
 #
 
-DISTNAME=	transfig.3.2
-PKGNAME=	transfig-3.2
+DISTNAME=	transfig.3.2.1
+PKGNAME=	transfig-3.2.1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/drawing_tools/transfig

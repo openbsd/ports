@@ -1,26 +1,15 @@
---- fig2dev/Imakefile.orig	Mon Aug 25 20:51:04 1997
-+++ fig2dev/Imakefile	Mon Aug 25 20:54:14 1997
-@@ -37,7 +37,7 @@
+--- fig2dev/Imakefile.orig	Tue Jun 30 16:52:50 1998
++++ fig2dev/Imakefile	Fri Jul  3 21:19:57 1998
+@@ -42,7 +42,7 @@
  XCOMM inline functions. With the "INLINE" keyword, you should notice that
  XCOMM the display will be a bit faster in complex figures
  
 -XCOMM USEINLINE = -DUSE_INLINE
 +USEINLINE = -DUSE_INLINE
  
- XCOMM Uncomment the XPM variables here  if you have the XPM (color pixmap)
- XCOMM package and you would like to allow XPM files.
-@@ -100,8 +100,8 @@
- XCOMM     Hint: Users of LaTeX2e will probably want to include both of these
- XCOMM     options; users of LaTeX 2.09 will probably want to include neither.
- 
--XCOMM DDNFSS = -DNFSS
--XCOMM DDEPSF = -DEPSF
-+DDNFSS = -DNFSS
-+DDEPSF = -DEPSF
- 
- XCOMM For Linux machines or any machines that have a separate library for
- XCOMM the database management routines, uncomment the following line
-@@ -138,7 +138,7 @@
+ XCOMM Unomment the #define for USEXPM if you want to use the XPM
+ XCOMM (color pixmap) package.
+@@ -154,7 +154,7 @@
  
  #ifdef USEINSTALLEDJPEG
  JPEGLIBDIR = /usr/local/lib
@@ -28,17 +17,4 @@
 +JPEGINCDIR = /usr/local/include
  JPEGLIB = -L$(JPEGLIBDIR) -ljpeg
  #else
- JPEGLIBDIR = ../../jpeg
-@@ -175,10 +175,10 @@
- INCLUDES = -I.. -I$(JPEGINCDIR)
- 
- LOCAL_LIBRARIES = $(LIBTRANSFIG) $(JPEGLIB)
--#if defined(NetBSDArchitecture)
-+#if defined(NetBSDArchitecture) 
- SYS_LIBRARIES = $(XPMLIB) $(DBMLIB) -lm -lcompat
- #else
--SYS_LIBRARIES = $(XPMLIB) $(DBMLIB) -lm
-+SYS_LIBRARIES = $(XPMLIB) $(DBMLIB) -lm -lcompat
- #endif
- DEPLIBS = $(LIBTRANSFIG)
- 
+ XCOMM this is relative to this directory (transfig/fig2dev)
