@@ -1,0 +1,22 @@
+$OpenBSD: patch-configure,v 1.1 2005/02/12 18:08:12 jcs Exp $
+--- configure.orig	Wed Jul 30 08:21:38 2003
++++ configure	Sat Feb 12 12:01:01 2005
+@@ -4021,9 +4021,6 @@
+   cat >> confdefs.h <<EOF
+ #define $ac_tr_lib 1
+ EOF
+-
+-  LIBS="-lusb $LIBS"
+-
+ else
+   echo "$ac_t""no" 1>&6
+ fi
+@@ -4046,7 +4043,7 @@
+ 		cat >> confdefs.h <<\EOF
+ #define WITH_LIBUSB 1
+ EOF
+-
++        LIBS="-lusb $LIBS"
+ 	else
+ 		echo "configure: warning: 
+ 			libusb missing
