@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2003/04/17 10:45:23 wilfried Exp $
---- Makefile.in.orig	Mon Apr 30 18:39:08 2001
-+++ Makefile.in	Mon Apr  7 23:59:29 2003
-@@ -95,7 +95,7 @@ target_alias = @target_alias@
- target_triplet = @target@
- LIBTERMCAP = @LIBTERMCAP@
+$OpenBSD: patch-Makefile_in,v 1.2 2003/10/26 17:30:40 sturm Exp $
+--- Makefile.in.orig	2003-06-03 21:35:10.000000000 +1000
++++ Makefile.in	2003-10-10 12:46:52.000000000 +1000
+@@ -220,7 +220,7 @@ TEXINFO_DISTFILES = \
  
+ 
+ # Shared data installation
 -dddrootdir = $(pkgdatadir)-$(VERSION)
 +dddrootdir = $(pkgdatadir)
  
+ 
  # -----------------------------------------------------------------------------
- # Data.

@@ -1,0 +1,8 @@
+
++---------------
+| To use the 'plot' command, install the  'math/gnuplot' port.
+|
+| If you select the 'plot' command without gnuplot installed you may
+| get an X error. (Clicking 'ignore' seems ok.)
++---------------
+

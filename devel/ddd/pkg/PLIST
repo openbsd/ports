@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/04/17 10:45:23 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/10/26 17:30:40 sturm Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/ddd-themes.info
 @unexec install-info --delete --info-dir=%D/info %D/info/ddd.info
 bin/ddd
@@ -48,12 +48,12 @@ share/ddd/vsllib/verbose.vsl
 share/ddd/vsllib/vsl.vsl
 share/ddd/vsllib/vsldef.vsl
 share/ddd/vsllib/vsllib.vsl
-share/doc/ddd/PROBLEMS
-share/doc/ddd/README
 share/doc/ddd/ddd-paper.ps.gz
+share/doc/ddd/ddd-themes.pdf
+share/doc/ddd/ddd-themes.ps.gz
+share/doc/ddd/ddd.html
+share/doc/ddd/ddd.pdf
 share/doc/ddd/ddd.ps.gz
-share/doc/ddd/sample.c
-share/doc/ddd/sample.dddinit
 @dirrm share/doc/ddd
 @dirrm share/ddd/vsllib
 @dirrm share/ddd/themes

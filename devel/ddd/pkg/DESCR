@@ -20,10 +20,3 @@ What is DDD, anyway?
     interface; GDB/DBX/XDB command-line interface with full editing,
     history, and completion capabilities.  DDD has been designed to
     compete with well-known commercial debuggers.
-    
-    DDD is free software, protected by the GNU general public license.
-    It is actively maintained by its authors, Dorothea Luetkehaus and
-    Andreas Zeller at the Technische Universitaet Braunschweig,
-    Germany.
-
-WWW: ${HOMEPAGE}

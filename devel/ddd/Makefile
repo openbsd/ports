@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2003/04/10 16:51:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.36 2003/10/26 17:30:39 sturm Exp $
 
 COMMENT=	"Data Display Debugger, graphical front-end for GDB, etc"
 
-DISTNAME=	ddd-3.3.1
+DISTNAME=	ddd-3.3.7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=ddd/}
 
@@ -14,9 +14,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+REGRESS_IS_INTERACTIVE=Yes
+# Note - we need ~/.XAuthority, which doesn't exist in
+# /${PKGNAME}_writes_to_home
+REGRESS_FLAGS+=	"DISPLAY=$${DISPLAY}" "HOME=$${HOME}"
+
 USE_MOTIF=	any
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
+SEPARATE_BUILD=	simple
 
 SUBST_VARS+=	DISTNAME
 
@@ -28,14 +34,17 @@ MAKE_FLAGS=	MAINTAINER="'${MAINTAINER}'"
 
 VMEM_WARNING=	Yes
 
-DOCS=	README ddd-paper.ps ddd.ps sample.dddinit
+DOCS=	ddd-paper.ps ddd-themes.pdf ddd-themes.ps ddd.pdf ddd.ps html/ddd.html
+
+pre-build:
+	find ${WRKSRC} -type f \( -name '*.C' -o -name '*.h' \) -print0 | xargs -0 \
+		perl -pi -e 'next if /#include/; s/\bstring\b/gnu_string/g;'
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ddd
-	${INSTALL_DATA} ${WRKSRC}/PROBLEMS ${PREFIX}/share/doc/ddd
-	${INSTALL_DATA} ${WRKSRC}/ddd/sample.c ${PREFIX}/share/doc/ddd
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/ddd
 	@${GZIP_CMD} ${PREFIX}/share/doc/ddd/ddd-paper.ps
+	@${GZIP_CMD} ${PREFIX}/share/doc/ddd/ddd-themes.ps
 	@${GZIP_CMD} ${PREFIX}/share/doc/ddd/ddd.ps
 
 .include <bsd.port.mk>
