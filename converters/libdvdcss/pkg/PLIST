@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/10/22 21:06:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/02/25 01:10:27 espie Exp $
 include/dvdcss/dvdcss.h
 lib/libdvdcss.a
 lib/libdvdcss.la
