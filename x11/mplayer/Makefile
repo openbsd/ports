@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2005/03/09 16:07:29 biorn Exp $
+# $OpenBSD: Makefile,v 1.80 2005/03/16 12:33:35 biorn Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64
@@ -7,7 +7,7 @@ COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
 DISTNAME=		MPlayer-1.0pre6a
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}
+PKGNAME=		${DISTNAME:L}p0
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -56,6 +56,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-liblzo \
 		--disable-caca \
 		--disable-vidix \
+		--disable-xvid \
 		--enable-select \
 		--enable-vorbis \
 		--enable-menu \
