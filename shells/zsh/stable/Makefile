@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/09/09 18:14:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/24 15:25:46 lebel Exp $
 
 COMMENT=	"Z shell, Bourne shell-compatible, release flavor"
 COMMENT-zftp=	"Z shell embedded ftp client"
@@ -6,7 +6,7 @@ COMMENT-zftp=	"Z shell embedded ftp client"
 VERSION=	4.0.2
 DISTNAME=	zsh-${VERSION}
 CATEGORIES=	shells
-NEED_VERSION=	1.402
+NEED_VERSION=	1.474
 MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		ftp://ftp.sterling.com/zsh/ \
 		ftp://ftp.rge.com/pub/zsh/ \
@@ -47,4 +47,8 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED:S/shared/dynamic/}
 
 SUBST_VARS=	VERSION
 
+REGRESS_FLAGS=	INSTALL_PROGRAM="install -c -s -m 555" \
+	        INSTALL_DATA="install -c -m 444" \
+		INSTALL="install -c"
+	        
 .include <bsd.port.mk>
