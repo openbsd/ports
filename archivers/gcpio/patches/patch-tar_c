@@ -1,0 +1,44 @@
+$OpenBSD: patch-tar_c,v 1.1 2004/05/11 13:20:29 lebel Exp $
+--- tar.c.orig	2001-12-06 05:55:34.000000000 +0100
++++ tar.c	2004-05-10 21:37:30.000000000 +0200
+@@ -27,6 +27,7 @@
+ #include "tarhdr.h"
+ 
+ static void to_oct ();
++static void to_oct_no_nul ();
+ static char *stash_tar_linkname ();
+ static char *stash_tar_filename ();
+ 
+@@ -97,8 +98,8 @@ write_out_tar_header (file_hdr, out_des)
+   to_oct (file_hdr->c_mode, 8, tar_hdr->mode);
+   to_oct (file_hdr->c_uid, 8, tar_hdr->uid);
+   to_oct (file_hdr->c_gid, 8, tar_hdr->gid);
+-  to_oct (file_hdr->c_filesize, 12, tar_hdr->size);
+-  to_oct (file_hdr->c_mtime, 12, tar_hdr->mtime);
++  to_oct_no_nul (file_hdr->c_filesize, 12, tar_hdr->size);
++  to_oct_no_nul (file_hdr->c_mtime, 12, tar_hdr->mtime);
+ 
+   switch (file_hdr->c_mode & CP_IFMT)
+     {
+@@ -446,6 +447,21 @@ to_oct (value, digits, where)
+     where[--digits] = ' ';
+ }
+ 
++/* Convert a number into a string of octal digits.
++   Convert long VALUE into a DIGITS-digit field at WHERE,
++   including a trailing space.  DIGITS==2 means
++   1 digit, and a space.
++*/
++
++static void
++to_oct_no_nul (value, digits, where)
++     register long value;
++     register int digits;
++     register char *where;
++{
++  to_oct (value, digits + 1, where);
++}
++
+ /* Return
+    2 if BUF is a valid POSIX tar header (the checksum is correct
+    and it has the "ustar" magic string),
