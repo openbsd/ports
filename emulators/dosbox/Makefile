@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/10/07 03:05:32 jsg Exp $
+# $OpenBSD: Makefile,v 1.2 2004/11/25 01:40:24 jsg Exp $
 
 COMMENT=	"x86 with DOS emulator targeted at playing old games"
-VERSION=	0.62
+VERSION=	0.63
 DISTNAME=	dosbox-${VERSION}
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dosbox/}
@@ -30,5 +30,9 @@ CONFIGURE_ENV+=LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--disable-dynamic-x86 
 CONFIGURE_ARGS+=	--disable-alsatest
 CONFIGURE_ARGS+=	--disable-opengl
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dosbox
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/dosbox
 
 .include <bsd.port.mk>

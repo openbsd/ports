@@ -1,17 +1,6 @@
-$OpenBSD: patch-src_dos_cdrom_image_cpp,v 1.1.1.1 2004/10/07 03:05:32 jsg Exp $
---- src/dos/cdrom_image.cpp.orig	Sun Oct  3 20:48:13 2004
-+++ src/dos/cdrom_image.cpp	Sun Oct  3 20:48:32 2004
-@@ -23,9 +23,9 @@
- #include <cstdio>
- #include <fstream>
- #include <iostream>
--#include <limits>
- #include <sstream>
- #include <vector>
-+#include <sys/limits.h>
- #include <sys/stat.h>
- #include "cdrom.h"
- #include "drives.h"
+$OpenBSD: patch-src_dos_cdrom_image_cpp,v 1.2 2004/11/25 01:40:24 jsg Exp $
+--- src/dos/cdrom_image.cpp.orig	Wed Oct  6 05:55:03 2004
++++ src/dos/cdrom_image.cpp	Mon Nov 22 21:13:39 2004
 @@ -111,11 +111,11 @@ int CDROM_Interface_Image::AudioFile::ge
  	while (true) {
  		int success = Sound_Seek(sample, (unsigned int)(shift + time));
@@ -26,12 +15,3 @@ $OpenBSD: patch-src_dos_cdrom_image_cpp,v 1.1.1.1 2004/10/07 03:05:32 jsg Exp $
  			time = time << 1;
  		}
  	}
-@@ -572,7 +572,7 @@ bool CDROM_Interface_Image::GetRealFileN
- 	if (stat(filename.c_str(), &test) == 0) return true;
- 	
- 	// check if file with path relative to cue file exists
--#if not defined(WIN32)
-+#if !defined(WIN32)
- 	string tmpstr(pathname + "/" + filename);
- 	if (stat(tmpstr.c_str(), &test) == 0) {
- 		filename = tmpstr;

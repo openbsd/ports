@@ -1,8 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/07 03:05:32 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/11/25 01:40:24 jsg Exp $
 bin/dosbox
 @man man/man1/dosbox.1
 share/doc/dosbox/
-share/doc/dosbox/AUTHORS
-share/doc/dosbox/NEWS
 share/doc/dosbox/README
-share/doc/dosbox/THANKS
