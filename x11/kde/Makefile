@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/08/21 16:25:39 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/08/27 14:39:49 espie Exp $
 
      SUBDIR+= libs2
      SUBDIR+= base2
@@ -9,5 +9,6 @@
      SUBDIR+= libs2-doc
      SUBDIR+= graphics2
      SUBDIR+= mosfet-liquid
+     SUBDIR+= artwork2
 
 .include <bsd.port.subdir.mk>
