@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/01/17 15:11:19 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/04/24 17:22:54 peter Exp $
 bin/asp-perl
 ${P5SITE}/Apache/ASP.pm
+${P5SITE}/Apache/ASP/ApacheCommon.pm
 ${P5SITE}/Apache/ASP/Application.pm
 ${P5SITE}/Apache/ASP/CGI.pm
-@comment ${P5SITE}/Apache/ASP/CGI/Table.pm
+${P5SITE}/Apache/ASP/CGI/Table.pm
 ${P5SITE}/Apache/ASP/CGI/Test.pm
 ${P5SITE}/Apache/ASP/Collection.pm
 ${P5SITE}/Apache/ASP/CollectionItem.pm
@@ -28,10 +29,12 @@ ${P5SITE}/Apache/ASP/StateManager.pm
 @comment ${P5ARCH}/auto/Apache/ASP/.packlist
 man/man1/asp-perl.1
 man/man3p/Apache::ASP.3p
-@comment man/man3p/Apache::ASP::CGI::Table.3p
+man/man3p/Apache::ASP::CGI::Table.3p
 @comment man/man3p/Bundle::Apache::ASP.3p
 @comment man/man3p/Bundle::Apache::ASP::Extra.3p
 @comment @dirrm ${P5ARCH}/auto/Apache/ASP
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
 @comment @dirrm ${P5SITE}/Bundle/Apache/ASP
 @comment @dirrm ${P5SITE}/Bundle/Apache
 @comment @dirrm ${P5SITE}/Bundle
@@ -40,4 +43,4 @@ man/man3p/Apache::ASP.3p
 @dirrm ${P5SITE}/Apache/ASP/Lang
 @dirrm ${P5SITE}/Apache/ASP/CGI
 @dirrm ${P5SITE}/Apache/ASP
-@dirrm ${P5SITE}/Apache
+@comment @dirrm ${P5SITE}/Apache
