@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/04/04 17:41:15 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2002/04/04 22:10:28 naddy Exp $
 
 FLAVORS=af ar az bg bs ca cs da de el en_GB eo es et fi fr he hr hu id is \
     it ja ko lt lv mt nb nl nn pl pt pt_BR ro ru sk sl sv ta th tr uk ven \
@@ -16,8 +16,8 @@ DISTNAME=		kde-i18n-${FLAVOR}-${VERSION}
 DIST_SUBDIR=		kde
 MODULES=qt3
 
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/kde-${VERSION}/src
+MASTER_SITES=		${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${VERSION}/src
 EXTRACT_SUFX=		.tar.bz2
 
 SUPDISTFILES=
