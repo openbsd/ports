@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/23 16:24:18 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/24 16:31:39 espie Exp $
 
 
 COMMENT=	"smalltalk system"
@@ -17,20 +17,25 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MAJOR=3
 MINOR=0
+SUB=3552
 V=${MAJOR}.${MINOR}
-DIST_SUBDIR=squeak3.0
+SUBST_VARS=V MAJOR
+DIST_SUBDIR=squeak$V
 
+FTPSITE=	ftp://st.cs.uiuc.edu/pub/Smalltalk/Squeak
 HOMEPAGE=	http://squeak.org/
-MASTER_SITES=ftp://st.cs.uiuc.edu/pub/Smalltalk/Squeak/$V/files/
-MASTER_SITES0=http://www-sor.inria.fr/~piumarta/squeak/unix/
+MASTER_SITES=${FTPSITE}/$V/platform-independent/
+MASTER_SITES0=${FTPSITE}/$V/unix-linux/src/ \
+	http://www-sor.inria.fr/~piumarta/squeak/unix/
 
-COMMON_FILES=ReadMe.txt.gz Squeak$Vfinal.changes.gz Squeak$Vfinal.image.gz SqueakV${MAJOR}.sources.gz
+COMMON_FILES=ReadMe.txt.gz MajorShrinkFor$V.cs.gz SqueakV${MAJOR}.sources.gz
+
+IMAGE=Squeak$V-${SUB}.zip
 
 DISTNAME=squeak-$V
-PKGNAME=squeak-$V.pre2
-DISTFILES=Squeak-$Vpre2.tar.gz:0 ${COMMON_FILES}
+DISTFILES=Squeak-$V-src.tar.gz:0 ${COMMON_FILES} ${IMAGE}
 
-EXTRACT_ONLY=Squeak-$Vpre2.tar.gz
+EXTRACT_ONLY=Squeak-$V-src.tar.gz ${IMAGE}
 
 WRKDIST=${WRKDIR}/Squeak-$V
 WRKSRC=	${WRKDIST}/src/unix
@@ -52,13 +57,17 @@ PLUGINS= Profiler.so SoundCodecPrims.so Squeak3D.so System.so
 post-extract:
 	cp ${FILESDIR}/sqOpenBSDSound.c ${WRKSRC}
 	rm ${WRKSRC}/sqUnixSound.c
+	gzip ${WRKDIR}/Squeak$V.{changes,image}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/squeak
-	cd ${PREFIX}/share/squeak && for i in ${COMMON_FILES}; \
+	for i in ${COMMON_FILES}; \
 	do \
 		${INSTALL_DATA} ${FULLDISTDIR}/$$i ${PREFIX}/share/squeak; \
-	done; gunzip SqueakV${MAJOR}.sources.gz
+	done
+	${INSTALL_DATA} ${WRKDIR}/Squeak$V.changes.gz ${PREFIX}/share/squeak
+	${INSTALL_DATA} ${WRKDIR}/Squeak$V.image.gz ${PREFIX}/share/squeak
+	gunzip ${PREFIX}/share/squeak/SqueakV${MAJOR}.sources.gz
 	sed -e 's,@PREFIX@,${TRUEPREFIX},' -e 's,@V@,$V,' \
 	    <${FILESDIR}/inisqueak >${PREFIX}/lib/squeak/$V/inisqueak
 	@chmod a+x ${PREFIX}/bin/inisqueak
