@@ -1,5 +1,5 @@
 #!/usr/bin/perl 
-# $OpenBSD: createuser,v 1.1.1.1 1999/05/18 16:39:02 espie Exp $
+# $OpenBSD: createuser,v 1.2 1999/08/21 20:56:05 niklas Exp $
 
 # user creation script.
 # All ports that need to create new users should defer to this script
@@ -35,7 +35,7 @@ sub fill_user
 	my $k;
 	local $_;
 	while (($k, $_) = each %$r)
-		{ die "Bad chpass field $_\n" unless m/^[\d\w ()\-/.]+$/; }
+		{ die "Bad chpass field $_\n" unless m/^[\d\w ()\-\/.]+$/; }
 	return $r;
 	}
 
@@ -90,5 +90,6 @@ print "$r->{user} with uid $uid, of group $r->{group} with gid $gid\n";
 
 $passargs = join(':', 
 	($r->{user}, '*', $uid, $gid, '', '', '', $r->{fullname}, $r->{home}, $r->{shell}));
-print "/usr/bin/chpass -a $passargs\n";
-system('/usr/bin/chpass', '-a', $passargs);
+$local = `ypwhich >/dev/null 2>&1 && echo -n l`;
+print "/usr/bin/chpass -${local}a $passargs\n";
+system('/usr/bin/chpass', "-${local}a", $passargs);
