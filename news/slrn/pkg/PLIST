@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/12/16 19:36:39 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/01/22 19:28:43 lebel Exp $
 bin/slrn
 man/man1/slrn.1
 share/doc/slrn/COPYING
@@ -10,7 +10,6 @@ share/doc/slrn/README.GroupLens
 share/doc/slrn/README.SSL
 share/doc/slrn/README.macros
 share/doc/slrn/README.multiuser
-share/doc/slrn/SCORE_FAQ
 share/doc/slrn/THANKS
 share/doc/slrn/changes.txt
 share/doc/slrn/help.txt
@@ -20,16 +19,18 @@ share/doc/slrn/score.txt
 share/doc/slrn/slrn-doc.html
 share/doc/slrn/slrn.rc
 share/doc/slrn/slrnfuns.txt
+share/locale/be/LC_MESSAGES/slrn.mo
 share/locale/da/LC_MESSAGES/slrn.mo
 share/locale/de/LC_MESSAGES/slrn.mo
 share/locale/es/LC_MESSAGES/slrn.mo
+share/locale/fi/LC_MESSAGES/slrn.mo
 share/locale/fr/LC_MESSAGES/slrn.mo
 share/locale/it/LC_MESSAGES/slrn.mo
 share/locale/ko/LC_MESSAGES/slrn.mo
-@comment share/locale/locale.alias
 share/locale/nl/LC_MESSAGES/slrn.mo
 share/locale/pl/LC_MESSAGES/slrn.mo
 share/locale/ru/LC_MESSAGES/slrn.mo
+share/locale/tr/LC_MESSAGES/slrn.mo
 share/slrn/macros/color.sl
 share/slrn/macros/gsort.sl
 share/slrn/macros/ispell.sl
@@ -46,6 +47,8 @@ share/slrn/macros/varset.sl
 share/slrn/macros/xcomment.sl
 @dirrm share/slrn/macros
 @dirrm share/slrn
+@dirrm share/locale/tr/LC_MESSAGES
+@dirrm share/locale/tr
 @dirrm share/locale/ru/LC_MESSAGES
 @dirrm share/locale/ru
 @dirrm share/locale/pl/LC_MESSAGES
@@ -58,11 +61,15 @@ share/slrn/macros/xcomment.sl
 @dirrm share/locale/it
 @dirrm share/locale/fr/LC_MESSAGES
 @dirrm share/locale/fr
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
 @dirrm share/locale/es/LC_MESSAGES
 @dirrm share/locale/es
 @dirrm share/locale/de/LC_MESSAGES
 @dirrm share/locale/de
 @dirrm share/locale/da/LC_MESSAGES
 @dirrm share/locale/da
+@dirrm share/locale/be/LC_MESSAGES
+@dirrm share/locale/be
 @dirrm share/locale
 @dirrm share/doc/slrn
