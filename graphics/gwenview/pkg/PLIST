@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/11/18 05:25:27 brad Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/12/09 23:18:59 brad Exp $
 bin/gwenview
 man/man1/gwenview.1
 share/applnk/Graphics/gwenview.desktop
-share/apps/gwenview/cursors/autozoom.png
 share/apps/gwenview/cursors/drag.png
 share/apps/gwenview/cursors/dragging.png
 share/apps/gwenview/cursors/zoom.png
@@ -20,46 +19,53 @@ share/apps/gwenview/icons/hicolor/16x16/actions/mirror.png
 share/apps/gwenview/icons/hicolor/16x16/actions/rotate_left.png
 share/apps/gwenview/icons/hicolor/16x16/actions/rotate_right.png
 share/apps/gwenview/icons/hicolor/16x16/actions/slideshow.png
-share/apps/gwenview/icons/hicolor/22x22/actions/actualsize.png
-share/apps/gwenview/icons/hicolor/22x22/actions/autozoom.png
+share/apps/gwenview/icons/hicolor/22x22/actions/flip.png
 share/apps/gwenview/icons/hicolor/22x22/actions/gvfirst.png
 share/apps/gwenview/icons/hicolor/22x22/actions/gvlast.png
 share/apps/gwenview/icons/hicolor/22x22/actions/gvnext.png
 share/apps/gwenview/icons/hicolor/22x22/actions/gvprevious.png
 share/apps/gwenview/icons/hicolor/22x22/actions/largethumbnails.png
-share/apps/gwenview/icons/hicolor/22x22/actions/lockzoom.png
 share/apps/gwenview/icons/hicolor/22x22/actions/medthumbnails.png
+share/apps/gwenview/icons/hicolor/22x22/actions/mirror.png
+share/apps/gwenview/icons/hicolor/22x22/actions/rotate_left.png
+share/apps/gwenview/icons/hicolor/22x22/actions/rotate_right.png
 share/apps/gwenview/icons/hicolor/22x22/actions/slideshow.png
 share/apps/gwenview/icons/hicolor/22x22/actions/smallthumbnails.png
-share/apps/gwenview/icons/hicolor/22x22/actions/zoomin.png
-share/apps/gwenview/icons/hicolor/22x22/actions/zoomout.png
-share/apps/gwenview/icons/hicolor/32x32/actions/actualsize.png
-share/apps/gwenview/icons/hicolor/32x32/actions/autozoom.png
+share/apps/gwenview/icons/hicolor/32x32/actions/flip.png
 share/apps/gwenview/icons/hicolor/32x32/actions/gvfirst.png
 share/apps/gwenview/icons/hicolor/32x32/actions/gvlast.png
 share/apps/gwenview/icons/hicolor/32x32/actions/gvnext.png
 share/apps/gwenview/icons/hicolor/32x32/actions/gvprevious.png
 share/apps/gwenview/icons/hicolor/32x32/actions/largethumbnails.png
-share/apps/gwenview/icons/hicolor/32x32/actions/lockzoom.png
 share/apps/gwenview/icons/hicolor/32x32/actions/medthumbnails.png
+share/apps/gwenview/icons/hicolor/32x32/actions/mirror.png
+share/apps/gwenview/icons/hicolor/32x32/actions/rotate_left.png
+share/apps/gwenview/icons/hicolor/32x32/actions/rotate_right.png
 share/apps/gwenview/icons/hicolor/32x32/actions/slideshow.png
 share/apps/gwenview/icons/hicolor/32x32/actions/smallthumbnails.png
-share/apps/gwenview/icons/hicolor/32x32/actions/zoomin.png
-share/apps/gwenview/icons/hicolor/32x32/actions/zoomout.png
+share/apps/gwenview/icons/hicolor/48x48/actions/flip.png
+share/apps/gwenview/icons/hicolor/48x48/actions/mirror.png
+share/apps/gwenview/icons/hicolor/48x48/actions/rotate_left.png
+share/apps/gwenview/icons/hicolor/48x48/actions/rotate_right.png
+share/apps/gwenview/icons/hicolor/48x48/actions/slideshow.png
+share/apps/gwenview/thumbnail/wait.png
 share/apps/gwenview/tools/gimp.desktop
 share/apps/gwenview/tools/konqueror.desktop
 share/apps/gwenview/tools/tiledwallpaper.desktop
 share/apps/gwenview/tools/wallpaper.desktop
 share/apps/konqueror/servicemenus/konqgwenview.desktop
 share/icons/hicolor/16x16/apps/gwenview.png
+share/icons/hicolor/22x22/apps/gwenview.png
 share/icons/hicolor/32x32/apps/gwenview.png
 share/icons/hicolor/48x48/apps/gwenview.png
+share/icons/hicolor/64x64/apps/gwenview.png
 share/icons/locolor/16x16/apps/gwenview.png
 share/icons/locolor/32x32/apps/gwenview.png
 share/locale/ar/LC_MESSAGES/gwenview.mo
 share/locale/cs/LC_MESSAGES/gwenview.mo
 share/locale/da/LC_MESSAGES/gwenview.mo
 share/locale/de/LC_MESSAGES/gwenview.mo
+share/locale/el/LC_MESSAGES/gwenview.mo
 share/locale/en_GB/LC_MESSAGES/gwenview.mo
 share/locale/es/LC_MESSAGES/gwenview.mo
 share/locale/et/LC_MESSAGES/gwenview.mo
@@ -138,6 +144,8 @@ share/locale/zu/LC_MESSAGES/gwenview.mo
 @comment @dirrm share/locale/es
 @comment @dirrm share/locale/en_GB/LC_MESSAGES
 @comment @dirrm share/locale/en_GB
+@comment @dirrm share/locale/el/LC_MESSAGES
+@comment @dirrm share/locale/el
 @comment @dirrm share/locale/de/LC_MESSAGES
 @comment @dirrm share/locale/de
 @comment @dirrm share/locale/da/LC_MESSAGES
@@ -147,9 +155,14 @@ share/locale/zu/LC_MESSAGES/gwenview.mo
 @comment @dirrm share/locale/ar/LC_MESSAGES
 @comment @dirrm share/locale/ar
 @comment @dirrm share/locale
+@comment @dirrm share/icons/hicolor/64x64/apps
+@comment @dirrm share/icons/hicolor/64x64
 @comment @dirrm share/icons/hicolor/16x16/apps
 @comment @dirrm share/icons/hicolor/16x16
 @dirrm share/apps/gwenview/tools
+@dirrm share/apps/gwenview/thumbnail
+@dirrm share/apps/gwenview/icons/hicolor/48x48/actions
+@dirrm share/apps/gwenview/icons/hicolor/48x48
 @dirrm share/apps/gwenview/icons/hicolor/32x32/actions
 @dirrm share/apps/gwenview/icons/hicolor/32x32
 @dirrm share/apps/gwenview/icons/hicolor/22x22/actions
@@ -160,3 +173,4 @@ share/locale/zu/LC_MESSAGES/gwenview.mo
 @dirrm share/apps/gwenview/icons
 @dirrm share/apps/gwenview/cursors
 @dirrm share/apps/gwenview
+@comment @dirrm share/apps
