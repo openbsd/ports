@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2004/09/16 04:14:55 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.18 2004/10/26 03:52:02 marcm Exp $
 bin/gdk-pixbuf-csource
 bin/gdk-pixbuf-query-loaders
 bin/gtk-demo
@@ -306,6 +306,10 @@ share/locale/am/
 share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/gtk20-properties.mo
 share/locale/am/LC_MESSAGES/gtk20.mo
+share/locale/ang/
+share/locale/ang/LC_MESSAGES/
+share/locale/ang/LC_MESSAGES/gtk20-properties.mo
+share/locale/ang/LC_MESSAGES/gtk20.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gtk20-properties.mo
@@ -314,6 +318,10 @@ share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/gtk20-properties.mo
 share/locale/az/LC_MESSAGES/gtk20.mo
+share/locale/az_IR/
+share/locale/az_IR/LC_MESSAGES/
+share/locale/az_IR/LC_MESSAGES/gtk20-properties.mo
+share/locale/az_IR/LC_MESSAGES/gtk20.mo
 share/locale/be/
 share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/gtk20-properties.mo
@@ -614,4 +622,3 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 @cwd /var/db
 @extra gtk-2.0/gtk.immodules
 @extra gtk-2.0/gdk-pixbuf.loaders
-@extra gtk-2.0/

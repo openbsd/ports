@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.10 2004/09/27 03:15:07 marcm Exp $
+@comment $OpenBSD: PLIST-docs,v 1.11 2004/10/26 03:52:02 marcm Exp $
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gdk/
@@ -449,5 +449,6 @@ share/gtk-doc/html/gtk/stock_zoom_1_24.png
 share/gtk-doc/html/gtk/stock_zoom_fit_24.png
 share/gtk-doc/html/gtk/stock_zoom_in_24.png
 share/gtk-doc/html/gtk/stock_zoom_out_24.png
+share/gtk-doc/html/gtk/style.css
 share/gtk-doc/html/gtk/ui-manager.html
 share/gtk-doc/html/gtk/up.png
