@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_widgets_qpopupmenu_cpp,v 1.2 2004/09/15 19:25:12 espie Exp $
---- src/widgets/qpopupmenu.cpp.orig	Thu Aug  5 16:42:21 2004
-+++ src/widgets/qpopupmenu.cpp	Sun Sep  5 13:22:26 2004
-@@ -2529,7 +2529,7 @@ QSize QPopupMenu::sizeHint() const
+$OpenBSD: patch-src_widgets_qpopupmenu_cpp,v 1.3 2005/02/03 20:05:56 espie Exp $
+--- src/widgets/qpopupmenu.cpp.orig	Fri Jan 21 18:16:22 2005
++++ src/widgets/qpopupmenu.cpp	Fri Jan 28 10:59:46 2005
+@@ -2530,7 +2530,7 @@ QSize QPopupMenu::sizeHint() const
      constPolish();
      QPopupMenu* that = (QPopupMenu*) this;
      //We do not need a resize here, just the sizeHint..

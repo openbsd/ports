@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.7 2004/08/10 13:33:13 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.8 2005/02/03 20:05:56 espie Exp $
 lib/qt3/examples/
 lib/qt3/examples/Makefile
 lib/qt3/examples/README
@@ -467,8 +467,8 @@ lib/qt3/examples/demo/translations/demo_de.qm
 lib/qt3/examples/demo/translations/demo_de.ts
 lib/qt3/examples/demo/translations/demo_fr.qm
 lib/qt3/examples/demo/translations/demo_fr.ts
-lib/qt3/examples/demo/translations/demo_iw.qm
-lib/qt3/examples/demo/translations/demo_iw.ts
+lib/qt3/examples/demo/translations/demo_he.qm
+lib/qt3/examples/demo/translations/demo_he.ts
 lib/qt3/examples/demo/widgets/
 lib/qt3/examples/demo/widgets/widgetsbase.ui
 lib/qt3/examples/demo/widgets/widgetsbase.ui.h

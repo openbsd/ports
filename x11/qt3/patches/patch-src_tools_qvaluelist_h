@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_tools_qvaluelist_h,v 1.1 2004/07/22 23:03:09 brad Exp $
---- src/tools/qvaluelist.h.orig	2004-04-19 03:35:56.000000000 -0600
-+++ src/tools/qvaluelist.h	2004-06-23 23:59:27.000000000 -0600
-@@ -636,13 +636,11 @@ Q_INLINE_TEMPLATES QDataStream& operator
+$OpenBSD: patch-src_tools_qvaluelist_h,v 1.2 2005/02/03 20:05:56 espie Exp $
+--- src/tools/qvaluelist.h.orig	Fri Jan 21 18:16:04 2005
++++ src/tools/qvaluelist.h	Fri Jan 28 10:59:46 2005
+@@ -638,13 +638,11 @@ Q_INLINE_TEMPLATES QDataStream& operator
      l.clear();
      Q_UINT32 c;
      s >> c;

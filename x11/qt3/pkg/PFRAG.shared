@@ -1,8 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.15 2004/10/30 09:12:35 espie Exp $
-@lib lib/libqt-mt.so.3.33
+@comment $OpenBSD: PFRAG.shared,v 1.16 2005/02/03 20:05:56 espie Exp $
+@lib lib/libqt-mt.so.3.34
 @lib lib/libqui-mt.so.1.0
 @lib lib/libqui.so.1.0
-@lib lib/qt3/libqt-mt.so.3.33
+@lib lib/qt3/libqt-mt.so.3.34
 @lib lib/qt3/libqui-mt.so.1.0
 @lib lib/qt3/libqui.so.1.0
 lib/qt3/plugins/designer/libcppeditor.so

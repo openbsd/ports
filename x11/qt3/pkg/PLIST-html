@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.11 2004/08/10 13:33:13 espie Exp $
+@comment $OpenBSD: PLIST-html,v 1.12 2005/02/03 20:05:56 espie Exp $
 share/doc/qt3/
 share/doc/qt3/html/
 share/doc/qt3/html/3rdparty.html
@@ -173,7 +173,6 @@ share/doc/qt3/html/finddialog.png
 share/doc/qt3/html/focus.html
 share/doc/qt3/html/forever-example.html
 share/doc/qt3/html/frames.png
-share/doc/qt3/html/freeeditions.html
 share/doc/qt3/html/ftpclient-example.html
 share/doc/qt3/html/functions.html
 share/doc/qt3/html/general.png
@@ -313,6 +312,7 @@ share/doc/qt3/html/opengl-sharedbox-example.html
 share/doc/qt3/html/opengl-texture-example.html
 share/doc/qt3/html/opengl-x11-overlays.html
 share/doc/qt3/html/opengl.html
+share/doc/qt3/html/opensourceedition.html
 share/doc/qt3/html/organizers.html
 share/doc/qt3/html/outliner-example.html
 share/doc/qt3/html/overviews-list.html
@@ -1136,9 +1136,6 @@ share/doc/qt3/html/qplatinumstyle.html
 share/doc/qt3/html/qpngimagepacker-members.html
 share/doc/qt3/html/qpngimagepacker.html
 share/doc/qt3/html/qpngio-h.html
-share/doc/qt3/html/qpocketpcstyle-members.html
-share/doc/qt3/html/qpocketpcstyle.html
-share/doc/qt3/html/qpocketpcstyle_wce-h.html
 share/doc/qt3/html/qpoint-h.html
 share/doc/qt3/html/qpoint-members.html
 share/doc/qt3/html/qpoint.html

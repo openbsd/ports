@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.21 2004/12/27 17:13:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.22 2005/02/03 20:05:56 espie Exp $
 @conflict qt3-*
 @conflict qt3-base-*
+%%SHARED%%
 bin/assistant
 bin/assistant-mt
 bin/designer3
@@ -711,7 +712,6 @@ lib/qt3/man/man3/
 @man lib/qt3/man/man3/QPixmap.3
 @man lib/qt3/man/man3/QPixmapCache.3
 @man lib/qt3/man/man3/QPlatinumStyle.3
-@man lib/qt3/man/man3/QPocketPCStyle.3
 @man lib/qt3/man/man3/QPoint.3
 @man lib/qt3/man/man3/QPointArray.3
 @man lib/qt3/man/man3/QPopupMenu.3
@@ -1128,7 +1128,6 @@ lib/qt3/man/man3/
 @man lib/qt3/man/man3/qpixmapcache.3
 @man lib/qt3/man/man3/qplatinumstyle.3
 @man lib/qt3/man/man3/qpngimagepacker.3
-@man lib/qt3/man/man3/qpocketpcstyle.3
 @man lib/qt3/man/man3/qpoint.3
 @man lib/qt3/man/man3/qpointarray.3
 @man lib/qt3/man/man3/qpopupmenu.3
@@ -1481,5 +1480,4 @@ share/doc/qt3/FAQ
 share/doc/qt3/LICENSE.GPL
 share/doc/qt3/README
 share/doc/qt3/README-QT.TXT
-share/doc/qt3/changes-3.3.3
-%%SHARED%%
+share/doc/qt3/changes-3.3.4

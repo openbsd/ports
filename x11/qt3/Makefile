@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2004/12/19 13:09:45 alek Exp $
+# $OpenBSD: Makefile,v 1.46 2005/02/03 20:05:56 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -7,13 +7,13 @@ COMMENT-html=		"off-line html documentation for qt3"
 COMMENT-postgresql=	"PostgresSQL plugin for qt3"
 COMMENT-mysql=		"MySQL plugin for qt3"
 
-PKGNAME=		qt3-${VERSION}p3
+PKGNAME=		qt3-${VERSION}
 PKGNAME-mysql=		qt3-mysql-${VERSION}
 PKGNAME-postgresql=	qt3-postgresql-${VERSION}
 PKGNAME-examples=	qt3-examples-${VERSION}
 FULLPKGNAME-html=	qt3-html-${VERSION}
 
-VERSION=	3.3
+VERSION=	3.4
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
@@ -51,6 +51,7 @@ CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg -system-zl
 		-no-sql-odbc \
 		-tablet \
 		-xinerama \
+		-cups \
 		-I${LOCALBASE}/include/libpng \
 		-I${X11BASE}/include/freetype2 \
 		-I${LOCALBASE}/include \
@@ -66,7 +67,7 @@ PKGDEBUG=-debug
 PKGDEBUG=
 .endif
 
-FULLPKGNAME=		qt3-mt-${VERSION}p4${PKGDEBUG}
+FULLPKGNAME=		qt3-mt-${VERSION}${PKGDEBUG}
 CONFIGURE_ARGS+=-thread
 
 .if !${FLAVOR:L:Mdebug} && !${FLAVOR:L:Mno_examples}
@@ -85,6 +86,7 @@ SUBPACKAGE?=
 
 LIB_DEPENDS=
 BUILD_DEPENDS=::graphics/jpeg
+BUILD_DEPENDS=::print/cups
 
 e=
 .if ${FLAVOR:L:Mno_mysql}
@@ -159,7 +161,7 @@ NO_REGRESS=	Yes
 PROGRAMS3=designer findtr moc qt20fix qtrename140 uic
 PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig 
 
-LIBRARIES=qt-mt.so.3.33 qui.so.1.0 \
+LIBRARIES=qt-mt.so.3.34 qui.so.1.0 \
 	editor.a designercore.a qassistantclient.a
 
 .if !${FLAVOR:L:Mdebug}
