@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/09/09 02:54:30 brad Exp $
+# $OpenBSD: Makefile,v 1.10 1999/11/30 02:54:31 brad Exp $
 
 DISTNAME=	gnupg-1.0.0
 CATEGORIES=	security
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 		ftp://ftp.stacken.kth.se/pub/crypto/gnupg/gnupg/ \
 		ftp://ftp.net.lut.ac.uk/gcrypt/gnupg/
 
-MAINTAINER=	markus.friedl@informatik.uni-erlangen.de
+MAINTAINER=	markus@openbsd.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -26,11 +26,11 @@ GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
 		doc/DETAILS doc/FAQ doc/OpenPGP doc/HACKING
 
 post-install:
-	@${MKDIR} ${GNUPGDOCDIR}
-	@${MKDIR} ${GNUPGDOCDIR}/html
-	@for f in ${GNUPGDOCFILES}; do \
-		${INSTALL_DATA} ${WRKSRC}/$${f} ${GNUPGDOCDIR}/; \
+	@mkdir -p ${GNUPGDOCDIR}
+	@mkdir -p ${GNUPGDOCDIR}/html
+	@set -e; for f in ${GNUPGDOCFILES}; do \
+	 ${INSTALL_DATA} ${WRKSRC}/$${f} ${GNUPGDOCDIR}; \
 	done
-	@${CP} ${WRKSRC}/doc/gph/manual/* ${GNUPGDOCDIR}/html
+	@cp ${WRKSRC}/doc/gph/manual/* ${GNUPGDOCDIR}/html
 
 .include <bsd.port.mk>
