@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/07/09 15:07:11 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:35:59 espie Exp $
 @pkgcfl cyrus-sasl-*
+include/sasl/
 include/sasl/hmac-md5.h
 include/sasl/md5.h
 include/sasl/md5global.h
@@ -9,6 +10,7 @@ include/sasl/saslplug.h
 include/sasl/saslutil.h
 lib/libsasl2.a
 lib/libsasl2.la
+lib/sasl2/
 lib/sasl2/libanonymous.a
 lib/sasl2/libanonymous.la
 lib/sasl2/libcrammd5.a
@@ -25,55 +27,56 @@ lib/sasl2/libplain.a
 lib/sasl2/libplain.la
 lib/sasl2/libsasldb.a
 lib/sasl2/libsasldb.la
-man/cat8/saslauthd.0
-man/man3/sasl.3
-man/man3/sasl_authorize_t.3
-man/man3/sasl_auxprop.3
-man/man3/sasl_auxprop_getctx.3
-man/man3/sasl_auxprop_request.3
-man/man3/sasl_callbacks.3
-man/man3/sasl_canon_user_t.3
-man/man3/sasl_chalprompt_t.3
-man/man3/sasl_checkapop.3
-man/man3/sasl_checkpass.3
-man/man3/sasl_client_init.3
-man/man3/sasl_client_new.3
-man/man3/sasl_client_start.3
-man/man3/sasl_client_step.3
-man/man3/sasl_decode.3
-man/man3/sasl_dispose.3
-man/man3/sasl_done.3
-man/man3/sasl_encode.3
-man/man3/sasl_encodev.3
-man/man3/sasl_errdetail.3
-man/man3/sasl_errors.3
-man/man3/sasl_errstring.3
-man/man3/sasl_getopt_t.3
-man/man3/sasl_getpath_t.3
-man/man3/sasl_getprop.3
-man/man3/sasl_getrealm_t.3
-man/man3/sasl_getsecret_t.3
-man/man3/sasl_getsimple_t.3
-man/man3/sasl_global_listmech.3
-man/man3/sasl_idle.3
-man/man3/sasl_listmech.3
-man/man3/sasl_log_t.3
-man/man3/sasl_server_init.3
-man/man3/sasl_server_new.3
-man/man3/sasl_server_start.3
-man/man3/sasl_server_step.3
-man/man3/sasl_server_userdb_checkpass_t.3
-man/man3/sasl_server_userdb_setpass_t.3
-man/man3/sasl_setpass.3
-man/man3/sasl_setprop.3
-man/man3/sasl_user_exists.3
-man/man3/sasl_verifyfile_t.3
-man/man8/sasldblistusers2.8
-man/man8/saslpasswd2.8
+@man man/cat8/saslauthd.0
+@man man/man3/sasl.3
+@man man/man3/sasl_authorize_t.3
+@man man/man3/sasl_auxprop.3
+@man man/man3/sasl_auxprop_getctx.3
+@man man/man3/sasl_auxprop_request.3
+@man man/man3/sasl_callbacks.3
+@man man/man3/sasl_canon_user_t.3
+@man man/man3/sasl_chalprompt_t.3
+@man man/man3/sasl_checkapop.3
+@man man/man3/sasl_checkpass.3
+@man man/man3/sasl_client_init.3
+@man man/man3/sasl_client_new.3
+@man man/man3/sasl_client_start.3
+@man man/man3/sasl_client_step.3
+@man man/man3/sasl_decode.3
+@man man/man3/sasl_dispose.3
+@man man/man3/sasl_done.3
+@man man/man3/sasl_encode.3
+@man man/man3/sasl_encodev.3
+@man man/man3/sasl_errdetail.3
+@man man/man3/sasl_errors.3
+@man man/man3/sasl_errstring.3
+@man man/man3/sasl_getopt_t.3
+@man man/man3/sasl_getpath_t.3
+@man man/man3/sasl_getprop.3
+@man man/man3/sasl_getrealm_t.3
+@man man/man3/sasl_getsecret_t.3
+@man man/man3/sasl_getsimple_t.3
+@man man/man3/sasl_global_listmech.3
+@man man/man3/sasl_idle.3
+@man man/man3/sasl_listmech.3
+@man man/man3/sasl_log_t.3
+@man man/man3/sasl_server_init.3
+@man man/man3/sasl_server_new.3
+@man man/man3/sasl_server_start.3
+@man man/man3/sasl_server_step.3
+@man man/man3/sasl_server_userdb_checkpass_t.3
+@man man/man3/sasl_server_userdb_setpass_t.3
+@man man/man3/sasl_setpass.3
+@man man/man3/sasl_setprop.3
+@man man/man3/sasl_user_exists.3
+@man man/man3/sasl_verifyfile_t.3
+@man man/man8/sasldblistusers2.8
+@man man/man8/saslpasswd2.8
 sbin/saslauthd
 sbin/sasldblistusers2
 sbin/saslpasswd2
 sbin/testsaslauthd
+share/doc/sasl2/
 share/doc/sasl2/advanced.html
 share/doc/sasl2/appconvert.html
 share/doc/sasl2/components.html
@@ -115,6 +118,3 @@ share/doc/sasl2/upgrading.html
 share/doc/sasl2/windows.html
 %%sql%%
 %%SHARED%%
-@dirrm share/doc/sasl2
-@dirrm lib/sasl2
-@dirrm include/sasl

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2003/01/18 22:53:29 avsm Exp $
-lib/libmcrypt.so.8.5
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.7 2004/09/15 18:36:00 espie Exp $
+@lib lib/libmcrypt.so.8.5

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2004/04/08 16:32:39 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.20 2004/09/15 18:36:00 espie Exp $
 bin/nasl
 @comment bin/nasl-config
 bin/nessus
@@ -6,6 +6,7 @@ bin/nessus-build
 @comment bin/nessus-config
 bin/nessus-mkcert-client
 bin/nessus-mkrand
+include/nessus/
 include/nessus/config.h
 include/nessus/getopt.h
 include/nessus/harglists.h
@@ -26,6 +27,8 @@ lib/libnasl.a
 lib/libnasl.la
 lib/libnessus.a
 lib/libnessus.la
+lib/nessus/
+lib/nessus/plugins/
 lib/nessus/plugins/12planet_chat_server_path_disclosure.nasl
 lib/nessus/plugins/12planet_chat_server_plaintext_password.nasl
 lib/nessus/plugins/3com_config_disclosure.nasl
@@ -2022,21 +2025,22 @@ lib/nessus/plugins/zope_multiple_flaws.nasl
 lib/nessus/plugins/zope_path_disclosure.nasl
 lib/nessus/plugins/zope_zclass.nasl
 lib/nessus/plugins/zyxel_pwd.nasl
+lib/nessus/plugins_factory/
 lib/nessus/plugins_factory/Makefile
 lib/nessus/plugins_factory/libtool
 lib/nessus/plugins_factory/nessus.tmpl
-man/man1/nasl-config.1
-man/man1/nasl.1
-man/man1/nessus-build.1
-man/man1/nessus-config.1
-man/man1/nessus-mkcert-client.1
-man/man1/nessus-mkrand.1
-man/man1/nessus.1
-man/man8/nessus-adduser.8
-man/man8/nessus-mkcert.8
-man/man8/nessus-rmuser.8
-man/man8/nessus-update-plugins.8
-man/man8/nessusd.8
+@man man/man1/nasl-config.1
+@man man/man1/nasl.1
+@man man/man1/nessus-build.1
+@man man/man1/nessus-config.1
+@man man/man1/nessus-mkcert-client.1
+@man man/man1/nessus-mkrand.1
+@man man/man1/nessus.1
+@man man/man8/nessus-adduser.8
+@man man/man8/nessus-mkcert.8
+@man man/man8/nessus-rmuser.8
+@man man/man8/nessus-update-plugins.8
+@man man/man8/nessusd.8
 sbin/nessus-adduser
 sbin/nessus-mkcert
 sbin/nessus-rmuser
@@ -2044,11 +2048,6 @@ sbin/nessus-update-plugins
 sbin/nessusd
 sbin/uninstall-nessus
 %%SHARED%%
-@dirrm lib/nessus/plugins_factory
 @extraunexec rm -fr %D/lib/nessus/plugins/*
-@dirrm lib/nessus/plugins
-@dirrm lib/nessus
-@dirrm include/nessus
-@cwd ${SYSCONFDIR}
 @extraunexec rm -fr %D/nessus
 @extraunexec rm -fr /var/nessus

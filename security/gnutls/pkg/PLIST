@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/05/08 06:43:40 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:36:00 espie Exp $
 bin/certtool
 bin/gnutls-cli
 bin/gnutls-cli-debug
@@ -7,6 +7,7 @@ bin/gnutls-srpcrypt
 bin/libgnutls-config
 bin/libgnutls-extra-config
 bin/srptool
+include/gnutls/
 include/gnutls/compat4.h
 include/gnutls/compat8.h
 include/gnutls/extra.h
@@ -21,14 +22,17 @@ lib/libgnutls-openssl.a
 lib/libgnutls-openssl.la
 lib/libgnutls.a
 lib/libgnutls.la
-man/man1/certtool.1
-man/man1/gnutls-cli-debug.1
-man/man1/gnutls-cli.1
-man/man1/gnutls-serv.1
-man/man1/gnutls-srpcrypt.1
+@man man/man1/certtool.1
+@man man/man1/gnutls-cli-debug.1
+@man man/man1/gnutls-cli.1
+@man man/man1/gnutls-serv.1
+@man man/man1/gnutls-srpcrypt.1
+share/aclocal/
 share/aclocal/libgnutls-extra.m4
 share/aclocal/libgnutls.m4
+share/doc/gnutls/
 share/doc/gnutls/README
+share/examples/gnutls/
 share/examples/gnutls/ex-alert.c
 share/examples/gnutls/ex-cert-select.c
 share/examples/gnutls/ex-client-resume.c
@@ -45,6 +49,3 @@ share/examples/gnutls/ex-serv1.c
 share/examples/gnutls/ex-session-info.c
 share/examples/gnutls/ex-x509-info.c
 %%SHARED%%
-@dirrm share/examples/gnutls
-@dirrm share/doc/gnutls
-@dirrm include/gnutls

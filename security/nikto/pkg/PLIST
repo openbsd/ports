@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/11 09:05:24 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:36:00 espie Exp $
 bin/nikto
+share/examples/nikto/
 share/examples/nikto/nikto.conf
+@sample ${SYSCONFDIR}/nikto.conf
+share/nikto/
 share/nikto/LW.pm
 share/nikto/nikto_apacheusers.plugin
 share/nikto/nikto_core.plugin
@@ -20,7 +23,3 @@ share/nikto/realms.db
 share/nikto/scan_database.db
 share/nikto/server_msgs.db
 share/nikto/servers.db
-@dirrm share/nikto
-@dirrm share/examples/nikto
-@cwd ${SYSCONFDIR}
-@extra nikto.conf

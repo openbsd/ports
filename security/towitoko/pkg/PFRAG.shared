@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/06/14 15:05:28 sturm Exp $
-lib/libtowitoko.so.2.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 18:36:03 espie Exp $
+@lib lib/libtowitoko.so.2.0

@@ -1,4 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.10 2001/03/09 18:10:42 dugsong Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/09/15 18:35:59 espie Exp $
+lib/dnsspoof.hosts
+lib/dsniff.magic
+lib/dsniff.services
+@man man/man8/arpspoof.8
+@man man/man8/dnsspoof.8
+@man man/man8/dsniff.8
+@man man/man8/filesnarf.8
+@man man/man8/macof.8
+@man man/man8/mailsnarf.8
+@man man/man8/msgsnarf.8
+@man man/man8/sshmitm.8
+@man man/man8/tcpkill.8
+@man man/man8/tcpnice.8
+@man man/man8/urlsnarf.8
+@man man/man8/webmitm.8
 sbin/arpspoof
 sbin/dnsspoof
 sbin/dsniff
@@ -6,24 +21,9 @@ sbin/filesnarf
 sbin/macof
 sbin/mailsnarf
 sbin/msgsnarf
+sbin/sshmitm
 sbin/tcpkill
 sbin/tcpnice
-sbin/sshmitm
 sbin/urlsnarf
 sbin/webmitm
-lib/dnsspoof.hosts
-lib/dsniff.magic
-lib/dsniff.services
-man/man8/arpspoof.8
-man/man8/dnsspoof.8
-man/man8/dsniff.8
-man/man8/filesnarf.8
-man/man8/macof.8
-man/man8/mailsnarf.8
-man/man8/msgsnarf.8
-man/man8/sshmitm.8
-man/man8/tcpkill.8
-man/man8/tcpnice.8
-man/man8/urlsnarf.8
-man/man8/webmitm.8
 !%%no_x11%%

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/16 19:52:23 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:36:00 espie Exp $
 bin/gpa
 @comment lib/charset.alias
+share/gpa/
 share/gpa/gpa_logo.ppm
 share/gpa/gpa_tips.de
 share/gpa/gpa_tips.en
@@ -8,7 +9,6 @@ share/gpa/gtkrc
 share/locale/de/LC_MESSAGES/gpa.mo
 share/locale/fr/LC_MESSAGES/gpa.mo
 @comment share/locale/locale.alias
+share/locale/zh_TW.Big5/
+share/locale/zh_TW.Big5/LC_MESSAGES/
 share/locale/zh_TW.Big5/LC_MESSAGES/gpa.mo
-@dirrm share/locale/zh_TW.Big5/LC_MESSAGES
-@dirrm share/locale/zh_TW.Big5
-@dirrm share/gpa

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/06/19 20:38:24 jakob Exp $
-lib/libmhash.so.2.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/15 18:36:00 espie Exp $
+@lib lib/libmhash.so.2.0

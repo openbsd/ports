@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/09/26 17:57:38 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:36:00 espie Exp $
 bin/john
 bin/mailer
 bin/unafs
 bin/unique
 bin/unshadow
+share/doc/john/
 share/doc/john/CHANGES
 share/doc/john/CONFIG
 share/doc/john/CREDITS
@@ -17,6 +18,7 @@ share/doc/john/NEWS
 share/doc/john/OPTIONS
 share/doc/john/README
 share/doc/john/RULES
+share/john/
 share/john/all.chr
 share/john/alpha.chr
 share/john/digits.chr
@@ -30,5 +32,3 @@ share/john/lanman.chr
 @comment share/john/unafs
 @comment share/john/unique
 @comment share/john/unshadow
-@dirrm share/john
-@dirrm share/doc/john

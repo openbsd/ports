@@ -1,17 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/04/14 09:27:52 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:36:00 espie Exp $
 @pkgcfl logcheck-1.1.1
 bin/logtail
+share/doc/logsentry/
 share/doc/logsentry/CREDITS
 share/doc/logsentry/INSTALL
 share/doc/logsentry/README
 share/doc/logsentry/README.how.to.interpret
 share/doc/logsentry/README.keywords
+share/examples/logsentry/
 share/examples/logsentry/logsentry.hacking
 share/examples/logsentry/logsentry.ignore
 share/examples/logsentry/logsentry.sh
 share/examples/logsentry/logsentry.violations
 share/examples/logsentry/logsentry.violations.ignore
-@dirrm share/examples/logsentry
-@dirrm share/doc/logsentry
 @extraunexec rm -rf ${SYSCONFDIR}/logsentry
 @extraunexec rm -rf /var/tmp/logsentry

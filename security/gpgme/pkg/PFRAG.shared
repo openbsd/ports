@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2003/05/27 14:16:48 couderc Exp $
-lib/libgpgme.so.9.6
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.7 2004/09/15 18:36:00 espie Exp $
+@lib lib/libgpgme.so.9.6

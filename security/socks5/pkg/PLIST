@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/01/30 22:38:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:36:03 espie Exp $
 @pkgcfl dante-*
 bin/rarchie
 bin/rfinger
@@ -7,7 +7,7 @@ bin/rtelnet
 bin/rwhois
 include/socks.h
 lib/libsocks5.a
-%%SHARED%%
+lib/socks/
 lib/socks/README
 lib/socks/multiple_server.example
 lib/socks/server_2_multiple_server.example
@@ -17,20 +17,22 @@ lib/socks/socks5.conf.gssapi
 lib/socks/socks5.conf.multipleservers
 lib/socks/socks5.conf.server2server
 lib/socks/socks5.conf.singlehomed
-man/man1/runsocks.1
-man/man1/socks5_clients.1
-man/man5/libsocks5.conf.5
-man/man5/socks5.conf.5
-man/man5/socks5.passwd.5
-man/man8/socks5.8
-man/man8/stopsocks.8
+@man man/man1/runsocks.1
+@man man/man1/socks5_clients.1
+@man man/man5/libsocks5.conf.5
+@man man/man5/socks5.conf.5
+man/man5/socks5.conf.5.orig
+@man man/man5/socks5.passwd.5
+man/man5/socks5.passwd.5.orig
+@man man/man8/socks5.8
+@man man/man8/stopsocks.8
 sbin/rping
 sbin/rtraceroute
 sbin/socks5
 sbin/stopsocks
+share/doc/socks/
 share/doc/socks/rfc1928.txt
 share/doc/socks/rfc1929.txt
 share/doc/socks/rfc1961.txt
 share/doc/socks/socks.faq
-@dirrm lib/socks
-@dirrm share/doc/socks
+%%SHARED%%

@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/31 16:45:38 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:36:01 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Crypt/
 ${P5ARCH}/Crypt/Twofish.pm
-@comment ${P5ARCH}/auto/Crypt/Twofish/.packlist
+${P5ARCH}/auto/
+${P5ARCH}/auto/Crypt/
+${P5ARCH}/auto/Crypt/Twofish/
 ${P5ARCH}/auto/Crypt/Twofish/Twofish.bs
 ${P5ARCH}/auto/Crypt/Twofish/Twofish.so
-man/man3p/Crypt::Twofish.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Crypt/Twofish
-@dirrm ${P5ARCH}/auto/Crypt
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Crypt
-@dirrm ${P5ARCH}
+@man man/man3p/Crypt::Twofish.3p

@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/05/08 06:41:47 sturm Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/gcrypt.info
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:36:00 espie Exp $
 bin/libgcrypt-config
 include/gcrypt-module.h
 include/gcrypt.h
-info/gcrypt.info
+@info info/gcrypt.info
 lib/libgcrypt.a
 lib/libgcrypt.la
+share/aclocal/
 share/aclocal/libgcrypt.m4
 %%SHARED%%
-@dirrm share/aclocal
-@exec install-info --info-dir=%D/info %D/info/gcrypt.info

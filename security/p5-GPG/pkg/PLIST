@@ -1,8 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/31 16:54:52 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:36:01 espie Exp $
 ${P5SITE}/GPG.pm
-@comment ${P5ARCH}/auto/GPG/.packlist
-man/man3p/GPG.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/GPG
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
+@man man/man3p/GPG.3p

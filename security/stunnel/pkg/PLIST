@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/04/15 08:58:33 xsa Exp $
-man/man8/stunnel.8
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:36:03 espie Exp $
+@man man/man8/stunnel.8
 sbin/stunnel
+share/examples/stunnel/
 share/examples/stunnel/stunnel.conf-sample
-@dirrm share/examples/stunnel
 @extraunexec rm -rf ${SYSCONFDIR}/stunnel
 @extraunexec rm -rf /var/stunnel
 @extraunexec userdel _stunnel

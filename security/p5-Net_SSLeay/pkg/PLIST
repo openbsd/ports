@@ -1,8 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/12/31 19:37:57 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/09/15 18:36:02 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Net/
+${P5ARCH}/Net/SSLeay/
 ${P5ARCH}/Net/SSLeay.pm
 ${P5ARCH}/Net/SSLeay/Handle.pm
 ${P5ARCH}/Net/ptrtstrun.pl
-@comment ${P5ARCH}/auto/Net/SSLeay/.packlist
+${P5ARCH}/auto/
+${P5ARCH}/auto/Net/
+${P5ARCH}/auto/Net/SSLeay/
 ${P5ARCH}/auto/Net/SSLeay/SSLeay.bs
 ${P5ARCH}/auto/Net/SSLeay/SSLeay.so
 ${P5ARCH}/auto/Net/SSLeay/autosplit.ix
@@ -44,8 +49,9 @@ ${P5ARCH}/auto/Net/SSLeay/want_X509_lookup.al
 ${P5ARCH}/auto/Net/SSLeay/want_nothing.al
 ${P5ARCH}/auto/Net/SSLeay/want_read.al
 ${P5ARCH}/auto/Net/SSLeay/want_write.al
-man/man3p/Net::SSLeay.3p
-man/man3p/Net::SSLeay::Handle.3p
+@man man/man3p/Net::SSLeay.3p
+@man man/man3p/Net::SSLeay::Handle.3p
+share/examples/p5-Net-SSLeay/
 share/examples/p5-Net-SSLeay/bio.pl
 share/examples/p5-Net-SSLeay/bulk.pl
 share/examples/p5-Net-SSLeay/callback.pl
@@ -65,11 +71,3 @@ share/examples/p5-Net-SSLeay/ssl_diff.pl
 share/examples/p5-Net-SSLeay/sslcat.pl
 share/examples/p5-Net-SSLeay/sslecho.pl
 share/examples/p5-Net-SSLeay/stdio_bulk.pl
-@dirrm share/examples/p5-Net-SSLeay
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Net/SSLeay
-@dirrm ${P5ARCH}/auto/Net
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Net/SSLeay
-@dirrm ${P5ARCH}/Net
-@dirrm ${P5ARCH}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/09 12:18:55 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:36:01 espie Exp $
 bin/onesixtyone
+share/onesixtyone/
 share/onesixtyone/dict.txt
-@dirrm share/onesixtyone

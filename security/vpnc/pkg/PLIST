@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/14 13:34:51 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:36:03 espie Exp $
 sbin/vpnc
+share/doc/vpnc/
 share/doc/vpnc/README
+share/examples/vpnc/
 share/examples/vpnc/vpnc.conf
 share/examples/vpnc/vpnc.sh
-@dirrm share/examples/vpnc
-@dirrm share/doc/vpnc
 @cwd ${SYSCONFDIR}
 @extra vpnc.conf

@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/08/09 18:53:30 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:35:59 espie Exp $
 bin/crank
-share/crank/data/bift.dat
-share/crank/data/slft.dat
-share/crank/data/trift.dat
-share/crank/data/word-list.dat
+lib/crank/
+lib/crank/plugins/
 lib/crank/plugins/fitness.word-count.so
 lib/crank/plugins/monoalphabetic.hillclimb-cracker.so
 lib/crank/plugins/monoalphabetic.key-controls.so
@@ -13,13 +11,16 @@ lib/crank/plugins/text.simple-filters.so
 lib/crank/plugins/transpositions.grid-brute-force.so
 lib/crank/plugins/transpositions.grid-controls.so
 lib/crank/plugins/utilities.notepad.so
+share/crank/
+share/crank/data/
+share/crank/data/bift.dat
+share/crank/data/slft.dat
+share/crank/data/trift.dat
+share/crank/data/word-list.dat
+share/doc/crank/
 share/doc/crank/BUGS
 share/doc/crank/HISTORY
 share/doc/crank/LICENSE
 share/doc/crank/README
 share/doc/crank/ciphertext.txt
 share/doc/crank/ciphertext2.txt
-@dirrm lib/crank/plugins
-@dirrm share/doc/crank
-@dirrm share/crank/data
-@dirrm share/crank

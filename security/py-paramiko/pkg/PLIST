@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/08/02 08:41:15 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:36:02 espie Exp $
+lib/python${MODPY_VERSION}/site-packages/paramiko/
 lib/python${MODPY_VERSION}/site-packages/paramiko/__init__.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/auth_transport.py
@@ -35,8 +36,10 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/transport.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/transport.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/util.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/util.pyc
+share/doc/py-paramiko/
 share/doc/py-paramiko/epydoc.css
 share/doc/py-paramiko/index.html
+share/doc/py-paramiko/private/
 share/doc/py-paramiko/private/__builtin__.object-class.html
 share/doc/py-paramiko/private/__builtin__.type-class.html
 share/doc/py-paramiko/private/epydoc.css
@@ -114,6 +117,7 @@ share/doc/py-paramiko/private/toc-paramiko.transport-module.html
 share/doc/py-paramiko/private/toc-paramiko.util-module.html
 share/doc/py-paramiko/private/toc.html
 share/doc/py-paramiko/private/trees.html
+share/doc/py-paramiko/public/
 share/doc/py-paramiko/public/__builtin__.object-class.html
 share/doc/py-paramiko/public/__builtin__.type-class.html
 share/doc/py-paramiko/public/epydoc.css
@@ -167,14 +171,10 @@ share/doc/py-paramiko/public/toc-paramiko.transport-module.html
 share/doc/py-paramiko/public/toc-paramiko.util-module.html
 share/doc/py-paramiko/public/toc.html
 share/doc/py-paramiko/public/trees.html
+share/examples/py-paramiko/
 share/examples/py-paramiko/demo.py
 share/examples/py-paramiko/demo_dss_key
 share/examples/py-paramiko/demo_rsa_key
 share/examples/py-paramiko/demo_server.py
 share/examples/py-paramiko/demo_simple.py
 share/examples/py-paramiko/forward.py
-@dirrm share/examples/py-paramiko
-@dirrm share/doc/py-paramiko/public
-@dirrm share/doc/py-paramiko/private
-@dirrm share/doc/py-paramiko
-@dirrm lib/python${MODPY_VERSION}/site-packages/paramiko

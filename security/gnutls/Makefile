@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/08/21 22:04:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2004/09/15 18:35:59 espie Exp $
 
 COMMENT=		"GNU Transport Layer Security library"
 
@@ -21,7 +21,8 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/gnutls/ \
 		http://ftp.linux.it/pub/mirrors/gnupg/gnutls/
 
 LIB_DEPENDS=	gcrypt.12::security/libgcrypt \
-		opencdk.8::security/opencdk
+		opencdk.8::security/opencdk \
+		lzo::archivers/lzo
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

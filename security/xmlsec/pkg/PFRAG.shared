@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2004/05/08 06:44:20 sturm Exp $
-lib/libxmlsec1-gnutls.so.3.5
-lib/libxmlsec1-openssl.so.3.5
-lib/libxmlsec1.so.3.5
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.8 2004/09/15 18:36:03 espie Exp $
+@lib lib/libxmlsec1-gnutls.so.3.5
+@lib lib/libxmlsec1-openssl.so.3.5
+@lib lib/libxmlsec1.so.3.5

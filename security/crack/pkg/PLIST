@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/11/18 19:07:54 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:35:59 espie Exp $
+crack/
 crack/Crack
 @comment crack/Crack.orig
 crack/LICENCE
 crack/Makefile
-crack/Reporter
 crack/README.OpenBSD
+crack/Reporter
+crack/conf/
 crack/conf/dictgrps.conf
 @comment crack/conf/dictgrps.conf.orig
 crack/conf/dictrun.conf
@@ -31,6 +33,8 @@ crack/conf/rules.prefixu
 crack/conf/rules.suffix
 crack/conf/rules.suffixu
 crack/conf/rules.weird
+crack/dict/
+crack/dict/1/
 crack/dict/1/abbr.dwg
 crack/dict/1/assurnames.dwg
 crack/dict/1/asteroids.dwg
@@ -67,6 +71,7 @@ crack/dict/1/sports.dwg
 crack/dict/1/trek.dwg
 crack/dict/1/unix.dict.dwg
 crack/dict/1/yiddish.dwg
+crack/dict/2/
 crack/dict/2/antworth.dwg
 crack/dict/2/cis.dwg
 crack/dict/2/colleges.dwg
@@ -80,6 +85,7 @@ crack/dict/2/shakespeare.dwg
 crack/dict/2/unabr.dict.dwg
 crack/dict/2/world.factbook.dwg
 crack/dict/2/zipcodes.dwg
+crack/dict/3/
 crack/dict/3/chinese.dwg
 crack/dict/3/danish.words.dwg
 crack/dict/3/germanl.dwg
@@ -92,6 +98,7 @@ crack/dict/3/words.japanese.dwg
 crack/dict/3/words.norwegian.dwg
 crack/dict/3/words.spanish.dwg
 crack/dict/3/words.swedish.dwg
+crack/doc/
 crack/doc/appendix,v4.1.txt
 crack/doc/credits,v5.0.txt
 crack/doc/dicts,v5.0.txt
@@ -101,6 +108,7 @@ crack/doc/gui.txt
 crack/doc/humour.txt
 crack/doc/threading.txt
 crack/doc/usenet-article.txt
+crack/extra/
 crack/extra/Crack6
 crack/extra/Crack7
 crack/extra/Dictstats.pl
@@ -110,6 +118,8 @@ crack/extra/b64encode
 crack/extra/brute.c
 crack/manual.html
 crack/manual.txt
+crack/run/
+crack/run/bin/
 crack/run/bin/cracker
 crack/run/bin/dawg
 crack/run/bin/dictfilt
@@ -117,10 +127,12 @@ crack/run/bin/kickdict
 crack/run/bin/libc5.a
 crack/run/bin/stdlib-cracker
 crack/run/bin/xdawg
+crack/run/dict/
 crack/run/dict/.dictmade
 crack/run/dict/1.dwg.gz
 crack/run/dict/2.dwg.gz
 crack/run/dict/3.dwg.gz
+crack/scripts/
 crack/scripts/binstamp
 crack/scripts/bsd2spf
 crack/scripts/bsdmail2spf
@@ -146,6 +158,8 @@ crack/scripts/smartcat
 crack/scripts/smartcomp
 crack/scripts/trad2spf
 crack/scripts/tradmail2spf
+crack/src/
+crack/src/lib/
 crack/src/lib/Makefile
 crack/src/lib/dawglib.c
 crack/src/lib/debug.c
@@ -153,6 +167,7 @@ crack/src/lib/genrules.pl
 crack/src/lib/libcrack.h
 crack/src/lib/rules.c
 crack/src/lib/stringlib.c
+crack/src/libdes.notused/
 crack/src/libdes.notused/COPYRIGHT
 crack/src/libdes.notused/DES.pm
 crack/src/libdes.notused/DES.pod
@@ -165,7 +180,7 @@ crack/src/libdes.notused/KERBEROS
 crack/src/libdes.notused/MODES.DES
 crack/src/libdes.notused/Makefile
 crack/src/libdes.notused/Makefile.PL
-crack/src/libdes.notused/Makefile.orig
+@comment crack/src/libdes.notused/Makefile.orig
 crack/src/libdes.notused/Makefile.ssl
 crack/src/libdes.notused/Makefile.uni
 crack/src/libdes.notused/PC1
@@ -217,6 +232,7 @@ crack/src/libdes.notused/speed.c
 crack/src/libdes.notused/spr.h
 crack/src/libdes.notused/str2key.c
 crack/src/libdes.notused/supp.c
+crack/src/libdes.notused/t/
 crack/src/libdes.notused/t/perl
 crack/src/libdes.notused/t/test
 crack/src/libdes.notused/testdes.pl
@@ -224,33 +240,20 @@ crack/src/libdes.notused/times
 crack/src/libdes.notused/typemap
 crack/src/libdes.notused/version.h
 crack/src/libdes.notused/vms.com
+crack/src/util/
 crack/src/util/Makefile
 crack/src/util/cracker.c
+@comment crack/src/util/cracker.c.orig
 crack/src/util/dawg.c
 crack/src/util/dictfilt.c
 crack/src/util/elcid.c
 crack/src/util/elcid.c,bsd
+@comment crack/src/util/elcid.c,bsd.orig
 crack/src/util/elcid.c,old
 crack/src/util/elcid.c,trad
-crack/src/util/elcid.c.orig
+@comment crack/src/util/elcid.c.orig
 crack/src/util/elcid.h
 crack/src/util/kickdict.c
-@dirrm crack/src/util
-@dirrm crack/src/libdes.notused/t
-@dirrm crack/src/libdes.notused
-@dirrm crack/src/lib
-@dirrm crack/src
-@dirrm crack/scripts
+@comment crack/src/util/kickdict.c.orig
 @extraunexec rm -f %D/crack/run/dict/*
-@dirrm crack/run/dict
-@dirrm crack/run/bin
 @extraunexec rm -f %D/crack/run/*
-@dirrm crack/run
-@dirrm crack/extra
-@dirrm crack/doc
-@dirrm crack/dict/3
-@dirrm crack/dict/2
-@dirrm crack/dict/1
-@dirrm crack/dict
-@dirrm crack/conf
-@dirrm crack

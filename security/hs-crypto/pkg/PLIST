@@ -1,6 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/05/07 01:37:50 dons Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:36:00 espie Exp $
+lib/hs-crypto/
 lib/hs-crypto/HScrypto.o
+lib/hs-crypto/imports/
+lib/hs-crypto/imports/HScrypto/
+lib/hs-crypto/imports/HScrypto/Codec/
+lib/hs-crypto/imports/HScrypto/Codec/ASN1/
 lib/hs-crypto/imports/HScrypto/Codec/ASN1/ASN1.hi
+lib/hs-crypto/imports/HScrypto/Codec/Encryption/
 lib/hs-crypto/imports/HScrypto/Codec/Encryption/Blowfish.hi
 lib/hs-crypto/imports/HScrypto/Codec/Encryption/BlowfishAux.hi
 lib/hs-crypto/imports/HScrypto/Codec/Encryption/DES.hi
@@ -17,6 +23,7 @@ lib/hs-crypto/imports/HScrypto/Codec/Encryption/SHA1Aux.hi
 lib/hs-crypto/imports/HScrypto/Codec/Encryption/Utils.hi
 lib/hs-crypto/libHScrypto.a
 lib/hs-crypto/package.conf.in
+share/doc/hs-crypto/
 share/doc/hs-crypto/Codec.ASN1.ASN1.html
 share/doc/hs-crypto/Codec.Encryption.Blowfish.html
 share/doc/hs-crypto/Codec.Encryption.BlowfishAux.html
@@ -55,13 +62,6 @@ share/doc/hs-crypto/doc-index.html
 share/doc/hs-crypto/haddock.css
 share/doc/hs-crypto/haskell_icon.gif
 share/doc/hs-crypto/index.html
-@dirrm share/doc/hs-crypto
-@dirrm lib/hs-crypto/imports/HScrypto/Codec/Encryption
-@dirrm lib/hs-crypto/imports/HScrypto/Codec/ASN1
-@dirrm lib/hs-crypto/imports/HScrypto/Codec
-@dirrm lib/hs-crypto/imports/HScrypto
-@dirrm lib/hs-crypto/imports
-@dirrm lib/hs-crypto
 @comment call ghc-pkg to register/unregister this library with ghc
 @exec /bin/cat %D/lib/hs-crypto/package.conf.in | /usr/bin/env PREFIX=%D %D/bin/ghc-pkg -u
 @exec /bin/rm -f %D/lib/ghc-6.2.1/package.conf.old

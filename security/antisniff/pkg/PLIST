@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/03/24 08:36:33 jsyn Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:35:59 espie Exp $
 bin/antisniff
+share/doc/antisniff/
 share/doc/antisniff/ANTI_SNIFFER_DOCS
 share/doc/antisniff/LICENSE
-@dirrm share/doc/antisniff

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/05/07 12:53:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:35:59 espie Exp $
+cops/
 cops/MANIFEST
 cops/README.1
 cops/README.2.pl
@@ -16,6 +17,7 @@ cops/bug.chk.sgi
 cops/bug.chk.sun
 cops/bug.chk.svr4
 cops/bug_cmp
+cops/carp/
 cops/carp/How2Change
 cops/carp/README
 cops/carp/carp
@@ -26,6 +28,7 @@ cops/carp/carp.awk
 cops/carp/carp.table
 cops/carp/carp2ps
 cops/carp/carp2ps.1
+cops/checkacct/
 cops/checkacct/Article
 cops/checkacct/Intro
 cops/checkacct/Makefile
@@ -61,6 +64,7 @@ cops/crc_list
 cops/cron.chk
 cops/dev.chk
 cops/disclaimer
+cops/docs/
 cops/docs/COPS.report
 cops/docs/COPS.tex
 cops/docs/CRC.README
@@ -82,6 +86,7 @@ cops/docs/release.notes
 cops/docs/suid.man
 cops/docs/tilde
 cops/docs/warnings
+cops/extensions/
 cops/extensions/THINGS_2_DO
 cops/extensions/YAR
 cops/extensions/crypto-stuff
@@ -90,6 +95,7 @@ cops/extensions/passwords
 cops/extensions/questions
 cops/extensions/uucp.hardening
 cops/extensions/writing.suid
+cops/extra_src/
 cops/extra_src/README
 cops/extra_src/bad_dir.pl
 cops/extra_src/diff_last.sh
@@ -120,13 +126,14 @@ cops/pass.words
 cops/pass_diff.chk
 cops/passwd.chk
 cops/patchlevel.h
+cops/perl/
 cops/perl/README.kuang
 cops/perl/README.sgi
 cops/perl/chk_strings
 cops/perl/chk_strings.pl
 cops/perl/cops
 cops/perl/cops.cf
-cops/perl/cops.cf.orig
+@comment cops/perl/cops.cf.orig
 cops/perl/cron.chk
 cops/perl/dev.chk
 cops/perl/fgrep.pl
@@ -191,10 +198,3 @@ man/man1/rc.chk.0
 man/man1/root.chk.0
 man/man1/suid.chk.0
 man/man1/user.chk.0
-@dirrm cops/perl
-@dirrm cops/extra_src
-@dirrm cops/extensions
-@dirrm cops/docs
-@dirrm cops/checkacct
-@dirrm cops/carp
-@dirrm cops

@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/14 15:05:28 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:36:03 espie Exp $
 bin/towitoko-tester
 include/ctapi.h
 include/ctbcs.h
 lib/libtowitoko.a
 lib/libtowitoko.la
-man/man3/CT_close.3
-man/man3/CT_data.3
-man/man3/CT_init.3
-man/man3/ctapi.3
-man/man3/ctbcs.3
+@man man/man3/CT_close.3
+@man man/man3/CT_data.3
+@man man/man3/CT_init.3
+@man man/man3/ctapi.3
+@man man/man3/ctbcs.3
+share/examples/towitoko/
 share/examples/towitoko/reader.conf
 %%SHARED%%
-@dirrm share/examples/towitoko

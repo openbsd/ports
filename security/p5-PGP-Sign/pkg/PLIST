@@ -1,10 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/31 17:08:27 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:36:02 espie Exp $
+${P5SITE}/PGP/
 ${P5SITE}/PGP/Sign.pm
-@comment ${P5ARCH}/auto/PGP/Sign/.packlist
-man/man3p/PGP::Sign.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/PGP/Sign
-@comment @dirrm ${P5ARCH}/auto/PGP
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/PGP
+@man man/man3p/PGP::Sign.3p

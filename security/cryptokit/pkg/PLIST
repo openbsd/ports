@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/15 18:18:53 naddy Exp $
-%%native%%
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:35:59 espie Exp $
+lib/ocaml/
 lib/ocaml/cryptokit.cma
 lib/ocaml/cryptokit.cmi
 lib/ocaml/cryptokit.mli
 lib/ocaml/libcryptokit.a
+share/doc/cryptokit/
 share/doc/cryptokit/Cryptokit.Base64.html
 share/doc/cryptokit/Cryptokit.Block.aes_decrypt.html
 share/doc/cryptokit/Cryptokit.Block.aes_encrypt.html
@@ -89,5 +90,4 @@ share/doc/cryptokit/type_Cryptokit.Zlib.html
 share/doc/cryptokit/type_Cryptokit.hash.html
 share/doc/cryptokit/type_Cryptokit.html
 share/doc/cryptokit/type_Cryptokit.transform.html
-@dirrm share/doc/cryptokit
-@dirrm lib/ocaml
+%%native%%

@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/31 16:45:38 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:36:01 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Digest/
 ${P5ARCH}/Digest/SHA1.pm
-@comment ${P5ARCH}/auto/Digest/SHA1/.packlist
+${P5ARCH}/auto/
+${P5ARCH}/auto/Digest/
+${P5ARCH}/auto/Digest/SHA1/
 ${P5ARCH}/auto/Digest/SHA1/SHA1.bs
 ${P5ARCH}/auto/Digest/SHA1/SHA1.so
-man/man3p/Digest::SHA1.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Digest/SHA1
-@dirrm ${P5ARCH}/auto/Digest
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Digest
-@dirrm ${P5ARCH}
+@man man/man3p/Digest::SHA1.3p

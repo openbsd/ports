@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/05/08 06:44:20 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:36:03 espie Exp $
 bin/xmlsec1
 bin/xmlsec1-config
+include/xmlsec1/
+include/xmlsec1/xmlsec/
 include/xmlsec1/xmlsec/app.h
 include/xmlsec1/xmlsec/base64.h
 include/xmlsec1/xmlsec/bn.h
@@ -9,6 +11,7 @@ include/xmlsec1/xmlsec/crypto.h
 include/xmlsec1/xmlsec/dl.h
 include/xmlsec1/xmlsec/errors.h
 include/xmlsec1/xmlsec/exports.h
+include/xmlsec1/xmlsec/gnutls/
 include/xmlsec1/xmlsec/gnutls/app.h
 include/xmlsec1/xmlsec/gnutls/crypto.h
 include/xmlsec1/xmlsec/gnutls/symbols.h
@@ -20,6 +23,7 @@ include/xmlsec1/xmlsec/keysmngr.h
 include/xmlsec1/xmlsec/list.h
 include/xmlsec1/xmlsec/membuf.h
 include/xmlsec1/xmlsec/nodeset.h
+include/xmlsec1/xmlsec/openssl/
 include/xmlsec1/xmlsec/openssl/app.h
 include/xmlsec1/xmlsec/openssl/bn.h
 include/xmlsec1/xmlsec/openssl/crypto.h
@@ -27,6 +31,7 @@ include/xmlsec1/xmlsec/openssl/evp.h
 include/xmlsec1/xmlsec/openssl/symbols.h
 include/xmlsec1/xmlsec/openssl/x509.h
 include/xmlsec1/xmlsec/parser.h
+include/xmlsec1/xmlsec/private/
 include/xmlsec1/xmlsec/private.h
 include/xmlsec1/xmlsec/private/xkms.h
 include/xmlsec1/xmlsec/soap.h
@@ -46,36 +51,11 @@ lib/libxmlsec1-openssl.a
 lib/libxmlsec1-openssl.la
 lib/libxmlsec1.a
 lib/libxmlsec1.la
+lib/pkgconfig/
 lib/pkgconfig/xmlsec1-gnutls.pc
 lib/pkgconfig/xmlsec1-openssl.pc
 lib/pkgconfig/xmlsec1.pc
 lib/xmlsec1Conf.sh
-man/man1/xmlsec1-config.1
-man/man1/xmlsec1.1
-share/doc/xmlsec1/api/home.png
-share/doc/xmlsec1/api/left.png
-share/doc/xmlsec1/api/right.png
-share/doc/xmlsec1/api/up.png
-share/doc/xmlsec1/api/xmlsec-app.html
-share/doc/xmlsec1/api/xmlsec-bn.html
-share/doc/xmlsec1/api/xmlsec-dl.html
-share/doc/xmlsec1/api/xmlsec-mscrypto-app.html
-share/doc/xmlsec1/api/xmlsec-mscrypto-certkeys.html
-share/doc/xmlsec1/api/xmlsec-mscrypto-crypto.html
-share/doc/xmlsec1/api/xmlsec-mscrypto-keysstore.html
-share/doc/xmlsec1/api/xmlsec-mscrypto-ref.html
-share/doc/xmlsec1/api/xmlsec-mscrypto-x509.html
-share/doc/xmlsec1/api/xmlsec-mscrypto.sgml
-share/doc/xmlsec1/api/xmlsec-nss-bignum.html
-share/doc/xmlsec1/api/xmlsec-nss-keysstore.html
-share/doc/xmlsec1/api/xmlsec-nss-pkikeys.html
-share/doc/xmlsec1/api/xmlsec-nss-x509.html
-share/doc/xmlsec1/api/xmlsec-openssl-evp.html
-share/doc/xmlsec1/api/xmlsec-x509.html
-share/doc/xmlsec1/authors.html
+@man man/man1/xmlsec1-config.1
+@man man/man1/xmlsec1.1
 %%SHARED%%
-@dirrm include/xmlsec1/xmlsec/private
-@dirrm include/xmlsec1/xmlsec/openssl
-@dirrm include/xmlsec1/xmlsec/gnutls
-@dirrm include/xmlsec1/xmlsec
-@dirrm include/xmlsec1

@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.14 2003/12/16 19:52:23 naddy Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/gpg.info
-@unexec install-info --delete --info-dir=%D/info %D/info/gpgv.info
+@comment $OpenBSD: PLIST,v 1.15 2004/09/15 18:35:59 espie Exp $
 bin/gpg
 bin/gpgsplit
 bin/gpgv
-info/gpg.info
-info/gpgv.info
+@info info/gpg.info
+@info info/gpgv.info
+libexec/gnupg/
 libexec/gnupg/gpgkeys_mailto
-man/man1/gpg.1
-man/man1/gpgv.1
-man/man7/gnupg.7
+@man man/man1/gpg.1
+@man man/man1/gpgv.1
+@man man/man7/gnupg.7
+share/doc/gnupg/
 share/doc/gnupg/AUTHORS
 share/doc/gnupg/BUGS
 share/doc/gnupg/COPYING
@@ -21,7 +21,10 @@ share/doc/gnupg/README
 share/doc/gnupg/THANKS
 share/doc/gnupg/TODO
 share/doc/gnupg/faq.html
+share/gnupg/
 share/gnupg/options.skel
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/gnupg.mo
 share/locale/cs/LC_MESSAGES/gnupg.mo
 share/locale/da/LC_MESSAGES/gnupg.mo
@@ -45,20 +48,3 @@ share/locale/sk/LC_MESSAGES/gnupg.mo
 share/locale/sv/LC_MESSAGES/gnupg.mo
 share/locale/tr/LC_MESSAGES/gnupg.mo
 share/locale/zh_TW/LC_MESSAGES/gnupg.mo
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/eo/LC_MESSAGES
-@dirrm share/locale/eo
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/gnupg
-@dirrm share/doc/gnupg
-@dirrm libexec/gnupg
-@exec install-info --info-dir=%D/info --section=Miscellaneous --item="* GnuPG: (gpg).                 Gnu Privacy Guard" %D/info/gpg.info
-@exec install-info --info-dir=%D/info --section=Miscellaneous --item="* GnuPGv: (gpgv).               GnuPG signature verification tool" %D/info/gpgv.info

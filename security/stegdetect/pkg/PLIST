@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/01 23:14:23 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:36:03 espie Exp $
 bin/stegbreak
 bin/stegdetect
 bin/xsteg
-man/man1/stegbreak.1
-man/man1/stegdetect.1
+@man man/man1/stegbreak.1
+@man man/man1/stegdetect.1
+share/stegbreak/
 share/stegbreak/rules.ini
-@dirrm share/stegbreak

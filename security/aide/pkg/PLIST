@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/04/14 09:27:52 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:35:59 espie Exp $
 bin/aide
-man/man1/aide.1
-man/man5/aide.conf.5
+lib/locale/
+lib/locale/LC_MESSAGES/
+@man man/man1/aide.1
+@man man/man5/aide.conf.5
+share/examples/aide/
 share/examples/aide/aide.conf
-@dirrm share/examples/aide
 @cwd ${SYSCONFDIR}
 @extra aide.conf

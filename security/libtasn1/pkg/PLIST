@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/01 17:26:01 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:36:00 espie Exp $
 include/libtasn1.h
 lib/libtasn1.a
 lib/libtasn1.la
+share/doc/libtasn1/
 share/doc/libtasn1/asn1.ps
 %%SHARED%%
-@dirrm share/doc/libtasn1

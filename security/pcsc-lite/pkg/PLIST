@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/12/07 06:33:19 shell Exp $
-sbin/pcscd
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:36:02 espie Exp $
 include/atrhandler.h
 include/configfile.h
 include/debuglog.h
@@ -21,6 +20,7 @@ lib/libpcsclite-core.a
 lib/libpcsclite-core.la
 lib/libpcsclite.a
 lib/libpcsclite.la
+sbin/pcscd
+share/examples/pcscd/
 share/examples/pcscd/reader.conf.sample
 %%SHARED%%
-@dirrm share/examples/pcscd

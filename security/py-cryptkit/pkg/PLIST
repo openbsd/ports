@@ -1,12 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/07/31 19:11:59 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:36:02 espie Exp $
+lib/python${MODPY_VERSION}/site-packages/aes/
 lib/python${MODPY_VERSION}/site-packages/aes/__init__.py
 lib/python${MODPY_VERSION}/site-packages/aes/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/aes/aes.py
 lib/python${MODPY_VERSION}/site-packages/aes/aes.pyc
+lib/python${MODPY_VERSION}/site-packages/cryptsock/
 lib/python${MODPY_VERSION}/site-packages/cryptsock/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cryptsock/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/cryptsock/cryptsock.py
 lib/python${MODPY_VERSION}/site-packages/cryptsock/cryptsock.pyc
+lib/python${MODPY_VERSION}/site-packages/ecc/
 lib/python${MODPY_VERSION}/site-packages/ecc/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ecc/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/ecc/ecc.py
@@ -14,18 +17,15 @@ lib/python${MODPY_VERSION}/site-packages/ecc/ecc.pyc
 lib/python${MODPY_VERSION}/site-packages/ecc/elliptic.py
 lib/python${MODPY_VERSION}/site-packages/ecc/elliptic.pyc
 lib/python${MODPY_VERSION}/site-packages/ellipticc.so
+lib/python${MODPY_VERSION}/site-packages/entropy/
 lib/python${MODPY_VERSION}/site-packages/entropy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/entropy/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/entropy/entropy.py
 lib/python${MODPY_VERSION}/site-packages/entropy/entropy.pyc
 lib/python${MODPY_VERSION}/site-packages/rijndaelc.so
+lib/python${MODPY_VERSION}/site-packages/sha256/
 lib/python${MODPY_VERSION}/site-packages/sha256/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sha256/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/sha256/sha256.py
 lib/python${MODPY_VERSION}/site-packages/sha256/sha256.pyc
 lib/python${MODPY_VERSION}/site-packages/sha256c.so
-@dirrm lib/python${MODPY_VERSION}/site-packages/sha256
-@dirrm lib/python${MODPY_VERSION}/site-packages/entropy
-@dirrm lib/python${MODPY_VERSION}/site-packages/ecc
-@dirrm lib/python${MODPY_VERSION}/site-packages/cryptsock
-@dirrm lib/python${MODPY_VERSION}/site-packages/aes

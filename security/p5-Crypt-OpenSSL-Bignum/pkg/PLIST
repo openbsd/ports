@@ -1,17 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/11 11:50:39 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:36:01 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Crypt/
+${P5ARCH}/Crypt/OpenSSL/
+${P5ARCH}/Crypt/OpenSSL/Bignum/
 ${P5ARCH}/Crypt/OpenSSL/Bignum.pm
 ${P5ARCH}/Crypt/OpenSSL/Bignum/CTX.pm
-@comment ${P5ARCH}/auto/Crypt/OpenSSL/Bignum/.packlist
+${P5ARCH}/auto/
+${P5ARCH}/auto/Crypt/
+${P5ARCH}/auto/Crypt/OpenSSL/
+${P5ARCH}/auto/Crypt/OpenSSL/Bignum/
 ${P5ARCH}/auto/Crypt/OpenSSL/Bignum/Bignum.bs
 ${P5ARCH}/auto/Crypt/OpenSSL/Bignum/Bignum.so
-man/man3p/Crypt::OpenSSL::Bignum.3p
-man/man3p/Crypt::OpenSSL::Bignum::CTX.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Crypt/OpenSSL/Bignum
-@dirrm ${P5ARCH}/auto/Crypt/OpenSSL
-@dirrm ${P5ARCH}/auto/Crypt
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Crypt/OpenSSL/Bignum
-@dirrm ${P5ARCH}/Crypt/OpenSSL
-@dirrm ${P5ARCH}/Crypt
-@dirrm ${P5ARCH}
+@man man/man3p/Crypt::OpenSSL::Bignum.3p
+@man man/man3p/Crypt::OpenSSL::Bignum::CTX.3p

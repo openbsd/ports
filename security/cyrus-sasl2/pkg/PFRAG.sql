@@ -1,4 +1,2 @@
-@comment $OpenBSD: PFRAG.sql,v 1.1 2004/07/09 15:07:11 kevlo Exp $
-lib/sasl2/libsql.a
-lib/sasl2/libsql.la
-%%SHARED-sql%%
+@comment $OpenBSD: PFRAG.sql,v 1.2 2004/09/15 18:35:59 espie Exp $
+%%SHARED%%
