@@ -8,3 +8,29 @@ simple example programs (source + binaries).
 
 On most architectures, you can find database plugins: qt3-mysql and
 qt3-postgresql.
+
+People who want to use qt3 to compile applications outside the ports tree
+should note that qt3's installation conforms to OpenBSD habits, not
+TrollTech's recommendations.
+Accordingly:
+- libs are separated from includes.
+- moc is installed as ${PREFIX}/bin/moc3, in order not to conflict with
+  other qt versions.
+- uic is installed as ${PREFIX}/bin/uic3
+
+Generally, it's just a question of invoking 
+
+env MOC=moc3 UIC=uic3 configure --with-qt-includes=${PREFIX}/include/x11/qt3 
+	--with-qt-libraries=${PREFIX}/lib/qt3
+
+Or to force MOC/UIC in your make/gmake invocation:
+make MOC=moc3 UIC=uic3
+will override the Makefile contents.
+
+Warning: the qt3 library also appears under ${PREFIX}/lib, but you
+*must* make sure your application sees ${PREFIX}/lib/qt3 *first*, because
+${PREFIX}/lib may also contain a later incarnation of qt, in which case 
+the linker will pick up the most recent library.
+
+The qt packages currently do not include mt versions of qt, because of
+insufficient testing.
