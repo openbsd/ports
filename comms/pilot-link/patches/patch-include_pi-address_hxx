@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_pi-address_hxx,v 1.1 2002/09/27 18:02:28 naddy Exp $
+--- include/pi-address.hxx.orig	Mon Jul 31 02:16:54 2000
++++ include/pi-address.hxx	Fri Sep 27 19:59:27 2002
+@@ -33,7 +33,7 @@ class address_t : public baseApp_t
+ 
+      char *_entry[19];
+      
+-     friend addressList_t;
++     friend class addressList_t;
+      
+      address_t *_next;
+ 

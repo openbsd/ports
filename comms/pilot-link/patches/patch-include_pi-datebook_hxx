@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_pi-datebook_hxx,v 1.1 2002/09/27 18:02:28 naddy Exp $
+--- include/pi-datebook.hxx.orig	Mon Jul 31 02:18:40 2000
++++ include/pi-datebook.hxx	Fri Sep 27 19:59:27 2002
+@@ -34,7 +34,7 @@ class appointment_t : public baseApp_t
+      };
+ 
+    private:
+-     friend appointmentList_t;
++     friend class appointmentList_t;
+      
+      tm _begin;			// When the appointment begins
+      tm _end;			// When the appointment ends

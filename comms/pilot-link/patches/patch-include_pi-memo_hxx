@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_pi-memo_hxx,v 1.1 2002/09/27 18:02:28 naddy Exp $
+--- include/pi-memo.hxx.orig	Mon Jul 31 02:13:34 2000
++++ include/pi-memo.hxx	Fri Sep 27 19:59:27 2002
+@@ -19,7 +19,7 @@ class memoList_t;		// Forward declaratio
+ 
+ class memo_t : public baseApp_t
+ {
+-     friend memoList_t;
++     friend class memoList_t;
+      
+      char *_text;
+      int _size;

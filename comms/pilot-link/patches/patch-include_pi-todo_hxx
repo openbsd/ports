@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_pi-todo_hxx,v 1.1 2002/09/27 18:02:28 naddy Exp $
+--- include/pi-todo.hxx.orig	Mon Jul 31 02:13:34 2000
++++ include/pi-todo.hxx	Fri Sep 27 19:59:27 2002
+@@ -23,7 +23,7 @@ class todoList_t;
+ 
+ class todo_t : public baseApp_t
+ {
+-     friend todoList_t;
++     friend class todoList_t;
+      
+      struct tm *_due;		// Non-NULL if there is a due date
+      int _priority;		// A priority in the range 1-5
