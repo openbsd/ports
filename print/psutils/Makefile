@@ -1,63 +1,49 @@
 # New ports collection makefile for:    psutils
-# Version required:     1.16
 # Date created:         17 March 1998
 # Whom:                 mickey@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.4 1998/12/16 20:15:33 marc Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/10 20:11:52 espie Exp $
 #
 
 DISTNAME=	psutils-p17
-PKGNAME=	psutils-1.17
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk/pub/ajcd/
 
 MAINTAINER=	ports@openbsd.org
 
-MANUAL_PACKAGE_BUILD=	PAPERSIZE has to be set to letter a4
-WRKSRC=		${WRKDIR}/psutils
-MAKE_FLAGS?=	PAPER=${PAPERSIZE} -f
+WRKDIST=	${WRKDIR}/psutils
 
-##package::	letter  a4
+POSSIBLE_SIZES=a3 a4 a5 b5 letter legal ledger tabloid statement executive \
+	folio quarto 10x14
 
-letter::
-	${MAKE} PAPERSIZE=letter
-
-letter-install::
-	${MAKE} PAPERSIZE=letter install
-
-a4::
-	${MAKE} PAPERSIZE=a4
-
-
-.if !defined(PAPERSIZE)
-PAPERSIZE=a4
-PAPERSIZE_UNSPECIFIED=	yes
-.else
-.if ${PAPERSIZE} != A3 && ${PAPERSIZE} != a3 && ${PAPERSIZE} != A4 \
-    && ${PAPERSIZE} != a4 && ${PAPERSIZE} != A5 && ${PAPERSIZE} != a5 \
-	&& ${PAPERSIZE} != B5 && ${PAPERSIZE} != b5 \
-	&& ${PAPERSIZE} != letter && ${PAPERSIZE} != legal \
-	&& ${PAPERSIZE} != ledger && ${PAPERSIZE} != tabloid \
-	&& ${PAPERSIZE} != statement && ${PAPERSIZE} != executive \
-	&& ${PAPERSIZE} != folio && ${PAPERSIZE} != quarto && ${PAPERSIZE} != 10x14
-PAPERSIZE_INVALID= yes
-.endif
-.endif
-
-.if !defined(NO_WARNINGS)
-pre-fetch:
-.if defined(PAPERSIZE_UNSPECIFIED)
+.if !defined(PAPERSIZE) && !defined(NO_WARNINGS)
+pre-configure:
 	@echo "Defaulting to ${PAPERSIZE} sized paper."
 	@echo ""
 	@echo "Set the environment variable PAPERSIZE if you want to use other sizes."
 	@echo "Possible values are:  A3, A4 (default), A5, B5, letter, legal,"
 	@echo "   ledger, tabloid, statement, executive, folio, quarto, and 10x14."
-.elif defined(PAPERSIZE_INVALID)
+.endif
+
+PAPERSIZE?=a4
+
+# Set PP in for loop, forces evaluation
+.for PP in ${PAPERSIZE:L}
+.if empty(POSSIBLE_SIZES:M${PP})
+.BEGIN:
 	@echo "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\""
 	@echo "Possible values are:  A3, A4 (default), A5, B5, letter, legal,"
 	@echo "   ledger, tabloid, statement, executive, folio, quarto, and 10x14."
-	@${FALSE}
+	@exit 1
 .endif
-.endif
+PKGNAME=	psutils-1.17-${PP}
+MAKE_FLAGS=	\
+	BINDIR=${PREFIX}/bin INCLUDEDIR=${PREFIX}/share/psutils \
+	MANDIR=${PREFIX}/man/man1 \
+	PERL=/usr/bin/perl CC=cc CFLAGS=${CFLAGS} \
+	PAPER=${PP} -f
+.endfor
+
+MAKEFILE=Makefile.unix
 
 .include <bsd.port.mk>
