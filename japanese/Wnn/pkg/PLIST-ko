@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST-ko,v 1.8 2004/07/24 12:43:16 espie Exp $
+@comment $OpenBSD: PLIST-ko,v 1.9 2004/08/05 14:11:10 espie Exp $
 bin/katod
 bin/katof
 bin/kdtoa
 bin/kserver
-@owner root
 @mode u+s
+@owner root
 bin/kuum
-@mode
-@owner
+@mode 
+@owner 
 bin/kwddel
 bin/kwdreg
 bin/kwnnkill

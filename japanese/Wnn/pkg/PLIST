@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/07/24 12:43:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/08/05 14:11:10 espie Exp $
 bin/atod
 bin/atof
 bin/dtoa
 bin/jserver
 bin/oldatonewa
-@owner root
 @mode u+s
+@owner root
 bin/uum
-@mode
-@owner
+@mode 
+@owner 
 bin/wddel
 bin/wdreg
 bin/wnnkill
@@ -85,190 +85,190 @@ lib/wnn/lt_LN/uum.msg
 lib/wnn/lt_LN/uumkey
 lib/wnn/lt_LN/uumkey_e
 lib/wnn/lt_LN/uumrc
-man/ja_JP.EUC/cat1/atod.0
-man/ja_JP.EUC/cat1/atof.0
-man/ja_JP.EUC/cat1/dtoa.0
-man/ja_JP.EUC/cat1/jserver.0
-man/ja_JP.EUC/cat1/oldatonewa.0
-man/ja_JP.EUC/cat1/uum.0
-man/ja_JP.EUC/cat1/wddel.0
-man/ja_JP.EUC/cat1/wdreg.0
-man/ja_JP.EUC/cat1/wnnkill.0
-man/ja_JP.EUC/cat1/wnnstat.0
-man/ja_JP.EUC/cat1/wnntouch.0
-man/ja_JP.EUC/cat3/jl_bun_suu.0
-man/ja_JP.EUC/cat3/jl_c_zenkouho.0
-man/ja_JP.EUC/cat3/jl_close.0
-man/ja_JP.EUC/cat3/jl_connect.0
-man/ja_JP.EUC/cat3/jl_connect_lang.0
-man/ja_JP.EUC/cat3/jl_dai_top.0
-man/ja_JP.EUC/cat3/jl_dic_add.0
-man/ja_JP.EUC/cat3/jl_dic_add_e.0
-man/ja_JP.EUC/cat3/jl_dic_comment_set.0
-man/ja_JP.EUC/cat3/jl_dic_comment_set_e.0
-man/ja_JP.EUC/cat3/jl_dic_delete.0
-man/ja_JP.EUC/cat3/jl_dic_delete_e.0
-man/ja_JP.EUC/cat3/jl_dic_list.0
-man/ja_JP.EUC/cat3/jl_dic_list_e.0
-man/ja_JP.EUC/cat3/jl_dic_save.0
-man/ja_JP.EUC/cat3/jl_dic_save_all.0
-man/ja_JP.EUC/cat3/jl_dic_save_all_e.0
-man/ja_JP.EUC/cat3/jl_dic_save_e.0
-man/ja_JP.EUC/cat3/jl_dic_use.0
-man/ja_JP.EUC/cat3/jl_dic_use_e.0
-man/ja_JP.EUC/cat3/jl_disconnect.0
-man/ja_JP.EUC/cat3/jl_env.0
-man/ja_JP.EUC/cat3/jl_env_get.0
-man/ja_JP.EUC/cat3/jl_env_set.0
-man/ja_JP.EUC/cat3/jl_env_sticky.0
-man/ja_JP.EUC/cat3/jl_env_sticky_e.0
-man/ja_JP.EUC/cat3/jl_env_un_sticky.0
-man/ja_JP.EUC/cat3/jl_env_un_sticky_e.0
-man/ja_JP.EUC/cat3/jl_fuzokugo_get.0
-man/ja_JP.EUC/cat3/jl_fuzokugo_get_e.0
-man/ja_JP.EUC/cat3/jl_fuzokugo_set.0
-man/ja_JP.EUC/cat3/jl_fuzokugo_set_e.0
-man/ja_JP.EUC/cat3/jl_get_kanji.0
-man/ja_JP.EUC/cat3/jl_get_yomi.0
-man/ja_JP.EUC/cat3/jl_get_zenkouho_kanji.0
-man/ja_JP.EUC/cat3/jl_hinsi_dicts.0
-man/ja_JP.EUC/cat3/jl_hinsi_dicts_e.0
-man/ja_JP.EUC/cat3/jl_hinsi_list.0
-man/ja_JP.EUC/cat3/jl_hinsi_list_e.0
-man/ja_JP.EUC/cat3/jl_hinsi_name.0
-man/ja_JP.EUC/cat3/jl_hinsi_name_e.0
-man/ja_JP.EUC/cat3/jl_hinsi_number.0
-man/ja_JP.EUC/cat3/jl_hinsi_number_e.0
-man/ja_JP.EUC/cat3/jl_inspect.0
-man/ja_JP.EUC/cat3/jl_isconnect.0
-man/ja_JP.EUC/cat3/jl_isconnect_e.0
-man/ja_JP.EUC/cat3/jl_jiri_len.0
-man/ja_JP.EUC/cat3/jl_kanji_len.0
-man/ja_JP.EUC/cat3/jl_kill.0
-man/ja_JP.EUC/cat3/jl_next.0
-man/ja_JP.EUC/cat3/jl_next_dai.0
-man/ja_JP.EUC/cat3/jl_nobi_conv.0
-man/ja_JP.EUC/cat3/jl_open.0
-man/ja_JP.EUC/cat3/jl_open_lang.0
-man/ja_JP.EUC/cat3/jl_param_get.0
-man/ja_JP.EUC/cat3/jl_param_get_e.0
-man/ja_JP.EUC/cat3/jl_param_set.0
-man/ja_JP.EUC/cat3/jl_param_set_e.0
-man/ja_JP.EUC/cat3/jl_previous.0
-man/ja_JP.EUC/cat3/jl_previous_dai.0
-man/ja_JP.EUC/cat3/jl_ren_conv.0
-man/ja_JP.EUC/cat3/jl_set_env_wnnrc.0
-man/ja_JP.EUC/cat3/jl_set_jikouho.0
-man/ja_JP.EUC/cat3/jl_set_jikouho_dai.0
-man/ja_JP.EUC/cat3/jl_tan_conv.0
-man/ja_JP.EUC/cat3/jl_update_hindo.0
-man/ja_JP.EUC/cat3/jl_word_add.0
-man/ja_JP.EUC/cat3/jl_word_add_e.0
-man/ja_JP.EUC/cat3/jl_word_comment_set.0
-man/ja_JP.EUC/cat3/jl_word_comment_set_e.0
-man/ja_JP.EUC/cat3/jl_word_delete.0
-man/ja_JP.EUC/cat3/jl_word_delete_e.0
-man/ja_JP.EUC/cat3/jl_word_info.0
-man/ja_JP.EUC/cat3/jl_word_info_e.0
-man/ja_JP.EUC/cat3/jl_word_search.0
-man/ja_JP.EUC/cat3/jl_word_search_by_env.0
-man/ja_JP.EUC/cat3/jl_word_search_by_env_e.0
-man/ja_JP.EUC/cat3/jl_word_search_e.0
-man/ja_JP.EUC/cat3/jl_word_use.0
-man/ja_JP.EUC/cat3/jl_word_use_e.0
-man/ja_JP.EUC/cat3/jl_yomi_len.0
-man/ja_JP.EUC/cat3/jl_zenkouho.0
-man/ja_JP.EUC/cat3/jl_zenkouho_bun.0
-man/ja_JP.EUC/cat3/jl_zenkouho_dai.0
-man/ja_JP.EUC/cat3/jl_zenkouho_daip.0
-man/ja_JP.EUC/cat3/jl_zenkouho_suu.0
-man/ja_JP.EUC/cat3/js_access.0
-man/ja_JP.EUC/cat3/js_close.0
-man/ja_JP.EUC/cat3/js_connect.0
-man/ja_JP.EUC/cat3/js_dic_add.0
-man/ja_JP.EUC/cat3/js_dic_delete.0
-man/ja_JP.EUC/cat3/js_dic_file_create.0
-man/ja_JP.EUC/cat3/js_dic_file_create_client.0
-man/ja_JP.EUC/cat3/js_dic_info.0
-man/ja_JP.EUC/cat3/js_dic_list.0
-man/ja_JP.EUC/cat3/js_dic_list_all.0
-man/ja_JP.EUC/cat3/js_dic_use.0
-man/ja_JP.EUC/cat3/js_disconnect.0
-man/ja_JP.EUC/cat3/js_env_exist.0
-man/ja_JP.EUC/cat3/js_env_list.0
-man/ja_JP.EUC/cat3/js_env_sticky.0
-man/ja_JP.EUC/cat3/js_env_un_sticky.0
-man/ja_JP.EUC/cat3/js_file_comment_set.0
-man/ja_JP.EUC/cat3/js_file_discard.0
-man/ja_JP.EUC/cat3/js_file_info.0
-man/ja_JP.EUC/cat3/js_file_list.0
-man/ja_JP.EUC/cat3/js_file_list_all.0
-man/ja_JP.EUC/cat3/js_file_loaded.0
-man/ja_JP.EUC/cat3/js_file_loaded_local.0
-man/ja_JP.EUC/cat3/js_file_password_set.0
-man/ja_JP.EUC/cat3/js_file_read.0
-man/ja_JP.EUC/cat3/js_file_receive.0
-man/ja_JP.EUC/cat3/js_file_remove.0
-man/ja_JP.EUC/cat3/js_file_remove_client.0
-man/ja_JP.EUC/cat3/js_file_send.0
-man/ja_JP.EUC/cat3/js_file_stat.0
-man/ja_JP.EUC/cat3/js_file_write.0
-man/ja_JP.EUC/cat3/js_fuzokugo_get.0
-man/ja_JP.EUC/cat3/js_fuzokugo_set.0
-man/ja_JP.EUC/cat3/js_get_lang.0
-man/ja_JP.EUC/cat3/js_hindo_file_create.0
-man/ja_JP.EUC/cat3/js_hindo_file_create_client.0
-man/ja_JP.EUC/cat3/js_hindo_set.0
-man/ja_JP.EUC/cat3/js_hinsi_dicts.0
-man/ja_JP.EUC/cat3/js_hinsi_list.0
-man/ja_JP.EUC/cat3/js_hinsi_name.0
-man/ja_JP.EUC/cat3/js_hinsi_number.0
-man/ja_JP.EUC/cat3/js_hinsi_table_set.0
-man/ja_JP.EUC/cat3/js_isconnect.0
-man/ja_JP.EUC/cat3/js_kanren.0
-man/ja_JP.EUC/cat3/js_kantan_dai.0
-man/ja_JP.EUC/cat3/js_kantan_sho.0
-man/ja_JP.EUC/cat3/js_kanzen_dai.0
-man/ja_JP.EUC/cat3/js_kanzen_sho.0
-man/ja_JP.EUC/cat3/js_kill.0
-man/ja_JP.EUC/cat3/js_mkdir.0
-man/ja_JP.EUC/cat3/js_open.0
-man/ja_JP.EUC/cat3/js_open_lang.0
-man/ja_JP.EUC/cat3/js_param_get.0
-man/ja_JP.EUC/cat3/js_param_set.0
-man/ja_JP.EUC/cat3/js_set_lang.0
-man/ja_JP.EUC/cat3/js_version.0
-man/ja_JP.EUC/cat3/js_who.0
-man/ja_JP.EUC/cat3/js_word_add.0
-man/ja_JP.EUC/cat3/js_word_comment_set.0
-man/ja_JP.EUC/cat3/js_word_delete.0
-man/ja_JP.EUC/cat3/js_word_info.0
-man/ja_JP.EUC/cat3/js_word_search.0
-man/ja_JP.EUC/cat3/js_word_search_by_env.0
-man/ja_JP.EUC/cat3/msg_close.0
-man/ja_JP.EUC/cat3/msg_get.0
-man/ja_JP.EUC/cat3/msg_open.0
-man/ja_JP.EUC/cat3/romkan_clear.0
-man/ja_JP.EUC/cat3/romkan_dispmode.0
-man/ja_JP.EUC/cat3/romkan_getc.0
-man/ja_JP.EUC/cat3/romkan_init.0
-man/ja_JP.EUC/cat3/romkan_next.0
-man/ja_JP.EUC/cat3/romkan_ungetc.0
-man/ja_JP.EUC/cat4/2a_ctrl.0
-man/ja_JP.EUC/cat4/2b_romkana.0
-man/ja_JP.EUC/cat4/cvt_key_tbl.0
-man/ja_JP.EUC/cat4/fzk.data.0
-man/ja_JP.EUC/cat4/fzk.u.0
-man/ja_JP.EUC/cat4/hinsi_data.0
-man/ja_JP.EUC/cat4/jserverrc.0
-man/ja_JP.EUC/cat4/mode.0
-man/ja_JP.EUC/cat4/serverdefs.0
-man/ja_JP.EUC/cat4/ujis_dic.0
-man/ja_JP.EUC/cat4/uumkey.0
-man/ja_JP.EUC/cat4/uumrc.0
-man/ja_JP.EUC/cat4/wnnenvrc.0
-man/ja_JP.EUC/cat5/pubdic.0
-man/ja_JP.EUC/cat5/usr_dic.0
+@man man/ja_JP.EUC/cat1/atod.0
+@man man/ja_JP.EUC/cat1/atof.0
+@man man/ja_JP.EUC/cat1/dtoa.0
+@man man/ja_JP.EUC/cat1/jserver.0
+@man man/ja_JP.EUC/cat1/oldatonewa.0
+@man man/ja_JP.EUC/cat1/uum.0
+@man man/ja_JP.EUC/cat1/wddel.0
+@man man/ja_JP.EUC/cat1/wdreg.0
+@man man/ja_JP.EUC/cat1/wnnkill.0
+@man man/ja_JP.EUC/cat1/wnnstat.0
+@man man/ja_JP.EUC/cat1/wnntouch.0
+@man man/ja_JP.EUC/cat3/jl_bun_suu.0
+@man man/ja_JP.EUC/cat3/jl_c_zenkouho.0
+@man man/ja_JP.EUC/cat3/jl_close.0
+@man man/ja_JP.EUC/cat3/jl_connect.0
+@man man/ja_JP.EUC/cat3/jl_connect_lang.0
+@man man/ja_JP.EUC/cat3/jl_dai_top.0
+@man man/ja_JP.EUC/cat3/jl_dic_add.0
+@man man/ja_JP.EUC/cat3/jl_dic_add_e.0
+@man man/ja_JP.EUC/cat3/jl_dic_comment_set.0
+@man man/ja_JP.EUC/cat3/jl_dic_comment_set_e.0
+@man man/ja_JP.EUC/cat3/jl_dic_delete.0
+@man man/ja_JP.EUC/cat3/jl_dic_delete_e.0
+@man man/ja_JP.EUC/cat3/jl_dic_list.0
+@man man/ja_JP.EUC/cat3/jl_dic_list_e.0
+@man man/ja_JP.EUC/cat3/jl_dic_save.0
+@man man/ja_JP.EUC/cat3/jl_dic_save_all.0
+@man man/ja_JP.EUC/cat3/jl_dic_save_all_e.0
+@man man/ja_JP.EUC/cat3/jl_dic_save_e.0
+@man man/ja_JP.EUC/cat3/jl_dic_use.0
+@man man/ja_JP.EUC/cat3/jl_dic_use_e.0
+@man man/ja_JP.EUC/cat3/jl_disconnect.0
+@man man/ja_JP.EUC/cat3/jl_env.0
+@man man/ja_JP.EUC/cat3/jl_env_get.0
+@man man/ja_JP.EUC/cat3/jl_env_set.0
+@man man/ja_JP.EUC/cat3/jl_env_sticky.0
+@man man/ja_JP.EUC/cat3/jl_env_sticky_e.0
+@man man/ja_JP.EUC/cat3/jl_env_un_sticky.0
+@man man/ja_JP.EUC/cat3/jl_env_un_sticky_e.0
+@man man/ja_JP.EUC/cat3/jl_fuzokugo_get.0
+@man man/ja_JP.EUC/cat3/jl_fuzokugo_get_e.0
+@man man/ja_JP.EUC/cat3/jl_fuzokugo_set.0
+@man man/ja_JP.EUC/cat3/jl_fuzokugo_set_e.0
+@man man/ja_JP.EUC/cat3/jl_get_kanji.0
+@man man/ja_JP.EUC/cat3/jl_get_yomi.0
+@man man/ja_JP.EUC/cat3/jl_get_zenkouho_kanji.0
+@man man/ja_JP.EUC/cat3/jl_hinsi_dicts.0
+@man man/ja_JP.EUC/cat3/jl_hinsi_dicts_e.0
+@man man/ja_JP.EUC/cat3/jl_hinsi_list.0
+@man man/ja_JP.EUC/cat3/jl_hinsi_list_e.0
+@man man/ja_JP.EUC/cat3/jl_hinsi_name.0
+@man man/ja_JP.EUC/cat3/jl_hinsi_name_e.0
+@man man/ja_JP.EUC/cat3/jl_hinsi_number.0
+@man man/ja_JP.EUC/cat3/jl_hinsi_number_e.0
+@man man/ja_JP.EUC/cat3/jl_inspect.0
+@man man/ja_JP.EUC/cat3/jl_isconnect.0
+@man man/ja_JP.EUC/cat3/jl_isconnect_e.0
+@man man/ja_JP.EUC/cat3/jl_jiri_len.0
+@man man/ja_JP.EUC/cat3/jl_kanji_len.0
+@man man/ja_JP.EUC/cat3/jl_kill.0
+@man man/ja_JP.EUC/cat3/jl_next.0
+@man man/ja_JP.EUC/cat3/jl_next_dai.0
+@man man/ja_JP.EUC/cat3/jl_nobi_conv.0
+@man man/ja_JP.EUC/cat3/jl_open.0
+@man man/ja_JP.EUC/cat3/jl_open_lang.0
+@man man/ja_JP.EUC/cat3/jl_param_get.0
+@man man/ja_JP.EUC/cat3/jl_param_get_e.0
+@man man/ja_JP.EUC/cat3/jl_param_set.0
+@man man/ja_JP.EUC/cat3/jl_param_set_e.0
+@man man/ja_JP.EUC/cat3/jl_previous.0
+@man man/ja_JP.EUC/cat3/jl_previous_dai.0
+@man man/ja_JP.EUC/cat3/jl_ren_conv.0
+@man man/ja_JP.EUC/cat3/jl_set_env_wnnrc.0
+@man man/ja_JP.EUC/cat3/jl_set_jikouho.0
+@man man/ja_JP.EUC/cat3/jl_set_jikouho_dai.0
+@man man/ja_JP.EUC/cat3/jl_tan_conv.0
+@man man/ja_JP.EUC/cat3/jl_update_hindo.0
+@man man/ja_JP.EUC/cat3/jl_word_add.0
+@man man/ja_JP.EUC/cat3/jl_word_add_e.0
+@man man/ja_JP.EUC/cat3/jl_word_comment_set.0
+@man man/ja_JP.EUC/cat3/jl_word_comment_set_e.0
+@man man/ja_JP.EUC/cat3/jl_word_delete.0
+@man man/ja_JP.EUC/cat3/jl_word_delete_e.0
+@man man/ja_JP.EUC/cat3/jl_word_info.0
+@man man/ja_JP.EUC/cat3/jl_word_info_e.0
+@man man/ja_JP.EUC/cat3/jl_word_search.0
+@man man/ja_JP.EUC/cat3/jl_word_search_by_env.0
+@man man/ja_JP.EUC/cat3/jl_word_search_by_env_e.0
+@man man/ja_JP.EUC/cat3/jl_word_search_e.0
+@man man/ja_JP.EUC/cat3/jl_word_use.0
+@man man/ja_JP.EUC/cat3/jl_word_use_e.0
+@man man/ja_JP.EUC/cat3/jl_yomi_len.0
+@man man/ja_JP.EUC/cat3/jl_zenkouho.0
+@man man/ja_JP.EUC/cat3/jl_zenkouho_bun.0
+@man man/ja_JP.EUC/cat3/jl_zenkouho_dai.0
+@man man/ja_JP.EUC/cat3/jl_zenkouho_daip.0
+@man man/ja_JP.EUC/cat3/jl_zenkouho_suu.0
+@man man/ja_JP.EUC/cat3/js_access.0
+@man man/ja_JP.EUC/cat3/js_close.0
+@man man/ja_JP.EUC/cat3/js_connect.0
+@man man/ja_JP.EUC/cat3/js_dic_add.0
+@man man/ja_JP.EUC/cat3/js_dic_delete.0
+@man man/ja_JP.EUC/cat3/js_dic_file_create.0
+@man man/ja_JP.EUC/cat3/js_dic_file_create_client.0
+@man man/ja_JP.EUC/cat3/js_dic_info.0
+@man man/ja_JP.EUC/cat3/js_dic_list.0
+@man man/ja_JP.EUC/cat3/js_dic_list_all.0
+@man man/ja_JP.EUC/cat3/js_dic_use.0
+@man man/ja_JP.EUC/cat3/js_disconnect.0
+@man man/ja_JP.EUC/cat3/js_env_exist.0
+@man man/ja_JP.EUC/cat3/js_env_list.0
+@man man/ja_JP.EUC/cat3/js_env_sticky.0
+@man man/ja_JP.EUC/cat3/js_env_un_sticky.0
+@man man/ja_JP.EUC/cat3/js_file_comment_set.0
+@man man/ja_JP.EUC/cat3/js_file_discard.0
+@man man/ja_JP.EUC/cat3/js_file_info.0
+@man man/ja_JP.EUC/cat3/js_file_list.0
+@man man/ja_JP.EUC/cat3/js_file_list_all.0
+@man man/ja_JP.EUC/cat3/js_file_loaded.0
+@man man/ja_JP.EUC/cat3/js_file_loaded_local.0
+@man man/ja_JP.EUC/cat3/js_file_password_set.0
+@man man/ja_JP.EUC/cat3/js_file_read.0
+@man man/ja_JP.EUC/cat3/js_file_receive.0
+@man man/ja_JP.EUC/cat3/js_file_remove.0
+@man man/ja_JP.EUC/cat3/js_file_remove_client.0
+@man man/ja_JP.EUC/cat3/js_file_send.0
+@man man/ja_JP.EUC/cat3/js_file_stat.0
+@man man/ja_JP.EUC/cat3/js_file_write.0
+@man man/ja_JP.EUC/cat3/js_fuzokugo_get.0
+@man man/ja_JP.EUC/cat3/js_fuzokugo_set.0
+@man man/ja_JP.EUC/cat3/js_get_lang.0
+@man man/ja_JP.EUC/cat3/js_hindo_file_create.0
+@man man/ja_JP.EUC/cat3/js_hindo_file_create_client.0
+@man man/ja_JP.EUC/cat3/js_hindo_set.0
+@man man/ja_JP.EUC/cat3/js_hinsi_dicts.0
+@man man/ja_JP.EUC/cat3/js_hinsi_list.0
+@man man/ja_JP.EUC/cat3/js_hinsi_name.0
+@man man/ja_JP.EUC/cat3/js_hinsi_number.0
+@man man/ja_JP.EUC/cat3/js_hinsi_table_set.0
+@man man/ja_JP.EUC/cat3/js_isconnect.0
+@man man/ja_JP.EUC/cat3/js_kanren.0
+@man man/ja_JP.EUC/cat3/js_kantan_dai.0
+@man man/ja_JP.EUC/cat3/js_kantan_sho.0
+@man man/ja_JP.EUC/cat3/js_kanzen_dai.0
+@man man/ja_JP.EUC/cat3/js_kanzen_sho.0
+@man man/ja_JP.EUC/cat3/js_kill.0
+@man man/ja_JP.EUC/cat3/js_mkdir.0
+@man man/ja_JP.EUC/cat3/js_open.0
+@man man/ja_JP.EUC/cat3/js_open_lang.0
+@man man/ja_JP.EUC/cat3/js_param_get.0
+@man man/ja_JP.EUC/cat3/js_param_set.0
+@man man/ja_JP.EUC/cat3/js_set_lang.0
+@man man/ja_JP.EUC/cat3/js_version.0
+@man man/ja_JP.EUC/cat3/js_who.0
+@man man/ja_JP.EUC/cat3/js_word_add.0
+@man man/ja_JP.EUC/cat3/js_word_comment_set.0
+@man man/ja_JP.EUC/cat3/js_word_delete.0
+@man man/ja_JP.EUC/cat3/js_word_info.0
+@man man/ja_JP.EUC/cat3/js_word_search.0
+@man man/ja_JP.EUC/cat3/js_word_search_by_env.0
+@man man/ja_JP.EUC/cat3/msg_close.0
+@man man/ja_JP.EUC/cat3/msg_get.0
+@man man/ja_JP.EUC/cat3/msg_open.0
+@man man/ja_JP.EUC/cat3/romkan_clear.0
+@man man/ja_JP.EUC/cat3/romkan_dispmode.0
+@man man/ja_JP.EUC/cat3/romkan_getc.0
+@man man/ja_JP.EUC/cat3/romkan_init.0
+@man man/ja_JP.EUC/cat3/romkan_next.0
+@man man/ja_JP.EUC/cat3/romkan_ungetc.0
+@man man/ja_JP.EUC/cat4/2a_ctrl.0
+@man man/ja_JP.EUC/cat4/2b_romkana.0
+@man man/ja_JP.EUC/cat4/cvt_key_tbl.0
+@man man/ja_JP.EUC/cat4/fzk.data.0
+@man man/ja_JP.EUC/cat4/fzk.u.0
+@man man/ja_JP.EUC/cat4/hinsi_data.0
+@man man/ja_JP.EUC/cat4/jserverrc.0
+@man man/ja_JP.EUC/cat4/mode.0
+@man man/ja_JP.EUC/cat4/serverdefs.0
+@man man/ja_JP.EUC/cat4/ujis_dic.0
+@man man/ja_JP.EUC/cat4/uumkey.0
+@man man/ja_JP.EUC/cat4/uumrc.0
+@man man/ja_JP.EUC/cat4/wnnenvrc.0
+@man man/ja_JP.EUC/cat5/pubdic.0
+@man man/ja_JP.EUC/cat5/usr_dic.0
 share/doc/ja-Wnn/
 share/doc/ja-Wnn/manual/
 share/doc/ja-Wnn/manual.en/

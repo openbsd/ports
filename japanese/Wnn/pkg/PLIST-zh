@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST-zh,v 1.8 2004/07/24 12:43:16 espie Exp $
+@comment $OpenBSD: PLIST-zh,v 1.9 2004/08/05 14:11:10 espie Exp $
 bin/catod
 bin/catof
 bin/cdtoa
 bin/cserver
-@owner root
 @mode u+s
+@owner root
 bin/cuum
-@mode
-@owner
+@mode 
+@owner 
 bin/cwddel
 bin/cwdreg
 bin/cwnnkill
@@ -118,20 +118,20 @@ lib/wnn/zh_TW/uumrc_z
 lib/wnn/zh_TW/wnnenvrc
 lib/wnn/zh_TW/wnnenvrc_R
 lib/wnn/zh_TW/wnnstat.msg
-man/ja_JP.EUC/cat1/catod.0
-man/ja_JP.EUC/cat1/catof.0
-man/ja_JP.EUC/cat1/cdicsort.0
-man/ja_JP.EUC/cat1/cdtoa.0
-man/ja_JP.EUC/cat1/cserver.0
-man/ja_JP.EUC/cat1/cuum.0
-man/ja_JP.EUC/cat1/cwddel.0
-man/ja_JP.EUC/cat1/cwdreg.0
-man/ja_JP.EUC/cat1/cwnnkill.0
-man/ja_JP.EUC/cat1/cwnnstat.0
-man/ja_JP.EUC/cat4/cenv.0
-man/ja_JP.EUC/cat4/ckey.0
-man/ja_JP.EUC/cat4/cst_end.0
-man/ja_JP.EUC/cat4/cwnn.0
+@man man/ja_JP.EUC/cat1/catod.0
+@man man/ja_JP.EUC/cat1/catof.0
+@man man/ja_JP.EUC/cat1/cdicsort.0
+@man man/ja_JP.EUC/cat1/cdtoa.0
+@man man/ja_JP.EUC/cat1/cserver.0
+@man man/ja_JP.EUC/cat1/cuum.0
+@man man/ja_JP.EUC/cat1/cwddel.0
+@man man/ja_JP.EUC/cat1/cwdreg.0
+@man man/ja_JP.EUC/cat1/cwnnkill.0
+@man man/ja_JP.EUC/cat1/cwnnstat.0
+@man man/ja_JP.EUC/cat4/cenv.0
+@man man/ja_JP.EUC/cat4/ckey.0
+@man man/ja_JP.EUC/cat4/cst_end.0
+@man man/ja_JP.EUC/cat4/cwnn.0
 share/doc/zh-cWnn/
 share/doc/zh-cWnn/manual/
 share/doc/zh-cWnn/manual.en/

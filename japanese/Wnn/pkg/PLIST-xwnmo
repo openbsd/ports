@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-xwnmo,v 1.1 2000/04/22 12:05:58 espie Exp $
+@comment $OpenBSD: PLIST-xwnmo,v 1.2 2004/08/05 14:11:10 espie Exp $
 bin/killxwnmo
 bin/xjutil
 bin/xwnmo
@@ -36,11 +36,11 @@ lib/wnn/zh_TW/uumrc_p.xim
 lib/wnn/zh_TW/uumrc_z.xim
 lib/wnn/zh_TW/xim.msg
 lib/wnn/zh_TW/xjutil.msg
-man/ja_JP.EUC/cat1/cvt_fun_tbl.0
-man/ja_JP.EUC/cat1/cvt_meta_tbl.0
-man/ja_JP.EUC/cat1/cvt_xim_tbl.0
-man/ja_JP.EUC/cat1/killxwnmo.0
-man/ja_JP.EUC/cat1/ximconf.0
-man/ja_JP.EUC/cat1/ximrc.0
-man/ja_JP.EUC/cat1/xjutil.0
-man/ja_JP.EUC/cat1/xwnmo.0
+@man man/ja_JP.EUC/cat1/cvt_fun_tbl.0
+@man man/ja_JP.EUC/cat1/cvt_meta_tbl.0
+@man man/ja_JP.EUC/cat1/cvt_xim_tbl.0
+@man man/ja_JP.EUC/cat1/killxwnmo.0
+@man man/ja_JP.EUC/cat1/ximconf.0
+@man man/ja_JP.EUC/cat1/ximrc.0
+@man man/ja_JP.EUC/cat1/xjutil.0
+@man man/ja_JP.EUC/cat1/xwnmo.0
