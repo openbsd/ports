@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/14 14:41:30 todd Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/16 22:18:59 heko Exp $
 
 COMMENT=		"the GNOME Virtual File System"
 V=			1.0.1
@@ -13,7 +13,8 @@ MASTER_SITE_SUBDIR= 	stable/sources/gnome-vfs
 
 LIB_DEPENDS=		gnome.36::x11/gnome/libs \
 			xml.9::textproc/libxml1 \
-			gconf-1::devel/gconf,db3
+			gconf-1::devel/gconf,db3 \
+			cdda_paranoia.::audio/cdparanoia
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

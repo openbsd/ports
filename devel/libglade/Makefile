@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/14 14:41:29 todd Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/16 22:18:59 heko Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
 V=			0.16
@@ -38,3 +38,11 @@ CONFIGURE_ARGS+=	--without-gnome
 .endif
 
 .include <bsd.port.mk>
+
+# From PostgreSQL port Makefile.
+.if ${FLAVOR:L:Mgnome} && !defined(NO_SHARED_LIBS)
+SED_PLIST+=-e '/%%SHARED-gnome%%/r${PKGDIR}/PFRAG.gnome.shared' -e '//d'
+.elif ${FLAVOR:L:Mgnome} && defined(NO_SHARED_LIBS) && \
+        ${NO_SHARED_LIBS:L} == "yes"
+SED_PLIST+=-e '/%%SHARED-gnome%%/d'
+.endif
