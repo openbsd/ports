@@ -1,1 +1,4 @@
-TIN:  Easy to use threaded newsreader with NOV/NNTP support.
+tin is a full-screen easy to use Usenet reader. It can read news locally
+or remotely via a NTTP (Network News Transport Protocol) server. It will
+automatically utilize NOV (News OVerview) style index files if available
+locally or via the NNTP XOVER command.
