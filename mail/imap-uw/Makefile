@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2001/02/02 19:36:28 jakob Exp $
+# $OpenBSD: Makefile,v 1.16 2001/02/18 15:26:43 jakob Exp $
 
 DISTNAME=	imap-2000c
 
 PKGNAME=	imap-uw-2000c
 CATEGORIES=	mail
 NEED_VERSION=	1.302
+
+HOMEPAGE=	http://www.washington.edu/imap/
 
 MAINTAINER=     jakob@openbsd.org
 

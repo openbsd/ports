@@ -11,3 +11,6 @@ The ipop2d, ipop3d, and imapd daemons should be invoked by your
 pop2    stream  tcp     nowait  root    /usr/local/libexec/ipop2d   ipop2d
 pop3    stream  tcp     nowait  root    /usr/local/libexec/ipop3d   ipop3d
 imap    stream  tcp     nowait  root    /usr/local/libexec/imapd    imapd
+
+
+WWW: ${HOMEPAGE}
