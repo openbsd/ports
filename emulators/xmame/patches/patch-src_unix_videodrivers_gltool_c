@@ -1,0 +1,72 @@
+$OpenBSD: patch-src_unix_videodrivers_gltool_c,v 1.1 2001/08/12 23:03:10 naddy Exp $
+--- src/unix/video-drivers/gltool.c.orig	Sat Aug 11 21:54:56 2001
++++ src/unix/video-drivers/gltool.c	Sat Aug 11 22:30:50 2001
+@@ -355,7 +355,8 @@
+ 
+   if (disp__glXGetProcAddress == NULL && __firstAccess)
+   {
+-      disp__glXGetProcAddress = dlsym (libHandleGL, "glXGetProcAddressARB");
++      disp__glXGetProcAddress = dlsym (libHandleGL, SYMBOL_PREFIX
++        "glXGetProcAddressARB");
+ 
+       if (disp__glXGetProcAddress != NULL && verbose)
+       {
+@@ -365,7 +366,8 @@
+ 
+       if (disp__glXGetProcAddress == NULL)
+       {
+-	disp__glXGetProcAddress = dlsym (libHandleGL, "glXGetProcAddressEXT");
++	disp__glXGetProcAddress = dlsym (libHandleGL, SYMBOL_PREFIX
++	  "glXGetProcAddressEXT");
+ 
+ 	if (disp__glXGetProcAddress != NULL && verbose)
+ 	{
+@@ -376,7 +378,8 @@
+ 
+       if (disp__glXGetProcAddress == NULL)
+       {
+-	disp__glXGetProcAddress = dlsym (libHandleGL, "glXGetProcAddress");
++	disp__glXGetProcAddress = dlsym (libHandleGL, SYMBOL_PREFIX
++	  "glXGetProcAddress");
+ 
+ 	if (disp__glXGetProcAddress != NULL && verbose)
+ 	{
+@@ -392,7 +395,8 @@
+ 	fflush (NULL);
+ 	if (libHandleGLX != NULL)
+ 	{
+-	  disp__glXGetProcAddress = dlsym (libHandleGLX, "glXGetProcAddressARB");
++	  disp__glXGetProcAddress = dlsym (libHandleGLX, SYMBOL_PREFIX
++	    "glXGetProcAddressARB");
+ 
+ 	  if (disp__glXGetProcAddress != NULL && verbose)
+ 	  {
+@@ -402,7 +406,8 @@
+ 
+ 	  if (disp__glXGetProcAddress == NULL)
+ 	  {
+-	    disp__glXGetProcAddress = dlsym (libHandleGLX, "glXGetProcAddressEXT");
++	    disp__glXGetProcAddress = dlsym (libHandleGLX, SYMBOL_PREFIX
++	      "glXGetProcAddressEXT");
+ 
+ 	    if (disp__glXGetProcAddress != NULL && verbose)
+ 	    {
+@@ -413,7 +418,8 @@
+ 
+ 	  if (disp__glXGetProcAddress == NULL)
+ 	  {
+-	    disp__glXGetProcAddress = dlsym (libHandleGLX, "glXGetProcAddress");
++	    disp__glXGetProcAddress = dlsym (libHandleGLX, SYMBOL_PREFIX
++	      "glXGetProcAddress");
+ 
+ 	    if (disp__glXGetProcAddress != NULL && verbose)
+ 	    {
+@@ -539,7 +545,7 @@
+   if(!loadGLLibrary (libGLName, libGLUName))
+   	return;
+ 
+-  #define GET_GL_PROCADDRESS(a) getGLProcAddressHelper (libGLName, libGLUName, (a), NULL, 1, 0);
++  #define GET_GL_PROCADDRESS(a) getGLProcAddressHelper (libGLName, libGLUName, (SYMBOL_PREFIX a), NULL, 1, 0);
+ 
+   #include "gl-disp-fetch.hc"
+   #include "glu-disp-fetch.hc"

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_unix_videodrivers_glxtool_c,v 1.1 2001/08/12 23:03:10 naddy Exp $
+--- src/unix/video-drivers/glxtool.c.orig	Sat Aug 11 22:03:52 2001
++++ src/unix/video-drivers/glxtool.c	Sat Aug 11 22:05:53 2001
+@@ -29,7 +29,7 @@
+   if(!_firstRun)
+   	return;
+ 
+-  #define GET_GL_PROCADDRESS(a) getGLProcAddressHelper (libGLName, libGLUName, (a), NULL, 1, 0);
++  #define GET_GL_PROCADDRESS(a) getGLProcAddressHelper (libGLName, libGLUName, (SYMBOL_PREFIX a), NULL, 1, 0);
+ 
+   #include "glx-disp-fetch.hc"
+ 

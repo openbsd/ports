@@ -1,3 +1,4 @@
-
-You should read the xmame and xmess documentation at ${PREFIX}/share/doc/xmame.
-
+xmame and xmess documentation files are in ${PREFIX}/share/doc/xmame;
+rc files are in ${PREFIX}/share/xmame/xmamerc and
+${PREFIX}/share/xmess/xmessrc; you should edit and copy them into
+${SYSCONFDIR} or ${HOME}/.xmame and ${HOME}/.xmess.

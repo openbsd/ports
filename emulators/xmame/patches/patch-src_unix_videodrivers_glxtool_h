@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_unix_videodrivers_glxtool_h,v 1.1 2001/08/12 23:03:10 naddy Exp $
+--- src/unix/video-drivers/glxtool.h.orig	Sun Aug 12 01:44:44 2001
++++ src/unix/video-drivers/glxtool.h	Sun Aug 12 01:46:10 2001
+@@ -16,6 +16,14 @@
+     #include <X11/Xlib.h>
+   	#include <X11/Xutil.h>
+   	#include <X11/Xatom.h>
++
++	#ifndef SYMBOL_PREFIX
++		#ifdef __ELF__
++			#define SYMBOL_PREFIX	""
++		#else
++			#define SYMBOL_PREFIX	"_"
++		#endif
++	#endif
+   
+ 	#include "gltool.h"
+ 	  

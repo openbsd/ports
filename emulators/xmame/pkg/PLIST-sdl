@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/08/12 23:03:10 naddy Exp $
+@comment $OpenBSD: PLIST-sdl,v 1.1 2001/08/12 23:03:11 naddy Exp $
 @pkgcfl xmame-*
 @pkgcfl xmess-*
 bin/xmame

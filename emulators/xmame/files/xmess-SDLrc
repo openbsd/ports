@@ -1,0 +1,80 @@
+# $OpenBSD: xmess-SDLrc,v 1.1 2001/08/12 23:03:10 naddy Exp $
+### xmess running parameters ###
+
+### Digital sound related ###
+# dsp-plugin            <NULL> (not set)
+timer                   0
+
+### Sound mixer related ###
+# sound-mixer-plugin    <NULL> (not set)
+
+### Video Related ###
+bpp                     0
+heightscale             1
+widthscale              1
+autodouble              1
+dirty                   1
+scanlines               1
+artwork                 1
+frameskipper            0
+throttle                1
+sleepidle               0
+autoframeskip           1
+maxautoframeskip        8
+frameskip               0
+brightness              100
+gamma-correction        1.000000
+
+### Vector Games Related ###
+# vectorres             <NULL> (not set)
+beam                    1.000000
+flicker                 0.000000
+antialias               1
+translucency            1
+
+### SDL Related ###
+listmodes               0
+fullscreen              0
+modenumber              -1
+
+### Sound Related ###
+sound                   1
+samples                 1
+samplefreq              22050
+bufsize                 3.000000
+volume                  -3
+# audiodevice           <NULL> (not set)
+# mixerdevice           <NULL> (not set)
+
+### Input Related ###
+joytype                 0
+analogstick             0
+joydevname              /dev/joy
+mouse                   1
+
+### Fileio Related ###
+rompath                 /usr/local/share/xmess
+spooldir                /usr/local/share/xmess
+screenshotdir           .
+cheatdir                /usr/local/share/xmess/cheat
+crcdir                  /usr/local/share/xmess/crc
+cheatfile               cheat.cdb
+hiscorefile             /usr/local/share/xmess/hiscore.dat
+historyfile             /usr/local/share/xmess/history.dat
+mameinfofile            /usr/local/share/xmess/mameinfo.dat
+
+### Mess Related ###
+language                english
+fuzzycmp                1
+cheat                   0
+
+### Frontend Related ###
+clones                  1
+
+### Internal verification list commands (only for developers) ###
+
+### Rom Identification Related ###
+
+### General Options ###
+loadconfig              1
+
