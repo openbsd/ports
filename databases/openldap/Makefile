@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/21 21:19:25 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/24 14:30:27 jakob Exp $
 
 MULTI_PACKAGES=	-client
 PKGNAME-client=	openldap-client-${VERSION}
@@ -6,7 +6,7 @@ PKGNAME-client=	openldap-client-${VERSION}
 COMMENT= 	Open source LDAP client and server software
 COMMENT-client=	Open source LDAP client software
 
-VERSION=	2.0.9
+VERSION=	2.0.11
 DISTNAME=	openldap-${VERSION}
 CATEGORIES=	databases net
 NEED_VERSION=	1.361
