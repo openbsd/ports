@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2004/08/16 21:26:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2004/08/19 22:05:02 espie Exp $
 
 COMMENT=		"simplified wrapper and interface generator"
 COMMENT-examples=	"examples for swig"
@@ -25,6 +25,7 @@ BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
 		::lang/tcl/8.4 \
 		::lang/ruby
 
+LIB_DEPENDS=	guile::lang/guile
 MULTI_PACKAGES=	-examples
 
 WRKDIST=	${WRKDIR}/SWIG-${VERSION}
