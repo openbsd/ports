@@ -1,12 +1,15 @@
-# $Id: essentials,v 1.6 1999/09/27 01:46:30 brad Exp $ 
+# $Id: essentials,v 1.7 1999/09/28 21:55:25 espie Exp $ 
 # This is the list of packages that will be on the CD
 # there can be some omissions, as long as build-depends/run-depends work
 archivers/bzip2
 archivers/gshar+gunshar
 archivers/gtar
 archivers/unzip
+audio/sox
+audio/tosha
 benchmarks/iozone
 devel/autoconf
+devel/automake
 devel/bison
 devel/gettext
 devel/glib
@@ -15,6 +18,7 @@ devel/id-utils
 devel/m4
 devel/mm
 editors/emacs
+editors/jove
 graphics/aalib
 graphics/compface
 graphics/gimp
@@ -27,18 +31,22 @@ mail/fetchmail
 mail/metamail
 mail/nmh
 mail/pine
+mail/postfix
 math/gnuplot
+misc/cdrecord
 misc/screen
 net/ethereal
 net/ircii-epic
 net/netpipe
+net/samba
 net/sniffit
-net/wget
+#net/wget
 print/enscript
 print/ghostscript5
 print/gv
 shells/bash2
 shells/tcsh
+shells/zsh
 sysutils/xntpd
 x11/Xaw3d
 x11/gtk+
