@@ -1,7 +1,6 @@
-$OpenBSD: patch-src_misc_cc,v 1.2 2004/05/24 07:04:46 kevlo Exp $
---- src/misc.cc.orig	Sat May  8 22:55:29 2004
-+++ src/misc.cc	Sat May  8 22:55:55 2004
-@@ -263,7 +263,7 @@ void  truncate_file_tree(const char *dir
+--- src/misc.cc.orig	Wed Nov 10 18:31:08 2004
++++ src/misc.cc	Wed Nov 10 18:31:58 2004
+@@ -266,7 +266,7 @@ void  truncate_file_tree(const char *dir
        SignalHook::Ignore(SIGTSTP);
        SignalHook::Ignore(SIGQUIT);
        SignalHook::Ignore(SIGHUP);
