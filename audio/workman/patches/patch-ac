@@ -1,0 +1,39 @@
+*** plat_freebsd.c.old	Fri Aug  7 01:35:19 1998
+--- plat_freebsd.c	Fri Aug  7 01:41:00 1998
+***************
+*** 355,368 ****
+  	if (fstatfs(stbuf.st_rdev, &buf) == 0)
+  		return (-3);
+  
+! #if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+  	rval = ioctl(d->fd, CDIOCALLOW);
+  	if (rval == 0)
+  #endif
+  	    rval = ioctl(d->fd, CDIOCEJECT);
+! #if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+  	if (rval == 0)
+  	    rval = ioctl(d->fd, CDIOCPREVENT);
+  #endif
+  	return rval;
+  }
+--- 355,374 ----
+  	if (fstatfs(stbuf.st_rdev, &buf) == 0)
+  		return (-3);
+  
+! #if defined(__NetBSD__) || defined(__FreeBSD__)
+  	rval = ioctl(d->fd, CDIOCALLOW);
+  	if (rval == 0)
+  #endif
+  	    rval = ioctl(d->fd, CDIOCEJECT);
+! #if defined(__NetBSD__) || defined(__FreeBSD__)
+  	if (rval == 0)
+  	    rval = ioctl(d->fd, CDIOCPREVENT);
++ #endif
++ #if defined(__OpenBSD__)
++ 	if (rval == 0) {
++ 	    (void) close(d->fd);
++ 	    d->fd = -1;
++ 	}
+  #endif
+  	return rval;
+  }
