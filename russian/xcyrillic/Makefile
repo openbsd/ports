@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/04 22:24:37 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/22 06:40:44 form Exp $
 
 DISTNAME=	xcyrillic-1.1
 CATEGORIES=	russian x11
-MASTER_SITES=	${MASTER_SITE_BACKUP} \
+MASTER_SITES=	ftp://ftp.styx.org/users/ww/cyrillic/ \
+		${MASTER_SITE_BACKUP} \
 		ftp://vell.nsc.ru/pub/X11/cyrillic/
 
 MAINTAINER=	form@openbsd.org
