@@ -1,0 +1,21 @@
+--- xfsound/xfdsp.c.orig	Wed Nov 29 09:43:22 2000
++++ xfsound/xfdsp.c	Wed Nov 29 09:46:38 2000
+@@ -48,6 +48,9 @@
+ #if defined(linux)
+ #include <sys/soundcard.h>	/* guess :) */
+ #endif
++#if defined(__OpenBSD__)
++#include <soundcard.h>
++#endif
+ 
+ #include "xfdsp.h"
+ 
+@@ -62,7 +65,7 @@
+ 
+ int masterfd;
+ 
+-#if defined(linux)
++#if defined(linux) || defined(__OpenBSD__)
+ int
+ i_play (char *soundfile)
+ {

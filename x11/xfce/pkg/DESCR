@@ -8,4 +8,4 @@ manager for X11, a user friendly  interface for mouse configuration, a
 pager providing a miniature view of all XFce desktops, a clock/calendar 
 and at last but not least a filemanager, all sharing the same look'n feel.
 
-WWW: http://www.xfce.org/
+WWW: ${HOMEPAGE}

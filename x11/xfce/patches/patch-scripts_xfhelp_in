@@ -1,0 +1,10 @@
+--- scripts/xfhelp.in.orig	Wed Nov 29 14:54:00 2000
++++ scripts/xfhelp.in	Wed Nov 29 14:54:17 2000
+@@ -19,7 +19,6 @@
+ #  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ #
+ 
+-XFCE_DIR=
+ if [ "x$BROWSER" = "x" ]
+ then
+   BROWSER=netscape

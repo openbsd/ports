@@ -1,0 +1,11 @@
+--- xfsound/Makefile.in.orig	Wed Nov 29 11:35:17 2000
++++ xfsound/Makefile.in	Wed Nov 29 11:37:07 2000
+@@ -122,7 +122,7 @@
+ xfsound_SOURCES =  	xfsound_cb.c xfsound_cb.h 	xfsound.c xfsound.h 	xfdsp.c xfdsp.h
+ 
+ 
+-xfsound_LDADD = ../libs/libxfcecore.la ../libs/libxfwmcore.la @DMALLOC_LIB@ @GTK_LIBS@ @GDK_IMLIB_LIBS@ @GDK_PIXBUF_LIBS@ @INTLLIBS@ @LIBS@ ../libs/libxfwmcore.la ${X_LIBS} ${X_PRE_LIBS} -lXpm
++xfsound_LDADD = ../libs/libxfcecore.la ../libs/libxfwmcore.la @DMALLOC_LIB@ @GTK_LIBS@ @GDK_IMLIB_LIBS@ @GDK_PIXBUF_LIBS@ @INTLLIBS@ @LIBS@ ../libs/libxfwmcore.la ${X_LIBS} ${X_PRE_LIBS} -lXpm -lossaudio
+ 
+ 
+ xfsound_DEPENDENCIES = ../libs/libxfcecore.la ../libs/libxfwmcore.la

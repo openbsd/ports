@@ -1,0 +1,9 @@
+--- scripts/xflock.orig	Wed Nov 29 12:31:58 2000
++++ scripts/xflock	Wed Nov 29 12:32:09 2000
+@@ -19,5 +19,5 @@
+ #  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ #
+ 
+-xscreensaver-command -lock || xlock $*
++xlock $*
+ exit 0

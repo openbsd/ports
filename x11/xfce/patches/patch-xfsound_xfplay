@@ -1,0 +1,8 @@
+--- xfsound/xfplay.orig	Wed Nov 29 09:24:25 2000
++++ xfsound/xfplay	Wed Nov 29 09:25:48 2000
+@@ -2,4 +2,4 @@
+ #
+ # This script is part of XFce
+ # "ossdsp" option submitted by "Sami Tikka" <sami.tikka@kolumbus.fi>
+-exec sox $1 -t ossdsp /dev/dsp
++exec sox $1 -t ossdsp /dev/sound
