@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2004/10/25 02:34:21 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.34 2004/11/18 17:48:50 espie Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
@@ -33,6 +33,12 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test
 CONFIGURE_ENV+=	X11BASE="${X11BASE}" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+
+
+# in case devel/usb is installed, don't pick it up.
+CONFIGURE_ENV+= ac_cv_lib_usb_hid_init=no \
+		ac_cv_header_usb_h=no
+
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --disable-oss \
 		 --disable-ltdl \
