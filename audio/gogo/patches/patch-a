@@ -14,18 +14,6 @@
  AS=nasm
  LD=gcc
  
-@@ -53,9 +58,9 @@
- 
- #if Borland C++ then add -D__BORLANDC__ to ASFLAGS
- 
--ASFLAGS=-f elf -D__unix__ $(E3DN)
-+#ASFLAGS=-f elf -D__unix__ $(E3DN)
- #if FreeBSD 2.x then
--#ASFLAGS = -f aoutb -D__unix__ -DAOUT
-+ASFLAGS = -f aoutb -D__unix__ -DAOUT $(E3DN)
- 
- LDFLAGS=$(PROF)
- 
 @@ -150,3 +155,6 @@
  msubtbl.o  : msubtbl.nas nasm.h
  msub3dn.o  : msub3dn.nas nasm.h
