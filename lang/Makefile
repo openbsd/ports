@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1998/01/29 23:13:24 niklas Exp $
+# $OpenBSD: Makefile,v 1.6 1998/02/13 02:09:56 angelos Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -36,7 +36,7 @@
 #    SUBDIR += modula-3-socks
 #    SUBDIR += moscow_ml
 #    SUBDIR += objc
-#    SUBDIR += ocaml
+     SUBDIR += ocaml
 #    SUBDIR += p2c
 #    SUBDIR += p5-Tcl
 #    SUBDIR += p5-ePerl
