@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1997/12/03 04:05:29 angelos Exp $
+# $OpenBSD: Makefile,v 1.5 1997/12/20 04:10:34 don Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -62,7 +62,7 @@
 #    SUBDIR += tix
 #    SUBDIR += tk41
 #    SUBDIR += tk42
-    SUBDIR += tk80
+     SUBDIR += tk80
 #    SUBDIR += tkdesk
 #    SUBDIR += tkgoodstuff
 #    SUBDIR += tkstep80
@@ -91,7 +91,7 @@
 #    SUBDIR += xforms
 #    SUBDIR += xgrab
 #    SUBDIR += xkeycaps
-#    SUBDIR += xloadimage
+     SUBDIR += xloadimage
 #    SUBDIR += xlockmore
 #    SUBDIR += xmascot
 #    SUBDIR += xmbdfed
