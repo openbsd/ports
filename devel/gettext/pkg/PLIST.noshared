@@ -13,8 +13,6 @@ info/gettext.info
 include/libintl.h
 lib/libintl.a
 lib/libintl.la
-lib/libintl.so.1.0
-@exec /sbin/ldconfig -m %B
 share/aclocal/gettext.m4
 share/aclocal/lcmessage.m4
 share/aclocal/progtest.m4
