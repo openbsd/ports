@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2000/07/01 22:42:28 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2000/07/29 22:18:07 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1999/04/29 15:32:56 rse Exp $
 
-DISTNAME=	shtool-1.5.0
+DISTNAME=	shtool-1.5.1
 CATEGORIES=	devel
 NEED_VERSION=	1.310
 MASTER_SITES=	${MASTER_SITE_GNU}
