@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile 2004/10/07 22:08:00
+# $OpenBSD: Makefile,v 1.2 2004/12/14 23:50:31 jolan Exp $
 
 COMMENT=	"Fast tool to backup Video DVDs 'on the fly'"
 DISTNAME=	streamdvd-0.4
