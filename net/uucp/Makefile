@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/09/10 12:06:50 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2001/09/10 19:04:11 espie Exp $
 
 COMMENT=	"UUCP suite"
 
@@ -7,8 +7,6 @@ CATEGORIES=	net mail
 NEED_VERSION=	1.420
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= uucp
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -19,17 +17,16 @@ WRKDIST=	${WRKDIR}/uucp-1.06.1
 
 CONFIGURE_STYLE= gnu dest old
 
-MAKE_FLAGS+=	bindir='$${PREFIX}/bin' \
-		sbindir='$${PREFIX}/libexec/uucp' \
+MAKE_FLAGS+=	sbindir='$$(PREFIX)/libexec/uucp' \
 		newconfigdir=/etc/uucp \
 		oldconfigdir=/etc/uucp \
 		MAKEINFO='makeinfo --no-split'
 
-FAKE_FLAGS+=	${MAKE_FLAGS}
+FAKE_FLAGS=	DESTDIR=${WRKINST} $(MAKE_FLAGS)
+
+FAKE_TARGET=	install install-info
 
 post-install:
-	@cd ${WRKDIST}/doc && rm -f uucp.info* 
-	@cd ${WRKDIST} && ${MAKE} ${MAKE_FLAGS} install-info
 	@mv ${PREFIX}/libexec/uucp/uusched ${PREFIX}/bin
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/cu
 	@chmod ${BINMODE} ${PREFIX}/bin/cu

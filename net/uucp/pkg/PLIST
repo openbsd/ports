@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/09/10 19:04:11 espie Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/uucp.info
 bin/cu
 bin/uucp
