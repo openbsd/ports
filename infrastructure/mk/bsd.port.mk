@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.641 2004/08/12 19:02:45 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.642 2004/08/13 23:28:40 brad Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1331,6 +1331,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 			fi; \
 		done; \
 	}
+	@mkdir -p ${WRKDIR} ${WRKDIR}/bin
 	@${_MAKE_COOKIE} $@
 .    endfor
 .  endif
