@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2002/06/06 13:46:39 espie Exp $
+# $OpenBSD: Makefile,v 1.90 2002/09/18 15:35:39 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64
 
@@ -9,6 +9,7 @@ MAKE_OBJC=Yes
 
 # Java is still mostly broken (boehm-gc)
 MAKE_JAVA=Yes
+BROKEN="Waiting for a recent snapshot that #??#@ works"
 
 
 # This is a configuration file for gcc
@@ -36,7 +37,6 @@ BUILD_DEPENDS=	::devel/autoconf
 BUILD_DEPENDS+= :bison-*:devel/bison
 
 CATEGORIES=	lang 
-NEED_VERSION=	1.474
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 
@@ -64,7 +64,7 @@ REGRESS_DEPENDS=::lang/egcs/dejagnu
 .if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
 BUILD_DEPENDS+=:bison-*:devel/bison
 .endif
-LATEST_DATE=2002-06-03
+LATEST_DATE=2002-06-17
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
