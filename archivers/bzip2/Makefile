@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2001/10/15 14:16:34 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.40 2001/10/31 16:49:46 brad Exp $
 
 COMMENT=	"block-sorting file compressor, unencumbered"
 
 DISTNAME=	bzip2-1.0.1
 CATEGORIES=	archivers
-NEED_VERSION=	1.460
+NEED_VERSION=	1.475
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR= bzip2/v100
 
@@ -24,19 +24,15 @@ BZ2_CFLAGS+=	-fomit-frame-pointer -fno-strength-reduce
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} ${BZ2_CFLAGS}"
 FAKE_FLAGS=	${MAKE_FLAGS} PREFIX="${PREFIX}" DESTDIR="${WRKINST}"
+REGRESS_FLAGS=	LD_LIBRARY_PATH="${WRKBUILD}"
 
-test:   build
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
-		LD_LIBRARY_PATH="${WRKBUILD}" ${MAKE} ${MAKE_FLAGS} -f \
-			${MAKE_FILE} test
+REGRESS_TARGET=	test
 
 post-install:
 	@cd ${WRKBUILD} && makeinfo --no-split manual.texi
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bzip2
 	${INSTALL_DATA} ${WRKBUILD}/*.html ${PREFIX}/share/doc/bzip2
 	${INSTALL_DATA} ${WRKBUILD}/bzip2.info ${PREFIX}/info
-
-REGRESS_TARGET=test
 
 .include <bsd.port.mk>
 
