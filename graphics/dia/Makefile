@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2000/11/15 06:56:40 obecian Exp $
+# $OpenBSD: Makefile,v 1.4 2000/11/20 15:15:40 espie Exp $
 
 DISTNAME=	dia-0.86
+# patch in -stable
+PKGNAME=	dia-0.86p1
 CATEGORIES=	graphics
 NEED_VERSION=	1.320
 MASTER_SITES=	${MASTER_SITE_GNOME}
