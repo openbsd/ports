@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Dec  9 16:18:33 1997
-+++ Makefile.in	Sat Dec 13 11:19:12 1997
-@@ -131,8 +131,8 @@
+--- Makefile.in.orig	Thu Sep  7 23:56:35 2000
++++ Makefile.in	Thu Sep  7 23:57:30 2000
+@@ -101,8 +101,8 @@ FILEMODE=	644
  
  # Portable install script (configure doesn't always guess right)
  INSTALL=	@srcdir@/install-sh -c
@@ -9,5 +9,5 @@
 +INSTALL_PROGRAM=${BSD_INSTALL_SCRIPT}
 +INSTALL_DATA=	${BSD_INSTALL_DATA}
  
- # --with-PACKAGE options for configure script
- # e.g. --with-readline --with-svr5 --with-solaris --with-thread
+ # Use this to make a link between python$(VERSION) and python in $(BINDIR)
+ LN=@LN@

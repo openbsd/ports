@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2000/07/21 07:46:07 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2000/09/08 07:55:54 jasoni Exp $
 
-DISTNAME=	py152
-PKGNAME=	python-1.5.2
+DISTNAME=	Python-1.6
+PKGNAME=	python-1.6
 CATEGORIES=	lang
 NEED_VERSION=	1.310
-MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
-		ftp://ftp.cwi.nl/pub/python/src/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	ftp://www.python.org/pub/python/src/ 
 
 HOMEPAGE=	http://www.python.org/
 
@@ -17,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	tk mpz threads no_tools
-FLAVOR?=	threads mpz
+FLAVORS=	tk threads no_tools
+FLAVOR?=	threads
 
 # don't package tools if not needed
 .if empty(FLAVOR:L:Mno_tools)
@@ -26,7 +24,7 @@ MULTI_PACKAGES=	-tools
 .endif
 
 .if ${FLAVOR:L:Mtk}
-LIB_DEPENDS=	tk80.1.5::x11/tk/8.0
+LIB_DEPENDS=	tk83::x11/tk/8.3
 SETUP_LOCAL+=	Setup.tk
 .endif
 
@@ -35,7 +33,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-fpectl 
 MAKE_FLAGS+=	OPT="${CFLAGS}"
 
-WRKDIST=	${WRKDIR}/Python-1.5.2
+WRKDIST=	${WRKDIR}/Python-1.6
 
 # If libc_r exists, thread support is compiled in by default unless this
 # is a SPARC system where threads are currently non functional.
@@ -49,11 +47,6 @@ CONFIGURE_ARGS+= --with-thread
 .endif
 .endif
 
-# The mpz module will be built when flavor is specified.
-.if ${FLAVOR:L:Mmpz}
-SETUP_LOCAL+=	Setup.gmp
-.endif
-
 .if ${MACHINE_ARCH} == "alpha"
 NO64BIT=	\#
 .endif
@@ -64,6 +57,7 @@ pre-configure:
 	@echo "*** Building Python with ${FLAVOR}"
 	@echo "*** You can set ${FLAVORS} by saying"
 	@echo "*** make FLAVOR=\"set of options\""
+	@echo "***"
 	@echo ""
 
 # Depends on NO_SHARED_LIBS.
@@ -72,13 +66,13 @@ post-configure:
 
 post-install:
 	@strip ${PREFIX}/bin/python
-	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python1.5; tar -xf -)
+	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python1.6; tar -xf -)
 	
 .include <bsd.port.mk>
 
 # The tools package is not flavor dependent.
 .if defined(SUBPACKAGE) && ${SUBPACKAGE} == "-tools"
-PKGNAME=python-tools-1.5.2
+PKGNAME=python-tools-1.6
 .endif
 .if ${FLAVOR:L:Mno_tools}
 PKGNAME:=${PKGNAME:S/-no_tools//}

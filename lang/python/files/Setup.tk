@@ -17,8 +17,8 @@ TKPATH=:lib-tk
 # *** Always uncomment this (leave the leading underscore in!):
 _tkinter _tkinter.c tkappinit.c -DWITH_APPINIT \
 # *** Uncomment and edit to reflect where your Tcl/Tk headers are:
-	-I${PREFIX}/include -I${PREFIX}/include/tcl8.0 \
-	-I${PREFIX}/include/tk8.0 \
+	-I${PREFIX}/include/tcl8.3 \
+	-I${PREFIX}/include/tk8.3 \
 # *** Uncomment and edit to reflect where your X11 header files are:
 	-I${X11BASE}/include \
 # *** Or uncomment this for Solaris:
@@ -26,15 +26,15 @@ _tkinter _tkinter.c tkappinit.c -DWITH_APPINIT \
 # *** Uncomment and edit for Tix extension only:
 #	-DWITH_TIX -ltix4.1.8.0 \
 # *** Uncomment and edit for BLT extension only:
-#	-DWITH_BLT -I${PREFIX}/blt/blt8.0-unoff/include -lBLT8.0 \
+#	-DWITH_BLT -I/usr/local/blt/blt8.0-unoff/include -lBLT8.0 \
 # *** Uncomment and edit for PIL (TkImaging) extension only:
 #	-DWITH_PIL -I../Extensions/Imaging/libImaging  tkImaging.c \
 # *** Uncomment and edit for TOGL extension only:
 #	-DWITH_TOGL togl.c \
 # *** Uncomment and edit to reflect where your Tcl/Tk libraries are:
-	-L${PREFIX}/lib -L${PREFIX}/lib \
+	-L${PREFIX}/lib \
 # *** Uncomment and edit to reflect your Tcl/Tk versions:
-	-ltk80 -ltcl80 \
+	-ltk83 -ltcl83 \
 # *** Uncomment and edit to reflect where your X11 libraries are:
 	-L${X11BASE}/lib \
 # *** Or uncomment this for Solaris:
