@@ -20,6 +20,6 @@ share/w3m/w3mhelp-lynx_ja.html
 share/w3m/w3mhelp.html
 share/w3m/w3mhelp_en.html
 share/w3m/w3mhelp_ja.html
-@dirrm share/w3m
-@dirrm share/doc/w3m
 @dirrm lib/w3m
+@dirrm share/doc/w3m
+@dirrm share/w3m
