@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.21 2004/06/24 04:07:54 brad Exp $
+@comment $OpenBSD: PLIST,v 1.22 2004/08/03 12:40:43 espie Exp $
 bin/screen
-@unexec install-info --delete --info-dir=%D/info %D/info/screen.info
-info/screen.info
-@exec install-info --info-dir=%D/info %D/info/screen.info
+@info info/screen.info
 man/man1/screen.1
+share/examples/screen/
 share/examples/screen/screenrc
+@sample ${SYSCONFDIR}/screenrc
+share/screen/
+share/screen/utf8encodings/
 share/screen/utf8encodings/01
 share/screen/utf8encodings/02
 share/screen/utf8encodings/03
@@ -22,8 +24,3 @@ share/screen/utf8encodings/c8
 share/screen/utf8encodings/cc
 share/screen/utf8encodings/cd
 share/screen/utf8encodings/d6
-@dirrm share/screen/utf8encodings
-@dirrm share/screen
-@dirrm share/examples/screen
-@cwd ${SYSCONFDIR}
-@extra screenrc
