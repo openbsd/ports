@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/08/26 12:00:38 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/08/27 09:30:31 espie Exp $
 
 COMMENT=	"Lame Ain't an MP3 Encoder"
 
@@ -7,7 +7,7 @@ VERSION=	3.89
 DISTNAME=	lame${VERSION}beta
 PKGNAME=	lame-${VERSION}b
 CATEGORIES=	audio
-NEED_VERSION=	1.364
+NEED_VERSION=	1.447
 
 MASTER_SITES=	ftp://lame.sourceforge.net/pub/lame/src/
 
@@ -31,7 +31,6 @@ FLAVOR?=
 
 CONFIGURE_ARGS+=	--enable-mp3rtp
 MAKE_FLAGS=	pkghtmldir=${TRUEPREFIX}/share/doc/lame
-MAKE_FLAGS+=	LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 FAKE_FLAGS=	${MAKE_FLAGS}
   
 
