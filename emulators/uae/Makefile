@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/07/11 06:22:48 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2004/07/11 06:24:09 pvalchev Exp $
 
 COMMENT=	"UAE amiga emulator"
 DISTNAME=	uae-0.8.21
@@ -18,6 +18,7 @@ USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-dga --enable-vidmode --disable-ui
 
+# Workaround compiler bug on hppa: cc1plus spinning forever
 .if ${MACHINE_ARCH} == "hppa"
 CFLAGS+=	-O0
 .endif
