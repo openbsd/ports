@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2005/03/16 12:47:18 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.186 2005/04/01 19:59:17 msf Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -126,6 +126,7 @@
      SUBDIR += p5-SOAP-Lite
      SUBDIR += p5-URI
      SUBDIR += p5-WWW-Curl
+     SUBDIR += p5-WWW-Mechanize
 #    SUBDIR += p5-WWW-Search
      SUBDIR += p5-libapreq
      SUBDIR += p5-libwww
