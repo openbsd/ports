@@ -1,0 +1,19 @@
+*** plat_freebsd.c.orig	Sun Jun  7 21:25:43 1998
+--- plat_freebsd.c	Sun Jun  7 21:25:56 1998
+***************
+*** 11,17 ****
+   */
+  static char *ident = "@(#)plat_freebsd.c	1.2 2/20/95";
+  
+! #if defined(__FreeBSD__) || defined(__NetBSD__)
+  
+  #include <errno.h>
+  #include <stdio.h>
+--- 11,17 ----
+   */
+  static char *ident = "@(#)plat_freebsd.c	1.2 2/20/95";
+  
+! #if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+  
+  #include <errno.h>
+  #include <stdio.h>

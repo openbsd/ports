@@ -1,0 +1,4 @@
+bin/workman
+lib/help/workman.info
+man/cat1/workman.0
+man/cat5/workmandb.5
