@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.37 2002/07/06 09:24:06 pvalchev Exp $
+# $OpenBSD: Makefile.template,v 1.38 2002/12/12 07:29:02 pvalchev Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -18,7 +18,7 @@
 COMMENT=		"???"
 # COMMENT-foo=		"???"	for multi packages
 
-# 
+#
 # What port/package will be created
 #
 DISTNAME=		???
@@ -41,7 +41,7 @@ CATEGORIES=		???
 # that are in conflict, set PERMIT_* based on the most restrictive one.
 # Make SURE you get these values right.
 
-# Put a comment there to state what's going on. 
+# Put a comment there to state what's going on.
 # Can be as brief as `BSD' or `GPL', but it'd better be easy to check,
 # if someone wants to double-check licensing.
 #PERMIT_PACKAGE_CDROM=	Yes | "Reason if No"
@@ -94,7 +94,7 @@ MASTER_SITES=		???
 # 	  gnu [autoconf] [old] [dest]: gnu style configure (old: no
 # 	  sysconfdir), (dest: add DESTDIR, does not handle it),
 # 	  (autoconf: needed by port, implies gnu)
-# 	XXX: cygnus products do NOT use autoconf for making the main 
+# 	XXX: cygnus products do NOT use autoconf for making the main
 # 		configure from configure.in
 # 	  imake [noman]: port uses imake for configuration.
 #   	  (noman: no man page installation)
