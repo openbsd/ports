@@ -1,41 +1,31 @@
-# OpenBSD makefile for:	pgp
-# Version required:	
-# Date created:		19 Mar 1998
-# Whom:			marc@OpenBSD.ORG
-#
-# $OpenBSD: Makefile,v 1.8 1999/04/02 19:44:01 espie Exp $
+# $OpenBSD: Makefile,v 1.9 1999/06/02 16:27:26 brad Exp $
 
-# for patch-list
-NEED_VERSION=1.52
 DISTNAME=       pgp263is
 PKGNAME=	pgp-2.6.3
 CATEGORIES=	security
-NO_CDROM=	"CRYPTO: Third party crypto not allowed."
-
 MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
 		ftp://ftp.dk.pgpi.com/mirrors/ftp.ifi.uio.no/pub/pgp/2.x/src/
 
+NEED_VERSION=	1.92
+
 MAINTAINER=	ports@openbsd.org
 
+NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 RESTRICTED=	"Crypto; export-controlled"
-IS_INTERACTIVE=	YES
+IS_INTERACTIVE=	yes
 WRKSRC=		${WRKDIR}/src
 
 # Need to add rsaref for US residents
-#
 .if defined(NO_WARNINGS) || (defined(USA_RESIDENT) && ${USA_RESIDENT} == YES)
-MASTER_SITES=	\
-	ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
+MASTER_SITES= ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
 	ftp://ftp.dk.pgpi.com/mirrors/ftp.ifi.uio.no/pub/pgp/2.x/src/ \
 	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
 	ftp://idea.dsi.unimi.it/pub/security/crypt/math/
-DISTFILES=	\
-	${DISTNAME}${EXTRACT_SUFX} \
-	rsaref2.tar.gz
+DISTFILES= ${DISTNAME}.tar.gz rsaref2.tar.gz
 .endif
 
-.if !defined(NO_WARNINGS)
 fetch-depends:
+.if !defined(NO_WARNINGS)
 .if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
 	@${ECHO}
 	@${ECHO} You must set variable USA_RESIDENT to YES if you are a USA
@@ -52,53 +42,47 @@ fetch-depends:
 .endif
 
 # 2nd level extract required
-#
 post-extract:
-	@if ! ( cd ${WRKDIR} && ${EXTRACT_CMD} -xf pgp263ii.tar ); then \
+	@if ! (cd ${WRKDIR} && ${TAR} -xf pgp263ii.tar); then \
 	   exit 1; \
 	 fi
 
 # common C flags
-#
-CFLAGS=		-O2 -DUNIX -DPORTABLE -DMERIT -DIDEA32 -DMAX_NAMELEN=255 \
--DPGP_DOC_DIR=\\\"${PGP_DOC_DIR}\\\"
+CFLAGS=	-O2 -DUNIX -DPORTABLE -DMERIT -DIDEA32 -DMAX_NAMELEN=255 \
+	-DPGP_DOC_DIR=\\\"${PGP_DOC_DIR}\\\"
 
 # RSAREF parameters
-#
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-RSAOBJS=	rsaglue2.o
-RSADIR=		../rsaref2
-RSAINCDIR=	-I$(RSADIR)/source -I$(RSADIR)/test
-RSALIBDIR=	$(RSADIR)/install/unix
-RSALIBS=	$(RSALIBDIR)/rsaref.a
-CFLAGS+=	-DUSA ${RSAINCDIR}
+RSAOBJS= rsaglue2.o
+RSADIR=	../rsaref2
+RSAINCDIR= -I$(RSADIR)/source -I$(RSADIR)/test
+RSALIBDIR= $(RSADIR)/install/unix
+RSALIBS= $(RSALIBDIR)/rsaref.a
+CFLAGS+= -DUSA ${RSAINCDIR}
 .else
-RSAOBJS=	rsaglue1.o
+RSAOBJS= rsaglue1.o
 .endif
 
 # RSAREF2 doesn't work as is when sizeof( long) != 4 -- fix it
-#
-PATCH_LIST=patch-doc
+PATCH_LIST= patch-doc
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-PATCH_LIST+=patch-rsaref2
+PATCH_LIST+= patch-rsaref2
 .else
 .endif
 
 # Before the build figure out if we are on a big endian machine or not
-#
 pre-build:
-	@echo "#include <machine/endian.h>" > ${WRKDIR}/.endian.c
-	@echo "BYTE_ORDER" >> ${WRKDIR}/.endian.c
+	@${ECHO} "#include <machine/endian.h>" > ${WRKDIR}/.endian.c
+	@${ECHO} "BYTE_ORDER" >> ${WRKDIR}/.endian.c
 	@${CC} -E ${WRKDIR}/.endian.c > ${WRKDIR}/.endian.out
-	@if { grep -q 4321 ${WRKDIR}/.endian.out; } then \
-	   echo -DHIGHFIRST > ${WRKDIR}/.endian; \
+	@if { ${GREP} -q 4321 ${WRKDIR}/.endian.out; } then \
+	   ${ECHO} -DHIGHFIRST > ${WRKDIR}/.endian; \
 	 else \
 	   ${CP} /dev/null ${WRKDIR}/.endian; \
 	 fi
 
 PGP_DOC_DIR=${PREFIX}/share/doc/pgp
 # Build rsaref (if USA) then pgp
-#
 do-build:
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 	@(cd ${WRKDIR}/rsaref2/install/unix && \
@@ -108,20 +92,18 @@ do-build:
 	  ${SETENV} ${MAKE_ENV} ${MAKE} -f makefile all \
 	  RSAOBJS="${RSAOBJS}" RSADIR="${RSADIR}" RSAINCDIR="${RSAINCDIR}" \
 	  RSALIBDIR="${RSALIBDIR}" RSALIBS="${RSALIBS}" \
-	  CFLAGS="${CFLAGS} `cat ${WRKDIR}/.endian`" )
+	  CFLAGS="${CFLAGS} `${CAT} ${WRKDIR}/.endian`" )
 
 
 # library and doc files to install
-#
-LIBFILES=	config.txt de.hlp en.hlp es.hlp fr.hlp keys.asc \
-		language.txt pgp.hlp
+LIBFILES= config.txt de.hlp en.hlp es.hlp fr.hlp keys.asc \
+	language.txt pgp.hlp
 
-DOCFILES=	appnote.doc blurb.txt changes.doc faq.txt keyserv.doc \
-		mitlicen.txt pgformat.doc pgp262i.dif pgp263i.dif \
-		pgp_vms.hlp pgpdoc1.txt pgpdoc2.txt politic.doc przon26i.asc
+DOCFILES= appnote.doc blurb.txt changes.doc faq.txt keyserv.doc \
+	mitlicen.txt pgformat.doc pgp262i.dif pgp263i.dif \
+	pgp_vms.hlp pgpdoc1.txt pgpdoc2.txt politic.doc przon26i.asc
 
 # install pgp and related doc
-#
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/pgp ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKDIR}/doc/pgp.1 ${PREFIX}/man/man1
@@ -136,4 +118,3 @@ do-install:
 .endfor
 
 .include <bsd.port.mk>
-
