@@ -1,6 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.6 2000/05/29 21:39:28 angelos Exp $
 bin/nmap
 man/man1/nmap.1
-lib/nmap/nmap-os-fingerprints
-lib/nmap/nmap-rpc
-lib/nmap/nmap-services
-@dirrm lib/nmap
+share/nmap/nmap-os-fingerprints
+share/nmap/nmap-rpc
+share/nmap/nmap-services
+@dirrm share/nmap
