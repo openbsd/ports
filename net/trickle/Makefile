@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/16 00:31:26 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2005/03/08 17:01:11 jcs Exp $
 
 COMMENT=	"lightweight userspace bandwidth shaper"
 DISTNAME=	trickle-1.06
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
-MASTER_SITES=	${HOMEPAGE}
+HOMEPAGE=	"http://monkey.org/~marius/pages/?page=trickle"
+MASTER_SITES=	http://monkey.org/~marius/trickle/
 
 MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
