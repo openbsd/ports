@@ -1,4 +1,6 @@
 This directory and its subdirectories contain the Network Time Protocol
-Version 4 (NTP) distribution for Unix systems. The contents of the base
+Version 3 (NTP) distribution for Unix systems. The contents of the base
 directory are given in this file. The contents of subdirectories are
 given in the README files in each subdirectory.
+
+WWW: ${HOMEPAGE}

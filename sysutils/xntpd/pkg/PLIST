@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.8 2000/07/01 17:14:32 brad Exp $
 sbin/xntpd
 @comment ntpd, a symbolic link to xntpd, is known by rc.securelevel
 sbin/ntpd
