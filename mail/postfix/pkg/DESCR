@@ -1,4 +1,3 @@
-
                  Postfix Overview - Goals and Features
      _________________________________________________________________
    
@@ -75,11 +74,4 @@ Other significant features of interest
        relatively easy.
      _________________________________________________________________
 
-For more information, visit http://www.postfix.org/
-
-And remember, it's spelled P-o-s-t-f-i-x, but it's pronounced "VMailer."
-
--d.
-
----
-http://www.monkey.org/~dugsong/
+WWW: ${HOMEPAGE}

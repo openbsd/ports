@@ -26,39 +26,6 @@ libexec/postfix/smtp
 libexec/postfix/smtpd
 libexec/postfix/trivial-rewrite
 @dirrm libexec/postfix
-lib/postfix/LICENSE
-lib/postfix/access
-lib/postfix/aliases
-lib/postfix/canonical
-lib/postfix/main.cf
-lib/postfix/main.cf.default
-lib/postfix/main.cf.orig
-lib/postfix/master.cf
-lib/postfix/master.cf.orig
-lib/postfix/postfix-script
-lib/postfix/postfix-script-diff
-lib/postfix/postfix-script-nosgid
-lib/postfix/postfix-script-sgid
-lib/postfix/relocated
-lib/postfix/sample-aliases.cf
-lib/postfix/sample-canonical.cf
-lib/postfix/sample-debug.cf
-lib/postfix/sample-ldap.cf
-lib/postfix/sample-local.cf
-lib/postfix/sample-misc.cf
-lib/postfix/sample-pcre.cf
-lib/postfix/sample-rate.cf
-lib/postfix/sample-regexp.cf
-lib/postfix/sample-relocated.cf
-lib/postfix/sample-resource.cf
-lib/postfix/sample-rewrite.cf
-lib/postfix/sample-smtp.cf
-lib/postfix/sample-smtpd.cf
-lib/postfix/sample-transport.cf
-lib/postfix/sample-virtual.cf
-lib/postfix/transport
-lib/postfix/virtual
-@dirrm lib/postfix
 man/man1/mailq.1
 man/man1/newaliases.1
 man/man1/postalias.1
@@ -145,4 +112,36 @@ share/doc/postfix/trivial-rewrite.8.html
 share/doc/postfix/uce.html
 share/doc/postfix/virtual.5.html
 @dirrm share/doc/postfix
-@unexec [ -f /etc/mailer.conf.postfix ] && rm -f /etc/mailer.conf.postfix
+share/examples/postfix/LICENSE
+share/examples/postfix/access
+share/examples/postfix/aliases
+share/examples/postfix/canonical
+share/examples/postfix/main.cf
+share/examples/postfix/main.cf.default
+share/examples/postfix/main.cf.orig
+share/examples/postfix/master.cf
+share/examples/postfix/master.cf.orig
+share/examples/postfix/postfix-script
+share/examples/postfix/postfix-script-diff
+share/examples/postfix/postfix-script-nosgid
+share/examples/postfix/postfix-script-sgid
+share/examples/postfix/relocated
+share/examples/postfix/sample-aliases.cf
+share/examples/postfix/sample-canonical.cf
+share/examples/postfix/sample-debug.cf
+share/examples/postfix/sample-ldap.cf
+share/examples/postfix/sample-local.cf
+share/examples/postfix/sample-misc.cf
+share/examples/postfix/sample-pcre.cf
+share/examples/postfix/sample-rate.cf
+share/examples/postfix/sample-regexp.cf
+share/examples/postfix/sample-relocated.cf
+share/examples/postfix/sample-resource.cf
+share/examples/postfix/sample-rewrite.cf
+share/examples/postfix/sample-smtp.cf
+share/examples/postfix/sample-smtpd.cf
+share/examples/postfix/sample-transport.cf
+share/examples/postfix/sample-virtual.cf
+share/examples/postfix/transport
+share/examples/postfix/virtual
+@dirrm share/examples/postfix

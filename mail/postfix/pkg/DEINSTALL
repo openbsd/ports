@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.5 1999/10/07 20:58:04 jakob Exp $
+# $OpenBSD: DEINSTALL,v 1.6 2000/08/15 17:01:23 jakob Exp $
 #
 # De-installation setup of postfix
 
@@ -12,6 +12,10 @@ POSTFIXUID=6
 POSTFIXGID=6
 MAILDROPGID=12
 
+if [ -f /etc/mailer.conf.postfix ]; then
+    rm -f /etc/mailer.conf.postfix
+fi
+
 # Function: set up postfix user/group accounts.
 #
 do_accts()
@@ -20,7 +24,8 @@ do_accts()
     echo "+---------------"
     echo "| Delete the 'postfix' user account, and 'postfix' and 'maildrop'"
     echo "| group accounts manually for a full de-installation."
-    echo "| To do this: execute 'rmuser postfix' and 'rmgroup maildrop' as root."
+    echo "| To do this: execute 'user del postfix', 'group del postfix' and"
+    echo "| 'group del maildrop' as root."
     echo "+---------------"
     echo ""
 }
@@ -44,9 +49,9 @@ do_configs()
 {
     echo ""
     echo "+---------------"
-    echo "| The existing $1 configuration files in ${CONFIG_DIR},"
+    echo "| The existing $1 configuration files in $CONFIG_DIR,"
     echo "| have NOT been deleted. To do this: execute"
-    echo "| 'rm -rf /etc/postfix' as root."
+    echo "| 'rm -rf $CONFIG_DIR' as root."
     echo "+---------------"
     echo ""
 }
