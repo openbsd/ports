@@ -1,0 +1,79 @@
+$OpenBSD: patch-lib_IMProto_c,v 1.1.1.1 2000/04/26 00:43:13 espie Exp $
+--- lib/IMProto.c.orig	Thu May 27 01:55:23 1999
++++ lib/IMProto.c	Wed Apr 26 02:18:47 2000
+@@ -298,7 +298,7 @@ Cardinal *num_args;
+ #else
+ 	(void)chmod(UNIX_SOCKET_DIR, 0777);
+ #endif
+-	(void)sprintf(path, "%s/%s", UNIX_SOCKET_DIR,
++	(void)snprintf(path, sizeof(path), "%s/%s", UNIX_SOCKET_DIR,
+ 		      DisplayString(XtDisplay(new)));
+ 	/*
+ 	 * Omit screen number and the preceding period.
+@@ -312,8 +312,8 @@ Cardinal *num_args;
+ 	/*
+ 	 * Append language part.
+ 	 */
+-	(void)strcat(path, "-");
+-	(void)strcat(path, ipw->imp.language);
++	(void)strlcat(path, "-", sizeof(path));
++	(void)strlcat(path, ipw->imp.language, sizeof(path));
+ 	/*
+ 	 * Change every ':' in the path name to '_', since ':' is not
+ 	 * included in POSIX Portable Filename Character Set.
+@@ -454,8 +454,8 @@ IMProtocolWidget ipw;
+ 
+     TRACE(("IMProtocolWidget:getAtoms()\n"));
+ 
+-    (void)strcpy(buf, "@server=");
+-    (void)strcat(buf, ipw->imp.server_name);
++    (void)strlcpy(buf, "@server=", sizeof(buf));
++    (void)strlcat(buf, ipw->imp.server_name, sizeof(buf));
+ #define MAKEATOM(s)	XInternAtom(dpy, s, False)
+     ipw->imp.server_atom = MAKEATOM(buf);
+     ipw->imp.ctext_atom = MAKEATOM("COMPOUND_TEXT");
+@@ -599,8 +599,8 @@ int *formatp;
+ 	char buf[1024];
+ 
+ 	TRACE(("target is \"LOCALES\"\n"));
+-	(void)strcpy(buf, "@locale=");
+-	(void)strcat(buf, ipw->imp.locales);
++	(void)strlcpy(buf, "@locale=", sizeof(buf));
++	(void)strlcat(buf, ipw->imp.locales, sizeof(buf));
+ 	TRACE(("\ttype: STRING, value: %s\n", buf));
+ 	/*
+ 	 * The protocol spec is unclear on the type of the
+@@ -621,27 +621,27 @@ int *formatp;
+ 
+ 	XmuGetHostname(hostname, 256);
+ 
+-	(void)strcpy(buf, "@transport=");
++	(void)strlcpy(buf, "@transport=", sizeof(buf));
+ 
+ #ifdef IM_X_TRANSPORT
+ 	if (ipw->imp.use_x_transport) {
+-	    (void)strcat(buf, "X/,");
++	    (void)strlcat(buf, "X/,", sizeof(buf));
+ 	}
+ #endif /* IM_X_TRANSPORT */
+ 
+ #ifdef IM_TCP_TRANSPORT
+ 	if (ipw->imp.use_tcp_transport) {
+ 	    char t_buf[1024];
+-	    (void)sprintf(t_buf, "tcp/%s:%d,", hostname, ipw->imp.tcp_port);
+-	    (void)strcat(buf, t_buf);
++	    (void)snprintf(t_buf, sizeof(t_buf), "tcp/%s:%d,", hostname, ipw->imp.tcp_port);
++	    (void)strlcat(buf, t_buf, sizeof(buf));
+ 	}
+ #endif /* IM_TCP_TRANSPORT */
+ 
+ #ifdef IM_UNIX_TRANSPORT
+ 	if (ipw->imp.use_unix_transport) {
+ 	    char u_buf[1024];
+-	    (void)sprintf(u_buf, "local/%s:%s,", hostname, ipw->imp.unix_path);
+-	    (void)strcat(buf, u_buf);
++	    (void)snprintf(u_buf, sizeof(u_buf), "local/%s:%s,", hostname, ipw->imp.unix_path);
++	    (void)strlcat(buf, u_buf, sizeof(buf));
+ 	}
+ #endif /* IM_UNIX_TRANSPORT */
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_imlib_imxport_c,v 1.1.1.1 2000/04/26 00:43:12 espie Exp $
+--- lib/imlib/imxport.c.orig	Thu May 27 01:55:30 1999
++++ lib/imlib/imxport.c	Wed Apr 26 02:18:48 2000
+@@ -504,7 +504,7 @@ char *path;
+ 
+     bzero((char *)&addr, sizeof(addr));
+     addr.sun_family = AF_UNIX;
+-    (void)strcpy(addr.sun_path, path);
++    (void)strlcpy(addr.sun_path, path, 104);
+ 
+     /*
+      * Remove socket which is created by the previous process.

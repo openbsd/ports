@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_wnnlib_c,v 1.1.1.1 2000/04/26 00:43:13 espie Exp $
+--- lib/wnnlib.c.orig	Thu May 27 01:55:26 1999
++++ lib/wnnlib.c	Wed Apr 26 02:18:48 2000
+@@ -3554,9 +3554,9 @@ int timeout;
+ #if defined(LIBDIR) && JSERVER_VERSION > 0x4030
+ 		static char envrc[256];
+ 		rcfile = envrc;
+-		(void)sprintf(rcfile, "%s/ja_JP/wnnenvrc", LIBDIR);
++		(void)snprintf(rcfile, sizeof(envrc), "%s/ja_JP/wnnenvrc", LIBDIR);
+ 		if (access(rcfile, R_OK) != 0)
+-		    (void) sprintf(rcfile, "%s/wnnenvrc", LIBDIR);
++		    (void) snprintf(rcfile, sizeof(envrc), "%s/wnnenvrc", LIBDIR);
+ #else
+ 		rcfile = "wnnenvrc";
+ #endif

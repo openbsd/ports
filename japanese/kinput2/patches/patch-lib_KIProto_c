@@ -1,0 +1,34 @@
+$OpenBSD: patch-lib_KIProto_c,v 1.1.1.1 2000/04/26 00:43:13 espie Exp $
+--- lib/KIProto.c.orig	Thu May 27 01:55:24 1999
++++ lib/KIProto.c	Wed Apr 26 02:18:47 2000
+@@ -314,10 +314,10 @@ KinputProtocolWidget kpw;
+     Display *dpy = XtDisplay((Widget)kpw);
+     char buf[256];
+ 
+-    (void)sprintf(buf, "_%s_CONVERSION", kpw->kinput.language);
++    (void)snprintf(buf, sizeof(buf), "_%s_CONVERSION", kpw->kinput.language);
+     kpw->kinput.convAtom = XInternAtom(dpy, buf, False);
+     if (kpw->kinput.backward_compatible) {
+-	(void)sprintf(buf, "%s_CONVERSION", kpw->kinput.language);
++	(void)snprintf(buf, sizeof(buf), "%s_CONVERSION", kpw->kinput.language);
+ 	kpw->kinput.oldConvAtom = XInternAtom(dpy, buf, False);
+     } else {
+ 	kpw->kinput.oldConvAtom = None;
+@@ -331,7 +331,7 @@ KinputProtocolWidget kpw;
+     kpw->kinput.convNotifyAtom = MAKEATOM("CONVERSION_NOTIFY");
+     kpw->kinput.convEndAtom = MAKEATOM("CONVERSION_END");
+ 
+-    (void)sprintf(buf, "%s_CONVERSION_VERSION", kpw->kinput.language);
++    (void)snprintf(buf, sizeof(buf), "%s_CONVERSION_VERSION", kpw->kinput.language);
+     kpw->kinput.convVersionAtom = XInternAtom(dpy, buf, False);
+     kpw->kinput.convInitialTypeAtom = MAKEATOM("CONVERSION_INITIAL_TYPE");
+     kpw->kinput.convOpenNotifyAtom = MAKEATOM("CONVERSION_OPEN_NOTIFY");
+@@ -1239,7 +1239,7 @@ long *modmaskp;
+      *		Ctrl, Shift, Lock, Meta, Alt, Mod1, Mod2, Mod3, Mod4, Mod5
+      */
+ 
+-    strcpy(buf, s);
++    strlcpy(buf, s, sizeof(buf));
+ 
+     /* find "<Key>" */
+     if ((p = mystrstr(buf, "<Key>")) != NULL) {

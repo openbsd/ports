@@ -1,0 +1,39 @@
+$OpenBSD: patch-lib_XimpProto_c,v 1.1.1.1 2000/04/26 00:43:13 espie Exp $
+--- lib/XimpProto.c.orig	Thu May 27 01:55:25 1999
++++ lib/XimpProto.c	Wed Apr 26 02:18:48 2000
+@@ -387,9 +387,9 @@ XimpProtocolWidget xpw;
+     char buf[256];
+ 
+ #define MAKEATOM(s)	XInternAtom(dpy, s, False)
+-    (void)sprintf(buf, "_XIMP_%s", xpw->ximp.localename);
++    (void)snprintf(buf, sizeof(buf), "_XIMP_%s", xpw->ximp.localename);
+     xpw->ximp.selAtom1 = MAKEATOM(buf);
+-    (void)sprintf(buf, "_XIMP_%s@%s.%d",
++    (void)snprintf(buf, sizeof(buf), "_XIMP_%s@%s.%d",
+ 		  xpw->ximp.localename,
+ 		  xpw->ximp.servername,
+ 		  DefaultScreen(XtDisplay((Widget)xpw)));
+@@ -474,17 +474,17 @@ Window client;
+ 	char buf[30];
+ 
+ 	ccp = XtNew(ConvClient);
+-	(void)sprintf(buf, "_XIMP_STRING_%d", xpw->ximp.propid++);
++	(void)snprintf(buf, sizeof(buf), "_XIMP_STRING_%d", xpw->ximp.propid++);
+ 	ccp->property = XInternAtom(XtDisplay((Widget)xpw), buf, False);
+-	(void)sprintf(buf, "_XIMP_CALLBACKS_%d", xpw->ximp.callbackpropid++);
++	(void)snprintf(buf, sizeof(buf), "_XIMP_CALLBACKS_%d", xpw->ximp.callbackpropid++);
+ 	ccp->preeditdata = XInternAtom(XtDisplay((Widget)xpw), buf, False);
+-	(void)sprintf(buf, "_XIMP_CALLBACKS_%d", xpw->ximp.callbackpropid++);
++	(void)snprintf(buf, sizeof(buf), "_XIMP_CALLBACKS_%d", xpw->ximp.callbackpropid++);
+ 	ccp->preedittext = XInternAtom(XtDisplay((Widget)xpw), buf, False);
+-	(void)sprintf(buf, "_XIMP_CALLBACKS_%d", xpw->ximp.callbackpropid++);
++	(void)snprintf(buf, sizeof(buf), "_XIMP_CALLBACKS_%d", xpw->ximp.callbackpropid++);
+ 	ccp->preeditfeedback = XInternAtom(XtDisplay((Widget)xpw), buf, False);
+-	(void)sprintf(buf, "_XIMP_CALLBACKS_%d", xpw->ximp.callbackpropid++);
++	(void)snprintf(buf, sizeof(buf), "_XIMP_CALLBACKS_%d", xpw->ximp.callbackpropid++);
+ 	ccp->statustext = XInternAtom(XtDisplay((Widget)xpw), buf, False);
+-	(void)sprintf(buf, "_XIMP_CALLBACKS_%d", xpw->ximp.callbackpropid++);
++	(void)snprintf(buf, sizeof(buf), "_XIMP_CALLBACKS_%d", xpw->ximp.callbackpropid++);
+ 	ccp->statusfeedback = XInternAtom(XtDisplay((Widget)xpw), buf, False);
+     }
+     ccp->id = xpw->ximp.icid++;

@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_fontset_c,v 1.1.1.1 2000/04/26 00:43:14 espie Exp $
+--- lib/fontset.c.orig	Thu May 27 01:55:26 1999
++++ lib/fontset.c	Wed Apr 26 02:18:48 2000
+@@ -208,9 +208,9 @@ Cardinal numlist;
+ 
+ 	if (*name != '-' && *name != '+') continue;	/* not an XLFD name */
+ 
+-	(void)strcpy(namebuf, name);
+-	(void)strcat(namebuf, "-");
+-	(void)strcat(namebuf, csetstr);
++	(void)strlcpy(namebuf, name, sizeof(namebuf));
++	(void)strlcat(namebuf, "-", sizeof(namebuf));
++	(void)strlcat(namebuf, csetstr, sizeof(namebuf));
+ 
+ 	if ((font = CachedLoadQueryFontByName(dpy, namebuf)) != NULL) {
+ 	    TRACE(("\tmatched in csSuppliedMatchFont()\n"));
+@@ -249,7 +249,7 @@ Cardinal numlist;
+ 	}
+ 	namelist++;
+ 
+-	(void)strcpy(namebuf, name);
++	(void)strlcpy(namebuf, name, sizeof(namebuf));
+ 	namelen = strlen(namebuf);
+ 
+ 	/* find charset part of the font name */

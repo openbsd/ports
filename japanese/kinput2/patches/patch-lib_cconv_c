@@ -1,0 +1,59 @@
+$OpenBSD: patch-lib_cconv_c,v 1.1.1.1 2000/04/26 00:43:13 espie Exp $
+--- lib/cconv.c.orig	Thu May 27 01:55:25 1999
++++ lib/cconv.c	Wed Apr 26 02:18:48 2000
+@@ -611,7 +611,7 @@ static char	*rcsid = "$Id: cconv.c,v 10.
+ 
+ #define EPROC2(efunc, format, a) { \
+ 	char tmp[1024]; \
+-	(void)sprintf(tmp, format, a); \
++	(void)snprintf(tmp, sizeof(tmp), format, a); \
+ 	eproc(efunc, tmp); }
+ 
+ /* キーコードのエンコード方法 */
+@@ -965,7 +965,7 @@ char *file;
+ 				if (q == filename) continue;
+ 				*q++ = '/';
+ 				*q = '\0';
+-				(void)Strcat(filename, file);
++				(void)strlcat(filename, file, sizeof(filename));
+ 				if ((fp = fopen(filename, "r")) != NULL)
+ 					return fp;
+ 			}
+@@ -973,8 +973,8 @@ char *file;
+ 		/* デフォルトのサーチパス CCDEFPATH(/usr/lib/X11/ccdef) の
+ 		 * 下をサーチする
+ 		 */
+-		(void)Strcpy(filename, CCDEFPATH);
+-		(void)Strcat(filename, file);
++		(void)strlcpy(filename, (char *)CCDEFPATH, sizeof(filename));
++		(void)strlcat(filename, file, sizeof(filename));
+ 		fp = fopen(filename, "r");
+ 	}
+ 	return fp;
+@@ -1078,7 +1078,7 @@ char *file;
+ 	rule->initialmode = -1;
+ 
+ 	while (getline(line, sizeof(line), &files, efunc)) {
+-		(void)Strcpy(tmp, line);
++		(void)strlcpy(tmp, line, sizeof(tmp));
+ 		if ((argc = parseLine(tmp, argv, 20)) == 0)
+ 			continue;
+ 
+@@ -1302,7 +1302,7 @@ int *funcp;
+ 		"context"	key	"result"	[function...]
+ 	*/
+ 
+-	(void)Strcpy(tmp, line);
++	(void)strlcpy(tmp, line, sizeof(tmp));
+ 	ac = parseLine(tmp, av, 20);
+ 	if (ac < 3) {
+ 		EPROC2(efunc, "syntax error - %s", line);
+@@ -1885,7 +1885,7 @@ char *funcname;
+ 		fnrec->funcnameend = cp + size;
+ 	}
+ 
+-	(void)strcpy(fnrec->funcnamep, funcname);
++	(void)strlcpy(fnrec->funcnamep, funcname, MOREFUNCNAMESIZE);
+ 	fnrec->funcnames[nfunc] = fnrec->funcnamep - fnrec->funcnamebuf;
+ 	fnrec->funcnamep += len;
+ 

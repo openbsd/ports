@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_ConvCtrl_c,v 1.1.1.1 2000/04/26 00:43:12 espie Exp $
+--- lib/ConvCtrl.c.orig	Thu May 27 01:55:23 1999
++++ lib/ConvCtrl.c	Wed Apr 26 02:18:47 2000
+@@ -1246,7 +1246,7 @@ String msg;
+     params[0] = XtClass(w)->core_class.class_name;
+     num_params = 1;
+ 
+-    (void)sprintf(buf, "%%s: %s", msg);
++    (void)snprintf(buf, sizeof(buf), "%%s: %s", msg);
+ 
+     XtAppErrorMsg(XtWidgetToApplicationContext(w),
+ 		  name, type, "WidgetError", buf, params, &num_params);
+@@ -1266,7 +1266,7 @@ String msg;
+     params[0] = XtClass(w)->core_class.class_name;
+     num_params = 1;
+ 
+-    (void)sprintf(buf, "%%s: %s", msg);
++    (void)snprintf(buf, sizeof(buf), "%%s: %s", msg);
+ 
+     XtAppWarningMsg(XtWidgetToApplicationContext(w),
+ 		    name, type, "WidgetError", buf, params, &num_params);

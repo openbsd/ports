@@ -1,0 +1,21 @@
+$OpenBSD: patch-client_convlib_c,v 1.1.1.1 2000/04/26 00:43:14 espie Exp $
+--- client/convlib.c.orig	Thu May 27 01:55:33 1999
++++ client/convlib.c	Wed Apr 26 02:18:47 2000
+@@ -322,7 +322,7 @@ String s;
+     String p;
+     char buf[64];
+ 
+-    (void)strcpy(buf, s);
++    (void)strlcpy(buf, s, sizeof(buf));
+     for (p = buf; *p != '\0'; p++) {
+ 	if ('A' <= *p && *p <= 'Z') *p += 'a' - 'A';
+     }
+@@ -338,7 +338,7 @@ String s;
+     String p;
+     char buf[64];
+ 
+-    (void)strcpy(buf, s);
++    (void)strlcpy(buf, s, sizeof(buf));
+     for (p = buf; *p != '\0'; p++) {
+ 	if ('A' <= *p && *p <= 'Z') *p += 'a' - 'A';
+     }

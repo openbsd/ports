@@ -1,0 +1,27 @@
+$OpenBSD: patch-lib_Sj3_c,v 1.1.1.1 2000/04/26 00:43:13 espie Exp $
+--- lib/Sj3.c.orig	Thu May 27 01:55:24 1999
++++ lib/Sj3.c	Wed Apr 26 02:18:48 2000
+@@ -249,19 +249,19 @@ setUser()
+ 
+ 
+     if (login = getlogin())
+-        strcpy(uname, login);
++        strlcpy(uname, login, sizeof(uname));
+     setpwent();
+     if (!uname || *uname == '\0') {
+         if (pwd = getpwuid(getuid())) {
+-            strcpy(uname, pwd->pw_name);
++            strlcpy(uname, pwd->pw_name, sizeof(uname));
+         }
+     } else {
+         pwd = getpwnam(uname);
+     }
+     if (pwd)
+-        strcpy(home, pwd->pw_dir);
++        strlcpy(home, pwd->pw_dir, sizeof(home));
+     else
+-        strcpy(home, getenv("HOME"));
++        strlcpy(home, getenv("HOME"), sizeof(home));
+     endpwent();
+ }
+ 
