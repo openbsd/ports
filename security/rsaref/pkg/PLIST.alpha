@@ -1,10 +1,13 @@
+@cwd /usr/local
+@name rsaref-2.0
 lib/librsaref.a
 @exec ranlib %D/%F
 include/rsa.h
+include/_des.h
 include/_md2.h
 include/_md5.h
-include/_des.h
-include/global.h
 include/rsaref.h
+include/global.h
 share/doc/rsaref/info.txt
 share/doc/rsaref/rsaref.txt
+@dirrm share/doc/rsaref
