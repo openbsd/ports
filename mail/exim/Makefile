@@ -1,10 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/23 13:43:56 peter Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/17 03:25:58 turan Exp $
 #
 
 DISTNAME=	exim-3.13
 CATEGORIES=	mail
 
 MAINTAINER=	peter.galbavy@knowledge.com
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/
 DISTFILES=	exim-3.13.tar.gz exim-texinfo-3.10.tar.gz
