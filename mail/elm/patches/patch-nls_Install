@@ -1,0 +1,20 @@
+$OpenBSD: patch-nls_Install,v 1.1 2000/06/04 22:06:32 espie Exp $
+--- nls/Install.orig	Mon Jun  5 00:03:48 2000
++++ nls/Install	Mon Jun  5 00:05:15 2000
+@@ -39,12 +39,12 @@ do
+ 		echo "\"$InDir\" is not a directory"
+ 		continue
+ 	fi
+-	if [ ! -d $DestDir ]
++	if [ ! -d ${DESTDIR}$DestDir ]
+ 	then
+ 		echo "\"$DestDir\" is not a directory"
+ 		continue
+ 	fi
+-	/bin/rm -f $DestDir/$CATNAME
+-	echo "$GENCAT $DestDir/$CATNAME $InDir/*.m"
+-	$GENCAT $DestDir/$CATNAME $InDir/*.m
++	/bin/rm -f ${DESTDIR}$DestDir/$CATNAME
++	echo "$GENCAT ${DESTDIR}$DestDir/$CATNAME $InDir/*.m"
++	$GENCAT ${DESTDIR}$DestDir/$CATNAME $InDir/*.m
+ done < $LANGFILE
