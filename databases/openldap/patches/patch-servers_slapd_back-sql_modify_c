@@ -1,0 +1,31 @@
+--- servers/slapd/back-sql/modify.c.orig	Fri Sep 13 14:14:04 2002
++++ servers/slapd/back-sql/modify.c	Fri Sep 13 14:16:04 2002
+@@ -362,6 +362,7 @@
+  char *pdn;
+  int pno,po;//first parameter no, parameter order
+  int prc; //procedure return code
++ BACKSQL_ROW_NTS row;
+ 
+  Debug(LDAP_DEBUG_TRACE,"==>backsql_add(): adding entry '%s'\n",e->e_dn,0,0);
+  if (dn_validate(e->e_dn)==NULL)
+@@ -412,6 +413,20 @@
+   send_ldap_result(conn,op,LDAP_OTHER,"","SQL-backend error",NULL,NULL);
+   return 1;
+  }
++
++ if (bi->id_notbyref)
++ {
++  backsql_BindRowAsStrings(sth,&row);
++  while ((rc=SQLFetch(sth)) == SQL_SUCCESS || rc==SQL_SUCCESS_WITH_INFO)
++  {
++   for (i=0;i<row.ncols;i++)
++   {
++    new_keyval=atoi(row.cols[i]);
++   }
++  }
++  backsql_FreeRow(&row);
++ }
++
+  SQLFreeStmt(sth,SQL_RESET_PARAMS);
+  Debug(LDAP_DEBUG_TRACE,"backsql_add(): create_proc returned keyval=%d\n",new_keyval,0,0);
+ 

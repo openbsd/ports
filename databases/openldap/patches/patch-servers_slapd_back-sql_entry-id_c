@@ -1,0 +1,11 @@
+--- servers/slapd/back-sql/entry-id.c.orig	Fri Sep 13 14:12:02 2002
++++ servers/slapd/back-sql/entry-id.c	Fri Sep 13 14:13:50 2002
+@@ -119,7 +119,7 @@
+     {
+      if (row.is_null[i]>0)
+       {
+-       backsql_entry_addattr(bsi->e,row.col_names[i],row.cols[i],/*row.col_prec[i]*/
++       backsql_entry_addattr(bsi->e,at->name,row.cols[i],/*row.col_prec[i]*/
+ 					strlen(row.cols[i]));
+ //       Debug(LDAP_DEBUG_TRACE,"prec=%d\n",(int)row.col_prec[i],0,0);
+       }

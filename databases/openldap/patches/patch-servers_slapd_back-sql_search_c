@@ -1,0 +1,26 @@
+--- servers/slapd/back-sql/search.c.orig	Fri Sep 13 14:08:05 2002
++++ servers/slapd/back-sql/search.c	Fri Sep 13 14:11:43 2002
+@@ -283,11 +283,18 @@
+  bsi->flt_where=NULL;
+  bsi->sel_len=bsi->from_len=bsi->jwhere_len=bsi->fwhere_len=0;
+ 
+- bsi->sel=backsql_strcat(bsi->sel,&bsi->sel_len,
+-				"SELECT DISTINCT ldap_entries.id,",bsi->oc->keytbl,".",bsi->oc->keycol,
+-				", '",bsi->oc->name,"' AS objectClass",
+-				", ldap_entries.dn AS dn",
+-				NULL);
++ if (bsi->bi->oc_cast) {
++    bsi->sel=backsql_strcat(bsi->sel,&bsi->sel_len,
++    "SELECT DISTINCT ldap_entries.id,",bsi->oc->keytbl,".",bsi->oc->keycol,
++    ", ", bsi->bi->oc_cast, "('",bsi->oc->name,"') AS objectClass",
++    ", ldap_entries.dn AS dn", NULL);
++ } else {
++    bsi->sel=backsql_strcat(bsi->sel,&bsi->sel_len,
++    "SELECT DISTINCT ldap_entries.id,",bsi->oc->keytbl,".",bsi->oc->keycol,
++    ", '",bsi->oc->name,"' AS objectClass",
++    ", ldap_entries.dn AS dn", NULL);
++ }
++
+  bsi->from=backsql_strcat(bsi->from,&bsi->from_len," FROM ldap_entries,",bsi->oc->keytbl,NULL);
+  bsi->join_where=backsql_strcat(bsi->join_where,&bsi->jwhere_len," WHERE ",
+ 	 bsi->oc->keytbl,".",bsi->oc->keycol,"=ldap_entries.keyval AND ",

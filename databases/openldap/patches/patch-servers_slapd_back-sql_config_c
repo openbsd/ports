@@ -1,0 +1,38 @@
+--- servers/slapd/back-sql/config.c.orig	Fri Sep 13 13:59:42 2002
++++ servers/slapd/back-sql/config.c	Fri Sep 13 14:07:55 2002
+@@ -178,6 +178,35 @@
+     }
+    return(0);
+   }
++
++ if (!strcasecmp(argv[0],"oc_cast"))
++  {
++   if (argc<2)
++    {
++     Debug(LDAP_DEBUG_TRACE,"<==backsql_db_config (%s line %d): missing function name in directive\n",
++                    fname,lineno,0);
++    }
++   else
++    {
++     si->oc_cast=ch_strdup(argv[1]);
++     Debug(LDAP_DEBUG_TRACE,"<==backsql_db_config(): =%s\n",si->oc_cast,0,0);
++    }
++   return(0);
++  }
++ if (!strcasecmp(argv[0],"id_notbyref"))
++  {
++   if (argc<2)
++    {
++     Debug(LDAP_DEBUG_TRACE,"<==backsql_db_config (%s line %d): missing function name in  directive\n",
++                    fname,lineno,0);
++    }
++   else
++    {
++     si->id_notbyref=ch_strdup(argv[1]);
++     Debug(LDAP_DEBUG_TRACE,"<==backsql_db_config(): =%s\n",si->id_notbyref,0,0);
++    }
++   return(0);
++  }
+  
+  Debug(LDAP_DEBUG_TRACE,"<==backsql_db_config (%s line %d): unknown directive '%s' (ignored)\n",
+                      fname,lineno,argv[0]);

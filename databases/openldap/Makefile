@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2002/06/11 07:48:38 jakob Exp $
+# $OpenBSD: Makefile,v 1.30 2002/09/13 23:06:06 jakob Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
@@ -8,7 +8,6 @@ DISTNAME=	openldap-${VERSION}
 FULLPKGNAME=	openldap-client-${VERSION}
 PKGNAME-server=	openldap-server-${VERSION}
 CATEGORIES=	databases net
-NEED_VERSION=	1.500
 
 HOMEPAGE=	http://www.openldap.org/
 
@@ -57,7 +56,7 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/build
 PATCH_LIST=	gcc-* patch-*
 .endif
 
-FLAVORS=	sasl
+FLAVORS=	sasl pgsql
 FLAVOR?=
 
 MULTI_PACKAGES=	-server
@@ -66,13 +65,23 @@ SUBPACKAGE?=
 .if ${FLAVOR:L} == "sasl"
 CONFIGURE_ARGS+=	--with-cyrus-sasl \
 			--enable-spasswd
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/sasl" \
-			LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lkrb"
 LIB_DEPENDS+=		sasl::security/cyrus-sasl
+CPPFLAGS+=		-I${LOCALBASE}/include/sasl
+LIBS+=			-lkrb
 .else
 CONFIGURE_ARGS+=	--without-cyrus-sasl \
 			--disable-spasswd
 .endif
+
+.if ${FLAVOR:L} == "pgsql"
+CONFIGURE_ARGS+=	--enable-sql
+BUILD_DEPENDS+=   	:postgresql-*-odbc:databases/postgresql,odbc
+CPPFLAGS+=		-I${LOCALBASE}/include
+.endif
+
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			LIBS="${LIBS}"
 
 .if ${SUBPACKAGE} == "-server"
 RUN_DEPENDS=	openldap:openldap-client-${VERSION}:databases/openldap

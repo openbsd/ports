@@ -1,0 +1,11 @@
+--- servers/slapd/back-sql/back-sql.h.orig	Fri Sep 13 13:58:53 2002
++++ servers/slapd/back-sql/back-sql.h	Fri Sep 13 13:59:18 2002
+@@ -25,7 +25,7 @@
+  //SQL condition for subtree searches differs in syntax:
+  //"LIKE CONCAT('%',?)" or "LIKE '%'+?" or smth else
+  char *subtree_cond;
+- char *oc_query,*at_query;
++ char *oc_query,*at_query,*oc_cast,*id_notbyref;
+  char *insentry_query,*delentry_query;
+  char *id_query;
+  char *upper_func;
