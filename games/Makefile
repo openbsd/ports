@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2002/12/14 17:06:00 espie Exp $
+# $OpenBSD: Makefile,v 1.81 2002/12/23 07:24:48 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -42,6 +42,7 @@
      SUBDIR += frotz
 #    SUBDIR += galaxis
      SUBDIR += gemdropx
+     SUBDIR += gnocatan
      SUBDIR += gnuchess
      SUBDIR += gnugo
      SUBDIR += gnushogi
