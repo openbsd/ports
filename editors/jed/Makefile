@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/09/06 00:30:08 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2000/09/06 07:14:15 brad Exp $
 
 DISTNAME=	jed-B0.99-11
 PKGNAME=	jed-0.99.11
@@ -19,14 +19,14 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	JED_ROOT="${PREFIX}/lib/jed"
 
-ALL_TARGET=	all getmail
-
-FLAVORS=	xjed
+FLAVORS=	no_x11
 FLAVOR?=
 
-.if ${FLAVOR:L:Mxjed}
+.if ${FLAVOR:L} == "no_x11"
+ALL_TARGET=	all getmail
+.else
 USE_X11=	Yes
-ALL_TARGET+=	xjed
+ALL_TARGET=	all getmail xjed
 .endif
 
 .include <bsd.port.mk>

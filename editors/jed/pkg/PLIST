@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2000/09/06 00:07:15 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2000/09/06 07:14:15 brad Exp $
 bin/jed
 bin/rgrep
-%%xjed%%
+!%%no_x11%%
 @unexec install-info --delete %D/info/jed.info %D/info/dir 
 info/jed.1in
 info/jed.2in
