@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/21 22:09:56 msf Exp $
+${P5SITE}/ExtUtils/CBuilder.pm
+${P5SITE}/ExtUtils/CBuilder/Base.pm
+${P5SITE}/ExtUtils/CBuilder/Platform/Unix.pm
+${P5SITE}/ExtUtils/CBuilder/Platform/VMS.pm
+${P5SITE}/ExtUtils/CBuilder/Platform/Windows.pm
+${P5SITE}/ExtUtils/CBuilder/Platform/aix.pm
+${P5SITE}/ExtUtils/CBuilder/Platform/cygwin.pm
+${P5SITE}/ExtUtils/CBuilder/Platform/darwin.pm
+${P5SITE}/ExtUtils/CBuilder/Platform/os2.pm
+@comment ${P5ARCH}/auto/ExtUtils/CBuilder/.packlist
+man/man3p/ExtUtils::CBuilder.3p
+man/man3p/ExtUtils::CBuilder::Platform::Windows.3p
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/ExtUtils/CBuilder
+@comment @dirrm ${P5ARCH}/auto/ExtUtils
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/ExtUtils/CBuilder/Platform
+@dirrm ${P5SITE}/ExtUtils/CBuilder
+@dirrm ${P5SITE}/ExtUtils
