@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2002/04/11 08:15:39 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2002/07/23 08:13:33 wilfried Exp $
+
+BROKEN=			"waiting for a version that supports QT >= 3.0.5"
 
 COMMENT=		"GUI client for MySQL"
 
