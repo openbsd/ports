@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2005/01/25 22:00:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.133 2005/01/31 08:18:07 espie Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -79,6 +79,7 @@
 #    SUBDIR += mpegedit
      SUBDIR += mplex
      SUBDIR += netpbm
+     SUBDIR += openexr
      SUBDIR += p5-GD
      SUBDIR += p5-GD-Barcode
      SUBDIR += p5-GD-Graph
