@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/06 01:59:06 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2001/06/15 08:59:48 reinhard Exp $
 
 COMMENT=	"Victor Shoup's Number Theory Library"
 
-DISTNAME=	ntl-5.0c
+DISTNAME=	ntl-5.1a
 CATEGORIES=	math
 NEED_VERSION=	1.402
 MASTER_SITES=	http://www.shoup.net/ntl/
