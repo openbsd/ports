@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/05/05 22:08:29 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/09/10 13:18:04 fgsch Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/gnugo.info
+bin/debugboard
 bin/gnugo
 info/gnugo.info
 man/man6/gnugo.6
