@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2002/12/23 00:03:57 grange Exp $
+# $OpenBSD: Makefile,v 1.10 2004/03/31 07:53:08 grange Exp $
 # $RuOBSD: Makefile,v 1.1.1.1 2002/04/08 02:46:36 form Exp $
 
 COMMENT=		"IP accounting daemon simulating Cisco ip accounting"
 
-DISTNAME=		ipcad-2.6.2
+DISTNAME=		ipcad-3.4.4
 CATEGORIES=		net
-HOMEPAGE=		http://www.spelio.net.ru/soft/
+HOMEPAGE=		http://sourceforge.net/projects/ipcad/
 
 MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ipcad/}
 
 CONFIGURE_STYLE=	gnu
 
@@ -30,7 +30,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/ipcad.conf \
 		${PREFIX}/share/examples/ipcad/ipcad.conf.sample
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ipcad
-.for f in AUTHORS COPYRIGHT README
+.for f in AUTHORS BUGS COPYING README
 	${INSTALL_DATA} ${WRKDIST}/${f} ${PREFIX}/share/doc/ipcad
 .endfor
 
