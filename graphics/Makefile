@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2001/07/28 23:23:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.76 2001/07/29 21:53:43 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -85,6 +85,7 @@
 #    SUBDIR += qvplay
      SUBDIR += s10sh
 #    SUBDIR += sced
+     SUBDIR += smpeg-xmms
 #    SUBDIR += spigot
 #    SUBDIR += splitmpg
      SUBDIR += synaesthesia
