@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.73 2003/05/04 23:19:33 margarida Exp $
+# $OpenBSD: Makefile,v 1.74 2003/06/15 22:18:08 jakob Exp $
 
 COMMENT=	"network protocol analyzer"
 
-VERSION=	0.9.12
+VERSION=	0.9.13
 DISTNAME=	ethereal-${VERSION}
 CATEGORIES=	net x11
 
@@ -29,15 +29,15 @@ USE_LIBTOOL=		Yes
 SUBST_VARS+=		VERSION
 SEPARATE_BUILD=		concurrent
 
-FLAVORS=	no_x11 snmp
+FLAVORS=	no_x11 snmp adns
 FLAVOR?=
 
 .if ${FLAVOR:L:Mno_x11}
-LIB_DEPENDS=		glib.1.2,gmodule.1.2::devel/glib
+LIB_DEPENDS+=		glib.1.2,gmodule.1.2::devel/glib
 CONFIGURE_ARGS+=	--disable-ethereal
 .else
 USE_X11=		Yes
-LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
+LIB_DEPENDS+=		gtk.1.2,gdk.1.2::x11/gtk+
 CONFIGURE_ARGS+=	--enable-ethereal
 .endif
 
@@ -47,6 +47,14 @@ CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" LIBS="-lsnmp -lcrypto -
 LIB_DEPENDS+=		snmp::net/ucd-snmp
 .else
 CONFIGURE_ARGS+=	--without-ucdsnmp
+.endif
+
+.if ${FLAVOR:L:Madns}
+CONFIGURE_ARGS+=	--with-adns=${LOCALBASE}
+LIB_DEPENDS+=		adns::net/adns
+CFLAGS+=		-I${LOCALBASE}/include
+.else
+CONFIGURE_ARGS+=	--without-adns
 .endif
 
 pre-configure:
