@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/11/18 13:53:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/18 16:10:02 naddy Exp $
 
 DISTNAME=	wmmon-1.0b2
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils x11 x11/windowmaker
 NEED_VERSION=	1.338
 MASTER_SITES=	http://linux.tucows.com/files/x11/dock/
 

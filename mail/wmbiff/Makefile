@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2000/10/22 18:03:31 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/01/18 16:10:01 naddy Exp $
 
 DISTNAME=	wmbiff-0.2
-CATEGORIES=	mail
+CATEGORIES=	mail x11 x11/windowmaker
 NEED_VERSION=	0.313
 MASTER_SITES=	http://ccat.elect.ru:8100/wmbiff/
 

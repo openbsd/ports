@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/16 22:44:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/18 16:10:00 naddy Exp $
 
 DISTNAME=	wmphoto-0.3a
-CATEGORIES=    	graphics x11
+CATEGORIES=    	graphics x11 x11/windowmaker
 NEED_VERSION=	1.340
 HOMEPAGE=	http://www.dcc.uchile.cl/~amartoq/wmphoto/
 MASTER_SITES=	${HOMEPAGE}

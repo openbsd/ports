@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/17 16:13:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/01/18 16:10:01 naddy Exp $
 
 DISTNAME=	wmGrabImage-0.70
 PKGNAME=	${DISTNAME:L}
-CATEGORIES=    	graphics x11
+CATEGORIES=    	graphics x11 x11/windowmaker
 NEED_VERSION=	1.336
 HOMEPAGE=	http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml
 

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/16 22:10:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/18 16:10:03 naddy Exp $
 
 DISTNAME=	wmdate-0.7
-CATEGORIES=	x11
+CATEGORIES=	x11 x11/windowmaker
 NEED_VERSION=	1.340
 HOMEPAGE=	http://wit401310.student.utwente.nl/~dalroi/apps/wmdate.php
 MASTER_SITES=	http://wit401310.student.utwente.nl/~dalroi/apps/apps/

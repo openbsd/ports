@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/18 13:45:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/18 16:09:59 naddy Exp $
 
 DISTNAME=	wmglobe-1.1.alpha
 PKGNAME=	wmglobe-1.1a
-CATEGORIES=	astro x11/windowmaker
+CATEGORIES=	astro x11 x11/windowmaker
 NEED_VERSION=	1.340
 HOMEPAGE=	http://perso.linuxfr.org/jdumont/wmg/
 MASTER_SITES=	${HOMEPAGE}

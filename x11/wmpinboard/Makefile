@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/17 16:32:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/18 16:10:03 naddy Exp $
 
 DISTNAME=	wmpinboard-1.0
-CATEGORIES=	x11
+CATEGORIES=	x11 x11/windowmaker
 NEED_VERSION=	1.340
 HOMEPAGE=	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
 MASTER_SITES=	${HOMEPAGE}

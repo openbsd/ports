@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/17 16:13:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/01/18 16:10:00 naddy Exp $
 
 DISTNAME=	wmeyes
 PKGNAME=	${DISTNAME}-0.0
-CATEGORIES=	games x11
+CATEGORIES=	games x11 x11/windowmaker
 NEED_VERSION=	1.340
 MASTER_SITES=	http://home.istar.ca/~jenora/
 EXTRACT_SUFX=	.tgz

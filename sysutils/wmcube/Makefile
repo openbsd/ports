@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/17 16:13:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/01/18 16:10:02 naddy Exp $
 
 DISTNAME=	wmcube-0.98
-CATEGORIES=	sysutils x11
+CATEGORIES=	sysutils x11 x11/windowmaker
 NEED_VERSION=	1.340
 MASTER_SITES=	http://boombox.campus.luth.se/files/
 HOMEPAGE=	http://boombox.campus.luth.se/projects.php

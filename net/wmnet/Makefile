@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/03 15:08:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/18 16:10:02 naddy Exp $
 
 DISTNAME=	wmnet-1.06
-CATEGORIES=	net x11
+CATEGORIES=	net x11 x11/windowmaker
 NEED_VERSION=	1.348
 HOMEPAGE=	http://www.digitalkaos.net/linux/wmnet/
 MASTER_SITES=	${HOMEPAGE}download/

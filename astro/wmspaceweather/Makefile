@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/17 16:13:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/01/18 16:10:00 naddy Exp $
 
 DISTNAME=	wmSpaceWeather-1.04
 PKGNAME=	${DISTNAME:L}
-CATEGORIES=	astro x11
+CATEGORIES=	astro x11 x11/windowmaker
 NEED_VERSION=	1.348
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 HOMEPAGE=	http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml

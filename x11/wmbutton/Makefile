@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/16 21:29:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/18 16:10:03 naddy Exp $
 
 DISTNAME=	wmbutton-0.4
-CATEGORIES=	x11
+CATEGORIES=	x11 x11/windowmaker
 NEED_VERSION=	1.340
 HOMEPAGE=	http://members.access1.net/ehflora/
 

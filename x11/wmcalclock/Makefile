@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2001/01/17 16:13:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/01/18 16:10:03 naddy Exp $
 
 DISTNAME=	wmCalClock-1.25
 PKGNAME=	${DISTNAME:L}
-CATEGORIES=	x11
+CATEGORIES=	x11 x11/windowmaker
 NEED_VERSION=	1.336
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 HOMEPAGE=	http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml
