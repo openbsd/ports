@@ -5,5 +5,3 @@ no real support for key management (sign, revoke, alter
 preferences, etc) and some other parts are only rudimentary
 available. The main purpose is to handle and understand 
 OpenPGP packets and to use basic operations.
-
-WWW: ${HOMEPAGE}

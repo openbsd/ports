@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/02 04:01:25 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2003/10/12 02:13:41 brad Exp $
 
 COMMENT=		"Open Crypto Development Kit"
 
@@ -24,7 +24,9 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gnutls/opencdk/ \
 LIB_DEPENDS=		gcrypt.6::security/libgcrypt
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--enable-static \
+			--with-libgcrypt-prefix=${LOCALBASE}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -33,10 +35,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/opencdk
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/opencdk
 	${INSTALL_DATA} ${WRKSRC}/doc/opencdk-api.html \
-	  ${PREFIX}/share/doc/opencdk
+		${PREFIX}/share/doc/opencdk
 	${INSTALL_DATA} ${WRKSRC}/tests/*.c \
-	  ${PREFIX}/share/examples/opencdk
+		${PREFIX}/share/examples/opencdk
 	${INSTALL_DATA} ${WRKSRC}/tests/*.gpg \
-	  ${PREFIX}/share/examples/opencdk
+		${PREFIX}/share/examples/opencdk
 
 .include <bsd.port.mk>
