@@ -1,6 +1,7 @@
---- configure.orig	Fri Apr  6 02:03:05 2001
-+++ configure	Sat May 12 15:09:32 2001
-@@ -1868,13 +1868,23 @@
+$OpenBSD: patch-configure,v 1.2 2001/08/04 18:12:44 pvalchev Exp $
+--- configure.orig	Thu Apr  5 20:03:05 2001
++++ configure	Fri Aug  3 23:27:46 2001
+@@ -1868,13 +1868,23 @@ fi
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    
@@ -28,7 +29,12 @@
  		LDFLAGS=""
  		LD_SEARCH_FLAGS=""
  		echo $ac_n "checking for ELF""... $ac_c" 1>&6
-@@ -1896,7 +1906,7 @@
+@@ -1892,11 +1902,11 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&
+   egrep "yes" >/dev/null 2>&1; then
+   rm -rf conftest*
+   echo "$ac_t""yes" 1>&6
+-		    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so'
++		    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.3'
  else
    rm -rf conftest*
    echo "$ac_t""no" 1>&6
@@ -37,7 +43,7 @@
  		
  fi
  rm -f conftest*
-@@ -2382,6 +2392,7 @@
+@@ -2382,6 +2392,7 @@ fi
  	echo "$ac_t""no" 1>&6
      fi
  
@@ -45,7 +51,7 @@
  
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
-@@ -4089,14 +4100,13 @@
+@@ -4089,14 +4100,13 @@ if test "${SHARED_BUILD}" = "1" -a "${SH
      TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
      TK_LIB_FILE=libtk${TK_SHARED_LIB_SUFFIX}
      MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${TCL_STUB_LIB_SPEC} \${SHLIB_LD_LIBS}"
@@ -61,7 +67,7 @@
  
      TCL_STUB_FLAGS=""
  fi
-@@ -4139,7 +4149,7 @@
+@@ -4139,7 +4149,7 @@ TK_SHARED_BUILD=${SHARED_BUILD}
  # Replace ${VERSION} with contents of ${TK_VERSION}
  eval "STUB_LIB_FILE=libtkstub${TK_UNSHARED_LIB_SUFFIX}"
  

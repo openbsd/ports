@@ -1,6 +1,7 @@
---- configure.orig	Tue Aug  8 14:17:11 2000
-+++ configure	Thu Nov  2 10:19:48 2000
-@@ -5063,13 +5063,23 @@
+$OpenBSD: patch-configure,v 1.2 2001/08/04 18:10:35 pvalchev Exp $
+--- configure.orig	Fri Apr  6 11:51:46 2001
++++ configure	Fri Aug  3 22:12:29 2001
+@@ -5112,13 +5112,23 @@ fi
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    
@@ -28,7 +29,12 @@
  		LDFLAGS=""
  		LD_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
  		echo $ac_n "checking for ELF""... $ac_c" 1>&6
-@@ -5091,7 +5101,7 @@
+@@ -5136,11 +5146,11 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&
+   egrep "yes" >/dev/null 2>&1; then
+   rm -rf conftest*
+   echo "$ac_t""yes" 1>&6
+-		    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so'
++		    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.3'
  else
    rm -rf conftest*
    echo "$ac_t""no" 1>&6
@@ -37,7 +43,7 @@
  		
  fi
  rm -f conftest*
-@@ -5787,10 +5797,9 @@
+@@ -5848,10 +5858,9 @@ if test "${SHARED_BUILD}" = "1" -a "${SH
      TCL_LD_SEARCH_FLAGS="${LD_SEARCH_FLAGS}"
      eval "TCL_LIB_FILE=libtcl${TCL_SHARED_LIB_SUFFIX}"
      if test "x$DL_OBJS" = "xtclLoadAout.o"; then
@@ -49,7 +55,7 @@
      fi
  else
      case $system in
-@@ -5874,7 +5883,7 @@
+@@ -5935,7 +5944,7 @@ eval "STUB_LIB_FILE=libtclstub${TCL_UNSH
  # Replace DBGX with TCL_DBGX
  eval "STUB_LIB_FILE=\"${STUB_LIB_FILE}\""
  
