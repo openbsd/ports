@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2003/06/30 18:24:16 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2003/06/30 21:01:14 espie Exp $
 
 COMMENT=		"GNU development tools"
 
-DISTNAME=		binutils-2.13.2.1
+V=			2.13.2.1
+DISTNAME=		binutils-$V
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GNU:=binutils/}
 
@@ -32,11 +33,14 @@ FLAVORS=		alpha hppa i386 m68k m88k mips powerpc \
 			sparc sparc64 vax x86_64
 FLAVOR?=
 
+SEPARATE_BUILD=		flavored
+
 # XXX: special handling needed for powerpc arch's and bootstraping
 .if !empty(FLAVOR:L) && ${FLAVOR:L} != ${MACHINE_ARCH}
 CONFIGURE_ARGS+=	--target=${FLAVOR:L}-unknown-openbsd${OSREV}
 TARGET_ARCH=		${FLAVOR:L}
 PLIST=			${PKGDIR}/PLIST.cross
+FULLPKGNAME=		binutils-${TARGET_ARCH}-$V
 .if ${FLAVOR} == "x86_64" || ${FLAVOR} == "sparc64" || ${FLAVOR} == "alpha"
 CONFIGURE_ARGS+=	--enable-64-bit-bfd
 .endif
@@ -67,12 +71,12 @@ post-patch:
 do-install:
 	${INSTALL_DATA_DIR} ${TARGET_DIR}/bin
 	${INSTALL_DATA_DIR} ${TARGET_DIR}/man/man1
-	if [ -f ${WRKSRC}/gprof/gprof ]; then \
-	  cd ${WRKSRC};  \
+	if [ -f ${WRKBUILD}/gprof/gprof ]; then \
+	  cd ${WRKBUILD};  \
 	     ${INSTALL_PROGRAM} gprof/gprof ${TARGET_DIR}/bin; \
 	     ${INSTALL_MAN} gprof/gprof.1 ${TARGET_DIR}/man/man1; \
 	fi
-	cd ${WRKSRC} && {						\
+	cd ${WRKBUILD} && {						\
 	    ${INSTALL_PROGRAM} gas/as-new ${TARGET_DIR}/bin/as;		\
 	    ${INSTALL_PROGRAM} ld/ld-new ${TARGET_DIR}/bin/ld;		\
 	    ${INSTALL_MAN} gas/doc/as.1 ${TARGET_DIR}/man/man1;		\
@@ -80,7 +84,7 @@ do-install:
 	    for s in ${FILES}; do					\
 		d=`echo $${s} | sed s/-new//`;				\
 		${INSTALL_PROGRAM} binutils/$${s} ${TARGET_DIR}/bin/$${d}; \
-		${INSTALL_MAN} binutils/doc/$${d}.1 ${TARGET_DIR}/man/man1; \
+		${INSTALL_MAN} ${WRKSRC}/binutils/doc/$${d}.1 ${TARGET_DIR}/man/man1; \
 	    done							\
 	}
 

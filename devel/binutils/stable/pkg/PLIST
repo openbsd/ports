@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/06/05 18:28:24 brad Exp $
-@option no-default-conflict
+@comment $OpenBSD: PLIST,v 1.4 2003/06/30 21:01:14 espie Exp $
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/ar
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/as
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/gprof
