@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/27 10:58:36 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/11 00:51:38 naddy Exp $
 
 COMMENT= 		"X11 toolkit, network applications"
 CATEGORIES=		x11 x11/kde
@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=	--enable-final
 #CONFIGURE_ARGS+=	--enable-debug
 #CONFIGURE_ARGS+=	--without-motif
 #CONFIGURE_ARGS+=--enable-static --enable-debug --disable-shared
-PATCH_LIST=${PORTSDIR}/x11/kde/libs2/p-* patch-*
+PATCH_LIST=${PORTSDIR}/x11/kde/libs2/patches/p-* patch-*
 
 # Not yet, too much time to compile
 #CONFIGURE_ARGS+=	--enable-static
