@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_loadsave_c,v 1.1 2003/08/30 05:05:44 avsm Exp $
+--- src/loadsave.c.orig	2003-08-28 13:11:10.000000000 -0400
++++ src/loadsave.c	2003-08-28 13:14:20.000000000 -0400
+@@ -154,9 +154,9 @@ void save_game(const char *file) {
+     FILE *fp;
+     char buffer[32];
+     char filename[64];	/* must be 15 at least */
+-    long args[24];
++    long args[NARGS];
+     int i;
+-    unsigned char p[4 * 24];
++    unsigned char p[4 * NARGS];
+ 
+     if (!file) {
+ 	/* compute the filename to use */
