@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.11 2000/07/01 16:22:36 brad Exp $
 bin/wget
 @unexec install-info --delete %D/info/wget.info %D/info/dir
 info/wget.info
