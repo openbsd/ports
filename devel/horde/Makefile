@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2005/03/09 07:07:15 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.14 2005/03/14 07:46:42 mbalmer Exp $ 
 
 COMMENT=	"modular framework for web-based applications"
 
@@ -16,6 +16,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_HORDE:=horde/tarballs/}
+
+RUN_DEPENDS=	pear-DB-*:databases/pear-DB
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
