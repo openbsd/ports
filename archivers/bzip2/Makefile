@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2000/06/02 13:44:53 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2000/06/10 18:51:44 brad Exp $
 
 DISTNAME=	bzip2-1.0.0
 CATEGORIES=	archivers
-NEED_VERSION=	1.234
+NEED_VERSION=	1.301
 MASTER_SITES=	ftp://sourceware.cygnus.com/pub/bzip2/v100/ \
-                ftp://ftp.yggdrasil.com/mirrors/site/sourceware.cygnus.com/pub/bzip2/v100/      
+		ftp://ftp.yggdrasil.com/mirrors/site/sourceware.cygnus.com/pub/bzip2/v100/
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -12,8 +12,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-FAKE=	Yes
 
 MAKE_FLAGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS} -Wall -Winline -fomit-frame-pointer \
