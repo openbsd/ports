@@ -1,6 +1,6 @@
-$OpenBSD: patch-system_mk,v 1.1.1.1 2001/01/02 14:50:35 naddy Exp $
---- system.mk.orig	Thu Dec 28 14:42:07 2000
-+++ system.mk	Sat Dec 30 21:33:08 2000
+$OpenBSD: patch-system_mk,v 1.2 2001/03/15 10:09:26 obecian Exp $
+--- system.mk.orig	Mon Mar  5 08:16:01 2001
++++ system.mk	Wed Mar 14 03:01:40 2001
 @@ -7,13 +7,14 @@
  ## Installation paths
  ##
@@ -19,7 +19,15 @@ $OpenBSD: patch-system_mk,v 1.1.1.1 2001/01/02 14:50:35 naddy Exp $
  # Not used
  INCDIR=$(PREFIX)/include
  LIBDIR=$(PREFIX)/lib
-@@ -23,7 +24,7 @@ LIBDIR=$(PREFIX)/lib
+@@ -24,14 +25,14 @@
+ ##
+ 
+ #MODULE_SUPPORT=-DCF_NO_MODULE_SUPPORT
+-MODULE_SUPPORT_LDFLAGS=-export-dynamic -ldl
++MODULE_SUPPORT_LDFLAGS=
+ 
+ 
+ ##
  ## X libraries, includes and options
  ##
  
@@ -28,7 +36,7 @@ $OpenBSD: patch-system_mk,v 1.1.1.1 2001/01/02 14:50:35 naddy Exp $
  
  # SunOS/Solaris
  #X11_PREFIX=/usr/openwin
-@@ -44,14 +45,14 @@ X11_DEFINES=
+@@ -52,14 +53,14 @@
  # asprintf and vasprintf in the c library. (gnu libc has.)
  # If HAS_SYSTEM_ASPRINTF is not defined, an implementation
  # in sprintf_2.2/ is used.
@@ -45,7 +53,7 @@ $OpenBSD: patch-system_mk,v 1.1.1.1 2001/01/02 14:50:35 naddy Exp $
  
  # The POSIX_SOURCE, XOPEN_SOURCE and WARN options should not be necessary,
  # they're mainly for development use. So, if they cause trouble (not
-@@ -60,7 +61,7 @@ CC=gcc
+@@ -68,7 +69,7 @@
  
  # libtu/ uses POSIX_SOURCE
  
@@ -54,7 +62,7 @@ $OpenBSD: patch-system_mk,v 1.1.1.1 2001/01/02 14:50:35 naddy Exp $
  
  # and . (ion) XOPEN_SOURCE.
  # There is variation among systems what should be used and how they interpret
-@@ -73,13 +74,13 @@ POSIX_SOURCE=-ansi -D_POSIX_SOURCE
+@@ -81,13 +82,13 @@
  
  # Same as '-Wall -pedantic-errors' without '-Wunused' as callbacks often
  # have unused variables.
