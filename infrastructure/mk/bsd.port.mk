@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.225 2000/03/08 00:07:37 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.226 2000/03/10 18:09:23 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -351,6 +351,10 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # fake			- Perform a fake installation into ${WRKINST}.
 # package	    - Build package from the fake installation.
 # install       - Install the resulting package.
+#
+# Note that `fake' uses {pre,do,post}-install for its own dark purposes.
+# There is also a special pre-fake target that gets run after mtree but
+# before making the INSTALL_PRECOOKIE, to finish setting up the fake tree.
 #
 # If ${FAKE} == No
 # install		- Install the results of a build.
@@ -1421,6 +1425,9 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@install -d -m 755 -o root -g wheel ${WRKINST}
 	@mtree -U -e -d -n -p ${WRKINST} \
 		-f ${PORTSDIR}/infrastructure/db/fake.mtree  >/dev/null
+.  if target(pre-fake)
+	@cd ${.CURDIR} && make pre-fake TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} DESTDIR=${WRKINST}
+.  endif
 	@${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
 .  if target(pre-install)
 	@cd ${.CURDIR} && make pre-install TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} DESTDIR=${WRKINST}
