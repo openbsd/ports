@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2002/05/27 14:42:37 espie Exp $
+# $OpenBSD: Makefile,v 1.137 2002/05/28 11:52:30 espie Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -78,6 +78,10 @@
 #    SUBDIR += mlvwm
      SUBDIR += mouseclock
      SUBDIR += mplayer
+     SUBDIR += mplayer-fontmaker
+     SUBDIR += mplayer-fonts,luxi-sans
+     SUBDIR += mplayer-fonts,luxi-sans-bold
+     SUBDIR += mplayer-fonts,luxi-sans-italic
      SUBDIR += mxconns
 #    SUBDIR += neXtaw
      SUBDIR += ogle
