@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 1999/03/07 03:05:15 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/06/03 05:07:26 fgsch Exp $
 #
 
-DISTNAME=       xboard-4.0.0
+DISTNAME=       xboard-4.0.2
 CATEGORIES=	games
 
 MAINTAINER=	angelos@openbsd.org
