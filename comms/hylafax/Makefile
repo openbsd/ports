@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1999/12/03 14:24:38 espie Exp $
+# $OpenBSD: Makefile,v 1.14 1999/12/11 02:36:40 brad Exp $
 
 BROKEN=		bad packing lists
 
@@ -22,7 +22,7 @@ MAINTAINER=	d@openbsd.org
 
 BUILD_DEPENDS=	${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
-LIB_DEPENDS=	tiff.3.4:${PORTSDIR}/graphics/tiff34
+LIB_DEPENDS=	tiff.35:${PORTSDIR}/graphics/tiff
 
 USE_GMAKE=	yes
 
