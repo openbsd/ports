@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/02/12 07:37:36 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/03/03 03:08:45 pvalchev Exp $
 bin/gist
 bin/yorick
 include/README
@@ -8,7 +8,6 @@ include/bound.h
 include/cgm.h
 include/cgmin.h
 include/clip.h
-include/config.h
 include/defmem.h
 include/dg.h
 include/drat.h
