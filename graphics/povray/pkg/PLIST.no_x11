@@ -1,0 +1,465 @@
+@comment $OpenBSD: PLIST.no_x11,v 1.1.1.1 2001/08/09 22:28:00 rohee Exp $
+bin/povray
+man/man1/povray.1
+share/doc/povray31/README.unix
+share/doc/povray31/betanews.txt
+share/doc/povray31/gamma.gif
+share/doc/povray31/gamma.gif.txt
+share/doc/povray31/povlegal.doc
+share/doc/povray31/povuser.txt
+share/doc/povray31/povwhere.get
+share/doc/povray31/revision.doc
+share/povray31/allscene.ini
+share/povray31/allscene.sh
+share/povray31/include/ash.map
+share/povray31/include/benediti.map
+share/povray31/include/bubinga.map
+share/povray31/include/bumpmap_.png
+share/povray31/include/cedar.map
+share/povray31/include/chars.inc
+share/povray31/include/colors.inc
+share/povray31/include/consts.inc
+share/povray31/include/crystal.ttf
+share/povray31/include/cyrvetic.ttf
+share/povray31/include/debug.inc
+share/povray31/include/finish.inc
+share/povray31/include/fract003.png
+share/povray31/include/glass.inc
+share/povray31/include/golds.inc
+share/povray31/include/marbteal.map
+share/povray31/include/maze.png
+share/povray31/include/metals.inc
+share/povray31/include/mtmand.pot
+share/povray31/include/mtmandj.png
+share/povray31/include/orngwood.map
+share/povray31/include/pinkmarb.map
+share/povray31/include/plasma2.png
+share/povray31/include/plasma3.png
+share/povray31/include/povmap.png
+share/povray31/include/rad_def.inc
+share/povray31/include/rdgranit.map
+share/povray31/include/shapes.inc
+share/povray31/include/shapes2.inc
+share/povray31/include/shapesq.inc
+share/povray31/include/skies.inc
+share/povray31/include/spiral.df3
+share/povray31/include/stage1.inc
+share/povray31/include/stars.inc
+share/povray31/include/stdcam.inc
+share/povray31/include/stoneold.inc
+share/povray31/include/stones.inc
+share/povray31/include/stones1.inc
+share/povray31/include/stones2.inc
+share/povray31/include/teak.map
+share/povray31/include/test.png
+share/povray31/include/textures.inc
+share/povray31/include/timrom.ttf
+share/povray31/include/ttffonts.cat
+share/povray31/include/whiteash.map
+share/povray31/include/woodmaps.inc
+share/povray31/include/woods.inc
+share/povray31/pngflc.ini
+share/povray31/pngfli.ini
+share/povray31/povray.ini
+share/povray31/rerunpov.sh
+share/povray31/res.ini
+share/povray31/res120.ini
+share/povray31/res1k.ini
+share/povray31/res320.ini
+share/povray31/res640.ini
+share/povray31/res800.ini
+share/povray31/runpov.sh
+share/povray31/scenes/advanced/chess2.pov
+share/povray31/scenes/advanced/desk.ini
+share/povray31/scenes/advanced/desk.pov
+share/povray31/scenes/advanced/diffract.pov
+share/povray31/scenes/advanced/drums2/drums.inc
+share/povray31/scenes/advanced/drums2/drums.pov
+share/povray31/scenes/advanced/drums2/rednewt.png
+share/povray31/scenes/advanced/fish13/finskin2.png
+share/povray31/scenes/advanced/fish13/fish.inc
+share/povray31/scenes/advanced/fish13/fish13.pov
+share/povray31/scenes/advanced/fish13/fisheye.png
+share/povray31/scenes/advanced/fish13/stem1.inc
+share/povray31/scenes/advanced/fish13/world12.inc
+share/povray31/scenes/advanced/float5.pov
+share/povray31/scenes/advanced/ionic5/b-snake.inc
+share/povray31/scenes/advanced/ionic5/congo4.png
+share/povray31/scenes/advanced/ionic5/ionic5.pov
+share/povray31/scenes/advanced/ionic5/lizard.inc
+share/povray31/scenes/advanced/ionic5/marble.inc
+share/povray31/scenes/advanced/ionic5/panther.inc
+share/povray31/scenes/advanced/ionic5/s-head3.inc
+share/povray31/scenes/advanced/ionic5/turn.inc
+share/povray31/scenes/advanced/lamppost.pov
+share/povray31/scenes/advanced/mist.pov
+share/povray31/scenes/advanced/mtmand.par
+share/povray31/scenes/advanced/mtmand.pov
+share/povray31/scenes/advanced/newltpot/teapot.c1
+share/povray31/scenes/advanced/newltpot/teapot.c2
+share/povray31/scenes/advanced/newltpot/teapot.c3
+share/povray31/scenes/advanced/newltpot/teapot.cat
+share/povray31/scenes/advanced/newltpot/teapot.sph
+share/povray31/scenes/advanced/newltpot/teapot.tri
+share/povray31/scenes/advanced/newltpot/teapot2.pov
+share/povray31/scenes/advanced/newltpot/teapot3.pov
+share/povray31/scenes/advanced/newltpot/teapot4.pov
+share/povray31/scenes/advanced/ntreal/ntreal.inc
+share/povray31/scenes/advanced/ntreal/ntreal.pov
+share/povray31/scenes/advanced/piece2/light.inc
+share/povray31/scenes/advanced/piece2/piece2.pov
+share/povray31/scenes/advanced/piece2/spural1.inc
+share/povray31/scenes/advanced/piece2/spural2.inc
+share/povray31/scenes/advanced/piece2/tori2.inc
+share/povray31/scenes/advanced/piece2/ttexture.inc
+share/povray31/scenes/advanced/piece3/curly-q.inc
+share/povray31/scenes/advanced/piece3/links.inc
+share/povray31/scenes/advanced/piece3/piece3.pov
+share/povray31/scenes/advanced/quilt1.pov
+share/povray31/scenes/advanced/skyvase.pov
+share/povray31/scenes/advanced/sombrero.pov
+share/povray31/scenes/advanced/sunsethf.pov
+share/povray31/scenes/advanced/swirlbox.pov
+share/povray31/scenes/advanced/teapot/teapot.inc
+share/povray31/scenes/advanced/teapot/teapot.pov
+share/povray31/scenes/advanced/wg6.pov
+share/povray31/scenes/advanced/whiltile.pov
+share/povray31/scenes/advanced/woodbox.pov
+share/povray31/scenes/animate/ambient/ambient.ini
+share/povray31/scenes/animate/ambient/ambient.pov
+share/povray31/scenes/animate/boing/boing1.ini
+share/povray31/scenes/animate/boing/boing1.pov
+share/povray31/scenes/animate/boing/bounce.ini
+share/povray31/scenes/animate/boing/bounce.pov
+share/povray31/scenes/animate/boing/glsbng.ini
+share/povray31/scenes/animate/boing/glsbng.pov
+share/povray31/scenes/animate/camera2/camera2.ini
+share/povray31/scenes/animate/camera2/camera2.pov
+share/povray31/scenes/animate/clockd.pov
+share/povray31/scenes/animate/diffuse/diffuse.ini
+share/povray31/scenes/animate/diffuse/diffuse.pov
+share/povray31/scenes/animate/float1/float1.ini
+share/povray31/scenes/animate/float1/float1.pov
+share/povray31/scenes/animate/float2/float2.ini
+share/povray31/scenes/animate/float2/float2.pov
+share/povray31/scenes/animate/float3/float3.ini
+share/povray31/scenes/animate/float3/float3.pov
+share/povray31/scenes/animate/float4/float4.ini
+share/povray31/scenes/animate/float4/float4.pov
+share/povray31/scenes/animate/l_o/l_o.ini
+share/povray31/scenes/animate/l_o/l_o.pov
+share/povray31/scenes/animate/life/blink4.inc
+share/povray31/scenes/animate/life/life.ini
+share/povray31/scenes/animate/life/life.pov
+share/povray31/scenes/animate/life/walker.inc
+share/povray31/scenes/animate/pentmap/pentmap.ini
+share/povray31/scenes/animate/pentmap/pentmap.pov
+share/povray31/scenes/animate/quilted/plotqlt.ini
+share/povray31/scenes/animate/quilted/plotqlt.pov
+share/povray31/scenes/animate/raddem/raddem.ini
+share/povray31/scenes/animate/raddem/raddem.pov
+share/povray31/scenes/animate/reflect/reflect.ini
+share/povray31/scenes/animate/reflect/reflect.pov
+share/povray31/scenes/animate/slinky/slnk.ini
+share/povray31/scenes/animate/slinky/slnk.pov
+share/povray31/scenes/animate/speclr/speclr.ini
+share/povray31/scenes/animate/speclr/speclr.pov
+share/povray31/scenes/animate/vect1/vect1.ini
+share/povray31/scenes/animate/vect1/vect1.pov
+share/povray31/scenes/animate/vect2/vect2.ini
+share/povray31/scenes/animate/vect2/vect2.pov
+share/povray31/scenes/arrays/array1.pov
+share/povray31/scenes/arrays/array2.pov
+share/povray31/scenes/arrays/array3.pov
+share/povray31/scenes/camera/basicvue.pov
+share/povray31/scenes/camera/camera1a.pov
+share/povray31/scenes/camera/camera1b.pov
+share/povray31/scenes/camera/camera1c.pov
+share/povray31/scenes/camera/camera1d.pov
+share/povray31/scenes/camera/camera1e.pov
+share/povray31/scenes/camera/camera1f.pov
+share/povray31/scenes/camera/camera3a.pov
+share/povray31/scenes/camera/camera3b.pov
+share/povray31/scenes/camera/camera3c.pov
+share/povray31/scenes/camera/camera3d.pov
+share/povray31/scenes/camera/fisheye.pov
+share/povray31/scenes/camera/focalb1.pov
+share/povray31/scenes/csg/cliptst2.pov
+share/povray31/scenes/csg/granite.pov
+share/povray31/scenes/csg/hfclip.pov
+share/povray31/scenes/csg/intee1.pov
+share/povray31/scenes/fileio/fileio.pov
+share/povray31/scenes/incdemo/chars.pov
+share/povray31/scenes/incdemo/colors.pov
+share/povray31/scenes/incdemo/finish.pov
+share/povray31/scenes/incdemo/glasses/glasses.doc
+share/povray31/scenes/incdemo/glasses/glasses.pov
+share/povray31/scenes/incdemo/metals/brasses.pov
+share/povray31/scenes/incdemo/metals/chromes.pov
+share/povray31/scenes/incdemo/metals/coppers.pov
+share/povray31/scenes/incdemo/metals/golds.pov
+share/povray31/scenes/incdemo/metals/metals.doc
+share/povray31/scenes/incdemo/metals/silvers.pov
+share/povray31/scenes/incdemo/metals/stage_xy.inc
+share/povray31/scenes/incdemo/metals/stage_xz.inc
+share/povray31/scenes/incdemo/shapes.pov
+share/povray31/scenes/incdemo/shapes2.pov
+share/povray31/scenes/incdemo/shotxtr.inc
+share/povray31/scenes/incdemo/stones/benediti.pov
+share/povray31/scenes/incdemo/stones/marbteal.pov
+share/povray31/scenes/incdemo/stones/pinkmarb.pov
+share/povray31/scenes/incdemo/stones/rdgranit.pov
+share/povray31/scenes/incdemo/stones/stones.doc
+share/povray31/scenes/incdemo/stones/stones1.pov
+share/povray31/scenes/incdemo/stones/stones2.pov
+share/povray31/scenes/incdemo/texture1.pov
+share/povray31/scenes/incdemo/texture2.pov
+share/povray31/scenes/incdemo/texture3.pov
+share/povray31/scenes/incdemo/woods/ash.pov
+share/povray31/scenes/incdemo/woods/bubinga.pov
+share/povray31/scenes/incdemo/woods/cedar.pov
+share/povray31/scenes/incdemo/woods/morewood.doc
+share/povray31/scenes/incdemo/woods/orngwood.pov
+share/povray31/scenes/incdemo/woods/teak.pov
+share/povray31/scenes/incdemo/woods/testcam.inc
+share/povray31/scenes/incdemo/woods/testobjs.inc
+share/povray31/scenes/incdemo/woods/whiteash.pov
+share/povray31/scenes/incdemo/woods/wood_1.pov
+share/povray31/scenes/incdemo/woods/wood_10.pov
+share/povray31/scenes/incdemo/woods/wood_11.pov
+share/povray31/scenes/incdemo/woods/wood_12.pov
+share/povray31/scenes/incdemo/woods/wood_13.pov
+share/povray31/scenes/incdemo/woods/wood_14.pov
+share/povray31/scenes/incdemo/woods/wood_15.pov
+share/povray31/scenes/incdemo/woods/wood_16.pov
+share/povray31/scenes/incdemo/woods/wood_17.pov
+share/povray31/scenes/incdemo/woods/wood_18.pov
+share/povray31/scenes/incdemo/woods/wood_19.pov
+share/povray31/scenes/incdemo/woods/wood_2.pov
+share/povray31/scenes/incdemo/woods/wood_3.pov
+share/povray31/scenes/incdemo/woods/wood_4.pov
+share/povray31/scenes/incdemo/woods/wood_5.pov
+share/povray31/scenes/incdemo/woods/wood_6.pov
+share/povray31/scenes/incdemo/woods/wood_7.pov
+share/povray31/scenes/incdemo/woods/wood_8.pov
+share/povray31/scenes/incdemo/woods/wood_9.pov
+share/povray31/scenes/incdemo/woods/woods.doc
+share/povray31/scenes/incdemo/woods/woods1.pov
+share/povray31/scenes/incdemo/woods/woods2.pov
+share/povray31/scenes/interior/atten1.pov
+share/povray31/scenes/interior/atten2.pov
+share/povray31/scenes/interior/ballbox1.pov
+share/povray31/scenes/interior/caustic2.pov
+share/povray31/scenes/interior/crystal.pov
+share/povray31/scenes/interior/fog_f.pov
+share/povray31/scenes/interior/fog_ft.pov
+share/povray31/scenes/interior/fog_std.pov
+share/povray31/scenes/interior/foglayr.pov
+share/povray31/scenes/interior/foglyr2.pov
+share/povray31/scenes/interior/iortest.pov
+share/povray31/scenes/interior/magglass.pov
+share/povray31/scenes/interior/media/galaxy.pov
+share/povray31/scenes/interior/media/hollow1.pov
+share/povray31/scenes/interior/media/hollow2.pov
+share/povray31/scenes/interior/media/hollow3.pov
+share/povray31/scenes/interior/media/media1.pov
+share/povray31/scenes/interior/media/media2.pov
+share/povray31/scenes/interior/media/media3.pov
+share/povray31/scenes/interior/media/media4.pov
+share/povray31/scenes/interior/media/media5.pov
+share/povray31/scenes/interior/nufog2.pov
+share/povray31/scenes/interior/rainbow1.pov
+share/povray31/scenes/interior/skysph1.pov
+share/povray31/scenes/interior/skysph2.pov
+share/povray31/scenes/lights/arealit1.pov
+share/povray31/scenes/lights/arealit2.pov
+share/povray31/scenes/lights/arealit3.pov
+share/povray31/scenes/lights/fillite.pov
+share/povray31/scenes/lights/laser.pov
+share/povray31/scenes/lights/shadows.pov
+share/povray31/scenes/lights/soft.pov
+share/povray31/scenes/lights/spotlite.pov
+share/povray31/scenes/macros/local.inc
+share/povray31/scenes/macros/local.pov
+share/povray31/scenes/macros/macro1.pov
+share/povray31/scenes/macros/macro2.pov
+share/povray31/scenes/macros/macro3.pov
+share/povray31/scenes/macros/macro4.pov
+share/povray31/scenes/macros/pyramid.pov
+share/povray31/scenes/macros/pyramid2.pov
+share/povray31/scenes/objects/blob.pov
+share/povray31/scenes/objects/blob1a.pov
+share/povray31/scenes/objects/blob1b.pov
+share/povray31/scenes/objects/blob1c.pov
+share/povray31/scenes/objects/box.pov
+share/povray31/scenes/objects/chesmsh.pov
+share/povray31/scenes/objects/chess.inc
+share/povray31/scenes/objects/crat_dat.pov
+share/povray31/scenes/objects/crater.pov
+share/povray31/scenes/objects/fractal1.pov
+share/povray31/scenes/objects/fractal2.pov
+share/povray31/scenes/objects/fractal3.pov
+share/povray31/scenes/objects/fractal4.pov
+share/povray31/scenes/objects/lathe1a.pov
+share/povray31/scenes/objects/lathe1b.pov
+share/povray31/scenes/objects/lathe1c.pov
+share/povray31/scenes/objects/lathe2.pov
+share/povray31/scenes/objects/math/axisbox.inc
+share/povray31/scenes/objects/math/bezier.pov
+share/povray31/scenes/objects/math/bicube.pov
+share/povray31/scenes/objects/math/folium.pov
+share/povray31/scenes/objects/math/grafbic.pov
+share/povray31/scenes/objects/math/helix.pov
+share/povray31/scenes/objects/math/hyptorus.pov
+share/povray31/scenes/objects/math/lemnisc2.pov
+share/povray31/scenes/objects/math/lemnisca.pov
+share/povray31/scenes/objects/math/math.cat
+share/povray31/scenes/objects/math/monkey.pov
+share/povray31/scenes/objects/math/partorus.pov
+share/povray31/scenes/objects/math/piriform.pov
+share/povray31/scenes/objects/math/quarcyl.pov
+share/povray31/scenes/objects/math/quarpara.pov
+share/povray31/scenes/objects/math/steiner.pov
+share/povray31/scenes/objects/math/tcubic.pov
+share/povray31/scenes/objects/math/teardrop.pov
+share/povray31/scenes/objects/math/torus.pov
+share/povray31/scenes/objects/math/trough.pov
+share/povray31/scenes/objects/math/witch.pov
+share/povray31/scenes/objects/pawns.pov
+share/povray31/scenes/objects/polygon.pov
+share/povray31/scenes/objects/primitiv.pov
+share/povray31/scenes/objects/prism1.pov
+share/povray31/scenes/objects/prism2.pov
+share/povray31/scenes/objects/prism3.inc
+share/povray31/scenes/objects/prism3a.pov
+share/povray31/scenes/objects/prism3b.pov
+share/povray31/scenes/objects/prism3c.pov
+share/povray31/scenes/objects/sor1.pov
+share/povray31/scenes/objects/superel1.pov
+share/povray31/scenes/objects/superel2.pov
+share/povray31/scenes/objects/superel3.pov
+share/povray31/scenes/objects/torus1.pov
+share/povray31/scenes/objects/ttf1.pov
+share/povray31/scenes/objects/wtorus.pov
+share/povray31/scenes/radios/rad2.inc
+share/povray31/scenes/radios/rad2.ini
+share/povray31/scenes/radios/rad2.pov
+share/povray31/scenes/textures/pigments/blkhole.pov
+share/povray31/scenes/textures/pigments/cantelop.pov
+share/povray31/scenes/textures/pigments/checker2.pov
+share/povray31/scenes/textures/pigments/crack1.pov
+share/povray31/scenes/textures/pigments/dodec2.pov
+share/povray31/scenes/textures/pigments/eight.pov
+share/povray31/scenes/textures/pigments/filtfun.pov
+share/povray31/scenes/textures/pigments/interp.pov
+share/povray31/scenes/textures/pigments/irid.pov
+share/povray31/scenes/textures/pigments/mapper.pov
+share/povray31/scenes/textures/pigments/mappr2.pov
+share/povray31/scenes/textures/pigments/matmap.pov
+share/povray31/scenes/textures/pigments/pigmap.pov
+share/povray31/scenes/textures/pigments/pigment.pov
+share/povray31/scenes/textures/pigments/planet.pov
+share/povray31/scenes/textures/pigments/skies/s_cloud1.pov
+share/povray31/scenes/textures/pigments/skies/s_cloud2.pov
+share/povray31/scenes/textures/pigments/skies/s_cloud3.pov
+share/povray31/scenes/textures/pigments/skies/s_cloud4.pov
+share/povray31/scenes/textures/pigments/skies/s_cloud5.pov
+share/povray31/scenes/textures/pigments/skies/skies.doc
+share/povray31/scenes/textures/pigments/skies/stars.pov
+share/povray31/scenes/textures/pigments/spiral1a.pov
+share/povray31/scenes/textures/pigments/txtravg.pov
+share/povray31/scenes/textures/pigments/txtrmap.pov
+share/povray31/scenes/textures/pigments/warp1.pov
+share/povray31/scenes/textures/pigments/warp2.pov
+share/povray31/scenes/textures/surfaces/agate.pov
+share/povray31/scenes/textures/surfaces/arches.pov
+share/povray31/scenes/textures/surfaces/bozo.pov
+share/povray31/scenes/textures/surfaces/brick.pov
+share/povray31/scenes/textures/surfaces/bumpmap.pov
+share/povray31/scenes/textures/surfaces/bumps.pov
+share/povray31/scenes/textures/surfaces/cluster.pov
+share/povray31/scenes/textures/surfaces/crackle.pov
+share/povray31/scenes/textures/surfaces/densfile.pov
+share/povray31/scenes/textures/surfaces/dents.pov
+share/povray31/scenes/textures/surfaces/gradient.pov
+share/povray31/scenes/textures/surfaces/granite.pov
+share/povray31/scenes/textures/surfaces/hexagon.pov
+share/povray31/scenes/textures/surfaces/leopard.pov
+share/povray31/scenes/textures/surfaces/mandel.pov
+share/povray31/scenes/textures/surfaces/marble.pov
+share/povray31/scenes/textures/surfaces/normal.pov
+share/povray31/scenes/textures/surfaces/normavg.pov
+share/povray31/scenes/textures/surfaces/normmap.pov
+share/povray31/scenes/textures/surfaces/onion.pov
+share/povray31/scenes/textures/surfaces/pignorm.inc
+share/povray31/scenes/textures/surfaces/quilt2.pov
+share/povray31/scenes/textures/surfaces/quilted.pov
+share/povray31/scenes/textures/surfaces/radial.pov
+share/povray31/scenes/textures/surfaces/ripples.pov
+share/povray31/scenes/textures/surfaces/slopemap.pov
+share/povray31/scenes/textures/surfaces/spiral1.pov
+share/povray31/scenes/textures/surfaces/spiral2.pov
+share/povray31/scenes/textures/surfaces/spotted.pov
+share/povray31/scenes/textures/surfaces/waves.pov
+share/povray31/scenes/textures/surfaces/wrinkles.pov
+share/povray31/shapes.pov
+share/povray31/slow.ini
+share/povray31/tgaflc.ini
+share/povray31/tgafli.ini
+share/povray31/xpovicon.xpm
+share/povray31/zipflc.ini
+share/povray31/zipfli.ini
+@dirrm share/povray31/scenes/textures/surfaces
+@dirrm share/povray31/scenes/textures/pigments/skies
+@dirrm share/povray31/scenes/textures/pigments
+@dirrm share/povray31/scenes/textures
+@dirrm share/povray31/scenes/radios
+@dirrm share/povray31/scenes/objects/math
+@dirrm share/povray31/scenes/objects
+@dirrm share/povray31/scenes/macros
+@dirrm share/povray31/scenes/lights
+@dirrm share/povray31/scenes/interior/media
+@dirrm share/povray31/scenes/interior
+@dirrm share/povray31/scenes/incdemo/woods
+@dirrm share/povray31/scenes/incdemo/stones
+@dirrm share/povray31/scenes/incdemo/metals
+@dirrm share/povray31/scenes/incdemo/glasses
+@dirrm share/povray31/scenes/incdemo
+@dirrm share/povray31/scenes/fileio
+@dirrm share/povray31/scenes/csg
+@dirrm share/povray31/scenes/camera
+@dirrm share/povray31/scenes/arrays
+@dirrm share/povray31/scenes/animate/vect2
+@dirrm share/povray31/scenes/animate/vect1
+@dirrm share/povray31/scenes/animate/speclr
+@dirrm share/povray31/scenes/animate/slinky
+@dirrm share/povray31/scenes/animate/reflect
+@dirrm share/povray31/scenes/animate/raddem
+@dirrm share/povray31/scenes/animate/quilted
+@dirrm share/povray31/scenes/animate/pentmap
+@dirrm share/povray31/scenes/animate/life
+@dirrm share/povray31/scenes/animate/l_o
+@dirrm share/povray31/scenes/animate/float4
+@dirrm share/povray31/scenes/animate/float3
+@dirrm share/povray31/scenes/animate/float2
+@dirrm share/povray31/scenes/animate/float1
+@dirrm share/povray31/scenes/animate/diffuse
+@dirrm share/povray31/scenes/animate/camera2
+@dirrm share/povray31/scenes/animate/boing
+@dirrm share/povray31/scenes/animate/ambient
+@dirrm share/povray31/scenes/animate
+@dirrm share/povray31/scenes/advanced/teapot
+@dirrm share/povray31/scenes/advanced/piece3
+@dirrm share/povray31/scenes/advanced/piece2
+@dirrm share/povray31/scenes/advanced/ntreal
+@dirrm share/povray31/scenes/advanced/newltpot
+@dirrm share/povray31/scenes/advanced/ionic5
+@dirrm share/povray31/scenes/advanced/fish13
+@dirrm share/povray31/scenes/advanced/drums2
+@dirrm share/povray31/scenes/advanced
+@dirrm share/povray31/scenes
+@dirrm share/povray31/include
+@exec mkdir -p %D/share/povray31/allscene
+@dirrm share/povray31/allscene
+@dirrm share/povray31
+@dirrm share/doc/povray31
