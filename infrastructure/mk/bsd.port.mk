@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.103 1999/07/28 12:56:15 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.104 1999/07/28 13:02:15 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1858,10 +1858,9 @@ pre-distclean:
 .if !target(distclean)
 distclean: pre-distclean clean
 	@${ECHO_MSG} "===>  Dist cleaning for ${PKGNAME}"
-	@(if [ -d ${_DISTDIR} ]; then \
-		cd ${_DISTDIR}; \
+	@if cd ${_DISTDIR} >/dev/null; then \
 		${RM} -f ${DISTFILES} ${PATCHFILES}; \
-	fi)
+	fi
 .if defined(DIST_SUBDIR)
 	-@${RMDIR} ${_DISTDIR}  
 .endif
@@ -2272,17 +2271,12 @@ misc-depends:
 .if !target(clean-depends)
 clean-depends:
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS) \
-	|| defined(RUN_DEPENDS)
-	@for dir in `${ECHO} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u`; do \
-		if [ -d $$dir ] ; then \
-			(cd $$dir; ${MAKE} NOCLEANDEPENDS=yes clean clean-depends); \
-		fi \
-	done
-.endif
-.if defined(DEPENDS)
-	@for dir in `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
-		if [ -d $$dir ] ; then \
-			(cd $$dir; ${MAKE} NOCLEANDEPENDS=yes clean clean-depends); \
+	|| defined(RUN_DEPENDS) || defined(DEPENDS)
+	@for dir in \
+	   `${ECHO} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` \
+	   `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
+		if cd $$dir >/dev/null ; then \
+			${MAKE} NOCLEANDEPENDS=yes clean clean-depends; \
 		fi \
 	done
 .endif
