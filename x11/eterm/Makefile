@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/12/29 20:31:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2003/06/08 00:23:09 jolan Exp $
 
 COMMENT=	"color X11 terminal emulator with transparency support"
 COMMENT-kanji=	"color japanese terminal emulator with transparency support"
@@ -11,8 +11,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=eterm/}
 HOMEPAGE=	http://eterm.sourceforge.net/
 
 LIB_DEPENDS=	Imlib.19::graphics/imlib
-
-MAINTAINER=	Kyle Hargraves <halogen@nol.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
