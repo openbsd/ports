@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2005/01/10 08:30:15 xsa Exp $
+# $OpenBSD: Makefile,v 1.7 2005/02/04 17:24:39 xsa Exp $
 
 COMMENT=	"Python package to retrieve data of the IMDb movie database"
 
-V=		1.6
+V=		1.7
 DISTNAME=	imdbpy-${V}
 PKGNAME=	py-imdb-${V}
 CATEGORIES=	misc
