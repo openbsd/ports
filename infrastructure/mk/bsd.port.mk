@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.343 2000/12/14 13:13:53 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.344 2000/12/16 15:44:35 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -827,47 +827,21 @@ USE_BZIP2?=	Yes
 USE_ZIP?= No
 USE_BZIP2?= No
 
-# Compatibility game: if anything is defined, we define the rest
-# and invoke the old extract target
-.if defined(EXTRACT_CMD) || defined(EXTRACT_BEFORE_ARGS) || \
-	defined(EXTRACT_AFTER_ARGS)
-.  if ${USE_ZIP:L} != "no"
-BUILD_DEPENDS+=		${UNZIP}::archivers/unzip
-EXTRACT_CMD?=		${UNZIP}
-EXTRACT_BEFORE_ARGS?=  -q
-EXTRACT_AFTER_ARGS?=   -d ${WRKDIR}
-.  else
-# common tar case
-
-EXTRACT_AFTER_ARGS?=	| ${TAR} -xf -
-EXTRACT_BEFORE_ARGS?=	-dc
-
-.    if ${USE_BZIP2:L} != "no"
-BUILD_DEPENDS+=		${BZIP2}::archivers/bzip2
-EXTRACT_CMD?=		${BZIP2}
-.    else
-EXTRACT_CMD?=		${GZIP_CMD}
-.    endif
-.  endif
-EXTRACT_CASES= *) ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${FULLDISTDIR}/$$archive ${EXTRACT_AFTER_ARGS};;
-.else
-
 EXTRACT_CASES?= 
 
 # XXX note that we DON'T set EXTRACT_SUFX.
-.  if ${USE_ZIP:L} != "no"
+.if ${USE_ZIP:L} != "no"
 BUILD_DEPENDS+=		${UNZIP}::archivers/unzip
 EXTRACT_CASES+= *.zip) ${UNZIP} -q ${FULLDISTDIR}/$$archive -d ${WRKDIR};;
-.  endif
-.  if ${USE_BZIP2:L} != "no"
+.endif
+.if ${USE_BZIP2:L} != "no"
 BUILD_DEPENDS+=		${BZIP2}::archivers/bzip2
 EXTRACT_CASES+= *.tar.bz2) ${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
-.  endif
+.endif
 EXTRACT_CASES+= *.tar) ${TAR} xf ${FULLDISTDIR}/$$archive;;
 EXTRACT_CASES+= *.shar.gz|*.shar.Z|*.sh.Z|*.sh.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | /bin/sh;;
 EXTRACT_CASES+= *.shar | *.sh) /bin/sh ${FULLDISTDIR}/$$archive;;
 EXTRACT_CASES+= *) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
-.endif
 
 # Documentation
 MAINTAINER?=	ports@openbsd.org
@@ -2532,30 +2506,6 @@ depend:
 # Same goes for tags
 .if !target(tags)
 tags:
-.endif
-
-# Compatibility game: we have to define the old variables now for legacy
-# Makefiles
-.if !defined(EXTRACT_CMD)
-.  if defined(USE_ZIP)
-EXTRACT_CMD?=		${UNZIP}
-EXTRACT_SUFX?=		.zip
-EXTRACT_BEFORE_ARGS?=  -q
-EXTRACT_AFTER_ARGS?=   -d ${WRKDIR}
-.  else
-# common tar case
-
-EXTRACT_AFTER_ARGS?=	| ${TAR} -xf -
-EXTRACT_BEFORE_ARGS?=	-dc
-
-.    if defined(USE_BZIP2)
-EXTRACT_CMD?=		${BZIP2}
-EXTRACT_SUFX?=		.tar.bz2
-.    else
-EXTRACT_CMD?=		${GZIP_CMD}
-EXTRACT_SUFX?=		.tar.gz
-.    endif
-.  endif
 .endif
 
 .PHONY: \
