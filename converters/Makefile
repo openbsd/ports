@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/06/01 02:17:27 msf Exp $
+# $OpenBSD: Makefile,v 1.27 2004/08/08 08:39:24 jolan Exp $
 #
 
     SUBDIR += base64
@@ -25,7 +25,7 @@
     SUBDIR += p5-Unicode-Map8
     SUBDIR += p5-Unicode-MapUTF8
     SUBDIR += p5-Unicode-String
-    SUBDIR += playfair
+#   SUBDIR += playfair
     SUBDIR += ppmtoTbmp
     SUBDIR += py-cjkcodecs
     SUBDIR += py-iconvcodec

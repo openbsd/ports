@@ -1,8 +1,0 @@
-The playfair program is quite simple.  It takes one of the iTMS
-Protected AAC Audio Files, decodes it using a key obtained from your
-iPod or Microsoft Windows system and then writes the new, decoded
-version to disk as a regular AAC Audio File.  It then optionally copies
-the metadata tags that describe the song, including the cover art, to
-the new file.
-
-playfair expects keys to be stored in the ~/.drms directory.

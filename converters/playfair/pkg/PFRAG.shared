@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/06 16:06:04 espie Exp $
-@lib lib/libmp4ff.so.0.0
-@lib lib/libmp4v2.so.0.0
-@lib lib/libplayfair.so.0.0
