@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2003/06/18 04:56:22 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2003/09/30 21:47:44 fgsch Exp $
 
 COMMENT=	"eboard extra piece sets and sounds"
 
-DISTNAME=	eboard-extras-1pl2
-CATEGORIES=	games
+PKGNAME=	${DISTNAME}-0.1
+DISTNAME=	eboard-extras
+DISTFILES=	${DISTNAME}-1pl2${EXTRACT_SUFX} \
+		${DISTNAME}-2${EXTRACT_SUFX}
+CATEGORIES=	games x11
 
 HOMEPAGE=	http://eboard.sourceforge.net/
 
@@ -22,10 +25,19 @@ NO_REGRESS=	Yes
 do-install:
 	$(INSTALL_DATA_DIR) $(PREFIX)/share/eboard
 	$(INSTALL_DATA_DIR) $(PREFIX)/share/doc/eboard
-	cd ${WRKSRC} && {					\
+	cd ${WRKDIR}/${DISTNAME}-1pl2 && {			\
 	  $(INSTALL_DATA) *.png *.wav $(PREFIX)/share/eboard;	\
 	  $(INSTALL_DATA) extras1.conf				\
 	    $(PREFIX)/share/eboard/themeconf.extras1;		\
-	  $(INSTALL_DATA) CREDITS $(PREFIX)/share/doc/eboard; }
+	  $(INSTALL_DATA) CREDITS				\
+	    $(PREFIX)/share/doc/eboard/CREDITS.1;		\
+	}
+	cd ${WRKDIR}/${DISTNAME}-2 && {				\
+	  $(INSTALL_DATA) *.png *.wav $(PREFIX)/share/eboard;	\
+	  $(INSTALL_DATA) extras2.conf				\
+	    $(PREFIX)/share/eboard/themeconf.extras2;		\
+	  $(INSTALL_DATA) CREDITS				\
+	    $(PREFIX)/share/doc/eboard/CREDITS.2;		\
+	}
 
 .include <bsd.port.mk>
