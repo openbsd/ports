@@ -3,24 +3,24 @@
 # Date created:         17 Nov 1997
 # Whom:                 ejovi
 #
-# $OpenBSD: Makefile,v 1.3 1998/03/05 23:49:31 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/03/16 15:15:29 mickey Exp $
 #
 
-BROKEN=		"referenced beta release no longer available"
-DISTNAME=       apache_1.3b3
-PKGNAME=	apache-1.3b3
+DISTNAME=       apache_1.3b5
+PKGNAME=	apache-1.3b5
 CATEGORIES=	www
 MASTER_SITES=   ftp://www.apache.org/apache/dist/
 
 # Official apache patches
+#	put in patches/ since they are pathless
 #
-PATCH_SITES=	ftp://www.apache.org/apache/dist/patches/apply_to_1.3b3/
-PATCHFILES=	no2slash-loop-fix.patch
-.if defined(PATCH_DEBUG)
-PATCH_DIST_ARGS=-d ${WRKSRC}/src/main -E ${PATCH_STRIP}
-.else
-PATCH_DIST_ARGS=-d ${WRKSRC}/src/main --forward --quiet -E ${PATCH_DIST_STRIP}
-.endif
+#PATCH_SITES=	ftp://www.apache.org/apache/dist/patches/apply_to_1.3b5/
+#PATCHFILES=	PR1847.patch PR1850.patch PR1889.patch
+#.if defined(PATCH_DEBUG)
+#PATCH_DIST_ARGS=-d ${WRKSRC}/src -E ${PATCH_STRIP}
+#.else
+#PATCH_DIST_ARGS=-d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
+#.endif
 
 MAINTAINER=	ports@OpenBSD.ORG
 

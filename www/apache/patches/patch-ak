@@ -1,0 +1,27 @@
+--- src/ap/ap_cpystrn.c	1998/01/07 16:45:55	1.3
++++ src/ap/ap_cpystrn.c	1998/02/20 20:02:39	1.5
+@@ -60,8 +60,8 @@
+  *   (2) strncpy() null fills, which is bogus, esp. when copy 8byte
+  *       strings into 8k blocks.
+  *   (3) Instead of returning the pointer to the beginning of
+- *       the destination string, we return the end so we can
+- *       "check" for truncation
++ *       the destination string, we return a pointer to the
++ *       terminating '\0' to allow us to "check" for truncation
+  *
+  * ap_cpystrn() follows the same call structure as strncpy().
+  */
+@@ -77,8 +77,11 @@
+     d = dst;
+     end = dst + dst_size - 1;
+ 
+-    while ((d < end) && (*d++ = *src++))
+-        ;	/* nop, the while does it all */
++    for (; d < end; ++d, ++src) {
++	if (!(*d = *src)) {
++	    return (d);
++	}
++    }
+ 
+     *d = '\0';	/* always null terminate */
+ 

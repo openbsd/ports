@@ -19,7 +19,7 @@ MAN_DIR=	$(SERVERROOT)/www/docs/manual
 MAN_FILES=	LICENSE TODO bind.html cgi_path.html content-negotiation.html \
 		custom-error.html dns-caveats.html env.html footer.html \
 		handler.html header.html index.html install.html \
-		install_1_1.html invoking.html keepalive.html location.html \
+		invoking.html keepalive.html location.html \
 		man-template.html multilogs.html process-model.html \
 		new_features_1_0.html new_features_1_1.html \
 		new_features_1_2.html new_features_1_3.html sections.html \
@@ -42,7 +42,7 @@ MOD_FILES=	core.html directive-dict.html directives.html \
 		footer.html header.html index.html mod_access.html \
 		mod_actions.html mod_alias.html mod_asis.html mod_auth.html \
 		mod_auth_anon.html mod_auth_db.html mod_auth_dbm.html \
-		mod_auth_msql.html mod_autoindex.html mod_browser.html \
+		mod_autoindex.html mod_browser.html \
 		mod_cern_meta.html mod_cgi.html mod_cookies.html \
 		mod_digest.html mod_dir.html mod_dld.html mod_dll.html \
 		mod_env.html mod_example.html mod_expires.html \
