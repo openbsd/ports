@@ -1,0 +1,8 @@
+The PyOpenBSD library allows Python programs to interact with the
+OpenBSD operating system in a smooth and seamless way. It consists of a
+set of bindings for various system libraries, as well as interfaces for
+inspecting in-kernel variables using kvm.
+
+PyOpenBSD also contains some useful functionality not directly or solely
+related to OpenBSD. At this stage there are no concrete plans to "spin
+off" architecture-independent projects.
