@@ -4,7 +4,7 @@
 # Date created:         2 December 1997
 # Whom:                 niklas
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/02 14:24:36 niklas Exp $
+# $OpenBSD: Makefile,v 1.2 1998/02/10 10:45:19 niklas Exp $
 # $FreeBSD: Makefile,v 1.3 1997/07/17 15:12:58 max Exp $
 #
 
@@ -34,12 +34,8 @@ do-install:
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} librsaref.a librsaref.so.2.0 \
 			${PREFIX}/lib
-.if (${MACHINE_ARCH} == "mips")
-	${LDCONFIG} -n ${PREFIX}/lib
-.else
+.endif
 	${LDCONFIG} -m ${PREFIX}/lib
-.endif
-.endif
 	install -d -m 555 ${PREFIX}/share/doc/rsaref
 	cd ${WRKDIR}/doc && \
 		${INSTALL_DATA} info.txt rsaref.txt \

@@ -90,7 +90,7 @@
   
   clean:
   	rm -f *.o libpng.a pngtest pngout.png
---- 52,69 ----
+--- 52,63 ----
   install: libpng.a
   	-@mkdir $(prefix)/include
   	-@mkdir $(prefix)/lib
@@ -99,13 +99,7 @@
 ! 	ranlib $(prefix)/lib/libpng.a
 ! .if(${MACHINE_ARCH} != "alpha")
 ! 	${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP} libpng.so.${VER} $(prefix)/lib
-! .if(${MACHINE_ARCH} == "mips")
-! 	${LDCONFIG} -n ${PREFIX}/lib
-! .else
-! 	${LDCONFIG} -m ${PREFIX}/lib
 ! .endif
-! .endif
-! 
   
   clean:
   	rm -f *.o libpng.a pngtest pngout.png

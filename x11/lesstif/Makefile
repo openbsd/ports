@@ -3,7 +3,7 @@
 # Date created:		December 1, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 1998/01/30 22:20:18 niklas Exp $
+# $OpenBSD: Makefile,v 1.4 1998/02/10 10:45:22 niklas Exp $
 #
 
 DISTNAME=	lesstif-0.82
@@ -56,12 +56,8 @@ post-install:
 		${PREFIX}/lib/X11/app-defaults/Mwm
 .if (${MACHINE_ARCH} != "alpha")
 	/usr/bin/strip ${PREFIX}/lib/libXm.so.0.1 ${PREFIX}/lib/libMrm.so.0.1
-.if (${MACHINE_ARCH} == "mips")
-	${LDCONFIG} -n ${PREFIX}/lib
-.else
+.endif
 	${LDCONFIG} -m ${PREFIX}/lib
-.endif
-.endif
 
 .include <bsd.port.mk>
 

@@ -3,7 +3,7 @@
 # Whom:			niklas
 # Version required:	5.25
 #
-# $Id: Makefile,v 1.2 1998/01/30 22:13:57 niklas Exp $
+# $Id: Makefile,v 1.3 1998/02/10 10:45:23 niklas Exp $
 #
 
 DISTNAME=	expect
@@ -35,12 +35,6 @@ test:
 	@(cd ${WRKSRC}; make test)
 
 post-install:
-.if (${MACHINE_ARCH} != "alpha")
-.if (${MACHINE_ARCH} == "mips")
-	${LDCONFIG} -n ${PREFIX}/lib
-.else
 	${LDCONFIG} -m ${PREFIX}/lib
-.endif
-.endif
 
 .include <bsd.port.mk>

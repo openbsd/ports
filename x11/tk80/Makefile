@@ -3,7 +3,7 @@
 # Date created:		2 December 1997
 # Whom:			niklas
 #
-# $OpenBSD: Makefile,v 1.2 1998/01/29 23:01:03 niklas Exp $
+# $OpenBSD: Makefile,v 1.3 1998/02/10 10:45:20 niklas Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 #
 
@@ -24,13 +24,7 @@ CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR} PATH=${PATH}:${X11BASE}/bin
 
 post-install:
-.if (${MACHINE_ARCH} != "alpha")
-.if (${MACHINE_ARCH} == "mips")
-	${LDCONFIG} -n ${PREFIX}/lib
-.else
 	${LDCONFIG} -m ${PREFIX}/lib
-.endif
-.endif
 
 test:
 	cd ${WRKSRC}; make test

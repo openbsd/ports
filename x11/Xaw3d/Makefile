@@ -3,7 +3,7 @@
 # Date created:		December 2, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1998/01/30 22:18:35 niklas Exp $
+# $OpenBSD: Makefile,v 1.3 1998/02/10 10:45:21 niklas Exp $
 #
 
 DISTNAME=	Xaw3d-1.3
@@ -21,12 +21,6 @@ post-extract:
 	cd ${WRKSRC}/X11/Xaw3d; ln -sf ../../*.h .
 
 post-install:
-.if ${MACHINE_ARCH} != "alpha"
-.if ${MACHINE_ARCH} == "mips"
-	${LDCONFIG} -n ${PREFIX}/lib
-.else
 	${LDCONFIG} -m ${PREFIX}/lib
-.endif
-.endif
 
 .include <bsd.port.mk>

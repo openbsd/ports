@@ -25,13 +25,7 @@ CONFIGURE_ARGS=	--disable-load
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
 
 post-install:
-.if (${MACHINE_ARCH} != "alpha")
-.if (${MACHINE_ARCH} == "mips")
-	${LDCONFIG} -n ${PREFIX}/lib
-.else
 	${LDCONFIG} -m ${PREFIX}/lib
-.endif
-.endif
 
 test:
 	cd ${WRKSRC} && ${MAKE} test
