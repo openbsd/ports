@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/07/15 22:52:46 avsm Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/07/19 22:41:25 naddy Exp $
 #
 # mod_gzip de-installation
 
@@ -20,7 +20,7 @@ echo "|"
 echo "|        edit ${CONF}"
 echo "|        remove the line LoadModule gzip_module"
 echo "|"
-echo "| Do not do this if you plan on re-installing $1"
+echo "| Do not do this if you plan on re-installing the $1"
 echo "| package at some future time."
 echo "+---------------"
 echo
