@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/15 17:58:50 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/08 18:56:34 wilfried Exp $
 
 COMMENT=	"base HTML library"
 
@@ -13,15 +13,22 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+CONFIGURE_STYLE=	perl
+
+NO_REGRESS=	Yes
+
 WRKDIST=	${WRKDIR}
+
+do-configure:
 
 do-build:
 	cd ${WRKSRC} && pod2man html_base.pod HTML::Base.3p
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML
+	${INSTALL_DATA_DIR} ${PREFIX}/${P5ARCH}/HTML
 	${INSTALL_DATA} ${WRKSRC}/HTML/Base.pm \
-		${PREFIX}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML
-	${INSTALL_MAN} ${WRKSRC}/HTML::Base.3p ${PREFIX}/man/man3
+		${PREFIX}/${P5ARCH}/HTML/
+	${INSTALL_MAN_DIR} ${PREFIX}/man/man3p/
+	${INSTALL_MAN} ${WRKSRC}/HTML::Base.3p ${PREFIX}/man/man3p/
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/06/02 12:12:26 espie Exp $
-libdata/perl5/site_perl/Business/CreditCard.pm
-man/man3/Business::CreditCard.3p
-@dirrm libdata/perl5/site_perl/Business
+@comment $OpenBSD: PLIST,v 1.2 2002/06/08 18:56:34 wilfried Exp $
+${P5SITE}/Business/CreditCard.pm
+man/man3p/Business::CreditCard.3p
+@dirrm ${P5SITE}/Business

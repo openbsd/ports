@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/13 23:31:26 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/08 18:56:34 wilfried Exp $
 
 COMMENT=	"verify credit card pins"
 
@@ -14,12 +14,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+CONFIGURE_STYLE=	perl
+
+NO_REGRESS=		Yes
+
+do-configure:
+
 do-build:
 	@cd ${WRKSRC} && pod2man CreditCard.pm > Business::CreditCard.3p
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/libdata/perl5/site_perl/Business
-	${INSTALL_DATA} ${WRKSRC}/CreditCard.pm ${PREFIX}/libdata/perl5/site_perl/Business
-	${INSTALL_MAN} ${WRKSRC}/Business::CreditCard.3p ${PREFIX}/man/man3
+	${INSTALL_DATA_DIR} ${PREFIX}/${P5SITE}/Business
+	${INSTALL_DATA} ${WRKSRC}/CreditCard.pm ${PREFIX}/${P5SITE}/Business/
+	${INSTALL_MAN_DIR} ${PREFIX}/man/man3p/
+	${INSTALL_MAN} ${WRKSRC}/Business::CreditCard.3p ${PREFIX}/man/man3p/
 
 .include <bsd.port.mk>
