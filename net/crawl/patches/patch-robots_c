@@ -1,0 +1,22 @@
+$OpenBSD: patch-robots_c,v 1.1 2002/07/16 16:08:23 naddy Exp $
+--- robots.c.orig	Tue Jul 16 02:07:20 2002
++++ robots.c	Tue Jul 16 02:08:50 2002
+@@ -98,10 +98,14 @@ http_robots_init(void)
+ void
+ http_robots_print_stats(void)
+ {
+-	fprintf(stdout, "Robots.txt inspected: %d\n", robot_stats.robotfiles);
+-	fprintf(stdout, "  matched useragent %d times\n", robot_stats.matches);
+-	fprintf(stdout, "  replaced %d entries\n", robot_stats.replacements);
+-	fprintf(stdout, "  rejected %d requests\n", robot_stats.rejects);
++	fprintf(stdout, "Robots.txt inspected: %lu\n",
++		(unsigned long)robot_stats.robotfiles);
++	fprintf(stdout, "  matched useragent %lu times\n",
++		(unsigned long)robot_stats.matches);
++	fprintf(stdout, "  replaced %lu entries\n",
++		(unsigned long)robot_stats.replacements);
++	fprintf(stdout, "  rejected %lu requests\n",
++		(unsigned long)robot_stats.rejects);
+ 	fprintf(stdout, "  average list search: %f\n",
+ 		(float)robot_stats.iterations/robot_stats.calls);
+ }

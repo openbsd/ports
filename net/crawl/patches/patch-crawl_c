@@ -1,5 +1,17 @@
---- crawl.c~	Sat Feb 23 17:20:54 2002
-+++ crawl.c	Sun Feb 24 02:51:36 2002
+$OpenBSD: patch-crawl_c,v 1.2 2002/07/16 16:08:23 naddy Exp $
+--- crawl.c.orig	Mon Jan 28 04:01:47 2002
++++ crawl.c	Tue Jul 16 02:03:34 2002
+@@ -159,8 +159,8 @@ image_saver(struct uri *uri)
+ 		return (-1);
+ 
+ 	if (uri->length != -1 && uri->bdlen != uri->length) {
+-		snprintf(tmp, sizeof(tmp), " (%4.1f%%/%d)",
+-		    (float)uri->bdlen/uri->length*100, uri->length);
++		snprintf(tmp, sizeof(tmp), " (%4.1f%%/%ld)",
++		    (float)uri->bdlen/uri->length*100, (long)uri->length);
+ 		p = tmp;
+ 	}
+ 	fprintf(stdout, "%s %s%s\n",
 @@ -408,7 +408,7 @@ main(int argc, char **argv)
  	char *state = "crawl.state";
  	char *external = NULL;

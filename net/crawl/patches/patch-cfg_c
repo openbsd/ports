@@ -1,0 +1,23 @@
+$OpenBSD: patch-cfg_c,v 1.1 2002/07/16 16:08:23 naddy Exp $
+--- cfg.c.orig	Tue Jul 16 02:06:04 2002
++++ cfg.c	Tue Jul 16 02:07:08 2002
+@@ -182,7 +182,8 @@ conf_set_now (char *section, char *tag, 
+ 
+ 	node = calloc (1, sizeof *node);
+ 	if (!node) {
+-		warn("conf_set: calloc (1, %d) failed", sizeof *node);
++		warn("conf_set: calloc (1, %lu) failed",
++		     (unsigned long)sizeof *node);
+ 		return (1);
+ 	}
+ 	node->section = strdup (section);
+@@ -612,7 +613,8 @@ conf_trans_node (int transaction, enum c
+ 
+ 	node = calloc (1, sizeof *node);
+ 	if (!node) {
+-		warn("conf_trans_node: calloc (1, %d) failed", sizeof *node);
++		warn("conf_trans_node: calloc (1, %lu) failed",
++		     (unsigned long)sizeof *node);
+ 		return (0);
+ 	}
+ 	node->trans = transaction;

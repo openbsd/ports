@@ -1,0 +1,73 @@
+$OpenBSD: patch-http_c,v 1.1 2002/07/16 16:08:23 naddy Exp $
+--- http.c.orig	Mon Jan 28 04:37:16 2002
++++ http.c	Tue Jul 16 01:59:54 2002
+@@ -210,7 +210,7 @@ http_init(char *filename)
+ 
+ 	TAILQ_INIT(&dispatchqueue);
+ 
+-	timeout_set(&ev_timeout, http_posteventcb, NULL);
++	evtimer_set(&ev_timeout, http_posteventcb, NULL);
+ 
+ 	if (use_robots)
+ 		http_robots_init();
+@@ -250,19 +250,21 @@ http_print_stats(void)
+ 	spent = time(NULL) - http_stats.start;
+ 	bytes = http_stats.headerbytes + http_stats.bodybytes;
+ 
+-	fprintf(stdout, "%d GET for body %d Kbytes\n",
+-		http_stats.gets, http_stats.bodybytes / 1024);
+-	fprintf(stdout, "%d HEAD for header %d Kbytes\n",
+-		http_stats.heads, http_stats.headerbytes / 1024);
++	fprintf(stdout, "%lu GET for body %lu Kbytes\n",
++		(unsigned long)http_stats.gets,
++		(unsigned long)http_stats.bodybytes / 1024);
++	fprintf(stdout, "%lu HEAD for header %lu Kbytes\n",
++		(unsigned long)http_stats.heads,
++		(unsigned long)http_stats.headerbytes / 1024);
+ 	fprintf(stdout, "% 8.3f Requests/sec\n",
+ 		(float)(http_stats.gets + http_stats.heads)/ spent);
+ 	fprintf(stdout, "Throughput %f KBytes/sec\n",
+ 		(float) bytes / 1024 / spent);
+-	fprintf(stdout, "Max fifo size: %d, %f Kbyte, current: %d/%d\n",
+-		http_stats.maxsize,
++	fprintf(stdout, "Max fifo size: %lu, %f Kbyte, current: %lu/%d\n",
++		(unsigned long)http_stats.maxsize,
+ 		(float) http_stats.maxsize *
+ 		(sizeof(struct uri_small) + 80)/1024,
+-		http_stats.fifosize, connections);
++		(unsigned long)http_stats.fifosize, connections);
+ 
+ 	if (use_robots)
+ 		http_robots_print_stats();
+@@ -681,7 +683,7 @@ http_savestate(void)
+ 	FILE *fpstate = NULL;
+ 	int linenum = 0;
+ 
+-	timeout_del(&ev_timeout);
++	evtimer_del(&ev_timeout);
+ 
+ 	fprintf(stdout, "Terminating...\n");
+ 
+@@ -885,11 +887,11 @@ dns_schedule(int media)
+ 		res = http_schedule(NULL, head);
+ 
+ 	if (res == -1 && timerisset(&tv_min) && 
+-	    !timeout_pending(&ev_timeout, NULL)) {
++	    !evtimer_pending(&ev_timeout, NULL)) {
+ 		struct timeval tv;
+ 		timersub(&tv_min, &now, &tv);
+ 
+-		timeout_add(&ev_timeout, &tv);
++		evtimer_add(&ev_timeout, &tv);
+ 	}
+ 
+ 	return (res);
+@@ -919,7 +921,7 @@ http_postevent(void)
+ 	}
+ 
+ 	/* We are calling schedule, schedule adds a new timeout if necessary */
+-	timeout_del(&ev_timeout);
++	evtimer_del(&ev_timeout);
+ 
+ 	/* media list first */
+ 	res = dns_schedule(1);
