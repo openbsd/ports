@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/04/02 09:19:07 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/04/10 13:26:50 wilfried Exp $
 ${P5ARCH}/Term/ReadLine/Gnu.pm
 ${P5ARCH}/Term/ReadLine/Gnu/XS.pm
 ${P5ARCH}/Term/ReadLine/Gnu/euc_jp.pm
@@ -8,7 +8,7 @@ ${P5ARCH}/auto/Term/ReadLine/Gnu/Gnu.so
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/autosplit.ix
 @comment ${P5ARCH}/perllocal.pod
 man/man3p/Term::ReadLine::Gnu.3p
-@dirrm man/man3p
+@comment @dirrm man/man3p
 @dirrm ${P5ARCH}/auto/Term/ReadLine/Gnu/XS
 @dirrm ${P5ARCH}/auto/Term/ReadLine/Gnu
 @comment @dirrm ${P5ARCH}/auto/Term/ReadLine
