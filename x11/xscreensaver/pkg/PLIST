@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/08/27 02:46:17 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/02/18 19:10:33 marcm Exp $
 !%%no_gle%%
+%%gtk2%%
+@comment bin/screensaver-properties-capplet
 bin/xscreensaver
 bin/xscreensaver-command
 bin/xscreensaver-demo
@@ -54,6 +56,7 @@ lib/xscreensaver/config/forest.xml
 lib/xscreensaver/config/galaxy.xml
 lib/xscreensaver/config/gears.xml
 lib/xscreensaver/config/gflux.xml
+lib/xscreensaver/config/glblur.xml
 lib/xscreensaver/config/glforestfire.xml
 lib/xscreensaver/config/glplanet.xml
 lib/xscreensaver/config/glsnake.xml
@@ -62,6 +65,7 @@ lib/xscreensaver/config/goban.xml
 lib/xscreensaver/config/goop.xml
 lib/xscreensaver/config/grav.xml
 lib/xscreensaver/config/greynetic.xml
+lib/xscreensaver/config/halftone.xml
 lib/xscreensaver/config/halo.xml
 lib/xscreensaver/config/helix.xml
 lib/xscreensaver/config/hopalong.xml
@@ -207,6 +211,7 @@ libexec/xscreensaver/forest
 libexec/xscreensaver/galaxy
 libexec/xscreensaver/gears
 libexec/xscreensaver/gflux
+libexec/xscreensaver/glblur
 libexec/xscreensaver/glforestfire
 libexec/xscreensaver/glplanet
 libexec/xscreensaver/glsnake
@@ -214,6 +219,7 @@ libexec/xscreensaver/gltext
 libexec/xscreensaver/goop
 libexec/xscreensaver/grav
 libexec/xscreensaver/greynetic
+libexec/xscreensaver/halftone
 libexec/xscreensaver/halo
 libexec/xscreensaver/helix
 libexec/xscreensaver/hopalong
@@ -353,6 +359,7 @@ man/man1/forest.1
 man/man1/galaxy.1
 man/man1/gears.1
 man/man1/gflux.1
+man/man1/glblur.1
 man/man1/glforestfire.1
 man/man1/glplanet.1
 man/man1/glsnake.1
@@ -360,6 +367,7 @@ man/man1/gltext.1
 man/man1/goop.1
 man/man1/grav.1
 man/man1/greynetic.1
+man/man1/halftone.1
 man/man1/halo.1
 man/man1/helix.1
 man/man1/hopalong.1
@@ -461,6 +469,10 @@ man/man1/xspirograph.1
 man/man1/xsublim.1
 man/man1/xteevee.1
 man/man1/zoom.1
+@comment share/applications/screensaver-properties.desktop
+share/control-center/Desktop/screensaver-properties.desktop
+@comment share/control-center/capplets/screensaver-properties.desktop
+@comment share/gnome/apps/Settings/Desktop/screensaver-properties.desktop
 share/locale/ca/LC_MESSAGES/xscreensaver.mo
 share/locale/da/LC_MESSAGES/xscreensaver.mo
 share/locale/de/LC_MESSAGES/xscreensaver.mo
@@ -472,12 +484,18 @@ share/locale/hu/LC_MESSAGES/xscreensaver.mo
 share/locale/it/LC_MESSAGES/xscreensaver.mo
 share/locale/ja/LC_MESSAGES/xscreensaver.mo
 share/locale/ko/LC_MESSAGES/xscreensaver.mo
+share/locale/nl/LC_MESSAGES/xscreensaver.mo
 share/locale/no/LC_MESSAGES/xscreensaver.mo
 share/locale/pl/LC_MESSAGES/xscreensaver.mo
 share/locale/pt/LC_MESSAGES/xscreensaver.mo
 share/locale/ru/LC_MESSAGES/xscreensaver.mo
+share/locale/sk/LC_MESSAGES/xscreensaver.mo
 share/locale/sv/LC_MESSAGES/xscreensaver.mo
+share/locale/vi/LC_MESSAGES/xscreensaver.mo
 share/locale/wa/LC_MESSAGES/xscreensaver.mo
+share/locale/zh_CN/LC_MESSAGES/xscreensaver.mo
+share/locale/zh_TW/LC_MESSAGES/xscreensaver.mo
+share/pixmaps/xscreensaver.xpm
 share/xscreensaver/screensaver-cmndln.xpm
 share/xscreensaver/screensaver-colorselector.xpm
 share/xscreensaver/screensaver-diagnostic.xpm
@@ -487,6 +505,60 @@ share/xscreensaver/screensaver-snap.xpm
 share/xscreensaver/xscreensaver-demo.glade2
 share/xscreensaver/xscreensaver.xpm
 @dirrm share/xscreensaver
+@comment @dirrm share/pixmaps
+@comment @dirrm share/locale/zh_TW/LC_MESSAGES
+@comment @dirrm share/locale/zh_TW
+@comment @dirrm share/locale/zh_CN/LC_MESSAGES
+@comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/wa/LC_MESSAGES
+@comment @dirrm share/locale/wa
+@comment @dirrm share/locale/vi/LC_MESSAGES
+@comment @dirrm share/locale/vi
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sk/LC_MESSAGES
+@comment @dirrm share/locale/sk
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale/pt/LC_MESSAGES
+@comment @dirrm share/locale/pt
+@comment @dirrm share/locale/pl/LC_MESSAGES
+@comment @dirrm share/locale/pl
+@comment @dirrm share/locale/no/LC_MESSAGES
+@comment @dirrm share/locale/no
+@comment @dirrm share/locale/nl/LC_MESSAGES
+@comment @dirrm share/locale/nl
+@comment @dirrm share/locale/ko/LC_MESSAGES
+@comment @dirrm share/locale/ko
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/hu/LC_MESSAGES
+@comment @dirrm share/locale/hu
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/fi/LC_MESSAGES
+@comment @dirrm share/locale/fi
+@comment @dirrm share/locale/et/LC_MESSAGES
+@comment @dirrm share/locale/et
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale/ca/LC_MESSAGES
+@comment @dirrm share/locale/ca
+@comment @dirrm share/locale
+@comment @dirrm share/gnome/apps/Settings/Desktop
+@comment @dirrm share/gnome/apps/Settings
+@comment @dirrm share/gnome/apps
+@comment @dirrm share/gnome
+@comment @dirrm share/control-center/capplets
+@comment @dirrm share/control-center/Desktop
+@comment @dirrm share/control-center
+@comment @dirrm share/applications
 @dirrm libexec/xscreensaver
 @dirrm lib/xscreensaver/config
 @dirrm lib/xscreensaver

@@ -1,7 +1,7 @@
-$OpenBSD: patch-driver_xscreensaver_man,v 1.2 2002/06/26 02:36:04 lebel Exp $
---- driver/xscreensaver.man.orig	Tue Jun 11 05:09:05 2002
-+++ driver/xscreensaver.man	Tue Jun 25 21:21:50 2002
-@@ -1311,7 +1311,7 @@ and a FAQ can always be found at http://
+$OpenBSD: patch-driver_xscreensaver_man,v 1.3 2003/02/18 19:10:33 marcm Exp $
+--- driver/xscreensaver.man.orig	Wed Oct 23 18:34:46 2002
++++ driver/xscreensaver.man	Mon Jan 20 15:40:07 2003
+@@ -1320,7 +1320,7 @@ and a FAQ can always be found at http://
  .BR crystal (1),
  .BR cynosure (1),
  .BR decayscreen (1),

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.1 2002/08/27 02:46:17 lebel Exp $
---- configure.in.orig	Tue Jun 11 02:02:00 2002
-+++ configure.in	Tue Aug 20 20:34:13 2002
-@@ -1823,6 +1823,10 @@ AC_ARG_WITH(gtk,
+$OpenBSD: patch-configure_in,v 1.2 2003/02/18 19:10:33 marcm Exp $
+--- configure.in.orig	Wed Oct 23 05:24:25 2002
++++ configure.in	Mon Jan 20 20:14:39 2003
+@@ -1821,6 +1821,10 @@ AC_ARG_WITH(gtk,
  [  --with-gtk              Use the Gtk toolkit for the user interface.],
    [with_gtk="$withval"; with_gtk_req="$withval"],[with_gtk=yes])
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure_in,v 1.1 2002/08/27 02:46:17 lebel Exp $
  # if --with-gtk=/directory/ was specified, remember that directory so that
  # we can also look for the `gtk-config' program in that directory.
  case "$with_gtk" in
-@@ -1904,7 +1908,12 @@ if test "$with_gtk" = yes; then
+@@ -1902,7 +1906,12 @@ if test "$with_gtk" = yes; then
      gtk_path="$foo:$gtk_path"
    fi
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-configure_in,v 1.1 2002/08/27 02:46:17 lebel Exp $
  
    if test -n "$pkg_config" ; then
      #
-@@ -1953,7 +1962,10 @@ if test "$with_gtk" = yes; then
+@@ -1952,7 +1961,10 @@ if test "$with_gtk" = yes; then
        fi
      fi
  
@@ -38,3 +38,57 @@ $OpenBSD: patch-configure_in,v 1.1 2002/08/27 02:46:17 lebel Exp $
        #
        # we don't have GTK 2.  Let's look for GTK 1.
        #
+@@ -2098,7 +2110,7 @@ if test "$with_gtk" = yes; then
+ 
+   fi   # end of {gnome,gtk}-config based tests
+ 
+-  if test "$have_gtk" = yes -a "$have_gtk2" = no; then
++  if test "$have_gnome" = yes -a "$have_gtk2" = no; then
+     # check for this function that was not in libcapplet 1.2.
+     # (only needed in Gnome/Gtk 1.x, not Gnome/Gtk 2.x)
+     AC_CHECK_X_LIB(capplet, capplet_widget_changes_are_immediate,
+@@ -2113,7 +2125,7 @@ if test "$with_gtk" = yes; then
+       if test "$have_gtk2" = yes; then
+         GNOME_DATADIR=`$pkg_config --variable=prefix gtk+-2.0`
+       else
+-        GNOME_DATADIR=`$pkg_config --variable=prefix gtk+`
++        GNOME_DATADIR=`$gtk_config --prefix`
+       fi
+     else
+       GNOME_DATADIR=`$gtk_config --prefix`
+@@ -2511,7 +2523,7 @@ if test "$with_gl" = yes; then
+     # link -lpthread after the Mesa libs (be they named -lGL or -lMesaGL.)
+     #
+     if test "$ac_have_mesa_gl" = yes; then
+-      AC_CHECK_LIB(pthread, pthread_create, [GL_LIBS="-lpthread"], [],)
++      AC_CHECK_LIB(pthread, pthread_create, [GL_LIBS="-pthread"], [],)
+     fi
+ 
+ 
+@@ -3326,7 +3338,7 @@ fi
+ # config files get installed.
+ #
+ if test -z "$HACK_CONF_DIR" ; then
+-  if test -n "$GNOME_DATADIR" ; then
++  if test "x$with_gnome" == "xyes"; then
+     HACK_CONF_DIR='${GNOME_DATADIR}/control-center/screensavers'
+   else
+     HACK_CONF_DIR='${prefix}/lib/xscreensaver/config'
+@@ -3350,7 +3362,7 @@ elif test "$have_gtk" = yes; then
+     if test "$have_gtk2" = yes; then
+       GLADE_DATADIR=`$pkg_config --variable=prefix gtk+-2.0`
+     else
+-      GLADE_DATADIR=`$pkg_config --variable=prefix gtk+`
++      GLADE_DATADIR=`$gtk_config --prefix`
+     fi
+   else
+     GLADE_DATADIR=`$gtk_config --prefix`
+@@ -3371,7 +3383,7 @@ elif test "$have_gtk" = yes; then
+     if test "$have_gtk2" = yes; then
+       PO_DATADIR=`$pkg_config --variable=prefix gtk+-2.0`
+     else
+-      PO_DATADIR=`$pkg_config --variable=prefix gtk+`
++      PO_DATADIR=`$gtk_config --prefix`
+     fi
+   else
+     PO_DATADIR=`$gtk_config --prefix`
