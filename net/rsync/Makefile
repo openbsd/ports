@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2002/06/08 15:45:28 todd Exp $
+# $OpenBSD: Makefile,v 1.35 2002/10/25 15:49:54 naddy Exp $
 
 COMMENT=	"mirroring/synchronization over low bandwidth links"
 
 DISTNAME=	rsync-2.5.5
 CATEGORIES=	net
-NEED_VERSION=	1.504
 HOMEPAGE=	http://rsync.samba.org/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
@@ -35,7 +34,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tech_report.tex ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/test.sh ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/rsyncstats ${DOCDIR}
-
-NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
