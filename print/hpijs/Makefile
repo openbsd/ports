@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/18 12:48:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/02/20 17:39:06 millert Exp $
 
 COMMENT=		"HP Inkjet driver for ghostscript"
 
-DISTNAME=		hpijs-1.3.1
+DISTNAME=		hpijs-1.5
 CATEGORIES=		print
 
 HOMEPAGE=		http://hpinkjet.sourceforge.net/
