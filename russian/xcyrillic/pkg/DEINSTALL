@@ -1,10 +1,10 @@
-# $OpenBSD: DEINSTALL,v 1.1 2000/01/19 08:30:28 form Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2000/03/29 20:23:04 form Exp $
 #
 # xcyrillic de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
-PREFIX=${PKG_PREFIX:-/usr/X11R6}
+PREFIX=${PKG_PREFIX:-/usr/local}
 
 	echo
 	echo "+---------------"
