@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Mar 15 13:03:42 2001
++++ Makefile.in	Thu Mar 15 13:04:03 2001
+@@ -17,7 +17,7 @@ CCOPT = 
+ LIBPCAPDIR = @libpcapdir@
+ INCLS = -I$(LIBPCAPDIR) 
+ DEFS = @DEFS@ -DNMAP_VERSION=\"$(NMAP_VERSION)\" -DNMAP_NAME=\"$(NMAP_NAME)\" -DNMAP_URL=\"$(NMAP_URL)\" -DNMAP_PLATFORM=\"$(NMAP_PLATFORM)\" -DNMAPDATADIR=\"$(nmapdatadir)\"
+-CFLAGS = -g @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
++CFLAGS = @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
+ # CFLAGS = -g -Wall $(DEFS) $(INCLS)
+ STATIC = 
+ LDFLAGS = @LDFLAGS@ $(STATIC)

@@ -1,0 +1,11 @@
+--- nbase/Makefile.in.orig	Thu Mar 15 13:04:25 2001
++++ nbase/Makefile.in	Thu Mar 15 13:04:40 2001
+@@ -10,7 +10,7 @@ AR = ar
+ RANLIB = @RANLIB@
+ CCOPT = 
+ DEFS = @DEFS@ -DNCRACK_VERSION=\"$(NCRACK_VERSION)\" -DHAVE_CONFIG_H=1
+-CFLAGS = @CFLAGS@ -g $(CCOPT) $(GLIB_CFLAGS) $(DEFS) $(INCLS)
++CFLAGS = @CFLAGS@ $(CCOPT) $(GLIB_CFLAGS) $(DEFS) $(INCLS)
+ # CFLAGS = -g -Wall $(DEFS) $(INCLS)
+ STATIC = 
+ LDFLAGS = @LDFLAGS@ $(STATIC)
