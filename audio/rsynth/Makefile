@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/12/23 07:56:36 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2004/03/02 07:57:21 brad Exp $
 
 COMMENT=	"speech synthesizer"
 DISTNAME=	rsynth-2.0
@@ -15,7 +15,6 @@ FAKE_FLAGS=		PREFIX=${WRKINST}${PREFIX}
 LIB_DEPENDS=	gdbm.::databases/gdbm
 
 CONFIGURE_STYLE=autoconf
-AUTOCONF_NEW=Yes
 CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_ARGS=	`$(CC) -dumpmachine`
 SEPARATE_BUILD=	simple

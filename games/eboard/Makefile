@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2004/02/25 02:35:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2004/03/02 07:57:21 brad Exp $
 
 COMMENT=	"gtk+ chess board interface"
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=		Imlib.19,gdk_imlib::graphics/imlib
 MODULES=		gettext
 
 USE_X11=		Yes
-AUTOCONF_NEW=		Yes
+AUTOCONF_VERSION=	2.52
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
                 LDFLAGS="-L${LOCALBASE}/lib"

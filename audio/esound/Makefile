@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2002/11/21 02:33:59 margarida Exp $
+# $OpenBSD: Makefile,v 1.31 2004/03/02 07:57:21 brad Exp $
 # $FreeBSD: Makefile,v 1.8 1999/03/09 01:08:46 nectar Exp $
 
 COMMENT=	"sound library for Enlightenment"
@@ -21,7 +21,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
-AUTOCONF_NEW=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --with-libwrap
 

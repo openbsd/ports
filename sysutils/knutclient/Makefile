@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/17 09:18:56 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2004/03/02 07:57:20 brad Exp $
 
 COMMENT=		"KDE UPS Monitoring tool"
 
@@ -20,7 +20,6 @@ MASTER_SITES=		ftp://ftp.buzuluk.cz/pub/alo/knutclient/
 EXTRACT_SUFX=		.tar.gz
 
 # Patch Hack
-MODKDE_VERSION=		NoPatch
 MODULES=		kde
 
 LIB_DEPENDS=		DCOP,kdecore.4,kdefx,kdeui::x11/kde/libs3 \
@@ -30,7 +29,7 @@ USE_X11=		Yes
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_NEW=		Yes
+AUTOCONF_VERSION=	2.52
 MODGNU_CONFIG_GUESS_DIRS=	${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}

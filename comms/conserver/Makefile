@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2003/07/09 07:17:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.25 2004/03/02 07:57:21 brad Exp $
 
 COMMENT=	"manage remote serial consoles via TCP/IP"
 
@@ -9,7 +9,7 @@ MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
 HOMEPAGE=	http://www.conserver.com
 
-# License: BSD
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.conserver.com/conserver/
 
-AUTOCONF_NEW=	Yes
+AUTOCONF_VERSION= 2.54
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--with-64bit \
 		--with-master=localhost

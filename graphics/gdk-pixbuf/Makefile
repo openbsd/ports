@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2003/12/19 19:48:32 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2004/03/02 07:57:21 brad Exp $
 
 COMMENT=	"GdkPixbuf graphics library"
 COMMENT-gnome=	"GdkPixbuf graphics library (GNOME Canvas)"
@@ -22,7 +22,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gdk-pixbuf/0.22/}
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
-AUTOCONF_NEW=	Yes
+AUTOCONF_VERSION= 2.52
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --disable-modules \
 		 --disable-mmx \
