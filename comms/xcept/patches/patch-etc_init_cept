@@ -1,0 +1,39 @@
+$OpenBSD: patch-etc_init_cept,v 1.1 2000/09/03 16:25:05 espie Exp $
+--- etc/init.cept.orig	Tue Jun 28 16:09:20 1994
++++ etc/init.cept	Sun Sep  3 17:29:38 2000
+@@ -26,30 +26,16 @@
+ # '\' = quote character    e.g. \^ \~ \\
+ # '^' = control character  e.g. ^M = return  ^J = line_feed
+ #############################################################################
+-opendevice	38400	"/dev/ttyF00"
+-hangupstring		"~+++~ATH0^M"
+-connectstring		"CONNECT 2400"
++opendevice	38400	"/dev/cuaa0"
++hangupstring		"~+++~ATH0^M~ATZ"
++connectstring		"CONNECT"
+ nodialtonestring 	"NO DIALTONE^M"
+ nocarrierstring 	"NO CARRIER^M"
+ busystring 		"BUSY^M"
+ 
+ 
+-send            "at^M"
+-sleep 10
+ send            "ATZ^M"        	# reset
+-sleep 20
+-send 		"AT&D2^M"	# hangup when DTR off
+-sleep 4
+-send 		"ATQ0^M"	#
+-sleep 4
+-send		"ATV1^M"
+-sleep 4
+-send 		"AT^M"	# dial-in/out modem
+-sleep 4
+-send 		"ATS21=24^M"	# CD from phone line
+-sleep 4
+-send 		"ATS2=255^M"	# no +++ allowed
+-sleep 4
+-send 		"~ATDT01300190^M"
++sleep 10
++send 		"~ATD01910^M"	# Btx service Deutsche Telekom
+ 
+ wait		100	# wait 100 sec for BUSY, CONNECT, NO CARRIER, ....

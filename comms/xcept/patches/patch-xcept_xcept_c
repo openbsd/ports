@@ -1,0 +1,11 @@
+$OpenBSD: patch-xcept_xcept_c,v 1.1 2000/09/03 16:25:05 espie Exp $
+--- xcept/xcept.c.orig	Mon Apr 25 16:13:26 1994
++++ xcept/xcept.c	Sun Sep  3 17:29:40 2000
+@@ -945,7 +945,6 @@ char *str;
+ int perr, p1, p2, p3, p4, p5, p6, p7, p8;
+ {
+    extern int errno;
+-   extern char *sys_errlist[];
+    static char errstr[200];
+ 
+    if(!visible) {

@@ -1,0 +1,31 @@
+$OpenBSD: patch-xcept_script_c,v 1.1 2000/09/03 16:25:05 espie Exp $
+--- xcept/script.c.orig	Fri Sep 24 16:07:29 1993
++++ xcept/script.c	Sun Sep  3 17:29:40 2000
+@@ -809,7 +809,6 @@ static s_strcat()
+    if(a->value == b->value)
+       return error("pc: %d - variables don't differ!\n",pc);
+    len = strlen(a->value) + strlen(b->value) + 1;
+-   free(a->value);
+    if(!(a->value = ralloc(a->value,len))) return errorp("realloc\n");
+    strcat(a->value,b->value);
+    
+@@ -1082,7 +1081,8 @@ static s_input()
+ 	    printf( "%s", b->value );
+ 	    fflush(stdout);
+ 	 }
+-	 gets(tmpstr); 
++	 fgets(tmpstr, 300, stdin); 
++	 if ((ptr = strchr(tmpstr, '\n'))) *ptr = '\0';
+    }
+    else if(visible) {
+       if(echo) {
+@@ -1105,7 +1105,8 @@ static s_input()
+ 	 }
+ 	 printf("?  ");
+ 	 fflush(stdout);
+-	 gets(tmpstr); 
++	 fgets(tmpstr, 300, stdin); 
++	 if ((ptr = strchr(tmpstr, '\n'))) *ptr = '\0';
+ 	 if( !strlen(tmpstr) ) strncpy( tmpstr, c->value, sizeof(tmpstr)-1 );
+       }
+    }

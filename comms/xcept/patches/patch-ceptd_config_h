@@ -1,0 +1,12 @@
+$OpenBSD: patch-ceptd_config_h,v 1.1 2000/09/03 16:25:05 espie Exp $
+--- ceptd/config.h.orig	Wed Jul 27 10:28:38 1994
++++ ceptd/config.h	Sun Sep  3 17:29:34 2000
+@@ -49,7 +49,7 @@
+ 
+ #undef NO_STRERROR    /* define NO_STRERROR if you don't have strerror func. */
+ #define HASTERMIOS    /* define HASTERMIOS if system has termios.h */
+-#undef	ASCIIPID      /* define if your system writes pid in ascii to
++#define	ASCIIPID      /* define if your system writes pid in ascii to
+ 			 uucp-lock */
+ 
+ #endif /* __bsdi__ */

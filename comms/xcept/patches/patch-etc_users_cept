@@ -1,57 +1,6 @@
---- /dev/null	Sun Sep  1 12:14:31 1996
-+++ etc/Makefile	Sun Sep  1 14:38:51 1996
-@@ -0,0 +1,11 @@
-+DESTDIR = ${PREFIX}/etc
-+MODE= 644
-+OWNER= root
-+GROUP= bin
-+
-+all:
-+
-+install:
-+	mkdir -p ${DESTDIR}
-+	${INSTALL} -c -m ${MODE} -o ${OWNER} -g ${GROUP} init.cept ${DESTDIR}/cept.init
-+	${INSTALL} -c -m ${MODE} -o ${OWNER} -g ${GROUP} users.cept ${DESTDIR}/cept.users
---- etc/init.cept.orig	Tue Jun 28 16:09:20 1994
-+++ etc/init.cept	Sun Sep  1 15:14:18 1996
-@@ -26,30 +26,16 @@
- # '\' = quote character    e.g. \^ \~ \\
- # '^' = control character  e.g. ^M = return  ^J = line_feed
- #############################################################################
--opendevice	38400	"/dev/ttyF00"
-+opendevice	38400	"/dev/cuaa0"
--hangupstring		"~+++~ATH0^M"
--connectstring		"CONNECT 2400"
-+hangupstring		"~+++~ATH0^M~ATZ"
-+connectstring		"CONNECT"
- nodialtonestring 	"NO DIALTONE^M"
- nocarrierstring 	"NO CARRIER^M"
- busystring 		"BUSY^M"
- 
- 
--send            "at^M"
--sleep 10
- send            "ATZ^M"        	# reset
--sleep 20
--send 		"AT&D2^M"	# hangup when DTR off
--sleep 4
--send 		"ATQ0^M"	#
--sleep 4
--send		"ATV1^M"
--sleep 4
--send 		"AT^M"	# dial-in/out modem
--sleep 4
--send 		"ATS21=24^M"	# CD from phone line
--sleep 4
--send 		"ATS2=255^M"	# no +++ allowed
--sleep 4
--send 		"~ATDT01300190^M"
-+sleep 10
-+send 		"~ATD01910^M"	# Btx service Deutsche Telekom
- 
- wait		100	# wait 100 sec for BUSY, CONNECT, NO CARRIER, ....
+$OpenBSD: patch-etc_users_cept,v 1.1 2000/09/03 16:25:05 espie Exp $
 --- etc/users.cept.orig	Tue Jun 28 16:09:30 1994
-+++ etc/users.cept	Sun Sep  1 15:14:41 1996
++++ etc/users.cept	Sun Sep  3 17:29:38 2000
 @@ -16,223 +16,7 @@
  # (every user is allowed on every machine)
  ############################################################################

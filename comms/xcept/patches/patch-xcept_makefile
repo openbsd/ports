@@ -1,6 +1,7 @@
+$OpenBSD: patch-xcept_makefile,v 1.1 2000/09/03 16:25:05 espie Exp $
 --- xcept/makefile.orig	Fri May 13 12:19:55 1994
-+++ xcept/makefile	Sun Sep  1 14:27:37 1996
-@@ -48,23 +48,31 @@
++++ xcept/makefile	Sun Sep  3 17:41:23 2000
+@@ -48,24 +48,25 @@ SERVERPORT = 20005
  #   should be displayed in the scripts menu. (Only used when not
  #   overridden by enironment variable XCEPTSCRIPTS or by command line
  #   option '-S').
@@ -22,25 +23,20 @@
  OWNER	= bin
 -GROUP	= uucp
 -MODE	= 755
-+GROUP	= bin
-+BINMODE	= 755
 -BINDIR	= /usr/local/bin
 -MANDIR	= /usr/local/man/manl
+-
++GROUP	= bin
++BINMODE	= 755
 +BINDIR	= ${PREFIX}/bin
 +MANDIR	= ${PREFIX}/man/man1
 +MANMODE = 644
  
-+.ifdef NOMANCOMPRESS
 +MANPAGE = xcept.1
-+.else
-+MANPAGE = xcept.1.gz
-+MANCOMPRESS = gzip -c -9
-+MANCLEAN = ${MANPAGE}
-+.endif
  
  
- 
-@@ -73,7 +81,7 @@
+ ######### definitions below should not need to be modified ###############
+@@ -73,7 +74,7 @@ MANDIR	= /usr/local/man/manl
  DEFS	= -DDEFAULTCEPTHOSTNAME=\"$(SERVERHOST)\"      \
  	  -DDEFAULTSOCKETPORT=$(SERVERPORT)           \
  	  -DXCEPTSCRIPTS_DEFAULTPATH=\"$(SCRIPTSDIR)\"		
@@ -49,7 +45,7 @@
  
  
  SRCS = 	xcept.c xfont.c rawfont.c xwin.c layer6.c socket.c buttons.c \
-@@ -84,34 +92,31 @@
+@@ -84,34 +85,26 @@ OBJS =	xcept.o xfont.o rawfont.o xwin.o 
  
  
  
@@ -81,11 +77,6 @@
 -		-chgrp $(GROUP) $(MANDIR)/xcept.1
 -		chmod 644       $(MANDIR)/xcept.1
 -
-+.ifndef NOMANCOMPRESS
-+${MANPAGE}: xcept.1
-+	${MANCOMPRESS} < xcept.1 > ${MANPAGE}
-+.endif
-+
 +install:	all
 +		${INSTALL} -c -o ${OWNER} -g ${GROUP} -m ${BINMODE} xcept\
 +		${BINDIR}/xcept
@@ -98,43 +89,3 @@
  
  
  
---- xcept/script.c.orig	Fri Sep 24 16:07:29 1993
-+++ xcept/script.c	Sun Sep  1 14:08:13 1996
-@@ -809,7 +809,6 @@
-    if(a->value == b->value)
-       return error("pc: %d - variables don't differ!\n",pc);
-    len = strlen(a->value) + strlen(b->value) + 1;
--   free(a->value);
-    if(!(a->value = ralloc(a->value,len))) return errorp("realloc\n");
-    strcat(a->value,b->value);
-    
-@@ -1082,7 +1082,8 @@
- 	    printf( "%s", b->value );
- 	    fflush(stdout);
- 	 }
--	 gets(tmpstr); 
-+	 fgets(tmpstr, 300, stdin); 
-+	 if ((ptr = strchr(tmpstr, '\n'))) *ptr = '\0';
-    }
-    else if(visible) {
-       if(echo) {
-@@ -1105,7 +1106,8 @@
- 	 }
- 	 printf("?  ");
- 	 fflush(stdout);
--	 gets(tmpstr); 
-+	 fgets(tmpstr, 300, stdin); 
-+	 if ((ptr = strchr(tmpstr, '\n'))) *ptr = '\0';
- 	 if( !strlen(tmpstr) ) strncpy( tmpstr, c->value, sizeof(tmpstr)-1 );
-       }
-    }
---- xcept/xcept.c.orig	Mon Apr 25 16:13:26 1994
-+++ xcept/xcept.c	Sun Sep  1 14:01:54 1996
-@@ -945,7 +945,6 @@
- int perr, p1, p2, p3, p4, p5, p6, p7, p8;
- {
-    extern int errno;
--   extern char *sys_errlist[];
-    static char errstr[200];
- 
-    if(!visible) {

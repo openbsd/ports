@@ -1,0 +1,32 @@
+$OpenBSD: patch-ceptd_ceptd_c,v 1.1 2000/09/03 16:25:05 espie Exp $
+--- ceptd/ceptd.c.orig	Wed May 25 19:36:11 1994
++++ ceptd/ceptd.c	Sun Sep  3 17:29:35 2000
+@@ -67,12 +67,12 @@ static void	starttime(), initlog();
+ static int      endtime();
+ static void  	exit_btx_server();        /* signal routine for parent */
+ static pid_t   	childpid = -1;            /* pid of child process      */
+-static int      modem = -1, inetd = 0;
++static int      modem = -1;
+ int             debug =0;
+ static char     *userlogfilename = DEFAULTLOGFILENAME;
+ static int	connected;
+ static char 	*caller;
+-int             connectstatus, isdnflag = 0;
++int             connectstatus, isdnflag = 0, inetd = 0;
+ 
+ main(argc,argv)
+ int argc;char *argv[];
+@@ -220,12 +220,8 @@ FILE *initfile,*usersfile; int port;
+ #else
+    {
+       struct sigaction act;
++      memset(&act, 0, sizeof act);
+       act.sa_handler = hang_childs;
+-      act.sa_mask.sa_sigbits[0] = 0;
+-      act.sa_mask.sa_sigbits[1] = 0;
+-      act.sa_mask.sa_sigbits[2] = 0;
+-      act.sa_mask.sa_sigbits[3] = 0;
+-      act.sa_flags =0;
+       sigaction(SIGCHLD, &act, NULL);	 /* POSIX */
+    }
+ #endif
