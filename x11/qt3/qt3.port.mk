@@ -1,4 +1,4 @@
-# $OpenBSD: qt3.port.mk,v 1.6 2003/01/06 06:22:53 espie Exp $
+# $OpenBSD: qt3.port.mk,v 1.1 2004/08/03 09:18:39 espie Exp $
 
 MODULES+=	gcc3
 MODGCC3_ARCHES+=sparc64

@@ -1,1 +1,1 @@
-.include "${PORTSDIR}/x11/qt2/files/qt2.port.mk"
+.include "${PORTSDIR}/x11/qt2/qt2.port.mk"

@@ -1,4 +1,4 @@
-# $OpenBSD: qt2.port.mk,v 1.3 2001/10/28 12:30:14 espie Exp $
+# $OpenBSD: qt2.port.mk,v 1.1 2004/08/03 09:18:39 espie Exp $
 
 # This fragment uses MODQT_* variables to make it easier to substitute
 # qt1/qt2/qt3 in a port.
