@@ -1,0 +1,12 @@
+$OpenBSD: patch-libpcre++_Makefile_in,v 1.1.1.1 2004/12/05 14:16:40 alek Exp $
+--- libpcre++/Makefile.in.orig	Thu Dec  2 01:10:10 2004
++++ libpcre++/Makefile.in	Thu Dec  2 01:17:18 2004
+@@ -82,7 +82,7 @@ lib_LTLIBRARIES = libpcre++.la
+ libpcre___la_SOURCES = pcre++.h pcre++.cc get.cc replace.cc search.cc split.cc
+ include_HEADERS = pcre++.h
+ 
+-CXXFLAGS = -Wall -Wstrict-prototypes -O -g
++CXXFLAGS = -Wall -Wstrict-prototypes @CXXFLAGS@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = config.h
+ CONFIG_CLEAN_FILES = 

@@ -1,0 +1,21 @@
+$OpenBSD: patch-examples_Makefile_in,v 1.1.1.1 2004/12/05 14:16:40 alek Exp $
+--- examples/Makefile.in.orig	Wed Aug 25 01:38:04 2004
++++ examples/Makefile.in	Thu Dec  2 20:59:11 2004
+@@ -89,7 +89,7 @@ replace_demo_LDADD = $(pcre_linklib)
+ search_demo_SOURCES = search_demo.cc
+ search_demo_LDADD = $(pcre_linklib)
+ 
+-CXXFLAGS = -Wall -Wstrict-prototypes -O -g
++CXXFLAGS = -Wall -Wstrict-prototypes @CXXFLAGS@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../libpcre++/config.h
+ CONFIG_CLEAN_FILES = 
+@@ -101,7 +101,7 @@ PROGRAMS =  $(noinst_PROGRAMS)
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../libpcre++
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lpcre
+ demo_OBJECTS =  demo.$(OBJEXT)
+ demo_DEPENDENCIES =  ../libpcre++/.libs/libpcre++.a
+ demo_LDFLAGS = 

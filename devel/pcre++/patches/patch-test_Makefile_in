@@ -1,0 +1,21 @@
+$OpenBSD: patch-test_Makefile_in,v 1.1.1.1 2004/12/05 14:16:40 alek Exp $
+--- test/Makefile.in.orig	Wed Aug 25 01:38:04 2004
++++ test/Makefile.in	Thu Dec  2 20:49:56 2004
+@@ -83,7 +83,7 @@ noinst_PROGRAMS = test
+ test_SOURCES = test.cc
+ test_LDADD = $(pcre_linklib)
+ 
+-CXXFLAGS = -Wall -Wstrict-prototypes -O -g
++CXXFLAGS = -Wall -Wstrict-prototypes @CXXFLAGS@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../libpcre++/config.h
+ CONFIG_CLEAN_FILES = 
+@@ -94,7 +94,7 @@ PROGRAMS =  $(noinst_PROGRAMS)
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../libpcre++
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lpcre
+ test_OBJECTS =  test.$(OBJEXT)
+ test_DEPENDENCIES =  ../libpcre++/.libs/libpcre++.a
+ test_LDFLAGS = 

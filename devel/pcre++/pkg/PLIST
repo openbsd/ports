@@ -1,0 +1,44 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/05 14:16:40 alek Exp $
+bin/pcre++-config
+include/pcre++.h
+lib/libpcre++.a
+lib/libpcre++.la
+@man man/man3/Pcre.3
+share/doc/pcre++/
+@comment share/doc/pcre++/AUTHORS
+@comment share/doc/pcre++/COPYING
+@comment share/doc/pcre++/ChangeLog
+@comment share/doc/pcre++/INSTALL
+@comment share/doc/pcre++/README
+share/doc/pcre++/annotated.html
+share/doc/pcre++/classPcre-members.html
+share/doc/pcre++/classPcre.html
+share/doc/pcre++/classPcre_1_1exception-members.html
+share/doc/pcre++/classPcre_1_1exception.html
+share/doc/pcre++/classpcrepp_1_1Pcre-members.html
+share/doc/pcre++/classpcrepp_1_1Pcre.html
+share/doc/pcre++/classpcrepp_1_1Pcre_1_1exception-members.html
+share/doc/pcre++/classpcrepp_1_1Pcre_1_1exception.html
+@comment share/doc/pcre++/config.log
+share/doc/pcre++/doxygen.css
+share/doc/pcre++/doxygen.png
+share/doc/pcre++/files.html
+share/doc/pcre++/functions.html
+share/doc/pcre++/get_8cc-source.html
+share/doc/pcre++/get_8cc.html
+share/doc/pcre++/globals.html
+share/doc/pcre++/index.html
+share/doc/pcre++/namespacepcrepp.html
+share/doc/pcre++/namespaces.html
+share/doc/pcre++/namespacestd.html
+share/doc/pcre++/pcre++_8cc-source.html
+share/doc/pcre++/pcre++_8cc.html
+share/doc/pcre++/pcre++_8h-source.html
+share/doc/pcre++/pcre++_8h.html
+share/doc/pcre++/replace_8cc-source.html
+share/doc/pcre++/replace_8cc.html
+share/doc/pcre++/search_8cc-source.html
+share/doc/pcre++/search_8cc.html
+share/doc/pcre++/split_8cc-source.html
+share/doc/pcre++/split_8cc.html
+%%SHARED%%
