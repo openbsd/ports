@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/04/14 14:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/14 16:54:04 espie Exp $
 
 COMMENT="AFPL PostScript interpreter"
 
 VERSION=	7.00
 DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
-NEED_VERSION=	1.395
+NEED_VERSION=	1.396
 
 DIR=		AFPL/gs${VERSION:S/.//}
 MASTER_SITES=	${GS_SITES}
@@ -59,7 +59,7 @@ BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 
 PDFDIR=share/ghostscript/${VERSION}/lib
 
-BASE_FLAGS+=	DEVICE_DEVS='\
+BASE_FLAGS+=	DEVICE_DEVS1='\
 $$(DD)x11.dev $$(DD)x11alpha.dev $$(DD)x11cmyk.dev $$(DD)x11cmyk2.dev \
 $$(DD)x11cmyk4.dev $$(DD)x11cmyk8.dev $$(DD)x11gray2.dev \
 $$(DD)x11gray4.dev $$(DD)x11mono.dev $$(DD)cljet5.dev $$(DD)deskjet.dev \
@@ -105,7 +105,7 @@ $$(DD)mgr4.dev $$(DD)mgr8.dev $$(DD)sgirgb.dev'
 MAKE_FLAGS=	${BASE_FLAGS} prefix=${PREFIX}
 
 
-MAKE_FILE=	src/unixansi.mak
+#MAKE_FILE=	src/unix-gcc.mak
 
 GS_SOURCES=	ghostscript-${VERSION}.tar.gz
 #  Note: the following two are real files that have symlinks with
@@ -114,16 +114,25 @@ GS_SOURCES=	ghostscript-${VERSION}.tar.gz
 #  unless the files really change.
 GS_FONTS_STD=	ghostscript-fonts-std-6.0.tar.gz
 
-# Additional driver HP 850, see http://www.erdw.ethz.ch/~bonk/hp850/hp850.html
-HP850_DRV=	hp8xxs13.zip
-
+ALL_TARGET=	all
+INSTALL_TARGET=	install
 # The pdf_sec.ps non-stub version has been moved to a separate package
 
-FLAVORS=A4
+FLAVORS=A4 gtk
 
 FLAVOR?=
-.if ${FLAVOR:U} == "A4"
+.if ${FLAVOR:U:MA4}
 CFLAGS+=	-DA4
+.endif
+
+.if ${FLAVOR:L:Mgtk}
+LIB_DEPENDS+=	gtk.1.::x11/gtk
+ALL_TARGET+=so
+INSTALL_TARGET+=soinstall
+end_install= ${INSTALL_PROGRAM} ${WRKDIST}/sobin/gsx ${PREFIX}/bin
+NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
+.else
+end_install=
 .endif
 
 FAKE_FLAGS=${BASE_FLAGS} prefix=${WRKINST}${PREFIX}
@@ -132,9 +141,14 @@ post-extract:
 	ln -s `cd ${PORTSDIR} && cd ${JPEGDIR} && make show VARNAME=WRKDIST` ${WRKDIST}/jpeg
 	ln -s `cd ${PORTSDIR} && cd ${PNGDIR} && make show VARNAME=WRKDIST` ${WRKDIST}/libpng
 
+do-configure:
+	cd ${WRKBUILD} && ln -s ${WRKSRC}/unix-gcc.mak Makefile
+
 pre-build:
-	mkdir -p ${WRKBUILD}/objects
-	mkdir -p ${WRKBUILD}/bin
+	mkdir -p ${WRKDIST}/objects
+	mkdir -p ${WRKDIST}/bin
+	mkdir -p ${WRKDIST}/soobj
+	mkdir -p ${WRKDIST}/sobin
 
 pre-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/ghostscript 
@@ -157,6 +171,6 @@ post-install:
 		ln -sf ps2pdf.1 ps2pdf12.1 && \
 		ln -sf ps2pdf.1 ps2pdf13.1 && \
 		ln -sf ps2ps.1 eps2eps.1
-
+	${end_install}
 
 .include <bsd.port.mk>

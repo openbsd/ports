@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/14 14:46:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/04/14 16:54:04 espie Exp $
 bin/bdftops
 bin/dvipdf
 bin/eps2eps
@@ -433,8 +433,12 @@ share/ghostscript/fonts/s050000l.pfm
 share/ghostscript/fonts/z003034l.afm
 share/ghostscript/fonts/z003034l.pfb
 share/ghostscript/fonts/z003034l.pfm
+%%gtk%%
 @dirrm share/ghostscript/fonts
 @dirrm share/ghostscript/${VERSION}/lib
 @dirrm share/ghostscript/${VERSION}/examples
 @dirrm share/ghostscript/${VERSION}/doc
+@dirrm share/ghostscript/${VERSION}
+@dirrm share/ghostscript
 @dirrm man/de/man1
+@dirrm man/de
