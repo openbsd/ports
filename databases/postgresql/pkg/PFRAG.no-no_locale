@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.no-no_locale,v 1.1 2001/04/21 18:25:53 peter Exp $
+share/doc/postgresql/README.mb.big5
+share/doc/postgresql/README.mb.jp
+

@@ -1,80 +1,92 @@
 Using PostgreSQL package in OpenBSD environment:
 ------------------------------------------------
 
-If you are installing PostgreSQL for the first time, the following steps
-required:
+If you are installing PostgreSQL for the first time, the following
+steps required:
 
 1. Create PostgreSQL user and group:
 
-	# adduser -batch pgsql "" "PostgreSQL pseudo-user" "*" \
-		-home /var -noconfig -group pgsql -shell nologin
+	# useradd -c "PostgreSQL Admin User" -g =uid -m -d /var/postgresql \
+		-s /bin/sh postgresql
 
-2. Initialize PostgreSQL databases:
+2. su to the postgresql account and initialize the database:
 
-	# install -d -o pgsql -g pgsql -m 755 /var/pgsql
-	# install -d -o pgsql -g pgsql -m 700 /var/pgsql/data
-	# pgwrap initdb
+       # su - postgresql
+       $ mkdir /var/postgresql/data
+       $ initdb -D /var/postgresql/data
 
-If you are upgrading PostgreSQL you don't need these steps. Read
-!!PREFIX!!/share/doc/pgsql/INSTALL for more information on how to
-upgrade your existing databases. See also `Special notes for OpenBSD
-port' below.
+If you are upgrading PostgreSQL then you may have a `pgsql' user.
+It is suggested that you follow the steps in
+
+	!!PREFIX!!/share/doc/postgresql/INSTALL
+
+for more information on how to upgrade your existing databases. See
+also `Special notes for OpenBSD port' below. Replace references to
+the `postgresql' user below with `pgsql' or whatever other user you
+have selected to be the database administration account.
+
+Auto Start and Stop
+-------------------
 
 If you wish to start PostgreSQL automatically during system startup,
 add the following lines to /etc/rc.local:
 
-if [ -x !!PREFIX!!/bin/pgwrap -a -x !!PREFIX!!/bin/postmaster ]; \
-	then
-	!!PREFIX!!/bin/pgwrap -o /var/pgsql/log \
-		pg_ctl -w -o "-i -S -o -F" start
-	echo -n ' pgsql'
+if [ -x !!PREFIX!!/bin/pg_ctl ]; then
+	su -l postgresql -c "!!PREFIX!!/bin/pg_ctl start \
+		-D /var/postgresql/data -l /var/postgresql/logfile"
+	echo -n ' postgresql'
 fi
 
-Don't forget to add !!PREFIX!!/lib/pgsql directory to shared libraries path in
-/etc/rc.conf (if your architecture supports shared libraries):
+To automatically shutdown the database as part of the system shutdown, 
+add the following lines to /etc/rc.shutdown:
 
-shlib_dirs="!!PREFIX!!/lib/pgsql"
+if [ -f /var/postgresql/data/postmaster.pid ]; then
+	su -l postgresql -c "!!PREFIX!!/bin/pg_ctl stop \
+		-D /var/postgresql/data"
+	rm -f /var/portgresql/data/postmaster.pid
+fi
 
-Please note that OpenBSD port of PostgreSQL requires a kernel compiled
-with SYSVMSG, SYSVSEM and SYSVSHM options for proper operation.
-The GENERIC kernel contains these options.
+Network Connections and Tuning
+------------------------------
 
+To allow connections over TCP (and other options) edit the file:
 
-Special notes for OpenBSD port:
--------------------------------
+	/var/postgresql/data/postgresql.conf
 
-OpenBSD port of PostgreSQL does NOT use shell startup files to
-set up environment for postgres administrative programs (such as
-initdb). This mean that you should use a wrapper program `pgwrap'
-to run these programs instead of `su'. For example, you
-should execute
-	# pgwrap initdb
-instead of
-	# su -l pgsql -c 'exec initdb'
+and also edit the pg_hba.conf (in the same directory) making the
+appropriate changes to allow connection from your network.
 
-The `pgwrap' automatically sets up proper environment and permissions
-for PostgreSQL programs. The syntax for `pgwrap' program is:
+Please note that OpenBSD port of PostgreSQL requires a kernel
+compiled with SYSVSEM and SYSVSHM options for proper operation.
+The GENERIC kernel has these settings but the default sizes are not
+really large enough for a database with more than a handful of
+connections and should have at least the following:
 
-pgwrap [-n] [-o file] cmd [arg ...]
-	-n	- Do not add PostgreSQL binary prefix to cmd.
-	-o file	- Redirect stdout & stderr to file (write permissions
-		  for PostgreSQL user required).
+option          SEMMNI=256
+option          SEMMNS=2048
 
-`pgwrap' automatically sets up the following environment variables:
+To serve a large number of connections (>250), you may also need
+to increase the maximum shared memory segment size, on the i386
+try:
 
-System variables (these variables are always set to the following values):
+option		SHMMAXPGS=4096		# default on i386 is 2048 = 8Mb
+					# other archs may vary
 
-	PATH=!!PREFIX!!/bin:/bin:/usr/bin
-	USER=pgsql
-	LOGNAME=pgsql
-	SHELL=/bin/sh
-	HOME=/var/pgsql
+These numbers should be tweaked depending on system use.
 
-PostgreSQL variables (these variables are set to the following values,
-unless already set):
+The ulimit settings can also be a problem.  The following can be
+added for the postgresql user in the /etc/login.conf file:
 
-	PGLIB=!!PREFIX!!/lib/pgsql
-	PGDATA=/var/pgsql/data
+	postgresql:\
+		:maxproc-max=256:\
+		:maxproc-cur=256:\
+		:openfiles-cur=768:\
+		:datasize-max=256M:\
+		:datasize-cur=64M:\
+		:stacksize-cur=4M:
 
-You must have root privileges to run `pgwrap'.
+For more than about 250 connections, these numbers should be
+increased. Please report any changes and experiences to the package
+maintainers so that we can update this file for future versions.
+
 

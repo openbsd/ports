@@ -1,3 +1,5 @@
-PostgreSQL RDBMS frontend applications for database administration
-and maintenance.
+PostgreSQL RDBMS frontend applications, libraries and include files
+for database administration, maintenance and integration with other
+applications.
+
 Package includes psql - interactive SQL database query tool.

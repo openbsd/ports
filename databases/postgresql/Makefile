@@ -1,162 +1,130 @@
-# $OpenBSD: Makefile,v 1.46 2001/04/13 07:00:44 brad Exp $
-# $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
+# $OpenBSD: Makefile,v 1.47 2001/04/21 18:25:42 peter Exp $
 
 COMMENT=	"PostgreSQL RDBMS"
-COMMENT-clients="PostgreSQL RDBMS clients"
-COMMENT-docs=	"PostgreSQL RDBMS documentation"
+COMMENT-clients="PostgreSQL RDBMS client libraries and utilities"
+COMMENT-docs=	"PostgreSQL RDBMS documentaion"
 
-VERSION=	7.0.3
+VERSION=	7.1
 DISTNAME=	postgresql-${VERSION}
-PKGNAME=	pgsql-${VERSION}
-PKGNAME-clients=pgsql-clients-${VERSION}
-PKGNAME-docs=	pgsql-docs-${VERSION}
 CATEGORIES=	databases
-NEED_VERSION=	1.384
+NEED_VERSION=	1.405
 
 HOMEPAGE=	http://www.postgresql.org/
 
-#MAINTAINER=	Pavel Korovin <pvk@openbsd.ru>
-MAINTAINER=	Brad Smith <brad@openbsd.org>
+MAINTAINER=	Brandon Palmer <bpalmer@crimelabs.net>, Peter Galbavy <peter.galbavy@knowledge.com>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/db/www.postgresql.org/pub/%SUBDIR%/ \
-	ftp://ftp.cwb.fnn.net/pub/Linux/postgresql/%SUBDIR%/ \
-	ftp://looking-glass.usask.ca/pub/postgresql/%SUBDIR%/ \
-	ftp://linux.netfirm.net/pub/Linux/PostgreSQL/%SUBDIR%/ \
-	ftp://sunsite.uniandes.edu.co/pub/postgresql/%SUBDIR%/ \
-	ftp://ftp.fi.muni.cz/pub/postgresql/%SUBDIR%/ \
-	ftp://ftp.sunsite.auc.dk/mirrors/www.postgresql.org/%SUBDIR%/ \
-	ftp://postgresql.matrix.fi/%SUBDIR%/ \
-	ftp://ftp.fr.postgresql.org/%SUBDIR%/ \
-	ftp://ftp.de.postgresql.org/%SUBDIR%/ \
-	ftp://ftp.ntua.gr/pub/databases/postgresql/%SUBDIR%/ \
-	ftp://ftp.postgreSQL.uli.it/%SUBDIR%/ \
-	ftp://mirror.nucba.ac.jp/mirror/postgresql/pub/%SUBDIR%/ \
-	ftp://ring.ip-kyoto.ad.jp/pub/misc/db/postgresql/%SUBDIR%/ \
-	ftp://ring.crl.go.jp/pub/misc/db/postgresql/%SUBDIR%/ \
-	ftp://ring.saitama-u.ac.jp/pub/misc/db/postgresql/%SUBDIR%/ \
-	ftp://ring.astem.or.jp/pub/misc/db/postgresql/%SUBDIR%/ \
-	ftp://ring.exp.fujixerox.co.jp/pub/misc/db/postgresql/%SUBDIR%/ \
-	ftp://ring.jah.ne.jp/pub/misc/db/postgresql/%SUBDIR%/ \
-	ftp://ring.etl.go.jp.jp/pub/misc/db/postgresql/%SUBDIR%/ \
-	ftp://ring.asahi-net.or.jp/pub/misc/db/postgresql/%SUBDIR%/ \
-	ftp://ring.so-net.ne.jp/pub/misc/db/postgresql/%SUBDIR%/ \
-	ftp://ring.aist.go.jp/pub/misc/db/postgresql/%SUBDIR%/ \
-	ftp://jordan.ce.yeungnam.ac.kr/pub/postgresql/%SUBDIR%/ \
-	ftp://ftp.kr.postgresql.org/pub/postgresql/%SUBDIR%/ \
-	ftp://postgresql.linux.com.mx/pub/postgresql/pub/%SUBDIR%/ \
-	ftp://postgresql.godzone.net.nz/postgresql/%SUBDIR%/ \
-	ftp://postgresql.iphil.net/%SUBDIR%/ \
-	ftp://ftp.sai.msu.su/unix/database/pgsql/%SUBDIR%/ \
-	ftp://www.sk.postgresql.org/pub/linux/postgresql/%SUBDIR%/ \
-	ftp://ftp.linux.co.za/pub/postgresql/%SUBDIR%/ \
-	ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/%SUBDIR%/ \
-	ftp://ftp.danyk.ch/postgres/%SUBDIR%/ \
-	ftp://ftp.ccit.edu.tw/packages/postgresql/%SUBDIR%/ \
-	ftp://ftp.siamu.ac.th/pub/pub2/ftp.postgresql.org/%SUBDIR%/ \
-	ftp://postgresql.rmplc.co.uk/pub/postgresql/%SUBDIR%/ \
-	ftp://ftp.scyph.org/pub/Mirrors/ftp.postgresql.org/%SUBDIR%/ \
-	ftp://mars.capital-data.com/pub/postgresql/%SUBDIR%/ \
-	ftp://ftp.digex.net/pub/packages/database/postgresql/%SUBDIR%/ \
-	ftp://ftp.iodynamics.com/pub/mirror/postgresql/%SUBDIR%/ \
-	ftp://postgresql.nextpath.com/pub/postgresql/%SUBDIR%/ \
-	ftp://www.ndesign.com.ua/pub/psql/%SUBDIR%/ \
-	ftp://postgresql.netafric.ci/%SUBDIR%/
-MASTER_SITE_SUBDIR= v${VERSION}
-DIST_SUBDIR=	postgresql
-DISTFILES= ${DISTNAME}.base.tar.gz \
-	${DISTNAME}.support.tar.gz \
-	${DISTNAME}.docs.tar.gz
+MASTER_SITES=	\
+                ftp://ftp.postgresql.org/pub/v${VERSION}/ \
+		ftp://ftp.crimelabs.net/pub/postgresql/v${VERSION}/ \
+		ftp://download.sourceforge.net/pub/mirrors/postgresql/v${VERSION}/ \
+		ftp://ftp.digex.net/pub/packages/database/postgresql/v${VERSION}/ \
+		ftp://postgresql.readysetnet.com/pub/postgresql/v${VERSION}/ \
+		ftp://www.ndesign.com.ua/pub/psql/v${VERSION}/ \
+		ftp://looking-glass.usask.ca/pub/postgresql/v${VERSION}/ \
+		ftp://ftp.iodynamics.com/pub/mirror/postgresql/v${VERSION}/ \
+		ftp://postgresql.rmplc.co.uk/pub/postgresqlv${VERSION}/ \
+		ftp://ftp.fhl.net/pub/postgresql/v${VERSION}/ \
+		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/v${VERSION}/ \
+		ftp://postgresql.godzone.net.nz/postgresql/v${VERSION}/ \
+		ftp://linux.sarang.net/mirror/database/postgresql/v${VERSION}/ \
+		ftp://ring.asahi-net.or.jp/pub/misc/db/postgresql/v${VERSION}/ \
+		ftp://ftp.postgreSQL.uli.it/pub/v${VERSION}/ \
+		ftp://ftp.fr.postgresql.org/pub/v${VERSION}/ \
+		ftp://postgresql.matrix.fi/pub/v${VERSION}/
 
-FLAVORS=	tcl odbc
+
+FLAVORS=	tcl odbc no_locale no_ssl # perl
 FLAVOR?=
 
 MULTI_PACKAGES=	-clients -docs
 SUBPACKAGE?=
 
-## build dependencies
-USE_GMAKE= Yes
-.if ${FLAVOR:L:Mtcl}
-LIB_DEPENDS=	tk83::x11/tk/8.3
+.if ${SUBPACKAGE}	== "-clients"
+PKGNAME:=	postgresql-clients-${VERSION}
+.elif ${SUBPACKAGE}	== "-docs"
+PKGNAME:=	postgresql-docs-${VERSION}
 .endif
 
-## configuring
-CONFIGURE_STYLE= simple
-CONFIGURE_ENV=	POSTGRESDIR="${PREFIX}"
-CONFIGURE_ARGS= --prefix="${PREFIX}" \
-	--enable-locale --enable-multibyte --enable-recode \
-	--with-template="openbsd" --with-libraries="${LOCALBASE}/lib"
+USE_GMAKE=	Yes
+CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	POSTGRESDIR="${PREFIX}" LIBS=-lcurses
+CONFIGURE_ARGS=	--enable-syslog \
+		--disable-rpath \
+		--with-CXX \
+		--datadir="${PREFIX}/share/examples/postgresql" \
+		--docdir="${PREFIX}/share/doc/postgresql"
 
 .if ${FLAVOR:L:Mtcl}
+LIB_DEPENDS+=	tk83::x11/tk/8.3
 TCL_INCDIR=	${LOCALBASE}/include/tcl8.3
 TK_INCDIR=	${LOCALBASE}/include/tk8.3
-CONFIGURE_ENV+=	WISH="${LOCALBASE}/bin/wish8.3" \
-		PGACCESS_HOME="${PREFIX}/lib/pgsql"
+CONFIGURE_ENV+=	WISH="${LOCALBASE}/bin/wish8.3"
 CONFIGURE_ARGS+= --with-tcl \
 	--with-tclconfig="${LOCALBASE}/lib/tcl8.3 ${LOCALBASE}/lib/tk8.3" \
 	--with-includes="${LOCALBASE}/include ${TCL_INCDIR} ${TK_INCDIR}"
-.else
-CONFIGURE_ARGS+= --with-includes="${LOCALBASE}/include"
+MAKE_ENV=	USE_TCL=true TCL_INCDIR="${TCL_INCDIR}" \
+		TK_INCDIR="${TK_INCDIR}"
 .endif
 
-. if ${FLAVOR:L:Modbc}
-CONFIGURE_ARGS+= --with-odbc
+.if ${FLAVOR:L:Modbc}
+LIB_DEPENDS+=	iodbc::databases/iodbc
+CONFIGURE_ARGS+=--enable-odbc --with-odbcinst=/etc
+.endif
+
+# This does not work yet. The Pg module Makefile do not follow the fake
+# install scheme properly. The best bet if you need this is to go with
+# either a direct install of the Pg modules from CPAN, look out for a
+# p5-Pg package or use the DBI interface - Peter
+.if ${FLAVOR:L:Mperl}
+CONFIGURE_ARGS+= --with-perl
+.endif
+
+.if !${FLAVOR:L:Mno_ssl}
+CONFIGURE_ARGS+= --with-openssl=/etc
+.else
+CONFIGURE_ARGS+= --without-openssl
 .endif
 
 ## making
 MAKE_FILE=	GNUmakefile
 FAKE_FLAGS=	POSTGRESDIR="${WRKINST}${PREFIX}"
 
-.if ${FLAVOR:L:Mtcl}
-MAKE_ENV=	USE_TCL=true TCL_INCDIR="${TCL_INCDIR}" \
-		TK_INCDIR="${TK_INCDIR}" \
-		PGACCESS_HOME="${PREFIX}/lib/pgsql"
-FAKE_FLAGS+=	PGACCESS_HOME="${WRKINST}/${PREFIX}/lib/pgsql"
+DOCS=		${WRKSRC}/COPYRIGHT ${WRKSRC}/HISTORY \
+		${WRKSRC}/INSTALL ${WRKSRC}/README \
+		${WRKSRC}/register.txt \
+		${WRKSRC}/doc/FAQ ${WRKSRC}/doc/FAQ_DEV ${WRKSRC}/doc/TODO
+
+.if !${FLAVOR:L:Mno_locale}
+CONFIGURE_ARGS+= --enable-locale --enable-recode
+DOCS+=		${WRKSRC}/doc/README.mb.big5 ${WRKSRC}/doc/README.mb.jp
 .endif
-
-DOCDIR=		${WRKSRC}/../doc
-DOCS=		${WRKSRC}/../COPYRIGHT ${WRKSRC}/../HISTORY \
-		${WRKSRC}/../INSTALL ${WRKSRC}/../README \
-		${WRKSRC}/../register.txt \
-		${DOCDIR}/FAQ ${DOCDIR}/FAQ_DEV ${DOCDIR}/README.Charsets \
-		${DOCDIR}/README.fsync ${DOCDIR}/README.inet \
-		${DOCDIR}/README.locale ${DOCDIR}/README.mb \
-		${DOCDIR}/README.mb.jp ${DOCDIR}/TODO \
-
-WRKDIST=	${WRKDIR}/${DISTNAME}/src
 
 SUBST_VARS=	VERSION
 
 .if ${FLAVOR:L:Mtcl}
 post-patch:
-	@mv ${WRKSRC}/bin/pgaccess/main.tcl \
-		${WRKSRC}/bin/pgaccess/main.tcl.orig
+	@mv ${WRKSRC}/src/bin/pgaccess/main.tcl \
+		${WRKSRC}/src/bin/pgaccess/main.tcl.orig
 	@sed -e "s=wish=${LOCALBASE}/bin/wish8.3=" \
-		${WRKSRC}/bin/pgaccess/main.tcl.orig \
-		> ${WRKSRC}/bin/pgaccess/main.tcl
+		${WRKSRC}/src/bin/pgaccess/main.tcl.orig \
+		> ${WRKSRC}/src/bin/pgaccess/main.tcl
 .endif
 
-post-build:
-	@mkdir -p ${WRKBUILD}/pgwrap
-	@cp ${FILESDIR}/{Makefile,pgwrap.c,pgwrap.h} ${WRKBUILD}/pgwrap
-	@cd ${WRKBUILD}/pgwrap && ${MAKE} depend && ${MAKE}
-
 post-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/pgwrap/pgwrap ${PREFIX}/bin
-	@cd ${DOCDIR} && ${MAKE_PROGRAM} POSTGRESDIR="${PREFIX}" man
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pgsql
-	${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/pgsql
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postgresql
+	${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/postgresql
 	@rm -f ${WRKBUILD}/README.OpenBSD
 	@sed -e s#!!PREFIX!!#${TRUEPREFIX}#g ${FILESDIR}/README.OpenBSD > \
 		${WRKBUILD}/README.OpenBSD
-	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD ${PREFIX}/share/doc/pgsql
-	@cd ${DOCDIR} && ${MAKE_PROGRAM} PGDOCS="${PREFIX}/share/doc/pgsql" all
-	${INSTALL_DATA} ${DOCDIR}/*.ps* ${PREFIX}/share/doc/pgsql
+	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD ${PREFIX}/share/doc/postgresql
+	@cd ${WRKSRC}/doc && \
+		${MAKE_PROGRAM} PGDOCS="${PREFIX}/share/doc/postgresql" all
+	${INSTALL_DATA} ${WRKSRC}/doc/*.ps* ${PREFIX}/share/doc/postgresql
 
 .include <bsd.port.mk>
 
@@ -166,6 +134,7 @@ SED_PLIST+=-e '/%%SHARED-tcl%%/r${PKGDIR}/PFRAG.tcl.shared' -e '//d'
 	${NO_SHARED_LIBS:U} == YES
 SED_PLIST+=-e '/%%SHARED-tcl%%/d'
 .endif
+
 .if ${FLAVOR:L:Modbc} && !defined(NO_SHARED_LIBS)
 SED_PLIST+=-e '/%%SHARED-odbc%%/r${PKGDIR}/PFRAG.odbc.shared' -e '//d'
 .else if ${FLAVOR:L:Modbc} && defined(NO_SHARED_LIBS) && \

@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-clients,v 1.2 2001/04/15 16:48:44 espie Exp $
+@comment $OpenBSD: PLIST-clients,v 1.3 2001/04/21 18:25:57 peter Exp $
+@pkgcfl postgresql-[0-9]*
 @pkgcfl pgsql-[0-9]*
+@pkgcfl pgsql-clients-[0-9]*
 bin/createdb
 bin/createlang
 bin/createuser
@@ -7,47 +9,40 @@ bin/dropdb
 bin/droplang
 bin/dropuser
 bin/ecpg
+bin/pg_config
 bin/pg_dump
 bin/pg_dumpall
-bin/pg_encoding
 bin/pg_id
+bin/pg_restore
 bin/psql
 bin/vacuumdb
-include/pgsql/access/attnum.h
-include/pgsql/c.h
-include/pgsql/commands/trigger.h
-include/pgsql/config.h
-include/pgsql/ecpgerrno.h
-include/pgsql/ecpglib.h
-include/pgsql/ecpgtype.h
-include/pgsql/executor/spi.h
-include/pgsql/fmgr.h
-include/pgsql/lib/dllist.h
-include/pgsql/libpgeasy.h
-include/pgsql/libpq++.h
-include/pgsql/libpq++/pgconnection.h
-include/pgsql/libpq++/pgcursordb.h
-include/pgsql/libpq++/pgdatabase.h
-include/pgsql/libpq++/pglobject.h
-include/pgsql/libpq++/pgtransdb.h
-include/pgsql/libpq-fe.h
-include/pgsql/libpq-int.h
-include/pgsql/libpq/libpq-fs.h
-include/pgsql/libpq/pqcomm.h
-include/pgsql/os.h
-include/pgsql/postgres.h
-include/pgsql/postgres_ext.h
-include/pgsql/pqexpbuffer.h
-include/pgsql/sql3types.h
-include/pgsql/sqlca.h
-include/pgsql/utils/elog.h
-include/pgsql/utils/geo_decls.h
-include/pgsql/utils/mcxt.h
-include/pgsql/utils/palloc.h
-lib/pgsql/libecpg.a
-lib/pgsql/libpgeasy.a
-lib/pgsql/libpq++.a
-lib/pgsql/libpq.a
+include/postgresql/c.h
+include/postgresql/config.h
+include/postgresql/ecpgerrno.h
+include/postgresql/ecpglib.h
+include/postgresql/ecpgtype.h
+include/postgresql/lib/dllist.h
+include/postgresql/libpgeasy.h
+include/postgresql/libpq++.h
+include/postgresql/libpq++/pgconnection.h
+include/postgresql/libpq++/pgcursordb.h
+include/postgresql/libpq++/pgdatabase.h
+include/postgresql/libpq++/pglobject.h
+include/postgresql/libpq++/pgtransdb.h
+include/postgresql/libpq-fe.h
+include/postgresql/libpq-int.h
+include/postgresql/libpq/libpq-fs.h
+include/postgresql/libpq/pqcomm.h
+include/postgresql/os.h
+include/postgresql/postgres_ext.h
+include/postgresql/postgres_fe.h
+include/postgresql/pqexpbuffer.h
+include/postgresql/sql3types.h
+include/postgresql/sqlca.h
+lib/libecpg.a
+lib/libpgeasy.a
+lib/libpq++.a
+lib/libpq.a
 man/man1/createdb.1
 man/man1/createlang.1
 man/man1/createuser.1
@@ -55,8 +50,10 @@ man/man1/dropdb.1
 man/man1/droplang.1
 man/man1/dropuser.1
 man/man1/ecpg.1
+man/man1/pg_config.1
 man/man1/pg_dump.1
 man/man1/pg_dumpall.1
+man/man1/pg_restore.1
 man/man1/psql.1
 man/man1/vacuumdb.1
 man/manl/abort.l
@@ -64,6 +61,7 @@ man/manl/alter_group.l
 man/manl/alter_table.l
 man/manl/alter_user.l
 man/manl/begin.l
+man/manl/checkpoint.l
 man/manl/close.l
 man/manl/cluster.l
 man/manl/comment.l
@@ -118,27 +116,31 @@ man/manl/rollback.l
 man/manl/select.l
 man/manl/select_into.l
 man/manl/set.l
+man/manl/set_constraints.l
+man/manl/set_transaction.l
 man/manl/show.l
 man/manl/truncate.l
 man/manl/unlisten.l
 man/manl/update.l
 man/manl/vacuum.l
-share/doc/pgsql/COPYRIGHT
-share/doc/pgsql/HISTORY
-share/doc/pgsql/INSTALL
-share/doc/pgsql/README
-share/doc/pgsql/README.OpenBSD
-share/doc/pgsql/register.txt
+share/doc/postgresql/COPYRIGHT
+share/doc/postgresql/FAQ
+share/doc/postgresql/FAQ_DEV
+share/doc/postgresql/HISTORY
+share/doc/postgresql/INSTALL
+share/doc/postgresql/README
+share/doc/postgresql/README.OpenBSD
+share/doc/postgresql/TODO
+share/doc/postgresql/register.txt
 %%tcl%%
 %%odbc%%
 %%SHARED%%
-@dirrm share/doc/pgsql
-@dirrm lib/pgsql
-@dirrm include/pgsql/utils
-@dirrm include/pgsql/libpq++
-@dirrm include/pgsql/libpq
-@dirrm include/pgsql/lib
-@dirrm include/pgsql/executor
-@dirrm include/pgsql/commands 
-@dirrm include/pgsql/access 
-@dirrm include/pgsql
+@dirrm share/doc/postgresql
+@dirrm include/postgresql/utils
+@dirrm include/postgresql/libpq++
+@dirrm include/postgresql/libpq
+@dirrm include/postgresql/lib
+@dirrm include/postgresql/executor
+@dirrm include/postgresql/commands 
+@dirrm include/postgresql/access 
+@dirrm include/postgresql
