@@ -1,0 +1,20 @@
+--- configure.in~	Tue Jul 22 00:29:44 2003
++++ configure.in	Wed Aug 20 23:08:24 2003
+@@ -102,6 +102,8 @@
+ 
+ SC_ENABLE_SYMBOLS
+ 
++TCL_SRC_DIR=${prefix}/include/tcl${TCL_VERSION}
++
+ LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
+ 
+ TK_DBGX=${DBGX}
+@@ -349,7 +351,7 @@
+ 
+ if test "${SHARED_BUILD}" = "1" -a "${SHLIB_SUFFIX}" != ""; then
+     SHLIB_LD_LIBS="${SHLIB_LD_LIBS} \${TCL_STUB_LIB_SPEC}"
+-    TCL_STUB_FLAGS="-DUSE_TCL_STUBS"
++    TCL_STUB_FLAGS=""
+ else
+     TCL_STUB_FLAGS=""
+ fi

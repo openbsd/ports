@@ -1,0 +1,50 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2003/11/19 15:45:58 jose Exp $
+
+COMMENT=	"graphical toolkit for Tcl"
+
+VERSION=	8.4.4
+
+DISTNAME=	tk${VERSION}-src
+PKGNAME=	tk-${VERSION}
+CATEGORIES=	x11 x11/tk
+MASTER_SITES=	${MASTER_SITE_TCLTK:=tcl8_4/}
+
+HOMEPAGE=	http://dev.scriptics.com/software/tcltk/
+
+MAINTAINER=	Jose Nazario <jose@crimelabs.net>
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+LIB_DEPENDS=    tcl84:tcl->=8.4:lang/tcl/8.4
+
+MAKE_FLAGS=	CFLAGS="${CFLAGS}"
+FAKE_FLAGS=	INSTALL="install -c" INSTALL_ROOT="${WRKINST}" \
+		BASE_INCLUDE_DIR='$$(prefix)/include/tk$$(VERSION)' \
+		INCLUDE_INSTALL_DIR='$$(INSTALL_ROOT)$$(BASE_INCLUDE_DIR)' \
+		GENERIC_INCLUDE_INSTALL_DIR='$$(BASE_INCLUDE_DIR)/generic' \
+		UNIX_INCLUDE_INSTALL_DIR='$$(BASE_INCLUDE_DIR)/unix' \
+		MAN_INSTALL_DIR='$${INSTALL_ROOT}$$(TK_LIBRARY)/man'
+
+SEPARATE_BUILD=	concurrent
+USE_X11=	Yes
+CONFIGURE_STYLE= autoconf
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= --enable-static --with-tcl="${LOCALBASE}/lib/tcl8.4"
+CONFIGURE_ENV=  PORTSDIR="${PORTSDIR}"
+
+WRKDIST=	${WRKDIR}/tk${VERSION}/unix
+
+REGRESS_TARGET=test
+REGRESS_DEPENDS=::lang/tcl/8.4:regress
+REGRESS_FLAGS=TCL_BIN_DIR=`cd ${PORTSDIR}/lang/tcl/8.4 && ${MAKE} show=WRKBUILD`
+# This regression test wants an X11 display
+REGRESS_FLAGS+=DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE=Yes
+
+post-install:
+	@strip ${PREFIX}/bin/wish8.4
+
+.include <bsd.port.mk>
