@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.335 2004/11/01 11:25:22 xsa Exp $
+# $OpenBSD: Makefile,v 1.336 2004/11/11 19:47:17 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -144,6 +144,7 @@
      SUBDIR += openvpn
      SUBDIR += oproute
      SUBDIR += p5-Chatbot-Eliza
+     SUBDIR += p5-Geo-IP
      SUBDIR += p5-IO-INET6
      SUBDIR += p5-IO-Interface
      SUBDIR += p5-IO-Socket-Multicast
