@@ -1,9 +1,9 @@
 # OpenBSD makefile for:		agrep
 # Version required:     	  2.04
-# Date created:			  Fri May 23, 1997
+# Date created:			  December 1, 1997
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/02 00:24:30 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1997/12/02 00:29:51 angelos Exp $
 #
 
 DISTNAME=	agrep-2.04
