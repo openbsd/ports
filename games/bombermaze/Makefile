@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/09/11 20:32:06 danh Exp $
+# $OpenBSD: Makefile,v 1.3 2002/09/23 14:44:41 danh Exp $
 
 COMMENT=		"Bomberman clone for GNOME"
 
@@ -31,7 +31,7 @@ USE_X11=		Yes
 NO_REGRESS=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBS="-pthread"
 

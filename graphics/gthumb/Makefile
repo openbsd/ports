@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/11 20:32:06 danh Exp $
+# $OpenBSD: Makefile,v 1.6 2002/09/23 14:44:41 danh Exp $
 
 COMMENT=		"Image viewer and browser for GNOME"
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=		bonobo,bonobox::x11/gnome/bonobo \
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS=-L${LOCALBASE}/lib
 NO_REGRESS=		Yes
 
