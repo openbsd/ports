@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_dns_c,v 1.1 2002/04/02 02:28:00 pvalchev Exp $
---- src/dns.c.orig	Mon Apr  1 19:05:25 2002
-+++ src/dns.c	Mon Apr  1 19:05:32 2002
+$OpenBSD: patch-src_dns_c,v 1.2 2002/05/02 19:16:25 couderc Exp $
+--- src/dns.c.orig	Wed May  1 15:57:15 2002
++++ src/dns.c	Wed May  1 16:04:04 2002
 @@ -208,7 +208,7 @@ void a_Dns_init(void)
        dns_server[i].hostname = NULL;
        dns_server[i].timeout_id = -1;
  #ifdef G_DNS_THREADED
--      dns_server[i].th1 = -1;
-+      dns_server[i].th1 = GINT_TO_POINTER(-1);
+-      dns_server[i].th1 = (pthread_t) -1;
++      dns_server[i].th1 = GPOINTER_TO_INT((pthread_t) -1);
  #endif
     }
  }

@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_nav_c,v 1.1.1.1 2002/03/18 14:31:20 couderc Exp $
---- src/nav.c.orig	Thu Mar 14 15:19:54 2002
-+++ src/nav.c	Thu Mar 14 15:22:08 2002
-@@ -82,7 +82,7 @@ static void Nav_open_url(BrowserWindow *
-       a_Interface_stop(bw);
-       a_Interface_clean(bw);
+$OpenBSD: patch-src_nav_c,v 1.2 2002/05/02 19:16:25 couderc Exp $
+--- src/nav.c.orig	Wed Apr 10 03:10:16 2002
++++ src/nav.c	Wed May  1 14:58:16 2002
+@@ -154,7 +154,7 @@ static void Nav_open_url(BrowserWindow *
+    DilloWeb *Web;
+    gboolean ForceReload = (URL_FLAGS(url) & URL_E2EReload);
  
--      g_print("Nav_open_url: Url=>%s<\n", URL_STR(url));
-+      DEBUG_MSG(3, "Nav_open_url: Url=>%s<\n", URL_STR(url));
+-   g_print("Nav_open_url: Url=>%s<\n", URL_STR_(url));
++   DEBUG_MSG(3, "Nav_open_url: Url=>%s<\n", URL_STR_(url));
  
-       a_Menu_pagemarks_new(bw);
- 
+    /* Get the url of the current page */
+    if ( a_Nav_stack_ptr(bw) != -1 )

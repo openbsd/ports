@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2002/04/20 01:39:53 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/02 19:16:25 couderc Exp $
 
 COMMENT=		"Fast and light gtk-based web browser"
 
-DISTNAME=		dillo-0.6.4
+DISTNAME=		dillo-0.6.5
 CATEGORIES=     	www
-NEED_VERSION=		1.508
+NEED_VERSION=		1.525
 
 HOMEPAGE=		http://dillo.cipsga.org.br/
 
-MAINTAINER=		Damien Couderc <couderc.damien@wanadoo.fr>
+MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
 # GPL license
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,8 +25,8 @@ LIB_DEPENDS=    jpeg.62::graphics/jpeg \
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--with-jpeg-inc=${LOCALBASE}/include \
-			--with-jpeg-lib=${LOCALBASE}/lib
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dillo

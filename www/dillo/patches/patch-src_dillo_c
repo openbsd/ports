@@ -1,24 +1,15 @@
-$OpenBSD: patch-src_dillo_c,v 1.1.1.1 2002/03/18 14:31:20 couderc Exp $
---- src/dillo.c.orig	Sun Jan 20 19:18:58 2002
-+++ src/dillo.c	Thu Mar 14 16:09:56 2002
-@@ -45,6 +45,7 @@
- #include "interface.h"
+$OpenBSD: patch-src_dillo_c,v 1.2 2002/05/02 19:16:25 couderc Exp $
+--- src/dillo.c.orig	Mon Mar 18 16:02:50 2002
++++ src/dillo.c	Wed May  1 15:29:09 2002
+@@ -46,6 +46,7 @@
  #include "dw.h"
  #include "dw_widget.h"
+ #include "cookies.h"
 +#include "debug.h"
  
  
  /*
-@@ -67,7 +68,7 @@ gint main(int argc, char *argv[])
-     * todo: implement a cleaner mechanism (in file.c) */
-    signal(SIGPIPE, SIG_IGN);
- 
--   g_print("Setting locale to %s\n", gtk_set_locale());
-+   DEBUG_MSG(3, "Setting locale to %s\n", gtk_set_locale());
-    gtk_init(&argc, &argv);
-    gdk_rgb_init();
- 
-@@ -132,7 +133,7 @@ gint main(int argc, char *argv[])
+@@ -136,7 +137,7 @@ gint main(int argc, char *argv[])
     a_Dw_freeall();
     a_History_free();
  
@@ -27,7 +18,7 @@ $OpenBSD: patch-src_dillo_c,v 1.1.1.1 2002/03/18 14:31:20 couderc Exp $
     return 0;
  }
  
-@@ -146,10 +147,10 @@ static void Dillo_check_home_dir(char *d
+@@ -150,10 +151,10 @@ static void Dillo_check_home_dir(char *d
  
     if ( stat(dir, &st) == -1 ) {
        if ( errno == ENOENT && mkdir(dir, 0700) < 0 ) {
