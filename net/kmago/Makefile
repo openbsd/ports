@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/26 15:12:33 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/05 13:17:33 kevlo Exp $
 
 COMMENT=	"download manager for KDE"
 
-DISTNAME=	kmago-1.1
+DISTNAME=	kmago-1.1.1
 CATEGORIES=	net
-NEED_VERSION=	1.364
+NEED_VERSION=	1.387
 
 HOMEPAGE=	http://kmago.sourceforge.net/
 

@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/25 08:34:57 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/04/05 13:17:44 kevlo Exp $
 bin/kmago
 share/applnk/Internet/kmago.desktop
+share/apps/kmago/eventsrc
 share/apps/kmago/kmagoui.rc
+share/apps/kmago/pics/kmago-active.png
+share/apps/kmago/pics/kmago-idle.png
 share/icons/hicolor/22x22/apps/kmago.png
 share/icons/hicolor/32x32/apps/kmago.png
 share/icons/hicolor/48x48/apps/kmago.png
 share/icons/locolor/16x16/apps/kmago.xpm
 share/icons/locolor/32x32/apps/kmago.xpm
+share/locale/it/LC_MESSAGES/kmago.mo
+@dirrm share/apps/kmago/pics
 @dirrm share/apps/kmago
