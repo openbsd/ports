@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2001/08/31 22:53:26 jasoni Exp $
+@comment $OpenBSD: PLIST,v 1.12 2001/09/16 16:21:51 naddy Exp $
 bin/python2.1
 bin/pydoc
 include/python2.1/Python.h
@@ -736,19 +736,19 @@ lib/python2.1/pickle.pyo
 lib/python2.1/pipes.py
 lib/python2.1/pipes.pyc
 lib/python2.1/pipes.pyo
-lib/python2.1/plat-openbsd2/FCNTL.py
-lib/python2.1/plat-openbsd2/FCNTL.pyc
-lib/python2.1/plat-openbsd2/FCNTL.pyo
-lib/python2.1/plat-openbsd2/IN.py
-lib/python2.1/plat-openbsd2/IN.pyc
-lib/python2.1/plat-openbsd2/IN.pyo
-lib/python2.1/plat-openbsd2/SOCKET.py
-lib/python2.1/plat-openbsd2/SOCKET.pyc
-lib/python2.1/plat-openbsd2/SOCKET.pyo
-lib/python2.1/plat-openbsd2/TERMIOS.py
-lib/python2.1/plat-openbsd2/TERMIOS.pyc
-lib/python2.1/plat-openbsd2/TERMIOS.pyo
-lib/python2.1/plat-openbsd2/regen
+lib/python2.1/plat-openbsd3/FCNTL.py
+lib/python2.1/plat-openbsd3/FCNTL.pyc
+lib/python2.1/plat-openbsd3/FCNTL.pyo
+lib/python2.1/plat-openbsd3/IN.py
+lib/python2.1/plat-openbsd3/IN.pyc
+lib/python2.1/plat-openbsd3/IN.pyo
+lib/python2.1/plat-openbsd3/SOCKET.py
+lib/python2.1/plat-openbsd3/SOCKET.pyc
+lib/python2.1/plat-openbsd3/SOCKET.pyo
+lib/python2.1/plat-openbsd3/TERMIOS.py
+lib/python2.1/plat-openbsd3/TERMIOS.pyc
+lib/python2.1/plat-openbsd3/TERMIOS.pyo
+lib/python2.1/plat-openbsd3/regen
 lib/python2.1/popen2.py
 lib/python2.1/popen2.pyc
 lib/python2.1/popen2.pyo
@@ -1630,7 +1630,7 @@ man/man1/python2.1
 @dirrm lib/python2.1/test/output
 @dirrm lib/python2.1/test
 @dirrm lib/python2.1/site-packages
-@dirrm lib/python2.1/plat-openbsd2
+@dirrm lib/python2.1/plat-openbsd3
 @dirrm lib/python2.1/lib-old
 @dirrm lib/python2.1/encodings
 @dirrm lib/python2.1/distutils/command

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2001/08/31 22:53:26 jasoni Exp $
+@comment $OpenBSD: PLIST,v 1.4 2001/09/16 16:21:50 naddy Exp $
 @option no-default-conflict
 @pkgcfl python-1.5*
 bin/python1.5
@@ -420,19 +420,19 @@ lib/python1.5/pickle.pyo
 lib/python1.5/pipes.py
 lib/python1.5/pipes.pyc
 lib/python1.5/pipes.pyo
-lib/python1.5/plat-openbsd2/FCNTL.py
-lib/python1.5/plat-openbsd2/FCNTL.pyc
-lib/python1.5/plat-openbsd2/FCNTL.pyo
-lib/python1.5/plat-openbsd2/IN.py
-lib/python1.5/plat-openbsd2/IN.pyc
-lib/python1.5/plat-openbsd2/IN.pyo
-lib/python1.5/plat-openbsd2/SOCKET.py
-lib/python1.5/plat-openbsd2/SOCKET.pyc
-lib/python1.5/plat-openbsd2/SOCKET.pyo
-lib/python1.5/plat-openbsd2/TERMIOS.py
-lib/python1.5/plat-openbsd2/TERMIOS.pyc
-lib/python1.5/plat-openbsd2/TERMIOS.pyo
-lib/python1.5/plat-openbsd2/regen
+lib/python1.5/plat-openbsd3/FCNTL.py
+lib/python1.5/plat-openbsd3/FCNTL.pyc
+lib/python1.5/plat-openbsd3/FCNTL.pyo
+lib/python1.5/plat-openbsd3/IN.py
+lib/python1.5/plat-openbsd3/IN.pyc
+lib/python1.5/plat-openbsd3/IN.pyo
+lib/python1.5/plat-openbsd3/SOCKET.py
+lib/python1.5/plat-openbsd3/SOCKET.pyc
+lib/python1.5/plat-openbsd3/SOCKET.pyo
+lib/python1.5/plat-openbsd3/TERMIOS.py
+lib/python1.5/plat-openbsd3/TERMIOS.pyc
+lib/python1.5/plat-openbsd3/TERMIOS.pyo
+lib/python1.5/plat-openbsd3/regen
 lib/python1.5/popen2.py
 lib/python1.5/popen2.pyc
 lib/python1.5/popen2.pyo
@@ -894,7 +894,7 @@ man/man1/python.1
 @dirrm include/python1.5
 @dirrm lib/python1.5/config
 @dirrm lib/python1.5/lib-stdwin
-@dirrm lib/python1.5/plat-openbsd2
+@dirrm lib/python1.5/plat-openbsd3
 @dirrm lib/python1.5/test/output
 @dirrm lib/python1.5/test
 @dirrm lib/python1.5
