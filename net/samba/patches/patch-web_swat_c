@@ -1,0 +1,16 @@
+$OpenBSD: patch-web_swat_c,v 1.1 2005/04/03 11:20:38 mbalmer Exp $
+--- web/swat.c.orig	Sat Feb  5 13:09:31 2005
++++ web/swat.c	Sat Feb  5 13:10:13 2005
+@@ -116,8 +116,10 @@ static int include_html(const char *fnam
+ 	fd = web_open(fname, O_RDONLY, 0);
+ 
+ 	if (fd == -1) {
+-		printf(_("ERROR: Can't open %s"), fname);
+-		printf("\n");
++		if (strcmp(fname, "help/welcome.html")) {
++			printf(_("ERROR: Can't open %s"), fname);
++			printf("\n");
++		}
+ 		return 0;
+ 	}
+ 

@@ -1,0 +1,12 @@
+--- ../WHATSNEW.txt.orig	Fri Feb  4 05:13:54 2005
++++ ../WHATSNEW.txt	Sun Feb  6 11:33:01 2005
+@@ -8,6 +8,9 @@
+ bug-fixes.  Please read the following important changes in this 
+ release.
+ 
++The OpenBSD port of Samba installs the mksmbpasswd.sh script as
++mksmbpasswd.
++
+ Common bugs fixed in 3.0.11 include:
+ 
+   o Crash in smbd when using CUPS printing.

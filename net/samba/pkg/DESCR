@@ -8,3 +8,13 @@ or UNIX printers as if they were local printers.
 
 Some of the most popular Lan Manager compatible clients include Lan
 Manager itself, Windows for Workgroups, OS/2 and Windows NT.
+
+Available flavors:
+
+cups	Enable CUPS support
+ldap	Enable LDAP support
+
+Available subpackage:
+
+docs	Documentation in HTML and PDF (man pages are part of the
+		base package)

@@ -1,0 +1,168 @@
+@comment $OpenBSD: PLIST,v 1.19 2005/04/03 11:20:38 mbalmer Exp $
+bin/findsmb
+bin/mksmbpasswd
+bin/net
+bin/nmblookup
+bin/ntlm_auth
+bin/pdbedit
+bin/profiles
+bin/rpcclient
+bin/smbcacls
+bin/smbclient
+bin/smbcontrol
+bin/smbcquotas
+bin/smbpasswd
+bin/smbspool
+bin/smbstatus
+bin/smbtar
+bin/smbtree
+bin/tdbbackup
+bin/tdbdump
+bin/tdbtool
+bin/testparm
+bin/testprns
+include/libsmbclient.h
+lib/samba/
+lib/samba/auth/
+lib/samba/charset/
+lib/samba/charset/CP437.so
+lib/samba/charset/CP850.so
+lib/samba/de.msg
+lib/samba/en.msg
+lib/samba/fr.msg
+lib/samba/idmap/
+lib/samba/it.msg
+lib/samba/ja.msg
+lib/samba/libsmbclient.a
+lib/samba/lowcase.dat
+lib/samba/nl.msg
+lib/samba/pdb/
+lib/samba/pl.msg
+lib/samba/rpc/
+lib/samba/tr.msg
+lib/samba/upcase.dat
+lib/samba/valid.dat
+lib/samba/vfs/
+lib/samba/vfs/audit.so
+lib/samba/vfs/cap.so
+lib/samba/vfs/default_quota.so
+lib/samba/vfs/extd_audit.so
+lib/samba/vfs/fake_perms.so
+lib/samba/vfs/netatalk.so
+lib/samba/vfs/readonly.so
+lib/samba/vfs/recycle.so
+libexec/nmbd
+libexec/smbd
+libexec/swat
+@man man/man1/editreg.1
+@man man/man1/findsmb.1
+@man man/man1/log2pcap.1
+@man man/man1/nmblookup.1
+@man man/man1/ntlm_auth.1
+@man man/man1/profiles.1
+@man man/man1/rpcclient.1
+@man man/man1/smbcacls.1
+@man man/man1/smbclient.1
+@man man/man1/smbcontrol.1
+@man man/man1/smbcquotas.1
+@man man/man1/smbget.1
+@man man/man1/smbsh.1
+@man man/man1/smbstatus.1
+@man man/man1/smbtar.1
+@man man/man1/smbtree.1
+@man man/man1/testparm.1
+@man man/man1/testprns.1
+@man man/man1/vfstest.1
+@man man/man1/wbinfo.1
+@man man/man5/lmhosts.5
+@man man/man5/smb.conf.5
+@man man/man5/smbgetrc.5
+@man man/man5/smbpasswd.5
+@man man/man7/samba.7
+@man man/man8/mount.cifs.8
+@man man/man8/net.8
+@man man/man8/nmbd.8
+@man man/man8/pam_winbind.8
+@man man/man8/pdbedit.8
+@man man/man8/smbd.8
+@man man/man8/smbmnt.8
+@man man/man8/smbmount.8
+@man man/man8/smbpasswd.8
+@man man/man8/smbspool.8
+@man man/man8/smbumount.8
+@man man/man8/swat.8
+@man man/man8/tdbbackup.8
+@man man/man8/tdbdump.8
+@man man/man8/winbindd.8
+share/examples/samba/
+share/examples/samba/LDAP/smbldap-tools-0.8.7/
+share/examples/samba/LDAP/smbldap-tools-0.8.7/CONTRIBUTORS
+share/examples/samba/LDAP/smbldap-tools-0.8.7/COPYING
+share/examples/samba/LDAP/smbldap-tools-0.8.7/ChangeLog
+share/examples/samba/LDAP/smbldap-tools-0.8.7/FILES
+share/examples/samba/LDAP/smbldap-tools-0.8.7/INFRA
+share/examples/samba/LDAP/smbldap-tools-0.8.7/INSTALL
+share/examples/samba/LDAP/smbldap-tools-0.8.7/Makefile
+share/examples/samba/LDAP/smbldap-tools-0.8.7/README
+share/examples/samba/LDAP/smbldap-tools-0.8.7/TODO
+share/examples/samba/LDAP/smbldap-tools-0.8.7/configure.pl
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/contents_motif.gif
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/index.html
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/next_motif.gif
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/previous_motif.gif
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools.html
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools001.html
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools002.html
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools003.html
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools004.html
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools005.html
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools006.html
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools007.html
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools008.html
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools009.html
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools010.html
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/smbldap-migrate-accounts
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/smbldap-migrate-groups
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/smbldap-migrate-unix-accounts
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/smbldap-migrate-unix-groups
+share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/smbldap-tools.pdf
+share/examples/samba/LDAP/smbldap-tools-0.8.7/smb.conf
+share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-groupadd
+share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-groupdel
+share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-groupmod
+share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-groupshow
+share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-passwd
+share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-populate
+share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-useradd
+share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-userdel
+share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-userinfo
+share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-usermod
+share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-usershow
+share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap.conf
+share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap_bind.conf
+share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap_tools.pm
+share/examples/samba/misc/adssearch.pl
+share/examples/samba/misc/check_multiple_LDAP_entries.pl
+share/examples/samba/smb.conf.default
+@sample ${SYSCONFDIR}/samba/smb.conf
+share/swat/
+share/swat/help/Samba-Guide/nw4migration.html
+share/swat/help/Samba-HOWTO-Collection/largefile.html
+share/swat/images/
+share/swat/images/globals.gif
+share/swat/images/home.gif
+share/swat/images/passwd.gif
+share/swat/images/printers.gif
+share/swat/images/samba.gif
+share/swat/images/shares.gif
+share/swat/images/status.gif
+share/swat/images/viewconfig.gif
+share/swat/images/wizard.gif
+share/swat/include/
+share/swat/include/footer.html
+share/swat/include/header.html
+@sample /var/spool/samba/
+%%SHARED%%
+@extraunexec rm -fr /var/spool/samba/

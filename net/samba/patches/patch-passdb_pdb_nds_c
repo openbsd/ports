@@ -1,0 +1,15 @@
+$OpenBSD: patch-passdb_pdb_nds_c,v 1.1 2005/04/03 11:20:38 mbalmer Exp $
+--- passdb/pdb_nds.c.orig	Thu Mar 31 14:46:05 2005
++++ passdb/pdb_nds.c	Thu Mar 31 14:47:10 2005
+@@ -23,7 +23,11 @@
+ 
+ #include <lber.h>
+ #include <ldap.h>
++#ifdef __OpenBSD__
++#include <utf8/wchar.h>
++#else
+ #include <wchar.h>
++#endif
+ 
+ #include "smbldap.h"
+ 

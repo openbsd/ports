@@ -1,1 +1,0 @@
-setreuid() and setregid() used by lib/util_sec.c.

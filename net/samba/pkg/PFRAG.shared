@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2005/04/03 11:20:38 mbalmer Exp $
+lib/samba/libsmbclient.so
+lib/samba/vfs/expand_msdfs.so
+lib/samba/vfs/full_audit.so
+lib/samba/vfs/shadow_copy.so
