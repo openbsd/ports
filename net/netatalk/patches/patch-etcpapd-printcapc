@@ -1,5 +1,6 @@
+$OpenBSD: patch-etcpapd-printcapc,v 1.2 2001/03/19 13:50:57 wilfried Exp $
 --- etc/papd/printcap.c.orig	Sun Aug 17 09:20:28 1997
-+++ etc/papd/printcap.c	Fri Oct 29 12:56:24 1999
++++ etc/papd/printcap.c	Fri Mar 16 14:58:42 2001
 @@ -40,9 +40,15 @@
  static char sccsid[] = "@(#)printcap.c	5.7 (Berkeley) 3/4/91";
  #endif /* not lint */
@@ -17,7 +18,7 @@
  #include <atalk/paths.h>
  
  #ifndef BUFSIZ
-@@ -66,7 +72,6 @@
+@@ -66,7 +72,6 @@ static char sccsid[] = "@(#)printcap.c	5
  
  #define PRINTCAP
  
@@ -25,7 +26,7 @@
  #define tgetent	pgetent
  #define tskip	pskip
  #define tgetstr	pgetstr
-@@ -77,7 +82,8 @@
+@@ -77,7 +82,8 @@ static char sccsid[] = "@(#)printcap.c	5
  #define tnchktc	pnchktc
  #define	tnamatch pnamatch
  #define V6
@@ -35,7 +36,7 @@
  
  static	FILE *pfp = NULL;	/* printcap data base file pointer */
  static	char *tbuf;
-@@ -94,6 +100,7 @@
+@@ -94,6 +100,7 @@ char	*getenv();
   * Added a "cap" parameter, so we can use these calls for printcap
   * and papd.conf.
   */
@@ -43,7 +44,7 @@
  getprent( cap, bp)
  	register char *cap;
  	register char *bp;
-@@ -136,6 +143,7 @@
+@@ -136,6 +143,7 @@ getprent( cap, bp)
  	}
  }
  
@@ -51,7 +52,7 @@
  endprent()
  {
  	if (pfp != NULL)
-@@ -150,6 +158,7 @@
+@@ -150,6 +158,7 @@ endprent()
   * Added a "cap" parameter, so we can use these calls for printcap
   * and papd.conf.
   */
@@ -59,24 +60,68 @@
  tgetent( cap, bp, name)
  	char *cap, *bp, *name;
  {
-@@ -157,7 +166,6 @@
+@@ -157,8 +166,7 @@ tgetent( cap, bp, name)
  	register int c;
  	register int i = 0, cnt = 0;
  	char ibuf[BUFSIZ];
 -	char *cp2;
- 	int tf;
+-	int tf;
++	int tf, skip;
  
  	hopcount = 0;
-@@ -176,7 +184,7 @@
+ 	tbuf = bp;
+@@ -176,8 +184,8 @@ tgetent( cap, bp, name)
  		if (*cp!='/') {
  			cp2 = getenv("TERM");
  			if (cp2==(char *) 0 || strcmp(name,cp2)==0) {
 -				strcpy(bp,cp);
+-				return(tnchktc());
 +				(void)strlcpy(bp,cp, sizeof( bp ) );
- 				return(tnchktc());
++				return(tnchktc(cap));
  			} else {
  				tf = open(cap, 0);
-@@ -238,6 +246,7 @@
+ 			}
+@@ -191,6 +199,7 @@ tgetent( cap, bp, name)
+ #endif
+ 	if (tf < 0)
+ 		return (-1);
++	skip = 0;
+ 	for (;;) {
+ 		cp = bp;
+ 		for (;;) {
+@@ -204,12 +213,20 @@ tgetent( cap, bp, name)
+ 			}
+ 			c = ibuf[i++];
+ 			if (c == '\n') {
+-				if (cp > bp && cp[-1] == '\\'){
++				if (!skip && cp > bp && cp[-1] == '\\'){
+ 					cp--;
+ 					continue;
+ 				}
+-				break;
++				skip = 0;
++				if (cp == bp)
++					continue;
++				else
++					break;
+ 			}
++			if (c == '#' && cp == bp)
++				skip++;
++			if (skip)
++				continue;
+ 			if (cp >= bp+BUFSIZ) {
+ 				write(2,"Termcap entry too long\n", 23);
+ 				break;
+@@ -223,7 +240,7 @@ tgetent( cap, bp, name)
+ 		 */
+ 		if (tnamatch(name)) {
+ 			close(tf);
+-			return(tnchktc());
++			return(tnchktc(cap));
+ 		}
+ 	}
+ }
+@@ -238,6 +255,7 @@ tgetent( cap, bp, name)
   * Added a "cap" parameter, so we can use these calls for printcap
   * and papd.conf.
   */
@@ -84,7 +129,7 @@
  tnchktc( cap )
      char *cap;
  {
-@@ -257,7 +266,7 @@
+@@ -257,7 +275,7 @@ tnchktc( cap )
  	/* p now points to beginning of last field */
  	if (p[0] != 't' || p[1] != 'c')
  		return(1);
@@ -93,7 +138,7 @@
  	q = tcname;
  	while (q && *q != ':')
  		q++;
-@@ -275,7 +284,7 @@
+@@ -275,7 +293,7 @@ tnchktc( cap )
  		write(2, "Termcap entry too long\n", 23);
  		q[BUFSIZ - (p-tbuf)] = 0;
  	}
@@ -102,7 +147,7 @@
  	tbuf = holdtbuf;
  	return(1);
  }
-@@ -286,6 +295,7 @@
+@@ -286,6 +304,7 @@ tnchktc( cap )
   * against each such name.  The normal : terminator after the last
   * name (before the first field) stops us.
   */
@@ -110,7 +155,7 @@
  tnamatch(np)
  	char *np;
  {
-@@ -332,6 +342,7 @@
+@@ -332,6 +351,7 @@ tskip(bp)
   * a # character.  If the option is not found we return -1.
   * Note that we handle octal numbers beginning with 0.
   */
@@ -118,7 +163,7 @@
  tgetnum(id)
  	char *id;
  {
-@@ -365,6 +376,7 @@
+@@ -365,6 +385,7 @@ tgetnum(id)
   * of the buffer.  Return 1 if we find the option, or 0 if it is
   * not given.
   */
