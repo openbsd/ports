@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2004/05/07 14:16:30 xsa Exp $
+# $OpenBSD: Makefile,v 1.78 2004/10/04 05:43:40 djm Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -78,6 +78,7 @@
      SUBDIR += shared-mime-info
      SUBDIR += splitvt
 #    SUBDIR += team
+     SUBDIR += tpwireless
      SUBDIR += tkcron
      SUBDIR += tkinfo
      SUBDIR += tkman
