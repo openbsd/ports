@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/01/10 22:14:35 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/02/07 17:47:50 couderc Exp $
 bin/rox
 man/man1/ROX-Filer.1
 man/man1/rox.1
@@ -264,6 +264,8 @@ rox/ROX-Filer/src/wrapped.c
 rox/ROX-Filer/src/wrapped.h
 rox/ROX-Filer/src/xml.c
 rox/ROX-Filer/src/xml.h
+rox/ROX-Filer/src/xtypes.c
+rox/ROX-Filer/src/xtypes.h
 rox/ROX-Filer/style.css
 share/rox/Choices/MIME-types/application_postscript
 share/rox/Choices/MIME-types/text
