@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 1999/09/07 14:26:15 brad Exp $
+# $OpenBSD: Makefile,v 1.12 1999/09/20 21:26:00 brad Exp $
 
-DISTNAME=	nmap-2.3BETA5
-PKGNAME=	nmap-2.3b5
+DISTNAME=	nmap-2.3BETA6
+PKGNAME=	nmap-2.3b6
 CATEGORIES=     net
 MASTER_SITES=	http://www.insecure.org/nmap/dist/ \
 		ftp://relay.nuxi.com/pub/misc/
