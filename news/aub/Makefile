@@ -1,19 +1,14 @@
-# OpenBSD makefile for:  aub
-# Version required:     	  v2.0.5
-# Date created:			  December 1, 1997
-# Whom:				  Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:55 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.9 2000/03/31 21:48:48 brad Exp $
 
 DISTNAME=	aub
 PKGNAME=	aub-2.0.5
 CATEGORIES=	news
 NEED_VERSION=	1.191
-MASTER_SITES=	ftp://ftp.cdrom.com/pub/perl/CPAN/scripts/news/nntpstuff/aub/ \
+MASTER_SITES=	ftp://ftp.freesoftware.com/pub/perl/CPAN/scripts/news/nntpstuff/aub/ \
 		ftp://ftp.digital.com/pub/plan/perl/CPAN/scripts/news/nntpstuff/aub/ \
 		ftp://ftp.perl.org/pub/CPAN/scripts/news/nntpstuff/aub/
 DISTFILES=	aub aub.1 BUG_FIXES
+DIST_SUBDIR=	aub
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -22,10 +17,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-DIST_SUBDIR=	aub
-WRKDIST=	${WRKDIR}
-NO_BUILD=	yes
+NO_BUILD=	Yes
+
 MAN1=		aub.1
+
+WRKDIST=	${WRKDIR}
 
 do-extract:
 	@mkdir -p ${WRKDIR}
@@ -37,7 +33,7 @@ pre-configure:
 		${FULLDISTDIR}/aub > ${WRKDIR}/aub
 
 do-install:
-	cd ${WRKDIR}; ${PATCH} < ../files/aub-perl5.diff
+	cd ${WRKDIR}; patch < ../files/aub-perl5.diff
 	${INSTALL_SCRIPT} ${WRKDIR}/aub ${PREFIX}/bin
 	${INSTALL_MAN} ${FULLDISTDIR}/aub.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/aub

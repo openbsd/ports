@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/24 23:28:40 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/31 21:48:48 brad Exp $
 
 BROKEN=		depend xview is broken
 
 DISTNAME=	olvwm4
 PKGNAME=	olvwm-4.2
-CATEGORIES=	x11-wm
-NEED_VERSION=	 1.230
+CATEGORIES=	x11
+NEED_VERSION=	1.230
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	olvwm4.tar.Z
 
-MAINTAINER= ian@openbsd.org
+MAINTAINER=	ian@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"missing license"
 PERMIT_PACKAGE_FTP=	Yes
@@ -18,14 +18,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 # The Patch01 and Patch02 patches are included in the patches directory.
 #
-# MASTER_SITES0 = ftp://ftp.cdrom.com/X11/contrib/window_managers
+# MASTER_SITES0 = ftp://ftp.freesoftware.com/pub/X11/contrib/window_managers
 # PATCHFILES=	olvwm4.Patch01.Z:0 olvwm4.Patch02.Z:0
 # PATCH_DIST_STRIP=	-p1
 
 LIB_DEPENDS=	xview.3.::x11/xview-lib
 
-WRKDIST=	${WRKDIR}
 USE_IMAKE=	Yes
+
+WRKDIST=	${WRKDIR}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/olvwm ${PREFIX}/bin
