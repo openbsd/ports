@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/21 15:19:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/08 16:24:20 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -18,6 +18,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}source/
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh
 
 LIB_DEPENDS=	xmms.2::audio/xmms
 

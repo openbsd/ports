@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/09/20 20:03:10 wilfried Exp $
+# $OpenBSD: Makefile,v 1.14 2001/10/08 16:24:20 naddy Exp $
 # Uses pthreads
 
 ONLY_FOR_ARCHS=	i386
@@ -33,6 +33,10 @@ MASTER_SITES=		http://www.xmms.org/files/%SUBDIR%/ \
 
 MASTER_SITES0=		http://vedge.com.ar/hack/ \
 			ftp://vedge.com/ar/pub/xmms/
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
+		patch-*
 
 FLAVORS=		no_esd no_vorbis
 FLAVOR?=
