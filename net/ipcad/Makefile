@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/08/02 16:22:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/09/01 18:49:01 mpech Exp $
 # $RuOBSD: Makefile,v 1.1.1.1 2002/04/08 02:46:36 form Exp $
 
 COMMENT=		"IP accounting daemon simulating Cisco ip accounting"
@@ -7,8 +7,7 @@ DISTNAME=		ipcad-2.6.2
 CATEGORIES=		net
 HOMEPAGE=		http://www.spelio.net.ru/soft/
 
-MAINTAINER=		Oleg Safiullin <form@openbsd.org>, \
-			Alexander Yurchenko <grange@rt.mipt.ru>
+MAINTAINER=		Alexander Yurchenko <grange@rt.mipt.ru>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/08 17:25:41 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/09/01 18:49:01 mpech Exp $
 # $RuOBSD: Makefile,v 1.4 2002/04/29 11:07:18 grange Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2001/12/29 00:22:02 abs Exp $
 
@@ -11,8 +11,7 @@ NEED_VERSION=		1.525
 
 HOMEPAGE=		http://www.uni-mainz.de/~bauec002/B2Main.html
 
-MAINTAINER=		Alexander Yurchenko <grange@rt.mipt.ru>, \
-			Oleg Safiullin <form@openbsd.org>
+MAINTAINER=		Alexander Yurchenko <grange@rt.mipt.ru>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

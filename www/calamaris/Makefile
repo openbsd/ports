@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/06/18 03:59:46 form Exp $
+# $OpenBSD: Makefile,v 1.4 2002/09/01 18:49:01 mpech Exp $
 # $RuOBSD: Makefile,v 1.3 2002/04/28 16:29:29 grange Exp $
 
 COMMENT=		"proxy-cache-servers logfiles analizer"
@@ -9,8 +9,7 @@ NEED_VERSION=		1.531
 
 HOMEPAGE=		http://cord.de/tools/squid/calamaris/	
 
-MAINTAINER=		Alexander Yurchenko <grange@rt.mipt.ru>, \
-			Oleg Safiullin <form@openbsd.org>
+MAINTAINER=		Alexander Yurchenko <grange@rt.mipt.ru>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/03/21 21:25:51 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2002/09/01 18:49:01 mpech Exp $
 
 COMMENT=	"setup X11 fonts for russian language (koi8-r)"
 
@@ -8,8 +8,6 @@ NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.openbsd.ru/pub/X11/cyrillic/ \
 		ftp://vell.nsc.ru/pub/X11/cyrillic/ \
 		ftp://ftp.styx.org/users/ww/cyrillic/
-
-MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

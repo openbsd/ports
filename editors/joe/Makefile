@@ -1,5 +1,5 @@
 # $RuOBSD: Makefile,v 1.3 2002/04/10 05:14:52 form Exp $
-# $OpenBSD: Makefile,v 1.28 2002/05/13 02:43:38 form Exp $
+# $OpenBSD: Makefile,v 1.29 2002/09/01 18:49:00 mpech Exp $
 
 COMMENT=		"joe's own editor"
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAINTAINER=		Oleg Safiullin <form@openbsd.org>, \
-			Mike Pechkin <mpech@openbsd.org>
+MAINTAINER=		Mike Pechkin <mpech@openbsd.org>
 
 CONFIGURE_STYLE=	gnu
 

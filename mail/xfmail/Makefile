@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2002/06/23 03:49:50 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2002/09/01 18:49:01 mpech Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 # $RuOBSD: Makefile,v 1.4 2002/05/18 04:21:36 form Exp $
 
@@ -18,8 +18,6 @@ BUILD_DEPENDS=		autoconf::devel/autoconf \
 
 LIB_DEPENDS=		forms::x11/xforms \
 					glib.1.2::devel/glib
-
-MAINTAINER=		Oleg Safiullin <form@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

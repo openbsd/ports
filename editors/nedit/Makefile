@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2002/06/13 05:44:57 form Exp $
+# $OpenBSD: Makefile,v 1.26 2002/09/01 18:49:01 mpech Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		"X11/Motif GUI text editor"
@@ -10,8 +10,6 @@ NEED_VERSION=		1.528
 MASTER_SITES=		http://nedit.org/ftp/beta/
 
 HOMEPAGE=		http://www.nedit.org/
-
-MAINTAINER=		Oleg Safiullin <form@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

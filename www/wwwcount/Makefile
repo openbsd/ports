@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/05/15 17:58:51 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2002/09/01 18:49:01 mpech Exp $
 
 COMMENT=	"access counter, clock and date for WWW pages"
 
@@ -19,8 +19,6 @@ S=	src/wwwcount2.5
 # For digit images look at:
 # http://www.digitmania.holowww.com/
 HOMEPAGE=	http://www.muquit.com/muquit/software/Count/Count.html
-
-MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

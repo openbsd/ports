@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2002/06/10 02:37:10 form Exp $
+# $OpenBSD: Makefile,v 1.28 2002/09/01 18:49:01 mpech Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 COMMENT=		"PDP, IBM 1401, Nova and other CPUs simulator"
@@ -10,8 +10,6 @@ MASTER_SITES=		http://simh.trailing-edge.com/sources/
 DISTFILES=		simhv29-10.zip
 
 HOMEPAGE=		http://simh.trailing-edge.com/
-
-MAINTAINER=		Oleg Safiullin <form@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

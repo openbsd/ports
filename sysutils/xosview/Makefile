@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2002/05/13 02:56:50 form Exp $
+# $OpenBSD: Makefile,v 1.27 2002/09/01 18:49:01 mpech Exp $
 # $NetBSD: Makefile,v 1.9 1998/04/15 10:38:50 agc Exp $
 
 COMMENT=	"graphical performance meter"
@@ -9,8 +9,6 @@ NEED_VERSION=	1.528
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xosview/}
 
 HOMEPAGE=	http://xosview.sourceforge.net/
-
-MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

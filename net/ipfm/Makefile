@@ -1,5 +1,5 @@
 # $FreeBSD: ports/net/ipfm/Makefile,v 1.2 2000/04/09 18:11:44 cpiazza Exp $
-# $OpenBSD: Makefile,v 1.5 2002/03/01 09:52:16 form Exp $
+# $OpenBSD: Makefile,v 1.6 2002/09/01 18:49:01 mpech Exp $
 
 COMMENT=	"IP bandwidth analysis tool"
 
@@ -16,8 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://robert.cheramy.net/ipfm/archive/
 
 HOMEPAGE=	http://robert.cheramy.net/ipfm/
-
-MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 
 CONFIGURE_STYLE=gnu
 

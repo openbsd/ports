@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2002/06/13 03:26:44 form Exp $
+# $OpenBSD: Makefile,v 1.37 2002/09/01 18:49:00 mpech Exp $
 
 COMMENT=		"MS-DOS Telix-like serial communication program"
 
@@ -14,8 +14,6 @@ HOMEPAGE=		http://www.netsonic.fi/~walker/minicom.html
 MODULES=		gettext
 RUN_DEPENDS=		::comms/kermit \
 			::comms/lrzsz
-
-MAINTAINER=     	Oleg Safiullin <form@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

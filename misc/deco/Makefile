@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/03/29 10:05:41 form Exp $
+# $OpenBSD: Makefile,v 1.12 2002/09/01 18:49:01 mpech Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/03/27 11:56:44 tg Exp $
 
 COMMENT=	"Demos Commander, a free Norton Commander clone"
@@ -14,8 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/05/20 00:01:45 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2002/09/01 18:49:01 mpech Exp $
 # $FreeBSD: ports/net/fping/Makefile,v 1.8 2000/03/22 00:26:51 obrien Exp $
 
 COMMENT=		"quickly ping N hosts w/o flooding the network"
@@ -12,8 +12,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MAINTAINER=		Oleg Safiullin <form@openbsd.org>
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--bindir=${PREFIX}/sbin
