@@ -1,4 +1,4 @@
-$OpenBSD: patch-script_ltconfig,v 1.1.1.1 2004/01/14 05:56:23 kevlo Exp $
+$OpenBSD: patch-script_ltconfig,v 1.2 2004/06/01 22:00:47 brad Exp $
 --- script/ltconfig.orig	2001-06-07 13:29:27.000000000 +0000
 +++ script/ltconfig	2004-01-13 17:55:02.000000000 +0000
 @@ -501,7 +501,14 @@ fi
@@ -37,7 +37,7 @@ $OpenBSD: patch-script_ltconfig,v 1.1.1.1 2004/01/14 05:56:23 kevlo Exp $
 -    hardcode_direct=yes
 -    hardcode_shlibpath_var=no
 +    case "$host_cpu" in
-+    m88k|hppa|vax)
++    m88k|vax)
 +      ld_shlibs=no
 +      ;;
 +    *)
