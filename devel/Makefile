@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2001/10/27 09:03:54 shell Exp $
+# $OpenBSD: Makefile,v 1.113 2001/11/24 11:59:11 shell Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -111,6 +111,7 @@
      SUBDIR += pth
      SUBDIR += py-Checker
      SUBDIR += py-mxDateTime
+     SUBDIR += py-optik
      SUBDIR += py-unit
      SUBDIR += py-unit,no_x11
      SUBDIR += rats
