@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2005/02/16 01:40:24 kevlo Exp $
+# $OpenBSD: Makefile,v 1.49 2005/02/19 12:10:03 alek Exp $
 
 COMMENT=	"GNU privacy guard - a free PGP replacement"
 
 DISTNAME=	gnupg-1.4.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security
 
 MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/gnupg/ \
@@ -25,9 +26,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c z
+WANTLIB=		c z ncurses readline
 
 MODULES= devel/gettext
+LIB_DEPENDS=	bz2.10::archivers/bzip2
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59
@@ -36,6 +38,8 @@ CONFIGURE_ARGS+= --disable-ldap \
 		 --disable-gnupg-iconv
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv" \
+		LIBICONV="-L${LOCALBASE}/lib -liconv"
 
 FLAVORS=	idea card
 FLAVOR?=

@@ -1,0 +1,12 @@
+$OpenBSD: patch-g10_Makefile_in,v 1.1 2005/02/19 12:10:03 alek Exp $
+--- g10/Makefile.in.orig	Sat Feb 19 11:15:25 2005
++++ g10/Makefile.in	Sat Feb 19 11:15:31 2005
+@@ -315,7 +315,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-INCLUDES = -I$(top_srcdir)/include -I$(top_srcdir)/intl
++INCLUDES = -I$(top_srcdir)/include
+ EXTRA_DIST = options.skel
+ @HAVE_DOSISH_SYSTEM_FALSE@AM_CFLAGS = -DGNUPG_LIBEXECDIR="\"$(libexecdir)\""
+ needed_libs = ../cipher/libcipher.a ../mpi/libmpi.a ../util/libutil.a

@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_Makefile_in,v 1.1 2005/02/19 12:10:03 alek Exp $
+--- tools/Makefile.in.orig	Sat Feb 19 11:15:06 2005
++++ tools/Makefile.in	Sat Feb 19 11:15:13 2005
+@@ -281,7 +281,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ EXTRA_DIST = lspgpot ring-a-party mail-signed-keys convert-from-106
+-INCLUDES = -I$(top_srcdir)/include -I$(top_srcdir)/intl
++INCLUDES = -I$(top_srcdir)/include
+ needed_libs = ../cipher/libcipher.a ../mpi/libmpi.a ../util/libutil.a 
+ other_libs = $(LIBICONV) $(LIBINTL) $(CAPLIBS)
+ gpgsplit_LDADD = $(needed_libs) $(other_libs) @ZLIBS@

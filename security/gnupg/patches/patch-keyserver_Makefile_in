@@ -1,0 +1,12 @@
+$OpenBSD: patch-keyserver_Makefile_in,v 1.1 2005/02/19 12:10:03 alek Exp $
+--- keyserver/Makefile.in.orig	Sat Feb 19 11:15:45 2005
++++ keyserver/Makefile.in	Sat Feb 19 11:15:51 2005
+@@ -278,7 +278,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-INCLUDES = -I$(top_srcdir)/include -I$(top_srcdir)/intl
++INCLUDES = -I$(top_srcdir)/include
+ EXTRA_SCRIPTS = gpgkeys_mailto
+ libexec_SCRIPTS = @GPGKEYS_MAILTO@
+ noinst_SCRIPTS = gpgkeys_test
