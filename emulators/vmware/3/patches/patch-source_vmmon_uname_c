@@ -1,0 +1,11 @@
+$OpenBSD: patch-source_vmmon_uname_c,v 1.1 2004/10/06 15:52:20 todd Exp $
+--- source/vmmon/openbsd/uname.c.orig	Tue Jul 29 21:14:22 2003
++++ source/vmmon/openbsd/uname.c	Wed Oct  6 10:47:30 2004
+@@ -90,7 +90,6 @@ vmmon_linux_sys_uname(p, v, retval)
+ 			break;
+ 	}
+ 	if (pp == NULL) {
+-		printf("no match for pid %d\n", p->p_pid);
+ 		return (linux_sys_uname(p, v, retval));
+ 	}
+ 
