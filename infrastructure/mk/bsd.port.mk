@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.340 2000/10/22 16:31:38 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.341 2000/12/01 16:31:11 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -48,142 +48,40 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # the definitive source of documentation to this file's working
 # should be bsd.port.mk(5).
 #
+# All redundant documentation is being stripped, refer to bsd.port.mk(5),
+# really !
+#
 # IMPORTANT: any variable or target starting with an underscore 
 # (e.g., _DEPEND_ECHO) is internal to bsd.port.mk, and 
 # liable to change without notice. 
 #
 # DON'T USE IN INDIVIDUAL PORTS !!!
 #
-# The following variables are deprecated, use
-# PERMIT_xxx, CONFIGURE_STYLE, or EXTRACT_CASES instead:
-# ========================================================================
 # NO_CDROM		- Port may not go on CDROM.  Set this string to reason.
-# EXTRACT_CMD	- Command for extracting archives (default: "gzip",
-#				  "bzip2" if USE_BZIP2, "unzip" if USE_ZIP).
-# EXTRACT_SUFX	- Suffix for archive files (default: ".tar.gz",
-#				  ".tar.bz2" if USE_BZIP2, ".zip" if USE_ZIP).
-# EXTRACT_BEFORE_ARGS 
-#				- Arguments to ${EXTRACT_CMD} before filename
-#				  (default: "-dc" for gzip or bzip2, "-q" for unzip)
-# EXTRACT_AFTER_ARGS 
-#				- Arguments to ${EXTRACT_CMD} following filename
-#				  (default: "| ${TAR} -xf -", or "-d ${WKRDIR}" if USE_ZIP).
-# ========================================================================
 #
 # Variables that typically apply to all ports:
 # 
-# ONLY_FOR_ARCHS - If a port only makes sense to certain architectures, this
-#				  is a list containing the names for them.  It is checked
-#				  against the predefined ${MACHINE_ARCH} value
-# ARCH			- The architecture (default: "uname -m").
-# OPSYS			- The operating system (default: "uname -s").
-# OPSYS_VER		- The current version of the operating system
-#				  (default: "uname -r").
-# PORTSDIR		- The root of the ports tree.  Defaults: /usr/ports
-# DISTDIR 		- Where to get gzip'd, tarballed copies of original sources.
-#				  (default: ${PORTSDIR}/distfiles).
-# PREFIX		- Where to install things in general (default: /usr/local).
 # MASTER_SITES	- Primary location(s) for distribution files if not found
 #				  locally.
 # MASTER_SITESn	- Primary location(s) for more distribution files, in case
 #				  some distfiles must be fetched from elsewhere.
 # MASTER_SITE_SUBDIR - Directory that "%SUBDIR%" in MASTER_SITES is
 #				  replaced by.
-# PACKAGES		- A top level directory where all packages go (rather than
-#				  going locally to each port). (default:
-#				  ${PORTSDIR}/packages/${ARCH}).
-# GMAKE			- Set to path of GNU make if not in $PORTPATH (default: gmake).
-# XMKMF			- Set to path of `xmkmf' if not in $PORTPATH 
-#                 (default: xmkmf -a ).
-# MAINTAINER	- The e-mail address of the contact person for this port
-#				  Default: ports@openbsd.org
 # CATEGORIES	- A list of descriptive categories into which this port falls.
-# WRKOBJDIR		- A top level directory where, if defined, the separate working
-#				  directories will get created, and symbolically linked to from
-#				  ${WRKDIR} (see below).  This is useful for building ports on
-#				  several architectures, then ${PORTSDIR} can be NFS-mounted
-#				  while ${WRKOBJDIR} is local to every arch
-# PREFERRED_CIPHERS
-#				- a list of the form cipher.sig of programs to use to check
-#				  recorded checksums, in order of decreasing trust.
-#				  (default to using sha1, then rmd160, then md5).
 #
 # Variables that typically apply to an individual port.  Non-Boolean
 # variables without defaults are *mandatory*.
 #
-# WRKDIR 		- A temporary working directory that gets *clobbered* on clean
-#				  (default: ${.CURDIR}/work).
-# WRKDIST 		- A subdirectory of ${WRKDIR} where the distribution actually
-#				  unpacks to.  (Default: ${WRKDIR}/${DISTNAME}).
-# WRKSRC		- where the actual source lives (default ${WRKDIST}).
-# WRKBUILD		- The directory where the port is actually built, useful for 
-#                 ports that need a separate directory (default: ${WRKSRC}).
-#				  This is intended for GNU configure.
-# WRKPKG		- Subdirectory of WRKBUILD where package information gets
-#				  generated (default: ${WKRBUILD}/pkg, don't override unless
-#				  it conflicts with existing stuff.
-# WRKINST       - The directory where new ports get installed (default:
-#				  ${WRKDIR}/fake-${ARCH}
-# SEPARATE_BUILD
-#               - define if the port can build in directory separate from
-#                 WRKSRC. This redefines WRKBUILD to be arch-dependent,
-#                 along with the configure, build and install cookies
 # DISTNAME		- Name of port or distribution.
-# DISTFILES		- Name(s) of archive file(s) containing distribution
-#				  (default: ${DISTNAME}${EXTRACT_SUFX}).
-#				  Each name can take an additional :[0-9] suffix, in which
-#				  case it will be fetched from the corresponding 
-#				  MASTER_SITES0...9 sites.
-# SUPDISTFILES  - Names of supplementary archive files that don't get
-# 				  used all the time (default: empty).
-# PATCHFILES	- Name(s) of additional files that contain distribution
-#				  patches (default: none).  make will look for them at
-#				  MASTER_FILES (see above).  They will automatically be
-#				  uncompressed before patching if the names end with
-#				  ".gz" or ".Z".
-# DIST_SUBDIR	- Suffix to ${DISTDIR}.  If set, all ${DISTFILES} 
-#				  and ${PATCHFILES} will be put in this subdirectory of
-#				  ${DISTDIR}.  Also they will be fetched in this subdirectory 
-#				  from FreeBSD mirror sites.
-# FULLDISTDIR	- ${DISTDIR}/${DIST_SUBDIR}, useful for non-standard
-#                 installations that override fetch and/or extract.
-# ALLFILES		- All of ${DISTFILES} and ${PATCHFILES}, maybe SUPDISTFILES
-#                 as well. Set by bsd.port.mk, NOT the user.
-# MIRROR_DISTFILE - Whether the distfile is redistributable without restrictions.
-#				  Defaults to "Yes", set this to "No" if restrictions exist.
 # IGNOREFILES	- If some of the ${ALLFILES} are not checksum-able, set
 #				  this variable to their names.
-# PKGNAME		- Name of the package file to create if the DISTNAME 
-#				  isn't really relevant for the port/package
-#				  (default: ${DISTNAME}).
-# EXTRACT_ONLY	- If defined, a subset of ${DISTFILES} you want to
-#			  	  actually extract.
-# PATCHDIR 		- A directory containing any additional patches you made
-#				  to port this software to OpenBSD (default:
-#				  ${.CURDIR}/patches)
-# PATCH_LIST	- list of patches to apply, can include wildcards (default:
-#                 patch-*)
-# SCRIPTDIR 	- A directory containing any auxiliary scripts
-#				  (default: ${.CURDIR}/scripts)
-# FILESDIR 		- A directory containing any miscellaneous additional files.
-#				  (default: ${.CURDIR}/files)
-# PKGDIR 		- A direction containing any package creation files.
-#				  (default: ${.CURDIR}/pkg)
 # PKG_DBDIR		- Where package installation is recorded (default: /var/db/pkg)
 # FORCE_PKG_REGISTER - If set, it will overwrite any existing package
 #				  registration information in ${PKG_DBDIR}/${PKGNAME}.
-# MTREE_FILE	- The name of the mtree file to use for make plist, set only
-#				  if port does not install in a standard place.
 # COMES_WITH	- The first version that a port was made part of the
 #				  standard OpenBSD distribution.  If the current OpenBSD
 #				  version is >= this version then a notice will be
 #				  displayed instead the port being generated.
-# FAKE		    - Install first into ${WRKINST}, build the package from there,
-#				  and perform the real install from the package (default: Yes)
-# FAKE_FLAGS	- Flags to pass to make for the fake install, used to
-# 				  override the default install directory (Defaults:
-# 				  something relevant for gnu configure and imake)
-#
 #
 # NO_BUILD		- Use a dummy (do-nothing) build target.
 # NO_DESCRIBE	- Use a dummy (do-nothing) describe target.
@@ -191,79 +89,23 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # NO_PACKAGE	- Use a dummy (do-nothing) package target.
 # NO_PKG_REGISTER - Don't register a port install as a package.
 # NO_DEPENDS	- Don't verify build of dependencies.
-# CLEANDEPENDS  - Nuke dependent dirs on make clean (Default: no)
 # BROKEN		- Port is broken.  Set this string to the reason why.
 # RESTRICTED	- Port is restricted.  Set this string to the reason why.
-# USE_BZIP2		- Port distfiles use bzip2 instead of gzip for compression.
-# USE_ZIP		- Port distfiles use zip instead of tar for packaging.
-# USE_GMAKE		- Port uses gmake.
-# USE_LIBTOOL	- Port uses libtool.
 #
-# AUTOCONF_DIR  - Where to apply autoconf (default: ${WRKSRC}).
 # USE_X11		- Port uses X11.
-#
-# CONFIGURE_STYLE
-#               - Set to value corresponding to some standard configuration
-#				  perl: perl's MakeMaker Makefile.PL
-#				  gnu [autoconf] [old] [dest]: gnu style configure (old: no
-#				  sysconfdir), (dest: add DESTDIR, does not handle it),
-#				  (autoconf: needed by port, implies gnu)
-# 				XXX: cygnus products do NOT use autoconf for making the main 
-#      			configure from configure.in
-#				  imake [noman]: port uses imake for configuration.
-#                 (noman: no man page installation)
-#			      simple: port has its own configure script
 #
 # YACC          - yacc program to pass to configure script (default: yacc)
 #                 override with bison if port requires bison.
-# CONFIGURE_SCRIPT - Name of configure script, defaults to 'configure'.
 # CONFIGURE_ARGS - Pass these args to configure if CONFIGURE_STYLE is
 # 				  simple, gnu or perl.
-# CONFIGURE_SHARED - An argument to GNU configure that expands to
-#				  --enable-shared for those architectures that support
-#				  shared libraries and --disable-shared for architectures
-#				  that do not support shared libraries.
-# LIBTOOL_FLAGS	- Pass these flags in ${CONFIGURE} and ${MAKE} environment so
-#				  to be used as args by libtool.
 # CONFIGURE_ENV - Pass these env (shell-like) to configure if
 #				  CONFIGURE_STYLE is simple, gnu or perl.
 # SCRIPTS_ENV	- Additional environment vars passed to scripts in
 #                 ${SCRIPTDIR} executed by bsd.port.mk.
-# MAKE_ENV		- Additional environment vars passed to sub-make in build
-#				  stage.
-# IS_INTERACTIVE - Set this if your port needs to interact with the user
-#				  during a build.  User can then decide to skip this port by
-#				  setting ${BATCH}, or compiling only the interactive ports
-#				  by setting ${INTERACTIVE}.
-# FETCH_DEPENDS - A list of "path::dir" pairs of other ports this
-#				  package depends in the "fetch" stage.  "path" is the
-#				  name of a file if it starts with a slash (/), an
-#				  executable otherwise.  make will test for the
-#				  existence (if it is a full pathname) or search for
-#				  it in $PORTPATH (if it is an executable) and go
-#				  into "dir" to do a "make all install" if it's not
-#				  found.
-# BUILD_DEPENDS - A list of "path::dir" pairs of other ports this
-#				  package depends to build (between the "extract" and
-#				  "build" stages, inclusive).  The test done to
-#				  determine the existence of the dependency is the
-#				  same as FETCH_DEPENDS.
-# RUN_DEPENDS	- A list of "path::dir" pairs of other ports this
-#				  package depends to run.  The test done to determine
-#				  the existence of the dependency is the same as
-#				  FETCH_DEPENDS.  This will be checked during the
-#				  "install" stage and the name of the dependency will
-#				  be put into the package as well.
-# LIB_DEPENDS	- A list of "lib::dir" pairs of other ports this package
-#				  depends on.  "lib" is the name of a shared library.
-#				  make will use "ldconfig -r" to search for the
-#				  library.  Note that lib can be any regular expression.
 # DEPENDS		- A list of other ports this package depends on being
 #				  made first.  Use this for things that don't fall into
 #				  the above two categories.
 #
-# FETCH_CMD		  - Full path to ftp/http fetch command if not in $PORTPATH
-#				  (default: /usr/bin/ftp).
 # FETCH_BEFORE_ARGS -
 #				  Arguments to ${FETCH_CMD} before filename (default: none).
 # FETCH_AFTER_ARGS -
@@ -275,10 +117,6 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # NO_WARNINGS	- Set this to Yes to disable warnings regarding variables
 #				  to define to control the build.  Automatically set
 #				  from the "mirror-distfiles" target.
-# ALL_TARGET	- The target to pass to make in the package when building.
-#				  (default: "all")
-# INSTALL_TARGET- The target to pass to make in the package when installing.
-#				  (default: "install")
 #
 # Motif support:
 #
@@ -286,8 +124,6 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #				  It will be built using Lesstif port unless Motif libraries
 #				  found or HAVE_MOTIF is defined. See also REQUIRES_MOTIF.
 #
-# REQUIRES_MOTIF- Set this in your port if it requires Motif.  It will  be
-#				  built only if HAVE_MOTIF is set.
 # HAVE_MOTIF	- If set, means system has Motif.  Typically set in /etc/mk.conf.
 # MOTIF_STATIC	- If set, link libXm statically; otherwise, link it
 #				  dynamically.  Typically set in /etc/mk.conf.
@@ -299,25 +135,9 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #
 # Variables to change if you want a special behavior:
 #
-# ECHO_MSG		- Used to print all the '===>' style prompts - override this
-#				  to turn them off (default: /bin/echo).
 # DEPENDS_TARGET - The target to execute when a port is calling a
 #				  dependency (default: "install").
-# PATCH_DEBUG	- If set to Yes, print out more information about the 
-#				  patches as it attempts to apply them.
 #
-# Variables that serve as convenient "aliases" for your *-install targets.
-# Use these like: "${INSTALL_PROGRAM} ${WRKBUILD}/prog ${PREFIX}/bin".
-#
-# INSTALL_PROGRAM		- A command to install binary executables.
-# INSTALL_SCRIPT		- A command to install executable scripts.
-# INSTALL_DATA			- A command to install sharable data.
-# INSTALL_MAN			- A command to install manpages (doesn't compress).
-# INSTALL_PROGRAM_DIR	- Create a directory for storing programs
-# INSTALL_SCRIPT_DIR	- Create a directory for storing scripts (alias for
-#						  (INSTALL_PROGRAM_DIR)
-# INSTALL_DATA_DIR		- Create a directory for storing arbitrary data
-# INSTALL_MAN_DIR		- Create a directory for storing man pages
 #
 # It is assumed that the port installs manpages uncompressed. If this is
 # not the case, set MANCOMPRESSED in the port and define MAN<sect> and
@@ -335,12 +155,6 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # CATPREFIX     - The directory prefix for ${CAT<sect>} (default: ${PREFIX}).
 #
 # Other variables:
-#
-# NO_SHARED_LIBS - defined as "Yes" for those machine architectures that do
-#				  not support shared libraries.  WARNING: This value is
-#				  NOT defined until AFTER ".include bsd.port.mk".  Thus
-#				  you can NOT use something like ".if defined(NO_SHARED_LIBS)"
-#				  before this file is included.
 #
 # Default targets and their behaviors:
 #
@@ -889,7 +703,7 @@ FAKE_TARGET ?= ${INSTALL_TARGET}
 .include "${PORTSDIR}/infrastructure/templates/network.conf.template"
 .endif
 # Where to put distfiles that don't have any other master site
-# ;;; This is referenced in a few Makefiles -- I'd like to get rid of it
+# ;;; This is referenced in a few Makefiles -- we'd like to get rid of it
 #
 MASTER_SITE_LOCAL?= \
 	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/LOCAL_PORTS/ \
