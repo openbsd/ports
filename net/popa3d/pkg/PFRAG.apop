@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.apop,v 1.1 2000/08/04 09:51:00 camield Exp $
-bin/popauth
-man/man8/popauth.8
