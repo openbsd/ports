@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2003/04/04 00:22:20 margarida Exp $
+# $OpenBSD: Makefile,v 1.14 2003/05/04 17:30:55 margarida Exp $
 
 COMMENT=	"SDL multi-channel audio mixer library"
+
 DISTNAME=	SDL_mixer-1.2.5
 PKGNAME=	${DISTNAME:L:S/_/-/}
-#PKGNAME=	sdl-mixer-1.2.5
 CATEGORIES=	devel audio
+
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 
 HOMEPAGE=	http://www.libsdl.org/projects/SDL_mixer/
