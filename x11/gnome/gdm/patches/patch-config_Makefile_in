@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_Makefile_in,v 1.2 2003/12/01 04:13:06 marcm Exp $
---- config/Makefile.in.orig	2003-10-16 10:28:02.000000000 -0700
-+++ config/Makefile.in	2003-10-16 22:03:53.000000000 -0700
-@@ -168,7 +168,7 @@ localedir = $(sysconfdir)/gdm
+$OpenBSD: patch-config_Makefile_in,v 1.3 2004/01/30 13:36:52 marcm Exp $
+--- config/Makefile.in.orig	2003-12-31 10:31:32.000000000 -0800
++++ config/Makefile.in	2004-01-25 07:52:12.000000000 -0800
+@@ -169,7 +169,7 @@ localedir = $(sysconfdir)/gdm
  bisessdir = $(sysconfdir)/dm/Sessions
  instsessdir = $(datadir)/xsessions
  initdir = $(sysconfdir)/gdm/Init
@@ -10,7 +10,7 @@ $OpenBSD: patch-config_Makefile_in,v 1.2 2003/12/01 04:13:06 marcm Exp $
  logdir = $(localstatedir)/log/gdm
  gnomercdir = $(sysconfdir)/gdm
  postdir = $(sysconfdir)/gdm/PostSession
-@@ -407,7 +407,6 @@ install-data-hook: gdm.conf Xsession gno
+@@ -408,7 +408,6 @@ install-data-hook: gdm.conf Xsession gno
  
  	if test '!' -d $(DESTDIR)$(authdir); then \
  		$(mkinstalldirs) $(DESTDIR)$(authdir); \

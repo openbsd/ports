@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/01 04:13:06 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/30 13:36:51 marcm Exp $
 
 
 COMMENT=		"GNOME display manager"
 
-DISTNAME=		gdm-2.4.4.5
+DISTNAME=		gdm-2.4.4.7
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.jirka.org/gdm.html
@@ -20,7 +20,8 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gdm/2.4/}
 EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:scrollkeeper->=0.3.12:textproc/scrollkeeper
+			:scrollkeeper->=0.3.12:textproc/scrollkeeper \
+			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			rsvg-2::x11/gnome/librsvg
