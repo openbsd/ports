@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/01/07 01:25:15 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/01/31 00:27:30 brad Exp $
 
 DISTNAME=	gif2png-2.3.0
 CATEGORIES=	graphics
@@ -17,7 +17,7 @@ pre-patch: extract
 	@sed -e "s|@PREFIX@|${LOCALBASE}|" ${FILESDIR}/web2png > ${WRKDIR}/web2png
 
 post-install:
-	@mkdir -p ${PREFIX}/share/doc/gif2png
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gif2png
 	cd ${WRKSRC} && ${INSTALL_DATA} COPYING README \
 	 ${PREFIX}/share/doc/gif2png
 	${INSTALL_SCRIPT} ${WRKDIR}/web2png ${PREFIX}/bin
