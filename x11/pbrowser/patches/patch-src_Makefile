@@ -1,18 +1,33 @@
-$OpenBSD: patch-src_Makefile,v 1.1.1.1 2004/11/08 16:10:14 espie Exp $
---- src/Makefile.orig	Mon Nov  8 08:58:11 2004
-+++ src/Makefile	Mon Nov  8 08:58:25 2004
-@@ -10,13 +10,12 @@ SRCS+= main.c
+$OpenBSD: patch-src_Makefile,v 1.2 2005/03/26 22:53:15 alek Exp $
+--- src/Makefile.orig	Sun Mar 13 23:20:20 2005
++++ src/Makefile	Sun Mar 13 23:21:17 2005
+@@ -2,14 +2,6 @@
  
- CFLAGS+= -DPBVERSION=\"\"
- CFLAGS+= -D__ARCH__=\"${MACHINE_ARCH}\" -D__OSREV__=\"$(OSREV)\"
+ .PATH: ${.CURDIR}/..
+ 
+-UNAME?=	/usr/bin/uname
+-SED?=	/usr/bin/sed
+-
+-#we need this for FreeBSD
+-.if !defined(OSREL)
+-OSREV!= ${UNAME} -r | ${SED} -e 's/[-(].*//' 
+-.endif
+-
+ PROG= pbrowser
+ SRCS= gram.y pkgobject.c pkgquery.c pbutil.c fail.c \
+ 	pkgcmd.c scan.l sort.c search.c y.tab.h 
+@@ -20,13 +12,12 @@ SRCS+= main.c
+ CFLAGS+= -D__OSREL__=\"$(OSREV)-release\"
+ CFLAGS+= -DPBVERSION=\"-\ 0.4\"
+ CFLAGS+= -D__ARCH__=\"${MACHINE_ARCH}\" -D__OSREV__=\"$(OSREV)\" 
 -CFLAGS+= -DIMAGEDIR=\"${.CURDIR}/../pixmaps/\"
  CFLAGS+= -I${.CURDIR} `pkg-config --cflags glib-2.0 gtk+-2.0 gdk-2.0`
  CFLAGS+= -Wall -W -Wmissing-prototypes -Wbad-function-cast
  CFLAGS+= -Wmissing-declarations -Wpointer-arith
- CFLAGS+= -Wshadow -Wpointer-arith -Wcast-qual -Wsign-compare 
- #CFLAGS+= -DDEBUG=0
+ CFLAGS+= -Wshadow -Wpointer-arith -Wcast-qual -Wsign-compare
+ # CFLAGS+= -DDEBUG=0 -ggdb
 -LDADD= `pkg-config --libs glib-2.0 gthread-2.0 gtk+-2.0 gdk-2.0` -lutil 
 +LDADD= `pkg-config --libs glib-2.0 gthread-2.0 gtk+-2.0 gdk-2.0` -lutil -lpthread 
  YFLAGS+= -d
  MAN= pbrowser.1
- CLEANFILES+= gram.c scan.c y.tab.h pbrowser.cat1 
+ CLEANFILES+= gram.c scan.c y.tab.h pbrowser.cat1 pbrowser.1.gz

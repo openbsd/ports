@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/19 17:36:32 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/03/26 22:53:15 alek Exp $
 
 COMMENT=		"graphical ports system frontend"
 
-V=			0.3
-DISTNAME=	 	pb-browser-${V}	
+DISTNAME=	 	pb-browser-0.4	
 CATEGORIES=		x11 sysutils
 
 MAINTAINER=		Igor Boehm <igor@bytelabs.org>	
