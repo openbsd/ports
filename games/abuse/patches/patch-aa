@@ -1,0 +1,19 @@
+*** abuse/src/net/mac/tcpip.c.orig	Sat Apr 25 20:42:09 1998
+--- abuse/src/net/mac/tcpip.c	Sat Apr 25 20:42:33 1998
+***************
+*** 119,125 ****
+  	  else
+  	  {
+  		  printf("Enter ip address:");
+! 		  gets(my_name);
+  	  }
+  	}  
+  
+--- 119,125 ----
+  	  else
+  	  {
+  		  printf("Enter ip address:");
+! 		  fgets(my_name, 99, stdin);
+  	  }
+  	}  
+  
