@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2002/09/14 10:59:44 avsm Exp $
+# $OpenBSD: Makefile,v 1.63 2002/09/17 12:56:19 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc
 
@@ -195,7 +195,10 @@ MULTI_PACKAGES+=-ada
 
 CONFIGURE_ENV=ADAC=${LOCALBASE}/bin/egcc GNATBIND=${LOCALBASE}/bin/gnatbind
 MAKE_ENV=ADAC=${LOCALBASE}/bin/egcc GNATBIND=${LOCALBASE}/bin/gnatbind
+CC=${LOCALBASE}/bin/egcc
+BUILD_DEPENDS+=:gnat-*:lang/egcs/stable,-ada
 .endif
+CONFIGURE_ENV+=am_cv_func_iconv=no
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
 
@@ -212,7 +215,6 @@ CONFIGURE_ARGS+=--enable-languages=${LANGS}
 
 .if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
 CONFIGURE_ARGS+=--enable-sjlj-exceptions
-#CC=${LOCALBASE}/bin/egcc
 .endif
 
 
