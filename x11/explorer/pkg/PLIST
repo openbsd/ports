@@ -1,4 +1,6 @@
-bin/explorer
+@cwd /usr/X11R6
+@name explorer-0.72
+@pkgdep qt-1.33
 lib/X11/explorer/icons/about.bmp
 lib/X11/explorer/icons/expl_01.bmp
 lib/X11/explorer/icons/expl_02.bmp
@@ -36,6 +38,7 @@ lib/X11/explorer/icons/nd_nul.bmp
 lib/X11/explorer/icons/nd_pls.bmp
 lib/X11/explorer/types/types.cfg
 lib/X11/explorer/types/types.cfg.example
-@dirrm lib/X11/explorer/icons
+bin/explorer
 @dirrm lib/X11/explorer/types
+@dirrm lib/X11/explorer/icons
 @dirrm lib/X11/explorer

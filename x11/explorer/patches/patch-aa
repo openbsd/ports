@@ -1,0 +1,10 @@
+--- src/vars.h.~1~	Fri Jul 11 07:32:34 1997
++++ src/vars.h	Tue Jul 14 23:27:22 1998
+@@ -60,6 +60,7 @@
+  *
+  */
+ 
++#include <limits.h>
+ #include <qwindow.h>
+ #include <qpixmap.h>
+ #include <qpainter.h>
