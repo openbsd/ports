@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2003/02/17 14:55:34 brad Exp $
+# $OpenBSD: Makefile,v 1.48 2003/02/18 16:40:38 brad Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -32,7 +32,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKIN}-${SKINVER}${EXTRACT_SUFX}:0
 
 .include <bsd.own.mk>
 
-.if ${ELF_TOOLCHAIN} == "no"
+.if ${ELF_TOOLCHAIN:L} == "no"
 BUILD_DEPENDS=	:binutils->=2.11.2:devel/binutils/stable
 MAKE_ENV=	AR=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/ar
 CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/as
@@ -162,7 +162,7 @@ LIB_DEPENDS+=  aa.1.3::graphics/aalib
 CONFIGURE_ARGS+=--disable-aa
 .endif
 
-.if ${ELF_TOOLCHAIN} == "no"
+.if ${ELF_TOOLCHAIN:L} == "no"
 post-patch:
 	@ln -s ${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/as ${WRKDIR}/bin/as
 .endif
