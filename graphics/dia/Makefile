@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/04/10 18:46:49 jsyn Exp $
+# $OpenBSD: Makefile,v 1.22 2003/06/23 23:10:20 pvalchev Exp $
 
 COMMENT=	"technical drawing tool"
 
@@ -33,6 +33,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng \
 			-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ENV+=		XML_CONFIG=xml2-config
+CFLAGS+=	-I${LOCALBASE}/include/libxml2/libxml
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
 		patch-*
