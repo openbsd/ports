@@ -1,0 +1,12 @@
+$OpenBSD: patch-USAGE,v 1.1.1.1 2002/09/15 19:28:36 jakob Exp $
+--- USAGE	Mon Sep 10 15:11:37 2001
++++ USAGE	Tue Sep 10 21:17:21 2002
+@@ -31,7 +31,7 @@
+ 2.  Create the auth table, e.g.:
+     prompt> mysql http_auth
+     mysql> create table mysql_auth (
+-        ->   username char(25),
++        ->   username char(25) not null,
+         ->   passwd char(25),
+         ->   groups char(25),
+         ->   primary key (username)

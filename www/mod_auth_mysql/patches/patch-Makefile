@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2002/09/15 19:28:36 jakob Exp $
+--- Makefile	Mon Sep 10 15:12:08 2001
++++ Makefile	Tue Sep 10 20:17:09 2002
+@@ -3,7 +3,7 @@
+ DSO   = mod_auth_mysql.so
+ SRCS  = mod_auth_mysql.c
+ HDRS  = mod_auth_mysql.h
+-OPTS  = -I/usr/include/mysql -L/usr/lib/mysql -lmysqlclient
++OPTS  = -I$(LOCALBASE)/include/mysql -L$(LOCALBASE)/lib/mysql -lmysqlclient
+ 
+ all: $(DSO)
+ 

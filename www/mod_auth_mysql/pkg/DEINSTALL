@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2002/09/15 19:28:36 jakob Exp $
+#
+# mod_auth_mysql de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONF=`apxs -q SYSCONFDIR`/httpd.conf
+MODULE=/usr/lib/apache/modules/mod_auth_mysql.so
+
+rm -f ${MODULE}
+
+echo
+echo "+---------------"
+echo "| To completely deinstall the $1 package you"
+echo "| should  edit ${CONF}"
+echo "| and remove the line that starts with "
+echo "|   LoadModule auth_mysql_module "
+echo "|"
+echo "| Do not do this if you plan on re-installing $1"
+echo "| package before the next apache restart."
+echo "+---------------"
+echo
+
+exit 0
