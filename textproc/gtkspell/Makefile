@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/04/13 01:34:57 jolan Exp $
+# $OpenBSD: Makefile,v 1.9 2004/09/29 07:51:17 xsa Exp $
 
 COMMENT=	"gtk2 spelling checker"
 DISTNAME=	gtkspell-2.0.5
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 USE_X11=	Yes
 
-MODULES=	gcc3 gettext
+MODULES=	gcc3 devel/gettext
 MODGCC3_ARCHES=	powerpc
 MODGCC3_LANGS=	C++
 
