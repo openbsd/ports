@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/10/31 22:29:41 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/08/24 22:26:20 espie Exp $
 usr/X11R6/lib/libMrm.so.2.1
 usr/X11R6/lib/libUil.so.2.1
 usr/X11R6/lib/libXm.so.2.1
+@unexec rm -f %D/lib/libMrm.so.2
+@unexec rm -f %D/lib/libUil.so.2
+@unexec rm -f %D/lib/libXm.so.2
 @exec %D/sbin/ldconfig
 @unexec %D/sbin/ldconfig
