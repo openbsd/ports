@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 1999/09/15 18:23:50 brad Exp $
+# $OpenBSD: Makefile,v 1.18 1999/09/16 08:12:48 espie Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -36,7 +36,7 @@ SUPDISTFILES=	${NS_I386}
 
 PKGNAME=	navigator-${NAVIGATOR_V}-fortified
 CATEGORIES=     www
-DIST_SUBDIR=	${PKGNAME}
+DIST_SUBDIR=	netscape
 NO_CDROM=       "NOFEE: see http://www.fortify.net/copyright.txt"
 
 SUBMAIN=pub/communicator/english/${NAVIGATOR_V}/unix/unsupported/${MAINDIR}
