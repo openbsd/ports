@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/02/16 07:33:22 mark Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/05/03 03:19:14 mark Exp $
 lib/ettercap/ec_H00_lurker.so
 lib/ettercap/ec_H01_zaratan.so
+lib/ettercap/ec_H05_roper.so
 lib/ettercap/ec_H10_phantom.so
 lib/ettercap/ec_H20_dwarf.so
 lib/ettercap/ec_H30_thief.so
@@ -30,10 +31,15 @@ share/doc/ettercap/PORTINGS
 share/doc/ettercap/README
 share/doc/ettercap/README.PLUGINS
 share/doc/ettercap/README.WIN32
+share/doc/ettercap/ROPER.HOWTO
 share/doc/ettercap/THANKS
 share/doc/ettercap/TODO
+share/doc/ettercap/TODO.WIN32
 share/doc/ettercap/ZARATAN.HOWTO
+share/doc/ettercap/debug.txt
+share/doc/ettercap/errors.txt
 share/doc/ettercap/ettercap.fr.8.in
+share/doc/ettercap/threads.txt
 share/ettercap/etter.conf
 share/ettercap/etter.dns
 share/ettercap/etter.filter
@@ -43,6 +49,7 @@ share/ettercap/etter.passive.os.fp
 share/ettercap/etter.ssl.crt
 share/ettercap/mac-fingerprints
 share/ettercap/nmap-os-fingerprints
+share/ettercap/services
 @dirrm share/ettercap
 @dirrm share/doc/ettercap
 @dirrm lib/ettercap

@@ -1,0 +1,28 @@
+--- configure~	Thu Apr 18 09:16:16 2002
++++ configure	Thu May  2 20:05:50 2002
+@@ -7878,13 +7878,13 @@ done
+ 
+    if test $ncurses_warn -ne 1; then
+ 
+-echo "$as_me:$LINENO: checking for newpad in -lncurses" >&5
+-echo $ECHO_N "checking for newpad in -lncurses... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for newpad in -lcurses" >&5
++echo $ECHO_N "checking for newpad in -lcurses... $ECHO_C" >&6
+ if test "${ac_cv_lib_ncurses_newpad+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lncurses  $LIBS"
++LIBS="-lcurses  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ #include "confdefs.h"
+@@ -7938,7 +7938,7 @@ if test $ac_cv_lib_ncurses_newpad = yes;
+ #define HAVE_LIBNCURSES 1
+ _ACEOF
+ 
+-  LIBS="-lncurses $LIBS"
++  LIBS="-lcurses $LIBS"
+ 
+ else
+   ncurses_warn=2
