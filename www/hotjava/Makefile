@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2001/01/05 16:36:01 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2001/03/02 16:04:49 brad Exp $
 # $FreeBSD: ports/www/hotjava/Makefile,v 1.4 2000/02/16 00:19:45 mharo Exp $
+
+ONLY_FOR_ARCHS=	i386
 
 DISTNAME=	hotjava-3.0
 CATEGORIES=	www
@@ -11,8 +13,8 @@ EXTRACT_CASES=*.sfx) uudecode ${FULLDISTDIR}/$$archive;;
 
 HOMEPAGE=	http://java.sun.com/products/hotjava/
 
-BUILD_DEPENDS=	${PREFIX}/${JAR}::devel/jdk
-RUN_DEPENDS=	${PREFIX}/${JAVA}::devel/jdk
+BUILD_DEPENDS=	${LOCALBASE}/${JAR}::devel/jdk
+RUN_DEPENDS=	${LOCALBASE}/${JAVA}::devel/jdk
 
 MAINTAINER=	Chris Cappuccio <chris@openbsd.org>
 
@@ -46,14 +48,14 @@ do-fetch:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/java/HotJava
-	cd ${PREFIX}/share/java/HotJava && \
+	@cd ${PREFIX}/share/java/HotJava && \
 		${TRUEPREFIX}/${JAR} xf ${WRKDIST}/hjb3_0.jar
-	cd ${PREFIX}/share/java/HotJava && chmod -R a+rX *
-	echo '#! /bin/sh' >${PREFIX}/bin/hotjava
-	echo 'exec ${TRUEPREFIX}/${JAVA} -classpath \
+	@cd ${PREFIX}/share/java/HotJava && chmod -R a+rX *
+	@echo '#! /bin/sh' >${PREFIX}/bin/hotjava
+	@echo 'exec ${TRUEPREFIX}/${JAVA} -classpath \
 	${TRUEPREFIX}/${JDK}/lib/classes.zip:${TRUEPREFIX}/share/java/HotJava/Browser.jar \
 	sunw.hotjava.Main -Dhotjava.home=${TRUEPREFIX}/share/java/HotJava $$@' \
 		>>${PREFIX}/bin/hotjava
-	chmod a+rx ${PREFIX}/bin/hotjava
+	@chmod a+rx ${PREFIX}/bin/hotjava
 
 .include <bsd.port.mk>
