@@ -1,0 +1,12 @@
+$OpenBSD: patch-frontend_Makefile_in,v 1.1 2005/03/23 21:02:30 alek Exp $
+--- frontend/Makefile.in.orig	Mon Mar 14 08:28:15 2005
++++ frontend/Makefile.in	Mon Mar 14 08:28:20 2005
+@@ -91,7 +91,7 @@ LDADD = @LDADD@ \
+ 	$(top_builddir)/libmp3lame/libmp3lame.la \
+ 	@FRONTEND_LDADD@
+ 
+-LDFLAGS = @LDFLAGS@ @FRONTEND_LDFLAGS@ -static
++LDFLAGS = @LDFLAGS@ @FRONTEND_LDFLAGS@
+ LIBOBJS = @LIBOBJS@
+ LIBS = @LIBS@
+ LIBTOOL = @LIBTOOL@
