@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/26 08:34:39 obecian Exp $
+bin/bbpager
+share/bbtools/README.bbpager
+share/bbtools/bbpager.bb
+share/bbtools/bbpager.nobb
+@dirrm share/bbtools
