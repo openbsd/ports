@@ -1,0 +1,36 @@
+# import from dia CVS to not use deprecated calls
+# this allows dia to work with libxml2
+# - obecian@openbsd.org
+
+--- app/load_save.c.orig	Fri Apr  6 22:52:43 2001
++++ app/load_save.c	Fri Apr  6 22:55:41 2001
+@@ -552,13 +552,14 @@ diagram_data_save(DiagramData *data, con
+   fclose(file);
+ 
+   doc = xmlNewDoc("1.0");
+-  
+-  name_space = xmlNewGlobalNs( doc, "http://www.lysator.liu.se/~alla/dia/",
+-			       "dia" );
+- 
+-  doc->root = xmlNewDocNode(doc, name_space, "diagram", NULL);
+ 
+-  tree = xmlNewChild(doc->root, NULL, "diagramdata", NULL);
++	doc->root = xmlNewDocNode(doc, NULL, "diagram", NULL);
++	
++	name_space = xmlNewNs(doc->root, "http://www.lysator.liu.se/~alla/dia/", "dia");
++
++	xmlSetNs(doc->root, name_space);
++
++  tree = xmlNewChild(doc->root, name_space, "diagramdata", NULL);
+   
+   attr = new_attribute((ObjectNode)tree, "background");
+   data_add_color(attr, &data->bg_color);
+@@ -613,7 +614,7 @@ diagram_data_save(DiagramData *data, con
+   obj_nr = 0;
+ 
+   for (i = 0; i < data->layers->len; i++) {
+-    layer_node = xmlNewChild(doc->root, NULL, "layer", NULL);
++    layer_node = xmlNewChild(doc->root, name_space, "layer", NULL);
+     layer = (Layer *) g_ptr_array_index(data->layers, i);
+     xmlSetProp(layer_node, "name", layer->name);
+     if (layer->visible)
