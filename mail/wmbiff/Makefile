@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/03 03:28:22 marc Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/22 18:03:31 espie Exp $
 
 DISTNAME=	wmbiff-0.2
 CATEGORIES=	mail
 NEED_VERSION=	0.313
 MASTER_SITES=	http://ccat.elect.ru:8100/wmbiff/
 
-MAINTAINER=	opcode@skylab.2y.net
+MAINTAINER=	Cameron Lerch <opcode@skylab.2y.net>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
