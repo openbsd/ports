@@ -3,8 +3,8 @@
 # Date created:		July 13 1999
 # Whom:			Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.9 2000/04/09 17:37:10 espie Exp $
-# $OpenBSD: Makefile,v 1.9 2000/04/09 17:37:10 espie Exp $
+# $Id: Makefile,v 1.10 2000/04/20 12:49:29 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/20 12:49:29 kevlo Exp $
 #
 
 DISTNAME=	magicpoint-1.05a
@@ -12,7 +12,6 @@ DISTNAME=	magicpoint-1.05a
 PKGNAME?=	magicpoint-1.05a
 CATEGORIES=	misc
 NEED_VERSION=	 1.230
-FAKE=No
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
 MAINTAINER=	angelos@openbsd.org
@@ -26,12 +25,13 @@ PERMIT_DISTFILES_FTP=	Yes
 # plus sign is for localized (i.e. Japanese) version
 LIB_DEPENDS+=	ttf.1::print/freetype
 
+FAKE=		Yes
 USE_IMAKE=	Yes
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--disable-vflib
 
 post-configure:
-	cd ${WRKSRC}/contrib/xmindpath; ./configure --prefix=${PREFIX}
+	cd ${WRKSRC}/contrib/xmindpath; ./configure --prefix='$${DESTDIR}${PREFIX}'
 
 post-build:
 	cd ${WRKSRC}/contrib/xmindpath; make
