@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_plugin_xmms_charset_common_c,v 1.1 2002/11/03 02:14:54 naddy Exp $
+--- src/plugin_xmms/charset_common.c.orig	Sat Nov  2 01:38:58 2002
++++ src/plugin_xmms/charset_common.c	Sat Nov  2 01:39:09 2002
+@@ -33,7 +33,7 @@
+ #include <langinfo.h>
+ #endif
+ 
+-#include "charset.h"
++#include "charset_common.h"
+ 
+ 
+ /*************
