@@ -1,0 +1,42 @@
+--- src/feature.h.orig	Thu Jan 23 10:46:02 1997
++++ src/feature.h	Mon Feb 24 03:56:40 1997
+@@ -136,8 +136,8 @@
+  *	default rendition rather than the current rendition
+  *	NB: this make break some applications and should used with caution
+  *----------------------------------------------------------------------*/
+-#define XPM_BACKGROUND
+-#define XPM_SCALING
++/* #define XPM_BACKGROUND */
++/* #define XPM_SCALING */
+ #define PATH_ENV	"RXVTPATH"
+ /* #define XPM_BUFFERING */
+ /* #define NO_CURSORCOLOR */
+@@ -272,8 +272,9 @@
+  *	for XTERM_SCROLLBAR it is *always* 14.
+  *----------------------------------------------------------------------*/
+ /* #define XTERM_SCROLLBAR */
+-#define SCROLLBAR_RIGHT
++/* #define SCROLLBAR_RIGHT */
+ /* #define SB_WIDTH 10 */
++#define SB_WIDTH 8
+ /*}}}*/
+ 
+ /*{{{ menuBar: */
+@@ -367,14 +368,15 @@
+  *	for BSD-type systems, to define where the tty table is located
+  *	if it isn't /etc/ttytab
+  *----------------------------------------------------------------------*/
+-/* #define UTMP_SUPPORT */
++#define UTMP_SUPPORT
+ #ifdef UTMP_SUPPORT
+ # ifndef UTMP_FILENAME
+ /* #  define UTMP_FILENAME	"/var/adm/utmp" */
+ /* #  define UTMP_FILENAME	"/var/adm/utmp" */
++#  define UTMP_FILENAME	"/var/run/utmp"
+ # endif
+ # ifndef TTYTAB_FILENAME
+-/* #  define TTYTAB_FILENAME "/etc/ttys" */
++#  define TTYTAB_FILENAME "/etc/ttys"
+ # endif
+ #endif
+ /*}}}*/
