@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2005/02/05 15:11:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.73 2005/04/06 06:23:46 sturm Exp $
 
 COMMENT=	"PostgreSQL RDBMS (client)"
 COMMENT-server=	"PostgreSQL RDBMS (server)"
@@ -6,8 +6,8 @@ COMMENT-docs=	"PostgreSQL RDBMS documentation"
 
 VERSION=	7.4.3
 DISTNAME=	postgresql-${VERSION}
-FULLPKGNAME=	postgresql-client-${VERSION}p1
-PKGNAME-server=	postgresql-server-${VERSION}p1
+FULLPKGNAME=	postgresql-client-${VERSION}p2
+PKGNAME-server=	postgresql-server-${VERSION}p2
 PKGNAME-docs=	postgresql-docs-${VERSION}p1
 
 CATEGORIES=	databases
@@ -45,17 +45,18 @@ CONFIGURE_ENV=	LIBS=-lcurses
 
 .include <bsd.own.mk>
 
-.if ${KERBEROS5} == "yes"
-POSTGRES_KRB5_LIBS=--with-krb5=/usr
-POSTGRES_KRB5_INCLUDES=/usr/include/kerberosV
-.endif
-
 CONFIGURE_ARGS=	--disable-rpath --with-openssl=/usr \
-		--with-includes=${POSTGRES_KRB5_LIBS} --with-perl \
+		--with-includes=/usr/include/kerberosV \
+		--with-perl \
 		--enable-integer-datetimes \
 		--includedir="${PREFIX}/include/postgresql" \
 		--datadir="${PREFIX}/share/postgresql" \
 		--docdir="${PREFIX}/share/doc/postgresql"
+
+.if ${KERBEROS5} == "yes"
+CONFIGURE_ARGS+=--with-krb5=/usr/lib
+.endif
+
 
 # There is no spinlock support for hppa yet. Until we have access to
 # a system to get this working, disable them for now. There is
