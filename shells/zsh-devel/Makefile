@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/07/05 03:51:24 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/07/05 14:50:55 brad Exp $
 
 DISTNAME=       zsh-3.1.9
 CATEGORIES=	shells
@@ -20,7 +20,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free --enable-dynamic
+CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free \
+		--enable-fndir='$${datadir}/zsh/functions' \
+		--disable-dynamic
+
+FAKE_FLAGS=	MAKEDEFS="DESTDIR=\"${WRKINST}\""
 
 FLAVORS=static
 FLAVOR?=
@@ -31,10 +35,5 @@ FLAVOR=static
 .if ${FLAVOR:L} == "static"
 CONFIGURE_ENV+=	LDFLAGS=-static
 .endif
-
-# zsh-devel REALLY doesn't want DESTDIR where I want it... so coerce it.
-
-post-configure:
-	@perl -pi.bak -e 's,/usr/local,\$${DESTDIR}/usr/local,' ${WRKBUILD}/Makefile
 
 .include <bsd.port.mk>
