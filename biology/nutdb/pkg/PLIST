@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/21 01:41:22 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/12/05 11:52:17 xsa Exp $
 bin/nutdb
-@man man/man1/nutdb.1
 lib/nutdb/
 lib/nutdb/FOOD_DES.txt
 lib/nutdb/NUT_DATA.txt
 lib/nutdb/WEIGHT.lib
 lib/nutdb/WEIGHT.txt
 lib/nutdb/sr17.nut
+@man man/man1/nutdb.1

@@ -1,14 +1,15 @@
---- nut.1.orig	Sun Oct 31 09:53:32 2004
-+++ nut.1	Sun Oct 31 09:56:40 2004
+--- nut.1.orig	Fri Nov 26 07:32:10 2004
++++ nut.1	Sun Dec  5 12:42:21 2004
 @@ -4,13 +4,13 @@
  .\" LP paragraph
  .\" IP indented paragraph
  .\" TP hanging label
--.TH NUT 1 "NUT - 2004.10.30"
-+.TH NUTDB 1 "NUTDB - 2004.10.30"
+-.TH NUT 1 "NUT - 2004.11.25"
++.TH NUTDB 1 "NUTDB - 2004.11.25"
  .SH NAME
  .SH SYNOPSIS
- .B nut [dbname]
+-.B nut [dbname]
++.B nutdb [dbname]
  .SH DESCRIPTION
  .LP
 -.B NUT
@@ -16,7 +17,7 @@
  allows you to record what you eat and analyze your meals for nutrient
  composition.  The database included is the 
  USDA Nutrient Database for Standard Reference, Release 17, which contains
-@@ -39,7 +39,7 @@
+@@ -39,7 +39,7 @@ You may add your own recipes to the data
  by creating them from the foods in the database.
  You can also add foods from the information on commercial food labels. The program is completely menu-driven and there are no commands to learn.
  
@@ -25,7 +26,7 @@
  can be called with an optional argument to specify a database subdirectory.
  For example, if a user tracks meals for other family members, each person
  can have his own database, and each database is entirely separate.
-@@ -124,8 +124,8 @@
+@@ -124,8 +124,8 @@ for water gained or lost in preparation.
  
  To add a labeled food
  with an ordered list of ingredients and a nutrition statement, 
@@ -36,7 +37,7 @@
  The new food will have  additional nutrients that
  were not on the nutrition statement, but that the database says are in the food.
  First, the labeled food is named.
-@@ -141,18 +141,18 @@
+@@ -141,18 +141,18 @@ copied into the program. Whenever you qu
  select a different set of nutrients.  The "DV" percentages for this part of
  the program are the USA standard 2000-calorie Daily Values, and not any
  customized options--but users can always set the label's nutrient information in grams.
@@ -58,7 +59,7 @@
  in the same manner as a recipe.
  
  To modify the serving size of an existing food, the food is selected
-@@ -225,7 +225,7 @@
+@@ -225,7 +225,7 @@ linolenic acid, e = EPA, and d = DHA.
  
  .B Record 'The Usual'--Customary Meals:
  When 
@@ -67,7 +68,7 @@
  asks what you are having, you can answer "the usual."  Specifically,
  this function allows you to record a customary meal, 
  and give it a name.  Later, when
-@@ -256,7 +256,7 @@
+@@ -256,7 +256,7 @@ food.db         Food database
  meal.db         Meal database
  theusual.db     Customary Meals database
  OPTIONS.txt     Personal Options records
