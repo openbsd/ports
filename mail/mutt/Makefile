@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/11/19 03:16:33 turan Exp $
+# $OpenBSD: Makefile,v 1.2 1998/11/20 05:19:43 turan Exp $
 #
 
 # What port/package will be created
@@ -19,7 +19,8 @@ MASTER_SITES=		ftp://ftp.guug.de/pub/mutt/
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--prefix=/usr/local --with-sharedir=/usr/local/share/mutt --with-docdir=/usr/local/share/doc/mutt --with-slang=/usr/local
 
-LIB_DEPENDS=    slang\\.0\\.99[0-9][0-9]:${PORTSDIR}/devel/libslang
+#LIB_DEPENDS=    slang\\.0\\.99[0-9][0-9]:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=    slang\\.1\\.22:${PORTSDIR}/devel/libslang
 
 pre-fetch:
 	@${ECHO} 
