@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/04/23 05:33:19 jason Exp $
+--- configure.orig	Sun Apr 20 23:05:35 2003
++++ configure	Sun Apr 20 23:04:27 2003
+@@ -1120,6 +1120,9 @@ if test "$shared" = true; then
+ 		SHFLAGS="-fPIC"
+ 		OTHERLIBS="-lsocket -ldl"
+         ;;
++	openbsd*)
++		SHFLAGS="-shared -fPIC"
++	;;
+ 	*)
+ 	;;
+    esac

@@ -1,0 +1,8 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/04/23 05:33:19 jason Exp $
+lib/libflite.so.1.2
+lib/libflite_cmu_time_awb.so.1.2
+lib/libflite_cmu_us_kal.so.1.2
+lib/libflite_cmu_us_kal16.so.1.2
+lib/libflite_cmulex.so.1.2
+lib/libflite_usenglish.so.1.2
+DYNLIBDIR(%B)
