@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2004/11/10 20:23:31 alek Exp $
+--- Makefile.in.orig	Sat Oct  9 14:21:11 2004
++++ Makefile.in	Sat Oct  9 14:21:31 2004
+@@ -224,6 +224,7 @@ install-man1:
+ 	  ext=`echo $$i | sed -e 's/^.*\\.//'`; \
+ 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
+ 	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
++	  inst=`basename $$i`; \
+ 	  echo " $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst"; \
+ 	  $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst; \
+ 	done

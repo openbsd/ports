@@ -1,0 +1,36 @@
+$OpenBSD: patch-memcached_c,v 1.1.1.1 2004/11/10 20:23:31 alek Exp $
+--- memcached.c.orig	Wed Nov 10 16:32:50 2004
++++ memcached.c	Wed Nov 10 18:37:25 2004
+@@ -21,7 +21,7 @@
+ #include <sys/stat.h>
+ #include <sys/time.h>
+ #include <sys/socket.h>
+-#include <sys/signal.h>
++#include <signal.h>
+ #include <sys/resource.h>
+ /* some POSIX systems need the following definition
+  * to get mlockall flags out of sys/mman.h.  */
+@@ -320,11 +320,11 @@ void process_stat(conn *c, char *command
+         getrusage(RUSAGE_SELF, &usage);
+ 
+         pos += sprintf(pos, "STAT pid %u\r\n", pid);
+-        pos += sprintf(pos, "STAT uptime %lu\r\n", now - stats.started);
++        pos += sprintf(pos, "STAT uptime %u\r\n", now - stats.started);
+         pos += sprintf(pos, "STAT time %u\r\n", now);
+         pos += sprintf(pos, "STAT version " VERSION "\r\n");
+-        pos += sprintf(pos, "STAT rusage_user %u:%u\r\n", usage.ru_utime.tv_sec, usage.ru_utime.tv_usec);
+-        pos += sprintf(pos, "STAT rusage_system %u:%u\r\n", usage.ru_stime.tv_sec, usage.ru_stime.tv_usec);
++        pos += sprintf(pos, "STAT rusage_user %lu:%lu\r\n", usage.ru_utime.tv_sec, usage.ru_utime.tv_usec);
++        pos += sprintf(pos, "STAT rusage_system %lu:%lu\r\n", usage.ru_stime.tv_sec, usage.ru_stime.tv_usec);
+         pos += sprintf(pos, "STAT curr_items %u\r\n", stats.curr_items);
+         pos += sprintf(pos, "STAT total_items %u\r\n", stats.total_items);
+         pos += sprintf(pos, "STAT bytes %llu\r\n", stats.curr_bytes);
+@@ -504,7 +504,7 @@ void process_command(conn *c, char *comm
+         int len, res;
+         item *it;
+ 
+-        res = sscanf(command, "%*s %250s %u %lu %d\n", key, &flags, &expire, &len);
++        res = sscanf(command, "%*s %250s %u %u %d\n", key, &flags, &expire, &len);
+         if (res!=4 || strlen(key)==0 ) {
+             out_string(c, "CLIENT_ERROR bad command line format");
+             return;
