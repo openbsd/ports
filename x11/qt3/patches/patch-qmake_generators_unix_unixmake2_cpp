@@ -1,4 +1,4 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.1.1.1 2002/03/04 16:13:05 espie Exp $
+$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.2 2002/03/05 22:11:48 mark Exp $
 --- qmake/generators/unix/unixmake2.cpp.orig	Mon Feb 18 13:46:23 2002
 +++ qmake/generators/unix/unixmake2.cpp	Tue Feb 26 18:48:36 2002
 @@ -190,10 +190,14 @@ UnixMakefileGenerator::writeMakeParts(QT
@@ -9,7 +9,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.1.1.1 2002/03/04 16:13:0
 -	    t << "TARGET0	= " << var("TARGET_") << endl;
 -	    t << "TARGET1	= " << var("TARGET_x") << endl;
 -	    t << "TARGET2	= " << var("TARGET_x.y") << endl;
-+	    if (project->variables()["QMAKE_OPENBSD_SHBLIS"].isEmpty()) {
++	    if (project->variables()["QMAKE_OPENBSD_SHLIBS"].isEmpty()) {
 +		t << "TARGETD	= " << var("TARGET_x.y") << endl;
 +	    } else {
 +		t << "TARGETD	= " << var("TARGET_x.y.z") << endl;
