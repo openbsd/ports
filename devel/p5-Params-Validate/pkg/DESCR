@@ -1,0 +1,9 @@
+The Params::Validate module provides a flexible system for validation
+method/function call parameters.  The validation can be as simple
+as checking for the presence of required parameters or as complex
+as validating object classes (via isa) or capabilities (via can),
+checking parameter types, and using customized callbacks to ensure
+data integrity.
+
+The module has been designed to work equally well with positional
+or named parameters (via a hash or hash reference).
