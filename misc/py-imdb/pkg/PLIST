@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/02/04 17:24:39 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/03/25 09:22:41 xsa Exp $
 %%SHARED%%
 lib/python${MODPY_VERSION}/site-packages/imdb/
 lib/python${MODPY_VERSION}/site-packages/imdb/Movie.py
@@ -39,6 +39,7 @@ lib/python${MODPY_VERSION}/site-packages/imdb/utils.pyc
 share/doc/py-imdb/
 share/doc/py-imdb/README.devel
 share/doc/py-imdb/README.local
+share/doc/py-imdb/README.mobile
 share/doc/py-imdb/README.package
 share/doc/py-imdb/README.txt
 share/doc/py-imdb/README.users
