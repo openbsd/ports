@@ -1,36 +1,38 @@
-$OpenBSD: patch-jhead_c,v 1.1.1.1 2003/07/17 22:07:06 naddy Exp $
---- jhead.c.orig	Thu Jul 17 20:33:53 2003
-+++ jhead.c	Thu Jul 17 20:34:20 2003
-@@ -148,7 +148,7 @@ static int FileEditComment(char * TempFi
+$OpenBSD: patch-jhead_c,v 1.2 2004/01/16 23:26:01 naddy Exp $
+--- jhead.c.orig	2004-01-14 19:48:42.000000000 +0100
++++ jhead.c	2004-01-14 20:42:41.000000000 +0100
+@@ -151,7 +151,8 @@ static int FileEditComment(char * TempFi
  #endif
          }
  
 -        sprintf(QuotedPath, "%s \"%s\"",Editor, TempFileName);
-+        snprintf(QuotedPath, sizeof QuotedPath, "%s \"%s\"",Editor, TempFileName);
++        snprintf(QuotedPath, sizeof QuotedPath, "%s \"%s\"", 
++		Editor, TempFileName);
          a = system(QuotedPath);
      }
      
-@@ -255,7 +255,7 @@ static int ModifyDescriptComment(char * 
+@@ -258,7 +259,8 @@ static int ModifyDescriptComment(char * 
      if (!HasScandate && !ImageInfo.DateTime[0]){
          // Scan date is not in the file yet, and it doesn't have one built in.  Add it.
          char Temp[30];
 -        sprintf(Temp, "scan_date=%s", ctime(&ImageInfo.FileDateTime));
-+        snprintf(Temp, sizeof Temp, "scan_date=%s", ctime(&ImageInfo.FileDateTime));
++        snprintf(Temp, sizeof Temp, "scan_date=%s", 
++		ctime(&ImageInfo.FileDateTime));
          strcat(OutComment, Temp);
          Modified = TRUE;
      }
-@@ -283,7 +283,9 @@ static int AutoResizeCmdStuff(void)
+@@ -286,7 +288,9 @@ static int AutoResizeCmdStuff(void)
  
      if (scale > 0.8) return FALSE; // Don't rescale by really small amounts (not worth it!)
  
 -    sprintf(CommandString, "mogrify -geometry %dx%d -quality 80 &i",(int)(ImageInfo.Width*scale), (int)(ImageInfo.Height*scale));
 +    snprintf(CommandString, sizeof CommandString, 
-+	"mogrify -geometry %dx%d -quality 80 &i",
-+	(int)(ImageInfo.Width*scale), (int)(ImageInfo.Height*scale));
++	"mogrify -geometry %dx%d -quality 80 &i", 
++		(int)(ImageInfo.Width*scale), (int)(ImageInfo.Height*scale));
      return TRUE;
  }
  
-@@ -314,17 +316,20 @@ static void DoCommand(const char * FileN
+@@ -317,17 +321,20 @@ static void DoCommand(const char * FileN
              if (ApplyCommand[a+1] == 'i'){
                  // Input file.
                  if (strstr(FileName, " ")){
@@ -54,38 +56,41 @@ $OpenBSD: patch-jhead_c,v 1.1.1.1 2003/07/17 22:07:06 naddy Exp $
                  a += 1;
                  TempUsed = TRUE;
                  unlink(TempName);// Remove any pre-existing temp file
-@@ -476,8 +481,9 @@ void DoFileRenaming(const char * FileNam
+@@ -479,7 +486,8 @@ void DoFileRenaming(const char * FileNam
  
              }else{
                  // My favourite scheme.
 -                sprintf(NewBaseName+PrefixPart, "%02d%02d-%02d%02d%02d",
--                     tm.tm_mon+1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
 +                snprintf(NewBaseName+PrefixPart, sizeof NewBaseName+PrefixPart,
-+			"%02d%02d-%02d%02d%02d", tm.tm_mon+1, tm.tm_mday,
-+			tm.tm_hour, tm.tm_min, tm.tm_sec);
++			"%02d%02d-%02d%02d%02d",
+                      tm.tm_mon+1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
              }
  
-             for (a=0;;a++){
-@@ -501,7 +507,7 @@ void DoFileRenaming(const char * FileNam
+@@ -504,7 +512,8 @@ void DoFileRenaming(const char * FileNam
                      NameExtra[0] = 0;
                  }
  
 -                sprintf(NewName, "%s%s.jpg", NewBaseName, NameExtra);
-+                snprintf(NewName, sizeof NewName, "%s%s.jpg", NewBaseName, NameExtra);
++                snprintf(NewName, sizeof NewName, "%s%s.jpg", 
++			NewBaseName, NameExtra);
  
                  if (!strcmp(FileName, NewName)) break; // Skip if its already this name.
  
-@@ -592,7 +598,8 @@ void ProcessFile(const char * FileName)
-                 #ifdef _WIN32
-                     sprintf(RotateCommand, "jpegtran -%s &i &o", Argument);
-                 #else
--                    sprintf(RotateCommand, "jpegtran -%s &i > &o", Argument);
-+                    snprintf(RotateCommand, sizeof RotateCommand, 
-+			"jpegtran -%s &i > &o", Argument);
-                 #endif
-                 ApplyCommand = RotateCommand;
-                 DoCommand(FileName);
-@@ -810,7 +817,7 @@ void ProcessFile(const char * FileName)
+@@ -595,9 +604,11 @@ void ProcessFile(const char * FileName)
+                         ErrFatal("Orientation screwup");
+                     }
+                     #ifdef _WIN32
+-                        sprintf(RotateCommand, "jpegtran -%s &i &o", Argument);
++                        snprintf(RotateCommand, sizeof RotateCommand, 
++				"jpegtran -%s &i &o", Argument);
+                     #else
+-                        sprintf(RotateCommand, "jpegtran -%s &i > &o", Argument);
++                        snprintf(RotateCommand, sizeof RotateCommand, 
++				"jpegtran -%s &i > &o", Argument);
+                     #endif
+                     ApplyCommand = RotateCommand;
+                     DoCommand(FileName);
+@@ -819,7 +830,7 @@ void ProcessFile(const char * FileName)
  
              // Print to temp buffer first to avoid putting null termination in destination.
              // snprintf() would do the trick ,but not available everywhere (like FreeBSD 4.4)

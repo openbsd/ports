@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/17 22:07:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/16 23:26:01 naddy Exp $
 
 COMMENT=	"Exif Jpeg camera setting parser and thumbnail remover"
 
-DISTNAME=	jhead-2.0
+DISTNAME=	jhead-2.1
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.sentex.net/~mwandel/jhead/
-MASTER_SITES=	${HOMEPAGE}
 
 MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
 
@@ -16,16 +15,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_GMAKE=	Yes
-MAKE_FILE=	makefile
+MASTER_SITES=	${HOMEPAGE}
 
-post-extract:
-	@perl -pi -e 's,\015,,g' ${WRKSRC}/makefile ${WRKSRC}/*.[ch]
+NO_REGRESS=	Yes
+
+do-build:
+	cd ${WRKSRC} && \
+		${CC} ${CFLAGS} -o jhead exif.c jhead.c jpgfile.c -lm
 
 post-build:
 	@gzip -d ${WRKSRC}/jhead.1.gz 
-
-NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jhead ${PREFIX}/bin
