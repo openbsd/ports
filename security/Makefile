@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2000/01/24 19:59:41 dugsong Exp $
+# $OpenBSD: Makefile,v 1.33 2000/02/10 22:09:27 dugsong Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -21,6 +21,7 @@
      SUBDIR += l0phtcrack
      SUBDIR += libident
      SUBDIR += logsurfer
+     SUBDIR += lxnb
      SUBDIR += nbaudit
      SUBDIR += nessus
      SUBDIR += nfsshell
