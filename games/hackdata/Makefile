@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/21 20:57:07 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/03/23 14:52:03 espie Exp $
 
 COMMENT=	'common data for the nethack/slash ports'
-DISTNAME=	nethack-3.3.1
-PKGNAME=	hackdata-3.3.1
+DISTNAME=	nethack-3.4.0
+PKGNAME=	hackdata-3.4.0
 CATEGORIES=	games
 NEED_VERSION=	1.515
-MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh331/src/ \
+MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh340/src/ \
 		ftp://ftp.uu.net/pub/games/nethack/sources/ \
 		${MASTER_SITE_GNU}
-DISTFILES=	nethack-331.tgz
+DISTFILES=	nethack-340.tgz
 MASTER_SITE_SUBDIR= nethack
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
@@ -23,9 +23,9 @@ EXTRACT_ONLY=
 
 post-extract:
 	@cd ${WRKDIR} && ${TAR} zxqf ${FULLDISTDIR}/${DISTFILES} \
-	nethack-3.3.1/win/X11/ibm.bdf \
-	nethack-3.3.1/win/X11/nh10.bdf \
-	nethack-3.3.1/doc/Guidebook.txt
+	nethack-3.4.0/win/X11/ibm.bdf \
+	nethack-3.4.0/win/X11/nh10.bdf \
+	nethack-3.4.0/doc/Guidebook.txt
 
 do-build:
 	cd ${WRKSRC}/win/X11 && \
