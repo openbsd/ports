@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/06 23:38:41 naddy Exp $
+bin/bbdate
+share/bbtools/README.bbdate
+share/bbtools/bbdate.conf
+share/bbtools/bbdate.nobb
+share/bbtools/bbdate.style
+share/bbtools/bbtoolsrc.in
+@dirrm share/bbtools

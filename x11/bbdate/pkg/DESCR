@@ -1,0 +1,4 @@
+bbdate displays the current date in a window resembling the toolbar,
+and is smart enough to pick up settings from the Blackbox style-file.
+
+WWW: ${HOMEPAGE}
