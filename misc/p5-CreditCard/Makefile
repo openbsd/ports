@@ -1,24 +1,20 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/02 12:12:26 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/08/21 02:13:22 brad Exp $
 
 DISTNAME=	Business-CreditCard-0.21
-
 CATEGORIES=	misc perl5
-NEED_VERSION=	1.290
+NEED_VERSION=	1.310
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR= Business
 
 MAINTAINER=	espie@openbsd.org
 
-# Artistic license
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=     Business
-
-
 do-build:
-	@cd ${WRKSRC} && pod2man CreditCard.pm >Business::CreditCard.3p
+	@cd ${WRKSRC} && pod2man CreditCard.pm > Business::CreditCard.3p
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/libdata/perl5/site_perl/Business
