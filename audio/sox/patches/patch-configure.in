@@ -1,6 +1,19 @@
-$OpenBSD: patch-configure.in,v 1.4 2003/07/17 20:29:14 naddy Exp $
---- configure.in.orig	Thu Jul 17 19:00:08 2003
-+++ configure.in	Thu Jul 17 19:00:48 2003
+$OpenBSD: patch-configure.in,v 1.5 2004/01/16 22:30:53 naddy Exp $
+--- configure.in.orig	2003-02-08 15:39:19.000000000 +0100
++++ configure.in	2004-01-16 23:22:31.000000000 +0100
+@@ -136,10 +136,10 @@ then
+     if test "$found_ogg_vorbis" = yes
+     then
+         AC_CHECK_LIB(vorbis, vorbis_analysis_init,
+-                     LIBS="$LIBS -logg -lvorbis -lvorbisfile -lvorbisenc"
++                     LIBS="$LIBS -lvorbisfile -lvorbisenc -lvorbis -logg -lm"
+                      AC_DEFINE([HAVE_LIBVORBIS], 1, 
+ 		               [Define if you have Ogg Vorbis Library installed]),
+-	             enable_ogg_vorbis=no)
++	             enable_ogg_vorbis=no, -logg)
+     fi
+ fi
+ 
 @@ -229,10 +229,11 @@ fi
  
  if test "$enable_oss_dsp" = yes
