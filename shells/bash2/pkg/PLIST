@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.9 2001/04/10 17:10:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2001/11/18 19:45:12 naddy Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/bash.info
 bin/bash
 bin/bashbug
+info/bash.info
 man/man1/bash.1
 man/man1/bashbug.1
-@unexec install-info --delete %D/info/bash.info %D/info/dir
-info/bash.info
-@exec install-info  %D/info/bash.info %D/info/dir
 share/doc/bash/article.ps
 share/doc/bash/article.txt
 share/doc/bash/bash.html
@@ -15,3 +14,4 @@ share/doc/bash/bashref.html
 share/doc/bash/bashref.ps
 share/doc/bash/builtins.ps
 @dirrm share/doc/bash
+@exec install-info --info-dir=%D/info %D/info/bash.info

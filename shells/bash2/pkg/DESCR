@@ -5,3 +5,5 @@ features from the Korn and C shells (ksh and csh).
 
 Bash is intended to be a conformant implementation of the IEEE POSIX
 Shell and Tools specification (IEEE Working Group 1003.2).
+
+WWW: ${HOMEPAGE}
