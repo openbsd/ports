@@ -1,17 +1,17 @@
---- Makefile.in.orig	Tue May  9 01:25:42 2000
-+++ Makefile.in	Sun May 28 22:25:07 2000
-@@ -13,7 +13,7 @@
- CC = @CC@
- CCOPT = 
+--- Makefile.in.orig	Tue Aug  1 03:49:40 2000
++++ Makefile.in	Tue Aug  1 20:39:49 2000
+@@ -15,7 +15,7 @@
  LIBPCAPDIR = @libpcapdir@
--INCLS = -I. -I$(LIBPCAPDIR)
-+INCLS = -I.
+ INCLS = -I$(LIBPCAPDIR)
  DEFS = @DEFS@ -DNMAP_VERSION=\"$(NMAP_VERSION)\" -DNMAP_NAME=\"$(NMAP_NAME)\" -DNMAP_URL=\"$(NMAP_URL)\" -DNMAPDATADIR=\"$(nmapdatadir)\"
- CFLAGS = @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
+-CFLAGS = @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
++CFLAGS = @CFLAGS@ $(CCOPT) $(DEFS)
  # CFLAGS = -g -Wall $(DEFS) $(INCLS)
+ STATIC = 
+ LDFLAGS = @LDFLAGS@ $(STATIC)
 @@ -36,9 +36,9 @@
  
- DEPS = nmap.h error.h targets.h osscan.h tcpip.h utils.h global_structures.h charpool.h services.h rpc.h portlist.h
+ DEPS = nmap.h error.h targets.h osscan.h tcpip.h utils.h global_structures.h charpool.h services.h protocols.h rpc.h portlist.h
  
 -all: $(TARGET) nmapfe/nmapfe
 +all: $(TARGET)
@@ -21,7 +21,7 @@
  	@echo Compiling nmap
  	rm -f $@
  	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
-@@ -140,10 +140,8 @@
+@@ -141,10 +141,8 @@
  	$(MAKEDEPEND) $(INCLS) -s "# DO NOT DELETE" -- $(DEFS) -- $(SRCS)
  
  install: $(TARGET)
