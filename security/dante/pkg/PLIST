@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/04/19 20:46:37 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/06/24 09:15:13 jakob Exp $
 bin/socksify
 include/socks.h
 lib/libdsocks.la
@@ -16,8 +16,8 @@ share/doc/dante/SOCKS4.protocol
 share/doc/dante/faq.ps
 share/doc/dante/rfc1928.txt
 share/doc/dante/rfc1929.txt
-share/examples/dante/sockd.conf
 share/examples/dante/sockd-basic.conf
+share/examples/dante/sockd.conf
 share/examples/dante/socks-simple-withoutnameserver.conf
 share/examples/dante/socks-simple.conf
 share/examples/dante/socks.conf
