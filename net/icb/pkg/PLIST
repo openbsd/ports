@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2000/08/07 11:49:35 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/04/14 18:59:07 xsa Exp $
 bin/icb
 lib/icb/bartender
 lib/icb/confuse
@@ -7,3 +7,5 @@ share/examples/icb/sample.icbrc
 share/examples/icb/sample.icbserverdb
 @dirrm lib/icb
 @dirrm share/examples/icb
+@cwd ${PREFIX}/lib
+@extra icbserverdb

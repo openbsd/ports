@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/04/20 07:31:36 bmc Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/04/14 18:59:08 xsa Exp $
 man/man5/iauth.conf.5
 man/man8/iauth.8
 man/man8/ircd.8
@@ -11,3 +11,5 @@ share/examples/ircd/iauth.conf-sample
 share/examples/ircd/ircd.conf-sample
 share/examples/ircd/ircd.m4
 @dirrm share/examples/ircd
+@extraunexec rm -rf ${CONFDIR}
+@extraunexec rm -rf /var/log/ircd

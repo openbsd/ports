@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2003/12/11 19:07:49 david Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/04/14 18:59:08 xsa Exp $
 @pkgcfl quagga-*
 @unexec install-info --delete --info-dir=%D/info %D/info/zebra.info
 bin/vtysh
@@ -28,3 +28,4 @@ share/examples/zebra/zebra.conf.sample
 @dirrm share/examples/zebra
 @dirrm share/doc/zebra
 @exec install-info --info-dir=%D/info %D/info/zebra.info
+@extraunexec rm -rf ${CONFDIR}

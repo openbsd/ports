@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/06/16 05:18:53 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/04/14 18:59:08 xsa Exp $
 bin/pork
 share/doc/pork/QUICK_START
 share/doc/pork/README
@@ -264,3 +264,5 @@ share/pork/help/win/swap
 @dirrm share/pork
 @dirrm share/examples/pork
 @dirrm share/doc/pork
+@cwd ${SYSCONFDIR}
+@extra porkrc

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/07/19 00:46:48 brad Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/04/14 18:59:08 xsa Exp $
 @unexec rm -f %D/share/snmp/mibs/.index
 @mode 0555
 bin/encode_keychange
@@ -222,3 +222,5 @@ lib/libucdmibs.la
 @dirrm share/examples/ucd-snmp
 @dirrm share/doc/ucd-snmp
 @dirrm include/ucd-snmp
+@cwd ${SYSCONFDIR}
+@extra snmpd.conf

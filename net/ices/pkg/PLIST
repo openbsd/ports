@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/26 11:40:45 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/14 18:59:07 xsa Exp $
 bin/ices
 man/man1/ices.1
 share/doc/ices/icesmanual.html
@@ -7,3 +7,5 @@ share/examples/ices/ices.pm.dist
 share/examples/ices/ices.py.dist
 @dirrm share/examples/ices
 @dirrm share/doc/ices
+@cwd ${SYSCONFDIR}
+@extra ices.conf

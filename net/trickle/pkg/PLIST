@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/13 08:07:50 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/14 18:59:08 xsa Exp $
 bin/trickle
 bin/trickled
 lib/trickle/trickle-overload.so
@@ -6,3 +6,5 @@ man/man1/trickle.1
 man/man5/trickled.conf.5
 man/man8/trickled.8
 @dirrm lib/trickle
+@cwd ${SYSCONFDIR}
+@extra trickled.conf

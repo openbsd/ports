@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/12/16 19:24:40 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/04/14 18:59:08 xsa Exp $
 bin/lftp
 bin/lftpget
 man/man1/lftp.1
@@ -22,3 +22,5 @@ share/locale/zh_TW/LC_MESSAGES/lftp.mo
 @dirrm share/locale/zh_CN
 @dirrm share/lftp
 @dirrm share/examples/lftp
+@cwd ${SYSCONFDIR}
+@extra lftp.conf

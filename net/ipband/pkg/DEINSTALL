@@ -1,4 +1,5 @@
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/10/30 20:45:29 lebel Exp $
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.2 2004/04/14 18:59:08 xsa Exp $
 # ipband deinstallation
 
 set -e
@@ -6,7 +7,7 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=${SYSCONFDIR}/ipband.conf
 
-if [ -f ${CONFIG_FILE} ]; then
+if [ ${PKG_DELETE_EXTRA} != Yes -a -f ${CONFIG_FILE} ]; then
 	echo
 	echo "+---------------"
 	echo "| To completely deinstall the $1 package you need to perform"
@@ -19,3 +20,5 @@ if [ -f ${CONFIG_FILE} ]; then
 	echo "+---------------"
 	echo
 fi
+
+exit 0

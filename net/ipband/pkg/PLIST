@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/10/30 20:45:29 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/14 18:59:08 xsa Exp $
 bin/ipband
 man/man1/ipband.1
 share/examples/ipband/ipband.sample.conf
 @dirrm share/examples/ipband
+@cwd ${SYSCONFDIR}
+@extra ipband.conf
