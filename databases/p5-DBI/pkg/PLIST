@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2003/04/10 13:53:13 shell Exp $
+@comment $OpenBSD: PLIST,v 1.19 2003/11/17 05:16:38 kevlo Exp $
 bin/dbiprof
 bin/dbiproxy
 ${P5ARCH}/Bundle/DBI.pm
@@ -35,6 +35,7 @@ man/man1/dbiprof.1
 man/man1/dbiproxy.1
 man/man3p/Bundle::DBI.3p
 man/man3p/DBD::Proxy.3p
+man/man3p/DBD::Sponge.3p
 man/man3p/DBI.3p
 man/man3p/DBI::Const::GetInfo::ANSI.3p
 man/man3p/DBI::Const::GetInfo::ODBC.3p
