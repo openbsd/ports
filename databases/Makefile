@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 1998/05/06 13:20:40 form Exp $
+# $OpenBSD: Makefile,v 1.5 1998/09/14 20:05:12 marc Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
-#    SUBDIR += gdbm
+     SUBDIR += gdbm
 #    SUBDIR += gnats
 #    SUBDIR += msql
 #    SUBDIR += mysql
