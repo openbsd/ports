@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/12/23 00:37:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2004/11/21 22:53:59 espie Exp $
 
 COMMENT=	"character encoding converter generator package"
 
@@ -10,6 +10,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=   http://www.kostis.net/freeware/
 

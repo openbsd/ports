@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/12/23 07:58:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2004/11/21 22:53:58 espie Exp $
 
 COMMENT=	"binary-to-text file converter"
 
@@ -9,6 +9,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
+WANTLIB=		c
 
 MASTER_SITES=	\
 	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/ \

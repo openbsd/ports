@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/05/31 09:46:14 hshoexer Exp $
+# $OpenBSD: Makefile,v 1.3 2004/11/21 22:53:58 espie Exp $
 
 COMMENT=	"descramble scrambled DVDs using ACSS"
 
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	"Free speech issue"
 PERMIT_PACKAGE_FTP=	Yes
+WANTLIB=		crypto
 
 CONFIGURE_STYLE=	gnu
 
