@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/08/28 20:51:17 brad Exp $
+${P5ARCH}/Image/Magick.pm
+${P5ARCH}/auto/Image/Magick/Magick.bs
+${P5ARCH}/auto/Image/Magick/Magick.so
+${P5ARCH}/auto/Image/Magick/autosplit.ix
+man/man3p/Image::Magick.3p
+@dirrm ${P5ARCH}/auto/Image/Magick
