@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/12/19 06:49:59 dbt Exp $
+# $OpenBSD: Makefile,v 1.4 2001/01/19 01:16:51 dbt Exp $
 
 DISTNAME=	lua-4.0
 CATEGORIES=     lang
@@ -38,8 +38,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/bin/lua ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKDIST}/bin/luac ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKDIST}/bin/bin2c ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/lua/docs
-	${INSTALL_DATA} ${WRKDIST}/doc/* ${PREFIX}/share/lua/docs
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lua
+	${INSTALL_DATA} ${WRKDIST}/doc/*.html ${WRKDIST}/doc/*.gif ${PREFIX}/share/doc/lua
+	${INSTALL_DATA_DIR} ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKDIST}/doc/*.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
 
