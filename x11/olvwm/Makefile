@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/07/17 10:53:21 matthieu Exp $
+# $OpenBSD: Makefile,v 1.5 1999/07/17 11:00:41 matthieu Exp $
 #
 
 DISTNAME=	olvwm4
@@ -10,7 +10,7 @@ DISTFILES=	olvwm4.tar.Z
 MAINTAINER= ian@openbsd.org
 
 # The Patch01 and Patch02 patches are included in the patches directory.
-# PATCH_SITES=	${MASTER_SITES}
+# PATCH_SITES=	${MASTER_SITES} ftp://ftp.cdrom.com/X11/contrib/window_managers
 # PATCHFILES=	olvwm4.Patch01.Z olvwm4.Patch02.Z
 # PATCH_DIST_STRIP=	-p1
 
