@@ -3,8 +3,10 @@
 # Date created:		2 Apr 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.4 1998/08/15 00:41:42 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1999/11/03 01:23:25 turan Exp $
 #
+
+BROKEN=			bad packing lists
 
 DISTNAME=		LPRng-3.5.1
 CATEGORIES=		sysutils print
