@@ -1,6 +1,7 @@
 include/cgi.h
 lib/libcgiparse.a
 lib/libcgiparse.so.1.0
+lib/libcgiparse_pic.a
 @exec /sbin/ldconfig -m %B
 man/man3/cgigetvalue.3
 man/man3/cgiclose.3
