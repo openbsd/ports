@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/09/23 19:59:54 danh Exp $
+# $OpenBSD: Makefile,v 1.9 2000/11/20 01:12:41 danh Exp $
 
-VERSION=	1.0.25
+VERSION=	1.0.28
 DISTNAME=	rrdtool-${VERSION}
 CATEGORIES=     net
-NEED_VERSION=	1.334
+NEED_VERSION=	1.340
 MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/rrdtool/pub/ \
 		ftp://ftp.sunet.se/pub/network/monitoring/rrdtool/ \
 		http://ftp.sunet.se/pub/network/monitoring/rrdtool/
