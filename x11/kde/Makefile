@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.37 2003/02/18 15:21:39 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2003/12/08 01:53:27 brad Exp $
 
      SUBDIR+= arts3
      SUBDIR+= libs3
      SUBDIR+= base3
+     SUBDIR+= multimedia3
+     SUBDIR+= games3
      SUBDIR+= addons3
      SUBDIR+= artwork3
      SUBDIR+= edu3
-     SUBDIR+= games3
      SUBDIR+= graphics3
-     SUBDIR+= multimedia3
      SUBDIR+= network3
      SUBDIR+= pim3
      SUBDIR+= sdk3
@@ -36,10 +36,13 @@
      SUBDIR+= i18n3,fi
      SUBDIR+= i18n3,fr
      SUBDIR+= i18n3,he
+     SUBDIR+= i18n3,hr
      SUBDIR+= i18n3,hu
+     SUBDIR+= i18n3,is
      SUBDIR+= i18n3,it
      SUBDIR+= i18n3,ja
      SUBDIR+= i18n3,lt
+     SUBDIR+= i18n3,mk
      SUBDIR+= i18n3,mt
      SUBDIR+= i18n3,nb
      SUBDIR+= i18n3,nl
@@ -50,9 +53,11 @@
      SUBDIR+= i18n3,pt_BR
      SUBDIR+= i18n3,ro
      SUBDIR+= i18n3,ru
+     SUBDIR+= i18n3,se
      SUBDIR+= i18n3,sk
      SUBDIR+= i18n3,sl
      SUBDIR+= i18n3,sr
+     SUBDIR+= i18n3,ss
      SUBDIR+= i18n3,sv
      SUBDIR+= i18n3,ta
      SUBDIR+= i18n3,th
