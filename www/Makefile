@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.184 2005/03/09 14:13:49 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.185 2005/03/16 12:47:18 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -129,7 +129,6 @@
 #    SUBDIR += p5-WWW-Search
      SUBDIR += p5-libapreq
      SUBDIR += p5-libwww
-     SUBDIR += pear-HTML-Common
      SUBDIR += pear-HTML-Common2
      SUBDIR += pear-HTML-QuickForm
      SUBDIR += pear-HTML-Select
