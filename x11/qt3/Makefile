@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/11/23 22:00:20 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2002/12/18 05:19:45 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		C++ X11 GUI toolkit
@@ -113,6 +113,7 @@ MULTI_PACKAGES+=	-postgresql
 LIB_DEPENDS+=pq::databases/postgresql
 .  endif
 CONFIGURE_ARGS+= -I${LOCALBASE}/include/postgresql \
+	    -I${LOCALBASE}/include/postgresql/server \
 	    -L${LOCALBASE}/lib \
 	    -I${LOCALBASE}/include -plugin-sql-psql
 .endif
