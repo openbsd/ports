@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/09/20 18:39:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/09/20 18:56:27 naddy Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
 V=			1.4.0.1
@@ -28,6 +28,6 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-applets; \
-	cp -rp ${PREFIX}/../../etc/* ${PREFIX}/share/examples/gnome-applets/
+	cp -rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/gnome-applets/
 
 .include <bsd.port.mk>
