@@ -1,0 +1,5 @@
+bin/bvi
+bin/bview
+bin/bvedit
+man/man1/bvi.1
+man/man1/bview.1
