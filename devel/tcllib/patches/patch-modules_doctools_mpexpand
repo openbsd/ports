@@ -1,0 +1,11 @@
+$OpenBSD: patch-modules_doctools_mpexpand,v 1.1.1.1 2003/01/09 16:59:37 todd Exp $
+--- modules/doctools/mpexpand.orig	Tue Dec 17 08:43:03 2002
++++ modules/doctools/mpexpand	Tue Dec 17 08:43:10 2002
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ # -*- tcl -*- \
+-exec tclsh "$0" ${1+"$@"}
++exec tclsh8.3 "$0" ${1+"$@"}
+ 
+ package require textutil::expander
+ 

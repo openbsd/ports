@@ -1,0 +1,5 @@
+This is the core development home for the tcllib standardized Tcl
+library. This is a set of pure-Tcl extensions that you can use to
+become even more productive with Tcl.
+
+WWW: ${HOMEPAGE}
