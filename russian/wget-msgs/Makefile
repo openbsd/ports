@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/24 23:28:32 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/11 01:39:30 espie Exp $
 
 PKGNAME=	wget-msgs-1.5.3-ru
 CATEGORIES=	russian net
@@ -17,8 +17,7 @@ RUN_DEPENDS=	wget::net/wget
 NO_CHECKSUM=	Yes
 FAKE=		Yes
 WRKDIST=	${WRKDIR}
-
-do-fetch:
+DISTFILES=
 
 do-extract:
 	@mkdir -p ${WRKDIR}
