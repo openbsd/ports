@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/23 20:08:48 sturm Exp $
+${P5SITE}/Crypt/DSA/
+${P5SITE}/Crypt/DSA.pm
+${P5SITE}/Crypt/DSA/Key/
+${P5SITE}/Crypt/DSA/Key.pm
+${P5SITE}/Crypt/DSA/Key/PEM.pm
+${P5SITE}/Crypt/DSA/Key/SSH2.pm
+${P5SITE}/Crypt/DSA/KeyChain.pm
+${P5SITE}/Crypt/DSA/Signature.pm
+${P5SITE}/Crypt/DSA/Util.pm
+@man man/man3p/Crypt::DSA.3p
+@man man/man3p/Crypt::DSA::Key.3p
+@man man/man3p/Crypt::DSA::Key::PEM.3p
+@man man/man3p/Crypt::DSA::Key::SSH2.3p
+@man man/man3p/Crypt::DSA::KeyChain.3p
+@man man/man3p/Crypt::DSA::Signature.3p
+@man man/man3p/Crypt::DSA::Util.3p
