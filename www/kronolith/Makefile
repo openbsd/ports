@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2004/02/01 20:22:18 sturm Exp $ 
+# $OpenBSD: Makefile,v 1.6 2004/07/19 05:09:49 kevlo Exp $ 
 
 COMMENT=	"calendar and scheduling application for Horde"
 
-V=		1.0
+V=		1.1.2
 HORDE_MODULE=	kronolith
 HORDE_NAME=	Kronolith
 
@@ -30,7 +30,9 @@ INSTDIR=	${PREFIX}/horde
 SUBST_VARS=	INSTDIR HORDE_NAME HORDE_MODULE
 
 RUN_DEPENDS=	:horde->=2.2.1:devel/horde \
-		:pear-Date->=1.3:devel/pear-Date
+		:pear-Date->=1.3:devel/pear-Date \
+		:pear-HTML-Common->=1.2.1:www/pear-HTML-Common \
+		:pear-HTML-Select->=1.2.1:www/pear-HTML-Select
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${INSTDIR}
