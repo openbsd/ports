@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.56 2003/01/23 00:39:21 margarida Exp $
+# $OpenBSD: network.conf.template,v 1.57 2003/02/23 13:45:51 rohee Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -64,7 +64,6 @@ MASTER_SITE_GNU+=	\
   	ftp://ftp.sunet.se/pub/gnu/
 
 MASTER_SITE_XCONTRIB+=	\
-	ftp://crl.dec.com/pub/X11/contrib/ \
 	ftp://uiarchive.uiuc.edu/mirrors/ftp/ftp.x.org/contrib/ \
 	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/ \
 	ftp://ftp.duke.edu/pub/X11/contrib/ \
