@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/01/03 02:10:36 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/01/03 10:01:10 alek Exp $
 
 COMMENT=		"GStreamer Streaming-media framework plug-ins."
 
@@ -347,15 +347,15 @@ CONFIGURE_ARGS+=	--disable-ogg
 
 # sdlvideosink
 COMMENT-sdl=		"GStreamer plugin for using SDL to diplay video"
-PKGNAME-sdl=		gstreamer-sdl-${VERSION}p0
+PKGNAME-sdl=		gstreamer-sdl-${VERSION}p1
 PSEUDO_FLAVORS+=	no_sdl
 .if !${FLAVOR:L:Mno_sdl} && !${FLAVOR:L:Mno_nuthin}
 MULTI_PACKAGES+=	-sdl
 .endif
 .if defined(PACKAGING)
 . if ${SUBPACKAGE} == "-sdl"
-LIB_DEPENDS+=		SDL::devel/sdl
-RUN_DEPENDS=		::devel/gstreamer-plugins
+LIB_DEPENDS+=		SDL::devel/sdl \
+			gstinterfaces-0.8.1.0::devel/gstreamer-plugins
 WANTLIB+=		X11 usbhid Xext
 . endif
 .else
