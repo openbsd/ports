@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/21 20:57:09 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/27 01:02:17 naddy Exp $
 
 COMMENT= 	"extra Korean fonts"
 
 PKGNAME=	baekmuk-fonts-2.0
 DISTNAME=	baekmuk-2.0
 CATEGORIES=	korean x11
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD/distfiles/ \
 		ftp://ftp.mizi.com/pub/baekmuk/
 HOMEPAGE=	http://www.mizi.co.kr
@@ -29,6 +29,8 @@ do-build:
 	${X11BASE}/bin/mkfontdir ${WRKDIR}
 	egrep '\.pcf\.gz' ${WRKSRC}/fonts.dir | \
 		sed 's/\.pcf\.gz//g' > ${WRKSRC}/fonts.alias
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/13 23:31:24 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/27 01:02:17 naddy Exp $
 
 COMMENT=	"regression testing utility for use with the Java language"
 
@@ -9,7 +9,6 @@ VERSION=	3.7
 DISTNAME=	junit${VERSION}
 PKGNAME=	junit-${VERSION}
 CATEGORIES=	java
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://www.junit.org/
 
@@ -26,6 +25,7 @@ EXTRACT_SUFX=	.zip
 RUN_DEPENDS=	::devel/jdk/1.2-blackdown
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/java/classes/${PKGNAME}

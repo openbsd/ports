@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/09/28 22:30:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/10/27 01:02:17 naddy Exp $
 
 COMMENT=	"Java program analyzer and checker"
 
@@ -6,7 +6,6 @@ VERSION=	2.3
 DISTNAME=	jlint
 PKGNAME=	${DISTNAME}-${VERSION}
 CATEGORIES=	java
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://artho.com/jlint/
 
@@ -25,5 +24,7 @@ MAKE_ENV+=	CC="${CC}" CPP="${CXX}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
 WRKDIST=	${WRKDIR}/${PKGNAME}
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk> 
