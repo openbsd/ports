@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2004/04/11 09:06:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.135 2004/05/03 07:38:44 dons Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -35,6 +35,7 @@
      SUBDIR += gpa
      SUBDIR += gpgme
      SUBDIR += hlfl
+     SUBDIR += hs-crypto
      SUBDIR += hydra
      SUBDIR += integrit
      SUBDIR += isic
