@@ -1,0 +1,39 @@
+$OpenBSD: patch-wmMoonClock_c,v 1.1.1.1 2001/01/03 14:07:48 naddy Exp $
+--- Src/wmMoonClock.c.orig	Mon Jun  7 16:27:18 1999
++++ Src/wmMoonClock.c	Thu Dec 21 09:41:32 2000
+@@ -162,7 +162,7 @@
+     int			i, n, k, j, ImageNumber;
+     int 		Year, Month, DayOfWeek, DayOfMonth;
+     int			Hours, Mins, Secs, OldSecs, digit, xoff, xsize;
+-    long		CurrentLocalTime, CurrentGMTTime, date;
++    time_t		CurrentLocalTime, CurrentGMTTime, date;
+     double		UT, val, RA, DEC, UTRise, UTSet, LocalHour, hour24();
+     int			D, H, M, S, sgn, A, B, q;
+     char		str[10];
+@@ -771,7 +771,7 @@
+                 print_usage();
+                 exit(-1);
+             }
+-            strcpy(BackColor, argv[++i]);
++            strlcpy(BackColor, argv[++i], sizeof(BackColor));
+ 
+         } else if (!strcmp(argv[i], "-lc")){
+ 
+@@ -780,7 +780,7 @@
+                 print_usage();
+                 exit(-1);
+             }
+-            strcpy(LabelColor, argv[++i]);
++            strlcpy(LabelColor, argv[++i], sizeof(LabelColor));
+ 
+         } else if (!strcmp(argv[i], "-dc")){
+ 
+@@ -789,7 +789,7 @@
+                 print_usage();
+                 exit(-1);
+             }
+-            strcpy(DataColor, argv[++i]);
++            strlcpy(DataColor, argv[++i], sizeof(DataColor));
+ 
+         } else if (!strcmp(argv[i], "-low")){
+ 
