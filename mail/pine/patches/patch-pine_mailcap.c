@@ -1,6 +1,6 @@
---- pine/mailcap.c.orig	Fri Oct 22 19:36:41 1999
-+++ pine/mailcap.c	Fri Oct 22 19:42:53 1999
-@@ -915,14 +915,18 @@
+--- pine/mailcap.c.orig	Mon Nov 13 15:40:22 2000
++++ pine/mailcap.c	Sun Dec 10 12:59:16 2000
+@@ -918,14 +918,18 @@
  		     * have to put those outside of the single quotes.
  		     * (The parm+1000 nonsense is to protect against
  		     * malicious mail trying to overlow our buffer.)

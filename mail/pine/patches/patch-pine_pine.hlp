@@ -1,9 +1,9 @@
---- pine/pine.hlp.orig	Thu Nov 18 14:50:08 1999
-+++ pine/pine.hlp	Thu Nov 18 14:50:16 1999
-@@ -492,9 +492,9 @@
- 
+--- pine/pine.hlp.orig	Fri Dec  1 19:12:53 2000
++++ pine/pine.hlp	Sun Dec 10 13:07:28 2000
+@@ -580,9 +580,9 @@
   executable     &lt;Unix search path&gt;/pine
   persnl cfg     ~/.pinerc
+  except cfg     ~/.pinercex
 - global cfg     /usr/local/lib/pine.conf
 - fixed cfg      /usr/local/lib/pine.conf.fixed
 - local help     /usr/local/lib/pine.info
@@ -13,7 +13,7 @@
  
   interrupted    ~/.pine-interrupted-mail
   debug          ~/.pine-debugN
-@@ -932,9 +932,9 @@
+@@ -1052,9 +1052,9 @@
  this link now to send a message to it:<BR>
  <A HREF="X-Pine-Gripe:_LOCAL_ADDRESS_?local"><!--#echo var="_LOCAL_FULLNAME_"--></A><P>
  <!--chtml endif-->
@@ -25,7 +25,7 @@
  <HR WIDTH="75%">
  <!--chtml endif-->
  <P> 
-@@ -1022,7 +1022,7 @@
+@@ -1142,7 +1142,7 @@
  <OL>
    <LI> <A HREF="#intro">Introduction</A>
    <LI> <A HREF="#pine_help">Pine Help</A>
@@ -34,7 +34,7 @@
    <LI> <A HREF="#local_support">Local Support Contacts</A>
  <!--chtml endif-->
    <LI> <A HREF="#giving_cmds">Giving Commands in Pine</A>
-@@ -1135,9 +1135,9 @@
+@@ -1251,9 +1251,9 @@
  at your site.)
  
  
@@ -46,3 +46,43 @@
  <!--chtml endif-->
  
  <H2><A NAME="giving_cmds">Giving Commands in Pine</A></H2>
+@@ -1907,7 +1907,7 @@
+ file, execute
+ 
+ <PRE><CODE>
+-		pine -conf > /usr/local/lib/pine.conf
++		pine -conf > /etc/pine.conf
+ </CODE></PRE>
+ <P>
+ 
+@@ -1915,7 +1915,7 @@
+ system configuration file, execute
+ 
+ <PRE><CODE>
+-		pine -P old-pine.conf -conf > /usr/local/lib/pine.conf
++		pine -P old-pine.conf -conf > /etc/pine.conf
+ </CODE></PRE>
+ <P>
+ A system configuration file is not required.
+@@ -2066,7 +2066,7 @@
+ <DT> -P <EM>pinerc</EM>
+ 
+ <DD> Uses the named file as the system wide configuration file instead of
+-<EM>/usr/local/lib/pine.conf</EM> on UNIX, or nothing on <EM>PC-Pine</EM>.
++<EM>/etc/pine.conf</EM> on UNIX, or nothing on <EM>PC-Pine</EM>.
+ Pinerc may be either a local file or a remote configuration folder.
+ <P>
+ 
+@@ -2767,10 +2767,10 @@
+ </OL>
+ <P>
+ The fixed configuration file is normally
+-<CODE>/usr/local/lib/pine.conf.fixed</CODE>.
++<CODE>/etc/pine.conf.fixed</CODE>.
+ <P>
+ The system-wide configuration file is normally
+-<CODE>/usr/local/lib/pine.conf</CODE> for Unix Pine and is normally not
++<CODE>/etc/pine.conf</CODE> for Unix Pine and is normally not
+ set for PC-Pine.
+ For PC-Pine, if the environment variable <EM>$PINECONF</EM> is set, that
+ is used for the system-wide configuration.

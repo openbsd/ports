@@ -1,5 +1,5 @@
---- pine/makefile.bso.orig	Fri Sep 15 05:49:48 2000
-+++ pine/makefile.bso	Fri Sep 15 05:56:27 2000
+--- pine/makefile.bso.orig	Thu Nov  9 19:56:58 2000
++++ pine/makefile.bso	Sat Dec 30 22:30:10 2000
 @@ -50,7 +50,7 @@
  PROFILE=     # -pg
  DEBUG=       -DDEBUG # -g
@@ -9,14 +9,16 @@
  PICODIR=     ../pico
  
  # Only need to uncomment next two lines if you run make from this directory
-@@ -62,12 +62,11 @@
- 	      other.o pine.o takeaddr.o
+@@ -61,13 +61,12 @@
+ LDAPOFILES=   addrbook.o adrbkcmd.o args.o bldaddr.o init.o \
+ 	      mailview.o other.o pine.o strings.o takeaddr.o
  
- STDLIBS=     -ltermlib
+-STDLIBS=     -ltermlib
 -LOCLIBS=     -lpico $(CCLIENTDIR)/c-client.a
 -LOCLIBDIR=   -L$(PICODIR)
 -LIBS=        $(EXTRALIBES) $(LOCLIBDIR) $(LOCLIBS) $(LDAPLIBS) $(STDLIBS) \
 -             `cat $(CCLIENTDIR)/LDFLAGS`
++STDLIBS=     -ltermlib -lssl -lcrypto
 +LOCLIBS=     -lpico -lc-client
 +LOCLIBDIR=   -L$(PICODIR) -L$(PREFIX)/lib
 +LIBS=        $(EXTRALIBES) $(LOCLIBDIR) $(LOCLIBS) $(LDAPLIBS) $(STDLIBS)
