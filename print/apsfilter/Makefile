@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/29 11:09:46 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/07/16 11:55:45 sturm Exp $
 
 COMMENT=		"filter to print a wide range of file formats"
 
 DISTNAME=		apsfilter-7.2.5
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.apsfilter.org/
@@ -18,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.apsfilter.org/download/
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--with-shell=/bin/sh
 
 RUN_DEPENDS=		::print/psutils \
 			::print/a2ps
