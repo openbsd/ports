@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/10/28 01:38:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2003/03/01 03:21:20 sturm Exp $
 
 COMMENT=	"X11 over a low bandwidth link"
 VERSION=	3.8.1
@@ -13,12 +13,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://www.vigor.nu/dxpc/${VERSION}/ \
-		ftp://ftp.x.org/contrib/utilities/ \
-		ftp://sunsite.unc.edu/pub/Linux/X11/xutils/
+MASTER_SITES=	http://ftp.ecrc.de/pub/netsw/x11/extensions/dxpc/ \
+		http://www.netsw.org/x11/extensions/dxpc/
+# domain is gone
+#		http://www.vigor.nu/dxpc/${VERSION}/
+#HOMEPAGE=	http://www.vigor.nu/dxpc/
 
 LIB_DEPENDS=	lzo::archivers/lzo
-HOMEPAGE=	http://www.vigor.nu/dxpc/
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=--with-lzo-lib=${PREFIX}
