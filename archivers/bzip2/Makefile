@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 1999/12/28 23:37:32 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/01/19 14:57:07 kevlo Exp $
 
 DISTNAME=	bzip2-0.9.5d
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://sourceware.cygnus.com/pub/bzip2/v095/ \
-		http://www.bzip2.org/bzip2/v095/
+                ftp://ftp.yggdrasil.com/mirrors/site/sourceware.cygnus.com/pub/bzip2/v095/      
 
 MAINTAINER=	angelos@openbsd.org
 
