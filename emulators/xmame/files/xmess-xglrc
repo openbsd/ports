@@ -1,4 +1,4 @@
-# $OpenBSD: xmess-xglrc,v 1.1 2001/08/12 23:03:10 naddy Exp $
+# $OpenBSD: xmess-xglrc,v 1.2 2002/02/05 15:27:17 naddy Exp $
 ### xmess running parameters ###
 
 ### Digital sound related ###
@@ -69,15 +69,15 @@ joydevname              /dev/joy
 mouse                   1
 
 ### Fileio Related ###
-rompath                 /usr/local/share/xmess
-spooldir                /usr/local/share/xmess
+rompath                 %%PREFIX%%/share/xmess
+spooldir                %%PREFIX%%/share/xmess
 screenshotdir           .
-cheatdir                /usr/local/share/xmess/cheat
-crcdir                  /usr/local/share/xmess/crc
+cheatdir                %%PREFIX%%/share/xmess/cheat
+crcdir                  %%PREFIX%%/share/xmess/crc
 cheatfile               cheat.cdb
-hiscorefile             /usr/local/share/xmess/hiscore.dat
-historyfile             /usr/local/share/xmess/history.dat
-mameinfofile            /usr/local/share/xmess/mameinfo.dat
+hiscorefile             %%PREFIX%%/share/xmess/hiscore.dat
+historyfile             %%PREFIX%%/share/xmess/history.dat
+mameinfofile            %%PREFIX%%/share/xmess/sysinfo.dat
 
 ### Mess Related ###
 language                english

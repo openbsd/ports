@@ -1,26 +1,23 @@
-@comment $OpenBSD: PLIST-mess,v 1.3 2002/01/10 02:09:53 naddy Exp $
+@comment $OpenBSD: PLIST-mess,v 1.4 2002/02/05 15:27:17 naddy Exp $
 @pkgcfl xmame+xmess-*
 @pkgcfl xmame-*
 bin/xmess
 man/man6/xmess.6
 share/doc/xmame/README
-share/doc/xmame/changes.mame
 share/doc/xmame/changes.mess
 share/doc/xmame/changes.opengl
 share/doc/xmame/changes.unix
 share/doc/xmame/credits.mess
-share/doc/xmame/gamelist.mame
+share/doc/xmame/dga2.txt
 share/doc/xmame/gamelist.mess
-share/doc/xmame/hsnew.txt
+share/doc/xmame/img/xmame.jpg
 share/doc/xmame/imgtool.txt
 share/doc/xmame/liesmich.unix
 share/doc/xmame/messroms.txt
 share/doc/xmame/multiplayer-readme.txt
 share/doc/xmame/old-changes.mess
 share/doc/xmame/readhist.txt
-share/doc/xmame/readme.mame
 share/doc/xmame/readme.mess
-share/doc/xmame/sysinfo.dat
 share/doc/xmame/xmame-doc-1.html
 share/doc/xmame/xmame-doc-2.html
 share/doc/xmame/xmame-doc-3.html
@@ -28,11 +25,10 @@ share/doc/xmame/xmame-doc-4.html
 share/doc/xmame/xmame-doc-5.html
 share/doc/xmame/xmame-doc-6.html
 share/doc/xmame/xmame-doc-7.html
+share/doc/xmame/xmame-doc-8.html
 share/doc/xmame/xmame-doc.html
 share/doc/xmame/xmame-doc.lyx
 share/doc/xmame/xmame-doc.man.skel
-share/doc/xmame/xmame-doc.ps
-share/doc/xmame/xmame-doc.sgml
 share/doc/xmame/xmame-doc.txt
 share/doc/xmame/xmame-gdoc-1.html
 share/doc/xmame/xmame-gdoc-2.html
@@ -41,8 +37,11 @@ share/doc/xmame/xmame-gdoc-4.html
 share/doc/xmame/xmame-gdoc-5.html
 share/doc/xmame/xmame-gdoc-6.html
 share/doc/xmame/xmame-gdoc-7.html
+share/doc/xmame/xmame-gdoc-8.html
 share/doc/xmame/xmame-gdoc.html
+share/doc/xmame/xmame.css
+share/xmess/sysinfo.dat
 share/xmess/xmessrc
 @dirrm share/xmess
-@dirrm share/xmame
+@dirrm share/doc/xmame/img
 @dirrm share/doc/xmame

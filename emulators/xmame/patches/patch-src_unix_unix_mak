@@ -1,25 +1,7 @@
-$OpenBSD: patch-src_unix_unix_mak,v 1.4 2002/01/10 02:09:53 naddy Exp $
---- src/unix/unix.mak.orig	Fri Aug 10 07:36:22 2001
-+++ src/unix/unix.mak	Tue Jan  1 19:22:58 2002
-@@ -50,7 +50,7 @@ LIBS.xgl        = $(X11LIB) $(JOY_X11_LI
- LIBS.xfx        = $(X11LIB) $(JOY_X11_LIBS) -lX11 -lXext -lglide2x
- LIBS.svgafx     = $(X11LIB) -lvga -lvgagl -lglide2x
- LIBS.openstep	= -framework AppKit
--LIBS.SDL	= -ldl -lSDL -lpthread -D_REENTRANT
-+LIBS.SDL	= $(X11LIB) -lSDL -pthread -D_REENTRANT
- LIBS.photon2	= -L/usr/lib -lph -lphrender
- 
- CFLAGS.x11      = $(X11INC) $(JOY_X11_CFLAGS)
-@@ -145,7 +145,7 @@ MY_CFLAGS = $(CFLAGS) $(IL) $(CFLAGS.$(M
- 	-Dstricmp=strcasecmp -Dstrnicmp=strncasecmp \
- 	-DPI=M_PI -DUNIX -DSIGNED_SAMPLES \
- 	$(COREDEFS) $(SOUNDDEFS) $(CPUDEFS) $(ASMDEFS) \
--	$(INCLUDES) $(INCLUDE_PATH)
-+	$(INCLUDE_PATH) $(INCLUDES)
- 
- MY_LIBS = $(LIBS) $(LIBS.$(ARCH)) $(LIBS.$(DISPLAY_METHOD)) -lz
- 
-@@ -166,7 +166,7 @@ endif
+$OpenBSD: patch-src_unix_unix_mak,v 1.5 2002/02/05 15:27:17 naddy Exp $
+--- src/unix/unix.mak.orig	Wed Jan 16 00:12:17 2002
++++ src/unix/unix.mak	Wed Jan 16 00:16:57 2002
+@@ -174,7 +174,7 @@
  # CONFIG are the cflags used to build the unix tree, this is were most defines
  # go
  CONFIG = $(MY_CFLAGS) $(CFLAGS.$(DISPLAY_METHOD)) -DNAME='\"x$(TARGET)\"' \
@@ -28,7 +10,7 @@ $OpenBSD: patch-src_unix_unix_mak,v 1.4 2002/01/10 02:09:53 naddy Exp $
  
  ifdef HAVE_GETTIMEOFDAY
  CONFIG += -DHAVE_GETTIMEOFDAY
-@@ -202,7 +202,7 @@ CONFIG += -DLIN_FM_TOWNS
+@@ -210,7 +210,7 @@
  endif
  ifdef JOY_USB
  CONFIG += -DUSB_JOYSTICK
@@ -37,7 +19,7 @@ $OpenBSD: patch-src_unix_unix_mak,v 1.4 2002/01/10 02:09:53 naddy Exp $
  endif
  
  ifdef EFENCE
-@@ -355,12 +355,12 @@ install-man:
+@@ -363,12 +363,12 @@
  doinstall:
  	@echo installing binaries under $(BINDIR)...
  	-$(INSTALL_PROGRAM_DIR) $(BINDIR)

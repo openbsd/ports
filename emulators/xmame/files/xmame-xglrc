@@ -1,4 +1,4 @@
-# $OpenBSD: xmame-xglrc,v 1.1 2001/08/12 23:03:10 naddy Exp $
+# $OpenBSD: xmame-xglrc,v 1.2 2002/02/05 15:27:17 naddy Exp $
 ### xmame running parameters ###
 
 ### Digital sound related ###
@@ -69,13 +69,13 @@ joydevname              /dev/joy
 mouse                   1
 
 ### Fileio Related ###
-rompath                 /usr/local/share/xmame
-spooldir                /usr/local/share/xmame
+rompath                 %%PREFIX%%/share/xmame
+spooldir                %%PREFIX%%/share/xmame
 screenshotdir           .
-cheatfile               /usr/local/share/xmame/cheat.dat
-hiscorefile             /usr/local/share/xmame/hiscore.dat
-historyfile             /usr/local/share/xmame/history.dat
-mameinfofile            /usr/local/share/xmame/mameinfo.dat
+cheatfile               %%PREFIX%%/share/xmame/cheat.dat
+hiscorefile             %%PREFIX%%/share/xmame/hiscore.dat
+historyfile             %%PREFIX%%/share/xmame/history.dat
+mameinfofile            %%PREFIX%%/share/xmame/mameinfo.dat
 
 ### Mame Related ###
 defaultgame             pacman

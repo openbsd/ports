@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/01/10 02:09:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/02/05 15:27:17 naddy Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
 COMMENT-mess=	"emulates game consoles and old home computers"
 
-VERSION=	0.37b15.2
+VERSION=	0.56.2
 DISTNAME=	xmame-${VERSION}
 
 NEED_VERSION=	1.500
@@ -21,7 +21,7 @@ MAINTAINER=	Claudio Castiglia <ccastig@softhome.net>
 
 HISCORE_FILE=	hsdat7.zip
 HISTORY_FILE=	history.zip
-CHEAT_FILE=	cheat37b2.zip
+CHEAT_FILE=	cheat.zip
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${HISCORE_FILE}:0 ${HISTORY_FILE}:1 \
 		${CHEAT_FILE}:2
 
@@ -64,8 +64,13 @@ EXFI+=		${i}
 .  endif
 .endfor
 .if   ${EXFL} != ${EXFI}
-ERRORS+=        "Fatal: Mutually exclusive flavors: ${EXFL}."
+ERRORS+=	"Fatal: Mutually exclusive flavors: ${EXFL}."
 DISPLAY_METHOD=
+.endif
+
+# Default video flavor is X11
+.if empty (EXFI)
+FLAVOR+=	x11
 .endif
 
 .if   ${FLAVOR:L:Msdl}
@@ -108,6 +113,16 @@ MAKE_FLAGS+=	ARCH=openbsd \
 		SYSCONFDIR="${SYSCONFDIR}" \
 		JOY_USB=1
 
+DOCS=	changes.mame changes.mess changes.opengl changes.unix credits.mess \
+	dga2.txt gamelist.mame gamelist.mess imgtool.txt liesmich.unix \
+	messroms.txt multiplayer-readme.txt old-changes.mess readme.mame \
+	readme.mess xmame-doc-1.html xmame-doc-2.html xmame-doc-3.html \
+	xmame-doc-4.html xmame-doc-5.html xmame-doc-6.html xmame-doc-7.html \
+	xmame-doc-8.html xmame-doc.html xmame-doc.lyx xmame-doc.man.skel \
+	xmame-doc.txt xmame-gdoc-1.html xmame-gdoc-2.html xmame-gdoc-3.html \
+	xmame-gdoc-4.html xmame-gdoc-5.html xmame-gdoc-6.html \
+	xmame-gdoc-7.html xmame-gdoc-8.html xmame-gdoc.html xmame.css
+
 .if   ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	nasm::devel/nasm
 MAKE_FLAGS+=	MY_CPU=i386 \
@@ -130,22 +145,29 @@ post-extract:
 	${UNZIP} -u ${FULLDISTDIR}/${HISCORE_FILE} -d ${WRKDIR}
 	${UNZIP} -u ${FULLDISTDIR}/${HISTORY_FILE} -d ${WRKDIR}
 	${UNZIP} -u ${FULLDISTDIR}/${CHEAT_FILE} -d ${WRKDIR}
+	cp ${WRKSRC}/doc/xmame.6 ${WRKSRC}/doc/xmess.6
 
 post-patch:
 	@cp ${FILESDIR}/${MAKE_FILE} ${WRKSRC}
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xmame
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xmame/img
+	${INSTALL_DATA} ${WRKSRC}/doc/img/xmame.jpg \
+		${PREFIX}/share/doc/xmame/img
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xmame
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/xmame
+.for i in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/doc/xmame
+.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/xmame
 	${INSTALL_DATA} ${FILESDIR}/xmame-${DISPLAY_METHOD}rc \
 		${PREFIX}/share/xmame/xmamerc
-	${INSTALL_DATA_DIR} ${PREFIX}/share/xmame
+	perl -i -pe 's:%%PREFIX%%:${TRUEPREFIX}:' ${PREFIX}/share/xmame/xmamerc
 	${INSTALL_DATA} ${WRKDIR}/*.dat ${PREFIX}/share/xmame
 	${INSTALL_DATA} ${WRKDIR}/*.txt ${PREFIX}/share/doc/xmame
 	${INSTALL_DATA_DIR} ${PREFIX}/share/xmess
 	${INSTALL_DATA} ${FILESDIR}/xmess-${DISPLAY_METHOD}rc \
 		${PREFIX}/share/xmess/xmessrc
+	perl -i -pe 's:%%PREFIX%%:${TRUEPREFIX}:' ${PREFIX}/share/xmess/xmessrc
+	${INSTALL_DATA} ${WRKSRC}/doc/sysinfo.dat ${PREFIX}/share/xmess
 
 .include <bsd.port.mk>
