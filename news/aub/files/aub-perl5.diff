@@ -1,4 +1,4 @@
---- /usr/ports/distfiles/aub	Tue Apr  6 00:00:00 1993
+--- aub.orig	Tue Apr  6 00:00:00 1993
 +++ aub	Wed Apr 12 13:51:11 1995
 @@ -38,6 +38,8 @@
  $SUM = "/bin/sum";   &find_pg("sum", 0)  unless (-x $SUM);
