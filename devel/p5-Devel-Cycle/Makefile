@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/10 02:26:13 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2005/03/27 20:22:03 msf Exp $
 
 COMMENT= 	"find memory cycles in objects"
 
-DISTNAME=	Devel-Cycle-1.02
+DISTNAME=	Devel-Cycle-1.03
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
