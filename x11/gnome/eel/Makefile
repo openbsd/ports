@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/31 18:48:50 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2003/03/02 21:08:39 pvalchev Exp $
 
 COMMENT=		"Eazel Extensions Library"
 
@@ -29,6 +29,6 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 .include <bsd.port.mk>
