@@ -1,0 +1,12 @@
+$OpenBSD: patch-macros_in,v 1.1.1.1 2000/06/12 18:49:41 espie Exp $
+--- macros.in.orig	Mon Jun 12 20:22:36 2000
++++ macros.in	Mon Jun 12 20:22:50 2000
+@@ -80,7 +80,7 @@
+ %_builddir		%{_topdir}/BUILD
+ %_buildshell		/bin/sh
+ %_bzip2bin		@BZIP2BIN@
+-%_dbpath		%{_var}/lib/rpm
++%_dbpath		%{_var}/db/rpm
+ %_rebuilddbpath		%{_dbpath}
+ %_defaultdocdir		%{_usr}/doc
+ #

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2000/06/12 18:49:41 espie Exp $
+--- Makefile.in.orig	Mon Jun 12 20:38:16 2000
++++ Makefile.in	Mon Jun 12 20:38:34 2000
+@@ -754,7 +754,7 @@ lclint:
+ 	lclint ${DEFS} ${INCLUDES} ${rpm_SOURCES}
+ 
+ install-data-local:
+-	@$(mkinstalldirs) $(DESTDIR)$(varprefix)/lib/rpm
++	@$(mkinstalldirs) $(DESTDIR)$(varprefix)/db/rpm
+ 	@rm -f $(DESTDIR)/$(libdir)/rpmrc
+ 	@ln -s rpm/rpmrc $(DESTDIR)/$(libdir)/rpmrc
+ 	@rm -f $(DESTDIR)/$(libdir)/rpmpopt
