@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/06/08 06:04:54 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/28 14:26:31 naddy Exp $
 
 COMMENT= 		"personal finance tracking and performance tool"
 
@@ -20,6 +20,8 @@ MASTER_SITES=	${HOMEPAGE}
 USE_MOTIF=	Yes
 CONFIGURE_STYLE= imake
 INSTALL_MAN=	No	# no manual page
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Xinvest ${PREFIX}/bin/xinvest

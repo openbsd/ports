@@ -1,17 +1,19 @@
 # $FreeBSD: ports/russian/cyrproxy/Makefile,v 1.4 1999/08/31 01:46:57 peter Exp $
-# $OpenBSD: Makefile,v 1.12 2002/09/01 18:49:01 mpech Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/28 14:26:31 naddy Exp $
 
 COMMENT=	"cyrillic proxy for network protocols"
 
 DISTNAME=	cyrproxy-1.4.2
 CATEGORIES=	russian net www
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/lexa/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/cyrproxy
