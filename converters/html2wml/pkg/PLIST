@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/30 22:36:12 avsm Exp $
+bin/html2wml
+man/man1/html2wml.1
+share/doc/html2wml/NEWS
+share/doc/html2wml/NOTES
+share/doc/html2wml/README
+share/doc/html2wml/TODO
+share/doc/html2wml/t/form.html
+share/doc/html2wml/t/samples/inc_para.wml
+share/doc/html2wml/t/samples/inc_prev.wml
+share/doc/html2wml/t/samples/include.html
+share/doc/html2wml/t/samples/links.html
+share/doc/html2wml/t/samples/mix1.html
+share/doc/html2wml/t/samples/mix2.html
+share/doc/html2wml/t/samples/struct.html
+@dirrm share/doc/html2wml/t/samples
+@dirrm share/doc/html2wml/t
+@dirrm share/doc/html2wml

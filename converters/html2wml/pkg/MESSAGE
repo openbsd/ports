@@ -1,0 +1,4 @@
++--------------------
+| If you want to activate html2wml as a CGI, then copy
+| ${PREFIX}/bin/html2wml into your cgi-bin directory.
++--------------------
