@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/18 22:06:39 jakob Exp $
+bin/chkmail
+bin/dmail
+bin/icat
+bin/ifrom
+bin/imapcopy
+bin/imapmove
+bin/imapxfer
+bin/mbxcopy
+bin/mbxcreat
+bin/mbxcvt
+bin/mbxmove
+bin/tmail
+man/man1/chkmail.1
+man/man1/dmail.1
+man/man1/icat.1
+man/man1/ifrom.1
+man/man1/imapcopy.1
+man/man1/imapxfer.1
+man/man1/mbxcopy.1
+man/man1/mbxcreat.1
+man/man1/mbxcvt.1
+man/man1/tmail.1
