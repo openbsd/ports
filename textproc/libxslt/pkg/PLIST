@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/03/13 03:30:41 shell Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/03/20 08:00:40 shell Exp $
 bin/xslt-config
 bin/xsltproc
 include/libexslt/exslt.h
@@ -32,11 +32,11 @@ lib/xsltConf.sh
 man/man1/xsltproc.1
 man/man4/libexslt.4
 man/man4/libxslt.4
-share/doc/libxslt-python-1.0.13/examples/basic.py
-share/doc/libxslt-python-1.0.13/examples/extfunc.py
-share/doc/libxslt-python-1.0.13/examples/pyxsltproc.py
-share/doc/libxslt-python-1.0.13/examples/test.xml
-share/doc/libxslt-python-1.0.13/examples/test.xsl
+share/doc/libxslt-python-1.0.14/examples/basic.py
+share/doc/libxslt-python-1.0.14/examples/extfunc.py
+share/doc/libxslt-python-1.0.14/examples/pyxsltproc.py
+share/doc/libxslt-python-1.0.14/examples/test.xml
+share/doc/libxslt-python-1.0.14/examples/test.xsl
 share/doc/libxslt/html/API.html
 share/doc/libxslt/html/APIchunk0.html
 share/doc/libxslt/html/APIchunk1.html
@@ -97,8 +97,9 @@ share/doc/libxslt/html/xsltproc2.html
 %%SHARED%%
 @dirrm share/doc/libxslt/html/tutorial
 @dirrm share/doc/libxslt/html
-@dirrm share/doc/libxslt-python-1.0.13/examples
-@dirrm share/doc/libxslt-python-1.0.13
+@dirrm share/doc/libxslt-python-1.0.14/examples
+@dirrm share/doc/libxslt-python-1.0.14
 @dirrm share/doc/libxslt
+@dirrm lib/pkgconfig
 @dirrm include/libxslt
 @dirrm include/libexslt

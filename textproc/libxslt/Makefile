@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2002/03/13 03:30:41 shell Exp $
+# $OpenBSD: Makefile,v 1.19 2002/03/20 08:00:40 shell Exp $
 
 COMMENT=	"XSLT C Library for GNOME"
 
-DISTNAME=	libxslt-1.0.13
+DISTNAME=	libxslt-1.0.14
 CATEGORIES=	textproc
 NEED_VERSION=	1.504
 HOMEPAGE=	http://xmlsoft.org/XSLT/
