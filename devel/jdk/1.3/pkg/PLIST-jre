@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-jre,v 1.3 2004/09/18 10:55:04 espie Exp $
+@comment $OpenBSD: PLIST-jre,v 1.4 2004/10/12 20:46:22 naddy Exp $
 @option no-default-conflict
-@conflict jdk->=1.3,1.4
-@conflict jre->=1.3,1.4
+@conflict jre->=1.3,<1.4
 ${JREHOME}/
 ${JREHOME}/CHANGES
 ${JREHOME}/COPYRIGHT
@@ -123,17 +122,12 @@ ${JREHOME}/lib/security/java.policy
 ${JREHOME}/lib/security/java.security
 ${JREHOME}/lib/sunrsasign.jar
 ${JREHOME}/lib/tzmappings
-@comment ${JREHOME}/man/
-@comment ${JREHOME}/man/man1/
-@comment @man ${JREHOME}/man/man1/java.1
-@comment @man ${JREHOME}/man/man1/keytool.1
-@comment @man ${JREHOME}/man/man1/rmid.1
-@comment @man ${JREHOME}/man/man1/rmiregistry.1
-@comment @man ${JREHOME}/man/man1/tnameserv.1
+@mandir ${JREHOME}/man/
+${JREHOME}/man/man1/
+@man ${JREHOME}/man/man1/java.1
+@man ${JREHOME}/man/man1/keytool.1
+@man ${JREHOME}/man/man1/rmid.1
+@man ${JREHOME}/man/man1/rmiregistry.1
+@man ${JREHOME}/man/man1/tnameserv.1
 ${JREHOME}/plugin/
-@man man/man1/java.1
-@man man/man1/keytool.1
-@man man/man1/rmid.1
-@man man/man1/rmiregistry.1
-@man man/man1/tnameserv.1
 !%%no_plugin%%

@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/26 11:19:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/10/12 20:46:22 naddy Exp $
 @option no-default-conflict
 @conflict jdk->=1.3,<1.4
-@conflict jre->=1.3,<1.4
 ${JDKHOME}/
 ${JDKHOME}/COPYRIGHT
 ${JDKHOME}/LICENSE
@@ -816,7 +815,7 @@ ${JDKHOME}/jre/bin/${MACHINE_ARCH}/green_threads/serialver
 ${JDKHOME}/jre/bin/${MACHINE_ARCH}/green_threads/serialver_g
 ${JDKHOME}/jre/bin/${MACHINE_ARCH}/green_threads/tnameserv
 ${JDKHOME}/jre/bin/${MACHINE_ARCH}/green_threads/tnameserv_g
-${JDKHOME}/jre/bin/${MACHINE_ARCH}/native_threads/
+@comment ${JDKHOME}/jre/bin/${MACHINE_ARCH}/native_threads/
 ${JDKHOME}/jre/bin/java
 ${JDKHOME}/jre/bin/keytool
 ${JDKHOME}/jre/bin/policytool
@@ -933,36 +932,24 @@ ${JDKHOME}/lib/${MACHINE_ARCH}/libjdwp.so
 ${JDKHOME}/lib/ir.idl
 ${JDKHOME}/lib/orb.idl
 ${JDKHOME}/lib/tools.jar
-@comment ${JDKHOME}/man/
-@comment ${JDKHOME}/man/man1/
-@comment @man ${JDKHOME}/man/man1/appletviewer.1
-@comment @man ${JDKHOME}/man/man1/extcheck.1
-@comment @man ${JDKHOME}/man/man1/jar.1
-@comment @man ${JDKHOME}/man/man1/jarsigner.1
-@comment @man ${JDKHOME}/man/man1/java.1
-@comment @man ${JDKHOME}/man/man1/javac.1
-@comment @man ${JDKHOME}/man/man1/javadoc.1
-@comment @man ${JDKHOME}/man/man1/javah.1
-@comment @man ${JDKHOME}/man/man1/javap.1
-@comment @man ${JDKHOME}/man/man1/jdb.1
-@comment @man ${JDKHOME}/man/man1/keytool.1
-@comment @man ${JDKHOME}/man/man1/native2ascii.1
-@comment @man ${JDKHOME}/man/man1/rmic.1
-@comment @man ${JDKHOME}/man/man1/rmid.1
-@comment @man ${JDKHOME}/man/man1/rmiregistry.1
-@comment @man ${JDKHOME}/man/man1/serialver.1
-@comment @man ${JDKHOME}/man/man1/tnameserv.1
+@mandir ${JDKHOME}/man/
+${JDKHOME}/man/man1/
+@man ${JDKHOME}/man/man1/appletviewer.1
+@man ${JDKHOME}/man/man1/extcheck.1
+@man ${JDKHOME}/man/man1/jar.1
+@man ${JDKHOME}/man/man1/jarsigner.1
+@man ${JDKHOME}/man/man1/java.1
+@man ${JDKHOME}/man/man1/javac.1
+@man ${JDKHOME}/man/man1/javadoc.1
+@man ${JDKHOME}/man/man1/javah.1
+@man ${JDKHOME}/man/man1/javap.1
+@man ${JDKHOME}/man/man1/jdb.1
+@man ${JDKHOME}/man/man1/keytool.1
+@man ${JDKHOME}/man/man1/native2ascii.1
+@man ${JDKHOME}/man/man1/rmic.1
+@man ${JDKHOME}/man/man1/rmid.1
+@man ${JDKHOME}/man/man1/rmiregistry.1
+@man ${JDKHOME}/man/man1/serialver.1
+@man ${JDKHOME}/man/man1/tnameserv.1
 ${JDKHOME}/src.jar
-@man man/man1/appletviewer.1
-@man man/man1/extcheck.1
-@man man/man1/jar.1
-@man man/man1/jarsigner.1
-@man man/man1/javac.1
-@man man/man1/javadoc.1
-@man man/man1/javah.1
-@man man/man1/javap.1
-@man man/man1/jdb.1
-@man man/man1/native2ascii.1
-@man man/man1/rmic.1
-@man man/man1/serialver.1
 !%%no_plugin%%

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/08/14 21:50:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/10/12 20:46:22 naddy Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
 
 # Requires existing JDK 1.3 to build
@@ -66,6 +66,8 @@ LIB_DEPENDS=		glib.1::devel/glib \
 			gtk.1.2::x11/gtk+ \
 			nspr4.1::devel/nspr
 
+MODULES=		devel/gettext
+
 MAKE_ENV+=		LIBG_HDRS="${LOCALBASE}/include/glib-1.2" \
 			GTK_HDRS="${LOCALBASE}/include/gtk-1.2" \
 			LIBIDL_HDRS= \
@@ -104,11 +106,6 @@ JDKIMAGEDIR=		${WRKDIR}/j2sdk1.3.1/build/bsd-${ARCH}/jdk-image-${ARCH}
 JDKIMAGEDIR_G=		${WRKDIR}/j2sdk1.3.1/build/bsd-${ARCH}/jdk-debug-image-${ARCH}
 JREIMAGEDIR=		${WRKDIR}/j2sdk1.3.1/build/bsd-${ARCH}/jre-image-${ARCH}
 CACERTSDIR=		${WRKDIR}/j2sdk1.3.1/src/share/lib/security
-MANPAGEDIR=		${JDKIMAGEDIR}/man/man1
-
-MANPAGES=		appletviewer.1 extcheck.1 jar.1 jarsigner.1 java.1 javac.1 \
-			javadoc.1 javah.1 javap.1 jdb.1 keytool.1 native2ascii.1 \
-			rmic.1 rmid.1 rmiregistry.1 serialver.1 tnameserv.1
 
 SYSCTL=			${SUDO} sysctl -w kern.emul.linux
 
@@ -135,8 +132,5 @@ do-install:
 	cd ${JREIMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${JREHOME} -xf -
 	cd ${PREFIX}/${JDKHOME}/include && ln -s openbsd/* .
 	cd ${PREFIX}/${JDKHOME}/include-old && ln -s openbsd/* .
-.for i in ${MANPAGES}
-	${INSTALL_MAN} ${MANPAGEDIR}/$i ${PREFIX}/man/man1/${i:T:R}.1
-.endfor
 
 .include <bsd.port.mk>
