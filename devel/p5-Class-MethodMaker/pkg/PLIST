@@ -1,0 +1,37 @@
+libdata/perl5/site_perl/Class/MethodMaker.pm
+libdata/perl5/site_perl/auto/Class/MethodMaker/_ancestry.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/_make_get_set.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/abstract.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/autosplit.ix
+libdata/perl5/site_perl/auto/Class/MethodMaker/boolean.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/builtin_class.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/code.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/copy.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/counter.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/forward.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/get_concat.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/get_set.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/grouped_fields.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/hash.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/hash_of_lists.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/key_attrib.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/key_with_create.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/list.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/listed_attrib.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/method.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/new.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/new_hash_init.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/new_with_init.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/object.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/object_list.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/static_get_set.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/static_hash.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/struct.al
+libdata/perl5/site_perl/auto/Class/MethodMaker/tie_hash.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Class/MethodMaker/.packlist
+man/man3/Class::MethodMaker.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Class/MethodMaker
+@dirrm libdata/perl5/site_perl/auto/Class/MethodMaker
+@dirrm libdata/perl5/site_perl/auto/Class
+@dirrm libdata/perl5/site_perl/auto
+@dirrm libdata/perl5/site_perl/Class
