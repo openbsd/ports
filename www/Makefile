@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2001/06/22 01:40:31 kevlo Exp $
+# $OpenBSD: Makefile,v 1.57 2001/07/13 17:53:11 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -111,5 +111,6 @@
      SUBDIR += wwwcount
      SUBDIR += wwwoffle
 #    SUBDIR += wwwstat
+     SUBDIR += xmhtml
 
 .include <bsd.port.subdir.mk>
