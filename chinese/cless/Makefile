@@ -3,7 +3,7 @@
 # Date created:         Thu Jan 18, 2000
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.2 2000/02/11 01:10:00 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/11 01:50:25 kevlo Exp $
 #
 
 DISTNAME=       cless-290
@@ -18,7 +18,7 @@ GNU_CONFIGURE=  yes
 CFLAGS+=        -DHANZI # LDFLAGS=-s datadir=/usr/local/lib/less
 
 post-install:
-	mkdir -p ${PREFIX}/share/doc/cless
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cless
 	${INSTALL_DATA} ${WRKSRC}/README.CLESS ${PREFIX}/share/doc/cless 
 
 .include <bsd.port.mk>
