@@ -1,0 +1,20 @@
+--- configure.in.orig	Sun Jul  2 08:54:58 2000
++++ configure.in	Sat Jul 22 00:35:47 2000
+@@ -127,7 +127,7 @@
+ AC_ARG_ENABLE(enable-sftp,
+ [  --enable-sftp          Enable sftp support (see Documentation)])
+ 
+-if test "x$enable_sftp" != "x"; then
++if test "x$enable_sftp" = "xyes"; then
+ 	AC_MSG_RESULT(enabling sftp)
+ 	SFTP=YES
+ 	AC_DEFINE(SFTP_SUPPORT)
+@@ -199,7 +199,7 @@
+ AC_ARG_ENABLE(crypt,
+ [  --disable-crypt         Compile without crypt support
+   --enable-crypt          Try to compile with crypt support])
+-if test "x$enable_crypt" = "x"; then
++if test "x$enable_crypt" = "xyes"; then
+ 	if test "x$ac_cryptpossible" = "xyes"; then
+ 		AC_MSG_RESULT(trying to enable crypt)
+ 		AC_DEFINE(HAVE_CRYPT)
