@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2000/01/12 05:26:01 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2000/01/12 05:38:55 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.44
@@ -20,7 +20,7 @@ EXAMPLES=aclock application biff connect cursor dclock desktop dirview \
 	progress qdir qmag qwerty scrollview showimg splitter table \
 	tetrix tictac timestmp tooltip validator widgets xform
 
-post-configure:
+do-configure:
 	@cd ${WRKSRC} && env ${MAKE_ENV} ${MAKE_PROGRAM} ${USE_TARGET}
 
 do-install:
