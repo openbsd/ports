@@ -1,0 +1,81 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/31 18:25:37 todd Exp $
+bin/ior-decode-2
+bin/orbit-idl-2
+bin/orbit2-config
+bin/typelib-dump
+include/orbit-2.0/ORBitservices/CosNaming.h
+include/orbit-2.0/ORBitservices/CosNaming_impl.h
+include/orbit-2.0/orbit/GIOP/giop-basics.h
+include/orbit-2.0/orbit/GIOP/giop-connection.h
+include/orbit-2.0/orbit/GIOP/giop-endian.h
+include/orbit-2.0/orbit/GIOP/giop-recv-buffer.h
+include/orbit-2.0/orbit/GIOP/giop-send-buffer.h
+include/orbit-2.0/orbit/GIOP/giop-server.h
+include/orbit-2.0/orbit/GIOP/giop-types.h
+include/orbit-2.0/orbit/GIOP/giop.h
+include/orbit-2.0/orbit/dynamic/dynamic-defs.h
+include/orbit-2.0/orbit/dynamic/dynamic.h
+include/orbit-2.0/orbit/orb-core/allocators.h
+include/orbit-2.0/orbit/orb-core/corba-any-type.h
+include/orbit-2.0/orbit/orb-core/corba-any.h
+include/orbit-2.0/orbit/orb-core/corba-context-type.h
+include/orbit-2.0/orbit/orb-core/corba-context.h
+include/orbit-2.0/orbit/orb-core/corba-defs.h
+include/orbit-2.0/orbit/orb-core/corba-environment-type.h
+include/orbit-2.0/orbit/orb-core/corba-environment.h
+include/orbit-2.0/orbit/orb-core/corba-nvlist.h
+include/orbit-2.0/orbit/orb-core/corba-object-type.h
+include/orbit-2.0/orbit/orb-core/corba-object.h
+include/orbit-2.0/orbit/orb-core/corba-orb-type.h
+include/orbit-2.0/orbit/orb-core/corba-orb.h
+include/orbit-2.0/orbit/orb-core/corba-pobj.h
+include/orbit-2.0/orbit/orb-core/corba-policy-type.h
+include/orbit-2.0/orbit/orb-core/corba-string.h
+include/orbit-2.0/orbit/orb-core/corba-typecode-type.h
+include/orbit-2.0/orbit/orb-core/corba-typecode.h
+include/orbit-2.0/orbit/orb-core/iop-defs.h
+include/orbit-2.0/orbit/orb-core/orb-core-types.h
+include/orbit-2.0/orbit/orb-core/orb-core.h
+include/orbit-2.0/orbit/orb-core/orb-types.h
+include/orbit-2.0/orbit/orb-core/orbit-interface.h
+include/orbit-2.0/orbit/orb-core/orbit-object.h
+include/orbit-2.0/orbit/orb-core/orbit-small.h
+include/orbit-2.0/orbit/orbit-config.h
+include/orbit-2.0/orbit/orbit-types.h
+include/orbit-2.0/orbit/orbit.h
+include/orbit-2.0/orbit/poa/orbit-adaptor.h
+include/orbit-2.0/orbit/poa/poa-basics.h
+include/orbit-2.0/orbit/poa/poa-defs.h
+include/orbit-2.0/orbit/poa/poa-policy.h
+include/orbit-2.0/orbit/poa/poa-types.h
+include/orbit-2.0/orbit/poa/poa.h
+include/orbit-2.0/orbit/poa/portableserver-current-type.h
+include/orbit-2.0/orbit/poa/portableserver-poa-type.h
+include/orbit-2.0/orbit/util/basic_types.h
+include/orbit-2.0/orbit/util/orbit-genrand.h
+include/orbit-2.0/orbit/util/orbit-util.h
+lib/libORBit-2.a
+lib/libORBit-2.la
+lib/libORBitCosNaming-2.a
+lib/libORBitCosNaming-2.la
+lib/libname-server-2.a
+lib/orbit-2.0/Everything_module.a
+lib/orbit-2.0/Everything_module.la
+lib/pkgconfig/ORBit-2.0.pc
+lib/pkgconfig/ORBit-CosNaming-2.0.pc
+share/aclocal/ORBit2.m4
+share/idl/orbit-2.0/CosNaming.idl
+%%SHARED%%
+@dirrm share/idl/orbit-2.0
+@comment @dirrm share/idl
+@comment @dirrm share/aclocal
+@comment @dirrm lib/pkgconfig
+@dirrm lib/orbit-2.0
+@dirrm include/orbit-2.0/orbit/util
+@dirrm include/orbit-2.0/orbit/poa
+@dirrm include/orbit-2.0/orbit/orb-core
+@dirrm include/orbit-2.0/orbit/dynamic
+@dirrm include/orbit-2.0/orbit/GIOP
+@dirrm include/orbit-2.0/orbit
+@dirrm include/orbit-2.0/ORBitservices
+@dirrm include/orbit-2.0
