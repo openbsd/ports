@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2004/02/07 01:46:23 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2004/02/23 21:35:04 espie Exp $
 
 COMMENT= 		"X11 toolkit, additional artwork"
 CATEGORIES=		x11 x11/kde
@@ -12,7 +12,7 @@ SEPARATE_BUILD=flavored
 
 CONFIGURE_ENV+=XSCREENSAVER=${LOCALBASE}/libexec/xscreensaver
 
-BUILD_DEPENDS=::x11/xscreensaver
-RUN_DEPENDS=::x11/xscreensaver
+BUILD_DEPENDS=::x11/xscreensaver,no_gle
+RUN_DEPENDS=:xscreensaver-*:x11/xscreensaver,no_gle
 
 .include <bsd.port.mk>
