@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/10/29 19:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2003/05/15 08:52:57 margarida Exp $
 
 COMMENT=	"GTK+ binding for librep Lisp environment"
 
@@ -8,8 +8,7 @@ CATEGORIES=     x11
 
 HOMEPAGE=       http://rep-gtk.sourceforge.net/
 
-MAINTAINER=	Robbie Gates <robbie@g7.org>
-
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
