@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/06/06 13:09:43 couderc Exp $
+--- Makefile.in.orig	Mon Apr 21 19:10:10 2003
++++ Makefile.in	Tue Apr 22 18:13:38 2003
+@@ -222,8 +222,8 @@ install-iconDATA: $(icon_DATA)
+ 	@list='$(icon_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " $(iconDATA_INSTALL) $$d$$p $(DESTDIR)$(icondir)/$$f"; \
+-	  $(iconDATA_INSTALL) $$d$$p $(DESTDIR)$(icondir)/$$f; \
++	  echo " $(iconDATA_INSTALL) $$d$$p $(DESTDIR)$(icondir)/$(PACKAGE).png"; \
++	  $(iconDATA_INSTALL) $$d$$p $(DESTDIR)$(icondir)/$(PACKAGE).png; \
+ 	done
+ 
+ uninstall-iconDATA:
+@@ -240,8 +240,8 @@ install-utilDATA: $(util_DATA)
+ 	@list='$(util_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " $(utilDATA_INSTALL) $$d$$p $(DESTDIR)$(utildir)/$$f"; \
+-	  $(utilDATA_INSTALL) $$d$$p $(DESTDIR)$(utildir)/$$f; \
++	  echo " $(utilDATA_INSTALL) $$d$$p $(DESTDIR)$(utildir)/$(PACKAGE).desktop"; \
++	  $(utilDATA_INSTALL) $$d$$p $(DESTDIR)$(utildir)/$(PACKAGE).desktop; \
+ 	done
+ 
+ uninstall-utilDATA:

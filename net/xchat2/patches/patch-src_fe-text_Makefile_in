@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_fe-text_Makefile_in,v 1.1.1.1 2003/06/06 13:09:43 couderc Exp $
+--- src/fe-text/Makefile.in.orig	Mon Apr 21 19:12:15 2003
++++ src/fe-text/Makefile.in	Tue Apr 22 17:44:22 2003
+@@ -136,7 +136,7 @@ sedpath = @sedpath@
+ unamepath = @unamepath@
+ xchatlibdir = @xchatlibdir@
+ xchatsharedir = @xchatsharedir@
+-bin_PROGRAMS = xchat-text
++bin_PROGRAMS = $(PACKAGE)-text
+ 
+ EXTRA_DIST = README 
+ 
+@@ -148,7 +148,7 @@ subdir = src/fe-text
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+-bin_PROGRAMS = xchat-text$(EXEEXT)
++bin_PROGRAMS = $(PACKAGE)-text$(EXEEXT)
+ PROGRAMS = $(bin_PROGRAMS)
+ 
+ am_xchat_text_OBJECTS = fe-text.$(OBJEXT)
+@@ -214,7 +214,7 @@ clean-binPROGRAMS:
+ 	  echo " rm -f $$p $$f"; \
+ 	  rm -f $$p $$f ; \
+ 	done
+-xchat-text$(EXEEXT): $(xchat_text_OBJECTS) $(xchat_text_DEPENDENCIES) 
++$(PACKAGE)-text$(EXEEXT): $(xchat_text_OBJECTS) $(xchat_text_DEPENDENCIES) 
+ 	@rm -f xchat-text$(EXEEXT)
+ 	$(LINK) $(xchat_text_LDFLAGS) $(xchat_text_OBJECTS) $(xchat_text_LDADD) $(LIBS)
+ 

@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_fe-gtk_Makefile_in,v 1.1.1.1 2003/06/06 13:09:43 couderc Exp $
+--- src/fe-gtk/Makefile.in.orig	Mon Apr 21 19:11:31 2003
++++ src/fe-gtk/Makefile.in	Tue Apr 22 17:43:58 2003
+@@ -138,7 +138,7 @@ xchatlibdir = @xchatlibdir@
+ xchatsharedir = @xchatsharedir@
+ localedir = $(datadir)/locale
+ 
+-bin_PROGRAMS = xchat
++bin_PROGRAMS = $(PACKAGE)
+ 
+ INCLUDES = $(GUI_CFLAGS) -DG_DISABLE_CAST_CHECKS -DLOCALEDIR=\"$(localedir)\"
+ 
+@@ -165,7 +165,7 @@ subdir = src/fe-gtk
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+-bin_PROGRAMS = xchat$(EXEEXT)
++bin_PROGRAMS = $(PACKAGE)$(EXEEXT)
+ PROGRAMS = $(bin_PROGRAMS)
+ 
+ @USE_MMX_TRUE@am__objects_1 = mmx_cmod.$(OBJEXT)
+@@ -256,7 +256,7 @@ clean-binPROGRAMS:
+ 	  echo " rm -f $$p $$f"; \
+ 	  rm -f $$p $$f ; \
+ 	done
+-xchat$(EXEEXT): $(xchat_OBJECTS) $(xchat_DEPENDENCIES) 
++$(PACKAGE)$(EXEEXT): $(xchat_OBJECTS) $(xchat_DEPENDENCIES) 
+ 	@rm -f xchat$(EXEEXT)
+ 	$(LINK) $(xchat_LDFLAGS) $(xchat_OBJECTS) $(xchat_LDADD) $(LIBS)
+ 
