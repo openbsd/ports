@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2001/12/22 15:41:19 jcs Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 21:09:20 espie Exp $
 
 PKGNAME=	wmwave-0.4
 DISTNAME=	wmwave-0-4
 CATEGORIES=	net x11 x11/windowmaker
-NEED_VERSION=	1.439
+NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

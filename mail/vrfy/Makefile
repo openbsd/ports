@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/04/08 15:45:14 rohee Exp $
+# $OpenBSD: Makefile,v 1.12 2002/03/21 21:09:17 espie Exp $
 # Original from: Bruno Rohee <rohee@OpenBSD.ORG>
 #
 
@@ -7,7 +7,7 @@ COMMENT=		"verify email addresses and mailing lists"
 DISTNAME=		vrfy_990522
 PKGNAME=		vrfy-99.05.22
 CATEGORIES=		mail
-NEED_VERSION=		1.387
+NEED_VERSION=		1.515
 
 MAINTAINER=		Bruno Rohee <rohee@openbsd.org>
 

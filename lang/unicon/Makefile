@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/06 01:28:05 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/21 21:09:17 espie Exp $
 
 COMMENT=	"programming language with generators, X11 graphics and more"
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://icon.cs.unlv.edu/
 
 MASTER_SITES=	http://icon.cs.unlv.edu/v9/
 MAINTAINER=	Marc Espie <espie@openbsd.org>
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 # GPL
 PERMIT_DISTFILES_FTP= Yes

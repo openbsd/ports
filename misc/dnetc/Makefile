@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/06/13 15:52:52 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/21 21:09:18 espie Exp $
 
 COMMENT=		"official distributed.net client"
 
@@ -17,7 +17,7 @@ A=			sparc-aout
 PKGNAME=		dnetc-${V}.${SV}
 DISTNAME=		dnetc${SV}-openbsd-${A}
 CATEGORIES=		misc
-NEED_VERSION=		1.402
+NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.distributed.net/
 

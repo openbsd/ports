@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:48 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/03/21 21:09:20 espie Exp $
 
 COMMENT=	"C-news"
 
@@ -7,7 +7,7 @@ BROKEN=		does not install cleanly, major fixups required.
 DISTNAME=	cnews
 PKGNAME=	cnews-cr.g
 CATEGORIES=	news
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 FAKE=No
 MASTER_SITES=	ftp://ftp.zoo.toronto.edu/pub/
 EXTRACT_SUFX=	.tar.Z

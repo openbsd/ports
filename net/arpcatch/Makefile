@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2001/10/28 13:05:48 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/03/21 21:09:19 espie Exp $
 
 COMMENT=	userland arp-proxy daemon
 
 DISTNAME=	arpcatch
 PKGNAME=	${DISTNAME}-19970824
 CATEGORIES=	net
-NEED_VERSION=	1.397
+NEED_VERSION=	1.515
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://skoda.sockpuppet.org/tqbf/

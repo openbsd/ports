@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/27 12:19:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/21 21:09:17 espie Exp $
 
 COMMENT=	"simple interactive POP3 client"
 
 DISTNAME=	prepop-0.1b7
 CATEGORIES=	mail
-NEED_VERSION=	1.448
+NEED_VERSION=	1.515
 HOMEPAGE=	http://www.rundegren.com/software/prepop/
 
 MAINTAINER=	Patroklos Argyroudis <argp@bsd.gr>

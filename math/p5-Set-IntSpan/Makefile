@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 01:59:26 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/21 21:09:18 espie Exp $
 
 COMMENT=	"manage sets of integers"
 
 DISTNAME=	Set-IntSpan-1.07
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	math perl5
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

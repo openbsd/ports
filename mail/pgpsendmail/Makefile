@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/11/10 15:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/03/21 21:09:17 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	"PGP sign/encrypt/decrypt messages automatically"
@@ -9,7 +9,7 @@ COMMENT=	"PGP sign/encrypt/decrypt messages automatically"
 DISTNAME=       PGPsendmail-v1.4.5
 PKGNAME=	pgpsendmail-1.4.5
 CATEGORIES=	mail
-NEED_VERSION=	1.489
+NEED_VERSION=	1.515
 MASTER_SITES=   ftp://ftp.atnf.csiro.au/pub/people/rgooch/ \
 		ftp://ftp.dhp.com/pub/crypto/pgp/PGPsendmail/
 

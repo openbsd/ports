@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2001/11/10 15:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/03/21 21:09:17 espie Exp $
 # losely based on the FreeBSD port
 
 COMMENT=	"scheme r5 interpreter"
 
 CATEGORIES=	lang
-NEED_VERSION=	1.489
+NEED_VERSION=	1.515
 
 V=5d3
 DISTNAME=	scm$V

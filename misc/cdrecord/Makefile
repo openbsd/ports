@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/10/07 19:11:54 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2002/03/21 21:09:18 espie Exp $
 
 COMMENT=	"creates CD's on a CD-Recorder"
 
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS=	alpha amiga hp300 i386 mac68k macppc mvme68k sparc sun3
 
 DISTNAME=	cdrecord-1.9
 CATEGORIES=	misc
-NEED_VERSION=	1.460
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/
 
 MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>

@@ -3,14 +3,14 @@
 # Date created:		15 Dec 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.10 2001/05/06 02:30:05 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/21 21:09:18 espie Exp $
 
 COMMENT=	"generates ASCII banner art"
 
 PKGNAME=	figlet-2.2
 DISTNAME=	figlet22
 CATEGORIES=	misc graphics
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 HOMEPAGE=	http://st-www.cs.uiuc.edu/users/chai/figlet.html
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

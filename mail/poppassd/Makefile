@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2001/08/05 20:46:50 jsyn Exp $
+# $OpenBSD: Makefile,v 1.17 2002/03/21 21:09:17 espie Exp $
 
 COMMENT=	"server: allow users to change password from within Eudora"
 
 DISTNAME=	poppassd-4.0
 DISTFILES=	pwserve-4
 CATEGORIES=	mail
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/password/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>

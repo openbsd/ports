@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2001/10/28 13:05:48 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/03/21 21:09:19 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1997/11/05 11:39:40 obrien Exp $
 
 COMMENT=	"tcp connection logger daemon"
 
 DISTNAME=	clog-1.6
 CATEGORIES=	net security
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.auscert.org.au/pub/coast/mirrors/ftp.saturn.net/clog/ \
 		ftp://ftp.rediris.es/mirror/coast/tools/unix/clog/
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/06/25 01:02:41 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 21:09:20 espie Exp $
 
 COMMENT=	"programmable small perl irc client"
 
 DISTNAME=	sirc-2.211
 CATEGORIES=	net
-NEED_VERSION=	1.417
+NEED_VERSION=	1.515
 MASTER_SITES=	${HOMEPAGE}
 MASTER_SITES0=	${HOMEPAGE}scripts/
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/11/18 07:41:46 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 21:09:18 espie Exp $
 
 COMMENT=	"curses spreadsheet-calculator program"
 
 DISTNAME=	sc-6.21
 CATEGORIES=	math
-NEED_VERSION=	1.363
+NEED_VERSION=	1.515
 
 MASTER_SITES=   ftp://gatekeeper.dec.com/pub/misc/
 EXTRACT_SUFX=   .tar.Z

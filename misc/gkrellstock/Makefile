@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2001/11/10 15:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 21:09:19 espie Exp $
 
 DISTNAME=	gkrellstock-0.2
 CATEGORIES=	misc
-NEED_VERSION=	1.489
+NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

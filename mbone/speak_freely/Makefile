@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2001/05/21 17:08:11 angelos Exp $
+# $OpenBSD: Makefile,v 1.17 2002/03/21 21:09:18 espie Exp $
 
 COMMENT=	"voice communication over data networks"
 
 DISTNAME=	speak_freely-7.1
 CATEGORIES=	mbone audio security
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	http://www.fourmilab.ch/speakfree/unix/prior-releases/7.1/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>

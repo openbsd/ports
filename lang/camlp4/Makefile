@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/11/10 15:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/03/21 21:09:17 espie Exp $
 
 COMMENT=	"Pre-Processor-Pretty-Printer for Objective Caml"
 COMMENT-doc=	"Camlp4 documentation"
@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
                 ${DISTNAME}-refman.html${EXTRACT_SUFX} \
                 ${DISTNAME}-tutorial.html${EXTRACT_SUFX}
 CATEGORIES=	lang
-NEED_VERSION=	1.489
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/camlp4/ \
 		http://cristal.inria.fr/~ddr/Camlp4/ftp/
 

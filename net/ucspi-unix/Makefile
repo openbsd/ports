@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/06 05:00:39 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 21:09:20 espie Exp $
 
 COMMENT=	"tools for building unix domain socket client/servers"
 
 DISTNAME=		ucspi-unix-0.34
 CATEGORIES=     	net
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 HOMEPAGE=		http://em.ca/~bruceg/ucspi-unix/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>

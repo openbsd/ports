@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:48 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/21 21:09:20 espie Exp $
 
 COMMENT=	"client and servers for the WIDE DHCP protocol"
 
@@ -6,7 +6,7 @@ DISTNAME=       dhcp-1.4.0p3
 PKGNAME=        wide-dhcp-1.4.0.3
 CATEGORIES=     net
 MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 HOMEPAGE=	http://www.sfc.wide.ad.jp/~tomy/dhcp/index-e.html
 PERMIT_PACKAGE_CDROM=	YES

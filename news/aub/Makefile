@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2001/04/07 21:45:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2002/03/21 21:09:20 espie Exp $
 
 COMMENT=	"assemble usenet binaries"
 
 PKGNAME=	aub-2.0.5
 DISTNAME=	aub
 CATEGORIES=	news
-NEED_VERSION=	1.364
+NEED_VERSION=	1.515
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

@@ -3,7 +3,7 @@
 # Date created:		28 April 1998
 # Whom:			Ejovi Nuwere <ejovi@ejovi.net>
 #
-# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:48 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/21 21:09:21 espie Exp $
 #
 
 COMMENT=	"download news articles from NNTP server"
@@ -12,7 +12,7 @@ DISTNAME=	newsfetch-1.21
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/news/readers
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	YES

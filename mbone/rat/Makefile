@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2001/10/01 14:08:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2002/03/21 21:09:18 espie Exp $
 
 COMMENT=	"Robust Audio Tool from UCL"
 
 DISTNAME=	rat-3.0.33
 CATEGORIES=	mbone
-NEED_VERSION=	1.465
+NEED_VERSION=	1.515
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no commercial use"

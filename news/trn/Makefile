@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/06 02:59:35 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 21:09:21 espie Exp $
 
 COMMENT=	"threaded newsreader"
 
 CATEGORIES=	news
 MAINTAINER= 	Marc Espie <espie@openbsd.org>
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MASTER_SITES=${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=trn

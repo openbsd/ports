@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2001/07/25 14:06:22 lebel Exp $
+# $OpenBSD: Makefile,v 1.16 2002/03/21 21:09:20 espie Exp $
 
 COMMENT=	"mirror packages on remote sites"
 
 DISTNAME=	mirror-2.9
 CATEGORIES=	net
-NEED_VERSION=	1.413
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://sunsite.org.uk/packages/mirror/ \
 		ftp://ftp.cs.columbia.edu/archives/perl/mirror/ \
 		ftp://giswitch.sggw.waw.pl/pub/unix/mirror/  \

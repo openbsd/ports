@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/05 22:09:19 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/21 21:09:17 espie Exp $
 
 CATEGORIES=	lang
-NEED_VERSION=	1.405
+NEED_VERSION=	1.515
 ONLY_FOR_ARCHS=	i386
 
 COMMENT="Polytechnique Montreal Modula-3"

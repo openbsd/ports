@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/10/28 13:05:48 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/21 21:09:20 espie Exp $
 
 COMMENT=	"benchmarking tool for analysing TCP and UDP performance"
 
 PKGNAME=	ttcp-1.12
 CATEGORIES=	net
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.sgi.com/sgi/src/ttcp/
 DISTFILES=	ttcp.c ttcp.1 README
 EXTRACT_ONLY=

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/10/06 03:43:08 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/21 21:09:20 espie Exp $
 
 COMMENT=	"clone of the classic Eliza program"
 
 DISTNAME=	Chatbot-Eliza-0.97
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
-NEED_VERSION=	1.470
+NEED_VERSION=	1.515
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

@@ -1,10 +1,11 @@
 # $FreeBSD: ports/net/trafd/Makefile,v 1.4 2000/07/07 19:22:10 steve Exp $
-# $OpenBSD: Makefile,v 1.4 2001/09/09 18:14:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 21:09:20 espie Exp $
 
 COMMENT=	"BPF traffic collector"
 
 DISTNAME=	trafd-3.0.1
 CATEGORIES=	net
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.riss-telecom.ru/pub/dev/trafd/
 EXTRACT_SUFX=	.tgz
 

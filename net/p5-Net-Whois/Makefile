@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/07 22:26:36 peter Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/21 21:09:20 espie Exp $
 
 COMMENT=		'perl5 module for getting and parsing whois entries'
 
@@ -6,7 +6,7 @@ VERSION=		1.9
 DISTNAME=		Net-Whois-${VERSION}
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		net perl5
-NEED_VERSION=		1.395
+NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.panix.org/~dhudes/
 

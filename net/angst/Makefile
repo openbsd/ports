@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/12/24 07:51:06 mark Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 21:09:19 espie Exp $
 
 COMMENT=	"active packet sniffer"
 
 DISTNAME=	angst-0.4b
 CATEGORIES=	net
-NEED_VERSION=	1.364
+NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	angst
 

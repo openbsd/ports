@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2001/11/12 14:24:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2002/03/21 21:09:20 espie Exp $
 # $FreeBSD: Makefile,v 1.2 1997/11/10 11:33:04 asami Exp $
 
 COMMENT=	"decode tcpdump(1) output"
 
 DISTNAME=	tcpshow-1.74
 CATEGORIES=	net security
-NEED_VERSION=	1.401
+NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL}
 MASTER_SITE_SUBDIR= obrien
 DISTFILES=	tcpshow.c tcpshow.1

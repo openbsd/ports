@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/25 04:17:49 obecian Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 21:09:20 espie Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/04/10 01:14:01 jtk Exp $
 
 COMMENT=	'PPTP client package for Microsoft VPN servers'
 DISTNAME=	pptp-linux-1.0.2
 PKGNAME=	pptp-1.0.2
-NEED_VERSION=	1.394
+NEED_VERSION=	1.515
 CATEGORIES=	net
 MASTER_SITES= 	http://cag.lcs.mit.edu/~cananian/Synaptics/release/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/10/07 14:20:13 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/03/21 21:09:17 espie Exp $
 
 COMMENT=	"programming language with generators, X11 and more"
 COMMENT-no_x11=	"programming language with generators"
@@ -7,7 +7,7 @@ VERSION=	9.4
 DISTNAME=	icon.v940src
 PKGNAME=	icon-interp-${VERSION}
 CATEGORIES=	lang
-NEED_VERSION=	1.387
+NEED_VERSION=	1.515
 MASTER_SITES= http://www.cs.arizona.edu/icon/ftp/packages/unix/
 #DIST_SUBDIR=	icon/${VERSION}
 DISTFILES=	icon.v940src.tgz

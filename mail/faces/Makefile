@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 01:46:16 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/21 21:09:17 espie Exp $
 
 COMMENT=	"visual mail, user and print face server"
 
 DISTNAME=	faces-1.6.1
 CATEGORIES=	mail
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

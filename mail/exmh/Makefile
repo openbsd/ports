@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:47 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/21 21:09:17 espie Exp $
 
 DISTNAME=	exmh-1.6.9
 CATEGORIES=	mail tk80
-NEED_VERSION=	1.336
+NEED_VERSION=	1.515
 IGNORE=		"has been superseded by exmh2"
 NO_CHECKSUM=	Yes
 DISTFILES=

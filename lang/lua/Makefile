@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/06 01:28:00 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2002/03/21 21:09:17 espie Exp $
 
 COMMENT=	"powerful, light-weight programming language"
 
 DISTNAME=	lua-4.0
 CATEGORIES=     lang
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
 		ftp://csg.uwaterloo.ca/pub/lhf/lua/ \
 		ftp://ftp.freesoftware.com/pub/languages/lua/ \

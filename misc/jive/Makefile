@@ -3,14 +3,14 @@
 # Date created:			  29 April 1998
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.14 2001/06/27 20:56:27 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2002/03/21 21:09:19 espie Exp $
 #
 
 COMMENT=	"convert English text to Jive"
 
 DISTNAME=	jive-1.1
 CATEGORIES=	misc
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/
 
 MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/02/23 23:24:53 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/21 21:09:19 espie Exp $
 
 COMMENT=	"remote identd fingerprinting tool"
 
 DISTNAME=	ldistfp-0.1.4
 CATEGORIES=	net security
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 HOMEPAGE=	http://www.team-teso.net/
 MASTER_SITES=	${HOMEPAGE}releases/
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/13 03:06:40 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/21 21:09:17 espie Exp $
 
 COMMENT=	"client to perform simple tasks with a POP3/IMAP server"
 
 DISTNAME=	poppy-3.1
 CATEGORIES=	mail
-NEED_VERSION=	1.414
+NEED_VERSION=	1.515
 
 HOMEPAGE=	http://home.sprynet.com/~cbagwell/projects.html
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/13 11:24:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 21:09:21 espie Exp $
 # Original from: Curtiss Howard, cereal@schizo.com
 #
 
@@ -8,7 +8,7 @@ DISTNAME=		linleech_2.2.1.orig
 
 PKGNAME=		linleech-2.2.1
 CATEGORIES=     	news
-NEED_VERSION=		1.402
+NEED_VERSION=		1.515
 
 MAINTAINER=		J Shoemaker <shoemaker@softhome.net>
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2001/05/06 05:00:01 lebel Exp $
+# $OpenBSD: Makefile,v 1.9 2002/03/21 21:09:19 espie Exp $
 
 COMMENT=	"look at the icmp messages received by the host"
 
 DISTNAME=	icmpinfo-1.11
 CATEGORIES=	net sysutils
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= system/network/admin
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2001/11/14 13:58:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2002/03/21 21:09:19 espie Exp $
 
 COMMENT=		'wm-dockapp; for killing Netscape when it freezes'
 
 DISTNAME=		wmNetscapeKiller-0.3
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		misc x11 x11/windowmaker
-NEED_VERSION=		1.482
+NEED_VERSION=		1.515
 
 HOMEPAGE=		http://pblumo.free.fr/wmNetscapeKiller/
 

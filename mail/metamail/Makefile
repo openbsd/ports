@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2001/10/28 13:05:47 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/03/21 21:09:17 espie Exp $
 
 COMMENT=	"MIME implementation"
 
 DISTNAME=	mm2.7
 PKGNAME=	metamail-2.7
 CATEGORIES=	mail
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://thumper.bellcore.com/pub/nsb/
 EXTRACT_SUFX=	.tar.Z
 

@@ -1,10 +1,10 @@
-#   $OpenBSD: Makefile,v 1.17 2001/06/20 01:43:27 pvalchev Exp $
+#   $OpenBSD: Makefile,v 1.18 2002/03/21 21:09:18 espie Exp $
 
 COMMENT=	"MBone Session Directory"
 
 DISTNAME=	sdr-2.7e
 CATEGORIES=	mbone
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/sdr/2.7e/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
