@@ -1,0 +1,12 @@
+bin/envuidgid
+bin/fghack
+bin/multilog
+bin/setuidgid
+bin/softlimit
+bin/supervise
+bin/svc
+bin/svok
+bin/svscan
+bin/svstat
+bin/tai64n
+bin/tai64nlocal
