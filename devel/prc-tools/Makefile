@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/08/31 16:47:36 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.22 2001/09/02 05:06:27 pvalchev Exp $
 
 FAKE=No
 COMMENT=	"PalmPilot(tm) development environment"
@@ -12,6 +12,8 @@ MASTER_SITES=   ftp://ryeham.ee.ryerson.ca/pub/PalmOS/ \
 		${MASTER_SITE_GNU}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		binutils-2.7${EXTRACT_SUFX} gdb-4.16${EXTRACT_SUFX} gcc-2.7.2.2${EXTRACT_SUFX}
+
+HOMEPAGE=	http://www.palmos.com/dev/tech/tools/gcc/
 
 MAINTAINER=	ports@openbsd.org
 
