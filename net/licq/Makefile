@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2001/10/28 13:05:48 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2001/10/28 13:07:47 espie Exp $
 
 COMMENT=	"ICQ clone for UNIX"
 
 DISTNAME=	licq-0.61
 CATEGORIES=	net
-NEED_VERSION=	1.363
+NEED_VERSION=	1.487
 MASTER_SITES=	http://licq.wibble.net/
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -12,12 +12,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	qt.1.::x11/qt
+MODULES=	qt
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu dest
-CONFIGURE_ENV=	QT_MOC="${LOCALBASE}/bin/moc"
-CONFIGURE_ARGS=	--with-qt-includes=${LOCALBASE}/include/X11/qt \
-	--with-qt-libraries=${LOCALBASE}/lib/qt
+CONFIGURE_ENV=	QT_MOC="${MODQT_MOC}"
+CONFIGURE_ARGS=	${MODQT_CONFIGURE_ARGS}
 
 .include <bsd.port.mk>
