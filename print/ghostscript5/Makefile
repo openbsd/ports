@@ -1,24 +1,17 @@
-# OpenBSD makefile for:	ghostscript
-# Version required:	5.0
-# Date created:		December 2, 1997
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.10 1998/12/16 20:13:24 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.11 1999/04/05 22:37:09 brad Exp $
 
 DISTNAME=	ghostscript-5.10
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs510/ \
-		ftp://bonk.ethz.ch/gs-driver-distrib/ \
-		http://www.ozemail.com.au/%7Egeoffk/pdfencrypt/
+MASTER_SITES=	$(MASTER_SITE_GNU)
+MASTER_SITE_SUBDIR=     ghostscript
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${HP850_DRV} ${PDFENCRYPT}
 
 MAINTAINER=	ports@openbsd.org
 
-LIB_DEPENDS=	png\\.1\\.:${PORTSDIR}/graphics/png
-BUILD_DEPENDS=	jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg:extract \
+BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
 		unzip:${PORTSDIR}/archivers/unzip
+LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 
 MAKE_ENV=	PORTSDIR=${PORTSDIR}
 EXTRACT_ONLY=	${GS_SOURCES}
@@ -84,10 +77,10 @@ do-configure:
 .endif
 
 pre-install:
-	@${MKDIR} ${PREFIX}/share/ghostscript ${PREFIX}/bin ${PREFIX}/man/man1
-	(cd ${PREFIX}/share/ghostscript ; \
-			tar -xzf ${DISTDIR}/${GS_FONTS_STD})
+	@${MKDIR} ${PREFIX}/share/ghostscript ${PREFIX}/share/ghostscript/fonts \
+		${PREFIX}/bin ${PREFIX}/man/man1
 	(cd ${PREFIX}/share/ghostscript/fonts ; \
+			tar -xzf ${DISTDIR}/${GS_FONTS_STD} ; \
 			tar -xzf ${DISTDIR}/${GS_FONTS_OTHER})
 
 post-install:

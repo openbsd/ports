@@ -189,6 +189,8 @@ share/ghostscript/5.10/wftopfa.ps
 share/ghostscript/5.10/winmaps.ps
 share/ghostscript/5.10/wrfont.ps
 share/ghostscript/5.10/zeroline.ps
+share/ghostscript/fonts/COPYING
+share/ghostscript/fonts/Fontmap
 share/ghostscript/fonts/a010013l.afm
 share/ghostscript/fonts/a010013l.pfb
 share/ghostscript/fonts/a010013l.pfm
