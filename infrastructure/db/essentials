@@ -1,6 +1,6 @@
-# $OpenBSD: essentials,v 1.13 2003/08/09 20:22:36 pvalchev Exp $
+# $OpenBSD: essentials,v 1.14 2003/09/06 05:11:11 pvalchev Exp $
 # This is the master list of subdirs used to choose i386 packages
-# for the 3.3 CD.
+# for the CD.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
 net/uucp
@@ -53,11 +53,11 @@ audio/cdparanoia
 net/ircII
 www/dillo
 security/keychain
-www/w3m
 devel/id-utils
 emulators/redhat/base
 emulators/redhat/motif
 x11/openmotif
+www/mozilla-firebird
 x11/qt2
 x11/qt2,-examples
 x11/qt2,-html
@@ -70,16 +70,16 @@ x11/kde/artwork3
 x11/kde/graphics3
 x11/kde/toys3
 x11/kde/edu3
-x11/kde/i18n3,de
-x11/kde/i18n3,fr
-x11/kde/i18n3,es
-x11/kde/i18n3,nl
-x11/kde/i18n3,ja
-x11/kde/office-i18n3,de
-x11/kde/office-i18n3,fr
-x11/kde/office-i18n3,es
-x11/kde/office-i18n3,nl
-x11/kde/office-i18n3,ja
+#x11/kde/i18n3,de
+#x11/kde/i18n3,fr
+#x11/kde/i18n3,es
+#x11/kde/i18n3,nl
+#x11/kde/i18n3,ja
+#x11/kde/office-i18n3,de
+#x11/kde/office-i18n3,fr
+#x11/kde/office-i18n3,es
+#x11/kde/office-i18n3,nl
+#x11/kde/office-i18n3,ja
 www/konqueror-embedded
 x11/gnome/session
 x11/afterstep
@@ -180,8 +180,8 @@ comms/jpilot
 lang/egcs/stable
 lang/egcs/stable,-c++
 lang/egcs/stable,-estdc
-lang/egcs/stable,-g77
-mail/evolution
+#lang/egcs/stable,-g77
+#mail/evolution
 audio/soundtracker,gnome,esd
 emulators/zsnes
 print/lyx
