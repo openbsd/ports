@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2004/01/15 22:38:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.22 2004/03/10 17:09:16 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Java Development Kit for Java 2 Standard Edition 1.3"
-VERSION=	1.3.1_10
+VERSION=	1.3.1_11
 
 DISTNAME=	jdk${VERSION}
 PKGNAME=	jdk-linux-${VERSION}
@@ -33,7 +33,7 @@ NO_SYSTRACE=	Yes
 FETCH_MANUALLY = " You must fetch the distfile for this port manually"
 FETCH_MANUALLY+= " after agreeing to the license agreement at"
 FETCH_MANUALLY+= ""
-FETCH_MANUALLY+= "     http://java.sun.com/j2se/1.3/download-linux.html"
+FETCH_MANUALLY+= "     http://java.sun.com/j2se/1.3/download.html"
 FETCH_MANUALLY+= ""
 FETCH_MANUALLY+= " Choose the '* Linux self-extracting file' option and place"
 FETCH_MANUALLY+= " ${DISTFILES} into ${FULLDISTDIR}."
