@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/03/05 18:30:46 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/13 03:25:49 kevlo Exp $
 
 PKGNAME=	eterm-0.8.10
 DISTNAME=	Eterm-0.8.10
@@ -10,17 +10,18 @@ MASTER_SITES=	ftp://eterm.sourceforge.net/pub/eterm/ \
 
 MAINTAINER=	halogen@nol.net
 
-LICENSE_TYPE=         GPL
+FAKE=		Yes
+
+GNU_CONFIGURE= Yes
+USE_GMAKE=     Yes
+USE_LIBTOOL=   Yes
+
+LIB_DEPENDS=	Imlib.19:graphics/imlib
+
 PERMIT_PACKAGE_CDROM= Yes
 PERMIT_PACKAGE_FTP=   Yes
 PERMIT_DISTFILES_CDROM=       Yes
 PERMIT_DISTFILES_FTP= Yes
-
-LIB_DEPENDS=	Imlib.19:graphics/imlib
-
-GNU_CONFIGURE=	Yes
-USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/Eterm
