@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2001/05/06 00:12:50 lebel Exp $
+# $OpenBSD: Makefile,v 1.25 2001/10/07 12:15:33 espie Exp $
 
 COMMENT=	"automatically configure source code on many Un*x platforms"
 
@@ -33,5 +33,7 @@ pre-configure:
 		echo >&2 "Update m4 to a more recent version," ; \
 		echo >&2 "or retrieve an older version of the autoconf port."; \
 	    	exit 1
+
+REGRESS_DEPENDS=:dejagnu-*:devel/dejagnu
 
 .include <bsd.port.mk>

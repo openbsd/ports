@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 00:12:48 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/07 12:15:33 espie Exp $
 
 COMMENT=	"documentation for autoconf, automake, libtool"
 
@@ -22,6 +22,7 @@ HOMEPAGE=	http://sources.redhat.com/autobook/
 
 EXTRACT_ONLY=	
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 DOCDIR=${PREFIX}/share/doc
 do-install:

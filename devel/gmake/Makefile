@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/03/26 15:58:17 todd Exp $
+# $OpenBSD: Makefile,v 1.22 2001/10/07 12:15:33 espie Exp $
 
 COMMENT=	"GNU make"
 DISTNAME=	make-3.79.1
@@ -31,5 +31,10 @@ post-extract:
 post-install:
 	@chmod g-s ${PREFIX}/bin/gmake
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/gmake
+
+# XXX This is the ONE case where we shouldn't be able to cheat on 
+# where HOME is coming from, but we can. Looks like gnu-make is bogus...
+
+REGRESS_FLAGS=HOME=/
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/08/27 13:57:51 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2001/10/07 12:15:33 espie Exp $
 
 COMMENT=	"GNU Standards-compliant Makefile generator"
 
@@ -18,5 +18,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
+REGRESS_DEPENDS=:gmake-*:devel/gmake
+
+do-regress:
+	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} MAKE=gmake gmake -f \
+	    ${MAKE_FILE} ${REGRESS_FLAGS} ${REGRESS_TARGET}
 
 .include <bsd.port.mk>
