@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2000/09/29 10:24:33 avsm Exp $
+# $OpenBSD: Makefile,v 1.50 2000/10/04 21:18:00 jakob Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -24,6 +24,7 @@
      SUBDIR += libident
      SUBDIR += logsurfer
      SUBDIR += lxnb
+     SUBDIR += mhash
      SUBDIR += nbaudit
      SUBDIR += nessus
      SUBDIR += nfsshell
@@ -40,6 +41,8 @@
      SUBDIR += rdp
      SUBDIR += scanlogd
      SUBDIR += sftp
+     SUBDIR += shash
+     SUBDIR += shash:static
      SUBDIR += smurflog
      SUBDIR += socks5
      SUBDIR += stel
