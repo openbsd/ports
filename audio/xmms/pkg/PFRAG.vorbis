@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.vorbis,v 1.1.1.1 2001/07/20 14:26:16 espie Exp $
+@comment $OpenBSD: PFRAG.vorbis,v 1.2 2001/07/25 16:05:19 naddy Exp $
 lib/xmms/Input/libvorbis.la
-lib/xmms/Input/libvorbis.so.0.0
+lib/xmms/Input/libvorbis.so
