@@ -1,4 +1,5 @@
 #!/bin/sh
+# $OpenBSD: configure,v 1.6 2002/05/25 10:38:58 reinhard Exp $
 #
 #   configure wrapper script for nessus
 #

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.26 2002/04/19 14:43:36 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.27 2002/05/25 10:38:58 reinhard Exp $
 
 COMMENT=	"network security scanner"
 
 PKGNAME=	nessus-${VERS}
 CATEGORIES=	security
-NEED_VERSION=	1.405
+NEED_VERSION=	1.527
 
-VERS=		1.0.7a
+VERS=		1.2.0
 
 DIST_SUBDIR=	nessus
 
@@ -30,7 +30,7 @@ MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${VERS}/src/ \
 		ftp://ftp.stuff.ca/pub/nessus/nessus-${VERS}/src/src/ \
 		ftp://ftp.at.nessus.org/pub/nessus/nessus-${VERS}/src/ \
 		ftp://ftp.linux.org.tr/pub/nessus/nessus-${VERS}/src/ \
-		ftp://cvs.nessus.org/pub/nessus/nessus-${VERS}/src/ 
+		ftp://cvs.nessus.org/pub/nessus/nessus-${VERS}/src/
 
 MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
@@ -41,26 +41,22 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=no_x11 experimental
+USE_LIBTOOL=	Yes
+
+FLAVORS=no_x11
 FLAVOR?=
 
 # Can't do CONFIGURE_STYLE=autoconf because of configure wrapper
 # that builds each tarball in succession.
 CONFIGURE_STYLE=gnu
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/nessus-core ${WRKSRC}/nessus-plugins ${WRKSRC}/libnasl ${WRKSRC}/nessus-libraries/libpcap-nessus ${WRKSRC}/nessus-libraries/libpeks/gmp3 ${WRKSRC}/nessus-libraries/libpeks ${WRKSRC}/nessus-libraries
-CONFIGURE_ARGS+=--localstatedir=/var --enable-gmp=${LOCALBASE} \
-		--disable-nessuspcap
-
-LIB_DEPENDS=	gmp.4.1::devel/gmp
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/nessus-core \
+    ${WRKSRC}/nessus-plugins ${WRKSRC}/libnasl ${WRKSRC}/nessus-libraries
+CONFIGURE_ARGS+=--localstatedir=/var --disable-nessuspcap --sharedstatedir=/var
 
 .if empty(FLAVOR:L:Mno_x11)
 LIB_DEPENDS+=	gtk.1.2,gdk.1.2::x11/gtk+
 .else
 CONFIGURE_ARGS+=--disable-gtk
-.endif
-
-.if ${FLAVOR:L:Mexperimental}
-CONFIGURE_ARGS+=--enable-save-sessions --enable-save-kb
 .endif
 
 post-extract:
@@ -74,22 +70,20 @@ post-extract:
 		${FILESDIR}/nessus-config > ${WRKSRC}nessus-config
 	@sed 's%@@WRKSRC@@%${WRKSRC}%g' \
 		${FILESDIR}/nasl-config > ${WRKSRC}nasl-config
-	@chmod 755 ${WRKSRC}*
+	@${CHMOD} 755 ${WRKSRC}*
 	@(cd ${WRKSRC}nessus-libraries/include ; ln -s . nessus)
-	@(cd ${WRKSRC}nessus-libraries/libpeks ; ln -s . peks)
-	@(cd ${WRKSRC}nessus-libraries/libpcap-nessus ; ln -s . nessus)
 	@(cd ${WRKSRC}libnasl/include ; ln -s . nessus)
 
 # Convince nmap_wrapper.nes to build regardless of nmap's presence.
 post-configure:
-	@cp ${FILESDIR}/nmap.h ${WRKSRC}nessus-plugins/plugins/nmap_wrapper/
+	@sed 's%@@PREFIX@@%${TRUEPREFIX}%g' ${FILESDIR}/nmap.h \
+		>${WRKSRC}nessus-plugins/plugins/nmap_wrapper/nmap.h
 	@touch ${WRKSRC}nessus-plugins/plugins/nmap_wrapper/nmap_installed
 
 pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/nessus
 
 post-install:
-	@strip ${PREFIX}/bin/{nasl,nessus} ${PREFIX}/sbin/nessusd
+	@${STRIP} ${PREFIX}/bin/{nasl,nessus,nessus-mkrand} ${PREFIX}/sbin/nessusd
 
 .include <bsd.port.mk>
-

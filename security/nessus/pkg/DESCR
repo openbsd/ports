@@ -1,5 +1,5 @@
 What is the Nessus Project ?
-   
+
    The aim of the Nessus project is to provide the internet community a
    free, open-sourced and easy-to-use security auditing tool.
      * Free: Nessus is free because most societies/universities
@@ -18,7 +18,6 @@ What is the Nessus Project ?
        interface which clearly highlights the security holes.
 
 Flavors:
-	no_x11		no X11 frontend 
-	experimental	add save-session and knowledge base capabilities
+	no_x11		no X11 frontend
 
 WWW: ${HOMEPAGE}

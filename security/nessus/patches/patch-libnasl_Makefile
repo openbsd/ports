@@ -1,10 +1,10 @@
-$OpenBSD: patch-libnasl_Makefile,v 1.1 2000/10/01 00:35:52 matt Exp $
---- libnasl/Makefile.orig	Fri Mar 10 08:32:45 2000
-+++ libnasl/Makefile	Tue Sep 26 13:48:04 2000
+$OpenBSD: patch-libnasl_Makefile,v 1.2 2002/05/25 10:38:58 reinhard Exp $
+--- libnasl/Makefile.orig	Tue Oct 16 11:54:04 2001
++++ libnasl/Makefile	Tue Apr 30 13:42:13 2002
 @@ -8,7 +8,7 @@ nasl.tmpl: nasl.tmpl.in configure
  	touch $@
  
- install :
+ install ::
 -	cd nasl && ${MAKE} install
 +	cd nasl && ${MAKE} prefix=${prefix} install
  	test -d ${includedir}/nessus || $(INSTALL_DIR) -m 755 ${includedir}/nessus

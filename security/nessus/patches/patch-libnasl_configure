@@ -1,0 +1,11 @@
+--- libnasl/configure.orig	Sun May  5 16:52:40 2002
++++ libnasl/configure	Sun May  5 16:53:10 2002
+@@ -5340,7 +5340,7 @@
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
+ 
+ # Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
++LIBTOOL='$(LOCALBASE)/bin/libtool'
+ 
+ # Prevent multiple expansion
+ 

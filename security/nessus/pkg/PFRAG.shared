@@ -1,18 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2001/02/13 03:00:14 matt Exp $
-lib/libhosts_gatherer.so.1.7
-lib/libnasl.so.1.7
-lib/libnessus.so.1.7
-lib/libpeks.so.8.18
-lib/nessus/plugins/accounts.nes
-lib/nessus/plugins/bind_bof.nes
-lib/nessus/plugins/find_service.nes
-lib/nessus/plugins/ftp_bounce_scan.nes
-lib/nessus/plugins/ftp_write_dirs.nes
-lib/nessus/plugins/linux_tftp.nes
-lib/nessus/plugins/nmap_tcp_connect.nes
-lib/nessus/plugins/nmap_wrapper.nes
-lib/nessus/plugins/objectserver.nes
-lib/nessus/plugins/queso.nes
-lib/nessus/plugins/smad.nes
-lib/nessus/plugins/tftp_grab_file.nes
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.8 2002/05/25 10:38:58 reinhard Exp $
+lib/libhosts_gatherer.so.3.0
+lib/libnasl.so.3.0
+lib/libnessus.so.3.0
+DYNLIBDIR(%D/lib)

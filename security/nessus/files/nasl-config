@@ -1,4 +1,5 @@
 #!/bin/sh
+# $OpenBSD: nasl-config,v 1.4 2002/05/25 10:38:58 reinhard Exp $
 #
 #   NASL configuration script
 #

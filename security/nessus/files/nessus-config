@@ -1,4 +1,5 @@
 #!/bin/sh
+# $OpenBSD: nessus-config,v 1.5 2002/05/25 10:38:58 reinhard Exp $
 #
 #   Nessus libraries configuration script
 #
@@ -6,16 +7,20 @@
 #   Enhanced by Matt Behrens <matt@openbsd.org>
 #
 
+
 VERSION=@@VERS@@
 LIBDIR=@@WRKSRC@@/nessus-libraries
 COREDIR=@@WRKSRC@@/nessus-core
-CIPHER="-L$LIBDIR/libpeks/.libs -L@@PREFIX@@/lib -lpeks -lgmp -lz"
-CIPHER_CFLAGS="-DENABLE_CRYPTO_LAYER -I$LIBDIR/libpeks"
-EXTRA="-lresolv  "
+DEFS="-DSYSTEM_PCAP"
+CIPHER_CFLAGS="-DNESSUS_ON_SSL"
+SSL_CFLAGS="-DHAVE_SSL -I/usr/include/openssl"
+EXTRA="-lutil -lresolv   -L/usr/lib -lssl -lcrypto "
+EGDPATH=""
+
 
 usage()
 {
- echo "Usage : nessus-config [ --cflags | --libs | --version ]"
+ echo "Usage : nessus-config [ --cflags | --libs | --version | --egd ]"
  exit $1
 }
 
@@ -37,10 +42,14 @@ while test $# -gt 0; do
 		exit 0
 		;;
 	--libs)
-		echo $Xn "-L$LIBDIR/libnessus/.libs -lnessus -L$LIBDIR/libhosts_gatherer/.libs -lhosts_gatherer -lpcap $CIPHER $EXTRA $Xc"
+	
+		echo $Xn "-lc -L$LIBDIR/libnessus/.libs -lnessus -L$LIBDIR/libhosts_gatherer/.libs -lhosts_gatherer -lpcap $EXTRA $Xc"
 		;;
 	--cflags)
-		echo $Xn "-I$COREDIR/include -I$LIBDIR/include $CIPHER_CFLAGS $Xc"
+		echo $Xn "-I$COREDIR/include -I$LIBDIR/include $DEFS $CIPHER_CFLAGS $SSL_CFLAGS $Xc"
+		;;
+	--egd)
+		echo $Xn "$EGDPATH" $Xc
 		;;
 	--help | -h)
 		usage 0
@@ -53,3 +62,4 @@ while test $# -gt 0; do
 done
 
 echo 	
+	

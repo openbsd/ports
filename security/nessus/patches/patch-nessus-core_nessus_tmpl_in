@@ -1,16 +1,15 @@
-$OpenBSD: patch-nessus-core_nessus_tmpl_in,v 1.2 2001/02/13 03:00:12 matt Exp $
---- nessus-core/nessus.tmpl.in.orig	Fri Nov 17 11:58:30 2000
-+++ nessus-core/nessus.tmpl.in	Sat Feb 10 19:53:05 2001
-@@ -37,7 +37,7 @@ srcdir=${rootdir}/src
+--- nessus-core/nessus.tmpl.in.orig	Sun May  5 17:23:52 2002
++++ nessus-core/nessus.tmpl.in	Sun May  5 17:24:55 2002
+@@ -37,7 +37,7 @@
  make_bindir=${rootdir}/bin
  libsdir=${rootdir}/libs
  top_builddir = @PWDD@
 -include= -I. -I$(rootdir)/include -I@includedir@ -I$(rootdir)/src/libpcap
-+include= -I. -I$(rootdir)/include -I$(rootdir)/src/libpcap
++include= -I. -I$(rootdir)/include
  INSTALL=@INSTALL@
  INSTALL_DIR=@INSTALL_DIR@
  installuser=@installuser@
-@@ -137,7 +137,7 @@ MAN_NESSUSD_8=@man_nessusd_8@
+@@ -139,7 +139,7 @@
  # C compiler options
  NESSCFLAGS=@NESSCFLAGS@
  NASLCFLAGS=@NASLCFLAGS@
