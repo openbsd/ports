@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 1998/12/18 02:55:46 form Exp $
+# $OpenBSD: Makefile,v 1.9 1999/02/25 04:14:07 brad Exp $
 # $FreeBSD: Makefile,v 1.25 1998/07/16 06:44:37 vanilla Exp $
 
-DISTNAME=	mgetty1.1.19-Nov24
-PKGNAME=	mgetty-1.1.19
+DISTNAME=	mgetty1.1.20-Jan17
+PKGNAME=	mgetty-1.1.20
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
 
