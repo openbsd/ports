@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2001/05/10 19:44:54 lebel Exp $
+# $OpenBSD: Makefile,v 1.19 2001/08/20 23:42:08 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 COMMENT-plugins=	"X11 toolkit, netscape plugins"
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.405
-VERSION=		2.1.1
+VERSION=		2.2
 DISTNAME=		kdebase-${VERSION}
 PKGNAME-plugins=	kdebase-ns-${VERSION}
 DIST_SUBDIR=		kde
@@ -38,6 +38,7 @@ CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-xdmdir=/var/X11/kdm
 CONFIGURE_ARGS+=	--disable-debug
+#CONFIGURE_ARGS+=	--enable-debug
 #CONFIGURE_ARGS+=	--without-motif
 #CONFIGURE_ARGS+=--enable-static --enable-debug --disable-shared
 

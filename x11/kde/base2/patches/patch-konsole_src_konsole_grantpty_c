@@ -1,11 +1,12 @@
-$OpenBSD: patch-konsole_src_konsole_grantpty_c,v 1.1 2001/04/22 13:23:39 espie Exp $
---- konsole/src/konsole_grantpty.c.orig	Sun Apr 22 15:04:38 2001
-+++ konsole/src/konsole_grantpty.c	Sun Apr 22 15:06:31 2001
-@@ -40,6 +40,11 @@
+$OpenBSD: patch-konsole_src_konsole_grantpty_c,v 1.2 2001/08/20 23:42:08 espie Exp $
+--- konsole/src/konsole_grantpty.c.orig	Mon Jan 22 13:03:53 2001
++++ konsole/src/konsole_grantpty.c	Fri Aug 17 09:20:29 2001
+@@ -40,6 +40,12 @@
  #  include <dirent.h>
  #endif
  
 +#ifdef __OpenBSD__
++#  include <utmp.h>
 +#  include <util.h>
 +#  include <fcntl.h>
 +#endif
@@ -13,7 +14,7 @@ $OpenBSD: patch-konsole_src_konsole_grantpty_c,v 1.1 2001/04/22 13:23:39 espie E
  #define PTY_FILENO 3    /* keep in sync with grantpty */
  #define TTY_GROUP "tty"
  
-@@ -52,6 +57,8 @@ int main (int argc, char *argv[])
+@@ -52,6 +58,8 @@ int main (int argc, char *argv[])
    uid_t         uid;
    mode_t        mod;
    char*         tty;
@@ -22,7 +23,7 @@ $OpenBSD: patch-konsole_src_konsole_grantpty_c,v 1.1 2001/04/22 13:23:39 espie E
  
    /* check preconditions **************************************************/
    if (argc != 2 || (strcmp(argv[1],"--grant") && strcmp(argv[1],"--revoke")))
-@@ -77,11 +84,13 @@ int main (int argc, char *argv[])
+@@ -77,11 +85,13 @@ int main (int argc, char *argv[])
    { 
      uid = getuid(); /* current user id */
      mod = S_IRUSR|S_IWUSR|S_IWGRP;
@@ -36,7 +37,7 @@ $OpenBSD: patch-konsole_src_konsole_grantpty_c,v 1.1 2001/04/22 13:23:39 espie E
    }
    /* Get the group ID of the special `tty' group.  */
    p = getgrnam(TTY_GROUP);            /* posix */
-@@ -175,5 +184,36 @@ int main (int argc, char *argv[])
+@@ -175,5 +185,36 @@ int main (int argc, char *argv[])
      return 1; /* FAIL */
    }
  

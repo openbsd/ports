@@ -1,0 +1,39 @@
+$OpenBSD: patch-kcontrol_info_memory_cpp,v 1.1 2001/08/20 23:42:08 espie Exp $
+--- kcontrol/info/memory.cpp.orig	Mon Aug 20 23:53:47 2001
++++ kcontrol/info/memory.cpp	Mon Aug 20 23:54:51 2001
+@@ -39,7 +39,7 @@ enum {				/* entries for Memory_Info[] *
+     TOTAL_MEM = 0,		/* total physical memory (without swaps) */
+     FREE_MEM,			/* total free physical memory (without swaps) */
+ #if !defined(__svr4__) || !defined(sun)
+-#ifndef __NetBSD__
++#if !defined(__NetBSD__) && !defined(__OpenBSD__)
+     SHARED_MEM,			/* shared memory size */
+     BUFFER_MEM,			/* buffered memory size */
+ #else
+@@ -132,7 +132,7 @@ KMemoryWidget::KMemoryWidget(QWidget * p
+ 	    title = i18n("Free physical memory");
+ 	    break;
+ #if !defined(__svr4__) || !defined(sun)
+-#ifndef __NetBSD__
++#if !defined(__NetBSD__) && !defined(__OpenBSD__)
+ 	case SHARED_MEM:
+ 	    title = i18n("Shared memory");
+ 	    break;
+@@ -346,7 +346,7 @@ void KMemoryWidget::update_Values()
+ 
+     used[1] = 0;
+ #if !defined(__svr4__) || !defined(sun)
+-#ifndef __NetBSD__
++#if !defined(__NetBSD__) && !defined(__OpenBSD__)
+     used[1] = ZERO_IF_NO_INFO(Memory_Info[BUFFER_MEM]);
+ #endif
+ #endif
+@@ -416,7 +416,7 @@ void KMemoryWidget::update_Values()
+ #include "memory_fbsd.cpp"
+ #elif hpux
+ #include "memory_hpux.cpp"
+-#elif __NetBSD__
++#elif defined(__NetBSD__) || defined(__OpenBSD__)
+ #include "memory_netbsd.cpp"
+ #elif __osf__
+ #include "memory_tru64.cpp"

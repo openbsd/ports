@@ -1,7 +1,7 @@
-$OpenBSD: patch-konsole_src_Makefile_am,v 1.1 2001/04/22 13:23:39 espie Exp $
---- konsole/src/Makefile.am.orig	Sun Apr 22 15:08:25 2001
-+++ konsole/src/Makefile.am	Sun Apr 22 15:08:51 2001
-@@ -58,6 +58,7 @@ konsole_LDFLAGS = $(all_libraries) $(KDE
+$OpenBSD: patch-konsole_src_Makefile_am,v 1.2 2001/08/20 23:42:08 espie Exp $
+--- konsole/src/Makefile.am.orig	Thu Jun 14 20:53:50 2001
++++ konsole/src/Makefile.am	Fri Aug 17 02:09:16 2001
+@@ -61,6 +61,7 @@ konsole_LDFLAGS = $(all_libraries) $(KDE
  
  konsole_grantpty_SOURCES = konsole_grantpty.c
  konsole_grantpty_LDFLAGS = $(KDE_RPATH)

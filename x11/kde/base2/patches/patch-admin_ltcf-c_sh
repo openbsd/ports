@@ -1,7 +1,7 @@
-$OpenBSD: patch-admin_ltcf-c_sh,v 1.1 2001/04/22 13:23:38 espie Exp $
---- admin/ltcf-c.sh.orig	Sat Apr 21 18:05:03 2001
-+++ admin/ltcf-c.sh	Sat Apr 21 18:06:45 2001
-@@ -425,10 +425,14 @@ else
+$OpenBSD: patch-admin_ltcf-c_sh,v 1.2 2001/08/20 23:42:08 espie Exp $
+--- admin/ltcf-c.sh.orig	Sat May 19 09:19:10 2001
++++ admin/ltcf-c.sh	Fri Aug 17 02:09:15 2001
+@@ -457,10 +457,14 @@ else
      ;;
  
    openbsd*)

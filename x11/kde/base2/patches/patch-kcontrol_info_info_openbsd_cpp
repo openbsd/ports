@@ -1,0 +1,31 @@
+$OpenBSD: patch-kcontrol_info_info_openbsd_cpp,v 1.3 2001/08/20 23:42:08 espie Exp $
+--- kcontrol/info/info_openbsd.cpp.orig	Mon Aug 20 23:06:21 2001
++++ kcontrol/info/info_openbsd.cpp	Mon Aug 20 23:42:29 2001
+@@ -122,7 +122,7 @@ static bool GetDmesgInfo(QListView *lBox
+ 	}
+ 
+ 	QListViewItem *olditem = NULL;
+-	while((s = t->readLine()) != "") {
++	while((s = t->readLine()) != "" && s != NULL) {
+ 		if (!seencpu) {
+ 			if (s.contains("cpu"))
+ 				seencpu = true;
+@@ -285,15 +285,15 @@ bool GetInfo_Partitions (QListView *lbox
+ 	lbox->addColumn(i18n("Mount Options"));
+ 
+ 	QListViewItem *olditem = 0;
+-	while ((s = t->readLine()) != "") {
++	while ((s = t->readLine()) != "" && s != NULL) {
+ 		orig_line = line = strdup(s.latin1());
+ 
+ 		device = strsep(&line, " ");
+ 
+-		(void) strsep(&line, " "); // cosume word "on"
++		(void) strsep(&line, " "); // consume word "on"
+ 		mountpoint = strsep(&line, " ");
+ 
+-		(void) strsep(&line, " "); // cosume word "type"
++		(void) strsep(&line, " "); // consume word "type"
+ 		type = strsep(&line, " ");
+ 
+ 		flags = line;
