@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/29 17:13:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/02/17 20:47:45 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"LDAP client API for Python"
 
-VERSION=	2.0.0pre14
+VERSION=	2.0.0pre19
 DISTNAME=	python-ldap-${VERSION}
 PKGNAME=	py-ldap-${VERSION}
 CATEGORIES=	databases
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=python-ldap/}
 HOMEPAGE=	http://python-ldap.sourceforge.net/
 
 MAINTAINER=	Marc Balmer <marc@msys.ch>
@@ -20,18 +19,30 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-FLAVORS=	2.1 2.2
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=python-ldap/}
+
+FLAVORS=	2.1 2.2 2.3
 FLAVOR?=	2.1
 
 MODULES=	python
-.if ${FLAVOR} == "2.1" || ${FLAVOR} == "2.2"
+
+.if ${FLAVOR} == "2.1" || ${FLAVOR} == "2.2" || ${FLAVOR} == "2.3"
 MODPY_VERSION=	${FLAVOR}
-.elif ${FLAVOR:M2.1} && ${FLAVOR:M2.2}
-ERRORS+=	"Fatal: these flavors are mutually exclusive: ${FLAVOR}"
+.else
+ERRORS+=	"Fatal: Conflicting flavor: ${FLAVOR}"
 .endif
 
 LIB_DEPENDS=	ldap,lber::databases/openldap
 
-NO_REGRESS=	Yes
+EXAMPLESDIR=	${PREFIX}/share/examples/py-ldap
+
+post-install:
+	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}; tar cf - Demo | tar xf - -C ${EXAMPLESDIR}
+
+do-regress: fake
+	@cd ${WRKSRC}/Tests/Lib && ${MAKE_ENV} \
+		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
+		${MODPY_BIN} ./test_ldapurl.py 
 
 .include <bsd.port.mk>
