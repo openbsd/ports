@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/12 08:41:09 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/12 09:35:03 turan Exp $
 
 BROKEN=		bad packing lists
 
@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}.tar.Z xfaces-sounds.tar.gz
 
 MAINTAINER=	angelos@openbsd.org
 
-LICENSE_TYPE=		BSD/NONE
+LICENSE_TYPE=		BSD
 PERMIT_PKG_CDROM=	YES
 PERMIT_PKG_FTP=		YES
 PERMIT_DISTF_CDROM=	YES
