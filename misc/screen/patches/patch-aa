@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Wed Sep  1 18:50:31 1999
-+++ Makefile.in	Thu Aug 24 18:37:40 2000
++++ Makefile.in	Thu Aug 24 23:07:52 2000
 @@ -7,6 +7,8 @@
  srcdir = @srcdir@
  VPATH = @srcdir@
@@ -45,8 +45,8 @@
 -	-if [ -f $(bindir)/screen ] && [ ! -f $(bindir)/screen.old ]; then mv $(bindir)/screen $(bindir)/screen.old; fi
 -	rm -f $(bindir)/screen
 -	ln -s $(SCREEN) $(bindir)/screen
-+	-if [ -f $(DESTDIR)$(bindir)/screen ] && [ ! -f $(DESTDIR)$(bindir)/screen.old ]; then mv $(DESTIDIR)$(bindir)/screen $(DESTDIR)$(bindir)/screen.old; fi
-+	rm -f $(DESTIDIR)$(bindir)/screen
++	-if [ -f $(DESTDIR)$(bindir)/screen ] && [ ! -f $(DESTDIR)$(bindir)/screen.old ]; then mv $(DESTDIR)$(bindir)/screen $(DESTDIR)$(bindir)/screen.old; fi
++	rm -f $(DESTDIR)$(bindir)/screen
 +	cd $(DESTDIR)$(bindir) && ln -fs $(SCREEN) screen
  
  ###############################################################################
