@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/11/22 16:43:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2003/01/19 01:02:53 sturm Exp $
 
 COMMENT=	"POP3 mail retriever"
 
-DISTNAME=	getmail-2.3.9
+DISTNAME=	getmail-2.3.10
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.qcc.ca/~charlesc/software/getmail-2.0/
@@ -31,11 +31,13 @@ post-patch:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/getmail
 	${INSTALL_DATA_DIR} ${DOCDIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/getmail
 	${INSTALL_SCRIPT} ${WRKDIST}/getmail ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIST}/*.py ${PREFIX}/share/getmail
 	${INSTALL_DATA} ${WRKDIST}/docs.txt ${DOCDIR}
 	${INSTALL_DATA} ${WRKDIST}/faq.txt ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/getmailrc-example ${DOCDIR}
+	${INSTALL_DATA} ${WRKDIST}/getmailrc-example \
+		${PREFIX}/share/examples/getmail/getmailrc
 	${INSTALL_DATA} ${WRKDIST}/getmail.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
