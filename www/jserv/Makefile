@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/12/15 04:07:29 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2002/01/05 16:36:23 reinhard Exp $
 
 # Build just the Tomcat connector for our in-tree Apache
 COMMENT=	"Tomcat (Servlet/JSP) - Apache Connector"
@@ -21,7 +21,7 @@ MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
 JDK_VERSION=	1.2-blackdown
 JAVA_HOME=	${LOCALBASE}/jdk${JDK_VERSION}
-RUN_DEPENDS=	::www/jakarta-tomcat
+RUN_DEPENDS=	::www/jakarta-tomcat/v3
 
 # Apache Software License
 PERMIT_PACKAGE_CDROM=	Yes
