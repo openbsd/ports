@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2002/02/14 17:32:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.81 2002/02/19 08:21:46 mark Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -73,6 +73,7 @@
      SUBDIR += soundtracker,gnome,sun
      SUBDIR += soundtracker,esd
 #    SUBDIR += splay
+     SUBDIR += streamripper
      SUBDIR += teknap
      SUBDIR += tempest
      SUBDIR += timidity
