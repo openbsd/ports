@@ -1,22 +1,14 @@
-# $OpenBSD: Makefile,v 1.26 2000/08/15 22:48:19 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2000/09/16 04:04:27 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
-VERSION=	1.0c16
+VERSION=	1.0c17
 DISTNAME=	BitchX-${VERSION}
 PKGNAME=	bitchx-${VERSION}
 CATEGORIES=	net
-NEED_VERSION=	1.310
+NEED_VERSION=	1.320
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.bitchx.org/pub/BitchX/source/ \
 		ftp://bitchx.dimension6.com/pub/BitchX/source/
-MASTER_SITES0=	ftp://ftp.bitchx.org/pub/BitchX/source/
-
-PATCHFILES=	1.0c16-format.patch
-.if defined(PATCH_DEBUG)
-PATCH_DIST_ARGS=-d ${WRKSRC}/source -E ${PATCH_DIST_STRIP}
-.else
-PATCH_DIST_ARGS=-d ${WRKSRC}/source --forward --quiet -E ${PATCH_DIST_STRIP}
-.endif
 
 MAINTAINER=	brad@openbsd.org
 
@@ -30,17 +22,6 @@ SUBST_VARS=	VERSION
 SEPARATE_BUILD=	concurrent
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu dest
-
-FLAVORS=	socks5
-FLAVOR?=
-
-.if defined(USE_SOCKS5) && ${USE_SOCKS5:U} == YES
-FLAVOR=	socks5
-.endif
-.if ${FLAVOR:L} == "socks5"
-BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a::security/socks5
-CONFIGURE_ARGS=	--with-socks5="${LOCALBASE}"
-.endif
 
 FAKE_FLAGS=	INSTALL="${INSTALL_PROGRAM}" INSTALL_DATA="${INSTALL_DATA}"
 

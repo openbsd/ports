@@ -1,6 +1,6 @@
---- configure.orig	Mon Jan 10 04:34:24 2000
-+++ configure	Sat Jan 29 23:56:58 2000
-@@ -8985,11 +8985,11 @@
+--- configure.orig	Tue Aug 29 03:14:44 2000
++++ configure	Fri Sep 15 19:30:53 2000
+@@ -8987,11 +8987,11 @@
  MV="mv"
  
  INSTALL_IRC=\${bindir}/\$\(_VERSION_\)
@@ -10,15 +10,18 @@
  TRANSLATION_PATH=\$\(IRCLIB\)/translation
  HELPDIR=\$\(IRCLIB\)/help
 -INSTALL_WSERV=\$\(IRCLIB\)/wserv
-+INSTALL_WSERV=\$\(libexecdir\)/wserv-bitchx
++INSTALL_WSERV=\${libexecdir}/wserv-bitchx
  INSTALL_SCRBX=\${bindir}/scr-bx
  INSTALL_SCRIPT=\$\(IRCLIB\)/script
  
-@@ -9458,27 +9458,3 @@
- 
- 
- 
--echo $_VERSION_ \(C\) 1996-1999 Colten Edwards
+@@ -9467,30 +9467,3 @@
+ chmod +x $CONFIG_STATUS
+ rm -fr confdefs* $ac_clean_files
+ test "$no_create" = yes || $SHELL $CONFIG_STATUS || exit 1
+-
+-
+-
+-echo $_VERSION_ \(C\) 1996-2000 Colten Edwards
 -echo ---------------------------------------------------------- 
 -echo
 -echo The configuration script has finished. You should look through and make any
