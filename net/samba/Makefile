@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2000/03/23 07:56:32 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2000/03/23 08:00:40 brad Exp $
 
 DISTNAME=	samba-2.0.6
 CATEGORIES=	net
@@ -85,11 +85,9 @@ post-install:
 	@for i in ${WRKSRC}/../docs/textdocs/* ; do \
 	 ${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba/textdocs ;\
 	done
-	@if [ ! -f ${SAMPLE_CONFIG} ]; then \
-	 sed -e 's:/usr/spool/samba/:${SAMBA_SPOOL}:g' \
+	@sed -e 's:/usr/spool/samba/:${SAMBA_SPOOL}:g' \
 	 -e 's:/usr/local/samba/var/log:${SAMBA_LOGDIR}/smbd:g' \
-	 ${WRKSRC}/../examples/smb.conf.default > ${SAMPLE_CONFIG} ; \
-	fi
+	 ${WRKSRC}/../examples/smb.conf.default > ${SAMPLE_CONFIG}
 	${INSTALL_SCRIPT} ${WRKSRC}/script/mksmbpasswd.sh ${PREFIX}/bin
 	@chown root.bin ${PREFIX}/bin/smbpasswd
 	@chmod 111 ${PREFIX}/bin/smbpasswd
