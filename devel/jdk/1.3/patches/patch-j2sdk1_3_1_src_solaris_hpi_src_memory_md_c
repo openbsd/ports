@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_src_memory_md_c,v 1.1.1.1 2004/01/29 22:02:20 pvalchev Exp $
+--- j2sdk1.3.1/src/solaris/hpi/src/memory_md.c.orig	2004-01-03 22:05:00.000000000 -0500
++++ j2sdk1.3.1/src/solaris/hpi/src/memory_md.c	2004-01-03 22:07:55.000000000 -0500
+@@ -157,7 +157,7 @@ mapChunk(long length)
+                          MAP_NORESERVE | MAP_PRIVATE | MAP_ANONYMOUS,
+                          -1, (off_t) 0);
+ #else
+-    ret = (char *) mmap(0, length, PROT_ALL, MAP_NORESERVE|MAP_PRIVATE,
++    ret = (char *) mmap(0, length, PROT_READ|PROT_WRITE, MAP_NORESERVE|MAP_PRIVATE,
+ 		   devZeroFD, (off_t) 0);
+ #endif
+     return (ret == MAP_FAILED ? 0 : ret);

@@ -1,0 +1,43 @@
+$OpenBSD: patch-j2sdk1_3_1_make_tools_sanityck,v 1.1.1.1 2004/01/29 22:02:20 pvalchev Exp $
+--- j2sdk1.3.1/make/tools/sanityck.orig	2004-01-18 00:18:29.000000000 -0500
++++ j2sdk1.3.1/make/tools/sanityck	2004-01-18 00:35:46.000000000 -0500
+@@ -39,7 +39,11 @@ else
+   else 
+     if [ "$uname" = FreeBSD -o "$uname" = NetBSD -o "$uname" = OpenBSD -o "$uname" = BSD/OS ]; then
+       PLATFORM=bsd
+-      FREE_MIN=750000
++      if [ "$uname" = OpenBSD ]; then
++        FREE_MIN=840000
++      else
++        FREE_MIN=750000
++      fi
+     else
+       PLATFORM=win32
+       EXE=.exe
+@@ -417,12 +421,20 @@ if [ -x $j ]; then 
+     1.3|1.3.[0-9]*)
+        ;;		   
+     *)
+-    echo "ERROR: Your BOOTDIR environment variable does not point"
+-    echo "       to a valid Java 2 SDK for bootstrapping this build."
+-    echo "       A Java 2 SDK 1.3.1 build must be bootstrapped against any "
+-    echo "       1.3 build. Please update your ALT_BOOTDIR setting, or "
+-    echo "       just unset it, and start your build again."
+-    echo ""
++    if [ $TRUE_PLATFORM = OpenBSD -a $EMUL_CHECK = yes -a x`sysctl -n kern.emul.linux` = x0 ]; then
++      echo "ERROR: linux emulation is not enabled"
++      echo "       To enable it execute the following command as root:"
++      echo ""
++      echo "       sysctl -w kern.emul.linux=1"
++      echo ""
++    else
++      echo "ERROR: Your BOOTDIR environment variable does not point"
++      echo "       to a valid Java 2 SDK for bootstrapping this build."
++      echo "       A Java 2 SDK 1.3.1 build must be bootstrapped against any "
++      echo "       1.3 build. Please update your ALT_BOOTDIR setting, or "
++      echo "       just unset it, and start your build again."
++      echo ""
++    fi
+     ERROR=yes
+        ;;
+   esac

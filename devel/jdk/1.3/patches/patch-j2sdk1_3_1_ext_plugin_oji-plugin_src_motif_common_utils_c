@@ -1,0 +1,85 @@
+$OpenBSD: patch-j2sdk1_3_1_ext_plugin_oji-plugin_src_motif_common_utils_c,v 1.1.1.1 2004/01/29 22:02:20 pvalchev Exp $
+--- j2sdk1.3.1/ext/plugin/oji-plugin/src/motif/common/utils.c.orig	2004-01-08 17:18:45.000000000 -0500
++++ j2sdk1.3.1/ext/plugin/oji-plugin/src/motif/common/utils.c	2004-01-08 17:01:30.000000000 -0500
+@@ -23,6 +23,11 @@
+ #include "plugin_defs.h"
+ #include "pluginversion.h"
+ 
++#if defined(__OpenBSD__)
++#include <nlist.h>
++#include <link.h>
++#endif
++
+ int tracing = 0;
+ 
+ static int init_utils_called = 0;
+@@ -295,6 +300,69 @@ int s_pipe(int fds[2]) {
+ #endif
+ #endif
+ 
++#if defined(__OpenBSD__)
++char *
++dlfname(const void *addr)
++{
++#ifdef __ELF__
++    int tag;
++    Elf_Dyn *dp;
++    struct link_map *lm;
++    Elf_Ehdr *ehdr;
++    Elf_Phdr *phdr;
++    char *s;
++    int i;
++
++    lm = NULL;
++
++    for (dp = _DYNAMIC; (tag = dp->d_tag) != 0; dp++) {
++        if (tag == DT_DEBUG) {
++            lm = ((struct r_debug *)(dp->d_un.d_ptr))->r_map;
++        }
++    }
++
++    for (; lm != NULL; lm = lm->l_next) {
++        ehdr = (Elf_Ehdr *)lm->l_addr;
++        if (ehdr == NULL)
++                continue;
++
++        phdr = (Elf_Phdr *)((char *)lm->l_addr + ehdr->e_phoff);
++
++        for (i = 0; i < ehdr->e_phnum; i++) {
++                switch (phdr[i].p_type) {
++                case PT_LOAD:
++                        s = (char *)phdr[i].p_vaddr + (int)lm->l_addr;
++                        if (addr >= s && addr < s + phdr[i].p_memsz)
++                                return (char *)lm->l_name;
++                        break;
++                default:
++                        break;
++                }
++        }
++    }
++
++    return NULL;
++#else
++    struct so_map *so_map;
++
++    so_map = (struct so_map *)dlopen(0, RTLD_LAZY);
++    for (; so_map; so_map = so_map->som_next) {
++        if (addr >= (void *) so_map->som_addr
++            && (so_map->som_next == 0
++                || addr < (void *) so_map->som_next->som_addr)) {
++            break;
++        }
++    }
++    return so_map ? so_map->som_path : NULL;
++#endif
++}
++
++int
++dladdr(const void *addr, Dl_info *info)
++{
++    return((info->dli_fname = dlfname(addr)) ? 1 : 0);
++}
++#endif
+ 
+ 
+ 

@@ -1,0 +1,9 @@
+Java (TM) 2 Runtime Environment, Standard Edition
+Version 1.3.1
+
+The Java(TM) 2 Runtime Environment contains the Java virtual machine,
+runtime class libraries, and Java application launcher that are
+necessary to run programs written in the Java programming language.
+It is not a development environment and does not contain development
+tools such as compilers and debuggers.  For development tools, use
+the Java 2 SDK, Standard Edition. 

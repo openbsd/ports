@@ -1,0 +1,15 @@
+$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_src_iomgr_c,v 1.1.1.1 2004/01/29 22:02:20 pvalchev Exp $
+--- j2sdk1.3.1/src/solaris/hpi/green_threads/src/iomgr.c.orig	2003-12-20 19:52:06.000000000 -0500
++++ j2sdk1.3.1/src/solaris/hpi/green_threads/src/iomgr.c	2003-12-20 19:53:04.000000000 -0500
+@@ -1830,10 +1830,8 @@ putmsg(int fd, const struct strbuf *ctlp
+ int
+ #if defined(__FreeBSD__)
+ poll(struct pollfd *fds, unsigned int nfds, int timeout)
+-#elif defined(__NetBSD__)
++#elif defined(__NetBSD__) || defined(__OpenBSD__)
+ poll(struct pollfd *fds, nfds_t nfds, int timeout)
+-#elif defined(__OpenBSD__)
+-poll(struct pollfd *fds, int nfds, int timeout)
+ #else
+ poll(struct pollfd *fds, unsigned long nfds, int timeout)
+ #endif

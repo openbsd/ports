@@ -1,0 +1,14 @@
++---------------
+| To use the Java plugin with Mozilla or Mozilla-firebird you must create
+| a symbolic link from
+|
+| ${PREFIX}/${JDKHOME}/jre/plugin/i386/ns600/libjavaplugin_oji.so
+|
+| to your Mozilla plugins directory, which is usually found at
+|
+| ${PREFIX}/mozilla/plugins/
+|
+| or to your Mozilla-firebird plugins directory, which is usually found at
+|
+| ${PREFIX}/mozilla-firebird/plugins/
++---------------
