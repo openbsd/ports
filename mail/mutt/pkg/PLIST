@@ -1,8 +1,6 @@
 bin/mutt
 man/man1/mutt.1
 man/man1/mutt_dotlock.1
-etc/Muttrc
-etc/mime.types
 share/doc/mutt/manual.txt
 share/doc/mutt/PGP-Notes.txt
 share/doc/mutt/applying-patches.txt
@@ -184,7 +182,8 @@ share/mutt/charsets/t-61-8bit
 share/mutt/charsets/videotex-suppl
 share/mutt/charsets/charsets.alias.dist
 share/mutt/charsets/charsets.alias
+share/mutt/Muttrc
+share/mutt/mime.types
 @dirrm share/mutt/charsets
 @dirrm share/mutt
 @dirrm share/doc/mutt
-@dirrm etc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1999/03/29 19:47:46 turan Exp $
+# $OpenBSD: Makefile,v 1.13 1999/04/02 00:37:50 turan Exp $
 
 DISTNAME=		mutt-0.95.4i
 CATEGORIES=     	mail
@@ -15,7 +15,7 @@ MASTER_SITES=		ftp://ftp.guug.de/pub/mutt/ \
 			ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/ 
 
 GNU_CONFIGURE=		yes
-SYSCONFDIR=		${PREFIX}/etc
+SYSCONFDIR=		${PREFIX}/share/mutt
 CONFIGURE_ARGS=		--prefix=/usr/local \
 			--with-slang=/usr/local \
 			--with-docdir=/usr/local/share/doc/mutt \
@@ -27,8 +27,8 @@ LIB_DEPENDS=    slang.1.22:${PORTSDIR}/devel/libslang
 pre-fetch:
 	@${ECHO}
 	@${ECHO} '**********************************************************'
-	@${ECHO} '* This software contains cryptography enabling code.  It *'
-	@${ECHO} '* is illegal to export outside of the United States.     *'
+	@${ECHO} '* This software contains cryptographic enabling code.    *'
+	@${ECHO} '* It is illegal to export outside of the United States.  *'
 	@${ECHO} '**********************************************************'
 	@${ECHO}
 .endif
@@ -37,9 +37,8 @@ post-install:
 	strip ${PREFIX}/bin/mutt
 	@${ECHO} 
 	@${ECHO} '************************************************************'
-	@${ECHO} '* Remember to create or update Muttrc and mime.types       *'
-	@${ECHO} '* from the Muttrc.sample and mime.types.sample files which *'
-	@${ECHO} '* have been copied into the /usr/local/etc/ directory.     *'
+	@${ECHO} '* A sample muttrc and mime.types is available at           *'
+	@${ECHO} '* /usr/local/share/mutt/{Muttrc,mime.types}                *'
 	@${ECHO} '************************************************************'
 	@${ECHO}
 
