@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/03/02 04:41:10 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1999/03/15 02:48:16 espie Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 #
 
@@ -8,6 +8,7 @@ CATEGORIES=	x11 tk80
 
 NEED_VERSION=	1.73
 
+SEPARATE_BUILD=concurrent
 MAINTAINER=	niklas@openbsd.org
 
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
@@ -23,6 +24,6 @@ post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
 
 test:
-	cd ${WRKSRC}; make test
+	cd ${WRKBUILD}; make test
 
 .include <bsd.port.mk>

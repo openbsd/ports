@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1999/03/02 04:41:08 marc Exp $
+# $OpenBSD: Makefile,v 1.11 1999/03/15 02:45:58 espie Exp $
 # $FreeBSD: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
 #
 
@@ -12,6 +12,7 @@ MAINTAINER=	niklas@openbsd.org
 
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
+SEPARATE_BUILD=concurrent
 WRKSRC=		${WRKDIR}/tcl8.0.4/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}

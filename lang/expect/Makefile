@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1999/03/14 03:15:50 marc Exp $
+# $OpenBSD: Makefile,v 1.12 1999/03/15 02:44:29 espie Exp $
 #
 
 DISTNAME=	expect
@@ -13,6 +13,7 @@ MASTER_SITES=	http://expect.nist.gov/
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11/tk80
 
+SEPARATE_BUILD=concurrent
 WRKSRC=		${WRKDIR}/expect-5.28
 
 GNU_CONFIGURE=	yes
@@ -23,7 +24,7 @@ CONFIGURE_ARGS= --with-tclconfig=${PREFIX}/lib/tcl8.0 \
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 
 test:
-	@(cd ${WRKSRC}; make test)
+	@(cd ${WRKBUILD}; make test)
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/03/02 04:41:05 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1999/03/15 02:47:14 espie Exp $
 #
 
 DISTNAME=		guile-1.3
@@ -10,6 +10,8 @@ MAINTAINER=             rohee@OpenBSD.ORG
 
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	guile
+# Documentation expects to be able to make copies
+SEPARATE_BUILD=simple
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
