@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/04/12 07:58:35 obecian Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/05 23:29:03 obecian Exp $
 
 COMMENT=	"multi-purpose sniffer/interceptor/logger"
 
-VER=	0.4.0
+VER=	0.4.2
 DISTNAME=	ettercap-${VER}
 CATEGORIES=	net
 NEED_VERSION=	1.364
