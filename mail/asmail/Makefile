@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 1999/10/29 10:47:52 turan Exp $
+# $OpenBSD: Makefile,v 1.5 1999/10/30 22:10:33 angelos Exp $
 
-BROKEN=		bad packing lists
+BROKEN=		waiting for turans@ to verify
 
 DISTNAME=	asmail-0.50
 CATEGORIES=	mail x11
 MASTER_SITES=	ftp://afterstep.foo.net/pub/AfterStep/apps/asmail/ \
 		ftp://ftp.cs.tu-berlin.de/pub/X/afterstep/apps/asmail/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 USE_IMAKE=	yes
 

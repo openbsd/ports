@@ -1,5 +1,4 @@
 bin/asmail
-man/man1/asmail.1
 share/doc/asmail/sample.asmailrc
 include/X11/pixmaps/e-no.xpm
 include/X11/pixmaps/e0.xpm
