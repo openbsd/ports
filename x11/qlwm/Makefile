@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/10/08 17:13:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2003/11/18 20:53:11 sturm Exp $
 
 COMMENT=	"qt-based window manager"
 
@@ -21,7 +21,9 @@ DOCDIR=${PREFIX}/share/doc/qlwm
 
 USE_X11=	Yes
 
-MODULES=	qt2
+MODULES=	qt2 gcc3
+MODGCC3_ARCHES=	sparc64
+MODGCC3_LANGS=	c++
 
 MAKE_FLAGS=INCPATH='-I${X11BASE}/include -I${MODQT_INCDIR}' \
 	LFLAGS='-L${X11BASE}/lib -L${MODQT_LIBDIR} -L${LOCALBASE}/lib' \
