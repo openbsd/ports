@@ -1,5 +1,5 @@
 --- gcc/configure.in.orig	Thu Jan 28 09:46:10 1999
-+++ gcc/configure.in	Sun Feb  7 11:57:50 1999
++++ gcc/configure.in	Mon Feb  8 18:42:09 1999
 @@ -502,11 +502,21 @@
  	tm_file=${cpu_type}/${cpu_type}.h
  	xm_file=${cpu_type}/xm-${cpu_type}.h
@@ -86,7 +86,17 @@
  	m68k-*-sysv3*)			# Motorola m68k's running system V.3
  		xm_file="xm-alloca.h ${xm_file}"
  		xm_defines=USG
-@@ -2306,6 +2337,14 @@
+@@ -2098,6 +2129,9 @@
+ 			tmake_file=m88k/t-luna
+ 		fi
+ 		;;
++	m88k-*-openbsd*)
++		tmake_file="${tmake_file} m88k/t-luna-gas"
++		;;
+ 	m88k-*-sysv3*)
+ 		tm_file=m88k/sysv3.h
+ 		extra_parts="crtbegin.o crtend.o"
+@@ -2306,6 +2340,14 @@
  		gas=yes
  		fixincludes=Makefile.in 
  		;;
@@ -101,7 +111,7 @@
  	mips-sony-bsd* | mips-sony-newsos*)	# Sony NEWS 3600 or risc/news.
  		tm_file="mips/news4.h ${tm_file}"
  		if test x$stabs = xyes; then
-@@ -2656,6 +2695,9 @@
+@@ -2656,6 +2698,9 @@
                  ;;
          pdp11-*-*)
  		;;
@@ -111,7 +121,7 @@
  	pyramid-*-*)
  		cpu_type=pyr
  		xmake_file=pyr/x-pyr
-@@ -2668,6 +2710,13 @@
+@@ -2668,6 +2713,13 @@
  		xmake_file=romp/x-mach
  		use_collect2=yes
  		;;
@@ -125,7 +135,7 @@
  	powerpc-*-beos*)
  		cpu_type=rs6000
  		tm_file=rs6000/beos.h
-@@ -2962,6 +3011,10 @@
+@@ -2962,6 +3014,10 @@
  		fixincludes=fixinc.wrap
  		tmake_file=t-netbsd
  		;;
@@ -136,7 +146,7 @@
  	sparc-*-bsd*)
  		tm_file=sparc/bsd.h
  		;;
-@@ -3189,6 +3242,9 @@
+@@ -3189,6 +3245,9 @@
  		fixincludes=fixinc.wrap
  		tmake_file=t-netbsd
  		float_format=vax
