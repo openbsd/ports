@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.38 2003/01/12 06:47:30 jcs Exp $
+# $OpenBSD: Makefile,v 1.39 2003/04/09 16:39:46 brad Exp $
 
-DISTNAME=	gaim-0.59.8
+DISTNAME=	gaim-0.61
 CATEGORIES=	net
 
 # GPL
@@ -15,23 +15,29 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gaim/}
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
-USE_X11=	Yes
-LIB_DEPENDS=	gtk.1.2,glib.1.2::x11/gtk+ \
-		gdk_pixbuf.2::graphics/gdk-pixbuf
-RUN_DEPENDS=	::textproc/ispell
+MODULES=	iconv gettext
 
+LIB_DEPENDS+=	glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2 \
+		atk-1.0.0.0::devel/atk \
+		pango-1.0.0.0,pangox-1.0.0.0,pangoxft-1.0.0.0::devel/pango \
+		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
+
+USE_X11=	Yes
+USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} --disable-gnome --disable-artsc
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} --disable-gtkspell --disable-nas
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-FLAVORS=	esd
+FLAVORS=	audio
 FLAVOR?=	
 
-.if ${FLAVOR:L:Mesd}
-LIB_DEPENDS+=	esd.2::audio/esound
+.if ${FLAVOR:L:Maudio}
+LIB_DEPENDS+=	audiofile::devel/libaudiofile \
+		ao.3::audio/libao
 .else
-CONFIGURE_ARGS+= --disable-esd
+CONFIGURE_ARGS+= --disable-audio
 .endif
 
 .include <bsd.port.mk>

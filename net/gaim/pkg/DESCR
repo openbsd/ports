@@ -5,4 +5,7 @@ familiar to anyone who has used AOL's AIM client before.  It also
 has multiple protocol support for such things as ICQ, IRC, Yahoo!,
 MSN Messenger, Jabber, and Napster.
 
+Flavors:
+	audio - Build with audio support
+
 WWW: ${HOMEPAGE}
