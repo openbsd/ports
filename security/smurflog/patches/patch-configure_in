@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_in,v 1.1 2001/03/16 16:39:31 todd Exp $
+--- configure.in.orig	Fri Mar 16 09:59:35 2001
++++ configure.in	Fri Mar 16 09:59:45 2001
+@@ -12,11 +12,6 @@ AC_C_CONST
+ AC_C_INLINE
+ AC_CHECK_PROG(STRIP,strip,strip)
+ 
+-CFLAGS="-Wall -O"
+-if test "x$CC" = "xgcc"; then
+-   CFLAGS="-Wall -O6 -fno-strength-reduce"
+-fi
+-
+ dnl Checks for libraries.
+ AC_CHECK_LIB(pcap, pcap_open_live)
+ 
