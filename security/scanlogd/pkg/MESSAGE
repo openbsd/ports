@@ -1,8 +1,0 @@
-scanlogd requires a separate user and group named '_scanlogd' to
-run. You will need to create these manually. For example:
-
-groupadd -g 514 _scanlogd
-useradd -c SCANLOGD -d /nonexistent -g _scanlogd -s /sbin/nologin \
-	-u 514 _scanlogd
-
-The scanlogd program will automatically switch to this user upon startup.
