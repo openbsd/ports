@@ -1,0 +1,47 @@
+$OpenBSD: patch-man_Makefile_in,v 1.1.1.1 2003/02/15 14:03:28 espie Exp $
+--- man/Makefile.in.orig	Sat Jul 14 19:41:42 2001
++++ man/Makefile.in	Wed Jul 18 17:09:22 2001
+@@ -67,7 +67,9 @@ PERL = @PERL@
+ PERLSCRIPTS = @PERLSCRIPTS@
+ VERSION = @VERSION@
+ 
+-man_MANS = autoconf.1 autoreconf.1 autoheader.1 autoupdate.1 ifnames.1 autoscan.1 config.guess.1 config.sub.1
++man_MANS = $(srcdir)/autoconf.1 $(srcdir)/autoreconf.1 \
++$(srcdir)/autoheader.1 $(srcdir)/autoupdate.1 $(srcdir)/ifnames.1 \
++$(srcdir)/autoscan.1 $(srcdir)/config.guess.1 $(srcdir)/config.sub.1
+ 
+ 
+ man_aux = autoconf.x autoreconf.x autoheader.x autoupdate.x ifnames.x autoscan.x config.guess.x config.sub.x
+@@ -117,6 +119,7 @@ install-man1:
+ 	  else file=$$i; fi; \
+ 	  ext=`echo $$i | sed -e 's/^.*\\.//'`; \
+ 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
++	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
+ 	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
+ 	  echo " $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst"; \
+ 	  $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst; \
+@@ -223,16 +226,16 @@ install-am install uninstall-am uninstal
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-autoconf.1:   $(common_dep) $(srcdir)/autoconf.x   $(top_srcdir)/autoconf.in
+-autoreconf.1: $(common_dep) $(srcdir)/autoreconf.x $(top_srcdir)/autoreconf.in
+-autoheader.1: $(common_dep) $(srcdir)/autoheader.x $(top_srcdir)/autoheader.in
+-autoupdate.1: $(common_dep) $(srcdir)/autoupdate.x $(top_srcdir)/autoupdate.in
+-ifnames.1:    $(common_dep) $(srcdir)/ifnames.x    $(top_srcdir)/ifnames.in
+-autoscan.1:   $(common_dep) $(srcdir)/autoscan.x   $(top_srcdir)/autoscan.in
++#autoconf.1:   $(common_dep) $(srcdir)/autoconf.x   $(top_srcdir)/autoconf.in
++#autoreconf.1: $(common_dep) $(srcdir)/autoreconf.x $(top_srcdir)/autoreconf.in
++#autoheader.1: $(common_dep) $(srcdir)/autoheader.x $(top_srcdir)/autoheader.in
++#autoupdate.1: $(common_dep) $(srcdir)/autoupdate.x $(top_srcdir)/autoupdate.in
++#ifnames.1:    $(common_dep) $(srcdir)/ifnames.x    $(top_srcdir)/ifnames.in
++#autoscan.1:   $(common_dep) $(srcdir)/autoscan.x   $(top_srcdir)/autoscan.in
+ 
+ # Independent from this package.
+-config.guess.1: $(srcdir)/config.guess.x  $(top_srcdir)/config/config.guess
+-config.sub.1:   $(srcdir)/config.sub.x    $(top_srcdir)/config/config.sub
++#config.guess.1: $(srcdir)/config.guess.x  $(top_srcdir)/config/config.guess
++#config.sub.1:   $(srcdir)/config.sub.x    $(top_srcdir)/config/config.sub
+ 
+ .x.1:
+ 	test -f $(top_builddir)/$* && prog=$(top_builddir)/$*; \

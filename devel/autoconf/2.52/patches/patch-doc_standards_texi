@@ -1,0 +1,11 @@
+$OpenBSD: patch-doc_standards_texi,v 1.1.1.1 2003/02/15 14:03:28 espie Exp $
+--- doc/standards.texi.orig	Sun Jul  8 13:34:00 2001
++++ doc/standards.texi	Sun Jul  8 13:34:07 2001
+@@ -4,6 +4,7 @@
+ @settitle GNU Coding Standards
+ @c This date is automagically updated when you save this file:
+ @set lastupdate March 23, 2001
++@dircategory Programming & development tools
+ @c %**end of header
+ 
+ @ifinfo

@@ -1,0 +1,38 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/15 14:03:28 espie Exp $
+@option no-default-conflict
+@unexec install-info --delete --info-dir=%D/info %D/info/autoconf${SUFFIX}.info
+bin/autoconf${SUFFIX}
+bin/autoheader${SUFFIX}
+bin/autoreconf${SUFFIX}
+bin/autoscan${SUFFIX}
+bin/autoupdate${SUFFIX}
+bin/ifnames${SUFFIX}
+info/autoconf${SUFFIX}.info
+man/man1/autoconf${SUFFIX}.1
+man/man1/autoheader${SUFFIX}.1
+man/man1/autoreconf${SUFFIX}.1
+man/man1/autoscan${SUFFIX}.1
+man/man1/autoupdate${SUFFIX}.1
+man/man1/config.guess${SUFFIX}.1
+man/man1/config.sub${SUFFIX}.1
+man/man1/ifnames${SUFFIX}.1
+share/autoconf${SUFFIX}/INSTALL
+share/autoconf${SUFFIX}/acfunctions
+share/autoconf${SUFFIX}/acfunctions.m4
+share/autoconf${SUFFIX}/acgeneral.m4
+share/autoconf${SUFFIX}/acheaders
+share/autoconf${SUFFIX}/acheaders.m4
+share/autoconf${SUFFIX}/acidentifiers
+share/autoconf${SUFFIX}/aclang.m4
+share/autoconf${SUFFIX}/aclibraries
+share/autoconf${SUFFIX}/acmakevars
+share/autoconf${SUFFIX}/acoldnames.m4
+share/autoconf${SUFFIX}/acprograms
+share/autoconf${SUFFIX}/acspecific.m4
+share/autoconf${SUFFIX}/actypes.m4
+share/autoconf${SUFFIX}/acversion.m4
+share/autoconf${SUFFIX}/autoconf.m4
+share/autoconf${SUFFIX}/m4sh.m4
+share/autoconf${SUFFIX}/m4sugar.m4
+@dirrm share/autoconf${SUFFIX}
+@exec install-info --info-dir=%D/info %D/info/autoconf${SUFFIX}.info

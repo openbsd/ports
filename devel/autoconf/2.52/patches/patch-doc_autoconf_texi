@@ -1,0 +1,41 @@
+$OpenBSD: patch-doc_autoconf_texi,v 1.1.1.1 2003/02/15 14:03:28 espie Exp $
+--- doc/autoconf.texi.orig	Tue Jul 17 18:34:55 2001
++++ doc/autoconf.texi	Wed Mar 13 20:42:48 2002
+@@ -2,6 +2,7 @@
+ @c %**start of header
+ @setfilename autoconf.info
+ @settitle Autoconf
++@dircategory Programming & development tools
+ 
+ @finalout
+ @setchapternewpage odd
+@@ -29,22 +30,22 @@
+ 
+ @dircategory GNU admin
+ @direntry
+-* Autoconf: (autoconf).         Create source code configuration scripts
++* Autoconf-new: (autoconf-new).         Create source code configuration scripts
+ @end direntry
+ 
+ @dircategory Individual utilities
+ @direntry
+-* autoscan: (autoconf)autoscan Invocation.
++* autoscan: (autoconf-new)autoscan Invocation.
+                                 Semi-automatic @file{configure.ac} writing
+-* ifnames: (autoconf)ifnames Invocation.
++* ifnames: (autoconf-new)ifnames Invocation.
+                                 Listing the conditionals in source code
+-* autoconf: (autoconf)autoconf Invocation.
++* autoconf: (autoconf-new)autoconf Invocation.
+                                 How to create configuration scripts
+-* autoreconf: (autoconf)autoreconf Invocation.
++* autoreconf: (autoconf-new)autoreconf Invocation.
+                                 Remaking multiple @code{configure} scripts
+-* configure: (autoconf)configure Invocation.
++* configure: (autoconf-new)configure Invocation.
+                                 Configuring a package
+-* config.status: (autoconf)config.status Invocation.
++* config.status: (autoconf-new)config.status Invocation.
+                                 Recreating a configuration
+ @end direntry
+ 
