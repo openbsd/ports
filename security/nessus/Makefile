@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2002/07/04 15:37:03 reinhard Exp $
+# $OpenBSD: Makefile,v 1.29 2002/08/22 18:02:34 pvalchev Exp $
 
 COMMENT=	"network security scanner"
 
@@ -42,6 +42,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=	Yes
+
+LIB_DEPENDS=	net::net/libnet
 
 FLAVORS=no_x11
 FLAVOR?=
