@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/08/27 15:41:30 todd Exp $
+# $OpenBSD: Makefile,v 1.19 2002/09/12 14:18:56 todd Exp $
 # $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
 
 COMMENT=	"garbage collection and memory leak detection for C and C++"
@@ -11,7 +11,7 @@ MASTER_SITES=	${HOMEPAGE}gc_source/
 
 HOMEPAGE=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/
 
-MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
+MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
