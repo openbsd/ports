@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2001/08/04 05:03:19 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2001/12/31 09:41:46 espie Exp $
 # $FreeBSD: Makefile,v 1.8 1999/03/09 01:08:46 nectar Exp $
 
 COMMENT=	"sound library for Enlightenment"
 
 DISTNAME=	esound-0.2.22
 CATEGORIES=	audio
-NEED_VERSION=	1.413
+NEED_VERSION=	1.504
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/esound
 
@@ -21,7 +21,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+AUTOCONF_NEW=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --with-libwrap
 
