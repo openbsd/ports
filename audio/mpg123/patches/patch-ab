@@ -1,5 +1,5 @@
---- audio.h.orig	Fri Mar  5 09:17:25 1999
-+++ audio.h	Fri Mar  5 09:18:01 1999
+--- audio.h.orig	Mon Jan 11 17:21:38 1999
++++ audio.h	Tue Mar 23 01:58:01 1999
 @@ -24,7 +24,7 @@
  #define AUDIO_RATE_TOLERANCE	  3
  
