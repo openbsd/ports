@@ -1,5 +1,14 @@
-This port is used for people who need egcs, the experimental gcc compiler
-developped by cygnus.  egcs fixes lots of bugs compared to gcc 2.8.1.
-In exchange, it adds some new ones.  It's pretty useful for C++ development.
+egcs is an experimental spin-off of gcc that started when people got 
+fed up waiting for gcc 2.8. As the C++ standard finally emerged,
+egcs people strove trying to implement as much of it as possible.
+Accordingly, egcs C++ compiler is more suitable for C++ development as
+gnu gcc.  Its library approaches the standard, template support is almost
+complete, namespace support is coming in, it also includes a newer
+scheduler (haifa) that gives improved results on HPRisc and Alpha
+architecture.  Hopefully, most features of egcs will migrate to 
+gcc over time...
 
-For more details, refer to to http://egcs.cygnus.org/
+I still have to port over and check the g77, objective-C and java
+front-end. egcs' g77 is more advanced and integrated than GNU-cc g++.
+
+See http://egcs.cygnus.com for more details.

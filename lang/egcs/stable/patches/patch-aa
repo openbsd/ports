@@ -1,11 +1,12 @@
 --- gcc/configure.in.orig	Fri Aug 28 02:19:04 1998
-+++ gcc/configure.in	Sat Sep 26 02:40:34 1998
-@@ -868,6 +868,12 @@
++++ gcc/configure.in	Fri Oct  2 15:17:19 1998
+@@ -868,6 +868,13 @@
  		fixincludes=fixinc.wrap
  		tmake_file=t-netbsd
  		;;
 +	i[[34567]]86-*-openbsd*)
 +		tm_file=i386/openbsd.h
++		xm_file="xm-openbsd.h ${xm_file}"
 +		# On OpenBSD, the headers are already okay, except for math.h.
 +		fixincludes=fixinc.wrap
 +		tmake_file=t-openbsd
@@ -13,3 +14,18 @@
  	i[[34567]]86-*-coff*)
  		tm_file=i386/i386-coff.h
  		tmake_file=i386/t-i386bare
+@@ -1634,6 +1641,14 @@
+ 		# On NetBSD, the headers are already okay, except for math.h.
+ 		fixincludes=fixinc.wrap
+ 		tmake_file=t-netbsd
++		float_format=m68k
++		;;
++	m68k*-*-openbsd*)
++		tm_file=m68k/openbsd.h
++		xm_file="xm-openbsd.h ${xm_file}"
++		# On OpenBSD, the headers are already okay, except for math.h.
++		fixincludes=fixinc.wrap
++		tmake_file=t-openbsd
+ 		float_format=m68k
+ 		;;
+ 	m68k-*-sysv3*)			# Motorola m68k's running system V.3

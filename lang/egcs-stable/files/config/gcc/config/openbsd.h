@@ -1,18 +1,20 @@
+/*	$OpenBSD: openbsd.h,v 1.1 1998/10/02 18:51:25 espie Exp $	*/
+
 /* OPENBSD_NATIVE is defined when gcc is integrated into the OpenBSD
    source tree so it can be configured appropriately when using the
-	'wrapper' makefile with the GNU configure/build mechanism. The
-	'wrapper' method and use of OPENBSD_NATIVE is NOT recommended
-	while building cross-compilers. */
+   'wrapper' makefile with the GNU configure/build mechanism. The
+   'wrapper' method and use of OPENBSD_NATIVE is NOT recommended
+   while building cross-compilers. */
 
 #ifdef OPENBSD_NATIVE
-
-/* Look for the include files in the system-defined places.  */
 
 #undef GPLUSPLUS_INCLUDE_DIR
 #define GPLUSPLUS_INCLUDE_DIR "/usr/include/g++"
 
 #undef GCC_INCLUDE_DIR
 #define GCC_INCLUDE_DIR "/usr/include"
+
+/* Look for the include files in the system-defined places.  */
 
 #undef INCLUDE_DEFAULTS
 #define INCLUDE_DEFAULTS			\
@@ -30,8 +32,8 @@
 
 #endif
 
-/* we want gcc.c to call mktemp for each file it generates. We would 
-   prefer mkstemp() but we will take what we get. XXX busted */
+/* We want gcc.c to call mktemp() for each file it generates. We would
+   prefer mkstemp(), but we will take what we get. XXX busted */
 #undef MKTEMP_EACH_FILE
 
 /* Provide a CPP_SPEC appropriate for OpenBSD.  Current we just deal with
@@ -83,7 +85,7 @@
  */
 
 /* Define the strings used for the .type, .size, and .set directives.
-   These strings generally do not vary from one system running OpenBSD
+   These strings generally do not vary from one system running openbsd
    to another, but if a given system needs to use different pseudo-op
    names for these, they may be overridden in the file which includes
    this one.  */
