@@ -1,6 +1,6 @@
---- src/configure.in.orig	Tue Jun 25 05:20:59 2002
-+++ src/configure.in	Tue Jun 25 05:22:20 2002
-@@ -16,7 +16,7 @@
+--- src/configure.in.orig	Thu May 23 10:11:18 2002
++++ src/configure.in	Wed Jul 17 05:17:37 2002
+@@ -16,7 +16,7 @@ dnl See also: remarks supplied in the de
  AC_INIT(init.asm)
  AC_CONFIG_HEADER(config.h)	
  dnl -- Where is our compiler, and who are we compiling for?
@@ -9,7 +9,7 @@
  AC_PROG_CC
  AC_PATH_PROG(NASMPATH,nasm,[AC_MSG_ERROR(nasm 0.98 is required)])
  NFLAGS="$NFLAGS -w-orphan-labels"
-@@ -145,31 +145,6 @@
+@@ -145,31 +145,6 @@ else
  	
  	CFLAGS="$CFLAGS -Os -ffast-math -fomit-frame-pointer -fschedule-insns2 -s"
  	ZSNESEXE="zsnes"

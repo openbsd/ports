@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2002/06/25 16:14:51 wcobb Exp $
+# $OpenBSD: Makefile,v 1.6 2002/07/17 21:29:06 wcobb Exp $
 
 ONLY_FOR_ARCHS=		i386
 
 COMMENT=		"Super Nintendo emulator for x86"
-VERSION=		1.35
+VERSION=		1.36
 DISTNAME=		zsnes-${VERSION}
 CATEGORIES=		emulators games
 HOMEPAGE=		http://www.zsnes.com/
@@ -32,7 +32,7 @@ CONFIGURE_ARGS=		--with-sdl-prefix=${LOCALBASE} \
 			--with-png \
 			--with-opengl \
 			--target=${MACHINE}-unknown-openbsd${OPSYS_VER}
-CONFIGURE_ENV+=		CFLAGS=${CFLAGS:N-O*} LDFLAGS="-lm"
+CONFIGURE_ENV+=		LDFLAGS="-lm" CFLAGS="${CFLAGS:N-O*}"
 ALL_TARGET=
 
 DOCS=			opengl.txt readme.txt srcinfo.txt todo.txt \
