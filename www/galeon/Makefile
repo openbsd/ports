@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/21 11:34:00 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2004/12/22 09:01:20 wilfried Exp $
 
 COMMENT=		"GNOME web browser based on gecko"
 
@@ -24,7 +24,7 @@ WANTLIB=		ICE IIOP ORBit ORBitCosNaming ORBitutil SM X11 Xext \
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=galeon/}
 
 MODULES=		devel/gettext gcc3
-MODGCC3_ARCHES=		alpha powerpc
+MODGCC3_ARCHES=		alpha
 MODGCC3_LANGS=		C++
 
 BUILD_DEPENDS=		:mozilla-${MOZ}:www/mozilla \

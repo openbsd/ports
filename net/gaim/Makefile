@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2004/12/16 00:31:21 alek Exp $
+# $OpenBSD: Makefile,v 1.71 2004/12/22 09:01:20 wilfried Exp $
 
 SHARED_ONLY=	Yes
 
@@ -65,9 +65,6 @@ INSTALL_STRIP=
 .endif
 
 .if ${FLAVOR:L:Mgtkspell}
-MODULES=	gcc3
-MODGCC3_ARCHES=	powerpc
-MODGCC3_LANGS=	C++
 LIB_DEPENDS+=	gtkspell::textproc/gtkspell
 WANTLIB+=	iconv intl aspell
 .else
