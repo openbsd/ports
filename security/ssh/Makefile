@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 1999/12/13 01:49:33 brad Exp $
+# $OpenBSD: Makefile,v 1.47 1999/12/13 03:04:54 brad Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
@@ -21,7 +21,7 @@ MAINTAINER=	todd@openbsd.org
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
 LIB_DEPENDS=	rsaref.2:${PORTSDIR}/security/rsaref
-CONFIGURE_ARGS+= --with-rsaref=${LOCALBASE}/lib
+CONFIGURE_ARGS+= --with-rsaref="${LOCALBASE}/lib"
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 .endif
 
