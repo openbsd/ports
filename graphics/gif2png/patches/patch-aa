@@ -1,0 +1,35 @@
+--- Makefile.in.orig	Sun Dec  5 15:18:15 1999
++++ Makefile.in	Sun Dec  5 16:58:15 1999
+@@ -168,7 +168,7 @@
+ 
+ install-binPROGRAMS: $(bin_PROGRAMS)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(bindir)
++	$(mkinstalldirs) $(DESTDIR)$(prefix)/libexec
+ 	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+ 	    echo "  $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
+@@ -210,18 +210,18 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(bindir)
+ 	@list='$(bin_SCRIPTS)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+-	    echo " $(INSTALL_SCRIPT) $$p $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`"; \
+-	    $(INSTALL_SCRIPT) $$p $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
++	    echo " $(INSTALL_SCRIPT) $$p $(DESTDIR)$(prefix)/libexec/`echo $$p.bin|sed '$(transform)'`"; \
++	    $(INSTALL_SCRIPT) $$p $(DESTDIR)$(prefix)/libexec/`echo $$p.bin|sed '$(transform)'`; \
+ 	  else if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`"; \
+-	    $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
++	    echo " $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)$(prefix)/libexec/`echo $$p.bin|sed '$(transform)'`"; \
++	    $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)$(prefix)/libexec/`echo $$p.bin|sed '$(transform)'`; \
+ 	  else :; fi; fi; \
+ 	done
+ 
+ uninstall-binSCRIPTS:
+ 	@$(NORMAL_UNINSTALL)
+ 	list='$(bin_SCRIPTS)'; for p in $$list; do \
+-	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
++	  rm -f $(DESTDIR)$(prefix)/libexec/`echo $$p.bin|sed '$(transform)'`; \
+ 	done
+ 
+ install-man1:

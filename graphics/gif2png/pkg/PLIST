@@ -1,2 +1,8 @@
 bin/gif2png
+bin/web2png
+libexec/web2png.bin
 man/man1/gif2png.1
+man/man1/web2png.1
+share/doc/gif2png/COPYING
+share/doc/gif2png/README
+@dirrm share/doc/gif2png
