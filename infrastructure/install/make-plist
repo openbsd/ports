@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.1 1999/07/29 13:51:51 espie Exp $
+# $OpenBSD: make-plist,v 1.2 1999/07/29 14:01:12 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -133,7 +133,7 @@ for my $d (keys %$mtree) {
 	undef $newdir{$d}
 }
 
-add_info('@unexec install-info', \%infodir);
+add_info('@unexec install-info --delete', \%infodir);
 
 for my $f (sort @files) {
 	print strip($f), "\n" unless ($f =~ m|/dir$|) && (defined $infodir{$`});
