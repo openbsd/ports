@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/04/09 19:56:10 naddy Exp $
-
-NOT_FOR_ARCHS=	sparc64
+# $OpenBSD: Makefile,v 1.5 2002/06/14 22:01:52 naddy Exp $
 
 COMMENT=	"lossy/lossless audio coder"
 
