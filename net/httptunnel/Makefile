@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/06/14 20:56:04 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 1999/09/23 21:08:06 jakob Exp $
 
 DISTNAME=		httptunnel-2.0
 CATEGORIES=     	net
 
-MASTER_SITES=		http://ftp.sunet.se/pub/gnu/httptunnel/ \
-			ftp://ftp.gnu.org/pub/gnu/httptunnel/
+MASTER_SITES=		${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	httptunnel
 
 MAINTAINER=		jakob@openbsd.org
 
