@@ -1,3 +1,11 @@
+$OpenBSD: patch-rights-paths,v 1.1 2000/03/28 11:53:03 camield Exp $
+
+This port wants to change the rights on PREFIX/ and PREFIX/bin to 02755.
+Usually PREFIX is /usr/local. The rights on /usr/local and /usr/local/bin
+should be 0755 according to /etc/mtree/4.4BSD.dist.
+
+Also, use share/doc instead of doc.
+
 --- hier.c.orig	Sun Nov 15 03:28:23 1998
 +++ hier.c	Wed Dec 29 19:28:59 1999
 @@ -2,14 +2,15 @@
