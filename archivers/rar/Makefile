@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2000/03/26 23:07:00 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2000/03/31 20:26:16 brad Exp $
 
 DISTNAME=	rarbsd
 PKGNAME=	rar-2.02
 CATEGORIES=	archivers
-NEED_VERSION=	1.218
-MASTER_SITES=	ftp://rarsoft.ti.sk/pub/rar/ \
-		ftp://ftp.cdrom.com/pub/sac/pack/
+NEED_VERSION=	1.234
+MASTER_SITES=	ftp://rarsoft.ti.sk/pub/rar/
 EXTRACT_SUFX=	.sfx
 
 EXTRACT_CMD=		# empty
