@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/03/31 22:13:51 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.8 2003/09/22 23:56:38 pvalchev Exp $
 
 COMMENT=		"active monitoring tool"
 V=			2.60
@@ -32,7 +32,7 @@ MUX_RUNDEPENDS=		rrd:rrdtool-*:net/rrdtool
 MULTI_PACKAGES+=	-web
 COMMENT-web=		"symon web frontend"
 WEB_LIBDEPENDS=
-WEB_RUNDEPENDS=		rrd:rrdtool-*:net/rrdtool php:php4->=4.2.3:www/php4/core
+WEB_RUNDEPENDS=		rrd:rrdtool-*:net/rrdtool php:php4-core->=4.2.3:www/php4/core
 
 .for i in ${MULTI_PACKAGES}
 FULLPKGNAME${i}=        symon${i}-${V}
@@ -45,7 +45,7 @@ RUN_DEPENDS=		${${MODULE_NAME:U}_RUNDEPENDS}
 MESSAGE=                ${PKGDIR}/MESSAGE${SUBPACKAGE}
 .else
 BUILD_DEPENDS=		rrd:rrdtool-*:net/rrdtool 
-RUN_DEPENDS=		rrd:rrdtool-*:net/rrdtool php:php4->=4.2.3:www/php4/core
+RUN_DEPENDS=		rrd:rrdtool-*:net/rrdtool php:php4-core->=4.2.3:www/php4/core
 LIB_DEPENDS=		rrd:rrdtool-*:net/rrdtool 
 .endif
 
