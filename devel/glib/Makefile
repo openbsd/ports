@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2002/12/29 20:19:10 fgsch Exp $
+# $OpenBSD: Makefile,v 1.51 2003/05/21 06:34:04 marcm Exp $
 # Uses pthreads
 
 COMMENT=	"useful routines for C programming"
@@ -20,6 +20,11 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
+
+# VAX thread support as yet incomplete
+.if (${MACHINE_ARCH} == "vax")
+CONFIGURE_ARGS+= --disable-threads
+.endif
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
