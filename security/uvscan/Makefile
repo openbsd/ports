@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.14 2004/01/14 19:20:39 jakob Exp $
+# $OpenBSD: Makefile,v 1.15 2004/06/21 04:40:30 david Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/06/05 12:01:24 rh Exp $
 
 COMMENT=	"evaluation version of a DOS/Windows file virus scanner"
 
-VERSION=	4.16.0
-DISTNAME=	vlnx416e
+VERSION=	4.32
+DISTNAME=	vlnx432e
 PKGNAME=	uvscan-${VERSION}
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.networkassociates.com/us/downloads/evals/
-
-MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/cmdline/linux/version_4.16/
 
 EXTRACT_SUFX=	.tar.Z
 
@@ -27,6 +25,15 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 WRKDIST=	${WRKDIR}
 
+FETCH_MANUALLY = " You must fetch the distfile for this port manually"
+FETCH_MANUALLY+= " after agreeing to the license agreement at"
+FETCH_MANUALLY+= ""
+FETCH_MANUALLY+= "     http://www.networkassociates.com/us/downloads/evals/"
+FETCH_MANUALLY+= ""
+FETCH_MANUALLY+= " Choose the 'McAfee VirusScan Command Line Scanner for Linux'"
+FETCH_MANUALLY+= " option and place ${DISTFILES} into ${FULLDISTDIR}."
+FETCH_MANUALLY+= ""
+
 do-configure:
 	sed -e 's:@@PREFIX@@:${PREFIX}:g' \
 		<${FILESDIR}/uvscan.sh >${WRKDIR}/uvscan.sh
@@ -42,7 +49,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/libexec/uvscan
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/uvscan
-.for file in unxadmin.pdf license.txt readme.txt
+.for file in license.txt readme.txt
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/uvscan
 .endfor
 

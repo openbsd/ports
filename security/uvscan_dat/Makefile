@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.25 2004/01/14 19:20:39 jakob Exp $
+# $OpenBSD: Makefile,v 1.26 2004/06/21 04:40:30 david Exp $
 # $NetBSD: Makefile,v 1.2 2000/06/19 14:30:02 rh Exp $
 
 COMMENT=	"AntiVirus DAT file for uvscan"
 
-VERSION=	4312
+VERSION=	4367
 DISTNAME=	dat-${VERSION}
 PKGNAME=	uvscan_${DISTNAME}
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.networkassociates.com/us/downloads/updates/
 
-MASTER_SITES=	http://download.nai.com/products/datfiles/4.x/nai/
 EXTRACT_SUFX=	.tar
 SUBST_VARS+=	VERSION
 
@@ -23,6 +22,15 @@ ONLY_FOR_ARCHS=	i386
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 WRKDIST=	${WRKDIR}
+
+FETCH_MANUALLY = " You must fetch the distfile for this port manually"
+FETCH_MANUALLY+= " after agreeing to the license agreement at"
+FETCH_MANUALLY+= ""
+FETCH_MANUALLY+= "     http://www.networkassociates.com/us/downloads/updates/dat.asp?ID=1"
+FETCH_MANUALLY+= ""
+FETCH_MANUALLY+= " Choose the 'Weekly v4.x (DAT only)' option and place"
+FETCH_MANUALLY+= " ${DISTFILES} into ${FULLDISTDIR}."
+FETCH_MANUALLY+= ""
 
 do-configure:
 	sed -e 's:@PREFIX@:${PREFIX}:g' \
