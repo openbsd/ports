@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2000/11/01 14:49:18 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2000/12/13 16:17:37 camield Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -8,6 +8,7 @@
      SUBDIR += Xaw3d
      SUBDIR += afterstep
 #    SUBDIR += amiwm
+     SUBDIR += asapm
      SUBDIR += asclock:english
      SUBDIR += asclock:german
      SUBDIR += asclock:portuguese
