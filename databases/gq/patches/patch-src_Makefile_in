@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Wed Mar 20 17:51:50 2002
++++ src/Makefile.in	Wed Mar 20 17:52:06 2002
+@@ -87,7 +87,7 @@
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -liconv
+ gq_OBJECTS =  mainwin.o browse.o schema.o schemabrowse.o template.o gq.o \
+ search.o tinput.o configfile.o prefs.o util.o errorchain.o ldif.o \
+ formfill.o input.o encode.o filter.o debug.o
