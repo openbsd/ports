@@ -1,6 +1,6 @@
-$OpenBSD: patch-libmpdemux_stream_c,v 1.2 2002/06/04 11:26:17 espie Exp $
---- libmpdemux/stream.c.orig	Sun May  5 18:22:59 2002
-+++ libmpdemux/stream.c	Tue Jun  4 13:22:41 2002
+$OpenBSD: patch-libmpdemux_stream_c,v 1.3 2002/06/27 22:03:49 espie Exp $
+--- libmpdemux/stream.c.orig	Tue Jun  4 21:17:52 2002
++++ libmpdemux/stream.c	Thu Jun 13 00:04:08 2002
 @@ -20,11 +20,10 @@ extern int verbose; // defined in mplaye
  
  #ifdef HAVE_VCD
@@ -13,12 +13,4 @@ $OpenBSD: patch-libmpdemux_stream_c,v 1.2 2002/06/04 11:26:17 espie Exp $
 -#else
  #include "vcd_read.h"
  #endif
- 
-@@ -260,6 +259,7 @@ void free_stream(stream_t *s){
-     waitpid(s->cache_pid,NULL,0);
-   }
-   if(s->priv) free(s->priv);
-+  close(s->fd);
-   free(s);
- }
  

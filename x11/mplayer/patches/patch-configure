@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.10 2002/06/04 11:35:09 espie Exp $
---- configure.orig	Mon May 13 22:52:10 2002
-+++ configure	Thu May 16 15:49:14 2002
-@@ -1538,7 +1538,7 @@ else
+$OpenBSD: patch-configure,v 1.11 2002/06/27 22:03:49 espie Exp $
+--- configure.orig	Sat Jun  8 00:41:25 2002
++++ configure	Mon Jun 17 20:17:52 2002
+@@ -1611,7 +1611,7 @@ else
  fi
  echores "$_sys_soundcard"
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.10 2002/06/04 11:35:09 espie Exp $
  echocheck "soundcard.h"
  cat > $TMPC << EOF
  #include <soundcard.h>
-@@ -2591,6 +2591,7 @@ if test "$_ossaudio" = yes ; then
+@@ -2720,6 +2720,7 @@ if test "$_ossaudio" = yes ; then
    else
       if netbsd || openbsd ; then
         _def_ossaudio_devdsp='#define PATH_DEV_DSP "/dev/sound"'
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.10 2002/06/04 11:35:09 espie Exp $
       else
         _def_ossaudio_devdsp='#define PATH_DEV_DSP "/dev/dsp"'
       fi
-@@ -2720,7 +2721,7 @@ echores "$_sgiaudio"
+@@ -2875,7 +2876,7 @@ echores "$_sgiaudio"
  
  
  echocheck "VCD support"
@@ -27,7 +27,16 @@ $OpenBSD: patch-configure,v 1.10 2002/06/04 11:35:09 espie Exp $
    _inputmodules="vcd $_inputmodules"
    _def_vcd='#define HAVE_VCD 1'
    echores "ok"
-@@ -3103,7 +3104,7 @@ EOF
+@@ -2888,7 +2889,7 @@ fi
+ echocheck "DVD support (libmpdvdkit)"
+ if test "$_dvdkit" = auto ; then
+  _dvdkit=no
+- if linux || freebsd || netbsd ; then
++ if linux || freebsd || netbsd || openbsd; then
+   test -f "./libmpdvdkit/Makefile" && _dvdkit=yes
+  fi
+ fi
+@@ -3258,7 +3259,7 @@ EOF
    _iconv=no
    if freebsd ; then
      cc_check  -lm -lgiconv && _iconv=yes
@@ -36,7 +45,7 @@ $OpenBSD: patch-configure,v 1.10 2002/06/04 11:35:09 espie Exp $
      cc_check  -lm -liconv && _iconv=yes
    else
      cc_check -lm && _iconv=yes
-@@ -3113,6 +3114,7 @@ if test "$_iconv" = yes ; then
+@@ -3268,6 +3269,7 @@ if test "$_iconv" = yes ; then
    _def_iconv='#define USE_ICONV 1'
    freebsd && _ld_iconv='-lgiconv'
    bsdos && _ld_iconv='-liconv'
@@ -44,7 +53,7 @@ $OpenBSD: patch-configure,v 1.10 2002/06/04 11:35:09 espie Exp $
  else
    _def_iconv='#undef USE_ICONV'
  fi
-@@ -3614,7 +3616,6 @@ test "$_xanim" = yes && _ld_dl_dynamic='
+@@ -3778,7 +3780,6 @@ test "$_xanim" = yes && _ld_dl_dynamic='
  _ld_arch="$_ld_arch $_ld_pthread $_ld_dl $_ld_dl_dynamic"
  bsdos && _ld_arch="$_ld_arch -ldvd"
  if netbsd || openbsd ; then
@@ -52,7 +61,7 @@ $OpenBSD: patch-configure,v 1.10 2002/06/04 11:35:09 espie Exp $
    x86 && _ld_arch="$_ld_arch -li386"
  fi
  
-@@ -3683,10 +3684,10 @@ cat > config.mak << EOF
+@@ -3847,10 +3848,10 @@ cat > config.mak << EOF
  
  LANG = C
  TARGET_OS = $system_name
