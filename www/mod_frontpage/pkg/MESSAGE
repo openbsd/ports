@@ -10,7 +10,7 @@
 | fully stop and then restart the server.
 |
 | This package only  includes  the  mod_frontpage  module  for
-| Apache.   It is still neccessary to download and install the
+| Apache.   It is still necessary to download and install the
 | server extensions from Microsoft.  They can be retrieved and
 | installed using the following instructions.
 |

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.4 2002/02/15 19:19:33 nino Exp $
+# $OpenBSD: INSTALL,v 1.5 2003/02/26 15:13:04 david Exp $
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
@@ -21,7 +21,7 @@ do_post() {
     echo 
     echo "+--------------- ${P_NAME}"
 
-    # install dirs is neccessary
+    # install dirs if necessary
     install -d ${DEST_PFX}/sound/events
     
     # install or take note of existing config files

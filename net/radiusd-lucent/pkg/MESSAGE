@@ -6,7 +6,7 @@
 |     ${PREFIX}/share/doc/radiusd-lucent
 |
 | You will need to edit /etc/rc.local as appropriate and add a
-| section similiar to the following:
+| section similar to the following:
 |
 |     if [ -x ${PREFIX}/sbin/radiusd ]; then
 |             ${PREFIX}/sbin/radiusd && echo -n ' radiusd'

@@ -4,7 +4,7 @@
 | ${PREFIX}/share/examples/ucd-snmp/EXAMPLE.conf.  Extra documentation has
 | also been installed in ${PREFIX}/share/doc/ucd-snmp.
 |
-| To have snmpd start at boot time, you must have an entry similiar to the 
+| To have snmpd start at boot time, you must have an entry similar to the 
 | following in /etc/rc.local.
 |
 | 	if [ -x ${PREFIX}/sbin/snmpd ]; then

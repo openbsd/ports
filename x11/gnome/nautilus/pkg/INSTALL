@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.1.1.1 2003/01/31 19:03:46 todd Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/02/26 15:13:04 david Exp $
 
 P_NAME=nautilus
 
@@ -32,7 +32,7 @@ do_post() {
 	echo 
 	echo "+--------------- ${P_NAME}"
 
-	# install dirs if neccessary
+	# install dirs if necessary
 	for d in ${DIRS}; do
 		if [ ! -d "${DEST_PFX}/$d" ]; then
 			install -d ${DEST_PFX}/$d

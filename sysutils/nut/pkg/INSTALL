@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.3 2002/10/14 16:14:33 marcm Exp $
+# $OpenBSD: INSTALL,v 1.4 2003/02/26 15:13:04 david Exp $
 
 P_NAME=nut
 
@@ -31,7 +31,7 @@ do_post() {
 	echo 
 	echo "+--------------- ${P_NAME}"
 
-	# install dirs if neccessary
+	# install dirs if necessary
 	for d in ${DIRS}; do
 		if [ ! -d "${DEST_PFX}/$d" ]; then
 			install -d ${DEST_PFX}/$d

@@ -1,7 +1,7 @@
 +----------------------
 | 
 | XEmacs is pretty useless as-is.  It is just an engine.
-| You need to install (XE)packages to provide your users full functionnality.
+| You need to install (XE)packages to provide your users full functionality.
 | There is two methods to achieve this :
 | 1 - install the xemacs21-sumo (O)package.  It contains all the 
 |     (XE)packages currently supported by the XEmacs team.

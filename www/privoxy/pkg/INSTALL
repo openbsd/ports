@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/02/26 15:13:04 david Exp $
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
@@ -69,7 +69,7 @@ do_install_log()
 do_message_bottom()
 {
     echo "| You will need to edit /etc/rc.local as appropriate and add a"
-    echo "| section similiar to the following:"
+    echo "| section similar to the following:"
     echo "|"
     echo "|     if [ -x ${PREFIX}/sbin/privoxy ]; then"
     echo "|             echo -n ' privoxy';"
