@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/03/03 19:26:11 danh Exp $
+# $OpenBSD: Makefile,v 1.19 2001/03/07 21:56:54 brad Exp $
 
 DISTNAME=	enlightenment-0.16.5
 CATEGORIES=     x11
@@ -26,7 +26,7 @@ USE_GMAKE=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-fsstd
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
