@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2002/06/09 05:36:21 wilfried Exp $
+# $OpenBSD: Makefile,v 1.30 2002/06/09 16:15:20 lebel Exp $
 
 COMMENT=		"mpg123 front-end with skin support"
 
-DISTNAME=		gqmpeg-0.12.1		
+DISTNAME=		gqmpeg-0.16.0		
 CATEGORIES=		audio
 NEED_VERSION=		1.504
 
