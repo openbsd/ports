@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2001/06/25 23:06:25 lebel Exp $
+# $OpenBSD: Makefile,v 1.147 2001/07/02 15:41:30 lebel Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -30,6 +30,7 @@
      SUBDIR += cvsup-bin-old,no_x11
 #    SUBDIR += cvsup-mirror
      SUBDIR += djbdns
+     SUBDIR += dlint
      SUBDIR += dxpc
      SUBDIR += epic4
      SUBDIR += ethereal
