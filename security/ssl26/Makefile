@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/03/27 18:14:32 beck Exp $
+# $OpenBSD: Makefile,v 1.4 2000/04/04 21:17:44 beck Exp $
 
 DISTNAME=	ssl26	
 CATEGORIES=	security
@@ -7,6 +7,11 @@ NO_CDROM=	"CRYPTO: Patent Issues until Sep 21 2000"
 RESTRICTED=	"Crypto; export-controlled"
 
 MAINTAINER=	beck@openbsd.org
+
+PERMIT_PACKAGE_CDROM=   No
+PERMIT_PACKAGE_FTP=     Yes
+PERMIT_DISTFILES_CDROM= No
+PERMIT_DISTFILES_FTP=   Yes
 
 fetch-depends:
 .if !defined(NO_WARNINGS)
