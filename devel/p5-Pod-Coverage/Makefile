@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/01 02:11:10 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/21 02:04:59 msf Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT= 	"checks if the documentation of a Perl module is comprehensive"
 
-DISTNAME=	Pod-Coverage-0.13
+DISTNAME=	Pod-Coverage-0.17
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
