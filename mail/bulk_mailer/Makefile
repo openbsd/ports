@@ -3,7 +3,7 @@
 # Date created:		May 16 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/17 04:20:30 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/10/30 11:25:16 turan Exp $
 #
 
 DISTNAME=	bulk_mailer-1.5
@@ -13,7 +13,6 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	angelos@openbsd.org
 
-EXTRACT_BEFORE_ARGS=	-C ${WRKDIR} -xf
 NO_WRKSUBDIR=	YES
 
 .include <bsd.port.mk>
