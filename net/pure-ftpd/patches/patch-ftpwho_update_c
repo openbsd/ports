@@ -1,0 +1,10 @@
+--- src/ftpwho-update.c.orig	Sat Mar  6 21:32:18 2004
++++ src/ftpwho-update.c	Sat Mar  6 21:33:39 2004
+@@ -61,6 +61,7 @@
+ 
+ void ftpwho_unlock(void) 
+ {
++    (void) msync(shm_data_cur, NULL, MS_ASYNC);
+     lock.l_type = F_UNLCK;
+     while (fcntl(mmap_fd, F_SETLK, &lock) < 0) {
+         if (errno != EINTR) {
