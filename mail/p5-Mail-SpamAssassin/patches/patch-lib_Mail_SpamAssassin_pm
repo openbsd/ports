@@ -1,17 +1,18 @@
-$OpenBSD: patch-lib_Mail_SpamAssassin_pm,v 1.1.1.1 2002/04/19 21:39:20 wilfried Exp $
---- lib/Mail/SpamAssassin.pm.orig	Mon Mar  4 02:22:24 2002
-+++ lib/Mail/SpamAssassin.pm	Tue Mar 19 14:13:56 2002
-@@ -81,29 +81,23 @@ $DEBUG = 0;
- #__installvendorlib__/spamassassin.cf
+$OpenBSD: patch-lib_Mail_SpamAssassin_pm,v 1.2 2002/05/02 15:26:37 wilfried Exp $
+--- lib/Mail/SpamAssassin.pm.orig	Tue Apr 30 19:55:24 2002
++++ lib/Mail/SpamAssassin.pm	Tue Apr 30 19:59:28 2002
+@@ -82,7 +82,6 @@ $DEBUG = 0;
  @default_rules_path = qw(
-   	/usr/local/share/spamassassin
+         __prefix__/share/spamassassin
+         /usr/local/share/spamassassin
 -  	/usr/share/spamassassin
  	./rules
  	../rules
  );
- 
- # first 3 are BSDish, latter 2 Linuxish
+@@ -91,10 +90,6 @@ $DEBUG = 0;
  @site_rules_path = qw(
+         __prefix__/etc/mail/spamassassin
+         __prefix__/etc/spamassassin
 -        /usr/local/etc/spamassassin
 -	/usr/pkg/etc/spamassassin
 -        /usr/etc/spamassassin
@@ -19,13 +20,11 @@ $OpenBSD: patch-lib_Mail_SpamAssassin_pm,v 1.1.1.1 2002/04/19 21:39:20 wilfried 
    	/etc/spamassassin
  );
  
- @old_site_rules_path = qw(
--  	/etc/mail/spamassassin.cf
-   	/etc/spamassassin.cf
- );
-     
+@@ -106,9 +101,9 @@ $DEBUG = 0;
  @default_prefs_path = qw(
--        /etc/spamassassin/user_prefs.template
+         __prefix__/etc/mail/spamassassin/user_prefs.template
+         __prefix__/share/spamassassin/user_prefs.template
+-        /etc/mail/spamassassin/user_prefs.template
          /usr/local/share/spamassassin/user_prefs.template
 -        /usr/share/spamassassin/user_prefs.template
 +	./rules/user_prefs.template
@@ -33,11 +32,3 @@ $OpenBSD: patch-lib_Mail_SpamAssassin_pm,v 1.1.1.1 2002/04/19 21:39:20 wilfried 
  );
  
  @default_userprefs_path = qw(
-@@ -643,6 +637,7 @@ sub create_default_prefs {
- 
- sub expand_name ($) {
-   my ($self, $name) = @_;
-+  return $ENV{'HOME'};
-   return (getpwnam($name))[7] if ($name ne '');
-   return (getpwuid($>))[7];
- }

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/19 21:39:20 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/05/02 15:26:37 wilfried Exp $
 bin/spamassassin
 bin/spamc
 bin/spamd
@@ -40,6 +40,8 @@ share/doc/SpamAssassin/sample-spam.txt
 share/spamassassin/10_misc.cf
 share/spamassassin/20_body_tests.cf
 share/spamassassin/20_head_tests.cf
+share/spamassassin/20_uri_tests.cf
+share/spamassassin/25_body_tests_es.cf
 share/spamassassin/25_body_tests_pl.cf
 share/spamassassin/25_head_tests_pl.cf
 share/spamassassin/30_text_es.cf
