@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/04/13 14:37:26 peter Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/04/23 15:27:56 peter Exp $
 lib/mod_perl.so
 ${P5ARCH}/Apache.pm
 ${P5ARCH}/Apache/Connection.pm
@@ -50,6 +50,7 @@ ${P5ARCH}/auto/Apache/include/modules/perl/mod_perl_xs.h
 ${P5ARCH}/auto/Apache/include/modules/perl/perl_PL.h
 ${P5ARCH}/auto/Apache/mod_perl.exp
 ${P5ARCH}/auto/Apache/typemap
+@comment ${P5ARCH}/auto/mod_perl/.packlist
 ${P5ARCH}/cgi_to_mod_perl.pod
 ${P5ARCH}/mod_perl.pm
 ${P5ARCH}/mod_perl.pod
@@ -99,6 +100,7 @@ man/man3p/mod_perl_tuning.3p
 sbin/mod_perl-enable
 share/doc/mod_perl/mod_perl.html
 @dirrm share/doc/mod_perl
+@comment @dirrm man/man3p
 @dirrm ${P5ARCH}/auto/mod_perl
 @dirrm ${P5ARCH}/auto/Apache/include/modules/perl
 @dirrm ${P5ARCH}/auto/Apache/include/modules
@@ -106,5 +108,8 @@ share/doc/mod_perl/mod_perl.html
 @dirrm ${P5ARCH}/auto/Apache/Symbol
 @dirrm ${P5ARCH}/auto/Apache/Leak
 @dirrm ${P5ARCH}/auto/Apache
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}/Bundle
 @dirrm ${P5ARCH}/Apache/Constants
 @dirrm ${P5ARCH}/Apache
+@comment @dirrm ${P5ARCH}
