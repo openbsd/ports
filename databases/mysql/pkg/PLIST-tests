@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.2 2001/12/29 17:56:56 brad Exp $
+@comment $OpenBSD: PLIST-tests,v 1.3 2002/12/14 23:56:43 brad Exp $
 share/mysql-test/README
 share/mysql-test/include/have_bdb.inc
 share/mysql-test/include/have_gemini.inc
@@ -12,6 +12,8 @@ share/mysql-test/r/alter_table.result
 share/mysql-test/r/analyse.result
 share/mysql-test/r/auto_increment.result
 share/mysql-test/r/backup.result
+share/mysql-test/r/bdb-alter-table-1.result
+share/mysql-test/r/bdb-alter-table-2.result
 share/mysql-test/r/bdb-crash.result
 share/mysql-test/r/bdb-deadlock.result
 share/mysql-test/r/bdb.result
@@ -37,11 +39,14 @@ share/mysql-test/r/fulltext_left_join.result
 share/mysql-test/r/fulltext_multi.result
 share/mysql-test/r/fulltext_order_by.result
 share/mysql-test/r/fulltext_update.result
+share/mysql-test/r/func_concat.result
 share/mysql-test/r/func_crypt.result
 share/mysql-test/r/func_date_add.result
 share/mysql-test/r/func_equal.result
 share/mysql-test/r/func_group.result
+share/mysql-test/r/func_if.result
 share/mysql-test/r/func_in.result
+share/mysql-test/r/func_isnull.result
 share/mysql-test/r/func_like.result
 share/mysql-test/r/func_math.result
 share/mysql-test/r/func_misc.result
@@ -56,9 +61,13 @@ share/mysql-test/r/func_timestamp.result
 share/mysql-test/r/gcc296.result
 share/mysql-test/r/gemini.result
 share/mysql-test/r/group_by.result
+share/mysql-test/r/have_bdb.require
+share/mysql-test/r/have_gemini.require
+share/mysql-test/r/have_innodb.require
+share/mysql-test/r/have_isam.require
+share/mysql-test/r/have_raid.require
 share/mysql-test/r/having.result
 share/mysql-test/r/heap.result
-share/mysql-test/r/identity.result
 share/mysql-test/r/innodb.result
 share/mysql-test/r/ins000001.result
 share/mysql-test/r/insert.result
@@ -105,11 +114,13 @@ share/mysql-test/r/rpl000012.result
 share/mysql-test/r/rpl000013.result
 share/mysql-test/r/rpl000014.result
 share/mysql-test/r/rpl000015.result
-share/mysql-test/r/rpl000016.result
 share/mysql-test/r/rpl000017.result
 share/mysql-test/r/rpl000018.result
+share/mysql-test/r/rpl_alter.result
+share/mysql-test/r/rpl_empty_master_crash.result
 share/mysql-test/r/rpl_get_lock.result
 share/mysql-test/r/rpl_mystery22.result
+share/mysql-test/r/rpl_rotate_logs.result
 share/mysql-test/r/rpl_skip_error.result
 share/mysql-test/r/rpl_sporadic_master.result
 share/mysql-test/r/sel000001.result
@@ -135,6 +146,7 @@ share/mysql-test/r/type_decimal.result
 share/mysql-test/r/type_enum.result
 share/mysql-test/r/type_float.result
 share/mysql-test/r/type_ranges.result
+share/mysql-test/r/type_set.result
 share/mysql-test/r/type_time.result
 share/mysql-test/r/type_timestamp.result
 share/mysql-test/r/type_uint.result
@@ -150,6 +162,8 @@ share/mysql-test/t/alter_table.test
 share/mysql-test/t/analyse.test
 share/mysql-test/t/auto_increment.test
 share/mysql-test/t/backup.test
+share/mysql-test/t/bdb-alter-table-1.test
+share/mysql-test/t/bdb-alter-table-2.test
 share/mysql-test/t/bdb-crash.test
 share/mysql-test/t/bdb-deadlock.test
 share/mysql-test/t/bdb.test
@@ -179,11 +193,14 @@ share/mysql-test/t/fulltext_left_join.test
 share/mysql-test/t/fulltext_multi.test
 share/mysql-test/t/fulltext_order_by.test
 share/mysql-test/t/fulltext_update.test
+share/mysql-test/t/func_concat.test
 share/mysql-test/t/func_crypt.test
 share/mysql-test/t/func_date_add.test
 share/mysql-test/t/func_equal.test
 share/mysql-test/t/func_group.test
+share/mysql-test/t/func_if.test
 share/mysql-test/t/func_in.test
+share/mysql-test/t/func_isnull.test
 share/mysql-test/t/func_like.test
 share/mysql-test/t/func_math.test
 share/mysql-test/t/func_misc.test
@@ -200,7 +217,6 @@ share/mysql-test/t/gemini.test
 share/mysql-test/t/group_by.test
 share/mysql-test/t/having.test
 share/mysql-test/t/heap.test
-share/mysql-test/t/identity.test
 share/mysql-test/t/innodb.test
 share/mysql-test/t/ins000001.test
 share/mysql-test/t/insert.test
@@ -251,16 +267,18 @@ share/mysql-test/t/rpl000013.test
 share/mysql-test/t/rpl000014.test
 share/mysql-test/t/rpl000015-slave-master-info.opt
 share/mysql-test/t/rpl000015.test
-share/mysql-test/t/rpl000016-master.opt
-share/mysql-test/t/rpl000016-slave-master-info.opt
-share/mysql-test/t/rpl000016.test
 share/mysql-test/t/rpl000017-slave.opt
 share/mysql-test/t/rpl000017.test
 share/mysql-test/t/rpl000018-master.opt
 share/mysql-test/t/rpl000018-slave.opt
 share/mysql-test/t/rpl000018.test
+share/mysql-test/t/rpl_alter.test
+share/mysql-test/t/rpl_empty_master_crash.test
 share/mysql-test/t/rpl_get_lock.test
 share/mysql-test/t/rpl_mystery22.test
+share/mysql-test/t/rpl_rotate_logs-master.opt
+share/mysql-test/t/rpl_rotate_logs-slave-master-info.opt
+share/mysql-test/t/rpl_rotate_logs.test
 share/mysql-test/t/rpl_skip_error-slave.opt
 share/mysql-test/t/rpl_skip_error.test
 share/mysql-test/t/rpl_sporadic_master-master.opt
@@ -286,6 +304,7 @@ share/mysql-test/t/type_decimal.test
 share/mysql-test/t/type_enum.test
 share/mysql-test/t/type_float.test
 share/mysql-test/t/type_ranges.test
+share/mysql-test/t/type_set.test
 share/mysql-test/t/type_time.test
 share/mysql-test/t/type_timestamp.test
 share/mysql-test/t/type_uint.test
@@ -295,8 +314,8 @@ share/mysql-test/t/user_var.test
 share/mysql-test/t/varbinary.test
 share/mysql-test/t/variables.test
 share/mysql-test/t/warnings.test
-@dirrm share/mysql-test/include
-@dirrm share/mysql-test/r
-@dirrm share/mysql-test/std_data
 @dirrm share/mysql-test/t
+@dirrm share/mysql-test/std_data
+@dirrm share/mysql-test/r
+@dirrm share/mysql-test/include
 @dirrm share/mysql-test

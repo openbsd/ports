@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2002/11/15 23:37:55 brad Exp $
+# $OpenBSD: Makefile,v 1.83 2002/12/14 23:56:43 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -6,7 +6,7 @@ COMMENT=	"multithreaded SQL database (client)"
 COMMENT-server=	"multithreaded SQL database (server)"
 COMMENT-tests=	"multithreaded SQL database (regression test suite)"
 
-VERSION=	3.23.49
+VERSION=	3.23.54
 DISTNAME=	mysql-${VERSION}
 FULLPKGNAME=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
@@ -20,6 +20,7 @@ HOMEPAGE=	http://www.mysql.com/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -36,26 +37,23 @@ CXXFLAGS=	${CFLAGS} -felide-constructors -fno-exceptions -fno-rtti
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
-MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/mit-pthreads/config
+AUTOCONF_NEW=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
 		 --localstatedir="${DB_DIR}" \
-		 --with-innodb \
 		 --with-comment='OpenBSD port: ${FULLPKGNAME-server}' \
+		 --with-innodb \
 		 --with-libwrap="/usr" \
 		 --with-mysqld-user="mysql" \
 		 --with-unix-socket-path="${SOCKET_DIR}/mysql.sock" \
-		 --without-perl \
-		 --without-debug \
-		 --without-readline \
 		 --without-bench \
+		 --without-debug \
+		 --without-docs \
+		 --without-gemini \
 		 --without-mit-threads \
-		 --without-gemini
+		 --without-perl \
+		 --without-readline
 CONFIGURE_ENV=	HOSTNAME="/bin/hostname -s"
-
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
-		patch-*
 
 FLAVORS=	bdb
 FLAVOR?=

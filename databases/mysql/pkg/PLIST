@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2001/09/20 19:25:42 brad Exp $
+@comment $OpenBSD: PLIST,v 1.21 2002/12/14 23:56:43 brad Exp $
 bin/mysql
 bin/mysqladmin
 bin/mysqlbinlog
@@ -28,9 +28,6 @@ include/mysql/sslopt-case.h
 include/mysql/sslopt-longopts.h
 include/mysql/sslopt-usage.h
 include/mysql/sslopt-vars.h
-@unexec install-info --delete --info-dir=%D/info %D/info/mysql.info
-info/mysql.info
-@exec install-info --info-dir=%D/info %D/info/mysql.info
 lib/mysql/libmysqlclient.a
 lib/mysql/libmysqlclient.la
 %%SHARED%%

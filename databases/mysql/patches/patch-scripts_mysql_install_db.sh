@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_mysql_install_db.sh,v 1.8 2002/03/19 19:11:39 brad Exp $
---- scripts/mysql_install_db.sh.orig	Thu Feb 14 12:30:26 2002
-+++ scripts/mysql_install_db.sh	Sat Mar  2 01:23:08 2002
+$OpenBSD: patch-scripts_mysql_install_db.sh,v 1.9 2002/12/14 23:56:43 brad Exp $
+--- scripts/mysql_install_db.sh.orig	Thu Oct 10 06:17:34 2002
++++ scripts/mysql_install_db.sh	Tue Nov 26 21:07:21 2002
 @@ -7,12 +7,9 @@
  #
  # All unrecognized arguments to this script are passed to mysqld.
@@ -121,7 +121,7 @@ $OpenBSD: patch-scripts_mysql_install_db.sh,v 1.8 2002/03/19 19:11:39 brad Exp $
 -  fi
    echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
    echo "This is done with:"
-   echo "$bindir/mysqladmin -u root -p password 'new-password'"
+   echo "$bindir/mysqladmin -u root  password 'new-password'"
 @@ -330,15 +304,6 @@ then
      echo "able to use the new GRANT command!"
    fi
