@@ -1,6 +1,6 @@
---- ltmain.sh.orig	Mon Apr 26 15:08:39 1999
-+++ ltmain.sh	Mon Apr 26 15:08:53 1999
-@@ -3326,40 +3326,6 @@
+--- ltmain.sh.orig	Sat May 15 17:39:41 1999
++++ ltmain.sh	Sat May 15 17:39:55 1999
+@@ -3437,40 +3437,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
