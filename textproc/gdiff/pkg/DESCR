@@ -1,0 +1,12 @@
+GNU versions of diff utilities.  You can use the diff command to
+show differences between two files, or each corresponding file in
+two directories. diff outputs differences between files line by
+line in any of several formats, selectable by command line options.
+This set of differences is often called a `diff' or `patch'. For
+files that are identical, diff normally produces no output; for
+binary (non-text) files, diff normally reports only that they are
+different.
+
+Note that this port will install these utilities with a 'g' prefix,
+e.g. gdiff, but the documentation will refer to them without the
+'g' prefix.

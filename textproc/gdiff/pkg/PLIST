@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/22 17:44:40 pvalchev Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/diff.info
+bin/gcmp
+bin/gdiff
+bin/gdiff3
+bin/gsdiff
+info/diff.info
+man/man1/gcmp.1
+man/man1/gdiff.1
+man/man1/gdiff3.1
+man/man1/gsdiff.1
+@exec install-info --info-dir=%D/info %D/info/diff.info
