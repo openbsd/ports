@@ -1,0 +1,86 @@
+--- kdesu/kdesu_stub.c.orig	Tue Jul 25 17:21:49 2000
++++ kdesu/kdesu_stub.c	Sat Sep 30 13:24:11 2000
+@@ -278,9 +278,17 @@ int main()
+ 	xsetenv("DISPLAY", params[P_DISPLAY].value);
+ 	if (params[P_DISPLAY_AUTH].value[0]) 
+ 	{
++#ifdef HAVE_MKSTEMP
++	    int fd;
++	    strcpy(fname, "/tmp/kdesu.XXXXXXXXXX");
++
++	    fd = mkstemp(fname);
++	    if (fd == -1 || (fout = fdopen(fd, "w")) == NULL)
++#else
+ 	    fname = tmpnam(0L);
+ 	    fout = fopen(fname, "w");
+ 	    if (!fout) 
++#endif
+ 	    {
+ 		perror("kdesu_stub: fopen()");
+ 		exit(1);
+@@ -288,7 +296,23 @@ int main()
+ 	    fprintf(fout, "add %s %s\n", params[P_DISPLAY].value,
+ 		    params[P_DISPLAY_AUTH].value);
+ 	    fclose(fout);
++#ifdef HAVE_MKSTEMP
++	    strcpy(xauthority, "/tmp/xauth.XXXXXXXXXX");
++	    {
++		int fd;
++
++		fd = mkstemp(xauthority);
++		if (fd == -1)
++		{
++		    perror("kdesu_stub: mkstemp()");
++		    exit(1);
++		}
++		else
++		    close(fd);
++	    }
++#else
+ 	    tmpnam(xauthority);
++#endif
+ 	    xsetenv("XAUTHORITY", xauthority);
+ 	    sprintf(command, "xauth source %s >/dev/null 2>&1", fname);
+ 	    if (system(command))
+@@ -307,9 +331,17 @@ int main()
+ 	auth = xstrsep(params[P_ICE_AUTH].value);
+ 	if (host[0]) 
+ 	{
++#ifdef HAVE_MKSTEMP
++	    int fd;
++	    strcpy(fname, "/tmp/kdesu.XXXXXXXXXX");
++
++	    fd = mkstemp(fname);
++	    if (fd == -1 || (fout = fdopen(fd, "w")) == NULL)
++#else
+ 	    fname = tmpnam(0L);
+ 	    fout = fopen(fname, "w");
+ 	    if (!fout) 
++#endif
+ 	    {
+ 		perror("kdesu_stub: fopen()");
+ 		exit(1);
+@@ -320,7 +352,23 @@ int main()
+ 	    for (i=0; host[i]; i++)
+ 		fprintf(fout, "add DCOP \"\" %s %s\n", host[i], auth[i]);
+ 	    fclose(fout);
++#ifdef HAVE_MKSTEMP
++	    strcpy(iceauthority, "/tmp/iceauth.XXXXXXXXXX");
++	    {
++		int fd;
++
++		fd = mkstemp(iceauthority);
++		if (fd == -1)
++		{
++		    perror("kdesu_stub: mkstemp()");
++		    exit(1);
++		}
++		else
++		    close(fd);
++	    }
++#else
+ 	    tmpnam(iceauthority);
++#endif
+ 	    xsetenv("ICEAUTHORITY", iceauthority);
+ 	    sprintf(command, "iceauth source %s >/dev/null 2>&1", fname);
+ 	    if (system(command))

@@ -1,0 +1,10 @@
+KDE is a network transparent contemporary desktop environment for UNIX
+workstations. It was written by a world-wide network of software
+engineers committed to free software development. KDE seeks to fill
+the need for an easy to use desktop for Unix workstations, similar to
+the desktop environments found under the MacOS or Window95/NT. 
+
+KDE2 is an almost complete rewrite of kde1. This port is not yet complete,
+nor perfectly usable, as kde2 is reaching completion.
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,3 @@
+$OpenBSD: SECURITY,v 1.1.1.1 2000/10/09 22:37:55 espie Exp $
+
+Work in progress, a lot of mktemp holes closed, but a lot remaining probably.
