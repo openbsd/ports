@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-clients,v 1.7 2002/12/18 05:13:15 brad Exp $
+@comment $OpenBSD: PLIST-clients,v 1.8 2003/02/12 17:09:03 naddy Exp $
 @pkgcfl postgresql-[0-9]*
 @pkgcfl pgsql-[0-9]*
 @pkgcfl pgsql-clients-[0-9]*
@@ -9,7 +9,6 @@ bin/dropdb
 bin/droplang
 bin/dropuser
 bin/ecpg
-bin/ipcclean
 bin/pg_config
 bin/pg_dump
 bin/pg_dumpall
@@ -351,33 +350,6 @@ include/postgresql/sql3types.h
 include/postgresql/sqlca.h
 lib/libecpg.a
 lib/libpq.a
-lib/postgresql/ascii_and_mic.so
-lib/postgresql/cyrillic_and_mic.so
-lib/postgresql/euc_cn_and_mic.so
-lib/postgresql/euc_jp_and_sjis.so
-lib/postgresql/euc_kr_and_mic.so
-lib/postgresql/euc_tw_and_big5.so
-lib/postgresql/latin2_and_win1250.so
-lib/postgresql/latin_and_mic.so
-lib/postgresql/plpgsql.so
-lib/postgresql/utf8_and_ascii.so
-lib/postgresql/utf8_and_big5.so
-lib/postgresql/utf8_and_cyrillic.so
-lib/postgresql/utf8_and_euc_cn.so
-lib/postgresql/utf8_and_euc_jp.so
-lib/postgresql/utf8_and_euc_kr.so
-lib/postgresql/utf8_and_euc_tw.so
-lib/postgresql/utf8_and_gb18030.so
-lib/postgresql/utf8_and_gbk.so
-lib/postgresql/utf8_and_iso8859.so
-lib/postgresql/utf8_and_iso8859_1.so
-lib/postgresql/utf8_and_johab.so
-lib/postgresql/utf8_and_sjis.so
-lib/postgresql/utf8_and_tcvn.so
-lib/postgresql/utf8_and_uhc.so
-lib/postgresql/utf8_and_win1250.so
-lib/postgresql/utf8_and_win1256.so
-lib/postgresql/utf8_and_win874.so
 man/man1/createdb.1
 man/man1/createlang.1
 man/man1/createuser.1
@@ -385,21 +357,18 @@ man/man1/dropdb.1
 man/man1/droplang.1
 man/man1/dropuser.1
 man/man1/ecpg.1
-man/man1/initdb.1
-man/man1/initlocation.1
-man/man1/ipcclean.1
 man/man1/pg_config.1
 man/man1/pg_ctl.1
 man/man1/pg_dump.1
 man/man1/pg_dumpall.1
 man/man1/pg_restore.1
-man/man1/postgres.1
-man/man1/postmaster.1
 man/man1/psql.1
 man/man1/vacuumdb.1
 man/man7/abort.7
+man/man7/alter_database.7
 man/man7/alter_group.7
 man/man7/alter_table.7
+man/man7/alter_trigger.7
 man/man7/alter_user.7
 man/man7/analyze.7
 man/man7/begin.7
@@ -410,14 +379,19 @@ man/man7/comment.7
 man/man7/commit.7
 man/man7/copy.7
 man/man7/create_aggregate.7
+man/man7/create_cast.7
 man/man7/create_constraint_trigger.7
+man/man7/create_conversion.7
 man/man7/create_database.7
+man/man7/create_domain.7
 man/man7/create_function.7
 man/man7/create_group.7
 man/man7/create_index.7
 man/man7/create_language.7
 man/man7/create_operator.7
+man/man7/create_operator_class.7
 man/man7/create_rule.7
+man/man7/create_schema.7
 man/man7/create_sequence.7
 man/man7/create_table.7
 man/man7/create_table_as.7
@@ -425,16 +399,22 @@ man/man7/create_trigger.7
 man/man7/create_type.7
 man/man7/create_user.7
 man/man7/create_view.7
+man/man7/deallocate.7
 man/man7/declare.7
 man/man7/delete.7
 man/man7/drop_aggregate.7
+man/man7/drop_cast.7
+man/man7/drop_conversion.7
 man/man7/drop_database.7
+man/man7/drop_domain.7
 man/man7/drop_function.7
 man/man7/drop_group.7
 man/man7/drop_index.7
 man/man7/drop_language.7
 man/man7/drop_operator.7
+man/man7/drop_operator_class.7
 man/man7/drop_rule.7
+man/man7/drop_schema.7
 man/man7/drop_sequence.7
 man/man7/drop_table.7
 man/man7/drop_trigger.7
@@ -442,6 +422,7 @@ man/man7/drop_type.7
 man/man7/drop_user.7
 man/man7/drop_view.7
 man/man7/end.7
+man/man7/execute.7
 man/man7/explain.7
 man/man7/fetch.7
 man/man7/grant.7
@@ -451,6 +432,7 @@ man/man7/load.7
 man/man7/lock.7
 man/man7/move.7
 man/man7/notify.7
+man/man7/prepare.7
 man/man7/reindex.7
 man/man7/reset.7
 man/man7/revoke.7
@@ -462,6 +444,7 @@ man/man7/set_constraints.7
 man/man7/set_session_authorization.7
 man/man7/set_transaction.7
 man/man7/show.7
+man/man7/start_transaction.7
 man/man7/truncate.7
 man/man7/unlisten.7
 man/man7/update.7
@@ -477,12 +460,6 @@ share/doc/postgresql/README.mb.big5
 share/doc/postgresql/README.mb.jp
 share/doc/postgresql/TODO
 share/doc/postgresql/register.txt
-share/postgresql/conversion_create.sql
-share/postgresql/pg_hba.conf.sample
-share/postgresql/pg_ident.conf.sample
-share/postgresql/postgres.bki
-share/postgresql/postgres.description
-share/postgresql/postgresql.conf.sample
 %%SHARED%%
 @dirrm share/postgresql
 @dirrm share/doc/postgresql

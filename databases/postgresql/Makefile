@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.63 2003/01/08 21:33:21 todd Exp $
+# $OpenBSD: Makefile,v 1.64 2003/02/12 17:09:03 naddy Exp $
 
 COMMENT=	"PostgreSQL RDBMS"
 COMMENT-tcl=	"PostgreSQL RDBMS tcl libraries and utilities"
 COMMENT-clients="PostgreSQL RDBMS client libraries and utilities"
 COMMENT-docs=	"PostgreSQL RDBMS documentation"
 
-VERSION=	7.3
+VERSION=	7.3.2
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-clients=postgresql-clients-${VERSION}
 PKGNAME-docs=	postgresql-docs-${VERSION}
@@ -30,7 +30,7 @@ MASTER_SITES=	\
 	ftp://ftp.cz.postgresql.org/pub/ftp.postgresql.org/source/v${VERSION}/ \
 	ftp://ftp.dk.postgresql.org/mirrors/postgresql/source/v${VERSION}/
 
-PSEUDO_FLAVORS=	no_tcl
+PSEUDO_FLAVORS=	tcl
 FLAVOR?=
 
 MULTI_PACKAGES=	-clients -docs
@@ -71,9 +71,7 @@ DOCS=	${WRKSRC}/COPYRIGHT ${WRKSRC}/HISTORY \
 	${WRKSRC}/doc/FAQ ${WRKSRC}/doc/FAQ_DEV ${WRKSRC}/doc/TODO
 
 # For tcl
-.if ${FLAVOR:L:Mno_tcl}
-CONFIGURE_ARGS+= --without-tcl
-.else
+.if ${FLAVOR:L:Mtcl}
 MULTI_PACKAGES+= -tcl
 
 TCL_INCDIR=     ${LOCALBASE}/include/tcl8.3
@@ -90,6 +88,8 @@ RUN_DEPENDS=	::databases/postgresql
 LIB_DEPENDS+=   tk83::x11/tk/8.3
 .  endif
 . endif
+.else
+CONFIGURE_ARGS+= --without-tcl
 .endif
 
 post-install:

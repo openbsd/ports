@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.10 2002/12/17 16:38:54 naddy Exp $
+@comment $OpenBSD: PLIST-docs,v 1.11 2003/02/12 17:09:04 naddy Exp $
 share/doc/postgresql/html/admin-preface.html
 share/doc/postgresql/html/admin.html
 share/doc/postgresql/html/app-clusterdb.html
@@ -191,11 +191,11 @@ share/doc/postgresql/html/libpq-notify.html
 share/doc/postgresql/html/libpq-threading.html
 share/doc/postgresql/html/libpq-trace.html
 share/doc/postgresql/html/libpq.html
-share/doc/postgresql/html/ln17902.html
-share/doc/postgresql/html/ln24578.html
+share/doc/postgresql/html/ln17977.html
+share/doc/postgresql/html/ln24704.html
 share/doc/postgresql/html/ln25.html
-share/doc/postgresql/html/ln37005.html
-share/doc/postgresql/html/ln51720.html
+share/doc/postgresql/html/ln37148.html
+share/doc/postgresql/html/ln51864.html
 share/doc/postgresql/html/ln659.html
 share/doc/postgresql/html/ln8.html
 share/doc/postgresql/html/lo-funcs.html
@@ -385,7 +385,10 @@ share/doc/postgresql/html/release-7-1.html
 share/doc/postgresql/html/release-7-2-1.html
 share/doc/postgresql/html/release-7-2-2.html
 share/doc/postgresql/html/release-7-2-3.html
+share/doc/postgresql/html/release-7-2-4.html
 share/doc/postgresql/html/release-7-2.html
+share/doc/postgresql/html/release-7-3-1.html
+share/doc/postgresql/html/release-7-3.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/resources.html
 share/doc/postgresql/html/routine-reindex.html
@@ -569,7 +572,7 @@ share/doc/postgresql/html/user.html
 share/doc/postgresql/html/wal-configuration.html
 share/doc/postgresql/html/wal-implementation.html
 share/doc/postgresql/html/wal.html
-share/doc/postgresql/html/x11875.html
+share/doc/postgresql/html/x11950.html
 share/doc/postgresql/html/x1779.html
 share/doc/postgresql/html/xaggr.html
 share/doc/postgresql/html/xfunc-c.html
