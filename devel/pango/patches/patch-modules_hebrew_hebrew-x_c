@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_hebrew_hebrew-x_c,v 1.1.1.1 2002/07/25 09:20:01 nino Exp $
+--- modules/hebrew/hebrew-x.c.orig	Fri Jul 19 21:20:19 2002
++++ modules/hebrew/hebrew-x.c	Fri Jul 19 21:20:26 2002
+@@ -257,7 +257,7 @@ add_cluster(HebrewFontInfo   *font_info,
+     }
+ }
+ 
+-gint get_glyph_num(HebrewFontInfo *font_info,
++static gint get_glyph_num(HebrewFontInfo *font_info,
+ 		   PangoFont *font,
+ 		   gunichar  uch)
+ {

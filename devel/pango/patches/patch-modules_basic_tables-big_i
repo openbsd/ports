@@ -1,0 +1,39 @@
+$OpenBSD: patch-modules_basic_tables-big_i,v 1.1.1.1 2002/07/25 09:20:01 nino Exp $
+--- modules/basic/tables-big.i.orig	Tue May 21 21:27:52 2002
++++ modules/basic/tables-big.i	Fri Jul 19 20:54:12 2002
+@@ -23,7 +23,7 @@ enum {
+   ENC_ISO_10646   = 1 << 21
+ };
+ 
+-Charset charsets[] = {
++static Charset charsets[] = {
+   { 0,  NULL,           "iso8859-1",       conv_ucs4 },
+   { 1,  "ISO-8859-2",   "iso8859-2",       conv_8bit },
+   { 2,  "ISO-8859-3",   "iso8859-3",       conv_8bit },
+@@ -48,7 +48,7 @@ Charset charsets[] = {
+   { 21, NULL,           "iso10646-1",      conv_ucs4 }
+ };
+ 
+-CharsetOrdering charset_orderings[] = {
++static CharsetOrdering charset_orderings[] = {
+ 	{ "zh-cn", { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 20, 18, 15, 17, 19, 21} },
+ 	{ "zh-tw", { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 20, 16, 18, 15, 19, 17, 21} },
+ 	{ "ja", { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 18, 19, 16, 17, 20, 21} },
+@@ -56,7 +56,7 @@ CharsetOrdering charset_orderings[] = {
+ 	{ NULL, { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 21, 15, 16, 17, 18, 19, 20} }
+ };
+ 
+-const guint32 char_mask_map[] = {
++static const guint32 char_mask_map[] = {
+   0,
+   ENC_ISO_8859_10|ENC_ISO_8859_13|ENC_ISO_8859_14|ENC_ISO_8859_15|ENC_ISO_8859_1|ENC_ISO_8859_2|ENC_ISO_8859_3|ENC_ISO_8859_4|ENC_ISO_8859_5|ENC_ISO_8859_6|ENC_ISO_8859_7|ENC_ISO_8859_8|ENC_ISO_8859_9|ENC_KOI8_R,
+   ENC_ISO_8859_10|ENC_ISO_8859_13|ENC_ISO_8859_14|ENC_ISO_8859_15|ENC_ISO_8859_1|ENC_ISO_8859_2|ENC_ISO_8859_3|ENC_ISO_8859_4|ENC_ISO_8859_5|ENC_ISO_8859_6|ENC_ISO_8859_7|ENC_ISO_8859_8|ENC_ISO_8859_9|ENC_JIS_0201|ENC_KOI8_R|ENC_TIS_620,
+@@ -177,7 +177,7 @@ const guint32 char_mask_map[] = {
+   ENC_BIG5|ENC_JIS_0212|ENC_KSC_5601,
+ };
+ 
+-const guchar char_masks[] = {
++static const guchar char_masks[] = {
+   1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,
+   1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,
+   2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,

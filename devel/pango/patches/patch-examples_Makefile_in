@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_Makefile_in,v 1.1.1.1 2002/07/25 09:20:01 nino Exp $
+--- examples/Makefile.in.orig	Thu Jun 13 23:05:07 2002
++++ examples/Makefile.in	Wed Jul 10 07:09:49 2002
+@@ -492,7 +492,7 @@ pango.modules:
+ 	if find ../modules -name '*.so' | grep 'so' > /dev/null ; then \
+           echo "Writing a pango.modules file to use when running examples before installing Pango."; \
+ 	  (cd ../modules && \
+-           ../pango/pango-querymodules `find . -name '*.la' | grep -v \.libs` > ../examples/pango.modules ) ;\
++           LD_LIBRARY_PATH=../pango/.libs ../pango/pango-querymodules `find . -name '*.so' | grep -v \.libs` > ../examples/pango.modules ) ;\
+ 	else \
+           echo "No dynamic modules found; will use only static modules for uninstalled example programs."; \
+ 	  touch pango.modules; \

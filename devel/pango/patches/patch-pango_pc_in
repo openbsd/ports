@@ -1,0 +1,11 @@
+$OpenBSD: patch-pango_pc_in,v 1.1.1.1 2002/07/25 09:20:01 nino Exp $
+--- pango.pc.in.orig	Wed Mar  6 18:04:39 2002
++++ pango.pc.in	Mon Jun 24 18:32:11 2002
+@@ -9,6 +9,6 @@ Name: Pango
+ Description: Internationalized text handling
+ Version: @VERSION@
+ Requires: @FRIBIDI_PC@glib-2.0,gobject-2.0,gmodule-2.0
+-Libs: -L${libdir} -lpango-@PANGO_API_VERSION@
++Libs: -L${libdir} -L/usr/X11R6/lib -lpango-@PANGO_API_VERSION@
+ Cflags: -I${includedir}/pango-1.0
+ 
