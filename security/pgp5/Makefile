@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/12/12 22:26:59 dugsong Exp $
+# $OpenBSD: Makefile,v 1.6 1999/12/13 05:56:17 brad Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
@@ -21,13 +21,15 @@ MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 RESTRICTED=	"Crypto; export-controlled"
 
-NEED_VERSION=	1.121
-
 MAINTAINER=	fgsch@openbsd.org
 
 USE_AUTOCONF=	yes
+CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 
-NO_PACKAGE=	yes
+.if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
+CONFIGURE_ARGS=	--with-rsaref
+.endif
+
 WRKSRC=	${WRKDIR}/pgp50i/src
 
 pre-fetch:
@@ -49,10 +51,10 @@ pre-fetch:
 post-patch:
 	@mv ${WRKSRC}/man/pgp.1 ${WRKSRC}/man/pgp5.1
 
-.if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
 pre-configure:
-	@${MV} ${WRKSRC}/lib/pgp/pubkey/pgpRSAGlue1.c \
-	       ${WRKSRC}/lib/pgp/pubkey/pgpRSAGlue1.c-
+.if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
+	@mv ${WRKSRC}/lib/pgp/pubkey/pgpRSAGlue1.c \
+		${WRKSRC}/lib/pgp/pubkey/pgpRSAGlue1.c-
 .endif
 
 pre-install:

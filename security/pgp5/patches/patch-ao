@@ -1,13 +1,39 @@
---- configure.in.orig	Sun Dec 12 16:51:44 1999
-+++ configure.in	Sun Dec 12 16:54:49 1999
-@@ -170,15 +170,14 @@
+--- configure.in.orig	Sat Feb  7 14:54:56 1998
++++ configure.in	Mon Dec 13 00:05:31 1999
+@@ -148,6 +148,25 @@
+ #source files (pgpRSAGlue[12].c, pgpRSAKeyGen.c and pgpAltRSAGlu.c)
+ #is handled with the make distribution-* flags.
+ 
++AC_MSG_CHECKING(whether to use rsaref)
++AC_ARG_WITH(rsaref,
++[  --with-rsaref           Use RSAREF (try to avoid patent problems in U.S.)],
++[
++WITH_RSAREF=0
++ case "$withval" in
++  yes)
++       AC_MSG_RESULT(yes)
++       WITH_RSAREF=1
++       ;;
++  *)
++       AC_MSG_RESULT(no)
++       AC_DEFINE(WITH_RSAREF)
++       ;;
++  esac ],
++  AC_MSG_RESULT(no)
++)
++
++if test "x$WITH_RSAREF" = "x1"; then
+ AC_MSG_CHECKING(for internal RSA encrypt/sign support)
+ RSALIB=""
+ RSAINCS=""
+@@ -170,15 +189,14 @@
    AC_MSG_CHECKING(for lib/pgp/pubkey/pgpAltRSAGlu.c)
    if test -f "lib/pgp/pubkey/pgpAltRSAGlu.c"; then
      AC_MSG_RESULT(yes)
 -    AC_MSG_CHECKING(for RSAREF in ../rsaref/install/unix)
 -    if test -f "../rsaref/install/unix/rsaref.a"; then
-+    AC_MSG_CHECKING(for RSAREF in ${prefix})
-+    if test -f "${prefix}/lib/librsaref.a"; then
++    AC_MSG_CHECKING(for RSAREF in ${LOCALBASE})
++    if test -f "${LOCALBASE}/lib/librsaref.a"; then
        HAVE_RSAREF=1
        AC_MSG_RESULT(yes)
        AC_DEFINE(USE_RSAREF_FULL, 1)
@@ -15,8 +41,16 @@
 -      RSALIB="\$(top_builddir)/../rsaref/install/unix/rsaref.a"
 -      RSAINCS="-I \$(top_builddir)/../rsaref/test"
 -      RSAINCS="$RSAINCS -I \$(top_builddir)/../rsaref/source"
-+      RSALIB="${prefix}/lib/librsaref.a"
-+      RSAINCS="-I${prefix}/include"
++      RSALIB="-L${LOCALBASE}/lib -lrsaref"
++      RSAINCS="-I${LOCALBASE}/include"
        AC_MSG_CHECKING(for lib/pgp/pubkey/pgpRSAKeyGen.c)
        if test -f "lib/pgp/pubkey/pgpRSAKeyGen.c"; then
          AC_MSG_RESULT(yes)
+@@ -221,6 +239,7 @@
+ AC_SUBST(RSAINCS)
+ AC_SUBST(RSAKEYGEN)
+ AC_SUBST(RSAKEY)
++fi
+ 
+ BETALICENSE=""
+ FREEWARELICENSE=""
