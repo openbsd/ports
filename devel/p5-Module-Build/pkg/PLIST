@@ -1,0 +1,43 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/26 11:16:49 msf Exp $
+${P5SITE}/Module/Build.pm
+${P5SITE}/Module/Build/Base.pm
+${P5SITE}/Module/Build/Compat.pm
+${P5SITE}/Module/Build/Cookbook.pm
+${P5SITE}/Module/Build/PPMMaker.pm
+${P5SITE}/Module/Build/Platform/Amiga.pm
+${P5SITE}/Module/Build/Platform/Default.pm
+${P5SITE}/Module/Build/Platform/EBCDIC.pm
+${P5SITE}/Module/Build/Platform/MPEiX.pm
+${P5SITE}/Module/Build/Platform/MacOS.pm
+${P5SITE}/Module/Build/Platform/RiscOS.pm
+${P5SITE}/Module/Build/Platform/Unix.pm
+${P5SITE}/Module/Build/Platform/VMS.pm
+${P5SITE}/Module/Build/Platform/VOS.pm
+${P5SITE}/Module/Build/Platform/Windows.pm
+${P5SITE}/Module/Build/Platform/aix.pm
+${P5SITE}/Module/Build/Platform/cygwin.pm
+${P5SITE}/Module/Build/Platform/darwin.pm
+${P5SITE}/Module/Build/Platform/os2.pm
+${P5SITE}/Module/Build/PodParser.pm
+man/man3/Module::Build.3p
+man/man3/Module::Build::Base.3p
+man/man3/Module::Build::Compat.3p
+man/man3/Module::Build::Cookbook.3p
+man/man3/Module::Build::PPMMaker.3p
+man/man3/Module::Build::Platform::Amiga.3p
+man/man3/Module::Build::Platform::Default.3p
+man/man3/Module::Build::Platform::EBCDIC.3p
+man/man3/Module::Build::Platform::MPEiX.3p
+man/man3/Module::Build::Platform::MacOS.3p
+man/man3/Module::Build::Platform::RiscOS.3p
+man/man3/Module::Build::Platform::Unix.3p
+man/man3/Module::Build::Platform::VMS.3p
+man/man3/Module::Build::Platform::VOS.3p
+man/man3/Module::Build::Platform::Windows.3p
+man/man3/Module::Build::Platform::aix.3p
+man/man3/Module::Build::Platform::cygwin.3p
+man/man3/Module::Build::Platform::darwin.3p
+man/man3/Module::Build::Platform::os2.3p
+@dirrm ${P5SITE}/Module/Build/Platform
+@dirrm ${P5SITE}/Module/Build
+@dirrm ${P5SITE}/Module
