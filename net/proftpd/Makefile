@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 1999/09/28 18:43:29 espie Exp $
+# $OpenBSD: Makefile,v 1.15 1999/10/27 22:54:42 brad Exp $
 # $FreeBSD: Makefile,v 1.7 1999/02/12 21:55:04 obrien Exp $
 
-DISTNAME=	proftpd-1.2.0pre7
+DISTNAME=	proftpd-1.2.0pre9
 PKGNAME=	proftpd-1.2.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.tos.net/pub/proftpd/ \
@@ -16,7 +16,7 @@ NEED_VERSION=	1.73
 # It is recommended that you don't use proftpd for now, 
 # unless you're really sure you know what you are doing.
 #
-BROKEN="Needs a security audit. Use at your own risk"
+BROKEN=	"Needs a security audit. Use at your own risk"
 
 MAINTAINER=	brad@openbsd.org
 
@@ -48,14 +48,16 @@ post-configure:
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/proftpd
-	${INSTALL_PROGRAM} ${WRKSRC}/ftpcount ${PREFIX}/bin/ftpcount
-	${INSTALL_PROGRAM} ${WRKSRC}/proftpd ${PREFIX}/libexec/proftpd
-	${INSTALL_PROGRAM} ${WRKSRC}/ftpshut ${PREFIX}/sbin/ftpshut
-	${INSTALL_MAN} ${WRKSRC}/src/ftpcount.1 ${PREFIX}/man/man1/ftpcount.1
-	${INSTALL_MAN} ${WRKSRC}/src/ftpwho.1 ${PREFIX}/man/man1/ftpwho.1
-	${INSTALL_MAN} ${WRKSRC}/src/ftpshut.8 ${PREFIX}/man/man8/ftpshut.8
-	${INSTALL_MAN} ${WRKSRC}/src/proftpd.8 ${PREFIX}/man/man8/proftpd.8
-	${INSTALL_SCRIPT} ${WRKSRC}/sample-configurations/basic.conf ${PREFIX}/lib/proftpd/proftpd.conf.sample
+	${INSTALL_PROGRAM} ${WRKSRC}/ftpcount ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ftpwho ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/proftpd ${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/ftpshut ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/src/ftpcount.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/src/ftpwho.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/src/xferlog.5 ${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/src/ftpshut.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/src/proftpd.8 ${PREFIX}/man/man8
+	${INSTALL_DATA} ${WRKSRC}/sample-configurations/basic.conf ${PREFIX}/lib/proftpd/proftpd.conf.sample
 
 post-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL

@@ -1,4 +1,4 @@
-# $OpenBSD: DEINSTALL,v 1.1 1999/04/27 19:34:42 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.2 1999/10/27 22:54:43 brad Exp $
 #
 # proftpd de-installation
 
@@ -16,6 +16,7 @@ if [ -f ${CONFIG_FILE} ]; then
     echo "| this step as root:"
     echo "|"
     echo "|           rm -f ${CONFIG_FILE}"
+    echo "|           rm -rf /var/run/proftpd"
     echo "|"
     echo "| Do not do this if you plan on re-installing $1"
     echo "| at some future time."

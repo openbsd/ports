@@ -1,54 +1,50 @@
---- modules/mod_auth.c.orig	Sun Aug 22 20:23:51 1999
-+++ modules/mod_auth.c	Sun Aug 22 20:23:53 1999
-@@ -69,7 +69,7 @@
- 		  (void*)0,NULL);
- 
- /*
--  schedule(main_exit,0,(void*)LOG_NOTICE,"FTP login timed out, disconnected.",
-+  schedule(main_exit,0,(void*)LOG_INFO,"FTP login timed out, disconnected.",
-            (void*)0,NULL);
-   remove_timer(TIMER_IDLE,ANY_MODULE);
-   remove_timer(TIMER_NOXFER,ANY_MODULE);
-@@ -787,13 +787,13 @@
+--- modules/mod_auth.c.orig	Sat Oct 23 01:18:49 1999
++++ modules/mod_auth.c	Wed Oct 27 17:36:14 1999
+@@ -70,7 +70,7 @@
+ 		      "closing control connection.",
+                       TimeoutLogin);
+   
+-  main_exit((void*) LOG_NOTICE, "FTP login timed out, disconnected.",
++  main_exit((void*) LOG_INFO, "FTP login timed out, disconnected.",
+ 	    (void*) 0, NULL);
+   
+ /* should never be reached */
+@@ -784,9 +784,9 @@
      resolve_anonymous_dirs(c->subset);
  
    if(c)
--    log_auth(LOG_NOTICE,"ANONYMOUS FTP login as '%s' from %s [%s] to %s:%i",
-+    log_auth(LOG_INFO,"ANONYMOUS FTP login as '%s' from %s [%s] to %s:%i",
-       origuser,session.c->remote_name,
-       inet_ascii(p,session.c->remote_ipaddr),
-       inet_ascii(p,session.c->local_ipaddr),
-       session.c->local_port);
+-    log_auth(LOG_NOTICE, "ANON %s: Login successful.", origuser);
++    log_auth(LOG_INFO, "ANON %s: Login successful.", origuser);
    else
--    log_auth(LOG_NOTICE,"FTP login as '%s' from %s [%s] to %s:%i",
-+    log_auth(LOG_INFO,"FTP login as '%s' from %s [%s] to %s:%i",
-       origuser,session.c->remote_name,
-       inet_ascii(p,session.c->remote_ipaddr),
-       inet_ascii(p,session.c->local_ipaddr),
-@@ -1155,7 +1155,7 @@
-       send_response(R_530,"%s",
-                     sreplace(cmd->tmp_pool,maxstr,"%m",maxn,NULL));
+-    log_auth(LOG_NOTICE,"USER %s: Login successful.", origuser);
++    log_auth(LOG_INFO,"USER %s: Login successful.", origuser);
  
--      log_auth(LOG_NOTICE,"connection refused (max clients per host %d)",
-+      log_auth(LOG_INFO,"connection refused (max clients per host %d)",
-                max);
-       end_login(0);
-     }
+   /* Write the login to wtmp.  This must be done here because we won't
+    * have access after we give up root.  This can result in falsified
+@@ -1146,7 +1146,7 @@
+ 			"Too many users in your class, "
+ 			"please try again later.");
+ 	
+-	log_auth(LOG_NOTICE, "Connection refused (max clients for class %s).",
++	log_auth(LOG_INFO, "Connection refused (max clients for class %s).",
+ 		 session.class->name);
+ 	
+ 	end_login(0);
 @@ -1179,7 +1179,7 @@
        send_response(R_530,"%s",
                      sreplace(cmd->tmp_pool,maxstr,"%m",maxn,NULL));
  
--      log_auth(LOG_NOTICE,"connection refused (max clients %d)",
-+      log_auth(LOG_INFO,"connection refused (max clients %d)",
-                max);
+-      log_auth(LOG_NOTICE, "Connection refused (max clients per host %d).",
++      log_auth(LOG_INFO, "Connection refused (max clients per host %d).",
+ 	       max);
+       
+       end_login(0);
+@@ -1203,7 +1203,7 @@
+     if(cur >= max) {
+       send_response(R_530, "%s",
+ 		    sreplace(cmd->tmp_pool, maxstr, "%m", maxn, NULL));
+-      log_auth(LOG_NOTICE, "Connection refused (max clients %d).", max);
++      log_auth(LOG_INFO, "Connection refused (max clients %d).", max);
        end_login(0);
      }
-@@ -1266,7 +1266,7 @@
  
-     if(++auth_tries >= max) {
-       send_response(R_530,"Login incorrect");
--      log_auth(LOG_NOTICE,"Maximum login attempts exceeded from %s [%s] to %s:%i",
-+      log_auth(LOG_INFO,"Maximum login attempts exceeded from %s [%s] to %s:%i",
-                session.c->remote_name,
-                inet_ascii(cmd->tmp_pool,session.c->remote_ipaddr),
- 	       inet_ascii(cmd->tmp_pool,session.c->local_ipaddr),
