@@ -1,47 +1,49 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/01/28 18:43:27 wilfried Exp $
-${P5SITE}/Net/DNS.pm
-${P5SITE}/Net/DNS/FAQ.pod
-${P5SITE}/Net/DNS/Header.pm
-${P5SITE}/Net/DNS/Nameserver.pm
-${P5SITE}/Net/DNS/Packet.pm
-${P5SITE}/Net/DNS/Question.pm
-${P5SITE}/Net/DNS/RR.pm
-${P5SITE}/Net/DNS/RR/A.pm
-${P5SITE}/Net/DNS/RR/AAAA.pm
-${P5SITE}/Net/DNS/RR/AFSDB.pm
-${P5SITE}/Net/DNS/RR/CERT.pm
-${P5SITE}/Net/DNS/RR/CNAME.pm
-${P5SITE}/Net/DNS/RR/DNAME.pm
-${P5SITE}/Net/DNS/RR/EID.pm
-${P5SITE}/Net/DNS/RR/HINFO.pm
-${P5SITE}/Net/DNS/RR/ISDN.pm
-${P5SITE}/Net/DNS/RR/LOC.pm
-${P5SITE}/Net/DNS/RR/MB.pm
-${P5SITE}/Net/DNS/RR/MG.pm
-${P5SITE}/Net/DNS/RR/MINFO.pm
-${P5SITE}/Net/DNS/RR/MR.pm
-${P5SITE}/Net/DNS/RR/MX.pm
-${P5SITE}/Net/DNS/RR/NAPTR.pm
-${P5SITE}/Net/DNS/RR/NIMLOC.pm
-${P5SITE}/Net/DNS/RR/NS.pm
-${P5SITE}/Net/DNS/RR/NSAP.pm
-${P5SITE}/Net/DNS/RR/NULL.pm
-${P5SITE}/Net/DNS/RR/OPT.pm
-${P5SITE}/Net/DNS/RR/PTR.pm
-${P5SITE}/Net/DNS/RR/PX.pm
-${P5SITE}/Net/DNS/RR/RP.pm
-${P5SITE}/Net/DNS/RR/RT.pm
-${P5SITE}/Net/DNS/RR/SOA.pm
-${P5SITE}/Net/DNS/RR/SRV.pm
-${P5SITE}/Net/DNS/RR/TKEY.pm
-${P5SITE}/Net/DNS/RR/TSIG.pm
-${P5SITE}/Net/DNS/RR/TXT.pm
-${P5SITE}/Net/DNS/RR/X25.pm
-${P5SITE}/Net/DNS/Resolver.pm
-${P5SITE}/Net/DNS/Resolver/Recurse.pm
-${P5SITE}/Net/DNS/Select.pm
-${P5SITE}/Net/DNS/Update.pm
+@comment $OpenBSD: PLIST,v 1.10 2003/06/30 12:27:09 wilfried Exp $
+${P5ARCH}/Net/DNS.pm
+${P5ARCH}/Net/DNS/FAQ.pod
+${P5ARCH}/Net/DNS/Header.pm
+${P5ARCH}/Net/DNS/Nameserver.pm
+${P5ARCH}/Net/DNS/Packet.pm
+${P5ARCH}/Net/DNS/Question.pm
+${P5ARCH}/Net/DNS/RR.pm
+${P5ARCH}/Net/DNS/RR/A.pm
+${P5ARCH}/Net/DNS/RR/AAAA.pm
+${P5ARCH}/Net/DNS/RR/AFSDB.pm
+${P5ARCH}/Net/DNS/RR/CERT.pm
+${P5ARCH}/Net/DNS/RR/CNAME.pm
+${P5ARCH}/Net/DNS/RR/DNAME.pm
+${P5ARCH}/Net/DNS/RR/EID.pm
+${P5ARCH}/Net/DNS/RR/HINFO.pm
+${P5ARCH}/Net/DNS/RR/ISDN.pm
+${P5ARCH}/Net/DNS/RR/LOC.pm
+${P5ARCH}/Net/DNS/RR/MB.pm
+${P5ARCH}/Net/DNS/RR/MG.pm
+${P5ARCH}/Net/DNS/RR/MINFO.pm
+${P5ARCH}/Net/DNS/RR/MR.pm
+${P5ARCH}/Net/DNS/RR/MX.pm
+${P5ARCH}/Net/DNS/RR/NAPTR.pm
+${P5ARCH}/Net/DNS/RR/NIMLOC.pm
+${P5ARCH}/Net/DNS/RR/NS.pm
+${P5ARCH}/Net/DNS/RR/NSAP.pm
+${P5ARCH}/Net/DNS/RR/NULL.pm
+${P5ARCH}/Net/DNS/RR/OPT.pm
+${P5ARCH}/Net/DNS/RR/PTR.pm
+${P5ARCH}/Net/DNS/RR/PX.pm
+${P5ARCH}/Net/DNS/RR/RP.pm
+${P5ARCH}/Net/DNS/RR/RT.pm
+${P5ARCH}/Net/DNS/RR/SOA.pm
+${P5ARCH}/Net/DNS/RR/SRV.pm
+${P5ARCH}/Net/DNS/RR/TKEY.pm
+${P5ARCH}/Net/DNS/RR/TSIG.pm
+${P5ARCH}/Net/DNS/RR/TXT.pm
+${P5ARCH}/Net/DNS/RR/X25.pm
+${P5ARCH}/Net/DNS/Resolver.pm
+${P5ARCH}/Net/DNS/Resolver/Recurse.pm
+${P5ARCH}/Net/DNS/Select.pm
+${P5ARCH}/Net/DNS/Update.pm
 @comment ${P5ARCH}/auto/Net/DNS/.packlist
+${P5ARCH}/auto/Net/DNS/DNS.bs
+${P5ARCH}/auto/Net/DNS/DNS.so
 @comment ${P5ARCH}/perllocal.pod
 man/man3p/Net::DNS.3p
 man/man3p/Net::DNS::FAQ.3p
@@ -88,8 +90,8 @@ man/man3p/Net::DNS::Update.3p
 @comment @dirrm ${P5ARCH}/auto/Net/DNS
 @comment @dirrm ${P5ARCH}/auto/Net
 @comment @dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}/Net/DNS/Resolver
+@dirrm ${P5ARCH}/Net/DNS/RR
+@dirrm ${P5ARCH}/Net/DNS
+@comment @dirrm ${P5ARCH}/Net
 @comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Net/DNS/Resolver
-@dirrm ${P5SITE}/Net/DNS/RR
-@dirrm ${P5SITE}/Net/DNS
-@comment @dirrm ${P5SITE}/Net
