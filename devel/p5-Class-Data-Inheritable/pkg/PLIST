@@ -1,3 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/10/16 12:50:40 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/30 19:34:24 sturm Exp $
 ${P5SITE}/Class/Data/Inheritable.pm
+@comment ${P5ARCH}/auto/Class/Data/Inheritable/.packlist
 man/man3p/Class::Data::Inheritable.3p
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Class/Data/Inheritable
+@comment @dirrm ${P5ARCH}/auto/Class/Data
+@comment @dirrm ${P5ARCH}/auto/Class
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Class/Data
+@dirrm ${P5SITE}/Class
