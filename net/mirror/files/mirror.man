@@ -1,0 +1,10 @@
+.\" $OpenBSD: mirror.man,v 1.1 2000/03/28 10:00:18 espie Exp $
+.Dd July 29, 1994
+.Dt LS 1
+.Os
+.Sh NAME
+.Nm mirror
+.Nd mirror packages on remote sites
+.Sh DESCRIPTION
+Please see the HTML documentation in 
+.Pa @DOCDIR@ .
