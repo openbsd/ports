@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2000/06/20 18:46:23 brad Exp $
+lib/libGL.so.3.0
+lib/libGLU.so.3.0
+lib/libMesaGL.so.3.0
+lib/libMesaGLU.so.3.0
+lib/libglut.so.3.7
+@exec /sbin/ldconfig -m %B

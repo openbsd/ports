@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/06/20 18:46:23 brad Exp $
 include/GL/dosmesa.h
 include/GL/foomesa.h
 include/GL/fxmesa.h
@@ -16,14 +17,9 @@ include/GL/svgamesa.h
 include/GL/wmesa.h
 include/GL/xmesa.h
 lib/libGL.a
-lib/libGL.so.3.0
 lib/libGLU.a
-lib/libGLU.so.3.0
 lib/libMesaGL.a
-lib/libMesaGL.so.3.0
 lib/libMesaGLU.a
-lib/libMesaGLU.so.3.0
 lib/libglut.a
-lib/libglut.so.3.7
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 @dirrm include/GL

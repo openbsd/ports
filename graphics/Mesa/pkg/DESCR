@@ -5,3 +5,5 @@ Inc.  However, the author makes no claim that Mesa is in any way a
 compatible replacement for OpenGL or associated with Silicon Graphics, Inc.
 Those who want a licensed implementation of OpenGL should contact a licensed
 vendor.
+
+WWW: ${HOMEPAGE}
