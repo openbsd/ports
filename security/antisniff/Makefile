@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2004/05/07 15:28:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2004/06/21 20:11:23 xsa Exp $
 
 COMMENT=	"promiscuous mode interface detector"
 
 PKGNAME=	antisniff-1.1.2
 CATEGORIES=	security
-
-MASTER_SITES=	http://www.securitysoftwaretech.com/antisniff/dist/
-HOMEPAGE=	http://www.securitysoftwaretech.com/antisniff/
 
 DISTNAME=	anti_sniff_researchv1-1-2
 
@@ -14,6 +11,8 @@ PERMIT_PACKAGE_CDROM=	"commercial software"
 PERMIT_PACKAGE_FTP=	"commercial software"
 PERMIT_DISTFILES_CDROM=	"commercial software"
 PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 WRKDIST=	${WRKDIR}/anti_sniff
 
