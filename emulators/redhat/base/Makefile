@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/06/05 04:11:02 jasoni Exp $
+# $OpenBSD: Makefile,v 1.10 2002/08/02 01:19:50 naddy Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 6.2"
 
@@ -38,7 +38,7 @@ RPMS=		ldconfig-1.9.5-16.i386.rpm \
 REMOVE_DIRS=	/usr/doc /usr/info /usr/man /usr/share/zoneinfo
 REMOVE_FILES=	/etc/localtime
 
-do-patch:
+PATCH_LIST=
 
 pre-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}
