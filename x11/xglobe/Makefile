@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2000/05/30 20:00:51 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/06/09 17:06:55 espie Exp $
 
 CATEGORIES=x11
 HOMEPAGE=http://wwwrzstud.rz.uni-karlsruhe.de/%7Euddn/xglobe/
 MASTER_SITES=${HOMEPAGE}
 DISTNAME=xglobe-0.5
-NEED_VERSION=1.283
+NEED_VERSION=1.295
 
 MAINTAINER=espie@cvs.openbsd.org
-
-FAKE=			Yes
 
 # GPL, included map is free
 PERMIT_PACKAGE_CDROM=	Yes

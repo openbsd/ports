@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.5 2000/06/03 14:25:59 wvdputte Exp $
+# $OpenBSD: OpenBSD-markers,v 1.6 2000/06/09 17:06:56 espie Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -27.48		153.20		"Leonard"	# David
@@ -19,7 +19,7 @@
 42.281336	-83.738587	"Turan"		# Chris
 42.3813		-71.1283	"Janzen"	# Paul
 43.5826		1.4376		"Herrb"		# Matthieu
-43.633          -79.500         "Smith"         color=white # Brad
+43.633          -79.500         "Smith"         # Brad
 43.70		-79.42		"Westerback"	# Ken
 44.39		-63.34		"Campbell"	# Aaron
 45.5		-73.5		"Cote"		# Yannick
@@ -40,3 +40,4 @@
 59.33		18.08		"Grabowski"	# Art
 59.43		17.81		"Jansson"	# Mats O
 60.12399	24.52438	"Virtanen"	# Jukka
+43.9183		-78.6838	"Bertrand" 	# Louis
