@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/24 15:31:19 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2001/12/13 03:25:32 lebel Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
-VERSION=	1.3.23
+VERSION=	1.3.24
 DISTNAME=	mutt-${VERSION}i
 CATEGORIES=     mail
 NEED_VERSION=	1.460
@@ -27,7 +27,6 @@ FLAVORS=	slang imap pop compressed mixmaster
 FLAVOR?=
 
 SYSCONFDIR=	/etc/mutt
-CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-sharedir="${PREFIX}/share/mutt" \
 		--with-docdir="${PREFIX}/share/doc/mutt" \
 		--enable-flock --disable-fcntl \
@@ -47,9 +46,12 @@ CONFIGURE_ARGS+= --with-curses
 # http://www.spinnaker.de/mutt/compressed/
 .if ${FLAVOR:L:Mcompressed}
 MASTER_SITES0=	http://www.spinnaker.de/mutt/compressed/
-PATCHFILES+=	patch-${VERSION}.rr.compressed.2.gz:0
+PATCHFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
 PATCH_DIST_STRIP=-p1
 CONFIGURE_ARGS+= --enable-compressed
+CONFIGURE_STYLE= autoconf
+.else
+CONFIGURE_STYLE= gnu
 .endif
 
 # If you need IMAP or POP, you may want to enable those.
