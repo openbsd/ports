@@ -21,7 +21,7 @@ ALL_TARGET=	default
 INSTALL_TARGET=	setup check
 NO_MTREE=	yes
 
-RUN_DEPENDS=	${QMAILDIR}/bin/qmail-local:${PORTSDIR}/mail/qmail/qmail
+RUN_DEPENDS=	${QMAILDIR}/bin/qmail-local:${PORTSDIR}/mail/qmail
 
 pre-build:
 	@${ECHO} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
