@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/11/13 22:13:22 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/03/15 06:50:11 kevlo Exp $
 
 COMMENT=	"documentation system for C, C++, IDL and Java"
 
-DISTNAME=	doc++-3.4.8
+DISTNAME=	doc++-3.4.9
 CATEGORIES=	devel
-NEED_VERSION=	1.496
+NEED_VERSION=	1.510
 
 HOMEPAGE=	http://docpp.sourceforge.net/
 
@@ -15,15 +15,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR= apps/doctools 
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	docpp
 
-RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu \
+RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu \ 
 		:teTeX_base-*:print/teTeX/base
 
 USE_GMAKE=	Yes
-
 CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+MODULES=	gettext
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/doc++
