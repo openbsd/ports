@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.9 2000/08/24 22:00:03 brad Exp $
+# $OpenBSD: INSTALL,v 1.10 2001/01/12 21:21:02 brad Exp $
 #
 # Pre/post-installation setup of squid
 
@@ -12,9 +12,9 @@ CONFIG_DIR=${SYSCONFDIR}
 SAMPLE_CONFIG_DIR=$PREFIX/share/examples/squid
 STATEDIR=${STATEDIR}
 
-install -d -o www -g www -m 755 $STATEDIR
-install -d -o www -g www -m 755 $STATEDIR/logs
-install -d -o www -g www -m 755 $STATEDIR/cache
+install -d -o www -g www -m 771 $STATEDIR
+install -d -o www -g www -m 775 $STATEDIR/logs
+install -d -o www -g www -m 771 $STATEDIR/cache
 ln -sf $STATEDIR/logs/squid.pid /var/run/squid.pid
 
 do_notice_conf()
