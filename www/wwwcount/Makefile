@@ -1,13 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2000/05/17 04:34:26 form Exp $
-
-# WWW site: http://www.fccc.edu/users/muquit/Count.html
-# For digit images look at:
-# http://www.digitmania.holowww.com/
+# $OpenBSD: Makefile,v 1.15 2000/06/15 05:40:12 form Exp $
 
 DISTNAME=	wwwcount2.5
 PKGNAME=	wwwcount-2.5
 CATEGORIES=	www
-FAKE=		Yes
+NEED_VERSION=	1.301
 MASTER_SITES=	http://wwwcount.yeehaw.net/mirror/%SUBDIR%/ \
 		http://mirror.njit.edu/counter/%SUBDIR%/ \
 		http://www.neonramp.com/Count/%SUBDIR%/ \
@@ -17,6 +13,10 @@ MASTER_SITES=	http://wwwcount.yeehaw.net/mirror/%SUBDIR%/ \
 		http://muquit.com/muquit/software/Count/%SUBDIR%/
 MASTER_SITE_SUBDIR=	src/wwwcount2.5
 
+# For digit images look at:
+# http://www.digitmania.holowww.com/
+HOMEPAGE=	http://www.muquit.com/muquit/software/Count/Count.html
+
 MAINTAINER=	form@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,7 +24,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=gnu
 
 WWWDIR=		/var/www
 
