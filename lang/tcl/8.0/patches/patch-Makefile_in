@@ -1,6 +1,7 @@
---- Makefile.in.orig	Tue Mar  9 06:51:26 1999
-+++ Makefile.in	Tue Feb 27 09:31:10 2001
-@@ -34,6 +34,9 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/10/10 04:17:40 pvalchev Exp $
+--- Makefile.in.orig	Mon Mar  8 23:51:26 1999
++++ Makefile.in	Tue Oct  9 21:51:56 2001
+@@ -34,6 +34,9 @@ exec_prefix =	@exec_prefix@
  # when installing files.
  INSTALL_ROOT =
  
@@ -10,7 +11,7 @@
  # Directory from which applications will reference the library of Tcl
  # scripts (note: you can set the TCL_LIBRARY environment variable at
  # run-time to override this value):
-@@ -331,14 +334,18 @@
+@@ -331,14 +334,18 @@ DL_SRCS = \
  
  SRCS = $(GENERIC_SRCS) $(UNIX_SRCS)
  
@@ -31,7 +32,7 @@
  
  # Make target which outputs the list of the .o contained in the Tcl lib
  # usefull to build a single big shared library containing Tcl and other
-@@ -433,7 +440,7 @@
+@@ -433,7 +440,7 @@ install: install-binaries install-librar
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -40,7 +41,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -445,16 +452,19 @@
+@@ -445,16 +452,19 @@ install-binaries: $(TCL_LIB_FILE) tclsh
  	    done;
  	@echo "Installing $(TCL_LIB_FILE)"
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
@@ -64,7 +65,7 @@
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
-@@ -472,8 +482,15 @@
+@@ -472,8 +482,15 @@ install-libraries:
  		else true; \
  		fi; \
  	    done;
@@ -82,7 +83,7 @@
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -525,6 +542,13 @@
+@@ -525,6 +542,13 @@ install-man:
  	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
  	    done;
  	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
