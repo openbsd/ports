@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/03/21 21:25:51 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/05/07 12:53:39 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	"system secureness checker"
@@ -23,18 +23,26 @@ C_SRC      = home.chk.c user.chk.c is_able.c is_something.c \
 WRKDIST=        ${WRKDIR}/cops_104
 
 pre-build:
-	(cd ${WRKSRC} ; ./reconfig)
-	(cd ${WRKSRC} ; \
-	sed 's,^SECURE=/usr/foo/bar,SECURE=${PREFIX}/cops,g' < cops | sed '/^$$SECURE\/passwd\.chk.*/d' | sed 's,SECURE_USERS="foo@bar\.edu",SECURE_USERS="root@localhost",g' | sed 's/passwd\.chk pass.chk //g' > cops.out ; \
-	mv cops.out cops ; chmod u+x cops)
+	cd ${WRKSRC} && ./reconfig
+	cd ${WRKSRC} && \
+	sed -e 's,^SECURE=.*,SECURE=${PREFIX}/cops,g' -e '/^$$SECURE\/passwd\.chk.*/d' -e 's,^SECURE_USERS=.*,SECURE_USERS="root@localhost",g' -e 's/passwd\.chk pass.chk //g' cops > cops.out && \
+	mv cops.out cops && chmod u+x cops
 
-do-build:
-	(cd ${WRKSRC} ; ${MAKE_PROGRAM} EXECUTABLE="${EXECUTABLE}" C_SRC="${C_SRC}")
+MAKE_FILE=makefile
+MAKE_FLAGS=EXECUTABLE="${EXECUTABLE}" C_SRC="${C_SRC}" CFLAGS="${CFLAGS}"
 
 do-install:
-	(cd ${WRKDIR} ; rm -rf ${PREFIX}/cops ; mkdir -p ${PREFIX}/cops ; \
-	cp -R ${WRKSRC}/* ${PREFIX}/cops ; \
-	chmod -R go-rwx ${PREFIX}/cops ; \
-	rm -rf ${PREFIX}/cops/*.old ${PREFIX}/cops/src)
+	rm -rf ${PREFIX}/cops 
+	mkdir -p ${PREFIX}/cops
+	cp -R ${WRKSRC}/* ${PREFIX}/cops
+	chmod -R go-rwx ${PREFIX}/cops
+	rm -rf ${PREFIX}/cops/*.{old,orig} ${PREFIX}/cops/src \
+		${PREFIX}/cops/docs/{*.ms,makefile*}
+	# move man pages to correct place
+	for i in ${PREFIX}/cops/docs/*.1; do \
+		j=`basename $$i .1`; \
+		${INSTALL_MAN} $$i ${PREFIX}/man/man1/$$j.0; \
+		rm -f ${PREFIX}/cops/docs/$$j $$i; \
+	done
 
 .include <bsd.port.mk>

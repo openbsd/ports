@@ -1,0 +1,40 @@
+$OpenBSD: patch-docs_makefile,v 1.1 2002/05/07 12:53:39 espie Exp $
+--- docs/makefile.orig	Tue Mar 10 19:57:18 1992
++++ docs/makefile	Tue May  7 14:51:24 2002
+@@ -2,11 +2,11 @@
+ #
+ #	make all	    -- makes everything
+ #	make <doc-name> -- make a given doc
+-DOCS	   = COPS.report.ms suid.man.ms kuang.man.ms
++DOCS	   = COPS.report.ms kuang.man.ms
+ MAN        = cops.1 cron.chk.1 dev.chk.1 group.chk.1 is_able.chk.1 \
+              passwd.chk.1 is_able.1 home.chk.1 user.chk.1 pass.chk.1 \
+              root.chk.1 rc.chk.1 pass_diff.chk.1 misc.chk.1 \
+-             is_writable.1 bug.chk.1
++             is_writable.1 bug.chk.1 suid.chk.1 ftp.chk.1
+ 
+ DOC_SOURCE = COPS.report suid.man kuang.man cops cron.chk dev.chk is_able.chk \
+              dir.chk file.chk group.chk passwd.chk is_able home.chk \
+@@ -18,7 +18,7 @@ ROFFLAGS   = -ms
+ # Where the programs are....
+ #
+ NROFF=/usr/bin/nroff
+-RM=/bin/rm -f
++RM=/bin/rm
+ 
+ # make all
+ all:	$(DOCS) $(MAN)
+@@ -33,8 +33,11 @@ COPS.report.ms: COPS.report
+ kuang.man.ms: kuang.man
+ 	$(NROFF) $(ROFFLAGS) kuang.man > kuang.man.ms
+ 
+-suid.man.ms: suid.man
+-	$(NROFF) $(ROFFLAGS) suid.man > suid.man.ms
++suid.chk.1: suid.man
++	$(NROFF) -man suid.man > suid.chk.1
++
++ftp.chk.1: ftp.chk
++	$(NROFF) -man ftp.chk > ftp.chk.1
+ 
+ bug.chk.1: bug.chk
+ 	$(NROFF) -man bug.chk > bug.chk.1
