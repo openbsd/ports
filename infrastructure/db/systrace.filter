@@ -76,6 +76,7 @@
 	native-mmap: permit
 	native-mprotect: permit
 	native-mquery: permit
+	native-msync: permit
 	native-munmap: permit
 	native-nanosleep: permit
 	native-pathconf: permit
@@ -100,6 +101,7 @@
 	native-setregid: permit
 	native-setresgid: permit
 	native-setresuid: permit
+	native-setreuid: permit
 	native-setrlimit: permit
 	native-setsid: permit
 	native-setsockopt: permit
