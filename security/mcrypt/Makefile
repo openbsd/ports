@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2004/08/12 21:56:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/10/20 18:28:17 avsm Exp $
 
 COMMENT=	"extendable encryption program that supports many ciphers"
 
-DISTNAME=		mcrypt-2.6.3
+DISTNAME=		mcrypt-2.6.4
 CATEGORIES=     	security
 
-HOMEPAGE=		http://mcrypt.hellug.gr/mcrypt/
+HOMEPAGE=		http://mcrypt.sf.net/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,8 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://argeas.cs-net.gr/pub/unix/mcrypt/ \
-			ftp://mcrypt.hellug.gr/pub/mcrypt/ 
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mcrypt/}
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
