@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2004/07/11 23:33:39 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2004/11/05 07:33:12 wilfried Exp $
 
-COMMENT=	"xfce4 window mananger"
+COMMENT=	"xfce4 window manager"
 DISTNAME=	xfwm4-${V}
 
 LIB_DEPENDS=	${GTK2} \
