@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1998/12/17 04:52:14 marc Exp $
+# $OpenBSD: Makefile,v 1.12 1999/02/13 04:49:18 angelos Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -7,6 +7,7 @@
 #    SUBDIR += Sather
 #    SUBDIR += atlast
 #    SUBDIR += bwbasic
+     SUBDIR += camlp4
 #    SUBDIR += cim
 #    SUBDIR += cmucl
 #    SUBDIR += eiffel
