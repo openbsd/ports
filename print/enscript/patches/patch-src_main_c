@@ -1,0 +1,46 @@
+$OpenBSD: patch-src_main_c,v 1.1 2005/02/11 19:12:42 naddy Exp $
+--- src/main.c.orig	Fri Feb 11 20:01:12 2005
++++ src/main.c	Fri Feb 11 20:01:25 2005
+@@ -1546,9 +1546,13 @@ name             width\theight\tllx\tlly
+       buffer_append (&cmd, intbuf);
+       buffer_append (&cmd, " ");
+ 
+-      buffer_append (&cmd, "-Ddocument_title=\"");
+-      buffer_append (&cmd, title);
+-      buffer_append (&cmd, "\" ");
++      buffer_append (&cmd, "-Ddocument_title=\'");
++      if ((cp = shell_escape (title)) != NULL)
++	{
++	  buffer_append (&cmd, cp);
++	  free (cp);
++	}
++      buffer_append (&cmd, "\' ");
+ 
+       buffer_append (&cmd, "-Dtoc=");
+       buffer_append (&cmd, toc ? "1" : "0");
+@@ -1565,8 +1569,14 @@ name             width\theight\tllx\tlly
+       /* Append input files. */
+       for (i = optind; i < argc; i++)
+ 	{
+-	  buffer_append (&cmd, " ");
+-	  buffer_append (&cmd, argv[i]);
++	  char *cp;
++	  if ((cp = shell_escape (argv[i])) != NULL)
++	    {
++	      buffer_append (&cmd, " \'");
++	      buffer_append (&cmd, cp);
++	      buffer_append (&cmd, "\'");
++	      free (cp);
++	    }
+ 	}
+ 
+       /* And do the job. */
+@@ -1627,7 +1637,7 @@ name             width\theight\tllx\tlly
+ 				 buffer_ptr (opts), buffer_len (opts));
+ 	    }
+ 
+-	  buffer_append (&buffer, " \"%s\"");
++	  buffer_append (&buffer, " \'%s\'");
+ 
+ 	  input_filter = buffer_copy (&buffer);
+ 	  input_filter_stdin = "-";
