@@ -1,17 +1,16 @@
-$OpenBSD: patch-kdm_backend_client_c,v 1.1 2004/02/02 00:54:15 espie Exp $
---- kdm/backend/client.c.orig	2004-01-21 03:41:35.000000000 +0100
-+++ kdm/backend/client.c	2004-01-21 03:42:00.000000000 +0100
-@@ -1147,11 +1147,13 @@ StartClient ()
-     if (td->fifoPath)
- 	chown (td->fifoPath, curuid, -1);
+$OpenBSD: patch-kdm_backend_client_c,v 1.2 2004/09/18 09:36:43 espie Exp $
+--- kdm/backend/client.c.orig	Mon Aug  9 11:02:39 2004
++++ kdm/backend/client.c	Mon Sep  6 13:47:42 2004
+@@ -1242,10 +1242,12 @@ StartClient ()
+     removeAuth = 1;
+     chownCtrl (&td->ctrl, curuid, -1);
      endpwent ();
 +#if defined(USESHADOW)
  #if !defined(USE_PAM) && !defined(AIXV3)
  # ifndef QNX4  /* QNX4 doesn't need endspent() to end shadow passwd ops */
      endspent ();
  # endif
- #endif
 +#endif
+ #endif
+     ClearCloseOnFork (mstrtalk.pipe->wfd);
      switch (pid = Fork ()) {
-     case 0:
- 	/* Do system-dependent login setup here */

@@ -1,7 +1,7 @@
-$OpenBSD: patch-kdesu_kdesu_kdesu_cpp,v 1.5 2004/02/01 14:59:22 espie Exp $
---- kdesu/kdesu/kdesu.cpp.orig	2003-08-01 09:46:21.000000000 +0200
-+++ kdesu/kdesu/kdesu.cpp	2004-01-21 01:23:01.000000000 +0100
-@@ -313,10 +313,12 @@ static int startApp()
+$OpenBSD: patch-kdesu_kdesu_kdesu_cpp,v 1.6 2004/09/18 09:36:43 espie Exp $
+--- kdesu/kdesu/kdesu.cpp.orig	Tue Jun 22 19:32:48 2004
++++ kdesu/kdesu/kdesu.cpp	Mon Sep  6 11:43:53 2004
+@@ -321,10 +321,12 @@ static int startApp()
      KConfig *config = KGlobal::config();
      config->setGroup("Passwords");
      int timeout = config->readNumEntry("Timeout", defTimeout);
@@ -14,16 +14,16 @@ $OpenBSD: patch-kdesu_kdesu_kdesu_cpp,v 1.5 2004/02/01 14:59:22 espie Exp $
      int needpw = proc.checkNeedPassword();
      if (needpw < 0)
      {
-@@ -339,7 +341,7 @@ static int startApp()
+@@ -347,7 +349,7 @@ static int startApp()
          KStartupInfoData data;
          data.setSilent( KStartupInfoData::Yes );
          KStartupInfo::sendChange( id, data );
--        KDEsuDialog dlg(user, auth_user, keep && !terminal);
-+        KDEsuDialog dlg(user, auth_user, keep && !terminal, useSudo);
-         dlg.addLine(i18n("Command:"), command);
+-        KDEsuDialog dlg(user, auth_user, keep && !terminal, icon);
++        KDEsuDialog dlg(user, auth_user, keep && !terminal, icon, useSudo);
+ 	if (prompt)
+ 	    dlg.addLine(i18n("Command:"), command);
          if ((priority != 50) || (scheduler != SuProcess::SchedNormal))
-         {
-@@ -390,6 +392,7 @@ static int startApp()
+@@ -400,6 +402,7 @@ static int startApp()
          proc.setTerminal(terminal);
          proc.setErase(true);
          proc.setUser(user);

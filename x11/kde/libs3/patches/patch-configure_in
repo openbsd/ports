@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.13 2004/03/02 03:24:25 naddy Exp $
---- configure.in.orig	2004-01-18 14:21:10.000000000 +0100
-+++ configure.in	2004-01-19 13:40:55.000000000 +0100
-@@ -1176,6 +1176,13 @@ if test "$path_su" = "no"; then
+$OpenBSD: patch-configure_in,v 1.14 2004/09/18 09:36:44 espie Exp $
+--- configure.in.orig	Sat Aug 14 02:23:21 2004
++++ configure.in	Mon Sep  6 02:37:01 2004
+@@ -988,6 +988,13 @@ if test "$path_su" = "no"; then
  else
      AC_DEFINE_UNQUOTED(__PATH_SU, "$path_su", [path to su])
  fi

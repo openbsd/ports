@@ -1,15 +1,15 @@
-$OpenBSD: patch-smoke_qt_generate_pl_in,v 1.1 2004/02/02 13:04:35 espie Exp $
---- smoke/qt/generate.pl.in.orig	2004-02-02 12:34:05.000000000 +0100
-+++ smoke/qt/generate.pl.in	2004-02-02 12:34:30.000000000 +0100
+$OpenBSD: patch-smoke_qt_generate_pl_in,v 1.2 2004/09/18 09:36:43 espie Exp $
+--- smoke/qt/generate.pl.in.orig	Sat May 22 22:27:53 2004
++++ smoke/qt/generate.pl.in	Tue Sep 14 11:02:11 2004
 @@ -16,7 +16,6 @@ my $finaloutdir = $here;
  my $defines = "qtdefines";
  my $headerlist = "@srcdir@/header_list";
  my $definespath = "$here/$defines";
 -my $headerlistpath = "$here/$headerlist";
  
- ## Note: outdir and finaloutdir should NOT be the same dir!
- 
-@@ -70,7 +69,7 @@ my %excludes = (
+ ## If srcdir != builddir, use headerlist from src
+ $headerlistpath = $headerlist if ($headerlist =~ /^\//);
+@@ -73,7 +72,7 @@ my %excludes = (
  # We need a complete list
  
  my %includes;

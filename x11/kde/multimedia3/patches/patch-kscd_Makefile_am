@@ -1,8 +1,8 @@
-$OpenBSD: patch-kscd_Makefile_am,v 1.5 2004/02/02 23:07:36 espie Exp $
---- kscd/Makefile.am.orig	2004-02-02 19:58:24.000000000 +0100
-+++ kscd/Makefile.am	2004-02-02 19:58:36.000000000 +0100
-@@ -19,7 +19,7 @@ kscd_SOURCES = kvolumecontrol.cpp panel.
- 	       configWidget.cpp configWidgetUI.ui
+$OpenBSD: patch-kscd_Makefile_am,v 1.6 2004/09/18 09:36:44 espie Exp $
+--- kscd/Makefile.am.orig	Sat May 22 22:56:55 2004
++++ kscd/Makefile.am	Tue Sep  7 17:25:44 2004
+@@ -18,7 +18,7 @@ kscd_SOURCES = kvolumecontrol.cpp panel.
+ kde_kcfg_DATA = kscd.kcfg
  
  kscd_LDFLAGS = $(all_libraries) -lkutils
 -kscd_LDADD = $(top_builddir)/kscd/libwm/libworkman.la \

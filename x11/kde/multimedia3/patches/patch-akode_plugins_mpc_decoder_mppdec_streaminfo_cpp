@@ -1,0 +1,11 @@
+$OpenBSD: patch-akode_plugins_mpc_decoder_mppdec_streaminfo_cpp,v 1.1 2004/09/18 09:36:44 espie Exp $
+--- akode/plugins/mpc_decoder/mppdec/streaminfo.cpp.orig	Wed Sep  8 09:01:58 2004
++++ akode/plugins/mpc_decoder/mppdec/streaminfo.cpp	Wed Sep  8 09:02:05 2004
+@@ -143,6 +143,7 @@ int StreamInfo::ReadHeaderSV6 ( unsigned
+     return ERROR_CODE_OK;
+ }
+ 
++#undef swap32
+ static unsigned long swap32(unsigned long val)
+ {
+ 	const unsigned char * src = (const unsigned char*)&val;

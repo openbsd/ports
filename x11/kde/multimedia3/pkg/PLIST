@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/07/24 12:47:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/09/18 09:36:44 espie Exp $
 bin/artsbuilder
 bin/artscontrol
 bin/kaboodle
@@ -18,6 +18,26 @@ bin/yaf-splay
 bin/yaf-tplay
 bin/yaf-vorbis
 bin/yaf-yuv
+include/akode/
+include/akode/akodelib.h
+include/akode/audiobuffer.h
+include/akode/audioconfiguration.h
+include/akode/audioframe.h
+include/akode/crossfader.h
+include/akode/decoder.h
+include/akode/encoder.h
+include/akode/fast_resampler.h
+include/akode/file.h
+include/akode/framedecoder.h
+include/akode/frametostream_decoder.h
+include/akode/localfile.h
+include/akode/mmapfile.h
+include/akode/pluginhandler.h
+include/akode/resampler.h
+include/akode/sink.h
+include/akode/streamdecoder.h
+include/akode/streamtoframe_decoder.h
+include/akode/wav_decoder.h
 include/arts/artsbuilder.h
 include/arts/artsbuilder.idl
 include/arts/artsgui.h
@@ -39,6 +59,7 @@ include/arts/kframe_impl.h
 include/arts/klayoutbox_impl.h
 include/arts/kwidget_impl.h
 include/arts/kwidgetrepo.h
+include/audiocdencoder.h
 include/cmodule.h
 include/effectview.h
 include/equalizerview.h
@@ -50,9 +71,6 @@ include/libkcddb/cdinfo.h
 include/libkcddb/client.h
 include/libkcddb/config.h
 include/libkcddb/configbase.h
-include/libwm/
-include/libwm/wm_cdrom.h
-include/libwm/wm_cdtext.h
 include/mimetypetree.h
 include/mpeglib/
 include/mpeglib/decoder/
@@ -174,74 +192,159 @@ include/noatun/video.h
 include/noatun/winskinvis.h
 include/plugin_deps.h
 ${KDE}/kcm_audiocd.la
+${KDE}/kcm_audiocd.so
 ${KDE}/kcm_cddb.la
-${KDE}/kcm_kmix.la
+${KDE}/kcm_cddb.so
 ${KDE}/kcm_krec.la
+${KDE}/kcm_krec.so
 ${KDE}/kcm_krec_files.la
+${KDE}/kcm_krec_files.so
 ${KDE}/kfile_au.la
+${KDE}/kfile_au.so
 ${KDE}/kfile_avi.la
+${KDE}/kfile_avi.so
 ${KDE}/kfile_m3u.la
-${KDE}/kfile_mp3.la
+${KDE}/kfile_m3u.so
+${KDE}/kfile_sid.la
+${KDE}/kfile_sid.so
 ${KDE}/kfile_wav.la
+${KDE}/kfile_wav.so
 ${KDE}/kio_audiocd.la
+${KDE}/kio_audiocd.so
 ${KDE}/kmix.la
+${KDE}/kmix.so
 ${KDE}/kmix_panelapplet.la
+${KDE}/kmix_panelapplet.so
 ${KDE}/kmixctrl.la
+${KDE}/kmixctrl.so
 ${KDE}/krec.la
+${KDE}/krec.so
+${KDE}/libaudiocd_encoder_flac.la
+${KDE}/libaudiocd_encoder_flac.so
+${KDE}/libaudiocd_encoder_lame.la
+${KDE}/libaudiocd_encoder_lame.so
+${KDE}/libaudiocd_encoder_vorbis.la
+${KDE}/libaudiocd_encoder_vorbis.so
+${KDE}/libaudiocd_encoder_wav.la
+${KDE}/libaudiocd_encoder_wav.so
 ${KDE}/libkaboodlepart.la
+${KDE}/libkaboodlepart.so
 ${KDE}/libkmidpart.la
+${KDE}/libkmidpart.so
 ${KDE}/libkrecexport_ogg.la
+${KDE}/libkrecexport_ogg.so
 ${KDE}/libkrecexport_wave.la
+${KDE}/libkrecexport_wave.so
 ${KDE}/noatun.la
+${KDE}/noatun.so
 ${KDE}/noatun_dcopiface.la
+${KDE}/noatun_dcopiface.so
 ${KDE}/noatun_excellent.la
+${KDE}/noatun_excellent.so
 ${KDE}/noatun_htmlexport.la
+${KDE}/noatun_htmlexport.so
 ${KDE}/noatun_infrared.la
+${KDE}/noatun_infrared.so
 ${KDE}/noatun_kaiman.la
+${KDE}/noatun_kaiman.so
 ${KDE}/noatun_keyz.la
+${KDE}/noatun_keyz.so
 ${KDE}/noatun_kjofol.la
+${KDE}/noatun_kjofol.so
 ${KDE}/noatun_marquis.la
+${KDE}/noatun_marquis.so
 ${KDE}/noatun_metatag.la
+${KDE}/noatun_metatag.so
 ${KDE}/noatun_monoscope.la
+${KDE}/noatun_monoscope.so
 ${KDE}/noatun_net.la
+${KDE}/noatun_net.so
 ${KDE}/noatun_splitplaylist.la
+${KDE}/noatun_splitplaylist.so
 ${KDE}/noatun_systray.la
+${KDE}/noatun_systray.so
 ${KDE}/noatun_ui.la
+${KDE}/noatun_ui.so
 ${KDE}/noatun_voiceprint.la
+${KDE}/noatun_voiceprint.so
 ${KDE}/noatun_winskin.la
+${KDE}/noatun_winskin.so
 ${KDE}/noatunsimple.la
+${KDE}/noatunsimple.so
+lib/libakode.la
+@lib lib/libakode.so.1.0
+lib/libakode_mpc_decoder.la
+lib/libakode_mpc_decoder.so
+lib/libakode_xiph_decoder.la
+lib/libakode_xiph_decoder.so
+lib/libarts_akode.la
+lib/libarts_akode.so
+@lib lib/libarts_mpeglib-0.3.0.so.0.3
 lib/libarts_mpeglib.la
+@lib lib/libarts_mpeglib.so.0.3
 lib/libarts_splay.la
+@lib lib/libarts_splay.so.0.0
 lib/libartsbuilder.la
+@lib lib/libartsbuilder.so.0.0
 lib/libartscontrolapplet.la
+@lib lib/libartscontrolapplet.so.1.0
 lib/libartscontrolsupport.la
+@lib lib/libartscontrolsupport.so.1.0
 lib/libartseffects.la
+lib/libartseffects.so
 lib/libartsgui.la
+@lib lib/libartsgui.so.0.0
 lib/libartsgui_idl.la
+@lib lib/libartsgui_idl.so.0.0
 lib/libartsgui_kde.la
+@lib lib/libartsgui_kde.so.0.0
 lib/libartsmidi.la
+@lib lib/libartsmidi.so.0.0
 lib/libartsmidi_idl.la
+@lib lib/libartsmidi_idl.so.0.0
 lib/libartsmodules.la
+@lib lib/libartsmodules.so.0.0
 lib/libartsmodulescommon.la
+@lib lib/libartsmodulescommon.so.0.0
 lib/libartsmoduleseffects.la
+@lib lib/libartsmoduleseffects.so.0.0
 lib/libartsmodulesmixers.la
+@lib lib/libartsmodulesmixers.so.0.0
 lib/libartsmodulessynth.la
+@lib lib/libartsmodulessynth.so.0.0
+lib/libaudiocdplugins.la
+@lib lib/libaudiocdplugins.so.1.0
 lib/libaudiofilearts.la
+lib/libaudiofilearts.so
 lib/libkcddb.la
+@lib lib/libkcddb.so.1.0
 lib/libkdeinit_kmix.la
+lib/libkdeinit_kmix.so
 lib/libkdeinit_kmixctrl.la
+lib/libkdeinit_kmixctrl.so
 lib/libkdeinit_krec.la
+lib/libkdeinit_krec.so
 lib/libkdeinit_noatun.la
+lib/libkdeinit_noatun.so
 lib/libkmidlib.la
-lib/libkworkman.la
+@lib lib/libkmidlib.so.0.0
+lib/libmpeg-0.3.0.so
 lib/libmpeg.la
+lib/libmpeg.so
 lib/libnoatun.la
+@lib lib/libnoatun.so.3.0
 lib/libnoatunarts.la
+lib/libnoatunarts.so
 lib/libnoatuncontrols.la
+@lib lib/libnoatuncontrols.so.3.0
 lib/libnoatuntags.la
+@lib lib/libnoatuntags.so.3.0
 lib/libwinskinvis.la
+lib/libwinskinvis.so
 lib/libyafcore.la
+@lib lib/libyafcore.so.0.0
 lib/libyafxplayer.la
+@lib lib/libyafxplayer.so.0.0
 lib/mcop/Arts/ArtsBuilderLoader.mcopclass
 lib/mcop/Arts/Button.mcopclass
 lib/mcop/Arts/EffectRackGuiFactory.mcopclass
@@ -351,6 +454,13 @@ lib/mcop/RawWriter.mcopclass
 lib/mcop/SplayPlayObject.mcopclass
 lib/mcop/VoiceRemoval.mcopclass
 lib/mcop/WAVPlayObject.mcopclass
+lib/mcop/akodeMPCPlayObject.mcopclass
+lib/mcop/akodePlayObject.mcopclass
+lib/mcop/akodeSpeexStreamPlayObject.mcopclass
+lib/mcop/akodeVorbisStreamPlayObject.mcopclass
+lib/mcop/akodeXiphPlayObject.mcopclass
+lib/mcop/akodearts.mcopclass
+lib/mcop/akodearts.mcoptype
 lib/mcop/artsbuilder.mcopclass
 lib/mcop/artsbuilder.mcoptype
 lib/mcop/artseffects.mcopclass
@@ -382,7 +492,6 @@ share/applications/kde/kaboodle.desktop
 share/applications/kde/kaudiocreator.desktop
 share/applications/kde/kmid.desktop
 share/applications/kde/kmix.desktop
-share/applications/kde/kmixcfg.desktop
 share/applications/kde/krec.desktop
 share/applications/kde/kscd.desktop
 share/applications/kde/libkcddb.desktop
@@ -493,13 +602,43 @@ share/apps/kaboodle/icons/crystalsvg/22x22/actions/
 share/apps/kaboodle/icons/crystalsvg/22x22/actions/kaboodleloop.png
 share/apps/kaboodle/kaboodlepartui.rc
 share/apps/kaboodle/kaboodleui.rc
+share/apps/kappfinder/
+share/apps/kappfinder/apps/
+share/apps/kappfinder/apps/Multimedia/
+share/apps/kappfinder/apps/Multimedia/ams.desktop
+share/apps/kappfinder/apps/Multimedia/amsynth.desktop
+share/apps/kappfinder/apps/Multimedia/ardour.desktop
+share/apps/kappfinder/apps/Multimedia/djplay.desktop
+share/apps/kappfinder/apps/Multimedia/ecamegapedal.desktop
+share/apps/kappfinder/apps/Multimedia/freebirth.desktop
+share/apps/kappfinder/apps/Multimedia/freqtweak.desktop
+share/apps/kappfinder/apps/Multimedia/galan.desktop
+share/apps/kappfinder/apps/Multimedia/hydrogen.desktop
+share/apps/kappfinder/apps/Multimedia/jack-rack.desktop
+share/apps/kappfinder/apps/Multimedia/jamin.desktop
+share/apps/kappfinder/apps/Multimedia/meterbridge.desktop
+share/apps/kappfinder/apps/Multimedia/mixxx.desktop
+share/apps/kappfinder/apps/Multimedia/muse.desktop
+share/apps/kappfinder/apps/Multimedia/qjackctl.desktop
+share/apps/kappfinder/apps/Multimedia/qsynth.desktop
+share/apps/kappfinder/apps/Multimedia/vkeybd.desktop
+share/apps/kappfinder/apps/Multimedia/zynaddsubfx.desktop
 share/apps/kaudiocreator/
+share/apps/kaudiocreator/eventsrc
 share/apps/kaudiocreator/kaudiocreatorui.rc
 share/apps/kaudiocreator/pics/
 share/apps/kaudiocreator/pics/check.png
+share/apps/kconf_update/audiocd.upd
 share/apps/kconf_update/kaudiocreator-libkcddb.upd
+share/apps/kconf_update/kaudiocreator-meta.upd
 share/apps/kconf_update/noatun.upd
 share/apps/kconf_update/noatun20update
+share/apps/kconf_update/upgrade-kaudiocreator-metadata.sh
+share/apps/kconf_update/upgrade-metadata.sh
+share/apps/kde-conf-sample/xdg/menus/applications-merged/
+@sample ${SYSCONFDIR}/xdg/menus/applications-merged/
+share/apps/kde-conf-sample/xdg/menus/applications-merged/kde-multimedia-music.menu
+@sample ${SYSCONFDIR}/xdg/menus/applications-merged/kde-multimedia-music.menu
 share/apps/kicker/
 share/apps/kicker/applets/
 share/apps/kicker/applets/artscontrolapplet.desktop
@@ -597,17 +736,24 @@ share/apps/noatun/excellentui.rc
 share/apps/noatun/htmlexport.plugin
 share/apps/noatun/icons/
 share/apps/noatun/icons/crystalsvg/
+share/apps/noatun/icons/crystalsvg/128x128/
+share/apps/noatun/icons/crystalsvg/128x128/actions/
+share/apps/noatun/icons/crystalsvg/128x128/actions/equalizer.png
+share/apps/noatun/icons/crystalsvg/128x128/actions/playlist.png
 share/apps/noatun/icons/crystalsvg/16x16/
 share/apps/noatun/icons/crystalsvg/16x16/actions/
 share/apps/noatun/icons/crystalsvg/16x16/actions/effect.png
+share/apps/noatun/icons/crystalsvg/16x16/actions/equalizer.png
 share/apps/noatun/icons/crystalsvg/16x16/actions/noatunback.png
 share/apps/noatun/icons/crystalsvg/16x16/actions/noatunforward.png
 share/apps/noatun/icons/crystalsvg/16x16/actions/noatunpause.png
 share/apps/noatun/icons/crystalsvg/16x16/actions/noatunplay.png
 share/apps/noatun/icons/crystalsvg/16x16/actions/noatunplaylist.png
 share/apps/noatun/icons/crystalsvg/16x16/actions/noatunstop.png
+share/apps/noatun/icons/crystalsvg/16x16/actions/playlist.png
 share/apps/noatun/icons/crystalsvg/22x22/
 share/apps/noatun/icons/crystalsvg/22x22/actions/
+share/apps/noatun/icons/crystalsvg/22x22/actions/equalizer.png
 share/apps/noatun/icons/crystalsvg/22x22/actions/noatunback.png
 share/apps/noatun/icons/crystalsvg/22x22/actions/noatunfback.png
 share/apps/noatun/icons/crystalsvg/22x22/actions/noatunfforward.png
@@ -621,12 +767,21 @@ share/apps/noatun/icons/crystalsvg/22x22/actions/noatunplay.png
 share/apps/noatun/icons/crystalsvg/22x22/actions/noatunplaylist.png
 share/apps/noatun/icons/crystalsvg/22x22/actions/noatunstop.png
 share/apps/noatun/icons/crystalsvg/22x22/actions/noatuntiny.png
+share/apps/noatun/icons/crystalsvg/22x22/actions/playlist.png
 share/apps/noatun/icons/crystalsvg/32x32/
 share/apps/noatun/icons/crystalsvg/32x32/actions/
 share/apps/noatun/icons/crystalsvg/32x32/actions/effect.png
+share/apps/noatun/icons/crystalsvg/32x32/actions/equalizer.png
+share/apps/noatun/icons/crystalsvg/32x32/actions/playlist.png
 share/apps/noatun/icons/crystalsvg/48x48/
 share/apps/noatun/icons/crystalsvg/48x48/actions/
 share/apps/noatun/icons/crystalsvg/48x48/actions/effect.png
+share/apps/noatun/icons/crystalsvg/48x48/actions/equalizer.png
+share/apps/noatun/icons/crystalsvg/48x48/actions/playlist.png
+share/apps/noatun/icons/crystalsvg/64x64/
+share/apps/noatun/icons/crystalsvg/64x64/actions/
+share/apps/noatun/icons/crystalsvg/64x64/actions/equalizer.png
+share/apps/noatun/icons/crystalsvg/64x64/actions/playlist.png
 share/apps/noatun/infrared.plugin
 share/apps/noatun/kaiman.plugin
 share/apps/noatun/kaimanui.rc
@@ -837,10 +992,16 @@ share/apps/noatun/voiceprint.plugin
 share/apps/noatun/winskin.plugin
 share/apps/profiles/
 share/apps/profiles/kscd.profile.xml
+share/autostart/restore_kmix_volumes.desktop
 share/config.kcfg/
+share/config.kcfg/audiocd_lame_encoder.kcfg
+share/config.kcfg/audiocd_vorbis_encoder.kcfg
 share/config.kcfg/kaudiocreator.kcfg
 share/config.kcfg/kaudiocreator_encoders.kcfg
+share/config.kcfg/kscd.kcfg
 share/config.kcfg/libkcddb.kcfg
+share/desktop-directories/
+share/desktop-directories/kde-multimedia-music.directory
 share/doc/HTML/en/artsbuilder/
 share/doc/HTML/en/artsbuilder/apis.docbook
 share/doc/HTML/en/artsbuilder/arts-structure.png
@@ -911,8 +1072,15 @@ share/doc/HTML/en/artsbuilder/references.docbook
 share/doc/HTML/en/artsbuilder/tools.docbook
 share/doc/HTML/en/juk/
 share/doc/HTML/en/juk/common
+share/doc/HTML/en/juk/history-playlist.png
 share/doc/HTML/en/juk/index.cache.bz2
 share/doc/HTML/en/juk/index.docbook
+share/doc/HTML/en/juk/juk-adv-search.png
+share/doc/HTML/en/juk/juk-file-renamer.png
+share/doc/HTML/en/juk/juk-main.png
+share/doc/HTML/en/juk/juk-tag-guesser.png
+share/doc/HTML/en/juk/normal-playlist.png
+share/doc/HTML/en/juk/search-playlist.png
 share/doc/HTML/en/juk/toolbar.png
 share/doc/HTML/en/kaboodle/
 share/doc/HTML/en/kaboodle/common
@@ -935,7 +1103,10 @@ share/doc/HTML/en/krec/
 share/doc/HTML/en/krec/common
 share/doc/HTML/en/krec/index.cache.bz2
 share/doc/HTML/en/krec/index.docbook
+share/doc/HTML/en/krec/krec-configuration.png
 share/doc/HTML/en/krec/krec-hicolor.png
+share/doc/HTML/en/krec/krec-keramik.png
+share/doc/HTML/en/krec/krec-new_file_properties.png
 share/doc/HTML/en/kscd/
 share/doc/HTML/en/kscd/common
 share/doc/HTML/en/kscd/index.cache.bz2
@@ -945,18 +1116,13 @@ share/doc/HTML/en/kscd/kscd11.png
 share/doc/HTML/en/kscd/kscd12.png
 share/doc/HTML/en/kscd/kscd13.png
 share/doc/HTML/en/kscd/kscd14.png
-share/doc/HTML/en/kscd/kscd15.png
 share/doc/HTML/en/kscd/kscd16.png
 share/doc/HTML/en/kscd/kscd18.png
 share/doc/HTML/en/kscd/kscd19.png
 share/doc/HTML/en/kscd/kscd2.png
-share/doc/HTML/en/kscd/kscd2a.png
 share/doc/HTML/en/kscd/kscd3.png
-share/doc/HTML/en/kscd/kscd4.png
 share/doc/HTML/en/kscd/kscd5.png
 share/doc/HTML/en/kscd/kscd6.png
-share/doc/HTML/en/kscd/kscd7.png
-share/doc/HTML/en/kscd/kscd8.png
 share/doc/HTML/en/kscd/kscd9.png
 share/doc/HTML/en/noatun/
 share/doc/HTML/en/noatun/common
@@ -968,7 +1134,6 @@ share/icons/crystalsvg/128x128/actions/artsenvironment.png
 share/icons/crystalsvg/128x128/actions/artsfftscope.png
 share/icons/crystalsvg/128x128/actions/artsmediatypes.png
 share/icons/crystalsvg/128x128/actions/artsmidimanager.png
-share/icons/crystalsvg/128x128/apps/
 share/icons/crystalsvg/128x128/apps/artscontrol.png
 share/icons/crystalsvg/128x128/apps/kaboodle.png
 share/icons/crystalsvg/128x128/apps/kmix.png
@@ -981,7 +1146,6 @@ share/icons/crystalsvg/16x16/actions/artsenvironment.png
 share/icons/crystalsvg/16x16/actions/artsfftscope.png
 share/icons/crystalsvg/16x16/actions/artsmediatypes.png
 share/icons/crystalsvg/16x16/actions/artsmidimanager.png
-share/icons/crystalsvg/16x16/apps/
 share/icons/crystalsvg/16x16/apps/artsbuilder.png
 share/icons/crystalsvg/16x16/apps/artscontrol.png
 share/icons/crystalsvg/16x16/apps/kaboodle.png
@@ -1007,7 +1171,6 @@ share/icons/crystalsvg/32x32/actions/artsenvironment.png
 share/icons/crystalsvg/32x32/actions/artsfftscope.png
 share/icons/crystalsvg/32x32/actions/artsmediatypes.png
 share/icons/crystalsvg/32x32/actions/artsmidimanager.png
-share/icons/crystalsvg/32x32/apps/
 share/icons/crystalsvg/32x32/apps/artscontrol.png
 share/icons/crystalsvg/32x32/apps/kaboodle.png
 share/icons/crystalsvg/32x32/apps/kaudiocreator.png
@@ -1021,7 +1184,6 @@ share/icons/crystalsvg/48x48/actions/artsenvironment.png
 share/icons/crystalsvg/48x48/actions/artsfftscope.png
 share/icons/crystalsvg/48x48/actions/artsmediatypes.png
 share/icons/crystalsvg/48x48/actions/artsmidimanager.png
-share/icons/crystalsvg/48x48/apps/
 share/icons/crystalsvg/48x48/apps/artscontrol.png
 share/icons/crystalsvg/48x48/apps/kaboodle.png
 share/icons/crystalsvg/48x48/apps/kmid.png
@@ -1034,19 +1196,18 @@ share/icons/crystalsvg/64x64/actions/artsenvironment.png
 share/icons/crystalsvg/64x64/actions/artsfftscope.png
 share/icons/crystalsvg/64x64/actions/artsmediatypes.png
 share/icons/crystalsvg/64x64/actions/artsmidimanager.png
-share/icons/crystalsvg/64x64/apps/
 share/icons/crystalsvg/64x64/apps/artscontrol.png
 share/icons/crystalsvg/64x64/apps/kaboodle.png
 share/icons/crystalsvg/64x64/apps/kmix.png
 share/icons/crystalsvg/64x64/apps/krec.png
 share/icons/crystalsvg/64x64/apps/kscd.png
 share/icons/crystalsvg/64x64/apps/noatun.png
-share/icons/crystalsvg/scalable/actions/
 share/icons/crystalsvg/scalable/actions/artsaudiomanager.svg
 share/icons/crystalsvg/scalable/actions/artsenvironment.svg
 share/icons/crystalsvg/scalable/actions/artsfftscope.svg
 share/icons/crystalsvg/scalable/actions/artsmediatypes.svg
 share/icons/crystalsvg/scalable/actions/artsmidimanager.svg
+share/icons/crystalsvg/scalable/apps/
 share/icons/crystalsvg/scalable/apps/artscontrol.svg
 share/icons/locolor/
 share/icons/locolor/16x16/
@@ -1068,11 +1229,10 @@ share/services/kcm_krec_files.desktop
 share/services/kfile_au.desktop
 share/services/kfile_avi.desktop
 share/services/kfile_m3u.desktop
-share/services/kfile_mp3.desktop
+share/services/kfile_sid.desktop
 share/services/kfile_wav.desktop
 share/services/kmixctrl_restore.desktop
 share/services/krec_exportogg.desktop
 share/services/krec_exportwave.desktop
 share/servicetypes/audiomidi.desktop
 share/servicetypes/krec_exportitem.desktop
-%%SHARED%%

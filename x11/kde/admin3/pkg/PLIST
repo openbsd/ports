@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/07/24 12:47:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/18 09:36:43 espie Exp $
 bin/kcron
 bin/kpackage
 bin/kuser
 bin/secpolicy
 ${KDE}/kfile_deb.la
+${KDE}/kfile_deb.so
 ${KDE}/kfile_rpm.la
+${KDE}/kfile_rpm.so
 share/applications/kde/kcron.desktop
 share/applications/kde/kpackage.desktop
 share/applications/kde/kuser.desktop
@@ -19,6 +21,8 @@ share/apps/kpackage/pics/dbad.png
 share/apps/kpackage/pics/deb.png
 share/apps/kpackage/pics/dnew.png
 share/apps/kpackage/pics/dupdated.png
+share/apps/kpackage/pics/ftin.xpm
+share/apps/kpackage/pics/ftout.xpm
 share/apps/kpackage/pics/kiss.png
 share/apps/kpackage/pics/knew.png
 share/apps/kpackage/pics/kupdated.png
@@ -32,9 +36,6 @@ share/apps/kpackage/pics/slack.png
 share/apps/kpackage/pics/snew.png
 share/apps/kpackage/pics/supdated.png
 share/apps/kpackage/pics/tick.png
-share/apps/kpackage/toolbar/
-share/apps/kpackage/toolbar/ftin.xpm
-share/apps/kpackage/toolbar/ftout.xpm
 share/apps/kuser/
 share/apps/kuser/icons/
 share/apps/kuser/icons/crystalsvg/
@@ -50,6 +51,8 @@ share/apps/kuser/kuserui.rc
 share/apps/kuser/pics/
 share/apps/kuser/pics/group.png
 share/apps/kuser/pics/user.png
+share/config.kcfg/
+share/config.kcfg/kuser.kcfg
 share/doc/HTML/en/kcron/
 share/doc/HTML/en/kcron/common
 share/doc/HTML/en/kcron/index.cache.bz2
@@ -88,24 +91,18 @@ share/doc/HTML/en/kuser/common
 share/doc/HTML/en/kuser/index.cache.bz2
 share/doc/HTML/en/kuser/index.docbook
 share/doc/HTML/en/kuser/kuser.png
-share/icons/crystalsvg/128x128/apps/
 share/icons/crystalsvg/128x128/apps/kpackage.png
 share/icons/crystalsvg/128x128/apps/kuser.png
-share/icons/crystalsvg/16x16/apps/
 share/icons/crystalsvg/16x16/apps/kcron.png
 share/icons/crystalsvg/16x16/apps/kpackage.png
 share/icons/crystalsvg/16x16/apps/kuser.png
-share/icons/crystalsvg/32x32/apps/
 share/icons/crystalsvg/32x32/apps/kcron.png
 share/icons/crystalsvg/32x32/apps/kpackage.png
 share/icons/crystalsvg/32x32/apps/kuser.png
-share/icons/crystalsvg/48x48/apps/
 share/icons/crystalsvg/48x48/apps/kpackage.png
 share/icons/crystalsvg/48x48/apps/kuser.png
-share/icons/crystalsvg/64x64/apps/
 share/icons/crystalsvg/64x64/apps/kpackage.png
 share/icons/crystalsvg/64x64/apps/kuser.png
 share/mimelnk/application/x-debian-package.desktop
 share/services/kfile_deb.desktop
 share/services/kfile_rpm.desktop
-%%SHARED%%

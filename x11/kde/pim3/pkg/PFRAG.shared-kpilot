@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-kpilot,v 1.5 2004/07/24 12:47:16 espie Exp $
-lib/libkpilot.so.0.0
-DYNLIBDIR(%D/lib)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-kdesu_su_cpp,v 1.5 2004/02/01 14:59:23 espie Exp $
---- kdesu/su.cpp.orig	2003-11-30 10:46:50.000000000 +0100
-+++ kdesu/su.cpp	2004-01-19 13:31:20.000000000 +0100
-@@ -41,17 +41,33 @@
+$OpenBSD: patch-kdesu_su_cpp,v 1.6 2004/09/18 09:36:44 espie Exp $
+--- kdesu/su.cpp.orig	Sat May 22 22:55:16 2004
++++ kdesu/su.cpp	Mon Sep  6 02:36:32 2004
+@@ -41,19 +41,35 @@
  #ifndef __PATH_SU
  #define __PATH_SU "false"
  #endif
@@ -27,14 +27,16 @@ $OpenBSD: patch-kdesu_su_cpp,v 1.5 2004/02/01 14:59:23 espie Exp $
  SuProcess::~SuProcess()
  {
 +    delete d;
-+}
-+
+ }
+ 
 +void SuProcess::setUseSudo(bool use_sudo)
 +{
 +    d->m_useSudo = use_sudo;
- }
- 
++}
++
  int SuProcess::checkInstall(const char *password)
+ {
+     return exec(password, Install);
 @@ -65,7 +81,7 @@ int SuProcess::checkNeedPassword()
  }
  
@@ -63,9 +65,9 @@ $OpenBSD: patch-kdesu_su_cpp,v 1.5 2004/02/01 14:59:23 espie Exp $
 +    if (!d->m_useSudo)
 +	args += "-c";
      args += QCString(__KDE_BINDIR) + "/kdesu_stub";
+     args += "-";
  
-     QCString command = __PATH_SU;
-@@ -90,7 +114,7 @@ int SuProcess::exec(const char *password
+@@ -91,7 +115,7 @@ int SuProcess::exec(const char *password
      }
  
      // kdDebug(900) << k_lineinfo << "Call StubProcess::exec()" << endl;
@@ -74,7 +76,7 @@ $OpenBSD: patch-kdesu_su_cpp,v 1.5 2004/02/01 14:59:23 espie Exp $
      {
  	return check ? SuNotFound : -1;
      }
-@@ -102,7 +126,8 @@ int SuProcess::exec(const char *password
+@@ -103,7 +127,8 @@ int SuProcess::exec(const char *password
      if (ret == error) 
      {
  	if (!check)
@@ -84,7 +86,7 @@ $OpenBSD: patch-kdesu_su_cpp,v 1.5 2004/02/01 14:59:23 espie Exp $
  	return ret;
      } 
      if (check == NeedPassword)
-@@ -200,6 +225,9 @@ int SuProcess::ConverseSU(const char *pa
+@@ -201,6 +226,9 @@ int SuProcess::ConverseSU(const char *pa
  		kdDebug(900) << k_lineinfo << "Read line <" << more << ">" << endl;
              }
              
@@ -94,7 +96,7 @@ $OpenBSD: patch-kdesu_su_cpp,v 1.5 2004/02/01 14:59:23 espie Exp $
  	    // Match "Password: " with the regex ^[^:]+:[\w]*$.
  	    for (i=0,j=0,colon=0; i<line.length(); i++) 
  	    {
-@@ -251,6 +279,9 @@ int SuProcess::ConverseSU(const char *pa
+@@ -252,6 +280,9 @@ int SuProcess::ConverseSU(const char *pa
  	}
  
  	case HandleStub:

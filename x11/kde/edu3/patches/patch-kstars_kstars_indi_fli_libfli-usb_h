@@ -1,0 +1,12 @@
+$OpenBSD: patch-kstars_kstars_indi_fli_libfli-usb_h,v 1.1 2004/09/18 09:36:43 espie Exp $
+--- kstars/kstars/indi/fli/libfli-usb.h.orig	Mon Sep  6 14:41:13 2004
++++ kstars/kstars/indi/fli/libfli-usb.h	Mon Sep  6 14:41:26 2004
+@@ -50,7 +50,7 @@
+ #define unix_bulkwrite linux_bulkwrite
+ #define unix_bulkread linux_bulkread
+ 
+-#elif defined(__FreeBSD__) || defined(__NetBSD__)
++#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #define unix_bulkwrite bsd_bulkwrite
+ #define unix_bulkread bsd_bulkread
+ 

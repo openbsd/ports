@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2004/07/24 12:47:15 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2004/09/18 09:36:45 espie Exp $
 
 COMMENT= 		"K Desktop Environment, network applications"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.2.3
+VERSION=		3.3.0
 DISTNAME=		kdenetwork-${VERSION}
-MODKDE_VERSION=		3.2.3
+MODKDE_VERSION=		3.3.0
 FLAVORS=debug
 
 LIB_DEPENDS= kdecore.6,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,ktexteditor,kutils,kwalletclient,vcard,kspell::x11/kde/libs3 \

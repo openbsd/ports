@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-kpilot,v 1.4 2004/07/24 12:47:16 espie Exp $
+@comment $OpenBSD: PLIST-kpilot,v 1.5 2004/09/18 09:36:45 espie Exp $
 bin/kpilot
 bin/kpilotDaemon
 include/kpilot/
@@ -10,7 +10,10 @@ include/kpilot/pilotSerialDatabase.h
 include/kpilot/plugin.h
 include/kpilot/syncAction.h
 include/kpilot/uiDialog.h
+${KDE}/conduit_vcal.la
+${KDE}/conduit_vcal.so
 lib/libkpilot.la
+@lib lib/libkpilot.so.0.0
 share/apps/kpilot/
 share/apps/kpilot/icons/
 share/apps/kpilot/icons/crystalsvg/
@@ -42,7 +45,6 @@ share/apps/kpilot/kpilot-address.png
 share/apps/kpilot/kpilot-calendar.png
 share/apps/kpilot/kpilot-db.png
 share/apps/kpilot/kpilot-fileinstaller.png
-share/apps/kpilot/kpilot-hotsync.png
 share/apps/kpilot/kpilot-knotes.png
 share/apps/kpilot/kpilot-splash.png
 share/apps/kpilot/kpilot-todo.png
@@ -50,4 +52,3 @@ share/apps/kpilot/kpilotui.rc
 share/apps/kpilot/sysinfoconduit/
 share/apps/kpilot/sysinfoconduit/Template.html
 share/apps/kpilot/sysinfoconduit/Template.txt
-%%SHARED%%

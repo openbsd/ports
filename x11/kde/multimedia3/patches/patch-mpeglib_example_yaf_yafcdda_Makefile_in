@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpeglib_example_yaf_yafcdda_Makefile_in,v 1.10 2004/07/24 12:47:15 espie Exp $
---- mpeglib/example/yaf/yafcdda/Makefile.in.orig	Sun May 30 18:55:29 2004
-+++ mpeglib/example/yaf/yafcdda/Makefile.in	Mon Jul 19 17:13:33 2004
-@@ -177,7 +177,7 @@ KDE_XSL_STYLESHEET = @KDE_XSL_STYLESHEET
+$OpenBSD: patch-mpeglib_example_yaf_yafcdda_Makefile_in,v 1.11 2004/09/18 09:36:44 espie Exp $
+--- mpeglib/example/yaf/yafcdda/Makefile.in.orig	Mon Aug 16 11:41:48 2004
++++ mpeglib/example/yaf/yafcdda/Makefile.in	Tue Sep  7 17:25:44 2004
+@@ -175,7 +175,7 @@ KDE_XSL_STYLESHEET = @KDE_XSL_STYLESHEET
  LAME_INCS = @LAME_INCS@
  LAME_LIBS = @LAME_LIBS@
  LAME_RPATH = @LAME_RPATH@
@@ -10,7 +10,7 @@ $OpenBSD: patch-mpeglib_example_yaf_yafcdda_Makefile_in,v 1.10 2004/07/24 12:47:
  LIBALIB = @LIBALIB@
  LIBASOUND = @LIBASOUND@
  LIBAUDIO = @LIBAUDIO@
-@@ -437,7 +437,7 @@ xine_artsplugin_SUBDIR_included_TRUE = @
+@@ -458,7 +458,7 @@ xine_artsplugin_SUBDIR_included_TRUE = @
  INCLUDES = -I../../include $(all_includes)
  yaf_cdda_SOURCES = cdda_control.cpp
  noinst_HEADERS = 

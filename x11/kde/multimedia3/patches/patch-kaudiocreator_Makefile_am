@@ -1,6 +1,6 @@
-$OpenBSD: patch-kaudiocreator_Makefile_am,v 1.1 2004/03/07 21:08:44 espie Exp $
---- kaudiocreator/Makefile.am.orig	2004-03-07 14:35:10.000000000 +0100
-+++ kaudiocreator/Makefile.am	2004-03-07 14:35:15.000000000 +0100
+$OpenBSD: patch-kaudiocreator_Makefile_am,v 1.2 2004/09/18 09:36:44 espie Exp $
+--- kaudiocreator/Makefile.am.orig	Sat Jul 17 21:09:13 2004
++++ kaudiocreator/Makefile.am	Tue Sep  7 17:25:44 2004
 @@ -16,7 +16,7 @@ messages: rc.cpp
  
  AM_CPPFLAGS = -static -Wall
@@ -8,5 +8,5 @@ $OpenBSD: patch-kaudiocreator_Makefile_am,v 1.1 2004/03/07 21:08:44 espie Exp $
 -kaudiocreator_LDADD = $(LIB_KIO) $(top_builddir)/libkcddb/libkcddb.la $(top_builddir)/kscd/libwm/libworkman.la
 +kaudiocreator_LDADD = $(LIB_KIO) $(top_builddir)/libkcddb/libkcddb.la $(top_builddir)/kscd/libwm/libkworkman.la
  
- updatedir = $(kde_datadir)/kconf_update
- update_DATA = kaudiocreator-libkcddb.upd
+ KDE_ICON = AUTO
+ 

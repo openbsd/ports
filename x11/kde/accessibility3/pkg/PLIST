@@ -1,62 +1,62 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/07/24 12:47:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/18 09:36:42 espie Exp $
 bin/kmag
 bin/kmousetool
 bin/kmouth
-@dir share/applnk
-@dir share/applnk/Applications
+share/applnk/
+share/applnk/Applications/
 share/applnk/Applications/kmag.desktop
 share/applnk/Applications/kmousetool.desktop
 share/applnk/Applications/kmouth.desktop
-@dir share/apps/kmag
-@dir share/apps/kmag/icons
-@dir share/apps/kmag/icons/hicolor
-@dir share/apps/kmag/icons/hicolor/16x16
-@dir share/apps/kmag/icons/hicolor/16x16/actions
+share/apps/kmag/
+share/apps/kmag/icons/
+share/apps/kmag/icons/hicolor/
+share/apps/kmag/icons/hicolor/16x16/
+share/apps/kmag/icons/hicolor/16x16/actions/
 share/apps/kmag/icons/hicolor/16x16/actions/followmouse.png
 share/apps/kmag/icons/hicolor/16x16/actions/hidemouse.png
 share/apps/kmag/icons/hicolor/16x16/actions/window.png
 share/apps/kmag/kmagui.rc
-@dir share/apps/kmousetool
-@dir share/apps/kmousetool/icons
-@dir share/apps/kmousetool/icons/hicolor
-@dir share/apps/kmousetool/icons/hicolor/16x16
-@dir share/apps/kmousetool/icons/hicolor/16x16/actions
+share/apps/kmousetool/
+share/apps/kmousetool/icons/
+share/apps/kmousetool/icons/hicolor/
+share/apps/kmousetool/icons/hicolor/16x16/
+share/apps/kmousetool/icons/hicolor/16x16/actions/
 share/apps/kmousetool/icons/hicolor/16x16/actions/kmousetool_off.png
 share/apps/kmousetool/icons/hicolor/16x16/actions/kmousetool_on.png
-@dir share/apps/kmousetool/icons/hicolor/16x16/apps
+share/apps/kmousetool/icons/hicolor/16x16/apps/
 share/apps/kmousetool/icons/hicolor/16x16/apps/kmousetool.png
-@dir share/apps/kmousetool/icons/hicolor/32x32
-@dir share/apps/kmousetool/icons/hicolor/32x32/actions
+share/apps/kmousetool/icons/hicolor/32x32/
+share/apps/kmousetool/icons/hicolor/32x32/actions/
 share/apps/kmousetool/icons/hicolor/32x32/actions/kmousetool_off.png
 share/apps/kmousetool/icons/hicolor/32x32/actions/kmousetool_on.png
-@dir share/apps/kmousetool/icons/hicolor/32x32/apps
+share/apps/kmousetool/icons/hicolor/32x32/apps/
 share/apps/kmousetool/icons/hicolor/32x32/apps/kmousetool.png
-@dir share/apps/kmousetool/sounds
+share/apps/kmousetool/sounds/
 share/apps/kmousetool/sounds/mousetool_tap.wav
-@dir share/apps/kmouth
-@dir share/apps/kmouth/books
-@dir share/apps/kmouth/books/de
+share/apps/kmouth/
+share/apps/kmouth/books/
+share/apps/kmouth/books/de/
 share/apps/kmouth/books/de/de-courteousness.phrasebook
 share/apps/kmouth/books/de/de-greetings.phrasebook
 share/apps/kmouth/books/de/de-howareyou.phrasebook
 share/apps/kmouth/books/de/de-personal.phrasebook
 share/apps/kmouth/books/de/de.desktop
-@dir share/apps/kmouth/books/en
+share/apps/kmouth/books/en/
 share/apps/kmouth/books/en/en-courteousness.phrasebook
 share/apps/kmouth/books/en/en-greetings.phrasebook
 share/apps/kmouth/books/en/en-howareyou.phrasebook
 share/apps/kmouth/books/en/en-personal.phrasebook
 share/apps/kmouth/books/en/en.desktop
-@dir share/apps/kmouth/books/sv
+share/apps/kmouth/books/sv/
 share/apps/kmouth/books/sv/sv-courteousness.phrasebook
 share/apps/kmouth/books/sv/sv-greetings.phrasebook
 share/apps/kmouth/books/sv/sv-howareyou.phrasebook
 share/apps/kmouth/books/sv/sv-personal.phrasebook
 share/apps/kmouth/books/sv/sv.desktop
-@dir share/apps/kmouth/icons
-@dir share/apps/kmouth/icons/hicolor
-@dir share/apps/kmouth/icons/hicolor/16x16
-@dir share/apps/kmouth/icons/hicolor/16x16/actions
+share/apps/kmouth/icons/
+share/apps/kmouth/icons/hicolor/
+share/apps/kmouth/icons/hicolor/16x16/
+share/apps/kmouth/icons/hicolor/16x16/actions/
 share/apps/kmouth/icons/hicolor/16x16/actions/phrase.png
 share/apps/kmouth/icons/hicolor/16x16/actions/phrase_new.png
 share/apps/kmouth/icons/hicolor/16x16/actions/phrase_open.png
@@ -70,8 +70,8 @@ share/apps/kmouth/icons/hicolor/16x16/actions/phrasehistory_open.png
 share/apps/kmouth/icons/hicolor/16x16/actions/phrasehistory_print.png
 share/apps/kmouth/icons/hicolor/16x16/actions/phrasehistory_save.png
 share/apps/kmouth/icons/hicolor/16x16/actions/speak.png
-@dir share/apps/kmouth/icons/hicolor/22x22
-@dir share/apps/kmouth/icons/hicolor/22x22/actions
+share/apps/kmouth/icons/hicolor/22x22/
+share/apps/kmouth/icons/hicolor/22x22/actions/
 share/apps/kmouth/icons/hicolor/22x22/actions/phrase.png
 share/apps/kmouth/icons/hicolor/22x22/actions/phrase_new.png
 share/apps/kmouth/icons/hicolor/22x22/actions/phrase_open.png
@@ -85,8 +85,8 @@ share/apps/kmouth/icons/hicolor/22x22/actions/phrasehistory_open.png
 share/apps/kmouth/icons/hicolor/22x22/actions/phrasehistory_print.png
 share/apps/kmouth/icons/hicolor/22x22/actions/phrasehistory_save.png
 share/apps/kmouth/icons/hicolor/22x22/actions/speak.png
-@dir share/apps/kmouth/icons/hicolor/32x32
-@dir share/apps/kmouth/icons/hicolor/32x32/actions
+share/apps/kmouth/icons/hicolor/32x32/
+share/apps/kmouth/icons/hicolor/32x32/actions/
 share/apps/kmouth/icons/hicolor/32x32/actions/phrase.png
 share/apps/kmouth/icons/hicolor/32x32/actions/phrase_new.png
 share/apps/kmouth/icons/hicolor/32x32/actions/phrase_open.png
@@ -100,22 +100,22 @@ share/apps/kmouth/icons/hicolor/32x32/actions/phrasehistory_open.png
 share/apps/kmouth/icons/hicolor/32x32/actions/phrasehistory_print.png
 share/apps/kmouth/icons/hicolor/32x32/actions/phrasehistory_save.png
 share/apps/kmouth/icons/hicolor/32x32/actions/speak.png
-@dir share/apps/kmouth/icons/hicolor/48x48
-@dir share/apps/kmouth/icons/hicolor/48x48/actions
+share/apps/kmouth/icons/hicolor/48x48/
+share/apps/kmouth/icons/hicolor/48x48/actions/
 share/apps/kmouth/icons/hicolor/48x48/actions/speak.png
 share/apps/kmouth/kmouthui.rc
 share/apps/kmouth/phrasebookdialogui.rc
 share/config/kmouthrc
-@dir share/doc/HTML/en/kmag
+share/doc/HTML/en/kmag/
 share/doc/HTML/en/kmag/common
 share/doc/HTML/en/kmag/index.cache.bz2
 share/doc/HTML/en/kmag/index.docbook
 share/doc/HTML/en/kmag/screenshot.png
-@dir share/doc/HTML/en/kmousetool
+share/doc/HTML/en/kmousetool/
 share/doc/HTML/en/kmousetool/common
 share/doc/HTML/en/kmousetool/index.cache.bz2
 share/doc/HTML/en/kmousetool/index.docbook
-@dir share/doc/HTML/en/kmouth
+share/doc/HTML/en/kmouth/
 share/doc/HTML/en/kmouth/common
 share/doc/HTML/en/kmouth/index.cache.bz2
 share/doc/HTML/en/kmouth/index.docbook
@@ -123,37 +123,39 @@ share/doc/HTML/en/kmouth/kmouthcpref.eps
 share/doc/HTML/en/kmouth/kmouthcpref.png
 share/doc/HTML/en/kmouth/kmouthctts.eps
 share/doc/HTML/en/kmouth/kmouthctts.png
+share/doc/HTML/en/kmouth/kmouthcwcp.eps
+share/doc/HTML/en/kmouth/kmouthcwcp.png
 share/doc/HTML/en/kmouth/kmouthedit.eps
 share/doc/HTML/en/kmouth/kmouthedit.png
 share/doc/HTML/en/kmouth/kmouthmain.eps
 share/doc/HTML/en/kmouth/kmouthmain.png
 share/doc/HTML/en/kmouth/kmouthwizard.eps
 share/doc/HTML/en/kmouth/kmouthwizard.png
-@dir share/icons/hicolor/16x16
-@dir share/icons/hicolor/16x16/apps
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kmag.png
 share/icons/hicolor/16x16/apps/kmousetool.png
 share/icons/hicolor/16x16/apps/kmouth.png
-@dir share/icons/hicolor/22x22
-@dir share/icons/hicolor/22x22/apps
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/kmouth.png
-@dir share/icons/hicolor/32x32
-@dir share/icons/hicolor/32x32/apps
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kmag.png
 share/icons/hicolor/32x32/apps/kmousetool.png
 share/icons/hicolor/32x32/apps/kmouth.png
-@dir share/icons/hicolor/48x48
-@dir share/icons/hicolor/48x48/apps
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kmouth.png
-@dir share/icons/locolor
-@dir share/icons/locolor/16x16
-@dir share/icons/locolor/16x16/apps
+share/icons/locolor/
+share/icons/locolor/16x16/
+share/icons/locolor/16x16/apps/
 share/icons/locolor/16x16/apps/kmag.png
 share/icons/locolor/16x16/apps/kmouth.png
-@dir share/icons/locolor/22x22
-@dir share/icons/locolor/22x22/apps
+share/icons/locolor/22x22/
+share/icons/locolor/22x22/apps/
 share/icons/locolor/22x22/apps/kmouth.png
-@dir share/icons/locolor/32x32
-@dir share/icons/locolor/32x32/apps
+share/icons/locolor/32x32/
+share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/kmag.png
 share/icons/locolor/32x32/apps/kmouth.png
