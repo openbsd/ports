@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2001/07/28 16:35:07 lebel Exp $
+# $OpenBSD: Makefile,v 1.54 2001/07/29 00:11:17 naddy Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -22,9 +22,9 @@
 #    SUBDIR += doom
      SUBDIR += dopewars
 #    SUBDIR += empire
-#    SUBDIR += flying
      SUBDIR += falconseye
      SUBDIR += fire
+#    SUBDIR += flying
      SUBDIR += freeciv
      SUBDIR += freeciv,gtk
      SUBDIR += frotz
@@ -35,13 +35,13 @@
 #    SUBDIR += golddig
      SUBDIR += gtkballs
      SUBDIR += gtkpool
+     SUBDIR += hackdata
      SUBDIR += icebreaker
 #    SUBDIR += imaze
 #    SUBDIR += jetpack
 #    SUBDIR += kdegames
 #    SUBDIR += klondike
-#    SUBDIR += lincity
-     SUBDIR += hackdata
+     SUBDIR += lincity
      SUBDIR += moon-buggy
      SUBDIR += moria
      SUBDIR += nethack
@@ -98,7 +98,6 @@
      SUBDIR += xkobo,harder
      SUBDIR += xlife
      SUBDIR += xmahjongg
-#    SUBDIR += xmame
 #    SUBDIR += xmille
      SUBDIR += xmine
      SUBDIR += xminehunter
