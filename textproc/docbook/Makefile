@@ -1,15 +1,18 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/08 23:51:45 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/24 13:32:20 avsm Exp $
 
 DISTNAME=	docbook-4.1
 CATEGORIES=	textproc
 NEED_VERSION= 	1.336
 
 ROOT_SITE=	http://www.oasis-open.org/docbook/sgml
-MASTER_SITES0=	${ROOT_SITE}/2.4.1/
+MIRROR_SITE=	http://www.docbook.org/sgml
+
+MASTER_SITES0=	${ROOT_SITE}/2.4.1/ 
 MASTER_SITES1=	${ROOT_SITE}/3.0/
-MASTER_SITES2=	${ROOT_SITE}/3.1/
-MASTER_SITES3=	${ROOT_SITE}/4.0/
-MASTER_SITES4=	${ROOT_SITE}/4.1/
+MASTER_SITES2=	${ROOT_SITE}/3.1/ ${MIRROR_SITE}/3.1/
+MASTER_SITES3=	${ROOT_SITE}/4.0/ ${MIRROR_SITE}/4.0/
+MASTER_SITES4=	${ROOT_SITE}/4.1/ ${MIRROR_SITE}/4.1/
+
 DISTFILES=	docbk241.zip:0 docbk30.zip:1 docbk31.zip:2 docbk40.zip:3 docbk41.zip:4
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
