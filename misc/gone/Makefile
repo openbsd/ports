@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2003/06/20 08:05:14 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2004/11/30 07:14:02 kevlo Exp $
 
 COMMENT=	"terminal locking utility"
 
-DISTNAME=	gone-1.3.4
+DISTNAME=	gone-1.3.5
 CATEGORIES=	misc 
 
 HOMEPAGE=	http://www.marcuscom.com/
@@ -19,10 +19,8 @@ MASTER_SITES=	${HOMEPAGE}/downloads/
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	with_setuid="no"
 
-NO_REGRESS=	Yes
+MAKE_FLAGS=	prefix="${PREFIX}"
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gone ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/gone.1 ${PREFIX}/man/man1
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
