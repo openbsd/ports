@@ -1,6 +1,7 @@
---- ltmain.sh.orig	Thu Dec  9 17:55:27 1999
-+++ ltmain.sh	Thu Dec  9 17:55:42 1999
-@@ -3326,40 +3326,6 @@
+$OpenBSD: patch-ltmain_sh,v 1.1 2000/10/31 15:20:18 espie Exp $
+--- ltmain.sh.orig	Sat Apr 10 02:58:53 1999
++++ ltmain.sh	Mon Oct 30 15:57:26 2000
+@@ -3326,40 +3326,6 @@ libdir='$install_libdir'\
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  

@@ -1,6 +1,7 @@
---- ltconfig.orig	Fri Apr  9 20:58:53 1999
-+++ ltconfig	Thu Dec  9 18:18:15 1999
-@@ -1796,6 +1796,7 @@
+$OpenBSD: patch-ltconfig,v 1.1 2000/10/31 15:20:18 espie Exp $
+--- ltconfig.orig	Sat Apr 10 02:58:53 1999
++++ ltconfig	Mon Oct 30 15:57:26 2000
+@@ -1796,6 +1796,7 @@ openbsd*)
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH

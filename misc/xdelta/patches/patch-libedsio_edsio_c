@@ -1,0 +1,11 @@
+$OpenBSD: patch-libedsio_edsio_c,v 1.1 2000/10/31 15:20:18 espie Exp $
+--- libedsio/edsio.c.orig	Tue Oct 31 16:13:14 2000
++++ libedsio/edsio.c	Tue Oct 31 16:13:22 2000
+@@ -23,6 +23,7 @@
+ 
+ #include "maketime.h"
+ 
++#undef isset
+ /*#define DEBUG_PROPS*/
+ 
+ /* Event delivery
