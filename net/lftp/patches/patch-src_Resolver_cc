@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Resolver_cc,v 1.1 2002/10/01 12:13:02 naddy Exp $
+--- src/Resolver.cc.orig	Mon Sep 30 09:31:34 2002
++++ src/Resolver.cc	Mon Sep 30 09:31:49 2002
+@@ -748,8 +748,6 @@ void Resolver::LookupOne(const char *nam
+ #  endif
+       int h_errno=0;
+       ha=getipnodebyname(name,af,0,&h_errno);
+-# elif defined(HAVE_GETHOSTBYNAME2)
+-      ha=gethostbyname2(name,af);
+ # else
+       if(af==AF_INET)
+ 	 ha=gethostbyname(name);
