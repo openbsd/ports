@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2002/04/29 10:39:20 form Exp $
+# $OpenBSD: Makefile,v 1.82 2002/05/30 20:28:47 nino Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -21,6 +21,7 @@
      SUBDIR += flashplugin
 #    SUBDIR += fxhtml
 #    SUBDIR += gn
+     SUBDIR += gtkhtml
 #    SUBDIR += gwstat
 #    SUBDIR += harvest
 #    SUBDIR += http-analyze
