@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2001/03/05 19:36:22 brad Exp $
+# $OpenBSD: Makefile,v 1.44 2001/03/10 16:56:54 brad Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 VERSION=	7.0.3
@@ -71,9 +71,6 @@ FLAVOR?=
 
 MULTI_PACKAGES=	-clients -docs
 SUBPACKAGE?=
-.if ${SUBPACKAGE} == "-clients"
-PKGNAME:=pgsql-clients-${VERSION}
-.endif
 
 ## build dependencies
 USE_GMAKE=	Yes
@@ -153,8 +150,10 @@ post-install:
 
 .include <bsd.port.mk>
 
-.if ${SUBPACKAGE} == "-docs"
-PKGNAME:=pgsql-docs-${VERSION}
+.if ${SUBPACKAGE} == "-clients"
+PKGNAME:=	pgsql-clients-${VERSION}
+.elif ${SUBPACKAGE} == "-docs"
+PKGNAME:=	pgsql-docs-${VERSION}
 .endif
 
 .if ${FLAVOR:L:Mtcl} && !defined(NO_SHARED_LIBS)
