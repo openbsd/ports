@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.73 2003/11/03 20:24:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.74 2003/11/22 00:58:56 espie Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
      SUBDIR += amanda
      SUBDIR += astrolog
+     SUBDIR += brltty
      SUBDIR += brs
      SUBDIR += buffer
 #    SUBDIR += cal
@@ -69,6 +70,7 @@
      SUBDIR += rpm
      SUBDIR += screen
      SUBDIR += screen,static
+     SUBDIR += screen,shm
      SUBDIR += sh-utils
      SUBDIR += shared-mime-info
      SUBDIR += splitvt
