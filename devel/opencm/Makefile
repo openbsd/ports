@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/10/23 20:57:30 todd Exp $
+# $OpenBSD: Makefile,v 1.10 2003/03/04 21:41:00 sturm Exp $
 
 COMMENT=		"OpenCM change management system"
 COMMENT-docs=		"OpenCM Documentation"
@@ -42,7 +42,7 @@ FLAVOR?=
 MULTI_PACKAGES=
 
 .if ${FLAVOR:L:Mdocs}
-BUILD_DEPENDS+= :teTeX_base-1.0.*:print/teTeX/base
+BUILD_DEPENDS+= :teTeX_base-*:print/teTeX/base
 MULTI_PACKAGES+= -docs
 
 post-install:
