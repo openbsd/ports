@@ -1,0 +1,9 @@
+--- Makefile.old	Tue Jun  9 02:10:22 1998
++++ Makefile	Tue Jun  9 02:10:47 1998
+@@ -22,6 +22,5 @@
+ 	mkdir -p $(PREFIX)/share/doc/beav
+ 	install -c -m 644 -g bin -o bin beav140.txt $(PREFIX)/share/doc/beav/beav.txt
+ 	install -c -m 644 -g bin -o bin beav.1 $(PREFIX)/man/man1
+-	gzip -9nf $(PREFIX)/man/man1/beav.1
+ 
+ $(OFILES):  $(HFILES)
