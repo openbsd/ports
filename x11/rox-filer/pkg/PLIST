@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/10/10 20:23:20 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.14 2005/01/31 19:01:47 couderc Exp $
 bin/rox
 @man man/man1/ROX-Filer.1
 @man man/man1/rox.1
@@ -29,6 +29,7 @@ rox/ROX-Filer/Messages/ja.gmo
 rox/ROX-Filer/Messages/nl.gmo
 rox/ROX-Filer/Messages/no.gmo
 rox/ROX-Filer/Messages/pl.gmo
+rox/ROX-Filer/Messages/pt_BR.gmo
 rox/ROX-Filer/Messages/ro.gmo
 rox/ROX-Filer/Messages/ru.gmo
 rox/ROX-Filer/Messages/sv.gmo
@@ -36,6 +37,7 @@ rox/ROX-Filer/Messages/zh_CN.gmo
 rox/ROX-Filer/Messages/zh_TW.gmo
 rox/ROX-Filer/OpenBSD-${MACHINE_ARCH}/
 rox/ROX-Filer/OpenBSD-${MACHINE_ARCH}/ROX-Filer
+rox/ROX-Filer/OpenBSD-${MACHINE_ARCH}/ROX-Filer.dbg
 rox/ROX-Filer/Options.xml
 rox/ROX-Filer/ROX/
 rox/ROX-Filer/ROX/MIME/
@@ -93,6 +95,7 @@ rox/ROX-Filer/ROX/MIME/mime-application:x-trash.png
 rox/ROX-Filer/ROX/MIME/mime-application:x-troff-man-compressed.png
 rox/ROX-Filer/ROX/MIME/mime-application:x-troff-man.png
 rox/ROX-Filer/ROX/MIME/mime-application:x-troff.png
+rox/ROX-Filer/ROX/MIME/mime-application:xhtml+xml.png
 rox/ROX-Filer/ROX/MIME/mime-application:zip.png
 rox/ROX-Filer/ROX/MIME/mime-audio.png
 rox/ROX-Filer/ROX/MIME/mime-audio:midi.png
@@ -142,6 +145,7 @@ rox/ROX-Filer/images/rox-mounted.png
 rox/ROX-Filer/images/rox-select.png
 rox/ROX-Filer/images/rox-show-details.png
 rox/ROX-Filer/images/rox-show-hidden.png
+rox/ROX-Filer/images/rox-xattr.png
 rox/ROX-Filer/images/symlink.png
 rox/ROX-Filer/src/
 rox/ROX-Filer/src/Docs/
@@ -165,6 +169,8 @@ rox/ROX-Filer/src/bind.c
 rox/ROX-Filer/src/bind.h
 rox/ROX-Filer/src/bookmarks.c
 rox/ROX-Filer/src/bookmarks.h
+rox/ROX-Filer/src/bulk_rename.c
+rox/ROX-Filer/src/bulk_rename.h
 rox/ROX-Filer/src/cell_icon.c
 rox/ROX-Filer/src/cell_icon.h
 rox/ROX-Filer/src/choices.c
@@ -239,6 +245,7 @@ rox/ROX-Filer/src/po/make-mo
 rox/ROX-Filer/src/po/nl.po
 rox/ROX-Filer/src/po/no.po
 rox/ROX-Filer/src/po/pl.po
+rox/ROX-Filer/src/po/pt_BR.po
 rox/ROX-Filer/src/po/ro.po
 rox/ROX-Filer/src/po/ru.po
 rox/ROX-Filer/src/po/sv.po
