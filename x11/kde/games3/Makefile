@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/02/01 14:59:22 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2004/02/01 23:27:02 espie Exp $
 
 COMMENT=		"games for KDE"
 
@@ -7,7 +7,7 @@ VERSION=		3.1.95
 DISTNAME=		kdegames-${VERSION}
 MODKDE_VERSION=		3.2
 
-LIB_DEPENDS= kdecore.4,artskde,DCOP,kdefx,kdeprint,kdesu,kdeui,kio,kparts::x11/kde/libs3
+LIB_DEPENDS= kdecore.6,artskde,DCOP,kdefx,kdeprint,kdesu,kdeui,kio,kparts::x11/kde/libs3
 SEPARATE_BUILD=flavored
 
 .include <bsd.port.mk>
