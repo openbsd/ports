@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/01/03 21:38:43 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/04/10 15:53:54 marcm Exp $
 
 COMMENT=		"a SOAP (Simple Object Access Protocol) implementation in C"
 
-DISTNAME=		soup-0.7.10
+DISTNAME=		soup-0.7.11
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2003/01/03 21:38:43 marcm Exp $
---- configure.orig	Sun Dec 15 23:25:02 2002
-+++ configure	Sun Dec 15 23:25:36 2002
-@@ -3850,8 +3850,8 @@ else
+$OpenBSD: patch-configure,v 1.3 2003/04/10 15:53:54 marcm Exp $
+--- configure.orig	Thu Jan  2 11:06:13 2003
++++ configure	Wed Apr  9 08:17:18 2003
+@@ -5421,8 +5421,8 @@ else
      hardcode_direct=yes
      hardcode_shlibpath_var=no
      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure,v 1.2 2003/01/03 21:38:43 marcm Exp $
        export_dynamic_flag_spec='${wl}-E'
      else
        case "$host_os" in
-@@ -3860,8 +3860,8 @@ else
+@@ -5431,8 +5431,8 @@ else
  	hardcode_libdir_flag_spec='-R$libdir'
          ;;
        *)
@@ -23,3 +23,11 @@ $OpenBSD: patch-configure,v 1.2 2003/01/03 21:38:43 marcm Exp $
          ;;
        esac
      fi
+@@ -10599,6 +10599,7 @@ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ #include "confdefs.h"
+ $ac_includes_default
++#include <httpd.h>
+ #include <$ac_header>
+ _ACEOF
+ rm -f conftest.$ac_objext
