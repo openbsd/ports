@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_fileinfo_c,v 1.1 2003/06/19 13:49:22 sturm Exp $
---- src/fileinfo.c.orig	Wed Jun 18 22:11:15 2003
-+++ src/fileinfo.c	Wed Jun 18 22:12:00 2003
+$OpenBSD: patch-src_fileinfo_c,v 1.2 2004/01/05 15:39:58 espie Exp $
+--- src/fileinfo.c.orig	2003-05-24 20:34:15.000000000 +0200
++++ src/fileinfo.c	2004-01-05 15:40:42.000000000 +0100
 @@ -50,7 +50,8 @@
  #include <fcntl.h>
  #include <regex.h>
@@ -10,4 +10,4 @@ $OpenBSD: patch-src_fileinfo_c,v 1.1 2003/06/19 13:49:22 sturm Exp $
 +#include <machine/endian.h>
  #include <dirent.h>
  
- RCSID("$Id: patch-src_fileinfo_c,v 1.1 2003/06/19 13:49:22 sturm Exp $");
+ RCSID("$Id: patch-src_fileinfo_c,v 1.2 2004/01/05 15:39:58 espie Exp $");

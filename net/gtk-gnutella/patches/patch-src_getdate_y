@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_getdate_y,v 1.1 2004/01/05 15:39:58 espie Exp $
+--- src/getdate.y.orig	2004-01-05 16:30:48.000000000 +0100
++++ src/getdate.y	2004-01-05 16:31:06.000000000 +0100
+@@ -91,6 +91,14 @@
+    host does not conform to Posix.  */
+ #define ISDIGIT(c) ((unsigned) (c) - '0' <= 9)
+ 
++/*
++**  Meridian:  am, pm, or 24-hour style.
++*/
++typedef enum _MERIDIAN {
++    MERam, MERpm, MER24
++} MERIDIAN;
++
++
+ #include "getdate.h"
+ 
+ #if defined (STDC_HEADERS) || defined (USG)
+@@ -173,14 +181,6 @@ typedef struct _TABLE {
+ 
+ 
+ /*
+-**  Meridian:  am, pm, or 24-hour style.
+-*/
+-typedef enum _MERIDIAN {
+-    MERam, MERpm, MER24
+-} MERIDIAN;
+-
+-
+-/*
+ **  Global variables.  We could get rid of most of these by using a good
+ **  union as the yacc stack.  (This routine was originally written before
+ **  yacc had the %union construct.)  Maybe someday; right now we only use
