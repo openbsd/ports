@@ -1,0 +1,17 @@
+bin/zsh
+@unexec echo "Don't forget to update /etc/shells"
+bin/zsh-3.1.5
+@unexec install-info --delete %D/info/zsh.info %D/info/dir
+info/zsh.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/zsh.info %D/info/dir
+man/man1/zshcompctl.1
+man/man1/zshexpn.1
+man/man1/zshmisc.1
+man/man1/zshoptions.1
+man/man1/zshall.1
+man/man1/zshzle.1
+man/man1/zsh.1
+man/man1/zshbuiltins.1
+man/man1/zshparam.1
+man/man1/zshmodules.1

@@ -1,0 +1,20 @@
+--- Doc/Makefile.in.orig	Fri Mar  5 09:03:09 1999
++++ Doc/Makefile.in	Fri Mar  5 09:04:24 1999
+@@ -65,7 +65,7 @@
+ 	$(TEXI2DVI) $(sdir)/zsh.texi
+ 
+ zsh.info: zsh.texi
+-	$(MAKEINFO) $(sdir)/zsh.texi; exit 0
++	$(MAKEINFO) --no-split $(sdir)/zsh.texi; exit 0
+ 
+ zsh.texi: zsh.yo
+ 	$(YODL) -o $(sdir)/zsh.texi -I$(sdir) -w ztexi.yo version.yo zsh.yo
+@@ -133,7 +133,7 @@
+ # install info pages, creating install directory if necessary
+ install.info: zsh.info
+ 	$(sdir_top)/mkinstalldirs $(infodir)
+-	for file in zsh.info zsh.info-[1-9]; do \
++	for file in zsh.info ; do \
+ 	  if test -f $$file; then \
+ 	    $(INSTALL_DATA) $$file $(infodir); \
+ 	  elif test -f $(sdir)/$$file; then \
