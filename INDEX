@@ -6,7 +6,7 @@ sharutils-4.2|/d/c1d/ports/archivers/gshar+gunshar|/usr/local|Allow packing and 
 ha-0.999b|/d/c1d/ports/archivers/ha|/usr/local|The HA archiver using the HSC compression method.|/d/c1d/ports/archivers/ha/pkg/DESCR|angelos@openbsd.org|archivers|gmake-3.76.1|
 lha-1.14c|/d/c1d/ports/archivers/lha|/usr/local|Archive files using LZW compression (.lzh files).|/d/c1d/ports/archivers/lha/pkg/DESCR|angelos@openbsd.org|archivers||
 nulib-3.25|/d/c1d/ports/archivers/nulib|/usr/local|NuFX archive utility|/d/c1d/ports/archivers/nulib/pkg/DESCR|angelos@openbsd.org|archivers||
-p5-Compress-Zlib-0.50|/d/c1d/ports/archivers/p5-Compress-Zlib|/usr/local|perl5 interface to zlib compression library.|/d/c1d/ports/archivers/p5-Compress-Zlib/pkg/DESCR|angelos@openbsd.org|archivers perl5|CVS Makefile files patches pkg work Error code 1 Stop.|
+p5-Compress-Zlib-0.50|/d/c1d/ports/archivers/p5-Compress-Zlib|/usr/local|perl5 interface to zlib compression library.|/d/c1d/ports/archivers/p5-Compress-Zlib/pkg/DESCR|angelos@openbsd.org|archivers perl5||
 This port is only for i386,
 and you are running alpha.
 unarj-2.41|/d/c1d/ports/archivers/unarj|/usr/local|Allows files to be extracted from ARJ archives.|/d/c1d/ports/archivers/unarj/pkg/DESCR|joey@OpenBSD.ORG|archivers||
@@ -17,7 +17,7 @@ zip+crypt-2.2s|/d/c1d/ports/archivers/zip.with_encryption|/usr/local|Create/upda
 zoo-2.10.1|/d/c1d/ports/archivers/zoo|/usr/local|Manipulate archives of files in compressed form.|/d/c1d/ports/archivers/zoo/pkg/DESCR|angelos@openbsd.org|archivers||
 xearth-1.0|/d/c1d/ports/astro/xearth|/usr/X11R6|Set the root window to the image of earth.|/d/c1d/ports/astro/xearth/pkg/DESCR|ports@FreeBSD.ORG|astro x11||
 xphoon-91.9.18|/d/c1d/ports/astro/xphoon|/usr/X11R6|Set the root window to the moon in its current phase|/d/c1d/ports/astro/xphoon/pkg/DESCR|angelos@openbsd.org|astro x11||
-xcd-1.6|/d/c1d/ports/audio/xcd|/usr/local|A Tcl/Tk CD player.|/d/c1d/ports/audio/xcd/pkg/DESCR|angelos@openbsd.org|audio tk80||
+xcd-1.6|/d/c1d/ports/audio/xcd|/usr/local|A Tcl/Tk CD player.|/d/c1d/ports/audio/xcd/pkg/DESCR|angelos@openbsd.org|audio tk80||tcl-8.0.2 tk-8.0.2
 bonnie-1.0|/d/c1d/ports/benchmarks/bonnie|/usr/local|Performance Test of Filesystem I/O.|/d/c1d/ports/benchmarks/bonnie/pkg/DESCR|niklas@openbsd.org|benchmarks||
 bytebench-3.1|/d/c1d/ports/benchmarks/bytebench|/usr/local|The BYTE magazine benchmark suite.|/d/c1d/ports/benchmarks/bytebench/pkg/DESCR|angelos@openbsd.org|benchmarks||
 iozone-2.01|/d/c1d/ports/benchmarks/iozone|/usr/local|Performance Test of Sequential File I/O.|/d/c1d/ports/benchmarks/iozone/pkg/DESCR|niklas@openbsd.org|benchmarks||
@@ -29,12 +29,13 @@ zh-lunar-2.1|/d/c1d/ports/chinese/lunar|/usr/local|convert between the Gregorian
 rzsz-3.47|/d/c1d/ports/comms/rzsz|/usr/local|Receive/Send files via X/Y/ZMODEM protocol.|/d/c1d/ports/comms/rzsz/pkg/DESCR|gene@OpenBSD.ORG|comms|unzip-5.3.1|
 db-2.3.12|/d/c1d/ports/databases/db|/usr/local|the Berkeley DB package, revision 2|/d/c1d/ports/databases/db/pkg/DESCR|tacho@openbsd.org|databases||
 postgresql-6.2.1|/d/c1d/ports/databases/postgresql|/usr/local|a robust, next generation, object-relational DBMS|/d/c1d/ports/databases/postgresql/pkg/DESCR|mickey@openbsd.org|databases|gmake-3.76.1|
-autoconf-2.12|/d/c1d/ports/devel/autoconf|/usr/local|Automatically configure source code on many Un*x platforms|/d/c1d/ports/devel/autoconf/pkg/DESCR|joey@OpenBSD.ORG|devel||
+autoconf-2.12|/d/c1d/ports/devel/autoconf|/usr/local|Automatically configure source code on many Un*x platforms|/d/c1d/ports/devel/autoconf/pkg/DESCR|joey@OpenBSD.ORG|devel||m4-1.4
 automake-1.2|/d/c1d/ports/devel/automake|/usr/local|GNU Standards-compliant Makefile generator|/d/c1d/ports/devel/automake/pkg/DESCR|joey@OpenBSD.ORG|devel||
 indent-1.9.1|/d/c1d/ports/devel/gindent|/usr/local|GNU indent.|/d/c1d/ports/devel/gindent/pkg/DESCR|joey@OpenBSD.ORG|devel||
 gmake-3.76.1|/d/c1d/ports/devel/gmake|/usr/local|GNU version of 'make' utility|/d/c1d/ports/devel/gmake/pkg/DESCR|todd@OpenBSD.org|devel||
 id-utils-3.2|/d/c1d/ports/devel/id-utils|/usr/local|The classic Berkeley gid/lid tools for looking up variables in code.|/d/c1d/ports/devel/id-utils/pkg/DESCR|joey@OpenBSD.ORG|devel|emacs-20.2 gmake-3.76.1|
 libslang-0.99.38|/d/c1d/ports/devel/libslang|/usr/local|Routines for rapid alpha-numeric terminal applications development|/d/c1d/ports/devel/libslang/pkg/DESCR|todd@OpenBSD.org|devel||
+m4-1.4|/d/c1d/ports/devel/m4|/usr/local|GNU's m4.|/d/c1d/ports/devel/m4/pkg/DESCR|niklas@openbsd.org|devel||
 makedepend-95.07.05|/d/c1d/ports/devel/makedepend|/usr/local|A dependency generator for makefiles.|/d/c1d/ports/devel/makedepend/pkg/DESCR|joey@OpenBSD.ORG|devel||
 swig-1.1|/d/c1d/ports/devel/swig|/usr/local|Simplified Wrapper and Interface Generator.|/d/c1d/ports/devel/swig/pkg/DESCR|joey@OpenBSD.ORG|devel||
 xmake-1.01|/d/c1d/ports/devel/xmake|/usr/local|A powerful make utility|/d/c1d/ports/devel/xmake/pkg/DESCR|joey@OpenBSD.ORG|devel||
@@ -49,11 +50,12 @@ and you are running alpha.
 x48-0.4.0|/d/c1d/ports/emulators/x48|/usr/X11R6|an HP48sx emulator|/d/c1d/ports/emulators/x48/pkg/DESCR|todd@OpenBSD.org|emulators||
 abuse_pd|/d/c1d/ports/games/abuse|/usr/local|Crack.Com public domain release of Abuse|/d/c1d/ports/games/abuse/pkg/DESCR|ports@FreeBSD.ORG|games|gmake-3.76.1|
 xpm-3.4j|/d/c1d/ports/graphics/xpm|/usr/X11R6|The X Pixmap library.|/d/c1d/ports/graphics/xpm/pkg/DESCR|ports@FreeBSD.ORG|graphics x11||
+tcl-8.0.2|/d/c1d/ports/lang/tcl80|/usr/local|Tool Command Language.|/d/c1d/ports/lang/tcl80/pkg/DESCR|niklas@openbsd.org|lang tcl80||
 elm-2.4ME+32|/d/c1d/ports/mail/elm|/usr/local|ELM Mail User Agent|/d/c1d/ports/mail/elm/pkg/DESCR|gene@OpenBSD.ORG|mail||
 exim-1.71|/d/c1d/ports/mail/exim|/usr/local|High performance MTA for Unix systems on the Internet.|/d/c1d/ports/mail/exim/pkg/DESCR|joey@OpenBSD.ORG|mail||
 fetchmail-4.3.0|/d/c1d/ports/mail/fetchmail|/usr/local|batch mail retrieval/forwarding utility for pop2, pop3, apop, imap|/d/c1d/ports/mail/fetchmail/pkg/DESCR|joey@OpenBSD.ORG|mail||
 mm-2.7|/d/c1d/ports/mail/metamail|/usr/local|Implementation of MIME, the Multipurpose Internet Mail Extensions.|/d/c1d/ports/mail/metamail/pkg/DESCR|joey@OpenBSD.ORG|mail||
-pgpsendmail-1.4|/d/c1d/ports/mail/pgpsendmail|/usr/local|PGP sign/encrypt/decrypt messages automatically.|/d/c1d/ports/mail/pgpsendmail/pkg/DESCR|joey@OpenBSD.ORG|mail|CVS Makefile files patches pkg Error code 1 Stop.|
+pgpsendmail-1.4|/d/c1d/ports/mail/pgpsendmail|/usr/local|PGP sign/encrypt/decrypt messages automatically.|/d/c1d/ports/mail/pgpsendmail/pkg/DESCR|joey@OpenBSD.ORG|mail|pgp262s|
 pine-3.96|/d/c1d/ports/mail/pine|/usr/local|Program for Internet E-mail and News|/d/c1d/ports/mail/pine/pkg/DESCR|joey@OpenBSD.ORG|mail news||
 popclient-3.0b6|/d/c1d/ports/mail/popclient|/usr/local|client for pop2, pop3, apop, rpop|/d/c1d/ports/mail/popclient/pkg/DESCR|ejovi@OpenBSD.ORG|mail||
 procmail-3.11p7|/d/c1d/ports/mail/procmail|/usr/local|A local mail delivery agent.|/d/c1d/ports/mail/procmail/pkg/DESCR|joey@OpenBSD.ORG|mail||
@@ -75,6 +77,7 @@ tin-1.3.970930|/d/c1d/ports/news/tin|/usr/local|TIN newsreader (termcap based)|/
 cfs-1.3.3|/d/c1d/ports/security/cfs|/usr/local|A cryptographic file system implemented as a user-space NFS server.|/d/c1d/ports/security/cfs/pkg/DESCR|angelos@openbsd.org|security||
 cops-1.04|/d/c1d/ports/security/cops|/usr/local|A system secureness checker.|/d/c1d/ports/security/cops/pkg/DESCR|joey@OpenBSD.ORG|security||
 crack-5.0|/d/c1d/ports/security/crack|/usr/local|the "Sensible" Unix Password Cracker.|/d/c1d/ports/security/crack/pkg/DESCR|joey@OpenBSD.ORG|security||
+rsaref-2.0|/d/c1d/ports/security/rsaref|/usr/local|encryption/authentication library, RSA/MDX/DES|/d/c1d/ports/security/rsaref/pkg/DESCR|niklas@openbsd.org|security||
 ssh-1.2.21|/d/c1d/ports/security/ssh|/usr/local|Secure shell client and server (remote login program).|/d/c1d/ports/security/ssh/pkg/DESCR|todd@OpenBSD.ORG|security net||
 swatch-2.2|/d/c1d/ports/security/swatch|/usr/local|The Simple WATCHer and filter|/d/c1d/ports/security/swatch/pkg/DESCR|joey@OpenBSD.ORG|security sysutils||
 bash-1.14.7|/d/c1d/ports/shells/bash|/usr/local|The GNU Borne Again Shell.|/d/c1d/ports/shells/bash/pkg/DESCR|gene@OpenBSD.ORG|shells||
@@ -102,3 +105,4 @@ rman-3.0.3a12|/d/c1d/ports/textproc/rman|/usr/local|Reverse compile man pages fr
 apache-1.3a1|/d/c1d/ports/www/apache|/usr/local|The extremely popular Apache http server.  Very fast, very clean.|/d/c1d/ports/www/apache/pkg/DESCR|joey@OpenBSD.ORG|www||
 lynx-2.7.1ac-0.97|/d/c1d/ports/www/lynx|/usr/local|An alphanumeric display oriented World-Wide Web Client.|/d/c1d/ports/www/lynx/pkg/DESCR|gene@OpenBSD.ORG|www||
 wwwcount-2.3|/d/c1d/ports/www/wwwcount|/usr/local|Access counter, clock and date for WWW pages|/d/c1d/ports/www/wwwcount/pkg/DESCR|joey@OpenBSD.ORG|www||
+tk-8.0.2|/d/c1d/ports/x11/tk80|/usr/local|Graphical toolkit for TCL.|/d/c1d/ports/x11/tk80/pkg/DESCR|niklas@openbsd.org|x11 tk80|tcl-8.0.2|tcl-8.0.2
