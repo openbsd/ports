@@ -1,32 +1,33 @@
-# $OpenBSD: Makefile,v 1.14 2004/02/04 07:39:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2004/04/26 23:48:50 dons Exp $
+# 
 # Based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
 # And on NetBSD's 5.04.3 .hc boot script
-#
-# The build process:
-#       1) build a full ghc6 from pre-generated 6.0.1 C files
 
-ONLY_FOR_ARCHS= i386 sparc
+ONLY_FOR_ARCHS= i386 sparc amd64
+ 
 # The general solution for other architectures will be to boot
 # via unregisterised .hc files generated on openbsd-*-i386. See:
 #
 #  http://haskell.org/ghc/docs/latest/html/building/sec-porting-ghc.html
-#  http://cvs.haskell.org/cgi-bin/cvsweb.cgi/fptools/distrib/cross-port
 #
-# The best bets are powerpc and alpha. sparc64 and amd64 should
-# work. hppa and mips have recently worked. m68k hasn't worked
-# for a long time now, and on mac68k at least _ld_ dies with a
-# malloc error when linking the ghc binary.
+# The best bets are powerpc and alpha. sparc64, mips64 and amd64
+# should work. hppa and mips have recently worked. m68k hasn't worked
+# for a long time now, and on mac68k at least _ld_ dies with a malloc
+# error when linking the ghc binary.
+ 
+# The build process: we build a full GHC from C source. The C source
+# needs to be generated once for each arch, for each version of GHC.
 
 COMMENT=	"compiler for the functional language Haskell"
 COMMENT-doc=	"documentation for the functional language Haskell"
 
-V=		6.0.1
+V=		6.2.1
 
 DISTNAME=	ghc-${V}
 CATEGORIES=	lang
 HOMEPAGE=	http://www.haskell.org/ghc/
-MAINTAINER=	Don Stewart <dons@cse.unsw.edu.au>
+MAINTAINER=	Don Stewart <dons@openbsd.org>
 
 LIB_DEPENDS=	gmp::devel/gmp
 
@@ -51,16 +52,23 @@ DOC_DIR=	${PREFIX}/share/doc/ghc
 DISTFILES=	ghc-${V}-src.tar.bz2 \
 		${DOC_FILES:C/(.+)/\1.html.tar.gz:0/g} \
 		${DOC_FILES1:C/(.+)/\1-html.tar.gz:1/g} \
-		ghc-regress-${V}.1.tar.bz2:2 \
-		ghc-${V}-${ARCH}-hc.tar.gz:2
+		ghc-${V}-${ARCH}-unknown-openbsd-hc.tar.bz2:2 \
+		ghc-regress-${V}.tar.bz2:2
 
-# only i386 and sparc .hc src exist at the moment. generating
 # this tarball is the first step in porting to a new architecture
-SUPDISTFILES=	ghc-${V}-${ARCH}-hc.tar.gz:2
+SUPDISTFILES=	ghc-${V}-i386-unknown-openbsd-hc.tar.bz2:2  \
+		ghc-${V}-sparc-unknown-openbsd-hc.tar.bz2:2 \
+		ghc-${V}-amd64-unknown-openbsd-hc.tar.bz2:2
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu dest
 CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}"
+
+# global register variable bug in gcc 3.3.2 screws up amd64. need gcc 3.4
+# we bypass it by ignoring all platform dependent tweaks. 2x slowdown.
+.if ${MACHINE_ARCH} == "amd64"
+CONFIGURE_ARGS+=--enable-hc-boot-unregisterised
+.endif
 
 # distrib/hc-build is a wrapper around configure and the
 # bootstrap make, with magic flags, vars and control flow

@@ -1,18 +1,34 @@
-SplitObjs just slows things down, and can overrun ulimits
+$OpenBSD: patch-distrib_hc-build,v 1.3 2004/04/26 23:48:50 dons Exp $
+SplitObjs just slows things down, and can overrun ulimits. It does
+produce smaller binaries though...
+
+Help ghc find libgmp.a
 
 And GHC produces stack_smash_handler() core dumps on sparc 
 unless propolice is turned off. This used to happen on x86, but
 has been fixed. Someone want to fix this on sparc?
 
-Help ghc find libgmp.a
+For some odd reason the existing regex doesn't want to remove all *.o
+and *.a files from the libraries. Can't work out why.
 
-And that old regex doesn't work/is a gnu grep thing?
+Touch some things so that 'make fake' doesn't rebuild the compiler
 
-And touch some files to avoid recompiling ghc/compiler on install
-
---- distrib/hc-build.orig	Fri Jul 25 04:23:30 2003
-+++ distrib/hc-build	Tue Sep 23 02:35:34 2003
-@@ -37,10 +37,20 @@
+--- distrib/hc-build.orig	Wed Sep  3 05:15:19 2003
++++ distrib/hc-build	Sun Apr 18 21:33:49 2004
+@@ -29,10 +29,10 @@
+ case "$configopts" in
+ *--enable-hc-boot-unregisterised*)
+ cat >mk/build.mk <<END
+-GhcWithInterpreter=NO
+ GhcWithNativeCodeGen=NO
+ SplitObjs=NO
+-GhcLibWays=
++SRC_HC_OPTS+=-L\$(LOCALBASE)/lib
++SRC_CC_OPTS+=-L\$(LOCALBASE)/lib
+ END
+ ;;
+ 
+@@ -39,10 +39,20 @@
  *)
  cat >mk/build.mk <<END
  # empty
@@ -33,12 +49,7 @@ And touch some files to avoid recompiling ghc/compiler on install
  echo "*** Building compiler..."
  ./configure --enable-hc-boot $configopts
  
-@@ -75,12 +85,11 @@
- # The reconfigure step updates a few files, which can lead to
- # unnecessary recompilations.  Touch a bunch of things here to avoid
- # having to recompile stuff that we've already built.
--(cd ghc/compiler; touch $PRIMOP_BITS parser/hschooks.o prelude/PrimOp.o main/Config.hs main/Config.o ghc-*)
- 
+@@ -77,7 +87,7 @@
  # Remove the old libraries.  Don't use make clean, because we don't
  # want to delete the .hs files generated from the .hsc files, because
  # we don't have hsc2hs built yet.
@@ -47,11 +58,11 @@ And touch some files to avoid recompiling ghc/compiler on install
  
  # Do includes and RTS now
  $MAKE -C ghc/includes boot && $MAKE -C ghc/includes all
-@@ -96,6 +105,6 @@
- $MAKE -C hslibs  boot all
- 
- # Avoid relinking the compiler during 'make install':
--(cd ghc/compiler; touch parser/hschooks.o ghc-*)
+@@ -95,6 +105,6 @@
+ # The reconfigure step updates a few files, which can lead to
+ # unnecessary recompilations.  Touch a bunch of things here to avoid
+ # having to recompile stuff that we've already built.
+-(cd ghc/compiler; touch $PRIMOP_BITS parser/hschooks.o prelude/PrimOp.o main/Config.hs main/Config.o ghc-*)
 +(cd ghc/compiler/; touch $PRIMOP_BITS main/Config.hs stage1/parser/hschooks.o stage1/prelude/PrimOp.o stage1/main/Config.o stage1/ghc-* ghc-inplace)
  
  # At this point, the tree should be safe to do 'make install' in.

@@ -1,29 +1,13 @@
---- ghc/driver/mangler/ghc-asm.lprl.orig	Mon Jun 30 08:40:55 2003
-+++ ghc/driver/mangler/ghc-asm.lprl	Sat Sep 20 18:49:19 2003
-@@ -142,7 +142,7 @@
-     $T_create_word  = "\t.word";
+$OpenBSD: patch-ghc_driver_mangler_ghc-asm_lprl,v 1.5 2004/04/26 23:48:50 dons Exp $
+How to pattern match amd64 asm.
+--- ghc/driver/mangler/ghc-asm.lprl.orig	Sun Apr 18 05:37:46 2004
++++ ghc/driver/mangler/ghc-asm.lprl	Sun Apr 18 05:39:39 2004
+@@ -230,7 +230,7 @@
+     $T_HDR_direct   = "\.text\n\t\.align 8\n";
  
      #--------------------------------------------------------#
--    } elsif ( $TargetPlatform =~ /^i386-.*-(linuxaout|freebsd2|openbsd|nextstep3|cygwin32|mingw32)$/ ) {
-+    } elsif ( $TargetPlatform =~ /^i386-.*-(linuxaout|freebsd2|nextstep3|cygwin32|mingw32)$/ ) {
- 				# NeXT added but not tested. CaS
+-    } elsif ( $TargetPlatform =~ /^x86_64-.*-linux$/ ) {
++    } elsif ( $TargetPlatform =~ /^x86_64-.*-(linux|openbsd)$/ ) {
  
-     $T_STABBY	    = 1; # 1 iff .stab things (usually if a.out format)
-@@ -172,7 +172,7 @@
-     $T_create_word  = "\t.word";
- 
-     #--------------------------------------------------------#
--    } elsif ( $TargetPlatform =~ /^i386-.*-(solaris2|linux|freebsd|netbsd)$/ ) {
-+    } elsif ( $TargetPlatform =~ /^i386-.*-(solaris2|linux|freebsd|netbsd|openbsd)$/ ) {
- 
-     $T_STABBY	    = 0; # 1 iff .stab things (usually if a.out format)
-     $T_US	    = ''; # _ if symbols have an underscore on the front
-@@ -317,7 +317,7 @@
-     $T_create_word  = "\t.long";
- 
-     #--------------------------------------------------------#
--    } elsif ( $TargetPlatform =~ /^sparc-.*-solaris2/ ) {
-+    } elsif ( $TargetPlatform =~ /^sparc-.*-(solaris2|openbsd)/ ) {
- 
-     $T_STABBY	    = 0; # 1 iff .stab things (usually if a.out format)
-     $T_US	    = ''; # _ if symbols have an underscore on the front
+     $T_STABBY       = 0; # 1 iff .stab things (usually if a.out format)
+     $T_US           = ''; # _ if symbols have an underscore on the front

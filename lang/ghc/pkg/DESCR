@@ -1,9 +1,17 @@
-The Glasgow Haskell Compiler is a robust, fully-featured, optimising
-compiler for the functional programming language Haskell 98.
+The Glasgow Haskell Compiler is a state-of-the-art, open source, compiler and
+interactive environment for the functional language Haskell. Highlights:
 
-GHC compiles Haskell to either native code or C. It implements
-numerous experimental language extensions to Haskell 98, for example:
-concurrency, a foreign language interface, multi-parameter type
-classes, scoped type variables, existential and universal quantification,
-unboxed types, exceptions, weak pointers, and so on. GHC comes with
-a generational garbage collector, and a space and time profiler.
+   * GHC supports the entire Haskell 98 language plus a wide variety of
+     extensions.
+   * GHC works on several platforms including Windows and most varieties of
+     Unix, and several different processor architectures. There are detailed
+     instructions for porting GHC to a new platform.                         
+   * GHC has extensive optimisation capabilities, including inter-module     
+     optimisation.                   
+   * GHC compiles Haskell code either by using an intermediate C compiler 
+     (GCC), or by generating native code on some platforms. The interactive
+     environment compiles Haskell to bytecode, and supports execution of
+     mixed bytecode/compiled programs.
+   * Profiling is supported, both by time/allocation and various kinds of
+     heap profiling.                                                         
+   * GHC comes with a wide range of libraries.

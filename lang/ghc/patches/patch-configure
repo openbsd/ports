@@ -1,26 +1,19 @@
---- configure.orig	Mon Jul 28 13:01:34 2003
-+++ configure	Sat Sep 20 18:53:45 2003
-@@ -1708,6 +1708,15 @@
-         HostVendor_CPP='sun'
-         HostOS_CPP='solaris2'
+$OpenBSD: patch-configure,v 1.6 2004/04/26 23:48:50 dons Exp $
+--- configure.orig	Sun Apr 18 05:37:53 2004
++++ configure	Sun Apr 18 05:38:36 2004
+@@ -1506,6 +1506,15 @@
+         HostVendor_CPP='unknown'
+         HostOS_CPP='freebsd'
          ;;
-+sparc-*-openbsd*)
-+        HostPlatform=sparc-unknown-openbsd
-+        TargetPlatform=sparc-unknown-openbsd
-+        BuildPlatform=sparc-unknown-openbsd
-+        HostPlatform_CPP='sparc_unknown_openbsd'
-+        HostArch_CPP='sparc'
++amd64*-unknown-openbsd*)
++	HostPlatform=x86_64-unknown-openbsd
++	TargetPlatform=x86_64-unknown-openbsd
++	BuildPlatform=x86_64-unknown-openbsd
++        HostPlatform_CPP='x86_64_unknown_openbsd'
++        HostArch_CPP='x86_64'
 +        HostVendor_CPP='unknown'
 +        HostOS_CPP='openbsd'
 +        ;;
- *)
-         echo "Unrecognised platform: $HostPlatform"
-         exit 1
-@@ -23646,6 +23656,7 @@
- else
- 
- case $HostPlatform in
-+*openbsd) fptools_cv_lead_uscore='no';;
- alpha-dec-osf*) fptools_cv_lead_uscore='no';;
- *cygwin32) fptools_cv_lead_uscore='yes';;
- *mingw32) fptools_cv_lead_uscore='yes';;
+ arm*-linux*)
+         HostPlatform=arm-unknown-linux # hack again
+         TargetPlatform=arm-unknown-linux
