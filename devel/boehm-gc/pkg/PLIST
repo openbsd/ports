@@ -1,7 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/09/12 14:53:27 todd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/09/16 22:00:13 todd Exp $
 include/gc.h
 include/gc_cpp.h
 include/gc_backptr.h
+include/gc_gcj.h
+include/gc_mark.h
+include/private/gc_pmark.h
+include/private/gc_priv.h
+include/private/gcconfig.h
+include/private/gc_locks.h
+include/private/gc_hdrs.h
 lib/libgc.a
 lib/libgc.la
 man/man3/gc.3
