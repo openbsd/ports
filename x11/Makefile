@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2002/04/02 03:50:35 drahn Exp $
+# $OpenBSD: Makefile,v 1.133 2002/04/28 17:38:29 brad Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -81,6 +81,7 @@
      SUBDIR += ogle
      SUBDIR += ogle,altivec
      SUBDIR += olvwm
+     SUBDIR += openbox
      SUBDIR += openmotif
 #    SUBDIR += p5-Tcl-Tk
      SUBDIR += p5-Gtk
