@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_joystick_bsd_SDL_sysjoystick_c,v 1.1 2002/05/03 03:07:52 pvalchev Exp $
+--- src/joystick/bsd/SDL_sysjoystick.c.orig	Sat Mar  9 20:49:25 2002
++++ src/joystick/bsd/SDL_sysjoystick.c	Thu May  2 20:59:56 2002
+@@ -275,7 +275,7 @@ SDL_SYS_JoystickUpdate(SDL_Joystick *joy
+ 	Sint32 v;
+ 	
+ 	rep = &joy->hwdata->inreport;
+-	if (read(joy->hwdata->fd, rep->buf->data, rep->size) != rep->size) {
++	if (read(joy->hwdata->fd, rep->buf->ucr_data, rep->size) != rep->size) {
+ 		return;
+ 	}
+ 	hdata = hid_start_parse(joy->hwdata->repdesc, 1 << hid_input);
+@@ -310,7 +310,7 @@ SDL_SYS_JoystickUpdate(SDL_Joystick *joy
+ 					goto scaleaxe;
+ 				}
+ scaleaxe:
+-				v = (Sint32)hid_get_data(rep->buf->data, &hitem);
++				v = (Sint32)hid_get_data(rep->buf->ucr_data, &hitem);
+ 				if (v != 127) {
+ 					if (v < 127) {
+ 						v = -(256 - v);
+@@ -329,7 +329,7 @@ scaleaxe:
+ 				}
+ 				break;
+ 			case HUP_BUTTON:
+-				v = (Sint32)hid_get_data(rep->buf->data,
++				v = (Sint32)hid_get_data(rep->buf->ucr_data,
+ 				    &hitem);
+ 				if (joy->buttons[nbutton] != v) {
+ 					SDL_PrivateJoystickButton(joy,
+@@ -389,7 +389,7 @@ report_alloc(struct report *r, struct re
+ 	r->size = len;
+ 
+ 	if (r->size > 0) {
+-		r->buf = malloc(sizeof(*r->buf) - sizeof(r->buf->data) +
++		r->buf = malloc(sizeof(*r->buf) - sizeof(r->buf->ucr_data) +
+ 		    r->size);
+ 		if (r->buf == NULL) {
+ 			SDL_OutOfMemory();
