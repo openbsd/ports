@@ -1,6 +1,6 @@
-$OpenBSD: patch-examples_Makefile_in,v 1.1.1.1 2003/11/08 22:15:47 sturm Exp $
---- examples/Makefile.in.orig	2003-10-10 22:22:43.000000000 +0100
-+++ examples/Makefile.in	2003-10-10 22:24:01.000000000 +0100
+$OpenBSD: patch-examples_Makefile_in,v 1.2 2004/05/08 22:58:30 naddy Exp $
+--- examples/Makefile.in.orig	2004-04-20 12:26:28.000000000 +0100
++++ examples/Makefile.in	2004-05-08 22:36:01.000000000 +0100
 @@ -81,7 +81,9 @@ am__quote = @am__quote@
  install_sh = @install_sh@
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/08 22:15:47 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/05/08 22:58:30 naddy Exp $
 bin/zoem
 man/man1/zoem.1
 man/man7/faq_zmm.7
@@ -27,18 +27,31 @@ share/doc/zoem/mac/generic_zmm.ps
 share/doc/zoem/mac/man_zmm.html
 share/doc/zoem/mac/man_zmm.ps
 share/examples/zoem/README
-share/examples/zoem/env.azm
+share/examples/zoem/catch.azm
+share/examples/zoem/catch.ozm
 share/examples/zoem/fib.azm
+share/examples/zoem/loop.azm
+share/examples/zoem/loop.ozm
 share/examples/zoem/meta.azm
+share/examples/zoem/meta.ozm
 share/examples/zoem/nest.azm
-share/examples/zoem/regex.azm
+share/examples/zoem/nest.ozm
+share/examples/zoem/power-of-2.azm
+share/examples/zoem/power-of-2.ozm
 share/examples/zoem/reverse.azm
+share/examples/zoem/reverse.ozm
 share/examples/zoem/scope.azm
+share/examples/zoem/scope.ozm
 share/examples/zoem/special.azm
-share/examples/zoem/stream.azm
+share/examples/zoem/special.ozm
 share/examples/zoem/stress.azm
+share/examples/zoem/stress.ozm
 share/examples/zoem/tr.azm
+share/examples/zoem/tr.ozm
+share/examples/zoem/txt-table.azm
+share/examples/zoem/txt-table.ozm
 share/examples/zoem/xml.azm
+share/examples/zoem/xml.ozm
 share/zoem/mac/doc.zmm
 share/zoem/mac/faq.zmm
 share/zoem/mac/man.zmm
