@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/02/19 20:53:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.22 2002/02/25 22:33:59 pvalchev Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
@@ -7,7 +7,7 @@ VERSION=	1.2.3
 DISTNAME=	SDL-${VERSION}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	devel
-NEED_VERSION=	1.502
+NEED_VERSION=	1.504
 
 HOMEPAGE=	http://www.libsdl.org
 
@@ -31,9 +31,15 @@ CONFIGURE_STYLE= gnu autoconf
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test
 CONFIGURE_ENV+=	X11BASE="${X11BASE}"
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		 --disable-pthread-sem \
 		 --disable-oss \
-		 --disable-nasm
+		 --enable-pthread-sem
+
+.if ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS=	nasm::devel/nasm
+CONFIGURE_ARGS+= --enable-nasm
+.else
+CONFIGURE_ARGS+= --disable-nasm
+.endif
 
 .if ${FLAVOR:L:Msun}
 CONFIGURE_ARGS+= --enable-openbsdaudio
