@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2002/12/04 14:32:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.149 2002/12/06 20:46:37 sturm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -131,6 +131,7 @@
      SUBDIR += p5-Test-Simple
      SUBDIR += p5-Time-HiRes
      SUBDIR += p5-Time-Period
+     SUBDIR += p5-Time-Piece
      SUBDIR += p5-Time-TimeDate
      SUBDIR += pango
      SUBDIR += pccts
