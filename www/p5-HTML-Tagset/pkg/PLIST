@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/29 10:47:14 avsm Exp $
+libdata/perl5/site_perl/HTML/Tagset.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/HTML/Tagset/.packlist
+man/man3/HTML::Tagset.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/HTML/Tagset
