@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/25 22:34:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/26 22:36:37 wilfried Exp $
 
 COMMENT=		'wm-dockapp; simple four-function calculator'
 
 DISTNAME=		wmcalc-0.3
 CATEGORIES=		math x11 x11/windowmaker
 NEED_VERSION=		1.482
-
-HOMEPAGE=		http://members.access1.net/ehflora/
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
@@ -15,7 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}wmcalc/
+MASTER_SITES=		ftp://ftp.sunet.se/pub/OpenBSD/distfiles/ \
+			ftp://ftp.dti.ad.jp/pub/OpenBSD/distfiles/
 
 USE_X11=		Yes
 NO_REGRESS=		Yes
