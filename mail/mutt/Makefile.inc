@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.11 2005/02/07 17:16:15 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2005/02/07 20:47:56 naddy Exp $
 
 DISTNAME=	mutt-${VERSION}i
-PKGNAME=	${DISTNAME}
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.mutt.org/

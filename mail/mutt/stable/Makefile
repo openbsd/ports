@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2004/02/19 20:43:22 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2005/02/07 20:47:56 naddy Exp $
 
 COMMENT=	"tty-based e-mail client"
 
+PKGNAME=	${DISTNAME}p0
 VERSION=	1.4.2
 MASTER_SITES=	${MASTER_SITES_MUTT}
 
