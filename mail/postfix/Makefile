@@ -6,7 +6,7 @@
 # Relevant URLs:	http://www.postfix.org/
 #			http://www.alphaworks.ibm.com/formula/securemailer/
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/12/16 18:30:46 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 1998/12/16 22:00:51 marc Exp $
 
 DISTNAME=	postfix-beta-19981211
 
@@ -15,6 +15,7 @@ CATEGORIES=     mail
 MAINTAINER=	dugsong@monkey.org
 
 NO_CDROM=	"LIC: redistribution not allowed"
+MIRROR_DISTFILE=no
 
 MASTER_SITES=	see_do-fetch_target
 
