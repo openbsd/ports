@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/06/17 15:03:54 avsm Exp $
+# $OpenBSD: Makefile,v 1.11 2003/12/20 01:17:43 espie Exp $
 #
 # Many variables moved to ../Makefile.inc
 
@@ -42,7 +42,7 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf dest
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/../libwww/config
 CONFIGURE_SCRIPT=	../configure
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--without-graphic-libs
 

@@ -1,6 +1,17 @@
-$OpenBSD: patch-Amaya_configure_in,v 1.1 2001/10/02 20:18:59 heko Exp $
---- Amaya/configure.in.orig	Tue Jul  3 14:23:50 2001
-+++ Amaya/configure.in	Fri Sep 14 07:06:06 2001
+$OpenBSD: patch-Amaya_configure_in,v 1.2 2003/12/20 01:17:43 espie Exp $
+--- Amaya/configure.in.orig	2001-07-03 13:23:50.000000000 +0200
++++ Amaya/configure.in	2003-12-20 02:05:54.000000000 +0100
+@@ -69,8 +69,8 @@ dnl
+         )
+ dnl    
+ dnl
+-    AC_MSG_CHECKING([for libpng version = 1.0.x])
+-    AC_EGREP_CPP([x \"1.0\..*\" *x],
++    AC_MSG_CHECKING([for libpng version = 1.2.x])
++    AC_EGREP_CPP([x \"1.2\..*\" *x],
+         [#include <png.h>
+ 	x PNG_LIBPNG_VER_STRING x],
+ dnl
 @@ -232,43 +232,32 @@ AC_FUNC_VPRINTF
  AC_CHECK_FUNCS(getcwd gethostname gettimeofday getwd mkdir mktime putenv select socket strdup strerror strftime strstr strtod strtol uname lstat strcasecmp strncasecmp strchr memcpy)
  
