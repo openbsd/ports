@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/20 00:26:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/11/23 11:22:01 espie Exp $
 
 COMMENT=	"safely manipulate and inspect CVS respositories"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=	ftp://riemann.iam.uni-bonn.de/pub/users/roessler/cvslock/
 

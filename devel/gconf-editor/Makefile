@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/06/25 04:30:50 djm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/11/23 11:22:01 espie Exp $
 
 COMMENT=		"editor for the GConf configuration system"
 
@@ -14,6 +14,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ORBit-2.0.0 X11 Xext Xft Xinerama Xrender \
+			atk-1.0.0.0 c fontconfig freetype \
+			gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 \
+			glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
+			gthread-2.0.0.0 gtk-x11-2.0.0.0 \
+			iconv intl m pango-1.0.0.0 pangoft2-1.0.0.0 \
+			pangoxft-1.0.0.0 pangox-1.0.0.0 popt pthread
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gconf-editor/2.6/}
 EXTRACT_SUFX=		.tar.bz2

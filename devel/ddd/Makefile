@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2004/03/04 17:49:26 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2004/11/23 11:22:01 espie Exp $
 
 COMMENT=	"Data Display Debugger, graphical front-end for GDB, etc"
 
@@ -13,6 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt \
+			c iberty m ncurses readline stdc++
 
 REGRESS_IS_INTERACTIVE=Yes
 # Note - we need ~/.XAuthority, which doesn't exist in

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/08/10 20:41:47 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2004/11/23 11:22:01 espie Exp $
 
 # until tested on others, even though bytecode is produced
 ONLY_FOR_ARCHS=	i386 amd64 macppc
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c curses m pthread
 
 MODULES=	lang/ocaml
 WRKDIST=	${WRKDIR}/cil

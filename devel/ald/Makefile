@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/07/31 21:17:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/11/23 11:22:00 espie Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c readline termcap
 
 MASTER_SITES=		http://dunx1.irt.drexel.edu/~psa22/source/
 

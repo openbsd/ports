@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/02/13 14:51:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/11/23 11:22:02 espie Exp $
 
 COMMENT=		"build utility like make"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes 
+WANTLIB=		c
 
 MASTER_SITES=	 	ftp://ftp.perforce.com/pub/jam/	
 EXTRACT_SUFX=		.tar

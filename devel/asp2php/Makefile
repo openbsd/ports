@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/09/15 11:01:25 shell Exp $
+# $OpenBSD: Makefile,v 1.17 2004/11/23 11:22:00 espie Exp $
 
 COMMENT=	"convert ASP code to PHP code"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
+WANTLIB=		c
 
 FLAVORS=	no_x11
 FLAVOR?=		
@@ -22,6 +23,7 @@ FLAVOR?=
 USE_X11=	Yes
 LIB_DEPENDS+=	gtk.1.2,gdk.1.2::x11/gtk+
 ALL_TARGET=	all gui
+WANTLIB+=	X11 Xext Xi glib gmodule iconv intl m
 .endif
 
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/08/21 19:25:32 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2004/11/23 11:22:01 espie Exp $
 
 COMMENT=		"configuration database system written for GNOME"
 
@@ -21,6 +21,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		IIOP ORBit ORBitCosNaming ORBitutil \
+			X11 Xext Xi c gdk glib gmodule gtk iconv intl m \
+			popt wrap z
 
 DEFAULT_GCONF_SOURCE=	xml::/var/db/gconf/gconf.xml.defaults
 

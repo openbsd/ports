@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/07/12 06:27:12 marcm Exp $
+# $OpenBSD: Makefile,v 1.16 2004/11/23 11:22:02 espie Exp $
 
 COMMENT=		"free user interface builder for GTK+ and GNOME"
 
@@ -33,8 +33,11 @@ CONFIGURE_ARGS+= 	--without-bonobo
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
+WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m
 .if ${FLAVOR:L:Mgnome}
 LIB_DEPENDS+=		gnome.36,art_lgpl.4,gnomesupport.0,gnomeui.46::x11/gnome/libs
+WANTLIB+=		ICE SM audiofile esd gdk_imlib jpeg png tiff ungif z
+WANTLIB+=		
 .else
 CONFIGURE_ARGS+=	--disable-gnome
 .endif
