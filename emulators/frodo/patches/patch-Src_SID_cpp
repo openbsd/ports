@@ -1,0 +1,35 @@
+$OpenBSD: patch-Src_SID_cpp,v 1.1 2000/07/10 17:08:15 espie Exp $
+--- Src/SID.cpp.orig	Mon Jul 10 18:08:15 2000
++++ Src/SID.cpp	Mon Jul 10 18:10:03 2000
+@@ -32,7 +32,7 @@
+ #define ldSINTAB 9			// size of sinus table (0 to 90 degrees)
+ #endif
+ 
+-#ifdef SUN
++#if defined(SUN) || defined(__OpenBSD__)
+ extern "C" {
+ 	#include <sys/audioio.h>
+ }
+@@ -440,6 +440,12 @@ private:
+ 	WORD *sound_calc_buf;
+ #endif
+ 
++#ifdef __OpenBSD__
++	int fd;
++	audio_offset_t status;
++	int16 *sound_calc_buf;
++#endif
++
+ #ifdef __hpux
+ 	int fd;
+ 	audio_status status;
+@@ -1353,6 +1359,9 @@ void DigitalRenderer::calc_buffer(int16 
+ 
+ #elif defined(__linux__)
+ #include "SID_linux.i"
++
++#elif defined(__OpenBSD__)
++#include "SID_openbsd.i"
+ 
+ #elif defined(SUN)
+ #include "SID_sun.i"

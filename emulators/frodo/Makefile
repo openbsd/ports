@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/07/07 14:31:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/07/10 17:08:14 espie Exp $
 
 DISTNAME=	FrodoV4_1a.Src
 PKGNAME=	frodo-4.1a
@@ -39,6 +39,9 @@ WRKDIST=${WRKDIR}/Frodo
 WRKSRC=${WRKDIST}/Src
 
 
+post-patch:
+	cp ${FILESDIR}/SID_openbsd.i	${WRKSRC}
+	
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/Frodo ${PREFIX}/bin/frodo
 	${INSTALL_PROGRAM} ${WRKDIST}/FrodoSC ${PREFIX}/bin/frodoSC

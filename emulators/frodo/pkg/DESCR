@@ -21,8 +21,10 @@ of all fast loaders. There is also a faster 1541 emulation for four
 drives in .d64/x64 disk images, .t64/LYNX archives, or directories of
 the host system.
 
+The current OpenBSD port does not support a joystick.
 
-The current OpenBSD port does not support sound yet (there is a bug in
-Frodo's code), nor a joystick.
+Important: when sound is available, don't use `limit speed', as sound
+output will pace the emulator automatically, whereas `limit speed' will
+interfere and produce garbled output.
 
 See ${HOMEPAGE} for details.

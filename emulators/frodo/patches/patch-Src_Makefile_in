@@ -1,6 +1,6 @@
-$OpenBSD: patch-Src_Makefile_in,v 1.1.1.1 2000/07/07 14:29:51 espie Exp $
+$OpenBSD: patch-Src_Makefile_in,v 1.2 2000/07/10 17:08:15 espie Exp $
 --- Src/Makefile.in.orig	Wed Aug  6 20:56:29 1997
-+++ Src/Makefile.in	Fri Jul  7 16:01:13 2000
++++ Src/Makefile.in	Mon Jul 10 18:10:26 2000
 @@ -9,7 +9,8 @@ REVISION  = 1
  CXX       = @CXX@
  CPP       = @CPP@
@@ -11,3 +11,12 @@ $OpenBSD: patch-Src_Makefile_in,v 1.1.1.1 2000/07/07 14:29:51 espie Exp $
  
  INSTALL         = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
+@@ -89,7 +90,7 @@ CPUC64.o: CPUC64.cpp CPUC64.h CPU_emulli
+ CPU1541.o: CPU1541.cpp CPU1541.h CPU_emulline.i 1541job.h C64.h CIA.h Display.h
+ CPU_common.o: CPU_common.cpp CPU_common.h
+ VIC.o: VIC.cpp VIC.h C64.h CPUC64.h Display.h Prefs.h
+-SID.o: SID.cpp SID.h Prefs.h
++SID.o: SID.cpp SID.h Prefs.h SID_openbsd.i
+ CIA.o: CIA.cpp CIA.h CPUC64.h CPU1541.h VIC.h Prefs.h
+ IEC.o: IEC.cpp IEC.h 1541fs.h 1541d64.h 1541t64.h Prefs.h Display.h
+ 1541fs.o: 1541fs.cpp 1541fs.h IEC.h main.h Prefs.h
