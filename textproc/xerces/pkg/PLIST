@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/07/08 04:51:14 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/07/18 05:22:26 kevlo Exp $
 share/java/classes/xerces-2_4_0/xercesImpl.jar
 share/java/classes/xerces-2_4_0/xercesSamples.jar
 share/java/classes/xerces-2_4_0/xml-apis.jar
@@ -1241,5 +1241,3 @@ share/java/xerces-2_4_0/samples/xni/xerces.properties
 @dirrm share/java/xerces-2_4_0/data
 @dirrm share/java/xerces-2_4_0
 @dirrm share/java/classes/xerces-2_4_0
-@unexec rmdir %D/share/java/classes || true
-@unexec rmdir %D/share/java || true
