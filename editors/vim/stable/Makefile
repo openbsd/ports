@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/10/25 01:25:27 lebel Exp $
+# $OpenBSD: Makefile,v 1.15 2001/10/25 15:10:44 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 
@@ -24,6 +24,13 @@ MAINTAINER=	David Lebel <lebel@openbsd.org>
 	  24 25
 PATCHFILES+=   6.0.0${p}:0
 .endfor
+
+# allow vim to build on m68k and vax
+.if (${MACHINE_ARCH} == "m68k")
+PATCH_LIST=     patch-* sup-m68k-*
+.elif (${MACHINE_ARCH} == "vax")
+PATCH_LIST=     patch-* sup-vax-*
+.endif
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
