@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2004/07/01 21:56:34 robert Exp $
+# $OpenBSD: Makefile,v 1.122 2004/07/05 21:49:33 avsm Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -9,6 +9,7 @@
      SUBDIR += blender
      SUBDIR += cadubi
 #    SUBDIR += camediaplay
+     SUBDIR += camlimages
      SUBDIR += compface
      SUBDIR += cqcam
 #    SUBDIR += dc3play
