@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/30 03:08:02 jolan Exp $
+${P5SITE}/Net/DAAP/
+${P5SITE}/Net/DAAP/Client/
+${P5SITE}/Net/DAAP/Client.pm
+${P5SITE}/Net/DAAP/Client/v2.pm
+${P5SITE}/Net/DAAP/Client/v3.pm
+@man man/man3p/Net::DAAP::Client.3p
+share/examples/p5-Net-DAAP-Client/
+share/examples/p5-Net-DAAP-Client/itshell
