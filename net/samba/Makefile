@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2000/03/23 08:00:40 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2000/03/23 18:02:58 brad Exp $
 
 DISTNAME=	samba-2.0.6
 CATEGORIES=	net
@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 		ftp://ftp.uni-trier.de/pub/unix/network/samba/ \
 		ftp://ring.asahi-net.or.jp/pub/net/samba/
 
-NEED_VERSION=	1.191
+NEED_VERSION=	1.213
 
 MAINTAINER=	Peter.Galbavy@knowledge.com
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+FAKE=	Yes
+
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/samba" \
@@ -24,6 +26,10 @@ CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/samba" \
 		--with-privatedir="/etc/samba" \
 		--with-lockdir="/var/spool/lock" \
 		--with-swatdir="${PREFIX}/swat"
+
+FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}" \
+		LIBDIR="${WRKINST}${PREFIX}/lib/samba" \
+		SWATDIR="${WRKINST}${PREFIX}/swat"
 
 # Warning: these aditional options have not been tested.
 
@@ -91,6 +97,5 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/script/mksmbpasswd.sh ${PREFIX}/bin
 	@chown root.bin ${PREFIX}/bin/smbpasswd
 	@chmod 111 ${PREFIX}/bin/smbpasswd
-	@PKG_PREFIX="${PREFIX}" sh ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
