@@ -1,6 +1,6 @@
 # $NetBSD: Makefile,v 1.3 2000/01/10 14:35:22 hubertf Exp $
 # $FreeBSD: ports/www/hypermail/Makefile,v 1.4 1999/08/31 02:42:53 peter Exp $
-# $OpenBSD: Makefile,v 1.8 2001/06/19 02:53:27 form Exp $
+# $OpenBSD: Makefile,v 1.9 2001/07/30 13:04:26 espie Exp $
 
 COMMENT=	"generate a cross-referenced HTML mail archive"
 
@@ -25,6 +25,8 @@ CONFIGURE_ARGS=	--with-htmldir=${PREFIX}/share/doc/hypermail
 
 COPTS=		-DWITHOUT_TRIO -Dtrio_snprintf=snprintf \
 		-Dtrio_asprintf=asprintf
+
+MAKE_FLAGS=	WARNINGS=''
 
 FLAVORS=	gdbm
 FLAVOR?=
