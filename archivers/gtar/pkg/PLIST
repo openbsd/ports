@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.9 2000/09/27 20:11:38 brad Exp $
+@comment $OpenBSD: PLIST,v 1.10 2000/12/21 19:38:12 naddy Exp $
 bin/gtar
 @unexec install-info --delete --info-dir=%D/info %D/info/tar.info
 info/tar.info
 @exec install-info --info-dir=%D/info %D/info/tar.info
 libexec/grmt
 share/locale/cs/LC_MESSAGES/tar.mo
+share/locale/da/LC_MESSAGES/tar.mo
 share/locale/de/LC_MESSAGES/tar.mo
 share/locale/es/LC_MESSAGES/tar.mo
 share/locale/et/LC_MESSAGES/tar.mo

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2000/09/27 22:09:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2000/12/21 19:38:11 naddy Exp $
 
-DISTNAME=	tar-1.13.17
+DISTNAME=	tar-1.13.18
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 NEED_VERSION=	1.330
