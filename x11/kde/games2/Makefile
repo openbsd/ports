@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2000/12/17 21:53:01 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/12/19 15:31:23 espie Exp $
 
-CATEGORIES=		x11 x11/kde
+CATEGORIES=		x11 x11/kde games
 NEED_VERSION=		1.305
 VERSION=		2.0.1
 DISTNAME=		kdegames-${VERSION}
