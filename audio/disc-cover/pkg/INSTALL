@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2001/08/16 21:56:35 pvalchev Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/02/02 06:10:37 pvalchev Exp $
 #
 
 # exit on errors, use a sane path and install prefix
@@ -18,6 +18,8 @@ do_install()
     echo "|"
     echo "| if it does not already exist, and probably change the SERVER"
     echo "| variable when editing this file."
+    echo "| Also see $PREFIX/share/examples/disc-cover"
+    echo "| for a cgi to use disc-cover with a webserver."
     echo "+---------------"
     echo
 }

@@ -1,3 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/16 21:56:35 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/02/02 06:10:37 pvalchev Exp $
 bin/disc-cover
 man/man1/disc-cover.1
+share/examples/disc-cover/README
+share/examples/disc-cover/index.cgi
+@dirrm share/examples/disc-cover
