@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2002/09/17 13:52:59 couderc Exp $
+# $OpenBSD: Makefile,v 1.149 2002/10/15 19:44:30 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -210,6 +210,7 @@
      SUBDIR += xtoolwait
      SUBDIR += xtraceroute
      SUBDIR += xview
+     SUBDIR += xvkbd
      SUBDIR += xwit
      SUBDIR += xwrits
      SUBDIR += xzoom
