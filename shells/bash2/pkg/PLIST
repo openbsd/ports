@@ -14,7 +14,7 @@ share/doc/bash/bashref_toc.html
 share/doc/bash/article.txt
 @dirrm share/doc/bash
 @exec echo ""
-@exec echo "*** Finished installing bash-2.01.1."
+@exec echo "*** Finished bash installation."
 @exec echo "*** To complete the install, you should notify the system"
 @exec echo "*** that %D/bin/bash is a valid shell by adding it to"
 @exec echo "*** the file /etc/shells."
