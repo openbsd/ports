@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/10/27 17:21:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2004/02/02 17:45:22 sturm Exp $
 
 COMMENT=	"complain about SPAM"
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 WRKDIST=	${WRKDIR}
 

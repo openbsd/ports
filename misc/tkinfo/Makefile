@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/12/27 23:37:45 jose Exp $
+# $OpenBSD: Makefile,v 1.17 2004/02/02 17:45:22 sturm Exp $
 
 COMMENT=	"Tk script to read GNU info files and display them"
 
@@ -18,6 +18,7 @@ RUN_DEPENDS=	:tk-8.4.*:x11/tk/8.4
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tkinfo ${PREFIX}/bin

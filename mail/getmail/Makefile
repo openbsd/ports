@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/10/14 16:55:08 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2004/02/02 17:45:23 sturm Exp $
 
 COMMENT=	"POP3 mail retriever"
 
@@ -22,6 +22,7 @@ RUN_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 DOCDIR=		${PREFIX}/share/doc/getmail
 EXDIR=		${PREFIX}/share/examples/getmail

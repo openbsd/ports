@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/04/06 00:49:37 margarida Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/02 17:45:22 sturm Exp $
 
 COMMENT=		"personal file manager"
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 NO_BUILD=		Yes
+PKG_ARCH=		*
 
 BUILD_DEPENDS=		:p5-Term-ReadLine-Gnu-*:devel/p5-Term-ReadLine-Gnu \
 			:p5-Term-ScreenColor-*:devel/p5-Term-ScreenColor \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/08/30 05:04:41 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.9 2004/02/02 17:45:23 sturm Exp $ 
 
 COMMENT=	"highly configurable pop3/imap4 webmail client"
 
@@ -22,6 +22,7 @@ MASTER_SITES=	${MASTER_SITE_HORDE:=imp/tarballs/}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 EXTRACT_ONLY=
 
 PREFIX=		/var/www

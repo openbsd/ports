@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/11/13 05:55:50 kevlo Exp $
+# $OpenBSD: Makefile,v 1.18 2004/02/02 17:45:23 sturm Exp $
 
 COMMENT=	"highly configurable webmail client"
 
@@ -27,6 +27,7 @@ RUN_DEPENDS=	::textproc/ispell \
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 WRKDIST=	${WRKDIR}
 
