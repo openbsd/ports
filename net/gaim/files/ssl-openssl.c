@@ -1,4 +1,4 @@
-/*	$OpenBSD: ssl-openssl.c,v 1.6 2004/06/24 23:06:02 brad Exp $	*/
+/*	$OpenBSD: ssl-openssl.c,v 1.7 2004/06/25 19:31:36 brad Exp $	*/
 
 /*
  * OpenSSL SSL-plugin for gaim
@@ -58,8 +58,6 @@ static void ssl_openssl_init_openssl(void)
    * should in gaim-win32.
    */
   SSL_library_init();
-
-  return TRUE;
 }
 
 /*
