@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/10/31 08:03:18 form Exp $
+# $OpenBSD: Makefile,v 1.20 2001/10/31 12:01:04 form Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=	"X11/Motif GUI text editor"
@@ -25,7 +25,6 @@ USE_MOTIF=	any
 ALL_TARGET=	openbsd
 
 post-extract:
-	@cp ${DISTDIR}/${DIST_SUBDIR}/nedit-5.1.app-defaults ${WRKSRC}/NEdit.ad
 	@cp ${FILESDIR}/Makefile.openbsd ${WRKSRC}/makefiles
 
 do-install:
