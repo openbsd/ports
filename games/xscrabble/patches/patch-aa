@@ -10,4 +10,4 @@
 +InstallNonExecFile(xscrabble.scores,@XSCRABBLEDIR@)
 +
 +install::
-+	@chmod a+rw @XSCRABBLEDIR@/xscrabble.scores
++	@chmod a+rw $(DESTDIR)@XSCRABBLEDIR@/xscrabble.scores
