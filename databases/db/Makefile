@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/09/04 17:17:45 matt Exp $
+# $OpenBSD: Makefile,v 1.20 2000/09/24 01:32:39 brad Exp $
 
 DISTNAME=	db-3.1.17
 CATEGORIES=	databases
@@ -21,9 +21,11 @@ CONFIGURE_ARGS=		--enable-compat185 --enable-dump185 --enable-cxx \
 			${CONFIGURE_SHARED}
 
 WRKBUILD=	${WRKDIST}/build_unix
-FLAVORS=	java
 
-.if defined(FLAVOR) && ${FLAVOR:L:Mjava}
+FLAVORS=	java
+FLAVOR?=
+
+.if ${FLAVOR:L:Mjava}
 ONLY_FOR_ARCHS=		i386
 BUILD_DEPENDS=		${LOCALBASE}/jdk${JDK_VERSION}/bin/java::devel/jdk
 CONFIGURE_ARGS+=	--enable-java
@@ -43,7 +45,7 @@ post-install:
 		${PREFIX}/share/examples/db
 	@cd ${WRKSRC}/examples_cxx; ${INSTALL_DATA} *.cpp \
 		${PREFIX}/share/examples/db
-.if defined(FLAVOR) && ${FLAVOR:L:Mjava}
+.if ${FLAVOR:L:Mjava}
 	@cd ${WRKSRC}/examples_java; ${INSTALL_DATA} *.java \
 		${PREFIX}/share/examples/db
 .endif
