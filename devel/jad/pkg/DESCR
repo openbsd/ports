@@ -5,5 +5,3 @@ Jad is a 100% pure C++ program and it generally works several times faster than
 decompilers written in Java. Jad doesn't use the Java runtime for its 
 functioning, therefore no special setup is required (like changes to the 
 CLASSPATH variable). 
-
-WWW: ${HOMEPAGE}
