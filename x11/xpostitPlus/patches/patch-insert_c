@@ -1,6 +1,6 @@
-$OpenBSD: patch-insert_c,v 1.1 2003/06/20 00:14:51 fgsch Exp $
---- insert.c.orig	Thu Jun 19 21:01:53 2003
-+++ insert.c	Thu Jun 19 21:03:39 2003
+$OpenBSD: patch-insert_c,v 1.2 2003/11/04 23:31:05 fgsch Exp $
+--- insert.c.orig	1996-06-27 02:03:31.000000000 -0300
++++ insert.c	2003-11-04 20:28:19.000000000 -0300
 @@ -261,7 +261,6 @@ Widget w;
  	time_t		time_tp;
  	struct tm	*tm_tp;
@@ -23,26 +23,26 @@ $OpenBSD: patch-insert_c,v 1.1 2003/06/20 00:14:51 fgsch Exp $
  		case 0:
  			sprintf (cmd, 
 -				"%02d/%02d/%02d", tm_tp->tm_mon, tm_tp->tm_mday, tm_tp->tm_year );
-+				"%02d/%02d/%02d", tm_tp->tm_mon, tm_tp->tm_mday, tm_tp->tm_year % 100);
++				"%02d/%02d/%02d", tm_tp->tm_mon + 1, tm_tp->tm_mday, tm_tp->tm_year % 100);
  			break;
  
  		case 1:
  			sprintf (cmd, 
 -				"<%02d/%02d/%02d>", tm_tp->tm_mon, tm_tp->tm_mday, tm_tp->tm_year );
-+				"<%02d/%02d/%02d>", tm_tp->tm_mon, tm_tp->tm_mday, tm_tp->tm_year % 100);
++				"<%02d/%02d/%02d>", tm_tp->tm_mon + 1, tm_tp->tm_mday, tm_tp->tm_year % 100);
  			break;
  
  		case 2:
  			sprintf (cmd, 
 -				"(%02d/%02d/%02d)", tm_tp->tm_mon, tm_tp->tm_mday, tm_tp->tm_year );
-+				"(%02d/%02d/%02d)", tm_tp->tm_mon, tm_tp->tm_mday, tm_tp->tm_year % 100);
++				"(%02d/%02d/%02d)", tm_tp->tm_mon + 1, tm_tp->tm_mday, tm_tp->tm_year % 100);
  			break;
  
  		case 3:
  			sprintf (cmd, 
  				"%02d/%02d/%02d - %02d:%02d", 
 -				tm_tp->tm_mon, tm_tp->tm_mday, tm_tp->tm_year, 
-+				tm_tp->tm_mon, tm_tp->tm_mday,
++				tm_tp->tm_mon + 1, tm_tp->tm_mday,
 +				tm_tp->tm_year % 100, 
  				tm_tp->tm_hour, tm_tp->tm_min );
  			break;
@@ -51,7 +51,7 @@ $OpenBSD: patch-insert_c,v 1.1 2003/06/20 00:14:51 fgsch Exp $
  			sprintf (cmd, 
  				"%02d/%02d/%02d(%02d:%02d)", 
 -				tm_tp->tm_mon, tm_tp->tm_mday, tm_tp->tm_year, 
-+				tm_tp->tm_mon, tm_tp->tm_mday,
++				tm_tp->tm_mon + 1, tm_tp->tm_mday,
 +				tm_tp->tm_year % 100, 
  				tm_tp->tm_hour, tm_tp->tm_min );
  			break;
