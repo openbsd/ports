@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/12/21 00:43:02 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/01/03 09:00:34 pvalchev Exp $
 bin/ickle
 include/ickle/Cache.h
 include/ickle/Client.h
@@ -130,6 +130,7 @@ share/ickle/translations/SWEDISH
 share/ickle/translations/SWEDISH_NAMES
 share/ickle/translations/SWEDISH_NAMES_COM
 share/ickle/translations/SWISS
+share/ickle/translations/UKRAINIAN_WIN
 share/ickle/translations/UNITED_KINGDOM
 share/ickle/translations/UNITED_KINGDOM_COM
 %%SHARED%%
