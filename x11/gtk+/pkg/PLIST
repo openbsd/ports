@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2001/04/04 19:50:22 brad Exp $
+@comment $OpenBSD: PLIST,v 1.25 2001/04/05 14:52:33 brad Exp $
 bin/gtk-config
 include/gtk-1.2/gdk/gdk.h
 include/gtk-1.2/gdk/gdkcursors.h
@@ -225,6 +225,7 @@ share/themes/Default/gtk/gtkrc.zh_CN
 share/themes/Default/gtk/gtkrc.zh_TW.big5
 @dirrm include/gtk-1.2/gdk
 @dirrm include/gtk-1.2/gtk
+@dirrm include/gtk-1.2
 @dirrm share/themes/Default/gtk
 @dirrm share/themes/Default
 @dirrm share/themes
