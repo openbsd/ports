@@ -1,10 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2004/01/14 19:50:15 sturm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2004/08/08 16:14:16 espie Exp $
 lib/db4/libdb.la
+@lib lib/db4/libdb.so.4.2
 lib/db4/libdb_cxx.la
-lib/db4/libdb.so.4.2
-lib/db4/libdb_cxx.so.4.2
-@comment lib/db4/libdb_tcl.so.4.2
-lib/libdb.so.4.2
-lib/libdb_cxx.so.4.2
-@comment lib/libdb_tcl.so.4.2
-DYNLIBDIR(%D/lib)
+@lib lib/db4/libdb_cxx.so.4.2
+@lib lib/libdb.so.4.2
+@lib lib/libdb_cxx.so.4.2
