@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/21 20:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/07 19:47:29 jcs Exp $
 
 DISTNAME=	sybperl-2.13
 PKGNAME=	p5-${DISTNAME}
@@ -21,5 +21,6 @@ LIB_DEPENDS=	tds.0,sybdb.0,ct.0::databases/freetds
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ENV=	SYBASE="${LOCALBASE}"
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
