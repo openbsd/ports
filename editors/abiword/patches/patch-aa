@@ -1,0 +1,11 @@
+--- ./Makefile.orig	Sun Nov  7 10:26:16 1999
++++ ./Makefile	Thu Jun  3 16:20:55 1999
+@@ -19,7 +19,7 @@
+ ## 02111-1307, USA.
+ 
+ ABI_ROOT	:=$(shell pwd)
+-prefix		:=/usr/local
++prefix		:=$(PREFIX)
+ 
+ ##################################################################
+ ## Useful options:
