@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/06/23 03:26:14 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/06/25 16:45:11 marcm Exp $
 @pkgcfl bonobo-activation-*
 bin/activation-client
 bin/bonobo-activation-run-query
@@ -56,7 +56,7 @@ lib/bonobo/monikers/libmoniker_std_2.la
 lib/bonobo/servers/Bonobo_CosNaming_NamingContext.server
 lib/bonobo/servers/Bonobo_Moniker_std.server
 lib/bonobo/servers/Bonobo_Sample_Echo.server
-lib/bonobo/servers/broken.server
+@comment lib/bonobo/servers/broken.server
 lib/bonobo/servers/empty.server
 lib/bonobo/servers/plugin.server
 lib/libbonobo-2.a
