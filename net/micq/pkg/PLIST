@@ -1,4 +1,5 @@
 bin/micq
-share/doc/micq/README
 share/doc/micq/CHANGELOG
+share/doc/micq/README
+share/doc/micq/Readme_SOCKS5
 @dirrm share/doc/micq

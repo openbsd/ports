@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/15 05:04:55 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/03 16:01:31 form Exp $
 # $FreeBSD: Makefile,v 1.6 1999/06/03 08:31:06 ache Exp $
 
-DISTNAME=       micq-0.4.3
+DISTNAME=       micq-0.4.5
 CATEGORIES=	net
-MASTER_SITES=   ftp://micq.chatzone.org/pub/micq/V0.4.3/
+MASTER_SITES=   ftp://micq.chatzone.org/pub/micq/V0.4.5/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	form@openbsd.org
@@ -14,24 +14,35 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
-NO_CONFIGURE=	yes
+NO_CONFIGURE=	Yes
+FAKE=		Yes
+
+WRKDIST=	${WRKDIR}/micq-0.4.4
 
 # Please uncoment one of the following lines to
 # select micq language.
 
-MICQ_LANG?=	ENGLISH
-#MICQ_LANG?=	SPANISH
-#MICQ_LANG?=	DUTCH
-#MICQ_LANG?=	GERMAN
-#MICQ_LANG?=	SWEDISH
+#MICQ_LANG?=	BRAZIL
+#MICQ_LANG?=	BULGARIAN
 #MICQ_LANG?=	CHINESE
-#MICQ_LANG?=	RUSSIAN
+#MICQ_LANG?=	CROATIAN
+#MICQ_LANG?=	DUTCH
+MICQ_LANG?=	ENGLISH
+#MICQ_LANG?=	FRENCH
+#MICQ_LANG?=	GERMAN
 #MICQ_LANG?=	ITALIAN
+#MICQ_LANG?=	POLISH
+#MICQ_LANG?=	RUSSIAN
+#MICQ_LANG?=	SERBOCROATIAN
+#MICQ_LANG?=	SPANISH
+#MICQ_LANG?=	SWEDISH
 #MICQ_LANG?=	UKRAINIAN
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/micq
 	${INSTALL_PROGRAM} ${WRKSRC}/micq ${PREFIX}/bin
-	cd ${WRKSRC}; ${INSTALL_DATA} README CHANGELOG ${PREFIX}/share/doc/micq
+.for f in CHANGELOG README Readme_SOCKS5
+	${INSTALL_DATA} ${WRKBUILD}/${f} ${PREFIX}/share/doc/micq
+.endfor
 
 .include <bsd.port.mk>
