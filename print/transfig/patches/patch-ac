@@ -59,7 +59,7 @@
 -	[ -d $(FIG2DEV_LIBDIR) ] || mkdir $(FIG2DEV_LIBDIR)
 -	$(INSTALL) -c dev/japanese.ps $(FIG2DEV_LIBDIR)
 -	( cd $(FIG2DEV_LIBDIR); \
-+	[ -d $(FIG2DEV_LIBDIR) ] || mkdir $(DESTDIR)$(FIG2DEV_LIBDIR)
++	[ -d $(DESTDIR)$(FIG2DEV_LIBDIR) ] || mkdir $(DESTDIR)$(FIG2DEV_LIBDIR)
 +	$(INSTALL) -c dev/japanese.ps $(DESTDIR)$(FIG2DEV_LIBDIR)
 +	( cd $(DESTDIR)$(FIG2DEV_LIBDIR); \
  	  rm -f ja.ps ja_JP.ps ja_JP.ujis.ps ja_JP.eucJP.ps ja_JP.EUC.ps; \
