@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 1999/09/04 23:55:12 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/09/05 00:28:41 brad Exp $
 
 DISTNAME=	wbd-1.0ucl4
 CATEGORIES=	mbone
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/wbd/1.0ucl4/
-ONLY_FOR_ARCHS=	i386
 
 MAINTAINER=	angelos@openbsd.org
 
