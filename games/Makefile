@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2001/07/06 16:00:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.48 2001/07/13 04:32:39 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -6,6 +6,7 @@
 #    SUBDIR += acm
      SUBDIR += adom
      SUBDIR += agm
+     SUBDIR += amph
      SUBDIR += an
      SUBDIR += angband
      SUBDIR += angband,no_x11
