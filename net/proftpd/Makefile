@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/03/29 01:45:27 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/04/04 22:00:13 brad Exp $
 # $FreeBSD: Makefile,v 1.7 1999/02/12 21:55:04 obrien Exp $
 
 DISTNAME=	proftpd-1.2.0pre3
@@ -37,7 +37,6 @@ post-configure:
 		< ${WRKSRC}/src/ftpwho.1.pre_sed > ${WRKSRC}/src/ftpwho.1
 
 do-install:
-	@${INSTALL_DATA_DIR} /var/run/proftpd
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpcount ${PREFIX}/bin/ftpcount
 	@${INSTALL_PROGRAM} ${WRKSRC}/proftpd ${PREFIX}/libexec/proftpd
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpshut ${PREFIX}/sbin/ftpshut
@@ -45,20 +44,18 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/src/ftpwho.1 ${PREFIX}/man/man1/ftpwho.1
 	@${INSTALL_MAN} ${WRKSRC}/src/ftpshut.8 ${PREFIX}/man/man8/ftpshut.8
 	@${INSTALL_MAN} ${WRKSRC}/src/proftpd.8 ${PREFIX}/man/man8/proftpd.8
-	@if [ ! -f /etc/proftpd.conf ]; then \
-		${INSTALL_SCRIPT} \
-	${WRKSRC}/sample-configurations/basic.conf /etc/proftpd.conf; \
+	@if [ ! -d /var/run/proftpd]; then \
+	  ${MKDIR} /var/run/proftpd; \
 	fi
-
-post-install:
-	strip \
-	${PREFIX}/bin/ftpcount \
-	${PREFIX}/libexec/proftpd \
-	${PREFIX}/sbin/ftpshut
-	@${ECHO} "***"
-	@${ECHO} "*** Finished installing proftpd."
-	@${ECHO} "*** Please take a look at the sample proftpd config file /etc/proftpd.conf"
-	@${ECHO} "*** and make any necessary modifications before running."
-	@${ECHO} "***"
+	@${MKDIR} ${PREFIX}/lib/proftpd
+	@${INSTALL_SCRIPT} ${WRKSRC}/sample-configurations/basic.conf ${PREFIX}/lib/proftpd/proftpd.conf.sample
+	@if [ ! -f /etc/proftpd.conf ]; then \
+	  cp ${PREFIX}/lib/proftpd/proftpd.conf.sample /etc/proftpd.conf; \
+	  ${ECHO} ""; \
+	  ${ECHO} "*** proftpd.conf has been copied into /etc"; \
+	 else \
+	  ${ECHO} ""; \
+	  ${ECHO} "*** Your /etc/proftpd.conf has NOT been changed"; \
+	fi
 
 .include <bsd.port.mk>

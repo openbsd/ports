@@ -1,17 +1,11 @@
+@exec if [ ! -d /var/run/proftpd ]; then mkdir /var/run/proftpd ; fi
 bin/ftpcount
+lib/proftpd/proftpd.conf.sample
+@exec if [ ! -f /etc/proftpd.conf ]; then cp %D/%F /etc/proftpd.conf; fi
 libexec/proftpd
 sbin/ftpshut
 man/man8/proftpd.8
 man/man8/ftpshut.8
 man/man1/ftpcount.1
 man/man1/ftpwho.1
-@exec echo "***"
-@exec echo "*** Finished installing proftpd."
-@exec echo "*** Please take a look at the sample proftpd config file /etc/proftpd.conf"
-@exec echo "*** and make any necessary modifications before running."
-@exec echo "***"
-@unexec echo "***"
-@unexec echo "*** Finished un-installing proftpd."
-@unexec echo "*** You should remove the proftpd config file /etc/proftpd.conf and the"
-@unexec echo "*** /var/run/proftpd directory if you won't be installing proftpd again."
-@unexec echo "***"
+@dirrm lib/proftpd
