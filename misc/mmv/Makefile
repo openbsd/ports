@@ -1,10 +1,4 @@
-# OpenBSD makefile for:	mmv
-# Version required:	1.01b
-# Date created:		June 6 1998
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:42:49 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.11 2001/02/27 22:32:26 naddy Exp $
 
 DISTNAME=	mmv
 PKGNAME=	mmv-1.01b
@@ -25,19 +19,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 DIST_SUBDIR=	${DISTNAME}
 WRKDIST=	${WRKDIR}
+EXTRACT_CASES=	*.Z) ${GZIP_CMD} -cd ${FULLDISTDIR}/$$archive | \
+		sed '1,/^\#! \/bin\/sh/d' | sh ;;
 PATCH_DIST_ARGS= -d ${WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP} mmv.c
 
-do-extract:
-	@rm -rf ${WRKDIR}
-	@mkdir -p ${WRKDIR}/tmp
-	@for file in ${DISTFILES}; do \
-		cp ${FULLDISTDIR}/$$file ${WRKDIR}/tmp; \
-	 done ; \
-	 uncompress ${WRKDIR}/tmp/*; \
-	 cd ${WRKDIR}; \
-	 for file in tmp/part0* ; do \
-	     ${SH} ${SCRIPTDIR}/unshar $$file; \
-	 done ; \
-	 cat mmv.c.? >mmv.c ; rm mmv.c.? 
+post-extract:
+	@cd ${WRKSRC} && cat mmv.c.? >mmv.c && rm mmv.c.?
 
 .include <bsd.port.mk>
