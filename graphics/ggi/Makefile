@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/11 01:10:03 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/03 11:43:05 turan Exp $
+
+BROKEN=		installs files automatically in /etc
 
 DISTNAME=       libggi-2.0b1
 CATEGORIES=     graphics

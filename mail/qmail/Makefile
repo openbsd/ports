@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/23 10:26:13 camield Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/03 11:44:56 turan Exp $
+
+BROKEN=		installs files automatically in /etc
 
 DISTNAME=	qmail-1.03
 CATEGORIES=	mail
