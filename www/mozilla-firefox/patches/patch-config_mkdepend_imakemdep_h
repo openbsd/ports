@@ -1,0 +1,13 @@
+$OpenBSD: patch-config_mkdepend_imakemdep_h,v 1.1 2004/03/01 07:14:48 pvalchev Exp $
+--- config/mkdepend/imakemdep.h.orig	1998-09-05 06:22:25.000000000 +0200
++++ config/mkdepend/imakemdep.h	2004-02-28 00:46:55.000000000 +0100
+@@ -277,6 +277,9 @@ char *cpp_argv[ARGUMENTS] = {
+ # ifdef __i386__
+ 	"-D__i386__",
+ # endif
++# if defined(__amd64__) || defined(__x86_64__)
++	"-D__amd64__ -D__x86_64__",
++# endif
+ # ifdef __GNUC__
+ 	"-traditional",
+ # endif

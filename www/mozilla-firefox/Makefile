@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2004/02/25 02:35:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/03/01 07:14:48 pvalchev Exp $
 
-ONLY_FOR_ARCHS=	alpha i386 sparc sparc64
+ONLY_FOR_ARCHS=	alpha i386 sparc sparc64 amd64
 
 COMMENT=	"redesign of Mozilla's browser component"
 
@@ -59,7 +59,12 @@ CONFIGURE_ARGS+=--disable-ldap			\
 		--enable-crypto			\
 		--disable-composer
 
+# There is no problem with the propolice-enabled gcc3 on amd64,
+# but it is reported to still be brokenon others.
+.if ${MACHINE_ARCH} != "amd64"
 CFLAGS+=	-fno-stack-protector
+.endif
+
 CONFIGURE_ENV=	MOZ_PHOENIX=1 \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
 MAKE_ENV=	MOZ_PHOENIX=1 \
