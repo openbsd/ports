@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2000/09/16 15:32:58 jakob Exp $
+# $OpenBSD: Makefile,v 1.93 2000/09/21 08:15:52 camield Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -62,6 +62,7 @@
      SUBDIR += popa3d:apop
      SUBDIR += proxy-suite
      SUBDIR += publicfile
+     SUBDIR += publicfile:compat
      SUBDIR += queso
      SUBDIR += radiusd-cistron
      SUBDIR += radiusd-lucent
