@@ -1,6 +1,7 @@
---- scsilib/libscg/scsi-bsd.c.orig	Mon Sep 13 16:41:38 1999
-+++ scsilib/libscg/scsi-bsd.c	Mon Jun 12 18:19:26 2000
-@@ -59,7 +59,12 @@
+$OpenBSD: patch-scsilib_libscg_scsi-bsd_c,v 1.1 2001/03/05 08:12:04 fgsch Exp $
+--- scsilib/libscg/scsi-bsd.c.orig	Sat Apr 15 03:54:42 2000
++++ scsilib/libscg/scsi-bsd.c	Mon Mar  5 04:46:35 2001
+@@ -59,7 +59,12 @@ struct scg_local {
  #define	SADDR_TARGET(a)	(SADDR_ISSCSI(a)?(a).addr.scsi.target:(a).addr.atapi.atbus*2+(a).addr.atapi.drive)
  #define	SADDR_LUN(a)	(SADDR_ISSCSI(a)?(a).addr.scsi.lun:0)
  #else

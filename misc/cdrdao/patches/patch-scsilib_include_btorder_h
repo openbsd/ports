@@ -1,5 +1,6 @@
---- scsilib/include/btorder.h.orig	Thu Apr 29 06:02:27 1999
-+++ scsilib/include/btorder.h	Mon Jun 12 17:52:46 2000
+$OpenBSD: patch-scsilib_include_btorder_h,v 1.1 2001/03/05 08:12:04 fgsch Exp $
+--- scsilib/include/btorder.h.orig	Sat Apr 15 03:54:31 2000
++++ scsilib/include/btorder.h	Mon Mar  5 04:46:35 2001
 @@ -57,7 +57,7 @@
  #		define _BIT_FIELDS_HTOL
  #	endif
