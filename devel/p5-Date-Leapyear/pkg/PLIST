@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/11 11:54:19 sturm Exp $
+${P5SITE}/Date/Leapyear.pm
+@comment ${P5ARCH}/auto/Date/Leapyear/.packlist
+man/man3p/Date::Leapyear.3p
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Date/Leapyear
+@comment @dirrm ${P5ARCH}/auto/Date
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Date
