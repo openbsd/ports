@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/26 20:44:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2002/12/23 00:37:50 pvalchev Exp $
 
 COMMENT=	"3D block-dropping game"
 
@@ -7,8 +7,6 @@ CATEGORIES=	games
 
 MASTER_SITES=	ftp://ftp710.univ-lyon1.fr/pub/xbl/
 EXTRACT_SUFX=	.tar.Z
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/10/27 20:05:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2002/12/23 00:37:51 pvalchev Exp $
 #
 
 COMMENT=	"shared drawing (whiteboard) tool using multicast"
@@ -9,8 +9,6 @@ CATEGORIES=	mbone
 MASTER_SITES=   ftp://ftp.ee.lbl.gov/conferencing/wb/
 DISTFILES=      i386-wb-1.59.tar.Z
 ONLY_FOR_ARCHS=	i386
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 # License: NONE
 PERMIT_PACKAGE_CDROM=	"no license"

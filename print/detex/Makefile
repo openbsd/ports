@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/28 13:40:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2002/12/23 00:37:52 pvalchev Exp $
 
 COMMENT=		"strip TeX/LaTeX codes from a file"
 
@@ -7,8 +7,6 @@ CATEGORIES=		print
 
 MASTER_SITES=		ftp://ftp.cs.purdue.edu/pub/trinkle/
 EXTRACT_SUFX=		.tar
-
-MAINTAINER=     	Angelos D. Keromytis <angelos@openbsd.org>
 
 # License: NONE
 PERMIT_PACKAGE_CDROM=	"no license"

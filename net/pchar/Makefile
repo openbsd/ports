@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/28 01:38:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2002/12/23 00:37:52 pvalchev Exp $
 # $FreeBSD: ports/net/pchar/Makefile,v 1.1.1.1 1999/11/04 08:33:26 obrien Exp $
 
 COMMENT=	"Sandia Internet path characterization tool"
@@ -7,8 +7,6 @@ DISTNAME=	pchar-1.4
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.employees.org/~bmah/Software/pchar/
-
-MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

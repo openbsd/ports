@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/26 20:44:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/12/23 00:37:50 pvalchev Exp $
 #
 
 COMMENT=	"side-view, fast-action, kill everything type of game"
@@ -9,8 +9,6 @@ CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/xevil1.5/}
 EXTRACT_SUFX=	.tar.Z
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes

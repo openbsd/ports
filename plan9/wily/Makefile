@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/28 02:13:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2002/12/23 00:37:52 pvalchev Exp $
 
 COMMENT=	"clone of the Plan9 editor 'acme'"
 
@@ -9,8 +9,6 @@ MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/mhw/wily/src/ \
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.cs.yorku.ca/~oz/wily/
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

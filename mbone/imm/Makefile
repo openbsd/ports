@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/10/27 20:05:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2002/12/23 00:37:51 pvalchev Exp $
 
 COMMENT=	"Internet Image (or other data) Multicaster (and receiver)"
 
@@ -8,8 +8,6 @@ CATEGORIES=	mbone
 
 MASTER_SITES=	ftp://ftp.hawaii.edu/paccom/imm-3.5a1/
 EXTRACT_SUFX=	.tar.Z
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no commercial use"
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/28 22:43:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2002/12/23 00:37:52 pvalchev Exp $
 
 COMMENT=	"convert text into the Doc format used by PalmPilots"
 
@@ -8,8 +8,6 @@ CATEGORIES=	textproc palm
 MASTER_SITES=	http://www.concentric.net/~rbram/
 DISTFILES=	makedoc7.cpp
 EXTRACT_ONLY=
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 # License: NONE
 PERMIT_PACKAGE_CDROM=	"no license"

@@ -3,7 +3,7 @@
 # Date created:		June 7 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.19 2002/08/04 01:02:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2002/12/23 00:37:52 pvalchev Exp $
 #
 
 COMMENT=	"view, distribute and print PDF documents"
@@ -14,8 +14,6 @@ CATEGORIES=	print
 
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
 ONLY_FOR_ARCHS=	i386
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"commercial software"
 PERMIT_PACKAGE_FTP=	"commercial software"

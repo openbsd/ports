@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/24 22:20:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/12/23 00:37:49 pvalchev Exp $
 
 COMMENT=	"Tcl/Tk CD player"
 DISTNAME=	xcd-1.6
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

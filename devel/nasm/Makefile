@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/11/21 17:38:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/12/23 00:37:50 pvalchev Exp $
 
 COMMENT=	"general-purpose multi-platform x86 assembler"
 
@@ -10,8 +10,6 @@ CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nasm/}
 
 HOMEPAGE=	http://nasm.sourceforge.net/
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

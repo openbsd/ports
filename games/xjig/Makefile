@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/10/26 20:44:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2002/12/23 00:37:50 pvalchev Exp $
 
 COMMENT=	"jigsaw puzzle game for X11"
 
@@ -7,8 +7,6 @@ CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
 EXTRACT_SUFX=	.tgz
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/10/28 17:35:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2002/12/23 00:37:52 pvalchev Exp $
 
 COMMENT=	"cryptographic file system (user-space NFS server)"
 
@@ -8,8 +8,6 @@ MASTER_SITES=	http://the.wiretapped.net/security/cryptography/filesystems/ \
 		ftp://utopia.hacktic.nl/pub/crypto/disk/ \
 		ftp://ftp.informatik.uni-hamburg.de/pub/virus/crypt/disk/ \
       		ftp://ftp.funet.fi/pub/mirrors/utopia.hacktic.nl/disk/
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/10/26 20:44:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2002/12/23 00:37:50 pvalchev Exp $
 
 COMMENT=	"X11 solitaire with 14 variations"
 
@@ -7,8 +7,6 @@ PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 EXTRACT_SUFX=	-src.tar.gz
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes

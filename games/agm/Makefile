@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/26 20:44:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2002/12/23 00:37:50 pvalchev Exp $
 #
 
 COMMENT=		"AnaGram search utility"
 
 DISTNAME=		agm-1.3.1
 CATEGORIES=		games
-
-MAINTAINER=		Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no license available"
 PERMIT_PACKAGE_FTP=	"no license available"

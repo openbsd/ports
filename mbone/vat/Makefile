@@ -1,5 +1,5 @@
 # $FreeBSD: Makefile,v 1.9 1998/12/02 05:56:01 asami Exp $
-# $OpenBSD: Makefile,v 1.22 2002/10/27 20:05:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2002/12/23 00:37:51 pvalchev Exp $
 
 COMMENT=	"Visual Audio Tool, multicast audioconferencing"
 
@@ -8,8 +8,6 @@ PKGNAME=	vat-4.0b2
 CATEGORIES=	mbone
 
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

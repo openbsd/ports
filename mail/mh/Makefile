@@ -3,7 +3,7 @@
 # Date created:		April 8, 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.11 2002/03/21 21:09:17 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/12/23 00:37:51 pvalchev Exp $
 #
 
 COMMENT=	"Rand MH mail handling system"
@@ -11,15 +11,12 @@ COMMENT=	"Rand MH mail handling system"
 DISTNAME=	mh-6.8.3
 PKGNAME=	mh-6.8.4
 CATEGORIES=	mail
-NEED_VERSION=	1.515
 FAKE=No
 MASTER_SITES=	ftp://ftp.ics.uci.edu/pub/mh/tar/
 EXTRACT_SUFX=	.tar.Z
 
 MASTER_SITES0= 	ftp://ftp.ics.uci.edu/pub/mh/updates/
 PATCHFILES=	MH.6.8.4.Z:0
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 BROKEN=		"Buffer overflow in MIME support, use nmh >= 1.03 instead."
 

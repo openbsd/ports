@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/27 21:07:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2002/12/23 00:37:51 pvalchev Exp $
 
 COMMENT=	"Unix menuing shell"
 
@@ -10,8 +10,6 @@ MASTER_SITES=	ftp://src.doc.ic.ac.uk/usenet/alt.sources/articles/07000-07999/
 DISTFILES=	7432.Z
 WRKDIST=	${WRKDIR}
 EXTRACT_ONLY=	
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no explict license"
 PERMIT_PACKAGE_FTP=	Yes

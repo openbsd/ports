@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/29 19:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2002/12/23 00:37:52 pvalchev Exp $
 
 COMMENT=	"analog clock for X11 w/appoint. reminder and mail notif"
 
@@ -9,8 +9,6 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 		ftp://mason.primenet.com.au/pub/rxvt/ \
 		${MASTER_SITE_SUNSITE:=X11/terms/}
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

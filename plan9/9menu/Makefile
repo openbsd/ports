@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/28 02:13:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/12/23 00:37:52 pvalchev Exp $
 
 COMMENT=	"simple menu patterned after plan9"
 
@@ -8,8 +8,6 @@ CATEGORIES=	plan9
 MASTER_SITES=	ftp://ftp.mathcs.emory.edu/pub/arnold/
 
 EXTRACT_SUFX=	.shar.gz
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

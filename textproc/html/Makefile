@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2002/10/28 22:43:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2002/12/23 00:37:52 pvalchev Exp $
 
 COMMENT=	"all W3C-published SGML DTDs for HTML"
 
 DISTNAME=	html-4.01
 CATEGORIES=	textproc
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 # License: NONE
 PERMIT_PACKAGE_CDROM=	"no license"

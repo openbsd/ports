@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/10/27 21:07:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2002/12/23 00:37:51 pvalchev Exp $
 
 COMMENT=	"checkbook balancing tool"
 
@@ -10,8 +10,6 @@ MASTER_SITES=	ftp://ftp.me.umn.edu/pub/finance/ \
 LIB_DEPENDS=    tk80.1.::x11/tk/8.0
 RUN_DEPENDS=	:tk-8.0.*:x11/tk/8.0 \
 		:plan-*:misc/plan
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

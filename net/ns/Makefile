@@ -1,5 +1,5 @@
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
-# $OpenBSD: Makefile,v 1.21 2002/10/28 01:38:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2002/12/23 00:37:52 pvalchev Exp $
 
 COMMENT=	"UCB/LBNL Network Simulator Version 2"
 
@@ -18,8 +18,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 HOMEPAGE=	http://www.isi.edu/nsnam/ns/
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 BUILD_DEPENDS=	:tclcl-*:devel/tclcl
 RUN_DEPENDS=	:tcl-8.3.*:lang/tcl/8.3

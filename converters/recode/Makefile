@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/07/13 23:59:12 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2002/12/23 00:37:50 pvalchev Exp $
 
 COMMENT=	"convert files between character sets and usages"
 
@@ -6,8 +6,6 @@ DISTNAME=	recode-3.6
 CATEGORIES=	converters textproc
 
 HOMEPAGE=	http://www.gnu.org/software/recode/
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 MODULES=	gettext
 

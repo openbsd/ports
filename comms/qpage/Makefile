@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/25 11:34:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2002/12/23 00:37:50 pvalchev Exp $
 
 COMMENT=	"SNPP client/server (alphanum pager software)"
 
 DISTNAME=	qpage-3.3
 CATEGORIES=	comms
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"license only grants use"
 PERMIT_PACKAGE_FTP=	"license only grants use"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/27 21:07:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/12/23 00:37:51 pvalchev Exp $
 
 COMMENT=	"convert English text to Jive"
 
@@ -6,8 +6,6 @@ DISTNAME=	jive-1.1
 CATEGORIES=	misc
 
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/
-
-MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
 # License: NONE
 PERMIT_PACKAGE_CDROM=	"no license"

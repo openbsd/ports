@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2001/06/03 19:00:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2002/12/23 00:37:50 pvalchev Exp $
 
 COMMENT=	"emulator for US Robotics Pilot PDA"
 
 DISTNAME=       xcopilot-0.6.6
 CATEGORIES=     emulators palm
-NEED_VERSION=	1.402
-
-MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

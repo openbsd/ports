@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2002/10/27 21:07:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2002/12/23 00:37:51 pvalchev Exp $
 
 COMMENT=	"X11/Motif schedule planner with calendar"
 
 DISTNAME=	plan-1.6.1
 CATEGORIES=	misc
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"license requests a copy of the cd"
 PERMIT_PACKAGE_FTP=	Yes

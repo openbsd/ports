@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2002/03/21 20:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/12/23 00:37:50 pvalchev Exp $
 
 COMMENT=	"character encoding converter generator package"
 
 DISTNAME=       trans120
 PKGNAME=        trans-1.20
 CATEGORIES=     converters russian
-NEED_VERSION=	1.515
-
-MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

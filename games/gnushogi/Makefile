@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/10/10 13:26:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2002/12/23 00:37:50 pvalchev Exp $
 #
 
 COMMENT=	"GNU version of Shogi"
@@ -6,8 +6,6 @@ COMMENT=	"GNU version of Shogi"
 DISTNAME=	gnushogi-1.2p03
 PKGNAME=	gnushogi-1.2.3
 CATEGORIES=	games
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes

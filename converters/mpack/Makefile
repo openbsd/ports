@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/08/09 01:15:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2002/12/23 00:37:50 pvalchev Exp $
 
 COMMENT=	"external MIME packer/unpacker"
 
@@ -6,8 +6,6 @@ V=		1.5
 DISTNAME=	mpack-${V}-src
 PKGNAME=	mpack-${V}p1
 CATEGORIES=	converters mail news
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

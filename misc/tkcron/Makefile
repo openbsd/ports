@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/27 21:07:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2002/12/23 00:37:51 pvalchev Exp $
 
 COMMENT=	"frontend to crontab"
 
@@ -7,8 +7,6 @@ CATEGORIES=	misc
 
 MASTER_SITES=	ftp://ftp.neosoft.com/languages/tcl/alcatel/code/
 EXTRACT_SUFX=	.tcl.gz
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

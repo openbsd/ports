@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2002/10/27 20:05:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2002/12/23 00:37:51 pvalchev Exp $
 
 COMMENT=	"MBONE video tool"
 
 DISTNAME=	vic-2.8ucl4
 CATEGORIES=	mbone
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

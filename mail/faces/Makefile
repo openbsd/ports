@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/27 17:21:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2002/12/23 00:37:51 pvalchev Exp $
 
 COMMENT=	"visual mail, user and print face server"
 
 DISTNAME=	faces-1.6.1
 CATEGORIES=	mail
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

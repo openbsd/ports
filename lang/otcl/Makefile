@@ -1,6 +1,6 @@
 #
 # $FreeBSD: ports/lang/otcl/Makefile,v 1.6 1999/11/28 18:31:28 steve Exp $
-# $OpenBSD: Makefile,v 1.14 2002/10/27 14:12:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2002/12/23 00:37:51 pvalchev Exp $
 #
 
 COMMENT=	"MIT Object Tcl"
@@ -9,8 +9,6 @@ DISTNAME=	otcl-1.0a7
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.isi.edu/nsnam/otcl/index.html
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

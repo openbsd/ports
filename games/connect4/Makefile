@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2002/10/26 20:44:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2002/12/23 00:37:50 pvalchev Exp $
 
 COMMENT=	"curses version of the classic game"
 
 DISTNAME=	connect4
 PKGNAME=	connect4-3.2
 CATEGORIES=	games
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 # License: NONE
 PERMIT_PACKAGE_CDROM=	"no license"

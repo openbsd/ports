@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2002/10/28 22:43:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2002/12/23 00:37:52 pvalchev Exp $
 
 COMMENT=	"LaTeX to HTML converter"
 
 DISTNAME=	latex2html-97.1
 CATEGORIES=	textproc www
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/03/21 20:57:08 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/12/23 00:37:50 pvalchev Exp $
 
 COMMENT=	"classic BSD4.4 cat-and-mouse"
 
@@ -8,12 +8,9 @@ COMMENT=	"classic BSD4.4 cat-and-mouse"
 DISTNAME=	xneko
 PKGNAME=	xneko-4.4
 CATEGORIES=	x11 games
-NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/4.4BSD-Lite/4.4BSD-Lite2/usr/src/games/
 EXTRACT_SUFX=	.tar
 IGNOREFILES=	xneko.tar
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

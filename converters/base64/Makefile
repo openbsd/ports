@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/03/21 20:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/12/23 00:37:50 pvalchev Exp $
 
 COMMENT=	"converter to/from base64 encoding"
 
@@ -6,10 +6,6 @@ DISTNAME=	base64
 PKGNAME=	base64-1.0
 CATEGORIES=	converters
 MASTER_SITES=	http://www.fourmilab.ch/webtools/base64/
-
-NEED_VERSION=	1.515
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 # License: PD
 PERMIT_PACKAGE_CDROM=	Yes

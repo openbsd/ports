@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2001/12/31 09:44:45 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/12/23 00:37:49 pvalchev Exp $
 
 COMMENT=	"speech synthesizer"
 DISTNAME=	rsynth-2.0
 CATEGORIES=	audio
-NEED_VERSION=	1.504
 MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

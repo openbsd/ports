@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/26 20:44:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/12/23 00:37:50 pvalchev Exp $
 
 COMMENT=	"Motif minesweeper game"
 
@@ -6,8 +6,6 @@ DISTNAME=	xminehunter-0.4
 CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
-
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
