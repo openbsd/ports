@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2002/02/18 11:20:14 nino Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/22 05:34:58 pvalchev Exp $
 
-     SUBDIR+= oaf
-     SUBDIR+= libs
-     SUBDIR+= mime-data
-     SUBDIR+= vfs
-     SUBDIR+= controlcenter
-     SUBDIR+= core
-     SUBDIR+= users-guide
-     SUBDIR+= applets
+     SUBDIR += applets
+     SUBDIR += controlcenter
+     SUBDIR += core
+     SUBDIR += libs
+     SUBDIR += mime-data
+     SUBDIR += oaf
+     SUBDIR += print
+     SUBDIR += users-guide
+     SUBDIR += vfs
 
 .include <bsd.port.subdir.mk>
