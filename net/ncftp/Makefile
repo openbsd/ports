@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2004/01/09 20:47:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2004/01/15 08:47:30 espie Exp $
 
 COMMENT=		"ftp replacement with advanced user interface"
 
@@ -20,6 +20,7 @@ DISTFILES=		${DISTNAME}-src.tar.gz
 
 PATCHFILES=		ncftp-317-v6-20040108b.diff.gz:0
 PATCH_DIST_STRIP=	-p1
+FAKE_FLAGS=		DESTDIR=${WRKINST} mandir=${WRKINST}${TRUEPREFIX}/man
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ENV=		TAR=/bin/tar
