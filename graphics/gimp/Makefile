@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2000/06/15 19:02:36 brad Exp $
+# $OpenBSD: Makefile,v 1.46 2000/06/25 07:32:43 brad Exp $
 
 DISTNAME=	gimp-1.1.23
 CATEGORIES=	graphics
@@ -6,6 +6,8 @@ NEED_VERSION=	1.301
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/v1.1/v1.1.23/ \
 		ftp://ftp.sunet.se/pub/gnu/gimp/v1.1/v1.1.23/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/v1.1/v1.1.23/
+
+HOMEPAGE=	http://www.gimp.org/
 
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		aa.1.3::graphics/aalib \

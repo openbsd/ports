@@ -23,9 +23,4 @@ without modification to the core.  File formats supported in version
 1.1 include the popular GIF and JPEG standards, as well as PNG, TIFF,
 XPM, SGI, PCX, and Windows BMP.
 
-The GIMP's home page is at 
-
-	http://www.gimp.org/
-
-Please be sure to visit this site for information, documentation,
-tutorials, news, etc.  All things GIMP related are available from there.
+WWW: ${HOMEPAGE}
