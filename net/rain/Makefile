@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/30 07:22:36 pvalchev Exp $
+# vim:ts=8
+# $OpenBSD: Makefile,v 1.2 2001/08/01 10:06:08 naddy Exp $
 
-DISTNAME=	rain-1.2.6
+DISTNAME=	rain-1.2.8
 CATEGORIES=	net security
-NEED_VERSION=	1.427
+NEED_VERSION=	1.433
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -15,11 +16,11 @@ MASTER_SITES=	${HOMEPAGE}files/
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
-MAKE_ENV=	CC="${CC}"
+CONFIGURE_STYLE= gnu
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rain ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/rain
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/rain
+	@${GZIP_CMD} -d ${WRKSRC}/man/rain.1.gz
+	${INSTALL_MAN} ${WRKSRC}/man/rain.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
