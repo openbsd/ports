@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2002/06/09 05:36:59 wilfried Exp $
+# $OpenBSD: Makefile,v 1.21 2002/09/14 23:40:17 naddy Exp $
 
 COMMENT=	"checkbook balancing tool"
 
 DISTNAME=	cbb-0.73
-CATEGORIES=	misc tk80
-NEED_VERSION=	1.515
+CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.me.umn.edu/pub/finance/ \
 		ftp://ftp.fifi.org/pub/cbb/
 
