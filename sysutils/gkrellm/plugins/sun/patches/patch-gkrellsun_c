@@ -1,0 +1,12 @@
+$OpenBSD: patch-gkrellsun_c,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
+--- gkrellsun.c.orig	2003-11-02 13:07:49.000000000 +0100
++++ gkrellsun.c	2003-11-02 13:10:23.000000000 +0100
+@@ -185,7 +185,7 @@ struct _Sun {
+     SunData data;
+ };
+ 
+-extern long CurrentGMTTime;
++extern time_t CurrentGMTTime;
+ static Sun sununit;
+ 
+ static void update_tooltip(Sun *sun);

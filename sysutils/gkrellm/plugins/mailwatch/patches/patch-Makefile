@@ -1,0 +1,26 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2003/11/03 20:34:17 sturm Exp $
+--- Makefile.orig	Tue Dec 24 12:47:34 2002
++++ Makefile	Tue Dec 24 12:48:21 2002
+@@ -1,18 +1,18 @@
+ # Makefile for the GKrellM mailwatch plugin
+ 
+-GTK_CONFIG ?=pkg-config gtk+-2.0
++GTK_CONFIG ?=pkg-config gtk+-2.0 gthread-2.0
+ PLUGIN_DIR ?=/usr/local/lib/gkrellm2/plugins
+ 
+ GTK_INCLUDE = `$(GTK_CONFIG) --cflags`
+ GTK_LIB = `$(GTK_CONFIG) --libs`
+ 
+-GKRELLM_INCLUDE= -I/usr/local/include
++GKRELLM_INCLUDE= -I${LOCALBASE}/include
+ 
+ INSTALL=install -c -m 755
+ 
+-CFLAGS += -O2 -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(GKRELLM_INCLUDE)
++CFLAGS += -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(GKRELLM_INCLUDE)
+ LIBS = $(GTK_LIB) $(IMLIB_LIB)
+-LFLAGS += -shared
++LFLAGS += -shared -pthread
+ 
+ OBJS = mailwatch.o
+ 

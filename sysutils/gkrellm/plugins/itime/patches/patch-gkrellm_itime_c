@@ -1,0 +1,13 @@
+$OpenBSD: patch-gkrellm_itime_c,v 1.1.1.1 2003/11/03 20:34:17 sturm Exp $
+--- gkrellm_itime.c.orig	Wed Aug 14 12:18:21 2002
++++ gkrellm_itime.c	Wed Jan  8 22:27:58 2003
+@@ -71,7 +71,8 @@
+ #define gkrellm_panel_bg_image_override gkrellm_panel_bg_piximage_override
+ #define gkrellm_load_image              gkrellm_load_piximage
+ #define gkrellm_set_image_border        gkrellm_set_gkrellmrc_piximage_border
+-#define gkrellm_get_gkrellmrc_image_border gkrellm_get_gkrellmrc_piximage_border#define gkrellm_bg_chart_image          gkrellm_bg_chart_piximage
++#define gkrellm_get_gkrellmrc_image_border gkrellm_get_gkrellmrc_piximage_border
++#define gkrellm_bg_chart_image          gkrellm_bg_chart_piximage
+ #define gkrellm_bg_grid_image           gkrellm_bg_grid_piximage
+ #define gkrellm_bg_panel_image          gkrellm_bg_panel_piximage
+ #define gkrellm_bg_meter_image          gkrellm_bg_meter_piximage

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/03 20:34:17 sturm Exp $
+lib/gkrellm2/plugins/mailwatch.so

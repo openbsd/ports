@@ -1,0 +1,12 @@
+$OpenBSD: patch-CalcEphem_c,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
+--- CalcEphem.c.orig	2003-11-02 13:10:31.000000000 +0100
++++ CalcEphem.c	2003-11-02 13:11:15.000000000 +0100
+@@ -251,7 +251,7 @@ void SunRise(int year, int month, int da
+     SinH0 = sin( -50.0/60.0 * RadPerDeg );
+ 
+     if (debug) {
+-      printf("gkrellsun ephem debug: CurrentGMTTime = %ld\n", CurrentGMTTime);
++      printf("gkrellsun ephem debug: CurrentGMTTime = %d\n", CurrentGMTTime);
+     }
+ 
+     /* N.B. CurrentGMTTime must already be set! */

@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
+bin/gkrellm.GrabWeather
+lib/gkrellm2/plugins/gkrellweather.so

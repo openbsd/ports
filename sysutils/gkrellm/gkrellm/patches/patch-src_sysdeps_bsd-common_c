@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sysdeps_bsd-common_c,v 1.1.1.1 2003/11/03 20:34:16 sturm Exp $
+--- src/sysdeps/bsd-common.c.orig	2003-10-28 10:16:45.000000000 -0800
++++ src/sysdeps/bsd-common.c	2003-10-28 10:17:31.000000000 -0800
+@@ -219,7 +219,7 @@ gkrellm_sys_fs_get_fstab_list(void)
+ 	{
+ 	FILE			*f;
+ 	gchar			buf[1024], *s;
+-	gchar			dev[64], dir[128], type[64], opt[128];
++	gchar			dev[65], dir[129], type[65], opt[129];
+ 
+ 	if ((f = fopen("/etc/fstab", "r")) == NULL)
+ 		return;

@@ -1,0 +1,8 @@
+Gkrellmitime2 is the internet time plugin for Gkrellm2. 
+
+	* The Internet Time is measured in ".beats".
+	* One beat is the equivalent of 1 minute 26.4 seconds 
+	  and a day is divided in 1000 beats.
+	* The Internet Time is the same all over the world.
+	* The Internet Time is based on a new meridian in Biel, 
+	  Switzerland, the Biel MeanTime (BMT).

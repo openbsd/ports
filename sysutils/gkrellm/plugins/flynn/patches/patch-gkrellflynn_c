@@ -1,0 +1,16 @@
+$OpenBSD: patch-gkrellflynn_c,v 1.1.1.1 2003/11/03 20:34:16 sturm Exp $
+--- gkrellflynn.c.orig	Tue Dec 24 12:06:31 2002
++++ gkrellflynn.c	Tue Dec 24 12:09:13 2002
+@@ -24,12 +24,7 @@
+ */
+ #ifndef WIN32
+ 
+-/* see makefile */
+-#ifdef GKRELLM2
+ #include <gkrellm2/gkrellm.h>
+-#else  /* GKRELLM2 */
+-#include <gkrellm/gkrellm.h>
+-#endif /* GKRELLM2 */
+ 
+ #else /* WIN32 */
+ 

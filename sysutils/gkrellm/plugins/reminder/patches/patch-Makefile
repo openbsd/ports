@@ -1,0 +1,22 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
+--- Makefile.orig	2002-05-01 10:39:37.000000000 -0700
++++ Makefile	2003-11-01 14:18:36.000000000 -0800
+@@ -1,13 +1,11 @@
+-GTK_INCLUDE = `pkg-config gtk+-2.0 --cflags`
+-GTK_LIB = `pkg-config gtk+-2.0 --libs`
++GTK_INCLUDE = `pkg-config gtk+-2.0 gthread-2.0 --cflags`
++GTK_LIB = `pkg-config gtk+-2.0 gthread-2.0 --libs`
+ 
+-CFLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) -I/usr/pkg/include
++CFLAGS += -fPIC $(GTK_INCLUDE) -I${PREFIX}/include
+ 
+-LIBS = $(GTK_LIB)
++LIBS += $(GTK_LIB)
+ 
+-LFLAGS = -shared -L/usr/pkg/lib
+-
+-CC = gcc
++LFLAGS += -shared -pthread -L${PREFIX}/lib
+ 
+ all: reminder.so
+ 

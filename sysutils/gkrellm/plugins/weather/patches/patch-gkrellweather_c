@@ -1,0 +1,21 @@
+$OpenBSD: patch-gkrellweather_c,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
+--- gkrellweather.c.orig	2003-03-31 03:12:57.000000000 -0800
++++ gkrellweather.c	2003-10-27 11:23:12.000000000 -0800
+@@ -720,7 +720,7 @@ apply_air_config (void)
+         options.station[1] = c[1];
+         options.station[2] = c[2];
+         options.station[3] = c[3];
+-        sprintf(options.command, PREFIX "/bin/GrabWeather %s", options.station);
++        sprintf(options.command, PREFIX "/bin/gkrellm.GrabWeather %s", options.station);
+         sprintf(options.filename, "%s/.wmWeatherReports/%s.dat",
+                 getenv("HOME"), options.station);
+ 	net_update = FALSE;
+@@ -983,7 +983,7 @@ read_default(void)
+     options.windspeed_unit = 1;
+     options.pressure_unit = 1;
+     strcpy(options.station, DEFAULT_STATION_ID);
+-    sprintf(options.command, "/usr/share/gkrellm/GrabWeather %s", options.station);
++    sprintf(options.command, PREFIX "/bin/gkrellm.GrabWeather %s", options.station);
+     sprintf(options.filename, "%s/.wmWeatherReports/%s.dat",
+             getenv("HOME"), options.station);
+ }

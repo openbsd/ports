@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2003/11/03 20:34:17 sturm Exp $
+--- Makefile.orig	2002-12-10 19:36:06.000000000 -0800
++++ Makefile	2003-11-01 13:48:52.000000000 -0800
+@@ -1,14 +1,12 @@
+-GTK_INCLUDE = `pkg-config gtk+-2.0 --cflags`
+-GTK_LIB = `pkg-config gtk+-2.0 --libs`
++GTK_INCLUDE = `pkg-config gtk+-2.0 gthread-2.0 --cflags`
++GTK_LIB = `pkg-config gtk+-2.0 gthread-2.0 --libs`
+ 
+ INSTALLDIR = ${DESTDIR}/usr/lib/gkrellm2/plugins
+ 
+ 
+-FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE)
+-LIBS = $(GTK_LIB)
+-LFLAGS = -shared
+-
+-CC = gcc $(CFLAGS) $(FLAGS)
++CFLAGS += -fPIC $(GTK_INCLUDE) -I${LOCALBASE}/include
++LIBS += $(GTK_LIB)
++LFLAGS += -shared -pthread
+ 
+ OBJS = gkrellmoon.o MoonRise.o CalcEphem.o Moon.o
+ 

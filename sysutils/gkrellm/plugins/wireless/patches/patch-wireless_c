@@ -1,0 +1,12 @@
+$OpenBSD: patch-wireless_c,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
+--- wireless.c.orig	Fri Feb 21 22:31:34 2003
++++ wireless.c	Fri Feb 21 22:31:50 2003
+@@ -90,7 +90,7 @@ wcard_t *found_wcard(gchar *interface) {
+ }
+ 
+ /* system specific stuff */
+-#if defined(__FreeBSD__) || defined(__NetBSD__)
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ /* FreeBSD & NetBSD specific */
+ 
+ static int

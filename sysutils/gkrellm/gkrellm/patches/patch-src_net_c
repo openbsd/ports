@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_net_c,v 1.1.1.1 2003/11/03 20:34:16 sturm Exp $
+--- src/net.c.orig	2003-09-10 19:50:14.000000000 -0700
++++ src/net.c	2003-10-27 11:00:22.000000000 -0800
+@@ -1487,11 +1487,11 @@ save_net_data(void)
+ 					tm->tm_mday, tm->tm_mon, tm->tm_yday, tm->tm_year);
+ 
+ 		fputs("day\n", f);
+-		fprintf(f, "%.0lf %.0lf\n", net->rx_day, net->tx_day);
++		fprintf(f, "%.0f %.0f\n", net->rx_day, net->tx_day);
+ 		fputs("week\n", f);
+-		fprintf(f, "%.0lf %.0lf\n", net->rx_week, net->tx_week);
++		fprintf(f, "%.0f %.0f\n", net->rx_week, net->tx_week);
+ 		fputs("month\n", f);
+-		fprintf(f, "%.0lf %.0lf\n", net->rx_month, net->tx_month);
++		fprintf(f, "%.0f %.0f\n", net->rx_month, net->tx_month);
+ 		if (net == net_timed)
+ 			{
+ 			fputs("connect time: day week month\n", f);

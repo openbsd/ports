@@ -1,0 +1,39 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2003/11/03 20:34:17 sturm Exp $
+--- Makefile.orig	Sun Jun 30 11:10:35 2002
++++ Makefile	Sat Feb  1 13:54:26 2003
+@@ -1,24 +1,25 @@
+ # Modify INCLUDE to point to gkrellm.h (if it's not in /usr/local/include)
+-INCLUDE	= /usr/local/include
++INCLUDE	= ${LOCALBASE}/include/
+ 
+-CC	= gcc
+-CFLAGS	= -Wall -Wimplicit -Wreturn-type -Wunused -Wswitch              \
+-	  -Wcomment-Wparentheses -Wtraditional -Wpointer-arith          \
+-	  -Wmissing-prototypes -O2 -fPIC -I$(INCLUDE)                   \
+-	  `pkg-config gtk+-2.0 --cflags`
+-LDFLAGS	=
++#CFLAGS	= -Wimplicit -Wreturn-type -Wunused -Wswitch		\
++#	-Wcomment-Wparentheses -Wtraditional -Wpointer-arith	\
++#	-Wmissing-prototypes 
++
++CFLAGS+= 	-fPIC -I$(INCLUDE) 		\
++		`pkg-config gtk+-2.0 gthread-2.0 --cflags`
++LDFLAGS	= -shared -pthread
+ TARGET	= gkrellm_itime
+ 
+ 
+ 
+ $(TARGET).so: $(TARGET).o
+-	$(CC) -shared -Wl `pkg-config gtk+-2.0 --libs` $< -o $@
++	$(CC) -shared -Wl `pkg-config gtk+-2.0 gthread-2.0 --libs` $< -o $@
+ 
+ $(TARGET).o: $(TARGET).c
+-	$(CC) $(CFLAGS) -c $<
++	$(CC) $(CFLAGS) ${LDFLAGS} -c $<
+ 
+ $(TARGET): $(TARGET).c
+-	$(CC) $(CFLAGS) $< -o $@
++	$(CC) $(CFLAGS) ${LDFLAGS} $< -o $@
+ 
+ install:
+ 	if [ -d /usr/lib/gkrellm/plugins/ ] ; then \

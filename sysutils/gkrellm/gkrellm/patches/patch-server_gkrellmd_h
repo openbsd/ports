@@ -1,0 +1,18 @@
+$OpenBSD: patch-server_gkrellmd_h,v 1.1.1.1 2003/11/03 20:34:16 sturm Exp $
+--- server/gkrellmd.h.orig	2003-10-12 14:20:54.000000000 -0700
++++ server/gkrellmd.h	2003-10-27 11:00:21.000000000 -0800
+@@ -150,9 +150,11 @@ extern int	errno;
+ #define GKRELLMD_CONFIG     "gkrellmd.conf"
+ 
+ #if !defined(WIN32)
+-#define	GKRELLMD_SYS_ETC	"/etc"
+-#define GKRELLMD_LOCAL_ETC	"/usr/local/etc"
+-#endif
++#if !defined(GKRELLMD_SYS_ETC)
++#define	GKRELLMD_SYS_ETC	"%%SYSCONFDIR%%"
++#endif /* GKRELLMD_SYS_ETC */
++#define GKRELLMD_LOCAL_ETC	"%%SYSCONFDIR%%"
++#endif /* WIN32 */
+ 
+ #define DEBUG_SYSDEP	0x1
+ #define DEBUG_MAIL		0x10

@@ -1,0 +1,21 @@
+$OpenBSD: patch-gkrellmms_c,v 1.1.1.1 2003/11/03 20:34:17 sturm Exp $
+--- gkrellmms.c.orig	2003-06-16 20:39:20.000000000 +0200
++++ gkrellmms.c	2003-11-02 11:51:20.000000000 +0100
+@@ -635,7 +635,7 @@ set_x_position(gint x, gchar *anchor)
+ static void
+ button_position(ControlButton *button, gchar *name)
+ 	{
+-	gchar	*s, anchor[8];
++	gchar	*s, anchor[9];
+ 	gint	x, w, h;
+ 
+ 	if ((s = gkrellm_get_gkrellmrc_string(name)) != NULL)
+@@ -659,7 +659,7 @@ button_position(ControlButton *button, g
+ static void
+ decal_position(GkrellmDecal *decal, gchar *name, gboolean text)
+ 	{
+-	gchar	*s, anchor[8];
++	gchar	*s, anchor[9];
+ 	gint	x, y;
+ 
+ 	anchor[0] = 'l';
