@@ -1,7 +1,7 @@
-$OpenBSD: patch-po_ja_po,v 1.1 2001/05/14 22:32:39 brad Exp $
---- po/ja.po.orig	Mon May 14 22:33:51 2001
-+++ po/ja.po	Mon May 14 22:34:26 2001
-@@ -1236,7 +1236,7 @@ msgstr ""
+$OpenBSD: patch-po_ja_po,v 1.2 2002/10/25 16:00:11 naddy Exp $
+--- po/ja.po.orig	Thu Jun 28 19:03:43 2001
++++ po/ja.po	Wed Oct 23 18:29:28 2002
+@@ -1244,7 +1244,7 @@ msgstr ""
  #, c-format
  msgid ""
  "%s%s\n"

@@ -1,8 +1,8 @@
-$OpenBSD: patch-po_es_po,v 1.1 2001/05/14 22:32:38 brad Exp $
---- po/es.po.orig	Mon May 14 22:33:51 2001
-+++ po/es.po	Mon May 14 22:34:15 2001
-@@ -1250,7 +1250,7 @@ msgstr "Traceroute"
- #, fuzzy, c-format
+$OpenBSD: patch-po_es_po,v 1.2 2002/10/25 16:00:11 naddy Exp $
+--- po/es.po.orig	Thu Jun 28 19:03:43 2001
++++ po/es.po	Wed Oct 23 18:29:28 2002
+@@ -1258,7 +1258,7 @@ msgstr "xtraceroute: hostal desconocido 
+ #, c-format
  msgid ""
  "%s%s\n"
 -"By Björn Augustsson (d3august@dtek.chalmers.se)\n"
