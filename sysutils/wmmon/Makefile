@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/28 19:53:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2003/01/19 09:20:46 pvalchev Exp $
 
 COMMENT=	"WindowMaker dock app similar to xload"
 
 DISTNAME=	wmmon-1.0b2
 CATEGORIES=	sysutils x11 x11/windowmaker
 
-MASTER_SITES=	http://linux.tucows.com/files/x11/dock/
+MASTER_SITES=	ftp://ftp.deva.net/pub/sources/X11/windowmaker/dockapps/ \
+		ftp://ftp.cadvision.com/pub/linuxberg/files/x11/dock/
 
 MAINTAINER=	Vladimir Popov <pva48@mail.ru>
 
