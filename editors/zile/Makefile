@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/03 19:54:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/30 17:04:48 lebel Exp $
 
 COMMENT=		"zile is lossy emacs"
 
@@ -7,7 +7,6 @@ CATEGORIES=		editors
 
 HOMEPAGE=		http://zile.sourceforge.net/
 
-MAINTAINER=		Han Boetes <han@linux-mandrake.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

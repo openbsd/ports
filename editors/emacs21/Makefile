@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/12/31 08:38:24 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2004/01/30 17:04:48 lebel Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=			"hangs indefinitely until machine panics/hangs"
@@ -17,7 +17,6 @@ CATEGORIES=		editors
 
 HOMEPAGE=		http://www.gnu.org/software/emacs/
 
-MAINTAINER=		Han Boetes <han@linux-mandrake.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

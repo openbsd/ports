@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/29 15:12:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2004/01/30 17:04:48 lebel Exp $
 
 COMMENT=	"library for creating easy mail filters"
 
@@ -8,7 +8,6 @@ CATEGORIES=	mail perl5
 
 HOMEPAGE=	http://simon-cozens.org/writings/mail-audit.html
 
-MAINTAINER=	Han Boetes <han@mijncomputer.nl>
 
 # GPL/Artistic licence
 PERMIT_PACKAGE_CDROM=	Yes

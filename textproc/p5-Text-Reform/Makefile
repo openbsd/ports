@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/11/15 15:12:54 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/30 17:04:48 lebel Exp $
 
 COMMENT=		"perl module to formating plaintext"
 
@@ -7,7 +7,6 @@ PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		textproc perl5
 HOMEPAGE=		http://search.cpan.org/author/DCONWAY/${DISTNAME}/lib/Text/Reform.pm
 
-MAINTAINER=		Han Boetes <han@linux-mandrake.com>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 19:29:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2004/01/30 17:04:48 lebel Exp $
 
 COMMENT=		'wm-dockapp; audio mixer'
 
@@ -7,7 +7,6 @@ CATEGORIES=		audio x11 x11/windowmaker
 
 HOMEPAGE=		http://www.ne.jp/asahi/linux/timecop/
 
-MAINTAINER=		Han Boetes <han@mijncomputer.nl>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
