@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2003/12/07 20:19:14 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2003/12/08 02:19:43 brad Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -21,8 +21,6 @@ LIB_DEPENDS= 	png.2::graphics/png \
 SEPARATE_BUILD=	flavored
 # To investigate
 #CONFIGURE_ARGS=--enable-fast-malloc=full
-
-#BUILD_DEPENDS=	:qt3-html-*:x11/qt3,-html
 
 EXTRA_DIRECTORIES= \
 	share/applnk/Editors \
