@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2001/11/01 22:29:55 lebel Exp $
+# $OpenBSD: Makefile,v 1.24 2001/11/04 17:20:14 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 
 DISTNAME=	vim-6.0
-PKGNAME=	${DISTNAME}.64
+PKGNAME=	${DISTNAME}.70
 CATEGORIES=	editors
 NEED_VERSION=	1.487
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
@@ -25,7 +25,8 @@ MAINTAINER=	David Lebel <lebel@openbsd.org>
 
 .for p in 01 02 03 04 05 06 07 08 09 10 11 13 14 15 16 17 18 19 20 21 22 23 \
 	  24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 \
-	  46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64
+	  46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 \
+	  68 69 70
 PATCHFILES+=   6.0.0${p}:0
 .endfor
 
