@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/08/09 21:28:59 nino Exp $
+# $OpenBSD: Makefile,v 1.4 2002/12/23 04:56:05 marcm Exp $
 
 COMMENT=		"accessibility toolkit used by gtk+"
 
@@ -6,7 +6,7 @@ DISTNAME=		atk-1.0.3
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gtk.org
-MAINTAINER=		Nils Nordman <nino@openbsd.org>
+MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,7 +18,7 @@ MASTER_SITES=		ftp://ftp.gtk.org/pub/gtk/v2.0/
 EXTRACT_SUFX=           .tar.bz2
 
 MODULES=		gettext
-LIB_DEPENDS=		glib-2.0.=0,gmodule-2.0.=0,gobject-2.0.=0::devel/glib2
+LIB_DEPENDS=		glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2
 BUILD_DEPENDS=          :pkgconfig-*:devel/pkgconfig
 
 # library version (major:minor)
