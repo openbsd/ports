@@ -1,6 +1,21 @@
-$OpenBSD: patch-src_unix-gcc_mak,v 1.2 2004/05/31 16:23:25 sturm Exp $
---- src/unix-gcc.mak.orig	2002-04-20 00:23:09.000000000 +0200
-+++ src/unix-gcc.mak	2004-05-31 18:15:57.000000000 +0200
+$OpenBSD: patch-src_unix-gcc_mak,v 1.3 2005/01/23 01:41:48 brad Exp $
+--- src/unix-gcc.mak.orig	Fri Apr 19 18:23:09 2002
++++ src/unix-gcc.mak	Sat Jan 22 19:01:55 2005
+@@ -67,12 +67,12 @@ gsdatadir = $(gsdir)/$(GS_DOT_VERSION)
+ 
+ docdir=$(gsdatadir)/doc
+ exdir=$(gsdatadir)/examples
+-GS_DOCDIR=$(docdir)
++GS_DOCDIR=$(TRUEPREFIX)/share/ghostscript/$(GS_DOT_VERSION)/doc
+ 
+ # Define the default directory/ies for the runtime
+ # initialization and font files.  Separate multiple directories with a :.
+ 
+-GS_LIB_DEFAULT=$(gsdatadir)/lib:$(gsdir)/fonts
++GS_LIB_DEFAULT=$(TRUEPREFIX)/share/ghostscript/$(GS_DOT_VERSION)/lib:$(TRUEPREFIX)/share/ghostscript/fonts
+ 
+ # Define whether or not searching for initialization files should always
+ # look in the current directory first.  This leads to well-known security
 @@ -196,7 +196,7 @@ RANLIB=ranlib
  
  # Define the name of the C compiler.
