@@ -1,0 +1,49 @@
+cursory examination done by andrew@creep.net   18 Mar 1999
+
+./smbd/reply.c:1726:  pstrcpy(fname2,(char *)mktemp(fname));
+
+ ok - passed to open_file_shared() (./smbd/open.c:765)  with 
+      FILE_CREATE_IF_NOT_EXIST|FILE_EXISTS_FAIL which results in open() 
+      being called with O_CREAT|O_EXCL
+
+
+
+./smbd/reply.c:2881:	pstrcpy(fname2,(char *)mktemp(fname));
+
+ ok - passed to open_file_shared() (./smbd/open.c:765)  with 
+      FILE_CREATE_IF_NOT_EXIST|FILE_EXISTS_FAIL which results in open() 
+      being called with O_CREAT|O_EXCL
+
+
+
+./smbd/message.c:57:  fstrcpy(name,(char *)mktemp(s));
+
+ ok - the file is open()d with O_CREAT|O_EXCL
+
+
+
+./smbd/filename.c:419:      pstrcpy(name,(char *)mktemp(name2));	  
+
+  ?? - I wasn't able to tell where/if this was called from when the
+       conn->printer member would != 0, so I don't know what was done
+       with the returned name, if anything.  It's possible, though unlikely,
+       that there is a race in a caller of unix_convert().
+
+
+
+./smbwrapper/shared.c:40:	fstrcpy(name,(char *)mktemp(s));
+
+ ok - the file is open()d with O_CREAT|O_EXCL
+
+
+Also while investigating what I thought was a bug I found some behavior
+that I consider undesirable:
+
+      When a non-root user executes smbpasswd to change their password,
+      it makes a connection to smbd, instead of having smbpasswd be suid
+      root so it can modify the file.  This is fine, but the problem is 
+      that in order for it to work you must have enabled anonymous
+      access to smbd.  This seems to be intentional (see the code and
+      comment at libsmb/passchange.c:74) but it would be better to fix
+      smbd so that this is not necessary.
+

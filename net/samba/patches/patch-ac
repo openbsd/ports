@@ -1,19 +1,11 @@
-*** nmbd_packets.c.orig	Wed May 13 11:11:50 1998
---- nmbd_packets.c	Wed May 13 11:14:50 1998
-***************
-*** 337,343 ****
-    struct nmb_packet *nmb = &packet->packet.nmb;
-    fstring second_ip_buf;
-  
-!   fstrcpy(second_ip_buf, inet_ntoa(packet->ip));
-  
-    nmb->header.opcode = NMB_NAME_MULTIHOMED_REG_OPCODE;
-    nmb->header.arcount = 1;
---- 337,343 ----
-    struct nmb_packet *nmb = &packet->packet.nmb;
-    fstring second_ip_buf;
-  
-!   fstrcpy(second_ip_buf, (char *)inet_ntoa(packet->ip));
-  
-    nmb->header.opcode = NMB_NAME_MULTIHOMED_REG_OPCODE;
-    nmb->header.arcount = 1;
+--- configure.orig	Sat Feb 27 17:08:58 1999
++++ configure	Fri Mar 19 02:33:39 1999
+@@ -4160,7 +4160,7 @@
+ fi
+ done
+ 
+-for ac_func in initgroups select rdchk getgrnam pathconf setreuid setregid seteuid setegid
++for ac_func in initgroups select rdchk getgrnam pathconf seteuid setegid
+ do
+ echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
+ echo "configure:4167: checking for $ac_func" >&5

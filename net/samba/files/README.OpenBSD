@@ -7,6 +7,7 @@ Using samba package in OpenBSD environment:
    ...
    smbd=YES
    nmbd=YES
+   ...
 
 3. Edit /etc/rc.local file:
    echo -n 'starting local daemons:'
@@ -22,5 +23,25 @@ Using samba package in OpenBSD environment:
    ...
    echo '.'
 
+Steps 4 and 5 are only necessary if you want to enable swat (Samba 
+Web Administration Tool.)  Please note that administering the the 
+server with swat over a network is inadvisable as passwords are passed
+in the clear.  You can avoid this problem by using ssh forwarding to port
+901.
+
+4. add the following entry to /etc/inetd.conf:
+
+   ...
+   swat    stream  tcp     nowait.400      root    /usr/local/sbin/swat    swat
+   ...
+
+5. add the following entry to /etc/services:
+
+   ...
+   swat            901/tcp                 # samba admin service
+   ...
+
 See documentation files in /usr/local/share/doc/samba and example config
 files in /usr/local/share/examples/samba for more information.
+
+
