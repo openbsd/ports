@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/01/28 22:15:38 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2003/03/01 09:15:50 wilfried Exp $
 
 COMMENT=		"GUI client for MySQL"
 
@@ -20,8 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MyCC/ \
 			ftp://sunsite.dk/mirrors/mysql/Downloads/MyCC/ \
 			ftp://gd.tuwien.ac.at/db/mysql/Downloads/MyCC/ \
-			ftp://mysql.secsup.org/pub/software/mysql/Downloads/MyCC \
-			http://www.mysql.com/Downloads/MyCC/
+			ftp://mysql.secsup.org/pub/software/mysql/Downloads/MyCC
 
 MODQT_MT=		Yes
 MODULES=		qt3
