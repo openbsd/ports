@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/13 20:49:57 todd Exp $
+bin/gtop
+share/gnome/apps/System/gtop.desktop
+share/gnome/help/gtop/C/figs/gtop-fs-1.png
+share/gnome/help/gtop/C/figs/gtop-fs-2.png
+share/gnome/help/gtop/C/figs/gtop-mem.png
+share/gnome/help/gtop/C/figs/gtop-pic-bottom.png
+share/gnome/help/gtop/C/figs/gtop-pic-main.png
+share/gnome/help/gtop/C/figs/gtop-pic-middle.png
+share/gnome/help/gtop/C/figs/gtop-pic-top.png
+share/gnome/help/gtop/C/figs/gtop-prefs.png
+share/gnome/help/gtop/C/figs/gtop-proc.png
+share/gnome/help/gtop/C/topic.dat
+share/gtoprc
+share/pixmaps/gnome-gtop.png
+@dirrm share/gnome/help/gtop/C/figs
+@dirrm share/gnome/help/gtop/C
+@dirrm share/gnome/help/gtop

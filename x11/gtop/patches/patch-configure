@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2001/09/13 20:49:57 todd Exp $
+--- configure.orig	Sat Sep  8 16:31:35 2001
++++ configure	Sat Sep  8 16:31:53 2001
+@@ -4401,7 +4401,7 @@ fi
+ done
+ 
+ 
+-ALL_LINGUAS="az ca cs da de el es fr ga gl hu it ja ko lt no pt pt_BR ro ru sk sl sv pl tr uk zh_CN.GB2312 zh_TW.Big5"
++ALL_LINGUAS="az ca cs da de el es fr ga gl hu it ja ko lt no pt pt_BR ro ru sk sl sv pl tr uk zh_CN.GB2312"
+                               
+    for ac_hdr in argz.h limits.h locale.h nl_types.h malloc.h string.h \
+ unistd.h sys/param.h
