@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2000/07/25 20:53:10 danh Exp $
+# $OpenBSD: Makefile,v 1.36 2000/07/28 10:46:33 brad Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -104,6 +104,7 @@
 #    SUBDIR += portlint
      SUBDIR += prc-tools
 #    SUBDIR += prcs
+     SUBDIR += pth
 #    SUBDIR += sawt
 #    SUBDIR += scogdb
 #    SUBDIR += sfio
