@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.491 2001/11/11 13:57:32 heko Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.492 2001/11/12 01:27:26 pvalchev Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1359,7 +1359,7 @@ ${_BUILDLIBLIST}: ${_FAKE_COOKIE}
 		find /usr/lib -path /usr/lib -o -type d -prune -o -type f -print; \
 		find ${X11BASE}/lib -path ${X11BASE}/lib -o -type d -prune -o -type f -print; \
 	}|\
-		fgrep .so.|${SUDO} xargs file -L|fgrep 'shared library'|cut -d\: -f1|sort -u >$@
+		fgrep .so.|${SUDO} xargs file -L|fgrep 'shared'|cut -d\: -f1|sort -u >$@
 
 
 
