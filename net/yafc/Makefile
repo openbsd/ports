@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2002/05/15 17:42:25 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/06/07 10:59:22 avsm Exp $
 
 COMMENT=	"powerful console ftp client with many features"
 
-DISTNAME=	yafc-0.7.3
+DISTNAME=	yafc-0.7.10
 CATEGORIES=	net
 NEED_VERSION=	1.387
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=yafc/}
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes 
 
 CONFIGURE_STYLE= gnu
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/support
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/support
 CONFIGURE_ARGS=	--with-readline --with-catgets
 
 DOCS=	NEWS README TODO
