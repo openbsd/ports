@@ -1,0 +1,12 @@
+pptp-linux is an implementation of the PPTP protocol for Linux and
+other Unix systems.
+
+The code is released under the terms of the GPL; see the file COPYING
+for details.
+
+You can find notes on installing and using this package in the file
+${PREFIX}/share/doc/pptp/USING; design notes are in the Documentation 
+directory; and the standards documents used to implement pptp-linux 
+can be found in the Reference directory.
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,242 @@
+$OpenBSD: patch-pptc_ctrl_c,v 1.1.1.1 2000/12/21 14:04:01 reinhard Exp $ 
+$NetBSD: patch-ac,v 1.1.1.1 2000/04/10 01:14:02 jtk Exp $
+
+Index: pptp_ctrl.c
+--- pptp_ctrl.c.orig	1998/09/02 14:40:54
++++ pptp_ctrl.c	1999/02/12 14:23:29
+@@ -159,6 +159,7 @@
+       hton16(PPTP_MAX_CHANNELS), hton16(PPTP_FIRMWARE_VERSION), 
+       PPTP_HOSTNAME, PPTP_VENDOR
+     };
++    log("sending start ctrl conn rqst");
+     if (pptp_send_ctrl_packet(conn, &packet, sizeof(packet)))
+       conn->conn_state = CONN_WAIT_CTL_REPLY;
+     else return NULL; /* could not send initial start request. */
+@@ -211,6 +212,7 @@
+       hton32(PPTP_BEARER_CAP), hton32(PPTP_FRAME_CAP), 
+       hton16(PPTP_WINDOW), 0, 0, 0, {0}, {0}
+     };
++    log("sending out call rqst");
+     if (pptp_send_ctrl_packet(conn, &packet, sizeof(packet))) {
+       pptp_reset_timer();
+       call->state.pns = PNS_WAIT_REPLY;
+@@ -238,6 +240,7 @@
+    * requests to be made.
+    */
+ 
++  log("sending call clear rqst");
+   pptp_send_ctrl_packet(conn, &rqst, sizeof(rqst));
+   pptp_reset_timer();
+   call->state.pns = PNS_WAIT_DISCONNECT;
+@@ -272,7 +275,7 @@
+     pptp_call_close(conn, vector_get_Nth(conn->call, i));
+     
+   /* now close connection */
+-  log("Closing PPTP connection");
++  log("Closing PPTP connection (sending stop ctrl conn rqst)");
+   pptp_send_ctrl_packet(conn, &rqst, sizeof(rqst));
+   pptp_reset_timer(); /* wait 60 seconds for reply */
+   conn->conn_state = CONN_WAIT_STOP_REPLY;
+@@ -485,14 +488,27 @@
+ 	hton32(PPTP_FRAME_CAP), hton32(PPTP_BEARER_CAP),
+ 	hton16(PPTP_MAX_CHANNELS), hton16(PPTP_FIRMWARE_VERSION),
+ 	PPTP_HOSTNAME, PPTP_VENDOR };
++      log("received start conn rqst: v%d rcode %d ecode %d fcap %x bcap %x chans %d fw %x host `%.64s' vendor `%.64s'",
++	  ntoh16(packet->version),
++	  packet->result_code,
++	  packet->error_code,
++	  ntoh32(packet->framing_cap),
++	  ntoh32(packet->bearer_cap),
++	  ntoh16(packet->max_channels),
++	  ntoh16(packet->firmware_rev),
++	  packet->hostname,
++	  packet->vendor
++	  );
+       if (conn->conn_state == CONN_IDLE) {
+ 	if (ntoh16(packet->version) < PPTP_VERSION) {
+ 	  /* Can't support this (earlier) PPTP_VERSION */
+ 	  reply.version = packet->version;
+ 	  reply.result_code = hton8(5); /* protocol version not supported */
++	  log("sending start ctrl conn reply (NAK)");
+ 	  pptp_send_ctrl_packet(conn, &reply, sizeof(reply));
+ 	  pptp_reset_timer(); /* give sender a chance for a retry */
+ 	} else { /* same or greater version */
++	  log("sending start ctrl conn reply (ACK)");
+ 	  if (pptp_send_ctrl_packet(conn, &reply, sizeof(reply))) {
+ 	    conn->conn_state=CONN_ESTABLISHED;
+ 	    log("server connection ESTABLISHED.");
+@@ -506,6 +522,17 @@
+     {
+       struct pptp_start_ctrl_conn *packet = 
+ 	(struct pptp_start_ctrl_conn *) buffer;
++      log("received start conn reply: v%d rcode %d ecode %d fcap %x bcap %x chans %d fw %x host `%.64s' vendor `%.64s'",
++	  ntoh16(packet->version),
++	  packet->result_code,
++	  packet->error_code,
++	  ntoh32(packet->framing_cap),
++	  ntoh32(packet->bearer_cap),
++	  ntoh16(packet->max_channels),
++	  ntoh16(packet->firmware_rev),
++	  packet->hostname,
++	  packet->vendor
++	  );
+       if (conn->conn_state == CONN_WAIT_CTL_REPLY) {
+ 	/* XXX handle collision XXX [see rfc] */
+ 	if (ntoh16(packet->version) != PPTP_VERSION) {
+@@ -545,7 +572,14 @@
+ 	PPTP_HEADER_CTRL(PPTP_STOP_CTRL_CONN_RPLY), 
+ 	hton8(1), hton8(PPTP_GENERAL_ERROR_NONE), 0};
+ 
++      log("received stop conn rqst: reason %d err %d reserved %d",
++	  packet->reason_result,
++	  packet->error_code,
++	  ntoh16(packet->reserved1)
++	  );
++
+       if (conn->conn_state==CONN_IDLE) break;
++      log("sending stop ctrl conn reply");
+       if (pptp_send_ctrl_packet(conn, &reply, sizeof(reply))) {
+ 	if (conn->callback!=NULL) conn->callback(conn, CONN_CLOSE_RQST);
+ 	conn->conn_state=CONN_IDLE;
+@@ -560,6 +594,11 @@
+       /* conn_state should be CONN_WAIT_STOP_REPLY, but it 
+        * could be something else */
+ 
++      log("received stop conn reply: reason %d err %d reserved %d",
++	  packet->reason_result,
++	  packet->error_code,
++	  ntoh16(packet->reserved1)
++	  );
+       if (conn->conn_state == CONN_IDLE) break;
+       conn->conn_state=CONN_IDLE;
+       pptp_conn_destroy(conn);
+@@ -570,6 +609,12 @@
+     {
+       struct pptp_echo_rply *packet = 
+ 	(struct pptp_echo_rply *) buffer;
++      log("received echo rply: id %x result %d err %d reserved %d",
++	  ntoh32(packet->identifier),
++	  packet->result_code,
++	  packet->error_code,
++	  ntoh16(packet->reserved1)
++	  );
+       if ((conn->ka_state == KA_OUTSTANDING) && 
+ 	  (ntoh32(packet->identifier)==conn->ka_id)) {
+ 	conn->ka_id++;
+@@ -586,6 +631,10 @@
+ 	PPTP_HEADER_CTRL(PPTP_ECHO_RPLY), 
+ 	packet->identifier, /* skip hton32(ntoh32(id)) */
+ 	hton8(1), hton8(PPTP_GENERAL_ERROR_NONE), 0};
++      log("received echo rqst: id %x",
++	  ntoh32(packet->identifier)
++	  );
++      log("sending echo reply");
+       pptp_send_ctrl_packet(conn, &reply, sizeof(reply));
+       pptp_reset_timer();
+       break;
+@@ -600,8 +649,23 @@
+ 	0 /* callid */, packet->call_id, 1, PPTP_GENERAL_ERROR_NONE, 0,
+ 	hton32(PPTP_CONNECT_SPEED), 
+ 	hton16(PPTP_WINDOW), hton16(PPTP_DELAY), 0 };
++      log("received out call rqst: id %x csn %d minbps %d max %d bearer %x framing %x rsize %d delay %d plen %d rsv1 %d phone `%.64s' sub `%.64s'",
++	  ntoh16(packet->call_id),
++	  ntoh16(packet->call_sernum),
++	  ntoh32(packet->bps_min),
++	  ntoh32(packet->bps_max),
++	  ntoh32(packet->bearer),
++	  ntoh32(packet->framing),
++	  ntoh16(packet->recv_size),
++	  ntoh16(packet->delay),
++	  ntoh16(packet->phone_len),
++	  ntoh16(packet->reserved1),
++	  packet->phone_num,
++	  packet->subaddress
++	  );
+       /* XXX PAC: eventually this should make an outgoing call. XXX */
+       reply.result_code = hton8(7); /* outgoing calls verboten */
++      log("sending out call reply (NAK)");
+       pptp_send_ctrl_packet(conn, &reply, sizeof(reply));
+       break;
+     }
+@@ -611,6 +675,18 @@
+ 	(struct pptp_out_call_rply *)buffer;
+       PPTP_CALL * call;
+       u_int16_t callid = ntoh16(packet->call_id_peer);
++
++      log("received out call reply: id %x peer %d result %d err %d cause %x speed %d rsize %d delay %d channel %x",
++	  ntoh16(packet->call_id),
++	  ntoh16(packet->call_id_peer),
++	  packet->result_code,
++	  packet->error_code,
++	  ntoh16(packet->cause_code),
++	  ntoh32(packet->speed),
++	  ntoh16(packet->recv_size),
++	  ntoh16(packet->delay),
++	  ntoh32(packet->channel)
++	  );
+       if (!vector_search(conn->call, (int) callid, &call)) {
+ 	log("PPTP_OUT_CALL_RPLY received for non-existant call.");
+ 	break;
+@@ -634,7 +710,9 @@
+ 	  call->speed        = ntoh32(packet->speed);
+ 	  pptp_reset_timer();
+ 	  if (call->callback!=NULL) call->callback(conn, call, CALL_OPEN_DONE);
+-	  log("Outgoing call established.\n");
++	  log("Outgoing call established: cid %d @ %d bps.\n",
++	      call->peer_call_id,
++	      call->speed);
+ 	}
+       }
+       break;
+@@ -650,10 +728,15 @@
+ 	PPTP_HEADER_CTRL(PPTP_CALL_CLEAR_NTFY), packet->call_id,
+ 	1, PPTP_GENERAL_ERROR_NONE, 0, 0, {0}
+       };
++      log("received call clear rqst: cid %d reserved %d",
++	  ntoh16(packet->call_id),
++	  ntoh16(packet->reserved1)
++	  );
+       if (vector_contains(conn->call, ntoh16(packet->call_id))) {
+ 	PPTP_CALL * call;
+ 	vector_search(conn->call, ntoh16(packet->call_id), &call);
+ 	if (call->callback!=NULL) call->callback(conn, call, CALL_CLOSE_RQST);
++	log("sending call clear ntfy");
+ 	pptp_send_ctrl_packet(conn, &reply, sizeof(reply));
+ 	pptp_call_destroy(conn, call);
+ 	log("Call closed (RQST) (call id %d)", (int) call->call_id);
+@@ -664,6 +747,14 @@
+     {
+       struct pptp_call_clear_ntfy *packet =
+ 	(struct pptp_call_clear_ntfy *)buffer;
++      log("received call clear ntfy: cid %d result %d err %d cause %x reserved %d",
++	  ntoh16(packet->call_id),
++	  packet->result_code,
++	  packet->error_code,
++	  ntoh16(packet->cause_code),
++	  ntoh16(packet->reserved1)
++	  );
++
+       if (vector_contains(conn->call, ntoh16(packet->call_id))) {
+ 	PPTP_CALL * call;
+ 	vector_search(conn->call, ntoh16(packet->call_id), &call);
+@@ -679,6 +770,12 @@
+       /* this is really dealt with in the HDLC deencapsulation, anyway. */
+       struct pptp_set_link_info *packet =
+ 	(struct pptp_set_link_info *)buffer;
++      log("received set link info: peer %x res %d send %x recv %x\n",
++	  ntoh16(packet->call_id_peer),
++	  ntoh16(packet->reserved1),
++	  ntoh32(packet->send_accm),
++	  ntoh32(packet->recv_accm)
++	  );
+       if (ntoh32(packet->send_accm)==0 && ntoh32(packet->recv_accm)==0)
+ 	break; /* this is what we expect. */
+       /* log it, otherwise. */
+@@ -752,6 +849,7 @@
+   else { /* ka_state == NONE */ /* send keep-alive */
+     struct pptp_echo_rqst rqst = {
+       PPTP_HEADER_CTRL(PPTP_ECHO_RQST), hton32(global.conn->ka_id) };
++    log("sending echo request: %d", global.conn->ka_id);
+     pptp_send_ctrl_packet(global.conn, &rqst, sizeof(rqst));
+     global.conn->ka_state = KA_OUTSTANDING;
+     /* XXX FIXME: wake up ctrl thread -- or will the SIGALRM do that

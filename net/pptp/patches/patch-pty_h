@@ -1,0 +1,29 @@
+$OpenBSD: patch-pty_h,v 1.1.1.1 2000/12/21 14:04:09 reinhard Exp $ 
+$NetBSD: patch-ae,v 1.1.1.1 2000/04/10 01:14:02 jtk Exp $
+
+Index: pty.h
+--- pty.h.orig	1998/09/02 14:40:55
++++ pty.h	1998/09/03 13:33:54
+@@ -19,6 +19,22 @@
+ #define PTYCHAR2	"0123456789abcdef"
+ #endif
+ 
++#ifdef __OpenBSD__
++#define PTYDEV	"/dev/ptyxx"
++#define TTYDEV	"/dev/ttyxx"
++
++#define PTYMAX  (strlen(PTYDEV)+1)
++#define TTYMAX  (strlen(TTYDEV)+1)
++
++#ifdef __i386__
++/* PCVT conflicts with ttyv*. */
++#define PTYCHAR1 "pqrstuwxyzPQRST"
++#else
++#define PTYCHAR1 "pqrstuvwxyzPQRST"
++#endif
++#define PTYCHAR2	"0123456789abcdef"
++#endif
++
+ /* Get pty/tty pair, put filename in ttydev, ptydev (which must be
+  * at least PTYMAX characters long), and return file descriptor of
+  * open pty.

@@ -1,0 +1,59 @@
+$OpenBSD: patch-pptc_c,v 1.1.1.1 2000/12/21 14:04:09 reinhard Exp $ 
+$NetBSD: patch-ab,v 1.1.1.1 2000/04/10 01:14:02 jtk Exp $
+
+Index: pptp.c
+--- pptp.c.orig	1998/09/02 14:40:54
++++ pptp.c	1999/02/12 14:23:28
+@@ -71,6 +71,8 @@
+   /* Step 1: Get IP address for the hostname in argv[1] */
+   inetaddr = get_ip_address(argv[1]);
+ 
++  log("using remote IP address %s\n", inet_ntoa(inetaddr));
++
+   /* Step 2: Open connection to call manager
+    *         (Launch call manager if necessary.)
+    */
+@@ -127,8 +129,8 @@
+   }
+ 
+   /* Step 6: Do GRE copy until close. */
+-  pptp_gre_copy(call_id, peer_call_id, pty_fd, inetaddr);
+-
++  pptp_gre_copy(peer_call_id, call_id, pty_fd, inetaddr);
++ 
+ shutdown:
+   /* on close, kill all. */
+   kill(parent_pid, SIGTERM);
+@@ -140,13 +142,14 @@
+ struct in_addr get_ip_address(char *name) {
+   struct in_addr retval;
+   struct hostent *host = gethostbyname(name);
+-  if (host==NULL)
++  if (host==NULL) {
+     if (h_errno == HOST_NOT_FOUND)
+       fatal("gethostbyname: HOST NOT FOUND");
+     else if (h_errno == NO_ADDRESS)
+       fatal("gethostbyname: NO IP ADDRESS");
+     else
+       fatal("gethostbyname: name server error");
++  }
+   
+   if (host->h_addrtype != AF_INET)
+     fatal("Host has non-internet address");
+@@ -239,9 +242,14 @@
+   new_argv[0] = PPPD_BINARY;
+   new_argv[1] = ttydev;
+   new_argv[2] = "38400";
+-  for (i=0; i<argc; i++)
+-    new_argv[i+3] = argv[i];
++  fprintf(stderr, "running pppd: %s %s %s", new_argv[0], new_argv[1], new_argv[2]);
++  for (i=0; i<argc; i++) {
++      fprintf(stderr, " %s", argv[i]);
++      new_argv[i+3] = argv[i];
++  }
++  fprintf(stderr, "\n");
+   new_argv[i+3] = NULL;
++  
+   execvp(new_argv[0], new_argv);
+ }
+ 

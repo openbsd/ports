@@ -1,0 +1,15 @@
+$OpenBSD: patch-util_c,v 1.1.1.1 2000/12/21 14:04:09 reinhard Exp $ 
+$NetBSD: patch-af,v 1.1.1.1 2000/04/10 01:14:02 jtk Exp $
+
+Index: util.c
+--- util.c.orig	1998/09/02 14:40:55
++++ util.c	2000/04/09 23:24:53
+@@ -18,7 +18,7 @@
+ static void close_log(void) __attribute__ ((destructor));
+ 
+ static void open_log(void) {
+-  openlog(PROGRAM_NAME, LOG_PERROR | LOG_PID, LOG_DAEMON);
++  openlog(PROGRAM_NAME, /* LOG_PERROR | (too noisy!) */ LOG_PID, LOG_DAEMON);
+ }
+ static void close_log(void) {
+   closelog();

@@ -1,0 +1,11 @@
+Documentation has been installed in ${PREFIX}/share/doc/pptp/.
+
+A reconnect-script has been installed as ${PREFIX}/sbin/pptp-reconnect, 
+edit it to reflect your environment.
+
+Next, setup /etc/ppp/{options,pap-secrets} with information provided 
+by your ISP.
+
+If you get "LCP timeout sending config request" messages, build a 
+kernel without "GRE encapsulation interface" support.
+(NB: look in /usr/src/sys/conf/GENERIC for "pseudo-device   gre     1".)
