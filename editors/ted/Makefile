@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2004/11/24 11:08:03 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2005/02/15 10:20:24 espie Exp $
 
 
 COMMENT=	"X11 based RTF editor"
-V=		2.14
+V=		2.17
 DISTNAME=	ted-$V
 CATEGORIES=	editors textproc print
 HOMEPAGE=	http://www.nllgg.nl/Ted/
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-WANTLIB=		ICE SM X11 Xext Xmu Xpm Xt c m z
+WANTLIB=		ICE SM X11 Xext Xmu Xpm Xp Xt c m z
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
