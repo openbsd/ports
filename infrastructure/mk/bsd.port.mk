@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.229 2000/03/19 16:04:19 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.230 2000/03/19 16:11:41 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1959,7 +1959,7 @@ depends: lib-depends misc-depends fetch-depends build-depends run-depends
 ${_DEP}-depends:
 .    if defined(${_DEP:U}_DEPENDS) && !defined(NO_DEPENDS)
 	@PATH=${PORTPATH}; \
-	for i in ${${_DEP:U}_DEPENDS}; do \
+	for i in ${${_DEP:U}_DEPENDS:S,::,:,}; do \
 		cd ${PORTSDIR}; \
 		prog=`echo $$i | sed -e 's/:.*//'`; \
 		dir=`echo $$i | sed -e 's/[^:]*://'`; \
@@ -2003,7 +2003,7 @@ ${_DEP}-depends:
 lib-depends:
 .  if defined(LIB_DEPENDS) && !defined(NO_DEPENDS)
 .    if defined(NO_SHARED_LIBS)
-	@for i in ${LIB_DEPENDS}; do \
+	@for i in ${LIB_DEPENDS:S,::,:,}; do \
 		cd ${PORTSDIR}; \
 		lib=`echo $$i | sed -e 's/:.*//' -e 's|\([^\\]\)[\\\.].*|\1|'`; \
 		dir=`echo $$i | sed -e 's/[^:]*://'`; \
@@ -2032,7 +2032,7 @@ lib-depends:
 		rm -f $$tmp; \
 	done
 .    else
-	@for i in ${LIB_DEPENDS}; do \
+	@for i in ${LIB_DEPENDS:S,::,:,}; do \
 		cd ${PORTSDIR}; \
 		lib=`echo $$i | sed -e 's/:.*//' -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
 		dir=`echo $$i | sed -e 's/[^:]*://'`; \
@@ -2064,7 +2064,7 @@ lib-depends:
 
 misc-depends:
 .  if defined(DEPENDS) && !defined(NO_DEPENDS)
-	@for dir in ${DEPENDS}; do \
+	@for dir in ${DEPENDS:S,::,:,}; do \
 		cd ${PORTSDIR}; \
 		if expr "$$dir" : '.*:' > /dev/null; then \
 			target=`echo $$dir | sed -e 's/.*://'`; \
@@ -2090,17 +2090,17 @@ misc-depends:
 # Internal variables, used by dependencies targets 
 
 .if defined(LIB_DEPENDS) || defined(DEPENDS)
-_ALWAYS_DEP = ${LIB_DEPENDS:C/^[^:]*://:C/:.*//} \
-	${DEPENDS:C/:.*//} 
+_ALWAYS_DEP = ${LIB_DEPENDS:S,::,:,:C/^[^:]*://:C/:.*//} \
+	${DEPENDS:S,::,:,:C/:.*//} 
 .endif
 
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS)
-_BUILD_DEP = ${FETCH_DEPENDS:C/^[^:]*://:C/:.*//} \
-	${BUILD_DEPENDS:C/^[^:]*://:C/:.*//}
+_BUILD_DEP = ${FETCH_DEPENDS:S,::,:,:C/^[^:]*://:C/:.*//} \
+	${BUILD_DEPENDS:S,::,:,:C/^[^:]*://:C/:.*//}
 .endif
 
 .if defined(RUN_DEPENDS)
-_RUN_DEP = ${RUN_DEPENDS:C/^[^:]*://:C/:.*//}
+_RUN_DEP = ${RUN_DEPENDS:S,::,:,:C/^[^:]*://:C/:.*//}
 .endif
 
 .if !target(clean-depends)
