@@ -20,9 +20,7 @@ man/man1/runsocks.1
 man/man1/socks5_clients.1
 man/man5/libsocks5.conf.5
 man/man5/socks5.conf.5
-man/man5/socks5.conf.5.orig
 man/man5/socks5.passwd.5
-man/man5/socks5.passwd.5.orig
 man/man8/socks5.8
 man/man8/stopsocks.8
 sbin/rping
@@ -33,5 +31,5 @@ share/doc/socks/rfc1928.txt
 share/doc/socks/rfc1929.txt
 share/doc/socks/rfc1961.txt
 share/doc/socks/socks.faq
-@dirrm share/doc/socks
 @dirrm lib/socks
+@dirrm share/doc/socks
