@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/07/10 20:48:13 avsm Exp $
+# $OpenBSD: Makefile,v 1.8 2002/07/19 10:49:19 shell Exp $
 
 COMMENT=	"library for parsing and formatting dates and times"
 
-DISTNAME=	TimeDate-1.10
+DISTNAME=	TimeDate-1.1301
 PKGNAME=	p5-Time-${DISTNAME}
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Time/}
 
 PERMIT_PACKAGE_CDROM=	Yes

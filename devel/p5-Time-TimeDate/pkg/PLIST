@@ -1,17 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:04 espie Exp $
-libdata/perl5/site_perl/Date/Format.pm
-libdata/perl5/site_perl/Date/Language.pm
-libdata/perl5/site_perl/Date/Language/Austrian.pm
-libdata/perl5/site_perl/Date/Language/Czech.pm
-libdata/perl5/site_perl/Date/Language/Dutch.pm
-libdata/perl5/site_perl/Date/Language/English.pm
-libdata/perl5/site_perl/Date/Language/French.pm
-libdata/perl5/site_perl/Date/Language/German.pm
-libdata/perl5/site_perl/Date/Language/Italian.pm
-libdata/perl5/site_perl/Date/Language/Norwegian.pm
-libdata/perl5/site_perl/Date/Parse.pm
-libdata/perl5/site_perl/Time/Zone.pm
+@comment $OpenBSD: PLIST,v 1.4 2002/07/19 10:49:19 shell Exp $
+${P5SITE}/Date/Format.pm
+${P5SITE}/Date/Language.pm
+${P5SITE}/Date/Language/Austrian.pm
+${P5SITE}/Date/Language/Czech.pm
+${P5SITE}/Date/Language/Dutch.pm
+${P5SITE}/Date/Language/English.pm
+${P5SITE}/Date/Language/French.pm
+${P5SITE}/Date/Language/German.pm
+${P5SITE}/Date/Language/Italian.pm
+${P5SITE}/Date/Language/Norwegian.pm
+${P5SITE}/Date/Parse.pm
+${P5SITE}/Time/Zone.pm
 man/man3p/Date::Format.3p
 man/man3p/Date::Parse.3p
 man/man3p/Time::Zone.3p
-@dirrm libdata/perl5/site_perl/Date/Language
+@dirrm ${P5SITE}/Date/Language
