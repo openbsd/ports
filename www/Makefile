@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2004/06/30 08:30:09 kevlo Exp $
+# $OpenBSD: Makefile,v 1.144 2004/07/11 06:56:21 jolan Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -49,6 +49,7 @@
      SUBDIR += mhonarc
      SUBDIR += mindterm
 #    SUBDIR += mmm
+     SUBDIR += mod_auth_bsd
      SUBDIR += mod_auth_ldap
      SUBDIR += mod_auth_mysql
      SUBDIR += mod_auth_radius
