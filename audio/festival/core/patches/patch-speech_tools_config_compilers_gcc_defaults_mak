@@ -1,0 +1,22 @@
+$OpenBSD: patch-speech_tools_config_compilers_gcc_defaults_mak,v 1.1 2004/07/11 06:27:07 jolan Exp $
+--- speech_tools/config/compilers/gcc_defaults.mak.orig	2002-11-29 07:34:50.000000000 -0600
++++ speech_tools/config/compilers/gcc_defaults.mak	2004-05-06 15:00:52.000000000 -0500
+@@ -38,14 +38,14 @@
+  ##                                                                       ##
+  ###########################################################################
+ 
+-CC=gcc
+-CXX =gcc
++#CC=gcc
++#CXX =gcc
+ 
+ COMPILER_DESC=FSF gcc
+ COMPILER_VERSION_COMMAND=$(CXX) -v 2>&1 | tail -1 | sed -e 's/^....//'
+ 
+-CFLAGS  = $(GCC_SYSTEM_OPTIONS) $(CC_OTHER_FLAGS)
+-CXXFLAGS  =  $(GCC_SYSTEM_OPTIONS) -fno-implicit-templates $(CC_OTHER_FLAGS)
++CFLAGS += $(GCC_SYSTEM_OPTIONS) $(CC_OTHER_FLAGS)
++CXXFLAGS += $(GCC_SYSTEM_OPTIONS) -fno-implicit-templates $(CC_OTHER_FLAGS)
+ 
+ DEBUG_CCFLAGS   = -g
+ DEBUG_CXXFLAGS  = -g

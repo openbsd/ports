@@ -1,0 +1,24 @@
+$OpenBSD: patch-festival_doc_Makefile,v 1.1 2004/07/11 06:27:07 jolan Exp $
+--- festival/doc/Makefile.orig	2001-04-04 06:55:21.000000000 -0500
++++ festival/doc/Makefile	2004-05-06 16:04:24.000000000 -0500
+@@ -44,7 +44,7 @@ MAIN_TO_DOCUMENT=
+ 
+ EXAMPLE_TO_DOCUMENT=
+ 
+-FESTIVAL=$(TOP)/bin/festival --libdir $(TOP)/lib
++FESTIVAL=$(TOP)/src/main/festival --libdir $(TOP)/lib
+ 
+ # Include some of EST documentation.
+ DOCXX_EXTRA_FILES = 
+@@ -72,9 +72,9 @@ include $(EST)/config/rules/doc.mak
+ %.1 : %.head %.options %.tail 
+ 	cat $^ >$@
+ %.options : $(TOP)/src/main/%
+-	$(TOP)/bin/$* -man_options >$@
++	$(FESTIVAL)$* -man_options >$@
+ %.options : $(TOP)/src/main/%.exe
+-	$(TOP)/bin/$* -man_options >$@
++	$(FESTIVAL)$* -man_options >$@
+ 
+ festival.info: festival.texi festfunc.texi festvars.texi festfeat.texi
+ 	@ if [ ! -d info ] ; \

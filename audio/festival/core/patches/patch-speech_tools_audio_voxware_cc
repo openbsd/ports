@@ -1,0 +1,30 @@
+$OpenBSD: patch-speech_tools_audio_voxware_cc,v 1.1 2004/07/11 06:27:07 jolan Exp $
+--- speech_tools/audio/voxware.cc.orig	2002-12-02 08:14:58.000000000 -0600
++++ speech_tools/audio/voxware.cc	2004-05-13 21:13:03.000000000 -0500
+@@ -61,7 +61,7 @@
+ #include "EST_error.h"
+ 
+ #ifdef SUPPORT_FREEBSD16
+-#include <machine/soundcard.h>
++#include <soundcard.h>
+ #include <fcntl.h>
+ int freebsd16_supported = TRUE;
+ int linux16_supported = FALSE;
+@@ -150,7 +150,7 @@ int play_voxware_wave(EST_Wave &inwave, 
+     if (al.present("-audiodevice"))
+ 	audiodevice = al.val("-audiodevice");
+     else
+-	audiodevice = "/dev/dsp";
++	audiodevice = "/dev/audio";
+ 
+     if ((audio = open(audiodevice,O_WRONLY)) == -1)
+     {
+@@ -262,7 +262,7 @@ int record_voxware_wave(EST_Wave &inwave
+     if (al.present("-audiodevice"))
+ 	audiodevice = al.val("-audiodevice");
+     else
+-	audiodevice = "/dev/dsp";
++	audiodevice = "/dev/audio";
+ 
+     sample_rate = al.ival("-sample_rate");
+     

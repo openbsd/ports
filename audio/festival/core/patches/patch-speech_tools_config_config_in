@@ -1,0 +1,30 @@
+$OpenBSD: patch-speech_tools_config_config_in,v 1.1 2004/07/11 06:27:07 jolan Exp $
+--- speech_tools/config/config.in.orig	2002-07-22 17:58:44.000000000 -0500
++++ speech_tools/config/config.in	2004-05-06 14:57:04.000000000 -0500
+@@ -28,7 +28,7 @@ EST_HOME := $(shell (cd $(EST); pwd))
+ ## 
+ ## Examples: sparc_SunOS5 intel_Linux2.0
+ 
+-SYSTEM_TYPE=$(MACHINETYPE)_$(OSTYPE)$(OSREV)
++SYSTEM_TYPE=OpenBSD
+ 
+ ###########################################################################
+ ## Compiler.
+@@ -56,7 +56,7 @@ CONFIGURATION = 
+ ##
+ ## OPTIMISE=4 will turn off DEBUG
+ 
+-OPTIMISE=3
++#OPTIMISE=3
+ WARN=1
+ # VERBOSE=1
+ # DEBUG=1
+@@ -65,7 +65,7 @@ WARN=1
+ 
+ ## Directory specific selections which override the above
+ 
+-OPTIMISE_sigpr = 3
++#OPTIMISE_sigpr = 3
+ 
+ ###########################################################################
+ ## Feature selection.

@@ -1,0 +1,17 @@
+@comment $OpenBSD: PFRAG.ogi,v 1.1 2004/07/11 06:27:08 jolan Exp $
+lib/festival/ogi_effect.scm
+lib/festival/ogi_enhance.scm
+lib/festival/ogi_gswdurtreeZ_wb.scm
+lib/festival/ogi_hack.scm
+lib/festival/ogi_kddurtreeZ_wb.scm
+lib/festival/ogi_klatt_durs_wb.scm
+lib/festival/ogi_languages.scm
+lib/festival/ogi_lexicons.scm
+lib/festival/ogi_lts_worldbet.scm
+lib/festival/ogi_phrase.scm
+lib/festival/ogi_postlex.scm
+lib/festival/ogi_synthesis.scm
+lib/festival/ogi_token.scm
+lib/festival/ogi_unitsel.scm
+lib/festival/ogi_wordsynth.scm
+lib/festival/ogi_worldbet_phones.scm
