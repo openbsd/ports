@@ -1,7 +1,7 @@
-$OpenBSD: patch-libdha_Makefile,v 1.4 2002/05/14 03:05:31 pvalchev Exp $
---- libdha/Makefile.orig	Sat Feb  2 13:14:56 2002
-+++ libdha/Makefile	Mon May 13 19:29:51 2002
-@@ -7,27 +7,36 @@ VERSION = 0.1
+$OpenBSD: patch-libdha_Makefile,v 1.5 2002/05/15 22:27:01 pvalchev Exp $
+--- libdha/Makefile.orig	Sun May 12 04:18:50 2002
++++ libdha/Makefile	Wed May 15 00:45:06 2002
+@@ -7,9 +7,13 @@ VERSION = 0.1
  ifeq ($(TARGET_OS),CYGWIN)
  SHORTNAME = libdha.dll
  else
@@ -16,13 +16,13 @@ $OpenBSD: patch-libdha_Makefile,v 1.4 2002/05/14 03:05:31 pvalchev Exp $
  
  SRCS=libdha.c mtrr.c pci.c pci_names.c
  OBJS=$(SRCS:.c=.o)
- 
+@@ -17,21 +21,22 @@ OBJS=$(SRCS:.c=.o)
  CFLAGS  = $(OPTFLAGS) -fPIC -I. -I.. -Wall -W
-+LIBS = 
-+ifeq ($(TARGET_OS),OpenBSD)
+ LIBS = 
+ ifeq ($(TARGET_OS),OpenBSD)
 +ifeq ($(TARGET_ARCH_X86),yes)
-+LIBS += -li386
-+endif
+ LIBS += -li386
+ endif
 +endif
  
  .SUFFIXES: .c .o
@@ -34,28 +34,22 @@ $OpenBSD: patch-libdha_Makefile,v 1.4 2002/05/14 03:05:31 pvalchev Exp $
 +	PATH=/bin:/usr/bin $(CC) -c $(CFLAGS) -o $@ $<
  
  $(LIBNAME):     $(OBJS)
--	$(CC) -shared -o $(LIBNAME) $(OBJS)
+ 	$(CC) -shared -o $(LIBNAME) $(OBJS) $(LIBS)
 -	ln -sf $(LIBNAME) $(SHORTNAME)
-+	$(CC) -shared -o $(LIBNAME) $(OBJS) $(LIBS)
  
 -all:    $(LIBNAME) $(SHORTNAME)
 +all:    $(LIBNAME)
  
  pci_names.c:
  	gzip -d -c oth/pci.db.gz >pci.db
-@@ -52,10 +61,12 @@ install:
+@@ -55,8 +60,8 @@ depend:
+ install:
  	mkdir -p $(prefix)/lib
  	install -m 755 -s -p $(LIBNAME) $(prefix)/lib/$(LIBNAME)
- 	rm -f $(prefix)/lib/libdha.so
--	ln -sf $(LIBNAME) $(prefix)/lib/libdha.so
+-	rm -f $(prefix)/lib/libdha.so
+-	ln -sf $(LIBNAME) $(prefix)/lib/$(SHORTNAME)
++#	rm -f $(prefix)/lib/libdha.so
 +#	ln -sf $(LIBNAME) $(prefix)/lib/$(SHORTNAME)
-+ifeq ($(TARGET_OS),OpenBSD)
-+	ldconfig -R
-+else
- 	ldconfig
--
--#
-+endif #
- # include dependency files if they exist
- #
- ifneq ($(wildcard .depend),)
+ ifeq ($(TARGET_OS),OpenBSD)
+ 	ldconfig -R
+ else

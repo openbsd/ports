@@ -1,18 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2002/05/14 03:05:31 pvalchev Exp $
---- configure.orig	Sat May  4 00:13:06 2002
-+++ configure	Mon May 13 19:44:26 2002
-@@ -1390,8 +1390,8 @@ if test "$_malloc" = yes ; then
- else
-   _def_malloc='#undef HAVE_MALLOC_H'
- fi
--# malloc.h emits a warning in FreeBSD
--freebsd && _def_malloc='#undef HAVE_MALLOC_H'
-+# malloc.h emits a warning in FreeBSD and OpenBSD
-+freebsd || openbsd && _def_malloc='#undef HAVE_MALLOC_H'
- echores "$_malloc"
- 
- 
-@@ -1522,7 +1522,7 @@ else
+$OpenBSD: patch-configure,v 1.6 2002/05/15 22:27:01 pvalchev Exp $
+--- configure.orig	Mon May 13 22:52:10 2002
++++ configure	Wed May 15 00:26:49 2002
+@@ -1538,7 +1538,7 @@ else
  fi
  echores "$_sys_soundcard"
  
@@ -21,7 +10,7 @@ $OpenBSD: patch-configure,v 1.5 2002/05/14 03:05:31 pvalchev Exp $
  echocheck "soundcard.h"
  cat > $TMPC << EOF
  #include <soundcard.h>
-@@ -2500,6 +2500,7 @@ if test "$_ossaudio" = yes ; then
+@@ -2591,6 +2591,7 @@ if test "$_ossaudio" = yes ; then
    else
       if netbsd || openbsd ; then
         _def_ossaudio_devdsp='#define PATH_DEV_DSP "/dev/sound"'
@@ -29,20 +18,15 @@ $OpenBSD: patch-configure,v 1.5 2002/05/14 03:05:31 pvalchev Exp $
       else
         _def_ossaudio_devdsp='#define PATH_DEV_DSP "/dev/dsp"'
       fi
-@@ -3522,8 +3523,10 @@ test "$_xanim" = yes && _ld_dl_dynamic='
- 
+@@ -3614,7 +3615,6 @@ test "$_xanim" = yes && _ld_dl_dynamic='
  _ld_arch="$_ld_arch $_ld_pthread $_ld_dl $_ld_dl_dynamic"
  bsdos && _ld_arch="$_ld_arch -ldvd"
--netbsd && _ld_arch="$_ld_arch -li386 -lossaudio"
--openbsd && _ld_arch="$_ld_arch -li386 -lossaudio"
-+
-+if netbsd || openbsd ; then
-+  x86  && _ld_arch="$_ld_arch -li386"
-+fi
+ if netbsd || openbsd ; then
+-  _ld_arch="$_ld_arch -lossaudio"
+   x86 && _ld_arch="$_ld_arch -li386"
+ fi
  
- _def_debug='#undef MP_DEBUG'
- test "$_debug" && _def_debug='#define MP_DEBUG 1'
-@@ -3590,11 +3593,10 @@ cat > config.mak << EOF
+@@ -3683,10 +3683,10 @@ cat > config.mak << EOF
  
  LANG = C
  TARGET_OS = $system_name
@@ -50,11 +34,10 @@ $OpenBSD: patch-configure,v 1.5 2002/05/14 03:05:31 pvalchev Exp $
 -DATADIR = $_datadir
 -CONFDIR = $_confdir
 -LIBDIR = $_libdir
--AR = ar
 +prefix = \$(DESTDIR)$_prefix
 +DATADIR = \$(DESTDIR)$_datadir
 +CONFDIR = \$(DESTDIR)$_confdir
 +LIBDIR = \$(DESTDIR)$_libdir
+ #AR = ar
  CC = $_cc
  AWK = $_awk
- # OPTFLAGS = -O4 $_profile $_debug $_march $_mcpu -pipe -fomit-frame-pointer -ffast-math
