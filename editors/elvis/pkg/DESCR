@@ -5,3 +5,6 @@ interfaces, and a variety of display modes including plain text,
 syntax highlighting, hex dump, HTML and man page formatter.
 
 WWW: ${HOMEPAGE}
+
+Available flavors:
+	no_x11  - build without X11 support

@@ -11,3 +11,6 @@ in performance.  In addition, "sh" scripts can be run on KSH-93
 without modification.
 
 WWW: ${HOMEPAGE}
+
+Available flavors:
+	static  - link statically
