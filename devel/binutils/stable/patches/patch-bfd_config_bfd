@@ -37,7 +37,7 @@
      targ_underscore=yes
      ;;
 -  sparc-*-openbsd*)
-+  sparc*-*-openbsd[01].* | sparc*-*-openbsd2.[0-9] | sparc*-*-openbsd3.[0-1])
++  sparc-*-openbsd[0-2].* | sparc-*-openbsd3.[0-1])
      targ_defvec=sparcnetbsd_vec
      targ_underscore=yes
      ;;
