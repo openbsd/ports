@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.43 2004/08/05 23:43:45 espie Exp $
+# $OpenBSD: make-plist,v 1.44 2004/08/05 23:51:44 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -91,8 +91,7 @@ sub copy_extra
 {
 	my ($self, $plist) = @_;
 
-	my $o = $self->clone();
-	$o->add_object($plist);
+	$self->clone()->add_object($plist);
 	if ($self->{name} eq "SHARED") {
 		$plist->{hasshared} = 1;
 	}
@@ -203,7 +202,7 @@ sub copy_extra
 	if ($self->{cwd} ne $plist->{state}->{cwd}) {
 	    OpenBSD::PackingElement::Cwd->add($plist, $self->{cwd});
 	}
-	OpenBSD::PackingElement::Extra->add($plist, $self->{name});
+	$self->clone()->add_object($plist);
 	$plist->{nonempty} = 1;
 }
 
@@ -213,7 +212,7 @@ sub copy_extra
 	my ($self, $plist) = @_;
 
 	# don't try to deal with cwd issues
-	OpenBSD::PackingElement::ExtraUnexec->add($plist, $self->{name});
+	$self->clone()->add_object($plist);
 	$plist->{nonempty} = 1;
 }
 
@@ -560,7 +559,7 @@ for my $plist (@l) {
 	if (defined $orig and 
 	    defined $orig->{cvstags}) {
 		for my $tag (@{$orig->{cvstags}}) {
-			OpenBSD::PackingElement::CVSTag->add($plist, $tag->{name});
+			$tag->clone()->add_object($plist);
 		}
 	} else {
 	    OpenBSD::PackingElement::CVSTag->add($plist, '$OpenBSD'.'$');
@@ -574,7 +573,7 @@ for my $plist (@l) {
 		}
 		if (defined $orig->{pkgcfl}) {
 			for my $cfl (@{$orig->{pkgcfl}}) {
-				OpenBSD::PackingElement::PkgConflict->add($plist, $cfl->{name});
+				$cfl->clone()->add_object($plist);
 				$plist->{nonempty} = 1;
 			}
 		}
@@ -690,8 +689,7 @@ for my $i (sort keys %$files) {
 		if (defined $item) {
 			if (defined $item->{tags}) {
 				for my $t (@{$item->{tags}}) {
-					my $c = $t->clone();
-					$c->add_object($p);
+					$t->clone()->add_object($p);
 					$p->{nonempty} = 1;
 				}
 			}
