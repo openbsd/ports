@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.330 2004/10/02 23:54:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.331 2004/10/08 19:02:40 sturm Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -64,7 +64,6 @@
      SUBDIR += gmudix
      SUBDIR += gnet
      SUBDIR += gnomeicu
-     SUBDIR += gnut
      SUBDIR += gtk-gnutella
      SUBDIR += honeyd
      SUBDIR += hping
