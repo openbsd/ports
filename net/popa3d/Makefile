@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/08/04 09:51:00 camield Exp $
+# $OpenBSD: Makefile,v 1.14 2000/08/16 07:27:12 camield Exp $
 
 DISTNAME=	popa3d-0.4
 CATEGORIES=	net mail
@@ -8,6 +8,10 @@ MASTER_SITES=   http://www.openwall.com/popa3d/ \
                 ftp://ftp.openwall.com/popa3d/ \
 		ftp://ftp.false.com/security/popa3d/ \
                 ftp://ftp.dataforce.net/pub/solar/
+MASTER_SITES0= 	http://www.monkey.org/~dugsong/
+
+PATCHFILES=		popa3d-0.4-gnu-md5-alignment.diff.gz
+PATCH_DIST_STRIP=       -p1
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -23,9 +27,7 @@ FLAVORS=	apop
 FLAVOR?=
 
 .if ${FLAVOR:L:Mapop}
-MASTER_SITES0=  	http://www.monkey.org/~dugsong/
-PATCHFILES=     	popa3d-0.4-apop.patch-1:0
-PATCH_DIST_STRIP=       -p1
+PATCHFILES+=     	popa3d-0.4-apop.patch-1:0
 .else
 # the original Makefile does not have an 'all' target
 ALL_TARGET=popa3d
