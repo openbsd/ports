@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2002/02/15 19:42:18 matt Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2002/02/15 19:55:14 matt Exp $
 
 COMMENT=	"interpreted object-oriented programming language"
 COMMENT-tests=	"Python testsuite"
@@ -98,8 +98,7 @@ FULLPKGNAME-expat=	python-expat-${VERSION}${PATCHLEVEL}${FLAVOR_EXT}
 CONFIGURE_STYLE= autoconf dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-fpectl --with-threads --without-pymalloc
-#CONFIGURE_ENV+=  LDFLAGS='-L${WRKSRC}' OPT='${CFLAGS}' # -fPIC == Zope crash
-CONFIGURE_ENV+=  LDFLAGS='-L${WRKSRC}' OPT='${CFLAGS} -fPIC -DPIC'
+CONFIGURE_ENV+=  LDFLAGS='-L${WRKSRC}' OPT='${CFLAGS}' # -fPIC == Zope crash
 
 REGRESS_TARGET=	test
 
