@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/23 08:54:55 kevlo Exp $
+${P5SITE}/App/Info.pm
+${P5SITE}/App/Info/HTTPD.pm
+${P5SITE}/App/Info/HTTPD/Apache.pm
+${P5SITE}/App/Info/Handler.pm
+${P5SITE}/App/Info/Handler/Carp.pm
+${P5SITE}/App/Info/Handler/Print.pm
+${P5SITE}/App/Info/Handler/Prompt.pm
+${P5SITE}/App/Info/Lib.pm
+${P5SITE}/App/Info/Lib/Expat.pm
+${P5SITE}/App/Info/Lib/Iconv.pm
+${P5SITE}/App/Info/RDBMS.pm
+${P5SITE}/App/Info/RDBMS/PostgreSQL.pm
+${P5SITE}/App/Info/Request.pm
+${P5SITE}/App/Info/Util.pm
+man/man3p/App::Info.3p
+man/man3p/App::Info::HTTPD.3p
+man/man3p/App::Info::HTTPD::Apache.3p
+man/man3p/App::Info::Handler.3p
+man/man3p/App::Info::Handler::Carp.3p
+man/man3p/App::Info::Handler::Print.3p
+man/man3p/App::Info::Handler::Prompt.3p
+man/man3p/App::Info::Lib.3p
+man/man3p/App::Info::Lib::Expat.3p
+man/man3p/App::Info::Lib::Iconv.3p
+man/man3p/App::Info::RDBMS.3p
+man/man3p/App::Info::RDBMS::PostgreSQL.3p
+man/man3p/App::Info::Request.3p
+man/man3p/App::Info::Util.3p
+@dirrm ${P5ARCH}/auto/App/Info
+@dirrm ${P5SITE}/App/Info/RDBMS
+@dirrm ${P5SITE}/App/Info/Lib
+@dirrm ${P5SITE}/App/Info/Handler
+@dirrm ${P5SITE}/App/Info/HTTPD
+@dirrm ${P5SITE}/App/Info
