@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/01 06:20:07 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/06/02 18:33:21 rohee Exp $
 
-DISTNAME=	indent-1.9.1
+DISTNAME=	indent-1.10.0
 CATEGORIES=	devel
 
 MAINTAINER=	ports@OpenBSD.ORG
 
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= indent
+
+GNU_CONFIGURE=	yes
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/indent ${PREFIX}/bin/gindent
