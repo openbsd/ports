@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/03 00:03:08 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/03 01:26:53 espie Exp $
 
 DISTNAME=	calentool-2.3
 CATEGORIES=	misc x11
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${X11BASE}/lib/X11/config/XView.cf::x11/xview/config
-LIB_DEPENDS=    xview.3.::x11/xview-lib
+LIB_DEPENDS=    xview.3.::x11/xview/lib
 
 WRKDIST     = ${WRKDIR}/xcalentool-2.3
 
