@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/11/18 13:49:20 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/06/04 11:52:11 naddy Exp $
 bin/cscope
+bin/ocs
 man/man1/cscope.1
