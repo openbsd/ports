@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2002/01/07 20:40:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/02/01 13:19:51 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
 COMMENT=		"multi-script text-based web browser/pager"
 COMMENT-japanese=	"Japanese multi-script text-based web browser/pager"
 
-PKGNAME=	w3m-m17n-20020108
-DISTNAME=	w3m-0.2.4-m17n-20020108
+PKGNAME=	w3m-m17n-20020131
+DISTNAME=	w3m-0.2.4-m17n-20020131
 CATEGORIES=	www
 NEED_VERSION=	1.498
 HOMEPAGE=	http://www2u.biglobe.ne.jp/~hsaka/w3m/index.html#m17n
@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--nonstop \
 		--mimetypes=/var/www/mime.types \
 		--charset=UTF-8
 CONFIGURE_ENV=	use_ssl_verify=y \
-		dmail=mail ded=vi dbrowser=lynx dcc="${CC}"
+		dmail=mail ded=vi dbrowser=lynx
 
 NO_REGRESS=	Yes
 
