@@ -1,5 +1,5 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.10 2000/10/08 18:22:57 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/09 22:27:03 espie Exp $
 
 VERSION=9.3.3
 DISTNAME=icon_lib-${VERSION}
@@ -22,7 +22,8 @@ PERMIT_PACKAGE_FTP=Yes
 # OpenBSD policy...
 
 MASTER_SITES=ftp://ftp.cs.arizona.edu/icon/library/
-DISTFILES=bipl.tgz gipl.tgz info.tgz
+DISTFILES=bipl.tgz info.tgz
+SUPDISTFILES=gipl.tgz
 WRKDIST=	${WRKDIR}
 
 BUILD_DEPENDS=${PREFIX}/bin/icont::lang/icon/interp
@@ -34,32 +35,50 @@ LPATH=${WRKSRC}/gincl ${WRKSRC}/incl
 BUILDENV=IPATH="${IPATH}"  LPATH="${LPATH}"; export IPATH LPATH;
 
 IPL=${PREFIX}/share/ipl
+FLAVORS=	no_x11
+FLAVOR?=
+
+.if ${FLAVOR:L:Mno_x11}
+PATCH_LIST=patch-progs*
+.else
+DISTFILES+=gipl.tgz
+.endif
 
 do-build:
 # first build library
-	${BUILDENV} cd ${WRKSRC} && /bin/sh Ucode && /bin/sh Ugcode
+	${BUILDENV} cd ${WRKSRC} && /bin/sh Ucode 
+.if empty(FLAVOR:L:Mno_x11)
+	${BUILDENV} cd ${WRKSRC} && /bin/sh Ugcode
+.endif
 # then build programs using library
-	${BUILDENV} cd ${WRKSRC} && /bin/sh Icode && /bin/sh Igcode
+	${BUILDENV} cd ${WRKSRC} && /bin/sh Icode
+.if empty(FLAVOR:L:Mno_x11)
+	${BUILDENV} cd ${WRKSRC} && /bin/sh Igcode
+.endif
 # finally build some supplementary packages
+.if empty(FLAVOR:L:Mno_x11)
 	${BUILDENV} cd ${WRKSRC}/gpacks/vib && make
 	${BUILDENV} cd ${WRKSRC}/gpacks/xtiles && icont xtiles.icn
+.endif
 
 do-install:
 	${INSTALL_DATA_DIR} ${IPL}/ucode
 	${INSTALL_DATA} ${WRKSRC}/procs/*.u[12] ${IPL}/ucode
-	${INSTALL_DATA} ${WRKSRC}/gprocs/*.u[12] ${IPL}/ucode
 	${INSTALL_DATA_DIR} ${IPL}/incl
 	${INSTALL_DATA} ${WRKSRC}/incl/* ${IPL}/incl
+	${INSTALL_PROGRAM_DIR} ${IPL}/bin
+.if empty(FLAVOR:L:Mno_x11)
+	${INSTALL_DATA} ${WRKSRC}/gprocs/*.u[12] ${IPL}/ucode
 	${INSTALL_DATA_DIR} ${IPL}/gincl
 	${INSTALL_DATA} ${WRKSRC}/gincl/* ${IPL}/gincl
-	${INSTALL_PROGRAM_DIR} ${IPL}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/gpacks/vib/vib ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/gpacks/xtiles/xtiles ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/gpacks/xtiles/xtiles.6 ${PREFIX}/man/man6
+.endif
 
 # we separate icon sample program from the rest of the world, especially
 # as we can share them between architectures
 	find ${WRKSRC}/progs -type f -perm -a+x -exec ${INSTALL_SCRIPT} {} ${IPL}/bin \;
-	find ${WRKSRC}/gprogs -type f -perm -a+x -exec ${INSTALL_SCRIPT} {} ${IPL}/bin \;
+	-find ${WRKSRC}/gprogs -type f -perm -a+x -exec ${INSTALL_SCRIPT} {} ${IPL}/bin \;
 
 .include <bsd.port.mk>
