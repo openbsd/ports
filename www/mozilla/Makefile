@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2003/05/17 06:48:41 wilfried Exp $
+# $OpenBSD: Makefile,v 1.36 2003/05/17 15:38:30 wilfried Exp $
 # Uses pthreads
 
 COMMENT=	"open source version of the Netscape browser"
@@ -49,11 +49,9 @@ CONFIGURE_ARGS=					\
 # enable these once Mozilla actually runs
 #		--enable-optimize="${CFLAGS}"	\
 
-CONFIGURE_ENV=	BSD_PTHREAD_LIBS="-pthread" \
-		CFLAGS="" CXXFLAGS=""
+CONFIGURE_ENV=	CFLAGS="" CXXFLAGS=""
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
-		CFLAGS="" CXXFLAGS="" \
-		MALLOC_OPTIONS=j
+		CFLAGS="" CXXFLAGS=""
 
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/mozilla
