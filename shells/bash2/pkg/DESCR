@@ -1,10 +1,7 @@
-Bash is the GNU Project's Bourne Again SHell, an interactive shell
-with Bourne shell syntax (/bin/sh);  but also with interactive command
-line editing, job control on architectures that support it, Csh-like
-history features and brace expansion, and a slew of other stuff.
+Bash is the GNU Project's Bourne Again SHell, an sh-compatible
+command language interpreter that executes commands read from the
+standard input or from a file.  Bash also incorporates useful
+features from the Korn and C shells (ksh and csh).
 
-For more information on the features of Bash that are new to this type
-of shell, see the file `documentation/features.texi'.  There is also a
-processed DVI file there, as well as a large man page.
-
-WWW: ${HOMEPAGE}
+Bash is intended to be a conformant implementation of the IEEE POSIX
+Shell and Tools specification (IEEE Working Group 1003.2).

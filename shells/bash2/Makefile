@@ -1,14 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2001/01/03 19:36:09 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2001/04/10 15:32:55 naddy Exp $
 
-DISTNAME=	bash-2.04
+COMMENT=	"GNU Bourne Again Shell"
+
+DISTNAME=	bash-2.05
 CATEGORIES=	shells
-NEED_VERSION=	1.310
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= bash
-DOCNAME=	${DISTNAME:S/-/-doc-/}
-DISTFILES=	${DISTNAME}.tar.gz ${DOCNAME}.tar.gz
-
-HOMEPAGE=	http://www.gnu.org/software/bash/
+NEED_VERSION=	1.392
 
 MAINTAINER=	ports@openbsd.org
 
@@ -17,13 +13,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= gnu dest
-
-# Work-around for curses bug, which makes trace visible...
-#CFLAGS+=-Dtrace=bash_trace
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= bash
+DISTFILES=	${DISTNAME}.tar.gz ${DISTNAME:S/-/-doc-/}.tar.gz
 
 FLAVORS=	static
 FLAVOR?=
+
+CONFIGURE_STYLE= gnu dest
 
 .if ${FLAVOR:L} == "static"
 CONFIGURE_ARGS=	--enable-static-link
@@ -32,8 +29,8 @@ CONFIGURE_ARGS=	--enable-static-link
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bash
 	cd ${WRKDIR}/doc && \
-	${INSTALL_MAN} article.ps article.txt bash.html bash.ps \
+	    ${INSTALL_DATA} article.ps article.txt bash.html bash.ps \
 		bashbug.ps bashref.html bashref.ps builtins.ps  \
-		readline.ps  ${PREFIX}/share/doc/bash
+		${PREFIX}/share/doc/bash
 
 .include <bsd.port.mk>
