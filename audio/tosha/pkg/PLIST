@@ -2,7 +2,8 @@ bin/tosha
 bin/pcmplay
 bin/pcmfade
 lib/tosha/tosharc.sample
-@exec if [ ! -f /etc/tosharc ]; then cp %D/%F /etc/tosharc; fi
+@exec if [ ! -f /etc/tosharc ]; then cp %D/%F /etc/tosharc; else echo "===> You might wish to update /etc/tosharc"; echo "===> check %D/%F"; fi
+@unexec echo "===> You need to remove /etc/tosharc manually"
 man/man1/tosha.1
 man/man1/pcmplay.1
 man/man1/pcmfade.1
