@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.42 2004/05/08 12:13:52 sturm Exp $
+# $OpenBSD: Makefile.template,v 1.43 2004/05/26 11:20:35 msf Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -90,7 +90,8 @@ MASTER_SITES=		???
 # to bring the OpenBSD support up to spec.
 #USE_LIBTOOL=		Yes
 # Set CONFIGURE_STYLE to value corresponding to some standard configuration
-# 	  perl: perl's MakeMaker Makefile.PL
+# 	  perl [modbuild]: perl's MakeMaker Makefile.PL (modbuild: perl's
+#	  Module::Build Build.PL)
 # 	  gnu [autoconf] [old] [dest]: gnu style configure (old: no
 # 	  sysconfdir), (dest: add DESTDIR, does not handle it),
 # 	  (autoconf: needed by port, implies gnu)
