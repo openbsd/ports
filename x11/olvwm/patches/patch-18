@@ -1,5 +1,5 @@
 --- pixmap.c.orig	Thu Jan 13 22:36:12 1994
-+++ pixmap.c	Fri Jul 16 22:19:54 1999
++++ pixmap.c	Sat Jul 17 00:35:59 1999
 @@ -4,7 +4,7 @@
   */
  
@@ -40,11 +40,3 @@
      int ncolors;
      XColor *colors;
      Colormap *colormap;
-@@ -612,6 +625,7 @@
-                             &(pixinfo->pixmap),
-                             (Pixmap *)0, /* ignore shape mask for now */
-                             &xpmAttr)) != PixmapSuccess) {
-+		    fprintf(stderr, "olvwm: XpmRedFileToPixmap failed\n");
-                         goto FAILURE;
-                 }
-                 pixinfo->width = xpmAttr.width;
