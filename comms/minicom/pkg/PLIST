@@ -1,0 +1,19 @@
+bin/minicom
+bin/xminicom
+bin/runscript
+bin/ascii-xfr
+share/examples/minicom/minicom.users
+share/examples/minicom/htsalogin
+share/examples/minicom/saralogin
+share/examples/minicom/scriptdemo
+share/examples/minicom/unixlogin     
+@dirrm share/examples/minicom
+man/man1/minicom.1
+man/man1/runscript.1
+man/man1/ascii-xfr.1
+@exec if [ ! -d /etc/minicom ]; then mkdir /etc/minicom; chown uucp.dialer /etc/minicom; chmod 755 /etc/minicom; fi
+@exec if [ ! -f /etc/minicom/minicom.users ]; then cp %D/share/examples/minicom/minicom.users /etc/minicom; chown uucp.dialer /etc/minicom/minicom.users; chmod 644 /etc/minicom/minicom.users; fi
+@unexec echo "***"
+@unexec echo "*** Remove /etc/minicom directory and it's contents"
+@unexec echo "*** if you won't install minicom again."
+@unexec echo "***"

@@ -1,0 +1,19 @@
+*** updown.c.orig	Tue May  5 12:20:12 1998
+--- updown.c	Tue May  5 12:20:27 1998
+***************
+*** 18,24 ****
+  #include "port.h"
+  #include "minicom.h"
+  
+! #define LOG_XFER	  debugging option
+  /* */
+  static int udpid;
+  
+--- 18,24 ----
+  #include "port.h"
+  #include "minicom.h"
+  
+! /* #define LOG_XFER	  debugging option */
+  /* */
+  static int udpid;
+  
