@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2000/01/06 02:19:24 angelos Exp $
+# $OpenBSD: Makefile,v 1.23 2000/03/27 02:11:19 kevlo Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -60,9 +60,10 @@
 #    SUBDIR += squeak
 #    SUBDIR += sr
 #    SUBDIR += swi-pl
+     SUBDIR += tcl
 #    SUBDIR += tcl75
 #    SUBDIR += tcl76
-     SUBDIR += tcl80
+#    SUBDIR += tcl80
 #    SUBDIR += tcl82
 #    SUBDIR += tclX75
 #    SUBDIR += tclplugin
