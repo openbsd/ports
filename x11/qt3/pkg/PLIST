@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/01/22 21:03:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2004/08/10 13:33:13 espie Exp $
 bin/assistant${MT_SUFX}
 bin/designer3${MT_SUFX}
 bin/findtr3${MT_SUFX}
@@ -12,6 +12,7 @@ bin/qt20fix3${MT_SUFX}
 bin/qtconfig${MT_SUFX}
 bin/qtrename1403${MT_SUFX}
 bin/uic3${MT_SUFX}
+lib/qt3/bin${MT_SUFX}/
 lib/qt3/bin${MT_SUFX}/assistant
 lib/qt3/bin${MT_SUFX}/designer
 lib/qt3/bin${MT_SUFX}/findtr
@@ -25,14 +26,9 @@ lib/qt3/bin${MT_SUFX}/qt20fix
 lib/qt3/bin${MT_SUFX}/qtconfig
 lib/qt3/bin${MT_SUFX}/qtrename140
 lib/qt3/bin${MT_SUFX}/uic
+lib/qt3/plugins${MT_SUFX}/
+lib/qt3/plugins${MT_SUFX}/designer/
+lib/qt3/plugins${MT_SUFX}/sqldrivers/
+lib/qt3/plugins${MT_SUFX}/styles/
 !%%mt%%
 %%SHARED%%
-@exec mkdir -p %D/lib/qt3/plugins${MT_SUFX}/imageformats
-@exec mkdir -p %D/lib/qt3/plugins${MT_SUFX}/styles
-@exec mkdir -p %D/lib/qt3/plugins${MT_SUFX}/sqldrivers
-@dirrm lib/qt3/plugins${MT_SUFX}/styles
-@dirrm lib/qt3/plugins${MT_SUFX}/sqldrivers
-@dirrm lib/qt3/plugins${MT_SUFX}/imageformats
-@dirrm lib/qt3/plugins${MT_SUFX}/designer
-@dirrm lib/qt3/plugins${MT_SUFX}
-@dirrm lib/qt3/bin${MT_SUFX}

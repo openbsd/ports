@@ -1,10 +1,9 @@
-@comment $OpenBSD: PFRAG.shared,v 1.12 2004/07/22 23:03:09 brad Exp $
-lib/libqt${MT_SUFX}.so.3.32
-lib/libqui${MT_SUFX}.so.1.0
-lib/qt3/libqt${MT_SUFX}.so.3.32
-lib/qt3/libqui${MT_SUFX}.so.1.0
+@comment $OpenBSD: PFRAG.shared,v 1.13 2004/08/10 13:33:13 espie Exp $
+@lib lib/libqt${MT_SUFX}.so.3.32
+@lib lib/libqui${MT_SUFX}.so.1.0
+@lib lib/qt3/libqt${MT_SUFX}.so.3.32
+@lib lib/qt3/libqui${MT_SUFX}.so.1.0
 lib/qt3/plugins${MT_SUFX}/designer/libcppeditor.so
 lib/qt3/plugins${MT_SUFX}/designer/libdlgplugin.so
 lib/qt3/plugins${MT_SUFX}/designer/librcplugin.so
 lib/qt3/plugins${MT_SUFX}/designer/libwizards.so
-DYNLIBDIR(%D/lib)
