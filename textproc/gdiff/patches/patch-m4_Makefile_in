@@ -1,7 +1,7 @@
-$OpenBSD: patch-m4_Makefile_in,v 1.1 2003/07/23 21:58:28 naddy Exp $
---- m4/Makefile.in.orig	Wed Jul 23 21:01:23 2003
-+++ m4/Makefile.in	Wed Jul 23 21:01:42 2003
-@@ -256,7 +256,7 @@
+$OpenBSD: patch-m4_Makefile_in,v 1.2 2004/08/11 20:55:50 naddy Exp $
+--- m4/Makefile.in.orig	Fri Apr  5 15:19:17 2002
++++ m4/Makefile.in	Wed Aug 11 12:09:52 2004
+@@ -257,14 +257,14 @@ uninstall-am: uninstall-info-am
  
  Makefile.am: Makefile.am.in
  	rm -f $@ $@t
@@ -10,7 +10,6 @@ $OpenBSD: patch-m4_Makefile_in,v 1.1 2003/07/23 21:58:28 naddy Exp $
  	(((echo EXTRA_DIST =; \
  	   echo "  README jm-glibc-io.m4 Makefile.am.in" \
  	  ) | tr '\012' @); \
-@@ -263,7 +263,7 @@
  	  (echo *.m4|tr ' ' @) ) \
  	  |sed 's/@$$/%/;s/@/ \\@/g' |tr @% '\012\012' \
  	  >> $@t
