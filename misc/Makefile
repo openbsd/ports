@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2001/01/11 23:24:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2001/01/21 01:43:39 avsm Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -44,6 +44,7 @@
 #    SUBDIR += p5-Array-PrintCols
      SUBDIR += p5-CreditCard
 #    SUBDIR += p5-Business-CreditCard
+     SUBDIR += p5-Finance-Quote
 #    SUBDIR += p5-Locale-Codes
 #    SUBDIR += p5-Search
      SUBDIR += pdmenu
