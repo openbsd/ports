@@ -1,19 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/02/27 01:43:55 krw Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/06/29 13:59:24 couderc Exp $
 lib/ruby/1.6/${MACHINE_ARCH}-openbsd${OPSYS_VER}/pcap.so
 lib/ruby/1.6/pcap_misc.rb
 lib/ruby/1.6/pcaplet.rb
-share/doc/ruby-pcap/Capture.html
-share/doc/ruby-pcap/Dumper.html
-share/doc/ruby-pcap/Filter.html
-share/doc/ruby-pcap/ICMPPacket.html
-share/doc/ruby-pcap/IPAddress.html
-share/doc/ruby-pcap/IPPacket.html
-share/doc/ruby-pcap/Packet.html
-share/doc/ruby-pcap/Pcap.html
-share/doc/ruby-pcap/PcapError.html
-share/doc/ruby-pcap/Pcaplet.html
-share/doc/ruby-pcap/TCPPacket.html
-share/doc/ruby-pcap/TruncatedPacket.html
-share/doc/ruby-pcap/UDPPacket.html
-share/doc/ruby-pcap/index.html
-@dirrm share/doc/ruby-pcap
+share/ruby-pcap/doc/Capture.html
+share/ruby-pcap/doc/Dumper.html
+share/ruby-pcap/doc/Filter.html
+share/ruby-pcap/doc/ICMPPacket.html
+share/ruby-pcap/doc/IPAddress.html
+share/ruby-pcap/doc/IPPacket.html
+share/ruby-pcap/doc/Packet.html
+share/ruby-pcap/doc/Pcap.html
+share/ruby-pcap/doc/PcapError.html
+share/ruby-pcap/doc/Pcaplet.html
+share/ruby-pcap/doc/TCPPacket.html
+share/ruby-pcap/doc/TruncatedPacket.html
+share/ruby-pcap/doc/UDPPacket.html
+share/ruby-pcap/doc/index.html
+share/ruby-pcap/examples/httpdump.rb
+share/ruby-pcap/examples/tcpdump.rb
+share/ruby-pcap/examples/test.rb
+@dirrm share/ruby-pcap/examples
+@dirrm share/ruby-pcap/doc
+@dirrm share/ruby-pcap
