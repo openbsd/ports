@@ -3,7 +3,7 @@
 # Date created:				22 Apr 1998
 # Whom:					form
 #
-# $OpenBSD: Makefile,v 1.11 1998/06/15 02:38:09 form Exp $
+# $OpenBSD: Makefile,v 1.12 1998/08/05 02:36:36 form Exp $
 #
 
 DISTNAME=	samba-1.9.18p8
@@ -66,7 +66,7 @@ post-install:
 		chmod 600 /etc/samba/smbpasswd ;			\
 	fi
 	chown root.wheel ${PREFIX}/bin/smbpasswd
-	chmod 4111 ${PREFIX}/bin/smbpasswd
+	chmod 111 ${PREFIX}/bin/smbpasswd
 	more ${FILESDIR}/README.OpenBSD
 
 .include <bsd.port.mk>
