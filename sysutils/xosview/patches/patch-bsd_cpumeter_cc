@@ -1,6 +1,6 @@
-$OpenBSD: patch-bsd_cpumeter_cc,v 1.1 2002/06/17 02:34:18 form Exp $
---- bsd/cpumeter.cc.orig	Sun Jun 16 21:45:08 2002
-+++ bsd/cpumeter.cc	Sun Jun 16 21:50:59 2002
+$OpenBSD: patch-bsd_cpumeter_cc,v 1.2 2004/01/26 12:46:20 naddy Exp $
+--- bsd/cpumeter.cc.orig	2001-10-09 04:45:32.000000000 +0200
++++ bsd/cpumeter.cc	2004-01-26 13:29:06.000000000 +0100
 @@ -32,11 +32,12 @@ CVSID_DOT_H(CPUMETER_H_CVSID);
  
  CPUMeter::CPUMeter( XOSView *parent )
@@ -46,3 +46,24 @@ $OpenBSD: patch-bsd_cpumeter_cc,v 1.1 2002/06/17 02:34:18 form Exp $
    // FreeBSD seems at least to be filling cp_time[CP_INTR].  So, we add that
    // as another field. (pavel 25-Jan-1998)
    cputime_[cpuindex_][2] = tempCPU[2];
+@@ -123,13 +126,13 @@ void CPUMeter::getcputime( void ){
+     static int firstTime = 1;
+     if (firstTime) {
+       fprintf(stderr,
+-"  Warning:  the CPU tick counters are not changing.  This could
+-be due to running a kernel besides /netbsd (or the equivalent for FreeBSD).
+-  If this is the case, re-run xosview with the -N kernel-name option.
+-  If not, then this is a bug.  Please send a message to
+-bgrayson@ece.utexas.edu, in addition to any send-pr bug reports
+-(or in lieu of -- it ought to get fixed faster if you contact me
+-directly).  Thanks!\n");
++"  Warning:  the CPU tick counters are not changing.  This could\n"
++"be due to running a kernel besides /netbsd (or the equivalent for FreeBSD).\n"
++"  If this is the case, re-run xosview with the -N kernel-name option.\n"
++"  If not, then this is a bug.  Please send a message to\n"
++"bgrayson@ece.utexas.edu, in addition to any send-pr bug reports\n"
++"(or in lieu of -- it ought to get fixed faster if you contact me\n"
++"directly).  Thanks!\n");
+       firstTime = 0;
+     }
+   }
