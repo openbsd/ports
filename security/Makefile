@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2002/11/17 01:49:52 mark Exp $
+# $OpenBSD: Makefile,v 1.113 2002/11/24 01:26:32 brad Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -31,8 +31,6 @@
      SUBDIR += gnupg
      SUBDIR += gpa
      SUBDIR += gpgme
-     SUBDIR += heimdal
-     SUBDIR += heimdal,no_x11
      SUBDIR += hlfl
      SUBDIR += hydra
      SUBDIR += integrit

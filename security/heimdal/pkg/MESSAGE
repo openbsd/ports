@@ -1,2 +1,0 @@
-libraries have been installed in ${PREFIX}/lib, you may wish
-to add this directory to shlib_dirs in /etc/rc.conf.local
