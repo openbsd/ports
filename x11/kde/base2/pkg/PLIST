@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2001/03/12 16:18:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2001/03/14 16:09:32 espie Exp $
 @mode u+s
 @owner root
 bin/konsole_grantpty
@@ -918,7 +918,6 @@ share/apps/kthememgr/Themes/Eclipse.ktheme
 share/apps/kthememgr/Themes/MGBreizh.ktheme
 share/apps/kthememgr/Themes/Nostalgy.ktheme
 share/apps/kthememgr/Themes/Template.themerc
-share/apps/kthememgr/Themes/Themes.ktheme
 share/apps/kthememgr/Themes/Wood.ktheme
 share/apps/kthememgr/theme.mappings
 share/apps/kwin/b2.desktop

@@ -1,11 +1,12 @@
-$OpenBSD: patch-kcontrol_thememgr_Makefile_in,v 1.1 2001/03/12 16:18:34 espie Exp $
+$OpenBSD: patch-kcontrol_thememgr_Makefile_in,v 1.2 2001/03/14 16:09:31 espie Exp $
 --- kcontrol/thememgr/Makefile.in.orig	Thu Mar  8 20:36:41 2001
 +++ kcontrol/thememgr/Makefile.in	Thu Mar  8 20:38:48 2001
-@@ -643,10 +643,12 @@ maintainer-clean-generic clean mostlycle
+@@ -643,10 +643,13 @@ maintainer-clean-generic clean mostlycle
  
  
  install-data-local:
 -	cd $(srcdir)/Themes; \
++	rm -rf $(srcdir)/Archive; \
 +	cp -rp $(srcdir)/Themes $(srcdir)/Archive; \
 +	find $(srcdir)/Archive -type d -name CVS -print -prune|xargs rm -rf; \
 +	cd $(srcdir)/Archive; \
