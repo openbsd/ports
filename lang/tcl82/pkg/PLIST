@@ -604,9 +604,9 @@ man/mann/while.n
 @exec ln -sf %D/man/man3/Utf.3 %D/man/man3/Tcl_UtfAtIndex.3
 @exec ln -sf %D/man/man3/Utf.3 %D/man/man3/Tcl_UtfBackslash.3
 @exec ln -sf %D/man/man3/WrongNumArgs.3 %D/man/man3/Tcl_WrongNumArgs.3
-@exec ln -sf %D/man/man3/http.n %D/man/man3/Http.n
-@exec ln -sf %D/man/man3/pkgMkIndex.n %D/man/man3/pkg_mkIndex.n
-@exec ln -sf %D/man/man3/safe.n %D/man/man3/SafeBase.n
+@exec ln -sf %D/man/mann/http.n %D/man/man3/Http.n
+@exec ln -sf %D/man/mann/pkgMkIndex.n %D/man/man3/pkg_mkIndex.n
+@exec ln -sf %D/man/mann/safe.n %D/man/man3/SafeBase.n
 man/man3/Tcl_Access.3
 man/man3/Tcl_Stat.3
 man/man3/Tcl_AddObjErrorInfo.3
@@ -911,6 +911,6 @@ man/man3/Tcl_UniCharAtIndex.3
 man/man3/Tcl_UtfAtIndex.3
 man/man3/Tcl_UtfBackslash.3
 man/man3/Tcl_WrongNumArgs.3
-man/man3/Http.n
-man/man3/pkg_mkIndex.n
-man/man3/SafeBase.n
+man/mann/Http.n
+man/mann/pkg_mkIndex.n
+man/mann/SafeBase.n
