@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/12/04 23:07:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2003/12/09 18:13:32 marcm Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
@@ -9,8 +9,6 @@ DISTNAME=		gtk-thinice-engine-${VERSION}
 CATEGORIES=		x11
 
 HOMEPAGE=		http://thinice.sourceforge.net/
-
-MAINTAINER=		Marc Matteo <marcm@lectroid.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
