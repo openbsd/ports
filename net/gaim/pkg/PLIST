@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.13 2002/05/31 14:14:42 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.14 2002/07/04 19:02:32 jcs Exp $
 bin/gaim
 man/man1/gaim.1
 share/locale/bg/LC_MESSAGES/gaim.mo
+share/locale/cs/LC_MESSAGES/gaim.mo
 share/locale/da/LC_MESSAGES/gaim.mo
 share/locale/de/LC_MESSAGES/gaim.mo
 share/locale/es/LC_MESSAGES/gaim.mo
 share/locale/fi/LC_MESSAGES/gaim.mo
 share/locale/fr/LC_MESSAGES/gaim.mo
+share/locale/hu/LC_MESSAGES/gaim.mo
 share/locale/it/LC_MESSAGES/gaim.mo
 share/locale/ja/LC_MESSAGES/gaim.mo
 share/locale/ko/LC_MESSAGES/gaim.mo

@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure,v 1.5 2002/07/04 19:02:32 jcs Exp $
+--- configure.orig	Thu Jul  4 13:51:26 2002
++++ configure	Thu Jul  4 13:52:04 2002
+@@ -3973,11 +3973,9 @@
+ 
+ openbsd*)
+   version_type=sunos
+-  if test "$with_gnu_ld" = yes; then
+-    need_lib_prefix=no
+-    need_version=no
+-  fi
+-  library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
++  need_lib_prefix=no
++  need_version=no
++  library_names_spec='${libname}${release}.so ${libname}.so'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
