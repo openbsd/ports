@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2001/05/06 04:41:30 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2001/06/07 04:45:41 kevlo Exp $
 
 COMMENT=	"tool for managing X11 cut-buffers"
 
-DISTNAME=	xcb-2.3
+DISTNAME=	xcb-2.3i
 CATEGORIES=	x11
-NEED_VERSION=	1.402
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR= utilities
+NEED_VERSION=	1.414
+MASTER_SITES=	http://www.goof.com/pcg/marc/data/
+
+HOMEPAGE=	http://www.goof.com/pcg/marc/xcb.html
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
