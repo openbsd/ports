@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/04/22 13:02:25 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/22 23:44:28 espie Exp $
 
      SUBDIR += Wnn
      SUBDIR += Wnn-data
@@ -6,6 +6,7 @@
      SUBDIR += groff
      SUBDIR += jvim
      SUBDIR += jvim-wnn4
+     SUBDIR += kanjips
      SUBDIR += kterm
      SUBDIR += kterm:xaw3d
      SUBDIR += less
