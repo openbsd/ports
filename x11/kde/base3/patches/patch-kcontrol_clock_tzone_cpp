@@ -1,0 +1,89 @@
+$OpenBSD: patch-kcontrol_clock_tzone_cpp,v 1.1 2003/01/27 19:22:50 espie Exp $
+--- kcontrol/clock/tzone.cpp.orig	Mon Jan 13 10:23:21 2003
++++ kcontrol/clock/tzone.cpp	Mon Jan 13 11:51:56 2003
+@@ -50,8 +50,14 @@
+ #include <sys/stat.h>
+ 
+ #define ZONEINFODIR	"/usr/share/lib/zoneinfo"
++#define FIND_BINARY	"/bin/find"
+ #define INITFILE	"/etc/default/init"
+ #endif
++#ifdef __OpenBSD__
++#define ZONEINFODIR	"/usr/share/zoneinfo"
++#define FIND_BINARY	"/usr/bin/find"
++#include <sys/param.h>
++#endif
+ 
+ Tzone::Tzone(QWidget * parent, const char *name)
+   : QWidget (parent, name)
+@@ -94,14 +100,15 @@ void Tzone::fillTimeZones()
+ 
+     tzonelist->insertItem(i18n("[No selection]"));
+ 
+-#if defined(USE_SOLARIS)	// MARCO
++#if defined(USE_SOLARIS) || defined(__OpenBSD__)	// MARCO
+ 
+     FILE *fp;
+     char buf[MAXPATHLEN];
++    char *p = buf + strlen(ZONEINFODIR) + 1;
+ 
+     snprintf(buf, MAXPATHLEN,
+-             "/bin/find %s \\( -name src -prune \\) -o -type f -print | /bin/cut -b %d-",
+-             ZONEINFODIR, strlen(ZONEINFODIR) + 2);
++             "%s %s \\( -name src -prune \\) -o -type f -print",
++	     FIND_BINARY, ZONEINFODIR);
+ 
+     fp = popen(buf, "r");
+     if (fp)
+@@ -109,8 +116,8 @@ void Tzone::fillTimeZones()
+         while(fgets(buf, MAXPATHLEN - 1, fp) != NULL)
+         {
+             buf[strlen(buf) - 1] = '\0';
+-            list << i18n(buf);
+-            tzonenames << buf;
++            list << i18n(p);
++            tzonenames << p;
+         }
+         pclose(fp);
+     }
+@@ -174,6 +181,14 @@ void Tzone::load()
+         }
+         pclose(fp);
+     }
++#elif defined(__OpenBSD__)
++	char buffer[MAXPATHLEN];
++	int n;
++	n = readlink("/etc/localtime", buffer, sizeof(buffer)-1);
++	if (n != -1) {
++		buffer[n] = 0;
++		sCurrentlySet = buffer + strlen(ZONEINFODIR)+1;
++	}
+ #else
+     QFile f("/etc/timezone");
+     if(f.open(IO_ReadOnly))
+@@ -272,6 +287,7 @@ void Tzone::save()
+ 
+         QString val = selectedzone;
+ #else
++#if !defined(__OpenBSD__)
+         QFile fTimezoneFile("/etc/timezone");
+ 
+         if (fTimezoneFile.open(IO_WriteOnly | IO_Truncate) )
+@@ -281,6 +297,7 @@ void Tzone::save()
+             fTimezoneFile.close();
+         }
+ 
++#endif
+         tz = "/usr/share/zoneinfo/" + selectedzone;
+ 
+         kdDebug() << "Set time zone " << tz << endl;
+@@ -299,7 +316,9 @@ void Tzone::save()
+ 
+     } else {
+ #if !defined(USE_SOLARIS) // Do not update the System!
++#if !defined(__OpenBSD__)
+         unlink( "/etc/timezone" );
++#endif
+         unlink( "/etc/localtime" );
+ 
+         setenv("TZ", "", 1);

@@ -1,13 +1,32 @@
-$OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_CPU_c,v 1.1 2003/01/09 02:47:40 espie Exp $
---- ksysguard/ksysguardd/FreeBSD/CPU.c.orig	Thu Jan  3 21:30:02 2002
-+++ ksysguard/ksysguardd/FreeBSD/CPU.c	Thu Jan  9 01:23:42 2003
-@@ -19,7 +19,9 @@
- */
+$OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_CPU_c,v 1.2 2003/01/27 19:22:50 espie Exp $
+--- ksysguard/ksysguardd/FreeBSD/CPU.c.orig	Thu Dec  5 21:41:06 2002
++++ ksysguard/ksysguardd/FreeBSD/CPU.c	Tue Jan 14 15:50:07 2003
+@@ -22,9 +22,12 @@
  
+ #include <sys/types.h>
  #include <sys/dkstat.h>
++#include <sys/param.h>
+ #include <sys/sysctl.h>
+ 
 +#ifndef __OpenBSD__
  #include <devstat.h>
 +#endif
  #include <fcntl.h>
- #include <kvm.h>
  #include <nlist.h>
+ #include <stdio.h>
+@@ -68,7 +71,15 @@ exitCpuInfo(void)
+ int
+ updateCpuInfo(void)
+ {
++#ifdef __OpenBSD__
++	int mib[2];
++	mib[0] = CTL_KERN;
++	mib[1] = KERN_CPTIME;
++	sysctl(mib, 2, &cp_time, sizeof(cp_time), NULL, 0);
++#endif
++#ifdef __FreeBSD__
+         sysctlbyname("kern.cp_time", &cp_time, sizeof(cp_time), NULL, 0);
++#endif
+         percentages(CPUSTATES, cpu_states, cp_time, cp_old, cp_diff);
+ 	return (0);
+ }

@@ -1,0 +1,17 @@
+$OpenBSD: patch-kcontrol_clock_main_cpp,v 1.1 2003/01/27 19:22:50 espie Exp $
+--- kcontrol/clock/main.cpp.orig	Sat Sep 21 18:54:57 2002
++++ kcontrol/clock/main.cpp	Mon Jan 13 10:48:30 2003
+@@ -65,8 +65,13 @@ KclockModule::KclockModule(QWidget *pare
+ void KclockModule::save()
+ {
+ //  The order here is important
++#ifdef __OpenBSD__
++  tzone->save();
++  dtime->save();
++#else
+   dtime->save();
+   tzone->save();
++#endif
+ 
+ // it syncs up nicely without restarting
+ //    // restart kicker to sync up the time

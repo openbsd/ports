@@ -1,0 +1,12 @@
+$OpenBSD: patch-konsole_konsole_TEPty_h,v 1.3 2003/01/27 19:22:50 espie Exp $
+--- konsole/konsole/TEPty.h.orig	Sun Jan 12 15:16:31 2003
++++ konsole/konsole/TEPty.h	Sun Jan 12 15:17:28 2003
+@@ -130,7 +130,7 @@ Q_OBJECT
+     QValueList<SendJob> pendingSendJobs;
+     QTimer* pSendJobTimer;
+ 
+-  friend int chownpty(int, bool);
++  friend int chownpty(int, int);
+ };
+ 
+ #endif

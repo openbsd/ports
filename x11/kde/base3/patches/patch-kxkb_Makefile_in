@@ -1,0 +1,26 @@
+$OpenBSD: patch-kxkb_Makefile_in,v 1.1 2003/01/27 19:22:50 espie Exp $
+--- kxkb/Makefile.in.orig	Wed Jan 22 18:43:05 2003
++++ kxkb/Makefile.in	Wed Jan 22 18:43:18 2003
+@@ -295,7 +295,7 @@ bin_PROGRAMS = kxkb
+ 
+ kxkb_SOURCES = dummy.cpp
+ kxkb_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+-kxkb_LDADD = kxkb.la -lxkbfile
++kxkb_LDADD = kxkb.la -lxkbfile_pic
+ 
+ lib_LTLIBRARIES = kxkb.la
+ kde_module_LTLIBRARIES = kcm_keyboard.la
+@@ -304,11 +304,11 @@ kde_module_LTLIBRARIES = kcm_keyboard.la
+ #>+ 1
+ kcm_keyboard_la_SOURCES=rules.cpp kcmlayout.cpp pixmap.cpp kcmmisc.cpp  kcmmiscwidget.cpp
+ kcm_keyboard_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_keyboard_la_LIBADD = $(XTESTLIB) $(LIB_KIO) -lxkbfile
++kcm_keyboard_la_LIBADD = $(XTESTLIB) $(LIB_KIO) -lxkbfile_pic
+ 
+ kxkb_la_SOURCES = kxkb.cpp rules.cpp extension.cpp pixmap.cpp
+ kxkb_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kxkb_la_LIBADD = -lX11 -lXext $(LIB_KDEUI) -lxkbfile
++kxkb_la_LIBADD = -lX11 -lXext $(LIB_KDEUI) -lxkbfile_pic
+ 
+ data_DATA = keyboard.desktop
+ data2_DATA = keyboard_layout.desktop

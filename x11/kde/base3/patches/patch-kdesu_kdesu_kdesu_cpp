@@ -1,7 +1,7 @@
-$OpenBSD: patch-kdesu_kdesu_kdesu_cpp,v 1.1 2003/01/07 00:19:34 espie Exp $
---- kdesu/kdesu/kdesu.cpp.orig	Tue Jan  7 00:59:51 2003
-+++ kdesu/kdesu/kdesu.cpp	Tue Jan  7 01:12:51 2003
-@@ -267,10 +267,12 @@ int main(int argc, char *argv[])
+$OpenBSD: patch-kdesu_kdesu_kdesu_cpp,v 1.2 2003/01/27 19:22:50 espie Exp $
+--- kdesu/kdesu/kdesu.cpp.orig	Sun Sep 15 23:08:45 2002
++++ kdesu/kdesu/kdesu.cpp	Thu Jan  9 23:22:00 2003
+@@ -266,10 +266,12 @@ int main(int argc, char *argv[])
      KConfig *config = KGlobal::config();
      config->setGroup("Passwords");
      int timeout = config->readNumEntry("Timeout", defTimeout);
@@ -14,7 +14,7 @@ $OpenBSD: patch-kdesu_kdesu_kdesu_cpp,v 1.1 2003/01/07 00:19:34 espie Exp $
      int needpw = proc.checkNeedPassword();
      if (needpw < 0)
      {
-@@ -288,7 +290,8 @@ int main(int argc, char *argv[])
+@@ -287,7 +289,8 @@ int main(int argc, char *argv[])
      QCString password;
      if (needpw)
      {
@@ -24,7 +24,7 @@ $OpenBSD: patch-kdesu_kdesu_kdesu_cpp,v 1.1 2003/01/07 00:19:34 espie Exp $
  	dlg->addLine(i18n("Command:"), command);
  	if ((priority != 50) || (scheduler != SuProcess::SchedNormal)) 
  	{
-@@ -327,6 +330,7 @@ int main(int argc, char *argv[])
+@@ -326,6 +329,7 @@ int main(int argc, char *argv[])
  	proc.setTerminal(terminal);
  	proc.setErase(true);
  	proc.setUser(user);

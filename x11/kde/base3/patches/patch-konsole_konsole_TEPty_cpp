@@ -1,0 +1,121 @@
+$OpenBSD: patch-konsole_konsole_TEPty_cpp,v 1.3 2003/01/27 19:22:50 espie Exp $
+--- konsole/konsole/TEPty.cpp.orig	Sun Jan 12 15:09:42 2003
++++ konsole/konsole/TEPty.cpp	Mon Jan 13 10:04:37 2003
+@@ -130,6 +130,9 @@
+         #include <errno.h>
+         #include <utmp.h>
+ #endif
++#ifdef __OpenBSD__
++#undef USE_LOGIN
++#endif
+ 
+ #include <signal.h>
+ 
+@@ -201,7 +204,13 @@ FILE* syslog_file = NULL; //stdout;
+ #define PTY_FILENO 3
+ #define BASE_CHOWN "konsole_grantpty"
+ 
+-int chownpty(int fd, bool grant)
++const int PTY_GRANT=0,
++	PTY_REVOKE=1,
++	PTY_LOGIN=2,
++	PTY_LOGOUT=3;
++	
++
++int chownpty(int fd, int mode)
+ // param fd: the fd of a master pty.
+ // param grant: true to grant, false to revoke
+ // returns 1 on success 0 on fail
+@@ -222,10 +231,25 @@ int chownpty(int fd, bool grant)
+   }
+   if (pid == 0)
+   {
++    const char *arg;
+     /* We pass the master pseudo terminal as file descriptor PTY_FILENO. */
+     if (fd != PTY_FILENO && dup2(fd, PTY_FILENO) < 0) exit(1);
+     QString path = locate("exe", BASE_CHOWN);
+-    execle(path.ascii(), BASE_CHOWN, grant?"--grant":"--revoke", NULL, NULL);
++    switch(mode) {
++    case PTY_REVOKE:
++    	arg = "--revoke";
++	break;
++    case PTY_GRANT:
++    	arg = "--grant";
++	break;
++    case PTY_LOGIN:
++    	arg = "--login";
++	break;
++    case PTY_LOGOUT:
++    	arg = "--logout";
++	break;
++    }
++    execle(path.ascii(), BASE_CHOWN, arg, NULL, NULL);
+     exit(1); // should not be reached
+   }
+ 
+@@ -273,7 +297,7 @@ void TEPty::commClose()
+      utmp.start(KProcess::Block);
+   }
+ #elif defined(USE_LOGIN)
+-  char *tty_name=ttyname(0);
++  char *tty_name=ttynam;
+   if (tty_name)
+   {
+   	if (strncmp(tty_name, "/dev/", 5) == 0)
+@@ -281,7 +305,10 @@ void TEPty::commClose()
+         logout(tty_name);
+   }
+ #endif
+-  if (m_bNeedGrantPty) chownpty(m_MasterFd, false);
++#ifdef __OpenBSD__
++  chownpty(m_MasterFd, PTY_LOGOUT);
++#endif
++  if (m_bNeedGrantPty) chownpty(m_MasterFd, PTY_REVOKE);
+ 
+   KProcess::commClose();
+ }
+@@ -357,7 +384,7 @@ void TEPty::openPty()
+   // be opened by several different methods.
+ 
+   // We try, as we know them, one by one.
+-#if defined(HAVE_OPENPTY) //FIXME: some work needed.
++#if defined(HAVE_OPENPTY) && !defined(__OpenBSD__) //FIXME: some work needed.
+   if (m_MasterFd < 0) {
+     int master_fd, slave_fd;
+     if (openpty(&master_fd, &slave_fd, NULL, NULL, NULL) == 0) {
+@@ -453,7 +480,7 @@ void TEPty::openPty()
+     return;
+   }
+ 
+-  if (m_bNeedGrantPty && !chownpty(m_MasterFd, true))
++  if (m_bNeedGrantPty && !chownpty(m_MasterFd, PTY_GRANT))
+   {
+     fprintf(stderr,"konsole: chownpty failed for device %s::%s.\n",ptynam,ttynam);
+     fprintf(stderr,"       : This means the session can be eavesdroped.\n");
+@@ -462,7 +489,6 @@ void TEPty::openPty()
+             KGlobal::dirs()->findResourceDir("exe",
+                                              "konsole").local8Bit().data());
+   }
+-
+   fcntl(m_MasterFd,F_SETFL,O_NDELAY);
+ }
+ 
+@@ -530,7 +556,7 @@ int TEPty::makePty(bool _addutmp)
+      l_struct.ut_host[UT_HOSTSIZE]=0;
+   }
+ 
+-  if (! (str_ptr=ttyname(tt)) ) {
++  if (! (str_ptr=ttyname(tt)) && !(str_ptr=ttynam)) {
+     abort();
+   }
+   if (strncmp(str_ptr, "/dev/", 5) == 0)
+@@ -539,6 +565,9 @@ int TEPty::makePty(bool _addutmp)
+   time(&l_struct.ut_time);
+ 
+   login(&l_struct);
++#endif
++#ifdef __OpenBSD__
++  chownpty(tt, PTY_LOGIN);
+ #endif
+   return tt;
+ }

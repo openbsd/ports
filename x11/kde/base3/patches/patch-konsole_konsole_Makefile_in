@@ -1,0 +1,12 @@
+$OpenBSD: patch-konsole_konsole_Makefile_in,v 1.3 2003/01/27 19:22:50 espie Exp $
+--- konsole/konsole/Makefile.in.orig	Sun Jan 12 15:54:56 2003
++++ konsole/konsole/Makefile.in	Sun Jan 12 15:55:19 2003
+@@ -374,7 +374,7 @@ noinst_HEADERS = TEWidget.h TEPty.h TEmu
+ 
+ konsole_grantpty_SOURCES = konsole_grantpty.c
+ konsole_grantpty_LDFLAGS = $(KDE_RPATH) $(all_libraries)
+-konsole_grantpty_LDADD = -lkdefakes
++konsole_grantpty_LDADD = -lkdefakes $(LIBUTIL)
+ 
+ # Not AUTO here, because there are some unused files
+ #>- METASOURCES = TEWidget.moc TEmuVt102.moc session.moc konsole.moc konsole_child.moc \

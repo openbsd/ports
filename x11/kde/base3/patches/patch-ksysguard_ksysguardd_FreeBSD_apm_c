@@ -1,9 +1,9 @@
-$OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_apm_c,v 1.1 2003/01/09 02:47:40 espie Exp $
---- ksysguard/ksysguardd/FreeBSD/apm.c.orig	Thu Jan  9 01:24:30 2003
-+++ ksysguard/ksysguardd/FreeBSD/apm.c	Thu Jan  9 01:27:04 2003
-@@ -20,7 +20,11 @@
- */
+$OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_apm_c,v 1.2 2003/01/27 19:22:50 espie Exp $
+--- ksysguard/ksysguardd/FreeBSD/apm.c.orig	Sun Oct 27 00:07:11 2002
++++ ksysguard/ksysguardd/FreeBSD/apm.c	Thu Jan  9 23:22:01 2003
+@@ -23,7 +23,11 @@
  
+ #include <unistd.h>
  #include <fcntl.h>
 +#ifdef __OpenBSD__
 +#include <machine/apmvar.h>
@@ -13,7 +13,7 @@ $OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_apm_c,v 1.1 2003/01/09 02:47:40 esp
  #include <stdio.h>
  
  #include "Command.h"
-@@ -59,6 +63,22 @@ exitApm(void)
+@@ -62,6 +66,22 @@ exitApm(void)
  	close(ApmFD);
  }
  
@@ -36,7 +36,7 @@ $OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_apm_c,v 1.1 2003/01/09 02:47:40 esp
  int
  updateApm(void)
  {
-@@ -72,6 +92,7 @@ updateApm(void)
+@@ -75,6 +95,7 @@ updateApm(void)
  
  	return retval;
  }

@@ -1,24 +1,27 @@
-$OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_Memory_c,v 1.1 2003/01/09 02:47:40 espie Exp $
---- ksysguard/ksysguardd/FreeBSD/Memory.c.orig	Fri Sep 14 23:11:20 2001
-+++ ksysguard/ksysguardd/FreeBSD/Memory.c	Thu Jan  9 01:23:54 2003
-@@ -32,7 +32,11 @@
- #include <sys/types.h>
+$OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_Memory_c,v 1.2 2003/01/27 19:22:50 espie Exp $
+--- ksysguard/ksysguardd/FreeBSD/Memory.c.orig	Sun Oct 27 00:07:11 2002
++++ ksysguard/ksysguardd/FreeBSD/Memory.c	Tue Jan 14 15:47:47 2003
+@@ -26,7 +26,11 @@
+ #include <sys/sysctl.h>
  #include <sys/vmmeter.h>
- #include <unistd.h>
+ 
 +#ifdef __OpenBSD__
 +#include <sys/swap.h>
 +#else
  #include <vm/vm_param.h>
 +#endif
  
- #include "Command.h"
- #include "Memory.h"
-@@ -82,15 +86,42 @@ updateMemory(void)
+ #include <fcntl.h>
+ #include <kvm.h>
+@@ -83,15 +87,45 @@ updateMemory(void)
  	struct vmtotal p;
  	FILE *file;
  	char buf[256];
 +#ifdef __FreeBSD__
  	struct kvm_swap kswap[16];
++#endif
++#ifdef __OpenBSD__
++	int mib[2];
 +#endif
  	int i, swap_count, hlen, pagesize = getpagesize();
  	long blocksize;
@@ -56,7 +59,7 @@ $OpenBSD: patch-ksysguard_ksysguardd_FreeBSD_Memory_c,v 1.1 2003/01/09 02:47:40 
  	swap_count = kvm_getswapinfo(kd, kswap, 16, SWIF_DEV_PREFIX);
  	getbsize(&hlen, &blocksize);
  
-@@ -101,22 +132,33 @@ updateMemory(void)
+@@ -102,22 +136,33 @@ updateMemory(void)
  		SUsed = CONVERT(kswap[0].ksw_used);
  		SFree = CONVERT(kswap[0].ksw_total - kswap[0].ksw_used);
  	}
