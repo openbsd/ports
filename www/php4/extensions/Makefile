@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2003/08/12 04:41:08 jolan Exp $
+# $OpenBSD: Makefile,v 1.25 2003/11/14 14:52:49 avsm Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -117,6 +117,7 @@ USE_X11=               yes
 CONFIGURE_ARGS+=       --with-xpm-dir=${X11BASE}
 .else
 CONFIGURE_ARGS+=       --without-xpm-dir
+FULLPKGNAME-gd=		php4-gd-${V}-no_x11
 .endif
 .endif
 
@@ -286,7 +287,9 @@ XSLT_DEPENDS=		sablot.96::textproc/sablotron expat.2::textproc/expat
 .endif
 
 .for i in ${MULTI_PACKAGES}
+.if !defined(FULLPKGNAME${i})
 FULLPKGNAME${i}=	php4${i}-${V}
+.endif
 .endfor
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
