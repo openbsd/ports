@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/03/30 04:06:58 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/03/30 21:42:22 brad Exp $
 # $NetBSD: Makefile,v 1.4 1999/03/04 08:58:42 tron Exp $
 
 DISTNAME=	xtraceroute-0.8.14
@@ -19,6 +19,8 @@ LIB_DEPENDS=	MesaGL:${PORTSDIR}/graphics/MesaGL \
 
 USE_X11=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/xtraceroute/
