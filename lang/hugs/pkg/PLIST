@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/05/17 02:24:33 dons Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:15:12 espie Exp $
 @comment bin/ffihugs
 bin/hugs
 bin/hugs-package
 bin/runhugs
-man/man1/hugs-package.1
-man/man1/hugs.1
+@man man/man1/hugs-package.1
+@man man/man1/hugs.1
+share/hugs/
 share/hugs/Credits
 share/hugs/License
 share/hugs/Readme
+share/hugs/demos/
 share/hugs/demos/AnsiDemo.hs
 share/hugs/demos/ArrayEx.hs
 share/hugs/demos/Calendar.hs
@@ -18,9 +20,12 @@ share/hugs/demos/EvalRed.hs
 share/hugs/demos/Examples.hs
 share/hugs/demos/Expr.hs
 share/hugs/demos/FastSort.hs
+share/hugs/demos/GLUT/
+share/hugs/demos/GLUT/Misc/
 share/hugs/demos/GLUT/Misc/ExtractContours.hs
 share/hugs/demos/GLUT/Misc/FogCoordinate.hs
 share/hugs/demos/GLUT/Misc/Triangulate.hs
+share/hugs/demos/GLUT/RedBook/
 share/hugs/demos/GLUT/RedBook/BezCurve.hs
 share/hugs/demos/GLUT/RedBook/BezMesh.hs
 share/hugs/demos/GLUT/RedBook/BezSurf.hs
@@ -44,6 +49,7 @@ share/hugs/demos/Queens.hs
 share/hugs/demos/Say.hs
 share/hugs/demos/Stack.hs
 share/hugs/demos/Tree.hs
+share/hugs/demos/prolog/
 share/hugs/demos/prolog/AndorraEngine.hs
 share/hugs/demos/prolog/CombParse.hs
 share/hugs/demos/prolog/Main.hs
@@ -53,6 +59,7 @@ share/hugs/demos/prolog/StackEngine.hs
 share/hugs/demos/prolog/Subst.hs
 share/hugs/demos/prolog/readme
 share/hugs/demos/prolog/stdlib
+share/hugs/docs/
 share/hugs/docs/ffi-notes.txt
 share/hugs/docs/libraries-notes.txt
 share/hugs/docs/machugs-notes.txt
@@ -61,11 +68,13 @@ share/hugs/docs/server.html
 share/hugs/docs/server.tex
 share/hugs/docs/win32-notes.txt
 share/hugs/docs/winhugs-notes.txt
+share/hugs/include/
 share/hugs/include/HsFFI.h
 share/hugs/include/MachDeps.h
 share/hugs/include/config.h
 share/hugs/include/platform.h
 share/hugs/include/template-hsc.h
+share/hugs/libraries/
 share/hugs/libraries/Array.hs
 share/hugs/libraries/Bits.hs
 share/hugs/libraries/CError.hs
@@ -75,7 +84,9 @@ share/hugs/libraries/CString.hs
 share/hugs/libraries/CTypes.hs
 share/hugs/libraries/Char.hs
 share/hugs/libraries/Complex.hs
+share/hugs/libraries/Control/
 share/hugs/libraries/Control/Arrow.hs
+share/hugs/libraries/Control/Concurrent/
 share/hugs/libraries/Control/Concurrent.hs
 share/hugs/libraries/Control/Concurrent/Chan.hs
 share/hugs/libraries/Control/Concurrent/MVar.hs
@@ -83,6 +94,7 @@ share/hugs/libraries/Control/Concurrent/QSem.hs
 share/hugs/libraries/Control/Concurrent/QSemN.hs
 share/hugs/libraries/Control/Concurrent/SampleVar.hs
 share/hugs/libraries/Control/Exception.hs
+share/hugs/libraries/Control/Monad/
 share/hugs/libraries/Control/Monad.hs
 share/hugs/libraries/Control/Monad/Cont.hs
 share/hugs/libraries/Control/Monad/Error.hs
@@ -91,6 +103,7 @@ share/hugs/libraries/Control/Monad/Identity.hs
 share/hugs/libraries/Control/Monad/List.hs
 share/hugs/libraries/Control/Monad/RWS.hs
 share/hugs/libraries/Control/Monad/Reader.hs
+share/hugs/libraries/Control/Monad/ST/
 share/hugs/libraries/Control/Monad/ST.hs
 share/hugs/libraries/Control/Monad/ST/Lazy.hs
 share/hugs/libraries/Control/Monad/ST/Strict.hs
@@ -98,10 +111,13 @@ share/hugs/libraries/Control/Monad/State.hs
 share/hugs/libraries/Control/Monad/Trans.hs
 share/hugs/libraries/Control/Monad/Writer.hs
 share/hugs/libraries/Control/Parallel.hs
+share/hugs/libraries/Data/
+share/hugs/libraries/Data/Array/
 share/hugs/libraries/Data/Array.hs
 share/hugs/libraries/Data/Array/Base.hs
 share/hugs/libraries/Data/Array/Diff.hs
 share/hugs/libraries/Data/Array/IArray.hs
+share/hugs/libraries/Data/Array/IO/
 share/hugs/libraries/Data/Array/IO.hs
 share/hugs/libraries/Data/Array/IO/Internals.hs
 share/hugs/libraries/Data/Array/MArray.hs
@@ -125,6 +141,7 @@ share/hugs/libraries/Data/Maybe.hs
 share/hugs/libraries/Data/Monoid.hs
 share/hugs/libraries/Data/PackedString.hs
 share/hugs/libraries/Data/Ratio.hs
+share/hugs/libraries/Data/STRef/
 share/hugs/libraries/Data/STRef.hs
 share/hugs/libraries/Data/STRef/Lazy.hs
 share/hugs/libraries/Data/STRef/Strict.hs
@@ -134,17 +151,22 @@ share/hugs/libraries/Data/Tuple.hs
 share/hugs/libraries/Data/Typeable.hs
 share/hugs/libraries/Data/Unique.hs
 share/hugs/libraries/Data/Word.hs
+share/hugs/libraries/Debug/
+share/hugs/libraries/Debug/QuickCheck/
 share/hugs/libraries/Debug/QuickCheck.hs
 share/hugs/libraries/Debug/QuickCheck/Poly.hs
 share/hugs/libraries/Debug/QuickCheck/Utils.hs
 share/hugs/libraries/Debug/Trace.hs
 share/hugs/libraries/Directory.hs
+share/hugs/libraries/Foreign/
 share/hugs/libraries/Foreign.hs
+share/hugs/libraries/Foreign/C/
 share/hugs/libraries/Foreign/C.hs
 share/hugs/libraries/Foreign/C/Error.hs
 share/hugs/libraries/Foreign/C/String.hs
 share/hugs/libraries/Foreign/C/Types.hs
 share/hugs/libraries/Foreign/ForeignPtr.hs
+share/hugs/libraries/Foreign/Marshal/
 share/hugs/libraries/Foreign/Marshal.hs
 share/hugs/libraries/Foreign/Marshal/Alloc.hs
 share/hugs/libraries/Foreign/Marshal/Array.hs
@@ -155,6 +177,7 @@ share/hugs/libraries/Foreign/Ptr.hs
 share/hugs/libraries/Foreign/StablePtr.hs
 share/hugs/libraries/Foreign/Storable.hs
 share/hugs/libraries/ForeignPtr.hs
+share/hugs/libraries/Hugs/
 share/hugs/libraries/Hugs/Array.hs
 share/hugs/libraries/Hugs/Bits.hs
 share/hugs/libraries/Hugs/ByteArray.hs
@@ -191,6 +214,8 @@ share/hugs/libraries/Hugs/Word.hs
 share/hugs/libraries/IO.hs
 share/hugs/libraries/Int.hs
 share/hugs/libraries/Ix.hs
+share/hugs/libraries/Language/
+share/hugs/libraries/Language/Haskell/
 share/hugs/libraries/Language/Haskell/Lexer.hs
 share/hugs/libraries/Language/Haskell/ParseMonad.hs
 share/hugs/libraries/Language/Haskell/ParseUtils.hs
@@ -205,6 +230,7 @@ share/hugs/libraries/MarshalError.hs
 share/hugs/libraries/MarshalUtils.hs
 share/hugs/libraries/Maybe.hs
 share/hugs/libraries/Monad.hs
+share/hugs/libraries/Network/
 share/hugs/libraries/Network.hs
 share/hugs/libraries/Network/BSD.hs
 share/hugs/libraries/Network/CGI.hs
@@ -217,23 +243,29 @@ share/hugs/libraries/Random.hs
 share/hugs/libraries/Ratio.hs
 share/hugs/libraries/StablePtr.hs
 share/hugs/libraries/Storable.hs
+share/hugs/libraries/System/
 share/hugs/libraries/System.hs
 share/hugs/libraries/System/CPUTime.hs
 share/hugs/libraries/System/Cmd.hs
+share/hugs/libraries/System/Console/
 share/hugs/libraries/System/Console/GetOpt.hs
 share/hugs/libraries/System/Directory.hs
 share/hugs/libraries/System/Environment.hs
 share/hugs/libraries/System/Exit.hs
+share/hugs/libraries/System/IO/
 share/hugs/libraries/System/IO.hs
 share/hugs/libraries/System/IO/Error.hs
 share/hugs/libraries/System/IO/Unsafe.hs
 share/hugs/libraries/System/Info.hs
 share/hugs/libraries/System/Locale.hs
+share/hugs/libraries/System/Mem/
 share/hugs/libraries/System/Mem.hs
 share/hugs/libraries/System/Mem/StableName.hs
 share/hugs/libraries/System/Mem/Weak.hs
+share/hugs/libraries/System/Posix/
 share/hugs/libraries/System/Posix.hs
 share/hugs/libraries/System/Posix/Directory.hs
+share/hugs/libraries/System/Posix/DynamicLinker/
 share/hugs/libraries/System/Posix/DynamicLinker.hs
 share/hugs/libraries/System/Posix/DynamicLinker/Module.hs
 share/hugs/libraries/System/Posix/DynamicLinker/Prim.hs
@@ -252,8 +284,12 @@ share/hugs/libraries/System/Posix/Unistd.hs
 share/hugs/libraries/System/Posix/User.hs
 share/hugs/libraries/System/Random.hs
 share/hugs/libraries/System/Time.hs
+share/hugs/libraries/Text/
+share/hugs/libraries/Text/Html/
 share/hugs/libraries/Text/Html.hs
 share/hugs/libraries/Text/Html/BlockTable.hs
+share/hugs/libraries/Text/ParserCombinators/
+share/hugs/libraries/Text/ParserCombinators/Parsec/
 share/hugs/libraries/Text/ParserCombinators/Parsec.hs
 share/hugs/libraries/Text/ParserCombinators/Parsec/Char.hs
 share/hugs/libraries/Text/ParserCombinators/Parsec/Combinator.hs
@@ -266,16 +302,21 @@ share/hugs/libraries/Text/ParserCombinators/Parsec/Prim.hs
 share/hugs/libraries/Text/ParserCombinators/Parsec/Token.hs
 share/hugs/libraries/Text/ParserCombinators/ReadP.hs
 share/hugs/libraries/Text/ParserCombinators/ReadPrec.hs
+share/hugs/libraries/Text/PrettyPrint/
 share/hugs/libraries/Text/PrettyPrint.hs
 share/hugs/libraries/Text/PrettyPrint/HughesPJ.hs
+share/hugs/libraries/Text/Read/
 share/hugs/libraries/Text/Read.hs
 share/hugs/libraries/Text/Read/Lex.hs
+share/hugs/libraries/Text/Regex/
 share/hugs/libraries/Text/Regex.hs
 share/hugs/libraries/Text/Regex/Posix.hs
+share/hugs/libraries/Text/Show/
 share/hugs/libraries/Text/Show.hs
 share/hugs/libraries/Text/Show/Functions.hs
 share/hugs/libraries/Time.hs
 share/hugs/libraries/Word.hs
+share/hugs/oldlib/
 share/hugs/oldlib/Addr.hs
 share/hugs/oldlib/AnsiInteract.hs
 share/hugs/oldlib/AnsiScreen.hs
@@ -399,48 +440,7 @@ share/hugs/oldlib/URI.hs
 share/hugs/oldlib/UnbalancedSet.hs
 share/hugs/oldlib/Unique.lhs
 share/hugs/oldlib/Weak.hs
+share/hugs/tools/
 share/hugs/tools/Package.hs
 share/hugs/tools/ParsePkgConf.hs
 share/hugs/tools/get_pkg_field
-@dirrm share/hugs/tools
-@dirrm share/hugs/oldlib
-@dirrm share/hugs/libraries/Text/Show
-@dirrm share/hugs/libraries/Text/Regex
-@dirrm share/hugs/libraries/Text/Read
-@dirrm share/hugs/libraries/Text/PrettyPrint
-@dirrm share/hugs/libraries/Text/ParserCombinators/Parsec
-@dirrm share/hugs/libraries/Text/ParserCombinators
-@dirrm share/hugs/libraries/Text/Html
-@dirrm share/hugs/libraries/Text
-@dirrm share/hugs/libraries/System/Posix/DynamicLinker
-@dirrm share/hugs/libraries/System/Posix
-@dirrm share/hugs/libraries/System/Mem
-@dirrm share/hugs/libraries/System/IO
-@dirrm share/hugs/libraries/System/Console
-@dirrm share/hugs/libraries/System
-@dirrm share/hugs/libraries/Network
-@dirrm share/hugs/libraries/Language/Haskell
-@dirrm share/hugs/libraries/Language
-@dirrm share/hugs/libraries/Hugs
-@dirrm share/hugs/libraries/Foreign/Marshal
-@dirrm share/hugs/libraries/Foreign/C
-@dirrm share/hugs/libraries/Foreign
-@dirrm share/hugs/libraries/Debug/QuickCheck
-@dirrm share/hugs/libraries/Debug
-@dirrm share/hugs/libraries/Data/STRef
-@dirrm share/hugs/libraries/Data/Array/IO
-@dirrm share/hugs/libraries/Data/Array
-@dirrm share/hugs/libraries/Data
-@dirrm share/hugs/libraries/Control/Monad/ST
-@dirrm share/hugs/libraries/Control/Monad
-@dirrm share/hugs/libraries/Control/Concurrent
-@dirrm share/hugs/libraries/Control
-@dirrm share/hugs/libraries
-@dirrm share/hugs/include
-@dirrm share/hugs/docs
-@dirrm share/hugs/demos/prolog
-@dirrm share/hugs/demos/GLUT/RedBook
-@dirrm share/hugs/demos/GLUT/Misc
-@dirrm share/hugs/demos/GLUT
-@dirrm share/hugs/demos
-@dirrm share/hugs

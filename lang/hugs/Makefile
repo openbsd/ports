@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/05/17 02:24:32 dons Exp $
+# $OpenBSD: Makefile,v 1.6 2004/09/15 19:15:12 espie Exp $
 
 COMMENT=	"Haskell 98 interpreter"
 
@@ -12,18 +12,17 @@ MASTER_SITES0=	ftp://ftp.cse.unsw.edu.au/pub/users/dons/hugs98/
 
 DISTFILES=	${DISTNAME}.tar.gz ${DISTNAME}-regress.tar.bz2:0
 
-CONFIGURE_STYLE=dest
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CC="${CC}"
 CONFIGURE_ARGS+=--with-pthreads --disable-ffi --libdir=${PREFIX}/share
 
 WRKBUILD=	${WRKDIST}/src
+WRKCONF=	${WRKBUILD}/unix
 ALL_TARGET=
 
-do-configure:
-	@(cd ${WRKBUILD}/unix && ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS})
-
+CONFIG_SITE=
 do-regress:
-	@(cd ${WRKDIST}/tests && sh testScript static tcheck rts libs)
+	@cd ${WRKDIST}/tests && sh testScript static tcheck rts libs
 
 # BSDish
 PERMIT_PACKAGE_CDROM=	Yes
