@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/03/03 09:54:19 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2004/03/03 09:58:21 brad Exp $
 
 COMMENT=		"heavily customizable and extensible editor"
 
@@ -55,7 +55,7 @@ MODULES=	gettext
 
 CONFIGURE_STYLE=	autoconf old dest
 CONFIGURE_ARGS+=	--infodir='$${DESTDIR}${PREFIX}/info/${DISTNAME}' \
-			--infopath='${LOCALBASE}/info/${DISTNAME}:${LOCALBASE}/info:usr/share/info' \
+			--infopath='${LOCALBASE}/info/${DISTNAME}:${LOCALBASE}/info:/usr/share/info' \
 			--site-prefixes='${LOCALBASE}:/usr' \
 			--without-ldap \
 			--without-postgresql \
