@@ -1,0 +1,40 @@
+# $OpenBSD: OpenBSD-markers,v 1.1 2000/05/27 16:09:57 espie Exp $
+# This is a list of OpenBSD developpers and related people.
+#
+-27.48		153.20		"Leonard"	# David
+-34.67  	-58.50 		"Schwindt"	# Federico G.
+25.0		121.400		"Lo"		# Kevin
+35.67  		139.75 		"Itojun"	# Jun-ichiro
+37.515049	-122.339528	"Hyman"		# Marco S.
+38.9693		-77.3863	"Wright"	# Jason L.
+39.96		-83		"Jackson"	# Eric
+40		-75.10		"Keromytis"	# Angelos D.
+40.033779  	-105.250051	"Miller"	# Todd
+40.683		-89.583		"Fries"		# Todd
+40.7517		-73.9942	"Shalayeff"	# Michael
+40.85		-96.75		"Phillips"	# Jim, OpenBSD journal
+41.881		-87.628		"Creighton"	# Brandon
+42.2775		-83.754167	"Provos"	# Niels
+42.280556	-83.754722 	"Rees"		# Jim Rees
+42.281336	-83.738587	"Turan"		# Chris
+42.3813		-71.1283	"Janzen"	# Paul
+43.5826		1.4376		"Herb"		# Matthieu
+43.70		-79.42		"Westerback"	# Ken
+44.39		-63.34		"Campbell"	# Aaron
+45.5		-73.5		"Cote"		# Yannick
+45.78 		3.08		"Vallat"	# Miod
+47.50		7.60		"Hartmeier"	# Daniel
+48.3		15.7		"Sammer"	# Reinhard J.
+48.87		2.33		"Espie"		# Marc
+49.57		11.03		"Friedl"	# Markus
+51.6		-114.1		"de Raadt"	# Theo
+52.26		4.63		"Dobbelar"	# Camiel
+53.13		9		"Finck"		# Jan-Uwe
+53.56		-113.51		"Beck"		# Bob
+53.56		-113.51		"Weingarten"	# Tobias
+55.02		82.54		"Safiullin"	# Oleg
+57.43		11.58		"Schlyter"	# Jakob
+57.717		11.967		"Hallqvist"	# Niklas
+59.33		18.08		"Grabowsky"	# Art
+59.43		17.81		"Jansson"	# Mats O
+60.12399	24.52438	"Virtanen"	# Jukka

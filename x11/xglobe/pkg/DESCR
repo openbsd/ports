@@ -4,3 +4,7 @@ The image of the globe is updated at regular intervals.
 XGlobe uses a world map image which is mapped to the globe.
 With a good map this can look very nice.
 It is possible to mark locations on the globe.
+
+As a bonus, this package includes an `OpenBSD markers' file, which collates
+the location of many major developpers and other people from the OpenBSD
+community.
