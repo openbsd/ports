@@ -22,8 +22,8 @@ lib/libtcl82.a
 lib/libtcl82.so
 lib/libtcl82.so.1
 lib/libtclstub82.a
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 lib/tcl8.2/auto.tcl
 lib/tcl8.2/encoding/ascii.enc
 lib/tcl8.2/encoding/big5.enc
