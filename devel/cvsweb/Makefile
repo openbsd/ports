@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2003/08/16 23:18:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2004/02/01 19:47:27 naddy Exp $
 # $FreeBSD: ports/devel/cvsweb/Makefile,v 1.28 2000/09/23 20:48:45 knu Exp $
 
 COMMENT=	"WWW CGI script to browse CVS repository trees"
@@ -21,6 +21,7 @@ MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL:=scop/} \
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 PREFIX=		/var/www
 CONFDIR=	${PREFIX}/conf
@@ -42,6 +43,7 @@ do-install:
 .for file in ${CONFFILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${CONFDIR}/cvsweb/${file}.dist
 .endfor
+	${INSTALL_DATA} ${FILESDIR}/README.chroot ${CONFDIR}/cvsweb/
 	${INSTALL_DATA_DIR} ${PREFIX}/icons/cvsweb
 .for file in ${ICONS}
 	${INSTALL_DATA} ${WRKSRC}/icons/${file} ${PREFIX}/icons/cvsweb/${file}
