@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/08/16 03:15:41 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/22 22:56:05 dbt Exp $
 
 DISTNAME=	lua-3.2
 CATEGORIES=     lang
@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
 
 HOMEPAGE=	http://www.tecgraf.puc-rio.br/lua/
 
-MAINTAINER=	dbt@meat.net
+MAINTAINER=	David Terrell <dbt@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -27,11 +27,10 @@ PERMIT_DISTFILES_FTP=	Yes
 WRKDIST=	${WRKDIR}/lua
 
 post-build:
-	(cd ${WRKDIST} && gcc -o bin/bin2c etc/bin2c.c)
+	cd ${WRKDIST} && gcc -o bin/bin2c etc/bin2c.c
 #	and recompile with shared libs
-	(cd ${WRKDIST} && gcc -shared -o lib/liblua.so.3.2 src/*.o)
-	(cd ${WRKDIST} && gcc -shared -o lib/liblualib.so.3.2 src/lib/*.o)
-	(cd ${WRKDIST} && rm bin/lua && make )
+	${BUILD_SHARED}
+
 do-install:
 	${INSTALL_DATA} ${WRKDIST}/include/*.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKDIST}/lib/* ${PREFIX}/lib
@@ -42,3 +41,12 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/doc/* ${PREFIX}/share/lua/docs
 
 .include <bsd.port.mk>
+
+.if defined(NO_SHARED_LIBS)
+BUILD_SHARED=:
+.else
+BUILD_SHARED=cd ${WRKDIST} && \
+	gcc -shared -fpic -o lib/liblua.so.3.2 src/*.o && \
+	gcc -shared -fpic -o lib/liblualib.so.3.2 src/lib/*.o && \
+	rm bin/lua && ${MAKE}
+.endif
