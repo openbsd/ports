@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.514 2002/03/18 01:52:46 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.515 2002/03/18 01:55:40 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -387,6 +387,9 @@ LIB_DEPENDS+=		Xm.1::x11/lesstif
 LIB_DEPENDS+=		Xm.2::x11/openmotif
 .  elif ${USE_MOTIF:L} == "any" || ${USE_MOTIF:L} == "yes"
 FLAVORS+=lesstif
+.    if ${FLAVOR:L:Mlesstif} && ${FLAVOR:L:Mmotif}
+ERRORS+="Fatal: choose motif or lesstif, not both."
+.    endif
 .    if ${FLAVOR:L:Mlesstif}
 LIB_DEPENDS+=		Xm.1::x11/lesstif
 .    else
