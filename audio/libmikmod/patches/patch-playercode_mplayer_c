@@ -1,0 +1,30 @@
+$OpenBSD: patch-playercode_mplayer_c,v 1.1 2002/03/04 00:02:46 pvalchev Exp $
+--- playercode/mplayer.c.orig	Mon Jan 21 14:23:56 2002
++++ playercode/mplayer.c	Sun Mar  3 16:47:54 2002
+@@ -20,7 +20,7 @@
+ 
+ /*==============================================================================
+ 
+-  $Id: patch-playercode_mplayer_c,v 1.1 2002/03/04 00:02:46 pvalchev Exp $
++  $Id: patch-playercode_mplayer_c,v 1.1 2002/03/04 00:02:46 pvalchev Exp $
+ 
+   The Protracker Player Driver
+ 
+@@ -254,7 +254,7 @@ static int MP_FindEmptyChannel(MODULE *m
+ 		   Voice_Stopped_internal(t))
+ 			return t;
+ 
+-	tvol=0xffffffUL;t=0;a=mod->voice;
++	tvol=0xffffffUL;t=-1;a=mod->voice;
+ 	for (k=0;k<md_sngchn;k++,a++) {
+ 		/* allow us to take over a nonexisting sample */
+ 		if (!a->main.s)
+@@ -444,7 +444,7 @@ static SWORD ProcessEnvelope(MP_VOICE *a
+ 			 * Non looping situations.
+ 			 * Start to fade if the volume envelope is finished.
+ 			 */
+-			if (p > t->env[t->pts - 1].pos) {
++			if (p >= t->env[t->pts - 1].pos) {
+ 				v = t->env[a].val;
+ 				if (t->flg & EF_VOLENV) {
+ 					aout->main.keyoff |= KEY_FADE;
