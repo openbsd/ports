@@ -1,0 +1,17 @@
+GPERF  generates perfect hash functions for sets of key words.  
+A perfect hash function is simply:
+
+          A hash function and a data structure that allows 
+          recognition of a key word in a set of words using 
+          exactly 1 probe into the data structure.
+
+Output from the GPERF program is used to recognize reserved words in
+the GNU C, GNU C++, and GNU Pascal compilers, as well as with the GNU
+indent program.
+
+Author: Douglas C. Schmidt
+
+Gperf was bundled with libg++. Now that libg++ has been removed from 
+the main tree, some people may find gperf useful.
+
+the 19981006 patch adds the flags needed to rebuild egcs from gperf files.
