@@ -1,0 +1,15 @@
+$OpenBSD: patch-bin_Makefile_in,v 1.1.1.1 2003/06/24 23:03:23 espie Exp $
+--- bin/Makefile.in.orig	Tue Jun 24 18:32:07 2003
++++ bin/Makefile.in	Tue Jun 24 18:32:21 2003
+@@ -346,7 +346,10 @@ uninstall-am: uninstall-binSCRIPTS unins
+ 
+ $(srcdir)/autoconf.in: $(srcdir)/autoconf.as $(m4sh_m4f_dependencies)
+ 	$(AUTOM4SH) $(srcdir)/autoconf.as -o $@
+-autoconf autoheader autoreconf autoupdate ifnames autoscan autom4te: Makefile
++
++# BSD make does not handle this correctly
++#autoconf autoheader autoreconf autoupdate ifnames autoscan autom4te: Makefile
++
+ .in:
+ 	rm -f $@ $@.tmp
+ 	$(edit) $< >$@.tmp
