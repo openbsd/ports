@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.24 2003/06/30 11:29:16 espie Exp $
+# $OpenBSD: make-plist,v 1.25 2003/06/30 11:31:22 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -238,6 +238,9 @@ sub may_annotate_and_move
 	my $p = shift;
 
 	if (-e $p) {
+	    if (defined $out{$p}) {
+	    	die "File handle for $p already exists";
+	    }
 	    my $fh = new IO::File "<$p";
 	    rename($p, "$p.orig") or die "Can't rename $p to $p.orig";
 	    my $newfh = new IO::File ">$p";
