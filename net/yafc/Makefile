@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/02 00:28:32 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/09/15 17:03:42 avsm Exp $
 
-DISTNAME=	yafc-0.6.1
+DISTNAME=	yafc-0.6.2
 CATEGORIES=	net
-NEED_VERSION=	1.322
-MASTER_SITES=	ftp://mayer.physto.se/pub/yafc/ \
-		ftp://ftp.uni-klu.ac.at/pub/linux/internet/yafc/ \
-		http://ftp.du.se/pub/mirrors/yafc/ \
-		ftp://mayer.physto.se/pub/yafc/old/ 
+NEED_VERSION=	1.330
+MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= yafc
 
 HOMEPAGE=	http://www.stacken.kth.se/~mhe/yafc/
+MAINTAINER=	avsm@openbsd.org
 
-MAINTAINER=	anil@recoil.org
-
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
