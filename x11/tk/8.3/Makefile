@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/03/13 15:48:54 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2004/07/04 05:37:09 brad Exp $
 
 COMMENT=	"graphical toolkit for Tcl"
 
@@ -33,7 +33,7 @@ SEPARATE_BUILD=	concurrent
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static --with-tcl="${LOCALBASE}/lib/tcl8.3"
+CONFIGURE_ARGS+= --with-tcl="${LOCALBASE}/lib/tcl8.3"
 CONFIGURE_ENV=  PORTSDIR="${PORTSDIR}"
 
 WRKDIST=	${WRKDIR}/tk${VERSION}/unix

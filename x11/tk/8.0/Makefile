@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/03/13 15:48:54 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2004/07/04 05:37:08 brad Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 
 COMMENT=	"graphical toolkit for Tcl"
@@ -11,8 +11,6 @@ MASTER_SITES=	${MASTER_SITE_TCLTK:=tcl8_0/}
 HOMEPAGE=	http://dev.scriptics.com/software/tcltk/
 
 LIB_DEPENDS=	tcl80.1.5:tcl-8.0.5:lang/tcl/8.0
-
-MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
@@ -32,7 +30,7 @@ SEPARATE_BUILD=	concurrent
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static --with-tcl="${LOCALBASE}/lib/tcl8.0"
+CONFIGURE_ARGS+= --with-tcl="${LOCALBASE}/lib/tcl8.0"
 CONFIGURE_ENV=	PORTSDIR="${PORTSDIR}"
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/unix
