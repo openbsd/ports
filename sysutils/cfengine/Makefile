@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/10/01 13:07:45 heko Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/09 16:02:06 heko Exp $
 # $FreeBSD: Makefile,v 1.2 1998/08/19 11:28:23 jseger Exp $
 #
 
@@ -20,5 +20,7 @@ MASTER_SITES=       ftp://ftp.gnu.org/old-gnu/cfengine/
 
 CONFIGURE_STYLE=	autoconf dest
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
+
+BROKEN=		"this version of cfengine has security problems"
 
 .include <bsd.port.mk>
