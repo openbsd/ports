@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 1999/03/22 17:29:15 brad Exp $
+# $OpenBSD: Makefile,v 1.34 1999/03/28 02:10:11 brad Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -74,6 +74,7 @@
      SUBDIR += viewfax
      SUBDIR += windowmaker
      SUBDIR += wm2
+     SUBDIR += wterm
 #    SUBDIR += x3270
 #    SUBDIR += xalarm
      SUBDIR += x2x
