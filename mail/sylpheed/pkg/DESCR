@@ -7,3 +7,8 @@ on the X Window System, and aiming for:
      Abundant features 
 
 WWW: ${HOMEPAGE}
+
+FLAVORS :
+	* pixbuf : use gdk_pixbuf as graphic library (default)
+	* imlib	: use imlib as graphic library
+	* gpgme : compile with gnupg made easy support

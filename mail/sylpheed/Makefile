@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2001/05/12 23:51:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2001/07/29 18:34:34 shell Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
-DISTNAME=	sylpheed-0.4.66
+DISTNAME=	sylpheed-0.5.1
 CATEGORIES=    	mail news x11
-NEED_VERSION=	1.364
+NEED_VERSION=	1.427
 HOMEPAGE=	http://sylpheed.good-day.net
 
 MAINTAINER=	COUDERC Damien <couderc.damien@wanadoo.fr>
@@ -18,11 +18,11 @@ MASTER_SITES=	${HOMEPAGE}/sylpheed/
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS= --disable-gpgme --disable-glibtest
+CONFIGURE_ARGS+= --disable-glibtest
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
                 LDFLAGS="-L${LOCALBASE}/lib"
 
-FLAVORS=	imlib pixbuf
+FLAVORS=	imlib pixbuf gpgme
 FLAVOR?=	pixbuf
 
 .if ${FLAVOR:L:Mimlib}
@@ -34,6 +34,13 @@ CONFIGURE_ARGS+=	--disable-gdk-pixbuf
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		gdk_pixbuf::graphics/gdk-pixbuf
 CONFIGURE_ARGS+=	--disable-imlib
+.endif
+
+.if ${FLAVOR:L:Mgpgme}
+LIB_DEPENDS=	gpgme::security/gpgme
+CONFIGURE_ARGS+= --enable-gpgme
+.else
+CONFIGURE_ARGS+= --disable-gpgme
 .endif
 
 .include <bsd.port.mk>
