@@ -209,6 +209,8 @@
     var
 	db
 	..
+	games
+	..
 	log
 	..
 	spool
