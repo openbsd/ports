@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Aug 28 11:58:11 2000
++++ Makefile.in	Mon Aug 28 11:57:47 2000
+@@ -113,7 +113,7 @@ installirc: installdirs
+ 	@if test -f $(INSTALL_NAP).old; then $(RM) $(INSTALL_NAP).old; fi
+ 	@if test -f $(INSTALL_NAP); then $(MV) $(INSTALL_NAP) $(INSTALL_NAP).old; fi
+ 	$(RM) $(INSTALL_NAP)
+-	$(LN) $(bindir)/$(VERSION) $(INSTALL_NAP)
++	#$(LN) $(bindir)/$(VERSION) $(INSTALL_NAP)
+ 
+ install_local: local_installdirs installuserhelp
+ 	$(INSTALL) $(objdir)/TekNap $(local_dir)/bin/$(VERSION)
