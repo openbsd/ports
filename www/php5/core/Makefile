@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/20 20:59:44 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2005/03/16 20:09:41 robert Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
 
 COMMENT=	"server-side HTML-embedded scripting language"
 COMMENT-pear=	"base classes for common PHP tasks"
-PKGNAME=	php5-core-${V}
-FULLPKGNAME-pear= php5-pear-${V}
+PKGNAME=	php5-core-${V}p1
+FULLPKGNAME-pear= php5-pear-${V}p1
 
 CONFIGURE_ARGS+= --with-apxs=/usr/sbin/apxs \
 		--without-mysql \
@@ -34,7 +34,7 @@ CONFIGURE_ARGS+= --with-apxs=/usr/sbin/apxs \
 
 MODULES=	devel/gettext
 
-# some variables to substitute 
+# some variables to substitute
 SUBST_VARS=	PHP_CONFIG_FILE
 PHP_VERSION=	${V}
 
@@ -46,7 +46,11 @@ WANTLIB=	c crypto des m ssl stdc++ z
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
 PREFIX=		${CHROOT_DIR}
-RUN_DEPENDS=	:php5-core-${V}:www/php5/core 
+RUN_DEPENDS=	:php5-core-${V}:www/php5/core
+WANTLIB=
+MODULES=
+.else
+LIB_DEPENDS=	xml2.8::textproc/libxml
 .endif
 
 pre-fake:

@@ -1,6 +1,6 @@
-$OpenBSD: patch-aclocal_m4,v 1.1.1.1 2004/10/02 11:32:37 robert Exp $
---- aclocal.m4.orig	Mon Jul 26 23:06:19 2004
-+++ aclocal.m4	Mon Jul 26 23:06:53 2004
+$OpenBSD: patch-aclocal_m4,v 1.2 2005/03/16 20:09:41 robert Exp $
+--- aclocal.m4.orig	Wed Dec 15 07:58:45 2004
++++ aclocal.m4	Mon Mar 14 23:32:17 2005
 @@ -1655,6 +1655,7 @@
    
      PHP_CHECK_LIBRARY(crypto, CRYPTO_free, [
@@ -9,7 +9,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1.1.1 2004/10/02 11:32:37 robert Exp $
      ],[
        AC_MSG_ERROR([libcrypto not found!])
      ],[
-@@ -3934,7 +3935,7 @@
+@@ -3946,7 +3947,7 @@
    need_version=no
    library_names_spec='${libname}${release}.so$versuffix ${libname}${release}.so$major $libname.so'
    soname_spec='${libname}${release}.so$major'
@@ -18,3 +18,12 @@ $OpenBSD: patch-aclocal_m4,v 1.1.1.1 2004/10/02 11:32:37 robert Exp $
    shlibpath_var=LD_LIBRARY_PATH
    sys_lib_search_path_spec="/shlib /usr/lib /usr/X11/lib /usr/contrib/lib /lib /usr/local/lib"
    sys_lib_dlsearch_path_spec="/shlib /usr/lib /usr/local/lib"
+@@ -4156,7 +4157,7 @@
+     shlibpath_overrides_runpath=yes
+   fi
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  finish_cmds=
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 

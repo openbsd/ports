@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/21 12:15:02 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2005/03/16 20:09:41 robert Exp $
 
-FULLPKGNAME=	php5-extensions-${V}
+FULLPKGNAME=	php5-extensions-${V}p1
 COMMENT=	"informational package about PHP5 extensions"
 
 MULTI_PACKAGES=
@@ -10,12 +10,14 @@ SUBPACKAGE?=
 PREFIX?=	${CHROOT_DIR}
 
 FLAVORS=	no_x11
-FLAVOR?= 
+FLAVOR?=
 
-WANTLIB=	crypto gssapi krb5 m ncurses panel ssl z
+WANTLIB=	stdc++ m
 
 RUN_DEPENDS=	:php5-core-${V}:www/php5/core
+.if !defined(PACKAGING)
 MODULES=	devel/gettext
+.endif
 
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-iconv-dir=${LOCALBASE} \
@@ -23,13 +25,11 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--disable-dom
 
 GRAPHIC_DEPENDS=	jpeg.62::graphics/jpeg \
-			png.3::graphics/png \
-			tiff.35::graphics/tiff
+			png.3::graphics/png
 
 GRAPHIC_CONFIG=		--with-jpeg-dir=${LOCALBASE} \
 			--with-png-dir=${LOCALBASE} \
-			--with-tiff-dir=${LOCALBASE} \
-			--with-zlib-dir=/usr 
+			--with-zlib-dir=/usr
 
 # bz2
 PSEUDO_FLAVORS+=	no_bz2
@@ -51,6 +51,7 @@ MULTI_PACKAGES+=	-curl
 COMMENT-curl=		"curl URL library extensions for php5"
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 CURL_DEPENDS=		curl.2::net/curl
+CURL_WANTLIB=		crypto ssl z
 .endif
 
 # dba
@@ -81,7 +82,7 @@ CONFIGURE_ARGS+=	--disable-dbx
 .else
 MULTI_PACKAGES+=	-dbx
 COMMENT-dbx=		"dbx database abstraction interface for php5"
-CONFIGURE_ARGS+=	--enable-dbx=shared 
+CONFIGURE_ARGS+=	--enable-dbx=shared
 .endif
 
 # filepro
@@ -104,17 +105,20 @@ MULTI_PACKAGES+=	-gd
 COMMENT-gd=		"image manipulation extensions for php5"
 GD_DEPENDS=		ttf.1::print/freetype ${GRAPHIC_DEPENDS} \
 			t1.5::devel/t1lib
+GD_WANTLIB=		z
 CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
 			--with-ttf=shared,${LOCALBASE} --without-freetype-dir \
 			--with-t1lib=${LOCALBASE}
-.if !${FLAVOR:L:Mno_x11}
+. if !${FLAVOR:L:Mno_x11}
 USE_X11=               yes
 CONFIGURE_ARGS+=       --with-xpm-dir=${X11BASE}
-WANTLIB+=		X11 Xpm 
-.else
+.  if !defined(PACKAGING) || ${SUBPACKAGE} == "-gd"
+GD_WANTLIB+=		X11 Xpm
+.  endif
+. else
 CONFIGURE_ARGS+=       --without-xpm-dir
 FULLPKGNAME-gd=		php5-gd-${V}-no_x11
-.endif
+. endif
 .endif
 
 # gmp
@@ -138,6 +142,7 @@ COMMENT-imap=		"imap, pop3 and nntp extensions for php5"
 CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 			--with-kerberos=/usr --with-imap-ssl
 IMAP_DEPENDS=		c-client.3::mail/c-client
+IMAP_WANTLIB=		gssapi crypto krb5 ssl
 .endif
 
 # ldap
@@ -192,6 +197,7 @@ CONFIGURE_ARGS+=	--without-ncurses
 MULTI_PACKAGES+=	-ncurses
 COMMENT-ncurses=	"ncurses extensions for php5"
 CONFIGURE_ARGS+=	--with-ncurses=shared,${LOCALBASE}
+NCURSES_WANTLIB=	ncurses panel
 .endif
 
 # odbc
@@ -226,7 +232,7 @@ COMMENT-shmop=		"shared memory extensions for php5"
 CONFIGURE_ARGS+=	--enable-shmop=shared
 .endif
 
-# snmp 
+# snmp
 PSEUDO_FLAVORS+=	no_snmp
 .if ${FLAVOR:L:Mno_snmp}
 CONFIGURE_ARGS+=	--without-snmp
@@ -235,6 +241,7 @@ MULTI_PACKAGES+=	-snmp
 COMMENT-snmp=		"snmp protocol extensions for php5"
 CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE} --enable-ucd-snmp-hack
 SNMP_DEPENDS=		netsnmp.6.2::net/net-snmp
+SNMP_WANTLIB=		crypto
 .endif
 
 # sqlite
@@ -256,7 +263,7 @@ CONFIGURE_ARGS+=	--without-sybase-ct
 MULTI_PACKAGES+=	-sybase_ct
 COMMENT-sybase_ct=	"sybase database access extensions for php5"
 CONFIGURE_ARGS+=        --with-sybase-ct=shared,${LOCALBASE}
-SYBASE_CT_DEPENDS=	tds.0,ct.0::databases/freetds
+SYBASE_CT_DEPENDS=	ct.0::databases/freetds
 .endif
 
 # xml-rpc
@@ -268,26 +275,30 @@ MULTI_PACKAGES+=	-xmlrpc
 COMMENT-xmlrpc=		"XML RPC functions for php5"
 CONFIGURE_ARGS+=	--with-xmlrpc=shared
 XMLRPC_DEPENDS=		expat.2::textproc/expat
+XMLRPC_WANTLIB=		iconv
 .endif
 
 .for i in ${MULTI_PACKAGES}
 .if !defined(FULLPKGNAME${i})
-FULLPKGNAME${i}=	php5${i}-${V}p0
+FULLPKGNAME${i}=	php5${i}-${V}p1
 .endif
 .endfor
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
 MODULE_NAME=		${SUBPACKAGE:S/-//g}
 LIB_DEPENDS=		${${MODULE_NAME:U}_DEPENDS}
+WANTLIB+=		${${MODULE_NAME:U}_WANTLIB}
 MESSAGE=		${PKGDIR}/MESSAGE
 SUBST_VARS=		MODULE_NAME PHP_CONFIG_FILE LOCALBASE
 .elif defined(PACKAGING) && empty(SUBPACKAGE)
 LIB_DEPENDS=
 MESSAGE=		${PKGDIR}/DESCR
 SUBST_VARS=		V
+WANTLIB=
 .else
 .for i in ${MULTI_PACKAGES}
 LIB_DEPENDS+=		${${i:U:S/-//g}_DEPENDS}
+WANTLIB+=		${${i:U:S/-//g}_WANTLIB}
 .endfor
 .endif
 
