@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/20 03:55:46 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/07/23 18:27:53 avsm Exp $
 
 COMMENT=	"advanced revision control system written in Haskell"
 
@@ -11,12 +11,9 @@ MASTER_SITES=	${HOMEPAGE}
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
-# ghc only works on i386 at the moment
-ONLY_FOR_ARCHS=	i386
-
+MODULES=	ghc
 LIB_DEPENDS=	curl.2::net/curl
-BUILD_DEPENDS=	ghc::lang/ghc \
-		latex::print/teTeX/base
+BUILD_DEPENDS+=	latex::print/teTeX/base
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share
