@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/05 18:30:35 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/19 16:43:41 espie Exp $
 #
 
 DISTNAME=       wb-1.59
@@ -21,7 +21,7 @@ NO_BUILD=	Yes
 USE_X11=	Yes
 
 # XXX ghostscript, ghostscript3, ghostscript4 or ghostscript5 will all do.
-RUN_DEPENDS=	gs:print/ghostscript5
+RUN_DEPENDS=	gs:print/ghostscript/gnu
 
 .if !defined(NO_WARNINGS)
 pre-fetch:

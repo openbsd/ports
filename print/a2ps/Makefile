@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/03/05 18:30:40 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/03/19 16:43:41 espie Exp $
 #
 
 DISTNAME=	a2ps-4.12g
@@ -20,12 +20,12 @@ MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/
 #
 BUILD_DEPENDS=	gv:print/gv \
 		dvips:print/teTeX/base \
-		ps2pdf:print/ghostscript5 \
+		ps2pdf:print/ghostscript/gnu \
 		psselect:print/psutils \
 		convert:graphics/ImageMagick
 RUN_DEPENDS=	gv:print/gv \
 		dvips:print/teTeX/base \
-		ps2pdf:print/ghostscript5 \
+		ps2pdf:print/ghostscript/gnu \
 		psselect:print/psutils \
 		convert:graphics/ImageMagick
 

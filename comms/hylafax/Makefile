@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2000/03/05 18:30:23 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2000/03/19 16:43:40 espie Exp $
 
 BROKEN=		bad packing lists
 
@@ -29,7 +29,7 @@ PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
 BUILD_DEPENDS=	${PREFIX}/lib/afm/Courier:print/afm
-RUN_DEPENDS=	gs:print/ghostscript5
+RUN_DEPENDS=	gs:print/ghostscript/gnu
 LIB_DEPENDS=	tiff.35:graphics/tiff
 
 USE_GMAKE=	Yes

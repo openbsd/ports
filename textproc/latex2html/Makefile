@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/05 18:30:44 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/19 16:43:42 espie Exp $
 #
 
 DISTNAME=	latex2html-97.1
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.tex.ac.uk/ctan/tex-archive/support/latex2html/sources/
 
 RUN_DEPENDS=	ppmtogif:graphics/netpbm \
 		pnmtopng:graphics/netpbm \
-		gs:print/ghostscript5
+		gs:print/ghostscript/gnu
 
 NO_CONFIGURE=	Yes
 NO_BUILD=	Yes

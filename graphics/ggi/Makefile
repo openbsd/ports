@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/17 00:53:48 turan Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/19 16:43:40 espie Exp $
 
 BROKEN=		installs files automatically in /etc
 
@@ -22,7 +22,7 @@ MASTER_SITES=   ftp://sunsite.unc.edu:/pub/ggi/ggi/2_0_beta_1/ \
 		ftp://ftp.unina.it:/pub/linux/ggi/ggi/2_0_beta_1/ \
 		ftp://sunsite.icm.edu.pl:/pub/unix/gui/ggi/ggi/2_0_beta_1/
 
-LIB_DEPENDS=	gii\\.0\\.:graphics/gii
+LIB_DEPENDS=	gii.0.:graphics/gii
 
 USE_GMAKE=	Yes
 GNU_CONFIGURE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/19 03:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/19 16:43:40 espie Exp $
 
 DISTNAME=	xmine-1.0.3-Xaw
 PKGNAME=	xmine-1.0.3
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 
-LIB_DEPENDS=    Xaw3d\\.:x11/Xaw3d
+LIB_DEPENDS=    Xaw3d.:x11/Xaw3d
 
 USE_IMAKE=      Yes
 FAKE=		Yes

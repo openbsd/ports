@@ -3,7 +3,7 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.8 2000/03/05 18:30:46 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/19 16:43:42 espie Exp $
 #
 
 DISTNAME=	explorer-0.72
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	qt\\.1\\.:x11/qt
+LIB_DEPENDS=	qt.1.:x11/qt
 
 GNU_CONFIGURE=	Yes
 CONFIGURE_ENV=	${SETENV}

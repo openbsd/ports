@@ -3,7 +3,7 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 2000/03/05 18:30:37 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/19 16:43:41 espie Exp $
 #
 
 DISTNAME=	tkman-2.0.6
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	angelos@openbsd.org
 
-LIB_DEPENDS=	tk80\\.1\\.:x11/tk80
+LIB_DEPENDS=	tk80.1.:x11/tk80
 RUN_DEPENDS=	rman:textproc/rman \
 		glimpse:textproc/glimpse
 

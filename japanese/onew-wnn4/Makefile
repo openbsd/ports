@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/17 02:36:28 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/19 16:43:41 espie Exp $
 #
 
 DISTNAME=	jvim2.0r+onew2.2.10
@@ -32,7 +32,7 @@ WNN4=			yes
 # LIB_DEPENDS, etc.
 .if defined(CANNA)
 INPUT_METHOD+=		canna
-LIB_INPUT_METHOD+=	canna\\.1\\.:japanese/Canna
+LIB_INPUT_METHOD+=	canna.1.:japanese/Canna
 JPLIB+=			-lcanna
 .endif
 .if defined(WNN4)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/03/05 18:30:36 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/19 16:43:41 espie Exp $
 #
 
 DISTNAME=	calentool-2.3
@@ -9,7 +9,7 @@ MASTER_SITES = http://www.darwinsys.com/freeware/
 
 NO_CDROM=   "NOFEE: can not sell"
 
-LIB_DEPENDS=    xview\\.3.*:x11/xview-lib
+LIB_DEPENDS=    xview.3.:x11/xview-lib
 
 WRKDIST     = ${WRKDIR}/xcalentool-2.3
 

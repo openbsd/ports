@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/03/05 18:30:36 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/03/19 16:43:41 espie Exp $
 
 BROKEN=		new distsites needed.  sources do not fetch consistantly.
 
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	gs:print/ghostscript5
-RUN_DEPENDS=	gs:print/ghostscript5
+BUILD_DEPENDS=	gs:print/ghostscript/gnu
+RUN_DEPENDS=	gs:print/ghostscript/gnu
 
 MAKE_FILE=	makefile
 WRKDIST=	${WRKDIR}/wbd
