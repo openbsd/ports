@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/10/28 19:53:33 jasoni Exp $
+# $OpenBSD: Makefile,v 1.8 2000/01/23 19:38:04 brad Exp $
 
 DISTNAME=       	xasteroids
 PKGNAME=		xasteroids-5.0
@@ -10,11 +10,16 @@ NEED_VERSION=		1.91
 
 EXTRACT_CMD=		${GZCAT}
 EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	| ${SH} -s
+EXTRACT_AFTER_ARGS=	| sh -s
 
 MAINTAINER=		angelos@openbsd.org
 
 USE_IMAKE=		yes
+
 NO_WRKSUBDIR=		yes
+
+post-extract:
+	@cp ${FILESDIR}/Imakefile ${WRKSRC}
+	@mv ${WRKSRC}/xast.man ${WRKSRC}/xasteroids.man
 
 .include <bsd.port.mk>
