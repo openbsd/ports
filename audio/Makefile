@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2001/02/05 18:54:48 wilfried Exp $
+# $OpenBSD: Makefile,v 1.44 2001/02/06 11:59:37 wilfried Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
      SUBDIR += ac3dec
+     SUBDIR += ascd
      SUBDIR += aumix
      SUBDIR += bladeenc
      SUBDIR += cdparanoia
@@ -18,6 +19,7 @@
      SUBDIR += knapster
      SUBDIR += lame
      SUBDIR += libcdaudio
+     SUBDIR += libworkman
      SUBDIR += lopster
 #    SUBDIR += maplay
 #    SUBDIR += mikmod
@@ -50,6 +52,8 @@
      SUBDIR += tosha
      SUBDIR += tracker
      SUBDIR += waveplay
+     SUBDIR += wmmixer
+     SUBDIR += wmmp3
      SUBDIR += workman
      SUBDIR += wsoundprefs
      SUBDIR += wsoundserver
