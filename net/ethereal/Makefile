@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2001/07/16 14:56:54 jakob Exp $
+# $OpenBSD: Makefile,v 1.50 2001/08/23 07:44:08 wilfried Exp $
 
 COMMENT=	network protocol analyzer
 
@@ -18,6 +18,8 @@ MASTER_SITES=	http://www.ethereal.com/distribution/ \
 HOMEPAGE=	http://www.ethereal.com/
 
 LIB_DEPENDS=	gtk.1.2::x11/gtk+
+
+BUILD_DEPENDS=	zsh:zsh-*:shells/zsh/stable
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
@@ -43,6 +45,11 @@ LIB_DEPENDS+=		snmp::net/ucd-snmp
 .else
 CONFIGURE_ARGS+=	--disable-snmp
 .endif
+CONFIGURE_ENV+=		CONFIG_SHELL='$(WRKBUILD)/sh'
+
+pre-configure:
+	# Let zsh act as an sh replacement
+	ln -sf $(LOCALBASE)/bin/zsh ${WRKBUILD}/sh
 
 pre-build:
 .if defined(SEPARATE_BUILD)
