@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/15 16:17:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/06/30 13:18:10 naddy Exp $
 
 COMMENT=	"play, encode, and manage Ogg Vorbis files"
-DISTNAME=	vorbis-tools-1.0beta4
+DISTNAME=	vorbis-tools-1.0rc1
 CATEGORIES=    	audio
 NEED_VERSION=	1.363
 HOMEPAGE=	http://www.vorbis.com
@@ -13,10 +13,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/files/beta4/unix/
+MASTER_SITES=	${HOMEPAGE}/files/rc1/unix/
 
 LIB_DEPENDS=	ao.1::audio/libao \
-		ogg.1::audio/libogg \
+		ogg.2::audio/libogg \
 		vorbis.0::audio/libvorbis
 
 CONFIGURE_STYLE= autoconf

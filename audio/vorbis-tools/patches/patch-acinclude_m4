@@ -1,7 +1,7 @@
-$OpenBSD: patch-acinclude_m4,v 1.1 2001/03/17 17:07:10 naddy Exp $
---- acinclude.m4.orig	Sat Mar 17 16:28:41 2001
-+++ acinclude.m4	Sat Mar 17 16:36:54 2001
-@@ -280,3 +280,65 @@ int main ()
+$OpenBSD: patch-acinclude_m4,v 1.2 2001/06/30 13:18:10 naddy Exp $
+--- acinclude.m4.orig	Tue Mar 27 00:35:47 2001
++++ acinclude.m4	Sat Jun 30 13:55:27 2001
+@@ -300,3 +300,65 @@ int main ()
    AC_SUBST(AO_LIBS)
    rm -f conf.aotest
  ])

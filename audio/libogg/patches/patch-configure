@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2001/03/14 01:55:47 todd Exp $
---- configure.orig	Mon Mar 12 23:13:33 2001
-+++ configure	Mon Mar 12 23:14:20 2001
-@@ -1489,9 +1489,9 @@ if test -z "$GCC"; then
+$OpenBSD: patch-configure,v 1.2 2001/06/30 13:18:07 naddy Exp $
+--- configure.orig	Mon Jun 18 18:08:30 2001
++++ configure	Sat Jun 30 13:41:39 2001
+@@ -1491,9 +1491,9 @@ if test -z "$GCC"; then
                  PROFILE="-v -xpg -g -xO4 -fast -native -fsimple -xcg92 -Dsuncc"
  		;;
          *)
@@ -14,7 +14,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2001/03/14 01:55:47 todd Exp $
  		;;
          esac
  else
-@@ -1512,9 +1512,9 @@ else
+@@ -1514,9 +1514,9 @@ else
  		PROFILE="-fno-common -O4 -Wall -pg -g -fsigned-char -ffast-math"
  		;;
          *)
