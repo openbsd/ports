@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/06/19 12:59:15 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/06/23 15:18:30 espie Exp $
 
 CATEGORIES=x11
 HOMEPAGE=http://wwwrzstud.rz.uni-karlsruhe.de/%7Euddn/xglobe/
@@ -19,11 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=		Yes
 
 MAKE_FLAGS=XGLOBE_DIR=${PREFIX}
-MAKE_FLAGS+=QT_INCLUDE_DIR=${LOCALBASE}/include/X11/qt
-MAKE_FLAGS+=QT_LIB_DIR=${LOCALBASE}/lib
 
-
-FLAVORS=no_map gfx
+FLAVORS=no_map gfx qt2
 FLAVOR?=
 .if ${FLAVOR:L:Mno_map}
 DISTFILES=${DISTNAME}-no-map${EXTRACT_SUFX}
@@ -36,13 +33,21 @@ post-install::
 	@rm ${PREFIX}/lib/xglobe/map.bmp
 .endif
 
-LIB_DEPENDS=qt.1.45::x11/qt
+MAKE_FLAGS+=QT_LIB_DIR=${LOCALBASE}/lib
 
-.if ${FLAVOR:L:Mgfx}
+.if ${FLAVOR:L:Mqt2}
+LIB_DEPENDS=qt.2.:x11/qt2
+MAKE_FLAGS+=QT_INCLUDE_DIR=${LOCALBASE}/include/X11/qt2
+MAKE_FLAGS+=MOC=moc2
+.else
+LIB_DEPENDS=qt.1.45::x11/qt
+MAKE_FLAGS+=QT_INCLUDE_DIR=${LOCALBASE}/include/X11/qt
+.  if ${FLAVOR:L:Mgfx}
 MAKE_FLAGS+=WITH_QIMGIO=-DWITH_QIMAGEIO
 MAKE_FLAGS+=LIBS='-lX11 -lqt -lm -lqimgio -lpng -lz -ljpeg'
 LIB_DEPENDS+=jpeg.::graphics/jpeg
 LIB_DEPENDS+=png.::graphics/png
+.  endif
 .endif
 
 post-install::
