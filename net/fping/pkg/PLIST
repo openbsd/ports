@@ -1,0 +1,5 @@
+man/man8/fping.8
+sbin/fping
+share/doc/fping/README
+share/doc/fping/README.VMS
+@dirrm share/doc/fping
