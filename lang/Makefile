@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2000/12/13 05:30:26 jasoni Exp $
+# $OpenBSD: Makefile,v 1.37 2001/01/30 15:01:17 espie Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -66,7 +66,7 @@
      SUBDIR += ruby
 #    SUBDIR += scheme48
 #    SUBDIR += schemetoc
-#    SUBDIR += scm
+     SUBDIR += scm
 #    SUBDIR += smalltalk
 #    SUBDIR += squeak
 #    SUBDIR += sr
