@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.37 2001/09/05 02:55:14 fgsch Exp $
-# Use threads
+# $OpenBSD: Makefile,v 1.38 2001/09/14 15:24:15 brad Exp $
+# Uses threads
 
 COMMENT= 	"interpreted object-oriented programming language"
 COMMENT-tools=	"extra tools for python"
