@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2003/10/14 05:13:11 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2004/04/19 06:45:09 kevlo Exp $
 
 COMMENT=	"module for creating generic methods"
 
-DISTNAME=	Class-MethodMaker-1.12
+DISTNAME=	Class-MethodMaker-2.02
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
