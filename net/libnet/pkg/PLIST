@@ -1,9 +1,10 @@
-bin/libnet-config
 lib/libnet.a
 include/libnet.h
-include/libnet-asn1.h
-include/libnet-functions.h
-include/libnet-headers.h
-include/libnet-macros.h
-include/libnet-structures.h
+include/libnet/libnet-headers.h
+include/libnet/libnet-functions.h
+include/libnet/libnet-structures.h
+include/libnet/libnet-macros.h
+include/libnet/libnet-asn1.h
+@dirrm include/libnet
 man/man3/libnet.3
+bin/libnet-config
