@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/04/22 00:46:00 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/11/28 00:06:59 margarida Exp $
 bin/mha-dbedit
 bin/mha-dbrecover
 bin/mha-decode
@@ -62,7 +62,6 @@ ${P5SITE}/MHonArc/CharEnt/KOI8_U.pm
 ${P5SITE}/MHonArc/CharEnt/KOI_0.pm
 ${P5SITE}/MHonArc/CharEnt/KOI_7.pm
 ${P5SITE}/MHonArc/CharEnt/VISCII.pm
-${P5SITE}/MHonArc/CharEnt/cmp.pl
 ${P5SITE}/MHonArc/CharMaps.pm
 ${P5SITE}/MHonArc/Encode.pm
 ${P5SITE}/MHonArc/RFC822.pm
@@ -277,6 +276,7 @@ share/doc/mhonarc/resources/keeponrmm.html
 share/doc/mhonarc/resources/labelbeg.html
 share/doc/mhonarc/resources/labelend.html
 share/doc/mhonarc/resources/labelstyles.html
+share/doc/mhonarc/resources/lang.html
 share/doc/mhonarc/resources/lastpglink.html
 share/doc/mhonarc/resources/listbegin.html
 share/doc/mhonarc/resources/listend.html

@@ -1,27 +1,27 @@
-$OpenBSD: patch-install_me,v 1.1 2002/09/15 01:09:47 pvalchev Exp $
---- install.me.orig	Wed Sep  4 05:17:50 2002
-+++ install.me	Sun Sep  8 22:04:01 2002
-@@ -423,9 +423,6 @@ my %OptValues	= ();
+$OpenBSD: patch-install_me,v 1.2 2003/11/28 00:06:59 margarida Exp $
+--- install.me.orig	2003-11-27 23:55:32.000000000 +0000
++++ install.me	2003-11-27 23:56:44.000000000 +0000
+@@ -427,9 +427,6 @@ my $Root	= '';
+ 
      ## Install files
      ## -------------
-     print STDERR "($OptValues{'perl'})\n";
 -    my $plprefix  = "#!$OptValues{'perl'}\n";
 -       $plprefix .= "use lib qw($OptValues{'libpath'});\n"
 -		    if $OptValues{'libpath'};
      my($file, $destfile);
      if ($dobin) {
  	print STDOUT qq(Installing programs to "$OptValues{'binpath'}":\n);
-@@ -435,11 +432,11 @@ my %OptValues	= ();
- 	    ($file = $_) =~ s%.*/%%o;
+@@ -442,11 +439,11 @@ my $Root	= '';
  	    $destfile = join('', $OptValues{'binpath'}, $DIRSEP, $file);
+ 	    my $fulldestfile = apply_root($Root, $destfile);
  	    print STDOUT $destfile, "\n";
--	    cp($_, $destfile, $plprefix, $WINDOWS);
-+	    cp($_, $destfile, '', $WINDOWS);
- 	    eval q{chmod 0755, $destfile;};
+-	    cp($_, $fulldestfile, $plprefix, $WINDOWS);
++	    cp($_, $fulldestfile, '', $WINDOWS);
+ 	    eval q{chmod 0755, $fulldestfile;};
  	    if ($WINDOWS && $file !~ /\.pl$/i) {
- 		$destfile .= ".pl";
--		cp($_, $destfile, $plprefix);
-+		cp($_, $destfile, '');
- 		eval q{chmod 0755, $destfile;};
+ 		$fulldestfile .= ".pl";
+-		cp($_, $fulldestfile, $plprefix);
++		cp($_, $fulldestfile, '');
+ 		eval q{chmod 0755, $fulldestfile;};
  	    }
  	}
