@@ -1,0 +1,11 @@
+--- config.h.in.orig	Tue Apr 22 13:23:45 1997
++++ config.h.in	Sun Aug 31 11:52:08 1997
+@@ -188,7 +188,7 @@
+ char *strtok();
+ char *strdup();
+ #ifdef HAVE_STRPTIME
+-char *strptime();
++const char *strptime();
+ #endif /* HAVE_STRPTIME */
+ void *memcpy();
+ #endif /* STDC_HEADERS */

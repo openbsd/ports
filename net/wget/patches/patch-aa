@@ -1,0 +1,14 @@
+--- doc/wget.texi.orig	Wed Apr 23 14:13:19 1997
++++ doc/wget.texi	Thu May 22 09:26:55 1997
+@@ -6,6 +6,11 @@
+ @setfilename wget.info
+ @settitle Wget Manual
+ 
++@dircategory Networking tools
++@direntry
++* Wget: (wget.info).            A utility for network download.
++@end direntry
++
+ @c Remove this if you don't use A4 paper.
+ @iftex
+ @afourpaper
