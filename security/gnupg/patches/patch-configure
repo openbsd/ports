@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.3 2002/09/30 00:31:30 drahn Exp $
+--- configure.orig	Mon Apr 29 09:59:16 2002
++++ configure	Sun Sep 29 09:58:53 2002
+@@ -3729,13 +3729,6 @@ echo "${ECHO_T}assume none" >&6
+             esac
+         fi
+ 
+-        case "$host_cpu" in
+-        rs6000 | powerpc | powerpcle)
+-          # Yippee! All RS/6000 and PowerPC code is position-independent.
+-          CFLAGS_PIC=""
+-          ;;
+-        esac
+-
+         if test "$NO_PIC" = yes; then
+             echo "$as_me:3740: result: not possible" >&5
+ echo "${ECHO_T}not possible" >&6

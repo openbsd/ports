@@ -1,0 +1,17 @@
+$OpenBSD: patch-acinclude_m4,v 1.1 2002/09/30 00:31:30 drahn Exp $
+--- acinclude.m4.orig	Wed Dec 19 12:16:30 2001
++++ acinclude.m4	Sun Sep 29 09:56:04 2002
+@@ -227,13 +227,6 @@ define(GNUPG_CHECK_PIC,
+             esac
+         fi
+ 
+-        case "$host_cpu" in
+-        rs6000 | powerpc | powerpcle)
+-          # Yippee! All RS/6000 and PowerPC code is position-independent.
+-          CFLAGS_PIC=""
+-          ;;
+-        esac
+-
+         if test "$NO_PIC" = yes; then
+             AC_MSG_RESULT(not possible)
+         else
