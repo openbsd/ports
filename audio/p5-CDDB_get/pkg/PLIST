@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/13 12:40:32 lebel Exp $
+bin/cddb.pl
+libdata/perl5/site_perl/CDDB_get.pm
+man/man3/CDDB_get.3p

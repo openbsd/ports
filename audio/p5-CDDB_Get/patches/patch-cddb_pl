@@ -1,0 +1,12 @@
+$OpenBSD: patch-cddb_pl,v 1.1.1.1 2001/06/13 12:37:10 lebel Exp $
+--- cddb.pl.orig	Wed Apr  4 22:30:00 2001
++++ cddb.pl	Wed Jun 13 08:48:33 2001
+@@ -56,7 +56,7 @@ my $xmcddir="/tmp/xmcd";
+ # $config{CDDB_HOST}="freedb.freedb.org";	# set cddb host
+ # $config{CDDB_PORT}=888; 			# set cddb port
+ # $config{CDDB_MODE}="cddb";			# set cddb mode: cddb or http, this is switched with -f
+-# $config{CD_DEVICE}="/dev/cdrom";		# set cd device
++# $config{CD_DEVICE}="/dev/cd0c";		# set cd device
+ 
+ # $config{HELLO_ID} ="root nowhere.com fastrip 0.77"; # hello string: username hostname clientname version
+ 
