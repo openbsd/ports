@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2003/04/10 10:34:04 jsyn Exp $
+# $OpenBSD: Makefile,v 1.8 2003/06/16 14:50:33 jakob Exp $
 
 COMMENT=	"authoritative-only name server daemon"
 
-VERSION=	1.0.2
+VERSION=	1.1.0
 DISTNAME=	nsd-${VERSION}
-PKGNAME=	nsd-${VERSION}p1
+PKGNAME=	nsd-${VERSION}
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/
@@ -20,12 +20,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	:named-xfer-*:net/named-xfer
 
-MAKE_FLAGS+=	PREFIX='${PREFIX}' \
-		NSDZONESDIR=/var/nsd \
-		NSDZONES=/var/nsd/nsd.zones \
-		NSDUSER=named \
-		NAMEDXFER=${PREFIX}/libexec/named-xfer \
-		CC='${CC}' CFLAGS='${CFLAGS}'
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--enable-ipv6 \
+			--enable-dnssec \
+			--enable-bind8-stats \
+			--with-namexfer=${LOCALBASE}/libexec/named-xfer \
+			--with-librap \
+			--with-user=named \
+			--with-pidfile=/var/run/nsd.pid
 
 NO_REGRESS=	Yes
 
