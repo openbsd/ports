@@ -1,43 +1,68 @@
-$OpenBSD: patch-script_ltmain_sh,v 1.1.1.1 2004/01/14 05:56:23 kevlo Exp $
---- script/ltmain.sh.orig	2004-01-14 10:14:09.000000000 +0000
-+++ script/ltmain.sh	2004-01-14 10:18:22.000000000 +0000
-@@ -1031,11 +1031,25 @@ compiler."
- 	    # These systems don't actually have a C library (as such)
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
+--- script/ltmain.sh.orig	2001-09-20 00:30:23.000000000 +0000
++++ script/ltmain.sh	2004-02-18 21:25:13.000000000 +0000
+@@ -1021,15 +1021,18 @@ compiler."
+ 	;;
+ 
+       -l*)
+-	if test "X$arg" = "X-lc" || test "X$arg" = "X-lm"; then
+-	  case $host in
+-	  *-*-cygwin* | *-*-pw32* | *-*-beos*)
+-	    # These systems don't actually have a C or math library (as such)
++	if test "$arg" = "-lc"; then
++	  case "$host" in
 +	  *-*-openbsd*)
 +	    # Do not include libc due to us having libc/libc_r.
-+	    continue
-+	    ;;
+ 	    continue
+ 	    ;;
+-	  *-*-mingw* | *-*-os2*)
+-	    # These systems don't actually have a C library (as such)
+-	    test "X$arg" = "X-lc" && continue
 +	  esac
 +	elif test "$arg" = "-lc_r"; then
 +	  case "$host" in
 +	  *-*-openbsd*)
 +	    # Do not include libc_r directly, use -pthread flag.
 +	    continue
-+	    ;;
+ 	    ;;
  	  esac
  	fi
- 	deplibs="$deplibs $arg"
+@@ -1037,6 +1040,17 @@ compiler."
  	continue
  	;;
-+      -?thread)
-+	deplibs="$deplibs $arg"
-+	 ;;
  
++      -pthread)
++	case $host in
++	*-*-openbsd*)
++	  deplibs="$deplibs $arg"
++	  ;;
++        *)
++	  continue
++	  ;;
++        esac
++	;;
++
        -module)
  	module=yes
-@@ -2408,6 +2422,9 @@ compiler."
+ 	continue
+@@ -1716,7 +1730,6 @@ compiler."
+ 
+ 	  if test "$installed" = no; then
+ 	    notinst_deplibs="$notinst_deplibs $lib"
+-	    need_relink=yes
+ 	  fi
+ 
+ 	  if test -n "$old_archive_from_expsyms_cmds"; then
+@@ -2405,6 +2418,9 @@ compiler."
+ 	    # Rhapsody C library is in the System framework
+ 	    deplibs="$deplibs -framework System"
+ 	    ;;
++	  *-*-openbsd*)
++	    # Do not include libc due to us having libc/libc_r.
++	    ;;
  	  *-*-netbsd*)
  	    # Don't link with libc until the a.out ld.so is fixed.
  	    ;;
-+	  *-*-openbsd*)
-+	    # Do not include libc due to us having libc/libc_r
-+	    ;;
- 	  *)
- 	    # Add libc to deplibs on all other systems if necessary.
- 	    if test $build_libtool_need_lc = "yes"; then
-@@ -4412,40 +4429,6 @@ relink_command=\"$relink_command\""
+@@ -4412,40 +4428,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  
