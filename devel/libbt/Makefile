@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/04/15 03:37:43 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/04/18 01:04:28 jolan Exp $
 
 COMMENT=	"c reimplementation of the BitTorrent core protocols"
 DISTNAME=	libbt-1.01
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 NO_REGRESS=	Yes
+USE_X11=	Yes	# for makedepend
 
 LIB_DEPENDS=	curl.2.2::net/curl
 
