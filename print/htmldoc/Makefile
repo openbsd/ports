@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/21 23:31:31 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/21 23:36:28 avsm Exp $
 
 DISTNAME=		htmldoc-1.8.11
 CATEGORIES=     	print www
@@ -12,6 +12,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+# no_x11 build is broken in this version
+USE_X11=		Yes
 
 DISTFILES=		${DISTNAME}-source${EXTRACT_SUFX}
 EXTRACT_SUFX=		.zip
