@@ -80,6 +80,3 @@ sasl2	Include support for authenticated SMTP using Cyrus SASL v2 (recommended)
 tls	Include support for SMTP over SSL/TLS
 ldap	Include support for doing table lookups using LDAP
 mysql	Include support for doing table lookups using MySQL
-
-
-WWW: ${HOMEPAGE}

@@ -5,6 +5,3 @@ detail to give the administrator a "heads up" for potential trouble spots.
 pflogsumm generates summaries and, in some cases, detailed reports of mail
 server traffic volumes, rejected and bounced email, and server warnings,
 errors and panics.
-
-WWW: ${HOMEPAGE}
-

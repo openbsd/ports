@@ -12,7 +12,5 @@ Here is what you might ask.  (excerpted from The Open Group FAQ)
   the standard Open Group software licenses and requires the payment
   of source code and royalty fees.
 
-WWW: ${HOMEPAGE}
-
 This package add executable binaries that demonstrate the capability
 of Motif toolkit.

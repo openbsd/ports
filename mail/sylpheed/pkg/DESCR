@@ -6,8 +6,6 @@ on the X Window System, and aiming for:
      Easy configuration, intuitive operation 
      Abundant features 
 
-WWW: ${HOMEPAGE}
-
 FLAVORS:
 	* compface: support X-Face header
 	* gpgme: compile with gnupg made easy support

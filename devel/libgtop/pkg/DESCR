@@ -11,8 +11,6 @@ This includes information about the following areas:
 
 For more information about the gtop library see:
 
-WWW: ${HOMEPAGE}
-
 Available flavors:
 
 	  guile: Install guile bindings.

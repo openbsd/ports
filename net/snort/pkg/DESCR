@@ -12,8 +12,6 @@ incorporating alerting mechanisms for syslog, a user specified file, a
 UNIX socket, or WinPopup messages to Windows clients using Samba's 
 smbclient. 
 
-WWW: ${HOMEPAGE}
-
 Available flavors:
 	postgresql - enable postgresql database logging support
 	mysql	   - enable mysql database logging support

@@ -7,6 +7,3 @@ programs for one-shot FTP operations (i.e. for shell scripts and command
 line junkies);  these include "ncftpget", "ncftpput", and "ncftpls".  Run
 each command without any arguments to see the usage screen, or read the
 man page.
-
-WWW: ${HOMEPAGE}
-

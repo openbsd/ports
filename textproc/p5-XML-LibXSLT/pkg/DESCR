@@ -1,5 +1,2 @@
 This module is a fast XSLT library, based on the Gnome libxslt
 engine.
-
-WWW: ${HOMEPAGE}
-

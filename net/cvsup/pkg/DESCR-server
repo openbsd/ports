@@ -9,7 +9,5 @@ features and optimizations specifically tailored to CVS repositories.
 
 This is the server program.
 
-WWW: ${HOMEPAGE}
-
 Available flavors: 
 	no_x11	text-only

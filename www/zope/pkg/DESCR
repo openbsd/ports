@@ -9,6 +9,3 @@ provide a complete yet flexible application server package. Zope
 includes an internet server, a transactional object database, a
 search engine, a web page templating system, a through the web
 development and management tool, and comprehensive extension support.
-
-WWW: ${HOMEPAGE}
-

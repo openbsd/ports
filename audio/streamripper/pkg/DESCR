@@ -4,7 +4,3 @@ generic feature, where part of the program only tries to "hint" at
 where one track starts and another ends, thus allowing a MP3 decoding
 engine to scan for a silent mark, which is used to find an exact track
 separation. 
-
-WWW: ${HOMEPAGE}
-
-

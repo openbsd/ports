@@ -5,6 +5,3 @@ TeX control sequences.
 Flavors:
         tk - a Tcl/Tk GUI frontend to catdoc for viewing MW Word
              documents
-
-WWW: ${HOMEPAGE}
-
