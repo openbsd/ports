@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.35 2001/06/07 00:33:32 angelos Exp $
+# $OpenBSD: Makefile,v 1.36 2001/12/23 21:17:50 pvalchev Exp $
 
 COMMENT=	"list information about open files"
 
-DISTNAME=	lsof_4.57B.n+obsd
-PKGNAME=	lsof-4.57B
+VERSION=	4.61B
+DISTNAME=	lsof_${VERSION}.n+obsd
+PKGNAME=	lsof-${VERSION}
 CATEGORIES=	sysutils
-NEED_VERSION=	1.402
+NEED_VERSION=	1.502
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
 		ftp://ftp.crc.doc.ca/packages/lsof/NEW/ \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/NEW/
 
-MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
+MAINTAINER=     Peter Valchev <pvalchev@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -24,8 +25,7 @@ CONFIGURE_SCRIPT= Configure
 CONFIGURE_ARGS=	-n openbsd
 CONFIGURE_ENV=	LSOF_CC="${CC}"
 
-SRCBALL_NAME=	${DISTNAME:S/_W$//}
-
+SRCBALL_NAME=	${DISTNAME}
 WRKDIST=	${WRKDIR}/${SRCBALL_NAME}
 
 .if ${MACHINE_ARCH} == "sparc"
