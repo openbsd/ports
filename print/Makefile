@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.36 2003/05/11 17:26:08 sturm Exp $
+#	$OpenBSD: Makefile,v 1.37 2003/05/29 11:15:26 sturm Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -6,7 +6,7 @@
     SUBDIR += acrofonts
     SUBDIR += acroread
     SUBDIR += afm
-#   SUBDIR += apsfilter
+    SUBDIR += apsfilter
 #   SUBDIR += asprint
 #   SUBDIR += bibcard
     SUBDIR += bibview
@@ -27,6 +27,7 @@
 #   SUBDIR += ghostscript5
     SUBDIR += ghostview
     SUBDIR += gv
+    SUBDIR += hpijs
 #   SUBDIR += html2latex
     SUBDIR += htmldoc
     SUBDIR += jadetex
