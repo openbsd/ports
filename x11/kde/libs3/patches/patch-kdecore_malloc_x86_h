@@ -1,0 +1,13 @@
+$OpenBSD: patch-kdecore_malloc_x86_h,v 1.1 2002/04/15 06:45:27 espie Exp $
+--- kdecore/malloc/x86.h.orig	Thu Apr 11 21:24:01 2002
++++ kdecore/malloc/x86.h	Thu Apr 11 21:25:47 2002
+@@ -21,7 +21,9 @@ static __inline__ int lock(mutex_t *m) {
+     if(!r)
+       return 0;
+     if(cnt < 50) {
++#ifdef _POSIX_PRIORITY_SCHEDULING
+       sched_yield();
++#endif
+       cnt++;
+     } else {
+       tm.tv_sec = 0;
