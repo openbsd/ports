@@ -1,16 +1,15 @@
-bin/calentool
-bin/calencheck
-bin/mt2ct
-bin/month2ct
 bin/cal2ct
-lib/help/calentool.info
-@dirrm lib/help
+bin/calencheck
+bin/calentool
+bin/month2ct
+bin/mt2ct
 lib/calentool/CREDITS
 lib/calentool/README
 lib/calentool/ancient
 lib/calentool/can_holiday
 lib/calentool/celtic
 lib/calentool/computing
+lib/calentool/events
 lib/calentool/events1
 lib/calentool/events2
 lib/calentool/events3
@@ -20,6 +19,7 @@ lib/calentool/events6
 lib/calentool/gdead
 lib/calentool/hawaii
 lib/calentool/literature
+lib/calentool/lives
 lib/calentool/lives1
 lib/calentool/lives2
 lib/calentool/lives3
@@ -39,6 +39,10 @@ lib/calentool/usa_other
 lib/calentool/usa_states
 lib/calentool/witchcraft
 lib/calentool/world
-lib/calentool/events
-lib/calentool/lives
+lib/help/calentool.info
+man/cat1/cal2ct.0
+man/cat1/calencheck.0
+man/cat1/calentool.0
+man/cat1/month2ct.0
+man/cat1/mt2ct.0
 @dirrm lib/calentool

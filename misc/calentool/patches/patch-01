@@ -1,6 +1,6 @@
---- Imakefile.orig	Tue Sep 29 22:38:28 1998
-+++ Imakefile	Wed Sep 30 11:36:45 1998
-@@ -115,10 +115,10 @@
+--- Imakefile.orig	Wed Sep 30 04:38:28 1998
++++ Imakefile	Mon Apr  3 01:51:07 2000
+@@ -115,10 +115,10 @@ NR_WEEKDAYS  = 5
  START_HOUR   = 8
  END_HOUR     = 18
  N_NOTESLOTS  = 6
@@ -13,7 +13,7 @@
  HOUR_24      = 0
  MON_FIRST    = 0
  APPT_CHECK_LIMIT = n_slots
-@@ -130,10 +130,10 @@
+@@ -130,10 +130,10 @@ APPT_CHECK_LIMIT = n_slots
  #NO_HOLIDAYS  = -DNO_HOLIDAYS 
  #NO_SUN_MOON  = -DNO_SUN_MOON 
  #NEED_CUSERID = -DNEED_CUSERID
@@ -27,3 +27,25 @@
  #HAS_STRFTIME = -DHAS_STRFTIME
  LOCATION= -DLONG_DEGREES=121. -DLONG_MINUTES=08. -DLONG_SECONDS=56. \
  	-DLAT_DEGREES=44. -DLAT_MINUTES=15. -DLAT_SECONDS=15.
+@@ -255,17 +255,14 @@ InstallProgram(month2ct,$(BINDIR))
+ InstallProgram(cal2ct,$(BINDIR))
+ #
+ #	special man page rules for duplicate man pages
+-install.man::
+-	$(RM) $(MANDIR)/month2ct.$(MANSUFFIX)
+-	ln -s $(MANDIR)/mt2ct.$(MANSUFFIX) $(MANDIR)/month2ct.$(MANSUFFIX)
+-	$(RM) $(MANDIR)/cal2ct.$(MANSUFFIX)
+-	ln -s $(MANDIR)/mt2ct.$(MANSUFFIX) $(MANDIR)/cal2ct.$(MANSUFFIX)
++InstallManPageAliases(mt2ct,$(MANDIR),month2ct cal2ct)
++
+ #
+ #	special rules for date file installation
+ install::
+-	$(MKDIRHIER) $(DATELIB_DIR)
++	$(MKDIRHIER) $(DESTDIR)$(DATELIB_DIR)
+ 	for i in $(DATEFILES); do \
+-		($(INSTALL) -c $(INSTDATFLAGS) $$i $(DATELIB_DIR)); \
++		($(INSTALL) -c $(INSTDATFLAGS) $$i $(DESTDIR)$(DATELIB_DIR)); \
+ 	done
+ #
+ #	special rules for files that compile differently for different programs
