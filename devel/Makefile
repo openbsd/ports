@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2003/05/27 22:10:07 todd Exp $
+# $OpenBSD: Makefile,v 1.174 2003/06/04 23:26:20 avsm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -9,7 +9,6 @@
      SUBDIR += astyle
      SUBDIR += atk
      SUBDIR += atlas
-     SUBDIR += autobook
      SUBDIR += autoconf
      SUBDIR += automake
      SUBDIR += metaauto
