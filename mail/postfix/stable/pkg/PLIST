@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2005/02/21 00:42:22 brad Exp $
+@comment $OpenBSD: PLIST,v 1.14 2005/03/07 18:26:40 brad Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -9,8 +9,10 @@
 @extra ${SYSCONFDIR}/postfix/
 @extra /var/spool/postfix/
 libexec/postfix/
+libexec/postfix/anvil
 libexec/postfix/bounce
 libexec/postfix/cleanup
+libexec/postfix/discard
 libexec/postfix/error
 libexec/postfix/flush
 libexec/postfix/lmtp
@@ -23,6 +25,7 @@ libexec/postfix/pipe
 libexec/postfix/proxymap
 libexec/postfix/qmgr
 libexec/postfix/qmqpd
+libexec/postfix/scache
 libexec/postfix/showq
 libexec/postfix/smtp
 libexec/postfix/smtpd
@@ -51,9 +54,12 @@ libexec/postfix/virtual
 @man man/man5/body_checks.5
 @man man/man5/canonical.5
 @man man/man5/cidr_table.5
+@man man/man5/generic.5
 @man man/man5/header_checks.5
 @man man/man5/ldap_table.5
+@man man/man5/master.5
 @man man/man5/mysql_table.5
+@man man/man5/nisplus_table.5
 @man man/man5/pcre_table.5
 @man man/man5/pgsql_table.5
 @man man/man5/postconf.5
@@ -61,9 +67,11 @@ libexec/postfix/virtual
 @man man/man5/relocated.5
 @man man/man5/transport.5
 @man man/man5/virtual.5
+@man man/man8/anvil.8
 @man man/man8/bounce.8
 @man man/man8/cleanup.8
 @man man/man8/defer.8
+@man man/man8/discard.8
 @man man/man8/error.8
 @man man/man8/flush.8
 @man man/man8/lmtp.8
@@ -75,6 +83,7 @@ libexec/postfix/virtual
 @man man/man8/proxymap.8
 @man man/man8/qmgr.8
 @man man/man8/qmqpd.8
+@man man/man8/scache.8
 @man man/man8/showq.8
 @man man/man8/smtp.8
 @man man/man8/smtpd.8
@@ -117,6 +126,7 @@ share/doc/postfix/html/DEBUG_README.html
 share/doc/postfix/html/ETRN_README.html
 share/doc/postfix/html/FILTER_README.html
 share/doc/postfix/html/INSTALL.html
+share/doc/postfix/html/IPV6_README.html
 share/doc/postfix/html/LDAP_README.html
 share/doc/postfix/html/LINUX_README.html
 share/doc/postfix/html/LMTP_README.html
@@ -137,6 +147,7 @@ share/doc/postfix/html/SMTPD_ACCESS_README.html
 share/doc/postfix/html/SMTPD_POLICY_README.html
 share/doc/postfix/html/SMTPD_PROXY_README.html
 share/doc/postfix/html/STANDARD_CONFIGURATION_README.html
+share/doc/postfix/html/TLS_README.html
 share/doc/postfix/html/TUNING_README.html
 share/doc/postfix/html/ULTRIX_README.html
 share/doc/postfix/html/UUCP_README.html
@@ -146,22 +157,27 @@ share/doc/postfix/html/XCLIENT_README.html
 share/doc/postfix/html/XFORWARD_README.html
 share/doc/postfix/html/access.5.html
 share/doc/postfix/html/aliases.5.html
+share/doc/postfix/html/anvil.8.html
 share/doc/postfix/html/bounce.8.html
 share/doc/postfix/html/canonical.5.html
 share/doc/postfix/html/cidr_table.5.html
 share/doc/postfix/html/cleanup.8.html
 share/doc/postfix/html/defer.8.html
+share/doc/postfix/html/discard.8.html
 share/doc/postfix/html/error.8.html
 share/doc/postfix/html/flush.8.html
+share/doc/postfix/html/generic.5.html
 share/doc/postfix/html/header_checks.5.html
 share/doc/postfix/html/index.html
 share/doc/postfix/html/ldap_table.5.html
 share/doc/postfix/html/lmtp.8.html
 share/doc/postfix/html/local.8.html
 share/doc/postfix/html/mailq.1.html
+share/doc/postfix/html/master.5.html
 share/doc/postfix/html/master.8.html
 share/doc/postfix/html/mysql_table.5.html
 share/doc/postfix/html/newaliases.1.html
+share/doc/postfix/html/nisplus_table.5.html
 share/doc/postfix/html/oqmgr.8.html
 share/doc/postfix/html/pcre_table.5.html
 share/doc/postfix/html/pgsql_table.5.html
@@ -238,6 +254,7 @@ share/doc/postfix/readme/SMTPD_ACCESS_README
 share/doc/postfix/readme/SMTPD_POLICY_README
 share/doc/postfix/readme/SMTPD_PROXY_README
 share/doc/postfix/readme/STANDARD_CONFIGURATION_README
+share/doc/postfix/readme/TLS_README
 share/doc/postfix/readme/TUNING_README
 share/doc/postfix/readme/ULTRIX_README
 share/doc/postfix/readme/UUCP_README
@@ -245,27 +262,13 @@ share/doc/postfix/readme/VERP_README
 share/doc/postfix/readme/VIRTUAL_README
 share/doc/postfix/readme/XCLIENT_README
 share/doc/postfix/readme/XFORWARD_README
-share/doc/postfix/tls/
-share/doc/postfix/tls/conf.html
-share/doc/postfix/tls/index.html
-share/doc/postfix/tls/install.html
-share/doc/postfix/tls/intro.html
-share/doc/postfix/tls/loadCAcert.pl
-share/doc/postfix/tls/myownca.html
-share/doc/postfix/tls/prng.html
-share/doc/postfix/tls/references.html
-share/doc/postfix/tls/relaycert.html
-share/doc/postfix/tls/rfc2246.txt
-share/doc/postfix/tls/rfc2487.txt
-share/doc/postfix/tls/rfc3207.txt
-share/doc/postfix/tls/security.html
-share/doc/postfix/tls/setup.html
-share/doc/postfix/tls/test.html
 share/examples/postfix/
 share/examples/postfix/LICENSE
+share/examples/postfix/TLS_LICENSE
 share/examples/postfix/access
 share/examples/postfix/aliases
 share/examples/postfix/canonical
+share/examples/postfix/generic
 share/examples/postfix/header_checks
 share/examples/postfix/main.cf
 share/examples/postfix/main.cf.default

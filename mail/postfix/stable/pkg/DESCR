@@ -5,8 +5,6 @@ different.
 
 Extra features always included:
 
-- SMTP over SSL/TLS (${TLSHOMEPAGE})
-- IPv6 (${IPV6HOMEPAGE})
 - table lookups using PCRE (Perl-Compatible Regular Expression)
 
 Optional features included using flavors:

@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.46 2004/12/29 07:05:07 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.47 2005/03/07 18:26:39 brad Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
+DISTNAME=	postfix-${VERSION}
+PKGNAME=	postfix-${VERSION:S/-/./}
 CATEGORIES=	mail
 
 MASTER_SITE_POSTFIX=\
@@ -11,16 +13,12 @@ MASTER_SITE_POSTFIX=\
 		ftp://ftp.tau.ac.il/pub/unix/mail/postfix/ \
 		ftp://ftp.cs.uu.nl/mirror/postfix/postfix-release/
 
-MASTER_SITES0=	http://www.ipnet6.org/postfix/download/
-
 DIST_SUBDIR=	postfix
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-.if defined(IPV6VERSION) && defined(IPV6POSTFIX)
-PATCHFILES+=	tls+ipv6-${IPV6VERSION}-pf-${IPV6POSTFIX}.patch.gz:0
-.endif
-
 HOMEPAGE=	http://www.postfix.org/
+
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"cannot be sold, see section 4 of license"
 PERMIT_PACKAGE_FTP=	yes
@@ -30,19 +28,10 @@ PERMIT_DISTFILES_FTP=	yes
 MAKE_DEBUG?=
 MAKE_CCARGS?=	-DFD_SETSIZE=2048
 MAKE_CCARGS+=	-DDEF_CONFIG_DIR=\"${SYSCONFDIR}/postfix\"
-MAKE_CCARGS+=	-DHAS_SSL	# -stable
-MAKE_CCARGS+=	-DUSE_TLS	# -snapshot
+MAKE_CCARGS+=	-DUSE_TLS
 MAKE_AUXLIBS+=	-lssl -lcrypto
 
 WANTLIB=	c crypto ssl
-
-TLSHOMEPAGE=	http://www.aet.tu-cottbus.de/personen/jaenicke/pfixtls/
-SUBST_VARS+=	TLSHOMEPAGE
-
-IPV6HOMEPAGE=	http://www.ipnet6.org/postfix/
-SUBST_VARS+=	IPV6HOMEPAGE
-
-PATCH_DIST_STRIP=-p1
 
 ALL_TARGET=	default
 
@@ -79,7 +68,6 @@ LIB_DEPENDS+=	pq.3:postgresql-client-*:databases/postgresql
 MAKE_CCARGS+=	-I${LOCALBASE}/include/postgresql -DHAS_PGSQL
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpq
 .endif
-
 
 post-patch:
 	@find ${WRKSRC} -type f -name '*.bak.orig' -print | xargs rm

@@ -1,10 +1,6 @@
-# $OpenBSD: Makefile,v 1.92 2005/02/21 00:40:18 brad Exp $
+# $OpenBSD: Makefile,v 1.93 2005/03/07 18:26:40 brad Exp $
 
-VERSION=	2.2-20050218
-DISTNAME=	postfix-${VERSION}
-PKGNAME=	postfix-${VERSION:S/-/./}
-
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
+VERSION=	2.3-20050304
 
 MASTER_SITES=	${MASTER_SITE_POSTFIX:=experimental/}
 

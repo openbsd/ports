@@ -1,14 +1,7 @@
-# $OpenBSD: Makefile,v 1.69 2005/02/21 00:42:22 brad Exp $
+# $OpenBSD: Makefile,v 1.70 2005/03/07 18:26:40 brad Exp $
 
-VERSION=	2.1.5
-DISTNAME=	postfix-${VERSION}
-PKGNAME=	${DISTNAME}p1
-
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
+VERSION=	2.2.0-RC2
 
 MASTER_SITES=	${MASTER_SITE_POSTFIX:=official/}
-
-IPV6VERSION=	1.26
-IPV6POSTFIX=	${VERSION}
 
 .include <bsd.port.mk>
