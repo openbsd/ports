@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2002/08/27 01:38:19 lebel Exp $
+# $OpenBSD: Makefile,v 1.34 2002/09/19 06:03:32 kevlo Exp $
 
 COMMENT=	"shell-like command line ftp client"
 
-DISTNAME=	lftp-2.6.1
+DISTNAME=	lftp-2.6.2
 CATEGORIES=     net
-NEED_VERSION=	1.460
 MASTER_SITES=	http://the.wiretapped.net/mirrors/lftp/ \
 		ftp://ftp.ayamura.org/pub/lftp/ \
 		${MASTER_SITE_SUNSITE:=system/network/file-transfer/} \
