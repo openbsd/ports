@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/05/12 08:23:48 jolan Exp $
+# $OpenBSD: Makefile,v 1.15 2003/09/25 06:25:13 jolan Exp $
 
 COMMENT=	"universal steganography tool"
 
@@ -8,8 +8,6 @@ MASTER_SITES=	http://www.outguess.org/ \
 		${MASTER_SITE_PACKETSTORM:=crypt/stego/}
 
 HOMEPAGE=	http://www.outguess.org/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

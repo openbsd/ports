@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/05/12 08:23:47 jolan Exp $
+# $OpenBSD: Makefile,v 1.19 2003/09/25 06:25:13 jolan Exp $
 
 COMMENT=	"network grep"
 
@@ -8,8 +8,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ngrep/}
 
 HOMEPAGE=	http://ngrep.sourceforge.net/
 
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
-
+# Restrictive
 PERMIT_PACKAGE_CDROM=	"Restrictions on packages"
 PERMIT_PACKAGE_FTP=	"Restrictions on packages"
 PERMIT_DISTFILES_CDROM=	Yes

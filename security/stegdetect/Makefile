@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/01 23:14:23 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2003/09/25 06:25:14 jolan Exp $
 
 COMMENT=	"steganography detection tool"
 DISTNAME=	stegdetect-0.5
@@ -6,8 +6,6 @@ CATEGORIES=	security graphics
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://www.outguess.org/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,5 +1,3 @@
 Stegdetect is an automated tool for detecting steganographic content in
 images.  It is capable of detecting several different steganographic
 methods to embed hidden information in JPEG images.
-
-WWW: ${HOMEPAGE}

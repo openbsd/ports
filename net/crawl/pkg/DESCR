@@ -17,5 +17,3 @@ Features
 + Persistent database of visited URLs 
 + Very small and efficient code 
 + Supports robots.txt 
-
-WWW: ${HOMEPAGE}

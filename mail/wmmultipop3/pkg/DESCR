@@ -6,5 +6,3 @@ optionally open your favorite mail reader when middle clicked.
 
 A configuration file (~/.wmmultipop3rc) will be auto-magically
 generated upon the first execution of the program.
-
-WWW: ${HOMEPAGE}

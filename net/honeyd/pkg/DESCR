@@ -8,5 +8,3 @@ It is possible to ping the virtual machines, or to traceroute them.  Any
 type of service on the virtual machine can be simulated according to a
 simple configuration file.  Instead of simulating a service, it is also
 possible to proxy it to another machine.
-
-WWW: ${HOMEPAGE}

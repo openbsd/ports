@@ -5,5 +5,3 @@ against data payloads of packets. It currently recognizes TCP and
 UDP across ethernet, ppp and slip interfaces, and understands bpf
 filter logic in the same fashion as more common packet sniffing
 tools, like tcpdump and snoop.
-
-WWW: ${HOMEPAGE}

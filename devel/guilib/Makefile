@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/05/12 08:23:46 jolan Exp $
+# $OpenBSD: Makefile,v 1.10 2003/09/25 06:25:13 jolan Exp $
 
 COMMENT=	"SDL C++ GUI widget library"
 
@@ -9,9 +9,7 @@ PKGNAME=	guilib-${VER}
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.libsdl.org/projects/${PROJ}/src/
 
-HOMEPAGE=	http://www.libsdl.org/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
+HOMEPAGE=	http://www.libsdl.org/projects/GUIlib/
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

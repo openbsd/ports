@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/07/23 02:46:31 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2003/09/25 06:25:13 jolan Exp $
 
 COMMENT=	"utility to create virtual hosts on a network"
 DISTNAME=	honeyd-0.6a
@@ -6,8 +6,6 @@ CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://www.citi.umich.edu/u/provos/honeyd/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

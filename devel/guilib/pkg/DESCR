@@ -3,5 +3,3 @@ It is very flexible, but is by no means a complete windowing system.
 
 It contains a C++ GUI class with a very rudimentary C interface,
 and a set of useful widget classes.
-
-WWW: ${HOMEPAGE}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/05/12 08:23:46 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2003/09/25 06:25:13 jolan Exp $
 
 COMMENT=	"abstraction for general data transport"
 
@@ -7,8 +7,6 @@ CATEGORIES=	devel
 MASTER_SITES=	http://monkey.org/~provos/
 
 HOMEPAGE=	http://monkey.org/~provos/libio/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
