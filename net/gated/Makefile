@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2001/03/24 19:55:48 jakob Exp $
+# $OpenBSD: Makefile,v 1.14 2001/05/14 18:25:24 brad Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
-COMMENT=	routing protocol daemon
+COMMENT=	"routing protocol daemon"
 
 DISTNAME=	gated-3-6
 PKGNAME=	gated-3.6
 CATEGORIES=	net
-NEED_VERSION=	1.363
-
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.gated.merit.edu/net-research/gated/
 
 HOMEPAGE=	http://www.gated.org/
@@ -40,7 +39,7 @@ CONFIGURE_STYLE=	autoconf
 SEPARATE_BUILD=		Yes
 
 pre-build:
-	cd ${WRKBUILD} && make depend
+	@cd ${WRKBUILD} && ${MAKE_PROGRAM} depend
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/gdc/gdc ${PREFIX}/bin
