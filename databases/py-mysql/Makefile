@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/09/12 06:05:14 shell Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/07 01:19:40 naddy Exp $
 
 COMMENT=		"python interface to MySQL"
 
@@ -32,6 +32,9 @@ SUBST_VARS=	PYTHON_VER
 PY_CMD=		@cd ${WRKSRC}; python${PYTHON_VER} ./setup.py
 
 DOC_DIR=	${PREFIX}/share/doc/MySQL-python
+
+do-configure:
+	@perl -i -pe 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
 
 do-build:
 	${PY_CMD} build --build-base="${WRKSRC}"

@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_py,v 1.3 2001/10/07 01:19:40 naddy Exp $
+--- setup.py.orig	Sun Oct  7 03:06:43 2001
++++ setup.py	Sun Oct  7 03:07:19 2001
+@@ -24,9 +24,9 @@ if sys.platform == "linux-i386": # Red H
+     libraries = [mysqlclient, "z"]
+     runtime_library_dirs = []
+     extra_objects = []
+-elif sys.platform in ("freebsd4", "openbsd2"): 
+-    include_dirs = ['/usr/local/include/mysql']
+-    library_dirs = ['/usr/local/lib/mysql']
++elif sys.platform in ("freebsd4", "openbsd3"): 
++    include_dirs = ['%%LOCALBASE%%/include/mysql']
++    library_dirs = ['%%LOCALBASE%%/lib/mysql']
+     libraries = [mysqlclient, "z"]
+     runtime_library_dirs = []
+     extra_objects = []
