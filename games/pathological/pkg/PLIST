@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:46:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/10/01 15:16:22 xsa Exp $
 bin/pathological
 bin/write-highscores
 @man man/man6/pathological.6
@@ -19,6 +19,13 @@ share/doc/pathological/html/teleporter.png
 share/doc/pathological/html/trigger.png
 share/doc/pathological/html/trigger2.png
 share/doc/pathological/html/wheel.png
+share/examples/pathological/
+share/examples/pathological/pathological_scores
+@mode g+w
+@group games
+@sample /var/games/pathological_scores
+@mode
+@group
 share/pathological/
 share/pathological/circuits/
 share/pathological/circuits/all-boards

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/04/10 23:10:14 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2004/10/01 15:16:22 xsa Exp $
 
 COMMENT=	"enriched clone of the game Logical by Rainbow Arts"
 
@@ -51,5 +51,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/pathological.6 ${PREFIX}/man/man6
 	${INSTALL_DATA_DIR} ${DOCDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/html/*.{html,png} ${DOCDIR}/html
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pathological
+	${INSTALL_DATA} /dev/null \
+		${PREFIX}/share/examples/pathological/pathological_scores
 
 .include <bsd.port.mk>
