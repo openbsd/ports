@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2002/01/05 22:08:30 shell Exp $
+# $OpenBSD: Makefile,v 1.99 2002/01/24 18:52:01 jsyn Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -27,8 +27,8 @@
      SUBDIR += fragrouter
      SUBDIR += gnupg
      SUBDIR += gnupg,idea
-     SUBDIR += gpgme
      SUBDIR += gpa
+     SUBDIR += gpgme
      SUBDIR += heimdal
      SUBDIR += heimdal,no_x11
      SUBDIR += hlfl
@@ -49,12 +49,10 @@
      SUBDIR += nbaudit
      SUBDIR += nessus
      SUBDIR += nessus,experimental
-     SUBDIR += nessus,no_x11
      SUBDIR += nessus,experimental,no_x11
+     SUBDIR += nessus,no_x11
      SUBDIR += nfsshell
      SUBDIR += outguess
-     SUBDIR += parse
-     SUBDIR += pcsc-lite
      SUBDIR += p0f
      SUBDIR += p5-Authen-Radius
      SUBDIR += p5-Crypt-Blowfish
@@ -64,15 +62,17 @@
      SUBDIR += p5-Crypt-Twofish
      SUBDIR += p5-Digest-MD5
      SUBDIR += p5-Digest-SHA1
+     SUBDIR += p5-GPG
      SUBDIR += p5-GnuPG
      SUBDIR += p5-GnuPG-Interface
-     SUBDIR += p5-GPG
      SUBDIR += p5-IO-Socket-SSL
      SUBDIR += p5-MD5
      SUBDIR += p5-Net_SSLeay
      SUBDIR += p5-PGP-Sign
      SUBDIR += p5-PGP-Sign,pgp
      SUBDIR += p5-PGP-Sign,pgp5
+     SUBDIR += parse
+     SUBDIR += pcsc-lite
      SUBDIR += pgp
      SUBDIR += pgp5
      SUBDIR += pgpdump
