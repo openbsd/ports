@@ -3,9 +3,9 @@
 # Date created:		September 28, 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 1999/11/03 01:22:54 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 17:17:43 turan Exp $
 
-BROKEN=		rsa_enc.o: Undefined symbol `_RAND_bytes' referenced from text segment
+BROKEN=		rsa_enc.o: Undefined symbol _RAND_bytes referenced from text segment
 
 DISTNAME=       PGPlib-1.1
 PKGNAME=	PGPlib
