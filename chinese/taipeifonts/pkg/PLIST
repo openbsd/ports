@@ -4,7 +4,7 @@ lib/X11/fonts/chinese/taipei15.pcf.gz
 lib/X11/fonts/chinese/taipei16.pcf.gz
 lib/X11/fonts/chinese/taipei24.pcf.gz
 lib/X11/fonts/chinese/taipeik24.pcf.gz
-@exec cat %B/fonts.alias* >%B/fonts.alias
+@exec cat %B/fonts.alias-* >%B/fonts.alias
 @exec echo "Remember to add %B to your font path."
-@unexec cat %B/fonts.alias* >%B/fonts.alias
+@unexec cat %B/fonts.alias-* >%B/fonts.alias
 @unexec echo "Remove %B manually if it's now empty"
