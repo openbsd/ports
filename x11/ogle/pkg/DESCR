@@ -38,10 +38,6 @@ adjust shmseg (number of segments, 16 is a good value)
 and shmmaxpgs (total size of systemV shared memory, crank to
 at least 4096).
 
-The graphical interface add-on  ogle-gui currently
-does not work on OpenBSD, but the program can be fully
-controlled from the keyboard anyways, see oglerc(5).
-
 Overall, ogle needs about 50% cpu for full-framerate decoding
 on a PIII700 with an ATI Mach64 Mobility and an ESS 
 Maestro 2.
