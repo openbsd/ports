@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2001/03/27 09:43:16 kevlo Exp $
+# $OpenBSD: Makefile,v 1.48 2001/03/28 12:29:32 naddy Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -11,6 +11,7 @@
 #    SUBDIR += cddbd
 #    SUBDIR += cdplay
      SUBDIR += esound
+     SUBDIR += flac
 #    SUBDIR += gmod
      SUBDIR += gogo
      SUBDIR += gom
