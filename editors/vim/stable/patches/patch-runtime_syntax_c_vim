@@ -1,0 +1,12 @@
+$OpenBSD: patch-runtime_syntax_c_vim,v 1.1 2004/02/04 14:29:38 lebel Exp $
+--- runtime/syntax/c.vim.orig	2003-01-23 14:42:06.000000000 -0500
++++ runtime/syntax/c.vim	2004-02-04 09:13:56.000000000 -0500
+@@ -33,7 +33,7 @@ if exists("c_no_cformat")
+   " cCppString: same as cString, but ends at end of line
+   syn region	cCppString	start=+L\="+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end='$' contains=cSpecial
+ else
+-  syn match	cFormat		display "%\(\d\+\$\)\=[-+' #0*]*\(\d*\|\*\|\*\d\+\$\)\(\.\(\d*\|\*\|\*\d\+\$\)\)\=\([hlL]\|ll\)\=\([diuoxXDOUfeEgGcCsSpn]\|\[\^\=.[^]]*\]\)" contained
++  syn match	cFormat		display "%\(\d\+\$\)\=[-+' #0*]*\(\d*\|\*\|\*\d\+\$\)\(\.\(\d*\|\*\|\*\d\+\$\)\)\=\([hlL]\|ll\)\=\([bdiuoxXDOUfeEgGcCsSpn]\|\[\^\=.[^]]*\]\)" contained
+   syn match	cFormat		display "%%" contained
+   syn region	cString		start=+L\="+ skip=+\\\\\|\\"+ end=+"+ contains=cSpecial,cFormat
+   " cCppString: same as cString, but ends at end of line
