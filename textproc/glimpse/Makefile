@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 16:16:30 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/23 13:07:43 espie Exp $
 #
 
 DISTNAME=	glimpse-4.1
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/
 DISTFILES=	glimpse-4.1.src.tar.gz
 
-CONFIGURE_STYLE=	gnu dest
+CONFIGURE_STYLE=	gnu dest old
 
 pre-configure:
 	chmod ugo+x ${WRKSRC}/configure
