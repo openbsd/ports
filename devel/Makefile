@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1997/12/02 10:31:28 niklas Exp $
+# $OpenBSD: Makefile,v 1.3 1997/12/02 12:53:38 niklas Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -36,7 +36,7 @@
     SUBDIR += libslang
 #    SUBDIR += linux_devel
 #    SUBDIR += linuxgdb
-#    SUBDIR += m4
+    SUBDIR += m4
     SUBDIR += makedepend
 #    SUBDIR += mkmf
 #    SUBDIR += mprof
