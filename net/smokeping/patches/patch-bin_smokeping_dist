@@ -1,8 +1,9 @@
-$OpenBSD: patch-bin_smokeping_dist,v 1.3 2004/06/19 21:18:59 jakob Exp $
---- bin/smokeping.dist.orig	2004-06-19 23:06:47.000000000 +0200
-+++ bin/smokeping.dist	2004-06-19 23:07:14.000000000 +0200
+$OpenBSD: patch-bin_smokeping_dist,v 1.4 2004/07/08 17:10:56 jakob Exp $
+--- bin/smokeping.dist.orig	2004-05-13 00:00:32.000000000 +0200
++++ bin/smokeping.dist	2004-07-08 19:09:20.000000000 +0200
 @@ -1,14 +1,9 @@
- #!/usr/sepp/bin/perl -w
+-#!/usr/sepp/bin/perl -w
++#!/usr/bin/perl -w
  # -*-perl-*-
  
 -use lib qw(/home/oetiker/data/projects/AABN-rrdtool/perl-shared/blib/lib);
