@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/15 22:22:38 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/18 04:11:20 espie Exp $
 
 COMMENT='stand-alone web browser'
 CATEGORIES=www x11
-NEED_VERSION=1.511
+NEED_VERSION=1.513
 
 MODULES=	qt2
 
@@ -45,9 +45,23 @@ MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 
 # ensures configure does not pick up automake
 
-post-extract:
-	ln -s /usr/bin/false ${WRKDIR}/bin/automake
-	ln -s /usr/bin/false ${WRKDIR}/bin/aclocal
+
+KONQ=${PREFIX}/lib/konq-e
+post-build:
+	sed -e s,%PREFIX%,${TRUEPREFIX}, <${FILESDIR}/konq-e >${WRKDIR}/konq-e
+
+post-install:
+	${INSTALL_DATA_DIR} ${KONQ}/share/apps/khtml/css \
+		${KONQ}/share/apps/kssl/caroot \
+		${KONQ}/pics ${KONQ}/apps/Applications \
+		${KONQ}/share/config
+	@mv ${PREFIX}/bin/konqueror ${PREFIX}/libexec/konq-e
+.for i in apps/Applications/konqueror.desktop pics/konqueror.png \
+share/apps/khtml/css/html4.css share/apps/kssl/caroot/ca-bundle.crt \
+share/config/charsets share/config/khtmlrc
+	@mv ${PREFIX}/$i ${KONQ}/$i
+.endfor
+	${INSTALL_PROGRAM} ${WRKDIR}/konq-e ${PREFIX}/bin
 
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes

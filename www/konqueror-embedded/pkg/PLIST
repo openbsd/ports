@@ -1,18 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/03/15 22:22:38 espie Exp $
-@pkgcfl kdebase-*
-apps/Applications/konqueror.desktop
-bin/konqueror
-pics/konqueror.png
-share/apps/khtml/css/html4.css
-share/apps/kssl/caroot/ca-bundle.crt
-share/config/charsets
-share/config/khtmlrc
-@dirrm share/config
-@dirrm share/apps/kssl/caroot
-@dirrm share/apps/kssl
-@dirrm share/apps/khtml/css
-@dirrm share/apps/khtml
-@dirrm share/apps
-@dirrm pics
-@dirrm apps/Applications
-@dirrm apps
+@comment $OpenBSD: PLIST,v 1.2 2002/03/18 04:11:20 espie Exp $
+bin/konq-e
+libexec/konq-e
+lib/konq-e/apps/Applications/konqueror.desktop
+lib/konq-e/pics/konqueror.png
+lib/konq-e/share/apps/khtml/css/html4.css
+lib/konq-e/share/apps/kssl/caroot/ca-bundle.crt
+lib/konq-e/share/config/charsets
+lib/konq-e/share/config/khtmlrc
+@dirrm lib/konq-e/share/config
+@dirrm lib/konq-e/share/apps/kssl/caroot
+@dirrm lib/konq-e/share/apps/kssl
+@dirrm lib/konq-e/share/apps/khtml/css
+@dirrm lib/konq-e/share/apps/khtml
+@dirrm lib/konq-e/share/apps
+@dirrm lib/konq-e/share
+@dirrm lib/konq-e/pics
+@dirrm lib/konq-e/apps/Applications
+@dirrm lib/konq-e/apps

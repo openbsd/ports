@@ -1,0 +1,5 @@
+#!/bin/sh
+PREFIX=%PREFIX%
+: ${KDEDIR:=${PREFIX}/lib/konq-e}
+export KDEDIR
+exec ${PREFIX}/libexec/konq-e "$@"
