@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2002/06/11 22:43:37 jsyn Exp $
+# $OpenBSD: Makefile,v 1.82 2002/07/11 09:31:09 shell Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -33,11 +33,13 @@
      SUBDIR += mgdiff
      SUBDIR += openjade
      SUBDIR += p5-Blatte
+     SUBDIR += p5-Font-AFM
      SUBDIR += p5-Font-TTF
      SUBDIR += p5-Libxml
      SUBDIR += p5-String-Approx
      SUBDIR += p5-String-Random
      SUBDIR += p5-String-Similarity
+     SUBDIR += p5-Text-Autoformat
      SUBDIR += p5-Text-PDF
      SUBDIR += p5-Text-Template
      SUBDIR += p5-Text-Unidecode
