@@ -1,0 +1,107 @@
+bin/lyx
+man/man1/lyx.1
+share/locale/no/LC_MESSAGES/lyx.mo
+share/lyx/clipart/platypus.eps
+share/lyx/layouts/amsart.layout
+share/lyx/layouts/article.layout
+share/lyx/layouts/book.layout
+share/lyx/layouts/dinbrief.layout
+share/lyx/layouts/foils.layout
+share/lyx/layouts/iletter.layout
+share/lyx/layouts/letter.layout
+share/lyx/layouts/linuxdoc.layout
+share/lyx/layouts/paper.layout
+share/lyx/layouts/report.layout
+share/lyx/layouts/revtex.layout
+share/lyx/layouts/slides.layout
+share/lyx/layouts/lyxmacros.inc
+share/lyx/layouts/obsolete.inc
+share/lyx/layouts/stdclass.inc
+share/lyx/layouts/stdlayouts.inc
+share/lyx/layouts/stdletter.inc
+share/lyx/layouts/stdlists.inc
+share/lyx/layouts/stdsections.inc
+share/lyx/layouts/stdstarsections.inc
+share/lyx/layouts/stdstruct.inc
+share/lyx/doc/BUGS.lyx
+share/lyx/doc/Customization.lyx
+share/lyx/doc/HowDoI-.lyx
+share/lyx/doc/Intro.lyx
+share/lyx/doc/LaTeXConfig.lyx
+share/lyx/doc/Reference.lyx
+share/lyx/doc/SpecialTools.lyx
+share/lyx/doc/Tutorial.lyx
+share/lyx/doc/UserGuide.lyx
+share/lyx/doc/LaTeXConfig.lyx.in
+share/lyx/doc/escher-lsd.eps
+share/lyx/doc/mobius.eps
+share/lyx/doc/platypus.eps
+share/lyx/kbd/american-2.kmap
+share/lyx/kbd/american.kmap
+share/lyx/kbd/czech.kmap
+share/lyx/kbd/francais.kmap
+share/lyx/kbd/french.kmap
+share/lyx/kbd/german-2.kmap
+share/lyx/kbd/german.kmap
+share/lyx/kbd/greek.kmap
+share/lyx/kbd/magyar-2.kmap
+share/lyx/kbd/magyar.kmap
+share/lyx/kbd/polish.kmap
+share/lyx/kbd/portuges.kmap
+share/lyx/kbd/romanian.kmap
+share/lyx/kbd/slovak.kmap
+share/lyx/kbd/slovene.kmap
+share/lyx/kbd/transilvanian.kmap
+share/lyx/kbd/turkish-f.kmap
+share/lyx/kbd/turkish.kmap
+share/lyx/kbd/iso8859-1.cdef
+share/lyx/kbd/iso8859-2.cdef
+share/lyx/kbd/iso8859-7.cdef
+share/lyx/templates/dinbrief.lyx
+share/lyx/templates/iletter.lyx
+share/lyx/templates/latex_letter.lyx
+share/lyx/templates/linuxdoctemplate.lyx
+share/lyx/templates/revtex.lyx
+share/lyx/templates/slides.lyx
+share/lyx/bind/cua.bind
+share/lyx/bind/emacs.bind
+share/lyx/bind/math.bind
+share/lyx/bind/menus.bind
+share/lyx/examples/Bibliography.lyx
+share/lyx/examples/Delimiters.lyx
+share/lyx/examples/Foils.lyx
+share/lyx/examples/ItemizeBullets.lyx
+share/lyx/examples/LongTable.lyx
+share/lyx/examples/Maketitle.lyx
+share/lyx/examples/MathLabeling.lyx
+share/lyx/tex/iletter.cls
+share/lyx/tex/revtex.cls
+share/lyx/images/amssymb.xpm
+share/lyx/images/psnfss1.xpm
+share/lyx/images/psnfss2.xpm
+share/lyx/images/psnfss3.xpm
+share/lyx/images/psnfss4.xpm
+share/lyx/images/standard.xpm
+share/lyx/images/amssymb.xbm
+share/lyx/images/psnfss1.xbm
+share/lyx/images/psnfss2.xbm
+share/lyx/images/psnfss3.xbm
+share/lyx/images/psnfss4.xbm
+share/lyx/images/standard.xbm
+share/lyx/lyxrc
+share/lyx/CREDITS
+share/lyx/chkconfig.ltx
+share/lyx/configure
+share/lyx/lyxrc.defaults
+share/lyx/textclass.lst
+share/lyx/packages.lst
+@dirrm share/lyx/clipart
+@dirrm share/lyx/layouts
+@dirrm share/lyx/doc
+@dirrm share/lyx/kbd
+@dirrm share/lyx/templates
+@dirrm share/lyx/bind
+@dirrm share/lyx/examples
+@dirrm share/lyx/tex
+@dirrm share/lyx/images
+@dirrm share/lyx
