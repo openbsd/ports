@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 1999/08/05 00:47:03 niklas Exp $
+# $OpenBSD: Makefile,v 1.6 1999/09/02 20:59:48 angelos Exp $
 #
 
+    SUBDIR += common
     SUBDIR += imm
     SUBDIR += rtptools
     SUBDIR += sdr
