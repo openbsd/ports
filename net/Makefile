@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1997/12/06 20:45:43 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 1998/01/02 14:48:59 joey Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -83,7 +83,7 @@
 #    SUBDIR += traceroute
 #    SUBDIR += trafshow
 #    SUBDIR += ttt
-#    SUBDIR += ucd-snmp
+     SUBDIR += ucd-snmp
 #    SUBDIR += wais
      SUBDIR += wget
 #    SUBDIR += wide-dhcp

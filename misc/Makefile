@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 1997/12/17 22:43:05 niklas Exp $
+# $OpenBSD: Makefile,v 1.3 1998/01/02 14:47:00 joey Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
-#    SUBDIR += amanda
-#    SUBDIR += astrolog
-#    SUBDIR += buffer
+    SUBDIR += amanda
+    SUBDIR += astrolog
+    SUBDIR += buffer
 #    SUBDIR += cal
 #    SUBDIR += cbb
-    SUBDIR += cdrecord-current
+#    SUBDIR += cdrecord-current
 #    SUBDIR += chord
 #    SUBDIR += colorls
 #    SUBDIR += ctk
@@ -39,7 +39,7 @@
 #    SUBDIR += plan
 #    SUBDIR += rpm
     SUBDIR += screen
-#    SUBDIR += splitvt
+    SUBDIR += splitvt
 #    SUBDIR += team
 #    SUBDIR += tkcron
 #    SUBDIR += tkinfo
