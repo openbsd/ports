@@ -1,47 +1,6 @@
---- ltmain.sh.orig	Fri Jun  1 00:07:10 2001
-+++ ltmain.sh	Fri Jun  1 00:20:32 2001
-@@ -1027,15 +1027,30 @@ compiler."
- 	    # These systems don't actually have a C or math library (as such)
- 	    continue
- 	    ;;
-+
- 	  *-*-mingw* | *-*-os2*)
- 	    # These systems don't actually have a C library (as such)
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
-+	  *-*-openbsd*)
-+	    # Do not include libc due to us having libc/libc_r.
-+	    continue
-+	    ;;
-+	  esac
-+	elif test "$arg" = "-lc_r"; then
-+	  case "$host" in
-+	  *-*-openbsd*)
-+      # Do not include libc_r directly, use -pthread flag.
-+	    continue
-+	    ;;
- 	  esac
- 	fi
- 	deplibs="$deplibs $arg"
- 	continue
- 	;;
-+	-?thread)
-+	  deplibs="$deplibs $arg"
-+	  ;;
- 
-       -module)
- 	module=yes
-@@ -2408,6 +2423,9 @@ compiler."
- 	  *-*-netbsd*)
- 	    # Don't link with libc until the a.out ld.so is fixed.
- 	    ;;
-+	  *-*-openbsd*)
-+	    # Do not include libc due to us having libc/libc_r
-+	    ;;
- 	  *)
- 	    # Add libc to deplibs on all other systems if necessary.
- 	    if test $build_libtool_need_lc = "yes"; then
-@@ -4412,40 +4430,6 @@ relink_command=\"$relink_command\""
+--- ltmain.sh.orig	Mon Dec 16 00:18:19 2002
++++ ltmain.sh	Mon Dec 16 00:25:16 2002
+@@ -4491,40 +4491,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  

@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_charconv_c,v 1.1 2002/12/19 01:30:37 margarida Exp $
+--- lib/charconv.c.orig	Mon Dec 16 23:03:37 2002
++++ lib/charconv.c	Mon Dec 16 23:05:55 2002
+@@ -98,7 +98,8 @@ int get_local_charset(char **charset) 
+ 
+       if ((*charset == NULL) ||
+           (0==strcmp(*charset,"US-ASCII")) ||
+-          (0==strcmp(*charset,"ANSI_X3.4-1968"))) {
++          (0==strcmp(*charset,"ANSI_X3.4-1968")) ||
++	  (**charset == '\0')) {
+               /* we got basic stupid ASCII here. We use its sane
+                  superset instead. Especially since libxml2 doesn't like
+                  the pedantic name of ASCII. */

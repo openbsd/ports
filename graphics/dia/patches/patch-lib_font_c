@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_font_c,v 1.1 2002/12/19 01:30:37 margarida Exp $
+--- lib/font.c.orig	Mon Dec 16 23:07:09 2002
++++ lib/font.c	Mon Dec 16 23:10:58 2002
+@@ -467,7 +467,8 @@ GHashTable *fonts_hash = NULL;
+ 
+ char *last_resort_fonts[] = {
+   "-adobe-courier-medium-r-normal-*-%d-*-*-*-*-*-*-*",
+-#ifndef G_OS_WIN32
++  "-*-courier-medium-r-normal-*-&d-*-*-*-*-*-*-*",
++#ifdef G_OS_WIN32
+   "system" /* Must be last. This is guaranteed to exist on a MS-Windows 
+               system. */
+ #else
