@@ -1,0 +1,58 @@
+*** ckcdeb.h	Sun Nov 24 16:20:48 1996
+--- ckcdeb.h	Thu Jan  1 09:03:30 1998
+***************
+*** 1555,1560 ****
+--- 1555,1563 ----
+  #ifdef __NetBSD__
+  #define BPS_57K
+  #else
++ #ifdef __OpenBSD__
++ #define BPS_57K
++ #else
+  #ifdef MAC
+  #define BPS_57K
+  #else
+***************
+*** 1566,1571 ****
+--- 1569,1575 ----
+  #endif /* BEBOX */
+  #endif /* QNX */
+  #endif /* MAC */
++ #endif /* __OpenBSD__ */
+  #endif /* __NetBSD__ */
+  #endif /* __FreeBSD__ */
+  #endif /* __386BSD__ */
+***************
+*** 1620,1625 ****
+--- 1624,1632 ----
+  #ifdef __NetBSD__
+  #define BPS_115K
+  #else
++ #ifdef __OpenBSD__
++ #define BPS_115K
++ #else
+  #ifdef OS2
+  #ifdef __32BIT__
+  #define BPS_115K
+***************
+*** 1629,1634 ****
+--- 1636,1642 ----
+  #define BPS_115K
+  #endif /* BEBOX */
+  #endif /* OS2 */
++ #endif /* __OpenBSD__ */
+  #endif /* __NetBSD__ */
+  #endif /* __FreeBSD__ */
+  #endif /* __386BSD__ */
+***************
+*** 1755,1760 ****
+--- 1763,1771 ----
+  #ifdef __NetBSD__			/* NetBSD */
+  #define POSIX_CRTSCTS
+  #endif /* __NetBSD__ */
++ #ifdef __OpenBSD__			/* OpenBSD */
++ #define POSIX_CRTSCTS
++ #endif /* __OpenBSD__ */
+  #ifdef BEBOX
+  #define POSIX_CRTSCTS
+  /* BEBOX defines CRTSFL as (CTSFLOW & RTSFLOW) */

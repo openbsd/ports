@@ -1,0 +1,24 @@
+*** ckuver.h	Fri Nov 29 05:52:13 1996
+--- ckuver.h	Thu Jan  1 08:58:30 1998
+***************
+*** 101,106 ****
+--- 101,109 ----
+  #ifdef __NetBSD__
+  #define HERALD " NetBSD"
+  #else
++ #ifdef __OpenBSD__
++ #define HERALD " OpenBSD"
++ #else
+  #ifdef __FreeBSD__
+  #define HERALD " FreeBSD"
+  #else
+***************
+*** 110,115 ****
+--- 113,119 ----
+  #define HERALD " 4.4BSD"
+  #endif /* __386BSD__ */
+  #endif /* __FreeBSD__ */
++ #endif /* __OpenBSD__ */
+  #endif /* __NetBSD__ */
+  #endif /* __bsdi__ */
+  #endif /* BSD44 */

@@ -1,0 +1,16 @@
+*** ckutio.c	Sun Nov 24 16:20:49 1996
+--- ckutio.c	Thu Jan  1 08:59:12 1998
+***************
+*** 289,295 ****
+--- 289,299 ----
+  #ifdef __NetBSD__
+  #define LOCK_DIR "/var/spool/lock";
+  #else
++ #ifdef __OpenBSD__
++ #define LOCK_DIR "/var/spool/lock";
++ #else
+  #define LOCK_DIR "/var/spool/uucp";
++ #endif /* __OpenBSD__ */
+  #endif /* __NetBSD__ */
+  #endif /* __FreeBSD__ */
+  #endif /* __386BSD__ */

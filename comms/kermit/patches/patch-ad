@@ -1,0 +1,14 @@
+*** ckuus5.c	Sun Nov 24 16:20:50 1996
+--- ckuus5.c	Thu Jan  1 09:01:41 1998
+***************
+*** 3351,3356 ****
+--- 3351,3359 ----
+  #ifdef __NetBSD__
+      if (!prtopt(&lines,"__NetBSD__")) return;
+  #endif /* __NetBSD__ */
++ #ifdef __OpenBSD__
++     if (!prtopt(&lines,"__OpenBSD__")) return;
++ #endif /* __OpenBSD__ */
+  #ifdef __FreeBSD__
+      if (!prtopt(&lines,"__FreeBSD__")) return;
+  #endif /* __FreeBSD__ */
