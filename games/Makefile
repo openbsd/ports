@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2001/07/04 16:58:43 lebel Exp $
+# $OpenBSD: Makefile,v 1.45 2001/07/05 13:35:47 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -22,6 +22,7 @@
      SUBDIR += dopewars
 #    SUBDIR += empire
 #    SUBDIR += flying
+     SUBDIR += falconseye
      SUBDIR += freeciv
      SUBDIR += freeciv,gtk
      SUBDIR += frotz
