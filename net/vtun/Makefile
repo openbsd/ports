@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2001/05/23 21:23:25 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2002/02/24 04:24:50 brad Exp $
 
 COMMENT=	"virtual tunnels over TCP/IP networks with traffic shaping"
 
-DISTNAME=	vtun-2.4
+DISTNAME=	vtun-2.5
 CATEGORIES=	net
-NEED_VERSION=	1.402
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-	http://vtun.sourceforce.net/
+NEED_VERSION=	1.500
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= vtun
 
 HOMEPAGE=	http://vtun.sourceforge.net/
@@ -20,11 +19,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+LOG_DIR=	/var
+SUBST_VARS=	LOG_DIR
+
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--localstatedir="/var" \
+CONFIGURE_ARGS=	--localstatedir="${LOG_DIR}" \
 		--with-ssl-headers="/usr/include/openssl" \
 		--with-lzo-headers="${LOCALBASE}/include" \
 		--with-lzo-lib="${LOCALBASE}/lib"
+
+WRKDIST=	${WRKDIR}/vtun
 
 DOCS=	FAQ README README.Setup README.Shaper
 

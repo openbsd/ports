@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon May 29 09:35:11 2000
-+++ Makefile.in	Mon Sep 18 10:41:23 2000
-@@ -30,6 +30,8 @@
+--- Makefile.in.orig	Sat Feb 23 22:22:50 2002
++++ Makefile.in	Sat Feb 23 22:26:52 2002
+@@ -30,6 +30,8 @@ LEXFLAGS = -t 
  INSTALL = @INSTALL@
  INSTALL_OWNER = -o root -g 0
  
@@ -9,7 +9,7 @@
  prefix = @prefix@
  exec_prefix = @exec_prefix@
  
-@@ -57,6 +59,8 @@
+@@ -57,6 +59,8 @@ CONFIGURE_FILES = Makefile config.status
  .c.o:
  	$(CC) $(CFLAGS) $(DEFS) -c $<
  
@@ -18,31 +18,27 @@
  vtund: $(OBJS)
  	$(CC) $(CFLAGS) -o vtund $(OBJS) $(LFD_OBJS) $(LDFLAGS)
  
-@@ -78,25 +82,25 @@
- 	rm -f $(CONFIGURE_FILES)
+@@ -77,24 +81,24 @@ distclean: clean
  	rm -f `cat vtun.drivers`	
  
--install_man: 
+ install_man: 
 -	$(INSTALL) -d -m 755 $(INSTALL_OWNER) $(MAN_DIR)/man8
 -	$(INSTALL) -m 644 $(INSTALL_OWNER) vtund.8 $(MAN_DIR)/man8
 -	$(INSTALL) -d -m 755 $(INSTALL_OWNER) $(MAN_DIR)/man5
 -	$(INSTALL) -m 644 $(INSTALL_OWNER) vtund.conf.5 $(MAN_DIR)/man5
 -	rm -f $(MAN_DIR)/man8/vtun.8 
 -	ln -s vtund.8 $(MAN_DIR)/man8/vtun.8 
--
--install_config: 
--	$(INSTALL) -d -m 755 $(INSTALL_OWNER) $(ETC_DIR)
--	if [ ! -f $(ETC_DIR)/vtund.conf ]; then \
--	  $(INSTALL) -m 600 $(INSTALL_OWNER) vtund.conf $(ETC_DIR); \
-+install_man:
 +	$(INSTALL) -d -m 755 $(INSTALL_OWNER) $(DESTDIR)$(MAN_DIR)/man8
 +	$(INSTALL) -m 644 $(INSTALL_OWNER) vtund.8 $(DESTDIR)$(MAN_DIR)/man8
 +	$(INSTALL) -d -m 755 $(INSTALL_OWNER) $(DESTDIR)$(MAN_DIR)/man5
 +	$(INSTALL) -m 644 $(INSTALL_OWNER) vtund.conf.5 $(DESTDIR)$(MAN_DIR)/man5
 +	rm -f $(DESTDIR)$(MAN_DIR)/man8/vtun.8 
-+	cd $(DESTDIR)$(MAN_DIR)/man8 && ln -s vtund.8 vtun.8 
-+
-+install_config:
++	cd $(DESTDIR)$(MAN_DIR)/man8; ln -s vtund.8 vtun.8 
+ 
+ install_config: 
+-	$(INSTALL) -d -m 755 $(INSTALL_OWNER) $(ETC_DIR)
+-	if [ ! -f $(ETC_DIR)/vtund.conf ]; then \
+-	  $(INSTALL) -m 600 $(INSTALL_OWNER) vtund.conf $(ETC_DIR); \
 +	$(INSTALL) -d -m 755 $(INSTALL_OWNER) $(DESTDIR)$(ETC_DIR)
 +	if [ ! -f $(DESTDIR)$(ETC_DIR)/vtund.conf ]; then \
 +	  $(INSTALL) -m 600 $(INSTALL_OWNER) vtund.conf $(DESTDIR)$(ETC_DIR); \
