@@ -4,10 +4,9 @@
 # and runs the real web2png or alerts the user, as appropriate.
 #
 
-LOCALBASE=@LOCALBASE@
 PREFIX=@PREFIX@
 
-if [ -e $LOCALBASE/bin/python ]; then
+if [ -e $PREFIX/bin/python ]; then
 	exec $PREFIX/libexec/web2png.bin
 else
 	cat <<EOF
