@@ -1,12 +1,13 @@
-bin/xpdf
-bin/pdftops
-bin/pdftotext
+@comment $OpenBSD: PLIST,v 1.5 2000/07/04 12:48:03 fgsch Exp $
+bin/pdfimages
 bin/pdfinfo
 bin/pdftopbm
-bin/pdfimages
-man/man1/xpdf.1
-man/man1/pdftops.1
-man/man1/pdftotext.1
+bin/pdftops
+bin/pdftotext
+bin/xpdf
+man/man1/pdfimages.1
 man/man1/pdfinfo.1
 man/man1/pdftopbm.1
-man/man1/pdfimages.1
+man/man1/pdftops.1
+man/man1/pdftotext.1
+man/man1/xpdf.1
