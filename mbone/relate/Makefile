@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/06/06 22:33:00 espie Exp $
-
-BROKEN=		dependency mbone/wbd is also broken
+# $OpenBSD: Makefile,v 1.12 2000/06/06 22:41:16 espie Exp $
 
 DISTNAME=       relate
 DISTFILES=	relate-2.0.tar.gz

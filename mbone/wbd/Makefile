@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2000/04/09 17:37:05 espie Exp $
-
-BROKEN=		new distsites needed.  sources do not fetch consistantly.
+# $OpenBSD: Makefile,v 1.20 2000/06/06 22:41:16 espie Exp $
 
 DISTNAME=	wbd-1.0ucl4
 CATEGORIES=	mbone
 NEED_VERSION=	 1.230
-FAKE=No
+
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/wbd/1.0ucl4/
 
 MAINTAINER=	angelos@openbsd.org
