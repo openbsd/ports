@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/19 03:03:32 kevlo Exp $
+libdata/perl5/site_perl/Net/Daemon.pm
+libdata/perl5/site_perl/Net/Daemon/Log.pm
+libdata/perl5/site_perl/Net/Daemon/Test.pm
+man/man3/Net::Daemon.3p
+man/man3/Net::Daemon::Log.3p
+man/man3/Net::Daemon::Test.3p
+@dirrm libdata/perl5/site_perl/Net/Daemon
