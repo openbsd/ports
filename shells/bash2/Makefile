@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2002/07/20 15:10:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2002/09/29 01:31:06 naddy Exp $
 
 COMMENT=	"GNU Bourne Again Shell"
 
@@ -15,7 +15,12 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=bash/}
+MASTER_SITES0=	ftp://ftp.cwru.edu/pub/bash/bash-2.05b-patches/ \
+		${MASTER_SITE_FREEBSD_LOCAL:=obrien/}
 DISTFILES=	${DISTNAME}.tar.gz ${DISTNAME:S/-/-doc-/}.tar.gz
+.for i in 001 002 003 004
+PATCHFILES+=	bash205b-${i}:0
+.endfor
 
 FLAVORS=	static
 FLAVOR?=
