@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/04/01 20:32:25 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/04/01 20:51:26 brad Exp $
 # $FreeBSD: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
 
 DISTNAME=	tcl8.0.5
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE=	Yes
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"
-FAKE_FLAGS=	INSTALL_ROOT="${WRKINST}" \
+FAKE_FLAGS=	INSTALL="install -c" INSTALL_ROOT="${WRKINST}" \
 		BASE_INCLUDE_DIR='$$(prefix)/include/tcl$$(VERSION)' \
 		INCLUDE_INSTALL_DIR='$$(INSTALL_ROOT)$$(BASE_INCLUDE_DIR)' \
 		GENERIC_INCLUDE_INSTALL_DIR='$$(BASE_INCLUDE_DIR)/generic' \
