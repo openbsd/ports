@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST-g77,v 1.1 2004/11/23 18:31:46 espie Exp $
+%%SHARED%%
+bin/eg77
+@info info/g77.info
+lib/gcc/${CONFIG}/${V}/include/g2c.h
+lib/libfrtbegin.a
+lib/libg2c.a
+lib/libg2c.la
+libexec/gcc/${CONFIG}/${V}/f771
+@man man/man1/eg77.1

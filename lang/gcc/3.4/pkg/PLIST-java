@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST-java,v 1.1 2004/11/23 18:31:46 espie Exp $
+bin/egcj
+bin/egcjh
+bin/egrepjar
+bin/ejar
+bin/ejcf-dump
+bin/ejv-scan
+bin/${CONFIG}-egcjh
+@info info/fastjar.info
+@info info/gcj.info
+libexec/gcc/${CONFIG}/${V}/jc1
+libexec/gcc/${CONFIG}/${V}/jvgenmain
+@man man/man1/egcj.1
+@man man/man1/egcjh.1
+@man man/man1/egij.1
+@man man/man1/egrepjar.1
+@man man/man1/ejar.1
+@man man/man1/ejcf-dump.1
+@man man/man1/ejv-convert.1
+@man man/man1/ejv-scan.1
+@man man/man1/ermic.1
+@man man/man1/ermiregistry.1
