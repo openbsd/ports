@@ -1,9 +1,9 @@
-$OpenBSD: patch-asclock_asclock_applet_desktop,v 1.1.1.1 2001/09/13 21:23:08 todd Exp $
---- asclock/asclock_applet.desktop.orig	Tue Aug 28 14:18:33 2001
-+++ asclock/asclock_applet.desktop	Tue Aug 28 14:18:56 2001
-@@ -54,6 +54,6 @@ Comment[tr]=Bir baЧka saat daha
- Comment[uk]=Просто ╕нший годинник
+$OpenBSD: patch-asclock_asclock_applet_desktop,v 1.2 2001/11/13 09:24:56 wilfried Exp $
+--- asclock/asclock_applet.desktop.orig	Mon Sep  3 21:51:17 2001
++++ asclock/asclock_applet.desktop	Fri Nov  9 21:47:52 2001
+@@ -57,6 +57,6 @@ Comment[uk]=Просто ╕нший годинник
  Comment[wa]=Co ene Тte Тrlodje, ciste chal avou l' aparince NeXT
+ Comment[zh_TW]=╓S╓@╨ь╝ида
  Exec=asclock_applet --activate-goad-server=asclock_applet
 -Icon=
 +Icon=gnome-clock.png
