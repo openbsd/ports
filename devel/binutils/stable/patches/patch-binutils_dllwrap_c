@@ -1,13 +1,12 @@
-$OpenBSD: patch-binutils_dllwrap_c,v 1.1 2002/05/08 11:02:40 fgsch Exp $
---- binutils/dllwrap.c.orig	Wed May  8 04:03:55 2002
-+++ binutils/dllwrap.c	Wed May  8 04:06:02 2002
+$OpenBSD: patch-binutils_dllwrap_c,v 1.2 2002/05/09 02:44:35 fgsch Exp $
+--- binutils/dllwrap.c.orig	Thu Jun  7 00:12:27 2001
++++ binutils/dllwrap.c	Wed May  8 21:40:35 2002
 @@ -392,7 +392,11 @@ run (what, args)
    int i;
    const char **argv;
    char *errmsg_fmt, *errmsg_arg;
--  char *temp_base = choose_temp_base ();
 +#if defined(__MSDOS__) && !defined(__GO32__)
-+  char *temp_base = choose_temp_base ();
+   char *temp_base = choose_temp_base ();
 +#else
 +  char *temp_base = NULL;
 +#endif
