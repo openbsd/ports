@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.4 2003/04/10 15:59:49 marcm Exp $
+$OpenBSD: patch-configure_in,v 1.5 2003/05/25 22:10:22 marcm Exp $
 --- configure.in.orig	Mon Mar 31 08:32:50 2003
 +++ configure.in	Fri Apr  4 11:07:05 2003
 @@ -86,7 +86,8 @@ AC_CHECK_HEADERS(alloca.h)
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure_in,v 1.4 2003/04/10 15:59:49 marcm Exp $
  	
  	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
  	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
-+	openbsdkerblibs="-lkrb5 -lcrypto -lasn1 -lgssapi"
++	openbsdkerblibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lgssapi"
  	AC_CACHE_CHECK([for Kerberos 5], ac_cv_lib_kerberos5,
  	[
  		LDFLAGS="$LDFLAGS -L$with_krb5/lib $mitlibs"

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2003/02/23 23:10:08 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2003/05/25 22:10:23 marcm Exp $
 lib/evolution/1.2/camel-providers/libcamelimap.so
 lib/evolution/1.2/camel-providers/libcamellocal.so
 lib/evolution/1.2/camel-providers/libcamelpop3.so
@@ -18,3 +18,4 @@ lib/libeshell.so.0.0
 lib/libevolution-importer.so.0.0
 lib/libwombat.so.0.0
 DYNLIBDIR(%D/lib)
+NEWDYNLIBDIR(%D/lib/evolution/1.2)

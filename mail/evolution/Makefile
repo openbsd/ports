@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/04/10 15:59:49 marcm Exp $
+# $OpenBSD: Makefile,v 1.10 2003/05/25 22:10:22 marcm Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 COMMENT-devguide=	"Evolution Developer's Guide"
@@ -49,7 +49,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-db3-includes=${DB3_WRKBUILD}
 CONFIGURE_ARGS+=	--with-db3-libs=${DB3_WRKBUILD}
 CONFIGURE_ARGS+=	--with-krb5=/usr
-CONFIGURE_ARGS+=	--with-krb4=/usr
 #CONFIGURE_ARGS+=	--enable-ipv6
 CONFIGURE_ARGS+=	--enable-openssl
 CONFIGURE_ARGS+=	--disable-pilot-conduits
