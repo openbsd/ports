@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.174 2001/10/06 03:44:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.175 2001/10/07 19:19:38 jakob Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -34,6 +34,7 @@
      SUBDIR += dxpc
      SUBDIR += epic4
      SUBDIR += ethereal
+     SUBDIR += ethereal,no_x11
      SUBDIR += ettercap
      SUBDIR += everybuddy
      SUBDIR += firewalk
