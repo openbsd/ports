@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 1999/09/01 15:04:21 brad Exp $
+# $OpenBSD: Makefile,v 1.10 1999/09/21 13:05:38 brad Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 
-DISTNAME=	xchat-1.2.0
+DISTNAME=	xchat-1.2.1
 CATEGORIES=	x11
 MASTER_SITES=	http://xchat.org/files/ \
 		http://xchat.linuxpower.org/files/
 
-NEED_VERSION=	1.92
+NEED_VERSION=	1.114
 
 MAINTAINER=	chris@dqc.org
 
@@ -16,7 +16,6 @@ LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
 
 USE_X11=	yes
 USE_GMAKE=	yes
-#SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --disable-gnome --disable-imlib --disable-panel
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -24,7 +23,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${X11BASE}/bin/gtk-config"
 
 post-install:
-	@strip ${PREFIX}/bin/xchat
+	@${STRIP} ${PREFIX}/bin/xchat
 	@${MKDIR} ${PREFIX}/share/doc/xchat && chmod a+rx ${PREFIX}/share/doc/xchat
 	@${INSTALL_DATA} ${WRKSRC}/doc/*.* ${PREFIX}/share/doc/xchat
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xchat
