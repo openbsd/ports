@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.6 2000/05/17 04:23:39 form Exp $
 bin/jmacs
 bin/joe
 bin/jstar
@@ -10,5 +11,3 @@ lib/joe/rjoerc
 lib/joe/jpicorc
 man/man1/joe.1
 @dirrm lib/joe
-@exec if [ ! -d /etc/joe ]; then echo "***"; echo "*** Finished installing joe."; echo "*** Default configuration files stored in %D/lib/joe."; echo "*** If you wish to change joe configuration, copy these"; echo "*** files to /etc/joe and edit them."; fi
-@unexec if [ -d /etc/joe ]; then echo "***"; echo "*** Finished uninstalling joe."; echo "*** Configuration files stored in /etc/joe have not been removed."; echo "*** You may wish to remove them manually."; fi

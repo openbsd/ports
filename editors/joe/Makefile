@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/03/25 15:39:54 kevlo Exp $
+# $OpenBSD: Makefile,v 1.18 2000/05/17 04:23:39 form Exp $
 
 DISTNAME=	joe2.8
 PKGNAME=	joe-2.8
@@ -34,12 +34,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/jpicorc ${PREFIX}/lib/joe
 	${INSTALL_DATA} ${WRKSRC}/jstarrc ${PREFIX}/lib/joe
 	${INSTALL_DATA} ${WRKSRC}/rjoerc ${PREFIX}/lib/joe
-	@if [ ! -d /etc/joe ]; then \
-		echo "***"; \
-		echo "*** Finished installing joe."; \
-		echo "*** Default configuration files stored in ${PREFIX}/lib/joe."; \
-		echo "*** If you wish to change joe configuration, copy these"; \
-		echo "*** files to /etc/joe and edit them."; \
-	fi
 
 .include <bsd.port.mk>

@@ -1,0 +1,69 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2000/05/17 04:23:39 form Exp $
+#
+# Pre/post-installation setup of joe
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=/etc/joe
+SAMPLE_CONFIG_DIR=${PREFIX}/lib/joe
+
+# Function: tell the user what s/he needs to do to use the port just installed
+#
+do_notice()
+{
+	echo
+	echo "+---------------"
+	echo "| The existing $1 configuration files in ${CONFIG_DIR},"
+	echo "| have NOT been changed. You may want to compare them to the"
+	echo "| current sample files in ${SAMPLE_CONFIG_DIR},"
+	echo "| and update your configuration as needed."
+	echo "+---------------"
+	echo
+}
+
+# Function: install default config files from the samples
+#
+do_install()
+{
+	install -o root -g wheel -m 755 ${CONFIG_DIR}
+	install -o root -g wheel -m 644 ${SAMPLE_CONFIG_DIR}/* ${CONFIG_DIR}
+	echo
+	echo "+---------------"
+	echo "| The $1 configuration files have been installed into"
+	echo "| $CONFIG_DIR}. Please view these files and change"
+	echo "| the configuration to meet your needs."
+	echo "+---------------"
+	echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+	PRE-INSTALL)
+		: nothing to pre-install for this port
+		;;
+	POST-INSTALL)
+		if [ -d ${CONFIG_DIR} ]; then
+			do_notice $1
+		else
+			do_install $1
+		fi
+		;;
+	*)
+		echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+		exit 1
+		;;
+esac
+
+exit 0
