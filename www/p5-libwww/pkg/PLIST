@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/05/16 04:43:42 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/07/05 17:16:36 avsm Exp $
 bin/GET
 bin/HEAD
 bin/POST
@@ -52,6 +52,7 @@ ${P5SITE}/Net/HTTP/NB.pm
 ${P5SITE}/Net/HTTPS.pm
 ${P5SITE}/WWW/RobotRules.pm
 ${P5SITE}/WWW/RobotRules/AnyDBM_File.pm
+${P5SITE}/lwpcook.pod
 man/man1/GET.1
 man/man1/HEAD.1
 man/man1/POST.1
@@ -91,5 +92,5 @@ man/man3p/lwpcook.3p
 @dirrm ${P5SITE}/LWP/Protocol
 @dirrm ${P5SITE}/LWP/Authen
 @dirrm ${P5SITE}/LWP
-@dirrm ${P5SITE}/HTTP/Headers
 @dirrm ${P5SITE}/HTTP/Request
+@dirrm ${P5SITE}/HTTP/Headers

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_PL,v 1.1 2001/12/27 22:06:38 avsm Exp $
---- Makefile.PL.orig	Tue Nov 27 17:47:53 2001
-+++ Makefile.PL	Thu Dec 27 21:47:24 2001
+$OpenBSD: patch-Makefile_PL,v 1.2 2002/07/05 17:16:36 avsm Exp $
+--- Makefile.PL.orig	Fri May 31 21:51:03 2002
++++ Makefile.PL	Fri Jul  5 18:06:08 2002
 @@ -41,13 +41,16 @@ my $some_time_ago = sprintf "%04d-%02d-%
            sub { ($_[5]+1900, $_[4]+1, $_[3])}->(localtime(time - 45 * 24*60*60));
  if ($some_time_ago lt $release_date) {
@@ -32,12 +32,12 @@ $OpenBSD: patch-Makefile_PL,v 1.1 2001/12/27 22:06:38 avsm Exp $
  	    push(@tmp, $_);
  	}
      }
-@@ -112,7 +115,7 @@ $Config{sitebin}.
- EOT
- 	@tmp = ();
- 	for (@request_aliases) {
--	    if (prompt("Do you want to install the $_ alias?", "y") =~ /^y/) {
+@@ -125,7 +128,7 @@ EOT
+ 		}
+ 		close(PROG);
+ 	    }
+-	    if (prompt("Do you want to install the $alias alias?", $default) =~ /^y/) {
 +	    if (1) {
- 		push(@tmp, $_);
+ 		push(@tmp, $alias);
  	    }
  	}

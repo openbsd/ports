@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2002/06/10 03:14:35 wilfried Exp $
+# $OpenBSD: Makefile,v 1.15 2002/07/05 17:16:36 avsm Exp $
 
 COMMENT=	"library for WWW access in Perl"
 
-DISTNAME=	libwww-perl-5.64
+DISTNAME=	libwww-perl-5.65
 PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES=	www perl5
 NEED_VERSION=	1.526
