@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat Dec 13 09:34:59 1997
-+++ Makefile	Mon Aug 10 10:45:21 1998
++++ Makefile	Mon Aug 28 11:23:36 2000
 @@ -1,6 +1,6 @@
  # This is the makefile for BSD UNIX
  #CFLAGS=     -g -DUNIX
@@ -15,7 +15,7 @@
 -beav:     $(OFILES)
 -	$(CC) $(CFLAGS) $(OFILES) -lncurses -o beav
 +all beav:     $(OFILES)
-+	$(CC) $(CFLAGS) $(OFILES) -ltermcap -o beav
++	$(CC) $(CFLAGS) $(OFILES) -lcurses -o beav
 +
 +install: beav
 +	$(BSD_INSTALL_PROGRAM) beav $(PREFIX)/bin
