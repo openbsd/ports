@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2000/07/19 03:27:04 brad Exp $
-lib/libtk80.so.1.5
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/10 12:37:37 espie Exp $
+@lib lib/libtk80.so.1.5
