@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/28 12:30:13 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/14 07:43:59 heko Exp $
 
 COMMENT=		"Qt-based 2D CAD system"
 
 PKGNAME=		${DISTNAME:S/-src//}
 DISTNAME=		qcad-1.4.7-src
 CATEGORIES=     	cad x11
-NEED_VERSION=		1.483
+NEED_VERSION=		1.497
 
 HOMEPAGE=		http://www.qcad.org/
 
@@ -28,6 +28,8 @@ MAKE_FLAGS= \
 	LINK='${CXX}' \
 	LFLAGS='' \
 	LIBS='-L${MODQT_LIBDIR} -L${LOCALBASE}/lib -lqt -L${X11BASE}/lib -lX11' 
+
+NO_REGRESS=		Yes
 
 DOCS=			AUTHORS COPYING INSTALL MANIFEST README TODO
 
