@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/07/09 13:22:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/07/16 06:18:17 pvalchev Exp $
 
 COMMENT=	"extract digital camera info tags from JPEG images"
 
@@ -23,6 +23,7 @@ SEPARATE_BUILD=	concurrent
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBS="-lintl"
 
 .include <bsd.port.mk>
