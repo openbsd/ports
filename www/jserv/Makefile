@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/06/10 03:14:35 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2002/07/16 15:05:08 brad Exp $
 
 BROKEN=	"HANDLER THREAD PROBLEM: java.net.SocketException: Resource temporarily unavailable"
 
@@ -14,7 +14,6 @@ V=		3.2.4
 PKGNAME=	jserv-${V}
 DISTNAME=	jakarta-tomcat-${V}-src
 CATEGORIES=	www
-NEED_VERSION=	1.504
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${V}/src/
 EXTRACT_SUFX=	.zip
 
@@ -35,12 +34,9 @@ NO_REGRESS=	Yes
 do-build:
 	cd ${WRKSRC}/src/native/apache/jserv && /usr/sbin/apxs -c *.c -o mod_jserv.so
 
-post-build:
-	strip ${WRKSRC}/src/native/apache/jserv/mod_jserv.so
-
 do-install:
-	sed 's,y0y0y0,${TRUEPREFIX},' \
-		<${FILESDIR}/jserv-enable >${WRKSRC}/jserv-enable
+	@sed 's,y0y0y0,${TRUEPREFIX},' \
+		< ${FILESDIR}/jserv-enable > ${WRKSRC}/jserv-enable
 	${INSTALL_SCRIPT} ${WRKSRC}/jserv-enable ${PREFIX}/sbin/jserv-enable
 	${INSTALL_DATA} ${WRKSRC}/src/native/apache/jserv/mod_jserv.so ${PREFIX}/lib
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/jserv
