@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/15 17:40:57 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/01/10 22:21:23 couderc Exp $
 bin/xchat2
 bin/xchat2-text
 share/applications/xchat2.desktop
@@ -24,45 +24,4 @@ share/locale/sv/LC_MESSAGES/xchat2.mo
 share/locale/zh_CN/LC_MESSAGES/xchat2.mo
 share/pixmaps/xchat2.png
 @dirrm share/pixmaps
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sr/LC_MESSAGES
-@dirrm share/locale/sr
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/ms/LC_MESSAGES
-@dirrm share/locale/ms
-@dirrm share/locale/lv/LC_MESSAGES
-@dirrm share/locale/lv
-@dirrm share/locale/lt/LC_MESSAGES
-@dirrm share/locale/lt
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/et/LC_MESSAGES
-@dirrm share/locale/et
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale/am/LC_MESSAGES
-@dirrm share/locale/am
-@dirrm share/locale
 @dirrm share/applications
