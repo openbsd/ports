@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.23 1999/02/02 01:19:36 espie Exp $
+# $OpenBSD: Makefile,v 1.24 1999/02/03 18:02:53 espie Exp $
 #
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -12,6 +12,7 @@
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
 
+NEED_VERSION=1.60
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 
@@ -241,7 +242,7 @@ post-patch:
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_SCRIPT=../source/configure
+#CONFIGURE_SCRIPT=../source/configure
 
 LANGS=c
 .if defined(MAKE_GXX)
@@ -260,10 +261,14 @@ LANGS+=objc
 LANGS+=java
 .endif
 
-CONFIGURE_ENV=CFLAGS='-O2' LANGUAGES='${LANGS}'
+CONFIGURE_ENV=LANGUAGES='${LANGS}' CFLAGS='-O2'
+
 CONFIGURE_ARGS= --prefix=${PREFIX} \
 --verbose --program-transform-name=s,^,e, 
 
+
+# if you wish to try your luck
+#CONFIGURE_ARGS+= --enable-threads=yes
 
 .if defined(AS_PATH)
 CONFIGURE_ARGS += --with-as=${AS_PATH}
@@ -281,14 +286,13 @@ CONFIGURE_ARGS += --with-gnu-ld
 CONFIGURE_ARGS+=--enable-shared
 .endif
 
+WRKBUILD=${WRKDIR}/build-${MACHINE_ARCH}
 
 # rebuild configure files after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
 pre-configure:
 	cd ${WRKSRC}/gcc && autoreconf
 	cd ${WRKSRC}/libiberty && autoreconf
-	-${MV} ${WRKSRC} ${WRKDIR}/source
-	${MKDIR} ${WRKSRC}
 
 
 ####
@@ -307,7 +311,7 @@ ALL_TARGET+=check
 
 # XXX we need to override do-build to get the warnings from within make
 do-build:
-	@(cd ${WRKSRC}; \
+	@(cd ${WRKBUILD}; \
 	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET} 2>warnings) || \
 	(echo "Make bootstrap failed."; \
 	echo "Don't forget to look at ${WRKSRC}/warnings"; ${FALSE})

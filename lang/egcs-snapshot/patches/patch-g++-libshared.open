@@ -1,5 +1,5 @@
---- libstdc++/configure.in.orig	Sat Jan  2 20:16:17 1999
-+++ libstdc++/configure.in	Sun Jan 10 01:59:00 1999
+--- libstdc++/configure.in.orig	Wed Feb  3 15:03:58 1999
++++ libstdc++/configure.in	Wed Feb  3 15:04:39 1999
 @@ -63,6 +63,7 @@
      *-*-irix[56]*)	frags="${frags} irix5.ml" ;;
      *-*-linux*aout*)	;;
@@ -8,3 +8,11 @@
      *-*-sysv[45]*|*-*-udk*)	frags="${frags} elf.ml" ;;
      *-*-solaris*)	frags="${frags} sol2shm.ml" ;;
      *-*-sunos4*)	frags="${frags} sunos4.ml" ;;
+@@ -76,6 +77,7 @@
+   alpha*-*-linux-gnulibc1)	frags="${frags} linux.mt" ;;
+   powerpc*-*-linux-gnulibc1)	frags="${frags} linux.mt" ;;
+   *-*-linux-gnu)		frags="${frags} linux.mt" ;;
++  *-*-openbsd*)		frags="${frags} openbsd.mt" ;;
+   m68k-motorola-sysv)		frags="${frags} delta.mt" ;;
+ esac
+ 

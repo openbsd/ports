@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 1999/02/01 23:34:08 espie Exp $
+$OpenBSD: README,v 1.4 1999/02/03 18:02:53 espie Exp $
 
 Warning: highly experimental port.
 
@@ -71,5 +71,17 @@ As of 19990131, I checked that i386 and m68k did work.
 Once you get through all those caveats, and manage to build egcs, one
 nice point is that you get fairly good C, C++, f77, objective-C, and
 java compilers.
+
+Thread support
+--------------
+I'm currently building on d's work with respect to libc_r... I've added
+some provisions for adding -pthread everywhere it's currently needed.
+
+Test support needs the same -pthread, e.g., you'll probably have to edit
+/usr/local/share/dejagnu/baseboards/unix.exp to add
+set_board_info cflags	"-pthread"
+I haven't yet modified the testsuite framework for that. I'm somewhat
+hoping we'll find a less kludgy solution than -pthread to activate libc_r.
+
 --
 	Marc Espie
