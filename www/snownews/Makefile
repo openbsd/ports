@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2003/12/16 07:03:27 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2003/12/30 03:10:02 jolan Exp $
 
 COMMENT=	"text mode rss newsreader"
-DISTNAME=	snownews-1.4.1
+DISTNAME=	snownews-1.4.2
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}download/
 
@@ -22,6 +22,6 @@ MODULES=	gettext
 
 LIB_DEPENDS+=	xml2.7.10::textproc/libxml
 
-MAKE_ENV+=	EXTRA_LDFLAGS="-lintl -liconv"
+MAKE_ENV+=	EXTRA_LDFLAGS="-lintl -liconv" INSTALL=install
 
 .include <bsd.port.mk>
