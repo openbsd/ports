@@ -3,11 +3,11 @@
 # Date created:				21 Apr 1998
 # Whom:					form@vs.itam.nsc.ru
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/04/27 19:53:22 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1998/07/21 09:20:06 form Exp $
 #
 
-DISTNAME=	socks5-v1.0r3
-PKGNAME=	socks5-1.0.3
+DISTNAME=	socks5-v1.0r5
+PKGNAME=	socks5-1.0.5
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.ualg.pt/Linux/network/proxies/socks5/
 EXTRACT_SUFX=	.tar.gz
@@ -25,7 +25,7 @@ RESTRICTED=	"no commercial use"
 #		--with-syslog-facility=LOG_AUTH \
 #		--with-passwd
 
-WRKSRC=		${WRKDIR}/socks5-v1.0r3
+WRKSRC=		${WRKDIR}/socks5-v1.0r5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-srvpidfile=/var/run/socks5.pid \
 		--with-srvidtfile=/var/run/socks5.ident \

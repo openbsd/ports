@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1998/06/03 23:03:12 marc Exp $
+# $OpenBSD: Makefile,v 1.12 1998/07/21 09:20:05 form Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -28,7 +28,7 @@ SUBDIR += net
 SUBDIR += news
 SUBDIR += plan9
 SUBDIR += print
-#SUBDIR += russian
+SUBDIR += russian
 SUBDIR += security
 SUBDIR += shells
 SUBDIR += sysutils
