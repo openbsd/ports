@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#	$OpenBSD: bind9-enable,v 1.9 2001/11/26 23:25:18 jakob Exp $
+#	$OpenBSD: bind9-enable,v 1.10 2001/12/16 23:19:16 jakob Exp $
 #
 #	this script replaces OpenBSD named files with the corresponding
 #	files from BIND v9.
@@ -17,7 +17,7 @@ fi
 
 echo "This script will replace OpenBSD BIND v4 with BIND v9"
 echo ""
-echo -n "Are you sure you want to to this (y/[n])? "
+echo -n "Are you sure you want to do this (y/[n])? "
 
 read answer
 echo ""
