@@ -1,7 +1,6 @@
-$OpenBSD: patch-configure,v 1.5 2001/10/10 14:03:53 wilfried Exp $
---- configure.orig	Thu Apr  5 20:03:05 2001
-+++ configure	Tue Oct  9 00:00:43 2001
-@@ -1868,13 +1868,23 @@ fi
+--- configure.orig	Fri Oct 26 14:22:17 2001
++++ configure	Fri Oct 26 14:27:20 2001
+@@ -2298,13 +2298,23 @@
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    
@@ -13,7 +12,7 @@ $OpenBSD: patch-configure,v 1.5 2001/10/10 14:03:53 wilfried Exp $
 +		sparc|sparc64)
 +			SHLIB_CFLAGS="-fPIC";;
 +		*)
-+		    	SHLIB_CFLAGS="-fpic";;
++			SHLIB_CFLAGS="-fpic";;
 +		esac
 +		SHLIB_LD="${CC} -shared ${SHLIB_CFLAGS}"
  		SHLIB_LD_LIBS=""
@@ -27,9 +26,9 @@ $OpenBSD: patch-configure,v 1.5 2001/10/10 14:03:53 wilfried Exp $
 +			DL_LIBS="-ldl";;
 +		esac
  		LDFLAGS=""
- 		LD_SEARCH_FLAGS=""
+ 		LD_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
  		echo $ac_n "checking for ELF""... $ac_c" 1>&6
-@@ -1892,11 +1902,11 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&
+@@ -2322,11 +2332,11 @@
    egrep "yes" >/dev/null 2>&1; then
    rm -rf conftest*
    echo "$ac_t""yes" 1>&6
@@ -43,7 +42,7 @@ $OpenBSD: patch-configure,v 1.5 2001/10/10 14:03:53 wilfried Exp $
  		
  fi
  rm -f conftest*
-@@ -2382,6 +2392,7 @@ fi
+@@ -2882,6 +2892,7 @@
  	echo "$ac_t""no" 1>&6
      fi
  
@@ -51,10 +50,10 @@ $OpenBSD: patch-configure,v 1.5 2001/10/10 14:03:53 wilfried Exp $
  
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
-@@ -4089,14 +4100,13 @@ if test "${SHARED_BUILD}" = "1" -a "${SH
+@@ -4589,14 +4600,13 @@
      TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
      TK_LIB_FILE=libtk${TK_SHARED_LIB_SUFFIX}
-     MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${TCL_STUB_LIB_SPEC} \${SHLIB_LD_LIBS}"
+     MAKE_LIB="\${SHLIB_LD} -o \$@ \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${TCL_STUB_LIB_SPEC} \${SHLIB_LD_LIBS}"
 -    RANLIB=":"
  
  #    TCL_STUB_FLAGS="-DUSE_TCL_STUBS"
@@ -62,17 +61,17 @@ $OpenBSD: patch-configure,v 1.5 2001/10/10 14:03:53 wilfried Exp $
  else
      TK_SHLIB_CFLAGS=""
      TK_LIB_FILE=libtk${TK_UNSHARED_LIB_SUFFIX}
--    MAKE_LIB="ar cr \${TK_LIB_FILE} \${OBJS}"
-+    MAKE_LIB="ar cr \${TK_LIB_FILE} \${OBJS}; \${RANLIB} \${TK_LIB_FILE}"
+-    MAKE_LIB="\${STLIB_LD} \$@ \${OBJS}"
++    MAKE_LIB="\${STLIB_LD} \${TK_LIB_FILE} \${OBJS}; \${RANLIB} \${TK_LIB_FILE}"
  
      TCL_STUB_FLAGS=""
  fi
-@@ -4139,7 +4149,7 @@ TK_SHARED_BUILD=${SHARED_BUILD}
- # Replace ${VERSION} with contents of ${TK_VERSION}
- eval "STUB_LIB_FILE=libtkstub${TK_UNSHARED_LIB_SUFFIX}"
+@@ -4640,7 +4650,7 @@
+ eval "TK_STUB_LIB_FILE=libtkstub${TK_UNSHARED_LIB_SUFFIX}"
  
--MAKE_STUB_LIB="ar cr \${STUB_LIB_FILE} \${STUB_LIB_OBJS}"
-+MAKE_STUB_LIB="ar cr \${STUB_LIB_FILE} \${STUB_LIB_OBJS}; \${RANLIB} \${STUB_LIB_FILE}"
+ # FIXME: Should we add MAKE_STUB_LIB to tclConfig.sh ?
+-MAKE_STUB_LIB="\${STLIB_LD} \$@ \${STUB_LIB_OBJS}"
++MAKE_STUB_LIB="\${STLIB_LD} \${TK_STUB_LIB_FILE} \${STUB_LIB_OBJS}; \${RANLIB} \${TK_STUB_LIB_FILE}"
  
- TK_STUB_LIB_FILE=${STUB_LIB_FILE}
- 
+ if test "${TCL_LIB_VERSIONS_OK}" = "ok"; then
+     eval TK_STUB_LIB_FLAG="-ltkstub${TK_VERSION}\${TK_DBGX}"

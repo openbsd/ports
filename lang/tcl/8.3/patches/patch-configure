@@ -1,7 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2001/10/24 14:37:53 brad Exp $
---- configure.orig	Fri Apr  6 14:51:46 2001
-+++ configure	Wed Oct 24 10:25:17 2001
-@@ -5112,13 +5112,23 @@ fi
+--- configure.orig	Fri Oct 26 13:02:59 2001
++++ configure	Fri Oct 26 13:34:07 2001
+@@ -5328,13 +5328,23 @@
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    
@@ -11,10 +10,10 @@ $OpenBSD: patch-configure,v 1.6 2001/10/24 14:37:53 brad Exp $
 +		# OpenBSD/SPARC needs -fPIC, -fpic will not do.
 +		case `machine` in
 +		sparc*)
-+		    SHLIB_CFLAGS="-fPIC";;
-+		 *)
-+		    SHLIB_CFLAGS="-fpic";;
-+	        esac
++			SHLIB_CFLAGS="-fPIC";;
++		*)
++ 			SHLIB_CFLAGS="-fpic";;
++		esac
 +		SHLIB_LD="${CC} -shared ${SHLIB_CFLAGS}"
  		SHLIB_LD_LIBS=""
  		SHLIB_SUFFIX=".so"
@@ -29,7 +28,7 @@ $OpenBSD: patch-configure,v 1.6 2001/10/24 14:37:53 brad Exp $
  		LDFLAGS=""
  		LD_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
  		echo $ac_n "checking for ELF""... $ac_c" 1>&6
-@@ -5136,11 +5146,11 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&
+@@ -5352,11 +5362,11 @@
    egrep "yes" >/dev/null 2>&1; then
    rm -rf conftest*
    echo "$ac_t""yes" 1>&6
@@ -43,24 +42,21 @@ $OpenBSD: patch-configure,v 1.6 2001/10/24 14:37:53 brad Exp $
  		
  fi
  rm -f conftest*
-@@ -5848,10 +5858,9 @@ if test "${SHARED_BUILD}" = "1" -a "${SH
-     TCL_LD_SEARCH_FLAGS="${LD_SEARCH_FLAGS}"
+@@ -6101,7 +6111,7 @@
+     TCL_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
      eval "TCL_LIB_FILE=libtcl${TCL_SHARED_LIB_SUFFIX}"
      if test "x$DL_OBJS" = "xtclLoadAout.o"; then
--	MAKE_LIB="ar cr \${TCL_LIB_FILE} \${OBJS}"
-+	MAKE_LIB="ar cr \${TCL_LIB_FILE} \${OBJS}; \${RANLIB} \${TCL_LIB_FILE}"
+-	MAKE_LIB="\${STLIB_LD} \$@ \${OBJS}"
++	MAKE_LIB="\${STLIB_LD} \${TCL_LIB_FILE} \${OBJS}; \${RANLIB} \${TCL_LIB_FILE}"
      else
- 	MAKE_LIB="\${SHLIB_LD} -o \${TCL_LIB_FILE} \${OBJS} ${SHLIB_LD_LIBS}"
--	RANLIB=":"
+ 	MAKE_LIB="\${SHLIB_LD} ${TCL_SHLIB_LD_EXTRAS} -o \$@ \${OBJS} ${SHLIB_LD_LIBS}"
      fi
- else
-     case $system in
-@@ -5935,7 +5944,7 @@ eval "STUB_LIB_FILE=libtclstub${TCL_UNSH
+@@ -6186,7 +6196,7 @@
  # Replace DBGX with TCL_DBGX
- eval "STUB_LIB_FILE=\"${STUB_LIB_FILE}\""
+ eval "TCL_STUB_LIB_FILE=\"${TCL_STUB_LIB_FILE}\""
  
--MAKE_STUB_LIB="ar cr \${STUB_LIB_FILE} \${STUB_LIB_OBJS}"
-+MAKE_STUB_LIB="ar cr \${STUB_LIB_FILE} \${STUB_LIB_OBJS}; \${RANLIB} \${STUB_LIB_FILE}"
+-MAKE_STUB_LIB="\${STLIB_LD} \$@ \${STUB_LIB_OBJS}"
++MAKE_STUB_LIB="\${STLIB_LD} \${TCL_STUB_LIB_FILE} \${STUB_LIB_OBJS}; \${RANLIB} \${TCL_STUB_LIB_FILE}"
  
- TCL_STUB_LIB_FILE=${STUB_LIB_FILE}
- 
+ if test "${TCL_LIB_VERSIONS_OK}" = "ok"; then
+     TCL_STUB_LIB_FLAG="-ltclstub${TCL_VERSION}\${TCL_DBGX}"

@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Apr  6 02:03:05 2001
-+++ Makefile.in	Sat May 12 15:18:24 2001
-@@ -197,7 +197,7 @@
+--- Makefile.in.orig	Fri Oct 26 14:14:42 2001
++++ Makefile.in	Fri Oct 26 14:21:47 2001
+@@ -202,7 +202,7 @@
  # Libraries to use when linking.  This definition is determined by the
  # configure script.
  LIBS = @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
@@ -9,7 +9,7 @@
  
  # The symbol below provides support for dynamic loading and shared
  # libraries.  See configure.in for a description of what it means.
-@@ -350,7 +350,7 @@
+@@ -357,7 +357,7 @@
  
  all: binaries libraries doc
  
@@ -18,7 +18,7 @@
  
  libraries:
  
-@@ -365,12 +365,15 @@
+@@ -372,12 +372,15 @@
  ${TK_LIB_FILE}: ${OBJS}
  	rm -f ${TK_LIB_FILE}
  	@MAKE_LIB@
@@ -36,7 +36,7 @@
  
  # Make target which outputs the list of the .o contained in the Tk lib
  # usefull to build a single big shared library containing Tcl/Tk and other
-@@ -456,12 +459,15 @@
+@@ -463,12 +466,15 @@
  	    fi
  	@echo "Installing $(TK_LIB_FILE) to $(LIB_INSTALL_DIR)/"
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
@@ -54,7 +54,7 @@
  	@if test "$(TK_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TK_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
-@@ -475,6 +481,7 @@
+@@ -482,6 +488,7 @@
  
  install-libraries:
  	@for i in $(INCLUDE_INSTALL_DIR) \
@@ -62,7 +62,7 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -488,11 +495,17 @@
+@@ -495,11 +502,19 @@
  	    chmod +x $(UNIX_DIR)/install-sh; \
  	    fi
  	@echo "Installing header files";
@@ -80,6 +80,8 @@
  	    done;
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tk.h $(INCLUDE_INSTALL_DIR)/tk.h
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tkDecls.h $(INCLUDE_INSTALL_DIR)/tkDecls.h
++	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tkPlatDecls.h $(INCLUDE_INSTALL_DIR)/tkPlatDecls.h
++	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tkIntXlibDecls.h $(INCLUDE_INSTALL_DIR)/tkIntXlibDecls.h
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
  	@for i in $(SRC_DIR)/library/*.tcl $(GENERIC_DIR)/prolog.ps \
  	        $(SRC_DIR)/library/tclIndex $(UNIX_DIR)/tkAppInit.c; \

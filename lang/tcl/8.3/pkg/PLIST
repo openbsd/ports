@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2001/05/12 08:57:33 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.9 2001/10/26 06:48:30 kevlo Exp $
 @option no-default-conflict
 @pkgcfl tcl-8.3.*
 bin/tclsh8.3
@@ -20,6 +20,7 @@ include/tcl8.3/generic/tclPort.h
 include/tcl8.3/generic/tclRegexp.h
 include/tcl8.3/tcl.h
 include/tcl8.3/tclDecls.h
+include/tcl8.3/tclPlatDecls.h
 include/tcl8.3/unix/tclUnixPort.h
 include/tcl8.3/unix/tclUnixThrd.h
 lib/libtcl83.a
@@ -57,6 +58,7 @@ lib/tcl8.3/encoding/cp936.enc
 lib/tcl8.3/encoding/cp949.enc
 lib/tcl8.3/encoding/cp950.enc
 lib/tcl8.3/encoding/dingbats.enc
+lib/tcl8.3/encoding/ebcdic.enc
 lib/tcl8.3/encoding/euc-cn.enc
 lib/tcl8.3/encoding/euc-jp.enc
 lib/tcl8.3/encoding/euc-kr.enc
@@ -67,6 +69,11 @@ lib/tcl8.3/encoding/iso2022-jp.enc
 lib/tcl8.3/encoding/iso2022-kr.enc
 lib/tcl8.3/encoding/iso2022.enc
 lib/tcl8.3/encoding/iso8859-1.enc
+lib/tcl8.3/encoding/iso8859-10.enc
+lib/tcl8.3/encoding/iso8859-13.enc
+lib/tcl8.3/encoding/iso8859-14.enc
+lib/tcl8.3/encoding/iso8859-15.enc
+lib/tcl8.3/encoding/iso8859-16.enc
 lib/tcl8.3/encoding/iso8859-2.enc
 lib/tcl8.3/encoding/iso8859-3.enc
 lib/tcl8.3/encoding/iso8859-4.enc
@@ -79,6 +86,7 @@ lib/tcl8.3/encoding/jis0201.enc
 lib/tcl8.3/encoding/jis0208.enc
 lib/tcl8.3/encoding/jis0212.enc
 lib/tcl8.3/encoding/koi8-r.enc
+lib/tcl8.3/encoding/koi8-u.enc
 lib/tcl8.3/encoding/ksc5601.enc
 lib/tcl8.3/encoding/macCentEuro.enc
 lib/tcl8.3/encoding/macCroatian.enc
@@ -94,11 +102,12 @@ lib/tcl8.3/encoding/macTurkish.enc
 lib/tcl8.3/encoding/macUkraine.enc
 lib/tcl8.3/encoding/shiftjis.enc
 lib/tcl8.3/encoding/symbol.enc
+lib/tcl8.3/encoding/tis-620.enc
 lib/tcl8.3/history.tcl
 lib/tcl8.3/http1.0/http.tcl
 lib/tcl8.3/http1.0/pkgIndex.tcl
-lib/tcl8.3/http2.3/http.tcl
-lib/tcl8.3/http2.3/pkgIndex.tcl
+lib/tcl8.3/http2.4/http.tcl
+lib/tcl8.3/http2.4/pkgIndex.tcl
 lib/tcl8.3/init.tcl
 lib/tcl8.3/ldAix
 lib/tcl8.3/ldAout.tcl
@@ -708,7 +717,7 @@ lib/tcl8.3/word.tcl
 @dirrm lib/tcl8.3/man
 @exec echo "tcl8.3 manpages are in %D/lib/tcl8.3/man; you may wish to add this directory to /etc/man.conf"
 @unexec echo "Please remove %D/lib/tcl8.3/man from /etc/man.conf manually if needed"
-@dirrm lib/tcl8.3/http2.3
+@dirrm lib/tcl8.3/http2.4
 @dirrm lib/tcl8.3/http1.0
 @dirrm lib/tcl8.3/encoding
 @dirrm lib/tcl8.3
