@@ -1,5 +1,5 @@
  =======================
- KAFFE OpenVM 1.0 Beta 1
+ KAFFE OpenVM 1.0 Beta 3
  =======================
 
 This is the first release of "Kaffe OpenVM", a complete virtual machine
@@ -15,4 +15,4 @@ releasing it into the Ports tree for others to experiment with.
 We are keeping it separate from the Kaffe-0.8.* which will be maintained
 in ports/lang/kaffe for people who need JDK-1.0 compatability.
 
-For more information see http://www.transvirtual.com/kaffe.html
+For more information see http://www.transvirtual.com/.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/03/02 04:41:05 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1999/03/15 14:43:04 ian Exp $
 #
 # Relevant URLs:	http://www.transvirtual.com/kaffe/
 
@@ -10,7 +10,12 @@ NEED_VERSION=	1.73
 MASTER_SITES=	ftp://ftp.transvirtual.com/pub/kaffe/
 
 LIB_DEPENDS=	jpeg.62.:${PORTSDIR}/graphics/jpeg \
+			gif.3.:${PORTSDIR}/graphics/giflib \
 			png.1.:${PORTSDIR}/graphics/png
+
+.if defined(NO_SHARED_LIBS)
+   BROKEN= "doesn't work on architectures that do not support shared libs"
+.endif
 
 MAINTAINER=	ian@OpenBSD.ORG
 
