@@ -1,6 +1,6 @@
-$OpenBSD: patch-hacks_glx_Makefile_in,v 1.1.1.1 2001/06/20 19:16:45 lebel Exp $
---- hacks/glx/Makefile.in.orig	Sun Jun  3 19:43:49 2001
-+++ hacks/glx/Makefile.in	Tue Jun 19 10:28:09 2001
+$OpenBSD: patch-hacks_glx_Makefile_in,v 1.2 2001/11/21 19:35:45 lebel Exp $
+--- hacks/glx/Makefile.in.orig	Thu Oct 25 18:28:36 2001
++++ hacks/glx/Makefile.in	Wed Nov 21 14:30:47 2001
 @@ -9,7 +9,7 @@
  srcdir		= @srcdir@
  VPATH		= @srcdir@
@@ -22,7 +22,7 @@ $OpenBSD: patch-hacks_glx_Makefile_in,v 1.1.1.1 2001/06/20 19:16:45 lebel Exp $
 @@ -145,7 +145,7 @@ install-program:: $(EXES)
  # the xscreensaver-gl-helper program, in $bindir
  install-program:: $(EXES)
- 	@exes="$(GL_UTIL_EXES)" ;					\
+ 	@exes="@GL_UTIL_EXES@" ;					\
 -	 idir="$(install_prefix)$(bindir)" ;				\
 +	 idir="$(DESTDIR)$(bindir)" ;				\
  	 if [ "$$exes" != "" ]; then					\

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/20 19:16:45 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/11/21 19:35:45 lebel Exp $
 bin/xscreensaver
 bin/xscreensaver-command
 bin/xscreensaver-demo
@@ -19,6 +19,7 @@ libexec/xscreensaver/bubbles
 libexec/xscreensaver/bumps
 libexec/xscreensaver/cage
 libexec/xscreensaver/ccurve
+libexec/xscreensaver/circuit
 libexec/xscreensaver/compass
 libexec/xscreensaver/coral
 libexec/xscreensaver/critical
@@ -114,6 +115,7 @@ libexec/xscreensaver/swirl
 libexec/xscreensaver/t3d
 libexec/xscreensaver/triangle
 libexec/xscreensaver/truchet
+libexec/xscreensaver/vermiculate
 libexec/xscreensaver/vidwhacker
 libexec/xscreensaver/vines
 libexec/xscreensaver/wander
@@ -174,6 +176,7 @@ man/man1/munch.1
 man/man1/nerverot.1
 man/man1/noseguy.1
 man/man1/pedal.1
+man/man1/penetrate.1
 man/man1/penrose.1
 man/man1/petri.1
 man/man1/phosphor.1
