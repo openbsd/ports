@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2001/07/29 04:20:16 brad Exp $
+# $OpenBSD: Makefile,v 1.36 2001/08/02 20:13:43 jasoni Exp $
 
 COMMENT= 	"interpreted object-oriented programming language"
 COMMENT-tools=	"extra tools for python"
@@ -8,7 +8,9 @@ PKGNAME=	python-${VERSION}
 DISTNAME=	Python-${VERSION}
 CATEGORIES=	lang
 NEED_VERSION=	1.413
-MASTER_SITES=	ftp://ftp.python.org/pub/python/${VERSION}/
+MASTER_SITES=	ftp://ftp.python.org/pub/%SUBDIR%/ \
+		ftp://python.mirrors.netnumina.com/python/pub/%SUBDIR%/
+MASTER_SITE_SUBDIR= python/${VERSION}
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.python.org/
