@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/10/28 01:38:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2004/06/11 04:48:51 brad Exp $
 
 COMMENT=	"determine remote OS using simple tcp packets"
 
@@ -6,8 +6,6 @@ DISTNAME=	queso-980922
 CATEGORIES=	net
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
