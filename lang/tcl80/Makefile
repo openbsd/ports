@@ -19,6 +19,9 @@ GNU_CONFIGURE=	yes
 .if (${MACHINE_ARCH} != "alpha")
 CONFIGURE_ARGS=	--enable-shared
 .endif
+.if (${MACHINE_ARCH} != "pmax")
+CONFIGURE_ARGS=	--disable-load
+.endif
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
 
 post-install:
