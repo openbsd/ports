@@ -1,0 +1,4 @@
+This module makes SNMP reading and writing functions accessible
+from within PHP.
+
+WWW: ${HOMEPAGE}

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/07/09 18:14:16 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2002/07/09 19:35:10 avsm Exp $
 
 PKGNAME=	php4-gd-${V}
 
 MULTI_PACKAGES=	-bz2 -curl -dba -dbase -filepro \
 		-gmp -imap -ldap -mcrypt -mhash -mysql -ncurses \
-		-odbc -pdf -pgsql -shmop -sybase_ct -xml -xslt
+		-odbc -pdf -pgsql -shmop -snmp -sybase_ct -xml -xslt
 SUBPACKAGE?=
 
 FLAVORS+=	no_x11
@@ -117,10 +117,10 @@ PGSQL_DEPENDS=		pq.2::databases/postgresql
 COMMENT-shmop=		"shared memory extensions for php4"
 CONFIGURE_ARGS+=	--enable-shmop=shared
 
-# snmp .. waiting for ssl ...
+# snmp 
 COMMENT-snmp=		"snmp protocol extensions for php4"
-#-CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE} --enable-ucd-snmp-hack
-#-LIB_DEPENDS+=		snmp.42::net/ucd-snmp
+CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE} --enable-ucd-snmp-hack
+LIB_DEPENDS+=		snmp.42::net/ucd-snmp
 
 # sybase-ct
 COMMENT-sybase_ct=	"sybase database access extensions for php4"

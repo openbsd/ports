@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-snmp,v 1.1 2002/07/09 19:35:10 avsm Exp $
+lib/php/modules/snmp.so
