@@ -1,6 +1,6 @@
---- configure.orig	Wed Apr 26 16:59:20 2000
-+++ configure	Wed Jul 19 00:59:46 2000
-@@ -1868,9 +1868,14 @@
+--- configure.orig	Tue Aug  8 14:19:32 2000
++++ configure	Thu Nov  2 10:42:54 2000
+@@ -1868,13 +1868,23 @@
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    
@@ -14,11 +14,21 @@
 +		 *)
 +		    SHLIB_CFLAGS="-fpic";;
 +		esac
-+		SHLIB_LD="ld -Bshareable -Bforcearchive -x"
++		SHLIB_LD="${CC} -shared ${SHLIB_CFLAGS}"
  		SHLIB_LD_LIBS=""
  		SHLIB_SUFFIX=".so"
  		DL_OBJS="tclLoadDl.o"
-@@ -1896,7 +1901,7 @@
+-		DL_LIBS=""
++		case `machine` in
++		powerpc)
++			DL_LIBS="-ldl";;
++		*)
++			DL_LIBS="";;
++		esac
+ 		LDFLAGS=""
+ 		LD_SEARCH_FLAGS=""
+ 		echo $ac_n "checking for ELF""... $ac_c" 1>&6
+@@ -1896,7 +1906,7 @@
  else
    rm -rf conftest*
    echo "$ac_t""no" 1>&6
@@ -27,7 +37,7 @@
  		
  fi
  rm -f conftest*
-@@ -2382,6 +2387,7 @@
+@@ -2382,6 +2392,7 @@
  	echo "$ac_t""no" 1>&6
      fi
  
@@ -35,7 +45,7 @@
  
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
-@@ -4089,14 +4095,13 @@
+@@ -4089,14 +4100,13 @@
      TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
      TK_LIB_FILE=libtk${TK_SHARED_LIB_SUFFIX}
      MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${TCL_STUB_LIB_SPEC} \${LIBS}"
@@ -51,7 +61,7 @@
  
      TCL_STUB_FLAGS=""
  fi
-@@ -4139,7 +4144,7 @@
+@@ -4139,7 +4149,7 @@
  # Replace ${VERSION} with contents of ${TK_VERSION}
  eval "STUB_LIB_FILE=libtkstub${TK_UNSHARED_LIB_SUFFIX}"
  
