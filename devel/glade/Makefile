@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/14 14:41:29 todd Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/20 18:39:13 naddy Exp $
 
 COMMENT=		"free user interface builder for GTK+ and GNOME"
 V=			0.5.11
@@ -24,7 +24,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/16 22:18:59 heko Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/20 18:39:13 naddy Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
 V=			0.16
@@ -24,7 +24,6 @@ LIB_DEPENDS=		intl.1::devel/gettext \
 			gtk.1.2::x11/gtk+
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

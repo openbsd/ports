@@ -1,0 +1,12 @@
+$OpenBSD: patch-help-browser_Makefile_in,v 1.1 2001/09/20 18:39:13 naddy Exp $
+--- help-browser/Makefile.in.orig	Thu Sep 20 15:49:00 2001
++++ help-browser/Makefile.in	Thu Sep 20 15:49:13 2001
+@@ -602,7 +602,7 @@ mostlyclean distclean maintainer-clean
+ $(ORBIT_GENERATED_SOURCEFILES): my_help_browser_idl
+ 
+ my_help_browser_idl: $(top_srcdir)/idl/help-browser.idl $(ORBIT_IDL)
+-	$(ORBIT_IDL) $<
++	$(ORBIT_IDL) $(top_srcdir)/idl/help-browser.idl
+ 	touch my_help_browser_idl
+ 
+ help-caller.o gnome-help-browser.o: help-browser.h

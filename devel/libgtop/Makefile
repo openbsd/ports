@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/19 14:37:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/20 18:39:13 naddy Exp $
 
 COMMENT=		"portable library for obtaining system information"
 V=			1.0.12
@@ -21,7 +21,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \

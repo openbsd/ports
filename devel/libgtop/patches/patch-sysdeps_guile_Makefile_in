@@ -1,0 +1,12 @@
+$OpenBSD: patch-sysdeps_guile_Makefile_in,v 1.1 2001/09/20 18:39:13 naddy Exp $
+--- sysdeps/guile/Makefile.in.orig	Thu Sep 20 15:39:55 2001
++++ sysdeps/guile/Makefile.in	Thu Sep 20 15:40:08 2001
+@@ -529,7 +529,7 @@ guile.c: guile.pl $(top_builddir)/config
+ 	mv gnc-t guile.c
+ 
+ guile.x: guile.c
+-	guile-snarf $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $< > $@
++	guile-snarf $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $? > $@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

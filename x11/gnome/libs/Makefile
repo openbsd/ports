@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/18 21:42:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2001/09/20 18:39:13 naddy Exp $
 
 COMMENT=		"libraries for the GNOME project"
 V=			1.2.13
@@ -22,7 +22,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	autoconf
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}

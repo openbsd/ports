@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/18 14:22:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/20 18:39:12 naddy Exp $
 
 COMMENT=		"configuration database system written for GNOME"
 V=			1.0.1
@@ -23,7 +23,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \

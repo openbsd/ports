@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/09/20 18:39:13 naddy Exp $
+--- Makefile.in.orig	Tue May  8 01:12:50 2001
++++ Makefile.in	Thu Sep 20 17:45:55 2001
+@@ -530,7 +530,7 @@ vfspthreadConf.sh: vfspthreadConf.sh.in 
+ 	      < $(srcdir)/vfspthreadConf.sh.in > vfspthreadConf.tmp \
+ 	  && mv vfspthreadConf.tmp vfspthreadConf.sh
+ 
+-gnome-vfs-config: gnome-vfs-config.in Makefile
++$(top_builddir)/gnome-vfs-config: gnome-vfs-config.in Makefile
+ 	sed -e 's?\@LIBDIR\@?$(libdir)?g' \
+ 	    -e 's?\@VFS_LIBDIR\@?$(VFS_LIBDIR)?g' \
+ 	    -e 's?\@VFS_INCLUDEDIR\@?$(VFS_INCLUDEDIR)?g' \
