@@ -1,16 +1,14 @@
---- configure.orig	Fri Apr 18 05:33:57 1997
-+++ configure	Sat Mar 25 18:28:00 2000
-@@ -712,15 +712,15 @@
- fi
+--- configure.orig	Thu Jul 16 12:17:10 1998
++++ configure	Sun Aug 27 02:44:17 2000
+@@ -714,14 +714,14 @@
  
- 
--NCURSES_PATH=/usr/include:/usr/include/ncurses:/usr/include/curses:/usr/local/include:/usr/local/include/ncurses:/usr/local/include/curses
+ NCURSES_PATH=/usr/include:/usr/include/ncurses:/usr/include/curses:/usr/local/include:/usr/local/include/ncurses:/usr/local/include/curses:./:./ncurses.h
+ ncurses_warn=0
 -echo $ac_n "checking for main in -lncurses""... $ac_c" 1>&6
--echo "configure:718: checking for main in -lncurses" >&5
+-echo "configure:719: checking for main in -lncurses" >&5
 -ac_lib_var=`echo ncurses'_'main | sed 'y%./+-%__p_%'`
-+NCURSES_PATH=/usr/include:/usr/include/curses:/usr/include/curses:/usr/local/include:/usr/local/include/curses:/usr/local/include/curses
 +echo $ac_n "checking for main in -lcurses""... $ac_c" 1>&6
-+echo "configure:718: checking for main in -lcurses" >&5
++echo "configure:719: checking for main in -lcurses" >&5
 +ac_lib_var=`echo curses'_'main | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -19,9 +17,9 @@
 -LIBS="-lncurses  $LIBS"
 +LIBS="-lcurses  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 726 "configure"
+ #line 727 "configure"
  #include "confdefs.h"
-@@ -744,20 +744,20 @@
+@@ -745,13 +745,13 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -37,6 +35,7 @@
  
  else
    echo "$ac_t""no" 1>&6
+@@ -759,7 +759,7 @@
  fi
  
  
@@ -45,18 +44,27 @@
  do
  # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -1299,6 +1299,14 @@
- freebsd*)
- 	cat >> confdefs.h <<\EOF
- #define FREEBSD 1
+@@ -1374,6 +1374,14 @@
+ 	OS_OPT=
+ 	
+         ;;
++openbsd*)
++	cat >> confdefs.h <<\EOF
++#define OPENBSD 1
 +EOF
 +
 +	OS_OPT=
 +	
 +        ;;
-+openbsd*)
-+	cat >> confdefs.h <<\EOF
-+#define OPENBSD 1
- EOF
+ netbsd*)
+ 	cat >> confdefs.h <<\EOF
+ #define NETBSD 1
+@@ -1682,7 +1690,7 @@
+     esac
+   done
  
- 	OS_OPT=
+-  for ac_config_dir in libpcap; do
++  for ac_config_dir in ; do
+ 
+     # Do not complain, so a configure script can configure whichever
+     # parts of a large source tree are present.

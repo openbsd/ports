@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/26 00:31:49 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2000/08/30 23:50:29 brad Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/04/04 04:58:25 obrien Exp $
 
-DISTNAME=	sniffit.0.3.5
-PKGNAME=	sniffit-0.3.5
+DISTNAME=	sniffit.0.3.7.beta
+PKGNAME=	sniffit-0.3.7b
 CATEGORIES=	net security
-NEED_VERSION=	1.234
-MASTER_SITES=	http://reptile.rug.ac.be/~coder/sniffit/files/ \
-		ftp://ftphost.manawatu.gen.nz/pub/unix/net/security/sniffers/sniffit/ \
-		ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
+NEED_VERSION=	1.320
+MASTER_SITES=	http://reptile.rug.ac.be/~coder/sniffit/files/
+MASTER_SITES0=	http://ftp.debian.org/debian/dists/stable/main/source/net/
 
-.if ${MACHINE_ARCH} == "alpha"
-BROKEN=		"Currently does not build on Alpha"
-.endif
+PATCHFILES=	sniffit_0.3.7.beta-6.1.diff.gz:0
+PATCH_DIST_STRIP= -p1
+
+HOMEPAGE=	http://reptile.rug.ac.be/~coder/sniffit/sniffit.html
 
 MAINTAINER=	ports@openbsd.org
 
@@ -20,11 +20,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no obvious license"
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=	Yes
-
-GNU_CONFIGURE=	Yes
-
 MAKE_FLAGS=	OBJ_FLAG="-w ${CFLAGS} -c" EXE_FLAG="-w ${CFLAGS} -o sniffit"
+
+CONFIGURE_STYLE= gnu
 
 ALL_TARGET=
 
