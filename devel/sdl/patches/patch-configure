@@ -1,21 +1,6 @@
-$OpenBSD: patch-configure,v 1.11 2001/07/25 07:58:32 pvalchev Exp $
---- configure.orig	Mon Jul 23 13:54:08 2001
-+++ configure	Tue Jul 24 23:05:58 2001
-@@ -639,10 +639,10 @@ fi
- # set SDL_BINARY_AGE and SDL_INTERFACE_AGE to 0.
- #
- SDL_MAJOR_VERSION=1
--SDL_MINOR_VERSION=2
--SDL_MICRO_VERSION=2
--SDL_INTERFACE_AGE=2
--SDL_BINARY_AGE=2
-+SDL_MINOR_VERSION=3
-+SDL_MICRO_VERSION=3
-+SDL_INTERFACE_AGE=3
-+SDL_BINARY_AGE=3
- SDL_VERSION=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION.$SDL_MICRO_VERSION
- 
- 
+$OpenBSD: patch-configure,v 1.12 2001/08/14 22:42:03 pvalchev Exp $
+--- configure.orig	Tue Aug 14 16:33:39 2001
++++ configure	Tue Aug 14 16:33:43 2001
 @@ -7007,8 +7007,6 @@ __EOF__
    cat >>$new <$old
  

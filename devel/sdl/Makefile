@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/07/29 19:46:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2001/08/14 22:42:03 pvalchev Exp $
 
 COMMENT=	"cross-platform multimedia library"
 
@@ -59,6 +59,8 @@ CONFIGURE_ARGS+= --without-x \
 .else
 USE_X11=	Yes
 .endif
+
+MAKE_FLAGS=	libSDL_la_LDFLAGS="-version-info 0:3:0"
 
 post-patch:
 	@touch ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
