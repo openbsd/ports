@@ -1,0 +1,11 @@
+--- src/menubar.c.orig	Sun Apr  2 18:52:33 2000
++++ src/menubar.c	Sun Apr  2 18:53:07 2000
+@@ -41,6 +41,8 @@ static const char cvs_ident[] = "$Id: me
+ # include "options.h"
+ #endif
+ 
++/* Force KANJI to be undef'ed, since we don't have X locale support yet */
++#undef KANJI
+ #ifdef KANJI
+ # ifdef NO_XLOCALE
+ #  include <locale.h>
