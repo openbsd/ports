@@ -1,2 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/06/26 08:43:50 brad Exp $
 sbin/ntop
 man/man8/ntop.8
