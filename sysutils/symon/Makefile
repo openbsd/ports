@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/01 01:58:42 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.5 2003/01/10 19:24:50 naddy Exp $
 
 COMMENT=		"active monitoring tool"
-V=			2.55
+V=			2.57
 DISTNAME=		symon-${V}
 CATEGORIES=		net sysutils
 

@@ -1,11 +1,13 @@
-@comment $Id: PLIST-web,v 1.2 2002/12/01 01:58:42 dhartmei Exp $
-@comment $OpenBSD: PLIST-web,v 1.2 2002/12/01 01:58:42 dhartmei Exp $
+@comment $Id: PLIST-web,v 1.3 2003/01/10 19:24:50 naddy Exp $
+@comment $OpenBSD: PLIST-web,v 1.3 2003/01/10 19:24:50 naddy Exp $
 share/symon/web/class_cpu.inc        
 share/symon/web/class_graph.inc      
 share/symon/web/class_if.inc         
 share/symon/web/class_io.inc         
 share/symon/web/class_mem.inc        
 share/symon/web/class_pf.inc         
+share/symon/web/class_debug.inc
+share/symon/web/class_proc.inc
 share/symon/web/datasources.inc      
 share/symon/web/graph_cpu.php        
 share/symon/web/graph_if.php         
