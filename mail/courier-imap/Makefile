@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2004/02/16 17:14:52 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.38 2004/06/06 18:25:57 avsm Exp $ 
 
 COMMENT=	"imap server for maildir format mailboxes"
 COMMENT-pop3=	"pop3 server for maildir format mailboxes"
@@ -19,7 +19,6 @@ CATEGORIES=	mail
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=courier/}
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 HOMEPAGE=	http://www.inter7.com/courierimap/
 
 # GPL
