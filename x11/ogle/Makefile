@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/02/29 08:12:56 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.28 2004/07/14 13:15:02 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64 amd64
 
@@ -43,5 +43,7 @@ CONFIGURE_ARGS+=--disable-altivec
 
 post-install:
 	cd ${PREFIX}/man/man5 && mv oglerc.5 oglerc.tbl
+	cd ${PREFIX}/lib && ln -sf ${TRUEPREFIX}/lib/ogle/libdvdcontrol.so.11.0
+	cd ${PREFIX}/lib && ln -sf ${TRUEPREFIX}/lib/ogle/libmsgevents.so.8.0
 
 .include <bsd.port.mk>

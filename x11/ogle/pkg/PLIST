@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/11/13 18:46:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/07/14 13:15:02 espie Exp $
 bin/ifo_dump
 bin/ogle
+@dir include/ogle
 include/ogle/dvd.h
 include/ogle/dvdbookmarks.h
 include/ogle/dvdcontrol.h
 include/ogle/dvdevents.h
 include/ogle/msgevents.h
+@dir lib/ogle
 lib/ogle/libdvdcontrol.a
 lib/ogle/libdvdcontrol.la
 lib/ogle/libmsgevents.a
@@ -28,10 +30,7 @@ lib/ogle/ogle_vout
 lib/ogle/ogle_vout_debug
 man/man1/ogle.1
 man/man5/oglerc.tbl
+@dir share/ogle
 share/ogle/ogle_conf.dtd
 share/ogle/oglerc
-@exec echo "This package may need further setup. Run pkg_info ogle to find out more"
 %%SHARED%%
-@dirrm share/ogle
-@dirrm lib/ogle
-@dirrm include/ogle
