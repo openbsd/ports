@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/05 18:30:41 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/11 18:21:51 espie Exp $
 
 DISTNAME=	gv-3.5.8
 CATEGORIES=	print
@@ -15,12 +15,12 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	Xaw3d.6.1:x11/Xaw3d
-RUN_DEPENDS=	gs:print/ghostscript5
+RUN_DEPENDS=	gs:print/ghostscript/gnu
 
+
+FAKE=		Yes
 USE_IMAKE=	Yes
 
-post-install:
-	@cd ${WRKSRC}; ${MAKE} install.doc
-	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+INSTALL_TARGET=install install.man install.doc
 
 .include <bsd.port.mk>
