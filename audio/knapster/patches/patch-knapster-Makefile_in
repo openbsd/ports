@@ -1,0 +1,21 @@
+--- knapster/Makefile.in.orig	Mon Apr 10 23:25:31 2000
++++ knapster/Makefile.in	Mon Apr 10 23:26:33 2000
+@@ -563,12 +563,12 @@ maintainer-clean
+ 
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(kde_appsdir)/Applications/
+-	$(INSTALL_DATA) knapster.kdelnk $(kde_appsdir)/Applications/knapster.kdelnk
+-	$(mkinstalldirs) $(kde_icondir)/
+-	$(INSTALL_DATA) knapster.xpm $(kde_icondir)/knapster.xpm
+-	$(mkinstalldirs) $(kde_minidir)/
+-	$(INSTALL_DATA) mini-knapster.xpm $(kde_minidir)/knapster.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_appsdir)/Applications/
++	$(INSTALL_DATA) knapster.kdelnk $(DESTDIR)$(kde_appsdir)/Applications/knapster.kdelnk
++	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/
++	$(INSTALL_DATA) knapster.xpm $(DESTDIR)$(kde_icondir)/knapster.xpm
++	$(mkinstalldirs) $(DESTDIR)$(kde_minidir)/
++	$(INSTALL_DATA) mini-knapster.xpm $(DESTDIR)$(kde_minidir)/knapster.xpm
+ 
+ uninstall-local:
+ 	-rm -f $(kde_appsdir)/Applications/knapster.kdelnk
