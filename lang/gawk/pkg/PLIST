@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/02/12 15:45:45 wilfried Exp $
+bin/gawk
+bin/igawk
+bin/pgawk
+@unexec install-info --delete --info-dir=%D/info %D/info/gawk.info
+@unexec install-info --delete --info-dir=%D/info %D/info/gawkinet.info
+info/gawk.info
+info/gawkinet.info
+@exec install-info --info-dir=%D/info %D/info/gawkinet.info
+@exec install-info --info-dir=%D/info %D/info/gawk.info
+libexec/awk/grcat
+libexec/awk/pwcat
+man/man1/gawk.1
+man/man1/igawk.1
+share/awk/assert.awk
+share/awk/bits2str.awk
+share/awk/cliff_rand.awk
+share/awk/ctime.awk
+share/awk/ftrans.awk
+share/awk/getopt.awk
+share/awk/gettime.awk
+share/awk/group.awk
+share/awk/join.awk
+share/awk/libintl.awk
+share/awk/nextfile.awk
+share/awk/noassign.awk
+share/awk/ord.awk
+share/awk/passwd.awk
+share/awk/readable.awk
+share/awk/rewind.awk
+share/awk/round.awk
+@dirrm share/awk
+@dirrm libexec/awk
