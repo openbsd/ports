@@ -1,0 +1,12 @@
+Binaries of Sun's Java Developers Kit. Include bytecode machine,
+compiler, demos and sources for most Java runtime classes.
+
+Executables are installed into ${PREFIX}/jdk1.1.8/bin (usually
+/usr/local/jdk1.1.8/bin unless you have changed it.) You may want to
+put this into your PATH or symlink them to /usr/local/bin in case you
+don't have kaffe installed (which shares names with many JDK binaries.)
+
+You may want to build a kernel with
+options         SYSVSEM
+
+The URL for the this Java JDK is http://www.freebsd.org/java/
