@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2004/01/25 06:02:40 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2004/01/25 09:37:39 brad Exp $
 
 COMMENT=	"PDF viewer for X"
 
@@ -9,7 +9,8 @@ MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 
 HOMEPAGE=	http://www.foolabs.com/xpdf/
 
-LIB_DEPENDS=	t1x.3,t1.3::devel/t1lib
+LIB_DEPENDS+=	t1x.3,t1.3::devel/t1lib
+RUN_DEPENDS+=	::print/ghostscript/gnu
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -23,8 +24,7 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_MOTIF=	openmotif
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --enable-multithreaded \
-		 --with-gzip
+CONFIGURE_ARGS+= --enable-multithreaded
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2 -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
