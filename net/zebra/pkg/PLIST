@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/08/23 16:04:49 peter Exp $
+@comment $OpenBSD: PLIST,v 1.7 2000/08/24 21:49:44 brad Exp $
 sbin/bgpd
 sbin/ospfd
 sbin/ospf6d
@@ -7,9 +7,6 @@ sbin/ripngd
 sbin/zebra
 @unexec /usr/bin/install-info --delete %D/info/zebra.info %D/info/dir
 info/zebra.info
-info/zebra.info-1
-info/zebra.info-2
-info/zebra.info-3
 @exec /usr/bin/install-info %D/info/zebra.info %D/info/dir
 man/man1/vtysh.1
 man/man8/bgpd.8
@@ -18,7 +15,6 @@ man/man8/ospfd.8
 man/man8/ripd.8
 man/man8/ripngd.8
 man/man8/zebra.8
-@exec /bin/mkdir %D/share/zebra
 share/zebra/bgpd.conf.sample
 share/zebra/bgpd.conf.sample2
 share/zebra/ripd.conf.sample

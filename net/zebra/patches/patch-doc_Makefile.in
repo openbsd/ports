@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Thu Aug 24 17:37:42 2000
++++ doc/Makefile.in	Thu Aug 24 17:37:49 2000
+@@ -74,7 +74,7 @@
+ KERNEL_METHOD = @KERNEL_METHOD@
+ LIB_IPV6 = @LIB_IPV6@
+ LIB_REGEX = @LIB_REGEX@
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ OSPF6D = @OSPF6D@
+ OSPFD = @OSPFD@
+ OTHER_METHOD = @OTHER_METHOD@
