@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/03 17:10:08 naddy Exp $
+bin/sndfile-info
+bin/sndfile-play
+include/sndfile.h
+lib/libsndfile.a
+lib/libsndfile.la
+lib/pkgconfig/sndfile.pc
+man/man1/sndfile-info.1
+man/man1/sndfile-play.1
+share/octave/site/m/sndfile_load.m
+share/octave/site/m/sndfile_play.m
+share/octave/site/m/sndfile_save.m
+%%SHARED%%
+@exec rmdir share/octave/site/m 2>/dev/null || true
+@exec rmdir share/octave/site 2>/dev/null || true
+@exec rmdir share/octave 2>/dev/null || true
+@exec rmdir lib/pkgconfig 2>/dev/null || true
