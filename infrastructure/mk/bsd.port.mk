@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.332 2000/09/17 16:26:57 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.333 2000/09/19 14:14:52 mickey Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -39,7 +39,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 .  if ${_VERSION_NEEDED} > ${_VERSION} || \
    (${_VERSION_NEEDED} == ${_VERSION} && ${_REVISION_NEEDED} > ${_REVISION})
 .BEGIN:
-	echo "Need version ${NEED_VERSION} of bsd.port.mk"; \
+	@echo "Need version ${NEED_VERSION} of bsd.port.mk"; \
 	exit 1;
 .  endif
 .endif
