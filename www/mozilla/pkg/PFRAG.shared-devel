@@ -1,98 +1,96 @@
-@comment $OpenBSD: PFRAG.shared-devel,v 1.3 2003/12/04 15:01:39 wilfried Exp $
-@comment mozilla/lib/components/libaccessibility.so.1.0
-@comment mozilla/lib/components/libaddrbook.so.1.0
-@comment mozilla/lib/components/libappcomps.so.1.0
-@comment mozilla/lib/components/libautoconfig.so.1.0
-@comment mozilla/lib/components/libbayesflt.so.1.0
-@comment mozilla/lib/components/libcaps.so.1.0
-@comment mozilla/lib/components/libchrome.so.1.0
-@comment mozilla/lib/components/libcomposer.so.1.0
-@comment mozilla/lib/components/libcookie.so.1.0
-@comment mozilla/lib/components/libdocshell.so.1.0
-@comment mozilla/lib/components/libeditor.so.1.0
-@comment mozilla/lib/components/libembedcomponents.so.1.0
-@comment mozilla/lib/components/libfileview.so.1.0
-@comment mozilla/lib/components/libgfx_gtk.so.1.0
-@comment mozilla/lib/components/libgfxps.so.1.0
-@comment mozilla/lib/components/libgfxxprint.so.1.0
-@comment mozilla/lib/components/libgklayout.so.1.0
-@comment mozilla/lib/components/libgkplugin.so.1.0
-@comment mozilla/lib/components/libhtmlpars.so.1.0
-@comment mozilla/lib/components/libi18n.so.1.0
-@comment mozilla/lib/components/libimglib2.so.1.0
-@comment mozilla/lib/components/libimpComm4xMail.so.1.0
-@comment mozilla/lib/components/libimpText.so.1.0
-@comment mozilla/lib/components/libimport.so.1.0
-@comment mozilla/lib/components/libinspector.so.1.0
-@comment mozilla/lib/components/libipcdc.so.1.0
-@comment mozilla/lib/components/libjar50.so.1.0
-@comment mozilla/lib/components/libjsd.so.1.0
-@comment mozilla/lib/components/libjsdom.so.1.0
-@comment mozilla/lib/components/liblocalmail.so.1.0
-@comment mozilla/lib/components/libmailnews.so.1.0
-@comment mozilla/lib/components/libmailview.so.1.0
-@comment mozilla/lib/components/libmime.so.1.0
-@comment mozilla/lib/components/libmimeemitter.so.1.0
-@comment mozilla/lib/components/libmork.so.1.0
-@comment mozilla/lib/components/libmozfind.so.1.0
-@comment mozilla/lib/components/libmsgcompose.so.1.0
-@comment mozilla/lib/components/libmsgdb.so.1.0
-@comment mozilla/lib/components/libmsgimap.so.1.0
-@comment mozilla/lib/components/libmsgmdn.so.1.0
-@comment mozilla/lib/components/libmsgnews.so.1.0
-@comment mozilla/lib/components/libmsgsmime.so.1.0
-@comment mozilla/lib/components/libmyspell.so.1.0
-@comment mozilla/lib/components/libnecko.so.1.0
-@comment mozilla/lib/components/libnecko2.so.1.0
-@comment mozilla/lib/components/libnsappshell.so.1.0
-@comment mozilla/lib/components/libnsprefm.so.1.0
-@comment mozilla/lib/components/liboji.so.1.0
-@comment mozilla/lib/components/libp3p.so.1.0
-@comment mozilla/lib/components/libpipboot.so.1.0
-@comment mozilla/lib/components/libpipnss.so.1.0
-@comment mozilla/lib/components/libpippki.so.1.0
-@comment mozilla/lib/components/libpref.so.1.0
-@comment mozilla/lib/components/libprofile.so.1.0
-@comment mozilla/lib/components/librdf.so.1.0
-@comment mozilla/lib/components/libspellchecker.so.1.0
-@comment mozilla/lib/components/libtransformiix.so.1.0
-@comment mozilla/lib/components/libtxmgr.so.1.0
-@comment mozilla/lib/components/libtypeaheadfind.so.1.0
-@comment mozilla/lib/components/libuconv.so.1.0
-@comment mozilla/lib/components/libucvmath.so.1.0
-@comment mozilla/lib/components/libuniversalchardet.so.1.0
-@comment mozilla/lib/components/libvcard.so.1.0
-@comment mozilla/lib/components/libwallet.so.1.0
-@comment mozilla/lib/components/libwalletviewers.so.1.0
-@comment mozilla/lib/components/libwebbrwsr.so.1.0
-@comment mozilla/lib/components/libwebsrvcs.so.1.0
-@comment mozilla/lib/components/libwidget_gtk.so.1.0
-@comment mozilla/lib/components/libxmlextras.so.1.0
-@comment mozilla/lib/components/libxpcom_compat_c.so.1.0
-@comment mozilla/lib/components/libxpconnect.so.1.0
-@comment mozilla/lib/components/libxpinstall.so.1.0
-@comment mozilla/lib/components/libxremote_client.so.1.0
-@comment mozilla/lib/components/libxremoteservice.so.1.0
-mozilla/lib/libfort.so.1.0
-mozilla/lib/libgkgfx.so.1.0
-mozilla/lib/libgtkembedmoz.so.1.0
-mozilla/lib/libgtksuperwin.so.1.0
-mozilla/lib/libgtkxtbin.so.1.0
-mozilla/lib/libjsj.so.1.0
-mozilla/lib/libmozjs.so.1.0
-mozilla/lib/libmsgbaseutil.so.1.0
-mozilla/lib/libnspr4.so.1.0
-mozilla/lib/libnss3.so.1.0
-mozilla/lib/libnssckbi.so.1.0
-mozilla/lib/libplc4.so.1.0
-mozilla/lib/libplds4.so.1.0
-mozilla/lib/libsmime3.so.1.0
-mozilla/lib/libsoftokn3.so.1.0
-mozilla/lib/libssl3.so.1.0
-mozilla/lib/libswft.so.1.0
-mozilla/lib/libxlibrgb.so.1.0
-mozilla/lib/libxpcom.so.1.0
-mozilla/lib/libxpcom_compat.so.1.0
-mozilla/lib/libxpistub.so.1.0
-@comment NEWDYNLIBDIR(%D/mozilla/lib)
-@comment NEWDYNLIBDIR(%D/mozilla/lib/components)
+@comment $OpenBSD: PFRAG.shared-devel,v 1.4 2004/10/17 22:25:52 espie Exp $
+@comment @lib mozilla/lib/components/libaccessibility.so.1.0
+@comment @lib mozilla/lib/components/libaddrbook.so.1.0
+@comment @lib mozilla/lib/components/libappcomps.so.1.0
+@comment @lib mozilla/lib/components/libautoconfig.so.1.0
+@comment @lib mozilla/lib/components/libbayesflt.so.1.0
+@comment @lib mozilla/lib/components/libcaps.so.1.0
+@comment @lib mozilla/lib/components/libchrome.so.1.0
+@comment @lib mozilla/lib/components/libcomposer.so.1.0
+@comment @lib mozilla/lib/components/libcookie.so.1.0
+@comment @lib mozilla/lib/components/libdocshell.so.1.0
+@comment @lib mozilla/lib/components/libeditor.so.1.0
+@comment @lib mozilla/lib/components/libembedcomponents.so.1.0
+@comment @lib mozilla/lib/components/libfileview.so.1.0
+@comment @lib mozilla/lib/components/libgfx_gtk.so.1.0
+@comment @lib mozilla/lib/components/libgfxps.so.1.0
+@comment @lib mozilla/lib/components/libgfxxprint.so.1.0
+@comment @lib mozilla/lib/components/libgklayout.so.1.0
+@comment @lib mozilla/lib/components/libgkplugin.so.1.0
+@comment @lib mozilla/lib/components/libhtmlpars.so.1.0
+@comment @lib mozilla/lib/components/libi18n.so.1.0
+@comment @lib mozilla/lib/components/libimglib2.so.1.0
+@comment @lib mozilla/lib/components/libimpComm4xMail.so.1.0
+@comment @lib mozilla/lib/components/libimpText.so.1.0
+@comment @lib mozilla/lib/components/libimport.so.1.0
+@comment @lib mozilla/lib/components/libinspector.so.1.0
+@comment @lib mozilla/lib/components/libipcdc.so.1.0
+@comment @lib mozilla/lib/components/libjar50.so.1.0
+@comment @lib mozilla/lib/components/libjsd.so.1.0
+@comment @lib mozilla/lib/components/libjsdom.so.1.0
+@comment @lib mozilla/lib/components/liblocalmail.so.1.0
+@comment @lib mozilla/lib/components/libmailnews.so.1.0
+@comment @lib mozilla/lib/components/libmailview.so.1.0
+@comment @lib mozilla/lib/components/libmime.so.1.0
+@comment @lib mozilla/lib/components/libmimeemitter.so.1.0
+@comment @lib mozilla/lib/components/libmork.so.1.0
+@comment @lib mozilla/lib/components/libmozfind.so.1.0
+@comment @lib mozilla/lib/components/libmsgcompose.so.1.0
+@comment @lib mozilla/lib/components/libmsgdb.so.1.0
+@comment @lib mozilla/lib/components/libmsgimap.so.1.0
+@comment @lib mozilla/lib/components/libmsgmdn.so.1.0
+@comment @lib mozilla/lib/components/libmsgnews.so.1.0
+@comment @lib mozilla/lib/components/libmsgsmime.so.1.0
+@comment @lib mozilla/lib/components/libmyspell.so.1.0
+@comment @lib mozilla/lib/components/libnecko.so.1.0
+@comment @lib mozilla/lib/components/libnecko2.so.1.0
+@comment @lib mozilla/lib/components/libnsappshell.so.1.0
+@comment @lib mozilla/lib/components/libnsprefm.so.1.0
+@comment @lib mozilla/lib/components/liboji.so.1.0
+@comment @lib mozilla/lib/components/libp3p.so.1.0
+@comment @lib mozilla/lib/components/libpipboot.so.1.0
+@comment @lib mozilla/lib/components/libpipnss.so.1.0
+@comment @lib mozilla/lib/components/libpippki.so.1.0
+@comment @lib mozilla/lib/components/libpref.so.1.0
+@comment @lib mozilla/lib/components/libprofile.so.1.0
+@comment @lib mozilla/lib/components/librdf.so.1.0
+@comment @lib mozilla/lib/components/libspellchecker.so.1.0
+@comment @lib mozilla/lib/components/libtransformiix.so.1.0
+@comment @lib mozilla/lib/components/libtxmgr.so.1.0
+@comment @lib mozilla/lib/components/libtypeaheadfind.so.1.0
+@comment @lib mozilla/lib/components/libuconv.so.1.0
+@comment @lib mozilla/lib/components/libucvmath.so.1.0
+@comment @lib mozilla/lib/components/libuniversalchardet.so.1.0
+@comment @lib mozilla/lib/components/libvcard.so.1.0
+@comment @lib mozilla/lib/components/libwallet.so.1.0
+@comment @lib mozilla/lib/components/libwalletviewers.so.1.0
+@comment @lib mozilla/lib/components/libwebbrwsr.so.1.0
+@comment @lib mozilla/lib/components/libwebsrvcs.so.1.0
+@comment @lib mozilla/lib/components/libwidget_gtk.so.1.0
+@comment @lib mozilla/lib/components/libxmlextras.so.1.0
+@comment @lib mozilla/lib/components/libxpcom_compat_c.so.1.0
+@comment @lib mozilla/lib/components/libxpconnect.so.1.0
+@comment @lib mozilla/lib/components/libxpinstall.so.1.0
+@comment @lib mozilla/lib/components/libxremote_client.so.1.0
+@comment @lib mozilla/lib/components/libxremoteservice.so.1.0
+@lib mozilla/lib/libfort.so.1.0
+@lib mozilla/lib/libgkgfx.so.1.0
+@lib mozilla/lib/libgtkembedmoz.so.1.0
+@lib mozilla/lib/libgtksuperwin.so.1.0
+@lib mozilla/lib/libgtkxtbin.so.1.0
+@lib mozilla/lib/libjsj.so.1.0
+@lib mozilla/lib/libmozjs.so.1.0
+@lib mozilla/lib/libmsgbaseutil.so.1.0
+@lib mozilla/lib/libnspr4.so.1.0
+@lib mozilla/lib/libnss3.so.1.0
+@lib mozilla/lib/libnssckbi.so.1.0
+@lib mozilla/lib/libplc4.so.1.0
+@lib mozilla/lib/libplds4.so.1.0
+@lib mozilla/lib/libsmime3.so.1.0
+@lib mozilla/lib/libsoftokn3.so.1.0
+@lib mozilla/lib/libssl3.so.1.0
+@lib mozilla/lib/libswft.so.1.0
+@lib mozilla/lib/libxlibrgb.so.1.0
+@lib mozilla/lib/libxpcom.so.1.0
+@lib mozilla/lib/libxpcom_compat.so.1.0
+@lib mozilla/lib/libxpistub.so.1.0
