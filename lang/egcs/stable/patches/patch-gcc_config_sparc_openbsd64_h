@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.4 2002/05/29 15:18:10 espie Exp $
---- gcc/config/sparc/openbsd64.h.orig	Wed May 29 15:35:47 2002
-+++ gcc/config/sparc/openbsd64.h	Wed May 29 16:03:13 2002
-@@ -0,0 +1,104 @@
+$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.5 2002/05/29 15:43:13 espie Exp $
+--- gcc/config/sparc/openbsd64.h.orig	Wed May 29 17:36:48 2002
++++ gcc/config/sparc/openbsd64.h	Wed May 29 17:38:38 2002
+@@ -0,0 +1,81 @@
 +/* Configuration file for sparc64 OpenBSD target.
 +   Copyright (C) 1999 Free Software Foundation, Inc.
 +
@@ -83,26 +83,3 @@ $OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.4 2002/05/29 15:18:10 espie Exp
 +        crtbegin%O%s} %{shared:crtbeginS%O%s}"
 +#undef ENDFILE_SPEC
 +#define ENDFILE_SPEC "%{!shared:crtend%O%s} %{shared:crtendS%O%s}"
-+
-+/* A C statement (sans semicolon) to output an element in the table of
-+   global constructors.  */
-+#undef ASM_OUTPUT_CONSTRUCTOR
-+#define ASM_OUTPUT_CONSTRUCTOR(FILE,NAME)				\
-+  do {									\
-+    ctors_section ();							\
-+    fprintf ((FILE), "\t%s\t ", TARGET_ARCH64 ? ASM_LONGLONG : INT_ASM_OP) ; \
-+    assemble_name ((FILE), (NAME));					\
-+    fprintf ((FILE), "\n");						\
-+  } while (0)
-+
-+/* A C statement (sans semicolon) to output an element in the table of
-+   global destructors.  */
-+#undef ASM_OUTPUT_DESTRUCTOR
-+#define ASM_OUTPUT_DESTRUCTOR(FILE,NAME)				\
-+  do {									\
-+    dtors_section ();							\
-+    fprintf ((FILE), "\t%s\t ", TARGET_ARCH64 ? ASM_LONGLONG : INT_ASM_OP); \
-+    assemble_name ((FILE), (NAME));					\
-+    fprintf ((FILE), "\n");						\
-+  } while (0)
-+
