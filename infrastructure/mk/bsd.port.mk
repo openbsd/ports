@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.593 2003/12/24 00:08:48 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.594 2003/12/26 00:26:01 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1871,6 +1871,7 @@ plist update-plist: fake ${_DEPrun_COOKIES}
 	PLIST=${PLIST} \
 	PFRAG=${PKGDIR}/PFRAG \
 	FLAVORS='${FLAVORS}' MULTI_PACKAGES='${MULTI_PACKAGES}' \
+	OKAY_FILES='${_FAKE_COOKIE} ${_INSTALL_PRE_COOKIE}' \
 	perl ${PORTSDIR}/infrastructure/install/make-plist ${PKGDIR} ${_tmp}
 .endif
 

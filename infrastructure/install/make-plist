@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.31 2003/07/16 22:07:40 espie Exp $
+# $OpenBSD: make-plist,v 1.32 2003/12/26 00:26:01 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -344,6 +344,29 @@ while (($name, $fh) = each %out) {
 
 # compare all files against those dates
 my @date = (stat $ENV{INSTALL_PRE_COOKIE})[9, 10];
+
+my %okay_files=map { $_=>1 } split(/\s+/, $ENV{'OKAY_FILES'});
+
+# check the installation directory, try to make certain there is
+# no file or directory outside of $base
+find(
+	sub {
+		if ($File::Find::name eq $base) {
+			$File::Find::prune = 1;
+			return;
+		}
+		if (-d $_) {
+			return if $File::Find::name eq $destdir;
+			if (defined $mtree->{$File::Find::name}) {
+				return;
+			} else {
+				print STDERR "Bogus directory: $File::Find::name\n";
+			}
+		} else {
+			return if defined $okay_files{$File::Find::name};
+			print STDERR "Bogus file: $File::Find::name\n";
+		}
+	}, $destdir);
 
 # recursive traversal: mark specific `info' dirs, `ldconfig' dirs,
 # and potentially modified dirs
