@@ -1,5 +1,5 @@
-PluSHS allows a user to resolve the names of a single IP address or
-entire network of addresses to maintain a "map" of the names that 
-comprise a certain network.
+Plushs is a network analisis tool, which allows a user to resolve the
+names of a single IP address or entire network of addresses to maintain
+a "map" of the names that comprise a certain network.
 
 WWW: ${HOMEPAGE}
