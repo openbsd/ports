@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2000/03/24 23:28:13 espie Exp $
+# $OpenBSD: Makefile,v 1.70 2000/03/29 23:26:17 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -11,16 +11,16 @@
 BUILD_DEPENDS=	autoconf::devel/autoconf
 
 CATEGORIES=	lang 
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MAINTAINER=	Marc.Espie@openbsd.org
 
-LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
-MIRROR_DISTFILE=no
+# experimental port, changes once a week, don't bother remirroring distfiles.
+
+PERMIT_PACKAGE_FTP=Yes
+PERMIT_DISTFILES_FTP="Yes, but wasteful"
+PERMIT_PACKAGE_CDROM="Probably meaningless"
+PERMIT_DISTFILES_CDROM="Probably meaningless"
 
 # Testers for the new configurations:
 # Jason L.Wright & Marco S.Hyman for sparc,
@@ -41,7 +41,7 @@ MIRROR_DISTFILE=no
 #MAKE_TESTS=yes
 MAKE_GXX=yes
 MAKE_FORTRAN=yes
-# chill is temporarily broken
+# we don't care about chill
 #MAKE_CHILL=yes
 MAKE_OBJC=yes
 MAKE_JAVA=yes
@@ -50,11 +50,7 @@ MAKE_JAVA=yes
 BUILD_DEPENDS+=	runtest::devel/dejagnu
 .endif
 
-# if you want/need to use the mammoth archive
-ONE_ARCHIVE=yes
-
-
-LATEST_DATE=1999-12-08
+LATEST_DATE=2000-03-13
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -62,7 +58,7 @@ LATEST_DATE=1999-12-08
 
 # You also may have to remove/add some patches, as these things ARE
 # usually passed along to the egcs ml.
-#NEXT_DATE=1999-12-08
+#NEXT_DATE=2000-02-21
 #PATCH_DEBUG=yes
 
 LATEST=${LATEST_DATE:S/-//g}
@@ -75,60 +71,25 @@ DISTNAME=   egcs-${LATEST}
 .endif
 
 # getting the right archives where they should be
+MASTER_SITE_SUBDIR=${LATEST_DATE}
+PATCH_SITE_SUBDIR=${NEXT_DATE}
 
 DIST_SUBDIR=egcs
 
 PATCH_DIST_STRIP=-p1
 
-.if defined(ONE_ARCHIVE)
 DISTFILES=  egcs-${LATEST}${EXTRACT_SUFX}
-.else
-
-DISTFILES=	egcs-core-${LATEST}${EXTRACT_SUFX}
-.if defined(MAKE_TESTS)
-DISTFILES+=egcs-tests-${LATEST}${EXTRACT_SUFX}
-.endif
-
-.if defined(MAKE_GXX)
-DISTFILES+=     egcs-g++-${LATEST}${EXTRACT_SUFX}
-.endif
-
-.if defined(MAKE_FORTRAN)
-DISTFILES+=     egcs-g77-${LATEST}${EXTRACT_SUFX}
-.endif
-
-.if defined(MAKE_JAVA)
-DISTFILES+=egcs-java-${LATEST}${EXTRACT_SUFX}
-.endif
-
-.if defined(MAKE_OBJC)
-DISTFILES+=egcs-objc-${LATEST}${EXTRACT_SUFX}
-.endif
-
-.if defined(MAKE_CHILL)
-DISTFILES+=egcs-chill-${LATEST}${EXTRACT_SUFX}
-.endif
-
-.endif
-
-.if ! (defined(JUST_BUMP) && defined(NEXT_DATE))
-SUPDISTFILES=egcs-${LATEST}${EXTRACT_SUFX}
-.for sub in core g++ g77 java objc chill
-SUPDISTFILES+=egcs-${sub}-${LATEST}${EXTRACT_SUFX}
-.endfor
-.endif
-
 
 SITES=	
-SITES+=	ftp://ftp.lip6.fr/pub/${DIRECTORY}
 SITES+=	ftp://egcs.cygnus.com/pub/${DIRECTORY} 
+SITES+=	ftp://ftp.lip6.fr/pub/${DIRECTORY}
 SITES+= ftp://ftp.goof.com/pub/pcg/${DIRECTORY}
 SITES+= ftp://go.cygnus.com/pub/ftp.cygnus.com/${DIRECTORY}
-#SITES+= ftp://cambridge.cygnus.com/pub/${DIRECTORY}
+SITES+= ftp://cambridge.cygnus.com/pub/${DIRECTORY}
 SITES+= ftp://sunsite.doc.ic.ac.uk/Mirrors/egcs.cygnus.com/pub/${DIRECTORY}
 SITES+= ftp://gd.tuwien.ac.at/gnu/${DIRECTORY}
-#SITES+= ftp://ftp.ilog.fr/pub/Mirrors/${DIRECTORY}
-#SITES+= ftp://ftp.irisa.fr/pub/mirrors/${DIRECTORY}
+SITES+= ftp://ftp.ilog.fr/pub/Mirrors/${DIRECTORY}
+SITES+= ftp://ftp.irisa.fr/pub/mirrors/${DIRECTORY}
 
 SITES+= ftp://ftp.gts.cz/pub/MIRRORS/ftp.cygnus.com/pub/${DIRECTORY}
 SITES+= ftp://sunsite.auc.dk/pub/${DIRECTORY}
@@ -137,7 +98,7 @@ SITES+= ftp://ftp.gwdg.de/pub/cygnus/${DIRECTORY}
 SITES+= ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/egcs.cygnus.com/${DIRECTORY}
 SITES+= ftp://ftp.uni-trier.de/pub/languages/c/implementation/${DIRECTORY}
 SITES+= ftp://ftp.sunet.se/pub/gnu/${DIRECTORY}
-#SITES+= ftp://ftp.unicamp.br/pub/gnu/=EXTRA=/cygnus/${DIRECTORY}
+SITES+= ftp://ftp.unicamp.br/pub/gnu/=EXTRA=/cygnus/${DIRECTORY}
 SITES+= ftp://ftp.lbi.ro/mirrors/ftp.cygnus.com/pub/${DIRECTORY}
 SITES+= ftp://ftp.ntua.gr/pub/gnu/${DIRECTORY}
 SITES+= ftp://ftp.nluug.nl/pub/languages/${DIRECTORY}
@@ -145,15 +106,15 @@ SITES+= ftp://ftp.dti.ad.jp/pub/lang/${DIRECTORY}
 SITES+= ftp://ftp.win.or.jp/pub/lang/${DIRECTORY}
 SITES+= ftp://ftp.telewaynet.ad.jp/pub/lang/${DIRECTORY}
 SITES+= ftp://ftp.lab.kdd.co.jp/lang/${DIRECTORY}
-#SITES+= ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/${DIRECTORY}
-#SITES+= ftp://ftp.crc.ca/pub/packages/${DIRECTORY}
+SITES+= ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/${DIRECTORY}
+SITES+= ftp://ftp.crc.ca/pub/packages/${DIRECTORY}
 SITES+= ftp://ftp.nc.orc.ru/pub/${DIRECTORY}
-#SITES+= ftp://ftp.u-aizu.ac.jp/pub/lang/C/pcg/${DIRECTORY}
+SITES+= ftp://ftp.u-aizu.ac.jp/pub/lang/C/pcg/${DIRECTORY}
 SITES+= ftp://ftp.maisel.int-evry.fr/pub/linux/pentium/${DIRECTORY}
 SITES+= ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/${DIRECTORY}
 SITES+= ftp://unix.hensa.ac.uk/mirrors/egcs.cygnus.com/pub/${DIRECTORY}
 
-# couldn't contact those, maybe they work ?
+# Can't contact those, maybe they work ?
 SITES+= ftp://sunsite.mff.cuni.cz/pub/GNU/${DIRECTORY}
 SITES+= ftp://sunsite.icm.edu.pl/pub/programming/${DIRECTORY}
 SITES+= ftp://ftp.task.gda.pl/mirror/egcs.cygnus.com/pub/${DIRECTORY}
@@ -165,50 +126,16 @@ SITES+= ftp://ftp.ninemoons.com/pub/mirrors/${DIRECTORY}
 
 MASTER_SITES=${SITES:S/%DATE%/${LATEST_DATE}/}
 
+FAKE=		Yes
+FAKE_FLAGS=	DESTDIR=${WRKINST}
 # add a possible next snapshot
 
 .if defined(NEXT)
-MASTER_SITES0=${SITES:S/%DATE%/${NEXT_DATE}/}
-.if defined(ONE_ARCHIVE)
-PATCHFILES=egcs-${LATEST}-${NEXT}.diff.gz:0
-
-.else
-PATCHFILES=egcs-core-${LATEST}-${NEXT}.diff.gz:0
-.if defined(MAKE_TESTS)
-PATCHFILES+=egcs-tests-${LATEST}-${NEXT}.diff.gz:0
-.endif
-.if defined(MAKE_GXX)
-PATCHFILES+=egcs-g++-${LATEST}-${NEXT}.diff.gz:0
-.if defined(MAKE_TESTS)
-PATCHFILES+=egcs-g++-tests-${LATEST}-${NEXT}.diff.gz:0
-.endif
-.endif
-.if defined(MAKE_FORTRAN)
-PATCHFILES+=egcs-g77-${LATEST}-${NEXT}.diff.gz:0
-.if defined(MAKE_TESTS)
-PATCHFILES+=egcs-g77-testsuite-${LATEST}-${NEXT}.diff.gz:0
-.endif
-.endif
-.if defined(MAKE_JAVA)
-PATCHFILES+=egcs-java-${LATEST}-${NEXT}.diff.gz:0
-.endif
-.if defined(MAKE_OBJC)
-PATCHFILES+=egcs-objc-${LATEST}-${NEXT}.diff.gz:0
-.endif
-.if defined(MAKE_CHILL)
-PATCHFILES+=egcs-chill-${LATEST}-${NEXT}.diff.gz:0
-.endif
-.endif
-
-SUPDISTFILES=egcs-${LATEST}-${NEXT}.diff.gz:0
-.for sub in core tests g++ g77 java objc chill
-SUPDISTFILES+=egcs-${sub}-${LATEST}-${NEXT}.diff.gz:0
-.endfor
-
+PATCHFILES=egcs-${LATEST}-${NEXT}.diff.gz
 .endif
 
 makesum:
-	@echo 1>&2">>>Please make addsum to avoid clobbering old checksums"
+	@echo 1>&2 ">>>Please make addsum to avoid clobbering old checksums"
 	@exit 1
 
 # synch the date
@@ -261,7 +188,7 @@ post-patch:
 # This should not be used for regular releases, but if you're using this
 # snapshot, you know what you're doing, don't you ?
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 
 #CONFIGURE_SCRIPT=../source/configure
 
@@ -284,16 +211,15 @@ LANGS+=java
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
 
-CFLAGS=-g -O2
+CFLAGS=-O2
 CONFIGURE_ENV=LANGUAGES='${LANGS}'  
 
 
 
-CONFIGURE_ARGS= --prefix=${PREFIX} \
+CONFIGURE_ARGS= --prefix='$${DESTDIR}${PREFIX}' \
 --verbose --program-transform-name=s,^,e, \
 --disable-subdir-texinfo \
 --disable-nls
-
 
 # This is needed, as internal cpp is no longer compatible with the
 # visible beast
@@ -338,8 +264,9 @@ ALL_TARGET=bootstrap
 # nothing
 pre-build:
 	sed -e s,@WRKBUILD@,${WRKBUILD}, -e s,@FILESDIR@,${FILESDIR}, \
-	${FILESDIR}/fixinc.sh.m4 >${WRKBUILD}/gcc/fixinc.sh
-	chmod a+x ${WRKBUILD}/gcc/fixinc.sh
+	${FILESDIR}/fixinc.sh.m4 >${WRKSRC}/gcc/fixinc/openbsd-special
+	chmod a+x ${WRKSRC}/gcc/fixinc/openbsd-special
+	echo "cp ${WRKSRC}/gcc/fixinc/openbsd-special ${WRKBUILD}/gcc/fixinc.sh" >${WRKSRC}/gcc/fixinc/mkfixinc.sh
 
 # XXX we need to override do-build to get the warnings from within make
 do-build:
@@ -361,7 +288,7 @@ TEST_RESULT=${WRKBUILD}/test.result
 
 post-install:
 	@(cd ${WRKBUILD}; ulimit -c 0; \
-	${MAKE_ENV} make -f Makefile check && \
+	${MAKE_ENV} make -f ${MAKE_FILE} check && \
 	${WRKSRC}/contrib/test_summary >${TEST_RESULT})
 	@echo "Please send the tests results to the egcs project"
 	@echo "By invoking make send-results"

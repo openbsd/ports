@@ -15,6 +15,7 @@ lib/gcc-lib/ARCH/VERSION/specs
 lib/gcc-lib/ARCH/VERSION/include/syslimits.h
 lib/gcc-lib/ARCH/VERSION/include/limits.h
 lib/gcc-lib/ARCH/VERSION/include/float.h
+dnl lib/gcc-lib/ARCH/VERSION/include/math.h
 lib/gcc-lib/ARCH/VERSION/include/README
 lib/gcc-lib/ARCH/VERSION/include/stdarg.h
 lib/gcc-lib/ARCH/VERSION/include/machine/ansi.h
