@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/10/30 22:09:17 angelos Exp $
-
-BROKEN=		waiting for turans@ to verify
+# $OpenBSD: Makefile,v 1.5 1999/11/14 21:36:11 turan Exp $
 
 DISTNAME=       adcomplain-3.49
 CATEGORIES=     mail news
@@ -15,6 +13,7 @@ NO_CONFIGURE=   YES
 NO_BUILD=       YES
 
 do-extract:
+	mkdir ${WRKSRC}
 	cd ${WRKSRC}; /usr/bin/uudecode < ${FULLDISTDIR}/${DISTFILES}
 
 do-install:
