@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/01/25 00:56:46 jsyn Exp $
+# $OpenBSD: Makefile,v 1.22 2002/02/18 22:43:14 naddy Exp $
 
     SUBDIR += bochs
     SUBDIR += bochs,debug
@@ -9,6 +9,7 @@
     SUBDIR += redhat
     SUBDIR += simh
     SUBDIR += snes9x
+    SUBDIR += spectemu
     SUBDIR += spim
     SUBDIR += uae
     SUBDIR += vgb
