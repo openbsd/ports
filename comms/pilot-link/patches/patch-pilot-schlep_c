@@ -1,0 +1,13 @@
+--- pilot-schlep.c.orig	Mon May 21 00:55:45 2001
++++ pilot-schlep.c	Sat Jun 15 12:59:42 2002
+@@ -71,8 +71,8 @@ void Connect(void)
+ 		exit(1);
+ 	}
+ 
+-	printf
+-	    ("   Port: %s\n\n   Please press the HotSync button now...\n",
++	fprintf
++	    (stderr, "Port: %s\n\n   Please press the HotSync button now...\n",
+ 	     device);
+ 
+ 	ret = pi_listen(sd, 1);
