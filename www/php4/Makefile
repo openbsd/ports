@@ -1,0 +1,138 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2000/09/03 11:55:00 jakob Exp $
+
+DISTNAME=	php-4.0.2
+PKGNAME=	php4-4.0.2
+CATEGORIES=	www lang
+NEED_VERSION=	1.319
+
+MAINTAINER=     jakob@openbsd.org
+
+HOMEPAGE=	http://www.php.net/
+
+MASTER_SITES=	http://www.php.net/distributions/ \
+		http://us.php.net/distributions/ \
+		http://se.php.net/distributions/ \
+		http://no.php.net/distributions/
+
+MASTER_SITES0=	http://www.php.net/extra/ \
+		http://us.php.net/extra/ \
+		http://se.php.net/extra/ \
+		http://no.php.net/extra/
+
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} number4.tar.gz:0
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+DIST_SUBDIR=	php4
+
+PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_FTP=     Yes
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=   Yes
+
+# This port current only works with archs supporting dynamic loading
+ONLY_FOR_ARCHS=		i386 m68k sparc mips
+
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
+			--with-config-file-path=/var/www/conf \
+			--enable-calendar \
+			--enable-bcmath \
+			--disable-ftp \
+			--enable-trans-sid \
+			--enable-versioning \
+			--with-yp \
+			--with-pcre-regex \
+			--with-xml \
+			--with-zlib
+
+USE_LIBTOOL=		yes
+
+# gdbm
+CONFIGURE_ARGS+=	--with-gdbm
+BUILD_DEPENDS+=		${PREFIX}/lib/libgdbm.a::databases/gdbm
+
+# gettext
+CONFIGURE_ARGS+=	--with-gettext
+BUILD_DEPENDS+=		${PREFIX}/lib/libintl.a::devel/gettext
+
+# imap
+CONFIGURE_ARGS+=	--with-imap=${PREFIX}
+BUILD_DEPENDS+=		${PREFIX}/lib/libc-client.a::mail/c-client
+
+# mm
+CONFIGURE_ARGS+=	--with-mm
+BUILD_DEPENDS+=		${PREFIX}/lib/libmm.a::devel/mm
+
+# recode
+CONFIGURE_ARGS+=	--with-recode
+BUILD_DEPENDS+=		${PREFIX}/lib/librecode.a::converters/recode
+
+# snmp
+CONFIGURE_ARGS+=	--with-snmp --enable-ucd-snmp-hack --with-openssl
+BUILD_DEPENDS+=		${PREFIX}/lib/libsnmp.a::net/ucd-snmp
+
+FLAVORS=	dbase filepro mysql mysql_bundled postgresql no_x11
+FLAVOR?=
+
+.if ${FLAVOR:L:Mno_x11}
+CONFIGURE_ARGS+=	--with-gd \
+			--with-jpeg-dir=${PREFIX} 
+BUILD_DEPENDS+=		${PREFIX}/lib/libgd.a::graphics/gd
+.else
+USE_X11=		yes
+CONFIGURE_ARGS+=	--with-gd \
+			--with-jpeg-dir=${PREFIX} \
+			--with-xpm-dir=${X11BASE} \
+			--with-ttf
+BUILD_DEPENDS+=		${PREFIX}/lib/libgd.a::graphics/gd \
+			${PREFIX}/lib/libttf.a::print/freetype
+.endif
+
+.if ${FLAVOR:L:Mdbase}
+CONFIGURE_ARGS+=	--enable-dbase
+.else
+CONFIGURE_ARGS+=	--disable-dbase
+.endif
+
+.if ${FLAVOR:L:Mfilepro}
+CONFIGURE_ARGS+=	--enable-filepro
+.else
+CONFIGURE_ARGS+=	--disable-filepro
+.endif
+
+.if ${FLAVOR:L:Mmysql}
+CONFIGURE_ARGS+=	--with-mysql=${PREFIX}
+BUILD_DEPENDS+=		${PREFIX}/lib/mysql/libmysqlclient.a::databases/mysql
+.if ${FLAVOR:L:Mmysql_bundled}
+.BEGIN:
+	@echo "Conflicting flavor: ${FLAVOR}"
+	@exit 1
+.endif
+.elif ${FLAVOR:L:Mmysql_bundled}
+CONFIGURE_ARGS+=	--with-mysql
+.else
+CONFIGURE_ARGS+=	--without-mysql
+.endif
+
+.if ${FLAVOR:L:Mpostgresql}
+CONFIGURE_ARGS+=	--with-pgsql=${PREFIX}/pgsql
+BUILD_DEPENDS+=		${PREFIX}/pgsql/lib/libpq.a::databases/postgresql
+.else
+CONFIGURE_ARGS+=	--without-pgsql
+.endif
+
+
+post-extract:
+	@(cd ${WRKSRC}; tar xzf ${FULLDISTDIR}/number4.tar.gz)
+
+do-install:
+	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp4.so.0.0 \
+		${PREFIX}/lib/libphp4.so
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/php4
+	${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/share/doc/php4
+	${INSTALL_DATA} ${WRKSRC}/php.ini-optimized ${PREFIX}/share/doc/php4
+	sed 's,y0y0y0,${TRUEPREFIX},' \
+		<${FILESDIR}/php4-enable >${PREFIX}/sbin/php4-enable
+	chown ${BINOWN}:${BINGRP} ${PREFIX}/sbin/php4-enable
+	chmod ${BINMODE} ${PREFIX}/sbin/php4-enable
+
+.include <bsd.port.mk>

@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2000/09/03 11:55:00 jakob Exp $
+#
+# php4 de-installation
+
+CONF=`/usr/sbin/apxs -q SYSCONFDIR`/httpd.conf
+
+set -e
+
+rm -f /usr/lib/apache/modules/libphp4.so
+
+echo
+echo "+---------------"
+echo "| To completely deinstall the $1 package you"
+echo "| need to perform these steps as root:"
+echo "|"
+echo "|        edit ${CONF}"
+echo "|        remove the line LoadModule php4_module"
+echo "|"
+echo "| Do not do this if you plan on re-installing php4"
+echo "| package at some future time."
+echo "+---------------"
+echo
+
+exit 0

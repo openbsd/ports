@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# $OpenBSD: php4-enable,v 1.1.1.1 2000/09/03 11:55:00 jakob Exp $
+
+MODULE=y0y0y0/lib/libphp4.so
+INI=y0y0y0/share/doc/php4
+
+if [ ! -f ${MODULE} ]; then
+    echo "can't find php4 module (${MODULE})"
+    exit 1
+else
+    echo "enabling php4 module..."
+    /usr/sbin/apxs -i -a -n php4 ${MODULE}
+    echo "note: sample configuration files can be found in ${INI}"
+fi

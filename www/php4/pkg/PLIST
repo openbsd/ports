@@ -1,0 +1,4 @@
+lib/libphp4.so
+sbin/php4-enable
+share/doc/php4/php.ini-dist
+share/doc/php4/php.ini-optimized

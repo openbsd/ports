@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# $OpenBSD: INSTALL,v 1.1.1.1 2000/09/03 11:55:00 jakob Exp $
+#
+# php4 installation
+
+set -e
+
+echo
+echo "+---------------"
+echo "| To finish the install, you need to enable the php4"
+echo "| module using the following command"
+echo "|"
+echo "|   ${PKG_PREFIX}/sbin/php4-enable"
+echo "+---------------"
+echo
+
+exit 0

@@ -1,0 +1,9 @@
+At the most basic level, PHP can do anything any other CGI program can
+do, such as collect form data, generate dynamic page content, or send
+and receive cookies.
+
+PHP also has support for talking to other services using protocols
+such as IMAP, SNMP, NNTP, POP3, or even HTTP. You can also open raw
+network sockets and interact using other protocols.
+
+WWW: ${HOMEPAGE}
