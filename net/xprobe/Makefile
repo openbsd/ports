@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/26 02:09:47 obecian Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/10 14:39:08 obecian Exp $
 
 COMMENT=		"ICMP active OS fingerprint scanner"
 
-DISTNAME=		xprobe-0.0.1p1
+DISTNAME=		xprobe-0.0.2
 CATEGORIES=    		net security
 NEED_VERSION=		1.427
 
