@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/01 02:40:55 jcs Exp $
+# $OpenBSD: Makefile,v 1.7 2001/12/27 02:56:38 jcs Exp $
 
-DISTNAME=	freetds-0.52
+DISTNAME=	freetds-0.53
 CATEGORIES=	databases
-NEED_VERSION=	1.433
+NEED_VERSION=	1.503
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -17,15 +17,15 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltmain_sh \
-		patch-*
-
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static \
-		--enable-dbmfix
+		--with-libiconv-prefix="${LOCALBASE}"
 MAKE_ENV=	RM=rm
+MODULES=	gettext
+
+post-configure:
+	@chmod 644 ${WRKSRC}/include/tds_configs.h
 
 post-install:
 	@sed -e "s:@sysconfdir@:${SYSCONFDIR}:g" ${WRKSRC}/freetds.conf > \

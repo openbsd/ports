@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/08/11 15:31:43 naddy Exp $
---- Makefile.in.orig	Mon Jul  2 05:15:54 2001
-+++ Makefile.in	Sat Aug 11 02:57:59 2001
-@@ -80,7 +80,7 @@ smallint = @smallint@
+$OpenBSD: patch-Makefile_in,v 1.2 2001/12/27 02:56:38 jcs Exp $
+--- Makefile.in.orig	Wed Dec 26 20:12:09 2001
++++ Makefile.in	Wed Dec 26 20:13:23 2001
+@@ -85,7 +85,7 @@
  
  SUBDIRS = include src
  
@@ -10,16 +10,11 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/08/11 15:31:43 naddy Exp $
  
  DEFDIR = $(prefix)
  ETC = $(sysconfdir)
-@@ -335,17 +335,6 @@ maintainer-clean-generic clean mostlycle
+@@ -369,12 +369,6 @@
  
  
  install-data-local:
 -	$(mkinstalldirs) $(DEFDIR) $(ETC)
--	if [ -f $(DEFDIR)/interfaces ]; \
--	then :; \
--	else \
--		$(INSTALL_DATA) interfaces $(DEFDIR); \
--	fi
 -	if [ -f $(ETC)/freetds.conf ]; \
 -	then :; \
 -	else \
