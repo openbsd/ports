@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2003/10/07 05:48:55 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/12/04 23:08:16 pvalchev Exp $
 
-COMMENT=		"A graphics library for GNOME"
+COMMENT=		"graphics library for GNOME"
 
 DISTNAME=		libgnomecanvas-2.4.0
 CATEGORIES=		x11 x11/gnome
