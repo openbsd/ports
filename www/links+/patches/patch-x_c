@@ -1,7 +1,7 @@
-$OpenBSD: patch-x_c,v 1.2 2002/07/29 23:46:35 fgsch Exp $
---- x.c.orig	Mon Jun 17 05:22:20 2002
-+++ x.c	Mon Jul 29 13:29:30 2002
-@@ -169,6 +169,20 @@ x_hash_table[X_HASH_TABLE_SIZE];
+$OpenBSD: patch-x_c,v 1.3 2002/09/15 07:29:55 fgsch Exp $
+--- x.c.orig	Thu Sep 12 04:31:03 2002
++++ x.c	Sun Sep 15 03:52:31 2002
+@@ -168,6 +168,20 @@ x_hash_table[X_HASH_TABLE_SIZE];
  
  static int flush_in_progress=0;
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-x_c,v 1.2 2002/07/29 23:46:35 fgsch Exp $
  
  static void x_do_flush(void *ignore)
  {
-@@ -606,6 +620,11 @@ static void x_process_events(void *data)
+@@ -598,6 +612,11 @@ static void x_process_events(void *data)
  				gd=x_find_gd(&(event.xkey.window));
  				if (!gd)break;
  				x_translate_key((XKeyEvent*)(&event),&k,&f);
@@ -34,11 +34,11 @@ $OpenBSD: patch-x_c,v 1.2 2002/07/29 23:46:35 fgsch Exp $
  				gd->keyboard_handler(gd,k,f);
  			}
  			break;
-@@ -694,21 +713,8 @@ static void x_process_events(void *data)
+@@ -686,21 +705,8 @@ static void x_process_events(void *data)
  
  					case 2:
  					a=B_MIDDLE;
--					if (shift_pressed) /* paste */
+-					if (event.xbutton.state & ShiftMask) /* paste */
 -					{
 -						int num=0;
 -						unsigned char *buffer,*p;
@@ -53,8 +53,8 @@ $OpenBSD: patch-x_c,v 1.2 2002/07/29 23:46:35 fgsch Exp $
 -						if (buffer)XFree(buffer);
 -						return;
 -					}
-+					x_do_paste(gd);
-+					return;
++ 					x_do_paste(gd);
++ 					return;
  					break;
  
  					case 4:
