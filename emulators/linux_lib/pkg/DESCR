@@ -10,4 +10,4 @@ then run the Linux binary.
 The kernel option `COMPAT_LINUX' is necessary.
 
 * if you add new libraries, you should run
-  /compat/linux/sbin/ldconfig to update the caches.
+  /emul/linux/sbin/ldconfig to update the caches.
