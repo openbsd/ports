@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2000/12/08 12:01:07 peter Exp $
+# $OpenBSD: Makefile,v 1.42 2000/12/14 15:49:49 avsm Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -52,6 +52,7 @@
      SUBDIR += solid-pop3d
      SUBDIR += solid-pop3d:apop
      SUBDIR += tkrat
+     SUBDIR += vmailmgr
      SUBDIR += vrfy
      SUBDIR += wmbiff
      SUBDIR += xfaces
