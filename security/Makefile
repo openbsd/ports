@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 1999/02/05 05:57:45 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 1999/02/25 16:55:57 dugsong Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
      SUBDIR += SSLeay
+     SUBDIR += bounix
      SUBDIR += cfs
      SUBDIR += cops
      SUBDIR += crack
