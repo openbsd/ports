@@ -1,6 +1,7 @@
+$OpenBSD: patch-libapm_h,v 1.1 2004/02/01 01:35:52 millert Exp $
 --- libapm.h.orig	Mon May 11 20:05:49 1998
-+++ libapm.h	Sat Jul  1 12:48:42 2000
-@@ -32,34 +32,72 @@
++++ libapm.h	Sat Jan 31 18:11:24 2004
+@@ -32,34 +32,72 @@ static inline int port_inw( int port )
  #define outb(port, value) port_out(value, port)
  #define outw(port, value) port_outw(value, port)
  

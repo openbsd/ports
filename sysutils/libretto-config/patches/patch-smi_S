@@ -1,5 +1,6 @@
---- ../libapm.DIST/smi.S	Thu May  7 10:12:51 1998
-+++ smi.S	Sat Jul  1 10:35:35 2000
+$OpenBSD: patch-smi_S,v 1.1 2004/02/01 01:35:52 millert Exp $
+--- smi.S.orig	Thu May  7 10:12:51 1998
++++ smi.S	Sat Jan 31 18:11:24 2004
 @@ -1,6 +1,6 @@
 -	.text
 -	.globl	smi
@@ -10,7 +11,7 @@
  	pushl	%ebp
  	movl	%esp,%ebp
  	pushl	%ebx
-@@ -17,8 +17,7 @@
+@@ -17,8 +17,7 @@ smi:
  	popl	%ebp
  	ret
  
@@ -20,7 +21,7 @@
  	pushl	%ebp
  	movl	%esp,%ebp
  	pushl	%ebx
-@@ -35,4 +34,3 @@
+@@ -35,4 +34,3 @@ smi2:
  	movl	%ebp,%esp
  	popl	%ebp
  	ret
