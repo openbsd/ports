@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2003/07/17 22:08:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.113 2003/07/19 18:20:11 jolan Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -16,6 +16,7 @@
 #    SUBDIR += dore
      SUBDIR += dumpmpeg
      SUBDIR += enjoympeg
+     SUBDIR += ffmpeg
      SUBDIR += flash
      SUBDIR += fnlib
      SUBDIR += fxtv
@@ -59,6 +60,7 @@
      SUBDIR += libexif
      SUBDIR += libgphoto2
      SUBDIR += libmng
+     SUBDIR += libmpeg2
      SUBDIR += libungif
      SUBDIR += libwmf
      SUBDIR += mpeg-lib
