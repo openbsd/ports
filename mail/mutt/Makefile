@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2002/01/23 19:01:28 lebel Exp $ 
+# $OpenBSD: Makefile,v 1.50 2003/07/11 17:57:10 pvalchev Exp $ 
 
      SUBDIR += stable
+     SUBDIR += stable,compressed
      SUBDIR += snapshot
+     SUBDIR += snapshot,compressed
 
 .include <bsd.port.subdir.mk>
