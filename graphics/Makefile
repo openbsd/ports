@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2000/01/20 22:17:35 jakob Exp $
+# $OpenBSD: Makefile,v 1.39 2000/06/22 03:53:23 brad Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -13,6 +13,7 @@
      SUBDIR += fnlib
      SUBDIR += fxtv
      SUBDIR += gd
+     SUBDIR += gd:no_x11
 #    SUBDIR += geomview
 #    SUBDIR += gfont
      SUBDIR += ggi
