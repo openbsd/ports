@@ -1,48 +1,49 @@
-$OpenBSD: patch-master.cf,v 1.8 2003/01/06 11:37:24 jakob Exp $
+$OpenBSD: patch-master.cf,v 1.9 2003/01/28 16:50:33 jakob Exp $
 
---- conf/master.cf.orig	Sat Dec 21 23:49:48 2002
-+++ conf/master.cf	Mon Dec 23 08:13:32 2002
-@@ -69,26 +69,26 @@
- # service type	private	unpriv	chroot	wakeup	maxproc	command + args
- # 		(yes)	(yes)	(yes)	(never)	(50)
+--- conf/master.cf.orig	Thu Jan 16 13:44:40 2003
++++ conf/master.cf	Tue Jan 28 17:41:14 2003
+@@ -69,27 +69,27 @@
+ # service type  private unpriv  chroot  wakeup  maxproc command + args
+ #               (yes)   (yes)   (yes)   (never) (100)
  # ==========================================================================
--smtp	  inet	n	-	n	-	-	smtpd
--#628	  inet	n	-	n	-	-	qmqpd
--pickup	  fifo	n	-	n	60	1	pickup
--cleanup	  unix	n	-	n	-	0	cleanup
--qmgr	  fifo	n	-	n	300	1	qmgr
--#qmgr	  fifo	n	-	n	300	1	nqmgr
--rewrite	  unix	-	-	n	-	-	trivial-rewrite
--bounce	  unix	-	-	n	-	0	bounce
--defer	  unix	-	-	n	-	0	bounce
--trace	  unix	-	-	n	-	0	bounce
--verify	  unix  -       -       n       -       1       verify
--flush	  unix	n	-	n	1000?	0	flush
--smtp	  unix	-	-	n	-	-	smtp
--relay	  unix	-	-	n	-	-	smtp
-+smtp	  inet	n	-	-	-	-	smtpd
-+#628	  inet	n	-	-	-	-	qmqpd
-+pickup	  fifo	n	-	-	60	1	pickup
-+cleanup	  unix	n	-	-	-	0	cleanup
-+qmgr	  fifo	n	-	-	300	1	qmgr
-+#qmgr	  fifo	n	-	-	300	1	nqmgr
-+rewrite	  unix	-	-	-	-	-	trivial-rewrite
-+bounce	  unix	-	-	-	-	0	bounce
-+defer	  unix	-	-	-	-	0	bounce
-+trace	  unix	-	-	-	-	0	bounce
-+verify	  unix	-	-	-	-	1	verify
-+flush	  unix	n	-	-	1000?	0	flush
-+smtp	  unix	-	-	-	-	-	smtp
-+relay	  unix	-	-	-	-	-	smtp
- #	-o smtp_helo_timeout=5 -o smtp_connect_timeout=5
--showq     unix	n	-	n	-	-	showq
--error     unix	-	-	n	-	-	error
-+showq     unix	n	-	-	-	-	showq
-+error     unix	-	-	-	-	-	error
- local	  unix	-	n	n	-	-	local
- virtual	  unix	-	n	n	-	-	virtual
--lmtp	  unix	-	-	n	-	-	lmtp
-+lmtp	  unix	-	-	-	-	-	lmtp
+-smtp      inet  n       -       n       -       -       smtpd
+-#628      inet  n       -       n       -       -       qmqpd
+-pickup    fifo  n       -       n       60      1       pickup
+-cleanup   unix  n       -       n       -       0       cleanup
+-qmgr      fifo  n       -       n       300     1       qmgr
+-#qmgr     fifo  n       -       n       300     1       nqmgr
+-rewrite   unix  -       -       n       -       -       trivial-rewrite
+-bounce    unix  -       -       n       -       0       bounce
+-defer     unix  -       -       n       -       0       bounce
+-trace     unix  -       -       n       -       0       bounce
+-verify    unix  -       -       n       -       1       verify
+-flush     unix  n       -       n       1000?   0       flush
++smtp      inet  n       -       -       -       -       smtpd
++#628      inet  n       -       -       -       -       qmqpd
++pickup    fifo  n       -       -       60      1       pickup
++cleanup   unix  n       -       -       -       0       cleanup
++qmgr      fifo  n       -       -       300     1       qmgr
++#qmgr     fifo  n       -       -       300     1       nqmgr
++rewrite   unix  -       -       -       -       -       trivial-rewrite
++bounce    unix  -       -       -       -       0       bounce
++defer     unix  -       -       -       -       0       bounce
++trace     unix  -       -       -       -       0       bounce
++verify    unix  -       -       -       -       1       verify
++flush     unix  n       -       -       1000?   0       flush
+ proxymap  unix  -       -       n       -       -       proxymap
+-smtp      unix  -       -       n       -       -       smtp
+-relay     unix  -       -       n       -       -       smtp
++smtp      unix  -       -       -       -       -       smtp
++relay     unix  -       -       -       -       -       smtp
+ #       -o smtp_helo_timeout=5 -o smtp_connect_timeout=5
+-showq     unix  n       -       n       -       -       showq
+-error     unix  -       -       n       -       -       error
++showq     unix  n       -       -       -       -       showq
++error     unix  -       -       -       -       -       error
+ local     unix  -       n       n       -       -       local
+ virtual   unix  -       n       n       -       -       virtual
+-lmtp      unix  -       -       n       -       -       lmtp
++lmtp      unix  -       -       -       -       -       lmtp
  #
  # Interfaces to non-Postfix software. Be sure to examine the manual
  # pages of the non-Postfix software to find out what options it wants.
