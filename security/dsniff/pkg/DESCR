@@ -30,10 +30,10 @@ macof
 
 dsniff
 	simple password sniffer. handles FTP, Telnet, HTTP, POP, IMAP,
-	SNMP. goes beyond most sniffers in that it minimally parses
-	each application protocol, only saving the "interesting" bits.
-	also supports full TCP/IP reassembly, courtesy of libnids (all
-	of the following tools do, as well).
+	SNMP, NFS mountd. goes beyond most sniffers in that it
+	minimally parses each application protocol, only saving the
+	"interesting" bits.  also supports full TCP/IP reassembly,
+	courtesy of libnids (all of the following tools do, as well).
 
 mailsnarf
 	a fast and easy way to violate the Electronic Communications
