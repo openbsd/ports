@@ -3,7 +3,7 @@
 # Date created:		December 2, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.7 1998/07/10 19:42:40 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1998/10/20 06:08:10 marc Exp $
 #
 
 DISTNAME=	ghostscript-5.10
@@ -41,7 +41,7 @@ HP850_DRV=	hp850.zip
 # Location of the extracted jpeg sources
 #
 .if defined(OBJMACHINE)
-JPEG_DIR=	${PORTSDIR}/graphics/jpeg/work.${MACHINE}/jpeg-6b
+JPEG_DIR=	${PORTSDIR}/graphics/jpeg/work.${MACHINE_ARCH}/jpeg-6b
 .else
 JPEG_DIR=	${PORTSDIR}/graphics/jpeg/work/jpeg-6b
 .endif
