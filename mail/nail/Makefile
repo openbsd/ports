@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2004/08/11 17:01:48 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2004/10/06 16:17:28 naddy Exp $
 
 COMMENT=		"enhanced, MIME capable Berkeley Mail"
 
-DISTNAME=		nail-10.7
+DISTNAME=		nail-11.10
 CATEGORIES=		mail
 HOMEPAGE=		http://nail.sourceforge.net/
 
@@ -19,12 +19,15 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		converters/libiconv
 
-SEPARATE_BUILD=		simple
-CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS=		--with-rcfile="${SYSCONFDIR}/nail.rc" --with-openssl
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+MAKE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
+
+MAKE_FLAGS+=		SENDMAIL="/usr/sbin/sendmail" \
 			LIBS="-liconv"
+
+FAKE_FLAGS+=		DESTDIR="${DESTDIR}" \
+			MANDIR="${PREFIX}/man" \
+			UCBINSTALL="${INSTALL_PROGRAM}"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nail
