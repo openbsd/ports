@@ -2,7 +2,7 @@
 # Date created:         17 March 1998
 # Whom:                 mickey@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.15 2002/03/21 21:25:50 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/05/23 18:11:34 jsyn Exp $
 #
 
 COMMENT=	"manipulating PostScript documents"
@@ -12,7 +12,7 @@ CATEGORIES=	print
 NEED_VERSION=	1.515
 MASTER_SITES=   ftp://ftp.tardis.ed.ac.uk/users/ajcd/
 
-HOMEPAGE=	http://www.dcs.ed.ac.uk/home/ajcd/psutils/
+HOMEPAGE=	http://www.tardis.ed.ac.uk/~ajcd/psutils/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
