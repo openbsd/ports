@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Jul 27 17:55:01 2000
++++ Makefile.in	Thu Jul 27 17:59:45 2000
+@@ -211,7 +211,7 @@
+ SOURCES = $(mutt_dotlock_SOURCES) $(pgpring_SOURCES) $(makedoc_SOURCES) $(mutt_SOURCES) $(EXTRA_mutt_SOURCES)
+ OBJECTS = $(mutt_dotlock_OBJECTS) $(pgpring_OBJECTS) $(makedoc_OBJECTS) $(mutt_OBJECTS)
+ 
+-all: all-redirect
++all: $(BUILT_SOURCES) all-redirect
+ .SUFFIXES:
+ .SUFFIXES: .S .c .o .s
+ $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
