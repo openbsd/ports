@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/19 17:02:42 mickey Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/09/19 17:43:29 brad Exp $
 libdata/perl5/site_perl/GD/Graph.pm
 libdata/perl5/site_perl/GD/Graph/Data.pm
 libdata/perl5/site_perl/GD/Graph/Error.pm
@@ -20,3 +20,4 @@ man/man3/GD::Graph::Error.3p
 man/man3/GD::Graph::FAQ.3p
 man/man3/GD::Graph::colour.3p
 @dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/GD/Graph
+@dirrm libdata/perl5/site_perl/GD/Graph
