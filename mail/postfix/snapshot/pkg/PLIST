@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/01/02 08:01:04 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/01/04 12:59:15 jakob Exp $
 @pkgcfl postfix-*
 libexec/postfix/bounce
 libexec/postfix/cleanup
@@ -140,6 +140,7 @@ share/examples/postfix/LICENSE
 share/examples/postfix/access
 share/examples/postfix/aliases
 share/examples/postfix/canonical
+share/examples/postfix/install.cf
 share/examples/postfix/main.cf
 share/examples/postfix/main.cf.default
 share/examples/postfix/master.cf

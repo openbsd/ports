@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/09/25 21:02:33 jakob Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/01/04 12:59:15 jakob Exp $
 #
 # Pre/post-installation setup of postfix
 
@@ -102,9 +102,10 @@ do_configs()
     fi
 
     # Configure setgid maildrop
-    install -o root -g wheel -m 755 $SAMPLE_CONFIG_DIR/postfix-script-sgid $CONFIG_DIR/postfix-script
+    install -o root -g wheel -m 555 $SAMPLE_CONFIG_DIR/postfix-script-sgid $CONFIG_DIR/postfix-script
     chgrp maildrop $PREFIX/sbin/postdrop
     chmod 2755 $PREFIX/sbin/postdrop
+    install -o root -g wheel -m 444 $SAMPLE_CONFIG_DIR/install.cf $CONFIG_DIR/install.cf
 }
 
 # Function: tell the user what s/he needs to do to use the port just installed
