@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2000/12/25 03:53:36 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2001/01/26 13:34:25 avsm Exp $
 
 DISTNAME=	gmp-3.1.1
-CATEGORIES=	devel
+CATEGORIES=	devel math
 NEED_VERSION=	1.341
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gmp
