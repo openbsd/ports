@@ -1,7 +1,6 @@
-# Whom:	Oliver Sessink <oliver@lx.student.wau.nl>
-# $OpenBSD: Makefile,v 1.2 2000/01/13 05:42:13 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/01 03:24:57 jasoni Exp $
 
-DISTNAME=	bluefish-0.3.4
+DISTNAME=	bluefish-0.3.5
 CATEGORIES=	www 
 MASTER_SITES=	http://bluefish.linuxbox.com/download/ \
 		http://student.wau.nl/~olivier/bluefish/download/ \
@@ -13,18 +12,22 @@ RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint
 LIB_DEPENDS=	gtk.1.2:${PORTSDIR}/x11/gtk+ \
 		gdk_imlib:${PORTSDIR}/graphics/imlib
 
-GTK_CONFIG=	${X11BASE}/bin/gtk-config
+GTK_CONFIG?=	${X11BASE}/bin/gtk-config
 
-USE_X_PREFIX=  yes
-GNU_CONFIGURE= yes
-CONFIGURE_ENV= GTK_CONFIG="${GTK_CONFIG}"
-
+USE_X11=	yes
+USE_GMAKE=	yes 	
+GNU_CONFIGURE= 	yes
+CONFIGURE_ENV= 	GTK_CONFIG="${GTK_CONFIG}"
+CONFIGURE_ARGS= --with-install-location="${PREFIX}/lib/bluefish" 
+CONFIGURE_ENV=  GTK_CONFIG="${GTK_CONFIG}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		CFLAGS="-I${LOCALBASE}/include"
 post-install:
 	@strip ${PREFIX}/bin/bluefish
 .if !defined(NOPORTDOCS)
-	@${ECHO} "===>   Installing bluefish docs in ${PREFIX}/share/doc/bluefish"
-	@${ECHO} "===>   A manual is available online at http://bluefish.linuxbox.com/manual/"
-	@${MKDIR} ${PREFIX}/share/doc/bluefish && ${CHMOD} a+rx ${PREFIX}/share/doc/bluefish
+	@echo "===>   Installing bluefish docs in ${PREFIX}/share/doc/bluefish"
+	@echo "===>   A manual is available online at http://bluefish.linuxbox.com/manual/"
+	@mkdir ${PREFIX}/share/doc/bluefish && ${CHMOD} a+rx ${PREFIX}/share/doc/bluefish
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/bluefish
 .endif
 
