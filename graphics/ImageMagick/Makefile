@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2001/03/04 14:51:40 kevlo Exp $
+# $OpenBSD: Makefile,v 1.49 2001/03/07 22:47:50 brad Exp $
 
 DISTNAME=	ImageMagick-5.2.9
 CATEGORIES=     graphics
@@ -39,7 +39,7 @@ CONFIGURE_ARGS+= --enable-static --enable-lzw --enable-16bit-pixel \
 		 --without-perl --without-modules --without-dps \
 		 --without-fpx --without-hdf --without-lcms \
 		 --without-ttf --without-wmf --without-threads
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
