@@ -1,0 +1,4 @@
+
+patch-rsaref2-2 fixes the buffer overflow in RSA{Private,Public}Decrypt(),
+as published by CORE SDI in their advisory of Dec. 1, 1999.
+
