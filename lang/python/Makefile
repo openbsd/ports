@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2001/07/29 02:49:04 jasoni Exp $
+# $OpenBSD: Makefile,v 1.35 2001/07/29 04:20:16 brad Exp $
 
 COMMENT= 	"interpreted object-oriented programming language"
 COMMENT-tools=	"extra tools for python"
@@ -7,7 +7,7 @@ VERSION=	2.1.1
 PKGNAME=	python-${VERSION}
 DISTNAME=	Python-${VERSION}
 CATEGORIES=	lang
-NEED_VERSION=	1.405
+NEED_VERSION=	1.413
 MASTER_SITES=	ftp://ftp.python.org/pub/python/${VERSION}/
 EXTRACT_SUFX=	.tgz
 
@@ -68,13 +68,13 @@ pre-configure:
 	@echo "*** Building Python with ${FLAVOR}"
 	@echo "***"
 	@echo "*** You can set ${FLAVORS} by typing"
-	@echo "*** FLAVOR=\"set of options\" make"
+	@echo "*** FLAVOR=\"set of options\" ${MAKE_PROGRAM}"
 	@echo "***"
 	@echo ""
 
 # Depends on NO_SHARED_LIBS.
 post-configure:
-	cd ${.CURDIR} && make finish-setup
+	cd ${.CURDIR} && ${MAKE_PROGRAM} finish-setup
 
 patch:
 
@@ -104,5 +104,5 @@ finish-setup:
 	@sed -e 's,@NOSHARED@,${NOSHARED},g' \
 		${FILESDIR}/${file} >> ${WRKSRC}/Modules/Setup.local
 .endfor
-	(cd ${WRKSRC}; make Makefile)
+	@cd ${WRKSRC}; ${MAKE_PROGRAM} Makefile
 
