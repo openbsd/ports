@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2004/03/04 17:49:26 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2004/04/09 21:47:19 naddy Exp $
 
 COMMENT=	"graphical toolkit for Tcl"
 
-VERSION=	8.4.5
+VERSION=	8.4.6
 
 DISTNAME=	tk${VERSION}-src
 PKGNAME=	tk-${VERSION}

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2004/03/04 17:49:26 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2004/04/09 21:47:19 naddy Exp $
 # Uses pthreads (can but does not at the moment)
 
 COMMENT=	"Tool Command Language"
 
-VERSION=	8.4.5
+VERSION=	8.4.6
 
 DISTNAME=	tcl${VERSION}-src
 PKGNAME=	tcl-${VERSION}
