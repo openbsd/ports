@@ -1,0 +1,4 @@
+pscyr is a collection of files providing support for cyrillic PostScript
+Type1 fonts in TeX documents. The package provides 71 different font
+shapes altogether. The glyph set is sufficient to typeset documents in
+Russian, Ukrainian and Belorussian.
