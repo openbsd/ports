@@ -1,0 +1,20 @@
+$OpenBSD: patch-help-browser_toc2-info_c,v 1.1 2001/10/06 00:33:37 naddy Exp $
+--- help-browser/toc2-info.c.orig	Sat Oct  6 00:12:35 2001
++++ help-browser/toc2-info.c	Sat Oct  6 00:13:03 2001
+@@ -202,13 +202,14 @@ gint expandInfoTable(GList *table, gchar
+     gchar *s;
+     gchar *anchor;
+     struct _big_table_entry *entry;
+-    gint val;
++    gint val, buflen;
+     gchar *rootFile;
+ 
+     rootFile = ((struct _big_table_entry *)table->data)->filename;
+-    if (loadFileToBuf(rootFile, &data, NULL) || !data) {
++    if (loadFileToBuf(rootFile, &data, &buflen) || !data) {
+ 	return -1;
+     }
++    data[buflen - 1] = 0x0;
+ 
+     ((struct _big_table_entry *)table->data)->expanded = 1;
+ 
