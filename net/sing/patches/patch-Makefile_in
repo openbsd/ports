@@ -1,25 +1,34 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/02/22 15:08:54 danh Exp $
---- Makefile.in.orig	Sat Sep 16 06:03:43 2000
-+++ Makefile.in	Thu Feb 22 09:09:05 2001
-@@ -72,7 +72,7 @@ getopt_OBJECTS = @getopt_OBJECTS@
- getopt_SOURCES = @getopt_SOURCES@
+$OpenBSD: patch-Makefile_in,v 1.2 2001/05/22 18:18:50 danh Exp $
+--- Makefile.in.orig	Wed Apr 18 07:11:06 2001
++++ Makefile.in	Tue May 22 14:12:19 2001
+@@ -76,7 +76,7 @@ getopt_SOURCES = @getopt_SOURCES@
+ libnetdir = @libnetdir@
  libpcapdir = @libpcapdir@
  
--INCLUDES = -I$(includedir) -I$(libpcapdir)
+-INCLUDES = -I$(includedir) -I$(libpcapdir) -I$(libnetdir)/include
 +INCLUDES = -I$(includedir)
  
- LIBS = @LIBS@ -lpcap
+ LIBS = @LIBS@ -lpcap -lnet
  
-@@ -108,7 +108,7 @@ NROFF = nroff
+@@ -94,7 +94,7 @@ CONFIG_CLEAN_FILES = 
+ PROGRAMS =  $(bin_PROGRAMS)
+ 
+ 
+-DEFS = @DEFS@ `$(libnetdir)/libnet-config --defines` -I. -I$(srcdir) -I.
++DEFS = @DEFS@ `libnet-config --defines` -I. -I$(srcdir) -I.
+ sing_OBJECTS =  sing.o device.o ip_options.o parser.o vers_date.o help.o @getopt_OBJECTS@
+ sing_LDADD = $(LDADD)
+ sing_DEPENDENCIES = 
+@@ -111,7 +111,7 @@ NROFF = nroff
  SOURCES = $(sing_SOURCES)
  OBJECTS = $(sing_OBJECTS)
  
--all: libpcap all-redirect
+-all: libpcap libnet all-redirect
 +all: all-redirect
  .SUFFIXES:
  .SUFFIXES: .S .c .o .s
  
-@@ -223,8 +223,7 @@ uninstall-man:
+@@ -226,8 +226,7 @@ uninstall-man:
  
  
  help.o: help.c config.h
