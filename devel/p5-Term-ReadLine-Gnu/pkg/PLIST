@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/27 08:49:14 wilfried Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/Term/ReadLine/Gnu.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Term/ReadLine/Gnu/XS.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Term/ReadLine/Gnu/Gnu.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Term/ReadLine/Gnu/Gnu.so
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Term/ReadLine/Gnu/XS/autosplit.ix
+man/man3/Term::ReadLine::Gnu.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Term/ReadLine/Gnu/XS
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Term/ReadLine/Gnu
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/Term/ReadLine/Gnu
