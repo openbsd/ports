@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/10/29 19:48:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2003/07/26 23:03:27 naddy Exp $
 
 COMMENT=	"afterstep clock with some language extensions"
 
@@ -25,10 +25,6 @@ FLAVOR?=	classic english
 
 CONFIGURE_STYLE= imake
 USE_X11=	Yes
-
-pre-fetch:
-	@THEMES='${THEMES}' CLASSICS='${CLASSICS}' LANGUAGES='${LANGUAGES}' \
-	     FLAVOR='${FLAVOR}' ${FILESDIR}/configure chk
 
 pre-configure:
 	@THEMES='${THEMES}' CLASSICS='${CLASSICS}' LANGUAGES='${LANGUAGES}' \
