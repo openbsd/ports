@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2002/07/11 17:37:33 shell Exp $
+# $OpenBSD: Makefile,v 1.13 2003/07/04 06:15:21 kevlo Exp $
 
 COMMENT=	"modules for parsing and evaluating XPath statements"
 
-DISTNAME=	XML-XPath-1.12
+DISTNAME=	XML-XPath-1.13
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 
