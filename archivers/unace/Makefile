@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2001/10/04 22:26:48 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2001/11/23 02:02:45 brad Exp $
 
 COMMENT=	"extract, view & test ACE archives"
 
-DISTNAME=	unacepub
-PKGNAME=	unace-1.2b
+DISTNAME=	unace-1.2b
 CATEGORIES=	archivers
-NEED_VERSION=	1.384
-MASTER_SITES=	http://members.aol.com/mlemke6413/
-EXTRACT_SUFX=	.zip
+NEED_VERSION=	1.489
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR= utils/compress
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -19,13 +18,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall -DUNIX -DCASEINSENSE"
 MAKE_FILE=	unix/makefile
 
-ALL_TARGET=	unace
+NO_REGRESS=	Yes
 
-WRKDIST=	${WRKDIR}
+ALL_TARGET=	clean unace
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/unace ${PREFIX}/bin
-
-NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
