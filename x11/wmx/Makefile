@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/05 23:00:34 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/12 11:45:14 jakob Exp $
 
-DISTNAME=	wmx-5
-PKGNAME=        wmx-5.0
+DISTNAME=	wmx-6pre1
+PKGNAME=        wmx-6pre1
 
 CATEGORIES=	x11
 
-MASTER_SITES=	http://www.all-day-breakfast.com/wmx/ \
-		ftp://ftp.tu-clausthal.de/pub/unix.new/x11-wm/ \
-		ftp://ftp.maths.tcd.ie/src/eoin-tmp/window_managers/
+MASTER_SITES=	ftp://ftp.42.org/pub/wmx/
+HOMEPAGE=	http://www.all-day-breakfast.com/wmx/
 
 MAINTAINER=	jakob@openbsd.org
 
@@ -16,6 +15,7 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
+FAKE=		yes
 USE_X11=	yes
 
 do-install:
