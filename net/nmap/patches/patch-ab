@@ -1,5 +1,5 @@
---- tcpip.c.orig	Tue Aug  3 00:29:31 1999
-+++ tcpip.c	Wed Sep  1 12:12:30 1999
+--- tcpip.c.orig	Mon Nov  8 03:10:35 1999
++++ tcpip.c	Sun Nov 21 18:34:54 1999
 @@ -773,6 +773,7 @@
   switch(datalink) {
   case DLT_EN10MB: offset = 14; break;
@@ -8,10 +8,10 @@
   case DLT_NULL: offset = 4; break;
   case DLT_SLIP:
  #ifdef DLT_SLIP_BSDOS
-@@ -799,6 +800,7 @@
- #endif /* if freebsd || openbsd || netbsd || bsdi */
+@@ -800,6 +801,7 @@
     break;
   case DLT_RAW: offset = 0; break;
+  case DLT_FDDI: offset = 21; break;
 + case DLT_ENC: offset = 12; break;
   default: fatal("Unknown datalink type (%d)", datalink);
   }
