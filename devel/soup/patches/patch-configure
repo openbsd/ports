@@ -1,45 +1,25 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2002/12/03 19:39:32 marcm Exp $
---- configure.orig	Wed Oct 16 08:48:58 2002
-+++ configure	Wed Oct 16 08:54:45 2002
-@@ -3087,6 +3087,16 @@ newos6*)
-   lt_cv_file_magic_test_file=/usr/lib/libnls.so
-   ;;
- 
-+openbsd*)
-+  lt_cv_file_magic_cmd=/usr/bin/file
-+  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
-+  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
-+    lt_cv_deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
-+  else
-+    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
-+  fi
-+  ;;
-+
- osf3* | osf4* | osf5*)
-   # this will be overridden with pass_all, but let us keep it just in case
-   lt_cv_deplibs_check_method='file_magic COFF format alpha shared library'
-@@ -4797,8 +4807,8 @@ else
-     ;;
- 
-   openbsd*)
--    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
--    hardcode_libdir_flag_spec='-R$libdir'
-+    archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-+    hardcode_libdir_flag_spec='${wl}-R$libdir'
+$OpenBSD: patch-configure,v 1.2 2003/01/03 21:38:43 marcm Exp $
+--- configure.orig	Sun Dec 15 23:25:02 2002
++++ configure	Sun Dec 15 23:25:36 2002
+@@ -3850,8 +3850,8 @@ else
      hardcode_direct=yes
      hardcode_shlibpath_var=no
-     ;;
-@@ -5281,10 +5291,9 @@ newsos6)
- 
- openbsd*)
-   version_type=sunos
--  if test "$with_gnu_ld" = yes; then
--    need_lib_prefix=no
--    need_version=no
--  fi
-+  need_lib_prefix=no
-+  need_version=no
-+  shlibpath_overrides_runpath=yes
-   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
-   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
-   shlibpath_var=LD_LIBRARY_PATH
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-      hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
+       export_dynamic_flag_spec='${wl}-E'
+     else
+       case "$host_os" in
+@@ -3860,8 +3860,8 @@ else
+ 	hardcode_libdir_flag_spec='-R$libdir'
+         ;;
+       *)
+-        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++        hardcode_libdir_flag_spec='${wl}-R$libdir'
+         ;;
+       esac
+     fi
