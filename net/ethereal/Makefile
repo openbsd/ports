@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2001/06/13 21:52:50 jakob Exp $
+# $OpenBSD: Makefile,v 1.48 2001/07/13 20:31:38 jakob Exp $
 
 COMMENT=	network protocol analyzer
 
-VERSION=	0.8.17
-DISTNAME=	ethereal-${VERSION}-a
+VERSION=	0.8.19
+DISTNAME=	ethereal-${VERSION}
 PKGNAME=	ethereal-${VERSION}
 CATEGORIES=	net x11
 NEED_VERSION=	1.363
@@ -28,8 +28,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
 SYSCONFDIR=		${PREFIX}/share/ethereal
-SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
+USE_GMAKE=		Yes
 
 WRKDIST=		${WRKDIR}/${PKGNAME}
 
