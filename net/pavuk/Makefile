@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/07/02 16:02:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2004/08/10 09:38:34 xsa Exp $
 
 COMMENT=	"tool to mirror contents of HTTP and FTP servers"
 
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 FLAVORS=	no_x11
 FLAVOR?=
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --disable-debug --disable-tree  \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2003/08/02 14:36:50 couderc Exp $
+# $OpenBSD: Makefile,v 1.46 2004/08/10 09:38:34 xsa Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 
 COMMENT=	"X-Chat is an X11 IRC client"
@@ -25,7 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	gdk_pixbuf::graphics/gdk-pixbuf
 
-MODULES=	iconv gettext
+MODULES=	converters/libiconv devel/gettext
 
 USE_GMAKE=	Yes
 USE_X11=	Yes

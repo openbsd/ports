@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/08/03 18:24:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2004/08/10 09:38:34 xsa Exp $
 
 COMMENT=		"simple tcp re-engineering tool"
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/admin

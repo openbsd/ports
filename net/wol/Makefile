@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/05/18 21:00:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/10 09:38:34 xsa Exp $
 
 COMMENT=		"Wake On Lan client"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ahh/}
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
 

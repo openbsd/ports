@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/02/25 01:35:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/08/10 09:38:34 xsa Exp $
 
 COMMENT=	"simple network library"
 DISTNAME=	gnet-2.0.4
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 BUILD_DEPENDS=	:pkgconfig->=0.9.0:devel/pkgconfig
 

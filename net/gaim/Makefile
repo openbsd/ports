@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2004/07/08 18:27:41 brad Exp $
+# $OpenBSD: Makefile,v 1.63 2004/08/10 09:38:34 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gaim/}
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 		startup-notification-1.0.0::devel/startup-notification \

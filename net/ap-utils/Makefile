@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/08/03 18:24:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/10 09:38:34 xsa Exp $
 
 COMMENT=	"wireless access point configuration tools"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ap-utils/}
 
-MODULES=	gettext iconv
+MODULES=	devel/gettext converters/libiconv
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=	--without-included-gettext \

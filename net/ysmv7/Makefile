@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/04/09 09:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2004/08/10 09:38:35 xsa Exp $
 
 COMMENT=		"ICQ console client with encryption support"
 
@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ysmv7/}
 
 MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
-MODULES=	iconv
+MODULES=		converters/libiconv
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

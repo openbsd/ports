@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/02/19 23:07:27 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2004/08/10 09:38:34 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -28,7 +28,7 @@ MASTER_SITES=	http://ftp.silcnet.org/client/sources/ \
 
 LIB_DEPENDS+=	glib.1.2,gmodule.1.2::devel/glib
 
-MODULES=	iconv
+MODULES=	converters/libiconv
 
 CONFDIR=	${SYSCONFDIR}/silc
 SUBST_VARS=	CONFDIR

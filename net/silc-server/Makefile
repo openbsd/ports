@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/03/03 18:17:13 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2004/08/10 09:38:34 xsa Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN=		"config file parser bug on ${MACHINE_ARCH}"
@@ -28,7 +28,7 @@ MASTER_SITES=	http://ftp.silcnet.org/server/sources/ \
 		http://the.wiretapped.net/security/network-security/silc/server/sources/ \
 		ftp://ftp.wiretapped.net/pub/security/network-security/silc/server/sources/
 
-MODULES=	iconv
+MODULES=	converters/libiconv
 
 FLAVORS=	operops
 FLAVOR?=

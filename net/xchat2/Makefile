@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/06/20 17:54:58 couderc Exp $
+# $OpenBSD: Makefile,v 1.11 2004/08/10 09:38:35 xsa Exp $
 
 COMMENT=	"GTK+2 IRC client"
 
@@ -25,7 +25,7 @@ EXTRACT_SUFX=	.tar.bz2
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gtk-x11-2.0.0.0,gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0::x11/gtk+2
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
