@@ -1,7 +1,7 @@
 Configuring silc-server for OpenBSD
 -----------------------------------
 
-- configuration files are in 		${SYSCONFDIR}/silcd
+- configuration files are in 		${CONFDIR}
 - documentation is installed in		${PREFIX}/share/doc/silcd
 - sample configuration files are in	${PREFIX}/share/examples/silcd
 
@@ -10,9 +10,9 @@ recommended to take advantage of the installed silcd user and group.
 
 If you have not already done so, you will need to generate a keypair:
 
-# silcd -C ${SYSCONFDIR}/silcd
-# chown _silcd:_silcd ${SYSCONFDIR}/silcd/silcd.{pub,prv}
-# chmod 600 ${SYSCONFDIR}/silcd/silcd.prv
+# silcd -C ${CONFDIR}
+# chown _silcd:_silcd ${CONFDIR}/silcd.{pub,prv}
+# chmod 600 ${CONFDIR}/silcd.prv
 
 Additionally, you may wish to start silcd at system start-up
 via the /etc/rc.local script:
