@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/10/06 00:17:45 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/12/18 01:19:58 brad Exp $
 # $FreeBSD: Makefile,v 1.8 1999/03/09 01:08:46 nectar Exp $
 
 DISTNAME=	esound-0.2.20
@@ -6,6 +6,8 @@ CATEGORIES=	audio
 NEED_VERSION=	1.336
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/esound
+
+HOMEPAGE=	http://www.tux.org/~ricdude/EsounD.html
 
 LIB_DEPENDS=	audiofile::devel/libaudiofile
 
