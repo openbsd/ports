@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2002/08/20 07:30:15 mark Exp $
+# $OpenBSD: Makefile,v 1.13 2002/08/20 07:43:10 mark Exp $
 
 COMMENT=	"full featured GTK Napster client"
 DISTNAME=	lopster-1.0.1
 CATEGORIES=	audio
-MASTER_SITES=	http://lopster.sourceforge.net/download/ \
-		${MASTER_SITE_SOURCEFORGE:=lopster/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lopster/}
 
 HOMEPAGE=	http://lopster.sourceforge.net
 
