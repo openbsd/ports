@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/24 01:00:40 turan Exp $
-
-BROKEN=		fake problems.  bad links.
+# $OpenBSD: Makefile,v 1.10 2000/03/24 01:24:35 espie Exp $
 
 DISTNAME=	bxform-088
 PKGNAME=	xforms-0.88
@@ -8,7 +6,7 @@ WRKDIST=	${WRKDIR}/xforms
 CATEGORIES=	x11
 NEED_VERSION=	1.227
 MASTER_SITES=	ftp://bragg.phys.uwm.edu/pub/xforms/%SUBDIR%/
-
+HOMEPAGE=	http://world.std.com/~xforms/
 MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	No Fee
@@ -34,7 +32,7 @@ OBJMACHINE=	Yes
 NO_BUILD=	Yes
 USE_X11=	Yes
 FAKE=		Yes
-FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
+FAKE_FLAGS=	PREFIX=${PREFIX} DESTDIR=${WRKINST}
 
 post-patch:
 	mv ${WRKSRC}/mkconfig.h ${WRKSRC}/mkconfig.h.orig

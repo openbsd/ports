@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Feb 26 04:03:26 1998
-+++ Makefile	Fri May  8 15:56:29 1998
+--- Makefile.orig	Sat Nov 15 05:08:26 1997
++++ Makefile	Fri Mar 24 02:22:35 2000
 @@ -25,24 +25,27 @@
  	@(cd DEMOS; make) 
  
@@ -7,19 +7,20 @@
 -	cp FORMS/$(FORMLIB) $(LIB_DIR);chmod $(LIBMODE) $(LIB_DIR)/$(FORMLIB)
 -	cp DESIGN/fdesign $(BIN_DIR); chmod $(BINMODE) $(BIN_DIR)/fdesign
 -	cp fd2ps/fd2ps $(BIN_DIR); chmod $(BINMODE) $(BIN_DIR)/fd2ps
-+	${BSD_INSTALL_DATA} FORMS/$(FORMLIB) $(LIB_DIR)
-+	$(RANLIB) $(LIB_DIR)/$(FORMLIB)
++	${BSD_INSTALL_DATA} FORMS/$(FORMLIB) $(DESTDIR)$(LIB_DIR)
++	$(RANLIB) $(DESTDIR)$(LIB_DIR)/$(FORMLIB)
 +	if [ "$(STATIC_NAME)" != "" ]; then\
-+	  $(LN) $(LIB_DIR)/$(FORMLIB) $(LIB_DIR)/$(STATIC_NAME);\
++	  $(LN) $(LIB_DIR)/$(FORMLIB) $(DESTDIR)$(LIB_DIR)/$(STATIC_NAME);\
 +	fi
-+	${BSD_INSTALL_PROGRAM} DESIGN/fdesign $(BIN_DIR)
-+	${BSD_INSTALL_PROGRAM} fd2ps/fd2ps $(BIN_DIR)
++	${BSD_INSTALL_PROGRAM} DESIGN/fdesign $(DESTDIR)$(BIN_DIR)
++	${BSD_INSTALL_PROGRAM} fd2ps/fd2ps $(DESTDIR)$(BIN_DIR)
  	-@if [ "$(SHARED_LIB)" != "" ]; then\
 -           cp FORMS/$(SHARED_LIB) $(LIB_DIR); \
 -           chmod $(LIBMODE) $(LIB_DIR)/$(SHARED_LIB);\
-+	   ${BSD_INSTALL_DATA} FORMS/$(SHARED_LIB) $(LIB_DIR); \
++	   ${BSD_INSTALL_DATA} FORMS/$(SHARED_LIB) $(DESTDIR)$(LIB_DIR); \
             if [ "$(SHARED_NAME)" != "" ]; then\
-               $(LN) $(LIB_DIR)/$(SHARED_LIB) $(LIB_DIR)/$(SHARED_NAME);\
+-              $(LN) $(LIB_DIR)/$(SHARED_LIB) $(LIB_DIR)/$(SHARED_NAME);\
++              $(LN) $(LIB_DIR)/$(SHARED_LIB) $(DESTDIR)$(LIB_DIR)/$(SHARED_NAME);\
             fi \
          fi
 -	cp FORMS/$(FORMHEADER) $(HEADER_DIR);\
@@ -27,13 +28,14 @@
 -	cp FORMS/xforms.5 $(MAN5_DIR);  chmod $(MANMODE) $(MAN5_DIR)/xforms.5
 -	cp DESIGN/fdesign.1 $(MAN1_DIR); chmod $(MANMODE) $(MAN1_DIR)/fdesign.1
 -	cp fd2ps/fd2ps.1 $(MAN1_DIR); chmod $(MANMODE) $(MAN1_DIR)/fd2ps.1
-+	${BSD_INSTALL_DATA} FORMS/$(FORMHEADER) $(HEADER_DIR)
-+	${BSD_INSTALL_MAN} FORMS/xforms.5 $(MAN5_DIR)
-+	${BSD_INSTALL_MAN} DESIGN/fdesign.1 $(MAN1_DIR)
-+	${BSD_INSTALL_MAN} fd2ps/fd2ps.1 $(MAN1_DIR)
- 	@if [ ! -f $(MAN5_DIR)/forms.5 ]; then\
+-	@if [ ! -f $(MAN5_DIR)/forms.5 ]; then\
 -          ln -s $(MAN5_DIR)/xforms.5 $(MAN5_DIR)/forms.5;\
-+          $(LN) $(MAN5_DIR)/xforms.5 $(MAN5_DIR)/forms.5;\
++	${BSD_INSTALL_DATA} FORMS/$(FORMHEADER) $(DESTDIR)$(HEADER_DIR)
++	${BSD_INSTALL_MAN} FORMS/xforms.5 $(DESTDIR)$(MAN5_DIR)
++	${BSD_INSTALL_MAN} DESIGN/fdesign.1 $(DESTDIR)$(MAN1_DIR)
++	${BSD_INSTALL_MAN} fd2ps/fd2ps.1 $(DESTDIR)$(MAN1_DIR)
++	@if [ ! -f $(DESTDIR)$(MAN5_DIR)/forms.5 ]; then\
++          $(LN) $(MAN5_DIR)/xforms.5 $(DESTDIR)$(MAN5_DIR)/forms.5;\
          fi
 +
  clean:
