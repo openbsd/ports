@@ -1,0 +1,11 @@
+--- configure.orig	Thu Jun  1 00:52:11 2000
++++ configure	Tue Jun 13 01:20:33 2000
+@@ -5588,7 +5588,7 @@
+ echo "configure:5589: checking XFce directory structure" >&5
+ XFCE_DIR="$datadir/xfce"
+ 
+-XFCE_CONFDIR="$sysconfdir/xfce"
++XFCE_CONFDIR="/usr/local/lib/xfce"
+ 
+ XFCE_LOCALE_DIR="$XFCE_DIR/locale"
+ 

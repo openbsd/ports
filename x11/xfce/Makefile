@@ -3,13 +3,12 @@
 # Date created:		28 Jan 2000
 # Whom:			Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.6 2000/04/09 17:38:48 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/06/12 15:04:33 kevlo Exp $
 #
 
-DISTNAME=	xfce-3.2.5
+DISTNAME=	xfce-3.4.0
 CATEGORIES=	x11
-NEED_VERSION=	 1.230
-FAKE=No
+NEED_VERSION=	 1.301
 MASTER_SITES=	http://www.xfce.org/archive/
 
 MAINTAINER=	kevlo@openbsd.org
@@ -25,13 +24,12 @@ RUN_DEPENDS=	sox::audio/sox
 
 GTK_CONFIG=	${LOCALBASE}/bin/gtk-config
 
-USE_X11=  	Yes
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-                --localstatedir=${PREFIX}/share \
+
+CONFIGURE_ARGS+=--localstatedir={PREFIX}/share \
 		--datadir=${PREFIX}/share \
 		--with-xpm=${X11BASE}
 

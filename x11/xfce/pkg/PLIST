@@ -1,3 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/06/12 15:04:49 kevlo Exp $
+bin/CDE2Xfcepal
 bin/startxfce
 bin/xfbd
 bin/xfce
@@ -7,6 +9,7 @@ bin/xfclock
 bin/xfgnome
 bin/xfhelp
 bin/xflock
+bin/xfmountdev
 bin/xfmouse
 bin/xfpager
 bin/xfplay
@@ -16,27 +19,48 @@ bin/xfterm
 bin/xftrash
 bin/xftree
 bin/xfwm
-man/man1/xflock.1
-man/man1/xfterm.1
-man/man1/xftrash.1
-man/man1/xfprint.1
-man/man1/xfhelp.1
-man/man1/xfgnome.1
-man/man1/xfsound.1
-man/man1/xfclock.1
+lib/xfce/README.xfdefs.py
+lib/xfce/Xclients
+lib/xfce/fvwm2rc
+lib/xfce/fvwmrc
+lib/xfce/xfbdrc
+lib/xfce/xfce3rc
+lib/xfce/xfce3rc.hu
+lib/xfce/xfce3rc.ja
+lib/xfce/xfce3rc.ko
+lib/xfce/xfce3rc.zh_CN.GB2312
+lib/xfce/xfce3rc.zh_TW.Big5
+lib/xfce/xfclockrc
+lib/xfce/xfdefs.py
+lib/xfce/xfmouserc
+lib/xfce/xfsoundrc
+lib/xfce/xfwmrc
+lib/xfce/xinitrc
+lib/xfce/xinitrc.mwm
+lib/xfce/xsession
+lib/xfce/xtree.reg
 man/man1/xfbd.1
+man/man1/xfce.1
+man/man1/xfclock.1
+man/man1/xfgnome.1
+man/man1/xfhelp.1
+man/man1/xflock.1
 man/man1/xfmouse.1
 man/man1/xfpager.1
-man/man1/xftree.1
+man/man1/xfprint.1
+man/man1/xfsound.1
+man/man1/xfterm.1
+man/man1/xftrash.1
 man/man1/xfwm.1
-man/man1/xfce.1
+man/man1/xfmountdev.1
 share/xfce/COPYING
-share/xfce/README.xfdefs.py
 share/xfce/XFce3.logo
 share/xfce/backdrops/A-Little-Exercise-3.jpg
 share/xfce/backdrops/A-Little-Exercise.jpg
 share/xfce/backdrops/Anneaux.xpm
 share/xfce/backdrops/Arena.xpm
+share/xfce/backdrops/BlueSatin.xpm
+share/xfce/backdrops/BlueSea.xpm
 share/xfce/backdrops/BlueStucco.xpm
 share/xfce/backdrops/Bluedrops.xpm
 share/xfce/backdrops/Bluefalls.xpm
@@ -51,6 +75,7 @@ share/xfce/backdrops/Cocoa.xpm
 share/xfce/backdrops/Compute.xpm
 share/xfce/backdrops/Concrete.xpm
 share/xfce/backdrops/Darkblue2.xpm
+share/xfce/backdrops/Default.xpm
 share/xfce/backdrops/Desert2.xpm
 share/xfce/backdrops/Dry.xpm
 share/xfce/backdrops/Eyes.xpm
@@ -119,6 +144,7 @@ share/xfce/backdrops/Wood-floor.xpm
 share/xfce/backdrops/Wood.xpm
 share/xfce/backdrops/Wood2.xpm
 share/xfce/backdrops/Worm.xpm
+share/xfce/backdrops/Xfce.jpg
 share/xfce/backdrops/Xfce.xpm
 share/xfce/help/help.gl.html
 share/xfce/help/help.html
@@ -327,9 +353,12 @@ share/xfce/locale/et/LC_MESSAGES/xfce.mo
 share/xfce/locale/fi/LC_MESSAGES/xfce.mo
 share/xfce/locale/fr/LC_MESSAGES/xfce.mo
 share/xfce/locale/gl/LC_MESSAGES/xfce.mo
+share/xfce/locale/hu/LC_MESSAGES/xfce.mo
 share/xfce/locale/it/LC_MESSAGES/xfce.mo
 share/xfce/locale/ja/LC_MESSAGES/xfce.mo
+share/xfce/locale/nl/LC_MESSAGES/xfce.mo
 share/xfce/locale/pl/LC_MESSAGES/xfce.mo
+share/xfce/locale/ro/LC_MESSAGES/xfce.mo
 share/xfce/locale/ru/LC_MESSAGES/xfce.mo
 share/xfce/locale/sk/LC_MESSAGES/xfce.mo
 share/xfce/locale/sv/LC_MESSAGES/xfce.mo
@@ -342,6 +371,7 @@ share/xfce/palettes/Cheese
 share/xfce/palettes/Citrouille
 share/xfce/palettes/Clinky
 share/xfce/palettes/Craters
+share/xfce/palettes/Default
 share/xfce/palettes/Dolly
 share/xfce/palettes/Dust
 share/xfce/palettes/Fall
@@ -363,8 +393,11 @@ share/xfce/palettes/Prairie
 share/xfce/palettes/Salmon
 share/xfce/palettes/Salmon2
 share/xfce/palettes/Sand
+share/xfce/palettes/Silver
 share/xfce/palettes/Spring
+share/xfce/palettes/Standard
 share/xfce/palettes/Stellar
+share/xfce/palettes/Stripe
 share/xfce/palettes/Sunny
 share/xfce/palettes/Symbiose
 share/xfce/palettes/TBlue
@@ -375,22 +408,6 @@ share/xfce/palettes/Typhoon
 share/xfce/palettes/Win
 share/xfce/palettes/Xfce-1
 share/xfce/palettes/Xfce-2
-share/xfce/sample.Xclients
-share/xfce/sample.fvwm2rc
-share/xfce/sample.fvwmrc
-share/xfce/sample.mwm.xinitrc
-share/xfce/sample.xfbdrc
-share/xfce/sample.xfce3rc
-share/xfce/sample.xfce3rc.ja
-share/xfce/sample.xfce3rc.ko
-share/xfce/sample.xfce3rc.zh_CN.GB2312
-share/xfce/sample.xfce3rc.zh_TW.Big5
-share/xfce/sample.xfmouserc
-share/xfce/sample.xfsoundrc
-share/xfce/sample.xfwmrc
-share/xfce/sample.xinitrc
-share/xfce/sample.xsession
-share/xfce/sample.xtree.reg
 share/xfce/sounds/alert01.wav
 share/xfce/sounds/beep01.wav
 share/xfce/sounds/beep02.wav
@@ -442,7 +459,6 @@ share/xfce/sounds/zap01.wav
 share/xfce/sounds/zap02.wav
 share/xfce/sounds/zap03.wav
 share/xfce/sounds/zap04.wav
-share/xfce/system.xfwmrc
 share/xfce/textures/cheese.xpm
 share/xfce/textures/craters.xpm
 share/xfce/textures/ground.xpm
@@ -451,7 +467,9 @@ share/xfce/textures/metal.xpm
 share/xfce/textures/military.xpm
 share/xfce/textures/oldwood.xpm
 share/xfce/textures/paper.xpm
-share/xfce/xfdefs.py
+share/xfce/textures/silver.xpm
+share/xfce/textures/stripe.xpm
+@dirrm lib/xfce
 @dirrm share/xfce/backdrops
 @dirrm share/xfce/help
 @dirrm share/xfce/icons
@@ -471,12 +489,18 @@ share/xfce/xfdefs.py
 @dirrm share/xfce/locale/fr
 @dirrm share/xfce/locale/gl/LC_MESSAGES
 @dirrm share/xfce/locale/gl
+@dirrm share/xfce/locale/hu/LC_MESSAGES
+@dirrm share/xfce/locale/hu
 @dirrm share/xfce/locale/it/LC_MESSAGES
 @dirrm share/xfce/locale/it
 @dirrm share/xfce/locale/ja/LC_MESSAGES
 @dirrm share/xfce/locale/ja
+@dirrm share/xfce/locale/nl/LC_MESSAGES
+@dirrm share/xfce/locale/nl
 @dirrm share/xfce/locale/pl/LC_MESSAGES
 @dirrm share/xfce/locale/pl
+@dirrm share/xfce/locale/ro/LC_MESSAGES
+@dirrm share/xfce/locale/ro
 @dirrm share/xfce/locale/ru/LC_MESSAGES
 @dirrm share/xfce/locale/ru
 @dirrm share/xfce/locale/sk/LC_MESSAGES
