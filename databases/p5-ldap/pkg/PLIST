@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/10/24 17:18:37 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/10/29 19:46:59 shell Exp $
 libdata/perl5/site_perl/Authen/SASL.pm
 libdata/perl5/site_perl/Authen/SASL.pod
 libdata/perl5/site_perl/Authen/SASL/CRAM_MD5.pm
+libdata/perl5/site_perl/Authen/SASL/EXTERNAL.pm
 libdata/perl5/site_perl/Bundle/Net/LDAP.pm
 libdata/perl5/site_perl/LWP/Protocol/ldap.pm
 libdata/perl5/site_perl/Net/LDAP.pm
@@ -37,6 +38,7 @@ libdata/perl5/site_perl/Net/LDAP/Schema.pm
 libdata/perl5/site_perl/Net/LDAP/Schema.pod
 libdata/perl5/site_perl/Net/LDAP/Search.pm
 libdata/perl5/site_perl/Net/LDAP/Search.pod
+libdata/perl5/site_perl/Net/LDAP/Security.pod
 libdata/perl5/site_perl/Net/LDAP/Util.pm
 libdata/perl5/site_perl/Net/LDAPS.pm
 man/man3/Authen::SASL.3p
@@ -62,9 +64,12 @@ man/man3/Net::LDAP::RFC.3p
 man/man3/Net::LDAP::Reference.3p
 man/man3/Net::LDAP::Schema.3p
 man/man3/Net::LDAP::Search.3p
+man/man3/Net::LDAP::Security.3p
 man/man3/Net::LDAP::Util.3p
 man/man3/Net::LDAPS.3p
 @dirrm libdata/perl5/site_perl/Net/LDAP/DSML
 @dirrm libdata/perl5/site_perl/Net/LDAP/Control
+@dirrm libdata/perl5/site_perl/Net/LDAP
 @dirrm libdata/perl5/site_perl/LWP/Protocol
+@dirrm libdata/perl5/site_perl/Bundle/Net
 @dirrm libdata/perl5/site_perl/Authen/SASL
