@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2004/12/25 21:51:00 alek Exp $
+# $OpenBSD: Makefile,v 1.37 2005/02/21 13:41:37 couderc Exp $
 
 COMMENT=		"open-source, cross-platform WYSIWYG word processor"
 
@@ -7,8 +7,6 @@ DISTNAME=		abiword-${VERSION}
 CATEGORIES=		editors
 
 HOMEPAGE=		http://www.abisource.com/
-
-MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
 MODULES=		devel/gettext
 

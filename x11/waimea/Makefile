@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/06 23:11:34 matthieu Exp $
+# $OpenBSD: Makefile,v 1.7 2005/02/21 13:41:37 couderc Exp $
 
 COMMENT=		"Virtual desktop manager for X11"
 
@@ -8,8 +8,6 @@ PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.waimea.org
-
-MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/16 00:31:27 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2005/02/21 13:41:37 couderc Exp $
 
 COMMENT=		"Ftp daemon which aims to be secure"
 
@@ -7,8 +7,6 @@ DISTNAME=		vsftpd-${VERSION}
 CATEGORIES=		net
 
 HOMEPAGE=		http://vsftpd.beasts.org/
-
-MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
 # GPL2
 PERMIT_PACKAGE_CDROM=	Yes
