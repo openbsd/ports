@@ -1,6 +1,6 @@
-$OpenBSD: patch-gfx_src_freetype_nsFreeType_cpp,v 1.1 2004/11/06 23:05:42 naddy Exp $
---- gfx/src/freetype/nsFreeType.cpp.orig	Mon Sep  8 00:20:37 2003
-+++ gfx/src/freetype/nsFreeType.cpp	Sat Nov  6 22:16:21 2004
+$OpenBSD: patch-gfx_src_freetype_nsFreeType_cpp,v 1.2 2004/12/27 21:21:39 wilfried Exp $
+--- gfx/src/freetype/nsFreeType.cpp.orig	Sat Feb  7 16:22:30 2004
++++ gfx/src/freetype/nsFreeType.cpp	Sat Nov  6 02:13:33 2004
 @@ -110,11 +110,11 @@ FtFuncList nsFreeType2::FtFuncs [] = {
    {"FT_New_Face",             NS_FT2_OFFSET(nsFT_New_Face),             PR_TRUE},
    {"FT_Outline_Decompose",    NS_FT2_OFFSET(nsFT_Outline_Decompose),    PR_TRUE},
@@ -13,10 +13,10 @@ $OpenBSD: patch-gfx_src_freetype_nsFreeType_cpp,v 1.1 2004/11/06 23:05:42 naddy 
    {"FTC_Manager_New",         NS_FT2_OFFSET(nsFTC_Manager_New),         PR_TRUE},
 -  {"FTC_Image_Cache_New",     NS_FT2_OFFSET(nsFTC_Image_Cache_New),     PR_TRUE},
 +  {"FTC_ImageCache_New",      NS_FT2_OFFSET(nsFTC_Image_Cache_New),     PR_TRUE},
-   {"FT_Get_First_Char",       NS_FT2_OFFSET(nsFT_Get_First_Char),       PR_FALSE},
-   {"FT_Get_Next_Char",        NS_FT2_OFFSET(nsFT_Get_Next_Char),        PR_FALSE},
-   {nsnull,                    0, 0},
-@@ -276,7 +276,7 @@ nsFreeType2::SetCharmap(FT_Face face, FT
+ // #ifdef MOZ_SVG
+   {"FT_Glyph_Transform",      NS_FT2_OFFSET(nsFT_Glyph_Transform),      PR_TRUE},
+   {"FT_Get_Kerning",          NS_FT2_OFFSET(nsFT_Get_Kerning),          PR_TRUE},
+@@ -282,7 +282,7 @@ nsFreeType2::SetCharmap(FT_Face face, FT
  } 
   
  NS_IMETHODIMP
@@ -25,7 +25,7 @@ $OpenBSD: patch-gfx_src_freetype_nsFreeType_cpp,v 1.1 2004/11/06 23:05:42 naddy 
                                FT_UInt glyphID, FT_Glyph *glyph)
  { 
    // call the FreeType2 function via the function pointer
-@@ -285,11 +285,11 @@ nsFreeType2::ImageCacheLookup(FTC_Image_
+@@ -291,11 +291,11 @@ nsFreeType2::ImageCacheLookup(FTC_Image_
  } 
   
  NS_IMETHODIMP
@@ -40,7 +40,7 @@ $OpenBSD: patch-gfx_src_freetype_nsFreeType_cpp,v 1.1 2004/11/06 23:05:42 naddy 
    return error ? NS_ERROR_FAILURE : NS_OK;
  } 
   
-@@ -314,7 +314,7 @@ nsFreeType2::ManagerNew(FT_Library libra
+@@ -320,7 +320,7 @@ nsFreeType2::ManagerNew(FT_Library libra
  } 
   
  NS_IMETHODIMP
@@ -49,7 +49,7 @@ $OpenBSD: patch-gfx_src_freetype_nsFreeType_cpp,v 1.1 2004/11/06 23:05:42 naddy 
  { 
    // call the FreeType2 function via the function pointer
    FT_Error error = nsFTC_Image_Cache_New(manager, cache);
-@@ -345,7 +345,7 @@ nsFreeType2::SupportsExtFunc(PRBool *res
+@@ -389,7 +389,7 @@ nsFreeType2::SupportsExtFunc(PRBool *res
  } 
   
  NS_IMETHODIMP

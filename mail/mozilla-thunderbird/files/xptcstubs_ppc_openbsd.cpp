@@ -119,20 +119,14 @@ PrepareAndDispatch(nsXPTCStubBase* self,
                 if ((PRUint32) ap & 4) ap++; // doubles are 8-byte aligned on stack
                 dp->val.d = *(double*) ap;
                 ap += 2;
-		if (gpr < GPR_COUNT)
-		    gpr += 2;
             }
             continue;
         }
         else if (!param.IsOut() && type == nsXPTType::T_FLOAT) {
             if (fpr < FPR_COUNT)
                 dp->val.f = (float) fprData[fpr++]; // in registers floats are passed as doubles
-            else {
-                dp->val.f = *(float*) ap;
-		ap += 1;
-		if (gpr < GPR_COUNT)
-		    gpr += 1;
-            }
+            else
+                dp->val.f = *(float*) ap++;
             continue;
         }
         else if (!param.IsOut() && (type == nsXPTType::T_I64

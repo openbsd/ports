@@ -22,6 +22,7 @@
 #   beard@netscape.com (Patrick Beard)
 #   waterson@netscape.com (Chris Waterson)
 #
+
 .set r0,0; .set sp,1; .set RTOC,2; .set r3,3; .set r4,4
 .set r5,5; .set r6,6; .set r7,7; .set r8,8; .set r9,9
 .set r10,10; .set r11,11; .set r12,12; .set r13,13; .set r14,14
@@ -62,8 +63,8 @@ XPTC_InvokeByIndex:
 	addi    r0,r10,96			# reserve stack for GPR and FPR register save area r0 = r10 + 96
 	lwz     r9,0(sp)			# r9 = backchain
 	neg     r0,r0
-	stwux   r9,sp,r0			# reserve stack sapce and save SP backchain
-	
+	stwux   r9,sp,r0			# reserve stack space and save SP backchain
+
 	addi    r3,sp,8				# r3 <= args
 	mr      r4,r5				# r4 <= paramCount
 	mr      r5,r6				# r5 <= params
@@ -85,13 +86,14 @@ XPTC_InvokeByIndex:
 	lwz     r3,8(r31)			# r3 <= that
 	lwz     r4,12(r31)			# r4 <= methodIndex
 	lwz     r5,0(r3)			# r5 <= vtable ( == *that )
-	slwi    r4,r4,3				# convert to offset ( *= 8 )
-	addi	r4,r4,8				# skip first two vtable entries
-	add	r4,r4,r5
-	lhz	r0,0(r4)			# virtual base offset
-	extsh	r0,r0
-	add	r3,r3,r0
-	lwz     r0,4(r4)			# r0 <= methodpointer ( == vtable + offset )
+#if 0
+#if !((__GNUC__ == 3 && __GNUC_MINOR__ < 2) || __GXX_ABI_VERSION  >= 100) # G++ pre-V3 ABI
+	addi	r4,r4,2				# skip first two vtable entries
+#endif
+#endif
+	subi	r4,r4,2				# skip first two vtable entries
+	slwi    r4,r4,2				# convert to offset ( *= 4 )
+	lwzx    r0,r5,r4			# r0 <= methodpointer ( == vtable + offset )
 
         lwz     r4,4(r30)			# load GP regs with method parameters
 	lwz     r5,8(r30)   

@@ -1,0 +1,33 @@
+$OpenBSD: patch-directory_c-sdk_config_OpenBSD_mk,v 1.1 2004/12/27 21:21:39 wilfried Exp $
+--- directory/c-sdk/config/OpenBSD.mk.orig	Tue Mar 26 22:51:50 2002
++++ directory/c-sdk/config/OpenBSD.mk	Fri Sep 17 19:43:38 2004
+@@ -37,8 +37,8 @@
+ 
+ include $(MOD_DEPTH)/config/UNIX.mk
+ 
+-CC                     = gcc
+-CCC                    = g++
++CC                     = ${CC}
++CCC                    = ${CXX}
+ RANLIB                 = ranlib
+ 
+ OS_REL_CFLAGS          =
+@@ -62,17 +62,6 @@ ARCH                   = openbsd
+ DLL_SUFFIX             = so.1.0
+ 
+ DSO_CFLAGS             = -fPIC
+-DSO_LDOPTS             = -Bshareable
+-ifeq ($(OS_TEST),alpha)
+ DSO_LDOPTS             = -shared
+-endif
+-ifeq ($(OS_TEST),mips)
+-DSO_LDOPTS             = -shared
+-endif
+-ifeq ($(OS_TEST),pmax)  
+-DSO_LDOPTS             = -shared
+-endif
+ 
+-MKSHLIB                        = $(LD) $(DSO_LDOPTS)
+-
+-G++INCLUDES            = -I/usr/include/g++
++MKSHLIB                        = $(CC) $(DSO_LDOPTS)

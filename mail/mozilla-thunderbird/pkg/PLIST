@@ -1,16 +1,165 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/02/29 20:51:32 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/12/27 21:21:39 wilfried Exp $
+%%SHARED%%
 bin/mozilla-thunderbird
 bin/thunderbird
+mozilla-thunderbird/
 mozilla-thunderbird/LICENSE
-mozilla-thunderbird/chrome/US.jar
+mozilla-thunderbird/chrome/
 mozilla-thunderbird/chrome/chromelist.txt
+mozilla-thunderbird/chrome/classic/
 mozilla-thunderbird/chrome/classic.jar
+mozilla-thunderbird/chrome/classic/skin/
+mozilla-thunderbird/chrome/classic/skin/classic/
+mozilla-thunderbird/chrome/classic/skin/classic/communicator/
+mozilla-thunderbird/chrome/classic/skin/classic/communicator/alerts/
+mozilla-thunderbird/chrome/classic/skin/classic/communicator/bookmarks/
+mozilla-thunderbird/chrome/classic/skin/classic/communicator/brand/
+mozilla-thunderbird/chrome/classic/skin/classic/communicator/directory/
+mozilla-thunderbird/chrome/classic/skin/classic/communicator/icons/
+mozilla-thunderbird/chrome/classic/skin/classic/communicator/icons/smileys/
+mozilla-thunderbird/chrome/classic/skin/classic/communicator/pref/
+mozilla-thunderbird/chrome/classic/skin/classic/communicator/profile/
+mozilla-thunderbird/chrome/classic/skin/classic/communicator/related/
+mozilla-thunderbird/chrome/classic/skin/classic/communicator/search/
+mozilla-thunderbird/chrome/classic/skin/classic/communicator/sidebar/
+mozilla-thunderbird/chrome/classic/skin/classic/communicator/taskbar/
+mozilla-thunderbird/chrome/classic/skin/classic/communicator/xpinstall/
+mozilla-thunderbird/chrome/classic/skin/classic/editor/
+mozilla-thunderbird/chrome/classic/skin/classic/editor/icons/
+mozilla-thunderbird/chrome/classic/skin/classic/global/
+mozilla-thunderbird/chrome/classic/skin/classic/global/arrow/
+mozilla-thunderbird/chrome/classic/skin/classic/global/checkbox/
+mozilla-thunderbird/chrome/classic/skin/classic/global/console/
+mozilla-thunderbird/chrome/classic/skin/classic/global/filepicker/
+mozilla-thunderbird/chrome/classic/skin/classic/global/icons/
+mozilla-thunderbird/chrome/classic/skin/classic/global/menu/
+mozilla-thunderbird/chrome/classic/skin/classic/global/progressmeter/
+mozilla-thunderbird/chrome/classic/skin/classic/global/radio/
+mozilla-thunderbird/chrome/classic/skin/classic/global/scrollbar/
+mozilla-thunderbird/chrome/classic/skin/classic/global/splitter/
+mozilla-thunderbird/chrome/classic/skin/classic/global/toolbar/
+mozilla-thunderbird/chrome/classic/skin/classic/global/tree/
+mozilla-thunderbird/chrome/classic/skin/classic/messenger/
+mozilla-thunderbird/chrome/classic/skin/classic/messenger-newsblog/
+mozilla-thunderbird/chrome/classic/skin/classic/messenger-newsblog/icons/
+mozilla-thunderbird/chrome/classic/skin/classic/messenger/accountcentral/
+mozilla-thunderbird/chrome/classic/skin/classic/messenger/addressbook/
+mozilla-thunderbird/chrome/classic/skin/classic/messenger/addressbook/icons/
+mozilla-thunderbird/chrome/classic/skin/classic/messenger/icons/
+mozilla-thunderbird/chrome/classic/skin/classic/messenger/messengercompose/
+mozilla-thunderbird/chrome/classic/skin/classic/messenger/smime/
+mozilla-thunderbird/chrome/classic/skin/classic/messenger/smime/icons/
+mozilla-thunderbird/chrome/classic/skin/classic/mozapps/
+mozilla-thunderbird/chrome/classic/skin/classic/mozapps/downloads/
+mozilla-thunderbird/chrome/classic/skin/classic/mozapps/extensions/
+mozilla-thunderbird/chrome/classic/skin/classic/mozapps/pref/
+mozilla-thunderbird/chrome/classic/skin/classic/mozapps/profile/
+mozilla-thunderbird/chrome/classic/skin/classic/mozapps/shared/
+mozilla-thunderbird/chrome/classic/skin/classic/mozapps/update/
+mozilla-thunderbird/chrome/classic/skin/classic/mozapps/xpinstall/
+mozilla-thunderbird/chrome/classic/skin/classic/navigator/
+mozilla-thunderbird/chrome/classic/skin/classic/navigator/btn1/
+mozilla-thunderbird/chrome/classic/skin/classic/navigator/icons/
+mozilla-thunderbird/chrome/comm/
 mozilla-thunderbird/chrome/comm.jar
+mozilla-thunderbird/chrome/comm/content/
+mozilla-thunderbird/chrome/comm/content/communicator/
+mozilla-thunderbird/chrome/comm/content/communicator-platform/
+mozilla-thunderbird/chrome/comm/content/communicator-region/
+mozilla-thunderbird/chrome/comm/content/communicator/alerts/
+mozilla-thunderbird/chrome/comm/content/communicator/directory/
+mozilla-thunderbird/chrome/comm/content/communicator/downloadmanager/
+mozilla-thunderbird/chrome/comm/content/communicator/history/
+mozilla-thunderbird/chrome/comm/content/communicator/pref/
+mozilla-thunderbird/chrome/comm/content/communicator/related/
+mozilla-thunderbird/chrome/comm/content/communicator/search/
+mozilla-thunderbird/chrome/comm/content/communicator/sidebar/
+mozilla-thunderbird/chrome/comm/content/communicator/wallet/
+mozilla-thunderbird/chrome/comm/content/editor/
+mozilla-thunderbird/chrome/comm/content/editor-region/
+mozilla-thunderbird/chrome/comm/content/editor/images/
+mozilla-thunderbird/chrome/comm/content/help/
+mozilla-thunderbird/chrome/comm/content/mozldap/
+mozilla-thunderbird/chrome/comm/content/navigator/
+mozilla-thunderbird/chrome/comm/content/navigator-platform/
+mozilla-thunderbird/chrome/comm/content/navigator-platform/mac/
+mozilla-thunderbird/chrome/comm/content/navigator-platform/unix/
+mozilla-thunderbird/chrome/comm/content/navigator-platform/win/
+mozilla-thunderbird/chrome/comm/content/navigator-region/
+mozilla-thunderbird/chrome/comm/content/necko/
+mozilla-thunderbird/chrome/comm/content/wallet/
+mozilla-thunderbird/chrome/comm/content/xbl-marquee/
+mozilla-thunderbird/chrome/embed-sample/
 mozilla-thunderbird/chrome/embed-sample.jar
+mozilla-thunderbird/chrome/embed-sample/content/
+mozilla-thunderbird/chrome/embed-sample/content/embed/
+mozilla-thunderbird/chrome/embed-sample/locale/
+mozilla-thunderbird/chrome/embed-sample/locale/en-US/
+mozilla-thunderbird/chrome/embed-sample/locale/en-US/embed/
+mozilla-thunderbird/chrome/embed-sample/skin/
+mozilla-thunderbird/chrome/embed-sample/skin/classic/
+mozilla-thunderbird/chrome/embed-sample/skin/classic/embed/
+mozilla-thunderbird/chrome/en-US/
 mozilla-thunderbird/chrome/en-US.jar
-mozilla-thunderbird/chrome/en-mac.jar
-mozilla-thunderbird/chrome/en-unix.jar
-mozilla-thunderbird/chrome/en-win.jar
+mozilla-thunderbird/chrome/en-US/locale/
+mozilla-thunderbird/chrome/en-US/locale/communicator/
+mozilla-thunderbird/chrome/en-US/locale/communicator-platform/
+mozilla-thunderbird/chrome/en-US/locale/communicator-platform/mac/
+mozilla-thunderbird/chrome/en-US/locale/communicator-platform/mac/pref/
+mozilla-thunderbird/chrome/en-US/locale/communicator-platform/unix/
+mozilla-thunderbird/chrome/en-US/locale/communicator-platform/unix/pref/
+mozilla-thunderbird/chrome/en-US/locale/communicator-platform/win/
+mozilla-thunderbird/chrome/en-US/locale/communicator-platform/win/pref/
+mozilla-thunderbird/chrome/en-US/locale/communicator/pref/
+mozilla-thunderbird/chrome/en-US/locale/communicator/wallet/
+mozilla-thunderbird/chrome/en-US/locale/editor/
+mozilla-thunderbird/chrome/en-US/locale/en-US/
+mozilla-thunderbird/chrome/en-US/locale/en-US/messenger-mapi/
+mozilla-thunderbird/chrome/en-US/locale/en-US/messenger-smime/
+mozilla-thunderbird/chrome/en-US/locale/global/
+mozilla-thunderbird/chrome/en-US/locale/global-platform/
+mozilla-thunderbird/chrome/en-US/locale/global-platform/mac/
+mozilla-thunderbird/chrome/en-US/locale/global-platform/unix/
+mozilla-thunderbird/chrome/en-US/locale/global-platform/win/
+mozilla-thunderbird/chrome/en-US/locale/global-region/
+mozilla-thunderbird/chrome/en-US/locale/global/dom/
+mozilla-thunderbird/chrome/en-US/locale/global/history/
+mozilla-thunderbird/chrome/en-US/locale/global/layout/
+mozilla-thunderbird/chrome/en-US/locale/global/security/
+mozilla-thunderbird/chrome/en-US/locale/global/webservices/
+mozilla-thunderbird/chrome/en-US/locale/global/xml/
+mozilla-thunderbird/chrome/en-US/locale/global/xpinstall/
+mozilla-thunderbird/chrome/en-US/locale/messenger/
+mozilla-thunderbird/chrome/en-US/locale/messenger-newsblog/
+mozilla-thunderbird/chrome/en-US/locale/messenger-offline/
+mozilla-thunderbird/chrome/en-US/locale/messenger-region/
+mozilla-thunderbird/chrome/en-US/locale/messenger/addressbook/
+mozilla-thunderbird/chrome/en-US/locale/messenger/messengercompose/
+mozilla-thunderbird/chrome/en-US/locale/messenger/migration/
+mozilla-thunderbird/chrome/en-US/locale/mozapps/
+mozilla-thunderbird/chrome/en-US/locale/mozapps/downloads/
+mozilla-thunderbird/chrome/en-US/locale/mozapps/extensions/
+mozilla-thunderbird/chrome/en-US/locale/mozapps/plugins/
+mozilla-thunderbird/chrome/en-US/locale/mozapps/profile/
+mozilla-thunderbird/chrome/en-US/locale/mozapps/update/
+mozilla-thunderbird/chrome/en-US/locale/mozapps/xpinstall/
+mozilla-thunderbird/chrome/en-US/locale/mozldap/
+mozilla-thunderbird/chrome/en-US/locale/navigator/
+mozilla-thunderbird/chrome/en-US/locale/navigator-platform/
+mozilla-thunderbird/chrome/en-US/locale/navigator-platform/mac/
+mozilla-thunderbird/chrome/en-US/locale/navigator-platform/unix/
+mozilla-thunderbird/chrome/en-US/locale/navigator-platform/win/
+mozilla-thunderbird/chrome/en-US/locale/necko/
+mozilla-thunderbird/chrome/en-US/locale/passwordmgr/
+mozilla-thunderbird/chrome/en-US/locale/pipnss/
+mozilla-thunderbird/chrome/en-US/locale/pippki/
+mozilla-thunderbird/chrome/help/
+mozilla-thunderbird/chrome/help.jar
+mozilla-thunderbird/chrome/help/skin/
+mozilla-thunderbird/chrome/help/skin/classic/
+mozilla-thunderbird/chrome/help/skin/classic/help/
+mozilla-thunderbird/chrome/icons/
+mozilla-thunderbird/chrome/icons/default/
 mozilla-thunderbird/chrome/icons/default/abcardWindow.xpm
 mozilla-thunderbird/chrome/icons/default/abcardWindow16.xpm
 mozilla-thunderbird/chrome/icons/default/addressbookWindow.xpm
@@ -20,10 +169,53 @@ mozilla-thunderbird/chrome/icons/default/messengerWindow16.xpm
 mozilla-thunderbird/chrome/icons/default/msgcomposeWindow.xpm
 mozilla-thunderbird/chrome/icons/default/msgcomposeWindow16.xpm
 mozilla-thunderbird/chrome/installed-chrome.txt
+mozilla-thunderbird/chrome/messenger/
 mozilla-thunderbird/chrome/messenger.jar
+mozilla-thunderbird/chrome/messenger/content/
+mozilla-thunderbird/chrome/messenger/content/editor/
+mozilla-thunderbird/chrome/messenger/content/editor/images/
+mozilla-thunderbird/chrome/messenger/content/messenger/
+mozilla-thunderbird/chrome/messenger/content/messenger-mdn/
+mozilla-thunderbird/chrome/messenger/content/messenger-region/
+mozilla-thunderbird/chrome/messenger/content/messenger-smime/
+mozilla-thunderbird/chrome/messenger/content/messenger-views/
+mozilla-thunderbird/chrome/messenger/content/messenger/addressbook/
+mozilla-thunderbird/chrome/messenger/content/messenger/messengercompose/
+mozilla-thunderbird/chrome/messenger/content/messenger/migration/
+mozilla-thunderbird/chrome/newsblog/
+mozilla-thunderbird/chrome/newsblog.jar
+mozilla-thunderbird/chrome/newsblog/content/
+mozilla-thunderbird/chrome/newsblog/content/messenger-newsblog/
+mozilla-thunderbird/chrome/offline/
+mozilla-thunderbird/chrome/offline.jar
+mozilla-thunderbird/chrome/offline/content/
+mozilla-thunderbird/chrome/offline/content/messenger-offline/
+mozilla-thunderbird/chrome/pipnss/
 mozilla-thunderbird/chrome/pipnss.jar
+mozilla-thunderbird/chrome/pipnss/content/
+mozilla-thunderbird/chrome/pipnss/content/pipnss/
+mozilla-thunderbird/chrome/pippki/
 mozilla-thunderbird/chrome/pippki.jar
+mozilla-thunderbird/chrome/pippki/content/
+mozilla-thunderbird/chrome/pippki/content/pippki/
+mozilla-thunderbird/chrome/toolkit/
 mozilla-thunderbird/chrome/toolkit.jar
+mozilla-thunderbird/chrome/toolkit/content/
+mozilla-thunderbird/chrome/toolkit/content/communicator/
+mozilla-thunderbird/chrome/toolkit/content/global/
+mozilla-thunderbird/chrome/toolkit/content/global-platform/
+mozilla-thunderbird/chrome/toolkit/content/global-region/
+mozilla-thunderbird/chrome/toolkit/content/global/bindings/
+mozilla-thunderbird/chrome/toolkit/content/global/xml/
+mozilla-thunderbird/chrome/toolkit/content/mozapps/
+mozilla-thunderbird/chrome/toolkit/content/mozapps/downloads/
+mozilla-thunderbird/chrome/toolkit/content/mozapps/extensions/
+mozilla-thunderbird/chrome/toolkit/content/mozapps/plugins/
+mozilla-thunderbird/chrome/toolkit/content/mozapps/profile/
+mozilla-thunderbird/chrome/toolkit/content/mozapps/shared/
+mozilla-thunderbird/chrome/toolkit/content/mozapps/update/
+mozilla-thunderbird/chrome/toolkit/content/mozapps/xpinstall/
+mozilla-thunderbird/components/
 mozilla-thunderbird/components/accessibility.xpt
 mozilla-thunderbird/components/addrbook.xpt
 mozilla-thunderbird/components/appshell.xpt
@@ -31,7 +223,6 @@ mozilla-thunderbird/components/autocomplete.xpt
 mozilla-thunderbird/components/bookmarks.xpt
 mozilla-thunderbird/components/caps.xpt
 mozilla-thunderbird/components/chardet.xpt
-mozilla-thunderbird/components/chrome.xpt
 mozilla-thunderbird/components/commandhandler.xpt
 mozilla-thunderbird/components/composer.xpt
 mozilla-thunderbird/components/content_base.xpt
@@ -46,6 +237,7 @@ mozilla-thunderbird/components/dom_core.xpt
 mozilla-thunderbird/components/dom_css.xpt
 mozilla-thunderbird/components/dom_events.xpt
 mozilla-thunderbird/components/dom_html.xpt
+mozilla-thunderbird/components/dom_loadsave.xpt
 mozilla-thunderbird/components/dom_range.xpt
 mozilla-thunderbird/components/dom_stylesheets.xpt
 mozilla-thunderbird/components/dom_traversal.xpt
@@ -56,6 +248,7 @@ mozilla-thunderbird/components/dom_xul.xpt
 mozilla-thunderbird/components/downloadmanager.xpt
 mozilla-thunderbird/components/editor.xpt
 mozilla-thunderbird/components/embed_base.xpt
+mozilla-thunderbird/components/extensions.xpt
 mozilla-thunderbird/components/exthandler.xpt
 mozilla-thunderbird/components/filepicker.xpt
 mozilla-thunderbird/components/find.xpt
@@ -78,12 +271,14 @@ mozilla-thunderbird/components/layout_xul_tree.xpt
 mozilla-thunderbird/components/locale.xpt
 mozilla-thunderbird/components/lwbrk.xpt
 mozilla-thunderbird/components/mailnews.xpt
+mozilla-thunderbird/components/mailprofilemigration.xpt
 mozilla-thunderbird/components/mailview.xpt
 mozilla-thunderbird/components/mdn-service.js
 mozilla-thunderbird/components/mime.xpt
 mozilla-thunderbird/components/mimetype.xpt
 mozilla-thunderbird/components/mozbrwsr.xpt
 mozilla-thunderbird/components/mozfind.xpt
+mozilla-thunderbird/components/mozldap.xpt
 mozilla-thunderbird/components/msgbase.xpt
 mozilla-thunderbird/components/msgcompose.xpt
 mozilla-thunderbird/components/msgdb.xpt
@@ -92,6 +287,7 @@ mozilla-thunderbird/components/msglocal.xpt
 mozilla-thunderbird/components/msgnews.xpt
 mozilla-thunderbird/components/msgsearch.xpt
 mozilla-thunderbird/components/msgsmime.xpt
+mozilla-thunderbird/components/myspell/
 mozilla-thunderbird/components/myspell/en-US.aff
 mozilla-thunderbird/components/myspell/en-US.dic
 mozilla-thunderbird/components/necko.xpt
@@ -108,20 +304,23 @@ mozilla-thunderbird/components/necko_res.xpt
 mozilla-thunderbird/components/necko_socket.xpt
 mozilla-thunderbird/components/necko_strconv.xpt
 mozilla-thunderbird/components/necko_viewsource.xpt
+mozilla-thunderbird/components/newsblog.js
 mozilla-thunderbird/components/nsCloseAllWindows.js
 mozilla-thunderbird/components/nsDownloadProgressListener.js
+mozilla-thunderbird/components/nsExtensionManager.js
 mozilla-thunderbird/components/nsFilePicker.js
 mozilla-thunderbird/components/nsHelperAppDlg.js
+mozilla-thunderbird/components/nsInterfaceInfoToIDL.js
+mozilla-thunderbird/components/nsLDAPPrefsService.js
 mozilla-thunderbird/components/nsProgressDialog.js
 mozilla-thunderbird/components/nsProxyAutoConfig.js
+mozilla-thunderbird/components/nsUpdateService.js
 mozilla-thunderbird/components/offlineStartup.js
 mozilla-thunderbird/components/pipboot.xpt
 mozilla-thunderbird/components/pipnss.xpt
 mozilla-thunderbird/components/pippki.xpt
-mozilla-thunderbird/components/plugin.xpt
 mozilla-thunderbird/components/pref.xpt
 mozilla-thunderbird/components/prefetch.xpt
-mozilla-thunderbird/components/prefmigr.xpt
 mozilla-thunderbird/components/profile.xpt
 mozilla-thunderbird/components/progressDlg.xpt
 mozilla-thunderbird/components/proxyObjInst.xpt
@@ -131,19 +330,20 @@ mozilla-thunderbird/components/sidebar.xpt
 mozilla-thunderbird/components/signonviewer.xpt
 mozilla-thunderbird/components/smime-service.js
 mozilla-thunderbird/components/spellchecker.xpt
+mozilla-thunderbird/components/toolkitprofile.xpt
 mozilla-thunderbird/components/txmgr.xpt
 mozilla-thunderbird/components/txtsvc.xpt
-mozilla-thunderbird/components/ucnative.xpt
 mozilla-thunderbird/components/uconv.xpt
 mozilla-thunderbird/components/unicharutil.xpt
+mozilla-thunderbird/components/update.xpt
 mozilla-thunderbird/components/uriloader.xpt
-mozilla-thunderbird/components/util.xpt
 mozilla-thunderbird/components/wallet.xpt
 mozilla-thunderbird/components/walleteditor.xpt
 mozilla-thunderbird/components/walletpreview.xpt
 mozilla-thunderbird/components/webBrowser_core.xpt
 mozilla-thunderbird/components/webbrowserpersist.xpt
 mozilla-thunderbird/components/webshell_idls.xpt
+mozilla-thunderbird/components/websrvcs.xpt
 mozilla-thunderbird/components/widget.xpt
 mozilla-thunderbird/components/windowds.xpt
 mozilla-thunderbird/components/windowwatcher.xpt
@@ -160,32 +360,36 @@ mozilla-thunderbird/components/xpinstall.xpt
 mozilla-thunderbird/components/xremoteservice.xpt
 mozilla-thunderbird/components/xuldoc.xpt
 mozilla-thunderbird/components/xultmpl.xpt
+mozilla-thunderbird/defaults/
+mozilla-thunderbird/defaults/isp/
+mozilla-thunderbird/defaults/isp/US/
 mozilla-thunderbird/defaults/isp/US/movemail.rdf
+mozilla-thunderbird/defaults/isp/US/rss.rdf
 mozilla-thunderbird/defaults/isp/movemail.rdf
+mozilla-thunderbird/defaults/isp/rss.rdf
+mozilla-thunderbird/defaults/messenger/
+mozilla-thunderbird/defaults/messenger/US/
 mozilla-thunderbird/defaults/messenger/US/mailViews.dat
 mozilla-thunderbird/defaults/messenger/mailViews.dat
-mozilla-thunderbird/defaults/pref/all.js
-mozilla-thunderbird/defaults/pref/editor.js
+mozilla-thunderbird/defaults/pref/
+mozilla-thunderbird/defaults/pref/all-thunderbird.js
+mozilla-thunderbird/defaults/pref/composer.js
 mozilla-thunderbird/defaults/pref/mailnews.js
 mozilla-thunderbird/defaults/pref/mdn.js
-mozilla-thunderbird/defaults/pref/security-prefs.js
 mozilla-thunderbird/defaults/pref/smime.js
-mozilla-thunderbird/defaults/pref/unix.js
-mozilla-thunderbird/defaults/pref/xpinstall.js
-mozilla-thunderbird/defaults/profile/US/bookmarks.html
-mozilla-thunderbird/defaults/profile/US/chrome/userChrome-example.css
-mozilla-thunderbird/defaults/profile/US/chrome/userContent-example.css
+mozilla-thunderbird/defaults/profile/
+mozilla-thunderbird/defaults/profile/US/
 mozilla-thunderbird/defaults/profile/US/localstore.rdf
 mozilla-thunderbird/defaults/profile/US/mimeTypes.rdf
-mozilla-thunderbird/defaults/profile/US/panels.rdf
-mozilla-thunderbird/defaults/profile/US/search.rdf
-mozilla-thunderbird/defaults/profile/bookmarks.html
-mozilla-thunderbird/defaults/profile/chrome/userChrome-example.css
-mozilla-thunderbird/defaults/profile/chrome/userContent-example.css
+mozilla-thunderbird/defaults/profile/extensions/
+mozilla-thunderbird/defaults/profile/extensions/Extensions.rdf
+mozilla-thunderbird/defaults/profile/extensions/installed-extensions.txt
+mozilla-thunderbird/defaults/profile/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
+mozilla-thunderbird/defaults/profile/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
 mozilla-thunderbird/defaults/profile/localstore.rdf
 mozilla-thunderbird/defaults/profile/mimeTypes.rdf
-mozilla-thunderbird/defaults/profile/panels.rdf
-mozilla-thunderbird/defaults/profile/search.rdf
+mozilla-thunderbird/defaults/profile/prefs.js
+mozilla-thunderbird/defaults/wallet/
 mozilla-thunderbird/defaults/wallet/DistinguishedSchema.tbl
 mozilla-thunderbird/defaults/wallet/FieldSchema.tbl
 mozilla-thunderbird/defaults/wallet/PositionalSchema.tbl
@@ -193,29 +397,39 @@ mozilla-thunderbird/defaults/wallet/SchemaConcat.tbl
 mozilla-thunderbird/defaults/wallet/SchemaStrings.tbl
 mozilla-thunderbird/defaults/wallet/StateSchema.tbl
 mozilla-thunderbird/defaults/wallet/VcardSchema.tbl
+mozilla-thunderbird/greprefs/
+mozilla-thunderbird/greprefs/all.js
+mozilla-thunderbird/greprefs/security-prefs.js
+mozilla-thunderbird/greprefs/xpinstall.js
 mozilla-thunderbird/mozicon16.xpm
 mozilla-thunderbird/mozicon50.xpm
+mozilla-thunderbird/mozilla-thunderbird-bin
 mozilla-thunderbird/regchrome
 mozilla-thunderbird/regxpcom
+mozilla-thunderbird/res/
 mozilla-thunderbird/res/EditorOverride.css
 mozilla-thunderbird/res/arrow.gif
 mozilla-thunderbird/res/arrowd.gif
 mozilla-thunderbird/res/bloatcycle.html
 mozilla-thunderbird/res/broken-image.gif
-mozilla-thunderbird/res/builtin/htmlBindings.xml
+mozilla-thunderbird/res/builtin/
 mozilla-thunderbird/res/builtin/platformHTMLBindings.xml
 mozilla-thunderbird/res/charsetData.properties
 mozilla-thunderbird/res/charsetalias.properties
 mozilla-thunderbird/res/cmessage.txt
+mozilla-thunderbird/res/dtd/
 mozilla-thunderbird/res/dtd/xhtml11.dtd
+mozilla-thunderbird/res/entityTables/
 mozilla-thunderbird/res/entityTables/html40Latin1.properties
 mozilla-thunderbird/res/entityTables/html40Special.properties
 mozilla-thunderbird/res/entityTables/html40Symbols.properties
 mozilla-thunderbird/res/entityTables/htmlEntityVersions.properties
 mozilla-thunderbird/res/entityTables/transliterate.properties
+mozilla-thunderbird/res/fonts/
 mozilla-thunderbird/res/fonts/fontEncoding.properties
 mozilla-thunderbird/res/forms.css
 mozilla-thunderbird/res/grabber.gif
+mozilla-thunderbird/res/html/
 mozilla-thunderbird/res/html.css
 mozilla-thunderbird/res/html/gopher-audio.gif
 mozilla-thunderbird/res/html/gopher-binary.gif
@@ -232,12 +446,14 @@ mozilla-thunderbird/res/language.properties
 mozilla-thunderbird/res/loading-image.gif
 mozilla-thunderbird/res/platform-forms.css
 mozilla-thunderbird/res/quirk.css
+mozilla-thunderbird/res/rdf/
 mozilla-thunderbird/res/rdf/dom-test-4.css
 mozilla-thunderbird/res/rdf/folder-closed.gif
 mozilla-thunderbird/res/rdf/folder-open.gif
 mozilla-thunderbird/res/rdf/ignore-test.xul
 mozilla-thunderbird/res/rdf/loading.gif
 mozilla-thunderbird/res/sample.unixpsfonts.properties
+mozilla-thunderbird/res/samples/
 mozilla-thunderbird/res/samples/Anieyes.gif
 mozilla-thunderbird/res/samples/aform.css
 mozilla-thunderbird/res/samples/beeptest.html
@@ -259,6 +475,7 @@ mozilla-thunderbird/res/samples/mozform.css
 mozilla-thunderbird/res/samples/printsetup.html
 mozilla-thunderbird/res/samples/raptor.jpg
 mozilla-thunderbird/res/samples/rock_gra.gif
+mozilla-thunderbird/res/samples/sampleimages/
 mozilla-thunderbird/res/samples/sampleimages/bongo.gif
 mozilla-thunderbird/res/samples/sampleimages/down.gif
 mozilla-thunderbird/res/samples/sampleimages/left.gif
@@ -324,6 +541,7 @@ mozilla-thunderbird/res/table-remove-column.gif
 mozilla-thunderbird/res/table-remove-row-active.gif
 mozilla-thunderbird/res/table-remove-row-hover.gif
 mozilla-thunderbird/res/table-remove-row.gif
+mozilla-thunderbird/res/throbber/
 mozilla-thunderbird/res/throbber/anim.gif
 mozilla-thunderbird/res/throbber/anims00.gif
 mozilla-thunderbird/res/throbber/anims01.gif
@@ -361,318 +579,4 @@ mozilla-thunderbird/res/viewer.properties
 mozilla-thunderbird/res/viewsource.css
 mozilla-thunderbird/run-mozilla.sh
 mozilla-thunderbird/thunderbird-bin
-%%SHARED%%
-@dirrm mozilla-thunderbird/res/throbber
-@dirrm mozilla-thunderbird/res/samples/sampleimages
-@dirrm mozilla-thunderbird/res/samples
-@dirrm mozilla-thunderbird/res/rdf
-@dirrm mozilla-thunderbird/res/html
-@dirrm mozilla-thunderbird/res/fonts
-@dirrm mozilla-thunderbird/res/entityTables
-@dirrm mozilla-thunderbird/res/dtd
-@dirrm mozilla-thunderbird/res/builtin
-@dirrm mozilla-thunderbird/res
-@dirrm mozilla-thunderbird/defaults/wallet
-@dirrm mozilla-thunderbird/defaults/profile/chrome
-@dirrm mozilla-thunderbird/defaults/profile/US/chrome
-@dirrm mozilla-thunderbird/defaults/profile/US
-@dirrm mozilla-thunderbird/defaults/profile
-@dirrm mozilla-thunderbird/defaults/pref
-@dirrm mozilla-thunderbird/defaults/messenger/US
-@dirrm mozilla-thunderbird/defaults/messenger
-@dirrm mozilla-thunderbird/defaults/isp/US
-@dirrm mozilla-thunderbird/defaults/isp
-@dirrm mozilla-thunderbird/defaults
-@dirrm mozilla-thunderbird/components/myspell
-@dirrm mozilla-thunderbird/components
-@exec mkdir -p %D/mozilla-thunderbird/chrome/toolkit/content/mozapps/xpinstall
-@dirrm mozilla-thunderbird/chrome/toolkit/content/mozapps/xpinstall
-@exec mkdir -p %D/mozilla-thunderbird/chrome/toolkit/content/mozapps/downloads
-@dirrm mozilla-thunderbird/chrome/toolkit/content/mozapps/downloads
-@dirrm mozilla-thunderbird/chrome/toolkit/content/mozapps
-@exec mkdir -p %D/mozilla-thunderbird/chrome/toolkit/content/global/bindings
-@dirrm mozilla-thunderbird/chrome/toolkit/content/global/bindings
-@exec mkdir -p %D/mozilla-thunderbird/chrome/toolkit/content/global-region
-@dirrm mozilla-thunderbird/chrome/toolkit/content/global-region
-@exec mkdir -p %D/mozilla-thunderbird/chrome/toolkit/content/global-platform
-@dirrm mozilla-thunderbird/chrome/toolkit/content/global-platform
-@dirrm mozilla-thunderbird/chrome/toolkit/content/global
-@exec mkdir -p %D/mozilla-thunderbird/chrome/toolkit/content/communicator
-@dirrm mozilla-thunderbird/chrome/toolkit/content/communicator
-@dirrm mozilla-thunderbird/chrome/toolkit/content
-@dirrm mozilla-thunderbird/chrome/toolkit
-@exec mkdir -p %D/mozilla-thunderbird/chrome/pippki/content/pippki
-@dirrm mozilla-thunderbird/chrome/pippki/content/pippki
-@dirrm mozilla-thunderbird/chrome/pippki/content
-@dirrm mozilla-thunderbird/chrome/pippki
-@exec mkdir -p %D/mozilla-thunderbird/chrome/pipnss/content/pipnss
-@dirrm mozilla-thunderbird/chrome/pipnss/content/pipnss
-@dirrm mozilla-thunderbird/chrome/pipnss/content
-@dirrm mozilla-thunderbird/chrome/pipnss
-@exec mkdir -p %D/mozilla-thunderbird/chrome/messenger/content/messenger/messengercompose
-@dirrm mozilla-thunderbird/chrome/messenger/content/messenger/messengercompose
-@exec mkdir -p %D/mozilla-thunderbird/chrome/messenger/content/messenger/addressbook
-@dirrm mozilla-thunderbird/chrome/messenger/content/messenger/addressbook
-@exec mkdir -p %D/mozilla-thunderbird/chrome/messenger/content/messenger-views
-@dirrm mozilla-thunderbird/chrome/messenger/content/messenger-views
-@exec mkdir -p %D/mozilla-thunderbird/chrome/messenger/content/messenger-smime
-@dirrm mozilla-thunderbird/chrome/messenger/content/messenger-smime
-@exec mkdir -p %D/mozilla-thunderbird/chrome/messenger/content/messenger-region
-@dirrm mozilla-thunderbird/chrome/messenger/content/messenger-region
-@exec mkdir -p %D/mozilla-thunderbird/chrome/messenger/content/messenger-mdn
-@dirrm mozilla-thunderbird/chrome/messenger/content/messenger-mdn
-@dirrm mozilla-thunderbird/chrome/messenger/content/messenger
-@exec mkdir -p %D/mozilla-thunderbird/chrome/messenger/content/editor/images
-@dirrm mozilla-thunderbird/chrome/messenger/content/editor/images
-@dirrm mozilla-thunderbird/chrome/messenger/content/editor
-@dirrm mozilla-thunderbird/chrome/messenger/content
-@dirrm mozilla-thunderbird/chrome/messenger
-@dirrm mozilla-thunderbird/chrome/icons/default
-@dirrm mozilla-thunderbird/chrome/icons
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-win/locale/en-US/navigator-platform
-@dirrm mozilla-thunderbird/chrome/en-win/locale/en-US/navigator-platform
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-win/locale/en-US/messenger-mapi
-@dirrm mozilla-thunderbird/chrome/en-win/locale/en-US/messenger-mapi
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-win/locale/en-US/global-platform
-@dirrm mozilla-thunderbird/chrome/en-win/locale/en-US/global-platform
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-win/locale/en-US/communicator-platform/pref
-@dirrm mozilla-thunderbird/chrome/en-win/locale/en-US/communicator-platform/pref
-@dirrm mozilla-thunderbird/chrome/en-win/locale/en-US/communicator-platform
-@dirrm mozilla-thunderbird/chrome/en-win/locale/en-US
-@dirrm mozilla-thunderbird/chrome/en-win/locale
-@dirrm mozilla-thunderbird/chrome/en-win
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-unix/locale/en-US/navigator-platform
-@dirrm mozilla-thunderbird/chrome/en-unix/locale/en-US/navigator-platform
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-unix/locale/en-US/global-platform
-@dirrm mozilla-thunderbird/chrome/en-unix/locale/en-US/global-platform
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-unix/locale/en-US/communicator-platform/pref
-@dirrm mozilla-thunderbird/chrome/en-unix/locale/en-US/communicator-platform/pref
-@dirrm mozilla-thunderbird/chrome/en-unix/locale/en-US/communicator-platform
-@dirrm mozilla-thunderbird/chrome/en-unix/locale/en-US
-@dirrm mozilla-thunderbird/chrome/en-unix/locale
-@dirrm mozilla-thunderbird/chrome/en-unix
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-mac/locale/en-US/navigator-platform
-@dirrm mozilla-thunderbird/chrome/en-mac/locale/en-US/navigator-platform
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-mac/locale/en-US/global-platform
-@dirrm mozilla-thunderbird/chrome/en-mac/locale/en-US/global-platform
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-mac/locale/en-US/communicator-platform/pref
-@dirrm mozilla-thunderbird/chrome/en-mac/locale/en-US/communicator-platform/pref
-@dirrm mozilla-thunderbird/chrome/en-mac/locale/en-US/communicator-platform
-@dirrm mozilla-thunderbird/chrome/en-mac/locale/en-US
-@dirrm mozilla-thunderbird/chrome/en-mac/locale
-@dirrm mozilla-thunderbird/chrome/en-mac
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/wallet
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/wallet
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/pippki
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/pippki
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/pipnss
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/pipnss
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/necko
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/necko
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/navigator
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/navigator
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/mozapps/xpinstall
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/mozapps/xpinstall
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/mozapps/downloads
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/mozapps/downloads
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/mozapps
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/messenger/messengercompose
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/messenger/messengercompose
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/messenger/addressbook
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/messenger/addressbook
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/messenger-smime
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/messenger-smime
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/messenger-mdn
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/messenger-mdn
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/messenger
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/global
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/global
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/editor
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/editor
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/xpinstall
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/xpinstall
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/xml
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/xml
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/wallet
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/wallet
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/sidebar
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/sidebar
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/security
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/security
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/search
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/search
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/profile
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/profile
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/pref
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/pref
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/layout
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/layout
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/history
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/history
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/downloadmanager
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/downloadmanager
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/dom
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/dom
-@exec mkdir -p %D/mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/directory
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/communicator/directory
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US/communicator
-@dirrm mozilla-thunderbird/chrome/en-US/locale/en-US
-@dirrm mozilla-thunderbird/chrome/en-US/locale
-@dirrm mozilla-thunderbird/chrome/en-US
-@exec mkdir -p %D/mozilla-thunderbird/chrome/embed-sample/skin/classic/embed
-@dirrm mozilla-thunderbird/chrome/embed-sample/skin/classic/embed
-@dirrm mozilla-thunderbird/chrome/embed-sample/skin/classic
-@dirrm mozilla-thunderbird/chrome/embed-sample/skin
-@exec mkdir -p %D/mozilla-thunderbird/chrome/embed-sample/locale/en-US/embed
-@dirrm mozilla-thunderbird/chrome/embed-sample/locale/en-US/embed
-@dirrm mozilla-thunderbird/chrome/embed-sample/locale/en-US
-@dirrm mozilla-thunderbird/chrome/embed-sample/locale
-@exec mkdir -p %D/mozilla-thunderbird/chrome/embed-sample/content/embed
-@dirrm mozilla-thunderbird/chrome/embed-sample/content/embed
-@dirrm mozilla-thunderbird/chrome/embed-sample/content
-@dirrm mozilla-thunderbird/chrome/embed-sample
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/xbl-marquee
-@dirrm mozilla-thunderbird/chrome/comm/content/xbl-marquee
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/wallet
-@dirrm mozilla-thunderbird/chrome/comm/content/wallet
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/necko
-@dirrm mozilla-thunderbird/chrome/comm/content/necko
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/navigator-region
-@dirrm mozilla-thunderbird/chrome/comm/content/navigator-region
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/navigator-platform
-@dirrm mozilla-thunderbird/chrome/comm/content/navigator-platform
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/navigator
-@dirrm mozilla-thunderbird/chrome/comm/content/navigator
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/help
-@dirrm mozilla-thunderbird/chrome/comm/content/help
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/editor/images
-@dirrm mozilla-thunderbird/chrome/comm/content/editor/images
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/editor-region
-@dirrm mozilla-thunderbird/chrome/comm/content/editor-region
-@dirrm mozilla-thunderbird/chrome/comm/content/editor
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/communicator/xpinstall
-@dirrm mozilla-thunderbird/chrome/comm/content/communicator/xpinstall
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/communicator/xml
-@dirrm mozilla-thunderbird/chrome/comm/content/communicator/xml
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/communicator/wallet
-@dirrm mozilla-thunderbird/chrome/comm/content/communicator/wallet
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/communicator/sidebar
-@dirrm mozilla-thunderbird/chrome/comm/content/communicator/sidebar
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/communicator/search
-@dirrm mozilla-thunderbird/chrome/comm/content/communicator/search
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/communicator/related
-@dirrm mozilla-thunderbird/chrome/comm/content/communicator/related
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/communicator/profile
-@dirrm mozilla-thunderbird/chrome/comm/content/communicator/profile
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/communicator/pref
-@dirrm mozilla-thunderbird/chrome/comm/content/communicator/pref
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/communicator/history
-@dirrm mozilla-thunderbird/chrome/comm/content/communicator/history
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/communicator/downloadmanager
-@dirrm mozilla-thunderbird/chrome/comm/content/communicator/downloadmanager
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/communicator/directory
-@dirrm mozilla-thunderbird/chrome/comm/content/communicator/directory
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/communicator/alerts
-@dirrm mozilla-thunderbird/chrome/comm/content/communicator/alerts
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/communicator-region
-@dirrm mozilla-thunderbird/chrome/comm/content/communicator-region
-@exec mkdir -p %D/mozilla-thunderbird/chrome/comm/content/communicator-platform
-@dirrm mozilla-thunderbird/chrome/comm/content/communicator-platform
-@dirrm mozilla-thunderbird/chrome/comm/content/communicator
-@dirrm mozilla-thunderbird/chrome/comm/content
-@dirrm mozilla-thunderbird/chrome/comm
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/navigator/icons
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/navigator/icons
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/navigator/btn1
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/navigator/btn1
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/navigator
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/mozapps/xpinstall
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/mozapps/xpinstall
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/mozapps/pref
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/mozapps/pref
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/mozapps/downloads
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/mozapps/downloads
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/mozapps
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/messenger/smime/icons
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/messenger/smime/icons
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/messenger/smime
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/messenger/messengercompose
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/messenger/messengercompose
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/messenger/icons
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/messenger/icons
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/messenger/addressbook/icons
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/messenger/addressbook/icons
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/messenger/addressbook
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/messenger
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/global/tree
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/global/tree
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/global/toolbar
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/global/toolbar
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/global/splitter
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/global/splitter
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/global/scrollbar
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/global/scrollbar
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/global/radio
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/global/radio
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/global/progressmeter
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/global/progressmeter
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/global/menu
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/global/menu
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/global/icons
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/global/icons
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/global/filepicker
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/global/filepicker
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/global/console
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/global/console
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/global/checkbox
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/global/checkbox
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/global/arrow
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/global/arrow
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/global
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/editor/icons
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/editor/icons
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/editor
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/communicator/xpinstall
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/communicator/xpinstall
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/communicator/taskbar
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/communicator/taskbar
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/communicator/sidebar
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/communicator/sidebar
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/communicator/search
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/communicator/search
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/communicator/related
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/communicator/related
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/communicator/profile
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/communicator/profile
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/communicator/pref
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/communicator/pref
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/communicator/icons
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/communicator/icons
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/communicator/directory
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/communicator/directory
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/communicator/brand
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/communicator/brand
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/communicator/bookmarks
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/communicator/bookmarks
-@exec mkdir -p %D/mozilla-thunderbird/chrome/classic/skin/classic/communicator/alerts
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/communicator/alerts
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic/communicator
-@dirrm mozilla-thunderbird/chrome/classic/skin/classic
-@dirrm mozilla-thunderbird/chrome/classic/skin
-@dirrm mozilla-thunderbird/chrome/classic
-@exec mkdir -p %D/mozilla-thunderbird/chrome/US/locale/US/navigator-region
-@dirrm mozilla-thunderbird/chrome/US/locale/US/navigator-region
-@exec mkdir -p %D/mozilla-thunderbird/chrome/US/locale/US/messenger-region
-@dirrm mozilla-thunderbird/chrome/US/locale/US/messenger-region
-@exec mkdir -p %D/mozilla-thunderbird/chrome/US/locale/US/global-region
-@dirrm mozilla-thunderbird/chrome/US/locale/US/global-region
-@exec mkdir -p %D/mozilla-thunderbird/chrome/US/locale/US/editor-region
-@dirrm mozilla-thunderbird/chrome/US/locale/US/editor-region
-@exec mkdir -p %D/mozilla-thunderbird/chrome/US/locale/US/communicator-region/wallet
-@dirrm mozilla-thunderbird/chrome/US/locale/US/communicator-region/wallet
-@dirrm mozilla-thunderbird/chrome/US/locale/US/communicator-region
-@dirrm mozilla-thunderbird/chrome/US/locale/US
-@dirrm mozilla-thunderbird/chrome/US/locale
-@dirrm mozilla-thunderbird/chrome/US
-@dirrm mozilla-thunderbird/chrome
-@dirrm mozilla-thunderbird
+mozilla-thunderbird/thunderbird-config

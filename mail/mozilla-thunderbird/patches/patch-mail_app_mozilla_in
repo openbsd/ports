@@ -1,15 +1,15 @@
-$OpenBSD: patch-mail_app_mozilla_in,v 1.2 2004/01/19 14:36:49 wilfried Exp $
---- mail/app/mozilla.in.orig	2003-04-05 22:52:38.000000000 +0200
-+++ mail/app/mozilla.in	2004-01-19 15:33:25.000000000 +0100
-@@ -33,6 +33,7 @@
+$OpenBSD: patch-mail_app_mozilla_in,v 1.3 2004/12/27 21:21:39 wilfried Exp $
+--- mail/app/mozilla.in.orig	Sun Jul 25 01:58:06 2004
++++ mail/app/mozilla.in	Fri Sep 17 19:43:38 2004
+@@ -73,6 +73,7 @@ moz_pis_startstop_scripts()
  #set -x
  
  moz_libdir=%MOZAPPDIR%
 +MOZ_PLUGIN_PATH=_LOCALBASE_/lib/mozilla-plugins
  MRE_HOME=%MREDIR%
  
- # honor MOZILLA_FIVE_HOME if it's there
-@@ -111,7 +112,11 @@ do
+ # Use run-mozilla.sh in the current dir if it exists
+@@ -225,7 +226,11 @@ do
    esac
  done
  
@@ -20,5 +20,5 @@ $OpenBSD: patch-mail_app_mozilla_in,v 1.2 2004/01/19 14:36:49 wilfried Exp $
 +
 +export MOZ_PLUGIN_PATH MRE_HOME
  eval "set -- $moreargs"
- if [ $debugging = 1 ]
- then
+ 
+ ## Start addon scripts
