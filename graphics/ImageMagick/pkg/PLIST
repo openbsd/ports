@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.17 2000/06/20 23:32:47 brad Exp $
 bin/Magick-config
 bin/animate
 bin/combine
@@ -7,27 +8,29 @@ bin/identify
 bin/import
 bin/mogrify
 bin/montage
-bin/xtp
+include/magick/PreRvIcccm.h
 include/magick/api.h
+include/magick/attributes.h
 include/magick/blob.h
+include/magick/cache.h
+include/magick/cache_view.h
 include/magick/classify.h
 include/magick/compress.h
 include/magick/config.h
-include/magick/defines.h
 include/magick/delegates.h
 include/magick/error.h
 include/magick/gems.h
 include/magick/image.h
 include/magick/magick.h
-include/magick/memory.h
 include/magick/monitor.h
 include/magick/quantize.h
+include/magick/timer.h
 include/magick/utility.h
 include/magick/version.h
+include/magick/xwindows.h
 lib/libMagick.a
 lib/libMagick.la
-lib/libMagick.so.4.29
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 man/man1/ImageMagick.1
 man/man1/animate.1
 man/man1/combine.1
@@ -37,7 +40,6 @@ man/man1/identify.1
 man/man1/import.1
 man/man1/mogrify.1
 man/man1/montage.1
-man/man1/xtp.1
 man/man4/miff.4
 man/man5/quantize.5
 share/ImageMagick/delegates.mgk

@@ -1,0 +1,13 @@
+--- magick/magick.h.orig	Tue Jun 20 21:43:45 2000
++++ magick/magick.h	Tue Jun 20 21:44:13 2000
+@@ -6,8 +6,10 @@
+ 
+ #define __EXTENSIONS__  1
+ #define _POSIX_C_SOURCE  199506L
++#ifndef __OpenBSD__
+ #define _XOPEN_SOURCE  500
+ #define _XOPEN_SOURCE_EXTENDED  1
++#endif
+ 
+ /*
+   System include declarations.

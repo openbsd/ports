@@ -69,3 +69,4 @@ With ImageMagick you can:
      o display images specified by a World Wide Web (WWW) uniform resource
        locator (URL) 
 
+WWW: ${HOMEPAGE}
