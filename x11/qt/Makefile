@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2000/08/08 21:55:57 brad Exp $
+# $OpenBSD: Makefile,v 1.47 2000/08/25 03:55:24 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.45
 CATEGORIES=	x11
-NEED_VERSION=	1.310
+NEED_VERSION=	1.320
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 HOMEPAGE=	http://www.trolltech.com/products/qt/
@@ -19,8 +19,7 @@ PERMIT_PACKAGE_FTP=
 PERMIT_DISTFILES_CDROM=
 PERMIT_DISTFILES_FTP=
 
-MULTI_PACKAGES=-examples -html
-
+MULTI_PACKAGES=	-examples -html
 SUBPACKAGE?=
 
 USE_GMAKE=	Yes
@@ -101,9 +100,9 @@ do-install:
 
 .include <bsd.port.mk>
 
-.if ${SUBPACKAGE} =="-examples"
+.if ${SUBPACKAGE} == "-examples"
 PKGNAME:=qt-examples-1.45
-.elif ${SUBPACKAGE} =="-html"
+.elif ${SUBPACKAGE} == "-html"
 PKGNAME:=qt-html-1.45
 .endif
 
