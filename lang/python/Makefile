@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2001/10/16 16:34:01 brad Exp $
+# $OpenBSD: Makefile,v 1.45 2001/10/27 03:01:53 brad Exp $
 # Uses threads
 
 COMMENT= 	"interpreted object-oriented programming language"
@@ -8,7 +8,7 @@ VERSION=	2.1.1
 PKGNAME=	python-${VERSION}
 DISTNAME=	Python-${VERSION}
 CATEGORIES=	lang
-NEED_VERSION=	1.413
+NEED_VERSION=	1.475
 MASTER_SITES=	ftp://ftp.python.org/pub/%SUBDIR%/ \
 		ftp://python.mirrors.netnumina.com/python/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR= python/${VERSION}
@@ -24,13 +24,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 FLAVORS=	tk threads no_tools
-.if ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64"
-FLAVOR?=
-.else
+.if ${MACHINE_ARCH} == "i386"
 FLAVOR?=	threads
+.else
+FLAVOR?=
 .endif
 
-# don't package tools if not needed
+# Don't package tools if not needed
 .if empty(FLAVOR:L:Mno_tools)
 MULTI_PACKAGES=	-tools
 .endif
@@ -39,8 +39,10 @@ MULTI_PACKAGES=	-tools
 FULLPKGNAME-tools=python-tools-${VERSION}
 FULLPKGNAME=${PKGNAME}${FLAVOR_EXT:S/-no_tools//}
 
+LIB_DEPENDS=	gmp::devel/gmp
+
 .if ${FLAVOR:L:Mtk}
-LIB_DEPENDS=	tk83::x11/tk/8.3
+LIB_DEPENDS+=	tk83::x11/tk/8.3
 SETUP_LOCAL+=	Setup.tk
 .endif
 
@@ -48,15 +50,10 @@ CONFIGURE_STYLE= autoconf dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-fpectl 
 
-LIB_DEPENDS+=	gmp::devel/gmp
-
-# If libc_r exists, thread support is compiled in by default unless this
-# is a SPARC system where threads are currently non functional.
+# Threads support is compiled in by default only on i386 for now.
 .if ${FLAVOR:L:Mthreads}
-.if (${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64")
+.if ${MACHINE_ARCH} != "i386"
 BROKEN="Support for ${MACHINE_ARCH} threads is currently broken"
-.elif !exists(/usr/lib/libc_r.a) 
-BROKEN="No thread support on this machine"
 .else
 CONFIGURE_ARGS+= --with-threads
 .endif
@@ -68,7 +65,7 @@ CONFIGURE_ARGS+= --without-threads
 NO64BIT=	\#
 .endif
 
-ALL_TARGET=all ./Lib/plat-openbsd3
+ALL_TARGET=	all ./Lib/plat-openbsd3
 
 pre-configure:
 	@echo ""
@@ -76,7 +73,7 @@ pre-configure:
 	@echo "*** Building Python with ${FLAVOR}"
 	@echo "***"
 	@echo "*** You can set ${FLAVORS} by typing"
-	@echo "*** FLAVOR=\"set of options\" ${MAKE_PROGRAM}"
+	@echo "*** env FLAVOR=\"set of options\" ${MAKE_PROGRAM}"
 	@echo "***"
 	@echo ""
 
@@ -93,17 +90,15 @@ post-configure:
 patch:
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/pydoc ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/libpython2.1.a ${PREFIX}/lib/python2.1/config
+	${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/pydoc ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/libpython2.1.a ${PREFIX}/lib/python2.1/config
 	@if [ -f ${PREFIX}/lib/python2.1/config/libpython2.1.so.0.0 ]; then \
 		cd ${PREFIX}/lib && ln -s python2.1/config/libpython2.1.so.0.0; \
 	fi
-
 	@strip ${PREFIX}/bin/python
 	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python2.1; \
 		tar -xf -)
 	 
-
 .include <bsd.port.mk>
 
 .if defined(NO64BIT)
@@ -114,14 +109,11 @@ SED_PLIST+=-e '/%%mm%%/r${PKGDIR}/PFRAG.mm' -e '//d'
 
 .if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:U} == YES
 NOSHARED=	\#
-CONFIGURE_ENV+=	OPT='${CFLAGS}' LDSHARED="cc -shared -fPIC" \
-    LDFLAGS='-L${WRKSRC}'
+CONFIGURE_ENV+=	OPT='${CFLAGS}' LDFLAGS='-L${WRKSRC}'
 .else
-CONFIGURE_ENV+= OPT='${CFLAGS} -fPIC' LDSHARED='cc -shared -fPIC' \
-	LDFLAGS='-L${WRKSRC}'
+CONFIGURE_ENV+=	OPT='${CFLAGS} -fPIC' LDFLAGS='-L${WRKSRC}'
 MAKE_FLAGS+= MAJOR=0 MINOR=0 LDLIBRARY=libpython2.1.so.0.0 \
 	LD_LIBRARY_PATH=${WRKSRC}
 FAKE_FLAGS+= MAJOR=0 MINOR=0 LDLIBRARY=libpython2.1.so.0.0 \
 	LD_LIBRARY_PATH=${WRKSRC} RANLIB=:
 .endif
-

@@ -1,17 +1,38 @@
-$OpenBSD: patch-configure_in,v 1.1 2001/10/18 18:52:52 naddy Exp $
---- configure.in.orig	Mon Jul 16 11:07:26 2001
-+++ configure.in	Tue Oct 16 13:51:30 2001
-@@ -599,7 +599,8 @@ then
+--- configure.in.orig	Mon Jul 16 12:07:26 2001
++++ configure.in	Fri Oct 26 14:00:22 2001
+@@ -599,7 +599,20 @@
  	Linux*) LDSHARED="gcc -shared";;
  	dgux*) LDSHARED="ld -G";;
  	BSD/OS*/4*) LDSHARED="gcc -shared";;
 -	OpenBSD*) LDSHARED="ld -Bshareable";;
-+        OpenBSD*/2.[0-7]*) LDSHARED="ld -Bshareable";;
-+	OpenBSD*) LDSHARED="cc -shared";;
++	OpenBSD*)
++		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
++		then
++			LDSHARED='$(CC) -shared $(CCSHARED)'
++		else
++			case `uname -r` in
++			[01].* | 2.[[0-7]] | 2.[[0-7]].*)
++			  LDSHARED="ld -Bshareable"
++			  ;;
++			*)
++			  LDSHARED='$(CC) -shared $(CCSHARED)'
++			  ;;
++			esac
++		fi;;
  	NetBSD*)
  		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
  		then
-@@ -681,7 +682,7 @@ then
+@@ -642,8 +655,7 @@
+ 		 fi;;
+ 	Linux*) CCSHARED="-fPIC";;
+ 	BSD/OS*/4*) CCSHARED="-fpic";;
+-	OpenBSD*) CCSHARED="-fpic";;
+-	FreeBSD*|NetBSD*) CCSHARED="-fPIC";;
++	FreeBSD*|NetBSD*|OpenBSD*) CCSHARED="-fPIC";;
+ 	UnixWare*)
+ 		if test "$GCC" = "yes"
+ 		then CCSHARED="-fPIC"
+@@ -681,7 +693,7 @@
  	UnixWare*) LINKFORSHARED="-dy -Bdynamic -Wl,-Bexport";;
  	SCO_SV*) LINKFORSHARED="-Bdynamic -dy -Wl,-Bexport";;
  	ReliantUNIX*) LINKFORSHARED="-W1 -Blargedynsym";;
