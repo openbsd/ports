@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2003/01/27 19:10:48 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.10 2004/02/01 22:40:52 espie Exp $
 lib/libartsc.so.0.0
 lib/libartscbackend.so.0.0
 lib/libartsdsp.so.0.0
@@ -7,6 +7,7 @@ lib/libartsflow.so.1.0
 lib/libartsflow_idl.so.1.0
 lib/libartsgslplayobject.so.0.0
 lib/libartswavplayobject.so.0.0
+lib/libgmcop.so.1.0
 lib/libkmedia2.so.1.0
 lib/libkmedia2_idl.so.1.0
 lib/libmcop.so.1.0

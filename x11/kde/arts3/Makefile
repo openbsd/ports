@@ -1,33 +1,20 @@
-# $OpenBSD: Makefile,v 1.25 2004/02/01 22:19:28 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2004/02/01 22:40:52 espie Exp $
 
 COMMENT=		"X11 toolkit, multimedia hub"
-COMMENT-gmcop=		"glib support for mcop"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.1.95
 DISTNAME=		arts-1.1.95
 MODKDE_VERSION?=	3.2
 
 NOT_FOR_ARCHS=
-LIB_DEPENDS= 	audiofile::devel/libaudiofile
+LIB_DEPENDS= 	audiofile::devel/libaudiofile \
+		glib-2.0.0.0,gmodule-2.0.0.0,gthread-2.0.0.0::devel/glib2 
+
 SEPARATE_BUILD=flavored
 
-PSEUDO_FLAVORS=no_glib
-FLAVOR?=
+BUILD_DEPENDS=	::devel/pkgconfig
 
-.if ${FLAVOR:L:Mno_glib}
-CONFIGURE_ENV+=ac_cv_path_PKG_CONFIG=no
-.else
-MULTI_PACKAGES=-gmcop
-PKGNAME-gmcop=	arts-gmcop-1.1.95
-BUILD_DEPENDS=	::devel/glib2 \
-		::devel/pkgconfig
-.endif
 
-SUBPACKAGE?=
-
-.if defined(PACKAGING) || ${SUBPACKAGE} == "-gmcop"
-LIB_DEPENDS+=glib-2.0.0.0,gmodule-2.0.0.0,gthread-2.0.0.0::devel/glib2 
-.endif
 		
 pre-build:
 	@if pkg dependencies check kdelibs-\*; then \

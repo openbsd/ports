@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/02/01 14:59:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/02/01 22:40:52 espie Exp $
 @pkgcfl kdelibs-2.*
 bin/artsc-config
 bin/artscat
@@ -37,6 +37,7 @@ include/arts/extensionloader.h
 include/arts/factory.h
 include/arts/fft.h
 include/arts/flowsystem.h
+include/arts/giomanager.h
 include/arts/gsl/gslcommon.h
 include/arts/gsl/gslconfig.h
 include/arts/gsl/gslconvert.h
@@ -97,6 +98,7 @@ lib/libartsflow.la
 lib/libartsflow_idl.la
 lib/libartsgslplayobject.la
 lib/libartswavplayobject.la
+lib/libgmcop.la
 lib/libkmedia2.la
 lib/libkmedia2_idl.la
 lib/libmcop.la
