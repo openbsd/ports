@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/04/04 11:28:39 reinhard Exp $
+# $OpenBSD: Makefile,v 1.6 2002/08/02 16:14:27 naddy Exp $
 
 COMMENT=	"Java servlet 2.3 and Java server pages 1.2 server"
 
@@ -42,7 +42,7 @@ TOMCATDIR=	/var/tomcat
 SUBST_VARS=	TOMCATDIR CONFDIR DISTNAME
 
 post-patch:
-	@cd ${WRKDIST}/conf && perl -pi -e 's,,,g' ${CONF_FILES}
+	@cd ${WRKDIST}/conf && perl -pi -e 's,\r,,g' ${CONF_FILES}
 
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/${DISTNAME}

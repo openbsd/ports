@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/11/13 22:13:23 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/08/02 16:14:27 naddy Exp $
 
 COMMENT=        "java equivalent to make"
 
@@ -39,7 +39,7 @@ post-patch:
 	@cd ${WRKSRC}/bin && perl -pi -e 's|_anthome_|${PREFIX}/bin|' ant
 	@cd ${WRKSRC}/bin && perl -pi -e 's|_antlibs_|${PREFIX}/lib/java|' ant
 	@cd ${WRKSRC}/bin && perl -pi -e 's|_antlibs_|"${PREFIX}/lib/java"|' runant.pl
-	@cd ${WRKSRC}/bin && perl -pi -e 's|||' runant.pl
+	@cd ${WRKSRC}/bin && perl -pi -e 's|\r||' runant.pl
 
 do-install:
 	@${INSTALL_DATA_DIR} ${ANTDIR}
