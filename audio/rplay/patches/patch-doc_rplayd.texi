@@ -1,5 +1,6 @@
---- doc/rplayd.texi.orig	Thu Sep 21 04:05:43 2000
-+++ doc/rplayd.texi	Thu Sep 21 04:05:48 2000
+$OpenBSD: patch-doc_rplayd.texi,v 1.2 2002/08/17 05:11:09 brad Exp $
+--- doc/rplayd.texi.orig	Tue Jul 14 18:35:23 1998
++++ doc/rplayd.texi	Sat Aug 17 01:04:17 2002
 @@ -1,14 +1,20 @@
  \input texinfo   @c -*-texinfo-*-
  @c %**start of header
@@ -22,7 +23,7 @@
  
  This file documents the rplay Network Audio System.
  
-@@ -71,7 +77,6 @@
+@@ -71,7 +77,6 @@ This file documents the rplay Network Au
  * rplayd::                      The rplay audio server.
  * rplay::                       A sample RPLAY client.
  * rptp::                        A sample RPTP client.
@@ -30,7 +31,7 @@
  @end menu
  
  @node Overview, rplayd, Top, Top
-@@ -162,25 +167,12 @@
+@@ -162,25 +167,12 @@ sounds can be sent over the network usin
  attempt to determine whether or not the server has the sound before
  using the network.
  

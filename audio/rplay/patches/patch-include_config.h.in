@@ -1,3 +1,4 @@
+$OpenBSD: patch-include_config.h.in,v 1.2 2002/08/17 05:11:09 brad Exp $
 --- include/config.h.in.orig	Sun Jun 21 14:12:25 1998
 +++ include/config.h.in	Thu Sep 21 03:49:08 2000
 @@ -167,6 +167,10 @@

@@ -1,3 +1,4 @@
+$OpenBSD: patch-doc_RPTP.texi,v 1.2 2002/08/17 05:11:09 brad Exp $
 --- doc/RPTP.texi.orig	Mon Jun 29 14:04:34 1998
 +++ doc/RPTP.texi	Thu Sep 21 04:07:44 2000
 @@ -7,9 +7,15 @@

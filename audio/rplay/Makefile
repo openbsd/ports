@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2001/04/13 03:24:18 obecian Exp $
+# $OpenBSD: Makefile,v 1.21 2002/08/17 05:11:09 brad Exp $
 
 COMMENT=	"network audio player"
 DISTNAME=	rplay-3.3.2
 CATEGORIES=	audio
-NEED_VERSION=	1.364
 
 HOMEPAGE=	http://rplay.doit.org/
 
@@ -18,7 +17,6 @@ MASTER_SITES=	${HOMEPAGE}/dist/
 
 LIB_DEPENDS=	gsm.1.0::audio/gsm
  
-SYSCONFDIR=	/etc/rplay
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
