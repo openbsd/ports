@@ -1,0 +1,31 @@
+--- unix/tfconfig.orig	Fri Apr  4 11:51:58 1997
++++ unix/tfconfig	Mon Jun 16 18:00:45 1997
+@@ -211,17 +211,17 @@
+ echo
+ 
+ echo 'To change these locations type "n" now and edit the unix/Config file.'
+-while [ -z "$ans" ]; do
+-    echo 'Continue? (y/n)'
+-    read ans;
+-    case "$ans" in
+-    y|Y)  break ;;
+-    n|N)  exit 1 ;;
+-    *)    ans=
+-          echo 'Please answer "y" or "n".'
+-          ;;
+-    esac
+-done
++# while [ -z "$ans" ]; do
++#    echo 'Continue? (y/n)'
++#    read ans;
++#    case "$ans" in
++#    y|Y)  break ;;
++#    n|N)  exit 1 ;;
++#    *)    ans=
++#          echo 'Please answer "y" or "n".'
++#          ;;
++#    esac
++# done
+ echo; echo
+ 
+ echo "#define LIBDIR     \"${LIBDIR}\"" >&4
