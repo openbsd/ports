@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/20 22:26:30 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/12/30 08:11:55 brad Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
-DISTNAME=       gated-3-5-11
-PKGNAME=        gated-3.5.11
+DISTNAME=	gated-3-5-11
+PKGNAME=	gated-3.5.11
 CATEGORIES=	net
-NO_CDROM=	"LIC: requires licence for redistribution"
-MASTER_SITES=   ftp://ftp.gated.merit.edu/net-research/gated/
+MASTER_SITES=	ftp://ftp.gated.merit.edu/net-research/gated/
 
-MAINTAINER=	ports@OpenBSD.ORG
+NO_CDROM=	"LIC: requires licence for redistribution"
+
+BROKEN=		"Security hole (buffer overflow possibly yielding root)"
+
+MAINTAINER=	ports@openbsd.org
 
 ALL_TARGET=	gated
 
