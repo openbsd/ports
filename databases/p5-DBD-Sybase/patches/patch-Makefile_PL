@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2003/07/19 00:11:32 jcs Exp $
---- Makefile.PL.orig	Tue Apr  1 01:55:11 2003
-+++ Makefile.PL	Thu Jul 10 15:49:43 2003
-@@ -22,7 +22,7 @@ GetOptions('--file' => \$file);
+$OpenBSD: patch-Makefile_PL,v 1.2 2004/02/27 05:19:24 jcs Exp $
+--- Makefile.PL.orig	Mon Sep  8 16:30:22 2003
++++ Makefile.PL	Tue Feb 17 15:14:26 2004
+@@ -22,7 +22,7 @@
  
  configure();
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_PL,v 1.1.1.1 2003/07/19 00:11:32 jcs Exp $
  
  my $lddlflags = $Config{lddlflags};
  $lddlflags = "-L$SYBASE/lib $lddlflags" unless $^O eq 'VMS';
-@@ -111,13 +111,13 @@ sub configure {
+@@ -114,13 +114,13 @@
      } else {
  	my $extra = getExtraLibs($SYBASE, $attr{EXTRA_LIBS});
  	if($file) {
@@ -18,11 +18,11 @@ $OpenBSD: patch-Makefile_PL,v 1.1.1.1 2003/07/19 00:11:32 jcs Exp $
 +	    $lib_string = "-L$SYBASE/lib -lct -lintl $attr{EXTRA_LIBS} -lm";
  	} else {
 -	    $lib_string = "-L$SYBASE/lib -lct -lcs -ltcl -lcomn -lintl $extra -ldl -lm";
--	}
++	    $lib_string = "-L$SYBASE/lib -lct -lintl -liconv $extra -lm";
+ 	}
 -	if($^O =~ /linux|freebsd/i) {
 -	    $lib_string =~ s/ltcl/lsybtcl/;
-+	    $lib_string = "-L$SYBASE/lib -lct -lintl $extra -lm";
- 	}
+-	}
 +	#if($^O =~ /linux|freebsd/i) {
 +	#    $lib_string =~ s/ltcl/lsybtcl/;
 +	#}
