@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/09/02 05:29:29 shell Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/11/26 00:26:48 shell Exp $
 bin/ptked
 bin/ptksh
 bin/widget
@@ -168,7 +168,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/Tree.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/UserGuide.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/Widget.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/Widget.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/WidgetDemo.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/WinPhoto.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/Wm.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/Wm.pod
@@ -553,8 +552,6 @@ man/man3/Tk::Toplevel.3p
 man/man3/Tk::Trace.3p
 man/man3/Tk::Tree.3p
 man/man3/Tk::UserGuide.3p
-man/man3/Tk::Widget.3p
-man/man3/Tk::WidgetDemo.3p
 man/man3/Tk::WinPhoto.3p
 man/man3/Tk::Wm.3p
 man/man3/Tk::X.3p

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-demo,v 1.1 2001/09/02 05:29:29 shell Exp $
+@comment $OpenBSD: PLIST-demo,v 1.2 2001/11/26 00:26:48 shell Exp $
+bin/widget
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/WidgetDemo.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/demos/LabEnLabRad.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/demos/images/QuitPB.xpm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/demos/images/QuitPBa.xpm
@@ -108,6 +110,8 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/demos/widtrib/notebook.pl
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/demos/widtrib/npuz.pl
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/demos/widtrib/plop.pl
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/demos/widtrib/progress.pl
+man/man3/Tk::Widget.3p
+man/man3/Tk::WidgetDemo.3p
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/demos/widtrib/lib/npuz
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/demos/widtrib/lib
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tk/demos/widtrib
