@@ -1,4 +1,4 @@
-$OpenBSD: patch-vsftpd_conf,v 1.1 2003/05/20 11:12:08 couderc Exp $
+$OpenBSD: patch-vsftpd_conf,v 1.2 2003/06/23 19:08:52 sturm Exp $
 --- vsftpd.conf.orig	Mon Jul 30 23:51:07 2001
 +++ vsftpd.conf	Sun May 11 21:56:55 2003
 @@ -4,13 +4,13 @@
@@ -40,7 +40,7 @@ $OpenBSD: patch-vsftpd_conf,v 1.1 2003/05/20 11:12:08 couderc Exp $
  # It is recommended that you define on your system a unique user which the
  # ftp server can use as a totally isolated and unprivileged user.
 -#nopriv_user=ftpsecure
-+nopriv_user=vsftpd
++nopriv_user=_vsftpd
  #
  # Enable this and the server will recognise asynchronous ABOR requests. Not
  # recommended for security (the code is non-trivial). Not enabling it,

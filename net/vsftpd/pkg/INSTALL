@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2003/05/20 11:12:08 couderc Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/06/23 19:08:52 sturm Exp $
 #
 # Pre/post-installation setup of vsftpd
 
@@ -7,8 +7,9 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}
 SAMPLE_CONFIG_DIR=$PREFIX/share/examples/vsftpd
-VSFTPDUSER=vsftpd
-VSFTPDGROUP=vsftpd
+VSFTPDUSER=_vsftpd
+VSFTPDGROUP=_vsftpd
+ID=513
 
 do_usergroup_install()
 {
@@ -18,14 +19,14 @@ do_usergroup_install()
     echo "===> Using $VSFTPDGROUP group for vsftpd"
   else
     echo "===> Creating $VSFTPDGROUP group for vsftpd"
-    groupadd $VSFTPDGROUP
+    groupadd -g $ID $VSFTPDGROUP
   fi
   userinfo -e $VSFTPDUSER
   if [ $? -eq 0 ]; then
     echo "===> Using $VSFTPDUSER user for vsftpd"
   else
     echo "===> Creating $VSFTPDUSER user for vsftpd"
-    useradd -g $VSFTPDGROUP -d /nonexistent -c 'vsftpd user' -s /sbin/nologin $VSFTPDUSER
+    useradd -g $VSFTPDGROUP -d /nonexistent -c 'vsftpd user' -s /sbin/nologin -u $ID $VSFTPDUSER
   fi
 }
 
@@ -59,6 +60,17 @@ do_install()
   echo
 }
 
+do_warning()
+{
+  echo "+---------------"
+  echo "| WARNING!"
+  echo "|"
+  echo "| This port has changed its user/group from 'vsftpd' to '_vsftpd'."
+  echo "| If you installed this port before, ensure all permissions are set"
+  echo "| correctly and then \"rmuser vsftpd\"."
+  echo "+---------------"
+  echo
+}
 # verify proper execution
 #
 if [ $# -ne 2 ]; then
@@ -78,6 +90,7 @@ case $2 in
 	else
 	   do_notice $1
 	fi
+	do_warning
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2003/05/20 11:12:08 couderc Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/06/23 19:08:52 sturm Exp $
 #
 # opennap de-installation
 
@@ -7,8 +7,8 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}
-VSFTPDUSER=vsftpd
-VSFTPDGROUP=vsftpd
+VSFTPDUSER=_vsftpd
+VSFTPDGROUP=_vsftpd
 
 if [ -d $CONFIG_DIR ]; then
     echo

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2003/05/20 11:12:08 couderc Exp $
+# $OpenBSD: Makefile,v 1.3 2003/06/23 19:08:52 sturm Exp $
 
 COMMENT=		"Ftp daemon which aims to be secure"
 
 VERSION=		1.1.3
 DISTNAME=		vsftpd-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 
 HOMEPAGE=		http://vsftpd.beasts.org/
@@ -21,6 +22,9 @@ MASTER_SITES=		ftp://vsftpd.beasts.org/users/cevans/
 ALL_TARGET=		vsftpd
 
 SAMPLEDIR=		${PREFIX}/share/examples/vsftpd
+
+do-configure:
+	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${WRKSRC}/defs.h
 
 do-install:
 	${INSTALL} ${WRKSRC}/vsftpd ${PREFIX}/sbin/
