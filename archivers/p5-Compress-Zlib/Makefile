@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2000/06/10 20:22:16 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/08/21 00:16:40 brad Exp $
 
 DISTNAME=	Compress-Zlib-1.08
-PKGNAME=	p5-Cmprs-Zlib-1.08
+PKGNAME=	p5-Compress-Zlib-1.08
 CATEGORIES=	archivers perl5
 NEED_VERSION=	1.301
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
