@@ -3,7 +3,7 @@
 # Date created:		25 January 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/01/25 22:31:14 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/02/06 13:43:45 niklas Exp $
 #
 
 DISTNAME=	xco
@@ -15,7 +15,6 @@ MAINTAINER=	angelos@openbsd.org
 
 USE_IMAKE=	yes
 MAN1=		xco.1
-MANCOMPRESSED=	yes
 DOCDIR=		${PREFIX}/share/doc/xco
 
 post-install:

@@ -1,4 +1,4 @@
 bin/xco
-man/man1/xco.1
+man/cat1/xco.0
 share/doc/xco/copyright
 @dirrm share/doc/xco
