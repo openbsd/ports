@@ -1,6 +1,6 @@
---- src/osdep/unix/Makefile.orig	Thu Jan  4 13:10:00 2001
-+++ src/osdep/unix/Makefile	Thu Jan 18 16:11:07 2001
-@@ -84,6 +84,7 @@ RANLIB=ranlib
+--- src/osdep/unix/Makefile.orig	Thu Feb  1 13:15:58 2001
++++ src/osdep/unix/Makefile	Fri Feb  2 09:06:26 2001
+@@ -84,6 +84,7 @@
  DEFAULTAUTHENTICATORS=md5 $(SPECIALAUTHENTICATORS) log
  DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf unix news phile
  
@@ -8,15 +8,15 @@
  
  # Normally no need to change any of these
  
-@@ -92,6 +93,7 @@ BINARIES=mail.o misc.o newsrc.o smanager
+@@ -92,6 +93,7 @@
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
 +SOBINARIES=$(BINARIES:.o=.so)
- CFLAGS=$(BASECFLAGS) $(EXTRACFLAGS)
+ CFLAGS=-g
  
  CAT=cat
-@@ -100,6 +102,7 @@ MV=mv
+@@ -100,6 +102,7 @@
  RM=rm -rf
  SH=sh
  
@@ -24,7 +24,7 @@
  
  # Primary build command
  
-@@ -211,7 +214,7 @@ bso:	# OpenBSD
+@@ -210,7 +213,7 @@
  	 SPOOLDIR=/var \
  	 ACTIVEFILE=/usr/local/news/lib/active \
  	 RSHPATH=/usr/bin/rsh \
@@ -33,7 +33,7 @@
  
  cvx:	# Convex
  	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
-@@ -719,19 +722,26 @@ vu2:	# VAX Ultrix 2.3, etc.
+@@ -718,23 +721,32 @@
  
  # Build it!
  
@@ -54,6 +54,12 @@
 +$(SHLIB): $(SOBINARIES)
 +	$(CC) -shared $(PICFLAG) -o $(SHLIB) $(SOBINARIES)
 +
+ .c.o:
+ 	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` $*.c
+ 
++.c.so:
++	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` $(PICFLAG) -DPIC $(@:.so=.c) -o $@
+ 
  # Cleanup
  
  clean:
@@ -62,7 +68,7 @@
  
  
  # Dependencies
-@@ -765,7 +775,7 @@ utf8.o: mail.h misc.h osdep.h utf8.h
+@@ -768,7 +780,7 @@
  
  # OS-dependent
  
@@ -71,19 +77,17 @@
  	osdep.h env_unix.h tcp_unix.h \
  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
  	auths.c crexcl.c flock.c flockbsd.c flcksafe.c fsync.c gethstid.c \
-@@ -777,7 +787,15 @@ osdep.o:mail.h misc.h env.h fs.h ftl.h n
+@@ -780,7 +792,12 @@
  	write.c \
  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
  	OSCFLAGS
+-	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` `$(CAT) OSCFLAGS` -c osdep.c
 +
 +osdep.o: $(OSDEPS)
- 	$(CC) $(CFLAGS) `$(CAT) OSCFLAGS` -c osdep.c
++	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` `$(CAT) OSCFLAGS` osdep.c
 +
 +osdep.so: $(OSDEPS)
-+	$(CC) $(CFLAGS) `$(CAT) OSCFLAGS` $(PICFLAG) -DPIC -c osdep.c -o $@
-+
-+.c.so: osdep.h
-+	$(CC) $(CFLAGS) $(PICFLAG) -DPIC -c $(@:.so=.c) -o $@
++	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` `$(CAT) OSCFLAGS` $(PICFLAG) -DPIC osdep.c -o $@
  
  osdep.c: osdepbas.c osdepckp.c osdeplog.c
  	$(CAT) osdepbas.c osdepckp.c osdeplog.c > osdep.c
