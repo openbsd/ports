@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.97 1999/06/13 03:50:51 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.98 1999/06/24 17:31:16 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1319,7 +1319,7 @@ do-fetch:
 	@(cd ${_DISTDIR}; \
 	 for file in ${DISTFILES}; do \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
-			if [ -h $$file -o -h `${BASENAME} $$file` ]; then \
+			if [ -L $$file -o -L `${BASENAME} $$file` ]; then \
 				${ECHO_MSG} ">> ${_DISTDIR}/$$file is a broken symlink."; \
 				${ECHO_MSG} ">> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
 				${ECHO_MSG} ">> Please correct this problem and try again."; \
@@ -1350,7 +1350,7 @@ do-fetch:
 	@(cd ${_DISTDIR}; \
 	 for file in ${PATCHFILES}; do \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
-			if [ -h $$file -o -h `${BASENAME} $$file` ]; then \
+			if [ -L $$file -o -L `${BASENAME} $$file` ]; then \
 				${ECHO_MSG} ">> ${_DISTDIR}/$$file is a broken symlink."; \
 				${ECHO_MSG} ">> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
 				${ECHO_MSG} ">> Please correct this problem and try again."; \
@@ -2023,7 +2023,7 @@ plist: install
 	  ld=""; \
 	  for f in `${FIND} ${PREFIX} -newer ${INSTALL_PRE_COOKIE} -print 2> /dev/null`; do \
 	   ff=`${ECHO} $$f | ${SED} -e 's|^${PREFIX}/||'`; \
-	   if [ -d $$f -a ! -h $$f ]; then dirs="$$ff $$dirs"; \
+	   if [ -d $$f -a ! -L $$f ]; then dirs="$$ff $$dirs"; \
 	   else \
 	    ${ECHO} $$ff; \
 	    if ${ECHO} $$f | ${GREP} -E -q -e '[^/]+\.so\.[0-9]+\.[0-9]+$$'; then \
