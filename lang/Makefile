@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2001/03/13 23:00:14 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2001/03/27 01:59:40 kevlo Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -29,6 +29,7 @@
 #    SUBDIR += itcl
 #    SUBDIR += javac_netscape
 #    SUBDIR += jdk
+     SUBDIR += jikes
      SUBDIR += kaffe
      SUBDIR += klone
 #    SUBDIR += lcc
