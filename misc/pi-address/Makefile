@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/06/19 20:47:33 jakob Exp $
+# $OpenBSD: Makefile,v 1.19 2004/08/10 09:48:18 xsa Exp $
 
 COMMENT=	"PalmPilot address database editor"
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	yes
 MASTER_SITES=	${HOMEPAGE} \
 		ftp://ftp.belug.org/pub/user/mw/pilot/
 
-MODULES=	qt
+MODULES=	x11/qt
 LIB_DEPENDS=	pisock::comms/pilot-link
 
 USE_X11=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/12/29 19:49:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2004/08/10 09:48:18 xsa Exp $
 
 COMMENT=		"GNU command line utilities"
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNU:=sh-utils/}
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 SEPARATE_BUILD=		concurrent
 USE_GMAKE=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/02/25 00:23:07 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/10 09:48:17 xsa Exp $
 
 COMMENT=	"file monitor"
 
@@ -19,7 +19,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3
 
-MODULES=	kde
+MODULES=	x11/kde
 
 MAKE_ENV=	${CONFIGURE_ENV}
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/02/25 02:35:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2004/08/10 09:48:17 xsa Exp $
 
 COMMENT=		"Qt-based CD creation tool"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.drahthaar.clara.net/ \
 			http://www.jakemsr.com/openbsd/ports/
 
-MODULES=		qt2
+MODULES=		x11/qt2
 
 RUN_DEPENDS=		:cdrtools-*:sysutils/cdrtools
 

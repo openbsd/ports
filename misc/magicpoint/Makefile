@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/04/09 09:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2004/08/10 09:48:18 xsa Exp $
 
 COMMENT=	"X11-based presentation tool"
 
@@ -21,7 +21,7 @@ LIB_DEPENDS+=	ttf.1::print/freetype \
 		ungif.5::graphics/libungif
 RUN_DEPENDS+=	pnmscale::graphics/netpbm
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 USE_X11=	Yes
 CONFIGURE_STYLE=autoconf gnu imake no-autoheader

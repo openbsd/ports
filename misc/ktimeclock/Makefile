@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/01/19 03:40:32 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2004/08/10 09:48:17 xsa Exp $
 
 COMMENT=	"task-based timeclock for KDE"
 
@@ -20,7 +20,7 @@ MASTER_SITES=	${HOMEPAGE}/downloads/v${VERSION}/tarball/
 
 LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3
 
-MODULES=	qt3
+MODULES=	x11/qt3
 MODQT_MT=	Yes
 
 PORTHOME=	${WRKDIR}

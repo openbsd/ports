@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/12/29 19:49:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2004/08/10 09:48:18 xsa Exp $
 
 COMMENT=	"redhat package manager"
 
@@ -16,7 +16,7 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 HOMEPAGE=	http://www.rpm.org/
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
 
-MODULES=	gettext
+MODULES=	devel/gettext
 LIB_DEPENDS+=	bz2.::archivers/bzip2 \
 		popt.0.::devel/popt
 

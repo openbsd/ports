@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/02/25 01:35:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/08/10 09:48:17 xsa Exp $
 
 COMMENT= 		"GNU versions of common file management utilities"
 COMMENT-ls=		"colorized GNU 'ls'"
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNU:=fileutils/}
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 SEPARATE_BUILD=		concurrent
 USE_GMAKE=		Yes

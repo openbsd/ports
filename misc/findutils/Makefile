@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/29 19:49:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/10 09:48:17 xsa Exp $
 
 COMMENT=		"finds and then operates on files"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNU:=findutils/}
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 CONFIGURE_STYLE=	gnu dest old
 CONFIGURE_ARGS=		--program-prefix="g"
