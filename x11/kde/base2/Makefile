@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/04/22 13:23:38 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/04/22 14:59:43 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 CATEGORIES=		x11 x11/kde
@@ -23,7 +23,7 @@ LIB_DEPENDS=	kdecore.3.::x11/kde/libs2 \
 BUILD_DEPENDS=	uic::x11/qt2-designer
 BUILD_DEPENDS+=	zsh:zsh-*:shells/zsh
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
 CONFIGURE_ARGS+=	--with-qt-libraries=${LOCALBASE}/lib/qt2
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
