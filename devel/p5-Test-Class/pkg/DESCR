@@ -1,0 +1,6 @@
+Test::Class provides a simple way of creating classes and objects
+to test your code in an xUnit style.
+                                                  
+Built using Test::Builder it is designed to work with other
+Test::Builder based modules (Test::More, Test::Differences,
+Test::Exception, etc.)    
