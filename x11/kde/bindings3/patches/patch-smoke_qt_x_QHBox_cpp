@@ -1,0 +1,26 @@
+$OpenBSD: patch-smoke_qt_x_QHBox_cpp,v 1.1 2003/12/08 02:14:11 brad Exp $
+--- smoke/qt/x_QHBox.cpp.orig	2003-01-16 05:03:52.000000000 -0500
++++ smoke/qt/x_QHBox.cpp	2003-11-22 17:19:42.000000000 -0500
+@@ -143,14 +143,22 @@ public:
+ 	x_QHBox* xret = new x_QHBox((bool)x[1].s_bool,(QWidget*)x[2].s_class);
+ 	x[0].s_class = (void*)xret;
+     }
++#if QT_VERSION < 0x030200
+     x_QHBox(bool x1, QWidget* x2) : QHBox(x1, x2) {
++#else
++    x_QHBox(bool x1, QWidget* x2) : QHBox(x1, x2, 0) { 
++#endif
+     }
+     static void x_22(Smoke::Stack x) {
+ 	// QHBox(bool)
+ 	x_QHBox* xret = new x_QHBox((bool)x[1].s_bool);
+ 	x[0].s_class = (void*)xret;
+     }
++#if QT_VERSION < 0x030200
+     x_QHBox(bool x1) : QHBox(x1) {
++#else
++    x_QHBox(bool x1) : QHBox(x1, 0, 0) {
++#endif
+     }
+     void x_23(Smoke::Stack x) {
+ 	// frameChanged()

@@ -1,0 +1,16 @@
+$OpenBSD: patch-smoke_qt_x_Qt_cpp,v 1.1 2003/12/08 02:14:11 brad Exp $
+--- smoke/qt/x_Qt.cpp.orig	2003-03-04 09:33:32.000000000 -0500
++++ smoke/qt/x_Qt.cpp	2003-11-22 17:19:48.000000000 -0500
+@@ -155,7 +155,11 @@ public:
+ 	x[0].s_enum = (long)Qt::WState_Reserved1;
+     }
+     static void x_49(Smoke::Stack x) {
+-	x[0].s_enum = (long)Qt::WState_Reserved2;
++#if QT_VERSION < 0x030200
++	x[0].s_enum = (long) Qt::WState_Reserved2;
++#else
++	x[0].s_enum = (long) Qt::WState_OwnSizePolicy;
++#endif
+     }
+     static void x_50(Smoke::Stack x) {
+ 	x[0].s_enum = (long)Qt::WState_CreatedHidden;
