@@ -1,7 +1,7 @@
---- configure.orig	Mon Mar  6 16:25:50 2000
-+++ configure	Mon Mar 20 20:34:09 2000
-@@ -6326,7 +6326,7 @@
- echo "configure:6327: checking for type of library to build" >&5
+--- configure.orig	Thu Jul 13 10:49:34 2000
++++ configure	Tue Sep  5 20:39:53 2000
+@@ -6369,7 +6369,7 @@
+ echo "configure:6370: checking for type of library to build" >&5
  if test "$enable_shared" = "yes" && test "x${TCL_SHLIB_SUFFIX}" != "x" ; then
    EXP_SHLIB_CFLAGS=$TCL_SHLIB_CFLAGS
 -  eval "EXP_SHARED_LIB_FILE=libexpect${TCL_SHARED_LIB_SUFFIX}"
