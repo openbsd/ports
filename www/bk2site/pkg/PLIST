@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2001/03/16 10:26:21 wilfried Exp $
 bin/bk2site
 man/man1/bk2site.1
 share/bk2site/dot.bk2siterc
