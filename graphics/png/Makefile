@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2001/04/03 14:08:30 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2001/04/21 00:59:11 brad Exp $
 
 COMMENT=	"library for manipulating PNG images"
 
@@ -36,5 +36,5 @@ test:	build
 .include <bsd.port.mk>
 
 .if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-MAKE_ENV=	NO_SHARED_LIBS=Yes
+MAKE_ENV+=	NO_SHARED_LIBS=Yes
 .endif
