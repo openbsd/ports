@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/13 19:08:46 jsyn Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/04 08:12:09 sturm Exp $
 
 COMMENT=		"perl5 module for interactive network functions"
 
-DISTNAME=		Net-Telnet-3.02
+DISTNAME=		Net-Telnet-3.03
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		net
-NEED_VERSION=		1.528
 
+# Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
