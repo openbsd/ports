@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/04/10 21:21:27 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/24 00:08:14 robert Exp $
 
 COMMENT=	"binary patch tools"
-DISTNAME=	bsdiff-4.1
+DISTNAME=	bsdiff-4.2
 CATEGORIES=	misc devel
 MASTER_SITES=	${HOMEPAGE}
 
@@ -15,7 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_FLAGS=	BZIP2=${LOCALBASE}/bin/bzip2
+MAKE_FLAGS=	BZIP2=${LOCALBASE}/bin/bzip2 \
+		CC='${CC}'
+
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 NO_REGRESS=	Yes
 

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/10 21:21:27 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/07/24 00:08:14 robert Exp $
 bin/bsdiff
 bin/bspatch
 man/man1/bsdiff.1
 man/man1/bspatch.1
+share/doc/bsdiff/
 share/doc/bsdiff/LICENSE
-@dirrm share/doc/bsdiff
