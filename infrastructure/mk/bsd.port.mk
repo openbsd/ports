@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.233 2000/03/21 21:23:54 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.234 2000/03/24 20:44:01 turan Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1826,7 +1826,7 @@ MTREE_FILE?=	/etc/mtree/BSD.x11.dist
 .  endif
 
 plist: install
-	@DESTDIR=${PREFIX} PREFIX=${PREFIX} LDCONFIG="${LDCONFIG}" MTREE_FILE=${_MTREE_FILE} \
+	@DESTDIR=${PREFIX} PREFIX=${PREFIX} LDCONFIG="${LDCONFIG}" MTREE_FILE=${MTREE_FILE} \
 	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
 	perl ${PORTSDIR}/infrastructure/install/make-plist > ${PLIST}-auto
 .endif
