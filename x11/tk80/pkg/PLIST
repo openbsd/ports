@@ -1,6 +1,6 @@
 bin/wish8.0
 lib/libtk80.a
-lib/libtk80.so.1.4
+lib/libtk80.so.1.5
 @exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %B
 lib/tk8.0/tkConfig.sh
 lib/tk8.0/images/README

@@ -1,6 +1,6 @@
---- configure.orig	Mon Aug 31 23:06:42 1998
-+++ configure	Tue Nov  3 18:38:58 1998
-@@ -842,14 +842,14 @@
+--- configure.orig	Fri Mar 19 15:45:39 1999
++++ configure	Fri Mar 19 15:50:03 1999
+@@ -874,14 +874,14 @@
    withval="$with_tcl"
    TCL_BIN_DIR=$withval
  else
@@ -18,16 +18,16 @@
  fi
  
  #--------------------------------------------------------------------
-@@ -889,6 +889,8 @@
- CFLAGS_DEBUG=$TCL_CFLAGS_DEBUG
+@@ -922,6 +922,8 @@
  CFLAGS_OPTIMIZE=$TCL_CFLAGS_OPTIMIZE
+ EXTRA_CFLAGS=$TCL_EXTRA_CFLAGS
  
 +TCL_SRC_DIR=${prefix}/include/tcl${TCL_VERSION}
 +
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
  # If Tcl and Tk are installed in different places, adjust the library
-@@ -2554,6 +2556,7 @@
+@@ -2600,6 +2602,7 @@
  s%@TCL_BUILD_LIB_SPEC@%$TCL_BUILD_LIB_SPEC%g
  s%@TCL_DBGX@%$TCL_DBGX%g
  s%@TCL_LIB_FLAG@%$TCL_LIB_FLAG%g
