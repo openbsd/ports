@@ -1,18 +1,18 @@
---- ./tkrat/Makefile.in.orig	Tue Oct 12 13:31:46 1999
-+++ ./tkrat/Makefile.in	Fri Feb  4 01:58:57 2000
+--- tkrat/Makefile.in.orig	Thu Feb 17 15:05:56 2000
++++ tkrat/Makefile.in	Tue Mar 28 01:26:00 2000
 @@ -23,7 +23,11 @@
         CSUFFIX = @csuffix@
       TRANSFORM = @program_transform_name@
         LIB_DIR = @datadir@/`echo tkrat${VERSION} | sed '${TRANSFORM}'`
-+ RATLIB_SUFFIX = @RATLIB_SUFFIX@
++  BUSYLIB_VERSION = @BUSYLIB_VERSION@
++  SHLIB_SUFFIX = @SHLIB_SUFFIX@
       RATLIBDIR = ${libdir}/`echo ratatosk | sed '${TRANSFORM}'`
-+        RATLIB = ratatosk${RATLIB_SUFFIX}
-+BUSYLIB_SUFFIX = @BUSYLIB_SUFFIX@
-+       BUSYLIB = blt_busy${BUSYLIB_SUFFIX}
++        RATLIB = ratatosk${SHLIB_SUFFIX}.${VERSION}
++       BUSYLIB = blt_busy${SHLIB_SUFFIX}.${BUSYLIB_VERSION}
  INSTALL_PREFIX = @INSTALL_PREFIX@
  
  #-------- No changes should be done below --------
-@@ -71,7 +75,13 @@ tkrat.install: Makefile
+@@ -82,7 +86,13 @@
  	echo "set env(CONFIG_DIR) ${sysconfdir}/ratatosk" >>$@
  	echo "set env(COMPRESS) ${COMPRESS}" >>$@
  	echo "set env(CSUFFIX) ${CSUFFIX}" >>$@

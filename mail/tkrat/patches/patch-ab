@@ -1,6 +1,15 @@
---- ./lib/Makefile.in.orig	Sun Dec  5 22:40:51 1999
-+++ ./lib/Makefile.in	Fri Feb  4 03:41:29 2000
-@@ -79,7 +79,7 @@ SRC = ratAppInit.c ratFolder.c ratStdFol
+--- lib/Makefile.in.orig	Thu Jan 27 14:36:20 2000
++++ lib/Makefile.in	Tue Mar 28 00:59:58 2000
+@@ -69,7 +69,7 @@
+ CFLAGS = ${TK_DEFS} ${EXTRA_CFLAGS} -I${C_CLIENT} ${FIX_INCLUDE} ${INCLUDES} \
+ 	 ${SHLIB_CFLAGS} -DVERSION=\"${VERSION}\"
+ C_CLIENT_LIB = ${C_CLIENT}/c-client.a
+-RATLIB = ratatosk${RATLIB_SUFFIX}
++RATLIB = ratatosk${SHLIB_SUFFIX}.${VERSION}
+ DUMMYLIB = ratDummy${SHLIB_SUFFIX}
+ 
+ SRC = ratAppInit.c ratFolder.c ratStdFolder.c ratMessage.c ratCode.c \
+@@ -79,7 +79,7 @@
        ratDisFolder.c ratPrint.c
  OBJ = ${SRC:.c=.o}
  
@@ -9,7 +18,7 @@
  
  clean:
  	rm -f ${OBJ} ${RATLIB} ratDummy.o ${DUMMYLIB} core pkgIndex.tcl
-@@ -90,22 +90,18 @@ ${RATLIB}: ${OBJ} ${C_CLIENT_LIB}
+@@ -90,22 +90,18 @@
  ${DUMMYLIB}: ratDummy.o
  	${SHLIB_LD} -o ${DUMMYLIB} ratDummy.o $(EXTRA_LIBS) ${SHLIB_LD_LIBS}
  

@@ -1,6 +1,22 @@
---- ./util/Makefile.in.orig	Sun Dec  5 22:40:51 1999
-+++ ./util/Makefile.in	Fri Feb  4 05:51:37 2000
-@@ -67,9 +67,9 @@ BUSYSRC = blt_busy.c blt_window.c
+--- util/Makefile.in.orig	Mon Dec  6 06:40:51 1999
++++ util/Makefile.in	Mon Mar 27 23:54:34 2000
+@@ -41,7 +41,7 @@
+    SHLIB_SUFFIX = @SHLIB_SUFFIX@
+   SHLIB_LD_LIBS = @SHLIB_LD_LIBS@
+ BUSYLIB_VERSION = @BUSYLIB_VERSION@
+- BUSYLIB_SUFFIX = @BUSYLIB_SUFFIX@
++# BUSYLIB_SUFFIX = @BUSYLIB_SUFFIX@
+ LIB_RUNTIME_DIR = @LIB_INSTALL_DIR@
+         TK_DEFS = @TK_DEFS@
+          prefix = @prefix@
+@@ -61,15 +61,15 @@
+ DUMMYLIB = rat_dummy${SHLIB_SUFFIX}
+ CFLAGS = ${TK_DEFS} ${EXTRA_CFLAGS} ${FIX_INCLUDE} ${INCLUDES} \
+          ${SHLIB_CFLAGS} -DBUSYLIB_VERSION=\"${BUSYLIB_VERSION}\"
+-BUSYLIB = blt_busy${BUSYLIB_SUFFIX}
++BUSYLIB = blt_busy${SHLIB_SUFFIX}.${BUSYLIB_VERSION}
+ 
+ BUSYSRC = blt_busy.c blt_window.c
  BUSYOBJ = ${BUSYSRC:.c=.o}
  
  TARGETS = rat_tabbed.tcl rat_list.tcl rat_fbox.tcl rat_balloon.tcl \
@@ -12,7 +28,7 @@
  
  ${BUSYLIB}: ${BUSYOBJ}
  	${SHLIB_LD} -o ${BUSYLIB} ${BUSYOBJ} $(EXTRA_LIBS) ${SHLIB_LD_LIBS}
-@@ -87,7 +87,7 @@ install:  ${TARGETS} pkgIndex.tcl
+@@ -87,7 +87,7 @@
  	if test ! -d ${INSTALL_PREFIX}${LIB_DIR} ; then\
  	    ${INSTALL} -d ${INSTALL_PREFIX}${LIB_DIR} ;\
  	fi
