@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.30 2002/09/01 20:25:24 naddy Exp $
+#	$OpenBSD: Makefile,v 1.31 2002/11/03 15:50:19 naddy Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -11,7 +11,7 @@
     SUBDIR += bibview
 #   SUBDIR += c2ps
     SUBDIR += detex
-#   SUBDIR += dvi2tty
+    SUBDIR += dvi2tty
 #   SUBDIR += dvi2xx
     SUBDIR += dvipdfm
 #   SUBDIR += dvips
