@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/06/09 05:36:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.18 2002/06/14 20:29:02 naddy Exp $
 
 COMMENT=		"Tcl/Tk-based interface to the MH mail system"
 DISTNAME=		exmh-2.5
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_TCLTK:=exmh/}
 
-BUILD_DEPENDS=		:itcl-8.3.*:lang/tcl/8.3
+BUILD_DEPENDS=		:tcl-8.3.*:lang/tcl/8.3
 RUN_DEPENDS=		:expect-*:lang/expect\
 			:nmh-*:mail/nmh\
 			:metamail-*:mail/metamail\
