@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2001/03/24 01:34:00 avsm Exp $
-lib/libmcrypt.so.6.6
+@comment $OpenBSD: PFRAG.shared,v 1.5 2001/06/12 16:05:17 avsm Exp $
+lib/libmcrypt.so.6.7
 lib/libmcrypt/libarcfour.so.0.0
 lib/libmcrypt/libblowfish-compat.so.0.0
 lib/libmcrypt/libblowfish.so.0.0

@@ -1,6 +1,7 @@
---- ltconfig.orig	Thu Feb  1 07:27:33 2001
-+++ ltconfig	Tue Feb 20 13:12:58 2001
-@@ -1105,6 +1105,9 @@ cygwin* | mingw*)
+$OpenBSD: patch-aclocal_m4,v 1.1 2001/06/12 16:05:15 avsm Exp $
+--- aclocal.m4.orig	Tue Jun 12 16:15:04 2001
++++ aclocal.m4	Tue Jun 12 16:20:44 2001
+@@ -1269,6 +1269,9 @@ cygwin* | mingw* | pw32* )
      with_gnu_ld=no
    fi
    ;;
@@ -10,11 +11,11 @@
  
  esac
  
-@@ -1402,10 +1405,21 @@ else
+@@ -1673,10 +1676,21 @@ else
      ;;
  
    openbsd*)
--    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linkopts'
+-    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
 -    hardcode_libdir_flag_spec='-R$libdir'
      hardcode_direct=yes
      hardcode_shlibpath_var=no
@@ -34,18 +35,3 @@
      ;;
  
    os2*)
-@@ -2022,13 +2036,10 @@ netbsd*)
- 
- openbsd*)
-   version_type=sunos
--  if test "$with_gnu_ld" = yes; then
--    need_lib_prefix=no
--    need_version=no
--  fi
-   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
-   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
-   shlibpath_var=LD_LIBRARY_PATH
-+  deplibs_check_method='pass_all'
-   ;;
- 
- os2*)
