@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2004/06/30 07:43:31 kevlo Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2004/07/03 23:17:00 brad Exp $
 
 COMMENT=	"Berkeley DB package, revision ${REVISION}"
 
@@ -16,13 +16,12 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_SCRIPT=	../dist/configure
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-compat185 \
 			--enable-dump185 \
 			--enable-cxx \
-			--enable-static \
 			--includedir=$$\{prefix}/include/db${DEST_SUBDIR} \
-			--libdir=$$\{prefix}/lib/db${DEST_SUBDIR} \
-			${CONFIGURE_SHARED}
+			--libdir=$$\{prefix}/lib/db${DEST_SUBDIR}
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/dist
 
