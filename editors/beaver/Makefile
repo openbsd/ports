@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2003/04/11 09:54:04 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2003/08/22 15:51:24 couderc Exp $
 COMMENT=	"lightweight Gtk text editor with syntax highlighting"
 
 DISTNAME=	beaver-0.2.6
 CATEGORIES=	editors	
 
-HOMEPAGE=	http://beaver-project.org/
+HOMEPAGE=	http://www.nongnu.org/beaver/
 MASTER_SITES=	http://savannah.nongnu.org/download/beaver/
-
-MAINTAINER=	Vincent Derrien <vincent@ahoup.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
