@@ -1,6 +1,8 @@
---- INSTALL.orig	2004-03-25 11:25:08.000000000 +0100
-+++ INSTALL	2004-04-20 07:43:23.000000000 +0200
-@@ -37,7 +37,7 @@
+$OpenBSD: patch-INSTALL,v 1.8 2004/06/14 05:06:20 sturm Exp $
+
+--- INSTALL.orig	2004-06-02 12:07:40.000000000 +0200
++++ INSTALL	2004-06-13 18:40:54.000000000 +0200
+@@ -80,7 +80,7 @@ as sudo.
   ## user is in.)
  
      NOTE: DO MAKE SURE that the lock file is in a directory that is writable by
@@ -9,7 +11,7 @@
      to obtain the lock file, and it needs write access. The new default (as of
      1.9.37) should be fine in most cases.
  
-@@ -58,16 +58,16 @@
+@@ -101,16 +101,16 @@ as sudo.
  
      All tests must pass, otherwise, ask on the leafnode mailing list for help.
  
@@ -29,7 +31,7 @@
  
  	newaliases.
  
-@@ -119,12 +119,12 @@
+@@ -162,12 +162,12 @@ as sudo.
      discarded at the upstream server, posts being discarded when Message-IDs of
      different postings clash and other troubles.
  
@@ -44,7 +46,7 @@
      line.  Substituting "1" for the third "*", thus:
  
      0 4 * * 1 /usr/local/sbin/texpire
-@@ -133,9 +133,9 @@
+@@ -176,9 +176,9 @@ as sudo.
      details.
  
  9.  Make sure fetchnews is run at the appropriate time.  If you have a
@@ -56,7 +58,7 @@
      probably run fetchnews from /etc/ppp/ip-up.local or /etc/ppp/ip-up.
  
  10. (as root) Edit /etc/hosts.deny to add a line:
-@@ -183,11 +183,10 @@
+@@ -226,11 +226,10 @@ as sudo.
      incoming NNTP connections.  Here is my inetd.conf line (insert it at the
      leftmost column, without leading spaces!):
  
@@ -70,7 +72,7 @@
  
      Using leafnode without tcpd is not supported and opens your computer to
      abuse (even happens on modem lines that are only connected during the
-@@ -225,7 +224,7 @@
+@@ -268,7 +267,7 @@ as sudo.
  	    socket_type     = stream
  	    protocol        = tcp
  	    wait            = no
@@ -79,7 +81,7 @@
  	    server          = /usr/sbin/tcpd
  	    server_args     = /usr/local/sbin/leafnode
  	    instances       = 7
-@@ -291,7 +290,7 @@
+@@ -334,7 +333,7 @@ as sudo.
         #! /bin/sh
         exec 2>&1
         exec /usr/local/bin/tcpserver -c10 -l0 -H -v 127.0.0.1 119 \
@@ -88,7 +90,7 @@
         /usr/local/sbin/leafnode
  
         You may need to adjust the paths if your software is in a non-standard
-@@ -307,7 +306,7 @@
+@@ -350,7 +349,7 @@ as sudo.
         exec 2>&1
         exec /usr/local/bin/tcpserver -c10 -l0 -H -v -x nntp.cdb \
         127.0.0.1 119 \
@@ -97,7 +99,7 @@
  
         As above, adjust the paths and the IP.
  
-@@ -342,7 +341,7 @@
+@@ -385,7 +384,7 @@ as sudo.
      svscan should notice the new leafnode service within 5 seconds and
      start it.
  
@@ -106,7 +108,7 @@
      fetchnews reads a list of all newsgroups from your upstream server.  With
      an 28.8 modem, it can take as long as 60 minutes (depending on how many
      newsgroups your provider offers). To see fetchnews working, run it with
-@@ -369,7 +368,7 @@
+@@ -412,7 +411,7 @@ as sudo.
      After this, you should have empty files in
      /var/spool/news/interesting.groups/ for every group you want to read.
  
