@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure_in,v 1.9 2004/04/06 05:35:59 miod Exp $
---- configure.in.orig	2004-02-29 22:30:21.000000000 +0000
-+++ configure.in	2004-04-05 19:34:26.000000000 +0000
+$OpenBSD: patch-configure_in,v 1.10 2004/04/13 00:40:47 brad Exp $
+--- configure.in.orig	2004-02-29 17:30:21.000000000 -0500
++++ configure.in	2004-04-12 19:23:44.000000000 -0400
+@@ -9,7 +9,7 @@ dnl
+ dnl
+ AC_INIT(src/main.c)
+ AC_CONFIG_AUX_DIR(cfgaux)
+-AM_INIT_AUTOMAKE(squid, 2.5.STABLE5-CVS)
++AM_INIT_AUTOMAKE(squid, 2.5.STABLE5)
+ AM_CONFIG_HEADER(include/autoconf.h)
+ AC_REVISION($Revision: 1.10 $)dnl
+ AC_PREFIX_DEFAULT(/usr/local/squid)
 @@ -85,6 +85,8 @@ if test -z "$PRESET_CFLAGS"; then
      	    # sunos has too many warnings for this to be useful
  	    # motorola too

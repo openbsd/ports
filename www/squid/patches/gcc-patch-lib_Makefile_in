@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.4 2003/05/13 20:12:03 brad Exp $
+$OpenBSD: gcc-patch-lib_Makefile_in,v 1.1 2004/04/13 00:40:47 brad Exp $
 --- lib/Makefile.in.orig	Tue Feb 11 19:03:10 2003
 +++ lib/Makefile.in	Mon May 12 07:03:19 2003
 @@ -322,6 +322,13 @@ distclean-depend:

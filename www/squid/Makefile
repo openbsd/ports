@@ -1,11 +1,21 @@
-# $OpenBSD: Makefile,v 1.59 2004/03/03 01:20:42 brad Exp $
+# $OpenBSD: Makefile,v 1.60 2004/04/13 00:40:47 brad Exp $
 
 COMMENT=	"WWW and FTP proxy cache and accelerator"
 
 DISTNAME=	squid-2.5.STABLE5
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www
-MASTER_SITES=	http://www.squid-cache.org/Versions/v2/2.5/
+MASTER_SITES=	${HOMEPAGE}Versions/v2/2.5/
+MASTER_SITES0=	${HOMEPAGE}Versions/v2/2.5/bugs/
 DIST_SUBDIR=	squid
+
+PATCH_DIST_STRIP= -p1
+PATCHFILES=	${DISTNAME}-helper_warning.patch:0 \
+		${DISTNAME}-vary.patch:0 \
+		${DISTNAME}-deny_info.patch:0 \
+		${DISTNAME}-CONNECT_timeout.patch:0 \
+		${DISTNAME}-cache_swap_log.patch:0 \
+		${DISTNAME}-rfc1035NameUnpack.patch:0
 
 HOMEPAGE=	http://www.squid-cache.org/
 
@@ -22,6 +32,15 @@ SUBST_VARS=	SQUIDDIR
 
 FLAVORS=	transparent
 FLAVOR?=
+
+.include <bsd.own.mk>
+
+USE_GCC3?= No
+
+# optimization workaround for gcc 2.95
+.if ${USE_GCC3:L} == "no"
+PATCH_LIST=     patch-* gcc-*
+.endif
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
