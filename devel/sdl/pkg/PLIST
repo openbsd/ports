@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/08/14 00:51:25 espie Exp $
-@option no-default-conflict
-@pkgcfl sdl-[0-9]*
+@comment $OpenBSD: PLIST,v 1.5 2003/08/14 00:59:58 espie Exp $
 bin/sdl-config
 include/SDL/SDL.h
 include/SDL/SDL_active.h
