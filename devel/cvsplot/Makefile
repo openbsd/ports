@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/04 01:44:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/12/06 21:11:50 sturm Exp $
 
 COMMENT=		"CVS-managed project analyzer"
 
-DISTNAME=		cvsplot-1.6.1
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		cvsplot-1.6.2
 CATEGORIES=		devel
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cvsplot/}
@@ -13,6 +12,7 @@ HOMEPAGE=		http://cvsplot.sourceforge.net/
 MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
 
 RUN_DEPENDS=		:p5-DateManip-*:converters/p5-DateManip \
+			:p5-String-ShellQuote-*:textproc/p5-String-ShellQuote \
 			:gnuplot-*:math/gnuplot
 
 # GPL
