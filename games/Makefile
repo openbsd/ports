@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 1999/06/24 13:11:18 niklas Exp $
+# $OpenBSD: Makefile,v 1.25 1999/09/16 18:51:00 fgsch Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -12,7 +12,7 @@
 #    SUBDIR += blue
      SUBDIR += bnetd
 #    SUBDIR += bs
-#    SUBDIR += cgoban
+     SUBDIR += cgoban
      SUBDIR += connect4
 #    SUBDIR += cosmo
 #    SUBDIR += crossfire
