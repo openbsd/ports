@@ -1,13 +1,18 @@
 --- misc/Makefile.in.orig	Fri May  1 02:47:40 1998
-+++ misc/Makefile.in	Tue Dec  7 21:58:58 1999
-@@ -164,10 +164,8 @@
- 	@list='$(lisp_LISP)'; for p in $$list; do \
- 	  if test -f "$$p"; then d= ; else d="$(srcdir)/"; fi; \
- 	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(lispdir)/$$p"; \
--	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(lispdir)/$$p; \
- 	  if test -f $${p}c; then \
- 	    echo " $(INSTALL_DATA) $${p}c $(DESTDIR)$(lispdir)/$${p}c"; \
--	    $(INSTALL_DATA) $${p}c $(DESTDIR)$(lispdir)/$${p}c; \
- 	  else : ; fi; \
- 	done
++++ misc/Makefile.in	Tue Mar  7 18:52:56 2000
+@@ -232,13 +232,13 @@
+ install-exec: install-binSCRIPTS
+ 	@$(NORMAL_INSTALL)
  
+-install-data: install-lispLISP install-localeDATA
++install-data: install-localeDATA
+ 	@$(NORMAL_INSTALL)
+ 
+ install: install-exec install-data all
+ 	@:
+ 
+-uninstall: uninstall-binSCRIPTS uninstall-lispLISP uninstall-localeDATA
++uninstall: uninstall-binSCRIPTS uninstall-localeDATA
+ 
+ install-strip:
+ 	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' INSTALL_SCRIPT='$(INSTALL_PROGRAM)' install
