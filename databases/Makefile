@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1 1997/11/27 23:44:39 niklas Exp $
+# $OpenBSD: Makefile,v 1.2 1998/01/03 21:55:02 joey Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
-    SUBDIR += db
+     SUBDIR += db
 #    SUBDIR += gdbm
 #    SUBDIR += gnats
 #    SUBDIR += msql
@@ -13,7 +13,7 @@
 #    SUBDIR += p5-Mysql
 #    SUBDIR += p5-Pg
 #    SUBDIR += pgaccess
-    SUBDIR += postgresql
+     SUBDIR += postgresql
 #    SUBDIR += typhoon
 #    SUBDIR += xmbase-grok
 #    SUBDIR += xmysql
