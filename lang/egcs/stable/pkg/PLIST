@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2002/11/24 11:52:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2002/11/25 15:37:59 brad Exp $
 @pkgcfl egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/cpp.info
 @unexec install-info --delete --info-dir=%D/info %D/info/cppinternals.info
@@ -78,6 +78,7 @@ lib/gcc-lib/${CONFIG}/${V}/include/stdbool.h
 lib/gcc-lib/${CONFIG}/${V}/include/syslimits.h
 lib/gcc-lib/${CONFIG}/${V}/include/varargs.h
 lib/gcc-lib/${CONFIG}/${V}/libgcc.a
+IFPPC:lib/gcc-lib/${CONFIG}/${V}/crtsavres.o
 lib/gcc-lib/${CONFIG}/${V}/specs
 lib/gcc-lib/${CONFIG}/${V}/tradcpp0
 lib/libiberty.a

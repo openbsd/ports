@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2002/11/24 11:52:32 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2002/11/25 15:37:59 brad Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc
 
@@ -82,7 +82,7 @@ MASTER_SITE_SUBDIR=${LATEST_DATE}
 
 DIST_SUBDIR=egcs
 
-DISTFILES=  gcc-3.2.1.tar.bz2
+DISTFILES=  gcc-$V.tar.bz2
 
 SITES=	
 
@@ -323,6 +323,13 @@ SED_PLIST=|sed -e '/^IFPIC:/s///'
 .else
 SED_PLIST=|sed -e '/^IFPIC:/d'
 .endif
+
+.if ${MACHINE_ARCH} == "powerpc"
+SED_PLIST+=|sed -e '/^IFPPC:/s///'
+.else
+SED_PLIST+=|sed -e '/^IFPPC:/d'
+.endif
+
 GCC_NAME=${WRKBUILD}/gcc/xgcc
 
 .if defined(PACKAGING) && defined(SUBPACKAGE)
