@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2001/05/09 18:30:29 millert Exp $
+# $OpenBSD: Makefile,v 1.32 2001/05/30 14:08:45 naddy Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
@@ -16,6 +16,7 @@
      SUBDIR += mtools
      SUBDIR += nut
      SUBDIR += nut,cgi
+     SUBDIR += pstree
      SUBDIR += radiusreport
      SUBDIR += rtty
      SUBDIR += safecat
