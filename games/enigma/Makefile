@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2002/10/26 20:44:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/11/03 20:53:18 naddy Exp $
 
 COMMENT=	"Oxyd/Rock'n'Roll clone"
 
-VERSION=	0.38
+VERSION=	0.50
 DISTNAME=	enigma-${VERSION}
 CATEGORIES=	games x11
 
-HOMEPAGE=	http://www.freesoftware.fsf.org/enigma/
+HOMEPAGE=	http://www.nongnu.org/enigma/
 
 MAINTAINER=     Lurene Grenier <lurene@daemonkitty.net>
 
@@ -15,20 +15,15 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	http://freesoftware.fsf.org/download/enigma/
+MASTER_SITES=	http://savannah.nongnu.org/download/enigma/
 
-LIB_DEPENDS=	SDL::devel/sdl			\
-		SDL_image::devel/sdl-image	\
-		SDL_mixer::devel/sdl-mixer	\
-		png.2::graphics/png		\
-		tiff.35::graphics/tiff
-
+LIB_DEPENDS=	SDL_image.1::devel/sdl-image	\
+		SDL_mixer.2::devel/sdl-mixer	\
+		lua.4,lualib.4::lang/lua
+		
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --with-png
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-
-NO_REGRESS=	Yes
+CONFIGURE_ARGS=	--with-png
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
 
 .include <bsd.port.mk>

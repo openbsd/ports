@@ -1,0 +1,14 @@
+$OpenBSD: patch-gfx_Makefile_in,v 1.1 2002/11/03 20:53:19 naddy Exp $
+--- gfx/Makefile.in.orig	Thu Aug 15 10:58:19 2002
++++ gfx/Makefile.in	Sun Nov  3 20:59:35 2002
+@@ -171,8 +171,8 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-local:
+-	$(INSTALL) -d -m 0755 $(pkgdatadir)
+-	cp -fp $(srcdir)/*.png $(pkgdatadir)
++	$(INSTALL) -d -m 0755 $(DESTDIR)$(pkgdatadir)
++	$(INSTALL_DATA) $(srcdir)/*.png $(DESTDIR)$(pkgdatadir)
+ 
+ uninstall-local:
+ 	rm -f $(pkgdatadir)/*.png

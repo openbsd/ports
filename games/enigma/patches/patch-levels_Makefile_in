@@ -1,0 +1,14 @@
+$OpenBSD: patch-levels_Makefile_in,v 1.1 2002/11/03 20:53:19 naddy Exp $
+--- levels/Makefile.in.orig	Thu Aug 15 10:58:20 2002
++++ levels/Makefile.in	Sun Nov  3 21:00:08 2002
+@@ -172,8 +172,8 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-local:
+-	$(INSTALL) -d -m 0755 $(pkgdatadir)
+-	cp -fp $(srcdir)/*.lua $(srcdir)/*.png $(pkgdatadir)
++	$(INSTALL) -d -m 0755 $(DESTDIR)$(pkgdatadir)
++	$(INSTALL_DATA) $(srcdir)/*.lua $(srcdir)/*.png $(DESTDIR)$(pkgdatadir)
+ 
+ uninstall-local:
+ 	rm -f $(pkgdatadir)/*.lua $(pkgdatadir)/*.png
