@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1999/12/28 11:22:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2000/02/28 09:40:59 camield Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
@@ -10,6 +10,7 @@
 #    SUBDIR += cd-write
      SUBDIR += cfengine
      SUBDIR += contool
+     SUBDIR += daemontools
      SUBDIR += idled
      SUBDIR += lsof
 #    SUBDIR += manck
