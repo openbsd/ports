@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: out-of-date,v 1.5 2001/07/19 02:49:56 espie Exp $
+# $OpenBSD: out-of-date,v 1.6 2003/08/02 11:17:37 espie Exp $
 # Copyright (c) 1999
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -23,43 +23,19 @@
 # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 
-# Check for simple discrepancies between installed packages and the
-# /usr/ports INDEX
+# Check for simple discrepancies between installed packages and the ports tree
 
 : ${PORTSDIR:=/usr/ports}
 
-FILE=${PORTSDIR}/INDEX
+echo "Make sure your ports tree is up-to-date"
 
-echo ">>> Is ${PORTSDIR}/INDEX up-to-date ?"
-echo ">>> Otherwise, this script will find out outdated flavors of packages"
-echo ">>> compared to your installed packages..."
-
-pkg_info |while read fullname rest
-do
-	grep "^$fullname" $FILE >/dev/null || {
-		basename=`echo $fullname |sed -e 's/^\(.*\)-.*/\1/'`
-		newname=`grep "^$basename-" $FILE |cut -f1 -d\|`
-		if [ X"$newname" == X ]
-		then
-			basename=`echo $basename |sed -e 's/^\(.*\)-.*/\1/'`
-			newname=`grep "^$basename-" $FILE |cut -f1 -d\|`
-		fi
-		# some packages exist in several distinct flavors
-		if [ `echo $newname| wc -w` -ge 2 ]
-		then
-			echo -n "Update $fullname to one of "
-			echo $newname|while read item
-				do
-					echo -n "$item "
-				done
-			echo ""
-		else
-			if [ -n "$newname" ]; then
-				echo "Update $fullname to $newname"
-			else
-				echo "$fullname not in INDEX"
-			fi
-		fi
-		}
-done
-
+TMPDIR=`mktemp -d /tmp/outdated.XXXXXXXXX`
+trap "rm -r $TMPDIR" 0 1 2 3 15
+echo "Generate specs"
+pkg_info -f -a|sed -n -e 's/.*Comment: subdir=//p'|sed -e 's/ cdrom=.*//' >$TMPDIR/specs
+echo "Check new package names"
+cd $PORTSDIR && make SUBDIRLIST=$TMPDIR/specs show=FULLPKGNAME\${SUBPACKAGE} ECHO_MSG=: |sort >$TMPDIR/new
+echo "Record old package names"
+pkg_info|cut -d\  -f1|sort >$TMPDIR/old
+echo "Show discrepancies"
+diff -u $TMPDIR/old $TMPDIR/new
