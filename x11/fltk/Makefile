@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 16:21:18 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/01/02 21:42:40 matt Exp $
 
-VER=		1.0.9
+VER=		1.0.10
 PKGNAME=	fltk-${VER}
 DISTNAME=	${PKGNAME}-source
 
