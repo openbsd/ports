@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_PL.svn-base,v 1.1.1.1 2004/12/08 19:00:49 msf Exp $
+--- Makefile.PL.orig	Thu Jul 22 20:10:58 2004
++++ Makefile.PL	Thu Jul 22 20:12:39 2004
+@@ -1,6 +1,6 @@
+ use ExtUtils::MakeMaker;
+ WriteMakefile(
+     NAME => "Locale::gettext",
+-    LIBS => ["-lintl"],
++    LIBS => ["-L%%LOCALBASE%%/lib -lintl"],
+     VERSION_FROM => 'gettext.pm', 
+ );
