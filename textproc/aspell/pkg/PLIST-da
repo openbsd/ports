@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-da,v 1.1 2002/04/19 22:32:08 lebel Exp $
+lib/aspell/da.multi
+lib/aspell/da.rws
+lib/aspell/danish.multi
+lib/aspell/dansk.multi
+share/aspell/da.dat
+share/aspell/da_phonet.dat
+share/pspell/da-aspell.pwli

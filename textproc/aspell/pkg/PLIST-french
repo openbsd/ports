@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST-french,v 1.2 2002/04/09 19:23:54 lebel Exp $
-lib/aspell/francais
-lib/aspell/french
-share/aspell/francais.dat
-share/aspell/francais_phonet.dat
-share/pspell/fr-aspell.pwli

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-eo,v 1.1 2002/04/19 22:32:08 lebel Exp $
+lib/aspell/eo.multi
+lib/aspell/eo.rws
+lib/aspell/esperanto.multi
+share/aspell/eo.dat
+share/pspell/eo-aspell.pwli

@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST-danish,v 1.2 2002/04/09 19:23:54 lebel Exp $
-lib/aspell/dansk
-lib/aspell/danish
-share/aspell/dansk.dat
-share/aspell/dansk_phonet.dat
-share/pspell/da-aspell.pwli

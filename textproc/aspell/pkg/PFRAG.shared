@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2001/08/07 15:13:19 lebel Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2002/04/19 22:32:08 lebel Exp $
 lib/libaspell.so.11.1
 DYNLIBDIR(%D/lib)

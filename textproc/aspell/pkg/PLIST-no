@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-no,v 1.1 2002/04/19 22:32:08 lebel Exp $
+lib/aspell/no.multi
+lib/aspell/no.rws
+lib/aspell/norsk.multi
+lib/aspell/norwegian.multi
+share/aspell/no.dat
+share/pspell/no-aspell.pwli

@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-fo,v 1.1 2002/04/19 22:32:08 lebel Exp $
+lib/aspell/faroese.multi
+lib/aspell/fo.multi
+lib/aspell/fo.rws
+lib/aspell/føroyskt.multi
+share/aspell/fo.dat
+share/aspell/fo_phonet.dat
+share/pspell/fo-aspell.pwli

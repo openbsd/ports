@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST-de,v 1.1 2002/04/19 22:32:08 lebel Exp $
+lib/aspell/de-only.rws
+lib/aspell/de.multi
+lib/aspell/de_CH-only.rws
+lib/aspell/de_CH.multi
+lib/aspell/de_DE-only.rws
+lib/aspell/de_DE.multi
+lib/aspell/de_ch-only.rws
+lib/aspell/de_ch.multi
+lib/aspell/de_de-only.rws
+lib/aspell/de_de.multi
+lib/aspell/deutsch.multi
+lib/aspell/german.multi
+lib/aspell/swiss.multi
+share/aspell/de.dat
+share/aspell/de_phonet.dat
+share/pspell/de-aspell.pwli
+share/pspell/de_CH-aspell.pwli
+share/pspell/de_DE-aspell.pwli
