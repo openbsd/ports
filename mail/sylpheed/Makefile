@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/03 15:41:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/02/06 06:23:42 naddy Exp $
 
-DISTNAME=	sylpheed-0.4.60
+DISTNAME=	sylpheed-0.4.61
 CATEGORIES=    	mail news x11
 NEED_VERSION=	1.336
 HOMEPAGE=	http://sylpheed.good-day.net
