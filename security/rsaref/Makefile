@@ -4,7 +4,7 @@
 # Date created:         2 December 1997
 # Whom:                 niklas
 #
-# $OpenBSD: Makefile,v 1.3 1998/04/12 21:41:02 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1999/02/18 02:37:37 marc Exp $
 # $FreeBSD: Makefile,v 1.3 1997/07/17 15:12:58 max Exp $
 #
 
@@ -32,10 +32,9 @@ do-install:
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} rsa.h _des.h _md2.h _md5.h rsaref.h global.h \
 			${PREFIX}/include
-.if (${MACHINE_ARCH} != "alpha")
-	cd ${WRKSRC} && \
-		${INSTALL_DATA} librsaref.a librsaref.so.2.0 \
-			${PREFIX}/lib
+	cd ${WRKSRC} && ${INSTALL_DATA} librsaref.a ${PREFIX}/lib
+.if !defined(NO_SHARED_LIBS)
+	cd ${WRKSRC} && ${INSTALL_DATA} librsaref.so.2.0 ${PREFIX}/lib
 .endif
 	${LDCONFIG} -m ${PREFIX}/lib
 	install -d -m 555 ${PREFIX}/share/doc/rsaref

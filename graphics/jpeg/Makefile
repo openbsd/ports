@@ -3,7 +3,7 @@
 # Date created:		December 2, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 1998/05/06 02:48:16 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1999/02/18 02:37:30 marc Exp $
 #
 
 DISTNAME=		jpegsrc.v6b
@@ -14,7 +14,7 @@ MASTER_SITES=		ftp://ftp.uu.net/graphics/jpeg/
 MAINTAINER=		angelos@openbsd.org
 WRKSRC=			${WRKDIR}/jpeg-6b
 GNU_CONFIGURE=	yes
-.if (${MACHINE_ARCH} != "alpha")
+.if !defined(NO_SHARED_LIBS)
 CONFIGURE_ARGS+=	--enable-shared
 .endif
 CONFIGURE_ARGS+=	--enable-static

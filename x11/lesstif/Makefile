@@ -3,7 +3,7 @@
 # Date created:		December 10, 1996
 # Whom:			form@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.16 1998/12/10 07:42:28 form Exp $
+# $OpenBSD: Makefile,v 1.17 1999/02/18 02:37:40 marc Exp $
 # FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp
 #
 
@@ -23,7 +23,7 @@ USE_X11=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-debug
 CONFIGURE_ARGS+=	--enable-build-12
-.if (${MACHINE_ARCH} != "alpha")
+.if !defined(NO_SHARED_LIBS)
 CONFIGURE_ARGS+=	--enable-shared
 .endif
 CONFIGURE_ARGS+=	--enable-static

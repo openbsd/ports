@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/02/16 06:27:37 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1999/02/18 02:37:39 marc Exp $
 #
 
 # What port/package will be created
@@ -20,7 +20,7 @@ MASTER_SITES=		ftp://ftp.gimp.org/pub/gtk/v1.0/ \
 USE_X11=		yes
 
 GNU_CONFIGURE=		yes
-.if (${MACHINE_ARCH} != "alpha")
+.if !defined(NO_SHARED_LIBS)
 CONFIGURE_ARGS+=	--enable-shared
 .endif
 CONFIGURE_ARGS+=	--enable-static

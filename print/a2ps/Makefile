@@ -3,7 +3,7 @@
 # Date created:         31 January 1998
 # Whom:                 Tobias Weingartner (weingart@openbsd.org)
 #
-# $OpenBSD: Makefile,v 1.6 1998/09/30 03:27:07 angelos Exp $
+# $OpenBSD: Makefile,v 1.7 1999/02/18 02:37:37 marc Exp $
 #
 
 DISTNAME=	a2ps-4.10.4
@@ -36,7 +36,7 @@ STRIP=
 CONFIGURE_ARGS=		--with-medium=$(PAPERSIZE) \
 			--enable-static \
 			--sysconfdir=/etc
-.if (${MACHINE_ARCH} == "alpha")
+.if defined(NO_SHARED_LIBS)
 CONFIGURE_ARGS+=	--disable-shared
 .else
 CONFIGURE_ARGS+=	--enable-shared

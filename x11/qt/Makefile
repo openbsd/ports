@@ -3,7 +3,7 @@
 # Date created:		9 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.7 1998/11/27 10:42:45 form Exp $
+# $OpenBSD: Makefile,v 1.8 1999/02/18 02:37:40 marc Exp $
 # FreeBSD: Makefile,v 1.18 1998/07/20 16:51:14 andreas Exp
 #
 
@@ -30,7 +30,7 @@ USE_GMAKE=	yes
 USE_X11=	yes
 MAKE_ENV+=	QTDIR=${WRKSRC}
 
-.if ( ${MACHINE_ARCH} == "alpha" )
+.if defined(NO_SHARED_LIBS)
 USE_TARGET=	openbsd-g++-static
 .else
 USE_TARGET=	openbsd-g++-shared
@@ -139,7 +139,7 @@ post-configure:
 
 do-install:
 	${INSTALL_PROGRAM} $(WRKDIR)/qt-${MAJ}.${MIN}/bin/moc $(X11BASE)/bin
-.if ( ${MACHINE_ARCH} == "alpha" )
+.if defined(NO_SHARED_LIBS)
 	${INSTALL_DATA} $(WRKDIR)/qt-${MAJ}.${MIN}/lib/libqt.a $(X11BASE)/lib
 .else
 	${INSTALL_DATA} $(WRKDIR)/qt-${MAJ}.${MIN}/lib/libqt.so.${MAJ}.${MIN} \

@@ -3,7 +3,7 @@
 # Date created:		December 17, 1997
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.2 1998/06/30 22:29:09 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/02/18 02:37:30 marc Exp $
 #
 
 DISTNAME=	mpeg_lib-1.2.1
@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/mpeg_lib
 # on a host that does not support shared libs, e.g. the alpha,
 # apply one more patch.
 #
-.if (${MACHINE_ARCH} == "alpha")
+.if defined(NO_SHARED_LIBS)
 post-patch:
 	@(cd ${DISTDIR}; ${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/patch)
 .endif

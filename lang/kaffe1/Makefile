@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1998/12/24 03:37:10 ian Exp $
+# $OpenBSD: Makefile,v 1.6 1999/02/18 02:37:34 marc Exp $
 #
 # Relevant URLs:	http://www.transvirtual.com/kaffe/
 
@@ -14,7 +14,7 @@ MAINTAINER=	ian@OpenBSD.ORG
 
 # build/configuration variables
 GNU_CONFIGURE=		yes
-.if (${MACHINE_ARCH} != "alpha")
+.if !defined(NO_SHARED_LIBS)
 CONFIGURE_ARGS+=	--enable-shared
 .endif
 

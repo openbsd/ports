@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/02/06 21:44:36 todd Exp $
+# $OpenBSD: Makefile,v 1.3 1999/02/18 02:37:28 marc Exp $
 #
 
 DISTNAME=       libggi-2.0b1
@@ -16,7 +16,7 @@ MAINTAINER=     todd@openbsd.org
 
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
-.if (${MACHINE_ARCH} != "alpha")
+.if !defined(NO_SHARED_LIBS)
 CONFIGURE_ARGS+=       --enable-shared
 .endif
 

@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.30 1999/02/14 19:33:31 espie Exp $
+# $OpenBSD: Makefile,v 1.31 1999/02/18 02:37:32 marc Exp $
 #
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -281,7 +281,7 @@ CONFIGURE_ARGS += --with-ld=${LD_PATH}
 CONFIGURE_ARGS += --with-gnu-ld 
 .endif
 
-.if (${MACHINE_ARCH} != "alpha")
+.if !defined(NO_SHARED_LIBS)
 CONFIGURE_ARGS+=--enable-shared
 .endif
 

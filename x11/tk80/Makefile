@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/01/11 04:51:39 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1999/02/18 02:37:41 marc Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 #
 
@@ -13,7 +13,7 @@ LIB_DEPENDS=	tcl80.1.4:${PORTSDIR}/lang/tcl80
 
 WRKSRC=		${WRKDIR}/tk8.0.4/unix
 GNU_CONFIGURE=	yes
-.if (${MACHINE_ARCH} != "alpha")
+.if !defined(NO_SHARED_LIBS)
 CONFIGURE_ARGS=	--enable-shared
 .endif
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR} PATH=${PATH}:${X11BASE}/bin

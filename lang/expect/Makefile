@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1998/10/21 17:31:44 niklas Exp $
+# $OpenBSD: Makefile,v 1.7 1999/02/18 02:37:33 marc Exp $
 #
 
 DISTNAME=	expect
@@ -17,7 +17,7 @@ CONFIGURE_ARGS= --with-tclconfig=${PREFIX}/lib/tcl8.0 \
 		--with-tclinclude=${PREFIX}/include/tcl8.0 \
 		--with-tkconfig=${PREFIX}/lib/tk8.0 \
 		--with-tkinclude=${PREFIX}/include/tk8.0
-.if (${MACHINE_ARCH} != "alpha")
+.if !defined(NO_SHARED_LIBS)
 CONFIGURE_ARGS+=--enable-shared
 .endif
 

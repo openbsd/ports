@@ -7,7 +7,7 @@ MASTER_SITES=		${MASTER_SITE_GNU}
 
 GNU_CONFIGURE=		yes
 
-.if (${MACHINE_ARCH} == "alpha")
+.if defined(NO_SHARED_LIBS)
 CONFIGURE_ARGS+=       --disable-shared
 .endif
 

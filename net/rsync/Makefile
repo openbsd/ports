@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/26 19:41:21 espie Exp $
+# $OpenBSD: Makefile,v 1.3 1999/02/18 02:37:36 marc Exp $
 # Version required: 2.2.0
 # Date created: 3 nov 98
 # Whom: Marc Espie (espie@openbsd.org)
@@ -15,7 +15,7 @@ MASTER_SITES=		ftp://rsync.samba.org/pub/rsync/
 
 GNU_CONFIGURE=		yes
 
-.if (${MACHINE_ARCH} != "alpha")
+.if !defined(NO_SHARED_LIBS)
 CONFIGURE_ARGS+=	--enable-shared
 .endif
 

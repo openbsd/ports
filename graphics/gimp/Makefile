@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1998/11/08 01:38:42 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1999/02/18 02:37:29 marc Exp $
 #
 
 # What port/package will be created
@@ -21,7 +21,7 @@ LIB_DEPENDS=		gtk\\.1\\.:${PORTSDIR}/x11/gtk+ \
 
 USE_X11=		yes
 GNU_CONFIGURE=		yes
-.if (${MACHINE_ARCH} != "alpha")
+.if !defined(NO_SHARED_LIBS)
 CONFIGURE_ARGS+=	--enable-shared
 .endif
 CONFIGURE_ARGS+=	--enable-static

@@ -3,7 +3,7 @@
 # Date created:		1998-Apr-21
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.5 1998/11/24 00:07:10 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1999/02/18 02:37:28 marc Exp $
 #
 
 DISTNAME=		ImageMagick-4.1.4
@@ -27,7 +27,7 @@ LIB_DEPENDS=		jpeg.62.:${PORTSDIR}/graphics/jpeg \
 
 USE_X11=		yes
 GNU_CONFIGURE=		yes
-.if (${MACHINE_ARCH} != "alpha")
+.if !defined(NO_SHARED_LIBS)
 CONFIGURE_ARGS+=	--enable-shared
 .endif
 CONFIGURE_ARGS+=	--enable-static
