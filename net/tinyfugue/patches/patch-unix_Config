@@ -1,5 +1,6 @@
---- unix/Config.orig	Mon Nov 16 16:43:32 1998
-+++ unix/Config	Thu Jan 14 04:56:10 1999
+$OpenBSD: patch-unix_Config,v 1.1 2000/09/20 22:42:12 avsm Exp $
+--- unix/Config.orig	Sat Mar  6 17:43:28 1999
++++ unix/Config	Wed Sep 20 12:05:16 2000
 @@ -33,9 +33,12 @@
  #   even if an old version is currently in use.  You can remove
  #   the old version manually later when it is no longer in use.
@@ -11,7 +12,7 @@
 +  PREFIX="/usr/local" 
 +fi
 +TF="${PREFIX}/bin/tf-${TFVER}"
-+LIBDIR="${PREFIX}/lib/tf-${TFVER}-lib"
++LIBDIR="${PREFIX}/share/tinyfugue"
 +SYMLINK="${PREFIX}/bin/tf"
  
  
@@ -27,12 +28,3 @@
  
  
  ### Flags.
-@@ -110,7 +113,7 @@
- # by removing the leading "#".
- 
- # CC=cc
--# CCFLAGS="-g"
-+CCFLAGS=${CFLAGS}
- 
- 
- ### Stripping.

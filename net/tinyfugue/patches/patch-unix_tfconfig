@@ -1,3 +1,4 @@
+$OpenBSD: patch-unix_tfconfig,v 1.1 2000/09/20 22:42:12 avsm Exp $
 --- unix/tfconfig.orig	Fri Apr  4 11:51:58 1997
 +++ unix/tfconfig	Mon Jun 16 18:00:45 1997
 @@ -211,17 +211,17 @@
