@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2001/07/04 14:58:19 lebel Exp $
+# $OpenBSD: INSTALL,v 1.3 2004/04/13 20:23:59 xsa Exp $
 #
 # Pre/post-installation setup of urlview
 
@@ -9,20 +9,21 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}
-SAMPLE_CONFIG_DIR=$PREFIX/share/examples/urlview
+CONFIG_FILE=${SYSCONFDIR}/urlview.conf
+SAMPLE_CONFIG_DIR=${PREFIX}/share/examples/urlview
+SAMPLE_CONFIG_FILE=${SAMPLE_CONFIG_DIR}/sample.urlview
 
 # Function: install configuration files
 #
 do_install_conf()
 {
     install -d -o root -g wheel ${CONFIG_DIR}
-    install -m 0644 -o root -g wheel ${SAMPLE_CONFIG_DIR}/sample.urlview \
-      ${CONFIG_DIR}/urlview.conf
+    install -m 0644 -o root -g wheel ${SAMPLE_CONFIG_FILE} ${CONFIG_FILE}
     echo
     echo "+---------------"
-    echo "| The $1 configuration files have been installed in ${CONFIG_DIR}."
-    echo "| Please view these files and change the configuration to meet"
-    echo "| your needs."
+    echo "| The $1 configuration file ${CONFIG_FILE},"
+    echo "| has been installed. Please view this file and change"
+    echo "| the configuration to meet your needs."
     echo "+---------------"
     echo
 }
@@ -33,10 +34,10 @@ do_notice_conf()
 {
     echo
     echo "+---------------"
-    echo "| The existing $1 configuration files in ${CONFIG_DIR} have NOT"
-    echo "| been changed.  You may want to compare them to the current samples"
-    echo "| in ${SAMPLE_CONFIG_DIR}, and update your configuration files"
-    echo "| as needed."
+    echo "| The existing $1 configuration file, ${CONFIG_FILE}"
+    echo "| has NOT been changed. You may want to compare it to the"
+    echo "| current sample file, ${SAMPLE_CONFIG_FILE},"
+    echo "| and update your configuration as needed."
     echo "+---------------"
     echo
 }
@@ -55,12 +56,10 @@ case $2 in
 	: nothing to pre-install for this port
 	;;
     POST-INSTALL)
-	if [ ! -d ${CONFIG_DIR} ]; then
-	    do_install_conf "$1"
-	elif [ ! -f ${CONFIG_DIR}/urlview.conf ]; then
-	    do_install_conf "$1"
-	else
+	if [ -f ${CONFIG_FILE} ]; then
 	    do_notice_conf "$1"
+	else
+	    do_install_conf "$1"
 	fi
 	;;
     *)

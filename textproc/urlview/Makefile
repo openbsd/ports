@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/11/15 15:12:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/04/13 20:23:59 xsa Exp $
 
 COMMENT=	"curses-based URL ripper"
 
@@ -32,6 +32,7 @@ CONFIGURE_ENV=	LIBS=-lcurses
 
 pre-build:
 	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${WRKSRC}/urlview.c
+	@perl -pi -e "s,/etc,${SYSCONFDIR},g" ${WRKSRC}/urlview.man
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/urlview
