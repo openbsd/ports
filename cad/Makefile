@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2003/02/08 12:49:04 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2003/10/25 18:34:28 pvalchev Exp $
 
+     SUBDIR += chipmunk
      SUBDIR += klogic
      SUBDIR += qcad
      SUBDIR += spice
