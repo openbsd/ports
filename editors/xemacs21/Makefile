@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2001/08/11 23:11:14 heko Exp $
-
-# 
-# Description
-#
+# $OpenBSD: Makefile,v 1.13 2002/02/06 01:17:08 brad Exp $
 
 COMMENT=		"heavily customizable and extensible editor"
 
 VERSION=		21.1.14
 DISTNAME=		xemacs-${VERSION}
 CATEGORIES=     	editors
-NEED_VERSION=		1.422
+NEED_VERSION=		1.500
 
 HOMEPAGE=		http://www.xemacs.org/
 
@@ -35,6 +31,9 @@ MASTER_SITES= 	ftp://ftp.xemacs.org/pub/xemacs/xemacs-21.1/ \
 # to select a flavor set to know them
 
 # build/configuration variables
+
+# this one is not "toggle-able" in the configure script
+MODULES=	gettext
 
 # XEmacs symlinks a lot of files in its source tree
 # preventing safe SEPARATE_BUILD
@@ -81,12 +80,7 @@ FAKE_FLAGS=	prefix='$${WRKINST}$${DESTDIR}${PREFIX}' \
 # Arch string for configure
 # copied from emacs and xemacs20 ports
 
-.if ${MACHINE} == "arc" || ${MACHINE} == "pmax"
-M_ARCH=         mipsel
-.else
-M_ARCH=         ${MACHINE_ARCH}
-.endif
-GCCARCH=        ${M_ARCH}-unknown-openbsd${OSREV}
+GCCARCH=        ${MACHINE_ARCH}-unknown-openbsd${OSREV}
 
 CONFIGURE_ARGS+=	${GCCARCH}
 SUBST_VARS=	GCCARCH
@@ -192,9 +186,6 @@ CONFIGURE_ARGS+=--with-database=berkdb
 .if ${FLAVOR:L:Mmule}
 CONFIGURE_ARGS+=--with-mule
 
-# this one is not "toggle-able" in the configure script
-LIB_DEPENDS+=	intl.1::devel/gettext
-
 . if ${FLAVOR:L:Mcanna}
 LIB_DEPENDS+=	canna16::japanese/canna
 CONFIGURE_ARGS+=--with-canna
@@ -259,13 +250,13 @@ STRIP_PROGS=	gnuclient b2m ctags etags ootags
 post-install:
 # Stripping
 .for file in ${STRIP_PROGS}
-	strip ${PREFIX}/bin/${file}
+	@strip ${PREFIX}/bin/${file}
 .endfor
 .for file in ${STRIP_EXECS}
-	strip ${PREFIX}/lib/${DISTNAME}/${GCCARCH}/${file}
+	@strip ${PREFIX}/lib/${DISTNAME}/${GCCARCH}/${file}
 .endfor
 .if !defined(LOCKDIR)
 	@rm -rf ${PREFIX}/lib/xemacs
 .endif
-	
+
 .include <bsd.port.mk>
