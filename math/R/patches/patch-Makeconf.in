@@ -1,0 +1,24 @@
+$OpenBSD: patch-Makeconf.in,v 1.1.1.1 2001/03/22 03:26:32 ian Exp $
+
+Their scripts use "install -u root" internally, to cp scripts and include
+files, f'gosh sakes. Try to make it honor ${SUDO} for these.
+
+--- Makeconf.in.orig	Sat Jan 27 16:48:35 2001
++++ Makeconf.in	Sun Mar 11 12:56:27 2001
+@@ -26,11 +26,11 @@
+ GNOMEUI_LIBS = @GNOMEUI_LIBS@
+ GNOME_LIBDIR = @GNOME_LIBDIR@
+ GNOME_INCLUDEDIR = @GNOME_INCLUDEDIR@
+-INSTALL = @INSTALL@
+-INSTALL_DATA = @INSTALL_DATA@
+-INSTALL_PROGRAM = @INSTALL_PROGRAM@
+-INSTALL_SCRIPT = @INSTALL_SCRIPT@
+-INSTALL_DIR = ${INSTALL} -d
++INSTALL = ${SUDO} @INSTALL@
++INSTALL_DATA = ${SUDO} @INSTALL_DATA@
++INSTALL_PROGRAM = ${SUDO} @INSTALL_PROGRAM@
++INSTALL_SCRIPT = ${SUDO} @INSTALL_SCRIPT@
++INSTALL_DIR = ${SUDO} ${INSTALL} -d
+ LATEX = @LATEX@
+ LDFLAGS = @LDFLAGS@
+ LIBGLADE_CFLAGS = @LIBGLADE_CFLAGS@
