@@ -3,12 +3,10 @@
 # Date created:		2 Apr 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.5 1999/11/03 01:23:25 turan Exp $
+# $OpenBSD: Makefile,v 1.6 1999/11/17 08:46:13 kevlo Exp $
 #
 
-BROKEN=			bad packing lists
-
-DISTNAME=		LPRng-3.5.1
+DISTNAME=		LPRng-3.6.12
 CATEGORIES=		sysutils print
 
 MAINTAINER=		marc@openbsd.org
@@ -19,8 +17,12 @@ EXTRACT_SUFX=		.tgz
 NO_CDROM=		"To many copyrights/licences to verify destribution OK"
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--with-lpddir=${PREFIX}/libexec
-CONFIGURE_ARGS+=	--with-admindir=${PREFIX}/sbin
+CONFIGURE_ARGS=         \
+			--with-sbindir=${PREFIX}/sbin \
+			--with-filterdir=${PREFIX}/libexec/filters \
+			--with-lpd_conf_path=/etc/lpd.conf \
+			--with-lpd_perms_path=/etc/lpd.perms \
+			--with-printcap_path=/etc/printcap
 
 MAKEFILE=		Makefile.bsd
 

@@ -1,14 +1,14 @@
---- configure.orig	Mon May 11 18:22:34 1998
-+++ configure	Fri Aug 14 16:32:45 1998
-@@ -1738,14 +1738,14 @@
- 
+--- configure.orig	Wed Nov 17 12:58:47 1999
++++ configure	Wed Nov 17 14:55:55 1999
+@@ -2556,14 +2556,14 @@
+ 	fi
  
  					TERMLIB=
 -		echo $ac_n "checking for tgetent in -lncurses""... $ac_c" 1>&6
--echo "configure:1743: checking for tgetent in -lncurses" >&5
+-echo "configure:2561: checking for tgetent in -lncurses" >&5
 -ac_lib_var=`echo ncurses'_'tgetent | sed 'y%./+-%__p_%'`
-+		echo $ac_n "checking for tgetent in -lcurses""... $ac_c" 1>&6
-+echo "configure:1743: checking for tgetent in -lcurses" >&5
++                echo $ac_n "checking for tgetent in -lcurses""... $ac_c" 1>&6
++echo "configure:2561: checking for tgetent in -lcurses" >&5
 +ac_lib_var=`echo curses'_'tgetent | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -17,18 +17,18 @@
 -LIBS="-lncurses  $LIBS"
 +LIBS="-lcurses  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 1751 "configure"
+ #line 2569 "configure"
  #include "confdefs.h"
-@@ -1773,7 +1773,7 @@
+@@ -2591,7 +2591,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
--  LIBS="$LIBS -lncurses"; TERMLIB=yes
-+  LIBS="$LIBS -lcurses"; TERMLIB=yes
+-  TERMLIB="$TERMLIB -lncurses"
++  TERMLIB="$TERMLIB -lcurses"
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -2751,7 +2751,7 @@
+@@ -3725,7 +3725,7 @@
  fi
  done
  
@@ -37,7 +37,20 @@
  do
  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
-@@ -4845,13 +4845,13 @@
+@@ -5950,10 +5950,10 @@
+ #ifdef HAVE_UNISTD_H
+ #include <unistd.h>
+ #endif
+-#if defined(SOLARIS)
++#if defined(HAVE_CURSES_H)
+ #include <curses.h>
+ #endif
+-#ifdef HAVE_TERM_H
++#ifdef 0
+ #include <term.h>
+ #endif
+ #ifdef HAVE_TERMIO_H
+@@ -6043,13 +6043,13 @@
  #ifdef HAVE_UNISTD_H
  #include <unistd.h>
  #endif
@@ -49,23 +62,7 @@
  #include <term.h>
  #endif
 -#ifdef HAVE_TERMIO_H
-+#if 0 /* term.h defines HAVE_TERMIO_H to 0 */
- #include <termio.h>
- #endif
- #ifdef HAVE_TERMCAP_H
-@@ -4933,13 +4933,13 @@
- #ifdef HAVE_UNISTD_H
- #include <unistd.h>
- #endif
--#if defined(SOLARIS)
-+#if defined(HAVE_CURSES_H)
- #include <curses.h>
- #endif
- #ifdef HAVE_TERM_H
- #include <term.h>
- #endif
--#ifdef HAVE_TERMIO_H
-+#if 0 /* term.h defines HAVE_TERMIO_H to 0 */
++#ifdef 0
  #include <termio.h>
  #endif
  #ifdef HAVE_TERMCAP_H
