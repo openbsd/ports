@@ -1,2 +1,4 @@
 bin/cdrecord
 man/man1/cdrecord.1
+share/doc/cdrecord/README
+@dirrm share/doc/cdrecord

@@ -1,10 +1,4 @@
-# OpenBSD makefile for:	cdrecord-current
-# Version required:			1.6.1
-# Date created:				7 Jun 1998
-# Whom:					niklas
-#
-# $OpenBSD: Makefile,v 1.5 1999/03/08 03:26:13 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.6 1999/08/27 01:58:28 brad Exp $
 
 DISTNAME=	cdrecord-1.6.1
 CATEGORIES=	misc
@@ -23,12 +17,13 @@ MAKE_ENV=	MAKEPROG=gmake
 # we instead explicitly install what we want.
 OBJDIR=		OBJ/${MACHINE}-openbsd-$(CC)
 do-install:
+	@{MKDIR} ${PREFIX}/share/doc/cdrecord
 	${INSTALL_PROGRAM} ${WRKSRC}/cdrecord/${OBJDIR}/cdrecord ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/cdrecord
 # We ship mkisofs in OpenBSD 2.3, uncomment these lines if you are on an
 # older system.
-#	${INSTALL_PROGRAM} ${WRKSRC}/mkisofs-1.11/${OBJDIR}/mkisofs \
-#	    ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 ${PREFIX}/man/man1
+#	${INSTALL_PROGRAM} ${WRKSRC}/mkisofs-1.11/${OBJDIR}/mkisofs ${PREFIX}/bin
 #	${INSTALL_MAN} ${WRKSRC}/mkisofs-1.11/mkisofs.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
