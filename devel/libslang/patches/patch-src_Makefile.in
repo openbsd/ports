@@ -1,18 +1,5 @@
 --- src/Makefile.in.orig	Sat Aug 19 22:20:31 2000
-+++ src/Makefile.in	Mon Sep  4 23:00:33 2000
-@@ -13,9 +13,9 @@
- #---------------------------------------------------------------------------
- # Compiler for producing a shared library (ELF)
- #---------------------------------------------------------------------------
--ELF_CC 		= @ELF_CC@
--ELF_CFLAGS	= @ELF_CFLAGS@
--ELF_LINK        = @ELF_LINK@
-+ELF_CC 		= $(CC)
-+ELF_CFLAGS	= $(CFLAGS) -fpic -DPIC
-+ELF_LINK        = ld -Bshareable -Bforcearchive
- ELF_DEP_LIBS	= @ELF_DEP_LIBS@
- 
- #---------------------------------------------------------------------------
++++ src/Makefile.in	Sat Sep 16 08:33:27 2000
 @@ -32,11 +32,13 @@
  #---------------------------------------------------------------------------
  # Directory where library is going to go when installed

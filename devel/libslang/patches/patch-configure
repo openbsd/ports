@@ -1,5 +1,14 @@
---- configure.orig	Mon Sep  4 22:16:58 2000
-+++ configure	Mon Sep  4 22:18:04 2000
+--- configure.orig	Sat Aug 19 22:20:18 2000
++++ configure	Sat Sep 16 08:32:23 2000
+@@ -1890,7 +1890,7 @@
+   * )
+     echo "Note: ELF compiler for host_os=$host_os may be wrong"
+     ELF_CC="\$(CC)"
+-    ELF_CFLAGS="\$(CFLAGS) -fPIC"
++    ELF_CFLAGS="\$(CFLAGS) -fpic -DPIC"
+     ELF_LINK="\$(CC) -shared"
+     ELF_LINK_CMD="\$(ELF_LINK)"
+     ELF_DEP_LIBS="\$(DL_LIB) -lm -lc"
 @@ -2240,7 +2240,8 @@
  slang_mminor_version=`echo $slang_version $slang_major_version $slang_minor_version |
   awk '{ print ($1 - $2*10000 - $3*100) }'`
