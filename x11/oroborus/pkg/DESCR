@@ -1,0 +1,4 @@
+Oroborus is a really minimalistic X11 window manager. It provides good
+default key bindings, full keyboard controls (in addition to the
+mouse!), is xpm-themable, GNOME compatible, NET_WM compatible, and sort
+of KDE compatible.
