@@ -119,7 +119,7 @@ share/mysql/korean/errmsg.sys
 share/mysql/korean/errmsg.txt
 share/mysql/make_binary_distribution
 share/mysql/my-example.cnf
-share/mysql/mysql-3.22.29.spec
+share/mysql/mysql-3.22.30.spec
 share/mysql/mysql-log-rotate
 share/mysql/mysql.server
 share/mysql/norwegian-ny/errmsg.sys

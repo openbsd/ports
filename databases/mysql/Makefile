@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2000/01/05 06:13:43 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2000/01/13 20:24:57 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
-DISTNAME=	mysql-3.22.29
+DISTNAME=	mysql-3.22.30
 CATEGORIES=	databases
-MASTER_SITES=	http://www.mysql.org/Downloads/MySQL-3.22/ \
-		http://web.tryc.on.ca/mysql/Downloads/MySQL-3.22/ \
+MASTER_SITES=	http://web.tryc.on.ca/mysql/Downloads/MySQL-3.22/ \
 		http://mysql.he.net/Downloads/MySQL-3.22/ \
 		http://www.buoy.com/mysql/Downloads/MySQL-3.22/ \
 		ftp://ftp.netcasting.net/pub/mysql/Downloads/MySQL-3.22/ \

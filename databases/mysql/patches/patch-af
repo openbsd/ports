@@ -1,5 +1,5 @@
---- scripts/safe_mysqld.sh.orig	Sun Dec 19 01:26:59 1999
-+++ scripts/safe_mysqld.sh	Sun Dec 19 01:29:21 1999
+--- scripts/safe_mysqld.sh.orig	Mon Jan 10 16:49:29 2000
++++ scripts/safe_mysqld.sh	Thu Jan 13 13:17:12 2000
 @@ -12,33 +12,9 @@
  
  trap '' 1 2 3 15			# we shouldn't let anyone kill us
@@ -37,7 +37,7 @@
  
  pid_file=$DATADIR/`@HOSTNAME@`.pid
  log=$DATADIR/`@HOSTNAME@`.log
-@@ -117,33 +93,6 @@
+@@ -124,33 +100,6 @@
    if test ! -f $pid_file		# This is removed if normal shutdown
    then
      break;
