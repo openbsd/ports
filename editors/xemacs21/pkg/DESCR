@@ -1,0 +1,22 @@
+About XEmacs:
+
+XEmacs (formerly known as Lucid Emacs) is a powerful, extensible text
+editor with full GUI support, initially based on an early version of
+GNU Emacs 19 from the Free Software Foundation and since kept up to
+date with recent versions of that product.
+
+XEmacs provides a great number of new features.  More details on
+XEmacs's functionality, including bundled packages, can be obtained
+through the info on-line information system.
+
+The XEmacs web page can be browsed, using any WWW browser at
+
+                    http://www.xemacs.org/
+
+Flavors:
+	mule, MUlti-Lingual Emacs
+	compface
+	nox11
+	clashdetect
+Tested on: i386 sparc
+

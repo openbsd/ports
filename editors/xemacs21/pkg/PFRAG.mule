@@ -1,0 +1,27 @@
+lib/xemacs-21.1.12/lisp/mule/arabic.elc
+lib/xemacs-21.1.12/lisp/mule/canna-leim.elc
+lib/xemacs-21.1.12/lisp/mule/chinese.elc
+lib/xemacs-21.1.12/lisp/mule/cyrillic.elc
+lib/xemacs-21.1.12/lisp/mule/english.elc
+lib/xemacs-21.1.12/lisp/mule/ethiopic.elc
+lib/xemacs-21.1.12/lisp/mule/european.elc
+lib/xemacs-21.1.12/lisp/mule/greek.elc
+lib/xemacs-21.1.12/lisp/mule/hebrew.elc
+lib/xemacs-21.1.12/lisp/mule/japanese.elc
+lib/xemacs-21.1.12/lisp/mule/kinsoku.elc
+lib/xemacs-21.1.12/lisp/mule/korean.elc
+lib/xemacs-21.1.12/lisp/mule/misc-lang.elc
+lib/xemacs-21.1.12/lisp/mule/mule-category.elc
+lib/xemacs-21.1.12/lisp/mule/mule-ccl.elc
+lib/xemacs-21.1.12/lisp/mule/mule-charset.elc
+lib/xemacs-21.1.12/lisp/mule/mule-cmds.elc
+lib/xemacs-21.1.12/lisp/mule/mule-coding.elc
+lib/xemacs-21.1.12/lisp/mule/mule-files.elc
+lib/xemacs-21.1.12/lisp/mule/mule-help.elc
+lib/xemacs-21.1.12/lisp/mule/mule-init.elc
+lib/xemacs-21.1.12/lisp/mule/mule-misc.elc
+lib/xemacs-21.1.12/lisp/mule/mule-tty-init.elc
+lib/xemacs-21.1.12/lisp/mule/mule-x-init.elc
+lib/xemacs-21.1.12/lisp/mule/thai-xtis-chars.elc
+lib/xemacs-21.1.12/lisp/mule/viet-chars.elc
+@dirrm lib/xemacs-21.1.12/lisp/mule

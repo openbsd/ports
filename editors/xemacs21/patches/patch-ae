@@ -1,0 +1,11 @@
+--- src/Makefile.in.in.orig	Mon Aug  7 23:15:59 2000
++++ src/Makefile.in.in	Mon Aug  7 23:17:49 2000
+@@ -304,7 +304,7 @@
+ #endif
+ 
+ LOADPATH =  EMACSBOOTSTRAPLOADPATH="${lispdir}:${blddir}"
+-DUMPENV = $(LOADPATH)
++DUMPENV = $(LOADPATH) EMACSPACKAGEPATH="${lispdir}:${blddir}"
+ 
+ release: temacs ${libsrc}DOC $(mo_file) ${other_files}
+ #ifdef CANNOT_DUMP

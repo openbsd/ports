@@ -1,0 +1,15 @@
+--- lisp/find-paths.el.orig	Sun Jun 11 17:10:10 2000
++++ lisp/find-paths.el	Sun Jun 11 17:13:42 2000
+@@ -105,6 +105,12 @@
+    (paths-file-readable-directory-p (paths-construct-path (list directory
+ 								"lib"
+ 								emacs-program-name)))
++   ;; Horrible kludge, if you don't like it, burn my car. --jyb
++   (paths-file-readable-directory-p 
++	(paths-construct-path 
++		(list directory "lib"
++			(concat
++				emacs-program-name "-" emacs-program-version))))
+    ;; in-place or windows-nt
+    (and 
+     (paths-file-readable-directory-p (paths-construct-path (list directory "lisp")))

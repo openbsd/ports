@@ -1,0 +1,13 @@
+--- src/editfns.c.orig	Mon Aug  7 23:50:56 2000
++++ src/editfns.c	Mon Aug  7 23:51:53 2000
+@@ -872,8 +872,8 @@
+ 	   * We probably should try to extract pw_dir from /etc/passwd,
+ 	   * before falling back to this.
+ 	   */
+-	  cached_home_directory = "/";
+-	  output_home_warning = 1;
++	  cached_home_directory = "/home/";
++	  output_home_warning = 0; /* disabled till I find the real problem */
+ #endif	/* !WINDOWSNT */
+ 	}
+       if (initialized && output_home_warning)
