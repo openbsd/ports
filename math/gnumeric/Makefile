@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/15 03:31:13 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/12/31 15:05:16 marcm Exp $
 
 COMMENT=		"spreadsheet application for GNOME"
 
@@ -25,8 +25,7 @@ BUILD_DEPENDS=		:pkgconfig->=0.14.0p1:devel/pkgconfig \
 RUN_DEPENDS=		:scrollkeeper->=0.3.11:textproc/scrollkeeper
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			gnomeprintui-2-2::x11/gnome/libgnomeprintui \
-			gsf-1.9.2::devel/libgsf \
-			gsf-gnome-1.9.2::devel/libgsf
+			gsf-1.9.2,gsf-gnome-1.9.2::devel/libgsf,-gnome
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
