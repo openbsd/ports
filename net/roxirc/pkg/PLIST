@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/17 15:28:54 kevlo Exp $
+bin/roxirc
+share/doc/roxirc/bindings
+share/doc/roxirc/config
+share/doc/roxirc/help
+share/doc/roxirc/menus
+share/doc/roxirc/prefs
+share/doc/roxirc/startup
+@dirrm share/doc/roxirc
