@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.214 2002/05/11 21:21:07 danh Exp $
+# $OpenBSD: Makefile,v 1.215 2002/05/20 22:24:15 jsyn Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -7,6 +7,7 @@
      SUBDIR += archie
      SUBDIR += ari-yahoo
      SUBDIR += arpcatch
+     SUBDIR += arpd
      SUBDIR += arping
      SUBDIR += arpwatch
      SUBDIR += axyftp
