@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/10/24 13:17:47 kevlo Exp $
+# $OpenBSD: Makefile,v 1.16 2001/02/12 02:39:11 kevlo Exp $
 
 DISTNAME=	swig1.3a5
 PKGNAME=	swig-1.3a5
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS+=	python::lang/python \
+BUILD_DEPENDS+=	python1.5::lang/python15 \
 		tclsh8.3::lang/tcl/8.3 \
 		guile::lang/guile \
 		ruby::lang/ruby
