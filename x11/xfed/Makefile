@@ -1,9 +1,4 @@
-# OpenBSD makefile for:    xfed
-# Date created:         May 18 1998
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.6 1999/11/15 01:55:17 turan Exp $
-#
+# $OpenBSD: Makefile,v 1.7 1999/12/27 00:32:12 fgsch Exp $
 
 DISTNAME=	xfed
 PKGNAME=	xfed-1.0
@@ -13,15 +8,10 @@ MASTER_SITES=	ftp://ftp.demon.co.uk/pub/graphics/systems/X11.old/pub/R6untarred/
 MAINTAINER=	angelos@openbsd.org
 
 USE_IMAKE=	yes
-MAKE_FLAGS=	MANDIR=${PREFIX}/man/man1
-BINDIR=${PREFIX}/bin -f
 
 # As the xfed tarball is created on the fly the checksum will always
 # be incorrect; so don't bother...
 #
 NO_CHECKSUM=	yes
-
-pre-clean:
-	-rm -rf ${.CURDIR}/src
 
 .include <bsd.port.mk>
