@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.116 1999/09/22 10:16:58 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.117 1999/09/22 11:49:23 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -822,6 +822,9 @@ TRUE?=		/usr/bin/true
 
 # Used to print all the '===>' style prompts - override this to turn them off.
 ECHO_MSG?=		${ECHO}
+
+# XXX
+_DEPEND_ECHO?=		${ECHO}
 
 # How to do nothing.  Override if you, for some strange reason, would rather
 # do something.
@@ -2039,18 +2042,19 @@ _DEPEND_THRU=FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME}
 
 # Nobody should want to override this unless PKGNAME is simply bogus.
 
+# XXX
 .if !target(package-name)
 package-name:
 .if (${FULL_PACKAGE_NAME} == "YES")
-	@${ECHO} `${MAKE} package-path`/${PKGNAME}
+	@${_DEPEND_ECHO} `${MAKE} package-path`/${PKGNAME}
 .else
-	@${ECHO} '${PKGNAME}'
+	@${_DEPEND_ECHO} '${PKGNAME}'
 .endif 
 .endif 
 
 .if !target(package-path)
 package-path:
-	@pwd | sed s@`cd ${PORTSDIR} ; pwd`/@@g
+	@pwd | ${SED} s@`cd ${PORTSDIR} ; pwd`/@@g
 .endif
 
 # Build (recursively) a list of package dependencies suitable for tsort
@@ -2061,7 +2065,7 @@ package-depends:
 	for dir in `${ECHO} ${LIB_DEPENDS} ${RUN_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
 		case $$pname in \
 			x) \
-			 pname=`${MAKE} ECHO='${ECHO} -n' package-name ${_DEPEND_THRU}`;; \
+			 pname=`${MAKE} _DEPEND_ECHO='${ECHO} -n' package-name ${_DEPEND_THRU}`;; \
 		esac; \
 		if cd $$dir 2>/dev/null; then \
 			${ECHO} -n "$$pname "; \
@@ -2266,7 +2270,7 @@ depends-list:
 	for dir in `${ECHO} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
 		 case $$pname in \
 			 x) \
-				 pname=`${MAKE} ECHO='${ECHO} -n' package-name ${_DEPEND_THRU}`;; \
+				 pname=`${MAKE} _DEPEND_ECHO='${ECHO} -n' package-name ${_DEPEND_THRU}`;; \
 			esac; \
 		if cd $$dir 2>/dev/null; then \
 			${ECHO} -n "$$pname "; \
