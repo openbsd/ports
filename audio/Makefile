@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/04/28 11:31:55 provos Exp $
+# $OpenBSD: Makefile,v 1.5 1998/05/17 01:06:33 angelos Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -21,7 +21,7 @@
      SUBDIR += rplay
 #    SUBDIR += rsynth
 #    SUBDIR += s3mod
-#    SUBDIR += sox
+     SUBDIR += sox
 #    SUBDIR += splay
 #    SUBDIR += timidity
 #    SUBDIR += tosha
