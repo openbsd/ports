@@ -1,4 +1,3 @@
-
 this code has not been audited for buffer overflows, etc.
 any more than the Linux kernel has. caveat user.
 
