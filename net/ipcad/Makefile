@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/04/29 04:25:30 form Exp $
+# $OpenBSD: Makefile,v 1.3 2002/04/29 04:34:24 form Exp $
 # $RuOBSD: Makefile,v 1.1.1.1 2002/04/08 02:46:36 form Exp $
 
 COMMENT=		"IP accounting daemon simulating Cisco ip accounting"
@@ -15,7 +15,8 @@ MASTER_SITES=		http://www.spelio.net.ru/soft/
 
 HOMEPAGE=		http://www.spelio.net.ru/soft/
 
-MAINTAINER=		Oleg Safiullin <form@openbsd.org>
+MAINTAINER=		Oleg Safiullin <form@openbsd.org> \
+			Alexander Yurchenko <grange@openbsd.ru>
 
 CONFIGURE_STYLE=	gnu
 
