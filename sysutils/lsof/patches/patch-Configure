@@ -1,7 +1,7 @@
-$OpenBSD: patch-Configure,v 1.15 2004/01/11 00:14:31 pvalchev Exp $
---- Configure.orig	2003-10-15 14:30:40.000000000 -0600
-+++ Configure	2004-01-10 17:00:34.000000000 -0700
-@@ -2619,6 +2619,10 @@ kernel generation process.
+$OpenBSD: patch-Configure,v 1.16 2004/08/11 08:14:40 pvalchev Exp $
+--- Configure.orig	Wed Oct 15 14:30:40 2003
++++ Configure	Wed Aug 11 02:10:39 2004
+@@ -2619,6 +2619,18 @@ kernel generation process.
  	LSOF_TSTBIGF=" "
  	LSOF_VERS=3030
  	;;
@@ -9,15 +9,23 @@ $OpenBSD: patch-Configure,v 1.15 2004/01/11 00:14:31 pvalchev Exp $
 +	LSOF_TSTBIGF=" "
 +	LSOF_VERS=3040
 +	;;
++      3.5*)
++	LSOF_TSTBIGF=" "
++	LSOF_VERS=3050
++	;;
++      3.6*)
++	LSOF_TSTBIGF=" "
++	LSOF_VERS=3060
++	;;
        3*)
  	LSOF_TSTBIGF=" "
  	LSOF_VERS=3020
-@@ -2636,7 +2640,7 @@ kernel generation process.
+@@ -2636,7 +2648,7 @@ kernel generation process.
      # Test for legal OpenBSD version.
  
      case $LSOF_VERS in	# {
 -    1020|2050|2060|2070|2080|2090|3000|3010|3020|3030)
-+    1020|2050|2060|2070|2080|2090|3000|3010|3020|3030|3040)
++    1020|2050|2060|2070|2080|2090|3000|3010|3020|3030|3040|3050|3060)
        ;;
      *)
        echo "Unknown OpenBSD version: $LSOF_VERS"
