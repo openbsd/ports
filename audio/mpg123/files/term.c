@@ -1,4 +1,4 @@
-/* $OpenBSD: term.c,v 1.2 2000/01/12 15:47:14 ho Exp $ */
+/* $OpenBSD: term.c,v 1.3 2000/01/12 17:58:08 ho Exp $ */
 /*-
  * Copyright (c) 1999 Marc Espie.
  *
@@ -158,7 +158,6 @@ void term_control(void)
 
 void term_restore(void)
 {
-        sane_tty();
 }
 
 #endif
