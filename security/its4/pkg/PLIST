@@ -1,0 +1,4 @@
+bin/its4
+share/its4/vulns.i4d
+man/man1/its4.1
+@dirrm share/its4
