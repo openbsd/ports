@@ -1,0 +1,15 @@
+--- doc/Makefile.in.orig	Wed Apr  5 16:12:56 2000
++++ doc/Makefile.in	Wed Apr  5 16:14:00 2000
+@@ -390,9 +390,9 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(kde_htmldir)
+-	-rm -f $(kde_htmldir)/default
+-	$(LN_S) en $(kde_htmldir)/default
++	$(mkinstalldirs) $(DESTDIR)$(kde_htmldir)
++	-rm -f $(DESTDIR)$(kde_htmldir)/default
++	$(LN_S) en $(DESTDIR)$(kde_htmldir)/default
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

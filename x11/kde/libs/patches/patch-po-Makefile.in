@@ -1,0 +1,20 @@
+--- po/Makefile.in.orig	Wed Apr  5 16:18:37 2000
++++ po/Makefile.in	Wed Apr  5 16:19:44 2000
+@@ -343,7 +343,7 @@ all-no:
+ install-yes: all
+ 	@catalogs='$(GMOFILES)'; \
+ 	for cat in $$catalogs; do \
+-	destdir=$(localedir); \
++	destdir=$(DESTDIR)$(localedir); \
+ 	lang=`echo $$cat | sed 's/\.gmo//'`; \
+ 	name=kde.mo \
+ 	dir=$$destdir/$$lang/LC_MESSAGES; \
+@@ -353,7 +353,7 @@ install-yes: all
+ 	done;\
+ 	charsets='$(CHARSETFILES)'; \
+ 	for chset in $$charsets; do \
+-	destdir=$(localedir); \
++	destdir=$(DESTDIR)$(localedir); \
+ 	lang=`echo $$chset | sed 's/\.charset//'`; \
+ 	name=charset ; \
+ 	dir=$$destdir/$$lang; \

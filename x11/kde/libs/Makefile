@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/26 22:21:18 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/05 23:25:19 espie Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 DISTNAME=	kdelibs-1.1.2
@@ -25,6 +25,7 @@ PERMIT_DISTFILES_FTP=   Yes
 USE_BZIP2=	Yes
 USE_GMAKE=	Yes
 GNU_CONFIGURE=	Yes
+FAKE=		Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
                  --with-qt-includes="${LOCALBASE}/include/X11/qt" \

@@ -1,6 +1,6 @@
---- kdecore/Makefile.in.orig	Tue Mar  7 18:18:17 2000
-+++ kdecore/Makefile.in	Tue Mar  7 18:18:33 2000
-@@ -189,7 +189,7 @@
+--- kdecore/Makefile.in.orig	Tue Sep  7 17:23:13 1999
++++ kdecore/Makefile.in	Wed Apr  5 16:07:03 2000
+@@ -189,7 +189,7 @@ noinst_HEADERS = kdebugdialog.h kcharset
  libkdecore_la_SOURCES = kconfig.cpp kconfigbase.cpp ksimpleconfig.cpp 	kcolorgroup.cpp kapp.cpp kurl.cpp ksock.cpp drag.cpp 	 kprocess.cpp kprocctrl.cpp klocale.cpp 	libintl.cpp fakes.cpp kiconloader.cpp kdebug.cpp 	kstdaccel.cpp kwm.cpp krootprop.cpp kcharsets.cpp kcharsetsdata.cpp 	kchartables.cpp kstring.cpp kpixmap.cpp dither.cpp 	kckey.cpp kaccel.cpp kglobalaccel.cpp kclipboard.cpp 	krect.cpp ksize.cpp kpoint.cpp
  
  
@@ -9,3 +9,14 @@
  # libkdecore_la_LIBADD = 
  
  libkdecore_la_METASOURCES = drag.moc kapp.moc kclipboard.moc 	kconfig.moc kconfigbase.moc kdebugdialog.moc kglobalaccel.moc 	kiconloader.moc kprocctrl.moc kprocess.moc ksimpleconfig.moc 	ksock.moc 
+@@ -489,8 +489,8 @@ ckey.h : convert_key.c
+ 	rm -f ackey ckey
+ 
+ install-data-local: charsets.config 
+-	$(mkinstalldirs) $(kde_confdir)
+-	$(INSTALL_DATA) $(srcdir)/charsets.config $(kde_confdir)/charsets   
++	$(mkinstalldirs) $(DESTDIR)$(kde_confdir)
++	$(INSTALL_DATA) $(srcdir)/charsets.config $(DESTDIR)$(kde_confdir)/charsets   
+ 
+ uninstall-local:
+ 	-rm -f $(kde_confdir)/charsets
