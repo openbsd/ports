@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_makefile_openbsd,v 1.8 2004/04/06 08:32:45 brad Exp $
---- scripts/makefile.openbsd.orig	2002-10-03 07:32:34.000000000 -0400
-+++ scripts/makefile.openbsd	2004-04-06 03:49:40.000000000 -0400
+$OpenBSD: patch-scripts_makefile_openbsd,v 1.9 2004/07/06 21:53:16 brad Exp $
+--- scripts/makefile.openbsd.orig	Thu Oct  3 07:32:34 2002
++++ scripts/makefile.openbsd	Tue Jul  6 17:33:35 2004
 @@ -1,13 +1,16 @@
 -# makefile for libpng
 +# makefile for libpng under OpenBSD
@@ -86,10 +86,10 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.8 2004/04/06 08:32:45 brad Exp $
 +		-m ${BINMODE} libpng-config ${DESTDIR}${BINDIR}
  	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
 -		-m ${NONBINMODE} ${HDRS} ${DESTDIR}${PREFIX}/include/libpng
--	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
--		-m ${NONBINMODE} ${HDRS} ${DESTDIR}${PREFIX}/include
 +		-m ${NONBINMODE} ${HDRS} ${DESTDIR}${INCDIR}
  	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
+-		-m ${NONBINMODE} ${HDRS} ${DESTDIR}${PREFIX}/include
+-	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
 -		-m ${NONBINMODE} ${DOCS} ${DESTDIR}${PREFIX}/share/doc/png
 +		-m ${NONBINMODE} ${DOCS} ${DESTDIR}${DOCDIR}
  
