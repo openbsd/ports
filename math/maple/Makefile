@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 15:28:18 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/24 16:28:04 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
@@ -51,15 +51,15 @@ ALL_TARGET=resolv_display
 
 do-fetch:
 	@mkdir -p ${FULLDISTDIR}
-	@cd ${CDROM}; \
+	@cd ${MAPLE_CDROM}; \
 	for file in ${DISTFILES}; do\
 		[ -f ${FULLDISTDIR}/$$file ] || \
 		if [ -f $$file ]; \
 		then\
 			mkdir -p ${FULLDISTDIR}/`dirname $$file`;\
-			ln -sf ${CDROM}/$$file ${FULLDISTDIR}/$$file;\
+			ln -sf ${MAPLE_CDROM}/$$file ${FULLDISTDIR}/$$file;\
 		else\
-			echo "File $$file not found. Is your cdrom mounted as ${CDROM} ?";\
+			echo "File $$file not found. Is your cdrom mounted as ${MAPLE_CDROM} ?";\
 		fi\
 	done
 
