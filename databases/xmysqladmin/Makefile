@@ -1,5 +1,5 @@
 # $FreeBSD: ports/databases/xmysqladmin/Makefile,v 1.25 1999/11/23 02:59:09 billf Exp $
-# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:45 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/11/10 12:29:40 espie Exp $
 
 COMMENT=	"X11 front end to the mysqladmin command"
 
@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.tcx.se/Contrib/ \
 		http://web.tryc.on.ca/mysql/Downloads/Contrib/
 
 LIB_DEPENDS=	xforms.0::x11/xforms \
-		mysqlclient.10:mysql-client-3.23.*:databases/mysql
+		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/25 22:34:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/10 12:29:40 espie Exp $
 
 COMMENT=		'mysql drivers for the perl DBI'
 
@@ -17,11 +17,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
 
-PERL_MODULES=		${LOCALBASE}/libdata/perl5/site_perl
-BUILD_DEPENDS=		${PERL_MODULES}/${MACHINE_ARCH}-openbsd/DBI.pm::databases/p5-DBI
-RUN_DEPENDS=		${PERL_MODULES}/${MACHINE_ARCH}-openbsd/DBI.pm::databases/p5-DBI
+BUILD_DEPENDS=		::databases/p5-DBI
+RUN_DEPENDS=		::databases/p5-DBI
 
-LIB_DEPENDS=		mysqlclient.10:mysql-client-3.23.*:databases/mysql
+LIB_DEPENDS=		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
 REGRESS_DEPENDS=	:mysql-server-3.23.*:databases/mysql,-server
 
 CONFIGURE_STYLE=	perl
@@ -36,9 +35,9 @@ FLAVORS=		dbimon
 FLAVOR?=
 
 .if ${FLAVOR:L:Mdbimon}
-RUN_DEPENDS+=		${PERL_MODULES}/Data/ShowTable.pm::devel/p5-Data-ShowTable \
-			${PERL_MODULES}/${MACHINE_ARCH}-openbsd/Term/ReadKey.pm::devel/p5-Term-ReadKey \
-			${PERL_MODULES}/${MACHINE_ARCH}-openbsd/Term/ReadLine/Gnu.pm::devel/p5-Term-ReadLine-Gnu
+RUN_DEPENDS+=		::devel/p5-Data-ShowTable \
+			::devel/p5-Term-ReadKey \
+			::devel/p5-Term-ReadLine-Gnu
 .endif
 
 pre-regress:

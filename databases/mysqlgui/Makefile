@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/26 22:21:44 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2001/11/10 12:29:40 espie Exp $
 
 COMMENT=		"graphical sql client for MySQL"
 
@@ -28,7 +28,7 @@ BUILD_DEPENDS=		::x11/flvw
 LIB_DEPENDS=		jpeg.62::graphics/jpeg \
 			fltk::x11/fltk \
 			fleditor::x11/fleditor \
-			mysqlclient.10:mysql-client-3.23.*:databases/mysql \
+			lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql \
 			sqlplus::devel/mysql++
 
 USE_X11=		Yes

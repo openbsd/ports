@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/11/05 17:04:11 shell Exp $
+# $OpenBSD: Makefile,v 1.10 2001/11/10 12:29:40 espie Exp $
 
 COMMENT=		"python interface to MySQL"
 
@@ -6,7 +6,7 @@ VERSION=		0.9.1c1
 DISTNAME=		MySQL-python-${VERSION}
 PKGNAME=		py-mysql-${VERSION}
 CATEGORIES=		databases
-NEED_VERSION=		1.454
+NEED_VERSION=		1.474
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mysql-python
@@ -20,11 +20,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-LIB_DEPENDS=		mysqlclient.10:mysql-client-3.23.*:databases/mysql
+LIB_DEPENDS=		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
 
 PYTHON_VER=	2.1
 
-RUN_DEPENDS+=	python${PYTHON_VER}::lang/python
+RUN_DEPENDS+=	::lang/python
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 SUBST_VARS=	PYTHON_VER
