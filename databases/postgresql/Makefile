@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2001/02/23 02:41:00 brad Exp $
+# $OpenBSD: Makefile,v 1.43 2001/03/05 19:36:22 brad Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 VERSION=	7.0.3
@@ -78,7 +78,7 @@ PKGNAME:=pgsql-clients-${VERSION}
 ## build dependencies
 USE_GMAKE=	Yes
 .if ${FLAVOR:L:Mtcl}
-LIB_DEPENDS=    tcl83::lang/tcl/8.3 tk83::x11/tk/8.3
+LIB_DEPENDS=	tk83::x11/tk/8.3
 .endif
 
 ## configuring
