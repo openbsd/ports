@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/10/12 13:41:05 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/16 16:34:01 brad Exp $
 #
 # This port should remain Python 1.5.2.  Please do not upgrade.
 # Uses threads
@@ -49,7 +49,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-fpectl --enable-debug
 CONFIGURE_ENV=	OPT="${CFLAGS}" LDSHARED="cc -shared -fpic"
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a::devel/gmp
+LIB_DEPENDS+=	gmp::devel/gmp
 
 WRKDIST=	${WRKDIR}/Python-1.5.2
 

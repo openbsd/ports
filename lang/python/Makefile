@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2001/10/12 13:41:05 wilfried Exp $
+# $OpenBSD: Makefile,v 1.44 2001/10/16 16:34:01 brad Exp $
 # Uses threads
 
 COMMENT= 	"interpreted object-oriented programming language"
@@ -48,7 +48,7 @@ CONFIGURE_STYLE= autoconf dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-fpectl 
 
-BUILD_DEPENDS=	::devel/gmp
+LIB_DEPENDS+=	gmp::devel/gmp
 
 # If libc_r exists, thread support is compiled in by default unless this
 # is a SPARC system where threads are currently non functional.
