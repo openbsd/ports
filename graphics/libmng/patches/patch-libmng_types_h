@@ -1,7 +1,7 @@
-$OpenBSD: patch-libmng_types_h,v 1.1 2001/12/03 16:53:01 brad Exp $
---- libmng_types.h.orig	Mon Dec  3 10:33:46 2001
-+++ libmng_types.h	Mon Dec  3 10:34:40 2001
-@@ -152,11 +152,7 @@
+$OpenBSD: patch-libmng_types_h,v 1.2 2003/05/12 04:07:56 brad Exp $
+--- libmng_types.h.orig	Sat Mar  1 09:08:45 2003
++++ libmng_types.h	Sun May 11 17:05:53 2003
+@@ -155,11 +155,7 @@
  #ifndef ZLIB_DLL
  #undef FAR
  #endif
