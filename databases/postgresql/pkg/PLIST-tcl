@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-tcl,v 1.1 2003/01/02 07:15:34 todd Exp $
+bin/pgtclsh
+bin/pgtksh
+include/postgresql/libpgtcl.h
+lib/libpgtcl.a
+man/man1/pgtclsh.1
+man/man1/pgtksh.1
+%%SHARED%%
