@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.17 2004/09/15 18:49:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2004/10/31 07:20:29 brad Exp $
+@newgroup _squid:515
+@newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
 bin/RunAccel
 bin/RunCache
 bin/squidclient
@@ -891,5 +893,3 @@ share/examples/squid/squid.conf
 @extraunexec rm -rf ${SYSCONFDIR}/squid
 @extraunexec rm -rf ${PREFIX}/share/squid
 @extraunexec rm -rf /var/squid
-@extraunexec userdel _squid
-@extraunexec groupdel _squid

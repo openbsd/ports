@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.15 2003/07/08 20:43:21 brad Exp $
+# $OpenBSD: INSTALL,v 1.16 2004/10/31 07:20:29 brad Exp $
 #
 # Pre/post-installation setup of Squid
 
@@ -10,26 +10,6 @@ SAMPLE_CONFIG_DIR=$PREFIX/share/examples/squid
 SQUIDDIR=${SQUIDDIR}
 SQUIDUSER=_squid
 SQUIDGROUP=_squid
-ID=515
-
-do_usergroup_install()
-{
-  # Create Squid user and group
-  groupinfo -e $SQUIDGROUP
-  if [ $? -eq 0 ]; then
-    echo "===> Using $SQUIDGROUP group for Squid"
-  else
-    echo "===> Creating $SQUIDGROUP group for Squid"
-    groupadd -g $ID $SQUIDGROUP
-  fi
-  userinfo -e $SQUIDUSER
-  if [ $? -eq 0 ]; then
-    echo "===> Using $SQUIDUSER user for Squid"
-  else
-    echo "===> Creating $SQUIDUSER user for Squid"
-    useradd -g $SQUIDGROUP -d /nonexistent -L daemon -c 'Squid Account' -s /sbin/nologin -u $ID $SQUIDUSER
-  fi
-}
 
 do_squiddir_install()
 {
@@ -85,18 +65,13 @@ do_install_errors_and_icons()
   echo
 }
 
-# verify proper execution
-#
 if [ $# -ne 2 ]; then
     echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
     exit 1
 fi
 
-# Verify/process the command
-#
 case $2 in
     PRE-INSTALL)
-	do_usergroup_install
 	;;
     POST-INSTALL)
 	if [ ! -d $SQUIDDIR ]; then
