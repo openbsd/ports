@@ -1,0 +1,21 @@
+$OpenBSD: patch-xbreaky_cpp,v 1.1 2003/06/20 02:17:25 kevlo Exp $
+--- xbreaky.cpp.orig	Thu Sep 12 09:11:42 2002
++++ xbreaky.cpp	Fri Jun 20 09:59:50 2003
+@@ -35,7 +35,7 @@
+ #include "font.cpp"
+ #include "xbreaky.xpm"
+ 
+-#define LEVELS PREFIX"/share/games/xbreaky/level"
++#define LEVELS PREFIX"/share/xbreaky/level"
+ #define NIL (0)      
+ #define COLORS 35
+ 
+@@ -1569,7 +1569,7 @@ void init_sound(void)
+   close(fd[1]);
+   dup2(fd[0],STDIN_FILENO);
+   close(fd[0]);
+-  execlp("xbreaky.snd", 0 );
++  execlp("xbreaky.snd", "xbreaky.snd", 0 );
+   fprintf (stderr, "Couldn't Execute Sound Server xbreaky.snd!\n");
+   exit (0);
+  }

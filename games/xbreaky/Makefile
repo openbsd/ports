@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2003/03/31 13:07:46 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2003/06/20 02:17:18 kevlo Exp $
 
-COMMENT=	"breakout game for X Window"
+COMMENT=	"breakout game for the X Window System"
 
-DISTNAME=	xbreaky-0.0.4
-PKGNAME=	${DISTNAME}p1
-CATEGORIES=	games
+DISTNAME=	xbreaky-0.0.5
+CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://xbreaky.sourceforge.net/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

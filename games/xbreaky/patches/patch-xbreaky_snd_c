@@ -1,5 +1,6 @@
+$OpenBSD: patch-xbreaky_snd_c,v 1.1 2003/06/20 02:17:25 kevlo Exp $
 --- xbreaky.snd.c.orig	Thu May 11 08:13:45 2000
-+++ xbreaky.snd.c	Wed Apr 18 11:57:02 2001
++++ xbreaky.snd.c	Fri Jun 20 09:59:50 2003
 @@ -20,20 +20,18 @@
   */
  
@@ -24,3 +25,20 @@
  
  int timelimit = 0, dsp_speed = DEFAULT_DSP_SPEED, dsp_stereo = 0;
  int samplesize = 8;
+@@ -53,7 +51,6 @@ int main (int argc, char *argv[])
+   char k;
+ 
+   signal(SIGTERM, quit);   
+-  fcntl(STDIN_FILENO,F_SETFL,O_NONBLOCK);
+   audio = open (AUDIO, O_WRONLY, 0);
+   if (audio == -1)
+   {
+@@ -101,7 +98,7 @@ int main (int argc, char *argv[])
+    }
+    if(i!=-1)  
+    { 
+-    play(names[(int)k]);
++    play(names[(int)k & 1]);
+    }
+   }    
+ 
