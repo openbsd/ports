@@ -1,5 +1,5 @@
 jftpgw is an FTP proxy/gateway that uses the FTP protocol (unlike those
-FTP proxies that fetch an FTP file but work as an http proxy). You can use
+FTP proxies that fetch an FTP file but work as an HTTP proxy). You can use
 it to make servers behind a firewall/NAT server (masquerading server)
 accessible or to allow users behind such solutions to transfer files to
 and from the outside of the LAN. With the sftp support you can also use
