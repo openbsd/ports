@@ -1,11 +1,12 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.3 2003/10/11 14:48:02 naddy Exp $
+# $OpenBSD: DEINSTALL,v 1.4 2003/12/31 16:03:30 naddy Exp $
 #
 # Bitlbee de-installation script.
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 DB_DIR=${DB_DIR}
+CONFIG_DIR=${ETCDIR}
 BITLBEEUSER=${BITLBEEUSER}
 BITLBEEGROUP=${BITLBEEGROUP}
 
@@ -29,6 +30,7 @@ else
 |
 |    # userdel $BITLBEEUSER
 |    # groupdel $BITLBEEGROUP
+|    # rm -rf $CONFIG_DIR
 |    # rm -rf $DB_DIR
 |
 | You also have to remove the bitlbee line from /etc/inetd.conf and

@@ -1,25 +1,27 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2003/10/11 14:48:02 naddy Exp $
+# $OpenBSD: INSTALL,v 1.5 2003/12/31 16:03:30 naddy Exp $
 #
 # Pre/post-installation setup of Bitlbee
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 DB_DIR=${DB_DIR}
+CONFIG_DIR=${ETCDIR}
+SAMPLE_CONFIG_DIR=${EXAMPLEDIR}
 BITLBEEUSER=${BITLBEEUSER}
 BITLBEEGROUP=${BITLBEEGROUP}
 ID=${ID}
 
 do_notice_existingdir() {
-    echo << EOF
+    cat << EOF
 
-+---------------"
++---------------
 | You appear to already have a Bitlbee-settings dir in $DB_DIR
 |
 | This directory has been preserved. If you want to start from
 | from the default, you have to perform this step as root:
 |
-|      # rm -rf ${DB_DIR}/*
+|      # rm -rf $DB_DIR/*
 |
 +---------------
 
@@ -51,7 +53,7 @@ do_usergroup_install() {
 }
 
 do_database_install() {
-    install -m 0770 -d -o ${BITLBEEUSER} -g ${BITLBEEGROUP} ${DB_DIR}
+    install -d -m 0770 -o $BITLBEEUSER -g $BITLBEEGROUP $DB_DIR
 }
 
 do_manual_notice() {
@@ -59,7 +61,7 @@ do_manual_notice() {
 +---------------
 | To enable bitlbee you have to add a line like:
 |
-|    127.0.0.1:6667    stream  tcp     nowait ${BITLBEEUSER} /usr/local/libexec/bitlbee bitlbee
+|    127.0.0.1:6667    stream  tcp     nowait $BITLBEEUSER /usr/local/libexec/bitlbee bitlbee
 |
 | to your /etc/inetd.conf and restart inetd with
 |
@@ -75,24 +77,53 @@ do_warning() {
 +---------------
 | WARNING!
 |
-| This port has changed the user/group it uses from bitlbee to ${BITLBEEUSER}.
+| This port has changed the user/group it uses from bitlbee to $BITLBEEUSER.
 | If you installed this port before, ensure all permissions are set correctly
 | with:
 |
-|   # ls -ld ${DB_DIR}
-|   # chown -R ${BITLBEEUSER}:${BITLBEEGROUP} ${DB_DIR}
+|   # ls -ld $DB_DIR
+|   # chown -R $BITLBEEUSER:$BITLBEEGROUP $DB_DIR
 |
 | And don't forget to remove the old user/group.
 +---------------
 
 EOF
 }
+
+do_config_install() {
+    install -d -o root -g wheel -m 755 $CONFIG_DIR
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/bitlbee.conf $CONFIG_DIR
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/motd.txt $CONFIG_DIR
+    cat << EOF
+
++---------------
+| The $1 configuration file, $CONFIG_DIR/bitlbee.conf,
+| has been installed.  Please view this file and change
+| the configuration to meet your needs.
++---------------
+
+EOF
+}
+
+do_config_notice() {
+    cat << EOF
+
++---------------
+| The existing $1 configuration file, $CONFIG_DIR/bitlbee.conf,
+| has NOT been changed.  You may want to compare it to the
+| current sample file, $SAMPLE_CONFIG_DIR/bitlbee.conf,
+| and update your configuration as needed.
++---------------
+
+EOF
+}
+
 # Verify/process the command
 #
 case $2 in
     PRE-INSTALL)
 	if [ -d $DB_DIR ]; then
-	    do_notice_existingdir $1
+	    do_notice_existingdir
 	fi
 	do_usergroup_install
 	;;
@@ -102,6 +133,11 @@ case $2 in
 	fi
 	do_manual_notice
 	do_warning
+	if [ ! -f $CONFIG_DIR/bitlbee.conf ]; then
+	    do_config_install $1
+	else
+	    do_config_notice $1
+	fi
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
