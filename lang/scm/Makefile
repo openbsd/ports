@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/07/07 09:39:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2004/09/15 19:12:09 espie Exp $
 # losely based on the FreeBSD port
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "vax" || \
@@ -11,7 +11,7 @@ COMMENT=	"scheme r5 interpreter"
 
 CATEGORIES=	lang
 
-V=5d3
+V=5d9
 DISTNAME=	scm$V
 PKGNAME=	scm-$V
 EXTRACT_SUFX=	.zip
@@ -29,26 +29,38 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SCM_DATA=	COPYING Iedline.scm Init5d3.scm Link.scm \
-		Macexp.scm Macro.scm Transcen.scm Tscript.scm mkimpcat.scm \
-		disarm.scm build.scm split.scm
+FLAVORS=no_x11
+
+FLAVOR?=
+SCM_DATA=	COPYING Iedline.scm Init5d9.scm Link.scm \
+		Macexp.scm Macro.scm Transcen.scm Tscript.scm \
+		build build.scm compile.scm hobbit.scm mkimpcat.scm \
+		r4rstest.scm scmhob.scm \
+		disarm.scm split.scm
+
+SCM_INFO=	scm.info hobbit.info
+SCM_INCLUDES=	scmflags.h scmfig.h patchlvl.h scmhob.h
+.if !{FLAVOR:L:Mno_x11}
+SCM_DATA+=	keysymdef.scm x11.scm xatoms.scm xevent.scm
+SCM_INFO+=	Xlibscm.info
+.endif
 
 FEATURES=arrays bignums cautious edit-line curses posix socket unix \
 dynamic-linking i/o-extensions inexact regex
 
-FLAVORS=no_x11
-
-FLAVOR?=
 .if ${FLAVOR:L:Mno_x11}
 .else
 FEATURES+=x
-OPTIONS+=--compiler-options=-I${X11BASE}/include
+OPTIONS+=--compiler-options=-I${X11BASE}/include --compiler-options=-O2
 OPTIONS+=--linker-options=-L${X11BASE}/lib
 SCM_DATA+=	x11.scm xevent.scm
 .endif
 
 BUILD_DEPENDS=::devel/slib
 RUN_DEPENDS=::devel/slib
+
+pre-build:
+	@echo "srcdir=${WRKSRC}" >${WRKSRC}/srcdir.mk
 
 post-build:
 	cd ${WRKSRC} && ${MAKE_ENV} PATH=${WRKSRC}:${PORTPATH} /bin/sh ./build \
@@ -72,23 +84,25 @@ MAKE_ENV=	SCHEME_LIBRARY_PATH=${LOCALBASE}/share/slib/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/scm	${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/scmlit	${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKBUILD}/scm-sicp	${PREFIX}/bin
 	${INSTALL_MAN} ${WRKBUILD}/scm.1	${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/scm
 	${INSTALL_DATA_DIR} ${PREFIX}/include/scm
-	${INSTALL_DATA} ${WRKBUILD}/scm{,flags,fig}.h ${PREFIX}/include/scm
 	sed -e 's,@PREFIX@,${TRUEPREFIX},' \
 	    <${FILESDIR}/require.scm.in \
 	    >${PREFIX}/share/scm/require.scm
+.for file in ${SCM_INCLUDES}
+	${INSTALL_DATA} ${WRKBUILD}/${file} ${PREFIX}/include/scm
+.endfor
 .for file in ${SCM_DATA}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/scm
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/scm.info ${PREFIX}/info
-.if ${FLAVOR:L:Mno_x11}
-.else
-	${INSTALL_DATA} ${WRKSRC}/Xlibscm.info ${PREFIX}/info
-.endif
+.for file in ${SCM_INFO}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/info
+.endfor
 
+FAKE_FLAGS=${MAKE_FLAGS} exec_prefix=${WRKINST}${TRUEPREFIX}/
 REGRESS_TARGET=	check
 
 .include <bsd.port.mk>

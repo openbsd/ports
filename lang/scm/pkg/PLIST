@@ -1,28 +1,34 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/02/03 20:42:48 espie Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/scm.info
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 19:12:09 espie Exp $
 bin/scm
 bin/scm-sicp
-include/scm/scm.h
+bin/scmlit
+include/scm/
+include/scm/patchlvl.h
 include/scm/scmfig.h
 include/scm/scmflags.h
-info/scm.info
-man/man1/scm.1
-share/scm/build.scm
-share/scm/disarm.scm
+include/scm/scmhob.h
+@info info/hobbit.info
+@info info/scm.info
+@man man/man1/scm.1
+share/scm/
 share/scm/COPYING
 share/scm/Iedline.scm
-share/scm/Init5d3.scm
+share/scm/Init5d9.scm
 share/scm/Link.scm
 share/scm/Macexp.scm
 share/scm/Macro.scm
 share/scm/Transcen.scm
 share/scm/Tscript.scm
+share/scm/build
+share/scm/build.scm
+share/scm/compile.scm
+share/scm/disarm.scm
+share/scm/hobbit.scm
 share/scm/mkimpcat.scm
+share/scm/r4rstest.scm
 share/scm/require.scm
+share/scm/scmhob.scm
 share/scm/split.scm
 !%%no_x11%%
 @exec cd %D/share/scm && %D/bin/scm -f%D/share/slib/mklibcat.scm
 @unexec rm %D/share/scm/implcat %D/share/scm/slibcat
-@dirrm include/scm
-@dirrm share/scm
-@exec install-info --info-dir=%D/info %D/info/scm.info
