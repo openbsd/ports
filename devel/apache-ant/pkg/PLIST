@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/03 13:40:09 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/06/05 16:56:39 naddy Exp $
 @pkgcfl jakarta-ant-*
 bin/ant
 bin/antRun
@@ -104,6 +104,7 @@ share/doc/java/ant/manual/CoreTasks/copyfile.html
 share/doc/java/ant/manual/CoreTasks/cvs.html
 share/doc/java/ant/manual/CoreTasks/cvspass.html
 share/doc/java/ant/manual/CoreTasks/cvstagdiff.html
+share/doc/java/ant/manual/CoreTasks/cvsversion.html
 share/doc/java/ant/manual/CoreTasks/defaultexcludes.html
 share/doc/java/ant/manual/CoreTasks/delete.html
 share/doc/java/ant/manual/CoreTasks/deltree.html
@@ -232,7 +233,6 @@ share/doc/java/ant/manual/OptionalTasks/mparse.html
 share/doc/java/ant/manual/OptionalTasks/native2ascii.html
 share/doc/java/ant/manual/OptionalTasks/netrexxc.html
 share/doc/java/ant/manual/OptionalTasks/perforce.html
-share/doc/java/ant/manual/OptionalTasks/perforce.html.orig
 share/doc/java/ant/manual/OptionalTasks/propertyfile.html
 share/doc/java/ant/manual/OptionalTasks/pvcstask.html
 share/doc/java/ant/manual/OptionalTasks/renameextensions.html
@@ -471,6 +471,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/LogStreamHandler.htm
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/MacroDef.Attribute.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/MacroDef.NestedSequential.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/MacroDef.TemplateElement.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/MacroDef.Text.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/MacroDef.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/MacroInstance.Element.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/MacroInstance.html
@@ -587,6 +588,7 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/condition/package-tr
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/cvslib/ChangeLogTask.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/cvslib/CvsTagDiff.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/cvslib/CvsUser.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/cvslib/CvsVersion.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/cvslib/package-frame.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/cvslib/package-summary.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/cvslib/package-tree.html
@@ -641,7 +643,10 @@ share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/package
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCCheckin.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCCheckout.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCLock.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkattr.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkbl.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkdir.html
+share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkelem.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMklabel.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMklbtype.html
 share/doc/java/ant/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCRmtype.html
