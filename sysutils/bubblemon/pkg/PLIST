@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/13 20:51:03 todd Exp $
+bin/bubblemon_applet
+man/man1/bubblemon_applet.1
+share/applets/Monitors/bubblemon_applet.desktop
+share/bubblemon/CORBA/servers/bubblemon_applet.gnorba
+share/locale/da/LC_MESSAGES/bubblemon.mo
+share/locale/de/LC_MESSAGES/bubblemon.mo
+share/locale/es/LC_MESSAGES/bubblemon.mo
+share/locale/fi/LC_MESSAGES/bubblemon.mo
+share/locale/fr/LC_MESSAGES/bubblemon.mo
+share/locale/ko/LC_MESSAGES/bubblemon.mo
+share/locale/no/LC_MESSAGES/bubblemon.mo
+share/locale/pl/LC_MESSAGES/bubblemon.mo
+share/locale/pt/LC_MESSAGES/bubblemon.mo
+share/locale/ro/LC_MESSAGES/bubblemon.mo
+share/locale/sh/LC_MESSAGES/bubblemon.mo
+share/locale/sv/LC_MESSAGES/bubblemon.mo
+share/pixmaps/bubblemon.png
+@dirrm share/bubblemon/CORBA/servers
+@dirrm share/bubblemon/CORBA
+@dirrm share/bubblemon
