@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2003/06/20 10:03:49 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2003/11/06 03:48:19 jolan Exp $
 
 COMMENT=		"gtk-based frontend to cdrtools"
-DISTNAME=		xcdroast-0.98alpha14
-PKGNAME=		xcdroast-0.98a14
+DISTNAME=		xcdroast-0.98alpha15
+PKGNAME=		${DISTNAME:L:S/alpha/a/}
 CATEGORIES=		misc x11
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xcdroast/}
 
@@ -16,12 +16,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=		:cdrtools->=2.0:sysutils/cdrtools
-LIB_DEPENDS=		gtk.1.2,glib.1.2::x11/gtk+ \
-			gdk_pixbuf.2::graphics/gdk-pixbuf
-
-NO_REGRESS=	Yes
 USE_X11=	Yes
+
+RUN_DEPENDS=	:cdrtools->=2.0:sysutils/cdrtools
+LIB_DEPENDS=	gtk.1.2,glib.1.2::x11/gtk+ \
+		gdk_pixbuf.2::graphics/gdk-pixbuf
+
 CONFIGURE_STYLE=gnu
 
 post-install:
