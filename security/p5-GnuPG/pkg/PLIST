@@ -1,14 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:05 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/12/31 16:54:52 naddy Exp $
 bin/gpgmailtunl
-libdata/perl5/site_perl/GnuPG.pm
-libdata/perl5/site_perl/GnuPG/Tie.pm
-libdata/perl5/site_perl/GnuPG/Tie/ClearSign.pm
-libdata/perl5/site_perl/GnuPG/Tie/Decrypt.pm
-libdata/perl5/site_perl/GnuPG/Tie/Encrypt.pm
-libdata/perl5/site_perl/GnuPG/Tie/Sign.pm
+${P5SITE}/GnuPG.pm
+${P5SITE}/GnuPG/Tie.pm
+${P5SITE}/GnuPG/Tie/ClearSign.pm
+${P5SITE}/GnuPG/Tie/Decrypt.pm
+${P5SITE}/GnuPG/Tie/Encrypt.pm
+${P5SITE}/GnuPG/Tie/Sign.pm
+@comment ${P5ARCH}/auto/GnuPG/.packlist
 man/man1/gpgmailtunl.1
 man/man3p/GnuPG.3p
 man/man3p/GnuPG::Tie.3p
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/GnuPG
-@dirrm libdata/perl5/site_perl/GnuPG/Tie
-@dirrm libdata/perl5/site_perl/GnuPG
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/GnuPG
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/GnuPG/Tie
+@dirrm ${P5SITE}/GnuPG

@@ -1,36 +1,37 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:05 espie Exp $
-libdata/perl5/site_perl/GnuPG/Fingerprint.pm
-libdata/perl5/site_perl/GnuPG/Handles.pm
-libdata/perl5/site_perl/GnuPG/Interface.pm
-libdata/perl5/site_perl/GnuPG/Key.pm
-libdata/perl5/site_perl/GnuPG/Options.pm
-libdata/perl5/site_perl/GnuPG/PrimaryKey.pm
-libdata/perl5/site_perl/GnuPG/PublicKey.pm
-libdata/perl5/site_perl/GnuPG/SecretKey.pm
-libdata/perl5/site_perl/GnuPG/Signature.pm
-libdata/perl5/site_perl/GnuPG/SubKey.pm
-libdata/perl5/site_perl/GnuPG/UserId.pm
-libdata/perl5/site_perl/auto/GnuPG/Interface/autosplit.ix
-libdata/perl5/site_perl/auto/GnuPG/Interface/clearsign.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/decrypt.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/detach_sign.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/encrypt.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/encrypt_symmetrically.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/export_keys.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/get_keys.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/get_public_keys.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/get_public_keys_with_sigs.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/get_secret_keys.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/import_keys.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/list_public_keys.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/list_secret_keys.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/list_sigs.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/recv_keys.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/send_keys.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/sign.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/sign_and_encrypt.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/test_default_key_passphrase.al
-libdata/perl5/site_perl/auto/GnuPG/Interface/verify.al
+@comment $OpenBSD: PLIST,v 1.4 2003/12/31 16:54:52 naddy Exp $
+${P5SITE}/GnuPG/Fingerprint.pm
+${P5SITE}/GnuPG/Handles.pm
+${P5SITE}/GnuPG/Interface.pm
+${P5SITE}/GnuPG/Key.pm
+${P5SITE}/GnuPG/Options.pm
+${P5SITE}/GnuPG/PrimaryKey.pm
+${P5SITE}/GnuPG/PublicKey.pm
+${P5SITE}/GnuPG/SecretKey.pm
+${P5SITE}/GnuPG/Signature.pm
+${P5SITE}/GnuPG/SubKey.pm
+${P5SITE}/GnuPG/UserId.pm
+${P5SITE}/auto/GnuPG/Interface/autosplit.ix
+${P5SITE}/auto/GnuPG/Interface/clearsign.al
+${P5SITE}/auto/GnuPG/Interface/decrypt.al
+${P5SITE}/auto/GnuPG/Interface/detach_sign.al
+${P5SITE}/auto/GnuPG/Interface/encrypt.al
+${P5SITE}/auto/GnuPG/Interface/encrypt_symmetrically.al
+${P5SITE}/auto/GnuPG/Interface/export_keys.al
+${P5SITE}/auto/GnuPG/Interface/get_keys.al
+${P5SITE}/auto/GnuPG/Interface/get_public_keys.al
+${P5SITE}/auto/GnuPG/Interface/get_public_keys_with_sigs.al
+${P5SITE}/auto/GnuPG/Interface/get_secret_keys.al
+${P5SITE}/auto/GnuPG/Interface/import_keys.al
+${P5SITE}/auto/GnuPG/Interface/list_public_keys.al
+${P5SITE}/auto/GnuPG/Interface/list_secret_keys.al
+${P5SITE}/auto/GnuPG/Interface/list_sigs.al
+${P5SITE}/auto/GnuPG/Interface/recv_keys.al
+${P5SITE}/auto/GnuPG/Interface/send_keys.al
+${P5SITE}/auto/GnuPG/Interface/sign.al
+${P5SITE}/auto/GnuPG/Interface/sign_and_encrypt.al
+${P5SITE}/auto/GnuPG/Interface/test_default_key_passphrase.al
+${P5SITE}/auto/GnuPG/Interface/verify.al
+@comment ${P5ARCH}/auto/GnuPG/Interface/.packlist
 man/man3p/GnuPG::Fingerprint.3p
 man/man3p/GnuPG::Handles.3p
 man/man3p/GnuPG::Interface.3p
@@ -42,4 +43,10 @@ man/man3p/GnuPG::SecretKey.3p
 man/man3p/GnuPG::Signature.3p
 man/man3p/GnuPG::SubKey.3p
 man/man3p/GnuPG::UserId.3p
-@dirrm libdata/perl5/site_perl/auto/GnuPG/Interface
+@comment @dirrm ${P5ARCH}/auto/GnuPG/Interface
+@comment @dirrm ${P5ARCH}/auto/GnuPG
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/auto/GnuPG/Interface
+@dirrm ${P5SITE}/auto/GnuPG
+@dirrm ${P5SITE}/GnuPG
