@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:36:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/03/08 22:55:25 dons Exp $
 lib/hs-crypto/
 lib/hs-crypto/HScrypto.o
 lib/hs-crypto/imports/
@@ -64,6 +64,6 @@ share/doc/hs-crypto/haskell_icon.gif
 share/doc/hs-crypto/index.html
 @comment call ghc-pkg to register/unregister this library with ghc
 @exec /bin/cat %D/lib/hs-crypto/package.conf.in | /usr/bin/env PREFIX=%D %D/bin/ghc-pkg -u
-@exec /bin/rm -f %D/lib/ghc-6.2.1/package.conf.old
+@exec /bin/rm -f %D/lib/ghc-6.2.2/package.conf.old
 @unexec %D/bin/ghc-pkg -r crypto
-@unexec /bin/rm -f %D/lib/ghc-6.2.1/package.conf.old
+@unexec /bin/rm -f %D/lib/ghc-6.2.2/package.conf.old
