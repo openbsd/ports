@@ -1,0 +1,21 @@
+$OpenBSD: patch-daapd_cc,v 1.1.1.1 2005/01/21 06:49:11 jolan Exp $
+--- daapd.cc.orig	Tue Jan  4 17:18:48 2005
++++ daapd.cc	Thu Jan 20 21:11:10 2005
+@@ -829,7 +829,7 @@ InitParams *readConfig( InitParams& init
+ 		}
+ 	}
+ 	
+-	conf = fopen( "/etc/daapd.conf", "r" );
++	conf = fopen( "_SYSCONFDIR_/daapd.conf", "r" );
+ 	if( conf != NULL ) {
+ 		return( parseConfig( conf, initParams ) );
+ 	}
+@@ -989,7 +989,7 @@ void startScanThread ( Database *db, con
+ 	/* get the default attributes */
+ 	pthread_attr_init( &attr );
+ 
+-#if defined( _POSIX_THREAD_PRIORITY_SCHEDULING) 
++#if defined( _POSIX_THREAD_PRIORITY_SCHEDULING) && !defined(__OpenBSD__)
+ 
+ 	/* set the scheduling algorithm PROCESS or SYSTEM */
+ 	if (pthread_attr_setscope( &attr, PTHREAD_SCOPE_PROCESS ) != 0)

@@ -1,0 +1,12 @@
+$OpenBSD: patch-README,v 1.1.1.1 2005/01/21 06:49:11 jolan Exp $
+--- README.orig	Tue Jan  4 17:18:48 2005
++++ README	Thu Jan 20 21:10:04 2005
+@@ -65,7 +65,7 @@ daapd has the following invocation synta
+ 
+ daapd [-dhqvz] [-c config-file] [-C cache-file] [-n name] [-p port] [-t vbr-limit] [file/directory]...
+ 
+-When called without command line arguments, daapd looks for a configuration file called /etc/daapd.conf. Failing that, it runs with the following default options:
++When called without command line arguments, daapd looks for a configuration file called _SYSCONFDIR_/daapd.conf. Failing that, it runs with the following default options:
+ 
+ - current directory is scanned for music files
+ - port is 3689 (port registered for DAAP with IANA)

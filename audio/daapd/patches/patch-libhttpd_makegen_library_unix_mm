@@ -1,0 +1,12 @@
+$OpenBSD: patch-libhttpd_makegen_library_unix_mm,v 1.1.1.1 2005/01/21 06:49:11 jolan Exp $
+--- libhttpd/makegen/library_unix.mm.orig	Tue Jan  4 17:18:47 2005
++++ libhttpd/makegen/library_unix.mm	Thu Jan 20 23:17:42 2005
+@@ -32,7 +32,7 @@ do
+ 	obj=`echo $src | sed "s/\.c\$/.o/"`
+ 	libobj="$libobj $obj"
+ 	echo	"$obj : $src Makefile.full"
+-	echo	'	$(CC) $(CC_FLAGS) -c '"$src"
++	echo	'	$(CXX) $(CC_FLAGS) -c '"$src"
+ 	echo
+ 	echo	"clean ::"
+ 	echo	"	rm -f $obj"
