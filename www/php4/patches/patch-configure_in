@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure_in,v 1.7 2003/05/02 19:46:04 avsm Exp $
---- configure.in.orig	Fri Dec 27 04:07:18 2002
-+++ configure.in	Wed Jan 22 10:48:47 2003
-@@ -34,9 +34,7 @@ dnl check for working sed
- PHP_PROG_SED
+$OpenBSD: patch-configure_in,v 1.8 2003/05/23 20:08:33 avsm Exp $
+--- configure.in.orig	Thu May 22 00:22:00 2003
++++ configure.in	Thu May 22 16:20:29 2003
+@@ -31,9 +31,7 @@ AC_PREREQ(2.13)
+ AC_INIT(README.CVS-RULES)
  
  PHP_CONFIG_NICE(config.nice)
 -for arg in $0 "$@"; do
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure_in,v 1.7 2003/05/02 19:46:04 avsm Exp $
  
  AC_CANONICAL_HOST
  AC_CONFIG_HEADER(main/php_config.h)
-@@ -806,14 +804,14 @@ unset with_pic
+@@ -811,14 +809,14 @@ unset with_pic
  
  case $php_build_target in
  program|static)
@@ -29,7 +29,7 @@ $OpenBSD: patch-configure_in,v 1.7 2003/05/02 19:46:04 avsm Exp $
      EXTRA_LDFLAGS="$EXTRA_LDFLAGS -avoid-version -module"
  ;;
  esac
-@@ -926,7 +924,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfd
+@@ -938,7 +936,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfd
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`

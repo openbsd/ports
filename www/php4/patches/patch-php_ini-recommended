@@ -1,7 +1,7 @@
-$OpenBSD: patch-php_ini-recommended,v 1.4 2003/05/02 19:46:05 avsm Exp $
---- php.ini-recommended.orig	Thu Dec 26 13:27:08 2002
-+++ php.ini-recommended	Fri May  2 18:11:27 2003
-@@ -418,11 +418,8 @@ default_mimetype = "text/html"
+$OpenBSD: patch-php_ini-recommended,v 1.5 2003/05/23 20:08:33 avsm Exp $
+--- php.ini-recommended.orig	Thu May  8 02:23:35 2003
++++ php.ini-recommended	Thu May 22 16:21:19 2003
+@@ -423,11 +423,8 @@ default_mimetype = "text/html"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ; UNIX: "/path1:/path2"  
@@ -14,16 +14,16 @@ $OpenBSD: patch-php_ini-recommended,v 1.4 2003/05/02 19:46:05 avsm Exp $
  ; The root of the PHP pages, used only if nonempty.
  ; if PHP was not compiled with FORCE_REDIRECT, you SHOULD set doc_root
  ; if you are running php as a CGI under any web server (other than IIS)
-@@ -435,7 +432,7 @@ doc_root =
+@@ -440,7 +437,7 @@ doc_root =
  user_dir =
  
  ; Directory in which the loadable extensions (modules) reside.
--extension_dir = ./
-+extension_dir = MODULES_DIR
+-extension_dir = "./"
++extension_dir = "MODULES_DIR"
  
  ; Whether or not to enable the dl() function.  The dl() function does NOT work
  ; properly in multithreaded servers, such as IIS or Zeus, and is automatically
-@@ -489,7 +486,7 @@ upload_max_filesize = 2M
+@@ -494,7 +491,7 @@ upload_max_filesize = 2M
  ;;;;;;;;;;;;;;;;;;
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
@@ -32,7 +32,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.4 2003/05/02 19:46:05 avsm Exp $
  
  ; Define the anonymous ftp password (your email address)
  ;from="john@doe.com"
-@@ -508,79 +505,6 @@ default_socket_timeout = 60
+@@ -513,77 +510,6 @@ default_socket_timeout = 60
  ; auto_detect_line_endings = Off
  
  
@@ -71,10 +71,8 @@ $OpenBSD: patch-php_ini-recommended,v 1.4 2003/05/02 19:46:05 avsm Exp $
 -;extension=php_dbx.dll
 -;extension=php_domxml.dll
 -;extension=php_exif.dll
--;extension=php_fbsql.dll
 -;extension=php_fdf.dll
 -;extension=php_filepro.dll
--;extension=php_gd.dll
 -;extension=php_gd2.dll
 -;extension=php_gettext.dll
 -;extension=php_hyperwave.dll
@@ -112,7 +110,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.4 2003/05/02 19:46:05 avsm Exp $
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
  ;;;;;;;;;;;;;;;;;;;
-@@ -592,11 +516,6 @@ default_socket_timeout = 60
+@@ -595,11 +521,6 @@ default_socket_timeout = 60
  define_syslog_variables  = Off
  
  [mail function]
@@ -124,7 +122,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.4 2003/05/02 19:46:05 avsm Exp $
  
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ;sendmail_path =
-@@ -1083,6 +1002,56 @@ sockets.use_system_read = On
+@@ -1087,6 +1008,56 @@ sockets.use_system_read = On
  ;exif.decode_jis_motorola = JIS
  ;exif.decode_jis_intel    = JIS
  
