@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2001/07/08 00:03:21 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.73 2001/07/11 06:08:59 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -13,6 +13,7 @@
      SUBDIR += cqcam
 #    SUBDIR += dc3play
      SUBDIR += dia
+     SUBDIR += dumpmpeg
 #    SUBDIR += dore
      SUBDIR += enjoympeg
      SUBDIR += flash
