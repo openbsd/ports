@@ -1,5 +1,5 @@
 @cwd /usr/local
-@name gnuplot-3.5
+@name gnuplot-3.7
 @pkgdep png-1.0.1
 bin/lasergnu
 bin/gnuplot
