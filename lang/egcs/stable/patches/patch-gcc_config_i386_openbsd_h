@@ -1,35 +1,10 @@
-$OpenBSD: patch-gcc_config_i386_openbsd_h,v 1.5 2002/08/30 08:33:14 espie Exp $
---- gcc/config/i386/openbsd.h.orig	Wed Oct 17 03:39:47 2001
-+++ gcc/config/i386/openbsd.h	Thu Aug 29 20:40:53 2002
-@@ -95,26 +95,32 @@ Boston, MA 02111-1307, USA.  */
+$OpenBSD: patch-gcc_config_i386_openbsd_h,v 1.6 2002/09/14 10:14:51 espie Exp $
+--- gcc/config/i386/openbsd.h.orig	Tue May 28 23:29:47 2002
++++ gcc/config/i386/openbsd.h	Thu Sep 12 14:52:17 2002
+@@ -103,3 +103,24 @@ Boston, MA 02111-1307, USA.  */
  
- #undef ASM_PREFERRED_EH_DATA_FORMAT
- 
--/* Assembler format: alignment output.  */
--
--/* A C statement to output to the stdio stream FILE an assembler
--   command to advance the location counter to a multiple of 1<<LOG
--   bytes if it is within MAX_SKIP bytes.
--
--   This will be used to align code labels according to Intel 
--   recommendations, in prevision of binutils upgrade.  */
--#ifdef HAVE_GAS_MAX_SKIP_P2ALIGN
--#define ASM_OUTPUT_MAX_SKIP_ALIGN(FILE,LOG,MAX_SKIP)			\
--  do {									\
--    if ((LOG) != 0) {							\
--      if ((MAX_SKIP) == 0) fprintf ((FILE), "\t.p2align %d\n", (LOG));	\
--      else fprintf ((FILE), "\t.p2align %d,,%d\n", (LOG), (MAX_SKIP));	\
--    }									\
--  } while (0)
--#endif
- 
- /* Note that we pick up ASM_OUTPUT_MI_THUNK from unix.h.  */
- 
- #undef ASM_COMMENT_START
- #define ASM_COMMENT_START ";#"
- 
-+/* OpenBSD gas currently does not support quad, so do not use it.  */
-+#undef ASM_QUAD
+ /* OpenBSD gas currently does not support quad, so do not use it.  */
+ #undef ASM_QUAD
 +
 +#undef FINALIZE_TRAMPOLINE
 +#define FINALIZE_TRAMPOLINE(TRAMP) \

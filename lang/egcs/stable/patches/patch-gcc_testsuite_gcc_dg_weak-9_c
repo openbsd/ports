@@ -1,7 +1,10 @@
-$OpenBSD: patch-gcc_testsuite_gcc_dg_weak-9_c,v 1.1 2002/05/27 16:58:29 espie Exp $
---- gcc/testsuite/gcc.dg/weak-9.c.orig	Mon May 27 15:48:28 2002
-+++ gcc/testsuite/gcc.dg/weak-9.c	Mon May 27 15:48:28 2002
-@@ -0,0 +1,28 @@
+$OpenBSD: patch-gcc_testsuite_gcc_dg_weak-9_c,v 1.2 2002/09/14 10:14:51 espie Exp $
+--- gcc/testsuite/gcc.dg/weak-9.c.orig	Mon May 27 07:48:20 2002
++++ gcc/testsuite/gcc.dg/weak-9.c	Thu Sep 12 14:51:00 2002
+@@ -26,3 +26,31 @@ void f3();
+ 
+ void f4();
+ #pragma weak f4=notf4
 +/* { dg-do compile } */
 +/* { dg-options "-fno-common" } */
 +

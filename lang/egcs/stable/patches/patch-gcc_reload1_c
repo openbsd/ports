@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_reload1_c,v 1.1 2002/06/09 00:34:37 espie Exp $
---- gcc/reload1.c.orig	Mon Apr 29 23:22:47 2002
-+++ gcc/reload1.c	Sat Jun  8 18:08:09 2002
-@@ -7160,8 +7160,7 @@ emit_reload_insns (chain)
+$OpenBSD: patch-gcc_reload1_c,v 1.2 2002/09/14 10:14:51 espie Exp $
+--- gcc/reload1.c.orig	Wed May 22 01:42:54 2002
++++ gcc/reload1.c	Thu Sep 12 14:51:00 2002
+@@ -7161,8 +7161,7 @@ emit_reload_insns (chain)
  		    for (k = 1; k < nnr; k++)
  		      reg_last_reload_reg[nregno + k]
  			= (nr == nnr
@@ -11,7 +11,7 @@ $OpenBSD: patch-gcc_reload1_c,v 1.1 2002/06/09 00:34:37 espie Exp $
  			   : 0);
  
  		  /* Now do the inverse operation.  */
-@@ -7210,8 +7209,7 @@ emit_reload_insns (chain)
+@@ -7211,8 +7210,7 @@ emit_reload_insns (chain)
  		    for (k = 1; k < nnr; k++)
  		      reg_last_reload_reg[nregno + k]
  			= (nr == nnr

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2002/06/07 01:38:59 drahn Exp $
+# $OpenBSD: Makefile,v 1.61 2002/09/14 10:14:50 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc
 
@@ -67,7 +67,7 @@ BUILD_DEPENDS+=:bison-*:devel/bison
 
 #### fetch section
 
-V=3.1
+V=3.2
 DIRECTORY=releases/${DISTNAME}/
 DISTNAME=   gcc-$V
 
@@ -76,7 +76,7 @@ MASTER_SITE_SUBDIR=${LATEST_DATE}
 
 DIST_SUBDIR=egcs
 
-DISTFILES=  gcc-3.1${EXTRACT_SUFX}
+DISTFILES=  gcc-3.2.tar.bz2
 
 SITES=	
 
@@ -212,6 +212,7 @@ CONFIGURE_ARGS+=--enable-languages=${LANGS}
 
 .if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
 CONFIGURE_ARGS+=--enable-sjlj-exceptions
+#CC=${LOCALBASE}/bin/egcc
 .endif
 
 

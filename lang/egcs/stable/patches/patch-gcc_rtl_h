@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_rtl_h,v 1.1 2002/06/09 00:31:52 espie Exp $
---- gcc/rtl.h.orig	Sat Jun  8 14:47:57 2002
-+++ gcc/rtl.h	Sat Jun  8 16:08:54 2002
-@@ -1515,12 +1515,30 @@ extern rtx find_first_parameter_load	PAR
+$OpenBSD: patch-gcc_rtl_h,v 1.2 2002/09/14 10:14:51 espie Exp $
+--- gcc/rtl.h.orig	Sun May 19 11:05:27 2002
++++ gcc/rtl.h	Thu Sep 12 14:51:00 2002
+@@ -1517,12 +1517,30 @@ extern rtx find_first_parameter_load	PAR
  
  extern rtx find_use_as_address		PARAMS ((rtx, rtx, HOST_WIDE_INT));
  void init_EXPR_INSN_LIST_cache		PARAMS ((void));

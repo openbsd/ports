@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_c-decl_c,v 1.1 2002/06/03 14:37:19 espie Exp $
---- gcc/c-decl.c.orig	Fri May  3 14:07:04 2002
-+++ gcc/c-decl.c	Mon Jun  3 15:44:06 2002
+$OpenBSD: patch-gcc_c-decl_c,v 1.2 2002/09/14 10:14:51 espie Exp $
+--- gcc/c-decl.c.orig	Sat Jul 27 01:23:03 2002
++++ gcc/c-decl.c	Thu Sep 12 14:50:58 2002
 @@ -216,9 +216,9 @@ struct binding_level
      /* Nonzero means make a BLOCK if this level has any subblocks.  */
      char keep_if_subblocks;
@@ -40,7 +40,7 @@ $OpenBSD: patch-gcc_c-decl_c,v 1.1 2002/06/03 14:37:19 espie Exp $
      }
  }
  
-@@ -5880,11 +5881,14 @@ finish_struct (t, fieldlist, attributes)
+@@ -5890,11 +5891,14 @@ finish_struct (t, fieldlist, attributes)
    /* If this structure or union completes the type of any previous
       variable declaration, lay it out and output its rtl.  */
  
@@ -59,7 +59,7 @@ $OpenBSD: patch-gcc_c-decl_c,v 1.1 2002/06/03 14:37:19 espie Exp $
  	  if (TYPE_MAIN_VARIANT (TREE_TYPE (decl)) == TYPE_MAIN_VARIANT (t)
  	      && TREE_CODE (decl) != TYPE_DECL)
  	    {
-@@ -5894,8 +5898,11 @@ finish_struct (t, fieldlist, attributes)
+@@ -5904,8 +5908,11 @@ finish_struct (t, fieldlist, attributes)
  	      rest_of_decl_compilation (decl, NULL, toplevel, 0);
  	      if (! toplevel)
  		expand_decl (decl);
@@ -73,7 +73,7 @@ $OpenBSD: patch-gcc_c-decl_c,v 1.1 2002/06/03 14:37:19 espie Exp $
  	    }
  	  else if (!COMPLETE_TYPE_P (TREE_TYPE (decl))
  		   && TREE_CODE (TREE_TYPE (decl)) == ARRAY_TYPE)
-@@ -5914,8 +5921,11 @@ finish_struct (t, fieldlist, attributes)
+@@ -5924,8 +5931,11 @@ finish_struct (t, fieldlist, attributes)
  		      if (! toplevel)
  			expand_decl (decl);
  		    }

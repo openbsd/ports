@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_i386_i386_c,v 1.3 2002/08/30 08:33:14 espie Exp $
---- gcc/config/i386/i386.c.orig	Thu Aug 29 19:29:08 2002
-+++ gcc/config/i386/i386.c	Thu Aug 29 20:37:55 2002
-@@ -10808,6 +10808,9 @@ x86_initialize_trampoline (tramp, fnaddr
+$OpenBSD: patch-gcc_config_i386_i386_c,v 1.4 2002/09/14 10:14:51 espie Exp $
+--- gcc/config/i386/i386.c.orig	Wed Aug  7 20:10:57 2002
++++ gcc/config/i386/i386.c	Thu Sep 12 14:50:59 2002
+@@ -10893,6 +10893,9 @@ x86_initialize_trampoline (tramp, fnaddr
        if (offset > TRAMPOLINE_SIZE)
  	abort ();
      }

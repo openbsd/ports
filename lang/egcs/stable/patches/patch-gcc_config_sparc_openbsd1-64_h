@@ -1,7 +1,10 @@
-$OpenBSD: patch-gcc_config_sparc_openbsd1-64_h,v 1.2 2002/05/30 12:20:09 espie Exp $
---- gcc/config/sparc/openbsd1-64.h.orig	Thu May 30 11:34:47 2002
-+++ gcc/config/sparc/openbsd1-64.h	Thu May 30 12:00:42 2002
-@@ -0,0 +1,24 @@
+$OpenBSD: patch-gcc_config_sparc_openbsd1-64_h,v 1.3 2002/09/14 10:14:51 espie Exp $
+--- gcc/config/sparc/openbsd1-64.h.orig	Thu May 30 22:42:33 2002
++++ gcc/config/sparc/openbsd1-64.h	Thu Sep 12 14:50:59 2002
+@@ -22,3 +22,27 @@ Boston, MA 02111-1307, USA.  */
+ #define OBSD_HAS_DECLARE_FUNCTION_SIZE
+ #define OBSD_HAS_DECLARE_OBJECT
+ 
 +/* Configuration file for sparc64 OpenBSD target.
 +   Copyright (C) 1999 Free Software Foundation, Inc.
 +

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2002/06/05 23:31:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2002/09/14 10:14:51 espie Exp $
 @pkgcfl egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/cpp.info
 @unexec install-info --delete --info-dir=%D/info %D/info/cppinternals.info
@@ -63,6 +63,7 @@ info/gccint.info-6
 info/gccint.info-7
 info/gccint.info-8
 info/gccint.info-9
+IFPIC:lib/fpic/libiberty.a
 lib/gcc-lib/${CONFIG}/${V}/cc1
 lib/gcc-lib/${CONFIG}/${V}/collect2
 lib/gcc-lib/${CONFIG}/${V}/cpp0
@@ -85,7 +86,6 @@ man/man1/gcov.1
 @comment man/man7/fsf-funding.7
 @comment man/man7/gfdl.7
 @comment man/man7/gpl.7
-%%SHARED%%
 @dirrm lib/gcc-lib/${CONFIG}/${V}/include/machine
 @dirrm lib/gcc-lib/${CONFIG}/${V}/include
 IFPIC:@dirrm lib/gcc-lib/${CONFIG}/${V}/fpic

@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.12 2002/06/07 01:38:59 drahn Exp $
---- gcc/config.gcc.orig	Thu May  2 16:28:49 2002
-+++ gcc/config.gcc	Mon Jun  3 14:03:24 2002
-@@ -576,9 +576,11 @@ alpha*-*-netbsd*)
+$OpenBSD: patch-gcc_config_gcc,v 1.13 2002/09/14 10:14:51 espie Exp $
+--- gcc/config.gcc.orig	Tue Aug  6 17:20:55 2002
++++ gcc/config.gcc	Thu Sep 12 14:50:58 2002
+@@ -582,9 +582,11 @@ alpha*-*-netbsd*)
  	;;
  
  alpha*-*-openbsd*)
@@ -13,7 +13,7 @@ $OpenBSD: patch-gcc_config_gcc,v 1.12 2002/06/07 01:38:59 drahn Exp $
  	;;
  
  alpha*-dec-osf*)
-@@ -2762,8 +2764,8 @@ romp-*-openbsd*)
+@@ -2748,8 +2750,8 @@ romp-*-openbsd*)
  	# Nothing special
  	;;
  powerpc-*-openbsd*)
@@ -24,7 +24,7 @@ $OpenBSD: patch-gcc_config_gcc,v 1.12 2002/06/07 01:38:59 drahn Exp $
  	;;
  powerpc64-*-linux*)
  	tm_file="${tm_file} dbxelf.h elfos.h svr4.h freebsd-spec.h rs6000/sysv4.h rs6000/linux64.h"
-@@ -3086,6 +3088,13 @@ sparc-*-openbsd*)
+@@ -3057,6 +3059,13 @@ sparc-*-openbsd*)
  	tmake_file="t-libc-ok t-openbsd sparc/t-openbsd"
  	# we need collect2 until our bug is fixed...
  	use_collect2=yes
@@ -36,5 +36,5 @@ $OpenBSD: patch-gcc_config_gcc,v 1.12 2002/06/07 01:38:59 drahn Exp $
 +	with_cpu=ultrasparc
 +	float_format=i128
  	;;
- sparc-*-bsd*)
- 	tm_file="${tm_file} sparc/bsd.h"
+ sparc64-*-openbsd*)
+ 	tm_file="sparc/openbsd1-64.h sparc/sparc.h elfos.h svr4.h sparc/sysv4.h sparc/sol2.h sparc/sp64-elf.h openbsd.h sparc/openbsd64.h"
