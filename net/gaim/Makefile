@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2004/02/02 02:38:00 brad Exp $
+# $OpenBSD: Makefile,v 1.57 2004/04/09 06:42:42 jolan Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -55,6 +55,9 @@ INSTALL_STRIP=
 .endif
 
 .if ${FLAVOR:L:Mgtkspell}
+MODULES=	gcc3
+MODGCC3_ARCHES=	powerpc
+MODGCC3_LANGS=	C
 LIB_DEPENDS+=	gtkspell::textproc/gtkspell
 .else
 CONFIGURE_ARGS+=--disable-gtkspell

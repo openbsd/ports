@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/04/08 05:16:41 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2004/04/09 06:42:42 jolan Exp $
 
 COMMENT=	"spell checker designed to eventually replace Ispell"
 DISTNAME=	aspell-0.50.5
@@ -19,10 +19,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+MODULES=	gcc3
+MODGCC3_ARCHES=	powerpc
+MODGCC3_LANGS=	C++
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} --enable-static
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" 
 
 post-build:
 .for i in ${DICT}
