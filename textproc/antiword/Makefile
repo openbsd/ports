@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/05/12 04:28:52 margarida Exp $
+# $OpenBSD: Makefile,v 1.17 2003/06/23 13:15:32 wilfried Exp $
 
 COMMENT=	"converts MSWord Documents to ASCII Text and PostScript"
 
@@ -23,6 +23,10 @@ MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall -DNDEBUG" \
 NO_REGRESS=	Yes
 
 DOCS=		FAQ Netscape QandA ReadMe
+
+post-patch:
+	@perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" \
+		${WRKSRC}/antiword.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/antiword ${PREFIX}/bin
