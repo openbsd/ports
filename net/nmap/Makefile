@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2001/01/14 18:18:09 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2001/01/17 02:06:11 naddy Exp $
 
 DISTNAME=	nmap-2.54BETA7
 PKGNAME=	nmap-2.54b7
@@ -26,7 +26,7 @@ ALL_TARGET=	nmap
 .else
 LIB_DEPENDS=	gtk.1.2::x11/gtk+
 USE_X11=	Yes
-ALL_TARGET=	nmap nmapfe
+ALL_TARGET=	nmap nmapfe/nmapfe
 .endif
 
 .include <bsd.port.mk>
