@@ -1,22 +1,19 @@
-# OpenBSD makefile for:	tkcvs
-# Version required:	6.0
-# Date created:		15 June 1998
-# Whom:			todd@OpenBSD.org
+# $OpenBSD: Makefile,v 1.3 1998/10/08 18:51:10 marc Exp $
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/06/15 05:35:00 todd Exp $
-#
-
-NO_BUILD=	yes
-NO_CONFIGURE=	yes
 
 DISTNAME=	tkcvs-6.0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/code/
+
+BROKEN=		"code moved and newer version available"
 
 MAINTAINER=	todd@OpenBSD.org
 
+MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/apps/
 
 RUN_DEPENDS=	/usr/local/bin/wish8.0:${PORTSDIR}/x11/tk80
+
+NO_BUILD=	yes
+NO_CONFIGURE=	yes
 
 do-install:
 	cd $(WRKSRC)/tkcvs; ./doinstall
