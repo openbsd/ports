@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2004/05/07 23:35:51 pvalchev Exp $
---- configure.orig	2004-05-07 23:24:32.000000000 +0100
-+++ configure	2004-05-07 23:26:05.000000000 +0100
-@@ -2956,13 +2956,13 @@ fi
+$OpenBSD: patch-configure,v 1.3 2004/06/30 23:30:05 naddy Exp $
+--- configure.orig	Tue Jun 29 14:50:33 2004
++++ configure	Tue Jun 29 14:51:15 2004
+@@ -3229,13 +3229,13 @@ fi
  
  # FIXME: Replace `main' with a function in `-lpthread':
  
@@ -16,9 +16,9 @@ $OpenBSD: patch-configure,v 1.2 2004/05/07 23:35:51 pvalchev Exp $
 -LIBS="-lpthread  $LIBS"
 +LIBS="-pthread  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- #include "confdefs.h"
-@@ -3004,7 +3004,7 @@ if test $ac_cv_lib_pthread_main = yes; t
+ /* confdefs.h.  */
+ _ACEOF
+@@ -3292,7 +3292,7 @@ if test $ac_cv_lib_pthread_main = yes; t
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  

@@ -1,7 +1,7 @@
 The Markov Cluster Algorithm (MCL) is a fast and scalable
-cluster algorithm for graphs based on simulation of (stochastic)
-flow in graphs.  The algorithm was developed by Stijn van Dongen
-at the Centre for Mathematics and Computer Science in the
+algorithm for clustering graphs based on simulation of
+stochastic flow.  The algorithm was developed by Stijn van
+Dongen at the Centre for Mathematics and Computer Science in the
 Netherlands.
 
 The MCL algorithm is very fast, very scalable, and has a number
