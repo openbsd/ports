@@ -1,0 +1,12 @@
+$OpenBSD: patch-imap_auth_gss_c,v 1.1 2004/01/16 14:24:41 fgsch Exp $
+--- imap/auth_gss.c.orig	2004-01-15 23:28:19.000000000 -0300
++++ imap/auth_gss.c	2004-01-15 23:28:26.000000000 -0300
+@@ -28,7 +28,7 @@
+ #include <netinet/in.h>
+ 
+ #ifdef HAVE_HEIMDAL
+-#  include <gssapi/gssapi.h>
++#  include <gssapi.h>
+ #  define gss_nt_service_name GSS_C_NT_HOSTBASED_SERVICE
+ #else
+ #  include <gssapi/gssapi.h>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2003/12/03 20:47:45 lebel Exp $
+# $OpenBSD: Makefile,v 1.24 2004/01/16 14:24:41 fgsch Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
@@ -31,12 +31,13 @@ PATCH_LIST=     gcc-* patch-*
 .endif
 
 CONFDIR=	${SYSCONFDIR}/mutt
+CONFIGURE_STYLE= autoconf old
 CONFIGURE_ARGS=	--with-sharedir="${PREFIX}/share/mutt" \
 		--with-docdir="${PREFIX}/share/doc/mutt" \
 		--enable-flock --disable-fcntl \
 		--enable-external_dotlock \
 		--enable-imap --enable-pop --with-ssl \
-		--sysconfdir=${CONFDIR}
+		--with-gss --sysconfdir=${CONFDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ISPELL="${LOCALBASE}/bin/ispell"
@@ -54,10 +55,9 @@ CONFIGURE_ARGS+= --with-curses
 PATCHFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
 PATCH_DIST_STRIP=-p1
 CONFIGURE_ARGS+= --enable-compressed
-CONFIGURE_STYLE= automake old
+CONFIGURE_STYLE+= automake
 .else
 SUPDISTFILES+=  patch-${VERSION}.rr.compressed.1.gz:0
-CONFIGURE_STYLE= gnu old
 .endif
 
 .if ${FLAVOR:L:Mmixmaster}
