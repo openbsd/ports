@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2005/01/15 00:22:11 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2005/02/16 02:27:16 jolan Exp $
 
 COMMENT=	"Embedded SQL implementation"
 
-DISTNAME=	sqlite-2.8.15
+DISTNAME=	sqlite-2.8.16
 CATEGORIES=	databases
 HOMEPAGE=	http://www.sqlite.org/
 MASTER_SITES=	${HOMEPAGE}
@@ -19,7 +19,6 @@ WANTLIB=		c ncurses readline
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.59
 USE_GMAKE=		Yes
-WRKDIST=		${WRKDIR}/sqlite
 
 BUILD_DEPENDS=		tcl84::lang/tcl/8.4
 
