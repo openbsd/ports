@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/08 11:11:20 reinhard Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/Imager.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Imager/Expr.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Imager/Regops.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/Imager/regmach.pod
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Imager/.packlist
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Imager/Imager.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Imager/Imager.so
+man/man3/Imager.3p
+man/man3/Imager::Expr.3p
+man/man3/Imager::Regops.3p
+man/man3/Imager::regmach.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Imager
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/Imager

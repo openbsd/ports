@@ -1,0 +1,9 @@
+Imager is a perl module for creating and manipulating 24 bit
+images. Examples of what can be done with it can be seen at:
+${HOMEPAGE}best.html
+
+Flavors:
+	libs  - build with t1, freetype, png, gif, jpeg, tiff
+		graphic libraries
+
+WWW: ${HOMEPAGE}
