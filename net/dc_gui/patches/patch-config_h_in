@@ -1,0 +1,13 @@
+$OpenBSD: patch-config_h_in,v 1.1.1.1 2002/02/01 02:40:17 naddy Exp $
+--- config.h.in.orig	Mon Jan 28 12:38:58 2002
++++ config.h.in	Mon Jan 28 12:39:50 2002
+@@ -152,6 +152,9 @@
+ /* Define if you have the <X11/SM/SMlib.h> header file.  */
+ #undef HAVE_X11_SM_SMLIB_H
+ 
++/* Define if you have the <linux/sem.h> header file.  */
++#undef HAVE_LINUX_SEM_H
++
+ /* Name of package */
+ #undef PACKAGE
+ 

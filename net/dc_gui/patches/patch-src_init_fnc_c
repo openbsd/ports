@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_init_fnc_c,v 1.1.1.1 2002/02/01 02:40:17 naddy Exp $
+--- src/init_fnc.c.orig	Mon Jan 28 12:40:19 2002
++++ src/init_fnc.c	Mon Jan 28 12:42:26 2002
+@@ -7,7 +7,11 @@
+ #include <math.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+-#include <linux/sem.h>		/* for the value of SEMVMX */
++
++#ifdef HAVE_LINUX_SEM_H
++# include <linux/sem.h>     /* for the value of SEMVMX */
++#endif
++
+ #include <dirent.h>
+ #include <string.h>
+ #include <gnome.h>
+@@ -17,6 +21,10 @@
+ #include "main.h"
+ #include "do_connect.h"
+ #include "dctc_process.h"
++
++#ifdef __OpenBSD__
++# define SEMVMX 32767
++#endif
+ 
+ GtkStyle *fast_style=NULL;				/* style for fast user */
+ 
