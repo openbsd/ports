@@ -5,13 +5,15 @@ man/man1/bashbug.1
 @unexec install-info --delete %D/info/bash.info %D/info/dir
 info/bash.info
 @exec install-info  %D/info/bash.info %D/info/dir
-@exec if [ ! -d %D/share/doc/bash ]; then mkdir -p %D/share/doc/bash; fi
-share/doc/bash/article.ps.gz
-share/doc/bash/bashref.ps.gz
-share/doc/bash/bash.html
-share/doc/bash/bashref.html
-share/doc/bash/bashref_toc.html
+share/doc/bash/article.ps
 share/doc/bash/article.txt
+share/doc/bash/bash.html
+share/doc/bash/bash.ps
+share/doc/bash/bashbug.ps
+share/doc/bash/bashref.html
+share/doc/bash/bashref.ps
+share/doc/bash/builtins.ps
+share/doc/bash/readline.ps
 @dirrm share/doc/bash
 @exec echo ""
 @exec echo "*** Finished bash installation."

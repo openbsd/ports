@@ -1,8 +1,8 @@
---- builtins/enable.def~        Wed Oct  2 13:47:05 1996
-+++ builtins/enable.def Tue May  6 14:18:09 1997
-@@ -284,9 +284,10 @@
+--- builtins/enable.def.orig	Wed Dec 16 08:45:56 1998
++++ builtins/enable.def	Fri Feb 19 16:54:16 1999
+@@ -290,9 +290,10 @@
        name = list->word->word;
-
+ 
        size = strlen (name);
 -      struct_name = xmalloc (size + 8);
 -      strcpy (struct_name, name);
@@ -11,6 +11,6 @@
 +      *struct_name = '_';
 +      strcpy (struct_name + 1, name);
 +      strcpy (struct_name + size + 1, "_struct");
-
+ 
        b = (struct builtin *)dlsym (handle, struct_name);
        if (b == 0)

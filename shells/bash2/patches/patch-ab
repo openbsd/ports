@@ -1,10 +1,10 @@
---- configure.~1~	Thu Apr 16 07:42:52 1998
-+++ configure	Fri Jul  3 14:19:56 1998
-@@ -728,6 +728,7 @@
- sgi-irix6*)	opt_gnu_malloc=no ;;	# needs 8-byte alignment
+--- configure.orig	Thu Feb 18 10:12:00 1999
++++ configure	Fri Feb 19 16:54:18 1999
+@@ -734,6 +734,7 @@
+ mips-irix6*)	opt_gnu_malloc=no ;;	# needs 8-byte alignment
  sparc-linux*)	opt_gnu_malloc=no ;;	# sparc running linux; requires ELF
  #*-freebsd*)	opt_gnu_malloc=no ;;	# they claim it's better
 +*-openbsd*)	opt_gnu_malloc=no ;;	# needs 8-byte alignment for one thing
  *-aix*)		opt_gnu_malloc=no ;;	# AIX machines
  *-nextstep*)	opt_gnu_malloc=no ;;	# NeXT machines running NeXTstep
- *-dgux*)	opt_gnu_malloc=no ;;	# DG/UX machines
+ *-rhapsody*)	opt_gnu_malloc=no ;;	# Apple Rhapsody
