@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri May  7 07:20:11 1999
-+++ Makefile.in	Mon Aug  2 02:11:51 1999
+--- Makefile.in.orig	Mon Aug 30 04:03:42 1999
++++ Makefile.in	Wed Sep  1 12:10:19 1999
 @@ -10,7 +10,7 @@
  CC = @CC@
  CCOPT = 
@@ -7,9 +7,9 @@
 -INCLS = -I. -I$(LIBPCAPDIR)
 +INCLS = -I. # -I$(LIBPCAPDIR)
  DEFS = @DEFS@ -DVERSION=\"$(VERSION)\" -DLIBDIR=\"$(libdir)\"
- CFLAGS = @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
- # CFLAGS = -g -Wall $(DEFS) $(INCLS)
-@@ -33,7 +33,7 @@
+ # CFLAGS = @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
+ CFLAGS = -g -Wall $(DEFS) $(INCLS)
+@@ -35,7 +35,7 @@
  
  all: $(TARGET)
  
@@ -18,7 +18,7 @@
  	@echo Compiling nmap
  	rm -f $@
  	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
-@@ -124,8 +124,8 @@
+@@ -128,8 +128,8 @@
  install: all
  	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(libdir)
  	$(INSTALL) -c -m 755 nmap $(bindir)/nmap
