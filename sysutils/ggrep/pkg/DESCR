@@ -1,0 +1,10 @@
+The GNU versions of commonly used grep utilities.  Grep searches
+through textual input for lines which contain a match to a specified
+pattern and then prints the matching lines.  GNU's grep utilities
+include grep, egrep and fgrep.
+
+Note that this port will install these utilities with a 'g' prefix,
+e.g. ggrep, but the documentation will refer to them without the
+'g' prefix.
+
+WWW: ${HOMEPAGE}
