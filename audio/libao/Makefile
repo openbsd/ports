@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/16 11:58:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/17 23:45:46 naddy Exp $
 
 DISTNAME=	libao-0.6.0
 CATEGORIES=    	audio
@@ -22,8 +22,8 @@ PLUGINS=
 
 .else
 
-FLAVORS=	arts esd oss
-FLAVOR?=	oss
+FLAVORS=	arts esd sun
+FLAVOR?=	sun
 PLUGINS=	${FLAVOR}
 
 .if ${FLAVOR:L:Marts}
@@ -32,6 +32,13 @@ LIB_DEPENDS+=	artsc.0::x11/kde/libs2
 
 .if ${FLAVOR:L:Mesd}
 LIB_DEPENDS+=	esd.2::audio/esound
+.endif
+
+.if ${FLAVOR:L:Msun}
+post-extract:
+	@mkdir ${WRKSRC}/src/plugins/sun
+	@cp ${FILESDIR}/sun_Makefile.am ${WRKSRC}/src/plugins/sun/Makefile.am
+	@cp ${FILESDIR}/ao_sun.c ${WRKSRC}/src/plugins/sun/ao_sun.c
 .endif
 
 .endif

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ao_wav_c,v 1.1 2001/03/16 20:39:13 naddy Exp $
+$OpenBSD: patch-src_ao_wav_c,v 1.2 2001/03/17 23:45:47 naddy Exp $
 --- src/ao_wav.c.orig	Fri Mar 16 20:57:28 2001
 +++ src/ao_wav.c	Fri Mar 16 20:58:30 2001
 @@ -221,7 +221,7 @@ static void ao_wav_play(ao_internal_t *s

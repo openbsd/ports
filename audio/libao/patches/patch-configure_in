@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2001/03/14 01:54:09 todd Exp $
+$OpenBSD: patch-configure_in,v 1.2 2001/03/17 23:45:47 naddy Exp $
 --- configure.in.orig	Sat Feb 24 02:31:45 2001
-+++ configure.in	Tue Mar 13 02:29:46 2001
++++ configure.in	Sat Mar 17 18:45:41 2001
 @@ -43,9 +43,9 @@ if test -z "$GCC"; then
                  CFLAGS="-xO4 -fast -w -fsimple -native -xcg92"
                  PROFILE="-v -xpg -g -xO4 -fast -native -fsimple -xcg92 -Dsuncc" ;;
@@ -27,15 +27,21 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2001/03/14 01:54:09 todd Exp $
          esac
  fi
  
-@@ -117,9 +117,10 @@ AM_CONDITIONAL(HAVE_ESD,test "x$have_esd
+@@ -133,6 +133,11 @@ else
+ fi
+ AC_SUBST(ALSA_LIBS)
  
- dnl Check for OSS
++dnl Check for Sun audio
++
++AC_CHECK_HEADERS(sys/audioio.h)
++AM_CONDITIONAL(HAVE_SUN_AUDIO,test "${ac_cv_header_sys_audioio_h}" = yes)
++
+ dnl Check for aRts
  
-+AC_CHECK_HEADERS(soundcard.h)
- AC_CHECK_HEADERS(sys/soundcard.h)
- AC_CHECK_HEADERS(machine/soundcard.h)
--AM_CONDITIONAL(HAVE_OSS,test "${ac_cv_header_sys_soundcard_h}" = "yes" || test "${ac_cv_header_machine_soundcard_h}" = "yes")
-+AM_CONDITIONAL(HAVE_OSS,test "${ac_cv_header_soundcard_h}" = "yes" || "${ac_cv_header_sys_soundcard_h}" = "yes" || test "${ac_cv_header_machine_soundcard_h}" = "yes")
+ AC_PATH_PROG(ARTSC_CONFIG, artsc-config)
+@@ -160,4 +165,4 @@ AM_CONDITIONAL(HAVE_SOLARIS,test "x$have
  
- dnl Check for ALSA
+ CFLAGS="$CFLAGS -DAO_PLUGIN_PATH=\\\"$plugindir\\\""
  
+-AC_OUTPUT(Makefile src/Makefile doc/Makefile include/Makefile include/ao/Makefile include/ao/os_types.h src/plugins/Makefile src/plugins/esd/Makefile src/plugins/oss/Makefile src/plugins/alsa/Makefile src/plugins/arts/Makefile debian/Makefile)
++AC_OUTPUT(Makefile src/Makefile doc/Makefile include/Makefile include/ao/Makefile include/ao/os_types.h src/plugins/Makefile src/plugins/esd/Makefile src/plugins/oss/Makefile src/plugins/alsa/Makefile src/plugins/arts/Makefile src/plugins/sun/Makefile debian/Makefile)

@@ -1,0 +1,28 @@
+## Process this file with automake to produce Makefile.in
+
+AUTOMAKE_OPTIONS = foreign
+
+if HAVE_SUN_AUDIO
+
+sunltlibs = libsun.la
+sunldflags = -export-dynamic \
+             -version-info @LIB_CURRENT@:@LIB_REVISION@:@LIB_AGE@
+sunsources = ao_sun.c
+
+else
+
+sunltlibs =
+sunldflags =
+sunsources =
+
+endif
+
+INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/include
+
+libdir = $(plugindir)
+lib_LTLIBRARIES = $(sunltlibs)
+
+libsun_la_LDFLAGS = $(sunldflags)
+libsun_la_SOURCES = $(sunsources)
+
+EXTRA_DIST = ao_sun.c
