@@ -1,9 +1,0 @@
-$OpenBSD: patch-configure_in,v 1.1 2001/12/28 21:34:18 pvalchev Exp $
---- configure.in.orig	Tue Oct 30 20:58:23 2001
-+++ configure.in	Fri Dec 28 14:14:18 2001
-@@ -61,5 +61,4 @@ AC_OUTPUT([
- 	src/Makefile
- 	src/gengameng/Makefile
- 	src/images/Makefile
--	examples/Makefile
- ])

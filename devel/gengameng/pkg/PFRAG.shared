@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2001/12/28 21:34:18 pvalchev Exp $
-lib/libgengameng.so.4.0
+@comment $OpenBSD: PFRAG.shared,v 1.3 2003/01/21 09:35:51 pvalchev Exp $
+lib/libgengameng.so.4.1
 DYNLIBDIR(%B)

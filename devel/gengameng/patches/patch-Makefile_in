@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2001/12/28 21:34:18 pvalchev Exp $
---- Makefile.in.orig	Sun Nov 25 12:28:00 2001
-+++ Makefile.in	Fri Dec 28 14:23:37 2001
-@@ -84,7 +84,7 @@ SDL_CONFIG = @SDL_CONFIG@
- SDL_LIBS = @SDL_LIBS@
- VERSION = @VERSION@
+$OpenBSD: patch-Makefile_in,v 1.2 2003/01/21 09:35:51 pvalchev Exp $
+--- Makefile.in.orig	Tue Apr  2 23:48:28 2002
++++ Makefile.in	Sat Jan 18 13:57:35 2003
+@@ -94,7 +94,7 @@ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
  
 -SUBDIRS = src macros examples
 +SUBDIRS = src macros
  
- EXTRA_DIST =  	bootstrap 	@PACKAGE@.spec 	@PACKAGE@.dsp 	@PACKAGE@Conf.sh
+ bin_SCRIPTS = @PACKAGE@-config
  

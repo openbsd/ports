@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/29 20:19:10 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2003/01/21 09:35:50 pvalchev Exp $
 
 COMMENT=	"X11 game engine library"
 
-VERSION=	4.0
+VERSION=	4.1
 DISTNAME=	gengameng-${VERSION}
 CATEGORIES=	devel x11
 
@@ -15,17 +15,13 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltmain_sh \
-		patch-*
-
-BUILD_DEPENDS=	automake::devel/automake
 LIB_DEPENDS=	SDL::devel/sdl \
 		SDL_image::devel/sdl-image
 
 USE_X11=	Yes
+USE_LIBTOOL=	Yes
 
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
