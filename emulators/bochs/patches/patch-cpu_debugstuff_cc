@@ -1,6 +1,6 @@
-$OpenBSD: patch-cpu_debugstuff_cc,v 1.1 2001/02/02 16:59:08 todd Exp $
+$OpenBSD: patch-cpu_debugstuff_cc,v 1.2 2001/02/02 22:34:58 todd Exp $
 --- cpu/debugstuff.cc.orig	Sat Mar 25 21:39:08 2000
-+++ cpu/debugstuff.cc	Tue Oct 31 12:33:21 2000
++++ cpu/debugstuff.cc	Fri Feb  2 16:26:06 2001
 @@ -29,11 +29,11 @@
    void
  BX_CPU_C::debug(Bit32u offset)
@@ -195,33 +195,6 @@ $OpenBSD: patch-cpu_debugstuff_cc,v 1.1 2001/02/02 16:59:08 todd Exp $
            d->type);
          return(0);
        }
-@@ -438,7 +438,7 @@ BX_CPU_C::dbg_get_descriptor_h(bx_descri
- }
- 
-   Boolean
--BX_CPU_C::dbg_get_sreg(bx_dbg_sreg_t *sreg, unsigned sreg_no)
-+BX_CPU_C::dbg_get_sreg(bio->getdbg()_sreg_t *sreg, unsigned sreg_no)
- {
-   if (sreg_no > 5)
-     return(0);
-@@ -450,7 +450,7 @@ BX_CPU_C::dbg_get_sreg(bx_dbg_sreg_t *sr
- }
- 
-   Boolean
--BX_CPU_C::dbg_get_cpu(bx_dbg_cpu_t *cpu)
-+BX_CPU_C::dbg_get_cpu(bio->getdbg()_cpu_t *cpu)
- {
-   cpu->eax = EAX;
-   cpu->ebx = EBX;
-@@ -538,7 +538,7 @@ BX_CPU_C::dbg_get_cpu(bx_dbg_cpu_t *cpu)
- }
- 
-   Boolean
--BX_CPU_C::dbg_set_cpu(bx_dbg_cpu_t *cpu)
-+BX_CPU_C::dbg_set_cpu(bio->getdbg()_cpu_t *cpu)
- {
-   // returns 1=OK, 0=Error
-   Bit32u val;
 @@ -550,75 +550,75 @@ BX_CPU_C::dbg_set_cpu(bx_dbg_cpu_t *cpu)
  
    // CS, SS, DS, ES, FS, GS descriptor checks
@@ -311,39 +284,6 @@ $OpenBSD: patch-cpu_debugstuff_cc,v 1.1 2001/02/02 16:59:08 todd Exp $
        return(0); // error
        }
      }
-@@ -939,9 +939,9 @@ BX_CPU_C::dbg_set_cpu(bx_dbg_cpu_t *cpu)
- }
- 
- #if BX_SIM_ID == 0
--#  define BX_DBG_NULL_CALLBACK bx_dbg_null_callback0
-+#  define BX_DBG_NULL_CALLBACK bio->getdbg()_null_callback0
- #else
--#  define BX_DBG_NULL_CALLBACK bx_dbg_null_callback1
-+#  define BX_DBG_NULL_CALLBACK bio->getdbg()_null_callback1
- #endif
-   void
- BX_DBG_NULL_CALLBACK(unsigned val)
-@@ -954,9 +954,9 @@ BX_DBG_NULL_CALLBACK(unsigned val)
- 
-   void
- #if BX_SIM_ID == 0
--bx_dbg_init_cpu_mem_env0(bx_dbg_callback_t *callback, int argc, char *argv[])
-+bio->getdbg()_init_cpu_mem_env0(bio->getdbg()_callback_t *callback, int argc, char *argv[])
- #else
--bx_dbg_init_cpu_mem_env1(bx_dbg_callback_t *callback, int argc, char *argv[])
-+bio->getdbg()_init_cpu_mem_env1(bio->getdbg()_callback_t *callback, int argc, char *argv[])
- #endif
- {
-   UNUSED(argc);
-@@ -993,7 +993,7 @@ bx_dbg_init_cpu_mem_env1(bx_dbg_callback
-   callback->instr_print         = bx_instr_print;
- #endif
- #if BX_USE_LOADER
--  callback->loader              = bx_dbg_loader;
-+  callback->loader              = bio->getdbg()_loader;
- #endif
-   callback->crc32               = BX_MEM.dbg_crc32;
- }
 @@ -1003,13 +1003,16 @@ bx_dbg_init_cpu_mem_env1(bx_dbg_callback
    void
  BX_CPU_C::atexit(void)

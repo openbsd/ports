@@ -1,6 +1,6 @@
-$OpenBSD: patch-cpu_cpu_cc,v 1.1 2001/02/02 16:59:07 todd Exp $
+$OpenBSD: patch-cpu_cpu_cc,v 1.2 2001/02/02 22:34:58 todd Exp $
 --- cpu/cpu.cc.orig	Sat Mar 25 21:39:07 2000
-+++ cpu/cpu.cc	Tue Oct 31 12:51:30 2000
++++ cpu/cpu.cc	Fri Feb  2 16:25:06 2001
 @@ -259,32 +259,32 @@ debugger_check:
      if (BX_CPU_THIS_PTR break_point) {
  	  switch (BX_CPU_THIS_PTR break_point) {
@@ -95,21 +95,8 @@ $OpenBSD: patch-cpu_cpu_cc,v 1.1 2001/02/02 16:59:07 todd Exp $
      BX_CPU_THIS_PTR debug_vm = BX_CPU_THIS_PTR eflags.vm;
      BX_CPU_THIS_PTR stop_reason = STOP_MODE_BREAK_POINT;
      return 1;
-@@ -592,7 +592,7 @@ BX_CPU_C::dbg_is_begin_instr_bpoint(Bit3
- 
-   if( (BX_CPU_THIS_PTR show_flag) & (dbg_show_mask)) {
-     int rv;
--    if((rv = bx_dbg_symbolic_output()))
-+    if((rv = bio->getdbg()_symbolic_output()))
-       return rv;
-   }
- 
-@@ -676,10 +676,10 @@ BX_CPU_C::dbg_is_end_instr_bpoint(Bit32u
-   // if async event pending, acknowlege them
-   if (bx_guard.async_changes_pending.which) {
-     if (bx_guard.async_changes_pending.which & BX_DBG_ASYNC_PENDING_A20)
--      bx_dbg_async_pin_ack(BX_DBG_ASYNC_PENDING_A20,
-+      bio->getdbg()_async_pin_ack(BX_DBG_ASYNC_PENDING_A20,
+@@ -679,7 +679,7 @@ BX_CPU_C::dbg_is_end_instr_bpoint(Bit32u
+       bx_dbg_async_pin_ack(BX_DBG_ASYNC_PENDING_A20,
                             bx_guard.async_changes_pending.a20);
      if (bx_guard.async_changes_pending.which) {
 -      bx_panic("decode: async pending unrecognized.\n");
