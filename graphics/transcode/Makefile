@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/09/15 00:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2004/09/18 20:57:07 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -25,9 +25,9 @@ PATCH_LIST=	patch-* gcc-*
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS=	::devel/nasm
-PKG_CMD+=-Di386=1
+PKG_ARGS+=-Di386=1
 .else
-PKG_CMD+=-Di386=0
+PKG_ARGS+=-Di386=0
 .endif
 
 LIB_DEPENDS=	SDL.2::devel/sdl \
