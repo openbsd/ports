@@ -1,77 +1,52 @@
-*** os.c.orig	Sat Apr 17 18:53:01 1999
---- os.c	Tue Apr 20 04:45:20 1999
-***************
-*** 82,88 ****
---- 82,91 ----
-    SetConsoleMode(hConIn,ConInMode);
-    SetConsoleMode(hConOut,ConOutMode);
-  #else
-+   char *s;
-    fgets(Str,sizeof(Password)-1,stdin);
-+   if ((s = strchr(Str, '\n')) != NULL)
-+       *s = '\0';
-  #endif
-  }
-  
-***************
-*** 408,433 ****
-    }
-  #endif
-  #ifdef _UNIX
-    switch(NewLhd.HostOS)
-    {
-      case MS_DOS:
-      case OS2:
-      case WIN_32:
-        if (NewLhd.FileAttr & 0x10)
-!         NewLhd.FileAttr=0x41ff;
-        else
-          if (NewLhd.FileAttr & 1)
-!           NewLhd.FileAttr=0x816d;
-          else
-!           NewLhd.FileAttr=0x81ff;
-        break;
-      case UNIX:
-        break;
-      default:
-        if ((NewLhd.Flags & LHD_WINDOWMASK)==LHD_DIRECTORY)
-!         NewLhd.FileAttr=0x41ff;
-        else
-!         NewLhd.FileAttr=0x81ff;
-        break;
-    }
-  #endif
---- 411,443 ----
-    }
-  #endif
-  #ifdef _UNIX
-+   static mode_t mask = -1;
-+ 
-+   if (mask == (mode_t) -1)
-+   {
-+     mask = umask(022);
-+     (void) umask(mask);
-+   }
-    switch(NewLhd.HostOS)
-    {
-      case MS_DOS:
-      case OS2:
-      case WIN_32:
-        if (NewLhd.FileAttr & 0x10)
-! 	NewLhd.FileAttr=0x41ff & ~mask;
-        else
-          if (NewLhd.FileAttr & 1)
-! 	  NewLhd.FileAttr=0x8124 & ~mask;
-          else
-! 	  NewLhd.FileAttr=0x81b6 & ~mask;
-        break;
-      case UNIX:
-        break;
-      default:
-        if ((NewLhd.Flags & LHD_WINDOWMASK)==LHD_DIRECTORY)
-! 	NewLhd.FileAttr=0x41ff & ~mask;
-        else
-! 	NewLhd.FileAttr=0x81b6 & ~mask;
-        break;
-    }
-  #endif
+--- os.c.orig	Sat Apr 17 10:53:01 1999
++++ os.c	Sun Mar 26 17:40:24 2000
+@@ -82,7 +82,10 @@
+   SetConsoleMode(hConIn,ConInMode);
+   SetConsoleMode(hConOut,ConOutMode);
+ #else
++  char *s;
+   fgets(Str,sizeof(Password)-1,stdin);
++  if ((s = strchr(Str, '\n')) != NULL)
++      *s = '\0';
+ #endif
+ }
+ 
+@@ -408,26 +411,33 @@
+   }
+ #endif
+ #ifdef _UNIX
++  static mode_t mask = -1;
++
++  if (mask == (mode_t) -1)
++  {
++    mask = umask(022);
++    (void) umask(mask);
++  }
+   switch(NewLhd.HostOS)
+   {
+     case MS_DOS:
+     case OS2:
+     case WIN_32:
+       if (NewLhd.FileAttr & 0x10)
+-        NewLhd.FileAttr=0x41ff;
++	NewLhd.FileAttr=0x41ff & ~mask;
+       else
+         if (NewLhd.FileAttr & 1)
+-          NewLhd.FileAttr=0x816d;
++	  NewLhd.FileAttr=0x8124 & ~mask;
+         else
+-          NewLhd.FileAttr=0x81ff;
++	  NewLhd.FileAttr=0x81b6 & ~mask;
+       break;
+     case UNIX:
+       break;
+     default:
+       if ((NewLhd.Flags & LHD_WINDOWMASK)==LHD_DIRECTORY)
+-        NewLhd.FileAttr=0x41ff;
++	NewLhd.FileAttr=0x41ff & ~mask;
+       else
+-        NewLhd.FileAttr=0x81ff;
++	NewLhd.FileAttr=0x81b6 & ~mask;
+       break;
+   }
+ #endif
