@@ -30,6 +30,7 @@ FAIL: gcc.c-torture/execute/complex-5.c execution,  -O2
 FAIL: gcc.c-torture/execute/complex-5.c execution,  -O2 -fomit-frame-pointer -finline-functions 
 FAIL: gcc.c-torture/execute/complex-5.c execution,  -O2 -g 
 FAIL: gcc.c-torture/execute/complex-5.c execution,  -Os 
+FAIL: gcc.c-torture/execute/memcpy-bi.c compilation,  -O2 -fomit-frame-pointer -finline-functions 
 FAIL: gcc.c-torture/execute/memcpy-bi.c compilation,  -O2 -fomit-frame-pointer -finline-functions -funroll-loops 
 FAIL: gcc.c-torture/execute/memcpy-bi.c compilation,  -O2 -fomit-frame-pointer -finline-functions -funroll-all-loops 
 FAIL: gcc.c-torture/execute/ieee/mzero2.c execution,  -O0 
@@ -44,10 +45,10 @@ FAIL: gcc.c-torture/special/981006-1.c  (test for bogus messages, line 12)
 
 		=== gcc Summary ===
 
-# of expected passes		7867
-# of unexpected failures	21
+# of expected passes		7865
+# of unexpected failures	22
 # of expected failures		13
-# of untested testcases		2
+# of untested testcases		3
 # of unsupported tests		19
 /usr/ports/lang/egcs-snapshot/work/egcs-19990117/gcc/xgcc version egcs-2.93.02 19990117 (gcc2 ss-980609 experimental)
 
@@ -56,70 +57,11 @@ FAIL: gcc.c-torture/special/981006-1.c  (test for bogus messages, line 12)
 
 Running target unix
 XPASS: g++.benjamin/p12475.C (test for excess errors)
-FAIL: g++.brendan/eh1.C  Execution test
-FAIL: g++.eh/cleanup1.C  Execution test
-FAIL: g++.eh/flow1.C  Execution test
-FAIL: g++.eh/new1.C  Execution test
-FAIL: g++.eh/new2.C  Execution test
-FAIL: g++.eh/pdel1.C  Execution test
-FAIL: g++.eh/pdel2.C  Execution test
-FAIL: g++.eh/ptr1.C  Execution test
-FAIL: g++.eh/rethrow1.C  Execution test
-FAIL: g++.eh/rethrow2.C  Execution test
-FAIL: g++.eh/rethrow3.C  Execution test
-FAIL: g++.eh/rethrow4.C  Execution test
-FAIL: g++.eh/rethrow5.C  Execution test
-FAIL: g++.eh/spec1.C  Execution test
-FAIL: g++.eh/spec2.C  Execution test
-FAIL: g++.eh/spec3.C  Execution test
-FAIL: g++.eh/tmpl1.C  Execution test
 XPASS: g++.jason/thunk3.C (test for excess errors)
 XPASS: g++.jason/thunk3.C  Execution test
 XPASS: g++.law/profile1.C (test for excess errors)
 XPASS: g++.law/profile1.C  Execution test
-FAIL: g++.martin/new1.C  Execution test
-FAIL: g++.mike/dyncast1.C  Execution test
-FAIL: g++.mike/dyncast2.C  Execution test
-FAIL: g++.mike/eh10.C  Execution test
-FAIL: g++.mike/eh12.C  Execution test
-FAIL: g++.mike/eh14.C  Execution test
-FAIL: g++.mike/eh16.C  Execution test
-FAIL: g++.mike/eh17.C  Execution test
-FAIL: g++.mike/eh18.C  Execution test
-FAIL: g++.mike/eh2.C  Execution test
-FAIL: g++.mike/eh21.C  Execution test
-FAIL: g++.mike/eh24.C  Execution test
-FAIL: g++.mike/eh25.C  Execution test
-FAIL: g++.mike/eh26.C  Execution test
-FAIL: g++.mike/eh27.C  Execution test
-FAIL: g++.mike/eh28.C  Execution test
-FAIL: g++.mike/eh29.C  Execution test
-FAIL: g++.mike/eh3.C  Execution test
-FAIL: g++.mike/eh31.C  Execution test
-FAIL: g++.mike/eh33.C  Execution test
-FAIL: g++.mike/eh34.C  Execution test
-FAIL: g++.mike/eh35.C  Execution test
-FAIL: g++.mike/eh36.C  Execution test
-FAIL: g++.mike/eh37.C  Execution test
-FAIL: g++.mike/eh38.C  Execution test
-FAIL: g++.mike/eh39.C  Execution test
-FAIL: g++.mike/eh40.C  Execution test
-FAIL: g++.mike/eh41.C  Execution test
-FAIL: g++.mike/eh42.C  Execution test
-FAIL: g++.mike/eh44.C  Execution test
-FAIL: g++.mike/eh47.C  Execution test
-FAIL: g++.mike/eh48.C  Execution test
-FAIL: g++.mike/eh49.C  Execution test
-FAIL: g++.mike/eh5.C  Execution test
-FAIL: g++.mike/eh50.C  Execution test
-FAIL: g++.mike/eh51.C  Execution test
-FAIL: g++.mike/eh6.C  Execution test
-FAIL: g++.mike/eh8.C  Execution test
 FAIL: g++.mike/p6610a.C  Execution test
-FAIL: g++.mike/p7912.C  Execution test
-FAIL: g++.mike/p9706.C  Execution test
-FAIL: g++.other/array1.C  Execution test
-FAIL: g++.other/init7.C  Execution test
 FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 21)
 FAIL: g++.other/null1.C converting NULL to non-pointer type (test for warnings, line 22)
 FAIL: g++.other/null1.C NULL used in arithmetic (test for warnings, line 25)
@@ -134,18 +76,13 @@ FAIL: g++.other/null1.C converting NULL to int (test for warnings, line 35)
 FAIL: g++.other/null1.C converting NULL to int (test for warnings, line 36)
 FAIL: g++.other/null1.C NULL bound to integer template parameter (test for warnings, line 37)
 FAIL: g++.other/null1.C converting NULL to int (test for warnings, line 38)
-FAIL: g++.other/singleton.C  Execution test
 FAIL: g++.pt/instantiate4.C (test for excess errors)
 FAIL: g++.pt/static3.C (test for excess errors)
-FAIL: g++.robertl/eb31.C  Execution test
-FAIL: g++.robertl/eb50.C  Execution test
-FAIL: g++.robertl/eb66.C  Execution test
-FAIL: g++.robertl/eb88.C  Execution test
 
 		=== g++ Summary ===
 
-# of expected passes		4714
-# of unexpected failures	81
+# of expected passes		4778
+# of unexpected failures	17
 # of unexpected successes	5
 # of expected failures		90
 # of untested testcases		7
@@ -179,3 +116,4 @@ FAIL: objc/execute/bf-17.m execution,  -O
 
 # of expected passes		35
 # of unexpected failures	3
+
