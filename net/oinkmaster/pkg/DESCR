@@ -3,7 +3,7 @@ you update your Snort 1.8+ rules and comment out the unwanted ones after
 each update. It will tell you exactly what had changed since the last
 update, hence giving you good control of your rules.
 
-It's a variant of my (obsolete) arachNIDS snort rules updater
+It's a variant of the (obsolete) arachNIDS snort rules updater
 (http://nitzer.dhs.org/arachnids_upd/) which is pretty much the same
 thing but for the arachNIDS Snort rules exports at
 http://www.whitehats.com/.
