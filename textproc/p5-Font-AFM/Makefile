@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/11/15 15:12:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/04/11 15:03:29 brad Exp $
 
 COMMENT=	"perl interface to Adobe Font Metrics files"
 
-DISTNAME=	Font-AFM-1.18
+DISTNAME=	Font-AFM-1.19
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
  
