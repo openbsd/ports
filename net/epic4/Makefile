@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2004/06/05 11:15:42 brad Exp $
+# $OpenBSD: Makefile,v 1.55 2004/06/06 01:43:13 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 COMMENT=	"(E)nhanced (P)rogrammable (I)RC-II (C)lient"
@@ -45,7 +45,6 @@ post-extract:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/epic4
 	@cd ${PREFIX}/bin && mv -f epic4-EPIC4-${VERSION} epic4
-	@cd ${PREFIX}/libexec && mv -f wserv4 epic4-wserv4
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/epic4
 	@find ${PREFIX}/share/epic4 -name 'CVS' -print0 | xargs -0 rm -rf
 

@@ -1,6 +1,15 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2004/02/25 02:35:04 brad Exp $
---- Makefile.in.orig	2004-02-21 23:16:57.000000000 -0500
-+++ Makefile.in	2004-02-21 23:17:47.000000000 -0500
+$OpenBSD: patch-Makefile_in,v 1.2 2004/06/06 01:43:13 brad Exp $
+--- Makefile.in.orig	2003-07-17 21:44:56.000000000 -0400
++++ Makefile.in	2004-06-05 16:34:45.000000000 -0400
+@@ -73,7 +73,7 @@ mandir	    = @mandir@
+ 
+ epic        = @epic@
+ epic_exe    = $(bindir)/$(epic)
+-wserv_exe   = $(libexecdir)/wserv4
++wserv_exe   = $(libexecdir)/$(epic)-wserv4
+ epicdir     = $(sharedir)/$(epic)
+ 
+ ############ You ought not change anything below this line ###################
 @@ -182,7 +182,7 @@ installscript: installdirs test
  
  helpdir   = $(epicdir)/help
