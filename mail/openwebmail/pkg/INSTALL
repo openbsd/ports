@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.11 2003/11/13 05:56:00 kevlo Exp $
+# $OpenBSD: INSTALL,v 1.12 2004/06/24 03:33:15 brad Exp $
 #
 # Pre/post-installation setup of openwebmail
 
@@ -72,17 +72,6 @@ do_install()
     echo
 }
 
-do_warning()
-{
-    echo "+---------------"
-    echo "| WARNING!"
-    echo "|"
-    echo "| This port has changed its user from 'mail' to '_mail'. If you"
-    echo "| installed this port before, ensure all permissions are set"
-    echo "| correctly and then \"groupdel mail\"."
-    echo "+---------------"
-}
-
 # Verify proper execution
 #
 if [ $# -ne 2 ]; then
@@ -102,7 +91,6 @@ case $2 in
 	else
 	    do_install "$1"
 	fi
-	do_warning
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2

@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: INSTALL,v 1.6 2003/06/22 10:06:45 sturm Exp $
+# $OpenBSD: INSTALL,v 1.7 2004/06/24 03:33:15 brad Exp $
 #
 # Pre/post-installation setup of majordomo
 
@@ -74,17 +74,6 @@ do_install_configuration()
   fi
 }
 
-do_warning()
-{
-    echo "+---------------"
-    echo "| WARNING!"
-    echo "|"
-    echo "| This port has changed its user/group from 'majordom' to"
-    echo "| '_majordomo'. If you installed this port before, ensure"
-    echo "| all permissions are set correctly and then \"rmuser majordom\"."
-    echo "+---------------"
-}
-
 if [ $# -ne 2 ]; then
     echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
     exit 1
@@ -99,7 +88,6 @@ case $2 in
 	do_set_file_permissions
 	do_install_configuration
 	cat ${PREFIX}/share/doc/majordomo/post-install-notes
-	do_warning
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
