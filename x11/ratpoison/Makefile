@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2004/07/21 02:08:05 jcs Exp $
+# $OpenBSD: Makefile,v 1.8 2004/09/28 14:28:54 jcs Exp $
 
 COMMENT=	"minimal wm based on GNU screen"
 
 DISTNAME=	ratpoison-1.3.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 HOMEPAGE=	http://ratpoison.sourceforge.net/
 

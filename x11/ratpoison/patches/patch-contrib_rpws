@@ -1,0 +1,82 @@
+$OpenBSD: patch-contrib_rpws,v 1.1 2004/09/28 14:28:55 jcs Exp $
+--- contrib/rpws.orig	Sat Aug 23 02:01:51 2003
++++ contrib/rpws	Mon Sep 27 20:17:37 2004
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # Workspaces for ratpoison
+ # Copyright (C) 2003 Shawn Betts
+@@ -22,9 +22,6 @@
+ # You want more workspaces? Edit this script.
+ #
+ 
+-# FIXME: Currently this depends on bash because I can't figure out how
+-# to pass argument to these functions. In bash $1 ... $n are bound to
+-# them, not so in plain bourne.
+ #
+ # Code:
+ #
+@@ -50,6 +47,9 @@
+ {
+     # Backup the frames
+     FS=`rp_call fdump`
++    if [ -z $FS ]; then
++        exit;
++    fi
+     rp_call select -
+     rp_call only
+ 
+@@ -64,7 +64,11 @@
+     # Workspace 1 uses the 'default' group.
+     # Start in workspace 1.
+     rp_call gselect default
+-    rp_call setenv fs1 `rp_call fdump`
++    FDUMP=`rp_call fdump`
++    if [ -z $FDUMP ]; then
++        exit;
++    fi
++    rp_call setenv fs1 $FDUMP
+     rp_call setenv ws 1
+ 
+     # restore the frames
+@@ -74,7 +78,14 @@
+ ws_save ()
+ {
+     WS=`rp_call getenv ws`
+-    rp_call setenv fs$WS `rp_call fdump`
++    if [ -z $WS ]; then
++        exit;
++    fi
++    FDUMP=`rp_call fdump`
++    if [ -z $FDUMP ]; then
++        exit;
++    fi
++    rp_call setenv fs$WS $FDUMP
+ }
+ 
+ ws_restore ()
+@@ -85,8 +96,13 @@
+     else
+ 	rp_call gselect ws$1
+     fi
++
++    FS=`rp_call getenv fs$1`
++    if [ -z $FS ]; then
++	exit;
++    fi
+     rp_call echo Workspace $1
+-    rp_call frestore `rp_call getenv fs$1`
++    rp_call frestore $FS
+     rp_call setenv ws $1
+ }
+ 
+@@ -101,8 +117,6 @@
+     rp_call bind M-6 exec $0 6
+     rp_call bind M-7 exec $0 7
+ }
+-
+-echo boom >/tmp/boom
+ 
+ if [ -z $@ ]; then
+     echo "Usage:"
