@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/02/02 23:16:18 djm Exp $
+# $OpenBSD: Makefile,v 1.7 2005/03/15 07:17:38 sturm Exp $
 
 COMMENT=	"Python charting and plotting API"
 
@@ -30,7 +30,8 @@ RUN_DEPENDS=	::math/py-Numeric \
 		::x11/py-gtk2 \
 		::devel/py-tz \
 		::devel/py-dateutil
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		::devel/pkgconfig
 LIB_DEPENDS=	png.3::graphics/png
 
 MAKE_ENV+=      EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng"
