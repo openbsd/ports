@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2002/04/06 22:14:19 miod Exp $
---- configure.orig	Mon Oct  1 22:48:30 2001
-+++ configure	Mon Oct  1 22:51:47 2001
-@@ -3512,7 +3512,7 @@ else
+$OpenBSD: patch-configure,v 1.3 2002/12/10 18:22:06 brad Exp $
+--- configure.orig	Tue Dec 10 13:03:25 2002
++++ configure	Tue Dec 10 13:03:25 2002
+@@ -3715,7 +3715,7 @@ else
    cat conftest.$ac_ext >&5
  fi
  rm -f conftest*
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.2 2002/04/06 22:14:19 miod Exp $
        test -n "$dash_r" && break
      done ;;
  esac
-@@ -3798,7 +3798,7 @@ EOF
+@@ -4001,7 +4001,7 @@ EOF
    done
  
    if test x"$ssl_linked" = xno; then
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.2 2002/04/06 22:14:19 miod Exp $
      LIBS=$OLD_LIBS
              echo
      echo "WARNING: Failed to link with OpenSSL libraries in $ssl_root/lib."
-@@ -3807,7 +3807,7 @@ EOF
+@@ -4010,7 +4010,7 @@ EOF
    fi
  fi
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.2 2002/04/06 22:14:19 miod Exp $
  
  
  echo $ac_n "checking whether NLS is requested""... $ac_c" 1>&6
-@@ -4246,7 +4246,7 @@
+@@ -4246,7 +4246,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure,v 1.2 2002/04/06 22:14:19 miod Exp $
  cat > conftest.$ac_ext <<EOF
  #line 4252 "configure"
  #include "confdefs.h"
-@@ -4275,7 +4275,7 @@
+@@ -4275,7 +4275,7 @@ fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    
