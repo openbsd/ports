@@ -3,10 +3,8 @@
 # Date created:		May 21 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 1999/10/31 10:10:32 angelos Exp $
+# $OpenBSD: Makefile,v 1.4 1999/11/14 22:18:02 turan Exp $
 #
-
-BROKEN=		waiting for turans@ to verify
 
 DISTNAME=	sp-1.2.1
 CATEGORIES=	textproc
