@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2001/06/29 21:11:01 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.88 2001/07/12 09:06:18 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -61,6 +61,8 @@
      SUBDIR += p5-B-Graph
      SUBDIR += p5-BSD-Resource
      SUBDIR += p5-C-Scan
+     SUBDIR += p5-Class-Date
+     SUBDIR += p5-Class-Loader  
      SUBDIR += p5-Class-MethodMaker
      SUBDIR += p5-Curses
      SUBDIR += p5-Curses-Widgets
