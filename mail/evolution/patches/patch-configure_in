@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.5 2003/05/25 22:10:22 marcm Exp $
+$OpenBSD: patch-configure_in,v 1.6 2004/10/24 20:17:53 alek Exp $
 --- configure.in.orig	Mon Mar 31 08:32:50 2003
 +++ configure.in	Fri Apr  4 11:07:05 2003
 @@ -86,7 +86,8 @@ AC_CHECK_HEADERS(alloca.h)
@@ -11,7 +11,15 @@ $OpenBSD: patch-configure_in,v 1.5 2003/05/25 22:10:22 marcm Exp $
  socklen_t x;
  ],[],[AC_MSG_RESULT(yes)],[
  AC_TRY_COMPILE([#include <sys/socket.h>
-@@ -652,26 +653,36 @@ if test "x$with_krb5" != "xno"; then
+@@ -98,6 +99,7 @@ AC_MSG_RESULT(int)
+ AC_DEFINE(socklen_t,int)])])
+ 
+ ALL_LINGUAS="az bg ca cs da de el en_AU en_GB es et eu fi fr ga gl hu it ja ko lt lv nl nn no pl pt pt_BR ro ru sk sl sv tr uk vi zh_CN zh_TW"
++LIBS="-liconv $LIBS"
+ AM_GNOME_GETTEXT
+ localedir='$(prefix)/$(DATADIRNAME)/locale'
+ AC_SUBST(localedir)
+@@ -652,26 +654,36 @@ if test "x$with_krb5" != "xno"; then
  	
  	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
  	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
