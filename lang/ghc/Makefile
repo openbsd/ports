@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/08/12 13:25:18 avsm Exp $
+# $OpenBSD: Makefile,v 1.8 2003/08/14 01:01:16 avsm Exp $
 # Based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
 #
@@ -25,7 +25,7 @@ CATEGORIES=	lang
 HOMEPAGE=	http://www.haskell.org/ghc/
 MAINTAINER=	Don Stewart <dons@cse.unsw.edu.au>
 
-LIB_DEPENDS=	::devel/gmp
+LIB_DEPENDS=	gmp::devel/gmp
 
 MULTI_PACKAGES=	-doc
 SUBPACKAGE?=
