@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/12/21 16:56:59 danh Exp $
+# $OpenBSD: Makefile,v 1.27 2005/03/06 07:57:17 alek Exp $
 
 COMMENT=	"command-driven interactive function plotting program"
 
@@ -23,7 +23,8 @@ FLAVOR?=
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--without-linux-vga --without-gd --without-pdf \
-		--with-png --with-readline --with-lasergnu
+		--with-png --with-readline --with-lasergnu \
+		--without-lisp-files
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 NO_REGRESS=	Yes
