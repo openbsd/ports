@@ -1,0 +1,9 @@
+APG (Automated Password Generator) is the tool set for random
+password generation. It features: a built-in ANSI X9.17 RNG (Random
+Number Generator)(CAST/SHA1), two methods for password generation:
+FIPS 181 and truly random, configurable lengths and numbers of
+passwords. Two components are supported, a network daemon (apgd)
+and a command line client (apg). The command line tool does not
+require the network daemon.
+
+WWW: ${HOMEPAGE}

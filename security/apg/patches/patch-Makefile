@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/08/09 19:35:31 jsyn Exp $
+--- Makefile.orig	Tue Feb 27 00:24:14 2001
++++ Makefile	Thu Aug  9 14:00:23 2001
+@@ -4,10 +4,10 @@ CC = gcc
+ 
+ # compilation flags
+ # You should comment the line below for AIX+native cc
+-FLAGS = -Wall
++FLAGS = ${CFLAGS}
+ 
+ # libraries
+-LIBS = -lcrypt
++#LIBS = -lcrypt
+ 
+ # DO NOT EDIT THE LINE BELOW !!!
+ CRYPTED_PASS = APG_DONOTUSE_CRYPT
