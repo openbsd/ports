@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/11/24 10:56:43 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2005/02/07 19:01:48 pvalchev Exp $
 
 COMMENT=		"file editor/viewer/analyzer for executables"
 
@@ -8,8 +8,6 @@ CATEGORIES=		editors
 HOMEPAGE=		http:/hte.sourceforge.net/
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hte/}
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

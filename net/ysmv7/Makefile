@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/12/16 00:31:27 alek Exp $
+# $OpenBSD: Makefile,v 1.13 2005/02/07 19:01:49 pvalchev Exp $
 
 COMMENT=		"ICQ console client with encryption support"
 
@@ -9,8 +9,6 @@ CATEGORIES=		net
 HOMEPAGE=		http://ysmv7.sourceforge.net/
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ysmv7/}
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 MODULES=		converters/libiconv
 

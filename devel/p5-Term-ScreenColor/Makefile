@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/04/06 00:46:17 margarida Exp $
+# $OpenBSD: Makefile,v 1.3 2005/02/07 19:01:48 pvalchev Exp $
 
 COMMENT=		"screen positioning and coloring module"
 
@@ -7,8 +7,6 @@ PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
 
 HOMEPAGE=		http://p-f-m.sourceforge.net/
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=   Yes

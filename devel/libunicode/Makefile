@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/11/23 21:34:27 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/02/07 19:01:48 pvalchev Exp $
 
 COMMENT=	"library for manipulating Unicode characters and strings"
 
@@ -6,8 +6,6 @@ DISTNAME=	libunicode-0.4
 CATEGORIES=	devel
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/libunicode/0.4/}
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=   Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2005/01/17 19:08:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2005/02/07 19:01:48 pvalchev Exp $
 
 COMMENT=	"Emacs Lisp-like runtime library"
 
@@ -14,8 +14,6 @@ HOMEPAGE=	http://librep.sourceforge.net/
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	gdbm.2::databases/gdbm
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

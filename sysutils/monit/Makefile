@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/20 10:35:35 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2005/02/07 19:01:50 pvalchev Exp $
 
 COMMENT=	"monitoring and managing daemons utility"
 
@@ -9,8 +9,6 @@ CATEGORIES=	sysutils
 HOMEPAGE=	http://www.tildeslash.com/monit/
 
 MASTER_SITES=	${HOMEPAGE}dist/old/
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

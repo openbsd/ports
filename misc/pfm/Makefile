@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/06/26 07:35:08 xsa Exp $
+# $OpenBSD: Makefile,v 1.7 2005/02/07 19:01:49 pvalchev Exp $
 
 COMMENT=		"personal file manager"
 
@@ -8,8 +8,6 @@ CATEGORIES=		misc
 HOMEPAGE=		http://p-f-m.sourceforge.net/
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=p-f-m/}
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes

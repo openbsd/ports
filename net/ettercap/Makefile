@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/12/16 00:31:21 alek Exp $
+# $OpenBSD: Makefile,v 1.28 2005/02/07 19:01:49 pvalchev Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -12,8 +12,6 @@ HOMEPAGE=	http://ettercap.sourceforge.net/
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ettercap/} \
 		${MASTER_SITE_PACKETSTORM:=sniffers/ettercap/}
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/16 00:31:26 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2005/02/07 19:01:49 pvalchev Exp $
 
 COMMENT=		"simple tcp re-engineering tool"
 
@@ -9,8 +9,6 @@ CATEGORIES=		net
 HOMEPAGE=		http://www.simphalempin.com/dev/tcpreen/
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=tcpreen/}
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

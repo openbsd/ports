@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2004/11/21 17:51:45 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2005/02/07 19:01:47 pvalchev Exp $
 
 COMMENT=		"front-end to various audio players"
 
@@ -6,8 +6,6 @@ DISTNAME=		gqmpeg-0.20.0
 CATEGORIES=		audio
 
 HOMEPAGE=		http://gqmpeg.sourceforge.net/
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

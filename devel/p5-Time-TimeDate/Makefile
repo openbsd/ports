@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/11/02 19:00:37 margarida Exp $
+# $OpenBSD: Makefile,v 1.11 2005/02/07 19:01:48 pvalchev Exp $
 
 COMMENT=	"library for parsing and formatting dates and times"
 
@@ -6,8 +6,6 @@ VERSION=	1.16
 DISTNAME=	TimeDate-${VERSION}
 PKGNAME=	p5-Time-${DISTNAME}
 CATEGORIES=	devel perl5
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

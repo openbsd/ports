@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/20 10:35:34 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2005/02/07 19:01:50 pvalchev Exp $
 
 COMMENT=		"SSH monitoring"
 
@@ -9,8 +9,6 @@ CATEGORIES=		sysutils
 MASTER_SITES=		${HOMEPAGE}
 
 HOMEPAGE=		http://www.harding.motd.ca/autossh/
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # BSD 
 PERMIT_PACKAGE_CDROM=	Yes

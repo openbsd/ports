@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/11/22 16:59:30 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2005/02/07 19:01:48 pvalchev Exp $
 
 COMMENT=	"X11 front end to the MySQL database engine"
 
@@ -6,8 +6,6 @@ DISTNAME=	xmysql-1.10
 CATEGORIES=	databases
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/11/24 14:30:05 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2005/02/07 19:01:48 pvalchev Exp $
 
 COMMENT=		"module for dealing with time periods"
 
 DISTNAME=		Period-1.20
 PKGNAME=		p5-Time-${DISTNAME}
 CATEGORIES=		devel perl5
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org> 
 
 # Artistic
 PERMIT_PACKAGE_CDROM=   Yes

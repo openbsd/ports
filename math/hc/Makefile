@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/27 07:16:44 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/02/07 19:01:49 pvalchev Exp $
 
 COMMENT=	"multi-radix integer desk calculator"
 
@@ -9,8 +9,6 @@ CATEGORIES=	math
 HOMEPAGE=	http://www.geocities.com/connorbd/software/hc.html
 
 MASTER_SITES=	http://www.geocities.com/connorbd/software/
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

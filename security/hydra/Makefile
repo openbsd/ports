@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/27 13:28:34 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2005/02/07 19:01:49 pvalchev Exp $
 
 COMMENT=		"parallelized login hacker"
 
@@ -10,8 +10,6 @@ HOMEPAGE=		http://www.thc.org/
 
 MASTER_SITES=		${HOMEPAGE}/releases/ \
 			${MASTER_SITE_PACKETSTORM:=groups/thc/}
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

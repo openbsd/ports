@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/04/27 19:44:28 margarida Exp $
+# $OpenBSD: Makefile,v 1.7 2005/02/07 19:01:48 pvalchev Exp $
 
 COMMENT=	"perl module to generate recursive descent parsers"
 
@@ -7,8 +7,6 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Parse/}
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=   Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/02 21:13:44 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2005/02/07 19:01:49 pvalchev Exp $
 
 COMMENT=		"office suite"
 
@@ -9,8 +9,6 @@ CATEGORIES=		x11
 HOMEPAGE=		http://siag.nu/
 
 MASTER_SITES=		http://siag.nu/pub/siag/
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

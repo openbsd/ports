@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/06/26 07:35:06 xsa Exp $
+# $OpenBSD: Makefile,v 1.11 2005/02/07 19:01:48 pvalchev Exp $
 
 COMMENT=	"curses(3) based terminal widgets"
 
@@ -10,8 +10,6 @@ CATEGORIES=	devel perl5
 HOMEPAGE=	http://www.odinicfoundation.org/arthur/
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Curses/}
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # Artistic 
 PERMIT_PACKAGE_CDROM=	Yes

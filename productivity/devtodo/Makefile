@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/02 21:13:43 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2005/02/07 19:01:49 pvalchev Exp $
 
 COMMENT=		"reminder/task program aimed at developers"
 
@@ -9,8 +9,6 @@ CATEGORIES=		productivity devel
 HOMEPAGE=		http://swapoff.org/DevTodo/
 
 MASTER_SITES=		http://swapoff.org/files/devtodo/
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

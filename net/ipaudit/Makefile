@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/16 00:31:22 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/02/07 19:01:49 pvalchev Exp $
 
 COMMENT=		"IP traffic summarizer"
 
@@ -8,8 +8,6 @@ CATEGORIES=		net sysutils
 HOMEPAGE=		http://ipaudit.sourceforge.net/
 
 MASTER_SITES=		${HOMEPAGE}/download/
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

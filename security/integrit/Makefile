@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/02/24 19:48:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2005/02/07 19:01:49 pvalchev Exp $
 
 COMMENT=		"file integrity checker"
 
@@ -10,8 +10,6 @@ HOMEPAGE=		http://integrit.sourceforge.net/
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=integrit/} \
 			http://www.noserose.net/e/integrit/download/
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

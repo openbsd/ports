@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2005/01/04 11:51:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2005/02/07 19:01:50 pvalchev Exp $
 
 COMMENT=		"filesystem information display"
 
 DISTNAME=		Filesys-DiskSpace-0.05
 PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		sysutils perl5
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=   Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/11/21 17:51:45 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2005/02/07 19:01:48 pvalchev Exp $
 
 COMMENT=	"MP3 information tool"
 
@@ -8,8 +8,6 @@ CATEGORIES=	audio
 HOMEPAGE=	http://www.ibiblio.org/mp3info/
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/sound/mp3-utils/mp3info/}
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/11 13:29:21 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/02/07 19:01:50 pvalchev Exp $
 
 COMMENT=	"HTTP latency performance testing client"
 
@@ -9,8 +9,6 @@ CATEGORIES=	www benchmarks
 HOMEPAGE=	http://www.acme.com/software/http_ping/
 
 MASTER_SITES=	${HOMEPAGE}
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

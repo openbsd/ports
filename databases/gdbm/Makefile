@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/11/22 02:37:37 margarida Exp $
+# $OpenBSD: Makefile,v 1.22 2005/02/07 19:01:48 pvalchev Exp $
 
 COMMENT=		"GNU dbm"
 
@@ -9,8 +9,6 @@ CATEGORIES=		databases
 HOMEPAGE=		http://www.gnu.org/software/gdbm/
 
 MASTER_SITES=		${MASTER_SITE_GNU:=gdbm/}
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

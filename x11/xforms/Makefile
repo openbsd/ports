@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2004/12/17 15:03:18 alek Exp $
+# $OpenBSD: Makefile,v 1.29 2005/02/07 19:01:50 pvalchev Exp $
 
 COMMENT=		"GUI toolkit for X11"
 
@@ -8,8 +8,6 @@ CATEGORIES=	x11
 HOMEPAGE=	http://world.std.com/~xforms/
 
 MASTER_SITES=	http://savannah.nongnu.org/download/xforms/stable.pkg/1.0/
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

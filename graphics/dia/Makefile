@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2005/01/23 16:13:06 alek Exp $
+# $OpenBSD: Makefile,v 1.30 2005/02/07 19:01:48 pvalchev Exp $
 
 COMMENT=	"technical diagrams drawing tool"
 
@@ -8,8 +8,6 @@ CATEGORIES=	graphics
 HOMEPAGE=	http://www.gnome.org/projects/dia/
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/dia/0.94/}
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

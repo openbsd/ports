@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/06/26 07:35:10 xsa Exp $
+# $OpenBSD: Makefile,v 1.15 2005/02/07 19:01:50 pvalchev Exp $
 
 COMMENT=	"perl parser that builds an HTML tree"
 
@@ -10,8 +10,6 @@ CATEGORIES=	www perl5
 HOMEPAGE=	http://www.speech.cs.cmu.edu/~sburke/
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/16 00:31:21 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/02/07 19:01:49 pvalchev Exp $
 
 COMMENT=		"DNS queries reflector"
 
@@ -8,8 +8,6 @@ CATEGORIES=		net sysutils
 HOMEPAGE=		http://www.wolfermann.org/dnsreflector.html
 
 MASTER_SITES=		http://www.wolfermann.org/
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

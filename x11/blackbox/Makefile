@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2004/12/17 15:18:32 alek Exp $
+# $OpenBSD: Makefile,v 1.36 2005/02/07 19:01:50 pvalchev Exp $
 
 COMMENT=	"small & pretty window manager for 8 and more bits displays"
 
@@ -9,8 +9,6 @@ CATEGORIES=		x11
 HOMEPAGE=		http://blackboxwm.sourceforge.net/
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=blackboxwm/}
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

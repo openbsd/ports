@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/11/15 15:12:54 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2005/02/07 19:01:50 pvalchev Exp $
 
 COMMENT=	"perl module to the SAX2 NamespaceSupport class"
 
@@ -6,8 +6,6 @@ VERSION=	1.08
 DISTNAME=	XML-NamespaceSupport-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/16 00:31:27 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2005/02/07 19:01:49 pvalchev Exp $
 
 COMMENT=		"ICMP active OS fingerprint scanner"
 
@@ -6,8 +6,6 @@ DISTNAME=		xprobe-0.0.2
 CATEGORIES=    		net security
 
 HOMEPAGE=		http://www.sys-security.com/html/projects/X.html
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

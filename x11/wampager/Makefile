@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/19 17:27:02 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/02/07 19:01:50 pvalchev Exp $
 
 COMMENT=		"waimea mini pager"
 
@@ -9,8 +9,6 @@ CATEGORIES=		x11
 HOMEPAGE=		http://www.waimea.org/wampager_info.html
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=waimea/}
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2004/11/23 11:22:00 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2005/02/07 19:01:48 pvalchev Exp $
 
 COMMENT=	"compiler cache"
 
 DISTNAME=	ccache-2.3
 CATEGORIES=	devel
 HOMEPAGE=	http://ccache.samba.org/
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

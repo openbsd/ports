@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/20 10:35:36 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2005/02/07 19:01:50 pvalchev Exp $
 
 COMMENT=		"forensic toolkit based on TCT"
 
@@ -10,8 +10,6 @@ HOMEPAGE=		http://www.sleuthkit.org/
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sleuthkit/} \
 			${MASTER_SITE_PACKETSTORM:=UNIX/utilities/}
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # IBM & GPL
 PERMIT_PACKAGE_CDROM=	"commercial contributor must indemnify all others"

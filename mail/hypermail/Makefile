@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2005/01/02 10:53:41 alek Exp $
+# $OpenBSD: Makefile,v 1.25 2005/02/07 19:01:48 pvalchev Exp $
 
 COMMENT=		"generate a cross-referenced HTML mail archive"
 
@@ -9,8 +9,6 @@ CATEGORIES=		mail www
 HOMEPAGE=		http://www.hypermail.org/
 
 MASTER_SITES=		${HOMEPAGE}dist/
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 LIB_DEPENDS+=		pcre::devel/pcre
 

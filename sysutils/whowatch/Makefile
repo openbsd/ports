@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/20 10:35:36 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2005/02/07 19:01:50 pvalchev Exp $
 
 COMMENT=	"interactive utility that displays info about online users"
 
@@ -10,8 +10,6 @@ HOMEPAGE=	http://wizard.ae.krakow.pl/~mike/
 MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/ \
 		http://janek.ae.krakow.pl/~suszyckm/download/ \
 		${MASTER_SITE_PACKETSTORM:=UNIX/IDS/}
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

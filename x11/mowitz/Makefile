@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/17 15:18:33 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/02/07 19:01:50 pvalchev Exp $
 
 COMMENT=		"widgets library"
 
@@ -10,8 +10,6 @@ CATEGORIES=		x11 devel
 HOMEPAGE=		http://siag.nu/mowitz/
 
 MASTER_SITES=		http://siag.nu/pub/mowitz/
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/16 00:31:21 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2005/02/07 19:01:49 pvalchev Exp $
 
 COMMENT=		"dhcp daemon ping program"
 
@@ -9,8 +9,6 @@ CATEGORIES=		net
 HOMEPAGE=		http://www.mavetju.org/unix/general.php
 
 MASTER_SITES=		http://www.mavetju.org/download/
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/06/26 07:35:07 xsa Exp $
+# $OpenBSD: Makefile,v 1.15 2005/02/07 19:01:49 pvalchev Exp $
 
 COMMENT=	"perl module for an IMAP Client API"
 
@@ -6,8 +6,6 @@ VERSION=	2.2.9
 DISTNAME=	Mail-IMAPClient-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	mail perl5
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

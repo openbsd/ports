@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/20 10:35:35 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2005/02/07 19:01:50 pvalchev Exp $
 
 COMMENT=	"multi-window tail(1) utility"
 
@@ -9,8 +9,6 @@ CATEGORIES=	sysutils
 HOMEPAGE=	http://www.vanheusden.com/multitail/	
 
 MASTER_SITES=	${HOMEPAGE}
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

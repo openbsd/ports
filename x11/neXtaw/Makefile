@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/17 15:18:34 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2005/02/07 19:01:50 pvalchev Exp $
 
 COMMENT=		"libXaw widget set replacement"
 
@@ -9,8 +9,6 @@ CATEGORIES=		x11 devel
 HOMEPAGE=		http://siag.nu/neXtaw/
 
 MASTER_SITES=		http://siag.nu/pub/neXtaw/
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # X11
 PERMIT_PACKAGE_CDROM=	Yes

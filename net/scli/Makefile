@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/16 00:31:25 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/02/07 19:01:49 pvalchev Exp $
 
 COMMENT=		"snmp command line utility"
 
@@ -9,8 +9,6 @@ CATEGORIES=		net
 HOMEPAGE=		http://www.ibr.cs.tu-bs.de/projects/scli/
 
 MASTER_SITES=		ftp://ftp.ibr.cs.tu-bs.de/pub/local/scli/	
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

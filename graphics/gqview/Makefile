@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2005/01/18 12:30:57 alek Exp $
+# $OpenBSD: Makefile,v 1.36 2005/02/07 19:01:48 pvalchev Exp $
 
 COMMENT=	"Gtk-based graphic file viewer"
 
@@ -7,8 +7,6 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gqview/}
 
 HOMEPAGE=	http://gqview.sourceforge.net/
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

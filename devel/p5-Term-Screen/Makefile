@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/27 23:34:37 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2005/02/07 19:01:48 pvalchev Exp $
 
 COMMENT=		"positioning screen based module"
 
 DISTNAME=		Term-Screen-1.02
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=   Yes

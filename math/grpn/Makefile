@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/12/27 07:16:44 alek Exp $
+# $OpenBSD: Makefile,v 1.12 2005/02/07 19:01:49 pvalchev Exp $
 
 COMMENT=	"graphical reverse polish notation calculator"
 
@@ -9,8 +9,6 @@ HOMEPAGE=	http://lashwhip.com/grpn.html
 
 MASTER_SITES=	http://lashwhip.com/grpn/ \
 		ftp://lashwhip.com/pub/
-
-MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

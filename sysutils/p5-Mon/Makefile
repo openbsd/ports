@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/11/24 13:55:23 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2005/02/07 19:01:50 pvalchev Exp $
 
 COMMENT=		"module for interfacing with Mon"
 
@@ -7,8 +7,6 @@ PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		sysutils perl5
 
 HOMEPAGE=		http://www.kernel.org/software/mon/
-
-MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL 
 PERMIT_PACKAGE_CDROM=   Yes
