@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/05/31 13:01:09 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/06/25 22:40:14 brad Exp $
 
 DISTNAME=	ghostscript-6.01
 CATEGORIES=	print lang
@@ -35,7 +35,7 @@ BUILD_DEPENDS=	/nonexistent::${JPEGDIR}:patch \
 		/nonexistent::${PNGDIR}:patch \
 		unzip::archivers/unzip \
 
-LIB_DEPENDS=	png.1.6::${PNGDIR}
+LIB_DEPENDS=	png.1::${PNGDIR}
 
 EXTRACT_ONLY=	${GS_SOURCES}
 WRKDIST=	${WRKDIR}/gs6.01
