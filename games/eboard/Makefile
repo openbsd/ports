@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/05/02 22:21:22 fgsch Exp $
+# $OpenBSD: Makefile,v 1.22 2003/06/18 04:56:22 fgsch Exp $
 
 COMMENT=	"gtk+ chess board interface"
 
@@ -6,10 +6,9 @@ DISTNAME=	eboard-0.8.0
 PKGNAME=	${DISTNAME}
 CATEGORIES=	games
 
-HOMEPAGE=	http://eboard.sourceforge.net
+HOMEPAGE=	http://eboard.sourceforge.net/
 
 MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
-
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

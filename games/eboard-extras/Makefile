@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/26 20:44:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2003/06/18 04:56:22 fgsch Exp $
 
 COMMENT=	"eboard extra piece sets and sounds"
 
 DISTNAME=	eboard-extras-1pl2
 CATEGORIES=	games
 
-HOMEPAGE=	http://eboard.sourceforge.net
+HOMEPAGE=	http://eboard.sourceforge.net/
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
