@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/06 07:58:58 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/11/21 10:24:37 xsa Exp $
 bin/rawdog
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/rawdoglib/feedfinder.py
+lib/python${MODPY_VERSION}/site-packages/rawdoglib/feedfinder.pyc
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/feedparser.py
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/feedparser.pyc
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/persister.py
@@ -11,6 +15,8 @@ lib/python${MODPY_VERSION}/site-packages/rawdoglib/rawdog.py
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/rawdog.pyc
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/timeoutsocket.py
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/timeoutsocket.pyc
+lib/python${MODPY_VERSION}/site-packages/rawdoglib/upgrade_1_2.py
+lib/python${MODPY_VERSION}/site-packages/rawdoglib/upgrade_1_2.pyc
 share/doc/rawdog/
 share/doc/rawdog/README
 share/examples/rawdog/
