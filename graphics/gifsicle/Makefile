@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/11/06 08:32:19 shell Exp $
+# $OpenBSD: Makefile,v 1.17 2001/11/06 08:38:32 jakob Exp $
 
 COMMENT=	"creating & editing GIF images and animations"
 
@@ -28,8 +28,10 @@ CONFIGURE_ARGS=		--enable-gifdiff
 SEPARATE_BUILD=		concurrent
 
 .if ${FLAVOR:L:Mno_x11}
-USE_X11=	Yes
+USE_X11=	No
 CONFIGURE_ARGS+=	--disable-gifview
+.else
+USE_X11=	Yes
 .endif
 
 .include <bsd.port.mk>
