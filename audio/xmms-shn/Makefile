@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/20 23:55:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/21 15:19:16 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -21,7 +21,6 @@ MASTER_SITES=	${HOMEPAGE}source/
 
 LIB_DEPENDS=	xmms.2::audio/xmms
 
-USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>

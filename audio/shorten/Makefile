@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/21 00:03:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/21 15:19:16 naddy Exp $
 
 COMMENT=	"fast compression for waveform files"
 
@@ -15,7 +15,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://shnutils.etree.org/misc/
 
-USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>
