@@ -1,12 +1,12 @@
 # $FreeBSD: Makefile,v 1.9 1998/12/02 05:56:01 asami Exp $
-# $OpenBSD: Makefile,v 1.20 2001/11/10 15:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2002/04/24 21:34:48 espie Exp $
 
 COMMENT=	"Visual Audio Tool, multicast audioconferencing"
 
 DISTNAME=	vatsrc-4.0b2
 PKGNAME=	vat-4.0b2
 CATEGORIES=	mbone
-NEED_VERSION=	1.489
+NEED_VERSION=	1.525
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
@@ -26,17 +26,18 @@ LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0 \
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS= --with-gsm=${GSM_WORK}
+CONFIGURE_ARGS= --with-gsm=${WRKDIR}/gsm
 CONFIGURE_ENV= V_LIB_GSM='-L${PREFIX}/lib -lgsm'
 
 CONFIGURE_ARGS+=--without-af
 
 WRKDIST=		${WRKDIR}/${PKGNAME}
 
+post-extract:
+	ln -sf ${WRKDIR}/${GSM_DIR}/gsm-* ${WRKDIR}/gsm
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/vat ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKBUILD}/vat.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
-
-GSM_WORK!=	cd ${PORTSDIR} && cd ${GSM_DIR} && make show VARNAME=WRKDIST

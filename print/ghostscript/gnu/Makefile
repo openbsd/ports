@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2002/03/24 01:08:25 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2002/04/24 21:34:48 espie Exp $
 
 COMMENT="GNU PostScript interpreter"
 
 VERSION=	6.51
 DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
-NEED_VERSION=	1.515
+NEED_VERSION=	1.525
 
 DIR=		gnu/gs${VERSION:S/.//}
 MASTER_SITES=	${GS_SITES} ${MASTER_SITE_GNU}
@@ -127,8 +127,8 @@ FAKE_FLAGS=${BASE_FLAGS} \
 	man1dir=${WRKINST}${PREFIX}/man/man1
 
 post-extract:
-	ln -s `cd ${PORTSDIR} && cd ${JPEGDIR} && FLAVOR='' make show=WRKDIST` ${WRKDIST}/jpeg
-	ln -s `cd ${PORTSDIR} && cd ${PNGDIR} && FLAVOR='' make show=WRKDIST` ${WRKDIST}/libpng
+	ln -s ${WRKDIR}/${JPEGDIR}/jpeg* ${WRKDIST}/jpeg
+	ln -s ${WRKDIR}/${PNGDIR}/libpng* ${WRKDIST}/libpng
 	# Sloppy gnu guys don't clean up. Why am I not surprised ?
 	rm -f ${WRKSRC}/{zfileio.c,gdevx.c}.orig
 

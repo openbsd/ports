@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/02/27 04:06:26 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2002/04/24 21:34:48 espie Exp $
 
 NOT_FOR_ARCHS=  ${NO_SHARED_ARCHS}
 
@@ -15,7 +15,7 @@ MASTER_SITES=   http://www.irssi.org/files/icb/ \
                 http://us.irssi.org/files/icb/
 
 CATEGORIES=     net
-NEED_VERSION=   1.504
+NEED_VERSION=   1.525
 
 MAINTAINER=	David Lebel <lebel@openbsd.org>
 
@@ -31,8 +31,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-irssi=${WRKDIR}/irssi-src
 
 post-extract:
-	@mkdir -p ${WRKDIR}/irssi-src
-	@lndir -s `cd ${PORTSDIR} && cd net/irssi && ${MAKE} show VARNAME=WRKDIST` ${WRKDIR}/irssi-src
+	@ln -sf ${WRKDIR}/net/irssi/irssi-* ${WRKDIR}/irssi-src
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/irssi

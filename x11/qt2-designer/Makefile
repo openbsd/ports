@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2002/03/21 21:25:55 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/04/24 21:34:48 espie Exp $
 
 COMMENT=	designer for qt2
 
 VERSION=	3.2
 DISTNAME=	qt-designer-2.${VERSION}
 CATEGORIES=	x11 devel
-NEED_VERSION=	1.515
+NEED_VERSION=	1.525
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 DISTFILES=	qt-x11-2.${VERSION}.tar.gz
 EXTRACT_ONLY=	
@@ -26,7 +26,7 @@ WRKDIST=	${WRKDIR}/qt2-tools
 
 post-extract:
 	mkdir -p ${WRKDIST}/lib ${WRKDIST}/bin
-	lndir `cd ${PORTSDIR} && cd x11/qt2 && ${MAKE} show VARNAME=WRKDIST`/tools ${WRKDIST}
+	lndir ${WRKDIR}/x11/qt2/qt-*/tools ${WRKDIST}
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
