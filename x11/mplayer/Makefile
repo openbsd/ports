@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2003/02/18 17:17:44 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2003/02/19 01:06:03 pvalchev Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -22,7 +22,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www2.mplayerhq.hu/MPlayer/releases/
 MASTER_SITES+=		http://www.mplayerhq.hu/MPlayer/releases/
 MASTER_SITES+=		http://ftp.lug.udel.edu/MPlayer/releases/
-MASTER_SITES0=		http://www2.mplayerhq.hu/MPlayer/Skin/
+# The skins tarball changes on a daily basis so it is mirrored
+# locally, do NOT change this
+#MASTER_SITES0=		http://www2.mplayerhq.hu/MPlayer/Skin/
+MASTER_SITES0=		http://www.sightly.net/mplayer/
 
 MAINTAINER=     Bjorn Sandell <biorn@dce.chalmers.se>
 
