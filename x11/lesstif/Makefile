@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 1999/06/24 18:14:03 form Exp $
+# $OpenBSD: Makefile,v 1.28 1999/07/01 22:06:31 brad Exp $
 # $FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp $
 
 DISTNAME=	lesstif-0.88.1
@@ -47,14 +47,16 @@ pre-install:
 # ldconfig to update the library cache
 #
 post-install:
+	@${RM} -f ${PREFIX}/lib/libMrm.so
+	@${RM} -f ${PREFIX}/lib/libXm.so
 .for lib in ${STATIC_LIBS}
-	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/${lib} ${PREFIX}/lib
+	@${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/${lib} ${PREFIX}/lib
 .endfor
 .for lib in ${SHARED_LIBS}
 	@if [ "x${NO_SHARED_LIBS}" = "x" ]; then \
 	  ${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/${lib} ${PREFIX}/lib; \
 	 fi
 .endfor
-	${LDCONFIG} -m ${PREFIX}/lib
+	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
