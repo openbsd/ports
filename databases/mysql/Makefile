@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2002/03/12 03:10:06 brad Exp $
+# $OpenBSD: Makefile,v 1.75 2002/03/16 16:44:10 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -9,8 +9,10 @@ COMMENT-tests=	"multithreaded SQL database (regression test suite)"
 # More architectures need testing of MySQL+native threads
 # alpha - does not work
 # hppa, m68k, m88k, vax - untested
+# powerpc - a bug, when running (My)SQL bench the CPU utilization goes up 
+#	    to 100% and mysqld stops responding
 # sparc64 - linker issue?
-WORKING_ARCHS=	i386 sparc powerpc
+WORKING_ARCHS=	i386 sparc
 
 .for _arch in ${MACHINE_ARCH}
 .  if empty(WORKING_ARCHS:M${_arch})
