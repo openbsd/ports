@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_makefile_openbsd,v 1.5 2003/12/18 00:09:48 espie Exp $
---- scripts/makefile.openbsd.orig	2002-10-03 13:32:34.000000000 +0200
-+++ scripts/makefile.openbsd	2003-12-17 02:21:50.000000000 +0100
+$OpenBSD: patch-scripts_makefile_openbsd,v 1.6 2004/02/24 23:18:58 brad Exp $
+--- scripts/makefile.openbsd.orig	2002-10-03 07:32:34.000000000 -0400
++++ scripts/makefile.openbsd	2004-02-24 18:16:55.000000000 -0500
 @@ -1,13 +1,16 @@
 -# makefile for libpng
 +# makefile for libpng under OpenBSD
@@ -22,7 +22,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.5 2003/12/18 00:09:48 espie Exp $
  
  LIB=	png
  SRCS=	png.c pngerror.c pnggccrd.c pngget.c pngmem.c pngpread.c \
-@@ -18,17 +21,30 @@ HDRS=	png.h pngconf.h
+@@ -18,27 +21,40 @@ HDRS=	png.h pngconf.h
  
  CFLAGS+= -Wall
  CPPFLAGS+= -I${.CURDIR} -DPNG_NO_ASSEMBLER_CODE -DPNG_USE_PNGGCCRD
@@ -36,12 +36,14 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.5 2003/12/18 00:09:48 espie Exp $
  MAN=	libpng.3 libpngpf.3 png.5
 -DOCS=	ANNOUNCE CHANGES LICENSE README libpng.txt
 +DOCS=	README libpng.txt
-+
-+all: ${_LIBS} libpng-config
  
- pngtest.o:	pngtest.c
+-pngtest.o:	pngtest.c
++all: ${_LIBS} libpng-config
++
++pngtest.o: pngtest.c
  	${CC} ${CPPFLAGS} ${CFLAGS} -c ${.ALLSRC} -o ${.TARGET}
  
+-pngtest:	pngtest.o
 +libpng-config:
 +	( cat scripts/libpng-config-head.in; \
 +	echo prefix=\"$(PREFIX)\"; \
@@ -52,10 +54,12 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.5 2003/12/18 00:09:48 espie Exp $
 +	cat scripts/libpng-config-body.in ) > libpng-config
 +	chmod +x libpng-config
 +
- pngtest:	pngtest.o
++pngtest: pngtest.o
  	${CC} ${LDFLAGS} ${.ALLSRC} -o ${.TARGET} -L${.OBJDIR} -lpng -lz -lm
  
-@@ -37,8 +53,8 @@ test:	pngtest
+-test:	pngtest
++test check: pngtest
+ 	cd ${.OBJDIR} && env \
  		LD_LIBRARY_PATH="${.OBJDIR}" ${.OBJDIR}/pngtest
  
  beforeinstall:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2003/12/18 00:09:48 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2004/02/24 23:18:57 brad Exp $
 
 COMMENT=	"library for manipulating PNG images"
 
@@ -11,6 +11,7 @@ HOMEPAGE=	http://www.libpng.org/pub/png/libpng.html
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -20,7 +21,5 @@ FAKE_FLAGS=	DESTDIR="${WRKINST}" PREFIX="${PREFIX}"
 
 MAKE_ENV=	CC="${CC}"
 MAKE_FILE=	scripts/makefile.openbsd
-
-REGRESS_TARGET=	test
 
 .include <bsd.port.mk>
