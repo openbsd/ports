@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/19 19:21:20 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/12/25 02:09:03 wcobb Exp $
 bin/gtv
 bin/plaympeg
 bin/smpeg-config
@@ -18,5 +18,6 @@ lib/libsmpeg.la
 %%SHARED%%
 man/man1/gtv.1
 man/man1/plaympeg.1
+man/man3/smpeg.3
 share/aclocal/smpeg.m4
 @dirrm include/smpeg

@@ -1,0 +1,316 @@
+.\"
+.\" SMPEG - SDL MPEG Player Library
+.\" Copyright (C) 1999  Loki Entertainment Software
+.\"
+.\" This library is free software; you can redistribute it and/or
+.\" modify it under the terms of the GNU Library General Public
+.\" License as published by the Free Software Foundation; either
+.\" version 2 of the License, or (at your option) any later version.
+.\"
+.\" This library is distributed in the hope that it will be useful,
+.\" but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+.\" Library General Public License for more details.
+.\"
+.\" You should have received a copy of the GNU Library General Public
+.\" License along with this library; if not, write to the Free
+.\" Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+.\"
+.Dd December 23, 2002
+.Dt SMPEG 3
+.Os
+.Sh NAME
+.Nm smpeg
+.Nd MPEG-1 audio/video playback library
+.Sh SYNOPSIS
+.Bd -literal
+#include <smpeg.h>
+.Sh DESCRIPTION
+The
+.Nm
+library provides audio/video playback of MPEG-1 data.
+.Sh INITIALIZATION
+.nr nS 1
+.Ft "SMPEG *"
+.Fn SMPEG_new "const char *file" "SMPEG_Info *info" "int sdl_audio"
+.Pp
+.Ft "SMPEG *"
+.Fn SMPEG_new_descr "int fd" "SMPEG_Info *info" "int sdl_audio"
+.Pp
+.Ft "SMPEG *"
+.Fn SMPEG_new_data "void *data" "SMPEG_Info *info" "int sdl_audio"
+.Pp
+.Ft "void"
+.Fn SMPEG_getinfo "SMPEG *mpeg" "SMPEG_Info *info"
+.Pp
+.Ft "void"
+.Fn SMPEG_enableaudio "SMPEG *mpeg" "int enable"
+.Pp
+.Ft "void"
+.Fn SMPEG_enablevideo "SMPEG *mpeg" "int enable"
+.Pp
+.Ft "void"
+.Fn SMPEG_delete "SMPEG *mpeg"
+.Pp
+.Ft "char *"
+.Fn SMPEG_error "SMPEG *mpeg"
+.nr nS 0
+.Pp
+The
+.Fn SMPEG_new ,
+.Fn SMPEG_new_descr ,
+.Fn SMPEG_new_data
+and
+.Fn SMPEG_new_rwops
+functions read MPEG data from a file, a file descriptor, memory or a
+.Ft SDL_Rwops
+structure, respectively.
+A newly allocated
+.Ft SMPEG
+object is returned.
+If
+.Fa sdl_audio
+is non-zero, the SDL audio subsystem is used to play audio.
+If
+.Fa info
+is not NULL, it is filled with the following information:
+.Bd -literal
+typedef struct _SMPEG_Info {
+	int	has_audio, has_video;	/* Available data */
+	int	width, height;		/* Video geometry */
+	int	current_frame;		/* Video frame# */
+	double	current_fps;		/* Frames/second */
+	char	audio_string[80];
+	int	audio_current_frame;	/* Audio playback status */
+	Uint32	current_offset;		/* Position in video */
+	Uint32	total_size;		/* Video size */
+	double	current_time;
+	double	total_time;
+} SMPEG_Info;
+.Ed
+.Pp
+The
+.Fn SMPEG_getinfo
+function returns information about
+.Fa mpeg
+in
+.Fa info .
+.Pp
+The
+.Fn SMPEG_enableaudio
+and
+.Fn SMPEG_enablevideo
+functions toggle audio and video playback respectively.
+.Pp
+The
+.Fn SMPEG_delete
+function frees resources allocated by
+.Fa mpeg .
+The
+.Fn SMPEG_error
+function returns an error string if a fatal error occured, NULL otherwise.
+.Sh PLAYBACK
+.nr nS 1
+.Ft SMPEGstatus
+.Fn SMPEG_status "SMPEG *mpeg"
+.Pp
+.Ft void
+.Fn SMPEG_setvolume "SMPEG *mpeg" "int volume"
+.Pp
+.Ft void
+.Fn SMPEG_setdisplay "SMPEG *mpeg" "SDL_Surface *dst" "SDL_mutex *surfLock" \
+                     "SMPEG_DisplayCallback callback"
+.Pp
+.Ft void
+.Fn SMPEG_loop "SMPEG *mpeg" "int repeat"
+.Pp
+.Ft void
+.Fn SMPEG_scaleXY "SMPEG *mpeg" "int width" "int height"
+.Pp
+.Ft void
+.Fn SMPEG_scale "SMPEG *mpeg" "int scale"
+.Pp
+.Ft void
+.Fn SMPEG_move "SMPEG *mpeg" "int x" "int y"
+.Pp
+.Ft void
+.Fn SMPEG_setdisplayregion "SMPEG *mpeg" "int x" "int y" "int w" "int h"
+.Pp
+.Ft void
+.Fn SMPEG_play "SMPEG *mpeg"
+.Pp
+.Ft void
+.Fn SMPEG_pause "SMPEG *mpeg"
+.Pp
+.Ft void
+.Fn SMPEG_stop "SMPEG *mpeg"
+.Pp
+.Ft void
+.Fn SMPEG_rewind "SMPEG *mpeg"
+.Pp
+.Ft void
+.Fn SMPEG_seek "SMPEG *mpeg" "int nbytes"
+.Pp
+.Ft void
+.Fn SMPEG_skip "SMPEG *mpeg" "float seconds"
+.Pp
+.Ft void
+.Fn SMPEG_renderFrame "SMPEG *mpeg" "int framenum"
+.Pp
+.Ft void
+.Fn SMPEG_renderFinal "SMPEG *mpeg" "SDL_Surface *dst" "int x" "int y"
+.nr nS 0
+.Pp
+The
+.Fn SMPEG_status
+function returns playback status:
+.Bd -literal
+typedef enum {
+    SMPEG_ERROR = -1,
+    SMPEG_STOPPED,
+    SMPEG_PLAYING
+} SMPEGstatus;
+.Ed
+.Pp
+The
+.Fn SMPEG_setvolume
+function sets the audio volume of
+.Fa mpeg ,
+in the in the range 0-100.
+The
+.Fn SMPEG_setdisplay
+function sets the destination surface for MPEG video playback to
+.Fa dst .
+The
+.Fa surfLock
+mutex, if not NULL, will be used to serialize access to
+.Fa dst .
+The
+.Fa callback
+function is called when an area of
+.Fa dst
+needs to be updated, 
+its prototype matches
+.Xr SDL_UpdateRect 3 .
+.Pp
+The
+.Fn SMPEG_loop
+function causes the video to loop.
+.Pp
+The
+.Fn SMPEG_scaleXY
+and
+.Fn SMPEG_scale
+functions scale the pixel display to
+.Fa width
+by
+.Fa height
+pixels or
+.Fa scale
+% respectively.
+The
+.Fn SMPEG_move
+function moves the video display area within
+.Fa dst .
+The
+.Fn SMPEG_setdisplayregion
+function selects the region of the video to be shown.
+.Pp
+The
+.Fn SMPEG_play
+function plays
+.Fa mpeg .
+.Fn SMPEG_pause
+pauses the playback.
+.Fn SMPEG_stop
+stops the playback.
+.Fn SMPEG_rewind
+rewinds the play position to the beginning of the MPEG data.
+.Fn SMPEG_seek
+seeks
+.Fa bytes
+in the MPEG stream.
+The
+.Fn SMPEG_skip
+function skips
+.Fa seconds
+in the MPEG stream.
+.Pp
+The
+.Fn SMPEG_renderFrame
+renders the frame
+.Fa framenum ,
+at the current video position, which may be set using
+.Fn SMPEG_setdisplay
+and
+.Fn SMPEG_move .
+The
+.Fn SMPEG_renderFinal
+function renders the last frame of the MPEG video at coordinates
+.Fa x
+and
+.Fa y
+of
+.Fa dst
+surface.
+.Sh VIDEO FILTERING
+.nr nS 1
+.Ft "SMPEG_Filter *"
+.Fn SMPEG_Filter "SMPEG *mpeg" "SMPEG_Filter *filter"
+.nr nS 0
+.Pp
+The
+.Fn SMPEG_Filter
+function selects a video filter.
+.Sh AUDIO PLAYBACK
+.nr nS 1
+.Ft int
+.Fn SMPEG_playAudio "SMPEG *mpeg" "Uint8 *stream" "int len"
+.Pp
+.Ft void
+.Fn SMPEG_playAudioSDL "void *mpeg" "Uint8 *stream" "int len"
+.Pp
+.Ft int
+.Fn SMPEG_wantedSpec "SMPEG *mpeg" "SDL_AudioSpec *wanted"
+.Pp
+.Ft void
+.Fn SMPEG_actualSpec "SMPEG *mpeg" "SDL_AudioSpec *spec"
+.nr nS 0
+.Pp
+.Fn SMPEG_playAudio
+is the exported callback function for audio playback.
+.Fa stream
+is the buffer, and
+.Fa len
+is the amount of data to fill.
+The function should return the amount of bytes that were actually written,
+this will be the amount requested unless the MPEG audio playback is done.
+.Fn SMPEG_playAudioSDL
+is a wrapper for
+.Fn SMPEG_playAudio
+that can be passed to SDL and SDL_mixer.
+.Pp
+The
+.Fn SMPEG_wantedSpec
+function returns the best audio spec in
+.Fa wanted
+for the MPEG audio stream.
+.Fn SMPEG_actualSpec
+informs
+.Nm
+of the actual SDL audio spec used for sound playback.
+.Sh SEE ALSO
+.Xr plaympeg 1 ,
+.Xr SDL_Init 3 ,
+.Xr SDL_Init_SubSystem 3
+.Sh HISTORY
+The
+.Nm
+library was Loki Software's first Open Source project.
+It is based on UC Berkeley's mpeg_play MPEG decoder, and SPLAY, a MPEG audio
+decoder created by Woo-jae Jung.
+.Sh AUTHORS
+The
+.Nm
+library was written by Karl Robillard and Sam Lantinga, Loki Software Inc.
+Streaming MPEG support was contributed by Vivien Chappelier.
