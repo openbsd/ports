@@ -1,0 +1,7 @@
+Ucpp is a C preprocessor; it is designed to be quick and light,
+but fully compliant with the ISO standard 9899:1999, also known
+as C99. Ucpp can be compiled as a stand-alone program, or linked to
+some other code; in the latter case, ucpp will output tokens, one
+at a time, on demand, as an integrated lexer.
+
+WWW: ${HOMEPAGE}
