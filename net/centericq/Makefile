@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/12/19 00:25:26 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2001/12/27 22:14:59 pvalchev Exp $
 
 COMMENT=	"curses-based icq client implementation"
 
@@ -23,6 +23,7 @@ LIB_DEPENDS=	sigc.0:libsigc++-*:devel/libsigc++
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
+BUILD_DEPENDS=	:automake-*:devel/automake
 CONFIGURE_ENV=	PREFIX="${PREFIX}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
