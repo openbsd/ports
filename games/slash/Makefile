@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2000/04/16 21:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/04/22 11:45:32 espie Exp $
 
 DISTNAME=	slash-e8
+PKGNAME=	slash-3.2.2-e8
 CATEGORIES=	games
 NEED_VERSION=	1.121
 MASTER_SITES=   ftp://ftp.nethack.org/pub/nethack/oldver/3.2.2/src/ \
