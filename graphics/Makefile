@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2001/02/19 18:56:15 brad Exp $
+# $OpenBSD: Makefile,v 1.55 2001/03/08 11:23:38 reinhard Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -51,6 +51,7 @@
 #    SUBDIR += mplex
      SUBDIR += mtv
      SUBDIR += netpbm
+     SUBDIR += p5-Imager
      SUBDIR += p5-GD
      SUBDIR += p5-GD:no_x11
      SUBDIR += p5-GD-Graph
