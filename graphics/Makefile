@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2003/01/28 19:27:35 couderc Exp $
+# $OpenBSD: Makefile,v 1.104 2003/04/09 23:58:27 espie Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -36,6 +36,7 @@
      SUBDIR += gle
      SUBDIR += glut
      SUBDIR += gphoto
+     SUBDIR += gphoto2
      SUBDIR += gqview
      SUBDIR += gracula
      SUBDIR += gthumb
@@ -53,6 +54,7 @@
      SUBDIR += libart
      SUBDIR += libdivxdecore
      SUBDIR += libexif
+     SUBDIR += libgphoto2
      SUBDIR += libmng
      SUBDIR += libungif
      SUBDIR += libwmf
