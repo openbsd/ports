@@ -1,20 +1,10 @@
-@cwd /usr/X11R6
+@cwd /usr/local
 @name WindowMaker-0.51.0
 @pkgdep giflib-3.0
 @pkgdep jpeg-6b
 @pkgdep libPropList-0.8.3
 @pkgdep png-1.0.2
 @pkgdep tiff-3.4
-include/wraster.h
-include/WINGs.h
-include/WUtil.h
-include/WINGsP.h
-include/WMaker.h
-lib/libwraster.so.1.2
-lib/libwraster.la
-lib/libwraster.a
-lib/libWINGs.a
-lib/libWMaker.a
 bin/get-wraster-flags
 bin/wmaker
 bin/wxcopy
@@ -28,6 +18,11 @@ bin/wmsetbg
 bin/wmaker.inst
 bin/wm-oldmenu2new
 bin/wsetfont
+lib/libwraster.so.1.2
+lib/libwraster.la
+lib/libwraster.a
+lib/libWINGs.a
+lib/libWMaker.a
 man/man1/geticonset.1x
 man/man1/setstyle.1x
 man/man1/wxpaste.1x
@@ -37,6 +32,11 @@ man/man1/wmsetbg.1x
 man/man1/seticons.1x
 man/man1/wmaker.1x
 man/man1/wxcopy.1x
+include/wraster.h
+include/WINGs.h
+include/WUtil.h
+include/WINGsP.h
+include/WMaker.h
 share/WINGs/Images.tiff
 share/WINGs/Images.xpm
 share/WINGs/defaultIcon.tiff
@@ -365,4 +365,5 @@ GNUstep/Apps/WPrefs.app/WPrefs.xpm
 @dirrm share/WindowMaker/Backgrounds
 @dirrm share/WindowMaker
 @dirrm share/WINGs
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/X11R6/lib
+@dirrm lib/locale
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib

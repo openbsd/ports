@@ -1,1 +1,1 @@
-Each use must run /usr/X11R6/bin/wmaker.inst before running Window Maker.
+Each use must run /usr/local/bin/wmaker.inst before running Window Maker.

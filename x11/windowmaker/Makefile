@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/02/07 02:32:37 jasoni Exp $
+# $OpenBSD: Makefile,v 1.5 1999/02/07 18:46:18 jasoni Exp $
 #
 
 DISTNAME=	WindowMaker-0.51.0
@@ -16,7 +16,6 @@ LIB_DEPENDS=	PropList\\.1\\.:${PORTSDIR}/devel/libproplist \
                 tiff\\.3\\.4:${PORTSDIR}/graphics/tiff34 \
                 png\\.1\\.:${PORTSDIR}/graphics/png \
 		gif\\.3\\.:${PORTSDIR}/graphics/giflib
-USE_X11=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/share/WindowMaker/Pixmaps \
 		--with-gfx-incs="-I${PREFIX}/include -I${PREFIX}/include/giflib" \
@@ -28,7 +27,7 @@ post-install:
 		${PREFIX}/share/WindowMaker/Pixmaps
 		@${LDCONFIG} -m ${PREFIX}/lib
 		@echo
-		@echo "Note: Every user must run /usr/X11R6/bin/wmaker.inst"
+		@echo "Note: Every user must run /usr/local/bin/wmaker.inst"
 		@echo "      before running Window Maker"
 		@echo
 
