@@ -1,6 +1,5 @@
-$OpenBSD: patch-src_gblhdr_h,v 1.1.1.1 2002/03/04 00:58:00 naddy Exp $
---- src/gblhdr.h.orig	Fri Sep 28 21:44:12 2001
-+++ src/gblhdr.h	Sun Mar  3 23:08:54 2002
+--- src/gblhdr.h.orig	Tue Jun 25 05:25:37 2002
++++ src/gblhdr.h	Tue Jun 25 05:25:43 2002
 @@ -70,9 +70,7 @@
  
  // unistd.h stuff
@@ -12,17 +11,3 @@ $OpenBSD: patch-src_gblhdr_h,v 1.1.1.1 2002/03/04 00:58:00 naddy Exp $
  	#include <sys/types.h>
  	#include <unistd.h>
  	#endif
-@@ -98,10 +96,10 @@
- 	#include <glob.h>
- 	#include <sys/stat.h>
- 	#include <sys/ioctl.h>
--	#include <arpa/inet.h>
--	#include <netinet/in.h>
--	#include <sys/types.h>
- 	#include <sys/socket.h>
-+	#include <sys/types.h>
-+	#include <netinet/in.h>
-+	#include <arpa/inet.h>
- 	#include <netdb.h>
- 	#include <utime.h>
- 	#include <zlib.h>

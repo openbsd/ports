@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/26 02:44:10 wcobb Exp $
+# $OpenBSD: Makefile,v 1.5 2002/06/25 16:14:51 wcobb Exp $
 
 ONLY_FOR_ARCHS=		i386
 
 COMMENT=		"Super Nintendo emulator for x86"
-VERSION=		1.337
+VERSION=		1.35
 DISTNAME=		zsnes-${VERSION}
 CATEGORIES=		emulators games
 HOMEPAGE=		http://www.zsnes.com/
@@ -42,15 +42,12 @@ WRKSRC=			${WRKDIST}/src
 
 NO_REGRESS=		Yes
 
-post-extract:
-	    @ln -fs ${FILESDIR}/sdl_draw.asm ${WRKSRC}/linux
-
 do-install:
 	    ${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zsnes
 	    cd ${WRKBUILD} && \
 		${INSTALL_PROGRAM} zsnes ${PREFIX}/bin
 	    cd ${WRKSRC} && \
-		${INSTALL_MAN} linux/zsnes.man ${PREFIX}/man/man1/zsnes.1
+		${INSTALL_MAN} linux/zsnes.1 ${PREFIX}/man/man1/zsnes.1
 	    cd ${WRKDIST} && \
 		${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/zsnes
 

@@ -1,27 +1,15 @@
-$OpenBSD: patch-src_configure_in,v 1.1.1.1 2002/03/04 00:58:00 naddy Exp $
---- src/configure.in.orig	Wed Sep 19 22:32:16 2001
-+++ src/configure.in	Sun Mar  3 09:47:11 2002
-@@ -16,7 +16,7 @@ dnl See also: remarks supplied in the de
+--- src/configure.in.orig	Tue Jun 25 05:20:59 2002
++++ src/configure.in	Tue Jun 25 05:22:20 2002
+@@ -16,7 +16,7 @@
  AC_INIT(init.asm)
  AC_CONFIG_HEADER(config.h)	
- echo -- Where is our compiler, and who are we compiling for?
+ dnl -- Where is our compiler, and who are we compiling for?
 -CFLAGS="-pipe -I. -Wall"
 +CFLAGS="$CFLAGS -I. -Wall"
- CXXFLAGS=$CFLAGS
  AC_PROG_CC
- AC_PROG_CXX
-@@ -29,6 +29,10 @@ case "$target" in
- 		CFLAGS="$CFLAGS -D__LINUX__"
-         	NFLAGS="$NFLAGS -D__LINUX__ -f elf"
- 		;;
-+	*-*-*openbsd*)
-+		CFLAGS="$CFLAGS -D__LINUX__ -D__FreeBSD__"
-+		NFLAGS="$NFLAGS -D__LINUX__ -D__FreeBSD__ -f aoutb"
-+		;;
- 	*-*-*bsd*)
- 		CFLAGS="$CFLAGS -D__LINUX__ -D__FreeBSD__"
- 		NFLAGS="$NFLAGS -D__LINUX__ -D__FreeBSD__ -f elf"
-@@ -139,31 +143,6 @@ else
+ AC_PATH_PROG(NASMPATH,nasm,[AC_MSG_ERROR(nasm 0.98 is required)])
+ NFLAGS="$NFLAGS -w-orphan-labels"
+@@ -145,31 +145,6 @@
  	
  	CFLAGS="$CFLAGS -Os -ffast-math -fomit-frame-pointer -fschedule-insns2 -s"
  	ZSNESEXE="zsnes"

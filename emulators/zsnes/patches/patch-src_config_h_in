@@ -1,8 +1,0 @@
-$OpenBSD: patch-src_config_h_in,v 1.1.1.1 2002/03/04 00:58:00 naddy Exp $
---- src/config.h.in.orig	Sun Mar  3 23:09:08 2002
-+++ src/config.h.in	Sun Mar  3 23:09:31 2002
-@@ -5,3 +5,4 @@
- #undef HAVE_SYS_DIR_H
- #undef HAVE_NDIR_H
- #undef HAVE_MEMCPY
-+#undef HAVE_UNISTD_H
