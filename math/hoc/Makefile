@@ -1,5 +1,5 @@
 # Ports collection makefile for	"hoc", the High Order Calculator
-# $OpenBSD: Makefile,v 1.18 2001/08/05 20:50:55 jsyn Exp $
+# $OpenBSD: Makefile,v 1.19 2001/11/21 15:22:56 ian Exp $
 
 COMMENT=	"from Kernighan & Pike: High Order Calculator"
 
@@ -13,6 +13,11 @@ EXTRACT_CASES=	*.sh) /bin/sh ${FULLDISTDIR}/$$archive;;
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
+HOMEPAGE=	http://cm.bell-labs.com/cm/cs/who/bwk/
+
+# License is included in the distfile: "Permission to use, copy, 
+# modify, and distribute this software... for any purpose and without
+# fee.. provided that the copyright notice appear in all copies..."
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
