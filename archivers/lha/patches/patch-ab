@@ -1,48 +1,19 @@
-*** src/lharc.c.orig	Fri Mar  8 01:09:06 1996
---- src/lharc.c	Tue Nov 25 15:37:05 1997
-***************
-*** 318,324 ****
-  		cmd_filec = 0;
-  		if ((xfilev = (char **) malloc(sizeof(char *) * xfilec)) == NULL)
-  			fatal_error("Virtual memory exhausted\n");
-! 		while (gets(inpbuf)) {
-  			if (cmd_filec >= xfilec) {
-  				xfilec += 256;
-  				cmd_filev = (char **) realloc(xfilev,
---- 318,326 ----
-  		cmd_filec = 0;
-  		if ((xfilev = (char **) malloc(sizeof(char *) * xfilec)) == NULL)
-  			fatal_error("Virtual memory exhausted\n");
-! 		while (fgets(inpbuf, sizeof(inpbuf), stdin)) {
-! 			if ((p = strchr(inpbuf, '\n')))
-! 				*p = '\0';
-  			if (cmd_filec >= xfilec) {
-  				xfilec += 256;
-  				cmd_filev = (char **) realloc(xfilev,
-***************
-*** 798,803 ****
---- 800,806 ----
-  /*																			*/
-  /* ------------------------------------------------------------------------ */
-  /* Build temporary file name and store to TEMPORARY_NAME */
-+ #if !defined(__OpenBSD__)
-  void
-  build_temporary_name()
-  {
-***************
-*** 821,827 ****
-  	mktemp(temporary_name);
-  #endif
-  }
-! 
-  /* ------------------------------------------------------------------------ */
-  static void
-  modify_filename_extention(buffer, ext)
---- 824,830 ----
-  	mktemp(temporary_name);
-  #endif
-  }
-! #endif
-  /* ------------------------------------------------------------------------ */
-  static void
-  modify_filename_extention(buffer, ext)
+--- src/lharc.c.orig	Sat Sep  4 18:08:21 1999
++++ src/lharc.c	Sat Sep  4 18:09:48 1999
+@@ -865,6 +865,7 @@
+ /*																			*/
+ /* ------------------------------------------------------------------------ */
+ /* Build temporary file name and store to TEMPORARY_NAME */
++#if !defined(__OpenBSD__)
+ void
+ build_temporary_name()
+ {
+@@ -888,7 +889,7 @@
+ 	mktemp(temporary_name);
+ #endif
+ }
+-
++#endif
+ /* ------------------------------------------------------------------------ */
+ static void
+ modify_filename_extention(buffer, ext)

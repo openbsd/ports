@@ -1,53 +1,40 @@
-*** src/lhadd.c.orig	Tue Nov 25 15:33:47 1997
---- src/lhadd.c	Tue Nov 25 15:29:32 1997
-***************
-*** 275,287 ****
-  {
-  	int             old_umask;
-  	FILE           *afp;
-  
-! 	build_temporary_name();
-  	signal(SIGINT, interrupt);
-  	signal(SIGHUP, interrupt);
-  
-  	old_umask = umask(077);
-! 	afp = xfopen(temporary_name, WRITE_BINARY);
-  	remove_temporary_at_error = TRUE;
-  	temporary_fp = afp;
-  	umask(old_umask);
---- 275,309 ----
-  {
-  	int             old_umask;
-  	FILE           *afp;
-+ 	int 		tempfd;
-  
-! #ifdef TMP_FILENAME_TEMPLATE
-!         if (extract_directory == NULL) {
-!                 strcpy(temporary_name, TMP_FILENAME_TEMPLATE);
-!         }
-!         else {
-!                 sprintf(temporary_name, "%s/lhXXXXXX", extract_directory);
-!         }
-!         tempfd = mkstemp(temporary_name);
-! #else
-!         char           *p, *s;
-! 
-!         strcpy(temporary_name, archive_name);
-!         for (p = temporary_name, s = (char *) 0; *p; p++)
-!                 if (*p == '/')
-!                         s = p;
-!         strcpy((s ? s + 1 : temporary_name), "lhXXXXXX");
-!         tempfd = mkstemp(temporary_name);
-! #endif
-! 	if (tempfd == -1)
-! 	  return NULL;
-! 	
-  	signal(SIGINT, interrupt);
-  	signal(SIGHUP, interrupt);
-  
-  	old_umask = umask(077);
-! 	/*afp = xfopen(temporary_name, WRITE_BINARY);*/
-! 	afp = fdopen(tempfd, "w+");
-  	remove_temporary_at_error = TRUE;
-  	temporary_fp = afp;
-  	umask(old_umask);
+--- src/lhadd.c.orig	Sat Sep  4 18:10:14 1999
++++ src/lhadd.c	Sat Sep  4 18:14:30 1999
+@@ -270,13 +270,35 @@
+ {
+ 	int             old_umask;
+ 	FILE           *afp;
++	int		tempfd;
++
++  #ifdef TMP_FILENAME_TEMPLATE
++	  if (extract_directory == NULL) {
++		  strcpy(temporary_name, TMP_FILENAME_TEMPLATE);
++	  }
++	  else {
++		  sprintf(temporary_name, "%s/lhXXXXXX", extract_directory);
++	  }
++	  tempfd = mkstemp(temporary_name);
++  #else
++	  char		 *p, *s;
++
++	  strcpy(temporary_name, archive_name);
++	  for (p = temporary_name, s = (char *) 0; *p; p++)
++		  if (*p == '/')
++			  s = p;
++	  strcpy((s ? s + 1 : temporary_name), "lhXXXXXX");
++	  tempfd = mkstemp(temporary_name);
++  #endif
++	if (tempfd == -1)
++	  return NULL;
+ 
+-	build_temporary_name();
+ 	signal(SIGINT, interrupt);
+ 	signal(SIGHUP, interrupt);
+ 
+ 	old_umask = umask(077);
+-	afp = xfopen(temporary_name, WRITE_BINARY);
++	/*afp = xfopen(temporary_name, WRITE_BINARY);*/
++	afp = fdopen(tempfd, "w+");
+ 	remove_temporary_at_error = TRUE;
+ 	temporary_fp = afp;
+ 	umask(old_umask);
