@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.137 2002/05/28 11:52:30 espie Exp $
+# $OpenBSD: Makefile,v 1.138 2002/06/14 09:47:35 jsyn Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
-#
 
 #    SUBDIR += FWF
 #    SUBDIR += XFree86
@@ -15,8 +14,8 @@
      SUBDIR += astime
      SUBDIR += aterm
      SUBDIR += aterm,big5
-     SUBDIR += aterm,lite
      SUBDIR += aterm,big5,lite
+     SUBDIR += aterm,lite
 #    SUBDIR += auis
      SUBDIR += bbdate
      SUBDIR += bbkeys
@@ -41,26 +40,26 @@
      SUBDIR += explorer
 #    SUBDIR += fbsd-icons
 #    SUBDIR += filerunner
-     SUBDIR += freefonts
      SUBDIR += fleditor
      SUBDIR += fltk
      SUBDIR += fluxbox
      SUBDIR += flvw
      SUBDIR += flwm
+     SUBDIR += freefonts
+     SUBDIR += fsv
 #    SUBDIR += fvwm
-#    SUBDIR += fvwm2-english
      SUBDIR += fvwm2
      SUBDIR += fvwm2,i18n
+#    SUBDIR += fvwm2-english
      SUBDIR += fvwm95
-     SUBDIR += fsv
      SUBDIR += gatos-bin
      SUBDIR += gentoo
      SUBDIR += gkrellweather
      SUBDIR += gnome
      SUBDIR += gnomemm
      SUBDIR += golem
-     SUBDIR += gtk-engines
      SUBDIR += gtk+
+     SUBDIR += gtk-engines
      SUBDIR += gtkglarea
      SUBDIR += gtkmm
      SUBDIR += gtop
@@ -90,16 +89,16 @@
      SUBDIR += olvwm
      SUBDIR += openbox
      SUBDIR += openmotif
-#    SUBDIR += p5-Tcl-Tk
      SUBDIR += p5-Gtk
      SUBDIR += p5-Gtk,gtkglarea
+#    SUBDIR += p5-Tcl-Tk
      SUBDIR += p5-Tk
      SUBDIR += paragui
      SUBDIR += piewm
-#    SUBDIR += pythonqt
+     SUBDIR += pwm
      SUBDIR += py-Gtk
      SUBDIR += py-Gtk,gnome
-     SUBDIR += pwm
+#    SUBDIR += pythonqt
      SUBDIR += qlwm
      SUBDIR += qt
      SUBDIR += qt2
@@ -115,8 +114,8 @@
      SUBDIR += rep-gtk
      SUBDIR += root-tail
      SUBDIR += rox-filer
-     SUBDIR += rxvt
      SUBDIR += ruby-gtk
+     SUBDIR += rxvt
      SUBDIR += sawfish
      SUBDIR += sliderule
 #    SUBDIR += slingshot
@@ -158,10 +157,10 @@
      SUBDIR += wmweather
      SUBDIR += wmx
      SUBDIR += wterm
-#    SUBDIR += x3270
-#    SUBDIR += xalarm
      SUBDIR += x2vnc
      SUBDIR += x2x
+#    SUBDIR += x3270
+#    SUBDIR += xalarm
      SUBDIR += xaniroc
      SUBDIR += xantfarm
      SUBDIR += xautolock
@@ -181,9 +180,9 @@
      SUBDIR += xfm
      SUBDIR += xforms
      SUBDIR += xfstt
-     SUBDIR += xgrab
      SUBDIR += xglobe
      SUBDIR += xglobe,no_map
+     SUBDIR += xgrab
      SUBDIR += xkeycaps
      SUBDIR += xloadimage
      SUBDIR += xlockmore
@@ -209,6 +208,5 @@
      SUBDIR += xwit
      SUBDIR += xwrits
      SUBDIR += xzoom
-
 
 .include <bsd.port.subdir.mk>
