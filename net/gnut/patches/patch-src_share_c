@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_share_c,v 1.1.1.1 2001/09/07 05:44:32 pvalchev Exp $
---- src/share.c.orig	Sun Sep  2 12:20:11 2001
-+++ src/share.c	Sun Sep  2 12:20:40 2001
-@@ -564,11 +564,11 @@ int share_scan_dir(char *path, int verbo
+$OpenBSD: patch-src_share_c,v 1.2 2004/01/04 23:15:03 espie Exp $
+--- src/share.c.orig	2001-09-11 01:35:44.000000000 +0200
++++ src/share.c	2004-01-05 00:01:42.000000000 +0100
+@@ -466,11 +466,11 @@ int share_scan_dir(char *path, int verbo
        printf("Using 'find' to index %s\n", path);
      }
      if (conf_get_int("follow_symlinks")) {
@@ -15,7 +15,7 @@ $OpenBSD: patch-src_share_c,v 1.1.1.1 2001/09/07 05:44:32 pvalchev Exp $
                "! -name \"*.gnut\" -o -type l \\) "
                "-printf %s",    path,    "\\%P\\\\n\\%p\\\\n");
      }
-@@ -712,7 +712,7 @@ int share_cache_compare_func(void *a, vo
+@@ -613,7 +613,7 @@ int share_cache_compare_func(void *a, vo
  
  int share_init()
  {
@@ -23,4 +23,4 @@ $OpenBSD: patch-src_share_c,v 1.1.1.1 2001/09/07 05:44:32 pvalchev Exp $
 +  have_find = trycmd("gfind --version", "GNU fi");
    have_perl = trycmd("perl -we 'print \"Perl rules!\\n\";'", "rules");
  
- #if 0  /* 0.4.27.c17 */
+   return 0;

@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2001/09/07 05:44:32 pvalchev Exp $
+$OpenBSD: patch-configure,v 1.2 2004/01/04 23:15:03 espie Exp $
 
 - make configure non-interactive
 - use system pthreads and nothing else
 
---- configure.orig	Sat Aug 11 00:22:30 2001
-+++ configure	Wed Sep  5 11:04:16 2001
+--- configure.orig	2001-10-03 22:40:29.000000000 +0200
++++ configure	2004-01-05 00:01:42.000000000 +0100
 @@ -552,11 +552,6 @@ To contact one of the authors, send elec
  or paper mail to: Gnut, c/o Robert Munafo, P.O. Box 0513, Scituate, MA
  02066-0513, USA.
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2001/09/07 05:44:32 pvalchev Exp $
  
  ac_aux_dir=
  for ac_dir in $srcdir $srcdir/.. $srcdir/../..; do
-@@ -2477,7 +2470,7 @@ else
+@@ -2790,7 +2783,7 @@ else
  fi
  
  
@@ -35,13 +35,13 @@ $OpenBSD: patch-configure,v 1.1.1.1 2001/09/07 05:44:32 pvalchev Exp $
 +g_link_threads=noway
  
  if test "$g_link_threads" = no ; then
- 		echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
-@@ -2527,6 +2520,8 @@ fi
- 		g_link_threads=posix
- 	fi
+     echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
+@@ -2841,6 +2834,8 @@ fi
+   fi
  fi
-+
-+g_link_threads=no
  
++g_link_threads=no
++
  if test "$g_link_threads" = no ; then
- 		echo $ac_n "checking for pthread_create with -pthreads""... $ac_c" 1>&6
+     echo $ac_n "checking for pthread_create with -pthreads""... $ac_c" 1>&6
+ echo "configure:2847: checking for pthread_create with -pthreads" >&5
