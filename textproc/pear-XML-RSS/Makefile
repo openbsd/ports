@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/09 20:39:54 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2005/02/27 23:14:32 mbalmer Exp $
 
 COMMENT=	"parser for RDF Site Summary files in PHP"
 
-V=		0.9.2
-DISTNAME=	XML_RSS-${V}
-PKGNAME=	pear-XML-RSS-${V}
+DISTNAME=	XML_RSS-0.9.2
+PKGNAME=	pear-${DISTNAME:S/_/-/}
 CATEGORIES=	textproc pear
 
 MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
-MODULES=	www/php4/pear
+MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
+MODULES=	www/php5/pear
 
 RUN_DEPENDS=	:pear-XML-Tree-*:textproc/pear-XML-Tree
 
