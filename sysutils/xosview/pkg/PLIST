@@ -1,3 +1,6 @@
-bin/xosview
+@comment $OpenBSD: PLIST,v 1.2 2000/05/18 03:37:49 form Exp $
 lib/X11/app-defaults/XOsview
 man/man1/xosview.1
+@group kmem
+@mode 2555
+bin/xosview
