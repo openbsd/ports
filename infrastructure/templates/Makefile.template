@@ -1,28 +1,50 @@
-# $OpenBSD: Makefile.template,v 1.25 2001/01/05 16:58:08 brad Exp $
+# $OpenBSD: Makefile.template,v 1.26 2001/03/08 02:55:32 brad Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
 # Replace ??? with appropriate values
 # Remove extraneous comments before commit.
 
+# Reasons why the port/package shouldn't be built
+#
+#ONLY_FOR_ARCHS=	???
+#COMES_WITH=		???
+#BROKEN=		"reason"
+#RESTRICTED=		"reason"
+
 # 
 # What port/package will be created
 #
 DISTNAME=		???
-#DIST_SUBDIR=		???
 #PKGNAME=		???
 CATEGORIES=     	???
 #NEED_VERSION=		?.??
 # Always put the NEED_VERSION line right after CATEGORIES
-
-#HOMEPAGE=		???		Url
-
-# Reasons why the port/package shouldn't be built
+# where the source files and patches can be fetched
 #
-#COMES_WITH=		???
-#ONLY_FOR_ARCHS=	???
-#BROKEN=		"reason"
-#RESTRICTED=		"reason"
+MASTER_SITES=		???
+#MASTER_SITE_SUBDIR=	???
+# if more master sites are needed...
+#MASTER_SITES0=
+# ...
+#DISTFILES=		???
+#EXTRACT_ONLY=		???
+#EXTRACT_SUFX=		.tar.Z
+
+#DIST_SUBDIR=		???
+
+# PATCHFILES are also retrieved from MASTER_SITES*
+#PATCHFILES=		???
+#PATCH_DIST_STRIP=	-p0
+
+#HOMEPAGE=		???	URL
+
+# Dependencies
+#
+#FETCH_DEPENDS=		???
+#BUILD_DEPENDS=		???
+#RUN_DEPENDS=		???
+#LIB_DEPENDS=		???
 
 # where to send bitches about this port
 #
@@ -37,41 +59,12 @@ MAINTAINER=		ports@openbsd.org
 
 #PERMIT_PACKAGE_CDROM=	Yes | "Reason if No"
 #PERMIT_PACKAGE_FTP=	Yes | "Reason if No"
-#PERMIT_DISTFILES_CDROM=	Yes | "Reason if No"
+#PERMIT_DISTFILES_CDROM=Yes | "Reason if No"
 #PERMIT_DISTFILES_FTP=	Yes | "Reason if No"
 
-# where the source files and patches can be fetched
-#
-MASTER_SITES=		???
-#MASTER_SITE_SUBDIR=	???
-# if more master sites are needed...
-#MASTER_SITES0=
-# ...
-#DISTFILES=		???
-# PATCHFILES are also retrieved from MASTER_SITES*
-#PATCHFILES=		???
-#PATCH_DIST_STRIP=	-p0
-#EXTRACT_SUFX=		.tar.Z
-#EXTRACT_CMD=		???
-#EXTRACT_BEFORE_ARGS=	???
-#EXTRACT_AFTER_ARGS=	???
-
-# don't forget to list supplementary files here (arch-dependent stuff,
-# or files that only get used with specific options. Otherwise, 
-# make makesum/checksum/addsum   WON'T WORK.
-# Note that duplicate files are not a problem.
-#SUPDISTFILES=
-
-# Dependencies
-#
-#FETCH_DEPENDS=		???
-#BUILD_DEPENDS=		???
-#RUN_DEPENDS=		???
-#LIB_DEPENDS=		???
-
-# Is the build automagic or is it interactive
-#
-#IS_INTERACTIVE=	Yes
+#MAKE_FLAGS=		???
+#MAKE_ENV=		???
+#FAKE_FLAGS=		???
 
 # build/configuration variables
 #
@@ -79,8 +72,8 @@ MASTER_SITES=		???
 #
 #SEPARATE_BUILD=	concurrent  (build simultaneously on all arches)
 #SEPARATE_BUILD=	simple  (configure/build still recreates files in source)
-#USE_GMAKE=		Yes
 #USE_X11=		Yes
+#USE_GMAKE=		Yes
 #USE_LIBTOOL=		Yes
 # Set CONFIGURE_STYLE to value corresponding to some standard configuration
 # 	  perl: perl's MakeMaker Makefile.PL
@@ -96,7 +89,10 @@ MASTER_SITES=		???
 #CONFIGURE_SCRIPT=	??? (if other than configure)
 #CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 #CONFIGURE_ENV=		???
-#LIBTOOL_FLAGS=		???
+
+# Is the build automagic or is it interactive
+#
+#IS_INTERACTIVE=	Yes
 
 # Assume you have one multiple choice flavor: 1 2 3 and switches a b.
 # You would write
@@ -130,35 +126,17 @@ MASTER_SITES=		???
 # The time gained is not worth it.
 #
 #NO_DEPENDS=		Yes
-# NO_WRKDIR is *BAD*, it breaks all dependencies
-# NO_WRKSUBDIR and NO_MTREE are obsolete
-# Use WRKDIST=${WRKDIR}
-# NO_EXTRACT, NO_PATCH, NO_CONFIGURE are deprecated
 #NO_CHECKSUM=		Yes
-#EXTRACT_ONLY=		instead of NO_EXTRACT, creates WRKDIR correctly
 #NO_BUILD=		Yes
 #NO_INSTALL=		Yes
-#NO_PACKAGE=		Yes
 #NO_PKG_REGISTER=	Yes
-
-# This section is only needed if man pages are distributed in compressed
-# form.  Define MANCOMPRESSED and the man pages by section.  The pages
-# will be uncompressed after being installed.
-#
-#MANCOMPRESSED=		Yes
-#MAN1=			???
-#MAN3=			???
-#MAN4=			???
-#MAN5=			???
-#MAN8=			???
 
 # Overrides for default values
 #
-#MAKE_FILE=		???
-#MAKE_FLAGS=		???
-#MAKE_ENV=		???
-#SCRIPTS_ENV=		???
+#CFLAGS=		???
 #LDFLAGS=		???
+#MAKE_FILE=		???
+#SCRIPTS_ENV=		???
 #WRKDIR=		??? if other than work
 #WRKDIST=		??? if other than ${WRKDIR}/$DISTNAME
 #WRKSRC=		??? if other than ${WRKDIST}
@@ -166,10 +144,5 @@ MASTER_SITES=		???
 
 #ALL_TARGET=		???
 #INSTALL_TARGET=	???
-
-# This target may be necessary if a shared library may have been created
-#
-#post-install:
-#	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
