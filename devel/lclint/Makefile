@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 1999/06/16 13:49:34 espie Exp $
+# $OpenBSD: Makefile,v 1.4 1999/09/17 10:47:19 turan Exp $
+
+BROKEN=		"sources changed.  checksums differ."
 
 DISTNAME=	lclint-2.4b
 CATEGORIES=	devel
