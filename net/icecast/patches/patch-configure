@@ -1,7 +1,5 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2000/08/28 16:14:21 fgsch Exp $
-
---- configure.orig	Wed Jul  5 17:22:53 2000
-+++ configure	Fri Aug 18 08:46:13 2000
+--- configure.orig	Wed Jul  5 16:22:53 2000
++++ configure	Tue Aug 29 00:10:33 2000
 @@ -879,16 +879,16 @@
  else
  	ICECAST_BINDIR=${prefix}/bin
@@ -16,7 +14,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2000/08/28 16:14:21 fgsch Exp $
 -	ICECAST_STATICDIR=static
 -	ICECAST_STATICDIR_INST=${prefix}/static
 -	ICECAST_DOCDIR=${prefix}/doc
-+	ICECAST_ETCDIR=/etc/icecast
++	ICECAST_ETCDIR=${sysconfdir}
 +	ICECAST_ETCDIR_INST=${prefix}/share/examples/icecast
 +	ICECAST_SHAREDIR=${prefix}/share/icecast
 +	ICECAST_LOGDIR=/var/log/icecast
