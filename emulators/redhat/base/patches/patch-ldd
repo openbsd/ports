@@ -1,15 +1,15 @@
---- usr/bin/ldd.orig	Mon May  6 03:14:43 2002
-+++ usr/bin/ldd	Mon May  6 03:27:05 2002
-@@ -28,7 +28,7 @@
+--- usr/bin/ldd.orig	Sun Apr 20 11:11:03 2003
++++ usr/bin/ldd	Sun Apr 20 14:43:47 2003
+@@ -27,7 +27,7 @@
  TEXTDOMAIN=libc
- TEXTDOMAINDIR=@TEXTDOMAINDIR@
+ TEXTDOMAINDIR=/usr/share/locale
  
--RTLD=/lib/ld-linux.so.2
-+RTLD=/emul/linux/usr/bin/ld-2.1.3-olf.so
+-RTLDLIST=/lib/ld-linux.so.2
++RTLDLIST=/emul/linux/usr/bin/ld-2.2.93-olf.so
  warn=
  bind_now=
  verbose=
-@@ -92,7 +92,7 @@
+@@ -91,7 +91,7 @@
    # Maybe extra code for non-ELF binaries.
    file=$1
    # Run the ldd stub.
