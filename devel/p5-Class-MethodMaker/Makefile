@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2002/06/09 05:24:39 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2002/07/16 01:47:11 kevlo Exp $
 
 COMMENT=	"module for creating generic methods"
 
-DISTNAME=	Class-MethodMaker-1.05
+DISTNAME=	Class-MethodMaker-1.06
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.504
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -17,5 +16,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Class/}
 
 CONFIGURE_STYLE= perl
+
+REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>	
