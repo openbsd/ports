@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/09 01:35:14 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:20 espie Exp $
+${P5SITE}/Tree/
 ${P5SITE}/Tree/DAG_Node.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Tree/
+@comment ${P5ARCH}/auto/Tree/DAG_Node/
 @comment ${P5ARCH}/auto/Tree/DAG_Node/.packlist
-man/man3p/Tree::DAG_Node.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Tree/DAG_Node
-@comment @dirrm ${P5ARCH}/auto/Tree
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Tree
+@man man/man3p/Tree::DAG_Node.3p

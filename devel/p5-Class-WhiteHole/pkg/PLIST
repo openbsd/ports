@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/19 09:23:30 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:15 espie Exp $
+${P5SITE}/Class/
 ${P5SITE}/Class/WhiteHole.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Class/
+@comment ${P5ARCH}/auto/Class/WhiteHole/
 @comment ${P5ARCH}/auto/Class/WhiteHole/.packlist
-man/man3p/Class::WhiteHole.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Class/WhiteHole
-@comment @dirrm ${P5ARCH}/auto/Class
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Class
+@man man/man3p/Class::WhiteHole.3p

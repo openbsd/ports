@@ -1,41 +1,40 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/31 17:23:30 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/08/10 08:10:14 espie Exp $
+${P5SITE}/App/
+${P5SITE}/App/Info/
 ${P5SITE}/App/Info.pm
+${P5SITE}/App/Info/HTTPD/
 ${P5SITE}/App/Info/HTTPD.pm
 ${P5SITE}/App/Info/HTTPD/Apache.pm
+${P5SITE}/App/Info/Handler/
 ${P5SITE}/App/Info/Handler.pm
 ${P5SITE}/App/Info/Handler/Carp.pm
 ${P5SITE}/App/Info/Handler/Print.pm
 ${P5SITE}/App/Info/Handler/Prompt.pm
+${P5SITE}/App/Info/Lib/
 ${P5SITE}/App/Info/Lib.pm
 ${P5SITE}/App/Info/Lib/Expat.pm
 ${P5SITE}/App/Info/Lib/Iconv.pm
+${P5SITE}/App/Info/RDBMS/
 ${P5SITE}/App/Info/RDBMS.pm
 ${P5SITE}/App/Info/RDBMS/PostgreSQL.pm
 ${P5SITE}/App/Info/Request.pm
 ${P5SITE}/App/Info/Util.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/App/
+@comment ${P5ARCH}/auto/App/Info/
 @comment ${P5ARCH}/auto/App/Info/.packlist
-man/man3p/App::Info.3p
-man/man3p/App::Info::HTTPD.3p
-man/man3p/App::Info::HTTPD::Apache.3p
-man/man3p/App::Info::Handler.3p
-man/man3p/App::Info::Handler::Carp.3p
-man/man3p/App::Info::Handler::Print.3p
-man/man3p/App::Info::Handler::Prompt.3p
-man/man3p/App::Info::Lib.3p
-man/man3p/App::Info::Lib::Expat.3p
-man/man3p/App::Info::Lib::Iconv.3p
-man/man3p/App::Info::RDBMS.3p
-man/man3p/App::Info::RDBMS::PostgreSQL.3p
-man/man3p/App::Info::Request.3p
-man/man3p/App::Info::Util.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/App/Info
-@comment @dirrm ${P5ARCH}/auto/App
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/App/Info/RDBMS
-@dirrm ${P5SITE}/App/Info/Lib
-@dirrm ${P5SITE}/App/Info/Handler
-@dirrm ${P5SITE}/App/Info/HTTPD
-@dirrm ${P5SITE}/App/Info
-@dirrm ${P5SITE}/App
+@man man/man3p/App::Info.3p
+@man man/man3p/App::Info::HTTPD.3p
+@man man/man3p/App::Info::HTTPD::Apache.3p
+@man man/man3p/App::Info::Handler.3p
+@man man/man3p/App::Info::Handler::Carp.3p
+@man man/man3p/App::Info::Handler::Print.3p
+@man man/man3p/App::Info::Handler::Prompt.3p
+@man man/man3p/App::Info::Lib.3p
+@man man/man3p/App::Info::Lib::Expat.3p
+@man man/man3p/App::Info::Lib::Iconv.3p
+@man man/man3p/App::Info::RDBMS.3p
+@man man/man3p/App::Info::RDBMS::PostgreSQL.3p
+@man man/man3p/App::Info::Request.3p
+@man man/man3p/App::Info::Util.3p

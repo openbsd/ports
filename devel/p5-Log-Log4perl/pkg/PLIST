@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/28 14:04:25 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:17 espie Exp $
+${P5SITE}/Log/
+${P5SITE}/Log/Log4perl/
 ${P5SITE}/Log/Log4perl.pm
+${P5SITE}/Log/Log4perl/Appender/
 ${P5SITE}/Log/Log4perl/Appender.pm
 ${P5SITE}/Log/Log4perl/Appender/DBI.pm
 ${P5SITE}/Log/Log4perl/Appender/File.pm
@@ -9,17 +12,20 @@ ${P5SITE}/Log/Log4perl/Appender/Synchronized.pm
 ${P5SITE}/Log/Log4perl/Appender/TestArrayBuffer.pm
 ${P5SITE}/Log/Log4perl/Appender/TestBuffer.pm
 ${P5SITE}/Log/Log4perl/Appender/TestFileCreeper.pm
+${P5SITE}/Log/Log4perl/Config/
 ${P5SITE}/Log/Log4perl/Config.pm
 ${P5SITE}/Log/Log4perl/Config/DOMConfigurator.pm
 ${P5SITE}/Log/Log4perl/Config/PropertyConfigurator.pm
 ${P5SITE}/Log/Log4perl/Config/Watch.pm
 ${P5SITE}/Log/Log4perl/DateFormat.pm
 ${P5SITE}/Log/Log4perl/FAQ.pm
+${P5SITE}/Log/Log4perl/Filter/
 ${P5SITE}/Log/Log4perl/Filter.pm
 ${P5SITE}/Log/Log4perl/Filter/Boolean.pm
 ${P5SITE}/Log/Log4perl/Filter/LevelMatch.pm
 ${P5SITE}/Log/Log4perl/Filter/LevelRange.pm
 ${P5SITE}/Log/Log4perl/Filter/StringMatch.pm
+${P5SITE}/Log/Log4perl/JavaMap/
 ${P5SITE}/Log/Log4perl/JavaMap.pm
 ${P5SITE}/Log/Log4perl/JavaMap/ConsoleAppender.pm
 ${P5SITE}/Log/Log4perl/JavaMap/FileAppender.pm
@@ -28,6 +34,7 @@ ${P5SITE}/Log/Log4perl/JavaMap/NTEventLogAppender.pm
 ${P5SITE}/Log/Log4perl/JavaMap/RollingFileAppender.pm
 ${P5SITE}/Log/Log4perl/JavaMap/SyslogAppender.pm
 ${P5SITE}/Log/Log4perl/JavaMap/TestBuffer.pm
+${P5SITE}/Log/Log4perl/Layout/
 ${P5SITE}/Log/Log4perl/Layout.pm
 ${P5SITE}/Log/Log4perl/Layout/NoopLayout.pm
 ${P5SITE}/Log/Log4perl/Layout/PatternLayout.pm
@@ -36,53 +43,45 @@ ${P5SITE}/Log/Log4perl/Level.pm
 ${P5SITE}/Log/Log4perl/Logger.pm
 ${P5SITE}/Log/Log4perl/MDC.pm
 ${P5SITE}/Log/Log4perl/NDC.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Log/
+@comment ${P5ARCH}/auto/Log/Log4perl/
 @comment ${P5ARCH}/auto/Log/Log4perl/.packlist
-man/man3p/Log::Log4perl.3p
-man/man3p/Log::Log4perl::Appender.3p
-man/man3p/Log::Log4perl::Appender::DBI.3p
-man/man3p/Log::Log4perl::Appender::File.3p
-man/man3p/Log::Log4perl::Appender::Screen.3p
-man/man3p/Log::Log4perl::Appender::Socket.3p
-man/man3p/Log::Log4perl::Appender::Synchronized.3p
-man/man3p/Log::Log4perl::Appender::TestArrayBuffer.3p
-man/man3p/Log::Log4perl::Appender::TestBuffer.3p
-man/man3p/Log::Log4perl::Appender::TestFileCreeper.3p
-man/man3p/Log::Log4perl::Config.3p
-man/man3p/Log::Log4perl::Config::DOMConfigurator.3p
-man/man3p/Log::Log4perl::Config::PropertyConfigurator.3p
-man/man3p/Log::Log4perl::Config::Watch.3p
-man/man3p/Log::Log4perl::DateFormat.3p
-man/man3p/Log::Log4perl::FAQ.3p
-man/man3p/Log::Log4perl::Filter.3p
-man/man3p/Log::Log4perl::Filter::Boolean.3p
-man/man3p/Log::Log4perl::Filter::LevelMatch.3p
-man/man3p/Log::Log4perl::Filter::LevelRange.3p
-man/man3p/Log::Log4perl::Filter::StringMatch.3p
-man/man3p/Log::Log4perl::JavaMap.3p
-man/man3p/Log::Log4perl::JavaMap::ConsoleAppender.3p
-man/man3p/Log::Log4perl::JavaMap::FileAppender.3p
-man/man3p/Log::Log4perl::JavaMap::JDBCAppender.3p
-man/man3p/Log::Log4perl::JavaMap::NTEventLogAppender.3p
-man/man3p/Log::Log4perl::JavaMap::RollingFileAppender.3p
-man/man3p/Log::Log4perl::JavaMap::SyslogAppender.3p
-man/man3p/Log::Log4perl::JavaMap::TestBuffer.3p
-man/man3p/Log::Log4perl::Layout.3p
-man/man3p/Log::Log4perl::Layout::NoopLayout.3p
-man/man3p/Log::Log4perl::Layout::PatternLayout.3p
-man/man3p/Log::Log4perl::Layout::SimpleLayout.3p
-man/man3p/Log::Log4perl::Level.3p
-man/man3p/Log::Log4perl::Logger.3p
-man/man3p/Log::Log4perl::MDC.3p
-man/man3p/Log::Log4perl::NDC.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Log/Log4perl
-@comment @dirrm ${P5ARCH}/auto/Log
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Log/Log4perl/Layout
-@dirrm ${P5SITE}/Log/Log4perl/JavaMap
-@dirrm ${P5SITE}/Log/Log4perl/Filter
-@dirrm ${P5SITE}/Log/Log4perl/Config
-@dirrm ${P5SITE}/Log/Log4perl/Appender
-@dirrm ${P5SITE}/Log/Log4perl
-@dirrm ${P5SITE}/Log
+@man man/man3p/Log::Log4perl.3p
+@man man/man3p/Log::Log4perl::Appender.3p
+@man man/man3p/Log::Log4perl::Appender::DBI.3p
+@man man/man3p/Log::Log4perl::Appender::File.3p
+@man man/man3p/Log::Log4perl::Appender::Screen.3p
+@man man/man3p/Log::Log4perl::Appender::Socket.3p
+@man man/man3p/Log::Log4perl::Appender::Synchronized.3p
+@man man/man3p/Log::Log4perl::Appender::TestArrayBuffer.3p
+@man man/man3p/Log::Log4perl::Appender::TestBuffer.3p
+@man man/man3p/Log::Log4perl::Appender::TestFileCreeper.3p
+@man man/man3p/Log::Log4perl::Config.3p
+@man man/man3p/Log::Log4perl::Config::DOMConfigurator.3p
+@man man/man3p/Log::Log4perl::Config::PropertyConfigurator.3p
+@man man/man3p/Log::Log4perl::Config::Watch.3p
+@man man/man3p/Log::Log4perl::DateFormat.3p
+@man man/man3p/Log::Log4perl::FAQ.3p
+@man man/man3p/Log::Log4perl::Filter.3p
+@man man/man3p/Log::Log4perl::Filter::Boolean.3p
+@man man/man3p/Log::Log4perl::Filter::LevelMatch.3p
+@man man/man3p/Log::Log4perl::Filter::LevelRange.3p
+@man man/man3p/Log::Log4perl::Filter::StringMatch.3p
+@man man/man3p/Log::Log4perl::JavaMap.3p
+@man man/man3p/Log::Log4perl::JavaMap::ConsoleAppender.3p
+@man man/man3p/Log::Log4perl::JavaMap::FileAppender.3p
+@man man/man3p/Log::Log4perl::JavaMap::JDBCAppender.3p
+@man man/man3p/Log::Log4perl::JavaMap::NTEventLogAppender.3p
+@man man/man3p/Log::Log4perl::JavaMap::RollingFileAppender.3p
+@man man/man3p/Log::Log4perl::JavaMap::SyslogAppender.3p
+@man man/man3p/Log::Log4perl::JavaMap::TestBuffer.3p
+@man man/man3p/Log::Log4perl::Layout.3p
+@man man/man3p/Log::Log4perl::Layout::NoopLayout.3p
+@man man/man3p/Log::Log4perl::Layout::PatternLayout.3p
+@man man/man3p/Log::Log4perl::Layout::SimpleLayout.3p
+@man man/man3p/Log::Log4perl::Level.3p
+@man man/man3p/Log::Log4perl::Logger.3p
+@man man/man3p/Log::Log4perl::MDC.3p
+@man man/man3p/Log::Log4perl::NDC.3p

@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/21 22:09:56 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:16 espie Exp $
+${P5SITE}/ExtUtils/
+${P5SITE}/ExtUtils/CBuilder/
 ${P5SITE}/ExtUtils/CBuilder.pm
 ${P5SITE}/ExtUtils/CBuilder/Base.pm
+${P5SITE}/ExtUtils/CBuilder/Platform/
 ${P5SITE}/ExtUtils/CBuilder/Platform/Unix.pm
 ${P5SITE}/ExtUtils/CBuilder/Platform/VMS.pm
 ${P5SITE}/ExtUtils/CBuilder/Platform/Windows.pm
@@ -8,14 +11,10 @@ ${P5SITE}/ExtUtils/CBuilder/Platform/aix.pm
 ${P5SITE}/ExtUtils/CBuilder/Platform/cygwin.pm
 ${P5SITE}/ExtUtils/CBuilder/Platform/darwin.pm
 ${P5SITE}/ExtUtils/CBuilder/Platform/os2.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/ExtUtils/
+@comment ${P5ARCH}/auto/ExtUtils/CBuilder/
 @comment ${P5ARCH}/auto/ExtUtils/CBuilder/.packlist
-man/man3p/ExtUtils::CBuilder.3p
-man/man3p/ExtUtils::CBuilder::Platform::Windows.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/ExtUtils/CBuilder
-@comment @dirrm ${P5ARCH}/auto/ExtUtils
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/ExtUtils/CBuilder/Platform
-@dirrm ${P5SITE}/ExtUtils/CBuilder
-@dirrm ${P5SITE}/ExtUtils
+@man man/man3p/ExtUtils::CBuilder.3p
+@man man/man3p/ExtUtils::CBuilder::Platform::Windows.3p

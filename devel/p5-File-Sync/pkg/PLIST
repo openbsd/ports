@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/15 14:15:21 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:17 espie Exp $
+${P5ARCH}/
+${P5ARCH}/File/
 ${P5ARCH}/File/Sync.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/File/
+${P5ARCH}/auto/File/Sync/
 @comment ${P5ARCH}/auto/File/Sync/.packlist
 ${P5ARCH}/auto/File/Sync/Sync.bs
 ${P5ARCH}/auto/File/Sync/Sync.so
 ${P5ARCH}/auto/File/Sync/autosplit.ix
-man/man3p/File::Sync.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/File/Sync
-@dirrm ${P5ARCH}/auto/File
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/File
-@dirrm ${P5ARCH}
+@man man/man3p/File::Sync.3p

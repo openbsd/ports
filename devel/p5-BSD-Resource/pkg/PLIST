@@ -1,5 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/12/31 17:44:12 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/08/10 08:10:14 espie Exp $
+${P5ARCH}/
+${P5ARCH}/BSD/
 ${P5ARCH}/BSD/Resource.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/BSD/
+${P5ARCH}/auto/BSD/Resource/
 @comment ${P5ARCH}/auto/BSD/Resource/.packlist
 ${P5ARCH}/auto/BSD/Resource/Resource.bs
 ${P5ARCH}/auto/BSD/Resource/Resource.so
@@ -30,10 +35,4 @@ ${P5ARCH}/auto/BSD/Resource/soft.al
 ${P5ARCH}/auto/BSD/Resource/stime.al
 ${P5ARCH}/auto/BSD/Resource/times.al
 ${P5ARCH}/auto/BSD/Resource/utime.al
-man/man3p/BSD::Resource.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/BSD/Resource
-@dirrm ${P5ARCH}/auto/BSD
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/BSD
-@dirrm ${P5ARCH}
+@man man/man3p/BSD::Resource.3p

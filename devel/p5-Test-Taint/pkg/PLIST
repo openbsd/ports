@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/10 01:36:18 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:19 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Test/
 ${P5ARCH}/Test/Taint.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Test/
+${P5ARCH}/auto/Test/Taint/
 @comment ${P5ARCH}/auto/Test/Taint/.packlist
 ${P5ARCH}/auto/Test/Taint/Taint.bs
 ${P5ARCH}/auto/Test/Taint/Taint.so
-man/man3p/Test::Taint.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Test/Taint
-@dirrm ${P5ARCH}/auto/Test
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Test
-@dirrm ${P5ARCH}
+@man man/man3p/Test::Taint.3p

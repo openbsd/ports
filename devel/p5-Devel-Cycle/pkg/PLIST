@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/10 02:26:13 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:16 espie Exp $
+${P5SITE}/Devel/
 ${P5SITE}/Devel/Cycle.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Devel/
+${P5ARCH}/auto/Devel/Cycle/
 @comment ${P5ARCH}/auto/Devel/Cycle/.packlist
-man/man3p/Devel::Cycle.3p
-@dirrm man/man3p
-@comment @comment @dirrm ${P5ARCH}/auto/Devel/Cycle
-@comment @dirrm ${P5ARCH}/auto/Devel
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Devel
+@man man/man3p/Devel::Cycle.3p

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/31 17:13:32 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/08/10 08:10:18 espie Exp $
+${P5SITE}/Set/
+${P5SITE}/Set/Scalar/
 ${P5SITE}/Set/Scalar.pm
 ${P5SITE}/Set/Scalar/Base.pm
 ${P5SITE}/Set/Scalar/Null.pm
@@ -7,19 +9,16 @@ ${P5SITE}/Set/Scalar/Universe.pm
 ${P5SITE}/Set/Scalar/Valued.pm
 ${P5SITE}/Set/Scalar/ValuedUniverse.pm
 ${P5SITE}/Set/Scalar/Virtual.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Set/
+@comment ${P5ARCH}/auto/Set/Scalar/
 @comment ${P5ARCH}/auto/Set/Scalar/.packlist
-man/man3p/Set::Scalar.3p
-man/man3p/Set::Scalar::Base.3p
-man/man3p/Set::Scalar::Null.3p
-man/man3p/Set::Scalar::Real.3p
-man/man3p/Set::Scalar::Universe.3p
-man/man3p/Set::Scalar::Valued.3p
-man/man3p/Set::Scalar::ValuedUniverse.3p
-man/man3p/Set::Scalar::Virtual.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Set/Scalar
-@comment @dirrm ${P5ARCH}/auto/Set
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Set/Scalar
-@dirrm ${P5SITE}/Set
+@man man/man3p/Set::Scalar.3p
+@man man/man3p/Set::Scalar::Base.3p
+@man man/man3p/Set::Scalar::Null.3p
+@man man/man3p/Set::Scalar::Real.3p
+@man man/man3p/Set::Scalar::Universe.3p
+@man man/man3p/Set::Scalar::Valued.3p
+@man man/man3p/Set::Scalar::ValuedUniverse.3p
+@man man/man3p/Set::Scalar::Virtual.3p

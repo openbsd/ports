@@ -1,9 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/29 21:10:02 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:19 espie Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/Builder/
+${P5SITE}/Test/Builder/Tester/
 ${P5SITE}/Test/Builder/Tester.pm
 ${P5SITE}/Test/Builder/Tester/Color.pm
-man/man3p/Test::Builder::Tester.3p
-man/man3p/Test::Builder::Tester::Color.3p
-@dirrm man/man3p
-@dirrm ${P5SITE}/Test/Builder/Tester
-@dirrm ${P5SITE}/Test/Builder
-@dirrm ${P5SITE}/Test
+${P5ARCH}/
+${P5ARCH}/auto/
+${P5ARCH}/auto/Test/
+${P5ARCH}/auto/Test/Builder/
+${P5ARCH}/auto/Test/Builder/Tester/
+${P5ARCH}/auto/Test/Builder/Tester/.packlist
+@man man/man3p/Test::Builder::Tester.3p
+@man man/man3p/Test::Builder::Tester::Color.3p

@@ -1,22 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/04/18 19:08:55 robert Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/08/10 08:10:18 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Attribute/
+${P5ARCH}/Attribute/Params/
 ${P5ARCH}/Attribute/Params/Validate.pm
+${P5ARCH}/Params/
 ${P5ARCH}/Params/Validate.pm
 @comment ${P5ARCH}/Params/Validate.pm.orig
 ${P5ARCH}/Params/ValidatePP.pm
 ${P5ARCH}/Params/ValidateXS.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Params/
+${P5ARCH}/auto/Params/Validate/
 @comment ${P5ARCH}/auto/Params/Validate/.packlist
 ${P5ARCH}/auto/Params/Validate/Validate.bs
 ${P5ARCH}/auto/Params/Validate/Validate.so
-@comment ${P5ARCH}/perllocal.pod
-man/man3p/Attribute::Params::Validate.3p
-man/man3p/Params::Validate.3p
-man/man3p/Params::ValidatePP.3p
-man/man3p/Params::ValidateXS.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Params/Validate
-@dirrm ${P5ARCH}/auto/Params
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Params
-@dirrm ${P5ARCH}/Attribute/Params
-@dirrm ${P5ARCH}/Attribute
-@dirrm ${P5ARCH}
+@man man/man3p/Attribute::Params::Validate.3p
+@man man/man3p/Params::Validate.3p
+@man man/man3p/Params::ValidatePP.3p
+@man man/man3p/Params::ValidateXS.3p

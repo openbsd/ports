@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/01/14 22:53:59 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/10 08:10:16 espie Exp $
+${P5SITE}/Devel/
 ${P5SITE}/Devel/StackTrace.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Devel/
+@comment ${P5ARCH}/auto/Devel/StackTrace/
 @comment ${P5ARCH}/auto/Devel/StackTrace/.packlist
-man/man3p/Devel::StackTrace.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Devel/StackTrace
-@comment @dirrm ${P5ARCH}/auto/Devel
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Devel
+@man man/man3p/Devel::StackTrace.3p

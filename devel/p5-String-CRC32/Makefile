@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2004/01/17 15:58:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/08/10 08:10:18 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"interface for cyclic redundancy check generation"
 

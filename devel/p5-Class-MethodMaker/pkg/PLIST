@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/04/19 06:45:10 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/08/10 08:10:15 espie Exp $
+${P5SITE}/Class/
+${P5SITE}/Class/MethodMaker/
 ${P5SITE}/Class/MethodMaker.pm
 ${P5SITE}/Class/MethodMaker/Constants.pm
 ${P5SITE}/Class/MethodMaker/Engine.pm
@@ -7,11 +9,16 @@ ${P5SITE}/Class/MethodMaker/V1Compat.pm
 ${P5SITE}/Class/MethodMaker/array.pm
 ${P5SITE}/Class/MethodMaker/hash.pm
 ${P5SITE}/Class/MethodMaker/scalar.pm
+${P5SITE}/auto/
+${P5SITE}/auto/Class/
+${P5SITE}/auto/Class/MethodMaker/
+${P5SITE}/auto/Class/MethodMaker/Engine/
 ${P5SITE}/auto/Class/MethodMaker/Engine/_boolean.al
 ${P5SITE}/auto/Class/MethodMaker/Engine/abstract.al
 ${P5SITE}/auto/Class/MethodMaker/Engine/autosplit.ix
 ${P5SITE}/auto/Class/MethodMaker/Engine/copy.al
 ${P5SITE}/auto/Class/MethodMaker/Engine/new.al
+${P5SITE}/auto/Class/MethodMaker/array/
 ${P5SITE}/auto/Class/MethodMaker/array/arra0000.al
 ${P5SITE}/auto/Class/MethodMaker/array/arra0001.al
 ${P5SITE}/auto/Class/MethodMaker/array/arra0002.al
@@ -301,6 +308,7 @@ ${P5SITE}/auto/Class/MethodMaker/array/arra01f5.al
 ${P5SITE}/auto/Class/MethodMaker/array/arra01f8.al
 ${P5SITE}/auto/Class/MethodMaker/array/arra01f9.al
 ${P5SITE}/auto/Class/MethodMaker/array/autosplit.ix
+${P5SITE}/auto/Class/MethodMaker/hash/
 ${P5SITE}/auto/Class/MethodMaker/hash/autosplit.ix
 ${P5SITE}/auto/Class/MethodMaker/hash/hash0000.al
 ${P5SITE}/auto/Class/MethodMaker/hash/hash0001.al
@@ -590,6 +598,7 @@ ${P5SITE}/auto/Class/MethodMaker/hash/hash01f4.al
 ${P5SITE}/auto/Class/MethodMaker/hash/hash01f5.al
 ${P5SITE}/auto/Class/MethodMaker/hash/hash01f8.al
 ${P5SITE}/auto/Class/MethodMaker/hash/hash01f9.al
+${P5SITE}/auto/Class/MethodMaker/scalar/
 ${P5SITE}/auto/Class/MethodMaker/scalar/autosplit.ix
 ${P5SITE}/auto/Class/MethodMaker/scalar/scal0000.al
 ${P5SITE}/auto/Class/MethodMaker/scalar/scal0001.al
@@ -879,25 +888,15 @@ ${P5SITE}/auto/Class/MethodMaker/scalar/scal01f4.al
 ${P5SITE}/auto/Class/MethodMaker/scalar/scal01f5.al
 ${P5SITE}/auto/Class/MethodMaker/scalar/scal01f8.al
 ${P5SITE}/auto/Class/MethodMaker/scalar/scal01f9.al
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Class-MethodMaker/
 @comment ${P5ARCH}/auto/Class-MethodMaker/.packlist
-man/man3p/Class::MethodMaker.3p
-man/man3p/Class::MethodMaker::Constants.3p
-man/man3p/Class::MethodMaker::Engine.3p
-man/man3p/Class::MethodMaker::OptExt.3p
-man/man3p/Class::MethodMaker::V1Compat.3p
-man/man3p/Class::MethodMaker::array.3p
-man/man3p/Class::MethodMaker::hash.3p
-man/man3p/Class::MethodMaker::scalar.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Class-MethodMaker
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/auto/Class/MethodMaker/scalar
-@dirrm ${P5SITE}/auto/Class/MethodMaker/hash
-@dirrm ${P5SITE}/auto/Class/MethodMaker/array
-@dirrm ${P5SITE}/auto/Class/MethodMaker/Engine
-@dirrm ${P5SITE}/auto/Class/MethodMaker
-@dirrm ${P5SITE}/auto/Class
-@dirrm ${P5SITE}/auto
-@dirrm ${P5SITE}/Class/MethodMaker
-@dirrm ${P5SITE}/Class
+@man man/man3p/Class::MethodMaker.3p
+@man man/man3p/Class::MethodMaker::Constants.3p
+@man man/man3p/Class::MethodMaker::Engine.3p
+@man man/man3p/Class::MethodMaker::OptExt.3p
+@man man/man3p/Class::MethodMaker::V1Compat.3p
+@man man/man3p/Class::MethodMaker::array.3p
+@man man/man3p/Class::MethodMaker::hash.3p
+@man man/man3p/Class::MethodMaker::scalar.3p

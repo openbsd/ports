@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/01/04 08:08:34 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/08/10 08:10:17 espie Exp $
+${P5SITE}/Log/
+${P5SITE}/Log/Agent/
 ${P5SITE}/Log/Agent.pm
+${P5SITE}/Log/Agent/Channel/
 ${P5SITE}/Log/Agent/Channel.pm
 ${P5SITE}/Log/Agent/Channel/File.pm
 ${P5SITE}/Log/Agent/Channel/Handle.pm
 ${P5SITE}/Log/Agent/Channel/Syslog.pm
+${P5SITE}/Log/Agent/Driver/
 ${P5SITE}/Log/Agent/Driver.pm
 ${P5SITE}/Log/Agent/Driver/Datum.pm
 ${P5SITE}/Log/Agent/Driver/Default.pm
@@ -12,6 +16,7 @@ ${P5SITE}/Log/Agent/Driver/Fork.pm
 ${P5SITE}/Log/Agent/Driver/Mail.pm
 ${P5SITE}/Log/Agent/Driver/Silent.pm
 ${P5SITE}/Log/Agent/Driver/Syslog.pm
+${P5SITE}/Log/Agent/File/
 ${P5SITE}/Log/Agent/File/Native.pm
 ${P5SITE}/Log/Agent/File_Pool.pm
 ${P5SITE}/Log/Agent/Formatting.pm
@@ -19,13 +24,18 @@ ${P5SITE}/Log/Agent/Message.pm
 ${P5SITE}/Log/Agent/Prefixer.pm
 ${P5SITE}/Log/Agent/Priorities.pm
 ${P5SITE}/Log/Agent/Stamping.pm
+${P5SITE}/Log/Agent/Tag/
 ${P5SITE}/Log/Agent/Tag.pm
 ${P5SITE}/Log/Agent/Tag/Callback.pm
 ${P5SITE}/Log/Agent/Tag/Caller.pm
 ${P5SITE}/Log/Agent/Tag/Priority.pm
 ${P5SITE}/Log/Agent/Tag/String.pm
 ${P5SITE}/Log/Agent/Tag_List.pm
+${P5SITE}/auto/
+${P5SITE}/auto/Log/
+${P5SITE}/auto/Log/Agent/
 ${P5SITE}/auto/Log/Agent/DATUM_is_here.al
+${P5SITE}/auto/Log/Agent/Priorities/
 ${P5SITE}/auto/Log/Agent/Priorities/autosplit.ix
 ${P5SITE}/auto/Log/Agent/Priorities/level_from_prio.al
 ${P5SITE}/auto/Log/Agent/Priorities/prio_from_level.al
@@ -49,42 +59,31 @@ ${P5SITE}/auto/Log/Agent/logwrite.al
 ${P5SITE}/auto/Log/Agent/logxcarp.al
 ${P5SITE}/auto/Log/Agent/logxcroak.al
 ${P5SITE}/auto/Log/Agent/prio_tag.al
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Log/
+@comment ${P5ARCH}/auto/Log/Agent/
 @comment ${P5ARCH}/auto/Log/Agent/.packlist
-man/man3p/Log::Agent.3p
-man/man3p/Log::Agent::Channel.3p
-man/man3p/Log::Agent::Channel::File.3p
-man/man3p/Log::Agent::Channel::Handle.3p
-man/man3p/Log::Agent::Channel::Syslog.3p
-man/man3p/Log::Agent::Driver.3p
-man/man3p/Log::Agent::Driver::Datum.3p
-man/man3p/Log::Agent::Driver::Default.3p
-man/man3p/Log::Agent::Driver::File.3p
-man/man3p/Log::Agent::Driver::Fork.3p
-man/man3p/Log::Agent::Driver::Mail.3p
-man/man3p/Log::Agent::Driver::Silent.3p
-man/man3p/Log::Agent::Driver::Syslog.3p
-man/man3p/Log::Agent::File::Native.3p
-man/man3p/Log::Agent::Message.3p
-man/man3p/Log::Agent::Priorities.3p
-man/man3p/Log::Agent::Stamping.3p
-man/man3p/Log::Agent::Tag.3p
-man/man3p/Log::Agent::Tag::Callback.3p
-man/man3p/Log::Agent::Tag::Caller.3p
-man/man3p/Log::Agent::Tag::Priority.3p
-man/man3p/Log::Agent::Tag::String.3p
-man/man3p/Log::Agent::Tag_List.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Log/Agent
-@comment @dirrm ${P5ARCH}/auto/Log
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/auto/Log/Agent/Priorities
-@dirrm ${P5SITE}/auto/Log/Agent
-@dirrm ${P5SITE}/auto/Log
-@dirrm ${P5SITE}/auto
-@dirrm ${P5SITE}/Log/Agent/Tag
-@dirrm ${P5SITE}/Log/Agent/File
-@dirrm ${P5SITE}/Log/Agent/Driver
-@dirrm ${P5SITE}/Log/Agent/Channel
-@dirrm ${P5SITE}/Log/Agent
-@dirrm ${P5SITE}/Log
+@man man/man3p/Log::Agent.3p
+@man man/man3p/Log::Agent::Channel.3p
+@man man/man3p/Log::Agent::Channel::File.3p
+@man man/man3p/Log::Agent::Channel::Handle.3p
+@man man/man3p/Log::Agent::Channel::Syslog.3p
+@man man/man3p/Log::Agent::Driver.3p
+@man man/man3p/Log::Agent::Driver::Datum.3p
+@man man/man3p/Log::Agent::Driver::Default.3p
+@man man/man3p/Log::Agent::Driver::File.3p
+@man man/man3p/Log::Agent::Driver::Fork.3p
+@man man/man3p/Log::Agent::Driver::Mail.3p
+@man man/man3p/Log::Agent::Driver::Silent.3p
+@man man/man3p/Log::Agent::Driver::Syslog.3p
+@man man/man3p/Log::Agent::File::Native.3p
+@man man/man3p/Log::Agent::Message.3p
+@man man/man3p/Log::Agent::Priorities.3p
+@man man/man3p/Log::Agent::Stamping.3p
+@man man/man3p/Log::Agent::Tag.3p
+@man man/man3p/Log::Agent::Tag::Callback.3p
+@man man/man3p/Log::Agent::Tag::Caller.3p
+@man man/man3p/Log::Agent::Tag::Priority.3p
+@man man/man3p/Log::Agent::Tag::String.3p
+@man man/man3p/Log::Agent::Tag_List.3p

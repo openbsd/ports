@@ -1,19 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/24 01:07:54 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/08/10 08:10:15 espie Exp $
+${P5SITE}/Date/
+${P5SITE}/Date/Handler/
 ${P5SITE}/Date/Handler.pm
 ${P5SITE}/Date/Handler.pod
 ${P5SITE}/Date/Handler/Constants.pm
 ${P5SITE}/Date/Handler/Delta.pm
 ${P5SITE}/Date/Handler/Range.pm
 ${P5SITE}/Date/Handler/Test.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Date/
+@comment ${P5ARCH}/auto/Date/Handler/
 @comment ${P5ARCH}/auto/Date/Handler/.packlist
-man/man3p/Date::Handler.3p
-man/man3p/Date::Handler::Delta.3p
-man/man3p/Date::Handler::Range.3p
-man/man3p/Date::Handler::Test.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Date/Handler
-@comment @dirrm ${P5ARCH}/auto/Date
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Date/Handler
-@dirrm ${P5SITE}/Date
+@man man/man3p/Date::Handler.3p
+@man man/man3p/Date::Handler::Delta.3p
+@man man/man3p/Date::Handler::Range.3p
+@man man/man3p/Date::Handler::Test.3p

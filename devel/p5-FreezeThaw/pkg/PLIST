@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/31 19:14:10 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/08/10 08:10:17 espie Exp $
 ${P5SITE}/FreezeThaw.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/FreezeThaw/
 @comment ${P5ARCH}/auto/FreezeThaw/.packlist
-man/man3p/FreezeThaw.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/FreezeThaw
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
+@man man/man3p/FreezeThaw.3p

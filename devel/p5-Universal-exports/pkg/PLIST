@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/20 11:14:50 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:20 espie Exp $
+${P5SITE}/UNIVERSAL/
 ${P5SITE}/UNIVERSAL/exports.pm
 ${P5SITE}/UNIVERSAL/require.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/UNIVERSAL/
+@comment ${P5ARCH}/auto/UNIVERSAL/exports/
 @comment ${P5ARCH}/auto/UNIVERSAL/exports/.packlist
-man/man3p/UNIVERSAL::exports.3p
-man/man3p/UNIVERSAL::require.3p
-@comment @dirrm ${P5ARCH}/auto/UNIVERSAL/exports
-@comment @dirrm ${P5ARCH}/auto/UNIVERSAL
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/UNIVERSAL
+@man man/man3p/UNIVERSAL::exports.3p
+@man man/man3p/UNIVERSAL::require.3p

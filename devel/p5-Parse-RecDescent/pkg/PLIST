@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/31 17:44:12 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/10 08:10:18 espie Exp $
+${P5SITE}/Parse/
 ${P5SITE}/Parse/RecDescent.pm
 ${P5SITE}/Parse/RecDescent.pod
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Parse/
+@comment ${P5ARCH}/auto/Parse/RecDescent/
 @comment ${P5ARCH}/auto/Parse/RecDescent/.packlist
-man/man3p/Parse::RecDescent.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Parse/RecDescent
-@comment @dirrm ${P5ARCH}/auto/Parse
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Parse
+@man man/man3p/Parse::RecDescent.3p

@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/31 19:14:10 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/08/10 08:10:18 espie Exp $
+${P5SITE}/Object/
+${P5SITE}/Object/Realize/
 ${P5SITE}/Object/Realize/Later.pm
 ${P5SITE}/Object/Realize/Later.pod
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Object/
+@comment ${P5ARCH}/auto/Object/Realize/
+@comment ${P5ARCH}/auto/Object/Realize/Later/
 @comment ${P5ARCH}/auto/Object/Realize/Later/.packlist
-man/man3p/Object::Realize::Later.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Object/Realize/Later
-@comment @dirrm ${P5ARCH}/auto/Object/Realize
-@comment @dirrm ${P5ARCH}/auto/Object
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Object/Realize
-@dirrm ${P5SITE}/Object
+@man man/man3p/Object::Realize::Later.3p

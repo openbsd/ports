@@ -1,14 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/31 19:14:10 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/08/10 08:10:17 espie Exp $
 bin/MsgFormat
 bin/XText
+${P5SITE}/Locale/
 ${P5SITE}/Locale/PGetText.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Locale/
+@comment ${P5ARCH}/auto/Locale/PGetText/
 @comment ${P5ARCH}/auto/Locale/PGetText/.packlist
-man/man1/MsgFormat.1
-man/man1/XText.1
-man/man3p/Locale::PGetText.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Locale/PGetText
-@comment @dirrm ${P5ARCH}/auto/Locale
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Locale
+@man man/man1/MsgFormat.1
+@man man/man1/XText.1
+@man man/man3p/Locale::PGetText.3p

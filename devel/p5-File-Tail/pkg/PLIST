@@ -1,14 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/01/17 16:45:01 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/10 08:10:17 espie Exp $
+${P5SITE}/File/
 ${P5SITE}/File/Tail.pm
+${P5SITE}/auto/
+${P5SITE}/auto/File/
+${P5SITE}/auto/File/Tail/
 ${P5SITE}/auto/File/Tail/autosplit.ix
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/File/
+@comment ${P5ARCH}/auto/File/Tail/
 @comment ${P5ARCH}/auto/File/Tail/.packlist
-man/man3p/File::Tail.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/File/Tail
-@comment @dirrm ${P5ARCH}/auto/File
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/auto/File/Tail
-@dirrm ${P5SITE}/auto/File
-@dirrm ${P5SITE}/auto
-@dirrm ${P5SITE}/File
+@man man/man3p/File::Tail.3p

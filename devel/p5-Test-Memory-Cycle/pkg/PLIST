@@ -1,11 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/10 02:30:39 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:19 espie Exp $
+${P5SITE}/Test/Memory/
 ${P5SITE}/Test/Memory/Cycle.pm
+@comment ${P5ARCH}/auto/Test/Memory/
+@comment ${P5ARCH}/auto/Test/Memory/Cycle/
 @comment ${P5ARCH}/auto/Test/Memory/Cycle/.packlist
-man/man3p/Test::Memory::Cycle.3p
-@comment @dirrm ${P5ARCH}/auto/Test/Memory/Cycle
-@comment @dirrm ${P5ARCH}/auto/Test/Memory
-@comment @dirrm ${P5ARCH}/auto/Test
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Test/Memory
-@dirrm ${P5SITE}/Test
+@man man/man3p/Test::Memory::Cycle.3p

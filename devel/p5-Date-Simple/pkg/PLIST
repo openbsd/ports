@@ -1,21 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/11 11:55:39 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:16 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Date/
+${P5ARCH}/Date/Simple/
 ${P5ARCH}/Date/Simple.pm
 ${P5ARCH}/Date/Simple/D8.pm
 ${P5ARCH}/Date/Simple/Fmt.pm
 ${P5ARCH}/Date/Simple/ISO.pm
 ${P5ARCH}/Date/Simple/NoXS.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Date/
+${P5ARCH}/auto/Date/Simple/
 @comment ${P5ARCH}/auto/Date/Simple/.packlist
 ${P5ARCH}/auto/Date/Simple/Simple.bs
 ${P5ARCH}/auto/Date/Simple/Simple.so
-man/man3p/Date::Simple.3p
-man/man3p/Date::Simple::D8.3p
-man/man3p/Date::Simple::Fmt.3p
-man/man3p/Date::Simple::ISO.3p
-man/man3p/Date::Simple::NoXS.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Date/Simple
-@dirrm ${P5ARCH}/auto/Date
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Date/Simple
-@dirrm ${P5ARCH}/Date
-@dirrm ${P5ARCH}
+@man man/man3p/Date::Simple.3p
+@man man/man3p/Date::Simple::D8.3p
+@man man/man3p/Date::Simple::Fmt.3p
+@man man/man3p/Date::Simple::ISO.3p
+@man man/man3p/Date::Simple::NoXS.3p

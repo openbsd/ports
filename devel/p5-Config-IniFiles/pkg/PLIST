@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/15 16:51:05 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/10 08:10:15 espie Exp $
+${P5SITE}/Config/
 ${P5SITE}/Config/IniFiles.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Config/
+@comment ${P5ARCH}/auto/Config/IniFiles/
 @comment ${P5ARCH}/auto/Config/IniFiles/.packlist
-@comment ${P5ARCH}/perllocal.pod
-man/man3p/Config::IniFiles.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Config/IniFiles
-@comment @dirrm ${P5ARCH}/auto/Config
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Config
+@man man/man3p/Config::IniFiles.3p

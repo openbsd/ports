@@ -1,19 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/12/31 16:20:04 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/08/10 08:10:19 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Term/
+${P5ARCH}/Term/ReadLine/
+${P5ARCH}/Term/ReadLine/Gnu/
 ${P5ARCH}/Term/ReadLine/Gnu.pm
 ${P5ARCH}/Term/ReadLine/Gnu/XS.pm
 ${P5ARCH}/Term/ReadLine/Gnu/euc_jp.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Term/
+${P5ARCH}/auto/Term/ReadLine/
+${P5ARCH}/auto/Term/ReadLine/Gnu/
 @comment ${P5ARCH}/auto/Term/ReadLine/Gnu/.packlist
 ${P5ARCH}/auto/Term/ReadLine/Gnu/Gnu.bs
 ${P5ARCH}/auto/Term/ReadLine/Gnu/Gnu.so
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/autosplit.ix
-man/man3p/Term::ReadLine::Gnu.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Term/ReadLine/Gnu/XS
-@dirrm ${P5ARCH}/auto/Term/ReadLine/Gnu
-@dirrm ${P5ARCH}/auto/Term/ReadLine
-@dirrm ${P5ARCH}/auto/Term
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Term/ReadLine/Gnu
-@dirrm ${P5ARCH}/Term/ReadLine
-@dirrm ${P5ARCH}/Term
-@dirrm ${P5ARCH}
+@man man/man3p/Term::ReadLine::Gnu.3p

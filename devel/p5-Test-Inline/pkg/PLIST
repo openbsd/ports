@@ -1,21 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/10 02:28:32 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:19 espie Exp $
 bin/pod2test
+${P5SITE}/Pod/
+${P5SITE}/Pod/Tests/
 ${P5SITE}/Pod/Tests.pm
 ${P5SITE}/Pod/Tests/Tutorial.pod
+${P5SITE}/Test/
+${P5SITE}/Test/Inline/
 ${P5SITE}/Test/Inline.pm
 ${P5SITE}/Test/Inline/Tutorial.pod
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Test/
+@comment ${P5ARCH}/auto/Test/Inline/
 @comment ${P5ARCH}/auto/Test/Inline/.packlist
-man/man1/pod2test.1
-man/man3p/Pod::Tests.3p
-man/man3p/Pod::Tests::Tutorial.3p
-man/man3p/Test::Inline.3p
-man/man3p/Test::Inline::Tutorial.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Test/Inline
-@comment @dirrm ${P5ARCH}/auto/Test
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Test/Inline
-@dirrm ${P5SITE}/Test
-@dirrm ${P5SITE}/Pod/Tests
-@dirrm ${P5SITE}/Pod
+@man man/man1/pod2test.1
+@man man/man3p/Pod::Tests.3p
+@man man/man3p/Pod::Tests::Tutorial.3p
+@man man/man3p/Test::Inline.3p
+@man man/man3p/Test::Inline::Tutorial.3p

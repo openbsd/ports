@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/31 16:20:04 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/08/10 08:10:15 espie Exp $
+${P5ARCH}/
 ${P5ARCH}/Curses.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Curses/
 @comment ${P5ARCH}/auto/Curses/.packlist
 ${P5ARCH}/auto/Curses/Curses.bs
 ${P5ARCH}/auto/Curses/Curses.so
-man/man3p/Curses.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Curses
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}
+@man man/man3p/Curses.3p

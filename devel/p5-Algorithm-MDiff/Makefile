@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2004/01/17 15:58:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2004/08/10 08:10:14 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"interface to calculate m-difference between two objects"
 

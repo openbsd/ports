@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/31 18:53:35 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/08/10 08:10:18 espie Exp $
+${P5ARCH}/
+${P5ARCH}/String/
 ${P5ARCH}/String/CRC32.pm
 ${P5ARCH}/String/CRC32.pod
+${P5ARCH}/auto/
+${P5ARCH}/auto/String/
+${P5ARCH}/auto/String/CRC32/
 @comment ${P5ARCH}/auto/String/CRC32/.packlist
 ${P5ARCH}/auto/String/CRC32/CRC32.bs
 ${P5ARCH}/auto/String/CRC32/CRC32.so
-man/man3p/String::CRC32.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/String/CRC32
-@dirrm ${P5ARCH}/auto/String
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/String
-@dirrm ${P5ARCH}
+@man man/man3p/String::CRC32.3p

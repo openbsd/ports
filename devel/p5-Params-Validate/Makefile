@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2004/07/04 23:40:05 mjc Exp $
+# $OpenBSD: Makefile,v 1.14 2004/08/10 08:10:18 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"perl module to validate function/method parameters"
 

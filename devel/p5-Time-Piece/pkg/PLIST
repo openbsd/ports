@@ -1,14 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/24 01:07:54 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/08/10 08:10:20 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Time/
 ${P5ARCH}/Time/Piece.pm
 ${P5ARCH}/Time/Seconds.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Time/
+${P5ARCH}/auto/Time/Piece/
 @comment ${P5ARCH}/auto/Time/Piece/.packlist
 ${P5ARCH}/auto/Time/Piece/Piece.bs
 ${P5ARCH}/auto/Time/Piece/Piece.so
-man/man3p/Time::Piece.3p
-man/man3p/Time::Seconds.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Time/Piece
-@dirrm ${P5ARCH}/auto/Time
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Time
-@dirrm ${P5ARCH}
+@man man/man3p/Time::Piece.3p
+@man man/man3p/Time::Seconds.3p

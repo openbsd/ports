@@ -1,35 +1,35 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/31 16:20:04 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/08/10 08:10:15 espie Exp $
+${P5SITE}/Curses/
+${P5SITE}/Curses/Widgets/
 ${P5SITE}/Curses/Widgets.pm
 ${P5SITE}/Curses/Widgets/ButtonSet.pm
 ${P5SITE}/Curses/Widgets/Calendar.pm
 ${P5SITE}/Curses/Widgets/ComboBox.pm
 ${P5SITE}/Curses/Widgets/Label.pm
+${P5SITE}/Curses/Widgets/ListBox/
 ${P5SITE}/Curses/Widgets/ListBox.pm
 ${P5SITE}/Curses/Widgets/ListBox/MultiColumn.pm
 ${P5SITE}/Curses/Widgets/Menu.pm
 ${P5SITE}/Curses/Widgets/ProgressBar.pm
 ${P5SITE}/Curses/Widgets/TextField.pm
 ${P5SITE}/Curses/Widgets/TextMemo.pm
+${P5SITE}/Curses/Widgets/Tutorial/
 ${P5SITE}/Curses/Widgets/Tutorial.pod
 ${P5SITE}/Curses/Widgets/Tutorial/Creation.pod
+@comment ${P5ARCH}/auto/Curses/Widgets/
 @comment ${P5ARCH}/auto/Curses/Widgets/.packlist
-man/man3p/Curses::Widgets.3p
-man/man3p/Curses::Widgets::ButtonSet.3p
-man/man3p/Curses::Widgets::Calendar.3p
-man/man3p/Curses::Widgets::ComboBox.3p
-man/man3p/Curses::Widgets::Label.3p
-man/man3p/Curses::Widgets::ListBox.3p
-man/man3p/Curses::Widgets::ListBox::MultiColumn.3p
-man/man3p/Curses::Widgets::Menu.3p
-man/man3p/Curses::Widgets::ProgressBar.3p
-man/man3p/Curses::Widgets::TextField.3p
-man/man3p/Curses::Widgets::TextMemo.3p
-man/man3p/Curses::Widgets::Tutorial.3p
-man/man3p/Curses::Widgets::Tutorial::Creation.3p
+@man man/man3p/Curses::Widgets.3p
+@man man/man3p/Curses::Widgets::ButtonSet.3p
+@man man/man3p/Curses::Widgets::Calendar.3p
+@man man/man3p/Curses::Widgets::ComboBox.3p
+@man man/man3p/Curses::Widgets::Label.3p
+@man man/man3p/Curses::Widgets::ListBox.3p
+@man man/man3p/Curses::Widgets::ListBox::MultiColumn.3p
+@man man/man3p/Curses::Widgets::Menu.3p
+@man man/man3p/Curses::Widgets::ProgressBar.3p
+@man man/man3p/Curses::Widgets::TextField.3p
+@man man/man3p/Curses::Widgets::TextMemo.3p
+@man man/man3p/Curses::Widgets::Tutorial.3p
+@man man/man3p/Curses::Widgets::Tutorial::Creation.3p
+share/examples/p5-Curses-Widgets/
 share/examples/p5-Curses-Widgets/demo.pl
-@dirrm share/examples/p5-Curses-Widgets
-@comment @dirrm ${P5ARCH}/auto/Curses/Widgets
-@dirrm ${P5SITE}/Curses/Widgets/Tutorial
-@dirrm ${P5SITE}/Curses/Widgets/ListBox
-@dirrm ${P5SITE}/Curses/Widgets
-@dirrm ${P5SITE}/Curses

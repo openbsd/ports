@@ -1,16 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/31 17:23:30 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/10 08:10:13 espie Exp $
+${P5SITE}/Algorithm/
 ${P5SITE}/Algorithm/Diff.pm
 ${P5SITE}/Algorithm/DiffOld.pm
 ${P5SITE}/Algorithm/cdiff.pl
 ${P5SITE}/Algorithm/diff.pl
 ${P5SITE}/Algorithm/diffnew.pl
 ${P5SITE}/Algorithm/htmldiff.pl
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Algorithm/
+@comment ${P5ARCH}/auto/Algorithm/Diff/
 @comment ${P5ARCH}/auto/Algorithm/Diff/.packlist
-man/man3p/Algorithm::Diff.3p
-man/man3p/Algorithm::DiffOld.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Algorithm/Diff
-@comment @dirrm ${P5ARCH}/auto/Algorithm
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Algorithm
+@man man/man3p/Algorithm::Diff.3p
+@man man/man3p/Algorithm::DiffOld.3p

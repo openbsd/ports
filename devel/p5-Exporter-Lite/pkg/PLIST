@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/05/28 18:40:54 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/08/10 08:10:16 espie Exp $
+${P5SITE}/Exporter/
 ${P5SITE}/Exporter/Lite.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Exporter/
+@comment ${P5ARCH}/auto/Exporter/Lite/
 @comment ${P5ARCH}/auto/Exporter/Lite/.packlist
-man/man3p/Exporter::Lite.3p
-@comment @dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Exporter/Lite
-@comment @dirrm ${P5ARCH}/auto/Exporter
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Exporter
+@man man/man3p/Exporter::Lite.3p

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/01 18:23:09 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:16 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Event/
 ${P5ARCH}/Event.pm
 ${P5ARCH}/Event.pod
 ${P5ARCH}/Event/EventAPI.h
@@ -12,13 +14,10 @@ ${P5ARCH}/Event/timer.pm
 ${P5ARCH}/Event/type.pm
 ${P5ARCH}/Event/typemap
 ${P5ARCH}/Event/var.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Event/
 @comment ${P5ARCH}/auto/Event/.packlist
 ${P5ARCH}/auto/Event/Event.bs
-man/man3p/Event.3p
-man/man3p/Event::MakeMaker.3p
+@man man/man3p/Event.3p
+@man man/man3p/Event::MakeMaker.3p
 %%SHARED%%
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Event
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Event
-@dirrm ${P5ARCH}

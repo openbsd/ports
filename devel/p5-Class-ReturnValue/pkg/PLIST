@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/10 17:46:55 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:15 espie Exp $
+${P5SITE}/Class/
 ${P5SITE}/Class/ReturnValue.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Class/
+@comment ${P5ARCH}/auto/Class/ReturnValue/
 @comment ${P5ARCH}/auto/Class/ReturnValue/.packlist
-man/man3p/Class::ReturnValue.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Class/ReturnValue
-@comment @dirrm ${P5ARCH}/auto/Class
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Class
+@man man/man3p/Class::ReturnValue.3p

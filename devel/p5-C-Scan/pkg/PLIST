@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/31 17:44:12 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/08/10 08:10:14 espie Exp $
+${P5SITE}/C/
 ${P5SITE}/C/Scan.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/C/
+@comment ${P5ARCH}/auto/C/Scan/
 @comment ${P5ARCH}/auto/C/Scan/.packlist
-man/man3p/C::Scan.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/C/Scan
-@comment @dirrm ${P5ARCH}/auto/C
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/C
+@man man/man3p/C::Scan.3p

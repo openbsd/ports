@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/09 01:23:14 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:19 espie Exp $
+${P5SITE}/Test/
 ${P5SITE}/Test/Exception.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Test/
+@comment ${P5ARCH}/auto/Test/Exception/
 @comment ${P5ARCH}/auto/Test/Exception/.packlist
-man/man3p/Test::Exception.3p
-@comment @dirrm ${P5ARCH}/auto/Test/Exception
-@comment @dirrm ${P5ARCH}/auto/Test
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Test
+@man man/man3p/Test::Exception.3p

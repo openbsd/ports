@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/31 16:20:04 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/08/10 08:10:19 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Term/
 ${P5ARCH}/Term/ReadKey.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Term/
+${P5ARCH}/auto/Term/ReadKey/
 @comment ${P5ARCH}/auto/Term/ReadKey/.packlist
 ${P5ARCH}/auto/Term/ReadKey/ReadKey.bs
 ${P5ARCH}/auto/Term/ReadKey/ReadKey.so
 ${P5ARCH}/auto/Term/ReadKey/autosplit.ix
-man/man3p/Term::ReadKey.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Term/ReadKey
-@dirrm ${P5ARCH}/auto/Term
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Term
-@dirrm ${P5ARCH}
+@man man/man3p/Term::ReadKey.3p

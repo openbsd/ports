@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/31 16:20:04 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/08/10 08:10:19 espie Exp $
+${P5SITE}/Term/
 ${P5SITE}/Term/Screen.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Term/
+@comment ${P5ARCH}/auto/Term/Screen/
 @comment ${P5ARCH}/auto/Term/Screen/.packlist
-man/man3p/Term::Screen.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Term/Screen
-@comment @dirrm ${P5ARCH}/auto/Term
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Term
+@man man/man3p/Term::Screen.3p

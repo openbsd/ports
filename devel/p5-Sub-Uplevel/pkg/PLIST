@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/09 01:08:29 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:19 espie Exp $
+${P5SITE}/Sub/
 ${P5SITE}/Sub/Uplevel.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Sub/
+@comment ${P5ARCH}/auto/Sub/Uplevel/
 @comment ${P5ARCH}/auto/Sub/Uplevel/.packlist
-man/man3p/Sub::Uplevel.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Sub/Uplevel
-@comment @dirrm ${P5ARCH}/auto/Sub
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Sub
+@man man/man3p/Sub::Uplevel.3p

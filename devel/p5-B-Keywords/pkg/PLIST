@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/19 21:17:05 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:14 espie Exp $
+${P5SITE}/B/
 ${P5SITE}/B/Keywords.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/B/
+@comment ${P5ARCH}/auto/B/Keywords/
 @comment ${P5ARCH}/auto/B/Keywords/.packlist
-man/man3p/B::Keywords.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/B/Keywords
-@comment @dirrm ${P5ARCH}/auto/B
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/B
+@man man/man3p/B::Keywords.3p
