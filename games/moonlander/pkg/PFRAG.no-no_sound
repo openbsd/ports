@@ -1,0 +1,10 @@
+@comment $OpenBSD: PFRAG.no-no_sound,v 1.1.1.1 2003/04/15 16:01:42 espie Exp $
+share/moonlander/sounds/Blaster_1.wav
+share/moonlander/sounds/Retro_3.wav
+share/moonlander/sounds/Space_Bubbles_2.wav
+share/moonlander/sounds/beep1b.wav
+share/moonlander/sounds/eagle_has_landed.wav
+share/moonlander/sounds/explosion2.wav
+share/moonlander/sounds/honk.wav
+share/moonlander/sounds/jet_lp.wav
+@dirrm share/moonlander/sounds

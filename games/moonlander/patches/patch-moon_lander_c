@@ -1,0 +1,12 @@
+$OpenBSD: patch-moon_lander_c,v 1.1.1.1 2003/04/15 16:01:42 espie Exp $
+--- moon_lander.c.orig	Wed Aug 22 15:52:28 2001
++++ moon_lander.c	Thu Apr 10 09:06:35 2003
+@@ -37,7 +37,7 @@
+ #define YSIZE 480
+ #define TERRAIN_YSIZE (YSIZE / 2)
+ #define FPS (1000 / 35)
+-#define DATAPATH ""
++#define DATAPATH "%%PREFIX%%/share/moonlander/"
+ 
+ #define FRESHRUN   0
+ #define GAMEOVER   1

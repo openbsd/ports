@@ -1,0 +1,37 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2003/04/15 16:01:42 espie Exp $
+--- Makefile.orig	Tue Aug 14 18:28:49 2001
++++ Makefile	Thu Apr 10 14:54:33 2003
+@@ -1,26 +1,20 @@
+ # Makefile for test program for game_libs - lunar lander
+-CFLAGS=-Wall `sdl-config --libs --cflags` 
+-CC=gcc
++CFLAGS+=`sdl-config --cflags` 
++#CC=gcc
+ 
+-LIBS=SDL_image
++LIBS=`sdl-config --libs` -lSDL_image -lSDL_mixer
+ 
+ C_FILES=moon_lander.c game_lib.c DT_drawtext.c
+ OBJ_FILES=moon_lander.o game_lib.o DT_drawtext.o 
+-OUT_FILE=moon-lander.bin
++OUT_FILE=moonlander
+ 
+ all: game_lib
+ 
+ game_lib: $(OBJ_FILES)
+-	$(CC) $(CFLAGS) -o $(OUT_FILE) $(OBJ_FILES) -l$(LIBS) -lSDL_mixer
++	$(CC) $(CFLAGS) -o $(OUT_FILE) $(OBJ_FILES) $(LIBS)
+ 
+-moon_lander.o: moon_lander.c
+-	$(CC) $(CFLAGS) -c -o $@ $^
+-
+-game_lib.o: game_lib.c
+-	$(CC) $(CFLAGS) -c -o $@ $^
+-
+-DT_drawtext.o: DT_drawtext.c
+-	$(CC) $(CFLAGS) -c -o $@ $^
++.c.o:
++	$(CC) $(CFLAGS) -c $< -o $@
+ 
+ clean: 
+ 	rm -f *.o core  
