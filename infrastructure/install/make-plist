@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.34 2004/06/29 20:26:08 pvalchev Exp $
+# $OpenBSD: make-plist,v 1.35 2004/07/03 17:50:52 sturm Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -119,7 +119,7 @@ sub annotate
 		if ("$mode$owner$group$nocheck" ne '') {
 			$annotated->add($_, [ $name, $newfh, $mode, $owner, $group, $nocheck ]);
 			$nocheck = '';
-		} else {
+		} elsif (not /\.so(?:\.\d+\.\d+)?$/) {
 			$annotated->add($_, [ $name, $newfh ]);
 		}
 		if (m/\.info$/) {
