@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/07/07 09:35:20 form Exp $
+# $OpenBSD: Makefile,v 1.5 1998/07/08 04:06:24 form Exp $
 # NetBSD: Makefile,v 1.6 1998/04/15 11:15:34 frueauf Exp
 #
 
@@ -7,7 +7,6 @@ CATEGORIES=		net
 
 MASTER_SITES=		ftp://ftp.swcp.com/pub/icb/clients/unix/  \
 			ftp://ftp.swcp.com/pub/icb/clients/  \
-			ftp://ftp.swcp.com/pub/icb/server/  \
 			ftp://ftp.empire.net/pub/icb/clients/  \
 			ftp://ftp.cs.unm.edu/pub/armijo/icb.src/clients/
 
