@@ -1,0 +1,18 @@
+$OpenBSD: patch-gtk_Makefile_in,v 1.1.1.1 2002/05/16 00:25:55 mark Exp $
+--- gtk/Makefile.in.orig	Fri May  3 15:50:55 2002
++++ gtk/Makefile.in	Fri May  3 15:51:39 2002
+@@ -69,10 +69,10 @@ distclean::
+ 	$(RM) -f cfsndserv cfclient gcfclient Makefile
+ 
+ install:
+-	$(INSTALL) -d ${bindir}
+-	$(INSTALL) -d ${mandir}
+-	$(INSTALL) gcfclient ${bindir}/gcfclient
+-	$(INSTALL) gcfclient.man ${mandir}/gcfclient.1
++	$(INSTALL) -d $(DESTDIR)$(bindir)
++	$(INSTALL) -d $(DESTDIR)$(mandir)
++	$(INSTALL) gcfclient $(DESTDIR)$(bindir)/gcfclient
++	$(INSTALL) gcfclient.man $(DESTDIR)$(mandir)/gcfclient.1
+ 
+ depend:
+ 	$(DEPEND) $(DEPENDFLAGS) -- $(CFLAGS) $(SDL_CFLAGS) $(GTK_CFLAGS) $(INCLUDES)  -- $(SOURCES)

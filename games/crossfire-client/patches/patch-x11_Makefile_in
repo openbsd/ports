@@ -1,0 +1,18 @@
+$OpenBSD: patch-x11_Makefile_in,v 1.1.1.1 2002/05/16 00:25:55 mark Exp $
+--- x11/Makefile.in.orig	Fri May  3 15:45:42 2002
++++ x11/Makefile.in	Fri May  3 15:46:57 2002
+@@ -59,10 +59,10 @@ distclean::
+ 	$(RM) -f cfclient Makefile
+ 
+ install:
+-	$(INSTALL) -d ${bindir}
+-	$(INSTALL) -d ${mandir}
+-	$(INSTALL) cfclient ${bindir}/cfclient
+-	$(INSTALL) cfclient.man ${mandir}/cfclient.1
++	$(INSTALL) -d $(DESTDIR)$(bindir)
++	$(INSTALL) -d $(DESTDIR)$(mandir)
++	$(INSTALL) cfclient $(DESTDIR)$(bindir)/cfclient
++	$(INSTALL) cfclient.man $(DESTDIR)$(mandir)/cfclient.1
+ 
+ depend:
+ 	$(DEPEND) $(DEPENDFLAGS) -- $(CFLAGS) $(INCLUDES)  -- $(SOURCES)

@@ -1,0 +1,32 @@
+$OpenBSD: patch-gnome_Makefile_in,v 1.1.1.1 2002/05/16 00:25:55 mark Exp $
+--- gnome/Makefile.in.orig	Fri May  3 15:52:09 2002
++++ gnome/Makefile.in	Fri May  3 15:53:36 2002
+@@ -70,17 +70,17 @@ install:
+ #install-fix is what can get used when the gnome client actually is
+ # working
+ install-fix:
+-	$(INSTALL) -d ${mandir}
+-	$(INSTALL) gnome-cfclient.man ${mandir}/gnome-gcfclient.1
+-	$(INSTALL) -d ${soundlistdir}
+-	$(INSTALL) gnome-cfclient.soundlist ${soundlistdir}/gnome-cfclient.soundlist
+-	$(INSTALL) -d ${desktopdir}
+-	$(INSTALL) gnome-cfclient.desktop ${desktopdir}/gnome-cfclient.desktop
+-	$(INSTALL) -d ${pixmapsdir}
+-	$(INSTALL) ../pixmaps/shield.png ${pixmapsdir}/shield.png
+-	$(INSTALL) ../pixmaps/crossfiretitle.xpm ${pixmapsdir}/crossfiretitle.xpm
+-	$(INSTALL) -d ${bindir}
+-	$(INSTALL) gnome-cfclient ${bindir}/gnome-cfclient
++	$(INSTALL) -d $(DESTDIR)$(mandir)
++	$(INSTALL) gnome-cfclient.man $(DESTDIR)$(mandir)/gnome-gcfclient.1
++	$(INSTALL) -d $(DESTDIR)$(soundlistdir)
++	$(INSTALL) gnome-cfclient.soundlist $(DESTDIR)$(soundlistdir)/gnome-cfclient.soundlist
++	$(INSTALL) -d $(DESTDIR)$(desktopdir)
++	$(INSTALL) gnome-cfclient.desktop $(DESTDIR)$(desktopdir)/gnome-cfclient.desktop
++	$(INSTALL) -d $(DESTDIR)$(pixmapsdir)
++	$(INSTALL) ../pixmaps/shield.png $(DESTDIR)$(pixmapsdir)/shield.png
++	$(INSTALL) ../pixmaps/crossfiretitle.xpm $(DESTDIR)$(pixmapsdir)/crossfiretitle.xpm
++	$(INSTALL) -d $(DESTDIR)$(bindir)
++	$(INSTALL) gnome-cfclient $(DESTDIR)$(bindir)/gnome-cfclient
+ 
+ depend:
+ 	$(DEPEND) $(DEPENDFLAGS) -- $(CFLAGS) $(GNOME_CFLAGS) $(INCLUDES)  -- $(SOURCES)

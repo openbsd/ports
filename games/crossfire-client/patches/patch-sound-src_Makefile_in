@@ -1,0 +1,14 @@
+$OpenBSD: patch-sound-src_Makefile_in,v 1.1.1.1 2002/05/16 00:25:55 mark Exp $
+--- sound-src/Makefile.in.orig	Fri May  3 15:54:22 2002
++++ sound-src/Makefile.in	Fri May  3 15:54:43 2002
+@@ -71,8 +71,8 @@ distclean::
+ 	$(RM) -f Makefile cfsndserv
+ 
+ install:
+-	$(INSTALL) -d ${bindir}
+-	$(INSTALL) cfsndserv ${bindir}
++	$(INSTALL) -d $(DESTDIR)$(bindir)
++	$(INSTALL) cfsndserv $(DESTDIR)$(bindir)
+ 
+ depend:
+ 	$(DEPEND) $(DEPENDFLAGS) -- $(CFLAGS) $(INCLUDES)  -- $(PROTOSOURCES) $(SND_SOURCES) gx11.c
