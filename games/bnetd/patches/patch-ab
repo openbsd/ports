@@ -1,0 +1,11 @@
+--- prefs.h.orig	Sun Mar 28 19:23:28 1999
++++ prefs.h	Sun Mar 28 19:23:36 1999
+@@ -21,7 +21,7 @@
+ #ifndef INCLUDED_PREFS_PROTOS
+ #define INCLUDED_PREFS_PROTOS
+ 
+-#define DEFAULT_CONF_FILE "conf/bnetd.conf"
++#define DEFAULT_CONF_FILE "/etc/bnetd/bnetd.conf"
+ 
+ extern char const * preffile;
+ 

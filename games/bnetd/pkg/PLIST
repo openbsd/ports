@@ -1,0 +1,17 @@
+bin/bnbot
+bin/bnclient
+bin/bnpass
+sbin/bnetd
+share/doc/bnetd/CHANGELOG
+share/doc/bnetd/README
+@dirrm share/doc/bnetd
+@exec echo "***"
+@exec echo "*** Finished installing bnetd."
+@exec echo "*** Please take a look at the sample bnetd config file /etc/bnetd/bnetd.conf"
+@exec echo "*** and make any necessary modifications before running."
+@exec echo "***"
+@unexec echo "***"
+@unexec echo "*** Finished un-installing bnetd."
+@unexec echo "*** You should remove the bnetd config files in /etc/bnetd"
+@unexec echo "*** if you won't be installing bnetd again."
+@unexec echo "***"

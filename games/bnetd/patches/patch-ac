@@ -1,0 +1,19 @@
+--- ../conf/bnetd.conf.orig	Sun Mar 28 20:25:09 1999
++++ ../conf/bnetd.conf	Sun Mar 28 20:26:55 1999
+@@ -9,11 +9,11 @@
+ # Do NOT use quotes around directories.
+ #
+ 
+-filedir = files/
+-userdir = users/
+-logfile = conf/bnetd.log
+-defacct = conf/bnetd_default_user
+-motdfile = conf/motd
++filedir = /etc/bnetd/files/
++userdir = /etc/bnetd/users/
++logfile = /etc/bnetd/bnetd.log
++defacct = /etc/bnetd/bnetd_default_user
++motdfile = /etc/bnetd/motd
+ adfile = ad0512b.pcx
+ adlink = http://bnetd.unleashed.org/
+ 
