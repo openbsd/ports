@@ -1,9 +1,10 @@
 # $FreeBSD: ports/russian/cyrproxy/Makefile,v 1.4 1999/08/31 01:46:57 peter Exp $
-# $OpenBSD: Makefile,v 1.6 2000/06/15 05:31:52 form Exp $
+# $OpenBSD: Makefile,v 1.7 2000/07/18 04:59:27 form Exp $
 
 DISTNAME=	cyrproxy-1.4.2
 CATEGORIES=	russian net www
-MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/lexa/
+MASTER_SITES=	${MASTER_SITE_BACKUP} \
+		ftp://ftp.lexa.ru/pub/domestic/lexa/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
