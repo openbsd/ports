@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2004/06/20 17:43:20 avsm Exp $
+# $OpenBSD: Makefile,v 1.140 2004/06/26 05:15:33 sk Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -64,6 +64,7 @@
      SUBDIR += opencdk
      SUBDIR += outguess
      SUBDIR += p0f
+     SUBDIR += p5-Authen-Krb5-Simple
      SUBDIR += p5-Authen-Radius
      SUBDIR += p5-Authen-SASL
      SUBDIR += p5-Crypt-Blowfish
