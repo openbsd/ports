@@ -6,12 +6,11 @@ configuration script for a package from a template file that lists the
 operating system features that the package can use, in the form of m4
 macro calls.
 
-This is autoconf${SUFX}. 
+This is autoconf${SUFFIX}. 
 
 The actual autoconf drivers for selecting autoconf version are in 
 the metaauto package.
 
 This version only exists to be able to diff configure scripts created
-by autoconf${SUFX}, autoconf-2.59 fixes a bug in it and
+by autoconf${SUFFIX}, autoconf-2.59 fixes a bug in it and
 introduces no incompatibility.
-

@@ -7,5 +7,10 @@ operating system features that the package can use, in the form of m4
 macro calls.
 
 The FSF would make you believe that only gnu-m4 can handle autoconf.
-As of OpenBSD 2.7, this is no longer true. This package does not depend
+This is no longer true. This package does not depend
 on gnu-m4.
+
+This is autoconf${SUFFIX}. 
+
+The actual autoconf drivers for selecting autoconf version are in 
+the metaauto package.

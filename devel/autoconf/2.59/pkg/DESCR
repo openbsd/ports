@@ -6,7 +6,7 @@ configuration script for a package from a template file that lists the
 operating system features that the package can use, in the form of m4
 macro calls.
 
-This is autoconf${SUFX}. 
+This is autoconf${SUFFIX}. 
 
 The actual autoconf drivers for selecting autoconf version are in 
 the metaauto package.
