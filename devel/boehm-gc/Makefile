@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2002/10/26 13:25:26 todd Exp $
+# $OpenBSD: Makefile,v 1.23 2003/01/18 23:29:52 brad Exp $
 # $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
 
 COMMENT=	"garbage collection and memory leak detection for C and C++"
 
 VERSION=	6.1
 DISTNAME=	gc${VERSION}
-PKGNAME=	boehm-gc-${VERSION}
+PKGNAME=	boehm-gc-${VERSION}p1
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}gc_source/
 
