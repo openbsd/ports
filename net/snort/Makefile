@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2001/06/03 05:28:57 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2001/06/24 15:16:15 brad Exp $
 
 COMMENT=	"highly flexible sniffer/basic NIDS"
 
 DISTNAME=	snort-1.7
 CATEGORIES=	net security
-NEED_VERSION=	1.402
+NEED_VERSION=	1.413
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= snort
 
@@ -25,7 +25,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mflexresp}
 LIB_DEPENDS+=	net::net/libnet
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+= --enable-flexresp
 .endif
 
