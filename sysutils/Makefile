@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2003/02/27 02:05:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.64 2003/04/17 09:19:04 wilfried Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -13,6 +13,7 @@
      SUBDIR += contool
      SUBDIR += gkrellm
      SUBDIR += idled
+     SUBDIR += knutclient
      SUBDIR += libretto-config
      SUBDIR += login_ldap
      SUBDIR += lsof
