@@ -1,5 +1,5 @@
---- Fortify-1.4.2-unix-sparc/src/common/Makefile.orig	Thu May 20 12:04:40 1999
-+++ Fortify-1.4.2-unix-sparc/src/common/Makefile	Thu May 20 12:05:20 1999
+--- Fortify-1.4.3-unix-src/src/common/Makefile.orig	Thu May 20 12:04:40 1999
++++ Fortify-1.4.3-unix-src/src/common/Makefile	Thu May 20 12:05:20 1999
 @@ -1,9 +1,9 @@
  
 -CC	= gcc # -Wall -ansi
@@ -19,7 +19,7 @@
  # Everything else
 -#CFLAGS	= -I. -O
 -#YACC	= yacc
-+CFLAGS	= -I. -O
++CFLAGS	= -I. -O2
 +YACC	= yacc
  #LDFLAGS = # -static
  #RANLIB = :

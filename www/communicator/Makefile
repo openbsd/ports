@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/05/20 21:03:29 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/06/22 02:19:55 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -13,37 +13,34 @@
 ONLY_FOR_ARCHS=	i386 sparc
 NEED_VERSION=	1.89
 
-NS_i386=	communicator-v46-export.x86-bsdi-bsd2.tar.gz
-NS_SPARC=	communicator-v46-export.sparc-sun-sunos4.1.3_U1.tar.gz
-FORTIFY_i386=	Fortify-1.4.2-unix-x86.tar.gz
-FORTIFY_SPARC=	Fortify-1.4.2-unix-sparc.tar.gz
+NS_i386=	communicator-v461-export.x86-bsdi-bsd2.tar.gz
+NS_SPARC=	communicator-v461-export.sparc-sun-sunos4.1.3_U1.tar.gz
+FORTIFY=	Fortify-1.4.3-unix-src
 
 .if ${MACHINE_ARCH} == "i386"
-DISTNAME=	communicator-v46-export.x86-bsdi-bsd2
-COMMUNICATORNAME= communicator-v46.x86-bsdi-bsd2
-FORTIFYNAME=	Fortify-1.4.2-unix-x86
+DISTNAME=	communicator-v461-export.x86-bsdi-bsd2
+COMMUNICATORNAME= communicator-v461.x86-bsdi-bsd2
 .endif
 .if ${MACHINE_ARCH} == "sparc"
-DISTNAME=	communicator-v46-export.sparc-sun-sunos4.1.3_U1
-COMMUNICATORNAME= communicator-v46.sparc-sun-sunos4.1.3_U1
-FORTIFYNAME=	Fortify-1.4.2-unix-sparc
+DISTNAME=	communicator-v461-export.sparc-sun-sunos4.1.3_U1
+COMMUNICATORNAME= communicator-v461.sparc-sun-sunos4.1.3_U1
 .endif
 
-PKGNAME=	communicator-4.6-fortified
+PKGNAME=	communicator-4.61-fortified
 CATEGORIES=     www
 DIST_SUBDIR=	${PKGNAME}
 NO_CDROM=       "NOFEE: see http://www.fortify.net/copyright.txt"
 MASTER_SITES=	ftp://ftp.fortify.net/pub/Fortify/ \
-		ftp://ftp.netscape.com/pub/communicator/4.6/english/unix/unsupported/bsdi21/complete_install/ \
-		ftp://ftp.netscape.com/pub/communicator/4.6/english/unix/unsupported/sunos413/complete_install/ \
+		ftp://ftp.netscape.com/pub/communicator/english/4.61/unix/unsupported/bsdi21/complete_install/ \
+		ftp://ftp.netscape.com/pub/communicator/english/4.61/unix/unsupported/sunos413/complete_install/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/Fortify/ \
 		ftp://ftp.funet.fi/pub/crypt/mirrors/fortify/ \
 		ftp://ftp.replay.com/pub/crypto/apache/Fortify/ \
 		ftp://ftp.it.net.au/mirrors/Fortify/
 
 DISTFILES=	${DISTNAME}.tar.gz \
-		${FORTIFYNAME}.tar.gz
-SUPDISTFILES=	${NS_i386} ${NS_SPARC} ${FORTIFY_i386} ${FORTIFY_SPARC}
+		${FORTIFY}.tar.gz
+SUPDISTFILES=	${NS_i386} ${NS_SPARC} ${FORTIFY}.tar.gz
 
 OBJMACHINE=	"yes"
 NO_WRKSUBDIR=	"No work subdirectory"
@@ -72,9 +69,9 @@ pre-fetch:
 .endif
 
 do-build:
-	@cd ${WRKDIR}/${FORTIFYNAME}/src/common && \
+	@cd ${WRKDIR}/${FORTIFY}/src/common && \
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} all && \
-	cd ${WRKDIR}/${FORTIFYNAME}/src/cmdline && \
+	cd ${WRKDIR}/${FORTIFY}/src/cmdline && \
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} fortify
 
 do-install:
@@ -86,10 +83,11 @@ post-install:
 	@${CP} ${PREFIX}/netscape/netscape_dns ${PREFIX}/netscape/netscape
 	@${RM} ${PREFIX}/netscape/netscape_dns
 .endif
-	@cd ${WRKDIR}/${FORTIFYNAME} && \
+	@cd ${WRKDIR}/${FORTIFY} && \
+	${LN} -sf languages/English Messages && \
 	src/cmdline/fortify ${PREFIX}/netscape/netscape
 .if ${MACHINE_ARCH} == "sparc"
-	@cd ${WRKDIR}/${FORTIFYNAME} && \
+	@cd ${WRKDIR}/${FORTIFY} && \
 	src/cmdline/fortify ${PREFIX}/netscape/netscape_nis
 .endif
 	@${SED} 's#@netscape_home@#${PREFIX}/netscape#' \

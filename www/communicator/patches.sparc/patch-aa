@@ -1,5 +1,5 @@
---- communicator-v46.sparc-sun-sunos4.1.3_U1/ns-install.orig	Wed May  5 14:18:29 1999
-+++ communicator-v46.sparc-sun-sunos4.1.3_U1/ns-install	Thu May 20 16:27:26 1999
+--- communicator-v461.sparc-sun-sunos4.1.3_U1/ns-install.orig	Wed May  5 14:18:29 1999
++++ communicator-v461.sparc-sun-sunos4.1.3_U1/ns-install	Thu May 20 16:27:26 1999
 @@ -84,22 +84,10 @@
  	exit 1
  fi
