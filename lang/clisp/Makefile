@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2004/01/20 23:15:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2004/04/06 05:28:01 brad Exp $
 
-NOT_FOR_ARCHS=	alpha powerpc sparc sparc64 vax
-# XXX This will panic any m68k
-NOT_FOR_ARCHS+=	m68k
+ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"ANSI Common Lisp compiler"
 
