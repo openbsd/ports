@@ -1,5 +1,5 @@
-@unexec install-info --delete --info-dir=%D/info %D/info/make.info
 bin/gmake
+@unexec install-info --delete --info-dir=%D/info %D/info/make.info
 info/make.info
-man/man1/gmake.1
 @exec install-info --info-dir=%D/info %D/info/make.info
+man/man1/gmake.1
