@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/09 00:21:28 espie Exp $
-@pkgcfl mad-*
+@comment $OpenBSD: PLIST,v 1.6 2004/09/18 10:26:55 espie Exp $
+@conflict mad-*
 bin/abxtest
 bin/madplay
 @man man/man1/abxtest.1
