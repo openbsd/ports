@@ -1,88 +1,89 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/08/06 21:41:51 matt Exp $
+@comment $OpenBSD: PLIST,v 1.3 2001/08/08 23:36:28 lebel Exp $
 bin/angband
-share/angband/apex/delete.me
-share/angband/bone/delete.me
-share/angband/data/delete.me
-share/angband/edit/a_info.txt
-share/angband/edit/b_info.txt
-share/angband/edit/e_info.txt
-share/angband/edit/f_info.txt
-share/angband/edit/g_info.txt
-share/angband/edit/h_info.txt
-share/angband/edit/k_info.txt
-share/angband/edit/p_info.txt
-share/angband/edit/r_info.txt
-share/angband/edit/v_info.txt
-share/angband/edit/z_info.txt
-share/angband/file/dead.txt
-share/angband/file/news.txt
-share/angband/help/attack.txt
-share/angband/help/birth.txt
-share/angband/help/command.txt
-share/angband/help/dungeon.txt
-share/angband/help/general.txt
-share/angband/help/help.hlp
-share/angband/help/option.txt
-share/angband/help/playing.txt
-share/angband/help/version.txt
-share/angband/info/delete.me
-share/angband/pref/delete.me
-share/angband/save/delete.me
-share/angband/user/font-ami.prf
-share/angband/user/font-dos.prf
-share/angband/user/font-ibm.prf
-share/angband/user/font-mac.prf
-share/angband/user/font-win.prf
-share/angband/user/font-x11.prf
-share/angband/user/font-xxx.prf
-share/angband/user/font.prf
-share/angband/user/graf-ami.prf
-share/angband/user/graf-gcu.prf
-share/angband/user/graf-ibm.prf
-share/angband/user/graf-lsl.prf
-share/angband/user/graf-mac.prf
-share/angband/user/graf-new.prf
-share/angband/user/graf-win.prf
-share/angband/user/graf-x11.prf
-share/angband/user/graf-xxx.prf
-share/angband/user/graf.prf
-share/angband/user/message.prf
-share/angband/user/pref-acn.prf
-share/angband/user/pref-ami.prf
-share/angband/user/pref-emx.prf
-share/angband/user/pref-gcu.prf
-share/angband/user/pref-mac.prf
-share/angband/user/pref-win.prf
-share/angband/user/pref-x11.prf
-share/angband/user/pref.prf
-share/angband/user/user-mac.prf
-share/angband/user/user.prf
-share/angband/user/xtra-new.prf
-share/angband/user/xtra-xxx.prf
-share/angband/xtra/font/delete.me
-share/angband/xtra/graf/readme.txt
-share/angband/xtra/music/delete.me
-share/angband/xtra/sound/sound.cfg
-@exec chmod 0775 %D/share/angband/apex
-@exec chmod 0775 %D/share/angband/data
-@exec chmod 0775 %D/share/angband/save
-@exec chmod 0775 %D/share/angband/user
-@unexec rm -f %D/share/angband/apex/*
-@unexec rm -f %D/share/angband/data/*
-@unexec rm -f %D/share/angband/save/*
-@dirrm share/angband/xtra/sound
-@dirrm share/angband/xtra/music
-@dirrm share/angband/xtra/graf
-@dirrm share/angband/xtra/font
-@dirrm share/angband/xtra
-@dirrm share/angband/user
-@dirrm share/angband/save
-@dirrm share/angband/pref
-@dirrm share/angband/info
-@dirrm share/angband/help
-@dirrm share/angband/file
-@dirrm share/angband/edit
-@dirrm share/angband/data
-@dirrm share/angband/bone
-@dirrm share/angband/apex
-@dirrm share/angband
+share/games/angband/lib/edit/artifact.txt
+share/games/angband/lib/edit/cost_adj.txt
+share/games/angband/lib/edit/ego_item.txt
+share/games/angband/lib/edit/limits.txt
+share/games/angband/lib/edit/monster.txt
+share/games/angband/lib/edit/object.txt
+share/games/angband/lib/edit/p_class.txt
+share/games/angband/lib/edit/p_hist.txt
+share/games/angband/lib/edit/p_race.txt
+share/games/angband/lib/edit/shop_own.txt
+share/games/angband/lib/edit/terrain.txt
+share/games/angband/lib/edit/vault.txt
+share/games/angband/lib/file/dead.txt
+share/games/angband/lib/file/news.txt
+share/games/angband/lib/help/attack.txt
+share/games/angband/lib/help/birth.txt
+share/games/angband/lib/help/command.txt
+share/games/angband/lib/help/dungeon.txt
+share/games/angband/lib/help/general.txt
+share/games/angband/lib/help/help.hlp
+share/games/angband/lib/help/option.txt
+share/games/angband/lib/help/playing.txt
+share/games/angband/lib/help/version.txt
+share/games/angband/lib/pref/font-ami.prf
+share/games/angband/lib/pref/font-dos.prf
+share/games/angband/lib/pref/font-ibm.prf
+share/games/angband/lib/pref/font-mac.prf
+share/games/angband/lib/pref/font-win.prf
+share/games/angband/lib/pref/font-x11.prf
+share/games/angband/lib/pref/font-xxx.prf
+share/games/angband/lib/pref/font.prf
+share/games/angband/lib/pref/graf-ami.prf
+share/games/angband/lib/pref/graf-gcu.prf
+share/games/angband/lib/pref/graf-ibm.prf
+share/games/angband/lib/pref/graf-lsl.prf
+share/games/angband/lib/pref/graf-mac.prf
+share/games/angband/lib/pref/graf-new.prf
+share/games/angband/lib/pref/graf-win.prf
+share/games/angband/lib/pref/graf-x11.prf
+share/games/angband/lib/pref/graf-xxx.prf
+share/games/angband/lib/pref/graf.prf
+share/games/angband/lib/pref/message.prf
+share/games/angband/lib/pref/pref-acn.prf
+share/games/angband/lib/pref/pref-ami.prf
+share/games/angband/lib/pref/pref-emx.prf
+share/games/angband/lib/pref/pref-gcu.prf
+share/games/angband/lib/pref/pref-mac.prf
+share/games/angband/lib/pref/pref-win.prf
+share/games/angband/lib/pref/pref-x11.prf
+share/games/angband/lib/pref/pref.prf
+share/games/angband/lib/pref/user-mac.prf
+share/games/angband/lib/pref/user.prf
+share/games/angband/lib/pref/xtra-new.prf
+share/games/angband/lib/pref/xtra-xxx.prf
+@exec mkdir -p %D/share/games/angband/lib/apex
+@exec mkdir -p %D/share/games/angband/lib/bone
+@exec mkdir -p %D/share/games/angband/lib/data
+@exec mkdir -p %D/share/games/angband/lib/save
+@exec mkdir -p %D/share/games/angband/lib/user
+@exec mkdir -p %D/share/games/angband/lib/info
+@exec mkdir -p %D/share/games/angband/lib/xtra
+@exec chmod 0775 %D/share/games/angband/lib/apex
+@exec chmod 0775 %D/share/games/angband/lib/bone
+@exec chmod 0775 %D/share/games/angband/lib/data
+@exec chmod 0775 %D/share/games/angband/lib/save
+@exec chmod 0775 %D/share/games/angband/lib/user
+@exec chgrp games %D/share/games/angband/lib/apex
+@exec chgrp games %D/share/games/angband/lib/bone
+@exec chgrp games %D/share/games/angband/lib/data
+@exec chgrp games %D/share/games/angband/lib/save
+@exec chgrp games %D/share/games/angband/lib/user
+@unexec rm -f %D/share/games/angband/lib/apex/*
+@unexec rm -f %D/share/games/angband/lib/save/*
+@unexec rm -f %D/share/games/angband/lib/data/*
+@dirrm share/games/angband/lib/xtra
+@dirrm share/games/angband/lib/user
+@dirrm share/games/angband/lib/save
+@dirrm share/games/angband/lib/pref
+@dirrm share/games/angband/lib/info
+@dirrm share/games/angband/lib/help
+@dirrm share/games/angband/lib/file
+@dirrm share/games/angband/lib/edit
+@dirrm share/games/angband/lib/data
+@dirrm share/games/angband/lib/bone
+@dirrm share/games/angband/lib/apex
+@dirrm share/games/angband/lib
+@dirrm share/games/angband

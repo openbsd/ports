@@ -1,6 +1,10 @@
 Angband is a "graphical" dungeon adventure game in the vein of
 "rogue", "hack", "nethack", and "moria".
 
-There are some ascii "on line help" files in ${PREFIX}/share/angband/help
+There are some ascii "on line help" files in
+${PREFIX}/share/games/angband/lib/help
+
+Flavors:
+        no_x11  - build without X11 support
 
 WWW: ${HOMEPAGE}
