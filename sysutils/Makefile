@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2003/01/06 18:04:21 lebel Exp $
+# $OpenBSD: Makefile,v 1.61 2003/02/05 21:14:15 jcs Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -24,6 +24,7 @@
      SUBDIR += nut,no_cgi
      SUBDIR += p5-Filesys-DiskSpace
      SUBDIR += p5-Mon
+     SUBDIR += p5-Quota
      SUBDIR += p5-Unix-Syslog
      SUBDIR += pftop
      SUBDIR += proctools
