@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2001/07/15 18:07:15 naddy Exp $
+--- src/Makefile.in.orig	Thu Nov  4 05:18:25 1999
++++ src/Makefile.in	Fri Jul 13 00:23:01 2001
+@@ -196,13 +196,19 @@ pic:
+ 
+ ifeq ($(SHARED_LIBS), true)
+   ifeq ($(STATIC_LIBS), true)
+-    libraries: liboctinterp.$(LIBEXT)($(OBJECTS)) liboctinterp.$(SHLEXT)
++    libraries: liboctinterp.$(LIBEXT) liboctinterp.$(SHLEXT)
++    liboctinterp.$(LIBEXT): $(OBJECTS)
++	ar cr $@ $^
++	ranlib $@
+   else
+     libraries: liboctinterp.$(SHLEXT)
+   endif
+ else
+   ifeq ($(STATIC_LIBS), true)
+-    libraries: liboctinterp.$(LIBEXT)($(OBJECTS))
++    libraries: liboctinterp.$(LIBEXT)
++    liboctinterp.$(LIBEXT): $(OBJECTS)
++	ar cr $@ $^
++	ranlib $@
+   else
+     libraries:
+   endif

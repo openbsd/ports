@@ -1,0 +1,35 @@
+$OpenBSD: patch-liboctave_Makefile_in,v 1.1.1.1 2001/07/15 18:07:16 naddy Exp $
+--- liboctave/Makefile.in.orig	Fri Mar 26 18:24:48 1999
++++ liboctave/Makefile.in	Fri Jul 13 00:23:01 2001
+@@ -18,8 +18,7 @@ INSTALL = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA = @INSTALL_DATA@
+ 
+-LIBOCTAVE_LFLAGS = -L../libcruft -L../readline -L../kpathsea \
+-	-L../glob -L. $(RLD_FLAG)
++LIBOCTAVE_LFLAGS = -L../libcruft -L../kpathsea -L. $(RLD_FLAG)
+ 
+ LIBOCTAVE_LIBS = -lcruft -lreadline -lkpathsea -lglob
+ 
+@@ -115,13 +114,19 @@ pic:
+ 
+ ifeq ($(SHARED_LIBS), true)
+   ifeq ($(STATIC_LIBS), true)
+-    libraries: liboctave.$(LIBEXT)($(OBJECTS)) liboctave.$(SHLEXT)
++    libraries: liboctave.$(LIBEXT) liboctave.$(SHLEXT)
++    liboctave.$(LIBEXT): $(OBJECTS)
++	ar cr $@ $^
++	ranlib $@
+   else
+     libraries: liboctave.$(SHLEXT)
+   endif
+ else
+   ifeq ($(STATIC_LIBS), true)
+-    libraries: liboctave.$(LIBEXT)($(OBJECTS))
++    libraries: liboctave.$(LIBEXT)
++    liboctave.$(LIBEXT): $(OBJECTS)
++	ar cr $@ $^
++	ranlib $@
+   else
+     libraries:
+   endif

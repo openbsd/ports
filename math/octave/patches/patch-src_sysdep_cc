@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_sysdep_cc,v 1.1.1.1 2001/07/15 18:07:16 naddy Exp $
+--- src/sysdep.cc.orig	Thu Oct 21 09:04:08 1999
++++ src/sysdep.cc	Fri Jul 13 00:23:01 2001
+@@ -110,7 +110,11 @@ BSD_init (void)
+ {
+ #if defined (HAVE_FLOATINGPOINT_H)
+   // Disable trapping on common exceptions.
++#if defined(__alpha__)
++  fpsetmask (~(FP_X_OFL|FP_X_INV|FP_X_DZ|FP_X_UFL|FP_X_IMP));
++#else
+   fpsetmask (~(FP_X_OFL|FP_X_INV|FP_X_DZ|FP_X_DNML|FP_X_UFL|FP_X_IMP));
++#endif
+ #endif
+ }
+ #endif

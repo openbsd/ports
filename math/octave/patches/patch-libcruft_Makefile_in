@@ -1,0 +1,23 @@
+$OpenBSD: patch-libcruft_Makefile_in,v 1.1.1.1 2001/07/15 18:07:16 naddy Exp $
+--- libcruft/Makefile.in.orig	Thu Nov 12 00:27:35 1998
++++ libcruft/Makefile.in	Fri Jul 13 00:23:01 2001
+@@ -37,7 +37,7 @@ ifeq ($(SHARED_LIBS), true)
+   BINDISTLIBS = libcruft/libcruft.$(SHLEXT)
+ endif
+ 
+-all: $(SUBDIRS) shared-lib
++all: $(SUBDIRS) libcruft.$(LIBEXT) shared-lib
+ .PHONY: all
+ 
+ $(SUBDIRS):
+@@ -76,6 +76,10 @@ endif
+ 
+ libcruft.$(SHLEXT): $(CRUFT_PICOBJ)
+ 	$(SH_LD) $(SH_LDFLAGS) -o $@ $^
++
++libcruft.$(LIBEXT): $(CRUFT_OBJ)
++	$(AR) $(ARFLAGS) $@ $^
++	$(RANLIB) $@
+ 
+ $(CRUFT_OBJ):
+ 

@@ -1,0 +1,19 @@
+$OpenBSD: patch-doc_liboctave_Makefile_in,v 1.1.1.1 2001/07/15 18:07:16 naddy Exp $
+--- doc/liboctave/Makefile.in.orig	Sat Jun 19 06:16:20 1999
++++ doc/liboctave/Makefile.in	Fri Jul 13 00:23:01 2001
+@@ -61,6 +61,15 @@ check:
+ .PHONY: check
+ 
+ install: all
++	$(top_srcdir)/mkinstalldirs $(infodir)
++	@if test -d $(infodir) ; then \
++	    rm -f $(infodir)/liboctave.info*; \
++	    echo "installing info files in $(infodir)" ; \
++	    for f in liboctave.info* ; do \
++	      $(INSTALL_DATA) $$f $(infodir)/$$f ; \
++	    done; \
++	fi
++
+ .PHONY: install
+ 
+ uninstall:
