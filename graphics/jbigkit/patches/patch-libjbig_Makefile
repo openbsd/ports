@@ -1,6 +1,6 @@
-$OpenBSD: patch-libjbig_Makefile,v 1.1 2004/01/11 08:20:06 brad Exp $
---- libjbig/Makefile.orig	2000-04-08 07:15:46.000000000 -0400
-+++ libjbig/Makefile	2004-01-11 03:03:23.000000000 -0500
+$OpenBSD: patch-libjbig_Makefile,v 1.2 2004/02/25 20:31:01 brad Exp $
+--- libjbig/Makefile.orig	2003-06-11 12:57:56.000000000 -0400
++++ libjbig/Makefile	2004-02-25 15:01:50.000000000 -0500
 @@ -7,16 +7,31 @@ CC = gcc
  # Options for the compiler: A high optimization level is suggested
  CFLAGS = -O -Wall -ansi -pedantic
@@ -21,7 +21,7 @@ $OpenBSD: patch-libjbig_Makefile,v 1.1 2004/01/11 08:20:06 brad Exp $
  libjbig.a: jbig.o jbig_tab.o
 -	rm -f libjbig.a
 -	ar rc libjbig.a jbig.o jbig_tab.o
--	ranlib libjbig.a
+-	-ranlib libjbig.a
 +	rm -f ${.TARGET}
 +	ar rc ${.TARGET} ${.ALLSRC}
 +	ranlib ${.TARGET}
@@ -29,7 +29,7 @@ $OpenBSD: patch-libjbig_Makefile,v 1.1 2004/01/11 08:20:06 brad Exp $
 +libjbig.so.$(VERSION): jbig.so jbig_tab.so
 +	rm -f ${.TARGET}
 +	${CC} -shared $(PICFLAG) -o ${.TARGET} ${.ALLSRC}
-+	
++
 +.SUFFIXES: .o .so
 +
 +.c.so:
