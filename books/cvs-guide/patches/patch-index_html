@@ -1,59 +1,49 @@
-$OpenBSD: patch-index_html,v 1.1.1.1 2003/05/28 13:46:17 avsm Exp $
---- index.html.orig	Mon Dec 25 21:24:24 2000
-+++ index.html	Wed May 28 14:39:40 2003
-@@ -37,8 +37,6 @@ published treeware version:
+$OpenBSD: patch-index_html,v 1.2 2004/10/20 19:55:39 avsm Exp $
+--- index.html.orig	Wed May 26 22:40:45 2004
++++ index.html	Thu Sep 23 10:17:05 2004
+@@ -5,9 +5,11 @@
+ <center>
+ <table border="0">
+ <tr>
++<!--
+   <td><a href="OSDevWithCVS_3E.pdf"><img
+        src="images/OSDevWithCVS_3E-cover.gif"/
+        alt="Image of book's cover."></a></td>
++-->
+   <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+   <td align="center" valign="center">
+       <h1><br><font color="#003090">
+@@ -23,6 +25,7 @@
+ is available under the <a href="http://www.gnu.org/copyleft/gpl.html"
+ >GNU General Public License</a>:</p>
  
++<!--
+ <ul>
+ <table border="0">
+   <tr><td><a href="OSDevWithCVS_3E.pdf"
+@@ -32,6 +35,7 @@ is available under the <a href="http://w
+   </tr>
+ </table>
+ </ul>
++-->
+ 
+ <p>Thanks to Jan Wolff for transforming the original PDFs from <a
+ href="http://www.paraglyphpress.com">Paraglyph Press</a> into this
+@@ -126,7 +130,7 @@ able to offer it in several formats besi
  <p>
- 
--<img src="images/cover-small.gif" width=111 height=140 alt="picture of a book">
--<br>
- You can get it directly from the publisher at
- <a href="http://www.coriolis.com/bookstore/bookdetail.cfm?id=1576104907">
- http://www.coriolis.com/bookstore/bookdetail.cfm?id=1576104907</a>
-@@ -114,44 +112,15 @@ The free chapters are available in sever
- 
+ <li> On-line <a href="cvsbook.html">HTML</a>.
+ </p>
+-
++<!--
  <p>
- 
--<li> Downloadable <a href="cvsbook.html.gz">HTML</a> (single .gz file)
--<li> Downloadable <a href="cvsbook.html.zip">HTML</a> (single .zip file)
+ <li> Downloadable <a href="cvsbook.html.gz">HTML</a> (single .gz file)
+ <li> Downloadable <a href="cvsbook.html.zip">HTML</a> (single .zip file)
+@@ -159,7 +163,7 @@ able to offer it in several formats besi
+ <li> <a href="cvsbook-1.21-all.zip">Everything</a> (.zip)
+      (Same as above, but in Zip format.) </li>
+ </p>
 -
--<p>
--
--<li> <a href="cvsbook.ps">Postscript</a> (uncompressed) </li>
--<li> <a href="cvsbook.ps.gz">Postscript</a> (single .gz file) </li>
--<li> <a href="cvsbook.ps.zip">Postscript</a> (single .zip file) </li>
--
--<p>
--
--<li> GNU <a href="cvsbook-1.18-info.tar.gz">Info</a> files (.tar.gz) </li>
--<li> GNU <a href="cvsbook-1.18-info.zip">Info</a> files (.zip) </li>
-+<li> <a href="../print/cvsbook.ps">Postscript</a> (uncompressed) </li>
-+<li> <a href="../print/cvsbook.pdf">PDF</a> (uncompressed) </li>
- 
- <p>
- 
--<li> <a href="cvsbook-1.18-texi.tar.gz">Texinfo</a> (.tar.gz)
--     (<i>These are the master files, from which the other formats
--     are generated.</i>)</li>
--<li> <a href="cvsbook-1.18-texi.zip">Texinfo</a> (.zip)
--     (Same as above, but in Zip format.) </li>
--
--<p>
--
--<li> <a href="cvsbook-1.18-all.tar.gz">Everything</a> (.tar.gz)
--     (All formats together in one package.) </li>
--<li> <a href="cvsbook-1.18-all.zip">Everything</a> (.zip)
--     (Same as above, but in Zip format.) </li>
--
--<p>
- 
- <li> <a href="anoncvs.html">Anonymous CVS Access</a>
-      (The CVS working copy for this book.) </li>
- 
--<p>
--
--<!-- <li> Plain <a href="">ASCII text</a> </li> -->
--<!-- <li> Adobe Acrobat <a href="">PDF</a> file </li> -->
++-->
  </ul>
  
  <p>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/02/01 20:07:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/10/20 19:55:39 avsm Exp $
 
 COMMENT=	"the definitive guide to CVS"
 
@@ -25,8 +25,8 @@ PKG_ARCH=	*
 
 INSTALL_LOC=	${PREFIX}/share/doc/cvs-guide
 HTML_DOCS=	amazon-boycott.html cvsbook.html anoncvs.html \
-		index.html errata.html ChangeLog
-PRINT_DOCS=	cvsbook.ps cvsbook.pdf 
+		index.html errata.html
+PRINT_DOCS=	cvsbook.ps cvsbook.pdf OSDevWithCVS_3E.pdf
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTALL_LOC}
