@@ -5,4 +5,7 @@ command-line editor, options for customising its behaviour, filename
 globbing, features to make C-shell (csh) users feel more at home and
 extra features drawn from tcsh (another `custom' shell).
 
+Flavors:
+	static - Build with statically linked binaries.
+
 WWW: ${HOMEPAGE}

@@ -10,7 +10,7 @@ tasks can be performed at shell-level without a significant loss
 in performance.  In addition, "sh" scripts can be run on KSH-93
 without modification.
 
-WWW: ${HOMEPAGE}
+Flavors:
+	static - Build with statically linked binaries.
 
-Available flavors:
-	static  - link statically
+WWW: ${HOMEPAGE}

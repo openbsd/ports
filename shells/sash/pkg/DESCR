@@ -5,4 +5,7 @@ from certain types of system failures. In particular, it was created
 in order to cope with the problem of missing shared libraries or
 important executable.
 
+Flavors:
+	static - Build with statically linked binaries.
+
 WWW: ${HOMEPAGE}

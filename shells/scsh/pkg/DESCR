@@ -14,12 +14,9 @@ varity of exiting Scheme code can be used.
 The underlying Scheme implementation is a virtual machine for compact
 byte code.
 
-The name of the installed program is "scsh", the manpage is scsh(1),
-other documentation is in (/usr/local/)lib/scsh/doc
-
-To load slib, install slib into /usr/local/lib/slib and run 
-(load "slib-init.scm") 
-in scsh. It requires no additional setup (paths or such).
+To load slib, install slib into ${PREFIX}/lib/slib and run (load 
+"slib-init.scm") in scsh. It requires no additional setup (paths or 
+such).
 
 The emacs interface is in the original distribution in emacs/. For
 documentation see doc/user-guide.txt.
@@ -44,5 +41,3 @@ are copied to lib/doc. The emacs directory is copied into
 lib/scsh/emacs. scsh's default is not to install these files.
 
 5) Some /usr/tmp -> /var/tmp
-
-Martin Cracauer <cracauer@cons.org>

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.28 2001/04/04 01:44:51 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2002/01/18 17:21:14 brad Exp $
 
 COMMENT=	"extended C-shell with many useful features"
 
 DISTNAME=	${PKGNAME:R}
 PKGNAME=	tcsh-6.10.00
 CATEGORIES=	shells
-NEED_VERSION=	1.384
-MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/ \
-		http://www2.wbs.ne.jp/~znc/tcsh/
+NEED_VERSION=	1.500
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
