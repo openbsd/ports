@@ -11,4 +11,4 @@ help(A) for info about A).
 
 If you have S users onsite, you may want to "cd /usr/local/bin; ln -s R S"
 
-See http://www.r-project.org/ for more details.
+See ${HOMEPAGE} for more details.
