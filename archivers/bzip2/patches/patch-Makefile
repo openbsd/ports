@@ -1,5 +1,5 @@
 --- Makefile.orig	Fri Jun 23 16:34:47 2000
-+++ Makefile	Thu Sep 14 05:10:49 2000
++++ Makefile	Thu Sep 14 09:42:55 2000
 @@ -3,6 +3,7 @@
  CC=gcc
  BIGFILES=-D_FILE_OFFSET_BITS=64
@@ -13,17 +13,18 @@
        bzlib.o
  
 -all: libbz2.a bzip2 bzip2recover test
-+all: libbz2.a bzip2 bzip2recover
++all: libbz2.la bzip2 bzip2recover
  
- bzip2: libbz2.a bzip2.o
+-bzip2: libbz2.a bzip2.o
 -	$(CC) $(CFLAGS) -o bzip2 bzip2.o -L. -lbz2
++bzip2: libbz2.la bzip2.o
 +	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o bzip2 bzip2.lo libbz2.la
  
  bzip2recover: bzip2recover.o
 -	$(CC) $(CFLAGS) -o bzip2recover bzip2recover.o
 +	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o bzip2recover bzip2recover.lo
  
- libbz2.a: $(OBJS)
+-libbz2.a: $(OBJS)
 -	rm -f libbz2.a
 -	ar cq libbz2.a $(OBJS)
 -	@if ( test -f /usr/bin/ranlib -o -f /bin/ranlib -o \
@@ -31,6 +32,7 @@
 -		echo ranlib libbz2.a ; \
 -		ranlib libbz2.a ; \
 -	fi
++libbz2.la: $(OBJS)
 +	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o libbz2.la $(OBJS:.o=.lo) \
 +		-version-info 10:1:0 -rpath $(PREFIX)/lib
  
