@@ -1,6 +1,6 @@
---- ltconfig.orig	Sat Apr 15 21:33:21 2000
-+++ ltconfig	Thu Jul 20 01:06:11 2000
-@@ -2004,6 +2004,7 @@
+--- ltconfig.orig	Mon Aug 14 15:10:37 2000
++++ ltconfig	Thu Aug 17 13:02:48 2000
+@@ -1962,6 +1962,7 @@
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
