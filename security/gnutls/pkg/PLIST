@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/02 04:04:31 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/15 18:18:54 naddy Exp $
 bin/gnutls-cli
 bin/gnutls-cli-debug
 bin/gnutls-serv
@@ -31,5 +31,5 @@ share/examples/gnutls/ex-serv1.c
 %%SHARED%%
 @dirrm share/examples/gnutls
 @dirrm share/doc/gnutls
-@comment @dirrm share/aclocal
+@dirrm share/aclocal
 @dirrm include/gnutls
