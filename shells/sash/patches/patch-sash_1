@@ -1,26 +1,29 @@
-$OpenBSD: patch-sash_1,v 1.1.1.1 2001/07/06 13:33:48 lebel Exp $
---- sash.1.orig	Sat Oct  2 06:16:45 1999
-+++ sash.1	Fri Jul  6 09:21:42 2001
-@@ -359,9 +359,10 @@ LINES and COLS can be used to set the pa
+$OpenBSD: patch-sash_1,v 1.2 2002/03/13 13:26:59 lebel Exp $
+--- sash.1.orig	Wed Mar 13 06:29:36 2002
++++ sash.1	Wed Mar 13 06:36:54 2002
+@@ -369,10 +369,14 @@ LINES and COLS can be used to set the pa
  .TP
  .B -mount [-t type] [-r] [-m] devName dirName
  Mount a filesystem on a directory name.  The -t option specifies the
--type of filesystem being mounted, and defaults to "ext2".
-+type of filesystem being mounted, and defaults to "ffs".
+-type of filesystem being mounted, and defaults to "ext3" for Linux.
++type of filesystem being mounted, and defaults to "ext3" for Linux
++and "ffs" for BSD.
  The -r option indicates to mount the filesystem read-only.
--The -m option indicates to remount an already mounted filesystem.
-+The -s option indicates to mount the filesystem with nosuid.
-+The -e option indicates to mount the filesystem with noexec.
+ The -m option indicates to remount an already mounted filesystem.
+-The -r and -m options are only available on Linux.
++The -s option indicates to mount the filesystem nosuid.
++The -e option indicates to mount the filesystem noexec.
++The -r and -m options are only available on Linux. The -s and -e
++options are only availble on BSD.
  .TP
  .B -mv srcName ... destName
  Moves one or more files from the
-@@ -443,7 +444,8 @@ current umask value is printed.  The mas
- .B -umount fileName
+@@ -455,6 +459,8 @@ current umask value is printed.  The mas
  Unmounts a file system.  The file name can either be the device name
  which is mounted, or else the directory name which the file system
--is mounted onto.
-+is mounted onto. The -f option unmounts the filesystem even if it is
-+being used.
+ is mounted onto.
++The -f option unmounts the filesystem even if it is being used.
++The -f option is only available on BSD.
  .TP
  .B unalias name
  Remove the definition for the specified alias.

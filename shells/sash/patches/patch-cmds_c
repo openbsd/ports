@@ -1,49 +1,30 @@
-$OpenBSD: patch-cmds_c,v 1.1.1.1 2001/07/06 13:33:48 lebel Exp $
---- cmds.c.orig	Thu Jun  3 17:42:17 1999
-+++ cmds.c	Fri Jul  6 09:21:42 2001
-@@ -10,14 +10,20 @@
+$OpenBSD: patch-cmds_c,v 1.2 2002/03/13 13:26:59 lebel Exp $
+--- cmds.c.orig	Fri Mar  8 03:27:36 2002
++++ cmds.c	Wed Mar 13 06:53:25 2002
+@@ -10,7 +10,9 @@
  
  #include <sys/types.h>
  #include <sys/stat.h>
--#include <sys/mount.h>
++#if	HAVE_BSD_MOUNT
+ #include <sys/mount.h>
++#endif
  #include <signal.h>
  #include <pwd.h>
  #include <grp.h>
- #include <utime.h>
- #include <errno.h>
-+
-+#ifdef __Linux__
+@@ -21,7 +23,6 @@
  #include <linux/fs.h>
-+#endif
+ #endif
  
-+#ifdef __OpenBSD__
-+#include <sys/param.h>
-+#endif
-+#include <sys/mount.h>
- 
+-
  void
  do_echo(int argc, const char ** argv)
-@@ -511,8 +517,15 @@ do_mount(int argc, const char ** argv)
- 
- 	argc--;
- 	argv++;
-+
-+#ifdef __OpenBSD__
-+	type = "ffs";
-+#endif
-+
-+#ifdef __Linux__
- 	type = "ext2";
- 	flags = MS_MGC_VAL;
-+#endif
- 
- 	while ((argc > 0) && (**argv == '-'))
- 	{
-@@ -533,6 +546,21 @@ do_mount(int argc, const char ** argv)
- 				argc--;
+ {
+@@ -550,8 +551,19 @@ do_mount(int argc, const char ** argv)
+ 			case 'm':
+ 				flags |= MS_REMOUNT;
  				break;
- 
-+#ifdef __OpenBSD__
+-#endif
++#elif	HAVE_BSD_MOUNT
 +			case 'r':
 +				flags |= MNT_RDONLY;
 +				break;
@@ -51,30 +32,26 @@ $OpenBSD: patch-cmds_c,v 1.1.1.1 2001/07/06 13:33:48 lebel Exp $
 +			case 's':
 +				flags |= MNT_NOSUID;
 +				break;
-+			
+ 
 +			case 'e':
 +				flags |= MNT_NOEXEC;
 +				break;
 +#endif
-+
-+#ifdef __Linux__
- 			case 'r':
- 				flags |= MS_RDONLY;
- 				break;
-@@ -540,6 +568,7 @@ do_mount(int argc, const char ** argv)
- 			case 'm':
- 				flags |= MS_REMOUNT;
- 				break;
-+#endif
- 
  			default:
  				fprintf(stderr, "Unknown option\n");
-@@ -555,16 +584,85 @@ do_mount(int argc, const char ** argv)
+ 
+@@ -566,16 +578,83 @@ do_mount(int argc, const char ** argv)
  		return;
  	}
  
-+#ifdef __OpenBSD__
+-	if (mount(argv[0], argv[1], type, flags, 0) < 0)
+-		perror("mount failed");
++#if	HAVE_LINUX_MOUNT
 +
++ 	if (mount(argv[0], argv[1], type, flags, 0) < 0)
++ 		perror("mount failed");
++
++#elif	HAVE_BSD_MOUNT
 +	{
 +		struct	    ufs_args ufs;
 +		struct	    adosfs_args adosfs;
@@ -104,53 +81,47 @@ $OpenBSD: patch-cmds_c,v 1.1.1.1 2001/07/06 13:33:48 lebel Exp $
 +			args = &msdosfs;
 +		} else {
 +			fprintf(stderr, "Unknown filesystem type: %s", type);
++			fprintf(stderr,
++			    "Supported: ffs ufs adosfs cd9660 mfs msdos\n");
++			return;
 +		}
 +
-+		fprintf(stderr, "type=%s, dev=%s, point=%s\n", type,
-+		    argv[0], argv[1]);
 +		if (mount(type, argv[1], flags, args) < 0)
 +		        perror(argv[0]);
 +	}
 +#endif
-+
-+#ifdef __Linux__
- 	if (mount(argv[0], argv[1], type, flags, 0) < 0)
- 		perror("mount failed");
-+#endif
-+
  }
  
  
  void
  do_umount(int argc, const char ** argv)
  {
-+	const char *	str;
-+	int		flags = 0;
-+
-+#ifdef __OpenBSD__
-+	argc--;
-+	argv++;
-+	
-+	while ((argc > 0) && (**argv == '-'))
-+	{
-+		argc--;
-+		str = *argv++;
-+
-+		while (*++str) switch (*str)
-+		{
-+			case 'r':
-+				flags = MNT_FORCE;
-+				break;
-+		}
-+	}
-+
-+	if (unmount(argv[0], flags) < 0)
-+		perror(argv[0]);
-+#endif
-+
-+#ifdef __Linux__
++#if	HAVE_LINUX_MOUNT
  	if (umount(argv[1]) < 0)
  		perror(argv[1]);
++#elif	HAVE_BSD_MOUNT
++	{
++		const char *	str;
++		int		flags = 0;
++
++		for (argc--, argv++;
++		    (argc > 0) && (**argv == '-');) {
++			argc--;
++			str = *argv++;
++
++			while (*++str) {
++				switch (*str)
++				{
++					case 'f':
++						flags = MNT_FORCE;
++						break;
++				}
++			}
++		}
++
++		if (unmount(argv[0], flags) < 0)
++			perror(argv[0]);
++	}
 +#endif
  }
  

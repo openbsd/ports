@@ -1,11 +1,23 @@
-$OpenBSD: patch-sash_h,v 1.1.1.1 2001/07/06 13:33:48 lebel Exp $
---- sash.h.orig	Sat Sep 25 00:03:29 1999
-+++ sash.h	Fri Jul  6 09:21:42 2001
-@@ -16,7 +16,6 @@
+$OpenBSD: patch-sash_h,v 1.2 2002/03/13 13:26:59 lebel Exp $
+--- sash.h.orig	Fri Mar  8 03:21:18 2002
++++ sash.h	Wed Mar 13 06:53:22 2002
+@@ -9,14 +9,18 @@
+ #ifndef	SASH_H
+ #define	SASH_H
+ 
+-
++#if __OpenBSD__
++#include <sys/param.h>
++#endif
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
  #include <fcntl.h>
  #include <string.h>
  #include <memory.h>
--#include <malloc.h>
++#if __Linux__
+ #include <malloc.h>
++#endif
  #include <time.h>
  #include <ctype.h>
  

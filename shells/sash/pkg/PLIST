@@ -1,5 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/06 13:33:47 lebel Exp $
-share/doc/sash/README
+@comment $OpenBSD: PLIST,v 1.2 2002/03/13 13:26:59 lebel Exp $
 bin/sash
 man/man1/sash.1
-@dirrm share/doc/sash

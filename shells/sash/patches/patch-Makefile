@@ -1,25 +1,33 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2001/07/06 13:33:48 lebel Exp $
---- Makefile.orig	Sat Sep 25 01:21:34 1999
-+++ Makefile	Fri Jul  6 09:21:42 2001
-@@ -5,11 +5,11 @@
- # The HAVE_EXT2 definition adds the -chattr and -lsattr comamnds.
+$OpenBSD: patch-Makefile,v 1.2 2002/03/13 13:26:59 lebel Exp $
+--- Makefile.orig	Fri Mar  8 07:29:53 2002
++++ Makefile	Wed Mar 13 06:44:16 2002
+@@ -7,14 +7,16 @@
+ # The MOUNT_TYPE definition sets the default file system type for -mount.
  #
+ HAVE_GZIP		= 1
+-HAVE_LINUX_ATTR		= 1
+-HAVE_LINUX_MOUNT	= 1
+-MOUNT_TYPE		= '"ext3"'
++HAVE_LINUX_ATTR		= 0
++HAVE_LINUX_MOUNT	= 0
++HAVE_BSD_MOUNT		= 1
++MOUNT_TYPE		= '"ffs"'
  
--CFLAGS = -O3 -Wall -Wmissing-prototypes -DHAVE_GZIP -DHAVE_EXT2
-+CFLAGS += -DHAVE_GZIP
-+# CFLAGS += -DHAVE_EXT2
+-CFLAGS = -O3 -Wall -Wmissing-prototypes \
++CFLAGS += \
+ 	-DHAVE_GZIP=$(HAVE_GZIP) \
+ 	-DHAVE_LINUX_ATTR=$(HAVE_LINUX_ATTR) \
+ 	-DHAVE_LINUX_MOUNT=$(HAVE_LINUX_MOUNT) \
++	-DHAVE_BSD_MOUNT=$(HAVE_BSD_MOUNT) \
+ 	-DMOUNT_TYPE=$(MOUNT_TYPE)
+ 
  LDFLAGS = -static -s
- LIBS = -lz
+@@ -30,7 +32,7 @@ OBJS = sash.o cmds.o cmd_dd.o cmd_ed.o c
  
--
- BINDIR = /bin
- MANDIR = /usr/man/man1
- 
-@@ -17,6 +17,7 @@ MANDIR = /usr/man/man1
- OBJS = sash.o cmds.o cmd_dd.o cmd_ed.o cmd_grep.o cmd_ls.o cmd_tar.o \
- 	cmd_gzip.o cmd_find.o cmd_file.o cmd_chattr.o cmd_ar.o utils.o
- 
-+all: sash
  
  sash:	$(OBJS)
- 	$(CC) $(LDFLAGS) -o sash $(OBJS) $(LIBS)
+-	$(CC) $(LDFLAGS) -o sash $(OBJS) $(LIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o sash $(OBJS) $(LIBS)
+ 
+ clean:
+ 	rm -f $(OBJS) sash
