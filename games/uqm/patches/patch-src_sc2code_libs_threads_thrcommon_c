@@ -1,0 +1,68 @@
+$OpenBSD: patch-src_sc2code_libs_threads_thrcommon_c,v 1.1.1.1 2003/04/11 09:12:52 wilfried Exp $
+--- src/sc2code/libs/threads/thrcommon.c.orig	Mon Feb  3 14:12:03 2003
++++ src/sc2code/libs/threads/thrcommon.c	Tue Mar  4 01:08:36 2003
+@@ -553,6 +553,7 @@ ClearSemaphore (Semaphore sem)
+ 			sem_name = SemMon[i].Name;
+ 			if (SemMon[i].Thread && SemMon[i].Thread != NativeThreadID ())
+ #if defined (THREAD_QUEUE) && defined (THREAD_NAMES)
++			{
+ 				if (ThreadNameNative (SemMon[i].Thread) == NULL)
+ 					fprintf( stderr, "Freeing %s Semaphore in '%s' set by defunct thread '%s'!\n",
+ 						sem_name, 
+@@ -563,6 +564,7 @@ ClearSemaphore (Semaphore sem)
+ 						sem_name, 
+ 						ThreadNameNative (NativeThreadID ()),
+ 						ThreadNameNative (SemMon[i].Thread));
++			}
+ 			SemMon[i].ThreadName[0] = 0;
+ #else
+ 				fprintf (stderr, "Freeing %s Semaphore that was set by a different thread\n",
+@@ -606,27 +608,39 @@ CreateCondVar ()
+ {
+ 	return NativeCreateCondVar ();
+ }
+-void DestroyCondVar (CondVar cv)
++
++void
++DestroyCondVar (CondVar cv)
+ {
+-	NativeDestroyCondVar (cv);
++	NativeDestroyCondVar ((CondVar)cv);
+ }
+ 
+-void WaitCondVar (CondVar cv)
++void
++WaitCondVar (CondVar cv)
+ {
+-	NativeWaitCondVar (cv);
++	NativeWaitCondVar ((NativeCondVar)cv);
+ }
+ 
+-void SignalCondVar (CondVar cv)
++void
++WaitProtectedCondVar (CondVar cv, Mutex m)
+ {
+-	NativeSignalCondVar (cv);
++	NativeWaitProtectedCondVar ((NativeCondVar)cv, (NativeMutex)m);
+ }
+ 
+-void BroadcastCondVar (CondVar cv)
++void
++SignalCondVar (CondVar cv)
++{
++	NativeSignalCondVar ((NativeCondVar)cv);
++}
++
++void
++BroadcastCondVar (CondVar cv)
+ {
+-	NativeBroadcastCondVar (cv);
++	NativeBroadcastCondVar ((NativeCondVar)cv);
+ }
+ 
+-DWORD CurrentThreadID ()
++DWORD
++CurrentThreadID ()
+ {
+ 	return (DWORD)NativeThreadID ();
+ }

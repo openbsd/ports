@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/11 09:12:52 wilfried Exp $
+bin/uqm
+share/doc/uqm/manual.txt
+@dirrm share/doc/uqm

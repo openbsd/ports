@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_sc2code_libs_graphics_tfb_draw_c,v 1.1.1.1 2003/04/11 09:12:52 wilfried Exp $
+--- src/sc2code/libs/graphics/tfb_draw.c.orig	Fri Feb 14 18:17:16 2003
++++ src/sc2code/libs/graphics/tfb_draw.c	Tue Mar  4 01:16:07 2003
+@@ -197,14 +197,14 @@ void
+ TFB_DrawScreen_WaitForSignal (void)
+ {
+ 	TFB_DrawCommand DrawCommand;
++	int channel;
+ 	DrawCommand.Type = TFB_DRAWCOMMANDTYPE_SENDSIGNAL;
+-	// We need to lock the mutex before enqueueing the DC to prevent races 
+-	LockSignalMutex ();
+ 	Lock_DCQ (1);
++	channel = FindSignalChannel ();
+ 	TFB_BatchReset ();
+ 	TFB_EnqueueDrawCommand(&DrawCommand);
+ 	Unlock_DCQ();
+-	WaitForSignal ();
++	WaitForSignal (channel);
+ }
+ 
+ void

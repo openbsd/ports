@@ -1,0 +1,127 @@
+$OpenBSD: patch-src_sc2code_libs_threads_condbank_c,v 1.1.1.1 2003/04/11 09:12:52 wilfried Exp $
+--- src/sc2code/libs/threads/condbank.c.orig	Sat Jan  4 10:55:31 2003
++++ src/sc2code/libs/threads/condbank.c	Tue Mar  4 01:06:16 2003
+@@ -30,12 +30,12 @@
+ #define CONDVAR_BANK_SIZE 10
+ 
+ static Mutex bank_mutex;
+-static int wait = 0, signal = 0;
+ 
+ static struct {
+-	Semaphore var;
+-	DWORD   id;
+-	int     used;
++	CondVar   var;
++	DWORD     id;
++	int       used;
++	Mutex     control;
+ } bank[CONDVAR_BANK_SIZE];
+ 
+ void
+@@ -45,10 +45,9 @@ init_cond_bank ()
+ 	bank_mutex = CreateMutex ();
+ 	for (i = 0; i < CONDVAR_BANK_SIZE; i++)
+ 	{
+-		char str[20];
+-		sprintf (str, "bank sem %d", i);
+-		bank[i].var = CreateSemaphore (0, str); 
++		bank[i].var = CreateCondVar ();
+ 		bank[i].id = bank[i].used = 0;
++		bank[i].control = CreateMutex ();
+ 	}
+ }
+ 
+@@ -59,33 +58,37 @@ uninit_cond_bank ()
+ 	for (i = 0; i < CONDVAR_BANK_SIZE; i++)
+ 	{
+ 		DestroyCondVar (bank[i].var);
++		DestroyMutex (bank[i].control);
+ 	}
+ 	DestroyMutex (bank_mutex);
+ }
+ 
+-void
+-LockSignalMutex ()
+-{
+-	LockMutex (bank_mutex);
+-}
+-void
+-WaitForSignal ()
++int
++FindSignalChannel ()
+ {
+ 	int i;
+-	int index = -1;
+-	DWORD me = CurrentThreadID ();
++
++	LockMutex (bank_mutex);
+ 	for (i = 0; i < CONDVAR_BANK_SIZE; i++)
+ 	{
+ 		if (!bank[i].used)
+ 		{
+-			index = i;
+-			break;
++			LockMutex (bank[i].control);
++			return i;
+ 		}
+ 	}
+-	if (index == -1)
++	return -1;
++}
++
++void
++WaitForSignal (int i)
++{
++	DWORD me = CurrentThreadID ();
++
++	if (i == -1)
+ 	{
+ 		/* The bank is full! */
+-		fprintf(stderr, "Condvar bank is full, %ul is waiting on DCQ.", me);
++		fprintf(stderr, "Condvar bank is full, %lu is waiting on DCQ.\n", me);
+ 		UnlockMutex (bank_mutex);
+ 		WaitCondVar (RenderingCond);
+ 	}
+@@ -93,12 +96,14 @@ WaitForSignal ()
+ 	{
+ 		bank[i].used = 1;
+ 		bank[i].id = me;
+-		// Initialize the Semaphore to a value of '0' in case it isn't already
+-		while (SemaphoreValue (bank[i].var))
+-			SetSemaphore (bank[i].var);
+ 		UnlockMutex (bank_mutex);
+-		// Block on Semaphore until it is cleared by the Signal
+-		SetSemaphore (bank[i].var);
++		// fprintf (stderr, "Thread %lu waiting on cond var %d (control: %p)\n", me, i, bank[i].control);
++		WaitProtectedCondVar (bank[i].var, bank[i].control);
++		// fprintf (stderr, "Thread %lu signaled via cond var %d\n", me, i);
++		UnlockMutex (bank[i].control);
++		LockMutex (bank_mutex);
++		bank[i].used = bank[i].id = 0;
++		UnlockMutex (bank_mutex);
+ 	}
+ }
+ 
+@@ -111,14 +116,15 @@ SignalThread (DWORD id)
+ 	{
+ 		if (bank[i].used && bank[i].id == id)
+ 		{
+-			bank[i].id = bank[i].used = 0;
+-			ResetSemaphoreOwner (bank[i].var);
+-			ClearSemaphore (bank[i].var);
+-			break;
++			UnlockMutex (bank_mutex);
++			// fprintf (stderr, "Blocking on var %d's control: %p\n", i, bank[i].control);
++			LockMutex (bank[i].control);
++			// fprintf (stderr, "Signaling var %d, thread %lu, control %p\n", i, id, bank[i].control);
++			SignalCondVar (bank[i].var);
++			UnlockMutex (bank[i].control);
++			return;
+ 		}
+ 	}
+-	if (i == CONDVAR_BANK_SIZE)
+-		fprintf (stderr, "Warning: Couldn't find thread to signal!\n");
++	fprintf (stderr, "Warning: Couldn't find thread to signal!\n");
+ 	UnlockMutex (bank_mutex);
+ }
+-

@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_sc2code_libs_threadlib_h,v 1.1.1.1 2003/04/11 09:12:52 wilfried Exp $
+--- src/sc2code/libs/threadlib.h.orig	Fri Feb 14 18:17:16 2003
++++ src/sc2code/libs/threadlib.h	Tue Mar  4 01:04:00 2003
+@@ -137,13 +137,14 @@ typedef void *CondVar;
+ extern CondVar CreateCondVar (void);
+ extern void DestroyCondVar (CondVar);
+ extern void WaitCondVar (CondVar);
++extern void WaitProtectedCondVar (CondVar, Mutex);
+ extern void SignalCondVar (CondVar);
+ extern void BroadcastCondVar (CondVar);
+ 
+ extern DWORD CurrentThreadID (void);
+ 
+-extern void LockSignalMutex(void);
+-extern void WaitForSignal (void);
++extern int  FindSignalChannel ();
++extern void WaitForSignal (int);
+ extern void SignalThread (DWORD);
+ 
+ #endif  /* _THREADLIB_H */

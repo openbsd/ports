@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sc2code_libs_threads_sdl_sdlthreads_h,v 1.1.1.1 2003/04/11 09:12:52 wilfried Exp $
+--- src/sc2code/libs/threads/sdl/sdlthreads.h.orig	Mon Feb  3 14:12:04 2003
++++ src/sc2code/libs/threads/sdl/sdlthreads.h	Tue Mar  4 01:07:04 2003
+@@ -91,6 +91,8 @@ typedef SDL_cond *NativeCondVar;
+ extern void SDLWrapper_WaitCondVar (CondVar candvar);
+ #define NativeWaitCondVar(condvar) \
+ 		SDLWrapper_WaitCondVar ((condvar))
++#define NativeWaitProtectedCondVar(condvar, mutex) \
++		SDL_CondWait ((condvar), (mutex))
+ #define NativeSignalCondVar(condvar) \
+ 		SDL_CondSignal ((condvar))
+ #define NativeBroadcastCondVar(condvar) \
