@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/12/01 19:59:31 marcm Exp $
+# $OpenBSD: Makefile,v 1.17 2003/08/21 19:25:32 pvalchev Exp $
 
 COMMENT=		"configuration database system written for GNOME"
 
@@ -30,6 +30,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-gconf-source=${DEFAULT_GCONF_SOURCE}
 CONFIGURE_ARGS+=	--disable-guile
 CONFIGURE_ARGS+=	--disable-db3
+CONFIGURE_ARGS+=	--disable-oaftest
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${WRKBUILD}/gconf/.libs -L${LOCALBASE}/lib" \
 			XML_CONFIG="${LOCALBASE}/bin/xml-config"
