@@ -1,24 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2002/04/04 22:52:12 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/04/10 01:24:39 espie Exp $
 
 COMMENT= 		"embedded documentation in C++"
 CATEGORIES=		x11 x11/kde devel
 NEED_VERSION=		1.458
 VERSION=		2.2.2
 DISTNAME=		kdoc-${VERSION}
-DIST_SUBDIR=		kde
 
-HOMEPAGE=		http://www.kde.org
-MASTER_SITES=		${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${VERSION}/src/
-EXTRACT_SUFX=		.tar.bz2
-
-CONFIGURE_STYLE=	gnu
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/admin
-
-# GPL
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
+PATCH_LIST=		p-*
+MODULES=	
+USE_GMAKE=		No
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
-$OpenBSD: p-aclocal_m4,v 1.5 2002/03/30 02:24:18 espie Exp $
---- aclocal.m4.orig	Sun Jan 27 19:33:25 2002
-+++ aclocal.m4	Sun Mar 17 01:23:21 2002
-@@ -3361,6 +3361,11 @@ LIBDL="-ldl"
+$OpenBSD: p-aclocal_m4,v 1.6 2002/04/10 01:24:39 espie Exp $
+--- aclocal.m4.orig	Tue Nov 13 21:55:41 2001
++++ aclocal.m4	Mon Apr  8 19:48:58 2002
+@@ -3121,6 +3121,11 @@ LIBDL="-ldl"
  ac_cv_have_dlfcn=yes
  ])
  
@@ -13,7 +13,7 @@ $OpenBSD: p-aclocal_m4,v 1.5 2002/03/30 02:24:18 espie Exp $
  AC_CHECK_LIB(dld, shl_unload, [
  LIBDL="-ldld"
  ac_cv_have_shload=yes
-@@ -5249,19 +5254,7 @@ netbsd*)
+@@ -4876,19 +4881,7 @@ netbsd*)
    ;;
  
  openbsd* )

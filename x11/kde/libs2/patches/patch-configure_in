@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.5 2001/08/22 19:56:32 espie Exp $
---- configure.in.orig	Mon Aug  6 03:26:30 2001
-+++ configure.in	Wed Aug 22 15:34:12 2001
-@@ -629,7 +629,9 @@ if test "${with_qt_dir+set}" = set; then
+$OpenBSD: patch-configure_in,v 1.6 2002/04/10 01:24:39 espie Exp $
+--- configure.in.orig	Tue Nov 13 21:55:38 2001
++++ configure.in	Mon Apr  8 19:48:59 2002
+@@ -688,7 +688,9 @@ if test "${with_qt_dir+set}" = set; then
    kde_qtdir="$with_qt_dir"
  fi
  

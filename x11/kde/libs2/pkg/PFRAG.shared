@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.12 2002/04/03 16:38:21 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.13 2002/04/10 01:24:39 espie Exp $
 lib/kde2/libkbzip2filter.so.0.0
 lib/kde2/libkded_kdeprintd.so.0.0
 lib/kde2/libkdeprint_ext.so.0.0
@@ -71,4 +71,3 @@ lib/libsoundserver_idl.so.0.0
 lib/libwebstyle.so.0.0
 lib/libx11globalcomm.so.0.0
 DYNLIBDIR(%D/lib)
-NEWDYNLIBDIR(%D/lib/kde2)
