@@ -48,16 +48,19 @@ fi
 
 case "$1" in
 japanese)
+	testdir="/var/dict/ja_JP"
 	sys_dirs="/var/dict/ja_JP/pubdic var/dict/ja_JP/wnncons"
 	usr_dirs=/var/dict/ja_JP/usr
 	wnntouch=/usr/local/bin/wnntouch
 	wnnserver=/usr/local/bin/jserver;;
 chinese)
-	sys_dirs="/var/dict/sys var/dict/zh_TW/sys"
-	usr_dirs=/var/dict/zh_TW/usr
+	testdir="/var/dict/zh_CN"
+	sys_dirs="/var/dict/zh_CN/sys var/dict/zh_TW/sys"
+	usr_dirs="/var/dict/zh_CN/usr /var/dict/zh_TW/usr"
 	wnntouch=/usr/local/bin/cwnntouch
 	wnnserver=/usr/local/bin/cserver;;
 korean)
+	testdir="/var/dict/ko_KR"
 	sys_dirs="/var/dict/ko_KR/sys"
 	usr_dirs=/var/dict/ko_KR/usr
 	wnntouch=/usr/local/bin/kwnntouch
@@ -71,12 +74,12 @@ esac
 chown wnn $wnnserver
 chmod u+s $wnnserver
 
-# japanese directories not yet present, bail out
+# base directory not yet present, bail out
 
-[ -d /var/dict/ja_JP ] || exit 0
+[ -d $testdir ] || exit 0
 
 for dir in $sys_dirs; do
-  [ -d $dir ] && $wnntouch $dir/*
+  $wnntouch $dir/*
 done
 
 for dir in $usr_dirs; do

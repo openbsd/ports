@@ -1,22 +1,22 @@
-@comment $OpenBSD: PLIST-zhdict,v 1.1 2000/04/21 00:45:30 espie Exp $
+@comment $OpenBSD: PLIST-zhdict,v 1.2 2000/04/21 02:10:54 espie Exp $
 @comment no checksum
-sys/QianMa.dic
+zh_CN/sys/QianMa.dic
 @comment no checksum
-sys/WuBi.dic
+zh_CN/sys/WuBi.dic
 @comment no checksum
-sys/basic.dic
+zh_CN/sys/basic.dic
 @comment no checksum
-sys/computer.dic
+zh_CN/sys/computer.dic
 @comment no checksum
-sys/cwnn.dic
+zh_CN/sys/cwnn.dic
 @comment no checksum
-sys/full.con
+zh_CN/sys/full.con
 @comment no checksum
-sys/full.conR
+zh_CN/sys/full.conR
 @comment no checksum
-sys/level_1.dic
+zh_CN/sys/level_1.dic
 @comment no checksum
-sys/level_2.dic
+zh_CN/sys/level_2.dic
 @comment no checksum
 zh_TW/sys/cns_ch.dic
 @comment no checksum
@@ -29,4 +29,5 @@ zh_TW/sys/full.conR
 @unexec echo "Finish removing %D/zh_TW manually"
 @dirrm zh_TW/sys
 @dirrm zh_TW
-@dirrm sys
+@dirrm zh_CN/sys
+@dirrm zh_CN

@@ -1,10 +1,10 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.23 2000/04/21 02:01:51 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2000/04/21 02:10:53 espie Exp $
 
 DISTNAME=	Wnn4.2
-MULTI_PACKAGES=-dict
+MULTI_PACKAGES=-dict -zh -zhdict -ko -kodict
 NEED_VERSION=	1.270
 SUBPACKAGE?=
 
@@ -65,7 +65,7 @@ do-distpatch:
 	cd ${WRKDIR} && tar zxf ${FULLDISTDIR}/Wnn4.2.patch.tar.gz
 	cd ${WRKSRC} && patch ${PATCH_DIST_ARGS} < ${WRKDIR}/Wnn4.2.patch
 
-# do those as post-patch, because of the $Id: Makefile,v 1.23 2000/04/21 02:01:51 espie Exp $
+# do those as post-patch, because of the $Id: Makefile,v 1.24 2000/04/21 02:10:53 espie Exp $
 post-patch:
 	@cd ${WRKDIST}; \
 	for file in Wnn/jd/jserverrc cWnn/cd/cserverrc kWnn/kd/kserverrc; do\

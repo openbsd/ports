@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_Project_tmpl,v 1.3 2000/04/21 00:25:25 espie Exp $
+$OpenBSD: patch-config_Project_tmpl,v 1.4 2000/04/21 02:10:54 espie Exp $
 --- config/Project.tmpl.orig	Mon Aug 29 10:40:17 1994
-+++ config/Project.tmpl	Fri Apr 21 02:12:02 2000
++++ config/Project.tmpl	Fri Apr 21 04:05:16 2000
 @@ -14,6 +14,20 @@ XCOMM $XConsortium: Project.tmpl,v 1.242
   *                                                                          *
   ***************************************************************************/
@@ -90,7 +90,7 @@ $OpenBSD: patch-config_Project_tmpl,v 1.3 2000/04/21 00:25:25 espie Exp $
 -     CWNNBINDIR = $(WNNBINDIR)/cWnn4
 -     CWNNDICDIR = $(CWNNWNNDIR)/dic
 +     CWNNBINDIR = $(WNNBINDIR)
-+     CWNNDICDIR = $(WNNDICDIR)/$(CWWNLANG)
++     CWNNDICDIR = $(WNNDICDIR)/$(CWNNLANG)
    CWNNSYSDICDIR = $(CWNNDICDIR)/sys
        CWNNCDSRC = $(CWNNTOP)/cd
      CWNNCDICSRC = $(CWNNTOP)/cdic
