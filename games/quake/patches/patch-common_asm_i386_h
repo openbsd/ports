@@ -1,0 +1,12 @@
+$OpenBSD: patch-common_asm_i386_h,v 1.1 2003/04/22 14:15:33 naddy Exp $
+--- common/asm_i386.h.orig	Tue Apr 22 16:19:34 2003
++++ common/asm_i386.h	Tue Apr 22 16:19:47 2003
+@@ -21,7 +21,7 @@ Foundation, Inc., 59 Temple Place - Suit
+ #ifndef __ASM_I386__
+ #define __ASM_I386__
+ 
+-#ifdef ELF
++#if defined(ELF) || defined(__ELF__)
+ #define C(label) label
+ #else
+ #define C(label) _##label
