@@ -1,0 +1,14 @@
+$OpenBSD: patch-root_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
+--- root.c.orig	2004-03-08 12:52:35.000000000 -0500
++++ root.c	2004-06-12 23:05:03.000000000 -0400
+@@ -80,8 +80,8 @@ get_root( char *path, char *file_root, c
+ 		return( -1 );
+ 	    }
+         } else {
+-            sprintf( file_root, "%s/../file", real_path );
+-            sprintf( tran_root, "%s", real_path );
++            (void)snprintf( file_root, MAXPATHLEN, "%s/../file", real_path );
++            (void)snprintf( tran_root, MAXPATHLEN, "%s", real_path );
+         }
+     }
+ 

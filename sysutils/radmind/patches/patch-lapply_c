@@ -1,0 +1,48 @@
+$OpenBSD: patch-lapply_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
+--- lapply.c.orig	2004-02-12 14:35:52.000000000 -0500
++++ lapply.c	2004-06-08 16:21:37.000000000 -0400
+@@ -72,7 +72,7 @@ create_node( char *path, char *tline )
+     new_node = (struct node *) malloc( sizeof( struct node ));
+     new_node->path = strdup( path );
+     if ( tline != NULL ) {
+-	sprintf( new_node->tline, "%s", tline );
++	(void)snprintf( new_node->tline, sizeof( new_node->tline ), "%s", tline );
+ 	new_node->doline = 1;
+     } else {
+ 	new_node->doline = 0;
+@@ -123,7 +123,7 @@ do_line( char *tline, int present, struc
+ 	fprintf( stderr, "line %d: too long\n", linenum );
+ 	return( 1 );
+     } 
+-    strcpy( path, d_path );
++    (void)strlcpy( path, d_path, sizeof( path ) );
+ 
+     /* DOWNLOAD */
+     if ( *command == '+' ) {
+@@ -132,7 +132,7 @@ do_line( char *tline, int present, struc
+ 		    linenum, *targv[ 0 ] );
+ 	    return( 1 );
+ 	}
+-	strcpy( cksum_b64, targv[ 7 ] );
++	(void)strlcpy( cksum_b64, targv[ 7 ], sizeof( cksum_b64 ) );
+ 
+ 	if ( special ) {
+ 	    if ( snprintf( pathdesc, MAXPATHLEN * 2, "SPECIAL %s",
+@@ -409,7 +409,7 @@ main( int argc, char **argv )
+         }
+ 
+ 	if ( tac == 1 ) {
+-	    strcpy( transcript, targv[ 0 ] );
++	    (void)strlcpy( transcript, targv[ 0 ], sizeof( transcript ) );
+ 	    len = strlen( transcript );
+ 	    if ( transcript[ len - 1 ] != ':' ) { 
+ 		fprintf( stderr, "%s: line %d: invalid transcript name\n",
+@@ -451,7 +451,7 @@ main( int argc, char **argv )
+ 	    fprintf( stderr, "line %d: too long\n", linenum );
+ 	    return( 1 );
+ 	} 
+-	strcpy( path, d_path );
++	(void)strlcpy( path, d_path, sizeof( path ) );
+ 
+ 	/* Check transcript order */
+ 	if ( prepath != 0 ) {

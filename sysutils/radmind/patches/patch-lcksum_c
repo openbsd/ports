@@ -1,0 +1,12 @@
+$OpenBSD: patch-lcksum_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
+--- lcksum.c.orig	Sat Jun 26 12:17:00 2004
++++ lcksum.c	Sat Jun 26 12:17:47 2004
+@@ -345,7 +345,7 @@ main( int argc, char **argv )
+ 		    fprintf( ufs, "%s %-37s %4s %5s %5s %9ld "
+ 			    "%7" PRIofft "d %s\n",
+ 			targv[ 0 ], targv[ 1 ], targv[ 2 ], targv[ 3 ],
+-			targv[ 4 ], st.st_mtime, st.st_size, lcksum );
++			targv[ 4 ], (long)st.st_mtime, st.st_size, lcksum );
+ 		} else {
+ 		    /* use mtime from transcript */
+ 		    fprintf( ufs, "%s %-37s %4s %5s %5s %9s "

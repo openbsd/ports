@@ -1,0 +1,9 @@
+A suite of Unix command-line tools and a server designed to remotely 
+administer the file systems of multiple Unix machines.
+
+At its core, radmind operates as a tripwire. It is able to detect 
+changes to any managed filesystem object, e.g. files, directories, 
+links, etc. However, radmind goes further than just integrity 
+checking: once a change is detected, radmind can optionally reverse 
+the change.
+

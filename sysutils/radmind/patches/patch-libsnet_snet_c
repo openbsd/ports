@@ -1,0 +1,17 @@
+$OpenBSD: patch-libsnet_snet_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
+--- libsnet/snet.c.orig	2004-06-16 15:43:18.000000000 -0400
++++ libsnet/snet.c	2004-06-16 15:54:07.000000000 -0400
+@@ -217,8 +217,11 @@ modifier:
+ 		p = va_arg( vl, char * );
+ 		len = strlen( p );
+ 		SNET_WBUFGROW( len );
+-		strcpy( cur, p );
+-		cur += strlen( p );
++		if (strlcpy( cur, p, end - cur ) > (end - cur)) {
++			cur += end - cur;
++		} else {
++			cur += strlen( p );
++		}
+ 		break;
+ 
+ 	    case 'c' :

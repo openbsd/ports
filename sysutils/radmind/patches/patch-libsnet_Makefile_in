@@ -1,0 +1,21 @@
+$OpenBSD: patch-libsnet_Makefile_in,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
+--- libsnet/Makefile.in.orig	Sat Jun 26 12:30:45 2004
++++ libsnet/Makefile.in	Sat Jun 26 12:34:54 2004
+@@ -14,7 +14,7 @@ LOBJ = snet.lo
+ INCPATH=	@CPPFLAGS@ -I.
+ DEFS=		
+ OPTOPTS=	@OPTOPTS@
+-CFLAGS=		${DEFS} ${OPTOPTS} ${INCPATH}
++CFLAGS=		${DEFS} ${OPTOPTS} @CFLAGS@ ${INCPATH}
+ PROFILED=	@PROFILED@
+ CC=		@CC@	
+ 
+@@ -50,7 +50,7 @@ all:		libsnet.la
+ 
+ libsnet.la:	$(OBJ) $(LOBJ)
+ 	$(LIBTOOL) --mode=link \
+-	  $(CC) -o libsnet.la $(LOBJ) -rpath $(libdir) -version-info 0:0:0
++	  $(CC) -o libsnet.la $(LOBJ) -version-info 0:0:0
+ 	@if test x_$(PROFILED) = x_true ; then echo "building profiled $@" ; \
+ 	  ( cd profiled ; ../$(LIBTOOL) --mode=link \
+ 	  $(CC) -o libsnet_p.la $(LOBJ) -rpath $(libdir) \

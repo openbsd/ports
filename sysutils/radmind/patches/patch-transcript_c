@@ -1,0 +1,89 @@
+$OpenBSD: patch-transcript_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
+--- transcript.c.orig	2004-03-25 12:45:41.000000000 -0500
++++ transcript.c	2004-06-08 16:29:21.000000000 -0400
+@@ -92,7 +92,7 @@ transcript_parse( struct transcript *tra
+ 	exit( 2 );
+     }
+ 
+-    strcpy( tran->t_pinfo.pi_name, epath );
++    (void)strlcpy( tran->t_pinfo.pi_name, epath, sizeof( tran->t_pinfo.pi_name ) );
+ 
+     /* reading and parsing the line */
+     switch( *argv[ 0 ] ) {
+@@ -162,7 +162,7 @@ transcript_parse( struct transcript *tra
+ 		tran->t_fullname, tran->t_linenum );
+ 	    exit( 2 );
+ 	}
+-	strcpy( tran->t_pinfo.pi_link, epath );
++	(void)strlcpy( tran->t_pinfo.pi_link, epath, sizeof( tran->t_pinfo.pi_link ) );
+ 	break;
+ 
+     case 'a':				    /* hfs applefile */
+@@ -184,7 +184,7 @@ transcript_parse( struct transcript *tra
+ 		exit( 2 );
+ 	    }
+ 	}
+-	strcpy( tran->t_pinfo.pi_cksum_b64, argv[ 7 ] );
++	(void)strlcpy( tran->t_pinfo.pi_cksum_b64, argv[ 7 ], sizeof( tran->t_pinfo.pi_cksum_b64 ) );
+ 	break;
+ 
+     default:
+@@ -581,17 +581,17 @@ transcript( char *path )
+ 	    }
+ 	}
+ 
+-	strcpy( pi.pi_name, path );
++	(void)strlcpy( pi.pi_name, path, sizeof( pi.pi_name ) );
+ 
+ 	/* if it's multiply referenced, check if it's a hardlink */
+ 	if ( !S_ISDIR( pi.pi_stat.st_mode ) && ( pi.pi_stat.st_nlink > 1 ) &&
+ 		(( linkpath = hardlink( &pi )) != NULL )) {
+ 	    pi.pi_type = 'h';
+-	    strcpy( pi.pi_link, linkpath );
++	    (void)strlcpy( pi.pi_link, linkpath, sizeof( pi.pi_link ) );
+ 	} else if ( S_ISLNK( pi.pi_stat.st_mode )) {
+ 	    len = readlink( pi.pi_name, epath, MAXPATHLEN );
+ 	    epath[ len ] = '\0';
+-	    strcpy( pi.pi_link, epath );
++	    (void)strlcpy( pi.pi_link, epath, sizeof( pi.pi_link ) );
+ 	}
+ 
+ 	/* By default, go into directories */
+@@ -602,7 +602,7 @@ transcript( char *path )
+ 	}
+ 
+ 	/* initialize cksum field. */
+-	strcpy( pi.pi_cksum_b64, "-" );
++	(void)strlcpy( pi.pi_cksum_b64, "-", sizeof( pi.pi_cksum_b64 ) );
+     }
+ 
+     for (;;) {
+@@ -651,8 +651,8 @@ t_new( int type, char *fullname, char *s
+     } else {
+ 	new->t_eof = 0; 
+ 	new->t_linenum = 0;
+-	strcpy( new->t_shortname, shortname );
+-	strcpy( new->t_fullname, fullname );
++	(void)strlcpy( new->t_shortname, shortname, sizeof( new->t_shortname ) );
++	(void)strlcpy( new->t_fullname, fullname, sizeof( new->t_fullname ) );
+ 	if (( new->t_in = fopen( fullname, "r" )) == NULL ) {
+ 	    perror( fullname );
+ 	    exit( 2 );
+@@ -735,7 +735,7 @@ transcript_init( char *kfile, int kfilem
+ 		    linenum, kdir, av[ 1 ] );
+ 	    exit( 2 );
+ 	}
+-	sprintf( fullpath, "%s%s", kdir, av[ 1 ] );
++	(void)snprintf( fullpath, sizeof( fullpath ), "%s%s", kdir, av[ 1 ] );
+ 
+ 	switch( *av[ 0 ] ) {
+ 	case 'p':				/* positive */
+@@ -763,7 +763,7 @@ transcript_init( char *kfile, int kfilem
+ 		    "special path too long: %s%s\n", kdir, special );
+ 	    exit( 2 );
+ 	}
+-	sprintf( fullpath, "%s%s", kdir, special );
++	(void)snprintf( fullpath, sizeof( fullpath ), "%s%s", kdir, special );
+ 	t_new( T_SPECIAL, fullpath, special );
+     }
+ 

@@ -1,0 +1,18 @@
+$OpenBSD: patch-stor_c,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
+--- stor.c.orig	2004-06-08 16:21:48.000000000 -0400
++++ stor.c	2004-06-08 16:41:13.000000000 -0400
+@@ -449,11 +449,13 @@ n_stor_applefile( SNET *sn, char *pathde
+     struct timeval      	tv;
+     struct applefileinfo	afinfo;
+     off_t			size;
++    size_t			len;
+ 
+     /* Setup fake apple file info */
+     /* Finder Info */
+     memset( &afinfo, 0, sizeof( afinfo ));
+-    sprintf( afinfo.ai.ai_data + FI_CREATOR_OFFSET, "%s", "RDMD" );
++    len = sizeof( afinfo.ai.ai_data );
++    (void)snprintf( afinfo.ai.ai_data + FI_CREATOR_OFFSET, len - FI_CREATOR_OFFSET, "%s", "RDMD" );
+     afinfo.as_ents[AS_FIE].ae_id = ASEID_FINFO;
+     afinfo.as_ents[AS_FIE].ae_offset = AS_HEADERLEN +
+ 	( 3 * sizeof( struct as_entry ));               /* 62 */
