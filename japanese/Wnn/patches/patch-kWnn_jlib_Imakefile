@@ -1,17 +1,7 @@
-$OpenBSD: patch-kWnn_jlib_Imakefile,v 1.1 2000/04/16 21:53:38 espie Exp $
+$OpenBSD: patch-kWnn_jlib_Imakefile,v 1.2 2000/04/20 23:11:48 espie Exp $
 --- kWnn/jlib/Imakefile.orig	Wed Aug 17 03:11:40 1994
-+++ kWnn/jlib/Imakefile	Thu Apr 13 20:41:39 2000
-@@ -1,6 +1,9 @@
- XCOMM
- XCOMM $Id: patch-kWnn_jlib_Imakefile,v 1.1 2000/04/16 21:53:38 espie Exp $
- XCOMM
-+XCOMM For Mule, add sources (yincoding.c py_table.c zy_table.c) 1
-+XCOMM   -- S. Taoka
-+XCOMM
- #define DoNormalLib YES
- 
- #include <Library.tmpl>
-@@ -10,7 +13,9 @@ XCOMM
++++ kWnn/jlib/Imakefile	Fri Apr 21 01:05:04 2000
+@@ -10,7 +10,9 @@ XCOMM
  LINKS = getopt.c jl.c js.c wnnerrmsg.c
      JLIBDEFINES = -DWRITE_CHECK
         INCLUDES = -I$(KWNNINCLUDESRC) -I$(TOP)
@@ -22,7 +12,7 @@ $OpenBSD: patch-kWnn_jlib_Imakefile,v 1.1 2000/04/16 21:53:38 espie Exp $
     INSTALLFLAGS = $(INSTBINFLAGS)
         LINTLIBS = 
  
-@@ -28,6 +33,15 @@ SRC4= $(KWNNETCSRC)/strings.c
+@@ -28,6 +30,15 @@ SRC4= $(KWNNETCSRC)/strings.c
  OBJ4= strings.o
  SRC5= $(KWNNETCSRC)/bcopy.c
  OBJ5= bcopy.o
@@ -38,7 +28,7 @@ $OpenBSD: patch-kWnn_jlib_Imakefile,v 1.1 2000/04/16 21:53:38 espie Exp $
  LOCAL_RKSRCS= $(KWNNROMKANSRC)/rk_bltinfn.c \
  	$(KWNNROMKANSRC)/rk_main.c \
  	$(KWNNROMKANSRC)/rk_modread.c \
-@@ -40,8 +54,8 @@ LOCAL_RKOBJS= $(KWNNROMKANSRC)/rk_bltinf
+@@ -40,8 +51,8 @@ LOCAL_RKOBJS= $(KWNNROMKANSRC)/rk_bltinf
  	$(KWNNROMKANSRC)/rk_read.o \
  	$(KWNNROMKANSRC)/rk_vars.o
  
@@ -49,7 +39,7 @@ $OpenBSD: patch-kWnn_jlib_Imakefile,v 1.1 2000/04/16 21:53:38 espie Exp $
  SRCS= $(SRC1) $(SRC3) $(LOCAL_ETCSRCS)
  OBJS= $(OBJ1) $(OBJ3) $(LOCAL_ETCOBJS) $(LOCAL_RKOBJS)
  
-@@ -80,6 +94,10 @@ InstallLibrary(kwnn_p,$(WNNLIBDIR))
+@@ -80,6 +91,10 @@ InstallLibrary(kwnn_p,$(WNNLIBDIR))
  WnnSpecialObjectRule($(OBJ3),$(SRC3),$(KWNNETCSRC),)
  WnnSpecialObjectRule($(OBJ4),$(SRC4),$(KWNNETCSRC),)
  WnnSpecialObjectRule($(OBJ5),$(SRC5),$(KWNNETCSRC),)

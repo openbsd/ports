@@ -1,16 +1,7 @@
-$OpenBSD: patch-kWnn_etc_Imakefile,v 1.1 2000/04/16 21:53:38 espie Exp $
+$OpenBSD: patch-kWnn_etc_Imakefile,v 1.2 2000/04/20 23:11:47 espie Exp $
 --- kWnn/etc/Imakefile.orig	Wed Aug 17 03:11:33 1994
-+++ kWnn/etc/Imakefile	Thu Apr 13 20:41:39 2000
-@@ -1,6 +1,8 @@
- XCOMM
- XCOMM $Id: patch-kWnn_etc_Imakefile,v 1.1 2000/04/16 21:53:38 espie Exp $
- XCOMM
-+XCOMM For Mule, add sources (yincoding.c py_table.c zy_table.c) 1
-+XCOMM   -- S. Taoka
- #define DoNormalLib YES
- 
- #include <Library.tmpl>
-@@ -19,6 +21,9 @@ SRCS= strings.c \
++++ kWnn/etc/Imakefile	Fri Apr 21 01:04:44 2000
+@@ -19,6 +19,9 @@ SRCS= strings.c \
  	xutoj.c \
  	dic_atojis.c \
  	msg.c \
@@ -20,7 +11,7 @@ $OpenBSD: patch-kWnn_etc_Imakefile,v 1.1 2000/04/16 21:53:38 espie Exp $
  	server_env.c
  
  OBJS= strings.o \
-@@ -32,6 +37,9 @@ OBJS= strings.o \
+@@ -32,6 +35,9 @@ OBJS= strings.o \
  	xutoj.o \
  	dic_atojis.o \
  	msg.o \
@@ -30,7 +21,7 @@ $OpenBSD: patch-kWnn_etc_Imakefile,v 1.1 2000/04/16 21:53:38 espie Exp $
  	server_env.o
  
  LibraryObjectRule()
-@@ -51,6 +59,9 @@ LinkSourceFile(bcopy.c,$(WNNETCSRC))
+@@ -51,6 +57,9 @@ LinkSourceFile(bcopy.c,$(WNNETCSRC))
  LinkSourceFile(xutoj.c,$(WNNETCSRC))
  LinkSourceFile(dic_atojis.c,$(WNNETCSRC))
  LinkSourceFile(msg.c,$(WNNETCSRC))
