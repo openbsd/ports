@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/24 00:40:24 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2002/07/31 17:14:30 pvalchev Exp $
 
 COMMENT=		"traceroute implementation using TCP packets"
 
-DISTNAME=		tcptraceroute-1.3
+DISTNAME=		tcptraceroute-1.4
 CATEGORIES=    		net
-NEED_VERSION=		1.427
 
 HOMEPAGE=		http://michael.toren.net/code/tcptraceroute/
 
@@ -21,7 +20,8 @@ MASTER_SITES=		http://michael.toren.net/code/tcptraceroute/
 LIB_DEPENDS=		net::net/libnet
 
 MAKE_FLAGS=		CC="${CC}" \
-			CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+			CFLAGS="${CFLAGS} -L${LOCALBASE}/lib \
+			-I${LOCALBASE}/include"
 
 ALL_TARGET=
 
