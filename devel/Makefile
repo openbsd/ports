@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2001/01/19 03:14:29 kevlo Exp $
+# $OpenBSD: Makefile,v 1.57 2001/01/19 16:42:50 reinhard Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -43,6 +43,7 @@
      SUBDIR += gmp
      SUBDIR += gperf
      SUBDIR += gsl
+     SUBDIR += gtl
      SUBDIR += id-utils
 #    SUBDIR += ilu
      SUBDIR += jad
