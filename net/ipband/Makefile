@@ -1,3 +1,5 @@
+# $OpenBSD: Makefile,v 1.5 2002/02/20 20:00:16 pvalchev Exp $
+
 COMMENT=	"pcap based IP traffic monitor"
 
 VERSION=	0.7.1
