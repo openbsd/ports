@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.18 2001/12/22 09:08:04 obecian Exp $
+# $OpenBSD: Makefile,v 1.19 2002/03/03 04:00:11 brad Exp $
 # $FreeBSD: Makefile,v 1.15 1999/08/25 06:14:08 obrien Exp $
 
-COMMENT=	"gtk-based graphic file viewer"
+COMMENT=	"Gtk-based graphic file viewer"
 
-DISTNAME=	gqview-1.0
+DISTNAME=	gqview-1.1.1
 CATEGORIES=	graphics
-NEED_VERSION=	1.499
+NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= gqview
 
 HOMEPAGE=	http://gqview.sourceforge.net
 
-LIB_DEPENDS=	gdk_pixbuf.2::graphics/gdk-pixbuf
+LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
+		gdk_pixbuf.2::graphics/gdk-pixbuf
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 

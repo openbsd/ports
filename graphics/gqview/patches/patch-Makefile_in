@@ -1,6 +1,7 @@
---- Makefile.in~	Sat Dec 22 00:05:57 2001
-+++ Makefile.in	Sat Dec 22 00:06:26 2001
-@@ -109,8 +109,8 @@ EXTRA_DIST = \
+$OpenBSD: patch-Makefile_in,v 1.3 2002/03/03 04:00:12 brad Exp $
+--- Makefile.in.orig	Thu Feb 14 15:18:59 2002
++++ Makefile.in	Sat Mar  2 22:02:13 2002
+@@ -111,8 +111,8 @@ EXTRA_DIST = \
  	gqview.1
  
  
