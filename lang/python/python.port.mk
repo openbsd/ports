@@ -1,4 +1,7 @@
-# $OpenBSD: python.port.mk,v 1.2 2003/07/29 19:35:32 sturm Exp $
+# $OpenBSD: python.port.mk,v 1.3 2003/07/31 07:01:21 jolan Exp $
+#
+#	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
+#	This file is in the public domain.
 
 MODPY_VERSION?=		2.2
 
