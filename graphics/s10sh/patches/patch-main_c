@@ -1,0 +1,15 @@
+$OpenBSD: patch-main_c,v 1.1.1.1 2001/05/08 22:19:48 markus Exp $
+--- main.c.orig	Tue Mar 13 14:46:18 2001
++++ main.c	Tue May  8 08:47:39 2001
+@@ -37,7 +37,11 @@ int dirlist_size = 0;
+ char lastpath[1024] = {'\0'};
+ char cameraid[1024];
+ char firmware[8];
++#ifdef HAVE_USB_SUPPORT
++int mode = USB_MODE;
++#else
+ int mode = SERIAL_MODE; /* this is the default mode */
++#endif
+ int use_lowers = 0;     /* write out files with upper case chars by default */
+ int GMT_offset = 0;
+ 

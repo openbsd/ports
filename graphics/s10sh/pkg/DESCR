@@ -1,0 +1,15 @@
+S10sh implements a DOS filesystem like interface. Using S10sh you
+can download/explore the images captured with your digital camera.
+This software is developed by Salvatore Sanfilippo that can be
+contacted at the email address <antirez@invece.org>, and is distributed
+under the terms of the GNU public license version 2.
+
+This driver works at least with the following PowerShot models:
+
+	PS10
+	PS20
+	PS100 (Digital Ixus)
+	A50
+	Pro70
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,44 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2001/05/08 22:19:48 markus Exp $
+--- configure.orig	Tue Mar 13 14:46:18 2001
++++ configure	Tue May  8 08:47:39 2001
+@@ -3,38 +3,9 @@
+ echo S10sh configuration utility
+ echo
+ 
+-READLINE_DEFAULT="n"
+-USB_DEFAULT="n"
++READLINE_DEFAULT="y"
++USB_DEFAULT="y"
+ 
+-if test -f /usr/include/readline/readline.h; then
+-	READLINE_DEFAULT="y"
+-fi
+-
+-if test -f /usr/local/include/readline/readline.h; then
+-	READLINE_DEFAULT="y"
+-fi
+-
+-echo Do you want readline support? \(y/n default $READLINE_DEFAULT\)
+-read TMP
+-if [ "$TMP" != "" ]; then
+-	READLINE_DEFAULT=$TMP
+-fi
+-
+-echo Do you want USB support? \(y/n default $USB_DEFAULT\)
+-read TMP
+-if [ "$TMP" != "" ]; then
+-	USB_DEFAULT=$TMP
+-fi
+-
+-if [ "$READLINE_DEFAULT" != "y" ]; then
+-	READLINE_DEFAULT="n"
+-fi
+-
+-if [ "$USB_DEFAULT" != "y" ]; then
+-	USB_DEFAULT="n"
+-fi
+-
+-echo
+ echo READLINE support: $READLINE_DEFAULT
+ echo USB support     : $USB_DEFAULT
+ 

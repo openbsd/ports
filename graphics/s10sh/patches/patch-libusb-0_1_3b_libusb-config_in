@@ -1,0 +1,10 @@
+$OpenBSD: patch-libusb-0_1_3b_libusb-config_in,v 1.1.1.1 2001/05/08 22:19:48 markus Exp $
+--- libusb-0.1.3b/libusb-config.in.orig	Wed Feb 16 23:09:31 2000
++++ libusb-0.1.3b/libusb-config.in	Tue May  8 08:47:40 2001
+@@ -75,5 +75,5 @@ if test "$echo_cflags" = "yes"; then
+ 	echo $includes
+ fi
+ if test "$echo_libs" = "yes"; then
+-	echo -L@libdir@ -lusb
++	echo -L@libdir@ -Wl,-R@libdir@ -lusb
+ fi
