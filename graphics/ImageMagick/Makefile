@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2000/05/21 12:39:00 fgsch Exp $
+# $OpenBSD: Makefile,v 1.32 2000/05/30 08:11:59 fgsch Exp $
+
+BROKEN=		"file not found; new version available"
 
 DISTNAME=	ImageMagick-4.2.9
 CATEGORIES=     graphics
