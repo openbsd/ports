@@ -1,0 +1,4 @@
+lxsplit is a utility that facilitates join and split operations on
+files.  It basically performs the same functions as cat(1) and
+split(1), but has useful features such as warning if all parts aren't
+available for a join operation.
