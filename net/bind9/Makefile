@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2002/08/05 20:48:59 jakob Exp $
+# $OpenBSD: Makefile,v 1.34 2002/10/26 12:44:07 jakob Exp $
 
 COMMENT=		Berkeley Internet Name Daemon
 COMMENT-libbind=	BIND 8 compatible stub resolver library
 
 VERSION=	9.2.1
 DISTNAME=	bind-${VERSION}
+PKGNAME=	bind-${VERSION}p1
 CATEGORIES=	net
 
 MULTI_PACKAGES=		-libbind
@@ -36,7 +37,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-libtool ${CONFIGURE_SHARED} \
 			--localstatedir=/var \
 			--enable-libbind \
-			--with-openssl="/usr"
+			--with-openssl="/usr" \
+			--with-randomdev=/dev/arandom
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}
 
