@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/31 20:31:25 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/02 19:02:10 naddy Exp $
 
 COMMENT=	"command line gnutella client"
 
@@ -8,7 +8,7 @@ NEED_VERSION=	1.488
 
 HOMEPAGE=	http://www.gnutelliums.com/linux_unix/gnut
 
-MAINTAINER=	Nikolay Sturm <nikolay.sturm@desy.de>
+MAINTAINER=	Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

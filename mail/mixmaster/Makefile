@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 21:09:17 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/02 19:02:10 naddy Exp $
 
 COMMENT=	"client for anonymous remailing"
 
@@ -8,7 +8,7 @@ PKGNAME=	mixmaster-${VERSION}
 CATEGORIES=	mail security
 NEED_VERSION=	1.515
 
-MAINTAINER=	Nikolay Sturm <nikolay.sturm@desy.de>
+MAINTAINER=	Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
