@@ -1,22 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/04/06 14:09:17 danh Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/12/05 17:30:22 sturm Exp $
 bin/perltidy
-man/man1/perl2web.1
+${P5SITE}/Perl/Tidy.pm
+@comment ${P5ARCH}/auto/Perl/Tidy/.packlist
+@comment ${P5ARCH}/perllocal.pod
 man/man1/perltidy.1
-share/doc/perltidy/BUGS.html
-share/doc/perltidy/BUGS.pod
-share/doc/perltidy/BUGS.txt
-share/doc/perltidy/COPYING
-share/doc/perltidy/ChangeLog.html
-share/doc/perltidy/ChangeLog.pod
-share/doc/perltidy/ChangeLog.txt
-share/doc/perltidy/README
-share/doc/perltidy/perl2web.html
-share/doc/perltidy/perl2web.pod
-share/doc/perltidy/perl2web.txt
-share/doc/perltidy/perltidy.html
-share/doc/perltidy/perltidy.pod
-share/doc/perltidy/perltidy.txt
-share/doc/perltidy/tutorial.html
+man/man3p/Perl::Tidy.3p
+share/doc/perltidy/stylekey.pod
+share/doc/perltidy/testfile.pl
 share/doc/perltidy/tutorial.pod
-share/doc/perltidy/tutorial.txt
+share/examples/perltidy/README
+share/examples/perltidy/bbtidy.pl
+share/examples/perltidy/ex_mp.pl
+share/examples/perltidy/find_naughty.pl
+share/examples/perltidy/lextest
+share/examples/perltidy/perlcomment.pl
+share/examples/perltidy/perllinetype.pl
+share/examples/perltidy/perlmask.pl
+share/examples/perltidy/perltidy.bat
+share/examples/perltidy/perlxmltok.pl
+share/examples/perltidy/testfa.t
+share/examples/perltidy/testff.t
+@dirrm share/examples/perltidy
 @dirrm share/doc/perltidy
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Perl/Tidy
+@comment @dirrm ${P5ARCH}/auto/Perl
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@comment @dirrm ${P5SITE}/Perl
