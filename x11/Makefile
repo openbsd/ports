@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2002/03/17 22:21:33 jcs Exp $
+# $OpenBSD: Makefile,v 1.132 2002/04/02 03:50:35 drahn Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -79,6 +79,7 @@
      SUBDIR += mxconns
 #    SUBDIR += neXtaw
      SUBDIR += ogle
+     SUBDIR += ogle,altivec
      SUBDIR += olvwm
      SUBDIR += openmotif
 #    SUBDIR += p5-Tcl-Tk

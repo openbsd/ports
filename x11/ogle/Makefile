@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/04/02 01:04:19 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/04/02 03:50:35 drahn Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64
 
@@ -27,9 +27,18 @@ LIB_DEPENDS=	dvdread::devel/libdvdread \
 		xml2::textproc/libxml \
 		jpeg.62::graphics/jpeg
 
+FLAVORS=	altivec
+FLAVOR?=
+
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	::devel/binutils/stable
 MAKE_ENV=GAS_DIR=${TRUEPREFIX}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin
+.endif
+
+.if ${FLAVOR:L} == "altivec"
+ONLY_FOR_ARCHS=	powerpc
+BUILD_DEPENDS+=	::devel/binutils/stable
+PORTPATH=${TRUEPREFIX}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${LOCALBASE}/sbin
 .endif
 
 .include <bsd.port.mk>

@@ -53,4 +53,10 @@ go down to 70% cpu).
 If you can, you may also wish to add several `non-standard' 
 modes to your XF86Config. The most useful being 720x576.
 
+FLAVORS: altivec (ppc only)
+Uses altivec vector unit for a huge speed-up.  Only works on
+powerpc platform with altivec hardware support.
+Altivec is present on all PowerPC G4 processors. Altivec is
+not present on G3 or earlier (60x) processors.
+
 WWW: ${HOMEPAGE}
