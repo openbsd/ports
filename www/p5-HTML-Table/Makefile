@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/15 17:58:51 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/06/26 09:11:05 kevlo Exp $
 
 COMMENT=	"generate HTML tables for cgi scripts"
 
-DISTNAME=	HTML-Table-1.12a
+DISTNAME=	HTML-Table-1.15
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
 NEED_VERSION=	1.515
