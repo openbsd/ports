@@ -1,4 +1,3 @@
-@owner games
 @group games
 bin/slash
 man/man6/dgn_comp.6
