@@ -12,7 +12,7 @@
 +	;;
 +    *-openbsd*)
 +	DSOSUF=so
-+	DSOSUF_VERSION=${DSOSUF}.35.4
++	DSOSUF_VERSION=${DSOSUF}.35.5
 +	LIBCOPTS='-fpic'
 +	DSO=OPENBSD
 +	TIFFLIBREF='-L${DEPTH}/libtiff -ltiff'

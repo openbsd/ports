@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2000/03/24 23:28:11 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/05/21 10:57:40 fgsch Exp $
 
-DISTNAME=	tiff-v3.5.4
-PKGNAME=	tiff-3.5.4
+DISTNAME=	tiff-v3.5.5
+PKGNAME=	tiff-3.5.5
 CATEGORIES=	graphics
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	http://www.libtiff.org/
 
 
@@ -20,7 +20,8 @@ LIB_DEPENDS=    jpeg.62::graphics/jpeg
 FAKE=	Yes
 
 HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN='$${DESTDIR}${PREFIX}/bin' \
+CONFIGURE_ARGS=	--with-ZIP --with-JPEG \
+		--with-DIR_BIN='$${DESTDIR}${PREFIX}/bin' \
 		--with-DIR_LIB='$${DESTDIR}${PREFIX}/lib' \
 		--with-DIR_INC='$${DESTDIR}${PREFIX}/include' \
 		--with-DIR_MAN='$${DESTDIR}${PREFIX}/man' \

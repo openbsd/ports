@@ -20,7 +20,7 @@ include/tiff.h
 include/tiffconf.h
 include/tiffio.h
 lib/libtiff.a
-lib/libtiff.so.35.4
+lib/libtiff.so.35.5
 @exec /sbin/ldconfig -m %B
 man/man1/fax2ps.1
 man/man1/fax2tiff.1
