@@ -1,8 +1,15 @@
-# $OpenBSD: Makefile,v 1.27 2001/02/02 16:47:13 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2001/04/14 02:56:16 brad Exp $
+
+COMMENT=	"Program for Internet E-mail and News, with editor"
+COMMENT-pico=	"small text editor"
+COMMENT-pine=	"Program for Internet E-mail and News, without editor"
 
 VERSION=	4.33
 DISTNAME=	pine${VERSION}
-NEED_VERSION=	1.336
+PKGNAME=	pine+pico-${VERSION}
+PKGNAME-pico=	pico-${VERSION}
+PKGNAME-pine=	pine-${VERSION}
+NEED_VERSION=	1.384
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/
 
@@ -15,24 +22,21 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
-MULTI_PACKAGES=	-pine -pico
+FLAVORS=	ldap
+FLAVOR?=
+
+MULTI_PACKAGES=	-pico -pine
 SUBPACKAGE?=
 
-.if ${SUBPACKAGE} == "-pine"
-PKGNAME=	pine-${VERSION}
-CATEGORIES=	mail news
-LIB_DEPENDS=	c-client.2.1::mail/c-client
-.elif ${SUBPACKAGE} == "-pico"
-PKGNAME=	pico-${VERSION}
+.if ${SUBPACKAGE} == "-pico"
 CATEGORIES=	editors
+.elif ${SUBPACKAGE} == "-pine"
+CATEGORIES= mail news
+LIB_DEPENDS=	c-client.2.1::mail/c-client
 .else
-PKGNAME=	pine+pico-${VERSION}
 CATEGORIES=	mail news editors
 LIB_DEPENDS=	c-client.2.1::mail/c-client
 .endif
-
-FLAVORS=        ldap
-FLAVOR?=
 
 .if ${FLAVOR:L:Mldap}
 LIB_DEPENDS+=	ldap.2::databases/openldap
