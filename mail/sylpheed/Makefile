@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2004/10/10 19:19:41 couderc Exp $
+# $OpenBSD: Makefile,v 1.51 2004/11/07 17:45:54 couderc Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
@@ -23,7 +23,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-ssl --enable-ipv6 \
 			--disable-imlib
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 FLAVORS=	compface gpgme ldap
 FLAVOR?=
