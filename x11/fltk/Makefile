@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/11/21 01:29:49 matt Exp $
+# $OpenBSD: Makefile,v 1.17 2002/03/27 10:28:47 espie Exp $
 
 COMMENT=	"Fast-Light Tool Kit"
 
@@ -25,6 +25,8 @@ USE_X11=	Yes
 CONFIGURE_STYLE=autoconf dest
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 WRKDIST=	${WRKDIR}/${PKGNAME}
+MAKE_FLAGS=	DSONAME=libfltk.so.1.0
+FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 NO_REGRESS=	Yes
 
