@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/11/26 23:28:22 margarida Exp $
+# $OpenBSD: Makefile,v 1.6 2004/11/17 19:06:16 nick Exp $
 
 COMMENT=	"pager for the Blackbox window manager."
 
@@ -9,7 +9,7 @@ MASTER_SITES=	http://bbtools.thelinuxcommunity.org/sources/ \
 
 HOMEPAGE=	http://bbtools.thelinuxcommunity.org/available.phtml#bbpager
 
-MAINTAINER=	Dorqus Maximus <dorqus@bsdfreek.com>
+MAINTAINER=	Josh Rivel <dorqus@bsdfreek.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
