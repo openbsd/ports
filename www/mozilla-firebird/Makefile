@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/06/06 12:50:37 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2003/06/19 19:09:02 jolan Exp $
 
 COMMENT=	"redesign of Mozilla's browser component"
 
@@ -60,6 +60,8 @@ MOZ=		${PREFIX}/mozilla-firebird
 
 pre-configure:
 	@cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
+	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g' \
+		${WRKSRC}/browser/app/mozilla.in
 
 do-install:
 	${INSTALL_DATA_DIR} ${MOZ}

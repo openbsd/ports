@@ -1,0 +1,20 @@
+$OpenBSD: patch-browser_app_mozilla_in,v 1.5 2003/06/19 19:09:02 jolan Exp $
+--- browser/app/mozilla.in.orig	Wed Aug 21 14:21:36 2002
++++ browser/app/mozilla.in	Wed Jun 18 21:28:03 2003
+@@ -33,6 +33,7 @@
+ #set -x
+ 
+ moz_libdir=%MOZAPPDIR%
++MOZ_PLUGIN_PATH=_LOCALBASE_/lib/mozilla-plugins
+ MRE_HOME=%MREDIR%
+ 
+ # honor MOZILLA_FIVE_HOME if it's there
+@@ -111,7 +112,7 @@ do
+   esac
+ done
+ 
+-export MRE_HOME
++export MOZ_PLUGIN_PATH MRE_HOME
+ eval "set -- $moreargs"
+ if [ $debugging = 1 ]
+ then
