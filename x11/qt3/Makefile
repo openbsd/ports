@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/04 16:13:04 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/05 12:40:52 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt3
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 HOMEPAGE=	http://www.trolltech.com/qt/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
-FLAVORS=	no_mysql no_pgsql
+FLAVORS=	no_mysql no_postgresql
 
 # Adjust for arches where mysql/pgsql don't work.
 FLAVOR?=
@@ -43,7 +43,9 @@ CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg \
 		-v -stl -xrender \
 		-plugin-sql-psql -no-sql-odbc \
 		-I${X11BASE}/include/freetype2 \
+		-I${LOCALBASE}/include \
 		-L${WRKSRC}/lib \
+		-L${LOCALBASE}/lib
 
 
 # This is needed to find plugins
@@ -208,10 +210,14 @@ do-install:
 	    ${QT_PLUGINSDIR}/imageformats
 	${INSTALL_DATA} ${WRKBUILD}/plugins/imageformats/libqmng.so \
 	    ${QT_PLUGINSDIR}/imageformats
+.if !empty(FLAVOR:Mno_postgresql)
 	${INSTALL_DATA} ${WRKBUILD}/plugins/sqldrivers/libqsqlpsql.so \
 	    ${QT_PLUGINSDIR}/sqldrivers
+.endif
+.if !empty(FLAVOR:Mno_mysql)
 	${INSTALL_DATA} ${WRKBUILD}/plugins/sqldrivers/libqsqlmysql.so \
 	    ${QT_PLUGINSDIR}/sqldrivers
+.endif
 	${INSTALL_DATA} ${WRKBUILD}/plugins/designer/libwizards.so \
 	    ${QT_PLUGINSDIR}/designer
 	${INSTALL_DATA} ${WRKBUILD}/plugins/designer/libcppeditor.so \
