@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2004/02/21 12:31:30 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2004/02/21 20:49:14 espie Exp $
 #
 
      SUBDIR += drgeo
+     SUBDIR += drgeo-doc
      SUBDIR += dvorak7min
      SUBDIR += edict
      SUBDIR += gtypist

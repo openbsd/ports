@@ -4,3 +4,6 @@ while respecting their geometric constraints.
 
 It was formerly called Dr Genius.
 A similar program, kig is part of the kdeedu package.
+
+The documentation is in a separate package, drgeo-doc, and it requires
+an html viewer such as konqueror (kdebase) or dillo to be usable.
