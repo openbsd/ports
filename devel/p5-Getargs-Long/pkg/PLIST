@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/13 16:32:22 sturm Exp $
+${P5SITE}/Getargs/Long.pm
+@comment ${P5ARCH}/auto/Getargs/Long/.packlist
+@comment ${P5ARCH}/perllocal.pod
+man/man3p/Getargs::Long.3p
+@comment @dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Getargs/Long
+@comment @dirrm ${P5ARCH}/auto/Getargs
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Getargs
