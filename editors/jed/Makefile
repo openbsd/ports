@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.7 1999/07/15 01:47:28 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/10/01 23:48:28 brad Exp $
 
-DISTNAME=       jed-B0.99-8
-PKGNAME=        jed-0.99.8
+DISTNAME=       jed-B0.99-9
+PKGNAME=        jed-0.99.9
 CATEGORIES=	editors
 MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/
 
-MAINTAINER=     ports@OpenBSD.ORG
-
 LIB_DEPENDS=	slang.13:${PORTSDIR}/devel/libslang
 
-# comment out the next line if you don't want the X version of JED.
-XJED=		xjed
+MAINTAINER=     ports@openbsd.org
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV=	JED_ROOT=${PREFIX}/lib/jed
+
+# comment out the next line if you don't want the X version of JED.
+XJED=		xjed
 
 ALL_TARGET=     all getmail ${XJED}
 
