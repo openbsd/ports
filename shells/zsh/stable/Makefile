@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2001/06/05 16:34:41 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2001/07/01 15:43:40 lebel Exp $
 
 COMMENT=	"the Z shell, Bourne shell-compatible, release flavor"
 COMMENT-zftp=	"the Z shell embedded ftp client"
 
-VERSION=	4.0.1
+VERSION=	4.0.2
 DISTNAME=	zsh-${VERSION}
 CATEGORIES=	shells
 NEED_VERSION=	1.402
