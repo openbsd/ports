@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/06/14 18:43:11 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/06/15 18:48:57 brad Exp $
 
 DISTNAME=	mpeg_lib-1.3.1
 CATEGORIES=	graphics
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= gnu old
+CONFIGURE_STYLE= gnu dest
 
 .include <bsd.port.mk>
 
