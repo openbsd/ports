@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2001/04/19 22:26:31 brad Exp $
+# $OpenBSD: Makefile,v 1.44 2001/05/18 00:57:29 naddy Exp $
 
 COMMENT=	"tty-based e-mail client"
 
@@ -22,8 +22,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	slang curses imap pop
-FLAVOR?=	curses
+FLAVORS=	slang imap pop
+FLAVOR?=
 
 SYSCONFDIR=	/etc/mutt
 CONFIGURE_STYLE= gnu
@@ -38,11 +38,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .if ${FLAVOR:L:Mslang}
 LIB_DEPENDS+=	slang.14::devel/libslang
 CONFIGURE_ARGS+= --with-slang="${PREFIX}"
-.elif ${FLAVOR:L:Mcurses}
-CONFIGURE_ARGS+= --with-curses
 .else
-.BEGIN:
-	echo "Bad choice FLAVOR=${FLAVOR}"; exit 1
+CONFIGURE_ARGS+= --with-curses
 .endif
 
 # If you need IMAP or POP, you may want to enable those.
