@@ -1,32 +1,6 @@
---- unix/Makefile.orig	Mon Nov 29 13:22:42 1999
-+++ unix/Makefile	Thu Mar 16 19:23:06 2000
-@@ -17,7 +17,6 @@
- LN = ln -s
- 
- # (to use the Gnu compiler, change cc to gcc in CC)
--CC = cc
- BIND = $(CC)
- AS = $(CC) -c
- E =
-@@ -33,7 +32,7 @@
- MANFLAGS = 444
- 
- # target directories - where to install executables and man pages to
--prefix = /usr/local
-+prefix = ${PREFIX}
- BINDIR = $(prefix)/bin
- manext=1
- MANDIR = $(prefix)/man/man$(manext)
-@@ -45,7 +44,7 @@
- #   CFLAGS    flags for C compile
- #   LFLAGS1   flags after output file spec, before obj file list
- #   LFLAGS2   flags after obj file list (libraries, etc)
--CFLAGS = -O2 -I. -DUNIX $(LOCAL_ZIP)
-+CFLAGS += -I. -DUNIX
- LFLAGS1 =
- LFLAGS2 = -s
- 
-@@ -125,10 +124,10 @@
+--- unix/Makefile.orig	Mon Nov 29 00:22:42 1999
++++ unix/Makefile	Sun Mar 26 17:07:23 2000
+@@ -125,10 +125,10 @@
  # install
  install:        $(ZIPS)
  	-$(INSTALL_D) $(BINDIR)
