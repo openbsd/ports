@@ -1,10 +1,10 @@
-$OpenBSD: sup-alpha-libgnorba_Makefile_in,v 1.1 2002/09/16 05:15:23 marcm Exp $
---- libgnorba/Makefile.in.orig	Thu Sep  5 09:32:04 2002
-+++ libgnorba/Makefile.in	Thu Sep  5 09:32:14 2002
-@@ -450,7 +450,7 @@ goad-browser: $(goad_browser_OBJECTS) $(
+$OpenBSD: sup-alpha-libgnorba_Makefile_in,v 1.2 2003/01/02 03:32:25 marcm Exp $
+--- libgnorba/Makefile.in.orig	Thu Aug 15 15:25:44 2002
++++ libgnorba/Makefile.in	Mon Dec  2 00:04:43 2002
+@@ -462,7 +462,7 @@ goad-browser$(EXEEXT): $(goad_browser_OB
  
- gnome-name-service: $(gnome_name_service_OBJECTS) $(gnome_name_service_DEPENDENCIES)
- 	@rm -f gnome-name-service
+ gnome-name-service$(EXEEXT): $(gnome_name_service_OBJECTS) $(gnome_name_service_DEPENDENCIES)
+ 	@rm -f gnome-name-service$(EXEEXT)
 -	$(LINK) $(gnome_name_service_LDFLAGS) $(gnome_name_service_OBJECTS) $(gnome_name_service_LDADD) $(LIBS)
 +	$(LINK) $(gnome_name_service_LDFLAGS) $(gnome_name_service_OBJECTS) $(gnome_name_service_LDADD) $(LIBS) -liconv -all-static
  
