@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/15 22:54:50 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/29 03:03:24 pvalchev Exp $
 
 COMMENT=	"UPS monitoring program supporting many brands"
 
@@ -20,6 +20,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L} == "cgi"
 LIB_DEPENDS=	gd.18::graphics/gd
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lttf" CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 .endif
 
 CONFIGURE_STYLE= gnu old
