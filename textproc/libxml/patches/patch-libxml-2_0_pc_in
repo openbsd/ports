@@ -1,0 +1,9 @@
+$OpenBSD: patch-libxml-2_0_pc_in,v 1.1 2002/07/31 07:07:50 kevlo Exp $
+--- libxml-2.0.pc.in.orig	Thu Jul 25 13:26:37 2002
++++ libxml-2.0.pc.in	Thu Jul 25 13:30:57 2002
+@@ -9,4 +9,4 @@ Version: @VERSION@
+ Description: libXML library version2.
+ Requires:
+ Libs: -L${libdir} -lxml2 @THREAD_LIBS@ @Z_LIBS@ @M_LIBS@ @LIBS@
+-Cflags: -I${includedir}/libxml2 @XML_CFLAGS@
++Cflags: -I${includedir} @XML_CFLAGS@
