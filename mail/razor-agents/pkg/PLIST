@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/09/20 02:18:15 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/09/30 03:10:46 marcm Exp $
+bin/razor-admin
 bin/razor-check
 bin/razor-client
-bin/razor-register
 bin/razor-report
 bin/razor-revoke
 ${P5SITE}/Razor2/Client/Agent.pm
