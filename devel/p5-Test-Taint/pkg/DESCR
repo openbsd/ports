@@ -1,0 +1,4 @@
+When you're writing unit tests for code that deals with tainted data,
+you'll want to have a way to provide tainted data for your routines to
+handle, and easy ways to check and report on the taintedness of your
+data, in standard Test::More style.
