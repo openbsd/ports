@@ -1,10 +1,10 @@
-# $OpenBSD: DEINSTALL,v 1.1.1.1 1999/04/18 20:48:05 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2000/06/15 18:39:30 brad Exp $
 #
 # fnlib de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
-PREFIX=${PKG_PREFIX:-/usr/X11R6}
+PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=/etc/fnrc
 
 if [ -f ${CONFIG_FILE} ]; then
