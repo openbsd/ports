@@ -1,12 +1,12 @@
 # OpenBSD makefile for:	ImageMagick
-# Version required:	4.0.5
+# Version required:	4.0.6
 # Date created:		1998-Apr-21
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/23 19:00:10 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1998/06/07 19:25:41 marc Exp $
 #
 
-DISTNAME=		ImageMagick-4.0.5
+DISTNAME=		ImageMagick-4.0.6
 CATEGORIES=     	graphics x11
 
 MAINTAINER=		marc@openbsd.org

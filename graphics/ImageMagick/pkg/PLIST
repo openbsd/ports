@@ -7,7 +7,7 @@ bin/identify
 bin/import
 bin/mogrify
 bin/montage
-lib/libMagick.so.4.5
+lib/libMagick.so.4.6
 lib/libMagick.la
 lib/libMagick.a
 man/man1/xtp.1

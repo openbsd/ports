@@ -1,57 +1,56 @@
---- configure.~1~	Tue Apr 21 09:53:37 1998
-+++ configure	Tue Apr 21 23:02:48 1998
-@@ -4611,16 +4611,16 @@
- echo "configure:4612: checking for TIFF support ..." >&5
+--- configure.~1~	Mon May 18 07:11:59 1998
++++ configure	Sun Jun  7 11:19:49 1998
+@@ -5083,16 +5083,16 @@
+ echo "configure:5084: checking for TIFF support ..." >&5
      failed=0;
      passed=0;
 -    ac_safe=`echo "tiff.h" | sed 'y%./+-%__p_%'`
 -echo $ac_n "checking for tiff.h""... $ac_c" 1>&6
--echo "configure:4617: checking for tiff.h" >&5
+-echo "configure:5089: checking for tiff.h" >&5
 +    ac_safe=`echo "tiff34.h" | sed 'y%./+-%__p_%'`
 +echo $ac_n "checking for tiff34.h""... $ac_c" 1>&6
-+echo "configure:4617: checking for tiff34.h" >&5
++echo "configure:5089: checking for tiff34.h" >&5
  if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    cat > conftest.$ac_ext <<EOF
- #line 4622 "configure"
+ #line 5094 "configure"
  #include "confdefs.h"
 -#include <tiff.h>
 +#include <tiff34.h>
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:4627: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
-@@ -4645,16 +4645,16 @@
+ { (eval echo configure:5099: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+@@ -5117,16 +5117,16 @@
  failed=`expr $failed + 1`
  fi
  
 -    ac_safe=`echo "tiffio.h" | sed 'y%./+-%__p_%'`
 -echo $ac_n "checking for tiffio.h""... $ac_c" 1>&6
--echo "configure:4651: checking for tiffio.h" >&5
+-echo "configure:5123: checking for tiffio.h" >&5
 +    ac_safe=`echo "tiffio34.h" | sed 'y%./+-%__p_%'`
 +echo $ac_n "checking for tiffio34.h""... $ac_c" 1>&6
-+echo "configure:4651: checking for tiffio34.h" >&5
++echo "configure:5123: checking for tiffio34.h" >&5
  if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    cat > conftest.$ac_ext <<EOF
- #line 4656 "configure"
+ #line 5128 "configure"
  #include "confdefs.h"
 -#include <tiffio.h>
 +#include <tiffio34.h>
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:4661: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
-@@ -4679,14 +4679,14 @@
+ { (eval echo configure:5133: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+@@ -5151,14 +5151,14 @@
  failed=`expr $failed + 1`
  fi
  
 -    echo $ac_n "checking for TIFFOpen in -ltiff""... $ac_c" 1>&6
--echo "configure:4684: checking for TIFFOpen in -ltiff" >&5
--ac_lib_var=`echo tiff'_'TIFFOpen | sed 'y%./+-%__p_%'`
+-echo "configure:5156: checking for TIFFOpen in -ltiff" >&5
 +    echo $ac_n "checking for TIFFOpen in -ltiff34""... $ac_c" 1>&6
-+echo "configure:4684: checking for TIFFOpen in -ltiff34" >&5
-+ac_lib_var=`echo tiff34'_'TIFFOpen | sed 'y%./+-%__p_%'`
++echo "configure:5156: checking for TIFFOpen in -ltiff34" >&5
+ ac_lib_var=`echo tiff'_'TIFFOpen | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
@@ -59,9 +58,9 @@
 -LIBS="-ltiff $TRAILING_LIBS $LIBS"
 +LIBS="-ltiff34 $TRAILING_LIBS $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 4692 "configure"
+ #line 5164 "configure"
  #include "confdefs.h"
-@@ -4728,7 +4728,7 @@
+@@ -5200,7 +5200,7 @@
      then
  	echo "$ac_t""no -- some components failed test" 1>&6
      else
