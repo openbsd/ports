@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/10/08 01:25:43 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/10/16 21:38:17 marcm Exp $
 
 COMMENT=		"dialogs for Gnome"
 
-DISTNAME=		zenity-1.6
+DISTNAME=		zenity-2.6.3
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -15,11 +15,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/zenity/1.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/zenity/2.6/}
 EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:intltool-*:textproc/intltool \
+			:p5-XML-Parser-*:textproc/p5-XML-Parser \
 			:scrollkeeper-*:textproc/scrollkeeper
 
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
