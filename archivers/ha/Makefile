@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/12/23 07:29:30 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2003/05/24 01:40:38 jolan Exp $
 
 COMMENT=	"archive files using the HSC compression method"
 
@@ -8,6 +8,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=	.tgz
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

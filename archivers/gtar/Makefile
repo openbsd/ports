@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2002/10/01 02:03:52 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2003/05/24 01:38:08 jolan Exp $
 
 COMMENT=	"GNU version of the traditional tar archiver"
 
@@ -11,6 +11,7 @@ MASTER_SITES=	ftp://alpha.gnu.org/gnu/tar/ \
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
