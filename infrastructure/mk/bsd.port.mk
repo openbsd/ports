@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.315 2000/07/14 23:01:12 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.316 2000/07/14 23:07:25 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -77,7 +77,8 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # MASTER_SITE_SUBDIR - Directory that "%SUBDIR%" in MASTER_SITES is
 #				  replaced by.
 # PACKAGES		- A top level directory where all packages go (rather than
-#				  going locally to each port). (default: ${PORTSDIR}/packages).
+#				  going locally to each port). (default:
+#				  ${PORTSDIR}/packages/${ARCH}).
 # GMAKE			- Set to path of GNU make if not in $PORTPATH (default: gmake).
 # XMKMF			- Set to path of `xmkmf' if not in $PORTPATH 
 #                 (default: xmkmf -a ).
@@ -230,7 +231,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #				  during a build.  User can then decide to skip this port by
 #				  setting ${BATCH}, or compiling only the interactive ports
 #				  by setting ${INTERACTIVE}.
-# FETCH_DEPENDS - A list of "path:dir" pairs of other ports this
+# FETCH_DEPENDS - A list of "path::dir" pairs of other ports this
 #				  package depends in the "fetch" stage.  "path" is the
 #				  name of a file if it starts with a slash (/), an
 #				  executable otherwise.  make will test for the
@@ -238,18 +239,18 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #				  it in $PORTPATH (if it is an executable) and go
 #				  into "dir" to do a "make all install" if it's not
 #				  found.
-# BUILD_DEPENDS - A list of "path:dir" pairs of other ports this
+# BUILD_DEPENDS - A list of "path::dir" pairs of other ports this
 #				  package depends to build (between the "extract" and
 #				  "build" stages, inclusive).  The test done to
 #				  determine the existence of the dependency is the
 #				  same as FETCH_DEPENDS.
-# RUN_DEPENDS	- A list of "path:dir" pairs of other ports this
+# RUN_DEPENDS	- A list of "path::dir" pairs of other ports this
 #				  package depends to run.  The test done to determine
 #				  the existence of the dependency is the same as
 #				  FETCH_DEPENDS.  This will be checked during the
 #				  "install" stage and the name of the dependency will
 #				  be put into the package as well.
-# LIB_DEPENDS	- A list of "lib:dir" pairs of other ports this package
+# LIB_DEPENDS	- A list of "lib::dir" pairs of other ports this package
 #				  depends on.  "lib" is the name of a shared library.
 #				  make will use "ldconfig -r" to search for the
 #				  library.  Note that lib can be any regular expression.
@@ -521,14 +522,14 @@ CONFIGURE_STYLE+=noman
 # where configuration files should go
 SYSCONFDIR?=	/etc
 .if defined(USE_GMAKE)
-BUILD_DEPENDS+=		${GMAKE}:devel/gmake
+BUILD_DEPENDS+=		${GMAKE}::devel/gmake
 MAKE_PROGRAM=		${GMAKE}
 .else
 MAKE_PROGRAM=		${MAKE}
 .endif
 .if ${CONFIGURE_STYLE:L:Mautoconf}
 CONFIGURE_STYLE+=gnu
-BUILD_DEPENDS+=		${AUTOCONF}:devel/autoconf
+BUILD_DEPENDS+=		${AUTOCONF}::devel/autoconf
 AUTOCONF_DIR?=${WRKSRC}
 # missing ?= not an oversight
 AUTOCONF_ENV=PATH=${PORTPATH}
@@ -536,12 +537,12 @@ AUTOCONF_ENV=PATH=${PORTPATH}
 
 .if defined(USE_LIBTOOL)
 LIBTOOL?=			${LOCALBASE}/bin/libtool
-BUILD_DEPENDS+=		${LIBTOOL}:devel/libtool
+BUILD_DEPENDS+=		${LIBTOOL}::devel/libtool
 CONFIGURE_ENV+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 MAKE_ENV+=			LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 .endif
 .if defined(USE_MOTIF) && !defined(HAVE_MOTIF) && !defined(REQUIRES_MOTIF)
-LIB_DEPENDS+=		Xm.:x11/lesstif
+LIB_DEPENDS+=		Xm.::x11/lesstif
 .endif
 
 .if exists(${PORTSDIR}/../Makefile.inc)
@@ -656,7 +657,7 @@ UNZIP?=	unzip
 BZIP2?=	bzip2
 
 .if defined(USE_ZIP)
-BUILD_DEPENDS+=		${UNZIP}:archivers/unzip
+BUILD_DEPENDS+=		${UNZIP}::archivers/unzip
 EXTRACT_CMD?=		${UNZIP}
 EXTRACT_SUFX?=		.zip
 EXTRACT_BEFORE_ARGS?=  -q
@@ -668,7 +669,7 @@ EXTRACT_AFTER_ARGS?=	| ${TAR} -xf -
 EXTRACT_BEFORE_ARGS?=	-dc
 
 .  if defined(USE_BZIP2)
-BUILD_DEPENDS+=		${BZIP2}:archivers/bzip2
+BUILD_DEPENDS+=		${BZIP2}::archivers/bzip2
 EXTRACT_CMD?=		${BZIP2}
 EXTRACT_SUFX?=		.tar.bz2
 .  else
