@@ -3,7 +3,7 @@
 # Date created:		Nov 27 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/27 18:00:19 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1997/12/20 00:59:49 todd Exp $
 #
 
 PKGNAME=	xengine-1.0.1
@@ -21,7 +21,7 @@ USE_IMAKE=	yes
 
 EXTRACT_CMD=		zcat
 EXTRACT_BEFORE_ARGS= 
-EXTRACT_AFTER_ARGS=	| gunshar -d $(WRKDIR)
+EXTRACT_AFTER_ARGS=	| ${SETENV} gunshar -d $(WRKDIR)
 PATCH_DIST_STRIP=	-p1	# no ${PATCHFILES} but used below
 
 pre-patch:
