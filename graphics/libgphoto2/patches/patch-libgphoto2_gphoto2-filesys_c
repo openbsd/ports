@@ -1,0 +1,17 @@
+$OpenBSD: patch-libgphoto2_gphoto2-filesys_c,v 1.1.1.1 2003/04/09 23:55:01 espie Exp $
+--- libgphoto2/gphoto2-filesys.c.orig	Wed Feb 26 19:20:57 2003
++++ libgphoto2/gphoto2-filesys.c	Wed Feb 26 19:21:15 2003
+@@ -38,12 +38,12 @@
+ #endif
+ 
+ #ifdef HAVE_SYSCTL
+-#	include <sys/sysctl.h>
+ #	if __FreeBSD__
+ #		include <sys/types.h>
+ #	elif (__NetBSD__ || __OpenBSD__)
+ #		include <sys/param.h>
+ #	endif
++#	include <sys/sysctl.h>
+ #endif
+ 
+ #ifdef HAVE_EXIF

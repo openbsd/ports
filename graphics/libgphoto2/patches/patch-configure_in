@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2003/04/09 23:55:01 espie Exp $
+--- configure.in.orig	Sun Dec  1 22:46:02 2002
++++ configure.in	Thu Feb 27 10:00:40 2003
+@@ -326,12 +326,12 @@ dnl Check for sysctl()
+ AC_MSG_CHECKING([for sysctl on BSD])
+ AC_TRY_COMPILE([
+ 	#include <unistd.h>
+-	#include <sys/sysctl.h>
+ 	#if __FreeBSD__
+ 	#	 include <sys/types.h>
+ 	#elif (__NetBSD__ || __OpenBSD__)
+ 	#	 include <sys/param.h>
+-	#endif],
++	#endif
++	#include <sys/sysctl.h>],
+ 	[int mib[2] = { CTL_HW, HW_PHYSMEM };
+ 	int value;
+ 	size_t valuelen = sizeof(value);

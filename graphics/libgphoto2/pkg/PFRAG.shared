@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/04/09 23:55:01 espie Exp $
+lib/libgphoto2.so.2.3
+lib/libgphoto2_port.so.5.1
+DYNLIBDIR(%D/lib)

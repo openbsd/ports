@@ -1,0 +1,10 @@
+$OpenBSD: patch-libgphoto2_libgphoto2_pc_in,v 1.1.1.1 2003/04/09 23:55:01 espie Exp $
+--- libgphoto2/libgphoto2.pc.in.orig	Thu Feb 27 10:45:39 2003
++++ libgphoto2/libgphoto2.pc.in	Thu Feb 27 10:45:52 2003
+@@ -9,5 +9,5 @@ Name: libgphoto2
+ Description: Library for easy access to digital cameras
+ Requires:
+ Version: @VERSION@
+-Libs: -L${libdir} -lgphoto2 -lm
++Libs: -L${libdir} -lgphoto2 -lm -lgphoto2_port
+ Cflags: -I${includedir}/gphoto2 -I${includedir}

@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgphoto2_port_ltmain_sh,v 1.1.1.1 2003/04/09 23:55:01 espie Exp $
+--- libgphoto2_port/ltmain.sh.orig	Thu Feb 27 10:36:33 2003
++++ libgphoto2_port/ltmain.sh	Thu Feb 27 10:36:51 2003
+@@ -1758,7 +1758,7 @@ compiler."
+ 
+ 	  if test "$installed" = no; then
+ 	    notinst_deplibs="$notinst_deplibs $lib"
+-	    need_relink=yes
++	    need_relink=no
+ 	  fi
+ 
+ 	  if test -n "$old_archive_from_expsyms_cmds"; then

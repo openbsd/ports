@@ -1,0 +1,9 @@
+This library is the core of the gphoto2 software. It gives access to
+almost 300 digital cameras 
+(see http://gphoto.sourceforge.net/proj/libgphoto2/support.php for a 
+list of supported cameras).
+
+It uses abstractions to handle the communication port (serial/usb 
+protocols) and the camera model separately.
+
+WWW: ${HOMEPAGE}
