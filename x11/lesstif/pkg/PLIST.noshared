@@ -214,10 +214,6 @@ man/man3/XmToggleButton.3
 man/man3/XmToggleButtonGadget.3
 man/man3/XmWorld.3
 man/man3/XmVendorShell.3
-man/man3/XtConfigureObject.3
-man/man3/XtDestroyWidget.3
-man/man3/XtManageChild.3
-man/man3/XtUnmanageChild.3
 man/man5/mwmrc.5
 share/LessTif/AUTHORS
 share/LessTif/BUG-REPORTING
@@ -256,7 +252,6 @@ share/LessTif/doc/html/XmStrings.txt
 share/LessTif/doc/html/apps.html
 share/LessTif/doc/html/bug-reporting.html
 share/LessTif/doc/html/bugs.html
-share/LessTif/doc/html/button.html
 share/LessTif/doc/html/cdrom.html
 share/LessTif/doc/html/core.html
 share/LessTif/doc/html/current.html

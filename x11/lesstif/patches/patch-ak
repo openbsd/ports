@@ -1,11 +1,12 @@
---- lib/Makefile.in.orig	Sun Sep 12 21:07:19 1999
-+++ lib/Makefile.in	Sun Sep 12 21:08:50 1999
-@@ -114,7 +114,7 @@
- x_libraries = @x_libraries@
- 
+--- lib/Makefile.in.orig	Fri Nov  5 15:14:32 1999
++++ lib/Makefile.in	Fri Dec 17 23:36:57 1999
+@@ -120,9 +120,6 @@
  MAINTAINERCLEANFILES = Makefile.in
--SUBDIRS = config 		Xm Mrm Uil 		Xm-2.0 Mrm-2.0 Uil-2.0 		Xm-2.1 Mrm-2.1 		Xm-CDE Mrm-CDE 		@BuildXltDir@ @BuildXbaeDir@
-+SUBDIRS = config 		Xm Mrm Uil		@BuildXltDir@ @BuildXbaeDir@
+ SUBDIRS = config \
+ 		Xm Mrm Uil \
+-		Xm-2.0 Mrm-2.0 Uil-2.0 \
+-		Xm-2.1 Mrm-2.1 \
+-		Xm-CDE Mrm-CDE \
+ 		@BuildXltDir@ @BuildXbaeDir@
  
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../include/LTconfig.h

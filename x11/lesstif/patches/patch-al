@@ -1,6 +1,6 @@
---- doc/lessdox/functions/Makefile.in.orig	Sun Sep 12 21:09:37 1999
-+++ doc/lessdox/functions/Makefile.in	Sun Sep 12 21:09:45 1999
-@@ -116,10 +116,10 @@
+--- doc/lessdox/functions/Makefile.in.orig	Fri Nov  5 15:15:03 1999
++++ doc/lessdox/functions/Makefile.in	Fri Dec 17 23:37:28 1999
+@@ -120,10 +120,10 @@
  EXTRA_DIST =  $(man1_DATA) $(man3_DATA) $(man5_DATA)
  SUFFIXES = .1 .3 .5 .html
  
@@ -14,13 +14,13 @@
 +man5dir =	$(mandir)/man5
  
  man1_DATA = 
- man3_DATA =  	XtConfigureObject.3 XtDestroyWidget.3         XtManageChild.3 XtUnmanageChild.3
-@@ -135,7 +135,7 @@
+ man3_DATA = 
+@@ -138,7 +138,7 @@
  # build them.
  #
  
 -htmldir = $(exec_prefix)/LessTif/doc/html
 +htmldir = $(pkgdatadir)/doc/html
  
- @HaveMan2html_TRUE@html_DATA = ${man1_DATA:.1=.html} ${man3_DATA:.3=.html}                 ${man5_DATA:.5=.html}
- 
+ @HaveMan2html_TRUE@html_DATA = \
+ @HaveMan2html_TRUE@${man1_DATA:.1=.html} ${man3_DATA:.3=.html} \

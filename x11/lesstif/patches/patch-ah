@@ -1,11 +1,11 @@
---- doc/Makefile.in.orig	Mon Sep  6 17:13:52 1999
-+++ doc/Makefile.in	Sun Sep 12 21:03:26 1999
-@@ -118,7 +118,7 @@
+--- doc/Makefile.in.orig	Fri Nov  5 15:14:58 1999
++++ doc/Makefile.in	Fri Dec 17 23:29:13 1999
+@@ -122,7 +122,7 @@
  
  SUBDIRS = www.lesstif.org lessdox
  
 -rootdir = $(exec_prefix)/LessTif/doc
 +rootdir = $(pkgdatadir)/doc/html
- root_DATA = INSTALL.html All.html Clipboard.txt DragAndDrop.txt Form.txt 		GeoUtils.txt Geometry.html SyntheticResources.txt 		UIL.txt XmStrings.txt thread.html
- 
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ root_DATA = INSTALL.html All.html Clipboard.txt DragAndDrop.txt Form.txt \
+ 		GeoUtils.txt Geometry.html SyntheticResources.txt \
+ 		UIL.txt XmStrings.txt thread.html
