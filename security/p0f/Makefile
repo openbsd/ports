@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/10/29 03:20:38 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/30 00:31:32 jcs Exp $
 # $NetBSD: Makefile,v 1.1.1.2 2001/03/26 11:59:15 hubertf Exp $
 
 COMMENT=		passive OS fingerprinting tool
@@ -21,6 +21,7 @@ MASTER_SITES=		http://lcamtuf.coredump.cx/soft/
 EXTRACT_SUFX=		.tgz
 
 MAKE_FLAGS=		CFLAGS='${CFLAGS} -DSYSCONFDIR="\"${SYSCONFDIR}\""'
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/p0f ${PREFIX}/bin/p0f
