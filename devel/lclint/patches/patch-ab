@@ -1,5 +1,5 @@
---- src/Makefile.orig	Tue May 23 21:59:58 2000
-+++ src/Makefile	Fri May 26 02:34:56 2000
+--- src/Makefile.orig	Thu Jul 27 04:18:46 2000
++++ src/Makefile	Tue Aug  1 16:54:36 2000
 @@ -60,7 +60,7 @@ all : dorelease
  
  quick: lclint
@@ -9,19 +9,16 @@
  	@echo '// '
  	@echo '//  Linking:'
  	@echo '// '
-@@ -75,17 +75,18 @@ lclint : $(OBJ) 
+@@ -75,7 +75,7 @@ lclint : $(OBJ) 
  ### this is probably NOT compatible with yacc.
  ###
  
 -signature.c : signature.c.der signature.y
- ifdef BISON
 +signature.c : signature.y
+ ifdef BISON
  	@$(BISON) $(YFLAGS) -p lsl signature.y
- 	@$(CAT) bison.head signature.tab.c > signature.c
- 	@$(MV) Headers/signature_gen.h Headers/signature_gen.bak
- 	@$(CAT) bison.head signature.tab.h > Headers/signature_gen.h
- else
-+signature.c : signature.c.der 
+ 	@$(CAT) bison.head signature.tab.c bison.reset > signature.c
+@@ -85,7 +85,7 @@ else
  	$(CP) signature.c.der signature.c
  endif
  
@@ -30,9 +27,9 @@
  ifdef BISON
  	$(BISON) $(YFLAGS) cgrammar.y
  	@echo '//           Expect 119 shift/reduce conflicts and 114 reduce/reduce conflicts.'
-@@ -94,13 +95,14 @@ ifdef BISON
+@@ -94,13 +94,14 @@ ifdef BISON
  	@$(MV) Headers/cgrammar_tokens.h Headers/cgrammar_tokens.bak
- 	@$(CAT) bison.head cgrammar.tab.h > Headers/cgrammar_tokens.h
+ 	@$(CAT) bison.head cgrammar.tab.h bison.reset > Headers/cgrammar_tokens.h
  else
 +cgrammar.c : cgrammar.c.der 
  	$(CP) cgrammar.c.der cgrammar.c
@@ -45,22 +42,13 @@
 +llgrammar.c  : llgrammar.y
  	$(BISON) $(YFLAGS) -p yl llgrammar.y
  	@echo '//            Expect 2 shift/reduce conflicts.'
- 	@$(CAT) bison.head llgrammar.tab.c > llgrammar.c
-@@ -109,14 +111,16 @@ ifdef BISON
- 	@$(MV) Headers/llgrammar_gen.h Headers/llgrammar_gen.bak
- 	@$(CAT) bison.head llgrammar.tab.h > Headers/llgrammar_gen.h
- else
-+llgrammar.c  : llgrammar.c.der 
+ 	@$(CAT) bison.head llgrammar.tab.c bison.reset > llgrammar.c
+@@ -112,7 +113,7 @@ else
  	$(CP) llgrammar.c.der llgrammar.c
  endif
  
 -cscanner.c : cscanner.c.der cscanner.l
- ifdef FLEX				
 +cscanner.c : cscanner.l
+ ifdef FLEX				
  	$(FLEX) $(LFLAGS) cscanner.l 
- 	$(CAT) flex.head lex.yy.c > cscanner.c
- else
-+cscanner.c : cscanner.c.der 
- 	$(CP) cscanner.c.der cscanner.c
- endif
- 
+ 	$(CAT) flex.head lex.yy.c flex.reset > cscanner.c

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2000/05/26 20:45:54 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2000/08/01 15:41:13 espie Exp $
 
-DISTNAME=	lclint-2.5m
+DISTNAME=	lclint-2.5q
 CATEGORIES=	devel
 NEED_VERSION=	 1.230
 MASTER_SITES=	http://lclint.cs.virginia.edu/
