@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/04/19 15:46:33 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/21 15:41:03 lebel Exp $
 
 COMMENT=	"banner-ad blocking proxy server"
 
@@ -21,8 +21,8 @@ EXTRACT_SUFX=	.tar.Z
 ALL_TARGET=	
 
 do-install:
-	@mkdir -p ${PREFIX}/share/examples/junkbuster
-	@mkdir -p ${PREFIX}/share/doc/junkbuster
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/junkbuster
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/junkbuster
 	${INSTALL_PROGRAM} ${WRKSRC}/junkbuster ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/*.ini ${PREFIX}/share/examples/junkbuster/
 	${INSTALL_MAN} ${WRKSRC}/junkbuster.1 ${PREFIX}/man/man1/
