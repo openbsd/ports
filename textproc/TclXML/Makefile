@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2002/06/09 05:37:15 wilfried Exp $
+# $OpenBSD: Makefile,v 1.12 2002/10/28 22:43:46 naddy Exp $
 
 COMMENT=	"pure-Tcl implementation of XML parser"
 
 DISTNAME=	TclXML-1.2.1
 CATEGORIES=	textproc
-NEED_VERSION=	1.496
+
 MASTER_SITES=	ftp://ftp.zveno.com/TclXML/
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=	:tcl-8.3.*:lang/tcl/8.3
 
 NO_BUILD=       Yes
+NO_REGRESS=	Yes
 
 INSTDIR=	${PREFIX}/lib/tcl8.3/TclXML
 DOCDIR=		${PREFIX}/share/doc/TclXML

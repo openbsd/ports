@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2002/06/09 05:37:15 wilfried Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/28 22:43:46 naddy Exp $
 
 COMMENT=	"LaTeX to HTML converter"
 
 DISTNAME=	latex2html-97.1
 CATEGORIES=	textproc www
-NEED_VERSION=	1.496
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -20,6 +19,7 @@ RUN_DEPENDS=	:netpbm-*:graphics/netpbm \
 		:ghostscript-*:print/ghostscript/gnu
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 DOCS=		userman.tex manual.tex manual.gls manual.dvi manual.bbl \
 		manual.aux manual.ind manhtml.tex eform.ps changebar.sty \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2002/06/09 05:37:15 wilfried Exp $
+# $OpenBSD: Makefile,v 1.24 2002/10/28 22:43:46 naddy Exp $
 
-COMMENT=	convert memos written in XML to the RFC format
+COMMENT=	"convert memos written in XML to the RFC format"
 
 VERSION=	1.10
 DISTNAME=	xml2rfc-${VERSION}
 CATEGORIES=	textproc
-NEED_VERSION=	1.500
+
 EXTRACT_SUFX=	.tgz
 MASTER_SITES=	http://xml.resource.org/authoring/
 HOMEPAGE=	http://xml.resource.org/
@@ -36,6 +36,8 @@ do-build:
 .else
 	sed s,y0y0y0,${PREFIX}, ${FILESDIR}/xml2rfc >${WRKSRC}/xml2rfc
 .endif
+
+NO_REGRESS=	Yes
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/xml2rfc ${PREFIX}/bin/xml2rfc

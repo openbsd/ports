@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2002/09/04 00:55:41 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.30 2002/10/28 22:43:46 naddy Exp $
 
 COMMENT=	"PDF viewer for X"
 
 DISTNAME=	xpdf-1.01
 CATEGORIES=	textproc x11
-NEED_VERSION=	1.525
+
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 
 HOMEPAGE=	http://www.foolabs.com/xpdf/
@@ -24,6 +24,8 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-gzip
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2 -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+
+NO_REGRESS=	Yes
 
 post-install:
 	@cd ${PREFIX}/bin && \

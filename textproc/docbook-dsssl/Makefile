@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2002/05/14 12:07:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/10/28 22:43:46 naddy Exp $
 
 COMMENT=	"modular DSSSL stylesheets for the DocBook DTD"
 
 V=		1.72
 DISTNAME=	docbook-dsssl-${V}
 CATEGORIES=    	textproc print
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://docbook.sourceforge.net/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
@@ -20,6 +19,7 @@ DISTFILES=	docbook-dsssl-${V}${EXTRACT_SUFX} docbook-dsssl-doc-${V}${EXTRACT_SUF
 
 SEPARATE_BUILD=	concurrent
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 INST_DIR=	${PREFIX}/share/sgml/docbook/dsssl/modular
 DOC_DIR=	${PREFIX}/share/doc/docbook-dsssl

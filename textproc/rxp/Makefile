@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2002/03/21 21:25:53 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/28 22:43:46 naddy Exp $
 
 COMMENT=	"validating namespace-aware XML parser"
 
 DISTNAME=	rxp-1.2.3
 CATEGORIES=	textproc
-NEED_VERSION=	1.515
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
@@ -16,6 +15,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/richard/
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rxp ${PREFIX}/bin

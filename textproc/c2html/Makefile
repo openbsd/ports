@@ -1,16 +1,9 @@
-# OpenBSD makefile for:	c2html
-# Version required:			0.1
-# Date created:				December 1, 1997
-# Whom:					Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.13 2002/05/14 12:07:09 naddy Exp $
-#
+# $OpenBSD: Makefile,v 1.14 2002/10/28 22:43:46 naddy Exp $
 
 COMMENT=		"C-language sources to HTML converter"
 
 DISTNAME=		c2html-0.9.2
 CATEGORIES=		textproc www
-NEED_VERSION=		1.402
 
 # Old versions seem to stay there...
 MASTER_SITES=		http://user.cs.tu-berlin.de/%7Eschintke/x2html/ \
@@ -25,6 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
+
+NO_REGRESS=		Yes
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/c2html ${PREFIX}/bin

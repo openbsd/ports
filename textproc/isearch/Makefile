@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/07/26 19:00:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/10/28 22:43:46 naddy Exp $
 
 COMMENT=	"text search engine by CNIDR"
 
@@ -19,6 +19,8 @@ MASTER_SITES=	ftp://ftp.cnidr.org/pub/software/Isearch/
 CONFIGURE_STYLE=	gnu
 MAKE_FLAGS=		CC="${CXX}" CFLAGS="${CXXFLAGS} -DUNIX"
 FAKE_FLAGS=		INSTALL=${WRKINST}${PREFIX}/bin
+
+NO_REGRESS=	Yes
 
 post-install:
 	strip ${PREFIX}/bin/Isearch

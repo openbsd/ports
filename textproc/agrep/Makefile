@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2002/07/21 01:48:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/28 22:43:46 naddy Exp $
 
 COMMENT=	"approximate grep (fast approximate pattern-matching tool)"
 
 DISTNAME=	agrep-2.04
 CATEGORIES=	textproc
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.cs.arizona.edu/agrep/
 EXTRACT_SUFX=	.tar.Z
 
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_CDROM=	No
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 ALL_TARGET=
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/agrep

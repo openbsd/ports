@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2002/06/09 05:37:15 wilfried Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/28 22:43:46 naddy Exp $
 
 COMMENT=	"technical documentation XML/SGML definitions"
 
 DISTNAME=	docbook-4.1.2
 DIST_SUBDIR=	docbook
 CATEGORIES=	textproc
-NEED_VERSION= 	1.496
 
 ROOT_SITE=	http://www.oasis-open.org/docbook/
 MIRROR_SITE=	http://www.docbook.org/
@@ -31,6 +30,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=       Yes
+NO_REGRESS=	Yes
 SEPARATE_BUILD=	concurrent
 
 SGML_VERSIONS=	2.4.1 3.0 3.1 4.0 4.1

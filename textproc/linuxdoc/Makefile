@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2001/11/13 22:13:24 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/28 22:43:46 naddy Exp $
 # $FreeBSD: Makefile,v 1.4 1998/01/17 17:25:46 jfieber Exp $
 
 COMMENT=	"Linuxdoc SGML DTD"
 
 DISTNAME=	linuxdoc-1.1
 CATEGORIES=	textproc
-NEED_VERSION=	1.496
+
 MASTER_SITES=	ftp://fallout.campusview.indiana.edu/pub/sgml/
 
 RUN_DEPENDS=	::textproc/iso8879
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=       Yes
+NO_REGRESS=	Yes
 
 WRKDIST=	${WRKDIR}
 

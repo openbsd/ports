@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2002/05/31 18:09:47 jakob Exp $
-# Original from: Ejovi Nuwere <ejovi@ejovi.net>
+# $OpenBSD: Makefile,v 1.28 2002/10/28 22:43:46 naddy Exp $
 
 COMMENT=		interactive spelling checker
 COMMENT-french=		ispell dictionary for French
@@ -11,7 +10,6 @@ COMMENT-portuguese=	ispell dictionary for Rortuguese
 VERSION=	3.2.06
 DISTNAME=	ispell-${VERSION}
 CATEGORIES=	textproc
-NEED_VERSION=	1.504
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
@@ -63,6 +61,8 @@ RUN_DEPENDS=	::textproc/ispell
 .endif
 
 MAKE_FLAGS=	TMPDIR=${WRKDIR} 
+
+NO_REGRESS=	Yes
 
 post-extract:
 	@mkdir -p ${WRKDIR}/french

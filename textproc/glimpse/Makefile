@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2001/11/11 13:57:32 heko Exp $
-#
+# $OpenBSD: Makefile,v 1.13 2002/10/28 22:43:46 naddy Exp $
 
 COMMENT=	"text search engine"
 
 DISTNAME=	glimpse-4.1
 CATEGORIES=	textproc databases
-NEED_VERSION=	1.402
 
 MAINTAINER=	Tobias Weingartner <weingart@openbsd.org>
 
@@ -23,6 +21,7 @@ pre-configure:
 	chmod ugo+x ${WRKSRC}/configure
 
 VMEM_WARNING=	Yes
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/glimpse

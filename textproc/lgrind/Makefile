@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2002/06/09 05:37:15 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2002/10/28 22:43:46 naddy Exp $
 
 COMMENT=	"LaTeX vgrind(1) look-alike"
 
 CATEGORIES=	textproc devel print
-NEED_VERSION=	1.515
+
 VERSION=3.67
 DISTNAME=	lgrind-${VERSION}
 DISTFILES=source/lgrind.c source/lgutil.c source/lgrindef.c source/lgrindef.h \
@@ -37,6 +37,8 @@ post-build:
 	cd ${WRKDIST} && latex lgrind.ins
 	cd ${WRKDIST} && latex lgrind.dtx
 	cd ${WRKDIST} && latex lgrind.dtx
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf/tex/latex/lgrind

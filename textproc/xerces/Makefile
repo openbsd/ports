@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/09/19 06:06:27 kevlo Exp $
+# $OpenBSD: Makefile,v 1.17 2002/10/28 22:43:46 naddy Exp $
 
 COMMENT=	"xml parser for Java"
 
@@ -26,6 +26,7 @@ BUILD_DEPENDS=	:gtar-*:archivers/gtar
 RUN_DEPENDS=    ::devel/jdk/1.4-linux
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 WRKDIST=	${WRKDIR}/xerces-2_1_0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/09/08 07:55:26 mark Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/28 22:43:46 naddy Exp $
 
 COMMENT=	"converts MSWord Documents to ASCII Text and PostScript"
 
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall -pedantic -DNDEBUG" \
 		LD="${CC}"
+
+NO_REGRESS=	Yes
 
 DOCS=	ChangeLog FAQ History Netscape QandA ReadMe
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/08/09 17:40:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2002/10/28 22:43:46 naddy Exp $
 
 COMMENT=	"paragraph reflow for email"
 
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=   ${HOMEPAGE}
 
 ALL_TARGET=
+
+NO_REGRESS=	Yes
 
 do-configure:
 	cd ${WRKSRC}; cp protoMakefile Makefile
