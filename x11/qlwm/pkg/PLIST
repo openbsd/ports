@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/26 23:59:13 espie Exp $
+bin/qlwm
+lib/qlwm/biff
+lib/qlwm/dclock
+lib/qlwm/files/appdefaults
+lib/qlwm/files/background.xpm
+lib/qlwm/files/button_left.xpm
+lib/qlwm/files/button_right.xpm
+lib/qlwm/files/defaults
+lib/qlwm/files/menu.xpm
+lib/qlwm/files/menuconfig
+lib/qlwm/files/winlist.xpm
+lib/qlwm/qlwm
+man/man1/qlwm.1
+share/doc/qlwm/README
+@dirrm share/doc/qlwm
+@dirrm lib/qlwm/files
+@dirrm lib/qlwm

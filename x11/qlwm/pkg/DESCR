@@ -1,0 +1,4 @@
+A window manager that takes advantage of qt to stay small and
+maintainable.
+
+WWW: ${HOMEPAGE}
