@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2002/01/31 20:41:38 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2002/09/07 23:43:09 naddy Exp $
 
 COMMENT=		"proof assistant based on a typed lambda calculus"
 
 DISTNAME=		coq-7.0
 CATEGORIES=		math
-NEED_VERSION=		1.504
 HOMEPAGE=		http://coq.inria.fr/
 
 MAINTAINER=		Yozo Toda <yozo@v007.vaio.ne.jp>
@@ -21,8 +20,7 @@ DISTFILES=		${DISTNAME}.tar.gz \
 			all-ps-docs.tar.gz:0
 DIST_SUBDIR=		coq
 
-BUILD_DEPENDS=		::lang/ocaml \
-			::lang/camlp4
+BUILD_DEPENDS=		::lang/ocaml
 
 FAKE_FLAGS=		COQINSTALLPREFIX=${WRKINST}
 
