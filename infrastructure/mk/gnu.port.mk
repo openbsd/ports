@@ -1,17 +1,16 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.3 2001/09/16 14:56:42 espie Exp $
+# $OpenBSD: gnu.port.mk,v 1.4 2001/09/24 22:30:03 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
-MODGNU_configure = ${MODSIMPLE_configure}
+MODGNU_CONFIG_GUESS_DIRS?=${WRKSRC}
 
-# XXX - Kludge for these architectures so we do not
-#	have to patch all copies of config.guess
-#	throughout the ports tree.
-.if ${MACHINE} == "macppc" || ${MACHINE} == "mvmeppc"
-CONFIGURE_ARGS+=	--host=powerpc-unknown-openbsd${OPSYS_VER}
-.endif
+MODGNU_configure =
+.for _d in ${MODGNU_CONFIG_GUESS_DIRS}
+MODGNU_configure += cp -f ${PORTSDIR}/infrastructure/db/config.guess ${_d};
+.endfor
+MODGNU_configure += ${MODSIMPLE_configure}
 
 .if ${CONFIGURE_STYLE:L:Mdest}
 CONFIGURE_ARGS+=	--prefix='$${${DESTDIRNAME}}${PREFIX}'
