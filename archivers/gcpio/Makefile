@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 15:15:18 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2003/02/22 16:38:40 lebel Exp $
 
 COMMENT=		"GNU copy-in/out (cpio)"
 
-DISTNAME=		cpio-2.4.2
+DISTNAME=		cpio-2.5
 PKGNAME=		g${DISTNAME}
 CATEGORIES=		archivers
 
