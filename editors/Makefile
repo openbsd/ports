@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1998/09/16 18:41:26 ian Exp $
+# $OpenBSD: Makefile,v 1.9 1998/09/25 01:07:27 marc Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -28,5 +28,6 @@
 #    SUBDIR += xemacs
 #    SUBDIR += xemacs20
 #    SUBDIR += xvile
+     SUBDIR += xwpe
 
 .include <bsd.port.subdir.mk>
