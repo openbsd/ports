@@ -1,9 +1,10 @@
-# OpenBSD  makefile for: 	  tcpshow
+# Ports collection makefile for:  tcpshow
 # Version required:     	  1.0
-# Date created:			  July 11 1998
-# Whom:				  Angelos D. Keromytis
+# Date created:			  17 Jul 1998
+# Whom:				  Oleg Safiullin <form@vs.itam.nsc.ru>
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/07/12 04:46:53 angelos Exp $
+# $OpenBSD: Makefile,v 1.1.1.2 1998/07/17 09:52:58 form Exp $
+# FreeBSD: Makefile,v 1.2 1997/11/10 11:33:04 asami Exp
 #
 
 DISTNAME=	tcpshow-1.0
@@ -11,7 +12,7 @@ CATEGORIES=	net security
 MASTER_SITES=	http://www.cs.berkeley.edu/~daw/mike/
 DISTFILES=	tcpshow.c tcpshow.1
 
-MAINTAINER=     angelos@openbsd.org
+MAINTAINER=     form@vs.itam.nsc.ru
 
 NO_WRKSUBDIR=	yes
 MAN1=		tcpshow.1
