@@ -1,16 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/05/12 22:19:11 sturm Exp $
-@exec echo "This package may need further setup. Be sure to read the package description"
-@exec echo "carefully."
-bin/wine
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 00:42:04 espie Exp $
 bin/dosmod
+bin/wine
+include/wine/
 include/wine/windows.h
 include/wine/wingdi.h
 include/wine/wintypes.h
 include/wine/winuser.h
 lib/libwine.a
 lib/wine.sym
-man/man1/wine.1
+@man man/man1/wine.1
+share/examples/wine/
 share/examples/wine/wine.conf
-@exec if [ ! -f ${SYSCONFDIR}/wine.conf ]; then cp %D/%F ${SYSCONFDIR}; fi
-@dirrm share/examples/wine
-@dirrm include/wine
+@sample ${SYSCONFDIR}/wine.conf

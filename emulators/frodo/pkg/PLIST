@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/07 14:29:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:42:04 espie Exp $
 bin/frodo
-bin/frodoSC
 bin/frodoPC
+bin/frodoSC
+lib/frodo/
 lib/frodo/1541 ROM
+lib/frodo/64prgs/
 lib/frodo/64prgs/3fff
 lib/frodo/64prgs/colorbars
 lib/frodo/64prgs/d011h3
@@ -20,6 +22,7 @@ lib/frodo/Char ROM
 lib/frodo/Frodo Logo
 lib/frodo/Kernal ROM
 lib/frodo/TkGui.tcl
+share/doc/frodo/
 share/doc/frodo/CHANGES
 share/doc/frodo/Main.html
 share/doc/frodo/author.html
@@ -41,6 +44,3 @@ share/doc/frodo/systemspecific.html
 share/doc/frodo/technicalinfo.html
 share/doc/frodo/thanks.html
 share/doc/frodo/whatsnew.html
-@dirrm share/doc/frodo
-@dirrm lib/frodo/64prgs
-@dirrm lib/frodo

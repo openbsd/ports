@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/01/23 20:53:05 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:42:04 espie Exp $
 bin/readdisk
 bin/uae
+share/uae/
 share/uae/COMPATIBILITY
 share/uae/CREDITS
 share/uae/FAQ
@@ -8,6 +9,7 @@ share/uae/NEWS
 share/uae/README
 share/uae/README.PROGRAMMERS
 share/uae/README.unix
+share/uae/amiga/
 share/uae/amiga/mousehack
 share/uae/amiga/timehack
 share/uae/amiga/transdisk
@@ -16,5 +18,3 @@ share/uae/amiga/uae-control
 share/uae/amiga/uae-control.info
 share/uae/amiga/uae_rcli
 share/uae/amiga/uaectrl
-@dirrm share/uae/amiga
-@dirrm share/uae

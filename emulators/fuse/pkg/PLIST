@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/05/08 06:46:45 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 00:42:04 espie Exp $
 bin/fuse
-man/man1/fuse.1
+@man man/man1/fuse.1
+share/fuse/
 share/fuse/128-0.rom
 share/fuse/128-1.rom
 share/fuse/128p-0.rom
@@ -29,4 +30,3 @@ share/fuse/tc2048.rom
 share/fuse/tc2068-0.rom
 share/fuse/tc2068-1.rom
 share/fuse/trdos.rom
-@dirrm share/fuse

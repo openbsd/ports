@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2003/07/04 16:18:05 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.16 2004/09/15 00:42:04 espie Exp $
 bin/simh-altair
 bin/simh-altairz80
 bin/simh-eclipse
@@ -22,7 +22,10 @@ bin/simh-pdp9
 bin/simh-s3
 bin/simh-sds
 bin/simh-vax
+lib/simh/
+lib/simh/vax/
 lib/simh/vax/ka655.bin
+share/doc/simh/
 share/doc/simh/0readme_30.txt
 share/doc/simh/0readme_ethernet.txt
 share/doc/simh/altair.txt
@@ -54,6 +57,3 @@ share/doc/simh/simh_faq.txt
 share/doc/simh/simh_swre.txt
 share/doc/simh/system3.txt
 share/doc/simh/vax_doc.txt
-@dirrm share/doc/simh
-@dirrm lib/simh/vax
-@dirrm lib/simh

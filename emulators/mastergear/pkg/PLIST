@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/12 10:16:28 aaron Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:42:04 espie Exp $
 bin/mastergear
+share/doc/mastergear/
 share/doc/mastergear/MG.html
+share/mastergear/
 share/mastergear/CART.ROM
-@dirrm share/mastergear
-@dirrm share/doc/mastergear

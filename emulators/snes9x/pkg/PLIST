@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/27 21:10:51 aaron Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:42:04 espie Exp $
 bin/snes9x
+share/doc/snes9x/
 share/doc/snes9x/CHANGES.TXT
 share/doc/snes9x/HARDWARE.TXT
 share/doc/snes9x/README.TXT
-@dirrm share/doc/snes9x

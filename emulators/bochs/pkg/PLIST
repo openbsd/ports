@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/07/23 13:11:58 todd Exp $
+@comment $OpenBSD: PLIST,v 1.16 2004/09/15 00:42:04 espie Exp $
 bin/bochs
 bin/bximage
-man/man1/bochs-dlx.1
-man/man1/bochs.1
-man/man1/bxcommit.1
-man/man1/bximage.1
-man/man5/bochsrc.5
+@man man/man1/bochs-dlx.1
+@man man/man1/bochs.1
+@man man/man1/bxcommit.1
+@man man/man1/bximage.1
+@man man/man5/bochsrc.5
 share/bochs/
 share/bochs/bios/
 share/bochs/bios/BIOS-bochs-2-processors
