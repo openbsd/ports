@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2003/06/01 15:10:11 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/08/22 16:23:09 naddy Exp $
 
 COMMENT=	"curses-based emulator for the Wyse 60 terminal"
 
-DISTNAME=	wy60-2.0.6
+DISTNAME=	wy60-2.0.8
 CATEGORIES=	comms
 HOMEPAGE=	http://gutschke.com/wy60/
 
@@ -20,7 +20,7 @@ PATCH_LIST=	patch-* gcc-*
 
 MASTER_SITES=	${HOMEPAGE}html/archive/
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=gnu
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/wy60
