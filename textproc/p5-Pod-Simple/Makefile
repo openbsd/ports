@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2004/02/27 01:08:34 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2004/07/01 13:51:04 msf Exp $
 
 COMMENT=	"framework for parsing the Perl Pod format"
 
-DISTNAME=	Pod-Simple-2.05
+DISTNAME=	Pod-Simple-3.02
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Pod/}
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
+MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 RUN_DEPENDS=	::textproc/p5-Pod-Escapes
 BUILD_DEPENDS=	${RUN_DEPENDS}
