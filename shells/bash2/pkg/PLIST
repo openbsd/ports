@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2001/04/10 15:32:56 naddy Exp $
-@pkgcfl bash-1.*
+@comment $OpenBSD: PLIST,v 1.9 2001/04/10 17:10:37 espie Exp $
 bin/bash
 bin/bashbug
 man/man1/bash.1
