@@ -1,0 +1,12 @@
+# $OpenBSD: patch-src_main_Makefile_in,v 1.1 2003/05/17 04:46:04 ian Exp $
+--- src/main/Makefile.in.orig	Sat Jan 25 17:04:59 2003
++++ src/main/Makefile.in	Sat May 17 00:29:57 2003
+@@ -88,7 +88,7 @@ R_bin_OBJECTS = $(OBJECTS)
+ ## -export-symbols SYMFILE.
+ @USE_LIBTOOL_TRUE@R_bin_LDFLAGS = -export-dynamic
+ ## </FIXME>
+-R_bin_LDADD = @LIBOBJS@ @ALLOCA@ $(RLIBS) $(BLAS_LIBS) $(FLIBS) $(R_XTRA_LIBS) $(R_ZLIBS) $(R_BZLIBS) $(R_PCRE)
++R_bin_LDADD = @LIBOBJS@ @ALLOCA@ $(RLIBS) $(BLAS_LIBS) $(FLIBS) $(R_XTRA_LIBS) $(R_ZLIBS) $(R_BZLIBS) $(R_PCRE) -Wl,-E
+ ## <NOTE>
+ ## Automake would figure this out itself.
+ R_bin_DEPENDENCIES = @LIBOBJS@ @ALLOCA@ $(RLIBS) @USE_EXPORTFILES_TRUE@ $(top_builddir)/etc/R.exp
