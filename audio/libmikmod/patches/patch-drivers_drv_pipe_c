@@ -1,0 +1,12 @@
+$OpenBSD: patch-drivers_drv_pipe_c,v 1.1 2002/12/24 21:53:52 pvalchev Exp $
+--- drivers/drv_pipe.c.orig	Tue Dec 24 13:45:48 2002
++++ drivers/drv_pipe.c	Tue Dec 24 13:45:50 2002
+@@ -120,7 +120,7 @@ static BOOL pipe_Init(void)
+ 			}
+ 			close(pipefd[1]);
+ 			if (!MD_DropPrivileges())
+-				execl("/bin/sh","sh","-c",target,NULL);
++				execl("/bin/sh","sh","-c",target,(void *)NULL);
+ 			exit(127);
+ 	}
+ 	close(pipefd[0]);
