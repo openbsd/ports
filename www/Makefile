@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 1999/10/31 20:52:03 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/01/12 08:46:38 kevlo Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -54,7 +54,7 @@
 #    SUBDIR += w3c-httpd
      SUBDIR += w3m
 #    SUBDIR += webcopy
-#    SUBDIR += weblint
+     SUBDIR += weblint
 #    SUBDIR += webstone
 #    SUBDIR += wml
 #    SUBDIR += wn
