@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/08/20 19:53:03 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/10 14:54:50 espie Exp $
 
-DISTNAME=	icon_interp-9.3.2
+VERSION=	9.3.2
+DISTNAME=	icon_interp-${VERSION}
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cs.arizona.edu:/icon/packages/unix/
-DIST_SUBDIR=	icon
+DIST_SUBDIR=	icon/${VERSION}
 DISTFILES=	unix.tgz
+NEED_VERSION=	1.191
 
 MAINTAINER=	espie@openbsd.org
 
-NO_WRKSUBDIR=	yes
-USE_X11=	yes
+WRKDIST=	${WRKDIR}
 
 SCRIPTS_ENV=	ARCH="${MACHINE_ARCH}"
 MAKE_ENV=	ARCH="${MACHINE_ARCH}"
@@ -20,7 +21,7 @@ ALL_TARGET=	Icon-icont
 pre-configure:
 	cp -R ${FILESDIR}/openbsd ${WRKSRC}/config/unix
 	if [ -f ${CONF_DIR}/${ARCH}_rswitch.c ] ; then \
-		${LN} -f ${CONF_DIR}/${ARCH}_rswitch.c ${CONF_DIR}/rswitch.c ;\
+		ln -f ${CONF_DIR}/${ARCH}_rswitch.c ${CONF_DIR}/rswitch.c ;\
 	else \
 		touch ${CONF_DIR}/rswitch.c ;\
 	fi 

@@ -1,8 +1,9 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.2 1999/09/14 10:19:40 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/10 14:54:51 espie Exp $
 
-DISTNAME=icon_lib-9.3.2
-DIST_SUBDIR=icon
+VERSION=9.3.2
+DISTNAME=icon_lib-${VERSION}
+DIST_SUBDIR=icon/${VERSION}
 
 CATEGORIES=lang
 
@@ -14,13 +15,11 @@ MAINTAINER=espie@openbsd.org
 # Anyway, since source is available, using pre-compiled binaries is not
 # OpenBSD policy...
 
-MASTER_SITES=
-DISTFILES=bipl.tgz gipl.tgz info.tgz
-USE_X11=yes
-NO_WRKSUBDIR=yes
-
-
 MASTER_SITES=ftp://ftp.cs.arizona.edu:/icon/library/
+DISTFILES=bipl.tgz gipl.tgz info.tgz
+WRKDIST=	${WRKDIR}
+
+
 
 BUILD_DEPENDS=${PREFIX}/bin/icont:${PORTSDIR}/lang/icon/interp
 RUN_DEPENDS=${PREFIX}/bin/iconx:${PORTSDIR}/lang/icon/interp
