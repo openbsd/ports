@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2002/03/21 21:09:18 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/27 20:05:44 naddy Exp $
 
 COMMENT=	"Internet Image (or other data) Multicaster (and receiver)"
 
 DISTNAME=	imm.source
 PKGNAME=	imm-3.5a1
 CATEGORIES=	mbone
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.hawaii.edu/paccom/imm-3.5a1/
 EXTRACT_SUFX=	.tar.Z
 
@@ -21,7 +21,9 @@ LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0 \
 
 USE_X11=	Yes
 
-WRKDIST=		${WRKDIR}/mnm
+WRKDIST=	${WRKDIR}/mnm
+
+NO_REGRESS=	Yes
 
 post-extract:
 	${INSTALL_DATA_DIR} ${WRKSRC}/openbsd

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2002/06/09 05:36:56 wilfried Exp $
+# $OpenBSD: Makefile,v 1.28 2002/10/27 20:05:44 naddy Exp $
 
 COMMENT=	"shared drawing (whiteboard) tool using multicast"
 
 DISTNAME=	wbd-1.0ucl4
 CATEGORIES=	mbone
-NEED_VERSION=	1.515
 
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/wbd/1.0ucl4/
 
@@ -25,6 +24,7 @@ MAKE_FILE=	makefile
 WRKDIST=	${WRKDIR}/wbd
 
 VMEM_WARNING=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wbd ${PREFIX}/bin

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2002/03/21 21:09:18 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/27 20:05:44 naddy Exp $
 
 COMMENT=	"voice communication over data networks"
 
 DISTNAME=	speak_freely-7.1
 CATEGORIES=	mbone audio security
-NEED_VERSION=	1.515
+
 MASTER_SITES=	http://www.fourmilab.ch/speakfree/unix/prior-releases/7.1/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
@@ -18,10 +18,12 @@ LIB_DEPENDS=	gsm.1.0::audio/gsm
 
 MAKE_ENV=	DUPLEX=-DHALF_DUPLEX
 
-.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "arc" || \
- ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "pmax" || ${MACHINE_ARCH} == "sparc")
+.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "i386" || \
+     ${MACHINE_ARCH} == "vax")
 MAKE_ENV+=	CCFLAGS=-DM_LITTLE_ENDIAN
 .endif
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/speak_freely

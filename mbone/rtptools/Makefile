@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/03/21 21:09:18 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/27 20:05:44 naddy Exp $
 
 COMMENT=	"record, playback and monitor RTPv2 data streams"
 
@@ -7,7 +7,6 @@ CATEGORIES=	mbone
 MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/schulzrinne/rtptools/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
-NEED_VERSION=	1.515
 
 # License: NONE
 PERMIT_PACKAGE_CDROM=	"no license"
@@ -16,6 +15,8 @@ PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
 
 MAKE_ENV=	ARCH=openbsd CC=cc
+
+NO_REGRESS=	Yes
 
 BINFILES=	rtpdump rtpplay rtpsend rtptrans
 DOCFILES=	README CHANGES.html rtptools.html

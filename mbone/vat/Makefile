@@ -1,12 +1,12 @@
 # $FreeBSD: Makefile,v 1.9 1998/12/02 05:56:01 asami Exp $
-# $OpenBSD: Makefile,v 1.21 2002/04/24 21:34:48 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2002/10/27 20:05:44 naddy Exp $
 
 COMMENT=	"Visual Audio Tool, multicast audioconferencing"
 
 DISTNAME=	vatsrc-4.0b2
 PKGNAME=	vat-4.0b2
 CATEGORIES=	mbone
-NEED_VERSION=	1.525
+
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
@@ -31,7 +31,9 @@ CONFIGURE_ENV= V_LIB_GSM='-L${PREFIX}/lib -lgsm'
 
 CONFIGURE_ARGS+=--without-af
 
-WRKDIST=		${WRKDIR}/${PKGNAME}
+WRKDIST=	${WRKDIR}/${PKGNAME}
+
+NO_REGRESS=	Yes
 
 post-extract:
 	ln -sf ${WRKDIR}/${GSM_DIR}/gsm-* ${WRKDIR}/gsm

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2002/03/21 21:09:18 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/27 20:05:44 naddy Exp $
 
 COMMENT=	"Robust Audio Tool from UCL"
 
 DISTNAME=	rat-3.0.33
 CATEGORIES=	mbone
-NEED_VERSION=	1.515
+
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no commercial use"
@@ -20,6 +20,8 @@ WRKDIST=	${WRKDIR}/rat-3.0
 USE_GMAKE=	Yes
 MAKE_FLAGS=	CC=${CC} OSTYPE=${OPSYS} OSVERS=${OPSYS_VER} OSMVER=${OSMAJOR}
 ALL_TARGET=	bin/rat-${OPSYS}-${OSREV}
+
+NO_REGRESS=	Yes
 
 post-extract:
 	@cp ${FILESDIR}/Makefile_OpenBSD ${WRKSRC}/Makefile_${OPSYS}_${OSMAJOR}

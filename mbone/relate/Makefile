@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2001/11/13 22:13:23 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/10/27 20:05:44 naddy Exp $
 
 COMMENT=	"ReLaTe integrated conferencing tool from UCL"
 
-DISTNAME=       relate-2.0
+DISTNAME=	relate-2.0
 CATEGORIES=	mbone
-NEED_VERSION=	1.496
+
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/relate-ui/2.0/
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -26,6 +26,8 @@ USE_GMAKE=	Yes
 MAKE_FILE=	makefile
 ALL_TARGET=		
 WRKDIST=	${WRKDIR}/relate
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/relate ${PREFIX}/bin

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2002/03/21 21:09:18 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2002/10/27 20:05:44 naddy Exp $
 
 COMMENT=	"Network Text Editor multicast tool from UCL"
 
-DISTNAME=       nte-1.7.0
+DISTNAME=	nte-1.7.0
 CATEGORIES=	mbone
-NEED_VERSION=	1.515
+
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/nte/1.7.0/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
@@ -22,7 +22,9 @@ LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0 \
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=simple
 
-WRKDIST=		${WRKDIR}/nte
+WRKDIST=	${WRKDIR}/nte
+
+NO_REGRESS=	Yes
 
 post-extract:
 	@cp ${FILESDIR}/Makefile.work ${WRKSRC}/Makefile

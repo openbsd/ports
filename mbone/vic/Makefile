@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2002/10/06 22:28:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2002/10/27 20:05:44 naddy Exp $
 
 COMMENT=	"MBONE video tool"
 
@@ -23,6 +23,8 @@ CONFIGURE_STYLE= autoconf
 MAKE_ENV=	CC="${CC}" CCOPT="${CFLAGS}"
 
 WRKDIST=	${WRKDIR}/vic
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vic ${PREFIX}/bin
