@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2002/03/11 18:36:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2002/03/11 23:00:24 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k powerpc
 
@@ -68,6 +68,7 @@ DOCSRC=		${WRKSRC}/doc
 .if ${FLAVOR:L:Mm17n}
 DISTNAME=	w3m-${VERSION}-m17n-${M17N_VERSION}
 PKGNAME=	w3m-${VERSION}.${M17N_VERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:0
 CONFIGURE_ARGS+= --suffix="" --charset=UTF-8
 DOCS+=		README.m17n
 PATCH_LIST+=	patch-m17n-configure
