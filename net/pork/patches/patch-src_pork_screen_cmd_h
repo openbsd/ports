@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_pork_screen_cmd_h,v 1.1 2003/07/19 05:59:41 jolan Exp $
+--- src/pork_screen_cmd.h.orig	Sun Jun 15 14:44:25 2003
++++ src/pork_screen_cmd.h	Sat Jul 19 00:22:44 2003
+@@ -19,6 +19,7 @@ void screen_win_msg(struct imwindow *win
+ 					int color,
+ 					char *fmt, ...) __format((printf, 5, 6));
+ 
++inline void screen_write(struct imwindow *win, char *buf);
+ inline void screen_nocolor_msg(char *fmt, ...) __format((printf, 1, 2));
+ inline void screen_status_msg(char *fmt, ...) __format((printf, 1, 2));
+ inline void screen_err_msg(char *fmt, ...) __format((printf, 1, 2));

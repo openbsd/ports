@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_pork_command_defs_h,v 1.1 2003/07/19 05:59:41 jolan Exp $
+--- src/pork_command_defs.h.orig	Mon Jul  7 23:52:27 2003
++++ src/pork_command_defs.h	Sat Jul 19 00:14:42 2003
+@@ -41,7 +41,7 @@ USER_COMMAND(cmd_send);
+ USER_COMMAND(cmd_set);
+ USER_COMMAND(cmd_unbind);
+ USER_COMMAND(cmd_unalias);
+-USER_COMMAND(cmd_xecho);
++USER_COMMAND(cmd_who);
+ 
+ USER_COMMAND(cmd_file);
+ USER_COMMAND(cmd_file_cancel);
+@@ -118,7 +118,6 @@ USER_COMMAND(cmd_buddy_remove);
+ USER_COMMAND(cmd_buddy_remove_group);
+ USER_COMMAND(cmd_buddy_remove_permit);
+ USER_COMMAND(cmd_buddy_report_idle);
+-USER_COMMAND(cmd_buddy_search);
+ USER_COMMAND(cmd_buddy_seen);
+ USER_COMMAND(cmd_buddy_unblock);
+ USER_COMMAND(cmd_buddy_warn);

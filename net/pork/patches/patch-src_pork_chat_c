@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_pork_chat_c,v 1.1 2003/07/19 05:59:41 jolan Exp $
+--- src/pork_chat.c.orig	Thu Jul 10 13:52:40 2003
++++ src/pork_chat.c	Thu Jul 17 16:00:57 2003
+@@ -453,6 +453,9 @@ struct chat_user *chat_user_joined(	stru
+ 	struct chat_user *chat_user;
+ 	char buf[512];
+ 
++	if (chat_find_user(acct, chat, user) != NULL)
++		return (NULL);
++
+ 	chat->num_users++;
+ 
+ 	acct->proto->normalize(user, buf, sizeof(buf));
+@@ -519,14 +522,13 @@ int chat_user_left(	struct pork_acct *ac
+ 	char buf[512];
+ 
+ 	node = chat_find_user_node(acct, chat, user);
+-	if (node == NULL)
+-		return (-1);
+-
++	if (node == NULL) {
+ 	chat->num_users--;
+ 
+ 	chat_user = node->data;
+ 	chat->user_list = dlist_remove(chat->user_list, node);
+ 	chat_destroy_user_list_cb(acct, chat_user);
++	}
+ 
+ 	if (event_generate(acct->events, EVENT_RECV_CHAT_LEAVE,
+ 			chat->title, user, acct->refnum))

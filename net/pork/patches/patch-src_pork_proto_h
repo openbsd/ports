@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_pork_proto_h,v 1.1 2003/07/19 05:59:41 jolan Exp $
+--- src/pork_proto.h.orig	Wed Jul  2 11:47:10 2003
++++ src/pork_proto.h	Sat Jul 19 00:20:55 2003
+@@ -33,7 +33,6 @@ struct pork_proto {
+ 	int (*buddy_permit)(struct pork_acct *, char *);
+ 	int (*buddy_unblock)(struct pork_acct *, char *);
+ 	int (*buddy_remove_permit)(struct pork_acct *, char *);
+-	int (*buddy_search)(struct pork_acct *, char *str);
+ 	int (*buddy_add)(struct pork_acct *, struct buddy *);
+ 	int (*buddy_alias)(struct pork_acct *, struct buddy *);
+ 	int (*buddy_remove)(struct pork_acct *, struct buddy *);
+@@ -80,6 +79,7 @@ struct pork_proto {
+ 	int (*update)(struct pork_acct *);
+ 	int (*user_compare)(const char *u1, const char *u2);
+ 	int (*normalize)(const char *str, char *buf, size_t len);
++	int (*who)(struct pork_acct *, char *str);
+ };
+ 
+ int proto_init(u_int32_t protocol, int (*init_func)(struct pork_proto *));

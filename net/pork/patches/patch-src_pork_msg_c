@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_pork_msg_c,v 1.1 2003/07/19 05:59:41 jolan Exp $
+--- src/pork_msg.c.orig	Tue Jul  8 13:03:38 2003
++++ src/pork_msg.c	Sat Jul 19 00:17:51 2003
+@@ -44,7 +44,7 @@ int pork_msg_send_auto(struct pork_acct 
+ 	u_int32_t hash_val;
+ 	int ret = 0;
+ 
+-	if (acct->proto->send_msg_auto == NULL)
++	if (acct->away_msg != NULL && acct->proto->send_msg_auto == NULL)
+ 		return (-1);
+ 
+ 	hash_val = string_hash(sender, acct->autoreply.order);
+@@ -196,6 +196,11 @@ int pork_msg_send(struct pork_acct *acct
+ 					dest);
+ 			} else {
+ 				struct imwindow *win;
++
++				if (acct->away_msg != NULL) {
++					if (opt_get_bool(OPT_SEND_REMOVES_AWAY))
++						pork_set_back(acct);
++				}
+ 
+ 				win = imwindow_find(acct, dest);
+ 				if (win == NULL || win->type != TYPE_PRIVMSG) {
