@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/04/18 14:19:02 robert Exp $
+# $OpenBSD: Makefile,v 1.33 2004/05/24 13:17:40 robert Exp $
 
 COMMENT=		"Multimedia player for the X Window System"
 COMMENT-esd=		"Esound output plugin for XMMS"
@@ -47,7 +47,7 @@ MULTI_PACKAGES+=	-mp3
 
 SUBPACKAGE?=
 
-MODULES=		iconv
+MODULES=		gettext
 RUN_DEPENDS=		:unzip-*:archivers/unzip
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
 			gthread.1.2::devel/glib \
@@ -55,7 +55,7 @@ LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.57
+AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--without-gnome \
 			--enable-ipv6
@@ -65,7 +65,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			XML_CONFIG="${LOCALBASE}/bin/xml-config" \
 
-DOCS=			README NEWS
+DOCS=			README NEWS FAQ
 
 
 .if defined(PACKAGING)

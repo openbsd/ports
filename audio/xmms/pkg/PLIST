@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/04/15 19:23:46 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/05/24 13:17:40 robert Exp $
 bin/wmxmms
 bin/xmms
 bin/xmms-config
@@ -32,6 +32,7 @@ lib/libxmms.la
 man/man1/wmxmms.1
 man/man1/xmms.1
 share/aclocal/xmms.m4
+share/doc/xmms/FAQ
 share/doc/xmms/NEWS
 share/doc/xmms/README
 share/locale/af/LC_MESSAGES/xmms.mo
