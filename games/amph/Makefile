@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/13 04:28:26 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/25 08:15:37 pvalchev Exp $
 
 COMMENT=	"jump'n run game with unique video effects"
 
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=   Yes
 DISTFILES=	amphetamine-data-${DVERSION}${EXTRACT_SUFX} \
 		${DISTNAME}${EXTRACT_SUFX}
 
-LIB_DEPENDS=	SDL.0.2:sdl-*-!no_x11:devel/sdl
+LIB_DEPENDS=	SDL.0.3:sdl-*-!no_x11:devel/sdl
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
