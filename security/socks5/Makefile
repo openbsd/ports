@@ -3,7 +3,7 @@
 # Date created:				21 Apr 1998
 # Whom:					form@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.8 1998/12/16 22:16:00 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1999/02/17 07:09:24 marc Exp $
 #
 
 DISTNAME=	socks5-v1.0r8
@@ -41,7 +41,7 @@ do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
 	  ${ECHO} ""; \
 	  ${ECHO} "NEC requires that you grab the dist files from their"; \
-	  ${ECHO} "web site at http://www.socks5.nec.com.  Please make sure"; \
+	  ${ECHO} "web site at http://www.socks.nec.com.  Please make sure"; \
 	  ${ECHO} "you have ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}"; \
 	  ${ECHO} "and run make again."; \
 	  ${ECHO} ""; \
