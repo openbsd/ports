@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/13 20:34:11 jasoni Exp $
+# $OpenBSD: Makefile,v 1.9 2002/06/05 04:11:02 jasoni Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 6.2"
 
-PKGNAME=	redhat_base-6.2p4
+PKGNAME=	redhat_base-6.2p5
 
 MAINTAINER=	Jason Ish <jasoni@openbsd.org>
 
