@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_testsuite_ada_acats_run_all_sh,v 1.1 2005/01/07 11:33:14 espie Exp $
+--- gcc/testsuite/ada/acats/run_all.sh.orig	Fri Jan  7 04:06:30 2005
++++ gcc/testsuite/ada/acats/run_all.sh	Fri Jan  7 04:06:46 2005
+@@ -77,7 +77,7 @@ display target gcc is $GCC
+ display `$GCC -v 2>&1`
+ display host=`gcc -dumpmachine`
+ display target=$target
+-display `type gnatmake`
++display `which gnatmake`
+ gnatls -v >> $dir/acats.log
+ display ""
+ 

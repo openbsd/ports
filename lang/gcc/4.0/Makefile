@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/01/06 19:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2005/01/07 11:33:14 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -149,13 +149,17 @@ PKG_ARGS+=-DPPC=1
 PKG_ARGS+=-DPPC=0
 .endif
 
-.if defined(PACKAGING) && defined(SUBPACKAGE)
+SUBPACKAGE?=
+.if defined(PACKAGING)
 .  if !empty(SUBPACKAGE) && ${SUBPACKAGE} != "-estdc"
 RUN_DEPENDS+=::${PKGPATH}
 .  endif
 .  if ${SUBPACKAGE} == "-c++"
 RUN_DEPENDS+=::${PKGPATH},-estdc
 .  endif
+.endif
+.if !defined(PACKAGING) || ${SUBPACKAGE} == "-f95"
+LIB_DEPENDS+=gmp:gmp->=4.1.4:devel/gmp
 .endif
 
 .include <bsd.port.mk>

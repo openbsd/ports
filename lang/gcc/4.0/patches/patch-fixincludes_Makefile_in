@@ -1,0 +1,14 @@
+$OpenBSD: patch-fixincludes_Makefile_in,v 1.1 2005/01/07 11:33:14 espie Exp $
+--- fixincludes/Makefile.in.orig	Fri Jan  7 04:10:08 2005
++++ fixincludes/Makefile.in	Fri Jan  7 04:10:14 2005
+@@ -163,8 +163,8 @@ $(srcdir)/aclocal.m4: @MAINT@ $(srcdir)/
+ 	cp $(srcdir)/../gcc/aclocal.m4 .
+ 
+ check : all
+-	autogen -T $(srcdir)/check.tpl $(srcdir)/inclhack.def
+-	$(SHELL) ./check.sh $(srcdir)/tests/base
++	-autogen -T $(srcdir)/check.tpl $(srcdir)/inclhack.def
++	-$(SHELL) ./check.sh $(srcdir)/tests/base
+ 	@rm -f ./check.sh
+ 
+ install : all
