@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.35 2004/07/03 17:50:52 sturm Exp $
+# $OpenBSD: make-plist,v 1.36 2004/07/18 22:47:44 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -92,7 +92,7 @@ sub annotate
 			next;
 		} elsif (m/^\@comment\s+/) {
 			$_ = $';
-			if (m/^\@dirrm\s+/) {
+			if (m/^\@dirrm\s+/ || m/^\@dir\s+/) {
 				$_ = $';
 				$annotated_dir->add($_,  [ $name, $newfh, 'comment']);
 				next;
@@ -100,9 +100,12 @@ sub annotate
 				$annotated->add($_, [ $name, $newfh, 'comment'] );
 			}
 			next;
-		} elsif (m/^\@dirrm\s+/) {
+		} elsif (m/^\@dirrm\s+/ || m/^\@dir\s+/) {
 			$_=$';
 			$annotated_dir->add($_, [ $name, $newfh ]);
+			next;
+		} elsif (m/^\@extra\b/ || m/^\@extraunexec\b/) {
+			$manual = 1;
 			next;
 		} elsif (m/^\@/) {
 			next;
@@ -207,7 +210,7 @@ sub augment_mtree
 		die "Error in dependent package $pkg\n";
 	while (<FILE>) {
 		chomp;
-		if (m/^\@dirrm\s+/) {
+		if (m/^\@dirrm\b/ || m/^\@dir\b/) {
 			die "Badly formed package: $pkg\n";
 		} 
 		if (m/^\@cwd\s+/) {
@@ -221,7 +224,7 @@ sub augment_mtree
 	}
 	while (<FILE>) {
 		chomp;
-		if (m/^\@dirrm\s+/) {
+		if (m/^\@dirrm\s+/ || m/^\@dir\s+/) {
 			my $filename= File::Spec->catfile($dst, $basepath, $');
 			$mtree->{$filename} = $pkg;
 		}
@@ -232,35 +235,49 @@ sub augment_mtree
 
 sub handle_file
 {
-    my $fname = strip(shift);
-    my $out = shift;
+    my ($newdir, $item, $out) = @_;
+    my $fname = strip($item);
     my $string = "$fname\n";
 
-    if (defined $annotated->{$fname}) {
-    	for my $l (@{$annotated->{$fname}}) {
-	    if (@$l == 3) {
-		    $l->[1]->print("\@comment $string");
-	    } elsif (@$l == 2) {
-		    $l->[1]->print($string);
-	    } else {
-		my ($outname, $fh, $mode, $owner, $group, $nocheck) = @$l;
-		if ($mode ne '') {
-			$string="\@mode $mode\n$string\@mode\n";
+    if (defined $newdir->{$item}) {
+	if (defined $annotated_dir->{$fname}) {
+		for my $l (@{$annotated_dir->{$fname}}) {
+		    if (@$l == 3) {
+			    $l->[1]->print("\@comment \@dir $fname\n");
+		    } else {
+			    $l->[1]->print("\@dir $fname\n");
+		    }
 		}
-		if ($owner ne '') {
-			$string="\@owner $owner\n$string\@owner\n";
-		}
-		if ($group ne '') {
-			$string="\@group $group\n$string\@group\n";
-		}
-		if ($nocheck ne '') {
-			$string="\@comment no checksum\n$string";
-		}
-		print $fh $string;
-	    }
+	} else {
+		$out{$plist}->print("\@dir $fname\n");
 	}
     } else {
-    	print $out $string;
+	if (defined $annotated->{$fname}) {
+	    for my $l (@{$annotated->{$fname}}) {
+		if (@$l == 3) {
+			$l->[1]->print("\@comment $string");
+		} elsif (@$l == 2) {
+			$l->[1]->print($string);
+		} else {
+		    my ($outname, $fh, $mode, $owner, $group, $nocheck) = @$l;
+		    if ($mode ne '') {
+			    $string="\@mode $mode\n$string\@mode\n";
+		    }
+		    if ($owner ne '') {
+			    $string="\@owner $owner\n$string\@owner\n";
+		    }
+		    if ($group ne '') {
+			    $string="\@group $group\n$string\@group\n";
+		    }
+		    if ($nocheck ne '') {
+			    $string="\@comment no checksum\n$string";
+		    }
+		    print $fh $string;
+		}
+	    }
+	} else {
+	    print $out $string;
+	}
     }
 }
 
@@ -379,7 +396,7 @@ find(
 			if (-d _) {
 				$newdir{$File::Find::name} = 1;
 			} else {
-				if (/\.so\.\d+\.\d+$/) {
+				if (/\.so\.\d+\.\d+$/ || /\.so$/) {
 					$ldconfig{$File::Find::dir} = 1;
 					push(@libfiles, $File::Find::name);
 				} elsif (/\.so$/) {
@@ -403,14 +420,14 @@ find(
 # so all parents had to be around too
 for my $d (keys %occupied) {
 	while ($d ne '') {
-		undef $newdir{$d} if defined $newdir{$d};
+		delete $newdir{$d} if defined $newdir{$d};
 		$d =~ s|/.*?/?$||;
 	}
 }
 
 # make sure mtree is removed 
 for my $d (keys %$mtree) {
-	undef $newdir{$d}
+	delete $newdir{$d}
 }
 
 unless (defined $out{$plist}) {
@@ -420,8 +437,12 @@ unless (defined $out{$plist}) {
 
 add_info('@unexec install-info --delete', \%info_dir);
 
+for my $d (keys %newdir) {
+	push @files, $d;
+}
+
 for my $f (sort @files) {
-	handle_file($f, $out{$plist}) unless ($f =~ m|/dir$|) && (defined $info_dir{$`});
+	handle_file(\%newdir, $f, $out{$plist}) unless ($f =~ m|/dir$|) && (defined $info_dir{$`});
 }
 
 for my $fh (@has_shared) {
@@ -437,7 +458,7 @@ if (@libfiles > 0) {
 
     	$out{$plist}->print("\%\%SHARED\%\%\n") if @has_shared == 0;
 	for my $f (sort @libfiles) {
-	    handle_file(strip($f), $out{$pshared});
+	    handle_file(\%newdir, strip($f), $out{$pshared});
 	}
 	for my $d (sort (keys %ldconfig)) {
 		if (defined $newdir{$d}) {
@@ -448,29 +469,6 @@ if (@libfiles > 0) {
 	}
 }
 
-for my $d (sort { $b cmp $a } (grep { $newdir{$_} } (keys %newdir) ) ) {
-	my $dname = strip($d);
-	if (defined $annotated_dir->{$dname}) {
-		for my $l (@{$annotated_dir->{$dname}}) {
-		    if (!$has_stuff{$d}) {
-			    $l->[1]->print("\@exec mkdir -p \%D/$dname\n");
-		    }
-		    if (@$l == 3) {
-			    $l->[1]->print("\@comment \@dirrm $dname\n");
-		    } else {
-			    $l->[1]->print("\@dirrm $dname\n");
-		    }
-		}
-	} else {
-		# case of new directory that does not hold anything: it's marked
-		# for removal, but it must exist first
-		if (!$has_stuff{$d}) {
-			$out{$plist}->print("\@exec mkdir -p \%D/$dname\n");
-		}
-		$out{$plist}->print("\@dirrm $dname\n");
-	}
-}
-	
 add_info('@exec install-info', \%info_dir);
 
 if ($manual) {
