@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2005/03/02 19:30:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2005/03/16 08:59:04 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -6,7 +6,7 @@ COMMENT=	"redesign of Mozilla's browser component"
 
 VER=		1.0.1
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}
+PKGNAME=	mozilla-firefox-${VER}p1
 
 CATEGORIES=	www
 
@@ -78,6 +78,7 @@ MAKE_ENV=	MOZ_PHOENIX=1 \
 
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/mozilla-firefox
+MAGIC=		{972ce4c6-7e08-4474-a285-3208198ce6fd}
 
 post-extract:
 	@cp ${FILESDIR}/xptc* ${WRKSRC}/xpcom/reflect/xptcall/src/md/unix/
@@ -104,5 +105,11 @@ do-install:
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOB}/firefox-config ${MOZ}
 	${INSTALL_PROGRAM} ${MOB}/regchrome ${MOB}/regxpcom ${MOB}/firefox-bin ${MOZ}
 	ln -f ${MOZ}/firefox-bin ${MOZ}/mozilla-firefox-bin
+
+	${INSTALL_DATA_DIR} ${MOZ}/extensions
+	${INSTALL_DATA} ${FILESDIR}/Extensions.rdf ${MOZ}/extensions/
+	${INSTALL_DATA_DIR} ${MOZ}/extensions/${MAGIC}
+	${INSTALL_DATA} ${MOZ}/defaults/profile/extensions/installed-extensions.txt ${MOZ}/extensions/installed-extensions-processed.txt
+	${INSTALL_DATA} ${MOZ}/defaults/profile/extensions/${MAGIC}/install.rdf ${MOZ}/extensions/${MAGIC}/
 
 .include <bsd.port.mk>
