@@ -1,0 +1,12 @@
+$OpenBSD: patch-conversions_c,v 1.1 2003/10/10 21:56:13 jolan Exp $
+--- conversions.c.orig	2003-10-03 05:18:19.000000000 -0500
++++ conversions.c	2003-10-10 16:50:16.000000000 -0500
+@@ -27,7 +27,7 @@
+ #include <unistd.h>
+ #include <errno.h>
+ 
+-char * iconvert (char * inbuf, char * from, char * to) {
++char * iconvert (const char * inbuf, char * from, char * to) {
+ 	iconv_t cd;							/* Iconvs conversion descriptor. */
+ 	char *outbuf, *outbuf_first;		/* We need two pointers so we do not lose
+ 	                                       the strings starting position. */
