@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_makefile_openbsd,v 1.10 2004/09/20 01:24:11 brad Exp $
+$OpenBSD: patch-scripts_makefile_openbsd,v 1.11 2004/10/15 04:41:13 brad Exp $
 --- scripts/makefile.openbsd.orig	Sat Sep 11 22:19:36 2004
-+++ scripts/makefile.openbsd	Sat Sep 18 22:43:38 2004
++++ scripts/makefile.openbsd	Thu Oct 14 03:48:56 2004
 @@ -1,13 +1,16 @@
 -# makefile for libpng
 +# makefile for libpng under OpenBSD
@@ -22,7 +22,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.10 2004/09/20 01:24:11 brad Exp $
  
  LIB=	png
  SRCS=	png.c pngerror.c pnggccrd.c pngget.c pngmem.c pngpread.c \
-@@ -21,24 +24,36 @@ CPPFLAGS+= -I${.CURDIR} -DPNG_NO_ASSEMBL
+@@ -21,24 +24,39 @@ CPPFLAGS+= -I${.CURDIR} -DPNG_NO_ASSEMBL
  
  NOPROFILE= Yes
  
@@ -34,12 +34,15 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.10 2004/09/20 01:24:11 brad Exp $
 +DOCS=	README libpng.txt
  
 -pngtest.o:	pngtest.c
-+all: ${_LIBS} libpng-config
++all: ${_LIBS} libpng-config libpng.pc
 +
 +pngtest.o: pngtest.c
  	${CC} ${CPPFLAGS} ${CFLAGS} -c ${.ALLSRC} -o ${.TARGET}
  
 -pngtest:	pngtest.o
++libpng.pc:
++	cat scripts/libpng.pc.in | sed -e s\!@PREFIX@!$(PREFIX)! > libpng.pc
++
 +libpng-config:
 +	( cat scripts/libpng-config-head.in; \
 +	echo prefix=\"$(PREFIX)\"; \
@@ -66,7 +69,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.10 2004/09/20 01:24:11 brad Exp $
  	fi
  	if [ ! -d ${DESTDIR}${LIBDIR} ]; then \
  	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${LIBDIR}; \
-@@ -52,21 +67,19 @@ beforeinstall:
+@@ -52,21 +70,24 @@ beforeinstall:
  	if [ ! -d ${DESTDIR}${MANDIR}5 ]; then \
  	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${MANDIR}5; \
  	fi
@@ -75,6 +78,9 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.10 2004/09/20 01:24:11 brad Exp $
 +	if [ ! -d ${DESTDIR}${DOCDIR} ]; then \
 +	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${DOCDIR}; \
  	fi
++	if [ ! -d ${DESTDIR}${LIBDIR}/pkgconfig ]; then \
++	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${LIBDIR}/pkgconfig; \
++	fi
  
  afterinstall:
  	@rm -f ${DESTDIR}${LIBDIR}/libpng_pic.a
@@ -89,7 +95,8 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.10 2004/09/20 01:24:11 brad Exp $
 +		-m ${NONBINMODE} ${HDRS} ${DESTDIR}${INCDIR}
  	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
 -		-m ${NONBINMODE} ${HDRS} ${DESTDIR}${PREFIX}/include
--	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
++		-m ${NONBINMODE} libpng.pc ${DESTDIR}${LIBDIR}/pkgconfig
+ 	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
 -		-m ${NONBINMODE} ${DOCS} ${DESTDIR}${PREFIX}/share/doc/png
 +		-m ${NONBINMODE} ${DOCS} ${DESTDIR}${DOCDIR}
  

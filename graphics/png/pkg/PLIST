@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.17 2004/09/15 00:50:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2004/10/15 04:41:13 brad Exp $
 %%SHARED%%
 bin/libpng-config
 include/libpng/
 include/libpng/png.h
 include/libpng/pngconf.h
 lib/libpng.a
+lib/pkgconfig/
+lib/pkgconfig/libpng.pc
 @man man/cat3/libpng.0
 @man man/cat3/libpngpf.0
 @man man/cat5/png.0
