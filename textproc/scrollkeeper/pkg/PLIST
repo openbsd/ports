@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/13 20:40:56 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/08/10 11:41:27 nino Exp $
 bin/scrollkeeper-config
 bin/scrollkeeper-get-cl
 bin/scrollkeeper-get-content-list
@@ -245,3 +245,4 @@ share/scrollkeeper/doc/scrollkeeper_manual/C/writingomffiles.html
 @dirrm share/omf/scrollkeeper
 @unexec rmdir %D/share/omf || true
 @dirrm share/doc/scrollkeeper-0.2
+@exec %D/bin/scrollkeeper-update -p $(%D/bin/scrollkeeper-config --pkglocalstatedir)

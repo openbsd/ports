@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/14 12:07:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2002/08/10 11:41:27 nino Exp $
 
 COMMENT=		"Scrollkeeper Open Documentation Cataloging System"
-V=			0.2
-DISTNAME=		scrollkeeper-${V}
+
+DISTNAME=		scrollkeeper-0.2
 CATEGORIES=		textproc
-NEED_VERSION=   	1.455
+
 HOMEPAGE=		http://scrollkeeper.sourceforge.net
-MAINTAINER=		Nils Nordman <nino@nforced.com>
+MAINTAINER=		Nils Nordman <nino@openbsd.org>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/scrollkeeper/}
 
@@ -28,5 +28,6 @@ post-extract:
 	@find ${WRKSRC}/cl/templates -name Makefile.in | xargs \
 	perl -pi -e 's|data_link_dir = \$$\(datadir\)/scrollkeeper/Templates/|data_link_dir = |g; \
 		     s|\$$\(LN_S\) -f -n \$$\(DESTDIR\)|\$$\(LN_S\) -f |g'
+	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 .include <bsd.port.mk>

@@ -1,0 +1,15 @@
+#! /bin/sh
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+
+echo
+echo "+---------------"
+echo "| If you don't have any local applications that uses scrollkeeper"
+echo "| you should now perform the following step as root:"
+echo "|"
+echo "| rm -rf /var/lib/scrollkeeper"
+echo "+---------------"
+echo
+
+exit 0
