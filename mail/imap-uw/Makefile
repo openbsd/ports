@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2001/11/17 11:12:08 jakob Exp $
+# $OpenBSD: Makefile,v 1.22 2001/11/23 12:47:01 jakob Exp $
 
 COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 
 VERSION=	2001.315
-DISTNAME=	pine4.41
+DISTNAME=	pine4.42
 PKGNAME=	imap-uw-${VERSION}
 CATEGORIES=	mail
 NEED_VERSION=	1.491
