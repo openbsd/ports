@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/14 22:38:19 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/23 07:04:34 brad Exp $
 
-DISTNAME=	curl-6.5
+DISTNAME=	curl-6.5.2
 CATEGORIES=	net
 MASTER_SITES=	http://curl.haxx.nu/stuff/ \
 		http://www.fts.frontec.se/~dast/stuff/ \
