@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/07/07 03:39:38 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/07/10 20:13:13 danh Exp $
 # $FreeBSD: ports/archivers/lzop/Makefile,v 1.3 2000/06/22 05:51:49 will Exp $
 
 DISTNAME=	lzop-1.00
@@ -6,7 +6,7 @@ CATEGORIES=     archivers
 NEED_VERSION=	1.310
 HOMEPAGE=	http://wildsau.idv.uni-linz.ac.at/mfx/lzop.html
 
-MAINTAINER=	danh@nfol.com
+MAINTAINER=	danh@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
