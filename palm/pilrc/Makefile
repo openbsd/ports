@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/18 21:43:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/24 12:31:09 espie Exp $
 
 COMMENT=	"generate resources for PalmOS applications from text descr"
 
 DISTNAME=	pilrc-2.8p5
 PKGNAME=	${DISTNAME:S/p4/.4/}
 CATEGORIES=	palm devel
-NEED_VERSION=	1.438
+NEED_VERSION=	1.474
 
 HOMEPAGE=	http://www.ardiri.com/index.php?redir=palm\&cat=pilrc
 
@@ -29,7 +29,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-pilrcui
 .else
 USE_X11=	Yes
-LIB_DEPENDS=	gtk.1.2:gtk+-*:x11/gtk+
+LIB_DEPENDS=	gtk.1.2,gdk.1.2:gtk+-*:x11/gtk+
 CONFIGURE_ARGS= --enable-pilrcui
 .endif
 
