@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2004/04/11 12:08:32 sturm Exp $
+# $OpenBSD: Makefile,v 1.132 2004/04/14 08:28:41 kevlo Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -119,6 +119,7 @@
      SUBDIR += tinyproxy
      SUBDIR += transproxy
      SUBDIR += turba
+     SUBDIR += twiki
 #    SUBDIR += vrweb
 #    SUBDIR += w3
 #    SUBDIR += w3c-httpd
