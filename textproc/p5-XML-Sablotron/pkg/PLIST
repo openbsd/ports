@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:06 espie Exp $
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Sablotron.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Sablotron/DOM.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/Sablotron/DOM/DOM.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/Sablotron/DOM/DOM.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/Sablotron/Sablotron.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/Sablotron/Sablotron.so
+@comment $OpenBSD: PLIST,v 1.5 2002/05/16 03:52:30 avsm Exp $
+${P5ARCH}/XML/Sablotron.pm
+${P5ARCH}/XML/Sablotron/DOM.pm
+${P5ARCH}/XML/Sablotron/SAXBuilder.pm
+${P5ARCH}/auto/XML/Sablotron/DOM/DOM.bs
+${P5ARCH}/auto/XML/Sablotron/DOM/DOM.so
+${P5ARCH}/auto/XML/Sablotron/Sablotron.bs
+${P5ARCH}/auto/XML/Sablotron/Sablotron.so
 man/man3p/XML::Sablotron.3p
 man/man3p/XML::Sablotron::DOM.3p
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/Sablotron/DOM
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/Sablotron
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Sablotron
+man/man3p/XML::Sablotron::SAXBuilder.3p
+@dirrm ${P5ARCH}/auto/XML/Sablotron/DOM
+@dirrm ${P5ARCH}/auto/XML/Sablotron
+@dirrm ${P5ARCH}/XML/Sablotron
