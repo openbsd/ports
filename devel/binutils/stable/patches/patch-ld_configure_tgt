@@ -1,5 +1,5 @@
 --- ld/configure.tgt.orig	Mon Oct 28 10:58:12 2002
-+++ ld/configure.tgt	Thu Apr 24 15:43:00 2003
++++ ld/configure.tgt	Thu Jun  5 19:32:33 2003
 @@ -70,12 +70,15 @@ sparc*-*-linux-gnu*)	targ_emul=elf32_spa
  			tdir_sun4=sparc-sun-sunos4
  			;;
@@ -12,7 +12,7 @@
 +sparc64-*-openbsd*)	targ_emul=elf64_sparc ;;
  sparc*-*-netbsd*elf*)	targ_emul=elf32_sparc ;;
  sparc*-*-netbsd*)	targ_emul=sparcnbsd ;;
-+sparc*-*-openbsd[01].* | sparc*-*-openbsd2.[0-9] | sparc*-*-openbsd3.[0-1])
++sparc*-*-openbsd[0-2].* | sparc*-*-openbsd3.[0-1])
 +			targ_emul=sparcobsd ;;
 +sparc*-*-openbsd*)      targ_emul=elf32_sparc ;;
  sparc-*-solaris2.[0-6] | sparc-*-solaris2.[0-6].*)
