@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/13 18:43:33 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/01 17:47:42 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
 # Directory where the maple CDROM was mounted
-CDROM?=/cdrom
+.if !defined(MAPLE_CDROM)
+IGNORE="Commercial port, mount the maple cdrom and build with make MAPLE_CDROM=mount_point"
+.endif
 
 # where the basic distribution unpacks
 MAPLE_DIR?=${PREFIX}/maple
