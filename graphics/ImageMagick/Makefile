@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2004/07/09 19:40:36 brad Exp $
+# $OpenBSD: Makefile,v 1.69 2004/07/10 23:52:02 brad Exp $
 
 COMMENT=	"display and manipulate images under X11"
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=imagemagick/}
 
 HOMEPAGE=	http://www.simplesystems.org/ImageMagick/
 
-LIB_DEPENDS=	bz2.10::archivers/bzip2 \
+LIB_DEPENDS+=	bz2.10::archivers/bzip2 \
 		jbig.1.2::graphics/jbigkit \
 		mpeg.13::graphics/mpeg-lib \
 		png.2::graphics/png \
@@ -19,10 +19,6 @@ LIB_DEPENDS=	bz2.10::archivers/bzip2 \
 		lcms::graphics/lcms \
 		exif::graphics/libexif \
 		jasper::graphics/jasper
-RUN_DEPENDS=	:transfig-*:print/transfig \
-		:netpbm-*:graphics/netpbm \
-		::print/ghostscript/gnu
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -49,16 +45,25 @@ CONFIGURE_ARGS+= --enable-lzw \
 		 --without-perl \
 		 --without-wmf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/libxml2 -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${WRKBUILD}/magick/.libs -L${LOCALBASE}/lib"
 
-#FLAVORS=	no_x11
-#FLAVOR?=
+FLAVORS=	no_x11
+FLAVOR?=
 
-#.if ${FLAVOR:L:Mno_x11}
-#CONFIGURE_ARGS+= --without-x --without-ttf
-#.else
+.if ${FLAVOR:L:Mno_x11}
+BUILD_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu,no_x11
+RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu,no_x11
+CONFIGURE_ARGS+= --without-x --without-ttf
+.else
+BUILD_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
+RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
 USE_X11=	Yes
-#.endif
+.endif
+
+RUN_DEPENDS+=	:transfig-*:print/transfig \
+		:netpbm-*:graphics/netpbm
+BUILD_DEPENDS+=	:transfig-*:print/transfig \
+		:netpbm-*:graphics/netpbm
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/-${DASHVER}//}
 
