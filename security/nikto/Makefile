@@ -1,4 +1,4 @@
-# $OpenBSD $
+# $OpenBSD: Makefile,v 1.3 2004/10/19 05:52:56 pvalchev Exp $
 
 COMMENT=	"Web and CGI vulnerability scanner with SSL support"
 
