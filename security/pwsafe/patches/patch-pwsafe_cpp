@@ -1,0 +1,89 @@
+$OpenBSD: patch-pwsafe_cpp,v 1.1.1.1 2005/02/20 13:42:08 mbalmer Exp $
+--- pwsafe.cpp.orig	Tue Mar  2 07:27:56 2004
++++ pwsafe.cpp	Wed Feb 16 17:40:54 2005
+@@ -123,8 +123,8 @@ typedef struct option long_option;
+ 
+ // The name the program was run with, stripped of any leading path
+ const char *program_name = "pwsafe"; // make sure program_name always points to something valid so we can use it in constructors of globals
+-uid_t saved_uid;
+-gid_t saved_gid;
++// uid_t saved_uid;
++// gid_t saved_gid;
+ 
+ // Option flags and variables
+ const char* arg_dbname = NULL;
+@@ -377,14 +377,14 @@ int main(int argc, char **argv) {
+ 
+   try {
+     try {
+-      saved_uid = geteuid();
+-      saved_gid = getegid();
++      // saved_uid = geteuid();
++      // saved_gid = getegid();
+       
+       // if we are running suid, drop privileges now; we use seteuid() instead of setuid() so the saved uid remains root and we can become root again in order to mlock()
+-      if (saved_uid != getuid() || saved_gid != getgid()) {
+-        setegid(getgid());
+-        seteuid(getuid());
+-      }
++      // if (saved_uid != getuid() || saved_gid != getgid()) {
++      //   setegid(getgid());
++      //   seteuid(getuid());
++      // }
+ 
+ #if WITH_READLINE
+       rl_readline_name = const_cast<char*>(program_name); // so readline() can parse its config files and handle if (pwsafe) sections; some older readline's type rl_readline_name as char*, hence the const_cast
+@@ -2217,32 +2217,32 @@ secalloc::Pool::Pool(size_t n) : next(0)
+   top = z + ((bottom-z+pagesize+n+pagesize) & ~(pagesize-1)); // round top down to a page boundary
+ 
+   // mark level..top as non-swapabble
+-  int rc = mlock(level,top-level);
+-  if (rc && errno == EPERM && (saved_uid != geteuid() || saved_gid != getegid())) {
++  // int rc = mlock(level,top-level);
++  // if (rc && errno == EPERM && (saved_uid != geteuid() || saved_gid != getegid())) {
+     // try again as root (or whoever saved_uid really is)
+-    if (saved_uid != geteuid()) 
+-      seteuid(saved_uid);
+-    if (saved_gid != getegid())
+-      setegid(saved_gid);
+-    rc = mlock(level,top-level);
+-    setegid(getgid());
+-    seteuid(getuid());
+-  }
+-  if (rc) {
+-    static bool reported = false;
+-    if (!reported) {
+-      fprintf(stderr, "WARNING: %s unable to use secure ram (need to be setuid root)\n", program_name);
+-      reported = true;
+-    }
+-  }
++  //   if (saved_uid != geteuid()) 
++  //     seteuid(saved_uid);
++  //   if (saved_gid != getegid())
++  //     setegid(saved_gid);
++  //   rc = mlock(level,top-level);
++  //   setegid(getgid());
++  //   seteuid(getuid());
++  // }
++  // if (rc) {
++  //   static bool reported = false;
++  //   if (!reported) {
++  //     fprintf(stderr, "WARNING: %s unable to use secure ram (need to be setuid root)\n", program_name);
++  //     reported = true;
++  //   }
++  // }
+ }
+ 
+ secalloc::Pool::~Pool() {
+-  char*const z = 0;
+-  const size_t pagesize = secalloc::pagesize;
++  // char*const z = 0;
++  // const size_t pagesize = secalloc::pagesize;
+   memset(bottom, 0, top-bottom); // clear it once more, just in case everything wasn't properly deallocate()ed
+-  char*const l = z + ((bottom-z+pagesize-1) & ~(pagesize-1)); // recalculate original value we passed to mlock()
+-  munlock(l, top-l); // might fail; that's ok if it does
++  // char*const l = z + ((bottom-z+pagesize-1) & ~(pagesize-1)); // recalculate original value we passed to mlock()
++  // munlock(l, top-l); // might fail; that's ok if it does
+   free(bottom);
+ }
+ 
