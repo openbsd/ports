@@ -1,0 +1,13 @@
+$OpenBSD: patch-ktail_cmdlinedlg_h,v 1.1 2003/02/25 00:23:08 espie Exp $
+--- ktail/cmdlinedlg.h.orig	Tue Jan 21 11:55:20 2003
++++ ktail/cmdlinedlg.h	Tue Jan 21 11:55:49 2003
+@@ -37,6 +37,9 @@ protected:
+     QGridLayout* CmdLineDlgLayout;
+     QVBoxLayout* Layout1;
+     QHBoxLayout* Layout2;
++
++private:
++    void languageChange(void);
+ };
+ 
+ #endif // CMDLINEDLG_H

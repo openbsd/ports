@@ -1,0 +1,13 @@
+$OpenBSD: patch-ktail_removedlg_h,v 1.1 2003/02/25 00:23:08 espie Exp $
+--- ktail/removedlg.h.orig	Tue Jan 21 11:55:20 2003
++++ ktail/removedlg.h	Tue Jan 21 11:55:41 2003
+@@ -37,6 +37,9 @@ public:
+ protected:
+     QGridLayout* RemoveDlgLayout;
+     QHBoxLayout* Layout3;
++
++private:
++    void languageChange(void);
+ };
+ 
+ #endif // REMOVEDLG_H

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/01/19 03:22:56 brad Exp $
-
-BROKEN=		"does not compile with Qt 3.1 and up"
+# $OpenBSD: Makefile,v 1.8 2003/02/25 00:23:07 espie Exp $
 
 COMMENT=	"file monitor"
 
@@ -21,19 +19,16 @@ EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3
 
-MODULES=	qt3
+MODULES=	kde
 
 MAKE_ENV=	${CONFIGURE_ENV}
-MAKE_FLAGS=	CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
+MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
-CONFIGURE_ARGS=  ${MODQT_CONFIGURE_ARGS}
-CONFIGURE_ARGS+= --enable-final --disable-mt
-CONFIGURE_ARGS+= --with-extra-libs=${LOCALBASE}/lib
-CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include
-CONFIGURE_ENV=  KDEDIR=${LOCALBASE} 
+MODGNU_CONFIG_GUESS_DIRS=	${MODKDE_CONFIG_GUESS_DIRS}
+CONFIGURE_ARGS=  ${MODKDE_CONFIGURE_ARGS}
+CONFIGURE_ENV=  ${MODKDE_CONFIGURE_ENV}
 
 .include <bsd.port.mk>

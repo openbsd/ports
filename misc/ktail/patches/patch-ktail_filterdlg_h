@@ -1,0 +1,13 @@
+$OpenBSD: patch-ktail_filterdlg_h,v 1.1 2003/02/25 00:23:08 espie Exp $
+--- ktail/filterdlg.h.orig	Tue Jan 21 11:55:20 2003
++++ ktail/filterdlg.h	Tue Jan 21 11:55:47 2003
+@@ -42,6 +42,9 @@ protected:
+     QGridLayout* FilterDlgLayout;
+     QHBoxLayout* Layout2;
+     QGridLayout* GroupBox1Layout;
++
++private:
++    void languageChange(void);
+ };
+ 
+ #endif // FILTERDLG_H

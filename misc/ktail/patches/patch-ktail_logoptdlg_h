@@ -1,0 +1,13 @@
+$OpenBSD: patch-ktail_logoptdlg_h,v 1.1 2003/02/25 00:23:08 espie Exp $
+--- ktail/logoptdlg.h.orig	Tue Jan 21 11:55:20 2003
++++ ktail/logoptdlg.h	Tue Jan 21 11:55:44 2003
+@@ -43,6 +43,9 @@ protected:
+     QVBoxLayout* Layout3;
+     QGridLayout* GroupBox1Layout;
+     QHBoxLayout* Layout2;
++
++private:
++    void languageChange(void);
+ };
+ 
+ #endif // LOGOPTDLG_H
