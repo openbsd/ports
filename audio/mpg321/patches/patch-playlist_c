@@ -1,0 +1,11 @@
+$OpenBSD: patch-playlist_c,v 1.1 2001/09/30 14:24:47 naddy Exp $
+--- playlist.c.orig	Mon Sep 24 21:05:52 2001
++++ playlist.c	Mon Sep 24 21:06:24 2001
+@@ -48,6 +48,7 @@ playlist * new_playlist()
+     pl->files_size = DEFAULT_PLAYLIST_SIZE;
+     pl->numfiles = 0;
+     pl->random_play = 0;
++    strcpy(pl->remote_file, "");
+     
+     return pl;
+ }
