@@ -1,5 +1,7 @@
-bin/screen
+@comment $OpenBSD: PLIST,v 1.9 2000/05/18 12:10:44 espie Exp $
 bin/screen-3.9.5
+@exec ln -sf %f %B/screen
+@unexec rm -f %B/screen
 man/man1/screen.1
 @unexec install-info --delete %D/info/screen.info %D/info/dir
 info/screen.info
