@@ -1,21 +1,22 @@
-# OpenBSD makefile for:		lsof
-# Version required:     4.34
-# Date created:         25 November 1997
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.9 1999/02/18 01:15:34 marc Exp $
+# $OpenBSD: Makefile,v 1.10 1999/02/18 19:27:35 marc Exp $
 #
 
-DISTNAME=	lsof_4.34_W
-PKGNAME=	lsof-4.34
+DISTNAME=	lsof_4.40_W
+DIST_SUBDIR=	lsof
+PKGNAME=	lsof-4.40
 CATEGORIES=	sysutils
 
 MAINTAINER=     angelos@openbsd.org
 
-MASTER_SITES=	ftp://ftp.web.ad.jp/pub/UNIX/tools/lsof/  \
+MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/ \
+		ftp://ftp.crc.doc.ca/packages/lsof/ \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/
 
-WRKSRC=		${WRKDIR}/${SRCBALL_NAME}
+PATCH_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/patches/4.40/ \
+		ftp://ftp.crc.doc.ca/packages/lsof/
+
+PATCHFILES=	arg.c.patch
+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n openbsd
@@ -23,6 +24,8 @@ CONFIGURE_ARGS=	-n openbsd
 NO_PACKAGE=	compile from source to set proper options
 
 SRCBALL_NAME=	${DISTNAME:S/_W$//}
+WRKSRC=		${WRKDIR}/${SRCBALL_NAME}
+
 
 .if ( ${MACHINE_ARCH} == "sparc" )
 IS_INTERACTIVE=	yes
