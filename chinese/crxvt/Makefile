@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/11/13 22:13:22 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/04/19 07:14:05 kevlo Exp $
 
 COMMENT=	"Chinese(Big5) VT100 terminal emulator for X"
 
@@ -6,7 +6,7 @@ DISTNAME=       crxvt-2.10-2
 PKGNAME=        zh-crxvt-2.10.2
 CATEGORIES=     chinese 
 NEED_VERSION=	1.496
-MASTER_SITES=   ftp://ftp.linux.org.tw/pub/xcin/crxvt/old/ \
+MASTER_SITES=   ftp://ftp.linux.org.tw/pub/xcin/old/ \
 		ftp://ftp.shellhung.org/pub/OpenBSD/packages/chinese/
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
