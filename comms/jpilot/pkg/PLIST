@@ -1,20 +1,52 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:24:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/01/23 06:06:01 pvalchev Exp $
+%%SHARED%%
 bin/jpilot
 bin/jpilot-dump
 bin/jpilot-sync
-bin/jpilot-upgrade-99
 lib/jpilot/
 lib/jpilot/plugins/
+lib/jpilot/plugins/libexpense.a
 lib/jpilot/plugins/libexpense.la
+lib/jpilot/plugins/libkeyring.a
 lib/jpilot/plugins/libkeyring.la
+lib/jpilot/plugins/libsynctime.a
 lib/jpilot/plugins/libsynctime.la
+@comment @man man/man1/jpilot-dial.1
+@man man/man1/jpilot-dump.1
 @man man/man1/jpilot-sync.1
 @man man/man1/jpilot-upgrade-99.1
 @man man/man1/jpilot.1
 share/doc/jpilot/
+share/doc/jpilot/AUTHORS
+share/doc/jpilot/BUGS
+share/doc/jpilot/COPYING
+share/doc/jpilot/ChangeLog
+share/doc/jpilot/INSTALL
 share/doc/jpilot/README
+share/doc/jpilot/TODO
+share/doc/jpilot/UPGRADING
+share/doc/jpilot/icons/
+share/doc/jpilot/icons/README
+share/doc/jpilot/icons/jpilot-icon1.xpm
+share/doc/jpilot/icons/jpilot-icon2.xpm
+share/doc/jpilot/icons/jpilot-icon3.xpm
+share/doc/jpilot/icons/jpilot-icon4.xpm
+share/doc/jpilot/jpilot-address.png
+share/doc/jpilot/jpilot-datebook.png
+share/doc/jpilot/jpilot-expense.png
+share/doc/jpilot/jpilot-install.png
+share/doc/jpilot/jpilot-memo.png
+share/doc/jpilot/jpilot-prefs.png
+share/doc/jpilot/jpilot-print.png
+share/doc/jpilot/jpilot-search.png
+share/doc/jpilot/jpilot-todo.png
+share/doc/jpilot/jpilot-toplogo.jpg
 share/doc/jpilot/manual.html
 share/doc/jpilot/plugin.html
+share/gnome/
+share/gnome/apps/
+share/gnome/apps/Applications/
+share/gnome/apps/Applications/jpilot.desktop
 share/jpilot/
 share/jpilot/AddressDB.pdb
 share/jpilot/DatebookDB.pdb
@@ -22,12 +54,6 @@ share/jpilot/ExpenseDB.pdb
 share/jpilot/Memo32DB.pdb
 share/jpilot/MemoDB.pdb
 share/jpilot/ToDoDB.pdb
-share/jpilot/icons/
-share/jpilot/icons/README
-share/jpilot/icons/jpilot-icon1.xpm
-share/jpilot/icons/jpilot-icon2.xpm
-share/jpilot/icons/jpilot-icon3.xpm
-share/jpilot/icons/jpilot-icon4.xpm
 share/jpilot/jpilotrc.blue
 share/jpilot/jpilotrc.default
 share/jpilot/jpilotrc.green
@@ -45,5 +71,11 @@ share/locale/it/LC_MESSAGES/jpilot.mo
 share/locale/ja/LC_MESSAGES/jpilot.mo
 share/locale/nl/LC_MESSAGES/jpilot.mo
 share/locale/no/LC_MESSAGES/jpilot.mo
+share/locale/ru/LC_MESSAGES/jpilot.mo
 share/locale/sv/LC_MESSAGES/jpilot.mo
-%%SHARED%%
+share/locale/tr/LC_MESSAGES/jpilot.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
+share/locale/vi/LC_MESSAGES/jpilot.mo
+share/locale/zh_CN/LC_MESSAGES/jpilot.mo
+share/locale/zh_TW/LC_MESSAGES/jpilot.mo

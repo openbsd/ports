@@ -1,0 +1,12 @@
+$OpenBSD: patch-icons_Makefile_in,v 1.1 2005/01/23 06:06:01 pvalchev Exp $
+--- icons/Makefile.in.orig	Sat Feb 28 16:19:50 2004
++++ icons/Makefile.in	Sat Jan 22 15:23:45 2005
+@@ -211,7 +211,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-icondir = $(prefix)/share/doc/$(PACKAGE)-$(VERSION)/icons
++icondir = $(prefix)/share/doc/$(PACKAGE)/icons
+ icon_DATA = jpilot-icon1.xpm \
+ 	jpilot-icon2.xpm \
+ 	jpilot-icon3.xpm \

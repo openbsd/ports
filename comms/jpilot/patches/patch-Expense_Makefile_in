@@ -1,12 +1,11 @@
-$OpenBSD: patch-Expense_Makefile_in,v 1.5 2003/03/03 03:01:59 fgsch Exp $
---- Expense/Makefile.in.orig	Sun Mar  2 04:16:24 2003
-+++ Expense/Makefile.in	Sun Mar  2 04:16:30 2003
-@@ -2,7 +2,7 @@ top_srcdir = @top_srcdir@
- top_builddir = @top_srcdir@
- 
- # Install variables
--prefix=@prefix@
-+prefix=${PREFIX}
- 
- #Pilot flags (include dir), and Libraries
- PILOT_FLAGS=@PILOT_FLAGS@
+$OpenBSD: patch-Expense_Makefile_in,v 1.6 2005/01/23 06:06:01 pvalchev Exp $
+--- Expense/Makefile.in.orig	Sat Feb 28 16:19:47 2004
++++ Expense/Makefile.in	Sat Jan 22 15:17:40 2005
+@@ -70,6 +70,7 @@ LTCOMPILE = $(LIBTOOL) --mode=compile $(
+ 	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+ 	$(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
++libexpense_la_LDFLAGS = -module -avoid-version
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ SOURCES = $(libexpense_la_SOURCES)
