@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/01/15 22:07:28 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2004/12/29 15:18:33 espie Exp $
 
 COMMENT=	"Netscape Navigator (bsdi)"
 
@@ -7,7 +7,7 @@ V2:=		${PROGRAM_V:S/.//}
 EMUL_TYPE=	bsdos
 
 DISTNAME=	navigator-v${V2}-us.x86-bsdi-bsd2
-PKGNAME=	navigator-bsdi-${PROGRAM_V}
+PKGNAME=	navigator-bsdi-${PROGRAM_V}p1
 LOCATION=	bsdi21/navigator_standalone
 DIRNAME=	navigator-v${V2}.x86-bsdi-bsd2
 

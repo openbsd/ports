@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST.i386,v 1.10 2004/11/09 14:48:27 alek Exp $
+@comment $OpenBSD: PLIST.i386,v 1.11 2004/12/29 15:18:33 espie Exp $
 @conflict communicator-*
 @conflict navigator-*
+@conflict communicator-linux-*
+@conflict navigator-linux-*
+@conflict communicator-bsdi-*
 bin/netscape
 netscape/
 netscape/LICENSE
