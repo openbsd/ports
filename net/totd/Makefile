@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/23 13:24:34 itojun Exp $
+# $OpenBSD: Makefile,v 1.9 2000/06/11 01:15:51 fgsch Exp $
 # $NetBSD: Makefile,v 1.3 2000/01/21 10:01:23 itojun Exp $
-#
 
 DISTNAME=	totd-1.1p4
 CATEGORIES=	net
-NEED_VERSION=	1.191
-FAKE=No
+NEED_VERSION=	1.301
 MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
 
 MAINTAINER=	itojun@itojun.org
@@ -18,9 +16,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=         ${WRKDIR}/totd-1.1p4
 
-GNU_CONFIGURE=	YES
+CONFIGURE_STYLE=	gnu
 
-post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/totd.conf.sample ${PREFIX}/etc/totd.conf.sample
+pre-install:
+	echo mierda
+	${INSTALL_DATA_DIR} ${PREFIX}/share/totd
+	${INSTALL_DATA} ${FILESDIR}/totd.conf.sample ${PREFIX}/share/totd
 
 .include <bsd.port.mk>

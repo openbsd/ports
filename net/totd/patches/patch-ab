@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Sun Feb 27 17:34:59 2000
++++ Makefile.in	Sat Jun 10 21:46:44 2000
+@@ -9,7 +9,7 @@
+ INSTALLDIR = @prefix@/sbin
+ INSTALLLIB = @prefix@/lib
+ INSTALL = /usr/bin/install 
+-TOT_CONFIG_FILE=@prefix@/etc/totd.conf
++TOT_CONFIG_FILE=/etc/totd.conf
+ CFLAGS  = @CFLAGS@ @DEFS@  -DTOT_CONFIG_FILE=\"$(TOT_CONFIG_FILE)\" @OPTFLAGS@ $(INCLUDEPATH)
+ LDFLAGS = @LDFLAGS@
+ LDADD = @LIBS@ $(LIBINET6) $(LIBDEBUG)
+@@ -39,7 +39,7 @@
+ 	        ${CC} ${LDFLAGS} -o ${.TARGET} ${OBJS} ${LDADD}
+ 
+ install: $(PROG)
+-	$(INSTALL) -c -s -m 0555 -o bin -g bin $(PROG) $(INSTALLDIR)
++	$(INSTALL) -c -s -m 0555 -o bin -g bin $(PROG) ${DESTDIR}$(INSTALLDIR)
+ 
+ depend:
+ 	mkdep ${CFLAGS} ${SRCS}
