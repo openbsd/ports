@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2004/03/07 21:08:43 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2004/03/07 22:56:13 naddy Exp $
 
      SUBDIR+= arts3
      SUBDIR+= libs3
@@ -17,7 +17,7 @@
      SUBDIR+= bindings3
      SUBDIR+= quanta
      SUBDIR+= admin3
-     SUBDIR+= accessibility
+     SUBDIR+= accessibility3
      SUBDIR+= office3
      SUBDIR+= i18n3,az
      SUBDIR+= i18n3,bg
