@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/09 05:15:56 kevlo Exp $
+${P5ARCH}/
+${P5ARCH}/Data/
+${P5ARCH}/Data/UUID.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Data/
+${P5ARCH}/auto/Data/UUID/
+${P5ARCH}/auto/Data/UUID/UUID.bs
+${P5ARCH}/auto/Data/UUID/UUID.so
+${P5ARCH}/auto/Data/UUID/autosplit.ix
+@man man/man3p/Data::UUID.3p
