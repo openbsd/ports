@@ -1,0 +1,39 @@
+diff -u configure.old configure
+--- configure.old	Tue Jan  4 01:02:50 2000
++++ configure	Mon Feb 28 11:11:30 2000
+@@ -46,6 +46,7 @@
+   OSF1)         os="OSF1";;
+   SunOS)        if [ $rev -ge 5 ]; then os="Solaris"; else os="SunOS"; fi;;
+   ULTRIX)       os="ULTRIX";;
++  OpenBSD)      os="OpenBSD";;
+   *) echo "Sorry, $uname is not yet supported"; exit 1;;
+ esac
+ echo "This seems to be a $os machine..."
+@@ -148,6 +149,27 @@
+ MOTIF_LIB = $xmlib
+ SYS_CFLAGS = -I/usr/X11R6/include
+ SYS_LDFLAGS = $strip-L/usr/X11R6/lib
++SYS_LIBS = -lXext $extra
++EOT
++  unset extra
++fi
++
++#
++# OpenBSD
++#
++if [ "$os" = "OpenBSD" ]; then
++  # everything should be under /usr/X11R6
++  # statically link Motif with explicit library name
++  # Motif could come from Lesstif which could be in /usr/local
++  extra=""
++  if [ -f "/usr/X11R6/lib/libXpm.a" ]; then
++    extra="$extra -lXpm"
++  fi
++  xmlib="-lXm"
++  cat <<EOT >> Makefile.sys
++MOTIF_LIB = $xmlib
++SYS_CFLAGS = -I/usr/X11R6/include -I/usr/local/include
++SYS_LDFLAGS = $strip-L/usr/X11R6/lib -L/usr/local/lib
+ SYS_LIBS = -lXext $extra
+ EOT
+   unset extra

@@ -1,0 +1,11 @@
+Mxconns is an X11 proxy that prompts you for individual connections,
+and lets you optionally disable "dangerous" X requests.  Useful
+when logging into a potentially untrusted machine via ssh.
+
+Quick start:
+in your .xsession:
+export XDISPLAY=`mxconns -fork -hunt -verbose -icf "c" -debug "al"`
+later...
+DISPLAY=$XDISPLAY ssh -f <untrusted host> xterm
+
+for more info, read the man page.
