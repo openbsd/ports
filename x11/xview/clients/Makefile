@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/09/19 16:03:10 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/10/24 12:48:54 espie Exp $
 
 COMMENT=	"OpenLook applications and man pages"
 
@@ -6,7 +6,7 @@ PKGNAME=	xview-clients-${XVIEW_VERSION}
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTFILES=	xview3.2p1-X11R6.tar.gz
 CATEGORIES=	x11
-NEED_VERSION=	1.458
+NEED_VERSION=	1.474
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_ONLY=
 BUILD_DEPENDS=	::x11/xview/config ::x11/xview/lib:configure
-LIB_DEPENDS=	xview.3::x11/xview/lib
+LIB_DEPENDS=	xview.3,olgx::x11/xview/lib
 
 WRKSRC=		${WRKDIST}/clients
 USE_X11=	Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/09 01:12:21 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/24 12:48:54 espie Exp $
 
 COMMENT=		"window manager theme utility"
 
 DISTNAME=		wmtheme-1.2.9
 CATEGORIES=		x11 
-NEED_VERSION=		1.402
+NEED_VERSION=		1.474
 
 HOMEPAGE=		http://wmtheme.sourceforge.net/
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wmtheme
 
-LIB_DEPENDS=		gtk.1.2::x11/gtk+
+LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
 USE_GMAKE=		Yes
 EXTRA_THEMES=		gotheme ortheme
 

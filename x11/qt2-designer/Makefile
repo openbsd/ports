@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2001/07/30 12:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/24 12:48:54 espie Exp $
 
 COMMENT=	designer for qt2
 
 VERSION=	3.1
 DISTNAME=	qt-designer-2.${VERSION}
 CATEGORIES=	x11 devel
-NEED_VERSION=	1.361
+NEED_VERSION=	1.474
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 DISTFILES=	qt-x11-2.${VERSION}.tar.gz
 EXTRACT_ONLY=	
@@ -44,7 +44,7 @@ LIB_DEPENDS=	jpeg.62.::graphics/jpeg \
 		png.2.::graphics/png \
 		mng.1.::graphics/libmng \
 		qt.2::x11/qt2 \
-		kdecore.::x11/kde/libs2
+		kdecore,DCOP,kdeui::x11/kde/libs2
 
 TRUEDIR=	${TRUEPREFIX}/lib/qt2
 QT_LIBDIR=	${PREFIX}/lib/qt2

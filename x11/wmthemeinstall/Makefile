@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/07/13 11:25:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/24 12:48:54 espie Exp $
 # $FreeBSD: ports/x11-wm/wmthemeinstall/Makefile,v 1.5 2000/10/05 06:42:57 reg Exp $
 
 COMMENT=		'neat theme manager for Window Maker'
 
 DISTNAME=		wmthemeinstall-0.62
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.364
+NEED_VERSION=		1.474
 
 HOMEPAGE=		http://hellblazer.dhis.org/projects/wmthemeinstall/
 
@@ -20,7 +20,7 @@ MASTER_SITES=		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/will/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 RUN_DEPENDS=		wmaker::x11/windowmaker
-LIB_DEPENDS=		gtk.1::x11/gtk+
+LIB_DEPENDS=		gtk.1,gdk.1::x11/gtk+
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes

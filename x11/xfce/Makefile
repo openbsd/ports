@@ -3,14 +3,14 @@
 # Date created:		28 Jan 2000
 # Whom:			Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.12 2001/05/06 04:41:34 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/24 12:48:54 espie Exp $
 #
 
 COMMENT=	"CDE like desktop with GTK"
 
 DISTNAME=	xfce-3.6.3
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.474
 MASTER_SITES=	http://www.xfce.org/archive/
 
 HOMEPAGE=	http://www.xfce.org/
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	Imlib.19::graphics/imlib \
+LIB_DEPENDS=	Imlib.19,gdk_imlib::graphics/imlib \
 		gtk.1::x11/gtk+
 RUN_DEPENDS=	${LOCALBASE}/bin/sox::audio/sox
 

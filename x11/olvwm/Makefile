@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2001/07/09 17:11:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2001/10/24 12:48:53 espie Exp $
 
 COMMENT=	"OpenLook Virtual Window manager"
 
 DISTNAME=	olvwm4
 PKGNAME=	olvwm-4.2
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.474
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	olvwm4.tar.Z
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 # PATCHFILES=	olvwm4.Patch01.Z:0 olvwm4.Patch02.Z:0
 # PATCH_DIST_STRIP=	-p1
 
-LIB_DEPENDS=	xview.3.::x11/xview/lib
+LIB_DEPENDS=	xview.3,olgx::x11/xview/lib
 BUILD_DEPENDS=	${LOCALBASE}/lib/X11/config/XView.cf::x11/xview/config
 
 USE_X11=	Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2001/03/28 19:35:34 danh Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/24 12:48:54 espie Exp $
 
 COMMENT=	"Windows 95/98/NT like window manager"
 
 DISTNAME=	qvwm-1.1.8
 CATEGORIES=     x11
-NEED_VERSION=	1.364
+NEED_VERSION=	1.474
 MASTER_SITES=	ftp://ftp.qvwm.org/pub/qvwm/
 
 HOMEPAGE=	http://www.qvwm.org/
@@ -37,7 +37,7 @@ CONFIGURE_ARGS+= --without-esd
 .endif
 
 .if ${FLAVOR:L:Mimlib}
-LIB_DEPENDS+=	Imlib.19.::graphics/imlib
+LIB_DEPENDS+=	Imlib.19::graphics/imlib
 CONFIGURE_ARGS+= --with-imlib-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+= --without-imlib
