@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.638 2004/08/10 13:48:21 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.639 2004/08/11 22:25:23 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1122,10 +1122,18 @@ _LOCK=${LOCK_CMD} ${LOCKDIR}/$$lock.lock
 _UNLOCK=${UNLOCK_CMD} ${LOCKDIR}/$$lock.lock
 .  endif
 .  if defined(SEPARATE_BUILD) && ${SEPARATE_BUILD:L:Mflavored}
-_DO_LOCK=: $${lock:=${PKGNAME}}; ${_LOCK}; trap '${_UNLOCK}' 0 1 2 3 13 15
+_LOCKNAME=${PKGNAME}
 .  else
-_DO_LOCK=: $${lock:=${FULLPKGNAME}}; ${_LOCK}; trap '${_UNLOCK}' 0 1 2 3 13 15
+_LOCKNAME=${FULLPKGNAME}
 .  endif
+_DO_LOCK=\
+	: $${lock:=${_LOCKNAME}}; \
+	case X$$lock in \
+	X${_MASTER_LOCK}) \
+		;; \
+	*) \
+		${_LOCK}; trap '${_UNLOCK}' 0 1 2 3 13 15;; \
+	esac
 .else
 _DO_LOCK=:
 .endif
@@ -1287,7 +1295,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 		Xpackage) early_exit=true;; \
 		*) \
 			early_exit=true; mkdir -p ${WRKDIR}/$$dir; \
-			toset="$$toset _MASTER='[${FULLPKGNAME${SUBPACKAGE}}]${_MASTER}' _MASTER_LOCK=${FULLPKGNAME} WRKDIR=${WRKDIR}/$$dir"; \
+			toset="$$toset _MASTER='[${FULLPKGNAME${SUBPACKAGE}}]${_MASTER}' _MASTER_LOCK=${_LOCKNAME} WRKDIR=${WRKDIR}/$$dir"; \
 			dep="/nonexistent";; \
 		esac; \
 		case "X$$pkg" in X) pkg=`eval $$toset ${MAKE} _print-packagename`; \
