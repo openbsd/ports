@@ -1,6 +1,6 @@
 @cwd /usr
 bin/puudecode
 bin/puuencode
-lib/perl5/site_perl/i386-openbsd/auto/Convert/UU/.packlist
-lib/perl5/site_perl/Convert/UU.pm
-@dirrm lib/perl5/site_perl/i386-openbsd/auto/Convert/UU
+libdata/perl5/site_perl/i386-openbsd/auto/Convert/UU/.packlist
+libdata/perl5/site_perl/Convert/UU.pm
+@dirrm libdata/perl5/site_perl/i386-openbsd/auto/Convert/UU
