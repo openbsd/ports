@@ -1,19 +1,19 @@
---- esd.c.orig	Mon Oct  2 12:39:17 2000
-+++ esd.c	Thu Oct  5 19:39:00 2000
-@@ -219,12 +219,12 @@
- 	{	
- 	  mkdir(ESD_UNIX_SOCKET_DIR,
- 		S_IRUSR|S_IWUSR|S_IXUSR|
--		S_IRGRP|S_IWGRP|S_IXGRP|
--		S_IROTH|S_IWOTH|S_IXOTH);
-+		S_IRGRP|S_IXGRP|
-+		S_IROTH|S_IXOTH);
- 	  chmod(ESD_UNIX_SOCKET_DIR,
- 		S_IRUSR|S_IWUSR|S_IXUSR|
--		S_IRGRP|S_IWGRP|S_IXGRP|
--		S_IROTH|S_IWOTH|S_IXOTH);
-+		S_IRGRP|S_IXGRP|
-+		S_IROTH|S_IXOTH);
- 	}
-       if (access(ESD_UNIX_SOCKET_NAME, R_OK | W_OK) == -1)
- 	{
+--- esd.c.orig	Wed Jan  3 08:56:09 2001
++++ esd.c	Wed Jan  3 08:58:00 2001
+@@ -210,12 +210,12 @@
+ 
+ #if defined(S_ISVTX)
+ #define ESD_UNIX_SOCKET_DIR_MODE (S_IRUSR|S_IWUSR|S_IXUSR|\
+-				  S_IRGRP|S_IWGRP|S_IXGRP|\
+-				  S_IROTH|S_IWOTH|S_IXOTH|S_ISVTX)
++				  S_IRGRP|S_IXGRP|\
++				  S_IROTH|S_IXOTH|S_ISVTX)
+ #else
+ #define ESD_UNIX_SOCKET_DIR_MODE (S_IRUSR|S_IWUSR|S_IXUSR|\
+-				  S_IRGRP|S_IWGRP|S_IXGRP|\
+-				  S_IROTH|S_IWOTH|S_IXOTH)
++				  S_IRGRP|S_IXGRP|\
++				  S_IROTH|S_IXOTH)
+ #endif
+ 
+   if (mkdir(ESD_UNIX_SOCKET_DIR, ESD_UNIX_SOCKET_DIR_MODE) == 0) {

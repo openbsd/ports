@@ -1,15 +1,16 @@
 --- ltmain.sh.orig	Fri Apr  9 02:12:58 1999
-+++ ltmain.sh	Sun Aug  6 04:56:59 2000
-@@ -3227,7 +3227,7 @@
- 	  outputname=
- 	  if test "$fast_install" = no && test -n "$relink_command"; then
- 	    if test "$finalize" = yes; then
--	      outputname="/tmp/$$-$file"
-+	      outputname=$(mktemp "${TMPDIR:-/tmp}/$file.XXXXXX") || exit $?
- 	      # Replace the output file specification.
- 	      relink_command=`$echo "X$relink_command" | $Xsed -e 's%@OUTPUT@%'"$outputname"'%g'`
- 
-@@ -3326,40 +3326,6 @@
++++ ltmain.sh	Sun Dec 31 16:26:02 2000
+@@ -1702,6 +1702,9 @@
+ 	*-*-cygwin* | *-*-mingw* | *-*-os2*)
+ 	  # these systems don't actually have a c library (as such)!
+ 	  ;;
++	*-*-openbsd*)
++	  # do not include libc due to us having libc/libc_r.
++	  ;;
+ 	*)
+ 	  # Add libc to deplibs on all other systems.
+ 	  deplibs="$deplibs -lc"
+@@ -3326,40 +3329,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
