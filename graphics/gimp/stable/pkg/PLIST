@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:50:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/22 21:11:23 espie Exp $
 bin/gimp
 bin/gimp-1.2
 bin/gimp-config
@@ -271,12 +271,19 @@ lib/libgimpui.la
 share/aclocal/gimp.m4
 share/examples/gimp/
 share/examples/gimp/1.2/
+@sample ${CONFDIR}/
 share/examples/gimp/1.2/gimprc
+@sample ${CONFDIR}/gimprc
 share/examples/gimp/1.2/gimprc_user
+@sample ${CONFDIR}/gimprc_user
 share/examples/gimp/1.2/gtkrc
+@sample ${CONFDIR}/gtkrc
 share/examples/gimp/1.2/gtkrc_user
+@sample ${CONFDIR}/gtkrc_user
 share/examples/gimp/1.2/ps-menurc
+@sample ${CONFDIR}/ps-menurc
 share/examples/gimp/1.2/unitrc
+@sample ${CONFDIR}/unitrc
 share/gimp/
 share/gimp/1.2/
 share/gimp/1.2/brushes/
@@ -1524,4 +1531,3 @@ share/locale/zh_TW/LC_MESSAGES/gimp-script-fu.mo
 share/locale/zh_TW/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/gimp.mo
 %%SHARED%%
-@extraunexec rm -rf ${CONFDIR}
