@@ -1,10 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/31 19:00:10 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/06/12 20:01:29 marcm Exp $
+bin/rsvg
 include/librsvg-2/librsvg/librsvg-features.h
 include/librsvg-2/librsvg/rsvg.h
+lib/gtk-2.0/2.2.0/engines/libsvg.a
+lib/gtk-2.0/2.2.0/engines/libsvg.la
+lib/gtk-2.0/2.2.0/loaders/svg_loader.a
+lib/gtk-2.0/2.2.0/loaders/svg_loader.la
 lib/librsvg-2.a
 lib/librsvg-2.la
 lib/pkgconfig/librsvg-2.0.pc
+man/man1/rsvg.1
+share/doc/librsvg/html/home.png
+share/doc/librsvg/html/i909.html
+share/doc/librsvg/html/index.html
+share/doc/librsvg/html/index.sgml
+share/doc/librsvg/html/left.png
+share/doc/librsvg/html/r22.html
+share/doc/librsvg/html/r320.html
+share/doc/librsvg/html/r354.html
+share/doc/librsvg/html/right.png
+share/doc/librsvg/html/rsvg-convenience-functions.html
+share/doc/librsvg/html/rsvg-core-api.html
+share/doc/librsvg/html/rsvg-creating-a-svgz-reader.html
+share/doc/librsvg/html/rsvg.html
+share/doc/librsvg/html/up.png
 %%SHARED%%
+@dirrm share/doc/librsvg/html
+@dirrm share/doc/librsvg
 @comment @dirrm lib/pkgconfig
 @dirrm include/librsvg-2/librsvg
 @dirrm include/librsvg-2

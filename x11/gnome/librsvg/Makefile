@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2003/04/11 05:05:02 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/06/12 20:01:28 marcm Exp $
 
 COMMENT=		"SAX-based render library for SVG files"
 
-DISTNAME=		librsvg-2.0.1
+DISTNAME=		librsvg-2.2.4
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/librsvg/2.0/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/librsvg/2.2/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL
@@ -19,11 +19,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		gettext
 
-BUILD_DEPENDS= 		:gtk+2->=2.0.0:x11/gtk+2 \
-			:libart->=2.3.10:graphics/libart \
-			:libxml->=2.4.7:textproc/libxml \
-			:pkgconfig->=0.12.0p1:devel/pkgconfig \
-			:popt->=1.5.0:devel/popt
+BUILD_DEPENDS= 		:pkgconfig->=0.12.0p1:devel/pkgconfig
+LIB_DEPENDS=		art_lgpl_2.5::graphics/libart \
+			gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
+			pangoft2-1.0.0.0::devel/pango \
+			popt::devel/popt \
+			xml2.6::textproc/libxml
 						
 
 SEPARATE_BUILD=		concurrent

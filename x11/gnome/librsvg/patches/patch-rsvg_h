@@ -1,0 +1,14 @@
+$OpenBSD: patch-rsvg_h,v 1.1 2003/06/12 20:01:29 marcm Exp $
+--- rsvg.h.orig	Mon May 12 13:05:39 2003
++++ rsvg.h	Mon May 12 13:06:44 2003
+@@ -27,6 +27,10 @@
+ 
+ #include <gdk-pixbuf/gdk-pixbuf.h>
+ 
++#ifndef POPT_TABLEEND
++#define POPT_TABLEEND {NULL, '\0', 0, 0, 0, NULL, NULL }
++#endif
++
+ G_BEGIN_DECLS
+ 
+ typedef enum {
