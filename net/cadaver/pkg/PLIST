@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/03/19 01:47:06 lebel Exp $
+bin/cadaver
+man/man1/cadaver.1
