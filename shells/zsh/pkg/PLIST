@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/07/12 19:46:52 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/07/30 23:54:10 jolan Exp $
 bin/zsh
 bin/zsh-${VERSION}
-
 @unexec install-info --delete --info-dir=%D/info %D/info/zsh.info
 info/zsh.info
 @exec install-info --info-dir=%D/info %D/info/zsh.info
-
 man/man1/zsh.1
 man/man1/zshall.1
 man/man1/zshbuiltins.1
@@ -20,7 +18,6 @@ man/man1/zshoptions.1
 man/man1/zshparam.1
 man/man1/zshtcpsys.1
 man/man1/zshzle.1
-
 !%%static%%
 share/zsh/${VERSION}/functions/_a2ps
 share/zsh/${VERSION}/functions/_aap
