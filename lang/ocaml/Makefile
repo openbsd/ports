@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.29 2004/09/15 19:10:00 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2004/11/14 12:47:50 espie Exp $
 
 COMMENT=	"ML language based on complete class-based objective system"
 
+
 DISTNAME=	ocaml-3.07
-PKGNAME=	${DISTNAME}pl2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME}/
-DISTFILES=	${PKGNAME}.tar.gz ${DOCFILES}
+DOCFILES=	${DISTNAME}-refman.html.tar.gz
+DISTFILES=	${DISTNAME}pl2.tar.gz ${DOCFILES}
 
 HOMEPAGE=	http://www.ocaml.org/
 
@@ -26,8 +28,8 @@ CONFIGURE_ARGS+=-prefix ${PREFIX}
 CONFIGURE_ARGS+=-cc '${CC} ${CFLAGS}'
 CONFIGURE_ARGS+=-x11include ${X11BASE}/include -x11lib ${X11BASE}/lib
 
-LIB_DEPENDS=	tcl84::lang/tcl/8.4 \
-		tk84::x11/tk/8.4
+LIB_DEPENDS=	tcl84:tcl->=8.4,<8.5:lang/tcl/8.4 \
+		tk84:tk->=8.4,<8.5:x11/tk/8.4
 
 # ocaml's configure script is too smart for its own good
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
@@ -45,8 +47,6 @@ PKG_ARGS+=-Dnative=0
 .endif
 
 NO_REGRESS=	Yes
-
-DOCFILES=	${DISTNAME}-refman.html.tar.gz
 
 post-extract:
 	@cp ${WRKSRC}/asmrun/power-elf.S ${WRKSRC}/asmrun/power-bsd.S
