@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2004/05/09 19:25:39 david Exp $
+# $OpenBSD: Makefile,v 1.187 2004/06/04 17:14:32 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -85,6 +85,7 @@
      SUBDIR += libdnd
 #    SUBDIR += libsx
      SUBDIR += lupe
+     SUBDIR += mlterm
 #    SUBDIR += mlvwm
      SUBDIR += mouseclock
      SUBDIR += mowitz
