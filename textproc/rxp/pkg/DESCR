@@ -1,3 +1,5 @@
 rxp reads and parses XML from the url and writes it to standard output,
 optionally expanding entities, defaulting attributes, and translating
 to a different output encoding.
+
+WWW: ${HOMEPAGE}
