@@ -1,5 +1,14 @@
---- Makefile.orig	Wed Nov 26 10:16:06 1997
-+++ Makefile	Tue Aug 10 19:48:25 1999
+--- Makefile.orig	Wed Nov 26 00:16:06 1997
++++ Makefile	Thu Mar 15 22:21:56 2001
+@@ -30,7 +30,7 @@
+ # Set this to an ANSI compatible C compiler (preferably gcc)
+ # See also system specific settings below
+ #CC=cc
+-CC=gcc
++#CC=gcc
+ 
+ ############################################################################
+ #
 @@ -45,7 +45,7 @@
  #          PAGE_A4 for European A4
  #
@@ -17,24 +26,25 @@
  BINDIR=$(PREFIX)/bin
  LIBDIR=$(PREFIX)/lib
  MANDIR=$(PREFIX)/man/man1
-@@ -111,6 +110,9 @@
+@@ -111,7 +110,10 @@
  # If you are using gcc, you probably don't need to change anything here.
  
  # Linux:
+-CFLAGS = -O2 -s $(DEFS) -Wall
 +#CFLAGS = -O2 -s $(DEFS) -Wall
 +
 +# OpenBSD:
- CFLAGS = -O2 -s $(DEFS) -Wall
++CFLAGS += $(DEFS)
  
  # AIX (xlC on aix 4):
-@@ -142,6 +144,9 @@
+ #CFLAGS = -O2 -s $(DEFS)
+@@ -141,6 +143,9 @@
+ MOBJ =  mpage$(O) glob$(O) text$(O) post$(O) file$(O) page$(O) args$(O)
  SMPL =  sample.c page.c glob.c args.c
  SOBJ =  sample$(O) page$(O) glob$(O) args$(O)
- 
++
 +all:	mpage$(E) msample$(E)
 +        @echo Done!
-+
+ 
  default:	mpage$(E) msample$(E)
  	@echo Done!
- 
-

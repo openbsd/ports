@@ -1,12 +1,12 @@
-# $OpenBSD: patch-makefile,v 1.1.1.1 2000/01/03 02:22:43 kevlo Exp $
---- Makefile.orig	Thu Jun 19 19:06:28 1997
-+++ Makefile	Wed Dec 29 12:25:33 1999
-@@ -3,22 +3,23 @@
+# $OpenBSD: patch-makefile,v 1.2 2001/03/16 10:34:43 wilfried Exp $
+--- Makefile.orig	Thu Jun 19 11:06:28 1997
++++ Makefile	Thu Mar 15 22:16:16 2001
+@@ -2,23 +2,22 @@
+ # -------------------
  
  
- CC=gcc
+-CC=gcc
 -CFLAGS= -O2
-+CFLAGS= -O2 -Wall
  MODULES=main.o parse_cmd_line.o get_remote_data.o connect_login.o io.o relay_data.o
  DOCS=README COPYING HISTORY
 -INSTALL_DIR=/usr/sbin
