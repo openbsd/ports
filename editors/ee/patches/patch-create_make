@@ -1,0 +1,45 @@
+$OpenBSD: patch-create_make,v 1.1.1.1 2001/11/13 15:23:15 naddy Exp $
+--- create.make.orig	Thu Jun 28 07:39:33 2001
++++ create.make	Mon Nov 12 02:00:31 2001
+@@ -9,6 +9,11 @@
+ 
+ #set -x
+ 
++# where to read system-wide configuration from
++
++: ${SYSCONFDIR=/usr/local/lib}
++SYSCONF="-DSYSCONFDIR=\"\\\"${SYSCONFDIR}\\\"\""
++
+ # test for existence of termcap (exists on both BSD and SysV systems)
+ 
+ if [ -f /etc/termcap -o -f /usr/share/lib/termcap -o -f /usr/share/misc/termcap ]
+@@ -244,7 +249,7 @@ then
+ 	mv make.local make.lcl.old
+ fi
+ 
+-echo "DEFINES =	$termio $terminfo_exists $BSD_SELECT $catgets $select $curses " > make.local
++echo "DEFINES =	$SYSCONF $termio $terminfo_exists $BSD_SELECT $catgets $select $curses " > make.local
+ echo "" >> make.local
+ echo "CFLAGS =	$HAS_UNISTD $HAS_STDARG $HAS_STDLIB $HAS_CTYPE $HAS_SYS_IOCTL $HAS_SYS_WAIT $five_lib $five_include $select_hdr $other_cflags $termcap_exists" >> make.local
+ echo "" >> make.local
+@@ -254,16 +259,16 @@ echo "all :	$TARGET" >> make.local
+ cat  >> make.local << EOF
+ 
+ curses :	ee.c
+-	cc ee.c -o ee \$(CFLAGS) -lcurses 
++	\$(CC) ee.c -o ee \$(CFLAGS) -lcurses 
+ 
+ ee :	ee.o new_curse.o
+-	cc -o ee ee.o new_curse.o \$(CFLAGS) 
++	\$(CC) -o ee ee.o new_curse.o \$(CFLAGS) 
+ 
+ ee.o :	ee.c new_curse.h
+-	cc -c ee.c \$(DEFINES) \$(CFLAGS) 
++	\$(CC) -c ee.c \$(DEFINES) \$(CFLAGS) 
+ 
+ new_curse.o :	new_curse.c new_curse.h
+-	cc new_curse.c -c \$(DEFINES) \$(CFLAGS)
++	\$(CC) new_curse.c -c \$(DEFINES) \$(CFLAGS)
+ 
+ EOF
+ 
