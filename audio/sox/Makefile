@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 1999/06/03 21:55:22 espie Exp $
+# $OpenBSD: Makefile,v 1.8 1999/08/18 01:54:51 angelos Exp $
 
 DISTNAME=	sox-12.15
 CATEGORIES=	audio
-MASTER_SITES=	http://metalab.unc.edu/pub/Linux/apps/sound/convert/ \
-		http://home.sprynet.com/~cbagwell/
+MASTER_SITES=	http://home.sprynet.com/~cbagwell/
 
 MAINTAINER=	angelos@openbsd.org
 
