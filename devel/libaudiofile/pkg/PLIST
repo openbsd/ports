@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/07/19 05:56:28 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2000/12/31 19:45:33 brad Exp $
 bin/audiofile-config
 bin/sfconvert
 bin/sfinfo
-lib/libaudiofile.a
-lib/libaudiofile.la
-%%SHARED%%
 include/af_vfs.h
 include/audiofile.h
 include/aupvlist.h
+lib/libaudiofile.a
+lib/libaudiofile.la
+%%SHARED%%
 share/aclocal/audiofile.m4
