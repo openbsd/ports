@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2002/03/30 01:02:49 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/03/30 18:13:31 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
+
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt3
 COMMENT-html=		off-line html documentation for qt3
-COMMENT-postgresql=	PostGresql plugin for qt3
-COMMENT-mysql=		MySql plugin for qt3
+COMMENT-postgresql=	PostgresSQL plugin for qt3
+COMMENT-mysql=		MySQL plugin for qt3
 
 VERSION=	0.3
 DISTNAME=	qt-x11-free-3.${VERSION}
@@ -17,7 +18,7 @@ HOMEPAGE=	http://www.trolltech.com/qt/
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 FLAVORS=	no_mysql no_postgresql
 
-# Adjust for arches where mysql/pgsql don't work.
+# Adjust for arches where MySQL/PostgreSQL don't work.
 .if !${MACHINE_ARCH:Mi386} && !${MACHINE_ARCH:Msparc}
 FLAVOR+=	no_mysql
 .else
@@ -45,12 +46,11 @@ CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg \
 		-system-zlib -no-thread -sm -no-g++-exceptions \
 		-v -stl -xrender \
-		-plugin-sql-psql -no-sql-odbc \
+		-no-sql-odbc \
 		-I${X11BASE}/include/freetype2 \
 		-I${LOCALBASE}/include \
 		-L${WRKSRC}/lib \
 		-L${LOCALBASE}/lib
-
 
 # This is needed to find plugins
 CONFIGURE_ARGS+=	-prefix ${QT_LIBDIR}
@@ -68,7 +68,6 @@ QTMODULES=	styles tools kernel widgets dialogs \
 		iconview workspace network canvas table xml opengl sql
 
 #EXTRA_SAMPLES+=box gear glpixmap overlay overlay_x11 sharedbox
-
 
 LIB_DEPENDS=
 BUILD_DEPENDS=::graphics/jpeg
@@ -102,12 +101,10 @@ MULTI_PACKAGES+=	-postgresql
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-postgresql"
 LIB_DEPENDS+=pq::databases/postgresql
 .  endif
-BUILD_DEPENDS+=::databases/postgresql
 CONFIGURE_ARGS+= -I${LOCALBASE}/include/postgresql \
 	    -L${LOCALBASE}/lib \
 	    -I${LOCALBASE}/include -plugin-sql-psql
 .endif
-
 
 .if !defined(PACKAGING) || ${SUBPACKAGE} != "-html"
 LIB_DEPENDS+=	png.2::graphics/png \
@@ -241,7 +238,7 @@ do-install:
 
 FULLPKGNAME=		qt3-${VERSION}
 FULLPKGNAME-examples=	qt3-examples-${VERSION}
-FULLPKGNAME-html=		qt3-html-${VERSION}
+FULLPKGNAME-html=	qt3-html-${VERSION}
 FULLPKGNAME-mysql=	qt3-mysql-${VERSION}
 FULLPKGNAME-postgresql=	qt3-postgresql-${VERSION}
 
