@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2001/08/11 11:43:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/08/20 21:39:26 naddy Exp $
+
+BROKEN=		"not yet updated for libao.so.2"
 
 COMMENT=	"free clone of mpg123, a command-line mp3 player"
 
-DISTNAME=	mpg321-0.1.4
+DISTNAME=	mpg321-0.1.5
 CATEGORIES=	audio
-NEED_VERSION=	1.427
+NEED_VERSION=	1.435
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
