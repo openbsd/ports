@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.3 2000/01/27 15:48:53 brad Exp $
+# $OpenBSD: network.conf.template,v 1.4 2000/01/31 00:12:13 kjell Exp $
 
 #
 #
@@ -64,7 +64,7 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
 	ftp://ftp.infomagic.com/pub/mirrors/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.cdrom.com/pub/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.lip6.fr/pub/linux/sunsite/%SUBDIR%
+	ftp://ftp.lip6.fr/pub/linux/sunsite/%SUBDIR%/
 
 MASTER_SITE_GNOME+=	\
 	ftp://ftp.cybertrails.com/pub/gnome/%SUBDIR%/ \
