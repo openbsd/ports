@@ -1,46 +1,46 @@
---- ltmain.sh.orig	Mon Aug 14 15:10:37 2000
-+++ ltmain.sh	Tue Feb 20 13:10:11 2001
-@@ -1073,7 +1073,18 @@ compiler."
+$OpenBSD: patch-ltmain.sh,v 1.4 2001/09/18 20:48:03 naddy Exp $
+--- ltmain.sh.orig	Fri Jan  5 23:04:41 2001
++++ ltmain.sh	Tue Sep 18 22:43:54 2001
+@@ -1079,6 +1079,17 @@ compiler."
  	    # These systems don't actually have c library (as such)
  	    continue
  	    ;;
-+          *-*-openbsd*)
-+            # Do not include libc due to us having libc/libc_r.
-+            continue
-+            ;;
++	  *-*-openbsd*)
++	    # Do not include libc due to us having libc/libc_r.
++	    continue
++	    ;;
++	  esac
++	elif test "$arg" = "-lc_r"; then
++	  case "$host" in
++	  *-*-openbsd*)
++	    # Do not include libc_r directly, use -pthread flag.
++	    continue
++	    ;;
  	  esac
-+        elif test "$arg" = "-lc_r"; then
-+          case "$host" in
-+          *-*-openbsd*)
-+            # Do not include libc_r directly, use -pthread flag.
-+            continue
-+            ;;
-+          esac
  	elif test "$arg" = "-lm"; then
  	  case "$host" in
- 	  *-*-cygwin* | *-*-beos*)
-@@ -1085,6 +1096,10 @@ compiler."
+@@ -1091,6 +1102,10 @@ compiler."
  	deplibs="$deplibs $arg"
  	;;
  
 +      -?thread)
-+        deplibs="$deplibs $arg"
-+        ;;
++	deplibs="$deplibs $arg"
++	;;
 +
        -module)
  	module=yes
  	continue
-@@ -1789,6 +1804,9 @@ compiler."
+@@ -1795,6 +1810,9 @@ compiler."
  	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
  	  # these systems don't actually have a c library (as such)!
  	  ;;
-+        *-*-openbsd*)
-+          # Do not include libc due to us having libc/libc_r.
-+          ;;
- 	*)
- 	  # Add libc to deplibs on all other systems.
- 	  deplibs="$deplibs -lc"
-@@ -3522,40 +3540,6 @@ libdir='$install_libdir'\
++	*-*-openbsd*)
++	  # Do not include libc due to us having libc/libc_r.
++	  ;;
+         *-*-rhapsody*)
+ 	  # rhapsody is a little odd...
+ 	  deplibs="$deplibs -framework System"
+@@ -3571,40 +3589,6 @@ libdir='$install_libdir'\
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
