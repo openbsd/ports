@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/01/04 21:06:10 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/05/30 16:01:16 brad Exp $
 bin/curl
+bin/curl-config
 include/curl/curl.h
 include/curl/easy.h
 include/curl/mprintf.h
@@ -8,17 +9,26 @@ include/curl/types.h
 lib/libcurl.a
 lib/libcurl.la
 %%SHARED%%
+man/man1/curl-config.1
 man/man1/curl.1
 man/man3/curl_easy_cleanup.3
+man/man3/curl_easy_getinfo.3
 man/man3/curl_easy_init.3
 man/man3/curl_easy_perform.3
 man/man3/curl_easy_setopt.3
+man/man3/curl_escape.3
+man/man3/curl_formfree.3
 man/man3/curl_formparse.3
 man/man3/curl_getdate.3
 man/man3/curl_getenv.3
+man/man3/curl_mprintf.3
 man/man3/curl_slist_append.3
 man/man3/curl_slist_free_all.3
+man/man3/curl_strequal.3
+man/man3/curl_strnequal.3
+man/man3/curl_unescape.3
 man/man3/curl_version.3
+man/man5/libcurl.5
 share/doc/curl/CHANGES
 share/doc/curl/LEGAL
 share/doc/curl/MITX.txt
