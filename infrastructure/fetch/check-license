@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $OpenBSD: check-license,v 1.1.1.1 1999/05/18 16:39:05 espie Exp $
+# $OpenBSD: check-license,v 1.2 2003/02/24 06:49:33 pvalchev Exp $
 #
 # This script verifies that all files in a given directory are
 # mentioned in the ports LICENSE file as Distribution allowed.
@@ -53,7 +53,7 @@ else
     usage
 fi
 
-# This awk script matches the license file agains an `ls' of of the given
+# This awk script matches the license file against an `ls' of of the given
 # distribution directory and spits instructions out to stdout.
 #
 /bin/ls $DIST |
