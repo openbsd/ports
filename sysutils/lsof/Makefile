@@ -3,7 +3,7 @@
 # Date created:         25 November 1997
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.7 1998/08/05 22:33:35 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1998/08/25 05:15:14 marc Exp $
 #
 
 DISTNAME=	lsof_4.34_W
@@ -37,7 +37,7 @@ CDEF=-DSUN4M
 .endif
 MAKE_ENV += "CDEF=${CDEF}"
 .if !defined( CDEF )
-pre-fetch:
+pre-build:
 	@${ECHO} ""
 	@${ECHO} "*** when building for a sparc you must specify one of"
 	@${ECHO} "***	SUN4=YES, SUN4C=YES, or SUN4M=YES"
