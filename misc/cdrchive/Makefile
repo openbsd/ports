@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/11/13 22:13:23 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/30 01:03:35 naddy Exp $
 
 COMMENT=		"Qt-based CD creation tool"
 
@@ -9,7 +9,7 @@ NEED_VERSION=		1.483
 
 HOMEPAGE=		http://www.drahthaar.clara.net/cdr.htm
 
-MAINTAINER=		Jacob Meuser <jakemsr@clipper.net>
+MAINTAINER=		Jacob Meuser <jakemsr@jakemsr.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.drahthaar.clara.net/ \
-			ftp://ftp.jakemsr.com/pub/jakemsr/obsd-ports/
+			http://www.jakemsr.com/openbsd/ports/
 
 MODULES=		qt2
 
@@ -26,7 +26,7 @@ RUN_DEPENDS=		::misc/cdrecord
 
 SEPARATE_BUILD=		concurrent
 
-CONFIGURE_STYLE=	gnu 
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--datadir=${PREFIX}/share/doc/cdrchive \
 			--x-includes=${X11BASE}/include \
 			--x-libraries=${X11BASE}/lib \
