@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2003/04/30 16:26:48 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2003/07/25 12:06:16 kevlo Exp $
 
 COMMENT=	"module to calculate SHA1 digests"
 
-VERSION=	2.02
+VERSION=	2.04
 DISTNAME=	Digest-SHA1-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
