@@ -1,0 +1,11 @@
+--- Makefile.orig	Sun Nov 16 10:52:38 1997
++++ Makefile	Sun Nov 16 10:52:42 1997
+@@ -387,7 +387,7 @@
+ # contributed by kuku@acds.physik.rwth-aachen.de
+ # NOTE: You may need to add -DBSD44 if you have password problems
+ FLAGSM = -DFreeBSD -DFAST_SHARE_MODES
+-LIBSM = -lcrypt 
++#LIBSM = -lcrypt 
+ 
+ 
+ # This is for NEXTSTEP Release 2.X
