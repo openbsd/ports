@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2001/03/27 00:04:28 brad Exp $
+# $OpenBSD: Makefile,v 1.42 2001/03/28 22:12:18 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 COMMENT=	"multithreaded SQL database"
 
-VERSION=	3.23.35
+VERSION=	3.23.36
 DISTNAME=	mysql-${VERSION}
 CATEGORIES=	databases
 NEED_VERSION=	1.363

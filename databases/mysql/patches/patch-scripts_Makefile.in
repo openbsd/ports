@@ -1,6 +1,6 @@
---- scripts/Makefile.in.orig	Sat Mar 10 10:56:02 2001
-+++ scripts/Makefile.in	Mon Mar 12 12:46:40 2001
-@@ -348,6 +348,7 @@
+--- scripts/Makefile.in.orig	Tue Mar 27 05:20:29 2001
++++ scripts/Makefile.in	Wed Mar 28 13:19:23 2001
+@@ -350,6 +350,7 @@
  	  -e 's!@''datadir''@!$(datadir)!g' \
  	  -e 's!@''localstatedir''@!$(localstatedir)!g' \
  	  -e 's!@''libexecdir''@!$(libexecdir)!g' \

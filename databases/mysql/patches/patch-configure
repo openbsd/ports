@@ -1,6 +1,6 @@
---- configure.orig	Sat Mar 10 10:46:55 2001
-+++ configure	Mon Mar 12 12:46:38 2001
-@@ -2974,7 +2974,7 @@
+--- configure.orig	Tue Mar 27 05:11:17 2001
++++ configure	Wed Mar 28 13:19:21 2001
+@@ -2981,7 +2981,7 @@
    ;;
  esac
  fi
@@ -9,9 +9,9 @@
  if test -n "$HOSTNAME"; then
    echo "$ac_t""$HOSTNAME" 1>&6
  else
-@@ -3108,35 +3108,7 @@
+@@ -3115,35 +3115,7 @@
  echo $ac_n "checking "how to check if pid exists"""... $ac_c" 1>&6
- echo "configure:3110: checking "how to check if pid exists"" >&5
+ echo "configure:3117: checking "how to check if pid exists"" >&5
  PS=$ac_cv_path_PS
 -# Linux style
 -if $PS p $$ 2> /dev/null | grep $0 > /dev/null
@@ -46,23 +46,23 @@
  
  echo "$ac_t"""$FIND_PROC"" 1>&6
  
-@@ -4958,6 +4930,7 @@
+@@ -4965,6 +4937,7 @@
    cat > conftest.$ac_ext <<EOF
- #line 4960 "configure"
+ #line 4967 "configure"
  #include "confdefs.h"
 +#include <stdio.h>
  #include <tcpd.h>
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
-@@ -4983,6 +4956,7 @@
+@@ -4990,6 +4963,7 @@
        cat > conftest.$ac_ext <<EOF
- #line 4985 "configure"
+ #line 4992 "configure"
  #include "confdefs.h"
 +#include <stdio.h>
  #include <tcpd.h>
  int allow_severity = 0;
  int deny_severity  = 0;
-@@ -5854,8 +5828,6 @@
+@@ -5861,8 +5835,6 @@
  #define $ac_tr_lib 1
  EOF
  
@@ -71,7 +71,7 @@
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -6077,29 +6049,6 @@
+@@ -6084,29 +6056,6 @@
  
  fi
  
