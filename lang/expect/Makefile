@@ -1,13 +1,13 @@
 # New ports collection makefile for:	expect
 # Date created:		29 January 1998
 # Whom:			niklas
-# Version required:	5.25
+# Version required:	5.26
 #
-# $Id: Makefile,v 1.3 1998/02/10 10:45:23 niklas Exp $
+# $Id: Makefile,v 1.4 1998/08/27 04:36:32 marc Exp $
 #
 
 DISTNAME=	expect
-PKGNAME=	expect-5.25
+PKGNAME=	expect-5.26
 CATEGORIES=	lang tcl80 tk80
 MASTER_SITES=	http://expect.nist.gov/
 
@@ -15,14 +15,17 @@ MAINTAINER=	niklas@openbsd.org
 
 LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
 
-WRKSRC=		${WRKDIR}/expect-5.25
+WRKSRC=		${WRKDIR}/expect-5.26
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --enable-shared \
-		--with-tclconfig=${PREFIX}/lib/tcl8.0 \
+CONFIGURE_ARGS= --with-tclconfig=${PREFIX}/lib/tcl8.0 \
 		--with-tclinclude=${PREFIX}/include/tcl8.0 \
 		--with-tkconfig=${PREFIX}/lib/tk8.0 \
 		--with-tkinclude=${PREFIX}/include/tk8.0
+.if (${MACHINE_ARCH} != "alpha")
+CONFIGURE_ARGS+=--enable-shared
+.endif
+
 # needed for japanese/expect
 .if !defined(NO_MAN_INSTALL)
 MAN1=		autoexpect.1 cryptdir.1 decryptdir.1 dislocate.1 \

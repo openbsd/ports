@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sun Sep 28 19:20:30 1997
-+++ Makefile.in	Fri Oct 10 09:05:17 1997
-@@ -186,6 +186,7 @@
+--- Makefile.in.orig	Tue Jun 16 06:53:36 1998
++++ Makefile.in	Wed Aug 26 21:11:59 1998
+@@ -180,6 +180,7 @@
  
  INSTALL = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
@@ -8,7 +8,7 @@
  INSTALL_DATA = @INSTALL_DATA@
  
  AR = ar
-@@ -202,6 +203,7 @@
+@@ -196,6 +197,7 @@
  	"HDEFS=$(HDEFS)" \
  	"INSTALL=$(INSTALL)" \
  	"INSTALL_DATA=$(INSTALL_DATA)" \
@@ -16,7 +16,7 @@
  	"INSTALL_PROGRAM=$(INSTALL_PROGRAM)" \
  	"LDFLAGS=$(LDFLAGS)" \
  	"RUNTEST=$(RUNTEST)" \
-@@ -350,7 +352,7 @@
+@@ -344,7 +346,7 @@
  	else true; fi
  	if [ -s $(EXP_SHARED_LIB_FILE) ] ; then \
  	  $(INSTALL_PROGRAM) $(EXP_SHARED_LIB_FILE) $(tcl_libdir)/$(EXP_SHARED_LIB_FILE) ; \
@@ -25,7 +25,7 @@
  	else true; fi
  
  expect_installed:	exp_main_exp.o $(EXP_LIB_FILE) install_shared_lib
-@@ -430,7 +432,7 @@
+@@ -424,7 +426,7 @@
  	${srcdir}/mkinstalldirs $(bindir_arch_indep) $(man1dir) $(SCRIPTDIR) $(EXECSCRIPTDIR)
  	-for i in $(SCRIPT_LIST) ; do \
  	  if [ -f $$i ] ; then \
