@@ -1,9 +1,26 @@
-$OpenBSD: patch-libffi_src_x86_sysv_S,v 1.4 2002/05/27 16:58:29 espie Exp $
+$OpenBSD: patch-libffi_src_x86_sysv_S,v 1.5 2002/05/30 00:32:03 espie Exp $
 --- libffi/src/x86/sysv.S.orig	Mon Jul 16 19:10:53 2001
-+++ libffi/src/x86/sysv.S	Fri May 17 02:00:13 2002
-@@ -127,7 +127,8 @@ epilogue:
++++ libffi/src/x86/sysv.S	Thu May 30 01:26:02 2002
+@@ -31,10 +31,10 @@
+ .globl ffi_prep_args
+ 
+ 	.align 4
+-.globl ffi_call_SYSV
+-        .type    ffi_call_SYSV,@function
++.globl _ffi_call_SYSV
++        .type    _ffi_call_SYSV,@function
+ 
+-ffi_call_SYSV:
++_ffi_call_SYSV:
+ .LFB1:
+         pushl %ebp
+ .LCFI0:
+@@ -125,9 +125,10 @@ epilogue:
+         ret
+ .LFE1:
  .ffi_call_SYSV_end:
-         .size    ffi_call_SYSV,.ffi_call_SYSV_end-ffi_call_SYSV
+-        .size    ffi_call_SYSV,.ffi_call_SYSV_end-ffi_call_SYSV
++        .size    _ffi_call_SYSV,.ffi_call_SYSV_end-_ffi_call_SYSV
  
 -.section	.eh_frame,"aw",@progbits
 +/* .section	.eh_frame,"aw",@progbits */
