@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/07/18 13:56:29 shell Exp $
+# $OpenBSD: Makefile,v 1.10 2001/08/01 02:38:30 shell Exp $
 # $FreeBSD: ports/lang/clisp/Makefile,v 1.4 2000/05/14 05:40:46 billf Exp $
 
 NOT_FOR_ARCHS=	powerpc sparc
@@ -18,7 +18,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://clisp.cons.org/pub/lisp/clisp/source/${VERSION}/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		ftp://clisp.cons.org/pub/lisp/clisp/source/${VERSION}/
+MASTER_SITE_SUBDIR=	clisp
+
 EXTRACT_SUFX=	.tar.bz2
 
 CONFIGURE_STYLE= gnu old
