@@ -1,6 +1,6 @@
-$OpenBSD: patch-admin_libtool_m4_in,v 1.2 2004/08/14 18:00:23 brad Exp $
---- admin/libtool.m4.in.orig	Thu Oct 30 06:13:16 2003
-+++ admin/libtool.m4.in	Thu Aug 12 17:02:22 2004
+$OpenBSD: patch-admin_libtool_m4_in,v 1.3 2004/09/18 09:46:37 espie Exp $
+--- admin/libtool.m4.in.orig	Fri Apr  2 17:39:50 2004
++++ admin/libtool.m4.in	Mon Sep  6 01:08:05 2004
 @@ -672,6 +672,19 @@ AC_CACHE_VAL([lt_cv_sys_max_cmd_len], [d
      lt_cv_sys_max_cmd_len=8192;
      ;;
@@ -21,7 +21,7 @@ $OpenBSD: patch-admin_libtool_m4_in,v 1.2 2004/08/14 18:00:23 brad Exp $
   *)
      # If test is not a shell built-in, we'll probably end up computing a
      # maximum length that is only half of the actual maximum length, but
-@@ -2208,13 +2221,7 @@ nto-qnx*)
+@@ -2212,13 +2225,7 @@ nto-qnx*)
    ;;
  
  openbsd*)
@@ -36,7 +36,7 @@ $OpenBSD: patch-admin_libtool_m4_in,v 1.2 2004/08/14 18:00:23 brad Exp $
    ;;
  
  osf3* | osf4* | osf5*)
-@@ -3166,6 +3173,22 @@ case $host_os in
+@@ -3170,6 +3177,22 @@ case $host_os in
      # Workaround some broken pre-1.5 toolchains
      output_verbose_link_cmd='$CC -shared $CFLAGS -v conftest.$objext 2>&1 | grep conftest.$objext | $SED -e "s:-lgcc -lc -lgcc::"'
      ;;
@@ -59,7 +59,7 @@ $OpenBSD: patch-admin_libtool_m4_in,v 1.2 2004/08/14 18:00:23 brad Exp $
    osf3*)
      case $cc_basename in
        KCC)
-@@ -5483,6 +5506,7 @@ EOF
+@@ -5487,6 +5510,7 @@ EOF
        _LT_AC_TAGVAR(hardcode_shlibpath_var, $1)=no
        if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
  	_LT_AC_TAGVAR(archive_cmds, $1)='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'

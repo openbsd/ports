@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/15 20:56:40 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/18 09:46:37 espie Exp $
 bin/okle
 bin/okle_gui
+share/applnk/
+share/applnk/Multimedia/
 share/applnk/Multimedia/okle.desktop
+share/apps/okle/
 share/apps/okle/okleui.rc
+share/apps/okle/pics/
 share/apps/okle/pics/angleselect.png
 share/apps/okle/pics/audioselect.png
 share/apps/okle/pics/back.png
@@ -25,24 +29,13 @@ share/apps/okle/pics/stepreverse.png
 share/apps/okle/pics/stop.png
 share/apps/okle/pics/subtitleselect.png
 share/apps/okle/pics/up.png
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/okle.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/okle.png
 share/locale/de/LC_MESSAGES/okle-0.3.mo
 share/locale/hu/LC_MESSAGES/okle-0.3.mo
 share/locale/it/LC_MESSAGES/okle-0.3.mo
 share/locale/sv/LC_MESSAGES/okle-0.3.mo
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/apps/okle/pics
-@dirrm share/apps/okle
-@dirrm share/apps
-@dirrm share/applnk/Multimedia
