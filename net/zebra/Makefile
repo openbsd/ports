@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2001/04/02 15:38:52 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2001/08/16 07:30:39 peter Exp $
 # KAME Id: Makefile,v 1.5 1999/09/13 16:27:41 itojun Exp
 # Originally by: peter.galbavy@knowledge.com
 
 COMMENT=	"multi-threaded routing daemon"
 
-DISTNAME=	zebra-0.91a
+DISTNAME=	zebra-0.92
 CATEGORIES=	net
-NEED_VERSION=	1.383
-MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
+NEED_VERSION=	1.435
+MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
+		ftp://ftp.knowledge.com/pub/mirrors/zebra/
 
 HOMEPAGE=	http://www.zebra.org/
 
@@ -24,25 +25,21 @@ PERMIT_DISTFILES_FTP=	Yes
 SYSCONFDIR=	/etc/zebra
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS+= --enable-vtysh
+CONFIGURE_ENV=	LIBS=-lcurses
 
-#
-# The snmp flavor doesn't quite work. The configue test for libsnmp.a
-# fails because the first test for it fails by not looking in
-# /usr/local/lib and the second uses the cached fail. Report sent to
-# zebra maintainers.
-#
 FLAVORS=	snmp
 FLAVOR?=
 
 .if ${FLAVOR:L:Msnmp}
-LIB_DEPENDS=	snmp.41::net/ucd-snmp
+LIB_DEPENDS=	snmp.42::net/ucd-snmp
 CONFIGURE_ARGS+= --enable-snmp
 .else
 CONFIGURE_ARGS+= --disable-snmp
 .endif
 
 post-extract:
-.for f in bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
+.for f in vtysh.1 bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
 	@cd ${WRKSRC}/doc; sed \
 		-e s#/usr/local/etc#@sysconfdir@#g \
 		-e s#/usr/local/sbin#@prefix@/sbin#g \
