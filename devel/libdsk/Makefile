@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/12/16 14:27:34 grange Exp $
+# $OpenBSD: Makefile,v 1.2 2003/01/06 00:42:09 pvalchev Exp $
 
 COMMENT=		"library for accessing disks and disk image files"
 
@@ -25,6 +25,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/config
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libdsk
