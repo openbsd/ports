@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Mar 29 16:14:00 1999
++++ Makefile.in	Mon Mar 29 16:14:12 1999
+@@ -110,7 +110,7 @@
+ # This just becomes part of the MAKEINFO definition passed down to
+ # sub-makes.  It lets flags be given on the command line while still
+ # using the makeinfo from the object tree.
+-MAKEINFOFLAGS =
++MAKEINFOFLAGS = --no-split
+ 
+ EXPECT = `if [ -f $$r/expect/expect ] ; \
+ 	then echo $$r/expect/expect ; \
