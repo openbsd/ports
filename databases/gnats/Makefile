@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/04/06 03:41:55 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2003/04/24 02:00:40 david Exp $
 
 COMMENT=	"GNU Problem Report Management System"
 
@@ -24,6 +24,9 @@ CONFIGURE_ENV+=	SEND_PR=/usr/bin/false
 
 INSTALL_TARGET=	install-gnats install-send-pr install-info
 
+FLAVORS=	www
+FLAVOR?=
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnats/
 	sed "s%y0y0y0%${TRUEPREFIX}%g" ${FILESDIR}/README.OpenBSD > \
@@ -32,10 +35,6 @@ post-install:
 	sed "s%/var/lib%${TRUEPREFIX}/share%g" \
 		${WRKDIST}/gnats/gnats-db.conf > \
 		${PREFIX}/share/examples/gnats/gnats-db.conf
-
-FLAVORS=	www
-FLAVOR?=
-
 .if ${FLAVOR:L:Mwww}
 	${INSTALL_PROGRAM} ${WRKDIST}/contrib/gnatsweb/gnatsweb.pl \
 		${PREFIX}/lib/gnatsweb
