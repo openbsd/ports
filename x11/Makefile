@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2000/07/01 18:01:41 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2000/07/02 23:44:53 espie Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -69,7 +69,10 @@
 #    SUBDIR += pythonqt
      SUBDIR += qt
      SUBDIR += qt2
-#    SUBDIR += qvwm
+     SUBDIR += qvwm
+     SUBDIR += qvwm:esound
+     SUBDIR += qvwm:esound,imlib
+     SUBDIR += qvwm:imlib
      SUBDIR += rclock
      SUBDIR += rxvt
      SUBDIR += sliderule
