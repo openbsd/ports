@@ -1,5 +1,6 @@
---- man/spop3d.conf.5.orig	Mon Jun 19 10:14:10 2000
-+++ man/spop3d.conf.5	Mon Jun 19 10:14:43 2000
+$OpenBSD: patch-man_spop3d_conf_5,v 1.2 2000/08/15 20:36:58 danh Exp $
+--- man/spop3d.conf.5.orig	Sun Apr 30 16:56:18 2000
++++ man/spop3d.conf.5	Thu Aug 10 03:45:11 2000
 @@ -107,7 +107,7 @@ Users can authenticate themselves with A
  .B MailDropName string
  Specify path to maildrop. The format is the same as for \fB-n\fP option in

@@ -1,5 +1,6 @@
---- man/spop3d.8.orig	Mon Jun 19 10:12:57 2000
-+++ man/spop3d.8	Mon Jun 19 10:13:38 2000
+$OpenBSD: patch-man_spop3d_8,v 1.2 2000/08/15 20:36:58 danh Exp $
+--- man/spop3d.8.orig	Tue Apr 18 12:03:56 2000
++++ man/spop3d.8	Thu Aug 10 03:45:11 2000
 @@ -70,7 +70,7 @@ and
  is expanded to
  .I /home/jurekb/Mail/bugtraq

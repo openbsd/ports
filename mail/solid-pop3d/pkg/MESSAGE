@@ -1,5 +1,5 @@
 +---------------
-| You'll also have to edit /etc/inetd.conf manually and add 
+| You'll have to edit /etc/inetd.conf manually and add 
 | lines like the following:
 |
 |   pop3 stream tcp  nowait root ${PREFIX}/sbin/spop3d spop3d
