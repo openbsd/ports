@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2004/02/04 07:39:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/05/08 06:44:19 sturm Exp $
 
 COMMENT=	"XML security library"
 COMMENT-docs=	"XML security library documentation"
 
-VERSION=	1.0.1
+VERSION=	1.2.5
 DISTNAME=	xmlsec1-${VERSION}
-PKGNAME=	xmlsec-${VERSION}p1
+PKGNAME=	xmlsec-${VERSION}
 PKGNAME-docs=	xmlsec-docs-${VERSION}
 CATEGORIES=	security
 
@@ -32,12 +32,16 @@ PKG_ARCH=		*
 
 .if ${SUBPACKAGE} != "-docs"
 MODULES=		iconv
-LIB_DEPENDS=		xslt.1::textproc/libxslt \
-			gnutls.8::security/gnutls
+BUILD_DEPENDS=		::devel/pkgconfig
+LIB_DEPENDS=		xslt.2::textproc/libxslt \
+			gnutls.12::security/gnutls
 .endif
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-gnutls="${LOCALBASE}"
+
+REGRESS_DEPENDS=	::security/xmlsec
+REGRESS_FLAGS=		ABS_BUILDDIR="${WRKSRC}"
 
 .include <bsd.port.mk>
