@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2002/09/01 08:25:26 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/09/14 01:00:51 brad Exp $
 
 COMMENT= 		"embedded documentation in C++"
 CATEGORIES=		x11 x11/kde devel
 VERSION=		2.0a54
 DISTNAME=		kdoc-${VERSION}
 
-MASTER_SITES=		${MASTER_SITE_KDE:=stable/3.0.3/src/}
+MASTER_SITES=		${MASTER_SITE_KDE:=stable/3.0.1/src/}
 
 PATCH_LIST=		p-*
 MODULES=	
