@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2001/01/02 23:48:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2001/04/08 14:12:07 brad Exp $
+
+COMMENT=	"small & pretty window manager for 8 and more bits displays"
 
 DISTNAME=	blackbox-0.61.1
 CATEGORIES=	x11
-NEED_VERSION=	1.310
+NEED_VERSION=	1.384
 MASTER_SITES=	ftp://portal.alug.org/pub/blackbox/0.6x.x/ \
 		ftp://ftp.dti.ad.jp/pub/X/blackbox/0.6x.x/
 
