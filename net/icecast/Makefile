@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/08/28 16:14:20 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2000/08/29 03:40:35 fgsch Exp $
 
 DISTNAME=	icecast-1.3.7
 CATEGORIES=	audio net www
@@ -19,6 +19,9 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-crypt
 
 DOCFILES=	AUTHORS BUGS CHANGES COPYING FAQ README
+
+post-patch:
+	@cp ${FILESDIR}/icepass.c ${WRKSRC}/src
 
 post-install:
 	@rm -f ${PREFIX}/share/icecast/templates/manual.html

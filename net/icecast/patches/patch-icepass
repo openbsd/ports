@@ -1,0 +1,24 @@
+$OpenBSD: patch-icepass,v 1.1 2000/08/29 03:40:36 fgsch Exp $
+
+--- src/Makefile.in.orig	Wed Jul  5 17:44:54 2000
++++ src/Makefile.in	Tue Aug 29 00:12:50 2000
+@@ -83,7 +83,7 @@
+ 
+ SUBDIRS = authenticate
+ 
+-bin_PROGRAMS = icecast
++bin_PROGRAMS = icecast icepass
+ 
+ noinst_HEADERS = admin.h alias.h avl.h avl_functions.h client.h					definitions.h commandline.h commands.h connection.h				dir.h directory.h globals.h http.h					ice_string.h icecast.h icetypes.h log.h					logtime.h main.h match.h memory.h relay.h				restrict.h sock.h source.h static.h threads.h				timer.h utility.h vars.h ice_resolv.h item.h    			pool.h interpreter.h
+ 
+@@ -187,6 +187,10 @@
+ icecast: $(icecast_OBJECTS) $(icecast_DEPENDENCIES)
+ 	@rm -f icecast
+ 	$(LINK) $(icecast_LDFLAGS) $(icecast_OBJECTS) $(icecast_LDADD) $(LIBS)
++
++icepass: icepass.o
++	@rm -f icepass
++	$(LINK) icepass.o
+ 
+ # This directory's subdirectories are mostly independent; you can cd
+ # into them and run `make' without going through this Makefile.

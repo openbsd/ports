@@ -1,0 +1,32 @@
+$OpenBSD: patch-crypt,v 1.1 2000/08/29 03:40:36 fgsch Exp $
+
+--- src/utility.c.orig	Wed Jul  5 16:52:40 2000
++++ src/utility.c	Mon Aug 28 23:06:20 2000
+@@ -102,7 +102,6 @@
+ 
+ 	return 0;
+ #else
+-	char salt[3];
+ 	char *test_crypted;
+ 	extern char *crypt(const char *, const char *);
+ 
+@@ -111,18 +110,8 @@
+ 		return 0;
+ 	}
+ 
+-	if (ice_strncmp(crypted, "$1$", 3)) {
+-		salt[0] = crypted[0];
+-		salt[1] = crypted[1];
+-	} else {
+-		salt[0] = crypted[3];
+-		salt[1] = crypted[4];
+-	}
+-
+-	salt[2] = '\0';
+-
+ 	thread_mutex_lock(&info.misc_mutex);
+-	test_crypted = crypt(uncrypted, salt);
++	test_crypted = crypt(uncrypted, crypted);
+ 	if (test_crypted == NULL) {
+ 		write_log(LOG_DEFAULT, "WARNING - crypt() failed, refusing access");
+ 		thread_mutex_unlock(&info.misc_mutex);
