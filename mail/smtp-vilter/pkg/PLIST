@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/17 11:00:01 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/11/17 15:32:16 alek Exp $
 @newgroup _vilter:538
 @newuser _vilter:538:538:daemon:smtp-vilter:/nonexistent:/sbin/nologin
 @comment lib/libvilter-attachment.a
@@ -37,5 +37,5 @@ sbin/vilter-test
 %%SHARED%%
 @owner _vilter
 @group _vilter
-@sample /var/smtp-vilter
-@extraunexec rm -fr /var/smtp-vilter
+@sample /var/smtp-vilter/
+@extraunexec rm -fr /var/smtp-vilter/*
