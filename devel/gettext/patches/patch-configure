@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2001/09/19 03:37:20 brad Exp $
+$OpenBSD: patch-configure,v 1.7 2001/09/23 05:08:45 brad Exp $
 --- configure.orig	Fri Sep 14 20:47:29 2001
-+++ configure	Tue Sep 18 23:02:54 2001
++++ configure	Sat Sep 22 18:33:32 2001
 @@ -1220,52 +1220,32 @@ echo "configure:1220: checking for worki
  # Run test in a subshell; some versions of sh will print an error if
  # an executable is not found, even if stderr is redirected.
@@ -143,7 +143,7 @@ $OpenBSD: patch-configure,v 1.6 2001/09/19 03:37:20 brad Exp $
 +  need_lib_prefix=no
 +  need_version=no
 +  sys_lib_search_path_spec="/usr/lib"
-+  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib /usr/X11R6/lib"
++  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib"
 +  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
 +    case "$host_os" in
 +    openbsd2.[89] | openbsd2.[89].*)
