@@ -1,0 +1,11 @@
+$OpenBSD: patch-parse_c,v 1.1 2002/07/21 01:48:42 naddy Exp $
+--- parse.c.orig	Sun Jul 21 03:41:39 2002
++++ parse.c	Sun Jul 21 03:41:53 2002
+@@ -3,6 +3,7 @@
+    tree for that regular expression.				*/
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "re.h"
+ 
+ #define FALSE	0
