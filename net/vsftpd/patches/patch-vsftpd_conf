@@ -1,9 +1,12 @@
-$OpenBSD: patch-vsftpd_conf,v 1.3 2003/08/02 12:00:13 couderc Exp $
---- vsftpd.conf.orig	Tue Jan 21 02:15:34 2003
-+++ vsftpd.conf	Wed Jul  9 16:56:03 2003
-@@ -9,13 +9,13 @@
+--- w-vsftpd-2.0.2/vsftpd-2.0.2/vsftpd.conf	Tue Jan 21 02:15:34 2003
++++ vsftpd.conf	Sun Mar 13 13:03:35 2005
+@@ -8,14 +8,17 @@
+ # Please read the vsftpd.conf.5 manual page to get a full idea of vsftpd's
  # capabilities.
  #
++# Standalone mode
++listen=YES
++#
  # Allow anonymous FTP? (Beware - allowed by default if you comment this out).
 -anonymous_enable=YES
 +anonymous_enable=NO
@@ -18,7 +21,7 @@ $OpenBSD: patch-vsftpd_conf,v 1.3 2003/08/02 12:00:13 couderc Exp $
  #
  # Default umask for local users is 077. You may wish to change this to 022,
  # if your users expect that (022 is used by most other ftpd's)
-@@ -32,13 +32,13 @@ anonymous_enable=YES
+@@ -32,13 +35,13 @@
  #
  # Activate directory messages - messages given to remote users when they
  # go into a certain directory.
@@ -35,7 +38,7 @@ $OpenBSD: patch-vsftpd_conf,v 1.3 2003/08/02 12:00:13 couderc Exp $
  #
  # If you want, you can arrange for uploaded anonymous files to be owned by
  # a different user. Note! Using "root" for uploaded files is not
-@@ -61,7 +61,7 @@ connect_from_port_20=YES
+@@ -61,7 +64,7 @@
  #
  # It is recommended that you define on your system a unique user which the
  # ftp server can use as a totally isolated and unprivileged user.
@@ -44,7 +47,7 @@ $OpenBSD: patch-vsftpd_conf,v 1.3 2003/08/02 12:00:13 couderc Exp $
  #
  # Enable this and the server will recognise asynchronous ABOR requests. Not
  # recommended for security (the code is non-trivial). Not enabling it,
-@@ -79,7 +79,7 @@ connect_from_port_20=YES
+@@ -79,7 +82,7 @@
  # without the DoS risk of SIZE and ASCII downloads. ASCII mangling should be
  # on the client anyway..
  #ascii_upload_enable=YES
@@ -53,7 +56,7 @@ $OpenBSD: patch-vsftpd_conf,v 1.3 2003/08/02 12:00:13 couderc Exp $
  #
  # You may fully customise the login banner string:
  #ftpd_banner=Welcome to blah FTP service.
-@@ -93,13 +93,41 @@ connect_from_port_20=YES
+@@ -93,13 +96,41 @@
  # You may specify an explicit list of local users to chroot() to their home
  # directory. If chroot_local_user is YES, then this list becomes a list of
  # users to NOT chroot().

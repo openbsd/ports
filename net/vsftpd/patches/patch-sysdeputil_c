@@ -1,0 +1,30 @@
+$OpenBSD: patch-sysdeputil_c,v 1.1 2005/03/13 20:40:38 couderc Exp $
+--- sysdeputil.c.orig	Tue Sep 14 03:18:54 2004
++++ sysdeputil.c	Sun Mar 13 09:01:50 2005
+@@ -74,6 +74,11 @@
+   #endif
+ #endif
+ 
++#if defined(__OpenBSD__)
++  #undef VSF_BUILD_PAM
++  #undef VSF_SYSDEP_HAVE_SHADOW
++#endif
++
+ #if (defined(__FreeBSD__) && __FreeBSD__ >= 3)
+   #define VSF_SYSDEP_HAVE_FREEBSD_SENDFILE
+   #define VSF_SYSDEP_HAVE_SETPROCTITLE
+@@ -622,13 +627,13 @@ static int do_sendfile(const int out_fd,
+   static char* p_recvbuf;
+   unsigned int total_written = 0;
+   int retval;
+-  enum EVSFSysUtilError error;
+   (void) start_pos;
+ #if defined(VSF_SYSDEP_HAVE_LINUX_SENDFILE) || \
+     defined(VSF_SYSDEP_HAVE_FREEBSD_SENDFILE) || \
+     defined(VSF_SYSDEP_HAVE_HPUX_SENDFILE) || \
+     defined(VSF_SYSDEP_HAVE_AIX_SENDFILE) || \
+     defined(VSF_SYSDEP_HAVE_SOLARIS_SENDFILE)
++  enum EVSFSysUtilError error;
+   if (tunable_use_sendfile)
+   {
+     static int s_sendfile_checked;
