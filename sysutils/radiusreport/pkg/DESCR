@@ -1,12 +1,11 @@
-Radiusreport  can  produce  many varied reports by analysing
-your  RADIUS  detail  files.  detail  files  can  be  uncom-
-pressed/compressed/gzipped.
+Radiusreport can produce many varied reports by analysing your RADIUS
+detail files.  detail files can be uncompressed/compressed/gzipped.
 
  o User online time reports (bandwidth used, etc.)
  o IP address usage.
  o Last login time reports.
 
-As of V.02 radiusreport can generate  individual  files  for
-each user by using the -o flag in conjunction with '-l all'.
-This function will enable you to 'reprocess'  radiusreport's
-output, e.g. to email a copy of each users report to them.
+As of V.02 radiusreport can generate individual files for each user by
+using the -o flag in conjunction with '-l all'.  This function will
+enable you to 'reprocess' radiusreport's output, e.g.  to email a copy
+of each users report to them.

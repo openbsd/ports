@@ -1,4 +1,4 @@
-lzop is a file compressor which is very similar to gzip.  It
-uses the LZO library for compression services and  its  main
-advantages  over gzip are much higher compression and decom-
-pression speed (at the cost of some compression ratio).
+lzop is a file compressor which is very similar to gzip.  It uses the
+LZO library for compression services and its main advantages over gzip
+are much higher compression and decompression speed (at the cost of some
+compression ratio).

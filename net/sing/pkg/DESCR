@@ -1,9 +1,8 @@
-SING stands for 'Send ICMP Nasty Garbage.' It is a tool that
-sends ICMP packets fully customized from command line.  It's
-main  purpose is to replace and complement the ping command,
-adding  certain  enhancements  as  fragmentation;  send  and
-receive  spoofed  packets;  send many ICMP information types
-(echo as the old ping, address mask, timestamp,  and  router
-discovery)   and   errors   (redirect,   unreach,  and  time
-exceeded); and send monster packets.  It also supports loose
-and strict source routing and record routing.
+SING stands for 'Send ICMP Nasty Garbage.' It is a tool that sends ICMP
+packets fully customized from command line.  It's main purpose is to
+replace and complement the ping command, adding certain enhancements as
+fragmentation; send and receive spoofed packets; send many ICMP
+information types (echo as the old ping, address mask, timestamp, and
+router discovery) and errors (redirect, unreach, and time exceeded); and
+send monster packets.  It also supports loose and strict source routing
+and record routing.
