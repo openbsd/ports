@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2002/12/16 14:34:27 grange Exp $
+# $OpenBSD: Makefile,v 1.27 2004/10/04 09:00:26 grange Exp $
 
     SUBDIR += BasiliskII
     SUBDIR += bochs
@@ -9,6 +9,7 @@
     SUBDIR += fuse-utils
     SUBDIR += ines
     SUBDIR += mastergear
+    SUBDIR += mips64emul
     SUBDIR += redhat
     SUBDIR += simh
     SUBDIR += snes9x
