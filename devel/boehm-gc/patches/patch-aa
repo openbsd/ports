@@ -1,5 +1,5 @@
 --- Makefile.orig	Thu Aug 21 02:17:10 1997
-+++ Makefile	Mon Apr 19 23:34:04 1999
++++ Makefile	Tue Apr 20 09:43:01 1999
 @@ -8,14 +8,40 @@
  #	 c++ interface to gc.a
  # cord/de - builds dumb editor based on cords.
@@ -17,7 +17,7 @@
 +# The new c++-t and c++-nt (test and notest) are because we don't want
 +# to fill anyone's log with leak messages! - MMCG
 +
-+CFLAGS= -O -DNO_SIGNALS -DALL_INTERIOR_POINTERS -DATOMIC_UNCOLLECTABLE \
++CFLAGS= -g -O -DNO_SIGNALS -DALL_INTERIOR_POINTERS -DATOMIC_UNCOLLECTABLE \
 +		-DNO_EXECUTE_PERMISSION -DSILENT -DREDIRECT_MALLOC=GC_malloc
 +
 +LEAKFLAGS=$(CFLAGS) -DFIND_LEAK
