@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/04/01 06:20:12 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/05/31 17:35:09 dugsong Exp $
 
 PKGNAME=	wordperfect-8.0
 CATEGORIES=     editors
@@ -7,8 +7,7 @@ MAINTAINER=	dugsong@monkey.org
 
 MASTER_SITES=	see_do-fetch_target
 
-DISTNAME=	GUILG00
-EXTRACT_SUFX=	.GZ
+DISTNAME=	WordPerfect
 
 NO_CDROM=	"LIC: redistribution not allowed"
 MIRROR_DISTFILE=no
@@ -39,7 +38,7 @@ do-fetch:
 	fi
 
 post-extract:
-	@(cd ${WRKDIR} ; for file in b* g* ; do ${EXTRACT_CMD} -xf $$file ; done)
+	@(cd ${WRKDIR} ; for file in b* g* ; do ${TAR} -xf $$file ; done)
 
 pre-install:
 	@${ECHO} "" ; \
