@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/12 21:20:47 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/13 21:18:47 jakob Exp $
 
 DISTNAME=	xterm-137
 CATEGORIES=	x11
-NEED_VERSION=	1.273
+NEED_VERSION=	1.299
 
 HOMEPAGE=	http://dickey.his.com/xterm/xterm.html
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://dickey.his.com/xterm/
 EXTRACT_SUFX=	.tgz
 
-FAKE=		Yes
-USE_IMAKE=	Yes
+CONFIGURE_STYLE=	imake
 
 .include <bsd.port.mk>
