@@ -1,0 +1,123 @@
+--- wmmultipop3/wmmultipop3.c.orig	Sat Sep 22 17:29:50 2001
++++ wmmultipop3/wmmultipop3.c	Tue Apr 30 09:16:39 2002
+@@ -60,7 +60,7 @@ typedef struct {
+   char password[STR_LENGTH];
+   char username[STR_LENGTH];
+   char popserver[4*STR_LENGTH];
+-  char mailserverid[2];
++  char mailserverid[4];
+   int  port;
+   int  nMsgs;
+   int  nUnread;
+@@ -138,7 +138,7 @@ int main(int argc, char *argv[]) {
+       case 'c' :
+ 	if (argc > (i+1))
+ 	  {
+-	    strcpy(config_file, argv[i+1]);
++	    strlcpy(config_file, argv[i+1], sizeof(config_file));
+ 	    i++;
+ 	  }
+ 	break;
+@@ -178,7 +178,7 @@ void wmCheckMail_routine(int argc, char 
+   
+   /* Find config-file */
+   if( !strcmp( config_file, "not-defined") ) {
+-    sprintf(config_file, "%s/.wmmultipop3rc", getenv("HOME")); 
++    snprintf(config_file, sizeof(config_file), "%s/.wmmultipop3rc", getenv("HOME")); 
+   }
+ 
+   /* Read config */
+@@ -451,7 +451,7 @@ int  readConfigFile(char *filename) {
+ 
+   /* If we don't have a configfile, output a new one */
+   if ( (fp = fopen( filename, "r" )) == 0) {
+-    sprintf(config_file, "%s/.wmmultipop3rc", getenv("HOME"));
++    snprintf(config_file, sizeof(config_file), "%s/.wmmultipop3rc", getenv("HOME"));
+     printf("-Config file does not exit : %s\n",config_file);
+     printf("+Trying to create new config file.\n");
+     if((fp = fopen(config_file,"w")) == 0){
+@@ -524,7 +524,7 @@ int  readConfigFile(char *filename) {
+ 	  printf("Error in mailclient string\n");
+ 	  return -1;
+ 	}
+-	strcpy(conf.mailclient, ptr);
++	strlcpy(conf.mailclient, ptr, sizeof(conf.mailclient));
+       }
+       if ( !strcmp(ptr, "middle_click_cmd") ) {
+ 	ptr = strtok( 0, "\n");
+@@ -532,7 +532,7 @@ int  readConfigFile(char *filename) {
+ 	  printf("Error in middle_click_cmd string\n");
+ 	  return -1;
+ 	}
+-	strcpy(conf.middle_click_cmd, ptr);
++	strlcpy(conf.middle_click_cmd, ptr, sizeof(conf.middle_click_cmd));
+       }
+       if ( !strcmp(ptr, "right_click_cmd") ) {
+ 	ptr = strtok( 0, "\n");
+@@ -540,7 +540,7 @@ int  readConfigFile(char *filename) {
+ 	  printf("Error in right_click_cmd string\n");
+ 	  return -1;
+ 	}
+-	strcpy(conf.right_click_cmd, ptr);
++	strlcpy(conf.right_click_cmd, ptr, sizeof(conf.right_click_cmd));
+       }
+ 
+       if ( !strcmp(ptr, "popserver") ) {
+@@ -553,7 +553,7 @@ int  readConfigFile(char *filename) {
+ 	if (popservers > 0)
+ 	  conf.c = (MailServerConf **)realloc(conf.c,(popservers+1)*sizeof(MailServerConf));
+ 	conf.c[popservers]=(MailServerConf *)malloc(sizeof(MailServerConf));
+-	strcpy(conf.c[popservers]->popserver, ptr);
++	strlcpy(conf.c[popservers]->popserver, ptr, sizeof(conf.c[popservers]->popserver));
+ 	/*	conf.c[popservers]->nMailWaiting=0;*/
+ 	popservers++;
+       }
+@@ -572,7 +572,7 @@ int  readConfigFile(char *filename) {
+ 	  printf("Error in username string\n");
+ 	  return -1;
+ 	}
+-	strcpy(conf.c[usernames]->username, ptr);
++	strlcpy(conf.c[usernames]->username, ptr, sizeof(conf.c[usernames]->username));
+ 	usernames++;
+       }
+       if ( !strcmp(ptr, "password") ) {
+@@ -581,7 +581,7 @@ int  readConfigFile(char *filename) {
+ 	  printf("Error in password string\n");
+ 	  return -1;
+ 	}
+-	strcpy(conf.c[passwords]->password, ptr);
++	strlcpy(conf.c[passwords]->password, ptr, sizeof(conf.c[passwords]->password));
+ 	passwords++;
+       }
+       if ( !strcmp(ptr, "mailserverid") ) {
+@@ -590,7 +590,7 @@ int  readConfigFile(char *filename) {
+ 	  printf("Error in mail-server ID string\n");
+ 	  return -1;
+ 	}
+-	strcpy(conf.c[ids]->mailserverid, ptr);
++	strlcpy(conf.c[ids]->mailserverid, ptr, sizeof(conf.c[ids]->mailserverid));
+ 	ids++;
+       }
+     }
+@@ -600,10 +600,10 @@ int  readConfigFile(char *filename) {
+      to mailclient (eg. left mouse click). This will preserve compability with 
+      configfiles belonging to older versions of wmmultipop3 */
+   if ( strlen( conf.middle_click_cmd ) < 1 ) {
+-    strcpy( conf.middle_click_cmd, conf.mailclient );
++    strlcpy(conf.middle_click_cmd, conf.mailclient, sizeof(conf.middle_click_cmd));
+   }
+   if ( strlen( conf.right_click_cmd ) < 1 ) {
+-    strcpy( conf.right_click_cmd, conf.mailclient );
++    strlcpy(conf.right_click_cmd, conf.mailclient, sizeof(conf.right_click_cmd));
+   }
+ 
+   conf.nMailBoxes = popservers;
+@@ -697,7 +697,7 @@ void BlitNum(int num, int x, int y)
+     newx -= CHAR_WIDTH;
+   } 
+   
+-  sprintf(buf, "%02i", num);
++  snprintf(buf, sizeof(buf), "%02i", num);
+   
+   BlitString(buf, newx, y);
+ }

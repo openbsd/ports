@@ -1,0 +1,10 @@
+wmMultiPop3 is a windowmaker dock app that checks pop3 mail boxes.
+It is based on the wmpop3 code, which does not support multiple
+boxes.  wmMultiPop3 connects to the pop3 servers that are specified
+in the configuration file and will alert you of new mail, and
+optionally open your favorite mail reader when middle clicked.
+
+A configuration file (~/.wmmultipop3rc) will be auto-magically
+generated upon the first execution of the program.
+
+WWW: ${HOMEPAGE}
