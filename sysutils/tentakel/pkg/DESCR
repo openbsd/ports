@@ -1,0 +1,6 @@
+Tentakel is a simple program for executing the same command on many
+hosts in parallel using ssh or rsh. It takes care of managing remote
+return errors and remote stderr/stdout as well. The code aims to
+be bourne shell compatible.
+
+WWW: ${HOMEPAGE}
