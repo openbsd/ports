@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/01 02:11:10 msf Exp $
+bin/pod_cover
+${P5ARCH}/Pod/Coverage.pm
+${P5ARCH}/Pod/Coverage/CountParents.pm
+${P5ARCH}/Pod/Coverage/ExportOnly.pm
+${P5ARCH}/Pod/Coverage/Overloader.pm
+${P5ARCH}/auto/Pod/Coverage/Coverage.bs
+${P5ARCH}/auto/Pod/Coverage/Coverage.so
+man/man3/Pod::Coverage.3p
+man/man3/Pod::Coverage::CountParents.3p
+man/man3/Pod::Coverage::ExportOnly.3p
+man/man3/Pod::Coverage::Overloader.3p
+@dirrm ${P5ARCH}/auto/Pod/Coverage
+@dirrm ${P5ARCH}/auto/Pod
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}/Pod/Coverage
+@dirrm ${P5ARCH}/Pod
+@dirrm ${P5ARCH}
