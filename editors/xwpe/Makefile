@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/22 15:41:55 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/02/26 00:25:42 danh Exp $
 
 DISTNAME=	xwpe-1.5.22a
 CATEGORIES=	editors
@@ -7,7 +7,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.identicalsoftware.com/xwpe/ 
 MASTER_SITE_SUBDIR= apps/editors/X
 
-MAINTAINER=	yanick@fries.net
+MAINTAINER=	Yannick Cote <yanick@fries.net>
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes

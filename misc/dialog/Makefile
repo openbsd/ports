@@ -3,7 +3,7 @@
 # Date created:			  12 November 1998
 # Whom:				  Yannick Cote 
 #
-# $OpenBSD: Makefile,v 1.6 2000/10/22 15:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/02/26 00:25:42 danh Exp $
 #
 
 DISTNAME= 	dialog-0.6z	
@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SUNSITE} 
 MASTER_SITE_SUBDIR= utils/shell
 
-MAINTAINER=     yanick@fries.net
+MAINTAINER=     Yannick Cote <yanick@fries.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
