@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/10 12:08:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/08/11 09:42:59 espie Exp $
+lib/X11/fonts/
 @fontdir lib/X11/fonts/korean/
 lib/X11/fonts/korean/a_font.pcf.gz
 lib/X11/fonts/korean/ad24.pcf.gz
