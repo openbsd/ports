@@ -1,0 +1,12 @@
+$OpenBSD: patch-misc_d_genidx_sh,v 1.1 2002/09/29 19:17:27 naddy Exp $
+--- misc_d/genidx.sh.orig	Sun Sep 29 21:18:43 2002
++++ misc_d/genidx.sh	Sun Sep 29 21:18:58 2002
+@@ -36,7 +36,7 @@ FILE_MODE=666
+ CATEGORIES="rock jazz blues folk reggae newage classical country soundtrack misc data"
+ XMCD_EMAIL=xmcd@amb.org
+ XMCD_URL=http://metalab.unc.edu/tkan/xmcd/
+-CDDB_URL=http://www/cddb.com/
++CDDB_URL=http://www.cddb.com/
+ REVIEWS_URL=http://www.yahoo.com/Entertainment/Music/Reviews/
+ TMPFILE=/tmp/_gilist.$$
+ 
