@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/06/08 00:10:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2003/09/24 21:25:14 naddy Exp $
 
 COMMENT=	"play, encode, and manage Ogg Vorbis files"
 
@@ -24,9 +24,10 @@ LIB_DEPENDS=	ao.3::audio/libao \
 		curl.2::net/curl \
 		vorbis.2,vorbisenc.2,vorbisfile.3::audio/libvorbis
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PTHREAD_CFLAGS="-pthread" PTHREAD_LIBS="-pthread"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vorbis-tools
