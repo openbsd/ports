@@ -18,4 +18,7 @@ Also included in dot.pinerc.pgp.sample are example entries needed to
 add to your .pinerc to activate the pgp add on scripts pgpdecode,
 pgpencode, and pgpsign.
 
+Flavors:
+	ldap - Build with support for LDAP.
+
 WWW: ${HOMEPAGE}
