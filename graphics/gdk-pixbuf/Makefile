@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2002/03/23 06:22:17 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2002/03/26 04:14:34 brad Exp $
 
 COMMENT=	"GdkPixbuf graphics library"
 COMMENT-gnome=	"GdkPixbuf graphics library (GNOME Canvas)"
 
 VERSION=	0.10.1
-FULLPKGNAME=	${DISTNAME}p1
-FULLPKGNAME-gnome=	gdk-pixbuf-gnome-${VERSION}
 DISTNAME=	gdk-pixbuf-${VERSION}
+PKGNAME=	${DISTNAME}p1
+PKGNAME-gnome=	gdk-pixbuf-gnome-${VERSION}p1
 CATEGORIES=	graphics
 NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -48,8 +48,7 @@ LIB_DEPENDS+=	jpeg.62::graphics/jpeg \
 		tiff.35.::graphics/tiff \
 		gtk.1.2,gdk.1.2::x11/gtk+
 
-.if ${SUBPACKAGE} == "" && ${FLAVOR} != "no_gnome" || \
-	${SUBPACKAGE} == "-gnome"
+.if !defined(PACKAGING) || ${SUBPACKAGE} == "-gnome"
 LIB_DEPENDS+=	gnome.36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs
 .endif
 
