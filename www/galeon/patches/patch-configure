@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2003/08/15 11:33:04 wilfried Exp $
---- configure.orig	2003-06-09 01:18:42.000000000 +0200
-+++ configure	2003-08-15 11:10:16.000000000 +0200
-@@ -11708,6 +11708,7 @@ cat confdefs.h >>conftest.$ac_ext
+$OpenBSD: patch-configure,v 1.5 2004/01/18 10:49:03 wilfried Exp $
+--- configure.orig	2003-11-23 19:20:10.000000000 +0100
++++ configure	2004-01-18 11:30:53.000000000 +0100
+@@ -11755,6 +11755,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.4 2003/08/15 11:33:04 wilfried Exp $
  #include <X11/extensions/Xinerama.h>
  _ACEOF
  rm -f conftest.$ac_objext
-@@ -11743,6 +11744,7 @@ _ACEOF
+@@ -11790,6 +11791,7 @@ _ACEOF
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -17,7 +17,7 @@ $OpenBSD: patch-configure,v 1.4 2003/08/15 11:33:04 wilfried Exp $
  #include <X11/extensions/Xinerama.h>
  _ACEOF
  if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
-@@ -11839,6 +11841,10 @@ USE_PTHREADS=
+@@ -11886,6 +11888,10 @@ USE_PTHREADS=
  _PTHREAD_CFLAGS=""
  _PTHREAD_LDFLAGS=""
  case "$OS_ARCH" in
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.4 2003/08/15 11:33:04 wilfried Exp $
  	NetBSD)
  		;;
  	FreeBSD)
-@@ -12340,9 +12346,7 @@ sed 's/^/| /' conftest.$ac_ext >&5
+@@ -12387,9 +12393,7 @@ sed 's/^/| /' conftest.$ac_ext >&5
  fi
  rm -f conftest.$ac_objext conftest.$ac_ext
  
@@ -39,7 +39,7 @@ $OpenBSD: patch-configure,v 1.4 2003/08/15 11:33:04 wilfried Exp $
  echo "$as_me:$LINENO: checking for gdk_superwin_get_type in -lgtksuperwin" >&5
  echo $ECHO_N "checking for gdk_superwin_get_type in -lgtksuperwin... $ECHO_C" >&6
  if test "${ac_cv_lib_gtksuperwin_gdk_superwin_get_type+set}" = set; then
-@@ -12402,14 +12406,14 @@ if test $ac_cv_lib_gtksuperwin_gdk_super
+@@ -12449,14 +12453,14 @@ if test $ac_cv_lib_gtksuperwin_gdk_super
  fi
  
  
@@ -56,3 +56,12 @@ $OpenBSD: patch-configure,v 1.4 2003/08/15 11:33:04 wilfried Exp $
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
+@@ -12639,6 +12643,8 @@ if test "${with_mozilla_snapshot+set}" =
+ 			MOZILLA_SNAPSHOT=12
+ 		    elif test "$_moz_snap" = "1.6b" ; then
+ 			MOZILLA_SNAPSHOT=13
++		    elif test "$_moz_snap" = "1.6" ; then
++			MOZILLA_SNAPSHOT=14
+ 		    elif test "$_moz_snap" = "trunk" ; then
+ 			MOZILLA_SNAPSHOT=13
+ 		    else
