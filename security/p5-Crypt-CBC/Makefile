@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2002/10/30 04:46:31 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2004/06/01 13:50:18 xsa Exp $
 
 COMMENT=	"cryptographic cipher block chaining mode"
 
-VERSION=	2.08
+VERSION=	2.10
 DISTNAME=	Crypt-CBC-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
@@ -14,6 +14,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
+# Perl
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
