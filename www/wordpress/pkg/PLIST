@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/08/03 01:54:05 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/11/24 02:30:02 kevlo Exp $
 wordpress/
 wordpress/index.php
 wordpress/license.txt
@@ -63,6 +63,7 @@ wordpress/wp-comments-reply.php
 wordpress/wp-comments.php
 wordpress/wp-commentsrss2.php
 wordpress/wp-config-sample.php
+@sample wordpress/wp-config.php
 wordpress/wp-content/
 wordpress/wp-content/link-update-cache.xml
 wordpress/wp-content/links-update-cache.xml
@@ -154,4 +155,3 @@ wordpress/wp-rss2.php
 wordpress/wp-settings.php
 wordpress/wp-trackback.php
 wordpress/wp.php
-wordpress/xmlrpc.php
