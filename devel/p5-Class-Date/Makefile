@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/08 03:27:01 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2002/02/26 01:54:48 kevlo Exp $
 
 COMMENT=	"module for easy date and time manipulation"
 
-DISTNAME=	Class-Date-1.0.8
+DISTNAME=	Class-Date-1.0.9
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
-NEED_VERSION=	1.419
+NEED_VERSION=	1.504
 
 HOMEPAGE=	http://dlux.sch.bme.hu/Class-Date/
 
@@ -20,5 +20,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Class
 
 CONFIGURE_STYLE= perl
+
+REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>
