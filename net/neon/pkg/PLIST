@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/05/28 12:56:28 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/09/08 17:32:50 lebel Exp $
 bin/neon-config
 include/neon/ne_207.h
 include/neon/ne_acl.h
@@ -24,6 +24,13 @@ include/neon/ne_xml.h
 lib/libneon.a
 man/man1/neon-config.1
 man/man3/ne_add_request_header.3
+man/man3/ne_addr_destroy.3
+man/man3/ne_addr_error.3
+man/man3/ne_addr_first.3
+man/man3/ne_addr_next.3
+man/man3/ne_addr_print.3
+man/man3/ne_addr_resolve.3
+man/man3/ne_addr_result.3
 man/man3/ne_buffer.3
 man/man3/ne_buffer_altered.3
 man/man3/ne_buffer_append.3
@@ -61,6 +68,7 @@ man/man3/ne_set_request_body_fd.3
 man/man3/ne_set_server_auth.3
 man/man3/ne_set_useragent.3
 man/man3/ne_shave.3
+man/man3/ne_sock_init.3
 man/man3/ne_ssl_certificate.3
 man/man3/ne_ssl_dname.3
 man/man3/ne_ssl_load_ca.3
@@ -71,6 +79,9 @@ man/man3/ne_status.3
 man/man3/ne_strdup.3
 man/man3/ne_strndup.3
 man/man3/ne_token.3
+man/man3/ne_version_match.3
+man/man3/ne_version_string.3
+man/man3/neon.3
 share/doc/neon/BUGS
 share/doc/neon/NEWS
 share/doc/neon/README
@@ -110,18 +121,22 @@ share/doc/neon/html/refbufutil.html
 share/doc/neon/html/refconfig.html
 share/doc/neon/html/referr.html
 share/doc/neon/html/refgetst.html
+share/doc/neon/html/refneon.html
 share/doc/neon/html/refopts.html
 share/doc/neon/html/refreq.html
 share/doc/neon/html/refreqbody.html
 share/doc/neon/html/refreqhdr.html
+share/doc/neon/html/refresolve.html
 share/doc/neon/html/refsess.html
 share/doc/neon/html/refshave.html
+share/doc/neon/html/refsockinit.html
 share/doc/neon/html/refsslca.html
 share/doc/neon/html/refsslcert.html
 share/doc/neon/html/refssldname.html
 share/doc/neon/html/refsslvfy.html
 share/doc/neon/html/refstatus.html
 share/doc/neon/html/reftok.html
+share/doc/neon/html/refvers.html
 share/doc/neon/html/ssl.html
 share/doc/neon/html/utils.html
 share/doc/neon/html/xml.html
@@ -129,9 +144,7 @@ share/neon/macros/ChangeLog
 share/neon/macros/neon-test.m4
 share/neon/macros/neon-xml-parser.m4
 share/neon/macros/neon.m4
-share/neon/macros/readline.m4
 share/neon/macros/socklen-arg-type.m4
-share/neon/macros/strftime.m4
 %%SHARED%%
 @dirrm share/neon/macros
 @dirrm share/neon
