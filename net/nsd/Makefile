@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/10/24 12:30:11 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2003/10/24 13:00:27 jakob Exp $
 
 COMMENT=	"authoritative-only name server daemon"
 
@@ -24,7 +24,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-ipv6 \
 			--enable-dnssec \
 			--enable-bind8-stats \
-			--with-namexfer=${LOCALBASE}/libexec/named-xfer \
+			--with-namedxfer=${LOCALBASE}/libexec/named-xfer \
 			--with-librap \
 			--with-user=named \
 			--with-pidfile=/var/run/nsd.pid \
