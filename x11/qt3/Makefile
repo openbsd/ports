@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/11/13 22:55:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2002/11/18 02:03:12 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		C++ X11 GUI toolkit
@@ -19,13 +19,7 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 FLAVORS=mt
 
 PSEUDO_FLAVORS=	no_mysql no_postgresql
-# Adjust for arches where MySQL/PostgreSQL don't work.
-.if !${MACHINE_ARCH:Mi386} && !${MACHINE_ARCH:Msparc} && \
-!${MACHINE_ARCH:Mpowerpc}
-FLAVOR+=	no_mysql
-.else
 FLAVOR?=
-.endif
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
