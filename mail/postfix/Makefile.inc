@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.33 2004/01/02 12:18:05 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.34 2004/01/14 17:30:59 jakob Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -19,6 +19,9 @@ HOMEPAGE=	http://www.postfix.org/
 TLSHOMEPAGE=	http://www.aet.tu-cottbus.de/personen/jaenicke/pfixtls/
 SUBST_VARS+=	TLSHOMEPAGE
 
+IPV6HOMEPAGE=	http://www.ipnet6.org/postfix/
+SUBST_VARS+=	IPV6HOMEPAGE
+
 PERMIT_PACKAGE_CDROM=	"cannot be sold, see section 4 of license"
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	"cannot be sold, see section 4 of license"
@@ -33,7 +36,7 @@ ALL_TARGET=	default
 
 NO_REGRESS=	Yes
 
-FLAVORS+=	pcre sasl sasl2 ldap mysql tls
+FLAVORS+=	pcre sasl sasl2 ldap mysql tls ipv6
 FLAVOR?=
 
 .if ${FLAVOR:L:Mpcre}
@@ -71,12 +74,9 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 .if ${FLAVOR:L:Mtls}
 .if defined(TLSVERSION)
 PKGNAME:=	${PKGNAME}.tls${TLSVERSION}
-
 TLSDISTNAME=	pfixtls-${TLSVERSION}-${TLSPFIXVERSION}-${TLSSSLVERSION}
-
 MASTER_SITES0=	ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/old/
-
 DISTFILES+=	${TLSDISTNAME}${EXTRACT_SUFX}:0
 
 MAKE_CCARGS+=	-DHAS_SSL
@@ -86,10 +86,10 @@ post-patch-tls:
 	@echo "===>  Applying TLS patches for ${FULLPKGNAME}"
 	@mv ${WRKDIST}/conf/master.cf ${WRKDIST}/conf/master.cf.save
 	@cp ${WRKDIST}/conf/master.cf.orig ${WRKDIST}/conf/master.cf
-	@cd ${WRKDIST} && ${PATCH} -s -p1 < ${WRKDIR}/${TLSDISTNAME}/pfixtls.diff
+	@cd ${WRKDIST} && ${PATCH} -st -p1 < ${WRKDIR}/${TLSDISTNAME}/pfixtls.diff
 	@mv ${WRKDIST}/conf/master.cf.save ${WRKDIST}/conf/master.cf
 	@rm ${WRKDIST}/conf/master.cf.orig
-	@cd ${WRKDIST} && ${PATCH} -s -p0 < ${FILESDIR}/patch-tls-master.cf
+	@cd ${WRKDIST} && ${PATCH} -st -p0 < ${FILESDIR}/patch-tls-master.cf
 
 post-install-tls:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postfix/tls
@@ -102,6 +102,24 @@ BROKEN=         "TLS patches not yet available for this version"
 post-patch-tls:
 post-install-tls:
 .endif
+
+.if ${FLAVOR:L:Mipv6}
+.if defined(IPV6VERSION)
+PKGNAME:=		${PKGNAME}.ipv6r${IPV6VERSION}
+IPV6DISTNAME=		ipv6-${IPV6VERSION}-pf-${IPV6PFIXVERSION}
+MASTER_SITES1=		http://www.ipnet6.org/postfix/download/
+PATCHFILES+=		${IPV6DISTNAME}.patch.gz:1
+PATCH_DIST_STRIP=	-p1
+.else
+BROKEN=         "IPv6 patches not yet available for this version"
+.endif
+.else
+.endif
+
+.if ${FLAVOR:L:Mtls} && ${FLAVOR:L:Mipv6}
+BROKEN=         "Can not do both TLS and IPv6 (yet)"
+.endif
+
 
 post-patch: post-patch-tls
 	@rm ${WRKDIST}/conf/*.orig
