@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/11/26 16:34:51 shell Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/03/07 06:59:27 shell Exp $
 bin/ptked
 bin/ptksh
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Tie/Watch.pm
@@ -483,7 +483,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Tk/updateWidgets.al
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/fix_4_os2.pl
 man/man1/ptked.1
 man/man1/ptksh.1
-man/man1/widget.1
 man/man3/Tie::Watch.3p
 man/man3/Tk.3p
 man/man3/Tk::Adjuster.3p
