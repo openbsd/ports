@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.44 2003/08/17 03:46:39 brad Exp $
+# $OpenBSD: Makefile,v 1.45 2003/09/26 23:57:57 brad Exp $
 
-DISTNAME=	gaim-0.67
+DISTNAME=	gaim-0.69
 CATEGORIES=	net
 
 # GPL
@@ -23,7 +23,7 @@ BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} --disable-nas
+CONFIGURE_ARGS+= --disable-nas --disable-perl --disable-tcl --disable-tk
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

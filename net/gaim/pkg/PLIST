@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2003/08/17 03:46:39 brad Exp $
+@comment $OpenBSD: PLIST,v 1.23 2003/09/26 23:57:57 brad Exp $
 bin/gaim
 bin/gaim-remote
 include/gaim-remote/remote-socket.h
@@ -20,7 +20,6 @@ include/gaim-remote/remote.h
 @comment lib/gaim/libyahoo.la
 @comment lib/gaim/libzephyr.la
 @comment lib/gaim/notify.la
-@comment lib/gaim/perl.la
 @comment lib/gaim/spellchk.la
 @comment lib/gaim/statenotify.la
 @comment lib/gaim/ticker.la
@@ -35,7 +34,6 @@ share/locale/ca/LC_MESSAGES/gaim.mo
 share/locale/cs/LC_MESSAGES/gaim.mo
 share/locale/da/LC_MESSAGES/gaim.mo
 share/locale/de/LC_MESSAGES/gaim.mo
-share/locale/en_GB/LC_MESSAGES/gaim.mo
 share/locale/es/LC_MESSAGES/gaim.mo
 share/locale/fi/LC_MESSAGES/gaim.mo
 share/locale/fr/LC_MESSAGES/gaim.mo
@@ -49,6 +47,7 @@ share/locale/nl/LC_MESSAGES/gaim.mo
 share/locale/no/LC_MESSAGES/gaim.mo
 share/locale/pl/LC_MESSAGES/gaim.mo
 share/locale/pt_BR/LC_MESSAGES/gaim.mo
+share/locale/pt_PT/LC_MESSAGES/gaim.mo
 share/locale/ro/LC_MESSAGES/gaim.mo
 share/locale/ru/LC_MESSAGES/gaim.mo
 share/locale/sk/LC_MESSAGES/gaim.mo
@@ -101,53 +100,86 @@ share/pixmaps/gaim/smileys/default/mrt.png
 share/pixmaps/gaim/smileys/default/msn_angel.png
 share/pixmaps/gaim/smileys/default/msn_angry.png
 share/pixmaps/gaim/smileys/default/msn_away.png
-share/pixmaps/gaim/smileys/default/msn_bat.png
+share/pixmaps/gaim/smileys/default/msn_bat.gif
 share/pixmaps/gaim/smileys/default/msn_beer.png
+share/pixmaps/gaim/smileys/default/msn_bowl.png
 share/pixmaps/gaim/smileys/default/msn_boy.png
+share/pixmaps/gaim/smileys/default/msn_brb.png
 share/pixmaps/gaim/smileys/default/msn_brheart.png
-share/pixmaps/gaim/smileys/default/msn_cake.png
+share/pixmaps/gaim/smileys/default/msn_cake.gif
+share/pixmaps/gaim/smileys/default/msn_car.png
 share/pixmaps/gaim/smileys/default/msn_cat.png
+share/pixmaps/gaim/smileys/default/msn_cellphone.png
+share/pixmaps/gaim/smileys/default/msn_cigarette.gif
 share/pixmaps/gaim/smileys/default/msn_clock.png
 share/pixmaps/gaim/smileys/default/msn_coffee.png
-share/pixmaps/gaim/smileys/default/msn_cry.png
+share/pixmaps/gaim/smileys/default/msn_coins.png
+share/pixmaps/gaim/smileys/default/msn_computer.png
+share/pixmaps/gaim/smileys/default/msn_cry.gif
 share/pixmaps/gaim/smileys/default/msn_deadflower.png
 share/pixmaps/gaim/smileys/default/msn_devil.png
 share/pixmaps/gaim/smileys/default/msn_dog.png
+share/pixmaps/gaim/smileys/default/msn_dontknow.gif
+share/pixmaps/gaim/smileys/default/msn_donttell.png
 share/pixmaps/gaim/smileys/default/msn_drink.png
 share/pixmaps/gaim/smileys/default/msn_email.png
 share/pixmaps/gaim/smileys/default/msn_embarrassed.png
+share/pixmaps/gaim/smileys/default/msn_eyeroll.gif
 share/pixmaps/gaim/smileys/default/msn_film.png
+share/pixmaps/gaim/smileys/default/msn_fingerscrossed.png
 share/pixmaps/gaim/smileys/default/msn_flower.png
 share/pixmaps/gaim/smileys/default/msn_gift.png
 share/pixmaps/gaim/smileys/default/msn_girl.png
 share/pixmaps/gaim/smileys/default/msn_handcuffs.png
 share/pixmaps/gaim/smileys/default/msn_heart.png
+share/pixmaps/gaim/smileys/default/msn_highfive.png
 share/pixmaps/gaim/smileys/default/msn_hot.png
 share/pixmaps/gaim/smileys/default/msn_icon.png
 share/pixmaps/gaim/smileys/default/msn_idea.png
+share/pixmaps/gaim/smileys/default/msn_island.png
 share/pixmaps/gaim/smileys/default/msn_kiss.png
 share/pixmaps/gaim/smileys/default/msn_laugh.png
+share/pixmaps/gaim/smileys/default/msn_lightning.gif
+share/pixmaps/gaim/smileys/default/msn_nerd.png
 share/pixmaps/gaim/smileys/default/msn_neutral.png
 share/pixmaps/gaim/smileys/default/msn_note.png
 share/pixmaps/gaim/smileys/default/msn_occ.png
 share/pixmaps/gaim/smileys/default/msn_online.png
 share/pixmaps/gaim/smileys/default/msn_ooooh.png
+share/pixmaps/gaim/smileys/default/msn_party.gif
 share/pixmaps/gaim/smileys/default/msn_phone.png
 share/pixmaps/gaim/smileys/default/msn_photo.png
+share/pixmaps/gaim/smileys/default/msn_pizza.png
+share/pixmaps/gaim/smileys/default/msn_plane.png
+share/pixmaps/gaim/smileys/default/msn_plate.png
 share/pixmaps/gaim/smileys/default/msn_question.png
 share/pixmaps/gaim/smileys/default/msn_rainbow.png
 share/pixmaps/gaim/smileys/default/msn_run.png
 share/pixmaps/gaim/smileys/default/msn_runback.png
 share/pixmaps/gaim/smileys/default/msn_sad.png
+share/pixmaps/gaim/smileys/default/msn_sarcastic.png
+share/pixmaps/gaim/smileys/default/msn_secret.png
+share/pixmaps/gaim/smileys/default/msn_sheep.png
+share/pixmaps/gaim/smileys/default/msn_sick.png
 share/pixmaps/gaim/smileys/default/msn_sleep.png
+share/pixmaps/gaim/smileys/default/msn_sleepy.gif
 share/pixmaps/gaim/smileys/default/msn_smiley.png
+share/pixmaps/gaim/smileys/default/msn_snail.png
+share/pixmaps/gaim/smileys/default/msn_soccer.png
 share/pixmaps/gaim/smileys/default/msn_star.png
+share/pixmaps/gaim/smileys/default/msn_stormy.png
 share/pixmaps/gaim/smileys/default/msn_sun.png
+share/pixmaps/gaim/smileys/default/msn_sunglasses.png
+share/pixmaps/gaim/smileys/default/msn_teeth.png
+share/pixmaps/gaim/smileys/default/msn_think.gif
 share/pixmaps/gaim/smileys/default/msn_thumbdown.png
 share/pixmaps/gaim/smileys/default/msn_thumbup.png
 share/pixmaps/gaim/smileys/default/msn_tongue.png
+share/pixmaps/gaim/smileys/default/msn_turtle.png
+share/pixmaps/gaim/smileys/default/msn_umbrella.png
 share/pixmaps/gaim/smileys/default/msn_weird.png
-share/pixmaps/gaim/smileys/default/msn_wink.png
+share/pixmaps/gaim/smileys/default/msn_wink.gif
+share/pixmaps/gaim/smileys/default/msn_xbox.png
 share/pixmaps/gaim/smileys/default/oneeye.png
 share/pixmaps/gaim/smileys/default/sad.png
 share/pixmaps/gaim/smileys/default/scream.png
@@ -284,6 +316,8 @@ share/sounds/gaim/send.wav
 @comment @dirrm share/locale/ru
 @comment @dirrm share/locale/ro/LC_MESSAGES
 @comment @dirrm share/locale/ro
+@comment @dirrm share/locale/pt_PT/LC_MESSAGES
+@comment @dirrm share/locale/pt_PT
 @comment @dirrm share/locale/pt_BR/LC_MESSAGES
 @comment @dirrm share/locale/pt_BR
 @comment @dirrm share/locale/pl/LC_MESSAGES
@@ -310,8 +344,6 @@ share/sounds/gaim/send.wav
 @comment @dirrm share/locale/fi
 @comment @dirrm share/locale/es/LC_MESSAGES
 @comment @dirrm share/locale/es
-@comment @dirrm share/locale/en_GB/LC_MESSAGES
-@comment @dirrm share/locale/en_GB
 @comment @dirrm share/locale/de/LC_MESSAGES
 @comment @dirrm share/locale/de
 @comment @dirrm share/locale/da/LC_MESSAGES
