@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.79 2001/06/03 17:52:58 shell Exp $
+# $OpenBSD: Makefile,v 1.80 2001/06/08 17:03:09 shell Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
      SUBDIR += ElectricFence
      SUBDIR += ORBit
      SUBDIR += asp2php
-     SUBDIR += asp2php,gui
+     SUBDIR += asp2php,no_x11
      SUBDIR += astyle
      SUBDIR += autobook
      SUBDIR += autoconf
