@@ -1,7 +1,6 @@
-$OpenBSD: patch-configs_openbsd-g++-shared-debug,v 1.2 2000/06/23 14:17:40 espie Exp $
---- configs/openbsd-g++-shared-debug.orig	Thu May 25 14:10:32 2000
-+++ configs/openbsd-g++-shared-debug	Wed Jun 21 18:36:22 2000
-@@ -1,25 +1,25 @@
+--- configs/openbsd-g++-shared-debug.orig	Fri Sep 22 03:35:35 2000
++++ configs/openbsd-g++-shared-debug	Fri Sep 22 04:05:46 2000
+@@ -1,11 +1,11 @@
  # Compiling
 -SYSCONF_CXX		= g++
 +SYSCONF_CXX		= $(SYS_CXX)
@@ -14,8 +13,9 @@ $OpenBSD: patch-configs_openbsd-g++-shared-debug,v 1.2 2000/06/23 14:17:40 espie
 -SYSCONF_CXXFLAGS_OPENGL	= -I/usr/X11R6/include
 +SYSCONF_CXXFLAGS_OPENGL	= -I/usr/local/include
  
- # Compiline YACC output
+ # Compiling YACC output
  SYSCONF_CXXFLAGS_YACC     = -Wno-unused -Wno-parentheses
+@@ -17,46 +17,46 @@ SYSCONF_RPATH_OPENGL	= 
  
  # Linking with support libraries
  # X11
@@ -24,41 +24,51 @@ $OpenBSD: patch-configs_openbsd-g++-shared-debug,v 1.2 2000/06/23 14:17:40 espie
  SYSCONF_LIBS_X11	= -lXext -lX11 -lm
  # Qt, Qt+OpenGL
  SYSCONF_LFLAGS_QT	= -L$(QTDIR)/lib
- SYSCONF_LIBS_QT		= -lqt
- SYSCONF_LIBS_QT_OPENGL	= -lqgl
+ SYSCONF_LIBS_QT		= -lqt$(QT_THREAD_SUFFIX)
+ SYSCONF_LIBS_QT_OPENGL	= 
  # OpenGL
 -SYSCONF_LFLAGS_OPENGL	= -L/usr/X11R6/lib
 +SYSCONF_LFLAGS_OPENGL	= -L/usr/local/lib
  SYSCONF_LIBS_OPENGL	= -lGLU -lGL -lXmu
  # Yacc
  SYSCONF_LIBS_YACC	= 
-@@ -30,7 +30,7 @@ SYSCONF_LFLAGS		= 
+ 
+ # Linking applications
+-SYSCONF_LINK		= g++
+-SYSCONF_LFLAGS		= 
++SYSCONF_LINK		= $(SYS_CXX)
++SYSCONF_LFLAGS		= -L/usr/X11R6/lib -L/usr/local/lib
  SYSCONF_LIBS		= 
  
- # Link flags shared objects
--SYSCONF_LFLAGS_SHOBJ	= -Bshareable
-+SYSCONF_LFLAGS_SHOBJ	= -Bshareable -Bforcearchive
+ # Link flags for shared objects
+ SYSCONF_LFLAGS_SHOBJ	= -Bshareable
+ 
+ # Flags for threading
+-SYSCONF_CFLAGS_THREAD	= 
+-SYSCONF_CXXFLAGS_THREAD	= 
+-SYSCONF_LFLAGS_THREAD	= 
++SYSCONF_CFLAGS_THREAD	= -pthread
++SYSCONF_CXXFLAGS_THREAD	= -pthread
++SYSCONF_LFLAGS_THREAD	= -pthread
+ # SYSCONF_LIBS_THREAD	= ???
  
  # Meta-object compiler
  SYSCONF_MOC		= $(QTDIR)/bin/moc
-@@ -40,9 +40,9 @@ SYSCONF_MOC		= $(QTDIR)/bin/moc
+ 
+ # UI compiler
+-SYSCONF_UIC		= $(QTDIR)/bin/uic
++SYSCONF_UIC		= env LD_LIBRARY_PATH="$(QTDIR)/lib" $(QTDIR)/bin/uic
+ 
+ # Linking shared libraries
+ #   - Build the $(TARGET) library, eg. lib$(TARGET).so.2.0.1
  #   - Place target in $(DESTDIR) - which has a trailing /
  #   - Usually needs to incorporate $(VER_MAJ), $(VER_MIN) and $(VER_PATCH)
  #
 -SYSCONF_LINK_SHLIB	= ld
-+SYSCONF_LINK_SHLIB	= g++ -shared
++SYSCONF_LINK_SHLIB	= $(SYS_CXX) -shared
  SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ).$(VER_MIN).$(VER_PATCH)
 -SYSCONF_LINK_LIB_SHARED	= $(SYSCONF_LINK_SHLIB) -Bshareable $(LFLAGS) -o $(DESTDIR)$(SYSCONF_LINK_TARGET_SHARED) `lorder /usr/lib/c++rt0.o $(OBJECTS) $(OBJMOC) | tsort` $(LIBS)
 +SYSCONF_LINK_LIB_SHARED	= $(SYSCONF_LINK_SHLIB) $(LFLAGS) -o $(DESTDIR)$(SYSCONF_LINK_TARGET_SHARED) $(OBJECTS) $(OBJMOC) $(LIBS)
  
  # Linking static libraries
  #   - Build the $(TARGET) library, eg. lib$(TARGET).a
-@@ -54,7 +54,7 @@ SYSCONF_LINK_LIB_STATIC	= rm -f $(DESTDI
- 				 $(SYSCONF_AR) $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) $(OBJECTS) $(OBJMOC) ; \
- 				 ranlib $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC)
- # Compiling application source
--SYSCONF_CXXFLAGS	= -g
-+SYSCONF_CXXFLAGS	= $(SYS_CXXFLAGS) -g -fno-strength-reduce
- SYSCONF_CFLAGS		= -g
- # Compiling library source
- SYSCONF_CXXFLAGS_LIB	= -fPIC

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-examples,v 1.2 2000/06/23 14:17:41 espie Exp $
-@pkgdep qt2-1.1
+@comment $OpenBSD: PLIST-examples,v 1.3 2000/09/22 15:02:37 espie Exp $
+@pkgdep qt2-2.0
+%%gl%%
 lib/qt2/examples/Makefile
 lib/qt2/examples/Makefile.in
 lib/qt2/examples/README
@@ -11,6 +12,15 @@ lib/qt2/examples/aclock/aclock.cpp
 lib/qt2/examples/aclock/aclock.h
 lib/qt2/examples/aclock/aclock.pro
 lib/qt2/examples/aclock/main.cpp
+lib/qt2/examples/action/Makefile
+lib/qt2/examples/action/Makefile.in
+lib/qt2/examples/action/action.pro
+lib/qt2/examples/action/application.cpp
+lib/qt2/examples/action/application.h
+lib/qt2/examples/action/fileopen.xpm
+lib/qt2/examples/action/fileprint.xpm
+lib/qt2/examples/action/filesave.xpm
+lib/qt2/examples/action/main.cpp
 lib/qt2/examples/addressbook/Makefile
 lib/qt2/examples/addressbook/Makefile.in
 lib/qt2/examples/addressbook/addressbook
@@ -35,11 +45,21 @@ lib/qt2/examples/application/filesave.xpm
 lib/qt2/examples/application/main.cpp
 lib/qt2/examples/biff/Makefile
 lib/qt2/examples/biff/Makefile.in
+lib/qt2/examples/biff/biff
 lib/qt2/examples/biff/biff.cpp
 lib/qt2/examples/biff/biff.h
 lib/qt2/examples/biff/biff.pro
 lib/qt2/examples/biff/bmp.cpp
 lib/qt2/examples/biff/main.cpp
+lib/qt2/examples/box/Makefile
+lib/qt2/examples/box/Makefile.in
+lib/qt2/examples/box/README
+lib/qt2/examples/box/box.pro
+lib/qt2/examples/box/glbox.cpp
+lib/qt2/examples/box/glbox.h
+lib/qt2/examples/box/globjwin.cpp
+lib/qt2/examples/box/globjwin.h
+lib/qt2/examples/box/main.cpp
 lib/qt2/examples/buttongroups/Makefile
 lib/qt2/examples/buttongroups/Makefile.in
 lib/qt2/examples/buttongroups/README
@@ -48,6 +68,18 @@ lib/qt2/examples/buttongroups/buttongroups.cpp
 lib/qt2/examples/buttongroups/buttongroups.h
 lib/qt2/examples/buttongroups/buttongroups.pro
 lib/qt2/examples/buttongroups/main.cpp
+lib/qt2/examples/canvas/Makefile
+lib/qt2/examples/canvas/Makefile.in
+lib/qt2/examples/canvas/blendshadow.cpp
+lib/qt2/examples/canvas/butterfly.png
+lib/qt2/examples/canvas/canvas
+lib/qt2/examples/canvas/canvas.cpp
+lib/qt2/examples/canvas/canvas.h
+lib/qt2/examples/canvas/canvas.pro
+lib/qt2/examples/canvas/main.cpp
+lib/qt2/examples/canvas/makeimg.cpp
+lib/qt2/examples/canvas/qt-trans.xpm
+lib/qt2/examples/canvas/qtlogo.png
 lib/qt2/examples/checklists/Makefile
 lib/qt2/examples/checklists/Makefile.in
 lib/qt2/examples/checklists/checklists
@@ -83,6 +115,7 @@ lib/qt2/examples/dclock/main.cpp
 lib/qt2/examples/desktop/Makefile
 lib/qt2/examples/desktop/Makefile.in
 lib/qt2/examples/desktop/README
+lib/qt2/examples/desktop/desktop
 lib/qt2/examples/desktop/desktop.cpp
 lib/qt2/examples/desktop/desktop.pro
 lib/qt2/examples/dirview/Makefile
@@ -132,6 +165,34 @@ lib/qt2/examples/forever/forever
 lib/qt2/examples/forever/forever.cpp
 lib/qt2/examples/forever/forever.h
 lib/qt2/examples/forever/forever.pro
+lib/qt2/examples/ftpclient/Makefile
+lib/qt2/examples/ftpclient/Makefile.in
+lib/qt2/examples/ftpclient/README
+lib/qt2/examples/ftpclient/ftpclient
+lib/qt2/examples/ftpclient/ftpclient.pro
+lib/qt2/examples/ftpclient/ftpmainwindow.cpp
+lib/qt2/examples/ftpclient/ftpmainwindow.h
+lib/qt2/examples/ftpclient/ftpview.cpp
+lib/qt2/examples/ftpclient/ftpview.h
+lib/qt2/examples/ftpclient/main.cpp
+lib/qt2/examples/gear/Makefile
+lib/qt2/examples/gear/Makefile.in
+lib/qt2/examples/gear/README
+lib/qt2/examples/gear/gear.cpp
+lib/qt2/examples/gear/gear.pro
+lib/qt2/examples/glpixmap/Makefile
+lib/qt2/examples/glpixmap/Makefile.in
+lib/qt2/examples/glpixmap/README
+lib/qt2/examples/glpixmap/glbox.cpp
+lib/qt2/examples/glpixmap/glbox.h
+lib/qt2/examples/glpixmap/globjwin.cpp
+lib/qt2/examples/glpixmap/globjwin.h
+lib/qt2/examples/glpixmap/glpixmap.pro
+lib/qt2/examples/glpixmap/main.cpp
+lib/qt2/examples/guithreads/Makefile
+lib/qt2/examples/guithreads/Makefile.in
+lib/qt2/examples/guithreads/guithreads.pro
+lib/qt2/examples/guithreads/main.cpp
 lib/qt2/examples/hello/Makefile
 lib/qt2/examples/hello/Makefile.in
 lib/qt2/examples/hello/README
@@ -150,6 +211,12 @@ lib/qt2/examples/helpviewer/helpwindow.cpp
 lib/qt2/examples/helpviewer/helpwindow.h
 lib/qt2/examples/helpviewer/home.xpm
 lib/qt2/examples/helpviewer/main.cpp
+lib/qt2/examples/httpd/Makefile
+lib/qt2/examples/httpd/Makefile.in
+lib/qt2/examples/httpd/README
+lib/qt2/examples/httpd/httpd
+lib/qt2/examples/httpd/httpd.cpp
+lib/qt2/examples/httpd/httpd.pro
 lib/qt2/examples/i18n/Makefile
 lib/qt2/examples/i18n/Makefile.in
 lib/qt2/examples/i18n/README
@@ -228,6 +295,15 @@ lib/qt2/examples/listviews/listviews.cpp
 lib/qt2/examples/listviews/listviews.h
 lib/qt2/examples/listviews/listviews.pro
 lib/qt2/examples/listviews/main.cpp
+lib/qt2/examples/mail/Makefile
+lib/qt2/examples/mail/Makefile.in
+lib/qt2/examples/mail/composer.cpp
+lib/qt2/examples/mail/composer.h
+lib/qt2/examples/mail/mail
+lib/qt2/examples/mail/mail.pro
+lib/qt2/examples/mail/main.cpp
+lib/qt2/examples/mail/smtp.cpp
+lib/qt2/examples/mail/smtp.h
 lib/qt2/examples/mdi/Makefile
 lib/qt2/examples/mdi/Makefile.in
 lib/qt2/examples/mdi/application.cpp
@@ -252,6 +328,43 @@ lib/qt2/examples/movies/main.cpp
 lib/qt2/examples/movies/movies
 lib/qt2/examples/movies/movies.pro
 lib/qt2/examples/movies/trolltech.gif
+lib/qt2/examples/networkprotocol/Makefile
+lib/qt2/examples/networkprotocol/Makefile.in
+lib/qt2/examples/networkprotocol/README
+lib/qt2/examples/networkprotocol/http.cpp
+lib/qt2/examples/networkprotocol/http.h
+lib/qt2/examples/networkprotocol/main.cpp
+lib/qt2/examples/networkprotocol/networkprotocol
+lib/qt2/examples/networkprotocol/networkprotocol.pro
+lib/qt2/examples/networkprotocol/nntp.cpp
+lib/qt2/examples/networkprotocol/nntp.h
+lib/qt2/examples/networkprotocol/view.cpp
+lib/qt2/examples/networkprotocol/view.h
+lib/qt2/examples/overlay/Makefile
+lib/qt2/examples/overlay/Makefile.in
+lib/qt2/examples/overlay/README
+lib/qt2/examples/overlay/globjwin.cpp
+lib/qt2/examples/overlay/globjwin.h
+lib/qt2/examples/overlay/glteapots.cpp
+lib/qt2/examples/overlay/glteapots.h
+lib/qt2/examples/overlay/main.cpp
+lib/qt2/examples/overlay/overlay.pro
+lib/qt2/examples/overlay_x11/Makefile
+lib/qt2/examples/overlay_x11/Makefile.in
+lib/qt2/examples/overlay_x11/README
+lib/qt2/examples/overlay_x11/README.X11-OVERLAYS
+lib/qt2/examples/overlay_x11/gearwidget.cpp
+lib/qt2/examples/overlay_x11/gearwidget.h
+lib/qt2/examples/overlay_x11/main.cpp
+lib/qt2/examples/overlay_x11/overlayrubber.pro
+lib/qt2/examples/overlay_x11/rubberbandwidget.cpp
+lib/qt2/examples/overlay_x11/rubberbandwidget.h
+lib/qt2/examples/overlay_x11/utilities/NOTICE
+lib/qt2/examples/overlay_x11/utilities/README
+lib/qt2/examples/overlay_x11/utilities/glxvisuals/glxvisuals.c
+lib/qt2/examples/overlay_x11/utilities/sovinfo/sovLayerUtil.h
+lib/qt2/examples/overlay_x11/utilities/sovinfo/sovinfo.c
+lib/qt2/examples/overlay_x11/utilities/sovinfo/sovlayerutil.c
 lib/qt2/examples/picture/Makefile
 lib/qt2/examples/picture/Makefile.in
 lib/qt2/examples/picture/README
@@ -325,6 +438,7 @@ lib/qt2/examples/rangecontrols/rangecontrols.pro
 lib/qt2/examples/richtext/Makefile
 lib/qt2/examples/richtext/Makefile.in
 lib/qt2/examples/richtext/main.cpp
+lib/qt2/examples/richtext/marble.png
 lib/qt2/examples/richtext/richtext
 lib/qt2/examples/richtext/richtext.cpp
 lib/qt2/examples/richtext/richtext.h
@@ -349,6 +463,19 @@ lib/qt2/examples/scrollview/bg.ppm
 lib/qt2/examples/scrollview/scrollview
 lib/qt2/examples/scrollview/scrollview.cpp
 lib/qt2/examples/scrollview/scrollview.pro
+lib/qt2/examples/semaphores/Makefile
+lib/qt2/examples/semaphores/Makefile.in
+lib/qt2/examples/semaphores/main.cpp
+lib/qt2/examples/semaphores/semaphore.pro
+lib/qt2/examples/sharedbox/Makefile
+lib/qt2/examples/sharedbox/Makefile.in
+lib/qt2/examples/sharedbox/README
+lib/qt2/examples/sharedbox/glbox.cpp
+lib/qt2/examples/sharedbox/glbox.h
+lib/qt2/examples/sharedbox/globjwin.cpp
+lib/qt2/examples/sharedbox/globjwin.h
+lib/qt2/examples/sharedbox/main.cpp
+lib/qt2/examples/sharedbox/sharedbox.pro
 lib/qt2/examples/showimg/Makefile
 lib/qt2/examples/showimg/Makefile.in
 lib/qt2/examples/showimg/README
@@ -361,11 +488,28 @@ lib/qt2/examples/showimg/showimg
 lib/qt2/examples/showimg/showimg.cpp
 lib/qt2/examples/showimg/showimg.h
 lib/qt2/examples/showimg/showimg.pro
+lib/qt2/examples/sound/Makefile
+lib/qt2/examples/sound/Makefile.in
+lib/qt2/examples/sound/sound
+lib/qt2/examples/sound/sound.cpp
+lib/qt2/examples/sound/sound.h
+lib/qt2/examples/sound/sound.pro
+lib/qt2/examples/sound/sounds/1.wav
+lib/qt2/examples/sound/sounds/2.wav
+lib/qt2/examples/sound/sounds/3.wav
+lib/qt2/examples/sound/sounds/4.wav
 lib/qt2/examples/splitter/Makefile
 lib/qt2/examples/splitter/Makefile.in
 lib/qt2/examples/splitter/splitter
 lib/qt2/examples/splitter/splitter.cpp
 lib/qt2/examples/splitter/splitter.pro
+lib/qt2/examples/statistics/Makefile
+lib/qt2/examples/statistics/Makefile.in
+lib/qt2/examples/statistics/main.cpp
+lib/qt2/examples/statistics/statistics
+lib/qt2/examples/statistics/statistics.cpp
+lib/qt2/examples/statistics/statistics.h
+lib/qt2/examples/statistics/statistics.pro
 lib/qt2/examples/tabdialog/Makefile
 lib/qt2/examples/tabdialog/Makefile.in
 lib/qt2/examples/tabdialog/main.cpp
@@ -375,11 +519,7 @@ lib/qt2/examples/tabdialog/tabdialog.h
 lib/qt2/examples/tabdialog/tabdialog.pro
 lib/qt2/examples/table/Makefile
 lib/qt2/examples/table/Makefile.in
-lib/qt2/examples/table/README
 lib/qt2/examples/table/main.cpp
-lib/qt2/examples/table/table
-lib/qt2/examples/table/table.cpp
-lib/qt2/examples/table/table.h
 lib/qt2/examples/table/table.pro
 lib/qt2/examples/tetrix/Makefile
 lib/qt2/examples/tetrix/Makefile.in
@@ -397,6 +537,17 @@ lib/qt2/examples/tetrix/tetrix.cpp
 lib/qt2/examples/tetrix/tetrix.pro
 lib/qt2/examples/tetrix/tpiece.cpp
 lib/qt2/examples/tetrix/tpiece.h
+lib/qt2/examples/texture/Makefile
+lib/qt2/examples/texture/Makefile.in
+lib/qt2/examples/texture/README
+lib/qt2/examples/texture/gllogo.bmp
+lib/qt2/examples/texture/globjwin.cpp
+lib/qt2/examples/texture/globjwin.h
+lib/qt2/examples/texture/gltexobj.cpp
+lib/qt2/examples/texture/gltexobj.h
+lib/qt2/examples/texture/main.cpp
+lib/qt2/examples/texture/qtlogo.bmp
+lib/qt2/examples/texture/texture.pro
 lib/qt2/examples/themes/Makefile
 lib/qt2/examples/themes/Makefile.in
 lib/qt2/examples/themes/fileopen.xpm
@@ -447,8 +598,10 @@ lib/qt2/examples/widgets/Makefile.in
 lib/qt2/examples/widgets/README
 lib/qt2/examples/widgets/main.cpp
 lib/qt2/examples/widgets/qt.bmp
+lib/qt2/examples/widgets/qt.png
 lib/qt2/examples/widgets/trolltech.bmp
 lib/qt2/examples/widgets/trolltech.gif
+lib/qt2/examples/widgets/tt-logo.png
 lib/qt2/examples/widgets/widgets
 lib/qt2/examples/widgets/widgets.cpp
 lib/qt2/examples/widgets/widgets.h
@@ -469,6 +622,17 @@ lib/qt2/examples/xform/picture.any
 lib/qt2/examples/xform/xform
 lib/qt2/examples/xform/xform.cpp
 lib/qt2/examples/xform/xform.pro
+lib/qt2/examples/xmlquotes/Makefile
+lib/qt2/examples/xmlquotes/Makefile.in
+lib/qt2/examples/xmlquotes/README
+lib/qt2/examples/xmlquotes/main.cpp
+lib/qt2/examples/xmlquotes/quoteparser.cpp
+lib/qt2/examples/xmlquotes/quoteparser.h
+lib/qt2/examples/xmlquotes/quotes.xml
+lib/qt2/examples/xmlquotes/richtext.cpp
+lib/qt2/examples/xmlquotes/richtext.h
+lib/qt2/examples/xmlquotes/xmlquotes
+lib/qt2/examples/xmlquotes/xmlquotes.pro
 lib/qt2/tutorial/Makefile
 lib/qt2/tutorial/Makefile.in
 lib/qt2/tutorial/README
@@ -577,73 +741,96 @@ lib/qt2/tutorial/t9/main.cpp
 lib/qt2/tutorial/t9/t9
 lib/qt2/tutorial/t9/t9.pro
 lib/qt2/tutorial/tutorial.pro
-@dirrm lib/qt2/tutorial/t9
-@dirrm lib/qt2/tutorial/t8
-@dirrm lib/qt2/tutorial/t7
-@dirrm lib/qt2/tutorial/t6
-@dirrm lib/qt2/tutorial/t5
-@dirrm lib/qt2/tutorial/t4
-@dirrm lib/qt2/tutorial/t3
-@dirrm lib/qt2/tutorial/t2
-@dirrm lib/qt2/tutorial/t14
-@dirrm lib/qt2/tutorial/t13
-@dirrm lib/qt2/tutorial/t12
-@dirrm lib/qt2/tutorial/t11
-@dirrm lib/qt2/tutorial/t10
-@dirrm lib/qt2/tutorial/t1
-@dirrm lib/qt2/tutorial
-@dirrm lib/qt2/examples/xform
-@dirrm lib/qt2/examples/wizard
-@dirrm lib/qt2/examples/widgets
-@dirrm lib/qt2/examples/validator
-@dirrm lib/qt2/examples/tooltip
-@dirrm lib/qt2/examples/tictac
-@dirrm lib/qt2/examples/themes
-@dirrm lib/qt2/examples/tetrix
-@dirrm lib/qt2/examples/table
-@dirrm lib/qt2/examples/tabdialog
-@dirrm lib/qt2/examples/splitter
-@dirrm lib/qt2/examples/showimg
-@dirrm lib/qt2/examples/scrollview
-@dirrm lib/qt2/examples/scribble
-@dirrm lib/qt2/examples/rot13
-@dirrm lib/qt2/examples/richtext
-@dirrm lib/qt2/examples/rangecontrols
-@dirrm lib/qt2/examples/qwerty
-@dirrm lib/qt2/examples/qmag
-@dirrm lib/qt2/examples/qfd
-@dirrm lib/qt2/examples/qdir
-@dirrm lib/qt2/examples/progressbar
-@dirrm lib/qt2/examples/progress
-@dirrm lib/qt2/examples/popup
-@dirrm lib/qt2/examples/picture
-@dirrm lib/qt2/examples/movies
-@dirrm lib/qt2/examples/menu
-@dirrm lib/qt2/examples/mdi
-@dirrm lib/qt2/examples/listviews
-@dirrm lib/qt2/examples/listboxcombo
-@dirrm lib/qt2/examples/listbox
-@dirrm lib/qt2/examples/lineedits
-@dirrm lib/qt2/examples/life
-@dirrm lib/qt2/examples/layout
-@dirrm lib/qt2/examples/iconview
-@dirrm lib/qt2/examples/i18n
-@dirrm lib/qt2/examples/helpviewer
-@dirrm lib/qt2/examples/hello
-@dirrm lib/qt2/examples/forever
-@dirrm lib/qt2/examples/fileiconview
-@dirrm lib/qt2/examples/drawlines
-@dirrm lib/qt2/examples/drawdemo
-@dirrm lib/qt2/examples/dragdrop
-@dirrm lib/qt2/examples/dirview
-@dirrm lib/qt2/examples/desktop
-@dirrm lib/qt2/examples/dclock
-@dirrm lib/qt2/examples/customlayout
-@dirrm lib/qt2/examples/cursor
-@dirrm lib/qt2/examples/checklists
-@dirrm lib/qt2/examples/buttongroups
-@dirrm lib/qt2/examples/biff
-@dirrm lib/qt2/examples/application
-@dirrm lib/qt2/examples/addressbook
+
 @dirrm lib/qt2/examples/aclock
+@dirrm lib/qt2/examples/action
+@dirrm lib/qt2/examples/addressbook
+@dirrm lib/qt2/examples/application
+@dirrm lib/qt2/examples/biff
+@dirrm lib/qt2/examples/box
+@dirrm lib/qt2/examples/buttongroups
+@dirrm lib/qt2/examples/canvas
+@dirrm lib/qt2/examples/checklists
+@dirrm lib/qt2/examples/cursor
+@dirrm lib/qt2/examples/customlayout
+@dirrm lib/qt2/examples/dclock
+@dirrm lib/qt2/examples/desktop
+@dirrm lib/qt2/examples/dirview
+@dirrm lib/qt2/examples/dragdrop
+@dirrm lib/qt2/examples/drawdemo
+@dirrm lib/qt2/examples/drawlines
+@dirrm lib/qt2/examples/fileiconview
+@dirrm lib/qt2/examples/ftpclient
+@dirrm lib/qt2/examples/forever
+@dirrm lib/qt2/examples/gear
+@dirrm lib/qt2/examples/glpixmap
+@dirrm lib/qt2/examples/guithreads
+@dirrm lib/qt2/examples/hello
+@dirrm lib/qt2/examples/helpviewer
+@dirrm lib/qt2/examples/httpd
+@dirrm lib/qt2/examples/i18n
+@dirrm lib/qt2/examples/iconview
+@dirrm lib/qt2/examples/layout
+@dirrm lib/qt2/examples/life
+@dirrm lib/qt2/examples/lineedits
+@dirrm lib/qt2/examples/listbox
+@dirrm lib/qt2/examples/listboxcombo
+@dirrm lib/qt2/examples/listviews
+@dirrm lib/qt2/examples/mail
+@dirrm lib/qt2/examples/mdi
+@dirrm lib/qt2/examples/menu
+@dirrm lib/qt2/examples/movies
+@dirrm lib/qt2/examples/networkprotocol
+@dirrm lib/qt2/examples/overlay
+@dirrm lib/qt2/examples/overlay_x11/utilities/glxvisuals
+@dirrm lib/qt2/examples/overlay_x11/utilities/sovinfo
+@dirrm lib/qt2/examples/overlay_x11/utilities
+@dirrm lib/qt2/examples/overlay_x11
+@dirrm lib/qt2/examples/picture
+@dirrm lib/qt2/examples/popup
+@dirrm lib/qt2/examples/progress
+@dirrm lib/qt2/examples/progressbar
+@dirrm lib/qt2/examples/qdir
+@dirrm lib/qt2/examples/qfd
+@dirrm lib/qt2/examples/qmag
+@dirrm lib/qt2/examples/qwerty
+@dirrm lib/qt2/examples/rangecontrols
+@dirrm lib/qt2/examples/richtext
+@dirrm lib/qt2/examples/rot13
+@dirrm lib/qt2/examples/scribble
+@dirrm lib/qt2/examples/scrollview
+@dirrm lib/qt2/examples/semaphores
+@dirrm lib/qt2/examples/sharedbox
+@dirrm lib/qt2/examples/showimg
+@dirrm lib/qt2/examples/splitter
+@dirrm lib/qt2/examples/sound/sounds
+@dirrm lib/qt2/examples/sound
+@dirrm lib/qt2/examples/statistics
+@dirrm lib/qt2/examples/tabdialog
+@dirrm lib/qt2/examples/table
+@dirrm lib/qt2/examples/tetrix
+@dirrm lib/qt2/examples/texture
+@dirrm lib/qt2/examples/themes
+@dirrm lib/qt2/examples/tictac
+@dirrm lib/qt2/examples/tooltip
+@dirrm lib/qt2/examples/validator
+@dirrm lib/qt2/examples/widgets
+@dirrm lib/qt2/examples/wizard
+@dirrm lib/qt2/examples/xform
+@dirrm lib/qt2/examples/xmlquotes
 @dirrm lib/qt2/examples
+@dirrm lib/qt2/tutorial/t1
+@dirrm lib/qt2/tutorial/t2
+@dirrm lib/qt2/tutorial/t3
+@dirrm lib/qt2/tutorial/t4
+@dirrm lib/qt2/tutorial/t5
+@dirrm lib/qt2/tutorial/t6
+@dirrm lib/qt2/tutorial/t7
+@dirrm lib/qt2/tutorial/t8
+@dirrm lib/qt2/tutorial/t9
+@dirrm lib/qt2/tutorial/t10
+@dirrm lib/qt2/tutorial/t11
+@dirrm lib/qt2/tutorial/t12
+@dirrm lib/qt2/tutorial/t13
+@dirrm lib/qt2/tutorial/t14
+@dirrm lib/qt2/tutorial

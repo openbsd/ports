@@ -1,40 +1,48 @@
-# $OpenBSD: Makefile,v 1.8 2000/08/23 01:21:12 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2000/09/22 15:02:34 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
-DISTNAME=	qt-2.1.1
-PKGNAME=	qt2-1.1
+DISTNAME=	qt-2.2.0
+PKGNAME=	qt2-2.0
 CATEGORIES=	x11
-NEED_VERSION=	1.320
+NEED_VERSION=	1.324
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
-DISTFILES=	qt-x11-2.1.1.tar.gz
+DISTFILES=	qt-x11-2.2.0.tar.gz
 
 HOMEPAGE=	http://www.trolltech.com/qt/
 
-MULTI_PACKAGES=-examples -html
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-SUBPACKAGE?=
-# for the qt image extension
-.if ${SUBPACKAGE} != "-html"
-BUILD_DEPENDS=	${PREFIX}/include/jpeglib.h::graphics/jpeg
-LIB_DEPENDS=	png.1.::graphics/png \
-		jpeg.62.::graphics/jpeg
-.endif
-
-MAINTAINER=	espie@openbsd.org
-
-PERMIT_PACKAGE_CDROM=
-PERMIT_PACKAGE_FTP=
-PERMIT_DISTFILES_CDROM=
-PERMIT_DISTFILES_FTP=
-
-MAKE_ENV=	QTDIR="${WRKSRC}" SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}"
-
-CONFIGURE_STYLE= simple
-CONFIGURE_ENV=	${MAKE_ENV}
-CONFIGURE_ARGS+=-gif -system-libpng -system-jpeg -sm -no-thread -system-zlib
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+MAKE_ENV=	QTDIR='${WRKSRC}' EXTRA_SAMPLES='${EXTRA_SAMPLES}' \
+	SYS_CXX='${CXX}' SYS_CXXFLAGS='${CXXFLAGS}'
+CONFIGURE_STYLE= simple
+CONFIGURE_ARGS=	-gif -system-libpng -system-jpeg -system-zlib -no-thread -sm
+CONFIGURE_ENV=	QTDIR="${WRKSRC}" MODULES="${MODULES}"
+
+MULTI_PACKAGES=	-examples -html
+SUBPACKAGE?=
+
+FLAVORS=GL
+FLAVOR?=
+
+MODULES=	tools kernel widgets dialogs \
+		iconview workspace network canvas table xml
+EXTRA_SAMPLES=
+.if ${SUBPACKAGE} != "-html"
+LIB_DEPENDS=	png.1.::graphics/png \
+		jpeg.62.::graphics/jpeg
+.  if ${FLAVOR:U} == "GL"
+LIB_DEPENDS+= 	GL.3.2::graphics/Mesa
+MODULES+= opengl
+EXTRA_SAMPLES+=box gear glpixmap overlay overlay_x11 sharedbox
+.  endif
+.endif
 
 QT_INCDIR=	${PREFIX}/include/X11/qt2
 QT_LIBDIR=	${PREFIX}/lib/qt2
@@ -46,8 +54,7 @@ QT_DOC=		${PREFIX}/share/doc/qt2
 # for manpages in MESSAGE
 SUBST_VARS=	QT_LIBDIR QT_DOC
 
-#		qt-2.1.1	-> libqt.2.11
-QT_VER=		2.11
+DOCS=	ANNOUNCE FAQ LICENSE.GPL README README.QT changes-2.2.0
 
 post-patch:
 	@cd ${WRKSRC}/configs; for i in openbsd-*; do \
@@ -60,21 +67,40 @@ post-configure:
 	@cd ${WRKSRC} && cp -R examples examples-src
 	@cd ${WRKSRC} && cp -R tutorial tutorial-src
 
+pre-build:
+	@echo ""
+	@echo "*** WARNING: you may see an error such as"
+	@echo "***       virtual memory exhausted"
+	@echo "*** when building this package.  If you do you must increase"
+	@echo "*** your limits.  See the man page for your shell and look"
+	@echo "*** for the 'limit' or 'ulimit' command."
+	@echo ""
+
 do-install:
-	${INSTALL_DATA_DIR} ${QT_INCDIR} ${QT_DOC}/html ${QT_LIBDIR}/bin \
-	    ${QT_EXAMPLES} ${QT_TUTORIAL} \
-	    ${QT_LIBDIR}/man/man3
-	@cd ${WRKBUILD}/lib; if [ -f libqt.a ]; then \
-		${INSTALL_DATA} libqt.a ${PREFIX}/lib/qt2; \
-	fi; \
-	if [ -f libqt.so.2.1.1 ]; then \
-		ln -f libqt.so.2.1.1 libqt.so.2.11; \
-		${INSTALL_DATA} libqt.so.2.11 ${PREFIX}/lib/qt2; \
+	${INSTALL_DATA_DIR} ${QT_INCDIR}
+	${INSTALL_DATA_DIR} ${QT_MANDIR}/man3
+	${INSTALL_DATA_DIR} ${QT_LIBDIR}/bin
+	${INSTALL_DATA_DIR} ${QT_EXAMPLES}
+	${INSTALL_DATA_DIR} ${QT_TUTORIAL}
+	${INSTALL_DATA_DIR} ${QT_DOC}/html
+	@if [ -f ${WRKBUILD}/lib/libqt.a ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.a ${PREFIX}/lib/qt2; \
+	fi
+	@if [ -f ${WRKBUILD}/lib/libqt.so.2.2.0 ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.2.2.0 \
+		${PREFIX}/lib/qt2/libqt.so.2.20; \
+	fi
+	@if [ -f ${WRKBUILD}/lib/libqutil.a ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqutil.a ${PREFIX}/lib/qt2; \
+	fi
+	@if [ -f ${WRKBUILD}/lib/libqutil.so.1.0.0 ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqutil.so.1.0.0 \
+		${PREFIX}/lib/qt2/libqutil.so.1.0; \
 	fi
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/moc ${QT_LIBDIR}/bin
 	@ln -sf ${TRUEPREFIX}/lib/qt2/bin/moc ${PREFIX}/bin/moc2
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/mergetr ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/msg2qm ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/designer ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/uic ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKBUILD}/bin/findtr ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKBUILD}/bin/qt20fix ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKBUILD}/bin/qtrename140 ${PREFIX}/bin
@@ -96,14 +122,13 @@ do-install:
 	if [ -x $$i/$$i ]; then \
 	    ${INSTALL_PROGRAM} $$i/$$i ${QT_TUTORIAL}/$$i; \
 	fi; done
-	cd ${WRKSRC} && ${INSTALL_DATA} ANNOUNCE FAQ LICENSE.QPL README \
-	    README.QT changes-2.1.0 changes-2.1.1 ${QT_DOC}
+	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${QT_DOC}
 	cp -R ${WRKSRC}/doc/html/* ${QT_DOC}/html
 
 .include <bsd.port.mk>
 
-.if ${SUBPACKAGE} =="-examples"
-PKGNAME:=qt2-examples-1.1
-.elif ${SUBPACKAGE} =="-html"
-PKGNAME:=qt2-html-1.1
+.if ${SUBPACKAGE} == "-examples"
+PKGNAME:=qt2-examples-2.0
+.elif ${SUBPACKAGE} == "-html"
+PKGNAME:=qt2-html-2.0
 .endif

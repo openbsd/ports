@@ -1,0 +1,22 @@
+--- configure.orig	Sun Sep  3 19:41:17 2000
++++ configure	Fri Sep 22 04:07:00 2000
+@@ -52,7 +52,10 @@ else
+ fi
+ 
+ # Check licensed modules
+-MODULES=`$MAKE -f src/Makefile.in listallmodules`
++if [ -z "$MODULES" ]
++then
++    MODULES=`$MAKE -f src/Makefile.in listallmodules`
++fi
+ 
+ 
+ # Free edition - may only be used under the terms of the QPL.
+@@ -62,6 +65,7 @@ then
+     Licensee=you
+     while true
+     do
++	break
+ 	echo
+ 	echo "This is the Qt Free Edition."
+ 	echo
