@@ -1,7 +1,7 @@
-$OpenBSD: patch-Configure,v 1.14 2003/08/18 06:32:09 pvalchev Exp $
---- Configure.orig	2003-08-18 00:25:07.000000000 -0600
-+++ Configure	2003-08-18 00:25:45.000000000 -0600
-@@ -2536,6 +2536,10 @@ kernel generation process.
+$OpenBSD: patch-Configure,v 1.15 2004/01/11 00:14:31 pvalchev Exp $
+--- Configure.orig	2003-10-15 14:30:40.000000000 -0600
++++ Configure	2004-01-10 17:00:34.000000000 -0700
+@@ -2619,6 +2619,10 @@ kernel generation process.
  	LSOF_TSTBIGF=" "
  	LSOF_VERS=3030
  	;;
@@ -12,7 +12,7 @@ $OpenBSD: patch-Configure,v 1.14 2003/08/18 06:32:09 pvalchev Exp $
        3*)
  	LSOF_TSTBIGF=" "
  	LSOF_VERS=3020
-@@ -2553,7 +2557,7 @@ kernel generation process.
+@@ -2636,7 +2640,7 @@ kernel generation process.
      # Test for legal OpenBSD version.
  
      case $LSOF_VERS in	# {

@@ -1,27 +1,7 @@
-$OpenBSD: patch-dialects_n+obsd_dnode_c,v 1.4 2004/01/04 18:47:34 espie Exp $
---- dialects/n+obsd/dnode.c.orig	2003-06-11 13:45:16.000000000 +0200
-+++ dialects/n+obsd/dnode.c	2004-01-04 19:45:08.000000000 +0100
-@@ -68,8 +68,8 @@ getmemsz(pid)
- 		if (!p->P_VMSPACE
- 		||  kread((KA_T)p->P_VMSPACE, (char *)&vm, sizeof(vm)))
- 		    return;
--		Lf->sz = (SZOFFTYPE)ctob(vm.vm_tsize + vm.vm_dsize
--						     + vm.vm_ssize);
-+		Lf->sz = (SZOFFTYPE)((vm.vm_tsize + vm.vm_dsize
-+		    + vm.vm_ssize) * sysconf(_SC_PAGESIZE));
- 		Lf->sz_def = 1;
- 		return;
- 	    }
-@@ -228,7 +228,7 @@ process_node(va)
- #if	defined(HASMSDOSFS)
- 	struct denode d;
- 	u_long dpb;
--	u_long long nn;
-+	u_long nn;
- 	struct msdosfsmount pm;
- #endif	/* defined(HASMSDOSFS) */
- 
-@@ -531,11 +531,11 @@ process_overlaid_node:
+$OpenBSD: patch-dialects_n+obsd_dnode_c,v 1.5 2004/01/11 00:14:31 pvalchev Exp $
+--- dialects/n+obsd/dnode.c.orig	2004-01-10 16:57:19.000000000 -0700
++++ dialects/n+obsd/dnode.c	2004-01-10 16:57:55.000000000 -0700
+@@ -542,11 +542,11 @@ process_overlaid_node:
  		nty = EXT2NODE;
  
  # if	defined(HASI_E2FS_PTR)
@@ -36,7 +16,7 @@ $OpenBSD: patch-dialects_n+obsd_dnode_c,v 1.4 2004/01/04 18:47:34 espie Exp $
  # endif	/* defined(HASI_E2FS_PTR) */
  
  	    } else
-@@ -552,16 +552,16 @@ process_overlaid_node:
+@@ -563,16 +563,16 @@ process_overlaid_node:
  		    &&  !kread((KA_T)i.i_ump, (char *)&um, sizeof(um))) {
  			if (um.um_fstype == UFS1) {
  			    ffs = 1;
@@ -57,7 +37,7 @@ $OpenBSD: patch-dialects_n+obsd_dnode_c,v 1.4 2004/01/04 18:47:34 espie Exp $
  				       sizeof(u2)))
  			    {
  				u2s = 1;
-@@ -682,7 +682,7 @@ process_overlaid_node:
+@@ -693,7 +693,7 @@ process_overlaid_node:
  		    rdevs = 1;
  		}
  # else	/* !defined(HASI_E2FS_PTR) */
