@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/07/20 16:22:39 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/11 15:50:12 kevlo Exp $
 
 COMMENT=	"hierarchical notebook"
 
@@ -6,7 +6,7 @@ DISTNAME=	hnb-1.7
 CATEGORIES=	editors
 NEED_VERSION=	1.419
 
-HOMEPAGE=	http://http://hnb.sourceforge.net/
+HOMEPAGE=	http://hnb.sourceforge.net/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
