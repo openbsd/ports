@@ -1,12 +1,12 @@
 # very loosely based on FreeBSD 2.2.7
-# $OpenBSD: Makefile,v 1.10 2002/03/21 20:57:09 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/10/27 00:50:30 naddy Exp $
 
 COMMENT=	"Network Kanji code conversion Filter"
 
 DISTNAME=	nkf-1.62
 PKGNAME=	ja-nkf-1.62
 CATEGORIES=	japanese textproc
-NEED_VERSION=	1.515
+
 MASTER_SITES=	http://www.sfc.wide.ad.jp/~max/FreeBSD/ports/distfiles/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
@@ -26,7 +26,7 @@ do-install:
 	${INSTALL_MAN} ${FILESDIR}/nkf.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/nkf.doc ${PREFIX}/man/ja_JP.EUC/cat1/nkf.0
 
-test: build
+do-regress:
 	cd ${WRKSRC} && perl nkf_test.pl
 
 .include <bsd.port.mk>
