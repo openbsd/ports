@@ -1,38 +1,36 @@
-*** /tmp/T0a03151	Mon Feb 13 18:35:11 1995
---- config.h	Mon Feb 13 18:34:49 1995
-***************
-*** 13,18 ****
-   * definition appropriately. (use 'which gunzip' to find if you have gunzip, 
-   * and where it lives)
-   */
-! #undef USE_GUNZIP
-  
-  #ifdef USE_GUNZIP
---- 13,18 ----
-   * definition appropriately. (use 'which gunzip' to find if you have gunzip, 
-   * and where it lives)
-   */
-! #define USE_GUNZIP
-  
-  #ifdef USE_GUNZIP
-***************
-*** 88,96 ****
-   * should not need to be changed
-   */
-  
-! /* #define GS_PATH "/usr/local/bin/gs" */
-! /* #define GS_LIB  "."                 */
-! /* #define GS_DEV  "ppmraw"            */
-  
-  
-  /***************************************************************************
---- 88,96 ----
-   * should not need to be changed
-   */
-  
-! #define GS_PATH "/usr/local/bin/gs"
-! #define GS_LIB  "/usr/local/share/ghostscript"
-! #define GS_DEV  "ppmraw"
-  
-  
-  /***************************************************************************
+$OpenBSD: patch-ac,v 1.2 1999/03/24 18:53:39 rohee Exp $
+
+We have gunzip, it's in /usr/bin, and if ghostscript is installed it will be
+found.
+
+--- config.h.orig	Thu Jan  5 19:49:21 1995
++++ config.h	Wed Mar 24 00:08:07 1999
+@@ -13,13 +13,13 @@
+  * definition appropriately. (use 'which gunzip' to find if you have gunzip, 
+  * and where it lives)
+  */
+-#undef USE_GUNZIP
++#define USE_GUNZIP
+ 
+ #ifdef USE_GUNZIP
+ #  ifdef VMS
+ #    define GUNZIP "UNCOMPRESS"
+ #  else
+-#    define GUNZIP "/usr/local/bin/gunzip -q"
++#    define GUNZIP "/usr/bin/gunzip -q"
+ #  endif
+ #endif
+ 
+@@ -88,9 +88,9 @@
+  * should not need to be changed
+  */
+ 
+-/* #define GS_PATH "/usr/local/bin/gs" */
+-/* #define GS_LIB  "."                 */
+-/* #define GS_DEV  "ppmraw"            */
++#define GS_PATH "/usr/local/bin/gs"
++#define GS_LIB  "/usr/local/share/ghostscript"
++#define GS_DEV  "ppmraw"
+ 
+ 
+ /***************************************************************************
