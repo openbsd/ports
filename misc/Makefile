@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2001/09/12 09:05:59 kevlo Exp $
+# $OpenBSD: Makefile,v 1.54 2001/09/12 11:40:07 kevlo Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -37,7 +37,6 @@
      SUBDIR += jive
 #    SUBDIR += kdeutils
 #    SUBDIR += kp
-     SUBDIR += kstars
      SUBDIR += ktail
 #    SUBDIR += less
      SUBDIR += libutf8
