@@ -1,14 +1,11 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.7 2000/08/15 18:23:19 brad Exp $
+# $OpenBSD: INSTALL,v 1.8 2000/09/06 21:09:16 brad Exp $
 #
 # Pre/post-installation setup of MySQL
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 DB_DIR=${DB_DIR}
-
-MYSQLGID=40
-MYSQLUID=40
 
 do_notice_pre_install()
 {
@@ -32,21 +29,20 @@ do_notice_pre_install()
 do_pre_install()
 {
     # Create mysql user and group
-    line=`egrep '^mysql:' /etc/group`
-    if [ "$line" != "" ]; then
-	MYSQLGID=`echo $line | cut -f3 -d:`
+    groupinfo -e mysql
+    if [ $? -eq 0 ]; then
+        echo "===> Using mysql group for MySQL"
     else
-	echo "===> Creating mysql group, gid $MYSQLGID"
-	group add -g $MYSQLGID mysql
+	echo "===> Creating mysql group"
+	groupadd mysql
     fi
-    line=`egrep '^mysql:' /etc/passwd`
-    if [ "$line" != "" ]; then
-	MYSQLUID=`echo $line | cut -f3 -d:`
+    userinfo -e mysql
+    if [ $? -eq 0 ]; then
+        echo "===> Using mysql user for MySQL"
     else
-	echo "===> Creating mysql user, uid $MYSQLUID"
-	user add -g $MYSQLGID -u $MYSQLUID -d /nonexistent -c 'MySQL Account' -s /sbin/nologin mysql
+	echo "===> Creating mysql user"
+	useradd -g mysql -d /nonexistent -c 'MySQL Account' -s /sbin/nologin mysql
     fi
-    echo "===> Using account mysql for MySQL, uid $MYSQLUID, gid $MYSQLGID"
 }
 
 do_post_install()
