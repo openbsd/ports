@@ -1,4 +1,7 @@
-$OpenBSD: patch-Python_thread_pthread_h,v 1.1 2002/02/25 21:25:37 matt Exp $
+$OpenBSD: patch-Python_thread_pthread_h,v 1.2 2002/05/11 21:35:13 matt Exp $
+
+        This has been submitted to the Python team as patch 554841.
+
 --- Python/thread_pthread.h.orig	Thu Jan 10 06:12:20 2002
 +++ Python/thread_pthread.h	Mon Feb 25 15:37:53 2002
 @@ -128,16 +128,21 @@ PyThread_start_new_thread(void (*func)(v

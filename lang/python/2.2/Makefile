@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1 2002/02/15 19:42:18 matt Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/11 21:35:13 matt Exp $
 
 VERSION=	2.2
-PATCHLEVEL=
+PATCHLEVEL=	.1
 
 .include <bsd.port.mk>
 

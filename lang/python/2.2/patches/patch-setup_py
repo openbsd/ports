@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.1 2002/02/15 19:42:18 matt Exp $
---- setup.py.orig	Mon Dec 17 12:24:43 2001
-+++ setup.py	Fri Feb  8 22:24:15 2002
-@@ -784,7 +784,8 @@ def main():
+$OpenBSD: patch-setup_py,v 1.2 2002/05/11 21:35:13 matt Exp $
+--- setup.py.orig	Tue Mar 26 08:43:04 2002
++++ setup.py	Fri Apr 19 09:05:16 2002
+@@ -793,7 +793,8 @@ def main():
            ext_modules=[Extension('struct', ['structmodule.c'])],
  
            # Scripts to install

@@ -1,4 +1,8 @@
-$OpenBSD: patch-Python_modsupport_c,v 1.1 2002/03/16 15:24:26 drahn Exp $
+$OpenBSD: patch-Python_modsupport_c,v 1.2 2002/05/11 21:35:13 matt Exp $
+
+        This has been submitted to the Python team as part of patch
+        554716.
+
 --- Python/modsupport.c.orig	Fri Aug 17 13:39:25 2001
 +++ Python/modsupport.c	Thu Mar 14 22:17:27 2002
 @@ -411,7 +411,11 @@ Py_VaBuildValue(char *format, va_list va

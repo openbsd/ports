@@ -1,7 +1,12 @@
-# $OpenBSD: Makefile.inc,v 1.4 2002/03/23 04:34:22 matt Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2002/05/11 21:35:13 matt Exp $
+
+# IMPORTANT!  If you make any changes to the Python ports, be sure
+# to also update files/CHANGES.OpenBSD for your change.  This is a
+# requirement of the PSF license, if it constitutes a change to
+# Python itself.
 
 COMMENT=	"interpreted object-oriented programming language"
-COMMENT-tests=	"Python testsuite"
+COMMENT-tests=	"Python test suite"
 COMMENT-tools=	"extra tools for Python"
 COMMENT-mpz=	"GNU arbitrary magnitude integer module for Python"
 COMMENT-tkinter="tk GUI module for Python"
@@ -10,7 +15,7 @@ COMMENT-expat=	"expat module for Python"
 PKGNAME=	python-${VERSION}${PATCHLEVEL}
 DISTNAME=	Python-${VERSION}${PATCHLEVEL}
 CATEGORIES=	lang
-NEED_VERSION=	1.504
+NEED_VERSION=	1.527
 MASTER_SITES=	ftp://ftp.python.org/pub/%SUBDIR%/ \
 		ftp://python.mirrors.netnumina.com/python/pub/%SUBDIR%/ \
 		http://www.linux.org.hk/mirror/python/ftp/%SUBDIR%/
@@ -21,6 +26,8 @@ HOMEPAGE=	http://www.python.org/
 
 MAINTAINER=	Matt Behrens <matt@openbsd.org>
 
+# PSF license <http://www.python.org/${VERSION}/license.html>
+# A summary of changes to Python is required to be distributed
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -38,10 +45,10 @@ SUBPACKAGE?=
 RUN_DEPENDS=		::lang/python/${VERSION}
 .endif
 
-# On architectures with shared libs, no_xxx flavors are pretty much
-# a convenient way to avoid pulling in dependencies, and don't actually
-# show up in the final package names.  On architectures without shared
-# libs, some no_xxx flavors mean something.
+# On architectures with shared libs, no_xxx flavors are a convenient
+# way to avoid pulling in dependencies, and don't actually show up
+# in the final package names.  On architectures without shared libs,
+# no_xxx flavors dictate what gets linked into the Python binary.
 
 .if empty(FLAVOR:L:Mno_tkinter)
 BUILD_DEPENDS+=		::x11/tk/8.3
@@ -52,13 +59,14 @@ SED_PLIST+=		| sed -e '/^%%tkinter%%/d' \
 			| sed -e '/^%%tkinter_no_shared%%/r${PKGDIR}/PFRAG-tkinter.no_shared' -e '//d'
 .  else
 SED_PLIST+=		| sed -e '/^%%tkinter%%/r${PKGDIR}/PFRAG-tkinter.no_shared' -e '//d'
+LIB_DEPENDS+=		tk83::x11/tk/8.3
 .  endif
 .else
 SED_PLIST+=		| sed -e '/^%%tkinter%%/d'
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-tkinter"
-LIB_DEPENDS=		tk83::x11/tk/8.3
+LIB_DEPENDS+=		tk83::x11/tk/8.3
 .endif
 
 .if empty(FLAVOR:L:Mno_mpz)
@@ -72,7 +80,7 @@ LIB_DEPENDS+=		gmp::devel/gmp
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-mpz"
-LIB_DEPENDS=		gmp::devel/gmp
+LIB_DEPENDS+=		gmp::devel/gmp
 .endif
 
 .if empty(FLAVOR:L:Mno_expat)
@@ -86,10 +94,11 @@ LIB_DEPENDS+=		expat::textproc/expat
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-expat"
-LIB_DEPENDS=		expat::textproc/expat
+LIB_DEPENDS+=		expat::textproc/expat
 .endif
 
-# Strip off no_xxx flavors from the package name.
+# Strip off no_xxx flavors from the package name if we are not
+# building the "monster" Python for platforms without shared libraries.
 
 .if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
 FULLPKGNAME=${PKGNAME}${FLAVOR_EXT:S/-no_mpz//:S/-no_tkinter//:S/-no_expat//}
@@ -98,8 +107,8 @@ FULLPKGNAME=${PKGNAME}${FLAVOR_EXT:S/-no_mpz//:S/-no_tkinter//:S/-no_expat//}
 FULLPKGNAME-tests=	python-tests-${VERSION}${PATCHLEVEL}
 FULLPKGNAME-tools=	python-tools-${VERSION}${PATCHLEVEL}
 FULLPKGNAME-mpz=	python-mpz-${VERSION}${PATCHLEVEL}
-FULLPKGNAME-tkinter=	python-tkinter-${VERSION}${PATCHLEVEL}${FLAVOR_EXT}
-FULLPKGNAME-expat=	python-expat-${VERSION}${PATCHLEVEL}${FLAVOR_EXT}
+FULLPKGNAME-tkinter=	python-tkinter-${VERSION}${PATCHLEVEL}
+FULLPKGNAME-expat=	python-expat-${VERSION}${PATCHLEVEL}
 
 CONFIGURE_STYLE= autoconf dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
@@ -153,4 +162,7 @@ post-install:
 	@if [ -f ${PREFIX}/lib/python${VERSION}/config/libpython${VERSION}.so.0.0 ]; then \
 		cd ${PREFIX}/lib && ln -s python${VERSION}/config/libpython${VERSION}.so.0.0; \
 	fi
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/python${VERSION}
+	${INSTALL_DATA} ${FILESDIR}/CHANGES.OpenBSD \
+		${PREFIX}/share/doc/python${VERSION}/CHANGES.OpenBSD
 

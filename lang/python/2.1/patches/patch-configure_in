@@ -1,3 +1,8 @@
+$OpenBSD: patch-configure_in,v 1.2 2002/05/11 21:35:13 matt Exp $
+
+        This has been submitted to the Python team as part of patch
+        554718.
+
 --- configure.in.orig	Thu Dec 27 16:55:46 2001
 +++ configure.in	Mon Jan 14 12:15:41 2002
 @@ -614,7 +614,20 @@ then

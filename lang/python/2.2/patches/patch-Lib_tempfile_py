@@ -1,12 +1,24 @@
-$OpenBSD: patch-Lib_tempfile_py,v 1.1 2002/02/15 19:42:18 matt Exp $
---- Lib/tempfile.py.orig	Mon Oct 29 13:46:08 2001
-+++ Lib/tempfile.py	Mon Dec 17 11:58:52 2001
-@@ -21,7 +21,7 @@ def gettempdir():
+$OpenBSD: patch-Lib_tempfile_py,v 1.2 2002/05/11 21:35:13 matt Exp $
+--- Lib/tempfile.py.orig	Sun Mar 17 13:02:51 2002
++++ Lib/tempfile.py	Wed Apr 24 19:49:27 2002
+@@ -4,7 +4,7 @@
+ # how to choose a temp directory or filename on MS-DOS or other
+ # systems so it may have to be changed...
+ 
+-import os
++import os, sys
+ 
+ __all__ = ["mktemp", "TemporaryFile", "tempdir", "gettempprefix"]
+ 
+@@ -45,7 +45,10 @@ def _gettempdir_inner():
          pwd = os.getcwd()
      except (AttributeError, os.error):
          pwd = os.curdir
 -    attempdirs = ['/tmp', '/var/tmp', '/usr/tmp', pwd]
-+    attempdirs = ['/tmp', '/var/tmp', pwd]
++    if sys.platform[0:7] == 'openbsd':
++        attempdirs = ['/tmp', '/var/tmp', pwd]
++    else:
++        attempdirs = ['/tmp', '/var/tmp', '/usr/tmp', pwd]
      if os.name == 'nt':
          attempdirs.insert(0, 'C:\\TEMP')
          attempdirs.insert(0, '\\TEMP')

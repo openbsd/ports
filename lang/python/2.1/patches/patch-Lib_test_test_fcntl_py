@@ -1,4 +1,8 @@
-$OpenBSD: patch-Lib_test_test_fcntl_py,v 1.1 2002/04/19 12:54:13 matt Exp $
+$OpenBSD: patch-Lib_test_test_fcntl_py,v 1.2 2002/05/11 21:35:13 matt Exp $
+
+        This has been submitted to the Python team as part of patch
+        554718.
+
 --- Lib/test/test_fcntl.py.orig	Wed Apr 11 16:58:20 2001
 +++ Lib/test/test_fcntl.py	Fri Apr 19 08:36:42 2002
 @@ -19,7 +19,7 @@ if verbose:

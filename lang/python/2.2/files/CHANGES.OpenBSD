@@ -1,0 +1,29 @@
+As required by item 3 of the PSF license, here is a brief summary
+of changes made to this version of Python for the OpenBSD package.
+
+1.  tempfile.py was patched to not try /usr/tmp as a possible
+    tempfile directory.
+
+2.  test_fcntl.py was patched to support OpenBSD 3.0 and above.
+
+3.  libpython is created as a shared library, and the pthread stack
+    size was doubled to support this with complex applications such
+    as Zope.
+
+4.  OpenBSD threads are used for threading support.
+
+5.  The interpreter is called "python2.2", and pydoc "pydoc2.2" in
+    order to support multiple versions of Python coexisting on the
+    same system.  If no "python" binary exists, a symlink to
+    "python2.2" is created when the package is installed.
+
+6.  _localemodule.c was changed so it would build.
+
+7.  __va_copy was used where appropriate so python would work on
+    non-i386 architectures such as powerpc.
+
+These changes are available in the OpenBSD CVS repository
+<http://www.openbsd.org/anoncvs.html> in ports/lang/python.
+
+$Id: CHANGES.OpenBSD,v 1.1 2002/05/11 21:35:13 matt Exp $
+

@@ -1,7 +1,11 @@
-$OpenBSD: patch-Objects_abstract_c,v 1.1 2002/03/16 15:24:26 drahn Exp $
---- Objects/abstract.c.orig	Thu Mar 14 22:19:37 2002
-+++ Objects/abstract.c	Thu Mar 14 22:20:49 2002
-@@ -1770,7 +1770,11 @@ objargs_mktuple(va_list va)
+$OpenBSD: patch-Objects_abstract_c,v 1.2 2002/05/11 21:35:13 matt Exp $
+
+        This has been submitted to the Python team as part of patch
+        554716.
+
+--- Objects/abstract.c.orig	Mon Mar 11 05:12:58 2002
++++ Objects/abstract.c	Fri Apr 19 09:05:16 2002
+@@ -1789,7 +1789,11 @@ objargs_mktuple(va_list va)
  #ifdef VA_LIST_IS_ARRAY
  	memcpy(countva, va, sizeof(va_list));
  #else

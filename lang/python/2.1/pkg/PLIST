@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2002/02/15 19:42:18 matt Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/05/11 21:35:13 matt Exp $
 @option no-default-conflict
 @pkgcfl python-2.1*
 bin/python2.1
@@ -1012,6 +1012,7 @@ lib/python2.1/zipfile.py
 lib/python2.1/zipfile.pyc
 lib/python2.1/zipfile.pyo
 man/man1/python2.1.1
+share/doc/python2.1/CHANGES.OpenBSD
 @dirrm lib/python2.1/xml/sax
 @dirrm lib/python2.1/xml/parsers
 @dirrm lib/python2.1/xml/dom
@@ -1026,3 +1027,4 @@ man/man1/python2.1.1
 @dirrm lib/python2.1/config
 @dirrm lib/python2.1
 @dirrm include/python2.1
+@dirrm share/doc/python2.1
