@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_autoconf_mk_in,v 1.4 2003/06/06 12:50:37 wilfried Exp $
---- config/autoconf.mk.in.orig	Fri May  2 23:38:10 2003
-+++ config/autoconf.mk.in	Fri Jun  6 09:04:39 2003
+$OpenBSD: patch-config_autoconf_mk_in,v 1.5 2003/08/04 12:54:18 wilfried Exp $
+--- config/autoconf.mk.in.orig	2003-07-09 07:07:54.000000000 +0200
++++ config/autoconf.mk.in	2003-08-04 11:18:21.000000000 +0200
 @@ -29,13 +29,13 @@ MOZILLA_VERSION = @MOZILLA_VERSION@
  prefix		= @prefix@
  exec_prefix	= @exec_prefix@
@@ -21,8 +21,8 @@ $OpenBSD: patch-config_autoconf_mk_in,v 1.4 2003/06/06 12:50:37 wilfried Exp $
  OS_COMPILE_CFLAGS = $(OS_CPPFLAGS) @COMPILE_CFLAGS@
  OS_COMPILE_CXXFLAGS = $(OS_CPPFLAGS) @COMPILE_CXXFLAGS@
  
--OS_INCLUDES	= $(NSPR_CFLAGS) $(JPEG_CFLAGS) $(PNG_CFLAGS) $(MNG_CFLAGS) $(ZLIB_CFLAGS)
-+OS_INCLUDES	= $(NSPR_CFLAGS) $(FT2_CFLAGS) $(LIBIDL_CFLAGS) $(JPEG_CFLAGS) $(PNG_CFLAGS) $(MNG_CFLAGS) $(ZLIB_CFLAGS)
+-OS_INCLUDES	= $(NSPR_CFLAGS) $(JPEG_CFLAGS) $(PNG_CFLAGS) $(ZLIB_CFLAGS)
++OS_INCLUDES	= $(NSPR_CFLAGS) $(FT2_CFLAGS) $(LIBIDL_CFLAGS) $(JPEG_CFLAGS) $(PNG_CFLAGS) $(ZLIB_CFLAGS)
  OS_LIBS		= @LIBS@
  ACDEFINES	= @MOZ_DEFINES@
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/06/25 12:01:05 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/08/04 12:54:18 wilfried Exp $
 bin/mozilla-firebird
 mozilla-firebird/MozillaFirebird-bin
 mozilla-firebird/chrome/US.jar
@@ -121,7 +121,6 @@ mozilla-firebird/components/shistory.xpt
 mozilla-firebird/components/sidebar.xpt
 mozilla-firebird/components/signonviewer.xpt
 mozilla-firebird/components/timebomb.xpt
-mozilla-firebird/components/transmngr.xpt
 mozilla-firebird/components/txmgr.xpt
 mozilla-firebird/components/txtsvc.xpt
 mozilla-firebird/components/typeaheadfind.xpt

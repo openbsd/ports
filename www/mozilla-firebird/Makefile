@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2003/07/24 12:18:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2003/08/04 12:54:18 wilfried Exp $
 
 NOT_FOR_ARCHS=	vax m68k hppa
 
 COMMENT=	"redesign of Mozilla's browser component"
 
-VER=		0.6
+VER=		0.6.1
 DISTNAME=	mozilla
 PKGNAME=	mozilla-firebird-${VER}
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://ftp.mozilla.org/pub/firebird/releases/${VER}/
-DISTFILES=	MozillaFirebird-${VER}-source.tar.bz2
+DISTFILES=	MozillaFirebird-source-${VER}.tar.bz2
 
 MODULES=	gcc3
 MODGCC3_ARCHES=	alpha sparc64

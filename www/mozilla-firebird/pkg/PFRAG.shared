@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2003/05/23 10:05:36 wilfried Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2003/08/04 12:54:18 wilfried Exp $
 mozilla-firebird/components/libaccessibility.so.1.0
 mozilla-firebird/components/libappcomps.so.1.0
 mozilla-firebird/components/libautoconfig.so.1.0
@@ -18,7 +18,6 @@ mozilla-firebird/components/libgkplugin.so.1.0
 mozilla-firebird/components/libhtmlpars.so.1.0
 mozilla-firebird/components/libi18n.so.1.0
 mozilla-firebird/components/libimglib2.so.1.0
-mozilla-firebird/components/libimgmng.so.1.0
 mozilla-firebird/components/libipcdc.so.1.0
 mozilla-firebird/components/libjar50.so.1.0
 mozilla-firebird/components/libjsd.so.1.0
@@ -39,7 +38,6 @@ mozilla-firebird/components/libprofile.so.1.0
 mozilla-firebird/components/librdf.so.1.0
 mozilla-firebird/components/libtoolkitcomps.so.1.0
 mozilla-firebird/components/libtransformiix.so.1.0
-mozilla-firebird/components/libtransmngr_client.so.1.0
 mozilla-firebird/components/libtxmgr.so.1.0
 mozilla-firebird/components/libtypeaheadfind.so.1.0
 mozilla-firebird/components/libuconv.so.1.0
@@ -57,7 +55,6 @@ mozilla-firebird/components/libxpinstall.so.1.0
 mozilla-firebird/components/libxremote_client.so.1.0
 mozilla-firebird/components/libxremoteservice.so.1.0
 mozilla-firebird/ipc/modules/liblockmodule.so.1.0
-mozilla-firebird/ipc/modules/libtestmodule.so.1.0
 mozilla-firebird/ipc/modules/libtransmngr.so.1.0
 mozilla-firebird/libgkgfx.so.1.0
 mozilla-firebird/libgtkembedmoz.so.1.0
