@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2003/04/29 02:03:53 margarida Exp $
+# $OpenBSD: Makefile,v 1.25 2004/10/30 04:34:09 brad Exp $
 
 # XXX This will panic any vax
 NOT_FOR_ARCHS=	vax
 
 COMMENT=	"shared memory lib for apps with pre-forked process model"
 
-DISTNAME=	mm-1.3.0
+DISTNAME=	mm-1.3.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/mm/
 

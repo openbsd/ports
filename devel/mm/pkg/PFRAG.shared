@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/08/10 00:52:45 espie Exp $
-@lib lib/libmm.so.13.20
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/10/30 04:34:09 brad Exp $
+@lib lib/libmm.so.13.21
