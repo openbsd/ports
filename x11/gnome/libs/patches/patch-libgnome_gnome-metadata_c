@@ -1,0 +1,33 @@
+$OpenBSD: patch-libgnome_gnome-metadata_c,v 1.1.1.1 2001/09/13 20:27:19 todd Exp $
+--- libgnome/gnome-metadata.c.orig	Thu Sep  6 23:03:13 2001
++++ libgnome/gnome-metadata.c	Thu Sep  6 23:03:49 2001
+@@ -51,28 +51,7 @@ char *alloca ();
+ #include <dirent.h>
+ #include <ctype.h>
+ #include <errno.h>
+-
+-#ifdef PREFER_DB1
+-#ifdef HAVE_DB1_DB_H
+-# include <db1/db.h>
+-#else
+-# ifdef HAVE_DB_185_H
+-#  include <db_185.h>
+-# else
+-#  include <db.h>
+-# endif
+-#endif
+-#else
+-#ifdef HAVE_DB_185_H
+-# include <db_185.h>
+-#else
+-# ifdef HAVE_DB_H
+-#  include <db.h>
+-# else
+-#  include <db1/db.h>
+-# endif
+-#endif
+-#endif
++#include <db_185.h>
+ 
+ #include "libgnomeP.h"
+ #include "gnome-mime.h"

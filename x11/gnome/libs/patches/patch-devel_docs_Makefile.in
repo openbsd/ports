@@ -1,0 +1,12 @@
+# $OpenBSD: patch-devel_docs_Makefile.in,v 1.1.1.1 2001/09/13 20:27:19 todd Exp $
+--- devel-docs/Makefile.in.orig	Fri Mar 16 20:47:38 2001
++++ devel-docs/Makefile.in	Mon Aug 27 19:25:17 2001
+@@ -156,7 +156,7 @@ TEXT_FILES =  	README.gtkcauldron				REA
+ EXTRA_DIST =  	TODO.sgml				gnome-doc-framework.txt			$(TEXT_FILES)
+ 
+ 
+-docdir = $(prefix)/doc
++docdir = $(prefix)/share/doc/gnome-libs
+ doc_DATA = $(TEXT_FILES)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h

@@ -1,0 +1,36 @@
+$OpenBSD: patch-libgnome_gnome-dump_c,v 1.1.1.1 2001/09/13 20:27:19 todd Exp $
+--- libgnome/gnome-dump.c.orig	Thu Sep  6 23:03:20 2001
++++ libgnome/gnome-dump.c	Thu Sep  6 23:04:17 2001
+@@ -25,31 +25,7 @@
+ #endif
+ #include <sys/types.h>
+ 
+-#ifdef PREFER_DB1
+-#ifdef HAVE_DB1_DB_H
+-# include <db1/db.h>
+-#else
+-# ifdef HAVE_DB_185_H
+-#  include <db_185.h>
+-# else
+-#  include <db.h>
+-# endif
+-#endif
+-
+-#else
+-
+-#ifdef HAVE_DB_185_H
+-# include <db_185.h>
+-#else
+-# ifdef HAVE_DB_H
+-#  include <db.h>
+-# else
+-#  include <db1/db.h>
+-# endif
+-#endif
+-
+-#endif
+-
++#include <db_185.h>
+ #include <string.h>
+ #include <unistd.h>
+ #include <sys/types.h>

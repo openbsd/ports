@@ -1,0 +1,10 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/09/13 20:27:19 todd Exp $
+lib/libart_lgpl.so.4.0
+lib/libgnome.so.36.3
+lib/libgnomesupport.so.0.0
+lib/libgnomeui.so.46.1
+lib/libgnorba.so.28.8
+lib/libgnorbagtk.so.0.0
+lib/libgtkxmhtml.so.1.1
+lib/libzvt.so.4.10
+DYNLIBDIR(%D/lib)
