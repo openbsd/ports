@@ -1,0 +1,10 @@
+security precautions taken, as recommended by the postfix INSTALL doc:
+
+installed with maildrop setgid, to eliminate the world-writable
+maildrop vulnerability (local users can present a denial of service).
+
+all daemons chrooted in /var/spool/postfix.
+
+separate postfix user and group, and maildrop group.
+
+-d.

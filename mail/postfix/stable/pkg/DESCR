@@ -1,0 +1,77 @@
+                 Postfix Overview - Goals and Features
+     _________________________________________________________________
+   
+   The goal of the Postfix project is to implement a viable alternative
+   to the UNIX Sendmail program. Specific goals, and the ways that
+   Postfix attempts to achieve them are:
+
+     * Wide dissemination. Postfix must be adopted by lots of people in
+       order to make a significant impact on Internet mail performance
+       and security. Therefore the software is given away for free, with
+       no strings attached to it.
+
+     * Performance. Postfix is up to three times as fast as its nearest
+       competitor. A desktop PC running Postfix can receive and deliver a
+       million different messages per day. Postfix uses web server tricks
+       to reduce process creation overhead and uses other tricks to
+       reduce file system overhead, without compromising reliability.
+
+     * Compatibility. Postfix is designed to be sendmail-compatible to
+       make migration easy. Postfix supports /var/mail,
+       /etc/aliases, NIS, and ~/.forward files. However, Postfix also
+       attempts to be easy to administer, and therefore it does not use
+       sendmail.cf.
+
+     * Safety and robustness. Postfix is designed to behave rationally
+       under stress. When the local system runs out of disk space or
+       memory, the Postfix software backs off, instead of making the
+       problem worse. By design, no Postfix program keeps growing as the
+       number of messages etc. increases. Postfix is designed to stay in
+       control.
+
+     * Flexibility. Postfix is built from over a dozen little programs
+       that each perform only one specific task: receive a message via
+       SMTP, deliver a message via SMTP, deliver a message locally,
+       rewrite an address, and so on. Sites with specific requirements
+       can replace one or more little programs by alternative versions.
+       And it is easy to disable functionality, too: firewalls and client
+       workstations don't need local delivery at all.
+
+     * Security. Postfix uses multiple layers of defense to protect the
+       local system against intruders. Almost every Postfix daemon can
+       run in a chroot jail with fixed low privileges. There is no direct
+       path from the network to the security-sensitive local delivery
+       programs - an intruder has to break through several other programs
+       first. Postfix does not even trust the contents of its own queue
+       files, or the contents of its own IPC messages. Postfix avoids
+       placing sender-provided information into shell environment
+       variables. Last but not least, no Postfix program is set-uid.
+       
+Other significant features of interest
+
+     * Multiple transports. In the past the author has configured
+       Sendmail systems that could relay between Internet, DECnet, X.400
+       and UUCP. Postfix is designed to be flexible enough that it can
+       operate in such environments without requiring virtual domain or
+       alias kludges. However, the initial release only talks SMTP, and
+       has only limited support for UUCP.
+
+     * Virtual domains. In the most common case, adding support for a
+       virtual domain requires change to only a single Postfix lookup
+       table. Other mailers usually need multiple levels of aliasing or
+       redirection to achieve the same result.
+
+     * UCE control. Postfix can restrict what hosts can relay their
+       mail through a Postfix system, and supports restrictions on what
+       mail is allowed to come in. Postfix implements the usual suspects:
+       blacklists, RBL lookups, HELO/sender DNS lookups. Content
+       filtering hasn't been implemented yet.
+
+     * Table lookups. Postfix does not yet implement an address
+       rewriting language. Instead it makes extensive use of table
+       lookups. Tables can be local dbm or db files, or networked NIS or
+       NetInfo maps. Adding support for other lookup mechanisms is
+       relatively easy.
+     _________________________________________________________________
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,89 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1 2000/09/25 21:02:35 jakob Exp $
+#
+# De-installation setup of postfix
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=/etc/postfix
+SPOOL_DIR=/var/spool/postfix
+
+POSTFIXUID=6
+POSTFIXGID=6
+MAILDROPGID=12
+
+if [ -f /etc/mailer.conf.postfix ]; then
+    rm -f /etc/mailer.conf.postfix
+fi
+
+# Function: set up postfix user/group accounts.
+#
+do_accts()
+{
+    echo ""
+    echo "+---------------"
+    echo "| Delete the 'postfix' user account, and 'postfix' and 'maildrop'"
+    echo "| group accounts manually for a full de-installation."
+    echo "| To do this: execute 'user del postfix', 'group del postfix' and"
+    echo "| 'group del maildrop' as root."
+    echo "+---------------"
+    echo ""
+}
+
+# Function: set up the postfix spool dir / chroot area
+#
+do_spooldir()
+{
+    echo ""
+    echo "+---------------"
+    echo "| Delete the /var/spool/postfix spool directory manually"
+    echo "| for a full de-installation."
+    echo "| To do this: execute 'rm -rf /var/spool/postfix' as root."
+    echo "+---------------"
+    echo ""
+}
+
+# Function: install the postfix configuration files from the samples
+#
+do_configs()
+{
+    echo ""
+    echo "+---------------"
+    echo "| The existing $1 configuration files in $CONFIG_DIR,"
+    echo "| have NOT been deleted. To do this: execute"
+    echo "| 'rm -rf $CONFIG_DIR' as root."
+    echo "+---------------"
+    echo ""
+}
+
+# Function: disable the installed postfix mailer.conf
+#
+do_disable()
+{
+    echo -n "-> "
+    $PREFIX/sbin/postfix-disable
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { DEINSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    DEINSTALL)
+	do_accts
+	do_spooldir
+	do_configs $1
+	do_disable
+	;;
+    *)
+	echo "Usage: `basename $0` distname DEINSTALL" >&2
+	exit 1
+	;;
+esac
+
+exit 0

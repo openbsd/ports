@@ -1,0 +1,46 @@
+--- conf/main.cf.orig	Mon Dec 27 22:03:38 1999
++++ conf/main.cf	Sat Jan  1 20:51:22 2000
+@@ -17,14 +17,14 @@
+ # The command_directory parameter specifies the location of all
+ # postXXX commands.  The default value is $program_directory.
+ #
+-command_directory = /usr/sbin
++command_directory = y0y0y0/sbin
+ 
+ # The daemon_directory parameter specifies the location of all Postfix
+ # daemon programs (i.e. programs listed in the master.cf file). The
+ # default value is $program_directory. This directory must be owned
+ # by root.
+ #
+-daemon_directory = /usr/libexec/postfix
++daemon_directory = y0y0y0/libexec/postfix
+ 
+ # QUEUE AND PROCESS OWNERSHIP
+ #
+@@ -41,7 +41,7 @@
+ # These rights are used in the absence of a recipient user context.
+ # DO NOT SPECIFY A PRIVILEGED USER OR THE POSTFIX OWNER.
+ #
+-#default_privs = nobody
++default_privs = nobody
+ 
+ # INTERNET HOST AND DOMAIN NAMES
+ # 
+@@ -165,7 +165,7 @@
+ # "postfix reload" to eliminate the delay.
+ #
+ #alias_maps = dbm:/etc/aliases
+-#alias_maps = hash:/etc/aliases
++alias_maps = hash:/etc/aliases
+ #alias_maps = hash:/etc/aliases, nis:mail.aliases
+ #alias_maps = netinfo:/aliases
+ 
+@@ -176,7 +176,7 @@
+ #
+ #alias_database = dbm:/etc/aliases
+ #alias_database = dbm:/etc/mail/aliases
+-#alias_database = hash:/etc/aliases
++alias_database = hash:/etc/aliases
+ #alias_database = hash:/etc/aliases, hash:/opt/majordomo/aliases
+ 
+ # ADDRESS EXTENSIONS (e.g., user+foo)

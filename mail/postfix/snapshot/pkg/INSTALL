@@ -1,0 +1,157 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2000/09/25 21:02:33 jakob Exp $
+#
+# Pre/post-installation setup of postfix
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=/etc/postfix
+SAMPLE_CONFIG_DIR=$PREFIX/share/examples/postfix
+SPOOL_DIR=/var/spool/postfix
+
+# Function: set up postfix user/group accounts.
+#
+do_accts()
+{
+    groupinfo -e maildrop
+    if [ $? -eq 0 ]; then
+	echo "-> Using group 'maildrop' for postdrop"
+    else
+	echo "-> Creating maildrop group"
+	groupadd maildrop
+    fi
+
+    userinfo -e postfix
+    if [ $? -eq 0 ]; then
+	echo "-> Using account/group 'postfix' for postfix"
+    else
+	echo "-> Creating postfix user & group"
+	useradd \
+	    -g =uid \
+	    -c "Disgruntled Postal Worker" \
+	    -d /nonexistent \
+	    -s /sbin/nologin \
+	    -p \* \
+	    postfix
+    fi
+}
+
+# Function: set up the postfix spool dir / chroot area
+#
+do_spooldir()
+{
+    echo "-> Creating Postfix spool directory and chroot area under $SPOOL_DIR"
+    [ -d $SPOOL_DIR ] || install -d -o root -g wheel -m 755 $SPOOL_DIR
+    [ -d $SPOOL_DIR/etc ] || install -d -o root -g wheel -m 755 $SPOOL_DIR/etc
+    for file in localtime services resolv.conf ; do
+	install -o root -g wheel -m 755 /etc/$file $SPOOL_DIR/etc
+    done
+}
+
+# Function: replace sendmail binaries with postfix
+#
+do_mailwrapper()
+{
+    echo "-> Creating /etc/mailer.conf.postfix"
+    cat <<MAILER >/tmp/mailer.conf.$$
+sendmail	y0y0y0/sbin/sendmail
+send-mail	y0y0y0/sbin/sendmail
+mailq		y0y0y0/sbin/sendmail
+newaliases	y0y0y0/sbin/sendmail
+MAILER
+    sed "s@y0y0y0@$PREFIX@g" /tmp/mailer.conf.$$ >/etc/mailer.conf.postfix
+    rm -f /tmp/mailer.conf.$$
+    chown root:wheel /etc/mailer.conf.postfix
+    chmod 644 /etc/mailer.conf.postfix
+}
+
+# Function: install the postfix configuration files from the samples
+#
+do_configs()
+{
+    if [ -d $CONFIG_DIR ]; then
+	echo ""
+	echo "+---------------"
+	echo "| The existing $1 configuration files in $CONFIG_DIR,"
+	echo "| have NOT been changed.  You may want to compare them to the"
+	echo "| current sample files, $SAMPLE_CONFIG_DIR,"
+	echo "| and update your configuration as needed."
+	echo "|"
+	echo "| Existing $CONFIG_DIR/postfix-script, however, will be"
+	echo "| updated to the latest version."
+    	echo "+---------------"
+	echo ""
+    else
+	# Install config files.
+	install -d -o root -g wheel -m 755 $CONFIG_DIR
+	install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/* $CONFIG_DIR
+	sed "s@y0y0y0@$PREFIX@g" $CONFIG_DIR/main.cf > $CONFIG_DIR/main.cf.$$
+	install -o root -g wheel -m 644 $CONFIG_DIR/main.cf.$$ $CONFIG_DIR/main.cf
+	rm -f $CONFIG_DIR/main.cf.$$
+
+	# The correct postfix-script will be installed later.
+	rm -f $CONFIG_DIR/postfix-script*
+
+	echo ""
+	echo "+---------------"
+	echo "| The $1 configuration files in $CONFIG_DIR,"
+	echo "| have been installed.  Please view these files and change"
+	echo "| the configuration to meet your needs."
+	echo "+---------------"
+	echo ""
+    fi
+
+    # Configure setgid maildrop
+    install -o root -g wheel -m 755 $SAMPLE_CONFIG_DIR/postfix-script-sgid $CONFIG_DIR/postfix-script
+    chgrp maildrop $PREFIX/sbin/postdrop
+    chmod 2755 $PREFIX/sbin/postdrop
+}
+
+# Function: tell the user what s/he needs to do to use the port just installed
+#
+do_notice()
+{
+    echo ""
+    echo "+---------------"
+    echo "| Postfix can be set up to replace sendmail entirely. Please read the"
+    echo "| documentation at file:$PREFIX/share/doc/postfix/index.html or"
+    echo "| http://www.postfix.org/ carefully before you decide to do this!"
+    echo "|"
+    echo "| To replace sendmail with postfix you have to install a new mailer.conf"
+    echo "| using the following command:"
+    echo "|"
+    echo "|     $PREFIX/sbin/postfix-enable"
+    echo "|"
+    echo "| If you want to restore sendmail, this is done using the following command:"
+    echo "|"
+    echo "|     $PREFIX/sbin/postfix-disable"
+    echo "+---------------"
+    echo ""
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	do_accts
+	;;
+    POST-INSTALL)
+	do_spooldir
+        do_configs $1
+	do_mailwrapper
+	do_notice
+	;;
+    *)
+	echo "Usage: `basename $0` distname <PRE-INSTALL|POST-INSTALL>" >&2
+	exit 1
+	;;
+esac
+
+exit 0

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.6 2000/08/15 17:01:23 jakob Exp $
+# $OpenBSD: DEINSTALL,v 1.1 2000/09/25 21:02:33 jakob Exp $
 #
 # De-installation setup of postfix
 
