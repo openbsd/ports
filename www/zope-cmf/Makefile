@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/05/14 21:50:36 krw Exp $
+# $OpenBSD: Makefile,v 1.5 2003/05/25 22:02:16 naddy Exp $
 
 COMMENT=	"Zope content management framework"
 
@@ -39,12 +39,16 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${PRODUCTSDIR}
-	for p in Calendar Core Default Topic; \
-	do \
+	for p in Calendar Core Default Topic; do \
 		cp -R ${WRKSRC}/CMF$$p ${PRODUCTSDIR}; \
 	done
+	chown -R ${LIBOWN}:${LIBGRP} ${PRODUCTSDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zope-cmf
-	cp -R ${WRKSRC}/docs/* ${PREFIX}/share/doc/zope-cmf
+	${INSTALL_DATA} ${WRKSRC}/docs/*.stx ${WRKSRC}/docs/*.txt \
+		${PREFIX}/share/doc/zope-cmf
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zope-cmf/imgs
+	${INSTALL_DATA} ${WRKSRC}/docs/imgs/* \
+		${PREFIX}/share/doc/zope-cmf/imgs
 
 .include <bsd.port.mk>
 
