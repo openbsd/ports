@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/06 15:56:22 pvalchev Exp $
+bin/newvox
+share/doc/newvox/README
+@dirrm share/doc/newvox
