@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 01:06:28 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2001/05/11 22:54:15 pjanzen Exp $
 
 COMMENT=	"Athena port of xminesweeper"
 
@@ -7,7 +7,7 @@ PKGNAME=	xmine-1.0.3
 CATEGORIES=	games
 NEED_VERSION=	1.402
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	Paul Janzen <pjanzen@openbsd.org>
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes
