@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2001/09/03 23:24:37 brad Exp $
+# $OpenBSD: Makefile,v 1.53 2001/09/07 22:48:47 peter Exp $
 
 COMMENT=	"PostgreSQL RDBMS"
 COMMENT-clients="PostgreSQL RDBMS client libraries and utilities"
@@ -13,7 +13,7 @@ NEED_VERSION=	1.435
 
 HOMEPAGE=	http://www.postgresql.org/
 
-MAINTAINER=	Brandon Palmer <bpalmer@crimelabs.net>, Peter Galbavy <peter.galbavy@knowledge.com>
+MAINTAINER=	Brandon Palmer <bpalmer@crimelabs.net>, Peter Galbavy <peter.galbavy@knowtion.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
