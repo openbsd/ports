@@ -1,10 +1,16 @@
-@comment $OpenBSD: PFRAG.no-shared,v 1.20 2004/02/24 15:52:17 jakob Exp $
+@comment $OpenBSD: PFRAG.no-shared,v 1.21 2004/03/31 09:49:38 jakob Exp $
+lib/libethereal.a
+lib/libethereal.la
+lib/libwiretap.a
+lib/libwiretap.la
 lib/ethereal/plugins/${VERSION}/acn.a
 lib/ethereal/plugins/${VERSION}/acn.la
 lib/ethereal/plugins/${VERSION}/asn1.a
 lib/ethereal/plugins/${VERSION}/asn1.la
 lib/ethereal/plugins/${VERSION}/artnet.a
 lib/ethereal/plugins/${VERSION}/artnet.la
+lib/ethereal/plugins/${VERSION}/ciscosm.a
+lib/ethereal/plugins/${VERSION}/ciscosm.la
 lib/ethereal/plugins/${VERSION}/coseventcomm.a
 lib/ethereal/plugins/${VERSION}/coseventcomm.la
 lib/ethereal/plugins/${VERSION}/cosnaming.a
@@ -27,7 +33,11 @@ lib/ethereal/plugins/${VERSION}/pcli.a
 lib/ethereal/plugins/${VERSION}/pcli.la
 lib/ethereal/plugins/${VERSION}/rdm.a
 lib/ethereal/plugins/${VERSION}/rdm.la
+lib/ethereal/plugins/${VERSION}/rlm.a
+lib/ethereal/plugins/${VERSION}/rlm.la
 lib/ethereal/plugins/${VERSION}/rtnet.a
 lib/ethereal/plugins/${VERSION}/rtnet.la
+lib/ethereal/plugins/${VERSION}/rudp.a
+lib/ethereal/plugins/${VERSION}/rudp.la
 lib/ethereal/plugins/${VERSION}/v5ua.a
 lib/ethereal/plugins/${VERSION}/v5ua.la

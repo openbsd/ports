@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.85 2004/03/06 23:45:54 jakob Exp $
+# $OpenBSD: Makefile,v 1.86 2004/03/31 09:49:38 jakob Exp $
 
 COMMENT=	"network protocol analyzer"
 COMMENT-x11=	"network protocol analyzer (X11 GUI)"
 
-VERSION=	0.10.2
+VERSION=	0.10.3
 DISTNAME=	ethereal-${VERSION}
 CATEGORIES=	net x11
 
@@ -84,5 +84,11 @@ pre-configure:
 	rm -f ${WRKSRC}/ltconfig ${WRKSRC}/ltmain.sh
 	rm -f ${WRKBUILD}/libtool
 	ln -s ${LIBTOOL} ${WRKBUILD}/libtool
+
+post-configure:
+	rm -f ${WRKBUILD}/epan/libtool
+	rm -f ${WRKBUILD}/wiretap/libtool
+	ln -s ${LIBTOOL} ${WRKBUILD}/epan/libtool
+	ln -s ${LIBTOOL} ${WRKBUILD}/wiretap/libtool
 
 .include <bsd.port.mk>
