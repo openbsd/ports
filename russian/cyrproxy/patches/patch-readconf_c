@@ -1,0 +1,12 @@
+$OpenBSD: patch-readconf_c,v 1.1 2004/01/04 23:37:27 espie Exp $
+--- readconf.c.orig	2004-01-05 00:22:47.000000000 +0100
++++ readconf.c	2004-01-05 00:23:15.000000000 +0100
+@@ -648,7 +648,7 @@ EncodingByAddress(void)
+ 	  retval=NULL;							\
+ 	  while(list!=NULL)						\
+ 	    {								\
+-	      if(list->##fieldn == compval)				\
++	      if(list->fieldn == compval)				\
+ 		retval=list;						\
+ 	      list=list->chain;						\
+ 	    }								\
