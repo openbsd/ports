@@ -3,7 +3,7 @@
 # Date created:				15 Dec 1997
 # Whom:					niklas
 #
-# $OpenBSD: Makefile,v 1.3 1997/12/19 14:27:07 niklas Exp $
+# $OpenBSD: Makefile,v 1.4 1998/04/05 02:15:33 niklas Exp $
 #
 
 DISTNAME=	cdrecord-1.6a7
@@ -27,9 +27,11 @@ GMAKE=		./Gmake
 OBJDIR=		OBJ/${MACHINE}-openbsd-$(CC)
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cdrecord/${OBJDIR}/cdrecord ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/mkisofs-1.11/${OBJDIR}/mkisofs \
-	    ${PREFIX}/bin
+# We ship mkisofs in OpenBSD 2.3, uncomment these lines if you are on an
+# older system.
+#	${INSTALL_PROGRAM} ${WRKSRC}/mkisofs-1.11/${OBJDIR}/mkisofs \
+#	    ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/mkisofs-1.11/mkisofs.8 ${PREFIX}/man/man8
+#	${INSTALL_MAN} ${WRKSRC}/mkisofs-1.11/mkisofs.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>

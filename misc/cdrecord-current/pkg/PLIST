@@ -1,4 +1,2 @@
 bin/cdrecord
-bin/mkisofs
 man/man1/cdrecord.1
-man/man8/mkisofs.8
