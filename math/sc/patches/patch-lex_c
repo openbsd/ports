@@ -1,6 +1,6 @@
-$OpenBSD: patch-lex_c,v 1.2 2002/08/06 00:45:17 pvalchev Exp $
+$OpenBSD: patch-lex_c,v 1.3 2003/06/16 21:37:17 millert Exp $
 --- lex.c.orig	Mon Nov  5 17:40:12 2001
-+++ lex.c	Mon Aug  5 18:30:21 2002
++++ lex.c	Mon Jun 16 15:25:30 2003
 @@ -433,10 +433,10 @@ char dont_use[] = {
      ctl('x'), ctl('z'), 0
  };
@@ -14,3 +14,12 @@ $OpenBSD: patch-lex_c,v 1.2 2002/08/06 00:45:17 pvalchev Exp $
  }
  
  void
+@@ -592,7 +592,7 @@ nmgetch() 
+ 
+ #endif
+ 
+-#if defined(SYSV2) || defined(SYSV3) || defined(MSDOS)
++#if defined(SYSV2) || defined(SYSV3) || defined(MSDOS) || defined(NCURSES_VERSION)
+ 
+ void
+ initkbd()
