@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/27 05:39:23 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2000/06/20 16:37:41 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=       rman-3.0.8
@@ -13,8 +13,6 @@ PERMIT_PACKAGE_CDROM=	"conflicting no fee/free license"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM="conflicting no fee/free license"
 PERMIT_DISTFILES_FTP=	Yes
-
-FAKE=			Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rman ${PREFIX}/bin

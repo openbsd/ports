@@ -1,3 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.4 2000/06/20 16:37:43 espie Exp $
+@pkgcfl rman-*
 bin/kappfinder
 bin/kappfinder_restart
 bin/kaudioserver
