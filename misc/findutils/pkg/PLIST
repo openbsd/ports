@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/14 21:52:15 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/09/02 18:48:08 lebel Exp $
 bin/gfind
 bin/glocate
 bin/gupdatedb
@@ -6,11 +6,6 @@ bin/gxargs
 libexec/gbigram
 libexec/gcode
 libexec/gfrcode
-man/cat1/gfind.1
-man/cat1/glocate.1
-man/cat1/gupdatedb.1
-man/cat1/gxargs.1
-man/cat5/glocatedb.5
 man/man1/gfind.1
 man/man1/glocate.1
 man/man1/gupdatedb.1
