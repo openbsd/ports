@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1 2003/05/21 13:24:09 markus Exp $
+${P5ARCH}/auto/Pg/Pg.so
+${P5ARCH}/auto/Pg/Pg.bs
+${P5ARCH}/Pg.pm
+@dirrm ${P5ARCH}/auto/Pg

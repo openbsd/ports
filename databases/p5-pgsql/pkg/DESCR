@@ -1,0 +1,4 @@
+Pgsql_perl5 is an interface between Larry Wall's language perl version 5 and 
+the database PostgreSQL (previously Postgres95). This has been done by using 
+the Perl5 application programming interface for C extensions which calls the 
+Postgres programmer's interface LIBPQ. 
