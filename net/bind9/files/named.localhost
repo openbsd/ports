@@ -1,0 +1,14 @@
+; $OpenBSD: named.localhost,v 1.1.1.1 2000/09/16 07:36:53 jakob Exp $
+;
+$ORIGIN localhost.
+$TTL 6h
+;
+@		IN	SOA	localhost. postmaster.localhost. (	
+				1999061400	; serial
+				1h		; refresh
+				30m		; retry
+				7d		; expiration
+				1h )		; minimum
+;
+			NS	localhost.
+                        A       127.0.0.1

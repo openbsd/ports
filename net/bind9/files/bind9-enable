@@ -1,0 +1,127 @@
+#!/bin/sh
+#
+#	$OpenBSD: bind9-enable,v 1.1.1.1 2000/09/16 07:36:53 jakob Exp $
+
+PREFIX=`dirname $0`/..
+BINDIR=/usr/sbin
+INSTALL_PROGRAM="/usr/bin/install -c -s -o root -g wheel -m 555"
+INSTALL_MAN="/usr/bin/install -c -o root -g wheel -m 444"
+
+
+echo "This script will replace the OpenBSD named with BIND v9"
+echo ""
+echo -n "Are you sure you want to to this (y/[n])? "
+
+read answer
+echo ""
+
+if [ X$answer != Xy ]; then
+	echo "exit"
+	exit
+fi
+
+######################################################################
+echo -n "Removing obsolete binaries:"
+
+for file in \
+	ndc
+do
+	echo -n " $file"
+	rm -f $BINDIR/$file
+done
+
+echo -n " named-xfer"
+rm -f /var/named/named-xfer
+
+echo ""
+echo done.
+
+######################################################################
+echo -n "Installing binaries:"
+
+for file in \
+	dig host nslookup nsupdate
+do
+	echo -n " $file"
+	$INSTALL_PROGRAM $PREFIX/bin/$file $BINDIR
+done
+
+for file in \
+	named rndc lwresd \
+	dnssec-keygen dnssec-makekeyset dnssec-signkey dnssec-signzone
+do
+	echo -n " $file"
+	$INSTALL_PROGRAM $PREFIX/sbin/$file $BINDIR
+done
+
+echo ""
+echo done.
+
+######################################################################
+echo -n "Removing obsolete man-pages:"
+
+for file in \
+	dig.0 host.0
+do
+	echo -n " $file"
+	rm -f /usr/share/man/cat1/$file
+done
+
+for file in \
+	named.conf.0
+do
+	echo -n " $file"
+	rm -f /usr/share/man/cat5/$file
+done
+
+for file in \
+	named.0 named.reload.0 named.restart.0 nslookup.0
+do
+	echo -n " $file"
+	rm -f /usr/share/man/cat8/$file
+done
+
+echo ""
+echo done.
+
+######################################################################
+echo -n "Installing man-pages:"
+
+for file in \
+	host.1
+do
+	echo -n " $file"
+	$INSTALL_MAN $PREFIX/man/man1/$file /usr/share/man/man1
+done
+
+for file in \
+	rndc.conf.5
+do
+	echo -n " $file"
+	$INSTALL_MAN $PREFIX/man/man5/$file /usr/share/man/man5
+done
+
+for file in \
+	named.8 rndc.8 lwresd.8 \
+	dnssec-keygen.8 dnssec-makekeyset.8 dnssec-signkey.8 dnssec-signzone.8
+do
+	echo -n " $file"
+	$INSTALL_MAN $PREFIX/man/man8/$file /usr/share/man/man8
+done
+
+echo ""
+echo done.
+
+######################################################################
+config=/var/named/etc/named.conf
+echo -n "Symlink $config:"
+
+if [ ! -L $config -a ! -e $config ]; then
+	echo -n " $config->../named.conf"
+	ln -s ../named.conf $config
+else
+	echo -n " not needed"
+fi
+
+echo ""
+echo done.
