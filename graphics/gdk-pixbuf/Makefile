@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2002/11/13 16:05:49 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2002/11/14 21:03:41 marcm Exp $
 
 COMMENT=	"GdkPixbuf graphics library"
 COMMENT-gnome=	"GdkPixbuf graphics library (GNOME Canvas)"
 
-VERSION=	0.17.0
+VERSION=	0.21.0
 DISTNAME=	gdk-pixbuf-${VERSION}
 PKGNAME-gnome=	gdk-pixbuf-gnome-${VERSION}
 CATEGORIES=	graphics
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gdk-pixbuf/0.17/}
+MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gdk-pixbuf/0.21/}
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf

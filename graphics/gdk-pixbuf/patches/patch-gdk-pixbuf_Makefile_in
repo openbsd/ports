@@ -1,13 +1,17 @@
---- gdk-pixbuf/Makefile.in.orig	Thu Apr 18 21:25:41 2002
-+++ gdk-pixbuf/Makefile.in	Sun May 26 12:11:19 2002
-@@ -246,12 +246,12 @@ GDK_PIXBUF_LIBS = $(GLIB_LIBS) $(GTK_LIB
+$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.9 2002/11/14 21:03:41 marcm Exp $
+--- gdk-pixbuf/Makefile.in.orig	Sat Sep 28 01:10:27 2002
++++ gdk-pixbuf/Makefile.in	Mon Oct  7 17:41:44 2002
+@@ -271,7 +271,7 @@ GDK_PIXBUF_LIBS = $(GLIB_LIBS) $(GTK_LIB
  # The GdkPixBuf library
  #
  
 -libgdk_pixbufincludedir = $(includedir)/gdk-pixbuf-1.0/gdk-pixbuf
 +libgdk_pixbufincludedir = $(includedir)/gdk-pixbuf
  
- libgdk_pixbuf_la_SOURCES =  	gdk-pixbuf.c				gdk-pixbuf-animation.c			gdk-pixbuf-data.c			gdk-pixbuf-drawable.c			gdk-pixbuf-io.c				gdk-pixbuf-loader.c			gdk-pixbuf-render.c			gdk-pixbuf-scale.c			gdk-pixbuf-util.c			gdk-pixbuf-parse-color.c		$(extra_sources)
+ libgdk_pixbuf_la_SOURCES = \
+ 	gdk-pixbuf.c			\
+@@ -287,7 +287,7 @@ libgdk_pixbuf_la_SOURCES = \
+ 	$(extra_sources)
  
  
 -libgdk_pixbuf_la_LDFLAGS = -version-info 2:0:0 -export-dynamic $(GLIB_LIBS) $(GTK_LIBS)
@@ -15,12 +19,12 @@
  libgdk_pixbuf_la_LIBADD = pixops/libpixops.la
  
  #
-@@ -261,7 +261,7 @@ libgdk_pixbuf_la_LIBADD = pixops/libpixo
- libgdk_pixbuf_xlib_la_SOURCES =  	gdk-pixbuf.c				gdk-pixbuf-xlib.c			gdk-pixbuf-animation.c			gdk-pixbuf-data.c			gdk-pixbuf-io.c				gdk-pixbuf-xlib-render.c		gdk-pixbuf-xlib-drawable.c		gdk-pixbuf-scale.c			gdk-pixbuf-util.c			gdk-pixbuf-xlibrgb.c			gdk-pixbuf-parse-color.c		$(extra_sources)
+@@ -309,7 +309,7 @@ libgdk_pixbuf_xlib_la_SOURCES = \
+ 	$(extra_sources)
  
  
 -libgdk_pixbuf_xlib_la_LDFLAGS = -version-info 2:0:0 -export-dynamic $(GLIB_LIBS) $(X11_LIBS)
 +libgdk_pixbuf_xlib_la_LDFLAGS = -version-info 2:0:0 -export-dynamic $(GLIB_LIBS) $(X11_LIBS) $(LIBPNG) $(LIBJPEG) $(LIBTIFF)
  libgdk_pixbuf_xlib_la_LIBADD = pixops/libpixops.la libgdk_pixbuf.la $(GTK_LIBS)
  
- libgdk_pixbufinclude_HEADERS =  	gdk-pixbuf.h				gdk-pixbuf-loader.h			gdk-pixbuf-features.h			gdk-pixbuf-xlib.h			gdk-pixbuf-xlibrgb.h			$(CANVAS_PIXBUF_HEADERFILES)
+ libgdk_pixbufinclude_HEADERS = \

@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.5 2002/06/09 16:43:16 brad Exp $
---- ltmain.sh.orig	Thu May 30 22:04:26 2002
-+++ ltmain.sh	Thu May 30 22:04:51 2002
-@@ -1725,11 +1725,6 @@ compiler."
+$OpenBSD: patch-ltmain_sh,v 1.6 2002/11/14 21:03:41 marcm Exp $
+--- ltmain.sh.orig	Sat Sep 28 01:10:07 2002
++++ ltmain.sh	Mon Oct  7 17:44:07 2002
+@@ -1737,11 +1737,6 @@ compiler."
  	    continue
  	  fi
  

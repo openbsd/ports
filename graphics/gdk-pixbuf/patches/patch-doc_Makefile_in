@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.5 2002/05/31 02:41:44 brad Exp $
---- doc/Makefile.in.orig	Thu Apr 18 21:25:44 2002
-+++ doc/Makefile.in	Sun May 26 12:11:19 2002
-@@ -231,7 +231,7 @@ install-am: all-am
+$OpenBSD: patch-doc_Makefile_in,v 1.6 2002/11/14 21:03:41 marcm Exp $
+--- doc/Makefile.in.orig	Sat Sep 28 01:10:28 2002
++++ doc/Makefile.in	Mon Oct  7 17:36:43 2002
+@@ -256,7 +256,7 @@ install-am: all-am
  install: install-am
  uninstall-am:
  uninstall: uninstall-am

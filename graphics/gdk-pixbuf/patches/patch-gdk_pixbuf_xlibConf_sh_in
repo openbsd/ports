@@ -1,6 +1,6 @@
-$OpenBSD: patch-gdk_pixbuf_xlibConf_sh_in,v 1.4 2002/05/31 02:41:44 brad Exp $
---- gdk_pixbuf_xlibConf.sh.in.orig	Sun May 26 14:42:36 2002
-+++ gdk_pixbuf_xlibConf.sh.in	Sun May 26 14:43:20 2002
+$OpenBSD: patch-gdk_pixbuf_xlibConf_sh_in,v 1.5 2002/11/14 21:03:41 marcm Exp $
+--- gdk_pixbuf_xlibConf.sh.in.orig	Sat Aug 26 06:36:32 2000
++++ gdk_pixbuf_xlibConf.sh.in	Mon Oct  7 17:42:48 2002
 @@ -2,6 +2,6 @@
  # Configuration file for using the gdk-pixbuf library in Xlib applications
  #

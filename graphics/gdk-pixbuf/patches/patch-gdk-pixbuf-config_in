@@ -1,6 +1,7 @@
---- gdk-pixbuf-config.in.orig	Thu Oct 25 04:00:14 2001
-+++ gdk-pixbuf-config.in	Sun May 26 12:11:19 2002
-@@ -39,13 +39,13 @@ while test $# -gt 0; do
+$OpenBSD: patch-gdk-pixbuf-config_in,v 1.5 2002/11/14 21:03:41 marcm Exp $
+--- gdk-pixbuf-config.in.orig	Tue Oct  9 22:49:55 2001
++++ gdk-pixbuf-config.in	Mon Oct  7 17:38:36 2002
+@@ -39,12 +39,12 @@ while test $# -gt 0; do
        echo @GDK_PIXBUF_VERSION@
        ;;
      --cflags)
@@ -11,9 +12,7 @@
      --libs)
        libdirs=-L@libdir@
 -      echo $libdirs -lgdk_pixbuf `gtk-config --libs`
--      ;;
 +      echo $libdirs -lgdk_pixbuf `gtk-config --libs` @LIBTIFF@ @LIBJPEG@ @LIBPNG@
-+;;
+       ;;
      *)
        echo "${usage}" 1>&2
-       exit 1

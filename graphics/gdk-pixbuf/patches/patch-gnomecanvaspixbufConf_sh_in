@@ -1,6 +1,6 @@
-$OpenBSD: patch-gnomecanvaspixbufConf_sh_in,v 1.4 2002/05/31 02:41:44 brad Exp $
---- gnomecanvaspixbufConf.sh.in.orig	Sun May 26 14:46:32 2002
-+++ gnomecanvaspixbufConf.sh.in	Sun May 26 14:46:46 2002
+$OpenBSD: patch-gnomecanvaspixbufConf_sh_in,v 1.5 2002/11/14 21:03:41 marcm Exp $
+--- gnomecanvaspixbufConf.sh.in.orig	Mon Jan 17 07:32:23 2000
++++ gnomecanvaspixbufConf.sh.in	Mon Oct  7 17:43:09 2002
 @@ -2,6 +2,6 @@
  # Configuration file for using the gnomecanvaspixbuf library in GNOME applications
  #
