@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/03/16 20:09:41 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2005/03/16 21:09:21 robert Exp $
 
 FULLPKGNAME=	php5-extensions-${V}p1
 COMMENT=	"informational package about PHP5 extensions"
@@ -117,7 +117,7 @@ GD_WANTLIB+=		X11 Xpm
 .  endif
 . else
 CONFIGURE_ARGS+=       --without-xpm-dir
-FULLPKGNAME-gd=		php5-gd-${V}-no_x11
+FULLPKGNAME-gd=		php5-gd-${V}p1-no_x11
 . endif
 .endif
 
