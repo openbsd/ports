@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/10/31 08:53:44 angelos Exp $
-
-BROKEN=		waiting for turans@ to verify
+# $OpenBSD: Makefile,v 1.7 1999/11/14 22:29:00 turan Exp $
 
 DISTNAME=	bricons
 PKGNAME=	bricons-3.0
