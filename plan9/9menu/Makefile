@@ -3,7 +3,7 @@
 # Date created:         December 1, 1997
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/02 02:34:15 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/06/09 04:16:44 marc Exp $
 #
 
 DISTNAME=	9menu-1.5
@@ -13,6 +13,7 @@ EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	angelos@openbsd.org
 
+USE_X11=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=		zcat
 EXTRACT_BEFORE_ARGS=
