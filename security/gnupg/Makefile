@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2000/02/15 05:05:10 turan Exp $
+# $OpenBSD: Makefile,v 1.15 2000/03/11 02:54:18 espie Exp $
 
 DISTNAME=	gnupg-1.0.1
 CATEGORIES=	security
+NEED_VERSION=	1.226
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 		ftp://ftp.progsoc.uts.edu.au/pub/gnupg/gnupg/ \
 		ftp://openbsd.rug.ac.be/pub/gcrypt/ \
@@ -18,14 +19,16 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 MAINTAINER=	markus@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-USE_GMAKE=	yes
+# For now, because OpenBSD make seems to have a weird bug in suffix handling
+USE_GMAKE=	Yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
+FAKE=		Yes
 
 GNUPGDOCDIR=	${PREFIX}/share/doc/gnupg
 GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
