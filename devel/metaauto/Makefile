@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/02/15 17:08:25 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2003/05/22 22:54:05 jcs Exp $
 
 COMMENT=	"wrapper for gnu auto*"
 
@@ -25,7 +25,7 @@ do-build:
 
 do-install:
 .for i in ${SCRIPTS}
-	${INSTALL_PROGRAM} ${WRKBUILD}/$i ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKBUILD}/$i ${PREFIX}/bin
 .endfor
 
 .include <bsd.port.mk>
