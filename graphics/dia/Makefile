@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/10/05 18:27:35 obecian Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/05 19:30:19 obecian Exp $
 
 COMMENT=	visio-like technical drawing
 
@@ -29,6 +29,7 @@ CONFIGURE_ARGS+=	--enable-static --disable-gnome
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+		patch-*
 
 .include <bsd.port.mk>
