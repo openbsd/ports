@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Aug 19 00:15:33 1999
++++ Makefile.in	Tue Apr  4 16:25:20 2000
+@@ -457,7 +457,7 @@
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+ install-exec-am: 
+-	chmod u+s $(sbindir)/mtr
++	#chmod u+s $(sbindir)/mtr
+ distclean-local:
+ 	cp Makefile.dist Makefile
+ 	rm -f *.orig
