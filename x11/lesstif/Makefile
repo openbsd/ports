@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 1999/06/24 11:03:07 form Exp $
+# $OpenBSD: Makefile,v 1.27 1999/06/24 18:14:03 form Exp $
 # $FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp $
 
 DISTNAME=	lesstif-0.88.1
@@ -50,11 +50,11 @@ post-install:
 .for lib in ${STATIC_LIBS}
 	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/${lib} ${PREFIX}/lib
 .endfor
-.if !defined(NO_SHARED_LIBS)
 .for lib in ${SHARED_LIBS}
-	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/${lib} ${PREFIX}/lib
+	@if [ "x${NO_SHARED_LIBS}" = "x" ]; then \
+	  ${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/${lib} ${PREFIX}/lib; \
+	 fi
 .endfor
-	  ${LDCONFIG} -m ${PREFIX}/lib
-.endif
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
