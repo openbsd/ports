@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/14 23:43:58 espie Exp $
-@comment ${P5ARCH}/Carp/Clan.pm
-@comment ${P5ARCH}/Carp/Clan.pod
+@comment $OpenBSD: PLIST,v 1.10 2004/12/01 05:38:49 kevlo Exp $
 ${P5ARCH}/Date/
 ${P5ARCH}/Date/Calc/
 ${P5ARCH}/Date/Calc.pm
@@ -18,7 +16,6 @@ ${P5ARCH}/auto/Date/
 ${P5ARCH}/auto/Date/Calc/
 ${P5ARCH}/auto/Date/Calc/Calc.bs
 ${P5ARCH}/auto/Date/Calc/Calc.so
-@comment @man man/man3p/Carp::Clan.3p
 @man man/man3p/Date::Calc.3p
 @man man/man3p/Date::Calc::Object.3p
 @man man/man3p/Date::Calendar.3p
