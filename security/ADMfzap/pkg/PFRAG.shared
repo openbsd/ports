@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2003/12/30 22:59:28 pvalchev Exp $
+lib/libfzap.so
