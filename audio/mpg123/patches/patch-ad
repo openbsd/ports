@@ -1,0 +1,12 @@
+--- mpg123.c.orig	Tue Sep  7 10:44:39 1999
++++ mpg123.c	Tue Sep  7 10:45:50 1999
+@@ -167,6 +167,9 @@
+         _exit(0);
+       default: /* parent */
+         xfermem_init_writer (buffermem);
++	if (xfermem_block(XF_WRITER, buffermem) == XF_CMD_TERMINATE) {
++	    intflag = TRUE;
++	}
+         param.outmode = DECODE_BUFFER;
+     }
+   }
