@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/28 08:28:47 obecian Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/15 11:36:01 espie Exp $
 
 COMMENT=	"active packet sniffer"
 
@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	angst
 
 HOMEPAGE=	http://angst.sourceforge.net/
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a::net/libnet
+LIB_DEPENDS=	net::net/libnet
 
 MAINTAINER=	Mark Grimes <obecian@openbsd.org>
 

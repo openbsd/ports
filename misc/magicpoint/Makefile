@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2001/08/28 08:10:21 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2001/10/15 11:36:01 espie Exp $
 
 COMMENT=	"X11-based presentation tool"
 
 DISTNAME=	magicpoint-1.08a
 CATEGORIES=	misc productivity
-NEED_VERSION=	1.448
+NEED_VERSION=	1.474
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
 HOMEPAGE=	http://www.mew.org/mgp/
@@ -18,7 +18,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 # plus sign is for localized (i.e. Japanese) version
 LIB_DEPENDS+=	ttf.1::print/freetype \
-		png.2::graphics/png
+		png.2::graphics/png \
+		mng::graphics/libmng
+
+MODULES=	gettext
 
 CONFIGURE_STYLE=gnu imake
 CONFIGURE_ARGS=	--disable-vflib
