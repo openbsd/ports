@@ -1,0 +1,6 @@
+The Bonobo Configuration System (BCS) consists of several parts.
+An API to access configuration data, a database to store configuration
+values in XML format and a system to visualise and edit configuration
+data. The whole system is built on top of bonobo and ORBit (CORBA).
+
+WWW: ${HOMEPAGE}

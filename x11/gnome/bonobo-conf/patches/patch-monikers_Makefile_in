@@ -1,0 +1,16 @@
+$OpenBSD: patch-monikers_Makefile_in,v 1.1.1.1 2002/05/30 12:56:59 nino Exp $
+--- monikers/Makefile.in.orig	Fri Apr 26 18:51:39 2002
++++ monikers/Makefile.in	Fri Apr 26 18:52:55 2002
+@@ -195,10 +195,10 @@ LTLIBRARIES =  $(moniker_LTLIBRARIES)
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-libmoniker_config_la_LDFLAGS = 
++libmoniker_config_la_LDFLAGS = -module -avoid-version
+ libmoniker_config_la_DEPENDENCIES =  ../bonobo-conf/libbonobo_conf.la
+ libmoniker_config_la_OBJECTS =  bonobo-moniker-config.lo
+-libmoniker_gconf_la_LDFLAGS = 
++libmoniker_gconf_la_LDFLAGS = -module -avoid-version
+ @ENABLE_GCONF_TRUE@libmoniker_gconf_la_DEPENDENCIES = 
+ @ENABLE_GCONF_TRUE@libmoniker_gconf_la_OBJECTS =  \
+ @ENABLE_GCONF_TRUE@bonobo-moniker-gconf.lo bonobo-config-gconfdb.lo
