@@ -1,0 +1,12 @@
+$OpenBSD: patch-reminder_c,v 1.1.1.1 2001/09/15 08:41:00 jcs Exp $
+--- reminder.c.orig	Fri Sep  7 13:32:02 2001
++++ reminder.c	Mon Sep 10 21:29:43 2001
+@@ -38,7 +38,7 @@
+ 				/*  style name. 			 */
+ #define CONFIG_NAME "gkrellm-reminder"
+ 
+-#define TIMEZONE_DIFF ( timezone - ( daylight ? 1 : 0 ) * SECS_PER_HOUR )
++#define TIMEZONE_DIFF 0
+ 
+ #define SECS_PER_DAY 86400
+ #define SECS_PER_HOUR 3600
