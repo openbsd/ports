@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/05/08 22:58:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/06/30 23:38:56 naddy Exp $
 
 COMMENT=	"interpretive macro/programming language"
 
-V=		04-111
+V=		04-173
 DISTNAME=	zoem-${V}
 PKGNAME=	zoem-${V:S,-,_,}
 CATEGORIES=	textproc lang
