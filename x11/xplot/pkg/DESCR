@@ -1,0 +1,6 @@
+xplot is a fast visualization tool for examining multiple data sets
+in parallel plots.  It supports easy zoom-in and zoom-out capabilities,
+and synchronized views into multiple data sets (with the -x, -y,
+and -tile options).
+
+xplot is used for examining .xpl files output by tcptrace.
