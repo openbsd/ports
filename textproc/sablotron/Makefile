@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/09/12 12:12:11 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2000/09/14 14:04:19 avsm Exp $
 
-DISTNAME=		Sablot-0.43
-PKGNAME=		sablotron-0.43
+DISTNAME=		Sablot-0.44
+PKGNAME=		sablotron-0.44
 CATEGORIES=     	textproc
-NEED_VERSION=		1.328
+NEED_VERSION=		1.330
 
 HOMEPAGE=		http://www.gingerall.com/
 MAINTAINER=		avsm@openbsd.org
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.gingerall.com/download/
-DISTFILES=		Sablot-0.43.tar.gz Sablot-Expat-1.1.2.tar.gz
+MASTER_SITES=		http://download.gingerall.cz/sablot/
+DISTFILES=		Sablot-0.44${EXTRACT_SUFX} Sablot-Expat-1.1.2${EXTRACT_SUFX}
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
