@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2001/03/23 15:56:04 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2001/04/14 11:36:19 naddy Exp $
+
+COMMENT=	"faster and improved version of dd"
 
 DISTNAME=	sdd-1.22
 CATEGORIES=	sysutils
@@ -6,6 +8,7 @@ NEED_VERSION=	1.336
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

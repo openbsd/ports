@@ -1,20 +1,32 @@
-# $OpenBSD: Makefile,v 1.3 2000/09/23 12:38:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/14 11:36:18 naddy Exp $
+
+COMMENT=	"network file distribution system, optimized for CVS"
+ONLY_FOR_ARCHS=	sparc
 
 VER=		16.0
 DISTNAME=	cvsup-bin-${VER}
 CATEGORIES=    	net devel
-NEED_VERSION=	1.319
-
+NEED_VERSION=	1.363
 HOMEPAGE=	http://www.polstra.com/projects/freeware/CVSup/
-
-ONLY_FOR_ARCHS=	sparc
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/binaries/ \
+		ftp://ftp.cs.tu-berlin.de/pub/FreeBSD/development/CVSup/binaries
+MASTER_SITES0=	ftp://sites.inka.de/W3775/unix/distfiles/
+
+DISTFILES=	cvsup${GUI}-sunos4-${VER}.tar.gz \
+		cvsup-examples-1.0.tar.gz:0
+
+SUPDISTFILES=	cvsup-sunos4-${VER}.tar.gz \
+		cvsup.nogui-sunos4-${VER}.tar.gz \
+		cvsup-examples-1.0.tar.gz:0
 
 FLAVORS=	no_x11
 FLAVOR?=
@@ -23,18 +35,6 @@ GUI=.nogui
 .else
 GUI=
 .endif
-
-MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/binaries/ \
-		ftp://ftp.cs.tu-berlin.de/pub/FreeBSD/development/CVSup/binaries
-MASTER_SITES0=	ftp://sites.inka.de/W3775/unix/distfiles/ \
-		http://www.unix-ag.uni-kl.de/~naddy/distfiles/
-
-DISTFILES=	cvsup${GUI}-sunos4-${VER}.tar.gz \
-		cvsup-examples-1.0.tar.gz:0
-
-SUPDISTFILES=	cvsup-sunos4-${VER}.tar.gz \
-		cvsup.nogui-sunos4-${VER}.tar.gz \
-		cvsup-examples-1.0.tar.gz:0
 
 WRKSRC=		${WRKDIR}/cvsup${GUI}-bin-${VER}
 INSTALL_STRIP=
