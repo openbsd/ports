@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/08/28 01:34:37 drahn Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/22 23:24:06 fgsch Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64
 
@@ -31,11 +31,6 @@ FLAVORS=	altivec
 FLAVOR?=
 
 CONFIGURE_ARGS=--disable-oss --disable-sunaudio --enable-obsdaudio
-
-.if ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+=	::devel/binutils/stable
-MAKE_ENV=GAS_DIR=${TRUEPREFIX}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin
-.endif
 
 .if ${FLAVOR:L} == "altivec"
 ONLY_FOR_ARCHS=	powerpc

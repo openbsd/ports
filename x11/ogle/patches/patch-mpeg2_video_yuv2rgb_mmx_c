@@ -1,6 +1,6 @@
-$OpenBSD: patch-mpeg2_video_yuv2rgb_mmx_c,v 1.1.1.1 2001/10/14 15:35:04 espie Exp $
---- mpeg2_video/yuv2rgb_mmx.c.orig	Sat Oct 13 14:57:08 2001
-+++ mpeg2_video/yuv2rgb_mmx.c	Sat Oct 13 14:58:00 2001
+$OpenBSD: patch-mpeg2_video_yuv2rgb_mmx_c,v 1.2 2002/10/22 23:24:06 fgsch Exp $
+--- mpeg2_video/yuv2rgb_mmx.c.orig	Fri Nov 23 22:23:58 2001
++++ mpeg2_video/yuv2rgb_mmx.c	Mon Jul 22 22:34:55 2002
 @@ -73,23 +73,23 @@ void  YUV2RGB420_MMX_16(uint8_t *out,
           "movd           (%0),                   %%mm1\n" // 4 Cr                0  0  0  0 v3 v2 v1 v0
           "punpcklbw      %%mm7,                  %%mm0\n" // 4 W cb   0 u3  0 u2  0 u1  0 u0
@@ -49,7 +49,13 @@ $OpenBSD: patch-mpeg2_video_yuv2rgb_mmx_c,v 1.1.1.1 2001/10/14 15:35:04 espie Ex
           "por            %%mm5,                  %%mm4\n" //
           "psrlw          $11,                    %%mm6\n"                // BLUE        1
           "movq           %%mm3,                  %%mm5\n" // lum2
-@@ -125,17 +125,17 @@ void  YUV2RGB420_MMX_16(uint8_t *out,
+@@ -120,22 +120,22 @@ void  YUV2RGB420_MMX_16(uint8_t *out,
+          "psraw          $6,                     %%mm3\n" // R2
+          "por            %%mm6,                  %%mm4\n" // MM4
+          "psraw          $6,                     %%mm5\n" // G2
+-         "movq           (%2, %3),               %%mm6\n"  // L3
++         "movq           (%2,%3),                %%mm6\n"  // L3
+          "psraw          $6,                     %%mm7\n"
           "packuswb       %%mm3,                  %%mm3\n"
           "packuswb       %%mm5,                  %%mm5\n"
           "packuswb       %%mm7,                  %%mm7\n"
