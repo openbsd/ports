@@ -1,105 +1,81 @@
-*** scripts/makefile.std	Sat Mar  7 15:12:04 1998
---- Makefile	Tue Mar 10 02:46:31 1998
-***************
-*** 5,33 ****
-  # Where the zlib library and include files are located
-  #ZLIBLIB=/usr/local/lib
-  #ZLIBINC=/usr/local/include
-! ZLIBLIB=../zlib
-! ZLIBINC=../zlib
-  
-! CC=cc
-! CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=1
-! LDFLAGS=-L. -L$(ZLIBLIB) -lpng -lz -lm
-  
-  #RANLIB=echo
-  RANLIB=ranlib
-  
-  # where make install puts libpng.a and png.h
-! prefix=/usr/local
-  
-  OBJS = png.o pngset.o pngget.o pngrutil.o pngtrans.o pngwutil.o \
-  	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
-  	pngwtran.o pngmem.o pngerror.o pngpread.o
-  
-! all: libpng.a pngtest
-  
-  libpng.a: $(OBJS)
-  	ar rc $@  $(OBJS)
-  	$(RANLIB) $@
-  
-  pngtest: pngtest.o libpng.a
-  	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
-  
---- 5,48 ----
-  # Where the zlib library and include files are located
-  #ZLIBLIB=/usr/local/lib
-  #ZLIBINC=/usr/local/include
-! #ZLIBLIB=../zlib
-! #ZLIBINC=../zlib
-  
-! VER=1.0
-! #CC=cc
-! #CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=1
-! LDFLAGS=-L. -lpng -lz -lm -static
-  
-  #RANLIB=echo
-  RANLIB=ranlib
-  
-  # where make install puts libpng.a and png.h
-! prefix=${PREFIX}
-  
-  OBJS = png.o pngset.o pngget.o pngrutil.o pngtrans.o pngwutil.o \
-  	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
-  	pngwtran.o pngmem.o pngerror.o pngpread.o
-  
-! .SUFFIXES: .c .so .o
-! 
-! .c.so:
-! 	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
-! 
-! .if (${MACHINE_ARCH} != "alpha")
-! all: libpng.a libpng.so.${VER}
-! .else
-! all: libpng.a
-! .endif
-  
-  libpng.a: $(OBJS)
-  	ar rc $@  $(OBJS)
-  	$(RANLIB) $@
-  
-+ .if (${MACHINE_ARCH} != "alpha")
-+ libpng.so.${VER}: $(OBJS:S/o$/so/g)
-+ 	ld -Bshareable -x -assert pure-text -o $@ $(OBJS:S/o$/so/g) -lz
-+ .endif
-+ 
-  pngtest: pngtest.o libpng.a
-  	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
-  
-***************
-*** 37,48 ****
-  install: libpng.a
-  	-@mkdir $(prefix)/include
-  	-@mkdir $(prefix)/lib
-! 	cp png.h $(prefix)/include
-! 	cp pngconf.h $(prefix)/include
-! 	chmod 644 $(prefix)/include/png.h
-! 	chmod 644 $(prefix)/include/pngconf.h
-! 	cp libpng.a $(prefix)/lib
-! 	chmod 644 $(prefix)/lib/libpng.a
-  
-  clean:
-  	rm -f *.o libpng.a pngtest pngout.png
---- 52,63 ----
-  install: libpng.a
-  	-@mkdir $(prefix)/include
-  	-@mkdir $(prefix)/lib
-! 	${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP} png.h pngconf.h $(prefix)/include
-! 	${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP} libpng.a $(prefix)/lib
-! 	ranlib $(prefix)/lib/libpng.a
-! .if(${MACHINE_ARCH} != "alpha")
-! 	${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP} libpng.so.${VER} $(prefix)/lib
-! .endif
-  
-  clean:
-  	rm -f *.o libpng.a pngtest pngout.png
+--- Makefile.~1~	Fri Mar 20 20:19:03 1998
++++ Makefile	Fri Mar 20 20:23:32 1998
+@@ -3,31 +3,46 @@
+ # For conditions of distribution and use, see copyright notice in png.h
+ 
+ # Where the zlib library and include files are located
+-#ZLIBLIB=/usr/local/lib
+-#ZLIBINC=/usr/local/include
+-ZLIBLIB=../zlib
+-ZLIBINC=../zlib
+-
+-CC=cc
+-CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=1
+-LDFLAGS=-L. -L$(ZLIBLIB) -lpng -lz -lm
++ZLIBLIB=/usr/local/lib
++ZLIBINC=/usr/local/include
++#ZLIBLIB=../zlib
++#ZLIBINC=../zlib
++
++VER=1.1
++#CC=cc
++#CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=1
++LDFLAGS=-L. -lpng -lz -lm -static
+ 
+ #RANLIB=echo
+ RANLIB=ranlib
+ 
+ # where make install puts libpng.a and png.h
+-prefix=/usr/local
++prefix=${PREFIX}
+ 
+ OBJS = png.o pngset.o pngget.o pngrutil.o pngtrans.o pngwutil.o \
+ 	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
+ 	pngwtran.o pngmem.o pngerror.o pngpread.o
+ 
+-all: libpng.a pngtest
++.SUFFIXES: .c .so .o
++
++.c.so:
++	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
++
++.if (${MACHINE_ARCH} != "alpha")
++all: libpng.a libpng.so.${VER}
++.else
++all: libpng.a
++.endif
+ 
+ libpng.a: $(OBJS)
+ 	ar rc $@  $(OBJS)
+ 	$(RANLIB) $@
+ 
++.if (${MACHINE_ARCH} != "alpha")
++libpng.so.${VER}: $(OBJS:S/o$/so/g)
++	ld -Bshareable -x -assert pure-text -o $@ $(OBJS:S/o$/so/g) -lz
++.endif
++
+ pngtest: pngtest.o libpng.a
+ 	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
+ 
+@@ -37,12 +52,15 @@
+ install: libpng.a
+ 	-@mkdir $(prefix)/include
+ 	-@mkdir $(prefix)/lib
+-	cp png.h $(prefix)/include
+-	cp pngconf.h $(prefix)/include
+-	chmod 644 $(prefix)/include/png.h
+-	chmod 644 $(prefix)/include/pngconf.h
+-	cp libpng.a $(prefix)/lib
+-	chmod 644 $(prefix)/lib/libpng.a
++	${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP} png.h pngconf.h \
++		$(prefix)/include
++	${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP} libpng.a \
++		$(prefix)/lib
++	ranlib $(prefix)/lib/libpng.a
++.if(${MACHINE_ARCH} != "alpha")
++	${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP} libpng.so.${VER} \
++		$(prefix)/lib
++.endif
+ 
+ clean:
+ 	rm -f *.o libpng.a pngtest pngout.png
