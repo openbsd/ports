@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/01/18 09:32:02 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/01/18 12:44:08 brad Exp $
 bin/dig
 bin/host
 bin/isc-config.sh
@@ -176,6 +176,7 @@ lib/liblwres.a
 lib/liblwres.la
 lib/libomapi.a
 lib/libomapi.la
+%%SHARED%%
 man/man1/dig.1
 man/man1/host.1
 man/man1/named-checkconf.1
@@ -304,7 +305,6 @@ share/examples/bind9/named.conf
 share/examples/bind9/named.localhost
 share/examples/bind9/named.loopback
 share/examples/bind9/named.root
-%%SHARED%%
 @dirrm share/examples/bind9
 @dirrm share/doc/bind9/misc
 @dirrm share/doc/bind9/arm
