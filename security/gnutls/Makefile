@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/05/08 06:43:40 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/21 22:04:37 naddy Exp $
 
 COMMENT=		"GNU Transport Layer Security library"
 
@@ -26,7 +26,8 @@ LIB_DEPENDS=	gcrypt.12::security/libgcrypt \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-included-libtasn1 \
-			--with-included-libcfg
+			--with-included-libcfg \
+			--with-included-lzo
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
