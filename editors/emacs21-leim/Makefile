@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/28 00:19:40 mark Exp $
+# $OpenBSD: Makefile,v 1.3 2002/04/28 00:33:38 pvalchev Exp $
 
 COMMENT=	"Library of Emacs Input Method"
 
-VERSION=	21.1
+VERSION=	21.2
 PKGNAME=	emacs-leim-${VERSION}
 DISTNAME=	leim-${VERSION}
 CATEGORIES=	editors
-NEED_VERSION=	1.507
+NEED_VERSION=	1.525
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= emacs
 
-MAINTAINER=	 Yozo TODA <yozo@v007.vaio.ne.jp>
+MAINTAINER=	Yozo TODA <yozo@v007.vaio.ne.jp>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
