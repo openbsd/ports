@@ -1,10 +1,5 @@
-lib/ethereal/plugins/0.8.19/libgryphon.so.0.0
-lib/ethereal/plugins/0.8.19/gryphon.la
-lib/ethereal/plugins/0.8.19/libgryphon.a
-lib/ethereal/plugins/0.8.19/libmgcp.so.0.0
-lib/ethereal/plugins/0.8.19/mgcp.la
-lib/ethereal/plugins/0.8.19/libmgcp.a
-@exec ln -s libgryphon.so.0.0 %D/lib/ethereal/plugins/0.8.19/libgryphon.so
-@exec ln -s libmgcp.so.0.0    %D/lib/ethereal/plugins/0.8.19/libmgcp.so
-@unexec rm %D/lib/ethereal/plugins/0.8.19/libgryphon.so
-@unexec rm %D/lib/ethereal/plugins/0.8.19/libmgcp.so
+@comment $OpenBSD: PFRAG.shared,v 1.12 2001/10/07 18:49:28 jakob Exp $
+lib/ethereal/plugins/0.8.19/gryphon.so
+lib/ethereal/plugins/0.8.19/gryphon.a
+lib/ethereal/plugins/0.8.19/mgcp.so
+lib/ethereal/plugins/0.8.19/mgcp.a

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2001/08/23 07:44:08 wilfried Exp $
+# $OpenBSD: Makefile,v 1.51 2001/10/07 18:49:28 jakob Exp $
 
 COMMENT=	network protocol analyzer
 
@@ -46,6 +46,9 @@ LIB_DEPENDS+=		snmp::net/ucd-snmp
 CONFIGURE_ARGS+=	--disable-snmp
 .endif
 CONFIGURE_ENV+=		CONFIG_SHELL='$(WRKBUILD)/sh'
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+		patch-*
 
 pre-configure:
 	# Let zsh act as an sh replacement
