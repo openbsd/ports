@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.8 2003/04/18 00:28:40 naddy Exp $
+$OpenBSD: patch-configure,v 1.9 2005/02/19 21:48:47 alek Exp $
 --- configure.orig	Sat Jan 25 19:41:21 2003
-+++ configure	Fri Apr 18 01:41:28 2003
++++ configure	Sat Feb 19 22:35:25 2005
 @@ -7920,7 +7920,7 @@ else
  fi
  
@@ -37,3 +37,12 @@ $OpenBSD: patch-configure,v 1.8 2003/04/18 00:28:40 naddy Exp $
  	if test x$GCC = xyes; then
  		OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -fomit-frame-pointer -funroll-loops -finline-functions -Wall -W -Winline -DFLaC__INLINE=__inline__"
  	fi
+@@ -12134,7 +12138,7 @@ s,@XMMS_GENERAL_PLUGIN_DIR@,$XMMS_GENERA
+ s,@XMMS_EFFECT_PLUGIN_DIR@,$XMMS_EFFECT_PLUGIN_DIR,;t t
+ s,@FLaC__HAS_XMMS_TRUE@,$FLaC__HAS_XMMS_TRUE,;t t
+ s,@FLaC__HAS_XMMS_FALSE@,$FLaC__HAS_XMMS_FALSE,;t t
+-s,@LIBICONV@,$LIBICONV,;t t
++s,@LIBICONV@,$LTLIBICONV,;t t
+ s,@LTLIBICONV@,$LTLIBICONV,;t t
+ s,@ID3LIB_CFLAGS@,$ID3LIB_CFLAGS,;t t
+ s,@ID3LIB_LIBS@,$ID3LIB_LIBS,;t t

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2004/11/21 17:51:44 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2005/02/19 21:48:47 alek Exp $
 
 COMMENT=	"free lossless audio codec"
 
 DISTNAME=	flac-1.1.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio archivers
 HOMEPAGE=	http://flac.sourceforge.net/
 
