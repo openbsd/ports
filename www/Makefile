@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2001/06/12 07:38:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.55 2001/06/17 12:35:11 reinhard Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -22,6 +22,8 @@
 #    SUBDIR += http-analyze
      SUBDIR += http_load
      SUBDIR += hotjava
+     SUBDIR += jakarta-tomcat
+     SUBDIR += jserv
      SUBDIR += junkbuster
      SUBDIR += libghttp
 #    SUBDIR += libpics
