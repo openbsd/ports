@@ -1,10 +1,4 @@
-# OpenBSD makefile for:	transfig
-# Version required:	3.2
-# Date created:		December 2, 1997
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.4 1998/07/04 04:41:22 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/04/08 23:04:55 brad Exp $
 
 DISTNAME=	transfig.3.2.1
 PKGNAME=	transfig-3.2.1
@@ -14,12 +8,7 @@ MASTER_SITE_SUBDIR=	applications/drawing_tools/transfig
 
 MAINTAINER=	angelos@openbsd.org
 
-LIB_DEPENDS=	jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg
-OS_RELEASE!=	uname -r
-OS_HAS_XPM=	2.3
-.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
-LIB_DEPENDS+=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-.endif
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
 
