@@ -1,6 +1,16 @@
-$OpenBSD: patch-Imakefile,v 1.1 2002/02/21 00:32:07 naddy Exp $
---- Imakefile.orig	Sat Sep 28 19:46:02 1991
-+++ Imakefile	Thu Feb 21 00:50:49 2002
+$OpenBSD: patch-Imakefile,v 1.2 2003/12/31 04:14:04 espie Exp $
+--- Imakefile.orig	1991-09-28 19:46:02.000000000 +0200
++++ Imakefile	2003-12-31 05:09:17.000000000 +0100
+@@ -1,6 +1,6 @@
+-/**/# Run imake -DUseInstalled -I/usr/lib/X11/config to make a Makefile.
+-/**/# This is an R5 style Imakefile, so will need the R5 config files to
+-/**/# to make a Makefile.  It also assume that X11 is installed in /usr/lib.
++XCOMM Run imake -DUseInstalled -I/usr/lib/X11/config to make a Makefile.
++XCOMM This is an R5 style Imakefile, so will need the R5 config files to
++XCOMM to make a Makefile.  It also assume that X11 is installed in /usr/lib.
+ 
+         SHAR = shar
+         COMPRESS = compress
 @@ -8,7 +8,7 @@
          SPLIT = split
          CAT = cat
@@ -19,6 +29,17 @@ $OpenBSD: patch-Imakefile,v 1.1 2002/02/21 00:32:07 naddy Exp $
  #endif
  
  #if OverrideDefs
+@@ -94,8 +94,8 @@
+ #endif
+ 
+ #if CompileXView
+-/**/# If these are not defined in the site.def file, define them now.
+-/**/# set up compile time dependencies for XView clients.
++XCOMM If these are not defined in the site.def file, define them now.
++XCOMM set up compile time dependencies for XView clients.
+         XVTOP = $(XVIEWHOME)
+         XVLIBSRC = $(XVTOP)/lib
+ # if UseInstalled
 @@ -235,7 +235,7 @@ DEFINES = $(TKDEFINES) -DHELPDIR="\"$(HE
  # endif
  #endif
