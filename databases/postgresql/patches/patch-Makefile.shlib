@@ -1,20 +1,19 @@
---- Makefile.shlib.orig	Wed May 17 00:48:48 2000
-+++ Makefile.shlib	Fri Nov 24 17:08:53 2000
-@@ -127,6 +127,20 @@
+--- Makefile.shlib.orig	Tue May 16 16:48:48 2000
++++ Makefile.shlib	Mon Mar  5 16:17:33 2001
+@@ -127,6 +127,19 @@
    endif
  endif
  
 +ifeq ($(PORTNAME), openbsd)
 +  ifdef BSD_SHLIB
 +    install-shlib-dep	:= install-shlib
-+    soname		:= lib$(NAME)$(DLSUFFIX).$(SO_MAJOR_VERSION)
 +    shlib		:= lib$(NAME)$(DLSUFFIX).$(SO_MAJOR_VERSION).$(SO_MINOR_VERSION)
-+    ifdef ELF_SYSTEM
-+      LDFLAGS_SL	:= -x -shared --whole-archive -soname $(soname)
-+    else
-+      LDFLAGS_SL	:= -x -Bshareable -Bforcearchive
++    LD		:= $(CC)
++    LDFLAGS_SL	:= -shared -fpic
++    ifneq ($(SHLIB_LINK),)
++      LDFLAGS_SL	+= -Wl,-rpath,$(LIBDIR)
 +    endif
-+    CFLAGS		+= $(CFLAGS_SL)
++    CFLAGS	+= $(CFLAGS_SL)
 +  endif
 +endif
 +

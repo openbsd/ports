@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared-clients,v 1.1 2001/02/22 19:30:57 danh Exp $
-lib/pgsql/libecpg.so.3.1.1
+@comment $OpenBSD: PFRAG.shared-clients,v 1.2 2001/03/13 22:05:47 brad Exp $
+lib/pgsql/libecpg.so.3.1
 lib/pgsql/libpgeasy.so.2.1
 lib/pgsql/libpq++.so.3.1
 lib/pgsql/libpq.so.2.1

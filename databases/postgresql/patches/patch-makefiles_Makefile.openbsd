@@ -1,19 +1,8 @@
---- makefiles/Makefile.openbsd.orig	Fri Nov 24 17:14:21 2000
-+++ makefiles/Makefile.openbsd	Fri Nov 24 17:14:08 2000
-@@ -0,0 +1,16 @@
+--- makefiles/Makefile.openbsd.orig	Sat Mar 10 11:51:25 2001
++++ makefiles/Makefile.openbsd	Sat Mar 10 11:52:28 2001
+@@ -0,0 +1,5 @@
 +ifdef ELF_SYSTEM
 +LDFLAGS += -Wl,-E
 +endif
 +%.so: %.o
-+ifdef ELF_SYSTEM
-+	$(LD) -x -Bshareable -o $@ $<
-+else
-+	$(LD) $(LDREL) $(LDOUT) $<.obj -x $<
-+	@echo building shared object $@
-+	@rm -f $@.pic
-+	@${AR} cq $@.pic `lorder $<.obj | tsort`
-+	${RANLIB} $@.pic
-+	@rm -f $@
-+	$(LD) -x -Bshareable -Bforcearchive \
-+	  -o $@ $@.pic
-+endif
++	$(LD) -shared -fpic -o $@ $<

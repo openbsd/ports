@@ -1,0 +1,11 @@
+--- interfaces/ecpg/lib/Makefile.in.orig	Sat Mar  3 01:29:21 2001
++++ interfaces/ecpg/lib/Makefile.in	Sat Mar  3 01:29:35 2001
+@@ -12,7 +12,7 @@
+ 
+ NAME= ecpg
+ SO_MAJOR_VERSION= 3
+-SO_MINOR_VERSION= 1.1
++SO_MINOR_VERSION= 1
+ 
+ SRCDIR= @top_srcdir@
+ include $(SRCDIR)/Makefile.global
