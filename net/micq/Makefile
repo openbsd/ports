@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 1999/09/15 13:03:35 form Exp $
+# $OpenBSD: Makefile,v 1.5 1999/12/05 13:01:34 form Exp $
 # $FreeBSD: Makefile,v 1.6 1999/06/03 08:31:06 ache Exp $
 
-DISTNAME=       micq-0.4.2
+DISTNAME=       micq-0.4.3
 CATEGORIES=	net
-MASTER_SITES=   ftp://micq.chatzone.org/pub/micq/V0.4.2/
+MASTER_SITES=   ftp://micq.chatzone.org/pub/micq/V0.4.3/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	form@openbsd.org
