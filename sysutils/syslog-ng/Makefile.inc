@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2003/01/04 20:04:09 pvalchev Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2004/05/28 21:21:42 naddy Exp $
 
 COMMENT=	syslogd replacement
 
@@ -25,7 +25,8 @@ DOC=		${PREFIX}/share/doc/syslog-ng
 EXAMPLES=	${PREFIX}/share/examples/syslog-ng
 
 pre-configure:
-	cp -f ${PORTSDIR}/infrastructure/db/config.guess ${WRKDIR}/${LIBOL}
+	cp -f ${PORTSDIR}/infrastructure/db/config.guess \
+	      ${PORTSDIR}/infrastructure/db/config.sub ${WRKDIR}/${LIBOL}
 	cd ${WRKDIR}/${LIBOL}; ./configure ; ${MAKE}
 
 post-install:
