@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/20 18:57:28 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/08 16:29:46 lebel Exp $
 
 COMMENT=		"OpenGL Extrusion library"
 
@@ -19,6 +19,10 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.linas.org/gle/pub/
+
+PATCH_LIST=    	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
+	        ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
+                patch-*
 
 USE_X11=		Yes
 SEPARATE_BUILD= 	concurrent
