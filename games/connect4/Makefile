@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/06/20 01:43:18 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2001/06/27 20:56:25 pvalchev Exp $
 
 COMMENT=	"curses version of the classic game"
 
@@ -14,10 +14,10 @@ EXTRACT_CASES=	connect4) gunshar ${FULLDISTDIR}/$$archive ;;
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 # License: NONE
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	"no license"
+PERMIT_PACKAGE_FTP=	"no license"
+PERMIT_DISTFILES_CDROM=	"no license"
+PERMIT_DISTFILES_FTP=	"no license"
 
 
 BUILD_DEPENDS=	gunshar::archivers/gshar+gunshar

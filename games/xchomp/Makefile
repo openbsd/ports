@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/06/20 01:43:19 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/27 20:56:25 pvalchev Exp $
 
 COMMENT=	"Pac-man-like game under X11"
 
@@ -10,10 +10,10 @@ MASTER_SITES=	${MASTER_SITE_BACKUP}
 MAINTAINER=	ports@openbsd.org
 
 # License: NONE
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	"no license"
+PERMIT_PACKAGE_FTP=	"no license"
+PERMIT_DISTFILES_CDROM=	"no license"
+PERMIT_DISTFILES_FTP=	"no license"
 
 WRKDIST=	${WRKDIR}/xchomp
 CONFIGURE_STYLE=imake noman

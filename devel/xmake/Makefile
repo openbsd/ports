@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/06/20 01:43:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/27 20:56:25 pvalchev Exp $
 
 COMMENT=	"powerful make utility"
 
@@ -9,10 +9,10 @@ NEED_VERSION=	1.402
 MAINTAINER=	ports@openbsd.org
 
 # License: NONE
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	"no license"
+PERMIT_PACKAGE_FTP=	"no license"
+PERMIT_DISTFILES_CDROM=	"no license"
+PERMIT_DISTFILES_FTP=	"no license"
 
 MASTER_SITES=	http://www.backplane.com/xmake/ \
 		ftp://atari.saturn5.com/pub/dlowe/
