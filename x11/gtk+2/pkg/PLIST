@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/06/22 03:15:03 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/06/22 18:02:04 marcm Exp $
 bin/gdk-pixbuf-csource
 bin/gdk-pixbuf-query-loaders
 bin/gtk-demo
@@ -283,9 +283,6 @@ share/gtk-2.0/demo/stock_browser.c
 share/gtk-2.0/demo/textview.c
 share/gtk-2.0/demo/tree_store.c
 share/gtk-2.0/demo/ui_manager.c
-share/gtk-doc/html/gdk-pixbuf/style.css
-share/gtk-doc/html/gdk/style.css
-share/gtk-doc/html/gtk/style.css
 share/locale/af/LC_MESSAGES/gtk20-properties.mo
 share/locale/af/LC_MESSAGES/gtk20.mo
 share/locale/am/LC_MESSAGES/gtk20-properties.mo
