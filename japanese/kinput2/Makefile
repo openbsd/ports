@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAINTAINER=	sigh@kuzirabekon.econ.nagasaki-u.ac.jp
+MAINTAINER=	SUZUKI Hitoshi <sigh@kuzirabekon.econ.nagasaki-u.ac.jp>
 
 CONFIGURE_STYLE=imake
 FLAVORS=	canna wnn
