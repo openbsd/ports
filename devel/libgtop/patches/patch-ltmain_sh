@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.1 2001/11/27 23:07:02 todd Exp $
+$OpenBSD: patch-ltmain_sh,v 1.2 2004/08/09 15:00:56 espie Exp $
 --- ltmain.sh.orig	Mon Nov 26 23:49:54 2001
-+++ ltmain.sh	Tue Nov 27 21:33:19 2001
-@@ -1031,6 +1031,17 @@ compiler."
++++ ltmain.sh	Mon Aug  9 16:47:10 2004
+@@ -1031,7 +1031,18 @@ compiler."
  	    # These systems don't actually have a C library (as such)
  	    test "X$arg" = "X-lc" && continue
  	    ;;
@@ -9,16 +9,17 @@ $OpenBSD: patch-ltmain_sh,v 1.1 2001/11/27 23:07:02 todd Exp $
 +	    # Do not include libc due to us having libc/libc_r.
 +	    test "X$arg" = "X-lc" && continue
 +	    ;;
-+	  esac
+ 	  esac
 +	elif test "$arg" = "-lc_r"; then
 +	  case "$host" in
 +	  *-*-openbsd*)
 +	    # Do not include libc_r directly, use -pthread flag.
 +	    continue
 +	    ;;
- 	  esac
++	  esac
  	fi
  	deplibs="$deplibs $arg"
+ 	continue
 @@ -2408,6 +2419,9 @@ compiler."
  	  *-*-netbsd*)
  	    # Don't link with libc until the a.out ld.so is fixed.

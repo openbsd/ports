@@ -1,8 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/16 17:34:06 naddy Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/libgtop.info
+@comment $OpenBSD: PLIST,v 1.5 2004/08/09 15:00:56 espie Exp $
 bin/libgtop-config
 bin/libgtop_daemon
+@mode 2755
+@owner root
+@group kmem
 bin/libgtop_server
+@mode
+@owner
+@group
+include/libgtop-1.0/
+include/libgtop-1.0/glibtop/
 include/libgtop-1.0/glibtop.h
 include/libgtop-1.0/glibtop/close.h
 include/libgtop-1.0/glibtop/command.h
@@ -47,7 +54,7 @@ include/libgtop-1.0/glibtop/xmalloc.h
 include/libgtop-1.0/glibtop_machine.h
 include/libgtop-1.0/glibtop_server.h
 include/libgtop-1.0/glibtop_suid.h
-info/libgtop.info
+@info info/libgtop.info
 lib/libgtop-features.def
 lib/libgtop.a
 lib/libgtop.la
@@ -62,21 +69,41 @@ lib/libgtop_sysdeps.a
 lib/libgtop_sysdeps.la
 lib/libgtop_sysdeps_suid.a
 lib/libgtop_sysdeps_suid.la
+share/locale/az/
+share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/libgtop.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/libgtop.mo
 share/locale/da/LC_MESSAGES/libgtop.mo
 share/locale/de/LC_MESSAGES/libgtop.mo
 share/locale/el/LC_MESSAGES/libgtop.mo
 share/locale/es/LC_MESSAGES/libgtop.mo
+share/locale/es_DO/
+share/locale/es_DO/LC_MESSAGES/
 share/locale/es_DO/LC_MESSAGES/libgtop.mo
+share/locale/es_GT/
+share/locale/es_GT/LC_MESSAGES/
 share/locale/es_GT/LC_MESSAGES/libgtop.mo
+share/locale/es_HN/
+share/locale/es_HN/LC_MESSAGES/
 share/locale/es_HN/LC_MESSAGES/libgtop.mo
+share/locale/es_MX/
+share/locale/es_MX/LC_MESSAGES/
 share/locale/es_MX/LC_MESSAGES/libgtop.mo
+share/locale/es_PA/
+share/locale/es_PA/LC_MESSAGES/
 share/locale/es_PA/LC_MESSAGES/libgtop.mo
+share/locale/es_PE/
+share/locale/es_PE/LC_MESSAGES/
 share/locale/es_PE/LC_MESSAGES/libgtop.mo
+share/locale/es_SV/
+share/locale/es_SV/LC_MESSAGES/
 share/locale/es_SV/LC_MESSAGES/libgtop.mo
 share/locale/fi/LC_MESSAGES/libgtop.mo
 share/locale/fr/LC_MESSAGES/libgtop.mo
+share/locale/ga/
+share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/libgtop.mo
 share/locale/gl/LC_MESSAGES/libgtop.mo
 share/locale/hu/LC_MESSAGES/libgtop.mo
@@ -93,77 +120,10 @@ share/locale/sl/LC_MESSAGES/libgtop.mo
 share/locale/sv/LC_MESSAGES/libgtop.mo
 share/locale/tr/LC_MESSAGES/libgtop.mo
 share/locale/uk/LC_MESSAGES/libgtop.mo
+share/locale/zh_CN.GB2312/
+share/locale/zh_CN.GB2312/LC_MESSAGES/
 share/locale/zh_CN.GB2312/LC_MESSAGES/libgtop.mo
 share/locale/zh_TW/LC_MESSAGES/libgtop.mo
 !%%gnome%%
 %%guile%%
 %%SHARED%%
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
-@dirrm share/locale/zh_CN.GB2312
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/gl/LC_MESSAGES
-@dirrm share/locale/gl
-@dirrm share/locale/ga/LC_MESSAGES
-@dirrm share/locale/ga
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/es_SV/LC_MESSAGES
-@dirrm share/locale/es_SV
-@dirrm share/locale/es_PE/LC_MESSAGES
-@dirrm share/locale/es_PE
-@dirrm share/locale/es_PA/LC_MESSAGES
-@dirrm share/locale/es_PA
-@dirrm share/locale/es_MX/LC_MESSAGES
-@dirrm share/locale/es_MX
-@dirrm share/locale/es_HN/LC_MESSAGES
-@dirrm share/locale/es_HN
-@dirrm share/locale/es_GT/LC_MESSAGES
-@dirrm share/locale/es_GT
-@dirrm share/locale/es_DO/LC_MESSAGES
-@dirrm share/locale/es_DO
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale/az/LC_MESSAGES
-@dirrm share/locale/az
-@dirrm share/locale
-@dirrm include/libgtop-1.0/glibtop
-@dirrm include/libgtop-1.0
