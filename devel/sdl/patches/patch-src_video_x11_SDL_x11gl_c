@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_video_x11_SDL_x11gl_c,v 1.1 2001/05/09 22:28:25 pvalchev Exp $
+--- src/video/x11/SDL_x11gl.c.orig	Fri Apr 20 23:43:30 2001
++++ src/video/x11/SDL_x11gl.c	Fri Apr 20 23:43:31 2001
+@@ -343,6 +343,9 @@ int X11_GL_LoadLibrary(_THIS, const char
+ #endif
+ 	handle = dlopen(path, dlopen_flags);
+ 	/* Catch the case where the application isn't linked with GL */
++#if defined __OpenBSD__ && !defined __ELF__
++#define dlsym(x,y) dlsym(x, "_" y)
++#endif
+ 	if ( (dlsym(handle, "glXChooseVisual") == NULL) && (path == NULL) ) {
+ 		dlclose(handle);
+ 		path = getenv("SDL_VIDEO_GL_DRIVER");
