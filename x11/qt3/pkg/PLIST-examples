@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.3 2002/10/26 11:45:52 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.4 2002/11/23 18:52:22 espie Exp $
 lib/qt3/examples/Makefile
 lib/qt3/examples/README
 lib/qt3/examples/aclock/Makefile
@@ -160,7 +160,6 @@ lib/qt3/examples/demo/dnd/dnd.h
 lib/qt3/examples/demo/dnd/dndbase.ui
 lib/qt3/examples/demo/dnd/iconview.cpp
 lib/qt3/examples/demo/dnd/iconview.h
-lib/qt3/examples/demo/dnd/images.h
 lib/qt3/examples/demo/dnd/listview.cpp
 lib/qt3/examples/demo/dnd/listview.h
 lib/qt3/examples/demo/dnd/styledbutton.cpp
@@ -202,6 +201,7 @@ lib/qt3/examples/demo/opengl/glworkspace.cpp
 lib/qt3/examples/demo/opengl/glworkspace.h
 lib/qt3/examples/demo/opengl/nurbs.xpm
 lib/qt3/examples/demo/opengl/printpreview.ui
+lib/qt3/examples/demo/opengl/printpreview.ui.h
 lib/qt3/examples/demo/opengl/qtlogo.bmp
 lib/qt3/examples/demo/opengl/snapshot.xpm
 lib/qt3/examples/demo/opengl/texture.xpm
@@ -386,38 +386,40 @@ lib/qt3/examples/demo/qasteroids/view.cpp
 lib/qt3/examples/demo/qasteroids/view.h
 lib/qt3/examples/demo/qthumbwheel.cpp
 lib/qt3/examples/demo/qthumbwheel.h
-lib/qt3/examples/demo/sql/book.ui
-lib/qt3/examples/demo/sql/book.ui.h
+lib/qt3/examples/demo/sql/book.sql
 lib/qt3/examples/demo/sql/connect.ui
 lib/qt3/examples/demo/sql/connect.ui.h
-lib/qt3/examples/demo/sql/editbook.ui
 lib/qt3/examples/demo/sql/sqlex.ui
 lib/qt3/examples/demo/sql/sqlex.ui.h
-lib/qt3/examples/demo/textdrawing/back.xpm
 lib/qt3/examples/demo/textdrawing/bidi.txt
-lib/qt3/examples/demo/textdrawing/editcopy.xpm
-lib/qt3/examples/demo/textdrawing/editcut.xpm
-lib/qt3/examples/demo/textdrawing/editpaste.xpm
-lib/qt3/examples/demo/textdrawing/editredo.xpm
-lib/qt3/examples/demo/textdrawing/editundo.xpm
+lib/qt3/examples/demo/textdrawing/editcopy.png
+lib/qt3/examples/demo/textdrawing/editcut.png
+lib/qt3/examples/demo/textdrawing/editdelete.png
+lib/qt3/examples/demo/textdrawing/editlower.png
+lib/qt3/examples/demo/textdrawing/editpaste.png
+lib/qt3/examples/demo/textdrawing/editraise.png
 lib/qt3/examples/demo/textdrawing/example.html
-lib/qt3/examples/demo/textdrawing/filenew.xpm
-lib/qt3/examples/demo/textdrawing/fileopen.xpm
-lib/qt3/examples/demo/textdrawing/fileprint.xpm
-lib/qt3/examples/demo/textdrawing/filesave.xpm
-lib/qt3/examples/demo/textdrawing/forward.xpm
+lib/qt3/examples/demo/textdrawing/filenew.png
+lib/qt3/examples/demo/textdrawing/fileopen.png
+lib/qt3/examples/demo/textdrawing/filesave.png
+lib/qt3/examples/demo/textdrawing/help.png
 lib/qt3/examples/demo/textdrawing/helpwindow.cpp
 lib/qt3/examples/demo/textdrawing/helpwindow.h
-lib/qt3/examples/demo/textdrawing/home.xpm
-lib/qt3/examples/demo/textdrawing/textbold.xpm
-lib/qt3/examples/demo/textdrawing/textcenter.xpm
+lib/qt3/examples/demo/textdrawing/home.png
+lib/qt3/examples/demo/textdrawing/next.png
+lib/qt3/examples/demo/textdrawing/previous.png
+lib/qt3/examples/demo/textdrawing/print.png
+lib/qt3/examples/demo/textdrawing/redo.png
+lib/qt3/examples/demo/textdrawing/textbold.png
+lib/qt3/examples/demo/textdrawing/textcenter.png
 lib/qt3/examples/demo/textdrawing/textedit.cpp
 lib/qt3/examples/demo/textdrawing/textedit.h
-lib/qt3/examples/demo/textdrawing/textitalic.xpm
-lib/qt3/examples/demo/textdrawing/textjustify.xpm
-lib/qt3/examples/demo/textdrawing/textleft.xpm
-lib/qt3/examples/demo/textdrawing/textright.xpm
-lib/qt3/examples/demo/textdrawing/textunder.xpm
+lib/qt3/examples/demo/textdrawing/textitalic.png
+lib/qt3/examples/demo/textdrawing/textjustify.png
+lib/qt3/examples/demo/textdrawing/textleft.png
+lib/qt3/examples/demo/textdrawing/textright.png
+lib/qt3/examples/demo/textdrawing/textunderline.png
+lib/qt3/examples/demo/textdrawing/undo.png
 lib/qt3/examples/demo/translations/demo_de.qm
 lib/qt3/examples/demo/translations/demo_de.ts
 lib/qt3/examples/demo/translations/demo_fr.qm
@@ -464,6 +466,17 @@ lib/qt3/examples/drawlines/drawlines
 lib/qt3/examples/drawlines/drawlines.doc
 lib/qt3/examples/drawlines/drawlines.pro
 lib/qt3/examples/examples.pro
+lib/qt3/examples/extension/Makefile
+lib/qt3/examples/extension/dialogform.ui
+lib/qt3/examples/extension/dialogform.ui.h
+lib/qt3/examples/extension/extension
+lib/qt3/examples/extension/extension.doc
+lib/qt3/examples/extension/extension.pro
+lib/qt3/examples/extension/extension.ui
+lib/qt3/examples/extension/extension.ui.h
+lib/qt3/examples/extension/main.cpp
+lib/qt3/examples/extension/mainform.ui
+lib/qt3/examples/extension/mainform.ui.h
 lib/qt3/examples/fileiconview/Makefile
 lib/qt3/examples/fileiconview/fileiconview
 lib/qt3/examples/fileiconview/fileiconview.doc
@@ -631,18 +644,43 @@ lib/qt3/examples/network/clientserver/server/server.cpp
 lib/qt3/examples/network/clientserver/server/server.pro
 lib/qt3/examples/network/ftpclient/Makefile
 lib/qt3/examples/network/ftpclient/README
+lib/qt3/examples/network/ftpclient/connectdialog.ui
 lib/qt3/examples/network/ftpclient/ftpclient.doc
 lib/qt3/examples/network/ftpclient/ftpclient.pro
-lib/qt3/examples/network/ftpclient/ftpmainwindow.cpp
-lib/qt3/examples/network/ftpclient/ftpmainwindow.h
-lib/qt3/examples/network/ftpclient/ftpview.cpp
-lib/qt3/examples/network/ftpclient/ftpview.h
+lib/qt3/examples/network/ftpclient/ftpmainwindow.ui
+lib/qt3/examples/network/ftpclient/ftpmainwindow.ui.h
+lib/qt3/examples/network/ftpclient/ftpviewitem.cpp
+lib/qt3/examples/network/ftpclient/ftpviewitem.h
+lib/qt3/examples/network/ftpclient/images/file.png
+lib/qt3/examples/network/ftpclient/images/folder.png
 lib/qt3/examples/network/ftpclient/main.cpp
 lib/qt3/examples/network/httpd/Makefile
 lib/qt3/examples/network/httpd/README
 lib/qt3/examples/network/httpd/httpd.cpp
 lib/qt3/examples/network/httpd/httpd.doc
 lib/qt3/examples/network/httpd/httpd.pro
+lib/qt3/examples/network/infoprotocol/infoclient/Makefile
+lib/qt3/examples/network/infoprotocol/infoclient/client.cpp
+lib/qt3/examples/network/infoprotocol/infoclient/client.h
+lib/qt3/examples/network/infoprotocol/infoclient/clientbase.ui
+lib/qt3/examples/network/infoprotocol/infoclient/infoclient.pro
+lib/qt3/examples/network/infoprotocol/infoclient/main.cpp
+lib/qt3/examples/network/infoprotocol/infoserver/Makefile
+lib/qt3/examples/network/infoprotocol/infoserver/infodata.cpp
+lib/qt3/examples/network/infoprotocol/infoserver/infodata.h
+lib/qt3/examples/network/infoprotocol/infoserver/infoserver.pro
+lib/qt3/examples/network/infoprotocol/infoserver/main.cpp
+lib/qt3/examples/network/infoprotocol/infoserver/server.cpp
+lib/qt3/examples/network/infoprotocol/infoserver/server.h
+lib/qt3/examples/network/infoprotocol/infoserver/serverbase.ui
+lib/qt3/examples/network/infoprotocol/infourlclient/Makefile
+lib/qt3/examples/network/infoprotocol/infourlclient/client.cpp
+lib/qt3/examples/network/infoprotocol/infourlclient/client.h
+lib/qt3/examples/network/infoprotocol/infourlclient/clientbase.ui
+lib/qt3/examples/network/infoprotocol/infourlclient/infourlclient.pro
+lib/qt3/examples/network/infoprotocol/infourlclient/main.cpp
+lib/qt3/examples/network/infoprotocol/infourlclient/qip.cpp
+lib/qt3/examples/network/infoprotocol/infourlclient/qip.h
 lib/qt3/examples/network/mail/Makefile
 lib/qt3/examples/network/mail/composer.cpp
 lib/qt3/examples/network/mail/composer.h
@@ -660,6 +698,17 @@ lib/qt3/examples/network/networkprotocol/nntp.cpp
 lib/qt3/examples/network/networkprotocol/nntp.h
 lib/qt3/examples/network/networkprotocol/view.cpp
 lib/qt3/examples/network/networkprotocol/view.h
+lib/qt3/examples/network/remotecontrol/Makefile
+lib/qt3/examples/network/remotecontrol/ipcserver.cpp
+lib/qt3/examples/network/remotecontrol/ipcserver.h
+lib/qt3/examples/network/remotecontrol/main.cpp
+lib/qt3/examples/network/remotecontrol/maindialog.ui
+lib/qt3/examples/network/remotecontrol/remotecontrol.pro
+lib/qt3/examples/network/remotecontrol/remotectrl.ui
+lib/qt3/examples/network/remotecontrol/remotectrlimpl.cpp
+lib/qt3/examples/network/remotecontrol/remotectrlimpl.h
+lib/qt3/examples/network/remotecontrol/startup.cpp
+lib/qt3/examples/network/remotecontrol/startup.h
 lib/qt3/examples/opengl/box/Makefile
 lib/qt3/examples/opengl/box/README
 lib/qt3/examples/opengl/box/box.doc
@@ -867,6 +916,9 @@ lib/qt3/examples/splitter/splitter.cpp
 lib/qt3/examples/splitter/splitter.doc
 lib/qt3/examples/splitter/splitter.pro
 lib/qt3/examples/sql/Makefile
+lib/qt3/examples/sql/blob/Makefile
+lib/qt3/examples/sql/blob/blob.pro
+lib/qt3/examples/sql/blob/main.cpp
 lib/qt3/examples/sql/overview/Makefile
 lib/qt3/examples/sql/overview/basicbrowsing/Makefile
 lib/qt3/examples/sql/overview/basicbrowsing/README
@@ -894,10 +946,10 @@ lib/qt3/examples/sql/overview/custom1/Makefile
 lib/qt3/examples/sql/overview/custom1/custom1.pro
 lib/qt3/examples/sql/overview/custom1/main.cpp
 lib/qt3/examples/sql/overview/custom1/main.h
-lib/qt3/examples/sql/overview/del/Makefile
-lib/qt3/examples/sql/overview/del/README
-lib/qt3/examples/sql/overview/del/del.pro
-lib/qt3/examples/sql/overview/del/main.cpp
+lib/qt3/examples/sql/overview/delete/Makefile
+lib/qt3/examples/sql/overview/delete/README
+lib/qt3/examples/sql/overview/delete/delete.pro
+lib/qt3/examples/sql/overview/delete/main.cpp
 lib/qt3/examples/sql/overview/extract/Makefile
 lib/qt3/examples/sql/overview/extract/README
 lib/qt3/examples/sql/overview/extract/extract.pro
@@ -1094,11 +1146,6 @@ lib/qt3/examples/tooltip/tooltip.cpp
 lib/qt3/examples/tooltip/tooltip.doc
 lib/qt3/examples/tooltip/tooltip.h
 lib/qt3/examples/tooltip/tooltip.pro
-lib/qt3/examples/trayicon/Makefile
-lib/qt3/examples/trayicon/main.cpp
-lib/qt3/examples/trayicon/trayicon.cpp
-lib/qt3/examples/trayicon/trayicon.h
-lib/qt3/examples/trayicon/trayicon.pro
 lib/qt3/examples/tux/Makefile
 lib/qt3/examples/tux/tux
 lib/qt3/examples/tux/tux.cpp
@@ -1268,7 +1315,6 @@ lib/qt3/tutorial/tutorial.pro
 @dirrm lib/qt3/examples/wizard
 @dirrm lib/qt3/examples/widgets
 @dirrm lib/qt3/examples/tux
-@dirrm lib/qt3/examples/trayicon
 @dirrm lib/qt3/examples/tooltip
 @dirrm lib/qt3/examples/tictac
 @dirrm lib/qt3/examples/thread/semaphores
@@ -1304,7 +1350,7 @@ lib/qt3/tutorial/tutorial.pro
 @dirrm lib/qt3/examples/sql/overview/form2
 @dirrm lib/qt3/examples/sql/overview/form1
 @dirrm lib/qt3/examples/sql/overview/extract
-@dirrm lib/qt3/examples/sql/overview/del
+@dirrm lib/qt3/examples/sql/overview/delete
 @dirrm lib/qt3/examples/sql/overview/custom1
 @dirrm lib/qt3/examples/sql/overview/create_connections
 @dirrm lib/qt3/examples/sql/overview/connect1
@@ -1312,6 +1358,7 @@ lib/qt3/tutorial/tutorial.pro
 @dirrm lib/qt3/examples/sql/overview/basicbrowsing2
 @dirrm lib/qt3/examples/sql/overview/basicbrowsing
 @dirrm lib/qt3/examples/sql/overview
+@dirrm lib/qt3/examples/sql/blob
 @dirrm lib/qt3/examples/sql
 @dirrm lib/qt3/examples/splitter
 @dirrm lib/qt3/examples/sound/sounds
@@ -1343,9 +1390,15 @@ lib/qt3/tutorial/tutorial.pro
 @dirrm lib/qt3/examples/opengl/gear
 @dirrm lib/qt3/examples/opengl/box
 @dirrm lib/qt3/examples/opengl
+@dirrm lib/qt3/examples/network/remotecontrol
 @dirrm lib/qt3/examples/network/networkprotocol
 @dirrm lib/qt3/examples/network/mail
+@dirrm lib/qt3/examples/network/infoprotocol/infourlclient
+@dirrm lib/qt3/examples/network/infoprotocol/infoserver
+@dirrm lib/qt3/examples/network/infoprotocol/infoclient
+@dirrm lib/qt3/examples/network/infoprotocol
 @dirrm lib/qt3/examples/network/httpd
+@dirrm lib/qt3/examples/network/ftpclient/images
 @dirrm lib/qt3/examples/network/ftpclient
 @dirrm lib/qt3/examples/network/clientserver/server
 @dirrm lib/qt3/examples/network/clientserver/client
@@ -1370,6 +1423,7 @@ lib/qt3/tutorial/tutorial.pro
 @dirrm lib/qt3/examples/fonts/simple-qfont-demo
 @dirrm lib/qt3/examples/fonts
 @dirrm lib/qt3/examples/fileiconview
+@dirrm lib/qt3/examples/extension
 @dirrm lib/qt3/examples/drawlines
 @dirrm lib/qt3/examples/drawdemo
 @dirrm lib/qt3/examples/dragdrop

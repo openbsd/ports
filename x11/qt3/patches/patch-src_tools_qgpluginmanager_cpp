@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_tools_qgpluginmanager_cpp,v 1.2 2002/07/17 21:43:36 espie Exp $
---- src/tools/qgpluginmanager.cpp.orig	Mon Jul  8 12:26:43 2002
-+++ src/tools/qgpluginmanager.cpp	Tue Jul 16 17:48:08 2002
-@@ -317,6 +317,8 @@ void QGPluginManager::addLibraryPath( co
+$OpenBSD: patch-src_tools_qgpluginmanager_cpp,v 1.3 2002/11/23 18:52:22 espie Exp $
+--- src/tools/qgpluginmanager.cpp.orig	Thu Nov  7 14:07:22 2002
++++ src/tools/qgpluginmanager.cpp	Thu Nov 14 10:47:14 2002
+@@ -318,6 +318,8 @@ void QGPluginManager::addLibraryPath( co
      QString filter = "dll";
  #elif defined(Q_OS_MACX)
      QString filter = "dylib";

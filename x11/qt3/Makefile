@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/11/18 02:03:12 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2002/11/23 18:52:22 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		C++ X11 GUI toolkit
@@ -7,7 +7,7 @@ COMMENT-html=		off-line html documentation for qt3
 COMMENT-postgresql=	PostgresSQL plugin for qt3
 COMMENT-mysql=		MySQL plugin for qt3
 
-VERSION=	0.6
+VERSION=	1.0
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
@@ -151,8 +151,8 @@ post-patch:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/qt3
-	${INSTALL_DATA} ${WRKBUILD}/lib/libqt-mt.so.3.6 ${PREFIX}/lib/qt3
-	ln -sf qt3/libqt-mt.so.3.6 ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKBUILD}/lib/libqt-mt.so.3.10 ${PREFIX}/lib/qt3
+	ln -sf qt3/libqt-mt.so.3.10 ${PREFIX}/lib
 .else
 post-configure:
 	@cd ${WRKSRC} && cp -R examples examples-src
@@ -164,7 +164,7 @@ post-configure:
 	@find ${WRKSRC}/tutorial-src -name '.moc' |xargs rm -r
 	@find ${WRKSRC}/tutorial-src -name '.obj' |xargs rm -r
 
-LIBRARIES=qt.so.3.6 editor.so.1.0 qui.so.1.0
+LIBRARIES=qt.so.3.10 editor.so.1.0 qui.so.1.0
 PROGRAMS3=designer findtr moc qt20fix qtrename140 uic
 PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig 
 

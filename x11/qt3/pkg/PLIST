@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/10/26 11:45:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/11/23 18:52:22 espie Exp $
 bin/assistant
 bin/designer3
 bin/findtr3
@@ -12,11 +12,6 @@ bin/qt20fix3
 bin/qtconfig
 bin/qtrename1403
 bin/uic3
-include/X11/qt3/jri.h
-include/X11/qt3/jri_md.h
-include/X11/qt3/jritypes.h
-include/X11/qt3/npapi.h
-include/X11/qt3/npupp.h
 include/X11/qt3/private/qapplication_p.h
 include/X11/qt3/private/qcolor_p.h
 include/X11/qt3/private/qcom_p.h
@@ -26,22 +21,30 @@ include/X11/qt3/private/qcomponentfactory_p.h
 include/X11/qt3/private/qcriticalsection_p.h
 include/X11/qt3/private/qdir_p.h
 include/X11/qt3/private/qeffects_p.h
+include/X11/qt3/private/qeventloop_p.h
 include/X11/qt3/private/qfiledefs_p.h
 include/X11/qt3/private/qfontcodecs_p.h
 include/X11/qt3/private/qfontdata_p.h
+include/X11/qt3/private/qgfxdriverinterface_p.h
 include/X11/qt3/private/qgpluginmanager_p.h
 include/X11/qt3/private/qimageformatinterface_p.h
 include/X11/qt3/private/qinputcontext_p.h
 include/X11/qt3/private/qinternal_p.h
+include/X11/qt3/private/qkbddriverinterface_p.h
 include/X11/qt3/private/qlayoutengine_p.h
 include/X11/qt3/private/qlibrary_p.h
+include/X11/qt3/private/qlock_p.h
+include/X11/qt3/private/qmousedriverinterface_p.h
 include/X11/qt3/private/qmutex_p.h
+include/X11/qt3/private/qmutexpool_p.h
 include/X11/qt3/private/qpainter_p.h
 include/X11/qt3/private/qpluginmanager_p.h
 include/X11/qt3/private/qpsprinter_p.h
 include/X11/qt3/private/qrichtext_p.h
+include/X11/qt3/private/qsettings_p.h
 include/X11/qt3/private/qsharedmemory_p.h
 include/X11/qt3/private/qsqldriverinterface_p.h
+include/X11/qt3/private/qsqlextension_p.h
 include/X11/qt3/private/qsqlmanager_p.h
 include/X11/qt3/private/qstyleinterface_p.h
 include/X11/qt3/private/qsvgdevice_p.h
@@ -62,6 +65,7 @@ include/X11/qt3/qapplication.h
 include/X11/qt3/qarray.h
 include/X11/qt3/qasciicache.h
 include/X11/qt3/qasciidict.h
+include/X11/qt3/qassistantclient.h
 include/X11/qt3/qasyncimageio.h
 include/X11/qt3/qasyncio.h
 include/X11/qt3/qbig5codec.h
@@ -106,6 +110,7 @@ include/X11/qt3/qdataview.h
 include/X11/qt3/qdatetime.h
 include/X11/qt3/qdatetimeedit.h
 include/X11/qt3/qdatetm.h
+include/X11/qt3/qdeepcopy.h
 include/X11/qt3/qdesktopwidget.h
 include/X11/qt3/qdial.h
 include/X11/qt3/qdialog.h
@@ -125,6 +130,7 @@ include/X11/qt3/qerrormessage.h
 include/X11/qt3/qeucjpcodec.h
 include/X11/qt3/qeuckrcodec.h
 include/X11/qt3/qevent.h
+include/X11/qt3/qeventloop.h
 include/X11/qt3/qfeatures.h
 include/X11/qt3/qfile.h
 include/X11/qt3/qfiledef.h
@@ -206,8 +212,11 @@ include/X11/qt3/qmime.h
 include/X11/qt3/qmlined.h
 include/X11/qt3/qmngio.h
 include/X11/qt3/qmodules.h
+include/X11/qt3/qmotif.h
+include/X11/qt3/qmotifdialog.h
 include/X11/qt3/qmotifplusstyle.h
 include/X11/qt3/qmotifstyle.h
+include/X11/qt3/qmotifwidget.h
 include/X11/qt3/qmovie.h
 include/X11/qt3/qmsgbox.h
 include/X11/qt3/qmultilinedit.h
@@ -216,7 +225,6 @@ include/X11/qt3/qmutex.h
 include/X11/qt3/qnamespace.h
 include/X11/qt3/qnetwork.h
 include/X11/qt3/qnetworkprotocol.h
-include/X11/qt3/qnp.h
 include/X11/qt3/qobjcoll.h
 include/X11/qt3/qobjdefs.h
 include/X11/qt3/qobject.h
@@ -324,6 +332,7 @@ include/X11/qt3/qstyle.h
 include/X11/qt3/qstylefactory.h
 include/X11/qt3/qstyleplugin.h
 include/X11/qt3/qstylesheet.h
+include/X11/qt3/qsyntaxhighlighter.h
 include/X11/qt3/qt.h
 include/X11/qt3/qt_x11.h
 include/X11/qt3/qtabbar.h
@@ -377,17 +386,19 @@ include/X11/qt3/qwindefs.h
 include/X11/qt3/qwindow.h
 include/X11/qt3/qwindowdefs.h
 include/X11/qt3/qwindowsstyle.h
+include/X11/qt3/qwindowsxpstyle.h
 include/X11/qt3/qwizard.h
 include/X11/qt3/qwmatrix.h
 include/X11/qt3/qworkspace.h
 include/X11/qt3/qxml.h
-include/X11/qt3/qxt.h
+include/X11/qt3/qxtwidget.h
 lib/qt3/bin/designer
 lib/qt3/bin/findtr
 lib/qt3/bin/moc
 lib/qt3/bin/qt20fix
 lib/qt3/bin/qtrename140
 lib/qt3/bin/uic
+lib/qt3/libeditor.a
 lib/qt3/man/man1/lrelease.1
 lib/qt3/man/man1/lupdate.1
 lib/qt3/man/man1/moc3.1
@@ -403,6 +414,9 @@ lib/qt3/man/man3/QAsciiCache.3
 lib/qt3/man/man3/QAsciiCacheIterator.3
 lib/qt3/man/man3/QAsciiDict.3
 lib/qt3/man/man3/QAsciiDictIterator.3
+lib/qt3/man/man3/QAssistantClient.3
+lib/qt3/man/man3/QBig5Codec.3
+lib/qt3/man/man3/QBig5hkscsCodec.3
 lib/qt3/man/man3/QBitArray.3
 lib/qt3/man/man3/QBitVal.3
 lib/qt3/man/man3/QBitmap.3
@@ -459,6 +473,7 @@ lib/qt3/man/man3/QDate.3
 lib/qt3/man/man3/QDateEdit.3
 lib/qt3/man/man3/QDateTime.3
 lib/qt3/man/man3/QDateTimeEdit.3
+lib/qt3/man/man3/QDeepCopy.3
 lib/qt3/man/man3/QDesktopWidget.3
 lib/qt3/man/man3/QDial.3
 lib/qt3/man/man3/QDialog.3
@@ -497,6 +512,7 @@ lib/qt3/man/man3/QErrorMessage.3
 lib/qt3/man/man3/QEucJpCodec.3
 lib/qt3/man/man3/QEucKrCodec.3
 lib/qt3/man/man3/QEvent.3
+lib/qt3/man/man3/QEventLoop.3
 lib/qt3/man/man3/QFile.3
 lib/qt3/man/man3/QFileDialog.3
 lib/qt3/man/man3/QFileIconProvider.3
@@ -519,7 +535,10 @@ lib/qt3/man/man3/QGLFormat.3
 lib/qt3/man/man3/QGLWidget.3
 lib/qt3/man/man3/QGLayoutIterator.3
 lib/qt3/man/man3/QGb18030Codec.3
+lib/qt3/man/man3/QGb2312Codec.3
 lib/qt3/man/man3/QGbkCodec.3
+lib/qt3/man/man3/QGfxDriverFactory.3
+lib/qt3/man/man3/QGfxDriverPlugin.3
 lib/qt3/man/man3/QGrid.3
 lib/qt3/man/man3/QGridLayout.3
 lib/qt3/man/man3/QGridView.3
@@ -534,10 +553,14 @@ lib/qt3/man/man3/QHebrewCodec.3
 lib/qt3/man/man3/QHideEvent.3
 lib/qt3/man/man3/QHostAddress.3
 lib/qt3/man/man3/QHttp.3
+lib/qt3/man/man3/QHttpHeader.3
+lib/qt3/man/man3/QHttpRequestHeader.3
+lib/qt3/man/man3/QHttpResponseHeader.3
 lib/qt3/man/man3/QIMEvent.3
 lib/qt3/man/man3/QIODevice.3
 lib/qt3/man/man3/QIconDrag.3
 lib/qt3/man/man3/QIconDragItem.3
+lib/qt3/man/man3/QIconFactory.3
 lib/qt3/man/man3/QIconSet.3
 lib/qt3/man/man3/QIconView.3
 lib/qt3/man/man3/QIconViewItem.3
@@ -556,6 +579,8 @@ lib/qt3/man/man3/QIntDict.3
 lib/qt3/man/man3/QIntDictIterator.3
 lib/qt3/man/man3/QIntValidator.3
 lib/qt3/man/man3/QJisCodec.3
+lib/qt3/man/man3/QKbdDriverFactory.3
+lib/qt3/man/man3/QKbdDriverPlugin.3
 lib/qt3/man/man3/QKeyEvent.3
 lib/qt3/man/man3/QKeySequence.3
 lib/qt3/man/man3/QLCDNumber.3
@@ -574,6 +599,7 @@ lib/qt3/man/man3/QListViewItem.3
 lib/qt3/man/man3/QListViewItemIterator.3
 lib/qt3/man/man3/QLocalFs.3
 lib/qt3/man/man3/QLock.3
+lib/qt3/man/man3/QMacStyle.3
 lib/qt3/man/man3/QMainWindow.3
 lib/qt3/man/man3/QMap.3
 lib/qt3/man/man3/QMapConstIterator.3
@@ -586,22 +612,23 @@ lib/qt3/man/man3/QMetaObject.3
 lib/qt3/man/man3/QMetaProperty.3
 lib/qt3/man/man3/QMimeSource.3
 lib/qt3/man/man3/QMimeSourceFactory.3
+lib/qt3/man/man3/QMotif.3
+lib/qt3/man/man3/QMotifDialog.3
 lib/qt3/man/man3/QMotifPlusStyle.3
 lib/qt3/man/man3/QMotifStyle.3
+lib/qt3/man/man3/QMotifWidget.3
+lib/qt3/man/man3/QMouseDriverFactory.3
+lib/qt3/man/man3/QMouseDriverPlugin.3
 lib/qt3/man/man3/QMouseEvent.3
 lib/qt3/man/man3/QMoveEvent.3
 lib/qt3/man/man3/QMovie.3
 lib/qt3/man/man3/QMutex.3
-lib/qt3/man/man3/QNPInstance.3
-lib/qt3/man/man3/QNPStream.3
-lib/qt3/man/man3/QNPWidget.3
-lib/qt3/man/man3/QNPlugin.3
+lib/qt3/man/man3/QMutexLocker.3
 lib/qt3/man/man3/QNetworkOperation.3
 lib/qt3/man/man3/QNetworkProtocol.3
 lib/qt3/man/man3/QObject.3
 lib/qt3/man/man3/QObjectCleanupHandler.3
 lib/qt3/man/man3/QObjectList.3
-lib/qt3/man/man3/QObjectListIt.3
 lib/qt3/man/man3/QPNGImagePacker.3
 lib/qt3/man/man3/QPaintDevice.3
 lib/qt3/man/man3/QPaintDeviceMetrics.3
@@ -690,6 +717,7 @@ lib/qt3/man/man3/QStyleOption.3
 lib/qt3/man/man3/QStylePlugin.3
 lib/qt3/man/man3/QStyleSheet.3
 lib/qt3/man/man3/QStyleSheetItem.3
+lib/qt3/man/man3/QSyntaxHighlighter.3
 lib/qt3/man/man3/QTab.3
 lib/qt3/man/man3/QTabBar.3
 lib/qt3/man/man3/QTabDialog.3
@@ -737,6 +765,7 @@ lib/qt3/man/man3/QValueVector.3
 lib/qt3/man/man3/QVariant.3
 lib/qt3/man/man3/QWMatrix.3
 lib/qt3/man/man3/QWSDecoration.3
+lib/qt3/man/man3/QWSInputMethod.3
 lib/qt3/man/man3/QWSKeyboardHandler.3
 lib/qt3/man/man3/QWSMouseHandler.3
 lib/qt3/man/man3/QWSServer.3
@@ -767,7 +796,6 @@ lib/qt3/man/man3/QXmlNamespaceSupport.3
 lib/qt3/man/man3/QXmlParseException.3
 lib/qt3/man/man3/QXmlReader.3
 lib/qt3/man/man3/QXmlSimpleReader.3
-lib/qt3/man/man3/QXtApplication.3
 lib/qt3/man/man3/QXtWidget.3
 lib/qt3/man/man3/Qt.3
 lib/qt3/man/man3/qaccel.3
@@ -781,6 +809,9 @@ lib/qt3/man/man3/qasciicache.3
 lib/qt3/man/man3/qasciicacheiterator.3
 lib/qt3/man/man3/qasciidict.3
 lib/qt3/man/man3/qasciidictiterator.3
+lib/qt3/man/man3/qassistantclient.3
+lib/qt3/man/man3/qbig5codec.3
+lib/qt3/man/man3/qbig5hkscscodec.3
 lib/qt3/man/man3/qbitarray.3
 lib/qt3/man/man3/qbitmap.3
 lib/qt3/man/man3/qbitval.3
@@ -837,6 +868,7 @@ lib/qt3/man/man3/qdate.3
 lib/qt3/man/man3/qdateedit.3
 lib/qt3/man/man3/qdatetime.3
 lib/qt3/man/man3/qdatetimeedit.3
+lib/qt3/man/man3/qdeepcopy.3
 lib/qt3/man/man3/qdesktopwidget.3
 lib/qt3/man/man3/qdial.3
 lib/qt3/man/man3/qdialog.3
@@ -875,6 +907,7 @@ lib/qt3/man/man3/qerrormessage.3
 lib/qt3/man/man3/qeucjpcodec.3
 lib/qt3/man/man3/qeuckrcodec.3
 lib/qt3/man/man3/qevent.3
+lib/qt3/man/man3/qeventloop.3
 lib/qt3/man/man3/qfile.3
 lib/qt3/man/man3/qfiledialog.3
 lib/qt3/man/man3/qfileiconprovider.3
@@ -891,7 +924,10 @@ lib/qt3/man/man3/qfontmetrics.3
 lib/qt3/man/man3/qframe.3
 lib/qt3/man/man3/qftp.3
 lib/qt3/man/man3/qgb18030codec.3
+lib/qt3/man/man3/qgb2312codec.3
 lib/qt3/man/man3/qgbkcodec.3
+lib/qt3/man/man3/qgfxdriverfactory.3
+lib/qt3/man/man3/qgfxdriverplugin.3
 lib/qt3/man/man3/qgl.3
 lib/qt3/man/man3/qglayoutiterator.3
 lib/qt3/man/man3/qglcolormap.3
@@ -912,8 +948,12 @@ lib/qt3/man/man3/qhgroupbox.3
 lib/qt3/man/man3/qhideevent.3
 lib/qt3/man/man3/qhostaddress.3
 lib/qt3/man/man3/qhttp.3
+lib/qt3/man/man3/qhttpheader.3
+lib/qt3/man/man3/qhttprequestheader.3
+lib/qt3/man/man3/qhttpresponseheader.3
 lib/qt3/man/man3/qicondrag.3
 lib/qt3/man/man3/qicondragitem.3
+lib/qt3/man/man3/qiconfactory.3
 lib/qt3/man/man3/qiconset.3
 lib/qt3/man/man3/qiconview.3
 lib/qt3/man/man3/qiconviewitem.3
@@ -934,6 +974,8 @@ lib/qt3/man/man3/qintdictiterator.3
 lib/qt3/man/man3/qintvalidator.3
 lib/qt3/man/man3/qiodevice.3
 lib/qt3/man/man3/qjiscodec.3
+lib/qt3/man/man3/qkbddriverfactory.3
+lib/qt3/man/man3/qkbddriverplugin.3
 lib/qt3/man/man3/qkeyevent.3
 lib/qt3/man/man3/qkeysequence.3
 lib/qt3/man/man3/qlabel.3
@@ -952,6 +994,7 @@ lib/qt3/man/man3/qlistviewitem.3
 lib/qt3/man/man3/qlistviewitemiterator.3
 lib/qt3/man/man3/qlocalfs.3
 lib/qt3/man/man3/qlock.3
+lib/qt3/man/man3/qmacstyle.3
 lib/qt3/man/man3/qmainwindow.3
 lib/qt3/man/man3/qmap.3
 lib/qt3/man/man3/qmapconstiterator.3
@@ -964,22 +1007,23 @@ lib/qt3/man/man3/qmetaobject.3
 lib/qt3/man/man3/qmetaproperty.3
 lib/qt3/man/man3/qmimesource.3
 lib/qt3/man/man3/qmimesourcefactory.3
+lib/qt3/man/man3/qmotif.3
+lib/qt3/man/man3/qmotifdialog.3
 lib/qt3/man/man3/qmotifplusstyle.3
 lib/qt3/man/man3/qmotifstyle.3
+lib/qt3/man/man3/qmotifwidget.3
+lib/qt3/man/man3/qmousedriverfactory.3
+lib/qt3/man/man3/qmousedriverplugin.3
 lib/qt3/man/man3/qmouseevent.3
 lib/qt3/man/man3/qmoveevent.3
 lib/qt3/man/man3/qmovie.3
 lib/qt3/man/man3/qmutex.3
+lib/qt3/man/man3/qmutexlocker.3
 lib/qt3/man/man3/qnetworkoperation.3
 lib/qt3/man/man3/qnetworkprotocol.3
-lib/qt3/man/man3/qnpinstance.3
-lib/qt3/man/man3/qnplugin.3
-lib/qt3/man/man3/qnpstream.3
-lib/qt3/man/man3/qnpwidget.3
 lib/qt3/man/man3/qobject.3
 lib/qt3/man/man3/qobjectcleanuphandler.3
 lib/qt3/man/man3/qobjectlist.3
-lib/qt3/man/man3/qobjectlistit.3
 lib/qt3/man/man3/qpaintdevice.3
 lib/qt3/man/man3/qpaintdevicemetrics.3
 lib/qt3/man/man3/qpainter.3
@@ -1068,6 +1112,7 @@ lib/qt3/man/man3/qstyleoption.3
 lib/qt3/man/man3/qstyleplugin.3
 lib/qt3/man/man3/qstylesheet.3
 lib/qt3/man/man3/qstylesheetitem.3
+lib/qt3/man/man3/qsyntaxhighlighter.3
 lib/qt3/man/man3/qt.3
 lib/qt3/man/man3/qtab.3
 lib/qt3/man/man3/qtabbar.3
@@ -1128,6 +1173,7 @@ lib/qt3/man/man3/qwizard.3
 lib/qt3/man/man3/qwmatrix.3
 lib/qt3/man/man3/qworkspace.3
 lib/qt3/man/man3/qwsdecoration.3
+lib/qt3/man/man3/qwsinputmethod.3
 lib/qt3/man/man3/qwskeyboardhandler.3
 lib/qt3/man/man3/qwsmousehandler.3
 lib/qt3/man/man3/qwsserver.3
@@ -1146,7 +1192,6 @@ lib/qt3/man/man3/qxmlnamespacesupport.3
 lib/qt3/man/man3/qxmlparseexception.3
 lib/qt3/man/man3/qxmlreader.3
 lib/qt3/man/man3/qxmlsimplereader.3
-lib/qt3/man/man3/qxtapplication.3
 lib/qt3/man/man3/qxtwidget.3
 lib/qt3/plugins/designer/libcppeditor.so
 lib/qt3/plugins/designer/libdlgplugin.so
@@ -1159,6 +1204,8 @@ share/doc/qt3/LICENSE.GPL
 share/doc/qt3/README
 share/doc/qt3/README.QT
 share/doc/qt3/changes-3.${VERSION}
+share/doc/qt3/changes-3.${VERSION}-b1
+share/doc/qt3/changes-3.${VERSION}-b2
 %%SHARED%%
 @unexec rmdir 2>/dev/null %D/share/doc/qt3 || true
 @exec mkdir -p %D/lib/qt3/plugins/styles
