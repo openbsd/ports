@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/15 09:46:50 mbalmer Exp $
+lib/
+lib/php/
+pear/lib/.registry/http.reg
+pear/lib/HTTP.php
