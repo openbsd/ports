@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/04 18:48:52 sturm Exp $
+bin/pwhois
+${P5SITE}/Net/Whois/Raw.pm
+${P5SITE}/Net/Whois/Raw/Data.pm
+@comment ${P5ARCH}/auto/Net/Whois/Raw/.packlist
+@comment ${P5ARCH}/perllocal.pod
+man/man1/pwhois.1
+man/man3p/Net::Whois::Raw.3p
+@comment @dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Net/Whois/Raw
+@comment @dirrm ${P5ARCH}/auto/Net/Whois
+@comment @dirrm ${P5ARCH}/auto/Net
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Net/Whois/Raw
+@comment @dirrm ${P5SITE}/Net/Whois
+@comment @dirrm ${P5SITE}/Net
