@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/19 03:27:31 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/18 11:03:35 kevlo Exp $
 
-DISTNAME=	Convert-ASN1-0.07
+DISTNAME=	Convert-ASN1-0.08
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
 NEED_VERSION=	1.351

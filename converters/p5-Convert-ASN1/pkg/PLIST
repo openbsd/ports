@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/19 03:27:31 kevlo Exp $
-libdata/perl5/site_perl/Convert/ASN1.pod
-libdata/perl5/site_perl/Convert/ASN1.pm
+@comment $OpenBSD: PLIST,v 1.2 2001/03/18 11:03:44 kevlo Exp $
+libdata/perl5/site_perl/Convert/ASN1/Debug.pm 
+libdata/perl5/site_perl/Convert/ASN1/IO.pm
 libdata/perl5/site_perl/Convert/ASN1/_decode.pm
 libdata/perl5/site_perl/Convert/ASN1/_encode.pm
-libdata/perl5/site_perl/Convert/ASN1/Debug.pm
 libdata/perl5/site_perl/Convert/ASN1/parser.pm
-libdata/perl5/site_perl/Convert/ASN1/IO.pm
+libdata/perl5/site_perl/Convert/ASN1.pm
+libdata/perl5/site_perl/Convert/ASN1.pod
 man/man3/Convert::ASN1.3p
+@dirrm libdata/perl5/site_perl/Convert/ASN1
