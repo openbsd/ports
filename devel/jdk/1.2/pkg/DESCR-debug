@@ -1,0 +1,11 @@
+Java (TM) 2 SDK, Standard Edition
+Version 1.2.2
+
+Debug Binaries
+
+These binary files have been compiled with certain debugging options
+enabled, to allow for more verbose debug information during 
+development.  They are only really useful for porters of the SDK
+itself, as they are much slower then the standard binaries.
+
+WWW: ${HOMEPAGE}

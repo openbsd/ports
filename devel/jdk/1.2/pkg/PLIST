@@ -1,0 +1,244 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/01 17:52:53 ian Exp $
+jdk-1.2.2/COPYRIGHT
+jdk-1.2.2/LICENSE
+jdk-1.2.2/README
+jdk-1.2.2/README.html
+jdk-1.2.2/bin/.java_wrapper
+jdk-1.2.2/bin/appletviewer
+jdk-1.2.2/bin/extcheck
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/appletviewer
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/extcheck
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/jar
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/jarsigner
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/java
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/javac
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/javadoc
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/javah
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/javap
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/jdb
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/keytool
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/native2ascii
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/oldjava
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/policytool
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/rmic
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/rmid
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/rmiregistry
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/serialver
+jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads/tnameserv
+jdk-1.2.2/bin/jar
+jdk-1.2.2/bin/jarsigner
+jdk-1.2.2/bin/java
+jdk-1.2.2/bin/java-rmi.cgi
+jdk-1.2.2/bin/javac
+jdk-1.2.2/bin/javadoc
+jdk-1.2.2/bin/javah
+jdk-1.2.2/bin/javap
+jdk-1.2.2/bin/jdb
+jdk-1.2.2/bin/keytool
+jdk-1.2.2/bin/native2ascii
+jdk-1.2.2/bin/oldjava
+jdk-1.2.2/bin/policytool
+jdk-1.2.2/bin/rmic
+jdk-1.2.2/bin/rmid
+jdk-1.2.2/bin/rmiregistry
+jdk-1.2.2/bin/serialver
+jdk-1.2.2/bin/tnameserv
+jdk-1.2.2/include-old/StubPreamble.h
+jdk-1.2.2/include-old/alloc_cache.h
+jdk-1.2.2/include-old/bag.h
+jdk-1.2.2/include-old/bool.h
+jdk-1.2.2/include-old/breakpoints.h
+jdk-1.2.2/include-old/byteorder.h
+jdk-1.2.2/include-old/common_exceptions.h
+jdk-1.2.2/include-old/debug.h
+jdk-1.2.2/include-old/dll.h
+jdk-1.2.2/include-old/exceptions.h
+jdk-1.2.2/include-old/gc.h
+jdk-1.2.2/include-old/hpi.h
+jdk-1.2.2/include-old/interpreter.h
+jdk-1.2.2/include-old/javaString.h
+jdk-1.2.2/include-old/java_lang_ClassLoader.h
+jdk-1.2.2/include-old/java_lang_String.h
+jdk-1.2.2/include-old/java_lang_Thread.h
+jdk-1.2.2/include-old/java_lang_ThreadGroup.h
+jdk-1.2.2/include-old/jcov.h
+jdk-1.2.2/include-old/jit.h
+jdk-1.2.2/include-old/jmath.h
+jdk-1.2.2/include-old/jni.h
+jdk-1.2.2/include-old/jvm.h
+jdk-1.2.2/include-old/jvmdi.h
+jdk-1.2.2/include-old/jvmpi.h
+jdk-1.2.2/include-old/log.h
+jdk-1.2.2/include-old/monitor.h
+jdk-1.2.2/include-old/monitor_cache.h
+jdk-1.2.2/include-old/native.h
+jdk-1.2.2/include-old/oldnmi.h
+jdk-1.2.2/include-old/oobj.h
+jdk-1.2.2/include-old/opcodes.h
+jdk-1.2.2/include-old/byteorder_md.h
+jdk-1.2.2/include-old/gc_md.h
+jdk-1.2.2/include-old/hpi_md.h
+jdk-1.2.2/include-old/io_md.h
+jdk-1.2.2/include-old/jmath_md.h
+jdk-1.2.2/include-old/jni_md.h
+jdk-1.2.2/include-old/jvm_md.h
+jdk-1.2.2/include-old/miscdefs_md.h
+jdk-1.2.2/include-old/path_md.h
+jdk-1.2.2/include-old/sysmacros_md.h
+jdk-1.2.2/include-old/timeval_md.h
+jdk-1.2.2/include-old/typedefs_md.h
+jdk-1.2.2/include-old/openbsd/byteorder_md.h
+jdk-1.2.2/include-old/openbsd/gc_md.h
+jdk-1.2.2/include-old/openbsd/hpi_md.h
+jdk-1.2.2/include-old/openbsd/io_md.h
+jdk-1.2.2/include-old/openbsd/jmath_md.h
+jdk-1.2.2/include-old/openbsd/jni_md.h
+jdk-1.2.2/include-old/openbsd/jvm_md.h
+jdk-1.2.2/include-old/openbsd/miscdefs_md.h
+jdk-1.2.2/include-old/openbsd/path_md.h
+jdk-1.2.2/include-old/openbsd/sysmacros_md.h
+jdk-1.2.2/include-old/openbsd/timeval_md.h
+jdk-1.2.2/include-old/openbsd/typedefs_md.h
+jdk-1.2.2/include-old/path.h
+jdk-1.2.2/include-old/reflect.h
+jdk-1.2.2/include-old/signature.h
+jdk-1.2.2/include-old/sys_api.h
+jdk-1.2.2/include-old/threads.h
+jdk-1.2.2/include-old/tree.h
+jdk-1.2.2/include-old/typecodes.h
+jdk-1.2.2/include-old/typedefs.h
+jdk-1.2.2/include-old/utf.h
+jdk-1.2.2/include-old/util.h
+jdk-1.2.2/include-old/vmprofiler.h
+jdk-1.2.2/include-old/wrap.h
+jdk-1.2.2/include/jni.h
+jdk-1.2.2/include/jvmdi.h
+jdk-1.2.2/include/jvmpi.h
+jdk-1.2.2/include/jni_md.h
+jdk-1.2.2/include/openbsd/jni_md.h
+jdk-1.2.2/jre/bin/.java_wrapper
+jdk-1.2.2/jre/bin/${MACHINE_ARCH}/green_threads/java
+jdk-1.2.2/jre/bin/${MACHINE_ARCH}/green_threads/keytool
+jdk-1.2.2/jre/bin/${MACHINE_ARCH}/green_threads/policytool
+jdk-1.2.2/jre/bin/${MACHINE_ARCH}/green_threads/rmid
+jdk-1.2.2/jre/bin/${MACHINE_ARCH}/green_threads/rmiregistry
+jdk-1.2.2/jre/bin/${MACHINE_ARCH}/green_threads/tnameserv
+jdk-1.2.2/jre/bin/java
+jdk-1.2.2/jre/bin/keytool
+jdk-1.2.2/jre/bin/policytool
+jdk-1.2.2/jre/bin/rmid
+jdk-1.2.2/jre/bin/rmiregistry
+jdk-1.2.2/jre/bin/tnameserv
+jdk-1.2.2/jre/lib/audio/soundbank.gm
+jdk-1.2.2/jre/lib/cmm/CIEXYZ.pf
+jdk-1.2.2/jre/lib/cmm/GRAY.pf
+jdk-1.2.2/jre/lib/cmm/LINEAR_RGB.pf
+jdk-1.2.2/jre/lib/cmm/PYCC.pf
+jdk-1.2.2/jre/lib/cmm/sRGB.pf
+jdk-1.2.2/jre/lib/content-types.properties
+jdk-1.2.2/jre/lib/ext/iiimp.jar
+jdk-1.2.2/jre/lib/flavormap.properties
+jdk-1.2.2/jre/lib/font.properties
+jdk-1.2.2/jre/lib/font.properties.ja
+jdk-1.2.2/jre/lib/fonts/LucidaBrightDemiBold.ttf
+jdk-1.2.2/jre/lib/fonts/LucidaBrightDemiItalic.ttf
+jdk-1.2.2/jre/lib/fonts/LucidaBrightItalic.ttf
+jdk-1.2.2/jre/lib/fonts/LucidaBrightRegular.ttf
+jdk-1.2.2/jre/lib/fonts/LucidaSansDemiBold.ttf
+jdk-1.2.2/jre/lib/fonts/LucidaSansDemiOblique.ttf
+jdk-1.2.2/jre/lib/fonts/LucidaSansOblique.ttf
+jdk-1.2.2/jre/lib/fonts/LucidaSansRegular.ttf
+jdk-1.2.2/jre/lib/fonts/LucidaTypewriterBold.ttf
+jdk-1.2.2/jre/lib/fonts/LucidaTypewriterBoldOblique.ttf
+jdk-1.2.2/jre/lib/fonts/LucidaTypewriterOblique.ttf
+jdk-1.2.2/jre/lib/fonts/LucidaTypewriterRegular.ttf
+jdk-1.2.2/jre/lib/fonts/fonts.dir
+jdk-1.2.2/jre/lib/i18n.jar
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/classic/Xusage.txt
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/classic/libjvm.so
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/classic/libjvm.so.1.2.2
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/green_threads/libhpi.so
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/green_threads/libhpi.so.1.2.2
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libagent.so
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libagent.so.1.2.2
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libaudio.so
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libaudio.so.1.2.2
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libawt.so
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libawt.so.1.2.2
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libcmm.so
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libcmm.so.1.2.2
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libdcpr.so
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libdcpr.so.1.2.2
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libdt_socket.so
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libdt_socket.so.1.2.2
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libfontmanager.so
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libfontmanager.so.1.2.2
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libhprof.so
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libhprof.so.1.2.2
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libjava.so
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libjava.so.1.2.2
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libjdwp.so
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libjdwp.so.1.2.2
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libjpeg.so
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libjpeg.so.1.2.2
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libmath.so
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libmath.so.1.2.2
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libmlib_image.so
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libmlib_image.so.1.2.2
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libnet.so
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libnet.so.1.2.2
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libsunwjdga.so
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libsunwjdga.so.1.2.2
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libzip.so
+jdk-1.2.2/jre/lib/${MACHINE_ARCH}/libzip.so.1.2.2
+jdk-1.2.2/jre/lib/images/cursors/cursors.properties
+jdk-1.2.2/jre/lib/images/cursors/invalid32x32.gif
+jdk-1.2.2/jre/lib/images/cursors/motif_CopyDrop32x32.gif
+jdk-1.2.2/jre/lib/images/cursors/motif_CopyNoDrop32x32.gif
+jdk-1.2.2/jre/lib/images/cursors/motif_LinkDrop32x32.gif
+jdk-1.2.2/jre/lib/images/cursors/motif_LinkNoDrop32x32.gif
+jdk-1.2.2/jre/lib/images/cursors/motif_MoveDrop32x32.gif
+jdk-1.2.2/jre/lib/images/cursors/motif_MoveNoDrop32x32.gif
+jdk-1.2.2/jre/lib/jvm.hprof.txt
+jdk-1.2.2/jre/lib/locale/ja/app-defaults/XApplication
+jdk-1.2.2/jre/lib/locale/ja_JP.PCK/app-defaults/XApplication
+jdk-1.2.2/jre/lib/locale/ja_JP.UTF-8/app-defaults/XApplication
+jdk-1.2.2/jre/lib/rt.jar
+jdk-1.2.2/jre/lib/security/cacerts
+jdk-1.2.2/jre/lib/security/java.policy
+jdk-1.2.2/jre/lib/security/java.security
+jdk-1.2.2/lib/dt.jar
+jdk-1.2.2/lib/jpda.jar
+jdk-1.2.2/lib/tools.jar
+jdk-1.2.2/src.jar
+@dirrm jdk-1.2.2/lib
+@dirrm jdk-1.2.2/jre/lib/security
+@dirrm jdk-1.2.2/jre/lib/locale/ja_JP.UTF-8/app-defaults
+@dirrm jdk-1.2.2/jre/lib/locale/ja_JP.UTF-8
+@dirrm jdk-1.2.2/jre/lib/locale/ja_JP.PCK/app-defaults
+@dirrm jdk-1.2.2/jre/lib/locale/ja_JP.PCK
+@dirrm jdk-1.2.2/jre/lib/locale/ja/app-defaults
+@dirrm jdk-1.2.2/jre/lib/locale/ja
+@dirrm jdk-1.2.2/jre/lib/locale
+@dirrm jdk-1.2.2/jre/lib/images/cursors
+@dirrm jdk-1.2.2/jre/lib/images
+@dirrm jdk-1.2.2/jre/lib/${MACHINE_ARCH}/green_threads
+@dirrm jdk-1.2.2/jre/lib/${MACHINE_ARCH}/classic
+@dirrm jdk-1.2.2/jre/lib/${MACHINE_ARCH}
+@dirrm jdk-1.2.2/jre/lib/fonts
+@dirrm jdk-1.2.2/jre/lib/ext
+@dirrm jdk-1.2.2/jre/lib/cmm
+@dirrm jdk-1.2.2/jre/lib/audio
+@dirrm jdk-1.2.2/jre/lib
+@dirrm jdk-1.2.2/jre/bin/${MACHINE_ARCH}/green_threads
+@dirrm jdk-1.2.2/jre/bin/${MACHINE_ARCH}
+@dirrm jdk-1.2.2/jre/bin
+@dirrm jdk-1.2.2/jre
+@dirrm jdk-1.2.2/include/openbsd
+@dirrm jdk-1.2.2/include-old/openbsd
+@dirrm jdk-1.2.2/include-old
+@dirrm jdk-1.2.2/include
+@dirrm jdk-1.2.2/bin/${MACHINE_ARCH}/green_threads
+@dirrm jdk-1.2.2/bin/${MACHINE_ARCH}
+@dirrm jdk-1.2.2/bin
+@dirrm jdk-1.2.2

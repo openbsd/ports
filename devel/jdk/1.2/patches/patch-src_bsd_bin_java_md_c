@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_bsd_bin_java_md_c,v 1.1.1.1 2002/11/01 17:52:53 ian Exp $
+--- src/bsd/bin/java_md.c.orig	Thu Oct  3 00:08:50 2002
++++ src/bsd/bin/java_md.c	Thu Oct  3 00:14:19 2002
+@@ -85,6 +85,9 @@ GetApplicationHome(char *buf, jint bufsi
+     if (apphome) {
+ 	strncpy(buf, apphome, bufsize-1);
+ 	buf[bufsize-1] = '\0';
++#ifdef DEBUG
++	printf("Apphome: %s\n", buf);
++#endif
+ 	return JNI_TRUE;
+     } else {
+ 	return JNI_FALSE;
+@@ -109,6 +112,10 @@ GetApplicationHome(char *buf, jint bufsi
+     *(strrchr(buf, '/')) = '\0';  /* green|native_threads */
+     *(strrchr(buf, '/')) = '\0';  /* sparc|i386           */
+     *(strrchr(buf, '/')) = '\0';  /* bin                  */
++    *(strrchr(buf, '/')) = '\0';  /* jre                  */
++#ifdef DEBUG
++    printf("Apphome: %s\n", buf);
++#endif
+     return JNI_TRUE;
+ #endif
+ }

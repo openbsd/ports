@@ -1,0 +1,590 @@
+@comment $OpenBSD: PLIST-demos,v 1.1.1.1 2002/11/01 17:52:53 ian Exp $
+@pkgdep jdk-1.2.2
+jdk-1.2.2/demo/applets/Animator/AnimationFrame.class
+jdk-1.2.2/demo/applets/Animator/Animator.class
+jdk-1.2.2/demo/applets/Animator/Animator.java
+jdk-1.2.2/demo/applets/Animator/DescriptionFrame.class
+jdk-1.2.2/demo/applets/Animator/ParseException.class
+jdk-1.2.2/demo/applets/Animator/audio/0.au
+jdk-1.2.2/demo/applets/Animator/audio/1.au
+jdk-1.2.2/demo/applets/Animator/audio/2.au
+jdk-1.2.2/demo/applets/Animator/audio/3.au
+jdk-1.2.2/demo/applets/Animator/audio/4.au
+jdk-1.2.2/demo/applets/Animator/audio/5.au
+jdk-1.2.2/demo/applets/Animator/audio/6.au
+jdk-1.2.2/demo/applets/Animator/audio/7.au
+jdk-1.2.2/demo/applets/Animator/audio/8.au
+jdk-1.2.2/demo/applets/Animator/audio/9.au
+jdk-1.2.2/demo/applets/Animator/audio/spacemusic.au
+jdk-1.2.2/demo/applets/Animator/example1.html
+jdk-1.2.2/demo/applets/Animator/example2.html
+jdk-1.2.2/demo/applets/Animator/example3.html
+jdk-1.2.2/demo/applets/Animator/example4.html
+jdk-1.2.2/demo/applets/Animator/images/Beans/T1.gif
+jdk-1.2.2/demo/applets/Animator/images/Beans/T10.gif
+jdk-1.2.2/demo/applets/Animator/images/Beans/T2.gif
+jdk-1.2.2/demo/applets/Animator/images/Beans/T3.gif
+jdk-1.2.2/demo/applets/Animator/images/Beans/T4.gif
+jdk-1.2.2/demo/applets/Animator/images/Beans/T5.gif
+jdk-1.2.2/demo/applets/Animator/images/Beans/T6.gif
+jdk-1.2.2/demo/applets/Animator/images/Beans/T7.gif
+jdk-1.2.2/demo/applets/Animator/images/Beans/T8.gif
+jdk-1.2.2/demo/applets/Animator/images/Beans/T9.gif
+jdk-1.2.2/demo/applets/Animator/images/SimpleAnimation/T1.gif
+jdk-1.2.2/demo/applets/Animator/images/SimpleAnimation/T2.gif
+jdk-1.2.2/demo/applets/Animator/images/loading-msg.gif
+jdk-1.2.2/demo/applets/ArcTest/ArcCanvas.class
+jdk-1.2.2/demo/applets/ArcTest/ArcControls.class
+jdk-1.2.2/demo/applets/ArcTest/ArcTest.class
+jdk-1.2.2/demo/applets/ArcTest/ArcTest.java
+jdk-1.2.2/demo/applets/ArcTest/example1.html
+jdk-1.2.2/demo/applets/BarChart/Chart.class
+jdk-1.2.2/demo/applets/BarChart/Chart.java
+jdk-1.2.2/demo/applets/BarChart/example1.html
+jdk-1.2.2/demo/applets/Blink/Blink.class
+jdk-1.2.2/demo/applets/Blink/Blink.java
+jdk-1.2.2/demo/applets/Blink/example1.html
+jdk-1.2.2/demo/applets/CardTest/CardPanel.class
+jdk-1.2.2/demo/applets/CardTest/CardTest.class
+jdk-1.2.2/demo/applets/CardTest/CardTest.java
+jdk-1.2.2/demo/applets/CardTest/example1.html
+jdk-1.2.2/demo/applets/Clock/Clock2.class
+jdk-1.2.2/demo/applets/Clock/Clock2.java
+jdk-1.2.2/demo/applets/Clock/example1.html
+jdk-1.2.2/demo/applets/DitherTest/DitherCanvas.class
+jdk-1.2.2/demo/applets/DitherTest/DitherControls.class
+jdk-1.2.2/demo/applets/DitherTest/DitherTest.class
+jdk-1.2.2/demo/applets/DitherTest/DitherTest.java
+jdk-1.2.2/demo/applets/DitherTest/example1.html
+jdk-1.2.2/demo/applets/DrawTest/DrawControls.class
+jdk-1.2.2/demo/applets/DrawTest/DrawPanel.class
+jdk-1.2.2/demo/applets/DrawTest/DrawTest.class
+jdk-1.2.2/demo/applets/DrawTest/DrawTest.java
+jdk-1.2.2/demo/applets/DrawTest/example1.html
+jdk-1.2.2/demo/applets/Fractal/CLSFractal.class
+jdk-1.2.2/demo/applets/Fractal/CLSFractal.java
+jdk-1.2.2/demo/applets/Fractal/CLSRule.class
+jdk-1.2.2/demo/applets/Fractal/CLSTurtle.class
+jdk-1.2.2/demo/applets/Fractal/ContextLSystem.class
+jdk-1.2.2/demo/applets/Fractal/example1.html
+jdk-1.2.2/demo/applets/GraphLayout/Edge.class
+jdk-1.2.2/demo/applets/GraphLayout/Graph.class
+jdk-1.2.2/demo/applets/GraphLayout/Graph.java
+jdk-1.2.2/demo/applets/GraphLayout/GraphPanel.class
+jdk-1.2.2/demo/applets/GraphLayout/Node.class
+jdk-1.2.2/demo/applets/GraphLayout/audio/computer.au
+jdk-1.2.2/demo/applets/GraphLayout/audio/drip.au
+jdk-1.2.2/demo/applets/GraphLayout/audio/gong.au
+jdk-1.2.2/demo/applets/GraphLayout/example1.html
+jdk-1.2.2/demo/applets/GraphLayout/example2.html
+jdk-1.2.2/demo/applets/GraphLayout/example3.html
+jdk-1.2.2/demo/applets/GraphLayout/example4.html
+jdk-1.2.2/demo/applets/GraphicsTest/AppletFrame.class
+jdk-1.2.2/demo/applets/GraphicsTest/AppletFrame.java
+jdk-1.2.2/demo/applets/GraphicsTest/ArcCard.class
+jdk-1.2.2/demo/applets/GraphicsTest/ArcDegreePanel.class
+jdk-1.2.2/demo/applets/GraphicsTest/ArcPanel.class
+jdk-1.2.2/demo/applets/GraphicsTest/ColorUtils.class
+jdk-1.2.2/demo/applets/GraphicsTest/GraphicsCards.class
+jdk-1.2.2/demo/applets/GraphicsTest/GraphicsPanel.class
+jdk-1.2.2/demo/applets/GraphicsTest/GraphicsTest.class
+jdk-1.2.2/demo/applets/GraphicsTest/GraphicsTest.java
+jdk-1.2.2/demo/applets/GraphicsTest/OvalShape.class
+jdk-1.2.2/demo/applets/GraphicsTest/PolygonShape.class
+jdk-1.2.2/demo/applets/GraphicsTest/RectShape.class
+jdk-1.2.2/demo/applets/GraphicsTest/RoundRectShape.class
+jdk-1.2.2/demo/applets/GraphicsTest/Shape.class
+jdk-1.2.2/demo/applets/GraphicsTest/ShapeTest.class
+jdk-1.2.2/demo/applets/GraphicsTest/example1.html
+jdk-1.2.2/demo/applets/ImageMap/AniArea.class
+jdk-1.2.2/demo/applets/ImageMap/AniArea.java
+jdk-1.2.2/demo/applets/ImageMap/ButtonFilter.class
+jdk-1.2.2/demo/applets/ImageMap/ButtonFilter.java
+jdk-1.2.2/demo/applets/ImageMap/ClickArea.class
+jdk-1.2.2/demo/applets/ImageMap/ClickArea.java
+jdk-1.2.2/demo/applets/ImageMap/DelayedSoundArea.class
+jdk-1.2.2/demo/applets/ImageMap/DelayedSoundArea.java
+jdk-1.2.2/demo/applets/ImageMap/HighlightArea.class
+jdk-1.2.2/demo/applets/ImageMap/HighlightArea.java
+jdk-1.2.2/demo/applets/ImageMap/HighlightFilter.class
+jdk-1.2.2/demo/applets/ImageMap/HighlightFilter.java
+jdk-1.2.2/demo/applets/ImageMap/HrefButtonArea.class
+jdk-1.2.2/demo/applets/ImageMap/HrefButtonArea.java
+jdk-1.2.2/demo/applets/ImageMap/ImageMap.class
+jdk-1.2.2/demo/applets/ImageMap/ImageMap.java
+jdk-1.2.2/demo/applets/ImageMap/ImageMapArea.class
+jdk-1.2.2/demo/applets/ImageMap/ImageMapArea.java
+jdk-1.2.2/demo/applets/ImageMap/LinkArea.class
+jdk-1.2.2/demo/applets/ImageMap/LinkArea.java
+jdk-1.2.2/demo/applets/ImageMap/NameArea.class
+jdk-1.2.2/demo/applets/ImageMap/NameArea.java
+jdk-1.2.2/demo/applets/ImageMap/RoundButtonFilter.class
+jdk-1.2.2/demo/applets/ImageMap/RoundButtonFilter.java
+jdk-1.2.2/demo/applets/ImageMap/RoundHrefButtonArea.class
+jdk-1.2.2/demo/applets/ImageMap/RoundHrefButtonArea.java
+jdk-1.2.2/demo/applets/ImageMap/SoundArea.class
+jdk-1.2.2/demo/applets/ImageMap/SoundArea.java
+jdk-1.2.2/demo/applets/ImageMap/TickerArea.class
+jdk-1.2.2/demo/applets/ImageMap/TickerArea.java
+jdk-1.2.2/demo/applets/ImageMap/audio/chirp1.au
+jdk-1.2.2/demo/applets/ImageMap/audio/hi.au
+jdk-1.2.2/demo/applets/ImageMap/example1.html
+jdk-1.2.2/demo/applets/ImageMap/imagemapcheat.html
+jdk-1.2.2/demo/applets/ImageMap/images/jim.graham.gif
+jdk-1.2.2/demo/applets/ImageMap/sources.html
+jdk-1.2.2/demo/applets/JumpingBox/MouseTrack.class
+jdk-1.2.2/demo/applets/JumpingBox/MouseTrack.java
+jdk-1.2.2/demo/applets/JumpingBox/example1.html
+jdk-1.2.2/demo/applets/JumpingBox/sounds/adapt-or-die.au
+jdk-1.2.2/demo/applets/JumpingBox/sounds/cannot.be.completed.au
+jdk-1.2.2/demo/applets/JumpingBox/sounds/ip.au
+jdk-1.2.2/demo/applets/JumpingBox/sounds/that.hurts.au
+jdk-1.2.2/demo/applets/JumpingBox/sounds/thin.bell.au
+jdk-1.2.2/demo/applets/JumpingBox/sounds/tiptoe.thru.the.tulips.au
+jdk-1.2.2/demo/applets/MoleculeViewer/Atom.class
+jdk-1.2.2/demo/applets/MoleculeViewer/Matrix3D.class
+jdk-1.2.2/demo/applets/MoleculeViewer/Matrix3D.java
+jdk-1.2.2/demo/applets/MoleculeViewer/XYZApp.class
+jdk-1.2.2/demo/applets/MoleculeViewer/XYZApp.java
+jdk-1.2.2/demo/applets/MoleculeViewer/XYZChemModel.class
+jdk-1.2.2/demo/applets/MoleculeViewer/example1.html
+jdk-1.2.2/demo/applets/MoleculeViewer/example2.html
+jdk-1.2.2/demo/applets/MoleculeViewer/example3.html
+jdk-1.2.2/demo/applets/MoleculeViewer/models/HyaluronicAcid.xyz
+jdk-1.2.2/demo/applets/MoleculeViewer/models/benzene.xyz
+jdk-1.2.2/demo/applets/MoleculeViewer/models/buckminsterfullerine.xyz
+jdk-1.2.2/demo/applets/MoleculeViewer/models/cyclohexane.xyz
+jdk-1.2.2/demo/applets/MoleculeViewer/models/ethane.xyz
+jdk-1.2.2/demo/applets/MoleculeViewer/models/water.xyz
+jdk-1.2.2/demo/applets/NervousText/NervousText.class
+jdk-1.2.2/demo/applets/NervousText/NervousText.java
+jdk-1.2.2/demo/applets/NervousText/example1.html
+jdk-1.2.2/demo/applets/SimpleGraph/GraphApplet.class
+jdk-1.2.2/demo/applets/SimpleGraph/GraphApplet.java
+jdk-1.2.2/demo/applets/SimpleGraph/example1.html
+jdk-1.2.2/demo/applets/SortDemo/BidirBubbleSortAlgorithm.class
+jdk-1.2.2/demo/applets/SortDemo/BidirBubbleSortAlgorithm.java
+jdk-1.2.2/demo/applets/SortDemo/BubbleSortAlgorithm.class
+jdk-1.2.2/demo/applets/SortDemo/BubbleSortAlgorithm.java
+jdk-1.2.2/demo/applets/SortDemo/QSortAlgorithm.class
+jdk-1.2.2/demo/applets/SortDemo/QSortAlgorithm.java
+jdk-1.2.2/demo/applets/SortDemo/SortAlgorithm.class
+jdk-1.2.2/demo/applets/SortDemo/SortAlgorithm.java
+jdk-1.2.2/demo/applets/SortDemo/SortItem.class
+jdk-1.2.2/demo/applets/SortDemo/SortItem.java
+jdk-1.2.2/demo/applets/SortDemo/example1.html
+jdk-1.2.2/demo/applets/SpreadSheet/Cell.class
+jdk-1.2.2/demo/applets/SpreadSheet/CellUpdater.class
+jdk-1.2.2/demo/applets/SpreadSheet/InputField.class
+jdk-1.2.2/demo/applets/SpreadSheet/Node.class
+jdk-1.2.2/demo/applets/SpreadSheet/SpreadSheet.class
+jdk-1.2.2/demo/applets/SpreadSheet/SpreadSheet.java
+jdk-1.2.2/demo/applets/SpreadSheet/SpreadSheetInput.class
+jdk-1.2.2/demo/applets/SpreadSheet/example1.html
+jdk-1.2.2/demo/applets/SymbolTest/SymbolCanvas.class
+jdk-1.2.2/demo/applets/SymbolTest/SymbolTest$MyAdapter.class
+jdk-1.2.2/demo/applets/SymbolTest/SymbolTest.class
+jdk-1.2.2/demo/applets/SymbolTest/SymbolTest.java
+jdk-1.2.2/demo/applets/SymbolTest/example1.html
+jdk-1.2.2/demo/applets/TicTacToe/TicTacToe.class
+jdk-1.2.2/demo/applets/TicTacToe/TicTacToe.java
+jdk-1.2.2/demo/applets/TicTacToe/audio/beep.au
+jdk-1.2.2/demo/applets/TicTacToe/audio/ding.au
+jdk-1.2.2/demo/applets/TicTacToe/audio/return.au
+jdk-1.2.2/demo/applets/TicTacToe/audio/yahoo1.au
+jdk-1.2.2/demo/applets/TicTacToe/audio/yahoo2.au
+jdk-1.2.2/demo/applets/TicTacToe/example1.html
+jdk-1.2.2/demo/applets/TicTacToe/images/cross.gif
+jdk-1.2.2/demo/applets/TicTacToe/images/not.gif
+jdk-1.2.2/demo/applets/WireFrame/FileFormatException.class
+jdk-1.2.2/demo/applets/WireFrame/Matrix3D.class
+jdk-1.2.2/demo/applets/WireFrame/Matrix3D.java
+jdk-1.2.2/demo/applets/WireFrame/Model3D.class
+jdk-1.2.2/demo/applets/WireFrame/ThreeD.class
+jdk-1.2.2/demo/applets/WireFrame/ThreeD.java
+jdk-1.2.2/demo/applets/WireFrame/example1.html
+jdk-1.2.2/demo/applets/WireFrame/example2.html
+jdk-1.2.2/demo/applets/WireFrame/example3.html
+jdk-1.2.2/demo/applets/WireFrame/example4.html
+jdk-1.2.2/demo/applets/WireFrame/models/cube.obj
+jdk-1.2.2/demo/applets/WireFrame/models/dinasaur.obj
+jdk-1.2.2/demo/applets/WireFrame/models/hughes_500.obj
+jdk-1.2.2/demo/applets/WireFrame/models/knoxS.obj
+jdk-1.2.2/demo/jfc/DBDemos/CreateCoffees/MSAccess/CreateCoffees.class
+jdk-1.2.2/demo/jfc/DBDemos/CreateCoffees/MSAccess/CreateCoffees.java
+jdk-1.2.2/demo/jfc/DBDemos/CreateCoffees/MSAccess/runnit.bat
+jdk-1.2.2/demo/jfc/DBDemos/CreateCoffees/Sybase/CreateCoffees.class
+jdk-1.2.2/demo/jfc/DBDemos/CreateCoffees/Sybase/CreateCoffees.java
+jdk-1.2.2/demo/jfc/DBDemos/CreateCoffees/Sybase/runnit.bat
+jdk-1.2.2/demo/jfc/DBDemos/CreateSuppliers/MSAccess/CreateSuppliers.class
+jdk-1.2.2/demo/jfc/DBDemos/CreateSuppliers/MSAccess/CreateSuppliers.java
+jdk-1.2.2/demo/jfc/DBDemos/CreateSuppliers/MSAccess/runnit.bat
+jdk-1.2.2/demo/jfc/DBDemos/CreateSuppliers/Sybase/CreateSuppliers.class
+jdk-1.2.2/demo/jfc/DBDemos/CreateSuppliers/Sybase/CreateSuppliers.java
+jdk-1.2.2/demo/jfc/DBDemos/CreateSuppliers/Sybase/runnit.bat
+jdk-1.2.2/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/InsertCoffees.class
+jdk-1.2.2/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/InsertCoffees.java
+jdk-1.2.2/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/runnit.bat
+jdk-1.2.2/demo/jfc/DBDemos/InsertCoffees/Sybase/InsertCoffees.class
+jdk-1.2.2/demo/jfc/DBDemos/InsertCoffees/Sybase/InsertCoffees.java
+jdk-1.2.2/demo/jfc/DBDemos/InsertCoffees/Sybase/runnit.bat
+jdk-1.2.2/demo/jfc/DBDemos/InsertSuppliers/MSAccess/InsertSuppliers.class
+jdk-1.2.2/demo/jfc/DBDemos/InsertSuppliers/MSAccess/InsertSuppliers.java
+jdk-1.2.2/demo/jfc/DBDemos/InsertSuppliers/MSAccess/runnit.bat
+jdk-1.2.2/demo/jfc/DBDemos/InsertSuppliers/Sybase/InsertSuppliers.class
+jdk-1.2.2/demo/jfc/DBDemos/InsertSuppliers/Sybase/InsertSuppliers.java
+jdk-1.2.2/demo/jfc/DBDemos/InsertSuppliers/Sybase/runnit.bat
+jdk-1.2.2/demo/jfc/DBDemos/JavaDB/CAFEJAVA.MDB
+jdk-1.2.2/demo/jfc/DBDemos/JavaDB/CAFEJAVA.ldb
+jdk-1.2.2/demo/jfc/DBDemos/README.txt
+jdk-1.2.2/demo/jfc/DBDemos/private.fls
+jdk-1.2.2/demo/jfc/FileChooserDemo/FileChooserDemo.jar
+jdk-1.2.2/demo/jfc/FileChooserDemo/README.txt
+jdk-1.2.2/demo/jfc/FileChooserDemo/images/gifIcon.gif
+jdk-1.2.2/demo/jfc/FileChooserDemo/images/jpgIcon.jpg
+jdk-1.2.2/demo/jfc/FileChooserDemo/src/ExampleFileFilter.java
+jdk-1.2.2/demo/jfc/FileChooserDemo/src/ExampleFileView.java
+jdk-1.2.2/demo/jfc/FileChooserDemo/src/FileChooserDemo.java
+jdk-1.2.2/demo/jfc/Java2D/Java2Demo.html
+jdk-1.2.2/demo/jfc/Java2D/Java2Demo.jar
+jdk-1.2.2/demo/jfc/Java2D/README.txt
+jdk-1.2.2/demo/jfc/Metalworks/HelpFiles/back.gif
+jdk-1.2.2/demo/jfc/Metalworks/HelpFiles/credits.html
+jdk-1.2.2/demo/jfc/Metalworks/HelpFiles/duke.gif
+jdk-1.2.2/demo/jfc/Metalworks/HelpFiles/javalogo.gif
+jdk-1.2.2/demo/jfc/Metalworks/HelpFiles/metal.html
+jdk-1.2.2/demo/jfc/Metalworks/HelpFiles/metalworks.html
+jdk-1.2.2/demo/jfc/Metalworks/HelpFiles/swing.html
+jdk-1.2.2/demo/jfc/Metalworks/HelpFiles/toc.html
+jdk-1.2.2/demo/jfc/Metalworks/Metalworks.jar
+jdk-1.2.2/demo/jfc/Metalworks/MyTheme.theme
+jdk-1.2.2/demo/jfc/Metalworks/README.txt
+jdk-1.2.2/demo/jfc/Metalworks/images/palette_crop.gif
+jdk-1.2.2/demo/jfc/Metalworks/images/palette_draw.gif
+jdk-1.2.2/demo/jfc/Metalworks/images/palette_hand.gif
+jdk-1.2.2/demo/jfc/Metalworks/images/palette_select.gif
+jdk-1.2.2/demo/jfc/Metalworks/images/palette_text.gif
+jdk-1.2.2/demo/jfc/Metalworks/images/palette_zoom.gif
+jdk-1.2.2/demo/jfc/Metalworks/src/AquaMetalTheme.java
+jdk-1.2.2/demo/jfc/Metalworks/src/BigContrastMetalTheme.java
+jdk-1.2.2/demo/jfc/Metalworks/src/ContrastMetalTheme.java
+jdk-1.2.2/demo/jfc/Metalworks/src/DemoMetalTheme.java
+jdk-1.2.2/demo/jfc/Metalworks/src/GreenMetalTheme.java
+jdk-1.2.2/demo/jfc/Metalworks/src/KhakiMetalTheme.java
+jdk-1.2.2/demo/jfc/Metalworks/src/MetalThemeMenu.java
+jdk-1.2.2/demo/jfc/Metalworks/src/Metalworks.java
+jdk-1.2.2/demo/jfc/Metalworks/src/MetalworksDocumentFrame.java
+jdk-1.2.2/demo/jfc/Metalworks/src/MetalworksFrame.java
+jdk-1.2.2/demo/jfc/Metalworks/src/MetalworksHelp.java
+jdk-1.2.2/demo/jfc/Metalworks/src/MetalworksInBox.java
+jdk-1.2.2/demo/jfc/Metalworks/src/MetalworksPrefs.java
+jdk-1.2.2/demo/jfc/Metalworks/src/PropertiesMetalTheme.java
+jdk-1.2.2/demo/jfc/Metalworks/src/UISwitchListener.java
+jdk-1.2.2/demo/jfc/Notepad/Notepad.jar
+jdk-1.2.2/demo/jfc/Notepad/README.txt
+jdk-1.2.2/demo/jfc/Notepad/resources/Notepad.properties
+jdk-1.2.2/demo/jfc/Notepad/resources/Notepad_fr.properties
+jdk-1.2.2/demo/jfc/Notepad/resources/Notepad_sv.properties
+jdk-1.2.2/demo/jfc/Notepad/resources/copy.gif
+jdk-1.2.2/demo/jfc/Notepad/resources/cut.gif
+jdk-1.2.2/demo/jfc/Notepad/resources/new.gif
+jdk-1.2.2/demo/jfc/Notepad/resources/open.gif
+jdk-1.2.2/demo/jfc/Notepad/resources/paste.gif
+jdk-1.2.2/demo/jfc/Notepad/resources/save.gif
+jdk-1.2.2/demo/jfc/Notepad/src/ElementTreePanel.java
+jdk-1.2.2/demo/jfc/Notepad/src/Notepad.java
+jdk-1.2.2/demo/jfc/SampleTree/README.txt
+jdk-1.2.2/demo/jfc/SampleTree/SampleTree.jar
+jdk-1.2.2/demo/jfc/SampleTree/images/collapsed.gif
+jdk-1.2.2/demo/jfc/SampleTree/images/expanded.gif
+jdk-1.2.2/demo/jfc/SampleTree/src/DynamicTreeNode.java
+jdk-1.2.2/demo/jfc/SampleTree/src/SampleData.java
+jdk-1.2.2/demo/jfc/SampleTree/src/SampleTree.java
+jdk-1.2.2/demo/jfc/SampleTree/src/SampleTreeCellRenderer.java
+jdk-1.2.2/demo/jfc/SampleTree/src/SampleTreeModel.java
+jdk-1.2.2/demo/jfc/SimpleExample/README.txt
+jdk-1.2.2/demo/jfc/SimpleExample/SimpleExample.jar
+jdk-1.2.2/demo/jfc/SimpleExample/src/SimpleExample.java
+jdk-1.2.2/demo/jfc/Stylepad/README.txt
+jdk-1.2.2/demo/jfc/Stylepad/Stylepad.jar
+jdk-1.2.2/demo/jfc/Stylepad/resources/Notepad.properties
+jdk-1.2.2/demo/jfc/Stylepad/resources/Notepad_fr.properties
+jdk-1.2.2/demo/jfc/Stylepad/resources/Notepad_sv.properties
+jdk-1.2.2/demo/jfc/Stylepad/resources/Stylepad.properties
+jdk-1.2.2/demo/jfc/Stylepad/resources/Stylepad_sv.properties
+jdk-1.2.2/demo/jfc/Stylepad/resources/alice.gif
+jdk-1.2.2/demo/jfc/Stylepad/resources/bold.gif
+jdk-1.2.2/demo/jfc/Stylepad/resources/bullets.gif
+jdk-1.2.2/demo/jfc/Stylepad/resources/caterpillar.gif
+jdk-1.2.2/demo/jfc/Stylepad/resources/center.gif
+jdk-1.2.2/demo/jfc/Stylepad/resources/copy.gif
+jdk-1.2.2/demo/jfc/Stylepad/resources/cut.gif
+jdk-1.2.2/demo/jfc/Stylepad/resources/fg.gif
+jdk-1.2.2/demo/jfc/Stylepad/resources/hatter.gif
+jdk-1.2.2/demo/jfc/Stylepad/resources/italic.gif
+jdk-1.2.2/demo/jfc/Stylepad/resources/left.gif
+jdk-1.2.2/demo/jfc/Stylepad/resources/new.gif
+jdk-1.2.2/demo/jfc/Stylepad/resources/open.gif
+jdk-1.2.2/demo/jfc/Stylepad/resources/paste.gif
+jdk-1.2.2/demo/jfc/Stylepad/resources/rabbit.gif
+jdk-1.2.2/demo/jfc/Stylepad/resources/rabbit2.gif
+jdk-1.2.2/demo/jfc/Stylepad/resources/right.gif
+jdk-1.2.2/demo/jfc/Stylepad/resources/save.gif
+jdk-1.2.2/demo/jfc/Stylepad/resources/underline.gif
+jdk-1.2.2/demo/jfc/Stylepad/src/ElementTreePanel.java
+jdk-1.2.2/demo/jfc/Stylepad/src/HelloWorld.java
+jdk-1.2.2/demo/jfc/Stylepad/src/Notepad.java
+jdk-1.2.2/demo/jfc/Stylepad/src/Stylepad.java
+jdk-1.2.2/demo/jfc/Stylepad/src/Wonderland.java
+jdk-1.2.2/demo/jfc/SwingApplet/README.txt
+jdk-1.2.2/demo/jfc/SwingApplet/SwingApplet.html
+jdk-1.2.2/demo/jfc/SwingApplet/SwingApplet.jar
+jdk-1.2.2/demo/jfc/SwingApplet/src/SwingApplet.java
+jdk-1.2.2/demo/jfc/SwingSet/Constitution.txt
+jdk-1.2.2/demo/jfc/SwingSet/README.txt
+jdk-1.2.2/demo/jfc/SwingSet/README12.txt
+jdk-1.2.2/demo/jfc/SwingSet/SwingSet.jar
+jdk-1.2.2/demo/jfc/SwingSet/SwingSetApplet.html
+jdk-1.2.2/demo/jfc/SwingSet/SwingSetApplet2.html
+jdk-1.2.2/demo/jfc/SwingSet/ToolBar.txt
+jdk-1.2.2/demo/jfc/SwingSet/Wonderland.txt
+jdk-1.2.2/demo/jfc/SwingSet/bugfixers.html
+jdk-1.2.2/demo/jfc/SwingSet/example.html
+jdk-1.2.2/demo/jfc/SwingSet/images/AboutBorder.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/AboutSwing.jpg
+jdk-1.2.2/demo/jfc/SwingSet/images/BigTiger.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/Copyright.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/COPYRIGHT
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/banana.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/broccoli.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/burger.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/cake.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/cantaloupe.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/carrot.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/corn.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/donut.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/fries.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/grapes.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/hotdog.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/icecream.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/peach.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/peas.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/pie.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/pizza.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/radish.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/softdrink.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/treat.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food/watermelon.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/misc/cab.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/misc/fish.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/misc/horn.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/misc/moon.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/misc/sun.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/SmallTiger.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/WebSpice/COPYRIGHT
+jdk-1.2.2/demo/jfc/SwingSet/images/WebSpice/bulb1.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/WebSpice/bulb2.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/WebSpice/bulb3.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/WebSpice/left.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/WebSpice/leftDown.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/WebSpice/leftRollover.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/WebSpice/radio.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/WebSpice/radioPressed.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/WebSpice/radioSelected.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/WebSpice/right.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/WebSpice/rightDown.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/WebSpice/rightRollover.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/buttonImage2.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/buttonImage3.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/buttonImage4.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/copy.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/cow.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/cowSmall.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/cut.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/document.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/dot.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/duke2.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/dukeMagnify.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/dukeSnooze.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/dukeWave.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/dukeWaveRed.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/folder.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/gifIcon.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/jpgIcon.jpg
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/bl.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/bldn.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/bm.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/bmdn.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/br.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/brdn.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/c.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/cdn.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/ml.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/mldn.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/mr.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/mrdn.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/tl.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/tldn.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/tm.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/tmdn.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/toggle.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/toggledn.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/tr.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/layout/trdn.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/list/a1.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/list/a1d.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/list/a2.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/list/a2d.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/list/a3.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/list/a3d.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/list/a4.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/list/a4d.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/list/a5.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/list/a5d.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/new.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/noDot.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/open.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/paste.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/people/amy.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/people/ges.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/people/jag.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/people/jeff.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/people/mathew.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/people/nathan.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/people/phil.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/people/pl.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/people/rich.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/people/rick.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/people/tim.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/people/tom.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/redDot.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/save.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/scrollpane/column.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/scrollpane/corner.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/scrollpane/header.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/swing-64.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/swing.small.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/swingLabelSmall.gif
+jdk-1.2.2/demo/jfc/SwingSet/images/swirl.gif
+jdk-1.2.2/demo/jfc/SwingSet/src/BorderPanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/BorderedPanePanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/ButtonPanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/CheckboxPanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/ComboBoxPanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/ComponentOrientationChanger.java
+jdk-1.2.2/demo/jfc/SwingSet/src/DebugGraphicsPanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/DirectionPanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/ExampleFileFilter.java
+jdk-1.2.2/demo/jfc/SwingSet/src/ExampleFileView.java
+jdk-1.2.2/demo/jfc/SwingSet/src/HtmlPanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/InternalWindowPanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/LabelPanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/LayoutControlPanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/ListPanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/ProgressPanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/RadioButtonPanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/ScrollPanePanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/SliderPanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/SplitPanePanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/SwingSet.java
+jdk-1.2.2/demo/jfc/SwingSet/src/SwingSetApplet.java
+jdk-1.2.2/demo/jfc/SwingSet/src/TablePanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/TextPanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/ToggleButtonPanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/ToolTipPanel.java
+jdk-1.2.2/demo/jfc/SwingSet/src/TreeCombo.java
+jdk-1.2.2/demo/jfc/SwingSet/src/TreePanel.java
+jdk-1.2.2/demo/jfc/TableExample/README.txt
+jdk-1.2.2/demo/jfc/TableExample/TableExample.jar
+jdk-1.2.2/demo/jfc/TableExample/src/JDBCAdapter.java
+jdk-1.2.2/demo/jfc/TableExample/src/OldJTable.java
+jdk-1.2.2/demo/jfc/TableExample/src/TableExample.java
+jdk-1.2.2/demo/jfc/TableExample/src/TableExample2.java
+jdk-1.2.2/demo/jfc/TableExample/src/TableExample3.java
+jdk-1.2.2/demo/jfc/TableExample/src/TableExample4.java
+jdk-1.2.2/demo/jfc/TableExample/src/TableMap.java
+jdk-1.2.2/demo/jfc/TableExample/src/TableSorter.java
+@dirrm jdk-1.2.2/demo/jfc/TableExample/src
+@dirrm jdk-1.2.2/demo/jfc/TableExample
+@dirrm jdk-1.2.2/demo/jfc/SwingSet/src
+@dirrm jdk-1.2.2/demo/jfc/SwingSet/images/scrollpane
+@dirrm jdk-1.2.2/demo/jfc/SwingSet/images/people
+@dirrm jdk-1.2.2/demo/jfc/SwingSet/images/list
+@dirrm jdk-1.2.2/demo/jfc/SwingSet/images/layout
+@dirrm jdk-1.2.2/demo/jfc/SwingSet/images/WebSpice
+@dirrm jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/misc
+@dirrm jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub/food
+@dirrm jdk-1.2.2/demo/jfc/SwingSet/images/ImageClub
+@dirrm jdk-1.2.2/demo/jfc/SwingSet/images
+@dirrm jdk-1.2.2/demo/jfc/SwingSet
+@dirrm jdk-1.2.2/demo/jfc/SwingApplet/src
+@dirrm jdk-1.2.2/demo/jfc/SwingApplet
+@dirrm jdk-1.2.2/demo/jfc/Stylepad/src
+@dirrm jdk-1.2.2/demo/jfc/Stylepad/resources
+@dirrm jdk-1.2.2/demo/jfc/Stylepad
+@dirrm jdk-1.2.2/demo/jfc/SimpleExample/src
+@dirrm jdk-1.2.2/demo/jfc/SimpleExample
+@dirrm jdk-1.2.2/demo/jfc/SampleTree/src
+@dirrm jdk-1.2.2/demo/jfc/SampleTree/images
+@dirrm jdk-1.2.2/demo/jfc/SampleTree
+@dirrm jdk-1.2.2/demo/jfc/Notepad/src
+@dirrm jdk-1.2.2/demo/jfc/Notepad/resources
+@dirrm jdk-1.2.2/demo/jfc/Notepad
+@dirrm jdk-1.2.2/demo/jfc/Metalworks/src
+@dirrm jdk-1.2.2/demo/jfc/Metalworks/images
+@dirrm jdk-1.2.2/demo/jfc/Metalworks/HelpFiles
+@dirrm jdk-1.2.2/demo/jfc/Metalworks
+@dirrm jdk-1.2.2/demo/jfc/Java2D
+@dirrm jdk-1.2.2/demo/jfc/FileChooserDemo/src
+@dirrm jdk-1.2.2/demo/jfc/FileChooserDemo/images
+@dirrm jdk-1.2.2/demo/jfc/FileChooserDemo
+@dirrm jdk-1.2.2/demo/jfc/DBDemos/JavaDB
+@dirrm jdk-1.2.2/demo/jfc/DBDemos/InsertSuppliers/Sybase
+@dirrm jdk-1.2.2/demo/jfc/DBDemos/InsertSuppliers/MSAccess
+@dirrm jdk-1.2.2/demo/jfc/DBDemos/InsertSuppliers
+@dirrm jdk-1.2.2/demo/jfc/DBDemos/InsertCoffees/Sybase
+@dirrm jdk-1.2.2/demo/jfc/DBDemos/InsertCoffees/SQLSrvr
+@dirrm jdk-1.2.2/demo/jfc/DBDemos/InsertCoffees
+@dirrm jdk-1.2.2/demo/jfc/DBDemos/CreateSuppliers/Sybase
+@dirrm jdk-1.2.2/demo/jfc/DBDemos/CreateSuppliers/MSAccess
+@dirrm jdk-1.2.2/demo/jfc/DBDemos/CreateSuppliers
+@dirrm jdk-1.2.2/demo/jfc/DBDemos/CreateCoffees/Sybase
+@dirrm jdk-1.2.2/demo/jfc/DBDemos/CreateCoffees/MSAccess
+@dirrm jdk-1.2.2/demo/jfc/DBDemos/CreateCoffees
+@dirrm jdk-1.2.2/demo/jfc/DBDemos
+@dirrm jdk-1.2.2/demo/jfc
+@dirrm jdk-1.2.2/demo/applets/WireFrame/models
+@dirrm jdk-1.2.2/demo/applets/WireFrame
+@dirrm jdk-1.2.2/demo/applets/TicTacToe/images
+@dirrm jdk-1.2.2/demo/applets/TicTacToe/audio
+@dirrm jdk-1.2.2/demo/applets/TicTacToe
+@dirrm jdk-1.2.2/demo/applets/SymbolTest
+@dirrm jdk-1.2.2/demo/applets/SpreadSheet
+@dirrm jdk-1.2.2/demo/applets/SortDemo
+@dirrm jdk-1.2.2/demo/applets/SimpleGraph
+@dirrm jdk-1.2.2/demo/applets/NervousText
+@dirrm jdk-1.2.2/demo/applets/MoleculeViewer/models
+@dirrm jdk-1.2.2/demo/applets/MoleculeViewer
+@dirrm jdk-1.2.2/demo/applets/JumpingBox/sounds
+@dirrm jdk-1.2.2/demo/applets/JumpingBox
+@dirrm jdk-1.2.2/demo/applets/ImageMap/images
+@dirrm jdk-1.2.2/demo/applets/ImageMap/audio
+@dirrm jdk-1.2.2/demo/applets/ImageMap
+@dirrm jdk-1.2.2/demo/applets/GraphicsTest
+@dirrm jdk-1.2.2/demo/applets/GraphLayout/audio
+@dirrm jdk-1.2.2/demo/applets/GraphLayout
+@dirrm jdk-1.2.2/demo/applets/Fractal
+@dirrm jdk-1.2.2/demo/applets/DrawTest
+@dirrm jdk-1.2.2/demo/applets/DitherTest
+@dirrm jdk-1.2.2/demo/applets/Clock
+@dirrm jdk-1.2.2/demo/applets/CardTest
+@dirrm jdk-1.2.2/demo/applets/Blink
+@dirrm jdk-1.2.2/demo/applets/BarChart
+@dirrm jdk-1.2.2/demo/applets/ArcTest
+@dirrm jdk-1.2.2/demo/applets/Animator/images/SimpleAnimation
+@dirrm jdk-1.2.2/demo/applets/Animator/images/Beans
+@dirrm jdk-1.2.2/demo/applets/Animator/images
+@dirrm jdk-1.2.2/demo/applets/Animator/audio
+@dirrm jdk-1.2.2/demo/applets/Animator
+@dirrm jdk-1.2.2/demo/applets
+@dirrm jdk-1.2.2/demo

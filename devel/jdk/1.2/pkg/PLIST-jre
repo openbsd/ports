@@ -1,0 +1,113 @@
+@comment $OpenBSD: PLIST-jre,v 1.1.1.1 2002/11/01 17:52:53 ian Exp $
+jre-1.2.2/bin/.java_wrapper
+jre-1.2.2/bin/${MACHINE_ARCH}/green_threads/java
+jre-1.2.2/bin/${MACHINE_ARCH}/green_threads/keytool
+jre-1.2.2/bin/${MACHINE_ARCH}/green_threads/policytool
+jre-1.2.2/bin/${MACHINE_ARCH}/green_threads/rmid
+jre-1.2.2/bin/${MACHINE_ARCH}/green_threads/rmiregistry
+jre-1.2.2/bin/${MACHINE_ARCH}/green_threads/tnameserv
+jre-1.2.2/bin/java
+jre-1.2.2/bin/keytool
+jre-1.2.2/bin/policytool
+jre-1.2.2/bin/rmid
+jre-1.2.2/bin/rmiregistry
+jre-1.2.2/bin/tnameserv
+jre-1.2.2/lib/audio/soundbank.gm
+jre-1.2.2/lib/cmm/CIEXYZ.pf
+jre-1.2.2/lib/cmm/GRAY.pf
+jre-1.2.2/lib/cmm/LINEAR_RGB.pf
+jre-1.2.2/lib/cmm/PYCC.pf
+jre-1.2.2/lib/cmm/sRGB.pf
+jre-1.2.2/lib/content-types.properties
+jre-1.2.2/lib/ext/iiimp.jar
+jre-1.2.2/lib/flavormap.properties
+jre-1.2.2/lib/font.properties
+jre-1.2.2/lib/font.properties.ja
+jre-1.2.2/lib/fonts/LucidaBrightDemiBold.ttf
+jre-1.2.2/lib/fonts/LucidaBrightDemiItalic.ttf
+jre-1.2.2/lib/fonts/LucidaBrightItalic.ttf
+jre-1.2.2/lib/fonts/LucidaBrightRegular.ttf
+jre-1.2.2/lib/fonts/LucidaSansDemiBold.ttf
+jre-1.2.2/lib/fonts/LucidaSansDemiOblique.ttf
+jre-1.2.2/lib/fonts/LucidaSansOblique.ttf
+jre-1.2.2/lib/fonts/LucidaSansRegular.ttf
+jre-1.2.2/lib/fonts/LucidaTypewriterBold.ttf
+jre-1.2.2/lib/fonts/LucidaTypewriterBoldOblique.ttf
+jre-1.2.2/lib/fonts/LucidaTypewriterOblique.ttf
+jre-1.2.2/lib/fonts/LucidaTypewriterRegular.ttf
+jre-1.2.2/lib/fonts/fonts.dir
+jre-1.2.2/lib/i18n.jar
+jre-1.2.2/lib/${MACHINE_ARCH}/classic/Xusage.txt
+jre-1.2.2/lib/${MACHINE_ARCH}/classic/libjvm.so
+jre-1.2.2/lib/${MACHINE_ARCH}/classic/libjvm.so.1.2.2
+jre-1.2.2/lib/${MACHINE_ARCH}/green_threads/libhpi.so
+jre-1.2.2/lib/${MACHINE_ARCH}/green_threads/libhpi.so.1.2.2
+jre-1.2.2/lib/${MACHINE_ARCH}/libagent.so.1.2.2
+jre-1.2.2/lib/${MACHINE_ARCH}/libaudio.so
+jre-1.2.2/lib/${MACHINE_ARCH}/libaudio.so.1.2.2
+jre-1.2.2/lib/${MACHINE_ARCH}/libawt.so
+jre-1.2.2/lib/${MACHINE_ARCH}/libawt.so.1.2.2
+jre-1.2.2/lib/${MACHINE_ARCH}/libcmm.so
+jre-1.2.2/lib/${MACHINE_ARCH}/libcmm.so.1.2.2
+jre-1.2.2/lib/${MACHINE_ARCH}/libdcpr.so
+jre-1.2.2/lib/${MACHINE_ARCH}/libdcpr.so.1.2.2
+jre-1.2.2/lib/${MACHINE_ARCH}/libdt_socket.so
+jre-1.2.2/lib/${MACHINE_ARCH}/libdt_socket.so.1.2.2
+jre-1.2.2/lib/${MACHINE_ARCH}/libfontmanager.so
+jre-1.2.2/lib/${MACHINE_ARCH}/libfontmanager.so.1.2.2
+jre-1.2.2/lib/${MACHINE_ARCH}/libhprof.so
+jre-1.2.2/lib/${MACHINE_ARCH}/libhprof.so.1.2.2
+jre-1.2.2/lib/${MACHINE_ARCH}/libjava.so
+jre-1.2.2/lib/${MACHINE_ARCH}/libjava.so.1.2.2
+jre-1.2.2/lib/${MACHINE_ARCH}/libjdwp.so
+jre-1.2.2/lib/${MACHINE_ARCH}/libjdwp.so.1.2.2
+jre-1.2.2/lib/${MACHINE_ARCH}/libjpeg.so
+jre-1.2.2/lib/${MACHINE_ARCH}/libjpeg.so.1.2.2
+jre-1.2.2/lib/${MACHINE_ARCH}/libmath.so
+jre-1.2.2/lib/${MACHINE_ARCH}/libmath.so.1.2.2
+jre-1.2.2/lib/${MACHINE_ARCH}/libmlib_image.so
+jre-1.2.2/lib/${MACHINE_ARCH}/libmlib_image.so.1.2.2
+jre-1.2.2/lib/${MACHINE_ARCH}/libnet.so
+jre-1.2.2/lib/${MACHINE_ARCH}/libnet.so.1.2.2
+jre-1.2.2/lib/${MACHINE_ARCH}/libsunwjdga.so
+jre-1.2.2/lib/${MACHINE_ARCH}/libsunwjdga.so.1.2.2
+jre-1.2.2/lib/${MACHINE_ARCH}/libzip.so
+jre-1.2.2/lib/${MACHINE_ARCH}/libzip.so.1.2.2
+jre-1.2.2/lib/images/cursors/cursors.properties
+jre-1.2.2/lib/images/cursors/invalid32x32.gif
+jre-1.2.2/lib/images/cursors/motif_CopyDrop32x32.gif
+jre-1.2.2/lib/images/cursors/motif_CopyNoDrop32x32.gif
+jre-1.2.2/lib/images/cursors/motif_LinkDrop32x32.gif
+jre-1.2.2/lib/images/cursors/motif_LinkNoDrop32x32.gif
+jre-1.2.2/lib/images/cursors/motif_MoveDrop32x32.gif
+jre-1.2.2/lib/images/cursors/motif_MoveNoDrop32x32.gif
+jre-1.2.2/lib/jvm.hprof.txt
+jre-1.2.2/lib/locale/ja/app-defaults/XApplication
+jre-1.2.2/lib/locale/ja_JP.PCK/app-defaults/XApplication
+jre-1.2.2/lib/locale/ja_JP.UTF-8/app-defaults/XApplication
+jre-1.2.2/lib/rt.jar
+jre-1.2.2/lib/security/cacerts
+jre-1.2.2/lib/security/java.policy
+jre-1.2.2/lib/security/java.security
+@dirrm jre-1.2.2/lib/security
+@dirrm jre-1.2.2/lib/locale/ja_JP.UTF-8/app-defaults
+@dirrm jre-1.2.2/lib/locale/ja_JP.UTF-8
+@dirrm jre-1.2.2/lib/locale/ja_JP.PCK/app-defaults
+@dirrm jre-1.2.2/lib/locale/ja_JP.PCK
+@dirrm jre-1.2.2/lib/locale/ja/app-defaults
+@dirrm jre-1.2.2/lib/locale/ja
+@dirrm jre-1.2.2/lib/locale
+@dirrm jre-1.2.2/lib/images/cursors
+@dirrm jre-1.2.2/lib/images
+@dirrm jre-1.2.2/lib/${MACHINE_ARCH}/green_threads
+@dirrm jre-1.2.2/lib/${MACHINE_ARCH}/classic
+@dirrm jre-1.2.2/lib/${MACHINE_ARCH}
+@dirrm jre-1.2.2/lib/fonts
+@dirrm jre-1.2.2/lib/ext
+@dirrm jre-1.2.2/lib/cmm
+@dirrm jre-1.2.2/lib/audio
+@dirrm jre-1.2.2/lib
+@dirrm jre-1.2.2/bin/${MACHINE_ARCH}/green_threads
+@dirrm jre-1.2.2/bin/${MACHINE_ARCH}
+@dirrm jre-1.2.2/bin
+@dirrm jre-1.2.2

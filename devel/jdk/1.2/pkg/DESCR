@@ -1,0 +1,10 @@
+Java (TM) 2 SDK, Standard Edition
+Version 1.2.2
+
+The Java 2 SDK software includes tools useful for developing and 
+testing programs written in the Java programming language and
+running on the Java platform.  These tools are designed to be 
+used from the command line.  Except for the appletviewer, these
+tools do not provide a graphical user interface.
+
+WWW: ${HOMEPAGE}
