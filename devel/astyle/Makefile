@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/18 21:53:08 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/06/03 20:06:37 avsm Exp $
 
 COMMENT=		"indenter and formatter of C/C++/Java source files"
 
-DISTNAME=		astyle_1.13.8
-PKGNAME=		astyle-1.13.8
+DISTNAME=		astyle_1.14.1
+PKGNAME=		astyle-1.14.1
 CATEGORIES=     	devel
 NEED_VERSION=		1.399
 
