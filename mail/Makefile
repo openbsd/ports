@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2000/01/28 13:16:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.24 2000/02/04 10:08:11 kevlo Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -47,7 +47,7 @@
      SUBDIR += rblsmtpd
      SUBDIR += serialmail
 #    SUBDIR += smail
-#    SUBDIR += tkrat
+     SUBDIR += tkrat
      SUBDIR += vrfy
      SUBDIR += xfaces
      SUBDIR += xfmail
