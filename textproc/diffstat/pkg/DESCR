@@ -1,0 +1,3 @@
+diffstat reads the output of diff and displays a histogram of the
+insertions, deletions, and modifications per-file.  It is useful for
+reviewing large, complex patch files.
