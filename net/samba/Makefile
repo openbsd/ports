@@ -3,11 +3,11 @@
 # Date created:				22 Apr 1998
 # Whom:					form
 #
-# $OpenBSD: Makefile,v 1.10 1998/05/13 04:41:46 form Exp $
+# $OpenBSD: Makefile,v 1.11 1998/06/15 02:38:09 form Exp $
 #
 
-DISTNAME=	samba-1.9.18p7
-PKGNAME=	samba-1.9.18.7
+DISTNAME=	samba-1.9.18p8
+PKGNAME=	samba-1.9.18.8
 CATEGORIES=	net
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/samba/
 

@@ -12,8 +12,10 @@ bin/testprns
 sbin/nmbd
 sbin/smbd
 lib/samba/codepages/codepage.437
+lib/samba/codepages/codepage.737
 lib/samba/codepages/codepage.850
 lib/samba/codepages/codepage.852
+lib/samba/codepages/codepage.861
 lib/samba/codepages/codepage.866
 lib/samba/codepages/codepage.932
 lib/samba/codepages/codepage.936
