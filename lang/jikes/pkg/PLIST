@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/26 16:48:21 ian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/06/18 04:08:24 kevlo Exp $
 bin/jikes
-doc/jikes-1.13/license.htm
+share/doc/jikes-1.14/license.htm
 man/man1/jikes.1
-@dirrm doc/jikes-1.13
-@dirrm doc
+@dirrm share/doc/jikes-1.14

@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Thu Jun 14 09:04:53 2001
++++ doc/Makefile.in	Thu Jun 14 09:06:58 2001
+@@ -82,7 +82,7 @@
+ 
+ man_MANS = jikes.1
+ 
+-docdir = $(prefix)/doc/${PACKAGE}-${VERSION}
++docdir = $(prefix)/share/doc/${PACKAGE}-${VERSION}
+ 
+ doc_DATA = \
+ license.htm
