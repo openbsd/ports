@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/08 06:06:00 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/08/08 17:13:29 marcm Exp $
+include/atk-1.0/
+include/atk-1.0/atk/
 include/atk-1.0/atk/atk-enum-types.h
 include/atk-1.0/atk/atk.h
 include/atk-1.0/atk/atkaction.h
@@ -27,7 +29,11 @@ include/atk-1.0/atk/atkutil.h
 include/atk-1.0/atk/atkvalue.h
 lib/libatk-1.0.a
 lib/libatk-1.0.la
+lib/pkgconfig/
 lib/pkgconfig/atk.pc
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/atk/
 share/gtk-doc/html/atk/AtkAction.html
 share/gtk-doc/html/atk/AtkComponent.html
 share/gtk-doc/html/atk/AtkDocument.html
@@ -60,8 +66,3 @@ share/gtk-doc/html/atk/left.png
 share/gtk-doc/html/atk/right.png
 share/gtk-doc/html/atk/up.png
 %%SHARED%%
-@dirrm share/gtk-doc/html/atk
-@dirrm share/gtk-doc/html
-@dirrm share/gtk-doc
-@dirrm include/atk-1.0/atk
-@dirrm include/atk-1.0
