@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.18 2002/10/27 00:03:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2003/04/23 08:30:05 sturm Exp $
 
 COMMENT=	"X11 animation player with support for lots of formats"
 
 DISTNAME=xanim-2.80.1
+PKGNAME=${DISTNAME}p0
 WRKDIST=${WRKDIR}/xanim2801
 CATEGORIES= graphics x11
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 DIST_SUBDIR=xanim
-MASTER_SITES=ftp://xanim.va.pubnix.com/
-MASTER_SITES0=ftp://xanim.va.pubnix.com/modules/
+MASTER_SITES=http://smurfland.cit.buffalo.edu/xanim/files/
+MASTER_SITES0=ftp://ftp.ut.ee/pub/graphics/xanim/modules/
 
 # License: NOFEE
 PERMIT_PACKAGE_CDROM=	No Fee
@@ -22,9 +23,9 @@ BASEDISTFILE=xanim2801.tar.gz
 DISTFILES=${BASEDISTFILE}
 PATCH_LIST=patch-*
 
-SUP_i386 = xa1.0_cyuv_netbsd386.o.Z:0 \
-xa2.0_cvid_netbsd386.o.Z:0 \
-xa2.0_iv32_netbsd386.o.Z:0
+SUP_i386 = xa1.0_cyuv_linuxELF.o.Z:0 \
+xa2.0_cvid_linuxELF.o.Z:0 \
+xa2.0_iv32_linuxELF.o.Z:0
 
 SUP_m68k = xa1.0_cyuv_netbsd68k.o.Z:0 \
 xa2.0_cvid_netbsd68k.o.Z:0 \

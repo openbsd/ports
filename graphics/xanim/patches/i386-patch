@@ -14,9 +14,9 @@
 -XCOMM XA_IV32_LIB = mods/xa2.1_iv32_linuxELF.o
 -XCOMM XA_CVID_LIB = mods/xa2.0_cvid_linuxELF.o
 -XCOMM XA_CYUV_LIB = mods/xa1.0_cyuv_linuxELF.o
-+XA_IV32_LIB = xa2.0_iv32_netbsd386.o
-+XA_CVID_LIB = xa2.0_cvid_netbsd386.o
-+XA_CYUV_LIB = xa1.0_cyuv_netbsd386.o
++XA_IV32_LIB = xa2.0_iv32_linuxELF.o
++XA_CVID_LIB = xa2.0_cvid_linuxELF.o
++XA_CYUV_LIB = xa1.0_cyuv_linuxELF.o
  XCOMM 
  XCOMM ##########################
  XCOMM  NOTE: SGI Machines Only: 
