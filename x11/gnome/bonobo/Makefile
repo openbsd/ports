@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/06/02 17:34:46 nino Exp $
+# $OpenBSD: Makefile,v 1.3 2002/06/27 14:34:58 nino Exp $
 
 COMMENT=		"architecture for creating reusable software components"
 COMMENT-docs=		"documentation for the bonobo architecture"
@@ -21,12 +21,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/bonobo/}
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		gettext
-
 MULTI_PACKAGES=		-docs
 SUBPACKAGE?=		
 
 .if ${SUBPACKAGE} != "-docs"
+MODULES=		gettext
 LIB_DEPENDS=		art_lgpl.4,gnome.36,gnomesupport,gnomeui.46::x11/gnome/libs \
 			oaf::x11/gnome/oaf \
 			gnomeprint.16::x11/gnome/print
