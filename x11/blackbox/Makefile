@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 1999/05/29 13:26:55 rohee Exp $
+# $OpenBSD: Makefile,v 1.8 1999/08/17 04:00:49 fgsch Exp $
 # Original from: Bruno Rohee
 
-DISTNAME	=	blackbox-0.50.5
+DISTNAME	=	blackbox-0.51.0
 CATEGORIES	=	x11
 
 MAINTAINER	=	rohee@OpenBSD.ORG
@@ -19,7 +19,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${PREFIX}/share/doc/blackbox
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/blackbox
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/blackbox
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog.old ${PREFIX}/share/doc/blackbox
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/blackbox
 
 .include <bsd.port.mk>
