@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.55 2004/08/10 08:45:21 espie Exp $
+# $OpenBSD: make-plist,v 1.56 2004/08/10 21:01:01 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -24,6 +24,7 @@ use File::Spec;
 use File::Find;
 use File::Compare;
 use File::Basename;
+use File::Temp;
 
 
 my $base;
@@ -765,13 +766,6 @@ while (my ($k, $v) = each %$foundcomments) {
 	print "Not accounted for: \@comment $k\n";
 }
 
-for my $plist (@l) {
-	my $orig = $plist->{original};
-	if (defined $orig) {
-		die $orig->{filename}.".orig present" 
-		    if -e $orig->{filename}.".orig";
-	}
-}
 
 {
 	local ($), $>);
@@ -782,22 +776,53 @@ for my $plist (@l) {
 	if (defined $ENV{'OWNER'}) {
 		$> = $ENV{'OWNER'};
 	}
+	
+	my $dir = File::Temp::tempdir ( CLEANUP => 1);
+	$dir.='/';
 
+	# write out everything
 	for my $plist (@l) {
 		if (!$plist->{nonempty}) {
-			print $plist->{filename}, " is empty\n";
 			next;
 		}
+		$plist->tofile($dir.basename($plist->{filename}));
+	}
+
+	for my $plist (@l) {
+		my $orig = $plist->{original};
+		if ($plist->{nonempty}) {
+			if (defined $orig) {
+				if (compare($dir.basename($plist->{filename}), $orig->{filename}) != 0) {
+					print $plist->{filename}, " changed\n";
+					$plist->{changed} = 1;
+				}
+			} else {
+				print $plist->{filename}, " is new\n";
+				$plist->{changed} = 1;
+			}
+		} else {
+			if (defined $orig) {
+				print $plist->{filename}, " empty\n";
+				$plist->{changed} = 1;
+			}
+		}
+	}
+
+	for my $plist (@l) {
 		my $orig = $plist->{original};
 		if (defined $orig) {
-			rename($orig->{filename}, $orig->{filename}.".orig");
+			die $orig->{filename}.".orig present" 
+			    if -e $orig->{filename}.".orig";
 		}
-		$plist->tofile($plist->{filename});
-		if (defined $orig) {
-			if (compare($plist->{filename}, $orig->{filename}.".orig") == 0) {
-				print $plist->{filename}, " unchanged, removing ", $orig->{filename}.".orig\n";
-				unlink($orig->{filename}.".orig");
+	}
+	for my $plist (@l) {
+		my $orig = $plist->{original};
+		if ($plist->{changed}) {
+
+			if (defined $orig) {
+				rename($orig->{filename}, $orig->{filename}.".orig");
 			}
+			$plist->tofile($plist->{filename});
 		}
 	}
 }
