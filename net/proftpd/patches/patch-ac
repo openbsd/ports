@@ -1,0 +1,11 @@
+--- configure.orig	Tue May 19 21:50:43 1998
++++ configure	Sun Jun  7 16:00:24 1998
+@@ -669,7 +669,7 @@
+ EOF
+ 
+ cat >> confdefs.h <<\EOF
+-#define SHUTMSG_PATH "/etc/shutmsg"
++#define SHUTMSG_PATH "/var/run/shutmsg"
+ EOF
+ 
+ cat >> confdefs.h <<\EOF

@@ -1,0 +1,42 @@
+*** Makefile.in.orig	Wed May 20 23:43:14 1998
+--- Makefile.in	Tue Jun 16 13:34:45 1998
+***************
+*** 32,37 ****
+--- 32,38 ----
+  sbindir=@sbindir@
+  etcdir=@etcdir@
+  mandir=@mandir@
++ libexecdir=@libexecdir@
+  
+  include ./Make.rules
+  include ./Make.modules
+***************
+*** 76,90 ****
+  	rm -f proftpd ftpcount ftpwho ftpshut core
+  
+  install-proftpd:
+! 	$(INSTALL) -s -g 0 -o 0 -m 0755 proftpd $(sbindir)/proftpd
+! 	if [ ! -f $(sbindir)/in.proftpd ] ; then \
+! 	  ln -s $(sbindir)/proftpd $(sbindir)/in.proftpd; \
+! 	fi
+! 
+  install-utils:
+  	$(INSTALL) -s -g 0 -o 0 -m 0755 ftpcount $(bindir)/ftpcount
+  	$(INSTALL) -s -g 0 -o 0 -m 0755 ftpcount $(bindir)/ftpwho
+! 	$(INSTALL) -s -g 0 -o 0 -m 0755 ftpcount $(sbindir)/ftpwho
+  
+  install-conf:
+  	if [ ! -e $(etcdir)/proftpd.conf ] ; then \
+--- 77,88 ----
+  	rm -f proftpd ftpcount ftpwho ftpshut core
+  
+  install-proftpd:
+! 	$(INSTALL) -s -g 0 -o 0 -m 0755 proftpd $(libexecdir)/proftpd
+! 	
+  install-utils:
+  	$(INSTALL) -s -g 0 -o 0 -m 0755 ftpcount $(bindir)/ftpcount
+  	$(INSTALL) -s -g 0 -o 0 -m 0755 ftpcount $(bindir)/ftpwho
+! 	$(INSTALL) -s -g 0 -o 0 -m 0755 ftpshut $(sbindir)/ftpshut
+  
+  install-conf:
+  	if [ ! -e $(etcdir)/proftpd.conf ] ; then \
