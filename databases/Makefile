@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2003/11/01 15:26:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.49 2003/12/15 06:01:15 jolan Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += MyCC
      SUBDIR += db
+     SUBDIR += dbh
      SUBDIR += freetds
      SUBDIR += gdbm
      SUBDIR += gnats
