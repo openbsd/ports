@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/08/06 03:33:54 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/10 21:32:36 jolan Exp $
 
 COMMENT=	"Scottish English male speaker (AWB, cstr"
 DISTNAME=	festvox_cstr_us_awb_arctic_multisyn-1.0
 PKGNAME=	${DISTNAME}
 DIST_SUBDIR=	festival
+
+PERMIT_PACKAGE_FTP="Removed for space constraints"
 
 RUN_DEPENDS=	${ARCTIC_US_DEPS}
 
