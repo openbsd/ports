@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/06/19 21:04:54 jakob Exp $
+# $OpenBSD: Makefile,v 1.11 2004/06/22 16:35:46 jakob Exp $
 
 COMMENT=	"SSH remote version scanner"
 
@@ -16,11 +16,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+BUILD_DEPENDS=	dnet::net/libdnet
+
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 
 NO_REGRESS=	Yes
-
-#WRKDIST=	${WRKDIR}/scanssh
 
 .include <bsd.port.mk>
