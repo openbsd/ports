@@ -1,4 +1,4 @@
-# $OpenBSD: old-install.mk,v 1.9 2001/09/14 17:33:51 espie Exp $
+# $OpenBSD: old-install.mk,v 1.10 2002/06/27 12:47:23 mpech Exp $
 # Stuff that is needed for old, pre-fake, port installations.
 
 # If ${FAKE} == No
@@ -24,7 +24,7 @@ ${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
 .  if ${CONFIGURE_STYLE:Mimake}
 	@${SUDO} mkdir -p /usr/local/lib/X11
 	@if [ ! -e /usr/local/lib/X11/app-defaults ]; then \
-		${SUDO} ln -sf /var/X11/app-defaults /usr/local/lib/X11/app-defaults; \
+		${SUDO} ln -sf /etc/X11/app-defaults /usr/local/lib/X11/app-defaults; \
 	fi
 .  endif
 .  if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)

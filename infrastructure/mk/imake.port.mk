@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: imake.port.mk,v 1.1 2001/08/25 11:23:46 espie Exp $
+# $OpenBSD: imake.port.mk,v 1.2 2002/06/27 12:47:23 mpech Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -31,6 +31,6 @@ MODIMAKE_configure= \
 MODIMAKE_pre_install= \
 	${SUDO} mkdir -p /usr/local/lib/X11; \
 	if [ ! -e /usr/local/lib/X11/app-defaults ]; then \
-		${SUDO} ln -sf /var/X11/app-defaults /usr/local/lib/X11/app-defaults; \
+		${SUDO} ln -sf /etc/X11/app-defaults /usr/local/lib/X11/app-defaults; \
 	fi
 .  endif
