@@ -4,7 +4,9 @@
 # Whom:                 gpalmer
 #
 # $FreeBSD: ports/x11-wm/tvtwm/Makefile,v 1.17 1999/08/31 06:53:15 mharo Exp $
-# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:39 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/14 07:54:15 turan Exp $
+
+BROKEN=		sources moved
 
 PKGNAME=	tvtwm-pl11
 
