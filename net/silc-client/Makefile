@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/02/05 23:51:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/09 02:24:45 pvalchev Exp $
 
 COMMENT=	"Secure Live Internet Conferencing (SILC) client"
 
@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-docdir=${PREFIX}/share/doc/silc \
 		--with-etcdir=${SYSCONFDIR}/silc \
 		--disable-asm
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/irssi ${WRKSRC}/lib/silcmath/mpi
 FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} \
 		silc_etcdir=${PREFIX}/share/examples/silc-client
 
