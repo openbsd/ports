@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2003/09/23 00:12:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2004/02/23 08:20:11 pvalchev Exp $
 # $NetBSD: Makefile,v 1.25 1999/03/04 14:18:54 tron Exp $
 
 COMMENT=	"toolkit for converting images between different formats"
@@ -34,6 +34,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MAKE_FLAGS=	CC="${CC}"
 FAKE_FLAGS=	${MAKE_FLAGS} PREFIX="${WRKINST}${TRUEPREFIX}"
+
+# gcc3 ICE on exif.c
+.if ${MACHINE_ARCH} == "sparc64"
+MAKE_FLAGS+=	CFLAGS="${CFLAGS} -O0"
+.endif
 
 USE_GMAKE=	Yes
 
