@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/11/21 18:01:03 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2004/11/30 22:08:54 martin Exp $
 
 COMMENT=	"enhanced performance test of filesystem I/O"
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${HOMEPAGE} \
 		ftp://gd.tuwien.ac.at/opsys/linux/sf/b/bonnie/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Martin Reindl <mreindl@catai.org>
+MAINTAINER=	Martin Reindl <martin@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
