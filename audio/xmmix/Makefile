@@ -3,7 +3,7 @@
 # Date created:		May 21 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1998/07/30 04:01:17 form Exp $
+# $OpenBSD: Makefile,v 1.3 1998/08/05 08:51:36 form Exp $
 #
 
 DISTNAME=	xmmix-1.2
@@ -14,6 +14,6 @@ MASTER_SITE_SUBDIR=	applications/
 MAINTAINER=	form@vs.itam.nsc.ru
 
 USE_IMAKE=	yes
-REQUIRES_MOTIF=	yes
+LIB_DEPENDS=    Xm\\.1\\.:${PORTSDIR}/x11/lesstif
 
 .include <bsd.port.mk>

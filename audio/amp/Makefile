@@ -3,13 +3,15 @@
 # Date created:		May 3 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/21 00:41:09 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/08/05 08:51:32 form Exp $
 #
 
 DISTNAME=	amp-0.7.6
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.rasip.fer.hr/pub/mpeg/
-EXTRACT_SUFX=	.tgz
+#MASTER_SITES=	ftp://ftp.rasip.fer.hr/pub/mpeg/
+# the author's site seems dead.
+MASTER_SITES=	ftp://ftp.clara.net/pub/unix/Audio/
+#EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	angelos@openbsd.org
 
