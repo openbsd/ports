@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/01 02:16:38 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/08/18 01:49:18 angelos Exp $
 
 DISTNAME=       lha-114c
 PKGNAME=        lha-1.14c
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.freebsd.org/pub/FreeBSD/distfile/ \
-		ftp://ftp.kiarchive.ru/pub/unix/arcers/
+MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=     angelos@openbsd.org

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/01 02:16:36 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/08/18 01:47:35 angelos Exp $
 
 DISTNAME=       freeze-2.5
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://lupin.csv.warwick.ac.uk/pub/compression/
+MASTER_SITES=	ftp://ftp.csv.warwick.ac.uk/pub/compression/
 
 MAINTAINER=     ports@openbsd.org
 
