@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/10/16 21:27:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/16 21:30:04 pvalchev Exp $
 
 COMMENT=	"TCP dump file analysis tool"
 
@@ -8,7 +8,7 @@ PKGNAME=	tcptrace-${VERSION}
 CATEGORIES=	net
 MASTER_SITES=	http://jarok.cs.ohiou.edu/software/tcptrace/files/5.2.1/
 
-MAINTAINER=	Jeremy Jethro <jethro@dqc.org>
+MAINTAINER=	Dan Weeks <danimal@danimal.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
