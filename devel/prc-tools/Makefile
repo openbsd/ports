@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/08/31 02:07:57 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2001/08/31 16:47:36 pvalchev Exp $
 
 FAKE=No
 COMMENT=	"PalmPilot(tm) development environment"
@@ -11,15 +11,15 @@ NEED_VERSION=	1.448
 MASTER_SITES=   ftp://ryeham.ee.ryerson.ca/pub/PalmOS/ \
 		${MASTER_SITE_GNU}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		binutils-2.7.tar.gz gdb-4.16.tar.gz gcc-2.7.2.2.tar.gz
+		binutils-2.7${EXTRACT_SUFX} gdb-4.16${EXTRACT_SUFX} gcc-2.7.2.2${EXTRACT_SUFX}
 
 MAINTAINER=	ports@openbsd.org
 
 # License: GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/${PKGNAME}
 PREFIX=		${LOCALBASE}/palm
