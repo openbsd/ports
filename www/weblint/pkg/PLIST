@@ -1,6 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/07/11 15:40:01 naddy Exp $
 bin/weblint
 man/man1/weblint.1
-share/doc/weblint/README
-share/doc/weblint/weblint.ps
-share/doc/weblint/weblintrc
-@dirrm share/doc/weblint
+share/examples/weblintrc

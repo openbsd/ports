@@ -1,0 +1,11 @@
+$OpenBSD: patch-weblint,v 1.1 2000/07/11 15:40:00 naddy Exp $
+--- weblint.orig	Tue Jul 11 16:29:33 2000
++++ weblint	Tue Jul 11 16:29:51 2000
+@@ -1,6 +1,4 @@
+-: # use perl                                  -*- mode: Perl; -*-
+-	eval 'exec perl -S $0 "$@"'
+-		if $runnning_under_some_shell;
++#!/usr/bin/perl
+ 
+ #
+ # weblint - pick fluff off WWW pages (html).
