@@ -1,0 +1,13 @@
+$OpenBSD: patch-ckuker_nr,v 1.1 2002/04/02 03:48:21 espie Exp $
+--- ckuker.nr.orig	Tue Apr  2 05:41:37 2002
++++ ckuker.nr	Tue Apr  2 05:41:51 2002
+@@ -6,8 +6,8 @@ kermit \-
+ .B C-Kermit 8.0:
+ transport- and platform-independent
+ interactive and scriptable communications software.
++.SH
+ .IP
+-
+ This document is intended to give the beginner sufficient information to make
+ basic (if not advanced) use of C-Kermit 8.0.  Although it might be rather long
+ for a Unix manual page, it's still far shorter than the C-Kermit manual, which
