@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/15 09:51:34 mbalmer Exp $
+lib/
+lib/php/
+pear/data/Services_Weather/
+pear/data/Services_Weather/buildMetarDB.php
+pear/data/Services_Weather/images/
+pear/data/Services_Weather/images/sunrise.gif
+pear/data/Services_Weather/images/sunset.gif
+pear/doc/Services_Weather/
+pear/doc/Services_Weather/examples/
+pear/doc/Services_Weather/examples/ejse-basic.php
+pear/doc/Services_Weather/examples/globalweather-basic.php
+pear/doc/Services_Weather/examples/metar-basic.php
+pear/doc/Services_Weather/examples/metar-extensive.php
+pear/doc/Services_Weather/examples/php_sunrise_sunset.php
+pear/doc/Services_Weather/examples/weather.com-basic.php
+pear/doc/Services_Weather/examples/weather.com-extensive.php
+pear/lib/.registry/services_weather.reg
+pear/lib/Services/
+pear/lib/Services/Weather/
+pear/lib/Services/Weather.php
+pear/lib/Services/Weather/Common.php
+pear/lib/Services/Weather/Ejse.php
+pear/lib/Services/Weather/Globalweather.php
+pear/lib/Services/Weather/Metar.php
+pear/lib/Services/Weather/Weatherdotcom.php
