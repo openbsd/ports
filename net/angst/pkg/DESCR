@@ -1,0 +1,14 @@
+Angst is an active sniffer, based on libpcap and libnet.  Angst provides
+methods for aggressive sniffing on switched local area network environments.
+It dumps the payload of all the TCP packets received on the specified ports.
+Moreover, it implements methods for active sniffing.  Angst currently provides
+two active sniffing methods.  The first monitors ARP requests, and after
+enabling IP forwarding on the local host, sends ARP replies mapping all IPs
+to the local MAC address.  The second method floods the local network with
+random MAC addresses (like macof v1.1 by Ian Vitek), causing switches to send
+packets to all ports.  Made just for testing purposes and fun.  If you compile
+it on any other platform except the ones listed below, please contact me at the
+above email address.  As always, published under a BSD style license, see the
+included LICENSE file.
+
+WWW: ${HOMEPAGE}
