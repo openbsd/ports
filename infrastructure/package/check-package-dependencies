@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-package-dependencies,v 1.2 2003/02/26 15:45:44 espie Exp $
+# $OpenBSD: check-package-dependencies,v 1.3 2004/01/04 07:53:48 pvalchev Exp $
 # Copyright (c) 2000
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -26,7 +26,7 @@
 
 # check all packages in the current directory, and report all dependencies,
 # including Broken: for apparently missing packages.
-# Used to hunt ftp-packages/cdrom-packages problems.
+# Used to hunt ftp/cdrom packages problems.
 
 use strict;
 
