@@ -1,0 +1,22 @@
+bin/ftdump
+bin/ftlint
+bin/ftstring
+bin/ftstrpnm
+bin/fttimer
+bin/ftview
+bin/ftzoom
+include/freetype.h
+include/fterrid.h
+include/ftnameid.h
+include/ftxcmap.h
+include/ftxerr18.h
+include/ftxgasp.h
+include/ftxkern.h
+include/ftxpost.h
+include/ftxwidth.h
+lib/libttf.a
+lib/libttf.la
+lib/libttf.so
+lib/libttf.so.2
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
