@@ -1,6 +1,23 @@
---- includes.h.orig	Sat Dec 12 15:40:07 1998
-+++ includes.h	Thu Oct 28 19:14:52 1999
-@@ -60,6 +60,7 @@
+--- includes.h.orig	Mon Apr 10 23:21:13 2000
++++ includes.h	Wed May 17 14:13:46 2000
+@@ -30,7 +30,7 @@
+ #include <errno.h>
+ #include <string.h>
+ #include <stdlib.h>
+-
++#include <net/if.h>
+ #include <netinet/if_ether.h>
+ #ifdef _linux_
+ #include "linux_flood_net.h"
+@@ -45,7 +45,6 @@
+ #include <sys/sockio.h>
+ #endif
+ #include <sys/ioctl.h>
+-#include <net/if.h>
+ #ifdef SOLARIS
+ #include <net/if_arp.h>
+ #include <sys/stropts.h>
+@@ -72,6 +71,7 @@
  #endif
  
  #include <arpa/nameser.h>

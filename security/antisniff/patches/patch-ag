@@ -1,0 +1,20 @@
+--- flood_net.c.orig	Mon Apr 17 20:52:21 2000
++++ flood_net.c	Wed May 17 14:16:36 2000
+@@ -107,7 +107,7 @@
+   char *pkt;
+   struct ether_header *eth;
+   struct ip iph;
+-  struct tcphdr tcph, ltcph; 
++  struct tcphdr tcph; 
+   struct pseudo_header pheader;
+   struct in_addr addr;
+ 
+@@ -241,7 +241,7 @@
+ 
+   iph->ip_len = htons(40);
+   iph->ip_id = htons(0xcafe);
+-#if definded (SOLARIS)
++#if defined (SOLARIS)
+   iph->ip_off = IP_DF;
+ #endif
+ #if defined (_OpenBSD_) || defined (_linux_)

@@ -2,4 +2,9 @@
 this code has not been audited for security holes.
 that's the l0pht's job! ;-)
 
+update: the l0pht released an advisory on their own code!
+the port has been updated to fix this hole.
+
+http://www.l0pht.com/advisories/asniff_advisory.txt
+
 -d.
