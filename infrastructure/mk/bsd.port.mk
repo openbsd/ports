@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.676 2005/01/04 20:44:45 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.677 2005/01/06 19:30:34 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1960,7 +1960,7 @@ ${_F}:
 		${ECHO_MSG} ">> Attempting to fetch ${_F} from $${site}."; \
 		if ${FETCH_CMD} $${site}$$f; then \
 				file=${_F:S@^${DISTDIR}/@@}; \
-				ck=`${_size_fragment}`; \
+				ck=`cd ${DISTDIR} && ${_size_fragment}`; \
 				if grep -q "^$$ck\$$" ${CHECKSUM_FILE}; then \
 					${ECHO_MSG} ">> Size matches for ${_F}"; \
 					exit 0; \
