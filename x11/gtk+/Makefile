@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 1999/03/26 04:50:45 marc Exp $
+# $OpenBSD: Makefile,v 1.16 1999/03/26 07:17:03 brad Exp $
 
-DISTNAME=		gtk+-1.2.0
-CATEGORIES=     	x11
+DISTNAME=	gtk+-1.2.1
+CATEGORIES=     x11
 
-NEED_VERSION=		1.79
+NEED_VERSION=	1.79
 
-MAINTAINER=		marc@openbsd.org
+MAINTAINER=	marc@openbsd.org
 
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
@@ -15,15 +15,15 @@ BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=    glib.1.2:${PORTSDIR}/devel/glib
 
-USE_X11=		yes
-USE_PERL5=		yes
-SYSCONFDIR=		${PREFIX}/lib
-SEPARATE_BUILD=		yes
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--enable-static --sysconfdir=${SYSCONFDIR}
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LIBS="-L${LOCALBASE}/lib"
+USE_X11=	yes
+USE_PERL5=	yes
+SYSCONFDIR=	${PREFIX}/lib
+SEPARATE_BUILD=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=--enable-static --sysconfdir=${SYSCONFDIR}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 # People that installed an older version of gtk+ wound up with
 # libglib.a and other things in /usr/X11R6/lib... these files

@@ -1,6 +1,6 @@
---- gdk/Makefile.in.orig	Tue Mar 16 16:28:30 1999
-+++ gdk/Makefile.in	Tue Mar 16 16:29:02 1999
-@@ -139,7 +139,7 @@
+--- gdk/Makefile.in.orig	Thu Mar 25 23:49:59 1999
++++ gdk/Makefile.in	Thu Mar 25 23:50:56 1999
+@@ -140,7 +140,7 @@
  LDADDS =  	@x_ldflags@		@x_libs@		@GLIB_LIBS@		-lm
  
  

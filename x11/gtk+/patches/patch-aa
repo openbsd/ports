@@ -1,11 +1,11 @@
---- gtk/Makefile.in.orig	Tue Mar 16 16:25:34 1999
-+++ gtk/Makefile.in	Tue Mar 16 16:26:12 1999
-@@ -152,7 +152,7 @@
+--- gtk/Makefile.in.orig	Thu Mar 25 23:47:35 1999
++++ gtk/Makefile.in	Thu Mar 25 23:48:55 1999
+@@ -153,7 +153,7 @@
  gdk_headers =  	../gdk/gdktypes.h 	../gdk/gdkrgb.h
  
  
 -libgtk_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)		-release $(LT_RELEASE) 						@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm
-+libgtk_la_LDFLAGS =  	-version-info 1:2:0		@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm
++libgtk_la_LDFLAGS =  	-version-info 1:2:0			@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm
  
  #	$(top_builddir)/gdk/libgdk.la
  
