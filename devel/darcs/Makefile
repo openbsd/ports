@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/08/10 08:23:37 xsa Exp $
+# $OpenBSD: Makefile,v 1.8 2004/10/09 10:06:17 sturm Exp $
 
 COMMENT=	"advanced revision control system written in Haskell"
 
@@ -22,7 +22,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 
 USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile
-INSTALL_TARGET= install installserver
+INSTALL_TARGET= install installserver installdocs
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
