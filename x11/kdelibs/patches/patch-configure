@@ -1,0 +1,93 @@
+--- configure.orig	Wed Apr 28 17:24:12 1999
++++ configure	Sun Jun 13 16:31:02 1999
+@@ -1862,7 +1862,7 @@
+ aix*)
+   ac_symcode='[BCDTU]'
+   ;;
+-sunos* | cygwin32* | mingw32*)
++sunos* | cygwin32* | mingw32* | openbsd*)
+   ac_sympat='_\([_A-Za-z][_A-Za-z0-9]*\)'
+   ac_symxfrm='_\1 \1'
+   ;;
+@@ -1908,7 +1908,6 @@
+   # Now try to grab the symbols.
+   ac_nlist=conftest.nm
+   if { (eval echo configure:1911: \"$NM conftest.$ac_objext \| $ac_cv_sys_global_symbol_pipe \> $ac_nlist\") 1>&5; (eval $NM conftest.$ac_objext \| $ac_cv_sys_global_symbol_pipe \> $ac_nlist) 2>&5; } && test -s "$ac_nlist"; then
+-
+     # Try sorting and uniquifying the output.
+     if sort "$ac_nlist" | uniq > "$ac_nlist"T; then
+       mv -f "$ac_nlist"T "$ac_nlist"
+@@ -2627,7 +2626,7 @@
+ #include "confdefs.h"
+ 
+ int main() {
+-} $ac_kw foo() {
++} int $ac_kw foo() {
+ ; return 0; }
+ EOF
+ if { (eval echo configure:2634: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>&5; }; then
+@@ -3070,9 +3069,7 @@
+   cat > conftest.$ac_ext <<EOF
+ #line 3072 "configure"
+ #include "confdefs.h"
+-#ifdef __cplusplus
+-extern "C" void exit(int);
+-#endif
++#include <stdlib.h>
+ 
+ /* Thanks to Mike Haertel and Jim Avera for this test.
+    Here is a matrix of mmap possibilities:
+@@ -3096,11 +3093,11 @@
+    * does it exist and is it safe to write into the mmap'd area
+    * how to use it (BSD variants)  */
+ #include <sys/types.h>
++#include <sys/stat.h>
+ #include <fcntl.h>
+ #include <sys/mman.h>
+ 
+ /* This mess was copied from the GNU getpagesize.h.  */
+-#ifndef HAVE_GETPAGESIZE
+ # ifdef HAVE_UNISTD_H
+ #  include <unistd.h>
+ # endif
+@@ -3138,13 +3135,6 @@
+ #  endif /* no HAVE_SYS_PARAM_H */
+ # endif /* no _SC_PAGESIZE */
+ 
+-#endif /* no HAVE_GETPAGESIZE */
+-
+-#ifdef __cplusplus
+-extern "C" { void *malloc(unsigned); }
+-#else
+-char *malloc();
+-#endif
+ 
+ int
+ main()
+@@ -3158,7 +3148,7 @@
+ 	/*
+ 	 * First, make a file with some known garbage in it.
+ 	 */
+-	data = malloc(pagesize);
++	data = (char *)malloc(pagesize);
+ 	if (!data)
+ 		exit(1);
+ 	for (i = 0; i < pagesize; ++i)
+@@ -3179,7 +3169,7 @@
+ 	fd = open("conftestmmap", O_RDWR);
+ 	if (fd < 0)
+ 		exit(1);
+-	data2 = malloc(2 * pagesize);
++	data2 = (char *)malloc(2 * pagesize);
+ 	if (!data2)
+ 		exit(1);
+ 	data2 += (pagesize - ((int) data2 & (pagesize - 1))) & (pagesize - 1);
+@@ -3197,7 +3187,7 @@
+ 	 */
+ 	for (i = 0; i < pagesize; ++i)
+ 		*(data2 + i) = *(data2 + i) + 1;
+-	data3 = malloc(pagesize);
++	data3 = (char *)malloc(pagesize);
+ 	if (!data3)
+ 		exit(1);
+ 	if (read(fd, data3, pagesize) != pagesize)
