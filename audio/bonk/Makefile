@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/11/13 12:40:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2003/09/26 11:35:30 naddy Exp $
 
 COMMENT=	"lossy/lossless audio coder"
 
 DISTNAME=	bonk-0.6
 CATEGORIES=	audio
-HOMEPAGE=	http://yoyo.cc.monash.edu.au/~pfh/bonk/
+HOMEPAGE=	http://www.logarithmic.net/pfh/Bonk
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${HOMEPAGE}/
 
 MODULES=	gcc3
 MODGCC3_ARCHES=	sparc64

@@ -11,5 +11,3 @@ Bonk differs from most existing lossy coders in that it does not
 use a Fourier transform to analyse the audio.  Instead it uses a
 linear predictor (as used in speech compression) with a very high tap
 count.
-
-WWW: ${HOMEPAGE}
