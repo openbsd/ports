@@ -153,6 +153,7 @@ lib/libkspell.so.1.1
 lib/libmediatool.a
 lib/libmediatool.la
 lib/libmediatool.so.1.1
+@exec /sbin/ldconfig -m %B
 share/apps/kab/pics/background_1.jpg
 share/apps/kab/pics/dialog_background.jpg
 share/apps/kde/pics/arrow_down.xbm
@@ -313,18 +314,14 @@ share/toolbar/viewmag.xpm
 share/toolbar/viewzoom.xpm
 @exec ln -sf en %D/share/doc/HTML/default
 @unexec rm -f %D/share/doc/HTML/default
-@exec /sbin/ldconfig -m %B
 @dirrm share/toolbar
 @dirrm share/doc/HTML/en/kspell
 @dirrm share/doc/HTML/en/kfiledialog
 @dirrm share/doc/HTML/en/kdelibs
 @dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
-@dirrm share/config
 @dirrm share/apps/khtmlw/pics
 @dirrm share/apps/khtmlw
 @dirrm share/apps/kde/pics
 @dirrm share/apps/kde
 @dirrm share/apps/kab/pics
 @dirrm share/apps/kab
-@dirrm share/apps
