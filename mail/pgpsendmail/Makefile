@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2000/06/05 00:04:02 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/09/02 01:21:24 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 #BROKEN=		rethink mailwrapper mechanism
+BROKEN=		bombs in the fake process.  
 
 DISTNAME=       PGPsendmail-v1.4.5
 PKGNAME=	pgpsendmail-1.4.5
