@@ -3,7 +3,6 @@ Angband is a "graphical" dungeon adventure game in the vein of
 
 There are some ascii "on line help" files in /usr/local/share/angband/help
 
-Use commandline option -g to request graphics mode.
-
-Official Angband Home Page "http://www.phial.com/angband/" 
+Angband Home Page http://thangorodrim.angband.org/
 Newsgroup rec.games.roguelike.angband
+
