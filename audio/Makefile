@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2001/01/09 21:03:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2001/01/19 03:25:05 kevlo Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -17,6 +17,7 @@
      SUBDIR += gsm
      SUBDIR += knapster
      SUBDIR += lame
+     SUBDIR += libcdaudio
      SUBDIR += lopster
 #    SUBDIR += maplay
 #    SUBDIR += mikmod
@@ -29,6 +30,8 @@
 #    SUBDIR += nas
      SUBDIR += nspmod
      SUBDIR += opennap
+     SUBDIR += p5-Audio-CD
+     SUBDIR += p5-MP3-ID3v1Tag
      SUBDIR += p5-MP3-Info
      SUBDIR += p5-cddb
 #    SUBDIR += playmidi
