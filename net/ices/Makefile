@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/16 00:31:22 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2004/12/31 13:10:26 sturm Exp $
 
 COMMENT=	"icecast source for streaming MP3"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c iconv m ogg perl pthread util vorbis vorbisfile z
 
-MASTER_SITES=	http://icecast.org/files/ices/
+MASTER_SITES=	http://downloads.us.xiph.org/releases/ices/
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-docdir=${LOCALBASE}/share/doc/ices \
