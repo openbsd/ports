@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/11/29 23:22:21 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/26 00:45:55 margarida Exp $
 
 COMMENT=		"monitoring and managing daemons utility"
 
-VERSION=		3.0
+VERSION=		3.1
 DISTNAME=		monit-${VERSION}
 CATEGORIES=		sysutils
 
@@ -28,6 +28,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/monit
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/monit/api-docs
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/monit
+	cd ${WRKSRC} && ${INSTALL_DATA} FAQ.txt \
+	  ${PREFIX}/share/doc/monit
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} monit.html \
 	  ${PREFIX}/share/doc/monit
 	cd ${WRKSRC}/doc/api-docs && ${INSTALL_DATA} * \

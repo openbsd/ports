@@ -1,20 +1,20 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2002/11/29 23:22:21 margarida Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2002/12/26 00:45:55 margarida Exp $
 #
 # monit de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=${SYSCONFDIR}
+CONFIG_FILE=${SYSCONFDIR}/monitrc
 
-if [ -f $CONFIG_DIR/monitrc ]; then 
+if [ -f $CONFIG_FILE ]; then 
 	echo
 	echo "+------------"
 	echo "| To completely deinstall the $1 package you need to perform"
 	echo "| this step as root:"
 	echo "|"
-	echo "|           rm $CONFIG_DIR/monitrc"
+	echo "|           rm $CONFIG_FILE"
 	echo "|"
 	echo "| Do not do this if you plan on re-installing $1"
 	echo "| at some future."

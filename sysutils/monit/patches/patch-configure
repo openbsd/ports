@@ -1,21 +1,15 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2002/11/29 23:22:21 margarida Exp $
---- configure.orig	Sun Sep 22 06:42:11 2002
-+++ configure	Sun Sep 22 06:44:13 2002
-@@ -5083,7 +5083,7 @@ then
- elif test `uname` = "Linux"
+$OpenBSD: patch-configure,v 1.2 2002/12/26 00:45:55 margarida Exp $
+--- configure.orig	Sun Dec 22 15:39:02 2002
++++ configure	Tue Dec 24 01:43:55 2002
+@@ -5291,9 +5291,9 @@ elif test `uname` = "Linux"
  then
     ARCH="LINUX"
+    CFLAGS="$CFLAGS -D _REENTRANT"
 -elif test `uname` = "FreeBSD"
 +elif test `uname` = "OpenBSD"
  then
-    # Test for kvm libs
-    kvm_libs=""
-@@ -5150,7 +5150,7 @@ fi
-    then
- 	LIBS="$LIBS $kvm_libs"
-    fi
 -   ARCH="FREEBSD"
 +   ARCH="OPENBSD"
- else
-    { echo "$as_me:$LINENO: WARNING: Architecture not supported: \`uname\`. Trying Linux compile" >&5
- echo "$as_me: WARNING: Architecture not supported: \`uname\`. Trying Linux compile" >&2;}
+    CFLAGS="$CFLAGS -D _REENTRANT"
+    test_kvm="true"
+ elif test `uname` = "Darwin"

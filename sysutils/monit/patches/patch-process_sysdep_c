@@ -1,7 +1,7 @@
-$OpenBSD: patch-process_sysdep_c,v 1.1.1.1 2002/11/29 23:22:21 margarida Exp $
---- process/sysdep.c.orig	Fri Sep 13 02:32:26 2002
-+++ process/sysdep.c	Sun Sep 22 16:07:30 2002
-@@ -57,7 +57,7 @@
+$OpenBSD: patch-process_sysdep_c,v 1.2 2002/12/26 00:45:55 margarida Exp $
+--- process/sysdep.c.orig	Sun Dec 22 11:54:51 2002
++++ process/sysdep.c	Tue Dec 24 01:52:23 2002
+@@ -59,7 +59,7 @@
  #include <procfs.h>
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-process_sysdep_c,v 1.1.1.1 2002/11/29 23:22:21 margarida Exp $
  #include <kvm.h>
  #include <sys/param.h>
  #include <sys/proc.h>
-@@ -65,14 +65,15 @@
+@@ -67,14 +67,15 @@
  #include <sys/resourcevar.h>
  #include <sys/lock.h>
  #include <sys/user.h>
@@ -29,8 +29,8 @@ $OpenBSD: patch-process_sysdep_c,v 1.1.1.1 2002/11/29 23:22:21 margarida Exp $
 +ssize_t              kvm_uread(kvm_t *, const struct proc *, u_long, char *, size_t);
  #endif
  
- #ifdef LINUX
-@@ -279,7 +280,7 @@ int get_process_info_sysdep(ProcInfo_T p
+ #ifdef DARWIN
+@@ -300,7 +301,7 @@ int get_process_info_sysdep(ProcInfo_T p
  
  #endif
  
@@ -39,18 +39,16 @@ $OpenBSD: patch-process_sysdep_c,v 1.1.1.1 2002/11/29 23:22:21 margarida Exp $
  
  #define pagetok(size) ((size) << pageshift)
  #define tv2sec(tv) (((u_int64_t) tv.tv_sec * 1000000) + (u_int64_t) tv.tv_usec)
-@@ -348,8 +349,8 @@ static void calcru(struct proc *p, struc
+@@ -369,7 +370,7 @@ static void calcru(struct proc *p, struc
  int init_process_info_sysdep(void) {
  
    register int pagesize;
 -  struct vmmeter vmm;
--  
 +  struct uvmexp vmm;
-+
-   struct nlist nlst [] = {
-       { "_bufspace"},
-       { "_cnt" },
-@@ -401,9 +402,9 @@ int init_process_info_sysdep(void) {
+   int mib[2];
+   size_t len;
+   
+@@ -429,9 +430,9 @@ int init_process_info_sysdep(void) {
  
    }
  
@@ -63,3 +61,14 @@ $OpenBSD: patch-process_sysdep_c,v 1.1.1.1 2002/11/29 23:22:21 margarida Exp $
  
    return TRUE;
  
+@@ -621,8 +622,8 @@ static void calcru(struct proc *p, struc
+ int init_process_info_sysdep(void) {
+ 
+   register int pagesize;
+-  struct vmmeter vmm;
+-  
++  struct uvmexp vmm;
++
+   struct nlist nlst [] = {
+       { "_bufspace"},
+       { "_cnt" },

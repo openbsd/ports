@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/29 23:22:21 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/12/26 00:45:55 margarida Exp $
 bin/monit
 man/man1/monit.1
+share/doc/monit/FAQ.txt
 share/doc/monit/api-docs/alert_8c-source.html
 share/doc/monit/api-docs/alert_8c.html
 share/doc/monit/api-docs/alert_8h-source.html
@@ -17,6 +18,8 @@ share/doc/monit/api-docs/cervlet_8h.html
 share/doc/monit/api-docs/classes.html
 share/doc/monit/api-docs/common_8c-source.html
 share/doc/monit/api-docs/common_8c.html
+share/doc/monit/api-docs/control_8c-source.html
+share/doc/monit/api-docs/control_8c.html
 share/doc/monit/api-docs/daemonize_8c-source.html
 share/doc/monit/api-docs/daemonize_8c.html
 share/doc/monit/api-docs/default_8c-source.html
@@ -102,12 +105,14 @@ share/doc/monit/api-docs/smtp_8c-source.html
 share/doc/monit/api-docs/smtp_8c.html
 share/doc/monit/api-docs/spawn_8c-source.html
 share/doc/monit/api-docs/spawn_8c.html
-share/doc/monit/api-docs/start_8c-source.html
-share/doc/monit/api-docs/start_8c.html
+share/doc/monit/api-docs/ssh_8c-source.html
+share/doc/monit/api-docs/ssh_8c.html
+share/doc/monit/api-docs/ssl_8c-source.html
+share/doc/monit/api-docs/ssl_8c.html
+share/doc/monit/api-docs/ssl_8h-source.html
+share/doc/monit/api-docs/ssl_8h.html
 share/doc/monit/api-docs/status_8c-source.html
 share/doc/monit/api-docs/status_8c.html
-share/doc/monit/api-docs/stop_8c-source.html
-share/doc/monit/api-docs/stop_8c.html
 share/doc/monit/api-docs/structServiceImpl.html
 share/doc/monit/api-docs/structentry.html
 share/doc/monit/api-docs/structhost__allow.html
@@ -115,6 +120,7 @@ share/doc/monit/api-docs/structinetaddress.html
 share/doc/monit/api-docs/structmd5__ctx.html
 share/doc/monit/api-docs/structmychecksum.html
 share/doc/monit/api-docs/structmycommand.html
+share/doc/monit/api-docs/structmydependant.html
 share/doc/monit/api-docs/structmymail.html
 share/doc/monit/api-docs/structmyport.html
 share/doc/monit/api-docs/structmyport_1_1myprotocol.html
@@ -125,6 +131,7 @@ share/doc/monit/api-docs/structmyrun.html
 share/doc/monit/api-docs/structmyrun_1_1myautentication.html
 share/doc/monit/api-docs/structmyrun_1_1myenvironment.html
 share/doc/monit/api-docs/structmyrun_1_1myformat.html
+share/doc/monit/api-docs/structmytimestamp.html
 share/doc/monit/api-docs/structrequest.html
 share/doc/monit/api-docs/structrequestwrapper.html
 share/doc/monit/api-docs/structresponse.html

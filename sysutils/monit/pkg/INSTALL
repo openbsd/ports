@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2002/11/29 23:22:21 margarida Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/12/26 00:45:55 margarida Exp $
 #
 # Pre/post-installation setup of monit
 
@@ -8,29 +8,29 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=${SYSCONFDIR}
-SAMPLE_CONFIG_DIR=$PREFIX/share/examples/monit
+CONFIG_FILE=${SYSCONFDIR}/monitrc
+SAMPLE_CONFIG_FILE=$PREFIX/share/examples/monit/monitrc
 
 do_notice()
 {
 	echo
 	echo "+------------"
-	echo "| The existing $1 configuration file in $CONFIG_DIR,"
-	echo "| has NOT been changed. You may want to compare them"
-	echo "| to the current sample file in $SAMPLE_CONFIG_DIR,"
+	echo "| The existing $1 configuration file in $CONFIG_FILE,"
+	echo "| has NOT been changed."
+	echo "| You may want to compare it to the current sample" 
+	echo "|	file in $SAMPLE_CONFIG_FILE,"
 	echo "| and update your configuration as needed."
 	echo "+------------"
 }
 
 do_install()
 {
-	install -d -o root -g wheel -m 755 $CONFIG_DIR
-	install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/monitrc $CONFIG_DIR/monitrc
+	install -o root -g wheel $SAMPLE_CONFIG_FILE $CONFIG_FILE
 	echo
 	echo "+------------"
-	echo "| The $1 configuration file (monitrc) has been installed"
-	echo "| into $CONFIG_DIR. Please view this file and change the"
-	echo "| configuration to meet your needs."
+	echo "| The $1 configuration file has been installed"
+	echo "| into $CONFIG_FILE. Please view this file and" 
+	echo "| change the configuration to meet your needs."
 	echo "| You can also place it in ~/.monitrc."
 	echo "+------------"
 }
@@ -49,7 +49,7 @@ case $2 in
 		: nothing to pre-install for this port
 		;;
 	POST-INSTALL)
-		if [ ! -f $CONFIG_DIR/monitrc ]; then
+		if [ ! -f $CONFIG_FILE ]; then
 			do_install $1
 		else
 			do_notice $1
