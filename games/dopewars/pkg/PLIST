@@ -1,10 +1,19 @@
 @group games
 @mode 2755
 bin/dopewars
-@exec touch /var/games/dopewars.sco
-@exec chown root.games /var/games/dopewars.sco
-@exec chmod 664 /var/games/dopewars.sco
-@unexec echo "+---------------"
-@unexec echo "| Please remove the score-file /var/games/dopewars.sco"
-@unexec echo "| to fully un-install dopewars."
-@unexec echo "+---------------"
+share/doc/dopewars/ChangeLog
+share/doc/dopewars/LICENCE
+share/doc/dopewars/README
+share/doc/dopewars/aiplayer.html
+share/doc/dopewars/clientplay.html
+share/doc/dopewars/commandline.html
+share/doc/dopewars/configfile.html
+share/doc/dopewars/credits.html
+share/doc/dopewars/developer.html
+share/doc/dopewars/example-cfg
+share/doc/dopewars/index.html
+share/doc/dopewars/installation.html
+share/doc/dopewars/metaserver.html
+share/doc/dopewars/server.html
+share/doc/dopewars/servercommands.html
+@dirrm share/doc/dopewars

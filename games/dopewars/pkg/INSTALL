@@ -1,0 +1,46 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 1999/10/26 21:21:18 brad Exp $
+#
+# Pre/post-installation setup of dopewars
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+SCORE_FILE=/var/games/dopewars.sco
+
+# Function: install a blank file to be used as the dopewars score file
+#
+do_install()
+{
+    touch /var/games/dopewars.sco
+    chown root.games /var/games/dopewars.sco
+    chmod 664 /var/games/dopewars.sco
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	if [ ! -f $SCORE_FILE ]; then
+	    do_install $1
+	fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

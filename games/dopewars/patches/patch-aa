@@ -1,6 +1,6 @@
---- Makefile.orig	Mon Sep 20 14:21:39 1999
-+++ Makefile	Mon Sep 20 14:23:32 1999
-@@ -1,8 +1,8 @@
+--- Makefile.orig	Wed Oct 20 19:07:55 1999
++++ Makefile	Mon Oct 25 17:23:45 1999
+@@ -1,10 +1,10 @@
 -CFLAGS = -Wall
 -CC = gcc
 +CFLAGS += -Wall
@@ -9,21 +9,25 @@
  OBJS = message.o dopewars.o serverside.o clientside.o AIPlayer.o
 -LIBS = -lncurses
 +LIBS = -lcurses
- 
- dopewars : $(OBJS)
- 	$(CC) $(CFLAGS) -o dopewars $(OBJS) $(LIBS)
-@@ -23,10 +23,10 @@
+ VERSION = 1.4.5
+-DOCPATH = /usr/doc/dopewars-$(VERSION)
++DOCPATH = $(PREFIX)/share/doc/dopewars
+ DOCS = index.html installation.html clientplay.html server.html credits.html \
+        aiplayer.html configfile.html commandline.html developer.html \
+        metaserver.html servercommands.html \
+@@ -31,12 +31,9 @@
  	$(CC) $(CFLAGS) -c AIPlayer.c
  
- install :
+ install : all
 -	install -o root -g games -m 2755 dopewars /usr/bin/dopewars
 -	touch /var/lib/games/dopewars.sco
 -	chown root.games /var/lib/games/dopewars.sco
 -	chmod 0660 /var/lib/games/dopewars.sco
+-	install -d -o root -g root -m 0755 $(DOCPATH)
+-	install -o root -g root -m 0644 $(DOCS) $(DOCPATH)
 +	install -o root -g games -m 2755 dopewars $(PREFIX)/bin/dopewars
-+	touch /var/games/dopewars.sco
-+	chown root.games /var/games/dopewars.sco
-+	chmod 664 /var/games/dopewars.sco
++	install -d -o root -g wheel -m 0755 $(DOCPATH)
++	install -o root -g wheel -m 0644 $(DOCS) $(DOCPATH)
  
  clean :
  	rm -f $(OBJS)

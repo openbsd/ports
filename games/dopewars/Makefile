@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 1999/09/20 18:35:35 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/10/26 21:21:17 brad Exp $
 
-DISTNAME=	dopewars-1.4.4
+DISTNAME=	dopewars-1.4.5
 CATEGORIES=	games
 MASTER_SITES=	http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/
 
-ALL_TARGET=
+post-install:
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
