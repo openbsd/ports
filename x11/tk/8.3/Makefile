@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/03/27 02:25:16 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/03/27 16:00:26 kevlo Exp $
 
 DISTNAME=	tk8.3.0
 PKGNAME=	tk-8.3.0
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	tcl83.1.3:lang/tcl83
+LIB_DEPENDS=	tcl83.1.3::lang/tcl/8.3
 
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	Yes
