@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/06/12 19:42:44 marcm Exp $
-lib/libstartup-notification-1.so.0.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/14 23:44:02 espie Exp $
+@lib lib/libstartup-notification-1.so.0.0

@@ -1,9 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/14 23:43:58 espie Exp $
 ${P5SITE}/Date/
 ${P5SITE}/Date/Leapyear.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/Date/
-@comment ${P5ARCH}/auto/Date/Leapyear/
-@comment ${P5ARCH}/auto/Date/Leapyear/.packlist
 @man man/man3p/Date::Leapyear.3p

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/08/10 08:10:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/09/14 23:43:57 espie Exp $
 ${P5SITE}/Class/
 ${P5SITE}/Class/MethodMaker/
 ${P5SITE}/Class/MethodMaker.pm
@@ -888,10 +888,6 @@ ${P5SITE}/auto/Class/MethodMaker/scalar/scal01f4.al
 ${P5SITE}/auto/Class/MethodMaker/scalar/scal01f5.al
 ${P5SITE}/auto/Class/MethodMaker/scalar/scal01f8.al
 ${P5SITE}/auto/Class/MethodMaker/scalar/scal01f9.al
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/Class-MethodMaker/
-@comment ${P5ARCH}/auto/Class-MethodMaker/.packlist
 @man man/man3p/Class::MethodMaker.3p
 @man man/man3p/Class::MethodMaker::Constants.3p
 @man man/man3p/Class::MethodMaker::Engine.3p

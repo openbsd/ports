@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-docs,v 1.1 2004/07/19 10:58:17 pvalchev Exp $
+@comment $OpenBSD: PLIST-docs,v 1.2 2004/09/14 23:44:01 espie Exp $
+share/doc/sdlmm/
 share/doc/sdlmm/annotated.html
 share/doc/sdlmm/classSDLmm_1_1Audio-members.html
 share/doc/sdlmm/classSDLmm_1_1Audio.html
@@ -149,4 +150,3 @@ share/doc/sdlmm/sdlmm__videoinfo_8h__incl.gif
 share/doc/sdlmm/structSDL__Rect.html
 share/doc/sdlmm/structSDL__Rect__inherit__graph.gif
 share/doc/sdlmm/todo.html
-@dirrm share/doc/sdlmm

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/28 07:16:23 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:43:56 espie Exp $
 bin/uta-config
+include/uta/
 include/uta/application.h
 include/uta/blitters.h
 include/uta/button.h
@@ -50,6 +51,6 @@ include/uta/version.h
 include/uta/widget.h
 lib/libuta.a
 lib/libuta.la
-%%SHARED%%
+share/aclocal/
 share/aclocal/uta.m4
-@dirrm include/uta
+%%SHARED%%

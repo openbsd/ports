@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/01 21:50:44 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:43:55 espie Exp $
 bin/giblib-config
+include/giblib/
 include/giblib/gib_btree.h
 include/giblib/gib_debug.h
 include/giblib/gib_hash.h
@@ -13,10 +14,9 @@ include/giblib/giblib.h
 include/giblib/giblib_config.h
 lib/libgiblib.a
 lib/libgiblib.la
+share/doc/giblib/
 share/doc/giblib/AUTHORS
 share/doc/giblib/ChangeLog
 share/doc/giblib/README
 share/doc/giblib/TODO
 %%SHARED%%
-@dirrm share/doc/giblib
-@dirrm include/giblib

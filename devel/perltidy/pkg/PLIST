@@ -1,12 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/10 08:36:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:44:00 espie Exp $
 bin/perltidy
 ${P5SITE}/Perl/
 ${P5SITE}/Perl/Tidy.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/Perl/
-@comment ${P5ARCH}/auto/Perl/Tidy/
-@comment ${P5ARCH}/auto/Perl/Tidy/.packlist
 @man man/man1/perltidy.1
 @man man/man3p/Perl::Tidy.3p
 share/doc/perltidy/

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/10/19 08:38:49 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/14 23:44:02 espie Exp $
 bin/varconf-config
+include/varconf/
 include/varconf/Config.h
 include/varconf/dynbase.h
 include/varconf/dyncmp.h
@@ -10,9 +11,12 @@ include/varconf/varconf.h
 include/varconf/variable.h
 lib/libvarconf.a
 lib/libvarconf.la
+share/aclocal/
 share/aclocal/varconf.m4
+share/doc/varconf/
+share/doc/varconf/AUTHORS
 share/doc/varconf/COPYING
+share/doc/varconf/NEWS
 share/doc/varconf/README
+share/doc/varconf/THANKS
 %%SHARED%%
-@dirrm share/doc/varconf
-@dirrm include/varconf

@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/10 08:10:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:43:57 espie Exp $
 ${P5SITE}/Class/
 ${P5SITE}/Class/Container.pm
-@comment ${P5ARCH}/auto/Class/
-@comment ${P5ARCH}/auto/Class/Container/
-@comment ${P5ARCH}/auto/Class/Container/.packlist
 @man man/man3p/Class::Container.3p

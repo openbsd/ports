@@ -1,10 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/17 12:17:01 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:43:56 espie Exp $
+lib/java/
+lib/java/servletapi/
 lib/java/servletapi/servlet.jar
+share/doc/java/
+share/doc/java/jakarta-servletapi/
 share/doc/java/jakarta-servletapi/allclasses-frame.html
+share/doc/java/jakarta-servletapi/api/
 share/doc/java/jakarta-servletapi/deprecated-list.html
 share/doc/java/jakarta-servletapi/help-doc.html
 share/doc/java/jakarta-servletapi/index-all.html
 share/doc/java/jakarta-servletapi/index.html
+share/doc/java/jakarta-servletapi/javax/
+share/doc/java/jakarta-servletapi/javax/servlet/
 share/doc/java/jakarta-servletapi/javax/servlet/GenericServlet.html
 share/doc/java/jakarta-servletapi/javax/servlet/RequestDispatcher.html
 share/doc/java/jakarta-servletapi/javax/servlet/Servlet.html
@@ -17,6 +24,7 @@ share/doc/java/jakarta-servletapi/javax/servlet/ServletRequest.html
 share/doc/java/jakarta-servletapi/javax/servlet/ServletResponse.html
 share/doc/java/jakarta-servletapi/javax/servlet/SingleThreadModel.html
 share/doc/java/jakarta-servletapi/javax/servlet/UnavailableException.html
+share/doc/java/jakarta-servletapi/javax/servlet/class-use/
 share/doc/java/jakarta-servletapi/javax/servlet/class-use/GenericServlet.html
 share/doc/java/jakarta-servletapi/javax/servlet/class-use/RequestDispatcher.html
 share/doc/java/jakarta-servletapi/javax/servlet/class-use/Servlet.html
@@ -29,6 +37,7 @@ share/doc/java/jakarta-servletapi/javax/servlet/class-use/ServletRequest.html
 share/doc/java/jakarta-servletapi/javax/servlet/class-use/ServletResponse.html
 share/doc/java/jakarta-servletapi/javax/servlet/class-use/SingleThreadModel.html
 share/doc/java/jakarta-servletapi/javax/servlet/class-use/UnavailableException.html
+share/doc/java/jakarta-servletapi/javax/servlet/http/
 share/doc/java/jakarta-servletapi/javax/servlet/http/Cookie.html
 share/doc/java/jakarta-servletapi/javax/servlet/http/HttpServlet.html
 share/doc/java/jakarta-servletapi/javax/servlet/http/HttpServletRequest.html
@@ -38,6 +47,7 @@ share/doc/java/jakarta-servletapi/javax/servlet/http/HttpSessionBindingEvent.htm
 share/doc/java/jakarta-servletapi/javax/servlet/http/HttpSessionBindingListener.html
 share/doc/java/jakarta-servletapi/javax/servlet/http/HttpSessionContext.html
 share/doc/java/jakarta-servletapi/javax/servlet/http/HttpUtils.html
+share/doc/java/jakarta-servletapi/javax/servlet/http/class-use/
 share/doc/java/jakarta-servletapi/javax/servlet/http/class-use/Cookie.html
 share/doc/java/jakarta-servletapi/javax/servlet/http/class-use/HttpServlet.html
 share/doc/java/jakarta-servletapi/javax/servlet/http/class-use/HttpServletRequest.html
@@ -51,6 +61,7 @@ share/doc/java/jakarta-servletapi/javax/servlet/http/package-frame.html
 share/doc/java/jakarta-servletapi/javax/servlet/http/package-summary.html
 share/doc/java/jakarta-servletapi/javax/servlet/http/package-tree.html
 share/doc/java/jakarta-servletapi/javax/servlet/http/package-use.html
+share/doc/java/jakarta-servletapi/javax/servlet/jsp/
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/HttpJspPage.html
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/JspEngineInfo.html
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/JspException.html
@@ -59,6 +70,7 @@ share/doc/java/jakarta-servletapi/javax/servlet/jsp/JspPage.html
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/JspTagException.html
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/JspWriter.html
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/PageContext.html
+share/doc/java/jakarta-servletapi/javax/servlet/jsp/class-use/
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/class-use/HttpJspPage.html
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/class-use/JspEngineInfo.html
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/class-use/JspException.html
@@ -71,6 +83,7 @@ share/doc/java/jakarta-servletapi/javax/servlet/jsp/package-frame.html
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/package-summary.html
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/package-tree.html
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/package-use.html
+share/doc/java/jakarta-servletapi/javax/servlet/jsp/tagext/
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/tagext/BodyContent.html
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/tagext/BodyTag.html
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/tagext/BodyTagSupport.html
@@ -82,6 +95,7 @@ share/doc/java/jakarta-servletapi/javax/servlet/jsp/tagext/TagInfo.html
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/tagext/TagLibraryInfo.html
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/tagext/TagSupport.html
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/tagext/VariableInfo.html
+share/doc/java/jakarta-servletapi/javax/servlet/jsp/tagext/class-use/
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/tagext/class-use/BodyContent.html
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/tagext/class-use/BodyTag.html
 share/doc/java/jakarta-servletapi/javax/servlet/jsp/tagext/class-use/BodyTagSupport.html
@@ -108,18 +122,3 @@ share/doc/java/jakarta-servletapi/package-list
 share/doc/java/jakarta-servletapi/packages.html
 share/doc/java/jakarta-servletapi/serialized-form.html
 share/doc/java/jakarta-servletapi/stylesheet.css
-@dirrm share/doc/java/jakarta-servletapi/javax/servlet/jsp/tagext/class-use
-@dirrm share/doc/java/jakarta-servletapi/javax/servlet/jsp/tagext
-@dirrm share/doc/java/jakarta-servletapi/javax/servlet/jsp/class-use
-@dirrm share/doc/java/jakarta-servletapi/javax/servlet/jsp
-@dirrm share/doc/java/jakarta-servletapi/javax/servlet/http/class-use
-@dirrm share/doc/java/jakarta-servletapi/javax/servlet/http
-@dirrm share/doc/java/jakarta-servletapi/javax/servlet/class-use
-@dirrm share/doc/java/jakarta-servletapi/javax/servlet
-@dirrm share/doc/java/jakarta-servletapi/javax
-@exec mkdir -p %D/share/doc/java/jakarta-servletapi/api
-@dirrm share/doc/java/jakarta-servletapi/api
-@dirrm share/doc/java/jakarta-servletapi
-@dirrm share/doc/java
-@dirrm lib/java/servletapi
-@dirrm lib/java

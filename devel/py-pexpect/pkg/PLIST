@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/12 17:58:47 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:44:01 espie Exp $
 lib/python${MODPY_VERSION}/site-packages/pexpect.py
 lib/python${MODPY_VERSION}/site-packages/pexpect.pyc
+share/examples/py-pexpect/
 share/examples/py-pexpect/ANSI.py
 share/examples/py-pexpect/FSM.py
 share/examples/py-pexpect/screen.py
-@dirrm share/examples/py-pexpect

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/10/27 03:07:33 jolan Exp $
-lib/libSDL_sound.so.1.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/14 23:44:01 espie Exp $
+@lib lib/libSDL_sound.so.1.0

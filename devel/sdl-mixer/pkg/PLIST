@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/06/18 09:24:42 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:44:01 espie Exp $
 bin/playmus
 bin/playwave
+include/SDL/
 include/SDL/SDL_mixer.h
 lib/libSDL_mixer.a
 lib/libSDL_mixer.la

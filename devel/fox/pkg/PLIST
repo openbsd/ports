@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/13 18:50:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:43:55 espie Exp $
 bin/PathFinder
 bin/adie
 bin/calculator
 bin/reswrap
 bin/shutterbug
+fox/
+fox/html/
 fox/html/adie.html
 fox/html/app.html
+fox/html/art/
 fox/html/art/bigpenguin.png
 fox/html/art/fifthplanet.jpg
 fox/html/art/foxlogo.jpg
@@ -70,6 +73,7 @@ fox/html/projects.html
 fox/html/references.html
 fox/html/registry.html
 fox/html/rex.html
+fox/html/screenshots/
 fox/html/screenshots.html
 fox/html/screenshots/SbSScreen1.jpg
 fox/html/screenshots/SbSScreen1_small.jpg
@@ -121,6 +125,7 @@ fox/html/widgets.html
 fox/html/win32.html
 fox/html/window.html
 fox/html/xml.html
+include/fox-1.1/
 include/fox-1.1/FX4Splitter.h
 include/fox-1.1/FXAccelTable.h
 include/fox-1.1/FXApp.h
@@ -319,6 +324,7 @@ include/fox-1.1/FXXBMIcon.h
 include/fox-1.1/FXXBMImage.h
 include/fox-1.1/FXXPMIcon.h
 include/fox-1.1/FXXPMImage.h
+include/fox-1.1/chart/
 include/fox-1.1/chart/FXChart.h
 include/fox-1.1/fx.h
 include/fox-1.1/fx3d.h
@@ -330,14 +336,8 @@ lib/libCHART-1.1.a
 lib/libCHART-1.1.la
 lib/libFOX-1.1.a
 lib/libFOX-1.1.la
-man/man1/PathFinder.1
-man/man1/adie.1
-man/man1/calculator.1
-man/man1/reswrap.1
+@man man/man1/PathFinder.1
+@man man/man1/adie.1
+@man man/man1/calculator.1
+@man man/man1/reswrap.1
 %%SHARED%%
-@dirrm include/fox-1.1/chart
-@dirrm include/fox-1.1
-@dirrm fox/html/screenshots
-@dirrm fox/html/art
-@dirrm fox/html
-@dirrm fox

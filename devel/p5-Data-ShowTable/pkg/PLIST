@@ -1,11 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/10 08:10:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:43:58 espie Exp $
 bin/showtable
 ${P5SITE}/Data/
 ${P5SITE}/Data/ShowTable.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/Data/
-@comment ${P5ARCH}/auto/Data/ShowTable/
-@comment ${P5ARCH}/auto/Data/ShowTable/.packlist
 @man man/man1/showtable.1
 @man man/man3p/Data::ShowTable.3p

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/16 03:21:34 dons Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:43:56 espie Exp $
 bin/idoc
+share/doc/idoc/
 share/doc/idoc/README
-@dirrm share/doc/idoc

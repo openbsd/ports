@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/08/10 08:10:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/14 23:43:59 espie Exp $
 ${P5ARCH}/
 ${P5ARCH}/Attribute/
 ${P5ARCH}/Attribute/Params/
@@ -11,7 +11,6 @@ ${P5ARCH}/Params/ValidateXS.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Params/
 ${P5ARCH}/auto/Params/Validate/
-@comment ${P5ARCH}/auto/Params/Validate/.packlist
 ${P5ARCH}/auto/Params/Validate/Validate.bs
 ${P5ARCH}/auto/Params/Validate/Validate.so
 @man man/man3p/Attribute::Params::Validate.3p

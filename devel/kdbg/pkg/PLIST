@@ -1,6 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/12/16 17:34:06 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/14 23:43:56 espie Exp $
 bin/kdbg
+share/applnk/
+share/applnk/Development/
 share/applnk/Development/kdbg.desktop
+share/apps/
+share/apps/kdbg/
+share/apps/kdbg/pics/
 share/apps/kdbg/pics/brkcond.xpm
 share/apps/kdbg/pics/brkdis.xpm
 share/apps/kdbg/pics/brkena.xpm
@@ -22,6 +27,7 @@ share/apps/kdbg/pics/watch.xpm
 share/apps/kdbg/pics/watchcoded.xpm
 share/apps/kdbg/pics/watchdis.xpm
 share/apps/kdbg/pics/watchena.xpm
+share/apps/kdbg/types/
 share/apps/kdbg/types/X11.kdbgtt
 share/apps/kdbg/types/glib.kdbgtt
 share/apps/kdbg/types/gtk+.kdbgtt
@@ -31,6 +37,9 @@ share/apps/kdbg/types/qt.kdbgtt
 share/apps/kdbg/types/qt2.kdbgtt
 share/apps/kdbg/types/qt3.kdbgtt
 share/apps/kdbg/types/stdc++.kdbgtt
+share/doc/HTML/
+share/doc/HTML/de/
+share/doc/HTML/de/kdbg/
 share/doc/HTML/de/kdbg/argspwdenv.html
 share/doc/HTML/de/kdbg/breakptlist.html
 share/doc/HTML/de/kdbg/globaloptions.html
@@ -47,6 +56,8 @@ share/doc/HTML/de/kdbg/threads.html
 share/doc/HTML/de/kdbg/tips.html
 share/doc/HTML/de/kdbg/types.html
 share/doc/HTML/de/kdbg/watches.html
+share/doc/HTML/en/
+share/doc/HTML/en/kdbg/
 share/doc/HTML/en/kdbg/argspwdenv.html
 share/doc/HTML/en/kdbg/breakptlist.html
 share/doc/HTML/en/kdbg/globaloptions.html
@@ -63,6 +74,8 @@ share/doc/HTML/en/kdbg/threads.html
 share/doc/HTML/en/kdbg/tips.html
 share/doc/HTML/en/kdbg/types.html
 share/doc/HTML/en/kdbg/watches.html
+share/doc/HTML/ru/
+share/doc/HTML/ru/kdbg/
 share/doc/HTML/ru/kdbg/argspwdenv.html
 share/doc/HTML/ru/kdbg/breakptlist.html
 share/doc/HTML/ru/kdbg/globaloptions.html
@@ -79,78 +92,79 @@ share/doc/HTML/ru/kdbg/threads.html
 share/doc/HTML/ru/kdbg/tips.html
 share/doc/HTML/ru/kdbg/types.html
 share/doc/HTML/ru/kdbg/watches.html
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kdbg.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kdbg.png
+share/icons/locolor/
+share/icons/locolor/16x16/
+share/icons/locolor/16x16/apps/
 share/icons/locolor/16x16/apps/kdbg.png
+share/icons/locolor/32x32/
+share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/kdbg.png
+share/locale/
+share/locale/cs/
+share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/kdbg.mo
+share/locale/da/
+share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/kdbg.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/kdbg.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/kdbg.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/kdbg.mo
+share/locale/hr/
+share/locale/hr/LC_MESSAGES/
 share/locale/hr/LC_MESSAGES/kdbg.mo
+share/locale/hu/
+share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/kdbg.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/kdbg.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/kdbg.mo
+share/locale/no/
+share/locale/no/LC_MESSAGES/
 share/locale/no/LC_MESSAGES/kdbg.mo
+share/locale/no_NY/
+share/locale/no_NY/LC_MESSAGES/
 share/locale/no_NY/LC_MESSAGES/kdbg.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/kdbg.mo
+share/locale/pt/
+share/locale/pt/LC_MESSAGES/
 share/locale/pt/LC_MESSAGES/kdbg.mo
+share/locale/ro/
+share/locale/ro/LC_MESSAGES/
 share/locale/ro/LC_MESSAGES/kdbg.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/kdbg.mo
+share/locale/sk/
+share/locale/sk/LC_MESSAGES/
 share/locale/sk/LC_MESSAGES/kdbg.mo
+share/locale/sr/
+share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/kdbg.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/kdbg.mo
+share/locale/tr/
+share/locale/tr/LC_MESSAGES/
 share/locale/tr/LC_MESSAGES/kdbg.mo
+share/locale/zh_CN.GB2312/
+share/locale/zh_CN.GB2312/LC_MESSAGES/
 share/locale/zh_CN.GB2312/LC_MESSAGES/kdbg.mo
-@dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
-@dirrm share/locale/zh_CN.GB2312
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sr/LC_MESSAGES
-@dirrm share/locale/sr
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no_NY/LC_MESSAGES
-@dirrm share/locale/no_NY
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/hr/LC_MESSAGES
-@dirrm share/locale/hr
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/doc/HTML/ru/kdbg
-@dirrm share/doc/HTML/ru
-@dirrm share/doc/HTML/en/kdbg
-@dirrm share/doc/HTML/de/kdbg
-@dirrm share/doc/HTML/de
-@dirrm share/apps/kdbg/types
-@dirrm share/apps/kdbg/pics
-@dirrm share/apps/kdbg
-@dirrm share/applnk/Development

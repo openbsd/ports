@@ -1,10 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/10 08:10:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:43:59 espie Exp $
 ${P5SITE}/MLDBM/Sync/
 ${P5SITE}/MLDBM/Sync.pm
 ${P5SITE}/MLDBM/Sync/SDBM_File.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/MLDBM/
-@comment ${P5ARCH}/auto/MLDBM/Sync/
-@comment ${P5ARCH}/auto/MLDBM/Sync/.packlist
 @man man/man3p/MLDBM::Sync.3p

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2004/01/04 20:32:30 pvalchev Exp $
-lib/libuta.so.41.0
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.4 2004/09/14 23:43:56 espie Exp $
+@lib lib/libuta.so.41.0

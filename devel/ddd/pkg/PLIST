@@ -1,33 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/10/26 17:30:40 sturm Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/ddd-themes.info
-@unexec install-info --delete --info-dir=%D/info %D/info/ddd.info
+@comment $OpenBSD: PLIST,v 1.10 2004/09/14 23:43:55 espie Exp $
 bin/ddd
-info/ddd-themes.info
-info/ddd-themes.info-1
-info/ddd-themes.info-2
-info/ddd-themes.info-3
-info/ddd.info
-info/ddd.info-1
-info/ddd.info-10
-info/ddd.info-11
-info/ddd.info-2
-info/ddd.info-3
-info/ddd.info-4
-info/ddd.info-5
-info/ddd.info-6
-info/ddd.info-7
-info/ddd.info-8
-info/ddd.info-9
-man/man1/ddd.1
+@info info/ddd-themes.info
+@info info/ddd.info
+@man man/man1/ddd.1
+share/ddd/
 share/ddd/COPYING
 share/ddd/NEWS
+share/ddd/ddd/
 share/ddd/ddd/Ddd
+share/ddd/themes/
 share/ddd/themes/green.vsl
 share/ddd/themes/red.vsl
 share/ddd/themes/smalltitles.vsl
 share/ddd/themes/smallvalues.vsl
 share/ddd/themes/suppress.vsl
 share/ddd/themes/tinyvalues.vsl
+share/ddd/vsllib/
 share/ddd/vsllib/arcs.vsl
 share/ddd/vsllib/builtin.vsl
 share/ddd/vsllib/colors.vsl
@@ -48,16 +36,10 @@ share/ddd/vsllib/verbose.vsl
 share/ddd/vsllib/vsl.vsl
 share/ddd/vsllib/vsldef.vsl
 share/ddd/vsllib/vsllib.vsl
+share/doc/ddd/
 share/doc/ddd/ddd-paper.ps.gz
 share/doc/ddd/ddd-themes.pdf
 share/doc/ddd/ddd-themes.ps.gz
 share/doc/ddd/ddd.html
 share/doc/ddd/ddd.pdf
 share/doc/ddd/ddd.ps.gz
-@dirrm share/doc/ddd
-@dirrm share/ddd/vsllib
-@dirrm share/ddd/themes
-@dirrm share/ddd/ddd
-@dirrm share/ddd
-@exec install-info --info-dir=%D/info %D/info/ddd-themes.info
-@exec install-info --info-dir=%D/info %D/info/ddd.info

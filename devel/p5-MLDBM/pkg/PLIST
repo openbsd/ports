@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/10 08:10:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:43:59 espie Exp $
 ${P5SITE}/MLDBM/
 ${P5SITE}/MLDBM.pm
 ${P5SITE}/MLDBM/Serializer/
@@ -6,8 +6,4 @@ ${P5SITE}/MLDBM/Serializer/Data/
 ${P5SITE}/MLDBM/Serializer/Data/Dumper.pm
 ${P5SITE}/MLDBM/Serializer/FreezeThaw.pm
 ${P5SITE}/MLDBM/Serializer/Storable.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/MLDBM/
-@comment ${P5ARCH}/auto/MLDBM/.packlist
 @man man/man3p/MLDBM.3p

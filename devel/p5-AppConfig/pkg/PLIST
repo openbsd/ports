@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/10 08:10:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:43:57 espie Exp $
 ${P5SITE}/AppConfig/
 ${P5SITE}/AppConfig.pm
 ${P5SITE}/AppConfig/Args.pm
@@ -7,10 +7,6 @@ ${P5SITE}/AppConfig/File.pm
 ${P5SITE}/AppConfig/Getopt.pm
 ${P5SITE}/AppConfig/State.pm
 ${P5SITE}/AppConfig/Sys.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/AppConfig/
-@comment ${P5ARCH}/auto/AppConfig/.packlist
 @man man/man3p/AppConfig.3p
 @man man/man3p/AppConfig::Args.3p
 @man man/man3p/AppConfig::CGI.3p

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/07/23 13:11:58 todd Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/14 23:43:56 espie Exp $
 bin/cm
-info/opencm.info.gz
+@info info/opencm.info
 share/opencm/
 share/opencm/help/
 share/opencm/help/add.help

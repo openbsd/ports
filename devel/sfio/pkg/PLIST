@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/12 07:25:32 wcobb Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:44:01 espie Exp $
+include/sfio/
 include/sfio/ast_common.h
 include/sfio/sfdisc.h
 include/sfio/sfio.h
 include/sfio/sfio_s.h
 include/sfio/sfio_t.h
+@comment include/sfio/stdio.h
 lib/libsfio-mt.a
 lib/libsfio.a
-man/man3/sfio.3
-@comment include/sfio/stdio.h
 @comment lib/libstdio-mt.a
 @comment lib/libstdio.a
-@dirrm include/sfio
+@man man/man3/sfio.3

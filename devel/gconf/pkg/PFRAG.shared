@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2002/08/30 19:42:52 nino Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/14 23:43:55 espie Exp $
 lib/GConf/1/libgconfbackend-xml.so
-lib/libgconf-1.so.1.4
-lib/libgconf-gtk-1.so.1.0
-DYNLIBDIR(%B)
+@lib lib/libgconf-1.so.1.4
+@lib lib/libgconf-gtk-1.so.1.0

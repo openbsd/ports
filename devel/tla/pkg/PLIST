@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/10 07:50:43 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:44:02 espie Exp $
 bin/tla
+share/doc/tla/
 share/doc/tla/advanced-revision-libraries.html
 share/doc/tla/arch.html
 share/doc/tla/archive-caching.html
@@ -35,4 +36,3 @@ share/doc/tla/system-requirements.html
 share/doc/tla/tree-history.html
 share/doc/tla/update-commit.html
 share/doc/tla/using-hooks.html
-@dirrm share/doc/tla

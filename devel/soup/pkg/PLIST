@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/15 16:51:05 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:44:01 espie Exp $
 bin/soup-config
 bin/soup-httpd
 bin/soup-ssl-proxy
 bin/soup-wsdl
+include/soup/
+include/soup/libsoup/
 include/soup/libsoup/soup-context.h
 include/soup/libsoup/soup-dav-server.h
 include/soup/libsoup/soup-dav.h
@@ -21,6 +23,7 @@ include/soup/libsoup/soup-server.h
 include/soup/libsoup/soup-socket.h
 include/soup/libsoup/soup-uri.h
 include/soup/libsoup/soup.h
+include/soup/libwsdl/
 include/soup/libwsdl/wsdl-param.h
 include/soup/libwsdl/wsdl-schema-glib.h
 include/soup/libwsdl/wsdl-schema.h
@@ -35,18 +38,14 @@ lib/libsoup.a
 lib/libsoup.la
 lib/libwsdl.a
 lib/libwsdl.la
+lib/pkgconfig/
 lib/pkgconfig/soup.pc
 lib/soupConf.sh
 lib/soup_apacheConf.sh
 lib/soup_wsdlConf.sh
+share/aclocal/
 share/aclocal/soup.m4
+@comment share/gtk-doc/
+@comment share/gtk-doc/html/
+@comment share/gtk-doc/html/soup/
 %%SHARED%%
-@comment @exec mkdir -p %D/share/gtk-doc/html/soup
-@comment @dirrm share/gtk-doc/html/soup
-@comment @dirrm share/gtk-doc/html
-@comment @dirrm share/gtk-doc
-@dirrm share/aclocal
-@dirrm lib/pkgconfig
-@dirrm include/soup/libwsdl
-@dirrm include/soup/libsoup
-@dirrm include/soup

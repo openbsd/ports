@@ -1,9 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/10 08:10:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:43:59 espie Exp $
 ${P5SITE}/IO/
 ${P5SITE}/IO/String.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/IO/
-@comment ${P5ARCH}/auto/IO/String/
-@comment ${P5ARCH}/auto/IO/String/.packlist
 @man man/man3p/IO::String.3p

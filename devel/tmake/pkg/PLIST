@@ -1,17 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/02/28 14:15:31 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:44:02 espie Exp $
 bin/progen
 bin/tmake
+share/doc/tmake/
 share/doc/tmake/tmake.html
 share/doc/tmake/tmake_ref.html
+share/tmake/
+share/tmake/openbsd-g++/
 share/tmake/openbsd-g++/app.t
 share/tmake/openbsd-g++/lib.t
 share/tmake/openbsd-g++/subdirs.t
 share/tmake/openbsd-g++/tmake.conf
+share/tmake/openbsd-g++/tmake.conf.orig
+share/tmake/unix/
 share/tmake/unix/app.t
 share/tmake/unix/generic.t
+share/tmake/unix/generic.t.orig
 share/tmake/unix/lib.t
 share/tmake/unix/subdirs.t
-@dirrm share/tmake/unix
-@dirrm share/tmake/openbsd-g++
-@dirrm share/tmake
-@dirrm share/doc/tmake

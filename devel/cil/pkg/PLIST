@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/20 16:08:28 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:43:55 espie Exp $
 bin/cilly
 bin/patcher
+lib/cil/
 lib/cil/cabs2cil.cmi
 lib/cil/cabsvisit.cmi
 lib/cil/callgraph.cmi
@@ -31,19 +32,18 @@ lib/cil/steensgaard.cmi
 lib/cil/trace.cmi
 lib/cil/uref.cmi
 lib/cil/util.cmi
+${P5SITE}/CIL/
 ${P5SITE}/CIL/Cilly.pm
 ${P5SITE}/CIL/KeptFile.pm
 ${P5SITE}/CIL/OutputFile.pm
 ${P5SITE}/CIL/TempFile.pm
 ${P5SITE}/CilConfig.pm
+libexec/cil/
 libexec/cil/cilly.asm.exe
 libexec/cil/cilly.byte.exe
 libexec/cil/machdep.exe
+@comment share/cil/
 @comment share/cil/Cilly.pm
 @comment share/cil/KeptFile.pm
 @comment share/cil/OutputFile.pm
 @comment share/cil/TempFile.pm
-@comment @dirrm share/cil
-@dirrm libexec/cil
-@dirrm ${P5SITE}/CIL
-@dirrm lib/cil

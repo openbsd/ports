@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/07/14 02:07:53 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:44:01 espie Exp $
 bin/shtool
 bin/shtoolize
-man/man1/shtool.1
-man/man1/shtoolize.1
+@man man/man1/shtool.1
+@man man/man1/shtoolize.1
+share/aclocal/
 share/aclocal/shtool.m4
+share/shtool/
 share/shtool/sh.arx
 share/shtool/sh.common
 share/shtool/sh.echo
@@ -24,4 +26,3 @@ share/shtool/sh.subst
 share/shtool/sh.table
 share/shtool/sh.tarball
 share/shtool/sh.version
-@dirrm share/shtool

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/08/10 08:10:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/14 23:43:58 espie Exp $
 ${P5SITE}/Curses/
 ${P5SITE}/Curses/Widgets/
 ${P5SITE}/Curses/Widgets.pm
@@ -16,8 +16,6 @@ ${P5SITE}/Curses/Widgets/TextMemo.pm
 ${P5SITE}/Curses/Widgets/Tutorial/
 ${P5SITE}/Curses/Widgets/Tutorial.pod
 ${P5SITE}/Curses/Widgets/Tutorial/Creation.pod
-@comment ${P5ARCH}/auto/Curses/Widgets/
-@comment ${P5ARCH}/auto/Curses/Widgets/.packlist
 @man man/man3p/Curses::Widgets.3p
 @man man/man3p/Curses::Widgets::ButtonSet.3p
 @man man/man3p/Curses::Widgets::Calendar.3p

@@ -1,9 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/10 08:10:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:43:57 espie Exp $
 ${P5SITE}/Config/
 ${P5SITE}/Config/IniFiles.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/Config/
-@comment ${P5ARCH}/auto/Config/IniFiles/
-@comment ${P5ARCH}/auto/Config/IniFiles/.packlist
 @man man/man3p/Config::IniFiles.3p

@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/08/07 21:55:26 brad Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/09/14 23:43:56 espie Exp $
 bin/libtool
 bin/libtoolize
 @info info/libtool.info
-@comment share/aclocal/
 share/aclocal/libtool.m4
 share/libtool/config.guess
 share/libtool/config.sub

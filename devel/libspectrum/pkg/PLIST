@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/05/08 06:46:10 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/14 23:43:56 espie Exp $
 include/libspectrum.h
 lib/libspectrum.a
 lib/libspectrum.la
-man/man3/libspectrum.3
+@man man/man3/libspectrum.3
+share/doc/libspectrum/
 share/doc/libspectrum/libspectrum.txt
 %%SHARED%%
-@dirrm share/doc/libspectrum

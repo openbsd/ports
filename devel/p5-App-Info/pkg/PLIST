@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/10 08:10:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:43:57 espie Exp $
 ${P5SITE}/App/
 ${P5SITE}/App/Info/
 ${P5SITE}/App/Info.pm
@@ -19,11 +19,6 @@ ${P5SITE}/App/Info/RDBMS.pm
 ${P5SITE}/App/Info/RDBMS/PostgreSQL.pm
 ${P5SITE}/App/Info/Request.pm
 ${P5SITE}/App/Info/Util.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/App/
-@comment ${P5ARCH}/auto/App/Info/
-@comment ${P5ARCH}/auto/App/Info/.packlist
 @man man/man3p/App::Info.3p
 @man man/man3p/App::Info::HTTPD.3p
 @man man/man3p/App::Info::HTTPD::Apache.3p

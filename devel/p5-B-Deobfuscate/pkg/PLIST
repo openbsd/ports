@@ -1,8 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/19 21:15:47 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:43:57 espie Exp $
 ${P5SITE}/B/Deobfuscate.pm
 ${P5SITE}/B/Deobfuscate.pod
-@comment ${P5ARCH}/auto/B/Deobfuscate/.packlist
-man/man3p/B::Deobfuscate.3p
-@comment @dirrm ${P5ARCH}/auto/B/Deobfuscate
-@comment @dirrm ${P5ARCH}/auto/B
-@dirrm ${P5SITE}/B
+@man man/man3p/B::Deobfuscate.3p

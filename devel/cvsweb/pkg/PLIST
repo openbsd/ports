@@ -1,18 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/02/01 19:47:27 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:43:55 espie Exp $
 cgi-bin/cvsweb
+conf/cvsweb/
+conf/cvsweb/README.chroot
+conf/cvsweb/cvsweb.conf-freebsd.dist
+conf/cvsweb/cvsweb.conf-netbsd.dist
+conf/cvsweb/cvsweb.conf-openbsd.dist
+conf/cvsweb/cvsweb.conf-ruby.dist
+conf/cvsweb/cvsweb.conf.dist
+@sample ${CONFDIR}/cvsweb/cvsweb.conf
+icons/cvsweb/
 icons/cvsweb/back.gif
 icons/cvsweb/dir.gif
 icons/cvsweb/miniback.gif
 icons/cvsweb/minidir.gif
 icons/cvsweb/minitext.gif
 icons/cvsweb/text.gif
-@dirrm icons/cvsweb
-@cwd ${CONFDIR}
-cvsweb/README.chroot
-cvsweb/cvsweb.conf.dist
-cvsweb/cvsweb.conf-freebsd.dist
-cvsweb/cvsweb.conf-netbsd.dist
-cvsweb/cvsweb.conf-openbsd.dist
-cvsweb/cvsweb.conf-ruby.dist
-@extra cvsweb/cvsweb.conf
-@extra cvsweb/

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/08/18 18:29:04 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:43:54 espie Exp $
 bin/alex
 bin/alex-2.0
+lib/alex-2.0/
 lib/alex-2.0/AlexTemplate
 lib/alex-2.0/AlexTemplate-debug
 lib/alex-2.0/AlexTemplate-ghc
@@ -10,6 +11,7 @@ lib/alex-2.0/AlexWrapper-gscan
 lib/alex-2.0/AlexWrapper-monad
 lib/alex-2.0/AlexWrapper-posn
 lib/alex-2.0/alex.bin
+share/doc/alex/
 share/doc/alex/about.html
 share/doc/alex/alex-files.html
 share/doc/alex/alex.html
@@ -21,6 +23,7 @@ share/doc/alex/introduction.html
 share/doc/alex/invoking.html
 share/doc/alex/license.html
 share/doc/alex/regexps.html
+share/doc/alex/stylesheet-images/
 share/doc/alex/stylesheet-images/caution.gif
 share/doc/alex/stylesheet-images/home.gif
 share/doc/alex/stylesheet-images/important.gif
@@ -35,6 +38,3 @@ share/doc/alex/stylesheet-images/up.gif
 share/doc/alex/stylesheet-images/warning.gif
 share/doc/alex/syntax.html
 share/doc/alex/wrappers.html
-@dirrm share/doc/alex/stylesheet-images
-@dirrm share/doc/alex
-@dirrm lib/alex-2.0

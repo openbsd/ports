@@ -1,9 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/10 08:10:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:43:57 espie Exp $
 ${P5SITE}/C/
 ${P5SITE}/C/Scan.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/C/
-@comment ${P5ARCH}/auto/C/Scan/
-@comment ${P5ARCH}/auto/C/Scan/.packlist
 @man man/man3p/C::Scan.3p

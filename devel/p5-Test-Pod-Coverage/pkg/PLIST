@@ -1,11 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/10 01:35:04 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:44:00 espie Exp $
+${P5SITE}/Test/Pod/
 ${P5SITE}/Test/Pod/Coverage.pm
-@comment ${P5ARCH}/auto/Test/Pod/Coverage/.packlist
-man/man3p/Test::Pod::Coverage.3p
-@comment @dirrm ${P5ARCH}/auto/Test/Pod/Coverage
-@comment @dirrm ${P5ARCH}/auto/Test/Pod
-@comment @dirrm ${P5ARCH}/auto/Test
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Test/Pod
-@dirrm ${P5SITE}/Test
+@man man/man3p/Test::Pod::Coverage.3p

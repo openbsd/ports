@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/04/10 23:08:11 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/14 23:44:01 espie Exp $
+include/python${MODPY_VERSION}/pygame/
 include/python${MODPY_VERSION}/pygame/font.h
 include/python${MODPY_VERSION}/pygame/mixer.h
 include/python${MODPY_VERSION}/pygame/pygame.h
+lib/python${MODPY_VERSION}/site-packages/pygame/
 lib/python${MODPY_VERSION}/site-packages/pygame/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pygame/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/base.so
@@ -48,6 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/pygame/time.so
 lib/python${MODPY_VERSION}/site-packages/pygame/transform.so
 lib/python${MODPY_VERSION}/site-packages/pygame/version.py
 lib/python${MODPY_VERSION}/site-packages/pygame/version.pyc
+share/doc/pygame/
 share/doc/pygame/index.html
 share/doc/pygame/logos.html
 share/doc/pygame/pygame_logo.gif
@@ -56,6 +59,7 @@ share/doc/pygame/pygame_small.gif
 share/doc/pygame/pygame_tiny.gif
 share/doc/pygame/readme.html
 share/doc/pygame/readme.txt
+share/doc/pygame/ref/
 share/doc/pygame/ref/CD.html
 share/doc/pygame/ref/Channel.html
 share/doc/pygame/ref/Clock.html
@@ -86,15 +90,18 @@ share/doc/pygame/ref/pygame_sprite.html
 share/doc/pygame/ref/pygame_surfarray.html
 share/doc/pygame/ref/pygame_time.html
 share/doc/pygame/ref/pygame_transform.html
+share/doc/pygame/tut/
 share/doc/pygame/tut/DisplayModes.html
 share/doc/pygame/tut/Executable.html
 share/doc/pygame/tut/ImportInit.html
 share/doc/pygame/tut/MoveIt.html
 share/doc/pygame/tut/SpriteIntro.html
+share/doc/pygame/tut/chimp/
 share/doc/pygame/tut/chimp/ChimpLineByLine.html
 share/doc/pygame/tut/chimp/chimp.py.html
 share/doc/pygame/tut/chimp/chimpshot.gif
 share/doc/pygame/tut/newbieguide.html
+share/doc/pygame/tut/surfarray/
 share/doc/pygame/tut/surfarray/SurfarrayIntro.html
 share/doc/pygame/tut/surfarray/allblack.jpg
 share/doc/pygame/tut/surfarray/flipped.jpg
@@ -105,6 +112,7 @@ share/doc/pygame/tut/surfarray/scaleup.jpg
 share/doc/pygame/tut/surfarray/soften.jpg
 share/doc/pygame/tut/surfarray/striped.jpg
 share/doc/pygame/tut/surfarray/xfade.jpg
+share/doc/pygame/tut/tom/
 share/doc/pygame/tut/tom/MakeGames.html
 share/doc/pygame/tut/tom/basic.png
 share/doc/pygame/tut/tom/event-flowchart.png
@@ -115,13 +123,16 @@ share/doc/pygame/tut/tom/games4.html
 share/doc/pygame/tut/tom/games5.html
 share/doc/pygame/tut/tom/games6.html
 share/doc/pygame/tut/tom/radians.png
+share/doc/pygame/util/
 share/doc/pygame/util/doclate.html
 share/doc/pygame/util/listlate.html
 share/doc/pygame/util/makedocs.py
 share/doc/pygame/util/pagelate.html
+share/examples/pygame/
 share/examples/pygame/aliens.py
 share/examples/pygame/arraydemo.py
 share/examples/pygame/chimp.py
+share/examples/pygame/data/
 share/examples/pygame/data/alien1.gif
 share/examples/pygame/data/alien2.gif
 share/examples/pygame/data/alien3.gif
@@ -154,14 +165,3 @@ share/examples/pygame/sound.py
 share/examples/pygame/stars.py
 share/examples/pygame/uberball.py
 share/examples/pygame/vgrade.py
-@dirrm share/examples/pygame/data
-@dirrm share/examples/pygame
-@dirrm share/doc/pygame/util
-@dirrm share/doc/pygame/tut/tom
-@dirrm share/doc/pygame/tut/surfarray
-@dirrm share/doc/pygame/tut/chimp
-@dirrm share/doc/pygame/tut
-@dirrm share/doc/pygame/ref
-@dirrm share/doc/pygame
-@dirrm lib/python${MODPY_VERSION}/site-packages/pygame
-@dirrm include/python${MODPY_VERSION}/pygame

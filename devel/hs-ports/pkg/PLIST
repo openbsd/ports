@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/09 10:30:22 dons Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:43:56 espie Exp $
 bin/ports-config
+lib/hs-ports-0.4.1/
+lib/hs-ports-0.4.1/ghc6/
+lib/hs-ports-0.4.1/ghc6/import/
 lib/hs-ports-0.4.1/ghc6/import/HPL.hi
 lib/hs-ports-0.4.1/ghc6/import/PortThreads.hi
 lib/hs-ports-0.4.1/ghc6/import/Ports.hi
@@ -10,9 +13,6 @@ lib/hs-ports-0.4.1/ghc6/import/SVars.hi
 lib/hs-ports-0.4.1/ghc6/import/ThreadUtils.hi
 lib/hs-ports-0.4.1/ghc6/libportsHS.a
 lib/hs-ports-0.4.1/ghc6/package.conf.in
-@dirrm lib/hs-ports-0.4.1/ghc6/import
-@dirrm lib/hs-ports-0.4.1/ghc6
-@dirrm lib/hs-ports-0.4.1
 @exec /bin/cat %D/lib/hs-ports-0.4.1/ghc6/package.conf.in | /usr/bin/env PREFIX=%D %D/bin/ghc-pkg -u
 @exec /bin/rm -f %D/lib/ghc-6.2.1/package.conf.old
 @unexec %D/bin/ghc-pkg -r ports

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/15 16:51:05 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:43:57 espie Exp $
+${P5SITE}/Cache/
 ${P5SITE}/Cache/BaseCache.pm
 ${P5SITE}/Cache/BaseCacheTester.pm
 ${P5SITE}/Cache/Cache.pm
@@ -19,31 +20,23 @@ ${P5SITE}/Cache/SizeAwareCacheTester.pm
 ${P5SITE}/Cache/SizeAwareFileCache.pm
 ${P5SITE}/Cache/SizeAwareMemoryCache.pm
 ${P5SITE}/Cache/SizeAwareSharedMemoryCache.pm
-@comment ${P5ARCH}/auto/Cache/Cache/.packlist
-@comment ${P5ARCH}/perllocal.pod
-man/man3p/Cache::BaseCache.3p
-man/man3p/Cache::BaseCacheTester.3p
-man/man3p/Cache::Cache.3p
-man/man3p/Cache::CacheMetaData.3p
-man/man3p/Cache::CacheSizer.3p
-man/man3p/Cache::CacheTester.3p
-man/man3p/Cache::CacheUtils.3p
-man/man3p/Cache::FileBackend.3p
-man/man3p/Cache::FileCache.3p
-man/man3p/Cache::MemoryBackend.3p
-man/man3p/Cache::MemoryCache.3p
-man/man3p/Cache::NullCache.3p
-man/man3p/Cache::Object.3p
-man/man3p/Cache::SharedMemoryBackend.3p
-man/man3p/Cache::SharedMemoryCache.3p
-man/man3p/Cache::SizeAwareCache.3p
-man/man3p/Cache::SizeAwareCacheTester.3p
-man/man3p/Cache::SizeAwareFileCache.3p
-man/man3p/Cache::SizeAwareMemoryCache.3p
-man/man3p/Cache::SizeAwareSharedMemoryCache.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Cache/Cache
-@comment @dirrm ${P5ARCH}/auto/Cache
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Cache
+@man man/man3p/Cache::BaseCache.3p
+@man man/man3p/Cache::BaseCacheTester.3p
+@man man/man3p/Cache::Cache.3p
+@man man/man3p/Cache::CacheMetaData.3p
+@man man/man3p/Cache::CacheSizer.3p
+@man man/man3p/Cache::CacheTester.3p
+@man man/man3p/Cache::CacheUtils.3p
+@man man/man3p/Cache::FileBackend.3p
+@man man/man3p/Cache::FileCache.3p
+@man man/man3p/Cache::MemoryBackend.3p
+@man man/man3p/Cache::MemoryCache.3p
+@man man/man3p/Cache::NullCache.3p
+@man man/man3p/Cache::Object.3p
+@man man/man3p/Cache::SharedMemoryBackend.3p
+@man man/man3p/Cache::SharedMemoryCache.3p
+@man man/man3p/Cache::SizeAwareCache.3p
+@man man/man3p/Cache::SizeAwareCacheTester.3p
+@man man/man3p/Cache::SizeAwareFileCache.3p
+@man man/man3p/Cache::SizeAwareMemoryCache.3p
+@man man/man3p/Cache::SizeAwareSharedMemoryCache.3p

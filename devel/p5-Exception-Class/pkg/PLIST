@@ -1,9 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/10 08:10:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:43:58 espie Exp $
 ${P5SITE}/Exception/
 ${P5SITE}/Exception/Class.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/Exception/
-@comment ${P5ARCH}/auto/Exception/Class/
-@comment ${P5ARCH}/auto/Exception/Class/.packlist
 @man man/man3p/Exception::Class.3p

@@ -1,9 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/01 23:21:40 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:44:00 espie Exp $
+${P5SITE}/Test/
 ${P5SITE}/Test/Differences.pm
-@comment ${P5ARCH}/auto/Test/Differences/.packlist
-man/man3p/Test::Differences.3p
-@comment @dirrm ${P5ARCH}/auto/Test/Differences
-@comment @dirrm ${P5ARCH}/auto/Test
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Test
+@man man/man3p/Test::Differences.3p

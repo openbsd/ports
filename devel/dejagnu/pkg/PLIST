@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/12/30 07:37:55 fgsch Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/dejagnu.info
+@comment $OpenBSD: PLIST,v 1.7 2004/09/14 23:43:55 espie Exp $
 bin/runtest
 include/dejagnu.h
-info/dejagnu.info
-man/man1/runtest.1
+@info info/dejagnu.info
+@man man/man1/runtest.1
+share/dejagnu/
+share/dejagnu/baseboards/
 share/dejagnu/baseboards/README
 share/dejagnu/baseboards/a29k-udi.exp
 share/dejagnu/baseboards/arc-sim.exp
@@ -97,6 +98,7 @@ share/dejagnu/baseboards/vxsparc.exp
 share/dejagnu/baseboards/x86-cygmon.exp
 share/dejagnu/baseboards/xscale-cygmon.exp
 share/dejagnu/baseboards/xtensa-sim.exp
+share/dejagnu/config/
 share/dejagnu/config/README
 share/dejagnu/config/arc.exp
 share/dejagnu/config/arm-ice.exp
@@ -147,6 +149,7 @@ share/dejagnu/framework.exp
 share/dejagnu/ftp.exp
 share/dejagnu/i960glue.c
 share/dejagnu/kermit.exp
+share/dejagnu/libexec/
 share/dejagnu/libexec/config.guess
 share/dejagnu/libgloss.exp
 share/dejagnu/mondfe.exp
@@ -164,8 +167,3 @@ share/dejagnu/tip.exp
 share/dejagnu/util-defs.exp
 share/dejagnu/utils.exp
 share/dejagnu/xsh.exp
-@dirrm share/dejagnu/libexec
-@dirrm share/dejagnu/config
-@dirrm share/dejagnu/baseboards
-@dirrm share/dejagnu
-@exec install-info --info-dir=%D/info %D/info/dejagnu.info

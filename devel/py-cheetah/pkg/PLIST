@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/28 08:33:17 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:44:00 espie Exp $
 bin/cheetah
 bin/cheetah-compile
+lib/python${MODPY_VERSION}/site-packages/Cheetah/
 lib/python${MODPY_VERSION}/site-packages/Cheetah/CheetahWrapper.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/CheetahWrapper.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Compiler.py
@@ -33,6 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/Template.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Template.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/TemplateCmdLineIface.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/TemplateCmdLineIface.pyc
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Templates/
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Templates/SkeletonPage.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Templates/SkeletonPage.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Templates/SkeletonPage.tmpl
@@ -40,6 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/Templates/_SkeletonPage.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Templates/_SkeletonPage.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Templates/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Templates/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/CheetahWrapper.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/CheetahWrapper.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/FileRefresh.py
@@ -56,6 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/unittest_local_copy.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/unittest_local_copy.pyc
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Tools/
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tools/CGITemplate.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tools/CGITemplate.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tools/MondoReport.py
@@ -67,6 +71,7 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/Tools/SiteHierarchy.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tools/SiteHierarchy.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tools/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tools/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/Indenter.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/Indenter.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/Misc.py
@@ -77,6 +82,7 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/WebInputMixin.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/WebInputMixin.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/optik/
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/optik/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/optik/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/optik/errors.py
@@ -92,6 +98,7 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/_namemapper.so
 lib/python${MODPY_VERSION}/site-packages/Cheetah/_properties.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/_properties.pyc
+share/examples/py-cheetah/
 share/examples/py-cheetah/README
 share/examples/py-cheetah/SiteTemplate.tmpl
 share/examples/py-cheetah/banner copy.jpg
@@ -111,10 +118,3 @@ share/examples/py-cheetah/index.tmpl
 share/examples/py-cheetah/learn.tmpl
 share/examples/py-cheetah/sourceforge_logo.gif
 share/examples/py-cheetah/spacer.gif
-@dirrm share/examples/py-cheetah
-@dirrm lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils/optik
-@dirrm lib/python${MODPY_VERSION}/site-packages/Cheetah/Utils
-@dirrm lib/python${MODPY_VERSION}/site-packages/Cheetah/Tools
-@dirrm lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests
-@dirrm lib/python${MODPY_VERSION}/site-packages/Cheetah/Templates
-@dirrm lib/python${MODPY_VERSION}/site-packages/Cheetah

@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/16 17:34:06 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:43:55 espie Exp $
 bin/doc++
 bin/docify
 bin/promote
+@comment lib/charset.alias
+share/doc/doc++/
 share/doc/doc++/ClassGraph.class
 share/doc/doc++/ClassGraphPanel.class
 share/doc/doc++/ClassLayout.class
@@ -37,15 +39,6 @@ share/doc/doc++/supportedTeXmacros.html
 share/doc/doc++/toc.html
 share/locale/fr/LC_MESSAGES/doc++.mo
 share/locale/ja/LC_MESSAGES/doc++.mo
+@comment share/locale/locale.alias
 share/locale/ro/LC_MESSAGES/doc++.mo
 share/locale/ru/LC_MESSAGES/doc++.mo
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale
-@dirrm share/doc/doc++

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/08/10 08:10:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/14 23:43:58 espie Exp $
 ${P5SITE}/Curses/
 ${P5SITE}/Curses/UI/
 ${P5SITE}/Curses/UI.pm
@@ -44,11 +44,6 @@ ${P5SITE}/Curses/UI/TextViewer.pm
 ${P5SITE}/Curses/UI/Tutorial.pod
 ${P5SITE}/Curses/UI/Widget.pm
 ${P5SITE}/Curses/UI/Window.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/Curses/
-@comment ${P5ARCH}/auto/Curses/UI/
-@comment ${P5ARCH}/auto/Curses/UI/.packlist
 @man man/man3p/Curses::UI.3p
 @man man/man3p/Curses::UI::Buttonbox.3p
 @man man/man3p/Curses::UI::Calendar.3p

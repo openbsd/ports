@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/11/13 18:50:39 espie Exp $
-lib/libCHART-1.1.so.41.0
-lib/libFOX-1.1.so.41.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/14 23:43:55 espie Exp $
+@lib lib/libCHART-1.1.so.41.0
+@lib lib/libFOX-1.1.so.41.0

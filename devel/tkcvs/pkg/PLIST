@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/07/23 13:11:58 todd Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:44:02 espie Exp $
 bin/cvscheck
 bin/tkcvs
 bin/tkdiff
@@ -42,5 +42,5 @@ libdata/tkcvs/tooltips.tcl
 libdata/tkcvs/update.tcl
 libdata/tkcvs/venget.tcl
 libdata/tkcvs/workdir.tcl
-man/mann/tkcvs.n
-man/mann/tkdiff.n
+@man man/mann/tkcvs.n
+@man man/mann/tkdiff.n

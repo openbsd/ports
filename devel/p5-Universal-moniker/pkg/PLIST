@@ -1,10 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/21 11:33:16 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:44:00 espie Exp $
+${P5SITE}/UNIVERSAL/
 ${P5SITE}/UNIVERSAL/moniker.pm
-@comment ${P5ARCH}/auto/UNIVERSAL/moniker/.packlist
-man/man3p/UNIVERSAL::moniker.3p
-@comment @dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/UNIVERSAL/moniker
-@comment @dirrm ${P5ARCH}/auto/UNIVERSAL
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/UNIVERSAL
+@man man/man3p/UNIVERSAL::moniker.3p

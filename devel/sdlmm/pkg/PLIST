@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/09/02 03:41:30 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/14 23:44:01 espie Exp $
 bin/sdlmm-config
+include/SDLmm/
 include/SDLmm/sdlmm.h
 include/SDLmm/sdlmm_audio.h
 include/SDLmm/sdlmm_autoconfig.h
@@ -20,24 +21,24 @@ include/SDLmm/sdlmm_timer.h
 include/SDLmm/sdlmm_videoinfo.h
 lib/libSDLmm.a
 lib/libSDLmm.la
-%%SHARED%%
-man/man3/SDLmm.3
-man/man3/SDLmm_Audio.3
-man/man3/SDLmm_BaseSurface.3
-man/man3/SDLmm_CD.3
-man/man3/SDLmm_ColorRGB.3
-man/man3/SDLmm_ColorRGBA.3
-man/man3/SDLmm_Display.3
-man/man3/SDLmm_Event.3
-man/man3/SDLmm_EventHandler.3
-man/man3/SDLmm_Joystick.3
-man/man3/SDLmm_PixelFormat.3
-man/man3/SDLmm_SPoint.3
-man/man3/SDLmm_SRect.3
-man/man3/SDLmm_Surface.3
-man/man3/SDLmm_Timer.3
-man/man3/SDLmm_VideoInfo.3
-man/man3/SDLmm_todo.3
-man/man3/sdlmm.h.3
+@man man/man3/SDLmm.3
+@man man/man3/SDLmm_Audio.3
+@man man/man3/SDLmm_BaseSurface.3
+@man man/man3/SDLmm_CD.3
+@man man/man3/SDLmm_ColorRGB.3
+@man man/man3/SDLmm_ColorRGBA.3
+@man man/man3/SDLmm_Display.3
+@man man/man3/SDLmm_Event.3
+@man man/man3/SDLmm_EventHandler.3
+@man man/man3/SDLmm_Joystick.3
+@man man/man3/SDLmm_PixelFormat.3
+@man man/man3/SDLmm_SPoint.3
+@man man/man3/SDLmm_SRect.3
+@man man/man3/SDLmm_Surface.3
+@man man/man3/SDLmm_Timer.3
+@man man/man3/SDLmm_VideoInfo.3
+@man man/man3/SDLmm_todo.3
+@man man/man3/sdlmm.h.3
+share/aclocal/
 share/aclocal/sdlmm.m4
-@dirrm include/SDLmm
+%%SHARED%%

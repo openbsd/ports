@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/23 08:39:24 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:44:01 espie Exp $
 lib/python${MODPY_VERSION}/site-packages/pyparsing.py
 lib/python${MODPY_VERSION}/site-packages/pyparsing.pyc
+share/doc/py-parsing/
 share/doc/py-parsing/HowToUsePyparsing.html
 share/doc/py-parsing/README
+share/examples/py-parsing/
 share/examples/py-parsing/AcManForm.dfm
 share/examples/py-parsing/Setup.ini
 share/examples/py-parsing/SingleForm.dfm
@@ -22,5 +24,3 @@ share/examples/py-parsing/idlParse.py
 share/examples/py-parsing/scanExamples.py
 share/examples/py-parsing/simpleSQL.py
 share/examples/py-parsing/urlExtractor.py
-@dirrm share/examples/py-parsing
-@dirrm share/doc/py-parsing

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/10 08:10:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:43:59 espie Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/Server/
 ${P5SITE}/Net/Server.pm
@@ -17,11 +17,6 @@ ${P5SITE}/Net/Server/Proto/UDP.pm
 ${P5SITE}/Net/Server/Proto/UNIX.pm
 ${P5SITE}/Net/Server/SIG.pm
 ${P5SITE}/Net/Server/Single.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/Net/
-@comment ${P5ARCH}/auto/Net/Server/
-@comment ${P5ARCH}/auto/Net/Server/.packlist
 @man man/man3p/Net::Server.3p
 @man man/man3p/Net::Server::Daemonize.3p
 @man man/man3p/Net::Server::Fork.3p

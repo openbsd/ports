@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/08/10 08:10:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:44:00 espie Exp $
 ${P5ARCH}/
 ${P5ARCH}/Time/
 ${P5ARCH}/Time/Piece.pm
@@ -6,7 +6,6 @@ ${P5ARCH}/Time/Seconds.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Time/
 ${P5ARCH}/auto/Time/Piece/
-@comment ${P5ARCH}/auto/Time/Piece/.packlist
 ${P5ARCH}/auto/Time/Piece/Piece.bs
 ${P5ARCH}/auto/Time/Piece/Piece.so
 @man man/man3p/Time::Piece.3p

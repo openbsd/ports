@@ -1,13 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/10 08:10:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:43:58 espie Exp $
 ${P5SITE}/Data/
 ${P5SITE}/Data/Flow.pm
 ${P5SITE}/auto/
 ${P5SITE}/auto/Data/
 ${P5SITE}/auto/Data/Flow/
 ${P5SITE}/auto/Data/Flow/autosplit.ix
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/Data/
-@comment ${P5ARCH}/auto/Data/Flow/
-@comment ${P5ARCH}/auto/Data/Flow/.packlist
 @man man/man3p/Data::Flow.3p

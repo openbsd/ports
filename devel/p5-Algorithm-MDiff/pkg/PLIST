@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/10 08:10:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:43:56 espie Exp $
 ${P5ARCH}/
 ${P5ARCH}/Algorithm/
 ${P5ARCH}/Algorithm/MDiff.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Algorithm/
 ${P5ARCH}/auto/Algorithm/MDiff/
-@comment ${P5ARCH}/auto/Algorithm/MDiff/.packlist
 ${P5ARCH}/auto/Algorithm/MDiff/MDiff.bs
 ${P5ARCH}/auto/Algorithm/MDiff/MDiff.so
 ${P5ARCH}/auto/Algorithm/MDiff/autosplit.ix

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/01/31 18:38:37 todd Exp $
-lib/libzvt-2.0.so.0.1
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/14 23:43:56 espie Exp $
+@lib lib/libzvt-2.0.so.0.1

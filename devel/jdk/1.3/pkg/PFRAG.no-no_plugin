@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_plugin,v 1.1.1.1 2004/01/29 22:02:20 pvalchev Exp $
+@comment $OpenBSD: PFRAG.no-no_plugin,v 1.2 2004/09/14 23:43:56 espie Exp $
 ${JDKHOME}/bin/ControlPanel
 ${JDKHOME}/bin/HtmlConverter
 ${JDKHOME}/bin/${MACHINE_ARCH}/green_threads/java_vm
@@ -10,48 +10,48 @@ ${JDKHOME}/jre/bin/${MACHINE_ARCH}/green_threads/java_vm_g
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjavaplugin_jni.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjavaplugin_jni_g.so
 ${JDKHOME}/jre/lib/javaplugin.jar
+${JDKHOME}/jre/lib/locale/
+${JDKHOME}/jre/lib/locale/de/
+${JDKHOME}/jre/lib/locale/de/LC_MESSAGES/
 ${JDKHOME}/jre/lib/locale/de/LC_MESSAGES/sunw_java_plugin.mo
+${JDKHOME}/jre/lib/locale/es/
+${JDKHOME}/jre/lib/locale/es/LC_MESSAGES/
 ${JDKHOME}/jre/lib/locale/es/LC_MESSAGES/sunw_java_plugin.mo
+${JDKHOME}/jre/lib/locale/fr/
+${JDKHOME}/jre/lib/locale/fr/LC_MESSAGES/
 ${JDKHOME}/jre/lib/locale/fr/LC_MESSAGES/sunw_java_plugin.mo
+${JDKHOME}/jre/lib/locale/it/
+${JDKHOME}/jre/lib/locale/it/LC_MESSAGES/
 ${JDKHOME}/jre/lib/locale/it/LC_MESSAGES/sunw_java_plugin.mo
+${JDKHOME}/jre/lib/locale/ja/
+${JDKHOME}/jre/lib/locale/ja/LC_MESSAGES/
 ${JDKHOME}/jre/lib/locale/ja/LC_MESSAGES/sunw_java_plugin.mo
+${JDKHOME}/jre/lib/locale/ko/
+${JDKHOME}/jre/lib/locale/ko.UTF-8/
+${JDKHOME}/jre/lib/locale/ko.UTF-8/LC_MESSAGES/
 ${JDKHOME}/jre/lib/locale/ko.UTF-8/LC_MESSAGES/sunw_java_plugin.mo
+${JDKHOME}/jre/lib/locale/ko/LC_MESSAGES/
 ${JDKHOME}/jre/lib/locale/ko/LC_MESSAGES/sunw_java_plugin.mo
+${JDKHOME}/jre/lib/locale/sv/
+${JDKHOME}/jre/lib/locale/sv/LC_MESSAGES/
 ${JDKHOME}/jre/lib/locale/sv/LC_MESSAGES/sunw_java_plugin.mo
+${JDKHOME}/jre/lib/locale/zh/
+${JDKHOME}/jre/lib/locale/zh.GBK/
+${JDKHOME}/jre/lib/locale/zh.GBK/LC_MESSAGES/
 ${JDKHOME}/jre/lib/locale/zh.GBK/LC_MESSAGES/sunw_java_plugin.mo
+${JDKHOME}/jre/lib/locale/zh/LC_MESSAGES/
 ${JDKHOME}/jre/lib/locale/zh/LC_MESSAGES/sunw_java_plugin.mo
+${JDKHOME}/jre/lib/locale/zh_TW/
+${JDKHOME}/jre/lib/locale/zh_TW.BIG5/
+${JDKHOME}/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES/
 ${JDKHOME}/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
+${JDKHOME}/jre/lib/locale/zh_TW/LC_MESSAGES/
 ${JDKHOME}/jre/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
+${JDKHOME}/jre/plugin/${MACHINE_ARCH}/
+${JDKHOME}/jre/plugin/${MACHINE_ARCH}/ns4/
 ${JDKHOME}/jre/plugin/${MACHINE_ARCH}/ns4/javaplugin.so
 ${JDKHOME}/jre/plugin/${MACHINE_ARCH}/ns4/javaplugin_g.so
+${JDKHOME}/jre/plugin/${MACHINE_ARCH}/ns600/
 ${JDKHOME}/jre/plugin/${MACHINE_ARCH}/ns600/libjavaplugin_oji.so
 ${JDKHOME}/jre/plugin/${MACHINE_ARCH}/ns600/libjavaplugin_oji_g.so
 ${JDKHOME}/lib/htmlconverter.jar
-@dirrm ${JDKHOME}/jre/plugin/${MACHINE_ARCH}/ns600
-@dirrm ${JDKHOME}/jre/plugin/${MACHINE_ARCH}/ns4
-@dirrm ${JDKHOME}/jre/plugin/${MACHINE_ARCH}
-@dirrm ${JDKHOME}/jre/lib/locale/zh_TW/LC_MESSAGES
-@dirrm ${JDKHOME}/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES
-@dirrm ${JDKHOME}/jre/lib/locale/zh_TW.BIG5
-@dirrm ${JDKHOME}/jre/lib/locale/zh_TW
-@dirrm ${JDKHOME}/jre/lib/locale/zh/LC_MESSAGES
-@dirrm ${JDKHOME}/jre/lib/locale/zh.GBK/LC_MESSAGES
-@dirrm ${JDKHOME}/jre/lib/locale/zh.GBK
-@dirrm ${JDKHOME}/jre/lib/locale/zh
-@dirrm ${JDKHOME}/jre/lib/locale/sv/LC_MESSAGES
-@dirrm ${JDKHOME}/jre/lib/locale/sv
-@dirrm ${JDKHOME}/jre/lib/locale/ko/LC_MESSAGES
-@dirrm ${JDKHOME}/jre/lib/locale/ko.UTF-8/LC_MESSAGES
-@dirrm ${JDKHOME}/jre/lib/locale/ko.UTF-8
-@dirrm ${JDKHOME}/jre/lib/locale/ko
-@dirrm ${JDKHOME}/jre/lib/locale/ja/LC_MESSAGES
-@dirrm ${JDKHOME}/jre/lib/locale/ja
-@dirrm ${JDKHOME}/jre/lib/locale/it/LC_MESSAGES
-@dirrm ${JDKHOME}/jre/lib/locale/it
-@dirrm ${JDKHOME}/jre/lib/locale/fr/LC_MESSAGES
-@dirrm ${JDKHOME}/jre/lib/locale/fr
-@dirrm ${JDKHOME}/jre/lib/locale/es/LC_MESSAGES
-@dirrm ${JDKHOME}/jre/lib/locale/es
-@dirrm ${JDKHOME}/jre/lib/locale/de/LC_MESSAGES
-@dirrm ${JDKHOME}/jre/lib/locale/de
-@dirrm ${JDKHOME}/jre/lib/locale

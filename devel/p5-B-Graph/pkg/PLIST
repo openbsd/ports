@@ -1,9 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/10 08:10:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:43:57 espie Exp $
 ${P5SITE}/B/
 ${P5SITE}/B/Graph.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/B/
-@comment ${P5ARCH}/auto/B/Graph/
-@comment ${P5ARCH}/auto/B/Graph/.packlist
 @man man/man3p/B::Graph.3p

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/04/17 16:42:12 naddy Exp $
-lib/libuuid.so.1.20
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/14 23:44:02 espie Exp $
+@lib lib/libuuid.so.1.20

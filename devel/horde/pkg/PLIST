@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/05/01 16:16:35 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/14 23:43:56 espie Exp $
+horde/
 horde/COPYING
 horde/README
+horde/config/
 horde/config/.htaccess
 horde/config/horde.php.dist
 horde/config/html.php.dist
@@ -11,6 +13,7 @@ horde/config/motd.php.dist
 horde/config/prefs.php.dist
 horde/config/registry.php.dist
 horde/css.php
+horde/docs/
 horde/docs/CHANGES
 horde/docs/CODING_STANDARDS
 horde/docs/CONTRIBUTING
@@ -20,6 +23,8 @@ horde/docs/INSTALL
 horde/docs/RELEASE_NOTES
 horde/docs/SECURITY
 horde/docs/TRANSLATIONS
+horde/graphics/
+horde/graphics/alerts/
 horde/graphics/alerts/error.gif
 horde/graphics/alerts/message.gif
 horde/graphics/alerts/success.gif
@@ -31,6 +36,7 @@ horde/graphics/home.gif
 horde/graphics/keyboard.gif
 horde/graphics/login.gif
 horde/graphics/logout.gif
+horde/graphics/mime/
 horde/graphics/mime/audio.gif
 horde/graphics/mime/binary.gif
 horde/graphics/mime/compressed.gif
@@ -67,6 +73,7 @@ horde/graphics/mime/video.gif
 horde/graphics/mime/xml.gif
 horde/graphics/prefs.gif
 horde/graphics/problem.gif
+horde/graphics/tree/
 horde/graphics/tree/blank.gif
 horde/graphics/tree/join.gif
 horde/graphics/tree/joinbottom.gif
@@ -82,7 +89,9 @@ horde/graphics/tree/plustop.gif
 horde/help.php
 horde/index.php
 horde/javascript.php
+horde/lib/
 horde/lib/.htaccess
+horde/lib/Auth/
 horde/lib/Auth.php
 horde/lib/Auth/auto.php
 horde/lib/Auth/ftp.php
@@ -94,12 +103,16 @@ horde/lib/Auth/radius.php
 horde/lib/Auth/smb.php
 horde/lib/Auth/sql.php
 horde/lib/Browser.php
+horde/lib/Cache/
 horde/lib/Cache.php
 horde/lib/Cache/file.php
+horde/lib/Category/
 horde/lib/Category.php
 horde/lib/Category/sql.php
 horde/lib/CategoryTree.php
+horde/lib/Cipher/
 horde/lib/Cipher.php
+horde/lib/Cipher/BlockMode/
 horde/lib/Cipher/BlockMode.php
 horde/lib/Cipher/BlockMode/cbc.php
 horde/lib/Cipher/BlockMode/cfb64.php
@@ -115,11 +128,13 @@ horde/lib/Horde.php
 horde/lib/Identity.php
 horde/lib/Image.php
 horde/lib/Lang.php
+horde/lib/MIME/
 horde/lib/MIME.php
 horde/lib/MIME/Magic.php
 horde/lib/MIME/Message.php
 horde/lib/MIME/Part.php
 horde/lib/MIME/Structure.php
+horde/lib/MIME/Viewer/
 horde/lib/MIME/Viewer.php
 horde/lib/MIME/Viewer/deb.php
 horde/lib/MIME/Viewer/default.php
@@ -137,9 +152,11 @@ horde/lib/MIME/Viewer/vcard.php
 horde/lib/MIME/Viewer/zip.php
 horde/lib/Maintenance.php
 horde/lib/Menu.php
+horde/lib/Notification/
 horde/lib/Notification.php
 horde/lib/Notification/status.php
 horde/lib/Perms.php
+horde/lib/Prefs/
 horde/lib/Prefs.php
 horde/lib/Prefs/UI.php
 horde/lib/Prefs/ldap.php
@@ -151,6 +168,7 @@ horde/lib/SQL.php
 horde/lib/Secret.php
 horde/lib/Serialize.php
 horde/lib/SessionCache.php
+horde/lib/SessionHandler/
 horde/lib/SessionHandler.php
 horde/lib/SessionHandler/dbm.php
 horde/lib/SessionHandler/mysql.php
@@ -158,9 +176,11 @@ horde/lib/SessionHandler/pgsql.php
 horde/lib/SessionHandler/sapdb.php
 horde/lib/SessionHandler/sql.php
 horde/lib/Text.php
+horde/lib/Token/
 horde/lib/Token.php
 horde/lib/Token/file.php
 horde/lib/Token/sql.php
+horde/lib/VFS/
 horde/lib/VFS.php
 horde/lib/VFS/ListItem.php
 horde/lib/VFS/Object.php
@@ -171,49 +191,122 @@ horde/lib/VFS/sql.php
 horde/lib/VFS/sql_file.php
 horde/lib/base.php
 horde/lib/version.php
+horde/locale/
 horde/locale/.htaccess
+horde/locale/ar_SY/
+horde/locale/ar_SY/LC_MESSAGES/
 horde/locale/ar_SY/LC_MESSAGES/horde.mo
+horde/locale/bg_BG/
+horde/locale/bg_BG/LC_MESSAGES/
 horde/locale/bg_BG/LC_MESSAGES/horde.mo
+horde/locale/ca_ES/
+horde/locale/ca_ES/LC_MESSAGES/
 horde/locale/ca_ES/LC_MESSAGES/horde.mo
+horde/locale/cs_CZ/
+horde/locale/cs_CZ/LC_MESSAGES/
 horde/locale/cs_CZ/LC_MESSAGES/horde.mo
+horde/locale/da_DK/
+horde/locale/da_DK/LC_MESSAGES/
 horde/locale/da_DK/LC_MESSAGES/horde.mo
+horde/locale/de_DE/
+horde/locale/de_DE/LC_MESSAGES/
 horde/locale/de_DE/LC_MESSAGES/horde.mo
+horde/locale/el_GR/
+horde/locale/el_GR/LC_MESSAGES/
 horde/locale/el_GR/LC_MESSAGES/horde.mo
+horde/locale/en_US/
 horde/locale/en_US/help.xml
+horde/locale/es_ES/
+horde/locale/es_ES/LC_MESSAGES/
 horde/locale/es_ES/LC_MESSAGES/horde.mo
+horde/locale/et_EE/
+horde/locale/et_EE/LC_MESSAGES/
 horde/locale/et_EE/LC_MESSAGES/horde.mo
+horde/locale/fi_FI/
+horde/locale/fi_FI/LC_MESSAGES/
 horde/locale/fi_FI/LC_MESSAGES/horde.mo
 horde/locale/fi_FI/help.xml
+horde/locale/fr_FR/
+horde/locale/fr_FR/LC_MESSAGES/
 horde/locale/fr_FR/LC_MESSAGES/horde.mo
+horde/locale/gl_ES/
+horde/locale/gl_ES/LC_MESSAGES/
 horde/locale/gl_ES/LC_MESSAGES/horde.mo
+horde/locale/hu_HU/
+horde/locale/hu_HU/LC_MESSAGES/
 horde/locale/hu_HU/LC_MESSAGES/horde.mo
+horde/locale/id_ID/
+horde/locale/id_ID/LC_MESSAGES/
 horde/locale/id_ID/LC_MESSAGES/horde.mo
+horde/locale/it_IT/
+horde/locale/it_IT/LC_MESSAGES/
 horde/locale/it_IT/LC_MESSAGES/horde.mo
+horde/locale/ja_JP/
+horde/locale/ja_JP/LC_MESSAGES/
 horde/locale/ja_JP/LC_MESSAGES/horde.mo
+horde/locale/ko_KR/
+horde/locale/ko_KR/LC_MESSAGES/
 horde/locale/ko_KR/LC_MESSAGES/horde.mo
+horde/locale/lt_LT/
+horde/locale/lt_LT/LC_MESSAGES/
 horde/locale/lt_LT/LC_MESSAGES/horde.mo
+horde/locale/lv_LV/
+horde/locale/lv_LV/LC_MESSAGES/
 horde/locale/lv_LV/LC_MESSAGES/horde.mo
+horde/locale/mk_MK/
+horde/locale/mk_MK/LC_MESSAGES/
 horde/locale/mk_MK/LC_MESSAGES/horde.mo
+horde/locale/nb_NO/
+horde/locale/nb_NO/LC_MESSAGES/
 horde/locale/nb_NO/LC_MESSAGES/horde.mo
+horde/locale/nl_NL/
+horde/locale/nl_NL/LC_MESSAGES/
 horde/locale/nl_NL/LC_MESSAGES/horde.mo
+horde/locale/nn_NO/
+horde/locale/nn_NO/LC_MESSAGES/
 horde/locale/nn_NO/LC_MESSAGES/horde.mo
+horde/locale/pl_PL/
+horde/locale/pl_PL/LC_MESSAGES/
 horde/locale/pl_PL/LC_MESSAGES/horde.mo
 horde/locale/pl_PL/help.xml
+horde/locale/pt_BR/
+horde/locale/pt_BR/LC_MESSAGES/
 horde/locale/pt_BR/LC_MESSAGES/horde.mo
+horde/locale/pt_PT/
+horde/locale/pt_PT/LC_MESSAGES/
 horde/locale/pt_PT/LC_MESSAGES/horde.mo
+horde/locale/ro_RO/
+horde/locale/ro_RO/LC_MESSAGES/
 horde/locale/ro_RO/LC_MESSAGES/horde.mo
+horde/locale/ru_RU/
+horde/locale/ru_RU.KOI8-R/
+horde/locale/ru_RU.KOI8-R/LC_MESSAGES/
 horde/locale/ru_RU.KOI8-R/LC_MESSAGES/horde.mo
+horde/locale/ru_RU/LC_MESSAGES/
 horde/locale/ru_RU/LC_MESSAGES/horde.mo
+horde/locale/sk_SK/
+horde/locale/sk_SK/LC_MESSAGES/
 horde/locale/sk_SK/LC_MESSAGES/horde.mo
+horde/locale/sl_SI/
+horde/locale/sl_SI/LC_MESSAGES/
 horde/locale/sl_SI/LC_MESSAGES/horde.mo
+horde/locale/sv_SE/
+horde/locale/sv_SE/LC_MESSAGES/
 horde/locale/sv_SE/LC_MESSAGES/horde.mo
+horde/locale/uk_UA/
+horde/locale/uk_UA/LC_MESSAGES/
 horde/locale/uk_UA/LC_MESSAGES/horde.mo
+horde/locale/zh_CN/
+horde/locale/zh_CN/LC_MESSAGES/
 horde/locale/zh_CN/LC_MESSAGES/horde.mo
+horde/locale/zh_TW/
+horde/locale/zh_TW/LC_MESSAGES/
 horde/locale/zh_TW/LC_MESSAGES/horde.mo
 horde/login.php
 horde/maintenance.php
 horde/menu.php
 horde/navbar.php
+horde/po/
 horde/po/.htaccess
 horde/po/Makefile
 horde/po/README
@@ -260,8 +353,10 @@ horde/po/zh_CN.po
 horde/po/zh_TW.po
 horde/prefs.php
 horde/problem.php
+horde/scripts/
 horde/scripts/.htaccess
 horde/scripts/SCRIPTS
+horde/scripts/db/
 horde/scripts/db/README
 horde/scripts/db/auth.sql
 horde/scripts/db/category.sql
@@ -275,40 +370,53 @@ horde/scripts/db/sessionhandler.sql
 horde/scripts/db/sessionhandler_sapdb.sql
 horde/scripts/db/vfs.sql
 horde/scripts/horde-rsync.sh
+horde/scripts/ldap/
 horde/scripts/ldap/horde.schema
+horde/scripts/mime_mapping/
 horde/scripts/mime_mapping/Makefile
 horde/scripts/mime_mapping/convert.pl
 horde/scripts/mime_mapping/mime.types
 horde/scripts/mime_mapping/mime.types.horde
 horde/scripts/set_perms.sh
 horde/status.php
+horde/templates/
 horde/templates/.htaccess
+horde/templates/categorytree/
 horde/templates/categorytree/rowend.inc
 horde/templates/categorytree/rowstart.inc
 horde/templates/categorytree/tablefoot.inc
 horde/templates/categorytree/tablehead.inc
 horde/templates/common-footer.inc
 horde/templates/common-header.inc
+horde/templates/data/
 horde/templates/data/csvmap.inc
 horde/templates/data/datemap.inc
+horde/templates/help/
 horde/templates/help/footer.inc
 horde/templates/help/header.inc
 horde/templates/help/index.inc
 horde/templates/help/menu.inc
+horde/templates/horde/
 horde/templates/horde/modules.inc
+horde/templates/index/
 horde/templates/index/css.inc
 horde/templates/index/floating_index.inc
 horde/templates/index/frames_index.inc
 horde/templates/index/notconfigured.inc
 horde/templates/index/wap.inc
+horde/templates/javascript/
 horde/templates/javascript/open_help_win.js
+horde/templates/login/
 horde/templates/login/login.inc
 horde/templates/login/user.inc
+horde/templates/maintenance/
 horde/templates/maintenance/confirm_bottom.inc
 horde/templates/maintenance/confirm_middle.inc
 horde/templates/maintenance/confirm_top.inc
 horde/templates/maintenance/javascript.inc
+horde/templates/navbar/
 horde/templates/navbar/menu.inc
+horde/templates/prefs/
 horde/templates/prefs/begin.inc
 horde/templates/prefs/checkbox.inc
 horde/templates/prefs/end.inc
@@ -319,126 +427,18 @@ horde/templates/prefs/overview.inc
 horde/templates/prefs/select.inc
 horde/templates/prefs/text.inc
 horde/templates/prefs/textarea.inc
+horde/templates/problem/
 horde/templates/problem/javascript.inc
 horde/templates/problem/problem.inc
+horde/templates/wml/
 horde/templates/wml/common-footer.inc
 horde/templates/wml/common-header.inc
 horde/templates/wml/doctype.inc
+horde/templates/wml/login/
 horde/templates/wml/login/login.inc
 horde/templates/wml/login/user.inc
 horde/test.php
+horde/util/
 horde/util/css2horde.php
 horde/util/go.php
 horde/util/special_characters.php
-@dirrm horde/util
-@dirrm horde/templates/wml/login
-@dirrm horde/templates/wml
-@dirrm horde/templates/problem
-@dirrm horde/templates/prefs
-@dirrm horde/templates/navbar
-@dirrm horde/templates/maintenance
-@dirrm horde/templates/login
-@dirrm horde/templates/javascript
-@dirrm horde/templates/index
-@dirrm horde/templates/horde
-@dirrm horde/templates/help
-@dirrm horde/templates/data
-@dirrm horde/templates/categorytree
-@dirrm horde/templates
-@dirrm horde/scripts/mime_mapping
-@dirrm horde/scripts/ldap
-@dirrm horde/scripts/db
-@dirrm horde/scripts
-@dirrm horde/po
-@dirrm horde/locale/zh_TW/LC_MESSAGES
-@dirrm horde/locale/zh_TW
-@dirrm horde/locale/zh_CN/LC_MESSAGES
-@dirrm horde/locale/zh_CN
-@dirrm horde/locale/uk_UA/LC_MESSAGES
-@dirrm horde/locale/uk_UA
-@dirrm horde/locale/sv_SE/LC_MESSAGES
-@dirrm horde/locale/sv_SE
-@dirrm horde/locale/sl_SI/LC_MESSAGES
-@dirrm horde/locale/sl_SI
-@dirrm horde/locale/sk_SK/LC_MESSAGES
-@dirrm horde/locale/sk_SK
-@dirrm horde/locale/ru_RU/LC_MESSAGES
-@dirrm horde/locale/ru_RU.KOI8-R/LC_MESSAGES
-@dirrm horde/locale/ru_RU.KOI8-R
-@dirrm horde/locale/ru_RU
-@dirrm horde/locale/ro_RO/LC_MESSAGES
-@dirrm horde/locale/ro_RO
-@dirrm horde/locale/pt_PT/LC_MESSAGES
-@dirrm horde/locale/pt_PT
-@dirrm horde/locale/pt_BR/LC_MESSAGES
-@dirrm horde/locale/pt_BR
-@dirrm horde/locale/pl_PL/LC_MESSAGES
-@dirrm horde/locale/pl_PL
-@dirrm horde/locale/nn_NO/LC_MESSAGES
-@dirrm horde/locale/nn_NO
-@dirrm horde/locale/nl_NL/LC_MESSAGES
-@dirrm horde/locale/nl_NL
-@dirrm horde/locale/nb_NO/LC_MESSAGES
-@dirrm horde/locale/nb_NO
-@dirrm horde/locale/mk_MK/LC_MESSAGES
-@dirrm horde/locale/mk_MK
-@dirrm horde/locale/lv_LV/LC_MESSAGES
-@dirrm horde/locale/lv_LV
-@dirrm horde/locale/lt_LT/LC_MESSAGES
-@dirrm horde/locale/lt_LT
-@dirrm horde/locale/ko_KR/LC_MESSAGES
-@dirrm horde/locale/ko_KR
-@dirrm horde/locale/ja_JP/LC_MESSAGES
-@dirrm horde/locale/ja_JP
-@dirrm horde/locale/it_IT/LC_MESSAGES
-@dirrm horde/locale/it_IT
-@dirrm horde/locale/id_ID/LC_MESSAGES
-@dirrm horde/locale/id_ID
-@dirrm horde/locale/hu_HU/LC_MESSAGES
-@dirrm horde/locale/hu_HU
-@dirrm horde/locale/gl_ES/LC_MESSAGES
-@dirrm horde/locale/gl_ES
-@dirrm horde/locale/fr_FR/LC_MESSAGES
-@dirrm horde/locale/fr_FR
-@dirrm horde/locale/fi_FI/LC_MESSAGES
-@dirrm horde/locale/fi_FI
-@dirrm horde/locale/et_EE/LC_MESSAGES
-@dirrm horde/locale/et_EE
-@dirrm horde/locale/es_ES/LC_MESSAGES
-@dirrm horde/locale/es_ES
-@dirrm horde/locale/en_US
-@dirrm horde/locale/el_GR/LC_MESSAGES
-@dirrm horde/locale/el_GR
-@dirrm horde/locale/de_DE/LC_MESSAGES
-@dirrm horde/locale/de_DE
-@dirrm horde/locale/da_DK/LC_MESSAGES
-@dirrm horde/locale/da_DK
-@dirrm horde/locale/cs_CZ/LC_MESSAGES
-@dirrm horde/locale/cs_CZ
-@dirrm horde/locale/ca_ES/LC_MESSAGES
-@dirrm horde/locale/ca_ES
-@dirrm horde/locale/bg_BG/LC_MESSAGES
-@dirrm horde/locale/bg_BG
-@dirrm horde/locale/ar_SY/LC_MESSAGES
-@dirrm horde/locale/ar_SY
-@dirrm horde/locale
-@dirrm horde/lib/VFS
-@dirrm horde/lib/Token
-@dirrm horde/lib/SessionHandler
-@dirrm horde/lib/Prefs
-@dirrm horde/lib/Notification
-@dirrm horde/lib/MIME/Viewer
-@dirrm horde/lib/MIME
-@dirrm horde/lib/Cipher/BlockMode
-@dirrm horde/lib/Cipher
-@dirrm horde/lib/Category
-@dirrm horde/lib/Cache
-@dirrm horde/lib/Auth
-@dirrm horde/lib
-@dirrm horde/graphics/tree
-@dirrm horde/graphics/mime
-@dirrm horde/graphics/alerts
-@dirrm horde/graphics
-@dirrm horde/docs
-@dirrm horde/config
-@dirrm horde

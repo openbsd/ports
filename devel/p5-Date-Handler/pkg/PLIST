@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/08/10 08:10:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/14 23:43:58 espie Exp $
 ${P5SITE}/Date/
 ${P5SITE}/Date/Handler/
 ${P5SITE}/Date/Handler.pm
@@ -7,11 +7,6 @@ ${P5SITE}/Date/Handler/Constants.pm
 ${P5SITE}/Date/Handler/Delta.pm
 ${P5SITE}/Date/Handler/Range.pm
 ${P5SITE}/Date/Handler/Test.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/Date/
-@comment ${P5ARCH}/auto/Date/Handler/
-@comment ${P5ARCH}/auto/Date/Handler/.packlist
 @man man/man3p/Date::Handler.3p
 @man man/man3p/Date::Handler::Delta.3p
 @man man/man3p/Date::Handler::Range.3p

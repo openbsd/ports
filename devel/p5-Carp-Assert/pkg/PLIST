@@ -1,9 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:10:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/14 23:43:57 espie Exp $
 ${P5SITE}/Carp/
 ${P5SITE}/Carp/Assert.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/Carp/
-@comment ${P5ARCH}/auto/Carp/Assert/
-@comment ${P5ARCH}/auto/Carp/Assert/.packlist
 @man man/man3p/Carp::Assert.3p

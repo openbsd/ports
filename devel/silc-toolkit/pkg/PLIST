@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/11 21:25:15 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:44:01 espie Exp $
+@comment help/
+include/silc/
 include/silc/aes.h
 include/silc/blowfish.h
 include/silc/cast.h
@@ -84,9 +86,12 @@ lib/libsilc.a
 lib/libsilc.la
 lib/libsilcclient.a
 lib/libsilcclient.la
-@comment man/man1/silc.1
-@comment man/man5/silcd.conf.5
-@comment man/man8/silcd.8
+@comment logs/
+@comment @man man/man1/silc.1
+@comment @man man/man5/silcd.conf.5
+@comment @man man/man8/silcd.8
+@comment @comment modules/
+share/doc/silc/
 share/doc/silc/CHANGES
 share/doc/silc/COPYING
 share/doc/silc/CREDITS
@@ -106,6 +111,7 @@ share/doc/silc/draft-riikonen-silc-pp-09.txt
 @comment share/doc/silc/draft-riikonen-silc-spec-08.txt
 share/doc/silc/example_silc.conf
 share/doc/silc/example_silcd.conf
+share/doc/silc/toolkit/
 share/doc/silc/toolkit/arch.gif
 share/doc/silc/toolkit/box.gif
 share/doc/silc/toolkit/box2.gif
@@ -1126,12 +1132,3 @@ share/doc/silc/toolkit/space.gif
 share/doc/silc/toolkit/toolkit_index.html
 share/doc/silc/toolkit/zlib.html
 %%SHARED%%
-@dirrm share/doc/silc/toolkit
-@dirrm share/doc/silc
-@comment @exec mkdir -p %D/modules
-@comment @dirrm modules
-@comment @exec mkdir -p %D/logs
-@comment @dirrm logs
-@comment @dirrm include/silc
-@comment @exec mkdir -p %D/help
-@comment @dirrm help

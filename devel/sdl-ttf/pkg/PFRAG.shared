@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2003/04/05 22:24:36 margarida Exp $
-lib/libSDL_ttf.so.6.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.6 2004/09/14 23:44:01 espie Exp $
+@lib lib/libSDL_ttf.so.6.0

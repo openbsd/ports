@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/07/25 00:15:34 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:43:56 espie Exp $
 include/libgsf-1/
 include/libgsf-1/gsf/
 include/libgsf-1/gsf-win32/
@@ -40,6 +40,7 @@ include/libgsf-1/gsf/gsf-utils.h
 include/libgsf-1/gsf/gsf.h
 lib/libgsf-1.a
 lib/libgsf-1.la
+lib/pkgconfig/
 lib/pkgconfig/libgsf-1.pc
 share/gtk-doc/
 share/gtk-doc/html/

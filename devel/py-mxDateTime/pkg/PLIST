@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/02/23 05:04:21 ish Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:44:01 espie Exp $
 @option no-default-conflict
 @pkgcfl py-mxDateTime-*${FLAVOR_EXT}
+lib/python${MODPY_VERSION}/site-packages/mx/
+lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/BeeBase.py
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/BeeBase.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/BeeBase.pyo
@@ -17,6 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/COPYRIGHT
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/Cache.py
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/Cache.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/Cache.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/Doc/
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/Doc/mxBeeBase.html
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/Doc/mxLicense.html
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/ExitFunctions.py
@@ -30,6 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/README
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/__init__.pyo
@@ -44,6 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/showBeeDict.py
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/showBeeDict.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/showBeeDict.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/COPYRIGHT
+lib/python${MODPY_VERSION}/site-packages/mx/DateTime/
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/ARPA.py
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/ARPA.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/ARPA.pyo
@@ -51,9 +56,11 @@ lib/python${MODPY_VERSION}/site-packages/mx/DateTime/COPYRIGHT
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/DateTime.py
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/DateTime.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/DateTime.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/DateTime/Doc/
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/Doc/mxDateTime-History.html
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/Doc/mxDateTime.html
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/Doc/mxLicense.html
+lib/python${MODPY_VERSION}/site-packages/mx/DateTime/Examples/
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/Examples/AtomicClock.py
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/Examples/AtomicClock.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/Examples/AtomicClock.pyo
@@ -104,6 +111,7 @@ lib/python${MODPY_VERSION}/site-packages/mx/DateTime/Timezone.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/__init__.pyo
@@ -137,6 +145,7 @@ lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testticks.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/timegm.py
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/timegm.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/timegm.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/Doc/
 lib/python${MODPY_VERSION}/site-packages/mx/Doc/eGenix-mx-Extensions.html
 lib/python${MODPY_VERSION}/site-packages/mx/Doc/mxBeeBase.html
 lib/python${MODPY_VERSION}/site-packages/mx/Doc/mxDateTime.html
@@ -150,6 +159,7 @@ lib/python${MODPY_VERSION}/site-packages/mx/LICENSE
 lib/python${MODPY_VERSION}/site-packages/mx/Log.py
 lib/python${MODPY_VERSION}/site-packages/mx/Log.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/Log.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/Misc/
 lib/python${MODPY_VERSION}/site-packages/mx/Misc/Cache.py
 lib/python${MODPY_VERSION}/site-packages/mx/Misc/Cache.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/Misc/Cache.pyo
@@ -183,7 +193,9 @@ lib/python${MODPY_VERSION}/site-packages/mx/Misc/__init__.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/NewBuiltins.py
 lib/python${MODPY_VERSION}/site-packages/mx/NewBuiltins.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/NewBuiltins.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/Proxy/
 lib/python${MODPY_VERSION}/site-packages/mx/Proxy/COPYRIGHT
+lib/python${MODPY_VERSION}/site-packages/mx/Proxy/Doc/
 lib/python${MODPY_VERSION}/site-packages/mx/Proxy/Doc/mxLicense.html
 lib/python${MODPY_VERSION}/site-packages/mx/Proxy/Doc/mxProxy.html
 lib/python${MODPY_VERSION}/site-packages/mx/Proxy/LICENSE
@@ -194,6 +206,7 @@ lib/python${MODPY_VERSION}/site-packages/mx/Proxy/README
 lib/python${MODPY_VERSION}/site-packages/mx/Proxy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mx/Proxy/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/Proxy/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/Proxy/mxProxy/
 lib/python${MODPY_VERSION}/site-packages/mx/Proxy/mxProxy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mx/Proxy/mxProxy/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/Proxy/mxProxy/__init__.pyo
@@ -209,7 +222,9 @@ lib/python${MODPY_VERSION}/site-packages/mx/Proxy/mxProxy/testvlad.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/Proxy/mxProxy/weakreftest.py
 lib/python${MODPY_VERSION}/site-packages/mx/Proxy/mxProxy/weakreftest.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/Proxy/mxProxy/weakreftest.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/Queue/
 lib/python${MODPY_VERSION}/site-packages/mx/Queue/COPYRIGHT
+lib/python${MODPY_VERSION}/site-packages/mx/Queue/Doc/
 lib/python${MODPY_VERSION}/site-packages/mx/Queue/Doc/mxLicense.html
 lib/python${MODPY_VERSION}/site-packages/mx/Queue/Doc/mxQueue.html
 lib/python${MODPY_VERSION}/site-packages/mx/Queue/LICENSE
@@ -217,6 +232,7 @@ lib/python${MODPY_VERSION}/site-packages/mx/Queue/README
 lib/python${MODPY_VERSION}/site-packages/mx/Queue/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mx/Queue/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/Queue/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/Queue/mxQueue/
 lib/python${MODPY_VERSION}/site-packages/mx/Queue/mxQueue/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mx/Queue/mxQueue/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/Queue/mxQueue/__init__.pyo
@@ -229,12 +245,14 @@ lib/python${MODPY_VERSION}/site-packages/mx/Queue/mxQueue/test.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/Queue/queuebench.py
 lib/python${MODPY_VERSION}/site-packages/mx/Queue/queuebench.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/Queue/queuebench.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/Stack/
 lib/python${MODPY_VERSION}/site-packages/mx/Stack/UserStack.py
 lib/python${MODPY_VERSION}/site-packages/mx/Stack/UserStack.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/Stack/UserStack.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/Stack/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mx/Stack/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/Stack/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/Stack/mxStack/
 lib/python${MODPY_VERSION}/site-packages/mx/Stack/mxStack/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mx/Stack/mxStack/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/Stack/mxStack/__init__.pyo
@@ -245,7 +263,9 @@ lib/python${MODPY_VERSION}/site-packages/mx/Stack/mxStack/test.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/Stack/stackbench.py
 lib/python${MODPY_VERSION}/site-packages/mx/Stack/stackbench.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/Stack/stackbench.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/TextTools/
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/COPYRIGHT
+lib/python${MODPY_VERSION}/site-packages/mx/TextTools/Constants/
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/Constants/Sets.py
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/Constants/Sets.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/Constants/Sets.pyo
@@ -255,8 +275,10 @@ lib/python${MODPY_VERSION}/site-packages/mx/TextTools/Constants/TagTables.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/Constants/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/Constants/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/Constants/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/TextTools/Doc/
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/Doc/mxLicense.html
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/Doc/mxTextTools.html
+lib/python${MODPY_VERSION}/site-packages/mx/TextTools/Examples/
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/Examples/HTML.py
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/Examples/HTML.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/Examples/HTML.pyo
@@ -298,6 +320,7 @@ lib/python${MODPY_VERSION}/site-packages/mx/TextTools/TextTools.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/TextTools/mxTextTools/
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/mxTextTools/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/mxTextTools/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/mxTextTools/__init__.pyo
@@ -309,9 +332,12 @@ lib/python${MODPY_VERSION}/site-packages/mx/TextTools/mxTextTools/mxte.h
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/mxTextTools/test.py
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/mxTextTools/test.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/TextTools/mxTextTools/test.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/Tools/
 lib/python${MODPY_VERSION}/site-packages/mx/Tools/COPYRIGHT
+lib/python${MODPY_VERSION}/site-packages/mx/Tools/Doc/
 lib/python${MODPY_VERSION}/site-packages/mx/Tools/Doc/mxLicense.html
 lib/python${MODPY_VERSION}/site-packages/mx/Tools/Doc/mxTools.html
+lib/python${MODPY_VERSION}/site-packages/mx/Tools/Examples/
 lib/python${MODPY_VERSION}/site-packages/mx/Tools/Examples/Acquisition.py
 lib/python${MODPY_VERSION}/site-packages/mx/Tools/Examples/Acquisition.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/Tools/Examples/Acquisition.pyo
@@ -329,6 +355,7 @@ lib/python${MODPY_VERSION}/site-packages/mx/Tools/Tools.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/Tools/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mx/Tools/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/Tools/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/Tools/mxTools/
 lib/python${MODPY_VERSION}/site-packages/mx/Tools/mxTools/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mx/Tools/mxTools/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/Tools/mxTools/__init__.pyo
@@ -351,30 +378,3 @@ lib/python${MODPY_VERSION}/site-packages/mx/Tools/mxTools/xmap.so
 lib/python${MODPY_VERSION}/site-packages/mx/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mx/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/__init__.pyo
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/Tools/mxTools
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/Tools/Examples
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/Tools/Doc
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/Tools
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/TextTools/mxTextTools
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/TextTools/Examples
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/TextTools/Doc
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/TextTools/Constants
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/TextTools
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/Stack/mxStack
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/Stack
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/Queue/mxQueue
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/Queue/Doc
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/Queue
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/Proxy/mxProxy
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/Proxy/Doc
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/Proxy
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/Misc
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/Doc
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/DateTime/Examples
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/DateTime/Doc
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/DateTime
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/Doc
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx/BeeBase
-@dirrm lib/python${MODPY_VERSION}/site-packages/mx
