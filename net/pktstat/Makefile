@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/08/02 15:35:21 couderc Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/21 00:01:39 couderc Exp $
 
 COMMENT=		"network traffic viewer"
 
-VERSION=		1.7.2q
+VERSION=		1.7.3b
 DISTNAME=		pktstat-${VERSION}
 CATEGORIES=		net
 
-HOMEPAGE=		http://www.itee.uq.edu.au/~leonard/personal/software/
+HOMEPAGE=		http://www.dart.net.au/users/leonard/software/pktstat/
 
 MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
