@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2001/10/25 15:10:44 lebel Exp $
+# $OpenBSD: Makefile,v 1.16 2001/10/26 02:17:24 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 
 DISTNAME=	vim-6.0
-PKGNAME=	${DISTNAME}.25
+PKGNAME=	${DISTNAME}.26
 CATEGORIES=	editors
 NEED_VERSION=	1.474
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
@@ -21,7 +21,7 @@ HOMEPAGE=	http://www.vim.org/
 MAINTAINER=	David Lebel <lebel@openbsd.org>
 
 .for p in 01 02 03 04 05 06 07 08 09 10 11 13 14 15 16 17 18 19 20 21 22 23 \
-	  24 25
+	  24 25 26
 PATCHFILES+=   6.0.0${p}:0
 .endfor
 
@@ -76,7 +76,7 @@ CONFIGURE_ARGS+=--enable-gui="athena" --with-x --enable-fontset --enable-xim
 LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 CONFIGURE_ARGS+=--enable-gui="gtk" --with-x --enable-fontset --enable-xim
 .else
-ERRORS+="Fatal: Conflicting flavor: ${FLAVOR}"
+ERRORS+="Fatal: You must select one GUI interface: no_x11, gtk, athena or motif"
 .endif
 
 WRKDIST=		${WRKDIR}/vim60${V}
