@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2001/06/09 19:42:42 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.18 2001/06/18 21:19:22 avsm Exp $ 
 
 MULTI_PACKAGES=	-pop3
 
 COMMENT=	"imap server for maildir format mailboxes"
 COMMENT-pop3=	"pop3 server for maildir format mailboxes"
 
-COURIERVER=	1.3.8.1
+COURIERVER=	1.3.8.2
 DISTNAME=	courier-imap-${COURIERVER}
 PKGNAME-pop3=	courier-pop3-${COURIERVER}
 
@@ -42,7 +42,7 @@ CONFIGURE_ARGS=	--disable-root-check --datadir=${PREFIX}/sbin \
 		--with-userdb=${SYSCONFDIR}/userdb --with-authuserdb \
 		--sysconfdir=${COURIERCONF} --with-authdaemon \
 		--with-authdaemonvar=${COURIERSTATE} \
-		--enable-workarounds-for-imap-client-bugs --without-ipv6
+		--enable-workarounds-for-imap-client-bugs 
 
 .if ${FLAVOR:L:Mmysql} && ${FLAVOR:L:Mldap}
 .BEGIN:
