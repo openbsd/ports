@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.4 2003/11/20 02:21:05 brad Exp $
---- configure.in.orig	2003-11-17 13:39:39.000000000 -0500
-+++ configure.in	2003-11-19 21:02:35.000000000 -0500
-@@ -40,7 +40,6 @@ AM_INIT_AUTOMAKE(silc-client, 0.9.16)
+$OpenBSD: patch-configure_in,v 1.5 2003/12/02 22:39:08 brad Exp $
+--- configure.in.orig	2003-11-27 05:07:00.000000000 -0500
++++ configure.in	2003-12-02 17:22:33.000000000 -0500
+@@ -40,7 +40,6 @@ AM_INIT_AUTOMAKE(silc-client, 1.0)
  AC_PREREQ(2.52)
  AC_CONFIG_HEADERS(includes/silcdefs.h)
  
