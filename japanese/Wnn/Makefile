@@ -5,9 +5,7 @@
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.3 1999/10/29 10:19:37 turan Exp $
-
-BROKEN=		illegal use of gzip
+# $OpenBSD: Makefile,v 1.4 1999/10/30 21:24:53 turan Exp $
 
 NEED_VERSION=	1.116
 DISTNAME=	Wnn4.2
@@ -34,8 +32,8 @@ DOC_FROM=	${WRKSRC}/cWnn
 .endif  # kWnn has no manual.
 
 post-extract:
-	${EXTRACT_CMD} -C ${WRKSRC} ${EXTRACT_BEFORE_ARGS} \
-		${FULLDISTDIR}/Wnn4.2.patch.tar.gz
+	(cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+	${FULLDISTDIR}/Wnn4.2.patch.tar.gz ${EXTRACT_AFTER_ARGS})
 	/bin/ln -sf Project.tmpl ${WRKSRC}/config/X11.tmpl
 
 pre-patch:
