@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2003/12/30 05:57:30 brad Exp $
+# $OpenBSD: Makefile,v 1.89 2003/12/30 20:42:48 wilfried Exp $
 # Uses pthreads
 
 COMMENT=	"multithreaded SQL database (client)"
@@ -71,7 +71,7 @@ SUBPACKAGE?=
 
 .if ${SUBPACKAGE} == "-server"
 RUN_DEPENDS=	:mysql-client-4.0.*:databases/mysql \
-		:p5-DBD-Msql-Mysql-*:databases/p5-DBD-Msql-Mysql
+		:p5-DBD-mysql-*:databases/p5-DBD-mysql
 .endif
 
 DOCS=	manual.html manual.ps manual_toc.html manual.txt
