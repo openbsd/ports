@@ -1,7 +1,6 @@
-$OpenBSD: patch-ltconfig,v 1.1.1.1 2000/11/27 15:41:46 avsm Exp $
---- ltconfig.orig	Sun Nov 19 16:12:40 2000
-+++ ltconfig	Sun Nov 19 16:21:47 2000
-@@ -1105,6 +1105,9 @@ cygwin* | mingw*)
+--- ltconfig.orig	Sat Oct 21 04:39:25 2000
++++ ltconfig	Thu Dec 14 11:44:23 2000
+@@ -1105,6 +1105,9 @@
      with_gnu_ld=no
    fi
    ;;
@@ -11,7 +10,7 @@ $OpenBSD: patch-ltconfig,v 1.1.1.1 2000/11/27 15:41:46 avsm Exp $
  
  esac
  
-@@ -1402,10 +1405,18 @@ else
+@@ -1402,10 +1405,18 @@
      ;;
  
    openbsd*)
@@ -32,15 +31,7 @@ $OpenBSD: patch-ltconfig,v 1.1.1.1 2000/11/27 15:41:46 avsm Exp $
      ;;
  
    os2*)
-@@ -1922,7 +1933,6 @@ gnu*)
-   library_names_spec='${libname}${release}.so$versuffix ${libname}${release}.so${major} ${libname}.so'
-   soname_spec='${libname}${release}.so$major'
-   shlibpath_var=LD_LIBRARY_PATH
--  deplibs_check_method=pass_all
-   ;;
- 
- hpux9* | hpux10* | hpux11*)
-@@ -2022,13 +2032,10 @@ netbsd*)
+@@ -2022,13 +2033,10 @@
  
  openbsd*)
    version_type=sunos

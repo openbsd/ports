@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/11/27 15:41:46 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/12/14 17:37:41 brad Exp $
 include/mcrypt.h
 lib/libmcrypt.a
 lib/libmcrypt.la
@@ -60,6 +60,6 @@ lib/libmcrypt/tripledes.la
 lib/libmcrypt/twofish.la
 lib/libmcrypt/wake.la
 lib/libmcrypt/xtea.la
-man/man3/mcrypt.3
 %%SHARED%%
+man/man3/mcrypt.3
 @dirrm lib/libmcrypt
