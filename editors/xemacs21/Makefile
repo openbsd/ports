@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/10/22 15:41:54 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/23 21:52:56 naddy Exp $
 # Supported FLAVORS : mule | compface | no_x11 | clashdetect
 # TODO : add flavours for Wnn, Canna, XFontSet and maybe kerberos
 # Tested on : i386 sparc (thanks to Free&ALter Soft for the sparc)
@@ -80,8 +80,7 @@ CONFIGURE_ARGS+=--with-clash-detection --lockdir='$${LOCKDIR}'
 # End of X11-independant flavors
 
 # Arch string for configure
-# copied from xemacs20 ports
-# credits go to hgweigand@wiesbaden.netsurf.de
+# copied from emacs and xemacs20 ports
 
 .if ${MACHINE} == "arc" || ${MACHINE} == "pmax" || ${MACHINE} == "wgrisc"
 M_ARCH=         mipsel
@@ -96,8 +95,7 @@ SED_PLIST=      |sed -e 's,@@GCCARCH@@,${GCCARCH},'
 
 CONFIGURE_ARGS+= ${GCCARCH} 
 
-# Strip from xemacs20 port makefile
-# credits go to hgweigand@wiesbaden.netsurf.de
+# Strip from emacs and xemacs20 ports
 
 INSTALL_STRIP=
 STRIP_PROGS=    b2m ctags etags gnuclient
