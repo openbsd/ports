@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/02/27 01:43:55 krw Exp $
+lib/ruby/1.6/${MACHINE_ARCH}-openbsd${OPSYS_VER}/pcap.so
+lib/ruby/1.6/pcap_misc.rb
+lib/ruby/1.6/pcaplet.rb
+share/doc/ruby-pcap/Capture.html
+share/doc/ruby-pcap/Dumper.html
+share/doc/ruby-pcap/Filter.html
+share/doc/ruby-pcap/ICMPPacket.html
+share/doc/ruby-pcap/IPAddress.html
+share/doc/ruby-pcap/IPPacket.html
+share/doc/ruby-pcap/Packet.html
+share/doc/ruby-pcap/Pcap.html
+share/doc/ruby-pcap/PcapError.html
+share/doc/ruby-pcap/Pcaplet.html
+share/doc/ruby-pcap/TCPPacket.html
+share/doc/ruby-pcap/TruncatedPacket.html
+share/doc/ruby-pcap/UDPPacket.html
+share/doc/ruby-pcap/index.html
+@dirrm share/doc/ruby-pcap
