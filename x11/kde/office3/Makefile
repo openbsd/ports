@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/04/10 01:24:40 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/04/15 06:54:44 espie Exp $
 
 COMMENT=		"office applications for kde"
 CATEGORIES=		x11 x11/kde productivity
@@ -17,4 +17,5 @@ PATCHORIG=	.bsdorig
 MODULES=	qt3
 PATCH_LIST=	p-* patch-*
 
+KDE=lib/kde3
 .include <bsd.port.mk>
