@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/07 05:35:58 angelos Exp $
-bin/xps
-man/man1/xps.1
-lib/X11/app-defaults/Xps
