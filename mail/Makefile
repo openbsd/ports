@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 1998/06/28 21:51:32 marc Exp $
+# $OpenBSD: Makefile,v 1.16 1998/07/08 10:05:21 form Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -39,7 +39,7 @@
 #    SUBDIR += smail
 #    SUBDIR += tkrat
      SUBDIR += xfaces
-#    SUBDIR += xfmail
+     SUBDIR += xfmail
      SUBDIR += xlbiff
 #    SUBDIR += xpbiff
 #    SUBDIR += xpbiff-youbin
