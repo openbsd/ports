@@ -3,9 +3,10 @@
 # Date created:         17 Nov 1997
 # Whom:                 ejovi
 #
-# $OpenBSD: Makefile,v 1.2 1998/02/17 04:00:35 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/03/05 23:49:31 marc Exp $
 #
 
+BROKEN=		"referenced beta release no longer available"
 DISTNAME=       apache_1.3b3
 PKGNAME=	apache-1.3b3
 CATEGORIES=	www
