@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/22 15:43:12 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/02/09 17:55:32 angelos Exp $
 
 DISTNAME=	aub
 PKGNAME=	aub-2.0.5
@@ -31,7 +31,7 @@ pre-configure:
 		${FULLDISTDIR}/aub > ${WRKDIR}/aub
 
 do-install:
-	cd ${WRKDIR}; patch < ../files/aub-perl5.diff
+	cd ${WRKDIR}; patch < ${FILESDIR}/aub-perl5.diff
 	${INSTALL_SCRIPT} ${WRKDIR}/aub ${PREFIX}/bin
 	${INSTALL_MAN} ${FULLDISTDIR}/aub.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/aub
