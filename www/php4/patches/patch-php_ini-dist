@@ -1,0 +1,24 @@
+$OpenBSD: patch-php_ini-dist,v 1.1 2001/10/04 21:27:44 avsm Exp $
+URL fopen off by default - this is one of those things that people hardly
+ever use, and can turn local exploits into remote ones.
+
+--- php.ini-dist.orig	Mon Oct  1 18:52:38 2001
++++ php.ini-dist	Mon Oct  1 18:54:44 2001
+@@ -349,7 +349,7 @@ upload_max_filesize = 2M
+ ;;;;;;;;;;;;;;;;;;
+ 
+ ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
+-allow_url_fopen = On
++allow_url_fopen = Off
+ 
+ ; Define the anonymous ftp password (your email address)
+ ;from="john@doe.com"
+@@ -439,7 +439,7 @@ SMTP = localhost
+ sendmail_from = me@localhost.com
+ 
+ ; For Unix only.  You may supply arguments as well (default: 'sendmail -t -i').
+-;sendmail_path =
++sendmail_path = /usr/sbin/sendmail
+ 
+ [Logging]
+ ; These configuration directives are used by the example logging mechanism.

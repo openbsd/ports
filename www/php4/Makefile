@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2001/09/28 19:06:30 jakob Exp $
+# $OpenBSD: Makefile,v 1.52 2001/10/04 21:27:44 avsm Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -57,30 +57,29 @@ FLAVORS+=	dbase filepro mysql mysql_bundled postgresql iodbc
 FLAVOR?= 
 
 .if ${FLAVOR:L:Mcurl}
-CONFIGURE_ARGS+=	--with-curl
+CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
 LIB_DEPENDS+=		curl.2::net/curl
-BROKEN= 	"sorry, curl flavor is broken until net/curl is upgraded to 7.8"
 .else
 CONFIGURE_ARGS+=	--without-curl
 .endif
 
 .if ${FLAVOR:L:Mgdbm}
-CONFIGURE_ARGS+=	--with-gdbm
+CONFIGURE_ARGS+=	--with-gdbm=${LOCALBASE}
 LIB_DEPENDS+=		gdbm.2::databases/gdbm
 .else
 CONFIGURE_ARGS+=	--without-gdbm
 .endif
 
 .if ${FLAVOR:L:Mgettext}
-CONFIGURE_ARGS+=	--with-gettext
+CONFIGURE_ARGS+=	--with-gettext=${LOCALBASE}
 LIB_DEPENDS+=		intl.1::devel/gettext
 .else
 CONFIGURE_ARGS+=	--without-gettext
 .endif
 
 .if ${FLAVOR:L:Mimap}
-CONFIGURE_ARGS+=	--with-imap=${LOCALBASE} --with-imap-ssl=${LOCALBASE}
-LIB_DEPENDS+=		c-client.2::mail/c-client
+CONFIGURE_ARGS+=	--with-imap=${LOCALBASE} --with-imap-ssl=${LOCALBASE} --with-kerberos
+LIB_DEPENDS+=		c-client.3::mail/c-client
 .else
 CONFIGURE_ARGS+=	--without-imap
 .endif
@@ -93,42 +92,43 @@ CONFIGURE_ARGS+=	--without-ldap
 .endif
 
 .if ${FLAVOR:L:Mmcrypt}
-CONFIGURE_ARGS+=	--with-mcrypt
+CONFIGURE_ARGS+=	--with-mcrypt=${LOCALBASE}
 LIB_DEPENDS+=		mcrypt::security/libmcrypt
 .else
 CONFIGURE_ARGS+=	--without-mcrypt
 .endif
 
 .if ${FLAVOR:L:Mmhash}
-CONFIGURE_ARGS+=	--with-mhash
+CONFIGURE_ARGS+=	--with-mhash=${LOCALBASE}
 LIB_DEPENDS+=		mhash.2::security/mhash
 .else
 CONFIGURE_ARGS+=	--without-mhash
 .endif
 
 .if ${FLAVOR:L:Mmm}
-CONFIGURE_ARGS+=	--with-mm
+CONFIGURE_ARGS+=	--with-mm=${LOCALBASE}
 LIB_DEPENDS+=		mm.11::devel/mm
 .else
 CONFIGURE_ARGS+=	--without-mm
 .endif
 
 .if ${FLAVOR:L:Mrecode}
-CONFIGURE_ARGS+=	--with-recode
+CONFIGURE_ARGS+=	--with-recode=${LOCALBASE}
 BUILD_DEPENDS+=		${LOCALBASE}/lib/librecode.a::converters/recode
 .else
 CONFIGURE_ARGS+=	--without-recode
 .endif
 
 .if ${FLAVOR:L:Msnmp}
-CONFIGURE_ARGS+=	--with-snmp --enable-ucd-snmp-hack
+CONFIGURE_ARGS+=	--with-snmp=${LOCALBASE} --enable-ucd-snmp-hack
 LIB_DEPENDS+=		snmp.4::net/ucd-snmp
 .else
 CONFIGURE_ARGS+=	--without-snmp
 .endif
 
 .if ${FLAVOR:L:Mgd}
-MAKE_FLAGS+=		CFLAGS='${CFLAGS} -I${LOCALBASE}/include'
+CFLAGS+=		-I${LOCALBASE}/include
+MAKE_FLAGS+=		CFLAGS='${CFLAGS}'
 LIB_DEPENDS+=		gd.18::graphics/gd \
 			tiff.35::graphics/tiff \
 			png.2::graphics/png
@@ -181,6 +181,8 @@ CONFIGURE_ARGS+=	--without-mysql
 
 .if ${FLAVOR:L:Mpostgresql}
 CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}/lib
+CFLAGS+=		-I${LOCALBASE}/include/postgresql 
+MAKE_FLAGS+=		CFLAGS='${CFLAGS}'
 LIB_DEPENDS+=		pq.2::databases/postgresql
 .else
 CONFIGURE_ARGS+=	--without-pgsql
