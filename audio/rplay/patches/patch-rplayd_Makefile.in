@@ -1,4 +1,4 @@
-$OpenBSD: patch-rplayd_Makefile.in,v 1.3 2002/08/17 05:11:09 brad Exp $
+$OpenBSD: patch-rplayd_Makefile.in,v 1.4 2004/11/02 06:05:10 alek Exp $
 --- rplayd/Makefile.in.orig	Wed Jun  9 02:27:43 1999
 +++ rplayd/Makefile.in	Sat Aug 17 01:09:54 2002
 @@ -1,8 +1,9 @@
@@ -17,7 +17,7 @@ $OpenBSD: patch-rplayd_Makefile.in,v 1.3 2002/08/17 05:11:09 brad Exp $
  CPPFLAGS = $(CC_OPTIONS) -I. -I../include -I${srcdir} -I${srcdir}/../include \
  	-I${srcdir}/../lib -I${srcdir}/../adpcm \
 -	@GSM_INCS@ \
-+	-I/usr/local/include \
++	-I${LOCALBASE}/include \
  	@RX_INCS@ @DEFS@ \
  	-DRPLAY_CONF=\"${sysconfdir}/rplay.conf\" \
  	-DRPLAY_HOSTS=\"${sysconfdir}/rplay.hosts\" \
@@ -26,7 +26,7 @@ $OpenBSD: patch-rplayd_Makefile.in,v 1.3 2002/08/17 05:11:09 brad Exp $
  
  LDFLAGS=	$(LD_OPTIONS) -L../librplay -lrplay -L../lib -lrp \
 -		-L../adpcm -ladpcm @GSM_LIBS@ -L../rx -lrx @LDFLAGS@ @LIBS@ -lm
-+		-L../adpcm -ladpcm -L/usr/local/lib -lgsm -L../rx -lrx @LDFLAGS@ @LIBS@ -lm
++		-L../adpcm -ladpcm -L${LOCALBASE}/lib -lgsm -L../rx -lrx @LDFLAGS@ @LIBS@ -lm
  
  TARGET=		rplayd
  
