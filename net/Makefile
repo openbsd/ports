@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 1999/06/21 00:39:44 brad Exp $
+# $OpenBSD: Makefile,v 1.45 1999/06/21 19:50:49 dugsong Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -114,6 +114,7 @@
      SUBDIR += xarchie
      SUBDIR += xchat
 #    SUBDIR += xicq
+     SUBDIR += xip
 #    SUBDIR += xipmsg
 #    SUBDIR += yale-tftpd
      SUBDIR += ytalk
