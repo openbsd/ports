@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/31 20:35:37 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2002/02/07 12:21:39 naddy Exp $
 
 COMMENT=	"mod_perl class for generating browsable MP3 directory lists"
-DISTNAME=	Apache-MP3-2.20
+DISTNAME=	Apache-MP3-2.22
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www audio perl5
-NEED_VERSION=	1.488
+NEED_VERSION=	1.504
 
 MAINTAINER=	Nikolay Sturm <nikolay.sturm@desy.de>
 
-# GPL or Artistic License ("same as Perl")
+# GPL or Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -17,11 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Apache
 
-PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
-
-BUILD_DEPENDS=	:p5-MP3-Info-*:audio/p5-MP3-Info
+BUILD_DEPENDS=	:p5-MP3-Info-*:audio/p5-MP3-Info \
+		:p5-libvorbis-*:audio/p5-libvorbis
 RUN_DEPENDS=	:mod_perl-*:www/mod_perl \
-		:p5-MP3-Info-*:audio/p5-MP3-Info
+		:p5-MP3-Info-*:audio/p5-MP3-Info \
+		:p5-libvorbis-*:audio/p5-libvorbis
 
 CONFIGURE_STYLE= perl
 
