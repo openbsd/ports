@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/03/09 09:58:53 kevlo Exp $
+# $OpenBSD: Makefile,v 1.20 2000/03/12 02:18:59 espie Exp $
 
 DISTNAME=	freeciv-1.10.0
 CATEGORIES=	games
@@ -13,6 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+HOMEPAGE=	http://www.freeciv.org/
+
 # If USE_GTK is defined, freeciv will be built with a prettier look and
 # feel:
 #USE_GTK=	Yes
@@ -23,12 +25,13 @@ LIB_DEPENDS=	intl:devel/gettext \
 		gtk.1.2:x11/gtk+ \
 		Imlib.19:graphics/imlib
 PKGNAME=	freeciv-1.10.0-gtk
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk-config"
+CONFIGURE_ENV=	GTK_CONFIG="${PREFIX}/bin/gtk-config"
 .else
 CONFIGURE_ARGS=	--disable-gtktest
 .endif
 
 GNU_CONFIGURE=	Yes
+FAKE=		Yes
 
 NO_INSTALL_MANPAGES= Yes
 
