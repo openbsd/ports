@@ -3,17 +3,21 @@
 # Date created:         17 November 1997
 # Whom:                 gene
 #
-# $OpenBSD: Makefile,v 1.7 2000/02/22 20:17:31 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/23 05:33:36 turan Exp $
 #
 
 DISTNAME=	scsh-0.5.1
 CATEGORIES=	shells lang
-NO_CDROM=	"LIC: Requires licence for redistribution."
 
 MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/su/scsh/
 STRIP=
 
 MAINTAINER= 	ports@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"required to notify authors"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"required to notify authors"
+PERMIT_DISTFILES_FTP=	Yes
 
 GNU_CONFIGURE=	yes
 
