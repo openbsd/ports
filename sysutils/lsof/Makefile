@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 1999/04/18 20:34:28 brad Exp $
+# $OpenBSD: Makefile,v 1.13 1999/06/02 15:59:17 brad Exp $
 
-DISTNAME=	lsof_4.42_W
-PKGNAME=	lsof-4.42
+DISTNAME=	lsof_4.43_W
+PKGNAME=	lsof-4.43
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/ \
 		ftp://ftp.crc.doc.ca/packages/lsof/ \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/
 
-NO_PACKAGE=	compile from source to set proper options
+NEED_VERSION=	1.92
+
+NO_PACKAGE=	"compile from source to set proper options"
 
 MAINTAINER=     angelos@openbsd.org
 
@@ -37,22 +39,22 @@ pre-build:
 	@${ECHO} "***	SUN4=YES, SUN4C=YES, or SUN4M=YES"
 	@${ECHO} "*** on the make command line"
 	@${ECHO} ""
-	@false
+	@${FALSE}
 .endif
 .endif
 
 post-extract:
-	@( cd ${WRKDIR} ; \
-	EXPMD5=`/usr/bin/grep MD5 README.${SRCBALL_NAME} | sed 's/^[ ]*//'` ; \
+	@(cd ${WRKDIR} ; \
+	EXPMD5=`${GREP} MD5 README.${SRCBALL_NAME} | ${SED} 's/^[ ]*//'` ; \
 	CALCMD5=`${MD5} ${SRCBALL_NAME}.tar` ; \
 	if [ "$${EXPMD5}"X != "$${CALCMD5}"X ]; then \
-		echo "Expected and calculated MD5 signatures don't agree." ; \
-		echo "($$EXPMD5 != $$CALCMD5)" ; \
+		${ECHO} "Expected and calculated MD5 signatures don't agree." ; \
+		${ECHO} "($$EXPMD5 != $$CALCMD5)" ; \
 		exit 1 ; \
 	fi ; \
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS:S/z//} ${SRCBALL_NAME}.tar \
+	${TAR} -xf ${SRCBALL_NAME}.tar \
 	)
-	@( cd ${WRKSRC} ; echo "y" | ./Inventory || exit 1 )
+	@(cd ${WRKSRC};${ECHO} "y" | ./Inventory || exit 1)
 
 
 do-install:
@@ -60,7 +62,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/lsof.man ${PREFIX}/man/man1/lsof.1
 	@${MKDIR} ${PREFIX}/share/lsof
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
-	@/bin/chmod 0444 ${PREFIX}/share/lsof/00*
-
+	@chmod 0444 ${PREFIX}/share/lsof/00*
 
 .include <bsd.port.mk>

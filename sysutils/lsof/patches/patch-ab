@@ -1,10 +1,10 @@
---- dialects/n+obsd/Makefile.~1~	Mon Feb 16 16:51:59 1998
-+++ dialects/n+obsd/Makefile	Sat Jul 25 13:25:09 1998
-@@ -14,7 +14,6 @@
- 
- DEBUG=	-O
+--- dialects/n+obsd/Makefile.orig	Wed Jun  2 11:52:15 1999
++++ dialects/n+obsd/Makefile	Wed Jun  2 11:52:53 1999
+@@ -12,7 +12,6 @@
+ L=/usr/include/local
+ P=
  
 -CDEF=
  CDEFS=  ${CDEF} ${CFGF}
  INCL=	${DINC}
- CFLAGS= ${DEBUG} ${CDEFS} ${INCL}
+ CFLAGS=	${CDEFS} ${INCL} ${DEBUG}
