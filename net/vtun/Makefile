@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/08/03 13:58:03 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/08/04 16:51:59 brad Exp $
 
 DISTNAME=	vtun-2.3
 CATEGORIES=	net
@@ -25,11 +25,14 @@ CONFIGURE_ARGS=	--localstatedir="/var" \
 
 ALL_TARGET=	vtund
 
+DOCS=	FAQ README README.Setup README.Shaper
+
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/vtun
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vtun
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vtun
 	${INSTALL_PROGRAM} ${WRKSRC}/vtund ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/README.Setup ${PREFIX}/lib/vtun
-	${INSTALL_DATA} ${WRKSRC}/vtund.conf ${PREFIX}/lib/vtun/vtund.conf-sample
+	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/vtun
+	${INSTALL_DATA} ${WRKSRC}/vtund.conf ${PREFIX}/share/examples/vtun/vtund.conf-sample
 	${INSTALL_MAN} ${WRKSRC}/vtund.conf.5 ${PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/vtund.8 ${PREFIX}/man/man8
 	cd ${PREFIX}/man/man8; ln -fs vtund.8 vtun.8
