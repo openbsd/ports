@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 1999/04/05 19:19:28 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/05/02 11:10:27 jakob Exp $
 
-DISTNAME=	ethereal-0.5.1
+DISTNAME=	ethereal-0.6.1
 CATEGORIES=	net x11
 
 MAINTAINER=     jakob@crt.se
