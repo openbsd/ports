@@ -3,13 +3,13 @@
 # Date created:		June 7 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:43:14 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/02/13 20:15:35 espie Exp $
 #
 
-DISTNAME=	linux-ar-40
-PKGNAME=	acroread-4.0
+DISTNAME=	linux-ar-405
+PKGNAME=	acroread-4.05
 CATEGORIES=	print
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/4.x/
 ONLY_FOR_ARCHS=	i386
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	"commercial software"
 PERMIT_DISTFILES_CDROM=	"commercial software"
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	/emul/linux/lib/libc.so.5::emulators/linux_lib
+RUN_DEPENDS=	/emul/linux/lib/libc.so.6::emulators/redhat_base
 
 WRKDIST=	${WRKDIR}/ILINXR.install
 
@@ -37,8 +37,7 @@ post-install:
 	  patch --quiet < ${FILESDIR}/acroread.diff && \
 	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat4/bin/acroread \
 	     ${PREFIX}/bin/acroread && rm acroread.orig
-	@chmod +x ${PREFIX}/bin/acroread
-	@chmod a+r ${PREFIX}/Acrobat4/Reader/ReadMe
+#	@chmod +x ${PREFIX}/bin/acroread
 	@echo "Be sure to read the license agreement in"
 	@echo "${PREFIX}/Acrobat4/Reader/License.pdf"
 
