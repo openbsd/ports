@@ -3,7 +3,7 @@
 # Date created:		May 16 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1999/03/07 01:39:01 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/11/03 01:24:54 turan Exp $
 #
 
 DISTNAME=	wdiff-0.5
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR= wdiff
 MAINTAINER=	angelos@openbsd.org
 
 GNU_CONFIGURE=	yes
-
+USE_AUTOCONF=	yes
 MAN1=		wdiff.1
 
 post-install:

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 1999/10/31 06:32:45 turan Exp $
+# $OpenBSD: Makefile,v 1.5 1999/11/03 01:24:54 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net> 
 
-BROKEN=		C++ syntax errors, index.cxx:533: ANSI C++ forbids declaration `PhraseLength' with no type
+BROKEN=		C++ syntax errors, index.cxx:533: ANSI C++ forbids declaration PhraseLength with no type
 
 DISTNAME=	Isearch-1.14
 PKGNAME=	isearch-1.14	
