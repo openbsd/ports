@@ -1,0 +1,11 @@
+$OpenBSD: patch-subdirs_am,v 1.1 2000/12/15 15:05:08 espie Exp $
+--- subdirs.am.orig	Fri Dec 15 03:22:41 2000
++++ subdirs.am	Fri Dec 15 03:22:57 2000
+@@ -60,6 +60,7 @@ maintainer-clean-recursive:
+ 	rev=''; list='$(SUBDIRS)'; for subdir in $$list; do \
+ 	  rev="$$subdir $$rev"; \
+ 	  test "$$subdir" = "." && dot_seen=yes; \
++	  true; \
+ 	done; \
+ ## If we haven't seen `.', then add it at the beginning.
+ 	test "$$dot_seen" = "no" && rev=". $$rev"; \
