@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/09 05:37:10 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2002/09/06 12:42:45 couderc Exp $
 
 COMMENT=		"GnuPG Made Easy"
 
-DISTNAME=		gpgme-0.3.4
+DISTNAME=		gpgme-0.3.8
 CATEGORIES=     	security devel
-NEED_VERSION=		1.508
 
 HOMEPAGE=		http://www.gnupg.org/gpgme.html
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.gnupg.org/pub/gcrypt/alpha/gpgme/
+MASTER_SITES=		ftp://ftp.gnupg.org/gcrypt/alpha/gpgme/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-gpgsm
