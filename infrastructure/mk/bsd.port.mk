@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.657 2004/11/15 11:49:05 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.658 2004/11/15 13:52:03 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -70,6 +70,7 @@ RECURSIVE_FETCH_LIST?=	Yes
 WRKOBJDIR?=
 FAKEOBJDIR?=
 BULK_TARGETS?=
+FORCE_UPDATE?=No
 
 # special purpose user settings
 PATCH_CHECK_ONLY?=No
@@ -97,6 +98,7 @@ LOCALBASE?=		/usr/local
 X11BASE?=		/usr/X11R6
 DISTDIR?=		${PORTSDIR}/distfiles
 BULK_COOKIES_DIR?= ${PORTSDIR}/bulk/${MACHINE_ARCH}
+UPDATE_COOKIES_DIR?= ${PORTSDIR}/update/${MACHINE_ARCH}
 TEMPLATES?=		${PORTSDIR}/infrastructure/templates
 TMPDIR?=		/tmp
 
@@ -408,7 +410,11 @@ _INSTALL_PRE_COOKIE=${WRKDIR}/.install_started
 _FAKE_COOKIE=		${WRKDIR}/.fake_done
 .endif
 _PACKAGE_COOKIE=	${PKGFILE}
+.if !empty(UPDATE_COOKIES_DIR)
+_UPDATE_COOKIE=		${UPDATE_COOKIES_DIR}/${FULLPKGNAME${SUBPACKAGE}}
+.else
 _UPDATE_COOKIE=		${WRKDIR}/.update_${FULLPKGNAME${SUBPACKAGE}}
+.endif
 .if defined(SEPARATE_BUILD)
 _CONFIGURE_COOKIE=	${WRKBUILD}/.configure_done
 _BUILD_COOKIE=		${WRKBUILD}/.build_done
@@ -985,7 +991,6 @@ IGNORE= "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with ${OPSYS} as of 
 
 .endif		# NO_IGNORE
 
-
 .if !defined(DEPENDS_TARGET)
 .  if make(reinstall)
 DEPENDS_TARGET=	reinstall
@@ -1045,6 +1050,12 @@ _build_depends_target=${DEPENDS_TARGET}
 _run_depends_target=${DEPENDS_TARGET}
 _lib_depends_target=${DEPENDS_TARGET}
 _regress_depends_target=${DEPENDS_TARGET}
+
+.if ${FORCE_UPDATE:L} == "yes"
+_force_update_fragment=eval $$toset ${MAKE} update
+.else
+_force_update_fragment=:
+.endif
 
 _FULL_PACKAGE_NAME?=No
 
@@ -1306,6 +1317,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 			case "$$dep" in \
 			"/nonexistent") ;; \
 			*)  \
+				$$early_exit || ${_force_update_fragment}; \
 				${_${_DEP}_depends_fragment}; \
 				if $$found; then \
 					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$what - found"; \
@@ -1836,7 +1848,18 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
 .endif
 
 ${_UPDATE_COOKIE}: ${_WRKDIR_COOKIE} ${_PACKAGE_COOKIES}
+.if !empty(UPDATE_COOKIES_DIR)
+	@mkdir -p ${UPDATE_COOKIES_DIR}
+.endif
 	@${ECHO_MSG} "===> Updating for ${FULLPKGNAME${SUBPACKAGE}}"
+.if ${FORCE_UPDATE:L} == "yes"
+	@a=`pkg_info -e ${FULLPKGPATH} 2>/dev/null || true`; \
+	case $$a in \
+		'') ;; \
+		*) ${ECHO_MSG} "Upgrading from $$a"; \
+		   ${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} -f update -f installed -r ${PKGFILE${SUBPACKAGE}};; \
+	esac
+.else
 	@a=`pkg_info -e ${FULLPKGPATH} 2>/dev/null || true`; \
 	case $$a in \
 		'') ;; \
@@ -1844,6 +1867,7 @@ ${_UPDATE_COOKIE}: ${_WRKDIR_COOKIE} ${_PACKAGE_COOKIES}
 		*) ${ECHO_MSG} "Upgrading from $$a"; \
 		   ${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} -r ${PKGFILE${SUBPACKAGE}};; \
 	esac
+.endif
 	@${_MAKE_COOKIE} $@
 
 # The real package
