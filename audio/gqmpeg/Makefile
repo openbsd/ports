@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2001/03/06 21:04:54 rohee Exp $
+# $OpenBSD: Makefile,v 1.17 2001/03/06 22:22:56 rohee Exp $
 # Original from: Bruno Rohée
 
 DISTNAME=	gqmpeg-0.6.3.src
 PKGNAME=	gqmpeg-0.6.3
 CATEGORIES=     audio
 NEED_VERSION=	1.336
-MASTER_SITES=	http://www.netpedia.net/hosting/gqview/packages/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gqmpeg
 
 LIB_DEPENDS=	gdk_imlib.19::graphics/imlib
 BUILD_DEPENDS=	mpg123::audio/mpg123
