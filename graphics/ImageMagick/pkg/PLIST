@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2001/02/05 15:58:09 brad Exp $
+@comment $OpenBSD: PLIST,v 1.20 2001/02/13 18:43:24 chris Exp $
 bin/Magick++-config
 bin/Magick-config
 bin/animate
@@ -70,7 +70,6 @@ man/man5/quantize.5
 share/ImageMagick/Copyright.txt
 share/ImageMagick/ImageMagick.html
 share/ImageMagick/QuickStart.txt
-share/ImageMagick/delegates.mgk
 share/ImageMagick/images/authentica.jpg
 share/ImageMagick/images/ball.png
 share/ImageMagick/images/corbis.png
