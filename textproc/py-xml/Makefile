@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2003/11/15 15:12:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2004/01/29 17:13:37 sturm Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"python module for writing basic XML applications"
 

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2003/10/21 19:51:50 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2004/01/29 17:13:37 sturm Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"fast array facility to the Python language"
 

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2003/10/13 17:18:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/29 17:13:37 sturm Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Python interface to the Sybase relational database system"
 

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2004/01/02 05:11:08 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2004/01/29 17:13:37 sturm Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"python interface to MySQL"
 

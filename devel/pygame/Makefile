@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/08/08 21:48:58 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/29 17:13:37 sturm Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"set of Python modules designed for writing games"
 
