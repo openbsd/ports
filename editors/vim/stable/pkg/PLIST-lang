@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-lang,v 1.4 2003/06/27 17:57:52 lebel Exp $
+@comment $OpenBSD: PLIST-lang,v 1.5 2004/01/22 19:30:24 lebel Exp $
 share/vim/${P}/lang/README.txt
 share/vim/${P}/lang/af/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/cs/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/de/LC_MESSAGES/vim.mo
-share/vim/${P}/lang/en_gb/LC_MESSAGES/vim.mo
+share/vim/${P}/lang/en_GB/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/es/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/fr/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/it/LC_MESSAGES/vim.mo
@@ -113,8 +113,8 @@ share/vim/${P}/lang/zh_TW/LC_MESSAGES/vim.mo
 @dirrm share/vim/${P}/lang/fr
 @dirrm share/vim/${P}/lang/es/LC_MESSAGES
 @dirrm share/vim/${P}/lang/es
-@dirrm share/vim/${P}/lang/en_gb/LC_MESSAGES
-@dirrm share/vim/${P}/lang/en_gb
+@dirrm share/vim/${P}/lang/en_GB/LC_MESSAGES
+@dirrm share/vim/${P}/lang/en_GB
 @dirrm share/vim/${P}/lang/de/LC_MESSAGES
 @dirrm share/vim/${P}/lang/de
 @dirrm share/vim/${P}/lang/cs/LC_MESSAGES
