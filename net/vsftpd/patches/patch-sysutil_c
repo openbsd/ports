@@ -1,12 +1,20 @@
-$OpenBSD: patch-sysutil_c,v 1.1.1.1 2003/02/19 15:42:02 couderc Exp $
---- sysutil.c.orig	Fri Oct 25 19:32:52 2002
-+++ sysutil.c	Sun Feb  2 19:43:03 2003
-@@ -1312,7 +1312,7 @@ vsf_sysutil_statbuf_get_sortkey_mtime(
+$OpenBSD: patch-sysutil_c,v 1.2 2003/08/02 12:00:13 couderc Exp $
+--- sysutil.c.orig	Sat Apr 19 20:50:44 2003
++++ sysutil.c	Wed Jul  9 16:54:17 2003
+@@ -1401,7 +1401,7 @@ vsf_sysutil_statbuf_get_sortkey_mtime(
     * more recent dates appear later in the alphabet! Most notably, we must
     * make sure we pad to the same length with 0's 
     */
 -  snprintf(intbuf, sizeof(intbuf), "%030ld", p_stat->st_mtime);
 +  snprintf(intbuf, sizeof(intbuf), "%030ld", (long int) p_stat->st_mtime);
    return intbuf;
+ }
+ 
+@@ -2066,6 +2066,7 @@ vsf_sysutil_inet_ntop(const struct vsf_s
+   else
+   {
+     die("can only support ipv4 and ipv6 currently");
++    return(NULL); /* does nothing but makes compiler happy */
+   }
  }
  
