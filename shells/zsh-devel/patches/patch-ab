@@ -1,13 +1,11 @@
---- Doc/zsh.texi.orig	Tue Aug  3 00:40:39 1999
-+++ Doc/zsh.texi	Tue Aug  3 00:43:38 1999
-@@ -7,6 +7,10 @@
- @end iftex
- @setfilename zsh.info
- @settitle zsh
-+@dircategory Shells
-+@direntry
-+* Zsh: (zsh).			The Z shell.
-+@end direntry
+--- Doc/zsh.texi.orig	Sun Mar 26 03:13:01 2000
++++ Doc/zsh.texi	Sun Mar 26 03:21:22 2000
+@@ -14,7 +14,7 @@
  @c %**end of header
  
  @ifinfo
+-@set dsq @'@'
++@set dsq @'{}@'{}
+ @end ifinfo
+ @iftex
+ @set dsq '{}'
