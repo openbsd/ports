@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/01/16 06:31:09 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2000/01/16 11:46:29 brad Exp $
 # $NetBSD: Makefile,v 1.6 1998/04/15 11:15:34 frueauf Exp $
 
 DISTNAME=	icb-5.0.9
@@ -17,7 +17,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/icb/icb ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/icbserverdb ${PREFIX}/lib/icb/sample.icbserverdb
 	${INSTALL_DATA} ${WRKSRC}/sample.icbrc ${PREFIX}/lib/icb
-	cd {WRKSRC}/contrib; ${INSTALL_DATA} bartender confuse echofile \
+	cd ${WRKSRC}/contrib; ${INSTALL_DATA} bartender confuse echofile \
 		${PREFIX}/lib/icb
 
 post-install:
