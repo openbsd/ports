@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/04/06 23:54:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/04/20 01:39:53 pvalchev Exp $
 
 COMMENT=		"Fast and light gtk-based web browser"
 
@@ -21,7 +21,7 @@ MASTER_SITE_SUBDIR=	dillo
 
 LIB_DEPENDS=    jpeg.62::graphics/jpeg \
                 png.2::graphics/png \
-		gtk.1.2::x11/gtk+
+		gtk.1.2,gdk.1.2::x11/gtk+
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
