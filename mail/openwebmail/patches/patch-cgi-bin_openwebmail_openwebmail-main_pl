@@ -1,4 +1,4 @@
-$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-main_pl,v 1.1 2003/01/30 07:57:26 kevlo Exp $
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-main_pl,v 1.2 2003/04/14 08:26:20 kevlo Exp $
 --- cgi-bin/openwebmail/openwebmail-main.pl.orig	Tue Nov 26 11:05:44 2002
 +++ cgi-bin/openwebmail/openwebmail-main.pl	Thu Jan 30 14:45:07 2003
 @@ -1,4 +1,4 @@
@@ -7,3 +7,12 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail-main_pl,v 1.1 2003/01/30 07:57:2
  #
  # openwebmail-main.pl - message list browing program
  #
+@@ -5,7 +5,7 @@
+ 
+ use vars qw($SCRIPT_DIR);
+ if ( $0 =~ m!^(.*?)/[\w\d\-\.]+\.pl! ) { $SCRIPT_DIR=$1; }
+-if (!$SCRIPT_DIR && open(F, '/etc/openwebmail_path.conf')) {
++if (!$SCRIPT_DIR && open(F, '%%SYSCONFDIR%%/openwebmail/openwebmail_path.conf')) {
+    $_=<F>; close(F); if ( $_=~/^([^\s]*)/) { $SCRIPT_DIR=$1; }
+ }
+ if (!$SCRIPT_DIR) { print "Content-type: text/html\n\nSCRIPT_DIR not set in /etc/openwebmail_path.conf !\n"; exit 0; }

@@ -1,37 +1,28 @@
-$OpenBSD: patch-cgi-bin_openwebmail_ow-shared_pl,v 1.1 2003/01/30 07:57:26 kevlo Exp $
---- cgi-bin/openwebmail/ow-shared.pl.orig	Tue Nov 26 12:20:51 2002
-+++ cgi-bin/openwebmail/ow-shared.pl	Thu Jan 30 14:45:08 2003
-@@ -125,8 +125,8 @@ use vars qw($_OFFSET $_FROM $_TO $_DATE 
- ###################### OPENWEBMAIL_INIT ###################
- # init routine to set globals, switch euid
+$OpenBSD: patch-cgi-bin_openwebmail_ow-shared_pl,v 1.2 2003/04/14 08:26:20 kevlo Exp $
+--- cgi-bin/openwebmail/ow-shared.pl.orig	Mon Mar 24 22:22:32 2003
++++ cgi-bin/openwebmail/ow-shared.pl	Mon Apr 14 13:03:33 2003
+@@ -214,10 +214,10 @@
  sub openwebmail_init {
--   readconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf.default");
+    clearvars();
+    if (!defined(%default_config_raw)) {	# read default only once if persistent mode
+-      readconf(\%default_config, \%default_config_raw, "$SCRIPT_DIR/etc/openwebmail.conf.default");
++      readconf(\%default_config, \%default_config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf.default");
+    }
+    %config=%default_config; %config_raw =%default_config_raw;
 -   readconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf") if (-f "$SCRIPT_DIR/etc/openwebmail.conf");
-+   readconf(\%config, \%config_raw, "/var/www/conf/openwebmail/openwebmail.conf.default");
-+   readconf(\%config, \%config_raw, "/var/www/conf/openwebmail/openwebmail.conf") if (-f "/var/www/conf/openwebmail/openwebmail.conf");
-    # setuid is required if mails is located in user's dir
-    if ( $>!=0 && ($config{'use_homedirspools'}||$config{'use_homedirfolders'}) ) {
-       print "Content-type: text/html\n\n'$0' must setuid to root"; exit 0;
-@@ -231,6 +231,9 @@ sub openwebmail_init {
- sub readconf {
-    my ($r_config, $r_config_raw, $configfile)=@_;
++   readconf(\%config, \%config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf") if (-f "%%SYSCONFDIR%%/openwebmail/openwebmail.conf");
  
-+   if ($configfile=~/\.\./) {  # .. in path is not allowed for higher security
-+      openwebmailerror("Invalid config file path $configfile");
-+   }
-    # read config
-    open(CONFIG, $configfile) or
-       openwebmailerror("Couldn't open config file $configfile");
-@@ -340,6 +343,12 @@ sub readconf {
+    # setuid is required if mailspool is located in system directory
+    if ( $>!=0 &&
+@@ -243,9 +243,9 @@
+    readconf(\%config, \%config_raw, "$config{'ow_sitesconfdir'}/$logindomain") if ( -f "$config{'ow_sitesconfdir'}/$logindomain");
+ 
+    if ($config{'smtpauth'}) {
+-      readconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/smtpauth.conf");
++      readconf(\%config, \%config_raw, "%%SYSCONFDIR%%/openwebmail/smtpauth.conf");
+       if ($config{'smtpauth_username'} eq "" || $config{'smtpauth_password'} eq "") {
+-         openwebmailerror("Invalid username/password in $SCRIPT_DIR/etc/smtpauth.conf");
++         openwebmailerror("Invalid username/password in %%SYSCONFDIR%%/openwebmail/smtpauth.conf");
        }
     }
- 
-+   # remove / and .. from variables that will be used in require statement for security
-+   foreach $key ( 'default_language', 'auth_module') {
-+       ${$r_config}{$key} =~ s|/||g;
-+       ${$r_config}{$key} =~ s|\.\.||g;
-+    
-+   }
-    # untaint pathname variable defined in openwebmail.conf
-    foreach $key ( 'smtpserver', 'auth_module', 'virtusertable',
-                   'mailspooldir', 'homedirspoolname', 'homedirfolderdirname',
+    loadauth($config{'auth_module'});

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.6 2003/01/30 07:57:31 kevlo Exp $
+# $OpenBSD: INSTALL,v 1.7 2003/04/14 08:26:25 kevlo Exp $
 #
 # Pre/post-installation setup of openwebmail
 
@@ -14,7 +14,8 @@ SAMPLE_CONFIG_FILE=$CONFIG_FILE.default
 SCRIPTFILES="openwebmail-abook.pl openwebmail-advsearch.pl openwebmail-cal.pl \
 	    openwebmail-folder.pl openwebmail-main.pl openwebmail-prefs.pl \
 	    openwebmail-read.pl openwebmail-send.pl openwebmail-spell.pl \
-	    openwebmail-tool.pl openwebmail-viewatt.pl openwebmail.pl"
+	    openwebmail-tool.pl openwebmail-vdomain.pl openwebmail-viewatt.pl \
+	    openwebmail-webdisk.pl openwebmail.pl"
 
 # Function: set up mail group 
 #
@@ -57,7 +58,8 @@ do_install()
     chmod 770 $CONFIG_DIR/sessions
     chmod 770 $CONFIG_DIR/users
     install -o root -g wheel -m 644 $SAMPLE_CONFIG_FILE $CONFIG_FILE
-    perl $CGI_DIR/openwebmail-tool.pl --init
+    echo "/var/www/cgi-bin/openwebmail/" | cat > $CONFIG_DIR/openwebmail_path.conf
+    perl $CGI_DIR/openwebmail-tool.pl --init --no
     echo
     echo "+---------------"
     echo "| The $1 configuration file,"

@@ -1,20 +1,31 @@
-$OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.1 2003/01/30 07:57:26 kevlo Exp $
---- cgi-bin/openwebmail/openwebmail.pl.orig	Tue Nov 26 11:33:50 2002
-+++ cgi-bin/openwebmail/openwebmail.pl	Thu Jan 30 14:45:08 2003
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.2 2003/04/14 08:26:20 kevlo Exp $
+--- cgi-bin/openwebmail/openwebmail.pl.orig	Tue Mar 25 21:34:10 2003
++++ cgi-bin/openwebmail/openwebmail.pl	Mon Apr 14 13:00:01 2003
 @@ -1,4 +1,4 @@
 -#!/usr/bin/suidperl -T
-+#!/usr/bin/perl -T
++#!/usr/bin/perl 
  #################################################################
  #                                                               #
  # Open WebMail - Provides a web interface to user mailboxes     #
-@@ -47,8 +47,8 @@ use vars qw($folderdir);
- use vars qw(%lang_text %lang_err);	# defined in lang/xy
- use vars qw($pop3_authserver);	# defined in auth_pop3.pl
+@@ -18,7 +18,7 @@
+ #
+ use vars qw($SCRIPT_DIR);
+ if ( $0 =~ m!^(.*?)/[\w\d\-\.]+\.pl! ) { $SCRIPT_DIR=$1; }
+-if (!$SCRIPT_DIR && open(F, '/etc/openwebmail_path.conf')) {
++if (!$SCRIPT_DIR && open(F, '%%SYSCONFDIR%%/openwebmail/openwebmail_path.conf')) {
+    $_=<F>; close(F); if ( $_=~/^([^\s]*)/) { $SCRIPT_DIR=$1; }
+ }
+ if (!$SCRIPT_DIR) { print "Content-type: text/html\n\nSCRIPT_DIR not set in /etc/openwebmail_path.conf !\n"; exit 0; }
+@@ -51,10 +51,10 @@
  
--readconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf.default");
+ clearvars();
+ if (!defined(%default_config_raw)) {	# read default only once if persistent mode
+-   readconf(\%default_config, \%default_config_raw, "$SCRIPT_DIR/etc/openwebmail.conf.default");
++   readconf(\%default_config, \%default_config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf.default");
+ }
+ %config=%default_config; %config_raw =%default_config_raw;
 -readconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf") if (-f "$SCRIPT_DIR/etc/openwebmail.conf");
-+readconf(\%config, \%config_raw, "/var/www/conf/openwebmail/openwebmail.conf.default");
-+readconf(\%config, \%config_raw, "/var/www/conf/openwebmail/openwebmail.conf") if (-f "/var/www/conf/openwebmail/openwebmail.conf");
++readconf(\%config, \%config_raw, "%%SYSCONFDIR%%/openwebmail/openwebmail.conf") if (-f "%%SYSCONFDIR%%/openwebmail/openwebmail.conf");
  
- # setuid is required if mails is located in user's dir
- if ( $>!=0 && ($config{'use_homedirspools'}||$config{'use_homedirfolders'}) ) {
+ # setuid is required if mailspool is located in system directory
+ if ( $>!=0 &&

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2003/01/30 07:57:22 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2003/04/14 08:26:11 kevlo Exp $
 
 COMMENT=	"highly configurable webmail client"
 
-DISTNAME=	openwebmail-1.81
+DISTNAME=	openwebmail-2.00
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.openwebmail.org/
@@ -20,9 +20,9 @@ MASTER_SITES=	http://turtle.ee.ncku.edu.tw/openwebmail/download/ \
 EXTRACT_SUFX=	.tgz
 EXTRACT_CASES=  *.tgz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xpf -;;
 
-RUN_DEPENDS=	::databases/p5-ldap \
-		::textproc/ispell \
-		:p5-Text-Iconv->=1.2:converters/p5-Text-Iconv
+RUN_DEPENDS=	::textproc/ispell \
+		:p5-Text-Iconv->=1.2:converters/p5-Text-Iconv \
+		:p5-CGI-SpeedyCGI->=2.21:www/p5-CGI-SpeedyCGI
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
@@ -32,7 +32,13 @@ WRKDIST=	${WRKDIR}
 PREFIX=		/var/www
 SYSCONFDIR=	${PREFIX}/conf
 
-SCRIPTFILES=	openwebmail-tool.pl openwebmail.pl ow-shared.pl
+SCRIPTFILES=	openwebmail-abook.pl openwebmail-advsearch.pl \
+		openwebmail-cal.pl openwebmail-folder.pl \
+		openwebmail-main.pl openwebmail-prefs.pl \
+		openwebmail-read.pl openwebmail-send.pl \
+		openwebmail-spell.pl openwebmail-tool.pl \
+		openwebmail-vdomain.pl openwebmail-viewatt.pl \
+		openwebmail-webdisk.pl openwebmail.pl ow-shared.pl 
 
 do-configure:
 .for file in ${SCRIPTFILES}
@@ -40,7 +46,7 @@ do-configure:
 		${WRKSRC}/cgi-bin/openwebmail/${file}
 .endfor
 	@cd ${WRKSRC} && cp -Rp data htdocs
-#	@find ${WRKSRC}/cgi-bin -name '*.orig' |xargs rm
+	@find ${WRKSRC}/cgi-bin -name '*.orig' |xargs rm
 	@cd ${WRKSRC} && mkdir -p conf/openwebmail && \
 		cp -Rp cgi-bin/openwebmail/etc/* conf/openwebmail
 	@find ${WRKSRC}/cgi-bin -name 'etc' -type d |xargs rm -rf

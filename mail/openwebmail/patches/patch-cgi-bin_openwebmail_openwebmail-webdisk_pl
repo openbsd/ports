@@ -1,13 +1,13 @@
-$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-folder_pl,v 1.2 2003/04/14 08:26:20 kevlo Exp $
---- cgi-bin/openwebmail/openwebmail-folder.pl.orig	Thu Nov 21 08:46:42 2002
-+++ cgi-bin/openwebmail/openwebmail-folder.pl	Thu Jan 30 14:45:07 2003
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-webdisk_pl,v 1.1 2003/04/14 08:26:20 kevlo Exp $
+--- cgi-bin/openwebmail/openwebmail-webdisk.pl.orig	Mon Apr 14 13:22:36 2003
++++ cgi-bin/openwebmail/openwebmail-webdisk.pl	Mon Apr 14 13:22:45 2003
 @@ -1,4 +1,4 @@
 -#!/usr/bin/suidperl -T
 +#!/usr/bin/perl -T
  #
- # openwebmail-folder.pl - mail folder management program
+ # openwebmail-webdisk.pl - web disk program
  #
-@@ -5,7 +5,7 @@
+@@ -18,7 +18,7 @@
  
  use vars qw($SCRIPT_DIR);
  if ( $0 =~ m!^(.*?)/[\w\d\-\.]+\.pl! ) { $SCRIPT_DIR=$1; }
