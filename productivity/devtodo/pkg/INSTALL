@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2002/12/01 19:18:22 margarida Exp $
+# $OpenBSD: INSTALL,v 1.3 2002/12/02 13:30:09 margarida Exp $
 #
 # Pre/post-installation setup of devtodo
 
@@ -16,7 +16,7 @@ do_notice()
 	echo
 	echo "+------------"
 	echo "| The existing $1 configuration file in $CONFIG_FILE,"
-	echo "| has NOT been changed. 
+	echo "| has NOT been changed." 
 	echo "|	You may want to compare it to the current sample"
 	echo "| file in $SAMPLE_CONFIG_FILE,"
 	echo "| and update your configuration as needed."
