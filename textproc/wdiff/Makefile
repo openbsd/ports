@@ -1,10 +1,4 @@
-# OpenBSD makefile for:	wdiff
-# Version required:	0.5
-# Date created:		May 16 1998
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.15 2002/12/23 00:37:52 pvalchev Exp $
-#
+# $OpenBSD: Makefile,v 1.16 2002/12/23 09:09:12 pvalchev Exp $
 
 COMMENT=	"word differences between text files"
 
@@ -18,7 +12,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAN1=		wdiff.1
-CONFIGURE_STYLE=	gnu dest old
+CONFIGURE_STYLE=gnu dest old
 
 .include <bsd.port.mk>
