@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/07/14 17:12:21 todd Exp $
+@comment $OpenBSD: PLIST,v 1.15 2004/07/23 13:11:58 todd Exp $
 bin/bochs
 bin/bximage
 man/man1/bochs-dlx.1
@@ -6,6 +6,8 @@ man/man1/bochs.1
 man/man1/bxcommit.1
 man/man1/bximage.1
 man/man5/bochsrc.5
+share/bochs/
+share/bochs/bios/
 share/bochs/bios/BIOS-bochs-2-processors
 share/bochs/bios/BIOS-bochs-4-processors
 share/bochs/bios/BIOS-bochs-8-processors
@@ -15,6 +17,7 @@ share/bochs/bios/VGABIOS-elpin-LICENSE
 share/bochs/bios/VGABIOS-lgpl-README
 share/bochs/bios/VGABIOS-lgpl-latest
 share/bochs/bochsrc
+share/doc/bochs/
 share/doc/bochs/3rdparty.license.html
 share/doc/bochs/Linux.html
 share/doc/bochs/Minix.html
@@ -24,6 +27,3 @@ share/doc/bochs/cosimulation.html
 share/doc/bochs/guestNT.html
 share/doc/bochs/index.html
 share/doc/bochs/iodebug.html
-@dir share/doc/bochs
-@dir share/bochs/bios
-@dir share/bochs

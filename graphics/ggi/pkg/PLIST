@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/07/14 17:10:19 todd Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/07/23 13:11:58 todd Exp $
 bin/cube3d
 bin/ggiteleserver
 bin/monitest
+include/ggi/display/
 include/ggi/display/aa.h
 include/ggi/display/directx.h
 include/ggi/display/fbdev.h
@@ -43,6 +44,7 @@ include/ggi/internal/plat.h
 include/ggi/internal/structs.h
 include/ggi/ll.h
 include/ggi/types.h
+lib/ggi/default/
 lib/ggi/default/color.a
 lib/ggi/default/color.la
 lib/ggi/default/ilbm.a
@@ -75,6 +77,7 @@ lib/ggi/default/text_16.a
 lib/ggi/default/text_16.la
 lib/ggi/default/text_32.a
 lib/ggi/default/text_32.la
+lib/ggi/display/
 lib/ggi/display/X.a
 lib/ggi/display/X.la
 lib/ggi/display/file.a
@@ -103,6 +106,7 @@ lib/ggi/display/trueemu.a
 lib/ggi/display/trueemu.la
 lib/ggi/display/xf86dga.a
 lib/ggi/display/xf86dga.la
+lib/ggi/helper/
 lib/ggi/helper/helper_x_dbe.a
 lib/ggi/helper/helper_x_dbe.la
 lib/ggi/helper/helper_x_dga.a
@@ -238,14 +242,8 @@ man/man7/display-vcsa.7
 man/man7/display-vgl.7
 man/man7/display-x.7
 man/man7/libggi.7
+share/doc/ggi/
 share/doc/ggi/README
+share/examples/ggi/
 share/examples/ggi/libggi.conf.example
 %%SHARED%%
-@dir share/examples/ggi
-@dir share/doc/ggi
-@dir lib/ggi/helper
-@dir lib/ggi/display
-@dir lib/ggi/default
-@dir include/ggi/display
-@cwd ${SYSCONFDIR}/ggi
-@extra libggi.conf

@@ -1,10 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/07/14 17:13:06 todd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/07/23 13:11:58 todd Exp $
+bin/cvscheck
 bin/tkcvs
 bin/tkdiff
-bin/cvscheck
-man/mann/tkcvs.n
-man/mann/tkdiff.n
+libdata/tkcvs/
 libdata/tkcvs/bindings.tcl
+libdata/tkcvs/bitmaps/
+libdata/tkcvs/bitmaps/add.xbm
+libdata/tkcvs/bitmaps/check.xbm
+libdata/tkcvs/bitmaps/checkin.xbm
+libdata/tkcvs/bitmaps/clean.xbm
+libdata/tkcvs/bitmaps/clear.xbm
+libdata/tkcvs/bitmaps/delete.xbm
+libdata/tkcvs/bitmaps/diff.xbm
+libdata/tkcvs/bitmaps/import.xbm
+libdata/tkcvs/bitmaps/logfile.xbm
+libdata/tkcvs/bitmaps/notebook.xbm
+libdata/tkcvs/bitmaps/refresh.xbm
+libdata/tkcvs/bitmaps/remove.xbm
+libdata/tkcvs/bitmaps/tkcvs16.xbm
+libdata/tkcvs/bitmaps/tkcvs32.xbm
+libdata/tkcvs/bitmaps/tkcvs32_mask.xbm
+libdata/tkcvs/bitmaps/tree16.xbm
+libdata/tkcvs/bitmaps/update.xbm
 libdata/tkcvs/checkout.tcl
 libdata/tkcvs/commit.tcl
 libdata/tkcvs/cvs.tcl
@@ -25,22 +42,5 @@ libdata/tkcvs/tooltips.tcl
 libdata/tkcvs/update.tcl
 libdata/tkcvs/venget.tcl
 libdata/tkcvs/workdir.tcl
-libdata/tkcvs/bitmaps/add.xbm
-libdata/tkcvs/bitmaps/check.xbm
-libdata/tkcvs/bitmaps/checkin.xbm
-libdata/tkcvs/bitmaps/clean.xbm
-libdata/tkcvs/bitmaps/clear.xbm
-libdata/tkcvs/bitmaps/delete.xbm
-libdata/tkcvs/bitmaps/diff.xbm
-libdata/tkcvs/bitmaps/import.xbm
-libdata/tkcvs/bitmaps/logfile.xbm
-libdata/tkcvs/bitmaps/notebook.xbm
-libdata/tkcvs/bitmaps/refresh.xbm
-libdata/tkcvs/bitmaps/remove.xbm
-libdata/tkcvs/bitmaps/tkcvs16.xbm
-libdata/tkcvs/bitmaps/tkcvs32.xbm
-libdata/tkcvs/bitmaps/tkcvs32_mask.xbm
-libdata/tkcvs/bitmaps/tree16.xbm
-libdata/tkcvs/bitmaps/update.xbm
-@dir libdata/tkcvs/bitmaps
-@dir libdata/tkcvs
+man/mann/tkcvs.n
+man/mann/tkdiff.n

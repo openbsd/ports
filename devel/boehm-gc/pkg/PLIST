@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/07/14 19:36:58 todd Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/07/23 13:11:58 todd Exp $
+include/gc/
 include/gc.h
 include/gc/gc.h
 include/gc/gc_alloc.h
@@ -26,6 +27,7 @@ include/gc_mark.h
 include/gc_pthread_redirects.h
 include/gc_typed.h
 include/leak_detector.h
+include/private/
 include/private/gc_hdrs.h
 include/private/gc_locks.h
 include/private/gc_pmark.h
@@ -34,6 +36,7 @@ include/private/gcconfig.h
 lib/libgc.a
 lib/libgc.la
 man/man3/gc.3
+share/gc/
 share/gc/README
 share/gc/README.DGUX386
 share/gc/README.Mac
@@ -66,6 +69,3 @@ share/gc/leak.html
 share/gc/scale.html
 share/gc/tree.html
 %%SHARED%%
-@dir share/gc
-@dir include/private
-@dir include/gc

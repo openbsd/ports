@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/07/14 17:14:44 todd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/07/23 13:11:58 todd Exp $
 bin/balky
 bin/hboot
 bin/hcc
@@ -27,6 +27,7 @@ bin/wipe
 include/lam_config.h
 include/mpi++.h
 include/mpi.h
+include/mpi2c++/
 include/mpi2c++/comm.h
 include/mpi2c++/comm_inln.h
 include/mpi2c++/constants.h
@@ -400,18 +401,17 @@ man/man7/LAM.7
 man/man7/MPI.7
 man/man7/lam.7
 man/man7/mpi.7
+man/mans/
 man/mans/mpi.share
+share/examples/lam/
 share/examples/lam/lam-bhost.def
 share/examples/lam/lam-bhost.lam
 share/examples/lam/lam-conf.lam
 share/examples/lam/lam-conf.otb
 share/examples/lam/lam-helpfile
+share/lam/
+share/lam/doc/
 share/lam/doc/ROMIO-COPYRIGHT
 share/lam/doc/ROMIO-README
 share/lam/doc/ROMIO-README_LAM
 share/lam/doc/romio-users-guide.ps.gz
-@dir share/lam/doc
-@dir share/lam
-@dir share/examples/lam
-@dir man/mans
-@dir include/mpi2c++

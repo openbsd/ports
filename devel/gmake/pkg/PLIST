@@ -1,14 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/07/14 17:28:26 todd Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/make.info
+@comment $OpenBSD: PLIST,v 1.10 2004/07/23 13:11:58 todd Exp $
 bin/gmake
-info/make.info
+@info info/make.info
 man/man1/gmake.1
 share/locale/da/LC_MESSAGES/make.mo
 share/locale/de/LC_MESSAGES/make.mo
 share/locale/es/LC_MESSAGES/make.mo
 share/locale/fr/LC_MESSAGES/make.mo
 share/locale/gl/LC_MESSAGES/make.mo
+share/locale/he/
+share/locale/he/LC_MESSAGES/
 share/locale/he/LC_MESSAGES/make.mo
+share/locale/hr/
+share/locale/hr/LC_MESSAGES/
 share/locale/hr/LC_MESSAGES/make.mo
 share/locale/ja/LC_MESSAGES/make.mo
 share/locale/ko/LC_MESSAGES/make.mo
@@ -18,11 +21,6 @@ share/locale/pt_BR/LC_MESSAGES/make.mo
 share/locale/ru/LC_MESSAGES/make.mo
 share/locale/sv/LC_MESSAGES/make.mo
 share/locale/tr/LC_MESSAGES/make.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/make.mo
-@dir share/locale/zh_CN/LC_MESSAGES
-@dir share/locale/zh_CN
-@dir share/locale/hr/LC_MESSAGES
-@dir share/locale/hr
-@dir share/locale/he/LC_MESSAGES
-@dir share/locale/he
-@exec install-info --info-dir=%D/info %D/info/make.info
