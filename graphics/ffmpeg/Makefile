@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/19 18:16:34 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2003/08/02 10:26:54 jolan Exp $
 
 COMMENT=	"audio/video converter and streamer"
-DISTNAME=	ffmpeg-20030622
+DISTNAME=	ffmpeg-20030725
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/0.6.0/contrib/
+MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/0.6.1/contrib/
 
 HOMEPAGE=	http://ffmpeg.sourceforge.net/
 
@@ -20,7 +20,8 @@ NO_REGRESS=	Yes	# Possible to adapt with some work
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=simple
-CONFIGURE_ARGS+=--cc=${CC} --make=gmake ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=--cc=${CC} --make=gmake ${CONFIGURE_SHARED} \
+		--disable-ffserver
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/ffmpeg
@@ -33,7 +34,7 @@ do-install:
 		${WRKBUILD}/libavformat/libavformat.a ${PREFIX}/lib
 .if !defined(NO_SHARED_LIBS)
 	${INSTALL_DATA} ${WRKBUILD}/libavcodec/libavcodec.so \
-		${PREFIX}/lib/libavcodec.so.0.0
+		${PREFIX}/lib/libavcodec.so.0.1
 .endif
 	
 .include <bsd.port.mk>

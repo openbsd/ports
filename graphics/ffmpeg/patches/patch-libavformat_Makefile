@@ -1,11 +1,11 @@
-$OpenBSD: patch-libavformat_Makefile,v 1.1.1.1 2003/07/19 18:16:34 jolan Exp $
---- libavformat/Makefile.orig	Sun Jun 22 06:28:09 2003
-+++ libavformat/Makefile	Wed Jul 16 20:45:11 2003
+$OpenBSD: patch-libavformat_Makefile,v 1.2 2003/08/02 10:26:54 jolan Exp $
+--- libavformat/Makefile.orig	2003-07-25 04:22:57.000000000 -0500
++++ libavformat/Makefile	2003-07-31 21:45:46.000000000 -0500
 @@ -6,7 +6,7 @@ include ../config.mak
  
  VPATH=$(SRC_PATH)/libavformat
  
--CFLAGS= $(OPTFLAGS) -Wall -g -I.. -I$(SRC_PATH) -I$(SRC_PATH)/libavcodec -DHAVE_AV_CONFIG_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE
+-CFLAGS= $(OPTFLAGS) -Wall -g -I.. -I$(SRC_PATH) -I$(SRC_PATH)/libavcodec -DHAVE_AV_CONFIG_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE -Werror
 +CFLAGS= $(OPTFLAGS) -Wall -I.. -I$(SRC_PATH) -I$(SRC_PATH)/libavcodec -DHAVE_AV_CONFIG_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE
  
  OBJS= utils.o cutils.o allformats.o
