@@ -1,0 +1,29 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2002/12/11 15:34:55 grange Exp $
+--- Makefile.orig	Thu Nov 14 20:09:54 2002
++++ Makefile	Wed Dec 11 13:42:53 2002
+@@ -2,12 +2,12 @@
+ # $Id: patch-Makefile,v 1.1.1.1 2002/12/11 15:34:55 grange Exp $
+ #
+ 
+-BINDIR = /usr/local/bin
+-MANDIR = /usr/local/man/man8
++BINDIR ?= /usr/local/bin
++MANDIR ?= /usr/local/man/man8
+ 
+-CC	= gcc
++CC	?= gcc
+ # XPG3 regular expressions (GNU/BSD/SVR4)
+-CFLAGS	= -Wall -O -DUSE_REGEXP
++CFLAGS	+= -DUSE_REGEXP
+ # Others
+ #CFLAGS	= -Wall -O
+ 
+@@ -16,7 +16,7 @@ PROG	= sma
+ OBJS    = sma.o getopt.o parse.o utils.o hash.o html.o ascii.o init.o
+ 
+ $(PROG): $(OBJS)
+-	$(CC) $(CFLAGS) -o $(PROG) $(OBJS) 
++	$(CC) $(LDFLAGS) -o $(PROG) $(OBJS) 
+ 	cp docs/$(MAN) .
+ 
+ clean:

@@ -1,0 +1,7 @@
+SMA is a program that analyses mail log files and produces a nice
+summary of mail activity. It works by taking its input from files
+or standard input and outputting the results to standard output or
+file. All error messages and debugging information are printed to
+standard error.
+
+WWW: ${HOMEPAGE}

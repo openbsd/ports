@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/12/11 15:34:55 grange Exp $
+bin/sma
+man/man8/sma.8
+share/doc/sma/README
+share/examples/sma/sma.conf
+@dirrm share/examples/sma
+@dirrm share/doc/sma
