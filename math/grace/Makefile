@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/31 20:09:19 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2001/12/03 01:59:24 pvalchev Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
 COMMENT=	"GRaphing, Advanced Computation and Exploration of data"
 
-DISTNAME=	grace-5.1.4
+DISTNAME=	grace-5.1.5
 CATEGORIES=     math
-NEED_VERSION=	1.419
+NEED_VERSION=	1.500
 
 HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/
 
@@ -37,16 +37,27 @@ LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		tiff.35::graphics/tiff \
 		pdf.2::print/pdflib
 
-NO_REGRESS=	Yes
-
 FLAVORS=	no_x11 fftw netcdf xmhtml
 FLAVOR?=
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--without-x
+NO_REGRESS=		Yes
+.  if ${FLAVOR:L:Mxmhtml}
+ERRORS+=	"Fatal: Flavors 'no_x11' and 'xmhtml' are mutually exclusive."
+.  endif
 .else
+# 'make regress' needs X11 running
+REGRESS_IS_INTERACTIVE=	Yes
+REGRESS_FLAGS=		DISPLAY=${DISPLAY}
 USE_X11=		Yes
 USE_MOTIF=		openmotif
+.  if ${FLAVOR:L:Mxmhtml}
+LIB_DEPENDS+=		XmHTML.1::www/xmhtml
+CONFIGURE_ARGS+=	--enable-xmhtml
+.  else
+CONFIGURE_ARGS+=	--disable-xmhtml
+.  endif
 .endif
 
 .if ${FLAVOR:L:Mfftw}
@@ -61,13 +72,6 @@ LIB_DEPENDS+=		netcdf.1::math/netcdf
 CONFIGURE_ARGS+=	--enable-netcdf
 .else
 CONFIGURE_ARGS+=	--disable-netcdf
-.endif
-
-.if ${FLAVOR:L:Mxmhtml}
-LIB_DEPENDS+=		XmHTML.1::www/xmhtml
-CONFIGURE_ARGS+=	--enable-xmhtml
-.else
-CONFIGURE_ARGS+=	--disable-xmhtml
 .endif
 
 .include <bsd.port.mk>

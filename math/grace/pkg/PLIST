@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/13 18:53:55 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/12/03 01:59:24 pvalchev Exp $
+%%no_x11%%
+!%%no_x11%%
 grace/auxiliary/README
 grace/auxiliary/convcal.c
 grace/auxiliary/magic.grace
@@ -6,8 +8,6 @@ grace/bin/convcal
 grace/bin/fdf2fit
 grace/bin/gracebat
 grace/bin/grconvert
-%%no_x11%%
-!%%no_x11%%
 grace/doc/10.1.dat
 grace/doc/10a.dat
 grace/doc/10b.dat
@@ -25,6 +25,7 @@ grace/doc/Tutorial.dvi
 grace/doc/Tutorial.html
 grace/doc/UsersGuide.dvi
 grace/doc/UsersGuide.html
+grace/doc/convcal.1
 grace/doc/grace.1
 grace/doc/gracebat.1
 grace/doc/grconvert.1
@@ -61,6 +62,7 @@ grace/examples/motif.agr
 grace/examples/pie.agr
 grace/examples/polar.agr
 grace/examples/props.agr
+grace/examples/reciprocal.agr
 grace/examples/regions.par
 grace/examples/spectrum.agr
 grace/examples/stackedb.agr
@@ -81,6 +83,7 @@ grace/examples/txttrans.agr
 grace/examples/txyr.agr
 grace/examples/typeset.agr
 grace/examples/vmap.agr
+grace/examples/xycolor.agr
 grace/examples/xysize.agr
 grace/examples/xyz.agr
 grace/fonts/FontDataBase
