@@ -1,45 +1,28 @@
-$OpenBSD: patch-bin_ant,v 1.1.1.1 2001/06/17 12:15:52 reinhard Exp $
---- bin/ant	Sun Apr 15 17:35:15 2001
-+++ bin/ant2	Sun Apr 15 17:37:27 2001
-@@ -21,14 +21,7 @@ if $cygwin; then
- fi
+$OpenBSD: patch-bin_ant,v 1.2 2003/02/08 15:38:34 reinhard Exp $
+--- bin/ant.orig	Wed Oct  2 10:55:12 2002
++++ bin/ant	Thu Jan 30 05:59:39 2003
+@@ -34,14 +34,7 @@ case "`uname`" in
+ esac
  
- if [ "$ANT_HOME" = "" ] ; then
+ if [ -z "$ANT_HOME" ] ; then
 -  # try to find ANT
 -  if [ -d /opt/ant ] ; then 
 -    ANT_HOME=/opt/ant
 -  fi
 -
--  if [ -d ${HOME}/opt/ant ] ; then 
--    ANT_HOME=${HOME}/opt/ant
+-  if [ -d "${HOME}/opt/ant" ] ; then 
+-    ANT_HOME="${HOME}/opt/ant"
 -  fi
-+    ANT_HOME=_anthome_
++  ANT_HOME=_anthome_
  
    ## resolve links - $0 may be a link to ant's home
-   PRG=$0
-@@ -48,6 +41,16 @@ if [ "$ANT_HOME" = "" ] ; then
- 
+   PRG="$0"
+@@ -80,7 +73,7 @@ if $cygwin ; then
  fi
  
-+# trying to find ANT_LIBS
-+if  [ "$ANT_LIBS" = "" ] ; then
-+  # try to find ANT
-+    if [ -d _antlibs_ ] ; then
-+        ANT_LIBS=_antlibs_
-+    fi
-+    else
-+	echo "ANT_LIBS was not found."
-+fi
-+
- if [ "$JAVA_HOME" != "" ] ; then
-   if [ "$JAVACMD" = "" ] ; then 
-     JAVACMD=$JAVA_HOME/bin/java
-@@ -59,7 +62,7 @@ else
- fi
-  
- # add in the dependency .jar files
--DIRLIBS=${ANT_HOME}/lib/*.jar
-+DIRLIBS=${ANT_LIBS}/*.jar
- for i in ${DIRLIBS}
- do
-     # if the directory is empty, then it will return the input string
+ # set ANT_LIB location
+-ANT_LIB="${ANT_HOME}/lib"
++ANT_LIB="_antlibs_"
+ 
+ if [ -z "$JAVACMD" ] ; then 
+   if [ -n "$JAVA_HOME"  ] ; then
