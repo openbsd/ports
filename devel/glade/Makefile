@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/07 20:55:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/24 12:13:44 espie Exp $
 
 COMMENT=		"free user interface builder for GTK+ and GNOME"
 V=			0.5.11
 DISTNAME=		glade-${V}
 CATEGORIES=		devel
-NEED_VERSION=   	1.473
+NEED_VERSION=   	1.474
 HOMEPAGE=		http://glade.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
@@ -15,9 +15,9 @@ PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfi
                         ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
                         patch-*
 
-LIB_DEPENDS=		gtk.1.2::x11/gtk+
-RUN_DEPENDS=  		automake::devel/automake \
-			autoconf::devel/autoconf
+LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
+RUN_DEPENDS=  		::devel/automake \
+			::devel/autoconf
 
 FLAVORS=		gnome
 FLAVOR?=
@@ -34,7 +34,7 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${FLAVOR:L:Mgnome}
-LIB_DEPENDS+=		gnome.36::x11/gnome/libs
+LIB_DEPENDS+=		gnome.36,art_lgpl.4,gnomesupport.0,gnomeui.46::x11/gnome/libs
 .else
 CONFIGURE_ARGS+=	--disable-gnome
 .endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/07 20:55:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/24 12:13:44 espie Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
 V=			0.16
@@ -25,7 +25,7 @@ FLAVOR?=
 
 LIB_DEPENDS=		intl.1::devel/gettext \
 			xml.9::textproc/libxml1 \
-			gtk.1.2::x11/gtk+
+			gtk.1.2,gdk.1.2::x11/gtk+
 
 USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
@@ -34,7 +34,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${FLAVOR:L:Mgnome}
-LIB_DEPENDS+=		gnome.36::x11/gnome/libs
+LIB_DEPENDS+=		gnome.36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs
 CONFIGURE_ARGS+=	--with-gnome
 .else
 CONFIGURE_ARGS+=	--without-gnome
