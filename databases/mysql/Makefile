@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2001/09/28 17:43:01 brad Exp $
+# $OpenBSD: Makefile,v 1.58 2001/10/06 03:55:34 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -49,6 +49,10 @@ CONFIGURE_ARGS+= --enable-static \
 		 --without-gemini
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/pth" \
 		LDFLAGS="-L${LOCALBASE}/lib/pth"
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
+		patch-*
 
 FLAVORS=	max
 FLAVOR?=
