@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/10 15:38:02 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/09 17:18:23 xsa Exp $
 
 COMMENT=	"Zope folder-like product to store many more items"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-MODULES=	zope
+MODULES=	www/zope
 
 WRKDIST=	${WRKDIR}/BTreeFolder2
 
