@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2000/09/24 07:04:14 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2000/10/08 20:37:08 brad Exp $
 
 DISTNAME=	squid-2.3.STABLE4
 PKGNAME=	squid-2.3
@@ -29,6 +29,13 @@ SUBST_VARS=	STATEDIR
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--localstatedir="${STATEDIR}"
+
+FLAVORS=	transparent
+FLAVOR?=
+
+.if ${FLAVOR:L:Mtransparent}
+CONFIGURE_ARGS+= --enable-ipf-transparent
+.endif
 
 MAKE_FILE=	makefile
 
