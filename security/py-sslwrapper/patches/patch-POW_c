@@ -1,6 +1,15 @@
-$OpenBSD: patch-POW_c,v 1.1 2002/06/16 19:59:36 pvalchev Exp $
---- POW.c.orig	Sun Jun 16 13:58:01 2002
-+++ POW.c	Sun Jun 16 13:58:21 2002
+$OpenBSD: patch-POW_c,v 1.2 2003/03/30 06:58:14 shell Exp $
+--- POW.c.orig	Fri Nov 23 12:03:09 2001
++++ POW.c	Sun Mar 23 12:51:43 2003
+@@ -34,7 +34,7 @@
+ /*                                                                           */
+ /*****************************************************************************/
+ 
+-#include <python2.1/Python.h>
++#include <python2.2/Python.h>
+ 
+ #include <openssl/crypto.h>
+ #include <openssl/rand.h>
 @@ -46,6 +46,7 @@
  #include <openssl/err.h>
  #include <openssl/md5.h>
