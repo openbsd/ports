@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/07/17 08:24:25 wilfried Exp $
+# $OpenBSD: Makefile,v 1.18 2003/07/24 12:18:41 naddy Exp $
 
 NOT_FOR_ARCHS=	vax m68k hppa
 
@@ -21,7 +21,7 @@ MASTER_SITES=	http://ftp.mozilla.org/pub/firebird/releases/${VER}/
 DISTFILES=	MozillaFirebird-${VER}-source.tar.bz2
 
 MODULES=	gcc3
-MODGCC3_ARCHES=	sparc64
+MODGCC3_ARCHES=	alpha sparc64
 MODGCC3_LANGS=	C++
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \
