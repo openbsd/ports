@@ -1,0 +1,12 @@
+$OpenBSD: patch-builder_main_c,v 1.1 2004/01/08 16:23:05 naddy Exp $
+--- builder/main.c.orig	2004-01-08 17:17:30.000000000 +0100
++++ builder/main.c	2004-01-08 17:17:41.000000000 +0100
+@@ -686,7 +686,7 @@ void output_interpreter(FILE* dest,
+ 	  if (op->type == extop && op->versions&vmask)
+ 	    {
+ 	      fprintf(dest, "        case 0x%x: /* %s */\n", op->value, op->name);
+-	      fprintf(dest, "#ifdef DEBUG\nprintf(\"ExtOp: %s\n\");\n#endif\n", op->name);
++	      fprintf(dest, "#ifdef DEBUG\nprintf(\"ExtOp: %s\\n\");\n#endif\n", op->name);
+ 	      pcadd = 3;
+ 	      if (op->flags.islong)
+ 		{
