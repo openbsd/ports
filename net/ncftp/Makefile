@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/15 05:04:57 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/20 04:20:18 kevlo Exp $
 
 DISTNAME=       	ncftp-2.4.3
 CATEGORIES=		net
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
+LIB_DEPENDS=    	intl:${PORTSDIR}/devel/gettext
 GNU_CONFIGURE=		yes
 
 .include <bsd.port.mk>
