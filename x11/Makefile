@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.194 2004/07/28 04:54:59 marcm Exp $
+# $OpenBSD: Makefile,v 1.195 2004/10/07 06:21:21 jolan Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -30,6 +30,7 @@
 #    SUBDIR += camltk41
      SUBDIR += chbg
      SUBDIR += ctwm
+     SUBDIR += cwm
      SUBDIR += dclock
      SUBDIR += e16keyedit
      SUBDIR += emiclock
