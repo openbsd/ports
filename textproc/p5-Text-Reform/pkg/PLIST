@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/15 06:14:36 naddy Exp $
-@pkgcfl p5-Text-Autoformat-1.0*
+@comment $OpenBSD: PLIST,v 1.2 2003/12/31 13:51:32 naddy Exp $
 ${P5SITE}/Text/Reform.pm
 ${P5SITE}/Text/demo.pl
 ${P5SITE}/Text/demo_columns.pl
 ${P5SITE}/Text/demo_filler.pl
 ${P5SITE}/Text/demo_table.pl
 ${P5SITE}/Text/demo_ws.pl
+@comment ${P5ARCH}/auto/Text/Reform/.packlist
 man/man3p/Text::Reform.3p
-
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Text/Reform
+@comment @dirrm ${P5ARCH}/auto/Text
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Text

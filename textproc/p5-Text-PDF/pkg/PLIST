@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/08/19 05:23:16 shell Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/12/31 13:51:32 naddy Exp $
 bin/pdfbklt.plx
 bin/pdfrevert.plx
 bin/pdfstamp.plx
@@ -19,6 +19,7 @@ ${P5SITE}/Text/PDF/TTFont.pm
 ${P5SITE}/Text/PDF/TTFont0.pm
 ${P5SITE}/Text/PDF/Utils.pm
 ${P5SITE}/Text/PDF/changes
+@comment ${P5ARCH}/auto/Text/PDF/.packlist
 man/man3p/Text::PDF::Array.3p
 man/man3p/Text::PDF::Bool.3p
 man/man3p/Text::PDF::Dict.3p
@@ -46,4 +47,10 @@ share/examples/p5-Text-PDF/pdflines.pl
 share/examples/p5-Text-PDF/squares.pdf
 share/examples/p5-Text-PDF/test.pdf
 @dirrm share/examples/p5-Text-PDF
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Text/PDF
+@comment @dirrm ${P5ARCH}/auto/Text
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
 @dirrm ${P5SITE}/Text/PDF
+@dirrm ${P5SITE}/Text

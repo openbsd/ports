@@ -1,6 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/29 16:52:03 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/31 13:51:32 naddy Exp $
 ${P5ARCH}/Text/CSV_XS.pm
+@comment ${P5ARCH}/auto/Text/CSV_XS/.packlist
 ${P5ARCH}/auto/Text/CSV_XS/CSV_XS.bs
 ${P5ARCH}/auto/Text/CSV_XS/CSV_XS.so
 man/man3p/Text::CSV_XS.3p
+@dirrm man/man3p
 @dirrm ${P5ARCH}/auto/Text/CSV_XS
+@dirrm ${P5ARCH}/auto/Text
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}/Text
+@dirrm ${P5ARCH}
