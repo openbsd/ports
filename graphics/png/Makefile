@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2001/03/18 02:07:45 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2001/03/25 17:32:23 brad Exp $
+
+COMMENT=	"library for manipulating PNG images"
 
 DISTNAME=	libpng-1.0.9
 PKGNAME=	png-1.0.9
 CATEGORIES=	graphics
-NEED_VERSION=	1.336
+NEED_VERSION=	1.363
 MASTER_SITES=	ftp://ftp.libpng.org/pub/png/src/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= libpng
