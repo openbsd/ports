@@ -3,11 +3,11 @@
 # Date created:		14 June 1997
 # Whom:			Dmitrij Tejblum <dima@tejblum.dnttm.rssi.ru>
 #
-# $OpenBSD: Makefile,v 1.2 1999/10/30 13:00:50 turan Exp $
+# $OpenBSD: Makefile,v 1.3 1999/11/03 01:19:24 turan Exp $
 # $FreeBSD: Makefile,v 1.10 1999/01/06 17:11:23 dt Exp $
 #
 
-BROKEN=		unshlight.c:56: structure has no member named `f_type'
+BROKEN=		unshlight.c:56: structure has no member named f_type
 
 DISTNAME=	Sharity-Light.1.2
 PKGNAME=	sharity-light-1.2
