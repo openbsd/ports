@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 1999/04/18 20:54:49 brad Exp $
+# $OpenBSD: Makefile,v 1.27 1999/05/08 19:18:27 brad Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -26,7 +26,7 @@
 #    SUBDIR += hobbes-icons-xpm
 #    SUBDIR += hpscan
      SUBDIR += imlib
-#    SUBDIR += jbigkit
+     SUBDIR += jbigkit
      SUBDIR += jpeg
      SUBDIR += mpeg-lib
 #    SUBDIR += mpeg2codec
