@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/08/22 13:26:40 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/04/16 08:40:59 wilfried Exp $
 bin/exmh
 bin/exmh-async
 bin/exmh-bg
 bin/exmh-strip
 bin/ftp.expect
 bin/inc.expect
+man/man1/exmh.1
 share/exmh/PgpDecryptExpect
 share/exmh/addr.tcl
 share/exmh/aliases.tcl
@@ -74,7 +75,6 @@ share/exmh/folder.tcl
 share/exmh/folderNew.tcl
 share/exmh/fontsel.tcl
 share/exmh/ftoc.tcl
-share/exmh/ftocColor.tcl
 share/exmh/ftocFind.tcl
 share/exmh/ftp_get.tcl
 share/exmh/getnews.tcl
@@ -199,6 +199,8 @@ share/exmh/seditQP.tcl
 share/exmh/seditSel.tcl
 share/exmh/select.tcl
 share/exmh/send.tcl
+share/exmh/sequences.tcl
+share/exmh/seqwin.tcl
 share/exmh/sound.tcl
 share/exmh/source.tcl
 share/exmh/tclIndex
@@ -208,7 +210,6 @@ share/exmh/textSelect.tcl
 share/exmh/thread.tcl
 share/exmh/timer.bitmap
 share/exmh/tioga.tcl
-share/exmh/unseenwin.tcl
 share/exmh/uri.tcl
 share/exmh/url.bitmap
 share/exmh/urlFace.tcl
@@ -219,7 +220,6 @@ share/exmh/widgetText.tcl
 share/exmh/widgets.tcl
 share/exmh/xns.tcl
 share/exmh/xnsgetmail.exp
-man/man1/exmh.1
 @dirrm share/exmh/html
 @dirrm share/exmh/bitmaps
 @dirrm share/exmh

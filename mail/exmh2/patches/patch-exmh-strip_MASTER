@@ -1,9 +1,0 @@
-$OpenBSD: patch-exmh-strip_MASTER,v 1.2 2001/08/22 13:26:40 naddy Exp $
---- exmh-strip.MASTER.orig	Thu Jun 28 13:23:19 2001
-+++ exmh-strip.MASTER	Thu Jun 28 13:23:49 2001
-@@ -1,4 +1,4 @@
--#!/usr10/home/welch/TclPro1.4/linux-ix86/bin/protclsh83.bin
-+#!tclsh
- #
- # Utility to strip out attachments from MIME messages.
- # They are replaced with references to the external files.
