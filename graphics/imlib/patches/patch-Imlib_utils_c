@@ -1,6 +1,6 @@
-$OpenBSD: patch-Imlib_utils_c,v 1.1 2003/06/20 14:53:12 avsm Exp $
---- Imlib/utils.c.orig	Fri Mar 22 14:43:04 2002
-+++ Imlib/utils.c	Wed Jun 18 20:59:57 2003
+$OpenBSD: patch-Imlib_utils_c,v 1.2 2003/09/01 16:53:00 avsm Exp $
+--- Imlib/utils.c.orig	2002-03-22 09:43:04.000000000 -0500
++++ Imlib/utils.c	2003-08-28 13:19:43.000000000 -0400
 @@ -801,6 +801,7 @@ Imlib_crop_and_clone_image(ImlibData * i
    unsigned char      *ptr1, *ptr2;
    ImlibImage         *im2;
@@ -67,3 +67,12 @@ $OpenBSD: patch-Imlib_utils_c,v 1.1 2003/06/20 14:53:12 avsm Exp $
        im2->filename = malloc(strlen(s) + 1);
        if (im2->filename)
  	strcpy(im2->filename, s);
+@@ -1596,7 +1602,7 @@ Imlib_create_image_from_xpm_data(ImlibDa
+ 		{
+ 		  if (line[k] != ' ')
+ 		    {
+-		      sscanf(&line[k], "%65536s", s);
++		      sscanf(&line[k], "%255s", s);
+ 		      k += strlen(s);
+ 		      if (!strcmp(s, "c"))
+ 			iscolor = 1;
