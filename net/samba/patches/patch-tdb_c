@@ -1,0 +1,138 @@
+$OpenBSD: patch-tdb_c,v 1.1 2001/05/16 00:59:48 matt Exp $
+
+This patch is in the Samba CVS tree.  It should be included in Samba
+2.2.1.
+
+--- tdb/tdb.c.orig	Sat Apr 14 02:41:18 2001
++++ tdb/tdb.c	Fri May 11 11:37:15 2001
+@@ -71,24 +71,24 @@ TDB_DATA tdb_null;
+ /* all contexts, to ensure no double-opens (fcntl locks don't nest!) */
+ static TDB_CONTEXT *tdbs = NULL;
+ 
+-static void *tdb_munmap(void *ptr, tdb_len size)
++static void tdb_munmap(TDB_CONTEXT *tdb)
+ {
+ #ifdef HAVE_MMAP
+-	munmap(ptr, size);
++	if (tdb->map_ptr) munmap(tdb->map_ptr, tdb->map_size);
+ #endif
+-	return NULL;
++	tdb->map_ptr = NULL;
+ }
+ 
+-static void *tdb_mmap(tdb_len size, int read_only, int fd)
++static void tdb_mmap(TDB_CONTEXT *tdb)
+ {
+-	void *ret = NULL;
+ #ifdef HAVE_MMAP
+-	ret = mmap(NULL, size, PROT_READ | (read_only ? 0 : PROT_WRITE), MAP_SHARED|MAP_FILE, fd, 0);
+-
+-	if (ret == (void *)-1)
+-		ret = NULL;
++	if (!(tdb->flags & TDB_NOMMAP))
++		tdb->map_ptr = mmap(NULL, tdb->map_size, 
++				    PROT_READ|(tdb->read_only? 0:PROT_WRITE), 
++				    MAP_SHARED|MAP_FILE, tdb->fd, 0);
++#else
++	tdb->map_ptr = NULL;
+ #endif
+-	return ret;
+ }
+ 
+ /* Endian conversion: we only ever deal with 4 byte quantities */
+@@ -203,10 +203,9 @@ static int tdb_oob(TDB_CONTEXT *tdb, tdb
+ 	if (st.st_size <= (size_t)offset) return TDB_ERRCODE(TDB_ERR_IO, -1);
+ 
+ 	/* Unmap, update size, remap */
+-	if (tdb->map_ptr) tdb->map_ptr=tdb_munmap(tdb->map_ptr, tdb->map_size);
++	tdb_munmap(tdb);
+ 	tdb->map_size = st.st_size;
+-	if (!(tdb->flags & TDB_NOMMAP))
+-		tdb->map_ptr = tdb_mmap(tdb->map_size, tdb->read_only,tdb->fd);
++	tdb_mmap(tdb);
+ 	return 0;
+ }
+ 
+@@ -439,20 +438,37 @@ static int tdb_expand(TDB_CONTEXT *tdb, 
+            the database up to a multiple of TDB_PAGE_SIZE */
+ 	size = TDB_ALIGN(tdb->map_size + size*10, TDB_PAGE_SIZE) - tdb->map_size;
+ 
+-	/* expand the file itself */
+-        if (!(tdb->flags & TDB_INTERNAL)) {
+-		lseek(tdb->fd, tdb->map_size + size - 1, SEEK_SET);
+-		if (write(tdb->fd, &b, 1) != 1) goto fail;
+-        }
++	if (!(tdb->flags & TDB_INTERNAL))
++		tdb_munmap(tdb);
+ 
+-	if (!(tdb->flags & TDB_INTERNAL) && tdb->map_ptr)
+-		tdb->map_ptr = tdb_munmap(tdb->map_ptr, tdb->map_size);
++	/*
++	 * We must ensure the file is unmapped before doing this
++	 * to ensure consistency with systems like OpenBSD where
++	 * writes and mmaps are not consistent.
++	 */
++
++	/* expand the file itself */
++	if (!(tdb->flags & TDB_INTERNAL)) {
++		if (lseek(tdb->fd, tdb->map_size + size - 1, SEEK_SET)!=tdb->map_size + size - 1)
++			goto fail;
++		if (write(tdb->fd, &b, 1) != 1)
++			goto fail;
++	}
+ 
+ 	tdb->map_size += size;
+ 
+ 	if (tdb->flags & TDB_INTERNAL)
+ 		tdb->map_ptr = realloc(tdb->map_ptr, tdb->map_size);
+ 
++	/*
++	 * We must ensure the file is remapped before adding the space
++	 * to ensure consistency with systems like OpenBSD where
++	 * writes and mmaps are not consistent.
++	 */
++
++	/* We're ok if the mmap fails as we'll fallback to read/write */
++	tdb_mmap(tdb);
++
+ 	/* form a new freelist record */
+ 	memset(&rec,'\0',sizeof(rec));
+ 	rec.rec_len = size - sizeof(rec);
+@@ -461,9 +477,6 @@ static int tdb_expand(TDB_CONTEXT *tdb, 
+ 	offset = tdb->map_size - size;
+ 	if (tdb_free(tdb, offset, &rec) == -1) goto fail;
+ 
+-	if (!(tdb->flags & TDB_NOMMAP))
+-		tdb->map_ptr = tdb_mmap(tdb->map_size, 0, tdb->fd);
+-
+ 	tdb_unlock(tdb, -1, F_WRLCK);
+ 	return 0;
+  fail:
+@@ -1135,8 +1148,7 @@ TDB_CONTEXT *tdb_open(char *name, int ha
+ 	tdb.inode = st.st_ino;
+         tdb.locked = calloc(tdb.header.hash_size+1, sizeof(tdb.locked[0]));
+         if (!tdb.locked) goto fail;
+-	if (!(tdb.flags & TDB_NOMMAP))
+-		tdb.map_ptr = tdb_mmap(st.st_size, tdb.read_only, tdb.fd);
++	tdb_mmap(&tdb);
+ 	if (locked) {
+ 		tdb_clear_spinlocks(&tdb);
+ 		tdb_brlock(&tdb, ACTIVE_LOCK, F_UNLCK, F_SETLK);
+@@ -1155,7 +1167,7 @@ TDB_CONTEXT *tdb_open(char *name, int ha
+  fail:
+         if (tdb.name) free(tdb.name);
+ 	if (tdb.fd != -1) close(tdb.fd);
+-	if (tdb.map_ptr) tdb_munmap(tdb.map_ptr, tdb.map_size);
++	tdb_munmap(&tdb);
+ 	return NULL;
+ }
+ 
+@@ -1167,7 +1179,7 @@ int tdb_close(TDB_CONTEXT *tdb)
+ 
+ 	if (tdb->map_ptr) {
+ 		if (tdb->flags & TDB_INTERNAL) free(tdb->map_ptr);
+-		else tdb_munmap(tdb->map_ptr, tdb->map_size);
++		else tdb_munmap(tdb);
+ 	}
+ 	if (tdb->name) free(tdb->name);
+ 	if (tdb->fd != -1) {

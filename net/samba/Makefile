@@ -1,70 +1,53 @@
-# $OpenBSD: Makefile,v 1.38 2001/05/09 14:55:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2001/05/16 00:59:47 matt Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
-DISTNAME=	samba-2.0.9
+DISTNAME=	samba-2.2.0
 CATEGORIES=	net
-NEED_VERSION=	1.384
-MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
-		http://us1.samba.org/samba/ftp/ \
-		ftp://ca.samba.org/pub/samba/ \
-		ftp://ftp.uni-trier.de/pub/unix/network/samba/ \
-		ftp://ring.asahi-net.or.jp/pub/net/samba/
+NEED_VERSION=	1.396
 
 HOMEPAGE=	http://www.samba.org/
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	Daniel Hartmeier <daniel@benzedrine.cx>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
+		http://us1.samba.org/samba/ftp/ \
+		ftp://ca.samba.org/pub/samba/ \
+		ftp://ftp.uni-trier.de/pub/unix/network/samba/ \
+		ftp://ring.asahi-net.or.jp/pub/net/samba/
+
+FAKE_FLAGS+=	prefix="${WRKINST}${PREFIX}" \
+		BASEDIR="${WRKINST}${PREFIX}" \
+		LIBDIR="${WRKINST}${PREFIX}/lib/samba" \
+		SWATDIR="${WRKINST}${PREFIX}/share/swat" \
+		SBINDIR="${WRKINST}${PREFIX}/libexec"
+
 SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= autoconf
-CONFIGURE_ENV=	LIBS=-lcurses
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/samba" \
 		--localstatedir="/var" \
-		--with-privatedir="${SYSCONFDIR}/samba" \
+		--sbindir="${PREFIX}/libexec" \
+		--with-acl-support \
+		--with-configdir="${SYSCONFDIR}/samba" \
 		--with-lockdir="/var/spool/lock" \
-		--with-swatdir="${PREFIX}/swat"
-
-FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}" \
-		LIBDIR="${WRKINST}${PREFIX}/lib/samba" \
-		SWATDIR="${WRKINST}${PREFIX}/swat"
+		--with-privatedir="${SYSCONFDIR}/samba" \
+		--with-swatdir="${PREFIX}/share/swat" \
+		--with-ssl \
+		--with-sslinc=/usr/include/ssl \
+		--with-ssllib=/usr/lib
 
 # Warning: these aditional options have not been tested.
+#CONFIGURE_ARGS+=       --with-afs
+#CONFIGURE_ARGS+=       --with-dfs
+#CONFIGURE_ARGS+=       --with-krb4=/etc/kerberosIV
+#CONFIGURE_ARGS+=       --with-krb5=base-dir
 
-# uncomment these to add SSL support, note that this is only useful
-# for connections with other samba clients, Windows machines do not
-# support SSL encrypted SMB
-#CONFIGURE_ARGS+=	--with-ssl
-#CONFIGURE_ARGS+=	--with-sslinc=/usr/include/ssl
-#CONFIGURE_ARGS+=	--with-ssllib=/usr/lib
-
-# uncomment this if you want to build the smbwrapper library
-#CONFIGURE_ARGS+=	--with-smbwrapper
-
-# uncomment this if you want to include support for AFS
-#CONFIGURE_ARGS+=	--with-afs
-
-# uncomment this if you want to include support for DFS
-#CONFIGURE_ARGS+=	--with-dfs
-
-# uncomment this if you want support for Kerberos IV
-#CONFIGURE_ARGS+=	--with-krb4=/etc/kerberosIV
-
-# uncomment this if you want support for Kerberos 5
-#CONFIGURE_ARGS+=	--with-krb5=base-dir
-
-# uncomment this if you want LDAP support
-#CONFIGURE_ARGS+=	--with-ldap
-
-# uncomment this if you want NISPLUS password database support
-#CONFIGURE_ARGS+=	--with-nisplus
-
-# uncomment this if you want NISPLUS_HOME support
-#CONFIGURE_ARGS+=	--with-nisplus-home
+MAKE_FLAGS=	PASSWD_PROGRAM="/usr/bin/passwd"
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/source
 
@@ -102,3 +85,4 @@ post-install:
 	@chmod 111 ${PREFIX}/bin/smbpasswd
 
 .include <bsd.port.mk>
+
