@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/08/14 01:01:16 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2003/08/14 21:38:36 avsm Exp $
 # Based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
 #
@@ -46,13 +46,14 @@ DISTFILES=	ghc-${FULLVER}-src.tar.bz2  ghc-${BOOTVER}-src.tar.bz2:0 \
 		ghc-regress-${FULLVER}.tar.bz2:2
 
 .if ${MACHINE_ARCH} == "i386"
-A="x86"
+A=x86
 .elif ${MACHINE_ARCH} == "sparc"
-A="sparc"
+A=sparc
 .else
-A="unreg"
+A=unreg
 .endif
 DISTFILES+=	ghc-${BOOTVER}-${A}-hc.tar.bz2:0
+SUPDISTFILES=	ghc-${BOOTVER}-x86-hc.tar.bz2:0 ghc-${BOOTVER}-sparc-hc.tar.bz2:0
 
 REGRESS_DEPENDS=::lang/python/2.2
 REGRESS_RESULT=	${WRKSRC}/actual.result
