@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2004/06/09 18:43:16 lebel Exp $
+# $OpenBSD: Makefile,v 1.94 2004/07/03 22:09:08 jolan Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -34,8 +34,6 @@ PATCHFILES+=	6.3.${p}:0
 PATCH_LIST=     patch-* sup-m68k-*
 .elif (${MACHINE_ARCH} == "vax")
 PATCH_LIST=     patch-* sup-vax-*
-.elif (${MACHINE_ARCH} == "hppa")
-PATCH_LIST=     patch-* sup-hppa-*
 .endif
 
 # donation-ware
