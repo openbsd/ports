@@ -1,0 +1,32 @@
+--- window.c.orig	Mon Aug  9 23:55:06 1999
++++ window.c	Tue Aug 10 00:00:54 1999
+@@ -447,15 +447,25 @@
+     return f;
+ 
+ #ifdef PTYGROUP
+-  (void) chown(*namep, real_uid, PTYGROUP);
++  if (chown(*namep, real_uid, PTYGROUP) && !eff_uid)
+ #else
+-  (void) chown(*namep, real_uid, real_gid);
++  if (chown(*namep, real_uid, real_gid) && !eff_uid)
+ #endif
++    {
++      Msg(errno, "chown tty");
++      close(f);
++      return -1;
++    }
+ #ifdef UTMPOK
+-  (void) chmod(*namep, lflag ? TtyMode : (TtyMode & ~022));
++  if (chmod(*namep, lflag ? TtyMode : (TtyMode & ~022)) && !eff_uid)
+ #else
+-  (void) chmod(*namep, TtyMode);
++  if (chmod(*namep, TtyMode) && !eff_uid)
+ #endif
++    {
++      Msg(errno, "chmod tty");
++      close(f);
++      return -1;
++    }
+   return f;
+ }
+ 
