@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/02/16 20:09:04 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/02/17 20:50:35 sturm Exp $
 @pkgcfl symon-*
 libexec/symon
 libexec/symux
@@ -16,4 +16,4 @@ share/symon/client/SymuxClient.0
 @dirrm share/symon
 @cwd ${SYSCONFDIR}
 @extra symon.conf
-@extraunexec rm -f symux.conf
+@extraunexec rm -f ${SYSCONFDIR}/symux.conf
