@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.298 2000/06/09 20:59:46 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.299 2000/06/10 15:27:54 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -187,21 +187,27 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # NO_CDROM		- Port may not go on CDROM.  Set this string to reason.
 # NO_EXTRACT	- Use a dummy (do-nothing) extract target.
 # NO_PATCH		- Use a dummy (do-nothing) patch target.
-#
-# XXX: cygnus products do NOT use autoconf for making its main 
-#      configure from configure.in
 # USE_AUTOCONF	- Port uses autoconf (implies GNU_CONFIGURE).
-# AUTOCONF_DIR  - Where to apply autoconf (default: ${WRKSRC}).
 # USE_IMAKE		- Port uses imake.
+# HAS_CONFIGURE	- Says that the port has its own configure script.
+# GNU_CONFIGURE	- Set if you are using GNU configure (optional).
+#
+#
+# AUTOCONF_DIR  - Where to apply autoconf (default: ${WRKSRC}).
 # USE_X11		- Port uses X11.
 # NO_INSTALL_MANPAGES - For imake ports that don't like the install.man
 #						target.
-# HAS_CONFIGURE	- Says that the port has its own configure script.
-# GNU_CONFIGURE	- Set if you are using GNU configure (optional).
 #
 # CONFIGURE_STYLE
 #               - Set to value corresponding to some standard configuration
 #				  perl: perl's MakeMaker Makefile.PL
+#				  gnu [autoconf] [old] [dest]: gnu style configure (old: no
+#				  sysconfdir), (dest: add DESTDIR, does not handle it),
+#				  (autoconf: needed by port, implies gnu)
+# 				XXX: cygnus products do NOT use autoconf for making the main 
+#      			configure from configure.in
+#				  imake: port uses imake for configuration.
+#			      simple: port has its own configure script
 #
 # YACC          - yacc program to pass to configure script (default: yacc)
 #                 override with bison is port requires bison.
@@ -493,6 +499,18 @@ PKGDIR?=		${.CURDIR}/pkg
 
 PREFIX?=		${LOCALBASE}
 
+# Convert legacy variables into new CONFIGURE_STYLE
+CONFIGURE_STYLE?=
+.if defined(USE_AUTOCONF)
+CONFIGURE_STYLE+=autoconf
+.endif
+.if defined(GNU_CONFIGURE)
+CONFIGURE_STYLE+=gnu
+.endif
+.if defined(USE_IMAKE)
+CONFIGURE_STYLE+=imake
+.endif
+
 # where configuration files should go
 SYSCONFDIR?=	/etc
 .if defined(USE_GMAKE)
@@ -501,13 +519,14 @@ MAKE_PROGRAM=		${GMAKE}
 .else
 MAKE_PROGRAM=		${MAKE}
 .endif
-.if defined(USE_AUTOCONF)
-GNU_CONFIGURE= Yes
+.if ${CONFIGURE_STYLE:L:Mautoconf}
+CONFIGURE_STYLE+=gnu
 BUILD_DEPENDS+=		${AUTOCONF}:devel/autoconf
 AUTOCONF_DIR?=${WRKSRC}
 # missing ?= not an oversight
 AUTOCONF_ENV=PATH=${PORTPATH}
 .endif
+
 .if defined(USE_LIBTOOL)
 LIBTOOL?=			${LOCALBASE}/bin/libtool
 BUILD_DEPENDS+=		${LIBTOOL}:devel/libtool
@@ -582,13 +601,16 @@ CFLAGS+=		${COPTS}
 MAKE_FLAGS?=	
 .if !defined(FAKE_FLAGS)
 FAKE_FLAGS=DESTDIR=${WRKINST}
-.  if defined(GNU_CONFIGURE)
+.  if ${CONFIGURE_STYLE:L:Mgnu}
 FAKE_FLAGS+=	AM_MAKEFLAGS='DESTDIR=${WRKINST}'
 .  endif
 .endif
 
 MAKE_FILE?=		Makefile
-MAKE_ENV+=		PATH=${PORTPATH} PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} MOTIFLIB="${MOTIFLIB}" CFLAGS="${CFLAGS}"
+MAKE_ENV+=		PATH='${PORTPATH}' PREFIX='${PREFIX}' \
+	LOCALBASE='${LOCALBASE}' X11BASE=${X11BASE} \
+	MOTIFLIB='${MOTIFLIB}' CFLAGS='${CFLAGS}' \
+	TRUEPREFIX='${PREFIX}' DESTDIR=''
 
 FETCH_CMD?=		/usr/bin/ftp
 
@@ -888,7 +910,7 @@ _DEPEND_ECHO?=		echo
 ALL_TARGET?=		all
 INSTALL_TARGET?=	install
 
-.if defined(USE_IMAKE) && !defined(NO_INSTALL_MANPAGES)
+.if ${CONFIGURE_STYLE:L:Mimake} && !defined(NO_INSTALL_MANPAGES)
 INSTALL_TARGET+=	install.man
 .endif
 
@@ -1026,7 +1048,6 @@ PKGREPOSITORYSUBDIR?=	All
 PKGREPOSITORY?=		${PACKAGES}/${PKGREPOSITORYSUBDIR}
 PKGFILE?=		${PKGREPOSITORY}/${PKGNAME}${PKG_SUFX}
 
-CONFIGURE_STYLE?=
 
 CONFIGURE_SCRIPT?=	configure
 .if defined(SEPARATE_BUILD)
@@ -1036,10 +1057,19 @@ _CONFIGURE_SCRIPT=./${CONFIGURE_SCRIPT}
 .endif
 CONFIGURE_ENV+=		PATH=${PORTPATH}
 
-.if defined(GNU_CONFIGURE)
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
-CONFIGURE_ARGS+=	--sysconfdir=${SYSCONFDIR}
-HAS_CONFIGURE=		Yes
+.if ${CONFIGURE_STYLE:L:Mgnu}
+.  if ${CONFIGURE_STYLE:L:Mdest}
+CONFIGURE_ARGS+=	--prefix='$${DESTDIR}${PREFIX}'
+.  else
+CONFIGURE_ARGS+=	--prefix='${PREFIX}'
+.  endif
+.  if empty(CONFIGURE_STYLE:L:Mold)
+.    if ${CONFIGURE_STYLE:L:Mdest}
+CONFIGURE_ARGS+=	--sysconfdir='$${DESTDIR}${SYSCONFDIR}'
+.    else
+CONFIGURE_ARGS+=	--sysconfdir='${SYSCONFDIR}'
+.    endif
+.  endif
 .endif
 
 .if defined(NO_SHARED_LIBS)
@@ -1125,7 +1155,7 @@ IGNORE=	"does not require Motif"
 IGNORE=	"may not be placed on a CDROM: ${NO_CDROM}"
 .  elif (defined(RESTRICTED) && defined(NO_RESTRICTED))
 IGNORE=	"is restricted: ${RESTRICTED}"
-.  elif ((defined(USE_IMAKE) || defined(USE_X11)) && !exists(${X11BASE}))
+.  elif (!empty(CONFIGURE_STYLE:L:Mimake) || defined(USE_X11)) && !exists(${X11BASE})
 IGNORE=	"uses X11, but ${X11BASE} not found"
 .  elif defined(BROKEN)
 IGNORE=	"is marked as broken: ${BROKEN}"
@@ -1508,7 +1538,7 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 		  ${SCRIPTDIR}/configure; \
 	fi
-.    if ${CONFIGURE_STYLE:L} == "perl"
+.    if ${CONFIGURE_STYLE:L:Mperl}
 	@arch=`/usr/bin/perl -e 'use Config; print $$Config{archname}, "\n";'`; \
      cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
      /usr/bin/perl Makefile.PL \
@@ -1522,7 +1552,7 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 		INSTALLBIN='$${PREFIX}/bin' \
 		INSTALLSCRIPT='$${INSTALLBIN}'
 .    endif
-.    if defined(HAS_CONFIGURE)
+.    if ${CONFIGURE_STYLE:L:Msimple} || ${CONFIGURE_STYLE:L:Mgnu}
 	@cd ${WRKBUILD} && CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
 		CXX="${CXX}" ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
@@ -1531,7 +1561,7 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 		YACC="${YACC}" \
 		${CONFIGURE_ENV} ${_CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 .    endif
-.    if defined(USE_IMAKE)
+.    if ${CONFIGURE_STYLE:L:Mimake}
 .      if exists(${X11BASE}/lib/X11/config/ports.cf)
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF}
 .      else
@@ -1634,7 +1664,7 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIE}
 	@cd ${.CURDIR} && exec ${MAKE} run-depends lib-depends DEPENDS_TARGET=package
 	@${ECHO_MSG} "===>  Installing ${PKGNAME} from ${PKGFILE}"
 # Kludge
-.if defined(USE_IMAKE)
+.if ${CONFIGURE_STYLE:Mimake}
 	@${SUDO} mkdir -p /usr/local/lib/X11
 	@if [ ! -e /usr/local/lib/X11/app-defaults ]; then \
 		${SUDO} ln -sf /var/X11/app-defaults /usr/local/lib/X11/app-defaults; \
@@ -1654,7 +1684,7 @@ ${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
 .  if !defined(NO_INSTALL)
 	@${ECHO_MSG} "===>  Installing for ${PKGNAME}"
 # Kludge
-.    if defined(USE_IMAKE)
+.    if ${CONFIGURE_STYLE:Mimake}
 	@mkdir -p /usr/local/lib/X11
 	@if [ ! -e /usr/local/lib/X11/app-defaults ]; then \
 		ln -sf /var/X11/app-defaults /usr/local/lib/X11/app-defaults; \
