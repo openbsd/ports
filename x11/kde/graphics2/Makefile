@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/08/21 16:33:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/08/22 17:18:21 naddy Exp $
 
 COMMENT= 		"X11 toolkit, graphics applications"
 CATEGORIES=		x11 x11/kde
@@ -9,7 +9,7 @@ DIST_SUBDIR=		kde
 
 HOMEPAGE=		http://www.kde.org
 MASTER_SITES=		${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${VERSION}/distribution/tar/generic/src/
+MASTER_SITE_SUBDIR=	stable/${VERSION}/src/
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
