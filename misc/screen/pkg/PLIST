@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2003/05/05 04:40:31 brad Exp $
+@comment $OpenBSD: PLIST,v 1.19 2003/09/29 11:08:02 naddy Exp $
 bin/screen
 bin/screen-${VERSION}
 @unexec install-info --delete --info-dir=%D/info %D/info/screen.info
@@ -26,3 +26,5 @@ share/screen/utf8encodings/d6
 @dirrm share/screen/utf8encodings
 @dirrm share/screen
 @dirrm share/examples/screen
+@cwd ${SYSCONFDIR}
+@extra screenrc
