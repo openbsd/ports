@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-shared,v 1.16 2003/06/15 22:18:08 jakob Exp $
+@comment $OpenBSD: PFRAG.no-shared,v 1.17 2003/10/05 22:24:16 jakob Exp $
 lib/ethereal/plugins/${VERSION}/artnet.a
 lib/ethereal/plugins/${VERSION}/artnet.la
 lib/ethereal/plugins/${VERSION}/coseventcomm.a
@@ -9,6 +9,8 @@ lib/ethereal/plugins/${VERSION}/docsis.a
 lib/ethereal/plugins/${VERSION}/docsis.la
 lib/ethereal/plugins/${VERSION}/gryphon.a
 lib/ethereal/plugins/${VERSION}/gryphon.la
+lib/ethereal/plugins/${VERSION}/lwres.a
+lib/ethereal/plugins/${VERSION}/lwres.la
 lib/ethereal/plugins/${VERSION}/megaco.a
 lib/ethereal/plugins/${VERSION}/megaco.la
 lib/ethereal/plugins/${VERSION}/mgcp.a
