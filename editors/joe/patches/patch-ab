@@ -1,7 +1,7 @@
 *** Makefile.orig	Mon Jan 23 12:01:28 1995
---- Makefile	Mon Sep 28 16:37:20 1998
+--- Makefile	Thu Oct 15 11:28:54 1998
 ***************
-*** 10,17 ****
+*** 10,23 ****
   # to go:
   
   WHEREJOE = /usr/local/bin
@@ -10,7 +10,13 @@
   
   # If you want to use TERMINFO, you have to set
   # the following variable to 1.  Also you have to
---- 10,17 ----
+  # include some additional libraries- see below.
+  
+  TERMINFO = 0
+  
+  # You may also have to add some additional
+  # defines to get the include files to work
+--- 10,27 ----
   # to go:
   
   WHEREJOE = /usr/local/bin
@@ -19,6 +25,30 @@
   
   # If you want to use TERMINFO, you have to set
   # the following variable to 1.  Also you have to
+  # include some additional libraries- see below.
+  
++ .if defined(USE_TERMINFO)
++ TERMINFO = 1
++ .else
+  TERMINFO = 0
++ .endif
+  
+  # You may also have to add some additional
+  # defines to get the include files to work
+***************
+*** 45,51 ****
+--- 49,59 ----
+  # add '-ltinfo', '-lcurses' or '-ltermlib',
+  # depending on the system.
+  
++ .if defined(USE_TERMINFO)
++ EXTRALIBS = -lcurses
++ .else
+  EXTRALIBS =
++ .endif
+  
+  # Object files
+  
 ***************
 *** 115,126 ****
   	chmod a+r $(WHERERC)/jpicorc
@@ -33,7 +63,7 @@
   
   # Cleanup proceedure
   
---- 115,126 ----
+--- 123,134 ----
   	chmod a+r $(WHERERC)/jpicorc
   	chmod a+r $(WHEREMAN)/joe.1
   	chmod a+x $(WHEREJOE)/termidx
