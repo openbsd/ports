@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2001/02/26 23:51:51 matt Exp $
+# $OpenBSD: Makefile,v 1.62 2001/03/14 11:52:12 wilfried Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -80,7 +80,7 @@
      SUBDIR += p5-Algorithm-Permute
 #    SUBDIR += p5-B
      SUBDIR += p5-B-Graph
-#    SUBDIR += p5-BSD-Resource
+     SUBDIR += p5-BSD-Resource
      SUBDIR += p5-C-Scan
 #    SUBDIR += p5-ConfigReader
      SUBDIR += p5-Class-MethodMaker
