@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.586 2003/08/28 16:19:00 sturm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.587 2003/08/28 23:42:44 naddy Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1831,10 +1831,10 @@ clean:
 .  if ${_clean:L:Minstall}
 .    if ${_clean:L:Msub}
 .      for _s in ${MULTI_PACKAGES}
-	-${SUDO} ${PKG_DELETE} ${clean:M-f} ${FULLPKGNAME${_s}}
+	-${SUDO} ${PKG_DELETE} ${_clean:M-f} ${FULLPKGNAME${_s}}
 .      endfor
 .    else
-	-${SUDO} ${PKG_DELETE} ${clean:M-f} ${FULLPKGNAME${SUBPACKAGE}}
+	-${SUDO} ${PKG_DELETE} ${_clean:M-f} ${FULLPKGNAME${SUBPACKAGE}}
 .    endif
 .  endif
 .  if ${_clean:L:Mpackages} || ${_clean:L:Mpackage} && ${_clean:L:Msub}
@@ -2425,7 +2425,7 @@ delete-package:
 	@cd ${.CURDIR} && exec ${MAKE} clean=package
 
 reinstall:
-	@cd ${.CURDIR} && exec ${MAKE} clean=install
+	@cd ${.CURDIR} && exec ${MAKE} clean='install force'
 	@cd ${.CURDIR} && DEPENDS_TARGET=${DEPENDS_TARGET} exec ${MAKE} install
 
 repackage:
