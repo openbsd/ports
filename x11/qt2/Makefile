@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/06/23 08:41:16 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/06/23 09:53:52 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-2.1.1
@@ -7,7 +7,9 @@ CATEGORIES=	x11
 NEED_VERSION=	1.301
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 DISTFILES=	qt-x11-2.1.1.tar.gz
+
 HOMEPAGE=	http://www.trolltech.com/qt/
+
 MULTI_PACKAGES=-examples -html
 
 SUBPACKAGE?=
@@ -26,8 +28,8 @@ PERMIT_DISTFILES_FTP=
 
 MAKE_ENV=	QTDIR="${WRKSRC}" SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}"
 
-CONFIGURE_STYLE=	simple
-CONFIGURE_ENV=${MAKE_ENV}
+CONFIGURE_STYLE= simple
+CONFIGURE_ENV=	${MAKE_ENV}
 CONFIGURE_ARGS+=-gif -system-libpng -system-jpeg -sm -no-thread -system-zlib
 
 USE_X11=	Yes
@@ -35,20 +37,20 @@ USE_GMAKE=	Yes
 
 QT_INCDIR=	${PREFIX}/include/X11/qt2
 QT_LIBDIR=	${PREFIX}/lib/qt2
+QT_MANDIR=	${QT_LIBDIR}/man
 QT_EXAMPLES=	${QT_LIBDIR}/examples
 QT_TUTORIAL=	${QT_LIBDIR}/tutorial
 QT_DOC=		${PREFIX}/share/doc/qt2
 
 # for manpages in MESSAGE
-SUBST_VARS=QT_LIBDIR
+SUBST_VARS=	QT_LIBDIR
 
 #		qt-2.1.1	-> libqt.2.11
 QT_VER=		2.11
-EXAMPLES=
 
 post-patch:
-	cd ${WRKSRC} && cp -R examples examples-src
-	cd ${WRKSRC} && cp -R tutorial tutorial-src
+	@cd ${WRKSRC} && cp -R examples examples-src
+	@cd ${WRKSRC} && cp -R tutorial tutorial-src
 
 do-install:
 	${INSTALL_DATA_DIR} ${QT_INCDIR} ${QT_DOC}/html ${QT_LIBDIR}/bin \
@@ -65,11 +67,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/moc ${QT_LIBDIR}/bin
 	# avoid installing broken links
 	-rm ${WRKSRC}/include/qt_{mac,windows}.h
-	-${INSTALL_DATA} ${WRKSRC}/include/* ${QT_INCDIR}
+	${INSTALL_DATA} ${WRKSRC}/include/* ${QT_INCDIR}
 	@for i in ${WRKSRC}/doc/man/man3/*; do \
 	  j=$${i%qt}; \
 	  sed -e 's,\.3qt,\.3,g' <$$i >$$j && \
-	  	${INSTALL_MAN} $$j ${QT_LIBDIR}/man/man3; \
+	  	${INSTALL_MAN} $$j ${QT_MANDIR}/man3; \
 	done
 	cp -R ${WRKSRC}/examples-src/* ${QT_EXAMPLES}/src
 	@cd ${WRKSRC}/examples; for i in *; do \
@@ -86,6 +88,7 @@ do-install:
 	cp -R ${WRKSRC}/doc/html/* ${QT_DOC}/html
 
 .include <bsd.port.mk>
+
 .if ${SUBPACKAGE} =="-examples"
 PKGNAME:=qt2-examples-1.1
 .elif ${SUBPACKAGE} =="-html"
