@@ -3,18 +3,18 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.31 1999/02/18 02:37:32 marc Exp $
+# $OpenBSD: Makefile,v 1.32 1999/02/20 04:26:13 espie Exp $
 #
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
 # for experimentations and testing.
 
+# it only works right with a recent bsd.port.mk.
+NEED_VERSION=1.60
+
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
-
-NEED_VERSION=1.60
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
-
 
 CATEGORIES=	lang 
 MAINTAINER=	Marc.Espie@openbsd.org
@@ -297,7 +297,7 @@ pre-configure:
 ####
 # build section
 # should work without gmake. If it turns out to be needed, this must be 
-# reported to the egcs folks
+# reported to MAINTAINER.
 #USE_GMAKE= yes
 
 # you shouldn't skip bootstrap unless you know what you're doing
@@ -337,7 +337,7 @@ M4FLAGS+= -DOBJC
 .if defined(MAKE_JAVA)
 M4FLAGS+= -DJAVA
 .endif
-.if (${MACHINE_ARCH}) != "alpha")
+.if !defined(NO_SHARED_LIBS)
 M4FLAGS+= -DDYNAMIC
 .endif
 
