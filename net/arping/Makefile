@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2001/09/30 01:11:20 jcs Exp $
+# $OpenBSD: Makefile,v 1.11 2002/02/10 02:10:20 jcs Exp $
 
 COMMENT=	"ARP level ping utility"
 
-DISTNAME=	arping-1.01
+DISTNAME=	arping-1.03
 
 CATEGORIES=	net
-NEED_VERSION=	1.463
+NEED_VERSION=	1.503
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 MASTER_SITES=	ftp://ftp.nss.nu/pub/synscan/ \
