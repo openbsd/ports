@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.5 2002/07/16 22:27:51 espie Exp $
---- configure.in.orig	Tue May 14 02:33:04 2002
-+++ configure.in	Thu May 16 18:36:21 2002
-@@ -910,6 +910,14 @@ else
+$OpenBSD: patch-configure_in,v 1.6 2002/11/29 05:13:37 brad Exp $
+--- configure.in.orig	Wed Oct  2 15:23:54 2002
++++ configure.in	Sun Nov 24 04:18:55 2002
+@@ -914,6 +914,14 @@ else
      AC_DEFINE_UNQUOTED(__PATH_SU, "$path_su", [path to su])
  fi
  

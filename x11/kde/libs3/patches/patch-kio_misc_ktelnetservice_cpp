@@ -1,0 +1,60 @@
+$OpenBSD: patch-kio_misc_ktelnetservice_cpp,v 1.1 2002/11/29 05:13:37 brad Exp $
+--- kio/misc/ktelnetservice.cpp.orig	Tue Sep 25 08:04:11 2001
++++ kio/misc/ktelnetservice.cpp	Sun Nov 24 04:23:58 2002
+@@ -1,4 +1,4 @@
+-/* 
++/*
+    Copyright (c) 2001 Malte Starostik <malte@kde.org>
+    based on kmailservice.cpp,
+    Copyright (c) 2000 Simon Hausmann <hausmann@kde.org>
+@@ -7,19 +7,19 @@
+    modify it under the terms of the GNU General Public
+    License as published by the Free Software Foundation; either
+    version 2 of the License, or (at your option) any later version.
+- 
++
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    General Public License for more details.
+- 
++
+    You should have received a copy of the GNU General Public License
+    along with this program; see the file COPYING.  If not, write to
+    the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+    Boston, MA 02111-1307, USA.
+ */
+ 
+-// $Id: patch-kio_misc_ktelnetservice_cpp,v 1.1 2002/11/29 05:13:37 brad Exp $
++// $Id: patch-kio_misc_ktelnetservice_cpp,v 1.1 2002/11/29 05:13:37 brad Exp $
+ 
+ #include <kapplication.h>
+ #include <kcmdlineargs.h>
+@@ -48,9 +48,16 @@ int main(int argc, char **argv)
+ 
+ 	KURL url(args->arg(0));
+ 	QStringList cmd;
+-	
++
+ 	cmd << "-e";
+-	cmd << "telnet";
++        if ( url.protocol() == "telnet" )
++            cmd << "telnet";
++        else if ( url.protocol() == "rlogin" )
++            cmd << "rlogin";
++        else {
++            kdError() << "Invalid protocol " << url.protocol() << endl;
++            return 2;
++        }
+ 	if (!url.user().isEmpty())
+ 	{
+ 		cmd << "-l";
+@@ -61,7 +68,7 @@ int main(int argc, char **argv)
+ 		cmd << QString::number(url.port());
+ 
+ 	app.kdeinitExec("konsole", cmd);
+-	
++
+ 	return 0;
+ }
+ 

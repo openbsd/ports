@@ -1,0 +1,16 @@
+$OpenBSD: patch-kio_misc_rlogin_protocol,v 1.1 2002/11/29 05:13:37 brad Exp $
+--- kio/misc/rlogin.protocol.orig	Sat Jan 20 18:01:05 2001
++++ kio/misc/rlogin.protocol	Sun Nov 24 04:23:58 2002
+@@ -1,10 +1,10 @@
+ [Protocol]
+-exec=konsole -e rlogin `echo %u | sed -e 's,rlogin:/*,,'`
++exec=ktelnetservice %u
+ protocol=rlogin
+ input=none
+ output=none
+ helper=true
+-listing=false
++listing=
+ reading=false
+ writing=false
+ makedir=false
