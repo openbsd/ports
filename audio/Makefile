@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1998/05/22 01:08:52 angelos Exp $
+# $OpenBSD: Makefile,v 1.11 1998/06/08 01:30:18 angelos Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -26,7 +26,7 @@
 #    SUBDIR += timidity
      SUBDIR += tosha
      SUBDIR += tracker
-#    SUBDIR += workman
+     SUBDIR += workman
      SUBDIR += xcd
      SUBDIR += xcdplayer
      SUBDIR += xmcd
