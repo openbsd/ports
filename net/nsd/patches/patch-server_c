@@ -1,0 +1,16 @@
+$OpenBSD: patch-server_c,v 1.1.1.1 2002/09/13 17:09:20 jakob Exp $
+--- server.c.orig	Thu Aug 29 13:03:07 2002
++++ server.c	Fri Sep 13 18:40:37 2002
+@@ -334,6 +334,12 @@ server(nsd)
+ 	}
+ #endif
+ 
++	/* Chroot */
++	if(nsd->chrootdir && chroot(nsd->chrootdir)) {
++		syslog(LOG_ERR, "unable to chroot: %m");
++		return -1;
++	}
++
+ 	/* Drop the permissions */
+ 	if(setgid(nsd->gid) != 0 || setuid(nsd->uid) !=0) {
+ 		syslog(LOG_ERR, "unable to drop user priviledges: %m");
