@@ -1,31 +1,6 @@
 --- unix/Makefile.orig	Thu Nov 19 16:59:08 1998
-+++ unix/Makefile	Fri Dec 24 04:11:38 1999
-@@ -42,12 +42,11 @@
- # such as -DDOSWILD).
- 
- # UnZip flags
--CC = cc#	try using "gcc" target rather than changing this (CC and LD
--LD = $(CC)#	must match, else "unresolved symbol:  ___main" is possible)
-+LD = $(CC)
- AS = as
--LOC = $(LOCAL_UNZIP)
-+LOC = $(CFLAGS) -DUSE_UNSHRINK
- AF = $(LOC)
--CF = -O -I. $(LOC)
-+CF = -I. $(LOC)
- LF = -o unzip
- LF2 = -s
- 
-@@ -98,7 +97,7 @@
- INSTALL_D = mkdir -p
- # on some systems, manext=l and MANDIR=/usr/man/man$(manext) may be appropriate
- manext = 1
--prefix = /usr/local
-+prefix = $(PREFIX)
- BINDIR = $(prefix)/bin#			where to install executables
- MANDIR = $(prefix)/man/man$(manext)#	where to install man pages
- INSTALLEDBIN = $(BINDIR)/funzip$E $(BINDIR)/unzip$E $(BINDIR)/unzipsfx$E \
-@@ -412,18 +411,16 @@
++++ unix/Makefile	Sun Mar 26 17:25:48 2000
+@@ -412,18 +412,16 @@
  
  install:	$(MANS)
  	-$(INSTALL_D) $(BINDIR)
