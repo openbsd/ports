@@ -1,0 +1,12 @@
+$OpenBSD: patch-wmix_c,v 1.1.1.1 2002/01/24 13:47:13 wilfried Exp $
+--- wmix.c.orig	Fri May 25 12:55:23 2001
++++ wmix.c	Thu Jan 24 14:19:24 2002
+@@ -24,7 +24,7 @@
+ #include <string.h>
+ #include <signal.h>
+ #include <string.h>
+-#include <getopt.h>
++/*#include <getopt.h>*/
+ #include <unistd.h>
+ 
+ #include <X11/X.h>
