@@ -4,6 +4,6 @@
  DEPLIBS = $(DEPXLIB)
  SRCS = xsnow.c snowmap.h vroot.h
  OBJS = xsnow.o
-+MANDIR=/usr/X11R6/man/cat6
++MANDIR=/usr/local/man/cat6
  
  ComplexProgramTarget(xsnow)
