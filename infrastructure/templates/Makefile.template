@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.4 1999/12/03 14:24:40 espie Exp $
+# $OpenBSD: Makefile.template,v 1.5 2000/02/10 23:46:43 espie Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -82,7 +82,8 @@ MASTER_SITES=		???
 #
 #NO_DEPENDS=		yes
 #NO_WRKDIR=		yes
-#NO_WRKSUBDIR=		yes
+# NO_WRKSUBDIR is obsolete
+# Use WRKDIST=${WRKDIR}
 #NO_CHECKSUM=		yes
 #NO_EXTRACT=		yes
 #NO_PATCH=		yes

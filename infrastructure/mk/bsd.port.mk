@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.191 2000/02/09 20:09:05 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.192 2000/02/10 23:46:42 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -165,8 +165,6 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # NO_INSTALL	- Use a dummy (do-nothing) install target.
 # NO_PACKAGE	- Use a dummy (do-nothing) package target.
 # NO_PKG_REGISTER - Don't register a port install as a package.
-# NO_WRKSUBDIR	- Assume port unpacks directly into ${WRKDIR}.
-#				  (deprecated, use WRKDIST=${WRKDIR} instead)
 # NO_DEPENDS	- Don't verify build of dependencies.
 # CLEANDEPENDS  - Nuke dependent dirs on make clean (Default: no)
 # BROKEN		- Port is broken.  Set this string to the reason why.
@@ -627,8 +625,6 @@ WRKDIR?=		${.CURDIR}/work
 
 .if defined(WRKSRC)
 WRKDIST?=		${WRKSRC}
-.elif defined(NO_WRKSUBDIR)
-WRKDIST?=		${WRKDIR}
 .else
 WRKDIST?=		${WRKDIR}/${DISTNAME}
 .endif
