@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_main_main_c,v 1.1 2004/04/28 21:40:31 naddy Exp $
+--- src/main/main.c.orig	2004-04-14 14:50:53.000000000 -0600
++++ src/main/main.c	2004-04-14 14:54:11.000000000 -0600
+@@ -460,7 +460,8 @@ void setup_Rmainloop(void)
+ 	}
+ #endif
+ #ifdef HAVE_NL_LANGINFO
+-    utf8locale = strcmp(nl_langinfo(CODESET), "UTF-8") == 0;
++    // utf8locale = strcmp(nl_langinfo(CODESET), "UTF-8") == 0;
++    utf8locale = 0;
+ #endif
+     /* gc_inhibit_torture = 0; */
+ 
