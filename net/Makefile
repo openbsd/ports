@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/01/05 14:40:47 joey Exp $
+# $OpenBSD: Makefile,v 1.5 1998/01/28 19:03:28 mickey Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -81,7 +81,7 @@
      SUBDIR += tintin++
 #    SUBDIR += tinyfugue
 #    SUBDIR += traceroute
-#    SUBDIR += trafshow
+     SUBDIR += trafshow
 #    SUBDIR += ttt
      SUBDIR += ucd-snmp
 #    SUBDIR += wais
