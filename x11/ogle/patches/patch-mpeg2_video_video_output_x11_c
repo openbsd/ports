@@ -1,4 +1,4 @@
-$OpenBSD: patch-mpeg2_video_video_output_x11_c,v 1.1 2001/10/24 12:54:33 espie Exp $
+$OpenBSD: patch-mpeg2_video_video_output_x11_c,v 1.2 2001/11/02 17:38:04 espie Exp $
 --- mpeg2_video/video_output_x11.c.orig	Tue Oct  9 01:10:59 2001
 +++ mpeg2_video/video_output_x11.c	Mon Oct 22 16:44:44 2001
 @@ -291,6 +291,7 @@ static void display_init_xv(yuv_image_t 
@@ -260,19 +260,3 @@ $OpenBSD: patch-mpeg2_video_video_output_x11_c,v 1.1 2001/10/24 12:54:33 espie E
    }
    
    /* Don't care about aspect and can't change the window size, use it all. */
-@@ -1235,11 +1264,14 @@ void display_exit(void) 
-   XSync(mydisplay,True);
-   if(use_xshm)
-     XShmDetach(mydisplay, &shm_info);
--  XDestroyImage(window.ximage);
-+  if (!use_xv)
-+    XDestroyImage(window.ximage);
-   shmdt(shm_info.shmaddr);
-   shmctl(shm_info.shmid, IPC_RMID, 0);
-   
-+#if DEBUG
-   fprintf(stderr, "vo: removed shm segment\n");
-+#endif
-   display_process_exit();
- }
- 
