@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure.in,v 1.1 2004/12/06 23:11:34 matthieu Exp $
+--- configure.in.orig	Wed Nov  6 12:55:10 2002
++++ configure.in	Mon Dec  6 23:34:38 2004
+@@ -256,7 +256,8 @@ if test x$enableval = "xyes"; then
+        fi
+        AC_MSG_CHECKING([for freetype/freetype.h])
+        AC_TRY_COMPILE(
+-#include <freetype/freetype.h>
++#include <ft2build.h>
++#include FT_FREETYPE_H
+         ,,
+         AC_MSG_RESULT([yes])
+         dnl Checks for Xft

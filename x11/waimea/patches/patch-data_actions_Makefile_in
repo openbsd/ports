@@ -1,7 +1,7 @@
-$OpenBSD: patch-data_actions_Makefile_in,v 1.2 2002/10/18 02:05:19 mark Exp $
---- data/actions/Makefile.in.orig	Sun Oct 13 20:54:39 2002
-+++ data/actions/Makefile.in	Thu Oct 17 18:57:13 2002
-@@ -226,11 +226,11 @@ uninstall-am: uninstall-actionsDATA unin
+$OpenBSD: patch-data_actions_Makefile_in,v 1.3 2004/12/06 23:11:35 matthieu Exp $
+--- data/actions/Makefile.in.orig	Wed Nov  6 12:55:10 2002
++++ data/actions/Makefile.in	Mon Dec  6 23:37:29 2004
+@@ -228,11 +228,11 @@ uninstall-am: uninstall-actionsDATA unin
  
  
  install-data-local:
