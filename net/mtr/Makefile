@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2000/06/20 19:52:43 jakob Exp $
+# $OpenBSD: Makefile,v 1.14 2000/08/11 20:53:43 jakob Exp $
 
-DISTNAME=	mtr-0.41
+DISTNAME=	mtr-0.42
 CATEGORIES=	net
 NEED_VERSION=	1.302
 
@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		ftp://ftp.lysator.liu.se/mirror/unix/mtr/
 
 MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	mtr-041-v6-20000127a.diff.gz:0
+PATCHFILES=	mtr-042-v6-20000719.diff.gz:0
 PATCH_DIST_STRIP=	-p1
 
 CONFIGURE_STYLE=	gnu
