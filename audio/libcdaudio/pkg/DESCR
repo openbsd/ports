@@ -1,0 +1,12 @@
+libcdaudio is a multi-platform CD player development library which
+works with NetBSD, Linux, FreeBSD, OpenBSD, Solaris, and Irix. It
+includes a basic command set for controlling the operation of the
+CD-ROM drive as well as functions for accessing both the CDDB, CD
+Index, and Cover Art Index.
+
+The entire libcdaudio API may be found in the libcdaudio
+programmer's manual at "http://cdcd.undergrid.net/libcdaudio/manual/".
+The interface to the given functions will remain as they are
+specified, although new functions may continue to be added.
+
+WWW: ${HOMEPAGE}
