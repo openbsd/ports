@@ -2,7 +2,7 @@
 # Date created:         17 March 1998
 # Whom:                 mickey@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:43:18 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/12/23 20:51:22 espie Exp $
 #
 
 DISTNAME=	psutils-p17
@@ -47,13 +47,13 @@ MAKE_FLAGS=	\
 	BINDIR=${PREFIX}/bin \
 	INCLUDEDIR=${PREFIX}/share/psutils \
 	MANDIR=${PREFIX}/man/man1 \
-	PERL=/usr/bin/perl CC=cc CFLAGS=${CFLAGS} \
+	PERL=/usr/bin/perl CC=cc CFLAGS='${CFLAGS}' \
 	PAPER=${PP} 
 FAKE_FLAGS=	\
 	BINDIR=${WRKINST}${PREFIX}/bin \
 	INCLUDEDIR=${WRKINST}${PREFIX}/share/psutils \
 	MANDIR=${WRKINST}${PREFIX}/man/man1 \
-	PERL=/usr/bin/perl CC=cc CFLAGS=${CFLAGS} \
+	PERL=/usr/bin/perl CC=cc CFLAGS='${CFLAGS}' \
 	PAPER=${PP} 
 .endfor
 
