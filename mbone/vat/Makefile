@@ -1,11 +1,10 @@
 # $FreeBSD: Makefile,v 1.9 1998/12/02 05:56:01 asami Exp $
-# $OpenBSD: Makefile,v 1.12 2000/04/09 17:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/06/06 23:14:18 espie Exp $
 
 DISTNAME=	vatsrc-4.0b2
 PKGNAME=	vat-4.0b2
 CATEGORIES=	mbone
 NEED_VERSION=	1.230
-FAKE=No
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
 
 MAINTAINER=	angelos@openbsd.org
@@ -26,14 +25,15 @@ LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0 \
 		tk80.1.5::x11/tk/8.0 \
 		gsm.1::${GSM_DIR}
 
-USE_X11=	yes
-USE_AUTOCONF=   yes
+USE_X11=	Yes
+USE_AUTOCONF=   Yes
 CONFIGURE_ARGS= --with-gsm=${GSM_WORK}
 
 WRKDIST=		${WRKDIR}/${PKGNAME}
 
-post-install:
-	@${STRIP} ${PREFIX}/bin/vat
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/vat ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKBUILD}/vat.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
 
