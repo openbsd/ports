@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/01/01 12:36:03 shell Exp $
+# $OpenBSD: Makefile,v 1.3 2002/01/23 06:14:17 shell Exp $
 
 COMMENT=	"perl interface to the SAX2 XML Parser"
 
-VERSION=	0.03
+VERSION=	0.05
 DISTNAME=	XML-SAX-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
@@ -15,6 +15,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+RUN_DEPENDS=	::textproc/p5-XML-NamespaceSupport
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
 
