@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1997/12/02 10:34:45 niklas Exp $
+# $OpenBSD: Makefile,v 1.5 1997/12/02 10:38:24 niklas Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -35,7 +35,7 @@ SUBDIR += sysutils
 SUBDIR += textproc
 #SUBDIR += vietnamese
 SUBDIR += www
-#SUBDIR += x11
+SUBDIR += x11
 
 PORTSTOP=	yes
 
