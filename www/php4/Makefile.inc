@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.23 2004/06/08 15:59:54 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.24 2004/06/08 17:54:21 robert Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -37,7 +37,7 @@ PEAR_DIR?=		${CHROOT_DIR}/pear
 MODULES_SUBDIR=		lib/php/modules
 MODULES_DIR=		${CHROOT_DIR}/${MODULES_SUBDIR}
 
-.if defined(USE_GCC3)
+.if ${USE_GCC3:L:Myes}
 PHP_LDFLAGS=		-lstdc++ -lm
 .endif
 
