@@ -14,7 +14,7 @@
  		font_file = "cursor";
  	    else if (our_copy[0] == 'O')
 -		font_file = "olcursor";
-+		font_file = "-sun-open look cursor-----12-120-75-75-p-455-sunolcursor-1";
++		font_file = "-sun-open look cursor-----12-120-75-75-p-160-sunolcursor-1";
  	    createCursor(dpy, cmap, pointer, cursor_id, font_file, end, ptr);
  	}
  	else {
