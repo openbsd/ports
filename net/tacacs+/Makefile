@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2003/06/22 17:08:08 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/11/27 11:40:42 alek Exp $
 
 COMMENT=	"Cisco AAA protocol daemon"
 
 DISTNAME=	tac_plus.F4.0.4.alpha
-PKGNAME=	tacacs+-4.0.4ap0
+PKGNAME=	tacacs+-4.0.4ap1
 CATEGORIES=	net security
 
 HOMEPAGE=       http://www.gazi.edu.tr/tacacs/
@@ -21,18 +21,13 @@ MASTER_SITES=   ftp://ftpeng.cisco.com/pub/tacacs/ \
 
 EXTRACT_SUFX=   .tar.Z
 
-TACACSUSER=	_tacacs
-TACACSGROUP=	${TACACSUSER}
-
 ALL_TARGET=	tac_plus
 
 NO_REGRESS=	Yes
 
-SUBST_VARS=	TACACSUSER TACACSGROUP
-
 do-configure:
-	@perl -pi -e "s/%%TACACSUSER%%/${TACACSUSER}/;" \
-		-e "s/%%TACACSGROUP%%/${TACACSGROUP}/;" ${WRKSRC}/Makefile
+	@perl -pi -e "s/%%TACACSUSER%%/_tacacs/;" \
+		-e "s/%%TACACSGROUP%%/_tacacs/;" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tac_plus ${PREFIX}/sbin/
