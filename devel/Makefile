@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2002/08/04 20:31:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.137 2002/08/10 00:42:03 naddy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -95,6 +95,7 @@
      SUBDIR += p5-Date-Handler
      SUBDIR += p5-Devel-SmallProf
      SUBDIR += p5-Expect
+     SUBDIR += p5-File-ReadBackwards
      SUBDIR += p5-File-Tail
      SUBDIR += p5-FreezeThaw
      SUBDIR += p5-IO-String
