@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2002/01/26 07:36:04 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.70 2002/02/28 05:36:43 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
      SUBDIR += abuse
 #    SUBDIR += acm
      SUBDIR += adom
+     SUBDIR += afternoonstalker
      SUBDIR += agm
      SUBDIR += amph
      SUBDIR += an
@@ -18,6 +19,7 @@
      SUBDIR += cgoban
      SUBDIR += connect4
 #    SUBDIR += cosmo
+     SUBDIR += cosmosmash
 #    SUBDIR += crossfire
 #    SUBDIR += dontspace
 #    SUBDIR += doom
@@ -77,8 +79,10 @@
      SUBDIR += spider
      SUBDIR += starlanes
      SUBDIR += taxipilot
+     SUBDIR += toppler
 #    SUBDIR += tksol
 #    SUBDIR += tvp
+     SUBDIR += vectoroids
      SUBDIR += wmeyes
      SUBDIR += wmminichess
      SUBDIR += wmtictactoe
