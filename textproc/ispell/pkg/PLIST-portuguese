@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-portuguese,v 1.1 2002/05/31 18:09:48 jakob Exp $
+lib/ispell/portuguese.aff
+lib/ispell/portuguese.hash
+@exec echo 'invoking %D/bin/ispell-config'
+@exec %D/bin/ispell-config

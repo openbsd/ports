@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2002/04/17 16:09:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2002/05/31 18:09:47 jakob Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=		interactive spelling checker
@@ -6,6 +6,7 @@ COMMENT-french=		ispell dictionary for French
 COMMENT-german=		ispell dictionary for German
 COMMENT-swedish=	ispell dictionary for Swedish
 COMMENT-russian=	ispell dictionary for Russian
+COMMENT-portuguese=	ispell dictionary for Rortuguese
 
 VERSION=	3.2.06
 DISTNAME=	ispell-${VERSION}
@@ -23,25 +24,30 @@ MASTER_SITES1=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/
 MASTER_SITES2=	http://www.sslug.dk/locale/ispell/iswedish/
 MASTER_SITES3=	ftp://mch5.chem.msu.su/pub/russian/ispell/ \
 		ftp://ftp.afti.nsu.ru/pub/mirrors/russian-ispell/
+MASTER_SITES4=	http://natura.di.uminho.pt/~jj/pln/
 
 DIST_SUBDIR=	ispell
 
-FRENCH_DICT=	francais-IREQ-1.4
-GERMAN_DICT=	hk2-deutsch
-SWEDISH_DICT=	iswedish-1.2.1
-RUSSIAN_DICT=	rus-ispell-0.99e7
+FRENCH_DICT=		francais-IREQ-1.4
+GERMAN_DICT=		hk2-deutsch
+SWEDISH_DICT=		iswedish-1.2.1
+RUSSIAN_DICT=		rus-ispell-0.99e7
+PORTUGUESE_DICT=	UMportugues
 
 DISTFILES=	${DISTNAME}.tar.gz \
 		${FRENCH_DICT}.tar.gz:0 \
 		${GERMAN_DICT}.tar.gz:1 \
 		${SWEDISH_DICT}.tar.gz:2 \
-		${RUSSIAN_DICT}.tar.gz:3
+		${RUSSIAN_DICT}.tar.gz:3 \
+		${PORTUGUESE_DICT}.tgz:4
 
-EXTRACT_ONLY=	${DISTNAME}.tar.gz ${SWEDISH_DICT}.tar.gz
+EXTRACT_ONLY=	${DISTNAME}.tar.gz \
+		${SWEDISH_DICT}.tar.gz \
+		${PORTUGUESE_DICT}.tgz
 
 SUBST_VARS+=	VERSION
 
-MULTI_PACKAGES=	-french -german -swedish -russian
+MULTI_PACKAGES=	-french -german -swedish -russian -portuguese
 .for i in ${MULTI_PACKAGES}
 PKGNAME$i=	ispell$i-${VERSION}
 .endfor
@@ -96,6 +102,10 @@ post-build:
 	sed -e "s/^\#y//;s/^\#koi/wordchars/" < russian.aff.koi > russian.aff; \
 	${WRKDIST}/buildhash all.words russian.aff russian.hash)
 
+	@(cd ${WRKDIR}/portugues; \
+	${WRKDIST}/buildhash portugues.dic portugues.aff portuguese.hash; \
+	cp portugues.aff portuguese.aff)
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/ispell ${PREFIX}/bin/ispell
 	${INSTALL_PROGRAM} ${WRKDIST}/buildhash ${PREFIX}/bin/buildhash
@@ -136,6 +146,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/${SWEDISH_DICT}/svenska.{aff,hash} \
 		${PREFIX}/lib/ispell
 	${INSTALL_DATA} ${WRKDIR}/russian/russian.{aff,hash} \
+		${PREFIX}/lib/ispell
+	${INSTALL_DATA} ${WRKDIR}/portugues/portuguese.{aff,hash} \
 		${PREFIX}/lib/ispell
 
 .include <bsd.port.mk>
