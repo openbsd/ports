@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2003/07/03 12:56:51 lebel Exp $
+# $OpenBSD: Makefile,v 1.24 2003/07/11 07:17:48 wilfried Exp $
 
 COMMENT=	"Z shell, Bourne shell-compatible, release flavor"
 COMMENT-zftp=	"Z shell embedded ftp client"
@@ -48,7 +48,7 @@ SUBPACKAGE?=
 PKGNAME$i=	zsh$i-${VERSION:C/-//g}
 .  endfor
 .  if defined(PACKAGING) && !empty(SUBPACKAGE)
-RUN_DEPENDS=	::shells/zsh/snapshot
+RUN_DEPENDS=	::shells/zsh/stable
 .  endif
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED:S/shared/dynamic/}
 .endif
