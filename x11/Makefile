@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2001/08/07 16:25:16 shell Exp $
+# $OpenBSD: Makefile,v 1.111 2001/08/26 18:27:36 aaron Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -47,6 +47,7 @@
      SUBDIR += fvwm2,i18n
      SUBDIR += fvwm95
      SUBDIR += fsv
+     SUBDIR += gkrellweather
      SUBDIR += gtk+
      SUBDIR += gtkglarea
      SUBDIR += gtkmm
