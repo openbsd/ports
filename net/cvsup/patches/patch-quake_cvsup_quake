@@ -1,0 +1,16 @@
+$OpenBSD$
+--- quake/cvsup.quake.orig	Mon Apr 16 01:22:06 2001
++++ quake/cvsup.quake	Sun May 27 13:28:31 2001
+@@ -53,10 +53,10 @@ proc version_impl(name) is
+     > tempname in
+       write("MODULE Version;", CR, CR, "BEGIN", CR, "  Name := ")
+     end
+-    if equal("$Name: SNAP_16_1a $", "$" & "Name:  $")
++    if equal("$Name: SNAP_16_1ap1 $", "$" & "Name:  $")
+       cmd = "date -u +'\"U_%Y_%m_%d_%H_%M_%S\";'"
+     else
+-      cmd = "echo '$Name: SNAP_16_1a $' | awk '{print \"\\\"\" $2 \"\\\";\";}'"
++      cmd = "echo '$Name: SNAP_16_1ap1 $' | awk '{print \"\\\"\" $2 \"\\\";\";}'"
+     end
+     cmd = cmd & " >> " & tempname
+     if equal(M3_VARIANT, "PM3")

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 19:39:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/27 20:39:08 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 COMMENT=	"network file distribution system"
@@ -6,8 +6,8 @@ COMMENT-server=	"network file distribution server"
 
 VERSION=	16.1a
 DISTNAME=	cvsup-snap-${VERSION}
-PKGNAME=	cvsup-${VERSION}
-PKGNAME-server=	cvsupd-${VERSION}
+PKGNAME=	cvsup-${VERSION}p1
+PKGNAME-server=	cvsupd-${VERSION}p1
 CATEGORIES=	net devel
 NEED_VERSION=	1.405
 HOMEPAGE=	http://www.polstra.com/projects/freeware/CVSup/
