@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2000/08/06 19:16:49 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2001/03/25 08:11:58 jakob Exp $
+
+COMMENT=	tools to convert Xfig's .fig files
 
 DISTNAME=	transfig.3.2.3c
 PKGNAME=	transfig-3.2.3c
 CATEGORIES=	print
-NEED_VERSION=	1.310
-MASTER_SITES=	ftp://www-epb.lbl.gov/xfig/
+NEED_VERSION=	1.363
+
+MASTER_SITES=	ftp://www-epb.lbl.gov/xfig/ \
+		ftp://www-epb.lbl.gov/xfig/previous_versions/
 MASTER_SITE_SUBDIR= applications/drawing_tools/transfig
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg
