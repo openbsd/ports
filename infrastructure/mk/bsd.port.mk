@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.494 2001/11/12 14:19:17 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.495 2001/11/12 14:24:06 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1237,31 +1237,37 @@ _build_depends_fragment=${_fetch_depends_fragment}
 _run_depends_fragment=${_fetch_depends_fragment}
 _regress_depends_fragment=${_fetch_depends_fragment}
 
-.if ${TRUST_PACKAGES:L} == "yes"
-_lib_depends_fragment=${_fetch_depends_fragment}
-.else
-.  if defined(NO_SHARED_LIBS)
-_lib_depends_fragment = \
-	what=$$dep; \
-	IFS=,; bad=false; for d in $$dep; do \
-		d=$${d\#\#*/}; \
-		lib=`echo $$d | sed -e 's|\([^\\]\)[\\\.].*|\1|'`; \
-		tmp=`mktemp /tmp/bpmXXXXXXXXXX`; \
-		if ${LD} -r -o $$tmp ${EXTRA_LIBDIRS:S/^/-L/} -L${LOCALBASE}/lib -L${X11BASE}/lib -l$$lib; then :; else\
-			bad=true; msg="$$msg $$lib missing..."; \
-		fi; \
-	done; $$bad || found=true
-.  else
-_lib_depends_fragment = \
-	what=$$dep; \
-	IFS=,; bad=false; for d in $$dep; do \
-		d=$${d\#\#*/}; \
+.if !defined(NO_SHARED_LIBS)
+_sharedlib_resolve_fragment = \
 		lib=`echo $$d | sed -e 's|\.$$||' -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
-		check=`${LDCONFIG} -r | awk "/:-l$$lib[ .]/"'{ print $$3 }'`; \
-		case "X$$check" in "X") bad=true; msg="$$msg $$lib missing...";; esac; \
-	done; $$bad || found=true
-.  endif
+		check=`eval $$listlibs |grep '^lib.*\.so\.*'| \
+			sed -e 's,^lib,,' -e 's,$$,.,' -e 's,\.so\.,.,' | \
+			grep "^$$lib\."|sed -e 's,\.$$,,'` || true 
+.else
+_sharedlib_resolve_fragment = :
 .endif
+
+_libresolve_fragment = \
+		case "$$d" in \
+		*/*) shprefix="$${d%/*}/"; shdir="${LOCALBASE}/$${d%/*}"; \
+			d=$${d\#\#*/};; \
+		*) shprefix="" shdir="${LOCALBASE}/lib";; \
+		esac; \
+		${_sharedlib_resolve_fragment}; \
+		case "X$$check" in "X") \
+			lib=`echo $$d | sed -e 's|\([^\\]\)[\\\.].*|\1|'`; \
+			check=`eval $$listlibs | grep "^lib$$lib\.a$$"` || true;; \
+		esac
+
+
+_lib_depends_fragment = \
+	what=$$dep; \
+	IFS=,; bad=false; for d in $$dep; do \
+		listlibs='ls $$shdir 2>/dev/null'; \
+		${_libresolve_fragment}; \
+		case "X$$check" in "X") bad=true; msg="$$msg $$d missing...";; esac; \
+	done; $$bad || found=true
+
 
 _misc_depends_fragment = :
 
