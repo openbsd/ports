@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2003/01/26 19:11:17 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2003/05/04 04:02:53 brad Exp $
 
-COMMENT=	"Secure Live Internet Conferencing (SILC) server"
+.if ${MACHINE_ARCH} == "powerpc"
+BROKEN= "config file parser bug on ${MACHINE_ARCH}"
+.endif
 
-DISTNAME=	silc-server-0.9.12
+COMMENT=	"Secure Internet Live Conferencing (SILC) server"
+
+DISTNAME=	silc-server-0.9.13.1
 CATEGORIES=	net
 HOMEPAGE=	http://www.silcnet.org/
 
@@ -30,7 +34,8 @@ MODULES=	iconv
 PATCH_LIST=	gcc-* patch-*
 .endif
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.52
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/lib/silcmath/mpi
 CONFIGURE_ARGS=	\
 	--enable-ipv6 \
@@ -48,8 +53,11 @@ CONFIGURE_ARGS+= --disable-asm
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/silcd
-	mv -f ${PREFIX}/share/doc/silcd/examples/* \
+	mv -f ${PREFIX}/share/doc/silcd/example_silcd.conf \
+		${PREFIX}/share/examples/silcd/silcd.conf
+	${INSTALL_DATA} ${WRKSRC}/doc/examples/cell_*.conf \
 		${PREFIX}/share/examples/silcd
-	rm -rf ${PREFIX}/share/doc/silcd/examples
+	${INSTALL_DATA} ${WRKSRC}/doc/silcalgs.conf \
+		${PREFIX}/share/examples/silcd
 
 .include <bsd.port.mk>

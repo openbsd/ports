@@ -12,6 +12,7 @@ If you have not already done so, you will need to generate a keypair:
 
 # silcd -C ${SYSCONFDIR}/silcd
 # chown silcd:silcd ${SYSCONFDIR}/silcd/silcd.{pub,prv}
+# chmod 600 ${SYSCONFDIR}/silcd/silcd.prv
 
 Additionally, you may wish to start silcd at system start-up
 via the /etc/rc.local script:

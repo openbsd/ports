@@ -1,54 +1,16 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2003/01/22 03:34:59 brad Exp $
---- Makefile.in.orig	Wed Jan  8 10:25:40 2003
-+++ Makefile.in	Sat Jan 11 08:20:57 2003
-@@ -709,20 +709,12 @@ install-dirs-client: install-dirs
- 	-mkdir -p $(mandir)/man1
- 
- install-dirs-server: install-dirs
--	-mkdir -p $(logsdir)
- 	-mkdir -p $(mandir)/man5
- 	-mkdir -p $(mandir)/man8
- 
- doc-install:
--	-$(INSTALL_DATA) $(srcdir)/doc/CodingStyle $(docdir)/
- 	-$(INSTALL_DATA) $(srcdir)/doc/FAQ $(docdir)/
--	-$(INSTALL_DATA) $(srcdir)/doc/*.txt $(docdir)/
--	-$(INSTALL_DATA) $(srcdir)/COPYING $(docdir)/
--	-$(INSTALL_DATA) $(srcdir)/CHANGES $(docdir)/
--	-$(INSTALL_DATA) $(srcdir)/CREDITS $(docdir)/
--	-$(INSTALL_DATA) $(srcdir)/README* $(docdir)/
--	-$(INSTALL_DATA) $(srcdir)/INSTALL $(docdir)/
--	-$(INSTALL_DATA) $(srcdir)/TODO $(docdir)/
-+	-$(INSTALL_DATA) $(srcdir)/README $(docdir)/
- 
- doc-install-client: doc-install
- 	$(INSTALL_DATA) $(srcdir)/irssi/silc.conf $(docdir)/example_silc.conf
-@@ -731,13 +723,8 @@ doc-install-client: doc-install
- 	fi
- 
- doc-install-server: doc-install
--	-$(INSTALL_DATA) $(srcdir)/doc/example_silcd.conf $(docdir)/
--	-@if test -f $(srcdir)/doc/silcd.8 ; then \
--	 $(INSTALL_DATA) $(srcdir)/doc/silcd.8 $(mandir)/man8; \
--	fi
--	-@if test -f $(srcdir)/doc/silcd.conf.5 ; then \
--	 $(INSTALL_DATA) $(srcdir)/doc/silcd.conf.5 $(mandir)/man5; \
--	fi
-+	-$(INSTALL_DATA) $(srcdir)/doc/example_silcd.conf $(docdir)/examples/silcd.conf
-+	-$(INSTALL_DATA) $(srcdir)/doc/silcalgs.conf $(docdir)/examples/
- 
- etc-install-client:
- 	-@if test '!' -d $(srcdir)/irssi ; then \
-@@ -768,7 +755,7 @@ toolkit-install:
- examples-install:
- 	-mkdir -p $(docdir)/examples/
- 	-$(INSTALL_DATA) $(srcdir)/doc/examples/README $(docdir)/examples/
--	-$(INSTALL_DATA) $(srcdir)/doc/examples/silc* $(docdir)/examples/
-+	-$(INSTALL_DATA) $(srcdir)/doc/examples/*.conf $(docdir)/examples/
- 
- generate-server-key:
- 	-@if test '!' -f $(etcdir)/silcd.pub ; then \
-@@ -777,7 +764,7 @@ generate-server-key:
+$OpenBSD: patch-Makefile_in,v 1.3 2003/05/04 04:02:53 brad Exp $
+--- Makefile.in.orig	Tue Mar 18 04:45:27 2003
++++ Makefile.in	Fri Apr 18 20:14:10 2003
+@@ -216,7 +216,7 @@ install_sh = @install_sh@
+ libdir = @libdir@
+ libexecdir = @libexecdir@
+ localstatedir = @localstatedir@
+-mansdir = $(DESTDIR)$(mandir)
++mansdir = $(DESTDIR)$(silc_mandir)
+ oldincludedir = @oldincludedir@
+ prefix = @prefix@
+ program_transform_name = @program_transform_name@
+@@ -777,7 +777,7 @@ generate-server-key:
  
  @SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs-client sim-install doc-install-client etc-install-client
  @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs-client install-dirs-server sim-install doc-install-client doc-install-server toolkit-install examples-install etc-install-client etc-install-server generate-server-key
