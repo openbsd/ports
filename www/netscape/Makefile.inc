@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.19 2003/10/18 19:44:49 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.20 2004/01/15 22:07:28 sturm Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -12,6 +12,7 @@ BUILD_DEPENDS=	:redhat_base-*:emulators/redhat/base
 RUN_DEPENDS=	${BUILD_DEPENDS}
 SUPPORTED=	supported
 ONLY_FOR_ARCHS=	i386
+NO_SYSTRACE=	"shell code/linux binary interaction breaks systrace"
 .endif
 
 .if ${EMUL_TYPE} == "sunos"
@@ -22,7 +23,7 @@ IGNORE=		"requires SunOS shared libraries"
 NEEDS_FORTIFY=	Yes
 .endif
 
-.if ${EMUL_TYPE} == "bsdi"
+.if ${EMUL_TYPE} == "bsdos"
 ONLY_FOR_ARCHS= i386
 .endif
 
@@ -54,10 +55,12 @@ PERMIT_DISTFILES_CDROM=	"Commercial software"
 PERMIT_DISTFILES_FTP=	"Commercial software"
 
 WRKDIST=	${WRKDIR}
+SYSCTL=		${SUDO} sysctl -w kern.emul.${EMUL_TYPE}
+SUBST_VARS+=	EMUL_TYPE
 
 .if !defined(NO_WARNINGS)
 pre-fetch:
-.if ${EMUL_TYPE} == "bsdi"
+.if ${EMUL_TYPE} == "bsdos"
 	@echo ""
 	@echo "  WARNING: This application requires a kernel compiled with"
 	@echo "           'option COMPAT_BSDOS' for proper operation.  The"
@@ -81,6 +84,10 @@ pre-fetch:
 	@echo ""
 .endif
 .endif
+
+post-extract:
+	@sysctl -n kern.emul.${EMUL_TYPE} > ${WRKDIR}/.emul_${EMUL_TYPE}
+	@${SYSCTL}=1
 
 .if defined(NEEDS_FORTIFY)
 do-build:
@@ -110,3 +117,4 @@ post-install:
 	     -e 's#@prefix@#${TRUEPREFIX}#' \
 	 ${FILESDIR}/netscape.${MACHINE_ARCH} > ${WRKDIR}/netscape
 	${INSTALL_SCRIPT} ${WRKDIR}/netscape ${PREFIX}/bin
+	@${SYSCTL}=`cat ${WRKDIR}/.emul_${EMUL_TYPE}`

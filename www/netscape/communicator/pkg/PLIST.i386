@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.i386,v 1.6 2001/10/11 19:13:20 espie Exp $
+@comment $OpenBSD: PLIST.i386,v 1.7 2004/01/15 22:07:28 sturm Exp $
 @pkgcfl navigator-*
 @pkgcfl linux-communicator-*
 @pkgcfl communicator-*
@@ -162,3 +162,4 @@ netscape/vreg
 @dirrm netscape/plugins
 @dirrm netscape/spell
 @dirrm netscape
+@exec sysctl -w kern.emul.${EMUL_TYPE}=1

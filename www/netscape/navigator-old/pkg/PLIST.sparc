@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sparc,v 1.6 2000/12/18 01:21:08 brad Exp $
+@comment $OpenBSD: PLIST.sparc,v 1.7 2004/01/15 22:07:28 sturm Exp $
 @pkgcfl communicator-*
 bin/netscape
 netscape/LICENSE
@@ -116,3 +116,4 @@ netscape/vreg
 @dirrm netscape/nls
 @dirrm netscape/plugins
 @dirrm netscape
+@exec sysctl -w kern.emul.${EMUL_TYPE}=1
