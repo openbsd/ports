@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/06/07 16:59:49 shell Exp $
+# $OpenBSD: Makefile,v 1.4 2001/06/11 19:27:22 shell Exp $
 
 COMMENT=		"c/c++ source code auditing tool"
 
@@ -15,7 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.dwheeler.com/flawfinder/	
+MASTER_SITES=		http://www.dwheeler.com/flawfinder/ \
+			http://packetstorm.securify.com/UNIX/misc/
 
 RUN_DEPENDS=		python::lang/python
 
