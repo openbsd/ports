@@ -1,12 +1,12 @@
-$OpenBSD: patch-pine_makefile.bso,v 1.3 2001/09/27 16:52:40 brad Exp $
+$OpenBSD: patch-pine_makefile.bso,v 1.4 2001/09/27 18:44:41 brad Exp $
 --- pine/makefile.bso.orig	Tue Jul  3 13:03:53 2001
-+++ pine/makefile.bso	Thu Sep 27 08:51:51 2001
++++ pine/makefile.bso	Thu Sep 27 13:06:49 2001
 @@ -50,7 +50,7 @@ OPTIMIZE=    # -O
  PROFILE=     # -pg
  DEBUG=       -DDEBUG # -g
  
 -CCLIENTDIR=  ../c-client
-+CCLIENTDIR=  $(PREFIX)/include/c-client
++CCLIENTDIR=  $(LOCALBASE)/include/c-client
  PICODIR=     ../pico
  
  # Only need to uncomment next two lines if you run make from this directory
@@ -21,11 +21,11 @@ $OpenBSD: patch-pine_makefile.bso,v 1.3 2001/09/27 16:52:40 brad Exp $
 -             `cat $(CCLIENTDIR)/LDFLAGS`
 +STDLIBS=     -ltermlib -lssl -lcrypto
 +LOCLIBS=     -lpico -lc-client
-+LOCLIBDIR=   -L$(PICODIR) -L$(PREFIX)/lib
++LOCLIBDIR=   -L$(PICODIR) -L$(LOCALBASE)/lib
 +LIBS=        $(EXTRALIBES) $(LOCLIBDIR) $(LOCLIBS) $(LDAPLIBS) $(STDLIBS)
  
 -STDCFLAGS=   -DBSDI -DSYSTYPE=\"BSO\" -DMOUSE
-+STDCFLAGS=   -DBSDI -DSYSTYPE=\"BSO\" -DMOUSE -I$(PREFIX)/include
++STDCFLAGS=   -DBSDI -DSYSTYPE=\"BSO\" -DMOUSE -I$(LOCALBASE)/include
  CFLAGS+=     $(OPTIMIZE) $(PROFILE) $(DEBUG) $(EXTRACFLAGS) $(LDAPCFLAGS) \
  	     $(STDCFLAGS)
  
