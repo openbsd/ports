@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/01/19 06:53:13 jasoni Exp $
+@comment $OpenBSD: PLIST,v 1.3 2001/08/31 22:53:26 jasoni Exp $
 @option no-default-conflict
 @pkgcfl python-1.5*
 bin/python1.5
@@ -356,51 +356,6 @@ lib/python1.5/lib-stdwin/wdbframewin.pyo
 lib/python1.5/lib-stdwin/wdbsrcwin.py
 lib/python1.5/lib-stdwin/wdbsrcwin.pyc
 lib/python1.5/lib-stdwin/wdbsrcwin.pyo
-lib/python1.5/lib-tk/Canvas.py
-lib/python1.5/lib-tk/Canvas.pyc
-lib/python1.5/lib-tk/Canvas.pyo
-lib/python1.5/lib-tk/Dialog.py
-lib/python1.5/lib-tk/Dialog.pyc
-lib/python1.5/lib-tk/Dialog.pyo
-lib/python1.5/lib-tk/FileDialog.py
-lib/python1.5/lib-tk/FileDialog.pyc
-lib/python1.5/lib-tk/FileDialog.pyo
-lib/python1.5/lib-tk/FixTk.py
-lib/python1.5/lib-tk/FixTk.pyc
-lib/python1.5/lib-tk/FixTk.pyo
-lib/python1.5/lib-tk/ScrolledText.py
-lib/python1.5/lib-tk/ScrolledText.pyc
-lib/python1.5/lib-tk/ScrolledText.pyo
-lib/python1.5/lib-tk/SimpleDialog.py
-lib/python1.5/lib-tk/SimpleDialog.pyc
-lib/python1.5/lib-tk/SimpleDialog.pyo
-lib/python1.5/lib-tk/Tkconstants.py
-lib/python1.5/lib-tk/Tkconstants.pyc
-lib/python1.5/lib-tk/Tkconstants.pyo
-lib/python1.5/lib-tk/Tkdnd.py
-lib/python1.5/lib-tk/Tkdnd.pyc
-lib/python1.5/lib-tk/Tkdnd.pyo
-lib/python1.5/lib-tk/Tkinter.py
-lib/python1.5/lib-tk/Tkinter.pyc
-lib/python1.5/lib-tk/Tkinter.pyo
-lib/python1.5/lib-tk/tkColorChooser.py
-lib/python1.5/lib-tk/tkColorChooser.pyc
-lib/python1.5/lib-tk/tkColorChooser.pyo
-lib/python1.5/lib-tk/tkCommonDialog.py
-lib/python1.5/lib-tk/tkCommonDialog.pyc
-lib/python1.5/lib-tk/tkCommonDialog.pyo
-lib/python1.5/lib-tk/tkFileDialog.py
-lib/python1.5/lib-tk/tkFileDialog.pyc
-lib/python1.5/lib-tk/tkFileDialog.pyo
-lib/python1.5/lib-tk/tkFont.py
-lib/python1.5/lib-tk/tkFont.pyc
-lib/python1.5/lib-tk/tkFont.pyo
-lib/python1.5/lib-tk/tkMessageBox.py
-lib/python1.5/lib-tk/tkMessageBox.pyc
-lib/python1.5/lib-tk/tkMessageBox.pyo
-lib/python1.5/lib-tk/tkSimpleDialog.py
-lib/python1.5/lib-tk/tkSimpleDialog.pyc
-lib/python1.5/lib-tk/tkSimpleDialog.pyo
 lib/python1.5/linecache.py
 lib/python1.5/linecache.pyc
 lib/python1.5/linecache.pyo
@@ -939,7 +894,6 @@ man/man1/python.1
 @dirrm include/python1.5
 @dirrm lib/python1.5/config
 @dirrm lib/python1.5/lib-stdwin
-@dirrm lib/python1.5/lib-tk
 @dirrm lib/python1.5/plat-openbsd2
 @dirrm lib/python1.5/test/output
 @dirrm lib/python1.5/test
