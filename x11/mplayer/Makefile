@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2003/12/04 22:05:09 biorn Exp $
+# $OpenBSD: Makefile,v 1.64 2003/12/11 08:09:21 biorn Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc
@@ -122,7 +122,7 @@ CONFIGURE_ARGS+=--enable-debug=3
 
 .if ${FLAVOR:L:Mmad}
 CONFIGURE_ARGS+=--enable-mad
-LIB_DEPENDS+=	mad::audio/mad
+LIB_DEPENDS+=	mad.2::audio/libmad
 .else
 CONFIGURE_ARGS+=--disable-mad
 .endif
