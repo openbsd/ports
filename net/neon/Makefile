@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2004/09/15 00:06:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2004/11/28 13:52:53 alek Exp $
 
 COMMENT=		"HTTP and WebDAV client library, with C interface"
 
-VERSION=		0.24.6
+VERSION=		0.24.7
 DISTNAME=		neon-${VERSION}
 CATEGORIES=     	net www devel
 
@@ -16,10 +16,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		crypto m ssl z
 
 MASTER_SITES=		${HOMEPAGE}
 
-NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} --with-ssl --with-xml2
 
