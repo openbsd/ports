@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/15 05:01:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2001/02/22 22:02:50 espie Exp $
 
 DISTNAME=	kbanner2
+PKGNAME=	kbanner-2
 CATEGORIES=	japanese
 NEED_VERSION=	1.355
 MASTER_SITES=	http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/program/

@@ -1,6 +1,6 @@
---- kbanner.1.orig	Thu Oct 14 23:02:37 1993
-+++ kbanner.1	Tue Feb 13 03:39:07 2001
-@@ -44,6 +44,6 @@
+--- kbanner.1.orig	Fri Oct 15 06:18:55 1993
++++ kbanner.1	Thu Feb 22 22:56:38 2001
+@@ -44,6 +44,6 @@ Shifted-JIS is often misjudged as EUC.
  Only ISO-2022-JP is available for MIME.
  .SH "SEE ALSO"
  .PP

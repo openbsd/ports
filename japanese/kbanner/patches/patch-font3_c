@@ -1,11 +1,11 @@
-$OpenBSD: patch-font3_c,v 1.1.1.1 2001/02/13 06:52:32 fgsch Exp $
+$OpenBSD: patch-font3_c,v 1.2 2001/02/22 22:02:51 espie Exp $
 $NetBSD: patch-af,v 1.2 2000/05/18 22:47:25 itohy Exp $
 
 JIS X0208-1990 characters.
 
---- font3.c.orig	Thu May 18 00:27:03 2000
-+++ font3.c	Thu May 18 01:07:05 2000
-@@ -4567,10 +4567,10 @@
+--- font3.c.orig	Fri Oct 15 06:18:55 1993
++++ font3.c	Thu Feb 22 22:56:38 2001
+@@ -4567,10 +4567,10 @@ unsigned short font74[]={
    0x1320,0x1020,0x17ff,0x1020,0x1222,0x33fe,0x6800,0xc7ff,
    0x0020,0x007c,0xf8c4,0x23ac,0x2058,0x2030,0xf8e0,0x2380,
    0x20fe,0x2120,0x2020,0x3bff,0xe020,0x0122,0x0122,0x01fe,
