@@ -1,0 +1,29 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/06/11 14:43:57 lebel Exp $
+--- Makefile.in.orig	Sat Apr 22 03:12:30 2000
++++ Makefile.in	Mon Jun 11 10:57:57 2001
+@@ -1,7 +1,6 @@
+ # $Id: patch-Makefile_in,v 1.1.1.1 2001/06/11 14:43:57 lebel Exp $
+ 
+ srcdir= .
+-prefix= /usr/local
+ 
+ CC=@CC@
+ CFLAGS=@CFLAGS@
+@@ -11,7 +10,7 @@ INCLUDE= -I/usr/local/include
+ DEFINES += `libnet-config --defines` #-DDEBUG
+ INSTALL=./install-sh 
+ 
+-prefix=/usr/local
++prefix=@prefix@
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) $(INCLUDE) $(DEFINES) -c $< -o $@
+@@ -23,7 +22,7 @@ sentinel: $(OBJS)
+ 	strip sentinel
+ 
+ install: 
+-	$(INSTALL) -c -m 0755 sentinel $(prefix)/sbin
++	$(INSTALL) -c -m 0755 sentinel $(DESTDIR)$(prefix)/sbin
+ 
+ clean:
+ 	rm -f core *.core *.o $(OBJS) sentinel

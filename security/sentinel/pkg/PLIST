@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/11 14:43:57 lebel Exp $
+sbin/sentinel
+share/doc/sentinel/Changelog
+share/doc/sentinel/README
+@dirrm share/doc/sentinel
