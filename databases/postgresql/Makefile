@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 1999/11/11 02:24:29 kevlo Exp $
+# $OpenBSD: Makefile,v 1.17 1999/12/07 05:09:41 form Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
-DISTNAME=	postgresql-6.5.2
+DISTNAME=	postgresql-6.5.3
 CATEGORIES=	databases
 
 NEED_VERSION=	1.64
@@ -51,7 +51,7 @@ MASTER_SITES=	ftp://ftp.postgresql.org/pub/ \
 		ftp://ftp.iodynamics.com/pub/mirror/postgresql/ \
 		ftp://postgresql.nextpath.com/pub/postgresql/ \
 		ftp://www.ndesign.com.ua/pub/psql/ \
-		ftp://postgresql.netafric.ci/ \
+		ftp://postgresql.netafric.ci/
 
 # if you want to use the tcl/tk frontend pgaccess, then you need to build
 # postgresql with tcl support by typing: make USE_TCL=yes
