@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/13 10:41:50 avsm Exp $
+bin/cvschroot
+bin/cvsco
+bin/cvsdiscard
+bin/cvsdo
+bin/cvspurge
+bin/cvsrmadm
+bin/cvstrim
+bin/cvsu
+man/man1/cvsutils.1
