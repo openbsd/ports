@@ -1,6 +1,6 @@
-$OpenBSD: patch-mpg123ctl_c,v 1.1.1.1 2001/02/06 11:56:54 wilfried Exp $
+$OpenBSD: patch-mpg123ctl_c,v 1.2 2001/03/02 16:33:07 wilfried Exp $
 --- mpg123ctl.c.orig	Mon Apr  3 02:18:43 2000
-+++ mpg123ctl.c	Mon Feb  5 20:28:00 2001
++++ mpg123ctl.c	Fri Mar  2 17:02:09 2001
 @@ -97,12 +97,12 @@ void set_playlist()
  	dp = opendir(new_directory);
  	while (new_directory && (strcmp(new_directory, directory) != 0) &&
@@ -57,12 +57,3 @@ $OpenBSD: patch-mpg123ctl_c,v 1.1.1.1 2001/02/06 11:56:54 wilfried Exp $
  }
  
  void set_alwaysscroll(char *s) {
-@@ -348,7 +348,7 @@ void show_directory_name()
- {
-     if (dirnames[current_dir] != NULL) {
- 	while (strlen(dirnames[current_dir]) < 9) {
--	    strcat(dirnames[current_dir], " ");
-+	    strlcat(dirnames[current_dir], " ", sizeof(dirnames[0]));
- 	}
- 	draw_string(dirnames[current_dir], 5, 5);
-     } else {
