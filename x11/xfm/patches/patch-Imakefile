@@ -1,6 +1,7 @@
---- Imakefile.orig	Wed Oct 29 04:19:02 1997
-+++ Imakefile	Tue Aug  1 10:08:34 2000
-@@ -37,7 +37,7 @@
+$OpenBSD: patch-Imakefile,v 1.1 2002/12/30 09:11:47 pvalchev Exp $
+--- Imakefile.orig	Wed Oct 29 05:19:02 1997
++++ Imakefile	Mon Dec 30 00:57:29 2002
+@@ -37,7 +37,7 @@ InstallManSubdirs(Subdirs)
  
  CppScriptTarget(xfm.install.script,bin/xfm.install.cpp,\
  -DLIBDIR=$(XFMLIBDIR),)
@@ -9,7 +10,7 @@
  
  /* rules to create and install the appdefaults file, the config files and the
     pixmaps */
-@@ -53,32 +53,32 @@
+@@ -53,32 +53,32 @@ CppFileTarget(Xfm.ad,lib/Xfm.cpp,-DLIBDI
  InstallAppDefaults(Xfm)
  
  install::

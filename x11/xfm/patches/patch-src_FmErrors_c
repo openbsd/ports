@@ -1,5 +1,6 @@
---- src/FmErrors.c.orig	Tue Aug  1 09:19:16 2000
-+++ src/FmErrors.c	Tue Aug  1 09:20:09 2000
+$OpenBSD: patch-src_FmErrors_c,v 1.1 2002/12/30 09:11:47 pvalchev Exp $
+--- src/FmErrors.c.orig	Thu Aug 23 06:45:26 2001
++++ src/FmErrors.c	Mon Dec 30 00:57:29 2002
 @@ -21,11 +21,6 @@
  
  #define LABEL_WIDTH 300
