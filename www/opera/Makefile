@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2004/07/07 12:14:43 sturm Exp $
+# $OpenBSD: Makefile,v 1.22 2004/07/21 19:42:24 robert Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"fast and customizable WWW browser"
 
-PKGNAME=	opera-7.52
-DISTNAME=	opera-7.52-20040706.1-static-qt.i386-en
+PKGNAME=	opera-7.53
+DISTNAME=	opera-7.53-20040716.1-static-qt.i386-en
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.opera.com/
@@ -29,7 +29,7 @@ MASTER_SITES_OPERA=	ftp://ftp.opera.com/pub/opera/ \
 			ftp://ftp.rge.com/pub/infosystems/opera/ \
 			http://www.rge.com/pub/infosystems/opera/
 
-MASTER_SITES=	${MASTER_SITES_OPERA:=linux/752/final/en/i386/static/}
+MASTER_SITES=	${MASTER_SITES_OPERA:=linux/753/final/en/i386/static/}
 EXTRACT_SUFX=	.tar.bz2
 
 RUN_DEPENDS=	:redhat_base->=8.0:emulators/redhat/base
