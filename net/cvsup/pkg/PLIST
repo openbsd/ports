@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/05 22:15:19 espie Exp $
-@pkgcfl cvsup-bin-*
+@comment $OpenBSD: PLIST,v 1.2 2002/02/23 12:35:22 naddy Exp $
 bin/cvsup
 man/man1/cvsup.1

@@ -13,4 +13,3 @@ WWW: ${HOMEPAGE}
 
 Available flavors: 
 	no_x11	text-only
-	static	no Modula-3 dependency at run-time
