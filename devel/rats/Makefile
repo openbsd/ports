@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/10/12 06:28:18 jsyn Exp $
+# $OpenBSD: Makefile,v 1.12 2002/10/17 21:08:26 jsyn Exp $
 
 COMMENT=		"source code auditing tool"
 
@@ -15,7 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.securesoftware.com/rats/
+MASTER_SITES=		http://www.securesoftware.com/rats/ \
+			${MASTER_SITE_PACKETSTORM:=UNIX/security/}
 
 LIB_DEPENDS=		expat.2::textproc/expat
 
