@@ -3,7 +3,7 @@
 # Date created:		17 Nov 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.3 1998/08/11 03:16:49 form Exp $
+# $OpenBSD: Makefile,v 1.4 1998/08/11 12:15:25 form Exp $
 #
 
 # WWW site: http://www.fccc.edu/users/muquit/Count.html
@@ -37,12 +37,11 @@ pre-build:
 .endif
 
 post-build:
-	cd ${WRKSRC}/utils; ${MAKE}
 	cd ${WRKSRC}; ./Gen-conf
 
 do-install:
 	cd ${WRKSRC}; yes "" | ./Count-install
-	cd ${WRKSRC}/utils; \
+	cd ${WRKSRC}/utils/mkstrip; \
 		${INSTALL_PROGRAM} mkstrip ${PREFIX}/bin; \
 		${INSTALL_MAN} mkstrip.1 ${PREFIX}/man/man1; \
 		${INSTALL_SCRIPT} mkstrip.sh ${PREFIX}/lib/Counter/digits
