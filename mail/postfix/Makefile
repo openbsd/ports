@@ -1,20 +1,15 @@
-# $OpenBSD: Makefile,v 1.40 2003/11/25 20:57:10 jakob Exp $
+# $OpenBSD: Makefile,v 1.41 2004/02/16 08:54:13 jakob Exp $
 
 SUBDIR+= stable
-SUBDIR+= stable,ldap
-SUBDIR+= stable,mysql
-SUBDIR+= stable,pcre
-SUBDIR+= stable,sasl2
 SUBDIR+= stable,tls
-SUBDIR+= stable,tls,sasl2
+SUBDIR+= stable,tls,ldap
+SUBDIR+= stable,tls,mysql
 SUBDIR+= stable,tls,sasl2,pcre
 
 SUBDIR+= snapshot
-SUBDIR+= snapshot,ldap
-SUBDIR+= snapshot,mysql
-SUBDIR+= snapshot,pgsql
-SUBDIR+= snapshot,pcre
-SUBDIR+= snapshot,sasl2
 SUBDIR+= snapshot,tls
+SUBDIR+= snapshot,tls,ldap
+SUBDIR+= snapshot,tls,mysql
+SUBDIR+= snapshot,tls,sasl2,pcre
 
 .include <bsd.port.subdir.mk>
