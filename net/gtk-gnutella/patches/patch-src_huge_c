@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_huge_c,v 1.1 2002/08/03 23:41:21 naddy Exp $
+--- src/huge.c.orig	Thu Aug  1 20:42:54 2002
++++ src/huge.c	Thu Aug  1 20:43:32 2002
+@@ -189,7 +189,7 @@ static void add_persistent_cache_entry(
+ 	if (0 == ftell(persistent_cache))
+ 		fprintf(persistent_cache, "%s", sha1_persistent_cache_file_header);
+ 
+-	fprintf(persistent_cache, "%s\t%lu\t%ld\t%s\n",
++	fprintf(persistent_cache, "%s\t%lu\t%d\t%s\n",
+ 		sha1_base32(digest), (gulong) size, mtime, file_name);
+ 	fclose(persistent_cache);
+ }
+@@ -208,7 +208,7 @@ static void dump_cache_one_entry(
+ 	if (!e->shared)
+ 		return;
+ 
+-	fprintf(persistent_cache, "%s\t%lu\t%ld\t%s\n",
++	fprintf(persistent_cache, "%s\t%lu\t%d\t%s\n",
+ 		sha1_base32(e->digest), (gulong) e->size, e->mtime, e->file_name);
+ }
+ 

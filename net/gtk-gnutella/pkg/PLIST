@@ -1,5 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/10/25 21:42:32 heko Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/08/03 23:41:21 naddy Exp $
 bin/gtk-gnutella
 man/man1/gtk-gnutella.1
 share/doc/gtk-gnutella/README
+share/gtk-gnutella/pixmaps/arrow_down.xpm
+share/gtk-gnutella/pixmaps/arrow_up.xpm
+share/gtk-gnutella/pixmaps/firewall.xpm
+share/gtk-gnutella/pixmaps/no_firewall.xpm
+@dirrm share/gtk-gnutella/pixmaps
+@dirrm share/gtk-gnutella
 @dirrm share/doc/gtk-gnutella
