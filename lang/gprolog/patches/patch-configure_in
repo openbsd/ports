@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2004/09/26 14:48:29 espie Exp $
+--- configure.in.orig	Sun Sep 26 16:28:18 2004
++++ configure.in	Sun Sep 26 16:28:44 2004
+@@ -369,7 +369,7 @@ else
+ 		*sparc*solaris)    CFLAGS_MACHINE='-msupersparc';;
+ 		i686*)             CFLAGS_MACHINE='-mcpu=pentiumpro';;
+ 		i586*)             CFLAGS_MACHINE='-mcpu=pentium';;
+-		i*86*)             CFLAGS_MACHINE='-mcpu=i486';;
++		i*86*)             CFLAGS_MACHINE='';;
+ 		powerpc*darwin*)   CFLAGS_MACHINE='-mpowerpc -no-cpp-precomp';;
+ 	esac
+ 
