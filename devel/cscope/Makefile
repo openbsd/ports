@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/12/29 20:19:10 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2003/03/06 04:30:25 brad Exp $
 
 COMMENT=		"code browsing program"
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cscope/}
 
-CONFIGURE_STYLE=	autoconf
-NEW_AUTOCONF=		Yes
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
