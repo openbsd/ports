@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/14 16:54:04 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/14 17:06:30 espie Exp $
 
 COMMENT="AFPL PostScript interpreter"
 
@@ -126,7 +126,7 @@ CFLAGS+=	-DA4
 .endif
 
 .if ${FLAVOR:L:Mgtk}
-LIB_DEPENDS+=	gtk.1.::x11/gtk
+LIB_DEPENDS+=	gtk.1.::x11/gtk+
 ALL_TARGET+=so
 INSTALL_TARGET+=soinstall
 end_install= ${INSTALL_PROGRAM} ${WRKDIST}/sobin/gsx ${PREFIX}/bin
