@@ -1,6 +1,6 @@
---- configure.orig	Tue Apr 16 18:29:59 2002
-+++ configure	Tue Apr 30 23:59:23 2002
-@@ -2660,12 +2660,6 @@
+--- configure.orig	Sat May 18 01:40:53 2002
++++ configure	Mon May 20 07:58:43 2002
+@@ -2660,12 +2660,6 @@ else
    SILC_DIST_WIN32DLL_FALSE=
  fi
  
@@ -13,7 +13,7 @@
  # Program checking
  # Find a good install program.  We prefer a C program (faster),
  # so one script is as good as another.  But avoid the broken or
-@@ -12362,16 +12356,14 @@
+@@ -12362,16 +12356,14 @@ echo "${ECHO_T}yes" >&6
  #define SILC_DEBUG 1
  EOF
  
