@@ -161,20 +161,6 @@ etc/gtk/gtkrc.ja
 etc/gtk/gtkrc.ko
 etc/gtk/gtkrc.ru
 @dirrm etc/gtk
-@dirrm lib/locale/sv/LC_MESSAGES
-@dirrm lib/locale/ru/LC_MESSAGES
-@dirrm lib/locale/pt/LC_MESSAGES
-@dirrm lib/locale/pl/LC_MESSAGES
-@dirrm lib/locale/no/LC_MESSAGES
-@dirrm lib/locale/nl/LC_MESSAGES
-@dirrm lib/locale/ko/LC_MESSAGES
-@dirrm lib/locale/ja/LC_MESSAGES
-@dirrm lib/locale/it/LC_MESSAGES
-@dirrm lib/locale/hu/LC_MESSAGES
-@dirrm lib/locale/fr/LC_MESSAGES
-@dirrm lib/locale/es/LC_MESSAGES
-@dirrm lib/locale/de/LC_MESSAGES
-@dirrm lib/locale/cs/LC_MESSAGES
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/gtk.info %D/info/dir
 @exec install-info %D/info/gdk.info %D/info/dir
