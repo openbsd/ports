@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2000/10/22 14:03:21 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2001/02/25 06:51:04 obecian Exp $
 
 DISTNAME=	expect-5.32.1
 CATEGORIES=	lang
@@ -7,7 +7,7 @@ MASTER_SITES=	http://expect.nist.gov/old/
 
 HOMEPAGE=	http://expect.nist.gov/
 
-LIB_DEPENDS=	tk83.1.3:x11/tk/8.3
+LIB_DEPENDS=	tk83.1.3::x11/tk/8.3
 
 MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 
