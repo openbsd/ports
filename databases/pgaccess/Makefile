@@ -1,22 +1,18 @@
-# New ports collection makefile for:	pgaccess
-# Version required:	0.86
-# Date created:		6 May 1998 19:57 NOVST
-# Whom:			Oleg Form <form@vs.itam.nsc.ru>
-#
-# $OpenBSD: Makefile,v 1.2 1998/07/21 11:09:16 form Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/08 04:39:49 marc Exp $
 # FreeBSD: Makefile,v 1.11 1998/04/21 21:30:21 andreas Exp
 #
 
 DISTNAME=	pgaccess-0.88
 CATEGORIES=	databases
-MASTER_SITES=	http://www.flex.ro/pgaccess/
 
 MAINTAINER=	form@vs.itam.nsc.ru
 
+MASTER_SITES=	http://www.flex.ro/pgaccess/
+
 RUN_DEPENDS=	${PREFIX}/pgsql/bin/postmaster:${PORTSDIR}/databases/postgresql
 
-NO_BUILD=		yes
-NO_WRKSUBDIR=		yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pgaccess.tcl ${PREFIX}/bin/pgaccess
