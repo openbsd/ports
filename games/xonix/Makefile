@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 1998/11/09 01:50:00 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/09/22 22:33:33 brad Exp $
 
 DISTNAME=	xonix-1.4
 CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.inf.tu-dresden.de/pub/people/wunsch/xonix/
 
 MAINTAINER=	angelos@openbsd.org
-
-MASTER_SITES=	ftp://ftp.inf.tu-dresden.de/pub/people/wunsch/xonix/
 
 USE_IMAKE=      yes
 
