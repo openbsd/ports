@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpn_x86_dive_1_asm,v 1.1 2002/10/21 23:18:05 naddy Exp $
+--- mpn/x86/dive_1.asm.orig	Mon Oct 14 02:06:16 2002
++++ mpn/x86/dive_1.asm	Mon Oct 14 02:07:10 2002
+@@ -71,7 +71,7 @@ L(strip_twos):
+ 
+ ifdef(`PIC',`
+ 	call	L(movl_eip_edx)
+-	addl	$_GLOBAL_OFFSET_TABLE_, %edx
++	addl	$GSYM_PREFIX`'_GLOBAL_OFFSET_TABLE_, %edx
+ 	movl	modlimb_invert_table@GOT(%edx), %edx
+ 	movzbl	(%eax,%edx), %eax			C inv 8 bits
+ ',`
