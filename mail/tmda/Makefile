@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/02/15 19:53:43 matt Exp $
+# $OpenBSD: Makefile,v 1.5 2002/02/20 20:54:35 lebel Exp $
 
 COMMENT=		"reduce the amount of SPAM/UCE (junk-mail)"
 
@@ -16,7 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://software.libertine.org/tmda/releases/
+MASTER_SITES=		http://software.libertine.org/tmda/releases/ \
+			http://software.libertine.org/tmda/releases/old/
 EXTRACT_SUFX=		.tgz
 
 RUN_DEPENDS+=   :python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
@@ -36,6 +37,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/templates/*.txt ${PREFIX}/share/tmda
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tmda-* ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tmda
-	${INSTALL_DATA} ${WRKSRC}/contrib/sample.tmdarc ${PREFIX}/share/doc/tmda
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tmda
+	${INSTALL_DATA} ${WRKSRC}/contrib/sample.tmdarc ${PREFIX}/share/examples/tmda
+	${INSTALL_DATA} ${WRKSRC}/htdocs/*.html ${PREFIX}/share/doc/tmda
 
 .include <bsd.port.mk>
