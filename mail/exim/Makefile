@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/09/06 05:48:48 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/10/27 12:56:09 espie Exp $
 
 DISTNAME=	exim-3.16
 CATEGORIES=	mail
@@ -10,7 +10,7 @@ DISTFILES=	exim-3.16.tar.gz exim-texinfo-3.10.tar.gz
 
 HOMEPAGE=	http://www.exim.org/
 
-MAINTAINER=	seb@gosh.todesplanet.de
+MAINTAINER=	Sebastian Stark <seb@todesplanet.de>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

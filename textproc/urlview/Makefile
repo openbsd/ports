@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/06 05:48:49 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/27 12:56:09 espie Exp $
 
 DISTNAME=	urlview-0.9
 CATEGORIES=	textproc
@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/contrib/ \
 		ftp://ftp.etri.re.kr/pub/mail/mutt/ \
 		ftp://ftp.pnm.net/pub/unix/mutt/contrib/
 
-MAINTAINER=	seb@gosh.todesplanet.de
+MAINTAINER=	Sebastian Stark <seb@todesplanet.de>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
