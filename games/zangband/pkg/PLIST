@@ -1,0 +1,144 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/28 16:33:39 lebel Exp $
+bin/zangband
+share/zangband/apex/readme.txt
+share/zangband/apex/z_scores.raw
+share/zangband/edit/a_info.txt
+share/zangband/edit/e_info.txt
+share/zangband/edit/f_info.txt
+share/zangband/edit/k_info.txt
+share/zangband/edit/misc.txt
+share/zangband/edit/q_info.txt
+share/zangband/edit/q_oberon.txt
+share/zangband/edit/q_random.txt
+share/zangband/edit/q_serpen.txt
+share/zangband/edit/r_info.txt
+share/zangband/edit/t_info.txt
+share/zangband/edit/v_info.txt
+share/zangband/edit/w_info.txt
+share/zangband/file/a_cursed.txt
+share/zangband/file/a_high.txt
+share/zangband/file/a_low.txt
+share/zangband/file/a_med.txt
+share/zangband/file/chainswd.txt
+share/zangband/file/crime.txt
+share/zangband/file/dead.txt
+share/zangband/file/death.txt
+share/zangband/file/elvish.txt
+share/zangband/file/error.txt
+share/zangband/file/mondeath.txt
+share/zangband/file/monfear.txt
+share/zangband/file/monfrien.txt
+share/zangband/file/monspeak.txt
+share/zangband/file/news.txt
+share/zangband/file/readme.txt
+share/zangband/file/rumors.txt
+share/zangband/file/sample.txt
+share/zangband/file/silly.txt
+share/zangband/file/timefun.txt
+share/zangband/file/timenorm.txt
+share/zangband/file/w_cursed.txt
+share/zangband/file/w_high.txt
+share/zangband/file/w_low.txt
+share/zangband/file/w_med.txt
+share/zangband/help/attack.hlp
+share/zangband/help/attack.txt
+share/zangband/help/birth.hlp
+share/zangband/help/birth.txt
+share/zangband/help/bldg.txt
+share/zangband/help/charattr.hlp
+share/zangband/help/charattr.txt
+share/zangband/help/command.hlp
+share/zangband/help/command.txt
+share/zangband/help/commdesc.hlp
+share/zangband/help/commdesc.txt
+share/zangband/help/defend.hlp
+share/zangband/help/defend.txt
+share/zangband/help/dungeon.hlp
+share/zangband/help/dungeon.txt
+share/zangband/help/gambling.txt
+share/zangband/help/general.hlp
+share/zangband/help/general.txt
+share/zangband/help/help.hlp
+share/zangband/help/helpinfo.txt
+share/zangband/help/magic.hlp
+share/zangband/help/magic.txt
+share/zangband/help/monster.hlp
+share/zangband/help/monster.txt
+share/zangband/help/objects.hlp
+share/zangband/help/objects.txt
+share/zangband/help/option.hlp
+share/zangband/help/option.txt
+share/zangband/help/pref.hlp
+share/zangband/help/pref.txt
+share/zangband/help/readme.txt
+share/zangband/help/spoiler.hlp
+share/zangband/help/town.hlp
+share/zangband/help/town.txt
+share/zangband/help/version.txt
+share/zangband/help/wizard.txt
+share/zangband/pref/colors.prf
+share/zangband/pref/font-ami.prf
+share/zangband/pref/font-dos.prf
+share/zangband/pref/font-ibm.prf
+share/zangband/pref/font-mac.prf
+share/zangband/pref/font-mon.prf
+share/zangband/pref/font-win.prf
+share/zangband/pref/font-x11.prf
+share/zangband/pref/font-xxx.prf
+share/zangband/pref/font.prf
+share/zangband/pref/graf-ami.prf
+share/zangband/pref/graf-dos.prf
+share/zangband/pref/graf-gcu.prf
+share/zangband/pref/graf-ibm.prf
+share/zangband/pref/graf-lsl.prf
+share/zangband/pref/graf-mac.prf
+share/zangband/pref/graf-new.prf
+share/zangband/pref/graf-win.prf
+share/zangband/pref/graf-x11.prf
+share/zangband/pref/graf-xaw.prf
+share/zangband/pref/graf-xpj.prf
+share/zangband/pref/graf-xxx.prf
+share/zangband/pref/graf.prf
+share/zangband/pref/pref-acn.prf
+share/zangband/pref/pref-ami.prf
+share/zangband/pref/pref-emx.prf
+share/zangband/pref/pref-gcu.prf
+share/zangband/pref/pref-gtk.prf
+share/zangband/pref/pref-key.prf
+share/zangband/pref/pref-mac.prf
+share/zangband/pref/pref-win.prf
+share/zangband/pref/pref-x11.prf
+share/zangband/pref/pref.prf
+share/zangband/pref/spell-xx.prf
+share/zangband/pref/user-win.prf
+share/zangband/pref/user.prf
+share/zangband/pref/xtra-gcu.prf
+share/zangband/pref/xtra-new.prf
+share/zangband/pref/xtra-xxx.prf
+@exec mkdir -p %D/share/zangband/xtra
+@dirrm share/zangband/xtra
+@exec mkdir -p %D/share/zangband/user
+@dirrm share/zangband/user
+@exec mkdir -p %D/share/zangband/script
+@dirrm share/zangband/script
+@exec mkdir -p %D/share/zangband/save
+@dirrm share/zangband/pref
+@exec mkdir -p %D/share/zangband/info
+@dirrm share/zangband/info
+@dirrm share/zangband/help
+@dirrm share/zangband/file
+@dirrm share/zangband/edit
+@exec mkdir -p %D/share/zangband/data
+@exec mkdir -p %D/share/zangband/bone
+@exec chmod 0775 %D/share/zangband/apex
+@exec chmod 0775 %D/share/zangband/data
+@exec chmod 0775 %D/share/zangband/save
+@exec chmod 0775 %D/share/zangband/user
+@unexec rm -f %D/share/zangband/apex/*
+@unexec rm -f %D/share/zangband/data/*
+@unexec rm -f %D/share/zangband/save/*
+@dirrm share/zangband/save
+@dirrm share/zangband/data
+@dirrm share/zangband/bone
+@dirrm share/zangband/apex
+@dirrm share/zangband

@@ -1,0 +1,19 @@
+The game of Zangband is a single player dungeon simulation. A player
+may choose from a number of races, classes and magic realms when
+creating a character (see charattr.txt [3]), and then "run" that
+character over a period of days, weeks, even months. Deep down
+inside, the real objective of the game is to increase your experience,
+and certain other characteristics, and also to collect useful items,
+to give you a decent chance against the great Serpent of Chaos, who
+lurks somewhere in the depths of the dungeon.
+
+The player will begin his adventure on the town level where he may
+acquire supplies, weapons, armor, and magical devices by bartering
+with various shop owners. After preparing for his adventure, the
+player can descend into the dungeon where fantastic adventures await
+his coming!
+
+Flavors:
+	no_x11	- build without X11 support
+
+WWW: ${HOMEPAGE}
