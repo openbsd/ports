@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2002/01/25 21:53:21 jsyn Exp $
+# $OpenBSD: Makefile,v 1.68 2002/01/25 23:23:37 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -54,8 +54,12 @@
      SUBDIR += nethack
      SUBDIR += nethack,no_x11
      SUBDIR += nethack,qt
-     SUBDIR += netris
      SUBDIR += newvox
+     SUBDIR += slash
+     SUBDIR += slash,no_x11
+     SUBDIR += slash-em
+     SUBDIR += slash-em,no_x11
+     SUBDIR += netris
      SUBDIR += omega
 #    SUBDIR += oneko
 #    SUBDIR += oonsoo
@@ -63,14 +67,11 @@
      SUBDIR += qstat
      SUBDIR += quake
      SUBDIR += quake,ggi
+     SUBDIR += quake,
 #    SUBDIR += quakeserver
      SUBDIR += sarien
      SUBDIR += sdlroids
      SUBDIR += sdlzombies
-     SUBDIR += slash
-     SUBDIR += slash-em
-     SUBDIR += slash-em,no_x11
-     SUBDIR += slash,no_x11
 #    SUBDIR += sokoban
      SUBDIR += speyes
      SUBDIR += spider
