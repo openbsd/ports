@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/21 02:52:46 shell Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/21 03:06:15 shell Exp $
 
 COMMENT=	"on-the-fly HTML to WML conversion"
 
 DISTNAME=       html2wml-0.4.2
 CATEGORIES=     converters www perl5
-NEED_VERSION=   1.378
+NEED_VERSION=   1.409
 
 MASTER_SITES=	http://maddingue.free.fr/techie/download/Html2Wml/
 HOMEPAGE=	http://maddingue.free.fr/techie/html2wml.html
@@ -18,8 +18,8 @@ PERMIT_PACKAGE_FTP=     Yes
 
 PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
 BUILD_DEPENDS=	${PERL_MODULES}/LWP/UserAgent.pm::www/p5-libwww \
-		${PERL_MODULES}/${ARCH}-openbsd/HTML/Parser.pm::www/p5-HTML-Parser \
-		${PERL_MODULES}/${ARCH}-openbsd/XML/Parser.pm::textproc/p5-XML-Parser \
+		${PERL_MODULES}/${MACHINE_ARCH}-openbsd/HTML/Parser.pm::www/p5-HTML-Parser \
+		${PERL_MODULES}/${MACHINE_ARCH}-openbsd/XML/Parser.pm::textproc/p5-XML-Parser \
 		${PERL_MODULES}/URI/URL.pm::www/p5-URI \
 		${PERL_MODULES}/Text/Template.pm::textproc/p5-Text-Template
 RUN_DEPENDS=	${BUILD_DEPENDS}
