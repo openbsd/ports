@@ -1,0 +1,20 @@
+Gnu intlfonts are originally meant for emacs20,
+but there is absolutely no reason not to use them as standard
+X11 fonts.
+
+This is the japanese sub part of that distribution. This package
+contains, in pcf format:
+
+Japanese normal size fonts excluding what distributed with X
+	j90-16.bdf		16 dots JISX0208.1990
+	j78-16.bdf		16 dots JISX0208.1978
+	jksp16.bdf		16 dots JISX0212.1990 (HojoKanji)
+	j83-18.bdf		18 dots JISX0208.1983
+	j83-18{b,i,bi}.bdf	Bold, italic, bold-italic of j83-18.bdf
+	a18rk.bdf		9x18 dots JISX0201 (Roman & Kana)
+	a18rk{b,i,bi}.bdf	Bold, italic, bold-italic of a18rk.bdf
+
+Japanese big fonts
+	j83-32.bdf		32 dots JISX0208.1983
+	j83-48.bdf		48 dots JISX0208.1983
+	jksp40.bdf		40 dots JISX0212.1990 (HojoKanji)
