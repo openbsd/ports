@@ -1,5 +1,5 @@
---- usr/bin/ldd.orig	Tue Apr 30 12:44:23 2002
-+++ usr/bin/ldd	Tue Apr 30 12:44:46 2002
+--- usr/bin/ldd.orig	Mon May  6 03:14:43 2002
++++ usr/bin/ldd	Mon May  6 03:27:05 2002
 @@ -28,7 +28,7 @@
  TEXTDOMAIN=libc
  TEXTDOMAINDIR=@TEXTDOMAINDIR@
@@ -9,3 +9,12 @@
  warn=
  bind_now=
  verbose=
+@@ -92,7 +92,7 @@
+   # Maybe extra code for non-ELF binaries.
+   file=$1
+   # Run the ldd stub.
+-  lddlibc4 "$file"
++  /emul/linux/usr/bin/lddlibc4 "$file"
+   # Test the result.
+   if test $? -lt 3; then
+     return 0;
