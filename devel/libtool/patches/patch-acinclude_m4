@@ -1,7 +1,27 @@
-$OpenBSD: patch-acinclude_m4,v 1.1 2004/07/02 01:59:12 brad Exp $
+$OpenBSD: patch-acinclude_m4,v 1.2 2004/08/02 15:50:46 brad Exp $
 --- acinclude.m4.orig	Sun Apr 11 01:34:51 2004
-+++ acinclude.m4	Wed Jun 30 18:27:38 2004
-@@ -1506,7 +1506,7 @@ nto-qnx*)
++++ acinclude.m4	Mon Aug  2 11:46:29 2004
+@@ -676,6 +676,19 @@ AC_CACHE_VAL([lt_cv_sys_max_cmd_len], [d
+     lt_cv_sys_max_cmd_len=8192;
+     ;;
+ 
++  netbsd* | freebsd* | openbsd* | darwin* )
++    # This has been around since 386BSD, at least.  Likely further.
++    if test -x /sbin/sysctl; then
++      lt_cv_sys_max_cmd_len=`/sbin/sysctl -n kern.argmax`
++    elif test -x /usr/sbin/sysctl; then
++      lt_cv_sys_max_cmd_len=`/usr/sbin/sysctl -n kern.argmax`
++    else
++      lt_cv_sys_max_cmd_len=65536 # usable default for *BSD
++    fi
++    # And add a safety zone
++    lt_cv_sys_max_cmd_len=`expr $lt_cv_sys_max_cmd_len \/ 4`
++    ;;
++
+  *)
+     # If test is not a shell built-in, we'll probably end up computing a
+     # maximum length that is only half of the actual maximum length, but
+@@ -1506,7 +1519,7 @@ nto-qnx*)
  openbsd*)
    version_type=sunos
    need_lib_prefix=no
@@ -10,7 +30,7 @@ $OpenBSD: patch-acinclude_m4,v 1.1 2004/07/02 01:59:12 brad Exp $
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
-@@ -2214,12 +2214,10 @@ nto-qnx*)
+@@ -2214,12 +2227,10 @@ nto-qnx*)
    ;;
  
  openbsd*)
@@ -25,7 +45,7 @@ $OpenBSD: patch-acinclude_m4,v 1.1 2004/07/02 01:59:12 brad Exp $
    fi
    ;;
  
-@@ -3204,6 +3202,20 @@ case $host_os in
+@@ -3204,6 +3215,20 @@ case $host_os in
      # Workaround some broken pre-1.5 toolchains
      output_verbose_link_cmd='$CC -shared $CFLAGS -v conftest.$objext 2>&1 | grep conftest.$objext | $SED -e "s:-lgcc -lc -lgcc::"'
      ;;
@@ -46,7 +66,7 @@ $OpenBSD: patch-acinclude_m4,v 1.1 2004/07/02 01:59:12 brad Exp $
    osf3*)
      case $cc_basename in
        KCC)
-@@ -5572,6 +5584,7 @@ $echo "local: *; };" >> $output_objdir/$
+@@ -5572,6 +5597,7 @@ $echo "local: *; };" >> $output_objdir/$
        _LT_AC_TAGVAR(hardcode_shlibpath_var, $1)=no
        if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
  	_LT_AC_TAGVAR(archive_cmds, $1)='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
