@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/01 17:56:00 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/18 23:17:28 avsm Exp $
 
-DISTNAME=	HTML-Mason-1.0
+COMMENT=	"high-performance dynamic web authoring system"
+
+DISTNAME=	HTML-Mason-1.02
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
-NEED_VERSION=	1.351
+NEED_VERSION=	1.401
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= HTML
 
@@ -17,7 +19,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
 BUILD_DEPENDS=	${PERL_MODULES}/${ARCH}-openbsd/Time/HiRes.pm::devel/p5-Time-HiRes \
-		${PERL_MODULES}/MLDBM.pm::devel/p5-MLDBM
+		${PERL_MODULES}/MLDBM.pm::devel/p5-MLDBM \
+		${PERL_MODULES}/Params/Validate.pm::devel/p5-Params-Validate \
+		${LOCALBASE}/lib/mod_perl.so::www/mod_perl
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl
 
