@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2004/01/19 14:36:48 wilfried Exp $
+# $OpenBSD: Makefile,v 1.65 2004/02/02 04:53:49 marcm Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64
 
@@ -88,6 +88,8 @@ do-install:
 	@cd ${MOB} && ${TAR} -chf - ${dir} | \
 		${TAR} -xf - -C ${MOZ}
 .endfor
+	@cd ${MOB}/public && ${TAR} -chf - nss | \
+		${TAR} -xf - -C ${MOZ}/include
 .for dir in chrome components defaults icons res plugins searchplugins
 	${INSTALL_DATA_DIR} ${MOZ}/${dir}
 	@cd ${MOB}/bin && ${TAR} -chf - ${dir} | \

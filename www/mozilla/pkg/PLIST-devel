@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.5 2004/01/18 10:48:38 wilfried Exp $
+@comment $OpenBSD: PLIST-devel,v 1.6 2004/02/02 04:53:50 marcm Exp $
 lib/pkgconfig/mozilla-gtkmozembed.pc
 lib/pkgconfig/mozilla-js.pc
 lib/pkgconfig/mozilla-nspr.pc
@@ -1462,6 +1462,97 @@ mozilla/include/nspr/prtrace.h
 mozilla/include/nspr/prtypes.h
 mozilla/include/nspr/prvrsion.h
 mozilla/include/nspr/prwin16.h
+mozilla/include/nss/base64.h
+mozilla/include/nss/blapit.h
+mozilla/include/nss/cert.h
+mozilla/include/nss/certdb.h
+mozilla/include/nss/certt.h
+mozilla/include/nss/ciferfam.h
+mozilla/include/nss/cmmf.h
+mozilla/include/nss/cmmft.h
+mozilla/include/nss/cms.h
+mozilla/include/nss/cmsreclist.h
+mozilla/include/nss/cmst.h
+mozilla/include/nss/crmf.h
+mozilla/include/nss/crmft.h
+mozilla/include/nss/cryptohi.h
+mozilla/include/nss/cryptoht.h
+mozilla/include/nss/ecl-curve.h
+mozilla/include/nss/ecl-exp.h
+mozilla/include/nss/hasht.h
+mozilla/include/nss/jar-ds.h
+mozilla/include/nss/jar.h
+mozilla/include/nss/jarfile.h
+mozilla/include/nss/key.h
+mozilla/include/nss/keyhi.h
+mozilla/include/nss/keyt.h
+mozilla/include/nss/keythi.h
+mozilla/include/nss/nss.h
+mozilla/include/nss/nssb64.h
+mozilla/include/nss/nssb64t.h
+mozilla/include/nss/nssbase.h
+mozilla/include/nss/nssbaset.h
+mozilla/include/nss/nssck.api
+mozilla/include/nss/nssckbi.h
+mozilla/include/nss/nssckepv.h
+mozilla/include/nss/nssckft.h
+mozilla/include/nss/nssckfw.h
+mozilla/include/nss/nssckfwc.h
+mozilla/include/nss/nssckfwt.h
+mozilla/include/nss/nssckg.h
+mozilla/include/nss/nssckmdt.h
+mozilla/include/nss/nssckt.h
+mozilla/include/nss/nssilckt.h
+mozilla/include/nss/nssilock.h
+mozilla/include/nss/nsslocks.h
+mozilla/include/nss/nssrwlk.h
+mozilla/include/nss/nssrwlkt.h
+mozilla/include/nss/ocsp.h
+mozilla/include/nss/ocspt.h
+mozilla/include/nss/p12.h
+mozilla/include/nss/p12plcy.h
+mozilla/include/nss/p12t.h
+mozilla/include/nss/pk11func.h
+mozilla/include/nss/pk11pqg.h
+mozilla/include/nss/pk11sdr.h
+mozilla/include/nss/pkcs11.h
+mozilla/include/nss/pkcs11f.h
+mozilla/include/nss/pkcs11n.h
+mozilla/include/nss/pkcs11p.h
+mozilla/include/nss/pkcs11t.h
+mozilla/include/nss/pkcs11u.h
+mozilla/include/nss/pkcs12.h
+mozilla/include/nss/pkcs12t.h
+mozilla/include/nss/pkcs7t.h
+mozilla/include/nss/portreg.h
+mozilla/include/nss/preenc.h
+mozilla/include/nss/secasn1.h
+mozilla/include/nss/secasn1t.h
+mozilla/include/nss/seccomon.h
+mozilla/include/nss/secder.h
+mozilla/include/nss/secdert.h
+mozilla/include/nss/secdig.h
+mozilla/include/nss/secdigt.h
+mozilla/include/nss/secerr.h
+mozilla/include/nss/sechash.h
+mozilla/include/nss/secitem.h
+mozilla/include/nss/secmime.h
+mozilla/include/nss/secmod.h
+mozilla/include/nss/secmodt.h
+mozilla/include/nss/secoid.h
+mozilla/include/nss/secoidt.h
+mozilla/include/nss/secpkcs5.h
+mozilla/include/nss/secpkcs7.h
+mozilla/include/nss/secport.h
+mozilla/include/nss/shsign.h
+mozilla/include/nss/smime.h
+mozilla/include/nss/ssl.h
+mozilla/include/nss/sslerr.h
+mozilla/include/nss/sslproto.h
+mozilla/include/nss/sslt.h
+mozilla/include/nss/swfort.h
+mozilla/include/nss/swfortt.h
+mozilla/include/nss/watcomfx.h
 mozilla/include/oji/ProxyJNI.h
 mozilla/include/oji/jvmmgr.h
 mozilla/include/oji/nsIJRIPlugin.h
@@ -2343,6 +2434,7 @@ mozilla/lib/libxpwidgets_s.a
 @dirrm mozilla/include/pipboot
 @dirrm mozilla/include/p3p
 @dirrm mozilla/include/oji
+@dirrm mozilla/include/nss
 @dirrm mozilla/include/nspr/private
 @dirrm mozilla/include/nspr/obsolete
 @dirrm mozilla/include/nspr/md
