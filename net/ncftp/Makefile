@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2004/07/29 11:40:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2004/07/29 23:06:02 naddy Exp $
 
 COMMENT=		"ftp replacement with advanced user interface"
 
@@ -24,6 +24,7 @@ PATCH_DIST_STRIP=	-p1
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ENV=		TAR=/bin/tar
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/sh
+FAKE_FLAGS=		DESTDIR=${WRKINST} mandir=${WRKINST}${TRUEPREFIX}/man
 
 NO_REGRESS=		Yes
 
