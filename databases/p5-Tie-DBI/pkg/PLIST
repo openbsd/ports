@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/16 21:18:15 peter Exp $
+libdata/perl5/site_perl/Tie/DBI.pm
+libdata/perl5/site_perl/Tie/RDBM.pm
+man/man3/Tie::DBI.3p
+man/man3/Tie::RDBM.3p
