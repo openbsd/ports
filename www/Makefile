@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2003/02/23 21:53:29 danh Exp $
+# $OpenBSD: Makefile,v 1.101 2003/04/03 23:40:29 avsm Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -90,6 +90,7 @@
 #    SUBDIR += p5-WWW-Search
      SUBDIR += p5-libapreq
      SUBDIR += p5-libwww
+     SUBDIR += pear-HTML-Common
      SUBDIR += php4
      SUBDIR += privoxy
      SUBDIR += reportmagic
