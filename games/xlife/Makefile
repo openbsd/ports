@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:59 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/01/14 02:34:05 angelos Exp $
 #
 
 DISTNAME=       xlife
 PKGNAME=	xlife-3.0
 CATEGORIES=	games
-
-#BROKEN=	"sources no longer found on master sites"
 
 MAINTAINER=	angelos@openbsd.org
 
