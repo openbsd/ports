@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/06/29 02:20:39 kevlo Exp $
 bin/tkman
 bin/retkman
 share/doc/tkman/tkman-help.html
