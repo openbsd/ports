@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makeconf.in,v 1.2 2001/09/28 02:57:56 pvalchev Exp $
+$OpenBSD: patch-Makeconf.in,v 1.3 2002/02/06 13:44:37 ian Exp $
 
 Their scripts use "install -u root" internally, to cp scripts and include
 files, f'gosh sakes. Try to make it honor ${SUDO} for these.
 
---- Makeconf.in.orig	Sat Jan 27 14:48:35 2001
-+++ Makeconf.in	Thu Sep 27 02:11:12 2001
-@@ -26,11 +26,11 @@ F2CFLAGS = @F2CFLAGS@
+--- Makeconf.in.orig	Tue Feb  5 18:47:34 2002
++++ Makeconf.in	Tue Feb  5 18:48:24 2002
+@@ -28,10 +28,10 @@ GETWD = @GETWD@
  GNOMEUI_LIBS = @GNOMEUI_LIBS@
  GNOME_LIBDIR = @GNOME_LIBDIR@
  GNOME_INCLUDEDIR = @GNOME_INCLUDEDIR@
@@ -13,12 +13,10 @@ files, f'gosh sakes. Try to make it honor ${SUDO} for these.
 -INSTALL_DATA = @INSTALL_DATA@
 -INSTALL_PROGRAM = @INSTALL_PROGRAM@
 -INSTALL_SCRIPT = @INSTALL_SCRIPT@
--INSTALL_DIR = ${INSTALL} -d
 +INSTALL = ${SUDO} @INSTALL@
 +INSTALL_DATA = ${SUDO} @INSTALL_DATA@
 +INSTALL_PROGRAM = ${SUDO} @INSTALL_PROGRAM@
 +INSTALL_SCRIPT = ${SUDO} @INSTALL_SCRIPT@
-+INSTALL_DIR = ${SUDO} ${INSTALL} -d
+ INSTALL_DIR = ${INSTALL} -d
+ JAVAC = @JAVAC@
  LATEX = @LATEX@
- LDFLAGS = @LDFLAGS@
- LIBGLADE_CFLAGS = @LIBGLADE_CFLAGS@
