@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.309 2000/06/28 15:06:26 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.310 2000/06/30 21:42:36 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -829,9 +829,17 @@ ${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST}
 		-e '//d' -e '/^%%SHARED%%$$/d' <$? \
 		${SED_PLIST} >$@.tmp && mv -f $@.tmp $@
 .  else
-	@sed -e '/^%%!SHARED%%$$/d' \
-		-e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' -e '//d' <$? \
-		${SED_PLIST} >$@.tmp && mv -f $@.tmp $@
+	@if [ -x /sbin/ldconfig ]; then \
+		sed -e '/^%%!SHARED%%$$/d' \
+			-e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' \
+			-e '//d' <$? ${SED_PLIST} \
+			| sed -f ${LDCONFIG_SED_SCRIPT} >$@.tmp && mv -f $@.tmp $@; \
+	else \
+		sed -e '/^%%!SHARED%%$$/d' \
+			-e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' \
+			-e '//d' <$? \
+			${SED_PLIST} >$@.tmp && mv -f $@.tmp $@; \
+	fi
 .  endif
 	@echo "@comment name="`cd ${.CURDIR} && exec make package-name FULL_PACKAGE_NAME=Yes` >>$@
 
@@ -898,6 +906,7 @@ GZCAT?=		/usr/bin/gzcat
 GZIP?=		-9
 GZIP_CMD?=	/usr/bin/gzip -nf ${GZIP}
 LDCONFIG?=	[ ! -x /sbin/ldconfig ] || /sbin/ldconfig
+LDCONFIG_SED_SCRIPT?=${PORTSDIR}/infrastructure/install/ldconfig.sed
 M4?=		/usr/bin/m4
 STRIP?=		/usr/bin/strip
 
