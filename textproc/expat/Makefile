@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/08/04 16:12:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2004/09/15 18:41:03 espie Exp $
 # $FreeBSD: Makefile,v 1.2 1999/08/31 02:09:14 peter Exp $
 
 COMMENT=	"XML 1.0 parser written in C"
@@ -19,6 +19,16 @@ PERMIT_DISTFILES_FTP=   Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+NO_REGRESS=Yes
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/conftools
+
+DOC=${PREFIX}/share/doc/expat
+EXAMPLES=${PREFIX}/share/examples/expat
+
+SEPARATE_BUILD=simple
+post-install:
+	${INSTALL_DATA_DIR} ${DOC} ${EXAMPLES}
+	${INSTALL_DATA} ${WRKDIST}/doc/{reference.html,style.css,valid-xhtml10.png} ${DOC}
+	${INSTALL_DATA} ${WRKDIST}/examples/{elements.c,outline.c} ${EXAMPLES}
 
 .include <bsd.port.mk>
