@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/04/10 20:15:20 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/14 16:26:22 lebel Exp $
 
 COMMENT=		"create fonts.scale file for the TrueType font server"
 
@@ -12,7 +12,7 @@ MAINTAINER=		David Lebel <lebel@openbsd.org>
 
 MASTER_SITES=		http://www.joerg-pommnitz.de/TrueType/
 
-LIB_DEPENDS=		freetype.::print/freetype
+LIB_DEPENDS=		ttf.1.::print/freetype
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
