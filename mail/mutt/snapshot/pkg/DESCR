@@ -16,8 +16,6 @@ Other features include:
 
 Flavors:
 	slang	   - build using the S-Lang library for screen handling.
-	imap	   - build with IMAP & SSL support.
-	pop	   - build with POP3 support.
 	compressed - build with compressed folder support 
 		     (see: http://www.spinnaker.de/mutt/compressed/)
         mixmaster  - build with anonymous remailing support.
