@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/11/28 22:41:15 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2005/02/14 00:35:53 pvalchev Exp $
 
 COMMENT=	"Rampart arcade game clone for X11" 
 
@@ -7,8 +7,6 @@ DISTNAME=	castle-combat-${VERSION}
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.linux-games.com/castle-combat/
-
-MAINTAINER=	Lurene Grenier <lurene@daemonkitty.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

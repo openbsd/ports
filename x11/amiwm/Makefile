@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/17 15:18:31 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2005/02/14 00:35:54 pvalchev Exp $
 
 COMMENT=	"Amiga Workbench lookalike window manager"
 
@@ -10,8 +10,6 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/X11/wm/amiwm/
 
 HOMEPAGE=	http://www.lysator.liu.se/~marcus/amiwm.html
-
-MAINTAINER=	Lurene Grenier <lurene@daemonkitty.net>
 
 PERMIT_PACKAGE_CDROM=	restrictive
 PERMIT_PACKAGE_FTP=	restrictive

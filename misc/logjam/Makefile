@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/22 11:48:33 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2005/02/14 00:35:53 pvalchev Exp $
 
 COMMENT=	"gtk livejournal client"
 
@@ -7,8 +7,6 @@ DISTNAME=	logjam-${VERSION}
 CATEGORIES=	misc x11
 
 HOMEPAGE=	http://logjam.danga.com/
-
-MAINTAINER=	Lurene Grenier <lurene@daemonkitty.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/19 17:36:32 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2005/02/14 00:35:54 pvalchev Exp $
 
 COMMENT=	"aewm++ based pretty themable window manager"
 
@@ -7,8 +7,6 @@ DISTNAME=	pekwm-${VERSION}
 CATEGORIES=	x11
 
 HOMEPAGE=	http://pekwm.babblica.net/
-
-MAINTAINER=	Lurene Grenier <lurene@daemonkitty.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

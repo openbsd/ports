@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/28 22:41:19 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/02/14 00:35:53 pvalchev Exp $
 
 COMMENT=	"breakout game with many levels, powerups, good graphics" 
 
@@ -7,8 +7,6 @@ PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://lgames.sourceforge.net/index.php?action=show_project&project=LBreakout2
-
-MAINTAINER=	Lurene Grenier <lurene@daemonkitty.net>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

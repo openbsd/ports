@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/01/17 22:46:05 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2005/02/14 00:35:54 pvalchev Exp $
 
 COMMENT=	"RTF document converter"
 
@@ -11,8 +11,7 @@ HOMEPAGE=	http://www.gnu.org/software/unrtf/unrtf.html
 
 MASTER_SITES=	${MASTER_SITE_GNU:=unrtf/}
 
-MAINTAINER=	Lurene Grenier <lurene@daemonkitty.net> \
-		Patroklos Argyroudis <argp@ieee.org>
+MAINTAINER=	Patroklos Argyroudis <argp@ieee.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

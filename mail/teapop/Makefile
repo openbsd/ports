@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/01/02 12:56:05 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/02/14 00:35:53 pvalchev Exp $
 
 COMMENT=		"POP3-server virtual domain support"
 
@@ -7,8 +7,6 @@ DISTNAME=		teapop-${VERSION}
 CATEGORIES=		mail
 
 HOMEPAGE=		http://www.toontown.org/teapop/
-
-MAINTAINER=		Lurene Grenier <lurene@daemonkitty.net>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

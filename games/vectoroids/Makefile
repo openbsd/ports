@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/28 22:41:22 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2005/02/14 00:35:53 pvalchev Exp $
 
 COMMENT=	"vector-based, pretty, Asteroids clone" 
 
@@ -7,8 +7,6 @@ DISTNAME=	vectoroids-${VERSION}
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.newbreedsoftware.com/vectoroids/
-
-MAINTAINER=	Lurene Grenier <lurene@daemonkitty.net>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
