@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/06/02 23:41:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2001/06/03 17:45:00 pvalchev Exp $
 
 COMMENT=	"desktop organizer software for the palm pilot"
 
@@ -21,8 +21,11 @@ PERMIT_DISTFILES_FTP=	Yes
 LIB_DEPENDS=	pisock.3::comms/pilot-link \
 		gtk.1.2::x11/gtk+
 
-USE_X11=		Yes
-CONFIGURE_STYLE=	autoconf
+USE_X11=	Yes
+CONFIGURE_STYLE= autoconf dest
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		CFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/jpilot

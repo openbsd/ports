@@ -1,14 +1,5 @@
 --- Makefile.in.orig	Tue Feb  6 12:31:05 2001
-+++ Makefile.in	Sun May 27 17:15:52 2001
-@@ -10,7 +10,7 @@ top_builddir = @top_srcdir@
- SUBDIRS = @INTLSUB@ @POSUB@
- 
- # Install variables
--prefix=@prefix@
-+prefix = ${PREFIX}
- 
- datadir = $(prefix)/@DATADIRNAME@
- localedir = $(datadir)/locale
++++ Makefile.in	Sat Jun  2 12:20:33 2001
 @@ -43,7 +43,7 @@ GTKLIBS = @GTK_LIBS@
  INTLLIBS = @INTLLIBS@
  

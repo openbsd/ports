@@ -1,0 +1,12 @@
+$OpenBSD: patch-po_ca_po,v 1.1 2001/06/03 17:45:01 pvalchev Exp $
+--- po/ca.po.orig	Sun Feb  4 16:17:36 2001
++++ po/ca.po	Tue May 29 23:25:39 2001
+@@ -8,7 +8,7 @@ msgstr ""
+ "Last-Translator: Leopold Palomo <lepalom@wol.es>\n"
+ "Language-Team: catalan <docsterms@caliu.upc.es>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=ISO 8859-1\n"
++"Content-Type: text/plain; charset=ISO-8859-1\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ "X-Generator: KBabel 0.6\n"
+ 

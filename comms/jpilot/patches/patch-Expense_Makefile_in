@@ -1,13 +1,6 @@
-$OpenBSD: patch-Expense_Makefile_in,v 1.1.1.1 2001/05/29 00:54:43 pvalchev Exp $
+$OpenBSD: patch-Expense_Makefile_in,v 1.2 2001/06/03 17:45:00 pvalchev Exp $
 --- Expense/Makefile.in.orig	Thu Dec  7 15:44:26 2000
-+++ Expense/Makefile.in	Sun May 27 18:37:21 2001
-@@ -1,5 +1,5 @@
- # Install variables
--prefix=@prefix@
-+prefix=${PREFIX}
- 
- #Pilot flags (include dir), and Libraries
- PILOT_FLAGS=@PILOT_FLAGS@
++++ Expense/Makefile.in	Wed May 30 19:42:03 2001
 @@ -52,13 +52,15 @@ distclean: clean
  install:
  	./install-sh -d -m 755 $(prefix)/lib/jpilot; \

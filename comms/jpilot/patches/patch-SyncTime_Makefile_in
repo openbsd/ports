@@ -1,13 +1,6 @@
-$OpenBSD: patch-SyncTime_Makefile_in,v 1.1.1.1 2001/05/29 00:54:43 pvalchev Exp $
+$OpenBSD: patch-SyncTime_Makefile_in,v 1.2 2001/06/03 17:45:00 pvalchev Exp $
 --- SyncTime/Makefile.in.orig	Thu Dec  7 15:44:26 2000
-+++ SyncTime/Makefile.in	Sun May 27 18:37:28 2001
-@@ -1,5 +1,5 @@
- # Install variables
--prefix=@prefix@
-+prefix=${PREFIX}
- 
- #Pilot flags (include dir), and Libraries
- PILOT_FLAGS=@PILOT_FLAGS@
++++ SyncTime/Makefile.in	Wed May 30 19:42:14 2001
 @@ -52,13 +52,15 @@ distclean: clean
  install:
  	./install-sh -d -m 755 $(prefix)/lib/jpilot; \
