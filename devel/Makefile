@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.212 2004/03/07 08:22:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.213 2004/04/11 12:04:18 sturm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -129,6 +129,7 @@
      SUBDIR += p5-Class-Date
      SUBDIR += p5-Class-Loader  
      SUBDIR += p5-Class-MethodMaker
+     SUBDIR += p5-Class-MethodMapper
      SUBDIR += p5-Config-IniFiles
      SUBDIR += p5-Curses
      SUBDIR += p5-Curses-Widgets
@@ -137,6 +138,9 @@
      SUBDIR += p5-Data-ShowTable
      SUBDIR += p5-Date-Calc
      SUBDIR += p5-Date-Handler
+     SUBDIR += p5-Date-ICal
+     SUBDIR += p5-Date-Leapyear
+     SUBDIR += p5-Date-Simple
      SUBDIR += p5-Devel-SmallProf
      SUBDIR += p5-Devel-StackTrace
      SUBDIR += p5-Error
