@@ -1,22 +1,22 @@
-@comment $OpenBSD: PFRAG.shared,v 1.10 2004/08/03 10:22:40 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.11 2004/08/05 13:29:00 espie Exp $
+lib/libxmms.so.4.1
 lib/xmms/
 lib/xmms/Effect/
-lib/xmms/General/
-lib/xmms/Input/
-lib/xmms/Output/
-lib/xmms/Visualization/
-lib/libxmms.so.4.1
 lib/xmms/Effect/libecho.so
 lib/xmms/Effect/libstereo.so
 lib/xmms/Effect/libvoice.so
+lib/xmms/General/
 lib/xmms/General/libir.so
 lib/xmms/General/libsong_change.so
+lib/xmms/Input/
 lib/xmms/Input/libcdaudio.so
 lib/xmms/Input/libtonegen.so
 lib/xmms/Input/libwav.so
+lib/xmms/Output/
 @comment lib/xmms/Output/libOSS.so
 lib/xmms/Output/libdisk_writer.so
 lib/xmms/Output/libsun.so
+lib/xmms/Visualization/
 lib/xmms/Visualization/libbscope.so
 lib/xmms/Visualization/libogl_spectrum.so
 lib/xmms/Visualization/libsanalyzer.so
