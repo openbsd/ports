@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/27 15:17:30 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2000/12/28 15:44:01 reinhard Exp $
 
-DISTNAME=	ttyrec-1.0.1
+DISTNAME=	ttyrec-1.0.2
 CATEGORIES=	misc
 NEED_VERSION=	1.340
-MASTER_SITES=	http://namazu.org/~satoru/ttyrec/ttyrec-1.0.1
+MASTER_SITES=	http://namazu.org/~satoru/ttyrec/
 
 HOMEPAGE=	http://namazu.org/~satoru/ttyrec/index.html.en
 
