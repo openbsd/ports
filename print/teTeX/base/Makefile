@@ -1,72 +1,75 @@
-# $OpenBSD: Makefile,v 1.21 2002/12/29 19:49:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.22 2003/02/18 16:04:49 sturm Exp $
 
 COMMENT=	"TeX distribution, executables"
 
-PKGNAME=	teTeX_base-1.0.7
-CATEGORIES=	print/teTeX
-DIST_SUBDIR=	teTeX
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=systems/unix/teTeX/1.0/distrib/sources/}
-#${MASTER_SITE_TEX_CTAN}/biblio/bibtex/8-bit/bt371src.zip
+VERSION=	2.0.1
+DISTNAME=	tetex-base-${VERSION}
+CATEGORIES=	print
 
-DISTFILES=	${TETEX_SRC} 
-WRKDIST=	${WRKDIR}/teTeX-1.0
+DISTFILES=	tetex-src-${VERSION}.tar.gz
 
-HOMEPAGE=	http://www.tug.org/tetex/
-MAINTAINER=	Marc Espie <espie@openbsd.org>, Anil Madhavapeddy <avsm@openbsd.org>
+BUILD_DEPENDS=	:teTeX_texmf->=2.0:print/teTeX/texmf
+RUN_DEPENDS=	:teTeX_texmf->=2.0:print/teTeX/texmf \
+		:texi2html->=1.56:textproc/texi2html
+LIB_DEPENDS=	png.3::graphics/png
 
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_PACKAGE_FTP=	Yes
+CONFIGURE_STYLE=gnu dest
 
-FLAVORS= no_x11
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config \
+		${WRKSRC}/libs/libwww/config \
+		${WRKSRC}/libs/ncurses \
+		${WRKSRC}/texk \
+		${WRKSRC}/utils/texinfo
+
+CONFIGURE_ARGS= --disable-multiplatform \
+		--without-texinfo \
+		--with-system-ncurses \
+		--with-system-pnglib \
+		--with-pnglib-libdir=${PREFIX}/lib \
+		--with-pnglib-include=${PREFIX}/include/libpng \
+		--with-system-zlib
+
+FLAVORS=	a4 no_x11
 FLAVOR?= 
-
-TETEX_SRC=teTeX-src-1.0.7.tar.gz
-
-RUN_DEPENDS=:teTeX_texmf-1.0.*:print/teTeX/texmf
-RUN_DEPENDS+=:texi2html->=1.56:textproc/texi2html
-
-BUILD_DEPENDS=:teTeX_texmf-1.0.*:print/teTeX/texmf
-LIB_DEPENDS= png.2::graphics/png 
-
-PNGDIR=${PREFIX}
-
-CONFIGURE_STYLE=gnu
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/texk ${WRKSRC}/config ${WRKSRC}/libs/ncurses ${WRKSRC}/texinfo ${WRKSRC}
-CONFIGURE_ARGS= --disable-multiplatform --without-texinfo \
-	--with-system-ncurses --with-system-zlib --with-system-pnglib \
-	--with-pnglib-libdir=${PNGDIR}/lib --with-pnglib-include=${PNGDIR}/include/libpng
-CONFIGURE_ENV=YACC=yacc
-
 .if ${FLAVOR:L:Mno_x11}
-CONFIGURE_ARGS+= --without-x11
+CONFIGURE_ARGS+=--without-x
+.	if ${FLAVOR:L:Ma4}
+CONFIGURE_ARGS+=--enable-a4
+.	else
+CONFIGURE_ARGS+=--disable-a4
+.	endif
 .else
-LIB_DEPENDS+= Xaw3d.6.1::x11/Xaw3d
-USE_X11= Yes
+CONFIGURE_ARGS+=--with-system-t1lib \
+		--with-t1lib-libdir=${PREFIX}/lib \
+		--with-t1lib-include=${PREFIX}/include
+LIB_DEPENDS+=	t1.4::devel/t1lib
+USE_X11=	Yes
+.	if ${FLAVOR:L:Ma4}
+CONFIGURE_ARGS+=--enable-a4
+RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu,a4
+.	else
+CONFIGURE_ARGS+=--disable-a4
+RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
+.	endif
 .endif
 
-# TeTeX configure resists having --prefix=${DESTDIR}/usr/local, so do the
-# change after the fact.
+WRKDIST=	${WRKDIR}/${DISTNAME:S/base/src/}
+
+# find texmf after fake
+REGRESS_FLAGS=	DESTDIR="${WRKINST}"
+
 post-configure:
-	cd ${WRKBUILD} && find . -name Makefile -print | PREFIX=${PREFIX} \
-		xargs perl -pi.bak ${FILESDIR}/fix-Makefiles
-.if ${MACHINE_ARCH} == "alpha"
-	# work around internal compiler error in gcc 2.95.3
-	perl -pi -e 's|(\$$\(CC\) \$$\(CFLAGS_NORMAL\) )(-c \$$\(srcdir\)/softscroll.c)|$$1-O0 $$2|;' ${WRKBUILD}/libs/ncurses/ncurses/Makefile
-.endif
-	cd ${WRKBUILD} && find . -name Makefile -print | \
-		while read i; do touch -r $$i.bak $$i; done
+	@find ${WRKBUILD} -name Makefile -exec perl -i -pe \
+	    's#^(texmf\s*\=\s*)${PREFIX}#$$1\$${${DESTDIRNAME}}${PREFIX}#' {} \;
 
 # need the texmf part visible...
 pre-fake:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf
-	lndir ${TRUEPREFIX}/share/texmf ${PREFIX}/share/texmf
-	#	mktexlsr is too smart for its own good
-	rm ${PREFIX}/share/texmf/ls-R
-	cp ${TRUEPREFIX}/share/texmf/ls-R ${PREFIX}/share/texmf/ls-R
+	${INSTALL_DATA_DIR} ${TEXMF_DIR}
+	lndir ${TRUEPREFIX}/share/texmf ${TEXMF_DIR}
+	# mktexlsr is too smart for its own good
+	rm ${TEXMF_DIR}/ls-R
 
-INSTALL_INFO=/usr/bin/install-info
-SEPARATE_BUILD=concurrent
+# need the texmf part visible...
+pre-regress: fake
 
 .include <bsd.port.mk>

@@ -1,0 +1,68 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2003/02/18 16:04:50 sturm Exp $
+#
+# Pre/post-installation setup of tetex base
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+TEXMFCNF=$PREFIX/share/texmf/web2c/texmf.cnf
+
+do_prenotice()
+{
+    echo
+    echo "+---------------"
+}
+
+do_notice()
+{
+    echo "| Run $PREFIX/bin/texconfig to adjust for your local"
+    echo "| environment."
+    echo "+---------------"
+    echo
+}
+
+do_install()
+{
+    mv $TEXMFCNF $TEXMFCNF.dist
+    mv $TEXMFCNF.old $TEXMFCNF
+    echo
+    echo "+---------------"
+    echo "| The existing $TEXMFCNF.old has been"
+    echo "| installed as $TEXMFCNF. You may want"
+    echo "| to compare it to the distribution's file"
+    echo "| $TEXMFCNF.dist and update your"
+    echo "| configuration as needed."
+    echo "|"
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	if [ -f $TEXMFCNF.old ]; then
+	    do_install $1
+	else
+	    do_prenotice
+	fi
+	do_notice
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

@@ -1,0 +1,90 @@
+$OpenBSD: patch-libs_libwww_HTInet_c,v 1.1 2003/02/18 16:04:50 sturm Exp $
+--- libs/libwww/HTInet.c.orig	Thu Jan  6 11:48:50 2000
++++ libs/libwww/HTInet.c	Mon Dec 16 23:22:50 2002
+@@ -599,71 +599,23 @@ PUBLIC time_t HTGetTimeZoneOffset (void)
+ */
+ PUBLIC char * HTGetTmpFileName (const char * abs_dir)
+ {
+-    char * result = NULL;
+-#ifdef HAVE_TEMPNAM
+-    static char * envtmpdir = NULL;
+-    size_t len = 0;
+-    if (abs_dir && *abs_dir) {
+-      char * tmpdir = getenv("TMPDIR");
+-      if (tmpdir)
+-          len = strlen(tmpdir);
+-      if (len) {
+-          if (!(envtmpdir = (char *) HT_REALLOC(envtmpdir, len + 8)))
+-              HT_OUTOFMEM("HTGetTmpFileName");
+-          strcpy(envtmpdir, "TMPDIR=");
+-          strcpy(envtmpdir + 7, tmpdir);
+-          putenv("TMPDIR=");
+-      }
+-    }
+-#ifdef __CYGWIN__
+-    result = tempnam(abs_dir, "");
+-#else
+-    result = tempnam(abs_dir, NULL);
+-#endif /* __CYGWIN__ */
+-    if (len)
+-      putenv(envtmpdir);
+-#else
+-    /*
+-    **  This is only approx. as we don't know if this file exists or not.
+-    **  Hopefully, tempnam() exists on enough platforms so that this is not
+-    **  a problem.
+-    */
+-    char * offset = NULL;
+-    if (!(result = (char *) HT_MALLOC((abs_dir ? strlen(abs_dir) : 0) +
+-				      HT_MAX_TMPNAM + 2)))
+-	HT_OUTOFMEM("HTGetTmpFileName");
++    char * temp_name;
++    int temp_fd;
++ 
++    temp_name = malloc((strlen(abs_dir) + HT_MAX_TMPNAM + 2) * sizeof(char));
++    if (abs_dir != NULL) {
++        strlcpy(temp_name, abs_dir, sizeof temp_name);
++        if (abs_dir[strlen(abs_dir) - 1] != DIR_SEPARATOR_CHAR)
++            strlcat(temp_name, "/HT_TMP.XXXXXXXXXX", sizeof temp_name);
++        else
++            strlcat(temp_name, "HT_TMP.XXXXXXXXXX", sizeof temp_name);
++    } else
++        strlcpy(temp_name, "HT_TMP.XXXXXXXXXX", sizeof temp_name);
+ 
+-#ifdef WWW_MSWINDOWS
+-    if (abs_dir) {
+-#else
+-    if (abs_dir && *abs_dir==DIR_SEPARATOR_CHAR) {
+-#endif /* WWW_MSWINDOWS */
+-	strcpy(result, abs_dir);
+-	offset = result+strlen(result);
+-	if (*(offset-1) != DIR_SEPARATOR_CHAR) *offset++ = DIR_SEPARATOR_CHAR;
++    temp_fd = mkstemp(temp_name);
++    close(temp_fd);
+ 
+-#ifdef HT_REENTRANT
+-	tmpnam_r(offset);
+-#else
+-	tmpnam(offset);
+-#endif
+-
+-	{
+-	    char * orig = strrchr(offset, DIR_SEPARATOR_CHAR);
+-	    char * dest = offset;
+-	    if (orig++) while ((*dest++ = *orig++));
+-	}
+-    } else {
+-	offset = result;
+-#ifdef HT_REENTRANT
+-	tmpnam_r(offset);
+-#else
+-	tmpnam(offset);
+-#endif
+-	offset = result;
+-    }
+-#endif /* HAVE_TEMPNAM */
+-    return result;
++    return temp_name;
+ }
+ 
+ /*

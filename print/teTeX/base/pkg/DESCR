@@ -3,4 +3,8 @@ contains the latest versions of TeX & friends and nearly everything
 you need for happy TeX'ing.  For more information have a look at
 the lengthy FEATURES file of the distribution.
 
+FLAVORS:
+        a4     -- use a4/cm instead of letter/in
+        no_x11 -- no support for x11
+
 WWW: ${HOMEPAGE}

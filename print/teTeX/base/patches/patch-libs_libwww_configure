@@ -1,0 +1,13 @@
+$OpenBSD: patch-libs_libwww_configure,v 1.1 2003/02/18 16:04:50 sturm Exp $
+# this has to fail, because bsd has timezone() returning char*
+# while libwww really wants a long int timezone variable
+--- libs/libwww/configure.orig	Sun Feb  2 16:01:16 2003
++++ libs/libwww/configure	Mon Feb  3 10:29:50 2003
+@@ -7219,7 +7219,6 @@ else
+   cat > conftest.$ac_ext <<EOF
+ #line 7221 "configure"
+ #include "confdefs.h"
+-#include <time.h>
+ int main() {
+ return altzone;
+ ; return 0; }

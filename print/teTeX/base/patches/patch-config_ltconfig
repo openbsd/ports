@@ -1,0 +1,14 @@
+$OpenBSD: patch-config_ltconfig,v 1.1 2003/02/18 16:04:49 sturm Exp $
+--- config/ltconfig.orig	Sun Dec 15 21:01:17 2002
++++ config/ltconfig	Sun Dec 15 21:01:59 2002
+@@ -942,6 +942,10 @@ irix*)
+ solaris2*)
+   symcode='[BDTU]'
+   ;;
++openbsd*)
++  sympat='_\([_A-Za-z][_A-Za-z0-9]*\)'
++  symxfrm='_\1 \1'
++  ;;
+ esac
+ 
+ # If we're using GNU nm, then use its standard symbol codes.
