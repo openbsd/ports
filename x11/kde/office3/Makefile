@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/09/11 12:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/09/26 15:49:58 naddy Exp $
 
 COMMENT=		"office applications for kde"
 CATEGORIES=		x11 x11/kde productivity
@@ -13,7 +13,9 @@ PKGNAME=	koffice-1.2
 #MAKE_FLAGS=TOPSUBDIRS="autocorrect karbon kchart kformula kivio kontour koshell kounavail kpresenter kspread kugar kword pics plugins servicetypes templates tools"
 FAKE_FLAGS=${MAKE_FLAGS} TAR=tar DESTDIR=${WRKINST}
 
-LIB_DEPENDS=kdecore.4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjava,kparts,kspell::x11/kde/libs3 python2.2.0.0:python-2.2*:lang/python/2.2
+LIB_DEPENDS=	kdecore.4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjava,kparts,kspell::x11/kde/libs3 \
+		python2.2.0.0:python-2.2*:lang/python/2.2 \
+		art_lgpl_2.5::graphics/libart
 
 #PATCHORIG=	.bsdorig
 MODULES=	qt3

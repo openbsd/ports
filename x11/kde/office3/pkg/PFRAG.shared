@@ -1,8 +1,9 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2002/09/11 12:02:50 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.4 2002/09/26 15:49:58 naddy Exp $
 ${KDE}/libabiwordexport.so.0.0
 ${KDE}/libabiwordimport.so.0.0
 ${KDE}/libamiproexport.so.0.0
 ${KDE}/libamiproimport.so.0.0
+${KDE}/libapplixgraphicimport.so.0.0
 ${KDE}/libapplixspreadimport.so.0.0
 ${KDE}/libapplixwordimport.so.0.0
 ${KDE}/libasciiexport.so.0.0
@@ -16,6 +17,13 @@ ${KDE}/libgnumericexport.so.0.0
 ${KDE}/libgnumericimport.so.0.0
 ${KDE}/libhtmlexport.so.0.0
 ${KDE}/libhtmlimport.so.0.0
+${KDE}/libkarbonaiimport.so.1.0
+${KDE}/libkarbonepsexport.so.0.0
+${KDE}/libkarbonepsimport.so.0.0
+${KDE}/libkarbonkontourimport.so.0.0
+${KDE}/libkarbonpart.so.0.0
+${KDE}/libkarbonpngexport.so.0.0
+${KDE}/libkarbonsvgexport.so.0.0
 ${KDE}/libkchartpart.so.0.0
 ${KDE}/libkfile_koffice.so.0.0
 ${KDE}/libkfolatexexport.so.0.0
@@ -25,6 +33,8 @@ ${KDE}/libkiviopart.so.0.0
 ${KDE}/libkodocinfopropspage.so.0.0
 ${KDE}/libkofficescan.so.0.0
 ${KDE}/libkofficethumbnail.so.0.0
+${KDE}/libkontourpart.so.0.0
+${KDE}/libkontourrtfexport.so.0.0
 ${KDE}/libkounavailpart.so.0.0
 ${KDE}/libkpresenterpart.so.0.0
 ${KDE}/libkprkword.so.0.0
@@ -39,6 +49,7 @@ ${KDE}/libkwordpart.so.0.0
 ${KDE}/liblatexexport.so.0.0
 ${KDE}/liblateximport.so.0.0
 ${KDE}/liblatexparser.so.0.0
+${KDE}/libmsodimport.so.0.0
 ${KDE}/libmswriteimport.so.0.0
 ${KDE}/libolefilter.so.0.0
 ${KDE}/libpalmdocexport.so.0.0
@@ -46,13 +57,16 @@ ${KDE}/libpalmdocimport.so.0.0
 ${KDE}/libqproimport.so.0.0
 ${KDE}/librtfexport.so.0.0
 ${KDE}/librtfimport.so.0.0
+${KDE}/libtexgraphexport.so.0.0
 ${KDE}/libthesaurustool.so.0.0
+${KDE}/libwmfimport.so.0.0
 ${KDE}/libwmlexport.so.0.0
 ${KDE}/libwmlimport.so.0.0
 ${KDE}/libwpexport.so.0.0
 ${KDE}/libwpimport.so.0.0
 ${KDE}/libxsltexport.so.0.0
 ${KDE}/libxsltimport.so.0.0
+lib/libkarbon.so.0.0
 lib/libkchart.so.0.0
 lib/libkdchart.so.0.0
 lib/libkformula.so.3.0
@@ -65,6 +79,8 @@ lib/libkiviozoomtool.so.0.0
 lib/libkochart.so.1.0
 lib/libkofficecore.so.2.0
 lib/libkofficeui.so.2.0
+lib/libkontour.so.0.0
+lib/libkopainter.so.1.0
 lib/libkoscript.so.2.0
 lib/libkoshell.so.0.0
 lib/libkotext.so.2.0
@@ -77,4 +93,4 @@ lib/libkwmailmerge_interface.so.4.0
 lib/libkwmf.so.2.0
 lib/libkword.so.0.0
 lib/libkwordexportfilters.so.1.0
-DYNLIBDIR(%D/lib)
+DYNLIBDIR(%B)
