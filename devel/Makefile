@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.240 2004/06/20 16:11:25 avsm Exp $
+# $OpenBSD: Makefile,v 1.241 2004/07/01 18:24:07 sturm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -158,6 +158,7 @@
      SUBDIR += p5-Devel-StackTrace
      SUBDIR += p5-Devel-Symdump
      SUBDIR += p5-Error
+     SUBDIR += p5-Event
      SUBDIR += p5-Exception-Class
      SUBDIR += p5-Expect
      SUBDIR += p5-Exporter-Lite
