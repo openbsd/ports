@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2002/07/16 13:38:04 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/08/11 01:45:26 brad Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64
 
 CATEGORIES=	x11
-NEED_VERSION=	1.500
 
 COMMENT=	"DVD player"
 DISTNAME=	ogle-0.8.4
@@ -39,8 +38,6 @@ MAKE_ENV=GAS_DIR=${TRUEPREFIX}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin
 
 .if ${FLAVOR:L} == "altivec"
 ONLY_FOR_ARCHS=	powerpc
-BUILD_DEPENDS+=	::devel/binutils/stable
-PORTPATH=${TRUEPREFIX}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${LOCALBASE}/sbin
 .endif
 
 .include <bsd.port.mk>
