@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.32 2002/11/29 09:32:22 sturm Exp $
+#	$OpenBSD: Makefile,v 1.33 2003/01/21 17:12:55 avsm Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -18,6 +18,7 @@
 #   SUBDIR += dvips2ascii
 #   SUBDIR += dviselect
     SUBDIR += enscript
+    SUBDIR += enscript,a4
     SUBDIR += foiltex
     SUBDIR += freetype
     SUBDIR += ghostscript
