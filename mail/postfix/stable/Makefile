@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.46 2003/03/27 18:30:28 jakob Exp $
+# $OpenBSD: Makefile,v 1.47 2003/04/16 06:41:10 jakob Exp $
 
-VERSION=	2.0.7
+VERSION=	2.0.8
 
 DISTNAME=	postfix-${VERSION}
 PKGNAME=	postfix-${VERSION}
@@ -10,8 +10,8 @@ MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 MASTER_SITES=	${MASTER_SITE_POSTFIX:=official/}
 
 TLSVERSION=	0.8.13
-TLSPFIXVERSION=	2.0.3
-TLSSSLVERSION=	0.9.7
+TLSPFIXVERSION=	2.0.6
+TLSSSLVERSION=	0.9.7a
 TLSDISTNAME=	pfixtls-${TLSVERSION}-${TLSPFIXVERSION}-${TLSSSLVERSION}
 
 .include <bsd.port.mk>
