@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/11/10 15:00:50 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/12/31 12:03:51 espie Exp $
 
 COMMENT=	"fast XSLT module for perl"
 
@@ -20,7 +20,7 @@ PERL_MODULE=	${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
 BUILD_DEPENDS=	::textproc/p5-XML-LibXML
 RUN_DPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	xml2.6::textproc/libxml \
-		xslt.::textproc/libxslt
+		xslt::textproc/libxslt
 		
 
 PERMIT_PACKAGE_CDROM=	Yes
