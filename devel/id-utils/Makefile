@@ -3,7 +3,7 @@
 # Date created:		1 Dev 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.2 1998/03/15 04:30:47 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/04/08 23:16:44 niklas Exp $
 #
 
 DISTNAME=	id-utils-3.2
@@ -16,6 +16,7 @@ MAINTAINER=	ports@OpenBSD.ORG
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	${SETENV}
 USE_GMAKE=	yes
 
 post-install:
