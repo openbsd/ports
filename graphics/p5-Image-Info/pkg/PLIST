@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/30 22:02:21 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/04/13 19:50:30 naddy Exp $
 libdata/perl5/site_perl/Image/Info.pm
 libdata/perl5/site_perl/Image/Info/ASCII.pm
 libdata/perl5/site_perl/Image/Info/BMP.pm
