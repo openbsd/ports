@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/07/29 19:56:52 bmc Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/11/19 12:39:25 bmc Exp $
 bin/snort
 man/man8/snort.8
+share/examples/snort/attack-responses.rules
 share/examples/snort/backdoor.rules
+share/examples/snort/bad-traffic.rules
 share/examples/snort/classification.config
 share/examples/snort/ddos.rules
 share/examples/snort/dns.rules
@@ -9,12 +11,14 @@ share/examples/snort/dos.rules
 share/examples/snort/exploit.rules
 share/examples/snort/finger.rules
 share/examples/snort/ftp.rules
+share/examples/snort/icmp-info.rules
 share/examples/snort/icmp.rules
 share/examples/snort/info.rules
 share/examples/snort/local.rules
 share/examples/snort/misc.rules
 share/examples/snort/netbios.rules
 share/examples/snort/policy.rules
+share/examples/snort/porn.rules
 share/examples/snort/rpc.rules
 share/examples/snort/rservices.rules
 share/examples/snort/scan.rules
@@ -23,6 +27,9 @@ share/examples/snort/smtp.rules
 share/examples/snort/snort.conf
 share/examples/snort/sql.rules
 share/examples/snort/telnet.rules
+share/examples/snort/tftp.rules
+share/examples/snort/virus.rules
+share/examples/snort/web-attacks.rules
 share/examples/snort/web-cgi.rules
 share/examples/snort/web-coldfusion.rules
 share/examples/snort/web-frontpage.rules
