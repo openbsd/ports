@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2004/06/30 16:58:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2004/10/30 21:30:01 naddy Exp $
 
 COMMENT=	"portable CVS repository synchronization utility"
 
-DISTNAME=	cvsync-0.24.16
+DISTNAME=	cvsync-0.24.17
 CATEGORIES=	net
 HOMEPAGE=	http://www.cvsync.org/
 
@@ -23,6 +23,7 @@ MAKE_ENV=	CVSYNC_DEFAULT_CONFIG="${SYSCONFDIR}/cvsync.conf" \
 		INSTALL_MAN_OPTS="-o ${MANOWN} -g ${MANGRP} -m ${MANMODE}" \
 		INSTALL_BIN_OPTS="-o ${BINOWN} -g ${BINGRP} -m ${BINMODE} ${INSTALL_STRIP}"
 
+NO_REGRESS=	Yes
 EXAMPLESDIR=	${PREFIX}/share/examples/cvsync
 
 post-install:
