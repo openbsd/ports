@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST-canna,v 1.1.1.1 2000/04/26 00:43:12 espie Exp $
+@comment $OpenBSD: PLIST-canna,v 1.2 2003/11/09 20:43:17 espie Exp $
 bin/kinput2
 lib/X11/app-defaults/Kinput2
 man/cat1/kinput2.0
-share/doc/kinput2/README
 share/doc/kinput2/NEWS
 share/doc/kinput2/README
 share/doc/kinput2/ccdef
