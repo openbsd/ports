@@ -1,0 +1,45 @@
+$OpenBSD: patch-etc_afpd_desktop_c,v 1.1.1.1 2002/07/23 11:52:12 naddy Exp $
+--- etc/afpd/desktop.c.orig	Thu Jan  3 08:03:37 2002
++++ etc/afpd/desktop.c	Sat Jun 15 05:09:57 2002
+@@ -71,7 +71,7 @@ int		ibuflen, *rbuflen;
+     return( AFP_OK );
+ }
+ 
+-struct savedt	si = { { 0, 0, 0, 0 }, -1, 0 };
++struct savedt	si = { { 0, 0, 0, 0 }, -1, 0, 0 };
+ 
+ static int iconopen( vol, creator, flags, mode )
+ struct vol	*vol;
+@@ -80,7 +80,10 @@ u_char	creator[ 4 ];
+     char	*dtf, *adt, *adts;
+ 
+     if ( si.sdt_fd != -1 ) {
+-        if ( memcmp( si.sdt_creator, creator, sizeof( CreatorType )) == 0 &&
++        if ( 		si.sdt_creator[0] == creator[0] &&
++			si.sdt_creator[1] == creator[1] &&
++			si.sdt_creator[2] == creator[2] &&
++			si.sdt_creator[3] == creator[3] &&
+                 si.sdt_vid == vol->v_vid ) {
+             return 0;
+         }
+@@ -114,7 +117,10 @@ u_char	creator[ 4 ];
+         }
+     }
+ 
+-    memcpy( si.sdt_creator, creator, sizeof( CreatorType ));
++	si.sdt_creator[0] == creator[0];
++	si.sdt_creator[1] == creator[1];
++	si.sdt_creator[2] == creator[2];
++	si.sdt_creator[3] == creator[3];
+     si.sdt_vid = vol->v_vid;
+     si.sdt_index = 1;
+     return 0;
+@@ -587,7 +593,7 @@ char *dtfile(const struct vol *vol, u_ch
+ 
+     *p++ = '/';
+ 
+-    for ( i = 0; i < sizeof( CreatorType ); i++ ) {
++    for ( i = 0; i <  4; i++ ) {
+         if ( !isprint( creator[ i ] ) || creator[ i ] == '/' ) {
+             *p++ = hexdig[ ( creator[ i ] & 0xf0 ) >> 4 ];
+             *p++ = hexdig[ creator[ i ] & 0x0f ];

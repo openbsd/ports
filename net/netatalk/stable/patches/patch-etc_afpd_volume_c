@@ -1,0 +1,26 @@
+$OpenBSD: patch-etc_afpd_volume_c,v 1.1.1.1 2002/07/23 11:52:12 naddy Exp $
+--- etc/afpd/volume.c.orig	Sat Jun 15 04:40:52 2002
++++ etc/afpd/volume.c	Sat Jun 15 04:44:27 2002
+@@ -1050,7 +1050,7 @@ int 	ibuflen, *rbuflen;
+     struct vol		*volume;
+     char	*data;
+     int			vcnt, len;
+-
++    u_int32_t	secs;
+ 
+     if (!volumes)
+         load_volumes(obj);
+@@ -1090,9 +1090,10 @@ int 	ibuflen, *rbuflen;
+         *rbuflen = 0;
+         return AFPERR_PARAM;
+     }
+-    tv.tv_sec = AD_DATE_FROM_UNIX(tv.tv_sec);
+-    memcpy(data, &tv.tv_sec, sizeof( u_int32_t));
+-    data += sizeof( u_int32_t);
++    secs = tv.tv_sec;
++    secs = htonl(secs);
++    memcpy(data, &secs, sizeof(secs));
++    data += sizeof(secs);
+     *data = vcnt;
+     return( AFP_OK );
+ }

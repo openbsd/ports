@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2002/07/23 11:52:12 naddy Exp $
+--- configure.orig	Wed Mar 27 14:20:55 2002
++++ configure	Wed Jun 26 22:11:49 2002
+@@ -791,7 +791,7 @@ fi
+ 
+ 
+ 
+-NETATALK_VERSION=`cat VERSION`
++NETATALK_VERSION=`cat $srcdir/VERSION`
+ 
+ 
+ ac_aux_dir=
+@@ -9318,10 +9318,16 @@ if test x"$this_os" = "xopenbsd"; then 
+ #define BSD4_4 1
+ EOF
+ 
+-	cat >> confdefs.h <<\EOF
++	if echo __ELF__ | $CC -E - | grep __ELF__ > /dev/null; then
++		# Use the same ELF test as for NetBSD here for OpenBSD
++		# NetBSD ELF machines don't have to have DLSYM_PREPEND_UNDERSCORE.
++		# If this test is true, it's not an ELF box.
++		# This REALLY should be a configure test.
++		cat >> confdefs.h <<\EOF
+ #define DLSYM_PREPEND_UNDERSCORE 1
+ EOF
+ 
++	fi
+ 
+ 		cat >> confdefs.h <<\EOF
+ #define UAM_DHX 1

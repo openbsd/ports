@@ -1,0 +1,12 @@
+$OpenBSD: patch-etc_atalkd_config_c,v 1.1.1.1 2002/07/23 11:52:12 naddy Exp $
+--- etc/atalkd/config.c.orig	Sat Jun 15 04:26:04 2002
++++ etc/atalkd/config.c	Sat Jun 15 04:27:47 2002
+@@ -545,7 +545,7 @@ int net( iface, av )
+ 	stop++;
+     }
+     net = atoi( nrange );
+-    if ( net < 0 || net >= 0xffff ) {
++    if ( net < 1 || net >= 0xffff ) {
+ 	fprintf( stderr, "Bad network: %d\n", net );
+ 	return -1;
+     }

@@ -1,0 +1,30 @@
+$OpenBSD: patch-config_Makefile_in,v 1.1.1.1 2002/07/23 11:52:12 naddy Exp $
+--- config/Makefile.in.orig	Fri Feb 15 14:14:26 2002
++++ config/Makefile.in	Thu Mar  7 18:04:55 2002
+@@ -113,7 +113,7 @@ SUFFIXES = .tmpl .
+ GENFILES = afpd.conf
+ TMPLFILES = $(foreach file,$(GENFILES),$(file).tmpl)
+ CONFFILES = AppleVolumes.default AppleVolumes.system \
+-	atalkd.conf netatalk.conf papd.conf
++	netatalk.conf papd.conf
+ 
+ PAMFILES = netatalk.pamd
+ 
+@@ -273,7 +273,16 @@ uninstall-am: uninstall-info-am
+ 
+ install-config-files: $(CONFFILES) $(GENFILES)
+ 	$(mkinstalldirs) $(DESTDIR)$(pkgconfdir)
+-	for f in $(CONFFILES) $(GENFILES); do \
++	for f in $(CONFFILES); do \
++		if test "x$(OVERWRITE_CONFIG)" = "xyes" -o ! -f $(DESTDIR)$(pkgconfdir)/$$f; then \
++			echo "$(INSTALL_DATA) $$f $(DESTDIR)$(pkgconfdir)"; \
++			$(INSTALL_DATA) $(srcdir)/$$f $(DESTDIR)$(pkgconfdir); \
++		else \
++			echo "not overwriting $$f"; \
++		fi; \
++	done
++
++	for f in $(GENFILES); do \
+ 		if test "x$(OVERWRITE_CONFIG)" = "xyes" -o ! -f $(DESTDIR)$(pkgconfdir)/$$f; then \
+ 			echo "$(INSTALL_DATA) $$f $(DESTDIR)$(pkgconfdir)"; \
+ 			$(INSTALL_DATA) $$f $(DESTDIR)$(pkgconfdir); \

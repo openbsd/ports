@@ -1,0 +1,37 @@
+$OpenBSD: patch-etc_atalkd_main_c,v 1.1.1.1 2002/07/23 11:52:12 naddy Exp $
+--- etc/atalkd/main.c.orig	Sat Jun 15 04:22:01 2002
++++ etc/atalkd/main.c	Sat Jun 15 04:25:31 2002
+@@ -274,12 +274,12 @@ void as_timer(void)
+ 		    syslog( LOG_INFO, "config for no router" );
+ 		      
+ 		    if ( iface->i_flags & IFACE_PHASE2 ) {
+-			iface->i_rt->rt_firstnet = 0;
++			iface->i_rt->rt_firstnet = htons(1);
+ 			iface->i_rt->rt_lastnet = htons( STARTUP_LASTNET );
+ 			setaddr( iface, IFACE_PHASE2,
+ 				iface->i_addr.sat_addr.s_net,
+ 				iface->i_addr.sat_addr.s_node,
+-				0, htons( STARTUP_LASTNET ));
++				htons(1), htons( STARTUP_LASTNET ));
+ 		    }
+ 		    if ( looproute( iface, RTMP_ADD ) ) { /* -1 or 1 */
+ 			syslog( LOG_ERR,
+@@ -372,15 +372,15 @@ void as_timer(void)
+ 
+ 		    syslog( LOG_INFO, "as_timer last gateway down" );
+ 
+-		    /* Set netrange to 0-fffe.  */
++		    /* Set netrange to 1-fffe.  */
+ 		    if ( gate->g_iface->i_flags & IFACE_PHASE2 ) {
+-			gate->g_iface->i_rt->rt_firstnet = 0;
++			gate->g_iface->i_rt->rt_firstnet = htons(1);
+ 			gate->g_iface->i_rt->rt_lastnet =
+ 				htons( STARTUP_LASTNET );
+ 			setaddr( iface, IFACE_PHASE2,
+ 				iface->i_addr.sat_addr.s_net,
+ 				iface->i_addr.sat_addr.s_node,
+-				0, htons( STARTUP_LASTNET ));
++				htons(1), htons( STARTUP_LASTNET ));
+ 		    }
+ 		}
+ 		continue;
