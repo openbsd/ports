@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-html,v 1.9 2001/08/29 14:05:56 kevlo Exp $
+@comment $OpenBSD: PLIST-html,v 1.10 2001/12/22 14:09:19 espie Exp $
 share/doc/qt2/html/HOWTO-framebuffer.html
 share/doc/qt2/html/aboutqt.html
 share/doc/qt2/html/abstractwidgets.html
+share/doc/qt2/html/accel.html
 share/doc/qt2/html/accelerators.html
 share/doc/qt2/html/aclock-main-cpp.html
 share/doc/qt2/html/action-main-cpp.html
@@ -26,6 +27,7 @@ share/doc/qt2/html/casestudy-qws.html
 share/doc/qt2/html/changes21.html
 share/doc/qt2/html/changes211.html
 share/doc/qt2/html/changes22.html
+share/doc/qt2/html/changes23.html
 share/doc/qt2/html/charinput-qws.html
 share/doc/qt2/html/checklists-main-cpp.html
 share/doc/qt2/html/classes.html
@@ -207,13 +209,16 @@ share/doc/qt2/html/drawing.html
 share/doc/qt2/html/drawlines-connect-cpp.html
 share/doc/qt2/html/easteregg.html
 share/doc/qt2/html/easteregg2.html
+share/doc/qt2/html/embedclasses.html
 share/doc/qt2/html/environment.html
+share/doc/qt2/html/envvars.html
 share/doc/qt2/html/eventsandfilters.html
 share/doc/qt2/html/examples.html
 share/doc/qt2/html/face.png
 share/doc/qt2/html/features.html
 share/doc/qt2/html/fileiconview-main-cpp.html
 share/doc/qt2/html/focus.html
+share/doc/qt2/html/fontdir.html
 share/doc/qt2/html/fonts-qws.html
 share/doc/qt2/html/forever-forever-cpp.html
 share/doc/qt2/html/frames.png
@@ -279,6 +284,7 @@ share/doc/qt2/html/objecttrees.html
 share/doc/qt2/html/opengl.html
 share/doc/qt2/html/organizers.html
 share/doc/qt2/html/palette.png
+share/doc/qt2/html/performance-qws.html
 share/doc/qt2/html/picture-picture-cpp.html
 share/doc/qt2/html/pictures.html
 share/doc/qt2/html/pnglogo.png
@@ -435,6 +441,7 @@ share/doc/qt2/html/qconststring-members.html
 share/doc/qt2/html/qconststring.html
 share/doc/qt2/html/qcopchannel-members.html
 share/doc/qt2/html/qcopchannel.html
+share/doc/qt2/html/qcopchannel_qws-h.html
 share/doc/qt2/html/qcstring-h.html
 share/doc/qt2/html/qcstring-members.html
 share/doc/qt2/html/qcstring.html
@@ -575,6 +582,8 @@ share/doc/qt2/html/qfontdlg-w.png
 share/doc/qt2/html/qfontinfo-h.html
 share/doc/qt2/html/qfontinfo-members.html
 share/doc/qt2/html/qfontinfo.html
+share/doc/qt2/html/qfontmanager-members.html
+share/doc/qt2/html/qfontmanager_qws-h.html
 share/doc/qt2/html/qfontmetrics-h.html
 share/doc/qt2/html/qfontmetrics-members.html
 share/doc/qt2/html/qfontmetrics.html
@@ -600,6 +609,7 @@ share/doc/qt2/html/qgdict-members.html
 share/doc/qt2/html/qgdict.html
 share/doc/qt2/html/qgdictiterator-members.html
 share/doc/qt2/html/qgdictiterator.html
+share/doc/qt2/html/qgfx_qws-h.html
 share/doc/qt2/html/qgl-h.html
 share/doc/qt2/html/qgl-members.html
 share/doc/qt2/html/qgl.html
@@ -702,6 +712,9 @@ share/doc/qt2/html/qintdict-members.html
 share/doc/qt2/html/qintdict.html
 share/doc/qt2/html/qintdictiterator-members.html
 share/doc/qt2/html/qintdictiterator.html
+share/doc/qt2/html/qinterlacestyle-h.html
+share/doc/qt2/html/qinterlacestyle-members.html
+share/doc/qt2/html/qinterlacestyle.html
 share/doc/qt2/html/qintvalidator-members.html
 share/doc/qt2/html/qintvalidator.html
 share/doc/qt2/html/qiodevice-h.html
@@ -769,6 +782,8 @@ share/doc/qt2/html/qlnode.html
 share/doc/qt2/html/qlocalfs-h.html
 share/doc/qt2/html/qlocalfs-members.html
 share/doc/qt2/html/qlocalfs.html
+share/doc/qt2/html/qlock-members.html
+share/doc/qt2/html/qlock_qws-h.html
 share/doc/qt2/html/qmag-qmag-cpp.html
 share/doc/qt2/html/qmainwindow-h.html
 share/doc/qt2/html/qmainwindow-m.png
@@ -844,6 +859,7 @@ share/doc/qt2/html/qnpstream-members.html
 share/doc/qt2/html/qnpstream.html
 share/doc/qt2/html/qnpwidget-members.html
 share/doc/qt2/html/qnpwidget.html
+share/doc/qt2/html/qnx-framebuffer.html
 share/doc/qt2/html/qobject-h.html
 share/doc/qt2/html/qobject-members.html
 share/doc/qt2/html/qobject.html
@@ -938,10 +954,12 @@ share/doc/qt2/html/qregexp.html
 share/doc/qt2/html/qregion-h.html
 share/doc/qt2/html/qregion-members.html
 share/doc/qt2/html/qregion.html
+share/doc/qt2/html/qrenderedfont-members.html
 share/doc/qt2/html/qresizeevent-members.html
 share/doc/qt2/html/qresizeevent.html
 share/doc/qt2/html/qscrbar-m.png
 share/doc/qt2/html/qscrbar-w.png
+share/doc/qt2/html/qscreen-members.html
 share/doc/qt2/html/qscrollbar-h.html
 share/doc/qt2/html/qscrollbar-members.html
 share/doc/qt2/html/qscrollbar.html
@@ -1213,6 +1231,7 @@ share/doc/qt2/html/qwindowdefs-h.html
 share/doc/qt2/html/qwindowsstyle-h.html
 share/doc/qt2/html/qwindowsstyle-members.html
 share/doc/qt2/html/qwindowsstyle.html
+share/doc/qt2/html/qwindowsystem_qws-h.html
 share/doc/qt2/html/qwizard-h.html
 share/doc/qt2/html/qwizard-members.html
 share/doc/qt2/html/qwizard.html
@@ -1222,6 +1241,13 @@ share/doc/qt2/html/qwmatrix.html
 share/doc/qt2/html/qworkspace-h.html
 share/doc/qt2/html/qworkspace-members.html
 share/doc/qt2/html/qworkspace.html
+share/doc/qt2/html/qwsdecoration-members.html
+share/doc/qt2/html/qwsdecoration.html
+share/doc/qt2/html/qwsdecoration_qws-h.html
+share/doc/qt2/html/qwsserver-members.html
+share/doc/qt2/html/qwsserver.html
+share/doc/qt2/html/qwswindow-members.html
+share/doc/qt2/html/qwswindow.html
 share/doc/qt2/html/qxml-h.html
 share/doc/qt2/html/qxmlattributes-members.html
 share/doc/qt2/html/qxmlattributes.html
@@ -1378,13 +1404,18 @@ share/doc/qt2/html/tutorial.png
 share/doc/qt2/html/unicode.html
 share/doc/qt2/html/unsmooth.png
 share/doc/qt2/html/validator-main-cpp.html
+share/doc/qt2/html/walkthroughs.html
 share/doc/qt2/html/whatsthis
 share/doc/qt2/html/whatsthis.png
 share/doc/qt2/html/winsystem.html
 share/doc/qt2/html/wizard-main-cpp.html
 share/doc/qt2/html/workspace.html
 share/doc/qt2/html/xform-xform-cpp.html
+share/doc/qt2/html/xml-dom.html
+share/doc/qt2/html/xml-sax-walkthrough.html
 share/doc/qt2/html/xml-sax.html
+share/doc/qt2/html/xml-tagreader-tagreader-cpp.html
+share/doc/qt2/html/xml-tagreader-with-features-tagreader-cpp.html
 share/doc/qt2/html/xml.html
 share/doc/qt2/html/xt.html
 share/doc/qt2/html/y2k.html

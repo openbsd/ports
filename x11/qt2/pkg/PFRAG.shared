@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.13 2001/07/03 15:42:59 espie Exp $
-lib/qt2/libqt.so.2.31
-lib/libqt.so.2.31
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.14 2001/12/22 14:09:19 espie Exp $
+lib/libqt.so.2.32
+lib/qt2/libqt.so.2.32
+DYNLIBDIR(%D/lib)

@@ -1,5 +1,5 @@
---- configure.orig	Mon Mar  5 19:12:49 2001
-+++ configure	Wed Mar 21 23:48:39 2001
+--- configure.orig	Mon Oct 29 15:24:18 2001
++++ configure	Sat Dec 22 11:40:51 2001
 @@ -52,7 +52,10 @@ else
  fi
  
@@ -20,7 +20,7 @@
  	echo
  	echo "This is the Qt$EMB Free Edition."
  	echo
-@@ -1331,19 +1335,7 @@ echo Creating makefiles...
+@@ -1441,19 +1445,7 @@ echo Creating makefiles...
  
  sepath=`echo $relpath | sed -e 's/\\./\\\\./g'`
  

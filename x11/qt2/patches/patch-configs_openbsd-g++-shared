@@ -1,5 +1,5 @@
---- configs/openbsd-g++-shared.orig	Tue Apr 17 15:28:49 2001
-+++ configs/openbsd-g++-shared	Tue Apr 17 16:01:44 2001
+--- configs/openbsd-g++-shared.orig	Mon Oct 29 15:24:05 2001
++++ configs/openbsd-g++-shared	Sat Dec 22 11:41:39 2001
 @@ -1,11 +1,11 @@
  # Compiling
  INTERFACE_DECL_PATH 	= .
@@ -74,8 +74,8 @@
  				 $(SYSCONF_AR) $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) $(OBJECTS) $(OBJMOC) ; \
  				 ranlib $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC)
  # Compiling application source
--SYSCONF_CXXFLAGS	= -O2
--SYSCONF_CFLAGS		= -O2
+-SYSCONF_CXXFLAGS	= -O2 -Wall -W
+-SYSCONF_CFLAGS		= -O2 -Wall -W
 +SYSCONF_CXXFLAGS	= $(SYS_CXXFLAGS)
 +SYSCONF_CFLAGS		= $(SYS_CFLAGS)
  # Default link type (static linking is still be used where required)

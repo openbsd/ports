@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2001/11/11 13:57:32 heko Exp $
+# $OpenBSD: Makefile,v 1.34 2001/12/22 14:09:18 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt2
 COMMENT-html=		off-line html documentation for qt2
 
-VERSION=	3.1
+VERSION=	3.2
 DISTNAME=	qt-2.${VERSION}
 CATEGORIES=	x11
 NEED_VERSION=	1.483
@@ -51,8 +51,8 @@ EXTRA_SAMPLES+=box gear glpixmap overlay overlay_x11 sharedbox
 LIB_DEPENDS=
 
 .if !defined(PACKAGING) || ${SUBPACKAGE} != "-html"
-LIB_DEPENDS+=	png.2.::graphics/png \
-		mng.1.::graphics/libmng
+LIB_DEPENDS+=	png::graphics/png \
+		mng::graphics/libmng
 .endif
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-examples"
 LIB_DEPENDS+=	lib/qt2/qt.2.::x11/qt2
@@ -99,9 +99,9 @@ do-install:
 	@if [ -f ${WRKBUILD}/lib/libqt.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.a ${PREFIX}/lib/qt2; \
 	fi
-	@if [ -f ${WRKBUILD}/lib/libqt.so.2.31 ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.2.31 ${PREFIX}/lib/qt2; \
-	 ln -sf qt2/libqt.so.2.31 ${PREFIX}/lib/libqt.so.2.31; \
+	@if [ -f ${WRKBUILD}/lib/libqt.so.2.32 ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.2.32 ${PREFIX}/lib/qt2; \
+	 ln -sf qt2/libqt.so.2.32 ${PREFIX}/lib/libqt.so.2.32; \
 	fi
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/moc ${QT_LIBDIR}/bin
 	${INSTALL_MAN} ${WRKSRC}/src/moc/moc.1 ${QT_MANDIR}/man1/moc2.1
