@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2001/03/14 01:57:11 todd Exp $
+--- doc/Makefile.in.orig	Tue Mar 13 00:17:00 2001
++++ doc/Makefile.in	Tue Mar 13 00:17:11 2001
+@@ -89,7 +89,7 @@ AUTOMAKE_OPTIONS = foreign
+ 
+ SUBDIRS = vorbisfile vorbisenc
+ 
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ 
+ doc_DATA = v-comment.html vorbisword2.png white-ogg.png programming.html 	vorbis.html wait.png white-xifish.png vorbis-clip.txt 	vorbis-errors.txt
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/03/14 01:57:11 todd Exp $
+--- Makefile.in.orig	Tue Mar 13 01:28:21 2001
++++ Makefile.in	Tue Mar 13 01:28:29 2001
+@@ -87,7 +87,7 @@ pthread_lib = @pthread_lib@
+ 
+ AUTOMAKE_OPTIONS = foreign dist-zip
+ 
+-SUBDIRS = lib include doc examples win32 debian vq
++SUBDIRS = lib include doc win32 debian vq
+ 
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = vorbis.m4

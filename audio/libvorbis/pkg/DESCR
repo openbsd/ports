@@ -1,0 +1,5 @@
+This source distribution includes libvorbis and an example
+encoder/player to demonstrate use of libvorbis and documentation
+on the Ogg Vorbis audio coding format.
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/03/14 01:57:10 todd Exp $
+lib/libvorbis.so.0.1
+lib/libvorbisenc.so.0.1
+lib/libvorbisfile.so.0.1
+DYNLIBDIR(%B)
