@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.625 2004/07/21 14:45:33 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.626 2004/07/24 13:53:12 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2353,8 +2353,8 @@ _recurse-run-dir-depends:
 .for _dir in ${_ALWAYS_DEP} ${_RUN_DEP}
 	@unset FLAVOR SUBPACKAGE || true; \
 	echo "$$self ${_dir}"; \
-	if ! fgrep -q "|${_dir}|" $${_DEPENDS_FILE}; then \
-		echo "|${_dir}|" >> $${_DEPENDS_FILE}; \
+	if ! fgrep -q -e "r|${_dir}|" -e "a|${_dir}|" $${_DEPENDS_FILE}; then \
+		echo "r|${_dir}|" >> $${_DEPENDS_FILE}; \
 		dir=${_dir}; \
 		${_flavor_fragment}; \
 		toset="$$toset self=\"${_dir}\""; \
@@ -2368,8 +2368,8 @@ _recurse-run-dir-depends:
 run-dir-depends:
 .if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
 	@${_depfile_fragment}; \
-	if ! fgrep -q "|${FULLPKGPATH}|" $${_DEPENDS_FILE}; then \
-		echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
+	if ! fgrep -q -e "r|${FULLPKGPATH}|" -e "a|${FULLPKGPATH}" $${_DEPENDS_FILE}; then \
+		echo "r|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
 		self=${FULLPKGPATH} PACKAGING='${SUBPACKAGE}' ${MAKE} _recurse-run-dir-depends; \
 	fi
 .else
@@ -2382,8 +2382,8 @@ _recurse-all-dir-depends:
 .for _dir in ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP}
 	@unset FLAVOR SUBPACKAGE || true; \
 	echo "$$self ${_dir}"; \
-	if ! fgrep -q "|${_dir}|" $${_DEPENDS_FILE}; then \
-		echo "|${_dir}|" >> $${_DEPENDS_FILE}; \
+	if ! fgrep -q "a|${_dir}|" $${_DEPENDS_FILE}; then \
+		echo "a|${_dir}|" >> $${_DEPENDS_FILE}; \
 		dir=${_dir}; \
 		${_flavor_fragment}; \
 		toset="$$toset self=\"${_dir}\""; \
@@ -2399,8 +2399,8 @@ _build-dir-depends:
 .for _dir in ${_ALWAYS_DEP} ${_BUILD_DEP}
 	@unset FLAVOR SUBPACKAGE || true; \
 	echo "$$self ${_dir}"; \
-	if ! fgrep -q "|${_dir}|" $${_DEPENDS_FILE}; then \
-		echo "|${_dir}|" >> $${_DEPENDS_FILE}; \
+	if ! fgrep -q -e "b|${_dir}|" -e "a|${_dir}|" $${_DEPENDS_FILE}; then \
+		echo "b|${_dir}|" >> $${_DEPENDS_FILE}; \
 		dir=${_dir}; \
 		${_flavor_fragment}; \
 		toset="$$toset self=\"${_dir}\""; \
@@ -2414,8 +2414,8 @@ _build-dir-depends:
 build-dir-depends:
 .if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP)
 	@${_depfile_fragment}; \
-	if ! fgrep -q "|${FULLPKGPATH}|" $${_DEPENDS_FILE}; then \
-		echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
+	if ! fgrep -q -e "b|${FULLPKGPATH}|" -e "a|${_dir}|" $${_DEPENDS_FILE}; then \
+		echo "b|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
 		self=${FULLPKGPATH} ${MAKE} _build-dir-depends; \
 	fi
 .else
