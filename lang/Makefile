@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2002/02/23 12:31:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2002/03/02 19:25:54 naddy Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -28,6 +28,7 @@
 #    SUBDIR += hugs
      SUBDIR += icon
 #    SUBDIR += idl4
+     SUBDIR += intel2gas
 #    SUBDIR += itcl
 #    SUBDIR += javac_netscape
 #    SUBDIR += jdk
