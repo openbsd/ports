@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/02 16:45:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/04/03 16:32:14 espie Exp $
 bin/filter_wrapper
 bin/kchart
 bin/kformula
@@ -1472,36 +1472,10 @@ share/templates/TextDocument.desktop
 %%SHARED%%
 @dirrm share/templates/.source
 @dirrm share/templates
-@dirrm share/servicetypes
-@dirrm share/services
-@dirrm share/mimelnk/text
-@dirrm share/mimelnk/image
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/22x22/apps
 @dirrm share/icons/locolor/22x22
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/mimetypes
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/mimetypes
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32/actions
-@dirrm share/icons/hicolor/32x32
 @dirrm share/icons/hicolor/22x22/mimetypes
 @dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22/actions
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/mimetypes
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16/actions
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/doc/HTML/en/kword
 @dirrm share/doc/HTML/en/kugar
 @dirrm share/doc/HTML/en/kspread
@@ -1510,8 +1484,6 @@ share/templates/TextDocument.desktop
 @dirrm share/doc/HTML/en/koshell
 @dirrm share/doc/HTML/en/kontour
 @dirrm share/doc/HTML/en/koffice
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
 @dirrm share/apps/kword/templates/Publishing/.source
 @dirrm share/apps/kword/templates/Publishing/.icon
 @dirrm share/apps/kword/templates/Publishing
@@ -1631,4 +1603,3 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/kchart/icons/hicolor
 @dirrm share/apps/kchart/icons
 @dirrm share/apps/kchart
-@dirrm share/apps

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/03/30 02:22:25 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/04/03 16:32:14 espie Exp $
 
 COMMENT=		"office applications for kde"
 CATEGORIES=		x11 x11/kde productivity
@@ -13,7 +13,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
-BUILD_DEPENDS=	:zsh-*:shells/zsh/stable ::x11/qt2-designer
+BUILD_DEPENDS=	::x11/qt2-designer
 LIB_DEPENDS= kdecore.3,DCOP,kdeprint,kdesu,kdeui,kfile,kio,kparts,kspell,kssl,ksycoca::x11/kde/libs2 python2.2.0.0:python-2.2*:lang/python/2.2
 
 MODULES=	qt2
@@ -35,22 +35,13 @@ CONFIGURE_ENV+=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 CONFIGURE_ENV+=		ac_aux_files=''
 MAKE_ENV=		${CONFIGURE_ENV}
 
-pre-build:
-	# Let zsh act as an sh replacement
-	ln -sf $(LOCALBASE)/bin/zsh ${WRKBUILD}/sh
-
 # Ensure qt2 will always be at the front
 MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
-MAKE_FLAGS+=LIBTOOL='$(WRKBUILD)/sh $(WRKBUILD)/libtool'
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-
-pre-fake:
-	${SUDO} /usr/sbin/mtree -U -e -d -n -p ${PREFIX} \
-	    -f ${PORTSDIR}/x11/kde/libs2/files/mtree >/dev/null
 
 .include <bsd.port.mk>
