@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/09/14 01:47:58 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1998/09/14 02:55:42 marc Exp $
 #
 
 DISTNAME=	imm-3.5a1
@@ -11,7 +11,7 @@ MAINTAINER=	angelos@openbsd.org
 
 LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
 
-USE_X_PREFIX=	yes
+USE_X11=	yes
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/openbsd

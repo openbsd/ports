@@ -1,5 +1,10 @@
-# $OpenBSD: Makefile,v 1.1 1998/09/14 01:43:36 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1998/09/14 02:55:41 marc Exp $
 #
 
+    SUBDIR += imm
+    SUBDIR += rtptools
+    SUBDIR += sdr
+    SUBDIR += speak_freely
+    SUBDIR += wb
 
 .include <bsd.port.subdir.mk>
