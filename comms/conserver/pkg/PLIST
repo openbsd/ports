@@ -1,0 +1,7 @@
+etc/conserver.cf.eg
+etc/rc.d/conserver.sh
+man/man5/conserver.cf.5
+man/man8/conserver.8
+man/man8/console.8
+sbin/conserver
+sbin/console
