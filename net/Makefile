@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.227 2002/07/31 23:59:34 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.228 2002/08/04 18:47:35 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -32,6 +32,7 @@
      SUBDIR += dc_gui
      SUBDIR += dctc
      SUBDIR += ddclient
+     SUBDIR += dhcping
      SUBDIR += dlint
      SUBDIR += dnstracer
      SUBDIR += doc
