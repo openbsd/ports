@@ -1,4 +1,4 @@
- $OpenBSD: Makefile,v 1.49 2002/12/13 22:19:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.50 2003/01/01 21:36:49 jakob Exp $
 
 COMMENT=	"program for Internet E-mail and News"
 COMMENT-pico=	"small text editor"
