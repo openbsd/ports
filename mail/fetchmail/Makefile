@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2000/07/23 22:42:52 brad Exp $
+# $OpenBSD: Makefile,v 1.51 2000/08/04 22:49:55 fgsch Exp $
 
 DISTNAME=	fetchmail-5.4.4
 CATEGORIES=	mail
@@ -30,17 +30,19 @@ CONFIGURE_ARGS+= --with-ssl
 
 pre-patch:
 	@sed -e "s|@PREFIX@|${LOCALBASE}|" \
-		${FILESDIR}/fetchmailconf > ${WRKDIR}/fetchmailconf
+	  ${FILESDIR}/fetchmailconf > ${WRKDIR}/fetchmailconf
+	tbl ${WRKSRC}/fetchmail.man > ${WRKSRC}/fetchmail.tbl
+	cp ${WRKSRC}/fetchmail.tbl ${WRKSRC}/fetchmail.man
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/fetchmail
 	@cd ${PREFIX}/man/man1 && ln -sf fetchmail.1 fetchmailconf.1
 	cd ${WRKSRC} && ${INSTALL_DATA} \
-	   sample.rcfile FAQ NOTES FEATURES README COPYING \
-	   fetchmail-FAQ.html fetchmail-features.html \
-	   design-notes.html ${PREFIX}/share/doc/fetchmail
+	  sample.rcfile FAQ NOTES FEATURES README COPYING \
+	  fetchmail-FAQ.html fetchmail-features.html \
+	  design-notes.html ${PREFIX}/share/doc/fetchmail
 	${INSTALL_SCRIPT} ${WRKSRC}/fetchmailconf \
-	 ${PREFIX}/libexec/fetchmailconf.bin
+	  ${PREFIX}/libexec/fetchmailconf.bin
 	${INSTALL_SCRIPT} ${WRKDIR}/fetchmailconf ${PREFIX}/bin
 
 .include <bsd.port.mk>
