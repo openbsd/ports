@@ -3,7 +3,7 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1998/06/13 23:27:05 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/04/05 10:36:43 rohee Exp $
 #
 
 DISTNAME=	bricons
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.uni-paderborn.de/unix/X11/ftp.x.org/R5contrib/ \
 		ftp://ftp.pasteur.fr/pub/computing/unix/X11/R5contrib/
 EXTRACT_SUFX=	-athena-3.0.tar.gz
 
-MAINTAINER=     angelos@openbsd.ogr
+MAINTAINER=     angelos@openbsd.org
 
 OS_RELEASE!=	uname -r
 OS_HAS_XPM=	2.3

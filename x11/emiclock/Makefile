@@ -3,7 +3,7 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/19 05:22:46 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/04/05 10:36:43 rohee Exp $
 #
 
 DISTNAME=	EmiClock-1.0.2
@@ -11,7 +11,7 @@ PKGNAME=	emiclock-1.0.2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/X11/contrib/applications/
 
-MAINTAINER=	angelos@openbsd.ogr
+MAINTAINER=	angelos@openbsd.org
 
 USE_IMAKE=	yes
 
