@@ -1,0 +1,19 @@
+$OpenBSD: patch-about_cc,v 1.1.1.1 2001/04/02 15:14:51 wilfried Exp $
+--- about.cc.orig	Wed Dec 27 13:44:42 2000
++++ about.cc	Sat Feb 10 19:16:35 2001
+@@ -13,7 +13,7 @@
+ extern string c_info,s_info;
+ static Fl_Double_Window *xxx=(Fl_Double_Window *)0;
+ Fl_Window *splash=(Fl_Window *)0;
+-static Fl_Return_Button *OK; static int st=0;
++static Fl_Return_Button *OK; static volatile int st=0;
+ static Fl_Pixmap pixmap_logo1(image_logo1);
+ static char *text_c="\n\n\n\n\n\n             MySQLGUI version 1.7.2\n\n\nServer version : %s\nClient version : %s\n\n\
+ Authors:\n\n\
+@@ -112,5 +112,5 @@ void do_about(Fl_Menu_*,void*) {
+     }
+     o->end(); o->show();
+   }
+-	while (xxx->visible()) Fl::wait();
++	while (st && xxx->visible()) Fl::wait();
+ }
