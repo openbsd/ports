@@ -1,1 +1,1 @@
-.include "${PORTSDIR}/lang/ocaml/files/ocaml.port.mk"
+.include "${PORTSDIR}/lang/ocaml/ocaml.port.mk"

@@ -1,4 +1,4 @@
-# $OpenBSD: ocaml.port.mk,v 1.6 2004/06/22 18:15:58 avsm Exp $
+# $OpenBSD: ocaml.port.mk,v 1.1 2004/08/10 20:39:38 xsa Exp $
 
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
