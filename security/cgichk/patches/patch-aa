@@ -1,10 +1,9 @@
---- Makefile.orig	Thu Oct 28 17:58:06 1999
-+++ Makefile	Thu Oct 28 18:00:35 1999
-@@ -1,8 +1,15 @@
+--- Makefile.orig	Tue Sep 12 21:11:17 2000
++++ Makefile	Tue Sep 12 21:27:15 2000
+@@ -1,8 +1,14 @@
++PREFIX?=       /usr/local
++CGICHK_CONF=   $(PREFIX)/lib/cgi.conf
  
-+PREFIX?=	/usr/local
-+CGICHK_CONF=	$(PREFIX)/lib/cgichk.conf
-+
  all: cgichk
  
  cgichk: cgichk3.c
@@ -13,7 +12,7 @@
 +
 +install:
 +	install -c -m 755 cgichk $(PREFIX)/bin
-+	install -c -m 644 cgichk.conf $(CGICHK_CONF)
++	install -c -m 644 cgi.conf $(CGICHK_CONF)
  
  clean:
  	rm -f cgichk *.o *~

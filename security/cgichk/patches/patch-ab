@@ -1,12 +1,12 @@
---- cgichk3.c.orig	Wed Sep 22 19:59:01 1999
-+++ cgichk3.c	Thu Oct 28 18:35:37 1999
-@@ -116,20 +116,11 @@
+--- cgichk3.c.orig	Tue Sep 12 21:12:21 2000
++++ cgichk3.c	Tue Sep 12 21:18:42 2000
+@@ -119,20 +119,11 @@
  FILE *cgidata;
  FILE *fp_log;
  
 -sserver = argv[1];  /* Server to scan */
 -config = argv[2];   /* Cgicheker config file */
-+config = CGICHK_CONF;   /* Cgicheker config file */
++config = CGICHK_CONF;   /* Cgicheker config file */ 
  
  if(argc==1) { usage(&argv[0]); }
  
@@ -23,16 +23,15 @@
     {
      switch(i)
       {
-@@ -143,11 +134,18 @@
+@@ -146,11 +137,18 @@
         { gettxtmode = 1; break; }
        case 'c':
         { httpdport = atoi(optarg); break; }
--      default :
-+     case 'f':
++      case 'f':
 +       { config = optarg; break; }
-+     case 'V':
-+       { banner(); }
-+     default :
++      case 'V':
++       { banner(); } 
+       default :
         { usage(&argv[0]); break; }
       }
     }
@@ -40,14 +39,14 @@
 +
 +if (argc - optind != 1) usage(&argv[0]);
 +
-+sserver = argv[optind];  /* Server to scan */
++sserver = argv[optind];  /* Server to scan */ 
  
  if(proxymode==1)
    {
-@@ -395,14 +393,15 @@
+@@ -420,14 +418,15 @@
  int usage(char *argv[])
  {
-  printf("-= CGI Checker Version 3.0 =-");
+  printf("-= CGI Checker Version 3.5 =-");
 - printf("\n\nusage : %s target config-file",argv[0]);
 + printf("\n\nusage : %s <options> target",argv[0]);
   printf("\n-p <proxy>   : for stealth scanning behind proxy");
