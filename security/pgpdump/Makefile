@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2003/06/01 19:09:19 margarida Exp $
+# $OpenBSD: Makefile,v 1.13 2003/11/02 02:28:25 margarida Exp $
 
 COMMENT=	"PGP packet visualizer"
 
-DISTNAME=	pgpdump-0.18
+DISTNAME=	pgpdump-0.19
 CATEGORIES=    	security
 
 HOMEPAGE=	http://pgp.iijlab.net/pgpdump.html
@@ -15,9 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://pgp.iijlab.net/pub/pgp/tools/
+MASTER_SITES=	ftp://pgp.iijlab.net/pub/pgp/tools/
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	gnu dest
 
 NO_REGRESS=	Yes
 
