@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2002/04/19 04:52:03 kevlo Exp $
+# $OpenBSD: Makefile,v 1.47 2002/04/24 04:58:07 kevlo Exp $
 
 COMMENT=	"XML parsing library"
 
@@ -24,7 +24,6 @@ RUN_DEPENDS+=	::devel/pkgconfig
 
 MODULES=	iconv
 
-USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
