@@ -1,0 +1,11 @@
+$OpenBSD: patch-snmplib_scapi_c,v 1.1 2002/06/16 20:02:19 pvalchev Exp $
+--- snmplib/scapi.c.orig	Sun Jun 16 13:48:32 2002
++++ snmplib/scapi.c	Sun Jun 16 13:48:55 2002
+@@ -56,6 +56,7 @@
+ #include <openssl/hmac.h>
+ #include <openssl/evp.h>
+ #include <openssl/rand.h>
++#include <des.h>
+ #endif
+ 
+ #ifdef QUITFUN
