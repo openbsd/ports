@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1998/05/20 07:03:57 angelos Exp $
+# $OpenBSD: Makefile,v 1.8 1998/05/20 08:07:18 angelos Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -6,12 +6,12 @@
      SUBDIR += astrolog
      SUBDIR += buffer
 #    SUBDIR += cal
-#    SUBDIR += cbb
+     SUBDIR += cbb
      SUBDIR += cdrecord-current
 #    SUBDIR += chord
 #    SUBDIR += colorls
 #    SUBDIR += ctk
-#    SUBDIR += dejagnu
+     SUBDIR += dejagnu
 #    SUBDIR += dotfile
 #    SUBDIR += ecc
 #    SUBDIR += estic
@@ -30,31 +30,31 @@
 #    SUBDIR += mc
 #    SUBDIR += mmv
 #    SUBDIR += most
-#    SUBDIR += mshell
+     SUBDIR += mshell
 #    SUBDIR += nwrite
 #    SUBDIR += p5-Array-PrintCols
 #    SUBDIR += p5-Business-CreditCard
 #    SUBDIR += p5-Locale-Codes
 #    SUBDIR += p5-Search
-#    SUBDIR += plan
+     SUBDIR += plan
 #    SUBDIR += rpm
      SUBDIR += screen
      SUBDIR += splitvt
 #    SUBDIR += team
-#    SUBDIR += tkcron
-#    SUBDIR += tkinfo
+     SUBDIR += tkcron
+     SUBDIR += tkinfo
 #    SUBDIR += tkman
 #    SUBDIR += unclutter
 #    SUBDIR += viz
 #    SUBDIR += xcalendar
-#    SUBDIR += xgas
+     SUBDIR += xgas
 #    SUBDIR += xinvest
      SUBDIR += xless
 #    SUBDIR += xmaddressbook
 #    SUBDIR += xopps
 #    SUBDIR += xpns
      SUBDIR += xtar
-#    SUBDIR += xtimer
+     SUBDIR += xtimer
 #    SUBDIR += zorro
 
 .include <bsd.port.subdir.mk>
