@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/08/08 20:36:17 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/10/21 22:31:34 jolan Exp $
 bin/bi2cf
 bin/cfed
 bin/comet
 bin/crimson
 man/man6/bi2cf.6
 man/man6/cfed.6
+man/man6/comet.6
 man/man6/crimson.6
 share/crimson/cf.dat
 share/crimson/default.tiles
@@ -26,6 +27,8 @@ share/crimson/sound/menu.wav
 share/crimson/sound/repair.wav
 share/crimson/sound/select.wav
 share/crimson/title.bmp
+share/pixmaps/crimson.png
+@dirrm share/pixmaps
 @dirrm share/crimson/sound
 @dirrm share/crimson/levels
 @dirrm share/crimson
