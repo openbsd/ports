@@ -1,28 +1,25 @@
---- Makefile.PL.orig	Thu Jan 23 23:13:42 2003
-+++ Makefile.PL	Thu Jul 10 13:22:54 2003
-@@ -41,13 +41,16 @@
-           sub { ($_[5]+1900, $_[4]+1, $_[3])}->(localtime(time - 45 * 24*60*60));
+$OpenBSD: patch-Makefile_PL,v 1.4 2005/04/01 19:14:11 msf Exp $
+--- Makefile.PL.orig	Sun Mar 27 10:22:55 2005
++++ Makefile.PL	Sun Mar 27 10:25:58 2005
+@@ -57,12 +57,13 @@ my $some_time_ago = sprintf "%04d-%02d-%
  if ($some_time_ago lt $release_date) {
      # Check if we have internet connection
--    require IO::Socket;
+     require IO::Socket;
 -    my $s = IO::Socket::INET->new(PeerAddr => "www.google.com:80",
 -				  Timeout  => 10,
 -				 );
-+#    require IO::Socket;
 +#    my $s = IO::Socket::INET->new(PeerAddr => "www.google.com:80",
 +#				  Timeout  => 10,
 +#				 );
-+
-+my $s = 0;
-+
++    my $s = 0;
      if ($s) {
  	# XXX could try to send a GET to it???
 -	close($s);
-+#	close($s);
++	#close($s);
  
  	print <<EOT;
  
-@@ -95,7 +98,7 @@
+@@ -110,7 +111,7 @@ to install in $Config{installscript}.
  EOT
      my @tmp;
      for (@programs_to_install) {
@@ -31,10 +28,10 @@
  	    push(@tmp, $_);
  	}
      }
-@@ -126,7 +129,7 @@
- 	    }
- 	    close(PROG);
- 	}
+@@ -129,7 +130,7 @@ EOT
+     my @tmp;
+     for my $alias (@request_aliases) {
+ 	my $default = "n";
 -	if (prompt("Do you want to install the $alias alias?", $default) =~ /^y/) {
 +	if (1) {
  	    push(@tmp, $alias);

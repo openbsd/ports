@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/09/15 18:49:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2005/04/01 19:14:11 msf Exp $
 bin/GET
 bin/HEAD
 bin/POST
@@ -10,6 +10,7 @@ ${P5SITE}/Bundle/
 ${P5SITE}/Bundle/LWP.pm
 ${P5SITE}/File/
 ${P5SITE}/File/Listing.pm
+${P5SITE}/HTML/
 ${P5SITE}/HTML/Form.pm
 ${P5SITE}/HTTP/
 ${P5SITE}/HTTP/Cookies/
@@ -44,6 +45,7 @@ ${P5SITE}/LWP/MemberMixin.pm
 ${P5SITE}/LWP/Protocol/
 ${P5SITE}/LWP/Protocol.pm
 ${P5SITE}/LWP/Protocol/GHTTP.pm
+${P5SITE}/LWP/Protocol/cpan.pm
 ${P5SITE}/LWP/Protocol/data.pm
 ${P5SITE}/LWP/Protocol/file.pm
 ${P5SITE}/LWP/Protocol/ftp.pm
@@ -52,6 +54,7 @@ ${P5SITE}/LWP/Protocol/http.pm
 ${P5SITE}/LWP/Protocol/http10.pm
 ${P5SITE}/LWP/Protocol/https.pm
 ${P5SITE}/LWP/Protocol/https10.pm
+${P5SITE}/LWP/Protocol/loopback.pm
 ${P5SITE}/LWP/Protocol/mailto.pm
 ${P5SITE}/LWP/Protocol/nntp.pm
 ${P5SITE}/LWP/Protocol/nogo.pm
