@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#	$OpenBSD: bind9-disable,v 1.1 2001/08/21 18:00:25 jakob Exp $
+#	$OpenBSD: bind9-disable,v 1.2 2001/10/08 23:01:51 jakob Exp $
 #
 #	this script disables BIND v9 by removing links created by
 #	bind9-enable.
@@ -25,6 +25,11 @@ if [ X$answer != Xy ]; then
     exit
 fi
 
+if [ ! -e /usr/sbin/lwresd ]; then
+    echo "BIND v9 not enabled, script terminated."
+    exit 
+fi
+
 ######################################################################
 echo "Removing BIND v9 links:"
 
@@ -42,3 +47,42 @@ done
 
 echo ""
 echo done.
+
+######################################################################
+if [ ! -e /usr/sbin/named.dist ]; then
+    echo "Couldn't find saved BIND v4 files, saved files not restored."
+    exit 
+else
+    echo "Trying to restore BIND v4 files:"
+
+    for file in \
+	/usr/sbin/addr \
+	/usr/sbin/dig \
+	/usr/sbin/dnsquery \
+	/usr/sbin/host \
+	/usr/sbin/named \
+	/usr/sbin/named.reload \
+	/usr/sbin/named.restart \
+	/usr/sbin/ndc \
+	/usr/sbin/nslookup \
+	/usr/share/man/cat1/dig.0 \
+	/usr/share/man/cat1/dnsquery.0 \
+	/usr/share/man/cat1/host.0 \
+	/usr/share/man/cat8/named-xfer.0 \
+	/usr/share/man/cat8/named.0 \
+	/usr/share/man/cat8/named.reload.0 \
+	/usr/share/man/cat8/named.restart.0 \
+	/usr/share/man/cat8/ndc.0 \
+	/usr/share/man/cat8/nslookup.0 \
+	/usr/share/misc/nslookup.help \
+	/var/named/named-xfer
+    do
+	if [ -e $file.dist ]; then
+	    echo " $file"
+	    mv $file.dist $file
+	fi
+    done
+
+    echo ""
+    echo done.
+fi

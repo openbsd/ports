@@ -1,15 +1,18 @@
-# $OpenBSD: Makefile,v 1.24 2001/07/13 11:24:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2001/10/08 23:01:51 jakob Exp $
 
 COMMENT=	Berkeley Internet Name Daemon
 
 VERSION=	9.1.3
 DISTNAME=	bind-${VERSION}
 CATEGORIES=	net
-NEED_VERSION=	1.363
+NEED_VERSION=	1.474
 
-MASTER_SITES=	ftp://ftp.isc.org/isc/bind9/${VERSION}/ \
+MASTER_SITES+=	ftp://ftp.isc.org/isc/bind9/${VERSION}/ \
+		ftp://ftp.epix.net/pub/isc/bind9/${VERSION}/ \
+		ftp://ftp.nominum.com/pub/isc/bind9/${VERSION}/ \
 		ftp://ftp.sunet.se/pub/network/isc/bind9/${VERSION}/ \
-      		ftp://ftp.funet.fi/pub/mirrors/ftp.isc.org/isc/bind9/${VERSION}/
+		ftp://ftp.funet.fi/pub/mirrors/ftp.isc.org/isc/bind9/${VERSION}/ \
+		ftp://ftp.iij.ad.jp/pub/network/isc/bind9/${VERSION}/ \
 
 HOMEPAGE=	http://www.isc.org/products/BIND/
 
@@ -22,10 +25,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--localstatedir=/var \
-			--with-openssl="/usr" \
-			--with-libtool
+CONFIGURE_ARGS+=	--with-libtool ${CONFIGURE_SHARED} \
+			--localstatedir=/var \
+			--with-openssl="/usr"
+
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}
 
 FLAVORS=		debug static threads
 FLAVOR?=
@@ -48,6 +52,9 @@ CONFIGURE_ARGS+=	--disable-threads
 EXAMPLEFILES=	named.conf named.root \
 		named.localhost named.loopback
 
+MISCDOCFILES=	dnssec ipv6 migration migration-4to9 \
+		options sdb
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bind9/arm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bind9/misc
@@ -59,13 +66,17 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/lwres/*.3 ${PREFIX}/man/man3
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.html ${PREFIX}/share/doc/bind9/arm
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.gif  ${PREFIX}/share/doc/bind9/arm
-	${INSTALL_DATA} ${WRKSRC}/doc/misc/* ${PREFIX}/share/doc/bind9/misc
 .for file in ${EXAMPLEFILES}
 	${INSTALL_DATA} ${FILESDIR}/${file} ${PREFIX}/share/examples/bind9
 .endfor
-	@sed s,y0y0y0,${TRUEPREFIX}, < ${FILESDIR}/bind9-enable > \
-		${PREFIX}/sbin/bind9-enable
-	@chmod 555 ${PREFIX}/sbin/bind9-enable
-	@chown root:wheel ${PREFIX}/sbin/bind9-enable
+.for file in ${MISCDOCFILES}
+	${INSTALL_DATA} ${WRKSRC}/doc/misc/${file} ${PREFIX}/share/doc/bind9/misc
+.endfor
+.for file in bind9-enable bind9-disable
+	@sed s,y0y0y0,${TRUEPREFIX}, < ${FILESDIR}/${file} > \
+		${PREFIX}/sbin/${file}
+	@chmod 555 ${PREFIX}/sbin/${file}
+	@chown root:wheel ${PREFIX}/sbin/${file}
+.endfor
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2001/03/24 19:59:38 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.10 2001/10/08 23:01:51 jakob Exp $
 @pkgcfl bind8-*
 bin/dig
 bin/host
@@ -278,6 +278,7 @@ man/man8/named.8
 man/man8/nsupdate.8
 man/man8/rndc.8
 sbin/bind9-enable
+sbin/bind9-disable
 sbin/dnssec-keygen
 sbin/dnssec-makekeyset
 sbin/dnssec-signkey

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#	$OpenBSD: bind9-enable,v 1.7 2001/09/20 21:47:24 jakob Exp $
+#	$OpenBSD: bind9-enable,v 1.8 2001/10/08 23:01:51 jakob Exp $
 #
 #	this script replaces OpenBSD named files with the corresponding
 #	files from BIND v9.
@@ -15,7 +15,7 @@ if [ `id -u` -ne 0 ]; then
     exit
 fi
 
-echo "This script will replace the OpenBSD named with BIND v9"
+echo "This script will replace OpenBSD BIND v4 with BIND v9"
 echo ""
 echo -n "Are you sure you want to to this (y/[n])? "
 
@@ -28,36 +28,45 @@ if [ X$answer != Xy ]; then
 fi
 
 ######################################################################
-echo "Removing obsolete files:"
+if [ -e /usr/sbin/named.dist ]; then
+    echo "BIND v4 already preserved, not saving old files."
+    echo ""
+elif [ ! -e /var/named/named-xfer ]; then
+    echo "Couldn't find BIND v4 files, not saving old files."
+    echo ""
+else 
+    echo "Trying to save BIND v4 files:"
 
-for file in \
-    /usr/sbin/addr \
-    /usr/sbin/dig \
-    /usr/sbin/dnsquery \
-    /usr/sbin/host \
-    /usr/sbin/named \
-    /usr/sbin/named.reload \
-    /usr/sbin/named.restart \
-    /usr/sbin/ndc \
-    /usr/sbin/nslookup \
-    /usr/share/man/cat1/dig.0 \
-    /usr/share/man/cat1/dnsquery.0 \
-    /usr/share/man/cat1/host.0 \
-    /usr/share/man/cat8/named-xfer.0 \
-    /usr/share/man/cat8/named.0 \
-    /usr/share/man/cat8/named.reload.0 \
-    /usr/share/man/cat8/named.restart.0 \
-    /usr/share/man/cat8/ndc.0 \
-    /usr/share/man/cat8/nslookup.0 \
-    /usr/share/misc/nslookup.help \
-    /var/named/named-xfer
-do
-    echo " $file"
-    rm -f $file
-done
+    for file in \
+	/usr/sbin/addr \
+	/usr/sbin/dig \
+	/usr/sbin/dnsquery \
+	/usr/sbin/host \
+	/usr/sbin/named \
+	/usr/sbin/named.reload \
+	/usr/sbin/named.restart \
+	/usr/sbin/ndc \
+	/usr/sbin/nslookup \
+	/usr/share/man/cat1/dig.0 \
+	/usr/share/man/cat1/dnsquery.0 \
+	/usr/share/man/cat1/host.0 \
+	/usr/share/man/cat8/named-xfer.0 \
+	/usr/share/man/cat8/named.0 \
+	/usr/share/man/cat8/named.reload.0 \
+	/usr/share/man/cat8/named.restart.0 \
+	/usr/share/man/cat8/ndc.0 \
+	/usr/share/man/cat8/nslookup.0 \
+	/usr/share/misc/nslookup.help \
+	/var/named/named-xfer
+    do
+	if [ -f $file ]; then
+	    echo " $file"
+	    mv -f $file $file.dist
+	fi
+    done
 
-echo ""
-echo done.
+    echo ""
+fi
 
 ######################################################################
 echo "Creating soft links for binaries:"
@@ -81,7 +90,6 @@ do
 done
 
 echo ""
-echo done.
 
 ######################################################################
 echo "Setup directory structure:"
@@ -120,7 +128,6 @@ if [ ! -d ${CHROOT}/var/tmp ]; then
 fi
 
 echo ""
-echo done.
 
 ######################################################################
 echo "Symlink $config:"
@@ -133,4 +140,3 @@ else
 fi
 
 echo ""
-echo done.
