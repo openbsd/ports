@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2001/09/16 21:55:01 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.24 2001/09/21 14:46:30 lebel Exp $
 bin/ex
 bin/rview
 bin/rvim
@@ -178,6 +178,7 @@ share/vim/vim60${V}/ftplugin/postscr.vim
 share/vim/vim60${V}/ftplugin/python.vim
 share/vim/vim60${V}/ftplugin/ruby.vim
 share/vim/vim60${V}/ftplugin/spec.vim
+share/vim/vim60${V}/ftplugin/tex.vim
 share/vim/vim60${V}/ftplugin/vb.vim
 share/vim/vim60${V}/ftplugin/verilog.vim
 share/vim/vim60${V}/ftplugin/vim.vim
@@ -211,6 +212,7 @@ share/vim/vim60${V}/indent/vb.vim
 share/vim/vim60${V}/indent/verilog.vim
 share/vim/vim60${V}/indent/vim.vim
 share/vim/vim60${V}/indent/xml.vim
+share/vim/vim60${V}/indent/yacc.vim
 share/vim/vim60${V}/indoff.vim
 share/vim/vim60${V}/macros/README.txt
 share/vim/vim60${V}/macros/dvorak
