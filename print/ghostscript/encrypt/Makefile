@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2001/04/13 17:01:04 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/04/14 14:48:50 espie Exp $
 
 COMMENT=	"encrypted pdf add-on for ghostscript"
 CATEGORIES=	print
 NEED_VERSION=	1.363
-MASTER_SITES=	http://www.ozemail.com.au/%7Egeoffk/pdfencrypt/
-HOMEPAGE=	http://www.ozemail.com.au/%7Egeoffk/pdfencrypt/
+MASTER_SITES=	http://www.ozemail.com.au/~geoffk/pdfencrypt/
+HOMEPAGE=	http://www.ozemail.com.au/~geoffk/pdfencrypt/
 DISTFILES=	pdf_sec.ps
 DIST_SUBDIR=	gs
 EXTRACT_ONLY=
@@ -17,21 +17,12 @@ PERMIT_DISTFILES_CDROM=	No
 
 NO_BUILD=Yes
 
-DISTNAME=	ghostscript_encrypt-1.0
-FLAVORS=aladdin gnu
-
-.if defined(ALADDIN)
-FLAVOR=aladdin
-.endif
+DISTNAME=	ghostscript-encrypt-0
+FLAVORS=afpl aladdin gnu
 
 FLAVOR?=gnu
 
-.if ${FLAVOR:L} == "aladdin"
-GSDIR=print/ghostscript/aladdin
-.else
-GSDIR=print/ghostscript/gnu
-.endif
-
+GSDIR=print/ghostscript/${FLAVOR:L}
 
 .if !defined(HACK)
 PORTSDIR!=cd ${.CURDIR} && HACK=yes ${MAKE} show VARNAME=PORTSDIR
