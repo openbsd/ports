@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/14 10:22:42 shell Exp $
+${P5ARCH}/XML/LibXML/Common.pm
+${P5ARCH}/auto/XML/LibXML/Common/Common.bs
+${P5ARCH}/auto/XML/LibXML/Common/Common.so
+man/man3p/XML::LibXML::Common.3p
+@dirrm ${P5ARCH}/auto/XML/LibXML/Common

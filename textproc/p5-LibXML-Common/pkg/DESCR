@@ -1,0 +1,3 @@
+XML::LibXML::Common contains several constants and functions that
+are shared by XML::LibXML, XML::GDOME and XML::LibXSLT (not all
+done, yet)
