@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.12 2000/11/03 00:54:09 espie Exp $
+# $OpenBSD: INSTALL,v 1.13 2001/02/15 01:14:34 brad Exp $
 #
 # Pre/post-installation setup of MySQL
 
@@ -13,17 +13,15 @@ do_notice_pre_install()
     echo "+---------------"
     echo "| You appear to already have a MySQL database directory in $DB_DIR"
     echo "|"
-    echo "| In order to preserve your existing data, you should:"
-    echo "|          - dump all your databases"
-    echo "|          - kill MySQL if it's running"
-    echo "|          - delete the $DB_DIR directory"
-    echo "|          - install MySQL"
-    echo "|          - start up MySQL"
-    echo "|          - re-create all of your database"
-    echo "|          - re-load your data"
+    echo "| The database directory has been preserved. If you want to start"
+    echo "| from the default database setup, you should perform these steps"
+    echo "| as root:"
+    echo "|"
+    echo "|           rm -rf $DB_DIR"
+    echo "|           $PREFIX/bin/mysql_install_db"
+    echo "|"
     echo "+---------------"
     echo
-    exit 1
 }
 
 do_pre_install()
@@ -47,13 +45,7 @@ do_pre_install()
 
 do_post_install()
 {
-install -d -o mysql -g mysql -m 711 $DB_DIR
-
-# The shell is switched back to /bin/sh to ensure that the database
-# creation can proceed successfully
-chpass -s /bin/sh mysql
-su mysql -c $PREFIX/bin/mysql_install_db
-chpass -s /sbin/nologin mysql
+$PREFIX/bin/mysql_install_db
 }
 
 # Verify/process the command
@@ -66,7 +58,9 @@ case $2 in
 	do_pre_install
 	;;
     POST-INSTALL)
-	do_post_install
+	if [ ! -d $DB_DIR ]; then
+	  do_post_install
+	fi
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2

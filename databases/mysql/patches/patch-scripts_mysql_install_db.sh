@@ -1,6 +1,6 @@
---- scripts/mysql_install_db.sh.orig	Wed Jan 17 04:39:53 2001
-+++ scripts/mysql_install_db.sh	Fri Jan 19 20:47:08 2001
-@@ -7,12 +7,6 @@
+--- scripts/mysql_install_db.sh.orig	Thu Feb  8 21:12:22 2001
++++ scripts/mysql_install_db.sh	Wed Feb 14 19:40:32 2001
+@@ -7,12 +7,9 @@
  #
  # All unrecognized arguments to this script are passed to mysqld.
  
@@ -10,10 +10,13 @@
 -      IN_RPM="1"; shift
 -      ;;
 -esac
++user=mysql
++group=mysql
++
  defaults=
  case "$1" in
      --no-defaults|--defaults-file=*|--defaults-extra-file=*)
-@@ -33,7 +27,6 @@
+@@ -33,10 +30,10 @@
  
    for arg do
      case "$arg" in
@@ -21,7 +24,11 @@
        --basedir=*) basedir=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
        --ldata=*|--datadir=*) ldata=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
        --user=*) user=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
-@@ -69,7 +62,6 @@
++      --group=*) group=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
+       *)
+         if test -n "$pick_args"
+         then
+@@ -69,7 +66,6 @@
  execdir=
  bindir=
  basedir=
@@ -29,7 +36,7 @@
  parse_arguments `$print_defaults $defaults mysqld mysql_install_db`
  parse_arguments PICK-ARGS-FROM-ARGV "$@"
  
-@@ -88,52 +80,38 @@
+@@ -88,53 +84,37 @@
  
  if test ! -x $execdir/mysqld
  then
@@ -93,15 +100,15 @@
 -  if test -w / -a ! -z "$user"; then
 -    chown $user $ldata $ldata/mysql $ldata/test;
 -  fi
+-fi
 +if test ! -d $ldata; then mkdir $ldata; chmod 711 $ldata ; fi
 +if test ! -d $ldata/mysql; then mkdir $ldata/mysql;  chmod 700 $ldata/mysql ; fi
 +if test ! -d $ldata/test; then mkdir $ldata/test;  chmod 700 $ldata/test ; fi
-+if test -w / -a ! -z "$user"; then
-+  chown $user $ldata $ldata/mysql $ldata/test;
- fi
++chown $user:$group $ldata $ldata/mysql $ldata/test;
  
  # Initialize variables
-@@ -301,12 +279,6 @@
+ c_d="" i_d=""
+@@ -301,12 +281,6 @@
  END_OF_DATA
  then
    echo ""
@@ -114,7 +121,7 @@
    echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
    echo "This is done with:"
    echo "$bindir/mysqladmin -u root -p password 'new-password'"
-@@ -322,15 +294,6 @@
+@@ -322,15 +296,6 @@
      echo "able to use the new GRANT command!"
    fi
    echo
