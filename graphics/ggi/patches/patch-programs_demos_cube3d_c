@@ -1,0 +1,12 @@
+$OpenBSD: patch-programs_demos_cube3d_c,v 1.1 2003/01/18 09:21:09 pvalchev Exp $
+--- programs/demos/cube3d.c.orig	Sat Jan 18 02:00:00 2003
++++ programs/demos/cube3d.c	Sat Jan 18 02:00:31 2003
+@@ -501,7 +501,7 @@ int spawn_bg(char *what)
+ 	if (pid == -1)
+ 		return -1;
+ 	if (pid == 0) {
+-		execlp("/bin/sh","/bin/sh","-c",what, NULL);
++		execlp("/bin/sh","/bin/sh","-c",what, (void *)NULL);
+ 		exit(127);
+ 	}
+ 	return pid;

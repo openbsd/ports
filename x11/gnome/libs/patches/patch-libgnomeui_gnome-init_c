@@ -1,6 +1,6 @@
-$OpenBSD: patch-libgnomeui_gnome-init_c,v 1.5 2003/01/02 03:32:25 marcm Exp $
---- libgnomeui/gnome-init.c.orig	Sat Aug  3 06:23:52 2002
-+++ libgnomeui/gnome-init.c	Sat Nov 30 12:45:52 2002
+$OpenBSD: patch-libgnomeui_gnome-init_c,v 1.6 2003/01/18 09:21:09 pvalchev Exp $
+--- libgnomeui/gnome-init.c.orig	Sat Aug  3 07:23:52 2002
++++ libgnomeui/gnome-init.c	Sat Jan 18 01:21:14 2003
 @@ -205,32 +205,12 @@ gnome_init_cb(poptContext ctx, enum popt
  	switch(reason) {
  	case POPT_CALLBACK_REASON_PRE:
@@ -36,3 +36,15 @@ $OpenBSD: patch-libgnomeui_gnome-init_c,v 1.5 2003/01/02 03:32:25 marcm Exp $
                          client = gnome_master_client();
                  }
  		break;
+@@ -673,9 +653,9 @@ static void gnome_segv_handle(int signum
+ 
+ 		/* Child process */
+ 		execl(GNOMEBINDIR "/gnome_segv", GNOMEBINDIR "/gnome_segv",
+-		      program_invocation_name, buf, gnome_app_version, NULL);
++		      program_invocation_name, buf, gnome_app_version, (void *)NULL);
+ 
+-                execlp("gnome_segv", "gnome_segv", program_invocation_name, buf, gnome_app_version, NULL);
++                execlp("gnome_segv", "gnome_segv", program_invocation_name, buf, gnome_app_version, (void *)NULL);
+ 
+                 _exit(99);
+ 	}
