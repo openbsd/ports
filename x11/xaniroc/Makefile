@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/10/08 20:31:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2004/12/19 17:15:16 alek Exp $
 
 COMMENT=	"animate your root-cursor"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
+WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c m
 
 USE_X11=	Yes
 CONFIGURE_STYLE=	imake

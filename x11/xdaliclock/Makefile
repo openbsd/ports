@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/29 19:48:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2004/12/19 17:15:18 alek Exp $
 
 COMMENT=	"rather neat animated clock"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xext Xt c
 
 MASTER_SITES=	${HOMEPAGE}
 

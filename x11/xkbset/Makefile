@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/17 15:03:18 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/19 17:15:18 alek Exp $
 
 COMMENT=	"X11 keyboard accessibility tool"
 COMMENT-gui=	"GUI for xkbset"
@@ -13,7 +13,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 c 
 
 HOMEPAGE=	http://www.math.missouri.edu/~stephen/software/#xkbset
 MASTER_SITES=	http://www.math.missouri.edu/~stephen/software/xkbset/
@@ -31,6 +30,8 @@ SUBPACKAGE?=
 .if ${SUBPACKAGE} == "-gui" && defined(PACKAGING)
 RUN_DEPENDS=	::x11/xkbset \
 		:p5-Tk-*:x11/p5-Tk
+.else
+WANTLIB=	X11 c 
 .endif
 
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/10/02 17:30:09 robert Exp $
+# $OpenBSD: Makefile,v 1.9 2004/12/19 17:15:17 alek Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc
 
@@ -18,6 +18,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		ICE SM X11 Xaw Xext Xft Xinerama Xmu Xpm Xrandr \
+			Xrender Xt Xv Xxf86dga Xxf86vm c fontconfig freetype m \
+			ncurses ossaudio pthread
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	jpeg.62::graphics/jpeg

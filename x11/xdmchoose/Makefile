@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/05/12 20:11:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/19 17:15:18 alek Exp $
 
 COMMENT=	"alternative xdm-invoked chooser"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xpm c
 
 MASTER_SITES=	http://frmb.home.cern.ch/frmb/download/
 
