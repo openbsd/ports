@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.23 2000/04/09 12:04:13 turan Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.24 2000/04/10 17:51:26 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -53,6 +53,8 @@ ECHO_MSG?=	echo
 
 RECURSIVE_FETCH_LIST?=	No
 
+REPORT_PROBLEM?=exit 1
+
 _SUBDIRUSE: .USE
 	@for entry in ${SUBDIR}; do \
 		for dud in $$DUDS; do \
@@ -78,10 +80,11 @@ _SUBDIRUSE: .USE
 			continue; \
 		fi; \
 		${ECHO_MSG} "===> ${DIRPRFX}$${edir}$$display"; \
-		${MAKE} ${.TARGET:realinstall=install} \
+		if ${MAKE} ${.TARGET:realinstall=install} \
 			DIRPRFX=${DIRPRFX}$$edir/ \
 			RECURSIVE_FETCH_LIST=${RECURSIVE_FETCH_LIST} \
 			FLAVOR="$$flavor"; \
+		then :; else ${REPORT_PROBLEM}; fi; \
 	done
 
 ${SUBDIR}::
