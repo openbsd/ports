@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/19 03:11:49 kevlo Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/Storable.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/Storable.so
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/_freeze.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/_retrieve.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/_store.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/_store_fd.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/autosplit.ix
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/fd_retrieve.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/freeze.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/lock_nstore.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/lock_retrieve.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/lock_store.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/nfreeze.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/nstore.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/nstore_fd.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/retrieve.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/store.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/store_fd.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable/thaw.al
+libdata/perl5/site_perl/${ARCH}-openbsd/Storable.pm
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Storable
