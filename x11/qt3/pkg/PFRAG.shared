@@ -1,10 +1,10 @@
-@comment $OpenBSD: PFRAG.shared,v 1.10 2004/01/08 01:20:13 brad Exp $
-lib/libqt${FLAVOR_EXT}.so.3.23
-lib/libqui${FLAVOR_EXT}.so.1.0
-lib/qt3/libqt${FLAVOR_EXT}.so.3.23
-lib/qt3/libqui${FLAVOR_EXT}.so.1.0
-lib/qt3/plugins${FLAVOR_EXT}/designer/libcppeditor.so
-lib/qt3/plugins${FLAVOR_EXT}/designer/libdlgplugin.so
-lib/qt3/plugins${FLAVOR_EXT}/designer/librcplugin.so
-lib/qt3/plugins${FLAVOR_EXT}/designer/libwizards.so
+@comment $OpenBSD: PFRAG.shared,v 1.11 2004/01/22 21:03:59 espie Exp $
+lib/libqt${MT_SUFX}.so.3.23
+lib/libqui${MT_SUFX}.so.1.0
+lib/qt3/libqt${MT_SUFX}.so.3.23
+lib/qt3/libqui${MT_SUFX}.so.1.0
+lib/qt3/plugins${MT_SUFX}/designer/libcppeditor.so
+lib/qt3/plugins${MT_SUFX}/designer/libdlgplugin.so
+lib/qt3/plugins${MT_SUFX}/designer/librcplugin.so
+lib/qt3/plugins${MT_SUFX}/designer/libwizards.so
 DYNLIBDIR(%D/lib)

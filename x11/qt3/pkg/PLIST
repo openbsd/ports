@@ -1,38 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/01/08 01:20:13 brad Exp $
-bin/assistant
-bin/designer3
-bin/findtr3
-bin/linguist
-bin/lrelease
-bin/lupdate
-bin/moc3
-bin/qm2ts
-bin/qmake
-bin/qt20fix3
-bin/qtconfig
-bin/qtrename1403
-bin/uic3
-lib/qt3/bin/assistant
-lib/qt3/bin/designer
-lib/qt3/bin/findtr
-lib/qt3/bin/linguist
-lib/qt3/bin/lrelease
-lib/qt3/bin/lupdate
-lib/qt3/bin/moc
-lib/qt3/bin/qm2ts
-lib/qt3/bin/qmake
-lib/qt3/bin/qt20fix
-lib/qt3/bin/qtconfig
-lib/qt3/bin/qtrename140
-lib/qt3/bin/uic
-lib/qt3/libeditor.a
+@comment $OpenBSD: PLIST,v 1.14 2004/01/22 21:03:59 espie Exp $
+bin/assistant${MT_SUFX}
+bin/designer3${MT_SUFX}
+bin/findtr3${MT_SUFX}
+bin/linguist${MT_SUFX}
+bin/lrelease${MT_SUFX}
+bin/lupdate${MT_SUFX}
+bin/moc3${MT_SUFX}
+bin/qm2ts${MT_SUFX}
+bin/qmake${MT_SUFX}
+bin/qt20fix3${MT_SUFX}
+bin/qtconfig${MT_SUFX}
+bin/qtrename1403${MT_SUFX}
+bin/uic3${MT_SUFX}
+lib/qt3/bin${MT_SUFX}/assistant
+lib/qt3/bin${MT_SUFX}/designer
+lib/qt3/bin${MT_SUFX}/findtr
+lib/qt3/bin${MT_SUFX}/linguist
+lib/qt3/bin${MT_SUFX}/lrelease
+lib/qt3/bin${MT_SUFX}/lupdate
+lib/qt3/bin${MT_SUFX}/moc
+lib/qt3/bin${MT_SUFX}/qm2ts
+lib/qt3/bin${MT_SUFX}/qmake
+lib/qt3/bin${MT_SUFX}/qt20fix
+lib/qt3/bin${MT_SUFX}/qtconfig
+lib/qt3/bin${MT_SUFX}/qtrename140
+lib/qt3/bin${MT_SUFX}/uic
+!%%mt%%
 %%SHARED%%
-@exec mkdir -p %D/lib/qt3/plugins/imageformats
-@exec mkdir -p %D/lib/qt3/plugins/styles
-@exec mkdir -p %D/lib/qt3/plugins/sqldrivers
-@dirrm lib/qt3/plugins/styles
-@dirrm lib/qt3/plugins/sqldrivers
-@dirrm lib/qt3/plugins/imageformats
-@dirrm lib/qt3/plugins/designer
-@dirrm lib/qt3/plugins
-@dirrm lib/qt3/bin
+@exec mkdir -p %D/lib/qt3/plugins${MT_SUFX}/imageformats
+@exec mkdir -p %D/lib/qt3/plugins${MT_SUFX}/styles
+@exec mkdir -p %D/lib/qt3/plugins${MT_SUFX}/sqldrivers
+@dirrm lib/qt3/plugins${MT_SUFX}/styles
+@dirrm lib/qt3/plugins${MT_SUFX}/sqldrivers
+@dirrm lib/qt3/plugins${MT_SUFX}/imageformats
+@dirrm lib/qt3/plugins${MT_SUFX}/designer
+@dirrm lib/qt3/plugins${MT_SUFX}
+@dirrm lib/qt3/bin${MT_SUFX}

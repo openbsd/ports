@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2004/01/08 01:12:59 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2004/01/22 21:03:59 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -24,7 +24,7 @@ HOMEPAGE=	http://www.trolltech.com/qt/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-FLAVORS=mt
+FLAVORS=mt debug
 
 PSEUDO_FLAVORS=	no_mysql no_postgresql
 FLAVOR?=
@@ -63,12 +63,23 @@ CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg -system-zl
 
 MULTI_PACKAGES+=-base -html
 
+.if ${FLAVOR:L:Mdebug}
+CONFIGURE_ARGS+=-debug
+PKGDEBUG=-debug
+.else
+PKGDEBUG=
+.endif
+
 .if ${FLAVOR:L:Mmt}
-FULLPKGNAME=		qt3-mt-${VERSION}
+FULLPKGNAME=		qt3-mt-${VERSION}${PKGDEBUG}
 CONFIGURE_ARGS+=-thread
-MULTI_PACKAGES+=	-examples
 .else
 CONFIGURE_ARGS+=-no-thread
+.endif
+
+.if ${FLAVOR:L:Mmt} && !${FLAVOR:L:Mdebug}
+MULTI_PACKAGES+=	-examples
+.else
 ALL_TARGET=sub-src sub-tools
 .endif
 
@@ -142,7 +153,7 @@ QT_PLUGINSDIR=	${QT_LIBDIR}/plugins${MT_SUFX}
 QT_BINDIR=	${QT_LIBDIR}/bin${MT_SUFX}
 
 # for manpages in MESSAGE
-SUBST_VARS=	VERSION QT_LIBDIR QT_DOC
+SUBST_VARS=	VERSION QT_LIBDIR QT_DOC MT_SUFX
 
 DOCS=	FAQ LICENSE.GPL README README-QT.TXT \
 	changes-3*
@@ -153,10 +164,16 @@ NO_REGRESS=	Yes
 PROGRAMS3=designer findtr moc qt20fix qtrename140 uic
 PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig 
 
-.if ${FLAVOR:L:Mmt}
-MT_SUFX=-mt
 LIBRARIES=qt${MT_SUFX}.so.3.23 qui${MT_SUFX}.so.1.0
 
+.if ${FLAVOR:L:Mmt}
+MT_SUFX=-mt
+.else
+MT_SUFX=
+LIBRARIES+=editor.so.1.0
+.endif
+
+.if ${FLAVOR:L:Mmt} && !${FLAVOR:L:Mdebug}
 post-configure:
 	@cd ${WRKSRC} && cp -R examples examples-src
 	@find ${WRKSRC}/examples-src -name '*.orig' |xargs rm
@@ -186,8 +203,6 @@ pre-install:
 	    ${INSTALL_PROGRAM} $$i/$$i ${QT_TUTORIAL}/$$i; \
 	fi; done
 .else
-MT_SUFX=
-LIBRARIES=qt.so.3.23 editor.so.1.0 qui.so.1.0
 
 post-patch:
 	-rm -rf ${WRKSRC}/examples
