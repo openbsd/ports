@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.202 2002/03/24 01:59:52 jsyn Exp $
+# $OpenBSD: Makefile,v 1.203 2002/03/24 23:59:17 matt Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -174,7 +174,6 @@
      SUBDIR += udptunnel
      SUBDIR += uucp
      SUBDIR += vicq
-     SUBDIR += vnc
      SUBDIR += vtun
      SUBDIR += wget
      SUBDIR += wide-dhcp
