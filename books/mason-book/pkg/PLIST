@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/29 23:52:29 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/16 22:51:46 espie Exp $
+share/doc/mason-book/
 share/doc/mason-book/appendix-a.html
 share/doc/mason-book/appendix-b.html
 share/doc/mason-book/appendix-c.html
 share/doc/mason-book/appendix-d.html
+@comment share/doc/mason-book/book_as_html.pl
 share/doc/mason-book/chapter-1.html
 share/doc/mason-book/chapter-10.html
 share/doc/mason-book/chapter-11.html
@@ -17,6 +19,7 @@ share/doc/mason-book/chapter-8.html
 share/doc/mason-book/chapter-9.html
 share/doc/mason-book/colophon.html
 share/doc/mason-book/copyright.html
+share/doc/mason-book/figures/
 share/doc/mason-book/figures/mas_0301.png
 share/doc/mason-book/figures/mas_0601.png
 share/doc/mason-book/figures/mas_0602.png
@@ -36,5 +39,3 @@ share/doc/mason-book/foreword.html
 share/doc/mason-book/glossary.html
 share/doc/mason-book/index.html
 share/doc/mason-book/preface.html
-@dirrm share/doc/mason-book/figures
-@dirrm share/doc/mason-book
