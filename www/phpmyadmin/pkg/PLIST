@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/11/24 02:25:50 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/01/25 08:47:47 kevlo Exp $
 phpMyAdmin/
 phpMyAdmin/CREDITS
 phpMyAdmin/ChangeLog
@@ -7,16 +7,17 @@ phpMyAdmin/Documentation.txt
 phpMyAdmin/INSTALL
 phpMyAdmin/LICENSE
 phpMyAdmin/README
-phpMyAdmin/RELEASE-DATE-2.6.0-pl3
+phpMyAdmin/RELEASE-DATE-2.6.1
 phpMyAdmin/TODO
 phpMyAdmin/browse_foreigners.php
 phpMyAdmin/calendar.php
 phpMyAdmin/changelog.php
 phpMyAdmin/chk_rel.php
 phpMyAdmin/config.default.php
-@sample phpMyAdmin/config.inc.php
 phpMyAdmin/config.footer.inc.php
 phpMyAdmin/config.header.inc.php
+phpMyAdmin/config.inc.php.default
+@sample phpMyAdmin/config.inc.php
 phpMyAdmin/css/
 phpMyAdmin/css/phpmyadmin.css.php
 phpMyAdmin/db_create.php
@@ -29,6 +30,7 @@ phpMyAdmin/db_details_importdocsql.php
 phpMyAdmin/db_details_links.php
 phpMyAdmin/db_details_qbe.php
 phpMyAdmin/db_details_structure.php
+phpMyAdmin/db_operations.php
 phpMyAdmin/db_printview.php
 phpMyAdmin/db_search.php
 phpMyAdmin/docs.css
@@ -183,6 +185,12 @@ phpMyAdmin/libraries/export/xml.php
 phpMyAdmin/libraries/fpdf/
 phpMyAdmin/libraries/fpdf/README
 phpMyAdmin/libraries/fpdf/font/
+phpMyAdmin/libraries/fpdf/font/FreeSans.ctg.z
+phpMyAdmin/libraries/fpdf/font/FreeSans.php
+phpMyAdmin/libraries/fpdf/font/FreeSans.z
+phpMyAdmin/libraries/fpdf/font/FreeSansBold.ctg.z
+phpMyAdmin/libraries/fpdf/font/FreeSansBold.php
+phpMyAdmin/libraries/fpdf/font/FreeSansBold.z
 phpMyAdmin/libraries/fpdf/font/courier.php
 phpMyAdmin/libraries/fpdf/font/helvetica.php
 phpMyAdmin/libraries/fpdf/font/helveticab.php
@@ -197,6 +205,7 @@ phpMyAdmin/libraries/fpdf/font/timesbi.php
 phpMyAdmin/libraries/fpdf/font/timesi.php
 phpMyAdmin/libraries/fpdf/font/zapfdingbats.php
 phpMyAdmin/libraries/fpdf/fpdf.php
+phpMyAdmin/libraries/fpdf/ufpdf.php
 phpMyAdmin/libraries/functions.js
 phpMyAdmin/libraries/get_foreign.lib.php
 phpMyAdmin/libraries/grab_globals.lib.php
@@ -205,7 +214,9 @@ phpMyAdmin/libraries/header_meta_style.inc.php
 phpMyAdmin/libraries/indexes.js
 phpMyAdmin/libraries/ip_allow_deny.lib.php
 phpMyAdmin/libraries/kanji-encoding.lib.php
+phpMyAdmin/libraries/keyhandler.js
 phpMyAdmin/libraries/left.js
+phpMyAdmin/libraries/mcrypt.lib.php
 phpMyAdmin/libraries/mysql_charsets.lib.php
 phpMyAdmin/libraries/ob.lib.php
 phpMyAdmin/libraries/read_dump.lib.php
@@ -221,6 +232,8 @@ phpMyAdmin/libraries/sqlvalidator.class.php
 phpMyAdmin/libraries/sqlvalidator.lib.php
 phpMyAdmin/libraries/string.lib.php
 phpMyAdmin/libraries/tbl_change.js
+phpMyAdmin/libraries/tbl_indexes.lib.php
+phpMyAdmin/libraries/tbl_move_copy.php
 phpMyAdmin/libraries/transformations/
 phpMyAdmin/libraries/transformations.lib.php
 phpMyAdmin/libraries/transformations/README
@@ -262,6 +275,7 @@ phpMyAdmin/scripts/decode_bug.php
 phpMyAdmin/scripts/find_unused_messages.sh
 phpMyAdmin/scripts/remove_control_m.sh
 phpMyAdmin/scripts/upgrade_tables_mysql_4_1_2+.sql
+phpMyAdmin/server_binlog.php
 phpMyAdmin/server_collations.php
 phpMyAdmin/server_common.inc.php
 phpMyAdmin/server_databases.php
@@ -302,9 +316,7 @@ phpMyAdmin/themes/darkblue_orange/css/theme_left.css.php
 phpMyAdmin/themes/darkblue_orange/css/theme_print.css.php
 phpMyAdmin/themes/darkblue_orange/css/theme_right.css.php
 phpMyAdmin/themes/darkblue_orange/img/
-phpMyAdmin/themes/darkblue_orange/img/arrow_ltr.gif
 phpMyAdmin/themes/darkblue_orange/img/arrow_ltr.png
-phpMyAdmin/themes/darkblue_orange/img/arrow_rtl.gif
 phpMyAdmin/themes/darkblue_orange/img/arrow_rtl.png
 phpMyAdmin/themes/darkblue_orange/img/asc_order.png
 phpMyAdmin/themes/darkblue_orange/img/b_bookmark.png
@@ -428,9 +440,7 @@ phpMyAdmin/themes/original/css/theme_left.css.php
 phpMyAdmin/themes/original/css/theme_print.css.php
 phpMyAdmin/themes/original/css/theme_right.css.php
 phpMyAdmin/themes/original/img/
-phpMyAdmin/themes/original/img/arrow_ltr.gif
 phpMyAdmin/themes/original/img/arrow_ltr.png
-phpMyAdmin/themes/original/img/arrow_rtl.gif
 phpMyAdmin/themes/original/img/arrow_rtl.png
 phpMyAdmin/themes/original/img/asc_order.png
 phpMyAdmin/themes/original/img/b_bookmark.png
