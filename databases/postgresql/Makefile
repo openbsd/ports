@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2001/07/25 08:16:46 peter Exp $
+# $OpenBSD: Makefile,v 1.50 2001/08/07 13:25:50 brad Exp $
 
 COMMENT=	"PostgreSQL RDBMS"
 COMMENT-clients="PostgreSQL RDBMS client libraries and utilities"
@@ -7,7 +7,7 @@ COMMENT-docs=	"PostgreSQL RDBMS documentation"
 VERSION=	7.1.2
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-clients=postgresql-clients-${VERSION}
-PKGNAME-docs=	postgresql-docs-${VERSION}
+FULLPKGNAME-docs=postgresql-docs-${VERSION}
 CATEGORIES=	databases
 NEED_VERSION=	1.427
 
@@ -120,14 +120,14 @@ post-install:
 
 .if ${FLAVOR:L:Mtcl} && !defined(NO_SHARED_LIBS)
 SED_PLIST+=-e '/%%SHARED-tcl%%/r${PKGDIR}/PFRAG.tcl.shared' -e '//d'
-.else if ${FLAVOR:L:Mtcl} && defined(NO_SHARED_LIBS) && \
-	${NO_SHARED_LIBS:U} == YES
+.elif ${FLAVOR:L:Mtcl} && defined(NO_SHARED_LIBS) && \
+	${NO_SHARED_LIBS:L} == "yes"
 SED_PLIST+=-e '/%%SHARED-tcl%%/d'
 .endif
 
 .if ${FLAVOR:L:Modbc} && !defined(NO_SHARED_LIBS)
 SED_PLIST+=-e '/%%SHARED-odbc%%/r${PKGDIR}/PFRAG.odbc.shared' -e '//d'
-.else if ${FLAVOR:L:Modbc} && defined(NO_SHARED_LIBS) && \
-        ${NO_SHARED_LIBS:U} == YES
+.elif ${FLAVOR:L:Modbc} && defined(NO_SHARED_LIBS) && \
+        ${NO_SHARED_LIBS:L} == "yes"
 SED_PLIST+=-e '/%%SHARED-odbc%%/d'
 .endif

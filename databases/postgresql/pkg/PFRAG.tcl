@@ -1,3 +1,4 @@
+@comment $OpenBSD: PFRAG.tcl,v 1.7 2001/08/07 13:25:50 brad Exp $
 bin/pgaccess
 bin/pgtclsh
 bin/pgtksh
@@ -6,9 +7,7 @@ man/man1/pgaccess.1
 man/man1/pgtclsh.1
 man/man1/pgtksh.1
 lib/libpgtcl.a
-lib/libpgtcl.so
-lib/libpgtcl.so.2
-lib/pltcl.so
+%%SHARED-tcl%%
 share/postgresql/pgaccess/images/icon_button.gif
 share/postgresql/pgaccess/images/icon_checkbutton.gif
 share/postgresql/pgaccess/images/icon_entry.gif
@@ -142,7 +141,6 @@ share/postgresql/pgaccess/lib/users.tcl
 share/postgresql/pgaccess/lib/views.tcl
 share/postgresql/pgaccess/lib/visualqb.tcl
 share/postgresql/pgaccess/main.tcl
-%%SHARED-tcl%%
 @dirrm share/postgresql/pgaccess/lib/languages
 @dirrm share/postgresql/pgaccess/lib/help
 @dirrm share/postgresql/pgaccess/lib

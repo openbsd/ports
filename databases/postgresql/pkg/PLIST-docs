@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.6 2001/07/25 08:16:47 peter Exp $
+@comment $OpenBSD: PLIST-docs,v 1.7 2001/08/07 13:25:51 brad Exp $
 share/doc/postgresql/COPYRIGHT
 share/doc/postgresql/FAQ
 share/doc/postgresql/FAQ_DEV
@@ -506,9 +506,6 @@ share/postgresql/pg_ident.conf.sample
 share/postgresql/postgresql.conf.sample
 share/postgresql/template1.bki
 share/postgresql/template1.description
-%%tcl%%
-%%odbc%%
-%%SHARED%%
 @dirrm share/postgresql
 @dirrm share/doc/postgresql/html
 @dirrm share/doc/postgresql
