@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_test_streams_main_c,v 1.1 2001/10/25 14:15:57 naddy Exp $
+--- src/test_streams/main.c.orig	Thu Oct 25 15:18:25 2001
++++ src/test_streams/main.c	Thu Oct 25 15:20:43 2001
+@@ -38,6 +38,9 @@
+ 
+ static FLAC__bool is_big_endian_host;
+ 
++#ifdef swap16
++#undef swap16
++#endif
+ static void swap16(FLAC__int16 *i)
+ {
+ 	unsigned char *x = (unsigned char *)i, b;
