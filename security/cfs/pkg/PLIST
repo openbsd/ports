@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:35:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/12/03 16:08:48 alek Exp $
 bin/cattach
 bin/cdetach
 bin/cmkdir
@@ -14,6 +14,9 @@ sbin/cfsd
 share/doc/cfs/
 share/doc/cfs/README.install
 share/doc/cfs/notes.ms
-@extraunexec umount /crypt > /dev/null 2>&1
+@sample /crypt/
+@mode 0
+@sample /null/
+@extraunexec umount /crypt > /dev/null 2>&1 || true
 @extraunexec rm -r /crypt
 @extraunexec rm -r /null
