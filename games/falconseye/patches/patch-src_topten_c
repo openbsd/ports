@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_topten_c,v 1.1 2003/08/28 20:38:10 brad Exp $
+--- src/topten.c.orig	2003-08-27 21:11:41.000000000 -0400
++++ src/topten.c	2003-08-27 21:13:41.000000000 -0400
+@@ -855,6 +855,12 @@ char **argv;
+ 	    else {
+ 		if (playerct > 1) Strcat(pbuf, "any of ");
+ 		for (i = 0; i < playerct; i++) {
++		    /* stop printing players if there are too many to fit */
++		    if (strlen(pbuf) + strlen(players[i]) + 2 >= BUFSZ) {
++			if (strlen(pbuf) < BUFSZ-4) Strcat(pbuf, "...");
++			else Strcpy(pbuf+strlen(pbuf)-4, "...");
++			break;
++		    }
+ 		    Strcat(pbuf, players[i]);
+ 		    if (i < playerct-1) Strcat(pbuf, ":");
+ 		}
