@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2002/07/06 23:53:43 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2002/07/31 02:15:43 pvalchev Exp $
 
 COMMENT=		"GTK+ Graphical filemanager"
 
-VERSION=		0.11.27
+VERSION=		0.11.30
 DISTNAME=		gentoo-${VERSION}
 CATEGORIES=		x11	
-NEED_VERSION=		1.531
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gentoo/}
 
