@@ -4,4 +4,4 @@ build castle walls, place cannons inside these walls, and shoot at the
 walls of their enemy(s). If a player can't build a complete wall around 
 one of his castles, he loses. The last surviving player wins.
 
-WWW:${HOMEPAGE}
+WWW: ${HOMEPAGE}
