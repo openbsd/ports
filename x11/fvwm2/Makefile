@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/06/27 21:50:38 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2001/07/03 05:21:14 pvalchev Exp $
 
 COMMENT=	"multiple virtual desktop window manager, with icons"
 COMMENT-fvicons="multiple virtual desktop window manager icons"
@@ -23,10 +23,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
 
-MASTER_SITES=	http://www.toxiclinux.org/fvwm/
-MASTER_SITES0=	http://www.toxiclinux.org/fvwm/
-#MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
-#MASTER_SITES0=	http://www.fvwm.org/generated/icon_download/
+MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
+MASTER_SITES0=	http://www.fvwm.org/generated/icon_download/
 
 MULTI_PACKAGES=	-fvwm2 -fvicons
 SUBPACKAGE?=
