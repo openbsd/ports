@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.23 2004/12/29 06:33:28 sturm Exp $
+# $OpenBSD: Makefile,v 1.24 2005/02/13 16:20:38 alek Exp $
 
 COMMENT=	"framework to test programs"
 
 DISTNAME=	dejagnu-1.4.3
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=dejagnu/}
 
 HOMEPAGE=	http://www.gnu.org/software/dejagnu/
 
-LIB_DEPENDS=	tcl84:tcl-8.4.*:lang/tcl/8.4
-RUN_DEPENDS=	:expect-*:lang/expect,no_tk
+BUILD_DEPENDS=	:tcl-8.4.*:lang/tcl/8.4
+RUN_DEPENDS=	:expect-*:lang/expect,no_tk \
+		${BUILD_DEPENDS}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
