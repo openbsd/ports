@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_m_intel386_h,v 1.1 2003/04/17 08:06:44 pvalchev Exp $
+--- src/m/intel386.h.orig	Thu Apr 17 00:14:29 2003
++++ src/m/intel386.h	Thu Apr 17 00:15:04 2003
+@@ -232,6 +232,12 @@ NOTE-END */
+ #define NO_ARG_ARRAY
+ #endif
+ 
++#ifdef __ELF__
++#define HAVE_TEXT_START
++#define UNEXEC unexelf.o
++#define ORDINARY_LINK
++#endif
++
+ #ifdef linux
+ /* libc-linux/sysdeps/linux/i386/ulimit.c says that due to shared library, */
+ /* we cannot get the maximum address for brk */
