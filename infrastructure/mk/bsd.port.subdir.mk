@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.7 1999/05/25 20:38:34 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.8 1999/07/28 12:40:56 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -114,7 +114,7 @@ PORTSDIR ?= /usr/opt
 .else
 PORTSDIR ?= /usr/ports
 .endif
-TEMPLATES ?= ${PORTSDIR}/templates
+TEMPLATES ?= ${PORTSDIR}/infrastructure/templates
 .if defined(PORTSTOP)
 README=	${TEMPLATES}/README.top
 .else
@@ -125,11 +125,7 @@ README.html:
 	@echo "===>  Creating README.html"
 	@> $@.tmp
 .for entry in ${SUBDIR}
-.if defined(PORTSTOP)
-	@echo -n '<a href="'${entry}/README.html'">${entry}</a>: ' >> $@.tmp
-.else
-	@echo -n '<a href="'${entry}/README.html'">'"`cd ${entry}; make package-name`</a>: " >> $@.tmp
-.endif
+	@echo -n '<dt><a href="'${entry}/README.html'">'"`cd ${entry} && make package-name 2>/dev/null||echo ${entry}`</a><dd>" >> $@.tmp
 .if exists(${entry}/pkg/COMMENT)
 	@cat ${entry}/pkg/COMMENT >> $@.tmp
 .else

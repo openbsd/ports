@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.101 1999/07/28 00:25:38 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.102 1999/07/28 12:40:56 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -425,7 +425,7 @@ X11BASE?=		${DESTDIR}/usr/X11R6
 DISTDIR?=		${PORTSDIR}/distfiles
 _DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
 PACKAGES?=		${PORTSDIR}/packages
-TEMPLATES?=		${PORTSDIR}/templates
+TEMPLATES?=		${PORTSDIR}/infrastructure/templates
 
 .if exists(${.CURDIR}/patches.${ARCH}-${OPSYS})
 PATCHDIR?=		${.CURDIR}/patches.${ARCH}-${OPSYS}
@@ -2088,7 +2088,8 @@ package-depends:
 		esac; \
 		if cd $$dir 2>/dev/null; then \
 			${ECHO} -n "$$pname "; \
-			${MAKE} package-name package-depends ${_DEPEND_THRU}; \
+			${MAKE} package-name package-depends ${_DEPEND_THRU} || \
+				${ECHO_MSG} "Error: problem in \"$$dir\"" >&2; \
 		else \
 			${ECHO_MSG} "Warning: \"$$dir\" non-existent -- @pkgdep registration incomplete" >&2; \
 		fi; \
@@ -2297,7 +2298,8 @@ depends-list:
 			esac; \
 		if cd $$dir 2>/dev/null; then \
 			${ECHO} -n "$$pname "; \
-			${MAKE} package-name depends-list ${_DEPEND_THRU};  \
+			${MAKE} package-name depends-list ${_DEPEND_THRU} || \
+				${ECHO_MSG} "Error: problem in \"$$dir\"" >&2; \
 		else \
 			${ECHO_MSG} "Warning: \"$$dir\" non-existent" >&2; \
 		fi; \
@@ -2388,6 +2390,8 @@ README.html:
 			-e '/%%PKG%%/d' \
 			-e '/%%COMMENT%%/r${PKGDIR}/COMMENT' \
 			-e '/%%COMMENT%%/d' \
+			-e '/%%DESCR%%/r${PKGDIR}/DESCR' \
+			-e '/%%DESCR%%/d' \
 			-e '/%%BUILD_DEPENDS%%/r$@.tmp1a' \
 			-e '/%%BUILD_DEPENDS%%/d' \
 			-e '/%%RUN_DEPENDS%%/r$@.tmp2a' \
