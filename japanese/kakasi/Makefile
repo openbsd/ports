@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2005/02/22 13:52:25 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2005/02/27 20:31:52 espie Exp $
 # FreeBSD Id: Makefile,v 1.14 1998/04/05 04:46:33 max Exp $
 
 COMMENT=	"Kanji -> kana converter"
 
-DISTNAME=	kakasi-2.3.1
+DISTNAME=	kakasi-2.3.4
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://kakasi.namazu.org/pub/kakasi/
+MASTER_SITES=	http://kakasi.namazu.org/stable/
 
 HOMEPAGE=	http://kakasi.namazu.org/
 
@@ -20,6 +20,7 @@ WANTLIB=		c
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
+USE_LIBTOOL=		Yes
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/kakasi.1 ${PREFIX}/man/ja_JP.EUC/man1
