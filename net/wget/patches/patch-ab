@@ -1,0 +1,11 @@
+--- src/url.c.orig	Tue Jun 16 04:55:27 1998
++++ src/url.c	Mon Aug  3 23:03:49 1998
+@@ -870,7 +870,7 @@
+          HTML tools burn in hell for the damage they've inflicted!  */
+       while ((pbuf < buf + step) && ISSPACE (*pbuf))
+ 	++pbuf;
+-      while (size && ISSPACE (pbuf[size]))
++      while (size && ISSPACE (pbuf[size-1]))
+ 	--size;
+ 
+       for (i = 0; protostrings[i]; i++)
