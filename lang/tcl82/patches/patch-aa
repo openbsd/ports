@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed Jan  5 21:40:03 2000
-+++ Makefile.in	Thu Jan  6 18:31:01 2000
+--- Makefile.in.orig	Tue Dec 14 22:59:18 1999
++++ Makefile.in	Sun Jan  9 00:47:21 2000
 @@ -48,7 +48,9 @@
  SCRIPT_INSTALL_DIR = $(INSTALL_ROOT)$(TCL_LIBRARY)
  
@@ -104,32 +104,7 @@
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -579,7 +599,7 @@
- 	@cd $(TOP_DIR)/doc; for i in *.1; \
- 	    do \
- 	    echo "Installing doc/$$i"; \
--	    rm -f $(MAN1_INSTALL_DIR)/$$i; \
-+	    rm -f $(MAN1_INSTALL_DIR)/$$i ; \
- 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
- 		    $$i > $(MAN1_INSTALL_DIR)/$$i; \
- 	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
-@@ -588,7 +608,7 @@
- 	@cd $(TOP_DIR)/doc; for i in *.3; \
- 	    do \
- 	    echo "Installing doc/$$i"; \
--	    rm -f $(MAN3_INSTALL_DIR)/$$i; \
-+	    rm -f $(MAN3_INSTALL_DIR)/$$i ; \
- 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
- 		    $$i > $(MAN3_INSTALL_DIR)/$$i; \
- 	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
-@@ -597,12 +617,20 @@
- 	@cd $(TOP_DIR)/doc; for i in *.n; \
- 	    do \
- 	    echo "Installing doc/$$i"; \
--	    rm -f $(MANN_INSTALL_DIR)/$$i; \
-+	    rm -f $(MANN_INSTALL_DIR)/$$i ; \
- 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
- 		    $$i > $(MANN_INSTALL_DIR)/$$i; \
+@@ -603,6 +623,14 @@
  	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
  	    done;
  	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
