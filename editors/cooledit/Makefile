@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/18 22:47:57 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/24 21:55:53 espie Exp $
 
 CATEGORIES=		editors
 MASTER_SITES=		${HOMEPAGE}
@@ -11,8 +11,8 @@ FLAVORS=	python
 FLAVOR?=
 
 .if ${FLAVOR:L:Mpython}
-BUILD_DEPENDS+=	python::lang/python15
-RUN_DEPENDS+=	python::lang/python15
+BUILD_DEPENDS+=	python:python-1.5.2-!threads:lang/python15,
+RUN_DEPENDS+=	python:python-1.5.2-!threads:lang/python15,
 .else
 CONFIGURE_ENV+=NOPYTHON=Yes
 .endif
