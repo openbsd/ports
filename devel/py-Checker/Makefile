@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2001/11/28 07:39:34 shell Exp $
+# $OpenBSD: Makefile,v 1.13 2002/01/06 15:47:56 shell Exp $
 
 
 COMMENT=	"python codes checker"
 
-VERSION=	0.8.6
+VERSION=	0.8.7
 DISTNAME=	pychecker-${VERSION}
 PKGNAME=	py-Checker-${VERSION}
 CATEGORIES=    	devel
@@ -39,7 +39,7 @@ do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR}
-	${PY_CMD} install --prefix=${PREFIX}
+	${PY_CMD} install -O1 --prefix=${PREFIX}
 .for i in ${DOC_FILE}
 	${INSTALL_DATA} ${WRKSRC}/$i ${DOC_DIR}
 .endfor
