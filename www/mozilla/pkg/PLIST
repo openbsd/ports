@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/05/15 00:53:45 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/05/15 04:26:51 pvalchev Exp $
+@pkgcfl freetype-1.*
 bin/mozilla
 bin/mozilla-config
 bin/run-mozilla.sh
