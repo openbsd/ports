@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/03/16 15:36:13 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/04/20 23:10:43 jakob Exp $
 
 MULTI_PACKAGES=	-client
 PKGNAME-client=	openldap-client-${VERSION}
@@ -50,8 +50,8 @@ FLAVOR?=
 .if ${FLAVOR:L} == "sasl"
 CONFIGURE_ARGS+=	--with-cyrus-sasl \
 			--enable-spasswd
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/sasl"
-			LIBS="-L${LOCALBASE}/lib -lkrb"
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/sasl" \
+			LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lkrb"
 LIB_DEPENDS+=		sasl::security/cyrus-sasl
 .else
 CONFIGURE_ARGS+=	--without-cyrus-sasl \
