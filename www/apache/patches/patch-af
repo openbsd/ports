@@ -1,0 +1,12 @@
+*** src/conf.h.orig	Mon Jul 21 07:37:48 1997
+--- src/conf.h	Thu Jul 24 05:09:25 1997
+***************
+*** 416,421 ****
+--- 416,422 ----
+  #undef NO_SETSID
+  #define JMP_BUF sigjmp_buf
+  #define HAVE_MMAP
++ #define HAVE_SNPRINTF
+  #define DEFAULT_USER "nobody"
+  #define DEFAULT_GROUP "nogroup"
+  #if defined(__bsdi__) || \

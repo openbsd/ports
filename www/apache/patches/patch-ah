@@ -1,0 +1,46 @@
+*** conf/srm.conf-dist.orig	Wed May  7 23:21:47 1997
+--- conf/srm.conf-dist	Sat May 31 23:31:47 1997
+***************
+*** 12,18 ****
+  # documents. By default, all requests are taken from this directory, but
+  # symbolic links and aliases may be used to point to other locations.
+  
+! DocumentRoot /usr/local/etc/httpd/htdocs
+  
+  # UserDir: The name of the directory which is appended onto a user's home
+  # directory if a ~user request is recieved.
+--- 12,18 ----
+  # documents. By default, all requests are taken from this directory, but
+  # symbolic links and aliases may be used to point to other locations.
+  
+! DocumentRoot /usr/local/www/data
+  
+  # UserDir: The name of the directory which is appended onto a user's home
+  # directory if a ~user request is recieved.
+***************
+*** 135,146 ****
+  # require it to be present in the URL.  So "/icons" isn't aliased in this
+  # example.
+  
+! #Alias /icons/ /usr/local/etc/httpd/icons/
+  
+  # ScriptAlias: This controls which directories contain server scripts.
+  # Format: ScriptAlias fakename realname
+  
+! #ScriptAlias /cgi-bin/ /usr/local/etc/httpd/cgi-bin/
+  
+  # If you want to use server side includes, or CGI outside
+  # ScriptAliased directories, uncomment the following lines.
+--- 135,146 ----
+  # require it to be present in the URL.  So "/icons" isn't aliased in this
+  # example.
+  
+! Alias /icons/ /usr/local/www/icons/
+  
+  # ScriptAlias: This controls which directories contain server scripts.
+  # Format: ScriptAlias fakename realname
+  
+! ScriptAlias /cgi-bin/ /usr/local/www/cgi-bin/
+  
+  # If you want to use server side includes, or CGI outside
+  # ScriptAliased directories, uncomment the following lines.

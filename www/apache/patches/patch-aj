@@ -1,0 +1,13 @@
+--- src/Configure.orig	Mon Nov 17 13:49:29 1997
++++ src/Configure	Mon Nov 17 13:49:54 1997
+@@ -170,8 +170,8 @@
+ ####################################################################
+ # Preset some "constants"; can be overridden on a per-platform basis below.
+ #
+-DBM_LIB="-ldbm"
+-DB_LIB="-ldb"
++DBM_LIB=""
++DB_LIB=""
+ SHELL="/bin/sh"
+ if ./helpers/PrintPath -s ranlib; then
+     RANLIB="ranlib"
