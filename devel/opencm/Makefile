@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/08/27 16:46:09 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2002/08/28 14:38:25 todd Exp $
 
 COMMENT=		"OpenCM change management system"
 COMMENT-docs=		"OpenCM Documentation"
@@ -27,7 +27,7 @@ MASTER_SITES=		http://www.opencm.org/releases/
 EXTRACT_SUFX=		.tgz
 
 BUILD_DEPENDS=		gc.1:boehm-gc->=6.0:devel/boehm-gc
-LIB_DEPENDS=		gc.1:boehm-gc->=6.0:devel/boehm-gc
+LIB_DEPENDS=		gc.1::devel/boehm-gc
 
 USE_GMAKE=		Yes
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}
@@ -55,6 +55,8 @@ FAKE_FLAGS=		TEXI2DVI=: DVIPS=:
 .endif
 MAKE_FLAGS+= LIBZ=-lz LIBGC=-lgc USOURCE_SUBDIRS="libgdiff src"
 FAKE_FLAGS+= LIBZ=-lz LIBGC=-lgc USOURCE_SUBDIRS="libgdiff src"
+
+PLIST=			${PKGDIR}/PLIST${SUBPACKAGE}
 
 WRKDIST=		${WRKDIR}/${PKGNAME}
 WRKSRC=			${WRKDIST}/base
