@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2003/07/07 23:40:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2003/08/01 22:29:59 naddy Exp $
 
 COMMENT=	"official AT&T release of KornShell 93"
 
 PKGNAME=	ast-ksh-${VERSION:S/-//g}
-VERSION=	2003-06-21
+VERSION=	2003-07-24
 CATEGORIES=	shells
 HOMEPAGE=	http://www.kornshell.com/
 
