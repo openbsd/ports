@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/12/09 15:37:24 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2003/03/27 17:38:22 pvalchev Exp $
 
 COMMENT=	"classical (pen-and-paper) cipher cryptanalysis toolkit"
 
@@ -10,8 +10,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=crank/}
 HOMEPAGE=		http://crank.sourceforge.net/
 
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
-
-MAINTAINER=		Mark Grimes <mark@stateful.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/12/09 15:37:23 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2003/03/27 17:38:22 pvalchev Exp $
 
 COMMENT=	"graphical networked AD&D style game"
 
@@ -10,8 +10,6 @@ IMGDIST=	crossfire-client-images-${VERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${IMGDIST}${EXTRACT_SUFX}:0
 
 HOMEPAGE=	http://crossfire.real-time.com/
-
-MAINTAINER=	Mark Grimes <mark@stateful.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

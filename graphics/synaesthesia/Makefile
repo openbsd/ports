@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/09 15:37:23 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2003/03/27 17:38:22 pvalchev Exp $
 
 COMMENT=		"visual sound representation"
 
@@ -6,8 +6,6 @@ DISTNAME=		synaesthesia-2.1
 CATEGORIES=     	graphics x11
 
 HOMEPAGE=		http://yoyo.cc.monash.edu.au/~pfh/synaesthesia.html
-
-MAINTAINER=		Mark Grimes <mark@stateful.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

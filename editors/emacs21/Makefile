@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2003/01/17 21:04:41 drahn Exp $
+# $OpenBSD: Makefile,v 1.11 2003/03/27 17:38:22 pvalchev Exp $
 # Original from A B <obsdfaq30@yahoo.com>
 
 COMMENT=	"GNU editor: extensible, customizable, self documenting"
@@ -7,8 +7,6 @@ VERSION=	21.2
 DISTNAME=	emacs-${VERSION}
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GNU:=emacs/}
-
-MAINTAINER=	Mark Grimes <mark@stateful.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
