@@ -1,7 +1,5 @@
-$OpenBSD: patch-xml2rfc.tcl,v 1.5 2001/09/14 06:43:27 jakob Exp $
-
---- xml2rfc.tcl.orig	Fri Sep 14 08:35:49 2001
-+++ xml2rfc.tcl	Fri Sep 14 08:35:59 2001
+--- xml2rfc.tcl.orig	Tue Jan 15 06:17:41 2002
++++ xml2rfc.tcl	Thu Jan 24 09:34:47 2002
 @@ -1,6 +1,3 @@
 -#!/bin/sh
 -# the next line restarts using wish \
@@ -9,3 +7,21 @@ $OpenBSD: patch-xml2rfc.tcl,v 1.5 2001/09/14 06:43:27 jakob Exp $
  
  
  #
+@@ -10,7 +7,7 @@
+ #
+ 
+ 
+-if {[catch { package require xml 1.8 } result]} {
++if {[catch { package require xml 1.9 } result]} {
+     global auto_path
+ 
+     puts stderr "unable to find the TclXML package, did you install it?"
+@@ -23,7 +20,7 @@
+     return
+ }
+ 
+-if {[string compare [package require sgml] 1.6]} {
++if {[string compare [package require sgml] 1.7]} {
+     global auto_path
+ 
+     puts stderr \

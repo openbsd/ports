@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2001/12/22 00:20:32 jakob Exp $
+# $OpenBSD: Makefile,v 1.22 2002/01/24 08:42:22 jakob Exp $
 
 COMMENT=	convert memos written in XML to the RFC format
 
-VERSION=	1.9
+VERSION=	1.10
 DISTNAME=	xml2rfc-${VERSION}
 CATEGORIES=	textproc
 NEED_VERSION=	1.500
