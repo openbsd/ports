@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/18 05:02:10 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1999/02/28 08:35:42 fgsch Exp $
 #
 
 DISTNAME=	cfs-1.3.3
@@ -25,6 +25,5 @@ do-install:
 	    ${INSTALL_MAN} ${MAN8} ${PREFIX}/man/man8; \
 	    ${MKDIR} ${PREFIX}/share/doc/cfs; \
 	    ${INSTALL_DATA} README.install notes.ms ${PREFIX}/share/doc/cfs; \
-	    ${INSTALL_SCRIPT} cfsd.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>

@@ -2,7 +2,6 @@ bin/cattach
 bin/cdetach
 bin/cmkdir
 bin/cpasswd
-etc/rc.d/cfsd.sh
 man/man1/cattach.1
 man/man1/cdetach.1
 man/man1/cmkdir.1
