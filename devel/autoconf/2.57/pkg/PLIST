@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/09 12:04:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/07/22 05:50:07 espie Exp $
 @option no-default-conflict
-@unexec install-info --delete --info-dir=%D/info %D/info/autoconf${SUFFIX}.info
-@comment @unexec install-info --delete --info-dir=%D/info %D/info/standards${SUFFIX}.info
 bin/autoconf${SUFFIX}
 bin/autoheader${SUFFIX}
 bin/autom4te${SUFFIX}
@@ -9,8 +7,8 @@ bin/autoreconf${SUFFIX}
 bin/autoscan${SUFFIX}
 bin/autoupdate${SUFFIX}
 bin/ifnames${SUFFIX}
-info/autoconf${SUFFIX}.info
-@comment info/standards${SUFFIX}.info
+@info info/autoconf${SUFFIX}.info
+@comment @info info/standards${SUFFIX}.info
 man/man1/autoconf${SUFFIX}.1
 man/man1/autoheader${SUFFIX}.1
 man/man1/autom4te${SUFFIX}.1
@@ -20,10 +18,13 @@ man/man1/autoupdate${SUFFIX}.1
 man/man1/config.guess${SUFFIX}.1
 man/man1/config.sub${SUFFIX}.1
 man/man1/ifnames${SUFFIX}.1
+@dir share/autoconf${SUFFIX}
+@dir share/autoconf${SUFFIX}/Autom4te
 share/autoconf${SUFFIX}/Autom4te/General.pm
 share/autoconf${SUFFIX}/Autom4te/Struct.pm
 share/autoconf${SUFFIX}/Autom4te/XFile.pm
 share/autoconf${SUFFIX}/INSTALL
+@dir share/autoconf${SUFFIX}/autoconf
 share/autoconf${SUFFIX}/autoconf/autoconf.m4
 share/autoconf${SUFFIX}/autoconf/autoheader.m4
 share/autoconf${SUFFIX}/autoconf/autoscan.m4
@@ -42,17 +43,12 @@ share/autoconf${SUFFIX}/autoconf/specific.m4
 share/autoconf${SUFFIX}/autoconf/status.m4
 share/autoconf${SUFFIX}/autoconf/types.m4
 share/autoconf${SUFFIX}/autom4te.cfg
+@dir share/autoconf${SUFFIX}/autoscan
 share/autoconf${SUFFIX}/autoscan/autoscan.list
+@dir share/autoconf${SUFFIX}/autotest
 share/autoconf${SUFFIX}/autotest/autotest.m4
 share/autoconf${SUFFIX}/autotest/general.m4
+@dir share/autoconf${SUFFIX}/m4sugar
 share/autoconf${SUFFIX}/m4sugar/m4sh.m4
 share/autoconf${SUFFIX}/m4sugar/m4sugar.m4
 share/autoconf${SUFFIX}/m4sugar/version.m4
-@dirrm share/autoconf${SUFFIX}/m4sugar
-@dirrm share/autoconf${SUFFIX}/autotest
-@dirrm share/autoconf${SUFFIX}/autoscan
-@dirrm share/autoconf${SUFFIX}/autoconf
-@dirrm share/autoconf${SUFFIX}/Autom4te
-@dirrm share/autoconf${SUFFIX}
-@exec install-info --info-dir=%D/info %D/info/autoconf${SUFFIX}.info
-@comment @exec install-info --info-dir=%D/info %D/info/standards${SUFFIX}.info

@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_autoconf_Makefile_in,v 1.1.1.1 2004/02/10 00:27:01 espie Exp $
---- lib/autoconf/Makefile.in.orig	2003-11-06 10:33:27.000000000 +0100
-+++ lib/autoconf/Makefile.in	2004-02-09 22:11:41.000000000 +0100
-@@ -122,7 +122,7 @@ dist_autoconflib_DATA = \
+$OpenBSD: patch-lib_autoconf_Makefile_in,v 1.2 2004/07/22 05:50:07 espie Exp $
+--- lib/autoconf/Makefile.in.orig	Tue Nov  4 09:47:20 2003
++++ lib/autoconf/Makefile.in	Thu Jul 22 07:19:47 2004
+@@ -119,7 +119,7 @@ dist_autoconflib_DATA = \
  	lang.m4 c.m4 fortran.m4 \
  	functions.m4 headers.m4 types.m4 libs.m4 programs.m4
  

@@ -1,23 +1,24 @@
-$OpenBSD: patch-bin_autom4te_in,v 1.1.1.1 2003/06/09 12:04:15 espie Exp $
+$OpenBSD: patch-bin_autom4te_in,v 1.2 2004/07/22 05:50:07 espie Exp $
 --- bin/autom4te.in.orig	Tue Dec  3 09:20:16 2002
-+++ bin/autom4te.in	Mon Jun  9 11:54:03 2003
-@@ -276,15 +276,7 @@ my $freeze = 0;
++++ bin/autom4te.in	Thu Jul 22 07:19:33 2004
+@@ -276,16 +276,8 @@ my $freeze = 0;
  
  # $M4.
  my $m4 = $ENV{"M4"} || '@M4@';
 -# Some non-GNU m4's don't reject the --help option, so give them /dev/null.
 -error "need GNU m4 1.4 or later: $m4"
 -  if system "$m4 --help </dev/null 2>&1 | grep reload-state >/dev/null";
--
++$m4 .=" -g -D__gnu__";
+ 
 -# Set some high recursion limit as the default limit, 250, has already
 -# been hit with AC_OUTPUT.  Don't override the user's choice.
 -$m4 .= ' --nesting-limit=1024'
 -  if " $m4 " !~ / (--nesting-limit|-L) /;
 -
-+$m4 .=" -g -D__gnu__";
- 
+-
  # @M4_BUILTIN -- M4 builtins and a useful comment.
  my @m4_builtin = `echo dumpdef | $m4 2>&1 >/dev/null`;
+ map { s/:.*//;s/\W// } @m4_builtin;
 @@ -660,12 +652,11 @@ sub handle_m4 ($@)
    # We don't output directly to the cache files, to avoid problems
    # when we are interrupted (that leaves corrupted files).

@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_autoconf_texi,v 1.1.1.1 2003/06/24 23:03:23 espie Exp $
+$OpenBSD: patch-doc_autoconf_texi,v 1.2 2004/07/22 05:50:07 espie Exp $
 --- doc/autoconf.texi.orig	Thu Sep 12 15:16:42 2002
-+++ doc/autoconf.texi	Tue Jun 24 18:14:19 2003
++++ doc/autoconf.texi	Thu Jul 22 07:37:14 2004
 @@ -4,6 +4,7 @@
  @setfilename autoconf.info
  @include version.texi
@@ -9,39 +9,45 @@ $OpenBSD: patch-doc_autoconf_texi,v 1.1.1.1 2003/06/24 23:03:23 espie Exp $
  @setchapternewpage odd
  @setcontentsaftertitlepage
  @finalout
-@@ -101,25 +102,25 @@ Software Foundation raise funds for GNU 
+@@ -96,30 +97,30 @@ Software Foundation raise funds for GNU 
+ 
+ @dircategory GNU programming tools
+ @direntry
+-* Autoconf: (autoconf).         Create source code configuration scripts
++* Autoconf-2.54: (autoconf-2.54).         Create source code configuration scripts
+ @end direntry
  
  @dircategory Individual utilities
  @direntry
 -* autoscan: (autoconf)autoscan Invocation.
-+* autoscan: (autoconf-2.54)autoscan Invocation.
++* autoscan-2.54: (autoconf-2.54)autoscan Invocation.
                                  Semi-automatic @file{configure.ac} writing
 -* ifnames: (autoconf)ifnames Invocation.
-+* ifnames: (autoconf-2.54)ifnames Invocation.
++* ifnames-2.54: (autoconf-2.54)ifnames Invocation.
                                  Listing the conditionals in source code
 -* autoconf: (autoconf)autoconf Invocation.
-+* autoconf: (autoconf-2.54)autoconf Invocation.
++* autoconf-2.54: (autoconf-2.54)autoconf Invocation.
                                  How to create configuration scripts
 -* autoreconf: (autoconf)autoreconf Invocation.
-+* autoreconf: (autoconf-2.54)autoreconf Invocation.
++* autoreconf-2.54: (autoconf-2.54)autoreconf Invocation.
                                  Remaking multiple @command{configure} scripts
 -* autoheader: (autoconf)autoheader Invocation.
-+* autoheader: (autoconf-2.54)autoheader Invocation.
++* autoheader-2.54: (autoconf-2.54)autoheader Invocation.
                                  How to create configuration templates
 -* autom4te: (autoconf)Invoking autom4te.
-+* autom4te: (autoconf-2.54)Invoking autom4te.
++* autom4te-2.54: (autoconf-2.54)Invoking autom4te.
                                  The Autoconf executables backbone
 -* configure: (autoconf)configure Invocation.
-+* configure: (autoconf-2.54)configure Invocation.
++* configure-2.54: (autoconf-2.54)configure Invocation.
                                  Configuring a package
 -* autoupdate: (autoconf)autoupdate Invocation.
-+* autoupdate: (autoconf-2.54)autoupdate Invocation.
++* autoupdate-2.54: (autoconf-2.54)autoupdate Invocation.
                                  Automatic update of @file{configure.ac}
 -* config.status: (autoconf)config.status Invocation.
-+* config.status: (autoconf-2.54)config.status Invocation.
++* config.status-2.54: (autoconf-2.54)config.status Invocation.
                                  Recreating a configuration
 -* testsuite: (autoconf)testsuite Invocation.
-+* testsuite: (autoconf-2.54)testsuite Invocation.
++* testsuite-2.54: (autoconf-2.54)testsuite Invocation.
                                  Running an Autotest test suite
  @end direntry
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_autoconf_texi,v 1.1.1.1 2004/02/10 00:00:14 espie Exp $
---- doc/autoconf.texi.orig	2003-11-05 11:38:29.000000000 +0100
-+++ doc/autoconf.texi	2004-02-09 22:22:30.000000000 +0100
+$OpenBSD: patch-doc_autoconf_texi,v 1.2 2004/07/22 05:50:07 espie Exp $
+--- doc/autoconf.texi.orig	Wed Nov  5 11:38:29 2003
++++ doc/autoconf.texi	Thu Jul 22 07:39:37 2004
 @@ -4,6 +4,7 @@
  @setfilename autoconf.info
  @include version.texi
@@ -20,31 +20,31 @@ $OpenBSD: patch-doc_autoconf_texi,v 1.1.1.1 2004/02/10 00:00:14 espie Exp $
  @dircategory Individual utilities
  @direntry
 -* autoscan: (autoconf)autoscan Invocation.
-+* autoscan: (autoconf-2.59)autoscan Invocation.
++* autoscan-2.59: (autoconf-2.59)autoscan Invocation.
                                  Semi-automatic @file{configure.ac} writing
 -* ifnames: (autoconf)ifnames Invocation.        Listing conditionals in source.
 -* autoconf: (autoconf)autoconf Invocation.
-+* ifnames: (autoconf-2.59)ifnames Invocation.        Listing conditionals in source.
-+* autoconf: (autoconf-2.59)autoconf Invocation.
++* ifnames-2.59: (autoconf-2.59)ifnames Invocation.        Listing conditionals in source.
++* autoconf-2.59: (autoconf-2.59)autoconf Invocation.
                                  How to create configuration scripts
 -* autoreconf: (autoconf)autoreconf Invocation.
-+* autoreconf: (autoconf-2.59)autoreconf Invocation.
++* autoreconf-2.59: (autoconf-2.59)autoreconf Invocation.
                                  Remaking multiple @command{configure} scripts
 -* autoheader: (autoconf)autoheader Invocation.
-+* autoheader: (autoconf-2.59)autoheader Invocation.
++* autoheader-2.59: (autoconf-2.59)autoheader Invocation.
                                  How to create configuration templates
 -* autom4te: (autoconf)autom4te Invocation.
-+* autom4te: (autoconf-2.59)autom4te Invocation.
++* autom4te-2.59: (autoconf-2.59)autom4te Invocation.
                                  The Autoconf executables backbone
 -* configure: (autoconf)configure Invocation.    Configuring a package.
 -* autoupdate: (autoconf)autoupdate Invocation.
-+* configure: (autoconf-2.59)configure Invocation.    Configuring a package.
-+* autoupdate: (autoconf-2.59)autoupdate Invocation.
++* configure-2.59: (autoconf-2.59)configure Invocation.    Configuring a package.
++* autoupdate-2.59: (autoconf-2.59)autoupdate Invocation.
                                  Automatic update of @file{configure.ac}
 -* config.status: (autoconf)config.status Invocation. Recreating configurations.
 -* testsuite: (autoconf)testsuite Invocation.    Running an Autotest test suite.
-+* config.status: (autoconf-2.59)config.status Invocation. Recreating configurations.
-+* testsuite: (autoconf-2.59)testsuite Invocation.    Running an Autotest test suite.
++* config.status-2.59: (autoconf-2.59)config.status Invocation. Recreating configurations.
++* testsuite-2.59: (autoconf-2.59)testsuite Invocation.    Running an Autotest test suite.
  @end direntry
  
  @titlepage

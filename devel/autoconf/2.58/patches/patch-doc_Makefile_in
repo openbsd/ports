@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2004/02/10 00:27:01 espie Exp $
---- doc/Makefile.in.orig	2003-11-06 10:33:27.000000000 +0100
-+++ doc/Makefile.in	2004-02-09 22:21:25.000000000 +0100
-@@ -255,6 +255,10 @@ dist-info: $(INFO_DEPS)
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2004/07/22 05:50:07 espie Exp $
+--- doc/Makefile.in.orig	Tue Nov  4 09:47:19 2003
++++ doc/Makefile.in	Thu Jul 22 07:19:47 2004
+@@ -252,6 +252,10 @@ dist-info: $(INFO_DEPS)
  	  if test -f $$base; then d=.; else d=$(srcdir); fi; \
  	  for file in $$d/$$base*; do \
  	    relfile=`expr "$$file" : "$$d/\(.*\)"`; \
@@ -12,7 +12,7 @@ $OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2004/02/10 00:27:01 espie Exp $
  	    test -f $(distdir)/$$relfile || \
  	      cp -p $$file $(distdir)/$$relfile; \
  	  done; \
-@@ -383,6 +387,10 @@ install-info-am: $(INFO_DEPS)
+@@ -380,6 +384,10 @@ install-info-am: $(INFO_DEPS)
                         $$d/$$file_i[0-9] $$d/$$file_i[0-9][0-9] ; do \
  	    if test -f $$ifile; then \
  	      relfile=`echo "$$ifile" | sed 's|^.*/||'`; \
@@ -23,7 +23,7 @@ $OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2004/02/10 00:27:01 espie Exp $
  	      echo " $(INSTALL_DATA) $$ifile $(DESTDIR)$(infodir)/$$relfile"; \
  	      $(INSTALL_DATA) $$ifile $(DESTDIR)$(infodir)/$$relfile; \
  	    else : ; fi; \
-@@ -394,6 +402,10 @@ install-info-am: $(INFO_DEPS)
+@@ -391,6 +399,10 @@ install-info-am: $(INFO_DEPS)
  	  list='$(INFO_DEPS)'; \
  	  for file in $$list; do \
  	    relfile=`echo "$$file" | sed 's|^.*/||'`; \

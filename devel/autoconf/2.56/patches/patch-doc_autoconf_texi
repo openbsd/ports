@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_autoconf_texi,v 1.2 2003/06/25 08:04:25 wilfried Exp $
---- doc/autoconf.texi.orig	Tue Dec  3 08:16:32 2002
-+++ doc/autoconf.texi	Mon Jun  9 12:05:18 2003
+$OpenBSD: patch-doc_autoconf_texi,v 1.3 2004/07/22 05:50:07 espie Exp $
+--- doc/autoconf.texi.orig	Thu Nov 14 09:41:42 2002
++++ doc/autoconf.texi	Thu Jul 22 07:37:54 2004
 @@ -4,6 +4,7 @@
  @setfilename autoconf.info
  @include version.texi
@@ -20,34 +20,34 @@ $OpenBSD: patch-doc_autoconf_texi,v 1.2 2003/06/25 08:04:25 wilfried Exp $
  @dircategory Individual utilities
  @direntry
 -* autoscan: (autoconf)autoscan Invocation.
-+* autoscan: (autoconf-2.56)autoscan Invocation.
++* autoscan-2.56: (autoconf-2.56)autoscan Invocation.
                                  Semi-automatic @file{configure.ac} writing
 -* ifnames: (autoconf)ifnames Invocation.
-+* ifnames: (autoconf-2.56)ifnames Invocation.
++* ifnames-2.56: (autoconf-2.56)ifnames Invocation.
                                  Listing the conditionals in source code
 -* autoconf: (autoconf)autoconf Invocation.
-+* autoconf: (autoconf-2.56)autoconf Invocation.
++* autoconf-2.56: (autoconf-2.56)autoconf Invocation.
                                  How to create configuration scripts
 -* autoreconf: (autoconf)autoreconf Invocation.
-+* autoreconf: (autoconf-2.56)autoreconf Invocation.
++* autoreconf-2.56: (autoconf-2.56)autoreconf Invocation.
                                  Remaking multiple @command{configure} scripts
 -* autoheader: (autoconf)autoheader Invocation.
-+* autoheader: (autoconf-2.56)autoheader Invocation.
++* autoheader-2.56: (autoconf-2.56)autoheader Invocation.
                                  How to create configuration templates
 -* autom4te: (autoconf)autom4te Invocation.
-+* autom4te: (autoconf-2.56)autom4te Invocation.
++* autom4te-2.56: (autoconf-2.56)autom4te Invocation.
                                  The Autoconf executables backbone
 -* configure: (autoconf)configure Invocation.
-+* configure: (autoconf-2.56)configure Invocation.
++* configure-2.56: (autoconf-2.56)configure Invocation.
                                  Configuring a package
 -* autoupdate: (autoconf)autoupdate Invocation.
-+* autoupdate: (autoconf-2.56)autoupdate Invocation.
++* autoupdate-2.56: (autoconf-2.56)autoupdate Invocation.
                                  Automatic update of @file{configure.ac}
 -* config.status: (autoconf)config.status Invocation.
-+* config.status: (autoconf-2.56)config.status Invocation.
++* config.status-2.56: (autoconf-2.56)config.status Invocation.
                                  Recreating a configuration
 -* testsuite: (autoconf)testsuite Invocation.
-+* testsuite: (autoconf-2.56)testsuite Invocation.
++* testsuite-2.56: (autoconf-2.56)testsuite Invocation.
                                  Running an Autotest test suite
  @end direntry
  
