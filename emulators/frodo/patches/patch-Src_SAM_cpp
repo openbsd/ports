@@ -1,0 +1,86 @@
+--- Src/SAM.cpp.orig	Sun Jan 14 02:20:30 2001
++++ Src/SAM.cpp	Sun Jan 14 02:55:01 2001
+@@ -13,6 +13,7 @@
+ #include "VIC.h"
+ #include "SID.h"
+ #include "CIA.h"
++#include <errno.h>
+ 
+ 
+ // Pointers to chips
+@@ -261,6 +262,7 @@ static void view_1541_state(void);
+ static void dump_via_ints(uint8 i);
+ static void load_data(void);
+ static void save_data(void);
++static void save_program(void);
+ 
+ 
+ /*
+@@ -391,6 +393,10 @@ void SAM(C64 *the_c64)
+ 				get_token();
+ 				save_data();
+ 				break;
++			case 'y':		// Save program
++				get_token();
++				save_program();
++				break;
+ 
+ 			case 't':		// Transfer
+ 				get_token();
+@@ -527,7 +533,9 @@ static void read_line(void)
+ #ifdef __riscos__
+ 	OS_ReadLine(in_ptr = input, INPUT_LENGTH, 0, 255, 0);
+ #else
+-	fgets(in_ptr = input, INPUT_LENGTH, fin);
++	while (fgets(in_ptr = input, INPUT_LENGTH, fin) == NULL && 
++		errno == EINTR)
++		;
+ #endif
+ }
+ 
+@@ -2137,6 +2145,45 @@ static void load_data(void)
+ 	}
+ }
+ 
++/*
++ *  Save program
++ *  s end "file"
++ */
++
++static void save_program(void)
++{
++	bool done = false;
++	uint16 adr, end_adr;
++	FILE *file;
++
++	int keep = TheCPU->ExtConfig;
++
++	adr = 0x801;
++
++
++	TheCPU->ExtConfig = 0;
++	if (!expression(&end_adr))
++		return;
++	if (the_token == T_END) {
++		error("Missing file name");
++		return;
++	}
++	if (the_token != T_STRING) {
++		error("'\"' around file name expected");
++		return;
++	}
++
++	if (!(file = fopen(the_string, "wb")))
++		error("Unable to create file");
++	else {
++		fputc(adr & 0xff, file);
++		fputc(adr >> 8U, file);
++		while (adr != end_adr)
++			fputc(SAMReadByte(adr++), file);
++		fclose(file);
++	}
++	TheCPU->ExtConfig = keep;
++}
+ 
+ /*
+  *  Save data
