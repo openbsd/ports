@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2002/06/04 18:36:53 jason Exp $
+# $OpenBSD: Makefile,v 1.18 2002/06/06 21:09:30 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 #
 
+     SUBDIR += bottlerocket
      SUBDIR += bpl+
      SUBDIR += conserver
 #    SUBDIR += ecu
