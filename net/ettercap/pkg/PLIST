@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/12 07:58:35 obecian Exp $
+bin/ettercap
+share/doc/ettercap/AUTHORS
+share/doc/ettercap/CHANGELOG
+share/doc/ettercap/COPYING
+share/doc/ettercap/HISTORY
+share/doc/ettercap/KNOWN-BUGS
+share/doc/ettercap/PORTINGS
+share/doc/ettercap/README
+share/doc/ettercap/README.PLUGINS
+share/doc/ettercap/THANKS
+share/doc/ettercap/TODO
+man/man8/ettercap.8
+share/ettercap/mac-fingerprints
+share/ettercap/nmap-os-fingerprints
+@dirrm share/ettercap
+@dirrm share/doc/ettercap

@@ -1,0 +1,14 @@
+--- configure.orig	Thu Apr 12 00:42:59 2001
++++ configure	Thu Apr 12 00:43:38 2001
+@@ -9,9 +9,9 @@
+ 
+ # Defaults:
+ ac_help=
+-ac_default_prefix=/usr/local
++ac_default_prefix=${LOCALBASE}
+ # Any additions from configure.in:
+-ac_default_prefix=/usr/local
++#ac_default_prefix=/usr/local
+ ac_help="$ac_help
+   --enable-ncurses        enable the ncurses interface."
+ ac_help="$ac_help

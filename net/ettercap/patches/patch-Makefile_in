@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Apr 12 00:42:55 2001
++++ Makefile.in	Thu Apr 12 00:43:56 2001
+@@ -17,7 +17,7 @@ exec_prefix = @exec_prefix@
+ BINDIR   = @bindir@
+ MANDIR   = @mandir@
+ SHAREDIR = ${prefix}/share/@PROG@
+-DOCDIR   = ${prefix}/doc/@PROG@-@VERSION@
++DOCDIR   = ${prefix}/share/doc/@PROG@
+ DOC      = COPYING README README.PLUGINS CHANGELOG HISTORY AUTHORS TODO THANKS KNOWN-BUGS PORTINGS
+ 
+ DEBUG    = @DEBUG@
