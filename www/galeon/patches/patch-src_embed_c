@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_embed_c,v 1.1 2003/12/04 15:02:51 wilfried Exp $
+$OpenBSD: patch-src_embed_c,v 1.2 2003/12/11 20:56:40 wilfried Exp $
 --- src/embed.c.orig	2003-11-23 19:39:16.000000000 +0100
-+++ src/embed.c	2003-11-27 22:48:59.000000000 +0100
++++ src/embed.c	2003-12-11 21:44:53.000000000 +0100
 @@ -748,6 +748,7 @@ read_mozilla_version (void)
  	gchar *preffile;
  	FILE *f;
  
-+	return MOZILLA_VERSION;
++	return g_strdup (MOZILLA_VERSION);
  	preffile = g_strconcat (getenv ("MOZILLA_FIVE_HOME"),
  				"/defaults/pref/all.js", NULL);
  	f = fopen (preffile, "r");
