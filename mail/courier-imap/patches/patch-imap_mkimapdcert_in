@@ -1,0 +1,40 @@
+$OpenBSD: patch-imap_mkimapdcert_in,v 1.1 2000/08/10 21:12:49 danh Exp $
+--- imap/mkimapdcert.in.orig	Sun Jul  9 14:27:21 2000
++++ imap/mkimapdcert.in	Thu Aug 10 14:44:02 2000
+@@ -12,20 +12,24 @@
+ test -x @OPENSSL@ || exit 0
+ 
+ prefix="@prefix@"
+-
+-if test -f @datadir@/imapd.pem
++certdir=@sysconfdir@/ssl/private
++if test -f ${certdir}/imapd.pem
+ then
+-	echo "@datadir@/imapd.pem already exists."
++	echo "${certdir}/imapd.pem already exists."
+ 	exit 1
+ fi
++if test -f ${certdir}/imapd.rand
++then
++	echo "${certdir}/imapd.rand exists - delete it to continue."
++	exit 1
++fi
++cp /dev/null ${certdir}/imapd.pem
++chmod 600 ${certdir}/imapd.pem
++chown @mailuser@ ${certdir}/imapd.pem
+ 
+-cp /dev/null @datadir@/imapd.pem
+-chmod 600 @datadir@/imapd.pem
+-chown @mailuser@ @datadir@/imapd.pem
+-
+-dd if=@RANDOMV@ of=@datadir@/imapd.rand count=1 2>/dev/null
++dd if=@RANDOMV@ of=${certdir}/imapd.rand count=1 2>/dev/null
+ @OPENSSL@ req -new -x509 -days 365 -nodes \
+-	-config @sysconfdir@/imapd.cnf -out @datadir@/imapd.pem -keyout @datadir@/imapd.pem
+-@OPENSSL@ gendh -rand @datadir@/imapd.rand 512 >>@datadir@/imapd.pem
+-@OPENSSL@ x509 -subject -dates -fingerprint -noout -in @datadir@/imapd.pem
+-rm -f @datadir@/imapd.rand
++	-config @sysconfdir@/imapd.cnf -out ${certdir}/imapd.pem -keyout ${certdir}/imapd.pem
++@OPENSSL@ gendh -rand ${certdir}/imapd.rand 512 >>${certdir}/imapd.pem
++@OPENSSL@ x509 -subject -dates -fingerprint -noout -in ${certdir}/imapd.pem
++rm -f ${certdir}/imapd.rand

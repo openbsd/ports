@@ -1,20 +1,23 @@
 ==============================================================
-The configuration files for Courier-IMAP have been installed
-in /usr/local/share/courier.
+Example configuration files for Courier-IMAP have been installed
+in ${PREFIX}/share/examples/courier-imap.
 
-You should copy imapd.config and imapd-ssl.config to /etc,
-and edit them to your site's needs.  
+You should copy imapd.config, imapd-ssl.config and imapd.cnf
+to /etc, and edit them to your site's needs.  Pay particular
+attention to the details in imapd.cnf, and read ssl(8) if
+necessary.  You MUST set the CN in imapd.cnf to the hostname
+by which your imap server is accessed, or else clients will
+throw up security warnings.
+
+When this is done, you can use the 'mkimapdcert' script
+to automatically generate a server certificate, which 
+is installed into /etc/ssl/private/imapd.pem
 
 It is generally not a good idea to expose plain-text IMAP to
 the outside world, so you can bind the plain-text one to 
 127.0.0.1, and the SSL one to your external IP interface(s).
-Don't forget to configure stunnel correctly before trying to
-use the SSL facility of Courier.
 
-To control the daemon use /usr/local/libexec/imapd.rc and
-/usr/local/libexec/imapd-ssl.rc
-
-More documentation is available at the Courier-IMAP homepage,
-at http://www.inter7.com/courierimap/
+To control the daemon use ${PREFIX}/libexec/imapd.rc and
+${PREFIX}/libexec/imapd-ssl.rc
 ==============================================================
 
