@@ -1,0 +1,2 @@
+This module implements the Digital Signature Algorithm (DSA) using
+a thin XS wrapper to the DSA functions in OpenSSL.
