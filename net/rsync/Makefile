@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 1999/08/20 12:44:01 brad Exp $
+# $OpenBSD: Makefile,v 1.12 1999/11/21 23:42:52 espie Exp $
 
-DISTNAME=	rsync-2.3.1
+DISTNAME=	rsync-2.3.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://rsync.samba.org/pub/rsync/
 

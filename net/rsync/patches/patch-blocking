@@ -1,0 +1,202 @@
+diff --exclude=CVS -ur /home/tridge/transfer/rsync/clientserver.c ./clientserver.c
+--- /home/tridge/transfer/rsync/clientserver.c	Sat Jul 10 02:39:17 1999
++++ ./clientserver.c	Mon Nov 15 12:10:05 1999
+@@ -433,8 +433,6 @@
+ 			open("/dev/null", O_RDWR);
+ 		}
+ 
+-		set_nonblocking(STDIN_FILENO);
+-
+ 		return start_daemon(STDIN_FILENO);
+ 	}
+ 
+diff --exclude=CVS -ur /home/tridge/transfer/rsync/io.c ./io.c
+--- /home/tridge/transfer/rsync/io.c	Sun Nov 15 10:38:34 1998
++++ ./io.c	Mon Nov 15 12:16:19 1999
+@@ -112,15 +112,6 @@
+ 			continue;
+ 		}
+ 
+-		if (n == -1 && 
+-		    (errno == EAGAIN || errno == EWOULDBLOCK)) {
+-			/* this shouldn't happen, if it does then
+-			   sleep for a short time to prevent us
+-			   chewing too much CPU */
+-			u_sleep(100);
+-			continue;
+-		}
+-
+ 		if (n == 0) {
+ 			if (eof_error) {
+ 				rprintf(FERROR,"unexpected EOF in read_timeout\n");
+@@ -333,7 +324,6 @@
+ 	int fd_count, count;
+ 	struct timeval tv;
+ 	int reading=0;
+-	int blocked=0;
+ 
+ 	no_flush++;
+ 
+@@ -371,25 +361,18 @@
+ 		}
+ 
+ 		if (FD_ISSET(fd, &w_fds)) {
+-			int n = (len-total)>>blocked;
++			int n = len-total;
+ 			int ret = write(fd,buf+total,n?n:1);
+ 
+ 			if (ret == -1 && errno == EINTR) {
+ 				continue;
+ 			}
+ 
+-			if (ret == -1 && 
+-			    (errno == EAGAIN || errno == EWOULDBLOCK)) {
+-				blocked++;
+-				continue;
+-			}
+-
+ 			if (ret <= 0) {
+ 				rprintf(FERROR,"erroring writing %d bytes - exiting\n", len);
+ 				exit_cleanup(RERR_STREAMIO);
+ 			}
+ 
+-			blocked = 0;
+ 			total += ret;
+ 
+ 			if (io_timeout)
+diff --exclude=CVS -ur /home/tridge/transfer/rsync/main.c ./main.c
+--- /home/tridge/transfer/rsync/main.c	Sat Jun 26 11:38:48 1999
++++ ./main.c	Mon Nov 15 12:10:37 1999
+@@ -261,10 +261,6 @@
+ 		argv[0] = ".";
+ 	}
+ 	
+-	set_nonblocking(f_out);
+-	if (f_in != f_out)
+-		set_nonblocking(f_in);
+-		
+ 	flist = send_file_list(f_out,argc,argv);
+ 	if (!flist || flist->count == 0) {
+ 		exit_cleanup(0);
+@@ -298,9 +294,6 @@
+ 		close(recv_pipe[0]);
+ 		if (f_in != f_out) close(f_out);
+ 
+-		set_nonblocking(f_in);
+-		set_nonblocking(recv_pipe[1]);
+-
+ 		recv_files(f_in,flist,local_name,recv_pipe[1]);
+ 		report(f_in);
+ 
+@@ -312,9 +305,6 @@
+ 	io_close_input(f_in);
+ 	if (f_in != f_out) close(f_in);
+ 
+-	set_nonblocking(f_out);
+-	set_nonblocking(recv_pipe[0]);
+-
+ 	io_start_buffering(f_out);
+ 
+ 	generate_files(f_out,flist,local_name,recv_pipe[0]);
+@@ -376,10 +366,6 @@
+ 	extern int cvs_exclude;
+ 	extern int am_sender;
+ 
+-	set_nonblocking(f_out);
+-	if (f_in != f_out)
+-		set_nonblocking(f_in);
+-			
+ 	setup_protocol(f_out, f_in);
+ 
+ 	if (am_sender) {
+@@ -414,10 +400,6 @@
+ 		flist = send_file_list(f_out,argc,argv);
+ 		if (verbose > 3) 
+ 			rprintf(FINFO,"file list sent\n");
+-
+-		set_nonblocking(f_out);
+-		if (f_in != f_out)
+-			set_nonblocking(f_in);
+ 
+ 		send_files(flist,f_out,f_in);
+ 		if (pid != -1) {
+diff --exclude=CVS -ur /home/tridge/transfer/rsync/proto.h ./proto.h
+--- /home/tridge/transfer/rsync/proto.h	Sun Oct 31 14:45:13 1999
++++ ./proto.h	Mon Nov 15 12:19:22 1999
+@@ -167,7 +167,6 @@
+ void add_gid(gid_t gid);
+ void send_uid_list(int f);
+ void recv_uid_list(int f, struct file_list *flist);
+-int set_nonblocking(int fd);
+ int piped_child(char **command,int *f_in,int *f_out);
+ int local_child(int argc, char **argv,int *f_in,int *f_out);
+ void out_of_memory(char *str);
+diff --exclude=CVS -ur /home/tridge/transfer/rsync/socket.c ./socket.c
+--- /home/tridge/transfer/rsync/socket.c	Sun Oct 31 14:45:14 1999
++++ ./socket.c	Mon Nov 15 12:10:44 1999
+@@ -148,8 +148,6 @@
+ 		return -1;
+ 	}
+ 
+-	set_nonblocking(res);
+-
+ 	return res;
+ }
+ 
+@@ -265,8 +263,6 @@
+ 
+ 		if (fork()==0) {
+ 			close(s);
+-
+-			set_nonblocking(fd);
+ 
+ 			_exit(fn(fd));
+ 		}
+diff --exclude=CVS -ur /home/tridge/transfer/rsync/util.c ./util.c
+--- /home/tridge/transfer/rsync/util.c	Tue Oct 26 08:38:49 1999
++++ ./util.c	Mon Nov 15 12:19:17 1999
+@@ -26,33 +26,6 @@
+ 
+ extern int verbose;
+ 
+-/****************************************************************************
+-Set a fd into nonblocking mode. Uses POSIX O_NONBLOCK if available,
+-else
+-if SYSV use O_NDELAY
+-if BSD use FNDELAY
+-****************************************************************************/
+-int set_nonblocking(int fd)
+-{
+-	int val;
+-#ifdef O_NONBLOCK
+-#define FLAG_TO_SET O_NONBLOCK
+-#else
+-#ifdef SYSV
+-#define FLAG_TO_SET O_NDELAY
+-#else /* BSD */
+-#define FLAG_TO_SET FNDELAY
+-#endif
+-#endif
+-	
+-	if((val = fcntl(fd, F_GETFL, 0)) == -1)
+-		return -1;
+-	val |= FLAG_TO_SET;
+-	return fcntl( fd, F_SETFL, val);
+-#undef FLAG_TO_SET
+-}
+-
+-
+ /* this is taken from CVS */
+ int piped_child(char **command,int *f_in,int *f_out)
+ {
+@@ -101,9 +74,6 @@
+   *f_in = from_child_pipe[0];
+   *f_out = to_child_pipe[1];
+ 
+-  set_nonblocking(*f_in);
+-  set_nonblocking(*f_out);
+-  
+   return pid;
+ }
+ 
+
