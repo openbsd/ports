@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/29 21:14:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2004/04/23 20:29:20 jcs Exp $
 
-PKGNAME=	wmwave-0.4
+PKGNAME=	wmwave-0.4p1
 DISTNAME=	wmwave-0-4
 CATEGORIES=	net x11 x11/windowmaker
 
@@ -13,8 +13,6 @@ COMMENT=	"Window Maker dockapp to display wavelan statistics"
 HOMEPAGE=	http://www.schuermann.org/~dockapps/
 MASTER_SITES=	ftp://rt.fm/pub/wmwave/
 EXTRACT_SUFX=	.tgz
-
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 USE_X11=	Yes
 NO_REGRESS=	Yes
