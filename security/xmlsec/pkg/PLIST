@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/09/20 10:22:31 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/11/13 19:07:36 naddy Exp $
 bin/xmlsec
 bin/xmlsec-config
 include/xmlsec/base64.h
@@ -119,37 +119,37 @@ share/doc/xmlsec/download.html
 share/doc/xmlsec/example-dsig1.html
 share/doc/xmlsec/example-dsig2.html
 share/doc/xmlsec/example-dsig3.html
+share/doc/xmlsec/example-dsig4.html
 share/doc/xmlsec/example-enc1.html
 share/doc/xmlsec/example-enc2.html
-share/doc/xmlsec/examples/dsig1/.cvsignore
 share/doc/xmlsec/examples/dsig1/Makefile
 share/doc/xmlsec/examples/dsig1/dsakey.pem
 share/doc/xmlsec/examples/dsig1/dsig1.c
 share/doc/xmlsec/examples/dsig1/test.tmpl
 share/doc/xmlsec/examples/dsig1/test.xml
-share/doc/xmlsec/examples/dsig2/.cvsignore
 share/doc/xmlsec/examples/dsig2/Makefile
 share/doc/xmlsec/examples/dsig2/dsakey.pem
 share/doc/xmlsec/examples/dsig2/dsig2.c
 share/doc/xmlsec/examples/dsig2/test.tmpl
 share/doc/xmlsec/examples/dsig2/test.xml
-share/doc/xmlsec/examples/dsig3/.cvsignore
 share/doc/xmlsec/examples/dsig3/Makefile
+share/doc/xmlsec/examples/dsig3/dsakey.pem
 share/doc/xmlsec/examples/dsig3/dsig3.c
+share/doc/xmlsec/examples/dsig3/test.tmpl
 share/doc/xmlsec/examples/dsig3/test.xml
-share/doc/xmlsec/examples/dsig4/.cvsignore
 share/doc/xmlsec/examples/dsig4/Makefile
-share/doc/xmlsec/examples/dsig4/aleksey.crt
-share/doc/xmlsec/examples/dsig4/aleksey.key
-share/doc/xmlsec/examples/dsig4/test.pl
-share/doc/xmlsec/examples/dsig4/xmldsigverify.c
-share/doc/xmlsec/examples/enc1/.cvsignore
+share/doc/xmlsec/examples/dsig4/dsig4.c
+share/doc/xmlsec/examples/dsig4/test.xml
+share/doc/xmlsec/examples/dsig5/Makefile
+share/doc/xmlsec/examples/dsig5/aleksey.crt
+share/doc/xmlsec/examples/dsig5/aleksey.key
+share/doc/xmlsec/examples/dsig5/test.pl
+share/doc/xmlsec/examples/dsig5/xmldsigverify.c
 share/doc/xmlsec/examples/enc1/Makefile
 share/doc/xmlsec/examples/enc1/enc1.c
 share/doc/xmlsec/examples/enc1/rsakey.pem
 share/doc/xmlsec/examples/enc1/rsapub.pem
 share/doc/xmlsec/examples/enc1/test.xml
-share/doc/xmlsec/examples/enc2/.cvsignore
 share/doc/xmlsec/examples/enc2/Makefile
 share/doc/xmlsec/examples/enc2/enc2.c
 share/doc/xmlsec/examples/enc2/rsakey.pem
@@ -158,8 +158,11 @@ share/doc/xmlsec/examples/enc2/test.xml
 share/doc/xmlsec/faq.html
 share/doc/xmlsec/favicon.ico
 share/doc/xmlsec/index.html
+share/doc/xmlsec/libxml2-logo.png
+share/doc/xmlsec/libxslt-logo.png
 share/doc/xmlsec/logo.gif
 share/doc/xmlsec/news.html
+share/doc/xmlsec/openssl-logo.png
 share/doc/xmlsec/tests/aleksey-xmldsig-01/README
 share/doc/xmlsec/tests/aleksey-xmldsig-01/ca.crt
 share/doc/xmlsec/tests/aleksey-xmldsig-01/ca.csr
@@ -297,6 +300,7 @@ share/doc/xmlsec/xmlsec-man.html
 @dirrm share/doc/xmlsec/tests
 @dirrm share/doc/xmlsec/examples/enc2
 @dirrm share/doc/xmlsec/examples/enc1
+@dirrm share/doc/xmlsec/examples/dsig5
 @dirrm share/doc/xmlsec/examples/dsig4
 @dirrm share/doc/xmlsec/examples/dsig3
 @dirrm share/doc/xmlsec/examples/dsig2

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/09/20 10:22:31 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/11/13 19:07:36 naddy Exp $
 
 COMMENT=	"XML security library"
 
-VERSION=	0.0.9
+VERSION=	0.0.10
 DISTNAME=	xmlsec-${VERSION}
 CATEGORIES=	security
 
