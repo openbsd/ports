@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2001/06/20 01:16:36 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2001/08/11 16:25:09 naddy Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += cdb
      SUBDIR += db
      SUBDIR += db,java
+     SUBDIR += freetds
      SUBDIR += gdbm
      SUBDIR += gnats
      SUBDIR += iodbc
@@ -24,6 +25,7 @@
      SUBDIR += postgresql,odbc
      SUBDIR += postgresql,tcl,odbc
      SUBDIR += py-mysql
+     SUBDIR += sqsh
      SUBDIR += xmysql
      SUBDIR += xmysqladmin
 
