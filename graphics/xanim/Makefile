@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2002/03/21 20:57:09 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/09/03 16:50:28 brad Exp $
 
 COMMENT=	"X11 animation player with support for lots of formats"
 
 DISTNAME=xanim-2.80.1
 WRKDIST=${WRKDIR}/xanim2801
 CATEGORIES= graphics x11
-NEED_VERSION=	1.515
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
-
 
 DIST_SUBDIR=xanim
 MASTER_SITES=ftp://xanim.va.pubnix.com/
@@ -32,10 +30,6 @@ SUP_m68k = xa1.0_cyuv_netbsd68k.o.Z:0 \
 xa2.0_cvid_netbsd68k.o.Z:0 \
 xa2.0_iv32_netbsd68k.o.Z:0
 
-SUP_sparc= xa1.0_cyuv_sparcAOUT.o.Z:0 \
-xa2.0_cvid_sparcCOFF.o.Z:0 \
-xa2.0_iv32_sparcCOFF.o.Z:0
-
 # some architectures support more codecs
 .if (${MACHINE_ARCH} == i386)
 SUPFILES= ${SUP_i386}
@@ -47,12 +41,7 @@ SUPFILES= ${SUP_m68k}
 PATCH_LIST+=m68k-patch
 .endif
 
-.if (${MACHINE_ARCH} == sparc)
-SUPFILES=${SUP_sparc}
-PATCH_LIST+=sparc-patch
-.endif
-
-SUPDISTFILES=${SUP_i386} ${SUP_m68k} ${SUP_sparc}
+SUPDISTFILES=${SUP_i386} ${SUP_m68k}
 
 .if defined(SUPFILES)
 DISTFILES   += ${SUPFILES}
