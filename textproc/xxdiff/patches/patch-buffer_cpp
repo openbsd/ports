@@ -1,6 +1,7 @@
---- buffer.cpp.orig	Tue Feb 26 17:58:56 2002
-+++ buffer.cpp	Tue Feb 26 17:59:14 2002
-@@ -291,7 +291,7 @@ void XxBuffer::setDirectoryEntries( 
+$OpenBSD: patch-buffer_cpp,v 1.2 2002/07/17 07:27:02 wilfried Exp $
+--- buffer.cpp.orig	Sun May 19 10:23:10 2002
++++ buffer.cpp	Wed Jul 17 09:24:02 2002
+@@ -342,7 +342,7 @@ void XxBuffer::setDirectoryEntries( 
           it != _directoryEntries.end();
           ++it ) {
        int len = (*it).length();

@@ -1,11 +1,12 @@
---- xxdiff.1.orig	Tue Feb 26 18:08:26 2002
-+++ xxdiff.1	Tue Feb 26 18:09:18 2002
-@@ -18,7 +18,7 @@
+$OpenBSD: patch-xxdiff_1,v 1.2 2002/07/17 07:27:02 wilfried Exp $
+--- xxdiff.1.orig	Sat May 18 09:45:01 2002
++++ xxdiff.1	Wed Jul 17 09:24:02 2002
+@@ -17,7 +17,7 @@
  .\" Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  .\"
  .na
 -.TH XXDIFF 2.1
-+.TH XXDIFF 2.4
++.TH XXDIFF 2.6
  .SH NAME
  xxdiff \- a graphical file comparator and merge tool
  .SH SYNOPSIS

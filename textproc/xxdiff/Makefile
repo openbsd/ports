@@ -1,29 +1,36 @@
-# $OpenBSD: Makefile,v 1.11 2002/05/14 12:07:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2002/07/17 07:27:02 wilfried Exp $
 
 COMMENT=	"graphical file comparator and merge tool"
 
-DISTNAME=	xxdiff-2.4
+DISTNAME=	xxdiff-2.6
 CATEGORIES=	textproc x11
-NEED_VERSION=	1.504
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=xxdiff/}
 
 HOMEPAGE=	http://xxdiff.sourceforge.net/
 
 MAINTAINER=	Dan Weeks <danimal@danimal.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-BUILD_DEPENDS=	::devel/bison ::devel/tmake
+BUILD_DEPENDS=	:bison-*:devel/bison \
+		:tmake->=1.8p1:devel/tmake
+MODULES=	qt3
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/src
+
+MAKE_ENV+=	UIC=${MODQT_UIC}
+
+# For qsettings to write its setup
+PORTHOME=	${WRKDIST}
 
 NO_REGRESS=	Yes
 
 do-configure:
-	@cd ${WRKSRC} && tmake xxdiff.pro > ${WRKSRC}/Makefile
+	@cd ${WRKSRC} && tmake -t xxdiff.t xxdiff.pro > ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xxdiff ${PREFIX}/bin/xxdiff

@@ -1,4 +1,4 @@
-$OpenBSD: SECURITY,v 1.4 2002/04/09 15:43:40 naddy Exp $
+$OpenBSD: SECURITY,v 1.5 2002/07/17 07:27:02 wilfried Exp $
 
 Xxdiff uses strncpy in a few functions.  
 The included patches correct the usage to 
@@ -7,5 +7,4 @@ strlcpy where needed.
 Files affected are:
   ${WRKSRC}/src/app.cpp
   ${WRKSRC}/src/buffer.cpp
-  ${WRKSRC}/src/diffs.cpp
   ${WRKSRC}/src/resParser.l
