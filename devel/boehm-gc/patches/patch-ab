@@ -1,5 +1,5 @@
---- gc.man.orig	Mon Feb 12 14:34:12 1996
-+++ gc.man	Mon Apr  6 03:23:32 1998
+--- gc.man.orig	Mon Feb 12 17:34:12 1996
++++ gc.man	Tue Oct  5 19:50:08 1999
 @@ -9,7 +9,9 @@
  ... malloc(...) ...
  .br
@@ -23,9 +23,9 @@
 +and
 +.I gc_cpp.h
 +will probably be found in
-+.I /usr/local/include,
++.I @PREFIX@/include,
 +and the libraries in
-+.I /usr/local/lib.
++.I @PREFIX@/lib.
 +.LP
 +These libraries have been compiled as drop-in replacements
 +for malloc and free (which is to say, all malloc
