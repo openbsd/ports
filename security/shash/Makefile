@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/25 22:34:44 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2001/06/20 20:50:46 jakob Exp $
 
 COMMENT=	generates or checks digests or mac
 
@@ -18,13 +18,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://mcrypt.hellug.gr/pub/mcrypt/shash/
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+=		CFLAGS='-I${PREFIX}/include -L${PREFIX}/lib'
+CONFIGURE_ENV+=		CFLAGS='-I${LOCALBASE}/include -L${LOCALBASE}/lib'
 
 FLAVORS=		static
 FLAVOR?=
 
 .if ${FLAVOR:L:Mstatic}
-BUILD_DEPENDS+=		${PREFIX}/lib/libmhash.a::security/mhash
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libmhash.a::security/mhash
 CONFIGURE_ARGS+=	--enable-static-link
 .else
 LIB_DEPENDS+=		mhash.2::security/mhash
