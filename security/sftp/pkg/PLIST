@@ -1,0 +1,6 @@
+bin/rsftp
+bin/sftp
+bin/sftpserv
+man/man1/sftp.1
+share/doc/sftp/README
+@dirrm share/doc/sftp

@@ -1,0 +1,7 @@
+sftp and rsftp are ftp replacements that run over an ssh or rsh
+tunnel.  These programs allows files to be transferred to and from
+remote servers.  Authentication is provided by the underlying ssh/rsh
+connection.
+
+When sftp or rsftp is run, the server (sftpserv) is automatically
+run on the remote end.

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Apr 12 15:28:03 2000
++++ Makefile.in	Wed Apr 12 15:27:51 2000
+@@ -3,7 +3,7 @@
+ LIBS = @LIBS@
+ INSTALL=@INSTALL@
+ 
+-ROOT=
++ROOT=$(DESTDIR)
+ prefix=$(ROOT)@prefix@
+ exec_prefix=@exec_prefix@
+ bindir=@bindir@
