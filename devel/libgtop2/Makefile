@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/31 18:35:57 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2003/03/06 05:44:22 brad Exp $
 
 COMMENT=		"portable library for obtaining system information"
 
@@ -23,8 +23,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=		
-LIB_DEPENDS=		
+MODULES=	gettext
+LIB_DEPENDS=	glib-2.0.0.0::devel/glib2
 
 SEPARATE_BUILD=		concurrent
 USE_GMAKE=		Yes
