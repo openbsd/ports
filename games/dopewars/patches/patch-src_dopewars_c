@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_dopewars_c,v 1.1 2005/02/13 18:31:15 alek Exp $
+--- src/dopewars.c.orig	Sun Feb 13 18:08:58 2005
++++ src/dopewars.c	Sun Feb 13 18:09:01 2005
+@@ -2574,16 +2574,18 @@ void GeneralStartup(int argc, char *argv
+ {
+   gchar *priv_hiscore;
+ 
++  ConfigErrors = 0;
++  SetupParameters();
++  HandleCmdLine(argc, argv);
++
+   /* First, open the hard-coded high score file with possibly
+    * elevated privileges */
+   priv_hiscore = g_strdup_printf("%s/dopewars.sco", DATADIR);
+   HiScoreFile = g_strdup(priv_hiscore);
+-  OpenHighScoreFile();
++  if (!WantConvert) {
++    OpenHighScoreFile();
++  }
+   DropPrivileges();
+-
+-  ConfigErrors = 0;
+-  SetupParameters();
+-  HandleCmdLine(argc, argv);
+ 
+   if (!WantVersion && !WantHelp && !AIPlayer && !WantConvert && !WantAdmin) {
+     /* Open a user-specified high score file with no privileges, if one

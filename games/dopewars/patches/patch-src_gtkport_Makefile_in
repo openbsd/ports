@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gtkport_Makefile_in,v 1.1 2005/02/13 18:31:15 alek Exp $
+--- src/gtkport/Makefile.in.orig	Sun Feb 13 19:23:12 2005
++++ src/gtkport/Makefile.in	Sun Feb 13 19:23:19 2005
+@@ -124,7 +124,7 @@ plugindir = @plugindir@
+ 
+ noinst_LIBRARIES = libgtkport.a
+ libgtkport_a_SOURCES = gtkport.c gtkport.h clist.c clist.h
+-INCLUDES = -I../../intl -I${srcdir} -I${srcdir}/.. -I../.. @GTK_CFLAGS@
++INCLUDES = -I${srcdir} -I${srcdir}/.. -I../.. @GTK_CFLAGS@
+ DEFS = @DEFS@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gui_client_Makefile_in,v 1.1 2005/02/13 18:31:15 alek Exp $
+--- src/gui_client/Makefile.in.orig	Sun Feb 13 19:17:15 2005
++++ src/gui_client/Makefile.in	Sun Feb 13 19:18:13 2005
+@@ -127,7 +127,7 @@ libguiclient_a_SOURCES = gtk_client.c gt
+                          optdialog.c optdialog.h \
+                          newgamedia.c newgamedia.h dopewars-pill.xpm
+ 
+-INCLUDES = -I../../intl -I${srcdir} -I${srcdir}/.. -I../.. @GTK_CFLAGS@
++INCLUDES = -I${srcdir} -I${srcdir}/.. -I../.. @GTK_CFLAGS@
+ DEFS = @DEFS@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
