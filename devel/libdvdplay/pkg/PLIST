@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/21 15:00:41 sturm Exp $
+include/dvdplay/dvdplay.h
+include/dvdplay/info.h
+include/dvdplay/nav.h
+include/dvdplay/state.h
+lib/libdvdplay.a
+lib/libdvdplay.la
+%%SHARED%%
+@dirrm include/dvdplay

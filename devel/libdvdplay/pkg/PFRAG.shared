@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/04/21 15:00:41 sturm Exp $
+lib/libdvdplay.so.0.1
+DYNLIBDIR(%D/lib)
