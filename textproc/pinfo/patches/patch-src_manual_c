@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_manual_c,v 1.1.1.1 2003/07/08 16:23:47 espie Exp $
+--- src/manual.c.orig	Wed Jul  2 12:07:43 2003
++++ src/manual.c	Wed Jul  2 12:08:15 2003
+@@ -215,7 +215,7 @@ handlemanual (char *name)	/*
+       unlink (tmpfilename1);
+       xfree (tmpfilename1);
+     }
+-  tmpfilename1 = tempnam ("/tmp", NULL);
++  tmpfilename1 = mytempfile ();
+ 
+ #ifdef getmaxyx
+   init_curses ();
+@@ -315,7 +315,7 @@ handlemanual (char *name)	/*
+ 	  }
+ 	else
+ 	  source = fopen (location, "r");	/* from cmd output  */
+-	name = tempnam ("/tmp", NULL);
++	name = mytempfile ();
+ 	raw_tempfilename = name;
+ 	id = fopen (name, "w");
+ 
+@@ -393,7 +393,7 @@ handlemanual (char *name)	/*
+       if (use_apropos)
+ 	{
+ 	  printf (_ ("Calling apropos \n"));
+-	  apropos_tempfilename = tempnam ("/tmp", NULL);
++	  apropos_tempfilename = mytempfile ();
+ 	  snprintf (cmd, 255, "apropos %s > %s", name, apropos_tempfilename);
+ 	  if (system (cmd) != 0)
+ 	    {
+@@ -437,7 +437,7 @@ handlemanual (char *name)	/*
+ 	      unlink (tmpfilename2);
+ 	      xfree (tmpfilename2);
+ 	    }
+-	  tmpfilename2 = tempnam ("/tmp", NULL);
++	  tmpfilename2 = mytempfile ();
+ 	  if (return_value != -2)	/* key_back is not pressed;
+ 					   and return_value is an
+ 					   offset to manuallinks */

@@ -1,0 +1,52 @@
+$OpenBSD: patch-src_utils_c,v 1.1.1.1 2003/07/08 16:23:47 espie Exp $
+--- src/utils.c.orig	Wed Jul  2 12:00:46 2003
++++ src/utils.c	Wed Jul  2 12:08:29 2003
+@@ -474,3 +474,48 @@ handlewinch ()
+   getmaxyx (stdscr, maxy, maxx);
+   ungetch (keys.refresh_1);
+ }
++
++char *
++mytempfile()
++{
++  char *result;
++  int fd;
++  
++#ifdef HAVE_MKSTEMP
++  result = strdup ("/tmp/pinfo.XXXXXXXXXX");
++  if (!result)
++	  return NULL;
++  fd = mkstemp (result);
++  if (fd == -1)
++    {
++      free (result);
++      return NULL;
++    }
++  else
++    {
++      close (fd);
++      return result;
++    }
++#else
++  int i;
++
++  for (i = 0; i < 50; i++)
++    {
++      result = tempnam ("/tmp", NULL);
++      if (!result)
++	break;
++      fd = open (result, O_WRONLY | O_CREAT | O_EXCL, 0666);
++      if (fd == -1)
++	free (result);
++      else
++	break;
++    }
++  if (fd != -1)
++    {
++      close (fd);
++      return result;
++    }
++  else
++    return NULL;
++#endif
++}
