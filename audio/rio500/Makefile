@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/04/13 03:24:17 obecian Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/20 00:15:23 brad Exp $
 
 COMMENT=	"Diamond Rio 500 utilities"
 DISTNAME=	rio500-0.7
 CATEGORIES=	audio
 NEED_VERSION=	1.364
 
-MASTER_SITES=	http://download.sourceforge.net/rio500/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rio500/}
 
 HOMEPAGE=	http://sourceforge.net/projects/rio500/
 

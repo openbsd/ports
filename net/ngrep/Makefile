@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2001/06/12 07:20:08 kevlo Exp $
+# $OpenBSD: Makefile,v 1.15 2002/05/20 00:15:23 brad Exp $
 
 COMMENT=	"network grep"
 
 DISTNAME=	ngrep-1.40
 CATEGORIES=     net
 NEED_VERSION=	1.408
-MASTER_SITES=	http://prdownloads.sourceforge.net/ngrep/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ngrep/}
 
 HOMEPAGE=	http://ngrep.sourceforge.net/
 

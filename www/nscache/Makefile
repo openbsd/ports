@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2001/10/24 12:38:46 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/20 00:15:23 brad Exp $
 
 COMMENT=	"Netscape cache browser"
 
 DISTNAME=	nscache-0.6
 CATEGORIES=	www
 NEED_VERSION=	1.474
-MASTER_SITES=	http://prdownloads.sourceforge.net/nscache/ \
-		http://www.idata.sk/~ondrej/sw/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nscache/ }
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>

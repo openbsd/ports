@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/04/08 23:21:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/20 00:15:23 brad Exp $
 
 COMMENT=	"Nebulous rewrite of Tower Toppler"
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=		http://prdownloads.sourceforge.net/toppler/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=toppler/}
 
 LIB_DEPENDS=	SDL_mixer::devel/sdl-mixer
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/02 01:16:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/20 00:15:23 brad Exp $
 
 COMMENT=	"convert Netscape bookmarks into a Yahoo-like website"
 
 DISTNAME=	bk2site-1.1.5
 CATEGORIES=	www
 NEED_VERSION=	1.402
-MASTER_SITES=	http://download.sourceforge.net/bk2site/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bk2site/}
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
