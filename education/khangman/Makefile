@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2002/08/01 01:26:57 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2002/08/11 05:59:28 brad Exp $
 
-COMMENT=	"classical hangman game"
+COMMENT=	"classical hangman game for KDE"
 
 DISTNAME=	khangman-0.8
 CATEGORIES=	education
