@@ -1,0 +1,12 @@
+$OpenBSD: patch-libmad_Makefile_am,v 1.1.1.1 2001/07/18 21:35:17 pvalchev Exp $
+--- libmad/Makefile.am.orig	Wed Jul 18 12:48:52 2001
++++ libmad/Makefile.am	Wed Jul 18 12:49:13 2001
+@@ -94,7 +94,7 @@ CLEANFILES =		mad.h
+ # The API for MAD is not yet stable enough to use versioning, so we use
+ # release numbering instead.
+ 
+-libmad_la_LDFLAGS =		-release $(VERSION)
++libmad_la_LDFLAGS =
+ ##				-version-info 0:0:0
+ 
+ mad.h: Makefile.am config.status config.h  \
