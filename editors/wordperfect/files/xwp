@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Wrapper for Corel WordPerfect.
+#
+# dugsong@OpenBSD.org
+
+exec y0y0y0/wpbin/xwp $*
+
