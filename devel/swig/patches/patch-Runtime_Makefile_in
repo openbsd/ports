@@ -1,0 +1,12 @@
+$OpenBSD: patch-Runtime_Makefile_in,v 1.1 2001/02/19 18:32:11 danh Exp $
+--- Runtime/Makefile.in.orig	Sat Sep  2 12:25:09 2000
++++ Runtime/Makefile.in	Mon Feb 19 13:19:00 2001
+@@ -25,7 +25,7 @@ install:
+ 	@for i in $(LIBS); \
+ 	do \
+ 	if [ -f $$i ]; then \
+-	   $(LIBTOOL) install -c $$i $(LIB_DIR)/$$i; \
++	   $(LIBTOOL) install -c $$i $(DESTDIR)$(LIB_DIR)/$$i; \
+         fi; \
+ 	done;
+ 

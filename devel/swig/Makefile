@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/02/12 02:39:11 kevlo Exp $
+# $OpenBSD: Makefile,v 1.17 2001/02/19 18:32:10 danh Exp $
 
 DISTNAME=	swig1.3a5
 PKGNAME=	swig-1.3a5
@@ -23,7 +23,6 @@ BUILD_DEPENDS+=	python1.5::lang/python15 \
 
 WRKDIST=	${WRKDIR}/SWIG1.3a5
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu 
 CONFIGURE_ARGS+=--with-tclincl=${LOCALBASE}/include/tcl8.3 \
 		--with-tcllib==${LOCALBASE}/lib/tcl8.3 \
