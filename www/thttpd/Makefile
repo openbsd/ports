@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2003/12/20 12:08:44 jakob Exp $
+# $OpenBSD: Makefile,v 1.15 2004/01/02 13:01:28 jakob Exp $
 
 COMMENT=	"tiny/turbo/throttling HTTP server"
 
-DISTNAME=	thttpd-2.25
-PKGNAME=	thttpd-2.25
+DISTNAME=	thttpd-2.25b
+PKGNAME=	thttpd-2.25b
 CATEGORIES=    	www
 
 HOMEPAGE=	http://www.acme.com/software/thttpd/
