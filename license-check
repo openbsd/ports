@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $OpenBSD: license-check,v 1.1 1998/04/13 05:12:55 marc Exp $
+# $OpenBSD: license-check,v 1.2 1998/04/13 05:16:02 marc Exp $
 #
 # This script verifies that all files in a given directory are
 # mentioned in the ports LICENSE file as Distribution allowed.
@@ -99,11 +99,11 @@ END {
     for ( f in bad_files ) {
 	if ( bad_files[ f ] == 1 ) {
 	    if ( ! header ) {
-		print "You MUST remove the following files:"
+		print "You MUST remove the following files/directories:"
 		print
 		header = 1
 	    }
-	    print "rm -f", f
+	    print "/bin/rm -rf", f
 	}
     }
     if ( header ) {
@@ -111,10 +111,11 @@ END {
 	header = 0
     }
     if ( unk_count > 0 ) {
-	print "The following files are extra and should probably be removed:"
+	print "The following files/dirs are extra and " \
+	      "should probably be removed:"
 	print
 	for ( i = 0; i < unk_count; i += 1 ) {
-	    print "rm -f", unk_files[ i ]
+	    print "/bin/rm -rf", unk_files[ i ]
 	}
 	print
     }
