@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.17 2000/03/26 15:59:42 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.18 2000/03/26 16:57:42 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -34,6 +34,7 @@
 #	tags
 #
 
+.include <bsd.own.mk>
 
 .MAIN: all
 
@@ -135,10 +136,8 @@ README.html:
 	@sort -t '>' +1 -2 $@.tmp > $@.tmp2
 	@cat ${README} | \
 		sed -e 's%%CATEGORY%%'`echo ${.CURDIR} | sed -e 's.*/\([^/]*\)$$\1'`'g' \
-			-e '/%%DESCR%%/r${.CURDIR}/pkg/DESCR' \
-			-e '/%%DESCR%%/d' \
-			-e '/%%SUBDIR%%/r$@.tmp2' \
-			-e '/%%SUBDIR%%/d' \
+			-e '/%%DESCR%%/r${.CURDIR}/pkg/DESCR' -e '//d' \
+			-e '/%%SUBDIR%%/r$@.tmp2' -e '//d' \
 		> $@
 	@rm -f $@.tmp $@.tmp2
 
