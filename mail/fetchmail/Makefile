@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.53 2000/08/15 06:31:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.54 2000/08/26 18:12:53 brad Exp $
 
-DISTNAME=	fetchmail-5.5.0
+DISTNAME=	fetchmail-5.5.1
 CATEGORIES=	mail
 NEED_VERSION=	1.310
 MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
