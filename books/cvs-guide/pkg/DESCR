@@ -1,0 +1,6 @@
+CVS (Concurrent Versions System) is free software for version control
+and networked collaboration.  This book assumes no previous knowledge
+of CVS, but a working knowledge of Unix and software development
+will help.
+
+WWW: ${HOMEPAGE}
