@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 1998/09/14 03:46:01 marc Exp $
+# $OpenBSD: Makefile,v 1.24 1998/09/22 19:45:33 marc Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -19,6 +19,7 @@
 #    SUBDIR += dgd-net
 #    SUBDIR += dip
 #    SUBDIR += echoping
+     SUBDIR += ethereal
 #    SUBDIR += fping
 #    SUBDIR += freewais-sf
 #    SUBDIR += fspclient
