@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/14 21:40:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2005/02/05 10:56:28 alek Exp $
 
 COMMENT=	"Apache module for finding the country of web requests"
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS} 
+SHARED_ONLY=	Yes
 
 DISTNAME=	mod_geoip_1.2.6
-PKGNAME=	mod_geoip-1.2.6
+PKGNAME=	mod_geoip-1.2.6p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.maxmind.com/app/mod_geoip
