@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/04/05 16:05:32 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2002/04/20 17:09:39 espie Exp $
 
      SUBDIR+= libs2
      SUBDIR+= base2
@@ -21,6 +21,7 @@
      SUBDIR+= edu3
      SUBDIR+= games3
      SUBDIR+= graphics3
+     SUBDIR+= multimedia3
      SUBDIR+= network3
      SUBDIR+= toys3
      SUBDIR+= utils3
