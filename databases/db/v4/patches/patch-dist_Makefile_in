@@ -1,12 +1,13 @@
-$OpenBSD: patch-dist_Makefile_in,v 1.1.1.1 2003/12/08 17:37:52 sturm Exp $
+$OpenBSD: patch-dist_Makefile_in,v 1.2 2003/12/10 18:03:01 sturm Exp $
 --- dist/Makefile.in.orig	2002-08-30 20:11:56.000000000 +0200
 +++ dist/Makefile.in	2003-11-24 23:47:21.000000000 +0100
-@@ -11,7 +11,7 @@ exec_prefix=@exec_prefix@
+@@ -11,7 +11,8 @@ exec_prefix=@exec_prefix@
  bindir=	@bindir@
  includedir=@includedir@
  libdir=	@libdir@
 -docdir=	$(prefix)/docs
 +docdir=	$(prefix)/share/doc/db4
++libsdir=	$(prefix)/lib
  
  dmode=	755
  emode=	555
@@ -132,3 +133,12 @@ $OpenBSD: patch-dist_Makefile_in,v 1.1.1.1 2003/12/08 17:37:52 sturm Exp $
  	$(CCLINK) -o $@ $(LDFLAGS) \
  	    db_verify@o@ util_cache@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
  	$(POSTLINK) $@
+@@ -576,6 +577,8 @@ install_lib:
+ 	    test -f $(libjso) && $(ln) -s $(libjso) $(libjso_default); \
+ 	    test -f $(libjso) && $(ln) -s $(libjso) $(libjso_major); \
+ 	    test -f $(libjso) && $(ln) -s $(libjso) $(libjso_g)) || true
++	(cd $(libsdir) && \
++	    test -f $(libdir)/$(libso) && $(ln) -s db4/$(libso)) || true
+ 	@(test -f $(libj_jarfile) && \
+ 	    $(cp) $(libj_jarfile) $(libdir) && \
+ 	    $(chmod) $(fmode) $(libdir)/$(libj_jarfile)) || true
