@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2002/02/18 03:25:33 brad Exp $
+# $OpenBSD: Makefile,v 1.71 2002/02/19 03:58:57 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -35,7 +35,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 DB_DIR?=	/var/mysql
-SUBST_VARS=	DB_DIR VERSION
+SOCKET_DIR=	/var/run/mysql
+SUBST_VARS=	DB_DIR SOCKET_DIR VERSION
 
 # Suggested flags to the C++ compiler, needed for
 # high load servers otherwise MySQL will crash.
@@ -51,7 +52,7 @@ CONFIGURE_ARGS+= --enable-static \
 		 --with-comment='OpenBSD port: ${FULLPKGNAME-server}' \
 		 --with-libwrap="/usr" \
 		 --with-mysqld-user="mysql" \
-		 --with-unix-socket-path="${DB_DIR}/mysql.sock" \
+		 --with-unix-socket-path="${SOCKET_DIR}/mysql.sock" \
 		 --without-perl \
 		 --without-debug \
 		 --without-readline \

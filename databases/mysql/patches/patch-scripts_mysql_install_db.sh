@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_mysql_install_db.sh,v 1.6 2001/06/02 20:18:44 brad Exp $
---- scripts/mysql_install_db.sh.orig	Wed May  9 16:34:39 2001
-+++ scripts/mysql_install_db.sh	Sat Jun  2 01:19:10 2001
+$OpenBSD: patch-scripts_mysql_install_db.sh,v 1.7 2002/02/19 03:58:57 brad Exp $
+--- scripts/mysql_install_db.sh.orig	Thu Feb 14 12:30:26 2002
++++ scripts/mysql_install_db.sh	Mon Feb 18 20:04:30 2002
 @@ -7,12 +7,9 @@
  #
  # All unrecognized arguments to this script are passed to mysqld.
@@ -102,7 +102,7 @@ $OpenBSD: patch-scripts_mysql_install_db.sh,v 1.6 2001/06/02 20:18:44 brad Exp $
 -    chown $user $ldata $ldata/mysql $ldata/test;
 -  fi
 -fi
-+if test ! -d $ldata; then mkdir $ldata; chmod 711 $ldata ; fi
++if test ! -d $ldata; then mkdir $ldata; chmod 700 $ldata ; fi
 +if test ! -d $ldata/mysql; then mkdir $ldata/mysql;  chmod 700 $ldata/mysql ; fi
 +if test ! -d $ldata/test; then mkdir $ldata/test;  chmod 700 $ldata/test ; fi
 +chown $user:$group $ldata $ldata/mysql $ldata/test;
