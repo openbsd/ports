@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/02/01 12:54:15 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2004/08/10 09:14:47 xsa Exp $
 
 COMMENT=		"GNU awk"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNU:=gawk/}
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/07/30 17:40:27 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2004/08/10 09:14:47 xsa Exp $
 
 COMMENT= 	"compact IMAP/POP3 server"
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	iconv
+MODULES=	converters/libiconv
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59

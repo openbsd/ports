@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2003/11/14 23:52:42 brad Exp $
+# $OpenBSD: Makefile,v 1.47 2004/08/10 09:14:47 xsa Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	"image manipulation library for X11"
@@ -9,7 +9,7 @@ PKGNAME=	imlib-${V}p2
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/imlib/1.9/}
 
-MODULES=	gettext
+MODULES=	devel/gettext
 LIB_DEPENDS= 	gtk.1.2,gdk.1.2::x11/gtk+ \
 		jpeg.62::graphics/jpeg \
 		ungif.5::graphics/libungif \

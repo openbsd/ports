@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/06/26 04:58:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2004/08/10 09:14:48 xsa Exp $
 
 COMMENT=		"enhanced, MIME capable Berkeley Mail"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nail/}
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		iconv
+MODULES=		converters/libiconv
 
 SEPARATE_BUILD=		simple
 CONFIGURE_STYLE=	autoconf

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2004/07/26 10:56:01 peter Exp $
+# $OpenBSD: Makefile,v 1.44 2004/08/10 09:14:48 xsa Exp $
 
 COMMENT=	"Flexible mail transfer agent"
 VERSION=	4.41
@@ -57,7 +57,7 @@ LIB_DEPENDS+=		ldap.2,lber:openldap-client-2.*:databases/openldap
 .endif
 
 .if ${FLAVOR:L:Miconv}
-MODULES=		iconv
+MODULES=		converters/libiconv
 EXIM_MAKECAT+=		"HAVE_ICONV=yes\n"
 EXIM_EXTRA_LIBS+=	-L${LOCALBASE}/lib -liconv
 EXIM_CFLAGS+=		-I${LOCALBASE}/include

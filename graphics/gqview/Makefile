@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/05/10 00:58:45 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2004/08/10 09:14:47 xsa Exp $
 
 COMMENT=	"Gtk-based graphic file viewer"
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 LIB_DEPENDS+=	png.2::graphics/png \
 		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2

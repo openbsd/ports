@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2004/06/28 14:17:21 lebel Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2004/08/10 09:14:48 xsa Exp $
 
 DISTNAME=	mutt-${VERSION}i
 CATEGORIES=	mail
@@ -11,7 +11,7 @@ MASTER_SITES1=	http://wwwcip.informatik.uni-erlangen.de/~sithglan/mutt/
 
 HOMEPAGE=	http://www.mutt.org/
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/08/01 21:19:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2004/08/10 09:14:47 xsa Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=clisp/}
 EXTRACT_SUFX=	.tar.bz2
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu old
 CONFIGURE_ARGS=	--srcdir=${WRKSRC} ${WRKBUILD}

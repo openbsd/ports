@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/07/05 22:09:52 jolan Exp $
+# $OpenBSD: Makefile,v 1.14 2004/08/10 09:14:48 xsa Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 COMMENT-devguide=	"Evolution Developer's Guide"
@@ -25,7 +25,7 @@ MASTER_SITES0=		${HOMEPAGE}/update/snapshot/
 DISTFILES=		${DISTNAME}.tar.gz \
 			db-3.1.17.tar.gz:0
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:bison-*:devel/bison \
 			:scrollkeeper->=0.3.12:textproc/scrollkeeper

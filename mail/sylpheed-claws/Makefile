@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/08/02 16:08:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/08/10 09:14:48 xsa Exp $
 
 COMMENT=		"lightweight GTK+ based mail/news client"
 COMMENT-dillo=		"Dillo plugin for sylpheed-claws"
@@ -25,7 +25,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sylpheed-claws/}
 DISTFILES=		$(DISTNAME).tar.bz2 \
 			$(THEMEFILE).tar.gz
 
-MODULES=		gettext
+MODULES=		devel/gettext
 LIB_DEPENDS=		gdk.1,gtk.1::x11/gtk+ \
 			gthread.1::devel/glib
 

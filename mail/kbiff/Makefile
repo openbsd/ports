@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/03/02 23:48:16 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2004/08/10 09:14:48 xsa Exp $
 
 COMMENT=		"new mail notification utility for KDE"
 
@@ -20,7 +20,7 @@ MASTER_SITES=		http://devel-home.kde.org/~granroth/kbiff/
 LIB_DEPENDS=		kdecore.4,kio,kdeui,kdefx,kdesu,DCOP::x11/kde/libs3
 
 MODKDE_VERSION= 	3.1
-MODULES=        	kde
+MODULES=        	x11/kde
 
 MAKE_ENV=		KDEDIR="${LOCALBASE}"
 MAKE_FLAGS=		${MODKDE_MAKE_FLAGS}

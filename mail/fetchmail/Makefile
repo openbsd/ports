@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2003/10/15 23:08:49 fgsch Exp $
+# $OpenBSD: Makefile,v 1.99 2004/08/10 09:14:48 xsa Exp $
 
 COMMENT=	"mail retrieval utility for POP2, POP3, KPOP, IMAP and more"
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/06/15 15:59:40 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/10 09:14:47 xsa Exp $
 
 COMMENT=	"digital camera frontend"
 
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	:pkgconfig->=0.9.0:devel/pkgconfig
 LIB_DEPENDS=	gphoto2,gphoto2_port::graphics/libgphoto2 \
 		gdk_pixbuf-2.0.0.11,gdk-x11-2.0.0.11,gtk-x11-2.0.0.11::x11/gtk+2
 
-MODULES=	iconv
+MODULES=	converters/libiconv
 
 SEPARATE_BUILD=	concurrent
 

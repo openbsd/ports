@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/07/25 00:17:39 marcm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/08/10 09:14:48 xsa Exp $
 
 COMMENT=		"spreadsheet application for GNOME"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnumeric/1.2/}
 
-MODULES=		gettext
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:scrollkeeper-*:textproc/scrollkeeper \
