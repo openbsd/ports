@@ -1,5 +1,14 @@
---- Makefile.orig	Thu Feb 13 16:05:11 2003
-+++ Makefile	Fri Feb 14 18:42:23 2003
+--- Makefile.orig	Thu Feb 13 08:05:11 2003
++++ Makefile	Sun Mar  2 17:00:50 2003
+@@ -10,7 +10,7 @@ OBJTYPE!=uname -m | sed 's;i.86;386;; s;
+ # the gnu rules will mess up bsd but not vice versa,
+ # hence the gnu rules come first.
+ 
+-include Make.$(SYSNAME)-$(OBJTYPE)
++include Make.$(SYSNAME)
+ 
+ PREFIX=/usr/local
+ 
 @@ -56,6 +56,7 @@ bcat: bcat.$O $(LIB)
  
  $(LIB): $(OFILES)

@@ -1,6 +1,15 @@
---- Makefile.orig	Sun Feb 16 16:06:04 2003
-+++ Makefile	Sun Feb 16 16:07:26 2003
-@@ -57,11 +57,11 @@
+--- Makefile.orig	Thu Feb 13 08:05:44 2003
++++ Makefile	Sun Mar  2 17:05:52 2003
+@@ -10,7 +10,7 @@ OBJTYPE!=uname -m | sed 's;i.86;386;; s;
+ # the gnu rules will mess up bsd but not vice versa,
+ # hence the gnu rules come first.
+ 
+-include Make.$(SYSNAME)-$(OBJTYPE)
++include Make.$(SYSNAME)
+ 
+ PREFIX=/usr/local
+ 
+@@ -57,11 +57,11 @@ TGZFILES+=mk.pdf
  
  install: $(LIB)
  	test -d $(PREFIX)/man/man1 || mkdir $(PREFIX)/man/man1

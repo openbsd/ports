@@ -1,6 +1,22 @@
---- Makefile.orig	Thu Feb 13 16:05:34 2003
-+++ Makefile	Fri Feb 14 18:43:41 2003
-@@ -54,6 +54,7 @@ test2: test2.$O $(LIB)
+--- Makefile.orig	Thu Feb 13 08:05:34 2003
++++ Makefile	Sun Mar  2 16:55:53 2003
+@@ -10,7 +10,7 @@ OBJTYPE!=uname -m | sed 's;i.86;386;; s;
+ # the gnu rules will mess up bsd but not vice versa,
+ # hence the gnu rules come first.
+ 
+-include Make.$(SYSNAME)-$(OBJTYPE)
++include Make.$(SYSNAME)
+ 
+ PREFIX=/usr/local
+ 
+@@ -48,12 +48,14 @@ install: $(LIB)
+ 
+ test: test.$O $(LIB)
+ 	$(CC) -o test test.$O $(LIB) -L/usr/local/lib -lfmt -lutf
++	./test
+ 
+ test2: test2.$O $(LIB)
+ 	$(CC) -o test2 test2.$O $(LIB) -L/usr/local/lib -lfmt -lutf
  
  $(LIB): $(OFILES)
  	$(AR) $(ARFLAGS) $(LIB) $(OFILES)
