@@ -1,10 +1,9 @@
+@comment $OpenBSD: PLIST.sparc,v 1.2 2000/08/04 20:54:20 brad Exp $
 @pkgcfl communicator-*
 netscape/README
 netscape/LICENSE
 netscape/netscape
-@unexec rm -f %D/netscape/netscape.sav
 netscape/netscape_nis
-@unexec rm -f %D/netscape/netscape_nis.sav
 netscape/Netscape.ad
 netscape/XKeysymDB
 netscape/bookmark.htm

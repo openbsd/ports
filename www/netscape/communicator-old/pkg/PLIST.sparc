@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST.sparc,v 1.2 2000/08/04 20:54:19 brad Exp $
 @pkgcfl navigator-*
 netscape/README
 netscape/LICENSE
