@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2003/06/11 08:17:52 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.17 2003/07/06 21:19:31 jakob Exp $
 @pkgcfl postfix-*
 libexec/postfix/bounce
 libexec/postfix/cleanup
@@ -37,9 +37,11 @@ man/man1/sendmail.1
 man/man5/access.5
 man/man5/aliases.5
 man/man5/canonical.5
+man/man5/cidr_table.5
 man/man5/pcre_table.5
 man/man5/regexp_table.5
 man/man5/relocated.5
+man/man5/tcp_table.5
 man/man5/transport.5
 man/man5/virtual.5
 man/man8/bounce.8
@@ -88,6 +90,7 @@ share/doc/postfix/html/big-picture.gif
 share/doc/postfix/html/big-picture.html
 share/doc/postfix/html/bounce.8.html
 share/doc/postfix/html/canonical.5.html
+share/doc/postfix/html/cidr_table.5.html
 share/doc/postfix/html/cleanup.8.html
 share/doc/postfix/html/commands.html
 share/doc/postfix/html/defer.8.html
@@ -137,6 +140,7 @@ share/doc/postfix/html/small-picture.gif
 share/doc/postfix/html/smtp.8.html
 share/doc/postfix/html/smtpd.8.html
 share/doc/postfix/html/spawn.8.html
+share/doc/postfix/html/tcp_table.5.html
 share/doc/postfix/html/trace.8.html
 share/doc/postfix/html/transport.5.html
 share/doc/postfix/html/trivial-rewrite.8.html
@@ -174,6 +178,7 @@ share/examples/postfix/LICENSE
 share/examples/postfix/access
 share/examples/postfix/aliases
 share/examples/postfix/canonical
+share/examples/postfix/cidr_table
 share/examples/postfix/main.cf
 share/examples/postfix/main.cf.default
 share/examples/postfix/makedefs.out
@@ -214,6 +219,7 @@ share/examples/postfix/sample-smtpd.cf
 share/examples/postfix/sample-transport.cf
 share/examples/postfix/sample-verify.cf
 share/examples/postfix/sample-virtual.cf
+share/examples/postfix/tcp_table
 share/examples/postfix/transport
 share/examples/postfix/virtual
 @dirrm share/examples/postfix
