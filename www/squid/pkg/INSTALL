@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.10 2001/01/12 21:21:02 brad Exp $
+# $OpenBSD: INSTALL,v 1.11 2002/02/20 01:17:03 brad Exp $
 #
 # Pre/post-installation setup of squid
 
@@ -10,12 +10,16 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}
 SAMPLE_CONFIG_DIR=$PREFIX/share/examples/squid
-STATEDIR=${STATEDIR}
+SQUIDDIR=${SQUIDDIR}
+SQUIDUSER=nobody
+SQUIDGROUP=nogroup
 
-install -d -o www -g www -m 771 $STATEDIR
-install -d -o www -g www -m 775 $STATEDIR/logs
-install -d -o www -g www -m 771 $STATEDIR/cache
-ln -sf $STATEDIR/logs/squid.pid /var/run/squid.pid
+if [ ! -d $SQUIDDIR ]; then
+  install -d -o $SQUIDUSER -g $SQUIDGROUP -m 771 $SQUIDDIR
+  install -d -o $SQUIDUSER -g $SQUIDGROUP -m 775 $SQUIDDIR/logs
+  install -d -o $SQUIDUSER -g $SQUIDGROUP -m 771 $SQUIDDIR/cache
+  ln -sf $SQUIDDIR/logs/squid.pid /var/run/squid.pid
+fi
 
 do_notice_conf()
 {
@@ -23,7 +27,7 @@ do_notice_conf()
     echo "+---------------"
     echo "| The existing $1 configuration files in $CONFIG_DIR have NOT"
     echo "| been changed.  You may want to compare them to the current samples in"
-    echo "| $SAMPLE_CONFIG_DIR/conf, and update your configuration"
+    echo "| $SAMPLE_CONFIG_DIR, and update your configuration"
     echo "| files as needed."
 }
 
@@ -41,9 +45,9 @@ do_notice_errors_and_icons()
 do_install_conf()
 {
     install -d -o root -g wheel -m 755 $CONFIG_DIR
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/conf/squid.conf.sample $CONFIG_DIR/squid.conf
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/conf/mime.conf.sample $CONFIG_DIR/mime.conf
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/conf/mib.txt.sample $CONFIG_DIR/mib.txt
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/squid.conf $CONFIG_DIR
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/mime.conf $CONFIG_DIR
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/mib.txt $CONFIG_DIR
     echo
     echo "+---------------"
     echo "| The $1 configuration files have been installed in $CONFIG_DIR."
@@ -86,7 +90,7 @@ case $2 in
 	fi
 	if [ ! -d $PREFIX/share/squid/errors ]; then
 	   do_install_errors_and_icons
-	elif [ ! -f $PREFIX/share/squid/errors/ERR_TOO_BIG ]; then
+	elif [ ! -f $PREFIX/share/squid/errors/English/ERR_TOO_BIG ]; then
 	   do_install_errors_and_icons
 	else
 	   do_notice_errors_and_icons

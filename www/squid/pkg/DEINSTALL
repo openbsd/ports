@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.4 2000/07/29 00:04:58 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.5 2002/02/20 01:17:03 brad Exp $
 #
 # squid de-installation
 
@@ -7,7 +7,7 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}
-STATEDIR=${STATEDIR}
+SQUIDDIR=${SQUIDDIR}
 
 echo
 echo "+---------------"
@@ -16,7 +16,7 @@ echo "| these steps as root:"
 echo "|"
 echo "|           rm -rf $CONFIG_DIR"
 echo "|           rm -rf $PREFIX/share/squid"
-echo "|           rm -rf $STATEDIR"
+echo "|           rm -rf $SQUIDDIR"
 echo "|           rm -f /var/run/squid.pid"
 echo "|"
 echo "| Do not do this if you plan on re-installing $1"

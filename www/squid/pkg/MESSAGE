@@ -1,7 +1,7 @@
-NOTES ON OpenBSD POST-INSTALLATION OF SQUID 2.3
+NOTES ON OpenBSD POST-INSTALLATION OF SQUID 2.5
 -----------------------------------------------
 
- ** An old squid.conf will not work with squid 2.3! **
+ ** An old squid.conf will not work with squid 2.5! **
 
 The local (OpenBSD) differences are:
 - configuration files are in		${SYSCONFDIR}
@@ -10,9 +10,9 @@ The local (OpenBSD) differences are:
 - sample error message files are in	${PREFIX}/share/examples/squid/errors
 - icons are in 				${PREFIX}/share/squid/icons
 - sample icons are in			${PREFIX}/share/examples/squid/icons
-- the cache is in 			${STATEDIR}/cache
-- logs are stored in 			${STATEDIR}/logs
-- the ugid squid runs as is		www:www
+- the cache is in 			${SQUIDDIR}/cache
+- logs are stored in 			${SQUIDDIR}/logs
+- the ugid squid runs as is		nobody:nogroup
 
 Please remember to initialize the cache by running "squid -z" before
 trying to run Squid for the first time.

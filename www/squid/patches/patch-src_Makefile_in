@@ -1,0 +1,103 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2002/02/20 01:17:03 brad Exp $
+--- src/Makefile.in.orig	Thu Feb  7 12:47:49 2002
++++ src/Makefile.in	Thu Feb  7 13:03:31 2002
+@@ -791,37 +791,37 @@ CCDEPMODE = @CCDEPMODE@
+ uninstall-info-am:
+ install-dataDATA: $(data_DATA)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(datadir)
++	$(mkinstalldirs) $(DESTDIR)$(prefix)/share/examples/squid
+ 	@list='$(data_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(datadir)/$$f"; \
+-	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(datadir)/$$f; \
++	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(prefix)/share/examples/squid/$$f"; \
++	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(prefix)/share/examples/squid/$$f; \
+ 	done
+ 
+ uninstall-dataDATA:
+ 	@$(NORMAL_UNINSTALL)
+ 	@list='$(data_DATA)'; for p in $$list; do \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " rm -f $(DESTDIR)$(datadir)/$$f"; \
+-	  rm -f $(DESTDIR)$(datadir)/$$f; \
++	  echo " rm -f $(DESTDIR)$(prefix)/share/examples/squid/$$f"; \
++	  rm -f $(DESTDIR)$(prefix)/share/examples/squid/$$f; \
+ 	done
+ install-sysconfDATA: $(sysconf_DATA)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
++	$(mkinstalldirs) $(DESTDIR)$(prefix)/share/examples/squid
+ 	@list='$(sysconf_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(sysconfdir)/$$f"; \
+-	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(sysconfdir)/$$f; \
++	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(prefix)/share/examples/squid/$$f"; \
++	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(prefix)/share/examples/squid/$$f; \
+ 	done
+ 
+ uninstall-sysconfDATA:
+ 	@$(NORMAL_UNINSTALL)
+ 	@list='$(sysconf_DATA)'; for p in $$list; do \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " rm -f $(DESTDIR)$(sysconfdir)/$$f"; \
+-	  rm -f $(DESTDIR)$(sysconfdir)/$$f; \
++	  echo " rm -f $(DESTDIR)$(prefix)/share/examples/squid/$$f"; \
++	  rm -f $(DESTDIR)$(prefix)/share/examples/squid/$$f; \
+ 	done
+ 
+ # This directory's subdirectories are mostly independent; you can cd
+@@ -955,7 +955,7 @@ check: check-recursive
+ all-am: Makefile $(PROGRAMS) $(DATA)
+ installdirs: installdirs-recursive
+ installdirs-am:
+-	$(mkinstalldirs) $(DESTDIR)$(bindir) $(DESTDIR)$(libexecdir) $(DESTDIR)$(datadir) $(DESTDIR)$(sysconfdir)
++	$(mkinstalldirs) $(DESTDIR)$(bindir) $(DESTDIR)$(libexecdir) $(DESTDIR)$(prefix)/share/examples/squid
+ 
+ install: install-recursive
+ install-exec: install-exec-recursive
+@@ -1104,28 +1104,28 @@ auth_modules.c: auth_modules.sh Makefile
+ 	@$(SHELL) $(srcdir)/auth_modules.sh $(AUTH_MODULES) >auth_modules.c
+ 
+ install-data-local: install-sysconfDATA install-dataDATA
+-	@if test -f $(DESTDIR)$(sysconfdir)/mime.conf ; then \
+-	        echo "$@ will not overwrite existing $(DESTDIR)$(sysconfdir)/mime.conf" ; \
++	@if test -f $(DESTDIR)$(prefix)/share/examples/squid/mime.conf ; then \
++	        echo "$@ will not overwrite existing $(DESTDIR)$(prefix)/share/examples/squid/mime.conf" ; \
+ 	else \
+-	        echo "$(INSTALL_DATA) $(srcdir)/mime.conf.default $(DESTDIR)$(sysconfdir)/mime.conf" ;\
+-	        $(INSTALL_DATA) $(srcdir)/mime.conf.default $(DESTDIR)$(sysconfdir)/mime.conf; \
++	        echo "$(INSTALL_DATA) $(srcdir)/mime.conf.default $(DESTDIR)$(prefix)/share/examples/squid/mime.conf" ;\
++	        $(INSTALL_DATA) $(srcdir)/mime.conf.default $(DESTDIR)$(prefix)/share/examples/squid/mime.conf; \
+ 	fi
+-	@if test -f $(DESTDIR)$(sysconfdir)/squid.conf ; then \
+-	        echo "$@ will not overwrite existing $(DESTDIR)$(sysconfdir)/squid.conf" ; \
++	@if test -f $(DESTDIR)$(prefix)/share/examples/squid/squid.conf ; then \
++	        echo "$@ will not overwrite existing $(DESTDIR)$(prefix)/share/examples/squid/squid.conf" ; \
+ 	else \
+-	        echo "$(INSTALL_DATA) squid.conf.default $(DESTDIR)$(sysconfdir)/squid.conf"; \
+-	        $(INSTALL_DATA) squid.conf.default $(DESTDIR)$(sysconfdir)/squid.conf; \
++	        echo "$(INSTALL_DATA) squid.conf.default $(DESTDIR)$(prefix)/share/examples/squid/squid.conf"; \
++	        $(INSTALL_DATA) squid.conf.default $(DESTDIR)$(prefix)/share/examples/squid/squid.conf; \
+ 	fi
+ 	$(mkinstalldirs) $(DESTDIR)$(DEFAULT_LOG_PREFIX)
+ 
+ uninstall-local:
+-	@if test -f $(DESTDIR)$(sysconfdir)/mime.conf ; then \
+-		echo "rm -f $(DESTDIR)$(sysconfdir)/mime.conf"; \
+-		$(RM) -f $(DESTDIR)$(sysconfdir)/mime.conf; \
++	@if test -f $(DESTDIR)$(prefix)/share/examples/squid/mime.conf ; then \
++		echo "rm -f $(DESTDIR)$(prefix)/share/examples/squid/mime.conf"; \
++		$(RM) -f $(DESTDIR)$(prefix)/share/examples/squid/mime.conf; \
+ 	fi
+-	@if test -f $(DESTDIR)$(sysconfdir)/squid.conf ; then \
+-		echo "rm -f $(DESTDIR)$(sysconfdir)/squid.conf"; \
+-		$(RM) -f $(DESTDIR)$(sysconfdir)/squid.conf; \
++	@if test -f $(DESTDIR)$(prefix)/share/examples/squid/squid.conf ; then \
++		echo "rm -f $(DESTDIR)$(prefix)/share/examples/squid/squid.conf"; \
++		$(RM) -f $(DESTDIR)$(prefix)/share/examples/squid/squid.conf; \
+ 	fi
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
