@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/11 13:29:22 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2005/01/04 20:59:17 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64 amd64 powerpc
 
@@ -41,7 +41,7 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 # Regression tests are too hard to adapt to run here
 NO_REGRESS=	Yes
-SUBST_VARS=	LOCALBASE PORTSDIR
+SUBST_VARS=	LOCALBASE
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
 				${WRKSRC}/nsprpub/build/autoconf \
