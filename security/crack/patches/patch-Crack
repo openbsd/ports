@@ -1,0 +1,52 @@
+--- Crack.orig	Fri Dec 20 18:09:41 1996
++++ Crack	Thu May  4 18:59:18 2000
+@@ -279,23 +279,11 @@
+ # Sanity test bindir - written in gruntscript for clarity.
+ ###
+ 
+-bdname=`scripts/binstamp 2>/dev/null`
+-
+-if [ "x$bdname" = "x" ]
+-then
+-	echo "Crack: error: cannot continue as binstamp returned empty string" 1>&2
+-	exit 0
+-fi
+-
+-echo "Stamp: $bdname"
+-echo ""
+-
+-
+ if [ "x$1" != "x" ]
+ then
+ 	if [ "$1" = "-fmt" ]            # use generic name
+ 	then
+-		bindir=run/bin/$bdname
++		bindir=run/bin
+ 	elif [ -d run/bin/$1 ]          # have been here before
+ 	then
+ 		bindir=run/bin/$1
+@@ -305,20 +293,20 @@
+ 		bindir=run/bin/$1
+ 		shift
+ 	else                            # use generic name
+-		bindir=run/bin/$bdname
++		bindir=run/bin
+ 	fi
+ else                                    # supporting "-makeonly"
+ 	if [ "$makeonlyflag" != "" ]
+ 	then
+-		bindir=run/bin/$bdname
++		bindir=run/bin
+ 
+ 	elif [ "$makedictflag" != "" ]
+ 	then
+-		bindir=run/bin/$bdname
++		bindir=run/bin
+ 
+ 	elif [ "$remoteflag" != "" ]
+ 	then
+-		bindir=run/bin/$bdname
++		bindir=run/bin
+ 	else
+ 		echo $usage 1>&2
+ 		exit 1

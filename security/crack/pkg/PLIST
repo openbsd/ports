@@ -1,4 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.3 2000/05/05 01:14:54 turan Exp $
 crack/Crack
+crack/Crack.orig
 crack/LICENCE
 crack/Makefile
 crack/Reporter
@@ -107,13 +109,13 @@ crack/extra/b64encode
 crack/extra/brute.c
 crack/manual.html
 crack/manual.txt
-crack/run/bin/openbsd-2-intel_pentium_iii_genuineintel_686-class_512kb_l2_cache_/cracker
-crack/run/bin/openbsd-2-intel_pentium_iii_genuineintel_686-class_512kb_l2_cache_/dawg
-crack/run/bin/openbsd-2-intel_pentium_iii_genuineintel_686-class_512kb_l2_cache_/dictfilt
-crack/run/bin/openbsd-2-intel_pentium_iii_genuineintel_686-class_512kb_l2_cache_/kickdict
-crack/run/bin/openbsd-2-intel_pentium_iii_genuineintel_686-class_512kb_l2_cache_/libc5.a
-crack/run/bin/openbsd-2-intel_pentium_iii_genuineintel_686-class_512kb_l2_cache_/stdlib-cracker
-crack/run/bin/openbsd-2-intel_pentium_iii_genuineintel_686-class_512kb_l2_cache_/xdawg
+crack/run/bin/cracker
+crack/run/bin/dawg
+crack/run/bin/dictfilt
+crack/run/bin/kickdict
+crack/run/bin/libc5.a
+crack/run/bin/stdlib-cracker
+crack/run/bin/xdawg
 crack/run/dict/.dictmade
 crack/run/dict/1.dwg.gz
 crack/run/dict/2.dwg.gz
@@ -238,7 +240,6 @@ crack/src/util/kickdict.c
 @dirrm crack/src
 @dirrm crack/scripts
 @dirrm crack/run/dict
-@dirrm crack/run/bin/openbsd-2-intel_pentium_iii_genuineintel_686-class_512kb_l2_cache_
 @dirrm crack/run/bin
 @dirrm crack/run
 @dirrm crack/extra
