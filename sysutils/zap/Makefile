@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/09/29 23:59:17 ian Exp $
+# $OpenBSD: Makefile,v 1.2 1999/05/31 14:35:54 ian Exp $
 #
 
-PKGNAME=	zap-1.0
-DISTNAME=	zap-1.0
+PKGNAME=	zap-1.1
+DISTNAME=	zap-1.1
+WRKSRC=		${WRKDIR}/zap
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.darwinsys.com/freeware/
 
