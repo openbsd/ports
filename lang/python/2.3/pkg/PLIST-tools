@@ -1,10 +1,14 @@
-@comment $OpenBSD: PLIST-tools,v 1.1.1.1 2003/12/31 17:38:31 sturm Exp $
+@comment $OpenBSD: PLIST-tools,v 1.2 2004/08/05 21:50:25 xsa Exp $
 @option no-default-conflict
 @pkgcfl python-tools-2.3*
+lib/python2.3/Tools/
 lib/python2.3/Tools/README
+lib/python2.3/Tools/audiopy/
 lib/python2.3/Tools/audiopy/README
 lib/python2.3/Tools/audiopy/audiopy
+lib/python2.3/Tools/bgen/
 lib/python2.3/Tools/bgen/README
+lib/python2.3/Tools/bgen/bgen/
 lib/python2.3/Tools/bgen/bgen/bgen.py
 lib/python2.3/Tools/bgen/bgen/bgenBuffer.py
 lib/python2.3/Tools/bgen/bgen/bgenGenerator.py
@@ -19,6 +23,7 @@ lib/python2.3/Tools/bgen/bgen/bgenType.py
 lib/python2.3/Tools/bgen/bgen/bgenVariable.py
 lib/python2.3/Tools/bgen/bgen/macsupport.py
 lib/python2.3/Tools/bgen/bgen/scantools.py
+lib/python2.3/Tools/compiler/
 lib/python2.3/Tools/compiler/ACKS
 lib/python2.3/Tools/compiler/README
 lib/python2.3/Tools/compiler/ast.txt
@@ -28,15 +33,18 @@ lib/python2.3/Tools/compiler/demo.py
 lib/python2.3/Tools/compiler/dumppyc.py
 lib/python2.3/Tools/compiler/regrtest.py
 lib/python2.3/Tools/compiler/stacktest.py
+lib/python2.3/Tools/faqwiz/
 lib/python2.3/Tools/faqwiz/README
 lib/python2.3/Tools/faqwiz/faqconf.py
 lib/python2.3/Tools/faqwiz/faqcust.py
 lib/python2.3/Tools/faqwiz/faqw.py
 lib/python2.3/Tools/faqwiz/faqwiz.py
 lib/python2.3/Tools/faqwiz/move-faqwiz.sh
+lib/python2.3/Tools/framer/
 lib/python2.3/Tools/framer/README.txt
 lib/python2.3/Tools/framer/TODO.txt
 lib/python2.3/Tools/framer/example.py
+lib/python2.3/Tools/framer/framer/
 lib/python2.3/Tools/framer/framer/__init__.py
 lib/python2.3/Tools/framer/framer/bases.py
 lib/python2.3/Tools/framer/framer/function.py
@@ -46,6 +54,7 @@ lib/python2.3/Tools/framer/framer/struct.py
 lib/python2.3/Tools/framer/framer/structparse.py
 lib/python2.3/Tools/framer/framer/template.py
 lib/python2.3/Tools/framer/framer/util.py
+lib/python2.3/Tools/freeze/
 lib/python2.3/Tools/freeze/.cvsignore
 lib/python2.3/Tools/freeze/README
 lib/python2.3/Tools/freeze/bkfile.py
@@ -60,11 +69,14 @@ lib/python2.3/Tools/freeze/makemakefile.py
 lib/python2.3/Tools/freeze/parsesetup.py
 lib/python2.3/Tools/freeze/win32.html
 lib/python2.3/Tools/freeze/winmakemakefile.py
+lib/python2.3/Tools/i18n/
 lib/python2.3/Tools/i18n/msgfmt.py
 lib/python2.3/Tools/i18n/pygettext.py
+lib/python2.3/Tools/modulator/
 lib/python2.3/Tools/modulator/EXAMPLE.py
 lib/python2.3/Tools/modulator/README
 lib/python2.3/Tools/modulator/ScrolledListbox.py
+lib/python2.3/Tools/modulator/Templates/
 lib/python2.3/Tools/modulator/Templates/copyright
 lib/python2.3/Tools/modulator/Templates/module_head
 lib/python2.3/Tools/modulator/Templates/module_method
@@ -91,6 +103,7 @@ lib/python2.3/Tools/modulator/Tkextra.py
 lib/python2.3/Tools/modulator/genmodule.py
 lib/python2.3/Tools/modulator/modulator.py
 lib/python2.3/Tools/modulator/varsubst.py
+lib/python2.3/Tools/pynche/
 lib/python2.3/Tools/pynche/ChipViewer.py
 lib/python2.3/Tools/pynche/ColorDB.py
 lib/python2.3/Tools/pynche/DetailsViewer.py
@@ -102,6 +115,7 @@ lib/python2.3/Tools/pynche/StripViewer.py
 lib/python2.3/Tools/pynche/Switchboard.py
 lib/python2.3/Tools/pynche/TextViewer.py
 lib/python2.3/Tools/pynche/TypeinViewer.py
+lib/python2.3/Tools/pynche/X/
 lib/python2.3/Tools/pynche/X/rgb.txt
 lib/python2.3/Tools/pynche/X/xlicense.txt
 lib/python2.3/Tools/pynche/__init__.py
@@ -112,6 +126,7 @@ lib/python2.3/Tools/pynche/pynche
 lib/python2.3/Tools/pynche/pynche.pyw
 lib/python2.3/Tools/pynche/webcolors.txt
 lib/python2.3/Tools/pynche/websafe.txt
+lib/python2.3/Tools/scripts/
 lib/python2.3/Tools/scripts/README
 lib/python2.3/Tools/scripts/byext.py
 lib/python2.3/Tools/scripts/byteyears.py
@@ -173,12 +188,15 @@ lib/python2.3/Tools/scripts/treesync.py
 lib/python2.3/Tools/scripts/untabify.py
 lib/python2.3/Tools/scripts/which.py
 lib/python2.3/Tools/scripts/xxci.py
+lib/python2.3/Tools/unicode/
 lib/python2.3/Tools/unicode/makeunicodedata.py
 lib/python2.3/Tools/unicode/mkstringprep.py
+lib/python2.3/Tools/versioncheck/
 lib/python2.3/Tools/versioncheck/README
 lib/python2.3/Tools/versioncheck/_checkversion.py
 lib/python2.3/Tools/versioncheck/checkversions.py
 lib/python2.3/Tools/versioncheck/pyversioncheck.py
+lib/python2.3/Tools/webchecker/
 lib/python2.3/Tools/webchecker/README
 lib/python2.3/Tools/webchecker/tktools.py
 lib/python2.3/Tools/webchecker/wcgui.py
@@ -186,24 +204,6 @@ lib/python2.3/Tools/webchecker/wcmac.py
 lib/python2.3/Tools/webchecker/webchecker.py
 lib/python2.3/Tools/webchecker/websucker.py
 lib/python2.3/Tools/webchecker/wsgui.py
+lib/python2.3/Tools/world/
 lib/python2.3/Tools/world/README
 lib/python2.3/Tools/world/world
-@dirrm lib/python2.3/Tools/world
-@dirrm lib/python2.3/Tools/webchecker
-@dirrm lib/python2.3/Tools/versioncheck
-@dirrm lib/python2.3/Tools/unicode
-@dirrm lib/python2.3/Tools/scripts
-@dirrm lib/python2.3/Tools/pynche/X
-@dirrm lib/python2.3/Tools/pynche
-@dirrm lib/python2.3/Tools/modulator/Templates
-@dirrm lib/python2.3/Tools/modulator
-@dirrm lib/python2.3/Tools/i18n
-@dirrm lib/python2.3/Tools/freeze
-@dirrm lib/python2.3/Tools/framer/framer
-@dirrm lib/python2.3/Tools/framer
-@dirrm lib/python2.3/Tools/faqwiz
-@dirrm lib/python2.3/Tools/compiler
-@dirrm lib/python2.3/Tools/bgen/bgen
-@dirrm lib/python2.3/Tools/bgen
-@dirrm lib/python2.3/Tools/audiopy
-@dirrm lib/python2.3/Tools

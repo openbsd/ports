@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-idle,v 1.1.1.1 2003/12/31 17:38:31 sturm Exp $
+@comment $OpenBSD: PLIST-idle,v 1.2 2004/08/05 21:50:25 xsa Exp $
 @option no-default-conflict
 @pkgcfl python-idle-2.3*
 bin/idle2.3
+lib/python2.3/idlelib/
 lib/python2.3/idlelib/AutoExpand.py
 lib/python2.3/idlelib/AutoExpand.pyc
 lib/python2.3/idlelib/AutoExpand.pyo
@@ -44,6 +45,7 @@ lib/python2.3/idlelib/HISTORY.txt
 lib/python2.3/idlelib/IOBinding.py
 lib/python2.3/idlelib/IOBinding.pyc
 lib/python2.3/idlelib/IOBinding.pyo
+lib/python2.3/idlelib/Icons/
 lib/python2.3/idlelib/Icons/folder.gif
 lib/python2.3/idlelib/Icons/idle.icns
 lib/python2.3/idlelib/Icons/minusnode.gif
@@ -183,5 +185,3 @@ lib/python2.3/idlelib/testcode.pyo
 lib/python2.3/idlelib/textView.py
 lib/python2.3/idlelib/textView.pyc
 lib/python2.3/idlelib/textView.pyo
-@dirrm lib/python2.3/idlelib/Icons
-@dirrm lib/python2.3/idlelib

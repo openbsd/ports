@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG-tkinter.no_shared,v 1.1.1.1 2003/12/31 17:38:29 sturm Exp $
+@comment $OpenBSD: PFRAG-tkinter.no_shared,v 1.2 2004/08/05 21:50:25 xsa Exp $
+lib/python2.3/lib-tk/
 lib/python2.3/lib-tk/Canvas.py
 lib/python2.3/lib-tk/Canvas.pyc
 lib/python2.3/lib-tk/Canvas.pyo
@@ -50,4 +51,3 @@ lib/python2.3/lib-tk/tkSimpleDialog.pyo
 lib/python2.3/lib-tk/turtle.py
 lib/python2.3/lib-tk/turtle.pyc
 lib/python2.3/lib-tk/turtle.pyo
-@dirrm lib/python2.3/lib-tk

@@ -1,5 +1,10 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/12/31 17:38:29 sturm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/05 21:50:25 xsa Exp $
 %%mm%%
+@comment lib/libpython2.3.so
+lib/libpython2.3.so.0.0
+lib/python2.3/config/libpython2.3.so.0.0
+lib/python2.3/lib-dynload/
+@comment lib/python2.3/lib-dynload/_bsddb.so
 lib/python2.3/lib-dynload/_csv.so
 lib/python2.3/lib-dynload/_curses_panel.so
 lib/python2.3/lib-dynload/_cursesmodule.so
@@ -9,8 +14,10 @@ lib/python2.3/lib-dynload/_random.so
 lib/python2.3/lib-dynload/_socketmodule.so
 lib/python2.3/lib-dynload/_ssl.so
 lib/python2.3/lib-dynload/_testcapimodule.so
+@comment lib/python2.3/lib-dynload/_tkinter.so
 lib/python2.3/lib-dynload/_weakref.so
 lib/python2.3/lib-dynload/arraymodule.so
+@comment lib/python2.3/lib-dynload/audioop.so
 lib/python2.3/lib-dynload/binascii.so
 lib/python2.3/lib-dynload/bsddb185.so
 lib/python2.3/lib-dynload/bz2module.so
@@ -20,22 +27,30 @@ lib/python2.3/lib-dynload/cmathmodule.so
 lib/python2.3/lib-dynload/cryptmodule.so
 lib/python2.3/lib-dynload/datetime.so
 lib/python2.3/lib-dynload/dbmmodule.so
+@comment lib/python2.3/lib-dynload/dl.so
 lib/python2.3/lib-dynload/fcntlmodule.so
 lib/python2.3/lib-dynload/fpectlmodule.so
 lib/python2.3/lib-dynload/fpetestmodule.so
+@comment lib/python2.3/lib-dynload/gdbm.so
+@comment lib/python2.3/lib-dynload/gdbmmodule.so
 lib/python2.3/lib-dynload/grpmodule.so
+@comment lib/python2.3/lib-dynload/imageop.so
 lib/python2.3/lib-dynload/itertools.so
 lib/python2.3/lib-dynload/mathmodule.so
 lib/python2.3/lib-dynload/md5module.so
 lib/python2.3/lib-dynload/mmapmodule.so
+@comment lib/python2.3/lib-dynload/mpz.so
+@comment lib/python2.3/lib-dynload/mpzmodule.so
 lib/python2.3/lib-dynload/nismodule.so
 lib/python2.3/lib-dynload/operator.so
 lib/python2.3/lib-dynload/parsermodule.so
 lib/python2.3/lib-dynload/pcre.so
 lib/python2.3/lib-dynload/pwdmodule.so
+@comment lib/python2.3/lib-dynload/pyexpat.so
 lib/python2.3/lib-dynload/readline.so
 lib/python2.3/lib-dynload/regex.so
 lib/python2.3/lib-dynload/resource.so
+@comment lib/python2.3/lib-dynload/rgbimgmodule.so
 lib/python2.3/lib-dynload/rotormodule.so
 lib/python2.3/lib-dynload/selectmodule.so
 lib/python2.3/lib-dynload/shamodule.so
@@ -49,7 +64,3 @@ lib/python2.3/lib-dynload/unicodedata.so
 lib/python2.3/lib-dynload/xreadlinesmodule.so
 lib/python2.3/lib-dynload/xxsubtype.so
 lib/python2.3/lib-dynload/zlibmodule.so
-lib/libpython2.3.so.0.0
-lib/python2.3/config/libpython2.3.so.0.0
-DYNLIBDIR(%D/lib)
-@dirrm lib/python2.3/lib-dynload

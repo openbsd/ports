@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-tests,v 1.1.1.1 2003/12/31 17:38:33 sturm Exp $
+@comment $OpenBSD: PLIST-tests,v 1.2 2004/08/05 21:50:25 xsa Exp $
 @option no-default-conflict
 @pkgcfl python-tests-2.3*
+lib/python2.3/test/
 lib/python2.3/test/185test.db
 lib/python2.3/test/README
 lib/python2.3/test/__init__.py
@@ -20,10 +21,10 @@ lib/python2.3/test/double_const.py
 lib/python2.3/test/double_const.pyc
 lib/python2.3/test/double_const.pyo
 lib/python2.3/test/greyrgb.uue
+lib/python2.3/test/output/
 lib/python2.3/test/output/test_MimeWriter
 lib/python2.3/test/output/test_asynchat
 lib/python2.3/test/output/test_augassign
-lib/python2.3/test/output/test_binascii
 lib/python2.3/test/output/test_cgi
 lib/python2.3/test/output/test_class
 lib/python2.3/test/output/test_coercion
@@ -893,5 +894,3 @@ lib/python2.3/test/tokenize_tests.txt
 lib/python2.3/test/xmltests.py
 lib/python2.3/test/xmltests.pyc
 lib/python2.3/test/xmltests.pyo
-@dirrm lib/python2.3/test/output
-@dirrm lib/python2.3/test
