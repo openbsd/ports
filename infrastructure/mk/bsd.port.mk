@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.289 2000/06/01 17:33:53 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.290 2000/06/02 11:42:53 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -196,6 +196,11 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #						target.
 # HAS_CONFIGURE	- Says that the port has its own configure script.
 # GNU_CONFIGURE	- Set if you are using GNU configure (optional).
+#
+# CONFIGURE_STYLE
+#               - Set to value corresponding to some standard configuration
+#				  perl: perl's MakeMaker Makefile.PL
+#
 # YACC          - yacc program to pass to configure script (default: yacc)
 #                 override with bison is port requires bison.
 # CONFIGURE_SCRIPT - Name of configure script, defaults to 'configure'.
@@ -986,6 +991,8 @@ PKGREPOSITORYSUBDIR?=	All
 PKGREPOSITORY?=		${PACKAGES}/${PKGREPOSITORYSUBDIR}
 PKGFILE?=		${PKGREPOSITORY}/${PKGNAME}${PKG_SUFX}
 
+CONFIGURE_STYLE?=
+
 CONFIGURE_SCRIPT?=	configure
 .if defined(SEPARATE_BUILD)
 _CONFIGURE_SCRIPT=${WRKSRC}/${CONFIGURE_SCRIPT}
@@ -1466,6 +1473,20 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 		  ${SCRIPTDIR}/configure; \
 	fi
+.    if ${CONFIGURE_STYLE:L} == "perl"
+	@arch=`/usr/bin/perl -e 'use Config; print $$Config{archname}, "\n";'`; \
+     cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
+     /usr/bin/perl Makefile.PL \
+     	PREFIX='$${DESTDIR}${PREFIX}' \
+		INSTALLSITELIB='$${DESTDIR}${PREFIX}/libdata/perl5/site_perl' \
+		INSTALLSITEARCH="\$${INSTALLSITELIB}/$$arch" \
+		INSTALLPRIVLIB='$${DESTDIR}/usr/libdata/perl5' \
+		INSTALLARCHLIB="\$${INSTALLPRIVLIB}/$$arch" \
+		INSTALLMAN1DIR='$${DESTDIR}${PREFIX}/man/man1' \
+		INSTALLMAN3DIR='$${DESTDIR}${PREFIX}/man/man3' \
+		INSTALLBIN='$${PREFIX}/bin' \
+		INSTALLSCRIPT='$${INSTALLBIN}'
+.    endif
 .    if defined(HAS_CONFIGURE)
 	@cd ${WRKBUILD} && CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
 		CXX="${CXX}" ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
@@ -1527,6 +1548,10 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${SUDO} install -d -m 755 -o root -g wheel ${WRKINST}
 	@${SUDO} mtree -U -e -d -n -p ${WRKINST} \
 		-f ${PORTSDIR}/infrastructure/db/fake.mtree  >/dev/null
+.  if ${CONFIGURE_STYLE:L} == "perl"
+	@${SUDO} mkdir -p ${WRKINST}`/usr/bin/perl -e 'use Config; print $$Config{installarchlib}, "\n";'`
+.  endif
+
 .  if target(pre-fake)
 	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} pre-fake ${_FAKE_SETUP}
 .  endif
