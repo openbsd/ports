@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2000/04/09 17:38:37 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/08/10 10:31:40 kevlo Exp $
 
 DISTNAME=	decss
-PKGNAME=	decss-0.0.5
+PKGNAME=	decss-0.0.6
 CATEGORIES=	www
-FAKE=No
+NEED_VERSION=	1.319
 
-MASTER_SITES=   http://www.totse.com/DeCSS/
+MASTER_SITES=   http://www.pigdog.org/decss/
 
 MAINTAINER=     kevlo@openbsd.org
 
-LICENSE_TYPE=           PERL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -22,5 +21,8 @@ NO_BUILD=	Yes
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/DeCSS
 	${INSTALL_SCRIPT} ${WRKSRC}/DeCSS ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/DeCSS
+	cd ${WRKSRC} && ${INSTALL_DATA} FAQ README decss-now.png \
+           decss_mirror.html original_pigdog_article.txt \
+	   ${PREFIX}/share/doc/DeCSS
+
 .include <bsd.port.mk>
