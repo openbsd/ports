@@ -1,6 +1,6 @@
-$OpenBSD: patch-source_names_c,v 1.1 2003/03/27 15:46:11 brad Exp $
---- source/names.c.orig	Mon Jan  8 01:24:22 2001
-+++ source/names.c	Wed Mar 26 23:00:45 2003
+$OpenBSD: patch-source_names_c,v 1.2 2003/05/14 00:52:36 brad Exp $
+--- source/names.c.orig	Tue May 13 18:30:05 2003
++++ source/names.c	Tue May 13 18:29:59 2003
 @@ -568,7 +568,7 @@ NickList	*tnl = NULL;
  
     	*nmodes = 0;
@@ -10,12 +10,24 @@ $OpenBSD: patch-source_names_c,v 1.1 2003/03/27 15:46:11 brad Exp $
  	{
  		isbanned = isopped = isvoiced = 0;
  		switch (*modes) 
-@@ -738,7 +738,7 @@ NickList	*tnl = NULL;
+@@ -738,7 +738,8 @@ NickList	*tnl = NULL;
  
     /* modes which can be done multiple times are added here */
  
 -	for (tucm = ucm; tucm; tucm = tucm->next) 
-+	for (tucm = ucm; tucm && (strlen(nmodes) + 2) < sizeof nmodes; tucm = tucm->next) 
++	for (tucm = ucm; tucm && (strlen(nmodes) + 2) < sizeof nmodes;
++		tucm = tucm->next) 
  	{
  		if (tucm->o_ed) 
  		{
+@@ -995,8 +996,9 @@ static	int decifer_mode(char *from, char
+ 				malloc_strcpy(key, next_arg(rest, &rest));
+ 			else
+ 			{
+-				if (rest && *key && !my_strnicmp(rest, *key, strlen(*key)))
++				if (rest && *key && (!my_strnicmp(rest, *key, strlen(*key)) || rest[0] == '*'))
+ 					next_arg(rest, &rest);
++
+ 				new_free(key);
+ 			}
+ 			(*channel)->i_mode = -1;
