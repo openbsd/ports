@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2001/03/07 19:05:34 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2001/04/21 18:54:11 peter Exp $
+
+COMMENT=	"MTA for systems connected to the Internet"
 
 DISTNAME=	exim-3.22
 CATEGORIES=	mail
-NEED_VERSION=	1.336
+NEED_VERSION=	1.405
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/ \
 		ftp://ftp.exim.org/pub/exim/ \
 		ftp://ftp.fu-berlin.de/unix/mail/exim/
@@ -18,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 # ldap - once openldap is supported by exim
-FLAVORS=	no_x11 no_perl mysql pgsql ldap no_tls
+FLAVORS=	no_x11 no_perl mysql postgresql ldap no_ssl
 FLAVOR?=
 
 MAKE_ENV=	FLAVOR="${FLAVOR}"
@@ -51,14 +53,14 @@ EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include/mysql
 EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 .endif
 
-.if ${FLAVOR:L:Mpgsql}
+.if ${FLAVOR:L:Mpostgresql}
 LIB_DEPENDS+=	pq.2::databases/postgresql
 EXIM_MAKECAT+=	"LOOKUP_PGSQL=yes\n"
-EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include/pgsql
-EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib/pgsql -lpq
+EXIM_LOOKUP_INCLUDE+=	-I${LOCALBASE}/include/postgresql
+EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib -lpq
 .endif
 
-.if !${FLAVOR:L:Mno_tls}
+.if !${FLAVOR:L:Mno_ssl}
 EXIM_MAKECAT+=	"SUPPORT_TLS=yes\nTLS_LIBS=-lssl -lcrypto\n"
 .endif
 
