@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/02/18 16:15:59 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/03/31 17:16:52 sturm Exp $
 share/texmf-local/doc/latex/foiltex/foiltex.dtx
 share/texmf-local/doc/latex/foiltex/foiltex.dvi
 share/texmf-local/doc/latex/foiltex/sampfoil.tex
@@ -12,5 +12,5 @@ share/texmf-local/tex/latex/foiltex/foils.sty
 share/texmf-local/tex/latex/foiltex/foilshrt.clo
 @dirrm share/texmf-local/tex/latex/foiltex
 @dirrm share/texmf-local/doc/latex/foiltex
-@exec texhash
-@unexec texhash
+@exec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
+@unexec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2003/02/18 16:10:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/03/31 17:16:52 sturm Exp $
 
 COMMENT=	"LaTeX class to produce high quality slides"
 
 DISTNAME=	prosper-1.00.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	print
 
 MAINTAINER=	Sebastian Stark <seb@todesplanet.de>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/02/18 16:10:53 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/03/31 17:16:52 sturm Exp $
 share/examples/prosper/Example.tex
 share/examples/prosper/ExampleAlienglow.tex
 share/examples/prosper/ExampleAutumn.tex
@@ -45,5 +45,5 @@ share/texmf-local/tex/latex/prosper/prosper.cls
 @dirrm share/texmf-local/tex/latex/prosper
 @dirrm share/texmf-local/doc/latex/prosper
 @dirrm share/examples/prosper
-@exec texhash
-@unexec texhash
+@exec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
+@unexec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
