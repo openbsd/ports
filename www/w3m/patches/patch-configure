@@ -1,15 +1,15 @@
-$OpenBSD: patch-configure,v 1.5 2001/12/20 22:36:10 naddy Exp $
---- configure.orig	Thu Nov 15 01:32:13 2001
-+++ configure	Sat Nov 17 03:01:53 2001
-@@ -859,6 +859,7 @@ else
-   inflate=
- fi
+$OpenBSD: patch-configure,v 1.6 2002/02/02 03:19:01 naddy Exp $
+--- configure.orig	Tue Jan 29 20:08:49 2002
++++ configure	Sat Feb  2 03:40:55 2002
+@@ -980,6 +980,7 @@ Linux|linux|LINUX)
+  ;;
+ esac
  
 +if false; then # always use the included gclib for now
  gclib=''
  gcinclude=''
  gctarget=''
-@@ -878,6 +879,7 @@ do
+@@ -999,6 +1000,7 @@ do
      break
    fi
  done

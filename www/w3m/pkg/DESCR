@@ -7,9 +7,9 @@ it has several features Lynx doesn't have:
 * w3m is small
 
 Available flavors:
-  japanese  - Provide Japanese menus and documentation, and properly
-              display Japanese characters in kterm.
   image     - Supports displaying inline images when run from an X11
               terminal emulator.
+  japanese  - Provide Japanese menus and documentation, and properly
+              display Japanese characters in kterm.
 
 WWW: ${HOMEPAGE}

@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.37 2002/02/01 14:33:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2002/02/02 03:19:01 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
 COMMENT=		"text-based web browser/pager"
-COMMENT-japanese=	"Japanese text-based web browser/pager"
 COMMENT-image=		"text-based web browser/pager with inline image support"
+COMMENT-japanese=	"Japanese text-based web browser/pager"
 COMMENT-japanese-image=	"Japanese text-based web browser/pager with image support"
 
-VERSION=	0.2.4
-IMG_VERSION=	2.2
+VERSION=	0.2.5
 
 DISTNAME=	w3m-${VERSION}
 CATEGORIES=	www
@@ -24,12 +23,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	w3m
-MASTER_SITES0=		http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
+MASTER_SITES0=		http://sites.inka.de/mips/unix/distfiles/
 SUPDISTFILES=		${DISTFILES} ${IMG_PATCH}
-IMG_PATCH=		w3m-${VERSION}-img-${IMG_VERSION}.patch.gz:0
+IMG_PATCH=		w3m-${VERSION}-img-2.2.patch.gz:0
 PATCH_DIST_STRIP=	-p1
 
-FLAVORS=	japanese image
+FLAVORS=	image japanese
 FLAVOR?=
 
 CONFIGURE_STYLE= simple
@@ -48,7 +47,6 @@ DOCS=	FAQ.html HISTORY MANUAL.html \
 	keymap.default keymap.lynx menu.default menu.submenu
 
 .if ${FLAVOR:L:Mimage}
-PKGNAME=	w3m-${VERSION}.${IMG_VERSION}
 PATCHFILES=	${IMG_PATCH}
 LIB_DEPENDS=	Imlib.19::graphics/imlib
 CONFIGURE_ENV+=	use_image=y
