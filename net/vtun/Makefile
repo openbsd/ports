@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2003/06/06 00:35:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2003/09/30 15:10:53 naddy Exp $
+
+BROKEN=		"insecure due to protocol flaws"
 
 COMMENT=	"virtual tunnels over TCP/IP networks with traffic shaping"
 
