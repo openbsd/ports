@@ -1,0 +1,24 @@
+$OpenBSD: patch-po_Makefile_in_in,v 1.1 2001/01/09 16:34:55 naddy Exp $
+--- po/Makefile.in.in.orig	Thu Oct 26 21:27:59 2000
++++ po/Makefile.in.in	Tue Jan  9 14:08:39 2001
+@@ -18,7 +18,7 @@ VPATH = @srcdir@
+ 
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+-datadir = $(prefix)/@DATADIRNAME@
++datadir = $(prefix)/share
+ localedir = $(datadir)/locale
+ gnulocaledir = $(prefix)/share/locale
+ gettextsrcdir = $(prefix)/share/gettext/po
+@@ -111,9 +111,9 @@ install-data: install-data-@USE_NLS@
+ install-data-no: all
+ install-data-yes: all
+ 	if test -r "$(MKINSTALLDIRS)"; then \
+-	  $(MKINSTALLDIRS) $(datadir); \
++	  $(MKINSTALLDIRS) $(DESTDIR)$(datadir); \
+ 	else \
+-	  $(SHELL) $(top_srcdir)/mkinstalldirs $(datadir); \
++	  $(SHELL) $(top_srcdir)/mkinstalldirs $(DESTDIR)$(datadir); \
+ 	fi
+ 	@catalogs='$(CATALOGS)'; \
+ 	for cat in $$catalogs; do \

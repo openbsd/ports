@@ -1,10 +1,73 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/07/13 21:36:55 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/01/09 16:34:55 naddy Exp $
 bin/bluefish
 man/man1/bluefish.1
 share/bluefish/bluefish_icon.xpm
 share/bluefish/php3_functions
+share/bluefish/php4_functions
 share/bluefish/rxml_functions
 share/bluefish/ssi_functions
+share/doc/bluefish/de/chapter1.html
+share/doc/bluefish/de/chapter2.html
+share/doc/bluefish/de/chapter3.html
+share/doc/bluefish/de/chapter4.html
+share/doc/bluefish/de/index.html
+share/doc/bluefish/de/manual.book
+share/doc/bluefish/de/preface.html
+share/doc/bluefish/en/chapter1.html
+share/doc/bluefish/en/chapter2.html
+share/doc/bluefish/en/chapter3.html
+share/doc/bluefish/en/chapter4.html
+share/doc/bluefish/en/index.html
+share/doc/bluefish/en/manual.book
+share/doc/bluefish/en/preface.html
+share/doc/bluefish/hu/chapter1.html
+share/doc/bluefish/hu/chapter2.html
+share/doc/bluefish/hu/chapter3.html
+share/doc/bluefish/hu/chapter4.html
+share/doc/bluefish/hu/index.html
+share/doc/bluefish/hu/preface.html
+share/doc/bluefish/images/bluefish.gif
+share/doc/bluefish/images/bluefish.png
+share/doc/bluefish/images/button_close.gif
+share/doc/bluefish/images/button_config.gif
+share/doc/bluefish/images/button_copy.gif
+share/doc/bluefish/images/button_cut.gif
+share/doc/bluefish/images/button_new.gif
+share/doc/bluefish/images/button_new.png
+share/doc/bluefish/images/button_open.gif
+share/doc/bluefish/images/button_paste.gif
+share/doc/bluefish/images/button_print.gif
+share/doc/bluefish/images/button_quickstart.gif
+share/doc/bluefish/images/button_redo.gif
+share/doc/bluefish/images/button_replace.gif
+share/doc/bluefish/images/button_save.gif
+share/doc/bluefish/images/button_saveas.gif
+share/doc/bluefish/images/button_search.gif
+share/doc/bluefish/images/button_undo.gif
+share/doc/bluefish/images/config_editor.png
+share/doc/bluefish/images/config_external.png
+share/doc/bluefish/images/config_gui.png
+share/doc/bluefish/images/config_html.png
+share/doc/bluefish/images/config_img.png
+share/doc/bluefish/images/editarea.gif
+share/doc/bluefish/images/float.gif
+share/doc/bluefish/images/germany.gif
+share/doc/bluefish/images/hungary.gif
+share/doc/bluefish/images/italy.gif
+share/doc/bluefish/images/mainscreen.gif
+share/doc/bluefish/images/mainscreen.png
+share/doc/bluefish/images/project_edit.png
+share/doc/bluefish/images/project_edit_files.png
+share/doc/bluefish/images/project_edit_lists.png
+share/doc/bluefish/images/tfilemenu.gif
+share/doc/bluefish/images/tfilemenu.png
+share/doc/bluefish/images/uk.gif
+share/doc/bluefish/index.html
+share/doc/bluefish/it/chapter1.html
+share/doc/bluefish/it/chapter2.html
+share/doc/bluefish/it/chapter3.html
+share/doc/bluefish/manual.css
+share/locale/br/LC_MESSAGES/bluefish.mo
 share/locale/cs/LC_MESSAGES/bluefish.mo
 share/locale/da/LC_MESSAGES/bluefish.mo
 share/locale/de/LC_MESSAGES/bluefish.mo
@@ -12,8 +75,17 @@ share/locale/el/LC_MESSAGES/bluefish.mo
 share/locale/en/LC_MESSAGES/bluefish.mo
 share/locale/es/LC_MESSAGES/bluefish.mo
 share/locale/fr/LC_MESSAGES/bluefish.mo
+share/locale/hu/LC_MESSAGES/bluefish.mo
 share/locale/it/LC_MESSAGES/bluefish.mo
 share/locale/ja/LC_MESSAGES/bluefish.mo
+share/locale/pl/LC_MESSAGES/bluefish.mo
 share/locale/ro/LC_MESSAGES/bluefish.mo
 share/locale/ru/LC_MESSAGES/bluefish.mo
+share/locale/sv/LC_MESSAGES/bluefish.mo
 @dirrm share/bluefish
+@dirrm share/doc/bluefish/de
+@dirrm share/doc/bluefish/en
+@dirrm share/doc/bluefish/hu
+@dirrm share/doc/bluefish/images
+@dirrm share/doc/bluefish/it
+@dirrm share/doc/bluefish

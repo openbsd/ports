@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_Makefile_in,v 1.1 2001/01/09 16:34:55 naddy Exp $
+--- man/Makefile.in.orig	Sat Nov 25 11:20:47 2000
++++ man/Makefile.in	Tue Jan  9 14:08:39 2001
+@@ -29,7 +29,7 @@ mandirprefix = @mandir@
+ exec_prefix = @exec_prefix@
+ bindir = $(exec_prefix)/bin
+ infodir = $(prefix)/info
+-mandir = $(mandirprefix)/man/man1
++mandir = $(mandirprefix)/man1
+ localedir = @localedir@
+ gnulocaledir = $(prefix)/share/locale
+ aliaspath = $(localedir):.

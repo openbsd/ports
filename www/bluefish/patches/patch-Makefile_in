@@ -1,63 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2000/07/13 21:36:54 naddy Exp $
---- Makefile.in.orig	Mon Apr 17 23:31:14 2000
-+++ Makefile.in	Wed Jul 12 16:49:24 2000
-@@ -29,21 +29,21 @@ exec_prefix = @exec_prefix@
+$OpenBSD: patch-Makefile_in,v 1.2 2001/01/09 16:34:55 naddy Exp $
+--- Makefile.in.orig	Mon Dec  4 00:39:11 2000
++++ Makefile.in	Tue Jan  9 14:08:39 2001
+@@ -30,7 +30,7 @@ exec_prefix = @exec_prefix@
  bindir = @bindir@
  datadir = @datadir@
  pkgdatadir = @pkgdatadir@
--pixmapsdir = /usr/share/pixmaps
+-pixmapsdir = @prefix@/share/pixmaps
 +pixmapsdir = @pkgdatadir@
  
  INSTALL = @INSTALL@
- 
- bluefish:all
- all:
--	@$(MAKE) -C intl all
--	@$(MAKE) -C po all
--	@$(MAKE) -C man all
-+	@cd intl;  $(MAKE) all
-+	@cd po; $(MAKE) all
-+	@cd man; $(MAKE) all
- 	@cd ${srcdir}/ && $(MAKE) all
- 
- clean:
--	@$(MAKE) -C intl clean
--	@$(MAKE) -C po clean
--	@$(MAKE) -C man clean
-+	@cd intl; $(MAKE) clean
-+	@cd po; $(MAKE) clean
-+	@cd man; $(MAKE) clean
- 	rm -f core *~
- 	@cd ${srcdir}/ && $(MAKE) clean
- 
-@@ -52,16 +52,16 @@ patchclean: clean
- 	@cd ${srcdir}/ && $(MAKE) patchclean  
- 
- distclean:
--	@$(MAKE) -C intl distclean
--	@$(MAKE) -C po distclean
--	@$(MAKE) -C man distclean
-+	@cd intl; $(MAKE) distclean
-+	@cd po; $(MAKE) distclean
-+	@cd man; $(MAKE) distclean
- 	@cd ${srcdir}/ && $(MAKE) distclean
- 	rm -f Makefile ${srcdir}/Makefile ${srcdir}/.depends config.status config.cache config.log
- 	rm -f *.orig *.rej
- 
- install:
--	@$(MAKE) -C po install
--	@$(MAKE) -C man install
-+	@cd po; $(MAKE) install
-+	@cd man; $(MAKE) install
- 	$(INSTALL) -d -m 755 $(datadir)
- 	$(INSTALL) -d -m 755 $(pkgdatadir)
- 	$(INSTALL) -d -m 755 $(pixmapsdir)
-@@ -76,7 +76,7 @@ uninstall:
- 	rm $(pkgdatadir)/php3_functions
- 	rm $(pkgdatadir)/ssi_functions
- 	rm $(pkgdatadir)/rxml_functions	
--	@$(MAKE) -C man uninstall
-+	@cd man; $(MAKE) uninstall
- 	rm -f $(install_location)
- 	@cd ${srcdir}/ && $(MAKE) uninstall
  
