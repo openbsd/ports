@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/12/09 18:13:32 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/07/02 03:54:12 marcm Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=thinice/}
 
 BUILD_DEPENDS=		:pkgconfig->=0.9.0:devel/pkgconfig
-LIB_DEPENDS=		gdk-x11-2.0.0.11,gdk_pixbuf-2.0.0.11,gtk-x11-2.0.0.11::x11/gtk+2
+LIB_DEPENDS=		gdk-x11-2.0.400.0,gdk_pixbuf-2.0.400.0,gtk-x11-2.0.400.0::x11/gtk+2
 
 USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
