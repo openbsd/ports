@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Wrapper for the navigator-4.05-fortified package.
+#
+# dugsong@OpenBSD.ORG
+
+MOZILLA_HOME=y0y0y0
+
+export MOZILLA_HOME
+
+exec $MOZILLA_HOME/netscape

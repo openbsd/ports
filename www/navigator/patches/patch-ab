@@ -1,0 +1,26 @@
+--- Fortify-1.2.4-unix/src/Makefile.orig	Sun Jun 21 19:23:25 1998
++++ Fortify-1.2.4-unix/src/Makefile	Sun Jun 21 19:55:45 1998
+@@ -1,9 +1,9 @@
+ 
+-CC	= gcc # -Wall
++CC	= cc
+ 
+ # For GNU/Linux systems
+-CFLAGS	= -I. -O2	# -static
+-YACC	= bison -y
++#CFLAGS	= -I. -O2	# -static
++#YACC	= bison -y
+ 
+ # For the Cygnus Win32 environment
+ #CFLAGS	= -DL_ENDIAN -DGNU_WIN32 -I. -O
+@@ -15,8 +15,8 @@
+ #LEX	= flex -l
+ 
+ # Everything else
+-#CFLAGS	= -I. -O
+-#YACC	= yacc
++CFLAGS	= -I. -O2
++YACC	= yacc
+ 
+ # You will amost certainly need this flag if you are compiling under
+ # a BSD or Linux system:-
