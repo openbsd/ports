@@ -1,0 +1,334 @@
+$OpenBSD: patch-dcraw_c,v 1.1.1.1 2005/04/07 21:36:31 sturm Exp $
+
+Remove instances of sprintf(3), strcat(3) and strcpy(3). 
+
+--- dcraw.c.orig	Wed Apr  6 23:51:58 2005
++++ dcraw.c	Wed Apr  6 23:54:16 2005
+@@ -1826,7 +1826,7 @@ void CLASS foveon_interpolate()
+     for (j=0; j < 3; j++)
+       FORC3 last[i][j] += correct[i][c] * cam_xyz[c][j];
+ 
+-  sprintf (str, "%sRGBNeutral", model2);
++  snprintf (str, sizeof str, "%sRGBNeutral", model2);
+   if (foveon_camf_param ("IncludeBlocks", str))
+     foveon_fixed (div, 3, str);
+   else {
+@@ -2191,9 +2191,9 @@ void CLASS bad_pixels()
+     if (*cp == '\\') *cp = '/';
+ #endif
+   cp = fname + strlen(fname);
+-  if (cp[-1] == '/') cp--;
++  if (cp[-1] == '/') cp--, *cp = '\0';
+   while (*fname == '/') {
+-    strcpy (cp, "/.badpixels");
++    strlcat (fname, "/.badpixels", len);
+     if ((fp = fopen (fname, "r"))) break;
+     if (cp == fname) break;
+     while (*--cp != '/');
+@@ -2774,7 +2774,7 @@ int CLASS parse_tiff_ifd (int base, int 
+ 	if (level) {
+ 	  data_offset = ftell(ifp);
+ 	} else {
+-	  strcpy (make, "Leaf");
++	  strlcpy (make, "Leaf", sizeof make);
+ 	  data_offset = get4();
+ 	}
+ 	break;
+@@ -2886,7 +2886,7 @@ guess_cfa_pc:
+        raw_height++;
+ 
+   if (make[0] == 0 && raw_width == 680)
+-    strcpy (make, "Imacon");
++    strlcpy (make, "Imacon", sizeof make);
+ 
+   return done;
+ }
+@@ -2948,6 +2948,7 @@ void CLASS parse_external_jpeg()
+ {
+   char *file, *ext, *jname, *jfile, *jext;
+   FILE *save=ifp;
++  size_t ifsize;
+ 
+   ext  = strrchr (ifname, '.');
+   file = strrchr (ifname, '/');
+@@ -2955,13 +2956,15 @@ void CLASS parse_external_jpeg()
+   if (!file) file = ifname-1;
+   file++;
+   if (strlen(ext) != 4 || ext-file != 8) return;
+-  jname = malloc (strlen(ifname) + 1);
++  ifsize = strlen(ifname) + 1;
++  jname = malloc (ifsize);
+   merror (jname, "parse_external()");
+-  strcpy (jname, ifname);
++  strlcpy (jname, ifname, ifsize);
+   jfile = file - ifname + jname;
+   jext  = ext  - ifname + jname;
+   if (strcasecmp (ext, ".jpg")) {
+-    strcpy (jext, isupper(ext[1]) ? ".JPG":".jpg");
++    *jext = '\0';
++    strlcat(ifname, isupper(ext[1]) ? ".JPG":".jpg", ifsize);
+     memcpy (jfile, file+4, 4);
+     memcpy (jfile+4, file, 4);
+   } else
+@@ -3162,8 +3165,8 @@ void CLASS parse_rollei()
+   if ((ts = mktime(&t)) > 0)
+     timestamp = ts;
+   data_offset += tx * ty * 2;
+-  strcpy (make, "Rollei");
+-  strcpy (model,"d530flex");
++  strlcpy (make, "Rollei", sizeof make);
++  strlcpy (model,"d530flex", sizeof model);
+ }
+ 
+ void CLASS parse_mos (int offset)
+@@ -3480,7 +3483,7 @@ void CLASS adobe_coeff()
+   for (i=0; i < 4; i++)
+     for (j=0; j < 4; j++)
+       cc[i][j] = i == j;
+-  sprintf (name, "%s %s", make, model);
++  snprintf (name, sizeof name, "%s %s", make, model);
+   for (i=0; i < sizeof table / sizeof *table; i++)
+     if (!strncmp (name, table[i].prefix, strlen(table[i].prefix))) {
+       for (j=0; j < 12; j++)
+@@ -3578,7 +3581,7 @@ int CLASS identify()
+   fseek (ifp, 0, SEEK_END);
+   fsize = ftell(ifp);
+   if ((cp = memmem (head, 32, "MMMMRawT", 8))) {
+-    strcpy (make, "Phase One");
++    strlcpy (make, "Phase One", sizeof make);
+     data_offset = cp - head;
+     fseek (ifp, data_offset + 8, SEEK_SET);
+     fseek (ifp, get4() + 136, SEEK_CUR);
+@@ -3607,14 +3610,14 @@ int CLASS identify()
+     order = 0x4949;
+     fseek (ifp, 38, SEEK_SET);
+     if (get4() == 2834 && get4() == 2834) {
+-      strcpy (model, "BMQ");
++      strlcpy (model, "BMQ", sizeof model);
+       flip = 3;
+       goto nucore;
+     }
+   } else if (!memcmp (head, "BR", 2)) {
+-    strcpy (model, "RAW");
++    strlcpy (model, "RAW", sizeof model);
+ nucore:
+-    strcpy (make, "Nucore");
++    strlcpy (make, "Nucore", sizeof make);
+     order = 0x4949;
+     fseek (ifp, 10, SEEK_SET);
+     data_offset += get4();
+@@ -3626,13 +3629,13 @@ nucore:
+       data_offset -= 0x1000;
+     }
+   } else if (!memcmp (head+25, "ARECOYK", 7)) {
+-    strcpy (make, "Contax");
+-    strcpy (model,"N Digital");
++    strlcpy (make, "Contax", sizeof make);
++    strlcpy (model,"N Digital", sizeof model);
+     fseek (ifp, 60, SEEK_SET);
+     FORC4 cam_mul[c ^ (c >> 1)] = get4();
+   } else if (!strcmp (head, "PXN")) {
+-    strcpy (make, "Logitech");
+-    strcpy (model,"Fotoman Pixtura");
++    strlcpy (make, "Logitech", sizeof make);
++    strlcpy (model,"Fotoman Pixtura", sizeof model);
+   } else if (!memcmp (head, "FUJIFILM", 8)) {
+     fseek (ifp, 92, SEEK_SET);
+     parse_fuji (get4());
+@@ -3648,8 +3651,8 @@ nucore:
+   else
+     for (i=0; i < sizeof table / sizeof *table; i++)
+       if (fsize == table[i].fsize) {
+-	strcpy (make,  table[i].make );
+-	strcpy (model, table[i].model);
++	strlcpy (make,  table[i].make, sizeof make);
++	strlcpy (model, table[i].model, sizeof model);
+ 	if (table[i].withjpeg)
+ 	  parse_external_jpeg();
+       }
+@@ -3658,7 +3661,7 @@ nucore:
+ 
+   for (i=0; i < sizeof corp / sizeof *corp; i++)
+     if (strstr (make, corp[i]))		/* Simplify company names */
+-	strcpy (make, corp[i]);
++	strlcpy (make, corp[i], sizeof make);
+   if (!strncmp (make, "KODAK", 5))
+     make[16] = model[16] = 0;
+   cp = make + strlen(make);		/* Remove trailing spaces */
+@@ -3690,7 +3693,7 @@ nucore:
+   }
+   load_raw = NULL;
+   if (is_dng) {
+-    strcat (model, " DNG");
++    strlcat (model, " DNG", sizeof model);
+     if (!filters)
+       colors = tiff_samples;
+     if (tiff_data_compression == 1)
+@@ -3871,7 +3874,7 @@ canon_cr2:
+     pre_mul[2] = 1.018;
+   } else if (!strcmp(model,"E995")) {
+ cp_e995:
+-    strcpy (model, "E995");
++    strlcpy (model, "E995", sizeof model);
+     height = 1540;
+     width  = 2064;
+     colors = 4;
+@@ -3885,7 +3888,7 @@ cp_e995:
+     pre_mul[2] = 1.040;
+   } else if (!strcmp(model,"E2500")) {
+ cp_e2500:
+-    strcpy (model, "E2500");
++    strlcpy (model, "E2500", sizeof model);
+     height = 1204;
+     width  = 1616;
+     colors = 4;
+@@ -3899,8 +3902,8 @@ cp_e2500:
+     pre_mul[2] = 1.618;
+   } else if (!strcmp(model,"Optio 33WR")) {
+ optio_33wr:
+-    strcpy (make, "PENTAX");
+-    strcpy (model,"Optio 33WR");
++    strlcpy (make, "PENTAX", sizeof make);
++    strlcpy (model, "Optio 33WR", sizeof model);
+     height = 1542;
+     width  = 2064;
+     load_raw = nikon_e2100_load_raw;
+@@ -3918,8 +3921,8 @@ optio_33wr:
+     pre_mul[2] = 322;
+   } else if (!strcmp(model,"DiMAGE Z2")) {
+ dimage_z2:
+-    strcpy (make, "MINOLTA");
+-    strcpy (model,"DiMAGE Z2");
++    strlcpy (make, "MINOLTA", sizeof make);
++    strlcpy (model,"DiMAGE Z2", sizeof model);
+     height = 1710;
+     width  = 2288;
+     filters = 0x16161616;
+@@ -3947,7 +3950,7 @@ dimage_z2:
+     filters = 0x61616161;
+     load_raw = fuji_s2_load_raw;
+     black = 128;
+-    strcpy (model+7, " S2Pro");
++    strlcpy (model+7, " S2Pro", sizeof model -7);
+   } else if (!strcmp(model,"FinePix S3Pro")) {
+     height = 3583;
+     width  = 3584;
+@@ -4090,7 +4093,7 @@ konica_400z:
+   } else if (!strcmp(make,"Phase One")) {
+     switch (raw_height) {
+       case 2060:
+-	strcpy (model, "LightPhase");
++	strlcpy (model, "LightPhase", sizeof model);
+ 	height = 2048;
+ 	width  = 3080;
+ 	top_margin  = 5;
+@@ -4099,14 +4102,14 @@ konica_400z:
+ 	pre_mul[2] = 1.154;
+ 	break;
+       case 2682:
+-	strcpy (model, "H10");
++	strlcpy (model, "H10", sizeof model);
+ 	height = 2672;
+ 	width  = 4012;
+ 	top_margin  = 5;
+ 	left_margin = 26;
+ 	break;
+       case 4128:
+-	strcpy (model, "H20");
++	strlcpy (model, "H20", sizeof model);
+ 	height = 4098;
+ 	width  = 4098;
+ 	top_margin  = 20;
+@@ -4115,7 +4118,7 @@ konica_400z:
+ 	pre_mul[2] = 1.430;
+ 	break;
+       case 5488:
+-	strcpy (model, "H25");
++	strlcpy (model, "H25", sizeof model);
+ 	height = 5458;
+ 	width  = 4098;
+ 	top_margin  = 20;
+@@ -4138,7 +4141,7 @@ konica_400z:
+       data_offset -= 10;
+       flip = 3;
+     }
+-    sprintf (model, "Ixpress %d-Mp", height*width/1000000);
++    snprintf (model, sizeof model, "Ixpress %d-Mp", height*width/1000000);
+     filters = 0x61616161;
+     load_raw = unpacked_load_raw;
+     maximum = 0xffff;
+@@ -4157,12 +4160,12 @@ konica_400z:
+       filters = 0x16161616;
+     load_raw = unpacked_load_raw;
+     maximum = 0x3fff;
+-    strcpy (model, "Valeo");
++    strlcpy (model, "Valeo", sizeof model);
+     if (raw_width == 2060) {
+       filters = 0;
+       load_raw = leaf_load_raw;
+       maximum = 0xffff;
+-      strcpy (model, "Volare");
++      strlcpy (model, "Volare", sizeof model);
+     }
+   } else if (!strcmp(model,"DIGILUX 2") || !strcmp(model,"DMC-LC1")) {
+     height = 1928;
+@@ -4287,7 +4290,7 @@ konica_400z:
+ 	return 1;
+     }
+     if (strstr(model,"DC25")) {
+-      strcpy (model, "DC25");
++      strlcpy (model, "DC25", sizeof model);
+       data_offset = 15424;
+     }
+     if (!strncmp(model,"DC2",3)) {
+@@ -4306,19 +4309,19 @@ konica_400z:
+       pre_mul[3] = 1.036;
+       load_raw = kodak_easy_load_raw;
+     } else if (!strcmp(model,"Digital Camera 40")) {
+-      strcpy (model, "DC40");
++      strlcpy (model, "DC40", sizeof model);
+       height = 512;
+       width  = 768;
+       data_offset = 1152;
+       load_raw = kodak_radc_load_raw;
+     } else if (strstr(model,"DC50")) {
+-      strcpy (model, "DC50");
++      strlcpy (model, "DC50", sizeof model);
+       height = 512;
+       width  = 768;
+       data_offset = 19712;
+       load_raw = kodak_radc_load_raw;
+     } else if (strstr(model,"DC120")) {
+-      strcpy (model, "DC120");
++      strlcpy (model, "DC120", sizeof model);
+       height = 976;
+       width  = 848;
+       if (tiff_data_compression == 7)
+@@ -4726,6 +4729,7 @@ int CLASS main (int argc, char **argv)
+   char opt, *ofname, *cp;
+   const char *write_ext = ".ppm";
+   FILE *ofp = stdout;
++  size_t ofsize;
+ #ifdef USE_LCMS
+   char *profile = NULL;
+ #endif
+@@ -4891,14 +4895,15 @@ int CLASS main (int argc, char **argv)
+       flip_image();
+     }
+     fclose(ifp);
+-    ofname = malloc (strlen(ifname) + 16);
++    ofsize = strlen(ifname) + 16;
++    ofname = malloc (ofsize);
+     merror (ofname, "main()");
+     if (write_to_stdout)
+-      strcpy (ofname, "standard output");
++      strlcpy (ofname, "standard output", ofsize);
+     else {
+-      strcpy (ofname, ifname);
++      strlcpy (ofname, ifname, ofsize);
+       if ((cp = strrchr (ofname, '.'))) *cp = 0;
+-      strcat (ofname, write_ext);
++      strlcat (ofname, write_ext, ofsize);
+       ofp = fopen (ofname, "wb");
+       if (!ofp) {
+ 	status = 1;

@@ -1,0 +1,4 @@
+dcraw permits converting most digital cameras RAW format file to JPEG
+in a better way than the in-camera function.
+
+When present it can be used by a variety of packages like ImageMagick.
