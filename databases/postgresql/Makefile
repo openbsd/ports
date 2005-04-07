@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2005/04/06 06:23:46 sturm Exp $
+# $OpenBSD: Makefile,v 1.74 2005/04/07 17:45:43 sturm Exp $
 
 COMMENT=	"PostgreSQL RDBMS (client)"
 COMMENT-server=	"PostgreSQL RDBMS (server)"
@@ -14,8 +14,7 @@ CATEGORIES=	databases
 
 HOMEPAGE=	http://www.postgresql.org/
 
-MAINTAINER=	Brandon Palmer <bpalmer@crimelabs.net>, \
-		Peter Galbavy <peter.galbavy@knowtion.net>
+MAINTAINER=	Brandon Palmer <bpalmer@crimelabs.net>
 
 PERMIT_PACKAGE_CDROM=	"without fee clause"
 PERMIT_PACKAGE_FTP=	Yes
