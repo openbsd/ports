@@ -1,14 +1,14 @@
-You can run vsftpd in standalone mode :
+You can run vsftpd in standalone mode:
 
 $ sudo vsftpd &
 
-or through inetd, you have to change listen=YES to listen=NO in
-vsftpd.conf and add one of the two folowing lines to your inetd.conf :
+Or through inetd:
 
-"ftp stream tcp nowait root ${PREFIX}/sbin/vsftpd vsftpd"
+- in vstftp.conf: listen=NO
 
-or
+- in inetd.conf:
+  # normal mode
+  "ftp stream tcp nowait root ${PREFIX}/sbin/vsftpd vsftpd"
 
-"ftp stream tcp nowait root /usr/libexec/tcpd ${PREFIX}/sbin/vsftpd"
-
-The second line is to use vsftpd with tcp-wrappers, see tcpd(8).
+  # or with tcp-wrappers (see tcpd(8))
+  "ftp stream tcp nowait root /usr/libexec/tcpd ${PREFIX}/sbin/vsftpd"

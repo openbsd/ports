@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2005/03/13 20:40:38 couderc Exp $
+# $OpenBSD: Makefile,v 1.12 2005/04/07 18:59:46 couderc Exp $
 
 COMMENT=		"Ftp daemon which aims to be secure"
 
-VERSION=		2.0.2
+VERSION=		2.0.3
 DISTNAME=		vsftpd-${VERSION}
 CATEGORIES=		net
 
