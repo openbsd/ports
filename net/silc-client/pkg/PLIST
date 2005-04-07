@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/09/22 23:09:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2005/04/07 15:38:17 brad Exp $
 bin/silc
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/
@@ -30,12 +30,12 @@ share/doc/silc/FAQ
 @comment share/doc/silc/INSTALL
 share/doc/silc/README
 @comment share/doc/silc/TODO
-share/doc/silc/draft-riikonen-presence-attrs-02.txt
-share/doc/silc/draft-riikonen-silc-commands-06.txt
-share/doc/silc/draft-riikonen-silc-flags-payloads-04.txt
-share/doc/silc/draft-riikonen-silc-ke-auth-07.txt
-share/doc/silc/draft-riikonen-silc-pp-08.txt
-share/doc/silc/draft-riikonen-silc-spec-08.txt
+@comment share/doc/silc/draft-riikonen-presence-attrs-03.txt
+@comment share/doc/silc/draft-riikonen-silc-commands-06.txt
+@comment share/doc/silc/draft-riikonen-silc-flags-payloads-04.txt
+@comment share/doc/silc/draft-riikonen-silc-ke-auth-08.txt
+@comment share/doc/silc/draft-riikonen-silc-pp-09.txt
+@comment share/doc/silc/draft-riikonen-silc-spec-08.txt
 share/doc/silc/formats.txt
 share/doc/silc/manual.txt
 share/doc/silc/signals.txt
