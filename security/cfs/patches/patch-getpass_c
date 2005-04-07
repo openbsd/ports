@@ -1,0 +1,11 @@
+--- getpass.c.orig	Sun Mar 13 13:59:43 2005
++++ getpass.c	Sun Mar 13 14:00:06 2005
+@@ -64,7 +64,7 @@
+ 	register char *p;
+ 	register c;
+ 	FILE *fi;
+-	static char pbuf[128];
++	static char pbuf[256];
+ #ifdef MACH
+ 	int (*signal())();
+ 	int (*sig)();

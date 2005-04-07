@@ -1,6 +1,5 @@
-$OpenBSD: patch-Makefile,v 1.2 2004/06/15 18:32:22 sturm Exp $
---- Makefile.orig	2001-05-03 20:29:21.000000000 +0200
-+++ Makefile	2004-06-10 10:52:30.000000000 +0200
+--- Makefile.orig	Thu May  3 20:29:21 2001
++++ Makefile	Sat Mar 12 20:30:36 2005
 @@ -74,8 +74,8 @@
  #CC=cc
  #COPT=-O -DNOT_ANSI_C -DPROTOTYPES=0
@@ -12,7 +11,7 @@ $OpenBSD: patch-Makefile,v 1.2 2004/06/15 18:32:22 sturm Exp $
  
  #1B: paths:
  #some peple like /usr/local/sbin instead of /usr/local/etc
-@@ -199,6 +199,14 @@ RINCLUDES=/usr/mab/rsaref/source
+@@ -199,6 +199,14 @@
  #COMPAT=-lcompat
  #RPCOPTS=
   
@@ -27,3 +26,33 @@ $OpenBSD: patch-Makefile,v 1.2 2004/06/15 18:32:22 sturm Exp $
  ##Use these for NetBSD i386 1.0 (John Kohl)
  ## For mounting, you need to use a command like:
  ##	mount -o -P,-c localhost:/null /crypt
+@@ -253,7 +261,7 @@
+ EOBJS=dhparams.o truerand.o esm_gen.o esm.o esm_cipher.o
+ COBJS=admproto_clnt.o cfs_des.o cfs_cipher.o cattach.o getpass.o cmkdir.o \
+   cdetach.o ver.o cname.o ccat.o mcgsbox.o mcgsbox.o mcg.o shs.o cpasswd.o \
+-  cfs_bfenc.o cfs_bfsk.o truerand.o safer.o
++  cfs_bfenc.o cfs_bfsk.o safer.o
+ OTHERS = nfsproto.h nfsproto_svr.c nfsproto_xdr.c admproto.h admproto_svr.c \
+   admproto_xdr.c admproto_clnt.c ver.c
+ 
+@@ -277,16 +285,16 @@
+ 	   ver.o $(LIBS) -o cdetach
+ 
+ cmkdir: getpass.o adm.o cfs_des.o cfs_cipher.o cmkdir.o ver.o mcg.o \
+-   mcgsbox.o cfs_bfenc.o cfs_bfsk.o safer.o shs.o truerand.o
++   mcgsbox.o cfs_bfenc.o cfs_bfsk.o safer.o shs.o
+ 	$(CC) cmkdir.o cfs_des.o cfs_cipher.o getpass.o adm.o ver.o mcg.o \
+-	   cfs_bfenc.o cfs_bfsk.o mcgsbox.o safer.o shs.o truerand.o \
++	   cfs_bfenc.o cfs_bfsk.o mcgsbox.o safer.o shs.o \
+ 	   $(COMPAT) -o cmkdir
+ 
+ cpasswd: getpass.o cfs_des.o cfs_cipher.o cpasswd.o ver.o mcg.o \
+-   mcgsbox.o cfs_bfenc.o cfs_bfsk.o safer.o shs.o truerand.o
++   mcgsbox.o cfs_bfenc.o cfs_bfsk.o safer.o shs.o
+ 	$(CC) cpasswd.o cfs_des.o cfs_cipher.o getpass.o ver.o mcg.o \
+ 	   mcgsbox.o cfs_bfenc.o cfs_bfsk.o safer.o shs.o \
+-	   truerand.o  $(COMPAT) -o cpasswd
++	   $(COMPAT) -o cpasswd
+ 
+ cname: cname.o getpass.o cfs_des.o cfs_cipher.o cfs_adm.o cfs_fh.o \
+    cfs_bfenc.o cfs_bfsk.o cfs_nfs.o ver.o mcg.o mcgsbox.o safer.o shs.o
