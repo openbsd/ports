@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2005/03/13 09:14:39 espie Exp $
+# $OpenBSD: Makefile,v 1.138 2005/04/07 21:37:14 sturm Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -15,6 +15,7 @@
      SUBDIR += compface
      SUBDIR += cqcam
 #    SUBDIR += dc3play
+     SUBDIR += dcraw
      SUBDIR += dia
 #    SUBDIR += dore
      SUBDIR += dumpmpeg
