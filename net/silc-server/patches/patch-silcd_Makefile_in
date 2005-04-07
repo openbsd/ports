@@ -1,7 +1,7 @@
-$OpenBSD: patch-silcd_Makefile_in,v 1.1 2004/08/21 22:41:48 naddy Exp $
---- silcd/Makefile.in.orig	Sat Aug 21 21:56:11 2004
-+++ silcd/Makefile.in	Sat Aug 21 21:57:07 2004
-@@ -179,7 +179,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+$OpenBSD: patch-silcd_Makefile_in,v 1.2 2005/04/07 00:49:18 brad Exp $
+--- silcd/Makefile.in.orig	Wed Apr  6 06:03:12 2005
++++ silcd/Makefile.in	Wed Apr  6 11:24:06 2005
+@@ -180,7 +180,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
  LDFLAGS = @LDFLAGS@
  LIBOBJS = @LIBOBJS@

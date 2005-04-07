@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_example_silcd_conf_in,v 1.4 2004/02/29 07:12:42 brad Exp $
---- doc/example_silcd.conf.in.orig	2004-02-28 17:15:18.000000000 +0100
-+++ doc/example_silcd.conf.in	2004-02-28 17:20:52.000000000 +0100
+$OpenBSD: patch-doc_example_silcd_conf_in,v 1.5 2005/04/07 00:49:18 brad Exp $
+--- doc/example_silcd.conf.in.orig	Fri Mar 11 07:15:36 2005
++++ doc/example_silcd.conf.in	Wed Apr  6 11:22:33 2005
 @@ -35,7 +35,7 @@ General {
  	# This is the default path where to search modules.  If omitted
  	# built-in modules will be used.  Built-in modules will also be
@@ -10,7 +10,7 @@ $OpenBSD: patch-doc_example_silcd_conf_in,v 1.4 2004/02/29 07:12:42 brad Exp $
  
  	# If both passphrase and public key authentication is set for a
  	# connection the public key authentication is the preferred one
-@@ -170,14 +170,14 @@ ServerInfo {
+@@ -171,14 +171,14 @@ ServerInfo {
  	#
  	# Server name (FQDN)
  	#
@@ -27,7 +27,7 @@ $OpenBSD: patch-doc_example_silcd_conf_in,v 1.4 2004/02/29 07:12:42 brad Exp $
  		port = 706;
  	};
  
-@@ -197,24 +197,24 @@ ServerInfo {
+@@ -198,24 +198,24 @@ ServerInfo {
  	#
  	# Geographic location
  	#
@@ -57,7 +57,7 @@ $OpenBSD: patch-doc_example_silcd_conf_in,v 1.4 2004/02/29 07:12:42 brad Exp $
  
  	#
  	# Public and private keys
-@@ -440,10 +440,10 @@ Client {
+@@ -441,10 +441,10 @@ Client {
  # required.
  #
  Admin {
@@ -72,7 +72,7 @@ $OpenBSD: patch-doc_example_silcd_conf_in,v 1.4 2004/02/29 07:12:42 brad Exp $
  	# PublicKey = "/path/to/the/public.pub";
  };
  
-@@ -466,13 +466,13 @@ Admin {
+@@ -467,13 +467,13 @@ Admin {
  # to true.  For normal connections set it false.  If it is set to true then
  # your server will be backup router.
  #
@@ -93,7 +93,7 @@ $OpenBSD: patch-doc_example_silcd_conf_in,v 1.4 2004/02/29 07:12:42 brad Exp $
  
  #
  # Configured router connections
-@@ -502,17 +502,17 @@ ServerConnection {
+@@ -503,17 +503,17 @@ ServerConnection {
  # backup router is in our cell then set the "BackupLocal" option to true.
  # If the backup router is in other cell then set it to false.
  #

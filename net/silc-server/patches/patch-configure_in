@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.6 2004/02/29 07:12:42 brad Exp $
---- configure.in.orig	2004-02-27 00:41:16.000000000 +0100
-+++ configure.in	2004-02-27 00:44:22.000000000 +0100
-@@ -40,7 +40,7 @@ AM_INIT_AUTOMAKE(silc-server, 0.9.17)
+$OpenBSD: patch-configure_in,v 1.7 2005/04/07 00:49:18 brad Exp $
+--- configure.in.orig	Wed Apr  6 06:02:05 2005
++++ configure.in	Wed Apr  6 11:24:04 2005
+@@ -39,7 +39,7 @@ AM_INIT_AUTOMAKE(silc-server, 0.9.19)
  AC_PREREQ(2.52)
  AC_CONFIG_HEADERS(includes/silcdefs.h)
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.6 2004/02/29 07:12:42 brad Exp $
  AC_PROG_CC
  AC_C_INLINE
  AC_C_CONST
-@@ -340,31 +340,7 @@ AC_DEFUN(SILC_ADD_CFLAGS,
+@@ -295,31 +295,7 @@ AC_DEFUN([SILC_ADD_CFLAGS],
    unset tmp_CFLAGS
  ])
  

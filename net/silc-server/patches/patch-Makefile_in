@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2004/02/29 07:12:42 brad Exp $
---- Makefile.in.orig	2004-02-28 18:24:57.000000000 +0100
-+++ Makefile.in	2004-02-28 18:27:41.000000000 +0100
-@@ -847,7 +847,7 @@ generate-server-key:
+$OpenBSD: patch-Makefile_in,v 1.7 2005/04/07 00:49:18 brad Exp $
+--- Makefile.in.orig	Wed Apr  6 06:03:14 2005
++++ Makefile.in	Wed Apr  6 11:24:05 2005
+@@ -864,7 +864,7 @@ generate-server-key:
  
  @SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs-client sim-install doc-install-client etc-install-client
  @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs-client install-dirs-server sim-install doc-install-client doc-install-server toolkit-install examples-install etc-install-client etc-install-server

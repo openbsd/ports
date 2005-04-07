@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/12/16 00:31:25 alek Exp $
+# $OpenBSD: Makefile,v 1.18 2005/04/07 00:49:18 brad Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN=		"config file parser bug on ${MACHINE_ARCH}"
@@ -6,7 +6,8 @@ BROKEN=		"config file parser bug on ${MACHINE_ARCH}"
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) server"
 
-DISTNAME=	silc-server-0.9.18
+DISTNAME=	silc-server-0.9.19p1
+PKGNAME=	silc-server-0.9.19.1
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.silcnet.org/
@@ -42,7 +43,7 @@ CONFDIR=	${SYSCONFDIR}/silcd
 SUBST_VARS=	CONFDIR
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.58
+AUTOCONF_VERSION= 2.59
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/lib/silcmath/mpi
 CONFIGURE_ARGS+= --enable-ipv6 \
 		 --without-irssi \
@@ -56,6 +57,8 @@ CONFIGURE_ARGS+= --enable-ipv6 \
 .if ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS+= --disable-asm
 .endif
+
+WRKDIST=	${WRKDIR}/${DISTNAME:S/p1//}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/silcd
