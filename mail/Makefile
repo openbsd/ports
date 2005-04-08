@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2005/03/30 22:07:14 alek Exp $
+# $OpenBSD: Makefile,v 1.139 2005/04/08 20:24:48 msf Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -6,6 +6,7 @@
      SUBDIR += adcomplain
      SUBDIR += akpop3d
      SUBDIR += amavisd-new
+     SUBDIR += archivemail
      SUBDIR += asmail
      SUBDIR += bmf
      SUBDIR += bogofilter
