@@ -1,0 +1,7 @@
+archivemail is a tool written in python(1) for archiving and compressing
+old email in mailboxes. By default it will read the mailbox MAILBOX,
+moving messages that are older that the specified number of days (180 by
+default) to a mbox-format mailbox in the same directory that is
+compressed with gzip(1). archivemail supports reading IMAP, Maildir, MH
+and mbox-format  mailboxes, but it  will always write archive files to
+mbox-format mailboxes that are compressed with gzip(1)
