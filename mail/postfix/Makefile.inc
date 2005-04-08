@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.48 2005/03/10 07:26:27 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.49 2005/04/08 20:16:31 jakob Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -99,3 +99,6 @@ do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/postfix
 	@mv ${WRKINST}${SYSCONFDIR}/postfix/* ${PREFIX}/share/examples/postfix
 	@rm -fr ${WRKINST}/var/spool/postfix
+	@chown -h ${BINOWN}:${BINGRP} ${PREFIX}/{sbin,libexec/postfix}/*
+	@chown -R ${MANOWN}:${MANGRP} ${PREFIX}/man
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share
