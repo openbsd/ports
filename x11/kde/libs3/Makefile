@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2005/03/30 10:34:33 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2005/04/08 20:47:01 sturm Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 CATEGORIES=		x11 x11/kde
@@ -25,7 +25,8 @@ WANTLIB=	c ICE SM X11 Xext Xrender audiofile esd glib-2.0.0.0 \
 CONFIGURE_ARGS+= --enable-cups
 
 BUILD_DEPENDS+=	::print/cups # crypto,ssl,cups
-BUILD_DEPENDS+= ::textproc/docbook-to-man
+BUILD_DEPENDS+= ::textproc/docbook-to-man \
+		::devel/pkgconfig
 LIB_DEPENDS+=	Half,Iex,Imath,IlmImf::graphics/openexr	\
 		aspell::textproc/aspell/core
 
