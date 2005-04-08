@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2004/08/10 12:42:22 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2005/04/08 20:54:36 brad Exp $
 
 COMMENT=	"toolkit for the development of SILC applications"
-DISTNAME=	silc-toolkit-0.9.12
+
+DISTNAME=	silc-toolkit-0.9.13
 CATEGORIES=	devel
 MASTER_SITES=	http://www.silcnet.org/download/toolkit/sources/
 
 HOMEPAGE=	http://www.silcnet.org/software/developers/toolkit/
 		
-MAINTAINER=     Pedro Martelletto <pedro@openbsd.org>
-
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
