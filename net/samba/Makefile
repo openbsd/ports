@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2005/04/03 11:20:37 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.51 2005/04/09 17:04:17 alek Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
 
 DISTNAME=		samba-3.0.13
-FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
+FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}p0
 
 CATEGORIES=	net
 
@@ -63,6 +63,7 @@ FLAVORS=        cups ldap
 FLAVOR?=
 
 MULTI_PACKAGES= -docs
+SUBPACKAGE?=
 
 .if ${FLAVOR:L:Mcups}
 CONFIGURE_ARGS+= --enable-cups
@@ -78,6 +79,13 @@ LIB_DEPENDS+=	ldap,lber::databases/openldap \
 		utf8::misc/libutf8
 .else
 CONFIGURE_ARGS+= --without-ldap --without-ads
+.endif
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
+PKG_ARCH=	*
+LIB_DEPENDS=
+WANTLIB=
+MODULES=
 .endif
 
 NO_REGRESS=	Yes
