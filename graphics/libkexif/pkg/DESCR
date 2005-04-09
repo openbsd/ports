@@ -1,0 +1,2 @@
+libkexif is basically a kde library frontend  to libexif, to
+manipulate exif information in images.
