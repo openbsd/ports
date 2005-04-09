@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.205 2005/04/01 08:08:53 markus Exp $
+# $OpenBSD: Makefile,v 1.206 2005/04/09 14:42:48 matthieu Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -233,6 +233,7 @@
      SUBDIR += xpostit
      SUBDIR += xpostitPlus
      SUBDIR += xprompt
+     SUBDIR += xrestop
      SUBDIR += xscreensaver
      SUBDIR += xscreensaver,
      SUBDIR += xscreensaver,gtk2
