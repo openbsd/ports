@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.15 2005/03/29 21:18:34 espie Exp $
+# $OpenBSD: kde.port.mk,v 1.16 2005/04/09 10:48:31 espie Exp $
 
 SHARED_ONLY?=	Yes
 
@@ -33,6 +33,8 @@ MODKDE_CONFIGURE_ENV=		UIC_PATH="${MODQT_UIC}" UIC="${MODQT_UIC}"
 MODKDE_CONFIGURE_ENV+=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 MODKDE_MAKE_FLAGS=		CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 MODKDE_MAKE_FLAGS+=		LIBRESOLV=
+
+MODX11/KDE_post-patch=	find ${WRKDIST} -name Makefile.am -exec touch {}.in \;
 
 MODKDE_LIBTOOL?=No
 .if ${MODKDE_LIBTOOL:L} == "yes"

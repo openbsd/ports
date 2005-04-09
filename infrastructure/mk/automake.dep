@@ -1,4 +1,4 @@
-# $OpenBSD: automake.dep,v 1.1 2004/06/06 11:49:08 espie Exp $
+# $OpenBSD: automake.dep,v 1.2 2005/04/09 10:48:31 espie Exp $
 configure configure.ac
 configure configure.in
 /Makefile.in /Makefile.am
@@ -24,7 +24,11 @@ configure.in admin/cvs.sh
 /Makefile.am admin/cvs.sh
 subdirs admin/cvs.sh
 /Makefile.am subdirs
+/Makefile.am /Makefile.am.in
+subdirs /Makefile.am.in
 configure.files subdirs
+configure.files /configure.in.in
+configure.files admin/configure.in.min
 configure.in configure.files
 acinclude.m4 admin/libtool.m4.in
 acinclude.m4 admin/acinclude.m4.in
