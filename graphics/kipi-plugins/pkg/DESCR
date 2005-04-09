@@ -1,0 +1,18 @@
+image manipulation plugins accessible through libkipi:
+
+- rawconverter
+- slideshow
+- mpegencoder: needs mjpegtools at runtime
+- imagesgallery
+- printwizard
+- jpeglossless
+- cdarchiving: would need k3b as a run time dependency
+- acquireimages: from scanner or screen snapshot
+- calendar
+- sendimages: through email
+- batchprocessimages: needs imagemagic at runtime
+- timeadjust
+- wallpaper: needs kdebase at runtime
+- findimages: find duplicate images
+- galleryexport
+- kameraklient
