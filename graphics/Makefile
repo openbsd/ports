@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2005/04/07 21:37:14 sturm Exp $
+# $OpenBSD: Makefile,v 1.139 2005/04/09 12:12:47 espie Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -69,6 +69,7 @@
      SUBDIR += libdvbpsi
      SUBDIR += libexif
      SUBDIR += libgphoto2
+     SUBDIR += libkipi
      SUBDIR += libmng
      SUBDIR += libmpeg2
      SUBDIR += libungif
