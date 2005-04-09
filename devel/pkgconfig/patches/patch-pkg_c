@@ -1,7 +1,30 @@
-$OpenBSD: patch-pkg_c,v 1.4 2003/09/23 05:59:34 marcm Exp $
---- pkg.c.orig	2003-01-16 13:07:09.000000000 -0800
-+++ pkg.c	2003-09-05 11:19:25.000000000 -0700
-@@ -339,6 +339,54 @@ get_package (const char *name)
+$OpenBSD: patch-pkg_c,v 1.5 2005/04/09 13:07:43 espie Exp $
+--- pkg.c.orig	Thu Jan 16 22:07:09 2003
++++ pkg.c	Mon Apr  4 14:12:07 2005
+@@ -202,7 +202,21 @@ package_init ()
+       path_positions = g_hash_table_new (g_str_hash, g_str_equal);
+       
+       g_slist_foreach (search_dirs, (GFunc)scan_dir, NULL);
+-      scan_dir (pkglibdir);
++      {
++      char **config_dirs;
++      char **iter;
++
++      config_dirs = g_strsplit (pkglibdir, G_SEARCHPATH_SEPARATOR_S, -1);
++      iter = config_dirs;
++      while (*iter)
++        {
++          scan_dir (*iter);
++
++          ++iter;
++        }
++
++      g_strfreev (config_dirs);
++      }
+     }
+ }
+ 
+@@ -339,7 +353,55 @@ get_package (const char *name)
    return internal_get_package (name, TRUE, TRUE);
  }
  
@@ -9,7 +32,7 @@ $OpenBSD: patch-pkg_c,v 1.4 2003/09/23 05:59:34 marcm Exp $
 +  If certain directories are present, move them to the end of the list
 +  to avoid conflicts.
 +*/
-+static GSList*
+ static GSList*
 +string_list_fix_local_I_dirs (GSList *list)
 +{
 +  GSList *iter;
@@ -53,10 +76,11 @@ $OpenBSD: patch-pkg_c,v 1.4 2003/09/23 05:59:34 marcm Exp $
 +  return list;
 +}
 +
- static GSList*
++static GSList*
  string_list_strip_duplicates (GSList *list)
  {
-@@ -929,6 +977,8 @@ get_multi_merged (GSList *pkgs, GetListF
+   GHashTable *table;
+@@ -929,6 +991,8 @@ get_multi_merged (GSList *pkgs, GetListF
  
    g_slist_free (dups_list);
    
