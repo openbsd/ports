@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/26 12:33:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2005/04/09 23:31:28 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-perl=	"SNMP modules for Perl"
 
 DISTNAME=	net-snmp-5.1.2
 PKGNAME=	${DISTNAME}p0
-FULLPKGNAME-perl= p5-SNMP-5.1.2
+FULLPKGNAME-perl= p5-SNMP-5.1.2p0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=net-snmp/}
 
@@ -25,9 +25,11 @@ WANTLIB=		c crypto kvm m wrap z
 MULTI_PACKAGES=	-perl
 SUBPACKAGE?=
 
-.if ${SUBPACKAGE} == "-perl"
+.if ${SUBPACKAGE} == "-perl" 
 CATEGORIES=	net perl5
-RUN_DEPENDS=	::net/net-snmp
+.  if defined(PACKAGING)
+LIB_DEPENDS+=	netsnmpmibs,netsnmphelpers,netsnmpagent,netsnmp::net/net-snmp
+.  endif
 .endif
 
 NET_SNMP_MIB_LIST= host disman/event-mib smux mibII/mta_sendmail
