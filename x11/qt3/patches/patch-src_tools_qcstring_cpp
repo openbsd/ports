@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_tools_qcstring_cpp,v 1.1 2005/04/09 21:24:12 espie Exp $
+--- src/tools/qcstring.cpp.orig	Thu Apr  7 01:05:16 2005
++++ src/tools/qcstring.cpp	Thu Apr  7 01:09:13 2005
+@@ -876,7 +876,11 @@ QCString &QCString::sprintf( const char 
+     va_start( ap, format );
+     if ( size() < 256 )
+ 	QByteArray::resize( 256 );		// make string big enough
++#ifdef QT_VSNPRINTF
++    QT_VSNPRINTF( data(), size(), format, ap );
++#else
+     vsprintf( data(), format, ap );
++#endif
+     resize( qstrlen(data()) + 1 );		// truncate
+     va_end( ap );
+     return *this;
