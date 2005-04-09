@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2005/04/09 21:52:36 espie Exp $
+# $OpenBSD: Makefile,v 1.141 2005/04/09 22:58:09 espie Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -18,6 +18,7 @@
      SUBDIR += dcraw
      SUBDIR += dia
      SUBDIR += digikam
+     SUBDIR += digikam-image-plugins
 #    SUBDIR += dore
      SUBDIR += dumpmpeg
      SUBDIR += dvdrip
@@ -53,6 +54,7 @@
 #    SUBDIR += hdf
 #    SUBDIR += hobbes-icons-xpm
 #    SUBDIR += hpscan
+     SUBDIR += kipi-plugins
      SUBDIR += imlib
      SUBDIR += imlib2
      SUBDIR += indexpage
