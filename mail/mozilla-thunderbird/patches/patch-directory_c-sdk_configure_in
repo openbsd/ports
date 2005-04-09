@@ -1,15 +1,16 @@
-$OpenBSD: patch-directory_c-sdk_configure_in,v 1.1 2004/12/27 21:21:39 wilfried Exp $
+$OpenBSD: patch-directory_c-sdk_configure_in,v 1.2 2005/04/09 08:11:19 wilfried Exp $
 --- directory/c-sdk/configure.in.orig	Tue Sep 14 22:59:40 2004
-+++ directory/c-sdk/configure.in	Wed Nov 10 21:50:23 2004
-@@ -1440,6 +1440,7 @@ mips-sony-newsos*)
++++ directory/c-sdk/configure.in	Fri Apr  8 21:26:59 2005
+@@ -1440,19 +1440,16 @@ mips-sony-newsos*)
      AC_DEFINE(XP_UNIX)
      AC_DEFINE(OPENBSD)
      AC_DEFINE(HAVE_BSD_FLOCK)
 +    AC_DEFINE(HAVE_SOCKLEN_T)
      CFLAGS="$CFLAGS -ansi -Wall"
      CXXFLAGS="$CXXFLAGS -ansi -Wall"
-     DLL_SUFFIX=so.1.0
-@@ -1447,12 +1448,8 @@ mips-sony-newsos*)
+-    DLL_SUFFIX=so.1.0
++    DLL_SUFFIX="so.${SO_VERSION}"
+     DSO_CFLAGS=-fPIC
      MDCPUCFG_H=_openbsd.cfg
      PR_MD_CSRCS=openbsd.c
      USE_NSPR_THREADS=1
