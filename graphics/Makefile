@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2005/04/09 12:12:47 espie Exp $
+# $OpenBSD: Makefile,v 1.140 2005/04/09 21:52:36 espie Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -17,6 +17,7 @@
 #    SUBDIR += dc3play
      SUBDIR += dcraw
      SUBDIR += dia
+     SUBDIR += digikam
 #    SUBDIR += dore
      SUBDIR += dumpmpeg
      SUBDIR += dvdrip
@@ -69,6 +70,7 @@
      SUBDIR += libdvbpsi
      SUBDIR += libexif
      SUBDIR += libgphoto2
+     SUBDIR += libkexif
      SUBDIR += libkipi
      SUBDIR += libmng
      SUBDIR += libmpeg2
