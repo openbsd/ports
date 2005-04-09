@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/03/26 19:04:59 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/04/09 08:48:11 wilfried Exp $
 %%SHARED%%
 bin/mozilla-thunderbird
 bin/thunderbird
+bin/thunderbird-config
 mozilla-thunderbird/
 mozilla-thunderbird/LICENSE
 mozilla-thunderbird/chrome/
@@ -585,4 +586,12 @@ mozilla-thunderbird/res/viewer.properties
 mozilla-thunderbird/res/viewsource.css
 mozilla-thunderbird/run-mozilla.sh
 mozilla-thunderbird/thunderbird-bin
-mozilla-thunderbird/thunderbird-config
+@cwd ${LOCALBASE}/mozilla-thunderbird
+@exec rm -rf /tmp/.mozilla
+@exec cd %D && env HOME=/tmp LD_LIBRARY_PATH=%D ./regxpcom
+@exec cd %D && env HOME=/tmp LD_LIBRARY_PATH=%D ./regchrome
+@exec rm -rf /tmp/.mozilla
+@unexec rm -f %D/components/compreg.dat
+@unexec rm -f %D/components/xpti.dat
+@unexec rm -f %D/chrome/chrome.rdf
+@unexec rm -rf %D/chrome/overlayinfo
