@@ -1,7 +1,7 @@
-$OpenBSD: patch-nsprpub_configure_in,v 1.2 2004/11/26 18:29:15 pvalchev Exp $
---- nsprpub/configure.in.orig	Fri Oct 22 16:48:52 2004
-+++ nsprpub/configure.in	Fri Oct 22 16:47:30 2004
-@@ -1493,6 +1493,8 @@ mips-sony-newsos*)
+$OpenBSD: patch-nsprpub_configure_in,v 1.3 2005/04/09 15:43:47 wilfried Exp $
+--- nsprpub/configure.in.orig	Tue Sep 14 22:59:41 2004
++++ nsprpub/configure.in	Wed Apr  6 19:06:48 2005
+@@ -1493,9 +1493,11 @@ mips-sony-newsos*)
      AC_DEFINE(OPENBSD)
      AC_DEFINE(HAVE_BSD_FLOCK)
      AC_DEFINE(HAVE_SOCKLEN_T)
@@ -9,4 +9,8 @@ $OpenBSD: patch-nsprpub_configure_in,v 1.2 2004/11/26 18:29:15 pvalchev Exp $
 +    AC_DEFINE(_PR_HAVE_GETPROTO_R_INT)
      CFLAGS="$CFLAGS -ansi -Wall"
      CXXFLAGS="$CXXFLAGS -ansi -Wall"
-     DLL_SUFFIX=so.1.0
+-    DLL_SUFFIX=so.1.0
++    DLL_SUFFIX="so.${SO_VERSION}"
+     DSO_CFLAGS=-fPIC
+     MDCPUCFG_H=_openbsd.cfg
+     PR_MD_CSRCS=openbsd.c
