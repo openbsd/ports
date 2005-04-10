@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/15 09:09:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2005/04/10 19:12:53 msf Exp $
 ${P5SITE}/Mail/
 ${P5SITE}/Mail/Address.pm
 ${P5SITE}/Mail/Cap.pm
@@ -8,15 +8,14 @@ ${P5SITE}/Mail/Field/AddrList.pm
 ${P5SITE}/Mail/Field/Date.pm
 ${P5SITE}/Mail/Filter.pm
 ${P5SITE}/Mail/Header.pm
-${P5SITE}/Mail/Header.pm.orig
 ${P5SITE}/Mail/Internet.pm
 ${P5SITE}/Mail/Mailer/
 ${P5SITE}/Mail/Mailer.pm
-${P5SITE}/Mail/Mailer/mail.pm
+${P5SITE}/Mail/Mailer/qmail.pm
 ${P5SITE}/Mail/Mailer/rfc822.pm
 ${P5SITE}/Mail/Mailer/sendmail.pm
 ${P5SITE}/Mail/Mailer/smtp.pm
-${P5SITE}/Mail/Mailer/test.pm
+${P5SITE}/Mail/Mailer/testfile.pm
 ${P5SITE}/Mail/Send.pm
 ${P5SITE}/Mail/Util.pm
 ${P5SITE}/auto/
