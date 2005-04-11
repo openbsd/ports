@@ -1,15 +1,17 @@
-$OpenBSD: patch-configure,v 1.10 2005/02/10 19:59:08 naddy Exp $
+$OpenBSD: patch-configure,v 1.11 2005/04/11 14:58:00 naddy Exp $
 --- configure.orig	Fri Jan 21 14:16:04 2005
-+++ configure	Wed Feb  9 22:53:37 2005
-@@ -107,7 +107,7 @@ case "$cpu" in
++++ configure	Tue Apr  5 11:30:14 2005
+@@ -107,8 +107,8 @@ case "$cpu" in
    i386|i486|i586|i686|i86pc|BePC)
      cpu="x86"
    ;;
 -  x86_64)
+-    if [ "`$cc -dumpmachine | grep x86_64 | cut -d- -f1`" = "x86_64" -a \
 +  amd64|x86_64)
-     if [ "`$cc -dumpmachine | grep x86_64 | cut -d- -f1`" = "x86_64" -a \
++    if [ "`$cc -dumpmachine | grep amd64 | cut -d- -f1`" = "amd64" -a \
           -z "`echo $CFLAGS | grep -- -m32`"  ]; then
        cpu="x86_64"
+     else
 @@ -248,6 +248,12 @@ make="gmake"
  CFLAGS="-pthread"
  LDFLAGS="$LDFLAGS -export-dynamic -pthread"
