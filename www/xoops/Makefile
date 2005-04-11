@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/02/02 01:33:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2005/04/11 01:19:56 naddy Exp $
 
 COMMENT=	"dynamic object oriented portal script written in PHP"
 
@@ -18,10 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xoops/}
 
-BUILD_DEPENDS=	:gtar-*:archivers/gtar
 RUN_DEPENDS=	:php5-mysql-*:www/php5/extensions,-mysql
-
-TAR?=		gtar
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
@@ -31,7 +28,7 @@ INSTDIR=	${PREFIX}/xoops
 SUBST_VARS=	INSTDIR
 
 do-install:
-	@cd ${PREFIX} && ${TAR} zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 	@mv ${INSTDIR}-${V} ${INSTDIR}
 
 .include <bsd.port.mk>
