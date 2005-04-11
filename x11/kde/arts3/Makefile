@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2005/03/30 08:15:04 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2005/04/11 22:54:32 espie Exp $
 
 COMMENT=		"K Desktop Environment, aRTs"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.4
 DISTNAME=		arts-1.4.0
 MODKDE_VERSION?=	3.4
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 SHARED_ONLY=		No
 LIB_DEPENDS= 	audiofile::devel/libaudiofile \
