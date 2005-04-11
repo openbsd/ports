@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/03/27 20:18:01 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2005/04/11 15:14:23 msf Exp $
 
 COMMENT=	"encapsulate SQL queries and rows in simple perl objects"
 
-DISTNAME=	DBIx-SearchBuilder-1.22
+DISTNAME=	DBIx-SearchBuilder-1.25
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
 
