@@ -1,7 +1,12 @@
-$OpenBSD: patch-configure_in,v 1.10 2005/03/13 05:02:16 kurt Exp $
---- configure.in.orig	Tue Jan 11 22:59:51 2005
-+++ configure.in	Tue Jan 11 23:02:47 2005
-@@ -1350,6 +1350,10 @@ case "$target" in
+$OpenBSD: patch-configure_in,v 1.11 2005/04/11 15:03:18 kurt Exp $
+--- configure.in.orig	Tue Oct 12 00:13:29 2004
++++ configure.in	Tue Apr  5 14:50:29 2005
+@@ -1346,10 +1346,14 @@ case "$target" in
+ 	;;
+ 
+ *-openbsd*)
+-    DLL_SUFFIX=".so.1.0"
++    DLL_SUFFIX=".so.${SO_VERSION}"
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'

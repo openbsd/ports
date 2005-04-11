@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2005/03/30 22:03:04 kurt Exp $
+# $OpenBSD: Makefile,v 1.86 2005/04/11 15:03:18 kurt Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
@@ -7,9 +7,13 @@ COMMENT-devel=	"devel files for Gecko"
 
 VER=		1.7.6
 DISTNAME=	mozilla
-PKGNAME=	mozilla-${VER}p0
+PKGNAME=	mozilla-${VER}p1
+PKGNAME-devel=	mozilla-devel-${VER}p1
 DISTFILES=	mozilla-source-${VER}.tar.bz2
-
+SO_VERSION=	2.0
+# NOTE: Must bump minor version if any shlib's are removed from the
+# components dir to avoid pkg_add -r issues.
+ 
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.mozilla.org/
@@ -23,14 +27,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla${VER}/source/ \
 		http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla${VER}/source/
 
-MULTI_PACKAGES=	-devel
-
 VMEM_WARNING=yes
 
-.for i in ${MULTI_PACKAGES}
-PKGNAME$i=	mozilla${i}-${VER}p0
-.endfor
-
+MULTI_PACKAGES=	-devel
 SUBPACKAGE?=
 
 FLAVORS=	gtk2
@@ -83,7 +82,7 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 # Regression tests are too hard to adapt to run here
 NO_REGRESS=	Yes
-SUBST_VARS=	LOCALBASE
+SUBST_VARS=	LOCALBASE SO_VERSION
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
 				${WRKSRC}/nsprpub/build/autoconf \
@@ -112,8 +111,11 @@ CONFIGURE_ARGS+=--enable-default-toolkit=gtk2
 CONFIGURE_ARGS+=--enable-default-toolkit=gtk
 .endif
 
-CONFIGURE_ENV=	PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
-MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin"
+CONFIGURE_ENV=	PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
+		SO_VERSION=${SO_VERSION}
+
+MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
+		SO_VERSION=${SO_VERSION}
 
 MOB=		${WRKSRC}/dist
 MOZ=		${PREFIX}/mozilla
@@ -126,6 +128,9 @@ pre-configure:
 	@cd ${WRKSRC}/directory/c-sdk && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
 		${WRKSRC}/xpfe/bootstrap/mozilla.in
+	@perl -pi -e 's|_SO_VERSION_|${SO_VERSION}|g' \
+		${WRKSRC}/nsprpub/pr/include/md/_openbsd.h \
+		${WRKSRC}/xpcom/components/nsNativeComponentLoader.cpp
 
 do-install:
 .for dir in include lib
@@ -140,9 +145,9 @@ do-install:
 	@cd ${MOB}/bin && ${TAR} -chf - ${dir} | \
 		${TAR} -xf - -C ${MOZ}
 .endfor
-	@cd ${MOB}/bin && ${TAR} -chf - *.so.1.0 | \
+	@cd ${MOB}/bin && ${TAR} -chf - *.so.?.? | \
 		${TAR} -xf - -C ${MOZ}
-	@chmod 444 ${MOZ}/*.so.1.0 ${MOZ}/components/*.so.1.0 ${MOZ}/components/*.js
+	@chmod 444 ${MOZ}/*.so.?.? ${MOZ}/components/*.so.?.? ${MOZ}/components/*.js
 	${INSTALL_DATA} ${MOB}/bin/LICENSE ${MOZ}
 	${INSTALL_SCRIPT} ${MOB}/bin/mozilla ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${MOB}/bin/run-mozilla.sh ${MOB}/bin/mozilla-config ${MOZ}

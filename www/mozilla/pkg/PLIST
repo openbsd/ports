@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2005/03/30 22:03:04 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.32 2005/04/11 15:03:18 kurt Exp $
 %%SHARED%%
 %%gtk2%%
 !%%gtk2%%
@@ -769,3 +769,12 @@ mozilla/searchplugins/jeeves.gif
 mozilla/searchplugins/jeeves.src
 share/applications/
 share/pixmaps/
+@cwd ${LOCALBASE}/mozilla
+@exec rm -rf /tmp/.mozilla
+@exec cd %D && env HOME=/tmp LD_LIBRARY_PATH=%D ./regxpcom
+@exec cd %D && env HOME=/tmp LD_LIBRARY_PATH=%D ./regchrome
+@exec rm -rf /tmp/.mozilla
+@unexec rm -f %D/components/compreg.dat
+@unexec rm -f %D/components/xpti.dat
+@unexec rm -f %D/chrome/chrome.rdf
+@unexec rm -rf %D/chrome/overlayinfo
