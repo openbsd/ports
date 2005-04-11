@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/12/14 14:31:58 xsa Exp $
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
+@comment $OpenBSD: PLIST,v 1.6 2005/04/11 10:29:41 xsa Exp $
 lib/python${MODPY_VERSION}/site-packages/paramiko/
 lib/python${MODPY_VERSION}/site-packages/paramiko/__init__.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/__init__.pyc
@@ -100,23 +98,17 @@ share/doc/py-paramiko/private/paramiko.server.ServerInterface-class.html
 share/doc/py-paramiko/private/paramiko.server.SubsystemHandler-class.html
 share/doc/py-paramiko/private/paramiko.sftp-module.html
 share/doc/py-paramiko/private/paramiko.sftp.BaseSFTP-class.html
-share/doc/py-paramiko/private/paramiko.sftp.SFTP-class.html
-share/doc/py-paramiko/private/paramiko.sftp.SFTPAttributes-class.html
 share/doc/py-paramiko/private/paramiko.sftp.SFTPError-class.html
-share/doc/py-paramiko/private/paramiko.sftp.SFTPFile-class.html
 share/doc/py-paramiko/private/paramiko.sftp_attr-module.html
 share/doc/py-paramiko/private/paramiko.sftp_attr.SFTPAttributes-class.html
 share/doc/py-paramiko/private/paramiko.sftp_client-module.html
 share/doc/py-paramiko/private/paramiko.sftp_client.SFTP-class.html
-share/doc/py-paramiko/private/paramiko.sftp_client.SFTPAttributes-class.html
 share/doc/py-paramiko/private/paramiko.sftp_client.SFTPClient-class.html
-share/doc/py-paramiko/private/paramiko.sftp_client.SFTPError-class.html
 share/doc/py-paramiko/private/paramiko.sftp_file-module.html
 share/doc/py-paramiko/private/paramiko.sftp_file.SFTPFile-class.html
 share/doc/py-paramiko/private/paramiko.sftp_handle-module.html
 share/doc/py-paramiko/private/paramiko.sftp_handle.SFTPHandle-class.html
 share/doc/py-paramiko/private/paramiko.sftp_server-module.html
-share/doc/py-paramiko/private/paramiko.sftp_server.SFTPHandle-class.html
 share/doc/py-paramiko/private/paramiko.sftp_server.SFTPServer-class.html
 share/doc/py-paramiko/private/paramiko.sftp_si-module.html
 share/doc/py-paramiko/private/paramiko.sftp_si.SFTPServerInterface-class.html
@@ -128,7 +120,6 @@ share/doc/py-paramiko/private/paramiko.ssh_exception.SSHException-class.html
 share/doc/py-paramiko/private/paramiko.transport-module.html
 share/doc/py-paramiko/private/paramiko.transport.BaseTransport-class.html
 share/doc/py-paramiko/private/paramiko.transport.SecurityOptions-class.html
-share/doc/py-paramiko/private/paramiko.transport.SubsystemHandler-class.html
 share/doc/py-paramiko/private/paramiko.util-module.html
 share/doc/py-paramiko/private/threading.Thread-class.html
 share/doc/py-paramiko/private/threading._Verbose-class.html
@@ -189,19 +180,11 @@ share/doc/py-paramiko/public/paramiko.rsakey.RSAKey-class.html
 share/doc/py-paramiko/public/paramiko.server-module.html
 share/doc/py-paramiko/public/paramiko.server.ServerInterface-class.html
 share/doc/py-paramiko/public/paramiko.server.SubsystemHandler-class.html
-share/doc/py-paramiko/public/paramiko.sftp-module.html
-share/doc/py-paramiko/public/paramiko.sftp.BaseSFTP-class.html
-share/doc/py-paramiko/public/paramiko.sftp.SFTP-class.html
-share/doc/py-paramiko/public/paramiko.sftp.SFTPAttributes-class.html
-share/doc/py-paramiko/public/paramiko.sftp.SFTPError-class.html
-share/doc/py-paramiko/public/paramiko.sftp.SFTPFile-class.html
 share/doc/py-paramiko/public/paramiko.sftp_attr-module.html
 share/doc/py-paramiko/public/paramiko.sftp_attr.SFTPAttributes-class.html
 share/doc/py-paramiko/public/paramiko.sftp_client-module.html
 share/doc/py-paramiko/public/paramiko.sftp_client.SFTP-class.html
-share/doc/py-paramiko/public/paramiko.sftp_client.SFTPAttributes-class.html
 share/doc/py-paramiko/public/paramiko.sftp_client.SFTPClient-class.html
-share/doc/py-paramiko/public/paramiko.sftp_client.SFTPError-class.html
 share/doc/py-paramiko/public/paramiko.sftp_file-module.html
 share/doc/py-paramiko/public/paramiko.sftp_file.SFTPFile-class.html
 share/doc/py-paramiko/public/paramiko.sftp_handle-module.html
@@ -218,7 +201,6 @@ share/doc/py-paramiko/public/paramiko.ssh_exception.SSHException-class.html
 share/doc/py-paramiko/public/paramiko.transport-module.html
 share/doc/py-paramiko/public/paramiko.transport.BaseTransport-class.html
 share/doc/py-paramiko/public/paramiko.transport.SecurityOptions-class.html
-share/doc/py-paramiko/public/paramiko.transport.SubsystemHandler-class.html
 share/doc/py-paramiko/public/paramiko.util-module.html
 share/doc/py-paramiko/public/threading.Thread-class.html
 share/doc/py-paramiko/public/toc-everything.html
@@ -231,7 +213,6 @@ share/doc/py-paramiko/public/toc-paramiko.message-module.html
 share/doc/py-paramiko/public/toc-paramiko.pkey-module.html
 share/doc/py-paramiko/public/toc-paramiko.rsakey-module.html
 share/doc/py-paramiko/public/toc-paramiko.server-module.html
-share/doc/py-paramiko/public/toc-paramiko.sftp-module.html
 share/doc/py-paramiko/public/toc-paramiko.sftp_attr-module.html
 share/doc/py-paramiko/public/toc-paramiko.sftp_client-module.html
 share/doc/py-paramiko/public/toc-paramiko.sftp_file-module.html
@@ -247,5 +228,4 @@ share/examples/py-paramiko/
 share/examples/py-paramiko/demo.py
 share/examples/py-paramiko/demo_server.py
 share/examples/py-paramiko/demo_simple.py
-share/examples/py-paramiko/demo_windows.py
 share/examples/py-paramiko/forward.py
