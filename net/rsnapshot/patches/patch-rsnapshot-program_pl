@@ -1,6 +1,6 @@
-$OpenBSD: patch-rsnapshot-program_pl,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
---- rsnapshot-program.pl.orig	Wed Feb  2 05:17:47 2005
-+++ rsnapshot-program.pl	Tue Feb 15 19:43:17 2005
+$OpenBSD: patch-rsnapshot-program_pl,v 1.2 2005/04/11 13:00:08 robert Exp $
+--- rsnapshot-program.pl.orig	Mon Apr 11 06:23:13 2005
++++ rsnapshot-program.pl	Mon Apr 11 06:31:38 2005
 @@ -303,7 +303,7 @@ sub find_config_file {
  	# autoconf variables (may have too many slashes)
  	my $autoconf_sysconfdir	= '@sysconfdir@';
@@ -10,7 +10,7 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
  	
  	# consolidate multiple slashes
  	$autoconf_sysconfdir	=~ s/\/+/\//g;
-@@ -4480,7 +4480,7 @@ of cron jobs. It is possible, however, t
+@@ -4489,7 +4489,7 @@ of cron jobs. It is possible, however, t
  with an alternate configuration file.
  
  All important options are specified in a configuration file, which is
@@ -19,7 +19,7 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
  specified on the command line. There are also additional options which
  can be passed on the command line.
  
-@@ -4506,14 +4506,10 @@ B<-D> a firehose of diagnostic informati
+@@ -4515,12 +4515,12 @@ B<-D> a firehose of diagnostic informati
  
  =head1 CONFIGURATION
  
@@ -31,22 +31,12 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
  
 -It is recommended that you copy B</etc/rsnapshot.conf.default> to
 -B</etc/rsnapshot.conf>, and then modify B</etc/rsnapshot.conf> to suit
--your needs.
--
++It is recommended that you copy B<!!SAMPLES_DIR!!/rsnapshot.conf.default> to
++B<!!SYSCONFDIR!!/rsnapshot.conf>, and then modify B<!!SYSCONFDIR!!/rsnapshot.conf> to suit
+ your needs.
+ 
  Here is a list of allowed parameters:
- 
- =over 4
-@@ -4731,9 +4727,6 @@ B<du_args     -csh>
- =over 4
- 
- Arguments to be passed to du. If not specified, the default is -csh.
--GNU du supports -csh, BSD du supports -csk, Solaris du doesn't support
---c at all. The GNU version is recommended, since it offers the most
--features.
- 
- =back
- 
-@@ -4928,7 +4921,7 @@ also want to run it from the command lin
+@@ -4937,7 +4937,7 @@ also want to run it from the command lin
  a feel for what it's doing.
  
  Here is an example crontab entry, assuming that intervals B<hourly>,
@@ -55,7 +45,7 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
  
  =over 4
  
-@@ -4964,7 +4957,7 @@ really comes in handy.
+@@ -4973,7 +4973,7 @@ really comes in handy.
  
  Remember that these are just the times that the program runs.
  To set the number of backups stored, set the B<interval> numbers in
@@ -64,18 +54,7 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
  
  To check the disk space used by rsnapshot, you can call it with the "du" argument.
  
-@@ -4991,10 +4984,6 @@ B<rsnapshot du localhost/home/>
- 
- =back
- 
--The GNU version of "du" is preferred. The BSD version works well also, but does
--not support the -h flag (use -k instead, to see the totals in kilobytes). Other
--versions of "du", such as Solaris, may not work at all.
--
- =head1 EXIT VALUES
- 
- =over 4
-@@ -5009,7 +4998,7 @@ B<2>  Some warnings occurred, but the ba
+@@ -5018,7 +5018,7 @@ B<2>  Some warnings occurred, but the ba
  
  =head1 FILES
  
@@ -84,7 +63,7 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
  
  =head1 SEE ALSO
  
-@@ -5038,8 +5027,8 @@ B<http://lists.sourceforge.net/lists/lis
+@@ -5047,8 +5047,8 @@ B<http://lists.sourceforge.net/lists/lis
  
  =head1 NOTES
  
@@ -95,7 +74,7 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
  
  Make sure you put a trailing slash on the end of all directory references.
  If you don't, you may have extra directories created in your snapshots.
-@@ -5055,7 +5044,7 @@ If you would like regular users to be ab
+@@ -5064,7 +5064,7 @@ If you would like regular users to be ab
  there are a number of ways this can be accomplished. One such scenario
  would be:
  

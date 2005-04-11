@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/21 16:08:06 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/04/11 13:00:08 robert Exp $
 
 COMMENT=		"remote filesystem snapshot utility"
 
-DISTNAME=		rsnapshot-1.2.0
+DISTNAME=		rsnapshot-1.2.1
 CATEGORIES=		net
 HOMEPAGE=		http://www.rsnapshot.org/
 
