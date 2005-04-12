@@ -1,7 +1,7 @@
-$OpenBSD: patch-gnome-pty-helper_configure,v 1.1 2004/08/01 06:10:09 marcm Exp $
---- gnome-pty-helper/configure.orig	Sat Jul 24 23:59:52 2004
-+++ gnome-pty-helper/configure	Sun Jul 25 00:00:22 2004
-@@ -6269,19 +6269,10 @@ fi
+$OpenBSD: patch-gnome-pty-helper_configure,v 1.2 2005/04/12 21:23:12 marcm Exp $
+--- gnome-pty-helper/configure.orig	Mon Feb 28 14:11:22 2005
++++ gnome-pty-helper/configure	Sat Apr  9 22:17:56 2005
+@@ -7104,19 +7104,10 @@ fi
  rm -f conftest*
  
  
