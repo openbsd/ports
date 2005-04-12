@@ -1,5 +1,5 @@
---- Imakefile.orig	Fri Jan 13 21:24:01 1995
-+++ Imakefile	Tue Sep 21 06:50:27 2004
+--- Imakefile.orig	Mon Apr 11 23:39:27 2005
++++ Imakefile	Mon Apr 11 23:40:00 2005
 @@ -6,15 +6,24 @@
  /* if, for whatever reason, you're unable to get the JPEG library to compile
   * on your machine, *COMMENT OUT* the following line
@@ -27,7 +27,16 @@
  /* if, for whatever reason, you're unable to get the PDS/VICAR support
   * to compile (xvpds.c, and vdcomp.c), *COMMENT OUT* the following line
   */
-@@ -119,16 +128,44 @@ SGI = -Dsgi
+@@ -35,7 +44,7 @@
+ /* If your machine has the 'usleep()' function, uncomment the following
+  * line.  If it doesn't, or you're not sure, don't uncomment the line
+  */
+-/* TIMERS = -DUSLEEP */
++TIMERS = -DUSLEEP
+ 
+ /* if XV locks up whenever you click any button in the controls window,
+  * the Timer() function in xvmisc.c is going out-to-lunch.  A simple
+@@ -119,16 +128,44 @@
  JPEG = -DDOJPEG
  JPEGDIR = jpeg
  LIBJPEG = $(JPEGDIR)/libjpeg.a
@@ -72,7 +81,7 @@
  #ifdef HavePDS
  PDS = -DDOPDS
  #endif
-@@ -138,18 +175,18 @@ PDS = -DDOPDS
+@@ -138,18 +175,18 @@
  SCO= -Dsco -DPOSIX -DNO_RANDOM 
  SYS_LIBRARIES=        -lm -lc -lx 
  #else
@@ -96,25 +105,7 @@
  
  SRCS1 =	xv.c xvevent.c xvroot.c xvmisc.c xvimage.c xvcolor.c xvsmooth.c \
  	xv24to8.c xvgif.c xvpm.c xvinfo.c xvctrl.c xvscrl.c xvalg.c \
-@@ -157,7 +194,7 @@ SRCS1 =	xv.c xvevent.c xvroot.c xvmisc.c
- 	xvdial.c xvgraf.c xvsunras.c xvjpeg.c xvps.c xvpopup.c xvdflt.c \
- 	xvtiff.c xvtiffwr.c xvpds.c xvrle.c xviris.c xvgrab.c vprintf.c \
- 	xvbrowse.c xvtext.c xvpcx.c xviff.c xvtarga.c xvxpm.c xvcut.c \
--	xvxwd.c xvfits.c
-+	xvxwd.c xvfits.c xvpng.c
- 
- OBJS1 =	xv.o xvevent.o xvroot.o xvmisc.o xvimage.o xvcolor.o xvsmooth.o \
- 	xv24to8.o xvgif.o xvpm.o xvinfo.o xvctrl.o xvscrl.o xvalg.o \
-@@ -165,7 +202,7 @@ OBJS1 =	xv.o xvevent.o xvroot.o xvmisc.o
- 	xvdial.o xvgraf.o xvsunras.o xvjpeg.o xvps.o xvpopup.o xvdflt.o \
- 	xvtiff.o xvtiffwr.o xvpds.o xvrle.o xviris.o xvgrab.o vprintf.o \
- 	xvbrowse.o xvtext.o xvpcx.o xviff.o xvtarga.o xvxpm.o xvcut.o \
--	xvxwd.o xvfits.o
-+	xvxwd.o xvfits.o xvpng.o
- 
- SRCS2=	bggen.c
- OBJS2=	bggen.o
-@@ -233,7 +270,19 @@ clean::
+@@ -233,7 +270,19 @@
  #endif
  
  
@@ -134,7 +125,7 @@
  SRCS = $(SRCS1) $(SRCS2) $(SRCS3) $(SRCS4)
    
  AllTarget($(PROGRAMS))
-@@ -268,5 +317,5 @@ InstallManPageLong(docs/vdcomp,$(MANDIR)
+@@ -268,5 +317,5 @@
  
  tar:
  	tar cf xv.tar Makefile* Imakefile *.c *.h bits docs \

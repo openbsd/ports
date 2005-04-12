@@ -1,36 +1,16 @@
-$OpenBSD: patch-config_h,v 1.1 2004/09/21 18:46:04 sturm Exp $
-
-We have gunzip, it's in /usr/bin, and if ghostscript is installed it will be
-found.
-
---- config.h.orig	Thu Jan  5 19:49:21 1995
-+++ config.h	Wed Mar 24 00:08:07 1999
-@@ -13,13 +13,13 @@
-  * definition appropriately. (use 'which gunzip' to find if you have gunzip, 
-  * and where it lives)
-  */
--#undef USE_GUNZIP
-+#define USE_GUNZIP
- 
- #ifdef USE_GUNZIP
- #  ifdef VMS
- #    define GUNZIP "UNCOMPRESS"
- #  else
--#    define GUNZIP "/usr/local/bin/gunzip -q"
-+#    define GUNZIP "/usr/bin/gunzip -q"
- #  endif
- #endif
- 
-@@ -88,9 +88,9 @@
+--- config.h.after-distpatch	Mon Apr 11 22:23:26 2005
++++ config.h	Mon Apr 11 22:24:15 2005
+@@ -106,10 +106,9 @@
   * should not need to be changed
   */
  
 -/* #define GS_PATH "/usr/local/bin/gs" */
+-#define GS_PATH "/usr/bin/gs"
 -/* #define GS_LIB  "."                 */
 -/* #define GS_DEV  "ppmraw"            */
-+#define GS_PATH "/usr/local/bin/gs"
-+#define GS_LIB  "/usr/local/share/ghostscript"
-+#define GS_DEV  "ppmraw"
++#define GS_PATH	"/usr/local/bin/gs"
++#define GS_LIB	"/usr/local/share/ghostscript"
++#define GS_DEV	"ppmraw"
  
  
  /***************************************************************************

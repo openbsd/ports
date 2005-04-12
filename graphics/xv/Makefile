@@ -1,26 +1,16 @@
-# $OpenBSD: Makefile,v 1.25 2005/03/15 01:16:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2005/04/12 17:28:04 naddy Exp $
 # Original from: Marco S Hyman <marc@OpenBSD.ORG>
 
 COMMENT=	"X11 image display and modification tool"
 
 DISTNAME=	xv-3.10a
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	graphics x11
 
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/
-MASTER_SITES0=	ftp://swrinde.nde.swri.edu/pub/png/applications/
-MASTER_SITES1=	http://ftp.trilon.com/pub/xv/patches/
-DISTFILES=	${DISTNAME}.tar.gz xv-3.10a-png-1.2d.tar.gz:0
+MASTER_SITES0=	http://www.sonic.net/~roelofs/code/
+DISTFILES=	${DISTNAME}.tar.gz xv-3.10a-jumbo-patches-20050410.tar.gz:0
 DIST_SUBDIR=	xv
-
-# Various patches from the XV author's site
-#
-# (xpm.patch is integrated in xvpng.diff that is in xv-3.10a-png-1.2d.tar.gz)
-# longname.patch is integrated in patches/patch-aj
-PATCHFILES=     xv-3.10a.JPEG-patch xv-3.10a.TIFF-patch bmp32.patch:1 \
-		deepcolor.patch:1 exceed_grab.patch:1 gifpatch:1 grabpatch:1 \
-		gssafer.patch:1 mp-tiff-patch:1 pdf.patch:1 tiff1200.patch:1 \
-		vispatch:1 xvpng-fix2.patch:1
 
 HOMEPAGE=	http://www.trilon.com/xv/index.html
 
@@ -36,15 +26,12 @@ PERMIT_DISTFILES_CDROM=	"Must buy license"
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c m z
 
-CONFIGURE_STYLE= imake
+CONFIGURE_STYLE=	imake
+NO_REGRESS=		Yes
 
 pre-patch:
-	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xcmap.diff
-	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xvpng.diff
-	@mv ${WRKDIR}/xvpng.c ${WRKSRC}
-	@mv ${WRKDIR}/bits/br_png ${WRKSRC}/bits
-
-NO_REGRESS=	Yes
+	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xv-3.10a-jumbo-fix-patch-20050410.txt
+	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xv-3.10a-jumbo-enh-patch-20050410.txt
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xv
