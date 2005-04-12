@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_update-desktop-database_c,v 1.1.1.1 2005/04/12 21:09:45 marcm Exp $
+--- src/update-desktop-database.c.orig	Mon Dec 27 22:02:16 2004
++++ src/update-desktop-database.c	Mon Dec 27 22:15:55 2004
+@@ -37,6 +37,7 @@
+ #include "eggintl.h"
+ 
+ #define NAME "update-desktop-database"
++#define DB_DIR "/var/db/gnome/applications/"
+ #define CACHE_FILENAME "mimeinfo.cache"
+ #define TEMP_CACHE_FILENAME_PREFIX ".mimeinfo.cache.XXXXXX"
+ 
+@@ -310,7 +311,7 @@ open_temp_cache_file (const char *dir, c
+   FILE *fp;
+   mode_t mask;
+ 
+-  file = g_build_filename (dir, TEMP_CACHE_FILENAME_PREFIX, NULL);
++  file = g_build_filename (DB_DIR, TEMP_CACHE_FILENAME_PREFIX, NULL);
+   fd = g_mkstemp (file);
+ 
+   if (fd < 0) 
+@@ -391,7 +392,7 @@ sync_database (const char *dir, GError *
+ 
+   fclose (tmp_file);
+ 
+-  cache_file = g_build_filename (dir, CACHE_FILENAME, NULL);
++  cache_file = g_build_filename (DB_DIR, CACHE_FILENAME, NULL);
+   if (rename (temp_cache_file, cache_file) < 0)
+     {
+       g_set_error (error, G_FILE_ERROR,
