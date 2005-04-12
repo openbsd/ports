@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:49:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/04/12 20:00:08 mjc Exp $
 ${P5SITE}/Apache/
 ${P5SITE}/Apache/Test.pm
 ${P5SITE}/Apache/Test5005compat.pm
@@ -9,16 +9,20 @@ ${P5SITE}/Apache/TestCommonPost.pm
 ${P5SITE}/Apache/TestConfig.pm
 ${P5SITE}/Apache/TestConfigC.pm
 ${P5SITE}/Apache/TestConfigData.pm
+${P5SITE}/Apache/TestConfigPHP.pm
 ${P5SITE}/Apache/TestConfigParse.pm
 ${P5SITE}/Apache/TestConfigPerl.pm
 ${P5SITE}/Apache/TestHandler.pm
 ${P5SITE}/Apache/TestHarness.pm
+${P5SITE}/Apache/TestHarnessPHP.pm
+${P5SITE}/Apache/TestMB.pm
 ${P5SITE}/Apache/TestMM.pm
 ${P5SITE}/Apache/TestPerlDB.pm
 ${P5SITE}/Apache/TestReport.pm
 ${P5SITE}/Apache/TestReportPerl.pm
 ${P5SITE}/Apache/TestRequest.pm
 ${P5SITE}/Apache/TestRun.pm
+${P5SITE}/Apache/TestRunPHP.pm
 ${P5SITE}/Apache/TestRunPerl.pm
 ${P5SITE}/Apache/TestSSLCA.pm
 ${P5SITE}/Apache/TestServer.pm
@@ -32,10 +36,12 @@ ${P5SITE}/Bundle/ApacheTest.pm
 @man man/man3p/Apache::Test.3p
 @man man/man3p/Apache::TestConfig.3p
 @man man/man3p/Apache::TestConfigData.3p
+@man man/man3p/Apache::TestMB.3p
 @man man/man3p/Apache::TestMM.3p
 @man man/man3p/Apache::TestReport.3p
 @man man/man3p/Apache::TestRequest.3p
 @man man/man3p/Apache::TestRun.3p
+@man man/man3p/Apache::TestRunPHP.3p
 @man man/man3p/Apache::TestRunPerl.3p
 @man man/man3p/Apache::TestSmoke.3p
 @man man/man3p/Apache::TestTrace.3p
