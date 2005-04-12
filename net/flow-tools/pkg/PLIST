@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/03/03 07:24:37 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/04/12 19:29:22 msf Exp $
 bin/flow-capture
 bin/flow-cat
 bin/flow-dscan
@@ -20,6 +20,12 @@ bin/flow-split
 bin/flow-stat
 bin/flow-tag
 bin/flow-xlate
+include/ftconfig.h
+include/ftlib.h
+include/ftpaths.h
+include/ftqueue.h
+include/ftradix.h
+lib/libft.a
 @man man/man1/flow-capture.1
 @man man/man1/flow-cat.1
 @man man/man1/flow-dscan.1

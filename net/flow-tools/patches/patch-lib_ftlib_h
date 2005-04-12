@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_ftlib_h,v 1.1 2005/04/12 19:29:22 msf Exp $
+--- lib/ftlib.h.orig	Tue Apr 12 08:20:07 2005
++++ lib/ftlib.h	Tue Apr 12 08:20:22 2005
+@@ -82,7 +82,7 @@
+ 
+ #include "ftqueue.h"
+ #include "ftpaths.h"
+-#include "radix.h"
++#include "ftradix.h"
+ 
+ /*
+  * compatability
