@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2005/01/31 19:01:47 couderc Exp $
+# $OpenBSD: Makefile,v 1.25 2005/04/12 18:07:47 couderc Exp $
 
 COMMENT=		"gtk file manager with desktop features"
 
 VERSION=		2.2.0
 DISTNAME=		rox-${VERSION}
-PKGNAME=		rox-filer-${VERSION}
+PKGNAME=		rox-filer-${VERSION}p0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://rox.sourceforge.net/
