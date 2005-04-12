@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/06 00:02:00 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/04/12 18:46:09 alek Exp $
 
 COMMENT=		"ASCII art mathematics"
 
-DISTNAME=		aamath-0.1
+DISTNAME=		aamath-0.2
 CATEGORIES=		math
 
 HOMEPAGE=		http://fuse.superglue.se/aamath/
