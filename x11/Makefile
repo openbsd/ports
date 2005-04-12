@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.206 2005/04/09 14:42:48 matthieu Exp $
+# $OpenBSD: Makefile,v 1.207 2005/04/12 21:47:36 alek Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -115,6 +115,7 @@
      SUBDIR += p5-Tk
      SUBDIR += paragui
      SUBDIR += pbrowser
+     SUBDIR += peksystray
      SUBDIR += pekwm
      SUBDIR += piewm
      SUBDIR += pwm
