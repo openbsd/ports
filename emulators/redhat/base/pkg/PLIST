@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/10/24 10:13:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2005/04/12 18:28:12 sturm Exp $
 @conflict linux_lib-*
 @sample /emul/
 @sample ${PREFIX}/
@@ -60,6 +60,7 @@ etc/DIR_COLORS.xterm
 etc/cron.daily/
 etc/cron.daily/rpm
 etc/gtk/
+etc/gtk-2.0/
 etc/gtk/gtkrc
 etc/gtk/gtkrc.az
 etc/gtk/gtkrc.be
@@ -120,9 +121,13 @@ etc/logrotate.d/rpm
 etc/nsswitch.conf
 etc/pam.d/
 etc/pam.d/su
+etc/pango/
+etc/pango/pangox.aliases
 etc/profile.d/
 etc/profile.d/colorls.csh
 etc/profile.d/colorls.sh
+etc/profile.d/glib2.csh
+etc/profile.d/glib2.sh
 etc/rpc
 etc/rpm/
 etc/skel/
@@ -150,6 +155,8 @@ lib/libcrypt-2.3.2.so
 lib/libcrypt.so.1
 lib/libdl-2.3.2.so
 lib/libdl.so.2
+lib/libgcc_s-3.2-20020903.so.1
+lib/libgcc_s.so.1
 lib/libm-2.3.2.so
 lib/libm.so.6
 lib/libnsl-2.3.2.so
@@ -463,6 +470,8 @@ usr/bin/getent
 usr/bin/glibcbug
 usr/bin/gprof
 usr/bin/groups
+usr/bin/gtk-demo
+usr/bin/gtk-query-immodules-2.0
 usr/bin/hostid
 usr/bin/iconv
 usr/bin/id
@@ -484,6 +493,7 @@ usr/bin/nm
 usr/bin/nohup
 usr/bin/objcopy
 usr/bin/objdump
+usr/bin/pango-querymodules
 usr/bin/pathchk
 usr/bin/pinky
 usr/bin/printenv
@@ -508,6 +518,8 @@ usr/bin/strip
 usr/bin/tack
 usr/bin/tee
 usr/bin/test
+usr/bin/testgtk
+usr/bin/testtext
 usr/bin/tic
 usr/bin/toe
 usr/bin/tput
@@ -720,6 +732,90 @@ usr/lib/gconv/libISOIR165.so
 usr/lib/gconv/libJIS.so
 usr/lib/gconv/libJISX0213.so
 usr/lib/gconv/libKSC.so
+usr/lib/gdk-pixbuf/
+usr/lib/gdk-pixbuf/loaders/
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-bmp.so
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-bmp.so.1
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-bmp.so.1.0.0
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-gif.so
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-gif.so.1
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-gif.so.1.0.0
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-ico.so
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-ico.so.1
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-ico.so.1.0.0
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-jpeg.so
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-jpeg.so.1
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-jpeg.so.1.0.0
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-png.so
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-png.so.1
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-png.so.1.0.0
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-pnm.so
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-pnm.so.1
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-pnm.so.1.0.0
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-ras.so
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-ras.so.1
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-ras.so.1.0.0
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-tiff.so
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-tiff.so.1
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-tiff.so.1.0.0
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-xbm.so
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-xbm.so.1
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-xbm.so.1.0.0
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-xpm.so
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-xpm.so.1
+usr/lib/gdk-pixbuf/loaders/libpixbufloader-xpm.so.1.0.0
+usr/lib/gtk-2.0/
+usr/lib/gtk-2.0/2.0.0/
+usr/lib/gtk-2.0/2.0.0/immodules/
+usr/lib/gtk-2.0/2.0.0/immodules/im-am-et.la
+usr/lib/gtk-2.0/2.0.0/immodules/im-am-et.so
+usr/lib/gtk-2.0/2.0.0/immodules/im-cyrillic-translit.la
+usr/lib/gtk-2.0/2.0.0/immodules/im-cyrillic-translit.so
+usr/lib/gtk-2.0/2.0.0/immodules/im-hangul.la
+usr/lib/gtk-2.0/2.0.0/immodules/im-hangul.so
+usr/lib/gtk-2.0/2.0.0/immodules/im-inuktitut.la
+usr/lib/gtk-2.0/2.0.0/immodules/im-inuktitut.so
+usr/lib/gtk-2.0/2.0.0/immodules/im-ipa.la
+usr/lib/gtk-2.0/2.0.0/immodules/im-ipa.so
+usr/lib/gtk-2.0/2.0.0/immodules/im-thai-broken.la
+usr/lib/gtk-2.0/2.0.0/immodules/im-thai-broken.so
+usr/lib/gtk-2.0/2.0.0/immodules/im-ti-er.la
+usr/lib/gtk-2.0/2.0.0/immodules/im-ti-er.so
+usr/lib/gtk-2.0/2.0.0/immodules/im-ti-et.la
+usr/lib/gtk-2.0/2.0.0/immodules/im-ti-et.so
+usr/lib/gtk-2.0/2.0.0/immodules/im-viqr.la
+usr/lib/gtk-2.0/2.0.0/immodules/im-viqr.so
+usr/lib/gtk-2.0/2.0.0/immodules/im-xim.la
+usr/lib/gtk-2.0/2.0.0/immodules/im-xim.so
+usr/lib/gtk-2.0/2.0.0/loaders/
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-bmp.la
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-bmp.so
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-gif.la
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-gif.so
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-ico.la
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-ico.so
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-jpeg.la
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-jpeg.so
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-png.la
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-png.so
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-pnm.la
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-pnm.so
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-ras.la
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-ras.so
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-tga.la
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-tga.so
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-tiff.la
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-tiff.so
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-wbmp.la
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-wbmp.so
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-xbm.la
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-xbm.so
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-xpm.la
+usr/lib/gtk-2.0/2.0.0/loaders/libpixbufloader-xpm.so
+usr/lib/libXft.so.2
+usr/lib/libXft.so.2.0
+usr/lib/libatk-1.0.so.0
+usr/lib/libatk-1.0.so.0.0.3
 usr/lib/libbfd-2.13.90.0.2.so
 usr/lib/libbfd.a
 usr/lib/libbfd.la
@@ -735,14 +831,34 @@ usr/lib/libfreetype.so.6.3.1
 usr/lib/libg++.so.2.7.2.8
 usr/lib/libgdk-1.2.so.0
 usr/lib/libgdk-1.2.so.0.9.1
+usr/lib/libgdk-x11-2.0.so.0
+usr/lib/libgdk-x11-2.0.so.0.0.6
+usr/lib/libgdk_pixbuf-2.0.so.0
+usr/lib/libgdk_pixbuf-2.0.so.0.0.6
+usr/lib/libgdk_pixbuf.so.2
+usr/lib/libgdk_pixbuf.so.2.0.0
+usr/lib/libgdk_pixbuf_xlib-2.0.so.0
+usr/lib/libgdk_pixbuf_xlib-2.0.so.0.0.6
+usr/lib/libgdk_pixbuf_xlib.so.2
+usr/lib/libgdk_pixbuf_xlib.so.2.0.0
 usr/lib/libglib-1.2.so.0
 usr/lib/libglib-1.2.so.0.0.10
+usr/lib/libglib-2.0.so.0
+usr/lib/libglib-2.0.so.0.0.6
 usr/lib/libgmodule-1.2.so.0
 usr/lib/libgmodule-1.2.so.0.0.10
+usr/lib/libgmodule-2.0.so.0
+usr/lib/libgmodule-2.0.so.0.0.6
+usr/lib/libgobject-2.0.so.0
+usr/lib/libgobject-2.0.so.0.0.6
 usr/lib/libgthread-1.2.so.0
 usr/lib/libgthread-1.2.so.0.0.10
+usr/lib/libgthread-2.0.so.0
+usr/lib/libgthread-2.0.so.0.0.6
 usr/lib/libgtk-1.2.so.0
 usr/lib/libgtk-1.2.so.0.9.1
+usr/lib/libgtk-x11-2.0.so.0
+usr/lib/libgtk-x11-2.0.so.0.0.6
 usr/lib/libhistory.so.4
 usr/lib/libhistory.so.4.3
 usr/lib/libiberty.a
@@ -757,6 +873,14 @@ usr/lib/libopcodes.la
 usr/lib/libopcodes.so
 usr/lib/libpanel.so.5
 usr/lib/libpanel.so.5.2
+usr/lib/libpango-1.0.so.0
+usr/lib/libpango-1.0.so.0.100.1
+usr/lib/libpangoft2-1.0.so.0
+usr/lib/libpangoft2-1.0.so.0.100.1
+usr/lib/libpangox-1.0.so.0
+usr/lib/libpangox-1.0.so.0.100.1
+usr/lib/libpangoxft-1.0.so.0
+usr/lib/libpangoxft-1.0.so.0.100.1
 usr/lib/libpng.so.3
 usr/lib/libpng.so.3.1.2.2
 usr/lib/libpng12.so.0
@@ -4924,6 +5048,49 @@ usr/lib/locale/zh_TW/LC_NUMERIC
 usr/lib/locale/zh_TW/LC_PAPER
 usr/lib/locale/zh_TW/LC_TELEPHONE
 usr/lib/locale/zh_TW/LC_TIME
+usr/lib/pango/
+usr/lib/pango/1.1.0/
+usr/lib/pango/1.1.0/modules/
+usr/lib/pango/1.1.0/modules/pango-arabic-ft2.la
+usr/lib/pango/1.1.0/modules/pango-arabic-ft2.so
+usr/lib/pango/1.1.0/modules/pango-arabic-x.la
+usr/lib/pango/1.1.0/modules/pango-arabic-x.so
+usr/lib/pango/1.1.0/modules/pango-arabic-xft.la
+usr/lib/pango/1.1.0/modules/pango-arabic-xft.so
+usr/lib/pango/1.1.0/modules/pango-basic-ft2.la
+usr/lib/pango/1.1.0/modules/pango-basic-ft2.so
+usr/lib/pango/1.1.0/modules/pango-basic-x.la
+usr/lib/pango/1.1.0/modules/pango-basic-x.so
+usr/lib/pango/1.1.0/modules/pango-basic-xft.la
+usr/lib/pango/1.1.0/modules/pango-basic-xft.so
+usr/lib/pango/1.1.0/modules/pango-bengali-x.la
+usr/lib/pango/1.1.0/modules/pango-bengali-x.so
+usr/lib/pango/1.1.0/modules/pango-devanagari-x.la
+usr/lib/pango/1.1.0/modules/pango-devanagari-x.so
+usr/lib/pango/1.1.0/modules/pango-gujarati-x.la
+usr/lib/pango/1.1.0/modules/pango-gujarati-x.so
+usr/lib/pango/1.1.0/modules/pango-gurmukhi-x.la
+usr/lib/pango/1.1.0/modules/pango-gurmukhi-x.so
+usr/lib/pango/1.1.0/modules/pango-hangul-x.la
+usr/lib/pango/1.1.0/modules/pango-hangul-x.so
+usr/lib/pango/1.1.0/modules/pango-hangul-xft.la
+usr/lib/pango/1.1.0/modules/pango-hangul-xft.so
+usr/lib/pango/1.1.0/modules/pango-hebrew-ft2.la
+usr/lib/pango/1.1.0/modules/pango-hebrew-ft2.so
+usr/lib/pango/1.1.0/modules/pango-hebrew-x.la
+usr/lib/pango/1.1.0/modules/pango-hebrew-x.so
+usr/lib/pango/1.1.0/modules/pango-hebrew-xft.la
+usr/lib/pango/1.1.0/modules/pango-hebrew-xft.so
+usr/lib/pango/1.1.0/modules/pango-indic-xft.la
+usr/lib/pango/1.1.0/modules/pango-indic-xft.so
+usr/lib/pango/1.1.0/modules/pango-myanmar-x.la
+usr/lib/pango/1.1.0/modules/pango-myanmar-x.so
+usr/lib/pango/1.1.0/modules/pango-tamil-x.la
+usr/lib/pango/1.1.0/modules/pango-tamil-x.so
+usr/lib/pango/1.1.0/modules/pango-thai-x.la
+usr/lib/pango/1.1.0/modules/pango-thai-x.so
+usr/lib/pango/1.1.0/modules/pango-thai-xft.la
+usr/lib/pango/1.1.0/modules/pango-thai-xft.so
 usr/lib/rpm/
 usr/lib/rpm/athlon-linux/
 usr/lib/rpm/athlon-linux/macros
@@ -4967,6 +5134,36 @@ usr/sbin/rpcinfo
 usr/sbin/zdump
 usr/sbin/zic
 usr/share/
+usr/share/gtk-2.0/
+usr/share/gtk-2.0/demo/
+usr/share/gtk-2.0/demo/alphatest.png
+usr/share/gtk-2.0/demo/apple-red.png
+usr/share/gtk-2.0/demo/appwindow.c
+usr/share/gtk-2.0/demo/background.jpg
+usr/share/gtk-2.0/demo/button_box.c
+usr/share/gtk-2.0/demo/colorsel.c
+usr/share/gtk-2.0/demo/dialog.c
+usr/share/gtk-2.0/demo/drawingarea.c
+usr/share/gtk-2.0/demo/editable_cells.c
+usr/share/gtk-2.0/demo/floppybuddy.gif
+usr/share/gtk-2.0/demo/gnome-applets.png
+usr/share/gtk-2.0/demo/gnome-calendar.png
+usr/share/gtk-2.0/demo/gnome-foot.png
+usr/share/gtk-2.0/demo/gnome-gimp.png
+usr/share/gtk-2.0/demo/gnome-gmush.png
+usr/share/gtk-2.0/demo/gnome-gsame.png
+usr/share/gtk-2.0/demo/gnu-keys.png
+usr/share/gtk-2.0/demo/gtk-logo-rgb.gif
+usr/share/gtk-2.0/demo/images.c
+usr/share/gtk-2.0/demo/item_factory.c
+usr/share/gtk-2.0/demo/list_store.c
+usr/share/gtk-2.0/demo/menus.c
+usr/share/gtk-2.0/demo/panes.c
+usr/share/gtk-2.0/demo/pixbufs.c
+usr/share/gtk-2.0/demo/sizegroup.c
+usr/share/gtk-2.0/demo/stock_browser.c
+usr/share/gtk-2.0/demo/textview.c
+usr/share/gtk-2.0/demo/tree_store.c
 usr/share/i18n/
 usr/share/i18n/charmaps/
 usr/share/i18n/charmaps/ANSI_X3.110-1983.gz
@@ -5417,91 +5614,139 @@ usr/share/info/readline.info.gz
 usr/share/info/rluserman.info.gz
 usr/share/info/standards.info.gz
 usr/share/locale/
+usr/share/locale/ar/
+usr/share/locale/ar/LC_MESSAGES/
+usr/share/locale/ar/LC_MESSAGES/glib20.mo
+usr/share/locale/ar/LC_MESSAGES/gtk20.mo
 usr/share/locale/az/
 usr/share/locale/az/LC_MESSAGES/
+usr/share/locale/az/LC_MESSAGES/glib20.mo
 usr/share/locale/az/LC_MESSAGES/gtk+.mo
+usr/share/locale/az/LC_MESSAGES/gtk20.mo
 usr/share/locale/be/
 usr/share/locale/be/LC_MESSAGES/
 usr/share/locale/be/LC_MESSAGES/libc.mo
+usr/share/locale/bg/
+usr/share/locale/bg/LC_MESSAGES/
+usr/share/locale/bg/LC_MESSAGES/glib20.mo
+usr/share/locale/bg/LC_MESSAGES/gtk20.mo
 usr/share/locale/ca/
 usr/share/locale/ca/LC_MESSAGES/
+usr/share/locale/ca/LC_MESSAGES/glib20.mo
 usr/share/locale/ca/LC_MESSAGES/gtk+.mo
+usr/share/locale/ca/LC_MESSAGES/gtk20.mo
 usr/share/locale/ca/LC_MESSAGES/libc.mo
 usr/share/locale/cs/
 usr/share/locale/cs/LC_MESSAGES/
 usr/share/locale/cs/LC_MESSAGES/fileutils.mo
 usr/share/locale/cs/LC_MESSAGES/freetype.mo
+usr/share/locale/cs/LC_MESSAGES/glib20.mo
 usr/share/locale/cs/LC_MESSAGES/gtk+.mo
+usr/share/locale/cs/LC_MESSAGES/gtk20.mo
 usr/share/locale/cs/LC_MESSAGES/libc.mo
 usr/share/locale/cs/LC_MESSAGES/rpm.mo
 usr/share/locale/cs/LC_MESSAGES/sh-utils.mo
+usr/share/locale/cy/
+usr/share/locale/cy/LC_MESSAGES/
+usr/share/locale/cy/LC_MESSAGES/gtk20.mo
 usr/share/locale/da/
 usr/share/locale/da/LC_MESSAGES/
 usr/share/locale/da/LC_MESSAGES/fileutils.mo
 usr/share/locale/da/LC_MESSAGES/gtk+.mo
+usr/share/locale/da/LC_MESSAGES/gtk20.mo
 usr/share/locale/da/LC_MESSAGES/libc.mo
 usr/share/locale/da/LC_MESSAGES/rpm.mo
 usr/share/locale/de/
 usr/share/locale/de/LC_MESSAGES/
 usr/share/locale/de/LC_MESSAGES/fileutils.mo
 usr/share/locale/de/LC_MESSAGES/freetype.mo
+usr/share/locale/de/LC_MESSAGES/glib20.mo
 usr/share/locale/de/LC_MESSAGES/gtk+.mo
+usr/share/locale/de/LC_MESSAGES/gtk20.mo
 usr/share/locale/de/LC_MESSAGES/libc.mo
 usr/share/locale/de/LC_MESSAGES/rpm.mo
 usr/share/locale/de/LC_MESSAGES/sh-utils.mo
 usr/share/locale/el/
 usr/share/locale/el/LC_MESSAGES/
 usr/share/locale/el/LC_MESSAGES/fileutils.mo
+usr/share/locale/el/LC_MESSAGES/glib20.mo
 usr/share/locale/el/LC_MESSAGES/gtk+.mo
+usr/share/locale/el/LC_MESSAGES/gtk20.mo
 usr/share/locale/el/LC_MESSAGES/libc.mo
 usr/share/locale/el/LC_MESSAGES/sh-utils.mo
+usr/share/locale/en@IPA/
+usr/share/locale/en@IPA/LC_MESSAGES/
+usr/share/locale/en@IPA/LC_MESSAGES/gtk20.mo
 usr/share/locale/en_GB/
 usr/share/locale/en_GB/LC_MESSAGES/
+usr/share/locale/en_GB/LC_MESSAGES/gtk20.mo
 usr/share/locale/en_GB/LC_MESSAGES/libc.mo
 usr/share/locale/es/
 usr/share/locale/es/LC_MESSAGES/
 usr/share/locale/es/LC_MESSAGES/fileutils.mo
 usr/share/locale/es/LC_MESSAGES/freetype.mo
+usr/share/locale/es/LC_MESSAGES/glib20.mo
 usr/share/locale/es/LC_MESSAGES/gtk+.mo
+usr/share/locale/es/LC_MESSAGES/gtk20.mo
 usr/share/locale/es/LC_MESSAGES/libc.mo
 usr/share/locale/es/LC_MESSAGES/sh-utils.mo
 usr/share/locale/et/
 usr/share/locale/et/LC_MESSAGES/
 usr/share/locale/et/LC_MESSAGES/fileutils.mo
 usr/share/locale/et/LC_MESSAGES/gtk+.mo
+usr/share/locale/et/LC_MESSAGES/gtk20.mo
 usr/share/locale/eu/
 usr/share/locale/eu/LC_MESSAGES/
+usr/share/locale/eu/LC_MESSAGES/glib20.mo
 usr/share/locale/eu/LC_MESSAGES/gtk+.mo
+usr/share/locale/eu/LC_MESSAGES/gtk20.mo
+usr/share/locale/fa/
+usr/share/locale/fa/LC_MESSAGES/
+usr/share/locale/fa/LC_MESSAGES/gtk20.mo
 usr/share/locale/fi/
 usr/share/locale/fi/LC_MESSAGES/
 usr/share/locale/fi/LC_MESSAGES/gtk+.mo
+usr/share/locale/fi/LC_MESSAGES/gtk20.mo
 usr/share/locale/fi/LC_MESSAGES/libc.mo
 usr/share/locale/fi/LC_MESSAGES/rpm.mo
 usr/share/locale/fr/
 usr/share/locale/fr/LC_MESSAGES/
 usr/share/locale/fr/LC_MESSAGES/fileutils.mo
 usr/share/locale/fr/LC_MESSAGES/freetype.mo
+usr/share/locale/fr/LC_MESSAGES/glib20.mo
 usr/share/locale/fr/LC_MESSAGES/gtk+.mo
+usr/share/locale/fr/LC_MESSAGES/gtk20.mo
 usr/share/locale/fr/LC_MESSAGES/libc.mo
 usr/share/locale/fr/LC_MESSAGES/rpm.mo
 usr/share/locale/fr/LC_MESSAGES/sh-utils.mo
 usr/share/locale/ga/
 usr/share/locale/ga/LC_MESSAGES/
 usr/share/locale/ga/LC_MESSAGES/gtk+.mo
+usr/share/locale/ga/LC_MESSAGES/gtk20.mo
 usr/share/locale/gl/
 usr/share/locale/gl/LC_MESSAGES/
 usr/share/locale/gl/LC_MESSAGES/fileutils.mo
+usr/share/locale/gl/LC_MESSAGES/glib20.mo
 usr/share/locale/gl/LC_MESSAGES/gtk+.mo
+usr/share/locale/gl/LC_MESSAGES/gtk20.mo
 usr/share/locale/gl/LC_MESSAGES/libc.mo
+usr/share/locale/he/
+usr/share/locale/he/LC_MESSAGES/
+usr/share/locale/he/LC_MESSAGES/gtk20.mo
 usr/share/locale/hr/
 usr/share/locale/hr/LC_MESSAGES/
 usr/share/locale/hr/LC_MESSAGES/gtk+.mo
+usr/share/locale/hr/LC_MESSAGES/gtk20.mo
 usr/share/locale/hr/LC_MESSAGES/libc.mo
 usr/share/locale/hu/
 usr/share/locale/hu/LC_MESSAGES/
 usr/share/locale/hu/LC_MESSAGES/fileutils.mo
 usr/share/locale/hu/LC_MESSAGES/gtk+.mo
+usr/share/locale/hu/LC_MESSAGES/gtk20.mo
 usr/share/locale/hu/LC_MESSAGES/libc.mo
+usr/share/locale/ia/
+usr/share/locale/ia/LC_MESSAGES/
+usr/share/locale/ia/LC_MESSAGES/gtk20.mo
 usr/share/locale/is/
 usr/share/locale/is/LC_MESSAGES/
 usr/share/locale/is/LC_MESSAGES/rpm.mo
@@ -5509,117 +5754,165 @@ usr/share/locale/it/
 usr/share/locale/it/LC_MESSAGES/
 usr/share/locale/it/LC_MESSAGES/fileutils.mo
 usr/share/locale/it/LC_MESSAGES/gtk+.mo
+usr/share/locale/it/LC_MESSAGES/gtk20.mo
 usr/share/locale/it/LC_MESSAGES/libc.mo
 usr/share/locale/it/LC_MESSAGES/sh-utils.mo
 usr/share/locale/ja/
 usr/share/locale/ja/LC_MESSAGES/
 usr/share/locale/ja/LC_MESSAGES/fileutils.mo
+usr/share/locale/ja/LC_MESSAGES/glib20.mo
 usr/share/locale/ja/LC_MESSAGES/gtk+.mo
+usr/share/locale/ja/LC_MESSAGES/gtk20.mo
 usr/share/locale/ja/LC_MESSAGES/libc.mo
 usr/share/locale/ja/LC_MESSAGES/rpm.mo
 usr/share/locale/ko/
 usr/share/locale/ko/LC_MESSAGES/
 usr/share/locale/ko/LC_MESSAGES/fileutils.mo
+usr/share/locale/ko/LC_MESSAGES/glib20.mo
 usr/share/locale/ko/LC_MESSAGES/gtk+.mo
+usr/share/locale/ko/LC_MESSAGES/gtk20.mo
 usr/share/locale/ko/LC_MESSAGES/libc.mo
 usr/share/locale/ko/LC_MESSAGES/rpm.mo
 usr/share/locale/locale.alias
 usr/share/locale/lt/
 usr/share/locale/lt/LC_MESSAGES/
 usr/share/locale/lt/LC_MESSAGES/gtk+.mo
+usr/share/locale/lt/LC_MESSAGES/gtk20.mo
+usr/share/locale/lv/
+usr/share/locale/lv/LC_MESSAGES/
+usr/share/locale/lv/LC_MESSAGES/gtk20.mo
+usr/share/locale/ms/
+usr/share/locale/ms/LC_MESSAGES/
+usr/share/locale/ms/LC_MESSAGES/glib20.mo
+usr/share/locale/ms/LC_MESSAGES/gtk20.mo
 usr/share/locale/nl/
 usr/share/locale/nl/LC_MESSAGES/
 usr/share/locale/nl/LC_MESSAGES/fileutils.mo
 usr/share/locale/nl/LC_MESSAGES/freetype.mo
+usr/share/locale/nl/LC_MESSAGES/glib20.mo
 usr/share/locale/nl/LC_MESSAGES/gtk+.mo
+usr/share/locale/nl/LC_MESSAGES/gtk20.mo
 usr/share/locale/nl/LC_MESSAGES/libc.mo
 usr/share/locale/nl/LC_MESSAGES/sh-utils.mo
 usr/share/locale/nn/
 usr/share/locale/nn/LC_MESSAGES/
+usr/share/locale/nn/LC_MESSAGES/glib20.mo
 usr/share/locale/nn/LC_MESSAGES/gtk+.mo
+usr/share/locale/nn/LC_MESSAGES/gtk20.mo
 usr/share/locale/no/
 usr/share/locale/no/LC_MESSAGES/
 usr/share/locale/no/LC_MESSAGES/fileutils.mo
+usr/share/locale/no/LC_MESSAGES/glib20.mo
 usr/share/locale/no/LC_MESSAGES/gtk+.mo
+usr/share/locale/no/LC_MESSAGES/gtk20.mo
 usr/share/locale/no/LC_MESSAGES/libc.mo
 usr/share/locale/no/LC_MESSAGES/rpm.mo
 usr/share/locale/no/LC_MESSAGES/sh-utils.mo
 usr/share/locale/pl/
 usr/share/locale/pl/LC_MESSAGES/
 usr/share/locale/pl/LC_MESSAGES/fileutils.mo
+usr/share/locale/pl/LC_MESSAGES/glib20.mo
 usr/share/locale/pl/LC_MESSAGES/gtk+.mo
+usr/share/locale/pl/LC_MESSAGES/gtk20.mo
 usr/share/locale/pl/LC_MESSAGES/libc.mo
 usr/share/locale/pl/LC_MESSAGES/rpm.mo
 usr/share/locale/pl/LC_MESSAGES/sh-utils.mo
 usr/share/locale/pt/
 usr/share/locale/pt/LC_MESSAGES/
 usr/share/locale/pt/LC_MESSAGES/fileutils.mo
+usr/share/locale/pt/LC_MESSAGES/glib20.mo
 usr/share/locale/pt/LC_MESSAGES/gtk+.mo
+usr/share/locale/pt/LC_MESSAGES/gtk20.mo
 usr/share/locale/pt/LC_MESSAGES/rpm.mo
 usr/share/locale/pt/LC_MESSAGES/sh-utils.mo
 usr/share/locale/pt_BR/
 usr/share/locale/pt_BR/LC_MESSAGES/
 usr/share/locale/pt_BR/LC_MESSAGES/fileutils.mo
 usr/share/locale/pt_BR/LC_MESSAGES/gtk+.mo
+usr/share/locale/pt_BR/LC_MESSAGES/gtk20.mo
 usr/share/locale/pt_BR/LC_MESSAGES/libc.mo
 usr/share/locale/pt_BR/LC_MESSAGES/rpm.mo
 usr/share/locale/pt_BR/LC_MESSAGES/sh-utils.mo
 usr/share/locale/ro/
 usr/share/locale/ro/LC_MESSAGES/
+usr/share/locale/ro/LC_MESSAGES/glib20.mo
 usr/share/locale/ro/LC_MESSAGES/gtk+.mo
+usr/share/locale/ro/LC_MESSAGES/gtk20.mo
 usr/share/locale/ro/LC_MESSAGES/rpm.mo
 usr/share/locale/ru/
 usr/share/locale/ru/LC_MESSAGES/
 usr/share/locale/ru/LC_MESSAGES/fileutils.mo
+usr/share/locale/ru/LC_MESSAGES/glib20.mo
 usr/share/locale/ru/LC_MESSAGES/gtk+.mo
+usr/share/locale/ru/LC_MESSAGES/gtk20.mo
 usr/share/locale/ru/LC_MESSAGES/rpm.mo
 usr/share/locale/ru/LC_MESSAGES/sh-utils.mo
 usr/share/locale/sk/
 usr/share/locale/sk/LC_MESSAGES/
 usr/share/locale/sk/LC_MESSAGES/fileutils.mo
+usr/share/locale/sk/LC_MESSAGES/glib20.mo
 usr/share/locale/sk/LC_MESSAGES/gtk+.mo
+usr/share/locale/sk/LC_MESSAGES/gtk20.mo
 usr/share/locale/sk/LC_MESSAGES/libc.mo
 usr/share/locale/sk/LC_MESSAGES/rpm.mo
 usr/share/locale/sk/LC_MESSAGES/sh-utils.mo
 usr/share/locale/sl/
 usr/share/locale/sl/LC_MESSAGES/
 usr/share/locale/sl/LC_MESSAGES/fileutils.mo
+usr/share/locale/sl/LC_MESSAGES/glib20.mo
 usr/share/locale/sl/LC_MESSAGES/gtk+.mo
+usr/share/locale/sl/LC_MESSAGES/gtk20.mo
 usr/share/locale/sl/LC_MESSAGES/rpm.mo
 usr/share/locale/sp/
 usr/share/locale/sp/LC_MESSAGES/
 usr/share/locale/sp/LC_MESSAGES/gtk+.mo
+usr/share/locale/sp/LC_MESSAGES/gtk20.mo
 usr/share/locale/sr/
 usr/share/locale/sr/LC_MESSAGES/
 usr/share/locale/sr/LC_MESSAGES/gtk+.mo
+usr/share/locale/sr/LC_MESSAGES/gtk20.mo
 usr/share/locale/sr/LC_MESSAGES/rpm.mo
 usr/share/locale/sv/
 usr/share/locale/sv/LC_MESSAGES/
 usr/share/locale/sv/LC_MESSAGES/fileutils.mo
+usr/share/locale/sv/LC_MESSAGES/glib20.mo
 usr/share/locale/sv/LC_MESSAGES/gtk+.mo
+usr/share/locale/sv/LC_MESSAGES/gtk20.mo
 usr/share/locale/sv/LC_MESSAGES/libc.mo
 usr/share/locale/sv/LC_MESSAGES/rpm.mo
 usr/share/locale/sv/LC_MESSAGES/sh-utils.mo
+usr/share/locale/ta/
+usr/share/locale/ta/LC_MESSAGES/
+usr/share/locale/ta/LC_MESSAGES/glib20.mo
 usr/share/locale/tr/
 usr/share/locale/tr/LC_MESSAGES/
 usr/share/locale/tr/LC_MESSAGES/fileutils.mo
+usr/share/locale/tr/LC_MESSAGES/glib20.mo
 usr/share/locale/tr/LC_MESSAGES/gtk+.mo
+usr/share/locale/tr/LC_MESSAGES/gtk20.mo
 usr/share/locale/tr/LC_MESSAGES/libc.mo
 usr/share/locale/tr/LC_MESSAGES/rpm.mo
 usr/share/locale/uk/
 usr/share/locale/uk/LC_MESSAGES/
+usr/share/locale/uk/LC_MESSAGES/glib20.mo
 usr/share/locale/uk/LC_MESSAGES/gtk+.mo
+usr/share/locale/uk/LC_MESSAGES/gtk20.mo
 usr/share/locale/vi/
 usr/share/locale/vi/LC_MESSAGES/
+usr/share/locale/vi/LC_MESSAGES/glib20.mo
 usr/share/locale/vi/LC_MESSAGES/gtk+.mo
+usr/share/locale/vi/LC_MESSAGES/gtk20.mo
 usr/share/locale/wa/
 usr/share/locale/wa/LC_MESSAGES/
 usr/share/locale/wa/LC_MESSAGES/gtk+.mo
+usr/share/locale/wa/LC_MESSAGES/gtk20.mo
 usr/share/locale/zh_CN/
 usr/share/locale/zh_CN.GB2312/
 usr/share/locale/zh_CN.GB2312/LC_MESSAGES/
 usr/share/locale/zh_CN.GB2312/LC_MESSAGES/gtk+.mo
 usr/share/locale/zh_CN/LC_MESSAGES/
+usr/share/locale/zh_CN/LC_MESSAGES/glib20.mo
+usr/share/locale/zh_CN/LC_MESSAGES/gtk20.mo
 usr/share/locale/zh_CN/LC_MESSAGES/libc.mo
 usr/share/locale/zh_TW/
 usr/share/locale/zh_TW.Big5/
@@ -5627,178 +5920,180 @@ usr/share/locale/zh_TW.Big5/LC_MESSAGES/
 usr/share/locale/zh_TW.Big5/LC_MESSAGES/gtk+.mo
 usr/share/locale/zh_TW/LC_MESSAGES/
 usr/share/locale/zh_TW/LC_MESSAGES/fileutils.mo
+usr/share/locale/zh_TW/LC_MESSAGES/glib20.mo
+usr/share/locale/zh_TW/LC_MESSAGES/gtk20.mo
 usr/share/locale/zh_TW/LC_MESSAGES/libc.mo
-@mandir usr/share/man/
+usr/share/man/
 usr/share/man/ja/
 usr/share/man/ja/man8/
-@man usr/share/man/ja/man8/rpm.8.gz
-@man usr/share/man/ja/man8/rpm2cpio.8.gz
+usr/share/man/ja/man8/rpm.8.gz
+usr/share/man/ja/man8/rpm2cpio.8.gz
 usr/share/man/man1/
-@man usr/share/man/man1/..1.gz
-@man usr/share/man/man1/:.1.gz
-@man usr/share/man/man1/[.1.gz
-@man usr/share/man/man1/addr2line.1.gz
-@man usr/share/man/man1/alias.1.gz
-@man usr/share/man/man1/ar.1.gz
-@man usr/share/man/man1/as.1.gz
-@man usr/share/man/man1/basename.1.gz
-@man usr/share/man/man1/bash.1.gz
-@man usr/share/man/man1/bashbug.1.gz
-@man usr/share/man/man1/bg.1.gz
-@man usr/share/man/man1/bind.1.gz
-@man usr/share/man/man1/break.1.gz
-@man usr/share/man/man1/builtin.1.gz
-@man usr/share/man/man1/builtins.1.gz
-@man usr/share/man/man1/c++filt.1.gz
-@man usr/share/man/man1/captoinfo.1m.gz
-@man usr/share/man/man1/cd.1.gz
-@man usr/share/man/man1/chgrp.1.gz
-@man usr/share/man/man1/chmod.1.gz
-@man usr/share/man/man1/chown.1.gz
-@man usr/share/man/man1/chroot.1.gz
-@man usr/share/man/man1/cjpeg.1.gz
-@man usr/share/man/man1/clear.1.gz
-@man usr/share/man/man1/command.1.gz
-@man usr/share/man/man1/compgen.1.gz
-@man usr/share/man/man1/complete.1.gz
-@man usr/share/man/man1/continue.1.gz
-@man usr/share/man/man1/cp.1.gz
-@man usr/share/man/man1/date.1.gz
-@man usr/share/man/man1/dd.1.gz
-@man usr/share/man/man1/declare.1.gz
-@man usr/share/man/man1/df.1.gz
-@man usr/share/man/man1/dir.1.gz
-@man usr/share/man/man1/dircolors.1.gz
-@man usr/share/man/man1/dirname.1.gz
-@man usr/share/man/man1/dirs.1.gz
-@man usr/share/man/man1/disown.1.gz
-@man usr/share/man/man1/djpeg.1.gz
-@man usr/share/man/man1/du.1.gz
-@man usr/share/man/man1/echo.1.gz
-@man usr/share/man/man1/enable.1.gz
-@man usr/share/man/man1/env.1.gz
-@man usr/share/man/man1/eval.1.gz
-@man usr/share/man/man1/exec.1.gz
-@man usr/share/man/man1/exit.1.gz
-@man usr/share/man/man1/export.1.gz
-@man usr/share/man/man1/expr.1.gz
-@man usr/share/man/man1/factor.1.gz
-@man usr/share/man/man1/false.1.gz
-@man usr/share/man/man1/fc.1.gz
-@man usr/share/man/man1/fg.1.gz
-@man usr/share/man/man1/gendiff.1.gz
-@man usr/share/man/man1/getopts.1.gz
-@man usr/share/man/man1/gprof.1.gz
-@man usr/share/man/man1/groups.1.gz
-@man usr/share/man/man1/hash.1.gz
-@man usr/share/man/man1/help.1.gz
-@man usr/share/man/man1/history.1.gz
-@man usr/share/man/man1/hostid.1.gz
-@man usr/share/man/man1/id.1.gz
-@man usr/share/man/man1/infocmp.1m.gz
-@man usr/share/man/man1/infotocap.1m.gz
-@man usr/share/man/man1/install.1.gz
-@man usr/share/man/man1/jobs.1.gz
-@man usr/share/man/man1/jpegtran.1.gz
-@man usr/share/man/man1/ld.1.gz
-@man usr/share/man/man1/let.1.gz
-@man usr/share/man/man1/link.1.gz
-@man usr/share/man/man1/ln.1.gz
-@man usr/share/man/man1/local.1.gz
-@man usr/share/man/man1/logname.1.gz
-@man usr/share/man/man1/logout.1.gz
-@man usr/share/man/man1/ls.1.gz
-@man usr/share/man/man1/mkdir.1.gz
-@man usr/share/man/man1/mkfifo.1.gz
-@man usr/share/man/man1/mknod.1.gz
-@man usr/share/man/man1/mv.1.gz
-@man usr/share/man/man1/nice.1.gz
-@man usr/share/man/man1/nm.1.gz
-@man usr/share/man/man1/nohup.1.gz
-@man usr/share/man/man1/objcopy.1.gz
-@man usr/share/man/man1/objdump.1.gz
-@man usr/share/man/man1/pathchk.1.gz
-@man usr/share/man/man1/pinky.1.gz
-@man usr/share/man/man1/popd.1.gz
-@man usr/share/man/man1/printenv.1.gz
-@man usr/share/man/man1/printf.1.gz
-@man usr/share/man/man1/pushd.1.gz
-@man usr/share/man/man1/pwd.1.gz
-@man usr/share/man/man1/ranlib.1.gz
-@man usr/share/man/man1/rdjpgcom.1.gz
-@man usr/share/man/man1/read.1.gz
-@man usr/share/man/man1/readelf.1.gz
-@man usr/share/man/man1/readonly.1.gz
-@man usr/share/man/man1/reset.1.gz
-@man usr/share/man/man1/return.1.gz
-@man usr/share/man/man1/rm.1.gz
-@man usr/share/man/man1/rmdir.1.gz
-@man usr/share/man/man1/seq.1.gz
-@man usr/share/man/man1/set.1.gz
-@man usr/share/man/man1/sh.1.gz
-@man usr/share/man/man1/shift.1.gz
-@man usr/share/man/man1/shopt.1.gz
-@man usr/share/man/man1/shred.1.gz
-@man usr/share/man/man1/size.1.gz
-@man usr/share/man/man1/sleep.1.gz
-@man usr/share/man/man1/source.1.gz
-@man usr/share/man/man1/strings.1.gz
-@man usr/share/man/man1/strip.1.gz
-@man usr/share/man/man1/stty.1.gz
-@man usr/share/man/man1/su.1.gz
-@man usr/share/man/man1/suspend.1.gz
-@man usr/share/man/man1/sync.1.gz
-@man usr/share/man/man1/tack.1.gz
-@man usr/share/man/man1/tee.1.gz
-@man usr/share/man/man1/test.1.gz
-@man usr/share/man/man1/tic.1m.gz
-@man usr/share/man/man1/times.1.gz
-@man usr/share/man/man1/toe.1m.gz
-@man usr/share/man/man1/touch.1.gz
-@man usr/share/man/man1/tput.1.gz
-@man usr/share/man/man1/trap.1.gz
-@man usr/share/man/man1/true.1.gz
-@man usr/share/man/man1/tset.1.gz
-@man usr/share/man/man1/tty.1.gz
-@man usr/share/man/man1/type.1.gz
-@man usr/share/man/man1/typeset.1.gz
-@man usr/share/man/man1/ulimit.1.gz
-@man usr/share/man/man1/umask.1.gz
-@man usr/share/man/man1/unalias.1.gz
-@man usr/share/man/man1/uname.1.gz
-@man usr/share/man/man1/unlink.1.gz
-@man usr/share/man/man1/unset.1.gz
-@man usr/share/man/man1/users.1.gz
-@man usr/share/man/man1/vdir.1.gz
-@man usr/share/man/man1/wait.1.gz
-@man usr/share/man/man1/who.1.gz
-@man usr/share/man/man1/whoami.1.gz
-@man usr/share/man/man1/wrjpgcom.1.gz
-@man usr/share/man/man1/xmlwf.1.gz
-@man usr/share/man/man1/yes.1.gz
+usr/share/man/man1/..1.gz
+usr/share/man/man1/:.1.gz
+usr/share/man/man1/[.1.gz
+usr/share/man/man1/addr2line.1.gz
+usr/share/man/man1/alias.1.gz
+usr/share/man/man1/ar.1.gz
+usr/share/man/man1/as.1.gz
+usr/share/man/man1/basename.1.gz
+usr/share/man/man1/bash.1.gz
+usr/share/man/man1/bashbug.1.gz
+usr/share/man/man1/bg.1.gz
+usr/share/man/man1/bind.1.gz
+usr/share/man/man1/break.1.gz
+usr/share/man/man1/builtin.1.gz
+usr/share/man/man1/builtins.1.gz
+usr/share/man/man1/c++filt.1.gz
+usr/share/man/man1/captoinfo.1m.gz
+usr/share/man/man1/cd.1.gz
+usr/share/man/man1/chgrp.1.gz
+usr/share/man/man1/chmod.1.gz
+usr/share/man/man1/chown.1.gz
+usr/share/man/man1/chroot.1.gz
+usr/share/man/man1/cjpeg.1.gz
+usr/share/man/man1/clear.1.gz
+usr/share/man/man1/command.1.gz
+usr/share/man/man1/compgen.1.gz
+usr/share/man/man1/complete.1.gz
+usr/share/man/man1/continue.1.gz
+usr/share/man/man1/cp.1.gz
+usr/share/man/man1/date.1.gz
+usr/share/man/man1/dd.1.gz
+usr/share/man/man1/declare.1.gz
+usr/share/man/man1/df.1.gz
+usr/share/man/man1/dir.1.gz
+usr/share/man/man1/dircolors.1.gz
+usr/share/man/man1/dirname.1.gz
+usr/share/man/man1/dirs.1.gz
+usr/share/man/man1/disown.1.gz
+usr/share/man/man1/djpeg.1.gz
+usr/share/man/man1/du.1.gz
+usr/share/man/man1/echo.1.gz
+usr/share/man/man1/enable.1.gz
+usr/share/man/man1/env.1.gz
+usr/share/man/man1/eval.1.gz
+usr/share/man/man1/exec.1.gz
+usr/share/man/man1/exit.1.gz
+usr/share/man/man1/export.1.gz
+usr/share/man/man1/expr.1.gz
+usr/share/man/man1/factor.1.gz
+usr/share/man/man1/false.1.gz
+usr/share/man/man1/fc.1.gz
+usr/share/man/man1/fg.1.gz
+usr/share/man/man1/gendiff.1.gz
+usr/share/man/man1/getopts.1.gz
+usr/share/man/man1/gprof.1.gz
+usr/share/man/man1/groups.1.gz
+usr/share/man/man1/hash.1.gz
+usr/share/man/man1/help.1.gz
+usr/share/man/man1/history.1.gz
+usr/share/man/man1/hostid.1.gz
+usr/share/man/man1/id.1.gz
+usr/share/man/man1/infocmp.1m.gz
+usr/share/man/man1/infotocap.1m.gz
+usr/share/man/man1/install.1.gz
+usr/share/man/man1/jobs.1.gz
+usr/share/man/man1/jpegtran.1.gz
+usr/share/man/man1/ld.1.gz
+usr/share/man/man1/let.1.gz
+usr/share/man/man1/link.1.gz
+usr/share/man/man1/ln.1.gz
+usr/share/man/man1/local.1.gz
+usr/share/man/man1/logname.1.gz
+usr/share/man/man1/logout.1.gz
+usr/share/man/man1/ls.1.gz
+usr/share/man/man1/mkdir.1.gz
+usr/share/man/man1/mkfifo.1.gz
+usr/share/man/man1/mknod.1.gz
+usr/share/man/man1/mv.1.gz
+usr/share/man/man1/nice.1.gz
+usr/share/man/man1/nm.1.gz
+usr/share/man/man1/nohup.1.gz
+usr/share/man/man1/objcopy.1.gz
+usr/share/man/man1/objdump.1.gz
+usr/share/man/man1/pathchk.1.gz
+usr/share/man/man1/pinky.1.gz
+usr/share/man/man1/popd.1.gz
+usr/share/man/man1/printenv.1.gz
+usr/share/man/man1/printf.1.gz
+usr/share/man/man1/pushd.1.gz
+usr/share/man/man1/pwd.1.gz
+usr/share/man/man1/ranlib.1.gz
+usr/share/man/man1/rdjpgcom.1.gz
+usr/share/man/man1/read.1.gz
+usr/share/man/man1/readelf.1.gz
+usr/share/man/man1/readonly.1.gz
+usr/share/man/man1/reset.1.gz
+usr/share/man/man1/return.1.gz
+usr/share/man/man1/rm.1.gz
+usr/share/man/man1/rmdir.1.gz
+usr/share/man/man1/seq.1.gz
+usr/share/man/man1/set.1.gz
+usr/share/man/man1/sh.1.gz
+usr/share/man/man1/shift.1.gz
+usr/share/man/man1/shopt.1.gz
+usr/share/man/man1/shred.1.gz
+usr/share/man/man1/size.1.gz
+usr/share/man/man1/sleep.1.gz
+usr/share/man/man1/source.1.gz
+usr/share/man/man1/strings.1.gz
+usr/share/man/man1/strip.1.gz
+usr/share/man/man1/stty.1.gz
+usr/share/man/man1/su.1.gz
+usr/share/man/man1/suspend.1.gz
+usr/share/man/man1/sync.1.gz
+usr/share/man/man1/tack.1.gz
+usr/share/man/man1/tee.1.gz
+usr/share/man/man1/test.1.gz
+usr/share/man/man1/tic.1m.gz
+usr/share/man/man1/times.1.gz
+usr/share/man/man1/toe.1m.gz
+usr/share/man/man1/touch.1.gz
+usr/share/man/man1/tput.1.gz
+usr/share/man/man1/trap.1.gz
+usr/share/man/man1/true.1.gz
+usr/share/man/man1/tset.1.gz
+usr/share/man/man1/tty.1.gz
+usr/share/man/man1/type.1.gz
+usr/share/man/man1/typeset.1.gz
+usr/share/man/man1/ulimit.1.gz
+usr/share/man/man1/umask.1.gz
+usr/share/man/man1/unalias.1.gz
+usr/share/man/man1/uname.1.gz
+usr/share/man/man1/unlink.1.gz
+usr/share/man/man1/unset.1.gz
+usr/share/man/man1/users.1.gz
+usr/share/man/man1/vdir.1.gz
+usr/share/man/man1/wait.1.gz
+usr/share/man/man1/who.1.gz
+usr/share/man/man1/whoami.1.gz
+usr/share/man/man1/wrjpgcom.1.gz
+usr/share/man/man1/xmlwf.1.gz
+usr/share/man/man1/yes.1.gz
 usr/share/man/man3/
-@man usr/share/man/man3/history.3.gz
-@man usr/share/man/man3/readline.3.gz
+usr/share/man/man3/history.3.gz
+usr/share/man/man3/readline.3.gz
 usr/share/man/man5/
-@man usr/share/man/man5/png.5.gz
-@man usr/share/man/man5/term.5.gz
-@man usr/share/man/man5/terminfo.5.gz
+usr/share/man/man5/png.5.gz
+usr/share/man/man5/term.5.gz
+usr/share/man/man5/terminfo.5.gz
 usr/share/man/man7/
-@man usr/share/man/man7/term.7.gz
+usr/share/man/man7/term.7.gz
 usr/share/man/man8/
-@man usr/share/man/man8/rpm.8.gz
-@man usr/share/man/man8/rpm2cpio.8.gz
+usr/share/man/man8/rpm.8.gz
+usr/share/man/man8/rpm2cpio.8.gz
 usr/share/man/pl/
 usr/share/man/pl/man8/
-@man usr/share/man/pl/man8/rpm.8.gz
-@man usr/share/man/pl/man8/rpm2cpio.8.gz
+usr/share/man/pl/man8/rpm.8.gz
+usr/share/man/pl/man8/rpm2cpio.8.gz
 usr/share/man/ru/
 usr/share/man/ru/man8/
-@man usr/share/man/ru/man8/rpm.8.gz
-@man usr/share/man/ru/man8/rpm2cpio.8.gz
+usr/share/man/ru/man8/rpm.8.gz
+usr/share/man/ru/man8/rpm2cpio.8.gz
 usr/share/man/sk/
 usr/share/man/sk/man8/
-@man usr/share/man/sk/man8/rpm.8.gz
+usr/share/man/sk/man8/rpm.8.gz
 usr/share/tabset/
 usr/share/tabset/std
 usr/share/tabset/stdcrt
@@ -8177,7 +8472,15 @@ usr/share/terminfo/z/ztx11
 usr/share/themes/
 usr/share/themes/Default/
 usr/share/themes/Default/gtk/
+usr/share/themes/Default/gtk-2.0-key/
+usr/share/themes/Default/gtk-2.0-key/gtkrc
 usr/share/themes/Default/gtk/gtkrc
+usr/share/themes/Emacs/
+usr/share/themes/Emacs/gtk-2.0-key/
+usr/share/themes/Emacs/gtk-2.0-key/gtkrc
+usr/share/themes/Raleigh/
+usr/share/themes/Raleigh/gtk-2.0/
+usr/share/themes/Raleigh/gtk-2.0/gtkrc
 var/
 var/lib/
 var/lib/rpm/
@@ -8187,3 +8490,7 @@ var/spool/repackage/
 @exec ln -sf %D /emul/linux
 @unexec rm /emul/linux
 @exec %D/sbin/ldconfig
+@exec ${PREFIX}/usr/bin/gtk-query-immodules-2.0 > ${PREFIX}/etc/gtk-2.0/gtk.immodules
+@exec ${PREFIX}/usr/bin/pango-querymodules > ${PREFIX}/etc/pango/pango.modules
+@extra ${PREFIX}/etc/gtk-2.0/gtk.immodules
+@extra ${PREFIX}/etc/pango/pango.modules
