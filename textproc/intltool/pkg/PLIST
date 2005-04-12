@@ -1,29 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/10/26 03:53:41 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/04/12 06:34:16 marcm Exp $
 bin/intltool-extract
 bin/intltool-merge
 bin/intltool-prepare
 bin/intltool-update
 bin/intltoolize
-bin/xml-i18n-toolize
 @man man/man8/intltool-extract.8
 @man man/man8/intltool-merge.8
 @man man/man8/intltool-prepare.8
 @man man/man8/intltool-update.8
 @man man/man8/intltoolize.8
 share/aclocal/intltool.m4
-share/aclocal/xml-i18n-tools.m4
 share/intltool/
+share/intltool/Makefile.in.in
 share/intltool/intltool-extract.in
 share/intltool/intltool-merge.in
-share/intltool/intltool-po-Makefile.in.in-patch-1
-share/intltool/intltool-po-Makefile.in.in-patch-2
-share/intltool/intltool-po-Makefile.in.in-patch-3
-share/intltool/intltool-po-Makefile.in.in-patch-4
-share/intltool/intltool-po-Makefile.in.in-patch-5
-share/intltool/intltool-po-Makefile.in.in-patch-6
-share/intltool/intltool-po-Makefile.in.in-patch-7
-share/intltool/intltool-po-Makefile.in.in-patch-8
 share/intltool/intltool-update.in
-share/intltool/xml-i18n-po-Makefile.in.in-patch-1
-share/intltool/xml-i18n-po-Makefile.in.in-patch-2
-share/intltool/xml-i18n-po-Makefile.in.in-patch-5

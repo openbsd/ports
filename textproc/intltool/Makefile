@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2004/10/26 03:53:41 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2005/04/12 06:34:16 marcm Exp $
 
 COMMENT=		"Internationalization tool"
 
-DISTNAME=		intltool-0.31.3
+DISTNAME=		intltool-0.33
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.gnome.org
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/intltool/0.31/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/intltool/0.33/}
 EXTRACT_SUFX=           .tar.bz2
 
 # GPL
