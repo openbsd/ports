@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2005/04/08 20:24:48 msf Exp $
+# $OpenBSD: Makefile,v 1.140 2005/04/12 20:29:59 naddy Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -105,9 +105,7 @@
      SUBDIR += sylpheed
      SUBDIR += sylpheed,gpgme
      SUBDIR += sylpheed-claws
-     SUBDIR += sylpheed-claws,gpgme
-     SUBDIR += sylpheed-claws,pixbuf
-     SUBDIR += sylpheed-claws,gpgme,pixbuf
+     SUBDIR += sylpheed-claws,pgpmime
      SUBDIR += teapop
      SUBDIR += tkrat
      SUBDIR += tmda
