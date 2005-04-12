@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2005/01/03 22:41:51 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2005/04/12 06:33:07 marcm Exp $
 
 COMMENT=		"high-performance 2D graphics library"
 
-VERSION=		2.3.16
+VERSION=		2.3.17
 DISTNAME=		libart_lgpl-${VERSION}
 PKGNAME=		libart-${VERSION}
 CATEGORIES=		graphics
@@ -20,7 +20,7 @@ WANTLIB=		m
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libart_lgpl/2.3/}
 
-SEPARATE_BUILD=		concurrent
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 
