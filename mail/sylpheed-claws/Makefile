@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/30 23:41:33 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2005/04/12 20:29:26 naddy Exp $
 
 COMMENT=		"lightweight GTK+ based mail/news client"
-COMMENT-dillo=		"Dillo plugin for sylpheed-claws"
-COMMENT-imageviewer=	"Image viewer plugin for sylpheed-claws"
-COMMENT-spamassassin=	"Spamassassin plugin for sylpheed-claws"
-COMMENT-themes=		"Sylpheed-claws themes"
+COMMENT-dillo=		"dillo plugin for sylpheed-claws"
+COMMENT-docs=		"sylpheed-claws FAQ and documentation"
+COMMENT-imageviewer=	"image viewer plugin for sylpheed-claws"
+COMMENT-spamassassin=	"spamassassin plugin for sylpheed-claws"
+COMMENT-themes=		"sylpheed-claws themes"
+COMMENT-trayicon=	"system tray icon plugin for sylpheed-claws"
 
-VERSION=		0.9.0
-DISTNAME=		sylpheed-${VERSION}claws
-PKGNAME=		sylpheed-claws-${VERSION}
-THEMEFILE=		sylpheed-iconset-20030523
+VERSION=		1.9.6
+DISTNAME=		sylpheed-claws-${VERSION}
+THEMEFILE=		sylpheed-iconset-20040929
 CATEGORIES=		mail news x11
 
 HOMEPAGE=		http://sylpheed-claws.sourceforge.net/
@@ -20,68 +21,37 @@ PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
-WANTLIB=		X11 Xext Xi crypto glib gmodule m ssl 
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sylpheed-claws/}
-DISTFILES=		$(DISTNAME).tar.bz2 \
-			$(THEMEFILE).tar.gz
+DISTFILES=		${DISTNAME}.tar.gz ${THEMEFILE}.tar.gz
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		gdk.1,gtk.1::x11/gtk+ \
-			gthread.1::devel/glib
+
+LIB_DEPENDS=		gdk_pixbuf-2.0.0.0::x11/gtk+2
+
+WANTLIB=		X11 Xcursor Xext Xft Xinerama Xrender crypto \
+			fontconfig freetype m ssl \
+			atk-1.0.0.0 gdk-x11-2.0.0.0 glib-2.0.0.0 \
+			gmodule-2.0.0.0 gobject-2.0.0.0 gtk-x11-2.0.0.0 \
+			pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
 
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS=		--enable-ipv6 --enable-openssl \
-			--program-suffix="-claws" \
+CONFIGURE_ARGS=		--program-suffix="-claws" \
+			--enable-ipv6 --enable-openssl \
+			--enable-gdk-pixbuf --disable-imlib \
 			--enable-spamassassin-plugin \
-			--enable-dillo-viewer-plugin
+			--disable-clamav-plugin \
+			--disable-mathml-viewer-plugin
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
-FLAVORS=		compface gpgme jpilot ldap pixbuf
+FLAVORS=		compface pgpmime jpilot ldap
 FLAVOR?=
 
-MULTI_PACKAGES=		-dillo -imageviewer -spamassassin -themes
-
-# Need GNU/aspell >= 0.50
-#.if ${FLAVOR:L:Maspell}
-#LIB_DEPENDS+=		aspell::textproc/aspell
-#CONFIGURE_ARGS+=	--enable-aspell
-#.endif
-
-.if ${FLAVOR:L:Mcompface}
-PERMIT_PACKAGE_CDROM=   "No Fee"
-PERMIT_DISTFILES_CDROM= "No Fee"
-LIB_DEPENDS+=		compface.1::mail/faces
-CONFIGURE_ARGS+=	--enable-compface
-.else
-CONFIGURE_ARGS+=	--disable-compface
-.endif
-
-.if ${FLAVOR:L:Mgpgme}
-LIB_DEPENDS+=		gpgme.4::security/gpgme
-CONFIGURE_ARGS+=	--enable-gpgme
-.endif
-
-.if ${FLAVOR:L:Mjpilot}
-LIB_DEPENDS+=		pisock.4::comms/pilot-link
-RUN_DEPENDS+=		:jpilot-*:comms/jpilot
-CONFIGURE_ARGS+= 	--enable-jpilot
-.endif
-
-.if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+=		ldap.2,lber.2:openldap-client-*:databases/openldap
-CONFIGURE_ARGS+=	--enable-ldap
-.endif
-
-.if !${FLAVOR:L:Mpixbuf}
-LIB_DEPENDS+=		gdk_imlib.19::graphics/imlib
-CONFIGURE_ARGS+=	--enable-imblib --disable-gdk-pixbuf
-.else
-LIB_DEPENDS+=		gdk_pixbuf.2::graphics/gdk-pixbuf
-CONFIGURE_ARGS+=	--enable-gdk-pixbuf --disable-imlib
-.endif
+MULTI_PACKAGES=		-dillo -docs -imageviewer -spamassassin -themes \
+			-trayicon
 
 .for i in ${MULTI_PACKAGES}
 FULLPKGNAME$i=		sylpheed-claws${i}-${VERSION}
@@ -89,15 +59,68 @@ FULLPKGNAME$i=		sylpheed-claws${i}-${VERSION}
 
 SUBPACKAGE?=
 
-.if !defined(PACKAGING) || $(SUBPACKAGE) == "-imageviewer"
-WANTLIB+=		ungif tiff png jpeg z
+.if !defined(PACKAGING) || empty(SUBPACKAGE)
+LIB_DEPENDS+=		startup-notification-1::devel/startup-notification
 .endif
+
+.if ${FLAVOR:L:Mcompface}
+PERMIT_PACKAGE_CDROM=   "No Fee"
+PERMIT_DISTFILES_CDROM= "No Fee"
+.  if !defined(PACKAGING) || empty(SUBPACKAGE)
+LIB_DEPENDS+=		compface.1::mail/faces
+.  endif
+CONFIGURE_ARGS+=	--enable-compface
+.else
+CONFIGURE_ARGS+=	--disable-compface
+.endif
+
+.if ${FLAVOR:L:Mpgpmime}
+BROKEN=			Does not work with current gpgme version
+.  if !defined(PACKAGING) || empty(SUBPACKAGE)
+LIB_DEPENDS+=		gpgme.4::security/gpgme
+.  endif
+CONFIGURE_ARGS+=	--enable-pgpmime-plugin
+.else
+CONFIGURE_ARGS+=	--disable-pgpmime-plugin
+.endif
+
+.if ${FLAVOR:L:Mjpilot}
+.  if !defined(PACKAGING) || empty(SUBPACKAGE)
+LIB_DEPENDS+=		pisock.4::comms/pilot-link
+WANTLIB+=		ncurses readline
+.  endif
+RUN_DEPENDS+=		:jpilot-*:comms/jpilot
+CONFIGURE_ARGS+= 	--enable-jpilot
+.endif
+
+.if ${FLAVOR:L:Mldap}
+.  if !defined(PACKAGING) || empty(SUBPACKAGE)
+LIB_DEPENDS+=		ldap.2,lber.2:openldap-client-*:databases/openldap
+.  endif
+CONFIGURE_ARGS+=	--enable-ldap
+.endif
+
 .if empty(SUBPACKAGE)
-WANTLIB+=		c pthread
+WANTLIB+=		ICE SM c pthread gthread-2.0.0.0 pangoft2-1.0.0.0
 .endif
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
 RUN_DEPENDS=            ::mail/sylpheed-claws
+.endif
+
+.if !defined(PACKAGING) || ${SUBPACKAGE} == "-dillo"
+RUN_DEPENDS+=		:dillo-*:www/dillo
+.endif
+
+.if !defined(PACKAGING) || ${SUBPACKAGE} == "-imageviewer"
+.endif
+
+.if !defined(PACKAGING) || ${SUBPACKAGE} == "-spamassassin"
+RUN_DEPENDS+=		:p5-Mail-SpamAssassin-*:mail/p5-Mail-SpamAssassin
+.endif
+
+.if !defined(PACKAGING) || ${SUBPACKAGE} == "-trayicon"
+WANTLIB+=		pangoft2-1.0.0.0
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-themes"
@@ -107,22 +130,30 @@ WANTLIB=
 MODULES=
 .endif
 
-.if ${SUBPACKAGE:M-spamassassin}
-RUN_DEPENDS+=		:p5-Mail-SpamAssassin-*:mail/p5-Mail-SpamAssassin
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
+PKG_ARCH=		*
+LIB_DEPENDS=
+WANTLIB=
+MODULES=
 .endif
 
-.if ${SUBPACKAGE:M-dillo}
-RUN_DEPENDS+=		:dillo-*:www/dillo
-.endif
+FILES=		OOo2sylpheed.pl calypso_convert.pl convert_mbox.pl  \
+		eud2gc.py filter_conv.pl freshmeat_search.pl gif2xface.pl \
+	      	gpg-sign-syl google_msgid.pl google_search.pl \
+		kmail2sylpheed.pl kmail2sylpheed_v2.pl maildir2sylpheed.pl \
+		multiwebsearch.pl nautilus2sylpheed.sh outlook2sylpheed.pl \
+		sylpheed-switcher sylprint.pl sylprint.rc tb2sylpheed \
+	      	textviewer.sh update-po uudec vcard2xml.py \
+		kdeservicemenu/install.sh \
+		kdeservicemenu/sylpheed-kdeservicemenu.pl
 
-FILES=		OOo2sylpheed.pl calypso_convert.pl eud2gc.py \
-		filter_conv.pl gif2xface.pl google_msgid.pl \
-		gpg-sign-syl kmail2sylpheed.pl kmail2sylpheed_v2.pl \
-		newscache_clean.pl outlook2sylpheed.pl \
-		tb2sylpheed update-po uudec sylprint.pl sylprint.rc
+THEMES=		Crystal Everaldo_Kids Gnomeria Gorillaws \
+		Graphitte-0.9.7 GurUnix Korillaws Kovico-sylpheed \
+		New_Session Phoenity Plain_and_Bluish Skypilot_Clawssic \
+		SylZilla Sylpholution XeNtish achileus-noname \
+		black blue_anarchy mongrel mongrel2 mozilla orbit-claws \
+		stw tml02c tom_2.1.1
 
-THEMES=		Crystal mongrel tml02c Kovico-sylpheed XeNtish mozilla \
-		New_Session black stw Plain_and_Bluish blue_anarchy sylzilla
 
 DATADIR=	${PREFIX}/share/sylpheed-claws
 DOCSDIR=	${PREFIX}/share/doc/sylpheed-claws
@@ -130,12 +161,15 @@ DOCSDIR=	${PREFIX}/share/doc/sylpheed-claws
 post-patch:
 	@cd ${WRKSRC} && mv sylpheed.png sylpheed-claws.png && \
 		mv sylpheed.desktop sylpheed-claws.desktop
+	@cd ${WRKDIR}/${THEMEFILE} && mv "Skypilot Clawssic" \
+		Skypilot_Clawssic
 	@perl -pi -e 's|pheed|pheed-claws|g' ${WRKSRC}/sylpheed-claws.desktop
 	@perl -pi -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/tools/sylpheed-switcher
 
 post-install:
-	${INSTALL_DATA_DIR} ${DATADIR}/themes
+	${INSTALL_DATA_DIR} ${DATADIR}/{themes,kdeservicemenu}
+	${INSTALL_DATA_DIR} ${DOCSDIR}
 .for d in ${THEMES}
 	@cp -R ${WRKDIR}/${THEMEFILE}/$d ${DATADIR}/themes/
 .endfor
@@ -152,7 +186,9 @@ post-install:
 		${DOCSDIR}/README.dillo
 	${INSTALL_DATA} ${WRKSRC}/src/plugins/spamassassin/README \
 		${DOCSDIR}/README.spamassassin
-.for f in AUTHORS README README.claws README.jp RELEASE_NOTES.claws 
+	${INSTALL_DATA} ${WRKSRC}/src/plugins/trayicon/README \
+		${DOCSDIR}/README.trayicon
+.for f in AUTHORS README README.claws RELEASE_NOTES.claws 
 	${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}/$f
 .endfor
 

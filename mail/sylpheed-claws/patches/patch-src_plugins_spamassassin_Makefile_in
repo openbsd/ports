@@ -1,20 +1,11 @@
-$OpenBSD: patch-src_plugins_spamassassin_Makefile_in,v 1.3 2003/07/04 13:06:13 wilfried Exp $
---- src/plugins/spamassassin/Makefile.in.orig	Thu May 29 04:12:30 2003
-+++ src/plugins/spamassassin/Makefile.in	Thu May 29 04:12:54 2003
-@@ -161,7 +161,7 @@ spamassassin_gtk_la_LDFLAGS =  	-avoid-v
- INCLUDES =  	-I../.. 	-I../../common 	-I../../gtk
+$OpenBSD: patch-src_plugins_spamassassin_Makefile_in,v 1.4 2005/04/12 20:29:26 naddy Exp $
+--- src/plugins/spamassassin/Makefile.in.orig	Sun Apr  3 16:56:54 2005
++++ src/plugins/spamassassin/Makefile.in	Sun Apr  3 16:57:16 2005
+@@ -301,6 +301,7 @@ INCLUDES = \
+ 	-I../../gtk
  
- 
--CPPFLAGS =  	$(ASPELL_CFLAGS) 	$(GLIB_CFLAGS) 	$(GTK_CFLAGS) 	$(OPENSSL_CFLAGS)
-+CPPFLAGS =  	@CPPFLAGS@ $(ASPELL_CFLAGS) 	$(GLIB_CFLAGS) 	$(GTK_CFLAGS) 	$(OPENSSL_CFLAGS)
- 
- 
- EXTRA_DIST =  	README
-@@ -174,7 +174,6 @@ LTLIBRARIES =  $(plugin_LTLIBRARIES)
- 
- DEFS = @DEFS@ -I. -I$(srcdir) -I../../..
- LDFLAGS = @LDFLAGS@
--LIBS = @LIBS@
- spamassassin_la_LIBADD = 
- spamassassin_la_OBJECTS =  spamassassin.lo libspamc.lo utils.lo
- spamassassin_gtk_la_LIBADD = 
+ AM_CPPFLAGS = \
++	@CPPFLAGS@ \
+ 	$(ASPELL_CFLAGS) \
+ 	$(GLIB_CFLAGS) \
+ 	$(GTK_CFLAGS) \

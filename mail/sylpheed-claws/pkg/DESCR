@@ -6,7 +6,6 @@ and more.
 
 Packages can be built with additional FLAVORs:
     - compface:         use compface (X-Face)
-    - gpgme:            enable GnuPG support using GPGME
+    - pgpmime:          enable GnuPG support using GPGME
     - jpilot:           enable JPilot support
     - ldap:             enable LDAP support
-    - pixbuf:           enable GDK Pixbuf support

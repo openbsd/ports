@@ -1,12 +1,11 @@
-$OpenBSD: patch-src_plugins_image_viewer_Makefile_in,v 1.1 2003/07/04 13:06:13 wilfried Exp $
---- src/plugins/image_viewer/Makefile.in.orig	Sat Jun 21 05:05:26 2003
-+++ src/plugins/image_viewer/Makefile.in	Sat Jun 21 05:05:37 2003
-@@ -155,7 +155,7 @@ image_viewer_la_LDFLAGS =  	-avoid-versi
- INCLUDES =  	-I../.. 	-I../../common 	-I../../gtk
+$OpenBSD: patch-src_plugins_image_viewer_Makefile_in,v 1.2 2005/04/12 20:29:26 naddy Exp $
+--- src/plugins/image_viewer/Makefile.in.orig	Sun Apr  3 16:56:09 2005
++++ src/plugins/image_viewer/Makefile.in	Sun Apr  3 16:56:28 2005
+@@ -289,6 +289,7 @@ INCLUDES = \
+ 	-I../../gtk
  
- 
--CPPFLAGS =  	$(ASPELL_CFLAGS) 	$(GLIB_CFLAGS) 	$(GTK_CFLAGS) 	$(GDK_IMLIB_CFLAGS) 	$(GDK_PIXBUF_CFLAGS)
-+CPPFLAGS =  	@CPPFLAGS@ $(ASPELL_CFLAGS) 	$(GLIB_CFLAGS) 	$(GTK_CFLAGS) 	$(GDK_IMLIB_CFLAGS) 	$(GDK_PIXBUF_CFLAGS)
- 
- mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
- CONFIG_HEADER = ../../../config.h
+ AM_CPPFLAGS = \
++	@CPPFLAGS@ \
+ 	$(ASPELL_CFLAGS) \
+ 	$(GLIB_CFLAGS) \
+ 	$(GTK_CFLAGS) \

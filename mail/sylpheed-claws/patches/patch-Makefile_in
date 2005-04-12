@@ -1,32 +1,40 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2004/01/11 14:13:35 sturm Exp $
---- Makefile.in.orig	2003-05-24 15:41:05.000000000 +0200
-+++ Makefile.in	2004-01-11 14:58:48.000000000 +0100
-@@ -138,22 +138,18 @@ VERSION = @VERSION@
- YACC = @YACC@
- ac_cv_enable_crash_dialog = @ac_cv_enable_crash_dialog@
+$OpenBSD: patch-Makefile_in,v 1.5 2005/04/12 20:29:26 naddy Exp $
+--- Makefile.in.orig	Sat Mar 19 00:18:36 2005
++++ Makefile.in	Mon Apr 11 14:32:37 2005
+@@ -258,7 +258,7 @@ build_vendor = @build_vendor@
+ datadir = @datadir@
+ exec_prefix = @exec_prefix@
  faqdir = @faqdir@
 -gnomedatadir = @gnomedatadir@
 +gnomedatadir = ${LOCALBASE}/share
- localedir = @localedir@
- manualdir = @manualdir@
+ host = @host@
+ host_alias = @host_alias@
+ host_cpu = @host_cpu@
+@@ -303,14 +303,10 @@ EXTRA_DIST = \
+ 	TODO-gtk2.jp \
+ 	autogen.sh 
  
--SUBDIRS = ac po intl src man manual faq tools config
-+SUBDIRS = ac po src man manual faq tools config
- 
- EXTRA_DIST =  	ChangeLog.jp 	README.jp 	ChangeLog.claws 	README.claws 	TODO 	TODO.claws 	TODO.jp 	sylpheed.desktop 	sylpheed.spec 	sylpheed.spec.in 	sylpheed.png 	sylpheed-128x128.png 	sylpheed-64x64.png 	autogen.sh 
- 
--@SYLPHEED_GNOME_TRUE@pixmapdir = $(gnomedatadir)/pixmaps
 -@SYLPHEED_GNOME_FALSE@pixmapdir = 
--@SYLPHEED_GNOME_TRUE@pixmap_DATA = sylpheed.png
+-@SYLPHEED_GNOME_TRUE@pixmapdir = $(gnomedatadir)/pixmaps
 -@SYLPHEED_GNOME_FALSE@pixmap_DATA = 
--@SYLPHEED_GNOME_TRUE@gnomapdir = $(gnomedatadir)/gnome/apps/Internet
+-@SYLPHEED_GNOME_TRUE@pixmap_DATA = sylpheed.png
 -@SYLPHEED_GNOME_FALSE@gnomapdir = 
--@SYLPHEED_GNOME_TRUE@gnomap_DATA = sylpheed.desktop
+-@SYLPHEED_GNOME_TRUE@gnomapdir = $(gnomedatadir)/gnome/apps/Internet
 -@SYLPHEED_GNOME_FALSE@gnomap_DATA = 
+-@SYLPHEED_GNOME_TRUE@gnomap_DATA = sylpheed.desktop
 +pixmapdir = $(gnomedatadir)/pixmaps
 +pixmap_DATA = sylpheed-claws.png
 +gnomapdir = $(gnomedatadir)/gnome/apps/Internet
 +gnomap_DATA = sylpheed-claws.desktop
- 
  BZIP2_ENV = 
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = sylpheed-claws.pc
+@@ -782,7 +778,7 @@ info: info-recursive
+ info-am:
+ 
+ install-data-am: install-gnomapDATA install-pixmapDATA \
+-	install-pkgconfigDATA install-sylpheedincludeHEADERS
++	install-pkgconfigDATA
+ 
+ install-exec-am:
+ 

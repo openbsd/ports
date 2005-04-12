@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared-dillo,v 1.1 2003/07/04 13:06:13 wilfried Exp $
-lib/sylpheed-claws/plugins/dillo_viewer.so
+@comment $OpenBSD: PFRAG.shared-dillo,v 1.2 2005/04/12 20:29:26 naddy Exp $
+lib/sylpheed-claws/plugins/dillo_viewer.so.0.0
