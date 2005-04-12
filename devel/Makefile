@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.312 2005/04/04 17:48:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.313 2005/04/12 21:14:26 marcm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -37,6 +37,7 @@
      SUBDIR += darcs
      SUBDIR += ddd
      SUBDIR += dejagnu
+     SUBDIR += desktop-file-utils
      SUBDIR += doc++
      SUBDIR += eclipse
      SUBDIR += ectags
