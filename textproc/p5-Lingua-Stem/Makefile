@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/31 20:01:15 msf Exp $
-
-BROKEN=		"Cannot inmport dependency due to licensing issues"
+# $OpenBSD: Makefile,v 1.3 2005/04/12 19:45:03 msf Exp $
 
 COMMENT=	"stemming of words"
 
