@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2004/11/22 16:59:29 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2005/04/13 01:10:35 jcs Exp $
 
-DISTNAME=	sybperl-2.17
-PKGNAME=	p5-${DISTNAME}
+DISTNAME=	sybperl-2.18
 CATEGORIES=	databases perl5
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,13 +12,13 @@ WANTLIB=		m
 SHARED_ONLY=		Yes
 
 COMMENT=	"Sybase database access in Perl"
-HOMEPAGE=	http://www.mbay.net/~mpeppler/
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Sybase/}
+HOMEPAGE=	http://www.peppler.org/freeware/sybperl.html
+MASTER_SITES=	http://www.peppler.org/downloads/
 
-MAINTAINER=	Joshua Stein <jcs@openbsd.org>
+MAINTAINER=	joshua stein <jcs@openbsd.org>
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	tds.3,sybdb.4,ct.2::databases/freetds
+LIB_DEPENDS=	tds.4,sybdb.5,ct.3::databases/freetds
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ENV=	SYBASE="${LOCALBASE}"
