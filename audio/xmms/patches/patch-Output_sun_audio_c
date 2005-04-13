@@ -1,7 +1,7 @@
-$OpenBSD: patch-Output_sun_audio_c,v 1.3 2004/04/18 14:19:02 robert Exp $
---- Output/sun/audio.c.orig	Sun Apr 18 09:07:37 2004
-+++ Output/sun/audio.c	Sun Apr 18 09:08:11 2004
-@@ -123,7 +123,6 @@
+$OpenBSD: patch-Output_sun_audio_c,v 1.4 2005/04/13 19:20:02 robert Exp $
+--- Output/sun/audio.c.orig	Sun Jun  2 15:42:03 2002
++++ Output/sun/audio.c	Wed Apr 13 20:56:19 2005
+@@ -123,14 +123,12 @@
  	
  	sun = sun_format(fmt);
  
@@ -9,7 +9,6 @@ $OpenBSD: patch-Output_sun_audio_c,v 1.3 2004/04/18 14:19:02 robert Exp $
  	effect.format.xmms = fmt;
  	effect.frequency = rate;
  	effect.channels = nch;
-@@ -130,7 +129,6 @@
  	effect.bps = sun_bps(sun, rate, nch);
  
  	output.format.sun = sun;
@@ -17,3 +16,39 @@ $OpenBSD: patch-Output_sun_audio_c,v 1.3 2004/04/18 14:19:02 robert Exp $
  	output.frequency = rate;
  	output.channels = nch;
  	sun_setparams();
+@@ -153,7 +151,7 @@
+ 	info.mode = AUMODE_PLAY;
+ 	if (ioctl(audio.fd, AUDIO_SETINFO, &info) != 0)
+ 	{
+-		g_error("%s: cannot play (%s)", audio.devaudio,
++		g_warning("%s: cannot play (%s)", audio.devaudio,
+ 			strerror(errno));
+ 		return;
+ 	}
+@@ -171,7 +169,7 @@
+ 	strcpy(output.name, enc.name);
+ 	if (ioctl(audio.fd, AUDIO_SETINFO, &info) != 0)
+ 	{
+-		g_error("%s: unsupported encoding: %s (%s)", audio.devaudio,
++		g_warning("%s: unsupported encoding: %s (%s)", audio.devaudio,
+ 			output.name, strerror(errno));
+ 		return;
+ 	}
+@@ -182,7 +180,7 @@
+ 	info.play.sample_rate = output.frequency;
+ 	if (ioctl(audio.fd, AUDIO_SETINFO, &info) < 0)
+ 	{
+-		g_error("%s: cannot handle %i Hz (%s)", audio.devaudio,
++		g_warning("%s: cannot handle %i Hz (%s)", audio.devaudio,
+ 			output.frequency, strerror(errno));
+ 		return;
+ 	}
+@@ -537,7 +535,7 @@
+ 
+ 	if ((audio.fd = open(audio.devaudio, O_RDWR)) < 0)
+ 	{
+-		g_error("%s: %s", audio.devaudio, strerror(errno));
++		g_warning("%s: %s", audio.devaudio, strerror(errno));
+ 		return 0;
+ 	}
+ 

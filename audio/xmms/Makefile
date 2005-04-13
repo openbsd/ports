@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2005/03/31 19:58:34 robert Exp $
+# $OpenBSD: Makefile,v 1.40 2005/04/13 19:20:02 robert Exp $
 
 COMMENT=		"Multimedia player for the X Window System"
 COMMENT-esd=		"Esound output plugin for XMMS"
@@ -6,8 +6,8 @@ COMMENT-vorbis=		"Ogg Vorbis input plugin for XMMS"
 COMMENT-mikmod=		"Mikmod input plugin for XMMS"
 COMMENT-mp3=		"MP3 input plugin for XMMS"
 
-VERSION=		1.2.10p1
-DISTNAME=		xmms-${VERSION:S,p1,,}
+VERSION=		1.2.10p2
+DISTNAME=		xmms-${VERSION:S,p2,,}
 PKGNAME=		xmms-${VERSION}
 PKGNAME-esd=		xmms-esd-${VERSION}
 PKGNAME-vorbis=		xmms-vorbis-${VERSION}
