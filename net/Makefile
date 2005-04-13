@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.363 2005/04/03 11:28:47 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.364 2005/04/13 15:08:37 msf Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -221,6 +221,7 @@
      SUBDIR += py-IP
      SUBDIR += py-curl
      SUBDIR += py-dns
+     SUBDIR += py-flowtools
      SUBDIR += py-irclib
      SUBDIR += py-libpcap
      SUBDIR += py-msnp
