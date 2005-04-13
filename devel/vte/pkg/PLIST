@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/04/12 21:23:12 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/04/13 04:18:15 marcm Exp $
 bin/vte
 include/vte/
 include/vte/pty.h
@@ -23,7 +23,7 @@ lib/vte/window
 libexec/gnome-pty-helper
 share/gtk-doc/
 share/gtk-doc/html/
-@comment share/gtk-doc/html/vte/
+share/gtk-doc/html/vte/
 share/gtk-doc/html/vte/VteReaper.html
 share/gtk-doc/html/vte/VteTerminal.html
 share/gtk-doc/html/vte/VteTerminalAccessible.html
