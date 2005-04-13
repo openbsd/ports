@@ -1,6 +1,6 @@
-$OpenBSD: patch-algotutor,v 1.1.1.1 2005/01/14 03:02:16 kevlo Exp $
---- algotutor.orig	Fri Jan 14 11:09:27 2005
-+++ algotutor	Fri Jan 14 11:10:07 2005
+$OpenBSD: patch-algotutor,v 1.2 2005/04/13 01:27:42 kevlo Exp $
+--- algotutor.orig	Tue Apr 12 13:35:39 2005
++++ algotutor	Wed Apr 13 09:23:13 2005
 @@ -4,7 +4,7 @@
  
  use strict;
@@ -10,10 +10,10 @@ $OpenBSD: patch-algotutor,v 1.1.1.1 2005/01/14 03:02:16 kevlo Exp $
  
  BEGIN {
      my ($path) = $0 =~ m#(.*/)#;
-@@ -24,7 +24,7 @@ my (
- );
+@@ -33,7 +33,7 @@ if (grep { $opts{a} eq $_ } qw(lcs matc)
+     dynprog($opts{a});
+ }
  
- getopts('a:s:', \%opts);
 -die "need exactly one data file. Example:\n\talgotutor -a bst /usr/share/algotutor/data/countries.gr\n" 
 +die "need exactly one data file. Example:\n\talgotutor -a bst /usr/local/share/algotutor/data/countries.gr\n" 
      unless $#ARGV == 0;

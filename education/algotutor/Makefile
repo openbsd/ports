@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/02/18 02:20:55 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2005/04/13 01:27:42 kevlo Exp $
 
 COMMENT=	"interactive tutorial for algorithms and data structures"
 
-DISTNAME=	algotutor-0.7
+DISTNAME=	algotutor-0.8.2
 CATEGORIES=	education math
 
 HOMEPAGE=	http://www.ofset.org/~ckhung/p/algotutor/
@@ -33,15 +33,20 @@ pre-fake:
 	${INSTALL_DATA_DIR} ${P5INST}/algotutor
 
 do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/algotutor
+	${INSTALL_DATA} ${WRKSRC}/etc/algotutor \
+		${PREFIX}/share/examples/algotutor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/algotutor
 	${INSTALL_SCRIPT} ${WRKSRC}/algotutor ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/gen_at_graph ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/algotutor.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/gen_at_graph.1 ${PREFIX}/man/man1
+	cp -R ${WRKSRC}/cgeom ${P5INST}/algotutor
 	cp -R ${WRKSRC}/data ${PREFIX}/share/algotutor
-	cp -R ${WRKSRC}/graph ${PREFIX}/share/algotutor
+	cp -R ${WRKSRC}/dp ${P5INST}/algotutor
+	cp -R ${WRKSRC}/graph ${P5INST}/algotutor
 	cp ${WRKSRC}/*.pm ${P5INST}/algotutor
-	cp ${WRKSRC}/.algotutor ${P5INST}/algotutor
+	cp ${WRKSRC}/basic.pl ${P5INST}/algotutor
 	cp ${WRKSRC}/utilalgo ${P5INST}/algotutor
 
 .include <bsd.port.mk>
