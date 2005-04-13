@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/11/22 16:59:29 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2005/04/13 09:56:52 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -7,8 +7,6 @@ COMMENT=	"Sybase database driver for the DBI module"
 DISTNAME=	DBD-Sybase-1.04
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # GPL/Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
