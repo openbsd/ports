@@ -1,0 +1,18 @@
+$OpenBSD: patch-glib_gconvert_c,v 1.1 2005/04/14 17:06:18 espie Exp $
+--- glib/gconvert.c.orig	Mon Mar 14 12:46:41 2005
++++ glib/gconvert.c	Mon Mar 14 12:47:27 2005
+@@ -337,10 +337,12 @@ open_converter (const gchar *to_codeset,
+   struct _iconv_cache_bucket *bucket;
+   gchar *key;
+   GIConv cd;
++  size_t l;
++  l = strlen (from_codeset) + strlen (to_codeset) + 2;
+   
+   /* create our key */
+-  key = g_alloca (strlen (from_codeset) + strlen (to_codeset) + 2);
+-  _g_sprintf (key, "%s:%s", from_codeset, to_codeset);
++  key = g_alloca (l);
++  _g_snprintf (key, l, "%s:%s", from_codeset, to_codeset);
+   
+   G_LOCK (iconv_cache_lock);
+   

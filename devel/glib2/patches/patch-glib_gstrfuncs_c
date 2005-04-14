@@ -1,0 +1,21 @@
+$OpenBSD: patch-glib_gstrfuncs_c,v 1.1 2005/04/14 17:06:18 espie Exp $
+--- glib/gstrfuncs.c.orig	Fri Sep 17 03:15:13 2004
++++ glib/gstrfuncs.c	Mon Mar 14 13:00:31 2005
+@@ -1199,7 +1199,7 @@ g_strerror (gint errnum)
+       g_static_private_set (&msg_private, msg, g_free);
+     }
+ 
+-  _g_sprintf (msg, "unknown error (%d)", errnum);
++  _g_snprintf (msg, 64, "unknown error (%d)", errnum);
+ 
+   errno = saved_errno;
+   return msg;
+@@ -1349,7 +1349,7 @@ extern const char *strsignal(int);
+       g_static_private_set (&msg_private, msg, g_free);
+     }
+ 
+-  _g_sprintf (msg, "unknown signal (%d)", signum);
++  _g_snprintf (msg, 64, "unknown signal (%d)", signum);
+   
+   return msg;
+ }
