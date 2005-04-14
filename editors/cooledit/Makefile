@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2005/02/13 14:18:06 alek Exp $
+# $OpenBSD: Makefile,v 1.18 2005/04/14 21:29:28 espie Exp $
 
 COMMENT=	"easy to use, graphical editor"
 
@@ -30,6 +30,10 @@ USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		XTERM_CMD=xterm LDFLAGS="-L${LOCALBASE}/lib"
+
+# XXX temporary until we have full internationalization support
+CONFIGURE_ENV+=		ac_cv_header_wchar_h=no
+
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static --disable-mail-author
 

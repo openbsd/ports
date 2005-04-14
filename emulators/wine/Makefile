@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2004/11/27 10:39:14 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2005/04/14 21:29:28 espie Exp $
 
 COMMENT=	"MS-Windows 3.1/95/NT emulator for Unix (Alpha release)"
 
@@ -19,6 +19,9 @@ MASTER_SITES=	ftp://ftp.chg.ru/pub/gnu/ALPHA/wine/development/
 
 USE_X11=	yes
 CONFIGURE_STYLE=	gnu dest
+
+# XXX partial citrus: no real wctype functions yet
+CONFIGURE_ENV+=ac_cv_header_wctype_h=no
 
 WRKDIST=	${WRKDIR}/${PKGNAME}
 

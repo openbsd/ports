@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2004/12/17 15:18:32 alek Exp $
+# $OpenBSD: Makefile,v 1.35 2005/04/14 21:29:28 espie Exp $
 
 COMMENT=	"themed window manager"
 
@@ -30,5 +30,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-fsstd
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype1/freetype" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+# XXX don't find wctype.h yet, since it's useless for now
+CONFIGURE_ENV+=	ac_cv_header_wctype_h=no
 
 .include <bsd.port.mk>
