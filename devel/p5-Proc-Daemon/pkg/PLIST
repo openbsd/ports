@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/14 02:26:36 msf Exp $
+${P5SITE}/Proc/
+${P5SITE}/Proc/Daemon.pm
+@man man/man3p/Proc::Daemon.3p

@@ -1,0 +1,3 @@
+This module contains the routine Init which can be called by a Perl
+program to initialize itself as a daemon. A daemon is a process that
+runs in the background with no controlling terminal.
