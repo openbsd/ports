@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2005/04/14 21:28:41 espie Exp $
+# $OpenBSD: Makefile,v 1.120 2005/04/15 02:23:57 jolan Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -106,6 +106,7 @@
      SUBDIR += toolame
      SUBDIR += tosha
      SUBDIR += tracker
+     SUBDIR += tremor
      SUBDIR += vlorb
      SUBDIR += vorbis-tools
      SUBDIR += vorbisgain
