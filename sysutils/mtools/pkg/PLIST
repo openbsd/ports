@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/11/18 23:36:12 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/04/15 19:06:56 fgsch Exp $
+!%%no_x11%%
 bin/amuFormat.sh
-bin/floppyd
-bin/floppyd_installtest
 bin/lz
 bin/mattrib
 bin/mbadblocks
@@ -34,8 +33,6 @@ bin/mzip
 bin/tgz
 bin/uz
 @info info/mtools.info
-@man man/man1/floppyd.1
-@man man/man1/floppyd_installtest.1
 @man man/man1/mattrib.1
 @man man/man1/mbadblocks.1
 @man man/man1/mcat.1

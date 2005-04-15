@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2004/12/20 10:35:35 alek Exp $
+# $OpenBSD: Makefile,v 1.47 2005/04/15 19:06:56 fgsch Exp $
 
 COMMENT=	"read/write/list/format DOS disks under Unix"
 
-DATE=		20040505
-DISTNAME=	mtools-3.9.9
+DATE=		20050317
+DISTNAME=	mtools-3.9.10
 PKGNAME=	${DISTNAME}.${DATE}
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tux.org/pub/knaff/mtools/ \
@@ -19,14 +19,22 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 c 
+WANTLIB=		c
 
 USE_GMAKE=		Yes
 
-USE_X11=		Yes
-
-CONFIGURE_STYLE=	autoconf dest
+CONFIGURE_STYLE=	gnu dest
 SEPARATE_BUILD=		Simple
+
+FLAVORS=	no_x11
+FLAVOR?=
+
+.if ${FLAVOR:L:Mno_x11}
+CONFIGURE_ARGS=		--with-x=no
+.else
+USE_X11=		Yes
+WANTLIB+=		ICE SM X11
+.endif
 
 pre-patch:
 	@ln -s . ${WRKSRC}/mtools
