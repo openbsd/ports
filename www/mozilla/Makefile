@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2005/04/11 15:03:18 kurt Exp $
+# $OpenBSD: Makefile,v 1.87 2005/04/16 23:54:53 kurt Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
@@ -7,8 +7,8 @@ COMMENT-devel=	"devel files for Gecko"
 
 VER=		1.7.6
 DISTNAME=	mozilla
-PKGNAME=	mozilla-${VER}p1
-PKGNAME-devel=	mozilla-devel-${VER}p1
+PKGNAME=	mozilla-${VER}p2
+PKGNAME-devel=	mozilla-devel-${VER}p2
 DISTFILES=	mozilla-source-${VER}.tar.bz2
 SO_VERSION=	2.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -112,9 +112,13 @@ CONFIGURE_ARGS+=--enable-default-toolkit=gtk
 .endif
 
 CONFIGURE_ENV=	PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
+		BUILD_OFFICIAL=1 \
+		MOZILLA_OFFICIAL=1 \
 		SO_VERSION=${SO_VERSION}
 
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
+		BUILD_OFFICIAL=1 \
+		MOZILLA_OFFICIAL=1 \
 		SO_VERSION=${SO_VERSION}
 
 MOB=		${WRKSRC}/dist
