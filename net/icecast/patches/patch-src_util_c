@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_util_c,v 1.1 2005/04/16 15:37:31 sturm Exp $
+$OpenBSD: patch-src_util_c,v 1.2 2005/04/16 21:24:15 sturm Exp $
 --- src/util.c.orig	Mon Nov  8 02:21:54 2004
-+++ src/util.c	Mon Mar  7 14:10:16 2005
-@@ -229,12 +229,14 @@ char *util_get_path_from_normalised_uri(
++++ src/util.c	Sat Apr 16 22:43:26 2005
+@@ -229,12 +229,22 @@ char *util_get_path_from_normalised_uri(
      char *fullpath;
      char *webroot;
      ice_config_t *config = config_get_config();
@@ -10,15 +10,24 @@ $OpenBSD: patch-src_util_c,v 1.1 2005/04/16 15:37:31 sturm Exp $
      webroot = config->webroot_dir;
  
 -    fullpath = malloc(strlen(uri) + strlen(webroot) + 1);
+-    if (fullpath)
+-        sprintf (fullpath, "%s%s", webroot, uri);
 +    pathlen = strlen(uri) + strlen(webroot) + 1;
 +    fullpath = malloc(pathlen);
-     if (fullpath)
--        sprintf (fullpath, "%s%s", webroot, uri);
-+        snprintf(fullpath, pathlen, "%s%s", webroot, uri);
++    if (fullpath) {
++        int ret = snprintf(fullpath, pathlen, "%s%s", webroot, uri);
++        if (ret == -1 || ret >= pathlen) {
++            WARN0("Error generating full path name in util_get_path_from_normalised_uri()");
++            free(fullpath);
++            fullpath = NULL;
++        }
++    } else
++        WARN0("Failed to allocate memory for full path name");
++
      config_release_config();
  
      return fullpath;
-@@ -568,24 +570,29 @@ char *util_dict_urlencode(util_dict *dic
+@@ -568,24 +578,40 @@ char *util_dict_urlencode(util_dict *dic
      char *res, *tmp;
      char *enc;
      int start = 1;
@@ -30,30 +39,41 @@ $OpenBSD: patch-src_util_c,v 1.1 2005/04/16 15:37:31 sturm Exp $
              continue;
          if (start) {
 -            if (!(res = malloc(strlen(dict->key) + 1))) {
++            int ret;
 +            buflen = strlen(dict->key) + 1;
 +            if (!(res = malloc(buflen))) {
                  return NULL;
              }
 -            sprintf(res, "%s", dict->key);
-+            snprintf(res, buflen, "%s", dict->key);
++            ret = snprintf(res, buflen, "%s", dict->key);
++            if (ret == -1 || ret >= buflen) {
++                free(res);
++                return NULL;
++            }
              start = 0;
          } else {
 -            if (!(tmp = realloc(res, strlen(res) + strlen(dict->key) + 2))) {
 +            buflen = strlen(res) + strlen(dict->key) + 2;
 +            if ((tmp = realloc(res, buflen)) == NULL) {
                  free(res);
-+                res = NULL;
                  return NULL;
 -            } else
 +            } else {
++                int ret;
++
                  res = tmp;
 -            sprintf(res + strlen(res), "%c%s", delim, dict->key);
-+                snprintf(res + strlen(res), buflen - strlen(res), "%c%s", delim, dict->key);
++                ret = snprintf(res + strlen(res), buflen - strlen(res),
++                    "%c%s", delim, dict->key);
++                if (ret == -1 || ret >= buflen - strlen(res)) {
++                    free(res);
++                    return NULL;
++                }
 +            }
          }
  
          /* encode value */
-@@ -596,14 +603,18 @@ char *util_dict_urlencode(util_dict *dic
+@@ -596,14 +622,23 @@ char *util_dict_urlencode(util_dict *dic
              return NULL;
          }
  
@@ -62,14 +82,19 @@ $OpenBSD: patch-src_util_c,v 1.1 2005/04/16 15:37:31 sturm Exp $
 +        if ((tmp = realloc(res, buflen)) == NULL) {
              free(enc);
              free(res);
-+            enc = res = NULL;
              return NULL;
 -        } else
 +        } else {
++            int ret;
              res = tmp;
 -        sprintf(res + strlen(res), "=%s", enc);
 -        free(enc);
-+            snprintf(res + strlen(res), buflen - strlen(res), "=%s", enc);
++            ret = snprintf(res + strlen(res), buflen - strlen(res), "=%s", enc);
++            if (ret == -1 || ret >= buflen - strlen(res)) {
++                free(enc);
++                free(res);
++                return NULL;
++            }
 +            free(enc);
 +            enc = NULL;
 +        }

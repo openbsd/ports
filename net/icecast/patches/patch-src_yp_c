@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_yp_c,v 1.1 2005/04/16 15:37:31 sturm Exp $
+$OpenBSD: patch-src_yp_c,v 1.2 2005/04/16 21:24:15 sturm Exp $
 --- src/yp.c.orig	Fri Dec 17 20:01:26 2004
-+++ src/yp.c	Mon Mar  7 14:11:59 2005
-@@ -365,6 +365,7 @@ static unsigned do_yp_touch (ypdata_t *y
++++ src/yp.c	Sat Apr 16 23:11:10 2005
+@@ -315,6 +315,8 @@ static unsigned do_yp_remove (ypdata_t *
+         int ret = snprintf (s, len, "action=remove&sid=%s", yp->sid);
+         if (ret >= (signed)len)
+             return ret+1;
++        if (ret == -1)
++            ERROR0("snprintf()");
+ 
+         INFO1 ("clearing up YP entry for %s", yp->mount);
+         send_to_yp ("remove", yp, s);
+@@ -365,6 +367,7 @@ static unsigned do_yp_touch (ypdata_t *y
      char *val, *artist, *title;
      int ret;
      char *max_listeners;
@@ -9,7 +18,7 @@ $OpenBSD: patch-src_yp_c,v 1.1 2005/04/16 15:37:31 sturm Exp $
  
      artist = (char *)stats_get_value (yp->mount, "artist");
      title = (char *)stats_get_value (yp->mount, "title");
-@@ -378,10 +379,11 @@ static unsigned do_yp_touch (ypdata_t *y
+@@ -378,11 +381,15 @@ static unsigned do_yp_touch (ypdata_t *y
               separator = "";
           }
           if (title == NULL) title = strdup("");
@@ -19,7 +28,21 @@ $OpenBSD: patch-src_yp_c,v 1.1 2005/04/16 15:37:31 sturm Exp $
           if (song)
           {
 -             sprintf (song, "%s%s%s", artist, separator, title);
-+             snprintf(song, songlen, "%s%s%s", artist, separator, title);
-              add_yp_info(yp, "yp_currently_playing", song, YP_CURRENT_SONG);
+-             add_yp_info(yp, "yp_currently_playing", song, YP_CURRENT_SONG);
++             int ret = snprintf(song, songlen, "%s%s%s", artist, separator, title);
++             if (ret == -1 || ret >= songlen)
++                 WARN0("Error, generating song title");
++             else
++                 add_yp_info(yp, "yp_currently_playing", song, YP_CURRENT_SONG);
               free (song);
           }
+     }
+@@ -415,6 +422,8 @@ static unsigned do_yp_touch (ypdata_t *y
+     free (max_listeners);
+     if (ret >= (signed)len)
+         return ret+1; /* space required for above text and nul*/
++    if (ret == -1)
++        WARN0("snprintf()");
+ 
+     send_to_yp ("touch", yp, s);
+     return 0;
