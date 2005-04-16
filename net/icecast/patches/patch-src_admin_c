@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_admin_c,v 1.2 2004/12/31 13:09:10 sturm Exp $
---- src/admin.c.orig	Tue Dec 21 18:43:25 2004
-+++ src/admin.c	Tue Dec 21 18:45:44 2004
-@@ -579,7 +579,7 @@ static void command_show_listeners(clien
+$OpenBSD: patch-src_admin_c,v 1.3 2005/04/16 15:37:31 sturm Exp $
+--- src/admin.c.orig	Sat Dec 11 00:56:55 2004
++++ src/admin.c	Mon Mar  7 20:20:46 2005
+@@ -651,7 +651,7 @@ static void command_show_listeners(clien
              xmlNewChild(listenernode, NULL, "UserAgent", "Unknown");
          }
          memset(buf, '\000', sizeof(buf));

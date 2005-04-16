@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_auth_c,v 1.1 2005/04/16 15:37:31 sturm Exp $
+--- src/auth.c.orig	Mon Mar  7 13:59:17 2005
++++ src/auth.c	Mon Mar  7 14:00:59 2005
+@@ -365,7 +365,7 @@ int auth_htpasswd_deleteuser(auth_t *aut
+     }
+     tmpfile_len = strlen(state->filename) + 6;
+     tmpfile = calloc(1, tmpfile_len);
+-    sprintf(tmpfile, ".%s.tmp", state->filename);
++    snprintf(tmpfile, tmpfile_len, ".%s.tmp", state->filename);
+ 
+     tmp_passwdfile = fopen(tmpfile, "wb");
+ 

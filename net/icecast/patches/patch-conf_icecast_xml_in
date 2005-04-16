@@ -1,16 +1,16 @@
-$OpenBSD: patch-conf_icecast_xml_in,v 1.2 2004/12/31 13:09:10 sturm Exp $
---- conf/icecast.xml.in.orig	Tue Dec 21 18:17:55 2004
-+++ conf/icecast.xml.in	Tue Dec 21 18:20:06 2004
-@@ -97,7 +97,7 @@
+$OpenBSD: patch-conf_icecast_xml_in,v 1.3 2005/04/16 15:37:31 sturm Exp $
+--- conf/icecast.xml.in.orig	Thu Dec  2 22:15:35 2004
++++ conf/icecast.xml.in	Mon Mar  7 20:20:46 2005
+@@ -100,7 +100,7 @@
      </mount>
      -->
  
 -    <fileserve>1</fileserve>
 +    <fileserve>0</fileserve>
  
-     <paths>
- 		<!-- basedir is only used if chroot is enabled -->
-@@ -108,7 +108,7 @@
+     <!-- set the mountpoint for a shoutcast source to use, the default if not
+          specified is /stream but you can change it here if an alternative is
+@@ -117,7 +117,7 @@
          <logdir>@localstatedir@/log/@PACKAGE@</logdir>
          <webroot>@pkgdatadir@/web</webroot>
          <adminroot>@pkgdatadir@/admin</adminroot>
