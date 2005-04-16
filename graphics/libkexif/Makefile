@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/09 21:37:25 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/04/16 14:56:34 sturm Exp $
 
 COMMENT=		"kde interface to exif"
 CATEGORIES=		graphics devel x11 x11/kde
@@ -11,6 +11,7 @@ SHARED_ONLY=Yes
 LIB_DEPENDS+=lib/qt3/qt-mt.3.33::x11/qt3,mt \
 	kdecore.6,DCOP,kdeui,kdefx::x11/kde/libs3 \
 	exif::graphics/libexif
+BUILD_DEPENDS=	::devel/pkgconfig
 
 WANTLIB=	ICE Xrender SM Xext pthread X11 util m z \
 		jpeg png art_lgpl_2
