@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.52 2004/12/21 06:03:22 kevlo Exp $
+# $OpenBSD: Makefile,v 1.53 2005/04/16 18:18:53 niallo Exp $
 
 COMMENT=	"shell-like command line ftp and sftp client"
 
-DISTNAME=	lftp-3.0.13
+DISTNAME=	lftp-3.1.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
 		ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/old/ \
@@ -19,6 +19,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c crypto curses m readline ssl stdc++ util
+
+LIB_DEPENDS=	expat.4::textproc/expat
 
 CONFIGURE_STYLE= gnu 
 CONFIGURE_ARGS=	--with-ssl
