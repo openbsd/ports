@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2005/04/09 15:43:47 wilfried Exp $
+# $OpenBSD: Makefile,v 1.26 2005/04/16 15:49:17 kurt Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -6,7 +6,7 @@ COMMENT=	"redesign of Mozilla's browser component"
 
 VER=		1.0.2
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}p2
+PKGNAME=	mozilla-firefox-${VER}p3
 SO_VERSION=	2.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -78,9 +78,13 @@ CONFIGURE_ARGS+=--disable-ldap			\
 
 CONFIGURE_ENV=	MOZ_PHOENIX=1 \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
+		BUILD_OFFICIAL=1 \
+		MOZILLA_OFFICIAL=1 \
 		SO_VERSION="${SO_VERSION}"
 MAKE_ENV=	MOZ_PHOENIX=1 \
 		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
+		BUILD_OFFICIAL=1 \
+		MOZILLA_OFFICIAL=1 \
 		SO_VERSION="${SO_VERSION}"
 
 MOB=		${WRKSRC}/dist/bin
