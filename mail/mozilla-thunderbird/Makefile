@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2005/04/09 08:11:18 wilfried Exp $
+# $OpenBSD: Makefile,v 1.22 2005/04/16 19:22:13 kurt Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -6,7 +6,7 @@ COMMENT=	"redesign of the integrated Mozilla App-Suite mail component"
 
 VER=		1.0.2
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}p1
+PKGNAME=	mozilla-thunderbird-${VER}p2
 SO_VERSION=	2.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -85,9 +85,13 @@ CONFIGURE_ARGS+=--enable-crypto			\
 
 CONFIGURE_ENV=	MOZ_THUNDERBIRD=1 \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
+		BUILD_OFFICIAL=1 \
+		MOZILLA_OFFICIAL=1 \
 		SO_VERSION="${SO_VERSION}"
 MAKE_ENV=	MOZ_THUNDERBIRD=1 \
 		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
+		BUILD_OFFICIAL=1 \
+		MOZILLA_OFFICIAL=1 \
 		SO_VERSION="${SO_VERSION}"
 
 MOB=		${WRKSRC}/dist/bin

@@ -5,7 +5,7 @@ reproduce the problem before filing bugs.
 In order to create a new profile, start Thunderbird with the the 
 -profilemanager switch, e.g. thunderbird -profilemanager
    
-If thunderbird doesn't start at all, first try and remove compreg.dat
-and xpti.dat in your profile-dir, or you could just wack the old
-profile-dir,
+If thunderbird doesn't start at all, first try and remove compreg.dat,
+xpti.dat and extensions/Extensions.rdf in your profile-dir, or you
+could just wack the old profile-dir,
     rm -r ~/.thunderbird/<profile-dir>
