@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2005/02/07 19:01:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2005/04/16 17:07:37 sturm Exp $
 
 COMMENT=		"lightweight HTTP/SSL proxy"
 
 VERSION=		1.6.3
 DISTNAME=		tinyproxy-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www net
 
 HOMEPAGE=		http://tinyproxy.sourceforge.net/
@@ -19,7 +20,7 @@ WANTLIB=		c
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--with-config=${SYSCONFDIR}/tinyproxy/tinyproxy.conf
-MAKE_FLAGS=		CFLAGS="${CFLAGS}"
+MAKE_FLAGS=		CFLAGS="${CFLAGS} -DNDEBUG"
 
 DOCS=			HT* RFC_INFO filter-howto.txt *.html
 
