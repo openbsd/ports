@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2005/01/15 06:22:36 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2005/04/16 21:10:22 espie Exp $
 
 COMMENT=	"character set conversion library"
 
 DISTNAME=	libiconv-1.9.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	converters devel
 MASTER_SITES=	${MASTER_SITE_GNU:=libiconv/}
 
@@ -18,7 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION=2.57
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/autoconf ${WRKSRC}/libcharset/autoconf
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \

@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_iconv_c,v 1.1 2005/04/16 21:10:22 espie Exp $
+--- lib/iconv.c.orig	Mon Apr 11 12:05:11 2005
++++ lib/iconv.c	Mon Apr 11 12:05:30 2005
+@@ -406,7 +406,7 @@ iconv_t iconv_open (const char* tocode, 
+   /* Initialize additional fields. */
+   if (from_wchar != to_wchar) {
+     struct wchar_conv_struct * wcd = (struct wchar_conv_struct *) cd;
+-    memset(&wcd->state,'\0',sizeof(mbstate_t));
++    memset(&wcd->state,'\0',sizeof wcd->state);
+   }
+   /* Done. */
+   return (iconv_t)cd;

@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_loop_wchar_h,v 1.1 2005/04/16 21:10:22 espie Exp $
+--- lib/loop_wchar.h.orig	Mon Apr 11 12:03:36 2005
++++ lib/loop_wchar.h	Mon Apr 11 13:52:35 2005
+@@ -39,8 +39,10 @@
+ #  endif
+ # endif
+ #else
+-# ifndef mbstate_t
++# if !HAVE_TYPE_MBSTATE_T
++#  ifndef mbstate_t
+    typedef int mbstate_t;
++#  endif
+ # endif
+ #endif
+ 
