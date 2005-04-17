@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/02/26 16:57:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/04/17 19:25:53 naddy Exp $
 xorp/
 xorp/bgp/
 xorp/bgp/tools/
@@ -7,6 +7,7 @@ xorp/bgp/tools/xorpsh_print_routes
 xorp/bgp/xorp_bgp
 xorp/bin/
 xorp/bin/call_xrl
+xorp/bin/xorp_profiler
 xorp/bin/xorp_rtrmgr
 xorp/bin/xorpsh
 xorp/cli/
@@ -27,6 +28,7 @@ xorp/etc/templates/mfea.cmds
 xorp/etc/templates/mfea4.tp
 xorp/etc/templates/mfea6.cmds
 xorp/etc/templates/mfea6.tp
+xorp/etc/templates/misc.cmds
 xorp/etc/templates/mld.cmds
 xorp/etc/templates/mld.tp
 xorp/etc/templates/ospf.tp
@@ -34,6 +36,9 @@ xorp/etc/templates/pim.cmds
 xorp/etc/templates/pim6.cmds
 xorp/etc/templates/pimsm4.tp
 xorp/etc/templates/pimsm6.tp
+xorp/etc/templates/plumbing.tp
+xorp/etc/templates/policy.tp
+xorp/etc/templates/protocols.tp
 xorp/etc/templates/rib.cmds
 xorp/etc/templates/rib.tp
 xorp/etc/templates/rip.cmds
@@ -46,6 +51,7 @@ xorp/fea/
 xorp/fea/tools/
 xorp/fea/tools/show_interfaces
 xorp/fea/xorp_fea
+xorp/fea/xorp_fea_click_config_generator
 xorp/fea/xorp_fea_dummy
 xorp/fib2mrib/
 xorp/fib2mrib/xorp_fib2mrib
@@ -57,6 +63,8 @@ xorp/mld6igmp/xorp_mld
 xorp/pim/
 xorp/pim/xorp_pimsm4
 xorp/pim/xorp_pimsm6
+xorp/policy/
+xorp/policy/xorp_policy
 xorp/rib/
 xorp/rib/tools/
 xorp/rib/tools/show_routes
@@ -84,7 +92,12 @@ xorp/xrl/targets/finder_client.xrls
 xorp/xrl/targets/mfea.xrls
 xorp/xrl/targets/mld6igmp.xrls
 xorp/xrl/targets/ospf.xrls
+xorp/xrl/targets/ospfv2.xrls
+xorp/xrl/targets/ospfv3.xrls
+xorp/xrl/targets/packet_acl.xrls
 xorp/xrl/targets/pim.xrls
+xorp/xrl/targets/policy.xrls
+xorp/xrl/targets/profiler.xrls
 xorp/xrl/targets/rib.xrls
 xorp/xrl/targets/ribclient.xrls
 xorp/xrl/targets/rip.xrls
@@ -99,5 +112,6 @@ xorp/xrl/targets/test_finder_events.xrls
 xorp/xrl/targets/test_peer.xrls
 xorp/xrl/targets/test_socket4.xrls
 xorp/xrl/targets/test_socket6.xrls
+xorp/xrl/targets/test_xrls.xrls
 xorp/xrl/targets/xorp_if_mib.xrls
 xorp/xrl/targets/xorpsh.xrls
