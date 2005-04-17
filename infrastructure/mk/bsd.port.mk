@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.690 2005/04/17 18:31:58 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.691 2005/04/17 22:51:16 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1042,9 +1042,9 @@ _libresolve_fragment = \
 _syslibresolve_fragment = \
 		case "$$d" in \
 		/*) shdir="$${d%/*}/"; shprefix=""; d=$${d\#\#*/};; \
-		*/*) shprefix="$${d%/*}/"; shdir="${LOCALBASE}/$${d%/*}"; \
+		*/*) shprefix="$${d%/*}/"; shdir="${DEPBASE}/$${d%/*}"; \
 			d=$${d\#\#*/};; \
-		*) shprefix="" shdir="/usr/lib /usr/X11R6/lib ${LOCALBASE}/lib";; \
+		*) shprefix="" shdir="/usr/lib /usr/X11R6/lib ${DEPBASE}/lib";; \
 		esac; \
 		check=`eval $$listlibs| perl \
 			${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} $$d` \
@@ -2379,7 +2379,7 @@ _print-package-args:
 		default=`eval $$toset ${MAKE} _print-packagename`; \
 		case "X$$pkg" in X) pkg=`echo $$default|sed -e 's,-[0-9].*,-*,'`;; esac; \
 		if pkg_info -q -e $$pkg; then \
-			listlibs='ls $$shdir 2>/dev/null'; \
+			listlibs='ls ${DEPDIR}$$shdir 2>/dev/null'; \
 		else \
 			eval 1>&2 $$toset ${MAKE} ${PKGREPOSITORY}/$$default.tgz; \
 			listlibs='pkg_info -L -K ${PKGREPOSITORY}/$$default.tgz|grep "@lib $$shdir" |sed -e "s:@lib $$shdir/::"'; \
