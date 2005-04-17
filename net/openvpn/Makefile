@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/16 00:31:24 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2005/04/17 19:36:46 espie Exp $
 # Original from: Jorge A. Cortes Montiel <jcortes@bsdcoders.org>
 
 COMMENT=	"easy-to-use, robust, and highly configurable VPN"
@@ -25,11 +25,12 @@ LIB_DEPENDS=	lzo::archivers/lzo
 SEPARATE_BUILD=	concurrent
 USE_GMAKE=	Yes
 
+FAKE=		lib
 CONFIGURE_STYLE=gnu
 # pthread support is supposed to be unstable on OpenBSD
 CONFIGURE_ARGS+=--disable-pthread \
-		--with-lzo-headers=${LOCALBASE}/include \
-		--with-lzo-lib=${LOCALBASE}/lib
+		--with-lzo-headers=${DEPBASE}/include \
+		--with-lzo-lib=${DEPBASE}/lib
 
 SAMPLES_DIR=	${PREFIX}/share/examples/openvpn
 
