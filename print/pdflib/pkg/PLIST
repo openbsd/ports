@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:32:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/04/17 21:36:52 espie Exp $
+%%SHARED%%
 bin/pdflib-config
 include/pdflib.h
 lib/libpdf.a
 lib/libpdf.la
+@endfake
 share/doc/pdflib/
 share/doc/pdflib/PDFlib-license.pdf
 share/doc/pdflib/PDFlib-manual.pdf
@@ -15,4 +17,3 @@ share/doc/pdflib/readme_ebcdic.txt
 share/doc/pdflib/readme_mac.txt
 share/doc/pdflib/readme_unix.txt
 share/doc/pdflib/readme_win.txt
-%%SHARED%%
