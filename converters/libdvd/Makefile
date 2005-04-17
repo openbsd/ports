@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2004/11/21 22:53:58 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2005/04/17 18:53:00 hshoexer Exp $
 
 COMMENT=	"descramble scrambled DVDs using ACSS"
 
-VER=		0.2
+VER=		0.3
 DISTNAME=	libdvd-${VER}
 CATEGORIES=	converters
 MASTER_SITES=	http://www.rommelwood.de/~hshoexer/${VER}/ \
