@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2004/12/16 00:31:21 alek Exp $
+# $OpenBSD: Makefile,v 1.23 2005/04/17 19:33:02 espie Exp $
 
 COMMENT=	"X11 over a low bandwidth link"
 VERSION=	3.8.2
 DISTNAME=	dxpc-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net x11
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
@@ -14,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++
 
+FAKE=lib
 MASTER_SITES=	http://www.vigor.nu/dxpc/${VERSION}/
 HOMEPAGE=	http://www.vigor.nu/dxpc/
 
@@ -22,7 +24,9 @@ LIB_DEPENDS=	lzo::archivers/lzo
 USE_X11=	Yes
 
 CONFIGURE_STYLE=	gnu dest
-CONFIGURE_ARGS+=--with-lzo-lib=${PREFIX}
+CONFIGURE_ARGS+=--with-lzo-lib=${DEPBASE}
+
+MAKE_FLAGS+=LDFLAGS=-L${DEPBASE}/lib
 
 NO_REGRESS=	Yes
 
