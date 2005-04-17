@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2005/02/07 16:19:19 robert Exp $
+@comment $OpenBSD: PLIST,v 1.17 2005/04/17 08:13:00 robert Exp $
 @shell bin/zsh
 bin/zsh-${VERSION}
 @info info/zsh.info
@@ -199,7 +199,6 @@ share/zsh/${VERSION}/functions/_kfmclient
 share/zsh/${VERSION}/functions/_kill
 share/zsh/${VERSION}/functions/_killall
 share/zsh/${VERSION}/functions/_kld
-share/zsh/${VERSION}/functions/_larch
 share/zsh/${VERSION}/functions/_last
 share/zsh/${VERSION}/functions/_less
 share/zsh/${VERSION}/functions/_limit
@@ -245,6 +244,7 @@ share/zsh/${VERSION}/functions/_mondo
 share/zsh/${VERSION}/functions/_most_recent_file
 share/zsh/${VERSION}/functions/_mount
 share/zsh/${VERSION}/functions/_mozilla
+share/zsh/${VERSION}/functions/_mpc
 share/zsh/${VERSION}/functions/_mplayer
 share/zsh/${VERSION}/functions/_mt
 share/zsh/${VERSION}/functions/_mtools
@@ -374,6 +374,7 @@ share/zsh/${VERSION}/functions/_ttyctl
 share/zsh/${VERSION}/functions/_typeset
 share/zsh/${VERSION}/functions/_ulimit
 share/zsh/${VERSION}/functions/_uml
+share/zsh/${VERSION}/functions/_unace
 share/zsh/${VERSION}/functions/_unhash
 share/zsh/${VERSION}/functions/_uniq
 share/zsh/${VERSION}/functions/_unsetopt
