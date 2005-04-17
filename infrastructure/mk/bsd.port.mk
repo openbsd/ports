@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.687 2005/04/01 15:55:36 jolan Exp $
+#	$OpenBSD: bsd.port.mk,v 1.688 2005/04/17 10:10:07 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -170,6 +170,7 @@ clean=${_internal-clean}
 .endif
 
 FAKE?=Yes
+USE_FAKE_LIB?=No
 
 # need to go through an extra var because clean is set in stone, 
 # on the cmdline.
@@ -282,7 +283,7 @@ CONFIGURE_STYLE+=gnu
 
 USE_LIBTOOL?=No
 .if ${USE_LIBTOOL:L} == "yes"
-LIBTOOL?=			${LOCALBASE}/bin/libtool
+LIBTOOL?=			${DEPBASE}/bin/libtool
 BUILD_DEPENDS+=		::devel/libtool
 CONFIGURE_ENV+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 MAKE_ENV+=			LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
@@ -319,7 +320,7 @@ LIB_DEPENDS+=		Xm.2::x11/openmotif
 .  else
 ERRORS+= "Fatal: Unknown USE_MOTIF=${USE_MOTIF} settings."
 .  endif
-MOTIFLIB=-L${LOCALBASE}/lib -lXm
+MOTIFLIB=-L${DEPBASE}/lib -lXm
 .endif
 
 .if !empty(SUBPACKAGE)
@@ -450,7 +451,7 @@ _CIPHERS=		sha1 rmd160 md5
 # This is the one you can override
 PREFERRED_CIPHERS?= ${_CIPHERS}
 
-PORTPATH?= ${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${X11BASE}/bin
+PORTPATH?= ${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${X11BASE}/bin
 
 # Add any COPTS to CFLAGS.  Note: programs that use imake do not
 # use CFLAGS!  Also, many (most?) ports hard code CFLAGS, ignoring
@@ -474,7 +475,7 @@ MAKE_FILE?=		Makefile
 PORTHOME?=		/${PKGNAME}_writes_to_HOME
 
 MAKE_ENV+=		PATH='${PORTPATH}' PREFIX='${PREFIX}' \
-	LOCALBASE='${LOCALBASE}' X11BASE='${X11BASE}' \
+	LOCALBASE='${LOCALBASE}' DEPBASE='${DEPBASE}' X11BASE='${X11BASE}' \
 	MOTIFLIB='${MOTIFLIB}' CFLAGS='${CFLAGS:C/ *$//}' \
 	TRUEPREFIX='${PREFIX}' ${DESTDIRNAME}='' \
 	HOME='${PORTHOME}'
@@ -620,7 +621,7 @@ _SYSTRACE_CMD=
 .endif
 SYSTRACE_FILTER?=	${PORTSDIR}/infrastructure/db/systrace.filter
 _SYSTRACE_POLICIES+=	/bin/sh /usr/bin/env /usr/bin/make \
-	${LOCALBASE}/bin/gmake
+	${DEPBASE}/bin/gmake
 SYSTRACE_SUBST_VARS+=	DISTDIR PKG_TMPDIR PORTSDIR TMPDIR WRKDIR
 .for _v in ${SYSTRACE_SUBST_VARS}
 _SYSTRACE_SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
@@ -917,7 +918,8 @@ SCRIPTS_ENV+= CURDIR=${.CURDIR} DISTDIR=${DISTDIR} \
 		  WRKSRC=${WRKSRC} WRKBUILD=${WRKBUILD} \
 		  PATCHDIR=${PATCHDIR} SCRIPTDIR=${SCRIPTDIR} FILESDIR=${FILESDIR} \
 		  PORTSDIR=${PORTSDIR} DEPENDS="${DEPENDS}" \
-		  PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
+		  PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} DEPBASE='${DEPBASE}' \
+		  X11BASE=${X11BASE}
 
 .if defined(BATCH)
 SCRIPTS_ENV+=	BATCH=yes
@@ -1065,9 +1067,22 @@ _lib_depends_fragment = \
 		found=true; \
 	fi
 
+.if ${FAKE:L} == "lib" && ${USE_FAKE_LIB:L} == "yes"
+PORT_LD_LIBRARY_PATH=${DEPBASE}/lib:${X11BASE}/lib:/usr
+MAKE_ENV+=LD_LIBRARY_PATH=${PORT_LD_LIBRARY_PATH}
+CONFIGURE_ENV+=LD_LIBRARY_PATH=${PORT_LD_LIBRARY_PATH}
+DEPBASE=${DEPDIR}${LOCALBASE}
+DEPDIR?=${WRKDIR}/dependencies
+_build_depends_target=fake
+_lib_depends_target=fake
+.else
+DEPBASE=${LOCALBASE}
+DEPDIR=
 _build_depends_target=${DEPENDS_TARGET}
-_run_depends_target=${DEPENDS_TARGET}
 _lib_depends_target=${DEPENDS_TARGET}
+.endif
+
+_run_depends_target=${DEPENDS_TARGET}
 _regress_depends_target=${DEPENDS_TARGET}
 
 .if ${FORCE_UPDATE:L} == "yes"
@@ -1317,6 +1332,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 		case "X$$target" in \
 		Xinstall|Xreinstall) early_exit=false;; \
 		Xpackage) early_exit=true;; \
+		Xfake) early_exit=true; dep="/fake";; \
 		*) \
 			early_exit=true; mkdir -p ${WRKDIR}/$$dir; \
 			toset="$$toset _MASTER='[${FULLPKGNAME${SUBPACKAGE}}]${_MASTER}' WRKDIR=${WRKDIR}/$$dir"; \
@@ -1334,6 +1350,17 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 			what=$$pkg; \
 			case "$$dep" in \
 			"/nonexistent") ;; \
+			"/fake") \
+				${ECHO_MSG} "===>  Verifying package for $$what in $$dir"; \
+				if eval $$toset ${MAKE} package; then \
+					${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME${SUBPACKAGE}}${_MASTER}"; \
+				else \
+					exit 1; \
+				fi; \
+				mkdir -p ${DEPDIR}/pkgdb ${DEPDIR}/usr ${DEPDIR}/usr/X11R6; \
+				ln -sf /usr/lib ${DEPDIR}/usr/lib; \
+				ln -sf /usr/X11R6/lib ${DEPDIR}/usr/X11R6/lib; \
+				cd ${PKGREPOSITORY} && PKG_DBDIR=${DEPDIR}/pkgdb pkg_add -F nonroot -Q ${DEPDIR} $$pkg && exit 0;; \
 			*)  \
 				$$early_exit || ${_force_update_fragment}; \
 				${_${_DEP}_depends_fragment}; \
@@ -1589,7 +1616,7 @@ ${_BULK_COOKIE}: ${_PACKAGE_COOKIES}
 
 ${_WRKDIR_COOKIE}:
 	@rm -rf ${WRKDIR}
-	@mkdir -p ${WRKDIR} ${WRKDIR}/bin
+	@mkdir -p ${WRKDIR} ${WRKDIR}/bin ${DEPDIR}
 	@${_MAKE_COOKIE} $@
 
 ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
