@@ -1,18 +1,18 @@
-$OpenBSD: patch-Local_config,v 1.1 2002/09/07 07:12:12 pvalchev Exp $
---- Local.config.orig	Tue Jun 12 13:26:45 2001
-+++ Local.config	Sat Sep  7 01:02:32 2002
+$OpenBSD: patch-Local_config,v 1.2 2005/04/17 21:24:25 espie Exp $
+--- Local.config.orig	Tue Jun 12 21:26:45 2001
++++ Local.config	Sun Apr 17 23:22:55 2005
 @@ -135,6 +135,17 @@ XCOMM CDEBUGFLAGS =
  
  XCOMM This should take care of everything needed for BSD.
  
 +#if defined(OpenBSDArchitecture)
 +ARCH_DEFINES = -DHAVE_PARAM_H
-+TIFF_INCLUDE = -I${LOCALBASE}/include
-+TIFF_LIB     = -L${LOCALBASE}/lib -ltiff
-+JPEG_INCLUDE = -I${LOCALBASE}/include
-+JPEG_LIB     = -L${LOCALBASE}/lib -ljpeg
-+PNG_INCLUDE  = -I${LOCALBASE}/include/libpng
-+PNG_LIB      = -L${LOCALBASE}/lib -lpng -lz
++TIFF_INCLUDE = -I${DEPBASE}/include
++TIFF_LIB     = -L${DEPBASE}/lib -ltiff
++JPEG_INCLUDE = -I${DEPBASE}/include
++JPEG_LIB     = -L${DEPBASE}/lib -ljpeg
++PNG_INCLUDE  = -I${DEPBASE}/include/libpng
++PNG_LIB      = -L${DEPBASE}/lib -lpng -lz
 +XPM_INCLUDE  = -I${X11BASE}/include/X11
 +#endif
 +

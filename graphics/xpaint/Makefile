@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2005/02/07 19:01:48 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.34 2005/04/17 21:24:25 espie Exp $
 
 COMMENT=		"simple paint program"
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c m z
 
+FAKE=			lib
 LIB_DEPENDS=		jpeg.62::graphics/jpeg \
 			tiff.35::graphics/tiff \
 			png.2::graphics/png
