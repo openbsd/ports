@@ -1,4 +1,4 @@
-$OpenBSD: patch-rplayd_Makefile.in,v 1.4 2004/11/02 06:05:10 alek Exp $
+$OpenBSD: patch-rplayd_Makefile.in,v 1.5 2005/04/17 21:18:29 espie Exp $
 --- rplayd/Makefile.in.orig	Wed Jun  9 02:27:43 1999
 +++ rplayd/Makefile.in	Sat Aug 17 01:09:54 2002
 @@ -1,8 +1,9 @@
@@ -17,7 +17,7 @@ $OpenBSD: patch-rplayd_Makefile.in,v 1.4 2004/11/02 06:05:10 alek Exp $
  CPPFLAGS = $(CC_OPTIONS) -I. -I../include -I${srcdir} -I${srcdir}/../include \
  	-I${srcdir}/../lib -I${srcdir}/../adpcm \
 -	@GSM_INCS@ \
-+	-I${LOCALBASE}/include \
++	-I${DEPBASE}/include \
  	@RX_INCS@ @DEFS@ \
  	-DRPLAY_CONF=\"${sysconfdir}/rplay.conf\" \
  	-DRPLAY_HOSTS=\"${sysconfdir}/rplay.hosts\" \

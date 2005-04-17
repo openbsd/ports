@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/12/17 15:18:31 alek Exp $
+# $OpenBSD: Makefile,v 1.27 2005/04/17 21:18:29 espie Exp $
 
 COMMENT=	"Window manager, continuation of the Bowman NeXTSTEP clone"
 
@@ -23,16 +23,17 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		ICE SM X11 Xext Xpm c m z
 
+FAKE=		lib
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	 --enable-different-looknfeels
 CONFIGURE_ARGS+= --with-helpcommand="xterm -e man"
-CONFIGURE_ARGS+= --with-jpeg-includes=${LOCALBASE}/include
-CONFIGURE_ARGS+= --with-jpeg-library=${LOCALBASE}/lib
-CONFIGURE_ARGS+= --with-png-includes=${LOCALBASE}/include/libpng
-CONFIGURE_ARGS+= --with-png-library=${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+CONFIGURE_ARGS+= --with-jpeg-includes=${DEPBASE}/include
+CONFIGURE_ARGS+= --with-jpeg-library=${DEPBASE}/lib
+CONFIGURE_ARGS+= --with-png-includes=${DEPBASE}/include/libpng
+CONFIGURE_ARGS+= --with-png-library=${DEPBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
+		LDFLAGS="-L${DEPBASE}/lib" \
 		CFLAGS="${CFLAGS} -fsigned-char"
 
 NO_REGRESS=	Yes
