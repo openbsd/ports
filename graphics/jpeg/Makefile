@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2005/04/03 23:26:22 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2005/04/17 13:37:42 espie Exp $
 
 COMMENT=	"IJG's JPEG compression utilities"
 
 DISTNAME=	jpegsrc.v6b
-PKGNAME=	jpeg-6bp1
+PKGNAME=	jpeg-6bp2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.uu.net/graphics/jpeg/ \
 		ftp://ftp.shellhung.org/pub/Mirror/enlightenment/enlightenment/libs/

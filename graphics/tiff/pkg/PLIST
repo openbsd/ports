@@ -1,4 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/09/15 00:50:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2005/04/17 13:37:42 espie Exp $
+include/tiff.h
+include/tiffconf.h
+include/tiffio.h
+include/tiffvers.h
+lib/libtiff.a
+%%SHARED%%
+@endfake
 bin/fax2ps
 bin/fax2tiff
 bin/gif2tiff
@@ -20,11 +27,6 @@ bin/tiffinfo
 bin/tiffmedian
 bin/tiffset
 bin/tiffsplit
-include/tiff.h
-include/tiffconf.h
-include/tiffio.h
-include/tiffvers.h
-lib/libtiff.a
 @man man/man1/fax2ps.1
 @man man/man1/fax2tiff.1
 @man man/man1/gif2tiff.1
@@ -194,4 +196,3 @@ share/doc/tiff/v3.5.6-beta.html
 share/doc/tiff/v3.5.7.html
 share/doc/tiff/v3.6.0.html
 share/doc/tiff/v3.6.1.html
-%%SHARED%%

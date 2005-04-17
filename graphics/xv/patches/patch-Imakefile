@@ -46,8 +46,8 @@
  
 +#ifdef UseInstalledJpeg
 +JPEG = -DDOJPEG
-+LIBJPEG = -L/usr/local/lib -ljpeg
-+JPEGINCLUDE = -I/usr/local/include
++LIBJPEG = -L${DEPBASE}/lib -ljpeg
++JPEGINCLUDE = -I${DEPBASE}/include
 +#endif
 +
  #ifdef HaveTiff
@@ -60,8 +60,8 @@
  
 +#ifdef UseInstalledTiff
 +TIFF = -DDOTIFF
-+LIBTIFF = -L/usr/local/lib -ltiff
-+TIFFINCLUDE = -I/usr/local/include
++LIBTIFF = -L${DEPBASE}/lib -ltiff
++TIFFINCLUDE = -I${DEPBASE}/include
 +#endif
 +
 +#ifdef HavePng
@@ -74,8 +74,8 @@
 +
 +#ifdef UseInstalledPng
 +PNG = -DDOPNG
-+LIBPNG = -L/usr/local/lib -lpng
-+PNGINCLUDE = -I$(LOCALBASE)/include/libpng
++LIBPNG = -L${DEPBASE}/lib -lpng
++PNGINCLUDE = -I${DEPBASE}/include/libpng
 +#endif
 +
  #ifdef HavePDS

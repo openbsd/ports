@@ -1,18 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/08/07 08:03:06 espie Exp $
-bin/cjpeg
-bin/djpeg
-bin/jpegtran
-bin/rdjpgcom
-bin/wrjpgcom
+@comment $OpenBSD: PLIST,v 1.9 2005/04/17 13:37:42 espie Exp $
 include/jconfig.h
 include/jerror.h
 include/jmorecfg.h
 include/jpeglib.h
 lib/libjpeg.a
 lib/libjpeg.la
+%%SHARED%%
+@endfake
+bin/cjpeg
+bin/djpeg
+bin/jpegtran
+bin/rdjpgcom
+bin/wrjpgcom
 @man man/man1/cjpeg.1
 @man man/man1/djpeg.1
 @man man/man1/jpegtran.1
 @man man/man1/rdjpgcom.1
 @man man/man1/wrjpgcom.1
-%%SHARED%%
