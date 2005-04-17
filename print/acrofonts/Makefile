@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/22 16:02:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2005/04/17 07:21:24 sturm Exp $
 
 COMMENT=		"asian font pack for acroread"
 
-PKGNAME=		acrofonts-5.0
+PKGNAME=		acrofonts-7.0
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.adobe.com/products/acrobat/readstep.html
@@ -21,11 +21,11 @@ DISTFILES=		chsfont.tar.gz chtfont.tar.gz \
 
 DIST_SUBDIR=		acrofonts
 
-RUN_DEPENDS=		:acroread->=5:print/acroread
+RUN_DEPENDS=		:acroread->=7:print/acroread
 
 NO_BUILD=		Yes
 
-DIR=${PREFIX}/Acrobat5/Resource/Font
+DIR=${PREFIX}/Acrobat7/Resource/CMap
 
 do-install:
 	${INSTALL_DATA_DIR} ${DIR}
