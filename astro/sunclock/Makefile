@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/21 12:50:33 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2005/04/17 13:46:20 espie Exp $
 
 COMMENT=		"display the phase of the Sun on a map of the Earth"
 COMMENT-maps=		"additional maps of the Earth for sunclock"
 
 VERSION=		3.50pre1
 DISTNAME=		sunclock-${VERSION}
+PKGNAME=		${DISTNAME}p0
 PKGNAME-maps=		sunclock-maps-${VERSION}
 CATEGORIES=		astro
 
@@ -18,6 +19,7 @@ SUPDISTFILES=		sunclock_jpeg_medium_maps-1.0.tgz \
 			sunclock_huge_earthmap.jpg
 EXTRACT_SUFX=		.tgz
 
+FAKE=		lib
 USE_X11=		Yes
 CONFIGURE_STYLE=	imake
 NO_REGRESS=		Yes
