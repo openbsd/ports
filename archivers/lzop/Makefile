@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2005/01/15 15:22:01 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2005/04/17 19:27:31 espie Exp $
 # $FreeBSD: ports/archivers/lzop/Makefile,v 1.3 2000/06/22 05:51:49 will Exp $
 
 COMMENT=	"fast file compressor similar to gzip"
@@ -20,10 +20,11 @@ MASTER_SITES=	${HOMEPAGE}download/
 LIB_DEPENDS=	lzo.1::archivers/lzo
 WANTLIB=	c
 
+FAKE=		lib
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
+		LDFLAGS="-L${DEPBASE}/lib" \
 		ac_cv_header_io_h=no
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/acconfig
