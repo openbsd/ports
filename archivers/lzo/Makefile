@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2004/07/31 15:36:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2005/04/17 19:26:20 espie Exp $
 
 COMMENT=	"portable speedy lossless data compression library"
 
 DISTNAME=	lzo-1.08
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	archivers devel
 MASTER_SITES=	${HOMEPAGE}download/
 
