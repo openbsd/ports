@@ -1,7 +1,15 @@
-$OpenBSD: acroread.diff,v 1.2 2002/06/19 14:11:56 lebel Exp $
---- acroread.orig	Tue May 21 10:14:05 2002
-+++ acroread	Tue May 21 10:16:16 2002
-@@ -187,7 +187,7 @@
+--- acroread.orig	Sat Mar 12 02:50:00 2005
++++ acroread	Wed Apr  6 23:32:51 2005
+@@ -14,7 +14,7 @@
+  ScriptDirectory="`pwd 2> /dev/null`"
+  cd "$cwd"
+ fi
+-install_dir=`dirname "$ScriptDirectory"`/Reader
++install_dir=%%TRUEPREFIX%%/Acrobat7/Reader
+ 
+ 
+ #
+@@ -168,7 +168,7 @@
          ;;
      esac
      ;;

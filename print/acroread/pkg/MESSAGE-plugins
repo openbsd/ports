@@ -1,0 +1,2 @@
+This package added several plugins with questionable security properties,
+like JavaScript support, which are activated by default!

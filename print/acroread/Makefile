@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.25 2004/12/22 20:11:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.26 2005/04/17 07:18:53 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"view, distribute and print PDF documents"
+COMMENT-plugins="further plugins for acrobat reader"
 
-DISTNAME=	linux-5010
-PKGNAME=	acroread-5.010
+V=		7.0.0
+DISTNAME=	AdbeRdr70_linux_enu
+PKGNAME=	acroread-${V}
+PKGNAME-plugins=acroread-plugins-${V}
 CATEGORIES=	print
 
 MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
@@ -15,22 +18,30 @@ PERMIT_PACKAGE_FTP=	"commercial software"
 PERMIT_DISTFILES_CDROM=	"commercial software"
 PERMIT_DISTFILES_FTP=	"Adobe are control freaks"
 
-MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
+MULTI_PACKAGES=	-plugins
+SUBPACKAGE?=
 
-RUN_DEPENDS=	::emulators/redhat/base
+MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/reader/unix/7x/7.0/enu/
 
-WRKDIST=	${WRKDIR}/installers
+RUN_DEPENDS=	:redhat_base->8.0p4:emulators/redhat/base
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-plugins"
+RUN_DEPENDS+=	:${PKGNAME}:print/acroread
+.endif
+
+WRKDIST=	${WRKDIR}/AdobeReader
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
 do-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/Acrobat5
-	@ReadInstallDir=${PREFIX}/Acrobat5 ${WRKSRC}/INSTALL
+	@${INSTALL_DATA_DIR} ${PREFIX}/Acrobat7
+	@ReadInstallDir=${PREFIX}/Acrobat7 ${WRKSRC}/INSTALL
 
 post-install:
-	@cd ${PREFIX}/Acrobat5/bin && \
+	@cd ${PREFIX}/Acrobat7/bin && \
 	  patch --quiet < ${FILESDIR}/acroread.diff && \
-	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat5/bin/acroread \
+	  perl -pi -e "s,%%TRUEPREFIX%%,${TRUEPREFIX}," acroread && \
+	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat7/bin/acroread \
 	     ${PREFIX}/bin/acroread && rm acroread.orig
 
 .include <bsd.port.mk>
