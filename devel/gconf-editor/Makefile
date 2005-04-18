@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/03/12 12:04:14 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2005/04/18 23:04:53 espie Exp $
 
 COMMENT=		"editor for the GConf configuration system"
 
@@ -29,7 +29,8 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gconf-editor/2.8/}
 EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser
+			:p5-XML-Parser-*:textproc/p5-XML-Parser \
+			:scrollkeeper-*:textproc/scrollkeeper
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			gnomeui-2::x11/gnome/libgnomeui
 
