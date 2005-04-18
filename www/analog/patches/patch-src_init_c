@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_init_c,v 1.1 2005/04/18 22:32:36 naddy Exp $
+--- src/init.c.orig	Mon Apr 18 22:47:03 2005
++++ src/init.c	Mon Apr 18 22:47:31 2005
+@@ -1435,7 +1435,6 @@ choice strtoinfmt(Inputformat **ans, cha
+ 	c++;
+       if (*c == 'S')
+ 	done = TRUE;
+-      c++;
+     }
+   }
+   if (!done) {
+@@ -1446,7 +1445,6 @@ choice strtoinfmt(Inputformat **ans, cha
+ 	  c++;
+ 	if (*c == 's')
+ 	  *c = 'S';
+-	c++;
+       }
+     }
+   }

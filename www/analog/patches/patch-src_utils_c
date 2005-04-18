@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_utils_c,v 1.1 2005/04/18 22:32:36 naddy Exp $
+--- src/utils.c.orig	Mon Apr 18 21:48:29 2005
++++ src/utils.c	Mon Apr 18 21:48:56 2005
+@@ -690,7 +690,7 @@ logical wildmatch(char *s, char *p, char
+      below. */
+   ss = strchr(s, '\0');
+   pp = strchr(p, '\0');
+-  while ((*ss == *pp || *pp == '?') && ss >= s && *pp != '*') {
++  while (ss >= s && *pp != '*' && (*ss == *pp || *pp == '?')) {
+     ss--;       /* pp != p is covered because *p == '*' */
+     pp--;
+   }

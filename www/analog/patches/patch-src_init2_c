@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_init2_c,v 1.1 2005/04/18 22:32:36 naddy Exp $
+--- src/init2.c.orig	Sun Mar 23 14:57:02 2003
++++ src/init2.c	Mon Apr 18 21:42:41 2005
+@@ -244,10 +244,10 @@ void configchoice(void *opt, char *cmd, 
+     return;
+   }
+ 
+-  if (STREQ(cmdend - 6, "SORTBY"))
++  if ((cmd <= (cmdend - 6)) && STREQ(cmdend - 6, "SORTBY"))
+     choices = sortbychoices;
+ #ifndef NOGRAPHICS
+-  else if (STREQ(cmdend - 5, "CHART"))
++  else if ((cmd <= (cmdend - 5)) && STREQ(cmdend - 5, "CHART"))
+     choices = chartchoices;
+ #endif
+   else if (STREQ(cmd, "OUTPUT"))
+@@ -260,7 +260,7 @@ void configchoice(void *opt, char *cmd, 
+     choices = langchoices;
+   else if (STREQ(cmd, "GOTOS"))
+     choices = gotochoices;
+-  else if (STREQ(cmdend - 4, "CASE")) {
++  else if ((cmd <= (cmdend - 4)) && STREQ(cmdend - 4, "CASE")) {
+     choices = casechoices;
+     islog = TRUE;
+   }
