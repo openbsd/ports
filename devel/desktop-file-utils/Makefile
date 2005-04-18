@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/12 21:09:45 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/04/18 17:29:54 naddy Exp $
 
-COMMENT=		"utilities for 'desktop' entries"
+COMMENT=	"utilities for 'desktop' entries"
 
-DISTNAME=		desktop-file-utils-0.10
-CATEGORIES=		devel
+DISTNAME=	desktop-file-utils-0.10
+CATEGORIES=	devel
 
-HOMEPAGE=		http://freedesktop.org/wiki/Software_2fdesktop_2dfile_2dutils
+HOMEPAGE=	http://freedesktop.org/wiki/Software_2fdesktop_2dfile_2dutils
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,19 +14,19 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		${HOMEPAGE}releases/
+MASTER_SITES=	http://freedesktop.org/software/desktop-file-utils/releases/
 
-MODULES=		devel/gettext	
+MODULES=	devel/gettext	
 
-LIB_DEPENDS=		glib-2.0.0.0::devel/glib2 \
-			popt.0.3::devel/popt
+LIB_DEPENDS=	glib-2.0.0.0::devel/glib2 \
+		popt.0.3::devel/popt
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 # This port has "/usr/local" hardcoded, we prefer ${LOCALBASE}
 pre-build:
