@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2005/02/28 13:30:07 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.13 2005/04/18 11:42:38 espie Exp $
 
 COMMENT=	"GTK-based LDAP client"
 
@@ -34,5 +34,6 @@ AUTOCONF_VERSION= 2.57
 CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE} \
 		--with-sasl-prefix=${LOCALBASE} \
 		--with-kerberos-prefix=/usr
+CONFIGURE_ENV+= ac_cv_func_iswspace=no
 		
 .include <bsd.port.mk>
