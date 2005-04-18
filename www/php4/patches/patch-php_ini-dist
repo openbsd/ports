@@ -1,6 +1,6 @@
-$OpenBSD: patch-php_ini-dist,v 1.14 2004/07/05 00:00:34 robert Exp $
---- php.ini-dist.orig	Mon May 17 18:31:13 2004
-+++ php.ini-dist	Mon Jul  5 01:56:38 2004
+$OpenBSD: patch-php_ini-dist,v 1.15 2005/04/18 18:56:01 robert Exp $
+--- php.ini-dist.orig	Mon Feb 14 09:26:10 2005
++++ php.ini-dist	Mon Apr 18 20:52:00 2005
 @@ -408,10 +408,7 @@
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
@@ -123,7 +123,7 @@ $OpenBSD: patch-php_ini-dist,v 1.14 2004/07/05 00:00:34 robert Exp $
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ;sendmail_path =
  
-@@ -1116,3 +1035,56 @@
+@@ -1112,3 +1031,56 @@
  ; Local Variables:
  ; tab-width: 4
  ; End:
