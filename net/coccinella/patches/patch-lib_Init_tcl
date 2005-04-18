@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Init_tcl,v 1.1 2005/04/18 21:59:51 alek Exp $
+--- lib/Init.tcl.orig	Wed Jan 26 09:00:26 2005
++++ lib/Init.tcl	Thu Apr  7 22:47:26 2005
+@@ -49,7 +49,7 @@ proc ::Init::SetThis {thisScript} {
+     
+     # Collect paths in 'this' array.
+     set this(script)            $thisScript
+-    set this(path)              [file dirname $thisScript]
++    set this(path)              "!!COCCINELLALIB!!"
+     set this(appPath)           $this(path)
+     if {[info exists starkit::topdir]} {
+ 	set this(appPath) [file dirname [info nameofexecutable]]

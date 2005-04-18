@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/07 13:21:44 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/04/18 21:59:51 alek Exp $
 lib/coccinella/
 lib/coccinella/Coccinella.tcl
+@mode 755
+@sample bin/coccinella
+@mode
 lib/coccinella/TclXML/
 @comment lib/coccinella/TclXML/CHANGES
 lib/coccinella/TclXML/pkgIndex.tcl
@@ -18,13 +21,17 @@ lib/coccinella/components/AutoUpdate.tcl
 lib/coccinella/components/BuddyPounce.tcl
 lib/coccinella/components/CarbonNotification.tcl
 lib/coccinella/components/ComponentExample.tcl
+lib/coccinella/components/GMeeting.tcl
 lib/coccinella/components/ICQ.tcl
 lib/coccinella/components/ImageMagic.tcl
+lib/coccinella/components/Notifier.tcl
 lib/coccinella/components/ParseURI.tcl
 lib/coccinella/components/SlideShow.tcl
 lib/coccinella/components/Sounds.tcl
 lib/coccinella/components/Speech.tcl
+lib/coccinella/components/Tile.tcl
 lib/coccinella/components/URIRegistry.tcl
+lib/coccinella/components/VoIP.tcl
 lib/coccinella/components/cmpntIndex.tcl
 lib/coccinella/components/taskbar/
 lib/coccinella/components/taskbar/Taskbar.tcl
@@ -35,6 +42,7 @@ lib/coccinella/contrib/
 lib/coccinella/contrib/MSSpeech.tcl
 lib/coccinella/contrib/ProgressWindow.tcl
 @comment lib/coccinella/contrib/README
+lib/coccinella/contrib/Test2Tree.tcl
 lib/coccinella/contrib/TestTree.tcl
 lib/coccinella/contrib/TkInteractorPackage.tcl
 lib/coccinella/contrib/alertbox.tcl
@@ -57,8 +65,9 @@ lib/coccinella/contrib/hooks.tcl
 lib/coccinella/contrib/httpex.tcl
 lib/coccinella/contrib/mactabnotebook.tcl
 lib/coccinella/contrib/md5x.tcl
+lib/coccinella/contrib/mnotebook.tcl
 lib/coccinella/contrib/moviecontroller.tcl
-lib/coccinella/contrib/notebook.tcl
+lib/coccinella/contrib/notebox.tcl
 lib/coccinella/contrib/pane.tcl
 lib/coccinella/contrib/pipes.tcl
 lib/coccinella/contrib/pkgIndex.tcl
@@ -68,19 +77,24 @@ lib/coccinella/contrib/sha1pure.tcl
 lib/coccinella/contrib/socks5.tcl
 lib/coccinella/contrib/svg2can.tcl
 lib/coccinella/contrib/svgwb2can.tcl
-lib/coccinella/contrib/tablelist3.0/
-lib/coccinella/contrib/tablelist3.0/CHANGES.txt
-lib/coccinella/contrib/tablelist3.0/COPYRIGHT.txt
-lib/coccinella/contrib/tablelist3.0/README.txt
-lib/coccinella/contrib/tablelist3.0/pkgIndex.tcl
-lib/coccinella/contrib/tablelist3.0/scripts/
-lib/coccinella/contrib/tablelist3.0/scripts/mwutil.tcl
-lib/coccinella/contrib/tablelist3.0/scripts/repair.tcl
-lib/coccinella/contrib/tablelist3.0/scripts/tablelistEditcell.tcl
-lib/coccinella/contrib/tablelist3.0/scripts/tablelistSortByColumn.tcl
-lib/coccinella/contrib/tablelist3.0/scripts/tablelistWidget.tcl
-lib/coccinella/contrib/tablelist3.0/scripts/tclIndex
-lib/coccinella/contrib/tablelist3.0/tablelist.tcl
+lib/coccinella/contrib/tablelist3.5/
+@comment lib/coccinella/contrib/tablelist3.5/CHANGES.txt
+@comment lib/coccinella/contrib/tablelist3.5/COPYRIGHT.txt
+@comment lib/coccinella/contrib/tablelist3.5/README.txt
+lib/coccinella/contrib/tablelist3.5/pkgIndex.tcl
+lib/coccinella/contrib/tablelist3.5/scripts/
+lib/coccinella/contrib/tablelist3.5/scripts/mwutil.tcl
+lib/coccinella/contrib/tablelist3.5/scripts/repair.tcl
+lib/coccinella/contrib/tablelist3.5/scripts/tablelistBind.tcl
+lib/coccinella/contrib/tablelist3.5/scripts/tablelistConfig.tcl
+lib/coccinella/contrib/tablelist3.5/scripts/tablelistEdit.tcl
+lib/coccinella/contrib/tablelist3.5/scripts/tablelistMove.tcl
+lib/coccinella/contrib/tablelist3.5/scripts/tablelistSort.tcl
+lib/coccinella/contrib/tablelist3.5/scripts/tablelistUtil.tcl
+lib/coccinella/contrib/tablelist3.5/scripts/tablelistWidget.tcl
+lib/coccinella/contrib/tablelist3.5/scripts/tclIndex
+lib/coccinella/contrib/tablelist3.5/tablelist.tcl
+lib/coccinella/contrib/timing.tcl
 lib/coccinella/contrib/tinyfileutils.tcl
 lib/coccinella/contrib/tinyhttpd.tcl
 lib/coccinella/contrib/tree.tcl
@@ -99,8 +113,13 @@ lib/coccinella/docs/Welcome_en.can
 lib/coccinella/docs/Welcome_nl.can
 lib/coccinella/docs/Welcome_sv.can
 lib/coccinella/httpd/
-lib/coccinella/httpd/macfoldericon.gif
-lib/coccinella/httpd/textfileicon.gif
+lib/coccinella/httpd/404.html
+lib/coccinella/httpd/images/
+lib/coccinella/httpd/images/download.gif
+lib/coccinella/httpd/images/file.gif
+lib/coccinella/httpd/images/folder.gif
+lib/coccinella/httpd/images/up.gif
+lib/coccinella/httpd/std.css
 lib/coccinella/iconsets/
 lib/coccinella/iconsets/emoticons/
 lib/coccinella/iconsets/emoticons/AIM.jisp
@@ -108,7 +127,7 @@ lib/coccinella/iconsets/emoticons/Chibi.jisp
 lib/coccinella/iconsets/emoticons/KMess-Cartoon-1.0.jisp
 lib/coccinella/iconsets/emoticons/apple_ichat.jisp
 lib/coccinella/iconsets/emoticons/default/
-lib/coccinella/iconsets/emoticons/default/SmileysReadme.txt
+@comment lib/coccinella/iconsets/emoticons/default/SmileysReadme.txt
 lib/coccinella/iconsets/emoticons/default/icondef.xml
 lib/coccinella/iconsets/emoticons/default/smiley-alien.gif
 lib/coccinella/iconsets/emoticons/default/smiley-angry.gif
@@ -176,6 +195,9 @@ lib/coccinella/iconsets/emoticons/patricks_faces-1.0.jisp
 lib/coccinella/iconsets/emoticons/trill-basic-smileys.jisp
 lib/coccinella/iconsets/emoticons/webmessenger.jisp
 lib/coccinella/iconsets/emoticons/yahoo_messenger.jisp
+lib/coccinella/iconsets/roster/
+lib/coccinella/iconsets/roster/default/
+lib/coccinella/iconsets/roster/default/icondef.xml
 lib/coccinella/images/
 lib/coccinella/images/Coccinella.icns
 lib/coccinella/images/Coccinella.psd
@@ -227,6 +249,8 @@ lib/coccinella/images/qtlogo12.gif
 lib/coccinella/images/qtlogo16.gif
 lib/coccinella/images/quote.gif
 lib/coccinella/images/quoteDis.gif
+lib/coccinella/images/reliefpopupbt.gif
+lib/coccinella/images/reliefpopupbtpush.gif
 lib/coccinella/images/reply.gif
 lib/coccinella/images/replyDis.gif
 lib/coccinella/images/resizehandle.gif
@@ -237,6 +261,7 @@ lib/coccinella/images/send.gif
 lib/coccinella/images/sendDis.gif
 lib/coccinella/images/sendfile.gif
 lib/coccinella/images/sendfileDis.gif
+lib/coccinella/images/settings.gif
 lib/coccinella/images/sky.gif
 lib/coccinella/images/sky2.gif
 lib/coccinella/images/splash.gif
@@ -247,6 +272,7 @@ lib/coccinella/images/trash.gif
 lib/coccinella/images/trashDis.gif
 lib/coccinella/images/unreadmessage.gif
 lib/coccinella/images/wave.gif
+lib/coccinella/images/xppopupbt.gif
 lib/coccinella/items/
 lib/coccinella/items/Games/
 lib/coccinella/items/Games/Chess.can
@@ -269,6 +295,7 @@ lib/coccinella/items/Games/chessimages/wqueen.gif
 lib/coccinella/items/Games/chessimages/wrunner.gif
 lib/coccinella/items/Games/chessimages/wtower.gif
 lib/coccinella/items/Games/chineschecker.gif
+lib/coccinella/items/Mathematica.can
 lib/coccinella/items/Smileys/
 lib/coccinella/items/Smileys/Classic.can
 lib/coccinella/items/Smileys/Cry.can
@@ -309,30 +336,27 @@ lib/coccinella/jabber/Privacy.tcl
 lib/coccinella/jabber/Profiles.tcl
 lib/coccinella/jabber/Register.tcl
 lib/coccinella/jabber/Roster.tcl
+lib/coccinella/jabber/Rosticons.tcl
 lib/coccinella/jabber/Search.tcl
 lib/coccinella/jabber/SetupAss.tcl
+lib/coccinella/jabber/Status.tcl
 lib/coccinella/jabber/Subscribe.tcl
 lib/coccinella/jabber/VCard.tcl
 lib/coccinella/jabber/pkgIndex.tcl
 lib/coccinella/jabberlib/
-lib/coccinella/jabberlib/MiniJlibDemo.tcl
-lib/coccinella/jabberlib/README
-lib/coccinella/jabberlib/TestJlib.tcl
-lib/coccinella/jabberlib/TestRoster.tcl
-lib/coccinella/jabberlib/TestWrapper.tcl
+@comment lib/coccinella/jabberlib/README
 lib/coccinella/jabberlib/XMLFormat.tcl
 lib/coccinella/jabberlib/browse.tcl
 lib/coccinella/jabberlib/disco.tcl
 lib/coccinella/jabberlib/ibb.tcl
-lib/coccinella/jabberlib/jabberhttptransport.tcl
 lib/coccinella/jabberlib/jabberlib.tcl
+lib/coccinella/jabberlib/jlibhttp.tcl
 lib/coccinella/jabberlib/jlibsasl.tcl
 lib/coccinella/jabberlib/jlibtls.tcl
 lib/coccinella/jabberlib/muc.tcl
 lib/coccinella/jabberlib/pkgIndex.tcl
 lib/coccinella/jabberlib/roster.tcl
 lib/coccinella/jabberlib/saslmd5.tcl
-@comment lib/coccinella/jabberlib/saslmd5.tcl~
 lib/coccinella/jabberlib/service.tcl
 lib/coccinella/jabberlib/stanzaerror.tcl
 lib/coccinella/jabberlib/streamerror.tcl
@@ -340,10 +364,14 @@ lib/coccinella/jabberlib/tinydom.tcl
 lib/coccinella/jabberlib/wrapper.tcl
 lib/coccinella/lib/
 lib/coccinella/lib/Base64Icons.tcl
+lib/coccinella/lib/Debug.tcl
 lib/coccinella/lib/Dialogs.tcl
 lib/coccinella/lib/EditDialogs.tcl
 lib/coccinella/lib/FileCache.tcl
 lib/coccinella/lib/FileUtils.tcl
+lib/coccinella/lib/HttpTrpt.tcl
+lib/coccinella/lib/Httpd.tcl
+lib/coccinella/lib/Init.tcl
 lib/coccinella/lib/MacintoshUtils.tcl
 lib/coccinella/lib/Network.tcl
 lib/coccinella/lib/P2P.tcl
@@ -362,11 +390,13 @@ lib/coccinella/lib/Utils.tcl
 lib/coccinella/lib/WindowsUtils.tcl
 lib/coccinella/lib/pkgIndex.tcl
 lib/coccinella/msgs/
-lib/coccinella/msgs/README_encodings
 lib/coccinella/msgs/de.msg
 lib/coccinella/msgs/en.msg
+lib/coccinella/msgs/es.msg
 lib/coccinella/msgs/fr.msg
 lib/coccinella/msgs/nl.msg
+lib/coccinella/msgs/post/
+@comment lib/coccinella/msgs/post/README-post
 lib/coccinella/msgs/sv.mac
 lib/coccinella/msgs/sv.msg
 lib/coccinella/pkgIndex.tcl
@@ -375,7 +405,7 @@ lib/coccinella/plugins/Example.tcl
 lib/coccinella/plugins/HtmlImport.tcl
 lib/coccinella/plugins/ItclApplets.tcl
 lib/coccinella/plugins/PluginTextPlain.tcl
-lib/coccinella/plugins/README-plugins
+@comment lib/coccinella/plugins/README-plugins
 lib/coccinella/plugins/WinImport.tcl
 lib/coccinella/plugins/applets/
 lib/coccinella/plugins/applets/CardGame/
@@ -393,13 +423,15 @@ lib/coccinella/resources/
 lib/coccinella/resources/README-resources
 lib/coccinella/resources/blueberry.rdb
 lib/coccinella/resources/bluetabs.rdb
+lib/coccinella/resources/crystal.rdb
 lib/coccinella/resources/default.rdb
 lib/coccinella/resources/macintosh.rdb
 lib/coccinella/resources/macosx.rdb
+lib/coccinella/resources/post/
+lib/coccinella/resources/post/README-post
 lib/coccinella/resources/unix.rdb
 lib/coccinella/resources/windows.rdb
 lib/coccinella/sounds/
-lib/coccinella/sounds/README-sounds
 lib/coccinella/sounds/alarm.wav
 lib/coccinella/sounds/autoanswered.wav
 lib/coccinella/sounds/clicked.wav
@@ -435,8 +467,8 @@ lib/coccinella/whiteboard/Whiteboard.tcl
 lib/coccinella/whiteboard/pkgIndex.tcl
 lib/coccinella/whiteboard/tclIndex
 share/doc/coccinella/
-share/doc/coccinella/README
 share/doc/coccinella/README-jabber
 share/doc/coccinella/README-smileys
-@exec ln -s ${PREFIX}/lib/coccinella/Coccinella.tcl ${PREFIX}/bin/coccinella
-@unexec rm -f ${PREFIX}/bin/coccinella
+share/doc/coccinella/README-sounds
+share/doc/coccinella/README.txt
+share/doc/coccinella/README_encodings

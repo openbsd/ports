@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/07 13:21:43 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/04/18 21:59:51 alek Exp $
 
 COMMENT=		"Jabber client with whiteboard communication" 
 
-DISTNAME=		Coccinella-0.95.1Src
+DISTNAME=		Coccinella-0.95.4Src
 PKGNAME=		${DISTNAME:S/Src$//:L}
 CATEGORIES=		net
 
@@ -26,10 +26,8 @@ NO_REGRESS=		Yes
 PKG_ARCH=		*
 
 post-patch:
-	@perl -pi -e 's|exec wish|exec wish8.4|g'\
-		 ${WRKSRC}/Coccinella.tcl
-	@perl -pi -e 's|parray chatstate xevent,\*||' \
-		${WRKSRC}/jabber/Chat.tcl
+	@perl -pi -e 's,!!COCCINELLALIB!!,${LOCALBASE}/lib/coccinella,'\
+		 ${WRKSRC}/Coccinella.tcl ${WRKSRC}/lib/Init.tcl
 	
 do-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/lib/coccinella
@@ -37,7 +35,9 @@ do-install:
 		tar xf - -C ${PREFIX}/lib/coccinella/
 	${INSTALL_SCRIPT} ${WRKSRC}/Coccinella.tcl ${PREFIX}/lib/coccinella/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/coccinella
-	@cd ${WRKSRC} && ${INSTALL_DATA} README README-jabber README-smileys \
-		${PREFIX}/share/doc/coccinella/
-	
+	@cd ${WRKSRC} && ${INSTALL_DATA} README.txt READMEs/README-jabber \
+		READMEs/README-smileys msgs/README_encodings \
+		sounds/README-sounds \
+		${PREFIX}/share/doc/coccinella/ 
+
 .include <bsd.port.mk>

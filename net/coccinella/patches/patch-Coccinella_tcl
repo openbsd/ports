@@ -1,0 +1,29 @@
+$OpenBSD: patch-Coccinella_tcl,v 1.1 2005/04/18 21:59:51 alek Exp $
+--- Coccinella.tcl.orig	Wed Jan 26 08:58:29 2005
++++ Coccinella.tcl	Thu Apr  7 22:47:56 2005
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ # the next line restarts using wish \
+-	exec wish "$0" -visual best "$@"
++	exec wish8.4 "$0" -visual best "$@"
+       
+ #  Coccinella.tcl ---
+ #  
+@@ -131,7 +131,7 @@ if {[string equal $this(platform) "unix"
+ } else {
+     set thisScript [file normalize [info script]]
+ }
+-set thisPath [file normalize [file dirname $thisScript]]
++set thisPath "!!COCCINELLALIB!!"
+ if {[info exists ::env(HOME)]} {
+     cd $::env(HOME)
+ } else {
+@@ -159,6 +159,8 @@ if {![catch {package require Itcl 3.2}]}
+ }
+ set prefs(appName)    "Coccinella"
+ set prefs(theAppName) "The Coccinella"
++
++lappend auto_path !!COCCINELLALIB!!
+ 
+ # Read our theme prefs file, if any, containing the theme name and locale.
+ package require Theme
