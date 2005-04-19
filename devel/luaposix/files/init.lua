@@ -1,3 +1,3 @@
--- $OpenBSD: init.lua,v 1.1.1.1 2004/12/16 21:21:14 pedro Exp $
+-- $OpenBSD: init.lua,v 1.2 2005/04/19 14:31:27 pedro Exp $
 -- luaposix's initialization steps
-LUA_PATH = lua_addpath(LUA_PATH, "@posixpath@")
+lua_addpath("@posixpath@")

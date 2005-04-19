@@ -1,4 +1,4 @@
--- $OpenBSD: init.lua,v 1.1.1.1 2004/12/16 13:38:12 pedro Exp $
+-- $OpenBSD: init.lua,v 1.2 2005/04/19 14:31:27 pedro Exp $
 -- luasocket's initialization steps
-LUA_PATH = lua_addpath(LUA_PATH, "@socketpath@")
+lua_addpath("@socketpath@")
 require("lua")
