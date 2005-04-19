@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/09 22:57:03 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/04/19 10:55:24 espie Exp $
 
 COMMENT=		"plugins for digikam"
 CATEGORIES=		graphics x11 x11/kde
@@ -19,9 +19,9 @@ WANTLIB=		freetype Xext X11 util m ICE Xrender SM pthread z \
 			art_lgpl_2 tiff gdbm ltdl gphoto2_port exif
 
 MODKDE_LIBTOOL=		Yes
+MODKDE_VERSION=		3.4
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
-AUTOCONF=		/bin/sh ${WRKDIST}/admin/cvs.sh configure
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
 USE_GMAKE?=		Yes
 CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}

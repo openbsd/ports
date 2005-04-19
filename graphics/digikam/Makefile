@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/09 21:51:14 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/04/19 10:55:24 espie Exp $
 
 COMMENT=		"digital image kde application"
 CATEGORIES=		graphics x11 x11/kde
@@ -25,9 +25,9 @@ MODULES=	x11/kde
 
 BUILD_DEPENDS=		::devel/pkgconfig
 MODKDE_LIBTOOL=		Yes
+MODKE_VERSION=		3.4
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
-AUTOCONF=		/bin/sh ${WRKDIST}/admin/cvs.sh configure
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
 USE_GMAKE?=		Yes
 CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}
