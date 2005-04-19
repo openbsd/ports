@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/04 17:18:09 kurt Exp $
+# $OpenBSD: Makefile,v 1.2 2005/04/19 13:58:30 kurt Exp $
 
-SUBDIR+= sdk,gtk2
+SUBDIR+= sdk
 SUBDIR+= plugins
 
 .include <bsd.port.subdir.mk>
