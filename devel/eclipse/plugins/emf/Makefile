@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/04 17:18:09 kurt Exp $
+# $OpenBSD: Makefile,v 1.2 2005/04/19 14:01:36 kurt Exp $
 
 COMMENT=		"Eclipse Modeling Framework (EMF)"
 
-V=			2.0.1
+V=			2.0.2
 DISTNAME=		emf-sdo-xsd-SDK-${V}
 PKGNAME=		eclipse-plugin-emf-sdk-${V}
 CATEGORIES=		devel/eclipse/plugins java
@@ -19,9 +19,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"commercial distribution defend and indemnify clauses"
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://download.eclipse.org/tools/emf/downloads/drops/${V}/R200409171617/
+MASTER_SITES=		http://download.eclipse.org/tools/emf/downloads/drops/${V}/R200503151315/
 
-RUN_DEPENDS=		:eclipse-sdk-gtk2-*|eclipse-sdk-motif-*:devel/eclipse/sdk
+RUN_DEPENDS=		::devel/eclipse/sdk
 
 USE_ZIP=		Yes
 NO_BUILD=		Yes
