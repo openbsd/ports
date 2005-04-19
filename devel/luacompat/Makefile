@@ -1,0 +1,41 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2005/04/19 14:48:09 pedro Exp $
+
+COMMENT=	"compatibility module for lua 5.1"
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+
+DISTNAME=	compat-5.1r2
+PKGNAME=	luacompat-5.1r2
+DIST_SUBDIR=	luacompat-5.1r2
+CATEGORIES=	devel
+
+MASTER_SITES=	http://luaforge.net/frs/download.php/402/
+HOMEPAGE=	http://www.keplerproject.org/compat/
+
+MAINTAINER=	Pedro Martelletto <pedro@openbsd.org>
+
+# MIT
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+NO_REGRESS=	Yes
+BUILD_DEPENDS=	::lang/lua
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+post-extract:
+	@sed -e "s:@compatpath@:${PREFIX}/lua/luacompat/?.lua:g" \
+		${FILESDIR}/init.lua > ${WRKSRC}/init.lua
+
+do-build:
+	cd ${WRKSRC};\
+	${CC} -o libluacompat.so.5.1 -I${LOCALBASE}/include -shared -fPIC compat-5.1.c
+
+do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/lua/luacompat
+	${INSTALL_DATA} ${WRKSRC}/init.lua ${PREFIX}/lua/luacompat
+	${INSTALL_DATA} ${WRKSRC}/compat-5.1.lua ${PREFIX}/lua/luacompat
+	${INSTALL_DATA} ${WRKSRC}/compat-5.1.h ${PREFIX}/include/luacompat.h
+	${INSTALL_DATA} ${WRKSRC}/libluacompat.so.5.1 ${PREFIX}/lib
+
+.include <bsd.port.mk>

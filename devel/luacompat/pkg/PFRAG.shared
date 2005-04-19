@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/04/19 14:48:09 pedro Exp $
+@lib lib/libluacompat.so.5.1
