@@ -1,0 +1,53 @@
+$OpenBSD: patch-src_shout_c,v 1.1 2005/04/19 20:07:11 sturm Exp $
+--- src/shout.c.orig	Sun Apr 17 12:25:25 2005
++++ src/shout.c	Sun Apr 17 12:51:32 2005
+@@ -489,7 +489,7 @@ int shout_set_mount(shout_t *self, const
+ 	if (!(self->mount = malloc(len)))
+ 		return self->error = SHOUTERR_MALLOC;
+ 
+-	sprintf (self->mount, "%s%s", mount[0] == '/' ? "" : "/", mount);
++	snprintf (self->mount, len, "%s%s", mount[0] == '/' ? "" : "/", mount);
+ 
+ 	return self->error = SHOUTERR_SUCCESS;
+ }
+@@ -1145,6 +1145,7 @@ static char *http_basic_authorization(sh
+ {
+ 	char *out, *in;
+ 	int len;
++	int ret;
+ 
+ 	if (!self || !self->user || !self->password)
+ 		return NULL;
+@@ -1152,7 +1153,11 @@ static char *http_basic_authorization(sh
+ 	len = strlen(self->user) + strlen(self->password) + 2;
+ 	if (!(in = malloc(len)))
+ 		return NULL;
+-	sprintf(in, "%s:%s", self->user, self->password);
++	ret = snprintf(in, len, "%s:%s", self->user, self->password);
++	if (ret == -1 || ret >= len) {
++		free(in);
++		return NULL;
++	}
+ 	out = _shout_util_base64_encode(in);
+ 	free(in);
+ 
+@@ -1161,10 +1166,15 @@ static char *http_basic_authorization(sh
+ 		free(out);
+ 		return NULL;
+ 	}
+-	sprintf(in, "Authorization: Basic %s\r\n", out);
+-	free(out);
+-	
+-	return in;
++	ret = snprintf(in, len, "Authorization: Basic %s\r\n", out);
++	if (ret == -1 || ret >= len) {
++		free(in);
++		free(out);
++		return NULL;
++	} else {
++		free(out);
++		return in;
++	}
+ }
+ 
+ static int parse_response(shout_t *self)
