@@ -1,7 +1,15 @@
-$OpenBSD: patch-src_avl_avl_c,v 1.3 2005/04/19 20:07:11 sturm Exp $
---- src/avl/avl.c.orig	Sun Apr 17 02:44:43 2005
-+++ src/avl/avl.c	Sun Apr 17 02:47:25 2005
-@@ -1063,9 +1063,11 @@ typedef struct _link_node {
+$OpenBSD: patch-src_avl_avl_c,v 1.4 2005/04/19 20:23:44 sturm Exp $
+--- src/avl/avl.c.orig	Mon Jul  5 22:44:13 2004
++++ src/avl/avl.c	Tue Apr 19 22:18:54 2005
+@@ -35,6 +35,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ 
+ #include "avl.h"
+ 
+@@ -1063,9 +1064,11 @@ typedef struct _link_node {
  static char balance_chars[3] = {'\\', '-', '/'};
  
  static int
@@ -15,7 +23,7 @@ $OpenBSD: patch-src_avl_avl_c,v 1.3 2005/04/19 20:07:11 sturm Exp $
  }  
  
  /*
-@@ -1108,8 +1110,8 @@ print_node (avl_key_printer_fun_type key
+@@ -1108,8 +1111,8 @@ print_node (avl_key_printer_fun_type key
          link_node * link)
  {
    char buffer[256];
