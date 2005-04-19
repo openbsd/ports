@@ -1,0 +1,58 @@
+$OpenBSD: patch-vorbis_c,v 1.1 2005/04/19 20:21:46 sturm Exp $
+--- vorbis.c.orig	Sun Apr 17 14:15:59 2005
++++ vorbis.c	Sun Apr 17 14:23:48 2005
+@@ -659,28 +659,46 @@ int write_gains(const char *filename, fl
+     /* Add new tags - unless ReplayGain tags are to be removed */
+     if (!remove_tags)
+     {
++        int ret;
++
+         if (track_peak > NO_PEAK)
+         {
+-            sprintf(buffer, PEAK_FORMAT, track_peak);
+-            vorbis_comment_add_tag(vc, TAG_TRACK_PEAK, buffer);
++            ret = snprintf(buffer, sizeof(buffer), PEAK_FORMAT, track_peak);
++            if (ret == -1 || ret >= sizeof(buffer)) {
++                fprintf(stderr, _("Truncation or format error occured in write_gains()\n"));
++                goto exit;
++            } else
++                vorbis_comment_add_tag(vc, TAG_TRACK_PEAK, buffer);
+         }
+ 
+         if (track_gain > NO_GAIN)
+         {
+-            sprintf(buffer, GAIN_FORMAT, track_gain);
+-            vorbis_comment_add_tag(vc, TAG_TRACK_GAIN, buffer);
++            ret = snprintf(buffer, sizeof(buffer), GAIN_FORMAT, track_gain);
++            if (ret == -1 || ret >= sizeof(buffer)) {
++                fprintf(stderr, _("Truncation or format error occured in write_gains()\n"));
++                goto exit;
++            } else
++                vorbis_comment_add_tag(vc, TAG_TRACK_GAIN, buffer);
+         }
+ 
+         if (album_peak > NO_PEAK)
+         {
+-            sprintf(buffer, PEAK_FORMAT, album_peak);
+-            vorbis_comment_add_tag(vc, TAG_ALBUM_PEAK, buffer);
++            ret = snprintf(buffer, sizeof(buffer), PEAK_FORMAT, album_peak);
++            if (ret == -1 || ret >= sizeof(buffer)) {
++                fprintf(stderr, _("Truncation or format error occured in write_gains()\n"));
++                goto exit;
++            } else
++                vorbis_comment_add_tag(vc, TAG_ALBUM_PEAK, buffer);
+         }
+ 
+         if (album_gain > NO_GAIN)
+         {
+-            sprintf(buffer, GAIN_FORMAT, album_gain);
+-            vorbis_comment_add_tag(vc, TAG_ALBUM_GAIN, buffer);
++            ret = snprintf(buffer, sizeof(buffer), GAIN_FORMAT, album_gain);
++            if (ret == -1 || ret >= sizeof(buffer)) {
++                fprintf(stderr, _("Truncation or format error occured in write_gains()\n"));
++                goto exit;
++            } else
++                vorbis_comment_add_tag(vc, TAG_ALBUM_GAIN, buffer);
+         }
+     }
+ 
