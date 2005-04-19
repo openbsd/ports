@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2005/02/05 08:02:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.40 2005/04/19 09:41:42 espie Exp $
 
 COMMENT=		"SLang-based newsreader"
 
 VERSION=		0.9.8.1
 DISTNAME=		slrn-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		news
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=slrn/}
@@ -16,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto m ssl termcap 
 
+FAKE=			lib
 PFILES=			lastchar fetch
 MASTER_SITES0=  	http://slrn.sourceforge.net/patches/
 .for i in ${PFILES}
@@ -26,9 +28,15 @@ PATCH_DIST_STRIP=-p1
 NO_REGRESS=		Yes
 USE_GMAKE=		Yes
 LIB_DEPENDS=		slang.::devel/libslang
+MODULES=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-inews --with-ssl --with-slrnpull --enable-spool
+CONFIGURE_ARGS+=	--with-slang-library=${DEPBASE}/lib \
+			--with-slang-includes=${DEPBASE}/include \
+			--with-libiconv-prefix=${DEPBASE} \
+			--with-libintl-prefix=${DEPBASE}
+
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autoconf
 
 .include <bsd.port.mk>

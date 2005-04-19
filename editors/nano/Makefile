@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2005/02/01 22:15:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2005/04/19 09:41:42 espie Exp $
 
 COMMENT=	"small, easy to use editor"
 
@@ -24,15 +24,16 @@ FLAVOR?=
 
 MODULES=	devel/gettext
 
+FAKE=		lib
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.59
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
+		LDFLAGS="-L${DEPBASE}/lib"
 CONFIGURE_ARGS=	--enable-all
 
 .if ${FLAVOR:L:Mslang}
 LIB_DEPENDS+=	slang.14::devel/libslang
-CONFIGURE_ARGS+=--with-slang="${LOCALBASE}"
+CONFIGURE_ARGS+=--with-slang="${DEPBASE}"
 WANTLIB+=	m
 .endif
 

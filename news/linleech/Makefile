@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/02 19:19:59 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2005/04/19 09:41:42 espie Exp $
 # Original from: Curtiss Howard, cereal@schizo.com
 #
 
@@ -21,6 +21,7 @@ WANTLIB=		c m termcap
 MASTER_SITES=		ftp://ftp.funet.fi/pub/mirrors/ftp.debian.org/debian/dists/potato/main/source/news/ \
 			http://people.montana.com/~drrom/
 
+FAKE=			lib
 LIB_DEPENDS=    	slang.::devel/libslang
 WRKDIST=		${WRKDIR}/linleech-2.2.1.orig
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/11/24 11:08:03 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2005/04/19 09:41:42 espie Exp $
 
 COMMENT=	"text editor"
 
@@ -20,8 +20,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m termcap util
 
+FAKE=		lib
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	JED_ROOT="${PREFIX}/lib/jed"
+CONFIGURE_ENV+=	JED_ROOT="${PREFIX}/lib/jed"
+CONFIGURE_ENV+= DEPBASE=${DEPBASE}
 
 FLAVORS=	no_x11
 FLAVOR?=

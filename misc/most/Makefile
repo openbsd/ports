@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/22 11:48:33 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2005/04/19 09:41:42 espie Exp $
 
 COMMENT=	"browse or page through a text file"
 
@@ -12,6 +12,7 @@ LIB_DEPENDS=	slang.14::devel/libslang
 
 MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
 
+FAKE=			lib
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -21,6 +22,7 @@ WANTLIB=		c m termcap
 FAKE_FLAGS=	DESTDIR="${WRKINST}" DOC_DIR='$$(prefix)/share/doc/most'
 
 CONFIGURE_STYLE= gnu
+CONFIGURE_ENV+=DEPBASE=${DEPBASE}
 
 NO_REGRESS=	Yes
 
