@@ -1,9 +1,8 @@
-$OpenBSD: patch-features_org_eclipse_platform_source_build_xml,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
---- features/org.eclipse.platform.source/build.xml.orig	Thu Sep 16 11:45:46 2004
-+++ features/org.eclipse.platform.source/build.xml	Wed Oct 20 10:32:12 2004
-@@ -32,6 +32,11 @@
- 			<property name="os" value="linux"/>
- 			<property name="ws" value="gtk"/>
+--- features/org.eclipse.platform.source/build.xml.orig	Fri Mar 11 23:58:23 2005
++++ features/org.eclipse.platform.source/build.xml	Mon Mar 28 23:16:04 2005
+@@ -52,6 +52,11 @@
+ 			<property name="os" value="macosx"/>
+ 			<property name="ws" value="carbon"/>
  		</ant>
 +		<ant antfile="build.xml" dir="../../plugins/org.eclipse.platform.source.openbsd.motif.x86" target="${target}">
 +			<property name="arch" value="x86"/>
@@ -13,7 +12,7 @@ $OpenBSD: patch-features_org_eclipse_platform_source_build_xml,v 1.1.1.1 2005/02
  		<ant antfile="build.xml" dir="../../plugins/org.eclipse.platform.source.linux.motif.x86" target="${target}">
  			<property name="arch" value="x86"/>
  			<property name="os" value="linux"/>
-@@ -67,6 +72,11 @@
+@@ -77,6 +82,11 @@
  			<property name="os" value="linux"/>
  			<property name="ws" value="gtk"/>
  		</ant>
@@ -25,12 +24,12 @@ $OpenBSD: patch-features_org_eclipse_platform_source_build_xml,v 1.1.1.1 2005/02
  		<ant antfile="build.xml" dir="../../plugins/org.eclipse.platform.doc.isv" target="${target}">
  			<property name="arch" value="x86"/>
  			<property name="os" value="win32"/>
-@@ -129,12 +139,16 @@
- 		<copy todir="${feature.base}/features/org.eclipse.platform.source_3.0.1" failonerror="true">
+@@ -139,12 +149,16 @@
+ 		<copy todir="${feature.base}/features/org.eclipse.platform.source_3.0.2" failonerror="true">
  			<fileset dir="${basedir}" includes="cpl-v10.html,eclipse_update_120.jpg,feature.xml,feature.properties,license.html"			/>
  		</copy>
--		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform.source_3.0.1/feature.xml"  selfVersion="3.0.1" featureIds="" pluginIds="org.eclipse.platform.doc.isv,3.0.1,org.eclipse.platform.source,3.0.1,org.eclipse.platform.source.linux.gtk.ia64,3.0.1,org.eclipse.platform.source.macosx.carbon.ppc,3.0.1,org.eclipse.platform.source.qnx.photon.x86,3.0.1,org.eclipse.platform.source.linux.gtk.ppc,3.0.1,org.eclipse.platform.source.hpux.motif.PA_RISC,3.0.1,org.eclipse.platform.source.aix.motif.ppc,3.0.1,org.eclipse.platform.source.linux.gtk.x86,3.0.1,org.eclipse.platform.source.win32.win32.x86,3.0.1,org.eclipse.platform.source.solaris.motif.sparc,3.0.1,org.eclipse.platform.source.linux.gtk.amd64,3.0.1,org.eclipse.platform.source.linux.motif.x86,3.0.1,"/>
-+		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform.source_3.0.1/feature.xml"  selfVersion="3.0.1" featureIds="" pluginIds="org.eclipse.platform.doc.isv,3.0.1,org.eclipse.platform.source,3.0.1,org.eclipse.platform.source.linux.gtk.ia64,3.0.1,org.eclipse.platform.source.macosx.carbon.ppc,3.0.1,org.eclipse.platform.source.qnx.photon.x86,3.0.1,org.eclipse.platform.source.linux.gtk.ppc,3.0.1,org.eclipse.platform.source.hpux.motif.PA_RISC,3.0.1,org.eclipse.platform.source.aix.motif.ppc,3.0.1,org.eclipse.platform.source.linux.gtk.x86,3.0.1,org.eclipse.platform.source.win32.win32.x86,3.0.1,org.eclipse.platform.source.solaris.motif.sparc,3.0.1,org.eclipse.platform.source.linux.gtk.amd64,3.0.1,org.eclipse.platform.source.linux.motif.x86,3.0.1,org.eclipse.platform.source.openbsd.gtk.x86,3.0.1,org.eclipse.platform.source.openbsd.motif.x86,3.0.1,"/>
+-		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform.source_3.0.2/feature.xml"  selfVersion="3.0.2" featureIds="" pluginIds="org.eclipse.platform.doc.isv,3.0.1,org.eclipse.platform.source,3.0.2,org.eclipse.platform.source.linux.gtk.ia64,3.0.2,org.eclipse.platform.source.linux.gtk.ppc,3.0.2,org.eclipse.platform.source.qnx.photon.x86,3.0.2,org.eclipse.platform.source.hpux.motif.PA_RISC,3.0.2,org.eclipse.platform.source.hpux.motif.ia64,3.0.2,org.eclipse.platform.source.solaris.gtk.sparc,3.0.2,org.eclipse.platform.source.macosx.carbon.ppc,3.0.2,org.eclipse.platform.source.linux.gtk.x86,3.0.2,org.eclipse.platform.source.aix.motif.ppc,3.0.2,org.eclipse.platform.source.win32.win32.x86,3.0.2,org.eclipse.platform.source.solaris.motif.sparc,3.0.2,org.eclipse.platform.source.linux.gtk.amd64,3.0.2,org.eclipse.platform.source.linux.motif.x86,3.0.2,"/>
++		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform.source_3.0.2/feature.xml"  selfVersion="3.0.2" featureIds="" pluginIds="org.eclipse.platform.doc.isv,3.0.1,org.eclipse.platform.source,3.0.2,org.eclipse.platform.source.linux.gtk.ia64,3.0.2,org.eclipse.platform.source.linux.gtk.ppc,3.0.2,org.eclipse.platform.source.qnx.photon.x86,3.0.2,org.eclipse.platform.source.hpux.motif.PA_RISC,3.0.2,org.eclipse.platform.source.hpux.motif.ia64,3.0.2,org.eclipse.platform.source.solaris.gtk.sparc,3.0.2,org.eclipse.platform.source.macosx.carbon.ppc,3.0.2,org.eclipse.platform.source.linux.gtk.x86,3.0.2,org.eclipse.platform.source.aix.motif.ppc,3.0.2,org.eclipse.platform.source.win32.win32.x86,3.0.2,org.eclipse.platform.source.solaris.motif.sparc,3.0.2,org.eclipse.platform.source.linux.gtk.amd64,3.0.2,org.eclipse.platform.source.linux.motif.x86,3.0.2,org.eclipse.platform.source.openbsd.gtk.x86,3.0.2,org.eclipse.platform.source.openbsd.motif.x86,3.0.2,"/>
  		<antcall target="rootFiles${os}_${ws}_${arch}"/>
  	</target>
  	<target name="rootFileswin32_win32_x86">

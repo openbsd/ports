@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_org_eclipse_core_resources_openbsd_src_Makefile,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
---- plugins/org.eclipse.core.resources.openbsd/src/Makefile.orig	Tue Dec 21 14:24:20 2004
-+++ plugins/org.eclipse.core.resources.openbsd/src/Makefile	Tue Dec 21 14:23:24 2004
-@@ -10,8 +10,8 @@
+$OpenBSD: patch-plugins_org_eclipse_core_resources_openbsd_src_Makefile,v 1.2 2005/04/19 13:56:47 kurt Exp $
+--- plugins/org.eclipse.core.resources.openbsd/src/Makefile.orig	Mon Apr 18 16:03:10 2005
++++ plugins/org.eclipse.core.resources.openbsd/src/Makefile	Mon Apr 18 17:12:41 2005
+@@ -10,12 +10,12 @@
  
  CORE.C = core.c
  CORE.O = core.o
@@ -11,4 +11,10 @@ $OpenBSD: patch-plugins_org_eclipse_core_resources_openbsd_src_Makefile,v 1.1.1.
 +LIB_NAME_FULL = libcore_2_1_0b.so.1.0
  
  core :
- 	gcc -fPIC -g -c -I$(JDK_INCLUDE) $(CORE.C) -o $(CORE.O)
+-	gcc -fPIC -g -c -I$(JDK_INCLUDE) $(CORE.C) -o $(CORE.O)
+-	gcc -g -shared -Wl,-soname,$(LIB_NAME) -o $(LIB_NAME_FULL) $(CORE.O) -lc
++	$(CC) $(CFLAGS) -fPIC -g -c -I$(JDK_INCLUDE) $(CORE.C) -o $(CORE.O)
++	$(CC) $(CFLAGS) -g -shared -Wl,-soname,$(LIB_NAME) -o $(LIB_NAME_FULL) $(CORE.O) -lc
+ 
+ clean :
+ 	rm *.o

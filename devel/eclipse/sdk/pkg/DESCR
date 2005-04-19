@@ -8,8 +8,3 @@ Eclipse Platform. PDE adds a number of views and editors that make it
 easier to build plug-ins for Eclipse. The Eclipse Platform together
 with JDT and PDE form the Eclipse SDK, a complete development
 environment for Eclipse-based tools, and for developing Eclipse itself.
-
-Flavors:
-    gtk2   Uses gtk look and feel (default).
-    motif  Uses motif look and feel. However sill requires the
-           gtk2 lib depends.

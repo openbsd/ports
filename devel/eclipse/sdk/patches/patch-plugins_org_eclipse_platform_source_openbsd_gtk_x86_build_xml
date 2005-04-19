@@ -1,12 +1,11 @@
-$OpenBSD: patch-plugins_org_eclipse_platform_source_openbsd_gtk_x86_build_xml,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
---- plugins/org.eclipse.platform.source.openbsd.gtk.x86/build.xml.orig	Thu Oct 21 09:23:51 2004
-+++ plugins/org.eclipse.platform.source.openbsd.gtk.x86/build.xml	Thu Oct 21 09:24:25 2004
+--- plugins/org.eclipse.platform.source.openbsd.gtk.x86/build.xml.orig	Mon Mar 28 22:39:02 2005
++++ plugins/org.eclipse.platform.source.openbsd.gtk.x86/build.xml	Mon Mar 28 23:22:41 2005
 @@ -60,7 +60,7 @@
  	<target name="gather.bin.parts" depends="init" if="destination.temp.folder">
- 		<mkdir dir="${destination.temp.folder}/org.eclipse.platform.source.openbsd.gtk.x86_3.0.1"/>
- 		<copy todir="${destination.temp.folder}/org.eclipse.platform.source.openbsd.gtk.x86_3.0.1" failonerror="true">
+ 		<mkdir dir="${destination.temp.folder}/org.eclipse.platform.source.openbsd.gtk.x86_3.0.2"/>
+ 		<copy todir="${destination.temp.folder}/org.eclipse.platform.source.openbsd.gtk.x86_3.0.2" failonerror="true">
 -			<fileset dir="${basedir}" includes="fragment.xml,src/**"			/>
-+			<fileset dir="${basedir}" includes="fragment.xml,src/**" excludes="**/*.orig"/>
++			<fileset dir="${basedir}" includes="fragment.xml,src/**"			excludes="**/*.orig"/>
  		</copy>
  	</target>
  

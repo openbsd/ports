@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
---- Makefile.orig	Mon Jan  3 09:48:03 2005
-+++ Makefile	Mon Jan  3 21:23:13 2005
-@@ -0,0 +1,89 @@
-+# $OpenBSD: patch-Makefile,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
+$OpenBSD: patch-Makefile,v 1.2 2005/04/19 13:56:47 kurt Exp $
+--- Makefile.orig	Mon Apr 18 21:05:37 2005
++++ Makefile	Mon Apr 18 21:05:55 2005
+@@ -0,0 +1,86 @@
++# $OpenBSD: patch-Makefile,v 1.2 2005/04/19 13:56:47 kurt Exp $
 +# $FreeBSD: ports/java/eclipse/files/Makefile,v 1.7 2004/07/28 17:56:31 nork Exp $
 +
 +ECHO=		/bin/echo
@@ -10,17 +10,13 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
 +MKDIR=		/bin/mkdir -p
 +SED=		/usr/bin/sed
 +CP=		/bin/cp
-+CSH=		/bin/csh
 +SH=		/bin/sh
++ENV=		/usr/bin/env
 +GMAKE=		$(LOCALBASE)/bin/gmake
 +ANT=		$(LOCALBASE)/bin/ant
 +UNZIP_CMD=	$(LOCALBASE)/bin/unzip
 +
 +PORTDESTDIR=	$(PREFIX)/eclipse
-+
-+CFLAGS+=	-I$(JAVA_HOME)/include		\
-+		-I$(JAVA_HOME)/include/bsd	\
-+		-I$(JAVA_HOME)/include/openbsd
 +
 +LIBUPDATE=	libupdate.so.1.0
 +LIBUPDATE_DST=	plugins/org.eclipse.update.core.openbsd/os/openbsd/x86
@@ -49,22 +45,23 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
 +libswt:
 +	@$(ECHO) "===> Building libswt."
 +	cd "plugins/org.eclipse.swt/Eclipse SWT PI/$(ECLIPSE_WS)/library" && \
-+		$(SH) ./build.sh && \
++		$(ENV) CC="$(CC)" CXX="$(CXX)" CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" $(SH) ./build.sh && \
 +		$(CP) *.so.1.0 ../../../../org.eclipse.swt.$(ECLIPSE_WS)/os/openbsd/x86/
 +
 +launcher:
 +	@$(ECHO) "===> Building Eclipse launcher."
 +	cd plugins/platform-launcher/library/$(ECLIPSE_WS) && \
-+		$(CSH) build.csh -os openbsd && \
++		$(ENV) CC="$(CC)" CFLAGS="$(CFLAGS)" $(SH) build.sh -os openbsd && \
 +		$(CP) eclipse ../../bin/openbsd/$(ECLIPSE_WS)/eclipse
 +
 +libupdate:
 +	@$(ECHO) "===> Building libupdate."
 +	cd plugins/org.eclipse.update.core.openbsd/src && \
-+		$(ANT) -Djava.home=$(JAVA_HOME) -DCC=$(CC)
++		$(ANT) -Djava.home=$(JAVA_HOME) -DCC="$(CC)"
 +	@$(ECHO) "===> Building libcore."
 +	cd plugins/org.eclipse.core.resources.openbsd/src && \
-+		env JDK_INCLUDE="$(JAVA_HOME)/include -I$(JAVA_HOME)/include/openbsd" $(GMAKE) && \
++		$(ENV) CC="$(CC)" CFLAGS="$(CFLAGS)" \
++			JDK_INCLUDE="$(JAVA_HOME)/include -I$(JAVA_HOME)/include/openbsd" $(GMAKE) && \
 +		$(CP) *.so.1.0 ../../org.eclipse.core.resources.openbsd/os/openbsd/x86
 +
 +java:		build-install
