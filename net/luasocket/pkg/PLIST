@@ -1,27 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/16 13:38:12 pedro Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/04/19 15:14:38 pedro Exp $
 @unexec lua ${SYSCONFDIR}/lua/luapkg.lua del luasocket
 lua/
 lua/luasocket/
-lua/luasocket/check-links.lua
-lua/luasocket/dict.lua
-lua/luasocket/ftp.lua
-lua/luasocket/get.lua
-lua/luasocket/http.lua
 lua/luasocket/init.lua
-lua/luasocket/lp.lua
 lua/luasocket/ltn12.lua
-lua/luasocket/lua.lua
 lua/luasocket/mime.lua
-lua/luasocket/smtp.lua
+lua/luasocket/socket/
 lua/luasocket/socket.lua
-lua/luasocket/tftp.lua
-lua/luasocket/tp.lua
-lua/luasocket/url.lua
+lua/luasocket/socket/ftp.lua
+lua/luasocket/socket/http.lua
+lua/luasocket/socket/smtp.lua
+lua/luasocket/socket/tp.lua
+lua/luasocket/socket/url.lua
 share/doc/luasocket/
 share/doc/luasocket/dns.html
 share/doc/luasocket/ftp.html
 share/doc/luasocket/home.html
 share/doc/luasocket/http.html
+share/doc/luasocket/installation.html
 share/doc/luasocket/introduction.html
 share/doc/luasocket/ltn12.html
 share/doc/luasocket/luasocket.png
