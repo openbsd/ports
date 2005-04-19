@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2005/04/19 09:41:42 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2005/04/19 12:53:21 alek Exp $
 
 COMMENT=		"SLang-based newsreader"
 
 VERSION=		0.9.8.1
 DISTNAME=		slrn-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		news
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=slrn/}
