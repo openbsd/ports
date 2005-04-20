@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.4 2004/05/22 19:54:10 jolan Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2005/04/20 22:07:39 naddy Exp $
+
+PKGNAME?=	${DISTNAME:C/-([0-9])$/_\1/}
 
 DIST_SUBDIR?=	aspell
 
