@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2005/03/10 03:35:15 jolan Exp $
+# $OpenBSD: Makefile,v 1.17 2005/04/20 16:46:54 naddy Exp $
 
 COMMENT=	"audio/video converter and streamer with bktr(4) support"
-DISTNAME=	FFMpeg-20050130
-PKGNAME=	${DISTNAME:L}p0
+DISTNAME=	FFMpeg-20050413
+PKGNAME=	${DISTNAME:L}
 
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://www.jakemsr.com/
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	::textproc/texi2html
 LIB_DEPENDS=	SDL.2.0::devel/sdl \
 		a52.0.0::audio/liba52 \
 		mp3lame.0.1::audio/lame \
-		vorbis.3.0,vorbisenc.2.0::audio/libvorbis
+		vorbis.4.0,vorbisenc.2.0::audio/libvorbis
 
 NO_REGRESS=	Yes	# Possible to adapt with some work
 USE_GMAKE=	Yes
@@ -36,8 +36,11 @@ USE_X11=	Yes
 CFLAGS+=-fomit-frame-pointer
 .endif
 
+# version numbers for the shared libraries
+SV=		6.0
+
 CONFIGURE_STYLE=simple
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" SV="${SV}"
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--cc=${CC} \
 		--make=${MAKE_PROGRAM} \
@@ -47,6 +50,7 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-a52 \
 		--enable-pp \
 		--enable-mp3lame \
+		--enable-libogg \
 		--enable-vorbis \
 		--enable-gpl \
 		--enable-pthreads \
@@ -58,9 +62,6 @@ MAKE_ENV+=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
 CONFIGURE_ARGS+=--enable-shared-pp
 .endif
-
-# version numbers for the shared libraries
-SV=		5.0
 
 post-extract:
 	@cp ${FILESDIR}/grab_bsdbktr.c ${WRKSRC}/libavformat/

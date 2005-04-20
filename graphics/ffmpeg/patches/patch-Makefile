@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.4 2005/02/09 23:41:42 naddy Exp $
---- Makefile.orig	Fri Jan 21 14:16:04 2005
-+++ Makefile	Sun Jan 30 18:49:14 2005
+$OpenBSD: patch-Makefile,v 1.5 2005/04/20 16:46:54 naddy Exp $
+--- Makefile.orig	Thu Mar 17 18:13:13 2005
++++ Makefile	Wed Apr 13 00:17:45 2005
 @@ -7,7 +7,7 @@ include config.mak
  VPATH=$(SRC_PATH)
  
@@ -10,24 +10,18 @@ $OpenBSD: patch-Makefile,v 1.4 2005/02/09 23:41:42 naddy Exp $
  
  ifeq ($(TARGET_GPROF),yes)
  CFLAGS+=-p
-@@ -38,13 +38,18 @@ ifeq ($(BUILD_SHARED),yes)
+@@ -38,9 +38,14 @@ ifeq ($(BUILD_SHARED),yes)
  DEP_LIBS=libavcodec/$(SLIBPREF)avcodec$(SLIBSUF) libavformat/$(SLIBPREF)avformat$(SLIBSUF)
  else
  DEP_LIBS=libavcodec/$(LIBPREF)avcodec$(LIBSUF) libavformat/$(LIBPREF)avformat$(LIBSUF)
 +endif
 +
-+ifeq ($(CONFIG_AC3),yes)
-+EXTRALIBS+=-la52
-+endif
-+
  ifeq ($(CONFIG_MP3LAME),yes)
  EXTRALIBS+=-lmp3lame
  endif
--endif
- 
- ifeq ($(CONFIG_VORBIS),yes)
--EXTRALIBS+=-lvorbis -lvorbisenc -logg
-+EXTRALIBS+=-lvorbisenc -lvorbis -logg
++
++ifeq ($(CONFIG_AC3),yes)
++EXTRALIBS+=-la52
  endif
  
- ifeq ($(CONFIG_FAAD),yes)
+ ifeq ($(CONFIG_LIBOGG),yes)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.11 2005/04/11 14:58:00 naddy Exp $
---- configure.orig	Fri Jan 21 14:16:04 2005
-+++ configure	Tue Apr  5 11:30:14 2005
-@@ -107,8 +107,8 @@ case "$cpu" in
+$OpenBSD: patch-configure,v 1.12 2005/04/20 16:46:54 naddy Exp $
+--- configure.orig	Sat Apr  9 08:32:58 2005
++++ configure	Wed Apr 13 00:18:10 2005
+@@ -111,8 +111,8 @@ case "$cpu" in
    i386|i486|i586|i686|i86pc|BePC)
      cpu="x86"
    ;;
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure,v 1.11 2005/04/11 14:58:00 naddy Exp $
           -z "`echo $CFLAGS | grep -- -m32`"  ]; then
        cpu="x86_64"
      else
-@@ -248,6 +248,12 @@ make="gmake"
+@@ -266,6 +266,12 @@ make="gmake"
  CFLAGS="-pthread"
  LDFLAGS="$LDFLAGS -export-dynamic -pthread"
  ;;
@@ -20,12 +20,12 @@ $OpenBSD: patch-configure,v 1.11 2005/04/11 14:58:00 naddy Exp $
 +strip="echo"
 +extralibs="$extralibs -lossaudio -pthread"
 +source_path="`echo $0 | sed -e 's#/configure##'`"
-+SLIBSUF=.so.5.0
++SLIBSUF=".so.$SV"
 +;;
  BSD/OS)
  v4l="no"
  audio_oss="yes"
-@@ -785,10 +791,10 @@ EOF
+@@ -832,10 +838,10 @@ EOF
  $cc -o $TMPE $TMPC 2> /dev/null || _memalign=no
  fi
  
@@ -40,7 +40,7 @@ $OpenBSD: patch-configure,v 1.11 2005/04/11 14:58:00 naddy Exp $
  
  cat > $TMPC << EOF
  #include <time.h>
-@@ -1219,9 +1225,6 @@ if test "$pthreads" = "yes" ; then
+@@ -1274,9 +1280,6 @@ if test "$pthreads" = "yes" ; then
    echo "HAVE_PTHREADS=yes" >> config.mak
    echo "#define HAVE_PTHREADS 1" >> $TMPH
    echo "#define HAVE_THREADS 1" >> $TMPH

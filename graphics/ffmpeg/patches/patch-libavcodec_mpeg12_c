@@ -1,7 +1,7 @@
-$OpenBSD: patch-libavcodec_mpeg12_c,v 1.2 2005/02/09 23:41:43 naddy Exp $
---- libavcodec/mpeg12.c.orig	Mon Dec 13 22:56:26 2004
-+++ libavcodec/mpeg12.c	Sun Jan 16 21:01:36 2005
-@@ -2997,7 +2997,7 @@ static int mpeg_decode_frame(AVCodecCont
+$OpenBSD: patch-libavcodec_mpeg12_c,v 1.3 2005/04/20 16:46:54 naddy Exp $
+--- libavcodec/mpeg12.c.orig	Mon Apr  4 04:25:44 2005
++++ libavcodec/mpeg12.c	Tue Apr 12 23:06:00 2005
+@@ -3008,7 +3008,7 @@ static int mpeg_decode_frame(AVCodecCont
          input_size = buf_end - buf_ptr;
  
          if(avctx->debug & FF_DEBUG_STARTCODE){

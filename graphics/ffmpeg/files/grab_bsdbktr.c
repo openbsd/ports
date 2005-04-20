@@ -1,4 +1,4 @@
-/* $OpenBSD: grab_bsdbktr.c,v 1.4 2004/10/13 01:38:21 jolan Exp $
+/* $OpenBSD: grab_bsdbktr.c,v 1.5 2005/04/20 16:46:54 naddy Exp $
  *
  * FreeBSD video grab interface
  * Copyright (c) 2002 Steve O'Hara-Smith
@@ -34,7 +34,7 @@
 #include <signal.h>
 
 typedef struct {
-	int fd;
+	int video_fd;
 	int tuner_fd;
 	int frame_format; /* see VIDEO_PALETTE_xxx */
 	int width, height;
@@ -68,6 +68,7 @@ static int bktr_dev[] = { METEOR_DEV0, METEOR_DEV1, METEOR_DEV2,
 
 unsigned char *video_buf;
 static int nsignals = 0;
+
 static void catchsignal(int signal)
 {
 	nsignals++;
@@ -75,8 +76,7 @@ static void catchsignal(int signal)
 }
 
 static int bktr_init (const char *video_device, int width, int height,
-	int format, int video_fd, int tuner_fd,
-	int idev, double frequency)
+	int format, int *video_fd, int *tuner_fd, int idev, double frequency)
 {
 	struct meteor_geomet geo;
 	int h_max;
@@ -117,13 +117,13 @@ static int bktr_init (const char *video_device, int width, int height,
 	act.sa_handler  = catchsignal;
 	sigaction(SIGUSR1,&act,&old);
 
-	tuner_fd = open ("/dev/tuner0", O_RDONLY);
-	if (tuner_fd < 0) {
+	*tuner_fd = open ("/dev/tuner0", O_RDONLY);
+	if (*tuner_fd < 0) {
 		perror("Warning: Tuner not opened continuing");
 	}
 
-	video_fd = open (video_device, O_RDONLY);
-	if (video_fd < 0) {
+	*video_fd = open (video_device, O_RDONLY);
+	if (*video_fd < 0) {
 		perror (video_device);
 		return -1;
 	}
@@ -147,36 +147,41 @@ static int bktr_init (const char *video_device, int width, int height,
 		geo.oformat |= METEOR_GEO_EVEN_ONLY;
 	}
 
-	if (ioctl(video_fd, METEORSETGEO, &geo) < 0) {
+	if (ioctl(*video_fd, METEORSETGEO, &geo) < 0) {
 		perror ("METEORSETGEO");
 		return -1;
 	}
 
-	if (ioctl(video_fd, BT848SFMT, &c) < 0) {
+	if (ioctl(*video_fd, BT848SFMT, &c) < 0) {
 		perror ("BT848SFMT");
 		return -1;
 	}
 
 	c = bktr_dev[idev];
-	if (ioctl(video_fd, METEORSINPUT, &c) < 0) {
+	if (ioctl(*video_fd, METEORSINPUT, &c) < 0) {
 		perror ("METEORSINPUT");
 		return -1;
 	}
 	video_buf = (unsigned char *) mmap((caddr_t)0, width*height*2,
-		PROT_READ, MAP_SHARED, video_fd, (off_t) 0);
+		PROT_READ, MAP_SHARED, *video_fd, (off_t) 0);
 	if (video_buf == MAP_FAILED) {
 		perror ("mmap");
 		return -1;
 	}
 	if (frequency != 0.0) {
 		ioctl_frequency  = (unsigned long)(frequency*16); 
-		if (ioctl(tuner_fd, TVTUNER_SETFREQ, &ioctl_frequency)<0)
+		if (ioctl(*tuner_fd, TVTUNER_SETFREQ, &ioctl_frequency)<0)
 			perror("TVTUNER_SETFREQ");
 	}
+
+	c = AUDIO_UNMUTE;
+	if (ioctl(*tuner_fd, BT848_SAUDIO, &c) < 0)
+		perror("TVTUNER_SAUDIO");
+
 	c = METEOR_CAP_CONTINOUS;
-	ioctl(video_fd, METEORCAPTUR, &c);
+	ioctl(*video_fd, METEORCAPTUR, &c);
 	c = SIGUSR1;
-	ioctl (video_fd, METEORSSIGNAL, &c);
+	ioctl (*video_fd, METEORSSIGNAL, &c);
 	return 0;
 }
 
@@ -283,7 +288,7 @@ static int grab_read_header (AVFormatContext *s1,  AVFormatParameters *ap)
 	}
 
 	if (bktr_init (video_device, width, height, format,
-		       s->fd, s->tuner_fd, -1, 0.0) < 0)
+			&(s->video_fd), &(s->tuner_fd), -1, 0.0) < 0)
 		return -EIO;
 	return 0;
 }
@@ -291,13 +296,18 @@ static int grab_read_header (AVFormatContext *s1,  AVFormatParameters *ap)
 static int grab_read_close (AVFormatContext *s1)
 {
 	VideoData *s = s1->priv_data;
+	int c;
 
-	int c = METEOR_CAP_STOP_CONT;
-	ioctl(s->fd, METEORCAPTUR, &c);
-	close(s->fd);
+	c = METEOR_CAP_STOP_CONT;
+	ioctl(s->video_fd, METEORCAPTUR, &c);
+	close(s->video_fd);
+
+	c = AUDIO_MUTE;
+	ioctl(s->tuner_fd, BT848_SAUDIO, &c);
 	close(s->tuner_fd);
-       munmap((caddr_t)video_buf, sizeof(video_buf));
-	// av_free(s);
+
+	munmap((caddr_t)video_buf, sizeof(video_buf));
+
 	return 0;
 }
 
