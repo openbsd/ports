@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.3 2005/03/13 22:46:18 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2005/04/21 03:36:14 alek Exp $
 
 COMMENT=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
 COMMENT-python=	"python interface to subversion"
 
-VERSION=	1.1.3
+VERSION=	1.1.4
 DISTNAME=	subversion-${VERSION}
-PKGNAME=	${DISTNAME}p0
-PKGNAME-perl=	p5-SVN-${VERSION}p0
-PKGNAME-python=	py-subversion-${VERSION}p0
+PKGNAME=	${DISTNAME}
+PKGNAME-perl=	p5-SVN-${VERSION}
+PKGNAME-python=	py-subversion-${VERSION}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://subversion.tigris.org/
 
-MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
+MAINTAINER=	Sigfred Haversen <bsdlist@mumak.com>
 
 # BSD alike + Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
@@ -83,7 +83,8 @@ CONFIGURE_ARGS+=--disable-swig-bindings \
 		--without-swig
 .endif
 
-REGRESS_DEPENDS=::lang/python/${PYTHON_VER}
+REGRESS_DEPENDS=::lang/python/${PYTHON_VER} \
+		::devel/p5-IO-String
 REGRESS_FLAGS=	LD_LIBRARY_PATH=`find ${WRKBUILD} -name .libs | tr '\012' :`
 
 pre-build: 
