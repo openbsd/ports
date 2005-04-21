@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.692 2005/04/19 09:21:42 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.693 2005/04/21 01:44:50 alek Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -209,6 +209,7 @@ NO_DEPENDS?= No
 NO_BUILD?= No
 NO_REGRESS?= No
 SHARED_ONLY?=	No
+SEPARATE_BUILD?=	No
 
 DIST_SUBDIR?=
 
@@ -409,7 +410,7 @@ _BULK_COOKIE=		${BULK_COOKIES_DIR}/${FULLPKGNAME}
 .if ${FAKE:L} != "no"
 _FAKE_COOKIE=		${WRKINST}/.fake_done
 _INSTALL_PRE_COOKIE=${WRKINST}/.install_started
-.elif defined(SEPARATE_BUILD)
+.elif ${SEPARATE_BUILD:L} != "no"
 _INSTALL_PRE_COOKIE=${WRKBUILD}/.install_started
 .else
 _INSTALL_PRE_COOKIE=${WRKDIR}/.install_started
@@ -421,7 +422,7 @@ _UPDATE_COOKIE=		${UPDATE_COOKIES_DIR}/${FULLPKGNAME${SUBPACKAGE}}
 .else
 _UPDATE_COOKIE=		${WRKDIR}/.update_${FULLPKGNAME${SUBPACKAGE}}
 .endif
-.if defined(SEPARATE_BUILD)
+.if ${SEPARATE_BUILD:L} != "no"
 _CONFIGURE_COOKIE=	${WRKBUILD}/.configure_done
 _BUILD_COOKIE=		${WRKBUILD}/.build_done
 _REGRESS_COOKIE=	${WRKBUILD}/.regress_done
@@ -515,13 +516,13 @@ WRKINST?=	${WRKDIR}/fake-${ARCH}${_FLAVOR_EXT2}
 .endif
 
 .if !empty(WRKOBJDIR_${PKGPATH})
-.  if defined(SEPARATE_BUILD) && ${SEPARATE_BUILD:L:Mflavored}
+.  if ${SEPARATE_BUILD:L:Mflavored}
 WRKDIR?=		${WRKOBJDIR_${PKGPATH}}/${PKGNAME}
 .  else
 WRKDIR?=		${WRKOBJDIR_${PKGPATH}}/${PKGNAME}${_FLAVOR_EXT2}
 .  endif
 .else
-.  if defined(SEPARATE_BUILD) && ${SEPARATE_BUILD:L:Mflavored}
+.  if ${SEPARATE_BUILD:L:Mflavored}
 WRKDIR?=		${.CURDIR}/w-${PKGNAME}
 .  else
 WRKDIR?=		${.CURDIR}/w-${PKGNAME}${_FLAVOR_EXT2}
@@ -532,7 +533,7 @@ WRKDIST?=		${WRKDIR}/${DISTNAME}
 
 WRKSRC?=	   ${WRKDIST}
 
-.if defined(SEPARATE_BUILD)
+.if ${SEPARATE_BUILD:L} != "no"
 WRKBUILD?=		${WRKDIR}/build-${MACHINE_ARCH}${_FLAVOR_EXT2}
 WRKPKG?=		${WRKBUILD}/pkg
 .else
@@ -897,7 +898,7 @@ CONFIGURE_SCRIPT?=	configure
 .if ${CONFIGURE_SCRIPT:M/*}
 _CONFIGURE_SCRIPT=${CONFIGURE_SCRIPT}
 .else
-.  if defined(SEPARATE_BUILD)
+.  if ${SEPARATE_BUILD:L} != "no"
 _CONFIGURE_SCRIPT=${WRKSRC}/${CONFIGURE_SCRIPT}
 .  else
 _CONFIGURE_SCRIPT=./${CONFIGURE_SCRIPT}
@@ -1192,7 +1193,7 @@ _UNLOCK=echo "Unlocking $$lock from $@"; ${UNLOCK_CMD} ${LOCKDIR}/$$lock.lock
 _LOCK=${LOCK_CMD} ${LOCKDIR}/$$lock.lock
 _UNLOCK=${UNLOCK_CMD} ${LOCKDIR}/$$lock.lock
 .  endif
-.  if defined(SEPARATE_BUILD) && ${SEPARATE_BUILD:L:Mflavored}
+.  if ${SEPARATE_BUILD:L:Mflavored}
 _LOCKNAME=${PKGNAME}
 .  else
 _LOCKNAME=${FULLPKGNAME}
