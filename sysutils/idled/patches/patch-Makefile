@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1 2001/06/14 03:18:28 pvalchev Exp $
---- Makefile.orig	Thu May 16 16:05:28 1996
-+++ Makefile	Tue Jun 12 19:44:17 2001
+$OpenBSD: patch-Makefile,v 1.2 2005/04/21 10:47:37 espie Exp $
+--- Makefile.orig	Fri May 17 00:05:28 1996
++++ Makefile	Wed Apr 20 11:57:59 2005
 @@ -2,7 +2,6 @@
  #
  
@@ -41,15 +41,14 @@ $OpenBSD: patch-Makefile,v 1.1 2001/06/14 03:18:28 pvalchev Exp $
 -DEFS += -DSYSV -DHAVE_PROC_FS -DUTMPPID -DHAVE_SETSID -DHAVE_UTMPX -DUTMPHOST -DRUDEKILL
 -SPECLIBS = 
 -INSTTYPE = install3
--
++#DEFS += -DSYSV -DHAVE_PROC_FS -DUTMPPID -DHAVE_SETSID -DHAVE_UTMPX -DUTMPHOST -DRUDEKILL
++#SPECLIBS = 
++#INSTTYPE = install3
+ 
 -DEST    = /usr/local/bin
 -CFDEST  = /usr/local/lib
 -MDEST   = /usr/local/man
 -LOGDEST = /var/log
-+#DEFS += -DSYSV -DHAVE_PROC_FS -DUTMPPID -DHAVE_SETSID -DHAVE_UTMPX -DUTMPHOST -DRUDEKILL
-+#SPECLIBS = 
-+#INSTTYPE = install3
-+
 +#DEST    = /usr/local/bin
 +#CFDEST  = /usr/local/lib
 +#MDEST   = /usr/local/man
@@ -90,14 +89,14 @@ $OpenBSD: patch-Makefile,v 1.1 2001/06/14 03:18:28 pvalchev Exp $
 +	${BSD_INSTALL_DATA} ${COMMFILE}.template ${CFDEST}
 +	${BSD_INSTALL_MAN} ${CFMAN} ${MDEST}/man5
 +	${BSD_INSTALL_MAN} ${PMAN} ${MDEST}/man8
-+	@echo ""
-+	@echo "*** Be sure to edit/create the file ${CONFIG} based on"
-+	@echo "*** the needs for your system. The ${CFLIB}/${COMMFILE}.template"
-+	@echo "*** file can serve as a guide, as well as the man pages."
  	@echo ""
 -	@echo "Be sure to edit/create the file ${CONFIG} based on"
 -	@echo "the needs for your system. The ${CONFIG}.template"
 -	@echo "file can serve as a guide, as well as the man pages."
++	@echo "*** Be sure to edit/create the file ${CONFIG} based on"
++	@echo "*** the needs for your system. The ${CFLIB}/${COMMFILE}.template"
++	@echo "*** file can serve as a guide, as well as the man pages."
++	@echo ""
  
  # Aix Prefers install2
  install2: all 

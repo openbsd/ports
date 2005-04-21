@@ -1,0 +1,29 @@
+$OpenBSD: patch-warn_c,v 1.1 2005/04/21 10:47:37 espie Exp $
+--- warn.c.orig	Thu Apr 21 12:43:40 2005
++++ warn.c	Thu Apr 21 12:45:48 2005
+@@ -139,24 +139,7 @@ void warn(i, type, do_msg)
+    {
+       if (opened)
+       {
+-         /* Prevent the close from flushing unwritten data, since that is
+-          * probably the block that caused us to get here in the first
+-          * place.  This probably isn't very portable, but I can't find
+-          * any other method that works (barring changing all the output
+-          * here to use a simple file descriptor instead of a FILE *).
+-          * Linux is the only system I have seen that doesn't have the
+-          * _ptr and _base.  Let me know if there are others, or if you
+-          * have a system independant way to fix it!
+-          */
+-#if defined(__linux__)
+-         termf->_IO_read_ptr = termf->_IO_read_base;
+-         termf->_IO_write_ptr = termf->_IO_write_base;
+-#elif defined(BSDI) || defined(BSD_OS2)
+-         termf->_p = (termf->_ub)._base;
+-#else
+-	 termf->_ptr = termf->_base;
+-#endif
+-         (void) fclose (termf);
++         close (fileno(termf));
+       }
+ 
+       exit (0);
