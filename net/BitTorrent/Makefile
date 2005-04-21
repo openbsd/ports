@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2005/04/16 21:13:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2005/04/21 22:17:02 naddy Exp $
 
 COMMENT=	"cooperative file distribution system implemented in Python"
 DISTNAME=	BitTorrent-4.0.1
+PKGNAME=	BitTorrent-4.0.1p1
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}dl/
 
