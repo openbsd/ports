@@ -1,33 +1,30 @@
-# $OpenBSD: Makefile,v 1.18 2005/04/02 18:17:22 db Exp $
+# $OpenBSD: Makefile,v 1.19 2005/04/23 16:22:26 pedro Exp $
 
 COMMENT=	"light, keyboard friendly window manager"
 
-DISTNAME=	ion-2-20040729
-PKGNAME=	ion-2.20040729p1
-
-HOMEPAGE=	http://modeemi.cs.tut.fi/~tuomov/ion/
+DISTNAME=	ion-3ds-20050406
 CATEGORIES=	x11
 
-MASTER_SITES=	${HOMEPAGE}dl/ \
-		ftp://rt.fm/pub/ion/
+HOMEPAGE=	http://modeemi.cs.tut.fi/~tuomov/ion/
+MASTER_SITES=	${HOMEPAGE}dl/
+
+MAINTAINER=	Pedro Martelletto <pedro@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xinerama c m
+WANTLIB=	ICE X11 m c Xinerama SM Xext
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
-
 NO_REGRESS=	Yes
 
-LIB_DEPENDS=	ltdl.4::devel/libtool \
-		lua.5,lualib.5::lang/lua
+LIB_DEPENDS=	lua.5,lualib.5::lang/lua
 
 .include <bsd.port.mk>
 
-.if ${NO_SHARED_LIBS:L} == "yes"
-MAKE_ENV=	PRELOAD_MODULES=1
+.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
+MAKE_ENV=       PRELOAD_MODULES=1
 .endif

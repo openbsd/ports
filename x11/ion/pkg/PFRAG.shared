@@ -1,7 +1,12 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2004/07/09 21:16:27 naddy Exp $
-lib/ion/de.so
-lib/ion/dock.so
-lib/ion/floatws.so
-lib/ion/ionws.so
-lib/ion/menu.so
-lib/ion/query.so
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/04/23 16:22:26 pedro Exp $
+lib/ion3/mod/de.so
+lib/ion3/mod/mod_dock.so
+lib/ion3/mod/mod_floatws.so
+lib/ion3/mod/mod_ionws.so
+lib/ion3/mod/mod_menu.so
+lib/ion3/mod/mod_mgmtmode.so
+lib/ion3/mod/mod_panews.so
+lib/ion3/mod/mod_query.so
+lib/ion3/mod/mod_sm.so
+lib/ion3/mod/mod_sp.so
+lib/ion3/mod/mod_statusbar.so

@@ -1,6 +1,6 @@
-$OpenBSD: patch-system_mk,v 1.4 2004/07/09 21:16:26 naddy Exp $
---- system.mk.orig	Tue Jun  1 16:35:23 2004
-+++ system.mk	Fri Jul  9 23:07:44 2004
+$OpenBSD: patch-system_mk,v 1.5 2005/04/23 16:22:26 pedro Exp $
+--- system.mk.orig	Wed Apr  6 07:39:56 2005
++++ system.mk	Sat Apr 23 11:11:54 2005
 @@ -7,7 +7,7 @@
  ## Installation paths
  ##
@@ -14,38 +14,32 @@ $OpenBSD: patch-system_mk,v 1.4 2004/07/09 21:16:26 naddy Exp $
  # Main binaries
  BINDIR=$(PREFIX)/bin
  # Configuration .lua files
--ETCDIR=$(PREFIX)/etc/ion
-+ETCDIR=$(PREFIX)/share/examples/ion
+-ETCDIR=$(PREFIX)/etc/ion3
++ETCDIR=$(PREFIX)/share/examples/ion3
  # Some .lua files and ion-* shell scripts
- SHAREDIR=$(PREFIX)/share/ion
+ SHAREDIR=$(PREFIX)/share/ion3
  # Manual pages
 -MANDIR=$(PREFIX)/share/man
 +MANDIR=$(PREFIX)/man
  # Some documents
- DOCDIR=$(PREFIX)/share/doc/ion
-+EXAMPLEDIR=$(PREFIX)/share/examples/ion
+ DOCDIR=$(PREFIX)/share/doc/ion3
++EXAMPLEDIR=$(PREFIX)/share/examples/ion3
  # Nothing at the moment
--INCDIR=$(PREFIX)/include/ion
+-INCDIR=$(PREFIX)/include/ion3
 +INCDIR=$(PREFIX)/include
  # Nothing at the moment
  LIBDIR=$(PREFIX)/lib
  # Modules
-@@ -56,10 +57,10 @@ LTDL_LIBS=-lltdl
- # autoconf-expecting wrapper. If you also set PRELOAD_MODULES=1 and disable
- # Xinerama support below, Ion should compile on Cygwin.
- #
--#LIBTOOLDIR=/usr/local/stow/libtool-1.5
--#LIBTOOL=$(LIBTOOLDIR)/bin/libtool
--#LTDL_INCLUDES=-I$(LIBTOOLDIR)/include
--#LTDL_LIBS=-L$(LIBTOOLDIR)/lib -lltdl
-+LIBTOOLDIR=/usr/local
-+LIBTOOL=$(LIBTOOLDIR)/bin/libtool
-+LTDL_INCLUDES=-I$(LIBTOOLDIR)/share/libtool/libltdl
-+LTDL_LIBS=-L$(LIBTOOLDIR)/lib -lltdl
+@@ -47,7 +48,7 @@ LOCALEDIR=$(PREFIX)/share/locale
+ #PRELOAD_MODULES=1
  
- # Set PRELOAD_MODULES=1 if your system does not support dynamically loaded
- # modules. 
-@@ -90,7 +91,7 @@ LUAC=$(LUA_DIR)/bin/luac
+ # Flags to link with libdl.
+-DL_LIBS=-ldl
++#DL_LIBS=-ldl
+ 
+ 
+ ##
+@@ -74,7 +75,7 @@ LUAC=$(LUA_DIR)/bin/luac
  ## X libraries, includes and options
  ##
  
@@ -54,7 +48,16 @@ $OpenBSD: patch-system_mk,v 1.4 2004/07/09 21:16:26 naddy Exp $
  # SunOS/Solaris
  #X11_PREFIX=/usr/openwin
  
-@@ -119,29 +120,29 @@ DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WOR
+@@ -88,7 +89,7 @@ XINERAMA_LIBS=-lXinerama
+ # XFree86 libraries up to 4.3.0 have a bug that will cause Ion to segfault
+ # if Opera is used when i18n support is enabled. The following setting
+ # should work around that situation.
+-DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WORKAROUND
++#DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WORKAROUND
+ 
+ # Use the Xutf8 routines (XFree86 extension) instead of Xmb routines in
+ # an UTF8 locale given the -i18n command line option?
+@@ -107,13 +108,13 @@ DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WOR
  # asprintf and vasprintf in the c library. (gnu libc has.)
  # If HAS_SYSTEM_ASPRINTF is not defined, an implementation
  # in sprintf_2.2/ is used.
@@ -63,13 +66,14 @@ $OpenBSD: patch-system_mk,v 1.4 2004/07/09 21:16:26 naddy Exp $
  
  
  # If you're on an archaic system (such as relatively recent *BSD releases)
- # without even dummy multibyte/widechar support, you may have to uncomment
- # the following line:
--#DEFINES += -DCF_NO_MB_SUPPORT
-+DEFINES += -DCF_NO_MB_SUPPORT
+ # without even dummy multibyte/widechar and localisation support, you may 
+ # have to uncomment the following line:
+-#DEFINES += -DCF_NO_LOCALE
++DEFINES += -DCF_NO_LOCALE
  
- 
- ##
+ # On some other systems you may something like this:
+ #EXTRA_LIBS += -lintl
+@@ -124,16 +125,16 @@ DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WOR
  ## C compiler
  ##
  
@@ -87,8 +91,8 @@ $OpenBSD: patch-system_mk,v 1.4 2004/07/09 21:16:26 naddy Exp $
  
 -CFLAGS=-g -Os $(WARN) $(DEFINES) $(EXTRA_INCLUDES) $(INCLUDES)
 -LDFLAGS=-g -Os $(EXTRA_LIBS) $(LIBS)
-+CFLAGS+=$(WARN) $(DEFINES) $(EXTRA_INCLUDES) $(INCLUDES)
-+LDFLAGS+=$(EXTRA_LIBS) $(LIBS)
++CFLAGS+= $(WARN) $(DEFINES) $(EXTRA_INCLUDES) $(INCLUDES)
++LDFLAGS+= $(EXTRA_LIBS) $(LIBS)
+ EXPORT_DYNAMIC=-Xlinker --export-dynamic
  
  # The following options are mainly for development use and can be used
- # to check that the code seems to conform to some standards. Depending
