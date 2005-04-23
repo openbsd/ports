@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/08/05 16:14:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2005/04/23 14:36:07 espie Exp $
 bin/gettext
 bin/gettextize
 bin/msgcmp
@@ -9,10 +9,20 @@ bin/msgunfmt
 bin/ngettext
 bin/xgettext
 include/libintl.h
-@info info/gettext.info
-@comment lib/charset.alias
 lib/libintl.a
 lib/libintl.la
+share/aclocal/
+share/aclocal/codeset.m4
+share/aclocal/gettext.m4
+share/aclocal/glibc21.m4
+share/aclocal/iconv.m4
+share/aclocal/isc-posix.m4
+share/aclocal/lcmessage.m4
+share/aclocal/progtest.m4
+%%SHARED%%
+@endfake
+@info info/gettext.info
+@comment lib/charset.alias
 @man man/man3/bind_textdomain_codeset.3
 @man man/man3/bindtextdomain.3
 @man man/man3/dcgettext.3
@@ -22,14 +32,6 @@ lib/libintl.la
 @man man/man3/gettext.3
 @man man/man3/ngettext.3
 @man man/man3/textdomain.3
-share/aclocal/
-share/aclocal/codeset.m4
-share/aclocal/gettext.m4
-share/aclocal/glibc21.m4
-share/aclocal/iconv.m4
-share/aclocal/isc-posix.m4
-share/aclocal/lcmessage.m4
-share/aclocal/progtest.m4
 share/doc/gettext/
 share/doc/gettext/bind_textdomain_codeset.3.html
 share/doc/gettext/bindtextdomain.3.html
@@ -196,4 +198,3 @@ share/locale/zh_CN/
 share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_TW/
 share/locale/zh_TW/LC_MESSAGES/
-%%SHARED%%

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2005/01/27 02:09:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2005/04/23 14:36:07 espie Exp $
 
 COMMENT=	"GNU gettext"
 
 DISTNAME=	gettext-0.10.40
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=gettext/}
 
