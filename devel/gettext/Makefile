@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2005/04/23 14:36:07 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2005/04/23 14:59:53 espie Exp $
 
 COMMENT=	"GNU gettext"
 
@@ -13,6 +13,7 @@ MODULES=	converters/libiconv
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+FAKE=lib
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -23,8 +24,8 @@ WANTLIB=		c
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-included-gettext
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${WRKBUILD}/intl/.libs -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
+		LDFLAGS="-L${WRKBUILD}/intl/.libs -L${DEPBASE}/lib"
 
 EXTRA_LOCALES=bg en eo fi he hu hr lv nb ro sk uk zh_CN zh_TW
 
