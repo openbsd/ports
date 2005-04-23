@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.694 2005/04/23 14:31:38 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.695 2005/04/23 15:12:19 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1364,6 +1364,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 				mkdir -p ${DEPDIR}/pkgdb ${DEPDIR}/usr ${DEPDIR}/usr/X11R6; \
 				ln -sfh /usr/lib ${DEPDIR}/usr/lib; \
 				ln -sfh /usr/X11R6/lib ${DEPDIR}/usr/X11R6/lib; \
+				test -e ${DEPDIR}/pkgdb/$$pkg && exit 0; \
 				cd ${PKGREPOSITORY} && PKG_DBDIR=${DEPDIR}/pkgdb pkg_add -F nonroot -Q ${DEPDIR} $$pkg && exit 0;; \
 			*)  \
 				$$early_exit || ${_force_update_fragment}; \
