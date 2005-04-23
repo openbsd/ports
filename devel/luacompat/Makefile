@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/19 14:48:09 pedro Exp $
+# $OpenBSD: Makefile,v 1.2 2005/04/23 13:54:38 pedro Exp $
 
 COMMENT=	"compatibility module for lua 5.1"
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 DISTNAME=	compat-5.1r2
-PKGNAME=	luacompat-5.1r2
+PKGNAME=	luacompat-5.1r2p0
 DIST_SUBDIR=	luacompat-5.1r2
 CATEGORIES=	devel
 
