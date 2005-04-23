@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2005/04/23 14:32:51 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2005/04/23 15:13:54 espie Exp $
 
 COMMENT=	"GNU make"
 
@@ -19,11 +19,12 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
+FAKE=all
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --program-prefix="g"
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
+		LDFLAGS="-L${DEPBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/config
 
 post-install:
