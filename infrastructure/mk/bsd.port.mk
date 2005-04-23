@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.695 2005/04/23 15:12:19 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.696 2005/04/23 15:24:49 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1069,13 +1069,16 @@ _lib_depends_fragment = \
 	fi
 
 .if (${FAKE:L} == "lib" || ${FAKE:L} == "all") && ${USE_FAKE_LIB:L} == "yes"
-PORT_LD_LIBRARY_PATH=${DEPBASE}/lib:${X11BASE}/lib:/usr
+PORT_LD_LIBRARY_PATH=${DEPBASE}/lib:${LOCALBASE}/lib:${X11BASE}/lib:/usr
+_set_ld_library_path=export LD_LIBRARY_PATH=${PORT_LD_LIBRARY_PATH}
 MAKE_ENV+=LD_LIBRARY_PATH=${PORT_LD_LIBRARY_PATH}
 CONFIGURE_ENV+=LD_LIBRARY_PATH=${PORT_LD_LIBRARY_PATH}
 DEPBASE=${DEPDIR}${LOCALBASE}
 DEPDIR?=${WRKDIR}/dependencies
 _lib_depends_target=fake
 .else
+PORT_LD_LIBRARY_PATH=${LOCALBASE}/lib:${X11BASE}/lib:/usr
+_set_ld_library_path=:
 DEPBASE=${LOCALBASE}
 DEPDIR=
 .endif
@@ -1640,6 +1643,7 @@ ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
 do-extract:
 # What EXTRACT normally does:
 	@PATH=${PORTPATH}; set -e; cd ${WRKDIR}; \
+	${_set_ld_library_path}; \
 	for archive in ${EXTRACT_ONLY}; do \
 		case $$archive in \
 		${EXTRACT_CASES} \
