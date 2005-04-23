@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/11/28 22:41:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2005/04/23 18:30:26 espie Exp $
 
 COMMENT=	"sdl port of xkobo"
 DISTNAME=	KoboDeluxe-0.4pre8
@@ -14,6 +14,7 @@ FLAVOR?=
 PATCH_LIST=patch-* extra-hard
 .endif
 
+FAKE=			all
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -26,5 +27,6 @@ LIB_DEPENDS=	SDL_image::devel/sdl-image
 USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ENV+=sdlconf_args=--prefix=${DEPBASE}
 
 .include <bsd.port.mk>
