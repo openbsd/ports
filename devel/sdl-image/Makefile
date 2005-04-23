@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/11/24 00:11:03 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2005/04/23 15:55:52 espie Exp $
 
 COMMENT=	"SDL image library"
 
@@ -11,6 +11,7 @@ HOMEPAGE=	http://www.libsdl.org/projects/SDL_image/
 
 MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
+FAKE=lib
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
@@ -28,8 +29,9 @@ USE_X11=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	LDFLAGS="-L${X11BASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng"
+		CPPFLAGS="-I${DEPBASE}/include -I${DEPBASE}/include/libpng"
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
+CONFIGURE_ENV+=sdlconf_args=--prefix=${DEPBASE}
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
 		patch-*
