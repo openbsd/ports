@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/04/11 12:07:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/04/24 20:12:16 sturm Exp $
 
 COMMENT=	"Simple HTML Calendars"
 
-DISTNAME=	HTML-CalendarMonthSimple-1.22
+DISTNAME=	HTML-CalendarMonthSimple-1.25
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
