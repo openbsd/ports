@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/07 00:23:24 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2005/04/24 19:02:04 sturm Exp $
 
 COMMENT=	"graphical file comparator and merge tool"
 
-DISTNAME=	xxdiff-2.9.1
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	xxdiff-3.1
 CATEGORIES=	textproc x11
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=xxdiff/}
 
@@ -40,7 +39,12 @@ do-configure:
 		> ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xxdiff ${PREFIX}/bin/xxdiff
+	cd ${WRKSRC}/../bin; \
+	${INSTALL_PROGRAM} xxdiff ${PREFIX}/bin/xxdiff; \
+	for f in xxdiff-cvs-diff xxdiff-encrypted xxdiff-find-grep-sed \
+	    xxdiff-match; do \
+		${INSTALL_SCRIPT} $$f ${PREFIX}/bin; \
+	done
 	${INSTALL_MAN} ${WRKSRC}/xxdiff.1 ${PREFIX}/man/man1/xxdiff.1
 
 .include <bsd.port.mk>

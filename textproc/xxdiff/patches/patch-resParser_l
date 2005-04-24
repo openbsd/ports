@@ -1,31 +1,37 @@
-$OpenBSD: patch-resParser_l,v 1.2 2002/07/17 07:27:02 wilfried Exp $
---- resParser.l.orig	Tue Jun 11 12:25:10 2002
-+++ resParser.l	Wed Jul 17 09:24:02 2002
-@@ -65,11 +65,11 @@ iddot           [a-zA-Z][a-zA-Z0-9\.]*
+$OpenBSD: patch-resParser_l,v 1.3 2005/04/24 19:02:05 sturm Exp $
+--- resParser.l.orig	Thu Dec 25 22:32:56 2003
++++ resParser.l	Thu Apr 21 20:07:16 2005
+@@ -63,15 +63,7 @@ iddot           [a-zA-Z][a-zA-Z0-9\.]*
+ <GEOM_SC>{
+ 
  {geomspec}	{ 
-    int len = ::strlen( yytext );
-    if ( len >= LEX_BUFFER_MAX ) {
+-   int len = ::strlen( yytext );
+-   if ( len >= LEX_BUFFER_MAX ) {
 -      ::strncpy( lexerBuffer, yytext, LEX_BUFFER_MAX );
-+      ::strlcpy( lexerBuffer, yytext, LEX_BUFFER_MAX );
-       lexerBuffer[ LEX_BUFFER_MAX-1 ] = 0;
-    }
-    else {
+-      lexerBuffer[ LEX_BUFFER_MAX-1 ] = 0;
+-   }
+-   else {
 -      ::strncpy( lexerBuffer, yytext, len );
-+      ::strlcpy( lexerBuffer, yytext, len );
-       lexerBuffer[ len ] = 0;
-    }
+-      lexerBuffer[ len ] = 0;
+-   }
++   ::strlcpy( lexerBuffer, yytext, LEX_BUFFER_MAX );
     yylval->str = lexerBuffer;
-@@ -207,11 +207,11 @@ iddot           [a-zA-Z][a-zA-Z0-9\.]*
+    BEGIN(INITIAL);
+    return GEOMSPEC;
+@@ -205,15 +197,7 @@ iddot           [a-zA-Z][a-zA-Z0-9\.]*
+ 
+ {string}	{ 
     /* strip the quotes */
-    int len = ::strlen( yytext );
-    if ( len >= LEX_BUFFER_MAX ) {
+-   int len = ::strlen( yytext );
+-   if ( len >= LEX_BUFFER_MAX ) {
 -      ::strncpy( lexerBuffer, &(yytext[1]), LEX_BUFFER_MAX );
-+      ::strlcpy( lexerBuffer, &(yytext[1]), LEX_BUFFER_MAX );
-       lexerBuffer[ LEX_BUFFER_MAX-1 ] = 0;
-    }
-    else {
+-      lexerBuffer[ LEX_BUFFER_MAX-1 ] = 0;
+-   }
+-   else {
 -      ::strncpy( lexerBuffer, &(yytext[1]), len-2 );
-+      ::strlcpy( lexerBuffer, &(yytext[1]), len-2 );
-       lexerBuffer[ len-2 ] = 0;
-    }
+-      lexerBuffer[ len-2 ] = 0;
+-   }
++   ::strlcpy( lexerBuffer, &(yytext[1]), LEX_BUFFER_MAX );
     yylval->str = lexerBuffer;
+    return STRING; 
+ }

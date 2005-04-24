@@ -1,0 +1,23 @@
+$OpenBSD: patch-hordiffImp_cpp,v 1.1 2005/04/24 19:02:05 sturm Exp $
+--- hordiffImp.cpp.orig	Fri Apr 22 20:11:45 2005
++++ hordiffImp.cpp	Fri Apr 22 20:14:31 2005
+@@ -50,16 +50,16 @@ namespace {
+ 
+ //------------------------------------------------------------------------------
+ //
+-inline int strncpyNoWs( char* dest, const char* src, unsigned int len )
++inline unsigned int strncpyNoWs( char* dest, const char* src, unsigned int len )
+ {
+    // Copy a string into another, but compressing the whitespace to one space.
+    // Returns the length of the copied string.
+ 
+-   int ic = 0;
++   unsigned int ic = 0;
+    for ( unsigned int ii = 0; ii < len; ++ii ) {
+       if ( isspace( src[ii] ) ) {
+          dest[ic++] = ' ';
+-         int sc = 0;
++         unsigned int sc = 0;
+          unsigned int iid = ii + 1;
+          while ( isspace( src[iid] ) && iid < len ) { ++sc; ++iid; }
+          ii += sc;
