@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/03/24 07:35:03 dons Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/04/24 04:57:07 dons Exp $
 %%SHARED%%
 bin/cpphs-hugs
-@comment bin/ffihugs
+bin/ffihugs
 bin/hsc2hs-hugs
 bin/hugs
 bin/runhugs

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/03/28 08:10:00 dons Exp $
+# $OpenBSD: Makefile,v 1.10 2005/04/24 04:57:07 dons Exp $
 
 COMMENT=	"Haskell 98 interpreter"
 
@@ -14,6 +14,10 @@ MASTER_SITES0=	ftp://ftp.cse.unsw.edu.au/pub/users/dons/hugs98/
 DISTFILES=	${DISTNAME}-patched.tar.gz ${DISTNAME}-regress.tar.bz2:0
 WRKDIST=	${WRKDIR}/${DISTNAME}-patched
 
+.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
+CFLAGS+=    -fPIC
+.endif
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CC="${CC}"
 CONFIGURE_ARGS+=--with-pthreads --libdir=${PREFIX}/lib
@@ -26,6 +30,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m ncurses readline
+WANTLIB=		c m ncurses readline GL X11 GLU
 
 .include <bsd.port.mk>
