@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2005/02/11 19:33:55 jakob Exp $
+# $OpenBSD: Makefile,v 1.33 2005/04/24 19:31:25 jakob Exp $
 
 COMMENT=	"mailing list manager with web interface"
 
 DISTNAME=	mailman-2.1.5
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	mail www
 
 HOMEPAGE=	http://www.gnu.org/software/mailman/
@@ -20,7 +20,7 @@ WANTLIB=		c
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mailman/}
 EXTRACT_SUFX=		.tgz
 
-PYTHON_VER=		2.2
+PYTHON_VER=		2.3
 SUBST_VARS=		PYTHON_VER
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
