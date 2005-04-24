@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/11/25 19:05:05 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/04/24 20:28:12 sturm Exp $
 ${P5SITE}/Net/Amazon/
 ${P5SITE}/Net/Amazon.pm
 ${P5SITE}/Net/Amazon/Attribute/
@@ -15,6 +15,7 @@ ${P5SITE}/Net/Amazon/Request/ASIN.pm
 ${P5SITE}/Net/Amazon/Request/Artist.pm
 ${P5SITE}/Net/Amazon/Request/Blended.pm
 ${P5SITE}/Net/Amazon/Request/BrowseNode.pm
+${P5SITE}/Net/Amazon/Request/Exchange.pm
 ${P5SITE}/Net/Amazon/Request/Keyword.pm
 ${P5SITE}/Net/Amazon/Request/Manufacturer.pm
 ${P5SITE}/Net/Amazon/Request/Power.pm
@@ -31,6 +32,7 @@ ${P5SITE}/Net/Amazon/Response/ASIN.pm
 ${P5SITE}/Net/Amazon/Response/Artist.pm
 ${P5SITE}/Net/Amazon/Response/Blended.pm
 ${P5SITE}/Net/Amazon/Response/BrowseNode.pm
+${P5SITE}/Net/Amazon/Response/Exchange.pm
 ${P5SITE}/Net/Amazon/Response/Keyword.pm
 ${P5SITE}/Net/Amazon/Response/Manufacturer.pm
 ${P5SITE}/Net/Amazon/Response/Power.pm
@@ -55,6 +57,7 @@ ${P5SITE}/Net/Amazon/Result/Seller/Listing.pm
 @man man/man3p/Net::Amazon::Request::Artist.3p
 @man man/man3p/Net::Amazon::Request::Blended.3p
 @man man/man3p/Net::Amazon::Request::BrowseNode.3p
+@man man/man3p/Net::Amazon::Request::Exchange.3p
 @man man/man3p/Net::Amazon::Request::Keyword.3p
 @man man/man3p/Net::Amazon::Request::Manufacturer.3p
 @man man/man3p/Net::Amazon::Request::Power.3p
@@ -82,6 +85,7 @@ share/examples/p5-Net-Amazon/browse
 share/examples/p5-Net-Amazon/cd_fetch
 share/examples/p5-Net-Amazon/cheapo
 share/examples/p5-Net-Amazon/dejazz
+share/examples/p5-Net-Amazon/exchange
 share/examples/p5-Net-Amazon/heavy
 share/examples/p5-Net-Amazon/keyword
 share/examples/p5-Net-Amazon/manufacturer
