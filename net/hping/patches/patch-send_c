@@ -1,0 +1,12 @@
+$OpenBSD: patch-send_c,v 1.1 2005/04/24 22:59:08 alek Exp $
+--- send.c.orig	Sun Apr 24 20:29:06 2005
++++ send.c	Sun Apr 24 20:30:24 2005
+@@ -41,7 +41,7 @@ static void select_next_random_dest(void
+ 	unsigned char ra[4];
+ 	char a[4], b[4], c[4], d[4];
+ 
+-	if (sscanf(targetname, "%4[^.].%4[^.].%4[^.].%4[^.]", a, b, c, d) != 4)
++	if (sscanf(targetname, "%3[^.].%3[^.].%3[^.].%3[^.]", a, b, c, d) != 4)
+ 	{
+ 		fprintf(stderr,
+ 			"wrong --rand-dest target host, correct examples:\n"

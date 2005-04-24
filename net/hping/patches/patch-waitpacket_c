@@ -1,12 +1,28 @@
-$OpenBSD: patch-waitpacket_c,v 1.1 2004/04/21 00:16:12 naddy Exp $
---- waitpacket.c.orig	2004-04-20 22:20:56.000000000 +0200
-+++ waitpacket.c	2004-04-20 22:21:06.000000000 +0200
-@@ -179,7 +179,7 @@ void log_icmp_ts(void *ts)
- 		(unsigned int) ntohl(icmp_tstamp.orig),
- 		(unsigned int) ntohl(icmp_tstamp.recv),
- 		(unsigned int) ntohl(icmp_tstamp.tran));
--	printf("ICMP timestamp RTT tsrtt=%lu\n\n",
-+	printf("ICMP timestamp RTT tsrtt=%u\n\n",
- 		(get_midnight_ut_ms() - ntohl(icmp_tstamp.orig)));
- }
+$OpenBSD: patch-waitpacket_c,v 1.2 2005/04/24 22:59:08 alek Exp $
+--- waitpacket.c.orig	Fri Dec 13 16:01:57 2002
++++ waitpacket.c	Sun Apr 24 21:00:52 2005
+@@ -361,15 +361,15 @@ int recv_tcp(void *packet, size_t size)
+ 			goto out;
  
+ 		flags[0] = '\0';
+-		if (tcp.th_flags & TH_RST)  strcat(flags, "R");
+-		if (tcp.th_flags & TH_SYN)  strcat(flags, "S");
+-		if (tcp.th_flags & TH_ACK)  strcat(flags, "A");
+-		if (tcp.th_flags & TH_FIN)  strcat(flags, "F");
+-		if (tcp.th_flags & TH_PUSH) strcat(flags, "P");
+-		if (tcp.th_flags & TH_URG)  strcat(flags, "U");
+-		if (tcp.th_flags & TH_X)    strcat(flags, "X");
+-		if (tcp.th_flags & TH_Y)    strcat(flags, "Y");
+-		if (flags[0] == '\0')    strcat(flags, "none");
++		if (tcp.th_flags & TH_RST)  strlcat(flags, "R", sizeof(flags));
++		if (tcp.th_flags & TH_SYN)  strlcat(flags, "S", sizeof(flags));
++		if (tcp.th_flags & TH_ACK)  strlcat(flags, "A", sizeof(flags));
++		if (tcp.th_flags & TH_FIN)  strlcat(flags, "F", sizeof(flags));
++		if (tcp.th_flags & TH_PUSH) strlcat(flags, "P", sizeof(flags));
++		if (tcp.th_flags & TH_URG)  strlcat(flags, "U", sizeof(flags));
++		if (tcp.th_flags & TH_X)    strlcat(flags, "X", sizeof(flags));
++		if (tcp.th_flags & TH_Y)    strlcat(flags, "Y", sizeof(flags));
++		if (flags[0] == '\0')    strlcat(flags, "none", sizeof(flags));
+ 
+ 		log_ip(status, sequence);
+ 		printf("sport=%d flags=%s seq=%d win=%d rtt=%.1f ms\n",

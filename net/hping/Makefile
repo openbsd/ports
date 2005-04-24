@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.19 2004/12/16 00:31:22 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2005/04/24 22:59:08 alek Exp $
 
 COMMENT=	"TCP/UDP ping/traceroute tool"
 
-DISTNAME=	hping2.0.0-rc2
-PKGNAME=	hping-2.0.0rc2
+DISTNAME=	hping2.0.0-rc3
+PKGNAME=	hping-2.0.0rc3
 CATEGORIES=	net
+
 HOMEPAGE=	http://www.hping.org/
+
+MAINTAINER=	Alexandre Anriot <aanriot@atlantilde.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,19 +19,19 @@ WANTLIB=		c pcap
 
 MASTER_SITES=	${HOMEPAGE}
 
-WRKDIST=	${WRKDIR}/hping2-rc2
+WRKDIST=	${WRKDIR}/${DISTNAME:S/.0.0//}
 
 MAKE_FLAGS=	CC="${CC}" CCOPT="${CFLAGS} -Wall"
 
-CONFIGURE_STYLE= simple
+CONFIGURE_STYLE=simple
+
+NO_REGRESS=	Yes
 
 post-extract:
 	@rm -f ${WRKSRC}/*.orig
 	@sed -e s#hping2#hping# -e s#HPING2#HPING# \
 		${WRKSRC}/docs/hping2.8 > ${WRKSRC}/docs/hping.8
-
-NO_REGRESS=	Yes
-
+ 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hping2 ${PREFIX}/sbin/hping
 	${INSTALL_MAN} ${WRKSRC}/docs/hping.8 ${PREFIX}/man/man8/hping.8

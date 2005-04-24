@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2005/04/24 22:59:08 alek Exp $
+--- Makefile.in.orig	Mon May  3 11:29:39 2004
++++ Makefile.in	Mon Apr 25 00:06:21 2005
+@@ -10,7 +10,7 @@ CC= gcc
+ AR=/usr/bin/ar
+ RANLIB=/usr/bin/ranlib
+ CCOPT= -O2 -Wall @PCAP_INCLUDE@
+-DEBUG= -g
++DEBUG=
+ #uncomment the following if you need libpcap based build under linux
+ #(not raccomanded)
+ COMPILE_TIME= @FORCE_LIBPCAP@
+@@ -39,7 +39,7 @@ ARSOBJ = ars.o apd.o split.o
+ all: hping2
+ 
+ libars.a: $(ARSOBJ)
+-	$(AR) rc $@ $^
++	$(AR) rc $@ $(ARSOBJ)
+ 	$(RANLIB) $@
+ 
+ hping2: byteorder.h $(OBJ)
