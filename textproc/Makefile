@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2005/04/03 17:32:24 msf Exp $
+# $OpenBSD: Makefile,v 1.132 2005/04/25 18:32:43 sturm Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -87,6 +87,7 @@
      SUBDIR += p5-XML-AutoWriter
      SUBDIR += p5-XML-Checker
      SUBDIR += p5-XML-DOM
+     SUBDIR += p5-XML-Elemental
      SUBDIR += p5-XML-LibXML
      SUBDIR += p5-XML-LibXSLT
      SUBDIR += p5-XML-NamespaceSupport
