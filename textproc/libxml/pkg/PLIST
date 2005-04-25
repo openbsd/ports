@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.35 2004/09/15 18:44:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.36 2005/04/25 16:43:30 espie Exp $
+%%SHARED%%
 bin/xml2-config
 bin/xmlcatalog
 bin/xmllint
@@ -54,12 +55,13 @@ lib/libxml2.la
 lib/pkgconfig/
 lib/pkgconfig/libxml-2.0.pc
 lib/xml2Conf.sh
+share/aclocal/
+share/aclocal/libxml.m4
+@endfake
 @man man/man1/xml2-config.1
 @man man/man1/xmlcatalog.1
 @man man/man1/xmllint.1
 @man man/man3/libxml.3
-share/aclocal/
-share/aclocal/libxml.m4
 share/doc/libxml2/
 share/doc/libxml2/Copyright
 share/doc/libxml2/examples/
@@ -185,7 +187,6 @@ share/doc/libxml2/html/tutorial/ix01.html
 share/doc/libxml2/html/tutorial/xmltutorial.pdf
 share/doc/libxml2/html/w3c.png
 share/doc/libxml2/html/xml.html
-%%SHARED%%
 @exec rm -f /var/db/xmlcatalog
 @exec %D/bin/xmlcatalog --create --noout /var/db/xmlcatalog
 @unexec rm -fr /var/db/xmlcatalog
