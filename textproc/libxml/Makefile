@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2005/04/25 16:43:30 espie Exp $
+# $OpenBSD: Makefile,v 1.87 2005/04/25 16:55:05 espie Exp $
 
 COMMENT=		"XML parsing library"
 
@@ -11,7 +11,7 @@ MASTER_SITES=		ftp://xmlsoft.org/ \
 
 HOMEPAGE=		http://xmlsoft.org/ 
 
-FAKE=			all
+#FAKE=			all
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
