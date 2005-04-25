@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2004/12/17 15:18:33 alek Exp $
+# $OpenBSD: Makefile,v 1.58 2005/04/25 16:29:19 espie Exp $
 
 COMMENT=	"General Toolkit for X11 GUI"
 
 DISTNAME=	gtk+-1.2.10
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11 devel
 MASTER_SITES=   ${MASTER_SITE_GNOME:=sources/gtk+/1.2/}
 
@@ -14,6 +14,7 @@ LIB_DEPENDS=	glib.1.2,gmodule.1.2::devel/glib
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+FAKE=			all
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -26,8 +27,9 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --with-xinput="xfree"
 CONFIGURE_ARGS+= --disable-glibtest
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
+		LDFLAGS="-L${DEPBASE}/lib" \
+		glib_config_args=--prefix=${DEPBASE}
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \

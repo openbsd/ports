@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.53 2004/11/23 11:22:02 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2005/04/25 16:29:19 espie Exp $
 # Uses pthreads
 
 COMMENT=	"useful routines for C programming"
 
 DISTNAME=	glib-1.2.10
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/glib/1.2/}
 
