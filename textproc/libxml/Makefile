@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.88 2005/04/26 09:43:04 espie Exp $
+# $OpenBSD: Makefile,v 1.89 2005/04/26 21:05:56 espie Exp $
 
 COMMENT=		"XML parsing library"
 
 VERSION=		2.6.16
 DISTNAME=		libxml2-${VERSION}
-PKGNAME=		libxml-${VERSION}p3
+PKGNAME=		libxml-${VERSION}p4
 CATEGORIES=		textproc
 MASTER_SITES=		ftp://xmlsoft.org/ \
 			${MASTER_SITE_GNOME:=sources/libxml2/2.6/}
@@ -37,7 +37,7 @@ post-configure:
 	@perl -pi.bak -e \
 		's,${DEPBASE}/include,\$$\{includedir\},g; \
 		 s,${DEPBASE}/lib,\$$\{libdir\},g; \
-		 s,${DEPBASE},\$$\{prefix\},g;' \
+		 s,${DEPBASE}/,\$$\{prefix\}/,g;' \
 	    ${WRKBUILD}/libxml-2.0.pc ${WRKBUILD}/xml2-config
 
 post-install:
