@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/26 17:05:05 martin Exp $
+bin/uisp
+@man man/man1/uisp.1
+share/doc/uisp/
+share/doc/uisp/AUTHORS
+share/doc/uisp/CHANGES
+share/doc/uisp/CHANGES.old
+share/doc/uisp/COPYING
+share/doc/uisp/ChangeLog
+share/doc/uisp/ChangeLog-2002
+share/doc/uisp/ChangeLog-2003
+share/doc/uisp/INSTALL
+share/doc/uisp/TODO
