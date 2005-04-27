@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2005/01/30 18:25:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2005/04/27 12:38:23 robert Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"interface to the uulib library"
 
-DISTNAME=	Convert-UUlib-1.04
+DISTNAME=	Convert-UUlib-1.051
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
 
