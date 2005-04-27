@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/27 04:33:53 jolan Exp $
+@unexec lua ${SYSCONFDIR}/lua/luapkg.lua del luasqlite3
+@exec lua ${SYSCONFDIR}/lua/luapkg.lua add luasqlite3 ${PREFIX}/lua/luasqlite3/init.lua
+%%SHARED%%
+lua/
+lua/luasqlite3/
+lua/luasqlite3/init.lua
+lua/luasqlite3/sqlite3.lua
+share/doc/luasqlite3/
+share/doc/luasqlite3/documentation.html
+share/examples/luasqlite3/
+share/examples/luasqlite3/aggregate.lua
+share/examples/luasqlite3/function.lua
+share/examples/luasqlite3/order.lua
+share/examples/luasqlite3/simple.lua
+share/examples/luasqlite3/statement.lua
+share/examples/luasqlite3/tracing.lua

@@ -1,0 +1,15 @@
+$OpenBSD: patch-sqlite3_lua,v 1.1.1.1 2005/04/27 04:33:53 jolan Exp $
+--- sqlite3.lua.orig	Tue Apr 26 10:21:02 2005
++++ sqlite3.lua	Tue Apr 26 10:22:38 2005
+@@ -45,9 +45,8 @@ TODO:
+ 
+ 
+ 
+-require "libluasqlite3-loader"
+-
+-local api, ERR, TYPE, AUTH = load_libluasqlite3()
++local api, ERR, TYPE, AUTH =
++	assert(loadlib("luasqlite3.so", "luaopen_sqlite3"))()
+ 
+ local db_class = { }
+ local stmt_class = { }
