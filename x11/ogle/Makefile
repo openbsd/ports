@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/12/17 15:18:34 alek Exp $
+# $OpenBSD: Makefile,v 1.30 2005/04/27 10:29:54 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64 amd64
 
@@ -6,6 +6,7 @@ CATEGORIES=	x11
 
 COMMENT=	"DVD player"
 DISTNAME=	ogle-0.9.2
+PKGNAME=	${DISTNAME}p0
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
 # Authors can be reached at dvd@dtek.chalmers.se
 MASTER_SITES=	${HOMEPAGE}dist/
@@ -14,6 +15,7 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 CONFIGURE_STYLE=	gnu
 
+#FAKE=all
 # GPL
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=Yes
@@ -41,6 +43,13 @@ CONFIGURE_ARGS+=--enable-altivec
 .else
 CONFIGURE_ARGS+=--disable-altivec
 .endif
+CONFIGURE_ARGS+=--with-libjpeg=${DEPBASE} \
+		--with-dvdread=${DEPBASE} \
+		--with-liba52=${DEPBASE} \
+		--with-libmad=${DEPBASE} \
+		--with-xml-prefix=${DEPBASE}
+
+CONFIGURE_ENV+=xml_config_args=--prefix=${DEPBASE}
 
 post-install:
 	cd ${PREFIX}/man/man5 && mv oglerc.5 oglerc.tbl

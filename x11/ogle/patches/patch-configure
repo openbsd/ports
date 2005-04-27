@@ -1,0 +1,39 @@
+$OpenBSD: patch-configure,v 1.7 2005/04/27 10:29:54 espie Exp $
+--- configure.orig	Tue Nov  4 12:34:13 2003
++++ configure	Wed Apr 27 12:22:32 2005
+@@ -11184,7 +11184,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_lib_jpeg_main" >&5
+ echo "${ECHO_T}$ac_cv_lib_jpeg_main" >&6
+ if test $ac_cv_lib_jpeg_main = yes; then
+-   JPEG_LIBS="-L$jpeg_path/lib -R$jpeg_path/lib -ljpeg"
++   JPEG_LIBS="-L$jpeg_path/lib -ljpeg"
+     JPEG_CPPFLAGS=-I$jpeg_path/include
+ 
+ else
+@@ -11826,7 +11826,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_lib_dvdread_DVDDiscID" >&5
+ echo "${ECHO_T}$ac_cv_lib_dvdread_DVDDiscID" >&6
+ if test $ac_cv_lib_dvdread_DVDDiscID = yes; then
+-   DVDREAD_LIBS="-L$dvd_path/lib -R$dvd_path/lib -ldvdread"
++   DVDREAD_LIBS="-L$dvd_path/lib -ldvdread"
+     DVDREAD_CPPFLAGS=-I$dvd_path/include
+ 
+ else
+@@ -12346,7 +12346,7 @@ echo "$as_me:$LINENO: result: $ac_cv_lib
+ echo "${ECHO_T}$ac_cv_lib_a52_a52_free" >&6
+ if test $ac_cv_lib_a52_a52_free = yes; then
+ 
+-    A52_LIBS="-L$a52_path/lib -R$a52_path/lib -la52"
++    A52_LIBS="-L$a52_path/lib -la52"
+     A52_CPPFLAGS=-I$a52_path/include
+ 
+ else
+@@ -12710,7 +12710,7 @@ echo "$as_me:$LINENO: result: $ac_cv_lib
+ echo "${ECHO_T}$ac_cv_lib_mad_mad_frame_decode" >&6
+ if test $ac_cv_lib_mad_mad_frame_decode = yes; then
+ 
+-    MAD_LIBS="-L$mad_path/lib -R$mad_path/lib -lmad"
++    MAD_LIBS="-L$mad_path/lib -lmad"
+     MAD_CPPFLAGS=-I$mad_path/include
+ 
+ else
