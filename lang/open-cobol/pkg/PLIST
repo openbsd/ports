@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/27 03:32:15 jcs Exp $
+%%SHARED%%
+bin/cob-config
+bin/cobc
+bin/cobcrun
+include/libcob/
+include/libcob.h
+include/libcob/byteswap.h
+include/libcob/call.h
+include/libcob/common.h
+include/libcob/exception.def
+include/libcob/fileio.h
+include/libcob/move.h
+include/libcob/numeric.h
+include/libcob/screenio.h
+include/libcob/strings.h
+include/libcob/termio.h
+@info info/open-cobol.info
+lib/libcob.a
+lib/libcob.la
+share/locale/
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
+share/locale/ja/LC_MESSAGES/open-cobol.mo
+share/open-cobol/
+share/open-cobol/config/
+share/open-cobol/config/cobol2002.conf
+share/open-cobol/config/cobol85.conf
+share/open-cobol/config/default.conf
+share/open-cobol/config/ibm.conf
+share/open-cobol/config/mf.conf
+share/open-cobol/config/mvs.conf
+share/open-cobol/config/v023.conf
