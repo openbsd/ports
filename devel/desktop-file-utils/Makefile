@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/04/27 21:43:08 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2005/04/27 21:45:58 alek Exp $
 
 COMMENT=	"utilities for 'desktop' entries"
 
@@ -24,8 +24,7 @@ LIB_DEPENDS=	glib-2.0.0.0::devel/glib2 \
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--without-lispdir
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
