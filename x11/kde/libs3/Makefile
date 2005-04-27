@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2005/04/08 20:47:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.52 2005/04/27 15:49:55 drahn Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.4.0
 DISTNAME=		kdelibs-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 MODKDE_VERSION?=	3.4
 
 FLAVORS=debug
