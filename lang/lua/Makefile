@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/16 13:04:07 pedro Exp $
+# $OpenBSD: Makefile,v 1.15 2005/04/27 16:41:11 pedro Exp $
 
 COMMENT=	"powerful, light-weight programming language"
 
 DISTNAME=	lua-5.0.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=     lang
 
 MASTER_SITES=	http://www.lua.org/ftp/ \
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c m
+WANTLIB=	c m edit curses
 NO_REGRESS=	Yes
 
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
