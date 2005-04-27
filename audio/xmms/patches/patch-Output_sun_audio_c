@@ -1,6 +1,6 @@
-$OpenBSD: patch-Output_sun_audio_c,v 1.4 2005/04/13 19:20:02 robert Exp $
+$OpenBSD: patch-Output_sun_audio_c,v 1.5 2005/04/27 16:31:34 robert Exp $
 --- Output/sun/audio.c.orig	Sun Jun  2 15:42:03 2002
-+++ Output/sun/audio.c	Wed Apr 13 20:56:19 2005
++++ Output/sun/audio.c	Wed Apr 27 18:13:18 2005
 @@ -123,14 +123,12 @@
  	
  	sun = sun_format(fmt);
@@ -43,9 +43,30 @@ $OpenBSD: patch-Output_sun_audio_c,v 1.4 2005/04/13 19:20:02 robert Exp $
  			output.frequency, strerror(errno));
  		return;
  	}
-@@ -537,7 +535,7 @@
+@@ -328,7 +326,7 @@
+ 		output_time_offset += (output_bytes * 1000) / output.bps;
+ 		output_bytes = 0;
+ 		close(audio.fd);
+-		audio.fd = open(audio.devaudio, O_RDWR);
++		audio.fd = open(audio.devaudio, O_WRONLY);
+ 		sun_setformat(new_format, new_frequency, new_channels);
+ 	}
+ 	if (effects_enabled() && ep && ep->mod_samples)
+@@ -518,7 +516,7 @@
+ 		{
+ 			audio.unpause = FALSE;
+ 			close(audio.fd);
+-			audio.fd = open(audio.devaudio, O_RDWR);
++			audio.fd = open(audio.devaudio, O_WRONLY);
+ 			sun_setparams();
+ 			audio.paused = FALSE;
+ 		}
+@@ -535,9 +533,9 @@
  
- 	if ((audio.fd = open(audio.devaudio, O_RDWR)) < 0)
+ 	AUDIO_INITINFO(&info);
+ 
+-	if ((audio.fd = open(audio.devaudio, O_RDWR)) < 0)
++	if ((audio.fd = open(audio.devaudio, O_WRONLY)) < 0)
  	{
 -		g_error("%s: %s", audio.devaudio, strerror(errno));
 +		g_warning("%s: %s", audio.devaudio, strerror(errno));
