@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_install_pl,v 1.1 2005/04/04 17:12:43 sturm Exp $
+$OpenBSD: patch-config_install_pl,v 1.2 2005/04/28 14:42:27 sturm Exp $
 --- config/install.pl.orig	Sun Apr 28 07:15:01 2002
-+++ config/install.pl	Sun Apr  3 23:49:01 2005
++++ config/install.pl	Thu Apr 28 16:34:43 2005
 @@ -219,9 +219,7 @@ my %Install_items = (
    #'configure'         => 'lib',
    #'configure.in'      => 'lib',
@@ -28,11 +28,13 @@ $OpenBSD: patch-config_install_pl,v 1.1 2005/04/04 17:12:43 sturm Exp $
    } else {
      my $dir = 'texinputs';
      my $dest = $cfg{TEXPATH};
-@@ -396,7 +395,7 @@ if($cfg{TEXPATH}) {
+@@ -395,8 +394,8 @@ if($cfg{TEXPATH}) {
+       }
        closedir(DIR);
        if($ok && $cfg{MKTEXLSR}) {
-         print "Info: Running $cfg{MKTEXLSR} to rebuild ls-R database...\n";
+-        print "Info: Running $cfg{MKTEXLSR} to rebuild ls-R database...\n";
 -        system($cfg{MKTEXLSR});
++        #print "Info: Running $cfg{MKTEXLSR} to rebuild ls-R database...\n";
 +        #system($cfg{MKTEXLSR});
        }
      }

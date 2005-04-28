@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/04/04 17:12:43 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/04/28 14:42:27 sturm Exp $
 bin/latex2html
 bin/pstoimg
 bin/texexpand
@@ -363,3 +363,5 @@ share/texmf-local/tex/latex/html/ldump.sty
 share/texmf-local/tex/latex/html/techexplHTML.tex
 share/texmf-local/tex/latex/html/url.sty
 share/texmf-local/tex/latex/html/verbatimfiles.sty
+@exec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
+@unexec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
