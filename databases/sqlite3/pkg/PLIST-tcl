@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-tcl,v 1.1 2005/04/28 22:58:28 jolan Exp $
+%%SHARED%%
+lib/tcl8.4/
+lib/tcl8.4/sqlite3/
+lib/tcl8.4/sqlite3/pkgIndex.tcl

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_main_c,v 1.1 2005/04/28 22:58:28 jolan Exp $
+--- src/main.c.orig	Tue Mar 29 06:50:08 2005
++++ src/main.c	Thu Apr 28 03:46:57 2005
+@@ -625,9 +625,9 @@ static int sqliteDefaultBusyCallback(
+   ptr timeout = (ptr)Timeout;
+   ptr delay, prior;
+ 
+-  if( count <= NDELAY ){
+-    delay = delays[count-1];
+-    prior = totals[count-1];
++  if( count < NDELAY ){
++    delay = delays[count];
++    prior = totals[count];
+   }else{
+     delay = delays[NDELAY-1];
+     prior = totals[NDELAY-1] + delay*(count-NDELAY-1);
