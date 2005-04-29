@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/04/28 22:58:28 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2005/04/29 00:02:06 djm Exp $
 
 COMMENT=	"Embedded SQL implementation"
 COMMENT-tcl=	"TCL bindings for Sqlite3"
@@ -10,8 +10,6 @@ DISTNAME=	sqlite-${VERSION}
 CATEGORIES=	databases
 HOMEPAGE=	http://www.sqlite.org/
 MASTER_SITES=	${HOMEPAGE}
-
-MAINTAINER=	Damien Miller <djm@openbsd.org>
 
 # Public Domain
 PERMIT_PACKAGE_CDROM=	Yes

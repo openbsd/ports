@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/02/20 03:14:52 jolan Exp $
+# $OpenBSD: Makefile,v 1.8 2005/04/29 00:02:05 djm Exp $
 
 COMMENT=	"Embedded SQL implementation"
 
@@ -6,8 +6,6 @@ DISTNAME=	sqlite-2.8.16
 CATEGORIES=	databases
 HOMEPAGE=	http://www.sqlite.org/
 MASTER_SITES=	${HOMEPAGE}
-
-MAINTAINER=	Damien Miller <djm@openbsd.org>
 
 # Public Domain
 PERMIT_PACKAGE_CDROM=	Yes

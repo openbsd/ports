@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/10/16 08:19:54 djm Exp $
+# $OpenBSD: Makefile,v 1.8 2005/04/29 00:02:05 djm Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -12,8 +12,6 @@ WRKDIST=	${WRKDIR}/pysqlite
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pysqlite/}
 HOMEPAGE=	http://pysqlite.sourceforge.net/
-
-MAINTAINER=	Damien Miller <djm@openbsd.org>
 
 # BSD-like
 PERMIT_PACKAGE_FTP=	Yes
