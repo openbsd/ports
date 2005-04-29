@@ -1,7 +1,7 @@
-$OpenBSD: patch-pine_pine_hlp,v 1.6 2004/07/18 16:57:56 jakob Exp $
---- pine/pine.hlp.orig	Tue Sep  9 23:19:06 2003
-+++ pine/pine.hlp	Sat Sep 20 00:08:13 2003
-@@ -809,8 +809,7 @@
+$OpenBSD: patch-pine_pine_hlp,v 1.7 2005/04/29 19:51:35 jakob Exp $
+--- pine/pine.hlp.orig	Thu Apr 28 19:22:02 2005
++++ pine/pine.hlp	Fri Apr 29 19:49:47 2005
+@@ -975,8 +975,7 @@ Unix Pine:
   postponed#     ~/mail/postponed-msgs
   sentmail#      ~/mail/sent-mail
   mailcap#       ~/.mailcap + /etc/mailcap
@@ -11,7 +11,7 @@ $OpenBSD: patch-pine_pine_hlp,v 1.6 2004/07/18 16:57:56 jakob Exp $
  
   news-spool	varies across Unix flavors, e.g. /var/spool/news or /usr/spool/news
   active-news	varies across Unix flavors, e.g. /usr/lib/news/active
-@@ -17782,7 +17781,7 @@
+@@ -19258,7 +19257,7 @@ a semi-colon (;) under Windows; for exam
  </PRE>
  <!--chtml else-->
  a colon (:) under UNIX; for example:<PRE>
@@ -20,7 +20,7 @@ $OpenBSD: patch-pine_pine_hlp,v 1.6 2004/07/18 16:57:56 jakob Exp $
  </PRE>
  <!--chtml endif-->
  <P><UL>
-@@ -22632,7 +22631,7 @@
+@@ -24496,7 +24495,7 @@ argument (see the &quot;lynx&quot; examp
  So, here are some example entries:
  <PRE>
  URL-Viewers = _TEST(&quot;test -n '$&#123;DISPLAY}'&quot;)_  /usr/local/bin/netscape
@@ -29,7 +29,7 @@ $OpenBSD: patch-pine_pine_hlp,v 1.6 2004/07/18 16:57:56 jakob Exp $
                C:&#92;BIN&#92;NETSCAPE.BAT
  </PRE>
  <P>
-@@ -22640,7 +22639,7 @@
+@@ -24504,7 +24503,7 @@ This example shows that for the first vi
  the environment variable &quot;DISPLAY&quot; must be defined.  If it
  is, then the path and file &quot;/usr/local/bin/netscape&quot; must exist.  
  If neither condition is met,
@@ -38,7 +38,7 @@ $OpenBSD: patch-pine_pine_hlp,v 1.6 2004/07/18 16:57:56 jakob Exp $
  If it does, then the &quot;_URL_&quot; token is replaced by the selected URL. 
  If the path to &quot;lynx&quot; is invalid,
  then the final path and file C:&#92;BIN&#92;NETSCAPE.BAT must exist.  
-@@ -22736,7 +22735,7 @@
+@@ -24600,7 +24599,7 @@ because of its length, but should all ap
  URL-Viewers = _TEST("test -L /myhomedir/.netscape/lock")_ &quot;/usr/local/bin/netscape -remote 'openURL(_URL_,  new-window)' &amp;&quot;<BR>
  
  _TEST(&quot;test -n '$&#123;DISPLAY}'&quot;)_ &quot;/usr/local/bin/netscape &amp;&quot;<BR>
