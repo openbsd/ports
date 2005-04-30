@@ -1,24 +1,25 @@
-# $OpenBSD: Makefile,v 1.74 2005/04/07 17:45:43 sturm Exp $
+# $OpenBSD: Makefile,v 1.75 2005/04/30 10:00:03 mbalmer Exp $
 
 COMMENT=	"PostgreSQL RDBMS (client)"
 COMMENT-server=	"PostgreSQL RDBMS (server)"
 COMMENT-docs=	"PostgreSQL RDBMS documentation"
 
-VERSION=	7.4.3
+VERSION=	8.0.2
 DISTNAME=	postgresql-${VERSION}
-FULLPKGNAME=	postgresql-client-${VERSION}p2
-PKGNAME-server=	postgresql-server-${VERSION}p2
-PKGNAME-docs=	postgresql-docs-${VERSION}p1
+FULLPKGNAME=	postgresql-client-${VERSION}
+PKGNAME-server=	postgresql-server-${VERSION}
+PKGNAME-docs=	postgresql-docs-${VERSION}
 
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.postgresql.org/
 
-MAINTAINER=	Brandon Palmer <bpalmer@crimelabs.net>
+MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"without fee clause"
+# BSD
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"without fee clause"
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto curses m readline ssl util z
 
@@ -40,22 +41,20 @@ SUBST_VARS=	VERSION
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	LIBS=-lcurses
 
 .include <bsd.own.mk>
 
 CONFIGURE_ARGS=	--disable-rpath --with-openssl=/usr \
-		--with-includes=/usr/include/kerberosV \
 		--with-perl \
 		--enable-integer-datetimes \
 		--includedir="${PREFIX}/include/postgresql" \
 		--datadir="${PREFIX}/share/postgresql" \
-		--docdir="${PREFIX}/share/doc/postgresql"
+		--with-docdir="${PREFIX}/share/doc/postgresql" \
+		--with-openssl
 
 .if ${KERBEROS5} == "yes"
-CONFIGURE_ARGS+=--with-krb5=/usr/lib
+CONFIGURE_ARGS+=--with-krb5 --with-includes=/usr/include/kerberosV
 .endif
-
 
 # There is no spinlock support for hppa yet. Until we have access to
 # a system to get this working, disable them for now. There is
@@ -67,7 +66,7 @@ CONFIGURE_ARGS+=--disable-spinlocks
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 
-INSTALL_TARGET=	install install-all-headers
+INSTALL_TARGET=	install
 
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-server"
 WANTLIB+=	perl

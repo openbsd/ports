@@ -1,17 +1,15 @@
-@comment $OpenBSD: PLIST-server,v 1.4 2004/10/12 21:03:13 espie Exp $
-@newgroup _postgresql:503
-@newuser _postgresql:503:_postgresql:daemon:PostgreSQL Manager:/var/postgresql:/bin/sh
+@comment $OpenBSD: PLIST-server,v 1.5 2005/04/30 10:00:04 mbalmer Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
 @conflict postgresql-server-*
 @conflict postgresql-*
+@newgroup _postgresql:503
+@newuser _postgresql:503:_postgresql:daemon:PostgreSQL Manager:/var/postgresql:/bin/sh
 bin/initdb
-bin/initlocation
 bin/ipcclean
 bin/pg_controldata
 bin/pg_ctl
-bin/pg_encoding
 bin/pg_resetxlog
 bin/postgres
 bin/postmaster
@@ -28,7 +26,6 @@ include/postgresql/server/access/hio.h
 include/postgresql/server/access/htup.h
 include/postgresql/server/access/ibit.h
 include/postgresql/server/access/iqual.h
-include/postgresql/server/access/istrat.h
 include/postgresql/server/access/itup.h
 include/postgresql/server/access/nbtree.h
 include/postgresql/server/access/printtup.h
@@ -39,7 +36,7 @@ include/postgresql/server/access/rtscan.h
 include/postgresql/server/access/sdir.h
 include/postgresql/server/access/skey.h
 include/postgresql/server/access/slru.h
-include/postgresql/server/access/strat.h
+include/postgresql/server/access/subtrans.h
 include/postgresql/server/access/transam.h
 include/postgresql/server/access/tupdesc.h
 include/postgresql/server/access/tupmacs.h
@@ -47,6 +44,7 @@ include/postgresql/server/access/tuptoaster.h
 include/postgresql/server/access/valid.h
 include/postgresql/server/access/xact.h
 include/postgresql/server/access/xlog.h
+include/postgresql/server/access/xlog_internal.h
 include/postgresql/server/access/xlogdefs.h
 include/postgresql/server/access/xlogutils.h
 include/postgresql/server/bootstrap/
@@ -88,6 +86,7 @@ include/postgresql/server/catalog/pg_proc.h
 include/postgresql/server/catalog/pg_rewrite.h
 include/postgresql/server/catalog/pg_shadow.h
 include/postgresql/server/catalog/pg_statistic.h
+include/postgresql/server/catalog/pg_tablespace.h
 include/postgresql/server/catalog/pg_trigger.h
 include/postgresql/server/catalog/pg_type.h
 include/postgresql/server/catalog/pg_version.h
@@ -108,6 +107,7 @@ include/postgresql/server/commands/proclang.h
 include/postgresql/server/commands/schemacmds.h
 include/postgresql/server/commands/sequence.h
 include/postgresql/server/commands/tablecmds.h
+include/postgresql/server/commands/tablespace.h
 include/postgresql/server/commands/trigger.h
 include/postgresql/server/commands/typecmds.h
 include/postgresql/server/commands/user.h
@@ -153,7 +153,6 @@ include/postgresql/server/getaddrinfo.h
 include/postgresql/server/getopt_long.h
 include/postgresql/server/lib/
 include/postgresql/server/lib/dllist.h
-include/postgresql/server/lib/lispsort.h
 include/postgresql/server/lib/stringinfo.h
 include/postgresql/server/libpq/
 include/postgresql/server/libpq/auth.h
@@ -185,6 +184,7 @@ include/postgresql/server/nodes/primnodes.h
 include/postgresql/server/nodes/print.h
 include/postgresql/server/nodes/readfuncs.h
 include/postgresql/server/nodes/relation.h
+include/postgresql/server/nodes/value.h
 include/postgresql/server/optimizer/
 include/postgresql/server/optimizer/clauses.h
 include/postgresql/server/optimizer/cost.h
@@ -230,6 +230,7 @@ include/postgresql/server/pg_config.h
 include/postgresql/server/pg_config_manual.h
 include/postgresql/server/pg_config_os.h
 include/postgresql/server/pgstat.h
+include/postgresql/server/pgtime.h
 include/postgresql/server/port/
 include/postgresql/server/port.h
 include/postgresql/server/port/aix.h
@@ -240,7 +241,7 @@ include/postgresql/server/port/darwin.h
 include/postgresql/server/port/dgux.h
 include/postgresql/server/port/freebsd.h
 include/postgresql/server/port/hpux.h
-include/postgresql/server/port/irix5.h
+@comment include/postgresql/server/port/irix.h
 include/postgresql/server/port/linux.h
 include/postgresql/server/port/netbsd.h
 include/postgresql/server/port/nextstep.h
@@ -254,7 +255,19 @@ include/postgresql/server/port/svr4.h
 include/postgresql/server/port/ultrix4.h
 include/postgresql/server/port/univel.h
 include/postgresql/server/port/unixware.h
+@comment include/postgresql/server/port/win32/
 include/postgresql/server/port/win32.h
+@comment include/postgresql/server/port/win32/arpa/
+@comment include/postgresql/server/port/win32/arpa/inet.h
+@comment include/postgresql/server/port/win32/dlfcn.h
+@comment include/postgresql/server/port/win32/grp.h
+@comment include/postgresql/server/port/win32/netdb.h
+@comment include/postgresql/server/port/win32/netinet/
+@comment include/postgresql/server/port/win32/netinet/in.h
+@comment include/postgresql/server/port/win32/pwd.h
+@comment include/postgresql/server/port/win32/sys/
+@comment include/postgresql/server/port/win32/sys/socket.h
+@comment include/postgresql/server/port/win32/sys/wait.h
 include/postgresql/server/postgres.h
 include/postgresql/server/postgres_ext.h
 include/postgresql/server/postgres_fe.h
@@ -349,8 +362,8 @@ include/postgresql/server/utils/portal.h
 include/postgresql/server/utils/ps_status.h
 include/postgresql/server/utils/rel.h
 include/postgresql/server/utils/relcache.h
+include/postgresql/server/utils/resowner.h
 include/postgresql/server/utils/selfuncs.h
-include/postgresql/server/utils/sets.h
 include/postgresql/server/utils/syscache.h
 include/postgresql/server/utils/timestamp.h
 include/postgresql/server/utils/tqual.h
@@ -360,7 +373,6 @@ include/postgresql/server/utils/typcache.h
 include/postgresql/server/utils/varbit.h
 lib/postgresql/
 @man man/man1/initdb.1
-@man man/man1/initlocation.1
 @man man/man1/ipcclean.1
 @man man/man1/pg_controldata.1
 @man man/man1/pg_ctl.1
