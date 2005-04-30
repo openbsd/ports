@@ -1,6 +1,6 @@
-$OpenBSD: patch-arpd_c,v 1.2 2002/07/18 15:46:50 naddy Exp $
---- arpd.c.orig	Mon Apr 15 17:42:34 2002
-+++ arpd.c	Tue Jul 16 01:02:56 2002
+$OpenBSD: patch-arpd_c,v 1.3 2005/04/30 12:59:58 alek Exp $
+--- arpd.c.orig	Sun Feb  9 05:20:40 2003
++++ arpd.c	Sat Apr 30 14:45:52 2005
 @@ -22,10 +22,6 @@
  #include <syslog.h>
  #include <unistd.h>
@@ -12,7 +12,7 @@ $OpenBSD: patch-arpd_c,v 1.2 2002/07/18 15:46:50 naddy Exp $
  #include <event.h>
  #include <dnet.h>
  #include "tree.h"
-@@ -156,7 +152,7 @@ arpd_send(eth_t *eth, int op,
+@@ -265,7 +261,7 @@ arpd_send(eth_t *eth, int op,
  	    spa->addr_ip, tha->addr_eth, tpa->addr_ip);
  	
  	if (op == ARP_OP_REQUEST) {
@@ -21,7 +21,7 @@ $OpenBSD: patch-arpd_c,v 1.2 2002/07/18 15:46:50 naddy Exp $
  		    addr_ntoa(tpa), addr_ntoa(spa));
  	} else if (op == ARP_OP_REPLY) {
  		syslog(LOG_INFO, "arp reply %s is-at %s",
-@@ -173,7 +169,7 @@ arpd_lookup(struct addr *addr)
+@@ -282,7 +278,7 @@ arpd_lookup(struct addr *addr)
  	int error;
  
  	if (addr_cmp(addr, &arpd_ifent.intf_addr) == 0) {
@@ -30,7 +30,7 @@ $OpenBSD: patch-arpd_c,v 1.2 2002/07/18 15:46:50 naddy Exp $
  		    addr_ntoa(addr), addr_ntoa(&arpd_ifent.intf_link_addr));
  		return (0);
  	}
-@@ -182,10 +178,10 @@ arpd_lookup(struct addr *addr)
+@@ -291,10 +287,10 @@ arpd_lookup(struct addr *addr)
  	error = arp_get(arpd_arp, &arpent);
  	
  	if (error == -1) {
@@ -43,7 +43,7 @@ $OpenBSD: patch-arpd_c,v 1.2 2002/07/18 15:46:50 naddy Exp $
  		    addr_ntoa(addr), addr_ntoa(&arpent.arp_ha));
  	}
  	return (error);
-@@ -194,9 +190,9 @@ arpd_lookup(struct addr *addr)
+@@ -303,9 +299,9 @@ arpd_lookup(struct addr *addr)
  static void
  arpd_free(struct arp_req *req)
  {
@@ -56,7 +56,7 @@ $OpenBSD: patch-arpd_c,v 1.2 2002/07/18 15:46:50 naddy Exp $
  	free(req);
  }
  
-@@ -222,7 +218,7 @@ arpd_discover(struct arp_req *req, struc
+@@ -331,7 +327,7 @@ arpd_discover(struct arp_req *req, struc
  		arpd_send(arpd_eth, ARP_OP_REQUEST,
  		    &arpd_ifent.intf_link_addr,
  		    &arpd_ifent.intf_addr, &req->ha, &req->pa);
@@ -65,7 +65,7 @@ $OpenBSD: patch-arpd_c,v 1.2 2002/07/18 15:46:50 naddy Exp $
  	}
  	req->cnt++;
  }
-@@ -269,13 +265,13 @@ arpd_recv_cb(u_char *u, const struct pca
+@@ -378,13 +374,13 @@ arpd_recv_cb(u_char *u, const struct pca
  			}
  			memcpy(&req->pa, &tmp.pa, sizeof(tmp.pa));
  
@@ -83,7 +83,7 @@ $OpenBSD: patch-arpd_c,v 1.2 2002/07/18 15:46:50 naddy Exp $
  
  			SPLAY_INSERT(tree, &arpd_reqs, req);
  
-@@ -287,7 +283,7 @@ arpd_recv_cb(u_char *u, const struct pca
+@@ -396,7 +392,7 @@ arpd_recv_cb(u_char *u, const struct pca
  		} else {
  			timerclear(&tv);
  			tv.tv_sec = ARPD_MAX_INACTIVE;
@@ -92,7 +92,7 @@ $OpenBSD: patch-arpd_c,v 1.2 2002/07/18 15:46:50 naddy Exp $
  			
  			if (req->negative) {
  				syslog(LOG_DEBUG, "%s: %s is allocated",
-@@ -314,7 +310,7 @@ arpd_recv_cb(u_char *u, const struct pca
+@@ -423,7 +419,7 @@ arpd_recv_cb(u_char *u, const struct pca
  		if ((req = SPLAY_FIND(tree, &arpd_reqs, &tmp)) != NULL) {
  			addr_pack(&src.arp_ha, ADDR_TYPE_ETH, ETH_ADDR_BITS,
  			    ethip->ar_sha, ETH_ADDR_LEN);
