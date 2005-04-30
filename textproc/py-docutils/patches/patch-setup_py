@@ -1,0 +1,21 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2005/04/30 14:05:56 alek Exp $
+--- setup.py.orig	Thu Mar 31 10:00:29 2005
++++ setup.py	Thu Mar 31 10:00:55 2005
+@@ -42,7 +42,7 @@ what-you-see-is-what-you-get plaintext m
+                  'docutils.readers', 'docutils.readers.python',
+                  'docutils.transforms',
+                  'docutils.writers',],
+-    'scripts' : ['tools/rst2html.py','tools/rst2latex.py'],}
++    'scripts' : ['tools/rst2html','tools/rst2latex'],}
+ """Distutils setup parameters."""
+ 
+ classifiers = [
+@@ -84,6 +84,8 @@ List of (module name, minimum __version_
+ def get_extras():
+     extras = []
+     for module_name, version, attributes in extra_modules:
++        if module_name == "roman":
++            extras.append(module_name)
+         try:
+             module = __import__(module_name)
+             if version and module.__version__ < version:
