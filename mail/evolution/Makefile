@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2005/01/30 14:44:46 robert Exp $
+# $OpenBSD: Makefile,v 1.18 2005/04/30 15:11:11 alek Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 COMMENT-devguide=	"Evolution Developer's Guide"
@@ -26,7 +26,7 @@ WANTLIB=	ICE IIOP ORBit ORBitCosNaming ORBitutil SM X11 Xext Xi \
 		gtk jpeg krb5 m oaf png popt pthread ssl tiff ungif wrap xml z
 
 MASTER_SITES=		${MASTER_SITE_GNOME:S@$@sources/evolution/${V}/@}
-MASTER_SITES0=		${HOMEPAGE}/update/snapshot/
+MASTER_SITES0=		ftp://ftp.sleepycat.com/releases/
 
 DISTFILES=		${DISTNAME}.tar.gz \
 			db-3.1.17.tar.gz:0
