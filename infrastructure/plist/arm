@@ -1,0 +1,54 @@
+# $OpenBSD: arm,v 1.1 2005/04/30 00:08:27 pvalchev Exp $
+# This is the master list of subdirs used to choose arm packages.
+# Use with ${PORTSDIR}/infrastructure/package/check-plist
+# to create actual SUBDIRLIST to pass to ports main Makefile.
+net/rsync
+net/cvsync
+sysutils/mergemaster
+editors/vim,no_x11
+editors/emacs21
+archivers/unzip
+archivers/bzip2
+net/nmap,no_x11
+sysutils/cdrtools
+mail/procmail
+mail/fetchmail
+misc/screen
+graphics/gif2png
+devel/autoconf/2.59
+devel/automake
+books/autobook
+devel/bison
+sysutils/colorls
+archivers/gtar,static
+mail/mutt/stable
+audio/libao,-esd
+audio/vorbis-tools
+audio/mpg321
+net/curl
+net/ircII
+devel/id-utils
+www/konqueror-embedded
+textproc/antiword
+textproc/xpdf
+games/xkobo,harder
+games/xlife
+x11/xglobe
+graphics/mpeg_play
+benchmarks/tcpblast
+www/links+
+graphics/gqview
+net/epic4
+security/bsd-airtools
+editors/abiword
+net/snort
+net/ettercap
+security/stunnel
+net/silc-client
+graphics/xfig
+x11/xautolock
+devel/gmake
+security/dsniff
+net/unison
+# Builds, but disabled for time reasons
+#x11/kde/base3
