@@ -1,0 +1,9 @@
+"netcat++" (extended design, new implementation)
+
+socat is a relay for bidirectional data transfer between two independent
+data channels. Each of these data channels may be a file, pipe, device
+(serial line etc. or a pseudo terminal), a socket (UNIX, IP4, IP6 - raw,
+UDP, TCP), an SSL socket, proxy CONNECT connection, a file descriptor
+(stdin etc.), the GNU line editor (readline), a program, or a
+combination of two of these.  These modes include generation of
+"listening" sockets, mamed pipes, and pseudo terminals.

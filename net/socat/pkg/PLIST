@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/30 13:27:17 alek Exp $
+bin/filan
+bin/procan
+bin/socat
+@man man/man1/socat.1
+share/doc/socat/
+share/doc/socat/FAQ
+share/doc/socat/README
+share/doc/socat/SECURITY
+share/doc/socat/socat.html
+share/doc/socat/xio.help
+share/examples/socat/
+share/examples/socat/EXAMPLES
+share/examples/socat/daemon.sh
+share/examples/socat/ftp.sh
+share/examples/socat/gatherinfo.sh
+share/examples/socat/mail.sh
+share/examples/socat/proxy.sh
+share/examples/socat/proxyecho.sh
+share/examples/socat/readline-test.sh
+share/examples/socat/readline.sh
+share/examples/socat/socks4a-echo.sh
+share/examples/socat/socks4echo.sh
+share/examples/socat/test.sh
+share/examples/socat/testcert.conf
