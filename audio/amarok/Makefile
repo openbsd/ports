@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/15 06:42:39 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/01 20:52:32 espie Exp $
 
 CATEGORIES=	audio x11 x11/kde
 COMMENT=	'music player for kde'
@@ -32,6 +32,7 @@ WANTLIB+=	gtk gmodule gdk glib
 SHARED_ONLY=Yes
 MODULES=	x11/kde
 MODKDE_LIBTOOL=		Yes
+MODKDE_VERSION=		3.4
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
 AUTOCONF=		/bin/sh ${WRKDIST}/admin/cvs.sh configure
@@ -42,7 +43,8 @@ MAKE_ENV=		${CONFIGURE_ENV}
 MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}
 MAKE_FLAGS+=		LIBRESOLV=
 
-BUILD_DEPENDS=		::devel/pkgconfig
+BUILD_DEPENDS=		::devel/pkgconfig \
+			::devel/gstreamer-plugins
 
 
 PERMIT_DISTFILES_FTP=Yes
