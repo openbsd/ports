@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.79 2005/03/31 04:23:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.80 2005/05/01 07:51:28 robert Exp $
 
 COMMENT=	"image processing tools"
 
-VER=		6.2.0
-DASHVER=	8
+VER=		6.2.2
+DASHVER=	0
 DISTNAME=	ImageMagick-${VER}-${DASHVER}
 CATEGORIES=	graphics
 
