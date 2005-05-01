@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/07 00:23:22 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/05/01 18:33:05 alek Exp $
 
 COMMENT=	"SGML parser and entity manager"
 
-DISTNAME=	lq-sp-1.3.4.10
+DISTNAME=	lq-sp-1.3.4.12
 CATEGORIES=	textproc
 HOMEPAGE=	http://www.htmlhelp.com/tools/validator/offline/
 
