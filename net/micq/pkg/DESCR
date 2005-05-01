@@ -5,6 +5,3 @@ been rewritten by Ruediger Kuhlmann, in particular the support for the
 new version 8 of the ICQ protocol that became necessary, the
 internationalization, the file transfer and some restructuring of the
 code.
-
-Flavors:
-	ssl - build with SSL support.
