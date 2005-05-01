@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2005/04/17 19:36:46 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2005/05/01 21:28:49 sturm Exp $
 # Original from: Jorge A. Cortes Montiel <jcortes@bsdcoders.org>
 
 COMMENT=	"easy-to-use, robust, and highly configurable VPN"
 
-VERSION=	1.6.0
+VERSION=	2.0
 DISTNAME=	openvpn-${VERSION}
 CATEGORIES=	net security
 
-HOMEPAGE=	http://openvpn.sourceforge.net/
+HOMEPAGE=	http://openvpn.net/
 
 MAINTAINER=	Thomas Delaet <thomas@delaet.org>	
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto ssl 
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openvpn/}
+MASTER_SITES=	${HOMEPAGE}/release/
 
 LIB_DEPENDS=	lzo::archivers/lzo
 
@@ -41,6 +41,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/sample-scripts
 	@perl -pi -e 's,#!/bin/bash,#!/bin/sh,g' ${WRKSRC}/easy-rsa/*
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/easy-rsa
+	@rm -rf ${WRKSRC}/easy-rsa/Windows
 	${INSTALL_DATA} ${WRKSRC}/sample-config-files/* ${SAMPLES_DIR}/sample-config-files/
 	${INSTALL_DATA} ${WRKSRC}/sample-keys/* ${SAMPLES_DIR}/sample-keys/
 	${INSTALL_DATA} ${WRKSRC}/sample-scripts/* ${SAMPLES_DIR}/sample-scripts/
