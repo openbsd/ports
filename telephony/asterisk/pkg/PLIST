@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/05/01 02:12:47 jcs Exp $
 include/asterisk/
 include/asterisk/acl.h
 include/asterisk/adsi.h
@@ -61,6 +61,7 @@ lib/asterisk/modules/
 @man man/man8/asterisk.8
 sbin/asterisk
 sbin/astgenkey
+sbin/autosupport
 sbin/safe_asterisk
 share/asterisk/
 @comment share/asterisk/firmware/
@@ -266,6 +267,7 @@ share/asterisk/sounds/privacy-thankyou.gsm
 share/asterisk/sounds/privacy-unident.gsm
 share/asterisk/sounds/queue-callswaiting.gsm
 share/asterisk/sounds/queue-holdtime.gsm
+share/asterisk/sounds/queue-less-than.gsm
 share/asterisk/sounds/queue-minutes.gsm
 share/asterisk/sounds/queue-seconds.gsm
 share/asterisk/sounds/queue-thankyou.gsm
@@ -348,6 +350,7 @@ share/asterisk/sounds/vm-saved.gsm
 share/asterisk/sounds/vm-savedto.gsm
 share/asterisk/sounds/vm-savefolder.gsm
 share/asterisk/sounds/vm-savemessage.gsm
+share/asterisk/sounds/vm-saveoper.gsm
 share/asterisk/sounds/vm-sorry.gsm
 share/asterisk/sounds/vm-star-cancel.gsm
 share/asterisk/sounds/vm-starmain.gsm
@@ -419,6 +422,7 @@ share/examples/asterisk/default/festival.conf.sample
 share/examples/asterisk/default/iax.conf.sample
 share/examples/asterisk/default/iaxprov.conf.sample
 share/examples/asterisk/default/indications.conf.sample
+@sample ${SYSCONFDIR}/asterisk/indications.conf
 share/examples/asterisk/default/logger.conf.sample
 share/examples/asterisk/default/manager.conf.sample
 share/examples/asterisk/default/meetme.conf.sample

@@ -1,6 +1,6 @@
-$OpenBSD: patch-apps_app_sms_c,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
---- apps/app_sms.c.orig	Tue Aug 31 08:32:11 2004
-+++ apps/app_sms.c	Thu Sep 23 13:51:14 2004
+$OpenBSD: patch-apps_app_sms_c,v 1.2 2005/05/01 02:12:47 jcs Exp $
+--- apps/app_sms.c.orig	Sun Oct 24 16:26:29 2004
++++ apps/app_sms.c	Sun Mar 20 21:32:37 2005
 @@ -24,6 +24,7 @@
  #include <unistd.h>
  #include <errno.h>
@@ -8,4 +8,4 @@ $OpenBSD: patch-apps_app_sms_c,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
 +#include <sys/stat.h>
  #include <dirent.h>
  #include <ctype.h>
- 
+ #include "../astconf.h"

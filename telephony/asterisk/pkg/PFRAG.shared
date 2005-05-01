@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/05/01 02:12:47 jcs Exp $
 lib/asterisk/modules/app_adsiprog.so
 lib/asterisk/modules/app_alarmreceiver.so
 lib/asterisk/modules/app_authenticate.so
@@ -15,6 +15,7 @@ lib/asterisk/modules/app_enumlookup.so
 lib/asterisk/modules/app_eval.so
 lib/asterisk/modules/app_exec.so
 lib/asterisk/modules/app_festival.so
+lib/asterisk/modules/app_forkcdr.so
 lib/asterisk/modules/app_getcpeid.so
 lib/asterisk/modules/app_groupcount.so
 lib/asterisk/modules/app_hasnewvoicemail.so
