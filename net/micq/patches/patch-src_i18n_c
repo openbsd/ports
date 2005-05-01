@@ -1,15 +1,6 @@
-$OpenBSD: patch-src_i18n_c,v 1.3 2005/05/01 17:25:26 david Exp $
+$OpenBSD: patch-src_i18n_c,v 1.4 2005/05/01 22:47:28 david Exp $
 --- src/i18n.c.orig	Wed Apr 27 14:57:14 2005
 +++ src/i18n.c	Sun May  1 12:18:07 2005
-@@ -26,7 +26,7 @@
-  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
-  * 02111-1307, USA.
-  *
-- * $Id: patch-src_i18n_c,v 1.3 2005/05/01 17:25:26 david Exp $
-+ * $Id: patch-src_i18n_c,v 1.3 2005/05/01 17:25:26 david Exp $
-  */
- 
- #include "micq.h"
 @@ -110,12 +110,12 @@ void i18nInit (const char *arg)
              earg = getenv ("LC_MESSAGES");
          if (!earg)
