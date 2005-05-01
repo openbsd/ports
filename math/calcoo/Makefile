@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/27 07:16:44 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2005/05/01 18:34:14 naddy Exp $
 
-COMMENT=	"Gtk-based scientific calculator"
+COMMENT=	"RPN and algebraic scientific calculator"
 
-DISTNAME=	calcoo-1.3.15
+DISTNAME=	calcoo-1.3.16
 CATEGORIES=	math
 HOMEPAGE=	http://calcoo.sourceforge.net/
 
@@ -13,12 +13,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=calcoo/} \
-			http://www.physics.umn.edu/~kaminski/calcoo/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=calcoo/} \
+		http://www.physics.umn.edu/~kaminski/calcoo/
 
-LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+
+WANTLIB=	X11 Xcursor Xext Xft Xinerama Xrender \
+		c fontconfig freetype m atk-1.0.800.0 \
+		glib-2.0.400.0 gmodule-2.0.400.0 gobject-2.0.400.0 iconv intl \
+		pango-1.0.600.0 pangox-1.0.600.0 pangoxft-1.0.600.0
+
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
+LIB_DEPENDS=	gdk_pixbuf-2.0.400.0,gdk-x11-2.0.400.0,gtk-x11-2.0.400.0::x11/gtk+2
 
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
