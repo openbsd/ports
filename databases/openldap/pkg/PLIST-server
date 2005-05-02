@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-server,v 1.8 2005/03/22 09:13:48 jakob Exp $
+@comment $OpenBSD: PLIST-server,v 1.9 2005/05/02 12:19:51 jakob Exp $
+@newgroup _openldap:544
+@newuser _openldap:544:_openldap:daemon:OpenLDAP Account:/nonexistent:/sbin/nologin
 libexec/slapd
 libexec/slurpd
 @man man/man5/slapd-bdb.5
