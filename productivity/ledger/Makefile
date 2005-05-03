@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/30 14:46:50 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/03 08:54:44 alek Exp $
 
 COMMENT=	"command line double-entry accounting ledger"
 
@@ -27,8 +27,8 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_FALGS=--disalbe-xml \
-		--enable-ofx
+CONFIGURE_ARGS=	--disable-xml \
+		--disable-ofx
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ledger
