@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2005/04/09 17:04:17 alek Exp $
+# $OpenBSD: Makefile,v 1.52 2005/05/03 04:33:24 sturm Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
@@ -20,7 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c ncurses readline
 
-MASTER_SITES=	http://us2.samba.org/samba/ftp/
+MASTER_SITES=	http://us2.samba.org/samba/ftp/ \
+		http://us2.samba.org/samba/ftp/old-versions/
 
 MODULES= 	converters/libiconv
 
