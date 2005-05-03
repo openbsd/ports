@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2004/07/26 10:13:28 peter Exp $
+# $OpenBSD: Makefile,v 1.37 2005/05/03 17:05:45 msf Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"access to PostgreSQL databases through the DBI"
 
-VERSION=	1.32
+VERSION=	1.41
 DISTNAME=	DBD-Pg-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
@@ -21,7 +21,7 @@ FLAVORS=	regress
 MAKE_ENV+=	DBI_DSN="dbi:Pg:dbname=template1" DBI_USER="_postgresql" DBI_PASS=""
 .endif
 
-MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
+MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org> 
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
