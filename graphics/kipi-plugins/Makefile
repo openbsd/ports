@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/09 22:36:02 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/03 21:51:46 espie Exp $
 
 COMMENT=		"kde image plugins"
 CATEGORIES=		graphics x11 x11/kde
@@ -23,6 +23,7 @@ WANTLIB=	X11 Xext freetype util m c ICE Xrender SM pthread z GL stdc++ \
 MODKDE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
+MODKDE_VERSION=		3.4
 AUTOCONF=		/bin/sh ${WRKDIST}/admin/cvs.sh configure
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
 USE_GMAKE?=		Yes
