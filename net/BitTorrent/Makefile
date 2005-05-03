@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2005/04/21 22:17:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2005/05/03 09:47:59 alek Exp $
 
 COMMENT=	"cooperative file distribution system implemented in Python"
 DISTNAME=	BitTorrent-4.0.1
-PKGNAME=	BitTorrent-4.0.1p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}dl/
 
@@ -18,10 +18,17 @@ MODULES=	lang/python
 
 NO_REGRESS=	Yes
 
+SCRIPTS=	btdownloadcurses btdownloadheadless btlaunchmany \
+		btlaunchmanycurses btmaketorrent btreannounce \
+		btrename btshowmetainfo bttrack
+
 post-configure:
 	@perl -pi -e \
 		's,/usr/bin/env python,/usr/bin/env python${MODPY_VERSION},g' \
 	${WRKBUILD}/bt*.py	
+.for file in ${SCRIPTS}
+	@mv ${WRKBUILD}/${file}.py ${WRKBUILD}/${file}
+.endfor
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/BitTorrent

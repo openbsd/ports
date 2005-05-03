@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/04/16 21:13:02 sturm Exp $
-bin/btdownloadcurses.py
-bin/btdownloadheadless.py
-bin/btlaunchmany.py
-bin/btlaunchmanycurses.py
-bin/btmaketorrent.py
-bin/btreannounce.py
-bin/btrename.py
-bin/btshowmetainfo.py
-bin/bttrack.py
+@comment $OpenBSD: PLIST,v 1.5 2005/05/03 09:48:00 alek Exp $
+bin/btdownloadcurses
+bin/btdownloadheadless
+bin/btlaunchmany
+bin/btlaunchmanycurses
+bin/btmaketorrent
+bin/btreannounce
+bin/btrename
+bin/btshowmetainfo
+bin/bttrack
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/Choker.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/Choker.pyc
@@ -19,12 +19,16 @@ lib/python${MODPY_VERSION}/site-packages/BitTorrent/ConvertedMetainfo.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/ConvertedMetainfo.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/CurrentRateMeasure.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/CurrentRateMeasure.pyc
+@comment lib/python${MODPY_VERSION}/site-packages/BitTorrent/Desktop.py
+@comment lib/python${MODPY_VERSION}/site-packages/BitTorrent/Desktop.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/Downloader.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/Downloader.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/DownloaderFeedback.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/DownloaderFeedback.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/Encoder.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/Encoder.pyc
+@comment lib/python${MODPY_VERSION}/site-packages/BitTorrent/GUI.py
+@comment lib/python${MODPY_VERSION}/site-packages/BitTorrent/GUI.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/HTTPHandler.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/HTTPHandler.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/NatCheck.py
@@ -84,5 +88,25 @@ lib/python${MODPY_VERSION}/site-packages/BitTorrent/track.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/zurllib.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/zurllib.pyc
 share/doc/BitTorrent/
+@comment share/doc/BitTorrent-4.0.1/
+@comment share/doc/BitTorrent-4.0.1/LICENSE.txt
+@comment share/doc/BitTorrent-4.0.1/README.txt
+@comment share/doc/BitTorrent-4.0.1/credits.txt
+@comment share/doc/BitTorrent-4.0.1/redirdonate.html
 share/doc/BitTorrent/README.OpenBSD
 share/doc/BitTorrent/README.txt
+@comment share/pixmaps/
+@comment share/pixmaps/BitTorrent-4.0.1/
+@comment share/pixmaps/BitTorrent-4.0.1/bittorrent.ico
+@comment share/pixmaps/BitTorrent-4.0.1/broken.png
+@comment share/pixmaps/BitTorrent-4.0.1/finished.png
+@comment share/pixmaps/BitTorrent-4.0.1/info.png
+@comment share/pixmaps/BitTorrent-4.0.1/logo/
+@comment share/pixmaps/BitTorrent-4.0.1/logo/bittorrent_32.png
+@comment share/pixmaps/BitTorrent-4.0.1/logo/bittorrent_96.png
+@comment share/pixmaps/BitTorrent-4.0.1/pause.png
+@comment share/pixmaps/BitTorrent-4.0.1/paused.png
+@comment share/pixmaps/BitTorrent-4.0.1/play.png
+@comment share/pixmaps/BitTorrent-4.0.1/queued.png
+@comment share/pixmaps/BitTorrent-4.0.1/remove.png
+@comment share/pixmaps/BitTorrent-4.0.1/running.png
