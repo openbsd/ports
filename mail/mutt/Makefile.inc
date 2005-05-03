@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2005/03/06 01:44:20 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2005/05/03 15:37:16 jolan Exp $
 
 DISTNAME=	mutt-${VERSION}i
 CATEGORIES=	mail
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c crypto des gssapi krb5 ssl
+WANTLIB=	c crypto des ssl
 
 FLAVORS+=	slang mixmaster compressed
 FLAVOR?=
@@ -35,8 +35,12 @@ CONFIGURE_ARGS=	--with-sharedir="${PREFIX}/share/mutt" \
 		--enable-imap \
 		--enable-pop \
 		--with-ssl \
-		--with-gss \
 		--sysconfdir=${CONFDIR}
+
+.if ${KERBEROS5} == "yes"
+CONFIGURE_ARGS+=--with-gss
+WANTLIB+=	gssapi krb5
+.endif
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
