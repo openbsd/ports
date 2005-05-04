@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2005/04/30 14:09:28 alek Exp $
+# $OpenBSD: Makefile,v 1.135 2005/05/04 20:44:12 xsa Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -120,6 +120,7 @@
      SUBDIR += py-docutils
      SUBDIR += py-feedparser
      SUBDIR += py-jaxml
+     SUBDIR += py-rtf
      SUBDIR += py-xml
      SUBDIR += rman
      SUBDIR += rxp
