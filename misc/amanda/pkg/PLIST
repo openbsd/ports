@@ -1,5 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/09/24 08:43:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2005/05/04 17:08:24 sturm Exp $
 @conflict amanda-client-*
+lib/libamanda.a
+@comment lib/libamanda.la
+lib/libamclient.a
+@comment lib/libamclient.la
+lib/libamserver.a
+@comment lib/libamserver.la
+lib/libamtape.a
+@comment lib/libamtape.la
 libexec/amanda/
 libexec/amanda/amandad
 libexec/amanda/amcat.awk
@@ -10,14 +18,21 @@ libexec/amanda/amlogroll
 libexec/amanda/amplot.awk
 libexec/amanda/amplot.g
 libexec/amanda/amplot.gp
+libexec/amanda/amqde
 libexec/amanda/amtrmidx
 libexec/amanda/amtrmlog
 libexec/amanda/calcsize
 libexec/amanda/chg-chio
 libexec/amanda/chg-chs
+libexec/amanda/chg-disk
+libexec/amanda/chg-iomega
+libexec/amanda/chg-juke
 libexec/amanda/chg-manual
+libexec/amanda/chg-mcutil
 libexec/amanda/chg-mtx
 libexec/amanda/chg-multi
+libexec/amanda/chg-null
+libexec/amanda/chg-rait
 libexec/amanda/chg-rth
 libexec/amanda/chg-scsi
 libexec/amanda/chg-zd-mtx
@@ -38,10 +53,12 @@ libexec/amanda/versionsuffix
 @man man/man8/amcheck.8
 @man man/man8/amcheckdb.8
 @man man/man8/amcleanup.8
+@man man/man8/amdd.8
 @man man/man8/amdump.8
 @man man/man8/amflush.8
 @man man/man8/amgetconf.8
 @man man/man8/amlabel.8
+@man man/man8/ammt.8
 @man man/man8/amoverview.8
 @man man/man8/amplot.8
 @man man/man8/amrecover.8
@@ -50,16 +67,20 @@ libexec/amanda/versionsuffix
 @man man/man8/amrmtape.8
 @man man/man8/amstatus.8
 @man man/man8/amtape.8
+@man man/man8/amtapetype.8
 @man man/man8/amtoc.8
 @man man/man8/amverify.8
+@man man/man8/amverifyrun.8
 sbin/amadmin
 sbin/amcheck
 sbin/amcheckdb
 sbin/amcleanup
+sbin/amdd
 sbin/amdump
 sbin/amflush
 sbin/amgetconf
 sbin/amlabel
+sbin/ammt
 sbin/amoverview
 sbin/amplot
 sbin/amrecover
@@ -68,14 +89,22 @@ sbin/amrestore
 sbin/amrmtape
 sbin/amstatus
 sbin/amtape
+sbin/amtapetype
 sbin/amtoc
 sbin/amverify
+sbin/amverifyrun
 share/doc/amanda/
 share/doc/amanda/AUTHORS
 share/doc/amanda/COPYRIGHT
 share/doc/amanda/COPYRIGHT-REGEX
+share/doc/amanda/COPYRIGHT-APACHE
+share/doc/amanda/ChangeLog
 share/doc/amanda/DUMPER-API
+share/doc/amanda/EXCLUDE
 share/doc/amanda/FAQ
+share/doc/amanda/HOWTO-AFS
+share/doc/amanda/HOWTO-CYGWIN.html
+share/doc/amanda/HOWTO-FILE-DRIVER
 share/doc/amanda/INDEXING
 share/doc/amanda/INSTALL
 share/doc/amanda/INTERNALS
@@ -84,6 +113,8 @@ share/doc/amanda/LABEL.PRINTING
 share/doc/amanda/MULTITAPE
 share/doc/amanda/NEWS
 share/doc/amanda/README
+share/doc/amanda/PORT.USAGE
+share/doc/amanda/RAIT
 share/doc/amanda/RESTORE
 share/doc/amanda/SAMBA
 share/doc/amanda/SECURITY
@@ -91,13 +122,13 @@ share/doc/amanda/SYSTEM.NOTES
 share/doc/amanda/TAPE.CHANGERS
 share/doc/amanda/TAPETYPES
 share/doc/amanda/UPGRADE
+share/doc/amanda/VTAPE-API
 share/doc/amanda/WHATS.NEW
 share/doc/amanda/WISHLIST
 share/doc/amanda/YEAR2000
 share/doc/amanda/ZFTAPE
+share/doc/amanda/chg-scsi.notes
 share/examples/amanda/
-@sample ${SYSCONFDIR}/amanda/
-@sample ${SYSCONFDIR}/amanda/csd/
 share/examples/amanda/3hole.ps
 share/examples/amanda/8.5x11.ps
 share/examples/amanda/DIN-A4.ps
@@ -105,8 +136,8 @@ share/examples/amanda/DLT.ps
 share/examples/amanda/EXB-8500.ps
 share/examples/amanda/HP-DAT.ps
 share/examples/amanda/amanda.conf
-@sample ${SYSCONFDIR}/amanda/csd/amanda.conf
 share/examples/amanda/amanda.conf.chg-scsi
+share/examples/amanda/chg-mcutil.conf
 share/examples/amanda/chg-multi.conf
 share/examples/amanda/chg-scsi-hpux.conf
 share/examples/amanda/chg-scsi-linux.conf
@@ -114,7 +145,6 @@ share/examples/amanda/chg-scsi-solaris.conf
 share/examples/amanda/chg-scsi.conf
 share/examples/amanda/crontab.sample
 share/examples/amanda/disklist
-@sample ${SYSCONFDIR}/amanda/csd/disklist
 share/examples/amanda/amandates
 @owner operator
 @group operator

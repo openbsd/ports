@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.27 2005/04/06 00:19:10 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.28 2005/05/04 17:08:24 sturm Exp $
 
 COMMENT=	"network-capable tape backup (client and tape server)"
 COMMENT-client=	"network-capable tape backup (client only)"
 
-DISTVERSION=	2.4.2p2
+DISTVERSION=	2.4.4p4
 
-# 2.4.2p2 is problematical as a package name, because we have been
+# 2.4.4p4 is problematical as a package name, because we have been
 # marking OpenBSD package revisions with a "pX" suffix.
-PKGVERSION=	${DISTVERSION:S/p/./}p0
+PKGVERSION=	${DISTVERSION:S/p/./}
 
 DISTNAME=	amanda-${DISTVERSION}
 
@@ -18,7 +18,7 @@ CATEGORIES=	misc
 
 HOMEPAGE=	http://www.amanda.org/
 
-MAINTAINER=	Tom Schutter <t.schutter@att.net>
+MAINTAINER=	Olivier Cherrier <oc@symacx.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,8 +27,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m readline termcap
 
-MASTER_SITES=	ftp://ftp.amanda.org/pub/amanda/ \
-		${MASTER_SITE_SOURCEFORGE:=amanda/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=amanda/}
 
 # Amanda configure looks for gtar and smbclient so that it can hard-code
 # the pathnames.
@@ -43,17 +42,9 @@ BUILD_DEPENDS+= :gtar-*:archivers/gtar \
 # Amanda will gracefully tell them what is required.
 
 MULTI_PACKAGES=	-client
+SUBPACKAGE?=
 
-# 2.4.2 exposed a bug in BSD make.
-# Please see http://www.egroups.com/message/amanda-hackers/2333 (and
-# following thread).
-#
-# (Summary:  yes; appears to be a problem with FreeBSD make; see
-# http://www.FreeBSD.org/cgi/query-pr.cgi?pr=23328 for that part.  A
-# circumvention is to hack the Makefiles; another is to use gmake.)
-USE_GMAKE=	Yes
-
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=		gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 
 # Because Amanda does not conform to shared library naming standards,
@@ -75,9 +66,10 @@ EXAMPLE_DIR=	${PREFIX}/share/examples/amanda
 post-install:
 	@cd ${WRKSRC}; \
 	  ${INSTALL_DATA_DIR} ${DOC_DIR}; \
-          ${INSTALL_DATA} AUTHORS ${DOC_DIR}; \
-          ${INSTALL_DATA} NEWS ${DOC_DIR}; \
-          ${INSTALL_DATA} README ${DOC_DIR}; \
+	  ${INSTALL_DATA} AUTHORS ${DOC_DIR}; \
+	  ${INSTALL_DATA} NEWS ${DOC_DIR}; \
+	  ${INSTALL_DATA} README ${DOC_DIR}; \
+	  ${INSTALL_DATA} ChangeLog ${DOC_DIR}; \
 	  mv ${OLD_DOC_DIR}/* ${DOC_DIR}; \
 	  rmdir ${OLD_DOC_DIR}; \
 	  ${INSTALL_DATA_DIR} ${EXAMPLE_DIR}; \

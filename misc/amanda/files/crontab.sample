@@ -1,3 +1,6 @@
-# $OpenBSD: crontab.sample,v 1.1 2001/05/12 16:41:09 naddy Exp $
-0 16 * * 1-5 /usr/local/bin/amcheck -m csd
-45 0 * * 2-6 /usr/local/bin/amdump csd
+# $OpenBSD: crontab.sample,v 1.2 2005/05/04 17:08:24 sturm Exp $
+#
+# Here is a sample crontab file for the operator user
+#
+0 16 * * 1-5 /usr/local/bin/amcheck -m your_config
+45 0 * * 2-6 /usr/local/bin/amdump your_config

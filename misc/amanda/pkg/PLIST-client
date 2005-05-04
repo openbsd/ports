@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-client,v 1.5 2004/09/24 08:43:19 espie Exp $
+@comment $OpenBSD: PLIST-client,v 1.6 2005/05/04 17:08:24 sturm Exp $
 @conflict amanda-*
 libexec/amanda/
 libexec/amanda/amandad
@@ -20,6 +20,7 @@ share/doc/amanda/
 share/doc/amanda/AUTHORS
 share/doc/amanda/COPYRIGHT
 share/doc/amanda/COPYRIGHT-REGEX
+share/doc/amanda/COPYRIGHT-APACHE
 share/doc/amanda/NEWS
 share/doc/amanda/README
 share/examples/amanda/

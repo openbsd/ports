@@ -1,5 +1,7 @@
 Amanda: Advanced Maryland Automatic Network Disk Archiver.
 
+This is the client part of the network disk archiver.
+
 Amanda is a backup system designed to archive many computers on a network
 to a single large-capacity tape drive.  It is built on top of standard
 backup software: Unix dump/restore, GNU Tar and others, so it possible to

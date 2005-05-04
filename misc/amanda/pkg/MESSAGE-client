@@ -16,3 +16,6 @@ The permissions of /operator/.amandahosts must be restricted:
 
    chmod u=rw /operator/.amandahosts
    chown operator:operator /operator/.amandahosts
+
+Sample configuration files have been installed in
+${PREFIX}/share/examples/amanda.
