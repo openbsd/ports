@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2005/05/04 07:51:17 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2005/05/04 14:43:29 naddy Exp $
 
 COMMENT=	"ftp replacement with advanced user interface"
 
@@ -27,6 +27,9 @@ PATCH_DIST_STRIP=-p1
 CONFIGURE_STYLE=gnu dest
 CONFIGURE_ENV=	TAR=/bin/tar
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/sh
+
+# configure script switches to /usr/local/share/man if there's a
+# /usr/local/share around, so enforce /usr/local/man manually.
 CONFIGURE_ARGS+=--mandir='$${DESTDIR}${PREFIX}/man'
 
 NO_REGRESS=	Yes
