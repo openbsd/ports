@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/04 20:43:12 xsa Exp $
+lib/python${MODPY_VERSION}/site-packages/PyRTF/
+lib/python${MODPY_VERSION}/site-packages/PyRTF/Constants.py
+lib/python${MODPY_VERSION}/site-packages/PyRTF/Constants.pyc
+lib/python${MODPY_VERSION}/site-packages/PyRTF/Elements.py
+lib/python${MODPY_VERSION}/site-packages/PyRTF/Elements.pyc
+lib/python${MODPY_VERSION}/site-packages/PyRTF/PropertySets.py
+lib/python${MODPY_VERSION}/site-packages/PyRTF/PropertySets.pyc
+lib/python${MODPY_VERSION}/site-packages/PyRTF/Renderer.py
+lib/python${MODPY_VERSION}/site-packages/PyRTF/Renderer.pyc
+lib/python${MODPY_VERSION}/site-packages/PyRTF/Styles.py
+lib/python${MODPY_VERSION}/site-packages/PyRTF/Styles.pyc
+lib/python${MODPY_VERSION}/site-packages/PyRTF/__init__.py
+lib/python${MODPY_VERSION}/site-packages/PyRTF/__init__.pyc
+share/doc/py-rtf/
+share/doc/py-rtf/README
+share/examples/py-rtf/
+share/examples/py-rtf/examples.py
+share/examples/py-rtf/merged_cells.py
