@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/03/10 06:25:38 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2005/05/04 08:49:36 espie Exp $
 
 COMMENT=	"Soundscope for GkrellM2 using ESD"
 
@@ -15,6 +15,8 @@ LIB_DEPENDS+=	esd::audio/esound \
 CFLAGS+=	-DHAVE_FFTW2
 
 PLUGIN=		${WRKSRC}/src/gkrellmss.so
+CONFIGURE_STYLE=	gnu
+WRKCONF=${WRKSRC}/src
 
 EXTRA_WANTLIB=	audiofile
 
