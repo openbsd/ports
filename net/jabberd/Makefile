@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2005/05/03 09:55:01 alek Exp $
+# $OpenBSD: Makefile,v 1.13 2005/05/05 06:59:28 jakob Exp $
 
 COMMENT=		"jabber server"
 DISTNAME=		jabberd-2.0s8
@@ -25,19 +25,34 @@ EXAMPLES=		${PREFIX}/share/examples/jabberd
 SUBST_VARS=		CONFIG_DIR EXAMPLES \
 			JABBERDUSER JABBERDGROUP JABBERDDIR
 
-LIB_DEPENDS=		lib/mysql/mysqlclient.10::databases/mysql
+FLAVORS=		mysql ldap
+FLAVOR?=		mysql
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--localstatedir=/var \
 			--enable-ssl \
 			--disable-idn \
 			--with-extra-include-path=${LOCALBASE}/include \
-			--with-extra-library-path=${LOCALBASE}/lib \
+			--with-extra-library-path=${LOCALBASE}/lib
 
-# MySQL backend
-CONFIGURE_ARGS+=	--enable-mysql \
-			--with-extra-include-path=${LOCALBASE}/include/mysql \
-			--with-extra-library-path=${LOCALBASE}/lib/mysql
+.if ${FLAVOR:L:Mmysql}
+BUILD_DEPENDS+=		::databases/mysql,-server
+LIB_DEPENDS+=		lib/mysql/mysqlclient.10::databases/mysql
+CONFIGURE_ARGS+=	--enable-mysql
+.else
+CONFIGURE_ARGS+=	--disable-mysql
+.endif
+
+.if ${FLAVOR:L:Mldap}
+LIB_DEPENDS+=		ldap.2,lber:openldap-client-2.*:databases/openldap
+CONFIGURE_ARGS+=	--enable-ldap
+.else
+CONFIGURE_ARGS+=	--disable-ldap
+.endif
+
+.if ! ${FLAVOR:L:Mmysql}
+BROKEN=			"You need to select least one storage driver"
+.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/jabberd ${PREFIX}/sbin
