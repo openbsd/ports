@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2005/03/30 02:53:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.153 2005/05/05 06:55:53 djm Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -38,6 +38,7 @@
      SUBDIR += gnutls
      SUBDIR += gpa
      SUBDIR += gpgme
+     SUBDIR += gzsig
      SUBDIR += hlfl
      SUBDIR += hs-crypto
      SUBDIR += hydra
