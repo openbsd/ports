@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2004/12/27 13:28:35 alek Exp $
+# $OpenBSD: Makefile,v 1.35 2005/05/05 08:39:55 fgsch Exp $
 
 COMMENT=	"Pretty Good Privacy 5.0i (world wide use)"
 
@@ -6,19 +6,12 @@ DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
-		ftp://ftp.at.pgpi.com/pub/pgpi/5.0/unix/ \
-		ftp://ftp.cz.pgpi.com/pub/pgpi/5.0/unix/ \
-		ftp://ftp.dk.pgpi.com/pub/pgpi/5.0/unix/ \
-		ftp://ftp.fi.pgpi.com/pub/pgpi/5.0/unix/ \
-		ftp://ftp.de.pgpi.com/pub/pgpi/5.0/unix/ \
-		ftp://ftp.jp.pgpi.com/pub/pgpi/5.0/unix/ \
-		ftp://ftp.kr.pgpi.com/pub/security/pgp/5.0/unix/ \
+		ftp://ftp.cz.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.nl.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.pl.pgpi.com/pub/pgpi/5.0/unix/ \
 		ftp://ftp.ru.pgpi.com/pub/pgp/5.0/unix/ \
-		ftp://ftp.es.pgpi.com/pub/pgp/5.0/unix/ \
-		ftp://ftp.se.pgpi.com/pub/pgp/5.0/unix/ \
-		ftp://ftp.ch.pgpi.com/pub/pgp/5.0/unix/
+		ftp://ftp.ch.pgpi.com/pub/pgp/5.0/unix/ \
+		ftp://ftp.hu.pgpi.com/pub/pgpi/5.0/unix/
 
 HOMEPAGE=	http://www.pgpi.com
 
