@@ -1,6 +1,6 @@
-$OpenBSD: patch-tunip_c,v 1.1 2005/03/08 06:38:08 sturm Exp $
+$OpenBSD: patch-tunip_c,v 1.2 2005/05/05 10:54:48 sturm Exp $
 --- tunip.c.orig	Wed Nov 17 21:23:43 2004
-+++ tunip.c	Mon Mar  7 23:10:23 2005
++++ tunip.c	Wed May  4 20:25:47 2005
 @@ -87,8 +87,8 @@ struct sa_desc {
  	unsigned char use_fallback; /* use initial address as fallback? */
  	unsigned char use_dest; /* is dest address known yet? */
@@ -93,7 +93,23 @@ $OpenBSD: patch-tunip_c,v 1.1 2005/03/08 06:38:08 sturm Exp $
  }
  
  int encap_esp_recv_peer(struct encap_method *encap, struct peer_desc *peer)
-@@ -838,7 +838,7 @@ static void vpnc_main_loop(struct peer_d
+@@ -686,6 +686,7 @@ int encap_esp_recv_peer(struct encap_met
+ 	/* Handle optional authentication field */
+ 	if (peer->local_sa->md_algo) {
+ 		len -= 12; /*gcry_md_get_algo_dlen(peer->local_sa->md_algo); */
++		encap->buflen -= 12;
+ 		if (hmac_compute(peer->local_sa->md_algo,
+ 				encap->buf + encap->bufpayload,
+ 				encap->fixed_header_size + encap->var_header_size + len,
+@@ -748,6 +749,7 @@ int encap_esp_recv_peer(struct encap_met
+ 	printf("pad len: %d, next_header: %d\n", padlen, next_header);
+ #endif
+ 	len -= padlen + 2;
++	encap->buflen -= padlen + 2;
+ 
+ 	/* Check padding */
+ 	pad = encap->buf + encap->bufpayload
+@@ -838,7 +840,7 @@ static void vpnc_main_loop(struct peer_d
  				char addr1[16];
  				strcpy(addr1, inet_ntoa(peer->remote_sa->dest.sin_addr));
  				syslog(LOG_NOTICE,

@@ -1,14 +1,15 @@
 #! /bin/sh
 
-# $OpenBSD: vpnc.sh,v 1.2 2004/06/29 19:45:46 sturm Exp $
+# $OpenBSD: vpnc.sh,v 1.3 2005/05/05 10:54:48 sturm Exp $
 
 TUN_IF=tun0
+PHYS_IF=wi0
 PREFIX=%%PREFIX%%
 VPNGATEWAY=192.168.0.1
 
 case "$1" in
 start)
-	dhclient wi0
+	dhclient ${PHYS_IF}
 	DEFAULTROUTER=`route -n show -inet | grep default | awk '{ print $2 }'`
 	${PREFIX}/sbin/vpnc || exit 1
 	TUN_IP=`ifconfig ${TUN_IF} | grep netmask | awk '{ print $2 }'`
@@ -19,8 +20,8 @@ start)
 stop)
 	route delete -host ${VPNGATEWAY}
 	pkill vpnc
-	pkill "dhclient wi0"
-	ifconfig wi0 down
+	pkill "dhclient ${PHYS_IF}"
+	ifconfig ${PHYS_IF} down
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2

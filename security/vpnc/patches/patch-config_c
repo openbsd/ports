@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_c,v 1.1 2005/03/08 06:38:08 sturm Exp $
---- config.c.orig	Mon Mar  7 22:27:06 2005
-+++ config.c	Mon Mar  7 22:29:20 2005
+$OpenBSD: patch-config_c,v 1.2 2005/05/05 10:54:48 sturm Exp $
+--- config.c.orig	Mon Nov 22 01:11:48 2004
++++ config.c	Wed May  4 19:58:23 2005
 @@ -352,7 +352,7 @@ static void print_desc(const char *pre, 
  	const char *p, *q;
  
