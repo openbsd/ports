@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2005/03/30 02:58:25 jolan Exp $
+# $OpenBSD: Makefile,v 1.92 2005/05/05 21:19:38 sturm Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -50,6 +50,7 @@
      SUBDIR += runit
      SUBDIR += safecat
      SUBDIR += sdd
+     SUBDIR += sec
      SUBDIR += setquota
      SUBDIR += skill
      SUBDIR += sleuthkit
