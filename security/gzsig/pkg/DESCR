@@ -1,0 +1,3 @@
+gzsig embeds or verifies RSA PKCS #1 v2.0 or DSA SHA1 signatures 
+in gzip(1) compressed files using SSH1 identity keys, X509 
+certificates, or KeyNote public/private keys.
