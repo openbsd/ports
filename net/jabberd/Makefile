@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2005/05/05 06:59:28 jakob Exp $
+# $OpenBSD: Makefile,v 1.14 2005/05/05 15:53:26 jakob Exp $
 
 COMMENT=		"jabber server"
 DISTNAME=		jabberd-2.0s8
@@ -36,7 +36,6 @@ CONFIGURE_ARGS+=	--localstatedir=/var \
 			--with-extra-library-path=${LOCALBASE}/lib
 
 .if ${FLAVOR:L:Mmysql}
-BUILD_DEPENDS+=		::databases/mysql,-server
 LIB_DEPENDS+=		lib/mysql/mysqlclient.10::databases/mysql
 CONFIGURE_ARGS+=	--enable-mysql
 .else
@@ -51,7 +50,7 @@ CONFIGURE_ARGS+=	--disable-ldap
 .endif
 
 .if ! ${FLAVOR:L:Mmysql}
-BROKEN=			"You need to select least one storage driver"
+BROKEN=			"You need to select at least one storage driver"
 .endif
 
 do-install:
