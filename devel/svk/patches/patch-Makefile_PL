@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2005/05/06 09:02:23 kevlo Exp $
+--- Makefile.PL.orig	Fri May  6 16:40:26 2005
++++ Makefile.PL	Fri May  6 16:40:34 2005
+@@ -16,7 +16,7 @@ requires(
+ #        'SVN::Core'   => $required_svn,
+         'Algorithm::Annotate'   => '0',
+         'Algorithm::Diff'       => '0',
+-        'YAML'                  => '0.38',
++        'YAML'                  => '0.36',
+         'Regexp::Shellish'      => '0',
+         'Data::Hierarchy'       => '0.21',
+         'File::Temp'            => '0.14',

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/03/09 03:20:45 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/06 09:02:23 kevlo Exp $
 
 COMMENT=	"decentralized version control system"
 
-V=		0.30
+V=		0.994
 DISTNAME=	SVK-${V}
 PKGNAME=	svk-${V}
 CATEGORIES=	devel perl5
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../authors/id/C/CL/CLKAO/}
 
-BUILD_DEPENDS=	:p5-Compress-Zlib->=1.33:archivers/p5-Compress-Zlib \
+BUILD_DEPENDS=	:p5-Compress-Zlib->=1.34:archivers/p5-Compress-Zlib \
 		:p5-Algorithm-Annotate->=0.10:devel/p5-Algorithm-Annotate \
 		:p5-Class-Autouse->=1.16:devel/p5-Class-Autouse \
 		:p5-Data-Hierarchy->=0.21:devel/p5-Data-Hierarchy \
@@ -29,8 +29,9 @@ BUILD_DEPENDS=	:p5-Compress-Zlib->=1.33:archivers/p5-Compress-Zlib \
 		:p5-Locale-Maketext-Simple->=0.12:devel/p5-Locale-Maketext-Simple \
 		:p5-PerlIO-eol->=0.13:devel/p5-PerlIO-eol \
 		:p5-IO-Digest->=0.10:devel/p5-IO-Digest \
+		:p5-IO-Pager->=0.05:devel/p5-IO-Pager \
 		:p5-PerlIO-via-symlink->=0.05:devel/p5-PerlIO-via-symlink \
-		:p5-SVN-Mirror->=0.56:devel/p5-SVN-Mirror \
+		:p5-SVN-Mirror->=0.60:devel/p5-SVN-Mirror \
 		:p5-Time-TimeDate->=1.16:devel/p5-Time-TimeDate \
 		:p5-YAML->=0.36:devel/p5-YAML \
 		:p5-Pod-Simple->=3.02:textproc/p5-Pod-Simple

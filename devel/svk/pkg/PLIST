@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/09 03:20:45 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/05/06 09:02:23 kevlo Exp $
 @conflict p5-SVK-*
 bin/svk
 ${P5SITE}/SVK/
@@ -55,6 +55,7 @@ ${P5SITE}/SVK/Editor/Status.pm
 ${P5SITE}/SVK/Editor/Translate.pm
 ${P5SITE}/SVK/Editor/XD.pm
 ${P5SITE}/SVK/Help/
+${P5SITE}/SVK/Help/Environment.pod
 ${P5SITE}/SVK/Help/Index.pod
 ${P5SITE}/SVK/Help/Intro.pod
 ${P5SITE}/SVK/Help/zh_cn/
@@ -136,6 +137,7 @@ ${P5SITE}/SVK/XD.pm
 @man man/man3p/SVK::Editor::Rename.3p
 @man man/man3p/SVK::Editor::Translate.3p
 @man man/man3p/SVK::Editor::XD.3p
+@man man/man3p/SVK::Help::Environment.3p
 @man man/man3p/SVK::Help::Index.3p
 @man man/man3p/SVK::Help::Intro.3p
 @man man/man3p/SVK::Help::zh_cn::Index.3p
