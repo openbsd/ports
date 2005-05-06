@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/03/09 03:09:19 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/06 08:15:08 kevlo Exp $
 
 COMMENT=	"run-time class loading on first method call"
 
-DISTNAME=	Class-Autouse-1.16
+DISTNAME=	Class-Autouse-1.17
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Class/}
@@ -16,8 +16,5 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl 
-
-post-patch:
-	@perl -pi -e 's/^auto_install.*$$//' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
