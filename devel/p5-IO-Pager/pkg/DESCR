@@ -1,0 +1,3 @@
+IO::Pager is lightweight and can be used to locate an available pager
+and set $ENV{PAGER} sanely or as a factory for creating objects defined
+elsewhere such as IO::Pager::Buffered and IO::Pager::Unbuffered.

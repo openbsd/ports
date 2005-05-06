@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/06 08:53:52 kevlo Exp $
+${P5SITE}/IO/
+${P5SITE}/IO/Pager/
+${P5SITE}/IO/Pager.pm
+${P5SITE}/IO/Pager/Buffered.pm
+${P5SITE}/IO/Pager/Page.pm
+${P5SITE}/IO/Pager/Unbuffered.pm
+${P5SITE}/IO/t.pl
+@man man/man3p/IO::Pager.3p
+@man man/man3p/IO::Pager::Buffered.3p
+@man man/man3p/IO::Pager::Page.3p
+@man man/man3p/IO::Pager::Unbuffered.3p
