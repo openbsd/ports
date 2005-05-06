@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/03/11 13:10:59 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/05/06 15:08:37 xsa Exp $
 lib/zope/lib/python/Products/COREBlog/
 lib/zope/lib/python/Products/COREBlog/AuthBridge.py
 lib/zope/lib/python/Products/COREBlog/AuthBridge.pyc
@@ -68,6 +68,34 @@ lib/zope/lib/python/Products/COREBlog/dtml/skin/default/skin_properties.py
 lib/zope/lib/python/Products/COREBlog/dtml/skin/default/skin_setting_form.dtml
 lib/zope/lib/python/Products/COREBlog/dtml/skin/default/style_css.dtml
 lib/zope/lib/python/Products/COREBlog/dtml/skin/default/trackback_body.dtml
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/categorylist_html.pt
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/comment_macros.pt
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/coreblog_button.gif
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/daylist_html.pt
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/entry_html.pt
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/entry_macros.pt
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/entry_rdf.dtml
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/getIcon.py
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/index_html.pt
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/monthlist_html.pt
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/portlets/
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/portlets/about.pt
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/portlets/archives.pt
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/portlets/calendar.pt
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/portlets/categories.pt
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/portlets/recentcomments.pt
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/portlets/recententries.pt
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/portlets/recenttrackbacks.pt
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/portlets/syndicate.pt
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/previewcomment_html.pt
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/rdf_button.gif
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/search_results.pt
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/skin_objects.py
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/skin_properties.py
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/skin_setting_form.dtml
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/style_css.dtml
+lib/zope/lib/python/Products/COREBlog/dtml/skin/plonified/trackback_macros.pt
 lib/zope/lib/python/Products/COREBlog/dtml/trackbackResult.dtml
 lib/zope/lib/python/Products/COREBlog/help/
 lib/zope/lib/python/Products/COREBlog/help/COREBlog.py
