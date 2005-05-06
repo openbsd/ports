@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.318 2005/04/26 17:06:00 martin Exp $
+# $OpenBSD: Makefile,v 1.319 2005/05/06 08:54:56 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -207,6 +207,7 @@
      SUBDIR += p5-IO-Capture
      SUBDIR += p5-IO-Digest
      SUBDIR += p5-IO-Multiplex
+     SUBDIR += p5-IO-Pager
      SUBDIR += p5-IO-String
      SUBDIR += p5-IO-Tty
      SUBDIR += p5-IO-stringy
