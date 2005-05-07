@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/13 18:53:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/05/07 11:53:04 espie Exp $
 bin/goggles
-bin/goggles_gui
+libexec/ogle_gui_goggles
+share/doc/goggles/
+share/doc/goggles/goggles_manual.pdf
