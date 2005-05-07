@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2005/05/07 11:53:03 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2005/05/07 12:59:13 espie Exp $
 
 COMMENT='C++ toolkit for GUI'
 CATEGORIES=devel
 
 DISTNAME=fox-1.4.12
+PKGNAME=${DISTNAME}p0
 MASTER_SITES=${HOMEPAGE}/ftp/
 HOMEPAGE=http://www.fox-toolkit.org/
 MAINTAINER=Marc Espie <espie@openbsd.org>
@@ -26,5 +27,7 @@ PERMIT_DISTFILES_FTP=Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_PACKAGE_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
+USE_LIBTOOL=	Yes
+
 WANTLIB=	GL GLU X11 Xext c m stdc++ z pthread
 .include <bsd.port.mk>
