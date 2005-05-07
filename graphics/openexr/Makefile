@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/31 08:16:27 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/07 09:54:06 espie Exp $
 
 COMMENT=	'high dynamic range image format'
 CATEGORIES=	graphics
@@ -6,7 +6,7 @@ CATEGORIES=	graphics
 HOMEPAGE=	http://www.openexr.com/index.html
 MASTER_SITES=	http://savannah.nongnu.org/download/openexr/
 
-DISTNAME=	OpenEXR-1.2.1
+DISTNAME=	OpenEXR-1.2.2
 
 # Almost BSD
 # `name of ILM not to be used for advertizing without written agreement'
@@ -28,8 +28,6 @@ USE_LIBTOOL=		Yes
 DOCDIR=${PREFIX}/share/doc/${DISTNAME}
 
 post-install:
-	${INSTALL_DATA_DIR} ${DOCDIR}/images
-	${INSTALL_DATA} ${WRKDIST}/doc/{api,details}.html ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/doc/images/*.png ${DOCDIR}/images
+	${INSTALL_DATA} ${WRKDIST}/doc/*.pdf ${DOCDIR}
 	
 .include <bsd.port.mk>

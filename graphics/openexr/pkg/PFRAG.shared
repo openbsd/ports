@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/01/31 08:16:27 espie Exp $
-@lib lib/libHalf.so.2.1
-@lib lib/libIex.so.2.1
-@lib lib/libIlmImf.so.2.1
-@lib lib/libImath.so.2.1
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/05/07 09:54:06 espie Exp $
+@lib lib/libHalf.so.2.2
+@lib lib/libIex.so.2.2
+@lib lib/libIlmImf.so.2.2
+@lib lib/libImath.so.2.2
