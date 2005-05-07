@@ -1,0 +1,48 @@
+$OpenBSD: patch-lib_Xfm_cpp,v 1.1 2005/05/07 06:52:41 sturm Exp $
+--- lib/Xfm.cpp.orig	Fri May  6 14:34:03 2005
++++ lib/Xfm.cpp	Fri May  6 14:35:53 2005
+@@ -268,7 +268,7 @@ Xfm*Text*baseTranslations : #override \n
+  <Key>Linefeed : no-op() \n\
+  Ctrl<Key>J : no-op() \n
+ #else
+-Xfm*TextField.baseTranslations:#override\n\
++Xfm*TextField.baseTranslations:#override\n \
+ HIST_TRANSLATION(FocusSet(), ) \
+ Shift	<Key>Tab:FocusTraverse(b)\n\
+ 	<Key>Tab:FocusTraverse()\n\
+@@ -327,7 +327,7 @@ Xfm*awform*icon box.baseTranslations: #o
+ #ifdef USE_NEW_WIDGETS
+ Xfm*file window*folderlabel.baseTranslations: #override\n\
+   <Enter>	      : trackCursor()\n\
+-  <Leave>	      : trackCursor()\n\
++  <Leave>	      : trackCursor()\n \
+ HIST_TRANSLATION(,) \
+   <Btn1Up>(2)         : fileRefresh()\n
+ Xfm*file window*viewport.baseTranslations:#override\n\
+@@ -358,7 +358,7 @@ Ctrl	<Key>d			: notify("*view*sort by mt
+ Ctrl	<Key>f			: notify(*view*filter)\n\
+ Ctrl	<Key>h			: notify("*view*hide folders")\n\
+ Ctrl	<Key>m			: notify("*view*mix folders/files")\n\
+-Ctrl	<Key>u			: notify("*view*show hidden files")\n\
++Ctrl	<Key>u			: notify("*view*show hidden files")\n \
+ LOG_TRANSLATION \
+ 	<Key>n			: notify(*file*new)\n\
+  	<Key>m			: notify(*file*move)\n\
+@@ -399,7 +399,7 @@ Ctrl	<Key>d			: notify("*view*sort by mt
+ Ctrl	<Key>f			: notify(*view*filter)\n\
+ Ctrl	<Key>h			: notify("*view*hide folders")\n\
+ Ctrl	<Key>m			: notify("*view*mix folders/files")\n\
+-Ctrl	<Key>u			: notify("*view*show hidden files")\n\
++Ctrl	<Key>u			: notify("*view*show hidden files")\n \
+ LOG_TRANSLATION \
+ 	<Key>n			: notify(*file*new)\n\
+  	<Key>m			: notify(*file*move)\n\
+@@ -415,7 +415,7 @@ LOG_TRANSLATION \
+  	<Key>x			: notify(*file*xterm)\n\
+  	<Key>q			: notify(*file*quit)\n
+ #else
+-Xfm*file window*folderlabel.baseTranslations: #override\n\
++Xfm*file window*folderlabel.baseTranslations: #override\n \
+ HIST_TRANSLATION(,)\
+   <Btn1Up>(2)         : fileRefresh()\n
+ Xfm*file window*icon box*file_icon.baseTranslations: #override\n\
