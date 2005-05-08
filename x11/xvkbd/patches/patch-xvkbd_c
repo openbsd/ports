@@ -1,0 +1,12 @@
+$OpenBSD: patch-xvkbd_c,v 1.1 2005/05/08 14:46:57 naddy Exp $
+--- xvkbd.c.orig	Sat May  7 01:33:40 2005
++++ xvkbd.c	Sat May  7 01:33:09 2005
+@@ -340,7 +340,7 @@ static XtResource application_resources[
+   { "keyFile", "KeyFile", XtRString, sizeof(char *),
+     Offset(key_file), XtRImmediate, ".xvkbd" },
+   { "dictFile", "DictFile", XtRString, sizeof(char *),
+-    Offset(dict_file), XtRImmediate, "/usr/dict/words" },
++    Offset(dict_file), XtRImmediate, "/usr/share/dict/words" },
+   { "customizations", "Customizations", XtRString, sizeof(char *),
+     Offset(customizations), XtRImmediate, "default" },
+   { "editableFunctionKeys", "EditableFunctionKeys", XtRInt, sizeof(int),

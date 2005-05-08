@@ -1,0 +1,12 @@
+$OpenBSD: patch-xvkbd_man,v 1.1 2005/05/08 14:46:57 naddy Exp $
+--- xvkbd.man.orig	Sat May  7 01:33:50 2005
++++ xvkbd.man	Sat May  7 01:34:17 2005
+@@ -111,7 +111,7 @@ words started with the characters will b
+ and you can enter the remaining characters of the selected word
+ by clicking one of the words in the list.
+ .PP
+-The dictionary (list of words) file is \fB/usr/dict/words\fP by default,
++The dictionary (list of words) file is \fB/usr/share/dict/words\fP by default,
+ but it can be changed by \fB-dict\fP option or \fBxvkbd.dictFile\fP resouce.
+ 
+ .SH "    Main Menu"
