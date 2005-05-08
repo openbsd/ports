@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2005/03/24 07:35:03 dons Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/05/08 08:45:09 dons Exp $
 lib/hugs/libraries/Foreign/C/Error.so
 lib/hugs/libraries/Foreign/Marshal/Alloc.so
 lib/hugs/libraries/Foreign/Marshal/Utils.so
@@ -59,3 +59,13 @@ lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Mipmapping.so
 lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/NURBS.so
 lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Quadrics.so
 lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GLU/Tessellation.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Atom.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Color.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Context.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Display.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Event.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Font.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Misc.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Region.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Screen.so
+lib/hugs/packages/X11/Graphics/X11/Xlib/Window.so
