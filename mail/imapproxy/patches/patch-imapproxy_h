@@ -1,0 +1,11 @@
+--- include/imapproxy.h.orig	Wed Feb  9 01:30:49 2005
++++ include/imapproxy.h	Wed Feb  9 01:31:09 2005
+@@ -141,7 +141,7 @@
+ /* 
+  * Common definitions 
+  */
+-#define PGM                     "in.imapproxyd"
++#define PGM                     "imapproxyd"
+ #define IMAP_UNTAGGED_OK        "* OK "           /* untagged OK response    */
+ #define IMAP_TAGGED_OK          "1 OK "           /* tagged OK response      */
+ #define BUFSIZE                 4096              /* default buffer size     */

@@ -1,0 +1,24 @@
+--- Makefile.in.orig	Mon Feb 21 20:14:47 2005
++++ Makefile.in	Sun May  8 11:40:26 2005
+@@ -53,7 +53,7 @@ TAT_OBJ = ./src/pimpstat.o ./src/config.
+ 
+ # Final targets
+ 
+-XYD_BIN = ./bin/in.imapproxyd
++XYD_BIN = ./bin/imapproxyd
+ TAT_BIN = ./bin/pimpstat
+ 
+ # Rules
+@@ -78,9 +78,9 @@ distclean: clean
+ 	rm -f config.cache config.log config.h Makefile
+ 
+ install: $(XYD_BIN) $(TAT_BIN)
+-	mkdir -p $(EBIN)
+-	$(INSTALL) -o bin -g bin -m 0755 $(XYD_BIN) $(EBIN)
+-	$(INSTALL) -o bin -g bin -m 0755 $(TAT_BIN) $(EBIN)
++	mkdir -p $(DESTDIR)$(EBIN)
++	$(INSTALL) -m 0755 $(XYD_BIN) $(DESTDIR)$(EBIN)
++	$(INSTALL) -m 0755 $(TAT_BIN) $(DESTDIR)$(EBIN)
+ 
+ install-init:
+ 	$(INSTALL) -o root -g sys -m 0755 ./scripts/imapproxy.init $(ETC)/init.d/imapproxy

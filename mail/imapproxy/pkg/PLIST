@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/08 12:22:09 alek Exp $
+sbin/imapproxyd
+sbin/pimpstat
+share/examples/imapproxy/
+share/examples/imapproxy/imapproxy.conf
+@sample ${SYSCONFDIR}/imapproxy.conf
+share/doc/imapproxy/
+share/doc/imapproxy/README
+share/doc/imapproxy/README.ssl

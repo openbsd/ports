@@ -1,0 +1,6 @@
+In order to start imapproxy at boot time, edit ${SYSCONFDIR}/imapproxy.conf
+and add the following lines to /etc/rc.local:
+
+if [ -x ${PREFIX}/sbin/imapproxyd ]; then
+	echo -n ' imapproxy';	${PREFIX}/sbin/imapproxyd
+fi
