@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/08 12:22:09 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/08 14:29:07 alek Exp $
 
 COMMENT=	"caching IMAP proxy to be used with webmail clients"
 
@@ -28,6 +28,6 @@ post-install:
 		${PREFIX}/share/examples/imapproxy
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/imapproxy
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/README.ssl \
-		${PREFIX}/share/examples/imapproxy
+		${PREFIX}/share/doc/imapproxy
 
 .include <bsd.port.mk>
