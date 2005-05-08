@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_C_Makefile_in,v 1.1 2005/05/08 17:33:18 alek Exp $
+--- docs/C/Makefile.in.orig	Sat Apr 30 19:25:37 2005
++++ docs/C/Makefile.in	Sat Apr 30 19:25:40 2005
+@@ -337,7 +337,7 @@ install-data-hook-omf:
+ 	for file in $(omffile); do \
+ 		$(INSTALL_DATA) $$file.out $(DESTDIR)$(omf_dest_dir)/$$file; \
+ 	done
+-	-scrollkeeper-update -p $(scrollkeeper_localstate_dir) -o $(DESTDIR)$(omf_dest_dir)
++	# -scrollkeeper-update -p $(scrollkeeper_localstate_dir) -o $(DESTDIR)$(omf_dest_dir)
+ 
+ uninstall-local-omf:
+ 	-for file in $(srcdir)/*.omf; do \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/12/10 20:33:59 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/05/08 17:33:18 alek Exp $
 bin/gconf-editor
 @man man/man1/gconf-editor.1
 share/applications/
@@ -227,3 +227,5 @@ share/pixmaps/gconf-editor/entry-schema.png
 share/pixmaps/gconf-editor/entry-string.png
 share/pixmaps/gconf-editor/folder-closed.png
 share/pixmaps/gconf-editor/folder-open.png
+@exec %D/bin/scrollkeeper-update -q
+@unexec %D/bin/scrollkeeper-update -q
