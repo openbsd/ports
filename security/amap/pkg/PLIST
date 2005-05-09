@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/09 20:35:41 alek Exp $
+bin/amap
+bin/amap6
+bin/amapcrap
+@man man/man1/amap.1
+share/amap/
+share/amap/appdefs.resp
+share/amap/appdefs.rpc
+share/amap/appdefs.trig

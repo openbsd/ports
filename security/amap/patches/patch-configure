@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2005/05/09 20:35:41 alek Exp $
+--- configure.orig	Sat May  7 13:33:35 2005
++++ configure	Sat May  7 13:33:56 2005
+@@ -168,7 +168,7 @@ if [ -d /usr/kerberos/include ]; then
+ fi
+ 
+ if [ -n "$PREFIX" ]; then
+-    XDEFINES="$XDEFINES -DAMAP_PREFIX=$PREFIX"
++    XDEFINES="$XDEFINES" 
+ else
+     PREFIX="/usr/local"
+ fi
