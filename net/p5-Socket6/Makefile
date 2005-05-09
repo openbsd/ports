@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/31 02:12:49 djm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/09 12:09:12 djm Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Perl defines relating to AF_INET6 sockets"
 
-DISTNAME=	Socket6-0.17
+DISTNAME=	Socket6-0.18
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net devel perl5
 
