@@ -1,6 +1,6 @@
-$OpenBSD: patch-asterisk_c,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
---- asterisk.c.orig	Mon Sep 13 13:19:15 2004
-+++ asterisk.c	Thu Sep 23 13:49:40 2004
+$OpenBSD: patch-asterisk_c,v 1.2 2005/05/09 16:50:05 jcs Exp $
+--- asterisk.c.orig	Sat Jan 15 13:58:41 2005
++++ asterisk.c	Thu May  5 20:28:56 2005
 @@ -193,7 +193,7 @@ int ast_safe_system(const char *s)
  		for (x=STDERR_FILENO + 1; x<4096;x++) {
  			close(x);
@@ -10,3 +10,21 @@ $OpenBSD: patch-asterisk_c,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
  		exit(1);
  	} else if (pid > 0) {
  		for(;;) {
+@@ -1580,7 +1580,7 @@ int main(int argc, char *argv[])
+ 	sigset_t sigs;
+ 	int num;
+ 	char *buf;
+-	char *runuser=NULL, *rungroup=NULL;
++	char *runuser = "_asterisk", *rungroup = "_asterisk";
+ 	struct pollfd silly_macos[1];	
+ 
+ 	/* Remember original args for restart */
+@@ -1693,6 +1693,8 @@ int main(int argc, char *argv[])
+ 			ast_log(LOG_WARNING, "Unable to disable core size resource limit: %s\n", strerror(errno));
+ 		}
+ 	}
++
++	chdir("/");
+ 
+ 	if (rungroup) {
+ 		struct group *gr;

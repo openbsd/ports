@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/05/01 02:12:46 jcs Exp $
+# $OpenBSD: Makefile,v 1.4 2005/05/09 16:50:05 jcs Exp $
 
 COMMENT=	"open source PBX"
 DISTNAME=	asterisk-1.0.7
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	telephony
 MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		http://mirrors.protection.cx/~jolan/
