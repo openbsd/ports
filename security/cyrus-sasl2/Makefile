@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2005/01/12 21:31:06 sturm Exp $
+# $OpenBSD: Makefile,v 1.26 2005/05/09 14:28:22 jakob Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
 DISTNAME=	cyrus-sasl-2.1.20
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	security
 
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -26,6 +26,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-saslauthd="/var/sasl2" \
 			--enable-gssapi="/usr" \
 			--with-gss_impl="heimdal" \
+		 	--with-plugindir=${PREFIX}/lib/sasl2 \
 			--enable-login \
 			--enable-static \
 			--disable-sample
