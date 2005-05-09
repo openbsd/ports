@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.82 2005/04/01 06:28:57 biorn Exp $
+# $OpenBSD: Makefile,v 1.83 2005/05/09 12:24:38 biorn Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
 
 COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
-DISTNAME=		MPlayer-1.0pre6a
+DISTNAME=		MPlayer-1.0pre7
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}p1
+PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	"patents"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c freetype m ogg pthread stdc++ termcap util z 
+WANTLIB=		c m pthread stdc++ termcap util z 
 
 MASTER_SITES=		http://www2.mplayerhq.hu/MPlayer/releases/
 MASTER_SITES+=		http://www.mplayerhq.hu/MPlayer/releases/
@@ -42,7 +42,6 @@ LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
 		mp3lame::audio/lame \
 		ungif::graphics/libungif \
-		vorbis.0::audio/libvorbis \
 		cdda_paranoia,cdda_interface:cdparanoia->=3.a9.8:audio/cdparanoia
 
 CONFDIR=	${SYSCONFDIR}/mplayer
@@ -103,14 +102,18 @@ ERRORS+="Fatal: nonsense combination of flavors"
 CONFIGURE_ARGS+=--disable-gui \
 		--disable-gl \
 		--disable-xv \
-		--disable-x11
+		--disable-x11 \
+		--disable-fontconfig \
+		--disable-freetype
 .  endif
 .else
 CONFIGURE_ARGS+=--enable-gui \
 		--enable-gl
 USE_X11=	Yes
 LIB_DEPENDS+= 	gtk,gdk::x11/gtk+
+BUILD_DEPENDS+=	:pkgconfig->=0.15.0p0:devel/pkgconfig
 WANTLIB+=	GL X11 Xext Xi Xinerama Xv Xxf86dga Xxf86vm glib gmodule intl 
+WANTLIB+=	freetype fontconfig
 .endif
 
 .if ${FLAVOR:L:Msdl}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2005/03/09 16:07:29 biorn Exp $
+@comment $OpenBSD: PLIST,v 1.20 2005/05/09 12:24:38 biorn Exp $
 bin/mencoder
 bin/mplayer
 @man man/man1/mencoder.1
@@ -45,7 +45,6 @@ share/doc/mplayer/menc-feat-dvd-mpeg4.html
 share/doc/mplayer/menc-feat-enc-images.html
 share/doc/mplayer/menc-feat-enc-libavcodec.html
 share/doc/mplayer/menc-feat-extractsub.html
-share/doc/mplayer/menc-feat-fix-avi.html
 share/doc/mplayer/menc-feat-mpeg.html
 share/doc/mplayer/menc-feat-mpeg4.html
 share/doc/mplayer/menc-feat-rescale.html

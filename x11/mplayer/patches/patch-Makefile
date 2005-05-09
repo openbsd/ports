@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.10 2005/03/09 16:07:29 biorn Exp $
---- Makefile.orig	Fri Nov  5 15:02:40 2004
-+++ Makefile	Sat Dec 25 16:15:14 2004
-@@ -249,7 +249,7 @@ mplayer_wine.so:	$(MPLAYER_DEP)
+$OpenBSD: patch-Makefile,v 1.11 2005/05/09 12:24:38 biorn Exp $
+--- Makefile.orig	Sat Apr 16 22:18:12 2005
++++ Makefile	Wed Apr 20 06:35:54 2005
+@@ -259,7 +259,7 @@ mplayer_wine.so:	$(MPLAYER_DEP)
  
  ifeq ($(MENCODER),yes)
  $(PRG_MENCODER): $(MENCODER_DEP)
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile,v 1.10 2005/03/09 16:07:29 biorn Exp $
  endif
  
  codecs.conf.h: $(PRG_CFG) etc/codecs.conf
-@@ -312,8 +312,6 @@ ifeq ($(GUI),yes)
+@@ -325,8 +325,6 @@ ifeq ($(GUI),yes)
  	@if test ! -d $(prefix)/share/applications ; then mkdir -p $(prefix)/share/applications ; fi
  	$(INSTALL) -m 644 etc/mplayer.desktop $(prefix)/share/applications/mplayer.desktop
  endif
