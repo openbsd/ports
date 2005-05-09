@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1 2004/02/16 21:09:22 djm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/09 12:03:37 djm Exp $
 
-COMMENT=		'Template Toolkit'
+COMMENT=		'template processing system'
 
-DISTNAME=		Template-Toolkit-2.13
-PKGNAME=		p5-Template-2.13
+DISTNAME=		Template-Toolkit-2.14
+PKGNAME=		${DISTNAME:S/^Template-Toolkit-/p5-Template-/}
 CATEGORIES=		textproc perl5
+
+HOMEPAGE=		http://www.template-toolkit.org/
 
 MAINTAINER=		Damien Miller <djm@openbsd.org>
 
