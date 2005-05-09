@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.28 2005/05/02 12:16:14 jakob Exp $
+$OpenBSD: user.list,v 1.29 2005/05/09 16:46:02 jcs Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -53,3 +53,4 @@ id  user		group		port options
 542 _flowd		_flowd		net/flowd
 543 _cyrus		_cyrus		mail/cyrus-imapd
 544 _openldap		_openldap	databases/openldap
+545 _asterisk		_asterisk	telephony/asterisk
