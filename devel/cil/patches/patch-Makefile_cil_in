@@ -1,21 +1,21 @@
-$OpenBSD: patch-Makefile_cil_in,v 1.1 2004/06/21 18:53:12 avsm Exp $
---- Makefile.cil.in.orig	2004-06-20 18:38:15.000000000 +0100
-+++ Makefile.cil.in	2004-06-20 18:38:36.000000000 +0100
-@@ -56,7 +56,7 @@ CILLY_LIBRARY_MODULES = pretty inthash e
-               cabs cabsvisit cprint lexerhack machdep cparser clexer  \
-               cilversion cil formatparse formatlex formatcil cabs2cil \
-               patch frontc check mergecil logcalls logwrites rmtmps \
+$OpenBSD: patch-Makefile_cil_in,v 1.2 2005/05/09 13:52:38 avsm Exp $
+--- Makefile.cil.in.orig	Mon Jan 31 09:56:18 2005
++++ Makefile.cil.in	Tue Mar  1 10:20:29 2005
+@@ -64,7 +64,7 @@ CILLY_LIBRARY_MODULES = pretty inthash e
+               patch frontc check mergecil \
+               dataflow dominators bitmap ssa \
+               usedef logcalls logwrites rmtmps \
 -	      callgraph epicenter heapify \
 +	      callgraph epicenter heapify nullint \
                setp uref steensgaard olf dummy ptranal \
                canonicalize heap oneret partial simplemem simplify \
-               testcil \
-@@ -328,7 +328,7 @@ DISTRIB_SRC_FRONTC = cabs.ml cprint.ml c
+ 	      dataslicing \
+@@ -351,7 +351,7 @@ DISTRIB_SRC_FRONTC = cabs.ml cprint.ml c
  
  DISTRIB_SRC_EXT = logcalls.ml logcalls.mli \
                    astslicer.ml simplemem.ml heap.ml partial.ml \
 -                  logwrites.ml heapify.ml callgraph.ml callgraph.mli \
 +                  logwrites.ml heapify.ml nullint.ml callgraph.ml callgraph.mli \
-                   epicenter.ml \
+                   epicenter.ml usedef.ml \
+                   dataflow.ml dominators.ml bitmap.ml ssa.ml \
  	          stackoverflow.mli stackoverflow.ml \
- 	          canonicalize.ml canonicalize.mli \
