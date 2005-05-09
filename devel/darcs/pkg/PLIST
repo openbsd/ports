@@ -1,14 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/02/14 01:59:12 dons Exp $
+@comment $OpenBSD: PLIST,v 1.9 2005/05/09 03:41:34 dons Exp $
 bin/darcs
 libexec/darcs/
-libexec/darcs/darcs.cgi
+libexec/darcs/cgi-bin/
+libexec/darcs/cgi-bin/darcs.cgi
 @man man/man1/darcs.1
 sbin/darcs-createrepo
 share/darcs/
 share/darcs/bash_completion.d/
 share/darcs/bash_completion.d/darcs
-share/darcs/cgi.conf
-share/darcs/styles.css
+share/darcs/darcs/
+share/darcs/darcs/cgi.conf
+share/darcs/darcs/styles.css
 share/darcs/xslt/
 share/darcs/xslt/annotate.xslt
 share/darcs/xslt/browse.xslt
@@ -49,6 +51,7 @@ share/doc/darcs/manual/img21.png
 share/doc/darcs/manual/img22.png
 share/doc/darcs/manual/img23.png
 share/doc/darcs/manual/img24.png
+share/doc/darcs/manual/img25.png
 share/doc/darcs/manual/img3.png
 share/doc/darcs/manual/img4.png
 share/doc/darcs/manual/img5.png

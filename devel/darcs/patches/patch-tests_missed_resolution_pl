@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_missed_resolution_pl,v 1.1 2005/05/09 03:41:34 dons Exp $
+--- tests/missed_resolution.pl.orig	Mon May  9 11:03:08 2005
++++ tests/missed_resolution.pl	Mon May  9 11:14:37 2005
+@@ -47,7 +47,9 @@ darcs "pull --all ../tmp2";
+ # we resolve it simply by removing conflict markers.
+ 
+ # I'm too lazy to translate this to Perl right now. 
+-`grep -v '\(\^ \^\|\*\*\|v v\)' A > tmp`;
++#`grep -v '\(\^ \^\|\*\*\|v v\)' A > tmp`;
++`sed '/\*\*/d;/v v/d;/\^ \^/d' A > tmp`;
++
+ mv('tmp','A');
+ 
+ darcs "record -A x -m 'resolve' --all";
