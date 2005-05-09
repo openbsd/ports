@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2004/06/22 18:14:44 avsm Exp $
---- configure.orig	Thu Sep 25 02:17:13 2003
-+++ configure	Tue Jun 22 04:43:09 2004
-@@ -537,6 +537,7 @@ case "$host" in
+$OpenBSD: patch-configure,v 1.7 2005/05/09 13:50:41 avsm Exp $
+--- configure.orig	Mon Jan 24 15:22:46 2005
++++ configure	Wed Mar 23 13:32:24 2005
+@@ -563,6 +563,7 @@ case "$host" in
    alpha*-*-freebsd*)            arch=alpha; system=freebsd;;
    alpha*-*-netbsd*)             arch=alpha; system=netbsd;;
    alpha*-*-openbsd*)            arch=alpha; system=openbsd;;
@@ -9,15 +9,15 @@ $OpenBSD: patch-configure,v 1.6 2004/06/22 18:14:44 avsm Exp $
    sparc*-*-sunos4.*)            arch=sparc; system=sunos;;
    sparc*-*-solaris2.*)          arch=sparc; system=solaris;;
    sparc*-*-*bsd*)               arch=sparc; system=bsd;;
-@@ -555,6 +556,7 @@ case "$host" in
-   powerpc-*-aix*)               arch=power; model=ppc; system=aix;;
+@@ -579,6 +580,7 @@ case "$host" in
+   hppa*-*-linux*)		arch=hppa; system=linux;;
    powerpc-*-linux*)             arch=power; model=ppc; system=elf;;
    powerpc-*-netbsd*)            arch=power; model=ppc; system=bsd;;
-+  macppc-*-openbsd*)            arch=power; model=ppc; system=bsd;;
++  powerpc-*-openbsd*)           arch=power; model=ppc; system=bsd;;
    powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
    powerpc-*-darwin*)            arch=power; model=ppc; system=rhapsody;;
    arm*-*-linux*)                arch=arm; system=linux;;
-@@ -629,8 +631,12 @@ esac
+@@ -651,8 +653,12 @@ esac
  cc_profile='-pg'
  case "$arch,$model,$system" in
    alpha,*,digital) profiling='prof';;
@@ -30,23 +30,14 @@ $OpenBSD: patch-configure,v 1.6 2004/06/22 18:14:44 avsm Exp $
    sparc,*,solaris)
      profiling='prof'
      case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
-@@ -654,8 +660,8 @@ if test "$arch" != "none"; then
-         echo "$d/objcopy does not support option --redefine-sym, discarded"
-         continue;
-       fi
--      if test `$d/nm --version | grep -s -c 'GNU nm'` -eq 0; then
--        echo "$d/nm is not from GNU binutils, discarded"
-+      if test `$d/nm --version 2>&1|grep -E -s -c 'GNU nm|OpenBSD'` -eq 0; then
-+        echo "$d/nm is not from GNU binutils or OpenBSD, discarded"
-         continue;
-       fi
-       binutils_objcopy="$d/objcopy"
-@@ -1411,7 +1417,7 @@ fi
- 
- (
- cd ../../camlp4/config
--EXE=$exe ./configure_batch -bindir "$bindir" -libdir "$libdir" -mandir "$mandir" -ocaml-top ../.. > /dev/null
-+EXE=$exe ./configure_batch -prefix "$prefix" -ocaml-top ../.. > /dev/null
- )
- 
- # Final twiddling of compiler options to work around known bugs
+@@ -683,10 +689,6 @@ case "$host" in
+           echo "objcopy and nm found in $d"
+           if test `$d/objcopy --help | grep -s -c 'redefine-sym'` -eq 0; then
+             echo "$d/objcopy does not support option --redefine-sym, discarded"
+-            continue;
+-          fi
+-          if test `$d/nm --version | grep -s -c 'GNU nm'` -eq 0; then
+-            echo "$d/nm is not from GNU binutils, discarded"
+             continue;
+           fi
+           binutils_objcopy="$d/objcopy"

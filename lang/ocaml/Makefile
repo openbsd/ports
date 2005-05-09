@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.31 2005/01/25 15:56:38 alek Exp $
+# $OpenBSD: Makefile,v 1.32 2005/05/09 13:50:41 avsm Exp $
+
+NOT_FOR_ARCHS=	hppa
 
 COMMENT=	"ML language based on complete class-based objective system"
 
-
-DISTNAME=	ocaml-3.07
-PKGNAME=	${DISTNAME}p3
+BASENAME=	ocaml-3.08
+DISTNAME=	${BASENAME}.3
 CATEGORIES=	lang
-MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME}/
-DOCFILES=	${DISTNAME}-refman.html.tar.gz
-DISTFILES=	${DISTNAME}pl2.tar.gz ${DOCFILES}
+MASTER_SITES=	http://caml.inria.fr/distrib/${BASENAME}/
+DOCFILES=	${BASENAME}-refman.html.tar.gz
+DISTFILES=	${DISTNAME}.tar.gz ${DOCFILES}
 
 HOMEPAGE=	http://www.ocaml.org/
 
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
+MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # QPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,7 +22,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 c curses m pthread
 
-
+VMEM_WARNING=	Yes
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=-tkdefs '-I${LOCALBASE}/include/tk8.4 -I${LOCALBASE}/include/tcl8.4' 
 CONFIGURE_ARGS+=-tklibs -L${LOCALBASE}/lib 
@@ -60,5 +61,8 @@ post-install:
 		${PREFIX}/share/doc/ocaml/html/libref
 	@strip ${PREFIX}/bin/ocamlrun ${PREFIX}/bin/ocamlyacc
 	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/ocaml
+
+# PFRAG.native was generated from PLIST with:
+# egrep '(ocamlopt|\.cmx|\.cmxa|\.o|\.opt|opt\.1|\.a|opt.cmi)$'
 
 .include <bsd.port.mk>
