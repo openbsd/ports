@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2004/11/11 03:52:30 djm Exp $
+# $OpenBSD: Makefile,v 1.4 2005/05/09 12:14:29 djm Exp $
 
 COMMENT=	"Python API for dealing with timezones"
 
-DISTNAME=	pytz-2004d
+DISTNAME=	pytz-2005e
 PKGNAME=	${DISTNAME:S/^py/py-/}
 CATEGORIES=    	devel
 
