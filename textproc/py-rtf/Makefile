@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/04 20:43:12 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/09 08:52:56 xsa Exp $
 
 COMMENT=	"Rich Text Format document generation in Python"
 
-DISTNAME=	PyRTF-0.44
+DISTNAME=	PyRTF-0.45
 PKGNAME=	${DISTNAME:L:S/^py/py-/}
 CATEGORIES=	textproc
 
@@ -29,6 +29,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 
 .include <bsd.port.mk>

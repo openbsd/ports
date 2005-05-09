@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/04 20:43:12 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/05/09 08:52:56 xsa Exp $
 lib/python${MODPY_VERSION}/site-packages/PyRTF/
 lib/python${MODPY_VERSION}/site-packages/PyRTF/Constants.py
 lib/python${MODPY_VERSION}/site-packages/PyRTF/Constants.pyc
@@ -16,4 +16,10 @@ share/doc/py-rtf/
 share/doc/py-rtf/README
 share/examples/py-rtf/
 share/examples/py-rtf/examples.py
+share/examples/py-rtf/examples2.py
+share/examples/py-rtf/image.jpg
+share/examples/py-rtf/img1.png
+share/examples/py-rtf/img2.png
+share/examples/py-rtf/img3.png
+share/examples/py-rtf/img4.png
 share/examples/py-rtf/merged_cells.py
