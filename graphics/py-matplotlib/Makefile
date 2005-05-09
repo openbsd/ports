@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2005/03/15 07:17:38 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2005/05/09 11:47:50 djm Exp $
 
 COMMENT=	"Python charting and plotting API"
 
-DISTNAME=	matplotlib-0.71
+DISTNAME=	matplotlib-0.80
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	graphics devel
 
