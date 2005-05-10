@@ -1,7 +1,7 @@
-$OpenBSD: patch-links_h,v 1.10 2005/02/24 22:24:55 fgsch Exp $
---- links.h.orig	Sat Jan 22 17:51:55 2005
-+++ links.h	Mon Feb 21 12:03:39 2005
-@@ -140,6 +140,12 @@ x #endif*/
+$OpenBSD: patch-links_h,v 1.11 2005/05/10 18:21:00 fgsch Exp $
+--- links.h.orig	Thu Feb 24 13:17:58 2005
++++ links.h	Tue May 10 14:34:14 2005
+@@ -154,6 +154,12 @@ x #endif*/
  #define longlong long
  #endif
  
