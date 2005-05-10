@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/01/25 20:32:22 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/05/10 12:52:34 xsa Exp $
 lib/zope/lib/python/Products/ZWiki/
 @comment lib/zope/lib/python/Products/ZWiki/.cvsignore
 lib/zope/lib/python/Products/ZWiki/Admin.py
@@ -43,6 +43,8 @@ lib/zope/lib/python/Products/ZWiki/PageTypes.pyc
 lib/zope/lib/python/Products/ZWiki/Permissions.py
 lib/zope/lib/python/Products/ZWiki/Permissions.pyc
 lib/zope/lib/python/Products/ZWiki/README.txt
+lib/zope/lib/python/Products/ZWiki/RSS.py
+lib/zope/lib/python/Products/ZWiki/RSS.pyc
 lib/zope/lib/python/Products/ZWiki/Regexps.py
 lib/zope/lib/python/Products/ZWiki/Regexps.pyc
 lib/zope/lib/python/Products/ZWiki/TextFormatter.py
@@ -92,6 +94,7 @@ lib/zope/lib/python/Products/ZWiki/i18n/zwiki-ga.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-he.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-hu.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-it.po
+lib/zope/lib/python/Products/ZWiki/i18n/zwiki-ja.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-manual.pot
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-nl.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-pl.po
@@ -105,6 +108,7 @@ lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-ga.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-he.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-hu.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-it.po
+lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-ja.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-nl.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-pl.po
 lib/zope/lib/python/Products/ZWiki/i18n/zwiki-plone-pt-BR.po
@@ -172,6 +176,7 @@ lib/zope/lib/python/Products/ZWiki/plugins/tests/testTracker.py
 lib/zope/lib/python/Products/ZWiki/plugins/tests/testTracker.pyc
 lib/zope/lib/python/Products/ZWiki/plugins/tracker/
 lib/zope/lib/python/Products/ZWiki/plugins/tracker/FilterIssues.stxdtml
+lib/zope/lib/python/Products/ZWiki/plugins/tracker/IssueBrowser.stxdtml
 lib/zope/lib/python/Products/ZWiki/plugins/tracker/IssueTracker.stxdtml
 lib/zope/lib/python/Products/ZWiki/refresh.txt
 lib/zope/lib/python/Products/ZWiki/skins/
@@ -184,6 +189,8 @@ lib/zope/lib/python/Products/ZWiki/skins/standard/diffform.pt
 lib/zope/lib/python/Products/ZWiki/skins/standard/editform.pt
 lib/zope/lib/python/Products/ZWiki/skins/standard/filterissues.pt
 lib/zope/lib/python/Products/ZWiki/skins/standard/filterissuesdtml.dtml
+lib/zope/lib/python/Products/ZWiki/skins/standard/issuebrowser.pt
+lib/zope/lib/python/Products/ZWiki/skins/standard/issuebrowserdtml.dtml
 lib/zope/lib/python/Products/ZWiki/skins/standard/issuepropertiesformdtml.dtml
 lib/zope/lib/python/Products/ZWiki/skins/standard/issuetracker.pt
 lib/zope/lib/python/Products/ZWiki/skins/standard/issuetrackerdtml.dtml
@@ -210,6 +217,8 @@ lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/diffform.pt
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/editform.pt
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/filterissues.pt
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/filterissuesdtml.dtml
+lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/issuebrowser.pt
+lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/issuebrowserdtml.dtml
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/issuetracker.pt
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/issuetrackerdtml.dtml
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/recentchanges.pt
@@ -268,6 +277,7 @@ lib/zope/lib/python/Products/ZWiki/tools/test_zwikiexport.pyc
 lib/zope/lib/python/Products/ZWiki/tools/test_zwikiimport.py
 lib/zope/lib/python/Products/ZWiki/tools/test_zwikiimport.pyc
 lib/zope/lib/python/Products/ZWiki/tools/zwikiexport.py
+lib/zope/lib/python/Products/ZWiki/tools/zwikiexport.pyc
 lib/zope/lib/python/Products/ZWiki/tools/zwikiimport.py
 lib/zope/lib/python/Products/ZWiki/tools/zwikiimport.pyc
 lib/zope/lib/python/Products/ZWiki/version.txt
