@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/11/07 14:46:32 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.17 2005/05/11 19:05:20 alek Exp $
 @conflict libgtop-*-!gnome
 bin/dns-helper
 bin/gconfigger
@@ -682,3 +682,5 @@ share/type-convert/gnome-make-postscript-mimes
 share/type-convert/postscript.convert
 share/type-convert/type.convert
 %%SHARED%%
+@comment var/
+@comment var/games/

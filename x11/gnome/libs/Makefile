@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2005/01/25 09:45:58 alek Exp $
+# $OpenBSD: Makefile,v 1.25 2005/05/11 19:05:20 alek Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
 DISTNAME=		gnome-libs-1.4.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
