@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2005/01/28 12:54:32 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2005/05/11 19:40:20 alek Exp $
 
 COMMENT=		"GNOME Application Libs"
 
 DISTNAME=		gal-0.24
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=    		devel x11/gnome
 HOMEPAGE=		http://www.gnome.org/
 
@@ -40,5 +40,7 @@ CONFIGURE_ARGS+=	--disable-gtk-doc
 CONFIGURE_ARGS+=	--with-html-dir=${LOCALBASE}/share/doc/gal
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+MAKE_FLAGS=		GAL_CURRENT=24
 
 .include <bsd.port.mk>
