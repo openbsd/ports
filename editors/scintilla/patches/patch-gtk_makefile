@@ -16,8 +16,8 @@
 -COMPLIB=../bin/scintilla.a
 +COMPLIB=../bin/libscintilla.a
 +LEXERLIB=../bin/libscintilla_lexers.a
-+SHAREDLIB=../bin/libscintilla.so.1.0
-+SHAREDLEXER=../bin/libscintilla_lexers.so.1.0
++SHAREDLIB=../bin/libscintilla.so.2.0
++SHAREDLEXER=../bin/libscintilla_lexers.so.2.0
  
  vpath %.h ../src ../include
  vpath %.cxx ../src

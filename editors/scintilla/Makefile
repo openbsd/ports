@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/02 12:39:44 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/05/11 19:18:17 alek Exp $
 
 COMMENT=	"source code editing component for GTK+"
 
 VERSION=	1.54
 DISTNAME=	scintilla${VERSION:S/.//}
-PKGNAME=	scintilla-${VERSION}
+PKGNAME=	scintilla-${VERSION}p0
 CATEGORIES=	editors x11
 
 HOMEPAGE=	http://www.scintilla.org/
