@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2005/04/14 21:29:28 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2005/05/11 19:27:34 espie Exp $
 
 COMMENT=	"easy to use, graphical editor"
 
@@ -6,7 +6,7 @@ CATEGORIES=	editors
 MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE= 	http://cooledit.sourceforge.net/ 
 DISTNAME=	cooledit-3.17.7
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -32,7 +32,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		XTERM_CMD=xterm LDFLAGS="-L${LOCALBASE}/lib"
 
 # XXX temporary until we have full internationalization support
-CONFIGURE_ENV+=		ac_cv_header_wchar_h=no
+#CONFIGURE_ENV+=		ac_cv_header_wchar_h=no
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static --disable-mail-author
