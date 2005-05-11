@@ -1,9 +1,9 @@
-$OpenBSD: patch-ltmain_sh,v 1.6 2004/10/25 02:34:21 pvalchev Exp $
---- ltmain.sh.orig	Mon Sep 27 11:41:42 2004
-+++ ltmain.sh	Mon Sep 27 11:42:18 2004
-@@ -5885,40 +5885,6 @@ relink_command=\"$relink_command\""
+$OpenBSD: patch-ltmain_sh,v 1.7 2005/05/11 17:26:15 pvalchev Exp $
+--- ltmain.sh.orig	Fri Dec 17 16:34:58 2004
++++ ltmain.sh	Fri Dec 17 16:35:06 2004
+@@ -5859,40 +5859,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
-     test "$show" = : && exit 0
+     test "$show" = : && exit $EXIT_SUCCESS
  
 -    $echo "----------------------------------------------------------------------"
 -    $echo "Libraries have been installed in:"
@@ -39,6 +39,6 @@ $OpenBSD: patch-ltmain_sh,v 1.6 2004/10/25 02:34:21 pvalchev Exp $
 -    $echo "See any operating system documentation about shared libraries for"
 -    $echo "more information, such as the ld(1) and ld.so(8) manual pages."
 -    $echo "----------------------------------------------------------------------"
-     exit 0
+     exit $EXIT_SUCCESS
      ;;
  

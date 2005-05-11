@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.7 2004/10/25 02:34:21 pvalchev Exp $
---- src/Makefile.in.orig	Mon Sep 27 12:29:59 2004
-+++ src/Makefile.in	Mon Sep 27 12:31:03 2004
-@@ -300,7 +300,6 @@ lib_LTLIBRARIES = libSDL.la
+$OpenBSD: patch-src_Makefile_in,v 1.8 2005/05/11 17:26:15 pvalchev Exp $
+--- src/Makefile.in.orig	Mon Dec 13 20:03:05 2004
++++ src/Makefile.in	Fri Dec 17 16:36:47 2004
+@@ -304,7 +304,6 @@ lib_LTLIBRARIES = libSDL.la
  libSDL_la_SOURCES = $(GENERAL_SRCS)
  libSDL_la_LDFLAGS = \
  	-no-undefined		\

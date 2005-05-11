@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_joystick_bsd_SDL_sysjoystick_c,v 1.5 2004/10/25 02:34:21 pvalchev Exp $
---- src/joystick/bsd/SDL_sysjoystick.c.orig	Tue Oct 19 23:52:14 2004
-+++ src/joystick/bsd/SDL_sysjoystick.c	Tue Oct 19 23:53:37 2004
+$OpenBSD: patch-src_joystick_bsd_SDL_sysjoystick_c,v 1.6 2005/05/11 17:26:15 pvalchev Exp $
+--- src/joystick/bsd/SDL_sysjoystick.c.orig	Mon Dec 13 18:54:32 2004
++++ src/joystick/bsd/SDL_sysjoystick.c	Fri Dec 17 16:36:39 2004
 @@ -60,7 +60,7 @@ static char rcsid =
  #include <sys/joystick.h>
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_joystick_bsd_SDL_sysjoystick_c,v 1.5 2004/10/25 02:34:21 pva
  #include <machine/joystick.h>
  #endif
  
-@@ -369,7 +369,7 @@ SDL_SYS_JoystickUpdate(SDL_Joystick *joy
+@@ -370,7 +370,7 @@ SDL_SYS_JoystickUpdate(SDL_Joystick *joy
  	int nbutton, naxe = -1;
  	Sint32 v;
  

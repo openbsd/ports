@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2005/02/11 18:52:04 sturm Exp $
+# $OpenBSD: Makefile,v 1.39 2005/05/11 17:26:15 pvalchev Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
 
-VERSION=	1.2.7
+VERSION=	1.2.8
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p1
+PKGNAME=	${DISTNAME:L}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -101,6 +101,6 @@ WANTLIB+=	X11 Xext
 
 NO_REGRESS=	Yes
 
-MAKE_FLAGS=	libSDL_la_LDFLAGS="-version-info 3:0:0"
+MAKE_FLAGS=	libSDL_la_LDFLAGS="-version-info 4:0:0"
 
 .include <bsd.port.mk>
