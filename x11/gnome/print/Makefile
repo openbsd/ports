@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2005/01/27 10:01:26 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2005/05/11 19:01:39 alek Exp $
 
 COMMENT=		"printing framework for GNOME"
 
 DISTNAME=		gnome-print-0.36
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		x11/gnome print
 HOMEPAGE=		http://www.gnome.org/projects/gnome-print/
 
@@ -36,5 +36,7 @@ USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
+
+MAKE_FLAGS=		GNOMEPRINT_CURRENT=17 GNOMEPRINT_REVISION=0
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/07 06:20:46 marcm Exp $
+# $OpenBSD: Makefile,v 1.21 2005/05/11 19:00:43 alek Exp $
 
 NOT_FOR_ARCHS=			${NO_SHARED_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT-docs=           	"gtk+-2 documentation"
 
 VERSION=			2.4.14
 DISTNAME=			gtk+-${VERSION}
-PKGNAME=			gtk+2-${VERSION}
+PKGNAME=			gtk+2-${VERSION}p0
 PKGNAME-docs=			gtk+2-docs-${VERSION}
 CATEGORIES=			x11 devel
 
@@ -50,5 +50,7 @@ CONFIGURE_ARGS+= 		--disable-gtk-doc
 CONFIGURE_ENV=			CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 				LDFLAGS="-L${LOCALBASE}/lib" \
 				PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
+
+MAKE_FLAGS=			LT_VERSION_INFO="401:0:400"
 
 .include <bsd.port.mk>

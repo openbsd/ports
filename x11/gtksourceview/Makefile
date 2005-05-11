@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/31 07:25:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2005/05/11 18:59:19 alek Exp $
 
 COMMENT=		"Text widget that extends GTK2's GtkTextView widget"
 DISTNAME=		gtksourceview-1.1.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.gnome.org/softwaremap/projects/gtksourceview	
@@ -31,5 +32,7 @@ USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-build_tests
+
+MAKE_FLAGS=		libgtksourceview_1_0_la_LDFLAGS="-version-info 1:0:0"
 
 .include <bsd.port.mk>
