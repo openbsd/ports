@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2005/02/09 23:11:29 alek Exp $
+# $OpenBSD: Makefile,v 1.34 2005/05/11 19:02:40 espie Exp $
 
 COMMENT=	"GNU Bourne Again Shell"
 
 DISTNAME=	bash-3.0
-PKGNAME=	bash-3.0.16p0
+PKGNAME=	bash-3.0.16p1
 CATEGORIES=	shells
 HOMEPAGE=	http://cnswww.cns.cwru.edu/~chet/bash/bashtop.html
 
@@ -36,5 +36,6 @@ CONFIGURE_ARGS=	--enable-static-link
 .else
 WANTLIB=	c termcap 
 .endif
+CONFIGURE_ARGS+=--disable-multibyte
 
 .include <bsd.port.mk>
