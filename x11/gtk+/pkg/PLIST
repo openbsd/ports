@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2005/04/25 16:29:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.32 2005/05/11 19:18:43 alek Exp $
 %%SHARED%%
 bin/gtk-config
 include/gtk-1.2/
@@ -124,6 +124,8 @@ include/gtk-1.2/gtk/gtkvscrollbar.h
 include/gtk-1.2/gtk/gtkvseparator.h
 include/gtk-1.2/gtk/gtkwidget.h
 include/gtk-1.2/gtk/gtkwindow.h
+@info info/gdk.info
+@info info/gtk.info
 lib/libgdk.a
 lib/libgdk.la
 lib/libgtk.a
@@ -131,10 +133,8 @@ lib/libgtk.la
 lib/pkgconfig/
 lib/pkgconfig/gdk.pc
 lib/pkgconfig/gtk+.pc
-share/aclocal/gtk.m4
-@info info/gdk.info
-@info info/gtk.info
 @man man/man1/gtk-config.1
+share/aclocal/gtk.m4
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/gtk+.mo
