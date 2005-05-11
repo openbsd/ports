@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/09 20:35:41 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/11 15:45:05 xsa Exp $
 
 COMMENT=	"next generation scanning tool"
 
 DISTNAME=	amap-5.0
 CATEGORIES=    	security
 
-HOMEPAGE=	http://www.thc.org/
+HOMEPAGE=	http://www.thc.org/thc-amap/
 
 MAINTAINER=	Alexandre Anriot <aanriot@atlantilde.com>
 
