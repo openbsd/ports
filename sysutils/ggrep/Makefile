@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2005/01/26 16:41:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2005/05/11 19:08:23 espie Exp $
 
 COMMENT=	GNU versions of grep pattern matching utilities
 
 DISTNAME=	grep-2.5.1
-PKGNAME=	g${DISTNAME}p0
+PKGNAME=	g${DISTNAME}p1
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.gnu.org/software/grep/grep.html
 
@@ -26,6 +26,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+CONFIGURE_ENV+= ac_cv_func_mbrtowc=no
 
 post-build:
 	@perl -i -pe 's/\bgrep\b/ggrep/g' ${WRKBUILD}/src/[ef]grep
