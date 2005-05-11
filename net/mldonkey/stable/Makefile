@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/16 00:31:23 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2005/05/11 17:22:39 pvalchev Exp $
+
+BROKEN= "requires update due to ocaml 3.08"
 
 COMMENT='e-donkey client'
 CATEGORIES=net
