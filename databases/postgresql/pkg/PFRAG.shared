@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.14 2005/04/30 10:00:04 mbalmer Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.15 2005/05/11 10:10:39 mbalmer Exp $
 @lib lib/libecpg.so.5.0
 @lib lib/libecpg_compat.so.2.0
 @lib lib/libpgtypes.so.2.0

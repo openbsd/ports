@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.5 2005/04/30 10:00:04 mbalmer Exp $
+@comment $OpenBSD: PLIST-server,v 1.6 2005/05/11 10:10:40 mbalmer Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
