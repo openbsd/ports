@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2005/04/14 21:29:28 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2005/05/11 19:21:06 espie Exp $
 
 COMMENT=	"MS-Windows 3.1/95/NT emulator for Unix (Alpha release)"
 
 DATE= 		990225
 DISTNAME= 	Wine-${DATE}
-PKGNAME=	wine-${DATE}
+PKGNAME=	wine-${DATE}p0
 CATEGORIES=	emulators x11
 
 ONLY_FOR_ARCHS= i386
@@ -21,7 +21,7 @@ USE_X11=	yes
 CONFIGURE_STYLE=	gnu dest
 
 # XXX partial citrus: no real wctype functions yet
-CONFIGURE_ENV+=ac_cv_header_wctype_h=no
+#CONFIGURE_ENV+=ac_cv_header_wctype_h=no
 
 WRKDIST=	${WRKDIR}/${PKGNAME}
 
