@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2005/04/14 21:29:28 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2005/05/11 19:16:40 espie Exp $
 
 COMMENT=	"themed window manager"
 
 DISTNAME=	enlightenment-0.16.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
 
@@ -30,7 +31,5 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-fsstd
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype1/freetype" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
-# XXX don't find wctype.h yet, since it's useless for now
-CONFIGURE_ENV+=	ac_cv_header_wctype_h=no
 
 .include <bsd.port.mk>
