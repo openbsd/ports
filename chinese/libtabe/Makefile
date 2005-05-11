@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2005/01/12 21:31:06 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2005/05/11 02:08:12 kevlo Exp $
 
 COMMENT=	"library for Chinese language processing"
 
-DISTNAME=	libtabe-0.2.5
-PKGNAME=	zh-${DISTNAME}p0
+DISTNAME=	libtabe-0.2.6
+PKGNAME=	zh-${DISTNAME}
 CATEGORIES=	chinese
 
 HOMEPAGE=	http://libtabe.sourceforge.net/
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c
 
-MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/libtabe/devel/
+MASTER_SITES=	http://www.kpvs.tp.edu.tw/
 
 LIB_DEPENDS=	lib/db/db.=3:db-3.*:databases/db/v3
 
@@ -28,5 +28,7 @@ CONFIGURE_ARGS=	--with-db-inc=${LOCALBASE}/include/db \
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/script
 
 WRKDIST=	${WRKDIR}/libtabe
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
