@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2005/02/21 17:15:43 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2005/05/11 11:16:07 robert Exp $
 
 COMMENT=		"GNU Transport Layer Security library"
 
-VERSION=		1.0.20
+VERSION=		1.0.25
 DISTNAME=		gnutls-${VERSION}
-PKGNAME=		${DISTNAME}p0
 CATEGORIES=		security
 
 HOMEPAGE=		http://www.gnutls.org/
@@ -17,9 +16,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c gpg-error intl z
 
-MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/gnutls/ \
-		ftp://gd.tuwien.ac.at/privacy/gnupg/gnutls/ \
-		http://sunsite.dk/pub/security/gcrypt/gnutls/ \
+MASTER_SITES=	ftp://ftp.gnutls.org/pub/gnutls/ \
+		ftp://ftp.gnupg.org/gcrypt/alpha/gnutls/ \
+		http://josefsson.org/gnutls/releases/ \
 		http://ftp.linux.it/pub/mirrors/gnupg/gnutls/
 
 MODULES=	converters/libiconv

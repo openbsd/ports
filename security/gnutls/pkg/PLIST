@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/22 08:06:40 robert Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/05/11 11:16:07 robert Exp $
 bin/certtool
 bin/gnutls-cli
 bin/gnutls-cli-debug
@@ -22,6 +22,9 @@ lib/libgnutls-openssl.a
 lib/libgnutls-openssl.la
 lib/libgnutls.a
 lib/libgnutls.la
+lib/pkgconfig/
+lib/pkgconfig/gnutls-extra.pc
+lib/pkgconfig/gnutls.pc
 @man man/man1/certtool.1
 @man man/man1/gnutls-cli-debug.1
 @man man/man1/gnutls-cli.1
