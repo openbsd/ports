@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2005/05/12 04:38:37 jolan Exp $
+--- Makefile.in.orig	Sat Mar  5 05:21:39 2005
++++ Makefile.in	Wed May 11 21:55:35 2005
+@@ -230,7 +230,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-confdir = $(sysconfdir)/xdg/xfce4/panel
++confdir = $(prefix)/share/examples/xfce4-panel
+ conf_DATA = \
+ 	contents.xml 							\
+ 	contents.xml.ar							\

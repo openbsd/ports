@@ -1,0 +1,4 @@
+xfwm4 is the xfce4 window mananger.  It manages the placement of
+application windows on the screen, provides window decorations, and
+manages workspaces or virtual desktops.  It implements the window
+manager hints as defined on freedesktop.org.

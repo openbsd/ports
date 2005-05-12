@@ -1,0 +1,51 @@
+$OpenBSD: patch-panel-plugin_battmon_c,v 1.1.1.1 2005/05/12 04:38:49 jolan Exp $
+--- panel-plugin/battmon.c.orig	2003-09-09 08:49:35.000000000 -0500
++++ panel-plugin/battmon.c	2004-02-17 23:44:32.000000000 -0600
+@@ -34,8 +34,9 @@
+ #ifdef __FreeBSD__
+ #include <machine/apm_bios.h>
+ #elif __OpenBSD__
+-#include <sys/param.h>
++#include <sys/ioctl.h>
+ #include <machine/apmvar.h>
++#define APMDEVICE "/dev/apm"
+ #elif __linux__
+ #include <apm.h>
+ #endif
+@@ -266,11 +267,14 @@ update_apm_status(t_battmon *battmon)
+   	battmon->method = BM_BROKEN;
+   	fd = open(APMDEVICE, O_RDONLY);
+   	if (fd == -1) return TRUE;
+-  	if (ioctl(fd, APM_IOC_GETPOWER, &apminfo) == -1)
++  	if (ioctl(fd, APM_IOC_GETPOWER, &apm) == -1)
+     		return TRUE;
+   	close(fd);
+   	charge = apm.battery_life;
+   	time_remaining = apm.minutes_left;
++	if ((time_remaining / 60) > 99)
++	    time_remaining = 0;
++
+   	acline = apm.ac_state ? TRUE : FALSE;
+ 	
+ #else
+@@ -402,8 +406,7 @@ battmon.c:241: for each function it appe
+ 		     g_snprintf(buffer, sizeof(buffer), _("AC off-line"));
+ 	}
+ 	add_tooltip(battmon->ebox, buffer);
+-
+-	if(battmon->options.display_power){
++	if(0) {
+ 	  gtk_widget_show((GtkWidget *)battmon->acfan);
+ 	  gtk_widget_show((GtkWidget *)battmon->temp);
+ 	  fan=get_fan_status();
+@@ -1177,10 +1180,6 @@ battmon_create_options(Control *ctrl, Gt
+ 	gtk_widget_show(dialog->cb_disp_tooltip_time);
+ 	gtk_box_pack_start(GTK_BOX(vbox2), dialog->cb_disp_tooltip_time, FALSE, FALSE, 0);
+ 	
+-	dialog->cb_disp_power = gtk_check_button_new_with_mnemonic(_("Display power"));
+-	gtk_widget_show(dialog->cb_disp_power);
+-	gtk_box_pack_start(GTK_BOX(vbox2), dialog->cb_disp_power, FALSE, FALSE, 0);
+-
+ 	/* Signal connections should be set after setting tate of toggle buttons...*/
+ 	refresh_dialog(dialog);
+ 

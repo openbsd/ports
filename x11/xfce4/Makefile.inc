@@ -1,0 +1,10 @@
+# $OpenBSD: Makefile.inc,v 1.1.1.1 2005/05/12 04:38:34 jolan Exp $
+
+CATEGORIES=	x11
+DIST_SUBDIR=	xfce4
+
+USE_X11=	Yes
+
+CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"

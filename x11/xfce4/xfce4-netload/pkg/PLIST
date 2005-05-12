@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/12 04:38:50 jolan Exp $
+%%SHARED%%
+lib/xfce4/panel-plugins/libnetload.a
+lib/xfce4/panel-plugins/libnetload.la
+share/locale/ca/LC_MESSAGES/xfce4-netload.mo
+share/locale/de/LC_MESSAGES/xfce4-netload.mo
+share/locale/ko/LC_MESSAGES/xfce4-netload.mo
+share/locale/lt/LC_MESSAGES/xfce4-netload.mo
+share/locale/pl/LC_MESSAGES/xfce4-netload.mo
+share/locale/uk/LC_MESSAGES/xfce4-netload.mo

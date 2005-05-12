@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/12 04:38:34 jolan Exp $
+@lib lib/libxfce4mcs-client.so.2.3
+@lib lib/libxfce4mcs-manager.so.2.3

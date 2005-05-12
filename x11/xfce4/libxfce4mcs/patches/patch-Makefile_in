@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2005/05/12 04:38:35 jolan Exp $
+--- Makefile.in.orig	Sun Jan  2 06:51:00 2005
++++ Makefile.in	Sun Feb 20 15:26:41 2005
+@@ -196,7 +196,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = libxfce4mcs docs
++SUBDIRS = libxfce4mcs
+ EXTRA_DIST = \
+ 	AUTHORS								\
+ 	COPYING								\

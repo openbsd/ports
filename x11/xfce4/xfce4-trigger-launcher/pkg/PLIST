@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/12 04:38:39 jolan Exp $
+%%SHARED%%
+lib/xfce4/
+lib/xfce4/panel-plugins/
+lib/xfce4/panel-plugins/libtriggerlauncher.a
+lib/xfce4/panel-plugins/libtriggerlauncher.la

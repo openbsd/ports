@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/12 04:38:50 jolan Exp $
+%%SHARED%%
+lib/xfce4/panel-plugins/libdatetime.la
+share/locale/ca/LC_MESSAGES/xfce4-datetime.mo
+share/locale/fr/LC_MESSAGES/xfce4-datetime.mo
+share/locale/ko/LC_MESSAGES/xfce4-datetime.mo

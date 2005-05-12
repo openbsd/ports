@@ -1,0 +1,12 @@
+$OpenBSD: patch-panel-plugin_wi_bsd_c,v 1.1.1.1 2005/05/12 04:38:50 jolan Exp $
+--- panel-plugin/wi_bsd.c.orig	Mon Feb  9 15:20:54 2004
++++ panel-plugin/wi_bsd.c	Mon Nov 29 23:56:41 2004
+@@ -56,7 +56,7 @@
+ #endif
+ #endif
+ #ifdef __OpenBSD__
+-#include <net/if_ieee80211.h>
++#include <net80211/ieee80211.h>
+ #include <dev/ic/if_wi_ieee.h>
+ #define le16toh(x) letoh16(x)
+ #endif
