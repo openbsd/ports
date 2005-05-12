@@ -1,5 +1,5 @@
---- etc/freshclam.conf.orig	Mon Sep 27 22:35:01 2004
-+++ etc/freshclam.conf	Tue Dec 21 16:40:33 2004
+--- etc/freshclam.conf.orig	Thu Apr  7 19:55:34 2005
++++ etc/freshclam.conf	Sun Apr 10 10:00:25 2005
 @@ -11,7 +11,7 @@ Example
  # Path to the database directory.
  # WARNING: It must match clamd.conf's directive!
@@ -16,5 +16,5 @@
 -#DatabaseOwner clamav
 +#DatabaseOwner _clamav
  
- # Use DNS to verify virus database version. Freshclam uses DNS TXT records
- # to verify database and software versions. We highly recommend enabling
+ # Initialize supplementary group access (freshclam must be started by root).
+ # Default: disabled

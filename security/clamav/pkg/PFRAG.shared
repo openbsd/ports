@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2005/02/21 09:36:29 mbalmer Exp $
-@lib lib/libclamav.so.1.8
+@comment $OpenBSD: PFRAG.shared,v 1.4 2005/05/12 14:55:21 mbalmer Exp $
+@lib lib/libclamav.so.1.11
