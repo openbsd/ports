@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:44:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/05/12 19:04:27 alek Exp $
 bin/vtcl
 lib/vtcl/
 lib/vtcl/demo/
@@ -448,12 +448,12 @@ share/doc/vtcl/doc/mclistbox.html
 share/doc/vtcl/doc/progressbar.html
 share/doc/vtcl/doc/tutorial.html
 share/doc/vtcl/doc/tutorial.txt
-share/exmples/
-share/exmples/vtcl/
-share/exmples/vtcl/sample/
-share/exmples/vtcl/sample/User_Compound.tcl
-share/exmples/vtcl/sample/hierarchy.tcl
-share/exmples/vtcl/sample/notebook.tcl
-share/exmples/vtcl/sample/notebook_recurse.tcl
-share/exmples/vtcl/sample/panedwindow.tcl
-share/exmples/vtcl/sample/sampleBLT.tcl
+share/examples/
+share/examples/vtcl/
+share/examples/vtcl/sample/
+share/examples/vtcl/sample/User_Compound.tcl
+share/examples/vtcl/sample/hierarchy.tcl
+share/examples/vtcl/sample/notebook.tcl
+share/examples/vtcl/sample/notebook_recurse.tcl
+share/examples/vtcl/sample/panedwindow.tcl
+share/examples/vtcl/sample/sampleBLT.tcl

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2004/05/07 15:28:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2005/05/12 19:04:27 alek Exp $
 
 COMMENT=		"Visual Tcl development environment"
 
 DISTNAME=		vtcl-1.6.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://vtcl.sourceforge.net/
@@ -28,11 +29,11 @@ do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/vtcl
-	${INSTALL_DATA_DIR} ${PREFIX}/share/exmples/vtcl
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vtcl
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vtcl
 	cp -R ${WRKSRC}/vtcl.tcl ${WRKSRC}/images ${WRKSRC}/lib \
 	     ${WRKSRC}/demo ${PREFIX}/lib/vtcl
-	cp -R ${WRKSRC}/sample ${PREFIX}/share/exmples/vtcl
+	cp -R ${WRKSRC}/sample ${PREFIX}/share/examples/vtcl
 	cp -R ${WRKSRC}/doc ${PREFIX}/share/doc/vtcl
 	${INSTALL_SCRIPT} ${WRKSRC}/vtcl ${PREFIX}/bin
 
