@@ -1,0 +1,10 @@
+XSLT (Extensible Stylesheet Language (XSL) Transformations) is a
+language for transforming XML documents into other XML documents.
+It is a standard defined by The World Wide Web consortium (W3C).
+Information about XSLT and related technologies can be found at
+http://www.w3.org/TR/xslt.
+
+This PHP extension provides a processor independent API to XSLT
+transformations. Currently this extension only supports the Sablotron
+library from the Ginger Alliance. Support is planned for other
+libraries, such as the Xalan library or the libxslt library.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/04/10 12:21:02 robert Exp $
+# $OpenBSD: Makefile,v 1.10 2005/05/12 19:09:14 robert Exp $
 
 FULLPKGNAME=	php5-extensions-${V}
 COMMENT=	"informational package about PHP5 extensions"
@@ -245,7 +245,7 @@ SNMP_WANTLIB=		crypto
 .endif
 
 # sqlite
-PSEUDO_FLAVORS+=       no_sqlite
+PSEUDO_FLAVORS+=	no_sqlite
 .if ${FLAVOR:L:Mno_sqlite}
 CONFIGURE_ARGS+=	--without-sqlite
 .else
@@ -276,6 +276,17 @@ COMMENT-xmlrpc=		"XML RPC functions for php5"
 CONFIGURE_ARGS+=	--with-xmlrpc=shared
 XMLRPC_DEPENDS=		expat.2::textproc/expat
 XMLRPC_WANTLIB=		iconv
+.endif
+
+# xsl
+PSEUDO_FLAVORS+=	no_xsl
+.if ${FLAVOR:L:Mno_xsl}
+CONFIGURE_ARGS+=	--without-xsl
+.else
+MULTI_PACKAGES+=	-xsl
+COMMENT-xsl=		"XSL functions for php5"
+CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
+XSLT_DEPENDS=		xslt.3::textproc/libxslt
 .endif
 
 .for i in ${MULTI_PACKAGES}

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-xsl,v 1.1 2005/05/12 19:09:15 robert Exp $
+lib/php/modules/xsl.so
