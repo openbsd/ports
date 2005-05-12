@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2005/04/19 13:56:47 kurt Exp $
+# $OpenBSD: Makefile,v 1.3 2005/05/12 15:09:15 kurt Exp $
 
 ONLY_FOR_ARCHS=		i386
 
-COMMENT=		"IDE for anything and nothing in particular"
-COMMENT-gnome=		"gnome intergration library for eclipse"
-COMMENT-mozilla=	"mozilla intergration library for eclipse HTML Browser Widget"
+COMMENT=		"general-purpose, extensible IDE for Java & other langs"
+COMMENT-gnome=		"gnome integration library for eclipse"
+COMMENT-mozilla=	"mozilla integration library for eclipse HTML Browser Widget"
 
 ECLIPSE_VER=		3.0.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
