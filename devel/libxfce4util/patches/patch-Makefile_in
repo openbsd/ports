@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2005/05/12 04:36:23 jolan Exp $
+--- Makefile.in.orig	Sun Jan  2 06:51:01 2005
++++ Makefile.in	Sun Feb 20 15:06:42 2005
+@@ -190,7 +190,6 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ SUBDIRS = \
+ 	libxfce4util							\
+-	docs								\
+ 	m4								\
+ 	xfce4-kiosk-query
+ 
