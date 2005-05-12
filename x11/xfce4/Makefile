@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/12 04:43:12 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2005/05/12 05:22:26 jolan Exp $
 
      SUBDIR+= gtk-xfce-engine
      SUBDIR+= libxfce4mcs
@@ -28,6 +28,7 @@
      SUBDIR+= xfce4-trigger-launcher
      SUBDIR+= xfce4-wavelan
      SUBDIR+= xfce4-weather
+     SUBDIR+= xfce4-xkb
      SUBDIR+= xfdesktop
      SUBDIR+= xffm
      SUBDIR+= xfwm4
