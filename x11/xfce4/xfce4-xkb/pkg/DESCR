@@ -1,0 +1,5 @@
+xce4-xkb displays the current keyboard layout and refreshes when the
+layout changes.  Also the layout can be switched by simply clicking on
+the plugin.  This plugin is used along with the XKB extension.  For now
+the keyboard layouts cannot be configured from the plugin itself, they
+should be set in the xorg.conf file or some other way (e.g. setxkbmap).
