@@ -1,9 +1,36 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/12/15 06:11:33 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/12 04:43:12 jolan Exp $
 
-     SUBDIR+= applications
-     SUBDIR+= desktop
-     SUBDIR+= libraries
-     SUBDIR+= plugins
-     SUBDIR+= themes
+     SUBDIR+= gtk-xfce-engine
+     SUBDIR+= libxfce4mcs
+     SUBDIR+= libxfcegui4
+     SUBDIR+= xfcalendar
+     SUBDIR+= xfce-mcs-manager
+     SUBDIR+= xfce-mcs-plugins
+     SUBDIR+= xfce-utils
+     SUBDIR+= xfce4-appfinder
+     SUBDIR+= xfce4-battery
+     SUBDIR+= xfce4-clipman
+     SUBDIR+= xfce4-datetime
+     SUBDIR+= xfce4-diskperf
+     SUBDIR+= xfce4-fsguard
+     SUBDIR+= xfce4-icon-theme
+     SUBDIR+= xfce4-iconbox
+     SUBDIR+= xfce4-minicmd
+     SUBDIR+= xfce4-netload
+     SUBDIR+= xfce4-notes
+     SUBDIR+= xfce4-panel
+     SUBDIR+= xfce4-session
+     SUBDIR+= xfce4-showdesktop
+     SUBDIR+= xfce4-systemload
+     SUBDIR+= xfce4-systray
+     SUBDIR+= xfce4-taskbar
+     SUBDIR+= xfce4-toys
+     SUBDIR+= xfce4-trigger-launcher
+     SUBDIR+= xfce4-wavelan
+     SUBDIR+= xfce4-weather
+     SUBDIR+= xfdesktop
+     SUBDIR+= xffm
+     SUBDIR+= xfwm4
+     SUBDIR+= xfwm4-themes
 
 .include <bsd.port.subdir.mk>
