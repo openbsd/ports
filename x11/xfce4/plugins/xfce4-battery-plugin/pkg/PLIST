@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/14 05:50:05 jolan Exp $
-lib/xfce4/panel-plugins/libbattmon.a
-lib/xfce4/panel-plugins/libbattmon.la
-lib/xfce4/panel-plugins/libbattmon.so

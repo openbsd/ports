@@ -1,9 +1,0 @@
-xfce4-systray is a notification area/system tray plugin for the xfce4
-panel.
-
-By default, the taskbar systray/notification area is given preference
-over the systray/notification area provided by this panel plugin.  This
-behavior can be modified by unchecking the following option box:
-
-Settings Manager -> Taskbar -> Notification Area \
-	-> Show system tray in task bar

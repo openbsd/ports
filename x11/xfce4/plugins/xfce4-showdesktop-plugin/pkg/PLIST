@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/14 23:05:01 jolan Exp $
-lib/xfce4/panel-plugins/libshowdesktop.a
-lib/xfce4/panel-plugins/libshowdesktop.la
-lib/xfce4/panel-plugins/libshowdesktop.so
-share/locale/de/LC_MESSAGES/xfce4-showdesktop.mo

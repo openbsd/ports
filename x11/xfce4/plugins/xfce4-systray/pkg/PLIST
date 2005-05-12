@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/07/12 04:54:01 jolan Exp $
-lib/xfce4/panel-plugins/libsystray.a
-lib/xfce4/panel-plugins/libsystray.la
-%%SHARED%%

@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2004/07/11 23:33:38 jolan Exp $
-lib/xfce4/mcs-plugins/keyboard_plugin.so
-lib/xfce4/mcs-plugins/mouse_plugin.so
-lib/xfce4/mcs-plugins/ui_plugin.so

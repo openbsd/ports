@@ -1,5 +1,0 @@
-xfce4-minicmd-plugin puts a small entry widget onto your panel.  You can
-execute programs by typing their names in the widget and hitting Enter
-or Ctrl+Enter.  The latter runs the command in a terminal.  It maintains
-history which is shared with xfrun4.  This history can be accessed by
-the Up and Down keys.
