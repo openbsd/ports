@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/26 17:05:05 martin Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/12 22:50:39 martin Exp $
 
 COMMENT=	"AVR microcontroller hardware in-system programmer"
 
 DISTNAME=	uisp-20050207
 CATEGORIES=	devel
 
-HOMEPAGE=	http://savannah.nongnu.org/projects/uisp/
+HOMEPAGE=	http://www.nongnu.org/uisp/
 
 MAINTAINER=	Martin Reindl <martin@openbsd.org>
 
