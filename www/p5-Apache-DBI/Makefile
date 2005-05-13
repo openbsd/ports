@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/04/20 18:11:12 robert Exp $
+# $OpenBSD: Makefile,v 1.15 2005/05/13 20:20:53 msf Exp $
 
 COMMENT=	"DBI persistent connection, authentication and authorization"
 
@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
 RUN_DEPENDS=	:mod_perl-*:www/mod_perl \
 		:p5-DBI-*:databases/p5-DBI
 
-MAINTAINER=	Ben Lovett <ben@tilderoot.com>
+MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org> 
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
