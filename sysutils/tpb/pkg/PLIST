@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/01 17:08:55 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/05/13 20:12:24 msf Exp $
 @mode 2755
 @group kmem
 bin/tpb
@@ -10,6 +10,7 @@ share/doc/tpb/nvram.txt
 share/examples/tpb/
 share/examples/tpb/callback_example.sh
 share/examples/tpb/tpbrc
+@sample ${SYSCONFDIR}/tpbrc
 share/locale/
 share/locale/da/
 share/locale/da/LC_MESSAGES/
