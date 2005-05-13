@@ -1,13 +1,13 @@
-$OpenBSD: patch-plugins_ssl_Makefile_am,v 1.1 2004/01/18 00:11:21 brad Exp $
---- plugins/ssl/Makefile.am.orig	2003-10-15 01:56:07.000000000 -0400
-+++ plugins/ssl/Makefile.am	2004-01-17 14:45:46.000000000 -0500
+$OpenBSD: patch-plugins_ssl_Makefile_am,v 1.2 2005/05/13 20:49:16 brad Exp $
+--- plugins/ssl/Makefile.am.orig	Fri Apr 29 13:02:03 2005
++++ plugins/ssl/Makefile.am	Thu May 12 21:48:07 2005
 @@ -4,6 +4,7 @@ EXTRA_DIST = \
  plugindir = $(libdir)/gaim
  
- ssl_la_LDFLAGS        = -module -avoid-version
-+ssl_openssl_la_LDFLAGS = -module -avoid-version
- ssl_gnutls_la_LDFLAGS = -module -avoid-version
- ssl_nss_la_LDFLAGS    = -module -avoid-version
+ ssl_la_LDFLAGS        = -module -avoid-version $(GLIB_LIBS)
++ssl_openssl_la_LDFLAGS = -module -avoid-version $(GLIB_LIBS)
+ ssl_gnutls_la_LDFLAGS = -module -avoid-version $(GLIB_LIBS)
+ ssl_nss_la_LDFLAGS    = -module -avoid-version $(GLIB_LIBS)
  
 @@ -11,13 +12,16 @@ if PLUGINS
  

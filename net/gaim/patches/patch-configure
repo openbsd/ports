@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.19 2005/02/27 06:52:22 brad Exp $
---- configure.orig	Thu Feb 24 21:44:01 2005
-+++ configure	Sat Feb 26 23:01:07 2005
+$OpenBSD: patch-configure,v 1.20 2005/05/13 20:49:15 brad Exp $
+--- configure.orig	Tue May 10 22:50:31 2005
++++ configure	Thu May 12 20:44:11 2005
 @@ -464,7 +464,7 @@ ac_includes_default="\
  # include <unistd.h>
  #endif"
@@ -103,7 +103,7 @@ $OpenBSD: patch-configure,v 1.19 2005/02/27 06:52:22 brad Exp $
    osf3*)
      case $cc_basename in
        KCC)
-@@ -28205,7 +28237,7 @@ fi
+@@ -28307,7 +28339,7 @@ fi
  	if test "$ac_silc_libs" != "no"; then
  		SILC_LIBS="-L$ac_silc_libs"
  	fi
@@ -112,7 +112,7 @@ $OpenBSD: patch-configure,v 1.19 2005/02/27 06:52:22 brad Exp $
  	echo "$as_me:$LINENO: checking for silc_client_init in -lsilcclient" >&5
  echo $ECHO_N "checking for silc_client_init in -lsilcclient... $ECHO_C" >&6
  if test "${ac_cv_lib_silcclient_silc_client_init+set}" = set; then
-@@ -32569,6 +32601,14 @@ fi
+@@ -32746,6 +32778,14 @@ fi
  
  
  
@@ -127,7 +127,7 @@ $OpenBSD: patch-configure,v 1.19 2005/02/27 06:52:22 brad Exp $
  # Check whether --enable-gnutls or --disable-gnutls was given.
  if test "${enable_gnutls+set}" = set; then
    enableval="$enable_gnutls"
-@@ -32587,6 +32627,299 @@ fi;
+@@ -32764,6 +32804,299 @@ fi;
  
  msg_ssl="None"
  
@@ -427,7 +427,7 @@ $OpenBSD: patch-configure,v 1.19 2005/02/27 06:52:22 brad Exp $
  if test "x$enable_gnutls" != "xno"; then
  	enable_gnutls="no"
  	prefix=`eval echo $prefix`
-@@ -33766,12 +34099,20 @@ else
+@@ -33943,12 +34276,20 @@ else
  fi
  
  
@@ -449,7 +449,7 @@ $OpenBSD: patch-configure,v 1.19 2005/02/27 06:52:22 brad Exp $
  fi
  
  if test "$enable_tcl" = yes; then
-@@ -37604,6 +37945,13 @@ echo "$as_me: error: conditional \"USE_P
+@@ -37781,6 +38122,13 @@ echo "$as_me: error: conditional \"USE_P
  Usually this means the macro was only invoked conditionally." >&2;}
     { (exit 1); exit 1; }; }
  fi
@@ -463,7 +463,7 @@ $OpenBSD: patch-configure,v 1.19 2005/02/27 06:52:22 brad Exp $
  if test -z "${USE_GNUTLS_TRUE}" && test -z "${USE_GNUTLS_FALSE}"; then
    { { echo "$as_me:$LINENO: error: conditional \"USE_GNUTLS\" was never defined.
  Usually this means the macro was only invoked conditionally." >&5
-@@ -38456,6 +38804,10 @@ s,@PERL_LIBS@,$PERL_LIBS,;t t
+@@ -38633,6 +38981,10 @@ s,@PERL_LIBS@,$PERL_LIBS,;t t
  s,@PERL_MM_PARAMS@,$PERL_MM_PARAMS,;t t
  s,@DYNALOADER_A@,$DYNALOADER_A,;t t
  s,@LIBPERL_A@,$LIBPERL_A,;t t

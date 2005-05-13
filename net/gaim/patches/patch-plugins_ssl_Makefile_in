@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_ssl_Makefile_in,v 1.5 2004/12/10 20:57:08 fgsch Exp $
---- plugins/ssl/Makefile.in.orig	Fri Dec  3 01:24:54 2004
-+++ plugins/ssl/Makefile.in	Fri Dec 10 02:11:39 2004
+$OpenBSD: patch-plugins_ssl_Makefile_in,v 1.6 2005/05/13 20:49:16 brad Exp $
+--- plugins/ssl/Makefile.in.orig	Tue May 10 22:50:36 2005
++++ plugins/ssl/Makefile.in	Thu May 12 21:55:36 2005
 @@ -59,6 +59,10 @@ am__installdirs = "$(DESTDIR)$(plugindir
  pluginLTLIBRARIES_INSTALL = $(INSTALL)
  LTLIBRARIES = $(plugin_LTLIBRARIES)
@@ -33,13 +33,13 @@ $OpenBSD: patch-plugins_ssl_Makefile_in,v 1.5 2004/12/10 20:57:08 fgsch Exp $
 @@ -353,16 +359,20 @@ EXTRA_DIST = \
  
  plugindir = $(libdir)/gaim
- ssl_la_LDFLAGS = -module -avoid-version
-+ssl_openssl_la_LDFLAGS = -module -avoid-version
- ssl_gnutls_la_LDFLAGS = -module -avoid-version
- ssl_nss_la_LDFLAGS = -module -avoid-version
+ ssl_la_LDFLAGS = -module -avoid-version $(GLIB_LIBS)
++ssl_openssl_la_LDFLAGS = -module -avoid-version $(GLIB_LIBS)
+ ssl_gnutls_la_LDFLAGS = -module -avoid-version $(GLIB_LIBS)
+ ssl_nss_la_LDFLAGS = -module -avoid-version $(GLIB_LIBS)
  @PLUGINS_TRUE@plugin_LTLIBRARIES = \
  @PLUGINS_TRUE@	ssl.la           \
-+@PLUGINS_TRUE@ ssl-openssl.la    \
++@PLUGINS_TRUE@	ssl-openssl.la   \
  @PLUGINS_TRUE@	ssl-gnutls.la    \
  @PLUGINS_TRUE@	ssl-nss.la
  
