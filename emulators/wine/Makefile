@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2005/05/11 19:21:06 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2005/05/14 12:10:48 naddy Exp $
 
 COMMENT=	"MS-Windows 3.1/95/NT emulator for Unix (Alpha release)"
 
@@ -23,7 +23,7 @@ CONFIGURE_STYLE=	gnu dest
 # XXX partial citrus: no real wctype functions yet
 #CONFIGURE_ENV+=ac_cv_header_wctype_h=no
 
-WRKDIST=	${WRKDIR}/${PKGNAME}
+WRKDIST=	${WRKDIR}/${DISTNAME:L}
 
 NO_REGRESS=	Yes
 
