@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/08 05:37:01 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/14 18:09:32 msf Exp $
 
 COMMENT=	"dispatches messages to one or more outputs"
 
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/p5-Params-Validate
+
+REGRESS_DEPENDS= ::devel/p5-File-Find-Rule
 
 CONFIGURE_STYLE= perl modbuild
 
