@@ -11,6 +11,6 @@ It offers DVD applications:
 This allows application designers to access some of the more advanced
 features of the DVD format.
 
-libdvdread currently uses libdl to dynamically probe for libdvdcss at
-runtime.  If libdvdcss is found, then it will be used to decrypt the
+libdvdread currently uses libdl to dynamically probe for libdvd at
+runtime.  If libdvd is found, then it will be used to decrypt the
 encrypted sections of a DVD.

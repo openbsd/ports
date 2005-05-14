@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.8 2005/05/01 09:31:20 hshoexer Exp $
+#$OpenBSD: Makefile,v 1.9 2005/05/14 09:37:07 espie Exp $
 CATEGORIES=	devel
 
 COMMENT=	"accessing DVD files"
@@ -6,7 +6,7 @@ DISTNAME=	libdvdread-0.9.4
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
 MASTER_SITES=	${HOMEPAGE}dist/
 
-PKGNAME=${DISTNAME}p0
+PKGNAME=${DISTNAME}p1
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
