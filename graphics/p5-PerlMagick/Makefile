@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2005/05/08 18:48:28 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2005/05/15 21:02:46 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"object-oriented Perl interface to ImageMagick"
 
-VER=		6.2.0
-DASHVER=	8
+VER=		6.2.2
+DASHVER=	0
 DISTNAME=	ImageMagick-${VER}-${DASHVER}
 PKGNAME=	p5-PerlMagick-${VER}.${DASHVER}
 CATEGORIES=	graphics devel
@@ -13,8 +13,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=imagemagick/}
 
 HOMEPAGE=	http://www.imagemagick.org
 
-BUILD_DEPENDS=	:ImageMagick-${VER}:graphics/ImageMagick
-RUN_DEPENDS=	:ImageMagick-${VER}:graphics/ImageMagick
+BUILD_DEPENDS=	:ImageMagick-${VER}.${DASHVER}:graphics/ImageMagick
+RUN_DEPENDS=	:ImageMagick-${VER}.${DASHVER}:graphics/ImageMagick
 LIB_DEPENDS=	Magick.6::graphics/ImageMagick
 
 MAINTAINER=	Dan Brosemer <odin@svartalfheim.net>
