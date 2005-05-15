@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.320 2005/05/12 04:42:35 jolan Exp $
+# $OpenBSD: Makefile,v 1.321 2005/05/15 00:51:26 jolan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -121,6 +121,8 @@
      SUBDIR += libzvt
      SUBDIR += lincvs
      SUBDIR += luacompat
+     SUBDIR += luacopas
+     SUBDIR += luafs
      SUBDIR += luaposix
      SUBDIR += m4
      SUBDIR += metaauto
