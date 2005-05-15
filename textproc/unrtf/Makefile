@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2005/02/14 00:35:54 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2005/05/15 18:09:40 db Exp $
 
 COMMENT=	"RTF document converter"
 
-VERSION=	0.18.1
+VERSION=	0.19.3
 DISTNAME=	unrtf-${VERSION}
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.gnu.org/software/unrtf/unrtf.html
@@ -20,7 +19,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c 
 
-WRKDIST=	${WRKDIR}/unrtf
 MAKE_FLAGS=	CFLAGS='${CFLAGS}' CC='${CC}'
 
 do-install:

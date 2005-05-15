@@ -1,7 +1,7 @@
-$OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
---- ps.c.orig	2004-01-05 18:13:22.000000000 +0100
-+++ ps.c	2004-01-06 03:09:04.000000000 +0100
-@@ -115,370 +115,368 @@ static char* cp850 [] = {
+$OpenBSD: patch-ps_c,v 1.2 2005/05/15 18:09:41 db Exp $
+--- ps.c.orig	Thu Feb 19 00:35:03 2004
++++ ps.c	Thu May 12 12:46:35 2005
+@@ -116,352 +116,350 @@ static char* cp850 [] = {
  
  
  
@@ -11,10 +11,16 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 -    showpage \n\
 -  } if\n\n\
 -%%%%EOF\n"
--
--
--
--
++#define PS_END \
++"%% --------- \n\n"\
++"  didShowPage not { \n"\
++"    showpage \n"\
++"  } if\n\n"\
++"%%%%EOF\n"
+ 
+ 
+ 
+ 
 -#define PS_START "\
 -%%%%!PS\n\
 -%%--------------------------------------------------------------------------\n\
@@ -77,7 +83,7 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 -/didShowPage false def \n\
 -%%------------------------------------------------------\n\
 -%% Set up the ISO fonts \n\
--
+-\n\
 -%% Times \n\
 -%% ----- \n\
 -/Times-Roman findfont dup length dict begin {		\n\
@@ -85,29 +91,25 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 -} forall						\n\
 -/Encoding ISOLatin1Encoding def 			\n\
 -currentdict end						\n\
--/TRomanISO exch definefont pop			\n\
--
+-/TRomanISO exch definefont pop			\n\n\
 -/Times-Bold findfont dup length dict begin {		\n\
 -	1 index /FID ne { def } { pop pop } ifelse	\n\
 -} forall						\n\
 -/Encoding ISOLatin1Encoding def 			\n\
 -currentdict end						\n\
--/TBoldISO exch definefont pop			\n\
--
+-/TBoldISO exch definefont pop			\n\n\
 -/Times-BoldItalic findfont dup length dict begin {	\n\
 -	1 index /FID ne { def } { pop pop } ifelse	\n\
 -} forall						\n\
 -/Encoding ISOLatin1Encoding def 			\n\
 -currentdict end						\n\
--/TBoldItalicISO exch definefont pop			\n\
--
+-/TBoldItalicISO exch definefont pop			\n\n\
 -/Times-Italic findfont dup length dict begin {		\n\
 -	1 index /FID ne { def } { pop pop } ifelse	\n\
 -} forall						\n\
 -/Encoding ISOLatin1Encoding def 			\n\
 -currentdict end						\n\
--/TItalicISO exch definefont pop			\n\
--
+-/TItalicISO exch definefont pop			\n\n\
 -%% Courier \n\
 -%% ----- \n\
 -/Courier-Roman findfont dup length dict begin {		\n\
@@ -115,29 +117,25 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 -} forall						\n\
 -/Encoding ISOLatin1Encoding def 			\n\
 -currentdict end						\n\
--/CRomanISO exch definefont pop			\n\
--
+-/CRomanISO exch definefont pop			\n\n\
 -/Courier-Bold findfont dup length dict begin {		\n\
 -	1 index /FID ne { def } { pop pop } ifelse	\n\
 -} forall						\n\
 -/Encoding ISOLatin1Encoding def 			\n\
 -currentdict end						\n\
--/CBoldISO exch definefont pop			\n\
--
+-/CBoldISO exch definefont pop			\n\n\
 -/Courier-BoldItalic findfont dup length dict begin {	\n\
 -	1 index /FID ne { def } { pop pop } ifelse	\n\
 -} forall						\n\
 -/Encoding ISOLatin1Encoding def 			\n\
 -currentdict end						\n\
--/CBoldItalicISO exch definefont pop			\n\
--
+-/CBoldItalicISO exch definefont pop			\n\n\
 -/Courier-Italic findfont dup length dict begin {		\n\
 -	1 index /FID ne { def } { pop pop } ifelse	\n\
 -} forall						\n\
 -/Encoding ISOLatin1Encoding def 			\n\
 -currentdict end						\n\
--/CItalicISO exch definefont pop			\n\
--
+-/CItalicISO exch definefont pop			\n\n\
 -%% Symbol \n\
 -%% ----- \n\
 -/Symbol-Roman findfont dup length dict begin {		\n\
@@ -145,29 +143,25 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 -} forall						\n\
 -/Encoding ISOLatin1Encoding def 			\n\
 -currentdict end						\n\
--/SRomanISO exch definefont pop			\n\
--
+-/SRomanISO exch definefont pop			\n\n\
 -/Symbol-Bold findfont dup length dict begin {		\n\
 -	1 index /FID ne { def } { pop pop } ifelse	\n\
 -} forall						\n\
 -/Encoding ISOLatin1Encoding def 			\n\
 -currentdict end						\n\
--/SBoldISO exch definefont pop			\n\
--
+-/SBoldISO exch definefont pop			\n\n\
 -/Symbol-BoldItalic findfont dup length dict begin {	\n\
 -	1 index /FID ne { def } { pop pop } ifelse	\n\
 -} forall						\n\
 -/Encoding ISOLatin1Encoding def 			\n\
 -currentdict end						\n\
--/SBoldItalicISO exch definefont pop			\n\
--
+-/SBoldItalicISO exch definefont pop			\n\n\
 -/Symbol-Italic findfont dup length dict begin {		\n\
 -	1 index /FID ne { def } { pop pop } ifelse	\n\
 -} forall						\n\
 -/Encoding ISOLatin1Encoding def 			\n\
 -currentdict end						\n\
--/SItalicISO exch definefont pop			\n\
--
+-/SItalicISO exch definefont pop			\n\n\
 -%% Helvetica \n\
 -%% --------- \n\
 -/Helvetica-Roman findfont dup length dict begin {		\n\
@@ -175,29 +169,25 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 -} forall						\n\
 -/Encoding ISOLatin1Encoding def 			\n\
 -currentdict end						\n\
--/HRomanISO exch definefont pop			\n\
--
+-/HRomanISO exch definefont pop			\n\n\
 -/Helvetica-Bold findfont dup length dict begin {		\n\
 -	1 index /FID ne { def } { pop pop } ifelse	\n\
 -} forall						\n\
 -/Encoding ISOLatin1Encoding def 			\n\
 -currentdict end						\n\
--/HBoldISO exch definefont pop			\n\
--
+-/HBoldISO exch definefont pop			\n\n\
 -/Helvetica-BoldOblique findfont dup length dict begin {	\n\
 -	1 index /FID ne { def } { pop pop } ifelse	\n\
 -} forall						\n\
 -/Encoding ISOLatin1Encoding def 			\n\
 -currentdict end						\n\
--/HBoldItalicISO exch definefont pop			\n\
--
+-/HBoldItalicISO exch definefont pop			\n\n\
 -/Helvetica-Oblique findfont dup length dict begin {		\n\
 -	1 index /FID ne { def } { pop pop } ifelse	\n\
 -} forall						\n\
 -/Encoding ISOLatin1Encoding def 			\n\
 -currentdict end						\n\
--/HItalicISO exch definefont pop			\n\
--
+-/HItalicISO exch definefont pop			\n\n\
 -%% \n\
 -%% Ideally, before we can draw a line of text, we need to collect all the\n\
 -%% words that will be on it, just as I do in my Beest HTML viewer, as well\n\
@@ -208,39 +198,38 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 -%% ----------- Functions ------------\n\
 -/updateFont { \n\
 -	/f0 null def \n\
--	(Times) fontFamily eq (Times New Roman) fontFamily eq or {
+-	(Times) fontFamily eq (Times New Roman) fontFamily eq or { \n\
 -		bold { \n\
 -			italic { /TBoldItalicISO } { /TBoldISO } ifelse \n\
 -		} { \n\
 -			italic { /TItalicISO } { /TRomanISO } ifelse \n\
 -		} \n\
 -		ifelse \n\
--	} if
--	(Helvetica) fontFamily eq (Arial) fontFamily eq or {
+-	} if \n\
+-	(Helvetica) fontFamily eq (Arial) fontFamily eq or { \n\
 -		bold { \n\
 -			italic { /HBoldItalicISO } { /HBoldISO } ifelse \n\
 -		} { \n\
 -			italic { /HItalicISO } { /HRomanISO } ifelse \n\
 -		} \n\
 -		ifelse \n\
--	} if
--	(Courier) fontFamily eq (Courier New) fontFamily eq or {
+-	} if \n\
+-	(Courier) fontFamily eq (Courier New) fontFamily eq or { \n\
 -		bold { \n\
 -			italic { /CBoldItalicISO } { /CBoldISO } ifelse \n\
 -		} { \n\
 -			italic { /CItalicISO } { /CRomanISO } ifelse \n\
 -		} \n\
 -		ifelse \n\
--	} if
--	(Symbol) fontFamily eq {
+-	} if \n\
+-	(Symbol) fontFamily eq { \n\
 -		bold { \n\
 -			italic { /SBoldItalicISO } { /SBoldISO } ifelse \n\
 -		} { \n\
 -			italic { /SItalicISO } { /SRomanISO } ifelse \n\
 -		} \n\
 -		ifelse \n\
--	} if
--
+-	} if \n\n\
 -	findfont /f0 exch def  \n\
 -	/bboxBottom f0 /FontBBox get 1 get 1000 div fontSize mul -1 mul def \n\
 -	/bboxTop    f0 /FontBBox get 3 get 1000 div fontSize mul def \n\
@@ -282,13 +271,13 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 -} \n\
 -def \n\
 -/acharpath { \n\
--	/acstr exch def pop /acsp exch def
--	newpath 
--	str {
--		/ch exch def
--		1 string 0 ch put false charpath
--		acsp 0 rmoveto
--	} forall
+-	/acstr exch def pop /acsp exch def \n\
+-	newpath  \n\
+-	str { \n\
+-		/ch exch def \n\
+-		1 string 0 ch put false charpath \n\
+-		acsp 0 rmoveto \n\
+-	} forall \n\
 -} def \n\
 -/A { \n\
 -	/str exch def \n\
@@ -302,7 +291,7 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 -			1 -0.1 0 {                        \n\
 -				/offset exch def \n\
 -				offset setgray                 \n\
--				x offset 3 mul add y offset 3 mul sub moveto
+-				x offset 3 mul add y offset 3 mul sub moveto \n\
 -				intercharSpace 0 str acharpath \n\
 -				%% str false charpath \n\
 -				fontSize 30 div setlinewidth stroke \n\
@@ -318,11 +307,11 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 -			1 -0.1 0 {                        \n\
 -				/offset exch def \n\
 -				offset setgray                 \n\
--				x offset 3 mul add y offset 3 mul sub moveto
+-				x offset 3 mul add y offset 3 mul sub moveto \n\
 -				intercharSpace 0 str ashow  \n\
 -				%% str show \n\
 -			} for                               \n\
--			0 setgray
+-			0 setgray \n\
 -		} {                                         \n\
 -			intercharSpace 0 str ashow          \n\
 -			%% str show \n\
@@ -368,17 +357,6 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 -resetX resetY \n\
 -\n\
 -"
--
-+#define PS_END \
-+"%% --------- \n\n"\
-+"  didShowPage not { \n"\
-+"    showpage \n"\
-+"  } if\n\n"\
-+"%%%%EOF\n"
-+
-+
-+
-+
 +#define PS_START \
 +"%%%%!PS\n"\
 +"%%--------------------------------------------------------------------------\n"\
@@ -403,7 +381,6 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 +"%%--------------------------------------------------------------------------\n"\
 +"%%%%EndComments \n"\
 +"%%\n"\
-+"%%         --------- Note, this PS code is unfinished -------- \n"\
 +"%%         --------- Note, this PS code is unfinished -------- \n"\
 +"%%         --------- Note, this PS code is unfinished -------- \n"\
 +"%%         --------- Note, this PS code is unfinished -------- \n"\
@@ -449,29 +426,25 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 +"} forall						\n"\
 +"/Encoding ISOLatin1Encoding def 			\n"\
 +"currentdict end						\n"\
-+"/TRomanISO exch definefont pop			\n"\
-+"\n"\
++"/TRomanISO exch definefont pop			\n\n"\
 +"/Times-Bold findfont dup length dict begin {		\n"\
 +"	1 index /FID ne { def } { pop pop } ifelse	\n"\
 +"} forall						\n"\
 +"/Encoding ISOLatin1Encoding def 			\n"\
 +"currentdict end						\n"\
-+"/TBoldISO exch definefont pop			\n"\
-+"\n"\
++"/TBoldISO exch definefont pop			\n\n"\
 +"/Times-BoldItalic findfont dup length dict begin {	\n"\
 +"	1 index /FID ne { def } { pop pop } ifelse	\n"\
 +"} forall						\n"\
 +"/Encoding ISOLatin1Encoding def 			\n"\
 +"currentdict end						\n"\
-+"/TBoldItalicISO exch definefont pop			\n"\
-+"\n"\
++"/TBoldItalicISO exch definefont pop			\n\n"\
 +"/Times-Italic findfont dup length dict begin {		\n"\
 +"	1 index /FID ne { def } { pop pop } ifelse	\n"\
 +"} forall						\n"\
 +"/Encoding ISOLatin1Encoding def 			\n"\
 +"currentdict end						\n"\
-+"/TItalicISO exch definefont pop			\n"\
-+"\n"\
++"/TItalicISO exch definefont pop			\n\n"\
 +"%% Courier \n"\
 +"%% ----- \n"\
 +"/Courier-Roman findfont dup length dict begin {		\n"\
@@ -479,29 +452,25 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 +"} forall						\n"\
 +"/Encoding ISOLatin1Encoding def 			\n"\
 +"currentdict end						\n"\
-+"/CRomanISO exch definefont pop			\n"\
-+"\n"\
++"/CRomanISO exch definefont pop			\n\n"\
 +"/Courier-Bold findfont dup length dict begin {		\n"\
 +"	1 index /FID ne { def } { pop pop } ifelse	\n"\
 +"} forall						\n"\
 +"/Encoding ISOLatin1Encoding def 			\n"\
 +"currentdict end						\n"\
-+"/CBoldISO exch definefont pop			\n"\
-+"\n"\
++"/CBoldISO exch definefont pop			\n\n"\
 +"/Courier-BoldItalic findfont dup length dict begin {	\n"\
 +"	1 index /FID ne { def } { pop pop } ifelse	\n"\
 +"} forall						\n"\
 +"/Encoding ISOLatin1Encoding def 			\n"\
 +"currentdict end						\n"\
-+"/CBoldItalicISO exch definefont pop			\n"\
-+"\n"\
++"/CBoldItalicISO exch definefont pop			\n\n"\
 +"/Courier-Italic findfont dup length dict begin {		\n"\
 +"	1 index /FID ne { def } { pop pop } ifelse	\n"\
 +"} forall						\n"\
 +"/Encoding ISOLatin1Encoding def 			\n"\
 +"currentdict end						\n"\
-+"/CItalicISO exch definefont pop			\n"\
-+"\n"\
++"/CItalicISO exch definefont pop			\n\n"\
 +"%% Symbol \n"\
 +"%% ----- \n"\
 +"/Symbol-Roman findfont dup length dict begin {		\n"\
@@ -509,29 +478,25 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 +"} forall						\n"\
 +"/Encoding ISOLatin1Encoding def 			\n"\
 +"currentdict end						\n"\
-+"/SRomanISO exch definefont pop			\n"\
-+"\n"\
++"/SRomanISO exch definefont pop			\n\n"\
 +"/Symbol-Bold findfont dup length dict begin {		\n"\
 +"	1 index /FID ne { def } { pop pop } ifelse	\n"\
 +"} forall						\n"\
 +"/Encoding ISOLatin1Encoding def 			\n"\
 +"currentdict end						\n"\
-+"/SBoldISO exch definefont pop			\n"\
-+"\n"\
++"/SBoldISO exch definefont pop			\n\n"\
 +"/Symbol-BoldItalic findfont dup length dict begin {	\n"\
 +"	1 index /FID ne { def } { pop pop } ifelse	\n"\
 +"} forall						\n"\
 +"/Encoding ISOLatin1Encoding def 			\n"\
 +"currentdict end						\n"\
-+"/SBoldItalicISO exch definefont pop			\n"\
-+"\n"\
++"/SBoldItalicISO exch definefont pop			\n\n"\
 +"/Symbol-Italic findfont dup length dict begin {		\n"\
 +"	1 index /FID ne { def } { pop pop } ifelse	\n"\
 +"} forall						\n"\
 +"/Encoding ISOLatin1Encoding def 			\n"\
 +"currentdict end						\n"\
-+"/SItalicISO exch definefont pop			\n"\
-+"\n"\
++"/SItalicISO exch definefont pop			\n\n"\
 +"%% Helvetica \n"\
 +"%% --------- \n"\
 +"/Helvetica-Roman findfont dup length dict begin {		\n"\
@@ -539,29 +504,25 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 +"} forall						\n"\
 +"/Encoding ISOLatin1Encoding def 			\n"\
 +"currentdict end						\n"\
-+"/HRomanISO exch definefont pop			\n"\
-+"\n"\
++"/HRomanISO exch definefont pop			\n\n"\
 +"/Helvetica-Bold findfont dup length dict begin {		\n"\
 +"	1 index /FID ne { def } { pop pop } ifelse	\n"\
 +"} forall						\n"\
 +"/Encoding ISOLatin1Encoding def 			\n"\
 +"currentdict end						\n"\
-+"/HBoldISO exch definefont pop			\n"\
-+"\n"\
++"/HBoldISO exch definefont pop			\n\n"\
 +"/Helvetica-BoldOblique findfont dup length dict begin {	\n"\
 +"	1 index /FID ne { def } { pop pop } ifelse	\n"\
 +"} forall						\n"\
 +"/Encoding ISOLatin1Encoding def 			\n"\
 +"currentdict end						\n"\
-+"/HBoldItalicISO exch definefont pop			\n"\
-+"\n"\
++"/HBoldItalicISO exch definefont pop			\n\n"\
 +"/Helvetica-Oblique findfont dup length dict begin {		\n"\
 +"	1 index /FID ne { def } { pop pop } ifelse	\n"\
 +"} forall						\n"\
 +"/Encoding ISOLatin1Encoding def 			\n"\
 +"currentdict end						\n"\
-+"/HItalicISO exch definefont pop			\n"\
-+"\n"\
++"/HItalicISO exch definefont pop			\n\n"\
 +"%% \n"\
 +"%% Ideally, before we can draw a line of text, we need to collect all the\n"\
 +"%% words that will be on it, just as I do in my Beest HTML viewer, as well\n"\
@@ -572,39 +533,38 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 +"%% ----------- Functions ------------\n"\
 +"/updateFont { \n"\
 +"	/f0 null def \n"\
-+"	(Times) fontFamily eq (Times New Roman) fontFamily eq or "\
++"	(Times) fontFamily eq (Times New Roman) fontFamily eq or { \n"\
 +"		bold { \n"\
 +"			italic { /TBoldItalicISO } { /TBoldISO } ifelse \n"\
 +"		} { \n"\
 +"			italic { /TItalicISO } { /TRomanISO } ifelse \n"\
 +"		} \n"\
 +"		ifelse \n"\
-+"	} i"\
-+"	(Helvetica) fontFamily eq (Arial) fontFamily eq or "\
++"	} if \n"\
++"	(Helvetica) fontFamily eq (Arial) fontFamily eq or { \n"\
 +"		bold { \n"\
 +"			italic { /HBoldItalicISO } { /HBoldISO } ifelse \n"\
 +"		} { \n"\
 +"			italic { /HItalicISO } { /HRomanISO } ifelse \n"\
 +"		} \n"\
 +"		ifelse \n"\
-+"	} i"\
-+"	(Courier) fontFamily eq (Courier New) fontFamily eq or "\
++"	} if \n"\
++"	(Courier) fontFamily eq (Courier New) fontFamily eq or { \n"\
 +"		bold { \n"\
 +"			italic { /CBoldItalicISO } { /CBoldISO } ifelse \n"\
 +"		} { \n"\
 +"			italic { /CItalicISO } { /CRomanISO } ifelse \n"\
 +"		} \n"\
 +"		ifelse \n"\
-+"	} i"\
-+"	(Symbol) fontFamily eq "\
++"	} if \n"\
++"	(Symbol) fontFamily eq { \n"\
 +"		bold { \n"\
 +"			italic { /SBoldItalicISO } { /SBoldISO } ifelse \n"\
 +"		} { \n"\
 +"			italic { /SItalicISO } { /SRomanISO } ifelse \n"\
 +"		} \n"\
 +"		ifelse \n"\
-+"	} i"\
-+"\n"\
++"	} if \n\n"\
 +"	findfont /f0 exch def  \n"\
 +"	/bboxBottom f0 /FontBBox get 1 get 1000 div fontSize mul -1 mul def \n"\
 +"	/bboxTop    f0 /FontBBox get 3 get 1000 div fontSize mul def \n"\
@@ -646,13 +606,13 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 +"} \n"\
 +"def \n"\
 +"/acharpath { \n"\
-+"	/acstr exch def pop /acsp exch de"\
-+"	newpath"\
-+"	str "\
-+"		/ch exch de"\
-+"		1 string 0 ch put false charpat"\
-+"		acsp 0 rmovet"\
-+"	} foral"\
++"	/acstr exch def pop /acsp exch def \n"\
++"	newpath  \n"\
++"	str { \n"\
++"		/ch exch def \n"\
++"		1 string 0 ch put false charpath \n"\
++"		acsp 0 rmoveto \n"\
++"	} forall \n"\
 +"} def \n"\
 +"/A { \n"\
 +"	/str exch def \n"\
@@ -666,7 +626,7 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 +"			1 -0.1 0 {                        \n"\
 +"				/offset exch def \n"\
 +"				offset setgray                 \n"\
-+"				x offset 3 mul add y offset 3 mul sub movet"\
++"				x offset 3 mul add y offset 3 mul sub moveto \n"\
 +"				intercharSpace 0 str acharpath \n"\
 +"				%% str false charpath \n"\
 +"				fontSize 30 div setlinewidth stroke \n"\
@@ -682,11 +642,11 @@ $OpenBSD: patch-ps_c,v 1.1 2004/01/06 02:11:33 espie Exp $
 +"			1 -0.1 0 {                        \n"\
 +"				/offset exch def \n"\
 +"				offset setgray                 \n"\
-+"				x offset 3 mul add y offset 3 mul sub movet"\
++"				x offset 3 mul add y offset 3 mul sub moveto \n"\
 +"				intercharSpace 0 str ashow  \n"\
 +"				%% str show \n"\
 +"			} for                               \n"\
-+"			0 setgra"\
++"			0 setgray \n"\
 +"		} {                                         \n"\
 +"			intercharSpace 0 str ashow          \n"\
 +"			%% str show \n"\
