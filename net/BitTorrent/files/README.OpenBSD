@@ -1,12 +1,10 @@
-#	$OpenBSD: README.OpenBSD,v 1.1.1.1 2003/08/21 03:39:57 jolan Exp $
+#	$OpenBSD: README.OpenBSD,v 1.2 2005/05/15 14:58:08 naddy Exp $
 
-BitTorrent on OpenBSD can only be used via the headless or curses
-interfaces, as there is currently no in-tree port of wxPython.  To begin
-using BitTorrent quickly, simply fetch a torrent file and run
-btdownloadcurses.py:
+To begin using BitTorrent quickly, simply fetch a torrent file and
+run btdownloadgui (X11) or btdownloadcurses:
 
 $ ftp http://www.somesite.com/some.torrent
-$ btdownloadcurses.py some.torrent
+$ btdownloadcurses some.torrent
 
 Note that for machines behind NAT, you will need to pass in the ports
 outlined in README.txt.  An example pf.conf stub for doing this is:

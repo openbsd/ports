@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.3 2005/05/03 09:48:00 alek Exp $
+$OpenBSD: patch-setup_py,v 1.4 2005/05/15 14:58:09 naddy Exp $
 --- setup.py.orig	Thu Mar 24 23:30:24 2005
-+++ setup.py	Sat Apr 30 17:29:12 2005
++++ setup.py	Fri May 13 00:16:18 2005
 @@ -19,10 +19,10 @@ import BitTorrent
  
  import glob
@@ -9,8 +9,8 @@ $OpenBSD: patch-setup_py,v 1.3 2005/05/03 09:48:00 alek Exp $
 -           "btmaketorrentgui.py", "btmaketorrent.py",
 -           "btlaunchmany.py", "btlaunchmanycurses.py",
 -           "bttrack.py", "btreannounce.py", "btrename.py", "btshowmetainfo.py"]
-+scripts = ["btdownloadcurses", "btdownloadheadless",
-+           "btmaketorrent",
++scripts = ["btdownloadgui", "btdownloadcurses", "btdownloadheadless",
++           "btmaketorrentgui", "btmaketorrent",
 +           "btlaunchmany", "btlaunchmanycurses",
 +           "bttrack", "btreannounce", "btrename", "btshowmetainfo"]
  

@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST-gui,v 1.1 2005/05/15 14:58:09 naddy Exp $
+bin/btdownloadgui
+bin/btmaketorrentgui
+lib/python${MODPY_VERSION}/site-packages/BitTorrent/Desktop.py
+lib/python${MODPY_VERSION}/site-packages/BitTorrent/Desktop.pyc
+lib/python${MODPY_VERSION}/site-packages/BitTorrent/GUI.py
+lib/python${MODPY_VERSION}/site-packages/BitTorrent/GUI.pyc
+share/pixmaps/
+share/pixmaps/BitTorrent/
+share/pixmaps/BitTorrent/bittorrent.ico
+share/pixmaps/BitTorrent/broken.png
+share/pixmaps/BitTorrent/finished.png
+share/pixmaps/BitTorrent/info.png
+share/pixmaps/BitTorrent/logo/
+share/pixmaps/BitTorrent/logo/bittorrent_32.png
+share/pixmaps/BitTorrent/logo/bittorrent_96.png
+share/pixmaps/BitTorrent/pause.png
+share/pixmaps/BitTorrent/paused.png
+share/pixmaps/BitTorrent/play.png
+share/pixmaps/BitTorrent/queued.png
+share/pixmaps/BitTorrent/remove.png
+share/pixmaps/BitTorrent/running.png

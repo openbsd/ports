@@ -1,0 +1,12 @@
+$OpenBSD: patch-BitTorrent___init___py,v 1.1 2005/05/15 14:58:09 naddy Exp $
+--- BitTorrent/__init__.py.orig	Fri May 13 14:56:32 2005
++++ BitTorrent/__init__.py	Fri May 13 14:57:14 2005
+@@ -22,7 +22,7 @@ import os
+ import re
+ 
+ def calc_unix_dirs():
+-    appdir = '%s-%s'%(app_name, version)
++    appdir = app_name
+     ip = os.path.join('share', 'pixmaps', appdir)
+     dp = os.path.join('share', 'doc'    , appdir)
+     return ip, dp
