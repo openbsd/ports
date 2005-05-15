@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/15 00:42:52 jolan Exp $
+lib/luafs.so

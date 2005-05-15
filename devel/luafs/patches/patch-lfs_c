@@ -1,0 +1,29 @@
+$OpenBSD: patch-lfs_c,v 1.1.1.1 2005/05/15 00:42:52 jolan Exp $
+--- lfs.c.orig	Wed Jan 19 15:20:04 2005
++++ lfs.c	Wed May 11 08:31:54 2005
+@@ -26,13 +26,12 @@
+ #include <unistd.h>
+ #include <dirent.h>
+ #include <fcntl.h>
+-#include <sys/types.h>
++#include <sys/param.h>
+ #endif
+ 
+ #include "lua.h"
+ #include "lauxlib.h"
+ #include "lualib.h"
+-#include "compat-5.1.h"
+ 
+ #include "lfs.h"
+ 
+@@ -81,8 +80,8 @@ static int change_dir (lua_State *L) {
+ **  and a string describing the error
+ */
+ static int get_dir (lua_State *L) {
+-	char path[255+2];
+-	if (getcwd(path, 255) == NULL) {
++	char path[MAXPATHLEN];
++	if (getcwd(path, sizeof(path)) == NULL) {
+ 		lua_pushnil(L);
+ 		lua_pushstring(L, getcwd_error);
+ 		return 2;
