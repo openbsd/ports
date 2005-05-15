@@ -1,0 +1,12 @@
+Copas is a dispatcher based on coroutines that can be used by TCP/IP
+socket request/response servers. It uses LuaSocket as the interface with
+the TCP/IP stack.
+
+A server registered with Copas should provide a handler for requests and
+use Copas socket functions to send the response. Copas loops through
+requests and invokes the corresponding handlers.
+
+Since Copas is coroutine based, using it within a pcall or xpcall context
+does not work with Lua 5.0 yielding. If you need to use those functions
+we strongly suggest using Xavante's coxpcall, a coroutine safe version
+of the Lua 5.0 protected calls.
