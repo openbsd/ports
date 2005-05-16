@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/16 16:02:56 sturm Exp $
+@lib lib/libnasl.so.4.4

@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/16 16:02:56 sturm Exp $
+%%SHARED%%
+bin/nessus-config
+include/nessus/
+include/nessus/getopt.h
+include/nessus/harglists.h
+include/nessus/includes.h
+include/nessus/libnessus.h
+include/nessus/libvers.h
+lib/libhosts_gatherer.a
+@comment lib/libhosts_gatherer.la
+lib/libnessus.a
+@comment lib/libnessus.la
+@man man/man1/nessus-config.1
+sbin/uninstall-nessus

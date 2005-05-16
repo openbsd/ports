@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/16 16:02:56 sturm Exp $
+%%SHARED%%
+bin/nasl
+bin/nasl-config
+include/nessus/
+include/nessus/nasl.h
+lib/libnasl.a
+@comment lib/libnasl.la
+@man man/man1/nasl-config.1
+@man man/man1/nasl.1
+@extraunexec rm -fr /var/nessus
