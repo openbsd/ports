@@ -1,29 +1,41 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/30 01:06:37 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/05/16 19:22:16 alek Exp $
 
 COMMENT=	"WMF handling and conversion library"
 
-DISTNAME=	libwmf-0.2.6
+DISTNAME=	libwmf-0.2.8.3
 CATEGORIES=	graphics devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wvware/}
 
-HOMEPAGE=	http://www.wvware.com/
+HOMEPAGE=	http://wvware.sf.net/
+
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 c freetype iconv m z
+WANTLIB=		ICE SM X11 c freetype m z
 
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wvware/}
+
+MODULES=	converters/libiconv
 LIB_DEPENDS=	xml2::textproc/libxml \
 		jpeg.62::graphics/jpeg \
 		png.2::graphics/png
 
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.54
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static
-CONFIGURE_ARGS+= --with-png=${LOCALBASE} --with-freetype=${X11BASE}
-CONFIGURE_ARGS+= --with-jpeg=${LOCALBASE} --with-zlib=/usr
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng"
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-static \
+		--with-png=${LOCALBASE} \
+		--with-freetype=${X11BASE} \
+		--with-jpeg=${LOCALBASE} \
+		--with-zlib=/usr \
+		--without-expat \
+		--with-gsfontdir=${LOCALBASE}/share/ghostscript/fonts/ \
+		--disable-gd
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
+		PKG_CONFIG="/usr/bin/false"
+
+USE_X11=	Yes
 
 .include <bsd.port.mk>
