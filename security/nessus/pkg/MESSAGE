@@ -1,4 +1,0 @@
-Some of the checks preformed by nessus rely on external programs
-like hydra, nmap 3.00 or newer, and nikto.  You may want to 
-install these ports to enable some checks which will otherwise
-return false negatives.

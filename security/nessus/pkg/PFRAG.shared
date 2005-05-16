@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.16 2005/02/06 17:13:27 sturm Exp $
-@lib lib/libhosts_gatherer.so.4.2
-@lib lib/libnasl.so.4.2
-@lib lib/libnessus.so.4.2
