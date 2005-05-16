@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/05/16 21:19:38 alek Exp $
 bin/pygtk-codegen-1.2
 include/pygtk/
 include/pygtk/pygdkimlib.h
@@ -71,5 +71,4 @@ share/pygtk/1.2/defs/gtkmenus.defs
 share/pygtk/1.2/defs/gtkmisc.defs
 share/pygtk/1.2/defs/gtkranges.defs
 share/pygtk/1.2/defs/libglade.defs
-%%gnome%%
 %%SHARED%%
