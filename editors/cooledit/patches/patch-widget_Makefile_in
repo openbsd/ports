@@ -1,12 +1,12 @@
-$OpenBSD: patch-widget_Makefile_in,v 1.1 2005/02/13 14:18:07 alek Exp $
---- widget/Makefile.in.orig	Fri Feb 11 15:38:14 2005
-+++ widget/Makefile.in	Fri Feb 11 15:38:24 2005
-@@ -147,7 +147,7 @@ libC3d_a_SOURCES = swtriangle.c  triangl
- 	3dinit.c 3dinit.h 3dtext.c 3dkit.c 3dkit.h grlib.c quickmath.c
- 
- 
+$OpenBSD: patch-widget_Makefile_in,v 1.2 2005/05/16 20:26:51 alek Exp $
+--- widget/Makefile.in.orig	Sat Nov 27 09:46:41 2004
++++ widget/Makefile.in	Thu Apr 28 22:26:46 2005
+@@ -227,7 +227,7 @@ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+ lib_LTLIBRARIES = libCw.la
 -INCLUDES = -I. -I$(top_srcdir) -I$(top_srcdir)/intl
 +INCLUDES = -I. -I$(top_srcdir)
- 
  libCw_la_SOURCES = initapp.c coolwidget.c dirtools.c menu.c mathfuncs.c \
  	filebrowser.c coolnext.c bitmapbutton.c pixmap.c \
+ 	dialog.c disable.c focus.c xdnd.c ClientWin.c textwidget.c \

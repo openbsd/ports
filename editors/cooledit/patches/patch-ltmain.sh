@@ -1,7 +1,7 @@
---- ltmain.sh.orig	2002-08-03 13:03:26.000000000 +0200
-+++ ltmain.sh	2003-08-01 20:33:56.000000000 +0200
-@@ -930,6 +930,9 @@ compiler."
- 	  finalize_command="$finalize_command $wl$qarg"
+--- ltmain.sh.orig	Sat Nov 27 09:46:02 2004
++++ ltmain.sh	Thu Apr 28 22:24:50 2005
+@@ -1348,6 +1348,9 @@ EOF
+ 	  prev=
  	  continue
  	  ;;
 +	*-*-openbsd*)

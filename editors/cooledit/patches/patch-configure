@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2005/02/13 14:18:07 alek Exp $
---- configure.orig	Sat Aug  3 13:04:13 2002
-+++ configure	Sat Feb 12 18:15:38 2005
-@@ -8157,15 +8157,17 @@ cat >>confdefs.h <<_ACEOF
+$OpenBSD: patch-configure,v 1.5 2005/05/16 20:26:51 alek Exp $
+--- configure.orig	Sat Nov 27 09:46:40 2004
++++ configure	Thu Apr 28 23:29:06 2005
+@@ -20225,15 +20225,17 @@ cat >>confdefs.h <<_ACEOF
  _ACEOF
  
  
@@ -27,42 +27,47 @@ $OpenBSD: patch-configure,v 1.4 2005/02/13 14:18:07 alek Exp $
  
  cat >>confdefs.h <<_ACEOF
  #define XTERM_CMD "${XTERM_CMD}"
-@@ -9365,30 +9367,24 @@ LDFLAGS="$LDFLAGS $X_LIBS"
- have_python_config=no
- have_python_include=no
- 
-+if [ -z "$NOPYTHON" ]; then
- echo "$as_me:$LINENO: checking for python" >&5
+@@ -21654,32 +21656,14 @@ echo "$as_me:$LINENO: checking for pytho
  echo $ECHO_N "checking for python... $ECHO_C" >&6
  EPATH=`echo $PATH | sed -e 's+/bin:+ +g' -e 's+:+ +g'`
  
++if test x$NOPYTHON = x; then
++PYTHON_LIBDIR="${LOCALBASE}/lib/python${PYTHON_VER}/config"
++LIBPY="python2.3"
++have_python_config=yes
++PYTHON_INCLUDEDIR="${LOCALBASE}/include/python${PYTHON_VER}"
++have_python_include=yes
++fi
  
 -for i in / /opt /usr /usr/local /home $EPATH ; do
 -    for j in . gnu local python ; do
 -	for k in . gnu local python ; do
 -	    for l in lib . ; do
--		pylib=$i/$j/$k/$l/python[0-9].[0-9]/config/libpython[0-9].[0-9].a
-+		pylib=!!LOCALBASE!!/lib/python!!PYTHON_VER!!/config/libpython!!PYTHON_VER!!.a
- 		if test -f $pylib ; then
- 		    PYTHON_LIBDIR=`echo $pylib | sed -e 's,/[^/]*$,,'`
- 		    LIBPY=`echo $pylib | sed -e 's,^.*/lib\(python.[.].\)[.]a$,\1,'`
- 		    have_python_config=yes
- 		fi
+-		pylib=`echo $i/$j/$k/$l/python[0-9].[0-9]/config/libpython[0-9].[0-9].a`
+-		for f in $pylib; do
+-		    if test -f "$f" && test $have_python_config = no ; then
+-			PYTHON_LIBDIR=`echo $f | sed -e 's,/[^/]*$,,'`
+-			LIBPY=`echo $f | sed -e 's,^.*/lib\(python.[.].\)[.]a$,\1,'`
+-			have_python_config=yes
+-		    fi
+-		done
 -	    done
--	    pyinclude=$i/$j/$k/include/python[0-9].[0-9]/Python.h
-+	    pyinclude=!!LOCALBASE!!/include/python!!PYTHON_VER!!/Python.h
- 	    if test -f $pyinclude ; then
- 		PYTHON_INCLUDEDIR=`echo $pyinclude | sed -e 's,/[^/]*$,,'`
- 		have_python_include=yes
- 	    fi
+-	    pyinclude=`echo $i/$j/$k/include/python[0-9].[0-9]/Python.h`
+-	    for f in $pyinclude; do
+-		if test -f "$f" && test $have_python_include = no ; then
+-		    PYTHON_INCLUDEDIR=`echo $f | sed -e 's,/[^/]*$,,'`
+-		    have_python_include=yes
+-		fi
+-	    done
 -	done
 -    done
 -done
-+fi
- 
- 
+-
+-
  if test x$have_python_config = xyes && test x$have_python_include = xyes ; then
-@@ -9692,13 +9688,13 @@ if test $ac_cv_lib_pthreads_pthread_crea
+     have_python=yes
+     echo "$as_me:$LINENO: result: yes" >&5
+@@ -22044,13 +22028,13 @@ if test $ac_cv_lib_pthreads_pthread_crea
  
  else
  
@@ -77,9 +82,9 @@ $OpenBSD: patch-configure,v 1.4 2005/02/13 14:18:07 alek Exp $
 -LIBS="-lpthread  $LIBS"
 +LIBS="-pthread  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- #include "confdefs.h"
-@@ -9749,7 +9745,7 @@ echo "$as_me:$LINENO: result: $ac_cv_lib
+ /* confdefs.h.  */
+ _ACEOF
+@@ -22110,7 +22094,7 @@ echo "$as_me:$LINENO: result: $ac_cv_lib
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
  if test $ac_cv_lib_pthread_pthread_create = yes; then
  
@@ -88,16 +93,16 @@ $OpenBSD: patch-configure,v 1.4 2005/02/13 14:18:07 alek Exp $
  
  else
  
-@@ -14514,7 +14510,7 @@ if test "${ac_cv_lib_intl_tolower+set}" 
+@@ -27610,7 +27594,7 @@ if test "${ac_cv_lib_intl_tolower+set}" 
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
 +LIBS="-lintl -liconv $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- #include "confdefs.h"
-@@ -14568,7 +14564,7 @@ if test $ac_cv_lib_intl_tolower = yes; t
+ /* confdefs.h.  */
+ _ACEOF
+@@ -27673,7 +27657,7 @@ if test $ac_cv_lib_intl_tolower = yes; t
  #define HAVE_LIBINTL 1
  _ACEOF
  
@@ -106,20 +111,21 @@ $OpenBSD: patch-configure,v 1.4 2005/02/13 14:18:07 alek Exp $
  
  fi
  
-@@ -18526,11 +18522,11 @@ echo "${ECHO_T}$gt_cv_func_gnugettext1_l
+@@ -31046,7 +31030,7 @@ _ACEOF
  
-       if test "$nls_cv_use_gnu_gettext" = "yes"; then
-                 INTLOBJS="\$(GETTOBJS)"
--        BUILD_INCLUDED_LIBINTL=yes
--        USE_INCLUDED_LIBINTL=yes
--        LIBINTL="\${top_builddir}/intl/libintl.a $LIBICONV"
--        LTLIBINTL="\${top_builddir}/intl/libintl.a $LTLIBICONV"
--        LIBS=`echo " $LIBS " | sed -e 's/ -lintl / /' -e 's/^ //' -e 's/ $//'`
-+        BUILD_INCLUDED_LIBINTL=no
-+        USE_INCLUDED_LIBINTL=no
-+        LIBINTL="$LIBINTL $LIBICONV"
-+        LTLIBINTL="$LTLIBINTL $LTLIBICONV"
-+        #LIBS=`echo " $LIBS " | sed -e 's/ -lintl / /' -e 's/^ //' -e 's/ $//'`
-       fi
  
-       if test "$gt_use_preinstalled_gnugettext" = "yes" \
+ 
+-    INTLLIBS="$LIBINTL"
++    INTLLIBS="$LTLIBINTL"
+ 
+ 
+ 
+@@ -31834,7 +31818,7 @@ s,@USE_NLS@,$USE_NLS,;t t
+ s,@LIBICONV@,$LIBICONV,;t t
+ s,@LTLIBICONV@,$LTLIBICONV,;t t
+ s,@INTLLIBS@,$INTLLIBS,;t t
+-s,@LIBINTL@,$LIBINTL,;t t
++s,@LIBINTL@,$LTLIBINTL,;t t
+ s,@LTLIBINTL@,$LTLIBINTL,;t t
+ s,@POSUB@,$POSUB,;t t
+ s,@LIBOBJS@,$LIBOBJS,;t t

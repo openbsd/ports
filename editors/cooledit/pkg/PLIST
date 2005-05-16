@@ -1,20 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:01:06 espie Exp $
-bin/coolbrowse
+@comment $OpenBSD: PLIST,v 1.6 2005/05/16 20:26:51 alek Exp $
 bin/cooledit
 bin/cooledit-gdb
-bin/coolicon
-bin/coolinput
-bin/coollistbox
 bin/coolman
-bin/coolmessage
 bin/coolproject
-bin/coolquery
 bin/smalledit
-@comment lib/charset.alias
 lib/libCw.a
 lib/libCw.la
 @man man/man1/cooledit.1
-@man man/man1/coolicon.1
 @man man/man1/coolman.1
 @man man/man1/smalledit.1
 share/cooledit/
@@ -34,6 +26,7 @@ share/cooledit/syntax/jasm.syntax
 share/cooledit/syntax/java.syntax
 share/cooledit/syntax/latex.syntax
 share/cooledit/syntax/lsm.syntax
+share/cooledit/syntax/lsm4.syntax
 share/cooledit/syntax/lua.syntax
 share/cooledit/syntax/mail.syntax
 share/cooledit/syntax/makefile.syntax
@@ -46,6 +39,7 @@ share/cooledit/syntax/perl.syntax
 share/cooledit/syntax/php.syntax
 share/cooledit/syntax/prolog.syntax
 share/cooledit/syntax/python.syntax
+share/cooledit/syntax/scm.syntax
 share/cooledit/syntax/sh.syntax
 share/cooledit/syntax/smalltalk.syntax
 share/cooledit/syntax/sql.syntax
@@ -54,74 +48,20 @@ share/cooledit/syntax/texinfo.syntax
 share/cooledit/syntax/unknown.syntax
 share/cooledit/syntax/xml.syntax
 share/coolicon/
-share/coolicon/browse.xpm
-share/coolicon/cdrom_eject.xpm
-share/coolicon/cdrom_view.xpm
-share/coolicon/cooledit.xpm
-share/coolicon/coolicon.config
-share/coolicon/dynamite.xpm
-share/coolicon/e.data
-share/coolicon/gmc.xpm
-share/coolicon/launch.xpm
-share/coolicon/lyx.xpm
-share/coolicon/manual.xpm
-share/coolicon/mc.xpm
-share/coolicon/netscape.xpm
-share/coolicon/nscape.xpm
-share/coolicon/phonedown.xpm
-share/coolicon/phoneup.xpm
-share/coolicon/printer.xpm
-share/coolicon/spanner.xpm
-share/coolicon/xterm.xpm
-share/coolicon/xv.xpm
-share/locale/
-share/locale/cs/
-share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/cooledit.mo
-share/locale/da/
-share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/cooledit.mo
-share/locale/de/
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/cooledit.mo
-share/locale/es/
-share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/cooledit.mo
-share/locale/fi/
-share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/cooledit.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/cooledit.mo
-share/locale/it/
-share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/cooledit.mo
-share/locale/ja/
-share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/cooledit.mo
-share/locale/ko/
-share/locale/ko/LC_MESSAGES/
 share/locale/ko/LC_MESSAGES/cooledit.mo
-@comment share/locale/locale.alias
-share/locale/nl/
-share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/cooledit.mo
-share/locale/no/
-share/locale/no/LC_MESSAGES/
 share/locale/no/LC_MESSAGES/cooledit.mo
-share/locale/pl/
-share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/cooledit.mo
-share/locale/pt/
-share/locale/pt/LC_MESSAGES/
 share/locale/pt/LC_MESSAGES/cooledit.mo
-share/locale/ru/
-share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/cooledit.mo
-share/locale/sl/
-share/locale/sl/LC_MESSAGES/
 share/locale/sl/LC_MESSAGES/cooledit.mo
-share/locale/sv/
-share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/cooledit.mo
 %%SHARED%%

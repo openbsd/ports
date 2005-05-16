@@ -1,12 +1,12 @@
-$OpenBSD: patch-editor_Makefile_in,v 1.1 2005/02/13 14:18:07 alek Exp $
---- editor/Makefile.in.orig	Fri Feb 11 15:39:07 2005
-+++ editor/Makefile.in	Fri Feb 11 15:39:16 2005
-@@ -142,7 +142,7 @@ rxvt_u_intp_define = @rxvt_u_intp_define
- bin_PROGRAMS = cooledit smalledit coolman
+$OpenBSD: patch-editor_Makefile_in,v 1.2 2005/05/16 20:26:51 alek Exp $
+--- editor/Makefile.in.orig	Sat Nov 27 09:46:41 2004
++++ editor/Makefile.in	Thu Apr 28 22:29:09 2005
+@@ -227,7 +227,7 @@ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
  bin_SCRIPTS = cooledit-gdb coolproject
- 
 -INCLUDES = -I$(top_srcdir)/widget -I$(top_srcdir) -I$(top_srcdir)/intl @PYTHON_INCLUDES@
 +INCLUDES = -I$(top_srcdir)/widget -I$(top_srcdir) @PYTHON_INCLUDES@
- 
  cooledit_SOURCES = cooledit.c find.c editoptions.c mancmd.c options.c \
  	debug.c cooleditmenus.c shell.c shell.h copyright.h mail.c complete.c \
+ 	manpage.c percentsubs.c _coolpython.c find.h postscript.c postscript.h \
