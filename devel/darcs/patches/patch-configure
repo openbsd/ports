@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.4 2005/05/09 03:41:34 dons Exp $
+$OpenBSD: patch-configure,v 1.5 2005/05/16 03:17:28 dons Exp $
 
 Don't build the postscript manual
 
---- configure.orig	Tue Apr 26 17:52:23 2005
-+++ configure	Wed Apr 27 21:05:21 2005
+--- configure.orig	Mon May 16 10:27:57 2005
++++ configure	Mon May 16 10:29:05 2005
 @@ -3798,7 +3798,7 @@ if test "$enable_mmap" = "no"; then
  fi
  
@@ -33,7 +33,7 @@ Don't build the postscript manual
      else
 -        TARGETS="$TARGETS manual/index.html"
 +        TARGETS="$TARGETS"
-         MAKEMANUAL="$HTLATEX darcs.tex \"\" \"\" \"-dmanual/\" && ln -sf darcs.html manual/index.html"
+         MAKEMANUAL="cd manual && $HTLATEX ../darcs.tex && ln -sf darcs.html index.html"
      fi
  else
 -    TARGETS="$TARGETS manual/index.html"
