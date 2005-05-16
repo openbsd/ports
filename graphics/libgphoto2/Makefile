@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2005/02/14 19:41:11 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/05/16 17:44:01 robert Exp $
 
 COMMENT=	'digital camera library'
 CATEGORIES=	graphics devel
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>, Arnaud Launay <asl@launay.org>
 
-VERSION=	2.1.4
+VERSION=	2.1.5
 DISTNAME=	libgphoto2-${VERSION}
-PKGNAME=	libgphoto-${VERSION}p0
+PKGNAME=	libgphoto-${VERSION}
 
-HOMEPAGE=	http://gphoto.sourceforge.net/
+HOMEPAGE=	http://www.gphoto.org/
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gphoto/}
 

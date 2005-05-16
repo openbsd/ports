@@ -1,7 +1,7 @@
-$OpenBSD: patch-camlibs_minolta_dimagev_Makefile_in,v 1.1 2005/02/14 19:41:11 alek Exp $
---- camlibs/minolta/dimagev/Makefile.in.orig	Fri Feb  4 00:03:19 2005
-+++ camlibs/minolta/dimagev/Makefile.in	Fri Feb  4 00:03:23 2005
-@@ -191,7 +191,6 @@ EXTRA_DIST = dimagev.df makefile.os2
+$OpenBSD: patch-camlibs_minolta_dimagev_Makefile_in,v 1.2 2005/05/16 17:44:02 robert Exp $
+--- camlibs/minolta/dimagev/Makefile.in.orig	Wed Dec 15 23:03:33 2004
++++ camlibs/minolta/dimagev/Makefile.in	Mon May 16 18:15:07 2005
+@@ -207,7 +207,6 @@ EXTRA_DIST = dimagev.df makefile.os2
  camlib_LTLIBRARIES = libgphoto2_dimagev.la
  
  INCLUDES = \

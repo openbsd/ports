@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/11 10:42:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/05/16 17:44:02 robert Exp $
 bin/gphoto2-config
 bin/gphoto2-port-config
 include/gphoto2/
@@ -40,10 +40,16 @@ lib/gphoto2/${VERSION}/libgphoto2_dimera3500.a
 lib/gphoto2/${VERSION}/libgphoto2_dimera3500.la
 lib/gphoto2/${VERSION}/libgphoto2_directory.a
 lib/gphoto2/${VERSION}/libgphoto2_directory.la
+lib/gphoto2/${VERSION}/libgphoto2_enigma13.a
+lib/gphoto2/${VERSION}/libgphoto2_enigma13.la
+lib/gphoto2/${VERSION}/libgphoto2_ez200.a
+lib/gphoto2/${VERSION}/libgphoto2_ez200.la
 lib/gphoto2/${VERSION}/libgphoto2_fuji.a
 lib/gphoto2/${VERSION}/libgphoto2_fuji.la
 lib/gphoto2/${VERSION}/libgphoto2_gsmart300.a
 lib/gphoto2/${VERSION}/libgphoto2_gsmart300.la
+lib/gphoto2/${VERSION}/libgphoto2_iclick.a
+lib/gphoto2/${VERSION}/libgphoto2_iclick.la
 lib/gphoto2/${VERSION}/libgphoto2_jamcam.a
 lib/gphoto2/${VERSION}/libgphoto2_jamcam.la
 lib/gphoto2/${VERSION}/libgphoto2_jd11.a
@@ -62,6 +68,8 @@ lib/gphoto2/${VERSION}/libgphoto2_konica_qm150.a
 lib/gphoto2/${VERSION}/libgphoto2_konica_qm150.la
 lib/gphoto2/${VERSION}/libgphoto2_largan.a
 lib/gphoto2/${VERSION}/libgphoto2_largan.la
+lib/gphoto2/${VERSION}/libgphoto2_mars.a
+lib/gphoto2/${VERSION}/libgphoto2_mars.la
 lib/gphoto2/${VERSION}/libgphoto2_mustek.a
 lib/gphoto2/${VERSION}/libgphoto2_mustek.la
 lib/gphoto2/${VERSION}/libgphoto2_panasonic_coolshot.a
@@ -116,8 +124,8 @@ lib/gphoto2/${VERSION}/libgphoto2_stv0680.a
 lib/gphoto2/${VERSION}/libgphoto2_stv0680.la
 lib/gphoto2/${VERSION}/libgphoto2_sx330z.a
 lib/gphoto2/${VERSION}/libgphoto2_sx330z.la
-lib/gphoto2/${VERSION}/libgphoto2_toshiba.a
-lib/gphoto2/${VERSION}/libgphoto2_toshiba.la
+lib/gphoto2/${VERSION}/libgphoto2_toshiba_pdrm11.a
+lib/gphoto2/${VERSION}/libgphoto2_toshiba_pdrm11.la
 lib/gphoto2_port/
 lib/gphoto2_port/0.5.1/
 lib/gphoto2_port/0.5.1/libgphoto2_port_serial.a

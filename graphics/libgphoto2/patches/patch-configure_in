@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.4 2004/10/10 18:20:17 naddy Exp $
---- configure.in.orig	Sun Jan 18 20:47:32 2004
-+++ configure.in	Sun Oct 10 12:55:28 2004
+$OpenBSD: patch-configure_in,v 1.5 2005/05/16 17:44:02 robert Exp $
+--- configure.in.orig	Wed Dec 15 23:01:51 2004
++++ configure.in	Mon May 16 18:15:06 2005
 @@ -68,15 +68,13 @@ else
  fi
  AM_GNU_GETTEXT
