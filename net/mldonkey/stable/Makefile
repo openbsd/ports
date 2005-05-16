@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/05/11 17:22:39 pvalchev Exp $
-
-BROKEN= "requires update due to ocaml 3.08"
+# $OpenBSD: Makefile,v 1.6 2005/05/16 18:49:13 espie Exp $
 
 COMMENT='e-donkey client'
 CATEGORIES=net
@@ -14,16 +12,14 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m z
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--enable-ocamlver=3.07
+#CONFIGURE_ARGS+=	--enable-ocamlver=3.07
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 HOMEPAGE=http://savannah.nongnu.org/projects/mldonkey/
 
-MASTER_SITES=http://savannah.nongnu.org/download/mldonkey/release-2.5-4/official/
-DISTNAME=mldonkey-2.5.4
-PKGNAME=${DISTNAME}p0
-DISTFILES=mldonkey-2.5-4.tar.gz
-WRKDIST=${WRKDIR}/mldonkey-2.5-4
+MASTER_SITES=http://savannah.nongnu.org/download/mldonkey/
+DISTNAME=mldonkey-2.5.28.1
+EXTRACT_SUFX=.tar.bz2
 
 USE_GMAKE=Yes
 MODULES=lang/ocaml
@@ -35,5 +31,12 @@ NO_REGRESS=Yes
 post-install:
 	mkdir -p ${PREFIX}/share/mldonkey
 	cp -R ${WRKDIST}/distrib ${PREFIX}/share/mldonkey
+	@${strip_binaries}
 
 .include <bsd.port.mk>
+
+.if ${MODOCAML_NATIVE:L} == "yes"
+strip_binaries=cd ${PREFIX}/bin && strip mlnet mlgui mlnet+gui mlim
+.else
+strip_binaries=:
+.endif

@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_Makefile_in,v 1.1.1.1 2004/03/07 19:10:53 espie Exp $
---- config/Makefile.in.orig	2003-10-12 20:41:28.000000000 +0200
-+++ config/Makefile.in	2003-12-31 16:48:40.000000000 +0100
-@@ -451,6 +451,8 @@ uninstall::
+$OpenBSD: patch-config_Makefile_in,v 1.2 2005/05/16 18:49:13 espie Exp $
+--- config/Makefile.in.orig	Sun Feb 20 03:31:43 2005
++++ config/Makefile.in	Mon May 16 20:30:53 2005
+@@ -725,6 +725,8 @@ uninstall::
  	rm -f $(BINDIR)/mlnet
  	rm -f $(BINDIR)/mlgui
  
@@ -9,22 +9,9 @@ $OpenBSD: patch-config_Makefile_in,v 1.1.1.1 2004/03/07 19:10:53 espie Exp $
 +
  install:: opt 
  	mkdir -p $(prefix)/bin
- 	if test -e mlnet; then \
-@@ -460,7 +462,7 @@ install:: opt 
-              done; \
-          fi
- 	if test -e mlgui; then \
--             rm -f $(prefix)/bin/mlgui; cp -f mlnet $(prefix)/bin/mlgui; \
-+             rm -f $(prefix)/bin/mlgui; cp -f mlgui $(prefix)/bin/mlgui; \
-              rm -f $(prefix)/bin/mldonkey_gui; cp -f mlgui $(prefix)/bin/mldonkey_gui; \
-          fi
- 	if test -e mlnet+gui; then \
-@@ -470,9 +472,25 @@ install:: opt 
-              done; \
-          fi
- 	if test -e mlim; then \
--             rm -f $(prefix)/bin/mlim; cp -f mlnet $(prefix)/bin/mlim; \
-+             rm -f $(prefix)/bin/mlim; cp -f mlim $(prefix)/bin/mlim; \
+ 	if test -f mlnet; then \
+@@ -747,6 +749,22 @@ install:: opt 
+              rm -f $(prefix)/bin/mlim; cp -f mlim $(prefix)/bin/mlim; \
           fi
  
 +else
