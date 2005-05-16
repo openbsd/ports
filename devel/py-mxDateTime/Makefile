@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/08/03 14:27:33 xsa Exp $
+# $OpenBSD: Makefile,v 1.15 2005/05/16 22:02:51 alek Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -20,15 +20,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-
-FLAVORS=	py2.1 py2.3
-FLAVOR?=	py2.3
-
-.if ${FLAVOR} == "py2.1" || ${FLAVOR} == "py2.3"
-MODPY_VERSION=	${FLAVOR:S/py//}
-.else
-ERRORS+=	"Fatal: Conflicting flavor: ${FLAVOR}"
-.endif
 
 MODULES=	lang/python
 

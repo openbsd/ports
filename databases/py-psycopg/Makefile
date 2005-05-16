@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2005/02/27 11:38:49 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2005/05/16 22:02:52 alek Exp $
 
 SHARED_ONLY=	Yes
 
@@ -30,7 +30,7 @@ DATETIME_PATH=	${LOCALBASE}/lib/python${PYTHON_VER}/site-packages/mx/DateTime
 
 RUN_DEPENDS=	:postgresql-server-*:databases/postgresql,-server \
 		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
-		:py-mxDateTime->=2.0.0-py${PYTHON_VER}:devel/py-mxDateTime,py${PYTHON_VER}
+		:py-mxDateTime->=2.0.0:devel/py-mxDateTime
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .if empty(FLAVOR:L:Mno_zope)
