@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.49 2005/04/17 19:42:38 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2005/05/16 23:00:59 naddy Exp $
 
 COMMENT=	"block-sorting file compressor, unencumbered"
 
-DISTNAME=	bzip2-1.0.2
-PKGNAME=	${DISTNAME}p0
+VERSION=	1.0.3
+DISTNAME=	bzip2-${VERSION}
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_SOURCEWARE:=bzip2/v102/}
+MASTER_SITES=	${HOMEPAGE}${VERSION}/
 
-HOMEPAGE=	http://sources.redhat.com/bzip2/
+HOMEPAGE=	http://www.bzip.org/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -30,10 +30,8 @@ REGRESS_FLAGS=	LD_LIBRARY_PATH="${WRKBUILD}"
 REGRESS_TARGET=	test
 
 post-install:
-	@cd ${WRKBUILD} && makeinfo --no-split manual.texi
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bzip2
-	${INSTALL_DATA} ${WRKBUILD}/*.html ${PREFIX}/share/doc/bzip2
-	${INSTALL_DATA} ${WRKBUILD}/bzip2.info ${PREFIX}/info
+	${INSTALL_DATA} ${WRKBUILD}/manual.html ${PREFIX}/share/doc/bzip2
 
 .include <bsd.port.mk>
 

@@ -1,19 +1,20 @@
-$OpenBSD: patch-Makefile,v 1.8 2002/09/20 13:13:49 brad Exp $
---- Makefile.orig	Sat Jan 26 01:34:53 2002
-+++ Makefile	Fri Sep 20 12:16:57 2002
-@@ -11,9 +11,8 @@ LDFLAGS=
+$OpenBSD: patch-Makefile,v 1.9 2005/05/16 23:00:59 naddy Exp $
+--- Makefile.orig	Mon May 16 23:27:51 2005
++++ Makefile	Mon May 16 23:49:38 2005
+@@ -10,10 +10,9 @@ LDFLAGS=
  BIGFILES=-D_FILE_OFFSET_BITS=64
- CFLAGS=-Wall -Winline -O2 -fomit-frame-pointer -fno-strength-reduce $(BIGFILES)
+ CFLAGS=-Wall -Winline -O -g $(BIGFILES)
  
 -# Where you want it installed when you do 'make install'
 -PREFIX=/usr
--
 +PICFLAG= -fpic
-+SHLIB=	libbz2.so.10.2
++SHLIB= libbz2.so.10.3
  
+-
  OBJS= blocksort.o  \
        huffman.o    \
-@@ -22,10 +21,17 @@ OBJS= blocksort.o  \
+       crctable.o   \
+@@ -21,10 +20,17 @@ OBJS= blocksort.o  \
        compress.o   \
        decompress.o \
        bzlib.o
@@ -28,11 +29,11 @@ $OpenBSD: patch-Makefile,v 1.8 2002/09/20 13:13:49 brad Exp $
 +.else
 +all: libbz2.a $(SHLIB) bzip2 bzip2recover
 +bzip2: libbz2.a $(SHLIB) bzip2.o
-+.endif
++.endif 
  	$(CC) $(CFLAGS) $(LDFLAGS) -o bzip2 bzip2.o -L. -lbz2
  
  bzip2recover: bzip2recover.o
-@@ -40,67 +46,62 @@ libbz2.a: $(OBJS)
+@@ -39,66 +45,61 @@ libbz2.a: $(OBJS)
  		$(RANLIB) libbz2.a ; \
  	fi
  
@@ -135,7 +136,6 @@ $OpenBSD: patch-Makefile,v 1.8 2002/09/20 13:13:49 brad Exp $
 +	@cd $(DESTDIR)$(PREFIX)/man/man1; ln -fs bzmore.1 bzless.1
 +	@cd $(DESTDIR)$(PREFIX)/man/man1; ln -fs bzdiff.1 bzcmp.1
  
- distclean: clean
  clean: 
 -	rm -f *.o libbz2.a bzip2 bzip2recover \
 +	rm -f *.o *.so libbz2.a $(SHLIB) bzip2 bzip2recover \

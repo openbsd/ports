@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2005/04/17 19:42:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2005/05/16 23:00:59 naddy Exp $
 %%SHARED%%
 bin/bunzip2
 bin/bzcat
@@ -14,7 +14,6 @@ bin/bzmore
 include/bzlib.h
 lib/libbz2.a
 @endfake
-@info info/bzip2.info
 @man man/man1/bunzip2.1
 @man man/man1/bzcat.1
 @man man/man1/bzcmp.1
@@ -28,10 +27,3 @@ lib/libbz2.a
 @man man/man1/bzmore.1
 share/doc/bzip2/
 share/doc/bzip2/manual.html
-share/doc/bzip2/manual_1.html
-share/doc/bzip2/manual_2.html
-share/doc/bzip2/manual_3.html
-share/doc/bzip2/manual_4.html
-share/doc/bzip2/manual_abt.html
-share/doc/bzip2/manual_ovr.html
-share/doc/bzip2/manual_toc.html
