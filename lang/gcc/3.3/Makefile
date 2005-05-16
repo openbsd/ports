@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/02/28 12:36:13 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2005/05/16 11:14:36 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -55,8 +55,8 @@ BUILD_DEPENDS+=:bison-*:devel/bison
 .endif
 
 
-DISTNAME=   gcc-${FULL_VERSION}
-PKGNAME=   gcc-${FULL_VERSION}p0
+DISTNAME=	gcc-${FULL_VERSION}
+PKGNAME=	gcc-${FULL_VERSION}p0
 
 
 DISTFILES=  ${DISTNAME}.tar.bz2
