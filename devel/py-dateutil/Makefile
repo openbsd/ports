@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/09 12:23:45 djm Exp $
+# $OpenBSD: Makefile,v 1.3 2005/05/17 01:53:44 djm Exp $
 
 COMMENT=	"Python API for advanced date calculations"
 
 VERSION=	0.9
 DISTNAME=	python-dateutil-${VERSION}
-PKGNAME=	${DISTNAME:S/^python-/py-/}
+PKGNAME=	${DISTNAME:S/^python-/py-/}p1
 CATEGORIES=    	devel
 
 HOMEPAGE=	https://moin.conectiva.com.br/DateUtil
@@ -25,6 +25,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.mindrot.org/files/
 EXTRACT_SUFX=	.tar.bz2
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/dateutil/zoneinfo/zoneinfo-2005e.tar.gz \
+	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/dateutil/zoneinfo
 
 do-regress: fake
 	@cd ${WRKSRC} && ${MAKE_ENV} \

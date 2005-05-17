@@ -1,0 +1,13 @@
+$OpenBSD: patch-setup_py,v 1.1 2005/05/17 01:53:44 djm Exp $
+--- setup.py.orig	Tue May 17 11:36:31 2005
++++ setup.py	Tue May 17 11:39:13 2005
+@@ -22,6 +22,7 @@ The dateutil module provides powerful ex
+ datetime module, available in Python 2.3+.
+ """,
+       packages = ["dateutil", "dateutil.zoneinfo"],
+-      data_files = [(PYTHONLIB+"/dateutil/zoneinfo", 
+-                     glob.glob("dateutil/zoneinfo/zoneinfo*.tar.*"))],
++# Install this manually
++#      data_files = [(PYTHONLIB+"/dateutil/zoneinfo", 
++#                     glob.glob("dateutil/zoneinfo/zoneinfo*.tar.*"))],
+       )
