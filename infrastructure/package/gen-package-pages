@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: gen-package-pages,v 1.8 2005/05/17 16:17:50 pvalchev Exp $
+# $OpenBSD: gen-package-pages,v 1.9 2005/05/17 22:08:13 pvalchev Exp $
 
 # Copyright (c) 2004 Michael Coulter
 #
@@ -89,7 +89,7 @@ sub gen_arch_page
 	print $archfile arch_head($arch);
 
 	opendir(my $pkgs, "$pkgpath/$arch") || die "cannot get package listing for $arch: $!\n";
-	while (my $file = readdir($pkgs)) {
+	foreach my $file (sort(readdir($pkgs))) {
 		next if ($file =~ /^\./);
 		next if ($file =~ /^index.txt$/);
 		next if ($file =~ /^pkglocatedb.gz$/);
