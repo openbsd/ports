@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: gen-package-pages,v 1.7 2005/05/17 16:17:00 pvalchev Exp $
+# $OpenBSD: gen-package-pages,v 1.8 2005/05/17 16:17:50 pvalchev Exp $
 
 # Copyright (c) 2004 Michael Coulter
 #
@@ -92,6 +92,7 @@ sub gen_arch_page
 	while (my $file = readdir($pkgs)) {
 		next if ($file =~ /^\./);
 		next if ($file =~ /^index.txt$/);
+		next if ($file =~ /^pkglocatedb.gz$/);
 
 		dprint "generating package for $arch/$file\n";
 		my $package = OpenBSD::PackageLocator->find("$pkgpath/$arch/$file");
