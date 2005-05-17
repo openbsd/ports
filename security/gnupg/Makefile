@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2005/04/09 12:43:08 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2005/05/17 15:08:34 martin Exp $
 
 COMMENT=	"GNU privacy guard - a free PGP replacement"
 
@@ -36,6 +36,9 @@ AUTOCONF_VERSION= 2.59
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
 CONFIGURE_ARGS+= --disable-ldap \
 		 --disable-gnupg-iconv
+.if ${MACHINE_ARCH} == "m68k"
+CONFIGURE_ARGS+= --disable-asm
+.endif
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv" \
