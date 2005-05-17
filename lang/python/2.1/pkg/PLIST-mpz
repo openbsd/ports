@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-mpz,v 1.4 2004/09/18 10:11:57 espie Exp $
-@option no-default-conflict
-@conflict python-mpz->=2.1,<2.2
-lib/python2.1/lib-dynload/mpzmodule.so
