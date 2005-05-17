@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/15 09:42:25 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/17 13:12:40 mbalmer Exp $
 
 COMMENT=	"abstraction of various SASL mechanism responses"
 
 V=		1.0.1
 DISTNAME=	Auth_SASL-${V}
 PKGNAME=	pear-Auth-SASL-${V}
-CATEGORIES=	mail pear
+CATEGORIES=	security pear
 
 MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz
