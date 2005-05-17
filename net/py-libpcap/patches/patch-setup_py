@@ -1,6 +1,15 @@
-$OpenBSD: patch-setup_py,v 1.1 2004/02/18 08:31:51 xsa Exp $
---- setup.py.orig	2002-04-25 06:32:30.000000000 +0200
-+++ setup.py	2004-02-18 00:51:14.000000000 +0100
+$OpenBSD: patch-setup_py,v 1.2 2005/05/17 07:39:20 xsa Exp $
+--- setup.py.orig	Thu Apr 25 06:32:30 2002
++++ setup.py	Wed May 11 14:13:57 2005
+@@ -56,7 +56,7 @@ class pcap_build_ext(build_ext):
+           return new_sources
+   
+       swig = self.find_swig()
+-      swig_cmd = [swig, "-python", "-dnone", "-shadow", "-ISWIG"]
++      swig_cmd = [swig, "-python", "-shadow", "-ISWIG"]
+       if self.swig_cpp:
+           swig_cmd.append("-c++")
+   
 @@ -74,7 +74,7 @@ class pcap_build_ext(build_ext):
  setup (# Distribution meta-data
          name = "pylibpcap",
@@ -10,3 +19,12 @@ $OpenBSD: patch-setup_py,v 1.1 2004/02/18 08:31:51 xsa Exp $
          description = 'pylibpcap is a python module for the libpcap packet capture library.',
          long_description = 'pylibpcap is a python module for the libpcap packet capture library.',
          url = "http://pylibpcap.sourceforge.net/",
+@@ -86,7 +86,7 @@ setup (# Distribution meta-data
+         # platforms = "",
+         py_modules = [ "pcap" ],
+         ext_modules = [ Extension(
+-                            "pcapcmodule",
++                            "_pcap",
+                             ["pcap.i","pcap_interface.c","exception.c","error.c"],
+                             include_dirs=["/usr/include/pcap"],
+                             extra_objects=[],
