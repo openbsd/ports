@@ -1,0 +1,33 @@
+$OpenBSD: patch-dbmopen_c,v 1.1 2005/05/18 20:08:35 sturm Exp $
+--- dbmopen.c.orig	Mon Apr  4 23:20:41 2005
++++ dbmopen.c	Mon Apr  4 23:22:31 2005
+@@ -62,21 +62,22 @@ dbm_open (file, flags, mode)
+   char* dir_file;	    /* Used to construct "file.dir". */
+   struct stat dir_stat;	    /* Stat information for "file.dir". */
+   gdbm_file_info *temp_dbf;  /* Temporary file pointer storage. */
++  size_t bufsize;
+ 
+-
+   /* Prepare the correct names of "file.pag" and "file.dir". */
+-  pag_file = (char *) malloc (strlen (file)+5);
+-  dir_file = (char *) malloc (strlen (file)+5);
++  bufsize = strlen (file)+5;
++  pag_file = (char *) malloc (bufsize);
++  dir_file = (char *) malloc (bufsize);
+   if ((pag_file == NULL) || (dir_file == NULL))
+     {
+       gdbm_errno = GDBM_MALLOC_ERROR;	/* For the hell of it. */
+       return NULL;
+     }
+ 
+-  strcpy (pag_file, file);
+-  strcat (pag_file, ".pag");
+-  strcpy (dir_file, file);
+-  strcat (dir_file, ".dir");
++  strlcpy (pag_file, file, bufsize);
++  strlcat (pag_file, ".pag", bufsize);
++  strlcpy (dir_file, file, bufsize);
++  strlcat (dir_file, ".dir", bufsize);
+   
+ 
+   /* Call the actual routine, saving the pointer to the file information. */

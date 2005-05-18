@@ -1,0 +1,35 @@
+$OpenBSD: patch-dbminit_c,v 1.1 2005/05/18 20:08:35 sturm Exp $
+--- dbminit.c.orig	Mon Apr  4 23:01:34 2005
++++ dbminit.c	Mon Apr  4 23:24:09 2005
+@@ -53,23 +53,24 @@ dbminit (file)
+   char* dir_file;	    /* Used to construct "file.dir". */
+   struct stat dir_stat;	    /* Stat information for "file.dir". */
+   int ret;
++  size_t bufsize;
+ 
+-
+   ret = 0;		    /* Default return value. */
+ 
+   /* Prepare the correct names of "file.pag" and "file.dir". */
+-  pag_file = (char *) malloc (strlen (file)+5);
+-  dir_file = (char *) malloc (strlen (file)+5);
++  bufsize = strlen (file)+5;
++  pag_file = (char *) malloc (bufsize);
++  dir_file = (char *) malloc (bufsize);
+   if ((pag_file == NULL) || (dir_file == NULL))
+     {
+       gdbm_errno = GDBM_MALLOC_ERROR;	/* For the hell of it. */
+       return -1;
+     }
+ 
+-  strcpy (pag_file, file);
+-  strcat (pag_file, ".pag");
+-  strcpy (dir_file, file);
+-  strcat (dir_file, ".dir");
++  strlcpy (pag_file, file, bufsize);
++  strlcat (pag_file, ".pag", bufsize);
++  strlcpy (dir_file, file, bufsize);
++  strlcat (dir_file, ".dir", bufsize);
+ 
+   if (_gdbm_file != NULL)
+     gdbm_close (_gdbm_file);
