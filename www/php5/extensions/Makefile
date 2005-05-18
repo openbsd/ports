@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/05/12 19:09:14 robert Exp $
+# $OpenBSD: Makefile,v 1.11 2005/05/18 06:59:37 kevlo Exp $
 
 FULLPKGNAME=	php5-extensions-${V}
 COMMENT=	"informational package about PHP5 extensions"
@@ -286,7 +286,7 @@ CONFIGURE_ARGS+=	--without-xsl
 MULTI_PACKAGES+=	-xsl
 COMMENT-xsl=		"XSL functions for php5"
 CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
-XSLT_DEPENDS=		xslt.3::textproc/libxslt
+XSL_DEPENDS=		xslt.3::textproc/libxslt
 .endif
 
 .for i in ${MULTI_PACKAGES}
