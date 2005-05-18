@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/18 03:04:00 jolan Exp $
+@unexec lua ${SYSCONFDIR}/lua/luapkg.lua del luavenv
+lua/luavenv/
+lua/luavenv/init.lua
+lua/luavenv/venv.lua
+@exec lua ${SYSCONFDIR}/lua/luapkg.lua add luavenv ${PREFIX}/lua/luavenv/init.lua
+share/doc/luavenv/
+share/doc/luavenv/index.html
+share/doc/luavenv/license.html
+share/doc/luavenv/venv.png

@@ -1,0 +1,3 @@
+Lua Virtual Environment is a simple library which provides a way to
+execute a Lua function in a separate environment, protecting the
+original one.
