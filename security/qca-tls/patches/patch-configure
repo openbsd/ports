@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2005/05/19 20:28:27 niallo Exp $
+--- configure.orig	Wed May  4 17:06:03 2005
++++ configure	Wed May  4 17:06:31 2005
+@@ -375,7 +375,7 @@ public:
+ 		QString extra;
+ 		if(!path.isEmpty())
+ 			extra += QString("-L") + path + ' ';
+-		extra += QString("-l") + name;
++		extra += QString("-l") + name + QString(" -lcrypto");
+ 		if(!doCompileAndLink(str, extra))
+ 			return false;
+ 		return true;
