@@ -1,0 +1,12 @@
+$OpenBSD: patch-preproc_c,v 1.1 2005/05/19 13:04:17 robert Exp $
+--- preproc.c.orig	Mon Sep  8 00:46:26 2003
++++ preproc.c	Thu May 19 14:52:19 2005
+@@ -4067,7 +4067,7 @@ error(int severity, const char *fmt, ...
+ 	return;
+ 
+     va_start(arg, fmt);
+-    vsprintf(buff, fmt, arg);
++    vsnprintf(buff, sizeof(buff), fmt, arg);
+     va_end(arg);
+ 
+     if (istk && istk->mstk && istk->mstk->name)
