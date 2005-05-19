@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/19 20:26:59 niallo Exp $
+%%SHARED%%
+include/qca.h

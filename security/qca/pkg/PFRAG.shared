@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/19 20:26:59 niallo Exp $
+@lib lib/libqca.so.1.0
