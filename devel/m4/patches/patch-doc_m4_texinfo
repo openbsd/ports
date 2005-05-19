@@ -1,20 +1,20 @@
-$OpenBSD: patch-doc_m4_texinfo,v 1.1 2001/07/10 23:55:17 brad Exp $
---- doc/m4.texinfo.orig	Sun Oct 30 19:07:39 1994
-+++ doc/m4.texinfo	Tue Jul 10 19:50:51 2001
+$OpenBSD: patch-doc_m4_texinfo,v 1.2 2005/05/19 09:50:51 espie Exp $
+--- doc/m4.texinfo.orig	Thu Mar 31 13:17:00 2005
++++ doc/m4.texinfo	Mon May 16 21:33:41 2005
 @@ -2,6 +2,7 @@
  @c %**start of header
  @setfilename m4.info
  @settitle GNU macro processor
 +@dircategory Programming & development tools
+ @c For double-sided printing, uncomment:
+ @c @setchapterpage odd
  @finalout
- @c %**end of header
+@@ -18,7 +19,7 @@
  
-@@ -17,7 +18,7 @@
- @ifinfo
- @format
- START-INFO-DIR-ENTRY
+ @dircategory GNU programming tools
+ @direntry
 -* m4: (m4).			A powerful macro processor.
 +* Gm4: (m4).			A powerful macro processor.
- END-INFO-DIR-ENTRY
- @end format
- @end ifinfo
+ @end direntry
+ 
+ @ifnottex
