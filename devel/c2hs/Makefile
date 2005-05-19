@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2005/03/25 05:53:21 dons Exp $
+# $OpenBSD: Makefile,v 1.5 2005/05/19 02:41:29 dons Exp $
 # $FreeBSD: ports/devel/hs-c2hs/Makefile,v 1.20 2004/03/25 08:29:28 obraun Exp $
 
 COMMENT=		"interface generator for Haskell to C bindings"
 
-V=			0.13.4
+V=			0.13.6
 DISTNAME=		c2hs-${V}
 CATEGORIES=		devel
 MAINTAINER=		Don Stewart <dons@openbsd.org>
