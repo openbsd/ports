@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.367 2005/05/10 21:27:51 xsa Exp $
+# $OpenBSD: Makefile,v 1.368 2005/05/20 11:27:48 niallo Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -214,6 +214,7 @@
      SUBDIR += pork
      SUBDIR += pptp
      SUBDIR += proxy-suite
+     SUBDIR += psi
      SUBDIR += pure-ftpd
      SUBDIR += pure-ftpd,ldap
      SUBDIR += pure-ftpd,mysql
