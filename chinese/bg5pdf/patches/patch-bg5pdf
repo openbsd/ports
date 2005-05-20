@@ -1,8 +1,0 @@
---- bg5pdf.orig	Fri Dec 14 16:51:19 2001
-+++ bg5pdf	Fri Dec 14 16:51:29 2001
-@@ -1,4 +1,4 @@
--#!/usr/bin/env /usr/bin/python
-+#!/usr/bin/env /usr/local/bin/python
- 
- """
- Bg5pdf is a simple wrapper for wrapping big5 encoding text file into

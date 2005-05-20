@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/21 21:51:36 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/05/20 06:03:28 alek Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"convert Big5 encoded files to PDF"
 
-DISTNAME=       bg5pdf-1.0.0
-PKGNAME=	zh-${DISTNAME}
-CATEGORIES=     chinese print
+DISTNAME=	bg5pdf-1.0.0
+PKGNAME=	zh-${DISTNAME}p0
+CATEGORIES=	chinese print
 
 HOMEPAGE=	http://cschin.yydolphin.net/bg5pdf/
 
-MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
-PERMIT_DISTFILES_CDROM= No
-PERMIT_DISTFILES_FTP=   Yes
-PERMIT_PACKAGE_CDROM=   No
-PERMIT_PACKAGE_FTP=     Yes
+# GPL + Aladdin license
+PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		z
 
 MASTER_SITES=	${HOMEPAGE}
@@ -27,10 +28,15 @@ LIB_DEPENDS=	pdf.2::print/pdflib
 
 WRKDIST=	${WRKDIR}/bg5pdf
 
-PYTHON_VER=	2.1
+PYTHON_VER=	2.3
 SUBST_VARS=	PYTHON_VER
 MAKE_ENV=	PYTHON_VER=${PYTHON_VER}
 
 NO_REGRESS=	Yes
+
+post-patch:
+	perl -pi -e \
+		"s|/usr/bin/python|${LOCALBASE}/bin/python${PYTHON_VER}|" \
+		${WRKSRC}/bg5pdf
 
 .include <bsd.port.mk>
