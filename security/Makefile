@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2005/05/16 16:10:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.156 2005/05/20 11:26:48 niallo Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -125,6 +125,8 @@
      SUBDIR += py-openssl
      SUBDIR += py-paramiko
      SUBDIR += py-sslwrapper
+     SUBDIR += qca
+     SUBDIR += qca-tls
      SUBDIR += radiusniff
      SUBDIR += rdp
      SUBDIR += scanlogd
