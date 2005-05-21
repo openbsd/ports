@@ -1,6 +1,5 @@
-$OpenBSD: patch-libusb-config_in,v 1.2 2003/01/01 21:34:45 brad Exp $
---- libusb-config.in.orig	Mon May 13 18:26:18 2002
-+++ libusb-config.in	Mon Dec 30 09:26:09 2002
+--- libusb-config.in.orig	Mon May 13 16:29:07 2002
++++ libusb-config.in	Fri May 20 22:35:57 2005
 @@ -75,5 +75,5 @@ if test "$echo_cflags" = "yes"; then
  	echo $includes
  fi

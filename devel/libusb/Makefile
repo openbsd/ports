@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2004/04/21 03:04:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2005/05/21 22:24:20 pvalchev Exp $
 
 COMMENT=	"USB access library"
 
-VERSION=	0.1.7
+VERSION=	0.1.10a	
 DISTNAME=	libusb-${VERSION}
-PKGNAME=	${DISTNAME}p2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://libusb.sourceforge.net/
@@ -19,12 +18,9 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libusb/}
 
-SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static --disable-build-docs
-
-post-extract:
-	@rm ${WRKSRC}/usb.h
+SEPARATE_BUILD=		concurrent
+CONFIGURE_STYLE= 	gnu
+CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
+			--enable-static --disable-build-docs
 
 .include <bsd.port.mk>

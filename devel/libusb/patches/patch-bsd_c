@@ -1,61 +1,60 @@
-$OpenBSD: patch-bsd_c,v 1.5 2003/11/27 04:34:26 pvalchev Exp $
---- bsd.c.orig	2002-11-11 11:04:16.000000000 -0700
-+++ bsd.c	2003-11-26 21:20:46.000000000 -0700
-@@ -276,7 +276,7 @@ static int ensure_ep_open(usb_dev_handle
- int usb_bulk_write(usb_dev_handle *dev, int ep, char *bytes, int size,
-                    int timeout)
+--- bsd.c.orig	Tue Feb 17 23:34:52 2004
++++ bsd.c	Fri May 20 22:35:57 2005
+@@ -357,7 +357,7 @@ int usb_bulk_read(usb_dev_handle *dev, i
+ int usb_interrupt_write(usb_dev_handle *dev, int ep, char *bytes, int size,
+                         int timeout)
  {
 -  int fd, ret, sent = 0;
 +  int fd, ret;
  
    /* Ensure the endpoint address is correct */
    ep &= ~USB_ENDPOINT_IN;
-@@ -298,8 +298,7 @@ int usb_bulk_write(usb_dev_handle *dev, 
-     USB_ERROR_STR(ret, "error setting timeout: %s",
+@@ -379,8 +379,7 @@ int usb_interrupt_write(usb_dev_handle *
+     USB_ERROR_STR(-errno, "error setting timeout: %s",
                    strerror(errno));
  
 -  do {
 -    ret = write(fd, bytes+sent, size-sent);
-+    ret = write(fd, bytes, size);
++   ret = write(fd, bytes, size);
      if (ret < 0)
  #if __FreeBSD__
-       USB_ERROR_STR(ret, "error writing to bulk endpoint %s.%d: %s",
-@@ -309,16 +308,13 @@ int usb_bulk_write(usb_dev_handle *dev, 
+       USB_ERROR_STR(-errno, "error writing to interrupt endpoint %s.%d: %s",
+@@ -390,16 +389,13 @@ int usb_interrupt_write(usb_dev_handle *
                    dev->device->filename, UE_GET_ADDR(ep), strerror(errno));
  #endif
  
 -    sent += ret;
--  } while(ret > 0 && sent < size);
+-  } while (ret > 0 && sent < size);
 -
 -  return sent;
 +  return ret;
  }
  
- int usb_bulk_read(usb_dev_handle *dev, int ep, char *bytes, int size,
-                   int timeout)
+ int usb_interrupt_read(usb_dev_handle *dev, int ep, char *bytes, int size,
+                        int timeout)
  {
 -  int fd, ret, retrieved = 0, one = 1;
 +  int fd, ret, one = 1;
  
    /* Ensure the endpoint address is correct */
    ep |= USB_ENDPOINT_IN;
-@@ -345,8 +341,7 @@ int usb_bulk_read(usb_dev_handle *dev, i
-     USB_ERROR_STR(ret, "error setting short xfer: %s",
-                   strerror(errno));
+@@ -424,8 +420,7 @@ int usb_interrupt_read(usb_dev_handle *d
+   if (ret < 0)
+     USB_ERROR_STR(-errno, "error setting short xfer: %s", strerror(errno));
  
 -  do {
 -    ret = read(fd, bytes+retrieved, size-retrieved);
 +    ret = read(fd, bytes, size);
      if (ret < 0)
  #if __FreeBSD__
-       USB_ERROR_STR(ret, "error reading from bulk endpoint %s.%d: %s",
-@@ -355,10 +350,8 @@ int usb_bulk_read(usb_dev_handle *dev, i
-       USB_ERROR_STR(ret, "error reading from bulk endpoint %s.%02d: %s",
+       USB_ERROR_STR(-errno, "error reading from interrupt endpoint %s.%d: %s",
+@@ -434,10 +429,7 @@ int usb_interrupt_read(usb_dev_handle *d
+       USB_ERROR_STR(-errno, "error reading from interrupt endpoint %s.%02d: %s",
                    dev->device->filename, UE_GET_ADDR(ep), strerror(errno));
  #endif
 -    retrieved += ret;
 -  } while (ret > 0 && retrieved < size);
- 
+-
 -  return retrieved;
 +  return ret;
  }
