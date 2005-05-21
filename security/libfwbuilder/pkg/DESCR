@@ -1,0 +1,2 @@
+fwbuilder is a GUI + xml specs for various firewall software.
+This package holds the lib and API for fwbuilder.
