@@ -1,0 +1,12 @@
+$OpenBSD: patch-bin_socksify_in,v 1.1 2005/05/21 06:51:55 jakob Exp $
+--- bin/socksify.in.orig	Mon Jan 24 02:24:18 2005
++++ bin/socksify.in	Fri May 20 19:26:06 2005
+@@ -52,7 +52,7 @@ SOCKSIFY_PRELOAD_LIBS="@SOCKSIFY_PRELOAD
+ LIBDIR="@LIBRARY_PREFIX@"
+ 
+ #XXX shared library name should be generated too (possibly including version)
+-LIBRARY="${SOCKS_LIBRARY-${LIBDIR}/libdsocks.@SOLIB_POSTFIX@}"
++LIBRARY="${SOCKS_LIBRARY-${LIBDIR}/libdsocks.@SOLIB_POSTFIX@.1.0}"
+ 
+ PRELOAD_SEPERATOR="@PRELOAD_SEPERATOR@"
+ PRELOAD_POSTFIX="@PRELOAD_POSTFIX@"
