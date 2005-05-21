@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1 2005/05/21 13:46:44 alek Exp $
+--- configure.ac.orig	Sat Mar 26 13:52:35 2005
++++ configure.ac	Sat Mar 26 13:52:55 2005
+@@ -367,7 +367,7 @@ then
+     LDFLAGS="$LDFLAGS -L$with_flac/lib"
+   fi
+ 
+-  AC_CHECK_HEADER(faad.h, have_flac="maybe")
++  AC_CHECK_HEADER(FLAC/stream_decoder.h, have_flac="maybe")
+   if test "$have_flac" != "no"
+   then
+     AC_CHECK_LIB(FLAC, FLAC__stream_decoder_new, [

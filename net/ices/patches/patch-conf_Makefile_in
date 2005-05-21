@@ -1,0 +1,12 @@
+$OpenBSD: patch-conf_Makefile_in,v 1.1 2005/05/21 13:46:44 alek Exp $
+--- conf/Makefile.in.orig	Mon Oct 25 00:08:55 2004
++++ conf/Makefile.in	Mon Oct 25 00:10:32 2004
+@@ -229,7 +229,7 @@ uninstall-modDATA:
+ 	done
+ install-sysconfDATA: $(sysconf_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(sysconfdir)" || $(mkdir_p) "$(DESTDIR)$(sysconfdir)"
++	$(mkdir_p) "$(DESTDIR)$(sysconfdir)"
+ 	@list='$(sysconf_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \

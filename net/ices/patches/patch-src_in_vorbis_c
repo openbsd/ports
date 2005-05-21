@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_in_vorbis_c,v 1.1.1.1 2003/07/26 11:40:45 sturm Exp $
---- src/in_vorbis.c.orig	2003-07-26 13:05:41.000000000 +0200
-+++ src/in_vorbis.c	2003-07-26 13:09:17.000000000 +0200
+$OpenBSD: patch-src_in_vorbis_c,v 1.2 2005/05/21 13:46:44 alek Exp $
+--- src/in_vorbis.c.orig	Mon Mar 22 04:13:13 2004
++++ src/in_vorbis.c	Fri May 20 15:03:22 2005
 @@ -44,7 +44,7 @@ typedef struct {
  } ices_vorbis_in_t;
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_in_vorbis_c,v 1.1.1.1 2003/07/26 11:40:45 sturm Exp $
  				int16_t* left, int16_t* right);
  static int ices_vorbis_close (input_stream_t* self);
  static void in_vorbis_parse (input_stream_t* self);
-@@ -133,7 +133,7 @@ ices_vorbis_open (input_stream_t* self, 
+@@ -133,13 +133,13 @@ ices_vorbis_open (input_stream_t* self, 
    return 0;
  }
  
@@ -19,3 +19,20 @@ $OpenBSD: patch-src_in_vorbis_c,v 1.1.1.1 2003/07/26 11:40:45 sturm Exp $
  ices_vorbis_readpcm (input_stream_t* self, size_t olen, int16_t* left,
  		     int16_t* right)
  {
+   ices_vorbis_in_t* vorbis_data = (ices_vorbis_in_t*) self->data;
+   int link;
+-  int len;
++  ssize_t len;
+   int i;
+ 
+   /* refill buffer if necessary */
+@@ -150,6 +150,9 @@ ices_vorbis_readpcm (input_stream_t* sel
+ 			  sizeof (vorbis_data->buf), ICES_OV_BE, SAMPLESIZE, 1, &link)) <= 0) {
+ 	if (len == OV_HOLE) {
+ 	  ices_log_error ("Skipping bad vorbis data");
++	} else if (len < 0) {
++	  ices_log_error ("ov_read returned an error: ", len);
++	  return 0;
+ 	} else
+ 	  return len;
+       }
