@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2005/05/20 11:26:48 niallo Exp $
+# $OpenBSD: Makefile,v 1.157 2005/05/21 09:39:21 espie Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -35,6 +35,7 @@
      SUBDIR += dsniff,no_x11
      SUBDIR += fragroute
      SUBDIR += fragrouter
+     SUBDIR += fwbuilder
      SUBDIR += gnupg
      SUBDIR += gnutls
      SUBDIR += gpa
@@ -50,6 +51,7 @@
      SUBDIR += keychain
      SUBDIR += klaxon
      SUBDIR += l0phtcrack
+     SUBDIR += libfwbuilder
      SUBDIR += libgcrypt
      SUBDIR += libgpg-error
      SUBDIR += libident
