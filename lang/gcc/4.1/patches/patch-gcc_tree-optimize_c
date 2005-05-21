@@ -1,13 +1,23 @@
-$OpenBSD: patch-gcc_tree-optimize_c,v 1.2 2005/03/07 16:30:06 espie Exp $
---- gcc/tree-optimize.c.orig	Thu Feb 17 17:19:41 2005
-+++ gcc/tree-optimize.c	Tue Feb 22 19:44:27 2005
-@@ -221,18 +221,18 @@ register_one_dump_file (struct tree_opt_
+$OpenBSD: patch-gcc_tree-optimize_c,v 1.3 2005/05/21 10:34:43 espie Exp $
+--- gcc/tree-optimize.c.orig	Sat May 14 22:22:58 2005
++++ gcc/tree-optimize.c	Mon May 16 17:48:31 2005
+@@ -202,26 +202,26 @@ register_one_dump_file (struct tree_opt_
      sprintf (num, "%d", ((int) pass->static_pass_number < 0
  			 ? 1 : pass->static_pass_number));
  
 -  dot_name = concat (".", pass->name, num, NULL);
 +  dot_name = concat (".", pass->name, num, (void *)0);
-   if (pass->properties_provided & PROP_trees)
+   if (ipa)
+     {
+-      flag_name = concat ("ipa-", pass->name, num, NULL);
+-      glob_name = concat ("ipa-", pass->name, NULL);
++      flag_name = concat ("ipa-", pass->name, num, (void *)0);
++      glob_name = concat ("ipa-", pass->name, (void *)0);
+       /* First IPA dump is cgraph that is dumped via separate channels.  */
+       pass->static_pass_number = dump_register (dot_name, flag_name, glob_name,
+                                                 TDF_IPA, n + 1, 0);
+     }
+   else if (pass->properties_provided & PROP_trees)
      {
 -      flag_name = concat ("tree-", pass->name, num, NULL);
 -      glob_name = concat ("tree-", pass->name, NULL);

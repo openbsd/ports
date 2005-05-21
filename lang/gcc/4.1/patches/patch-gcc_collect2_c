@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_collect2_c,v 1.2 2005/03/07 16:30:06 espie Exp $
---- gcc/collect2.c.orig	Mon Jan 17 16:23:51 2005
-+++ gcc/collect2.c	Mon Jan 17 16:24:43 2005
-@@ -779,19 +779,19 @@ main (int argc, char **argv)
+$OpenBSD: patch-gcc_collect2_c,v 1.3 2005/05/21 10:34:43 espie Exp $
+--- gcc/collect2.c.orig	Tue Apr 26 02:23:52 2005
++++ gcc/collect2.c	Mon May 16 17:43:10 2005
+@@ -773,19 +773,19 @@ main (int argc, char **argv)
       qualify the program name with the target machine.  */
  
    const char *const full_ld_suffix =
@@ -27,7 +27,7 @@ $OpenBSD: patch-gcc_collect2_c,v 1.2 2005/03/07 16:30:06 espie Exp $
  #else
    const char *const full_ld_suffix	= ld_suffix;
    const char *const full_nm_suffix	= nm_suffix;
-@@ -981,7 +981,7 @@ main (int argc, char **argv)
+@@ -978,7 +978,7 @@ main (int argc, char **argv)
    if (c_file_name == 0)
      {
  #ifdef CROSS_COMPILE
@@ -36,7 +36,7 @@ $OpenBSD: patch-gcc_collect2_c,v 1.2 2005/03/07 16:30:06 espie Exp $
  #else
        c_file_name = "gcc";
  #endif
-@@ -1258,7 +1258,7 @@ main (int argc, char **argv)
+@@ -1256,7 +1256,7 @@ main (int argc, char **argv)
  
    if (exports.first)
      {
@@ -45,7 +45,7 @@ $OpenBSD: patch-gcc_collect2_c,v 1.2 2005/03/07 16:30:06 espie Exp $
  
        *ld1++ = buf;
        *ld2++ = buf;
-@@ -1423,7 +1423,7 @@ main (int argc, char **argv)
+@@ -1421,7 +1421,7 @@ main (int argc, char **argv)
    /* Tell the linker that we have initializer and finalizer functions.  */
  #ifdef LD_INIT_SWITCH
  #ifdef COLLECT_EXPORT_LIST
@@ -54,7 +54,7 @@ $OpenBSD: patch-gcc_collect2_c,v 1.2 2005/03/07 16:30:06 espie Exp $
  #else
    *ld2++ = LD_INIT_SWITCH;
    *ld2++ = initname;
-@@ -1438,7 +1438,7 @@ main (int argc, char **argv)
+@@ -1436,7 +1436,7 @@ main (int argc, char **argv)
        /* If we did not add export flag to link arguments before, add it to
  	 second link phase now.  No new exports should have been added.  */
        if (! exports.first)
@@ -63,16 +63,7 @@ $OpenBSD: patch-gcc_collect2_c,v 1.2 2005/03/07 16:30:06 espie Exp $
  
  #ifndef LD_INIT_SWITCH
        add_to_list (&exports, initname);
-@@ -1590,7 +1590,7 @@ collect_execute (const char *prog, char 
-       dup2 (redir_handle, STDERR_FILENO);
-     }
- 
--  pid = pexecute (argv[0], argv, argv[0], NULL, &errmsg_fmt, &errmsg_arg,
-+  pid = pexecute (argv[0], argv, argv[0], (char *)0, &errmsg_fmt, &errmsg_arg,
- 		  (PEXECUTE_FIRST | PEXECUTE_LAST | PEXECUTE_SEARCH));
- 
-   if (redir)
-@@ -1845,8 +1845,8 @@ write_c_file_stat (FILE *stream, const c
+@@ -1831,8 +1831,8 @@ write_c_file_stat (FILE *stream, const c
      notice ("\nwrite_c_file - output name is %s, prefix is %s\n",
  	    output_file, prefix);
  

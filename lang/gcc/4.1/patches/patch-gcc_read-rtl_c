@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_read-rtl_c,v 1.1 2005/03/07 16:30:06 espie Exp $
---- gcc/read-rtl.c.orig	Mon Mar  7 16:14:24 2005
-+++ gcc/read-rtl.c	Mon Mar  7 16:14:50 2005
-@@ -667,7 +667,7 @@ join_c_conditions (const char *cond1, co
+$OpenBSD: patch-gcc_read-rtl_c,v 1.2 2005/05/21 10:34:43 espie Exp $
+--- gcc/read-rtl.c.orig	Wed May 11 00:40:36 2005
++++ gcc/read-rtl.c	Mon May 16 17:43:13 2005
+@@ -774,7 +774,7 @@ join_c_conditions (const char *cond1, co
    if (cond2 == 0 || cond2[0] == 0)
      return cond1;
  

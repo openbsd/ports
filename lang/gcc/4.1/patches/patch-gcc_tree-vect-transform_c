@@ -1,8 +1,8 @@
-$OpenBSD: patch-gcc_tree-vect-transform_c,v 1.2 2005/03/07 16:30:06 espie Exp $
---- gcc/tree-vect-transform.c.orig	Tue Feb 22 20:36:16 2005
-+++ gcc/tree-vect-transform.c	Tue Feb 22 20:36:29 2005
-@@ -93,7 +93,7 @@ vect_get_new_vect_var (tree type, enum v
-   prefix_len = strlen (prefix);
+$OpenBSD: patch-gcc_tree-vect-transform_c,v 1.3 2005/05/21 10:34:43 espie Exp $
+--- gcc/tree-vect-transform.c.orig	Tue May  3 14:19:50 2005
++++ gcc/tree-vect-transform.c	Mon May 16 17:43:14 2005
+@@ -92,7 +92,7 @@ vect_get_new_vect_var (tree type, enum v
+     prefix = "vect_p";
  
    if (name)
 -    new_vect_var = create_tmp_var (type, concat (prefix, name, NULL));
