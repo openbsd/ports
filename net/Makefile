@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.369 2005/05/22 10:16:16 djm Exp $
+# $OpenBSD: Makefile,v 1.370 2005/05/22 14:47:44 robert Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -143,6 +143,7 @@
      SUBDIR += nylon
      SUBDIR += oidentd
      SUBDIR += oinkmaster
+     SUBDIR += olsrd
      SUBDIR += openh323
      SUBDIR += openvpn
      SUBDIR += p5-Chatbot-Eliza
