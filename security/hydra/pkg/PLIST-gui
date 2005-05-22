@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-gui,v 1.1 2005/05/22 09:34:39 alek Exp $
+bin/xhydra

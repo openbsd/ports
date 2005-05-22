@@ -1,50 +1,70 @@
-# $OpenBSD: Makefile,v 1.18 2005/02/11 19:46:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2005/05/22 09:34:39 alek Exp $
 
-COMMENT=		"parallelized login hacker"
+COMMENT=	"parallelized login hacker"
+COMMENT-gui=	"GTK frontend for hydra"
 
-DISTNAME=		hydra-4.6-src
-PKGNAME=		${DISTNAME:S/-src//}
-CATEGORIES=    		security
+VERSION=	4.6
+DISTNAME=	hydra-4.6-src
+PKGNAME=	hydra-${VERSION}p0
+PKGNAME-gui=	hydra-gui-${VERSION}
+CATEGORIES=    	security
 
-HOMEPAGE=		http://www.thc.org/
+HOMEPAGE=	http://thc.org/thc-hydra/
 
-MASTER_SITES=		${HOMEPAGE}/releases/ \
-			${MASTER_SITE_PACKETSTORM:=groups/thc/}
+MAINTAINER= 	Alexandre Anriot <aanriot@atlantilde.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto m ssl
+WANTLIB=		c m
 
-NO_REGRESS=		Yes
+MASTER_SITES=	${HOMEPAGE}/releases/ \
+		${MASTER_SITE_PACKETSTORM:=groups/thc/}
 
-CONFIGURE_STYLE=	gnu dest
-
-
-USE_GMAKE=  yes
-MAKE_FLAGS=     CC="${CC}" OPTS="${CFLAGS}"
-
-post-extract:
-		@chmod -R u+w ${WRKDIST}
-
-MAKE_FLAGS=		CC="${CC}" OPTS="${CFLAGS}"
-FAKE_FLAGS=		INSTALL="${WRKINST}${PREFIX}/bin"
-
-FLAVORS= no_x11
+PSEUDO_FLAVORS=	no_x11
 FLAVOR?=
 
+MULTI_PACKAGES=
+SUBPACKAGE?=
+
+CONFIGURE_STYLE=gnu dest
+
+USE_GMAKE= 	yes
+NO_REGRESS=	Yes
+
 .if ${FLAVOR:L:Mno_x11}
-ALL_TARGET= hydra pw-inspector
+ALL_TARGET=	hydra pw-inspector
+INSTALL_TARGET=	install
 .else
-USE_X11=	Yes
-ALL_TARGET= all
-LIB_DEPENDS+=   gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 pangox-1.0.0.0::devel/pango
-WANTLIB+=   iconv intl X11 Xext Xft freetype Xrender Xinerama Xcursor \
-            fontconfig gmodule-2.0.0.0 gobject-2.0.0.0 pangoxft-1.0.0.0 \
-            glib-2.0.0.0 pango-1.0.0.0 atk-1.0.0.0
+BUILD_DEPENDS=	::devel/pkgconfig
+
+MULTI_PACKAGES+=-gui
+
+ALL_TARGET= 	all
+INSTALL_TARGET=	xinstall
+
+.if !defined(PACKAGING) || !empty(SUBPACKAGE)
+MODULES=	devel/gettext
+LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 .endif
+
+post-configure:
+	cd ${WRKSRC}/hydra-gtk && ./configure
+.endif
+
+.if defined(PACKAGING) && !empty(SUBPACKAGE)
+RUN_DEPENDS=	:hydra-${VERSION}*:security/hydra
+WANTLIB+=	X11 Xext Xft freetype Xrender Xinerama Xcursor \
+		fontconfig gmodule-2.0.0.0 gobject-2.0.0.0 pangoxft-1.0.0.0 \
+		glib-2.0.0.0 pango-1.0.0.0 atk-1.0.0.0 pangox-1.0.0.0
+.else
+WANTLIB+=	ssl crypto
+.endif
+
+post-extract:
+	${CHMOD} -R u+w ${WRKDIST}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hydra

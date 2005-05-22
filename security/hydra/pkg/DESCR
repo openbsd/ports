@@ -1,15 +1,17 @@
 Hydra is a multi-protocol, parallelized authentication brute forcer.
 
 By assigning many parallel tasks, remote login brute forcing can be
-accelerated SIGNIFICANTLY, however it depends on the protocol.  
-The fastest is generally POP3, then FTP, then Telnet, and the least
-IMAP.
+accelerated SIGNIFICANTLY, however it depends on the protocol. The
+fastest is generally POP3, then FTP, then Telnet, and the least IMAP.
 
-Experiment with the task option (-t) to speed things up. The higher, 
-the faster (but too high, and it disables the service). To prevent 
-disabling you can now use the -g option for "slow-starts".
+Experiment with the task option (-t) to speed things up. The higher, the
+faster (but too high, and it disables the service). To prevent disabling
+you can now use the -g option for "slow-starts".
 
 Currently this tool supports:
-TELNET, FTP, HTTP, HTTPS, HTTP-PROXY, LDAP, SMB, SMBNT, MS-SQL, MYSQL, REXEC,
-SOCKS5, VNC, POP3, IMAP, NNTP, PCNFS, ICQ, SAP/R3, Cisco auth, Cisco enable,
-Cisco AAA.
+TELNET, FTP, HTTP, HTTPS, HTTP-PROXY, LDAP, SMB, SMBNT, MS-SQL, MYSQL,
+REXEC, SOCKS5, VNC, POP3, IMAP, NNTP, PCNFS, ICQ, SAP/R3, Cisco auth,
+Cisco enable, Cisco AAA.
+
+Flavors:
+        * no_x11 - do not build GTK frontend.
