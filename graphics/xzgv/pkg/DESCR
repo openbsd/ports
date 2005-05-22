@@ -1,0 +1,4 @@
+xzgv is a picture viewer for X, with a thumbnail-based file selector.
+It uses GTK+ and Imlib. Most file formats are supported, and the
+thumbnails used are compatible with xv, zgv, and the Gimp. It can also
+be used with `xzgv file(s)', to effectively bypass the file selector.

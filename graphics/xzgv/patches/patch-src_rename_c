@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_rename_c,v 1.1.1.1 2005/05/22 11:32:11 alek Exp $
+--- src/rename.c.orig	Thu Nov 16 15:59:14 2000
++++ src/rename.c	Thu May 12 15:33:23 2005
+@@ -28,6 +28,7 @@ static void cb_ok_button(GtkWidget *butt
+ struct stat sbuf;
+ char *tn_src,*tn_dst;
+ char *dest=g_strdup(gtk_entry_get_text(GTK_ENTRY(entry)));
++int src_len,dst_len;
+ 
+ gtk_widget_destroy(rename_win);
+ 
+@@ -64,8 +65,10 @@ if(rename(oldname,dest)==-1)
+ tn_src=tn_dst=NULL;
+ 
+ /* ".xvpics/" is 8 chars */
+-if((tn_src=malloc(8+strlen(oldname)+1))==NULL ||
+-   (tn_dst=malloc(8+strlen(dest)+1))==NULL)
++src_len=8+strlen(oldname)+1;
++dst_len=8+strlen(dest)+1;
++if((tn_src=malloc(src_len))==NULL ||
++   (tn_dst=malloc(dst_len))==NULL)
+   {
+   /* rename entry */
+   gtk_clist_set_text(GTK_CLIST(clist),current_row,SELECTOR_NAME_COL,dest);
+@@ -74,10 +77,10 @@ if((tn_src=malloc(8+strlen(oldname)+1))=
+   return;
+   }
+ 
+-strcpy(tn_src,".xvpics/");
+-strcat(tn_src,oldname);
+-strcpy(tn_dst,".xvpics/");
+-strcat(tn_dst,dest);
++strlcpy(tn_src,".xvpics/",src_len);
++strlcat(tn_src,oldname,src_len);
++strlcpy(tn_dst,".xvpics/",dst_len);
++strlcat(tn_dst,dest,dst_len);
+ 
+ rename(tn_src,tn_dst);		/* don't much care if it works or not */
+ 
