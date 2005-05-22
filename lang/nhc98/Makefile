@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/02/24 13:20:41 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2005/05/22 09:45:06 alek Exp $
 # $NetBSD: Makefile,v 1.29 2004/03/26 21:19:53 wiz Exp $
 
 COMMENT=	"portable Haskell compiler"
@@ -36,11 +36,11 @@ CONFIGURE_ARGS+=--buildwith=ghc
 CONFIGURE_ARGS+=--buildwith=gcc
 .endif
 
-REGRESS_DEPENDS=::lang/python/2.2
+REGRESS_DEPENDS=::lang/python/2.3
 REGRESS_RESULT=	${WRKSRC}/../${DISTNAME}-regress/actual.result 
 REGRESS_FLAGS=	TEST_HC="${WRKSRC}/script/nhc98" WAY="normal"
 REGRESS_FLAGS+=	EXTRA_RUNTEST_OPTS="--output-summary=${REGRESS_RESULT}" \
-		PYTHON="${LOCALBASE}/bin/python2.2"
+		PYTHON="${LOCALBASE}/bin/python2.3"
 
 # BSDish
 PERMIT_PACKAGE_CDROM=	Yes
