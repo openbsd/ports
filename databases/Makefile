@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2005/04/27 04:35:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.73 2005/05/22 09:39:32 djm Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -55,6 +55,7 @@
      SUBDIR += py-mysql
      SUBDIR += py-psycopg
      SUBDIR += py-sqlite
+     SUBDIR += py-sqlite2
      SUBDIR += py-sybase
      SUBDIR += sqlite
      SUBDIR += sqlite3
