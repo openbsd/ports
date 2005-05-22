@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/12 04:38:35 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/05/22 01:30:45 jolan Exp $
 bin/xfce-mcs-manager
 bin/xfce-setting-show
 include/xfce4/
@@ -23,15 +23,20 @@ share/locale/be/
 share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/bg/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/bn_IN/
+share/locale/bn_IN/LC_MESSAGES/
+share/locale/bn_IN/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ca/
 share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/cs/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/da/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/de/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/el/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/eo/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/es/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/es_MX/
 share/locale/es_MX/LC_MESSAGES/
@@ -59,6 +64,9 @@ share/locale/ko/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/mr/
+share/locale/mr/LC_MESSAGES/
+share/locale/mr/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/xfce-mcs-manager.mo
@@ -96,3 +104,10 @@ share/xfce4/doc/C/images/settings_manager.png
 share/xfce4/doc/C/images/smgr_from_root_menu.png
 share/xfce4/doc/C/images/smgr_from_setup_button.png
 share/xfce4/doc/C/xfce-mcs-manager.html
+share/xfce4/doc/fr/
+share/xfce4/doc/fr/images/
+share/xfce4/doc/fr/images/settings_manager.png
+share/xfce4/doc/fr/images/smgr_from_panel.png
+share/xfce4/doc/fr/images/smgr_from_root_menu.png
+share/xfce4/doc/fr/images/smgr_from_setup_button.png
+share/xfce4/doc/fr/xfce-mcs-manager.html

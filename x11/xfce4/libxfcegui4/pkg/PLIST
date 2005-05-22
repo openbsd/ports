@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/12 04:38:34 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/05/22 01:30:45 jolan Exp $
 %%SHARED%%
 include/xfce4/
 include/xfce4/libxfcegui4/
@@ -64,9 +64,16 @@ lib/xfce4/modules/libxfce4_mime_icons.la
 share/locale/be/
 share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/libxfcegui4.mo
+share/locale/bn_IN/
+share/locale/bn_IN/LC_MESSAGES/
+share/locale/bn_IN/LC_MESSAGES/libxfcegui4.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
+share/locale/ca/LC_MESSAGES/libxfcegui4.mo
 share/locale/cs/LC_MESSAGES/libxfcegui4.mo
 share/locale/da/LC_MESSAGES/libxfcegui4.mo
 share/locale/de/LC_MESSAGES/libxfcegui4.mo
+share/locale/el/LC_MESSAGES/libxfcegui4.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/libxfcegui4.mo
@@ -84,16 +91,21 @@ share/locale/gu/
 share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/libxfcegui4.mo
 share/locale/he/LC_MESSAGES/libxfcegui4.mo
+share/locale/hu/LC_MESSAGES/libxfcegui4.mo
 share/locale/it/LC_MESSAGES/libxfcegui4.mo
 share/locale/ja/LC_MESSAGES/libxfcegui4.mo
 share/locale/ko/LC_MESSAGES/libxfcegui4.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/libxfcegui4.mo
+share/locale/mr/
+share/locale/mr/LC_MESSAGES/
+share/locale/mr/LC_MESSAGES/libxfcegui4.mo
 share/locale/nl/LC_MESSAGES/libxfcegui4.mo
 share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/libxfcegui4.mo
+share/locale/pl/LC_MESSAGES/libxfcegui4.mo
 share/locale/pt_BR/LC_MESSAGES/libxfcegui4.mo
 share/locale/ro/LC_MESSAGES/libxfcegui4.mo
 share/locale/ru/LC_MESSAGES/libxfcegui4.mo

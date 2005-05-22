@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/12 04:38:34 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/22 01:30:44 jolan Exp $
 
 COMMENT=	"settings management library used by most xfce4 modules"
 DISTNAME=	libxfce4mcs-${V}
-V=		4.2.1
+V=		4.2.2
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 
 HOMEPAGE=	http://www.xfce.org/

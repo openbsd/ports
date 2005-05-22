@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/12 04:38:39 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/05/22 01:30:45 jolan Exp $
 %%SHARED%%
 bin/xfce4-iconbox
 lib/xfce4/
@@ -15,10 +15,12 @@ share/locale/ar/LC_MESSAGES/xfce4-iconbox.mo
 share/locale/az/LC_MESSAGES/xfce4-iconbox.mo
 share/locale/be/LC_MESSAGES/xfce4-iconbox.mo
 share/locale/bg/LC_MESSAGES/xfce4-iconbox.mo
+share/locale/bn_IN/LC_MESSAGES/xfce4-iconbox.mo
 share/locale/ca/LC_MESSAGES/xfce4-iconbox.mo
 share/locale/cs/LC_MESSAGES/xfce4-iconbox.mo
 share/locale/da/LC_MESSAGES/xfce4-iconbox.mo
 share/locale/de/LC_MESSAGES/xfce4-iconbox.mo
+share/locale/el/LC_MESSAGES/xfce4-iconbox.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-iconbox.mo
 share/locale/es/LC_MESSAGES/xfce4-iconbox.mo
 share/locale/es_MX/LC_MESSAGES/xfce4-iconbox.mo

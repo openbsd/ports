@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/12 04:36:23 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/22 01:28:06 jolan Exp $
 
 COMMENT=	"basic utility library for xfce4"
-V=		4.2.1
+V=		4.2.2
 DISTNAME=	libxfce4util-${V}
 CATEGORIES=	devel
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/

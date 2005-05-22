@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/12 04:38:37 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/05/22 01:30:46 jolan Exp $
 %%SHARED%%
 bin/xfce4-menueditor
 bin/xfdesktop
@@ -18,31 +18,23 @@ share/examples/xfdesktop/
 @sample ${SYSCONFDIR}/xdg/xfce4/desktop/
 share/examples/xfdesktop/menu.xml
 @sample ${SYSCONFDIR}/xdg/xfce4/desktop/menu.xml
-share/examples/xfdesktop/menu.xml.az
-share/examples/xfdesktop/menu.xml.ca
+share/examples/xfdesktop/menu.xml.cs
 share/examples/xfdesktop/menu.xml.da
 share/examples/xfdesktop/menu.xml.de
 share/examples/xfdesktop/menu.xml.es
 share/examples/xfdesktop/menu.xml.et
-share/examples/xfdesktop/menu.xml.eu
-share/examples/xfdesktop/menu.xml.fa_IR
 share/examples/xfdesktop/menu.xml.fi
 share/examples/xfdesktop/menu.xml.fr
 share/examples/xfdesktop/menu.xml.he
-share/examples/xfdesktop/menu.xml.hu
 share/examples/xfdesktop/menu.xml.ja
 share/examples/xfdesktop/menu.xml.ko
-share/examples/xfdesktop/menu.xml.ms
 share/examples/xfdesktop/menu.xml.nl
 share/examples/xfdesktop/menu.xml.pt_BR
 share/examples/xfdesktop/menu.xml.ro
 share/examples/xfdesktop/menu.xml.ru
 share/examples/xfdesktop/menu.xml.sk
-share/examples/xfdesktop/menu.xml.ta
-share/examples/xfdesktop/menu.xml.tr
 share/examples/xfdesktop/menu.xml.uk
 share/examples/xfdesktop/menu.xml.vi
-share/examples/xfdesktop/menu.xml.zh_CN
 share/examples/xfdesktop/menu.xml.zh_TW
 share/icons/hicolor/32x32/
 share/icons/hicolor/32x32/apps/
@@ -58,10 +50,12 @@ share/locale/ar/LC_MESSAGES/xfdesktop.mo
 share/locale/az/LC_MESSAGES/xfdesktop.mo
 share/locale/be/LC_MESSAGES/xfdesktop.mo
 share/locale/bg/LC_MESSAGES/xfdesktop.mo
+share/locale/bn_IN/LC_MESSAGES/xfdesktop.mo
 share/locale/ca/LC_MESSAGES/xfdesktop.mo
 share/locale/cs/LC_MESSAGES/xfdesktop.mo
 share/locale/da/LC_MESSAGES/xfdesktop.mo
 share/locale/de/LC_MESSAGES/xfdesktop.mo
+share/locale/el/LC_MESSAGES/xfdesktop.mo
 share/locale/en_GB/LC_MESSAGES/xfdesktop.mo
 share/locale/es/LC_MESSAGES/xfdesktop.mo
 share/locale/es_MX/LC_MESSAGES/xfdesktop.mo
@@ -78,6 +72,7 @@ share/locale/it/LC_MESSAGES/xfdesktop.mo
 share/locale/ja/LC_MESSAGES/xfdesktop.mo
 share/locale/ko/LC_MESSAGES/xfdesktop.mo
 share/locale/lt/LC_MESSAGES/xfdesktop.mo
+share/locale/mr/LC_MESSAGES/xfdesktop.mo
 share/locale/ms/LC_MESSAGES/xfdesktop.mo
 share/locale/nb_NO/LC_MESSAGES/xfdesktop.mo
 share/locale/nl/LC_MESSAGES/xfdesktop.mo
@@ -119,3 +114,11 @@ share/xfce4/doc/C/images/xfdesktop-editor.png
 share/xfce4/doc/C/images/xfdesktop-list.png
 share/xfce4/doc/C/images/xfdesktop-menu-tab.png
 share/xfce4/doc/C/xfdesktop.html
+share/xfce4/doc/fr/images/root_menu.png
+share/xfce4/doc/fr/images/root_menu2.png
+share/xfce4/doc/fr/images/select_bg_color.png
+share/xfce4/doc/fr/images/xfdesktop-background.png
+share/xfce4/doc/fr/images/xfdesktop-editor.png
+share/xfce4/doc/fr/images/xfdesktop-list.png
+share/xfce4/doc/fr/images/xfdesktop-menu-tab.png
+share/xfce4/doc/fr/xfdesktop.html

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/12 04:38:39 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/05/22 01:30:45 jolan Exp $
 %%SHARED%%
 bin/xfcalendar
 lib/xfce4/
@@ -16,10 +16,12 @@ share/locale/ar/LC_MESSAGES/xfcalendar.mo
 share/locale/az/LC_MESSAGES/xfcalendar.mo
 share/locale/be/LC_MESSAGES/xfcalendar.mo
 share/locale/bg/LC_MESSAGES/xfcalendar.mo
+share/locale/bn_IN/LC_MESSAGES/xfcalendar.mo
 share/locale/ca/LC_MESSAGES/xfcalendar.mo
 share/locale/cs/LC_MESSAGES/xfcalendar.mo
 share/locale/da/LC_MESSAGES/xfcalendar.mo
 share/locale/de/LC_MESSAGES/xfcalendar.mo
+share/locale/el/LC_MESSAGES/xfcalendar.mo
 share/locale/en_GB/LC_MESSAGES/xfcalendar.mo
 share/locale/es/LC_MESSAGES/xfcalendar.mo
 share/locale/et/LC_MESSAGES/xfcalendar.mo
@@ -35,6 +37,7 @@ share/locale/it/LC_MESSAGES/xfcalendar.mo
 share/locale/ja/LC_MESSAGES/xfcalendar.mo
 share/locale/ko/LC_MESSAGES/xfcalendar.mo
 share/locale/lt/LC_MESSAGES/xfcalendar.mo
+share/locale/mr/LC_MESSAGES/xfcalendar.mo
 share/locale/ms/LC_MESSAGES/xfcalendar.mo
 share/locale/nb_NO/LC_MESSAGES/xfcalendar.mo
 share/locale/nl/LC_MESSAGES/xfcalendar.mo

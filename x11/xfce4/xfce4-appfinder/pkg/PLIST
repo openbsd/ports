@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/12 04:38:38 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/05/22 01:30:45 jolan Exp $
 bin/xfce4-appfinder
 share/applications/xfce4-appfinder.desktop
 share/locale/be/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/bn_IN/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/ca/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/cs/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/da/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/de/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/el/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/es/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/es_MX/LC_MESSAGES/xfce4-appfinder.mo
@@ -19,6 +22,7 @@ share/locale/it/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/ja/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/ko/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/lt/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/mr/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/nl/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/pa/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-appfinder.mo
@@ -34,3 +38,7 @@ share/xfce4/doc/C/images/appfinder-handle-popup.png
 share/xfce4/doc/C/images/appfinder-item-popup.png
 share/xfce4/doc/C/images/default_appfinder.png
 share/xfce4/doc/C/xfce4-appfinder.html
+share/xfce4/doc/fr/images/appfinder-handle-popup.png
+share/xfce4/doc/fr/images/appfinder-item-popup.png
+share/xfce4/doc/fr/images/default_appfinder.png
+share/xfce4/doc/fr/xfce4-appfinder.html
