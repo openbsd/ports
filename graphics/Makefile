@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2005/04/09 22:58:09 espie Exp $
+# $OpenBSD: Makefile,v 1.142 2005/05/22 11:36:09 alek Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -161,5 +161,6 @@
 #    SUBDIR += xmountains
      SUBDIR += xpaint
      SUBDIR += xv
+     SUBDIR += xzgv
 
 .include <bsd.port.subdir.mk>
