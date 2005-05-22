@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2005/02/21 19:30:34 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2005/05/22 07:10:33 alek Exp $
 # 
 # Based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
@@ -97,11 +97,11 @@ post-install:
 	@tar zxf ${FULLDISTDIR}/${i} -C ${DOC_DIR}
 .endfor
 
-REGRESS_DEPENDS=::lang/python/2.2
+REGRESS_DEPENDS=::lang/python/2.3
 REGRESS_RESULT=	${WRKSRC}/actual.result
 REGRESS_FLAGS=	TEST_HC="${WRKSRC}/ghc/compiler/stage2/ghc-inplace"
 REGRESS_FLAGS+= EXTRA_RUNTEST_OPTS="--output-summary=${REGRESS_RESULT}" \
-		PYTHON="${LOCALBASE}/bin/python2.2"
+		PYTHON="${LOCALBASE}/bin/python2.3"
 
 # BSD w/o advertising clause
 PERMIT_PACKAGE_CDROM=   Yes
