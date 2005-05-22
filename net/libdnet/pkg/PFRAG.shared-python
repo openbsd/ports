@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared-python,v 1.1 2005/05/22 05:34:52 mjc Exp $
+lib/python${PYTHON_VER}/
+lib/python${PYTHON_VER}/site-packages/
+lib/python${PYTHON_VER}/site-packages/dnet.so
