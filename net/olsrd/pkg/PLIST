@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/22 14:44:45 robert Exp $
+@man man/man5/olsrd.conf.5
+@man man/man8/olsrd.8
+sbin/olsrd
+share/doc/olsrd/
+share/doc/olsrd/CHANGELOG
+share/doc/olsrd/README
+share/doc/olsrd/README-Link-Quality.html
+share/examples/olsrd/
+share/examples/olsrd/olsrd.conf.default.lq
+share/examples/olsrd/olsrd.conf.default.rfc
+@sample ${SYSCONFDIR}/olsrd.conf
