@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.371 2005/05/23 03:43:09 djm Exp $
+# $OpenBSD: Makefile,v 1.372 2005/05/23 18:52:00 alek Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -42,6 +42,7 @@
      SUBDIR += ddclient
      SUBDIR += dhcping
      SUBDIR += dlint
+     SUBDIR += dnsmasq
      SUBDIR += dnsreflector
      SUBDIR += dnstracer
      SUBDIR += doc
