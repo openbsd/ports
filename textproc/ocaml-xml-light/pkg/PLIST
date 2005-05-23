@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/23 23:03:56 avsm Exp $
+lib/ocaml/dtd.cmi
+lib/ocaml/dtd.mli
+lib/ocaml/xml-light.cma
+lib/ocaml/xml.cmi
+lib/ocaml/xml.mli
+lib/ocaml/xmlParser.cmi
+lib/ocaml/xmlParser.mli
+%%native%%
