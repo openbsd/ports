@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_config_h,v 1.1.1.1 2005/05/23 18:46:58 alek Exp $
+--- src/config.h.orig	Thu Mar 31 17:08:43 2005
++++ src/config.h	Sun May 22 11:05:28 2005
+@@ -40,7 +40,7 @@
+ #if defined(__FreeBSD__)
+ #   define CONFFILE "/usr/local/etc/dnsmasq.conf"
+ #else
+-#   define CONFFILE "/etc/dnsmasq.conf"
++#   define CONFFILE "!!SYSCONFDIR!!/dnsmasq.conf"
+ #endif
+ #define DEFLEASE 3600 /* default lease time, 1 hour */
+ #define CHUSER "nobody"

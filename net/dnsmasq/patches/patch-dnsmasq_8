@@ -1,0 +1,21 @@
+$OpenBSD: patch-dnsmasq_8,v 1.1.1.1 2005/05/23 18:46:58 alek Exp $
+--- dnsmasq.8.orig	Sun May 22 11:05:48 2005
++++ dnsmasq.8	Sun May 22 11:06:08 2005
+@@ -514,7 +514,7 @@ Add the domain-suffix to simple names (w
+ in the same way as for DHCP-derived names.
+ .SH CONFIG FILE
+ At startup, dnsmasq reads
+-.I /etc/dnsmasq.conf,
++.I !!SYSCONFDIR!!/dnsmasq.conf,
+ if it exists. (On
+ FreeBSD, the file is 
+ .I /usr/local/etc/dnsmasq.conf
+@@ -653,7 +653,7 @@ configurations, allowing some control ov
+ different classes of hosts.
+ 
+ .SH FILES
+-.IR /etc/dnsmasq.conf 
++.IR !!SYSCONFDIR!!/dnsmasq.conf 
+ 
+ .IR /usr/local/etc/dnsmasq.conf
+ 
