@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain_in,v 1.8 2005/05/21 22:38:19 brad Exp $
---- ltmain.in.orig	Sat Apr 23 01:39:19 2005
-+++ ltmain.in	Fri May 13 21:11:17 2005
-@@ -1981,6 +1981,17 @@ EOF
+$OpenBSD: patch-ltmain_in,v 1.9 2005/05/23 20:01:49 brad Exp $
+--- ltmain.in.orig	Wed May  4 15:13:00 2005
++++ ltmain.in	Sun May 22 16:31:34 2005
+@@ -1985,6 +1985,17 @@ EOF
  	;;
      esac
      for pass in $passes; do
@@ -19,7 +19,7 @@ $OpenBSD: patch-ltmain_in,v 1.8 2005/05/21 22:38:19 brad Exp $
        if test "$linkmode,$pass" = "lib,link" ||
  	 test "$linkmode,$pass" = "prog,scan"; then
  	libs="$deplibs"
-@@ -2242,20 +2253,20 @@ EOF
+@@ -2246,20 +2257,20 @@ EOF
  	    # It is a libtool convenience library, so add in its objects.
  	    convenience="$convenience $ladir/$objdir/$old_library"
  	    old_convenience="$old_convenience $ladir/$objdir/$old_library"
@@ -50,7 +50,7 @@ $OpenBSD: patch-ltmain_in,v 1.8 2005/05/21 22:38:19 brad Exp $
  	  continue
  	fi # $pass = conv
  
-@@ -2641,7 +2652,7 @@ EOF
+@@ -2645,7 +2656,7 @@ EOF
  	    add_dir=
  	    add=
  	    # Finalize command for both is simple: just hardcode it.
@@ -59,7 +59,7 @@ $OpenBSD: patch-ltmain_in,v 1.8 2005/05/21 22:38:19 brad Exp $
  	      add="$libdir/$linklib"
  	    elif test "$hardcode_minus_L" = yes; then
  	      add_dir="-L$libdir"
-@@ -5898,40 +5909,6 @@ relink_command=\"$relink_command\""
+@@ -5902,40 +5913,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  

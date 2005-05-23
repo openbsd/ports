@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2005/05/21 22:38:19 brad Exp $
+# $OpenBSD: Makefile,v 1.40 2005/05/23 20:01:48 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
 COMMENT=	"generic shared library support script"
 COMMENT-ltdl=	"GNU libtool system independent dlopen wrapper"
 
-VERSION=	1.5.16
+VERSION=	1.5.18
 DISTNAME=	libtool-${VERSION}
 PKGNAME-ltdl=	libltdl-${VERSION}
 CATEGORIES=	devel
