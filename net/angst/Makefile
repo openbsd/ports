@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2005/02/07 19:01:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2005/05/23 23:54:32 mjc Exp $
 
 COMMENT=	"active packet sniffer"
 
 DISTNAME=	angst-0.4b
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://angst.sourceforge.net/
@@ -17,13 +18,14 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap
 
-LIB_DEPENDS=	net::net/libnet
+LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
 
 ALL_TARGET=	angst
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
-		INCLUDE="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib `libnet-config --libs` -lpcap"
+		DEFINE="`libnet-config-1.0 --defines`" \
+		INCLUDE="-I${LOCALBASE}/include/libnet-1.0" \
+		LIBS="`libnet-config-1.0 --libs` -lpcap"
 
 NO_REGRESS=	Yes
 
