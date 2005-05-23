@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/19 17:27:00 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2005/05/23 20:29:45 marius Exp $
 
 COMMENT=	"extensible window manager"
 
-VERSION=	0.36
+VERSION=	1.3
 DISTNAME=	sawfish-${VERSION}
 CATEGORIES=	x11
 
@@ -36,8 +36,9 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --without-audiofile --without-esd \
 		 --disable-capplet --disable-themer \
 		 --disable-gnome-widgets --disable-linguas
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I{X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PKG_CONFIG_PATH="/usr/X11R6/lib/pkgconfig"
 
 NO_REGRESS=	Yes
 

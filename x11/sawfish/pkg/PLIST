@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 19:26:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/05/23 20:29:45 marius Exp $
+%%SHARED%%
 bin/sawfish
 bin/sawfish-client
 bin/sawfish-ui
@@ -39,7 +40,7 @@ share/locale/no/
 share/locale/no/LC_MESSAGES/
 share/locale/no/LC_MESSAGES/sawfish.mo
 share/pixmaps/
-share/pixmaps/sawfish.png
+share/pixmaps/sawfish-logo.png
 share/sawfish/
 share/sawfish/${VERSION}/
 share/sawfish/${VERSION}/lisp/
@@ -130,6 +131,8 @@ share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/pair.jl
 share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/pair.jlc
 share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/program.jl
 share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/program.jlc
+share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/scheme-boolean.jl
+share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/scheme-boolean.jlc
 share/sawfish/${VERSION}/lisp/sawfish/ui/
 share/sawfish/${VERSION}/lisp/sawfish/ui/apply.jl
 share/sawfish/${VERSION}/lisp/sawfish/ui/apply.jlc
@@ -150,8 +153,6 @@ share/sawfish/${VERSION}/lisp/sawfish/ui/shell.jl
 share/sawfish/${VERSION}/lisp/sawfish/ui/shell.jlc
 share/sawfish/${VERSION}/lisp/sawfish/ui/slot.jl
 share/sawfish/${VERSION}/lisp/sawfish/ui/slot.jlc
-share/sawfish/${VERSION}/lisp/sawfish/ui/user-level.jl
-share/sawfish/${VERSION}/lisp/sawfish/ui/user-level.jlc
 share/sawfish/${VERSION}/lisp/sawfish/ui/widgets/
 share/sawfish/${VERSION}/lisp/sawfish/ui/widgets/command.jl
 share/sawfish/${VERSION}/lisp/sawfish/ui/widgets/command.jlc
@@ -246,6 +247,8 @@ share/sawfish/${VERSION}/lisp/sawfish/wm/ext/tooltips.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/ext/tooltips.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/ext/window-history.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/ext/window-history.jlc
+share/sawfish/${VERSION}/lisp/sawfish/wm/ext/workspace-grid.jl
+share/sawfish/${VERSION}/lisp/sawfish/wm/ext/workspace-grid.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/focus.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/focus.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/frames.jl
@@ -328,10 +331,14 @@ share/sawfish/${VERSION}/lisp/sawfish/wm/util/display-wininfo.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/util/display-wininfo.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/util/edges.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/util/edges.jlc
+share/sawfish/${VERSION}/lisp/sawfish/wm/util/font.jl
+share/sawfish/${VERSION}/lisp/sawfish/wm/util/font.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/util/groups.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/util/groups.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/util/gtkrc.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/util/gtkrc.jlc
+share/sawfish/${VERSION}/lisp/sawfish/wm/util/keymap-diff.jl
+share/sawfish/${VERSION}/lisp/sawfish/wm/util/keymap-diff.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/util/keymap.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/util/keymap.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/util/nokogiri.jl
@@ -358,6 +365,8 @@ share/sawfish/${VERSION}/lisp/sawfish/wm/util/window-outline.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/util/window-outline.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/util/with-output.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/util/with-output.jlc
+share/sawfish/${VERSION}/lisp/sawfish/wm/util/workarea.jl
+share/sawfish/${VERSION}/lisp/sawfish/wm/util/workarea.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/viewport.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/viewport.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/window-anim.jl
@@ -396,6 +405,7 @@ share/sawfish/${VERSION}/sounds/toggled.wav
 share/sawfish/${VERSION}/themes/
 share/sawfish/${VERSION}/themes/Crux/
 share/sawfish/${VERSION}/themes/Crux/README
+share/sawfish/${VERSION}/themes/Crux/README.gl
 share/sawfish/${VERSION}/themes/Crux/active:bottom-left-border.png
 share/sawfish/${VERSION}/themes/Crux/active:bottom-left-corner.png
 share/sawfish/${VERSION}/themes/Crux/active:bottom-right-border.png
@@ -615,4 +625,3 @@ share/sawfish/${VERSION}/themes/smaker/min_inv.png
 share/sawfish/${VERSION}/themes/smaker/theme.jl
 share/sawfish/sounds/
 share/sawfish/themes/
-%%SHARED%%
