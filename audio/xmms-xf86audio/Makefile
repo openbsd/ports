@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/23 22:51:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/23 22:57:56 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,5 +21,6 @@ LIB_DEPENDS=	xmms.4::audio/xmms
 WANTLIB=	X11 Xext Xi m gdk glib gmodule gtk iconv intl
 
 MAKE_FLAGS=	CC="${CC}"
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
