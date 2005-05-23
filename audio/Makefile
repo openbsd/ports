@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2005/04/15 02:23:57 jolan Exp $
+# $OpenBSD: Makefile,v 1.121 2005/05/23 22:52:45 naddy Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -132,6 +132,7 @@
      SUBDIR += xmms-fmradio
      SUBDIR += xmms-shn
      SUBDIR += xmms-sid
+     SUBDIR += xmms-xf86audio
      SUBDIR += xmp
 
 .include <bsd.port.subdir.mk>
