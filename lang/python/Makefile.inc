@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.30 2005/03/03 23:20:47 alek Exp $
+# $OpenBSD: Makefile.inc,v 1.31 2005/05/23 20:39:36 alek Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -7,6 +7,7 @@
 
 COMMENT=	"interpreted object-oriented programming language"
 COMMENT-expat=	"expat module for Python"
+COMMENT-bsddb=	"Berkeley db module for Python"
 COMMENT-gdbm=	"GNU dbm module for Python"
 COMMENT-idle=	"IDE for Python"
 COMMENT-mpz=	"GNU arbitrary magnitude integer module for Python"
@@ -34,11 +35,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS+=	no_expat no_gdbm no_idle no_mpz no_tkinter
+FLAVORS+=	no_expat no_gdbm no_idle no_mpz no_tkinter no_bsddb
 FLAVOR?=
 
 MULTI_PACKAGES=	-tests -tools
 SUBPACKAGE?=
+
+LIB_DEPENDS=	bz2::archivers/bzip2
 
 # All subpackages depend on the main python package.
 
@@ -48,7 +51,7 @@ RUN_DEPENDS=	::lang/python/${VERSION}
 LIB_DEPENDS=
 .  else
 WANTLIB=	ssl curses termcap panel m crypto c util z readline pthread \
-		${WANTLIB-extra}
+		ncurses stdc++
 .  endif 
 .endif
 
@@ -58,7 +61,7 @@ WANTLIB=	ssl curses termcap panel m crypto c util z readline pthread \
 # no_xxx flavors dictate what gets linked into the Python binary.
 
 # this cannot be put into 2.3/Makefile due to NO_SHARED_LIBS vs MULTI_PACKAGES
-.if ${VERSION} == "2.3" &&  empty(FLAVOR:L:Mno_bsddb)
+.if empty(FLAVOR:L:Mno_bsddb)
 BUILD_DEPENDS+=		::databases/db/v4
 SETUP_LOCAL+=		Setup.bsddb
 .  if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
@@ -150,6 +153,7 @@ FULLPKGNAME=${PKGNAME}${FLAVOR_EXT:S/-no_bsddb//:S/-no_expat//:S/-no_gdbm//:S/-n
 .endif
 
 FULLPKGNAME-expat=	python-expat-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
+FULLPKGNAME-bsddb=	python-bsddb-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-gdbm=	python-gdbm-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-idle=	python-idle-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-mpz=	python-mpz-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
@@ -157,10 +161,12 @@ FULLPKGNAME-tests=	python-tests-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-tkinter=	python-tkinter-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-tools=	python-tools-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 
-CONFIGURE_STYLE?=	autoconf dest no-autoheader
+AUTOCONF_VERSION=	2.57
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 # --srcdir is needed for systrace to work correctly
 CONFIGURE_ARGS+=	--with-fpectl --with-threads --srcdir=${WRKSRC}
+CONFIGURE_ARGS+=	--enable-ipv6
 
 # THREAD_STACK_SIZE value might be changed by particular python release
 THREAD_STACK_SIZE?=    0x20000

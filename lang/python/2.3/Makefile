@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2005/03/03 22:29:49 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2005/05/23 20:39:36 alek Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=			"compiler hangs on py-Checker for example"
@@ -8,23 +8,8 @@ VERSION=		2.3
 PATCHLEVEL=		.5
 PKG_PATCHLEVEL=
 
-COMMENT-bsddb=		"Berkeley db module for Python"
-
-FULLPKGNAME-bsddb=	python-bsddb-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
-
-CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS=		--enable-ipv6
-
 # needed for www/zope
 THREAD_STACK_SIZE=	0x100000
-
-AUTOCONF_VERSION=	2.57
-
-LIB_DEPENDS=		bz2::archivers/bzip2
-
-WANTLIB-extra=		ncurses
-
-FLAVORS=		no_bsddb
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
 PATCH_LIST=		patch-* sup64-*
