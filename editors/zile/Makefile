@@ -1,28 +1,20 @@
-# $OpenBSD: Makefile,v 1.5 2005/03/12 21:38:18 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2005/05/23 20:24:44 naddy Exp $
 
 COMMENT=		"zile is lossy emacs"
 
-DISTNAME=		zile-1.6.2
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		zile-2.0.5
 CATEGORIES=		editors
-
 HOMEPAGE=		http://zile.sourceforge.net/
 
-
-# BSD
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c ncurses
+WANTLIB=		c termcap
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=zile/}
-CONFIGURE_STYLE=	simple
 
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} --enable-xterm-support
-
-# Force regen from patched version
-post-patch:
-	cd ${WRKDIST}/doc && makeinfo zile.texi
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

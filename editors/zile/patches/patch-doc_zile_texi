@@ -1,14 +1,27 @@
-$OpenBSD: patch-doc_zile_texi,v 1.2 2005/03/12 21:38:19 espie Exp $
---- doc/zile.texi.orig	Sun Apr 14 17:35:14 2002
-+++ doc/zile.texi	Sat Mar 12 22:36:44 2005
-@@ -1,6 +1,10 @@
- \input texinfo   @c -*-texinfo-*-
+$OpenBSD: patch-doc_zile_texi,v 1.3 2005/05/23 20:24:44 naddy Exp $
+--- doc/zile.texi.orig	Mon May 23 21:36:18 2005
++++ doc/zile.texi	Mon May 23 21:36:43 2005
+@@ -2,6 +2,11 @@
  @setfilename zile.info
  @settitle The Zile Manual
-+@dircategory Editors
-+@direntry
-+* zile: (zile).		Documentation for the Zile text editor
-+@end direntry
  
++@dircategory Text editors
++@direntry
++* Zile: (zile).                 Zile emacs clone text editor.
++@end direntry
++
  @c If "finalout" is commented out, the printed output will show
  @c black boxes that mark lines that are too long.  Thus, it is
+ @c unwise to comment it out when running a master in case there are
+@@ -18,11 +23,6 @@
+ @subtitle Edition 2.0 for Zile version 2.0
+ @subtitle December 2004
+ @author Sandro Sigala and Reuben Thomas
+-
+-@dircategory Text editors
+-@direntry
+-* Zile: (zile).                 Zile emacs clone text editor.
+-@end direntry
+ 
+ @page
+ @vskip 0pt plus 1filll

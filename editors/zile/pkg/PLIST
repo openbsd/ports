@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:01:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/05/23 20:24:44 naddy Exp $
 bin/zile
 @info info/zile.info
 @man man/man1/zile.1
@@ -6,9 +6,5 @@ share/zile/
 share/zile/AUTODOC
 share/zile/FAQ
 share/zile/HELP
-share/zile/LATEST_VERSION
-share/zile/MINIHELP1
-share/zile/MINIHELP2
-share/zile/MINIHELP3
 share/zile/TUTORIAL
 share/zile/zilerc.sample
