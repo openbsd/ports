@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/06 14:37:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/05/23 23:49:28 naddy Exp $
 bin/sndfile-convert
 bin/sndfile-info
 bin/sndfile-play
@@ -10,6 +10,22 @@ lib/pkgconfig/sndfile.pc
 @man man/man1/sndfile-convert.1
 @man man/man1/sndfile-info.1
 @man man/man1/sndfile-play.1
+share/doc/libsndfile/
+share/doc/libsndfile/FAQ.html
+share/doc/libsndfile/api.html
+share/doc/libsndfile/bugs.html
+share/doc/libsndfile/command.html
+share/doc/libsndfile/dither.html
+share/doc/libsndfile/embedded_files.html
+share/doc/libsndfile/index.html
+share/doc/libsndfile/libsndfile.css
+share/doc/libsndfile/libsndfile.jpg
+share/doc/libsndfile/lists.html
+share/doc/libsndfile/new_file_type.HOWTO
+share/doc/libsndfile/octave.html
+share/doc/libsndfile/pkgconfig.html
+share/doc/libsndfile/sndfile_info.html
+share/doc/libsndfile/win32.html
 share/octave/
 share/octave/site/
 share/octave/site/m/
