@@ -1,17 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/05/23 20:28:50 marius Exp $
+%%SHARED%%
 libexec/rep/
 libexec/rep/${GNU_ARCH}/
-libexec/rep/${GNU_ARCH}/gtk.a
-libexec/rep/${GNU_ARCH}/gtk.la
 libexec/rep/${GNU_ARCH}/gui/
-libexec/rep/${GNU_ARCH}/gui/gnome/
-libexec/rep/${GNU_ARCH}/gui/gtk/
-libexec/rep/${GNU_ARCH}/gui/gtk.a
-libexec/rep/${GNU_ARCH}/gui/gtk.la
-libexec/rep/${GNU_ARCH}/gui/gtk/gtk.a
-libexec/rep/${GNU_ARCH}/gui/gtk/gtk.la
-libexec/rep/${GNU_ARCH}/gui/gtk/types.a
-libexec/rep/${GNU_ARCH}/gui/gtk/types.la
-libexec/rep/${GNU_ARCH}/sgtk-types.a
-libexec/rep/${GNU_ARCH}/sgtk-types.la
-%%SHARED%%
+libexec/rep/${GNU_ARCH}/gui/gtk-2/
+libexec/rep/${GNU_ARCH}/gui/gtk-2/gtk.a
+libexec/rep/${GNU_ARCH}/gui/gtk-2/gtk.la
+libexec/rep/${GNU_ARCH}/gui/gtk-2/types.a
+libexec/rep/${GNU_ARCH}/gui/gtk-2/types.la
