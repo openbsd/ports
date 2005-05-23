@@ -1,0 +1,29 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2005/05/23 22:51:34 naddy Exp $
+--- Makefile.orig	Thu Apr 17 00:09:02 2003
++++ Makefile	Mon May 23 16:21:19 2005
+@@ -5,11 +5,11 @@ CC=gcc
+ OPT=-O2
+ DEBUG=-g
+ 
+-CFLAGS=$(OPT) $(DEBUG) -Wall `gtk-config --cflags` `xmms-config --cflags`
++CFLAGS+=`gtk-config --cflags` `xmms-config --cflags`
+ LIBS=`gtk-config --libs` `xmms-config --libs`
+ 
+ PLUGIN=libxf86audio.so
+-PLUGINDIR=`xmms-config --general-plugin-dir`
++PLUGINDIR=${DESTDIR}`xmms-config --general-plugin-dir`
+ 
+ all : $(PLUGIN)
+ 
+@@ -18,10 +18,7 @@ install : $(PLUGIN)
+ 	install $(PLUGIN) $(PLUGINDIR)
+ 
+ $(PLUGIN) : xf86audio.o
+-	$(CC) $(LIBS) -shared $^ -o $@
+-
+-%.o : %.c
+-	$(CC) $(CFLAGS) -c $^ -o $@
++	$(CC) $(LIBS) -shared $? -o $@
+ 
+ clean :
+ 	rm -f $(PLUGIN) *.o

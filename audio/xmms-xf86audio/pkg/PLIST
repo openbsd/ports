@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/23 22:51:34 naddy Exp $
+lib/xmms/General/libxf86audio.so
