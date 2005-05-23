@@ -1,5 +1,16 @@
---- Makefile.in.orig	Mon Feb  5 18:51:41 2001
-+++ Makefile.in	Mon Mar 14 11:18:27 2005
+--- Makefile.in.orig	Mon Feb  5 12:51:41 2001
++++ Makefile.in	Fri Sep 10 16:04:46 2004
+@@ -14,8 +14,8 @@ prefix      =   @prefix@
+ exec_prefix =   @exec_prefix@
+ srcdir      =   @srcdir@
+ BIN_PREFIX  =   @bindir@/
+-INC_PREFIX  =   @includedir@/
+-LIB_PREFIX  =   @libdir@/
++INC_PREFIX  =   @includedir@/libnet-1.0/
++LIB_PREFIX  =   @libdir@/libnet-1.0/
+ MAN_PREFIX  =   @MAN_PREFIX@
+ 
+ LIBNET      =   libnet
 @@ -36,7 +36,7 @@ AR          =   @AR@
  LN          =   @LN@
  CC          =   @CC@
@@ -80,7 +91,7 @@
 +	$(INSTALL_DATA) -m 0644 $(INCLUDE-A) $(DESTDIR)$(INC_PREFIX)$(LIBNET)
 +	$(INSTALL_DATA) -m 0644 $(INCLUDE-O) $(DESTDIR)$(INC_PREFIX)$(LIBNET)
 +	$(INSTALL_DATA) -m 0644 $(MAN) $(DESTDIR)$(MAN_PREFIX)
-+	$(INSTALL_DATA) -m 0755 $(CONFIG) $(DESTDIR)$(BIN_PREFIX)
++	$(INSTALL_DATA) -m 0755 $(CONFIG) $(DESTDIR)$(BIN_PREFIX)/libnet-config-1.0
  
  
  

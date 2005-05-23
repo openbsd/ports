@@ -1,12 +1,12 @@
---- configure.in.orig	Wed Jan 17 21:59:30 2001
-+++ configure.in	Mon Mar 14 11:18:27 2005
+--- configure.in.orig	Wed Jan 17 15:59:30 2001
++++ configure.in	Wed Sep 22 16:09:21 2004
 @@ -33,6 +33,9 @@ AC_PREFIX_DEFAULT(/usr)
  
  if test "$prefix" = "NONE"; then
      prefix="/usr"
 +else
-+    LIBNET_CONFIG_CFLAGS="-I${prefix}/include"
-+    LIBNET_CONFIG_LIBS="-L${prefix}/lib"
++    LIBNET_CONFIG_CFLAGS="-I${prefix}/include/libnet-1.0"
++    LIBNET_CONFIG_LIBS="-L${prefix}/lib/libnet-1.0"
  fi
  
  dnl

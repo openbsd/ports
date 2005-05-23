@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1 2005/05/23 23:50:40 msf Exp $
+@option no-default-conflict
+%%SHARED%%
+bin/libnet-config-1.0
+include/libnet-1.0/
+include/libnet-1.0/libnet/
+include/libnet-1.0/libnet.h
+include/libnet-1.0/libnet/libnet-asn1.h
+include/libnet-1.0/libnet/libnet-functions.h
+include/libnet-1.0/libnet/libnet-headers.h
+include/libnet-1.0/libnet/libnet-macros.h
+include/libnet-1.0/libnet/libnet-ospf.h
+include/libnet-1.0/libnet/libnet-structures.h
+lib/libnet-1.0/
+lib/libnet-1.0/libnet.a
+lib/libnet-1.0/libpwrite.a
+@man man/man3/libnet.3
