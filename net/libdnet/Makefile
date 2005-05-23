@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2005/05/22 05:34:52 mjc Exp $
+# $OpenBSD: Makefile,v 1.9 2005/05/23 22:59:42 djm Exp $
 
 COMMENT=	"portable low-level networking library"
 COMMENT-python= "python interface to libdnet"
 
 DISTNAME=	libdnet-1.10
+PKGNAME-python= ${DISTNAME:S/^libdnet/py-libdnet/}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libdnet/}
 
@@ -31,7 +32,7 @@ SUBPACKAGE?=
 CONFIGURE_ARGS+=	--with-python
 PYTHON_VER=		2.3
 SUBST_VARS=		PYTHON_VER
-.  if ${SUBPACKAGE} == "-python"
+.  if defined(PACKAGING) && ${SUBPACKAGE} == "-python"
 LIB_DEPENDS+=           python${PYTHON_VER}.0.0:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 WANTLIB+=               m pthread util
 .  endif
