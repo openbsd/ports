@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/23 23:04:53 avsm Exp $
+lib/ocaml/
+lib/ocaml/rss.cma
+lib/ocaml/rss.cmi
+%%native%%
