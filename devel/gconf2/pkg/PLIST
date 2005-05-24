@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/12/10 20:33:59 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2005/05/24 21:37:09 marcm Exp $
 bin/gconf-merge-tree
 bin/gconftool-2
 include/gconf/
@@ -99,6 +99,7 @@ share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/GConf2.mo
 share/locale/es/LC_MESSAGES/GConf2.mo
+share/locale/et/LC_MESSAGES/GConf2.mo
 share/locale/eu/
 share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/GConf2.mo
@@ -174,6 +175,9 @@ share/locale/uk/LC_MESSAGES/GConf2.mo
 share/locale/vi/
 share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/GConf2.mo
+share/locale/xh/
+share/locale/xh/LC_MESSAGES/
+share/locale/xh/LC_MESSAGES/GConf2.mo
 share/locale/yi/
 share/locale/yi/LC_MESSAGES/
 share/locale/yi/LC_MESSAGES/GConf2.mo
