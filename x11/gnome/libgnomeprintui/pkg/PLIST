@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/12/10 20:36:44 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/05/24 21:53:35 marcm Exp $
 include/libgnomeprintui-2.2/
 include/libgnomeprintui-2.2/libgnomeprintui/
 include/libgnomeprintui-2.2/libgnomeprintui/gnome-font-dialog.h
@@ -8,6 +8,7 @@ include/libgnomeprintui-2.2/libgnomeprintui/gnome-print-job-preview.h
 include/libgnomeprintui-2.2/libgnomeprintui/gnome-print-paper-selector.h
 include/libgnomeprintui-2.2/libgnomeprintui/gnome-print-preview.h
 include/libgnomeprintui-2.2/libgnomeprintui/gnome-print-unit-selector.h
+include/libgnomeprintui-2.2/libgnomeprintui/libgnomeprintui-enum-types.h
 lib/libgnomeprintui-2-2.a
 lib/libgnomeprintui-2-2.la
 lib/pkgconfig/libgnomeprintui-2.2.pc
@@ -40,8 +41,6 @@ share/locale/az/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/be/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/bg/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/bn/LC_MESSAGES/libgnomeprintui-2.2.mo
-share/locale/bs/
-share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ca/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/cs/LC_MESSAGES/libgnomeprintui-2.2.mo
@@ -73,6 +72,7 @@ share/locale/ko/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/li/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/lt/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/lv/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/mk/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ml/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/mn/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ms/LC_MESSAGES/libgnomeprintui-2.2.mo
