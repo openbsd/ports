@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/12/22 06:06:56 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/05/24 21:31:54 marcm Exp $
 lib/gstreamer-0.8/libgstbasicgthreadscheduler.so
 lib/gstreamer-0.8/libgstbasicomegascheduler.so
 lib/gstreamer-0.8/libgstbytestream.so
@@ -6,6 +6,7 @@ lib/gstreamer-0.8/libgstdataprotocol.so
 lib/gstreamer-0.8/libgstelements.so
 lib/gstreamer-0.8/libgstentrygthreadscheduler.so
 lib/gstreamer-0.8/libgstentryomegascheduler.so
+lib/gstreamer-0.8/libgstfairgthreadscheduler.so
 lib/gstreamer-0.8/libgstgetbits.so
 lib/gstreamer-0.8/libgstindexers.so
 lib/gstreamer-0.8/libgstoptgthreadscheduler.so

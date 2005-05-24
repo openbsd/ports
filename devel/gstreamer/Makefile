@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/22 06:06:56 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/24 21:31:54 marcm Exp $
 
 COMMENT=		"GStreamer streaming media framework runtime"
 
-DISTNAME=		gstreamer-0.8.7
+DISTNAME=		gstreamer-0.8.10
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.gstreamer.net/
-
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
+
+HOMEPAGE=		http://www.gstreamer.net/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,11 +23,12 @@ MODULES=		gettext
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:bison-*:devel/bison
-LIB_DEPENDS=		glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0,gthread-2.0.0.0::devel/glib2 \
+LIB_DEPENDS=		glib-2.0.200.0,gmodule-2.0.200.0,gobject-2.0.200.0,gthread-2.0.200.0::devel/glib2 \
 			popt.0.3::devel/popt \
 			xml2.6::textproc/libxml
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 YACC=			bison
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
