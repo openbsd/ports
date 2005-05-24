@@ -1,0 +1,17 @@
+$OpenBSD: patch-Imakefile,v 1.1.1.1 2005/05/24 07:19:35 mcbride Exp $
+--- Imakefile.orig	Mon Jun 12 22:20:11 2000
++++ Imakefile	Sun Mar 13 18:07:35 2005
+@@ -9,11 +9,10 @@ LOCAL_LIBRARIES = XkbClientLibs XawClien
+            SRCS = xscribble.c Scribble.c
+            OBJS = xscribble.o Scribble.o
+         HEADERS = ScribbleP.h Scribble.h
+-        DEFINES = XkbClientDefines
++        DEFINES = XkbClientDefines -Dunix=1
+        INCLUDES = -Ilirec -Irecman
+ 
+ MakeSubdirs($(SUBDIRS))
+ DependSubdirs($(SUBDIRS))
+ 
+-ComplexProgramTarget(xscribble)
+-
++ComplexProgramTargetNoMan(xscribble)

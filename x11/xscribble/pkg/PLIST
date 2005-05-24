@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/24 07:19:35 mcbride Exp $
+bin/xscribble
+share/examples/xscribble/
+share/examples/xscribble/digits.cl
+share/examples/xscribble/letters.cl
+share/examples/xscribble/punc.cl

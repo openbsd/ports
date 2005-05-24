@@ -1,0 +1,34 @@
+$OpenBSD: patch-lirec_li_recognizer_c,v 1.1.1.1 2005/05/24 07:19:35 mcbride Exp $
+--- lirec/li_recognizer.c.orig	Mon Jun 12 22:20:13 2000
++++ lirec/li_recognizer.c	Sun Mar 13 18:07:32 2005
+@@ -21,7 +21,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ #ifndef ELX
+-#include <malloc.h>
++#include <stdlib.h>
+ #endif
+ #include <math.h>
+ #include <locale.h>
+@@ -53,9 +53,9 @@ static char *lialg_recognize_stroke(rCla
+ char* li_err_msg = NULL;
+ char _zdebug_flag[128];
+ 
+-#define bcopy(s1,s2,n) memcpy(s2,s1,n)
++/*#define bcopy(s1,s2,n) memcpy(s2,s1,n)*/
+ 
+-#ifdef mips
++#if 0
+ char *strdup(char* from) {
+    char* to;
+    int len = strlen(from) + 1;
+@@ -923,7 +923,8 @@ RECOGNIZER_FINALIZE(r)
+ ************************************************** */
+ 
+ /*#include <assert.h>*/
+-#include <values.h>
++#include <sys/param.h>
++#define MAXINT	INT_MAX
+ #include <sys/time.h>
+ 
+ #ifdef	__ultrix

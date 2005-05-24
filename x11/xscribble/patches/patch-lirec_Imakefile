@@ -1,0 +1,12 @@
+$OpenBSD: patch-lirec_Imakefile,v 1.1.1.1 2005/05/24 07:19:35 mcbride Exp $
+--- lirec/Imakefile.orig	Mon Jun 12 22:20:14 2000
++++ lirec/Imakefile	Sun Mar 13 18:08:12 2005
+@@ -8,6 +8,8 @@ OBJS = li_recognizer.o sc.o util.o matri
+ 
+ INCLUDES = -I../recman
+ 
++DEFINES = XkbClientDefines -Dunix=1
++
+ #include <Library.tmpl>
+ 
+ DependTarget()
