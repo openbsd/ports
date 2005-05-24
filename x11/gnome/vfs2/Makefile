@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2005/03/09 14:19:56 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2005/05/24 21:50:12 marcm Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
-VERSION=		2.8.3
+VERSION=		2.10.1
 DISTNAME=		gnome-vfs-${VERSION}
-PKGNAME=		gnome-vfs2-${VERSION}p0
+PKGNAME=		gnome-vfs2-${VERSION}
 CATEGORIES=		devel x11/gnome
 HOMEPAGE=		http://www.gnome.org/
 
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
-
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-vfs/2.8/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-vfs/2.10/}
 
 MODULES=		devel/gettext
 
@@ -46,6 +44,13 @@ CONFIGURE_ARGS+=	--disable-ipv6 \
 			--disable-howl
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# This port has "/usr/local" hardcoded, we prefer ${LOCALBASE}
+pre-build:
+	for i in gnome-vfs-mime-info.c xdgmime.c; do \
+		perl -pi -e "s,/usr/local,${LOCALBASE},g" \
+			${WRKSRC}/libgnomevfs/$$i; \
+	done
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-vfs2; \

@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/12/10 20:36:46 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.14 2005/05/24 21:50:12 marcm Exp $
 bin/gnomevfs-cat
 bin/gnomevfs-copy
 bin/gnomevfs-info
 bin/gnomevfs-ls
 bin/gnomevfs-mkdir
+bin/gnomevfs-mv
 bin/gnomevfs-rm
 doc/
 include/gnome-vfs-2.0/
@@ -23,6 +24,7 @@ include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-find-directory.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-handle.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-init.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-job-limit.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-mime-deprecated.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-mime-handlers.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-mime-info-cache.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-mime-monitor.h
@@ -90,8 +92,6 @@ lib/gnome-vfs-2.0/modules/libsftp.a
 lib/gnome-vfs-2.0/modules/libsftp.la
 lib/gnome-vfs-2.0/modules/libtar.a
 lib/gnome-vfs-2.0/modules/libtar.la
-lib/gnome-vfs-2.0/modules/libvfolder-desktop.a
-lib/gnome-vfs-2.0/modules/libvfolder-desktop.la
 lib/gnome-vfs-2.0/modules/libvfs-pipe.a
 lib/gnome-vfs-2.0/modules/libvfs-pipe.la
 lib/gnome-vfs-2.0/modules/libvfs-test.a
@@ -115,22 +115,6 @@ share/examples/gnome-vfs2/gnome-vfs-2.0/modules/default-modules.conf
 @sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/default-modules.conf
 share/examples/gnome-vfs2/gnome-vfs-2.0/modules/ssl-modules.conf
 @sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/ssl-modules.conf
-share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/
-@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/vfolders/
-share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/applications-all-users.vfolder-info
-@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/vfolders/applications-all-users.vfolder-info
-share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/favorites.vfolder-info
-@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/vfolders/favorites.vfolder-info
-share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/network.vfolder-info
-@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/vfolders/network.vfolder-info
-share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/preferences-all-users.vfolder-info
-@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/vfolders/preferences-all-users.vfolder-info
-share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/server-settings.vfolder-info
-@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/vfolders/server-settings.vfolder-info
-share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/start-here.vfolder-info
-@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/vfolders/start-here.vfolder-info
-share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/system-settings.vfolder-info
-@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/vfolders/system-settings.vfolder-info
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gnome-vfs-2.0/
@@ -157,6 +141,7 @@ share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-file-trunc-ops.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-inet-connection.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-init.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-method.html
+share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-mime-database-deprecated.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-mime-database.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-mime-monitor.html
 share/gtk-doc/html/gnome-vfs-2.0/gnome-vfs-20-gnome-vfs-mime.html
@@ -291,6 +276,9 @@ share/locale/ne/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/no/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/nso/
+share/locale/nso/LC_MESSAGES/
+share/locale/nso/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/gnome-vfs-2.0.mo
@@ -299,6 +287,9 @@ share/locale/pt/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ro/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ru/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
+share/locale/rw/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/sk/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/sq/
@@ -328,11 +319,17 @@ share/locale/vi/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/xh/
+share/locale/xh/LC_MESSAGES/
+share/locale/xh/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/yi/
 share/locale/yi/LC_MESSAGES/
 share/locale/yi/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/zu/
+share/locale/zu/LC_MESSAGES/
+share/locale/zu/LC_MESSAGES/gnome-vfs-2.0.mo
 share/schemas/
 share/schemas/gnome-vfs2/
 share/schemas/gnome-vfs2/desktop_default_applications.schemas

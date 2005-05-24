@@ -1,7 +1,16 @@
-$OpenBSD: patch-configure,v 1.8 2004/12/14 01:14:44 marcm Exp $
---- configure.orig	Thu Oct 28 07:16:54 2004
-+++ configure	Sun Dec 12 16:24:37 2004
-@@ -22960,6 +22960,7 @@ echo "${ECHO_T}$LINGUAS" >&6
+$OpenBSD: patch-configure,v 1.9 2005/05/24 21:50:12 marcm Exp $
+--- configure.orig	Mon Mar  7 00:15:59 2005
++++ configure	Mon Apr  4 23:33:26 2005
+@@ -9087,7 +9087,7 @@ nto-qnx*)
+ openbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+-  need_version=yes
++  need_version=no
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+@@ -23359,6 +23359,7 @@ echo "${ECHO_T}$LINGUAS" >&6
  
  
  
@@ -9,7 +18,7 @@ $OpenBSD: patch-configure,v 1.8 2004/12/14 01:14:44 marcm Exp $
  for ac_func in ngettext
  do
  as_ac_var=`echo "ac_cv_func_$ac_func" | $as_tr_sh`
-@@ -25884,6 +25885,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+@@ -26284,6 +26285,7 @@ cat >>conftest.$ac_ext <<_ACEOF
  #include <sys/vfs.h>
  #endif
  #ifdef HAVE_SYS_MOUNT_H
@@ -17,7 +26,7 @@ $OpenBSD: patch-configure,v 1.8 2004/12/14 01:14:44 marcm Exp $
  #include <sys/mount.h>
  #endif
  #ifdef HAVE_SYS_STATFS_H
-@@ -33518,7 +33520,7 @@ if test "${openssl_libs+set}" = set; the
+@@ -33918,7 +33920,7 @@ if test "${openssl_libs+set}" = set; the
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
  
@@ -26,7 +35,7 @@ $OpenBSD: patch-configure,v 1.8 2004/12/14 01:14:44 marcm Exp $
  		cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -36841,6 +36843,7 @@ _ACEOF
+@@ -37241,6 +37243,7 @@ _ACEOF
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -34,7 +43,7 @@ $OpenBSD: patch-configure,v 1.8 2004/12/14 01:14:44 marcm Exp $
  #include <sys/mount.h>
  
  _ACEOF
-@@ -36862,6 +36865,7 @@ _ACEOF
+@@ -37262,6 +37265,7 @@ _ACEOF
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */

@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgnomevfs_xdgmime_c,v 1.1 2005/05/24 21:50:12 marcm Exp $
+--- libgnomevfs/xdgmime.c.orig	Tue Dec 14 07:30:30 2004
++++ libgnomevfs/xdgmime.c	Mon Apr  4 22:37:37 2005
+@@ -207,7 +207,7 @@ xdg_run_command_on_dirs (XdgDirectoryFun
+ 
+   xdg_data_dirs = getenv ("XDG_DATA_DIRS");
+   if (xdg_data_dirs == NULL)
+-    xdg_data_dirs = "/usr/local/share/:/usr/share/";
++    xdg_data_dirs = "/var/db/gnome/:/usr/local/share/";
+ 
+   ptr = xdg_data_dirs;
+ 
