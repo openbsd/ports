@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/04/19 14:35:56 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2005/05/24 22:02:47 kurt Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/java/jdk14/Makefile,v 1.79 2004/08/18 07:06:03 glewis Exp $
 
 ONLY_FOR_ARCHS= 	i386
@@ -152,7 +152,7 @@ pre-patch:
 .endfor
 	@cd ${WRKDIR} &&  \
 		${CHMOD} -R u+w * && \
-		${PATCH} -p0 -z .orig.bsd < ${WRKDIR}/jdk14.patches
+		${PATCH} -p0 -z .orig.bsd --quiet < ${WRKDIR}/jdk14.patches
 
 .if !${FLAVOR:L:Mnative_bootstrap}
 post-patch:
