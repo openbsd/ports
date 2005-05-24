@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.372 2005/05/23 18:52:00 alek Exp $
+# $OpenBSD: Makefile,v 1.373 2005/05/24 01:39:16 msf Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -188,6 +188,7 @@
      SUBDIR += p5-Net-Wake
      SUBDIR += p5-Net-Whois
      SUBDIR += p5-Net-Whois-Raw
+     SUBDIR += p5-POE-Component-Server-FTP
      SUBDIR += p5-PlRPC
      SUBDIR += p5-SNMP-BridgeQuery
      SUBDIR += p5-SNMP_Session
