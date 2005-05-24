@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/24 06:28:19 msf Exp $
+${P5SITE}/POE/
+${P5SITE}/POE/Component/
+${P5SITE}/POE/Component/Pcap.pm
+@man man/man3p/POE::Component::Pcap.3p
