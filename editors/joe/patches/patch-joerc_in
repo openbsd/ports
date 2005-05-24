@@ -1,25 +1,35 @@
-$OpenBSD: patch-joerc_in,v 1.1 2002/04/24 11:05:06 form Exp $
---- joerc.in.orig	Tue Apr  9 18:31:07 2002
-+++ joerc.in	Tue Apr  9 18:35:01 2002
-@@ -153,7 +153,7 @@
- 	binding section below- but without the key name strings.
+$OpenBSD: patch-joerc_in,v 1.2 2005/05/24 20:27:49 naddy Exp $
+--- joerc.in.orig	Tue May  3 20:32:39 2005
++++ joerc.in	Mon May 23 16:53:48 2005
+@@ -318,10 +318,11 @@
  
+  No '.' in file name?  Assume it's a text file and we want wordwrap on.
  *
 --wordwrap
 +-asis
  
- *.c
- -autoindent
-@@ -455,6 +455,8 @@ bof		^K ^U
+  File name with '.'?  It's probably not a text file.
+ *.*
++-asis
+ 
+  Diff
+ *
+@@ -1320,9 +1321,11 @@ blksave		^K w
+ bof		^K U		Goto beginning of file
+ bof		^K ^U
  bof		^K u
- bol		.kh		Goto beginning of line
- bol		^A
+- bol		.kh		Goto beginning of line
+- bol		^A
+- bol      ^# SP A
++bol		.kh		Goto beginning of line
++bol		^A
++bol		^# SP A
 +bol		^[ [ H
 +bol		^[ [ 7 ~
+ home		.kh
+ home		^A
  center		^K A		Center line
- center		^K ^A
- center		^K a
-@@ -478,6 +480,8 @@ eof		^K v
+@@ -1349,6 +1352,8 @@ eof		^K v
  eol		.kH		Go to end of line
  eol		.@7
  eol		^E
@@ -28,21 +38,3 @@ $OpenBSD: patch-joerc_in,v 1.1 2002/04/24 11:05:06 form Exp $
  exsave		^K X		Save and exit
  exsave		^K ^X
  exsave		^K x
-@@ -562,6 +566,8 @@ bofmenu		^K ^U
- bofmenu		^K u
- bolmenu		.kh
- bolmenu		^A
-+bolmenu		^[ [ H
-+bolmenu		^[ [ 7 ~
- dnarwmenu	.kd
- dnarwmenu	^N
- dnarwmenu	^[ [ B
-@@ -571,6 +577,8 @@ eofmenu		^K ^V
- eofmenu		^K v
- eolmenu		.kH
- eolmenu		^E
-+eolmenu		^[ [ F
-+eolmenu		^[ [ 8 ~
- ltarwmenu	.kl
- ltarwmenu	^B
- ltarwmenu	^[ [ D

@@ -1,11 +1,11 @@
-$OpenBSD: patch-types_h,v 1.1 2002/04/24 11:05:06 form Exp $
---- types.h.orig	Mon Dec  3 19:18:54 2001
-+++ types.h	Tue Apr  9 19:00:56 2002
-@@ -163,6 +163,7 @@ struct buffer {
- 	int	rdonly;		/* Set for read-only */
- 	int	internal;	/* Set for internal buffers */
+$OpenBSD: patch-types_h,v 1.2 2005/05/24 20:27:49 naddy Exp $
+--- types.h.orig	Sat May 21 21:47:40 2005
++++ types.h	Sat May 21 21:47:52 2005
+@@ -208,6 +208,7 @@ struct buffer {
  	int	er;		/* Error code when file was loaded */
-+	int	filehandle;	/* File handle for locking */
+ 	pid_t	pid;		/* Process id */
+ 	int	out;		/* fd to write to process */
++	int	filehandle;	/* fd to lock file */
  };
  
  

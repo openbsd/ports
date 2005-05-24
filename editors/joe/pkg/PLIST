@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/09/15 18:01:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2005/05/24 20:27:49 naddy Exp $
 bin/jmacs
 bin/joe
 bin/jpico
@@ -7,10 +7,18 @@ bin/rjoe
 bin/termidx
 @man man/man1/joe.1
 share/doc/joe/
-share/doc/joe/INFO
+share/doc/joe/ChangeLog
+share/doc/joe/HACKING
+share/doc/joe/HINTS
+share/doc/joe/LIST
+share/doc/joe/NEWS
 share/doc/joe/README
-@sample ${SYSCONFDIR}/joe/
 share/examples/joe/
+@sample ${SYSCONFDIR}/joe/
+share/examples/joe/charmaps/
+@sample ${SYSCONFDIR}/joe/charmaps/
+share/examples/joe/charmaps/klingon
+@sample ${SYSCONFDIR}/joe/charmaps/klingon
 share/examples/joe/jmacsrc
 @sample ${SYSCONFDIR}/joe/jmacsrc
 share/examples/joe/joerc
@@ -21,3 +29,67 @@ share/examples/joe/jstarrc
 @sample ${SYSCONFDIR}/joe/jstarrc
 share/examples/joe/rjoerc
 @sample ${SYSCONFDIR}/joe/rjoerc
+share/examples/joe/syntax/
+@sample ${SYSCONFDIR}/joe/syntax/
+share/examples/joe/syntax/4gl.jsf
+@sample ${SYSCONFDIR}/joe/syntax/4gl.jsf
+share/examples/joe/syntax/ada.jsf
+@sample ${SYSCONFDIR}/joe/syntax/ada.jsf
+share/examples/joe/syntax/asm.jsf
+@sample ${SYSCONFDIR}/joe/syntax/asm.jsf
+share/examples/joe/syntax/awk.jsf
+@sample ${SYSCONFDIR}/joe/syntax/awk.jsf
+share/examples/joe/syntax/c.jsf
+@sample ${SYSCONFDIR}/joe/syntax/c.jsf
+share/examples/joe/syntax/cobol.jsf
+@sample ${SYSCONFDIR}/joe/syntax/cobol.jsf
+share/examples/joe/syntax/conf.jsf
+@sample ${SYSCONFDIR}/joe/syntax/conf.jsf
+share/examples/joe/syntax/csh.jsf
+@sample ${SYSCONFDIR}/joe/syntax/csh.jsf
+share/examples/joe/syntax/css.jsf
+@sample ${SYSCONFDIR}/joe/syntax/css.jsf
+share/examples/joe/syntax/diff.jsf
+@sample ${SYSCONFDIR}/joe/syntax/diff.jsf
+share/examples/joe/syntax/fortran.jsf
+@sample ${SYSCONFDIR}/joe/syntax/fortran.jsf
+share/examples/joe/syntax/html.jsf
+@sample ${SYSCONFDIR}/joe/syntax/html.jsf
+share/examples/joe/syntax/java.jsf
+@sample ${SYSCONFDIR}/joe/syntax/java.jsf
+share/examples/joe/syntax/lisp.jsf
+@sample ${SYSCONFDIR}/joe/syntax/lisp.jsf
+share/examples/joe/syntax/mail.jsf
+@sample ${SYSCONFDIR}/joe/syntax/mail.jsf
+share/examples/joe/syntax/mason.jsf
+@sample ${SYSCONFDIR}/joe/syntax/mason.jsf
+share/examples/joe/syntax/ocaml.jsf
+@sample ${SYSCONFDIR}/joe/syntax/ocaml.jsf
+share/examples/joe/syntax/pascal.jsf
+@sample ${SYSCONFDIR}/joe/syntax/pascal.jsf
+share/examples/joe/syntax/perl.jsf
+@sample ${SYSCONFDIR}/joe/syntax/perl.jsf
+share/examples/joe/syntax/php.jsf
+@sample ${SYSCONFDIR}/joe/syntax/php.jsf
+share/examples/joe/syntax/ps.jsf
+@sample ${SYSCONFDIR}/joe/syntax/ps.jsf
+share/examples/joe/syntax/python.jsf
+@sample ${SYSCONFDIR}/joe/syntax/python.jsf
+share/examples/joe/syntax/sed.jsf
+@sample ${SYSCONFDIR}/joe/syntax/sed.jsf
+share/examples/joe/syntax/sh.jsf
+@sample ${SYSCONFDIR}/joe/syntax/sh.jsf
+share/examples/joe/syntax/sml.jsf
+@sample ${SYSCONFDIR}/joe/syntax/sml.jsf
+share/examples/joe/syntax/sql.jsf
+@sample ${SYSCONFDIR}/joe/syntax/sql.jsf 
+share/examples/joe/syntax/tcl.jsf
+@sample ${SYSCONFDIR}/joe/syntax/tcl.jsf
+share/examples/joe/syntax/tex.jsf
+@sample ${SYSCONFDIR}/joe/syntax/tex.jsf
+share/examples/joe/syntax/verilog.jsf
+@sample ${SYSCONFDIR}/joe/syntax/verilog.jsf
+share/examples/joe/syntax/vhdl.jsf
+@sample ${SYSCONFDIR}/joe/syntax/vhdl.jsf
+share/examples/joe/syntax/xml.jsf
+@sample ${SYSCONFDIR}/joe/syntax/xml.jsf
