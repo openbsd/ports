@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/16 00:31:26 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2005/05/24 00:08:29 mjc Exp $
 
 COMMENT=	"resend network traffic saved by tcpdump"
 
@@ -7,7 +7,7 @@ CATEGORIES=	net
 
 MASTER_SITES=	http://www.anzen.com/research/nidsbench/
 
-LIB_DEPENDS=	net::net/libnet
+LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

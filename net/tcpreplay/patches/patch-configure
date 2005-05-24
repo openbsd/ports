@@ -1,6 +1,7 @@
---- configure.orig	Wed May 19 15:55:31 1999
-+++ configure	Mon Oct 18 10:39:41 1999
-@@ -1194,7 +1194,7 @@
+$OpenBSD: patch-configure,v 1.1 2005/05/24 00:08:29 mjc Exp $
+--- configure.orig	Wed May 19 12:55:31 1999
++++ configure	Mon May 23 12:06:01 2005
+@@ -1194,7 +1194,7 @@ fi
  done
  
  
@@ -9,7 +10,7 @@
  
  
  
-@@ -1579,7 +1579,7 @@
+@@ -1579,7 +1579,7 @@ if test "$no_recursion" != yes; then
      esac
    done
  

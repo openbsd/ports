@@ -1,6 +1,7 @@
---- tcpreplay.c.orig	Mon Feb 28 10:51:48 2000
-+++ tcpreplay.c	Mon Feb 28 10:53:18 2000
-@@ -229,7 +229,7 @@
+$OpenBSD: patch-tcpreplay_c,v 1.1 2005/05/24 00:08:29 mjc Exp $
+--- tcpreplay.c.orig	Wed May 19 13:00:35 1999
++++ tcpreplay.c	Mon May 23 12:06:01 2005
+@@ -229,7 +229,7 @@ void write_packet(u_char * user,struct p
    }
  
    while (write_status < 0) {
@@ -9,7 +10,7 @@
  				    data,pcap_hdr->caplen);
  #ifdef DEBUG
      if (debug > 1) {
-@@ -255,7 +255,7 @@
+@@ -255,7 +255,7 @@ void write_packet(u_char * user,struct p
  int main(int argc, char * argv[])
  {
    pcap_t * in_file;
@@ -18,7 +19,7 @@
    float Mrate = 0;
    double starttime_local, startusec;
    char ebuf[256];
-@@ -327,7 +327,7 @@
+@@ -327,7 +327,7 @@ int main(int argc, char * argv[])
    failed_writes  = 0;
    pkts_sent = 0;
    bytes_sent = 0;
