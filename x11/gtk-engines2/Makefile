@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/17 15:18:33 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/05/24 21:30:27 marcm Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
 COMMENT=		"collection of theme engines for GTK+2"
 
-DISTNAME=		gtk-engines-2.2.0
-PKGNAME=		gtk-engines2-2.2.0
+VERSION=		2.6.3
+DISTNAME=		gtk-engines-${VERSION}
+PKGNAME=		gtk-engines2-${VERSION}
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.gnome.org
@@ -20,18 +21,14 @@ WANTLIB=	X11 Xcursor Xext Xft Xinerama Xrender atk-1.0.0.0 fontconfig \
 		freetype glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 iconv \
 		intl m pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtk-engines/2.2/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtk-engines/2.6/}
 EXTRACT_SUFX=		.tar.bz2
 
-BUILD_DEPENDS=		:pkgconfig->=0.9.0:devel/pkgconfig
-LIB_DEPENDS=		gdk-x11-2.0.400.0,gdk_pixbuf-2.0.400.0,gtk-x11-2.0.400.0::x11/gtk+2
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
+LIB_DEPENDS=		gdk-x11-2.0.600.0,gdk_pixbuf-2.0.600.0,gtk-x11-2.0.600.0::x11/gtk+2
 
-SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/themes/Pixmap/gtk-2.0
-	${INSTALL_DATA} ${WRKSRC}/pixbuf/examples/bubble/gtk-2.0/* ${PREFIX}/share/themes/Pixmap/gtk-2.0
 
 .include <bsd.port.mk>

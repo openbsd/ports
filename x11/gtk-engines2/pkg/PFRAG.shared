@@ -1,4 +1,10 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2004/06/22 03:18:43 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.4 2005/05/24 21:30:28 marcm Exp $
+lib/gtk-2.0/2.4.0/engines/libcrux-engine.so
+lib/gtk-2.0/2.4.0/engines/libhcengine.so
+lib/gtk-2.0/2.4.0/engines/libindustrial.so
+lib/gtk-2.0/2.4.0/engines/liblighthouseblue.so
 lib/gtk-2.0/2.4.0/engines/libmetal.so
-lib/gtk-2.0/2.4.0/engines/libpixmap.so
+lib/gtk-2.0/2.4.0/engines/libmist.so
 lib/gtk-2.0/2.4.0/engines/libredmond95.so
+lib/gtk-2.0/2.4.0/engines/libsmooth.so
+lib/gtk-2.0/2.4.0/engines/libthinice.so
