@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/22 11:48:33 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2005/05/24 03:31:44 naddy Exp $
 
 COMMENT=		"commandline shell and file manager"
 
-DISTNAME=		clex-3.10
+DISTNAME=		clex-3.11
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.clex.sk/
