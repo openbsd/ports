@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2005/03/10 07:27:07 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2005/05/24 22:10:45 marcm Exp $
 
 COMMENT=		"data backends for the Evolution mail/PIM suite"
 
-DISTNAME=		evolution-data-server-1.0.4
+DISTNAME=		evolution-data-server-1.2.2
 CATEGORIES=		databases
 
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/evolution-data-server/1.0/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/evolution-data-server/1.2/}
 EXTRACT_SUFX=           .tar.bz2
 
 # GPL
@@ -28,12 +28,14 @@ MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:bison-*:devel/bison \
 			:pkgconfig-*:devel/pkgconfig \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser
+			:p5-XML-Parser-*:textproc/p5-XML-Parser \
+			:openldap-client-*:databases/openldap \
+			:libgnomeui-*:x11/gnome/libgnomeui
 LIB_DEPENDS= 		gnome-2::x11/gnome/libgnome \
-			lber.7,ldap.7::databases/openldap \
 			soup-2.2.7.0::devel/libsoup
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 YACC=			bison
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	--disable-gtk-doc
