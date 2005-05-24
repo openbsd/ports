@@ -1,6 +1,6 @@
-$OpenBSD: patch-bonobo-activation_bonobo-activation-fork-server_c,v 1.1 2003/10/07 05:48:54 marcm Exp $
---- bonobo-activation/bonobo-activation-fork-server.c.orig	2003-09-09 13:12:20.000000000 -0700
-+++ bonobo-activation/bonobo-activation-fork-server.c	2003-09-09 13:13:06.000000000 -0700
+$OpenBSD: patch-bonobo-activation_bonobo-activation-fork-server_c,v 1.2 2005/05/24 21:44:14 marcm Exp $
+--- bonobo-activation/bonobo-activation-fork-server.c.orig	Wed Aug 11 03:26:02 2004
++++ bonobo-activation/bonobo-activation-fork-server.c	Mon Apr  4 22:04:47 2005
 @@ -380,6 +380,8 @@ bonobo_activation_server_by_forking (
  	} else if ((childpid = fork ())) {
  		_exit (0);	/* de-zombifier process, just exit */
@@ -8,5 +8,5 @@ $OpenBSD: patch-bonobo-activation_bonobo-activation-fork-server_c,v 1.1 2003/10/
 +		sigprocmask (SIG_SETMASK, &omask, NULL);
 +
  		setenv_activation_environment (environment);
+                 sigprocmask (SIG_SETMASK, &omask, NULL);
  
- 		if (od_iorstr != NULL) {

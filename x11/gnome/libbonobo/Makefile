@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2004/12/15 13:57:56 alek Exp $
+# $OpenBSD: Makefile,v 1.12 2005/05/24 21:44:14 marcm Exp $
 
 COMMENT=		"GNOME component and compound document system" 
 
-DISTNAME=		libbonobo-2.8.0
+DISTNAME=		libbonobo-2.8.1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,6 +26,7 @@ LIB_DEPENDS=		ORBit-2,ORBitCosNaming-2::devel/ORBit2 \
 			xml2.6::textproc/libxml
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"

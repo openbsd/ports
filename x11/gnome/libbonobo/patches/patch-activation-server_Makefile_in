@@ -1,7 +1,7 @@
-$OpenBSD: patch-activation-server_Makefile_in,v 1.2 2004/06/23 03:26:13 marcm Exp $
---- activation-server/Makefile.in.orig	2004-05-29 04:17:30.000000000 -0600
-+++ activation-server/Makefile.in	2004-06-19 21:08:57.000000000 -0600
-@@ -249,7 +249,7 @@ bonobo_activation_server_SOURCES = \
+$OpenBSD: patch-activation-server_Makefile_in,v 1.3 2005/05/24 21:44:14 marcm Exp $
+--- activation-server/Makefile.in.orig	Sat Feb  5 06:39:38 2005
++++ activation-server/Makefile.in	Mon Apr  4 22:04:47 2005
+@@ -255,7 +255,7 @@ bonobo_activation_server_SOURCES = \
  
  LDADD = \
  	$(top_builddir)/bonobo/libbonobo-2.la \
