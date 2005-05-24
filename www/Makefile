@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2005/05/17 21:31:51 fgsch Exp $
+# $OpenBSD: Makefile,v 1.188 2005/05/24 22:14:01 marcm Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -26,6 +26,7 @@
 #    SUBDIR += gn
      SUBDIR += galeon
      SUBDIR += gtkhtml
+     SUBDIR += gtkhtml3
 #    SUBDIR += gwstat
 #    SUBDIR += harvest
 #    SUBDIR += http-analyze
