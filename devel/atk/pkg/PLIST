@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/08/08 17:13:29 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/05/24 21:26:52 marcm Exp $
+%%SHARED%%
 include/atk-1.0/
 include/atk-1.0/atk/
 include/atk-1.0/atk/atk-enum-types.h
@@ -34,35 +35,3 @@ lib/pkgconfig/atk.pc
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/atk/
-share/gtk-doc/html/atk/AtkAction.html
-share/gtk-doc/html/atk/AtkComponent.html
-share/gtk-doc/html/atk/AtkDocument.html
-share/gtk-doc/html/atk/AtkEditableText.html
-share/gtk-doc/html/atk/AtkGObjectAccessible.html
-share/gtk-doc/html/atk/AtkHyperlink.html
-share/gtk-doc/html/atk/AtkHypertext.html
-share/gtk-doc/html/atk/AtkImage.html
-share/gtk-doc/html/atk/AtkNoOpObject.html
-share/gtk-doc/html/atk/AtkNoOpObjectFactory.html
-share/gtk-doc/html/atk/AtkObject.html
-share/gtk-doc/html/atk/AtkObjectFactory.html
-share/gtk-doc/html/atk/AtkRegistry.html
-share/gtk-doc/html/atk/AtkRelation.html
-share/gtk-doc/html/atk/AtkRelationSet.html
-share/gtk-doc/html/atk/AtkSelection.html
-share/gtk-doc/html/atk/AtkStateSet.html
-share/gtk-doc/html/atk/AtkStreamableContent.html
-share/gtk-doc/html/atk/AtkTable.html
-share/gtk-doc/html/atk/AtkText.html
-share/gtk-doc/html/atk/AtkUtil.html
-share/gtk-doc/html/atk/AtkValue.html
-share/gtk-doc/html/atk/atk-AtkState.html
-share/gtk-doc/html/atk/atk.devhelp
-share/gtk-doc/html/atk/atk.html
-share/gtk-doc/html/atk/home.png
-share/gtk-doc/html/atk/index.html
-share/gtk-doc/html/atk/index.sgml
-share/gtk-doc/html/atk/left.png
-share/gtk-doc/html/atk/right.png
-share/gtk-doc/html/atk/up.png
-%%SHARED%%
