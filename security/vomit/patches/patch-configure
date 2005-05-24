@@ -1,0 +1,27 @@
+$OpenBSD: patch-configure,v 1.1 2005/05/24 00:23:35 mjc Exp $
+--- configure.orig	Sat May 21 20:28:55 2005
++++ configure	Sat May 21 20:30:40 2005
+@@ -892,18 +892,18 @@ if test "${with_libnet+set}" = set; then
+      ;;
+   *)
+      echo "$ac_t""$withval" 1>&6
+-     if test -f $withval/include/libnet.h -a -f $withval/lib/libnet.a; then
++     if test -f $withval/include/libnet-1.0/libnet.h -a -f $withval/lib/libnet-1.0/libnet.a; then
+         owd=`pwd`
+         if cd $withval; then withval=`pwd`; cd $owd; fi
+-	if test -f $withval/bin/libnet-config; then
+-	   CFLAGS="$CFLAGS `$withval/bin/libnet-config --defines`"
++	if test -f $withval/bin/libnet-config-1.0; then
++	   CFLAGS="$CFLAGS `$withval/bin/libnet-config-1.0 --defines`"
+ 	elif test -f $withval/libnet-config; then
+ 	   CFLAGS="$CFLAGS `$withval/libnet-config --defines`"
+ 	else
+ 	   CFLAGS="$CFLAGS `libnet-config --defines`"
+ 	fi
+-	LNETINC="-I$withval/include"
+-	LNETLIB="-L$withval/lib -lnet"
++	LNETINC="-I$withval/include/libnet-1.0"
++	LNETLIB="-L$withval/lib/libnet-1.0 -lnet"
+      else
+         { echo "configure: error: libnet.h or libnet.a not found in $withval" 1>&2; exit 1; }
+      fi

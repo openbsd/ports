@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/03/15 01:37:05 mjc Exp $
+# $OpenBSD: Makefile,v 1.9 2005/05/24 00:14:28 mjc Exp $
 
 COMMENT=	"command-line anti-spoofing detection utility"
 
@@ -20,11 +20,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap
 
-LIB_DEPENDS=	net::net/libnet
+LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
 
 MAKE_FLAGS+=	CC='${CC}' CFLAGS='${CFLAGS}' \
-		DEFS='-I${LOCALBASE}/include `libnet-config --defines`' \
-		LIBS='-L${LOCALBASE}/lib -lnet -lpcap'
+		DEFS='-I${LOCALBASE}/include/libnet-1.0 `libnet-config-1.0 --defines`' \
+		LIBS='-L${LOCALBASE}/lib/libnet-1.0 -lnet -lpcap'
 
 NO_REGRESS=	Yes
 

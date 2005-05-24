@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/16 00:31:26 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2005/05/24 00:13:31 mjc Exp $
 
 COMMENT=	"local network discovery tool"
 
@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.thehackerschoice.com/releases/
 
 HOMEPAGE=	http://www.thehackerschoice.com/
 
-LIB_DEPENDS=	net::net/libnet
+LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

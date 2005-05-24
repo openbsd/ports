@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2005/05/24 00:13:31 mjc Exp $
+--- configure.orig	Sun May 22 13:27:59 2005
++++ configure	Sun May 22 13:29:04 2005
+@@ -2022,14 +2022,14 @@ if test "${with_libnet+set}" = set; then
+                 echo $ac_n "checking Using libnet in""... $ac_c" 1>&6
+ echo "configure:2024: checking Using libnet in" >&5
+                 echo "$ac_t""$withval" 1>&6
+-                LIBNET_INCLUDES="-I${withval}/include"
+-                LIBNET_LDFLAGS="-L${withval}/lib"
++                LIBNET_INCLUDES="-I${withval}/include/libnet-1.0"
++                LIBNET_LDFLAGS="-L${withval}/lib/libnet-1.0"
+             fi
+ fi
+ 
+ 
+ OCFLAGS="$CFLAGS"
+-CFLAGS="$CFLAGS $LIBPCAP_INCLUDES $LIBPCAP_LDFLAGS"
++CFLAGS="$CFLAGS $LIBPCAP_INCLUDES $LIBPCAP_LDFLAGS `libnet-config-1.0 --defines`"
+ echo $ac_n "checking for main in -lpcap""... $ac_c" 1>&6
+ echo "configure:2035: checking for main in -lpcap" >&5
+ ac_lib_var=`echo pcap'_'main | sed 'y%./+-%__p_%'`

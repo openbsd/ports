@@ -1,17 +1,32 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2004/01/10 08:33:12 sturm Exp $
---- Makefile.in.orig	2004-01-10 00:53:22.000000000 +0100
-+++ Makefile.in	2004-01-10 00:53:58.000000000 +0100
+$OpenBSD: patch-Makefile_in,v 1.2 2005/05/24 00:15:06 mjc Exp $
+--- Makefile.in.orig	Fri Dec 15 12:03:26 2000
++++ Makefile.in	Sun May 22 12:50:27 2005
 @@ -94,7 +94,7 @@ libmissing.a: $(LIBOBJS)
  	$(RANLIB) $@
  
  dsniff: $(HDRS) $(SRCS) $(OBJS)
 -	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(NIDSLIB) $(PCAPLIB) $(LNETLIB) $(DBLIB) $(SSLLIB)
-+	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(DBLIB) $(NIDSLIB) $(PCAPLIB) $(LNETLIB) $(SSLLIB)
++	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(DBLIB) $(LNETLIB) $(NIDSLIB) $(PCAPLIB) $(SSLLIB)
  
  arpspoof: arpspoof.o arp.o
  	$(CC) $(LDFLAGS) -o $@ arpspoof.o arp.o $(LIBS) $(PCAPLIB) $(LNETLIB)
-@@ -115,7 +115,7 @@ msgsnarf: msgsnarf.o buf.o pcaputil.o
- 	$(CC) $(LDFLAGS) -o $@ msgsnarf.o buf.o pcaputil.o $(LIBS) $(NIDSLIB) $(PCAPLIB) $(LNETLIB)
+@@ -103,19 +103,19 @@ dnsspoof: dnsspoof.o pcaputil.o
+ 	$(CC) $(LDFLAGS) -o $@ dnsspoof.o pcaputil.o $(LIBS) $(PCAPLIB) $(LNETLIB)
+ 
+ filesnarf: nfs_prot.o filesnarf.o pcaputil.o rpc.o
+-	$(CC) $(LDFLAGS) -o $@ filesnarf.o nfs_prot.o pcaputil.o rpc.o $(LIBS) $(NIDSLIB) $(PCAPLIB) $(LNETLIB)
++	$(CC) $(LDFLAGS) -o $@ filesnarf.o nfs_prot.o pcaputil.o rpc.o $(LIBS) $(LNETLIB) $(NIDSLIB) $(PCAPLIB)
+ 
+ macof: macof.o
+ 	$(CC) $(LDFLAGS) -o $@ macof.o $(LIBS) $(PCAPLIB) $(LNETLIB)
+ 
+ mailsnarf: mailsnarf.o buf.o pcaputil.o
+-	$(CC) $(LDFLAGS) -o $@ mailsnarf.o buf.o pcaputil.o $(LIBS) $(NIDSLIB) $(PCAPLIB) $(LNETLIB)
++	$(CC) $(LDFLAGS) -o $@ mailsnarf.o buf.o pcaputil.o $(LIBS) $(LNETLIB) $(NIDSLIB) $(PCAPLIB)
+ 
+ msgsnarf: msgsnarf.o buf.o pcaputil.o
+-	$(CC) $(LDFLAGS) -o $@ msgsnarf.o buf.o pcaputil.o $(LIBS) $(NIDSLIB) $(PCAPLIB) $(LNETLIB)
++	$(CC) $(LDFLAGS) -o $@ msgsnarf.o buf.o pcaputil.o $(LIBS) $(LNETLIB) $(NIDSLIB) $(PCAPLIB)
  
  sshmitm: sshmitm.o buf.o hex.o record.o ssh.o sshcrypto.o
 -	$(CC) $(LDFLAGS) -o $@ sshmitm.o buf.o hex.o record.o ssh.o sshcrypto.o $(LIBS) $(LNETLIB) $(DBLIB) $(SSLLIB)
@@ -19,12 +34,20 @@ $OpenBSD: patch-Makefile_in,v 1.1 2004/01/10 08:33:12 sturm Exp $
  
  tcpkill: tcpkill.o pcaputil.o
  	$(CC) $(LDFLAGS) -o $@ tcpkill.o pcaputil.o $(LIBS) $(PCAPLIB) $(LNETLIB)
-@@ -130,7 +130,7 @@ urlsnarf: urlsnarf.o base64.o buf.o pcap
- 	$(CC) $(LDFLAGS) -o $@ urlsnarf.o base64.o buf.o pcaputil.o $(LIBS) $(NIDSLIB) $(PCAPLIB) $(LNETLIB)
+@@ -127,13 +127,13 @@ tcphijack: tcphijack.o pcaputil.o
+ 	$(CC) $(LDFLAGS) -o $@ tcphijack.o pcaputil.o $(LIBS) $(PCAPLIB) $(LNETLIB)
+ 
+ urlsnarf: urlsnarf.o base64.o buf.o pcaputil.o
+-	$(CC) $(LDFLAGS) -o $@ urlsnarf.o base64.o buf.o pcaputil.o $(LIBS) $(NIDSLIB) $(PCAPLIB) $(LNETLIB)
++	$(CC) $(LDFLAGS) -o $@ urlsnarf.o base64.o buf.o pcaputil.o $(LIBS) $(LNETLIB) $(NIDSLIB) $(PCAPLIB)
  
  webmitm: webmitm.o base64.o buf.o decode_http.o record.o
 -	$(CC) $(LDFLAGS) -o $@ webmitm.o base64.o buf.o decode_http.o record.o $(LIBS) $(LNETLIB) $(DBLIB) $(SSLLIB)
 +	$(CC) $(LDFLAGS) -o $@ webmitm.o base64.o buf.o decode_http.o record.o $(LIBS) $(DBLIB) $(LNETLIB) $(SSLLIB)
  
  webspy: webspy.o base64.o buf.o remote.o
- 	$(CC) $(LDFLAGS) -o $@ webspy.o base64.o buf.o remote.o $(LIBS) $(NIDSLIB) $(PCAPLIB) $(LNETLIB) $(X11LIB)
+-	$(CC) $(LDFLAGS) -o $@ webspy.o base64.o buf.o remote.o $(LIBS) $(NIDSLIB) $(PCAPLIB) $(LNETLIB) $(X11LIB)
++	$(CC) $(LDFLAGS) -o $@ webspy.o base64.o buf.o remote.o $(LIBS) $(LNETLIB) $(NIDSLIB) $(PCAPLIB) $(X11LIB)
+ 
+ install:
+ 	test -d $(install_prefix)$(sbindir) || \

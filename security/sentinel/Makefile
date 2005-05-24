@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/27 13:28:35 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2005/05/24 00:22:37 mjc Exp $
 
 COMMENT=		"remote promiscous mode detection tool"
 
@@ -18,13 +18,14 @@ WANTLIB=		c pcap pthread
 MASTER_SITES=		http://www.packetfactory.net/projects/sentinel/ \
 			${MASTER_SITE_PACKETSTORM:=UNIX/IDS/sentinel/}
 
-LIB_DEPENDS=		net::net/libnet
+LIB_DEPENDS=		lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
 
 WRKDIST=		${WRKDIR}/sentinel
 
 ALL_TARGET=		sentinel
 MAKE_FLAGS=		CC="${CC}" CFLAGS='${CFLAGS} -Wall -I. \
-			 -I${LOCALBASE}/include `libnet-config --defines`'
+			 -I${LOCALBASE}/include/libnet-1.0 `libnet-config-1.0 --defines`' \
+			LIBS="-lnet -L${LOCALBASE}/lib/libnet-1.0 -lpcap -pthread"
 
 NO_REGRESS=		Yes
 

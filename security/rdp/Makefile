@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/27 13:28:35 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2005/05/24 00:17:50 mjc Exp $
 
 COMMENT=	"ICMP router discovery protocol spoofer"
 
@@ -7,7 +7,7 @@ PKGNAME=	rdp-1.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.atstake.com/research/tools/
 
-LIB_DEPENDS=	net::net/libnet
+LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
 
 PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	Yes
@@ -18,8 +18,8 @@ WANTLIB=		c pcap
 WRKDIST=	${WRKDIR}
 
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${PREFIX}/include -o rdp \
-		icmp_rdp.c -L${PREFIX}/lib -lnet -lpcap
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${PREFIX}/include/libnet-1.0 -o rdp \
+		icmp_rdp.c -L${PREFIX}/lib/libnet-1.0 -lnet -lpcap
 
 NO_REGRESS=	Yes
 

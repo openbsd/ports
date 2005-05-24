@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2005/05/24 00:16:28 mjc Exp $
+--- Makefile.in.orig	Sat May 21 22:26:05 2005
++++ Makefile.in	Sat May 21 22:26:17 2005
+@@ -5,9 +5,9 @@
+ PREFIX ?= /usr/local
+ 
+ CC	= @CC@
+-DEFS	= @DEFS@ `libnet-config --defines`
+-CFLAGS	= @CFLAGS@ `libnet-config --cflags`
+-LIBS	= @LIBS@ `libnet-config --libs`
++DEFS	= @DEFS@
++CFLAGS	= @CFLAGS@
++LIBS	= @LIBS@
+ LDFLAGS	= @LDFLAGS@
+ 
+ INSTALL	= @INSTALL@

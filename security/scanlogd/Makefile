@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2005/03/13 19:42:40 couderc Exp $
+# $OpenBSD: Makefile,v 1.16 2005/05/24 00:21:10 mjc Exp $
 
 DISTNAME=	scanlogd-2.2.5
 CATEGORIES=	security
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap
 
 BUILD_DEPENDS=	::net/libnids
-LIB_DEPENDS=	net::net/libnet
+LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
 
 ALL_TARGET=	libnids
 NO_REGRESS=	Yes
