@@ -1,6 +1,6 @@
---- configure.orig	Wed Dec  1 19:06:46 2004
-+++ configure	Wed Dec  1 19:07:23 2004
-@@ -9397,7 +9397,7 @@
+--- configure.orig	Wed Mar 30 14:28:44 2005
++++ configure	Tue Apr  5 09:34:04 2005
+@@ -9397,7 +9397,7 @@ nto-qnx*)
  openbsd*)
    version_type=sunos
    need_lib_prefix=no
@@ -9,7 +9,7 @@
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
-@@ -23855,7 +23855,7 @@
+@@ -23958,7 +23958,7 @@ GNOME_PRINT_DATA_DIR='${datadir}/libgnom
  GNOME_PRINT_DATA_DIR=$GNOME_PRINT_DATA_DIR
  
  

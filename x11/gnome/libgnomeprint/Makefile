@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/15 13:57:56 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2005/05/24 21:52:35 marcm Exp $
 
 COMMENT=		"printing framework for GNOME"
 
-VERSION=		2.8.1
+VERSION=		2.10.3
 DISTNAME=		libgnomeprint-${VERSION}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/projects/gnome-print/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 fontconfig freetype m pangoft2-1.0.0.0 z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnomeprint/2.8/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnomeprint/2.10/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
