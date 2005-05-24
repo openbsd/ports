@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/10/26 03:49:03 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.14 2005/05/24 21:26:17 marcm Exp $
 bin/glib-genmarshal
 bin/glib-gettextize
 bin/glib-mkenums
@@ -25,6 +25,7 @@ include/glib-2.0/glib/ghook.h
 include/glib-2.0/glib/gi18n-lib.h
 include/glib-2.0/glib/gi18n.h
 include/glib-2.0/glib/giochannel.h
+include/glib-2.0/glib/gkeyfile.h
 include/glib-2.0/glib/glist.h
 include/glib-2.0/glib/gmacros.h
 include/glib-2.0/glib/gmain.h
@@ -32,6 +33,7 @@ include/glib-2.0/glib/gmarkup.h
 include/glib-2.0/glib/gmem.h
 include/glib-2.0/glib/gmessages.h
 include/glib-2.0/glib/gnode.h
+include/glib-2.0/glib/goption.h
 include/glib-2.0/glib/gpattern.h
 include/glib-2.0/glib/gprimes.h
 include/glib-2.0/glib/gprintf.h
@@ -44,6 +46,7 @@ include/glib-2.0/glib/gscanner.h
 include/glib-2.0/glib/gshell.h
 include/glib-2.0/glib/gslist.h
 include/glib-2.0/glib/gspawn.h
+include/glib-2.0/glib/gstdio.h
 include/glib-2.0/glib/gstrfuncs.h
 include/glib-2.0/glib/gstring.h
 include/glib-2.0/glib/gthread.h
@@ -88,6 +91,7 @@ lib/libgthread-2.0.la
 lib/pkgconfig/
 lib/pkgconfig/glib-2.0.pc
 lib/pkgconfig/gmodule-2.0.pc
+lib/pkgconfig/gmodule-no-export-2.0.pc
 lib/pkgconfig/gobject-2.0.pc
 lib/pkgconfig/gthread-2.0.pc
 @man man/man1/glib-genmarshal.1
@@ -159,6 +163,7 @@ share/locale/hi/
 share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/glib20.mo
 share/locale/hr/LC_MESSAGES/glib20.mo
+share/locale/hu/LC_MESSAGES/glib20.mo
 share/locale/id/LC_MESSAGES/glib20.mo
 share/locale/is/
 share/locale/is/LC_MESSAGES/
@@ -197,6 +202,9 @@ share/locale/pt/LC_MESSAGES/glib20.mo
 share/locale/pt_BR/LC_MESSAGES/glib20.mo
 share/locale/ro/LC_MESSAGES/glib20.mo
 share/locale/ru/LC_MESSAGES/glib20.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
+share/locale/rw/LC_MESSAGES/glib20.mo
 share/locale/sk/LC_MESSAGES/glib20.mo
 share/locale/sl/LC_MESSAGES/glib20.mo
 share/locale/sq/
@@ -215,6 +223,9 @@ share/locale/sv/LC_MESSAGES/glib20.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/glib20.mo
+share/locale/tl/
+share/locale/tl/LC_MESSAGES/
+share/locale/tl/LC_MESSAGES/glib20.mo
 share/locale/tr/LC_MESSAGES/glib20.mo
 share/locale/uk/LC_MESSAGES/glib20.mo
 share/locale/vi/
@@ -223,6 +234,9 @@ share/locale/vi/LC_MESSAGES/glib20.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/glib20.mo
+share/locale/xh/
+share/locale/xh/LC_MESSAGES/
+share/locale/xh/LC_MESSAGES/glib20.mo
 share/locale/yi/
 share/locale/yi/LC_MESSAGES/
 share/locale/yi/LC_MESSAGES/glib20.mo

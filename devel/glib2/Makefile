@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2005/04/14 17:06:18 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2005/05/24 21:26:17 marcm Exp $
 
 COMMENT=		"general-purpose utility library"
 COMMENT-docs=           "glib2 documentation"
 
-VERSION=		2.4.8
+VERSION=		2.6.4
 DISTNAME=		glib-${VERSION}
-PKGNAME=		glib2-${VERSION}p0
-PKGNAME-docs=           glib2-docs-${VERSION}p0
+PKGNAME=		glib2-${VERSION}
+PKGNAME-docs=           glib2-docs-${VERSION}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gtk.org
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.gtk.org/pub/gtk/v2.4/
+MASTER_SITES=		ftp://ftp.gtk.org/pub/gtk/v2.6/
 EXTRACT_SUFX=           .tar.bz2
 
 MULTI_PACKAGES=         -docs
@@ -30,6 +30,7 @@ PKG_ARCH=		*
 MODULES=		devel/gettext
 WANTLIB=		c
 .endif
+
 BUILD_DEPENDS=          :pkgconfig-*:devel/pkgconfig
 
 # hppa's threads are broken (configure test gives Bus error)...

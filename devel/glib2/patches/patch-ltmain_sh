@@ -1,33 +1,73 @@
-$OpenBSD: patch-ltmain_sh,v 1.6 2004/10/26 03:49:03 marcm Exp $
---- ltmain.sh.orig	Sun Apr 11 19:01:57 2004
-+++ ltmain.sh	Mon Oct 11 17:50:10 2004
-@@ -1857,9 +1857,12 @@ EOF
- 	  if test "$linkmode,$pass" = "prog,link"; then
- 	    compile_deplibs="$deplib $compile_deplibs"
+$OpenBSD: patch-ltmain_sh,v 1.7 2005/05/24 21:26:17 marcm Exp $
+--- ltmain.sh.orig	Tue May 24 13:39:03 2005
++++ ltmain.sh	Tue May 24 13:46:06 2005
+@@ -1832,6 +1832,17 @@ EOF
+ 	;;
+     esac
+     for pass in $passes; do
++      # The preopen pass in lib mode reverses $deplibs; put it back here
++      # so that -L comes before libs that need it for instance...
++      if test "$linkmode,$pass" = "lib,link"; then
++       ## FIXME: Find the place where the list is rebuilt in the wrong
++       ##        order, and fix it there properly
++       tmp_deplibs=
++       for deplib in $deplibs; do
++         tmp_deplibs="$deplib $tmp_deplibs"
++       done
++       deplibs="$tmp_deplibs"
++      fi
+       if test "$linkmode,$pass" = "lib,link" ||
+ 	 test "$linkmode,$pass" = "prog,scan"; then
+ 	libs="$deplibs"
+@@ -1859,6 +1870,7 @@ EOF
  	    finalize_deplibs="$deplib $finalize_deplibs"
--	  else
--	    deplibs="$deplib $deplibs"
-+	    continue
+ 	  else
+ 	    deplibs="$deplib $deplibs"
++	    test "$linkmode" = lib && newdependency_libs="$deplib $newdependency_libs"
  	  fi
-+	  if test "$linkmode" = "lib"; then
-+	    newdependency_libs="$deplib $newdependency_libs"
-+	  fi
-+	  deplibs="$deplib $deplibs"
  	  continue
  	  ;;
- 	-l*)
-@@ -2274,10 +2277,6 @@ EOF
- 	link_static=no # Whether the deplib will be linked statically
- 	if test -n "$library_names" &&
- 	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
--	  if test "$installed" = no; then
--	    notinst_deplibs="$notinst_deplibs $lib"
--	    need_relink=yes
--	  fi
- 	  # This is a shared library
+@@ -2080,20 +2092,20 @@ EOF
+ 	    # It is a libtool convenience library, so add in its objects.
+ 	    convenience="$convenience $ladir/$objdir/$old_library"
+ 	    old_convenience="$old_convenience $ladir/$objdir/$old_library"
+-	    tmp_libs=
+-	    for deplib in $dependency_libs; do
+-	      deplibs="$deplib $deplibs"
+-              if test "X$duplicate_deps" = "Xyes" ; then
+-	        case "$tmp_libs " in
+-	        *" $deplib "*) specialdeplibs="$specialdeplibs $deplib" ;;
+-	        esac
+-              fi
+-	      tmp_libs="$tmp_libs $deplib"
+-	    done
+ 	  elif test "$linkmode" != prog && test "$linkmode" != lib; then
+ 	    $echo "$modename: \`$lib' is not a convenience library" 1>&2
+ 	    exit $EXIT_FAILURE
+ 	  fi
++          tmp_libs=
++          for deplib in $dependency_libs; do
++            deplibs="$deplib $deplibs"
++            if test "X$duplicate_deps" = "Xyes" ; then
++              case "$tmp_libs " in
++              *" $deplib "*) specialdeplibs="$specialdeplibs $deplib" ;;
++              esac
++            fi
++            tmp_libs="$tmp_libs $deplib"
++          done
+ 	  continue
+ 	fi # $pass = conv
  
- 	  # Warn about portability, can't link against -module's on
-@@ -5827,40 +5826,6 @@ relink_command=\"$relink_command\""
+@@ -2471,7 +2483,7 @@ EOF
+ 	    add_dir=
+ 	    add=
+ 	    # Finalize command for both is simple: just hardcode it.
+-	    if test "$hardcode_direct" = yes; then
++	    if test "$hardcode_direct" = yes && test -f $libdir/$linklib; then
+ 	      add="$libdir/$linklib"
+ 	    elif test "$hardcode_minus_L" = yes; then
+ 	      add_dir="-L$libdir"
+@@ -5827,40 +5839,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  

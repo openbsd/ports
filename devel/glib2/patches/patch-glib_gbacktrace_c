@@ -1,7 +1,7 @@
-$OpenBSD: patch-glib_gbacktrace_c,v 1.1 2005/04/14 17:06:18 espie Exp $
---- glib/gbacktrace.c.orig	Mon Mar 14 12:47:33 2005
-+++ glib/gbacktrace.c	Mon Mar 14 12:47:55 2005
-@@ -163,7 +163,7 @@ g_on_error_stack_trace (const gchar *prg
+$OpenBSD: patch-glib_gbacktrace_c,v 1.2 2005/05/24 21:26:17 marcm Exp $
+--- glib/gbacktrace.c.orig	Tue Jan 18 18:04:32 2005
++++ glib/gbacktrace.c	Fri Apr 15 20:41:44 2005
+@@ -164,7 +164,7 @@ g_on_error_stack_trace (const gchar *prg
    if (!prg_name)
      return;
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-glib_gconvert_c,v 1.1 2005/04/14 17:06:18 espie Exp $
---- glib/gconvert.c.orig	Mon Mar 14 12:46:41 2005
-+++ glib/gconvert.c	Mon Mar 14 12:47:27 2005
-@@ -337,10 +337,12 @@ open_converter (const gchar *to_codeset,
+$OpenBSD: patch-glib_gconvert_c,v 1.2 2005/05/24 21:26:17 marcm Exp $
+--- glib/gconvert.c.orig	Mon Apr  4 20:57:16 2005
++++ glib/gconvert.c	Sat Apr 16 19:13:32 2005
+@@ -339,10 +339,12 @@ open_converter (const gchar *to_codeset,
    struct _iconv_cache_bucket *bucket;
    gchar *key;
    GIConv cd;
