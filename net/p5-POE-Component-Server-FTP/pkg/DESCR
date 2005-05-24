@@ -1,0 +1,2 @@
+POE::Component::Server::FTP is an event driven FTP server backed by a
+virtual filesystem interface as implemented by Filesys::Virtual

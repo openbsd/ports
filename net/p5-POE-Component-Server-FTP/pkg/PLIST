@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/24 01:37:45 msf Exp $
+${P5SITE}/POE/Component/Server/FTP/
+${P5SITE}/POE/Component/Server/FTP.pm
+${P5SITE}/POE/Component/Server/FTP/ControlFilter.pm
+${P5SITE}/POE/Component/Server/FTP/ControlSession.pm
+${P5SITE}/POE/Component/Server/FTP/DataSession.pm
+@man man/man3p/POE::Component::Server::FTP.3p
