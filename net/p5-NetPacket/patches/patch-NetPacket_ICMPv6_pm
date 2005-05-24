@@ -1,0 +1,401 @@
+$OpenBSD: patch-NetPacket_ICMPv6_pm,v 1.1.1.1 2005/05/24 06:16:53 msf Exp $
+--- NetPacket/ICMPv6.pm.orig	Thu Apr 14 10:10:49 2005
++++ NetPacket/ICMPv6.pm	Thu Apr 14 10:10:49 2005
+@@ -0,0 +1,397 @@
++#
++# ICMPv6.pm
++# NetPacket::ICMPv6
++#
++# Decode Internet Control Message Protocol v6 packet header.
++#
++# References:
++# RFC2463 - ICMPv6 Specification
++#
++# Copyright (c) 2003, 2004 Joel Knight <enabled@myrealbox.com>
++#
++# Permission to use, copy, modify, and distribute this software for any
++# purpose with or without fee is hereby granted, provided that the above
++# copyright notice and this permission notice appear in all copies.
++#
++# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
++# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
++# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
++# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
++# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
++# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
++# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
++#
++#
++# $jwk: ICMPv6.pm,v 1.13 2004/08/06 05:12:00 jwk Exp $
++
++package NetPacket::ICMPv6;
++
++use strict;
++use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
++use NetPacket;
++
++my $myclass;
++BEGIN {
++    $myclass = __PACKAGE__;
++    $VERSION = "0.01";
++}
++sub Version () { "$myclass v$VERSION" }
++
++BEGIN {
++    @ISA = qw(Exporter NetPacket);
++
++    @EXPORT = qw( );
++
++    @EXPORT_OK = qw(
++		icmpv6_strip
++		ICMPV6_DST_UNREACH
++		ICMPV6_PACKET_TOO_BIG
++		ICMPV6_TIME_EXCEEDED
++		ICMPV6_PARAM_PROB
++		ICMPV6_ECHO_REQUEST
++		ICMPV6_ECHO_REPLY
++	);
++
++    %EXPORT_TAGS = (
++    ALL         => [@EXPORT, @EXPORT_OK],
++    types       => [qw(
++		ICMPV6_DST_UNREACH
++		ICMPV6_PACKET_TOO_BIG
++		ICMPV6_TIME_EXCEEDED
++		ICMPV6_PARAM_PROB
++		ICMPV6_ECHO_REQUEST
++		ICMPV6_ECHO_REPLY
++					)],
++    strip       => [qw(icmpv6_strip)],
++);
++
++}
++
++use NetPacket::IPv6;
++
++# icmp6 packet types
++use constant ICMPV6_DST_UNREACH		=> 1;
++use constant ICMPV6_PACKET_TOO_BIG	=> 2;
++use constant ICMPV6_TIME_EXCEEDED	=> 3;
++use constant ICMPV6_PARAM_PROB		=> 4;
++use constant ICMPV6_ECHO_REQUEST	=> 128;
++use constant ICMPV6_ECHO_REPLY		=> 129;
++
++# calculate icmp6 checksum; note that parts of the outer ipv6
++# packet are needed for the calculation
++sub checksum {
++	my $self = shift;
++	my $ip6 = $_[0];
++
++	my @src_ip = NetPacket::IPv6::hexstr_to_int($ip6->{src_ip});
++	my @dst_ip = NetPacket::IPv6::hexstr_to_int($ip6->{dest_ip});
++
++	my $extra = $self->_get_extra_field;
++
++	# XXX will there ever be a header between the ip6 and icmp6 headers?
++	# if so, using ip6->{plen} here is wrong; the length in the pseudo
++	# header is the length of the icmp6 packet only; RFC2460 8.1
++	my $hdr = pack('NNNNNNNNNNCCnNa*', @src_ip[0..3], @dst_ip[0..3], 
++		$ip6->{plen}, $ip6->{nxt}, $self->{type}, $self->{code},
++		0, $extra, $self->{data});
++
++	return NetPacket::htons(NetPacket::in_cksum($hdr));
++}
++
++# decode icmpv6 header, return a NetPacket::ICMPv6 object
++sub decode {
++	my $class = shift;
++	my ($pkt, $parent) = @_;
++	my $self = {};
++
++	# Class fields
++
++	$self->{_parent} = $parent;
++	$self->{_frame} = $pkt;
++	
++	# Decode packet
++
++	if (defined $pkt) {
++		($self->{type}, $self->{code}, $self->{cksum}, $self->{data})
++			= unpack('CCna*', $pkt);
++
++		# based on the icmp6 type, decode the rest of the packet
++		# XXX changes here must match _get_extra_field().
++		if ($self->{type} == ICMPV6_ECHO_REQUEST || 
++				$self->{type} == ICMPV6_ECHO_REPLY) {
++			($self->{id}, $self->{seq}, $self->{data})
++				= unpack('nna*', $self->{data});
++		} elsif ($self->{type} == ICMPV6_DST_UNREACH ||
++				$self->{type} == ICMPV6_TIME_EXCEEDED) {
++			($self->{unused}, $self->{data}) 
++				= unpack('Na*', $self->{data});
++		} elsif ($self->{type} == ICMPV6_PACKET_TOO_BIG) {
++			($self->{mtu}, $self->{data}) 
++				= unpack('Na*', $self->{data});
++		} elsif ($self->{type} == ICMPV6_PARAM_PROB) {
++			($self->{ptr}, $self->{data}) 
++				= unpack('Na*', $self->{data});
++		}
++	}
++
++	bless ($self, $class);
++	return $self;
++}
++
++undef &icmpv6_strip;           # Create alias
++*icmpv6_strip = \&strip;
++
++# return the data portion of an ipv6 packet
++sub strip {
++	my ($pkt) = $_[0];
++
++	my $icmpv6_obj = NetPacket::ICMPv6->decode($pkt);
++	return $icmpv6_obj->{data};
++}   
++
++# reverse the decoding process and return the raw, encoded packet
++sub encode {
++	my $self = shift;
++	my $ip6 = $_[0];
++
++	my $cksum = $self->checksum($ip6);
++	my $extra = $self->_get_extra_field;
++
++	my $packet = pack('CCnNa*', $self->{type}, $self->{code},
++		$cksum, $extra, $self->{data});
++
++	return($packet);
++}
++
++# based on the icmp6 type, return the data from the type-dependant
++# header field.
++# XXX changes here must match type-dependent code in decode().
++sub _get_extra_field {
++	my $self = shift;
++
++	my $f;
++	if ($self->{type} == ICMPV6_ECHO_REQUEST ||
++			$self->{type} == ICMPV6_ECHO_REPLY) {
++		$f = (($self->{id} << 16) & 0xffff0000) | $self->{seq};
++	} elsif ($self->{type} == ICMPV6_DST_UNREACH ||
++			$self->{type} == ICMPV6_TIME_EXCEEDED) {
++		$f = $self->{unused};
++	} elsif ($self->{type} == ICMPV6_PACKET_TOO_BIG) {
++		$f = $self->{mtu};
++	} elsif ($self->{type} == ICMPV6_PARAM_PROB) {
++		$f = $self->{ptr};
++	}
++
++	return $f;
++}
++
++1;
++
++__END__
++
++
++=head1 NAME
++
++C<NetPacket::ICMPv6> - Assemble and disassemble ICMPv6 (Internet Control
++Message Protocol Version 6) packets. 
++
++=head1 SYNOPSIS
++
++  use NetPacket::ICMPv6;
++
++  $icmp6_obj = NetPacket::ICMPv6->decode($raw_pkt);
++  $icmp6_pkt = NetPacket::ICMPv6->encode($ip6_obj);
++  $icmp6_data = NetPacket::ICMPv6::strip($raw_pkt);
++  $cksum = $icmp6_obj->checksum($ip6_obj);
++
++=head1 DESCRIPTION
++
++C<NetPacket::ICMPv6> provides a set of routines for assembling and
++disassembling ICMPv6 (Internet Control Message Protocol Version 6) packets. 
++
++=head2 Methods
++
++=over
++
++=item C<NetPacket::ICMPv6-E<gt>decode([RAW PACKET])>
++
++Decode the raw packet data given and return an object containing
++instance data.  This method will quite happily decode garbage input.
++It is the responsibility of the programmer to ensure valid packet data
++is passed to this method.
++
++=item C<NetPacket::ICMPv6-E<gt>encode($ip6_obj)>
++
++Return an ICMPv6 packet encoded with the instance data specified. The
++C<NetPacket::IPv6> object that the ICMPv6 packet was encapsulated
++in must be passed to encode() because some of the IPv6 header fields
++are used in the ICMPv6 checksum calculation.
++
++=item C<NetPacket::ICMPv6-E<gt>checksum($ip6_obj)>
++
++Calculate the ICMPv6 checksum based on the instance data of the 
++C<NetPacket::ICMPv6> object. The C<NetPacket::IPv6> object that the 
++ICMPv6 packet was/will be encapsulated in must be specified as some
++of the IPv6 header fields are used in the ICMPv6 calculation.
++
++=back
++
++=head2 Functions
++
++=over
++
++=item C<NetPacket::ICMPv6::strip([RAW PACKET])>
++
++Return the encapsulated data (or payload) contained in the ICMPv6
++packet.
++
++=back
++
++=head2 Instance data
++
++The instance data for the C<NetPacket::ICMPv6> object consists of
++the following fields.
++
++=over
++
++=item type
++
++The ICMPv6 message type of this packet.
++
++=item code
++
++The ICMPv6 message code of this packet.
++
++=item cksum
++
++The checksum for this packet.
++
++=item data
++
++The encapsulated data (payload) for this packet.
++
++=back
++
++=head2 Type-Specific Instance Data
++
++=over
++
++=item id
++
++Identification number used to match Echo Requests with Echo Replies.
++(Echo Request, Echo Reply)
++
++=item seq
++
++Sequence number used to match Echo Requests with Echo Replies. (Echo
++Request, Echo Reply)
++
++=item mtu
++
++The Maximum Transmission Unit of the next-hop link. (Packet Too Big)
++
++=item ptr
++
++Problem pointer. Identifies the location in the original packet where
++the problem was. (Parameter Problem)
++
++=item unused
++
++These ICMPv6 types contain an unused header field: Destination 
++Unreachable, Time Exceeded.
++
++=back
++
++=head2 Exports
++
++=over
++
++=item default
++
++none
++
++=item exportable
++
++ICMPv6 message types: 
++
++  ICMPV6_DST_UNREACH ICMPV6_PACKET_TOO_BIG
++  ICMPV6_TIME_EXCEEDED ICMPV6_PARAM_PROB
++  ICMPV6_ECHO_REQUEST ICMPV6_ECHO_REPLY
++
++Strip function:
++
++  icmpv6_strip
++
++=item tags
++
++The following tags group together related exportable items.
++
++=over
++
++=item C<:strip>
++
++Import the strip function C<icmpv6_strip>.
++
++=item C<:types>
++
++Import the above ICMPv6 message types.
++
++=item C<:ALL>
++
++All the above exportable items.
++
++=back
++
++=back
++
++=head1 EXAMPLE
++
++The following example prints the ICMPv6 type, code, and checksum 
++fields.
++
++  #!/usr/bin/perl -w
++
++  use strict;
++  use Net::PcapUtils;
++  use NetPacket::Ethernet qw(:strip);
++  use NetPacket::IPv6 qw(:strip);
++  use NetPacket::ICMPv6;
++
++  sub process_pkt {
++      my ($user, $hdr, $pkt) = @_;
++
++      my $ip6_obj = NetPacket::IPv6->decode(eth_strip($pkt));
++      my $icmp6_obj = NetPacket::ICMPv6->decode(ipv6_strip($ip6_obj));
++
++      print("Type: $icmp6_obj->{type}\n");
++      print("Code: $icmp6_obj->{code}\n");
++      print("Checksum: $icmp6_obj->{cksum}\n\n");
++  }
++
++  Net::PcapUtils::loop(\&process_pkt, FILTER => 'icmp6');
++
++=head1 TODO
++
++Nothing at this time.
++
++=head1 COPYRIGHT
++
++Copyright (c) 2003, 2004 Joel Knight <enabled@myrealbox.com>
++
++Permission to use, copy, modify, and distribute this software for any
++purpose with or without fee is hereby granted, provided that the above
++copyright notice and this permission notice appear in all copies.
++
++THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
++WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
++MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
++ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
++WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
++ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
++OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
++
++=head1 AUTHOR
++
++Joel Knight E<lt>enabled@myrealbox.comE<gt>
++
++=cut

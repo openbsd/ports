@@ -1,0 +1,60 @@
+$OpenBSD: patch-NetPacket_UDP_pm,v 1.1.1.1 2005/05/24 06:16:53 msf Exp $
+--- NetPacket/UDP.pm.orig	Wed Jan 29 13:25:03 2003
++++ NetPacket/UDP.pm	Thu Apr 14 10:10:49 2005
+@@ -201,10 +201,10 @@ instance data.  This method will quite h
+ It is the responsibility of the programmer to ensure valid packet data
+ is passed to this method.
+ 
+-=item C<NetPacket::UDP-E<gt>encode(param =E<gt> value)>
++=item C<NetPacket::UDP-E<gt>encode($ip_obj)>
+ 
+ Return a UDP packet encoded with the instance data specified. Needs parts 
+-of the ip header contained in $ip_obj, the IP object, in order to calculate 
++of the IP header contained in $ip_obj, the IP object, in order to calculate 
+ the UDP checksum. The length field will also be set automatically.
+ 
+ =back
+@@ -264,9 +264,7 @@ none
+ 
+ =item exportable
+ 
+-igmp_strip IGMP_VERSION_RFC998 IGMP_VERSION_RFC1112
+-IGMP_MSG_HOST_MQUERY IGMP_MSG_HOST_MREPORT IGMP_IP_NO_HOSTS
+-IGMP_IP_ALL_HOSTS IGMP_IP_ALL_ROUTERS
++udp_strip
+ 
+ =item tags
+ 
+@@ -276,20 +274,8 @@ The following tags group together relate
+ 
+ =item C<:strip>
+ 
+-Import the strip function C<igmp_strip>.
++Import the strip function C<udp_strip>.
+ 
+-=item C<:versions>
+-
+-IGMP_VERSION_RFC998 IGMP_VERSION_RFC1112
+-
+-=item C<:msgtypes>
+-
+-IGMP_HOST_MQUERY IGMP_HOST_MREPORT
+-
+-=item C<:group_addrs>
+-
+-IGMP_IP_NO_HOSTS IGMP_IP_ALL_HOSTS IGMP_IP_ALL_ROUTERS
+-
+ =item C<:ALL>
+ 
+ All the above exportable items.
+@@ -300,8 +286,8 @@ All the above exportable items.
+ 
+ =head1 EXAMPLE
+ 
+-The following script dumps IGMP the contents of IGMP frames to
+-standard output.
++The following example prints the source IP address and port, the
++destination IP address and port, and the UDP packet length:
+ 
+   #!/usr/bin/perl -w
+ 

@@ -1,0 +1,48 @@
+$OpenBSD: patch-NetPacket_IP_pm,v 1.1.1.1 2005/05/24 06:16:53 msf Exp $
+--- NetPacket/IP.pm.orig	Wed Jan 29 13:25:03 2003
++++ NetPacket/IP.pm	Thu Apr 14 10:10:49 2005
+@@ -61,7 +61,7 @@ BEGIN {
+ 		    IP_PROTO_IP IP_PROTO_ICMP IP_PROTO_IGMP
+ 		    IP_PROTO_IPIP IP_PROTO_TCP IP_PROTO_UDP
+ 		    IP_VERSION_IPv4
+-		    IP_FLAG_MOREFRAGS IP_FLAG_DONTFRAG IP_FLAG_CONGESTION
++		    IP_FLAG_MOREFRAGS IP_FLAG_DONTFRAG IP_FLAG_RESERVED
+                     IP_MAXPACKET
+     );
+ 
+@@ -73,7 +73,7 @@ BEGIN {
+ 		       IP_PROTO_TCP IP_PROTO_UDP)],
+     versions    => [qw(IP_VERSION_IPv4)],
+     strip       => [qw(ip_strip)],
+-    flags       => [qw(IP_FLAG_MOREFRAGS IP_FLAG_DONTFRAG IP_FLAG_CONGESTION)],
++    flags       => [qw(IP_FLAG_MOREFRAGS IP_FLAG_DONTFRAG IP_FLAG_RESERVED)],
+ );
+ 
+ }
+@@ -101,7 +101,7 @@ use constant IP_VERSION_IPv4 => 4;     #
+ 
+ use constant IP_FLAG_MOREFRAGS  => 1;     # More fragments coming
+ use constant IP_FLAG_DONTFRAG   => 2;     # Don't fragment me
+-use constant IP_FLAG_CONGESTION => 4;     # Congestion present
++use constant IP_FLAG_RESERVED   => 4;     # Reserved
+ 
+ # Maximum IP Packet size
+ use constant IP_MAXPACKET => 65535;
+@@ -252,7 +252,7 @@ packets.
+   use NetPacket::IP;
+ 
+   $ip_obj = NetPacket::IP->decode($raw_pkt);
+-  $ip_pkt = NetPacket::IP->encode($ip_obj);
++  $ip_pkt = NetPacket::IP->encode();
+   $ip_data = NetPacket::IP::strip($raw_pkt);
+ 
+ =head1 DESCRIPTION
+@@ -275,7 +275,7 @@ is passed to this method.
+ 
+ Return an IP packet encoded with the instance data specified. This
+ will infer the total length of the packet automatically from the 
+-payload lenth and also adjust the checksum.
++payload length and also adjust the checksum.
+ 
+ =back
+ 

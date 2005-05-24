@@ -1,0 +1,90 @@
+$OpenBSD: patch-NetPacket_ICMP_pm,v 1.1.1.1 2005/05/24 06:16:53 msf Exp $
+--- NetPacket/ICMP.pm.orig	Wed Jan 29 13:25:03 2003
++++ NetPacket/ICMP.pm	Thu Apr 14 10:10:49 2005
+@@ -62,7 +62,7 @@ BEGIN {
+                     ICMP_REDIRECT ICMP_ECHO ICMP_ROUTERADVERT
+                     ICMP_ROUTERSOLICIT ICMP_TIMXCEED ICMP_PARAMPROB
+                     ICMP_TSTAMP ICMP_TSTAMPREPLY ICMP_IREQ ICMP_IREQREPLY
+-                    ICMP_MASREQ ICMP_MASKREPLY
++                    ICMP_MASKREQ ICMP_MASKREPLY
+     );
+ 
+ # Tags:
+@@ -73,7 +73,7 @@ BEGIN {
+                        ICMP_REDIRECT ICMP_ECHO ICMP_ROUTERADVERT 
+                        ICMP_ROUTERSOLICIT ICMP_TIMXCEED ICMP_PARAMPROB
+                        ICMP_TSTAMP ICMP_TSTAMPREPLY ICMP_IREQ ICMP_IREQREPLY
+-                       ICMP_MASREQ ICMP_MASKREPLY)],
++                       ICMP_MASKREQ ICMP_MASKREPLY)],
+     strip       => [qw(icmp_strip)],
+ );
+ 
+@@ -266,12 +266,12 @@ none
+ 
+ =item exportable
+ 
+-Icmp message types: 
++ICMP message types: 
+     ICMP_ECHOREPLY ICMP_UNREACH ICMP_SOURCEQUENCH
+     ICMP_REDIRECT ICMP_ECHO ICMP_ROUTERADVERT
+     ICMP_ROUTERSOLICIT ICMP_TIMXCEED ICMP_PARAMPROB
+-    ICMP_TSTAMP ICMP_TSTAMPREPLY ICMP_IREQ ICMP_IREQREPLY
+-    ICMP_MASREQ ICMP_MASKREPLY
++    ICMP_TSTAMP ICMP_TSTAMPREPLY ICMP_IREQ 
++    ICMP_IREQREPLY ICMP_MASKREQ ICMP_MASKREPLY
+ 
+ 
+ =item tags
+@@ -280,6 +280,14 @@ The following tags group together relate
+ 
+ =over
+ 
++=item C<:types>
++
++  ICMP_ECHOREPLY ICMP_UNREACH ICMP_SOURCEQUENCH
++  ICMP_REDIRECT ICMP_ECHO ICMP_ROUTERADVERT
++  ICMP_ROUTERSOLICIT ICMP_TIMXCEED ICMP_PARAMPROB
++  ICMP_TSTAMP ICMP_TSTAMPREPLY ICMP_IREQ 
++  ICMP_IREQREPLY ICMP_MASKREQ ICMP_MASKREPLY
++
+ =item C<:strip>
+ 
+ Import the strip function C<icmp_strip>.
+@@ -294,13 +302,35 @@ All the above exportable items.
+ 
+ =head1 EXAMPLE
+ 
++The following example prints the ICMP type, code, and checksum 
++fields.
++
++  #!/usr/bin/perl -w
++
++  use strict;
++  use Net::PcapUtils;
++  use NetPacket::Ethernet qw(:strip);
++  use NetPacket::IP qw(:strip);
++  use NetPacket::ICMP;
++
++  sub process_pkt {
++      my ($user, $hdr, $pkt) = @_;
++
++      my $ip_obj = NetPacket::IP->decode(eth_strip($pkt));
++      my $icmp_obj = NetPacket::ICMP->decode(ip_strip($ip_obj));
++
++      print("Type: $icmp_obj->{type}\n");
++      print("Code: $icmp_obj->{code}\n");
++      print("Checksum: $icmp_obj->{cksum}\n\n");
++  }
++
++  Net::PcapUtils::loop(\&process_pkt, FILTER => 'icmp');
++
+ =head1 TODO
+ 
+ =over
+ 
+ =item Create constants
+-
+-=item Write example
+ 
+ =back
+ 

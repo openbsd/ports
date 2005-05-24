@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/24 06:16:53 msf Exp $
+${P5SITE}/NetPacket/
+${P5SITE}/NetPacket.pm
+${P5SITE}/NetPacket/ARP.pm
+${P5SITE}/NetPacket/Ethernet.pm
+${P5SITE}/NetPacket/ICMP.pm
+${P5SITE}/NetPacket/ICMPv6.pm
+${P5SITE}/NetPacket/IGMP.pm
+${P5SITE}/NetPacket/IP.pm
+${P5SITE}/NetPacket/IPv6.pm
+${P5SITE}/NetPacket/LACP.pm
+${P5SITE}/NetPacket/LLC.pm
+${P5SITE}/NetPacket/PFLog.pm
+${P5SITE}/NetPacket/SpanningTree.pm
+${P5SITE}/NetPacket/TCP.pm
+${P5SITE}/NetPacket/UDP.pm
+@man man/man3p/NetPacket.3p
+@man man/man3p/NetPacket::ARP.3p
+@man man/man3p/NetPacket::Ethernet.3p
+@man man/man3p/NetPacket::ICMP.3p
+@man man/man3p/NetPacket::ICMPv6.3p
+@man man/man3p/NetPacket::IGMP.3p
+@man man/man3p/NetPacket::IP.3p
+@man man/man3p/NetPacket::IPv6.3p
+@man man/man3p/NetPacket::LACP.3p
+@man man/man3p/NetPacket::LLC.3p
+@man man/man3p/NetPacket::PFLog.3p
+@man man/man3p/NetPacket::SpanningTree.3p
+@man man/man3p/NetPacket::TCP.3p
+@man man/man3p/NetPacket::UDP.3p

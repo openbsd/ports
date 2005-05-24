@@ -1,0 +1,363 @@
+$OpenBSD: patch-NetPacket_PFLog_pm,v 1.1.1.1 2005/05/24 06:16:53 msf Exp $
+--- NetPacket/PFLog.pm.orig	Thu Apr 14 10:10:49 2005
++++ NetPacket/PFLog.pm	Thu Apr 14 10:10:49 2005
+@@ -0,0 +1,359 @@
++#
++# PFLog.pm
++# NetPacket::PFLog
++#
++# Decodes OpenBSD's pflog(4) packets
++#
++# Copyright (c) 2003-2005 Joel Knight <enabled@myrealbox.com>
++#
++# Permission to use, copy, modify, and distribute this software for any
++# purpose with or without fee is hereby granted, provided that the above
++# copyright notice and this permission notice appear in all copies.
++#
++# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
++# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
++# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
++# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
++# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
++# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
++# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
++#
++#
++# $jwk: PFLog.pm,v 1.24 2005/01/03 23:30:29 jwk Exp $
++
++package NetPacket::PFLog;
++
++use strict;
++use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
++use NetPacket;
++use Socket;
++
++my $myclass;
++BEGIN {
++	$myclass = __PACKAGE__;
++	$VERSION = "0.01";
++}
++sub Version () { "$myclass v$VERSION" }
++
++BEGIN {
++	@ISA = qw(Exporter NetPacket);
++
++	@EXPORT = qw(
++	);
++
++	@EXPORT_OK = qw(
++		pflog_strip
++		DLT_PFLOG
++		PFLOG_HDRLEN
++	);
++
++	%EXPORT_TAGS = (
++		ALL         => [@EXPORT, @EXPORT_OK],
++		strip       => [qw(pflog_strip)],
++		DLT			=> [qw(DLT_PFLOG)],
++	);
++}
++
++#  data link type for pflog in the pcap dump
++use constant DLT_PFLOG => 117;
++
++#  maximum size of the header (in bytes) in the pcap dump
++use constant PFLOG_HDRLEN => 48;
++
++#  packet filter constants (src/sys/net/pfvar.h)
++my %PF_DIR = (
++	1 => "in",
++	2 => "out"
++);
++my %PF_ACTION = (
++	0 => "pass",
++	1 => "block",
++	2 => "scrub"
++);
++my %PF_REASON = (
++	0 => "match",
++	1 => "bad-offset",
++	2 => "fragment",
++	3 => "short",
++	4 => "normalize",
++	5 => "memory",
++	6 => "bad-timestamp"
++);
++
++#  decode(packet, parent_packet, additional_data)
++#  create a new NetPacket::PFLog object. decode the pflog header
++#  from 'packet' and assign each field to the object.
++#  return the NetPacket::PFLog object.
++sub decode {
++	my $class = shift;
++	my ($pkt, $parent, @rest) = @_;
++	my $self = {};
++
++	$self->{_parent} = $parent;
++	$self->{_frame} = $pkt;
++
++	# based on pfloghdr struct in:
++	# [OpenBSD]/src/sys/net/if_pflog.h v1.10
++	if (defined $pkt) {
++		my ($len, $af, $action, $reason, $ifname, $ruleset, $rulenr, 
++			$subrulenr, $dir, $pad, $data) =
++			unpack("CCCCa16a16NNCa3a*", $pkt);
++	
++		#  strip trailing NULs
++		$ifname =~ s/\W//g;
++		$ruleset =~ s/\W//g;
++
++		$self->{len} = $len;
++		$self->{af} = $af;
++		$self->{action} = $PF_ACTION{$action};
++		$self->{reason} = $PF_REASON{$reason};
++		$self->{ifname} = $ifname;
++		$self->{ruleset} = $ruleset;
++		$self->{rulenr} = $rulenr;
++		$self->{subrulenr} = $subrulenr;
++		$self->{dir} = $PF_DIR{$dir};
++		$self->{pad} = $pad;
++
++		$self->{data} = $data;
++	}
++
++	bless ($self, $class);
++	return $self;
++}
++
++# make an alias
++undef &pflog_strip;
++*pflog_strip = \&strip;
++
++# strip header from packet and return the data contained in it
++sub strip {
++	my ($pkt, @rest) = @_;
++
++	my $pflog_obj = NetPacket::PFLog->decode($pkt);
++	return $pflog_obj->{data};
++}   
++
++#  encode(ip_pkt)
++#  re-encapsulate an already decapsulated pflog packet
++sub encode {
++	my $self = shift;
++	my $ip = $_[0];
++
++	#  convert these items back into the integers from whence they came
++	my %rev_DIR = reverse %PF_DIR;
++	my %rev_ACTION = reverse %PF_ACTION;
++	my %rev_REASON = reverse %PF_REASON;
++
++	my $dir = $rev_DIR{$self->{dir}};
++	my $action = $rev_ACTION{$self->{action}};
++	my $reason = $rev_REASON{$self->{reason}};
++
++	# based on pfloghdr struct in:
++	# [OpenBSD]/src/sys/net/if_pflog.h v1.10
++	my $packet = pack("CCCCa16a16NNCa3a*", 
++		$self->{len}. $self->{af}, $action, $reason, $self->{ifname}, 
++		$self->{ruleset}, $self->{rulenr}, $self->{subrulenr},
++		$dir, $self->{pad}, $ip);
++
++	return $packet;
++}
++
++1;
++
++__END__
++
++
++=head1 NAME
++
++C<NetPacket::PFLog> - Assembling and disassembling OpenBSD's Packet
++Filter log header.
++
++=head1 SYNOPSIS
++
++  use NetPacket::PFLog;
++
++  $pfl_obj = NetPacket::PFLog->decode($raw_pkt);
++  $pfl_pkt = NetPacket::PFLog->encode();
++  $pfl_data = NetPacket::PFLog::strip($raw_pkt);
++
++=head1 DESCRIPTION
++
++C<NetPacket::PFLog> provides a set of routines for assembling and
++disassembling the header attached to packets logged by OpenBSD's
++Packet Filter.  
++
++=head2 Methods
++
++=over
++
++=item C<NetPacket::PFLog-E<gt>decode([RAW PACKET])>
++
++Decode the raw packet data given and return an object containing
++instance data.  This method will quite happily decode garbage input. It
++is the responsibility of the programmer to ensure valid packet data is
++passed to this method.
++
++=item C<NetPacket::PFLog-E<gt>encode()>
++
++Return a PFLog packet encoded with the instance data specified.
++
++=back
++
++=head2 Functions
++
++=over
++
++=item C<NetPacket::PFLog::strip([RAW PACKET])>
++
++Return the actual packet logged by Packet Filter that the PFLog header
++is describing. This data is suitable to be used as input for other
++C<NetPacket::*> modules.
++
++This function is equivalent to creating an object using the
++C<decode()> constructor and returning the C<data> field of that
++object.
++
++=back
++
++=head2 Instance data
++
++The instance data for the C<NetPacket::PFLog> object consists of
++the following fields:
++
++=over
++
++=item len
++
++The length of the pflog header.
++
++=item af
++
++The Address Family which denotes if the packet is IPv4 or IPv6.
++
++=item action
++
++The action (block, pass, or scrub) that was taken on the packet.
++
++=item reason
++
++The reason that the action was taken.
++
++=item ifname
++
++The name of the interface the packet was passing through.
++
++=item ruleset
++
++The name of the subruleset that the matching rule is a member of. If
++the value is empty, the matching rule is in the main ruleset.
++
++=item rulenr
++
++The rule number that the packet matched.
++
++=item subrulenr
++
++The rule number in the subruleset that the packet matched. The value
++will be 2^32-1 if the packet matched in the main ruleset only.
++
++=item dir
++
++The direction the packet was travelling through the interface.
++
++=item pad
++
++Padding data.
++
++=item data
++
++The actual IPv4 or IPv6 packet that was logged by Packet Filter.
++
++=back
++
++=head2 Exports
++
++=over
++
++=item default
++
++none
++
++=item exportable
++
++Data Link Type:
++
++  DLT_PFLOG
++
++Strip function:
++
++  pflog_strip
++
++=item tags
++
++The following tags can be used to export certain items:
++
++=over
++
++=item C<:DLT>
++
++DLT_PFLOG
++
++=item C<:strip>
++
++The function C<pflog_strip>
++
++=item C<:ALL>
++
++All the above exportable items
++
++=back
++
++=back
++
++=head1 EXAMPLE
++
++The following prints the action, direction, interface name, and
++reason:
++
++  #!/usr/bin/perl -w
++
++  use strict;
++  use Net::PcapUtils;
++  use NetPacket::PFLog;
++
++  sub process_pkt {
++      my ($user, $hdr, $pkt) = @_;
++
++      my $pfl_obj = NetPacket::PFLog->decode($pkt);
++      print("$pfl_obj->{action} $pfl_obj->{dir} ");
++      print("on $pfl_obj->{ifname} ($pfl_obj->{reason})\n");
++  }
++
++  Net::PcapUtils::loop(\&process_pkt, FILTER => 'ip or ip6');
++
++=head1 TODO
++
++Nothing at this time.
++
++=head1 COPYRIGHT
++
++Copyright (c) 2003, 2004 Joel Knight <enabled@myrealbox.com>
++
++Permission to use, copy, modify, and distribute this software for any
++purpose with or without fee is hereby granted, provided that the above
++copyright notice and this permission notice appear in all copies.
++
++THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
++WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
++MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
++ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
++WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
++ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
++OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
++
++=head1 AUTHOR
++
++Joel Knight E<lt>enabled@myrealbox.comE<gt>
++
++=cut
++
