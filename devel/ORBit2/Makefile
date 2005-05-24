@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/10 20:33:58 marcm Exp $
+# $OpenBSD: Makefile,v 1.15 2005/05/24 21:38:07 marcm Exp $
 
 COMMENT=		"high-performance CORBA Object Request Broker"
 
-DISTNAME=		ORBit2-2.12.0
+DISTNAME=		ORBit2-2.12.2
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.labs.redhat.com/orbit/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -31,6 +29,7 @@ LIB_DEPENDS=		IDL-2::devel/libIDL \
 			popt::devel/popt
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
