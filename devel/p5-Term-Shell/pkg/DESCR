@@ -1,0 +1,7 @@
+Term::Shell makes it joyfully easy to write command-line interfaces in
+Perl. All the boring details like command-line parsing and terminal
+handling are done for you.
+For implementing a certain command ``foo'', you just have to
+define subroutines run_foo, help_foo, smry_foo, comp_foo, each of them
+doing the command itself, a help message, a short summary and
+command completion.
