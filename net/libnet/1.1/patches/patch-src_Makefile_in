@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2005/05/23 23:50:40 msf Exp $
---- src/Makefile.in.orig	Thu Mar 11 11:50:20 2004
-+++ src/Makefile.in	Sat Oct 23 13:21:53 2004
+$OpenBSD: patch-src_Makefile_in,v 1.2 2005/05/24 06:54:20 mjc Exp $
+--- src/Makefile.in.orig	Thu Mar 11 10:50:20 2004
++++ src/Makefile.in	Mon May 23 23:36:28 2005
 @@ -43,10 +43,10 @@ datadir = @datadir@
  sysconfdir = @sysconfdir@
  sharedstatedir = @sharedstatedir@
@@ -30,7 +30,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1 2005/05/23 23:50:40 msf Exp $
  	libnet_raw.$(OBJEXT) libnet_resolve.$(OBJEXT) \
  	libnet_version.$(OBJEXT) libnet_write.$(OBJEXT)
  libnet_a_OBJECTS = $(am_libnet_a_OBJECTS)
-+SHOBJECTS=	$(am_libnet_a_OBJECTS:S/.o/.so/)
++SHOBJECTS=	$(am_libnet_a_OBJECTS:S/.o/.so/) $(libnet_a_LIBADD:S/.o/.so/)
 +PICFLAG= -fPIC
  
  DEFS = @DEFS@
