@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.34 2005/04/17 21:24:25 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2005/05/24 19:49:28 naddy Exp $
 
 COMMENT=		"simple paint program"
 
-VERSION=		2.6.2
-DISTNAME=		xpaint-${VERSION}
+DISTNAME=		xpaint-2.7.7
 CATEGORIES=		graphics x11
 
-HOMEPAGE=		http://home.worldonline.dk/torsten/xpaint/
+HOMEPAGE=		http://sf-xpaint.sourceforge.net/
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sf-xpaint/}
+EXTRACT_SUFX=		.tar.bz2
 
-# License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -19,12 +18,11 @@ WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c m z
 
 FAKE=			lib
 LIB_DEPENDS=		jpeg.62::graphics/jpeg \
-			tiff.35::graphics/tiff \
-			png.2::graphics/png
+			tiff.36::graphics/tiff \
+			png.4::graphics/png
 
 CONFIGURE_STYLE= 	imake
-
-WRKDIST=		${WRKDIR}/xpaint
+ALL_TARGET=		xaw
 
 NO_REGRESS=		Yes
 
