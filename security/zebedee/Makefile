@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/27 13:28:36 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/05/24 04:41:15 mjc Exp $
 
 COMMENT=	"portable, encrypted, compressed tunnel"
 
@@ -28,10 +28,11 @@ DEFINES_openbsd= -DHAVE_PTHREADS -DBUGGY_FORK_WITH_THREADS
 OSLIBS_openbsd=	-pthread
 
 .if ${FLAVOR:L:Mudp_spoof}
-LIB_DEPENDS+=	net::net/libnet
-LIBNET_DEFS=	`libnet-config --defines`
-DEFINES_openbsd+= -DUSE_UDP_SPOOFING ${LIBNET_DEFS}
-LIBNET_LIBS=	`libnet-config --libs`
+LIB_DEPENDS+=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
+LIBNET_DEFS=	`libnet-config-1.0 --defines`
+LIBNET_INCS=	`libnet-config-1.0 --cflags`
+DEFINES_openbsd+= -DUSE_UDP_SPOOFING ${LIBNET_DEFS} ${LIBNET_INCS}
+LIBNET_LIBS=	`libnet-config-1.0 --libs`
 OSLIBS_openbsd+= ${LIBNET_LIBS}
 .endif
 
