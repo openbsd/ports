@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.324 2005/05/24 01:04:26 msf Exp $
+# $OpenBSD: Makefile,v 1.325 2005/05/24 21:47:15 sturm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -260,6 +260,7 @@
      SUBDIR += p5-Term-ReadLine-Gnu
      SUBDIR += p5-Term-Screen
      SUBDIR += p5-Term-ScreenColor
+     SUBDIR += p5-Term-Shell
      SUBDIR += p5-Test-Builder-Tester
      SUBDIR += p5-Test-Class
      SUBDIR += p5-Test-Differences
