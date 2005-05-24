@@ -1,0 +1,8 @@
+POE is a framework for cooperative, event driven multitasking in Perl.
+Other languages have similar frameworks. Python has Twisted. TCL has
+"the event loop". 
+
+POE originally was developed as the core of a persistent object server and 
+runtime environment. It has evolved into a general purpose multitasking and 
+networking framework, encompassing and providing a consistent interface to 
+other event loops such as Event and the Tk and Gtk toolkits.

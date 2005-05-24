@@ -1,0 +1,124 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/24 01:03:13 msf Exp $
+${P5SITE}/POE/
+${P5SITE}/POE.pm
+${P5SITE}/POE/API/
+${P5SITE}/POE/API/Ctl.pm
+${P5SITE}/POE/API/ResLoader.pm
+${P5SITE}/POE/Component/
+${P5SITE}/POE/Component.pm
+${P5SITE}/POE/Component/Client/
+${P5SITE}/POE/Component/Client/TCP.pm
+${P5SITE}/POE/Component/Server/
+${P5SITE}/POE/Component/Server/TCP.pm
+${P5SITE}/POE/Driver/
+${P5SITE}/POE/Driver.pm
+${P5SITE}/POE/Driver/SysRW.pm
+${P5SITE}/POE/Filter/
+${P5SITE}/POE/Filter.pm
+${P5SITE}/POE/Filter/Block.pm
+${P5SITE}/POE/Filter/Grep.pm
+${P5SITE}/POE/Filter/HTTPD.pm
+${P5SITE}/POE/Filter/Line.pm
+${P5SITE}/POE/Filter/Map.pm
+${P5SITE}/POE/Filter/RecordBlock.pm
+${P5SITE}/POE/Filter/Reference.pm
+${P5SITE}/POE/Filter/Stackable.pm
+${P5SITE}/POE/Filter/Stream.pm
+${P5SITE}/POE/Kernel.pm
+${P5SITE}/POE/Loop/
+${P5SITE}/POE/Loop.pm
+${P5SITE}/POE/Loop/Event.pm
+${P5SITE}/POE/Loop/Gtk.pm
+${P5SITE}/POE/Loop/IO_Poll.pm
+${P5SITE}/POE/Loop/PerlSignals.pm
+${P5SITE}/POE/Loop/Select.pm
+${P5SITE}/POE/Loop/Tk.pm
+${P5SITE}/POE/Loop/TkActiveState.pm
+${P5SITE}/POE/Loop/TkCommon.pm
+${P5SITE}/POE/Macro/
+${P5SITE}/POE/Macro/UseBytes.pm
+${P5SITE}/POE/NFA.pm
+${P5SITE}/POE/Pipe/
+${P5SITE}/POE/Pipe.pm
+${P5SITE}/POE/Pipe/OneWay.pm
+${P5SITE}/POE/Pipe/TwoWay.pm
+${P5SITE}/POE/Preprocessor.pm
+${P5SITE}/POE/Queue/
+${P5SITE}/POE/Queue.pm
+${P5SITE}/POE/Queue/Array.pm
+${P5SITE}/POE/Resource/
+${P5SITE}/POE/Resource.pm
+${P5SITE}/POE/Resource/Aliases.pm
+${P5SITE}/POE/Resource/Controls.pm
+${P5SITE}/POE/Resource/Events.pm
+${P5SITE}/POE/Resource/Extrefs.pm
+${P5SITE}/POE/Resource/FileHandles.pm
+${P5SITE}/POE/Resource/SIDs.pm
+${P5SITE}/POE/Resource/Sessions.pm
+${P5SITE}/POE/Resource/Signals.pm
+${P5SITE}/POE/Resource/Statistics.pm
+${P5SITE}/POE/Resources.pm
+${P5SITE}/POE/Session.pm
+${P5SITE}/POE/Wheel/
+${P5SITE}/POE/Wheel.pm
+${P5SITE}/POE/Wheel/Curses.pm
+${P5SITE}/POE/Wheel/FollowTail.pm
+${P5SITE}/POE/Wheel/ListenAccept.pm
+${P5SITE}/POE/Wheel/ReadLine.pm
+${P5SITE}/POE/Wheel/ReadWrite.pm
+${P5SITE}/POE/Wheel/Run.pm
+${P5SITE}/POE/Wheel/SocketFactory.pm
+@man man/man3p/POE.3p
+@man man/man3p/POE::API::Ctl.3p
+@man man/man3p/POE::API::ResLoader.3p
+@man man/man3p/POE::Component.3p
+@man man/man3p/POE::Component::Client::TCP.3p
+@man man/man3p/POE::Component::Server::TCP.3p
+@man man/man3p/POE::Driver.3p
+@man man/man3p/POE::Driver::SysRW.3p
+@man man/man3p/POE::Filter.3p
+@man man/man3p/POE::Filter::Block.3p
+@man man/man3p/POE::Filter::Grep.3p
+@man man/man3p/POE::Filter::HTTPD.3p
+@man man/man3p/POE::Filter::Line.3p
+@man man/man3p/POE::Filter::Map.3p
+@man man/man3p/POE::Filter::RecordBlock.3p
+@man man/man3p/POE::Filter::Reference.3p
+@man man/man3p/POE::Filter::Stackable.3p
+@man man/man3p/POE::Filter::Stream.3p
+@man man/man3p/POE::Kernel.3p
+@man man/man3p/POE::Loop.3p
+@man man/man3p/POE::Loop::Event.3p
+@man man/man3p/POE::Loop::Gtk.3p
+@man man/man3p/POE::Loop::IO_Poll.3p
+@man man/man3p/POE::Loop::PerlSignals.3p
+@man man/man3p/POE::Loop::Select.3p
+@man man/man3p/POE::Loop::Tk.3p
+@man man/man3p/POE::Loop::TkActiveState.3p
+@man man/man3p/POE::Loop::TkCommon.3p
+@man man/man3p/POE::NFA.3p
+@man man/man3p/POE::Pipe.3p
+@man man/man3p/POE::Pipe::OneWay.3p
+@man man/man3p/POE::Pipe::TwoWay.3p
+@man man/man3p/POE::Preprocessor.3p
+@man man/man3p/POE::Queue.3p
+@man man/man3p/POE::Queue::Array.3p
+@man man/man3p/POE::Resource.3p
+@man man/man3p/POE::Resource::Aliases.3p
+@man man/man3p/POE::Resource::Controls.3p
+@man man/man3p/POE::Resource::Events.3p
+@man man/man3p/POE::Resource::Extrefs.3p
+@man man/man3p/POE::Resource::FileHandles.3p
+@man man/man3p/POE::Resource::SIDs.3p
+@man man/man3p/POE::Resource::Sessions.3p
+@man man/man3p/POE::Resource::Signals.3p
+@man man/man3p/POE::Resource::Statistics.3p
+@man man/man3p/POE::Session.3p
+@man man/man3p/POE::Wheel.3p
+@man man/man3p/POE::Wheel::Curses.3p
+@man man/man3p/POE::Wheel::FollowTail.3p
+@man man/man3p/POE::Wheel::ListenAccept.3p
+@man man/man3p/POE::Wheel::ReadLine.3p
+@man man/man3p/POE::Wheel::ReadWrite.3p
+@man man/man3p/POE::Wheel::Run.3p
+@man man/man3p/POE::Wheel::SocketFactory.3p
