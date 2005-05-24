@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-a52,v 1.1.1.1 2004/12/22 06:09:18 marcm Exp $
+@comment $OpenBSD: PLIST-a52,v 1.2 2005/05/24 21:33:33 marcm Exp $
+lib/gstreamer-0.8/libgsta52dec.a
 lib/gstreamer-0.8/libgsta52dec.la
 lib/gstreamer-0.8/libgsta52dec.so
 @exec %D/bin/gst-register > /dev/null 2>&1

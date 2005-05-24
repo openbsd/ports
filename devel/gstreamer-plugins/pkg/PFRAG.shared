@@ -1,9 +1,10 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/12/22 06:09:18 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/05/24 21:33:33 marcm Exp $
 lib/gstreamer-0.8/libgstac3parse.so
 lib/gstreamer-0.8/libgstadder.so
 lib/gstreamer-0.8/libgstalaw.so
 lib/gstreamer-0.8/libgstalpha.so
 lib/gstreamer-0.8/libgstalphacolor.so
+lib/gstreamer-0.8/libgstapetag.so
 lib/gstreamer-0.8/libgstasf.so
 lib/gstreamer-0.8/libgstaudio.so
 lib/gstreamer-0.8/libgstaudioconvert.so
@@ -11,6 +12,7 @@ lib/gstreamer-0.8/libgstaudiofilter.so
 lib/gstreamer-0.8/libgstaudiorate.so
 lib/gstreamer-0.8/libgstaudioscale.so
 lib/gstreamer-0.8/libgstauparse.so
+lib/gstreamer-0.8/libgstautodetect.so
 lib/gstreamer-0.8/libgstavi.so
 lib/gstreamer-0.8/libgstcdplayer.so
 lib/gstreamer-0.8/libgstcdxaparse.so
@@ -20,6 +22,7 @@ lib/gstreamer-0.8/libgstcutter.so
 lib/gstreamer-0.8/libgstdebug.so
 lib/gstreamer-0.8/libgstdecodebin.so
 lib/gstreamer-0.8/libgstdeinterlace.so
+lib/gstreamer-0.8/libgstdvdlpcmdec.so
 lib/gstreamer-0.8/libgstefence.so
 lib/gstreamer-0.8/libgsteffectv.so
 lib/gstreamer-0.8/libgstequalizer.so
@@ -28,6 +31,7 @@ lib/gstreamer-0.8/libgstffmpegcolorspace.so
 lib/gstreamer-0.8/libgstfilter.so
 lib/gstreamer-0.8/libgstflxdec.so
 lib/gstreamer-0.8/libgstgamma.so
+lib/gstreamer-0.8/libgstgconfelements.so
 lib/gstreamer-0.8/libgstgdkpixbuf.so
 lib/gstreamer-0.8/libgstglimagesink.so
 lib/gstreamer-0.8/libgstgoom.so
@@ -37,6 +41,7 @@ lib/gstreamer-0.8/libgstlevel.so
 lib/gstreamer-0.8/libgstmatroska.so
 lib/gstreamer-0.8/libgstmedian.so
 lib/gstreamer-0.8/libgstmixmatrix.so
+lib/gstreamer-0.8/libgstmodplug.so
 lib/gstreamer-0.8/libgstmonoscope.so
 lib/gstreamer-0.8/libgstmp1videoparse.so
 lib/gstreamer-0.8/libgstmpeg1systemencode.so
@@ -53,8 +58,10 @@ lib/gstreamer-0.8/libgstoverlay.so
 lib/gstreamer-0.8/libgstpassthrough.so
 lib/gstreamer-0.8/libgstplaybin.so
 lib/gstreamer-0.8/libgstplayondemand.so
+lib/gstreamer-0.8/libgstpuzzle.so
 lib/gstreamer-0.8/libgstqtdemux.so
 lib/gstreamer-0.8/libgstresample.so
+lib/gstreamer-0.8/libgstrfbsrc.so
 lib/gstreamer-0.8/libgstriff.so
 lib/gstreamer-0.8/libgstrmdemux.so
 lib/gstreamer-0.8/libgstrtjpeg.so
@@ -67,6 +74,7 @@ lib/gstreamer-0.8/libgstsmpte.so
 lib/gstreamer-0.8/libgstspectrum.so
 lib/gstreamer-0.8/libgstspeed.so
 lib/gstreamer-0.8/libgststereo.so
+lib/gstreamer-0.8/libgstsubparse.so
 lib/gstreamer-0.8/libgstsunaudio.so
 lib/gstreamer-0.8/libgstswitch.so
 lib/gstreamer-0.8/libgstsynaesthesia.so
@@ -74,6 +82,7 @@ lib/gstreamer-0.8/libgsttagedit.so
 lib/gstreamer-0.8/libgsttcp.so
 lib/gstreamer-0.8/libgsttextoverlay.so
 lib/gstreamer-0.8/libgsttimeoverlay.so
+lib/gstreamer-0.8/libgsttta.so
 lib/gstreamer-0.8/libgsttypefindfunctions.so
 lib/gstreamer-0.8/libgstudp.so
 lib/gstreamer-0.8/libgstvbidec.so

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-audiofile,v 1.1.1.1 2004/12/22 06:09:18 marcm Exp $
+@comment $OpenBSD: PLIST-audiofile,v 1.2 2005/05/24 21:33:33 marcm Exp $
+lib/gstreamer-0.8/libgstaudiofile.a
 lib/gstreamer-0.8/libgstaudiofile.la
 lib/gstreamer-0.8/libgstaudiofile.so
 @exec %D/bin/gst-register > /dev/null 2>&1

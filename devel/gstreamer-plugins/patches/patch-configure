@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2004/12/22 06:09:18 marcm Exp $
---- configure.orig	Thu Nov 25 07:42:54 2004
-+++ configure	Mon Dec  6 21:47:32 2004
-@@ -8296,7 +8296,7 @@ nto-qnx*)
+$OpenBSD: patch-configure,v 1.2 2005/05/24 21:33:33 marcm Exp $
+--- configure.orig	Mon Mar  7 08:41:29 2005
++++ configure	Tue Apr 12 20:38:20 2005
+@@ -8302,7 +8302,7 @@ nto-qnx*)
  openbsd*)
    version_type=sunos
    need_lib_prefix=no
@@ -10,7 +10,16 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/12/22 06:09:18 marcm Exp $
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
-@@ -34518,7 +34518,7 @@ fi
+@@ -27626,7 +27626,7 @@ DEFAULT_AUDIOSRC="osssrc"
+ DEFAULT_VIDEOSRC="v4lsrc"
+ DEFAULT_VISUALIZER="goom"
+ case "$host" in
+-  *-sun-* | *pc-solaris* )
++  *-sun-* | *pc-solaris* | *-*-openbsd* )
+     DEFAULT_AUDIOSINK="sunaudiosink"
+     DEFAULT_VIDEOSINK="ximagesink"
+     DEFAULT_AUDIOSRC="sunaudiosrc"
+@@ -35332,7 +35332,7 @@ fi
  echo "$as_me:$LINENO: result: $ac_cv_lib_Xv_pic_XvQueryExtension" >&5
  echo "${ECHO_T}$ac_cv_lib_Xv_pic_XvQueryExtension" >&6
  if test $ac_cv_lib_Xv_pic_XvQueryExtension = yes; then
