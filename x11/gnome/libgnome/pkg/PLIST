@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/12/10 20:36:44 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2005/05/24 21:57:26 marcm Exp $
 bin/gnome-open
 include/libgnome-2.0/
 include/libgnome-2.0/libgnome/
@@ -191,6 +191,9 @@ share/locale/vi/LC_MESSAGES/libgnome-2.0.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/libgnome-2.0.mo
+share/locale/xh/
+share/locale/xh/LC_MESSAGES/
+share/locale/xh/LC_MESSAGES/libgnome-2.0.mo
 share/locale/yi/
 share/locale/yi/LC_MESSAGES/
 share/locale/yi/LC_MESSAGES/libgnome-2.0.mo

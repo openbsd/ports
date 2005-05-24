@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2005/02/22 15:35:55 alek Exp $
+# $OpenBSD: Makefile,v 1.12 2005/05/24 21:57:26 marcm Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
-DISTNAME=		libgnome-2.8.0
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		libgnome-2.10.0
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +17,7 @@ WANTLIB=		ORBit-2 ORBitCosNaming-2 bonobo-2 bonobo-activation c \
 			gobject-2.0.0.0 gthread-2.0.0.0 m popt pthread ssl \
 			xml2 z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnome/2.8/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnome/2.10/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
