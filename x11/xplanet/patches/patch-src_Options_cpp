@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Options_cpp,v 1.1.1.1 2005/05/24 19:15:53 robert Exp $
+--- src/Options.cpp.orig	Wed Apr 13 13:46:38 2005
++++ src/Options.cpp	Wed Apr 13 13:47:05 2005
+@@ -100,7 +100,7 @@
+     oX_(0),
+     oY_(0),
+     oZ_(0),
+-    pango_(false),
++    pango_(true),
+     pathRelativeTo_(SUN),
+     pathRelativeToID_(-1),
+     post_command_(""),
