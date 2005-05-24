@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/10 20:33:59 marcm Exp $
+# $OpenBSD: Makefile,v 1.16 2005/05/24 21:39:04 marcm Exp $
 
 COMMENT=		"IDL parsing library"
 
-DISTNAME=		libIDL-0.8.4
+DISTNAME=		libIDL-0.8.5
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
