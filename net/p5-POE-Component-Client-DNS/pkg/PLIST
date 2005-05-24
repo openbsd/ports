@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/24 16:46:25 msf Exp $
+${P5SITE}/POE/
+${P5SITE}/POE/Component/
+${P5SITE}/POE/Component/Client/
+${P5SITE}/POE/Component/Client/DNS.pm
+@man man/man3p/POE::Component::Client::DNS.3p
