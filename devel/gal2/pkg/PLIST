@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/10/26 03:50:02 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/05/24 22:09:40 marcm Exp $
 include/gal-${API_VERSION}/
 include/gal-${API_VERSION}/gal/
 include/gal-${API_VERSION}/gal/a11y/
@@ -8,6 +8,7 @@ include/gal-${API_VERSION}/gal/a11y/e-table/gal-a11y-e-cell-registry.h
 include/gal-${API_VERSION}/gal/a11y/e-table/gal-a11y-e-cell-text.h
 include/gal-${API_VERSION}/gal/a11y/e-table/gal-a11y-e-cell-toggle.h
 include/gal-${API_VERSION}/gal/a11y/e-table/gal-a11y-e-cell-tree.h
+include/gal-${API_VERSION}/gal/a11y/e-table/gal-a11y-e-cell-vbox.h
 include/gal-${API_VERSION}/gal/a11y/e-table/gal-a11y-e-cell.h
 include/gal-${API_VERSION}/gal/a11y/e-table/gal-a11y-e-table-click-to-add-factory.h
 include/gal-${API_VERSION}/gal/a11y/e-table/gal-a11y-e-table-click-to-add.h
@@ -229,6 +230,9 @@ share/locale/ca/
 share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/cs/LC_MESSAGES/gal-${API_VERSION}.mo
+share/locale/cy/
+share/locale/cy/LC_MESSAGES/
+share/locale/cy/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/da/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/de/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/el/LC_MESSAGES/gal-${API_VERSION}.mo
@@ -243,6 +247,9 @@ share/locale/et/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/eu/
 share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/gal-${API_VERSION}.mo
+share/locale/fa/
+share/locale/fa/LC_MESSAGES/
+share/locale/fa/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/fi/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/fr/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/ga/
@@ -283,6 +290,9 @@ share/locale/pt/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/pt_BR/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/ro/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/ru/LC_MESSAGES/gal-${API_VERSION}.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
+share/locale/rw/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/sk/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/sl/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/sq/
@@ -306,6 +316,9 @@ share/locale/uk/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/vi/
 share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/gal-${API_VERSION}.mo
+share/locale/xh/
+share/locale/xh/LC_MESSAGES/
+share/locale/xh/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/zh_CN/LC_MESSAGES/gal-${API_VERSION}.mo
 share/locale/zh_TW/LC_MESSAGES/gal-${API_VERSION}.mo
 %%SHARED%%
