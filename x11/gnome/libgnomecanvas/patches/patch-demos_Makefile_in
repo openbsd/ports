@@ -1,6 +1,6 @@
---- demos/Makefile.in.orig	Wed Dec  1 18:32:13 2004
-+++ demos/Makefile.in	Wed Dec  1 18:32:39 2004
-@@ -227,7 +227,7 @@
+--- demos/Makefile.in.orig	Mon Mar  7 05:35:58 2005
++++ demos/Makefile.in	Tue Apr  5 08:05:27 2005
+@@ -227,7 +227,7 @@ canvas_demo_OBJECTS = $(am_canvas_demo_O
  canvas_demo_LDADD = $(LDADD)
  canvas_demo_DEPENDENCIES = \
  	$(top_builddir)/libgnomecanvas/libgnomecanvas-2.la
