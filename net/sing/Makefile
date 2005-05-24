@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/12/16 00:31:25 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2005/05/24 00:05:14 mjc Exp $
 
 COMMENT=	"send ICMP nasty garbage"
 
@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://sourceforge.net/projects/sing/
 
-LIB_DEPENDS=	net::net/libnet
+LIB_DEPENDS=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
@@ -22,6 +22,7 @@ WANTLIB=		c pcap
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	INCLUDES="-L${LOCALBASE}/include/libnet-1.0" \
+		LDFLAGS="-L${LOCALBASE}/lib/libnet-1.0"
 
 .include <bsd.port.mk>

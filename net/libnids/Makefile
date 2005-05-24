@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/05/07 15:28:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2005/05/24 00:01:46 mjc Exp $
 
 COMMENT=	"network monitoring library with TCP/IP reassembly"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.packetfactory.net/projects/libnids/dist/
 
 HOMEPAGE=	http://www.packetfactory.net/projects/libnids/
 
-LIB_DEPENDS=	net::net/libnet
+BUILD_DEPENDS=	:libnet-1.0*:net/libnet/1.0
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=   Yes
 FAKE_FLAGS=	install_prefix="${WRKINST}"
 
 CONFIGURE_STYLE= gnu
-
+CONFIGURE_ARGS+= --with-libnet="${LOCALBASE}"
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

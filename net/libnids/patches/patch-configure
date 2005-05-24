@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure,v 1.1 2005/05/24 00:01:46 mjc Exp $
+--- configure.orig	Tue Oct 14 16:40:09 2003
++++ configure	Sat May 21 21:19:46 2005
+@@ -3605,11 +3605,11 @@ echo "${ECHO_T}no" >&6
+   *)
+      echo "$as_me:$LINENO: result: $withval" >&5
+ echo "${ECHO_T}$withval" >&6
+-     if test -f $withval/include/libnet.h -a -f $withval/lib/libnet.a -a -f $withval/libnet-config ; then
++     if test -f $withval/include/libnet-1.0/libnet.h -a -f $withval/lib/libnet-1.0/libnet.a -a -f $withval/bin/libnet-config-1.0 ; then
+         owd=`pwd`
+         if cd $withval; then withval=`pwd`; cd $owd; fi
+-	LNET_CFLAGS="-I$withval/include `$withval/libnet-config --defines`"
+-	LNETLIB="-L$withval/lib -lnet"
++	LNET_CFLAGS="-I$withval/include/libnet-1.0 `$withval/bin/libnet-config-1.0 --defines`"
++	LNETLIB="-L$withval/lib/libnet-1.0 -lnet"
+      elif test -f $withval/include/libnet.h -a -f $withval/src/libnet.a; then
+         owd=`pwd`
+         if cd $withval; then withval=`pwd`; cd $owd; fi

@@ -1,11 +1,21 @@
-$OpenBSD: patch-configure,v 1.2 2005/03/27 01:10:36 naddy Exp $
---- configure.orig	Sun Mar 27 01:43:40 2005
-+++ configure	Sun Mar 27 01:43:48 2005
-@@ -4148,7 +4148,6 @@ fi
+$OpenBSD: patch-configure,v 1.3 2005/05/24 00:02:57 mjc Exp $
+--- configure.orig	Wed Oct  6 18:24:21 2004
++++ configure	Sun May 22 01:03:28 2005
+@@ -4147,14 +4147,13 @@ fi
  
  
- CPPFLAGS="${CPPFLAGS} `libnet-config --defines`"
+ 
+-CPPFLAGS="${CPPFLAGS} `libnet-config --defines`"
 -CFLAGS="${CFLAGS} -funroll-loops -pipe"
++CPPFLAGS="${CPPFLAGS} `libnet-config-1.0 --defines`"
  
- if test `libnet-config --cflags | wc -c` = "1"; then
+-if test `libnet-config --cflags | wc -c` = "1"; then
++if test `libnet-config-1.0 --cflags | wc -c` = "1"; then
      CPPFLAGS="${CPPFLAGS} -I/usr/local/include -I/sw/include"
+     LIBNET_CONFIG_BROKEN_CFLAGS=yes
+ else
+-    CPPFLAGS="${CPPFLAGS} `libnet-config --cflags`"
++    CPPFLAGS="${CPPFLAGS} `libnet-config-1.0 --cflags`"
+ fi
+ 
+ if test `libnet-config --libs | wc -c` = "1"; then
