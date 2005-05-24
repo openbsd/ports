@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/12/10 20:34:00 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2005/05/24 21:27:29 marcm Exp $
 bin/pango-querymodules
 include/pango-1.0/
 include/pango-1.0/pango/
@@ -17,6 +17,7 @@ include/pango-1.0/pango/pango-item.h
 include/pango-1.0/pango/pango-layout.h
 include/pango-1.0/pango/pango-modules.h
 include/pango-1.0/pango/pango-ot.h
+include/pango-1.0/pango/pango-renderer.h
 include/pango-1.0/pango/pango-script.h
 include/pango-1.0/pango/pango-tabs.h
 include/pango-1.0/pango/pango-types.h
@@ -27,6 +28,7 @@ include/pango-1.0/pango/pangofc-font.h
 include/pango-1.0/pango/pangofc-fontmap.h
 include/pango-1.0/pango/pangoft2.h
 include/pango-1.0/pango/pangox.h
+include/pango-1.0/pango/pangoxft-render.h
 include/pango-1.0/pango/pangoxft.h
 lib/libpango-1.0.a
 lib/libpango-1.0.la
@@ -51,8 +53,12 @@ lib/pango/1.4.0/modules/pango-hebrew-fc.a
 lib/pango/1.4.0/modules/pango-hebrew-fc.la
 lib/pango/1.4.0/modules/pango-indic-fc.a
 lib/pango/1.4.0/modules/pango-indic-fc.la
+lib/pango/1.4.0/modules/pango-syriac-fc.a
+lib/pango/1.4.0/modules/pango-syriac-fc.la
 lib/pango/1.4.0/modules/pango-thai-fc.a
 lib/pango/1.4.0/modules/pango-thai-fc.la
+lib/pango/1.4.0/modules/pango-tibetan-fc.a
+lib/pango/1.4.0/modules/pango-tibetan-fc.la
 lib/pkgconfig/
 lib/pkgconfig/pango.pc
 lib/pkgconfig/pangoft2.pc

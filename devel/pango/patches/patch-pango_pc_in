@@ -1,9 +1,9 @@
---- pango.pc.in.orig	Wed Dec  1 14:20:32 2004
-+++ pango.pc.in	Wed Dec  1 14:21:45 2004
-@@ -9,6 +9,6 @@
+--- pango.pc.in.orig	Sat Jan  8 16:32:10 2005
++++ pango.pc.in	Wed Mar 30 21:02:53 2005
+@@ -9,6 +9,6 @@ Name: Pango
  Description: Internationalized text handling
  Version: @VERSION@
- Requires: glib-2.0,gobject-2.0,gmodule-2.0
+ Requires: glib-2.0,gobject-2.0,gmodule-no-export-2.0
 -Libs: -L${libdir} -lpango-@PANGO_API_VERSION@ @PKGCONFIG_MATH_LIBS@
 +Libs: -L${libdir} @PKGCONFIG_X_LIBS@ -lpango-@PANGO_API_VERSION@ @PKGCONFIG_MATH_LIBS@
  Cflags: -I${includedir}/pango-1.0

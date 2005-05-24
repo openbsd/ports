@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2004/12/10 20:34:00 marcm Exp $
+# $OpenBSD: Makefile,v 1.12 2005/05/24 21:27:28 marcm Exp $
 
 COMMENT=		"library for layout and rendering of text"
 
-DISTNAME=		pango-1.6.0
+DISTNAME=		pango-1.8.1
 CATEGORIES=		devel x11
 
 HOMEPAGE=		http://www.gtk.org
@@ -19,7 +19,7 @@ MASTER_SITES=		ftp://ftp.gtk.org/pub/gtk/v2.6/ \
 			${MASTER_SITE_GNOME:=sources/pango/1.6/}
 EXTRACT_SUFX=           .tar.bz2
 
-LIB_DEPENDS=		glib-2.0.400.0,gmodule-2.0.400.0,gobject-2.0.400.0::devel/glib2
+LIB_DEPENDS=		glib-2.0.600.0,gmodule-2.0.600.0,gobject-2.0.600.0::devel/glib2
 BUILD_DEPENDS=          :pkgconfig-*:devel/pkgconfig
 
 USE_X11=		Yes
