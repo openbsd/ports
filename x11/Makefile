@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.209 2005/05/24 19:17:16 robert Exp $
+# $OpenBSD: Makefile,v 1.210 2005/05/24 19:50:52 mcbride Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -239,6 +239,7 @@
      SUBDIR += xscreensaver,
      SUBDIR += xscreensaver,gtk2
      SUBDIR += xscreensaver,gtk2,no_gle
+     SUBDIR += xscribble
 #    SUBDIR += xskyroot
      SUBDIR += xsnow
      SUBDIR += xtacy
