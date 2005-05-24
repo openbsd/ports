@@ -1,5 +1,6 @@
---- Makefile.in.orig	Tue Dec 15 18:58:01 1998
-+++ Makefile.in	Thu Dec 16 23:10:08 1999
+$OpenBSD: patch-Makefile_in,v 1.1 2005/05/24 00:00:11 mjc Exp $
+--- Makefile.in.orig	Tue Dec 15 15:58:01 1998
++++ Makefile.in	Mon May 23 09:50:51 2005
 @@ -11,14 +11,14 @@
  DEFINES     +=  #-D__DEBUG
  
@@ -11,15 +12,15 @@
  VER         =   0.8
 -DEFINES     +=  @OS_S_DEFINES@
 -CFLAGS      =   @CFLAGS@
-+DEFINES     +=  @OS_S_DEFINES@ `libnet-config --defines`
-+CFLAGS      =   @CFLAGS@ -I@prefix@/include
++DEFINES     +=  @OS_S_DEFINES@ `libnet-config-1.0 --defines`
++CFLAGS      =   @CFLAGS@ -I@prefix@/include/libnet-1.0
  CPPFLAGS    =   @CPPFLAGS@
 -LIBS        =   -lnet -lpcap @ADDITIONAL_LIBS@
-+LIBS        =   -L@prefix@/lib -lnet -lpcap @ADDITIONAL_LIBS@
++LIBS        =   -L@prefix@/lib/libnet-1.0 -lnet -lpcap @ADDITIONAL_LIBS@
  OBJECTS     =   main.o firewalk.o ifaddrlist.o listener.o p_cap.o signal.o \
  		packet.o udptcpwalk.o port_list.o
  .c.o:
-@@ -36,7 +36,7 @@
+@@ -36,7 +36,7 @@ dist:   clean
  	@(cd ..; tar cvf $(FIREWALK)-$(VER).tar Firewalk/)
  
  install: firewalk

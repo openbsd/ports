@@ -1,6 +1,7 @@
---- udptcpwalk.c.orig	Thu Dec 16 22:19:09 1999
-+++ udptcpwalk.c	Thu Dec 16 22:20:22 1999
-@@ -111,7 +111,7 @@
+$OpenBSD: patch-udptcpwalk_c,v 1.1 2005/05/24 00:00:11 mjc Exp $
+--- udptcpwalk.c.orig	Sat Dec  5 10:24:52 1998
++++ udptcpwalk.c	Mon May 23 09:50:51 2005
+@@ -111,7 +111,7 @@ udptcpwalk(struct firepack *fp)
                   *  differentiate between probes.  The TTL is bumped up so we
                   *  can determine how many hops away the gateway is.
                   */
@@ -9,7 +10,7 @@
                          0,                      /* regular service */
                          ++fp->id,
                          0,                      /* No fragmentation bits set */
-@@ -125,13 +125,13 @@
+@@ -125,13 +125,13 @@ udptcpwalk(struct firepack *fp)
  
                  if (fp->protocol == IPPROTO_UDP)
                  {
@@ -26,7 +27,7 @@
                              0L,                 /* No ACK number */
                              TH_SYN,
                              1024,
-@@ -140,7 +140,7 @@
+@@ -140,7 +140,7 @@ udptcpwalk(struct firepack *fp)
                              0,
                              pak_buf + IP_H);
                  }
@@ -35,7 +36,7 @@
  
                  for (j = 0, fp->red_flag = 0; j < fp->red_cnt; j++)
                  {
-@@ -148,7 +148,7 @@
+@@ -148,7 +148,7 @@ udptcpwalk(struct firepack *fp)
                       *  Write the packet to the network.
                       */
                      usleep(fp->write_pause);

@@ -1,6 +1,7 @@
---- listener.c.orig	Thu Oct 21 01:35:49 1999
-+++ listener.c	Thu Oct 21 01:37:24 1999
-@@ -77,7 +77,8 @@
+$OpenBSD: patch-listener_c,v 1.1 2005/05/24 00:00:11 mjc Exp $
+--- listener.c.orig	Sat Dec  5 10:24:52 1998
++++ listener.c	Mon May 23 09:50:51 2005
+@@ -77,7 +77,8 @@ listener(struct firepack *fp)
      /*
       *  Read packets from the pcap device.
       */
@@ -10,7 +11,7 @@
      {
          /*
           *  Align the IP header beyond the link header.
-@@ -106,6 +107,7 @@
+@@ -106,6 +107,7 @@ listener(struct firepack *fp)
              default:
                  continue;
          }
