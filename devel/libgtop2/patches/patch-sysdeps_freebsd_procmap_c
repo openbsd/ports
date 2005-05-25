@@ -1,5 +1,5 @@
---- sysdeps/freebsd/procmap.c.orig	Wed Jun  9 11:52:21 2004
-+++ sysdeps/freebsd/procmap.c	Fri Dec 10 19:15:09 2004
+--- sysdeps/freebsd/procmap.c.orig	Wed Feb 23 00:20:45 2005
++++ sysdeps/freebsd/procmap.c	Mon Apr 11 19:56:33 2005
 @@ -35,7 +35,7 @@
  #include <vm/vm_object.h>
  #include <vm/vm_prot.h>
@@ -9,7 +9,7 @@
  #include <uvm/uvm_extern.h>
  #else
  #include <vm/vm_object.h>
-@@ -58,10 +58,12 @@
+@@ -64,10 +64,12 @@
  #endif
  #include <sys/sysctl.h>
  #if !defined(__NetBSD__) || (__NetBSD_Version__ < 105020000)
@@ -24,7 +24,7 @@
  /* Fixme ... */
  #undef _KERNEL
  #define _UVM_UVM_AMAP_I_H_ 1
-@@ -95,7 +97,7 @@ glibtop_get_proc_map_p (glibtop *server,
+@@ -101,7 +103,7 @@ glibtop_get_proc_map_p (glibtop *server,
  	struct kinfo_proc *pinfo;
  	struct vm_map_entry entry, *first;
  	struct vmspace vmspace;
@@ -33,7 +33,7 @@
  	struct vnode vnode;
  	struct inode inode;
  #else
-@@ -179,7 +181,7 @@ glibtop_get_proc_map_p (glibtop *server,
+@@ -187,7 +189,7 @@ glibtop_get_proc_map_p (glibtop *server,
   			continue;
  #endif
  #else
@@ -42,7 +42,7 @@
   		if (UVM_ET_ISSUBMAP (&entry))
  			continue;
  #else
-@@ -205,7 +207,7 @@ glibtop_get_proc_map_p (glibtop *server,
+@@ -213,7 +215,7 @@ glibtop_get_proc_map_p (glibtop *server,
  
  		i++;
  
@@ -51,7 +51,7 @@
  		if (!entry.object.uvm_obj)
  			continue;
  
-@@ -229,7 +231,7 @@ glibtop_get_proc_map_p (glibtop *server,
+@@ -237,7 +239,7 @@ glibtop_get_proc_map_p (glibtop *server,
  			glibtop_error_io_r (server, "kvm_read (object)");
  #endif
  

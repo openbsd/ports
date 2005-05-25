@@ -1,10 +1,10 @@
---- sysdeps/freebsd/procmem.c.orig	Sun Jul 18 13:33:56 2004
-+++ sysdeps/freebsd/procmem.c	Fri Dec 10 19:15:09 2004
+--- sysdeps/freebsd/procmem.c.orig	Tue Mar  1 15:03:57 2005
++++ sysdeps/freebsd/procmem.c	Mon Apr 11 20:50:12 2005
 @@ -31,7 +31,7 @@
  #include <sys/param.h>
  #include <sys/proc.h>
  #include <sys/resource.h>
--#ifdef __NetBSD__ && (__NetBSD_Version__ >= 105020000)
+-#if defined(__NetBSD__) && (__NetBSD_Version__ >= 105020000)
 +#if defined(__NetBSD__) && (__NetBSD_Version__ >= 105020000) || defined(__OpenBSD__)
  #include <uvm/uvm_extern.h>
  #else
@@ -13,7 +13,7 @@
  #include <sys/user.h>
  #endif
  #include <sys/sysctl.h>
--#ifdef __NetBSD__ && (__NetBSD_Version__ >= 105020000)
+-#if defined(__NetBSD__) && (__NetBSD_Version__ >= 105020000)
 +#if defined(__NetBSD__) && (__NetBSD_Version__ >= 105020000) || defined(__OpenBSD__)
  #include <uvm/uvm.h>
  #else
@@ -27,22 +27,18 @@
  (1L << GLIBTOP_PROC_MEM_SHARE);
  #elif defined(__FreeBSD__)
  (1L << GLIBTOP_PROC_MEM_SHARE);
-@@ -120,12 +120,12 @@ glibtop_get_proc_mem_p (glibtop *server,
+@@ -120,8 +120,9 @@ glibtop_get_proc_mem_p (glibtop *server,
  	struct kinfo_proc *pinfo;
  	struct vm_map_entry entry, *first;
  	struct vmspace *vms, vmspace;
 -#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
 +#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
  	struct vnode vnode;
++	struct rlimit rlimit;
  #else
  	struct vm_object object;
  #endif
--	struct plimit plimit;
-+	struct rlimit rlimit;
- 	int count;
- 
- 	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_PROC_MEM), 0);
-@@ -159,16 +159,12 @@ glibtop_get_proc_mem_p (glibtop *server,
+@@ -161,16 +162,12 @@ glibtop_get_proc_mem_p (glibtop *server,
  #else
  
  #define        PROC_VMSPACE   kp_proc.p_vmspace
@@ -63,7 +59,7 @@
  
  	vms = &pinfo [0].kp_eproc.e_vm;
  
-@@ -220,7 +216,7 @@ glibtop_get_proc_mem_p (glibtop *server,
+@@ -222,7 +219,7 @@ glibtop_get_proc_mem_p (glibtop *server,
   			continue;
  #endif
  #else
@@ -72,7 +68,7 @@
   		if (UVM_ET_ISSUBMAP (&entry))
  			continue;
  #else
-@@ -228,8 +224,7 @@ glibtop_get_proc_mem_p (glibtop *server,
+@@ -230,8 +227,7 @@ glibtop_get_proc_mem_p (glibtop *server,
  			continue;
  #endif
  #endif
@@ -82,7 +78,7 @@
  		if (!entry.object.uvm_obj)
  			continue;
  
-@@ -256,7 +251,7 @@ glibtop_get_proc_mem_p (glibtop *server,
+@@ -258,7 +254,7 @@ glibtop_get_proc_mem_p (glibtop *server,
  #endif
  		/* If the object is of type vnode, add its size */
  

@@ -1,15 +1,15 @@
-$OpenBSD: patch-lib_read_c,v 1.3 2004/12/11 17:41:53 marcm Exp $
---- lib/read.c.orig	Sun Oct 10 10:21:57 2004
-+++ lib/read.c	Fri Dec 10 17:04:00 2004
+$OpenBSD: patch-lib_read_c,v 1.4 2005/05/25 23:28:16 marcm Exp $
+--- lib/read.c.orig	Tue Feb 15 04:48:33 2005
++++ lib/read.c	Mon Apr 11 19:56:33 2005
 @@ -22,6 +22,7 @@
  */
  
  #include <config.h>
 +#include <errno.h>
  #include <glibtop/read.h>
+ #include <glibtop/error.h>
  #include "libgtop-i18n.h"
- 
-@@ -55,14 +56,18 @@ glibtop_read_l (glibtop *server, size_t 
+@@ -56,14 +57,18 @@ glibtop_read_l (glibtop *server, size_t 
  	fprintf (stderr, "LIBRARY: really reading %d bytes.\n", size);
  #endif
  
