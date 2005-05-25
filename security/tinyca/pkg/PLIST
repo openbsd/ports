@@ -1,29 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/20 22:42:22 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/05/25 06:09:11 msf Exp $
 bin/tinyca
 lib/tinyca/
 lib/tinyca/CA.pm
 lib/tinyca/CERT.pm
-@comment lib/tinyca/CVS/
-@comment lib/tinyca/CVS/Entries
-@comment lib/tinyca/CVS/Repository
-@comment lib/tinyca/CVS/Root
 lib/tinyca/GUI/
 lib/tinyca/GUI.pm
 lib/tinyca/GUI/CALLBACK.pm
-lib/tinyca/GUI/CVS/
-lib/tinyca/GUI/CVS/Entries
-lib/tinyca/GUI/CVS/Repository
-lib/tinyca/GUI/CVS/Root
 lib/tinyca/GUI/HELPERS.pm
 lib/tinyca/GUI/TCONFIG.pm
 lib/tinyca/GUI/WORDS.pm
 lib/tinyca/GUI/X509_browser.pm
 lib/tinyca/GUI/X509_infobox.pm
-@comment lib/tinyca/GUI/pod2htmd.x~~
-@comment lib/tinyca/GUI/pod2htmi.x~~
 lib/tinyca/HELPERS.pm
 lib/tinyca/KEY.pm
 lib/tinyca/OpenSSL.pm
+@comment lib/tinyca/OpenSSL.pm.orig
 lib/tinyca/REQ.pm
 lib/tinyca/TCONFIG.pm
 share/tinyca/

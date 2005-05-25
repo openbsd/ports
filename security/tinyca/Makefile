@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/20 22:42:22 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/25 06:09:11 msf Exp $
 
 COMMENT=	"GUI to manage a certification authority"
 
-DISTNAME=	tinyca-0.6.7
+DISTNAME=	tinyca-0.6.8
 CATEGORIES=	security
 
-MAINTAINER=	Waldemar Brodkorb <wbx@openbsd.de>
+MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org> 
 
 HOMEPAGE=	http://tinyca.sm-zone.net/
 
