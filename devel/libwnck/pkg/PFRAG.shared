@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/14 23:43:56 espie Exp $
-@lib lib/libwnck-1.so.13.0
+@comment $OpenBSD: PFRAG.shared,v 1.6 2005/05/25 23:29:47 marcm Exp $
+@lib lib/libwnck-1.so.16.1
