@@ -1,100 +1,29 @@
-$OpenBSD: patch-configure,v 1.2 2004/12/29 05:49:13 marcm Exp $
---- configure.orig	Wed Jul 30 08:43:08 2003
-+++ configure	Fri Dec 24 11:56:57 2004
-@@ -1428,7 +1428,7 @@ fi
- ac_ext=c
- ac_cpp='$CPP $CPPFLAGS'
- ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
--ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
-+ac_link='$CXX -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
- ac_compiler_gnu=$ac_cv_c_compiler_gnu
- 
- 
-@@ -1912,7 +1912,7 @@ fi
- ac_ext=c
- ac_cpp='$CPP $CPPFLAGS'
- ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
--ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
-+ac_link='$CXX -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
- ac_compiler_gnu=$ac_cv_c_compiler_gnu
- if test -n "$ac_tool_prefix"; then
-   # Extract the first word of "${ac_tool_prefix}gcc", so it can be a program name with args.
-@@ -2774,7 +2774,7 @@ rm -f conftest.$ac_objext conftest.$ac_e
- ac_ext=c
- ac_cpp='$CPP $CPPFLAGS'
- ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
--ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
-+ac_link='$CXX -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
- ac_compiler_gnu=$ac_cv_c_compiler_gnu
- 
- 
-@@ -2976,7 +2976,7 @@ fi
- ac_ext=c
- ac_cpp='$CPP $CPPFLAGS'
- ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
--ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
-+ac_link='$CXX -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
- ac_compiler_gnu=$ac_cv_c_compiler_gnu
- if test -n "$ac_tool_prefix"; then
-   # Extract the first word of "${ac_tool_prefix}gcc", so it can be a program name with args.
-@@ -3635,7 +3635,7 @@ rm -f conftest.$ac_objext conftest.$ac_e
- ac_ext=c
- ac_cpp='$CPP $CPPFLAGS'
- ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
--ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
-+ac_link='$CXX -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
- ac_compiler_gnu=$ac_cv_c_compiler_gnu
- 
- ac_ext=cc
-@@ -3955,13 +3955,13 @@ fi
- ac_ext=c
- ac_cpp='$CPP $CPPFLAGS'
- ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
--ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
-+ac_link='$CXX -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
- ac_compiler_gnu=$ac_cv_c_compiler_gnu
- 
- ac_ext=c
- ac_cpp='$CPP $CPPFLAGS'
- ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
--ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
-+ac_link='$CXX -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
- ac_compiler_gnu=$ac_cv_c_compiler_gnu
- echo "$as_me:$LINENO: checking how to run the C preprocessor" >&5
- echo $ECHO_N "checking how to run the C preprocessor... $ECHO_C" >&6
-@@ -4189,7 +4189,7 @@ fi
- ac_ext=c
- ac_cpp='$CPP $CPPFLAGS'
- ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
--ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
-+ac_link='$CXX -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
- ac_compiler_gnu=$ac_cv_c_compiler_gnu
- 
- 
-@@ -5696,7 +5696,7 @@ else
-      ac_ext=c
- ac_cpp='$CPP $CPPFLAGS'
- ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
--ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
-+ac_link='$CXX -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
- ac_compiler_gnu=$ac_cv_c_compiler_gnu
- 
-      cat >conftest.$ac_ext <<_ACEOF
-@@ -5738,7 +5738,7 @@ rm -f conftest.$ac_objext conftest$ac_ex
-      ac_ext=c
- ac_cpp='$CPP $CPPFLAGS'
- ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
--ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
-+ac_link='$CXX -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
- ac_compiler_gnu=$ac_cv_c_compiler_gnu
- 
+--- configure.orig	Mon Jan 24 10:23:47 2005
++++ configure	Thu Apr  7 07:40:54 2005
+@@ -21788,7 +21788,7 @@ if test "x$with_aspell_prefix" != "x"; t
+ else
+    LDFLAGS="-L`aspell config prefix`/lib "$LDFLAGS
+    ASPELL_INC="-I`aspell config prefix`/include"
+-   ASPELL_LIBS="-L`aspell config prefix`/lib -laspell"
++   ASPELL_LIBS="-L`aspell config prefix`/lib -laspell -lstdc++ -lm"
+    ASPELL_DICT="`aspell config dict-dir`"
  fi
-@@ -9524,7 +9524,7 @@ else
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
  
--ac_cv_lib_intl_dcgettext=no
-+ac_cv_lib_intl_dcgettext=yes
- fi
- rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
- LIBS=$ac_check_lib_save_LIBS
+@@ -21798,7 +21798,7 @@ if test "${ac_cv_lib_aspell_new_aspell_c
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-laspell  $LIBS"
++LIBS="-laspell -lstdc++ -lm $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -21861,7 +21861,7 @@ if test $ac_cv_lib_aspell_new_aspell_con
+ #define HAVE_LIBASPELL 1
+ _ACEOF
+ 
+-  LIBS="-laspell $LIBS"
++  LIBS="-laspell -lstdc++ -lm $LIBS"
+ 
+ else
+   { { echo "$as_me:$LINENO: error: gnome-spell cannot be built without aspell library" >&5
