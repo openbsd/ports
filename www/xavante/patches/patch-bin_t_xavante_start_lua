@@ -1,0 +1,21 @@
+$OpenBSD: patch-bin_t_xavante_start_lua,v 1.1.1.1 2005/05/25 06:13:16 jolan Exp $
+--- bin/t_xavante_start.lua.orig	Thu Mar  3 02:15:04 2005
++++ bin/t_xavante_start.lua	Mon May 16 11:05:53 2005
+@@ -13,16 +13,7 @@
+ local XAVANTE_HOME = [[XAVANTE_HOME]]
+ local XAVANTE_BIN  = [[XAVANTE_BIN]]  -- used by require
+ local XAVANTE_CONF = [[XAVANTE_CONF]] -- configuration files
+-local XAVANTE_WEB  = [[XAVANTE_WEB]]  -- documents and scripts
+-
+--- compatibility code for Lua version 5.0 providing 5.1 behavior
+-if string.find (_VERSION, "Lua 5.0") and not package then
+-	if not LUA_PATH then
+-		LUA_PATH = [[LUA_PATH]]
+-	end
+-	require"compat-5.1"
+-	package.cpath = [[LUA_CPATH]]
+-end
++local XAVANTE_WEB = "/usr/local/examples/xavante/"
+ 
+ require "xavante.server"
+ 

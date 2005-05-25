@@ -1,0 +1,19 @@
+$OpenBSD: patch-bin_xavante_cgiluahandler_lua,v 1.1.1.1 2005/05/25 06:13:16 jolan Exp $
+--- bin/xavante/cgiluahandler.lua.orig	Mon May 16 10:43:06 2005
++++ bin/xavante/cgiluahandler.lua	Mon May 16 10:43:22 2005
+@@ -9,7 +9,7 @@ module (arg and arg[1])
+ 
+ require "venv"
+ require "lfs"
+-require "stable"
++require "cgilua.stable"
+ 
+ -------------------------------------------------------------------------------
+ -- Implements SAPI
+@@ -98,4 +98,4 @@ function makeHandler (diskpath)
+ 	return function (req, res)
+ 		return cgiluahandler (req, res, diskpath)
+ 	end
+-end
+\ No newline at end of file
++end

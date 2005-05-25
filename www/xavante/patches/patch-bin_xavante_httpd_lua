@@ -1,0 +1,20 @@
+$OpenBSD: patch-bin_xavante_httpd_lua,v 1.1.1.1 2005/05/25 06:13:16 jolan Exp $
+--- bin/xavante/httpd.lua.orig	Tue Mar 15 17:42:48 2005
++++ bin/xavante/httpd.lua	Mon May 16 10:50:55 2005
+@@ -5,7 +5,7 @@
+ -- Copyright (c) 2004-2005 Kepler Project
+ -----------------------------------------------------------------------------
+ local url = require "socket.url"
+-require "coxpcall"
++require "xavante.coxpcall"
+ pcall  = copcall
+ xpcall = coxpcall
+ 
+@@ -71,6 +71,7 @@ function read_method (req)
+ 	
+ 	if not req.cmdline then return nil end
+ 	req.cmd_mth, req.cmd_url, req.cmd_version = unpack (strsplit (req.cmdline))
++	if not req.cmd_mth then return nil end
+ 	req.cmd_mth = string.upper (req.cmd_mth)
+ 	return true
+ end
