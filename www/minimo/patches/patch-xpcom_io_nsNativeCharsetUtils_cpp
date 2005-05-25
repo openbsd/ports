@@ -1,0 +1,15 @@
+$OpenBSD: patch-xpcom_io_nsNativeCharsetUtils_cpp,v 1.1.1.1 2005/05/25 06:59:10 jolan Exp $
+--- xpcom/io/nsNativeCharsetUtils.cpp.orig	Mon Jan 12 12:54:59 2004
++++ xpcom/io/nsNativeCharsetUtils.cpp	Mon Jan 12 12:56:41 2004
+@@ -329,7 +329,11 @@ nsNativeCharsetConverter::LazyInit()
+ {
+     const char  *blank_list[] = { "", NULL };
+     const char **native_charset_list = blank_list;
++#ifdef CODESET
+     const char  *native_charset = nl_langinfo(CODESET);
++#else
++    const char  *native_charset = nsnull;
++#endif
+     if (native_charset == nsnull) {
+         NS_ERROR("native charset is unknown");
+         // fallback to ISO-8859-1
