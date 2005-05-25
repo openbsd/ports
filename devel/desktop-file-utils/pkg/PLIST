@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/12 21:09:45 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/05/25 23:23:48 marcm Exp $
 bin/desktop-file-install
 bin/desktop-file-validate
 bin/update-desktop-database
 @exec mkdir -p /var/db/gnome/applications/
-@exec %D/bin/update-desktop-database -q
 @extra /var/db/gnome/applications/mimeinfo.cache
 @extra /var/db/gnome/applications/
 @extra /var/db/gnome/

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2005/04/27 21:45:58 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2005/05/25 23:23:47 marcm Exp $
 
 COMMENT=	"utilities for 'desktop' entries"
 
-DISTNAME=	desktop-file-utils-0.10
+VERSION=	0.10
+DISTNAME=	desktop-file-utils-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://freedesktop.org/wiki/Software_2fdesktop_2dfile_2dutils
