@@ -1,0 +1,14 @@
+$OpenBSD: patch-hotspot_build_bsd_makefiles_gcc_make,v 1.1.1.1 2005/05/25 17:27:53 kurt Exp $
+--- hotspot/build/bsd/makefiles/gcc.make.orig	Wed Feb 16 21:25:51 2005
++++ hotspot/build/bsd/makefiles/gcc.make	Wed Feb 16 21:50:49 2005
+@@ -77,8 +77,8 @@ else
+ # unlike g++, gcc statically links libstdc++ (add 83K in filesize), so people 
+ # without gcc/2.91 (or whatever version we use to build the binaries) can 
+ # run java without installing the compatibility libstdc++
+-CPP = gcc
+-CC  = gcc
++CC  ?= gcc
++CPP = $(CC)
+ endif
+ 
+ ifeq ($(ARCH), amd64)

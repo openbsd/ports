@@ -1,0 +1,15 @@
+$OpenBSD: patch-hotspot_build_bsd_makefiles_adlc_make,v 1.1.1.1 2005/05/25 17:27:53 kurt Exp $
+--- hotspot/build/bsd/makefiles/adlc.make.orig	Wed Feb 16 21:24:34 2005
++++ hotspot/build/bsd/makefiles/adlc.make	Wed Feb 16 21:25:07 2005
+@@ -57,8 +57,9 @@ CFLAGS += -w
+ #  /usr/dist/share/devpro/5.x-sparc/bin/CC
+ #  man -M /usr/dist/share/devpro/5.x-sparc/man CC
+ 
+-CPP       = g++
+-CC        = gcc
++CXX      ?= g++
++CPP       = $(CXX)
++CC       ?= gcc
+ CPPFLAGS  = -DASSERT -g -o $@
+ # -o      object file-name
+ # +w      Additional warnings: Nonportable, Likely mistakes or inefficient

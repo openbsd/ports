@@ -1,0 +1,130 @@
+$OpenBSD: patch-hotspot_src_os_bsd_vm_os_bsd_cpp,v 1.1.1.1 2005/05/25 17:27:53 kurt Exp $
+--- hotspot/src/os/bsd/vm/os_bsd.cpp.orig	Tue Feb 22 17:29:06 2005
++++ hotspot/src/os/bsd/vm/os_bsd.cpp	Tue Feb 22 17:32:45 2005
+@@ -35,7 +35,7 @@
+ # include <semaphore.h>
+ # include <unistd.h>
+ 
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ # include <pthread_np.h>
+ #endif
+ #if defined(__NetBSD__)
+@@ -165,6 +165,12 @@ static inline size_t adjust_stack_size(a
+ #endif
+ 
+ address os::current_stack_base() {
++#ifdef __OpenBSD__
++  stack_t ss;
++  if (pthread_stackseg_np(pthread_self(), &ss))
++    goto err;
++  return (address) ss.ss_sp;
++#else
+   uintptr_t addr = NULL;
+   pthread_attr_t attr;
+   void *mystack = NULL;
+@@ -183,6 +189,7 @@ address os::current_stack_base() {
+ 
+     return (address) addr;
+   }
++#endif
+ 
+ err:
+   fatal("Unable to get current thread stack base pointer");
+@@ -190,6 +197,11 @@ err:
+ }
+ 
+ size_t os::current_stack_size() {
++#ifdef __OpenBSD__
++  stack_t ss;
++  if (!pthread_stackseg_np(pthread_self(), &ss))
++    return ss.ss_size;
++#else
+   pthread_attr_t attr;
+   size_t sizep = 0;
+ 
+@@ -200,6 +212,7 @@ size_t os::current_stack_size() {
+     pthread_attr_destroy(&attr);
+     return sizep;
+   }
++#endif
+ 
+   fatal("Unable to get current thread stack base size");
+ }
+@@ -844,9 +857,12 @@ err:
+   // Set the default thread priority otherwise use NormalPriority
+ 
+   if ( UseThreadPriorities ) {
++     //pthread_setprio is not supported yet on OpenBSD
++#ifndef __OpenBSD__
+      pthread_setprio(tid, (DefaultThreadPriority == -1) ? 
+                                            java_to_os_priority[NormPriority] : 
+                                            DefaultThreadPriority);
++#endif
+   }
+ 
+   // Initial thread state is INITIALIZED, not SUSPENDED
+@@ -1438,7 +1454,7 @@ bool _print_ascii_file(const char* filen
+ void os::print_os_info(outputStream* st) {
+   st->print("OS:");
+ 
+-  st->print_cr("FreeBSD");
++  st->print_cr("OpenBSD");
+ 
+   // kernel
+   st->print("uname:");
+@@ -1895,10 +1911,10 @@ static int os_sleep(jlong millis, bool i
+   if (!interruptible) {
+     do {
+       res = nanosleep(&t, &t);
+-    } while ((res == OS_ERR) && (errno == EINTR));
++    } while ((res == OS_ERR) && (errno == EINTR) && (t.tv_sec != 0 || t.tv_nsec != 0));
+   } else {
+     assert(Thread::current()->is_Java_thread(), "must be java thread");
+-    INTERRUPTIBLE_NORESTART(nanosleep(&t, &t), res, os::Bsd::clear_interrupted);
++    INTERRUPTIBLE_NORESTART_VM(nanosleep(&t, &t), res, os::Bsd::clear_interrupted);
+   }
+   // INTERRUPTIBLE_NORESTART_VM returns res == OS_INTRPT for thread.Interrupt
+ 
+@@ -2078,9 +2094,14 @@ int os::java_to_os_priority[MaxPriority 
+ 
+ OSReturn os::set_native_priority(Thread* thread, int newpri) {
+   assert(newpri >= MinimumPriority && newpri <= MaximumPriority, "bad priority mapping");
++#ifdef __OpenBSD__
++  // OpenBSD doesn't support pthread_setprio yet
++  return OS_OK;
++#else
+   if ( !UseThreadPriorities ) return OS_OK;
+   int status = pthread_setprio(thread->osthread()->thread_id(), newpri);
+   return (status == 0) ? OS_OK : OS_ERR;
++#endif
+ }
+ 
+ 
+@@ -2485,6 +2506,18 @@ void os::Bsd::install_signal_handlers() 
+ 
+ void report_error(const char* file_name, int line_no, const char* title, const char* format, ...);
+ 
++#ifdef __OpenBSD__
++const char * signames[] = {
++  "SIG0",
++  "SIGHUP", "SIGINT", "SIGQUIT", "SIGILL", "SIGTRAP",
++  "SIGABRT", "SIGEMT", "SIGFPE", "SIGKILL", "SIGBUS",
++  "SIGSEGV", "SIGSYS", "SIGPIPE", "SIGALRM", "SIGTERM",
++  "SIGURG", "SIGSTOP", "SIGTSP", "SIGCONT", "SIGCHLD",
++  "SIGTTIN", "SIGTTOU", "SIGIO", "SIGXCPU", "SIGXFSZ",
++  "SIGVTALRM", "SIGPROF", "SIGWINCH", "SIGINFO", "SIGUSR1",
++  "SIGUSR2"
++};
++#else
+ // XXXBSD: fix names (order)
+ const char * signames[] = {
+   "SIG0",
+@@ -2497,6 +2530,7 @@ const char * signames[] = {
+   "SIGXFSZ", "SIGWAITING", "SIGLWP", "SIGFREEZE", "SIGTHAW",
+   "SIGCANCEL", "SIGLOST"
+ };
++#endif
+ 
+ const char * os::exception_name(int exception_code, char* buf, int size) {
+   if (0 < exception_code && exception_code <= SIGRTMAX) {
