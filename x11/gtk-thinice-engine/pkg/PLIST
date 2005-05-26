@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/18 13:19:26 espie Exp $
-@conflict gnome-themes-*
+@comment $OpenBSD: PLIST,v 1.6 2005/05/26 03:40:26 marcm Exp $
+@conflict gtk-engines2-*
 lib/gtk-2.0/
 lib/gtk-2.0/2.4.0/
 lib/gtk-2.0/2.4.0/engines/
