@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/15 13:57:56 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2005/05/26 03:39:31 marcm Exp $
 
 COMMENT=		"utility library for XKB"
 
-DISTNAME=		libxklavier-1.04
+DISTNAME=		libxklavier-2.0
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		iconv m xkbfile z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libxklavier/1.04/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libxklavier/2.0/}
 EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig

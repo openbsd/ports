@@ -1,0 +1,26 @@
+$OpenBSD: patch-battstat_power-management_c,v 1.1 2005/05/26 03:39:30 marcm Exp $
+--- battstat/power-management.c.orig	Mon Apr 11 21:19:55 2005
++++ battstat/power-management.c	Mon Apr 11 21:26:38 2005
+@@ -29,6 +29,7 @@
+ #include <sys/ioctl.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <sys/param.h>
+ #include <sys/sysctl.h>
+ 
+ #include <err.h>
+@@ -129,12 +130,13 @@ apm_readinfo (BatteryStatus *status)
+   /* Code for OpenBSD by Joe Ammond <jra@twinight.org>. Using the same
+      procedure as for FreeBSD.
+   */
+-  struct apm_info apminfo;
+   int fd;
+ 
+ #if defined(__NetBSD__)
++  struct apm_info apminfo;
+   if (DEBUG) g_print("apm_readinfo() (NetBSD)\n");
+ #else /* __OpenBSD__ */
++  struct apm_power_info apminfo;
+   if (DEBUG) g_print("apm_readinfo() (OpenBSD)\n");
+ #endif
+ 

@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2004/12/10 20:36:42 marcm Exp $
-@lib lib/libeel-2.so.10.2
+@comment $OpenBSD: PFRAG.shared,v 1.10 2005/05/26 03:39:31 marcm Exp $
+@lib lib/libeel-2.so.12.0

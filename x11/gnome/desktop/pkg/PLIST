@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/12/10 20:36:42 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2005/05/26 03:39:30 marcm Exp $
 bin/gnome-about
 include/gnome-desktop-2.0/
 include/gnome-desktop-2.0/libgnome/
@@ -10,6 +10,8 @@ lib/libgnome-desktop-2.a
 lib/libgnome-desktop-2.la
 lib/pkgconfig/gnome-desktop-2.0.pc
 @man man/man1/gnome-about.1
+share/applications/
+share/applications/gnome-about.desktop
 share/gnome/
 share/gnome-about/
 share/gnome-about/gnome-64.gif
@@ -45,19 +47,6 @@ share/gnome/help/lgpl/C/
 share/gnome/help/lgpl/C/lgpl.xml
 share/gnome/help/lgpl/eu/
 share/gnome/help/lgpl/eu/lgpl.xml
-share/gnome/vfolders/
-share/gnome/vfolders/Accessories.directory
-share/gnome/vfolders/Applications.directory
-share/gnome/vfolders/Development.directory
-share/gnome/vfolders/Games.directory
-share/gnome/vfolders/Graphics.directory
-share/gnome/vfolders/Internet.directory
-share/gnome/vfolders/Multimedia.directory
-share/gnome/vfolders/Office.directory
-share/gnome/vfolders/Other.directory
-share/gnome/vfolders/Root.directory
-share/gnome/vfolders/Settings.directory
-share/gnome/vfolders/System.directory
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -155,6 +144,9 @@ share/locale/ne/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/no/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/nso/
+share/locale/nso/LC_MESSAGES/
+share/locale/nso/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -186,6 +178,9 @@ share/locale/vi/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/xh/
+share/locale/xh/LC_MESSAGES/
+share/locale/xh/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/yi/
 share/locale/yi/LC_MESSAGES/
 share/locale/yi/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -194,6 +189,9 @@ share/locale/yo/LC_MESSAGES/
 share/locale/yo/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/zu/
+share/locale/zu/LC_MESSAGES/
+share/locale/zu/LC_MESSAGES/gnome-desktop-2.0.mo
 share/omf/gnome-desktop/
 share/omf/gnome-desktop/fdl-C.omf
 share/omf/gnome-desktop/fdl-eu.omf
@@ -204,12 +202,10 @@ share/omf/gnome-desktop/gpl-eu.omf
 share/omf/gnome-desktop/lgpl-C.omf
 share/omf/gnome-desktop/lgpl-eu.omf
 share/pixmaps/
-share/pixmaps/advanced-directory.png
 share/pixmaps/apple-green.png
 share/pixmaps/apple-red.png
 share/pixmaps/gnome-aorta.png
 share/pixmaps/gnome-applets.png
-share/pixmaps/gnome-applications.png
 share/pixmaps/gnome-background-image.png
 share/pixmaps/gnome-background-pattern.png
 share/pixmaps/gnome-background.png
@@ -232,7 +228,6 @@ share/pixmaps/gnome-debian.png
 share/pixmaps/gnome-diskfree.png
 share/pixmaps/gnome-emacs.png
 share/pixmaps/gnome-eterm.png
-share/pixmaps/gnome-favorites.png
 share/pixmaps/gnome-file-c.png
 share/pixmaps/gnome-file-h.png
 share/pixmaps/gnome-folder.png
@@ -251,19 +246,13 @@ share/pixmaps/gnome-log.png
 share/pixmaps/gnome-logo-icon-transparent.png
 share/pixmaps/gnome-logo-icon.png
 share/pixmaps/gnome-logo-large.png
-share/pixmaps/gnome-mailcheck.png
 share/pixmaps/gnome-mdi.png
 share/pixmaps/gnome-mnemonic.png
-share/pixmaps/gnome-modem.png
-share/pixmaps/gnome-money.png
-share/pixmaps/gnome-monitor.png
 share/pixmaps/gnome-month.png
 share/pixmaps/gnome-mouse.png
-share/pixmaps/gnome-networktool.png
 share/pixmaps/gnome-news.png
 share/pixmaps/gnome-note.png
 share/pixmaps/gnome-qeye.png
-share/pixmaps/gnome-session.png
 share/pixmaps/gnome-set-time.png
 share/pixmaps/gnome-spider.png
 share/pixmaps/gnome-squeak.png
@@ -277,7 +266,6 @@ share/pixmaps/gnome-term.png
 share/pixmaps/gnome-tigert.png
 share/pixmaps/gnome-touristinfo.png
 share/pixmaps/gnome-user-interface.png
-share/pixmaps/gnome-util.png
 share/pixmaps/gnome-week.png
 share/pixmaps/gnome-windows.png
 share/pixmaps/gnome-word.png
@@ -285,7 +273,6 @@ share/pixmaps/gnome-workspace.png
 share/pixmaps/gnome-xterm.png
 share/pixmaps/gtkvim.png
 share/pixmaps/kterm.xpm
-share/pixmaps/launcher-program.png
 share/pixmaps/monitor.png
 share/pixmaps/vnterm.xpm
 %%SHARED%%

@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2004/12/10 20:36:46 marcm Exp $
-lib/gtk-2.0/2.4.0/engines/libsmooth.so
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/05/26 03:39:33 marcm Exp $

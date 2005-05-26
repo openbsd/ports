@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2004/12/20 07:28:00 alek Exp $
+# $OpenBSD: Makefile,v 1.13 2005/05/26 03:39:32 marcm Exp $
 
 COMMENT=		"MIME and Application database for GNOME"
 
 DISTNAME=		gnome-mime-data-2.4.2
 CATEGORIES=		x11 x11/gnome
 HOMEPAGE=		http://www.gnome.org/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-mime-data/2.4/}
 EXTRACT_SUFX=		.tar.bz2

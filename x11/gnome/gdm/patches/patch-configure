@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2004/09/15 04:15:25 marcm Exp $
---- configure.orig	Wed Aug 18 13:09:11 2004
-+++ configure	Sun Sep 12 15:24:16 2004
-@@ -26748,7 +26748,6 @@ else
+$OpenBSD: patch-configure,v 1.5 2005/05/26 03:39:31 marcm Exp $
+--- configure.orig	Mon Apr 11 21:37:37 2005
++++ configure	Wed May 18 21:41:47 2005
+@@ -27279,7 +27279,6 @@ else
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.4 2004/09/15 04:15:25 marcm Exp $
  fi
  rm -f conftest.err conftest.$ac_objext \
        conftest$ac_exeext conftest.$ac_ext
-@@ -27950,7 +27949,7 @@ cat >>confdefs.h <<_ACEOF
+@@ -28770,7 +28769,7 @@ cat >>confdefs.h <<_ACEOF
  _ACEOF
  
  
@@ -18,10 +18,22 @@ $OpenBSD: patch-configure,v 1.4 2004/09/15 04:15:25 marcm Exp $
  EXPANDED_AUTHDIR=`eval echo $AUTHDIR_TMP`
  
  cat >>confdefs.h <<_ACEOF
-@@ -28141,7 +28140,14 @@ if test -x /usr/X11R6/bin/X; then
+@@ -28961,9 +28960,9 @@ case "$host" in
+         ;;
+ *)
+         GDM_USER_PATH="/bin:/usr/bin"
+-        HALT_COMMAND="/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now"
++        HALT_COMMAND="/sbin/halt -p;/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now"
+         REBOOT_COMMAND="/usr/bin/reboot;/sbin/reboot;/sbin/shutdown -r now;/usr/sbin/shutdown -r now"
+-        SUSPEND_COMMAND=""
++        SUSPEND_COMMAND="/usr/sbin/zzz"
+         ;;
+ esac
+ 
+@@ -28976,7 +28975,14 @@ if test ! -h /usr/X11R6 -a -x /usr/X11R6
     X_SERVER_PATH="/usr/X11R6/bin"
     X_SERVER="/usr/X11R6/bin/X"
-    X_CONF_PATH="/usr/bin/X11:/usr/X11R6/bin:/usr/local/bin:/opt/X11R6/bin"
+    GDM_USER_PATH="$GDM_USER_PATH:/usr/X11R6/bin"
 -   X_CONFIG_OPTIONS="-audit 0"
 +   case $host in
 +     i386-*-openbsd*|amd64-*-openbsd*)
@@ -31,6 +43,6 @@ $OpenBSD: patch-configure,v 1.4 2004/09/15 04:15:25 marcm Exp $
 +       X_CONFIG_OPTIONS="-audit 0"
 +       ;;
 +   esac
- elif test -x /usr/openwin/bin/Xsun; then
-    X_PATH="/usr/openwin/bin"
-    X_SERVER_PATH="/usr/openwin/bin"
+ elif test ! -h /usr/X11 -a -x /usr/X11/bin/X; then
+    X_PATH="/usr/X11/bin"
+    X_SERVER_PATH="/usr/X11/bin"

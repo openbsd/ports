@@ -1,5 +1,5 @@
---- ltmain.sh.orig	Mon Dec  6 10:34:27 2004
-+++ ltmain.sh	Sun Dec 12 19:36:06 2004
+--- ltmain.sh.orig	Mon Mar  7 08:04:53 2005
++++ ltmain.sh	Thu Apr  7 16:25:01 2005
 @@ -1492,6 +1492,17 @@ EOF
  	continue
  	;;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-daemon_slave_c,v 1.4 2004/09/15 04:15:25 marcm Exp $
---- daemon/slave.c.orig	Wed Aug 18 12:57:19 2004
-+++ daemon/slave.c	Fri Sep 10 20:42:41 2004
-@@ -2658,7 +2658,7 @@ gdm_slave_greeter (void)
+$OpenBSD: patch-daemon_slave_c,v 1.5 2005/05/26 03:39:31 marcm Exp $
+--- daemon/slave.c.orig	Mon Mar  7 12:40:10 2005
++++ daemon/slave.c	Wed May 18 21:04:12 2005
+@@ -2655,7 +2655,7 @@ gdm_slave_greeter (void)
  
  	exec_command (EXPANDED_BINDIR "/gdmlogin", NULL);
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-daemon_slave_c,v 1.4 2004/09/15 04:15:25 marcm Exp $
  
  	gdm_error_box (d,
  		       GTK_MESSAGE_ERROR,
-@@ -3561,8 +3561,7 @@ session_child_run (struct passwd *pwent,
+@@ -3569,8 +3569,7 @@ session_child_run (struct passwd *pwent,
  	if (setusercontext (NULL, pwent, pwent->pw_uid,
  			    LOGIN_SETLOGIN | LOGIN_SETPATH |
  			    LOGIN_SETPRIORITY | LOGIN_SETRESOURCES |
@@ -20,7 +20,7 @@ $OpenBSD: patch-daemon_slave_c,v 1.4 2004/09/15 04:15:25 marcm Exp $
  		gdm_child_exit (DISPLAY_REMANAGE,
  				_("%s: setusercontext() failed for %s. "
  				  "Aborting."), "session_child_run",
-@@ -4838,7 +4837,7 @@ check_for_interruption (const char *msg)
+@@ -4846,7 +4845,7 @@ check_for_interruption (const char *msg)
  					execl (GdmSoundProgram,
  					       GdmSoundProgram,
  					       GdmSoundOnLoginFile,

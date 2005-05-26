@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/15 13:57:56 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2005/05/26 03:39:31 marcm Exp $
 
 
 COMMENT=		"GNOME display manager"
 
-DISTNAME=		gdm-2.6.0.6
+DISTNAME=		gdm-2.6.0.9
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.jirka.org/gdm.html
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xcursor Xext Xft \
+WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xi Xext Xft \
 		Xinerama Xrender art_lgpl_2 atk-1.0.0.0 audiofile bonobo-2 \
 		bonobo-activation bonoboui-2 bz2 c crypto esd fontconfig \
 		freetype gconf-2 gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 \
@@ -39,6 +37,7 @@ LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 CONFDIR=		${SYSCONFDIR}/X11
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--sysconfdir="${CONFDIR}"
