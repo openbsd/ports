@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.46 2005/03/14 22:52:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2005/05/26 23:13:28 naddy Exp $
 
 COMMENT=	"get files from FTP, Gopher, HTTP or HTTPS servers"
 
-DISTNAME=	curl-7.11.2
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	curl-7.14.0
 CATEGORIES=	net
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/ \
@@ -16,7 +15,7 @@ MASTER_SITES=	http://curl.haxx.se/download/ \
 
 HOMEPAGE=	http://curl.haxx.se/
 
-MAINTAINER=	Brad Smith <brad@openbsd.org>
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,14 +25,11 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto ssl z 
 
 SEPARATE_BUILD=	simple
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --with-random="/dev/arandom"
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} --with-random="/dev/arandom"
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/curl
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
-	cd ${WRKSRC}; ${INSTALL_DATA} README ${PREFIX}/share/doc/curl
 	cd ${WRKSRC}; ${INSTALL_DATA} curl-style.el \
 		${PREFIX}/share/emacs/site-lisp
 
