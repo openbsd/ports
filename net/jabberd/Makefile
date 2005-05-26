@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2005/05/24 00:46:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2005/05/26 19:10:21 naddy Exp $
 
 COMMENT=		"jabber server"
 DISTNAME=		jabberd-2.0s8
@@ -26,15 +26,18 @@ EXAMPLES=		${PREFIX}/share/examples/jabberd
 SUBST_VARS=		CONFIG_DIR EXAMPLES \
 			JABBERDUSER JABBERDGROUP JABBERDDIR
 
-FLAVORS=		mysql ldap
+STORAGES=		mysql postgresql db
+FLAVORS=		${STORAGES} ldap
 FLAVOR?=		mysql
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--localstatedir=/var \
+CONFIGURE_ARGS=		--localstatedir=/var \
 			--enable-ssl \
 			--disable-idn \
-			--with-extra-include-path=${LOCALBASE}/include \
-			--with-extra-library-path=${LOCALBASE}/lib
+			--with-extra-include-path="${EXTRA_INCLUDE_PATH}" \
+			--with-extra-library-path="${EXTRA_LIBRARY_PATH}"
+EXTRA_INCLUDE_PATH=	${LOCALBASE}/include
+EXTRA_LIBRARY_PATH=	${LOCALBASE}/lib
 
 .if ${FLAVOR:L:Mmysql}
 LIB_DEPENDS+=		lib/mysql/mysqlclient.10::databases/mysql
@@ -43,15 +46,35 @@ CONFIGURE_ARGS+=	--enable-mysql
 CONFIGURE_ARGS+=	--disable-mysql
 .endif
 
+.if ${FLAVOR:L:Mpostgresql}
+LIB_DEPENDS+=		pq.4::databases/postgresql
+CONFIGURE_ARGS+=	--enable-pgsql
+.else
+CONFIGURE_ARGS+=	--disable-pgsql
+.endif
+
+.if ${FLAVOR:L:Mdb}
+LIB_DEPENDS+=		lib/db4/db.=4::databases/db/v4
+CONFIGURE_ARGS+=	--enable-db
+EXTRA_INCLUDE_PATH:=	${EXTRA_INCLUDE_PATH}:${LOCALBASE}/include/db4
+.else
+CONFIGURE_ARGS+=	--disable-db
+.endif
+
 .if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+=		ldap.2,lber:openldap-client-2.*:databases/openldap
+LIB_DEPENDS+=		ldap.2,lber::databases/openldap
 CONFIGURE_ARGS+=	--enable-ldap
 .else
 CONFIGURE_ARGS+=	--disable-ldap
 .endif
 
-.if ! ${FLAVOR:L:Mmysql}
-BROKEN=			"You need to select at least one storage driver"
+.for s in ${STORAGES}
+.  if ${FLAVOR:L:M$s}
+storage_flag=1
+.  endif
+.endfor
+.if !defined(storage_flag)
+ERRORS+=		"Fatal: You need to select at least one storage driver"
 .endif
 
 do-install:
