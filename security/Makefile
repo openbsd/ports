@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2005/05/21 09:39:21 espie Exp $
+# $OpenBSD: Makefile,v 1.158 2005/05/26 18:15:09 marius Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -36,6 +36,7 @@
      SUBDIR += fragroute
      SUBDIR += fragrouter
      SUBDIR += fwbuilder
+     SUBDIR += gaim-otr
      SUBDIR += gnupg
      SUBDIR += gnutls
      SUBDIR += gpa
@@ -56,6 +57,7 @@
      SUBDIR += libgpg-error
      SUBDIR += libident
      SUBDIR += libmcrypt
+     SUBDIR += libotr
      SUBDIR += libtasn1
      SUBDIR += logsentry
      SUBDIR += logsurfer
