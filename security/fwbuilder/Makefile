@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/21 09:37:35 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/26 21:18:47 naddy Exp $
 
 COMMENT='firewall gui'
 CATEGORIES=net security
@@ -12,6 +12,7 @@ HOMEPAGE=http://www.fwbuilder.org/
 
 MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=fwbuilder/}
 DISTNAME=fwbuilder-2.0.7
+PKGNAME=${DISTNAME}p0
 CONFIGURE_STYLE=gnu
 
 MODULES=x11/qt3
