@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2005/05/08 12:25:54 alek Exp $
+# $OpenBSD: Makefile,v 1.142 2005/05/26 18:23:16 sturm Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -111,7 +111,6 @@
      SUBDIR += tkrat
      SUBDIR += tmda
      SUBDIR += tnef
-     SUBDIR += ttygrin
      SUBDIR += vrfy
      SUBDIR += wmbiff
      SUBDIR += wmmail
