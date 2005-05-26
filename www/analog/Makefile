@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2005/04/18 22:32:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2005/05/26 21:37:07 naddy Exp $
 
 COMMENT=	"extremely fast program for analysing WWW logfiles"
 
 DISTNAME=	analog-5.32
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www
 
 MASTER_SITES=	http://www.analog.cx/ \
@@ -38,7 +38,8 @@ CFLAGS+=	-DANALOGDIR=\"${ANALOGDIR}/\" \
 		-DHTTPDIR=\"${HTTPDIR}/\" \
 		-DIMAGEDIR=\"${IMAGEDIR}/\" \
 		-DLANGDIR=\"${ANALOGDIR}/lang/\" \
-		-DANALOG=\"${PREFIX}/bin/analog\"
+		-DANALOG=\"${PREFIX}/bin/analog\" \
+		-DHAVE_ADDR_T
 
 ALL_TARGET=	analog
 
