@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2005/05/16 03:17:28 dons Exp $
+# $OpenBSD: Makefile,v 1.13 2005/05/26 01:45:38 dons Exp $
 
 COMMENT=	"advanced revision control system written in Haskell"
 
-V=		1.0.3rc2
+V=		1.0.3
 DISTNAME=	darcs-${V}
 CATEGORIES=	devel
 HOMEPAGE=	http://www.darcs.net/
