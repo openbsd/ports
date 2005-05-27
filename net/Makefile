@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.375 2005/05/24 16:49:23 msf Exp $
+# $OpenBSD: Makefile,v 1.376 2005/05/27 05:36:14 mjc Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -197,6 +197,7 @@
      SUBDIR += p5-SNMP_Session
      SUBDIR += p5-Socket6
      SUBDIR += p5-flowd
+     SUBDIR += packit
      SUBDIR += pavuk
      SUBDIR += pavuk,no_x11
      SUBDIR += pcapmerge
