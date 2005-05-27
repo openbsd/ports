@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_print_ts_h,v 1.1.1.1 2005/05/27 05:31:24 mjc Exp $
+--- src/print_ts.h.orig	Tue May 24 01:56:02 2005
++++ src/print_ts.h	Tue May 24 01:56:13 2005
+@@ -28,6 +28,6 @@
+ 
+ #define TIMESTAMP_MAXLEN         64
+ 
+-void print_ts(struct timeval);
++void print_ts(struct bpf_timeval);
+ 
+ #endif /* __PRINT_TIMESTAMP_H */

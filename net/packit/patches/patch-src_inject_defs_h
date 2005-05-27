@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_inject_defs_h,v 1.1.1.1 2005/05/27 05:31:24 mjc Exp $
+--- src/inject_defs.h.orig	Tue May 24 01:59:28 2005
++++ src/inject_defs.h	Tue May 24 01:59:39 2005
+@@ -177,8 +177,8 @@ u_int8_t *s_d_port;
+ u_int8_t hwaddr_p[17];
+ u_int8_t rawip;
+ 
+-struct timeval bf_pcap;
+-struct timeval af_pcap;
++struct bpf_timeval bf_pcap;
++struct bpf_timeval af_pcap;
+ 
+ 
+ #endif /* __INJECTION_STRUCTS_H */

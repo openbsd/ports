@@ -1,0 +1,61 @@
+$OpenBSD: patch-src_injection_c,v 1.1.1.1 2005/05/27 05:31:24 mjc Exp $
+--- src/injection.c.orig	Tue Apr 13 18:48:04 2004
++++ src/injection.c	Tue May 24 02:23:44 2005
+@@ -108,6 +108,7 @@ with_response(u_int32_t port_range)
+ 
+     struct bpf_program bpf;
+     struct timespec n_sleep;
++    struct timeval tmp_tv;
+ 
+ #ifdef DEBUG
+     fprintf(stdout, "DEBUG: with_response()\n");
+@@ -220,7 +221,9 @@ start:
+         if(!inject_packet())
+             fatal_error("Unable to inject packet");
+       
+-        gettimeofday(&bf_pcap, NULL);
++        gettimeofday(&tmp_tv, NULL);
++        bf_pcap.tv_sec = (u_int32_t)tmp_tv.tv_sec;
++        bf_pcap.tv_usec = (u_int32_t)tmp_tv.tv_usec;
+ 
+         if(p_mode != M_TRACE)
+         {
+@@ -246,7 +249,9 @@ start:
+             if(dth_r > 0)
+                 break;
+ 
+-            gettimeofday(&af_pcap, NULL);
++            gettimeofday(&tmp_tv, NULL);
++            af_pcap.tv_sec = (u_int32_t)tmp_tv.tv_sec;
++            af_pcap.tv_usec = (u_int32_t)tmp_tv.tv_usec;
+ 
+ #ifdef DEBUG
+             fprintf(stdout, "DEBUG: dispatch time: %ld.%ld\n", 
+@@ -308,12 +313,14 @@ without_response(u_int32_t port_range)
+ {
+     u_int64_t i;
+     u_int32_t dstp = 0;
+-
++    struct timeval tmp_tv;
+ #ifdef DEBUG
+     fprintf(stdout, "DEBUG: without_response()\n");
+ #endif
+ 
+-    gettimeofday(&bf_pcap, NULL);
++    gettimeofday(&tmp_tv, NULL);
++    bf_pcap.tv_sec = (u_int32_t)tmp_tv.tv_sec;
++    bf_pcap.tv_usec = (u_int32_t)tmp_tv.tv_usec;
+ 
+     if(cnt == 0) dstp = cnt = 1; 
+ 
+@@ -357,7 +364,9 @@ without_response(u_int32_t port_range)
+             }
+         }
+ 
+-        gettimeofday(&af_pcap, NULL);
++        gettimeofday(&tmp_tv, NULL);
++        af_pcap.tv_sec = (u_int32_t)tmp_tv.tv_sec;
++        af_pcap.tv_usec = (u_int32_t)tmp_tv.tv_usec;
+ 
+         libnet_clear_packet(pkt_d);
+ 
