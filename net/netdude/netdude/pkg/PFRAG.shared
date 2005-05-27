@@ -1,0 +1,12 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
+share/netdude/plugins/nd_bpf.so
+share/netdude/plugins/nd_cksumfix.so
+share/netdude/protocols/nd_arp.so
+share/netdude/protocols/nd_ethernet.so
+share/netdude/protocols/nd_fddi.so
+share/netdude/protocols/nd_icmp.so
+share/netdude/protocols/nd_ip.so
+share/netdude/protocols/nd_sll.so
+share/netdude/protocols/nd_snap.so
+share/netdude/protocols/nd_tcp.so
+share/netdude/protocols/nd_udp.so

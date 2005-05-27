@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_callbacks_c,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
+--- src/callbacks.c.orig	Thu May 26 13:12:46 2005
++++ src/callbacks.c	Thu May 26 13:13:02 2005
+@@ -26,6 +26,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE 
+ #  include <config.h>
+ #endif
+ 
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>

@@ -1,0 +1,21 @@
+$OpenBSD: patch-protocols_udp_Makefile_in,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
+--- protocols/udp/Makefile.in.orig	Wed Jul 21 22:15:41 2004
++++ protocols/udp/Makefile.in	Wed Jul 21 22:15:52 2004
+@@ -64,7 +64,7 @@ host_triplet = @host@
+ EXEEXT = @EXEEXT@
+ OBJEXT = @OBJEXT@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+-pkgincludedir = $(includedir)/netdude/$(version_major)/protocols/udp
++pkgincludedir = $(includedir)/netdude/protocols/udp
+ AMTAR = @AMTAR@
+ AS = @AS@
+ AWK = @AWK@
+@@ -128,7 +128,7 @@ INCLUDES = @gtk_cflags@ @LIBNETDUDE_CFLA
+                        $(intl_includes) -I$(top_srcdir)/libltdl -I$(top_srcdir)/src -W -Wall
+ 
+ 
+-pkgdir = $(pkgdatadir)/$(version_major)/protocols
++pkgdir = $(pkgdatadir)/protocols
+ 
+ pkg_LTLIBRARIES = nd_udp.la 
+ 

@@ -1,0 +1,21 @@
+$OpenBSD: patch-protocols_linux-sll_Makefile_in,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
+--- protocols/linux-sll/Makefile.in.orig	Wed Jul 21 22:14:49 2004
++++ protocols/linux-sll/Makefile.in	Wed Jul 21 22:14:59 2004
+@@ -64,7 +64,7 @@ host_triplet = @host@
+ EXEEXT = @EXEEXT@
+ OBJEXT = @OBJEXT@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+-pkgincludedir = $(includedir)/netdude/$(version_major)/protocols/linux-sll
++pkgincludedir = $(includedir)/netdude/protocols/linux-sll
+ AMTAR = @AMTAR@
+ AS = @AS@
+ AWK = @AWK@
+@@ -128,7 +128,7 @@ INCLUDES = @gtk_cflags@ @LIBNETDUDE_CFLA
+                        $(intl_includes) -I$(top_srcdir)/libltdl -I$(top_srcdir)/src -W -Wall
+ 
+ 
+-pkgdir = $(pkgdatadir)/$(version_major)/protocols
++pkgdir = $(pkgdatadir)/protocols
+ 
+ pkg_LTLIBRARIES = nd_sll.la 
+ 

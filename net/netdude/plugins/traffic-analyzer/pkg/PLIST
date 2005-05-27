@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
+%%SHARED%%
+share/netdude/
+share/netdude/plugins/
+share/netdude/plugins/nd_ta.a
+share/netdude/plugins/nd_ta.la

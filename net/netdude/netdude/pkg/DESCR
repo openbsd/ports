@@ -1,0 +1,3 @@
+Netdude is an extendable GUI tool to visually inspect, display, filter
+and modify tcpdump trace files of arbitrary size, as produced using
+tcpdump's -w option.

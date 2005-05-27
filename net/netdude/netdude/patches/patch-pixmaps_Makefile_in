@@ -1,0 +1,12 @@
+$OpenBSD: patch-pixmaps_Makefile_in,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
+--- pixmaps/Makefile.in.orig	Wed Jul 21 22:12:04 2004
++++ pixmaps/Makefile.in	Wed Jul 21 22:12:17 2004
+@@ -117,7 +117,7 @@ lndtool = @lndtool@
+ version_major = @version_major@
+ version_minor = @version_minor@
+ 
+-pixmapsdir = $(pkgdatadir)/$(version_major)/pixmaps
++pixmapsdir = $(pkgdatadir)/pixmaps
+ 
+ pixmaps_DATA = \
+ 	incomplete.xpm \

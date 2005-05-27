@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_BPF-Filter_Makefile_in,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
+--- plugins/BPF-Filter/Makefile.in.orig	Wed Jul 21 22:11:08 2004
++++ plugins/BPF-Filter/Makefile.in	Wed Jul 21 22:11:20 2004
+@@ -129,7 +129,7 @@ LIBS = 
+ LDFLAGS = -L$(top_srcdir)/src
+ INCLUDES = @gtk_cflags@ @LIBNETDUDE_CFLAGS@ -I$(top_srcdir) $(intl_includes) -I$(top_srcdir)/libltdl -I$(top_srcdir)/src -W -Wall
+ 
+-pkgdir = $(pkgdatadir)/$(version_major)/plugins
++pkgdir = $(pkgdatadir)/plugins
+ 
+ pkg_LTLIBRARIES = nd_bpf.la
+ 

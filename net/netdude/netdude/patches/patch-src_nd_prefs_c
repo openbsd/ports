@@ -1,0 +1,47 @@
+$OpenBSD: patch-src_nd_prefs_c,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
+--- src/nd_prefs.c.orig	Wed Dec  1 14:30:14 2004
++++ src/nd_prefs.c	Wed Dec  1 14:31:13 2004
+@@ -81,8 +81,8 @@ nd_prefs_get_plugin_dir_global(void)
+   if (dir[0] != 0)
+     return dir;
+ 
+-  g_snprintf(dir, MAXPATHLEN, "%s/%s/plugins",
+-	     PACKAGE_DATA_DIR, VERSION_MAJOR);
++  g_snprintf(dir, MAXPATHLEN, "%s/plugins",
++	     PACKAGE_DATA_DIR);
+ 
+   return dir;
+ }
+@@ -96,8 +96,8 @@ nd_prefs_get_plugin_dir_user(void)
+   if (dir[0] != 0)
+     return dir;
+ 
+-  g_snprintf(dir, MAXPATHLEN, "%s/%s/plugins",
+-	     libnd_prefs_get_netdude_dir(), VERSION_MAJOR);
++  g_snprintf(dir, MAXPATHLEN, "%s/plugins",
++	     libnd_prefs_get_netdude_dir());
+ 
+   return dir;
+ }
+@@ -111,8 +111,8 @@ nd_prefs_get_proto_dir_global(void)
+   if (dir[0] != 0)
+     return dir;
+ 
+-  g_snprintf(dir, MAXPATHLEN, "%s/%s/protocols",
+-	     PACKAGE_DATA_DIR, VERSION_MAJOR);
++  g_snprintf(dir, MAXPATHLEN, "%s/protocols",
++	     PACKAGE_DATA_DIR);
+ 
+   return dir;
+ }
+@@ -126,8 +126,8 @@ nd_prefs_get_proto_dir_user(void)
+   if (dir[0] != 0)
+     return dir;
+ 
+-  g_snprintf(dir, MAXPATHLEN, "%s/%s/protocols",
+-	     libnd_prefs_get_netdude_dir(), VERSION_MAJOR);
++  g_snprintf(dir, MAXPATHLEN, "%s/protocols",
++	     libnd_prefs_get_netdude_dir());
+ 
+   return dir;
+ }

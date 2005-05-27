@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_nd_main_c,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
+--- src/nd_main.c.orig	Wed Dec  1 14:27:06 2004
++++ src/nd_main.c	Wed Dec  1 14:29:58 2004
+@@ -154,14 +154,14 @@ main_runtime_options_read(int argc, char
+ 	}
+       else if (!strcmp(argv[i], "--include-dir"))
+ 	{
+-	  printf("%s\n", PACKAGE_INCLUDE_DIR"/netdude/"VERSION_MAJOR);
++	  printf("%s\n", PACKAGE_INCLUDE_DIR"/netdude/");
+ 	  exit(0);
+ 	}
+       else if (!strcmp(argv[i], "--cflags"))
+ 	{
+ 	  printf("%s %s -I%s\n",
+ 		 LIBNETDUDE_CFLAGS, GTK_CFLAGS,
+-		 PACKAGE_INCLUDE_DIR"/netdude/"VERSION_MAJOR);
++		 PACKAGE_INCLUDE_DIR"/netdude/");
+ 	  exit(0);
+ 	}
+       else if (!strcmp(argv[i], "--proto-dir"))
+@@ -472,7 +472,7 @@ main (int argc, char *argv[])
+   gtk_set_locale ();
+   gtk_init (&argc, &argv);
+ 
+-  add_pixmap_directory (PACKAGE_DATA_DIR "/" VERSION_MAJOR "/pixmaps");
++  add_pixmap_directory (PACKAGE_DATA_DIR "/pixmaps");
+   add_pixmap_directory (PACKAGE_SOURCE_DIR "/pixmaps");
+ 
+   /*
+@@ -531,4 +531,3 @@ main (int argc, char *argv[])
+ 
+   return 0;
+ }
+-

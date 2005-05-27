@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
+share/netdude/plugins/nd_ta.so

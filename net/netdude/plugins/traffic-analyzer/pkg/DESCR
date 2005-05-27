@@ -1,0 +1,3 @@
+This plugin provides a front-end for libnetdude's traffic analuzer
+plugin. The plugin scans traces and collects simple traffic statistics
+like IP protocol usage and TCP payload distributions.

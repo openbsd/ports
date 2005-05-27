@@ -1,0 +1,21 @@
+$OpenBSD: patch-protocols_ip_Makefile_in,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
+--- protocols/ip/Makefile.in.orig	Wed Jul 21 22:14:27 2004
++++ protocols/ip/Makefile.in	Wed Jul 21 22:14:40 2004
+@@ -64,7 +64,7 @@ host_triplet = @host@
+ EXEEXT = @EXEEXT@
+ OBJEXT = @OBJEXT@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+-pkgincludedir = $(includedir)/netdude/$(version_major)/protocols/ip
++pkgincludedir = $(includedir)/netdude/protocols/ip
+ AMTAR = @AMTAR@
+ AS = @AS@
+ AWK = @AWK@
+@@ -130,7 +130,7 @@ INCLUDES = @gtk_cflags@ @LIBNETDUDE_CFLA
+                        $(intl_includes) -I$(top_srcdir)/libltdl -I$(top_srcdir)/src -W -Wall
+ 
+ 
+-pkgdir = $(pkgdatadir)/$(version_major)/protocols
++pkgdir = $(pkgdatadir)/protocols
+ 
+ pkg_LTLIBRARIES = nd_ip.la 
+ 

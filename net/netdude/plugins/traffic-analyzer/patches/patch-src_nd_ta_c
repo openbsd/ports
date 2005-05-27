@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_nd_ta_c,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
+--- src/nd_ta.c.orig	Thu May 26 13:07:47 2005
++++ src/nd_ta.c	Thu May 26 13:07:59 2005
+@@ -22,10 +22,10 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERW
+ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+ */
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+-#include <sys/types.h>
+ #include <sys/stat.h>
+ #include <unistd.h>
+ 

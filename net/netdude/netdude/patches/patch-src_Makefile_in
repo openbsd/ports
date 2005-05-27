@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
+--- src/Makefile.in.orig	Sun Apr 18 15:33:41 2004
++++ src/Makefile.in	Thu Oct 14 16:31:36 2004
+@@ -65,7 +65,7 @@ EXEEXT = @EXEEXT@
+ OBJEXT = @OBJEXT@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ 
+-pkgincludedir = $(includedir)/netdude/$(version_major)
++pkgincludedir = $(includedir)/netdude
+ AMTAR = @AMTAR@
+ AS = @AS@
+ AWK = @AWK@
+@@ -475,7 +475,7 @@ info-am:
+ 
+ install-data-am: install-pkgincludeHEADERS
+ 
+-install-exec-am: install-binPROGRAMS install-exec-local
++install-exec-am: install-binPROGRAMS
+ 
+ install-info: install-info-am
+ 
+@@ -517,7 +517,7 @@ install-binPROGRAMS: $(bin_PROGRAMS)
+ 	  if test -f $$p \
+ 	     || test -f $$p1 \
+ 	  ; then \
+-	    f=`echo $$p1|sed '$(transform);s/$$/$(version_major)$(EXEEXT)/'`; \
++	    f=`echo $$p1|sed '$(transform);s/$$//'`; \
+ 	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f"; \
+ 	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f; \
+ 	  else :; fi; \
