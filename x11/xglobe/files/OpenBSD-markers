@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.52 2005/05/20 02:09:18 drahn Exp $
+# $OpenBSD: OpenBSD-markers,v 1.53 2005/05/27 00:09:46 mjc Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -37.457132	144.580589	"Miller"	# Damien
@@ -53,6 +53,7 @@
 48.750		2.317		"Kadhi"		# Saad
 49.22		-123.10		"Hugh"		# Hugh
 49.28		-123.12		"McBride"	# Ryan Thomas
+49.313446	-123.063975	"Coulter"	# Michael
 49.48		8.42		"Weisgerber"	# Christian
 49.52		8.39		"Sturm"		# Nikolay
 48.76472	9.17027		"Buehler"	# Philipp
