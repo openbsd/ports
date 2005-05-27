@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2005/05/27 05:10:38 mjc Exp $
+--- Makefile.in.orig	2004-01-07 01:08:43.000000000 +0100
++++ Makefile.in	2004-06-19 01:47:02.000000000 +0200
+@@ -80,9 +80,9 @@ install:
+ 	cp tdl $(bindir)/tdl
+ 	chmod 555 $(bindir)/tdl
+ 	(cd $(bindir); ln -sf tdl tdla; ln -sf tdl tdll; ln -sf tdl tdld; ln -sf tdl tdlg)
+-	gzip -9 < tdl.1 > $(man1dir)/tdl.1.gz
+-	chmod 444 $(man1dir)/tdl.1.gz
+-	(cd $(man1dir); for x in tdla tdll tdld tdlg ; do ln -sf tdl.1.gz $${x}.1.gz ; done )
++	tbl tdl.1 > $(man1dir)/tdl.1
++	chmod 444 $(man1dir)/tdl.1
++	(cd $(man1dir); for x in tdla tdll tdld tdlg ; do ln -sf tdl.1 $${x}.1 ; done )
+ 
+ 	
+ docs : tdl.info tdl.txt tdl.html tdl.dvi tdl.pdf

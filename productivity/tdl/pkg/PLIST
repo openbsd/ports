@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/27 05:10:38 mjc Exp $
+bin/tdl
+bin/tdla
+bin/tdll
+bin/tdld
+bin/tdlg
+man/man1/tdl.1
+man/man1/tdla.1
+man/man1/tdll.1
+man/man1/tdld.1
+man/man1/tdlg.1
