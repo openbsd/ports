@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2005/05/26 01:34:57 sturm Exp $
+# $OpenBSD: Makefile,v 1.191 2005/05/27 16:09:27 msf Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -91,6 +91,7 @@
      SUBDIR += opera
      SUBDIR += p5-Apache-ASP
      SUBDIR += p5-Apache-DBI
+     SUBDIR += p5-Apache-Gallery
      SUBDIR += p5-Apache-MP3
      SUBDIR += p5-Apache-Session
      SUBDIR += p5-Apache-Test
