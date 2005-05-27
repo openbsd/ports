@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2005/04/06 00:03:57 alek Exp $
+# $OpenBSD: Makefile,v 1.45 2005/05/27 06:05:15 naddy Exp $
 #
 
      SUBDIR += R
@@ -34,6 +34,7 @@
 #    SUBDIR += linpack
      SUBDIR += maple
      SUBDIR += maple-share
+     SUBDIR += mathomatic
      SUBDIR += maxima
      SUBDIR += mcl
      SUBDIR += mcsim
