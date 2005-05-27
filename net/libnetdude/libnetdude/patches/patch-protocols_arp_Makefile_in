@@ -1,0 +1,21 @@
+$OpenBSD: patch-protocols_arp_Makefile_in,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
+--- protocols/arp/Makefile.in.orig	Wed Jul 21 16:18:22 2004
++++ protocols/arp/Makefile.in	Wed Jul 21 16:18:44 2004
+@@ -64,7 +64,7 @@ host_triplet = @host@
+ EXEEXT = @EXEEXT@
+ OBJEXT = @OBJEXT@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+-pkgincludedir = $(includedir)/libnetdude/$(version_major).$(version_minor)/protocols/arp
++pkgincludedir = $(includedir)/libnetdude/protocols/arp
+ AMTAR = @AMTAR@
+ AS = @AS@
+ AWK = @AWK@
+@@ -102,7 +102,7 @@ MAINTAINERCLEANFILES = Makefile.in
+ 
+ INCLUDES = @glib_cflags@ @pcapnav_cflags@ -I$(top_srcdir) -I$(top_srcdir)/libltdl -I$(top_srcdir)/src -W -Wall
+ 
+-pkgdir = $(pkgdatadir)/$(version_major).$(version_minor)/protocols
++pkgdir = $(pkgdatadir)/protocols
+ 
+ pkg_LTLIBRARIES = libnd_arp.la 
+ 

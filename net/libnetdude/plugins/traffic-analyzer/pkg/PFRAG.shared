@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
+share/libnetdude/plugins/libnd_tanalyzer.so

@@ -1,0 +1,12 @@
+$OpenBSD: patch-protocols_ether_Makefile_in,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
+--- protocols/ether/Makefile.in.orig	Wed Jul 21 16:19:10 2004
++++ protocols/ether/Makefile.in	Wed Jul 21 16:19:21 2004
+@@ -104,7 +104,7 @@ MAINTAINERCLEANFILES = Makefile.in
+ 
+ INCLUDES = @glib_cflags@ @pcapnav_cflags@ -I$(top_srcdir) -I$(top_srcdir)/libltdl -I$(top_srcdir)/src -W -Wall
+ 
+-pkgdir = $(pkgdatadir)/$(version_major).$(version_minor)/protocols
++pkgdir = $(pkgdatadir)/protocols
+ 
+ pkg_LTLIBRARIES = libnd_ethernet.la 
+ 

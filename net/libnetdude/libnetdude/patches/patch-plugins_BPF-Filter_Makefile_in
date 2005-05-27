@@ -1,0 +1,21 @@
+$OpenBSD: patch-plugins_BPF-Filter_Makefile_in,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
+--- plugins/BPF-Filter/Makefile.in.orig	Wed Apr 14 16:01:37 2004
++++ plugins/BPF-Filter/Makefile.in	Wed Jul 21 16:04:37 2004
+@@ -64,7 +64,7 @@ host_triplet = @host@
+ EXEEXT = @EXEEXT@
+ OBJEXT = @OBJEXT@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+-pkgincludedir = $(includedir)/libnetdude/$(version_major).$(version_minor)/plugins/
++pkgincludedir = $(includedir)/libnetdude/plugins/
+ AMTAR = @AMTAR@
+ AS = @AS@
+ AWK = @AWK@
+@@ -106,7 +106,7 @@ LIBS = 
+ LDFLAGS = -L$(top_srcdir)/src
+ INCLUDES = @glib_cflags@ @pcapnav_cflags@ -I$(top_srcdir) -I$(top_srcdir)/libltdl -I$(top_srcdir)/src -W -Wall
+ 
+-pkgdir = $(pkgdatadir)/$(version_major).$(version_minor)/plugins
++pkgdir = $(pkgdatadir)/plugins
+ 
+ pkg_LTLIBRARIES = libnd_bpf.la
+ pkginclude_HEADERS = libnd_bpf.h

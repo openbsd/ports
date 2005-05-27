@@ -1,0 +1,6 @@
+The Trace Set plugin provides an abstraction for a set of inut traces.
+These traces can be opened trace files, filenames, or files containing a
+list of file names. The API provides a way to iterate over these traces,
+providing the opened trace file as an LND_Trace * to the callback. Many
+plugins want to operate on a number of traces; this plugin provides the
+right data structures for this purpose.

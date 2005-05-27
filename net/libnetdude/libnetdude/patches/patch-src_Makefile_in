@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
+--- src/Makefile.in.orig	Wed Jul 21 11:58:44 2004
++++ src/Makefile.in	Wed Jul 21 11:58:52 2004
+@@ -65,7 +65,7 @@ EXEEXT = @EXEEXT@
+ OBJEXT = @OBJEXT@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ 
+-pkgincludedir = $(includedir)/libnetdude/$(version_major).$(version_minor)
++pkgincludedir = $(includedir)/libnetdude
+ AMTAR = @AMTAR@
+ AS = @AS@
+ AWK = @AWK@

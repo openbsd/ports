@@ -1,0 +1,21 @@
+$OpenBSD: patch-protocols_ip_Makefile_in,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
+--- protocols/ip/Makefile.in.orig	Wed Apr 14 16:01:23 2004
++++ protocols/ip/Makefile.in	Wed Jul 21 16:10:10 2004
+@@ -64,7 +64,7 @@ host_triplet = @host@
+ EXEEXT = @EXEEXT@
+ OBJEXT = @OBJEXT@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+-pkgincludedir = $(includedir)/libnetdude/$(version_major).$(version_minor)/protocols/ip
++pkgincludedir = $(includedir)/libnetdude/protocols/ip
+ AMTAR = @AMTAR@
+ AS = @AS@
+ AWK = @AWK@
+@@ -102,7 +102,7 @@ MAINTAINERCLEANFILES = Makefile.in
+ 
+ INCLUDES = @glib_cflags@ @pcapnav_cflags@ -I$(top_srcdir) -I$(top_srcdir)/libltdl -I$(top_srcdir)/src -W -Wall
+ 
+-pkgdir = $(pkgdatadir)/$(version_major).$(version_minor)/protocols
++pkgdir = $(pkgdatadir)/protocols
+ 
+ pkg_LTLIBRARIES = libnd_ip.la 
+ pkginclude_HEADERS = libnd_ip.h

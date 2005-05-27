@@ -1,0 +1,69 @@
+$OpenBSD: patch-src_libnd_prefs_c,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
+--- src/libnd_prefs.c.orig	Wed Dec  1 14:55:25 2004
++++ src/libnd_prefs.c	Wed Dec  1 14:55:37 2004
+@@ -129,8 +129,8 @@ libnd_prefs_get_plugin_dir_global(void)
+   if (dir[0] != 0)
+     return dir;
+ 
+-  g_snprintf(dir, MAXPATHLEN, "%s/%s.%s/plugins",
+-	     PACKAGE_DATA_DIR, VERSION_MAJOR, VERSION_MINOR);
++  g_snprintf(dir, MAXPATHLEN, "%s/plugins",
++	     PACKAGE_DATA_DIR);
+ 
+   return dir;
+ }
+@@ -144,8 +144,8 @@ libnd_prefs_get_plugin_dir_user(void)
+   if (dir[0] != 0)
+     return dir;
+ 
+-  g_snprintf(dir, MAXPATHLEN, "%s/%s.%s/plugins",
+-	     libnd_prefs_get_netdude_dir(), VERSION_MAJOR, VERSION_MINOR);
++  g_snprintf(dir, MAXPATHLEN, "%s/plugins",
++	     libnd_prefs_get_netdude_dir());
+ 
+   return dir;
+ }
+@@ -159,8 +159,8 @@ libnd_prefs_get_proto_dir_global(void)
+   if (dir[0] != 0)
+     return dir;
+ 
+-  g_snprintf(dir, MAXPATHLEN, "%s/%s.%s/protocols",
+-	     PACKAGE_DATA_DIR, VERSION_MAJOR, VERSION_MINOR);
++  g_snprintf(dir, MAXPATHLEN, "%s/protocols",
++	     PACKAGE_DATA_DIR);
+ 
+   return dir;
+ }
+@@ -174,8 +174,8 @@ libnd_prefs_get_proto_dir_user(void)
+   if (dir[0] != 0)
+     return dir;
+ 
+-  g_snprintf(dir, MAXPATHLEN, "%s/%s.%s/protocols",
+-	     libnd_prefs_get_netdude_dir(), VERSION_MAJOR, VERSION_MINOR);
++  g_snprintf(dir, MAXPATHLEN, "%s/protocols",
++	     libnd_prefs_get_netdude_dir());
+ 
+   return dir;
+ }
+@@ -491,8 +491,8 @@ prefs_assert_dirs(void)
+ 	    return FALSE;
+ 	}
+ 
+-      g_snprintf(dir, MAXPATHLEN, "%s/%s.%s/plugins",
+-		 libnd_prefs_get_netdude_dir(), VERSION_MAJOR, VERSION_MINOR);
++      g_snprintf(dir, MAXPATHLEN, "%s/plugins",
++		 libnd_prefs_get_netdude_dir());
+ 
+       if (mkdir(dir, mode_755) < 0)
+ 	{
+@@ -500,8 +500,8 @@ prefs_assert_dirs(void)
+ 	    return FALSE;
+ 	}
+ 
+-      g_snprintf(dir, MAXPATHLEN, "%s/%s.%s/protocols",
+-		 libnd_prefs_get_netdude_dir(), VERSION_MAJOR, VERSION_MINOR);
++      g_snprintf(dir, MAXPATHLEN, "%s/protocols",
++		 libnd_prefs_get_netdude_dir());
+       
+       if (mkdir(dir, mode_755) < 0)
+ 	{

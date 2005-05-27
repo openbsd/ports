@@ -1,0 +1,13 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
+@lib lib/libnetdude.so.0.0
+share/libnetdude/plugins/libnd_bpf.so
+share/libnetdude/plugins/libnd_cksumfix.so
+share/libnetdude/protocols/libnd_arp.so
+share/libnetdude/protocols/libnd_ethernet.so
+share/libnetdude/protocols/libnd_fddi.so
+share/libnetdude/protocols/libnd_icmp.so
+share/libnetdude/protocols/libnd_ip.so
+share/libnetdude/protocols/libnd_sll.so
+share/libnetdude/protocols/libnd_snap.so
+share/libnetdude/protocols/libnd_tcp.so
+share/libnetdude/protocols/libnd_udp.so

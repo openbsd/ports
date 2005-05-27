@@ -1,0 +1,31 @@
+$OpenBSD: patch-tools_lndtool_c_in,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
+--- tools/lndtool.c.in.orig	Wed Jul 21 11:44:00 2004
++++ tools/lndtool.c.in	Wed Jul 21 11:44:38 2004
+@@ -158,7 +158,7 @@ main(int argc, char **argv)
+ 
+ 	  if (strcmp("@PACKAGE_INCLUDE_DIR@", "/usr/include"))
+ 	    includes = "-I@PACKAGE_INCLUDE_DIR@ ";
+-	  printf("%s-I@prefix@/include/libnetdude/@version_major@.@version_minor@ @glib_cflags@ @pcapnav_cflags@\n",
++	  printf("%s-I@prefix@/include/libnetdude @glib_cflags@ @pcapnav_cflags@\n",
+ 		 includes);
+ 	}
+       else if (! strcmp(argv[i], "--libs"))
+@@ -167,15 +167,15 @@ main(int argc, char **argv)
+ 	}
+       else if (! strcmp(argv[i], "--include-dir"))
+ 	{
+-	  printf("@prefix@/include/libnetdude/@version_major@.@version_minor@\n");
++	  printf("@prefix@/include/libnetdude\n");
+ 	}
+       else if (! strcmp(argv[i], "--plugin-dir"))
+ 	{
+-	  printf("@PACKAGE_DATA_DIR@/@version_major@.@version_minor@/plugins\n");
++	  printf("@PACKAGE_DATA_DIR@/plugins\n");
+ 	}
+       else if (! strcmp(argv[i], "--proto-dir"))
+ 	{
+-	  printf("@PACKAGE_DATA_DIR@/@version_major@.@version_minor@/protocols\n");
++	  printf("@PACKAGE_DATA_DIR@/protocols\n");
+ 	}
+       else if (! strcmp(argv[i], "--plugins") ||
+ 	       ! strcmp(argv[i], "-p"))

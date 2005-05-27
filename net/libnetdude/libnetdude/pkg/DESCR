@@ -1,0 +1,5 @@
+Libnetdude is the part of Netdude that contains all of the packet
+inspection and manipulation functionality, without the GUI part. Its
+purpose is to provide a flexible and useful means to quickly write
+programs that iterate over tcpdump tracefiles, performing manipulations
+of the packets read.
