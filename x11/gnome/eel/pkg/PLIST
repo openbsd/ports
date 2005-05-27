@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/12/10 20:36:42 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2005/05/27 07:08:41 marcm Exp $
 include/eel-2/
 include/eel-2/eel/
 include/eel-2/eel/eel-accessibility.h
@@ -47,6 +47,7 @@ include/eel-2/eel/eel-vfs-extensions.h
 include/eel-2/eel/eel-wrap-table.h
 include/eel-2/eel/eel-xml-extensions.h
 include/eel-2/eel/eel.h
+lib/libeel-2.a
 lib/libeel-2.la
 lib/pkgconfig/
 lib/pkgconfig/eel-2.0.pc
@@ -164,6 +165,9 @@ share/locale/pt/LC_MESSAGES/eel-2.0.mo
 share/locale/pt_BR/LC_MESSAGES/eel-2.0.mo
 share/locale/ro/LC_MESSAGES/eel-2.0.mo
 share/locale/ru/LC_MESSAGES/eel-2.0.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
+share/locale/rw/LC_MESSAGES/eel-2.0.mo
 share/locale/sk/LC_MESSAGES/eel-2.0.mo
 share/locale/sl/LC_MESSAGES/eel-2.0.mo
 share/locale/sq/
@@ -190,6 +194,9 @@ share/locale/vi/LC_MESSAGES/eel-2.0.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/eel-2.0.mo
+share/locale/xh/
+share/locale/xh/LC_MESSAGES/
+share/locale/xh/LC_MESSAGES/eel-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/eel-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/eel-2.0.mo
 %%SHARED%%

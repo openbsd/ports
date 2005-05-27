@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2005/05/26 03:39:32 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.16 2005/05/27 07:08:42 marcm Exp $
 bin/nautilus
 bin/nautilus-connect-server
 bin/nautilus-file-management-properties
@@ -88,6 +88,9 @@ share/locale/pt/LC_MESSAGES/nautilus.mo
 share/locale/pt_BR/LC_MESSAGES/nautilus.mo
 share/locale/ro/LC_MESSAGES/nautilus.mo
 share/locale/ru/LC_MESSAGES/nautilus.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
+share/locale/rw/LC_MESSAGES/nautilus.mo
 share/locale/sk/LC_MESSAGES/nautilus.mo
 share/locale/sl/LC_MESSAGES/nautilus.mo
 share/locale/sq/LC_MESSAGES/nautilus.mo
@@ -104,6 +107,9 @@ share/locale/tr/LC_MESSAGES/nautilus.mo
 share/locale/uk/LC_MESSAGES/nautilus.mo
 share/locale/vi/LC_MESSAGES/nautilus.mo
 share/locale/wa/LC_MESSAGES/nautilus.mo
+share/locale/xh/
+share/locale/xh/LC_MESSAGES/
+share/locale/xh/LC_MESSAGES/nautilus.mo
 share/locale/yi/
 share/locale/yi/LC_MESSAGES/
 share/locale/yi/LC_MESSAGES/nautilus.mo

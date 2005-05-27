@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2005/05/26 03:39:32 marcm Exp $
+# $OpenBSD: Makefile,v 1.15 2005/05/27 07:08:42 marcm Exp $
 
 COMMENT=		"GNOME shell and file manager"
 
-VERSION=		2.10.0
+VERSION=		2.10.1
 DISTNAME=		nautilus-${VERSION}
 CATEGORIES=		x11 x11/gnome
 
@@ -32,7 +32,7 @@ MODULES=		devel/gettext
 BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=		::devel/desktop-file-utils
-LIB_DEPENDS=		eel-2.10.2::x11/gnome/eel \
+LIB_DEPENDS=		eel-2.12.1::x11/gnome/eel \
 			gnome-desktop-2.0::x11/gnome/desktop \
 			rsvg-2.2::x11/gnome/librsvg
 RUN_DEPENDS=		:gnome-icon-theme-*:x11/gnome/icon-theme

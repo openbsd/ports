@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2005/05/26 03:39:33 marcm Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.13 2005/05/27 07:08:41 marcm Exp $
 share/icons/
 share/icons/Crux/
 share/icons/Crux/12x12/
@@ -1315,6 +1314,9 @@ share/locale/pt/LC_MESSAGES/gnome-themes.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-themes.mo
 share/locale/ro/LC_MESSAGES/gnome-themes.mo
 share/locale/ru/LC_MESSAGES/gnome-themes.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
+share/locale/rw/LC_MESSAGES/gnome-themes.mo
 share/locale/sk/LC_MESSAGES/gnome-themes.mo
 share/locale/sl/LC_MESSAGES/gnome-themes.mo
 share/locale/sq/
@@ -1334,6 +1336,9 @@ share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gnome-themes.mo
 share/locale/tr/LC_MESSAGES/gnome-themes.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/gnome-themes.mo
 share/locale/uk/LC_MESSAGES/gnome-themes.mo
 share/locale/vi/
 share/locale/vi/LC_MESSAGES/
@@ -1341,6 +1346,9 @@ share/locale/vi/LC_MESSAGES/gnome-themes.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/gnome-themes.mo
+share/locale/xh/
+share/locale/xh/LC_MESSAGES/
+share/locale/xh/LC_MESSAGES/gnome-themes.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-themes.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-themes.mo
 share/themes/Crux/index.theme

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2005/05/26 03:39:30 marcm Exp $
+# $OpenBSD: Makefile,v 1.13 2005/05/27 07:08:41 marcm Exp $
 
 COMMENT=		"components for the GNOME desktop"
 
-DISTNAME=		gnome-desktop-2.10.0
+DISTNAME=		gnome-desktop-2.10.1
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -34,6 +34,7 @@ LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 			startup-notification-1::devel/startup-notification
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--disable-gtk-doc

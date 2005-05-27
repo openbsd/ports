@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2005/05/26 03:39:30 marcm Exp $
+# $OpenBSD: Makefile,v 1.14 2005/05/27 07:08:40 marcm Exp $
 
 COMMENT=		"Eazel Extensions Library"
 
-DISTNAME=		eel-2.10.0
+DISTNAME=		eel-2.10.1
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
@@ -35,6 +35,7 @@ LIB_DEPENDS=		gnomeui-2.0::x11/gnome/libgnomeui \
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
