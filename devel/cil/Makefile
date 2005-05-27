@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/05/09 13:52:38 avsm Exp $
+# $OpenBSD: Makefile,v 1.7 2005/05/27 06:31:52 avsm Exp $
 
 # until tested on others, even though bytecode is produced
 ONLY_FOR_ARCHS=	i386 amd64 macppc
@@ -33,6 +33,7 @@ GCC=/usr/bin/gcc  # cant use CC in case it's set to cilly
 
 post-extract:
 	@cp ${FILESDIR}/nullint.ml ${WRKSRC}/src/ext
+	@cp ${FILESDIR}/kerneltrace.ml ${WRKSRC}/src/ext
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/cil

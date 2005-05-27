@@ -1,11 +1,12 @@
-$OpenBSD: patch-src_cilutil_ml,v 1.1 2004/06/21 18:53:12 avsm Exp $
---- src/cilutil.ml.orig	2004-04-06 16:51:21.000000000 +0100
-+++ src/cilutil.ml	2004-06-20 18:36:46.000000000 +0100
-@@ -52,6 +52,8 @@ maintain a separate stack for return add
+$OpenBSD: patch-src_cilutil_ml,v 1.2 2005/05/27 06:31:52 avsm Exp $
+--- src/cilutil.ml.orig	Mon Jan 31 09:56:18 2005
++++ src/cilutil.ml	Thu May 26 20:38:13 2005
+@@ -52,6 +52,9 @@ maintain a separate stack for return add
  let doHeapify = ref false (* move stack-allocated arrays to the heap *)
  let makeCFG = ref false (* turn the input CIL file into something more like
                            * a CFG *)
 +let nullInt = ref true (* look for int and NULL comparisons *)
++let kernelTrace = ref true (* add tracing calls into the kernel *)
 +
  let printStats = ref false
  
