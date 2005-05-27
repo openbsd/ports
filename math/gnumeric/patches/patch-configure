@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2004/12/10 20:39:22 marcm Exp $
---- configure.orig	Sun Nov 28 20:02:09 2004
-+++ configure	Tue Dec  7 20:43:37 2004
+$OpenBSD: patch-configure,v 1.5 2005/05/27 17:50:26 marcm Exp $
+--- configure.orig	Tue Apr  5 14:38:13 2005
++++ configure	Tue Apr  5 14:38:42 2005
 @@ -9520,7 +9520,7 @@ nto-qnx*)
  openbsd*)
    version_type=sunos
@@ -10,12 +10,3 @@ $OpenBSD: patch-configure,v 1.4 2004/12/10 20:39:22 marcm Exp $
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
-@@ -24613,7 +24613,7 @@ if test $ac_cv_func_bind_textdomain_code
-                DATADIRNAME=share
- else
-   CATOBJEXT=.mo
--               DATADIRNAME=lib
-+               DATADIRNAME=share
- fi
- 
- 	    ;;
