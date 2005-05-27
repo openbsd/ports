@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/02 21:32:03 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/27 21:38:51 robert Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
@@ -20,7 +20,6 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=DBD/}
 
 BUILD_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
 RUN_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
-REGRESS_DEPENDS=	:sqlite3->=3.0.8:databases/sqlite3
 
 CONFIGURE_STYLE=	perl
 MAKE_FLAGS=		CC='${CC}' \
