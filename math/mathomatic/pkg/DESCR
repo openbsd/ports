@@ -1,0 +1,4 @@
+Mathomatic is a small, portable, general purpose CAS (Computer Algebra System)
+written entirely in C. It is totally free software (GNU LGPL license). This is
+a console mode application that compiles and runs under any operating system
+with a C compiler.

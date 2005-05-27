@@ -1,0 +1,12 @@
+$OpenBSD: patch-globals_c,v 1.1.1.1 2005/05/27 06:04:11 naddy Exp $
+--- globals.c.orig	Thu May 26 22:47:30 2005
++++ globals.c	Thu May 26 22:47:43 2005
+@@ -37,7 +37,7 @@ int		finance_option;		/* for displaying 
+ int		debug_level;		/* current debug level */
+ #endif
+ int		domain_check;
+-int		color_flag = true;	/* true for color mode */
++int		color_flag = false;	/* true for color mode */
+ int		html_flag;		/* true for HTML mode */
+ int		partial_flag;		/* true for partial unfactoring of algebraic fractions */
+ int		symb_flag;		/* true for "simplify symbolic" */
