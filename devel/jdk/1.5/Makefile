@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/25 17:27:53 kurt Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/27 09:34:01 espie Exp $
 
 ONLY_FOR_ARCHS= 	i386
 
@@ -60,7 +60,7 @@ MAKE_ENV=		ALT_MOTIF_DIR="${LOCALBASE}" \
 			DEFAULT_LD_LIBRARY_PATH="/usr/lib:/usr/X11R6/lib:${LOCALBASE}/lib"
 
 # Error message for distfile.
-FETCH_MANUALLY=		"You must manually fetch the distibution files, place"
+FETCH_MANUALLY=		"You must manually fetch the distribution files, place"
 FETCH_MANUALLY+=	"them in ${FULLDISTDIR} and then run make again."
 FETCH_MANUALLY+=	"Get the SCSL source \& binary files:"
 FETCH_MANUALLY+=	"    ${DISTNAME}-src-scsl.zip"

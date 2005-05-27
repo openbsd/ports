@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/05/24 22:02:47 kurt Exp $
+# $OpenBSD: Makefile,v 1.6 2005/05/27 09:34:00 espie Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/java/jdk14/Makefile,v 1.79 2004/08/18 07:06:03 glewis Exp $
 
 ONLY_FOR_ARCHS= 	i386
@@ -57,7 +57,7 @@ MAKE_ENV=		ALT_MOTIF_DIR="${LOCALBASE}" \
 			DEFAULT_LD_LIBRARY_PATH="/usr/lib:/usr/X11R6/lib:${LOCALBASE}/lib"
 
 # Error message for distfile.
-FETCH_MANUALLY=		"You must manually fetch the distibution files, place"
+FETCH_MANUALLY=		"You must manually fetch the distribution files, place"
 FETCH_MANUALLY+=	"them in ${FULLDISTDIR} and then run make again."
 FETCH_MANUALLY+=	"Get the SCSL source \& binary files:"
 FETCH_MANUALLY+=	"    ${DISTNAME}-src-scsl.zip"
