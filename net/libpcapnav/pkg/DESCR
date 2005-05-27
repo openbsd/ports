@@ -1,0 +1,8 @@
+libpcapnav is a libpcap wrapper library that allows navigation to
+arbitrary locations in a tcpdump trace file between reads. The API is
+intentionally much like that of the pcap library. You can navigate in
+trace files both in time and space: you can jump to a packet which is at
+appr. 2/3 of the trace, or you can jump as closely as possible to a
+packet with a given timestamp, and then read packets from there. In
+addition, the API provides convenience functions for manipulating
+timeval structures.
