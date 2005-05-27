@@ -1,0 +1,12 @@
+$OpenBSD: patch-smbd_chgpasswd_c,v 1.1 2005/05/27 04:54:40 sturm Exp $
+--- smbd/chgpasswd.c.orig	Thu May 26 14:42:51 2005
++++ smbd/chgpasswd.c	Thu May 26 14:43:09 2005
+@@ -218,7 +218,7 @@ static int dochild(int master, const cha
+ 	       passwordprogram));
+ 
+ 	/* execl() password-change application */
+-	if (execl("/bin/sh", "sh", "-c", passwordprogram, NULL) < 0)
++	if (execl("/bin/sh", "sh", "-c", passwordprogram, (void *)NULL) < 0)
+ 	{
+ 		DEBUG(3, ("Bad status returned from %s\n", passwordprogram));
+ 		return (False);

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2005/04/03 11:20:38 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.20 2005/05/27 04:54:40 sturm Exp $
 bin/findsmb
 bin/mksmbpasswd
 bin/net
@@ -146,6 +146,7 @@ share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap_tools.pm
 share/examples/samba/misc/adssearch.pl
 share/examples/samba/misc/check_multiple_LDAP_entries.pl
 share/examples/samba/smb.conf.default
+@sample ${SYSCONFDIR}/samba/
 @sample ${SYSCONFDIR}/samba/smb.conf
 share/swat/
 share/swat/help/Samba-Guide/nw4migration.html

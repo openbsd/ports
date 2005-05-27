@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2005/05/03 04:33:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.53 2005/05/27 04:54:40 sturm Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
 
 DISTNAME=		samba-3.0.13
+PKGNAME=		${DISTNAME}p0
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}p0
 
 CATEGORIES=	net
@@ -27,14 +28,8 @@ MODULES= 	converters/libiconv
 
 LIB_DEPENDS=	popt::devel/popt
 
-MAKE_FLAGS=     PASSWD_PROGRAM="/usr/bin/passwd"
-FAKE_FLAGS=     prefix="${WRKINST}${PREFIX}" \
-                BASEDIR="${PREFIX}" \
-		LIBDIR="${WRKINST}${PREFIX}/lib/samba" \
-                PIDDIR="${WRKINST}/var/run" \
-                SWATDIR="${WRKINST}${PREFIX}/share/swat" \
-                SBINDIR="${WRKINST}${PREFIX}/libexec" \
-                VARDIR="${WRKINST}/var"
+MAKE_FLAGS=	PASSWD_PROGRAM="/usr/bin/passwd"
+FAKE_FLAGS=	DESTDIR="${DESTDIR}"
  
 CONFDIR=        ${SYSCONFDIR}/samba
 SAMBA_LOGDIR=   /var/log
@@ -43,10 +38,10 @@ SUBST_VARS=     CONFDIR
 SEPARATE_BUILD= concurrent
 AUTOCONF_VERSION= 2.59
 CONFIGURE_STYLE= autoconf
-CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/samba" \
-		--localstatedir="/var" \
+CONFIGURE_ARGS= --localstatedir="/var" \
 		--sbindir="${PREFIX}/libexec" \
 		--with-configdir="${CONFDIR}" \
+		--with-libdir="${PREFIX}/lib/samba" \
 		--with-lockdir="/var/spool/samba" \
 		--with-piddir="/var/run" \
 		--with-logfilebase="${SAMBA_LOGDIR}" \

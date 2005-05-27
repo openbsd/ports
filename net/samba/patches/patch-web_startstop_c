@@ -1,0 +1,30 @@
+$OpenBSD: patch-web_startstop_c,v 1.1 2005/05/27 04:54:40 sturm Exp $
+--- web/startstop.c.orig	Thu May 26 14:44:50 2005
++++ web/startstop.c	Thu May 26 14:46:16 2005
+@@ -38,7 +38,7 @@ void start_smbd(void)
+ 
+ 	become_daemon(True);
+ 
+-	execl(binfile, binfile, "-D", NULL);
++	execl(binfile, binfile, "-D", (void *)NULL);
+ 
+ 	exit(0);
+ }
+@@ -58,7 +58,7 @@ void start_nmbd(void)
+ 	
+ 	become_daemon(True);
+ 
+-	execl(binfile, binfile, "-D", NULL);
++	execl(binfile, binfile, "-D", (void *)NULL);
+ 
+ 	exit(0);
+ }
+@@ -78,7 +78,7 @@ void start_winbindd(void)
+ 
+ 	become_daemon(True);
+ 
+-	execl(binfile, binfile, NULL);
++	execl(binfile, binfile, (void *)NULL);
+ 
+ 	exit(0);
+ }
