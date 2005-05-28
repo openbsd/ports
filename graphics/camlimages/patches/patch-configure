@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2004/07/05 21:48:52 avsm Exp $
---- configure.orig	Tue Apr 22 09:52:02 2003
-+++ configure	Mon Jul  5 21:11:24 2004
-@@ -2684,7 +2684,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
-   echo $ac_n "(cached) $ac_c" 1>&6
+$OpenBSD: patch-configure,v 1.2 2005/05/28 19:49:18 avsm Exp $
+--- configure.orig	Sat Oct  2 16:51:07 2004
++++ configure	Sat May 28 20:32:24 2005
+@@ -5096,7 +5096,7 @@ if test "${ac_cv_lib_tiff_TIFFOpen+set}"
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-ltiff  $LIBS"
-+LIBS="-ltiff -ljpeg -lz  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 2690 "configure"
++LIBS="-ltiff -ljpeg -lz $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
  #include "confdefs.h"

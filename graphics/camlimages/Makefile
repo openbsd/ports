@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/10 20:41:47 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2005/05/28 19:49:18 avsm Exp $
 
 COMMENT=	"image manipulation functions for Objective Caml"
 CATEGORIES=	graphics
 
-DISTNAME=	camlimages-2.12
+DISTNAME=	camlimages-2.2.0
 EXTRACT_SUFX=	.tgz
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/caml-light/bazar-ocaml/
 
@@ -20,6 +20,7 @@ MODULES=	lang/ocaml
 NO_REGRESS=	Yes 	# exists but needs manual run
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+WRKDIST=	${WRKDIR}/camlimages-2.2
 
 EXAMPLES_DIR=	${PREFIX}/share/examples/camlimages
 USE_GMAKE=	Yes
