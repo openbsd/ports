@@ -17,3 +17,8 @@ Opera is a fast and customizable WWW browser.  Features:
 - high quality zooming; Opera can zoom in on a page up to 1000%
 - a powerful search capability with the added possibility of searching
   the user's own Hotlist
+
+Issues:
+- there is a soft dependency on redhat_motif
+- opera 8 might segfault with your old opera 7 configuration, in that
+  case remove ~/.opera and start over

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2004/12/19 21:15:13 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.19 2005/05/28 16:32:18 sturm Exp $
 bin/opera
 lib/opera/
 lib/opera/plugins/
@@ -13,7 +13,6 @@ libexec/spellcheck.so
 libexec/works
 share/doc/opera/
 share/doc/opera/LICENSE
-share/doc/opera/help
 share/examples/opera/
 share/examples/opera/opera6rc
 @sample /etc/opera6rc
@@ -24,46 +23,9 @@ share/opera/chartables.bin
 share/opera/config/
 share/opera/config/opera6rc
 share/opera/config/opera6rc.fixed
-share/opera/help/
-share/opera/help/advertising.html
-share/opera/help/background.png
-share/opera/help/chat.html
-share/opera/help/dialogs.html
-share/opera/help/filetypes.html
-share/opera/help/fonts.html
-share/opera/help/glossary.html
-share/opera/help/help.css
-share/opera/help/history.html
-share/opera/help/index.html
-share/opera/help/input.html
-share/opera/help/keyboard.html
-share/opera/help/languages.html
-share/opera/help/layout.html
-share/opera/help/license.txt
-share/opera/help/m2.html
-share/opera/help/mail.html
-share/opera/help/menus.html
-share/opera/help/mouse.html
-share/opera/help/multimedia.html
-share/opera/help/network.html
-share/opera/help/page.html
-share/opera/help/panels.html
-share/opera/help/paths.html
-share/opera/help/personal.html
-share/opera/help/preferences.html
-share/opera/help/privacy.html
-share/opera/help/search.html
-share/opera/help/security.html
-share/opera/help/skin.html
-share/opera/help/sounds.html
-share/opera/help/start.html
-share/opera/help/toc.html
-share/opera/help/toolbars.html
-share/opera/help/windows.html
 share/opera/hhd.ssr
 share/opera/html40_entities.dtd
 share/opera/images/
-share/opera/images/background.gif
 share/opera/images/blank.gif
 share/opera/images/drive.gif
 share/opera/images/file.gif
@@ -75,10 +37,6 @@ share/opera/images/opera_22x22.png
 share/opera/images/opera_32x32.png
 share/opera/images/opera_48x48.png
 share/opera/images/operabanner.png
-share/opera/images/shared.gif
-share/opera/images/splash.png
-share/opera/images/startup1.png
-share/opera/images/startup2.png
 share/opera/ini/
 share/opera/ini/dialog.ini
 share/opera/ini/fastforward.ini
@@ -98,6 +56,7 @@ share/opera/lngcode.txt
 share/opera/locale/
 share/opera/locale/en/
 share/opera/locale/en/default.adr
+share/opera/locale/en/license.txt
 share/opera/locale/en/lngcode.txt
 share/opera/locale/en/search.ini
 share/opera/locale/english.lng
@@ -110,6 +69,7 @@ share/opera/styles/
 share/opera/styles/OPF.css
 share/opera/styles/about.css
 share/opera/styles/cache.css
+share/opera/styles/certinfo.css
 share/opera/styles/csr.css
 share/opera/styles/dir.css
 share/opera/styles/drives.css
@@ -135,3 +95,9 @@ share/opera/styles/user/showstructure.css
 share/opera/styles/user/textonly.css
 share/opera/styles/user/userstyle.ini
 share/opera/styles/wml.css
+share/opera/svg-mo.dat
+share/opera/svg-mobd.dat
+share/opera/svg-sa.dat
+share/opera/svg-sabd.dat
+share/opera/svg-se.dat
+share/opera/svg-sebd.dat
