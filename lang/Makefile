@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2005/04/27 03:33:28 jcs Exp $
+# $OpenBSD: Makefile,v 1.67 2005/05/28 17:58:59 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -62,6 +62,7 @@
 #    SUBDIR += p5-ePerl
 #    SUBDIR += pbasic
 #    SUBDIR += perl5
+     SUBDIR += pfe
 #    SUBDIR += pgcc
 #    SUBDIR += pgcc-current
      SUBDIR += pm3
