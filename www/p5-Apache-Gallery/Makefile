@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/27 16:07:43 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/28 03:31:30 msf Exp $
 
 
 COMMENT=		"mod_perl Apache gallery handler"
@@ -23,8 +23,8 @@ RUN_DEPENDS=		::www/p5-URI \
 			::graphics/p5-Image-Size \
 			::textproc/p5-Text-Template \
 			::graphics/p5-Image-Imlib2 \
-			mod_perl-*::www/mod_perl \
-			p5-libapreq->=1.0::www/p5-libapreq
+			:mod_perl-*:www/mod_perl \
+			:p5-libapreq->=1.0:www/p5-libapreq
 
 BUILD_DEPENDS= ${RUN_DEPENDS}
 REGRESS_DEPENDS=	::devel/p5-Test-Pod \
