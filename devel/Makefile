@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.325 2005/05/24 21:47:15 sturm Exp $
+# $OpenBSD: Makefile,v 1.326 2005/05/28 09:13:17 alek Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -86,6 +86,7 @@
      SUBDIR += lib765
      SUBDIR += libIDL
      SUBDIR += libJudy
+     SUBDIR += libast
      SUBDIR += libaudiofile
      SUBDIR += libavl
      SUBDIR += libbio
