@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/28 11:10:54 alek Exp $
+bin/mlmmj-bounce
+bin/mlmmj-list
+bin/mlmmj-maintd
+bin/mlmmj-make-ml.sh
+bin/mlmmj-process
+bin/mlmmj-recieve
+bin/mlmmj-send
+bin/mlmmj-sub
+bin/mlmmj-unsub
+@man man/man1/mlmmj-bounce.1
+@man man/man1/mlmmj-list.1
+@man man/man1/mlmmj-maintd.1
+@man man/man1/mlmmj-make-ml.1
+@man man/man1/mlmmj-process.1
+@man man/man1/mlmmj-recieve.1
+@man man/man1/mlmmj-send.1
+@man man/man1/mlmmj-sub.1
+@man man/man1/mlmmj-unsub.1
+share/mlmmj/
+share/mlmmj/text.skel/
+share/mlmmj/text.skel/access
+share/mlmmj/text.skel/bounce-probe
+share/mlmmj/text.skel/listhelp
+share/mlmmj/text.skel/listsubs
+share/mlmmj/text.skel/moderation
+share/mlmmj/text.skel/notifysub
+share/mlmmj/text.skel/notifysub-digest
+share/mlmmj/text.skel/notifysub-nomail
+share/mlmmj/text.skel/notifyunsub
+share/mlmmj/text.skel/notifyunsub-digest
+share/mlmmj/text.skel/notifyunsub-nomail
+share/mlmmj/text.skel/notintocc
+share/mlmmj/text.skel/sub-confirm
+share/mlmmj/text.skel/sub-confirm-digest
+share/mlmmj/text.skel/sub-confirm-nomail
+share/mlmmj/text.skel/sub-ok
+share/mlmmj/text.skel/sub-ok-digest
+share/mlmmj/text.skel/sub-ok-nomail
+share/mlmmj/text.skel/sub-subscribed
+share/mlmmj/text.skel/subonlypost
+share/mlmmj/text.skel/unsub-confirm
+share/mlmmj/text.skel/unsub-confirm-digest
+share/mlmmj/text.skel/unsub-confirm-nomail
+share/mlmmj/text.skel/unsub-notsubscribed
+share/mlmmj/text.skel/unsub-ok
+share/mlmmj/text.skel/unsub-ok-digest
+share/mlmmj/text.skel/unsub-ok-nomail
