@@ -1,0 +1,12 @@
+$OpenBSD: patch-mod_statusbar_ion-statusd_statusd_load_lua,v 1.1 2005/05/28 05:19:00 mjc Exp $
+--- mod_statusbar/ion-statusd/statusd_load.lua.orig	Fri May 27 21:38:31 2005
++++ mod_statusbar/ion-statusd/statusd_load.lua	Fri May 27 21:38:38 2005
+@@ -43,7 +43,7 @@ local function get_load_uptime()
+     end
+     local s=f:read('*l')
+     f:close()
+-    local st, en, load=string.find(s, 'load average:%s*(.*)')
++    local st, en, load=string.find(s, 'load averages:%s*(.*)')
+     return (load or "")
+ end
+ 

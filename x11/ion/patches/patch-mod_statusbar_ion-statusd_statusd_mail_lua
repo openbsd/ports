@@ -1,0 +1,12 @@
+$OpenBSD: patch-mod_statusbar_ion-statusd_statusd_mail_lua,v 1.1 2005/05/28 05:19:00 mjc Exp $
+--- mod_statusbar/ion-statusd/statusd_mail.lua.orig	Fri May 27 21:27:34 2005
++++ mod_statusbar/ion-statusd/statusd_mail.lua	Fri May 27 21:27:41 2005
+@@ -12,7 +12,7 @@
+ local defaults={
+     update_interval=10*1000,
+     retry_interval=60*10*1000,
+-    mbox=os.getenv("MAIL")
++    mbox=os.getenv("MAIL") or "/var/mail/" .. os.getenv("USER")
+ }
+ 
+ local function TR(s, ...)
