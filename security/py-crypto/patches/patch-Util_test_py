@@ -1,0 +1,79 @@
+$OpenBSD: patch-Util_test_py,v 1.1 2005/05/28 05:39:45 djm Exp $
+--- Util/test.py.orig	Sat May 28 14:35:00 2005
++++ Util/test.py	Sat May 28 14:36:49 2005
+@@ -223,8 +223,7 @@ def TestStreamModules(args=['arc4', 'XOR
+                         die('XOR failed on entry '+`entry`)
+ 
+ 
+-def TestBlockModules(args=['aes', 'arc2', 'des', 'blowfish', 'cast', 'des3',
+-                           'idea', 'rc5'],
++def TestBlockModules(args=['aes', 'des', 'blowfish', 'cast', 'des3'],
+                      verbose=1):
+     import string
+     args=map(string.lower, args)
+@@ -267,23 +266,6 @@ def TestBlockModules(args=['aes', 'arc2'
+                         if verbose: print
+ 
+ 
+-    if 'arc2' in args:
+-        ciph=exerciseBlockCipher('ARC2', verbose)           # Alleged RC2
+-        if (ciph!=None):
+-                if verbose: print '  Verifying against test suite...'
+-                for entry in testdata.arc2:
+-                    key,plain,cipher=entry
+-                    key=binascii.a2b_hex(key)
+-                    plain=binascii.a2b_hex(plain)
+-                    cipher=binascii.a2b_hex(cipher)
+-                    obj=ciph.new(key, ciph.MODE_ECB)
+-                    ciphertext=obj.encrypt(plain)
+-                    if (ciphertext!=cipher):
+-                        die('ARC2 failed on entry '+`entry`)
+-                        for i in ciphertext:
+-                            if verbose: print hex(ord(i)),
+-                        print
+-
+     if 'blowfish' in args:
+         ciph=exerciseBlockCipher('Blowfish',verbose)# Bruce Schneier's Blowfish cipher
+         if (ciph!=None):
+@@ -413,41 +395,5 @@ def TestBlockModules(args=['aes', 'arc2'
+                     ciphertext=obj1.encrypt(plain)
+                     if (ciphertext!=cipher):
+                         die('DES3 CBC mode failed on entry '+`entry`)
+-
+-    if 'idea' in args:
+-        ciph=exerciseBlockCipher('IDEA', verbose)       # IDEA block cipher
+-        if (ciph!=None):
+-                if verbose: print '  Verifying against test suite...'
+-                for entry in testdata.idea:
+-                    key,plain,cipher=entry
+-                    key=binascii.a2b_hex(key)
+-                    plain=binascii.a2b_hex(plain)
+-                    cipher=binascii.a2b_hex(cipher)
+-                    obj=ciph.new(key, ciph.MODE_ECB)
+-                    ciphertext=obj.encrypt(plain)
+-                    if (ciphertext!=cipher):
+-                        die('IDEA failed on entry '+`entry`)
+-
+-    if 'rc5' in args:
+-        # Ronald Rivest's RC5 algorithm
+-        ciph=exerciseBlockCipher('RC5', verbose)
+-        if (ciph!=None):
+-                if verbose: print '  Verifying against test suite...'
+-                for entry in testdata.rc5:
+-                    key,plain,cipher=entry
+-                    key=binascii.a2b_hex(key)
+-                    plain=binascii.a2b_hex(plain)
+-                    cipher=binascii.a2b_hex(cipher)
+-                    obj=ciph.new(key[4:], ciph.MODE_ECB,
+-                                 version =ord(key[0]),
+-                                 word_size=ord(key[1]),
+-                                 rounds  =ord(key[2]) )
+-                    ciphertext=obj.encrypt(plain)
+-                    if (ciphertext!=cipher):
+-                        die('RC5 failed on entry '+`entry`)
+-                        for i in ciphertext:
+-                            if verbose: print hex(ord(i)),
+-                        if verbose: print
+-
+ 
+ 

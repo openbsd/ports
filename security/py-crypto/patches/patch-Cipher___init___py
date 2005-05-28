@@ -1,0 +1,26 @@
+$OpenBSD: patch-Cipher___init___py,v 1.1 2005/05/28 05:39:45 djm Exp $
+--- Cipher/__init__.py.orig	Sat May 28 14:35:36 2005
++++ Cipher/__init__.py	Sat May 28 14:35:49 2005
+@@ -11,7 +11,6 @@ If you don't know which algorithm to cho
+ standard and has undergone a fair bit of examination.
+ 
+ Crypto.Cipher.AES         Advanced Encryption Standard
+-Crypto.Cipher.ARC2        Alleged RC2
+ Crypto.Cipher.ARC4        Alleged RC4
+ Crypto.Cipher.Blowfish
+ Crypto.Cipher.CAST
+@@ -19,12 +18,11 @@ Crypto.Cipher.DES         The Data Encry
+                           in the past, but today its 56-bit keys are too small.
+ Crypto.Cipher.DES3        Triple DES.
+ Crypto.Cipher.IDEA
+-Crypto.Cipher.RC5
+ Crypto.Cipher.XOR         The simple XOR cipher.
+ """
+ 
+-__all__ = ['AES', 'ARC2', 'ARC4',
+-           'Blowfish', 'CAST', 'DES', 'DES3', 'IDEA', 'RC5',
++__all__ = ['AES', 'ARC4',
++           'Blowfish', 'CAST', 'DES', 'DES3',
+            'XOR'
+            ]
+ 

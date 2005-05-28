@@ -1,0 +1,65 @@
+$OpenBSD: patch-setup_py,v 1.1 2005/05/28 05:39:45 djm Exp $
+--- setup.py.orig	Sat May 28 14:24:30 2005
++++ setup.py	Sat May 28 14:24:33 2005
+@@ -64,9 +64,10 @@ class PCTBuildExt (build_ext):
+     def build_extensions(self):
+         self.extensions += [
+             # Hash functions
+-            Extension("Crypto.Hash.MD4",
+-                      include_dirs=['src/'],
+-                      sources=["src/MD4.c"]),
++# Added below
++#            Extension("Crypto.Hash.MD4",
++#                      include_dirs=['src/'],
++#                      sources=["src/MD4.c"]),
+             Extension("Crypto.Hash.RIPEMD",
+                       include_dirs=['src/'],
+                       sources=["src/RIPEMD.c"],
+@@ -79,9 +80,10 @@ class PCTBuildExt (build_ext):
+             Extension("Crypto.Cipher.AES",
+                       include_dirs=['src/'],
+                       sources=["src/AES.c"]),
+-            Extension("Crypto.Cipher.ARC2",
+-                      include_dirs=['src/'],
+-                      sources=["src/ARC2.c"]),
++# Patented
++#            Extension("Crypto.Cipher.ARC2",
++#                      include_dirs=['src/'],
++#                      sources=["src/ARC2.c"]),
+             Extension("Crypto.Cipher.Blowfish",
+                       include_dirs=['src/'],
+                       sources=["src/Blowfish.c"]),
+@@ -94,13 +96,14 @@ class PCTBuildExt (build_ext):
+             Extension("Crypto.Cipher.DES3",
+                       include_dirs=['src/'],
+                       sources=["src/DES3.c"]),
+-            Extension("Crypto.Cipher.IDEA",
+-                      include_dirs=['src/'],
+-                      sources=["src/IDEA.c"],
+-                      libraries=HTONS_LIBS),
+-            Extension("Crypto.Cipher.RC5",
+-                      include_dirs=['src/'],
+-                      sources=["src/RC5.c"]),
++# Patented
++#            Extension("Crypto.Cipher.IDEA",
++#                      include_dirs=['src/'],
++#                      sources=["src/IDEA.c"],
++#                      libraries=HTONS_LIBS),
++#            Extension("Crypto.Cipher.RC5",
++#                      include_dirs=['src/'],
++#                      sources=["src/RC5.c"]),
+ 
+             # Stream ciphers
+             Extension("Crypto.Cipher.ARC4",
+@@ -139,9 +142,9 @@ kw = {'name':"pycrypto",
+       'package_dir' : { "Crypto":"." },
+       # One module is defined here, because build_ext won't be
+       # called unless there's at least one extension module defined.
+-      'ext_modules':[Extension("Crypto.Hash.MD2",
++      'ext_modules':[Extension("Crypto.Hash.MD4",
+                              include_dirs=['src/'],
+-                             sources=["src/MD2.c"])],
++                             sources=["src/MD4.c"])],
+      }
+ 
+ # If we're running Python 2.3, add extra information

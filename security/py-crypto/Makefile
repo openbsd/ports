@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/03 21:31:07 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2005/05/28 05:39:45 djm Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"cryptographic tools for Python"
 
-VERSION=	1.9a6
+VERSION=	2.0
 DISTNAME=	pycrypto-${VERSION}
 PKGNAME=	py-crypto-${VERSION}
 CATEGORIES=    	security devel
@@ -13,10 +13,10 @@ HOMEPAGE=	http://www.amk.ca/python/code/crypto.html
 
 MAINTAINER=	Jason Ish <ish@openbsd.org>
 
-# Public domain.
-PERMIT_PACKAGE_CDROM=	"patented algorithm"
+# Public domain (patented algoritms removed by patch)
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"patented algorithm"
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.amk.ca/files/python/crypto/

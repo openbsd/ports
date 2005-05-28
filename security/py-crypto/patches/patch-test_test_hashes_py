@@ -1,0 +1,24 @@
+$OpenBSD: patch-test_test_hashes_py,v 1.1 2005/05/28 05:39:45 djm Exp $
+--- test/test_hashes.py.orig	Sat May 28 14:37:59 2005
++++ test/test_hashes.py	Sat May 28 14:38:15 2005
+@@ -10,7 +10,7 @@ from sancho.unittest import TestScenario
+ from Crypto.Hash import *
+ import testdata
+ 
+-tested_modules = [ "Crypto.Hash.MD2", "Crypto.Hash.MD4", "Crypto.Hash.MD5",
++tested_modules = [ "Crypto.Hash.MD4", "Crypto.Hash.MD5",
+                    "Crypto.Hash.RIPEMD", "Crypto.Hash.SHA", "Crypto.Hash.SHA256"]
+ 
+ class HashTest (TestScenario):
+@@ -55,11 +55,6 @@ class HashTest (TestScenario):
+             print 'Unable to measure time -- elapsed time too small'
+         else:
+             print '%.2f K/sec' % (128/(end-start))
+-
+-    def check_md2 (self):
+-        "MD2 module"
+-        self.run_test_suite(MD2, testdata.md2)
+-        self.benchmark(MD2)
+ 
+     def check_md4 (self):
+         "MD4 module"
