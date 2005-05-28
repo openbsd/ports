@@ -1,0 +1,6 @@
+The Library of Assorted Spiffy Things (LibAST -  formerly libmej) was
+originally designed as a  companion library to Eterm. However, it
+contains  many features that other projects may find useful,  so it
+has been broken out into its own library.  Features include thorough
+debugging and memory tracking engines, various string manipulation
+functions, and a flexible config file parsing engine.
