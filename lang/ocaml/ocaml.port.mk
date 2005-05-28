@@ -1,4 +1,4 @@
-# $OpenBSD: ocaml.port.mk,v 1.3 2005/01/22 14:28:38 sturm Exp $
+# $OpenBSD: ocaml.port.mk,v 1.4 2005/05/28 20:55:45 avsm Exp $
 
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
@@ -11,7 +11,7 @@
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "i386" || \
 	${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "amd64" || \
-	${MACHINE_ARCH} == "powerpc"
+	${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "arm"
 MODOCAML_NATIVE=Yes
 
 # include nativecode base files

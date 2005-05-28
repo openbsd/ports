@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.7 2005/05/09 13:50:41 avsm Exp $
---- configure.orig	Mon Jan 24 15:22:46 2005
-+++ configure	Wed Mar 23 13:32:24 2005
+$OpenBSD: patch-configure,v 1.8 2005/05/28 20:55:45 avsm Exp $
+--- configure.orig	Mon Jan 24 08:22:46 2005
++++ configure	Sat May 28 13:04:41 2005
 @@ -563,6 +563,7 @@ case "$host" in
    alpha*-*-freebsd*)            arch=alpha; system=freebsd;;
    alpha*-*-netbsd*)             arch=alpha; system=netbsd;;
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.7 2005/05/09 13:50:41 avsm Exp $
    sparc*-*-sunos4.*)            arch=sparc; system=sunos;;
    sparc*-*-solaris2.*)          arch=sparc; system=solaris;;
    sparc*-*-*bsd*)               arch=sparc; system=bsd;;
-@@ -579,6 +580,7 @@ case "$host" in
+@@ -579,9 +580,11 @@ case "$host" in
    hppa*-*-linux*)		arch=hppa; system=linux;;
    powerpc-*-linux*)             arch=power; model=ppc; system=elf;;
    powerpc-*-netbsd*)            arch=power; model=ppc; system=bsd;;
@@ -17,7 +17,11 @@ $OpenBSD: patch-configure,v 1.7 2005/05/09 13:50:41 avsm Exp $
    powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
    powerpc-*-darwin*)            arch=power; model=ppc; system=rhapsody;;
    arm*-*-linux*)                arch=arm; system=linux;;
-@@ -651,8 +653,12 @@ esac
++  zaurus*-*-openbsd*)		arch=arm; system=openbsd;;
+   ia64-*-linux*)                arch=ia64; system=linux;;
+   ia64-*-freebsd*)              arch=ia64; system=freebsd;;
+   x86_64-*-linux*)              arch=amd64; system=linux;;
+@@ -651,8 +654,12 @@ esac
  cc_profile='-pg'
  case "$arch,$model,$system" in
    alpha,*,digital) profiling='prof';;
@@ -30,7 +34,7 @@ $OpenBSD: patch-configure,v 1.7 2005/05/09 13:50:41 avsm Exp $
    sparc,*,solaris)
      profiling='prof'
      case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
-@@ -683,10 +689,6 @@ case "$host" in
+@@ -683,10 +690,6 @@ case "$host" in
            echo "objcopy and nm found in $d"
            if test `$d/objcopy --help | grep -s -c 'redefine-sym'` -eq 0; then
              echo "$d/objcopy does not support option --redefine-sym, discarded"
