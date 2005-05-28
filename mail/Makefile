@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2005/05/26 18:23:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.143 2005/05/28 11:15:15 alek Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -62,6 +62,7 @@
      SUBDIR += milter-spamd
      SUBDIR += mini_sendmail
      SUBDIR += mixmaster
+     SUBDIR += mlmmj
      SUBDIR += movemail
      SUBDIR += mozilla-thunderbird
      SUBDIR += msmtp
