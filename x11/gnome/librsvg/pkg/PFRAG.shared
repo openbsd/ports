@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2005/05/26 03:39:31 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.10 2005/05/28 00:01:31 marcm Exp $
 lib/gtk-2.0/2.4.0/engines/libsvg.so
-lib/gtk-2.0/2.4.0/loaders/svg_loader.so
 @lib lib/librsvg-2.so.11.5
+lib/mozilla/plugins/libmozsvgdec.so
