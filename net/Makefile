@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.376 2005/05/27 05:36:14 mjc Exp $
+# $OpenBSD: Makefile,v 1.377 2005/05/28 00:03:50 mjc Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -104,7 +104,9 @@
      SUBDIR += libbind
      SUBDIR += libdnet
      SUBDIR += libnet
+     SUBDIR += libnetdude
      SUBDIR += libnids
+     SUBDIR += libpcapnav
      SUBDIR += libshout
      SUBDIR += libst
      SUBDIR += luasocket
@@ -127,6 +129,7 @@
      SUBDIR += neon
      SUBDIR += net-snmp
      SUBDIR += netatalk
+     SUBDIR += netdude
      SUBDIR += netpipes
      SUBDIR += netsed
      SUBDIR += ngrep
