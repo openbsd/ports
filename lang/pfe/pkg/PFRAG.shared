@@ -1,0 +1,14 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/28 17:57:43 mbalmer Exp $
+@lib lib/libpfe-0.so.32.94
+@lib lib/libpfe.so.32.94
+lib/pfe/dstrings.so
+lib/pfe/edit.so
+lib/pfe/floating.so
+lib/pfe/fpnostack.so
+lib/pfe/gforth.so
+lib/pfe/help.so
+lib/pfe/module.so
+lib/pfe/smart-go.so
+lib/pfe/struct.so
+lib/pfe/toolbelt.so
+lib/pfe/zchar.so
