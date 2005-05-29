@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_objc_objc-act_c,v 1.2 2005/03/07 16:30:06 espie Exp $
---- gcc/objc/objc-act.c.orig	Sat Jan 29 13:16:34 2005
-+++ gcc/objc/objc-act.c	Tue Feb 22 19:38:42 2005
-@@ -546,7 +546,7 @@ objc_init (void)
+$OpenBSD: patch-gcc_objc_objc-act_c,v 1.3 2005/05/29 13:26:49 espie Exp $
+--- gcc/objc/objc-act.c.orig	Wed May 25 17:48:44 2005
++++ gcc/objc/objc-act.c	Sun May 29 13:55:47 2005
+@@ -494,7 +494,7 @@ objc_init (void)
    /* If gen_declaration desired, open the output file.  */
    if (flag_gen_declaration)
      {
