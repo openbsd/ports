@@ -1,0 +1,29 @@
+$OpenBSD: patch-common_h,v 1.1 2005/05/29 14:19:08 espie Exp $
+--- common.h.orig	Sat Nov 11 18:35:40 2000
++++ common.h	Sun May 29 15:59:06 2005
+@@ -15,10 +15,9 @@
+ #include <signal.h>
+ #ifdef I_SYS_FILIO
+ # include <sys/filio.h>
+-#else
+-# ifdef I_SYS_IOCTL
++#endif
++#ifdef I_SYS_IOCTL
+ #   include <sys/ioctl.h>
+-# endif
+ #endif
+ #ifdef I_VFORK
+ # include <vfork.h>
+@@ -39,6 +38,12 @@
+ #   endif
+ # endif
+ #endif
++extern char * tgetstr(char *, char **);
++extern char * tgoto(const char *, int, int);
++extern int tgetent(char *, const char *);
++extern int tgetflag(char *);
++extern int tgetnum(char *);
++extern int tputs(const char *, int, int (*)(int));
+ 
+ #ifdef I_PTEM
+ #include <sys/stream.h>

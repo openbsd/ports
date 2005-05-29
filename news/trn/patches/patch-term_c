@@ -1,0 +1,15 @@
+$OpenBSD: patch-term_c,v 1.1 2005/05/29 14:19:08 espie Exp $
+--- term.c.orig	Sun May 29 16:12:29 2005
++++ term.c	Sun May 29 16:13:00 2005
+@@ -662,9 +662,9 @@ bool_int check_term;
+ #endif
+     if (check_term) {
+ # ifdef FIONREAD
+-	long iocount;
++	int iocount;
+ 	ioctl(0, FIONREAD, &iocount);
+-	return (int)iocount;
++	return iocount;
+ # else /* !FIONREAD */
+ #  ifdef HAS_RDCHK
+ 	return rdchk(0);
