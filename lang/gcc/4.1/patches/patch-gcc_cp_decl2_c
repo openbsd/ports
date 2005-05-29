@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_cp_decl2_c,v 1.1 2005/05/29 13:27:17 espie Exp $
+--- gcc/cp/decl2.c.orig	Sun May 29 14:39:58 2005
++++ gcc/cp/decl2.c	Sun May 29 14:40:07 2005
+@@ -2763,7 +2763,7 @@ build_java_method_aliases (void)
+ 	  oid = DECL_ASSEMBLER_NAME (fndecl);
+ 	  oname = IDENTIFIER_POINTER (oid);
+ 	  gcc_assert (oname[0] == '_' && oname[1] == 'Z');
+-	  nname = ACONCAT (("_ZGA", oname+2, NULL));
++	  nname = ACONCAT (("_ZGA", oname+2, (char *)0));
+ 	  nid = get_identifier (nname);
+ 
+ 	  alias = make_alias_for (fndecl, nid);
