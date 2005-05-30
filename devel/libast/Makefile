@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/28 09:06:33 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/05/30 10:34:00 alek Exp $
 
 COMMENT=		"library of assorted spiffy things"
 
@@ -6,8 +6,6 @@ DISTNAME=		libast-0.6.1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://eterm.sourceforge.net/
-
-MAINTAINER=		Francois Briere <fbriere@imaginatif.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
