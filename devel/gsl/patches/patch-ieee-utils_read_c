@@ -1,0 +1,19 @@
+$OpenBSD: patch-ieee-utils_read_c,v 1.1 2005/05/30 17:58:08 canacar Exp $
+--- ieee-utils/read.c.orig	Sun May 29 18:27:52 2005
++++ ieee-utils/read.c	Sun May 29 18:29:21 2005
+@@ -41,14 +41,12 @@ gsl_ieee_read_mode_string (const char * 
+   int rounding_count = 0 ;
+   int exception_count = 0 ;
+ 
+-  start = (char *) malloc(strlen(description) + 1) ;
++  start = strdup(description) ;
+ 
+   if (start == 0) 
+     {
+       GSL_ERROR ("no memory to parse mode string", GSL_ENOMEM) ;
+     }
+-
+-  strcpy (start, description) ;
+ 
+   p = start ;
+ 

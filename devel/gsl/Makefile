@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2004/11/23 11:22:02 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2005/05/30 17:58:08 canacar Exp $
 
 COMMENT=	"GNU Scientific Library"
 
-DISTNAME=	gsl-0.6
+DISTNAME=	gsl-1.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE:=gsl/}
 HOMEPAGE=	http://sources.redhat.com/gsl/
 
-MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
+MAINTAINER=	Can Erkin Acar <canacar@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -16,5 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 CONFIGURE_STYLE=	gnu
+
+USE_LIBTOOL=		Yes
 
 .include <bsd.port.mk>

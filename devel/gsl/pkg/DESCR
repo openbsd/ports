@@ -1,15 +1,21 @@
-This is GSL, the GNU Scientific Library.
+The GNU Scientific Library (GSL) is a numerical library for C and C++
+programmers. It is free software under the GNU General Public License.
+The library provides a wide range of mathematical routines such as
+random number generators, special functions and least-squares
+fitting. There are over 1000 functions in total.
+ 
+The complete range of subject areas covered by the library includes, 
 
-It is still in early stages of development, but it is being placed on
-ftp://alpha.gnu.org/gnu/ in hopes that others might be interested in
-joining the project.
+  Complex Numbers		Roots of Polynomials	Special Functions
+  Vectors and Matrices  	Permutations		Sorting
+  BLAS Support			Linear Algebra		Eigensystems
+  Fast Fourier Transforms 	Quadrature		Random Numbers
+  Quasi-Random Sequences	Random Distributions	Statistics
+  Histograms			N-Tuples		Monte Carlo Integration
+  Simulated Annealing		Differential Equations	Interpolation
+  Numerical Differentiation	Chebyshev Approximation	Series Acceleration
+  Discrete Hankel Transforms	Root-Finding		Minimization
+  Least-Squares Fitting		Physical Constants	IEEE Floating-Point
 
-The random, fft, siman, roots, statistics and specfunc are reasonable
-well developed.  All but the later are documented in gsl-ref.texi.
-
-A test suite is available for most of the libraries.  It can be
-invoked with "make check" in each directory.  All tests can be run
-together with "make check" at the top level.
-
-If you are interested in participating in GSL development, please send
-mail to Mark Galassi -- rosalia@cygnus.com           
+As of 2004, GSL itself is essentially feature complete, the developers
+are not actively working on any major new functionality.
