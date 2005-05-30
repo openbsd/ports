@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/30 08:39:49 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2005/05/30 12:21:30 xsa Exp $
 
 COMMENT=	"Apache module that provides randomized services"
 
@@ -12,8 +12,6 @@ CATEGORIES=	www
 HOMEPAGE=	http://software.tangent.org/projects.pl?view=mod_random
 MASTER_SITES=	http://software.tangent.org/download/ \
 		ftp://ftp.tangent.org/pub/apache/
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # BSD 
 PERMIT_PACKAGE_CDROM=	Yes
