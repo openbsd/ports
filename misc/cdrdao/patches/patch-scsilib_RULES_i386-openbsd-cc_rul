@@ -1,12 +1,12 @@
-$OpenBSD: patch-scsilib_RULES_i386-openbsd-cc_rul,v 1.1 2001/10/03 16:08:48 naddy Exp $
---- scsilib/RULES/i386-openbsd-cc.rul.orig	Sun Apr 29 10:44:45 2001
-+++ scsilib/RULES/i386-openbsd-cc.rul	Mon Oct  1 20:04:09 2001
+$OpenBSD: patch-scsilib_RULES_i386-openbsd-cc_rul,v 1.2 2005/05/31 19:40:24 millert Exp $
+--- scsilib/RULES/i386-openbsd-cc.rul.orig	Tue Oct 15 14:43:40 2002
++++ scsilib/RULES/i386-openbsd-cc.rul	Sun May 29 14:12:44 2005
 @@ -24,13 +24,13 @@ include $(SRCROOT)/$(RULESDIR)/rules.prg
  ###########################################################################
  
  CPPFLAGS=	$(CPPOPTS) $(CPPOPTX)
--CFLAGS=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(COPTX)
-+CFLAGS+=	$(COPTS) $(CWARNOPTS) $(COPTOPT) $(COPTX)
+-CFLAGS=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(GCCOPTOPT) $(COPTX)
++CFLAGS+=	$(COPTS) $(CWARNOPTS) $(COPTOPT) $(GCCOPTOPT) $(COPTX)
  
  CPPOPTS=	-I. -I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(OSDEFS)
  COPTS=

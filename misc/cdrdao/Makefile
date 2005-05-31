@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/22 11:48:33 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2005/05/31 19:40:24 millert Exp $
 
 COMMENT=	"write audio/data CD-Rs in disk-at-once mode"
 
-DISTNAME= 	cdrdao-1.1.7
+DISTNAME= 	cdrdao-1.2.0
 CATEGORIES=	audio misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cdrdao/}
-DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
 
 HOMEPAGE=	http://cdrdao.sourceforge.net/
 
@@ -18,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++
 
 USE_GMAKE=		Yes
-CONFIGURE_STYLE=	gnu dest
+CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/paranoia ${WRKSRC}/scsilib/conf
 CONFIGURE_ARGS+=	--with-posix-threads=no --without-lame \
 			--with-gtkmm-prefix=/nonexistent
