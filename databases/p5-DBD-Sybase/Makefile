@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2005/04/13 09:56:52 xsa Exp $
+# $OpenBSD: Makefile,v 1.9 2005/05/31 16:07:54 sturm Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Sybase database driver for the DBI module"
 
 DISTNAME=	DBD-Sybase-1.04
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	databases perl5
 
 # GPL/Artistic License
@@ -17,9 +17,11 @@ WANTLIB=		intl m
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=DBD/}
 
-LIB_DEPENDS=	tds.2,sybdb.3,ct.1::databases/freetds
-RUN_DEPENDS=	:p5-DBI-*:databases/p5-DBI
+MODULES=	devel/gettext
+
+LIB_DEPENDS=	ct.3::databases/freetds
 BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	:p5-DBI-*:databases/p5-DBI \
 
 CONFIGURE_STYLE=perl
 CONFIGURE_ENV+=	SYBASE=${LOCALBASE}
