@@ -1,2 +1,7 @@
-Remove Amanda entries (amanda, amandaidx, amidxtape) from
+Remove AMANDA entries (amanda, amandaidx, amidxtape) from
 /etc/inetd.conf.
+
+
+gpg flavor only:
+
+Do not forget to remove the GPG keyrings from your system.

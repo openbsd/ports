@@ -1,18 +1,21 @@
-# $OpenBSD: Makefile,v 1.28 2005/05/04 17:08:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.29 2005/05/31 09:09:30 db Exp $
 
 COMMENT=	"network-capable tape backup (client and tape server)"
 COMMENT-client=	"network-capable tape backup (client only)"
+COMMENT-doc=	"network-capable tape backup (documentation)"
 
-DISTVERSION=	2.4.4p4
+DISTVERSION=	2.4.5
 
-# 2.4.4p4 is problematical as a package name, because we have been
-# marking OpenBSD package revisions with a "pX" suffix.
-PKGVERSION=	${DISTVERSION:S/p/./}
+PKGVERSION=	${DISTVERSION}
+# Minor patched releases are usually named with a "pX" suffix.
+# These names can not be used with the OpenBSD ports framework.
+# PKGVERSION=   ${DISTVERSION:S/p/./}
 
 DISTNAME=	amanda-${DISTVERSION}
 
 PKGNAME=	amanda-${PKGVERSION}
 PKGNAME-client=	amanda-client-${PKGVERSION}
+PKGNAME-doc=	amanda-doc-${PKGVERSION}
 
 CATEGORIES=	misc
 
@@ -29,35 +32,54 @@ WANTLIB=		c m readline termcap
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=amanda/}
 
-# Amanda configure looks for gtar and smbclient so that it can hard-code
+# AMANDA configure looks for gtar and smbclient so that it can hard-code
 # the pathnames.
 # Configure looks for gnuplot to see if it should build amplot.
 BUILD_DEPENDS+= :gtar-*:archivers/gtar \
 		:samba-*:net/samba \
 		:gnuplot-*:math/gnuplot
 
-# There is no need to set RUN_DEPENDS, because Amanda will run fine
+# There is no need to set RUN_DEPENDS, because AMANDA will run fine
 # without gtar, smbclient, and gnuplot.  They will only be required
 # if the user creates a configuration that needs them, and then
-# Amanda will gracefully tell them what is required.
+# AMANDA will gracefully tell them what is required.
 
-MULTI_PACKAGES=	-client
+MULTI_PACKAGES=	-client -doc
 SUBPACKAGE?=
+
+FLAVORS=	db gpg
+FLAVOR?=
 
 CONFIGURE_STYLE=		gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 
-# Because Amanda does not conform to shared library naming standards,
-# and knowing that no software outside of Amanda attempts to use the
+# Because AMANDA does not conform to shared library naming standards,
+# and knowing that no software outside of AMANDA attempts to use the
 # shared libraries, we disable the generation of shared libraries.
-# Use mmap instead of shm to work around broken uvm post 2.7.
 CONFIGURE_ARGS=	--disable-shared \
 		--libexecdir=${PREFIX}/libexec/amanda \
 		--localstatedir=/var \
 		--with-configdir=${SYSCONFDIR}/amanda \
-		--with-mmap \
 		--with-user=operator \
 		--with-group=operator
+
+# Use this flavor to speed things up if you have large AMANDA
+# databases.
+.if ${FLAVOR:L:Mdb}
+BUILD_DEPENDS+=  :db-4.*:databases/db/v4
+CONFIGURE_ARGS+= --with-db=db
+CFLAGS+=	 -L${LOCALBASE}/lib
+.endif
+
+.if ${FLAVOR:L:Mgpg}
+BUILD_DEPENDS+=  :gnupg-*:security/gnupg
+CONFIGURE_ENV+=  GZIP=${LOCALBASE}/bin/gpgzip
+.endif
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-doc"
+PKG_ARCH=               *
+WANTLIB=
+.endif
 
 OLD_DOC_DIR=	${PREFIX}/share/amanda
 DOC_DIR=	${PREFIX}/share/doc/amanda
@@ -81,7 +103,11 @@ post-install:
 		  -e 's,/usr/local/etc,${SYSCONFDIR},' $$f \
 	      > ${EXAMPLE_DIR}/$$f; \
 	    done
-	@${INSTALL_DATA} ${FILESDIR}/crontab.sample ${EXAMPLE_DIR}
+	@sed -e 's,@LOCALBASE@,${LOCALBASE},' \
+	  ${FILESDIR}/crontab.sample > ${EXAMPLE_DIR}/crontab.sample
 	@${INSTALL_DATA} /dev/null ${EXAMPLE_DIR}/amandates
+	@sed -e 's,@LOCALBASE@,${LOCALBASE},' \
+	     -e 's,@SYSCONFDIR@,${SYSCONFDIR},' \
+	     ${FILESDIR}/gpgzip > ${PREFIX}/bin/gpgzip;
 
 .include <bsd.port.mk>

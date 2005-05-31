@@ -7,10 +7,11 @@ Once verified issue the command:
 
    kill -HUP `cat /var/run/inetd.pid`
 
-You also need to create /operator/.amandahosts, which will contain
-the FQDN of the tape server.  The contents should look like this:
+You also need to create /operator/.amandahosts, which will contain the
+FQDN of the tape server and the user allowed to access this machine.
+The contents should look like this:
 
-   backup.openbsd.org amanda
+   backup.openbsd.org operator
 
 The permissions of /operator/.amandahosts must be restricted:
 
@@ -19,3 +20,23 @@ The permissions of /operator/.amandahosts must be restricted:
 
 Sample configuration files have been installed in
 ${PREFIX}/share/examples/amanda.
+
+
+gpg flavor only:
+
+You need an additional secret GPG key for the backup user on the
+client. There is one drawback in this configuration, the key must be
+setup without a password. After key generation import the master public
+key:
+
+   gpg --import /tmp/master-pub.key
+
+The imported key needs to be signed otherwise gnupg will not run
+properly in batch mode:
+
+   gpg --sign-key $MASTER-PUBKEY-ID
+
+Add the following variables to ${SYSCONFDIR}/amanda/amanda.gpg.conf:
+
+   gpg_home="/operator/.gnupg"	# keyring location
+   gpg_id="$MASTER-PUBKEY-ID"	# pub key id of master key

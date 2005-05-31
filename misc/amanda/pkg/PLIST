@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2005/05/04 17:08:24 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.17 2005/05/31 09:09:30 db Exp $
 @conflict amanda-client-*
 lib/libamanda.a
 @comment lib/libamanda.la
@@ -93,41 +93,6 @@ sbin/amtapetype
 sbin/amtoc
 sbin/amverify
 sbin/amverifyrun
-share/doc/amanda/
-share/doc/amanda/AUTHORS
-share/doc/amanda/COPYRIGHT
-share/doc/amanda/COPYRIGHT-REGEX
-share/doc/amanda/COPYRIGHT-APACHE
-share/doc/amanda/ChangeLog
-share/doc/amanda/DUMPER-API
-share/doc/amanda/EXCLUDE
-share/doc/amanda/FAQ
-share/doc/amanda/HOWTO-AFS
-share/doc/amanda/HOWTO-CYGWIN.html
-share/doc/amanda/HOWTO-FILE-DRIVER
-share/doc/amanda/INDEXING
-share/doc/amanda/INSTALL
-share/doc/amanda/INTERNALS
-share/doc/amanda/KERBEROS
-share/doc/amanda/LABEL.PRINTING
-share/doc/amanda/MULTITAPE
-share/doc/amanda/NEWS
-share/doc/amanda/README
-share/doc/amanda/PORT.USAGE
-share/doc/amanda/RAIT
-share/doc/amanda/RESTORE
-share/doc/amanda/SAMBA
-share/doc/amanda/SECURITY
-share/doc/amanda/SYSTEM.NOTES
-share/doc/amanda/TAPE.CHANGERS
-share/doc/amanda/TAPETYPES
-share/doc/amanda/UPGRADE
-share/doc/amanda/VTAPE-API
-share/doc/amanda/WHATS.NEW
-share/doc/amanda/WISHLIST
-share/doc/amanda/YEAR2000
-share/doc/amanda/ZFTAPE
-share/doc/amanda/chg-scsi.notes
 share/examples/amanda/
 share/examples/amanda/3hole.ps
 share/examples/amanda/8.5x11.ps
@@ -146,6 +111,7 @@ share/examples/amanda/chg-scsi.conf
 share/examples/amanda/crontab.sample
 share/examples/amanda/disklist
 share/examples/amanda/amandates
+%%gpg%%
 @owner operator
 @group operator
 @sample /etc/amandates
