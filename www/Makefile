@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2005/05/27 16:09:27 msf Exp $
+# $OpenBSD: Makefile,v 1.192 2005/05/31 19:26:11 sturm Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -127,6 +127,7 @@
      SUBDIR += p5-MasonX-Interp-WithCallbacks
      SUBDIR += p5-Maypole
      SUBDIR += p5-Maypole-Authentication-UserSessionCookie
+     SUBDIR += p5-PHP-Session
      SUBDIR += p5-PodToHTML
      SUBDIR += p5-SOAP-Lite
      SUBDIR += p5-URI
