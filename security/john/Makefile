@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2004/12/27 13:28:34 alek Exp $
+# $OpenBSD: Makefile,v 1.29 2005/05/31 08:08:52 sturm Exp $
 
 COMMENT=		"extremely fast password cracker"
 
-DISTNAME=		john-1.6.37
+DISTNAME=		john-1.6.38
 CATEGORIES=     	security
 
 HOMEPAGE=		http://www.openwall.com/john/
@@ -14,16 +14,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
-MASTER_SITES=		${HOMEPAGE}a/
-
-DISTFILES=		${DISTNAME}.tar.gz \
-			john-1.6.tar.gz
+MASTER_SITES=		${HOMEPAGE}c/
 
 NO_REGRESS=		Yes
 
-WRKDIST=		${WRKDIR}/${DISTNAME}
 WRKSRC=			${WRKDIST}/src
-OLDJOHN=		${WRKDIR}/john-1.6
 MAKE_FLAGS=		CC=${CC} AS=${CC} LD=${CC} \
 			CFLAGS="${CFLAGS} -c"
 
@@ -42,23 +37,31 @@ ALL_TARGET=		openbsd-vax
 .elif ${MACHINE_ARCH} == "alpha"
 ALL_TARGET=		linux-alpha
 .elif ${MACHINE_ARCH} == "powerpc"
-ALL_TARGET=		linux-ppc
+ALL_TARGET=		linux-ppc32
+.elif ${MACHINE_ARCH} == "powerpc64"
+ALL_TARGET=		linux-ppc64
+.elif ${MACHINE_ARCH} == "hppa"
+ALL_TARGET=		hpux-pa-risc-${CC}
+.elif ${MACHINE_ARCH} == "sparc64"
+ALL_TARGET=		"openbsd-sparc64"
 .else
 ALL_TARGET=		generic
 .endif
 
+do-configure:
+	@perl -pi -e "s,%%PREFIX%%,${PREFIX},;" \
+		-e "s,%%SYSCONFDIR%%,${SYSCONFDIR},;" ${WRKSRC}/params.h
+
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/john
-	${INSTALL_DATA_DIR} ${PREFIX}/share/john
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/john
 	${INSTALL_PROGRAM} ${WRKDIST}/run/john ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIST}/run/mailer ${PREFIX}/bin
 	@cd ${PREFIX}/bin && \
 		ln -sf john unshadow && \
 		ln -sf john unafs && \
 		ln -sf john unique
-	${INSTALL_DATA} ${OLDJOHN}/run/* ${PREFIX}/share/john
-	${INSTALL_DATA} ${WRKDIST}/run/* ${PREFIX}/share/john
-	${INSTALL_DATA} ${OLDJOHN}/doc/* ${PREFIX}/share/doc/john
+	${INSTALL_DATA} ${WRKDIST}/run/john.conf ${PREFIX}/share/examples/john
 	${INSTALL_DATA} ${WRKDIST}/doc/* ${PREFIX}/share/doc/john
 
 .include <bsd.port.mk>
