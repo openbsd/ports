@@ -1,0 +1,5 @@
+PHP::Session allows to read or write PHP session files from a CGI or a
+perl script.
+
+If you like the Apache::Session interface for session management, there
+is glue for Apache::Session to this module, Apache::Session::PHP.

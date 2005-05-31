@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/31 19:25:26 sturm Exp $
+${P5SITE}/PHP/
+${P5SITE}/PHP/Session/
+${P5SITE}/PHP/Session.pm
+${P5SITE}/PHP/Session/Serializer/
+${P5SITE}/PHP/Session/Serializer/PHP.pm
+@man man/man3p/PHP::Session.3p
+@man man/man3p/PHP::Session::Serializer::PHP.3p
