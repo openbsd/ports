@@ -1,0 +1,11 @@
+Kst is a data plotting and viewing program.
+* Robust plotting of live "streaming" data.
+* Powerful keyboard and mouse plot manipulation.
+* Powerful plugins and extensions support.
+* Large selection of built-in plotting and data manipulation functions, such 
+as histograms, equations, and power spectra.
+* Color mapping and contour mapping capabilities for three-dimensional data.
+* Monitoring of events and notifications support.
+* Built-in filtering and curve fitting capabilities.
+* Convenient command-line interface.
+* Powerful graphical user interface.
