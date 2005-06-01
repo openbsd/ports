@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/05/15 14:58:09 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/06/01 16:02:31 naddy Exp $
 bin/btdownloadcurses
 bin/btdownloadheadless
 bin/btlaunchmany
@@ -83,9 +83,59 @@ lib/python${MODPY_VERSION}/site-packages/BitTorrent/track.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/track.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/zurllib.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/zurllib.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/
+lib/python${MODPY_VERSION}/site-packages/khashmir/__init__.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/actions.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/actions.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/cache.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/cache.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/const.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/const.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/defer.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/defer.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/inserter.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/inserter.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/khash.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/khash.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/khashmir.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/khashmir.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/knet.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/knet.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/knode.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/knode.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/krpc.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/krpc.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/kstore.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/kstore.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/ktable.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/ktable.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/node.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/node.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/setup.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/setup.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/test.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/test.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/test_khashmir.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/test_khashmir.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/test_krpc.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/test_krpc.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/test_kstore.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/test_kstore.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/unet.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/unet.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/util.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/util.pyc
+lib/python${MODPY_VERSION}/site-packages/khashmir/utkhashmir.py
+lib/python${MODPY_VERSION}/site-packages/khashmir/utkhashmir.pyc
 share/doc/BitTorrent/
 share/doc/BitTorrent/LICENSE.txt
 share/doc/BitTorrent/README.OpenBSD
 share/doc/BitTorrent/README.txt
-@comment share/doc/BitTorrent/credits.txt
+share/doc/BitTorrent/TRACKERLESS.txt
+share/doc/BitTorrent/credits.txt
 @comment share/doc/BitTorrent/redirdonate.html
+share/locale/
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
+share/locale/fr/LC_MESSAGES/bittorrent.mo

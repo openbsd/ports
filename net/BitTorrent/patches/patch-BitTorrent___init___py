@@ -1,6 +1,6 @@
-$OpenBSD: patch-BitTorrent___init___py,v 1.1 2005/05/15 14:58:09 naddy Exp $
---- BitTorrent/__init__.py.orig	Fri May 13 14:56:32 2005
-+++ BitTorrent/__init__.py	Fri May 13 14:57:14 2005
+$OpenBSD: patch-BitTorrent___init___py,v 1.2 2005/06/01 16:02:31 naddy Exp $
+--- BitTorrent/__init__.py.orig	Tue May 24 00:01:28 2005
++++ BitTorrent/__init__.py	Sat May 28 12:46:46 2005
 @@ -22,7 +22,7 @@ import os
  import re
  
@@ -10,3 +10,19 @@ $OpenBSD: patch-BitTorrent___init___py,v 1.1 2005/05/15 14:58:09 naddy Exp $
      ip = os.path.join('share', 'pixmaps', appdir)
      dp = os.path.join('share', 'doc'    , appdir)
      return ip, dp
+@@ -133,10 +133,13 @@ if is_frozen_exe:
+ del sys
+ 
+ def spawn(torrentqueue, cmd, *args):
+-    ext = 'py'
++    ext = ''
+     if is_frozen_exe:
+         ext = 'exe'
+-    path = os.path.join(app_root,cmd+'.'+ext)
++    if ext == '':
++        path = os.path.join(app_root,cmd)
++    else:
++        path = os.path.join(app_root,cmd+'.'+ext)
+     args = [path] + list(args) # $0
+     if os.name == 'nt':
+         # do proper argument quoting since exec/spawn on Windows doesn't

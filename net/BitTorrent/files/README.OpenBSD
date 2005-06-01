@@ -1,4 +1,4 @@
-#	$OpenBSD: README.OpenBSD,v 1.2 2005/05/15 14:58:08 naddy Exp $
+#	$OpenBSD: README.OpenBSD,v 1.3 2005/06/01 16:02:31 naddy Exp $
 
 To begin using BitTorrent quickly, simply fetch a torrent file and
 run btdownloadgui (X11) or btdownloadcurses:
@@ -12,3 +12,6 @@ outlined in README.txt.  An example pf.conf stub for doing this is:
 rdr on $ext_if inet proto tcp from any to $ext_ip port 6881:6889 -> \
 	$BitTorrentmachine port 6881:*
 
+If a torrent contains many files or the client has connections to
+many peers, it may be necessary to increase the limit on the maximum
+number of open file descriptors per process (ulimit -n).

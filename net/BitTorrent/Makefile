@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2005/05/15 14:58:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2005/06/01 16:02:31 naddy Exp $
 
 COMMENT=	"cooperative file distribution system implemented in Python"
 COMMENT-gui=	"graphical interface components for BitTorrent"
 
-VERSION=	4.0.1
+VERSION=	4.1.1
 DISTNAME=	BitTorrent-${VERSION}
-PKGNAME=	BitTorrent-${VERSION}p3
-PKGNAME-gui=	BitTorrent-gui-${VERSION}p3
+PKGNAME-gui=	BitTorrent-gui-${VERSION}
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.bittorrent.com/
+
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # Custom
 PERMIT_DISTFILES_CDROM=	Yes
@@ -26,7 +27,7 @@ SUBPACKAGE?=
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
 RUN_DEPENDS=	:${PKGNAME}:net/BitTorrent \
-		::x11/py-gtk2
+		::x11/py-gtk2 ::x11/hicolor-icon-theme
 .endif
 
 NO_REGRESS=	Yes
