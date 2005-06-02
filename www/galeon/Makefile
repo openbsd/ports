@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2005/03/29 19:33:40 wilfried Exp $
+# $OpenBSD: Makefile,v 1.20 2005/06/02 18:27:03 sturm Exp $
 
 COMMENT=	"GNOME web browser based on gecko"
 
 V=		1.3.20
 DISTNAME=	galeon-${V}
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://galeon.sourceforge.net/
@@ -16,12 +16,12 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB= ORBit-2.0.0 ORBitCosNaming-2.0.0 art_lgpl_2.0.0 atk-1.0.0.0 \
         audiofile bonobo-2.0.0 bonobo-activation bonoboui-2.0.0 \
-        eel-2.0.0 esd gailutil gconf-2.0.0 gdk-x11-2.0.0.0 \
+        esd gconf-2.0.0 gdk-x11-2.0.0.0 \
         gdk_pixbuf-2.0.0.0 glade-2.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
         gnome-2.0.0 gnome-keyring gnomecanvas-2.0.0 gnomevfs-2.0.0 \
         gobject-2.0.0.0 gthread-2.0.0.0 gtk-x11-2.0.0.0 jpeg \
         pango-1.0.0.0 pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
-        popt xml2.0.0 ICE SM X11 Xcursor Xext Xft Xinerama Xrender \
+        popt startup-notification-1.0 xml2.0.0 ICE SM X11 Xft Xrender \
         c crypto fontconfig freetype m pthread ssl stdc++ z
 
 
@@ -36,8 +36,8 @@ BUILD_DEPENDS=	:mozilla-*-gtk2:www/mozilla,gtk2 \
  		:pkgconfig-*:devel/pkgconfig \
 		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		:scrollkeeper->=0.3.12:textproc/scrollkeeper
-LIB_DEPENDS= 	gnomeui-2.0::x11/gnome/libgnomeui \
-		nautilus::x11/gnome/nautilus \
+LIB_DEPENDS= 	gnome-desktop-2::x11/gnome/desktop \
+		gnomeui-2.0::x11/gnome/libgnomeui \
 		mozilla/gtkembedmoz,mozilla/xpcom,mozilla/plds4,mozilla/plc4,mozilla/nspr4:mozilla-*-gtk2:www/mozilla,gtk2
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
@@ -49,7 +49,6 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/galeon \
 		--disable-schemas-install \
-		--enable-nautilus-view \
 		--disable-gtkhtml
 
 WRKDIST=	${WRKDIR}/galeon-${V}/

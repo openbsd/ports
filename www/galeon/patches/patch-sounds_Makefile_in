@@ -1,7 +1,7 @@
-$OpenBSD: patch-sounds_Makefile_in,v 1.1 2005/03/29 19:33:40 wilfried Exp $
---- sounds/Makefile.in.orig	Sun Aug  8 22:12:13 2004
-+++ sounds/Makefile.in	Tue Jan 18 23:22:08 2005
-@@ -232,7 +232,7 @@ sharedstatedir = @sharedstatedir@
+$OpenBSD: patch-sounds_Makefile_in,v 1.2 2005/06/02 18:27:03 sturm Exp $
+--- sounds/Makefile.in.orig	Sat Mar 12 21:07:02 2005
++++ sounds/Makefile.in	Thu Jun  2 19:41:38 2005
+@@ -236,7 +236,7 @@ sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  galeon_SOUNDS = clicked.wav
