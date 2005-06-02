@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2005/06/02 14:01:25 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2005/06/02 19:42:01 naddy Exp $
 
 COMMENT=		"K Desktop Environment, aRTs"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.4
+VERSION=		3.4.1
 DISTNAME=		arts-1.4.1
 MODKDE_VERSION?=	3.4
 PKGNAME=		${DISTNAME}
