@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2005/01/25 17:19:33 alek Exp $
+# $OpenBSD: Makefile,v 1.28 2005/06/02 17:52:12 sturm Exp $
 
 COMMENT=	"AFPL PostScript interpreter"
 
 VERSION=	8.14
 DISTNAME=	ghostscript-${VERSION}
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	print lang
 
 DIR=		AFPL/gs${VERSION:S/.//}
@@ -101,7 +101,7 @@ INSTALL_TARGET=	install
 FLAVORS=	a4 gtk no_x11
 FLAVOR?=
 
-.if ${FLAVOR:U:Ma4}
+.if ${FLAVOR:L:Ma4}
 CFLAGS+=	-DA4
 .endif
 

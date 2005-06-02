@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2005/01/25 17:19:33 alek Exp $
+# $OpenBSD: Makefile,v 1.42 2005/06/02 17:52:12 sturm Exp $
 
 COMMENT=	"GNU PostScript interpreter"
 
 VERSION=	7.05
 DISTNAME=	ghostscript-${VERSION}
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 CATEGORIES=	print lang
 
 DIR=		gnu/gs${VERSION:S/.//}
@@ -101,7 +101,7 @@ INSTALL_TARGET=	install
 FLAVORS=	a4 gtk no_x11
 FLAVOR?=
 
-.if ${FLAVOR:U:Ma4}
+.if ${FLAVOR:L:Ma4}
 CFLAGS+=	-DA4
 .endif
 
