@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/03/29 21:18:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/06/02 14:01:27 espie Exp $
 bin/kfilereplace
 bin/kimagemapeditor
 bin/klinkstatus
@@ -33,8 +33,6 @@ share/applications/kde/klinkstatus.desktop
 share/applications/kde/kmdr-editor.desktop
 share/applications/kde/kxsldbg.desktop
 share/applications/kde/quanta.desktop
-share/applnk/
-share/applnk/.hidden/
 share/applnk/.hidden/kmdr-executor.desktop
 share/apps/kafkapart/
 share/apps/kafkapart/entities
@@ -78,6 +76,9 @@ share/apps/klinkstatuspart/
 share/apps/klinkstatuspart/klinkstatus_part.rc
 share/apps/klinkstatuspart/pics/
 share/apps/klinkstatuspart/pics/304.png
+share/apps/kmdr-editor/
+share/apps/kmdr-editor/pics/
+share/apps/kmdr-editor/pics/kommandersplash.png
 share/apps/kxsldbg/
 share/apps/kxsldbg/kxsldbg_shell.rc
 share/apps/kxsldbgpart/
@@ -1462,7 +1463,6 @@ share/apps/templates/
 share/apps/templates/text/
 share/apps/templates/text/scripts/
 share/apps/templates/text/scripts/demo.php
-share/config.kcfg/
 share/config.kcfg/klinkstatus.kcfg
 share/doc/HTML/en/kfilereplace/
 share/doc/HTML/en/kfilereplace/addstringsdialog_window.png
@@ -1665,7 +1665,6 @@ share/icons/hicolor/16x16/actions/xsldbg_refresh.png
 share/icons/hicolor/16x16/actions/xsldbg_source.png
 share/icons/hicolor/16x16/actions/xsldbg_stepdown.png
 share/icons/hicolor/16x16/actions/xsldbg_stepup.png
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kimagemapeditor.png
 share/icons/hicolor/16x16/apps/klinkstatus.png
 share/icons/hicolor/16x16/apps/quanta.png
@@ -1697,22 +1696,14 @@ share/icons/hicolor/22x22/actions/xsldbg_stepup.png
 share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/kfilereplace.png
 share/icons/hicolor/22x22/apps/quanta.png
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kfilereplace.png
 share/icons/hicolor/32x32/apps/kimagemapeditor.png
 share/icons/hicolor/32x32/apps/klinkstatus.png
 share/icons/hicolor/32x32/apps/quanta.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kfilereplace.png
 share/icons/hicolor/48x48/apps/kimagemapeditor.png
 share/icons/hicolor/48x48/apps/quanta.png
-share/icons/locolor/
-share/icons/locolor/16x16/
-share/icons/locolor/16x16/apps/
 share/icons/locolor/16x16/apps/kimagemapeditor.png
-share/icons/locolor/32x32/
-share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/kimagemapeditor.png
 share/mimelnk/application/x-kommander.desktop
 share/mimelnk/application/x-webprj.desktop

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2005/04/27 15:49:55 drahn Exp $
+# $OpenBSD: Makefile,v 1.53 2005/06/02 14:01:26 espie Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.4.0
+VERSION=		3.4.1
 DISTNAME=		kdelibs-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}
 MODKDE_VERSION?=	3.4
 
 FLAVORS=debug
@@ -64,5 +64,7 @@ post-install:
 	done
 	${INSTALL_PROGRAM} ${WRKBUILD}/libtool ${PREFIX}/bin/kdelibtool
 
+MAKE_FLAGS=LIBTOOL='/home/espie/bin/sh ${WRKBUILD}/libtool' \
+	PROFDIR=/tmp/ksh
 .include <bsd.port.mk>
 MODGNU_AUTOCONF_FILES+= dcop/dcop-path.h.in

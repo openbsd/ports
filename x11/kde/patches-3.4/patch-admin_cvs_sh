@@ -1,7 +1,7 @@
-$OpenBSD: patch-admin_cvs_sh,v 1.1 2005/03/29 21:18:37 espie Exp $
---- admin/cvs.sh.orig	Wed Feb 23 10:10:13 2005
-+++ admin/cvs.sh	Wed Mar 23 08:51:07 2005
-@@ -633,8 +633,10 @@ if test -f Makefile.am.in; then
+$OpenBSD: patch-admin_cvs_sh,v 1.2 2005/06/02 14:01:27 espie Exp $
+--- admin/cvs.sh.orig	Mon May 23 14:00:13 2005
++++ admin/cvs.sh	Tue May 31 12:26:38 2005
+@@ -634,8 +634,10 @@ if test -f Makefile.am.in; then
    rm -f $makefile_wo
  fi
  

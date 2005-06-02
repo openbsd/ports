@@ -1,6 +1,6 @@
-$OpenBSD: patch-kstars_kstars_indi_fli_libfli_c,v 1.1 2004/09/18 09:36:43 espie Exp $
---- kstars/kstars/indi/fli/libfli.c.orig	Mon Sep  6 14:37:09 2004
-+++ kstars/kstars/indi/fli/libfli.c	Mon Sep  6 14:38:16 2004
+$OpenBSD: patch-kstars_kstars_indi_fli_libfli_c,v 1.2 2005/06/02 14:01:26 espie Exp $
+--- kstars/kstars/indi/fli/libfli.c.orig	Mon May 23 14:04:00 2005
++++ kstars/kstars/indi/fli/libfli.c	Thu May 26 16:30:12 2005
 @@ -282,7 +282,7 @@ LIBFLIAPI FLIGetLibVersion(char* ver, si
      return -EINVAL;
  

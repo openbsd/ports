@@ -1,7 +1,7 @@
-$OpenBSD: patch-kuiviewer_Makefile_in,v 1.1 2004/02/02 00:31:39 espie Exp $
---- kuiviewer/Makefile.in.orig	2004-02-01 22:11:58.000000000 +0100
-+++ kuiviewer/Makefile.in	2004-02-01 22:15:57.000000000 +0100
-@@ -346,7 +346,7 @@ kde_module_LTLIBRARIES = libkuiviewerpar
+$OpenBSD: patch-kuiviewer_Makefile_in,v 1.2 2005/06/02 14:01:27 espie Exp $
+--- kuiviewer/Makefile.in.orig	Mon May 23 18:11:23 2005
++++ kuiviewer/Makefile.in	Sun May 29 18:51:59 2005
+@@ -451,7 +451,7 @@ kde_module_LTLIBRARIES = libkuiviewerpar
  # the Part's source, library search path, and link libraries
  libkuiviewerpart_la_SOURCES = kuiviewer_part.cpp
  libkuiviewerpart_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
@@ -10,7 +10,7 @@ $OpenBSD: patch-kuiviewer_Makefile_in,v 1.1 2004/02/02 00:31:39 espie Exp $
  
  # this is where the desktop file will go 
  partdesktopdir = $(kde_servicesdir)
-@@ -360,7 +360,7 @@ partrc_DATA = kuiviewer_part.rc
+@@ -465,7 +465,7 @@ partrc_DATA = kuiviewer_part.rc
  # THUMBNAIL SECTION
  #########################################################################
  quithumbnail_la_SOURCES = quicreator.cpp

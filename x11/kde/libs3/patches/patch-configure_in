@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.18 2005/03/29 21:18:36 espie Exp $
---- configure.in.orig	Tue Mar  8 16:04:45 2005
-+++ configure.in	Wed Mar 23 09:37:08 2005
-@@ -1780,7 +1780,7 @@ dnl ====================================
+$OpenBSD: patch-configure_in,v 1.19 2005/06/02 14:01:26 espie Exp $
+--- configure.in.orig	Mon May 23 17:26:25 2005
++++ configure.in	Wed May 25 20:39:36 2005
+@@ -1788,7 +1788,7 @@ dnl ====================================
         AC_LANG_SAVE
         AC_LANG_C
         dnl Check for aspell library

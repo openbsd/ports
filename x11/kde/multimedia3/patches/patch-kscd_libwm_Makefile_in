@@ -1,6 +1,6 @@
-$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.12 2005/03/29 21:18:36 espie Exp $
---- kscd/libwm/Makefile.in.orig	Fri Mar  4 13:31:49 2005
-+++ kscd/libwm/Makefile.in	Sat Mar 26 10:35:17 2005
+$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.13 2005/06/02 14:01:26 espie Exp $
+--- kscd/libwm/Makefile.in.orig	Mon May 23 18:04:33 2005
++++ kscd/libwm/Makefile.in	Sun May 29 21:32:52 2005
 @@ -16,11 +16,11 @@
  @SET_MAKE@
  
@@ -50,9 +50,9 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.12 2005/03/29 21:18:36 espie Exp $
  DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
  depcomp = $(SHELL) $(top_srcdir)/admin/depcomp
  am__depfiles_maybe = depfiles
-@@ -89,8 +89,8 @@ LTCOMPILE = $(LIBTOOL) --mode=compile --
+@@ -89,8 +89,8 @@ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=c
  CCLD = $(CC)
- LINK = $(LIBTOOL) --mode=link --tag=CC $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 -SOURCES = $(libworkman_la_SOURCES)
 -DIST_SOURCES = $(libworkman_la_SOURCES)
@@ -87,7 +87,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.12 2005/03/29 21:18:36 espie Exp $
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT)
-@@ -902,8 +902,8 @@ uninstall-info: uninstall-info-recursive
+@@ -914,8 +914,8 @@ uninstall-info: uninstall-info-recursive
  	tags tags-recursive uninstall uninstall-am uninstall-info-am
  
  
@@ -98,7 +98,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.12 2005/03/29 21:18:36 espie Exp $
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
-@@ -954,19 +954,19 @@ bcheck-am:
+@@ -966,19 +966,19 @@ bcheck-am:
  
  #>+ 3
  final:

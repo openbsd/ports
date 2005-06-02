@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2005/03/29 21:18:37 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2005/06/02 14:01:27 espie Exp $
 
 COMMENT= 		"K Desktop Environment, developer extensions"
 CATEGORIES=		x11 x11/kde devel
-VERSION=		3.4.0
+VERSION=		3.4.1
 DISTNAME=		kdesdk-${VERSION}
 MODKDE_VERSION=		3.4
 LIB_DEPENDS=	kdecore.6,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell,ktexteditor,kutils,kwalletclient,vcard::x11/kde/libs3 \

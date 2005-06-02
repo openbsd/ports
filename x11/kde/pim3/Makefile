@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.22 2005/05/21 13:52:36 alek Exp $
+# $OpenBSD: Makefile,v 1.23 2005/06/02 14:01:27 espie Exp $
 
 COMMENT= 		"KDE personal information applications"
 COMMENT-kpilot=		"KDE interface to sync with Palm Pilot"
 CATEGORIES=		x11 x11/kde productivity
-VERSION=		3.4.0
+VERSION=		3.4.1
 DISTNAME=		kdepim-${VERSION}
 PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION=		3.4
 
-LIB_DEPENDS+= 		kdecore.6,artskde,kmedia2_idl,knewstuff,DCOP,kabc,kabc_file,kdefx,kdeprint,kdesasl,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell,kutils,kwalletclient,vcard::x11/kde/libs3
+LIB_DEPENDS+= 		kdecore.6,artskde,kmedia2_idl,knewstuff,DCOP,kabc,kabc_file,kimproxy,kdefakes,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell,kutils,kwalletclient,vcard::x11/kde/libs3
 
 WANTLIB=	Xss audiofile stdc++ ossaudio X11 jpeg util m \
 		vorbisfile gmodule-2.0.0.0 gthread-2.0.0.0 \
-		pcreposix intl vorbisenc qui-mt SM pthread \
+		pcreposix intl vorbisenc qui SM pthread \
 		c artsflow ogg ncurses mcop png iconv Xext \
 		artsflow_idl art_lgpl_2.0.0 mad qtmcop glib-2.0.0.0 \
 		glib-2.0.0.0 ICE readline soundserver_idl Xrender \
-		gpg-error vorbis pcre esd z
+		gpg-error vorbis pcre esd z sasl2
 
 LIB_DEPENDS+=	pisock::comms/pilot-link
 RUN_DEPENDS+=	::x11/kde/base3

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.18 2005/03/29 21:18:36 espie Exp $
---- configure.in.orig	Fri Mar  4 13:29:23 2005
-+++ configure.in	Sat Mar 26 10:49:00 2005
+$OpenBSD: patch-configure_in,v 1.19 2005/06/02 14:01:26 espie Exp $
+--- configure.in.orig	Mon May 23 18:02:52 2005
++++ configure.in	Sun May 29 21:32:52 2005
 @@ -187,7 +187,7 @@ AC_CHECK_LIB(vorbisfile, ov_open,
  
  AC_CHECK_LIB(vorbis, vorbis_info_init,
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_in,v 1.18 2005/03/29 21:18:36 espie Exp $
  
      ])
    if test "x$have_libOggFLAC" = "xyes"; then
-@@ -1928,6 +1928,9 @@ case "$OS_TYPE" in
+@@ -1929,6 +1929,9 @@ case "$OS_TYPE" in
    NetBSD)
      kde_mpeglib_compiles=yes
      ;;
@@ -29,7 +29,7 @@ $OpenBSD: patch-configure_in,v 1.18 2005/03/29 21:18:36 espie Exp $
    Linux)
      kde_mpeglib_compiles=yes
      ;;
-@@ -1955,6 +1958,12 @@ case "$OS_TYPE" in
+@@ -1956,6 +1959,12 @@ case "$OS_TYPE" in
      AC_DEFINE(OS_Linux,1,[Define if you have linux pthread])
      ;;
  
@@ -42,7 +42,7 @@ $OpenBSD: patch-configure_in,v 1.18 2005/03/29 21:18:36 espie Exp $
    FreeBSD)
      OS_TYPE="BSD"
      AC_DEFINE(OS_BSD,1,[Define if you have BSD pthread])
-@@ -1998,7 +2007,7 @@ KDE_MPEGLIB_COMPILES
+@@ -1999,7 +2008,7 @@ KDE_MPEGLIB_COMPILES
  
  THIS_LIB_LIBS="-lX11 -lXext -lm -lstdc++ ${XVLIBS} ${DGALIBS} "
  THIS_LIB_LIBS="${THIS_LIB_LIBS} ${XVIDMODELIBS} ${SDLLIB} ${CDDALIBS} "

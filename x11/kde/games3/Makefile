@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2005/03/29 21:18:35 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2005/06/02 14:01:26 espie Exp $
 
 COMMENT=		"K Desktop Environment, games"
 
 CATEGORIES=		x11 x11/kde games
-VERSION=		3.4.0
+VERSION=		3.4.1
 DISTNAME=		kdegames-${VERSION}
 MODKDE_VERSION=		3.4
 

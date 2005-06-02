@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.17 2005/03/29 21:18:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2005/06/02 14:01:26 espie Exp $
 bin/artsbuilder
 bin/artscontrol
+bin/juk
 bin/kaboodle
 bin/kaudiocreator
 bin/kmid
@@ -208,8 +209,14 @@ ${KDE}/kfile_au.la
 ${KDE}/kfile_au.so
 ${KDE}/kfile_avi.la
 ${KDE}/kfile_avi.so
+${KDE}/kfile_flac.la
+${KDE}/kfile_flac.so
 ${KDE}/kfile_m3u.la
 ${KDE}/kfile_m3u.so
+${KDE}/kfile_mp3.la
+${KDE}/kfile_mp3.so
+${KDE}/kfile_mpc.la
+${KDE}/kfile_mpc.so
 ${KDE}/kfile_ogg.la
 ${KDE}/kfile_ogg.so
 ${KDE}/kfile_sid.la
@@ -501,6 +508,7 @@ lib/mcop/winskinvis.mcoptype
 share/applications/kde/artsbuilder.desktop
 share/applications/kde/artscontrol.desktop
 share/applications/kde/audiocd.desktop
+share/applications/kde/juk.desktop
 share/applications/kde/kaboodle.desktop
 share/applications/kde/kaudiocreator.desktop
 share/applications/kde/kmid.desktop
@@ -605,6 +613,11 @@ share/apps/artsbuilder/pics/Synth_XFADE.xpm
 share/apps/artscontrol/
 share/apps/artscontrol/artscontrol.rc
 share/apps/artscontrol/artsmidimanagerview.rc
+share/apps/juk/
+share/apps/juk/jukui-rtl.rc
+share/apps/juk/jukui.rc
+share/apps/juk/pics/
+share/apps/juk/pics/playing.png
 share/apps/kaboodle/
 share/apps/kaboodle/icons/
 share/apps/kaboodle/icons/crystalsvg/
@@ -722,6 +735,7 @@ share/apps/kmix/pics/mix_volume.png
 share/apps/konqueror/
 share/apps/konqueror/servicemenus/
 share/apps/konqueror/servicemenus/audiocd_play.desktop
+share/apps/konqueror/servicemenus/jukservicemenu.desktop
 share/apps/krec/
 share/apps/krec/icons/
 share/apps/krec/icons/crystalsvg/
@@ -1165,6 +1179,7 @@ share/icons/crystalsvg/128x128/actions/artsfftscope.png
 share/icons/crystalsvg/128x128/actions/artsmediatypes.png
 share/icons/crystalsvg/128x128/actions/artsmidimanager.png
 share/icons/crystalsvg/128x128/apps/artscontrol.png
+share/icons/crystalsvg/128x128/apps/juk.png
 share/icons/crystalsvg/128x128/apps/kaboodle.png
 share/icons/crystalsvg/128x128/apps/kmix.png
 share/icons/crystalsvg/128x128/apps/krec.png
@@ -1178,6 +1193,7 @@ share/icons/crystalsvg/16x16/actions/artsmediatypes.png
 share/icons/crystalsvg/16x16/actions/artsmidimanager.png
 share/icons/crystalsvg/16x16/apps/artsbuilder.png
 share/icons/crystalsvg/16x16/apps/artscontrol.png
+share/icons/crystalsvg/16x16/apps/juk.png
 share/icons/crystalsvg/16x16/apps/kaboodle.png
 share/icons/crystalsvg/16x16/apps/kaudiocreator.png
 share/icons/crystalsvg/16x16/apps/kmid.png
@@ -1191,6 +1207,7 @@ share/icons/crystalsvg/22x22/actions/artsenvironment.png
 share/icons/crystalsvg/22x22/actions/artsfftscope.png
 share/icons/crystalsvg/22x22/actions/artsmediatypes.png
 share/icons/crystalsvg/22x22/actions/artsmidimanager.png
+share/icons/crystalsvg/22x22/actions/juk_dock.png
 share/icons/crystalsvg/22x22/apps/artscontrol.png
 share/icons/crystalsvg/22x22/apps/kaboodle.png
 share/icons/crystalsvg/22x22/apps/krec.png
@@ -1201,6 +1218,7 @@ share/icons/crystalsvg/32x32/actions/artsfftscope.png
 share/icons/crystalsvg/32x32/actions/artsmediatypes.png
 share/icons/crystalsvg/32x32/actions/artsmidimanager.png
 share/icons/crystalsvg/32x32/apps/artscontrol.png
+share/icons/crystalsvg/32x32/apps/juk.png
 share/icons/crystalsvg/32x32/apps/kaboodle.png
 share/icons/crystalsvg/32x32/apps/kaudiocreator.png
 share/icons/crystalsvg/32x32/apps/kmid.png
@@ -1214,6 +1232,7 @@ share/icons/crystalsvg/48x48/actions/artsfftscope.png
 share/icons/crystalsvg/48x48/actions/artsmediatypes.png
 share/icons/crystalsvg/48x48/actions/artsmidimanager.png
 share/icons/crystalsvg/48x48/apps/artscontrol.png
+share/icons/crystalsvg/48x48/apps/juk.png
 share/icons/crystalsvg/48x48/apps/kaboodle.png
 share/icons/crystalsvg/48x48/apps/kmid.png
 share/icons/crystalsvg/48x48/apps/kmix.png
@@ -1226,6 +1245,7 @@ share/icons/crystalsvg/64x64/actions/artsfftscope.png
 share/icons/crystalsvg/64x64/actions/artsmediatypes.png
 share/icons/crystalsvg/64x64/actions/artsmidimanager.png
 share/icons/crystalsvg/64x64/apps/artscontrol.png
+share/icons/crystalsvg/64x64/apps/juk.png
 share/icons/crystalsvg/64x64/apps/kaboodle.png
 share/icons/crystalsvg/64x64/apps/kmix.png
 share/icons/crystalsvg/64x64/apps/krec.png
@@ -1258,7 +1278,10 @@ share/services/kcm_krec.desktop
 share/services/kcm_krec_files.desktop
 share/services/kfile_au.desktop
 share/services/kfile_avi.desktop
+share/services/kfile_flac.desktop
 share/services/kfile_m3u.desktop
+share/services/kfile_mp3.desktop
+share/services/kfile_mpc.desktop
 share/services/kfile_ogg.desktop
 share/services/kfile_sid.desktop
 share/services/kfile_wav.desktop

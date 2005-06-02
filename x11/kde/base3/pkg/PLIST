@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2005/03/29 21:18:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.30 2005/06/02 14:01:25 espie Exp $
 bin/appletproxy
 bin/drkonqi
 bin/extensionproxy
@@ -1407,6 +1407,7 @@ share/apps/kfontview/kfontviewui.rc
 share/apps/khelpcenter/
 share/apps/khelpcenter/glossary.html.in
 share/apps/khelpcenter/glossary.xslt
+share/apps/khelpcenter/index.html.in
 share/apps/khelpcenter/intro.html.in
 share/apps/khelpcenter/khelpcenterui.rc
 share/apps/khelpcenter/plugins/
@@ -1807,8 +1808,10 @@ share/apps/konsole/icons/
 share/apps/konsole/icons/crystalsvg/
 share/apps/konsole/icons/crystalsvg/16x16/
 share/apps/konsole/icons/crystalsvg/16x16/actions/
+share/apps/konsole/icons/crystalsvg/16x16/actions/activity.png
 share/apps/konsole/icons/crystalsvg/16x16/actions/opentermblue.png
 share/apps/konsole/icons/crystalsvg/16x16/actions/opentermred.png
+share/apps/konsole/icons/crystalsvg/16x16/actions/silence.png
 share/apps/konsole/icons/crystalsvg/22x22/
 share/apps/konsole/icons/crystalsvg/22x22/actions/
 share/apps/konsole/icons/crystalsvg/22x22/actions/opentermblue.png

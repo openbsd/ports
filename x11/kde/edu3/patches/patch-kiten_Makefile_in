@@ -1,15 +1,15 @@
-$OpenBSD: patch-kiten_Makefile_in,v 1.6 2004/12/12 11:33:24 espie Exp $
---- kiten/Makefile.in.orig	Mon Nov 29 16:13:20 2004
-+++ kiten/Makefile.in	Thu Dec  9 22:02:05 2004
-@@ -431,6 +431,7 @@ kiten_LDFLAGS = $(all_libraries) $(KDE_R
- kiten_LDADD = $(LIB_KDEPRINT) $(LIB_KIO)
+$OpenBSD: patch-kiten_Makefile_in,v 1.7 2005/06/02 14:01:26 espie Exp $
+--- kiten/Makefile.in.orig	Mon May 23 17:53:47 2005
++++ kiten/Makefile.in	Thu May 26 16:29:19 2005
+@@ -472,6 +472,7 @@ libkiteninclude_HEADERS = \
+ 
  kitengen_SOURCES = xjdxgen.c
  kitengen_LDFLAGS = $(all_libraries) $(KDE_RPATH) 
 +kitengen_LINK = $(CXXLINK)
  #>- METASOURCES = AUTO
- CLEANFILES = dummy.cpp
  rcdir = $(kde_datadir)/kiten
-@@ -519,7 +520,7 @@ kiten$(EXEEXT): $(kiten_OBJECTS) $(kiten
+ rc_DATA = kitenui.rc learnui.rc eeditui.rc
+@@ -592,7 +593,7 @@ kiten$(EXEEXT): $(kiten_OBJECTS) $(kiten
  	$(CXXLINK) $(kiten_LDFLAGS) $(kiten_OBJECTS) $(kiten_LDADD) $(LIBS)
  kitengen$(EXEEXT): $(kitengen_OBJECTS) $(kitengen_DEPENDENCIES) 
  	@rm -f kitengen$(EXEEXT)

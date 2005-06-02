@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2005/03/29 21:18:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2005/06/02 14:01:26 espie Exp $
 bin/celestrongps
 bin/fliccd
 bin/indiserver
@@ -512,6 +512,7 @@ share/apps/klettres/en/syllab/say.ogg
 share/apps/klettres/en/syllab/sit.ogg
 share/apps/klettres/en/syllab/sky.ogg
 share/apps/klettres/en/syllab/th.ogg
+share/apps/klettres/es.txt
 share/apps/klettres/fr/
 share/apps/klettres/fr/alpha/
 share/apps/klettres/fr/alpha/a-0.ogg

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2005/03/29 21:18:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2005/06/02 14:01:27 espie Exp $
 bin/ark
 bin/irkick
 bin/kcalc
@@ -226,7 +226,10 @@ share/apps/khexedit/pics/hexmask.png
 share/apps/khexedit/pics/hexwrite.png
 share/apps/khexedit2part/
 share/apps/khexedit2part/khexedit2partui.rc
+share/apps/kicker/
+share/apps/kicker/applets/
 share/apps/kicker/applets/kcharselectapplet.desktop
+share/apps/kicker/extensions/
 share/apps/kicker/extensions/ksim.desktop
 share/apps/kjots/
 share/apps/kjots/kjotsui.rc
@@ -257,6 +260,8 @@ share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions/laptop_power.png
 share/apps/klaptopdaemon/icons/crystalsvg/32x32/
 share/apps/klaptopdaemon/icons/crystalsvg/32x32/actions/
 share/apps/klaptopdaemon/icons/crystalsvg/32x32/actions/power.png
+share/apps/konqueror/
+share/apps/konqueror/servicemenus/
 share/apps/konqueror/servicemenus/encryptfile.desktop
 share/apps/konqueror/servicemenus/encryptfolder.desktop
 share/apps/kregexpeditor/
@@ -340,6 +345,7 @@ share/apps/remotes/sherwood.remote.xml
 share/apps/remotes/sonytv.remote.xml
 share/autostart/irkick.desktop
 share/autostart/kgpg.desktop
+share/config.kcfg/
 share/config.kcfg/ark.kcfg
 share/config.kcfg/kcalc.kcfg
 share/config.kcfg/kedit.kcfg
@@ -395,6 +401,7 @@ share/doc/HTML/en/kcmlirc/
 share/doc/HTML/en/kcmlirc/common
 share/doc/HTML/en/kcmlirc/index.cache.bz2
 share/doc/HTML/en/kcmlirc/index.docbook
+share/doc/HTML/en/kcontrol/
 share/doc/HTML/en/kcontrol/kcmlowbatcrit/
 share/doc/HTML/en/kcontrol/kcmlowbatcrit/common
 share/doc/HTML/en/kcontrol/kcmlowbatcrit/index.cache.bz2
@@ -440,6 +447,7 @@ share/doc/HTML/en/khexedit/common
 share/doc/HTML/en/khexedit/index.cache.bz2
 share/doc/HTML/en/khexedit/index.docbook
 share/doc/HTML/en/khexedit/khexedit1.png
+share/doc/HTML/en/kinfocenter/
 share/doc/HTML/en/kinfocenter/blockdevices/
 share/doc/HTML/en/kinfocenter/blockdevices/common
 share/doc/HTML/en/kinfocenter/blockdevices/index.cache.bz2
@@ -531,12 +539,15 @@ share/icons/crystalsvg/64x64/apps/kregexpeditor.png
 share/icons/crystalsvg/64x64/apps/kwalletmanager.png
 share/icons/crystalsvg/64x64/apps/kwikdisk.png
 share/icons/crystalsvg/64x64/apps/laptop_battery.png
+share/icons/crystalsvg/scalable/apps/
 share/icons/crystalsvg/scalable/apps/ark.svgz
 share/icons/crystalsvg/scalable/apps/kcalc.svgz
 share/icons/crystalsvg/scalable/apps/laptop_battery.svgz
+share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/irkick.png
 share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/irkick.png
+share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/irkick.png
 share/icons/locolor/
 share/icons/locolor/16x16/

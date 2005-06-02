@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/03/29 21:18:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/06/02 14:01:27 espie Exp $
 bin/adddebug
 bin/build-progress.sh
 bin/catalogmanager
@@ -85,6 +85,12 @@ include/kbabel/tagextractor.h
 include/kprofilemethod.h
 include/kspy.h
 include/repository_stub.h
+${KDE}/cervisia.la
+${KDE}/cervisia.so
+${KDE}/cvsaskpass.la
+${KDE}/cvsaskpass.so
+${KDE}/cvsservice.la
+${KDE}/cvsservice.so
 ${KDE}/kabcformat_kdeaccounts.la
 ${KDE}/kabcformat_kdeaccounts.so
 ${KDE}/kbabel_accelstool.la
@@ -157,6 +163,12 @@ lib/libkbabelcommon.la
 @lib lib/libkbabelcommon.so.5.0
 lib/libkbabeldictplugin.la
 @lib lib/libkbabeldictplugin.so.3.0
+lib/libkdeinit_cervisia.la
+lib/libkdeinit_cervisia.so
+lib/libkdeinit_cvsaskpass.la
+lib/libkdeinit_cvsaskpass.so
+lib/libkdeinit_cvsservice.la
+lib/libkdeinit_cvsservice.so
 lib/libkompareinterface.la
 @lib lib/libkompareinterface.so.0.0
 lib/libkspy.la
@@ -190,6 +202,7 @@ share/apps/kapptemplate/admin/
 share/apps/kapptemplate/admin/Doxyfile.am
 share/apps/kapptemplate/admin/Doxyfile.global
 share/apps/kapptemplate/admin/Makefile.am
+share/apps/kapptemplate/admin/Makefile.am.in
 share/apps/kapptemplate/admin/Makefile.common
 share/apps/kapptemplate/admin/Makefile.in
 share/apps/kapptemplate/admin/acinclude.m4.in

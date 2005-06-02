@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2005/03/29 21:18:34 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2005/06/02 14:01:25 espie Exp $
 
 COMMENT= 		"K Desktop Environment, additional artwork"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.4.0
+VERSION=		3.4.1
 DISTNAME=		kdeartwork-${VERSION}
 MODKDE_VERSION=		3.4
 
