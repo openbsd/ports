@@ -1,6 +1,6 @@
-$OpenBSD: patch-j2se_src_solaris_native_java_util_TimeZone_md_c,v 1.2 2005/04/19 14:35:56 kurt Exp $
---- j2se/src/solaris/native/java/util/TimeZone_md.c.orig	Tue Apr 12 14:31:28 2005
-+++ j2se/src/solaris/native/java/util/TimeZone_md.c	Wed Apr 13 12:59:23 2005
+$OpenBSD: patch-j2se_src_solaris_native_java_util_TimeZone_md_c,v 1.3 2005/06/02 18:18:15 kurt Exp $
+--- j2se/src/solaris/native/java/util/TimeZone_md.c.orig	Sun May 29 15:19:52 2005
++++ j2se/src/solaris/native/java/util/TimeZone_md.c	Sun May 29 16:39:22 2005
 @@ -39,7 +39,7 @@
  static const char *sysconfig_clock_file = "/etc/sysconfig/clock";
  #endif
@@ -76,10 +76,14 @@ $OpenBSD: patch-j2se_src_solaris_native_java_util_TimeZone_md_c,v 1.2 2005/04/19
  	free((void *) buf);
  	return NULL;
      }
-@@ -548,18 +554,17 @@ getGMTOffsetID()
- 	return strdup("GMT");
-     }
+@@ -544,25 +550,22 @@ getGMTOffsetID()
+     time_t clock;
+ #endif
  
+-    if (timezone == 0) {
+-	return strdup("GMT");
+-    }
+-
 -    /* Note that the time offset direction is opposite. */
  #if defined(_BSD_SOURCE)
      clock = time(NULL);
@@ -97,4 +101,10 @@ $OpenBSD: patch-j2se_src_solaris_native_java_util_TimeZone_md_c,v 1.2 2005/04/19
 +        sign = '-';
      }
  #else
-     if (timezone > 0) {
+-    if (timezone > 0) {
++    if (timezone == 0) {
++	return strdup("GMT");
++    } else if (timezone > 0) {
+ 	offset = timezone;
+ 	sign = '-';
+     } else {
