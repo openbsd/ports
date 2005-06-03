@@ -1,13 +1,13 @@
-$OpenBSD: patch-plat_openbsd_c,v 1.1.1.1 2001/02/06 11:50:21 wilfried Exp $
---- plat_openbsd.c.orig	Sun Mar  7 09:36:40 1999
-+++ plat_openbsd.c	Mon Feb  5 08:00:55 2001
-@@ -54,10 +54,13 @@ static char plat_openbsd[] = "$Id: plat_
+$OpenBSD: patch-plat_openbsd_c,v 1.2 2005/06/03 00:51:48 mjc Exp $
+--- plat_openbsd.c.orig	Sun Mar  7 00:36:40 1999
++++ plat_openbsd.c	Thu Jun  2 15:15:52 2005
+@@ -54,10 +54,12 @@ static char plat_openbsd[] = "$Id: plat_
  #include <sys/ioctl.h>
  #include <sys/cdio.h>
  #include <sys/scsiio.h>
 +#include <scsi/cd.h>
  #include <scsi/scsi_all.h>
- #include <scsi/scsi_cd.h>
+-#include <scsi/scsi_cd.h>
  
  #include "include/wm_struct.h"
 +#include "include/wm_cdrom.h"
@@ -15,7 +15,7 @@ $OpenBSD: patch-plat_openbsd_c,v 1.1.1.1 2001/02/06 11:50:21 wilfried Exp $
  
  #define WM_MSG_CLASS WM_MSG_CLASS_PLATFORM
  
-@@ -82,7 +85,7 @@ gen_init(struct wm_drive *d)
+@@ -82,7 +84,7 @@ gen_init(struct wm_drive *d)
   * Get the number of tracks on the CD.
   */
  int
@@ -24,7 +24,7 @@ $OpenBSD: patch-plat_openbsd_c,v 1.1.1.1 2001/02/06 11:50:21 wilfried Exp $
  {
  	struct ioc_toc_header	hdr;
  
-@@ -473,7 +476,7 @@ wmcd_open(struct wm_drive *d)
+@@ -473,7 +475,7 @@ wmcd_open(struct wm_drive *d)
  			if (!warned)
  			{
  				fprintf(stderr,
