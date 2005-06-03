@@ -1,0 +1,48 @@
+$OpenBSD: patch-ogg123_Makefile_am,v 1.1.1.1 2005/06/03 01:04:36 jolan Exp $
+--- ogg123/Makefile.am.orig	Wed Jul 10 21:45:37 2002
++++ ogg123/Makefile.am	Thu Jun  2 15:34:53 2005
+@@ -2,9 +2,7 @@
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
+-mans = ogg123.1
+-docs = ogg123rc-example
+-ogg123sources = audio.c buffer.c callbacks.c \
++igg123sources = audio.c buffer.c callbacks.c \
+                 cfgfile_options.c cmdline_options.c \
+                 file_transport.c format.c http_transport.c \
+                 ogg123.c oggvorbis_format.c playlist.c \
+@@ -21,26 +19,23 @@ datadir = @datadir@
+ localedir = $(datadir)/locale
+ DEFS = -DLOCALEDIR=\"$(localedir)\" @DEFS@
+ 
+-bin_PROGRAMS = ogg123
++bin_PROGRAMS = igg123
+ docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
+ mandir = @MANDIR@
+ 
+-INCLUDES = @OGG_CFLAGS@ @VORBIS_CFLAGS@ @AO_CFLAGS@ @CURL_CFLAGS@ \
++INCLUDES = @OGG_CFLAGS@ @AO_CFLAGS@ @CURL_CFLAGS@ \
+            @PTHREAD_CFLAGS@ @SHARE_CFLAGS@ @I18N_CFLAGS@
+ 
+-ogg123_LDADD = @SHARE_LIBS@ \
+-	       @VORBISFILE_LIBS@ @VORBIS_LIBS@ @OGG_LIBS@ @AO_LIBS@ \
++igg123_LDADD = @SHARE_LIBS@ \
++	       @IVORBISFILE_LIBS@ @OGG_LIBS@ @AO_LIBS@ \
+                @SOCKET_LIBS@ @LIBICONV@ @CURL_LIBS@ @PTHREAD_CFLAGS@ \
+                @PTHREAD_LIBS@ @I18N_LIBS@
+-ogg123_DEPENDENCIES = @SHARE_LIBS@
+-ogg123_SOURCES = $(ogg123sources)
++igg123_DEPENDENCIES = @SHARE_LIBS@
++igg123_SOURCES = $(igg123sources)
+ 
+-man_MANS = $(mans) 
+-doc_DATA = $(docs)
+-
+ endif
+ 
+-EXTRA_DIST = $(ogg123sources) $(mans) $(docs)
++EXTRA_DIST = $(igg123sources)
+ 
+ 
+ debug:

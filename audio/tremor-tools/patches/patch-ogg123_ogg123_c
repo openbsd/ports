@@ -1,0 +1,20 @@
+$OpenBSD: patch-ogg123_ogg123_c,v 1.1.1.1 2005/06/03 01:04:36 jolan Exp $
+--- ogg123/ogg123.c.orig	Sat Jul  6 14:12:18 2002
++++ ogg123/ogg123.c	Mon Apr 11 23:29:11 2005
+@@ -453,6 +453,16 @@ void play (char *source_string)
+     return;
+   }
+ 
++  if ((new_audio_fmt.big_endian != (BYTE_ORDER == BIG_ENDIAN)) ||
++        new_audio_fmt.signed_sample != 1 ||
++        new_audio_fmt.word_size != 2)
++  {
++    /* Tremor can only do big_endian, signed, 16 bit samples */
++    status_error(_("Error, Tremor can only decode signed 16 bit PCM "
++                   "host endian.\n"));
++    return;
++  }
++
+   /* Decide which statistics are valid */
+   select_stats(stat_format, &options, source, decoder, audio_buffer);
+ 

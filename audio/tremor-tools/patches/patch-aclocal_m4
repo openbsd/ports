@@ -1,0 +1,35 @@
+$OpenBSD: patch-aclocal_m4,v 1.1.1.1 2005/06/03 01:04:36 jolan Exp $
+--- aclocal.m4.orig	Fri Jul 19 09:18:51 2002
++++ aclocal.m4	Mon Apr 11 23:29:13 2005
+@@ -139,6 +139,7 @@ AC_ARG_ENABLE(vorbistest, [  --disable-v
+   fi
+ 
+   VORBISFILE_LIBS="$VORBIS_LIBS -lvorbisfile"
++  IVORBISFILE_LIBS="$VORBIS_LIBS -lvorbisidec"
+   VORBISENC_LIBS="$VORBIS_LIBS -lvorbisenc"
+   VORBIS_LIBS="$VORBIS_LIBS -lvorbis -lm"
+ 
+@@ -194,7 +195,7 @@ int main ()
+        LIBS="$LIBS $VORBIS_LIBS $OGG_LIBS"
+        AC_TRY_LINK([
+ #include <stdio.h>
+-#include <vorbis/codec.h>
++#include <tremor/ivorbiscodec.h>
+ ],     [ return 0; ],
+        [ echo "*** The test program compiled, but did not run. This usually means"
+        echo "*** that the run-time linker is not finding Vorbis or finding the wrong"
+@@ -214,12 +215,14 @@ int main ()
+      VORBIS_CFLAGS=""
+      VORBIS_LIBS=""
+      VORBISFILE_LIBS=""
++     IVORBISFILE_LIBS=""
+      VORBISENC_LIBS=""
+      ifelse([$2], , :, [$2])
+   fi
+   AC_SUBST(VORBIS_CFLAGS)
+   AC_SUBST(VORBIS_LIBS)
+   AC_SUBST(VORBISFILE_LIBS)
++  AC_SUBST(IVORBISFILE_LIBS)
+   AC_SUBST(VORBISENC_LIBS)
+   rm -f conf.vorbistest
+ ])

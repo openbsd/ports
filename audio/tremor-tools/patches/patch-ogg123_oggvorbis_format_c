@@ -1,0 +1,45 @@
+$OpenBSD: patch-ogg123_oggvorbis_format_c,v 1.1.1.1 2005/06/03 01:04:36 jolan Exp $
+--- ogg123/oggvorbis_format.c.orig	Fri Jul 19 05:31:53 2002
++++ ogg123/oggvorbis_format.c	Mon Apr 11 23:29:08 2005
+@@ -19,8 +19,8 @@
+ #include <string.h>
+ #include <ctype.h>
+ #include <ogg/ogg.h>
+-#include <vorbis/codec.h>
+-#include <vorbis/vorbisfile.h>
++#include <tremor/ivorbiscodec.h>
++#include <tremor/ivorbisfile.h>
+ #include "transport.h"
+ #include "format.h"
+ #include "utf8.h"
+@@ -150,8 +150,7 @@ int ovf_read (decoder_t *decoder, void *
+   while (nbytes > 0) {
+ 
+     old_section = priv->current_section;
+-    ret = ov_read(&priv->vf, ptr, nbytes, audio_fmt->big_endian,
+-		  audio_fmt->word_size, audio_fmt->signed_sample,
++    ret = ov_read(&priv->vf, ptr, nbytes,
+ 		  &priv->current_section);
+ 
+     if (ret == 0) {
+@@ -193,15 +192,17 @@ int ovf_read (decoder_t *decoder, void *
+ }
+ 
+ 
+-int ovf_seek (decoder_t *decoder, double offset, int whence)
++int ovf_seek (decoder_t *decoder, double aoffset, int whence)
+ {
+   ovf_private_t *priv = decoder->private;
+   int ret;
+-  double cur;
++  ogg_int64_t cur;
++  ogg_int64_t offset = (aoffset * 1000);
++  
+ 
+   if (whence == DECODER_SEEK_CUR) {
+     cur = ov_time_tell(&priv->vf);
+-    if (cur >= 0.0)
++    if (cur >= 0)
+       offset += cur;
+     else
+       return 0;

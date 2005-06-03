@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2005/06/03 01:04:36 jolan Exp $
+--- configure.in.orig	Thu Jul 11 09:10:34 2002
++++ configure.in	Mon Apr 11 23:29:15 2005
+@@ -19,9 +19,6 @@ CFLAGS="$cflags_save"
+ 
+ AM_PROG_LIBTOOL
+ 
+-ALL_LINGUAS="fr nl sv"
+-AM_GNU_GETTEXT
+-
+ dnl --------------------------------------------------
+ dnl Set build flags based on environment
+ dnl --------------------------------------------------

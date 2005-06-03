@@ -1,0 +1,2 @@
+tremor-tools is a conversion of ogg123 (now igg123) to use the
+integer-only decoder known as tremor.

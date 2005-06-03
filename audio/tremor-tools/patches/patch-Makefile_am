@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_am,v 1.1.1.1 2005/06/03 01:04:36 jolan Exp $
+--- Makefile.am.orig	Wed Jul 10 22:26:50 2002
++++ Makefile.am	Mon Apr 11 23:29:05 2005
+@@ -2,9 +2,7 @@
+ 
+ AUTOMAKE_OPTIONS = foreign dist-zip
+ 
+-SUBDIRS = po intl include share oggenc ogg123 vorbiscomment vcut oggdec ogginfo debian win32 
+-
+-EXTRA_DIST = README AUTHORS COPYING vorbis-tools.spec acinclude.m4 config.h
++SUBDIRS = include share ogg123 
+ 
+ debug:
+ 	$(MAKE) all CFLAGS="@DEBUG@"
