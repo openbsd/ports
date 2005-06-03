@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2005/02/20 11:18:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2005/06/03 17:27:53 kurt Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
 
-# Requires existing JDK 1.3 to build
-ONLY_FOR_ARCHS= 	i386
+ONLY_FOR_ARCHS= 	i386 powerpc
 
 COMMENT=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.3.1
 DISTNAME=		j2sdk-1_3_1-src
-PKGNAME=		jdk-${V}
-PKGNAME-jre=		jre-${V}
+PKGNAME=		jdk-${V}p0
+PKGNAME-jre=		jre-${V}p0
 
 CATEGORIES=		devel/jdk java
 
@@ -18,13 +17,13 @@ MULTI_PACKAGES= 	-jre
 # wwws is not a typo in the following:
 HOMEPAGE=		http://wwws.sun.com/software/communitysource/j2se/java2/index.html
 
-MAINTAINER=		Kurt Miller <truk@optonline.net>
+MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 
 DISTFILES=		j2sdk-1_3_1-src.tar.gz
 DISTFILES+=		bsd-jdk131-patches-9.tar.gz
 
 # Sun Community Source License
-# http://www.sun.com/981208/scsl/principles.html
+# http://www.sun.com/software/communitysource/j2se/java2/license.html
 PERMIT_PACKAGE_CDROM=	"SCSL"
 PERMIT_PACKAGE_FTP=	"SCSL"
 PERMIT_DISTFILES_CDROM= "SCSL"
@@ -46,55 +45,50 @@ TAR=			${LOCALBASE}/bin/gtar
 MAKE_ENV=		ALT_MOTIF_DIR="${LOCALBASE}" \
 			OPENWINHOME="${X11BASE}" \
 			OTHER_CFLAGS="${CFLAGS}" \
+			BUILD_NUMBER="`whoami`-`date '+%Y-%m-%d-%H:%M'`" \
 			HAVE_DPS="yes"
 
-FLAVORS=		no_plugin
+# Error message for distfile.
+FETCH_MANUALLY=	"You must manually fetch the distribution files, place"
+FETCH_MANUALLY+="them in ${FULLDISDIR} and then run make again."
+FETCH_MANUALLY+="Get the SCSL source file:"
+FETCH_MANUALLY+="    j2sdk-1_3_1-src.tar.gz"
+FETCH_MANUALLY+="from http://wwws.sun.com/software/communitysource/j2se/java2/download.html"
+FETCH_MANUALLY+="Get the BSD patchset file:"
+FETCH_MANUALLY+="    bsd-jdk131-patches-9.tar.gz"
+FETCH_MANUALLY+="from http://www.eyesbeyond.com/freebsddom/java/jdk13.html"
+
 PSEUDO_FLAVORS=		native_bootstrap
-FLAVOR?=		no_plugin
+FLAVOR?=
 
 .if ${FLAVOR:L:Mnative_bootstrap}
 BUILD_DEPENDS+=		:jdk-1.3*:devel/jdk/1.3
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/${JDKHOME}"
 .else
-BUILD_DEPENDS+=		:jdk-linux->=1.3.1_10:devel/jdk/1.3-linux
-MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/jdk1.3.1-linux"
+DISTFILES+=		j2sdk-1_3_1-linux-i386.bin
+FETCH_MANUALLY+=	"Get the linux binary sdk file:"
+FETCH_MANUALLY+=	"    j2sdk-1_3_1-linux-i386.bin"
+FETCH_MANUALLY+=	"from http://java.sun.com/products/archive/j2se/1.3.1/"
+DISTFILES+=             bootstrap-src-jdk131-1.tar.gz
+FETCH_MANUALLY+=        "Get the bootstrap source dist file:"
+FETCH_MANUALLY+=        "    bootstrap-src-jdk131-1.tar.gz"
+FETCH_MANUALLY+=        "from http://www.intricatesoftware.com/OpenBSD/java/jdk13.html"
+BUILD_DEPENDS+=		::archivers/unzip
+MAKE_ENV+=		ALT_BOOTDIR="${WRKDIST}"
+LINUXFILES=		jdk1.3.1/lib/tools.jar \
+			jdk1.3.1/jre/lib/rt.jar
+EXTRACT_CASES+=		*.bin) \
+			perl -p0777 -e "s/.*?PK\03\04/PK\03\04/s" ${FULLDISTDIR}/$$archive > \
+				${WRKDIR}/$$archive.zip && \
+			unzip -j ${WRKDIR}/$$archive ${LINUXFILES} ;;
+.  if ${MACHINE_ARCH} == "powerpc"
+PATCH_LIST=		patch-* pack-patch-*
+.  endif
 .endif
 
 WANTLIB=		ICE SM X11 Xext Xp Xt Xtst c dps m ossaudio pthread
 
-.if !${FLAVOR:L:Mno_plugin}
-BROKEN=			"Security Vulnerability With Java Plug-in in JRE/SDK (SunSolve \#57591)"
-LIB_DEPENDS=		glib.1::devel/glib \
-			gtk.1.2::x11/gtk+ \
-			nspr4.1::devel/nspr
-
-MODULES=		devel/gettext
-
-MAKE_ENV+=		LIBG_HDRS="${LOCALBASE}/include/glib-1.2" \
-			GTK_HDRS="${LOCALBASE}/include/gtk-1.2" \
-			LIBIDL_HDRS= \
-			INTL_DIR="${LOCALBASE}" \
-			BUILD_NUMBER="`whoami`-`date '+%Y-%m-%d-%H:%M'`"
-
-ALL_TARGET=		all plugin images
-.else
-#no plugin - no messages
-MESSAGE=		/dev/null
-
-MAKE_ENV+=		BUILD_NUMBER="`whoami`-`date '+%Y-%m-%d-%H:%M'`-no_plugin"
-
 ALL_TARGET=		all images
-.endif
-
-# Error message for distfile.
-FETCH_MANUALLY=	"You must manually fetch the source distribution"
-FETCH_MANUALLY+="and BSD patches:"
-.for file in ${DISTFILES}
-FETCH_MANUALLY+="    ${file}"
-.endfor
-FETCH_MANUALLY+="from http://www.sun.com/software/java2/download.html"
-FETCH_MANUALLY+="and http://www.eyesbeyond.com/freebsddom/java/jdk13.html,"
-FETCH_MANUALLY+="place it in ${FULLDISTDIR} and then run make again."
 
 JDKHOME=		jdk-${V}
 JREHOME=		jre-${V}
@@ -105,27 +99,40 @@ SYSTRACE_SUBST_VARS=	LOCALBASE
 # Deal with Sun's internal build structure
 WRKDIST=		${WRKDIR}
 WRKSRC=         	${WRKDIR}/j2sdk1.3.1/make
-JDKIMAGEDIR=		${WRKDIR}/j2sdk1.3.1/build/bsd-${ARCH}/jdk-image-${ARCH}
-JDKIMAGEDIR_G=		${WRKDIR}/j2sdk1.3.1/build/bsd-${ARCH}/jdk-debug-image-${ARCH}
-JREIMAGEDIR=		${WRKDIR}/j2sdk1.3.1/build/bsd-${ARCH}/jre-image-${ARCH}
+BUILDDIR=         	${WRKDIR}/j2sdk1.3.1/build
+CLASSESDIR=		${BUILDDIR}/bsd-${MACHINE_ARCH}/classes
+JDKIMAGEDIR=		${BUILDDIR}/bsd-${MACHINE_ARCH}/jdk-image-${MACHINE_ARCH}
+JDKIMAGEDIR_G=		${BUILDDIR}/bsd-${MACHINE_ARCH}/jdk-debug-image-${MACHINE_ARCH}
+JREIMAGEDIR=		${BUILDDIR}/bsd-${MACHINE_ARCH}/jre-image-${MACHINE_ARCH}
 CACERTSDIR=		${WRKDIR}/j2sdk1.3.1/src/share/lib/security
 
-SYSCTL=			${SUDO} sysctl -w kern.emul.linux
+.if !${FLAVOR:L:Mnative_bootstrap}
+post-extract:
+	@mv ${BUILDDIR}/bootsrc ${BUILDDIR}/bsd-${MACHINE_ARCH}
+	@mkdir -p ${CLASSESDIR}
+	@cd ${CLASSESDIR} && \
+		xargs unzip -q ${WRKDIR}/tools.jar < ${FILESDIR}/tools_jar_class_list && \
+		xargs unzip -q ${WRKDIR}/rt.jar < ${FILESDIR}/rt_jar_class_list
+.endif
 
 pre-patch:
 	@cp -f ${FILESDIR}/cacerts ${CACERTSDIR}
 	@cd ${WRKDIR} &&  \
 		${CHMOD} -R u+w * && \
-		${PATCH} -p0 -z .orig.bsd < ${WRKDIR}/jdk131.patches
+		${PATCH} -p0 -z .orig.bsd --quiet < ${WRKDIR}/jdk131.patches
 
 .if !${FLAVOR:L:Mnative_bootstrap}
-pre-build:
-	@sysctl -n kern.emul.linux > ${WRKDIR}/.emul_linux
-	@${SYSCTL}=1
+post-patch:
+	@cd ${WRKDIR}/bin && \
+		${CHMOD} +x bootscript
+.for prog in java javac javah
+	@cd ${WRKDIR}/bin && \
+		ln -s bootscript ${prog}
+.endfor
+.endif
 
 post-build:
-	@${SYSCTL}=`cat ${WRKDIR}/.emul_linux`
-.endif
+	@rm -rf ${JDKIMAGEDIR}/demo/jfc/SwingSet2/resources
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${JDKHOME}

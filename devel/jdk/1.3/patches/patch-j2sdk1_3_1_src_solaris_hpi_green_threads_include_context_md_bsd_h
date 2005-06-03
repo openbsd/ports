@@ -1,0 +1,21 @@
+$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_include_context_md_bsd_h,v 1.1 2005/06/03 17:27:54 kurt Exp $
+--- j2sdk1.3.1/src/solaris/hpi/green_threads/include/context_md_bsd.h.orig	Fri May 27 17:32:10 2005
++++ j2sdk1.3.1/src/solaris/hpi/green_threads/include/context_md_bsd.h	Fri May 27 17:38:09 2005
+@@ -59,7 +59,7 @@ typedef struct lj_ucontext {
+ # endif
+ #define BSD_STACK_POINTER	34
+ 
+-#elif defined(__arm32__)
++#elif defined(__arm32__) || defined(__arm__)
+ 
+ #define BSD_FPU_MASK		0
+ #define BSD_SIGNAL_MASK		21
+@@ -90,7 +90,7 @@ typedef lj_ucontext_t	inner_ucontext_t;
+ 
+ typedef struct {
+     unsigned int unix_errno;
+-#if defined(__NetBSD__) && defined(__powerpc__)
++#if defined(__powerpc__)
+     void *current_sp;
+ #endif
+     inner_ucontext_t lj_ucontext;

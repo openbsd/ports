@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-jre,v 1.4 2004/10/12 20:46:22 naddy Exp $
+@comment $OpenBSD: PLIST-jre,v 1.5 2005/06/03 17:27:54 kurt Exp $
 @option no-default-conflict
 @conflict jre->=1.3,<1.4
 ${JREHOME}/
@@ -35,7 +35,6 @@ ${JREHOME}/bin/${MACHINE_ARCH}/green_threads/rmid
 ${JREHOME}/bin/${MACHINE_ARCH}/green_threads/rmiregistry
 ${JREHOME}/bin/${MACHINE_ARCH}/green_threads/serialver
 ${JREHOME}/bin/${MACHINE_ARCH}/green_threads/tnameserv
-@comment ${JREHOME}/bin/${MACHINE_ARCH}/native_threads/
 ${JREHOME}/bin/java
 ${JREHOME}/bin/keytool
 ${JREHOME}/bin/policytool
@@ -130,4 +129,3 @@ ${JREHOME}/man/man1/
 @man ${JREHOME}/man/man1/rmiregistry.1
 @man ${JREHOME}/man/man1/tnameserv.1
 ${JREHOME}/plugin/
-!%%no_plugin%%

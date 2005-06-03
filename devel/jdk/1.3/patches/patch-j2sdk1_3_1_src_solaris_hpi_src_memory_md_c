@@ -1,12 +1,52 @@
-$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_src_memory_md_c,v 1.1.1.1 2004/01/29 22:02:20 pvalchev Exp $
---- j2sdk1.3.1/src/solaris/hpi/src/memory_md.c.orig	2004-01-03 22:05:00.000000000 -0500
-+++ j2sdk1.3.1/src/solaris/hpi/src/memory_md.c	2004-01-03 22:07:55.000000000 -0500
-@@ -157,7 +157,7 @@ mapChunk(long length)
+$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_src_memory_md_c,v 1.2 2005/06/03 17:27:54 kurt Exp $
+--- j2sdk1.3.1/src/solaris/hpi/src/memory_md.c.orig	Wed Apr 20 13:23:19 2005
++++ j2sdk1.3.1/src/solaris/hpi/src/memory_md.c	Wed Apr 20 13:25:51 2005
+@@ -110,7 +110,9 @@ InitializeMem(void)
+ #endif
+     }
+ 
+-#ifdef __linux__
++#ifdef __OpenBSD__
++    devZeroFD = -1;
++#elif defined(__linux__)
+ #if !defined(USE_MALLOC) && !defined(MAP_ANONYMOUS)
+     devZeroFD = open("/dev/zero", O_RDWR);
+     if (devZeroFD == -1) {
+@@ -140,6 +142,10 @@ InitializeMem(void)
+ #define MAP_NORESERVE 0
+ #endif
+ 
++#ifndef MAP_ANON
++#define MAP_ANON 0
++#endif
++
+ /*
+  * Map a chunk of memory.  Return the address of the base if successful,
+  * 0 otherwise.  We do not care where the mapped memory is, and can't
+@@ -157,7 +163,7 @@ mapChunk(long length)
                           MAP_NORESERVE | MAP_PRIVATE | MAP_ANONYMOUS,
                           -1, (off_t) 0);
  #else
 -    ret = (char *) mmap(0, length, PROT_ALL, MAP_NORESERVE|MAP_PRIVATE,
-+    ret = (char *) mmap(0, length, PROT_READ|PROT_WRITE, MAP_NORESERVE|MAP_PRIVATE,
++    ret = (char *) mmap(0, length, PROT_READ|PROT_WRITE, MAP_NORESERVE|MAP_PRIVATE|MAP_ANON,
  		   devZeroFD, (off_t) 0);
+ #endif
+     return (ret == MAP_FAILED ? 0 : ret);
+@@ -179,7 +185,7 @@ mapChunkReserve(char *addr, long length)
+                          MAP_FIXED | MAP_PRIVATE | MAP_ANONYMOUS,
+                          -1, (off_t) 0);
+ #else
+-    ret = (char *) mmap(addr, length, PROT_ALL, MAP_FIXED|MAP_PRIVATE,
++    ret = (char *) mmap(addr, length, PROT_ALL, MAP_FIXED|MAP_PRIVATE|MAP_ANON,
+                         devZeroFD, (off_t) 0);
+ #endif
+     return (ret == MAP_FAILED ? 0 : ret);
+@@ -204,7 +210,7 @@ mapChunkNoreserve(char *addr, long lengt
+                          -1, (off_t) 0);
+ #else
+     ret = (char *) mmap(addr, length, PROT_ALL,
+-			MAP_FIXED|MAP_PRIVATE|MAP_NORESERVE,
++			MAP_FIXED|MAP_PRIVATE|MAP_NORESERVE|MAP_ANON,
+                         devZeroFD, (off_t) 0);
  #endif
      return (ret == MAP_FAILED ? 0 : ret);

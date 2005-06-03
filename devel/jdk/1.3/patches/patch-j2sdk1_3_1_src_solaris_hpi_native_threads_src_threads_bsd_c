@@ -1,0 +1,93 @@
+$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_native_threads_src_threads_bsd_c,v 1.1 2005/06/03 17:27:54 kurt Exp $
+--- j2sdk1.3.1/src/solaris/hpi/native_threads/src/threads_bsd.c.orig	Wed Apr 20 13:16:02 2005
++++ j2sdk1.3.1/src/solaris/hpi/native_threads/src/threads_bsd.c	Wed Apr 20 13:16:04 2005
+@@ -93,7 +93,22 @@ void np_initialize_thread(sys_thread_t *
+ /*
+  * Internal helper function to get stack information about specified thread.
+  */
++#ifdef __OpenBSD__
+ static int
++get_stackinfo(pthread_t tid, void **addr, long *sizep)
++{
++    stack_t ss;
++
++    if (pthread_stackseg_np(tid, &ss) == 0) {
++        *addr = (void *)(ss.ss_sp) - ss.ss_size;
++        *sizep = (long)(ss.ss_size);
++        return SYS_OK;
++    } else {
++        return SYS_ERR; /* pthreads_stackinfo_np failed. */
++    }
++}
++#else
++static int
+ get_stackinfo(pthread_t tid, pthread_attr_t attr, void **addr, long *sizep)
+ {
+     size_t s;
+@@ -113,14 +128,17 @@ err:
+ 
+     return (ret);
+ }
++#endif
+ 
+-
+ /*
+  * Get the stack start address, and max stack size for the current thread.
+  */
+ int
+ np_stackinfo(void **addr, long *sizep)
+ {
++#ifdef __OpenBSD__
++    return(get_stackinfo(pthread_self(), addr, sizep));
++#else
+     pthread_attr_t attr;
+     int    ret = SYS_ERR;
+ 
+@@ -130,6 +148,7 @@ np_stackinfo(void **addr, long *sizep)
+     }
+ 
+     return (ret);
++#endif
+ }
+ 
+ /*
+@@ -193,13 +212,15 @@ record_thread_regs()
+ {
+     struct pthread *self = pthread_self();
+     sys_thread_t *tid = ThreadQueue;
+-    pthread_attr_t attr = NULL;
+     void *addr;
+     long sz;
+     int i;
+ 
++#ifndef __OpenBSD__
++    pthread_attr_t attr = NULL;
+     if (pthread_attr_init(&attr) != 0)
+ 	attr = NULL;
++#endif
+ 
+     for (i = 0; i < ActiveThreadCount && tid != NULL; i++, tid = tid->next) {
+ 	struct pthread *thread = tid->sys_thread;
+@@ -214,7 +235,11 @@ record_thread_regs()
+ 	    continue;
+ 	}
+ 
++#ifdef __OpenBSD__
++	if (get_stackinfo(thread, &addr, &sz) == SYS_OK)
++#else
+ 	if (get_stackinfo(thread, attr, &addr, &sz) == SYS_OK)
++#endif
+ 	    tid->sp = addr;
+ 	else
+ 	    tid->sp = 0;
+@@ -247,8 +272,10 @@ record_thread_regs()
+ #endif
+     }
+ 
++#ifndef __OpenBSD__
+     if (attr != NULL)
+ 	pthread_attr_destroy(&attr);
++#endif
+ 
+ #ifdef DEBUG_BSD_NATIVE_THREADS
+     fprintf(stderr, "\n\n\nCalling GC thread\n\n\n"); fflush(stderr);

@@ -1,0 +1,44 @@
+$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_src_context_c,v 1.1 2005/06/03 17:27:54 kurt Exp $
+--- j2sdk1.3.1/src/solaris/hpi/green_threads/src/context.c.orig	Fri May 27 17:32:10 2005
++++ j2sdk1.3.1/src/solaris/hpi/green_threads/src/context.c	Fri May 27 17:40:41 2005
+@@ -183,7 +183,7 @@ currentStackPointer(sys_thread_t *tp)
+ #if (defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__))
+     context_t *context = &tp->mdcontext;
+     lj_ucontext_t *uc = &(context->lj_ucontext);
+-#if defined(__NetBSD__) && defined(__powerpc__)
++#if defined(__powerpc__)
+     return (void *)CONTEXT(tp)->current_sp;
+ #elif defined(__NetBSD__) || defined(__OpenBSD__)
+     return (void *)(uc->jmpbuf[BSD_STACK_POINTER]);
+@@ -579,7 +579,30 @@ initContext(lj_ucontext_t *uc, gstack_t 
+     uc->jmpbuf->_sjb[35] = (long)0xACEDBADD;	/* magic number for longjmp */
+ }
+ 
+-#elif defined(__NetBSD__) && defined(__powerpc__)
++#elif defined(__OpenBSD__) && defined(__arm__)
++
++void
++initContext(lj_ucontext_t *uc, gstack_t *stack, unsigned int pc,
++         void (*death_func)(void), unsigned int arg)
++{
++    unsigned char *sp;
++
++    memset(uc, 0, sizeof(lj_ucontext_t));
++
++    sp = (unsigned char *)stack->base;
++    sp -= sizeof(sys_thread_t *);
++    /* Force sp to be double aligned! */
++    sp = (unsigned char *)((unsigned long)(sp) & ~7L);
++
++    /* We use registers on the Alpha to pass args to death_func. */
++    uc->jmpbuf->_sjb[2]  = (long)death_func;	/* sc_pc */
++    uc->jmpbuf->_sjb[20] = (long)pc;		/* sc_regs[R_A0] */
++    uc->jmpbuf->_sjb[21] = (long)arg;		/* sc_regs[R_A1] */
++    uc->jmpbuf->_sjb[34] = (long)sp;		/* sc_regs[R_SP] */
++    uc->jmpbuf->_sjb[35] = (long)0xACEDBADD;	/* magic number for longjmp */
++}
++
++#elif (defined(__NetBSD__) || defined(__OpenBSD__)) && defined(__powerpc__)
+ 
+ /* NetBSD/powerpc version */
+ 

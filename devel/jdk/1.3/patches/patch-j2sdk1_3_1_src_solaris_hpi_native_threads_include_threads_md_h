@@ -1,0 +1,23 @@
+$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_native_threads_include_threads_md_h,v 1.1 2005/06/03 17:27:54 kurt Exp $
+--- j2sdk1.3.1/src/solaris/hpi/native_threads/include/threads_md.h.orig	Mon Nov 22 20:25:24 2004
++++ j2sdk1.3.1/src/solaris/hpi/native_threads/include/threads_md.h	Tue Nov 23 14:47:07 2004
+@@ -17,7 +17,7 @@
+ 
+ #include "porting.h"
+ 
+-#ifdef sparc
++#if defined(sparc) || defined(sparc64)
+ #define N_TRACED_REGS 12
+ #elif i386
+ #define N_TRACED_REGS 7
+@@ -25,6 +25,10 @@
+ #define N_TRACED_REGS 1
+ #elif m68k
+ #define N_TRACED_REGS 8
++#elif __arm__
++#define N_TRACED_REGS 16	/* XXX */
++#elif __powerpc__
++#define N_TRACED_REGS 12	/* XXX */
+ #else
+ #error "Can't define for N_TRACED_REGS"
+ #endif
