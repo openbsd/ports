@@ -1,0 +1,19 @@
+$OpenBSD: patch-rep-gtk_h,v 1.1 2005/06/03 19:08:30 sturm Exp $
+--- rep-gtk.h.orig	Fri Jun  3 12:03:02 2005
++++ rep-gtk.h	Fri Jun  3 12:03:31 2005
+@@ -289,12 +289,15 @@ void gtk_menu_popup_interp (GtkMenu *men
+ 			    guint32 activate_time,
+ 			    repv position);
+ 
++#if 0
+ GtkWidget*
+ gtk_radio_menu_item_new_with_label_from_widget (GtkRadioMenuItem *group,
+ 						gchar            *label);
+ GtkWidget*
+ gtk_radio_menu_item_new_with_mnemonic_from_widget (GtkRadioMenuItem *group,
+ 						   gchar            *label);
++#endif
++
+ GtkWidget* gtk_radio_menu_item_new_from_widget (GtkRadioMenuItem *group);
+ GtkWidget* gtk_pixmap_new_interp (char *file, GtkWidget *intended_parent);
+ 

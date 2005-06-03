@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2005/05/23 20:28:50 marius Exp $
+# $OpenBSD: Makefile,v 1.13 2005/06/03 19:08:30 sturm Exp $
 
 COMMENT=	"GTK+ binding for librep Lisp environment"
 
 VERSION=	0.18
 DISTNAME=	rep-gtk-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=     x11
 
 HOMEPAGE=       http://rep-gtk.sourceforge.net/
@@ -13,13 +14,16 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xi gmodule iconv intl m
+WANTLIB=	X11 Xft.5 Xrender.3 atk-1.0.0.0 fontconfig.2 freetype.13 \
+		glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 iconv intl m \
+		pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
 
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=rep-gtk/}
 
-LIB_DEPENDS= 	gtk.1.2,gdk.1.2::x11/gtk+ \
-		glib.1.2::devel/glib \
-		rep.10::lang/librep
+BUILD_DEPENDS=	::devel/pkgconfig \
+		${RUN_DEPENDS}
+RUN_DEPENDS=	::lang/librep
+LIB_DEPENDS= 	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 
 GNU_ARCH=	${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OPSYS_VER}
 SUBST_VARS=     GNU_ARCH VERSION
@@ -28,7 +32,7 @@ USE_X11=	Yes
 USE_GMAKE=      Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --without-gdk-pixbuf --without-gnome --without-libglade
+CONFIGURE_ARGS+= --without-gnome --without-libglade
 
 NO_REGRESS=	Yes
 
