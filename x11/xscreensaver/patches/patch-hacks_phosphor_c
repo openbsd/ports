@@ -1,7 +1,7 @@
-$OpenBSD: patch-hacks_phosphor_c,v 1.1 2004/06/24 16:23:37 marcm Exp $
---- hacks/phosphor.c.orig	Tue Jun 22 22:29:32 2004
-+++ hacks/phosphor.c	Tue Jun 22 22:28:56 2004
-@@ -31,6 +31,7 @@
+$OpenBSD: patch-hacks_phosphor_c,v 1.2 2005/06/03 05:38:32 marcm Exp $
+--- hacks/phosphor.c.orig	Sun Mar 20 14:11:47 2005
++++ hacks/phosphor.c	Sun Apr 17 23:30:27 2005
+@@ -32,6 +32,7 @@
  #  include <pty.h>
  # endif
  # ifdef HAVE_UTIL_H

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/09/15 19:26:35 espie Exp $
-@comment bin/screensaver-properties-capplet
+@comment $OpenBSD: PLIST,v 1.15 2005/06/03 05:38:32 marcm Exp $
 bin/xscreensaver
 bin/xscreensaver-command
 bin/xscreensaver-demo
@@ -7,206 +6,11 @@ bin/xscreensaver-getimage
 bin/xscreensaver-getimage-file
 bin/xscreensaver-getimage-video
 bin/xscreensaver-gl-helper
-lib/xscreensaver/
-lib/xscreensaver/config/
-lib/xscreensaver/config/README
-lib/xscreensaver/config/anemone.xml
-lib/xscreensaver/config/ant.xml
-lib/xscreensaver/config/antinspect.xml
-lib/xscreensaver/config/antspotlight.xml
-lib/xscreensaver/config/apollonian.xml
-lib/xscreensaver/config/apple2.xml
-lib/xscreensaver/config/atlantis.xml
-lib/xscreensaver/config/attraction.xml
-lib/xscreensaver/config/atunnel.xml
-lib/xscreensaver/config/barcode.xml
-lib/xscreensaver/config/blaster.xml
-lib/xscreensaver/config/blinkbox.xml
-lib/xscreensaver/config/blitspin.xml
-lib/xscreensaver/config/blocktube.xml
-lib/xscreensaver/config/bouboule.xml
-lib/xscreensaver/config/bouncingcow.xml
-lib/xscreensaver/config/boxed.xml
-lib/xscreensaver/config/braid.xml
-lib/xscreensaver/config/bsod.xml
-lib/xscreensaver/config/bubble3d.xml
-lib/xscreensaver/config/bubbles.xml
-lib/xscreensaver/config/bumps.xml
-lib/xscreensaver/config/cage.xml
-lib/xscreensaver/config/ccurve.xml
-lib/xscreensaver/config/circuit.xml
-lib/xscreensaver/config/cloudlife.xml
-lib/xscreensaver/config/compass.xml
-lib/xscreensaver/config/coral.xml
-lib/xscreensaver/config/cosmos.xml
-lib/xscreensaver/config/critical.xml
-lib/xscreensaver/config/crystal.xml
-lib/xscreensaver/config/cubenetic.xml
-lib/xscreensaver/config/cubestorm.xml
-lib/xscreensaver/config/cynosure.xml
-lib/xscreensaver/config/dangerball.xml
-lib/xscreensaver/config/decayscreen.xml
-lib/xscreensaver/config/deluxe.xml
-lib/xscreensaver/config/demon.xml
-lib/xscreensaver/config/discrete.xml
-lib/xscreensaver/config/distort.xml
-lib/xscreensaver/config/drift.xml
-lib/xscreensaver/config/electricsheep.xml
-lib/xscreensaver/config/endgame.xml
-lib/xscreensaver/config/engine.xml
-lib/xscreensaver/config/epicycle.xml
-lib/xscreensaver/config/eruption.xml
-lib/xscreensaver/config/euler2d.xml
-lib/xscreensaver/config/fadeplot.xml
-lib/xscreensaver/config/fireflies.xml
-lib/xscreensaver/config/flag.xml
-lib/xscreensaver/config/flame.xml
-lib/xscreensaver/config/flipflop.xml
-lib/xscreensaver/config/flipscreen3d.xml
-lib/xscreensaver/config/flow.xml
-lib/xscreensaver/config/fluidballs.xml
-lib/xscreensaver/config/flurry.xml
-lib/xscreensaver/config/flyingtoasters.xml
-lib/xscreensaver/config/fontglide.xml
-lib/xscreensaver/config/forest.xml
-lib/xscreensaver/config/fuzzyflakes.xml
-lib/xscreensaver/config/galaxy.xml
-lib/xscreensaver/config/gears.xml
-lib/xscreensaver/config/gflux.xml
-lib/xscreensaver/config/glblur.xml
-lib/xscreensaver/config/gleidescope.xml
-lib/xscreensaver/config/glforestfire.xml
-lib/xscreensaver/config/glknots.xml
-lib/xscreensaver/config/glmatrix.xml
-lib/xscreensaver/config/glplanet.xml
-lib/xscreensaver/config/glslideshow.xml
-lib/xscreensaver/config/glsnake.xml
-lib/xscreensaver/config/gltext.xml
-lib/xscreensaver/config/goban.xml
-lib/xscreensaver/config/goop.xml
-lib/xscreensaver/config/grav.xml
-lib/xscreensaver/config/greynetic.xml
-lib/xscreensaver/config/halftone.xml
-lib/xscreensaver/config/halo.xml
-lib/xscreensaver/config/helix.xml
-lib/xscreensaver/config/hopalong.xml
-lib/xscreensaver/config/hyperball.xml
-lib/xscreensaver/config/hypercube.xml
-lib/xscreensaver/config/hypertorus.xml
-lib/xscreensaver/config/ifs.xml
-lib/xscreensaver/config/imsmap.xml
-lib/xscreensaver/config/interference.xml
-lib/xscreensaver/config/jigglypuff.xml
-lib/xscreensaver/config/jigsaw.xml
-lib/xscreensaver/config/juggle.xml
-lib/xscreensaver/config/julia.xml
-lib/xscreensaver/config/kaleidescope.xml
-lib/xscreensaver/config/klein.xml
-lib/xscreensaver/config/kumppa.xml
-lib/xscreensaver/config/lament.xml
-lib/xscreensaver/config/laser.xml
-lib/xscreensaver/config/lavalite.xml
-lib/xscreensaver/config/lightning.xml
-lib/xscreensaver/config/lisa.xml
-lib/xscreensaver/config/lissie.xml
-lib/xscreensaver/config/lmorph.xml
-lib/xscreensaver/config/loop.xml
-lib/xscreensaver/config/maze.xml
-lib/xscreensaver/config/menger.xml
-lib/xscreensaver/config/metaballs.xml
-lib/xscreensaver/config/mirrorblob.xml
-lib/xscreensaver/config/mismunch.xml
-lib/xscreensaver/config/moebius.xml
-lib/xscreensaver/config/moire.xml
-lib/xscreensaver/config/moire2.xml
-lib/xscreensaver/config/molecule.xml
-lib/xscreensaver/config/morph3d.xml
-lib/xscreensaver/config/mountain.xml
-lib/xscreensaver/config/munch.xml
-lib/xscreensaver/config/nerverot.xml
-lib/xscreensaver/config/noof.xml
-lib/xscreensaver/config/noseguy.xml
-lib/xscreensaver/config/pacman.xml
-lib/xscreensaver/config/pedal.xml
-lib/xscreensaver/config/penetrate.xml
-lib/xscreensaver/config/penrose.xml
-lib/xscreensaver/config/petri.xml
-lib/xscreensaver/config/phosphor.xml
-lib/xscreensaver/config/piecewise.xml
-lib/xscreensaver/config/pipes.xml
-lib/xscreensaver/config/polyhedra.xml
-lib/xscreensaver/config/polyominoes.xml
-lib/xscreensaver/config/polytopes.xml
-lib/xscreensaver/config/pong.xml
-lib/xscreensaver/config/popsquares.xml
-lib/xscreensaver/config/providence.xml
-lib/xscreensaver/config/pulsar.xml
-lib/xscreensaver/config/pyro.xml
-lib/xscreensaver/config/qix.xml
-lib/xscreensaver/config/queens.xml
-lib/xscreensaver/config/rd-bomb.xml
-lib/xscreensaver/config/ripples.xml
-lib/xscreensaver/config/rocks.xml
-lib/xscreensaver/config/rorschach.xml
-lib/xscreensaver/config/rotor.xml
-lib/xscreensaver/config/rotzoomer.xml
-lib/xscreensaver/config/rubik.xml
-lib/xscreensaver/config/sballs.xml
-lib/xscreensaver/config/shadebobs.xml
-lib/xscreensaver/config/sierpinski.xml
-lib/xscreensaver/config/sierpinski3d.xml
-lib/xscreensaver/config/slidescreen.xml
-lib/xscreensaver/config/slip.xml
-lib/xscreensaver/config/sonar.xml
-lib/xscreensaver/config/speedmine.xml
-lib/xscreensaver/config/sphere.xml
-lib/xscreensaver/config/sphereeversion.xml
-lib/xscreensaver/config/spheremonics.xml
-lib/xscreensaver/config/spiral.xml
-lib/xscreensaver/config/spotlight.xml
-lib/xscreensaver/config/sproingies.xml
-lib/xscreensaver/config/squiral.xml
-lib/xscreensaver/config/ssystem.xml
-lib/xscreensaver/config/stairs.xml
-lib/xscreensaver/config/starfish.xml
-lib/xscreensaver/config/starwars.xml
-lib/xscreensaver/config/stonerview.xml
-lib/xscreensaver/config/strange.xml
-lib/xscreensaver/config/superquadrics.xml
-lib/xscreensaver/config/swirl.xml
-lib/xscreensaver/config/t3d.xml
-lib/xscreensaver/config/thornbird.xml
-lib/xscreensaver/config/triangle.xml
-lib/xscreensaver/config/truchet.xml
-lib/xscreensaver/config/twang.xml
-lib/xscreensaver/config/vermiculate.xml
-lib/xscreensaver/config/vidwhacker.xml
-lib/xscreensaver/config/vines.xml
-lib/xscreensaver/config/wander.xml
-lib/xscreensaver/config/webcollage.xml
-lib/xscreensaver/config/whirlwindwarp.xml
-lib/xscreensaver/config/whirlygig.xml
-lib/xscreensaver/config/worm.xml
-lib/xscreensaver/config/wormhole.xml
-lib/xscreensaver/config/xanalogtv.xml
-lib/xscreensaver/config/xaos.xml
-lib/xscreensaver/config/xdaliclock.xml
-lib/xscreensaver/config/xdeco.xml
-lib/xscreensaver/config/xearth.xml
-lib/xscreensaver/config/xfishtank.xml
-lib/xscreensaver/config/xflame.xml
-lib/xscreensaver/config/xjack.xml
-lib/xscreensaver/config/xlyap.xml
-lib/xscreensaver/config/xmatrix.xml
-lib/xscreensaver/config/xmountains.xml
-lib/xscreensaver/config/xplanet.xml
-lib/xscreensaver/config/xrayswarm.xml
-lib/xscreensaver/config/xsnow.xml
-lib/xscreensaver/config/xspirograph.xml
-lib/xscreensaver/config/xteevee.xml
-lib/xscreensaver/config/zoom.xml
+bin/xscreensaver-text
+lib/X11/app-defaults/XScreenSaver
 libexec/xscreensaver/
 libexec/xscreensaver/anemone
+libexec/xscreensaver/anemotaxis
 libexec/xscreensaver/ant
 libexec/xscreensaver/antinspect
 libexec/xscreensaver/antspotlight
@@ -220,15 +24,18 @@ libexec/xscreensaver/blaster
 libexec/xscreensaver/blinkbox
 libexec/xscreensaver/blitspin
 libexec/xscreensaver/blocktube
+libexec/xscreensaver/boing
 libexec/xscreensaver/bouboule
 libexec/xscreensaver/bouncingcow
 libexec/xscreensaver/boxed
+libexec/xscreensaver/boxfit
 libexec/xscreensaver/braid
 libexec/xscreensaver/bsod
 libexec/xscreensaver/bubble3d
 libexec/xscreensaver/bubbles
 libexec/xscreensaver/bumps
 libexec/xscreensaver/cage
+libexec/xscreensaver/carousel
 libexec/xscreensaver/ccurve
 libexec/xscreensaver/circuit
 libexec/xscreensaver/cloudlife
@@ -252,10 +59,13 @@ libexec/xscreensaver/epicycle
 libexec/xscreensaver/eruption
 libexec/xscreensaver/euler2d
 libexec/xscreensaver/fadeplot
+libexec/xscreensaver/fiberlamp
+libexec/xscreensaver/fireworkx
 libexec/xscreensaver/flag
 libexec/xscreensaver/flame
 libexec/xscreensaver/flipflop
 libexec/xscreensaver/flipscreen3d
+libexec/xscreensaver/fliptext
 libexec/xscreensaver/flow
 libexec/xscreensaver/fluidballs
 libexec/xscreensaver/flurry
@@ -288,6 +98,7 @@ libexec/xscreensaver/hypertorus
 libexec/xscreensaver/ifs
 libexec/xscreensaver/imsmap
 libexec/xscreensaver/interference
+libexec/xscreensaver/intermomentary
 libexec/xscreensaver/jigglypuff
 libexec/xscreensaver/jigsaw
 libexec/xscreensaver/juggle
@@ -305,6 +116,7 @@ libexec/xscreensaver/ljlatest
 libexec/xscreensaver/lmorph
 libexec/xscreensaver/loop
 libexec/xscreensaver/maze
+libexec/xscreensaver/memscroller
 libexec/xscreensaver/menger
 libexec/xscreensaver/metaballs
 libexec/xscreensaver/mirrorblob
@@ -326,6 +138,7 @@ libexec/xscreensaver/penrose
 libexec/xscreensaver/petri
 libexec/xscreensaver/phosphor
 libexec/xscreensaver/piecewise
+libexec/xscreensaver/pinion
 libexec/xscreensaver/pipes
 libexec/xscreensaver/polyhedra
 libexec/xscreensaver/polyominoes
@@ -363,6 +176,7 @@ libexec/xscreensaver/starfish
 libexec/xscreensaver/starwars
 libexec/xscreensaver/stonerview
 libexec/xscreensaver/strange
+libexec/xscreensaver/substrate
 libexec/xscreensaver/superquadrics
 libexec/xscreensaver/swirl
 libexec/xscreensaver/t3d
@@ -392,6 +206,7 @@ libexec/xscreensaver/xsublim
 libexec/xscreensaver/xteevee
 libexec/xscreensaver/zoom
 @man man/man1/anemone.1
+@man man/man1/anemotaxis.1
 @man man/man1/ant.1
 @man man/man1/antinspect.1
 @man man/man1/antspotlight.1
@@ -405,15 +220,18 @@ libexec/xscreensaver/zoom
 @man man/man1/blinkbox.1
 @man man/man1/blitspin.1
 @man man/man1/blocktube.1
+@man man/man1/boing.1
 @man man/man1/bouboule.1
 @man man/man1/bouncingcow.1
 @man man/man1/boxed.1
+@man man/man1/boxfit.1
 @man man/man1/braid.1
 @man man/man1/bsod.1
 @man man/man1/bubble3d.1
 @man man/man1/bubbles.1
 @man man/man1/bumps.1
 @man man/man1/cage.1
+@man man/man1/carousel.1
 @man man/man1/ccurve.1
 @man man/man1/circuit.1
 @man man/man1/cloudlife.1
@@ -437,10 +255,13 @@ libexec/xscreensaver/zoom
 @man man/man1/eruption.1
 @man man/man1/euler2d.1
 @man man/man1/fadeplot.1
+@man man/man1/fiberlamp.1
+@man man/man1/fireworkx.1
 @man man/man1/flag.1
 @man man/man1/flame.1
 @man man/man1/flipflop.1
 @man man/man1/flipscreen3d.1
+@man man/man1/fliptext.1
 @man man/man1/flow.1
 @man man/man1/fluidballs.1
 @man man/man1/flurry.1
@@ -473,6 +294,7 @@ libexec/xscreensaver/zoom
 @man man/man1/ifs.1
 @man man/man1/imsmap.1
 @man man/man1/interference.1
+@man man/man1/intermomentary.1
 @man man/man1/jigglypuff.1
 @man man/man1/jigsaw.1
 @man man/man1/juggle.1
@@ -490,6 +312,7 @@ libexec/xscreensaver/zoom
 @man man/man1/lmorph.1
 @man man/man1/loop.1
 @man man/man1/maze.1
+@man man/man1/memscroller.1
 @man man/man1/menger.1
 @man man/man1/metaballs.1
 @man man/man1/mirrorblob.1
@@ -511,6 +334,7 @@ libexec/xscreensaver/zoom
 @man man/man1/petri.1
 @man man/man1/phosphor.1
 @man man/man1/piecewise.1
+@man man/man1/pinion.1
 @man man/man1/pipes.1
 @man man/man1/polyhedra.1
 @man man/man1/polyominoes.1
@@ -547,6 +371,7 @@ libexec/xscreensaver/zoom
 @man man/man1/starwars.1
 @man man/man1/stonerview.1
 @man man/man1/strange.1
+@man man/man1/substrate.1
 @man man/man1/superquadrics.1
 @man man/man1/swirl.1
 @man man/man1/t3d.1
@@ -576,25 +401,19 @@ libexec/xscreensaver/zoom
 @man man/man1/xscreensaver-getimage-video.1
 @man man/man1/xscreensaver-getimage.1
 @man man/man1/xscreensaver-gl-helper.1
+@man man/man1/xscreensaver-text.1
 @man man/man1/xscreensaver.1
 @man man/man1/xspirograph.1
 @man man/man1/xsublim.1
 @man man/man1/xteevee.1
 @man man/man1/zoom.1
-share/control-center/
-share/control-center/Desktop/
-share/control-center/Desktop/screensaver-properties.desktop
-@comment share/control-center/capplets/
-@comment share/control-center/capplets/screensaver-properties.desktop
-@comment share/gnome/
-@comment share/gnome/apps/
-@comment share/gnome/apps/Settings/
-@comment share/gnome/apps/Settings/Desktop/
-@comment share/gnome/apps/Settings/Desktop/screensaver-properties.desktop
+share/applications/
+share/applications/gnome-screensaver-properties.desktop
 share/locale/da/LC_MESSAGES/xscreensaver.mo
 share/locale/de/LC_MESSAGES/xscreensaver.mo
 share/locale/es/LC_MESSAGES/xscreensaver.mo
 share/locale/et/LC_MESSAGES/xscreensaver.mo
+share/locale/fi/LC_MESSAGES/xscreensaver.mo
 share/locale/fr/LC_MESSAGES/xscreensaver.mo
 share/locale/hu/LC_MESSAGES/xscreensaver.mo
 share/locale/ja/LC_MESSAGES/xscreensaver.mo
@@ -617,12 +436,207 @@ share/locale/zh_TW/LC_MESSAGES/xscreensaver.mo
 share/pixmaps/
 share/pixmaps/xscreensaver.xpm
 share/xscreensaver/
-share/xscreensaver/screensaver-cmndln.png
-share/xscreensaver/screensaver-colorselector.png
-share/xscreensaver/screensaver-diagnostic.png
-share/xscreensaver/screensaver-locking.png
-share/xscreensaver/screensaver-power.png
-share/xscreensaver/screensaver-snap.png
-share/xscreensaver/xscreensaver-demo.glade2
+share/xscreensaver/config/
+share/xscreensaver/config/README
+share/xscreensaver/config/anemone.xml
+share/xscreensaver/config/anemotaxis.xml
+share/xscreensaver/config/ant.xml
+share/xscreensaver/config/antinspect.xml
+share/xscreensaver/config/antspotlight.xml
+share/xscreensaver/config/apollonian.xml
+share/xscreensaver/config/apple2.xml
+share/xscreensaver/config/atlantis.xml
+share/xscreensaver/config/attraction.xml
+share/xscreensaver/config/atunnel.xml
+share/xscreensaver/config/barcode.xml
+share/xscreensaver/config/blaster.xml
+share/xscreensaver/config/blinkbox.xml
+share/xscreensaver/config/blitspin.xml
+share/xscreensaver/config/blocktube.xml
+share/xscreensaver/config/boing.xml
+share/xscreensaver/config/bouboule.xml
+share/xscreensaver/config/bouncingcow.xml
+share/xscreensaver/config/boxed.xml
+share/xscreensaver/config/boxfit.xml
+share/xscreensaver/config/braid.xml
+share/xscreensaver/config/bsod.xml
+share/xscreensaver/config/bubble3d.xml
+share/xscreensaver/config/bubbles.xml
+share/xscreensaver/config/bumps.xml
+share/xscreensaver/config/cage.xml
+share/xscreensaver/config/carousel.xml
+share/xscreensaver/config/ccurve.xml
+share/xscreensaver/config/circuit.xml
+share/xscreensaver/config/cloudlife.xml
+share/xscreensaver/config/compass.xml
+share/xscreensaver/config/coral.xml
+share/xscreensaver/config/critical.xml
+share/xscreensaver/config/crystal.xml
+share/xscreensaver/config/cubenetic.xml
+share/xscreensaver/config/cubestorm.xml
+share/xscreensaver/config/cynosure.xml
+share/xscreensaver/config/dangerball.xml
+share/xscreensaver/config/decayscreen.xml
+share/xscreensaver/config/deluxe.xml
+share/xscreensaver/config/demon.xml
+share/xscreensaver/config/discrete.xml
+share/xscreensaver/config/distort.xml
+share/xscreensaver/config/drift.xml
+share/xscreensaver/config/endgame.xml
+share/xscreensaver/config/engine.xml
+share/xscreensaver/config/epicycle.xml
+share/xscreensaver/config/eruption.xml
+share/xscreensaver/config/euler2d.xml
+share/xscreensaver/config/fadeplot.xml
+share/xscreensaver/config/fiberlamp.xml
+share/xscreensaver/config/fireworkx.xml
+share/xscreensaver/config/flag.xml
+share/xscreensaver/config/flame.xml
+share/xscreensaver/config/flipflop.xml
+share/xscreensaver/config/flipscreen3d.xml
+share/xscreensaver/config/fliptext.xml
+share/xscreensaver/config/flow.xml
+share/xscreensaver/config/fluidballs.xml
+share/xscreensaver/config/flurry.xml
+share/xscreensaver/config/flyingtoasters.xml
+share/xscreensaver/config/fontglide.xml
+share/xscreensaver/config/forest.xml
+share/xscreensaver/config/fuzzyflakes.xml
+share/xscreensaver/config/galaxy.xml
+share/xscreensaver/config/gears.xml
+share/xscreensaver/config/gflux.xml
+share/xscreensaver/config/glblur.xml
+share/xscreensaver/config/gleidescope.xml
+share/xscreensaver/config/glforestfire.xml
+share/xscreensaver/config/glknots.xml
+share/xscreensaver/config/glmatrix.xml
+share/xscreensaver/config/glplanet.xml
+share/xscreensaver/config/glslideshow.xml
+share/xscreensaver/config/glsnake.xml
+share/xscreensaver/config/gltext.xml
+share/xscreensaver/config/goop.xml
+share/xscreensaver/config/grav.xml
+share/xscreensaver/config/greynetic.xml
+share/xscreensaver/config/halftone.xml
+share/xscreensaver/config/halo.xml
+share/xscreensaver/config/helix.xml
+share/xscreensaver/config/hopalong.xml
+share/xscreensaver/config/hyperball.xml
+share/xscreensaver/config/hypercube.xml
+share/xscreensaver/config/hypertorus.xml
+share/xscreensaver/config/ifs.xml
+share/xscreensaver/config/imsmap.xml
+share/xscreensaver/config/interference.xml
+share/xscreensaver/config/intermomentary.xml
+share/xscreensaver/config/jigglypuff.xml
+share/xscreensaver/config/jigsaw.xml
+share/xscreensaver/config/juggle.xml
+share/xscreensaver/config/julia.xml
+share/xscreensaver/config/kaleidescope.xml
+share/xscreensaver/config/klein.xml
+share/xscreensaver/config/kumppa.xml
+share/xscreensaver/config/lament.xml
+share/xscreensaver/config/laser.xml
+share/xscreensaver/config/lavalite.xml
+share/xscreensaver/config/lightning.xml
+share/xscreensaver/config/lisa.xml
+share/xscreensaver/config/lissie.xml
+share/xscreensaver/config/lmorph.xml
+share/xscreensaver/config/loop.xml
+share/xscreensaver/config/maze.xml
+share/xscreensaver/config/memscroller.xml
+share/xscreensaver/config/menger.xml
+share/xscreensaver/config/metaballs.xml
+share/xscreensaver/config/mirrorblob.xml
+share/xscreensaver/config/mismunch.xml
+share/xscreensaver/config/moebius.xml
+share/xscreensaver/config/moire.xml
+share/xscreensaver/config/moire2.xml
+share/xscreensaver/config/molecule.xml
+share/xscreensaver/config/morph3d.xml
+share/xscreensaver/config/mountain.xml
+share/xscreensaver/config/munch.xml
+share/xscreensaver/config/nerverot.xml
+share/xscreensaver/config/noof.xml
+share/xscreensaver/config/noseguy.xml
+share/xscreensaver/config/pacman.xml
+share/xscreensaver/config/pedal.xml
+share/xscreensaver/config/penetrate.xml
+share/xscreensaver/config/penrose.xml
+share/xscreensaver/config/petri.xml
+share/xscreensaver/config/phosphor.xml
+share/xscreensaver/config/piecewise.xml
+share/xscreensaver/config/pinion.xml
+share/xscreensaver/config/pipes.xml
+share/xscreensaver/config/polyhedra.xml
+share/xscreensaver/config/polyominoes.xml
+share/xscreensaver/config/polytopes.xml
+share/xscreensaver/config/pong.xml
+share/xscreensaver/config/popsquares.xml
+share/xscreensaver/config/providence.xml
+share/xscreensaver/config/pulsar.xml
+share/xscreensaver/config/pyro.xml
+share/xscreensaver/config/qix.xml
+share/xscreensaver/config/queens.xml
+share/xscreensaver/config/rd-bomb.xml
+share/xscreensaver/config/ripples.xml
+share/xscreensaver/config/rocks.xml
+share/xscreensaver/config/rorschach.xml
+share/xscreensaver/config/rotor.xml
+share/xscreensaver/config/rotzoomer.xml
+share/xscreensaver/config/rubik.xml
+share/xscreensaver/config/sballs.xml
+share/xscreensaver/config/shadebobs.xml
+share/xscreensaver/config/sierpinski.xml
+share/xscreensaver/config/sierpinski3d.xml
+share/xscreensaver/config/slidescreen.xml
+share/xscreensaver/config/slip.xml
+share/xscreensaver/config/sonar.xml
+share/xscreensaver/config/speedmine.xml
+share/xscreensaver/config/sphere.xml
+share/xscreensaver/config/spheremonics.xml
+share/xscreensaver/config/spiral.xml
+share/xscreensaver/config/spotlight.xml
+share/xscreensaver/config/sproingies.xml
+share/xscreensaver/config/squiral.xml
+share/xscreensaver/config/stairs.xml
+share/xscreensaver/config/starfish.xml
+share/xscreensaver/config/starwars.xml
+share/xscreensaver/config/stonerview.xml
+share/xscreensaver/config/strange.xml
+share/xscreensaver/config/substrate.xml
+share/xscreensaver/config/superquadrics.xml
+share/xscreensaver/config/swirl.xml
+share/xscreensaver/config/t3d.xml
+share/xscreensaver/config/thornbird.xml
+share/xscreensaver/config/triangle.xml
+share/xscreensaver/config/truchet.xml
+share/xscreensaver/config/twang.xml
+share/xscreensaver/config/vermiculate.xml
+share/xscreensaver/config/vidwhacker.xml
+share/xscreensaver/config/vines.xml
+share/xscreensaver/config/wander.xml
+share/xscreensaver/config/webcollage.xml
+share/xscreensaver/config/whirlwindwarp.xml
+share/xscreensaver/config/whirlygig.xml
+share/xscreensaver/config/worm.xml
+share/xscreensaver/config/wormhole.xml
+share/xscreensaver/config/xanalogtv.xml
+share/xscreensaver/config/xdeco.xml
+share/xscreensaver/config/xflame.xml
+share/xscreensaver/config/xjack.xml
+share/xscreensaver/config/xlyap.xml
+share/xscreensaver/config/xmatrix.xml
+share/xscreensaver/config/xrayswarm.xml
+share/xscreensaver/config/xspirograph.xml
+share/xscreensaver/config/xteevee.xml
+share/xscreensaver/config/zoom.xml
+share/xscreensaver/glade/
+share/xscreensaver/glade/screensaver-cmndln.png
+share/xscreensaver/glade/screensaver-colorselector.png
+share/xscreensaver/glade/screensaver-diagnostic.png
+share/xscreensaver/glade/screensaver-locking.png
+share/xscreensaver/glade/screensaver-power.png
+share/xscreensaver/glade/screensaver-snap.png
+share/xscreensaver/glade/xscreensaver-demo.glade2
 !%%no_gle%%
-%%gtk2%%

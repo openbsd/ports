@@ -1,50 +1,47 @@
-# $OpenBSD: Makefile,v 1.28 2004/12/18 15:03:34 alek Exp $
+# $OpenBSD: Makefile,v 1.29 2005/06/03 05:38:32 marcm Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
-VERSION=		4.16
+VERSION=		4.21
 DISTNAME=		xscreensaver-${VERSION}
 CATEGORIES=     	x11
 
 HOMEPAGE=		http://www.jwz.org/xscreensaver/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		GL GLU ICE SM X11 Xext Xinerama Xmu Xrandr Xrender Xss \
-			Xt Xxf86misc Xxf86vm c jpeg m pthread util z
+
+WANTLIB=		GL GLU ICE SM X11 Xext Xinerama Xmu Xrandr Xrender \
+			Xt Xxf86misc Xxf86vm c jpeg m pthread util z \
+			Xft atk-1.0.0.0 fontconfig freetype Xpm \
+			gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 glib-2.0.0.0 \
+			gmodule-2.0.0.0 gobject-2.0.0.0 gtk-x11-2.0.0.0 \
+			pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
 
 MASTER_SITES=		http://www.jwz.org/xscreensaver/
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS+=		xml2.6::textproc/libxml
-
-MAKE_ENV+=		${CONFIGURE_ENV}
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
+LIB_DEPENDS=		gdk_pixbuf_xlib-2.0.0.0::x11/gtk+2 \
+			glade-2.0.0.0::devel/libglade2 \
+			xml2.6::textproc/libxml
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 
-CONFIGURE_STYLE=	autoconf no-autoheader
-AUTOCONF_VERSION=	2.57
-AUTOCONF=		autoconf -I${LOCALBASE}/share/aclocal
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-hackdir="${PREFIX}/libexec/xscreensaver"
-CONFIGURE_ARGS+=	--with-gl
-CONFIGURE_ARGS+=	--with-xpm
-CONFIGURE_ARGS+=	--without-gnome
-CONFIGURE_ARGS+=	--with-zippy=/usr/games/fortune
-CONFIGURE_ARGS+=	--without-kerberos
-CONFIGURE_ARGS+=	--with-xml
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
 
-FLAVORS=		no_gle gtk2
+# License issues with graphics/gle necessitate this
+FLAVORS=		no_gle
 FLAVOR?=		no_gle
 
 .if !${FLAVOR:L:Mno_gle}
@@ -54,31 +51,12 @@ CONFIGURE_ARGS+=	--with-gle
 CONFIGURE_ARGS+=	--without-gle
 .endif
 
-.if ${FLAVOR:L:Mgtk2}
-BUILD_DEPENDS+=		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS+=		gdk_pixbuf_xlib-2.0.0.0::x11/gtk+2 \
-			glade-2.0.0.0::devel/libglade2
-CONFIGURE_ARGS+=	--with-gtk2
-WANTLIB+=		Xcursor Xft atk-1.0.0.0 fontconfig freetype \
-			gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 glib-2.0.0.0 \
-			gmodule-2.0.0.0 gobject-2.0.0.0 gtk-x11-2.0.0.0 \
-			pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
-.else
-CONFIGURE_ARGS+=	--with-pixbuf=${LOCALBASE}
-LIB_DEPENDS+=		gdk_pixbuf.2,gdk_pixbuf_xlib.2::graphics/gdk-pixbuf,no_gnome
-WANTLIB+=		tiff png Xi gdk glib gmodule gtk
-.endif
-
 post-install:
 # rename deco to xdeco, so it doesn't conflict with misc/deco
 	@mv ${PREFIX}/man/man1/deco.1  ${PREFIX}/man/man1/xdeco.1
 	@mv ${PREFIX}/libexec/xscreensaver/deco \
 		${PREFIX}/libexec/xscreensaver/xdeco
-	@mv ${PREFIX}/lib/xscreensaver/config/deco.xml \
-		${PREFIX}/lib/xscreensaver/config/xdeco.xml
-# Need a pretty icon for the controlcenter
-#	@${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-#	@${INSTALL_DATA} ${PREFIX}/share/xscreensaver/xscreensaver.xpm \
-#		${PREFIX}/share/pixmaps/
+	@mv ${PREFIX}/share/xscreensaver/config/deco.xml \
+		${PREFIX}/share/xscreensaver/config/xdeco.xml
 
 .include <bsd.port.mk>

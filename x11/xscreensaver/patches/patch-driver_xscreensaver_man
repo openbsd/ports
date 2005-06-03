@@ -1,7 +1,7 @@
-$OpenBSD: patch-driver_xscreensaver_man,v 1.4 2004/06/24 16:23:37 marcm Exp $
---- driver/xscreensaver.man.orig	Wed May 12 17:37:35 2004
-+++ driver/xscreensaver.man	Tue Jun 22 22:12:44 2004
-@@ -1178,7 +1178,7 @@ and a FAQ can always be found at http://
+$OpenBSD: patch-driver_xscreensaver_man,v 1.5 2005/06/03 05:38:32 marcm Exp $
+--- driver/xscreensaver.man.orig	Sun Mar 20 15:20:53 2005
++++ driver/xscreensaver.man	Sun Apr 17 23:30:27 2005
+@@ -1198,7 +1198,7 @@ and a FAQ can always be found at http://
  .BR cynosure (1),
  .BR dangerball (1),
  .BR decayscreen (1),

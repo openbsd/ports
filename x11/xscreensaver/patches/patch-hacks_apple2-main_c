@@ -1,7 +1,7 @@
-$OpenBSD: patch-hacks_apple2-main_c,v 1.1 2004/06/24 16:23:37 marcm Exp $
---- hacks/apple2-main.c.orig	Tue Jun 22 22:29:48 2004
-+++ hacks/apple2-main.c	Tue Jun 22 22:30:09 2004
-@@ -28,6 +28,7 @@
+$OpenBSD: patch-hacks_apple2-main_c,v 1.2 2005/06/03 05:38:32 marcm Exp $
+--- hacks/apple2-main.c.orig	Sun Mar 20 13:58:02 2005
++++ hacks/apple2-main.c	Sun Apr 17 23:30:27 2005
+@@ -29,6 +29,7 @@
  #  include <pty.h>
  # endif
  # ifdef HAVE_UTIL_H

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_gle,v 1.4 2004/09/15 19:26:35 espie Exp $
+@comment $OpenBSD: PFRAG.no-no_gle,v 1.5 2005/06/03 05:38:32 marcm Exp $
 libexec/xscreensaver/extrusion
-lib/xscreensaver/config/extrusion.xml
+share/xscreensaver/config/extrusion.xml
 @man man/man1/extrusion.1

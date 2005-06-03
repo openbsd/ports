@@ -1,9 +1,9 @@
-$OpenBSD: patch-hacks_glx_Makefile_in,v 1.3 2002/01/26 23:59:49 lebel Exp $
---- hacks/glx/Makefile.in.orig	Wed Jan  2 03:15:27 2002
-+++ hacks/glx/Makefile.in	Sat Jan 26 14:15:55 2002
-@@ -9,7 +9,7 @@
- srcdir		= @srcdir@
- VPATH		= @srcdir@
+$OpenBSD: patch-hacks_glx_Makefile_in,v 1.4 2005/06/03 05:38:32 marcm Exp $
+--- hacks/glx/Makefile.in.orig	Sun Mar 20 23:18:19 2005
++++ hacks/glx/Makefile.in	Sun Apr 17 23:30:27 2005
+@@ -11,7 +11,7 @@ VPATH		= @srcdir@
+ top_srcdir	= @top_srcdir@
+ top_builddir	= ..
  
 -install_prefix	=
 +install_prefix	= $(DESTDIR)
