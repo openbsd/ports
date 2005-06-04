@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2005/05/31 19:40:24 millert Exp $
+# $OpenBSD: Makefile,v 1.22 2005/06/04 23:11:51 fgsch Exp $
 
 COMMENT=	"write audio/data CD-Rs in disk-at-once mode"
 
@@ -19,9 +19,26 @@ WANTLIB=		c m stdc++
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/paranoia ${WRKSRC}/scsilib/conf
-CONFIGURE_ARGS+=	--with-posix-threads=no --without-lame \
-			--with-gtkmm-prefix=/nonexistent
+CONFIGURE_ARGS+=	--with-posix-threads=no \
+			--with-xdao=no
 MAKE_ENV=		CCOM="${CC}"
+
+FLAVORS=	audio
+FLAVOR?=
+
+.if ${FLAVOR:L:Maudio}
+CONFIGURE_ARGS+=	--with-lame-lib=${LOCALBASE}/lib \
+			--with-lame-include=${LOCALBASE}/include
+BUILD_DEPENDS+=		:libmad->=0.15.1bp0:audio/libmad
+LIB_DEPENDS+=		mp3lame::audio/lame \
+			ao.3::audio/libao \
+			mad.2::audio/libmad
+WANTLIB+=		ao.3 ogg.5 vorbis.4 vorbisfile.4
+.else
+CONFIGURE_ARGS+=	--with-ogg-support=no \
+			--with-mp3-support=no \
+			--without-lame
+.endif
 
 .if ${MACHINE} != "i386" || ${CC} != "cc"
 pre-configure:
