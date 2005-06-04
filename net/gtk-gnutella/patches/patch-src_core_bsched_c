@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_core_bsched_c,v 1.1 2005/06/04 16:11:33 sturm Exp $
+--- src/core/bsched.c.orig	Tue May 31 20:11:13 2005
++++ src/core/bsched.c	Tue May 31 20:11:29 2005
+@@ -1410,7 +1410,7 @@ bio_sendfile(sendfile_ctx_t *ctx, bio_so
+ 	
+ 	g_assert_not_reached();
+ 	/* NOTREACHED */
+-	errno = ENOTSUP;
++	errno = EOPNOTSUPP;
+ 	return (ssize_t) -1;
+ 	
+ #else /* USE_MMAP || HAVE_SENDFILE */
