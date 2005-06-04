@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.10 2005/03/31 04:23:42 pvalchev Exp $
---- ltmain.sh.orig	Tue Jan 18 14:03:20 2005
-+++ ltmain.sh	Tue Jan 18 14:05:20 2005
-@@ -2611,7 +2611,7 @@ EOF
+$OpenBSD: patch-ltmain_sh,v 1.11 2005/06/04 14:39:21 naddy Exp $
+--- ltmain.sh.orig	Tue May 24 00:33:09 2005
++++ ltmain.sh	Sun May 29 20:00:07 2005
+@@ -2641,7 +2641,7 @@ EOF
  	    add_dir=
  	    add=
  	    # Finalize command for both is simple: just hardcode it.
@@ -10,7 +10,7 @@ $OpenBSD: patch-ltmain_sh,v 1.10 2005/03/31 04:23:42 pvalchev Exp $
  	      add="$libdir/$linklib"
  	    elif test "$hardcode_minus_L" = yes; then
  	      add_dir="-L$libdir"
-@@ -5804,40 +5804,6 @@ relink_command=\"$relink_command\""
+@@ -5898,40 +5898,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  

@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure_ac,v 1.1 2005/06/04 14:39:21 naddy Exp $
+--- configure.ac.orig	Sun May 29 20:01:17 2005
++++ configure.ac	Sun May 29 20:01:46 2005
+@@ -1908,7 +1908,7 @@ AC_SUBST(PERLMAINCC)
+ #
+ 
+ # Subdirectory under lib to place ImageMagick lib files
+-MagickLibSubdir="${PACKAGE_NAME}-${PACKAGE_VERSION}"
++MagickLibSubdir="${PACKAGE_NAME}"
+ AC_DEFINE_UNQUOTED(MagickLibSubdir,"$MagickLibSubdir",Subdirectory of lib where ImageMagick architecture dependent files are installed)
+ 
+ # Path to ImageMagick bin directory
+@@ -1971,7 +1971,7 @@ AC_SUBST(MagickFilterModulesPath)
+ 
+ #
+ # Path to ImageMagick document files
+-MagickDocumentSubdir="${PACKAGE_NAME}-${PACKAGE_VERSION}"
++MagickDocumentSubdir="${PACKAGE_NAME}"
+ MagickDocumentPath="${DATA_DIR}/doc/${MagickDocumentSubdir}"
+ MagickDocumentPathDefine="${MagickDocumentPath}/"
+ if test "$native_win32_build" = 'yes'
+@@ -1983,7 +1983,7 @@ AC_SUBST(MagickDocumentPath)
+ 
+ #
+ # Path to ImageMagick share files
+-MagickShareSubdir="${PACKAGE_NAME}-${PACKAGE_VERSION}"
++MagickShareSubdir="${PACKAGE_NAME}"
+ MagickSharePath="${DATA_DIR}/${MagickShareSubdir}"
+ MagickSharePathDefine="${MagickSharePath}/"
+ if test "$native_win32_build" = 'yes'

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2005/05/15 21:02:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2005/06/04 14:39:21 naddy Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"object-oriented Perl interface to ImageMagick"
 
-VER=		6.2.2
+VER=		6.2.3
 DASHVER=	0
 DISTNAME=	ImageMagick-${VER}-${DASHVER}
 PKGNAME=	p5-PerlMagick-${VER}.${DASHVER}
@@ -15,9 +15,9 @@ HOMEPAGE=	http://www.imagemagick.org
 
 BUILD_DEPENDS=	:ImageMagick-${VER}.${DASHVER}:graphics/ImageMagick
 RUN_DEPENDS=	:ImageMagick-${VER}.${DASHVER}:graphics/ImageMagick
-LIB_DEPENDS=	Magick.6::graphics/ImageMagick
+LIB_DEPENDS=	Magick.8::graphics/ImageMagick
 
-MAINTAINER=	Dan Brosemer <odin@svartalfheim.net>
+MAINTAINER=	Bernd Ahlers <b.ahlers@ba-net.org>
 
 # http://www.imagemagick.org/www/Copyright.html
 PERMIT_PACKAGE_CDROM=	Yes
@@ -31,5 +31,18 @@ CONFIGURE_STYLE= perl
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/-${DASHVER}$//}
 WRKSRC=		${WRKDIST}/PerlMagick
+
+post-patch:
+	@perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g; \
+		s|%%X11BASE%%|${X11BASE}|g;' ${WRKSRC}/Makefile.PL
+
+pre-regress:
+	@perl -pi -e 's|\@abs_top_srcdir\@|${WRKDIST}|g; \
+		s|\@abs_top_builddir\@|${WRKDIST}|g; \
+		s|\@MAGICK_CODER_MODULE_PATH\@|${WRKDIST}/coder|g; \
+		s|\@MAGICK_CONFIGURE_SRC_PATH\@|${WRKDIST}/config|g; \
+		s|\@MAGICK_CONFIGURE_BUILD_PATH\@|${WRKDIST}/config|g; \
+		s|\@MAGICK_FILTER_MODULE_PATH\@|${WRKDIST}/filters|g;'\
+		 < ${WRKDIST}/magick.sh.in > ${WRKDIST}/magick.sh
 
 .include <bsd.port.mk>

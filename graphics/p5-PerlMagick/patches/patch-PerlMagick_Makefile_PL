@@ -1,29 +1,29 @@
-$OpenBSD: patch-PerlMagick_Makefile_PL,v 1.4 2005/05/15 21:02:47 naddy Exp $
---- PerlMagick/Makefile.PL.orig	Fri May  6 10:27:01 2005
-+++ PerlMagick/Makefile.PL	Fri May  6 10:27:05 2005
+$OpenBSD: patch-PerlMagick_Makefile_PL,v 1.5 2005/06/04 14:39:21 naddy Exp $
+--- PerlMagick/Makefile.PL.orig	Tue May 24 00:47:27 2005
++++ PerlMagick/Makefile.PL	Sun May 29 12:11:49 2005
 @@ -44,13 +44,13 @@ WriteMakefile
     'DEFINE'	=> ' -DHAVE_CONFIG_H',     # e.g., '-DHAVE_SOMETHING' 
  
     # Header search specfication and preprocessor flags
 -   'INC'	=> '-I../ -I.. -I/usr/include/freetype2 -I/usr/X11R6/include -I/usr/X11R6/include/X11 -I/usr/include/libxml2',
-+   'INC'	=> '-I../ -I.. -I/usr/X11R6/include -I/usr/X11R6/include/X11',
++   'INC'	=> '-I../ -I.. -I%%X11BASE%%/include -I%%X11BASE%%/include/X11',
  
     # C pre-processor flags (e.g. -I & -D options)
 -   # 'CPPFLAGS'    => "$Config{'cppflags'} -I/usr/include/freetype2 -I/usr/X11R6/include -I/usr/X11R6/include/X11 -I/usr/include/libxml2",
-+   # 'CPPFLAGS'    => "$Config{'cppflags'} -I/usr/X11R6/include -I/usr/X11R6/include/X11",
++   # 'CPPFLAGS'    => "$Config{'cppflags'} -I%%X11BASE%%/include -I%%X11BASE%%/include/X11",
  
     # C compiler flags (e.g. -O -g)
 -   'CCFLAGS'     => "$Config{'ccflags'} -O3 -g -Wall -pthread",
 +   'CCFLAGS'     => "$Config{'ccflags'} -O2 -Wall",
  
     # Linker flags for building an executable
-    'LDFLAGS'    =>  "-L/usr/local/lib $Config{'ldflags'}",
+    'LDFLAGS'    =>  "-L/usr/lib $Config{'ldflags'}",
 @@ -62,7 +62,7 @@ WriteMakefile
-    'INSTALLBIN'	=> '/usr/local/bin',
+    'INSTALLBIN'	=> '/usr/bin',
  
     # Library specification
--   'LIBS'	=> ['-L/usr/local/lib -lMagick -L/usr/X11R6/lib64 -L/usr/lib64 -Wl,--rpath -Wl,/usr/lib64 -lfreetype -lz -L/usr/lib -ltiff -lfreetype -ljpeg -lpng -ldpstk -ldps -lXext -lXt -lSM -lICE -lX11 -lbz2 -lxml2 -lz -lpthread -lm -lpthread'],
-+   'LIBS'	=> ['-L/usr/local/lib -lMagick -L/usr/X11R6/lib -ljbig -llcms -ltiff -lfreetype -ljasper -ljpeg -lpng -lXext -lSM -lICE -lX11 -lbz2 -lxml2 -liconv -lz -lm'],
+-   'LIBS'	=> ['-L/usr/lib -lMagick -L/usr/X11R6/lib64 -L/usr/lib64 -Wl,--rpath -Wl,/usr/lib64 -lfreetype -lz -L/usr/lib -ltiff -lfreetype -ljpeg -lpng -ldpstk -ldps -lXext -lXt -lSM -lICE -lX11 -lbz2 -lxml2 -lz -lpthread -lm -lpthread'],
++   'LIBS'	=> ['-L%%LOCALBASE%%/lib -lMagick -ljbig -llcms -ltiff -L%%X11BASE%%/lib -lfreetype -ljasper -ljpeg -lpng -lXext -lSM -lICE -lX11 -lbz2 -lxml2 -liconv -lz -lm'],
  
     # Perl binary name (if a Perl binary is built)
     'MAP_TARGET'	=> 'PerlMagick',
