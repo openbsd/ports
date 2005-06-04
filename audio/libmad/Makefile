@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2004/02/21 02:32:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2005/06/04 15:30:58 naddy Exp $
 
 COMMENT=	"high-quality MPEG audio decoder"
 
 DISTNAME=	libmad-0.15.1b
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
-HOMEPAGE=	http://mad.sourceforge.net/
+HOMEPAGE=	http://www.underbit.com/products/mad/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -20,5 +21,12 @@ MASTER_SITES=	ftp://ftp.mars.org/pub/mpeg/ \
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+
+post-patch:
+	@cp ${FILESDIR}/mad.pc.in ${WRKSRC}
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
+	${INSTALL_DATA} ${WRKBUILD}/mad.pc ${PREFIX}/lib/pkgconfig
 
 .include <bsd.port.mk>

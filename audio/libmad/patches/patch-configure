@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2005/06/04 15:30:58 naddy Exp $
+--- configure.orig	Sat Jun  4 17:10:03 2005
++++ configure	Sat Jun  4 17:11:00 2005
+@@ -21663,7 +21663,7 @@ test -n "$optimize" && CFLAGS="$CFLAGS $
+ test -n "$profile"  && CFLAGS="$CFLAGS $profile" LDFLAGS="$LDFLAGS $profile"
+ 
+ 
+-                              ac_config_files="$ac_config_files Makefile msvc++/Makefile libmad.list"
++                              ac_config_files="$ac_config_files Makefile msvc++/Makefile libmad.list mad.pc"
+ 
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
