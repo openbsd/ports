@@ -1,0 +1,16 @@
+$OpenBSD: patch-cs_csparse_c,v 1.1 2005/06/04 11:56:50 sturm Exp $
+--- cs/csparse.c.orig	Wed Jun  1 23:46:41 2005
++++ cs/csparse.c	Wed Jun  1 23:45:35 2005
+@@ -3359,9 +3359,9 @@ static NEOERR * _builtin_str_slice (CSPA
+   NEOERR *err;
+   char *s = NULL;
+   char *slice;
+-  int b = 0;
+-  int e = 0;
+-  int len;
++  long int b = 0;
++  long int e = 0;
++  size_t len;
+ 
+   result->op_type = CS_TYPE_STRING;
+   result->s = "";
