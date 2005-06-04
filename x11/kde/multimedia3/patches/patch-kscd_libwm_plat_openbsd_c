@@ -1,7 +1,15 @@
-$OpenBSD: patch-kscd_libwm_plat_openbsd_c,v 1.4 2004/09/18 09:36:44 espie Exp $
---- kscd/libwm/plat_openbsd.c.orig	Sat May 22 22:56:56 2004
-+++ kscd/libwm/plat_openbsd.c	Tue Sep  7 17:25:44 2004
-@@ -127,10 +127,9 @@ wmcd_open(struct wm_drive *d)
+$OpenBSD: patch-kscd_libwm_plat_openbsd_c,v 1.5 2005/06/04 12:12:10 naddy Exp $
+--- kscd/libwm/plat_openbsd.c.orig	Mon May 23 06:06:56 2005
++++ kscd/libwm/plat_openbsd.c	Sat Jun  4 05:00:08 2005
+@@ -57,7 +57,6 @@
+ #include <sys/scsiio.h>
+ #include <scsi/scsi_all.h>
+ #include <scsi/cd.h>
+-#include <scsi/scsi_cd.h>
+ 
+ #include "include/wm_struct.h"
+ #include "include/wm_cdtext.h"
+@@ -127,10 +126,9 @@ wmcd_open(struct wm_drive *d)
    
    find_drive_struct(vendor, model, rev);
    
@@ -14,7 +22,7 @@ $OpenBSD: patch-kscd_libwm_plat_openbsd_c,v 1.4 2004/09/18 09:36:44 espie Exp $
    return (0);
  } /* wmcd_open() */
  
-@@ -314,7 +313,7 @@ gen_get_cdlen(struct wm_drive *d, int *f
+@@ -314,7 +312,7 @@ gen_get_cdlen(struct wm_drive *d, int *f
   * Play the CD from one position to another (both in frames.)
   */
  int
