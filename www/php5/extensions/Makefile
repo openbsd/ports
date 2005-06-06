@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2005/05/18 06:59:37 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2005/06/06 17:25:33 robert Exp $
 
 FULLPKGNAME=	php5-extensions-${V}
 COMMENT=	"informational package about PHP5 extensions"
@@ -230,6 +230,16 @@ CONFIGURE_ARGS+=	--disable-shmop
 MULTI_PACKAGES+=	-shmop
 COMMENT-shmop=		"shared memory extensions for php5"
 CONFIGURE_ARGS+=	--enable-shmop=shared
+.endif
+
+# soap
+PSEUDO_FLAVORS+=	no_soap
+.if ${FLAVOR:L:Mno_soap}
+CONFIGURE_ARGS+=	--without-soap
+.else
+MULTI_PACKAGES+=	-soap
+COMMENT-soap=		"SOAP functions for php5"
+CONFIGURE_ARGS+=	--enable-soap=shared
 .endif
 
 # snmp

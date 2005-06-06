@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-soap,v 1.1 2005/06/06 17:25:33 robert Exp $
+lib/php/modules/soap.so
