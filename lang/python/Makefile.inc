@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.31 2005/05/23 20:39:36 alek Exp $
+# $OpenBSD: Makefile.inc,v 1.32 2005/06/06 20:47:04 alek Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -102,14 +102,14 @@ RUN_DEPENDS+=		::lang/python/${VERSION},-tkinter
 .if empty(FLAVOR:L:Mno_tkinter)
 BUILD_DEPENDS+=		::x11/tk/8.4
 SETUP_LOCAL+=		Setup.tkinter
-PKG_ARGS+=-Dtkinter=1
+PKG_ARGS+=		-Dtkinter=1
 .  if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
 MULTI_PACKAGES+=	-tkinter
 .  else
 LIB_DEPENDS+=		tk84:tk-8.4.*:x11/tk/8.4
 .  endif
 .else
-PKG_ARGS+=-Dtkinter=0
+PKG_ARGS+=		-Dtkinter=0
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-tkinter"
@@ -117,7 +117,7 @@ LIB_DEPENDS=		tk84:tk-8.4.*:x11/tk/8.4
 WANTLIB=		tcl84 X11
 .endif
 
-.if empty(FLAVOR:L:Mno_mpz)
+.if empty(FLAVOR:L:Mno_mpz) && ${VERSION} == "2.3"
 BUILD_DEPENDS+=		::devel/gmp
 SETUP_LOCAL+=		Setup.mpz
 .  if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
@@ -131,7 +131,7 @@ LIB_DEPENDS+=		gmp::devel/gmp
 LIB_DEPENDS=		gmp::devel/gmp
 .endif
 
-.if empty(FLAVOR:L:Mno_expat)
+.if empty(FLAVOR:L:Mno_expat) && ${VERSION} == "2.3"
 BUILD_DEPENDS+=		::textproc/expat
 SETUP_LOCAL+=		Setup.expat
 .  if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
