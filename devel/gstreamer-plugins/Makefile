@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2005/05/24 21:33:33 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2005/06/06 20:38:33 sturm Exp $
 
 COMMENT=		"GStreamer Streaming-media framework plug-ins."
 
 VERSION=		0.8.8
-PATCHLEVEL=		
+PATCHLEVEL=		p0
 DISTNAME=		gst-plugins-${VERSION}
 PKGNAME=		gstreamer-plugins-${VERSION}${PATCHLEVEL}
 CATEGORIES=		devel
@@ -249,11 +249,11 @@ PERMIT_PACKAGE_CDROM=	"patent issues"
 PERMIT_DISTFILES_CDROM=	"patent issues"
 WANTLIB=		${PL_WANTLIB}
 LIB_DEPENDS=		gstreamer-0.8.0.0::devel/gstreamer \
-			mp3lame::audio/lame,no_x11
+			mp3lame:lame-*:audio/lame,no_x11
 . endif
 .else
 . if ${MULTI_PACKAGES:M-lame}
-BUILD_DEPENDS+=		::audio/lame,no_x11
+BUILD_DEPENDS+=		:lame-*:audio/lame,no_x11
 CONFIGURE_ARGS+=	--enable-lame
 . else
 CONFIGURE_ARGS+=	--disable-lame
