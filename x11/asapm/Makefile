@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2005/02/26 10:11:34 matthieu Exp $
+# $OpenBSD: Makefile,v 1.14 2005/06/07 09:25:37 xsa Exp $
+
+ONLY_FOR_ARCHS=	i386 macppc zaurus
 
 COMMENT=	"Advanced Power Management monitor utility for X"
 
@@ -6,8 +8,6 @@ DISTNAME=	asapm-2.13
 HOMEPAGE=	http://www.tigr.net/afterstep/
 
 CATEGORIES=	x11
-
-ONLY_FOR_ARCHS=	i386 macppc zaurus
 
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asapm/ \
 		ftp://rt.fm/pub/asapm/
@@ -35,7 +35,7 @@ NO_REGRESS=		Yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/asapm ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/asapm.man ${PREFIX}/man/man1/asapm.1
-	@mkdir -p ${PREFIX}/share/examples/asapm
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/asapm
 	${INSTALL_DATA} ${WRKSRC}/asapmrc ${PREFIX}/share/examples/asapm/
 
 .include <bsd.port.mk>
