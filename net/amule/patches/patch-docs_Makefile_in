@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_Makefile_in,v 1.1.1.1 2005/06/07 17:24:49 fgsch Exp $
+--- docs/Makefile.in.orig	Sat Jun  4 21:36:46 2005
++++ docs/Makefile.in	Sat Jun  4 21:37:54 2005
+@@ -319,7 +319,7 @@ dist_doc_DATA = ABOUT-NLS \
+ 		EC_Protocol.txt \
+ 		socks4.protocol
+ 
+-docdir = $(datadir)/doc/$(PACKAGE_NAME)-$(PACKAGE_VERSION)
++docdir = $(datadir)/doc/amule
+ all: all-recursive
+ 
+ .SUFFIXES:

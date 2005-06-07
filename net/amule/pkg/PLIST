@@ -1,0 +1,45 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/07 17:24:49 fgsch Exp $
+bin/amule
+bin/ed2k
+@comment lib/xchat/
+@comment lib/xchat/plugins/
+@comment lib/xchat/plugins/xas.pl
+@comment man/de/
+@comment man/de/man1/
+@comment @man man/de/man1/amule.1
+@comment @man man/de/man1/ed2k.1
+@comment @man man/de/man1/xas.1
+@comment man/es/
+@comment man/es/man1/
+@comment @man man/es/man1/amule.1
+@comment @man man/es/man1/ed2k.1
+@comment @man man/es/man1/xas.1
+@comment man/fr/
+@comment man/fr/man1/
+@comment @man man/fr/man1/amule.1
+@comment @man man/fr/man1/ed2k.1
+@comment man/hu/
+@comment man/hu/man1/
+@comment @man man/hu/man1/amule.1
+@comment @man man/hu/man1/ed2k.1
+@comment @man man/hu/man1/xas.1
+@man man/man1/amule.1
+@man man/man1/ed2k.1
+@comment @man man/man1/xas.1
+share/applications/
+share/applications/amule.desktop
+share/doc/amule/
+@comment share/doc/amule/ABOUT-NLS
+@comment share/doc/amule/Changelog
+@comment share/doc/amule/Doxyfile
+@comment share/doc/amule/EC_Protocol.txt
+share/doc/amule/ED2K-Links.HOWTO
+@comment share/doc/amule/INSTALL
+share/doc/amule/README
+@comment share/doc/amule/TODO
+@comment share/doc/amule/amule-win32.HOWTO.txt
+share/doc/amule/amulesig.txt
+share/doc/amule/license.txt
+@comment share/doc/amule/socks4.protocol
+share/pixmaps/
+share/pixmaps/amule.xpm
