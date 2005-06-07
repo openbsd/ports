@@ -1,0 +1,53 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2005/06/07 01:12:58 alek Exp $
+--- configure.in.orig	Thu Dec 30 23:11:44 2004
++++ configure.in	Thu Dec 30 23:13:08 2004
+@@ -140,7 +140,7 @@ case $ac_sys_system/$ac_sys_release in
+   # On OpenBSD, select(2) is not available if _XOPEN_SOURCE is defined,
+   # even though select is a POSIX function. Reported by J. Ribbens.
+   # Reconfirmed for OpenBSD 3.3 by Zachary Hamm, for 3.4 by Jason Ish.
+-  OpenBSD/2.* | OpenBSD/3.@<:@0123456@:>@) 
++  OpenBSD/2.* | OpenBSD/3.@<:@01234567@:>@) 
+     define_xopen_source=no;;
+   # On Solaris 2.6, sys/wait.h is inconsistent in the usage
+   # of union __?sigval. Reported by Stuart Bishop.
+@@ -1344,13 +1344,27 @@ then
+ 		;;
+ 	Linux*|GNU*) LDSHARED='$(CC) -shared';;
+ 	BSD/OS*/4*) LDSHARED="gcc -shared";;
+-	OpenBSD*|FreeBSD*)
++	FreeBSD*)
+ 		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
+ 		then
+ 			LDSHARED="$CC -shared ${LDFLAGS}"
+ 		else
+ 			LDSHARED="ld -Bshareable ${LDFLAGS}"
+ 		fi;;
++	OpenBSD*)
++		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
++		then
++			LDSHARED='$(CC) -shared $(CCSHARED) ${LDFLAGS}'
++		else
++			case `uname -r` in
++			[[01]].* | 2.[[0-7]] | 2.[[0-7]].*)
++			   LDSHARED="ld -Bshareable ${LDFLAGS}"
++			   ;;
++			*)
++			   LDSHARED='$(CC) -shared $(CCSHARED) ${LDFLAGS}'
++			   ;;
++			esac
++		fi;;
+ 	NetBSD*) LDSHARED="cc -shared ${LDFLAGS}";;
+ 	OpenUNIX*|UnixWare*)
+ 		if test "$GCC" = "yes"
+@@ -1491,9 +1505,10 @@ AC_CHECK_LIB(dld, shl_load)	# Dynamic li
+ 
+ # only check for sem_ini if thread support is requested
+ if test "$with_threads" = "yes" -o -z "$with_threads"; then
+-    AC_SEARCH_LIBS(sem_init, pthread rt posix4) # 'Real Time' functions on Solaris
++#   AC_SEARCH_LIBS(sem_init, pthread rt posix4) # 'Real Time' functions on Solaris
+ 						# posix4 on Solaris 2.6
+ 						# pthread (first!) on Linux
++	LIBS="-pthread $(LIBS)"
+ fi
+ 
+ # check if we need libintl for locale functions

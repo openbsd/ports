@@ -1,0 +1,26 @@
+$OpenBSD: patch-Lib_test_test_dl_py,v 1.1.1.1 2005/06/07 01:12:58 alek Exp $
+--- Lib/test/test_dl.py.orig	Sun Jul 11 10:34:46 2004
++++ Lib/test/test_dl.py	Sun Jul 11 10:35:27 2004
+@@ -6,10 +6,19 @@
+ import dl
+ from test.test_support import verbose,TestSkipped
+ 
++import dircache
++
++libcName = ''
++for file in dircache.listdir('/usr/lib/'):
++        if 'libc.so' in file:
++                libcName = file
++                break
++
++if not libcName:
++	raise TestSkipped
++
+ sharedlibs = [
+-    ('/usr/lib/libc.so', 'getpid'),
+-    ('/lib/libc.so.6', 'getpid'),
+-    ('/usr/bin/cygwin1.dll', 'getpid'),
++    (libcName, 'getpid'),
+     ]
+ 
+ for s, func in sharedlibs:

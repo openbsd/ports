@@ -1,0 +1,24 @@
+Python is an interpreted, interactive, object-oriented
+programming language that combines remarkable power with
+very clear syntax. For an introduction to programming in
+Python you are referred to the Python Tutorial. The Python
+Library Reference documents built-in and standard types,
+constants, functions and modules. Finally, the Python
+Reference Manual describes the syntax and semantics of the
+core language in (perhaps too) much detail.
+
+Python's basic power can be extended with your own modules
+written in C or C++.  On most systems such modules may be
+dynamically loaded. Python is also adaptable as an
+extension language for existing applications. See the
+internal documentation for hints.
+
+Flavors:
+   no_bsddb   - do not build bsdb package
+   no_expat   - do not build expat package
+   no_gdbm    - do not build gdbm package
+   no_idle    - do not build idle package
+   no_mpz     - do not build mpz package
+   no_tests   - do not build tests package
+   no_tkinter - do not build tkinter package
+   no_tools   - do not build tools package

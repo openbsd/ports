@@ -1,0 +1,13 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2005/06/07 01:12:58 alek Exp $
+--- setup.py.orig	Sat Nov 13 12:13:34 2004
++++ setup.py	Thu Dec 30 22:47:09 2004
+@@ -1148,8 +1148,7 @@ def main():
+           ext_modules=[Extension('struct', ['structmodule.c'])],
+ 
+           # Scripts to install
+-          scripts = ['Tools/scripts/pydoc', 'Tools/scripts/idle',
+-                     'Lib/smtpd.py']
++          scripts = []
+         )
+ 
+ # --install-platlib

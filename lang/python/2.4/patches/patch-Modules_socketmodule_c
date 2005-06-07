@@ -1,0 +1,22 @@
+$OpenBSD: patch-Modules_socketmodule_c,v 1.1.1.1 2005/06/07 01:12:58 alek Exp $
+--- Modules/socketmodule.c.orig	Sun Nov  7 15:24:25 2004
++++ Modules/socketmodule.c	Thu Dec 30 22:46:12 2004
+@@ -63,9 +63,6 @@ Local naming conventions:
+ 
+ #include "Python.h"
+ 
+-#undef MAX
+-#define MAX(x, y) ((x) < (y) ? (y) : (x))
+-
+ /* Socket object documentation */
+ PyDoc_STRVAR(sock_doc,
+ "socket([family[, type[, proto]]]) -> socket object\n\
+@@ -3220,7 +3217,7 @@ socket_inet_aton(PyObject *self, PyObjec
+ 	struct in_addr buf;
+ #else
+ 	/* Have to use inet_addr() instead */
+-	unsigned long packed_addr;
++	int packed_addr;
+ #endif
+ 	char *ip_addr;
+ 

@@ -1,0 +1,9 @@
+$OpenBSD: patch-Tools_scripts_pydoc,v 1.1.1.1 2005/06/07 01:12:58 alek Exp $
+--- Tools/scripts/pydoc.orig	Mon Aug  9 19:27:55 2004
++++ Tools/scripts/pydoc	Thu Dec 30 22:46:12 2004
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2.4
+ 
+ import pydoc
+ if __name__ == '__main__':

@@ -1,0 +1,2 @@
+If you want to use this package as your system default idle, make
+${PREFIX}/bin/idle a symlink to ${PREFIX}/bin/idle2.4.

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Lib_test_test_tempfile_py,v 1.1.1.1 2005/06/07 01:12:58 alek Exp $
+--- Lib/test/test_tempfile.py.orig	Wed Sep 15 08:02:54 2004
++++ Lib/test/test_tempfile.py	Thu Dec 30 22:46:12 2004
+@@ -30,7 +30,7 @@ if sys.platform == 'mac':
+ elif sys.platform == 'openbsd3':
+     TEST_FILES = 48
+ else:
+-    TEST_FILES = 100
++    TEST_FILES = 48
+ 
+ # This is organized as one test for each chunk of code in tempfile.py,
+ # in order of their appearance in the file.  Testing which requires
