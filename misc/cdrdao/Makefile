@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2005/06/06 18:58:58 fgsch Exp $
+# $OpenBSD: Makefile,v 1.24 2005/06/07 17:20:20 fgsch Exp $
 
 COMMENT=	"write audio/data CD-Rs in disk-at-once mode"
 
@@ -33,8 +33,8 @@ BUILD_DEPENDS+=		:libmad->=0.15.1bp0:audio/libmad
 LIB_DEPENDS+=		ao.3::audio/libao \
 			mp3lame::audio/lame \
 			mad.2::audio/libmad \
-			vorbis.3::audio/libvorbis
-WANTLIB+=		ao.3 ogg.5 vorbis.4 vorbisfile.4
+			vorbis.4::audio/libvorbis
+WANTLIB+=		ogg.5 vorbisfile.4
 .else
 CONFIGURE_ARGS+=	--with-ogg-support=no \
 			--with-mp3-support=no \
