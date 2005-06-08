@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.122 2005/06/03 01:05:58 jolan Exp $
+# $OpenBSD: Makefile,v 1.123 2005/06/08 03:51:59 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
      SUBDIR += ac3dec
+     SUBDIR += amarok
      SUBDIR += ascd
      SUBDIR += aumix
      SUBDIR += bladeenc
