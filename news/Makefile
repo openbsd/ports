@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/02 19:23:01 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2005/06/08 03:56:05 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.32 1997/11/16 04:58:09 fenner Exp $
 #
 
@@ -30,5 +30,6 @@
      SUBDIR += trn
      SUBDIR += ubh
 #    SUBDIR += xvnews
+     SUBDIR += yencode
 
 .include <bsd.port.subdir.mk>
