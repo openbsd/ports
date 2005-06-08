@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2005/05/22 09:39:32 djm Exp $
+# $OpenBSD: Makefile,v 1.74 2005/06/08 03:54:25 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -14,6 +14,7 @@
      SUBDIR += mysql
      SUBDIR += mysql2pgsql
      SUBDIR += mysqlcc
+     SUBDIR += mytop
      SUBDIR += ocaml-postgresql
      SUBDIR += openldap
      SUBDIR += p5-AsciiDB-TagFile
