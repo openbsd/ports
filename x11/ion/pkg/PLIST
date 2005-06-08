@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/05/14 20:16:32 pedro Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/06/08 12:45:55 pedro Exp $
 %%SHARED%%
 bin/ion3
 bin/pwm3
@@ -27,6 +27,7 @@ lib/ion3/lc/mod_query_chdir.lc
 lib/ion3/lc/mod_sm.lc
 lib/ion3/lc/mod_sp.lc
 lib/ion3/lc/mod_statusbar.lc
+lib/ion3/lc/statusd_date.lc
 lib/ion3/lc/statusd_load.lc
 lib/ion3/lc/statusd_mail.lc
 lib/ion3/mod/
