@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2005/03/02 20:51:07 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.49 2005/06/08 03:58:55 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -41,7 +41,6 @@ SUBDIR += editors
 SUBDIR += education
 SUBDIR += emulators
 SUBDIR += games
-#SUBDIR += german
 SUBDIR += graphics
 SUBDIR += japanese
 SUBDIR += java
@@ -64,7 +63,6 @@ SUBDIR += shells
 SUBDIR += sysutils
 SUBDIR += telephony
 SUBDIR += textproc
-#SUBDIR += vietnamese
 SUBDIR += www
 SUBDIR += x11
 .endif
