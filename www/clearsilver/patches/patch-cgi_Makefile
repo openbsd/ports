@@ -1,0 +1,11 @@
+$OpenBSD: patch-cgi_Makefile,v 1.1 2005/06/09 21:38:39 pvalchev Exp $
+--- cgi/Makefile.orig	Thu Jun  9 14:59:03 2005
++++ cgi/Makefile	Thu Jun  9 14:59:16 2005
+@@ -6,6 +6,7 @@ endif
+ 
+ include $(NEOTONIC_ROOT)rules.mk
+ 
++CFLAGS += -fPIC
+ CGI_LIB = $(LIB_DIR)libneo_cgi.a
+ CGI_SRC = cgiwrap.c cgi.c html.c date.c rfc2388.c
+ CGI_OBJ = $(CGI_SRC:%.c=%.o)

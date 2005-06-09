@@ -1,0 +1,11 @@
+$OpenBSD: patch-cs_Makefile,v 1.1 2005/06/09 21:38:39 pvalchev Exp $
+--- cs/Makefile.orig	Thu Jun  9 14:58:17 2005
++++ cs/Makefile	Thu Jun  9 14:58:39 2005
+@@ -6,6 +6,7 @@ endif
+ 
+ include $(NEOTONIC_ROOT)rules.mk
+ 
++CFLAGS += -fPIC
+ CS_LIB = $(LIB_DIR)libneo_cs.a
+ CS_SRC = csparse.c
+ CS_OBJ = $(CS_SRC:%.c=%.o)

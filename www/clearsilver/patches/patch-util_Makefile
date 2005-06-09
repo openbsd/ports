@@ -1,0 +1,11 @@
+$OpenBSD: patch-util_Makefile,v 1.1 2005/06/09 21:38:39 pvalchev Exp $
+--- util/Makefile.orig	Thu Jun  9 15:00:49 2005
++++ util/Makefile	Thu Jun  9 15:00:58 2005
+@@ -6,6 +6,7 @@ endif
+ 
+ include $(NEOTONIC_ROOT)rules.mk
+ 
++CFLAGS += -fPIC
+ UTL_LIB = $(LIB_DIR)libneo_utl.a
+ UTL_SRC = neo_err.c neo_files.c neo_misc.c neo_rand.c ulist.c neo_hdf.c \
+ 	  neo_str.c neo_date.c wildmat.c neo_hash.c $(EXTRA_UTL_SRC)
