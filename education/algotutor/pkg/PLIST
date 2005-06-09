@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/04/13 01:27:42 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/06/09 01:19:36 kevlo Exp $
 bin/algotutor
 bin/gen_at_graph
 ${P5SITE}/algotutor/
@@ -23,10 +23,10 @@ ${P5SITE}/algotutor/cgeom/dom
 ${P5SITE}/algotutor/cgeom/graham
 ${P5SITE}/algotutor/cgeom/utils
 ${P5SITE}/algotutor/dp/
+${P5SITE}/algotutor/dp/flwa
 ${P5SITE}/algotutor/dp/lcs
 ${P5SITE}/algotutor/dp/matrixchain
 ${P5SITE}/algotutor/graph/
-${P5SITE}/algotutor/graph/dfs
 ${P5SITE}/algotutor/graph/flwa
 ${P5SITE}/algotutor/graph/pfs
 ${P5SITE}/algotutor/utilalgo
