@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/25 06:59:10 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/06/09 01:57:22 jolan Exp $
 %%SHARED%%
 bin/minimo
 minimo/
@@ -355,12 +355,6 @@ minimo/res/langGroups.properties
 minimo/res/language.properties
 minimo/res/loading-image.gif
 minimo/res/quirk.css
-minimo/res/rdf/
-minimo/res/rdf/dom-test-4.css
-minimo/res/rdf/folder-closed.gif
-minimo/res/rdf/folder-open.gif
-minimo/res/rdf/ignore-test.xul
-minimo/res/rdf/loading.gif
 minimo/res/samples/
 minimo/res/samples/Anieyes.gif
 minimo/res/samples/aform.css
