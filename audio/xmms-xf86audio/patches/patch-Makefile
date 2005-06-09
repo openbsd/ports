@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2005/05/23 22:51:34 naddy Exp $
+$OpenBSD: patch-Makefile,v 1.2 2005/06/09 01:34:16 pvalchev Exp $
 --- Makefile.orig	Thu Apr 17 00:09:02 2003
-+++ Makefile	Mon May 23 16:21:19 2005
++++ Makefile	Wed Jun  8 19:33:57 2005
 @@ -5,11 +5,11 @@ CC=gcc
  OPT=-O2
  DEBUG=-g
  
 -CFLAGS=$(OPT) $(DEBUG) -Wall `gtk-config --cflags` `xmms-config --cflags`
-+CFLAGS+=`gtk-config --cflags` `xmms-config --cflags`
++CFLAGS+=`gtk-config --cflags` `xmms-config --cflags` -fPIC
  LIBS=`gtk-config --libs` `xmms-config --libs`
  
  PLUGIN=libxf86audio.so
@@ -23,7 +23,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2005/05/23 22:51:34 naddy Exp $
 -
 -%.o : %.c
 -	$(CC) $(CFLAGS) -c $^ -o $@
-+	$(CC) $(LIBS) -shared $? -o $@
++	$(CC) $(LIBS) -fPIC -shared $? -o $@
  
  clean :
  	rm -f $(PLUGIN) *.o
