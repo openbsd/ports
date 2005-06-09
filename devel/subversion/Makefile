@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/04/21 03:36:14 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2005/06/09 14:47:15 kevlo Exp $
 
 COMMENT=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
@@ -48,14 +48,10 @@ WANTLIB+=	aprutil-1
 
 .    if ${SUBPACKAGE} == "-python"
 RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-LIB_DEPENDS+=	swigpy.0::devel/swig
-.    else
-LIB_DEPENDS+=	swigpl.0::devel/swig
 .    endif
 .  endif
 
 .  if !defined(PACKAGING)
-LIB_DEPENDS+=	swigpy.0,swigpl.0::devel/swig
 BUILD_DEPENDS=	::lang/python/${PYTHON_VER}
 .  endif
 .endif
