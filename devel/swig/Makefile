@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2004/11/24 00:11:04 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2005/06/09 07:50:54 kevlo Exp $
 
-COMMENT=		"simplified wrapper and interface generator"
-COMMENT-examples=	"examples for swig"
+COMMENT=	"simplified wrapper and interface generator"
 
-VERSION=	1.3.21
+VERSION=	1.3.24
 
 DISTNAME=	swig-${VERSION}
-PKGNAME-examples= swig-examples-${VERSION}
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=swig/}
 
@@ -26,21 +24,19 @@ BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
 		::lang/tcl/8.4 \
 		::lang/ruby
 
-MULTI_PACKAGES=	-examples
-
 WRKDIST=	${WRKDIR}/SWIG-${VERSION}
 
+USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu 
 CONFIGURE_ARGS+= --with-tclincl=${LOCALBASE}/include/tcl8.4 \
 		 --with-tcllib==${LOCALBASE}/lib/tcl8.4 \
 		 --with-guilelib=${LOCALBASE}/lib \
 		 --with-python=${LOCALBASE}/bin/python${PYTHON_VER} \
-		 ${CONFIGURE_SHARED} \
 		 --without-php4 \
 		 --without-ocaml
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/Tools/config
 
-ALL_TARGET=	swig runtime
+ALL_TARGET=	swig
 
 SWIG_EXAMPLES=	${PREFIX}/share/examples/swig
 SWIG_DOCS=	${PREFIX}/share/doc/swig

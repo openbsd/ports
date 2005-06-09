@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/14 23:44:02 espie Exp $
-@lib lib/libswigguile.so.0.0
-@lib lib/libswigpl.so.0.0
-@lib lib/libswigpy.so.0.0
-@lib lib/libswigrb.so.0.0
-@lib lib/libswigtcl8.so.0.0
