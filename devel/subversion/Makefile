@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/06/09 14:47:15 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2005/06/10 05:41:36 kevlo Exp $
 
 COMMENT=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
@@ -52,7 +52,8 @@ RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 .  endif
 
 .  if !defined(PACKAGING)
-BUILD_DEPENDS=	::lang/python/${PYTHON_VER}
+BUILD_DEPENDS=	::lang/python/${PYTHON_VER} \
+		::devel/swig
 .  endif
 .endif
 
