@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/06 08:19:10 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2005/06/10 06:11:58 kevlo Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"recursively copy Perl datatypes"
 
-DISTNAME=	Clone-0.16
+DISTNAME=	Clone-0.18
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Clone/}
