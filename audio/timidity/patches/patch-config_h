@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_h,v 1.1 2001/07/05 10:48:21 espie Exp $
---- config.h.orig	Sat Jun  1 14:54:49 1996
-+++ config.h	Fri Apr 27 08:01:39 2001
+$OpenBSD: patch-config_h,v 1.2 2005/06/10 23:30:48 jaredy Exp $
+--- config.h.orig	Sat Jun  1 08:54:49 1996
++++ config.h	Fri May 27 21:28:18 2005
 @@ -121,7 +121,7 @@
  /* Make envelopes twice as fast. Saves ~20% CPU time (notes decay
     faster) and sounds more like a GUS. There is now a command line
@@ -10,7 +10,7 @@ $OpenBSD: patch-config_h,v 1.1 2001/07/05 10:48:21 espie Exp $
  
  /* How many bits to use for the fractional part of sample positions.
     This affects tonal accuracy. The entire position counter must fit
-@@ -217,6 +217,12 @@
+@@ -217,13 +217,19 @@
  # endif
  #endif /* linux */
  
@@ -23,6 +23,14 @@ $OpenBSD: patch-config_h,v 1.1 2001/07/05 10:48:21 espie Exp $
  /* Win32 on Intel machines */
  #ifdef __WIN32__
  #  define LITTLE_ENDIAN
+ #endif
+ 
+ /* DEC MMS has 64 bit long words */
+-#ifdef DEC
++#if defined(DEC) || defined(__LP64__)
+ typedef unsigned int uint32;
+ typedef int int32; 
+ #else
 @@ -267,7 +273,7 @@ typedef char int8;
  
  /* You could specify a complete path, e.g. "/etc/timidity.cfg", and
