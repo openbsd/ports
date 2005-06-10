@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2005/05/06 07:58:39 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2005/06/10 06:04:55 kevlo Exp $
 
 COMMENT=	"subversion repository mirroring tool"
 
-DISTNAME=	SVN-Mirror-0.60
+DISTNAME=	SVN-Mirror-0.61
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../authors/id/C/CL/CLKAO/}
