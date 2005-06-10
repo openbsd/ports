@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2005/05/26 19:10:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2005/06/10 19:56:37 naddy Exp $
 
 COMMENT=		"jabber server"
 DISTNAME=		jabberd-2.0s8
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		net
 HOMEPAGE=		http://jabberd.jabberstudio.org/2/
 MAINTAINER=		Gerardo Santana Gomez Garrido <santana@openbsd.org.mx>
@@ -94,6 +94,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/s2s.xml.dist ${EXAMPLES}/s2s.xml
 	${INSTALL_DATA} ${WRKSRC}/etc/sm.xml.dist ${EXAMPLES}/sm.xml
 	${INSTALL_DATA} ${WRKSRC}/etc/templates/roster.xml.dist ${EXAMPLES}/templates/roster.xml
+.if ${FLAVOR:Mmysql}
 	${INSTALL_DATA} ${WRKSRC}/tools/db-setup.mysql ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/tools/db-update.mysql ${EXAMPLES}
+.endif
+.if ${FLAVOR:Mpostgresql}
+	${INSTALL_DATA} ${WRKSRC}/tools/db-setup.pgsql ${EXAMPLES}
+.endif
 
 .include <bsd.port.mk>
