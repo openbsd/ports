@@ -1,0 +1,39 @@
+$OpenBSD: patch-kpoppassd,v 1.1.1.1 2005/06/11 09:34:16 alek Exp $
+--- kpoppassd.c.orig	Tue Apr 29 04:12:05 2003
++++ kpoppassd.c	Wed Jun  8 00:34:39 2005
+@@ -40,7 +40,7 @@
+  */
+  
+ /** !!! IMPORTANT !!! Look these over and adjust for your system. **/
+-#define VERSION "0.4"
++#define VERSION "0.5"
+ #define BAD_PASS_DELAY 3	/* delay in seconds after bad 'Old password' */
+ #define MAX_LEN_USERNAME "16"	/* maximum length of username */
+ #define MAX_PARSELEN_PASS "126"	/* maximum length for sscanf */
+@@ -48,7 +48,7 @@
+ #define MIN_LEN_PASS 6
+ #define BUFSIZE 128
+ #define SALT_SIZE 2
+-#define NOPASSWD                /* If this is defined then it will check
++/*#define NOPASSWD*/                /* If this is defined then it will check
+ 				   if the user exists in /etc/passwd! */
+ 
+ #include <sys/types.h>
+@@ -233,7 +233,7 @@ int main (int argc, char *argv[])
+     }
+ 
+   /* Check for trusted system compliance. */
+-  for ( i = 0; i < length; i++ )
++  /* for ( i = 0; i < length; i++ )
+     {
+       if ( isalpha(newpass[i]) )
+ 	num_alpha++;
+@@ -244,7 +244,7 @@ int main (int argc, char *argv[])
+     {
+       WriteToClient("500 New password must contain at least two alpha characters and one nonalpha character.");
+       exit(1);
+-    }
++    } */
+ 
+   if (ret = krb5_change_password(context, &creds, newpass,
+ 				 &result_code, &result_code_string,
