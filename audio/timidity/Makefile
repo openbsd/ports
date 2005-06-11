@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2004/11/21 17:51:47 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2005/06/11 00:15:14 jaredy Exp $
 
 COMMENT=	"MIDI to WAV renderer and player"
 DISTNAME=	timidity-0.2i
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
 MASTER_SITES=	http://sca.uwaterloo.ca/www.cgs.fi/tt/timidity/
