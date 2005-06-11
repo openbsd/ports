@@ -1,6 +1,0 @@
-kpoppassd is a kerberos password changing daemon that behaves like
-poppassd. It allows a user to change his/her password remotely without
-having to login. This is particularly useful for webmail systems that
-use imap (i.e. horde/imp). The daemon works exactly like the original
-poppassd. The only difference being that this poppassd changes a user's
-Kerberos 5 password.
