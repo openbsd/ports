@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2005/02/13 19:31:19 alek Exp $
+# $OpenBSD: Makefile,v 1.45 2005/06/12 12:04:00 sturm Exp $
 
 COMMENT=	"sophisticated scripter based on Tcl/Tk"
 
-DISTNAME=	expect-5.39.0
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	expect-5.43.0
 CATEGORIES=	lang
 MASTER_SITES=	http://expect.nist.gov/old/
 
@@ -28,6 +27,7 @@ CONFIGURE_ARGS+=--with-tclconfig="${LOCALBASE}/lib/tcl8.4"\
 		--with-tclinclude="${LOCALBASE}/include/tcl8.4"
 
 .if !${FLAVOR:L:Mno_tk}
+USE_X11=	Yes
 LIB_DEPENDS+=	tk84:tk-8.4.*:x11/tk/8.4
 CONFIGURE_ARGS+=--with-tkconfig="${LOCALBASE}/lib/tk8.4" \
 		--with-tkinclude="${LOCALBASE}/include/tk8.4"
@@ -38,6 +38,6 @@ REGRESS_TARGET=	test
 
 DESTDIRNAME=	INSTALL_ROOT
 
-WRKDIST=${WRKDIR}/expect-5.39
+WRKDIST=	${WRKDIR}/expect-5.43
 
 .include <bsd.port.mk>

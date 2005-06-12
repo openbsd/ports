@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Jul 18 11:07:41 2002
-+++ Makefile.in	Sun Jul 13 01:50:56 2003
+--- Makefile.in.orig	Fri May  7 20:10:30 2004
++++ Makefile.in	Sun Jun 12 10:07:51 2005
 @@ -24,7 +24,7 @@ TCLHDIRDASHI = @TCLHDIRDASHI@
  TCL_LIBRARY = @TCL_LIBRARY@
  
@@ -34,7 +34,7 @@
  	"INSTALL_PROGRAM=$(INSTALL_PROGRAM)" \
  	"LDFLAGS=$(LDFLAGS)" \
  	"RUNTEST=$(RUNTEST)" \
-@@ -367,7 +369,7 @@ install_shared_lib: $(EXP_LIB_FILES)
+@@ -368,7 +370,7 @@ install_shared_lib: $(EXP_LIB_FILES)
  	else true; fi
  	if [ -s $(EXP_SHARED_LIB_FILE) ] ; then \
  	  $(INSTALL_PROGRAM) $(EXP_SHARED_LIB_FILE) $(tcl_libdir)/$(EXP_SHARED_LIB_FILE) ; \
@@ -43,7 +43,7 @@
  	else true; fi
  
  expect_installed:	exp_main_exp.o $(EXP_LIB_FILE) install_shared_lib
-@@ -450,7 +452,7 @@ install-libraries:
+@@ -451,7 +453,7 @@ install-libraries:
  	${srcdir}/mkinstalldirs $(bindir_arch_indep) $(man1dir) $(SCRIPTDIR) $(EXECSCRIPTDIR)
  	-for i in $(SCRIPT_LIST) ; do \
  	  if [ -f $$i ] ; then \

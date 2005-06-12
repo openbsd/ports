@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2004/09/15 19:16:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2005/06/12 12:04:00 sturm Exp $
 bin/autoexpect
 bin/autopasswd
 bin/cryptdir
@@ -20,9 +20,9 @@ include/expect.h
 include/expect_comm.h
 include/expect_tcl.h
 include/tcldbg.h
-lib/expect5.39/
-lib/expect5.39/libexpect539.a
-lib/libexpect539.a
+lib/expect5.43/
+lib/expect5.43/libexpect543.a
+lib/libexpect543.a
 @man man/man1/autoexpect.1
 @man man/man1/cryptdir.1
 @man man/man1/decryptdir.1
