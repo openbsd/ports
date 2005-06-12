@@ -1,39 +1,94 @@
-$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.5 2004/10/16 16:33:56 sturm Exp $
---- src/sysdeps/openbsd.c.orig	Sun Sep  5 12:57:34 2004
-+++ src/sysdeps/openbsd.c	Mon Oct 11 00:11:29 2004
-@@ -53,27 +53,21 @@ gkrellm_sys_main_cleanup(void)
+$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.6 2005/06/12 12:07:19 sturm Exp $
+--- src/sysdeps/openbsd.c.orig	Sun Sep  5 21:57:34 2004
++++ src/sysdeps/openbsd.c	Sat Jun 11 21:40:27 2005
+@@ -53,40 +53,70 @@ gkrellm_sys_main_cleanup(void)
  #include <sys/dkstat.h>
  #include <kvm.h>
  
+-extern	kvm_t	*kvmd;
 +#include <sys/param.h>
 +#include <sys/sysctl.h>
 +#include <sys/sched.h>
-+
- extern	kvm_t	*kvmd;
  
++static gint ncpus;
++
++static gint get_ncpus(void);
++
  void
  gkrellm_sys_cpu_read_data(void)
  	{
-+	static int mib[] = { CTL_KERN, KERN_CPTIME };
- 	long		cp_time[CPUSTATES];
+-	long		cp_time[CPUSTATES];
 -	static struct nlist nl[] = {
 -#define N_CP_TIME	0
 -		{ "_cp_time" },
 -		{ "" }
 -	};
-+	size_t len;
++	int64_t	cp_time[ncpus][CPUSTATES];
++	size_t size;
++	int i;
  
--
++	size = sizeof(cp_time[0]);
++	if (ncpus > 1) {
++		for (i = 0; i < ncpus; i++) {
++			int cp_time_mib[] = {CTL_KERN, KERN_CPTIME2, i};
+ 
 -	if (kvmd == NULL)
 -		return;
 -	if (nl[0].n_type == 0)
 -		if (kvm_nlist(kvmd, nl) < 0 || nl[0].n_type == 0)
--			return;
++			if (sysctl(cp_time_mib, 3, cp_time[i], &size, NULL, 0)
++			    < 0)
++				continue;
++
++			gkrellm_cpu_assign_data(i, cp_time[i][CP_USER],
++			    cp_time[i][CP_NICE], cp_time[i][CP_SYS],
++			    cp_time[i][CP_IDLE]);
++		}
++	} else {
++		int cp_time_mib[] = {CTL_KERN, KERN_CPTIME};
++		long cp_time_tmp[CPUSTATES];
++
++		if (sysctl(cp_time_mib, 2, cp_time_tmp, &size, NULL, 0) < 0)
+ 			return;
 -	if (kvm_read(kvmd, nl[N_CP_TIME].n_value,
 -		     (char *)&cp_time, sizeof(cp_time)) != sizeof(cp_time))
 -		return;
-+	len = sizeof(cp_time);
-+	if (sysctl(mib, 2, cp_time, &len, NULL, 0) < 0) return;
++		for (i = 0; i < CPUSTATES; i++)
++			cp_time[0][i] = cp_time_tmp[i];
  
- 	/* Currently, SMP is not supported */
- 	gkrellm_cpu_assign_data(0, cp_time[CP_USER], cp_time[CP_NICE],
+-	/* Currently, SMP is not supported */
+-	gkrellm_cpu_assign_data(0, cp_time[CP_USER], cp_time[CP_NICE],
+-				cp_time[CP_SYS], cp_time[CP_IDLE]);
++		gkrellm_cpu_assign_data(0, cp_time[0][CP_USER],
++		    cp_time[0][CP_NICE], cp_time[0][CP_SYS],
++		    cp_time[0][CP_IDLE]);
++
+ 	}
++}
+ 
+ gboolean
+ gkrellm_sys_cpu_init(void)
+-    {
+-	gkrellm_cpu_set_number_of_cpus(1);
++{
++	ncpus = get_ncpus();
++	gkrellm_cpu_set_number_of_cpus(ncpus);
+ 	return TRUE;
+-	}
++}
+ 
++static gint
++get_ncpus(void)
++{
++	static int mib[] = { CTL_HW, HW_NCPU };
++	int ncpus;
++	size_t size = sizeof(int);
++
++	if (sysctl(mib, 2, &ncpus, &size, NULL, 0) < 0)
++		return 1;
++	else
++		return ncpus;
++}
+ 
+ /* ===================================================================== */
+ /* Proc monitor interface */
