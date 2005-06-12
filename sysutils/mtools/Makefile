@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2005/04/15 19:06:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.48 2005/06/12 20:19:16 fgsch Exp $
 
 COMMENT=	"read/write/list/format DOS disks under Unix"
 
@@ -10,8 +10,6 @@ MASTER_SITES=	http://www.tux.org/pub/knaff/mtools/ \
 		${HOMEPAGE}
 
 PATCHFILES=	${DISTNAME}-${DATE}.diff.gz
-
-MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
 HOMEPAGE=	http://mtools.linux.lu/
 
