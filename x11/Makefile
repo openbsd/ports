@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.211 2005/06/03 05:39:43 marcm Exp $
+# $OpenBSD: Makefile,v 1.212 2005/06/13 11:58:55 alek Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -217,7 +217,6 @@
      SUBDIR += xfishtank
      SUBDIR += xfm
      SUBDIR += xforms
-     SUBDIR += xfstt
      SUBDIR += xglobe
      SUBDIR += xglobe,no_map
      SUBDIR += xgrab
