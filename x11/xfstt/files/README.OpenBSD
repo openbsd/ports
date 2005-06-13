@@ -1,2 +1,0 @@
-The font directory for OpenBSD has been changed from 
-/usr/share/fonts/truetype to /usr/local/lib/X11/fonts/TrueType/.
