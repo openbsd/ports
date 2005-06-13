@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/26 18:13:02 marius Exp $
-@lib lib/libotr.so.1.1
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/06/13 21:01:29 fgsch Exp $
+@lib lib/libotr.so.1.2

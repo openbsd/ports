@@ -1,8 +1,9 @@
-# $FreeBSD: /repoman/r/pcvs/ports/security/libotr/Makefile,v 1.2 2005/04/21 14:22:54 pav Exp $
+# $OpenBSD: Makefile,v 1.2 2005/06/13 21:01:29 fgsch Exp $
+# $FreeBSD: Makefile,v 1.2 2005/04/21 14:22:54 pav Exp $
 
 COMMENT=	"The portable OTR Messaging Library and toolkit"
 
-VERSION=	2.0.1
+VERSION=	2.0.2
 DISTNAME=	libotr-${VERSION}
 CATEGORIES=	security
 
@@ -21,7 +22,6 @@ LIB_DEPENDS=	gpg-error::security/libgpg-error \
 AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		Yes
-USE_GMAKE=		Yes
 
 MAN1=		otr_toolkit.1
 MLINKS=		otr_toolkit.1 otr_parse.1 \
