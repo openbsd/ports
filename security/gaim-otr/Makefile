@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/26 18:13:59 marius Exp $
+# $OpenBSD: Makefile,v 1.2 2005/06/13 21:01:58 fgsch Exp $
 
 COMMENT=	"Allows deniable private conversations using GAIM"
 
-VERSION=	2.0.1
+VERSION=	2.0.2
 DISTNAME=	gaim-otr-${VERSION}
 CATEGORIES=	security net
 
@@ -22,14 +22,13 @@ LIB_DEPENDS=	otr::security/libotr \
 		gcrypt.12:libgcrypt->=1.2:security/libgcrypt
 
 USE_X11=	Yes
-MAKE_ENV=	GAIM_SOURCE="${LOCALBASE}/include/gaim" \
-		LIBOTRINCDIR="${LOCALBASE}/include" \
-		GAIMDIR="${LOCALBASE}/lib/gaim" \
-		LIBOTRLIBDIR="${LOCALBASE}/lib"
-MAKE_FLAGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
+#USE_GMAKE=	Yes
 
 SHARED_ONLY=	Yes
+
+CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib "
 
 .include <bsd.port.mk>

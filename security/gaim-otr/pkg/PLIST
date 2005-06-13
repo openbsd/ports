@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/26 18:13:59 marius Exp $
-lib/gaim/
+@comment $OpenBSD: PLIST,v 1.2 2005/06/13 21:01:59 fgsch Exp $
+@comment lib/gaim/gaim-otr.a
+@comment lib/gaim/gaim-otr.la
 lib/gaim/gaim-otr.so
