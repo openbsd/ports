@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_tree_c,v 1.4 2005/05/29 13:26:49 espie Exp $
---- gcc/tree.c.orig	Thu May 26 20:14:51 2005
-+++ gcc/tree.c	Sun May 29 13:55:47 2005
-@@ -5866,11 +5866,11 @@ build_common_builtin_nodes (void)
+$OpenBSD: patch-gcc_tree_c,v 1.5 2005/06/13 19:54:30 espie Exp $
+--- gcc/tree.c.orig	Tue Jun  7 23:45:01 2005
++++ gcc/tree.c	Mon Jun 13 18:58:26 2005
+@@ -6063,11 +6063,11 @@ build_common_builtin_nodes (void)
  	  *q = TOLOWER (*p);
  	*q = '\0';
  

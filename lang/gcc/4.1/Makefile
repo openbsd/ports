@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2005/05/29 13:26:49 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2005/06/13 19:54:30 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
 V=4.1.0
-FULL_VERSION=4.1-20050528
+FULL_VERSION=4.1-20050611
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 MAKE_GXX=Yes
-#MAKE_FORTRAN=Yes
-#MAKE_OBJC=Yes
+MAKE_FORTRAN=Yes
+MAKE_OBJC=Yes
 #MAKE_JAVA=Yes
 .if ${MACHINE_ARCH} == "i386"
 #MAKE_ADA=Yes
@@ -61,7 +61,7 @@ DISTNAME=   	gcc-${FULL_VERSION}
 
 DISTFILES=  ${DISTNAME}.tar.bz2
 #SUPDISTFILES=adastrap-i386-4.0-20050102-1.tgz:0
-SUPDISTFILES=adastrap-i386-3.3.5-1.tgz:0
+SUPDISTFILES=adastrap-i386-3.3.6-1.tgz:0
 
 MASTER_SITES=	${MASTER_SITE_GCC:=snapshots/$(FULL_VERSION)/}
 MASTER_SITES0=	ftp://quatramaran.ens.fr/pub/espie/
@@ -92,7 +92,7 @@ CONFIGURE_ARGS+=--enable-java-gc=system-boehm
 LANGS:=${LANGS},ada
 MULTI_PACKAGES+=-ada
 #DISTFILES+=adastrap-${MACHINE_ARCH}-4.0-20050102-1.tgz:0
-DISTFILES+=adastrap-${MACHINE_ARCH}-3.3.5-1.tgz:0
+DISTFILES+=adastrap-${MACHINE_ARCH}-3.3.6-1.tgz:0
 CONFIGURE_ENV=ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 MAKE_ENV=ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 CC=${WRKDIR}/bin/egcc

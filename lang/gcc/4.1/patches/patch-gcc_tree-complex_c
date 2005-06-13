@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_tree-complex_c,v 1.1 2005/06/13 19:54:30 espie Exp $
+--- gcc/tree-complex.c.orig	Mon Jun 13 20:22:58 2005
++++ gcc/tree-complex.c	Mon Jun 13 20:23:12 2005
+@@ -333,8 +333,8 @@ create_components (void)
+ 	    {
+ 	      const char *name = IDENTIFIER_POINTER (DECL_NAME (var));
+ 
+-	      DECL_NAME (r) = get_identifier (ACONCAT ((name, "$real", NULL)));
+-	      DECL_NAME (i) = get_identifier (ACONCAT ((name, "$imag", NULL)));
++	      DECL_NAME (r) = get_identifier (ACONCAT ((name, "$real", (char *)0)));
++	      DECL_NAME (i) = get_identifier (ACONCAT ((name, "$imag", (char *)0)));
+ 
+ 	      SET_DECL_DEBUG_EXPR (r, build1 (REALPART_EXPR, inner_type, var));
+ 	      SET_DECL_DEBUG_EXPR (i, build1 (IMAGPART_EXPR, inner_type, var));
