@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/06/13 21:01:58 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2005/06/13 21:03:01 fgsch Exp $
 
 COMMENT=	"Allows deniable private conversations using GAIM"
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=	otr::security/libotr \
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
-#USE_GMAKE=	Yes
 
 SHARED_ONLY=	Yes
 
