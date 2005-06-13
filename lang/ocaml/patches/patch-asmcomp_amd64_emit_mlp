@@ -1,0 +1,18 @@
+$OpenBSD: patch-asmcomp_amd64_emit_mlp,v 1.4 2005/06/13 23:21:55 avsm Exp $
+--- asmcomp/amd64/emit.mlp.orig	Thu Jul  1 17:09:03 2004
++++ asmcomp/amd64/emit.mlp	Mon Jun 13 23:58:12 2005
+@@ -35,8 +35,12 @@ let frame_required () =
+   !contains_calls || num_stack_slots.(0) > 0 || num_stack_slots.(1) > 0
+ 
+ let frame_size () =                     (* includes return address *)
+-  let sz = (!stack_offset + 8 * (num_stack_slots.(0) + num_stack_slots.(1)) + 8)
+-  in Misc.align sz 16
++  if frame_required() then begin
++    let sz = 
++      (!stack_offset + 8 * (num_stack_slots.(0) + num_stack_slots.(1)) + 8)
++    in Misc.align sz 16
++  end else 
++    !stack_offset + 8
+ 
+ let slot_offset loc cl =
+   match loc with
