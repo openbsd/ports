@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/11 09:46:08 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/06/13 07:52:37 alek Exp $
 libexec/kpoppassd
 share/doc/kpoppassd/
-share/doc/kpoppassd/COPYING
 share/doc/kpoppassd/README
