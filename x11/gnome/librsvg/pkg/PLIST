@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2005/05/28 00:01:31 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.13 2005/06/13 05:09:10 marcm Exp $
 %%SHARED%%
 bin/rsvg
 bin/rsvg-view
@@ -14,12 +14,12 @@ lib/gtk-2.0/2.4.0/engines/
 lib/gtk-2.0/2.4.0/engines/libsvg.a
 lib/gtk-2.0/2.4.0/engines/libsvg.la
 lib/gtk-2.0/2.4.0/loaders/
+lib/gtk-2.0/2.4.0/loaders/svg_loader.a
+lib/gtk-2.0/2.4.0/loaders/svg_loader.la
 lib/librsvg-2.a
 lib/librsvg-2.la
 lib/mozilla/
 lib/mozilla/plugins/
-lib/mozilla/plugins/libmozsvgdec.a
-lib/mozilla/plugins/libmozsvgdec.la
 lib/pkgconfig/
 lib/pkgconfig/librsvg-2.0.pc
 @man man/man1/rsvg.1
@@ -43,5 +43,5 @@ share/gtk-doc/html/rsvg/rsvg.html
 share/gtk-doc/html/rsvg/up.png
 share/pixmaps/
 share/pixmaps/svg-viewer.svg
-@comment @exec %D/bin/gdk-pixbuf-query-loaders > /var/db/gtk-2.0/gdk-pixbuf.loaders
-@comment @unexec %D/bin/gdk-pixbuf-query-loaders > /var/db/gtk-2.0/gdk-pixbuf.loaders
+@exec %D/bin/gdk-pixbuf-query-loaders > /var/db/gtk-2.0/gdk-pixbuf.loaders
+@unexec %D/bin/gdk-pixbuf-query-loaders > /var/db/gtk-2.0/gdk-pixbuf.loaders

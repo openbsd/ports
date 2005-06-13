@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2005/05/28 00:01:30 marcm Exp $
+# $OpenBSD: Makefile,v 1.15 2005/06/13 05:09:10 marcm Exp $
 
 COMMENT=		"SAX-based render library for SVG files"
 
 VERSION=		2.9.5
 DISTNAME=		librsvg-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
@@ -42,8 +42,6 @@ CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	--disable-gtk-doc
 CONFIGURE_ARGS+= 	--with-svgz
 CONFIGURE_ARGS+= 	--without-croco
-# Crap, the loader breaks with new ld.so
-CONFIGURE_ARGS+=	--disable-pixbuf-loader
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
