@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2005/05/09 13:50:41 avsm Exp $
+# $OpenBSD: Makefile,v 1.33 2005/06/13 23:22:43 avsm Exp $
 
 NOT_FOR_ARCHS=	hppa
 
@@ -6,6 +6,7 @@ COMMENT=	"ML language based on complete class-based objective system"
 
 BASENAME=	ocaml-3.08
 DISTNAME=	${BASENAME}.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${BASENAME}/
 DOCFILES=	${BASENAME}-refman.html.tar.gz
