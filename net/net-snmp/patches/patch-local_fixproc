@@ -1,6 +1,6 @@
-$OpenBSD: patch-local_fixproc,v 1.1 2005/05/26 03:34:21 robert Exp $
---- local/fixproc.orig	Wed May 25 19:21:01 2005
-+++ local/fixproc	Wed May 25 19:24:51 2005
+$OpenBSD: patch-local_fixproc,v 1.2 2005/06/13 20:33:17 naddy Exp $
+--- local/fixproc.orig	Sat Apr 20 09:30:13 2002
++++ local/fixproc	Mon Jun 13 22:31:57 2005
 @@ -129,6 +129,8 @@
  #
  # Timothy Kong		3/1995
@@ -10,7 +10,7 @@ $OpenBSD: patch-local_fixproc,v 1.1 2005/05/26 03:34:21 robert Exp $
  $database_file = '/local/etc/fixproc.conf';
  
  $debug = 0;			# specify debug level using -dN
-@@ -191,20 +193,19 @@
+@@ -191,20 +193,19 @@ for $proc ( @proc_list )
  sub create_sh_script
  {
    local ($file) = pop (@_);
@@ -35,7 +35,7 @@ $OpenBSD: patch-local_fixproc,v 1.1 2005/05/26 03:34:21 robert Exp $
  }
  
  
-@@ -230,14 +231,13 @@
+@@ -230,14 +231,13 @@ sub do_fix
    else
      {
        # it must be "shell", so execute the shell script defined in database
@@ -53,7 +53,7 @@ $OpenBSD: patch-local_fixproc,v 1.1 2005/05/26 03:34:21 robert Exp $
        return ($fix_failed_error) if ($error_code != 0);
          # sleep needed here?
        return &do_exist ($proc);
-@@ -262,13 +262,13 @@
+@@ -262,13 +262,13 @@ sub do_check
        # if not "exist", then it must be "shell", so execute the shell script
        # defined in database
  

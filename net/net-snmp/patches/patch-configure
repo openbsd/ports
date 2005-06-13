@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
---- configure.orig	Sat Mar 20 02:13:55 2004
-+++ configure	Tue Jul 20 11:26:17 2004
+$OpenBSD: patch-configure,v 1.2 2005/06/13 20:33:17 naddy Exp $
+--- configure.orig	Sat Aug  7 10:14:33 2004
++++ configure	Mon Jun 13 22:31:57 2005
 @@ -6954,6 +6954,7 @@ openbsd*)
    need_lib_prefix=no
    need_version=no
@@ -53,7 +53,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
  # Set SNMPLIBPATH & SNMPSHAREPATH
  
  SNMPLIBPATH=""
-@@ -11374,6 +11347,7 @@ _ACEOF
+@@ -11383,6 +11356,7 @@ _ACEOF
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -61,7 +61,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
  #include <tcpd.h>
  		     int allow_severity = 0;
  		     int deny_severity  = 0;
-@@ -11566,6 +11540,7 @@ _ACEOF
+@@ -11575,6 +11549,7 @@ _ACEOF
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -69,7 +69,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
  #include <tcpd.h>
  		         int allow_severity = 0;
  	                 int deny_severity  = 0;
-@@ -13997,7 +13972,7 @@ done
+@@ -14158,7 +14133,7 @@ done
  
  
  
@@ -78,7 +78,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  if eval "test \"\${$as_ac_Header+set}\" = set"; then
-@@ -14020,6 +13995,7 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -14181,6 +14156,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
