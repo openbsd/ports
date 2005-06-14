@@ -1,27 +1,28 @@
-# $OpenBSD: Makefile,v 1.6 2005/05/06 02:58:04 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2005/06/14 00:12:58 jolan Exp $
 
 COMMENT=	"Embedded SQL implementation"
 COMMENT-tcl=	"TCL bindings for Sqlite3"
-
-VERSION=	3.2.1
-PKGNAME=	sqlite3-${VERSION}p0
-PKGNAME-tcl=	sqlite3-tcl-${VERSION}p0
-DISTNAME=	sqlite-${VERSION}
+V=		3.2.2
+PKGNAME=	sqlite3-${V}
+PKGNAME-tcl=	sqlite3-tcl-${V}
+DISTNAME=	sqlite-${V}
 CATEGORIES=	databases
-HOMEPAGE=	http://www.sqlite.org/
 MASTER_SITES=	${HOMEPAGE}
 
-# Public Domain
+HOMEPAGE=	http://www.sqlite.org/
+
+# PD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	c ncurses readline
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
+WANTLIB=	c ncurses readline
+
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 
 PSEUDO_FLAVORS=	no_tcl
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
