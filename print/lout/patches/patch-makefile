@@ -1,0 +1,120 @@
+--- makefile.orig	Wed Oct 27 10:59:37 2004
++++ makefile	Fri Jun 10 09:56:15 2005
+@@ -251,18 +251,18 @@ OSMAC   = 0
+ DBFIX   = 0
+ 
+ USESTAT = 1
+-SAFEDFT = 0
++SAFEDFT = 1
+ 
+-# DEBUGGING = 0
+-# TRACING =
++DEBUGGING = 0
++TRACING =
+ 
+-DEBUGGING = 1
+-TRACING = -g
++#DEBUGGING = 1
++#TRACING = -g
+ 
+-BINDIR	= /home/jeff/bin
+-LIBDIR	= /home/jeff/lout.lib
+-DOCDIR	= /home/jeff/lout.doc
+-MANDIR	= /home/jeff/lout.man
++BINDIR	= ${PREFIX}/bin
++LIBDIR	= ${PREFIX}/lib/lout
++DOCDIR	= ${PREFIX}/share/doc/lout
++MANDIR	= ${PREFIX}/man/man1
+ 
+ LIBFONT = font
+ LIBMAPS = maps
+@@ -274,23 +274,23 @@ LIBLOCA = locale
+ CHARIN	= 1
+ CHAROUT	= 0
+ 
+-USELOC	= 1
++USELOC	= 0
+ LOC_FR	= fr
+ LOC_DE	= de
+ 
+ COLLATE	= 1
+ 
+-PDF_COMPRESSION	= 0
+-ZLIB		=
++PDF_COMPRESSION	= 1
++ZLIB		= -lz
+ ZLIBPATH	=
+ 
+-CC	= gcc
++#CC	= gcc
+ 
+ RCOPY	= cp -r
+ 
+-COPTS	= -ansi -pedantic -Wall -O3
++#COPTS	= -ansi -pedantic -Wall -O3
+ 
+-CFLAGS	= -DOS_UNIX=$(OSUNIX)					\
++CFLAGS	+= -DOS_UNIX=$(OSUNIX)					\
+ 	  -DOS_DOS=$(OSDOS)					\
+ 	  -DOS_MAC=$(OSMAC)					\
+ 	  -DDB_FIX=$(DBFIX)					\
+@@ -322,7 +322,7 @@ OBJS	= z01.o z02.o z03.o z04.o z05.o z06
+ 	  z49.o z50.o z51.o z52.o
+ 
+ lout:	$(OBJS)
+-	$(CC) -o lout $(OBJS) $(ZLIB) -lm
++	$(CC) $(CFLAGS) $(COPTS) -o lout $(OBJS) $(ZLIB) -lm
+ 	chmod a+x lout
+ 
+ $(OBJS): externs.h
+@@ -330,16 +330,14 @@ $(OBJS): externs.h
+ externs.h:
+ 
+ prg2lout:	prg2lout.c
+-	$(CC) $(COPTS) -o prg2lout prg2lout.c
++	$(CC) $(CFLAGS) $(COPTS) -o prg2lout prg2lout.c
+ 	chmod a+x prg2lout
+ 
+ install: lout prg2lout
+ 	@echo ""
+ 	@echo "(a) Installing lout and prg2lout binaries into BINDIR $(BINDIR)"
+-	cp lout $(BINDIR)/lout
+-	chmod 755 $(BINDIR)/lout
+-	cp prg2lout $(BINDIR)/prg2lout
+-	chmod 755 $(BINDIR)/prg2lout
++	$(BSD_INSTALL_PROGRAM) lout $(BINDIR)/lout
++	$(BSD_INSTALL_PROGRAM) prg2lout $(BINDIR)/prg2lout
+ 	@echo ""
+ 	@echo "(b) Installing library files into LIBDIR $(LIBDIR)"
+ 	mkdir $(LIBDIR)
+@@ -372,13 +370,6 @@ install: lout prg2lout
+ 	@echo ""
+ 	mkdir $(LIBDIR)/$(LIBLOCA)
+ 	chmod 755 $(LIBDIR)/$(LIBLOCA)
+-	@echo ""
+-	@echo "(c) Initializing run (should be silent, no errors expected)"
+-	$(BINDIR)/lout -x -s $(LIBDIR)/$(LIBINCL)/init
+-	@echo ""
+-	@echo "(d) Changing mode of files just created by initializing run"
+-	chmod 644 $(LIBDIR)/$(LIBDATA)/*
+-	chmod 644 $(LIBDIR)/$(LIBHYPH)/*
+ 
+ installman:
+ 	@echo ""
+@@ -393,7 +384,8 @@ installman:
+ installdoc:
+ 	@echo ""
+ 	@echo "Creating DOCDIR $(DOCDIR) and copying documentation into it"
+-	$(RCOPY) doc $(DOCDIR)
++	mkdir -p $(DOCDIR)
++	$(RCOPY) doc/* $(DOCDIR)
+ 	chmod 755 $(DOCDIR)
+ 	chmod 755 $(DOCDIR)/*
+ 	chmod 644 $(DOCDIR)/*/*
+@@ -432,3 +424,6 @@ clean:	
+ 	-rm -f lout prg2lout *.o
+ 
+ restart:	clean uninstall
++
++all:	prg2lout lout
++allinstall: install installman installdoc
