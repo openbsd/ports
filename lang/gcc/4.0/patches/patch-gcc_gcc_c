@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_gcc_c,v 1.6 2005/02/27 21:27:12 espie Exp $
---- gcc/gcc.c.orig	Thu Feb 24 00:11:06 2005
-+++ gcc/gcc.c	Sun Feb 27 19:09:07 2005
+$OpenBSD: patch-gcc_gcc_c,v 1.7 2005/06/14 19:33:11 espie Exp $
+--- gcc/gcc.c.orig	Mon Jun  6 21:20:29 2005
++++ gcc/gcc.c	Tue Jun 14 12:40:29 2005
 @@ -1293,7 +1293,7 @@ translate_options (int *argcp, const cha
  		  /* Store the translation as one argv elt or as two.  */
  		  if (arg != 0 && strchr (arginfo, 'j') != 0)
@@ -164,7 +164,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.6 2005/02/27 21:27:12 espie Exp $
      return 0;
  
    return (stat (path, &st) >= 0 && S_ISDIR (st.st_mode));
-@@ -6108,8 +6108,8 @@ main (int argc, const char **argv)
+@@ -6111,8 +6111,8 @@ main (int argc, const char **argv)
    /* Read specs from a file if there is one.  */
  
    machine_suffix = concat (spec_machine, dir_separator_str,
@@ -175,7 +175,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.6 2005/02/27 21:27:12 espie Exp $
  
    specs_file = find_a_file (&startfile_prefixes, "specs", R_OK, 0);
    /* Read the specs file unless it is a default one.  */
-@@ -6214,12 +6214,12 @@ main (int argc, const char **argv)
+@@ -6217,12 +6217,12 @@ main (int argc, const char **argv)
  	  if (gcc_exec_prefix)
  	    add_prefix (&startfile_prefixes,
  			concat (gcc_exec_prefix, machine_suffix,
@@ -190,7 +190,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.6 2005/02/27 21:27:12 espie Exp $
  		      NULL, PREFIX_PRIORITY_LAST, 0, 1);
  	}
  
-@@ -6245,7 +6245,7 @@ main (int argc, const char **argv)
+@@ -6248,7 +6248,7 @@ main (int argc, const char **argv)
    /* If we have a GCC_EXEC_PREFIX envvar, modify it for cpp's sake.  */
    if (gcc_exec_prefix)
      gcc_exec_prefix = concat (gcc_exec_prefix, spec_machine, dir_separator_str,

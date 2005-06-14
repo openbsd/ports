@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltcf-cxx_sh,v 1.1.1.1 2004/09/23 22:13:31 espie Exp $
---- ltcf-cxx.sh.orig	Tue Aug  3 02:52:06 2004
-+++ ltcf-cxx.sh	Tue Sep 14 01:24:15 2004
-@@ -452,6 +452,19 @@ case $host_os in
+$OpenBSD: patch-ltcf-cxx_sh,v 1.2 2005/06/14 19:33:11 espie Exp $
+--- ltcf-cxx.sh.orig	Sat May 14 02:42:34 2005
++++ ltcf-cxx.sh	Tue Jun 14 12:40:30 2005
+@@ -453,6 +453,19 @@ case $host_os in
    netbsd* | knetbsd*-gnu)
      # NetBSD uses g++ - do we need to do anything?
      ;;

@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_collect2_c,v 1.4 2005/01/31 09:47:34 espie Exp $
---- gcc/collect2.c.orig	Mon Jan 17 16:23:51 2005
-+++ gcc/collect2.c	Mon Jan 17 16:24:43 2005
+$OpenBSD: patch-gcc_collect2_c,v 1.5 2005/06/14 19:33:11 espie Exp $
+--- gcc/collect2.c.orig	Mon Jun  6 21:20:26 2005
++++ gcc/collect2.c	Tue Jun 14 12:40:27 2005
 @@ -779,19 +779,19 @@ main (int argc, char **argv)
       qualify the program name with the target machine.  */
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-gcc_collect2_c,v 1.4 2005/01/31 09:47:34 espie Exp $
  #else
    const char *const full_ld_suffix	= ld_suffix;
    const char *const full_nm_suffix	= nm_suffix;
-@@ -981,7 +981,7 @@ main (int argc, char **argv)
+@@ -984,7 +984,7 @@ main (int argc, char **argv)
    if (c_file_name == 0)
      {
  #ifdef CROSS_COMPILE
@@ -36,7 +36,7 @@ $OpenBSD: patch-gcc_collect2_c,v 1.4 2005/01/31 09:47:34 espie Exp $
  #else
        c_file_name = "gcc";
  #endif
-@@ -1258,7 +1258,7 @@ main (int argc, char **argv)
+@@ -1261,7 +1261,7 @@ main (int argc, char **argv)
  
    if (exports.first)
      {
@@ -45,7 +45,7 @@ $OpenBSD: patch-gcc_collect2_c,v 1.4 2005/01/31 09:47:34 espie Exp $
  
        *ld1++ = buf;
        *ld2++ = buf;
-@@ -1423,7 +1423,7 @@ main (int argc, char **argv)
+@@ -1426,7 +1426,7 @@ main (int argc, char **argv)
    /* Tell the linker that we have initializer and finalizer functions.  */
  #ifdef LD_INIT_SWITCH
  #ifdef COLLECT_EXPORT_LIST
@@ -54,7 +54,7 @@ $OpenBSD: patch-gcc_collect2_c,v 1.4 2005/01/31 09:47:34 espie Exp $
  #else
    *ld2++ = LD_INIT_SWITCH;
    *ld2++ = initname;
-@@ -1438,7 +1438,7 @@ main (int argc, char **argv)
+@@ -1441,7 +1441,7 @@ main (int argc, char **argv)
        /* If we did not add export flag to link arguments before, add it to
  	 second link phase now.  No new exports should have been added.  */
        if (! exports.first)
@@ -63,7 +63,7 @@ $OpenBSD: patch-gcc_collect2_c,v 1.4 2005/01/31 09:47:34 espie Exp $
  
  #ifndef LD_INIT_SWITCH
        add_to_list (&exports, initname);
-@@ -1590,7 +1590,7 @@ collect_execute (const char *prog, char 
+@@ -1593,7 +1593,7 @@ collect_execute (const char *prog, char 
        dup2 (redir_handle, STDERR_FILENO);
      }
  
@@ -72,7 +72,7 @@ $OpenBSD: patch-gcc_collect2_c,v 1.4 2005/01/31 09:47:34 espie Exp $
  		  (PEXECUTE_FIRST | PEXECUTE_LAST | PEXECUTE_SEARCH));
  
    if (redir)
-@@ -1845,8 +1845,8 @@ write_c_file_stat (FILE *stream, const c
+@@ -1848,8 +1848,8 @@ write_c_file_stat (FILE *stream, const c
      notice ("\nwrite_c_file - output name is %s, prefix is %s\n",
  	    output_file, prefix);
  

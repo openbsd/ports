@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltcf-gcj_sh,v 1.1.1.1 2004/09/23 22:13:31 espie Exp $
---- ltcf-gcj.sh.orig	Tue Apr 27 08:14:30 2004
-+++ ltcf-gcj.sh	Tue Sep 14 01:24:24 2004
-@@ -488,10 +488,13 @@ else
+$OpenBSD: patch-ltcf-gcj_sh,v 1.2 2005/06/14 19:33:11 espie Exp $
+--- ltcf-gcj.sh.orig	Sat May 14 02:42:34 2005
++++ ltcf-gcj.sh	Tue Jun 14 12:40:30 2005
+@@ -489,10 +489,13 @@ else
      ;;
  
    openbsd*)
