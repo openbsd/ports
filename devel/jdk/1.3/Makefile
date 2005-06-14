@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2005/06/03 17:27:53 kurt Exp $
+# $OpenBSD: Makefile,v 1.12 2005/06/14 20:10:58 espie Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
 
 ONLY_FOR_ARCHS= 	i386 powerpc
@@ -50,7 +50,7 @@ MAKE_ENV=		ALT_MOTIF_DIR="${LOCALBASE}" \
 
 # Error message for distfile.
 FETCH_MANUALLY=	"You must manually fetch the distribution files, place"
-FETCH_MANUALLY+="them in ${FULLDISDIR} and then run make again."
+FETCH_MANUALLY+="them in ${FULLDISTDIR} and then run make again."
 FETCH_MANUALLY+="Get the SCSL source file:"
 FETCH_MANUALLY+="    j2sdk-1_3_1-src.tar.gz"
 FETCH_MANUALLY+="from http://wwws.sun.com/software/communitysource/j2se/java2/download.html"
