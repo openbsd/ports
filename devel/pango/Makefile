@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2005/05/24 21:27:28 marcm Exp $
+# $OpenBSD: Makefile,v 1.13 2005/06/14 01:58:56 kevlo Exp $
 
 COMMENT=		"library for layout and rendering of text"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xft Xrender c fontconfig freetype iconv intl m
 
 MASTER_SITES=		ftp://ftp.gtk.org/pub/gtk/v2.6/ \
-			${MASTER_SITE_GNOME:=sources/pango/1.6/}
+			${MASTER_SITE_GNOME:=sources/pango/1.8/}
 EXTRACT_SUFX=           .tar.bz2
 
 LIB_DEPENDS=		glib-2.0.600.0,gmodule-2.0.600.0,gobject-2.0.600.0::devel/glib2
