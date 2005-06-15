@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2005/06/08 03:51:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.124 2005/06/15 09:21:06 xsa Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -81,6 +81,7 @@
      SUBDIR += py-cddb
      SUBDIR += py-id3
      SUBDIR += py-ogg
+     SUBDIR += py-tagger
      SUBDIR += py-xmms
 #    SUBDIR += radio
      SUBDIR += rhythmbox
