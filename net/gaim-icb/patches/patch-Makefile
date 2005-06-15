@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile,v 1.1 2005/06/15 16:25:31 pvalchev Exp $
+--- Makefile.orig	Wed Jun 15 09:18:04 2005
++++ Makefile	Wed Jun 15 09:37:51 2005
+@@ -1,7 +1,8 @@
+ LOCALBASE?=	/usr/local
+ PREFIX?=	${LOCALBASE}
+ 
+-CFLAGS+=`pkg-config gaim --cflags` \
++CFLAGS+=-fPIC \
++	`pkg-config gaim --cflags` \
+ 	-I${LOCALBASE}/include \
+ 	-DHAVE_CONFIG_H
+ DATE=	`date +%Y%m%d`
