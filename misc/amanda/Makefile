@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2005/05/31 09:09:30 db Exp $
+# $OpenBSD: Makefile,v 1.30 2005/06/15 21:49:34 db Exp $
 
 COMMENT=	"network-capable tape backup (client and tape server)"
 COMMENT-client=	"network-capable tape backup (client only)"
@@ -6,7 +6,7 @@ COMMENT-doc=	"network-capable tape backup (documentation)"
 
 DISTVERSION=	2.4.5
 
-PKGVERSION=	${DISTVERSION}
+PKGVERSION=	${DISTVERSION}p0
 # Minor patched releases are usually named with a "pX" suffix.
 # These names can not be used with the OpenBSD ports framework.
 # PKGVERSION=   ${DISTVERSION:S/p/./}
