@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/06/14 20:30:59 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2005/06/15 04:29:55 fgsch Exp $
 
 COMMENT=	"another eMule p2p client"
 
@@ -27,7 +27,7 @@ WANTLIB=	X11 Xext Xi c gdk glib gmodule gtk m pthread stdc++ z
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-debug --enable-optimize --with-x
 CONFIGURE_ENV=	WXCONFIG="${LOCALBASE}/bin/wxgtk-2.4-config" \
-		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include"
+		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
 NO_REGRESS=	Yes
 
