@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/05/23 22:59:42 djm Exp $
+# $OpenBSD: Makefile,v 1.10 2005/06/16 05:14:42 sturm Exp $
 
 COMMENT=	"portable low-level networking library"
 COMMENT-python= "python interface to libdnet"
@@ -30,6 +30,7 @@ CONFIGURE_ARGS+=	--without-python
 MULTI_PACKAGES=		-python
 SUBPACKAGE?=
 CONFIGURE_ARGS+=	--with-python
+BUILD_DEPENDS+=		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 PYTHON_VER=		2.3
 SUBST_VARS=		PYTHON_VER
 .  if defined(PACKAGING) && ${SUBPACKAGE} == "-python"
