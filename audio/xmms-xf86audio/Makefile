@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/23 22:57:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2005/06/16 20:08:24 naddy Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"XF86Audio multimedia-key support for XMMS"
-DISTNAME=	xmms-xf86audio-0.4.2
+DISTNAME=	xmms-xf86audio-0.4.3
 CATEGORIES=	audio
 HOMEPAGE=	http://www.devin.com/xmms-xf86audio/
 
@@ -20,7 +20,13 @@ MASTER_SITES=	${HOMEPAGE}download/
 LIB_DEPENDS=	xmms.4::audio/xmms
 WANTLIB=	X11 Xext Xi m gdk glib gmodule gtk iconv intl
 
-MAKE_FLAGS=	CC="${CC}"
+MAKE_FLAGS=	CC="${CC}" OPT="${CFLAGS}" DEBUG=""
 NO_REGRESS=	Yes
+
+do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/xmms/General
+	${INSTALL_DATA} ${WRKBUILD}/libxf86audio.so ${PREFIX}/lib/xmms/General/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xmms-xf86audio
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xmms-xf86audio/
 
 .include <bsd.port.mk>
