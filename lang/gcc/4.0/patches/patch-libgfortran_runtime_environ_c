@@ -1,0 +1,14 @@
+$OpenBSD: patch-libgfortran_runtime_environ_c,v 1.1 2005/06/16 18:04:41 espie Exp $
+--- libgfortran/runtime/environ.c.orig	Thu Jun 16 19:32:41 2005
++++ libgfortran/runtime/environ.c	Thu Jun 16 19:32:59 2005
+@@ -557,8 +557,8 @@ check_buffered (int n)
+   if (options.all_unbuffered)
+     return 0;
+ 
+-  strcpy (name, "GFORTRAN_UNBUFFERED_");
+-  strcat (name, gfc_itoa (n));
++  strlcpy (name, "GFORTRAN_UNBUFFERED_", 40);
++  strlcat (name, gfc_itoa (n), 40);
+ 
+   v.name = name;
+   v.value = 2;

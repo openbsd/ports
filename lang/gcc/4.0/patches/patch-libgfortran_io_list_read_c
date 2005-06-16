@@ -1,0 +1,42 @@
+$OpenBSD: patch-libgfortran_io_list_read_c,v 1.1 2005/06/16 18:04:41 espie Exp $
+--- libgfortran/io/list_read.c.orig	Thu Jun 16 19:20:22 2005
++++ libgfortran/io/list_read.c	Thu Jun 16 19:22:37 2005
+@@ -1656,8 +1656,8 @@ nml_touch_nodes (namelist_info * nl)
+   index_type len = strlen (nl->var_name) + 1;
+   int dim;
+   char * ext_name = (char*)get_mem (len + 1);
+-  strcpy (ext_name, nl->var_name);
+-  strcat (ext_name, "%");
++  strlcpy (ext_name, nl->var_name, len + 1);
++  strlcat (ext_name, "%", len + 1);
+   for (nl = nl->next; nl; nl = nl->next)
+     {
+       if (strncmp (nl->var_name, ext_name, len) == 0)
+@@ -1900,8 +1900,8 @@ nml_read_obj (namelist_info * nl, index_
+ 	  case GFC_DTYPE_DERIVED:
+ 	    obj_name_len = strlen (nl->var_name) + 1;
+ 	    obj_name = get_mem (obj_name_len+1);
+-	    strcpy (obj_name, nl->var_name);
+-	    strcat (obj_name, "%");
++	    strlcpy (obj_name, nl->var_name, obj_name_len+1);
++	    strlcat (obj_name, "%", obj_name_len+1);
+ 
+ 	    /* Now loop over the components. Update the component pointer
+ 	       with the return value from nml_write_obj.  This loop jumps
+@@ -2108,11 +2108,11 @@ get_name:
+ 
+   if (component_flag)
+     {
+-      ext_name = (char*)get_mem (strlen (root_nl->var_name)
+-				  + (saved_string ? strlen (saved_string) : 0)
+-				  + 1);
+-      strcpy (ext_name, root_nl->var_name);
+-      strcat (ext_name, saved_string);
++      index_type ext_name_len = strlen (root_nl->var_name) + 
++      		(saved_string ? strlen (saved_string) : 0) + 1;
++      ext_name = (char*)get_mem (ext_name_len);
++      strlcpy (ext_name, root_nl->var_name, ext_name_len);
++      strlcat (ext_name, saved_string, ext_name_len);
+       nl = find_nml_node (ext_name);
+       free_mem (ext_name);
+     }

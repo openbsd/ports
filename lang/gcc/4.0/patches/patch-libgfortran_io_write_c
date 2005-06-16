@@ -1,0 +1,64 @@
+$OpenBSD: patch-libgfortran_io_write_c,v 1.1 2005/06/16 18:04:41 espie Exp $
+--- libgfortran/io/write.c.orig	Thu Jun 16 13:12:55 2005
++++ libgfortran/io/write.c	Thu Jun 16 19:36:34 2005
+@@ -346,7 +346,7 @@ output_float (fnode *f, double value, in
+ 	ndigits = 27 - edigits;
+     }
+ 
+-  sprintf (buffer, "%+-#31.*e", ndigits - 1, value);
++  snprintf (buffer, 32, "%+-#31.*e", ndigits - 1, value);
+   
+   /* Check the resulting string has punctuation in the correct places.  */
+   if (buffer[2] != '.' || buffer[ndigits + 2] != 'e')
+@@ -1344,6 +1344,7 @@ nml_write_obj (namelist_info * obj, inde
+   index_type clen;
+   index_type elem_ctr;
+   index_type obj_name_len;
++  index_type ext_name_len;
+   void * p ;
+   char cup;
+   char * obj_name;
+@@ -1476,33 +1477,34 @@ nml_write_obj (namelist_info * obj, inde
+ 			    components.  */
+ 
+ 	      /* First ext_name => get length of all possible components  */
+-
+-	      ext_name = (char*)get_mem ( (base_name ? strlen (base_name) : 0)
++	      ext_name_len  = (base_name ? strlen (base_name) : 0)
+ 					+ (base ? strlen (base->var_name) : 0)
+ 					+ strlen (obj->var_name)
+ 					+ obj->var_rank * NML_DIGITS
+-					+ 1);
++					+ 1;
+ 
+-	      strcpy(ext_name, base_name ? base_name : "");
++	      ext_name = (char*)get_mem ( ext_name_len );
++
++	      strlcpy(ext_name, base_name ? base_name : "", ext_name_len);
+ 	      clen = base ? strlen (base->var_name) : 0;
+-	      strcat (ext_name, obj->var_name + clen);
++	      strlcat (ext_name, obj->var_name + clen, ext_name_len);
+ 
+ 	      /* Append the qualifier.  */
+ 
+ 	      for (dim_i = 0; dim_i < obj->var_rank; dim_i++)
+ 		{
+-		  strcat (ext_name, dim_i ? "" : "(");
++		  strlcat (ext_name, dim_i ? "" : "(", ext_name_len);
+ 		  clen = strlen (ext_name);
+ 		  st_sprintf (ext_name + clen, "%d", obj->ls[dim_i].idx);
+-		  strcat (ext_name, (dim_i == obj->var_rank - 1) ? ")" : ",");
++		  strlcat (ext_name, (dim_i == obj->var_rank - 1) ? ")" : ",", ext_name_len);
+ 		}
+ 
+ 	      /* Now obj_name.  */
+ 
+ 	      obj_name_len = strlen (obj->var_name) + 1;
+ 	      obj_name = get_mem (obj_name_len+1);
+-	      strcpy (obj_name, obj->var_name);
+-	      strcat (obj_name, "%");
++	      strlcpy (obj_name, obj->var_name, obj_name_len + 1);
++	      strlcat (obj_name, "%" , obj_name_len + 1);
+ 
+ 	      /* Now loop over the components. Update the component pointer
+ 		 with the return value from nml_write_obj => this loop jumps

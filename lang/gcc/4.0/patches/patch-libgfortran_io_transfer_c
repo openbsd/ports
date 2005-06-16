@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgfortran_io_transfer_c,v 1.1 2005/06/16 18:04:41 espie Exp $
+--- libgfortran/io/transfer.c.orig	Thu Jun 16 13:12:11 2005
++++ libgfortran/io/transfer.c	Thu Jun 16 13:12:50 2005
+@@ -1633,7 +1633,7 @@ st_set_nml_var (void * var_addr, char * 
+   nml->mem_pos = var_addr;
+ 
+   nml->var_name = (char*) get_mem (strlen (var_name) + 1);
+-  strcpy (nml->var_name, var_name);
++  strlcpy (nml->var_name, var_name, strlen (var_name) + 1);
+ 
+   nml->len = (int) len;
+   nml->string_length = (index_type) string_length;
