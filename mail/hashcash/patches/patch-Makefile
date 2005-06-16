@@ -1,0 +1,43 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2005/06/16 17:35:22 niallo Exp $
+--- Makefile.orig	Wed Mar 30 12:27:47 2005
++++ Makefile	Sat Jun 11 11:03:15 2005
+@@ -2,9 +2,9 @@ HC_VERS = 1.17
+ CHANGEME1 = 1 # put PACKAGER = EBUILD|RPM etc here
+ CHANGEME2 = 2
+ CHANGEME3 = 3
+-INSTALL_PATH = /usr/bin
+-MAN_INSTALL_PATH = /usr/share/man/man1
+-DOC_INSTALL_PATH = /usr/share/doc/hashcash-$(HC_VERS)
++INSTALL_PATH = ${PREFIX}/bin
++MAN_INSTALL_PATH = ${PREFIX}/man/man1
++DOC_INSTALL_PATH = ${PREFIX}/share/doc/hashcash
+ MAKEDEPEND = makedepend
+ MSLIB = mslib 
+ # here you can choose the regexp style your system has
+@@ -130,7 +130,8 @@ all:	$(EXES)
+ 
+ libhashcash$(LIB):	$(LIBOBJS)
+ 	$(DELETE) $@
+-	$(AR) rcs $@ $(LIBOBJS)
++	$(AR) cr $@ $(LIBOBJS)
++	$(RANLIB) $@
+ 
+ hashcash.dll:   $(LIBOBJS)
+ 	$(CC) -shared -o hashcash.dll $(LIBOBJS) \
+@@ -161,12 +162,10 @@ sha1-hashcash.txt: sha1-hashcash.pod
+ 	$(POD2TEXT) $? > $@
+ 
+ install:	hashcash sha1 hashcash.1 sha1-hashcash.1
+-	$(INSTALL) -d $(INSTALL_PATH)
+-	$(INSTALL) hashcash sha1 $(INSTALL_PATH)
+-	$(INSTALL) -d $(MAN_INSTALL_PATH)
+-	$(INSTALL) -m 644 hashcash.1 sha1-hashcash.1 $(MAN_INSTALL_PATH)
+-	$(INSTALL) -d $(DOC_INSTALL_PATH)
+-	$(INSTALL) -m 644 README LICENSE CHANGELOG $(DOC_INSTALL_PATH)
++	$(BSD_INSTALL_PROGRAM) hashcash sha1 $(INSTALL_PATH)
++	$(BSD_INSTALL_MAN) hashcash.1 sha1-hashcash.1 $(MAN_INSTALL_PATH)
++	$(BSD_INSTALL_DATA_DIR) $(DOC_INSTALL_PATH)
++	$(BSD_INSTALL_DATA) README LICENSE CHANGELOG $(DOC_INSTALL_PATH)
+ 
+ depend:
+ 	$(MAKEDEPEND) -- -Y *.c *.h

@@ -1,0 +1,6 @@
+The hashcash tool allows you to create hashcash stamps to attach to
+emails you send, and to verify hashcash stamps attached to emails you
+receive. Email senders attach hashcash stamps with the X-Hashcash:
+header. A hashcash stamp constitutes a proof-of-work which takes a
+parameterizable amount of work to compute for the sender. The
+recipient can verify received stamps efficiently.

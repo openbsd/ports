@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/16 17:35:22 niallo Exp $
+bin/hashcash
+bin/sha1
+@man man/man1/hashcash.1
+@man man/man1/sha1-hashcash.1
+share/doc/hashcash/README
+share/doc/hashcash/LICENSE
+share/doc/hashcash/CHANGELOG
