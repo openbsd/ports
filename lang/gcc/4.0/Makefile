@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2005/06/14 19:33:11 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2005/06/16 11:09:18 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -8,11 +8,11 @@ FULL_VERSION=4.0-20050609
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 MAKE_GXX=Yes
-#MAKE_FORTRAN=Yes
-#MAKE_OBJC=Yes
+MAKE_FORTRAN=Yes
+MAKE_OBJC=Yes
 #MAKE_JAVA=Yes
 .if ${MACHINE_ARCH} == "i386"
-#MAKE_ADA=Yes
+MAKE_ADA=Yes
 .endif
 
 MAKE_GXX?=No
