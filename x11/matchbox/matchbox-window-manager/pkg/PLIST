@@ -1,0 +1,46 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/17 02:57:30 jolan Exp $
+bin/matchbox-remote
+bin/matchbox-window-manager
+share/examples/matchbox/
+@sample ${SYSCONFDIR}/matchbox/
+share/examples/matchbox/kbdconfig
+@sample ${SYSCONFDIR}/matchbox/kbdconfig
+share/matchbox/mbnoapp.xpm
+share/themes/
+share/themes/Default/
+share/themes/Default/matchbox/
+share/themes/Default/matchbox/acceptbutton.xpm
+share/themes/Default/matchbox/closebutton.xpm
+share/themes/Default/matchbox/menubutton.xpm
+share/themes/Default/matchbox/theme.desktop
+share/themes/Default/matchbox/theme.xml
+share/themes/MBOpus/
+share/themes/MBOpus/matchbox/
+share/themes/MBOpus/matchbox/closebutton.png
+share/themes/MBOpus/matchbox/panelbg.png
+share/themes/MBOpus/matchbox/theme.desktop
+share/themes/MBOpus/matchbox/theme.xml
+share/themes/blondie/
+share/themes/blondie/matchbox/
+share/themes/blondie/matchbox/accept.png
+share/themes/blondie/matchbox/close-small.png
+share/themes/blondie/matchbox/close.png
+share/themes/blondie/matchbox/dialogbottomleft.png
+share/themes/blondie/matchbox/dialogbottomright.png
+share/themes/blondie/matchbox/dialogbottomtile.png
+share/themes/blondie/matchbox/dialogtopleft.png
+share/themes/blondie/matchbox/dialogtopleft2.png
+share/themes/blondie/matchbox/dialogtopright.png
+share/themes/blondie/matchbox/dialogtopright2.png
+share/themes/blondie/matchbox/dialogtoptile.png
+share/themes/blondie/matchbox/dialogtoptile2.png
+share/themes/blondie/matchbox/hide.png
+share/themes/blondie/matchbox/menu.png
+share/themes/blondie/matchbox/next.png
+share/themes/blondie/matchbox/prev.png
+share/themes/blondie/matchbox/que.png
+share/themes/blondie/matchbox/theme.desktop
+share/themes/blondie/matchbox/theme.xml
+share/themes/blondie/matchbox/titleleft.png
+share/themes/blondie/matchbox/titleright.png
+share/themes/blondie/matchbox/titlestrip.png

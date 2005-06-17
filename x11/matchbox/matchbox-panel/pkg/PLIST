@@ -1,0 +1,41 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/17 02:57:30 jolan Exp $
+bin/matchbox-panel
+bin/mb-applet-battery
+bin/mb-applet-clock
+bin/mb-applet-launcher
+bin/mb-applet-menu-launcher
+@comment bin/mb-applet-system-monitor
+@comment bin/mb-applet-xterm-wrapper.sh
+share/applications/
+share/applications/mb-applet-battery.desktop
+share/applications/mb-applet-clock.desktop
+share/applications/mb-applet-menu-launcher.desktop
+@comment share/applications/mb-applet-system-monitor.desktop
+share/applications/mb-launcher-term.desktop
+share/locale/cs/LC_MESSAGES/matchbox-panel.mo
+share/locale/de/LC_MESSAGES/matchbox-panel.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/matchbox-panel.mo
+share/locale/es_ES/
+share/locale/es_ES/LC_MESSAGES/
+share/locale/es_ES/LC_MESSAGES/matchbox-panel.mo
+share/locale/fi_FI/
+share/locale/fi_FI/LC_MESSAGES/
+share/locale/fi_FI/LC_MESSAGES/matchbox-panel.mo
+share/locale/fr_FR/
+share/locale/fr_FR/LC_MESSAGES/
+share/locale/fr_FR/LC_MESSAGES/matchbox-panel.mo
+share/locale/zh_TW/LC_MESSAGES/matchbox-panel.mo
+share/pixmaps/broken-0.png
+share/pixmaps/mbmenu.png
+share/pixmaps/mbterm.png
+share/pixmaps/miniapm-power.png
+share/pixmaps/miniapm.png
+share/pixmaps/minisys.png
+share/pixmaps/minitime.png
+share/pixmaps/no-link-0.png
+share/pixmaps/signal-1-40.png
+share/pixmaps/signal-41-60.png
+share/pixmaps/signal-61-80.png
+share/pixmaps/signal-81-100.png

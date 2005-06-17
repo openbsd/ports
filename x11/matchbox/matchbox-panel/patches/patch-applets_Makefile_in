@@ -1,0 +1,12 @@
+$OpenBSD: patch-applets_Makefile_in,v 1.1.1.1 2005/06/17 02:57:30 jolan Exp $
+--- applets/Makefile.in.orig	Mon Apr 11 04:18:53 2005
++++ applets/Makefile.in	Mon Jun  6 22:42:33 2005
+@@ -231,7 +231,7 @@ PKGDATADIR = $(datadir)/matchbox
+ DATADIR = $(datadir)
+ INCLUDES = -DDATADIR=\"$(DATADIR)\" -DPKGDATADIR=\"$(PKGDATADIR)\" -DPREFIX=\"$(PREFIXDIR)\" $(LIBMB_CFLAGS) $(SN_CFLAGS)
+ @WANT_APM_TRUE@mb_applet_battery_SOURCES = mb-applet-battery.c
+-@WANT_APM_TRUE@mb_applet_battery_LDADD = $(LIBMB_LIBS) $(SN_LIBS) -lapm  
++@WANT_APM_TRUE@mb_applet_battery_LDADD = $(LIBMB_LIBS) $(SN_LIBS)
+ LDADD = $(LIBMB_LIBS) $(SN_LIBS)
+ mb_applet_clock_SOURCES = mb-applet-clock.c
+ mb_applet_menu_launcher_SOURCES = mb-applet-menu-launcher.c

@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/17 02:57:30 jolan Exp $
+bin/matchbox-session
+share/icons/
+share/icons/blondie/
+share/icons/blondie/48x48/
+share/icons/blondie/48x48/apps/
+share/icons/blondie/48x48/apps/mbfolder.png
+share/icons/blondie/48x48/apps/mbfolderprev.png
+share/matchbox/
+share/matchbox/vfolders/
+share/matchbox/vfolders/Applications.directory
+share/matchbox/vfolders/Games.directory
+share/matchbox/vfolders/Other.directory
+share/matchbox/vfolders/Root.directory
+share/matchbox/vfolders/Root.order
+share/matchbox/vfolders/Settings.directory
+share/matchbox/vfolders/Utilities.directory
+share/pixmaps/
+share/pixmaps/mbadd.png
+share/pixmaps/mbdown.png
+share/pixmaps/mbfolder.png
+share/pixmaps/mbfolderprev.png
+share/pixmaps/mbnoapp.png
+share/pixmaps/mbremove.png
+share/pixmaps/mbup.png

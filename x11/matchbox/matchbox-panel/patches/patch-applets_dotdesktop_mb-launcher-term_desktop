@@ -1,0 +1,12 @@
+$OpenBSD: patch-applets_dotdesktop_mb-launcher-term_desktop,v 1.1.1.1 2005/06/17 02:57:30 jolan Exp $
+--- applets/dotdesktop/mb-launcher-term.desktop.orig	Sun Mar 20 11:43:31 2005
++++ applets/dotdesktop/mb-launcher-term.desktop	Thu Jun 16 13:15:03 2005
+@@ -2,7 +2,7 @@
+ Name=Term Launcher
+ Comment=Panel based Terminal launcher
+ # the '-o -1' makes monolaunch dock to the left
+-Exec=mb-applet-launcher -o -1 -l mbterm.png mb-applet-xterm-wrapper.sh
++Exec=mb-applet-launcher -o -1 -l mbterm.png xterm
+ Type=PanelApp
+ Icon=mbterm.png
+ Categories=Panel;Utility;MB

@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/17 02:57:30 jolan Exp $
+%%SHARED%%
+include/libmb/
+include/libmb/hash.h
+include/libmb/mb.h
+include/libmb/mbconfig.h
+include/libmb/mbdotdesktop.h
+include/libmb/mbexp.h
+include/libmb/mbmenu.h
+include/libmb/mbpixbuf.h
+include/libmb/mbtray.h
+include/libmb/mbutil.h
+lib/libmb.a
+lib/libmb.la
+lib/pkgconfig/
+lib/pkgconfig/libmb.pc

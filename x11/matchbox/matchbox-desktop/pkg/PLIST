@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/17 02:57:31 jolan Exp $
+%%SHARED%%
+bin/matchbox-desktop
+include/matchbox-desktop/
+include/matchbox-desktop/mbdesktop.h
+include/matchbox-desktop/mbdesktop_item.h
+include/matchbox-desktop/mbdesktop_module.h
+include/matchbox-desktop/mbdesktop_view.h
+lib/matchbox/
+lib/matchbox/desktop/
+lib/matchbox/desktop/dotdesktop.a
+lib/matchbox/desktop/dotdesktop.la
+lib/matchbox/desktop/simplefilebrowser.a
+lib/matchbox/desktop/simplefilebrowser.la
+lib/matchbox/desktop/tasks.a
+lib/matchbox/desktop/tasks.la
+lib/pkgconfig/
+lib/pkgconfig/matchbox-desktop.pc
+share/applications/
+share/applications/mb-show-desktop.desktop
+share/examples/matchbox-desktop/
+@sample ${SYSCONFDIR}/matchbox/
+share/examples/matchbox-desktop/mbdesktop_modules
+@sample ${SYSCONFDIR}/matchbox/mbdesktop_modules
+share/pixmaps/mbdesktop.png

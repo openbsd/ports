@@ -1,0 +1,3 @@
+libmatchbox is a small basic library that provides a large amount of
+shared functionality to the various matchbox libraries.  It provides
+image processing, font abstraction, a tray app toolkit and more.
