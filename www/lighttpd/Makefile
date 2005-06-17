@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2005/06/17 14:22:52 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2005/06/17 14:47:57 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,7 +24,8 @@ WANTLIB=		c crypto ssl z
 MASTER_SITES=	${HOMEPAGE}download/
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --with-openssl
+CONFIGURE_ARGS+= --with-openssl \
+		 --libdir="${PREFIX}/lib/lighttpd"
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
