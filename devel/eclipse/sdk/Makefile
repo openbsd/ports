@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/05/12 15:09:15 kurt Exp $
+# $OpenBSD: Makefile,v 1.4 2005/06/17 19:15:29 kurt Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -8,9 +8,9 @@ COMMENT-mozilla=	"mozilla integration library for eclipse HTML Browser Widget"
 
 ECLIPSE_VER=		3.0.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
-PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
-PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}
-PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}
+PKGNAME=		eclipse-sdk-${ECLIPSE_VER}p0
+PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p0
+PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p0
 CATEGORIES=		devel/eclipse java 
 
 HOMEPAGE=		http://www.eclipse.org/
@@ -41,13 +41,15 @@ MASTER_SITES=		${MASTER_SITE_ECLIPSE:=R-3.0.2-200503110845/}
 EXTRACT_SUFX=		.zip
 
 VMEM_WARNING=		Yes
-BUILD_DEPENDS=		:jdk->=1.4.2p0,<1.5:devel/jdk/1.4 \
-			:mozilla-devel-*-gtk2:www/mozilla,-devel,gtk2 \
+
+MODULES=		java
+MODJAVA_VER=		1.4+
+
+BUILD_DEPENDS=		:mozilla-devel-*-gtk2:www/mozilla,-devel,gtk2 \
 			:apache-ant->=1.6.1:devel/apache-ant \
 			:pkgconfig-*:devel/pkgconfig
 
-RUN_DEPENDS=		:jdk->=1.4.2p0:devel/jdk/1.4 \
-			:apache-ant->=1.6.1:devel/apache-ant
+RUN_DEPENDS=		:apache-ant->=1.6.1:devel/apache-ant
 
 LIB_DEPENDS=		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 
@@ -83,7 +85,6 @@ LIB_DEPENDS+=		${MOZILLA_LIB_DEPENDS}
 . endif
 .endif
 
-JAVA_HOME=		${LOCALBASE}/jdk-1.4.2
 MOZILLA_HOME=		${LOCALBASE}/mozilla
 ECLIPSE_WS=		gtk
 ECLIPSE_BUILD=		3064
