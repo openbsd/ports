@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2004/04/08 06:49:08 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2005/06/17 21:47:29 kurt Exp $
 
 COMMENT=	"implementation of the JSP and Java Servlet APIs"
 
 V=		3.2.4
 DISTNAME=	jakarta-servletapi-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www devel
 MASTER_SITES=	http://archive.apache.org/dist/jakarta/tomcat-3/archive/v${V}/bin/
 EXTRACT_SUFX=	.zip
@@ -12,15 +13,14 @@ HOMEPAGE=	http://jakarta.apache.org/
 
 MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
-JDK_VERSION=	1.3.1-linux
-JAVA_HOME=	${LOCALBASE}/jdk${JDK_VERSION}
-RUN_DEPENDS= 	:jdk-linux->1.3:devel/jdk/1.3-linux
-
 # Apache Software License
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+MODULES=	java
+MODJAVA_VER=	1.3+
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
