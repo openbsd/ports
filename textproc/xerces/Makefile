@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2003/11/15 15:12:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2005/06/17 22:19:02 kurt Exp $
 
 COMMENT=	"xml parser for Java"
 
-ONLY_FOR_ARCHS=	i386
-
-JDK_VERSION=	1.3.1
 DISTNAME=	Xerces-J-bin.2.4.0
-PKGNAME=	xerces-2.4.0
+PKGNAME=	xerces-2.4.0p0
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://xml.apache.org/xerces2-j/index.html
@@ -23,8 +20,11 @@ MASTER_SITES=	http://xml.apache.org/dist/xerces-j/
 
 TAR?=		gtar
 
+MODULES=	java
+MODJAVA_VER=	1.3+
+MODJAVA_JRERUN=	Yes
+
 BUILD_DEPENDS=	:gtar-*:archivers/gtar 
-RUN_DEPENDS=    ::devel/jdk/1.3-linux
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
