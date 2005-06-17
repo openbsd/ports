@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/27 04:33:53 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2005/06/17 00:01:58 jolan Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"binding of sqlite3 for lua"
-PKGNAME=	luasqlite3-0.2
-DISTNAME=	lua-sqlite3-0.2
+PKGNAME=	luasqlite3-0.3
+DISTNAME=	lua-sqlite3-0.3
 CATEGORIES=	databases lang/lua
 MASTER_SITES=	${HOMEPAGE}
 

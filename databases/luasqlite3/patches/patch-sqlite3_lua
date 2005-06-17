@@ -1,7 +1,7 @@
-$OpenBSD: patch-sqlite3_lua,v 1.1.1.1 2005/04/27 04:33:53 jolan Exp $
---- sqlite3.lua.orig	Tue Apr 26 10:21:02 2005
-+++ sqlite3.lua	Tue Apr 26 10:22:38 2005
-@@ -45,9 +45,8 @@ TODO:
+$OpenBSD: patch-sqlite3_lua,v 1.2 2005/06/17 00:01:58 jolan Exp $
+--- sqlite3.lua.orig	Wed Jun 15 16:33:54 2005
++++ sqlite3.lua	Thu Jun 16 12:08:07 2005
+@@ -44,9 +44,8 @@ TODO:
  
  
  
