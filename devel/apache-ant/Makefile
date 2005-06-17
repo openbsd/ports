@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2004/08/10 22:00:36 naddy Exp $
-
-ONLY_FOR_ARCHS= i386
+# $OpenBSD: Makefile,v 1.4 2005/06/17 19:17:41 kurt Exp $
 
 COMMENT=        "java equivalent to make"
 
 DISTNAME=	apache-ant-1.6.2
+PKGNAME=	apache-ant-1.6.2p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://ant.apache.org/
 
-MAINTAINER=	Kurt Miller <truk@apache.org>
+MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 
 # Apache Software License 2.0 &
 # W3C Consortium License (August 14 1998)
@@ -23,8 +22,10 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=ant/binaries/} \
 
 EXTRACT_SUFX=	-bin.tar.gz
 
+MODULES=	java
+MODJAVA_VER=	1.3+
+
 BUILD_DEPENDS=	::archivers/gtar
-RUN_DEPENDS=	:jdk*->=1.2:devel/jdk/1.3-linux
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
