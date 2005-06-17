@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.1 2005/06/17 14:59:27 kurt Exp $
+# $OpenBSD: java.port.mk,v 1.2 2005/06/17 15:37:33 kurt Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -38,7 +38,7 @@ _MODJAVA_RUNDEP=	${_MODJAVA_RUNDEP_TMP:S/-/->=/g}
 _MODJAVA_RUNDEP=	${_MODJAVA_RUNDEP_TMP}
 .  endif
 .  if ${MACHINE_ARCH} == "i386"
-RUN_DEPENDS+=		:${_MODJAVA_RUNDEP}|jdk1.3.1-linux:devel/jdk/1.3
+RUN_DEPENDS+=		:${_MODJAVA_RUNDEP}|jdk-linux-1.3.1*:devel/jdk/1.3
 .  else
 RUN_DEPENDS+=		:${_MODJAVA_RUNDEP}:devel/jdk/1.3
 .  endif
