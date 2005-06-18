@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2005/05/21 13:46:44 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/06/18 18:08:49 alek Exp $
 
 COMMENT=	"icecast source for streaming MP3"
 
 DISTNAME=	ices-0.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net audio
 
 HOMEPAGE=	http://www.icecast.org/
@@ -21,7 +22,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/ices/
 AUTOCONF_VERSION=2.59
 CONFIGURE_STYLE=gnu autoconf
 CONFIGURE_ARGS=	--with-docdir=${LOCALBASE}/share/doc/ices \
-		--with-moddir=${LOCALBASE}/share/examples/ices \
+		--with-moddir=${LOCALBASE}/share/ices \
 		--with-lame=${LOCALBASE} --with-vorbis=${LOCALBASE} \
 		--with-flac=${LOCALBASE}
 
@@ -52,6 +53,7 @@ CONFIGURE_ARGS+=--without-faad
 SEPARATE_BUILD=	simple
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ices/
 	${INSTALL_DATA} ${WRKINST}/${SYSCONFDIR}/ices.conf.dist \
 		${PREFIX}/share/examples/ices/
 
