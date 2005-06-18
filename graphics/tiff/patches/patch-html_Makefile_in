@@ -1,0 +1,12 @@
+$OpenBSD: patch-html_Makefile_in,v 1.1 2005/06/18 21:24:40 naddy Exp $
+--- html/Makefile.in.orig	Wed May 25 18:33:07 2005
++++ html/Makefile.in	Wed May 25 18:33:53 2005
+@@ -225,7 +225,7 @@ target_alias = @target_alias@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-docdir = $(LIBTIFF_DOCDIR)/html
++docdir = $(LIBTIFF_DOCDIR)
+ docfiles = \
+ 	addingtags.html \
+ 	bugs.html \

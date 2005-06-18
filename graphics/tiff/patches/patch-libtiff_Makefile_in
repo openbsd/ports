@@ -1,12 +1,12 @@
-$OpenBSD: patch-libtiff_Makefile_in,v 1.5 2004/02/25 00:08:10 brad Exp $
---- libtiff/Makefile.in.orig	2003-11-17 04:24:41.000000000 -0500
-+++ libtiff/Makefile.in	2004-02-24 18:26:44.000000000 -0500
-@@ -246,7 +246,7 @@ OSFdso: ${OBJS}
- 	${LD} -o libtiff.@DSOSUF@ -shared -error_unresolved ${OBJS} @LIBJPEG@ @LIBGZ@ -lc -lm
- 
- OPENBSDdso: ${OBJS}
--	${CC} -shared @LIBCOPTS@ -o libtiff.@DSOSUF_VERSION@ ${OBJS} @LIBJPEG@ @LIBGZ@ -lm
-+	${CC} -shared @LIBCOPTS@ -o libtiff.@DSOSUF_VERSION@ ${OBJS}
- 	touch $@
- 
- OPENSERVERdso:  ${OBJS}
+$OpenBSD: patch-libtiff_Makefile_in,v 1.6 2005/06/18 21:24:40 naddy Exp $
+--- libtiff/Makefile.in.orig	Tue May 24 16:38:41 2005
++++ libtiff/Makefile.in	Tue May 24 16:38:56 2005
+@@ -188,7 +188,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ LDFLAGS = @LDFLAGS@
+ LIBOBJS = @LIBOBJS@
+-LIBS = @LIBS@
++LIBS = 
+ LIBTIFF_ALPHA_VERSION = @LIBTIFF_ALPHA_VERSION@
+ LIBTIFF_DOCDIR = @LIBTIFF_DOCDIR@
+ LIBTIFF_MAJOR_VERSION = @LIBTIFF_MAJOR_VERSION@

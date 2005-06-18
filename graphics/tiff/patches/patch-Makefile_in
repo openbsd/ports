@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2005/06/18 21:24:40 naddy Exp $
+--- Makefile.in.orig	Wed Mar  9 02:49:04 2005
++++ Makefile.in	Wed May 25 18:52:49 2005
+@@ -253,8 +253,8 @@ EXTRA_DIST = \
+ 	autogen.sh \
+ 	nmake.opt
+ 
+-dist_doc_DATA = $(docfiles)
+-SUBDIRS = port libtiff tools contrib test man html
++dist_doc_DATA = 
++SUBDIRS = port libtiff tools test man html
+ all: all-recursive
+ 
+ .SUFFIXES:
