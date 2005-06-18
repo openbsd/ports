@@ -1,6 +1,6 @@
-$OpenBSD: patch-install_sh,v 1.11 2005/05/28 16:32:18 sturm Exp $
---- install.sh.orig	Fri Apr 15 06:19:38 2005
-+++ install.sh	Fri May 27 13:04:10 2005
+$OpenBSD: patch-install_sh,v 1.12 2005/06/18 20:46:32 sturm Exp $
+--- install.sh.orig	Wed Jun 15 11:17:40 2005
++++ install.sh	Sat Jun 18 19:20:22 2005
 @@ -1132,7 +1132,7 @@ run_install()
  	    mkdir $mkdirv $mkdirp $share_dir/help/
  	    chmod $chmodv 755 $share_dir/help
@@ -19,7 +19,7 @@ $OpenBSD: patch-install_sh,v 1.11 2005/05/28 16:32:18 sturm Exp $
 -	fi
 +	ln $lns opf.css $share_dir/styles/OPF.css
  
- 	cp $cpv $cpf hhd.ssr chartables.bin $share_dir/
+ 	cp $cpv $cpf chartables.bin $share_dir/
  
 @@ -1295,7 +1293,7 @@ run_install()
  
