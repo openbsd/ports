@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2005/03/16 15:43:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2005/06/18 18:48:12 naddy Exp $
 
 COMMENT=		"send/receive faxes and share modems"
 DISTNAME=		hylafax-4.1.5
@@ -45,6 +45,7 @@ FAKE_FLAGS=	ROOT=${WRKINST} ${DESTDIRNAME}=${WRKINST} \
 SUID_EXES=	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter
 
+NO_REGRESS=	Yes
 NO_SYSTRACE=	"test -d '' succeeds"
 
 post-install:
