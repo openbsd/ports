@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2005/06/18 21:24:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2005/06/19 12:19:30 naddy Exp $
 
 COMMENT=	"tools and library routines for working with TIFF images"
 
@@ -6,7 +6,7 @@ DISTNAME=	tiff-3.7.2
 CATEGORIES=	graphics
 
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
-		ftp://ftp.remotesensing.org/pub/libtiff/old/
+		http://dl1.maptools.org/dl/libtiff/
 
 HOMEPAGE=	http://www.remotesensing.org/libtiff/
 
