@@ -1,7 +1,7 @@
-$OpenBSD: patch-scp_c,v 1.8 2003/05/28 16:31:07 fgsch Exp $
---- scp.c.orig	Mon Mar  3 16:05:26 2003
-+++ scp.c	Wed May 28 13:23:37 2003
-@@ -581,7 +581,10 @@ while (stat != SCPE_EXIT) {				/* in cas
+$OpenBSD: patch-scp_c,v 1.9 2005/06/19 03:47:25 david Exp $
+--- scp.c.orig	Tue May  3 06:55:10 2005
++++ scp.c	Fri Jun 17 21:31:30 2005
+@@ -602,7 +602,10 @@ while (stat != SCPE_EXIT) {				/* in cas
  	else if (sim_vm_read != NULL)			/* sim routine? */
  	    cptr = (*sim_vm_read) (cbuf, CBUFSIZE, stdin);
  	else cptr = read_line (cbuf, CBUFSIZE, stdin);	/* read command line */

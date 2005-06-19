@@ -5,16 +5,17 @@ collective of people interested in restoring historically significant
 computer hardware and software systems by simulation.
 The goal of the project is to create highly portable system simulators
 and to publish them as freeware on the Internet, with freely available
-copies of significant or representative software. 
+copies of significant or representative software.
 
 Simulators included in this package:
-	- Data Central Nova, Eclipse
+	- Data General Nova, Eclipse
 	- Digital Equipment Corporation PDP-1, PDP-4, PDP-7, PDP-8, PDP-9,
 	  PDP-10, PDP-11, PDP-15, VAX
 	- GRI Corporation GRI-909
 	- IBM 1401, 1620, 1130, System 3
 	- Interdata (Perkin-Elmer) 16b and 32b systems
-	- Hewlett Packard HP 2116, 2100, 21MX
-	- Honeywell H316
+	- Hewlett-Packard 2116, 2100, 21MX
+	- Honeywell H316/H516
 	- MITS Altair 8800, with both 8080 and Z80
+	- Royal-Mcbee LGP-30, LGP-21
 	- Scientific Data Systems SDS 940

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/09/15 00:42:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2005/06/19 03:47:25 david Exp $
 bin/simh-altair
 bin/simh-altairz80
 bin/simh-eclipse
@@ -10,6 +10,7 @@ bin/simh-i1620
 bin/simh-ibm1130
 bin/simh-id16
 bin/simh-id32
+bin/simh-lgp
 bin/simh-nova
 bin/simh-pdp1
 bin/simh-pdp10
@@ -25,11 +26,12 @@ bin/simh-vax
 lib/simh/
 lib/simh/vax/
 lib/simh/vax/ka655.bin
+lib/simh/vax/ka655x.bin
 share/doc/simh/
-share/doc/simh/0readme_30.txt
+share/doc/simh/0readme_34.txt
 share/doc/simh/0readme_ethernet.txt
 share/doc/simh/altair.txt
-share/doc/simh/altairz80.txt
+share/doc/simh/altairz80_doc.txt
 share/doc/simh/eclipse.txt
 share/doc/simh/gri_doc.txt
 share/doc/simh/h316_doc.txt
@@ -40,10 +42,12 @@ share/doc/simh/i1401_doc.txt
 share/doc/simh/i1620_doc.txt
 share/doc/simh/id_diag.txt
 share/doc/simh/id_doc.txt
+share/doc/simh/lgp_doc.txt
 share/doc/simh/nova_doc.txt
 share/doc/simh/pdp10_diag.txt
 share/doc/simh/pdp10_doc.txt
 share/doc/simh/pdp11_doc.txt
+share/doc/simh/pdp18b_diag.txt
 share/doc/simh/pdp18b_doc.txt
 share/doc/simh/pdp1_doc.txt
 share/doc/simh/pdp8_doc.txt
