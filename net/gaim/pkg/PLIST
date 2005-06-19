@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2005/04/07 18:04:34 brad Exp $
+@comment $OpenBSD: PLIST,v 1.41 2005/06/19 00:36:32 brad Exp $
 bin/gaim
 bin/gaim-remote
 include/gaim/
@@ -131,16 +131,24 @@ lib/gaim/ticker.so
 lib/gaim/timestamp.so
 lib/libgaim-remote.la
 @lib lib/libgaim-remote.so.0.0
+lib/pkgconfig/
 lib/pkgconfig/gaim.pc
 @man man/man1/gaim-remote.1
 @man man/man1/gaim.1
 share/applications/
 share/applications/gaim.desktop
 share/locale/
+share/locale/am/
+share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/gaim.mo
+share/locale/az/
+share/locale/az/LC_MESSAGES/
+share/locale/az/LC_MESSAGES/gaim.mo
 share/locale/bg/
 share/locale/bg/LC_MESSAGES/
 share/locale/bg/LC_MESSAGES/gaim.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/gaim.mo
 share/locale/cs/
 share/locale/cs/LC_MESSAGES/
@@ -154,11 +162,18 @@ share/locale/de/LC_MESSAGES/gaim.mo
 share/locale/en_AU/
 share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/gaim.mo
+share/locale/en_CA/
+share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/gaim.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gaim.mo
 share/locale/es/
 share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/gaim.mo
+share/locale/et/
+share/locale/et/LC_MESSAGES/
+share/locale/et/LC_MESSAGES/gaim.mo
 share/locale/fi/
 share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/gaim.mo
@@ -168,6 +183,8 @@ share/locale/fr/LC_MESSAGES/gaim.mo
 share/locale/he/
 share/locale/he/LC_MESSAGES/
 share/locale/he/LC_MESSAGES/gaim.mo
+share/locale/hi/
+share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/gaim.mo
 share/locale/hu/
 share/locale/hu/LC_MESSAGES/
@@ -178,20 +195,30 @@ share/locale/it/LC_MESSAGES/gaim.mo
 share/locale/ja/
 share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/gaim.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/gaim.mo
 share/locale/ko/
 share/locale/ko/LC_MESSAGES/
 share/locale/ko/LC_MESSAGES/gaim.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/gaim.mo
+share/locale/mk/
+share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/gaim.mo
 share/locale/my_MM/
 share/locale/my_MM/LC_MESSAGES/
 share/locale/my_MM/LC_MESSAGES/gaim.mo
+share/locale/nb/
+share/locale/nb/LC_MESSAGES/
+share/locale/nb/LC_MESSAGES/gaim.mo
 share/locale/nl/
 share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/gaim.mo
-@comment share/locale/no/
-@comment share/locale/no/LC_MESSAGES/
-@comment share/locale/no/LC_MESSAGES/gaim.mo
+share/locale/pa/
+share/locale/pa/LC_MESSAGES/
+share/locale/pa/LC_MESSAGES/gaim.mo
 share/locale/pl/
 share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/gaim.mo
@@ -213,8 +240,14 @@ share/locale/sk/LC_MESSAGES/gaim.mo
 share/locale/sl/
 share/locale/sl/LC_MESSAGES/
 share/locale/sl/LC_MESSAGES/gaim.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gaim.mo
+share/locale/sr/
+share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/gaim.mo
+share/locale/sr@Latn/
+share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/gaim.mo
 share/locale/sv/
 share/locale/sv/LC_MESSAGES/
@@ -225,6 +258,8 @@ share/locale/tr/LC_MESSAGES/gaim.mo
 share/locale/uk/
 share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/gaim.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/gaim.mo
 share/locale/zh_CN/
 share/locale/zh_CN/LC_MESSAGES/

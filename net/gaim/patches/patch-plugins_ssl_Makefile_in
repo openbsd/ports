@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_ssl_Makefile_in,v 1.6 2005/05/13 20:49:16 brad Exp $
---- plugins/ssl/Makefile.in.orig	Tue May 10 22:50:36 2005
-+++ plugins/ssl/Makefile.in	Thu May 12 21:55:36 2005
+$OpenBSD: patch-plugins_ssl_Makefile_in,v 1.7 2005/06/19 00:36:32 brad Exp $
+--- plugins/ssl/Makefile.in.orig	Thu Jun  9 22:37:21 2005
++++ plugins/ssl/Makefile.in	Sat Jun 18 20:13:37 2005
 @@ -59,6 +59,10 @@ am__installdirs = "$(DESTDIR)$(plugindir
  pluginLTLIBRARIES_INSTALL = $(INSTALL)
  LTLIBRARIES = $(plugin_LTLIBRARIES)
@@ -12,7 +12,7 @@ $OpenBSD: patch-plugins_ssl_Makefile_in,v 1.6 2005/05/13 20:49:16 brad Exp $
  @PLUGINS_TRUE@ssl_gnutls_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
  am__ssl_gnutls_la_SOURCES_DIST = ssl-gnutls.c
  @PLUGINS_TRUE@am_ssl_gnutls_la_OBJECTS = ssl-gnutls.lo
-@@ -87,7 +91,7 @@ LINK = $(LIBTOOL) --mode=link --tag=CC $
+@@ -87,7 +91,7 @@ LINK = $(LIBTOOL) --tag=CC --mode=link $
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
  SOURCES = $(ssl_gnutls_la_SOURCES) $(ssl_nss_la_SOURCES) \
  	$(ssl_la_SOURCES)
@@ -21,7 +21,7 @@ $OpenBSD: patch-plugins_ssl_Makefile_in,v 1.6 2005/05/13 20:49:16 brad Exp $
  	$(am__ssl_nss_la_SOURCES_DIST) $(am__ssl_la_SOURCES_DIST)
  ETAGS = etags
  CTAGS = ctags
-@@ -218,6 +222,8 @@ MSGMERGE = @MSGMERGE@
+@@ -224,6 +228,8 @@ MSGMERGE = @MSGMERGE@
  NSS_CFLAGS = @NSS_CFLAGS@
  NSS_LIBS = @NSS_LIBS@
  OBJEXT = @OBJEXT@
@@ -30,7 +30,7 @@ $OpenBSD: patch-plugins_ssl_Makefile_in,v 1.6 2005/05/13 20:49:16 brad Exp $
  PACKAGE = @PACKAGE@
  PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
  PACKAGE_NAME = @PACKAGE_NAME@
-@@ -353,16 +359,20 @@ EXTRA_DIST = \
+@@ -361,16 +367,20 @@ EXTRA_DIST = \
  
  plugindir = $(libdir)/gaim
  ssl_la_LDFLAGS = -module -avoid-version $(GLIB_LIBS)
@@ -51,7 +51,7 @@ $OpenBSD: patch-plugins_ssl_Makefile_in,v 1.6 2005/05/13 20:49:16 brad Exp $
  @PLUGINS_TRUE@ssl_gnutls_la_LIBADD = $(GNUTLS_LIBS)
  @PLUGINS_TRUE@ssl_nss_la_LIBADD = $(NSS_LIBS)
  AM_CPPFLAGS = \
-@@ -372,6 +382,7 @@ AM_CPPFLAGS = \
+@@ -380,6 +390,7 @@ AM_CPPFLAGS = \
  	$(DEBUG_CFLAGS) \
  	$(GTK_CFLAGS) \
  	$(PLUGIN_CFLAGS) \
@@ -59,7 +59,7 @@ $OpenBSD: patch-plugins_ssl_Makefile_in,v 1.6 2005/05/13 20:49:16 brad Exp $
  	$(NSS_CFLAGS) \
  	$(GNUTLS_CFLAGS)
  
-@@ -435,6 +446,8 @@ clean-pluginLTLIBRARIES:
+@@ -443,6 +454,8 @@ clean-pluginLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done
@@ -68,7 +68,7 @@ $OpenBSD: patch-plugins_ssl_Makefile_in,v 1.6 2005/05/13 20:49:16 brad Exp $
  ssl-gnutls.la: $(ssl_gnutls_la_OBJECTS) $(ssl_gnutls_la_DEPENDENCIES) 
  	$(LINK) $(am_ssl_gnutls_la_rpath) $(ssl_gnutls_la_LDFLAGS) $(ssl_gnutls_la_OBJECTS) $(ssl_gnutls_la_LIBADD) $(LIBS)
  ssl-nss.la: $(ssl_nss_la_OBJECTS) $(ssl_nss_la_DEPENDENCIES) 
-@@ -448,6 +461,7 @@ mostlyclean-compile:
+@@ -456,6 +469,7 @@ mostlyclean-compile:
  distclean-compile:
  	-rm -f *.tab.c
  
