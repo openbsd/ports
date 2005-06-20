@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2005/06/16 17:36:29 niallo Exp $
+# $OpenBSD: Makefile,v 1.146 2005/06/20 21:36:05 niallo Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -57,6 +57,7 @@
      SUBDIR += mailgraph
      SUBDIR += mailman
      SUBDIR += mailman,postfix
+     SUBDIR += mairix
      SUBDIR += majordomo
      SUBDIR += mboxgrep
      SUBDIR += metamail
