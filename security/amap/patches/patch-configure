@@ -1,12 +1,23 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2005/05/09 20:35:41 alek Exp $
---- configure.orig	Sat May  7 13:33:35 2005
-+++ configure	Sat May  7 13:33:56 2005
-@@ -168,7 +168,7 @@ if [ -d /usr/kerberos/include ]; then
+$OpenBSD: patch-configure,v 1.2 2005/06/20 18:26:18 niallo Exp $
+--- configure.orig	Fri Jun  3 15:34:19 2005
++++ configure	Mon Jun 20 13:41:00 2005
+@@ -13,10 +13,6 @@ if [ "$1" = "--help" ]; then
+   exit 0
  fi
  
- if [ -n "$PREFIX" ]; then
--    XDEFINES="$XDEFINES -DAMAP_PREFIX=$PREFIX"
-+    XDEFINES="$XDEFINES" 
- else
-     PREFIX="/usr/local"
- fi
+-cd pcre-3.9 || exit 1
+-./configure || exit 1
+-cd ..
+-
+ echo
+ echo
+ echo "Starting amap auto configuration ..."
+@@ -29,7 +25,7 @@ NSL_PATH=""
+ SOCKET_PATH=""
+ MANDIR=""
+ LIBDIRS=`cat /etc/ld.so.conf 2> /dev/null`
+-PREFIX=`echo "$1"|grep prefix=|sed 's/.*prefix=//i'`
++PREFIX=`echo "$1"|grep prefix=|sed 's/.*prefix=//'`
+ echo
+ 
+ echo "Checking for openssl ..."

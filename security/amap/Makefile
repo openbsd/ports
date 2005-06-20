@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/11 15:45:05 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2005/06/20 18:26:11 niallo Exp $
 
 COMMENT=	"next generation scanning tool"
 
-DISTNAME=	amap-5.0
+DISTNAME=	amap-5.1
 CATEGORIES=    	security
 
 HOMEPAGE=	http://www.thc.org/thc-amap/
@@ -15,14 +15,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/releases/ \
+MASTER_SITES=	http://www.thc.org/releases/ \
 		${MASTER_SITE_PACKETSTORM:=groups/thc/}
 
 WANTLIB=	c crypto ssl
 
 LIB_DEPENDS=	pcre.0::devel/pcre
 
-CONFIGURE_STYLE=gnu dest
+CONFIGURE_STYLE=	gnu dest
 
 NO_REGRESS=	Yes
 MAKE_FLAGS=	OPT="${CFLAGS} -I${LOCALBASE}/include"
