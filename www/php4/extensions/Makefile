@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2005/04/04 21:11:42 robert Exp $
+# $OpenBSD: Makefile,v 1.43 2005/06/20 16:11:11 robert Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -154,7 +154,7 @@ COMMENT-imap=		"imap, pop3 and nntp extensions for php4"
 CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 			--with-kerberos=/usr --with-imap-ssl
 IMAP_DEPENDS=		c-client.3::mail/c-client
-IMAP_WANTLIB=		gssapi crypto krb5 ssl
+IMAP_WANTLIB=		des gssapi crypto krb5 ssl
 .endif
 
 # ldap
@@ -308,7 +308,7 @@ XSLT_WANTLIB=		iconv
 
 .for i in ${MULTI_PACKAGES}
 .if !defined(FULLPKGNAME${i})
-FULLPKGNAME${i}=	php4${i}-${V}
+FULLPKGNAME${i}=	php4${i}-${V}p0
 .endif
 .endfor
 
