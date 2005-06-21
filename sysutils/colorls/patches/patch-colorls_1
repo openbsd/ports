@@ -1,12 +1,12 @@
-$OpenBSD: patch-colorls_1,v 1.5 2005/02/27 17:37:46 naddy Exp $
---- colorls.1.orig	Sun Feb 27 18:20:27 2005
-+++ colorls.1	Sun Feb 27 18:23:12 2005
+$OpenBSD: patch-colorls_1,v 1.6 2005/06/21 18:26:21 naddy Exp $
+--- colorls.1.orig	Tue Jun 21 20:10:53 2005
++++ colorls.1	Tue Jun 21 20:19:58 2005
 @@ -41,9 +41,17 @@
  .Nd list directory contents
  .Sh SYNOPSIS
  .Nm ls
--.Op Fl 1ACFLRSTWacdfghiklmnopqrstux
-+.Op Fl 1ACFGLRSTWacdfghiklmnopqrstux
+-.Op Fl 1AaCcdFfghikLlmnopqRrSsTtux
++.Op Fl 1AaCcdFfGghikLlmnopqRrSsTtux
  .Op Ar file ...
  .Sh DESCRIPTION
 +(Note: This man page describes the color version of the program.
@@ -20,20 +20,20 @@ $OpenBSD: patch-colorls_1,v 1.5 2005/02/27 17:37:46 naddy Exp $
  For each operand that names a
  .Ar file
  of a type other than directory,
-@@ -92,6 +100,12 @@ after each socket,
- and a vertical bar
- .Pq Sq \&|
+@@ -110,6 +118,12 @@ and a vertical bar
  after each that is a FIFO.
+ .It Fl f
+ Output is not sorted.
 +.It Fl G
 +Enable colorized output.
 +This option is equivalent to defining
 +.Ev CLICOLOR
 +in the environment.
-+(See below).
- .It Fl L
- If argument is a symbolic link, evaluate the file information and file type
- to be those of the file referenced by the link, and not the link itself;
-@@ -401,7 +415,7 @@ The
++(See below.)
+ .It Fl g
+ Does nothing; kept for compatibility with older versions of
+ .Nm ls .
+@@ -394,7 +408,7 @@ The
  .Nm
  utility exits 0 on success or \*(Gt0 if an error occurred.
  .Sh ENVIRONMENT
@@ -42,7 +42,7 @@ $OpenBSD: patch-colorls_1,v 1.5 2005/02/27 17:37:46 naddy Exp $
  .It Ev BLOCKSIZE
  If the environment variable
  .Ev BLOCKSIZE
-@@ -411,6 +425,44 @@ option is not specified, the block count
+@@ -404,6 +418,44 @@ option is not specified, the block count
  (see
  .Fl s )
  will be displayed in units of that size block.
@@ -87,7 +87,7 @@ $OpenBSD: patch-colorls_1,v 1.5 2005/02/27 17:37:46 naddy Exp $
  .It COLUMNS
  If this variable contains a string representing a
  decimal integer, it is used as the
-@@ -423,6 +475,99 @@ many pathname text columns to display
+@@ -416,6 +468,99 @@ many pathname text columns to display
  based on the width provided
  (see
  .Fl C ) .
@@ -187,7 +187,7 @@ $OpenBSD: patch-colorls_1,v 1.5 2005/02/27 17:37:46 naddy Exp $
  .It Ev TZ
  The timezone to use when displaying dates.
  See
-@@ -450,6 +595,7 @@ printed first:
+@@ -443,6 +588,7 @@ printed first:
  .Sh SEE ALSO
  .Xr chflags 1 ,
  .Xr chmod 1 ,

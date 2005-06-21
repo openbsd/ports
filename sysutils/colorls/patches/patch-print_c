@@ -1,6 +1,6 @@
-$OpenBSD: patch-print_c,v 1.5 2005/02/27 17:37:46 naddy Exp $
---- print.c.orig	Sun Feb 27 18:09:26 2005
-+++ print.c	Sun Feb 27 18:28:36 2005
+$OpenBSD: patch-print_c,v 1.6 2005/06/21 18:26:21 naddy Exp $
+--- print.c.orig	Tue Jun 21 20:05:48 2005
++++ print.c	Tue Jun 21 20:12:00 2005
 @@ -56,6 +56,11 @@ static char rcsid[] = "$OpenBSD: print.c
  #include <tzfile.h>
  #include <unistd.h>
@@ -105,7 +105,7 @@ $OpenBSD: patch-print_c,v 1.5 2005/02/27 17:37:46 naddy Exp $
  	if (f_type || (f_typedir && S_ISDIR(sp->st_mode)))
  		chcnt += printtype(sp->st_mode);
  	return (chcnt);
-@@ -348,6 +405,151 @@ printtype(u_int mode)
+@@ -345,6 +402,151 @@ printtype(u_int mode)
  	}
  	return (0);
  }
