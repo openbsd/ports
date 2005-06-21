@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2004/11/21 12:50:33 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2005/06/21 19:48:28 naddy Exp $
 
 COMMENT=	"extract, list & test files in a ZIP archive"
 
-VERSION=	5.51
+VERSION=	5.52
 DISTNAME=	unzip${VERSION:S/.//}
 PKGNAME=	unzip-${VERSION}
 CATEGORIES=	archivers
