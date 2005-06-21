@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.74 2005/06/08 03:54:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.75 2005/06/21 15:50:50 jcs Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
      SUBDIR += dbh
      SUBDIR += evolution-data-server
      SUBDIR += freetds
+     SUBDIR += freetds,msdblib
      SUBDIR += gdbm
      SUBDIR += gnats
      SUBDIR += gq

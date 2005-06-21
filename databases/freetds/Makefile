@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2005/03/30 03:39:00 jcs Exp $
+# $OpenBSD: Makefile,v 1.25 2005/06/21 15:50:51 jcs Exp $
 
 V=		0.63
 DISTNAME=	freetds-$V
@@ -18,12 +18,20 @@ MASTER_SITES=	ftp://ftp.ibiblio.org/pub/Linux/ALPHA/freetds/stable/
 
 MAINTAINER=	joshua stein <jcs@openbsd.org>
 
+FLAVORS=	msdblib
+FLAVOR?=
+
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--disable-threadsafe \
 		--disable-odbc
+
+.if $(FLAVOR:L:Mmsdblib)
+CONFIGURE_ARGS+=--enable-msdblib
+.endif
+
 MAKE_ENV=	RM=rm
 MODULES=	converters/libiconv
 DOC=		share/doc/freetds-$V
