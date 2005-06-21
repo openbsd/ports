@@ -1,7 +1,21 @@
-$OpenBSD: patch-list_utils_c,v 1.1 2004/01/05 03:24:14 espie Exp $
---- list_utils.c.orig	2004-01-05 04:21:42.000000000 +0100
-+++ list_utils.c	2004-01-05 04:21:49.000000000 +0100
-@@ -168,7 +168,7 @@ printnode(struct listStruct *list, int a
+$OpenBSD: patch-list_utils_c,v 1.2 2005/06/21 18:48:23 naddy Exp $
+--- list_utils.c.orig	Thu Dec 24 06:00:44 1998
++++ list_utils.c	Tue Jun 21 20:41:05 2005
+@@ -143,7 +143,12 @@ printnode(struct listStruct *list, int a
+ 
+   getfilemodes(&list->statbuf, filemodes);
+ 
+-  sprintf(outputStr,"%.2s %-11.20s %-2d %-8.20s %-8.20s %-6ld %-10.20s "
++#ifdef SOLARIS25
++  sprintf(outputStr,
++#else
++  snprintf(outputStr, sizeof(outputStr),
++#endif
++  		    "%.2s %-11.20s %-2d %-8.20s %-8.20s %-6ld %-10.20s "
+                     "%.20s",
+           (action == ADDITION) ? "+ " : "- ", filemodes, 
+           (int)list->statbuf.st_nlink, username, groupname,
+@@ -168,7 +173,7 @@ printnode(struct listStruct *list, int a
  
    
  
@@ -10,3 +24,12 @@ $OpenBSD: patch-list_utils_c,v 1.1 2004/01/05 03:24:14 espie Exp $
    printf("%-11s %-2d %-8s %-8s %-6ld %-10s %-10s\n", filemodes,
            (int)list->statbuf.st_nlink, username, groupname, 
            list->statbuf.st_size, timehold, list->filename);
+@@ -299,7 +304,7 @@ void getfilemodes(struct stat *statbuf, 
+   else if (S_ISDOOR(mode))
+     holder[0] = 'p';
+ #else
+-#if defined (BSD)
++#if defined (BSD) && !defined(__OpenBSD__)
+   else if (S_ISWHT(mode))
+     holder[0] = '%';
+ #endif

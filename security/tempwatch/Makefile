@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/12/29 20:31:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2005/06/21 18:48:23 naddy Exp $
 
 COMMENT=		"temporary file auditing tool"
 
@@ -24,6 +24,7 @@ MASTER_SITES0=		http://www.atstake.com/research/advisories/1999/
 WRKDIST=		${WRKDIR}/temp-watch
 
 ALL_TARGET=		OpenBSD
+MAKE_FLAGS=		CC="${CC} ${CFLAGS}"
 
 NO_REGRESS=		Yes
 

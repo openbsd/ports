@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile,v 1.1 2002/03/24 08:07:13 jsyn Exp $
---- Makefile.orig	Wed Nov 24 06:48:21 1999
-+++ Makefile	Wed Nov 24 06:48:35 1999
-@@ -9,7 +9,7 @@
- # debugging
- # DFLAGS = -DTEST -DDEBUG
- DFLAGS = -DREGEX
--CFLAGS =-O -Wall
-+#CFLAGS =-O -Wall
- XFLAGS =        # xtra cflags, set by systype targets
- XLIBS =         # xtra libs if necessary?
- # -Bstatic for sunos,  -static for gcc, etc.  You want this, trust me.
+$OpenBSD: patch-Makefile,v 1.2 2005/06/21 18:48:23 naddy Exp $
+--- Makefile.orig	Thu Sep 23 19:18:18 1999
++++ Makefile	Tue Jun 21 20:47:09 2005
+@@ -60,7 +60,7 @@ solaris25:
+ 
+ OpenBSD:
+ 	make -e $(ALL) $(MFLAGS) \
+-	XFLAGS='-DBSD -DREGEX -DREGCOMP_3C' CC="gcc $(CFLAGS)" STATIC=-static
++	XFLAGS='-DBSD -DREGEX -DREGCOMP_3C' STATIC=-static
+ 
+ generic:
+ 	make -e $(ALL) $(MFLAGS) \
