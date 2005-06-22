@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2005/03/22 15:31:46 brad Exp $
+@comment $OpenBSD: PLIST,v 1.35 2005/06/22 18:16:53 jakob Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -126,6 +126,7 @@ share/doc/postfix/html/CYRUS_README.html
 share/doc/postfix/html/DATABASE_README.html
 share/doc/postfix/html/DB_README.html
 share/doc/postfix/html/DEBUG_README.html
+share/doc/postfix/html/DSN_README.html
 share/doc/postfix/html/ETRN_README.html
 share/doc/postfix/html/FILTER_README.html
 share/doc/postfix/html/INSTALL.html
@@ -235,6 +236,7 @@ share/doc/postfix/readme/CONTENT_INSPECTION_README
 share/doc/postfix/readme/DATABASE_README
 share/doc/postfix/readme/DB_README
 share/doc/postfix/readme/DEBUG_README
+share/doc/postfix/readme/DSN_README
 share/doc/postfix/readme/ETRN_README
 share/doc/postfix/readme/FILTER_README
 share/doc/postfix/readme/INSTALL
