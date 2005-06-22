@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.75 2005/05/06 16:35:41 brad Exp $
+# $OpenBSD: Makefile,v 1.76 2005/06/22 18:11:29 jakob Exp $
 
-VERSION=	2.2.3
-PKGNAME=	postfix-${VERSION:S/-/./}p1
+VERSION=	2.2.4
+PKGNAME=	postfix-${VERSION:S/-/./}
 
 MASTER_SITES=	${MASTER_SITE_POSTFIX:=official/}
 
