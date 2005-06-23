@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2005/02/20 03:28:27 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2005/06/23 00:54:40 jolan Exp $
 %%SHARED%%
 %%i386%%
 bin/vlc
@@ -28,6 +28,7 @@ lib/vlc/access_output/libaccess_output_file_plugin.so
 lib/vlc/access_output/libaccess_output_http_plugin.so
 lib/vlc/access_output/libaccess_output_udp_plugin.so
 lib/vlc/audio_filter/
+lib/vlc/audio_filter/liba52tofloat32_plugin.so
 lib/vlc/audio_filter/liba52tospdif_plugin.so
 lib/vlc/audio_filter/libbandlimited_resampler_plugin.so
 lib/vlc/audio_filter/libdtstospdif_plugin.so

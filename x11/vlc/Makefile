@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2005/02/20 03:28:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2005/06/23 00:54:40 jolan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"videolan client; multimedia player"
 V=		0.8.1
 DISTNAME=	vlc-${V}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -36,7 +36,8 @@ LIB_DEPENDS=	SDL.3.0::devel/sdl \
 		mpeg2.0.0::graphics/libmpeg2 \
 		avcodec.5.0,avformat.5.0,postproc.5.0::graphics/ffmpeg \
 		fribidi.0.0::devel/fribidi \
-		faad.0.0::audio/faad
+		faad.0.0::audio/faad \
+		a52.0.0::audio/liba52
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.59
@@ -64,7 +65,8 @@ CONFIGURE_ARGS+=--disable-altivec \
 		--disable-pvr \
 		--disable-fb \
 		--disable-qnx \
-		--disable-slp
+		--disable-slp \
+		--enable-a52
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
@@ -83,11 +85,10 @@ CFLAGS+=-mhard-quad-float
 .endif
 
 .if ${FLAVOR:L:Mno_dvd}
-CONFIGURE_ARGS+=--disable-a52 --disable-dvdread --disable-dvdnav
+CONFIGURE_ARGS+=--disable-dvdread --disable-dvdnav
 .else
-CONFIGURE_ARGS+=--enable-a52 --enable-dvdread --enable-dvdnav
-LIB_DEPENDS+=	a52.0.0::audio/liba52 \
-		dvdnav.3.0::multimedia/libdvdnav \
+CONFIGURE_ARGS+=--enable-dvdread --enable-dvdnav
+LIB_DEPENDS+=	dvdnav.3.0::multimedia/libdvdnav \
 		dvdread.3.0::devel/libdvdread
 .endif
 

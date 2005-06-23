@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.no-no_dvd,v 1.2 2004/12/16 07:40:20 jolan Exp $
+@comment $OpenBSD: PFRAG.no-no_dvd,v 1.3 2005/06/23 00:54:40 jolan Exp $
 lib/vlc/access/libdvdnav_plugin.so
 lib/vlc/access/libdvdread_plugin.so
-lib/vlc/audio_filter/liba52tofloat32_plugin.so
