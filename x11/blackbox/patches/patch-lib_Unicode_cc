@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Unicode_cc,v 1.1 2005/06/23 20:35:23 sturm Exp $
+--- lib/Unicode.cc.orig	Mon Jan  3 10:42:53 2005
++++ lib/Unicode.cc	Tue Jun  7 07:33:56 2005
+@@ -166,7 +166,7 @@ bool bt::hasUnicode() {
+ 
+   setlocale(LC_ALL, "");
+ 
+-#ifdef HAVE_NL_LANGINFO
++#if defined(HAVE_NL_LANGINFO) && ! defined(__OpenBSD__) 
+   codeset = nl_langinfo(CODESET);
+ #else
+   std::string locale = setlocale(LC_CTYPE, 0);
