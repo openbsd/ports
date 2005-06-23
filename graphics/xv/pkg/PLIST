@@ -1,15 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/11/30 01:06:40 espie Exp $
-@wantlib jpeg.62.0
+@comment $OpenBSD: PLIST,v 1.6 2005/06/23 20:23:06 sturm Exp $
 bin/bggen
 bin/vdcomp
 bin/xcmap
 bin/xv
 bin/xvpictoppm
-@man man/cat1/bggen.0
-@man man/cat1/vdcomp.0
-@man man/cat1/xcmap.0
-@man man/cat1/xv.0
-@man man/cat1/xvpictoppm.0
+@man man/man1/bggen.1
+@man man/man1/vdcomp.1
+@man man/man1/xcmap.1
+@man man/man1/xv.1
+@man man/man1/xvpictoppm.1
 share/doc/xv/
 share/doc/xv/README
 share/doc/xv/xvdocs.ps
