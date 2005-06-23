@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST-threedomusic,v 1.1 2004/08/08 00:27:24 jolan Exp $
-share/uqm/content/packages/uqm-0.3-3domusic.zip
+@comment $OpenBSD: PLIST-threedomusic,v 1.2 2005/06/23 00:50:17 jolan Exp $
+share/uqm/content/packages/uqm-0.4.0-3domusic.uqm

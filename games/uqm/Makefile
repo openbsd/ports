@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2004/11/28 22:41:22 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2005/06/23 00:50:17 jolan Exp $
 
 # 64-bit issues, unaligned memory access
-ONLY_FOR_ARCHS=	i386 powerpc
+ONLY_FOR_ARCHS=	arm i386 powerpc
 
 COMMENT=		"ur-quan masters: sdl port of star control 2"
 COMMENT-remix1=		"ur-quan masters: remix pack number one"
@@ -10,13 +10,13 @@ COMMENT-remix3=		"ur-quan masters: remix pack number three"
 COMMENT-threedomusic=	"ur-quan masters: 3DO music content"
 COMMENT-voice=		"ur-quan masters: speech content"
 
-VER=			0.3
+VER=			0.4.0
 DISTNAME=		uqm-${VER}-source
 CATEGORIES=		games x11
-PDIST=			${DISTNAME}.tgz
-CDIST=			uqm-${VER}-content.zip
-MDIST=			uqm-${VER}-3domusic.zip
-VDIST=			uqm-${VER}-voice.zip
+PDIST=			${DISTNAME}.tar.gz
+CDIST=			uqm-${VER}-content.uqm
+MDIST=			uqm-${VER}-3domusic.uqm
+VDIST=			uqm-${VER}-voice.uqm
 RM1DIST=		uqm-remix-pack1.zip
 RM2DIST=		uqm-remix-pack2.zip
 RM3DIST=		uqm-remix-pack3.zip
@@ -24,7 +24,7 @@ DISTFILES=		${PDIST} ${CDIST}
 SUPDISTFILES=		${MDIST} ${VDIST} ${RM1DIST} ${RM2DIST} ${RM3DIST}
 DIST_SUBDIR=		uqm
 CATEGORIES=		games x11
-PKGNAME=		uqm-${VER}p0
+PKGNAME=		uqm-${VER}
 PKGNAME-remix1=		uqm-remix1-${VER}
 PKGNAME-remix2=		uqm-remix2-${VER}
 PKGNAME-remix3=		uqm-remix3-${VER}
@@ -34,8 +34,6 @@ EXTRACT_ONLY=		${PDIST}
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sc2/}
 
 HOMEPAGE=	http://sc2.sourceforge.net/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	"Unresolved licensing issues"
@@ -105,12 +103,13 @@ WRKDIST=	${WRKDIR}/${DISTNAME:S/-source//}
 
 do-configure:
 .if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
-	${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "vax")
+	${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386" || \
+	${MACHINE_ARCH} == "vax")
 	@sed -e "s|@PREFIX@|${PREFIX}|g ; s|@ENDIAN@|undef|g" \
-		${FILESDIR}/config.h > ${WRKSRC}/src/config.h
+		${FILESDIR}/config_unix.h > ${WRKSRC}/src/config_unix.h
 .else
 	@sed -e "s|@PREFIX@|${PREFIX}|g ; s|@ENDIAN@|define|g" \
-		${FILESDIR}/config.h > ${WRKSRC}/src/config.h
+		${FILESDIR}/config_unix.h > ${WRKSRC}/src/config_unix.h
 .endif
 	@sed -e "s|@CC@|${CC}|g ; s|@CFLAGS@|${CFLAGS}|g ; \
 		s|@LOCALBASE@|${LOCALBASE}|g ; s|@PREFIX@|${PREFIX}|g ; \
