@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2004/11/30 01:06:36 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2005/06/23 17:46:52 fgsch Exp $
 
 COMMENT=	"image manipulation library"
 
 DISTNAME=	imlib2-1.1.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.enlightenment.org/pages/imlib2.html
