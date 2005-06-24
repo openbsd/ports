@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2005/01/06 00:19:24 jsg Exp $
+# $OpenBSD: Makefile,v 1.7 2005/06/24 15:25:37 jolan Exp $
+# XXX hardcoded endian list
 
 COMMENT=	"collection of various tools for scummvm"
-VERSION=	0.7.0
-DISTNAME=	scummvm-tools-${VERSION}
+DISTNAME=	scummvm-tools-0.7.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -21,7 +22,8 @@ NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
 .if (!${MACHINE_ARCH} == "alpha" && !${MACHINE_ARCH} == "amd64" && \
-     !${MACHINE_ARCH} == "i386" && !${MACHINE_ARCH} == "vax")
+	!${MACHINE_ARCH} == "arm" && !${MACHINE_ARCH} == "i386" && \
+	!${MACHINE_ARCH} == "vax")
 
 CFLAGS+=	-DSCUMM_BIG_ENDIAN
 CXXFLAGS+=	-DSCUMM_BIG_ENDIAN
