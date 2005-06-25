@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.699 2005/06/25 10:40:50 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.700 2005/06/25 10:51:32 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1056,6 +1056,7 @@ _lib_depends_fragment = \
 	if $$defaulted; then \
 		pkg=`echo $$pkg|sed -e 's,-[0-9].*,-*,'`; \
 	fi; \
+	found2=false; \
 	what="$$dep ($$pkg)"; \
 	IFS=,; bad=false; for d in $$dep; do \
 		listlibs='ls $$shdir 2>/dev/null'; \
