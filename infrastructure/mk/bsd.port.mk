@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.698 2005/04/30 10:43:55 alek Exp $
+#	$OpenBSD: bsd.port.mk,v 1.699 2005/06/25 10:40:50 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -698,7 +698,7 @@ MTREE_FILE+=${PORTSDIR}/infrastructure/db/fake.mtree
 
 # Fill out package command, and package dependencies
 _PKG_PREREQ= ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}/COMMENT${SUBPACKAGE}
-PKG_ARGS+= -v -c '${WRKPKG}/COMMENT${SUBPACKAGE}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
+PKG_ARGS+= -c '${WRKPKG}/COMMENT${SUBPACKAGE}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
 PKG_ARGS+=-f ${PLIST} -p ${PREFIX} `${MAKE} _print-package-args|sort -u`
 .if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
 PKG_ARGS+=		-i ${PKGDIR}/INSTALL${SUBPACKAGE}
