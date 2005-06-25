@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2005/06/18 15:18:44 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2005/06/25 16:10:03 espie Exp $
 
 COMMENT=	"another eMule p2p client"
 
 DISTNAME=	aMule-2.0.3
-PKGNAME=	${DISTNAME:L}
+PKGNAME=	${DISTNAME:L}p0
 CATEGORIES=	net
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=amule/}
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	wx_gtk::x11/wxWidgets/gtk
+LIB_DEPENDS=	wx_gtk:wxWidgets-gtk->=2.4.2-!gtk2:x11/wxWidgets/gtk
 
 USE_X11=	Yes
 
