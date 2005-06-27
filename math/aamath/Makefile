@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/04/12 18:46:09 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/06/27 20:36:40 alek Exp $
 
 COMMENT=		"ASCII art mathematics"
 
-DISTNAME=		aamath-0.2
+DISTNAME=		aamath-0.3
 CATEGORIES=		math
 
 HOMEPAGE=		http://fuse.superglue.se/aamath/
@@ -22,6 +22,7 @@ WANTLIB=		c m stdc++ termcap readline
 NO_REGRESS=		Yes
 WRKDIST=		${WRKDIR}/aamath
 ALL_TARGET=
+MAKE_FLAGS=		CXX="${CXX}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/aamath ${PREFIX}/bin
