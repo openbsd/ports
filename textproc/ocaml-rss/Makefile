@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/23 23:04:53 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/06/27 08:27:07 avsm Exp $
 
 COMMENT=	"Objective Caml library to parse RSS 2.0"
 CATEGORIES=	textproc
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 MODULES=	lang/ocaml
 WRKDIST=	${WRKDIR}/ocamlrss-${V}
 NO_REGRESS= 	Yes
-ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,opt,:S,No,,}
+ALL_TARGET=	byte ${MODOCAML_NATIVE:S,Yes,opt,:S,No,,}
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 BUILD_DEPENDS=	::textproc/ocaml-xml-light
