@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/27 18:48:46 niallo Exp $
+@newgroup _ipfreely:546
+@newuser _ipfreely:546:546:daemon:IP Freely Daemon:/var/empty:/sbin/nologin
+sbin/ipfreely
+@man man/man8/ipfreely.0

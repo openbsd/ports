@@ -1,0 +1,12 @@
+To have IP Freely start on boot up, you can add the following to /etc/rc.local:
+(Be sure to change localhost:port and remotehost:port)
+
+if [ -x ${PREFIX}/sbin/ipfreely ]; then
+        echo -n ' ipfreely'
+        ${PREFIX}/sbin/ipfreely \
+        -b localhost:port \
+        -r remotehost:port \
+        -u _ipfreely \
+        -c /var/empty/
+fi
+

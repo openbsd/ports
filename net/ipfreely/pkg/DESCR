@@ -1,0 +1,4 @@
+ipfreely is a simple and secure TCP proxy daemon. It refuses to run as a
+privileged user, uses safe string handling functions, confines itself to
+a chroot() jail, performs no dynamic memory allocation, makes safe use
+of signal handlers and has some simple logging and debugging features.
