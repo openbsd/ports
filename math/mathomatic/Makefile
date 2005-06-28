@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/27 06:04:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2005/06/28 16:00:05 naddy Exp $
 
 COMMENT=	"small, portable, general purpose computer algebra system"
 
-DISTNAME=	mathomatic-12.3.3
+DISTNAME=	mathomatic-12.4.2
 CATEGORIES=	math
 
 HOMEPAGE=	http://mathomatic.orgserve.de/math/
@@ -29,7 +29,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/mathomatic ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/doc/mathomatic.1 ${PREFIX}/man/man1/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mathomatic
-	${INSTALL_DATA} ${WRKSRC}/changes.txt ${WRKSRC}/doc/*.htm \
+	${INSTALL_DATA} ${WRKSRC}/changes.txt ${WRKSRC}/doc/*.htm* \
 		${PREFIX}/share/doc/mathomatic/
 
 .include <bsd.port.mk>
