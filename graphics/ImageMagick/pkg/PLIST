@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2005/06/04 14:39:21 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.32 2005/06/28 18:08:23 naddy Exp $
 !%%no_x11%%
 %%SHARED%%
 bin/Magick++-config
@@ -66,6 +66,7 @@ include/magick/locale_.h
 include/magick/log.h
 include/magick/magic.h
 include/magick/magick-config.h
+include/magick/magick-type.h
 include/magick/magick.h
 include/magick/memory_.h
 include/magick/methods.h
@@ -76,6 +77,7 @@ include/magick/montage.h
 include/magick/option.h
 include/magick/paint.h
 include/magick/pixel.h
+include/magick/prepress.h
 include/magick/profile.h
 include/magick/quantize.h
 include/magick/random_.h
@@ -100,6 +102,8 @@ include/magick/widget.h
 include/magick/xwindow.h
 include/wand/
 include/wand/drawing-wand.h
+include/wand/magick-attribute.h
+include/wand/magick-image.h
 include/wand/magick-wand.h
 include/wand/magick_wand.h
 include/wand/pixel-iterator.h

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2005/06/04 14:39:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2005/06/28 18:08:23 naddy Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"object-oriented Perl interface to ImageMagick"
 
 VER=		6.2.3
-DASHVER=	0
+DASHVER=	3
 DISTNAME=	ImageMagick-${VER}-${DASHVER}
 PKGNAME=	p5-PerlMagick-${VER}.${DASHVER}
 CATEGORIES=	graphics devel
