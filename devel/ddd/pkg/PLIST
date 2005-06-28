@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/09/14 23:43:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2005/06/28 19:31:57 aanriot Exp $
 bin/ddd
 @info info/ddd-themes.info
 @info info/ddd.info
@@ -11,6 +11,7 @@ share/ddd/ddd/Ddd
 share/ddd/themes/
 share/ddd/themes/green.vsl
 share/ddd/themes/red.vsl
+share/ddd/themes/rednil.vsl
 share/ddd/themes/smalltitles.vsl
 share/ddd/themes/smallvalues.vsl
 share/ddd/themes/suppress.vsl

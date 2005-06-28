@@ -1,7 +1,7 @@
-$OpenBSD: patch-ddd_Makefile_in,v 1.4 2003/10/26 17:30:40 sturm Exp $
---- ddd/Makefile.in.orig	2003-06-03 21:37:26.000000000 +1000
-+++ ddd/Makefile.in	2003-10-10 12:31:23.000000000 +1000
-@@ -256,8 +256,8 @@ SUFFIXES = .C .c .Y .L .txt .xbm .xbmxx 
+$OpenBSD: patch-ddd_Makefile_in,v 1.5 2005/06/28 19:31:57 aanriot Exp $
+--- ddd/Makefile.in.orig	Sat Jun 11 21:14:20 2005
++++ ddd/Makefile.in	Sat Jun 11 21:15:42 2005
+@@ -484,8 +484,8 @@ SUFFIXES = .C .c .Y .L .txt .xbm .xbmxx 
  
  
  # Shared data installation
@@ -12,11 +12,12 @@ $OpenBSD: patch-ddd_Makefile_in,v 1.4 2003/10/26 17:30:40 sturm Exp $
  
  # -----------------------------------------------------------------------------
  # DDD Sources.
-@@ -2610,17 +2610,8 @@ configinfo.C: USERINFO $(srcdir)/config-
+@@ -2595,18 +2595,8 @@ configinfo.C: USERINFO.txt $(srcdir)/con
+ 	$(SHELL) $(srcdir)/config-info $(srcdir)/USERINFO.txt USERINFO.txt > $@~ && \
  	$(MV) $@~ $@
  
- # If `~/.ddd_userinfo' exists, use this file as personal identification.
--USERINFO: userinfo$(EXEEXT)
+-# If `~/.ddd_userinfo' exists, use this file as personal identification.
+-USERINFO.txt: userinfo$(EXEEXT)
 -	-(cat $$HOME/.ddd_userinfo 2> /dev/null || \
 -	./userinfo || echo '(unknown)') > $@~ && $(MV) $@~ $@
 -	@$(ECHO) ""
@@ -27,7 +28,7 @@ $OpenBSD: patch-ddd_Makefile_in,v 1.4 2003/10/26 17:30:40 sturm Exp $
 -	@$(ECHO) "This information will be compiled into $(DDD)."
 -	@$(ECHO) "If it is not correct, please edit $@ and re-compile."
 -	@$(ECHO) ""
-+USERINFO:
++USERINFO.txt:
 +	echo ${MAINTAINER} >$@
  
  # EPS code stuff.
