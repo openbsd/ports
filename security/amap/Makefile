@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/06/20 18:26:11 niallo Exp $
+# $OpenBSD: Makefile,v 1.4 2005/06/28 17:46:44 aanriot Exp $
 
 COMMENT=	"next generation scanning tool"
 
@@ -7,7 +7,7 @@ CATEGORIES=    	security
 
 HOMEPAGE=	http://www.thc.org/thc-amap/
 
-MAINTAINER=	Alexandre Anriot <aanriot@atlantilde.com>
+MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
 
 # GPL with changes
 PERMIT_PACKAGE_CDROM=	No

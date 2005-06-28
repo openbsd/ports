@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2005/05/22 09:34:39 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2005/06/28 17:46:44 aanriot Exp $
 
 COMMENT=	"parallelized login hacker"
 COMMENT-gui=	"GTK frontend for hydra"
@@ -11,7 +11,7 @@ CATEGORIES=    	security
 
 HOMEPAGE=	http://thc.org/thc-hydra/
 
-MAINTAINER= 	Alexandre Anriot <aanriot@atlantilde.com>
+MAINTAINER= 	Alexandre Anriot <aanriot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/31 19:25:26 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/06/28 17:46:44 aanriot Exp $
 
 COMMENT=	"read / write PHP session files"
 
@@ -6,7 +6,7 @@ DISTNAME=	PHP-Session-0.22
 PKGNAME=        p5-${DISTNAME}
 CATEGORIES=     www perl5
 
-MAINTAINER=     Alexandre Anriot <aanriot@atlantilde.com>
+MAINTAINER=     Alexandre Anriot <aanriot@openbsd.org>
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=   Yes

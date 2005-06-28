@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/28 17:57:43 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2005/06/28 17:46:43 aanriot Exp $
 
 COMMENT=	"the Portable Forth Environment"
 
@@ -7,7 +7,7 @@ CATEGORIES=    	lang
 
 HOMEPAGE=	http://pfe.sourceforge.net/
 
-MAINTAINER=	Alexandre Anriot <aanriot@atlantilde.com>
+MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
