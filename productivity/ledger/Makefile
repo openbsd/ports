@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/03 08:54:44 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/06/28 11:33:18 aanriot Exp $
 
 COMMENT=	"command line double-entry accounting ledger"
 
-DISTNAME=	ledger-2.2
+DISTNAME=	ledger-2.3
 CATEGORIES=	productivity
 
 HOMEPAGE=	http://www.newartisans.com/ledger.html
