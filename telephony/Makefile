@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/09/26 00:38:23 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2005/06/29 21:16:20 sturm Exp $
 
      SUBDIR += asterisk
+     SUBDIR += libosip2
+     SUBDIR += siproxd
 
 .include <bsd.port.subdir.mk>
