@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2005/06/23 10:01:21 fgsch Exp $
+# $OpenBSD: Makefile,v 1.39 2005/06/29 06:45:23 fgsch Exp $
 
 COMMENT=	"open-source, cross-platform WYSIWYG word processor"
 
@@ -25,11 +25,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xext Xft Xinerama Xrender \
+WANTLIB=	ICE SM X11 Xcursor Xext Xft Xinerama Xrender \
 		atk-1.0.0.0 c fontconfig freetype glib-2.0.0.0 \
 		gmodule-2.0.0.0 gobject-2.0.0.0 m pango-1.0.0.0 \
-		pangox-1.0.0.0 pangoxft-1.0.0.0 png pthread \
-		stdc++ z Xcursor
+		pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
+		png pthread stdc++ z
 
 MASTER_SITES=   ${HOMEPAGE}/downloads/abiword/${VERSION}/source/
 
@@ -44,14 +44,11 @@ FLAVORS=	gnome
 FLAVOR?=
 
 .if ${FLAVOR:L:Mgnome}
-LIB_DEPENDS+=	gnomeprintui-2-2::x11/gnome/libgnomeprintui \
-		nautilus::x11/gnome/nautilus
-WANTLIB+=	ORBit-2.0.0 art_lgpl_2.0.0 bonobo-2.0.0 \
-		bonobo-activation bonoboui-2.0.0 eel-2.0.0 \
-		gailutil gconf-2.0.0 gnome-2.0.0 gnomecanvas-2.0.0 \
-		gnomeprint-2-2.0.0 gnomeui-2.0.0 gnomevfs-2.0.0 \
-		pangoft2-1.0.0.0
-
+LIB_DEPENDS+=	gnomeprintui-2-2::x11/gnome/libgnomeprintui
+WANTLIB+=	ORBit-2.0.0 art_lgpl_2.0.0 bonobo-2.0.0	\
+		bonobo-activation bonoboui-2.0.0 gconf-2.0.0 \
+		gnome-2.0.0 gnomecanvas-2.0.0 gnomeprint-2-2.0.0 \
+		gnomeui-2.0.0 gnomevfs-2.0.0
 CONFIGURE_ARGS+= --enable-gnome
 .endif
 
