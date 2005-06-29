@@ -1,6 +1,6 @@
---- configure.orig	Thu Apr  7 19:59:55 2005
-+++ configure	Sun Apr 10 10:00:25 2005
-@@ -10533,11 +10533,11 @@ extern "C"
+--- configure.orig	Thu Jun 23 23:12:00 2005
++++ configure	Wed Jun 29 11:05:52 2005
+@@ -10549,11 +10549,11 @@ extern "C"
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -14,7 +14,7 @@
    ;
    return 0;
  }
-@@ -10898,6 +10898,8 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -10914,6 +10914,8 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -23,26 +23,28 @@
  #include <resolv.h>
  _ACEOF
  rm -f conftest.$ac_objext
-@@ -11704,6 +11706,7 @@ _ACEOF
+@@ -11821,13 +11823,9 @@ _ACEOF
  openbsd*)
      if test "$have_pthreads" = "yes"; then
  	LIBCLAMAV_LIBS="$LIBCLAMAV_LIBS -pthread"
+-	if test "$disable_cr" = "yes"; then
+-	    CLAMD_LIBS="$CLAMD_LIBS -pthread"
+-	    CLAMAV_MILTER_LIBS="$CLAMAV_MILTER_LIBS -pthread"
+-	else
+-	    CLAMD_LIBS="$CLAMD_LIBS -pthread -lc_r"
+-	    CLAMAV_MILTER_LIBS="$CLAMAV_MILTER_LIBS -pthread -lc_r"
+-	fi
 +	ADDITIONAL_LIBS="-pthread"
- 	if test "$disable_cr" = "yes"; then
- 	    CLAMD_LIBS="$CLAMD_LIBS -pthread"
- 	    CLAMAV_MILTER_LIBS="$CLAMAV_MILTER_LIBS -pthread"
-@@ -12889,6 +12892,7 @@ cat confdefs.h >>conftest.$ac_ext
++	CLAMD_LIBS="$CLAMD_LIBS -pthread"
++	CLAMAV_MILTER_LIBS="$CLAMAV_MILTER_LIBS -pthread"
+ 	TH_SAFE="-thread-safe"
+ 
+ cat >>confdefs.h <<\_ACEOF
+@@ -13016,6 +13014,8 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  
 +#include <sys/types.h>
- #include <tcpd.h>
- int allow_severity = 0;
- int deny_severity  = 0;
-@@ -12944,6 +12948,7 @@ cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- 
 +#include <sys/types.h>
  #include <tcpd.h>
  int allow_severity = 0;

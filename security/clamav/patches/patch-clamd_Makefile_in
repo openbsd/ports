@@ -1,7 +1,7 @@
-$OpenBSD: patch-clamd_Makefile_in,v 1.1 2005/05/12 14:55:21 mbalmer Exp $
---- clamd/Makefile.in.orig	Sun Apr 10 10:17:28 2005
-+++ clamd/Makefile.in	Sun Apr 10 10:17:46 2005
-@@ -157,7 +157,9 @@ INSTALL_DATA = @INSTALL_DATA@
+$OpenBSD: patch-clamd_Makefile_in,v 1.2 2005/06/29 10:12:09 mbalmer Exp $
+--- clamd/Makefile.in.orig	Thu Jun 23 22:03:05 2005
++++ clamd/Makefile.in	Wed Jun 29 11:00:23 2005
+@@ -148,7 +148,9 @@ INSTALL_DATA = @INSTALL_DATA@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
  INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
