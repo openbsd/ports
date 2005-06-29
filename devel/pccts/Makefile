@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/11/24 00:11:03 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2005/06/29 03:56:43 fgsch Exp $
 
 COMMENT=	"Purdue Compiler Construction Tool Set" 
 
@@ -7,8 +7,6 @@ PKGNAME=	pccts-1.33r33
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.polhode.com/
 EXTRACT_SUFX=	.zip
-
-MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
 HOMEPAGE=	http://www.polhode.com/pccts.html
 
