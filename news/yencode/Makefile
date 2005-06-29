@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/25 23:32:22 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2005/06/29 03:33:41 fgsch Exp $
 
-COMMENT=	encoder/decoder tool for the Usenet yEnc encoding format
+COMMENT=	"encoder/decoder tool for the Usenet yEnc encoding format"
 
 DISTNAME=	yencode-0.46
 CATEGORIES=	news
@@ -22,7 +22,6 @@ PERMIT_DISTFILES_FTP=   Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 NO_REGRESS=	Yes
