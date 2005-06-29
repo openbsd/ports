@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/12/18 14:28:35 mbalmer Exp $
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
+@comment $OpenBSD: PLIST,v 1.6 2005/06/29 14:18:39 mbalmer Exp $
 lib/python${MODPY_VERSION}/site-packages/_ldap.so
 lib/python${MODPY_VERSION}/site-packages/dsml.py
 lib/python${MODPY_VERSION}/site-packages/dsml.pyc
@@ -15,6 +13,12 @@ lib/python${MODPY_VERSION}/site-packages/ldap/async.pyo
 lib/python${MODPY_VERSION}/site-packages/ldap/cidict.py
 lib/python${MODPY_VERSION}/site-packages/ldap/cidict.pyc
 lib/python${MODPY_VERSION}/site-packages/ldap/cidict.pyo
+lib/python${MODPY_VERSION}/site-packages/ldap/controls.py
+lib/python${MODPY_VERSION}/site-packages/ldap/controls.pyc
+lib/python${MODPY_VERSION}/site-packages/ldap/controls.pyo
+lib/python${MODPY_VERSION}/site-packages/ldap/dn.py
+lib/python${MODPY_VERSION}/site-packages/ldap/dn.pyc
+lib/python${MODPY_VERSION}/site-packages/ldap/dn.pyo
 lib/python${MODPY_VERSION}/site-packages/ldap/filter.py
 lib/python${MODPY_VERSION}/site-packages/ldap/filter.pyc
 lib/python${MODPY_VERSION}/site-packages/ldap/filter.pyo
@@ -62,6 +66,7 @@ share/examples/py-ldap/Demo/Lib/ldapurl/urlsearch.py
 share/examples/py-ldap/Demo/Lib/ldif/
 share/examples/py-ldap/Demo/Lib/ldif/ldifcopy.py
 share/examples/py-ldap/Demo/initialize.py
+share/examples/py-ldap/Demo/ldapcontrols.py
 share/examples/py-ldap/Demo/options.py
 share/examples/py-ldap/Demo/passwd_ext_op.py
 share/examples/py-ldap/Demo/pickle_ldapobject.py

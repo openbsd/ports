@@ -1,11 +1,11 @@
---- setup.cfg.orig	Mon Nov  1 15:37:24 2004
-+++ setup.cfg	Mon Nov  1 15:37:47 2004
+--- setup.cfg.orig	Wed Jun 29 14:07:05 2005
++++ setup.cfg	Wed Jun 29 14:07:41 2005
 @@ -6,9 +6,6 @@
  # Section for compiling the C extension module
  # for wrapping OpenLDAP 2 libs
  
--library_dirs = /usr/local/openldap-OPENLDAP_REL_ENG_2_2/lib /usr/local/sasl/lib
--include_dirs = /usr/local/openldap-OPENLDAP_REL_ENG_2_2/include /usr/local/sasl/include/sasl /usr/include/sasl
+-library_dirs = /opt/openldap-OPENLDAP_REL_ENG_2_2/lib
+-include_dirs = /opt/openldap-OPENLDAP_REL_ENG_2_2/include /usr/include/sasl
 -
  extra_compile_args = 
  extra_objects =
