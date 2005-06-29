@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.52 2005/06/15 20:23:10 jakob Exp $
+# $OpenBSD: Makefile,v 1.53 2005/06/29 13:25:19 msf Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
 
 VERSION=	2.2.27
 DISTNAME=	openldap-${VERSION}
-FULLPKGNAME=	openldap-client-${VERSION}
-PKGNAME-server=	openldap-server-${VERSION}
+FULLPKGNAME=	openldap-client-${VERSION}p0
+PKGNAME-server=	openldap-server-${VERSION}p0
 CATEGORIES=	databases net
 
 HOMEPAGE=	http://www.openldap.org/
