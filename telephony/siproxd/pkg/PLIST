@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/29 21:15:24 sturm Exp $
+sbin/siproxd
+share/doc/siproxd/
+share/doc/siproxd/FAQ
+share/doc/siproxd/KNOWN_BUGS
+share/examples/siproxd/
+share/examples/siproxd/siproxd.conf.example
+share/examples/siproxd/siproxd_passwd.cfg
