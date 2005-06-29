@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/24 23:23:36 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2005/06/29 04:11:29 fgsch Exp $
 
 COMMENT=	"opendivx decoding API"
 
 DISTNAME=	libdivxdecore-0.4.7
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://download2.projectmayo.com/dnload/divx4linux/xmps/
 
-HOMEPAGE=	http://www.projectmayo.com/projects/detail.php?projectId=4
-
-MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
+MASTER_SITE_OPENBSD=    Yes
 
 # Mayo licence, h263 decoding
 PERMIT_PACKAGE_CDROM=	"No commercial use plus patent issue"
