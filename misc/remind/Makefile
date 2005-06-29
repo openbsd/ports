@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/22 11:50:29 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2005/06/29 21:54:12 avsm Exp $
 
 COMMENT=	"scripting language for reminders, with a Tk front end"
 
-DISTNAME=	remind-03.00.22
-PKGNAME=        remind-3.0.22
+DISTNAME=	remind-03.00.23
+PKGNAME=        remind-3.0.23
 CATEGORIES=	misc
 
 MASTER_SITES=	http://www.roaringpenguin.com/penguin/
