@@ -1,12 +1,20 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2004/09/26 09:23:44 sturm Exp $
---- src/Makefile.in.orig	Sun Sep 26 10:18:54 2004
-+++ src/Makefile.in	Sun Sep 26 10:19:26 2004
-@@ -184,7 +184,7 @@ CXXFLAGS = @CXXFLAGS@
- CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
- LTCXXCOMPILE = $(LIBTOOL) --mode=compile $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+$OpenBSD: patch-src_Makefile_in,v 1.2 2005/06/30 22:34:29 alek Exp $
+--- src/Makefile.in.orig	Thu Apr 15 19:51:47 2004
++++ src/Makefile.in	Mon Jun 27 21:21:43 2005
+@@ -108,7 +108,6 @@ install_sh = @install_sh@
+ INCLUDES = -I$(top_srcdir) -I$(includedir) \
+ 	-DGNOME_ICONDIR=\""$(datadir)/pixmaps"\" \
+          -DG_LOG_DOMAIN=\"grip\" -DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
+-        -I../intl -I$(top_srcdir)/intl \
+ 	-DPREFIX=\""$(prefix)"\" \
+         -DSYSCONFDIR=\""$(sysconfdir)"\" \
+         -DDATADIR=\""$(datadir)"\" \
+@@ -199,7 +198,7 @@ LTCXXCOMPILE = $(LIBTOOL) --mode=compile
+ 	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+ 	$(AM_CXXFLAGS) $(CXXFLAGS)
  CXXLD = $(CXX)
--CXXLINK = $(LIBTOOL) --mode=link $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(LDFLAGS) -o $@
-+CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(LDFLAGS) -o $@
- COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
- LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
- CCLD = $(CC)
+-CXXLINK = $(LIBTOOL) --mode=link $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) \
++CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ CXXFLAGS = @CXXFLAGS@
+ DIST_SOURCES = $(grip_SOURCES)

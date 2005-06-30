@@ -1,6 +1,9 @@
-Grip is a cd-player and cd-ripper for the Gnome desktop. It has the ripping
-capabilities of cdparanoia builtin, but can also use external rippers (such as
-cdda2wav). It also provides an automated frontend for MP3 (and other audio
-format) encoders, letting you take a disc and transform it easily straight into
-MP3s. Internet disc lookups are supported for retrieving track information from
-disc database servers.
+Grip is a cd-player and cd-ripper for the Gnome desktop. It has the
+ripping capabilities of cdparanoia builtin, but can also use external
+rippers (such as cdda2wav). It also provides an automated frontend for
+MP3 (and other audio format) encoders, letting you take a disc and
+transform it easily straight into MP3s. Internet disc lookups are
+supported for retrieving track information from disc database servers.
+
+To encode MP3s an external encoder (like audio/lame or audio/bladeenc)
+is needed.

@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2005/03/22 15:02:45 robert Exp $
+# $OpenBSD: Makefile,v 1.14 2005/06/30 22:34:28 alek Exp $
 
 COMMENT=	"front-end to external cd audio rippers and mp3 encoders"
 
-V=		3.0.7
-DISTNAME=	grip-${V}
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	grip-3.2.0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.nostatic.org/grip/
@@ -16,33 +14,31 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xext Xi audiofile c \
-			esd gdk_imlib glib gmodule jpeg \
-			m png pthread stdc++ tiff ungif z
-
-FLAVORS=	cdparanoia
-FLAVOR?=
+WANTLIB=		c freetype crypto m X11 Xft ICE Xrender stdc++ SM \
+			pthread ncurses ssl fontconfig z \
+			gthread-2.0.0.0 gnomevfs-2 glib-2.0.0.0 \
+			gmodule-2.0.0.0 gobject-2.0.0.0 gtk-x11-2.0.0.0 \
+			bonobo-activation art_lgpl_2 bonobo-2 atk-1.0.0.0 \
+			gconf-2 pangox-1.0.0.0 bonoboui-2 popt \
+			pangoft2-1.0.0.0 gnomecanvas-2 xml2 \
+			pangoxft-1.0.0.0 ORBit-2 pango-1.0.0.0 \
+			gdk_pixbuf-2.0.0.0 gdk-x11-2.0.0.0 gnome-2
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grip/}
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
-		gnome.36,gnomesupport.0,gnomeui.46,art_lgpl.4::x11/gnome/libs \
-		ghttp::www/libghttp \
-		id3.3.8::audio/id3lib
-
-NO_REGRESS=		Yes
+BUILD_DEPENDS=	::devel/pkgconfig
+LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui \
+		id3.3.8::audio/id3lib \
+		curl.3::net/curl \
+		vte.8::devel/vte \
+		cdda_interface,cdda_paranoia::audio/cdparanoia
+RUN_DEPENDS=	::x11/gnome/yelp \
+		::audio/vorbis-tools
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			LIBS="-pthread"
-
-.if ${FLAVOR:L:Mcdparanoia}
-LIB_DEPENDS+=	cdda_interface,cdda_paranoia::audio/cdparanoia
-.else
-CONFIGURE_ARGS+=	--disable-cdpar
-.endif
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
