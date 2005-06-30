@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/17 02:57:30 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/06/30 21:50:51 jolan Exp $
+%%APM%%
 bin/matchbox-panel
-bin/mb-applet-battery
 bin/mb-applet-clock
 bin/mb-applet-launcher
 bin/mb-applet-menu-launcher
 @comment bin/mb-applet-system-monitor
 @comment bin/mb-applet-xterm-wrapper.sh
 share/applications/
-share/applications/mb-applet-battery.desktop
 share/applications/mb-applet-clock.desktop
 share/applications/mb-applet-menu-launcher.desktop
 @comment share/applications/mb-applet-system-monitor.desktop

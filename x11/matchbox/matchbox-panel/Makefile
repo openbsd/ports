@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/06/17 02:57:30 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2005/06/30 21:50:51 jolan Exp $
+# XXX hardcoded apm list
 
 COMMENT=	"window bar for holding application launchers"
 DISTNAME=	matchbox-panel-0.9.2
@@ -29,5 +30,12 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" 
 		HAVEGETTEXT="yes" \
 		INTLIBS="-liconv -lintl" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "macppc" \
+	|| ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "zaurus"
+PKG_ARGS+=-DAPM=1
+.else
+PKG_ARGS+=-DAPM=0
+.endif
 
 .include <bsd.port.mk>
