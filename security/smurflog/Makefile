@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/27 13:28:35 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2005/06/30 20:31:46 todd Exp $
 
 COMMENT=	"logs smurf attacks"
 DISTNAME=	smurflog-2.1
 CATEGORIES=	net security
 
-MASTER_SITES=	http://www.nectar.com/distfiles/
-#		http://www.sy.net/security/ \
-#		http://www.bitchx.com/~humble/files/
+MASTER_SITES=	${MASTER_SITE_PACKETSTORM:=UNIX/loggers/}
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
