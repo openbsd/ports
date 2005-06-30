@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.53 2005/05/27 00:09:46 mjc Exp $
+# $OpenBSD: OpenBSD-markers,v 1.54 2005/06/30 19:10:28 aanriot Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -37.457132	144.580589	"Miller"	# Damien
@@ -10,6 +10,7 @@
 25.0		121.400		"Lo"		# Kevin
 32.857736	-117.211507	"Grimes"	# Mark
 33.700077	-117.887943	"Peel"		# Jason
+35.5635277	-97.5437221	"Fries"		# Todd
 35.67  		139.75 		"Itojun"	# Jun-ichiro
 36.134		-86.70		"Krause"	# David
 37.515049	-122.339528	"Hyman"		# Marco S.
@@ -19,7 +20,6 @@
 39.96		-83		"Jackson"	# Eric
 40		-75.10		"Keromytis"	# Angelos D.
 40.033779  	-105.250051	"Miller"	# Todd
-35.5635277	-97.5437221	"Fries"		# Todd
 40.115		-88.02		"Rahn"		# Dale
 40.7517		-73.9942	"Shalayeff"	# Michael
 40.85		-96.75		"Phillips"	# James, OpenBSD journal
@@ -33,6 +33,7 @@
 42.3813		-71.1283	"Janzen"	# Paul
 42.49538	-82.89954	"Holland"	# Nick
 43.1342		-78.966048	"Harnett"	# Daniel L.
+43.30		5.37		"Anriot"	# Alexandre
 43.5826		1.4376		"Herrb"		# Matthieu
 43.633          -79.500         "Smith"         # Brad
 43.70		-79.42		"Westerback"	# Ken
@@ -54,6 +55,7 @@
 49.22		-123.10		"Hugh"		# Hugh
 49.28		-123.12		"McBride"	# Ryan Thomas
 49.313446	-123.063975	"Coulter"	# Michael
+49.4601		11.0669		"von Gernler"	# Alexander
 49.48		8.42		"Weisgerber"	# Christian
 49.52		8.39		"Sturm"		# Nikolay
 48.76472	9.17027		"Buehler"	# Philipp
