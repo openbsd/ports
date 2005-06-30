@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1 2005/06/30 04:46:05 avsm Exp $
+--- Makefile.orig	Wed Jun 29 21:19:49 2005
++++ Makefile	Wed Jun 29 21:30:05 2005
+@@ -91,7 +91,7 @@ top:
+ 
+ installopt: install
+ 
+-install: all
++install:
+ 	mkdir -p $(LIBDIR)
+ 	if test -w $(CAMLDIR)/ld.conf \
+         && test `grep -s -c '^$(LIBDIR)$$' $(CAMLDIR)/ld.conf` = 0; then \

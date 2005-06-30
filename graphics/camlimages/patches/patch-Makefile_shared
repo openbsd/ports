@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_shared,v 1.1 2005/06/30 04:46:05 avsm Exp $
+--- Makefile.shared.orig	Wed Jun 29 21:34:07 2005
++++ Makefile.shared	Wed Jun 29 21:34:15 2005
+@@ -44,7 +44,7 @@ $(CMXA): $(CLIB) $(MLOBJS:.cmo=.cmx)
+ clean::
+ 	rm -f *.cm[iox] *.o *.cma *.cmxa *.a *.so *~
+ 
+-install:: all
++install::
+ 	- mkdir -p $(LIBDIR)
+ 	- cp -p *.mli *.cm[iox] *.o *.cma *.cmxa *.a *.so $(LIBDIR)
+ 

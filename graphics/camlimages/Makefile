@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/05/28 19:49:18 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2005/06/30 04:46:05 avsm Exp $
 
 COMMENT=	"image manipulation functions for Objective Caml"
 CATEGORIES=	graphics
@@ -36,7 +36,7 @@ LIB_DEPENDS=	jpeg.62::graphics/jpeg tiff.36::graphics/tiff \
 RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu ::x11/lablgtk
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,opt,:S,No,,}
+ALL_TARGET=	byt ${MODOCAML_NATIVE:S,Yes,opt,:S,No,,}
 
 pre-install:
 	${INSTALL_DATA_DIR} ${OCAML_LIBDIR}
