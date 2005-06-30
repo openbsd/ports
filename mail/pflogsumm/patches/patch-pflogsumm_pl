@@ -1,4 +1,4 @@
-$OpenBSD: patch-pflogsumm_pl,v 1.3 2004/01/28 10:27:20 jakob Exp $
+$OpenBSD: patch-pflogsumm_pl,v 1.4 2005/06/30 13:22:23 jakob Exp $
 --- pflogsumm.pl.orig	2004-01-28 13:38:53.000000000 +1000
 +++ pflogsumm.pl	2004-01-28 13:39:29.000000000 +1000
 @@ -4,13 +4,13 @@ eval 'exec perl -S $0 "$@"'
@@ -63,3 +63,12 @@ $OpenBSD: patch-pflogsumm_pl,v 1.3 2004/01/28 10:27:20 jakob Exp $
  $usageMsg =
      "usage: $progName -[eq] [-d <today|yesterday>] [-h <cnt>] [-u <cnt>]
         [--verp_mung[=<n>]] [--verbose_msg_detail] [--iso_date_time]
+@@ -696,7 +696,7 @@ while(<>) {
+ 	    }
+ 	}
+ 	elsif((($addr, $relay, $delay, $status, $toRmdr) = $logRmdr =~
+-		/to=<([^>]*)>, (?:orig_to=<[^>]*>, )?relay=([^,]+), delay=([^,]+), status=(\S+)(.*)$/o) >= 4)
++		/to=<([^>]*)>, (?:orig_to=<[^>]*>, )?relay=([^,]+), delay=([^,]+), (?:dsn=\d+\.\d+\.\d+, )?status=(\S+)(.*)$/o) >= 4)
+ 	{
+ 
+ 	    if($opts{'m'} && $addr =~ /^(.*!)*([^!]+)!([^!@]+)@([^\.]+)$/o) {
