@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/23 16:42:41 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/07/01 06:55:50 xsa Exp $
 bin/charm
 lib/python${MODPY_VERSION}/site-packages/ljcharm.py
 lib/python${MODPY_VERSION}/site-packages/ljcharm.pyc
+@man man/man1/charm.1
+@man man/man5/charmrc.5
 share/doc/charm/
 share/doc/charm/README
+share/doc/charm/charm.html
 share/examples/charm/
 share/examples/charm/sample.charmrc

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/23 16:42:41 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2005/07/01 06:55:49 xsa Exp $
 
 COMMENT=	"LiveJournal client for Python"
 
-DISTNAME=	charm-1.5.0
+DISTNAME=	charm-1.6.0
 CATEGORIES=	net news
 
 HOMEPAGE=	http://ljcharm.sourceforge.net/
@@ -22,12 +22,14 @@ MODULES=	lang/python
 NO_REGRESS=	Yes
 
 DOCSDIR=	${PREFIX}/share/doc/charm
-EXAMPLESDIR=	${PREFIX}/share/examples/charm
+
+post-configure:
+	@perl -pi -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/charm.1 \
+		${WRKSRC}/charmrc.5
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.charm ${DOCSDIR}/README
-	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample.charmrc ${EXAMPLESDIR}
-
+	
 .include <bsd.port.mk>

@@ -1,0 +1,12 @@
+$OpenBSD: patch-charm_1,v 1.1 2005/07/01 06:55:49 xsa Exp $
+--- charm.1.orig	Mon Jun 13 23:20:22 2005
++++ charm.1	Fri Jul  1 08:44:16 2005
+@@ -245,7 +245,7 @@ The default location of the charmrc file
+ 
+ .SH MANUAL
+ There is a full manual for Charm. It can usually be found in
+-.B /usr/share/doc/charm/charm.html
++.B %%PREFIX%%/share/doc/charm/charm.html
+ 
+ .SH SEE ALSO
+ charmrc(5)
