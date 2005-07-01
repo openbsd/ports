@@ -1,9 +1,9 @@
-# $OpenBSD: OpenBSD-markers,v 1.54 2005/06/30 19:10:28 aanriot Exp $
+# $OpenBSD: OpenBSD-markers,v 1.55 2005/07/01 09:31:11 grunk Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -37.457132	144.580589	"Miller"	# Damien
 -33.536466	151.093514	"Stewart"	# Don
--34.67  	-58.50 		"Schwindt"	# Federico G.
+-34.67		-58.50		"Schwindt"	# Federico G.
 -33.81		151.15		"Tucker"	# Darren
 -27.48		153.20		"Leonard"	# David
 -22.88		-43.28		"Martelletto"	# Pedro
@@ -11,7 +11,7 @@
 32.857736	-117.211507	"Grimes"	# Mark
 33.700077	-117.887943	"Peel"		# Jason
 35.5635277	-97.5437221	"Fries"		# Todd
-35.67  		139.75 		"Itojun"	# Jun-ichiro
+35.67		139.75		"Itojun"	# Jun-ichiro
 36.134		-86.70		"Krause"	# David
 37.515049	-122.339528	"Hyman"		# Marco S.
 38.6842		-120.987	"Matteo"	# Marc
@@ -19,7 +19,7 @@
 38.9693		-77.3863	"Wright"	# Jason L.
 39.96		-83		"Jackson"	# Eric
 40		-75.10		"Keromytis"	# Angelos D.
-40.033779  	-105.250051	"Miller"	# Todd
+40.033779	-105.250051	"Miller"	# Todd
 40.115		-88.02		"Rahn"		# Dale
 40.7517		-73.9942	"Shalayeff"	# Michael
 40.85		-96.75		"Phillips"	# James, OpenBSD journal
@@ -28,20 +28,20 @@
 42.150962	-88.030436	"Luff"		# Jolan
 42.2731		-83.782		"Campbell"	# Aaron
 42.2775		-83.754167	"Provos"	# Niels
-42.280556	-83.754722 	"Rees"		# Jim
+42.280556	-83.754722	"Rees"		# Jim
 42.281336	-83.738587	"Turan"		# Chris
 42.3813		-71.1283	"Janzen"	# Paul
 42.49538	-82.89954	"Holland"	# Nick
 43.1342		-78.966048	"Harnett"	# Daniel L.
 43.30		5.37		"Anriot"	# Alexandre
 43.5826		1.4376		"Herrb"		# Matthieu
-43.633          -79.500         "Smith"         # Brad
+43.633		-79.500		"Smith"		# Brad
 43.70		-79.42		"Westerback"	# Ken
-43.9183		-78.6838	"Bertrand" 	# Louis
+43.9183		-78.6838	"Bertrand"	# Louis
 45.29		-73.34		"Lebel"		# David
 45.4745		-73.6556	"Sauve-Frankel" # Mathieu
 45.5		-73.5		"Cote"		# Yannick
-45.78 		3.08		"Vallat"	# Miodrag
+45.78		3.08		"Vallat"	# Miodrag
 47.25		-61.48		"Cobb"		# Wilbern
 47.50		7.60		"Hartmeier"	# Daniel
 47.53		21.63		"Nagy"		# Robert
