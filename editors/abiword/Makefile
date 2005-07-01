@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2005/06/30 04:52:23 fgsch Exp $
+# $OpenBSD: Makefile,v 1.41 2005/07/01 17:46:02 aanriot Exp $
 
 COMMENT=	"open-source, cross-platform WYSIWYG word processor"
 
@@ -57,5 +57,16 @@ WRKSRC=		${WRKDIST}/abi
 
 pre-configure:
 	@perl -pi -e "s|libpng12|libpng|g" ${WRKSRC}/configure
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/abiword/Manual
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/abiword/Tutorials
+
+	${INSTALL_MAN} ${WRKDIST}/abiword-docs/man/abiword.1 \
+		${PREFIX}/man/man1/
+	${INSTALL_DATA} ${WRKDIST}/abiword-docs/Manual/en/Abiword_Manual.abw \
+		${PREFIX}/share/doc/abiword/Manual
+	cd ${WRKDIST}/abiword-docs/Tutorials/ && $(TAR) cf - jmp klw | \
+		$(TAR) xf - -C ${PREFIX}/share/doc/abiword/Tutorials/
 
 .include <bsd.port.mk>
