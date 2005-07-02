@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2005/02/24 13:20:41 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2005/07/02 05:46:25 sturm Exp $
 
-NOT_FOR_ARCHS=		sparc64
+ONLY_FOR_ARCHS=		i386
 
 COMMENT=		Prolog compiler
 
 DISTNAME=		gprolog-1.2.16
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		lang
 
 HOMEPAGE=		http://gprolog.inria.fr/
@@ -19,8 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 MASTER_SITES=		${MASTER_SITE_GNU:=gprolog/}
-
-#USE_GMAKE=		Yes
 
 AUTOCONF_VERSION=	2.52
 CONFIGURE_STYLE=	autoconf dest no-autoheader
