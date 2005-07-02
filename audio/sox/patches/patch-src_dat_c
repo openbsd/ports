@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_dat_c,v 1.1 2005/07/02 16:27:56 naddy Exp $
+--- src/dat.c.orig	Tue Sep 28 04:33:09 2004
++++ src/dat.c	Fri Jun 24 11:15:45 2005
+@@ -85,7 +85,7 @@ int st_datstartwrite(ft_t ft)
+    srate = ft->info.rate;
+    dat->deltat = 1.0 / srate;
+    rate = ft->info.rate;
+-   sprintf(s,"; Sample Rate %ld\015\n",rate);
++   snprintf(s, sizeof(s), "; Sample Rate %ld\015\n", rate);
+    st_writes(ft, s);
+ 
+    return (ST_SUCCESS);
+@@ -130,7 +130,8 @@ st_ssize_t st_datwrite(ft_t ft, st_sampl
+     while(done < nsamp) {
+        sampval = *buf++ ;
+        sampval = sampval / 2.147483648e9;  /* normalize to approx 1.0 */
+-       sprintf(s," %15.8g  %15.8g \015\n",dat->timevalue,sampval);
++       snprintf(s, sizeof(s), " %15.8g  %15.8g \015\n",
++                dat->timevalue, sampval);
+        st_writes(ft, s);
+        dat->timevalue += dat->deltat;
+        done++;
