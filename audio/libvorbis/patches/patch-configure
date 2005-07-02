@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2005/01/30 17:12:02 naddy Exp $
---- configure.orig	Tue Sep 21 01:22:05 2004
-+++ configure	Mon Jan 24 18:06:12 2005
-@@ -2040,9 +2040,9 @@ fi
+$OpenBSD: patch-configure,v 1.9 2005/07/02 19:38:45 naddy Exp $
+--- configure.orig	Tue Jun 21 15:52:53 2005
++++ configure	Sat Jul  2 21:31:35 2005
+@@ -2052,9 +2052,9 @@ fi
  
  
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-configure,v 1.8 2005/01/30 17:12:02 naddy Exp $
  VF_LIB_CURRENT=4
  VF_LIB_REVISION=0
  VF_LIB_AGE=1
-@@ -19245,7 +19245,7 @@ if test -z "$GCC"; then
+@@ -19257,7 +19257,7 @@ if test -z "$GCC"; then
  		PROFILE="-v -xpg -g -xO4 -fast -native -fsimple -xcg92 -Dsuncc" ;;
  	*)
  		DEBUG="-g"
@@ -22,7 +22,7 @@ $OpenBSD: patch-configure,v 1.8 2005/01/30 17:12:02 naddy Exp $
  		PROFILE="-g -p" ;;
          esac
  else
-@@ -19358,9 +19358,9 @@ echo "$as_me: WARNING:                  
+@@ -19370,9 +19370,9 @@ echo "$as_me: WARNING:                  
  		CFLAGS="-DDARWIN -fno-common -force_cpusubtype_ALL -Wall -g -O4 -ffast-math -fsigned-char"
  		PROFILE="-DDARWIN -fno-common -force_cpusubtype_ALL -Wall -g -pg -O4 -ffast-math -fsigned-char";;
  	*)
