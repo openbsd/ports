@@ -3,5 +3,6 @@ any number of simultaneously playing channels of 16 bit stereo audio,
 plus a single channel of music, mixed by the popular MikMod MOD, Ogg
 Vorbis, Timidity MIDI, and SMPEG MP3 libraries.
 
-NOTE:  On big endian systems, SDL_mixer outputs mp3 and libmikmod files
-       in the wrong byte order.  This is being investigated.
+NOTE:  On big endian systems, SDL_mixer appears to output mp3 and
+       libmikmod files in the wrong byte order which results in scratchy
+       noise.
