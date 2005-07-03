@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2005/06/30 04:47:25 aanriot Exp $
+# $OpenBSD: Makefile,v 1.21 2005/07/03 01:28:58 brad Exp $
 
 COMMENT=	"ascii art library"
 
@@ -10,6 +10,7 @@ HOMEPAGE=	http://aa-project.sourceforge.net/aalib/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
