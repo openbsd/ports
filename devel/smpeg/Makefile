@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2004/11/24 00:11:04 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2005/07/03 21:35:23 jolan Exp $
 
 COMMENT=	"mpeg video player library with sound support"
 
-VERSION=	0.4.4
-DISTNAME=	smpeg-${VERSION}
+DISTNAME=	smpeg-0.4.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel graphics
 
 HOMEPAGE=       http://www.lokigames.com/development/smpeg.php3
@@ -14,14 +14,13 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m pthread usbhid
+WANTLIB=		X11 Xext c m pthread usbhid
 
 MASTER_SITES=	ftp://ftp.lokigames.com/pub/open-source/smpeg/ \
 		ftp://sunsite.auc.dk/pub/os/linux/loki/open-source/smpeg/ \
 		ftp://snuffleupagus.animearchive.org/loki/open-source/smpeg/
 
-LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
-		SDL::devel/sdl
+LIB_DEPENDS=	SDL::devel/sdl
 
 USE_X11=	Yes
 
@@ -29,7 +28,8 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV+=	 LDFLAGS="-L${X11BASE}/lib"
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		 --disable-opengl-player
+		 --disable-opengl-player \
+		 --disable-gtk-player
 
 .include <bsd.own.mk>
 USE_GCC3?=No
