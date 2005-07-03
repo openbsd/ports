@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2005/04/23 15:29:45 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2005/07/03 22:42:20 alek Exp $
 
 COMMENT=	"GNU version of the traditional tar archiver"
 
 DISTNAME=	tar-1.15.1
-PKGNAME=	g${DISTNAME}p1
+PKGNAME=	g${DISTNAME}p2
 CATEGORIES=	archivers
 HOMEPAGE=	http://www.gnu.org/software/tar/
 
@@ -35,6 +35,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mstatic}
 LDSTATIC=	-static
+MODULES=
 .else
 LDSTATIC=
 WANTLIB=	c
