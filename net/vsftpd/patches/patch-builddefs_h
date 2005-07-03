@@ -1,0 +1,16 @@
+$OpenBSD: patch-builddefs_h,v 1.1 2005/07/03 18:06:37 aanriot Exp $
+--- builddefs.h.orig	Sat Mar 19 18:50:20 2005
++++ builddefs.h	Sun Jul  3 11:26:28 2005
+@@ -1,9 +1,9 @@
+ #ifndef VSF_BUILDDEFS_H
+ #define VSF_BUILDDEFS_H
+ 
+-#undef VSF_BUILD_TCPWRAPPERS
+-#define VSF_BUILD_PAM
+-#undef VSF_BUILD_SSL
++#define VSF_BUILD_TCPWRAPPERS
++#undef VSF_BUILD_PAM
++#define VSF_BUILD_SSL
+ 
+ #endif /* VSF_BUILDDEFS_H */
+ 

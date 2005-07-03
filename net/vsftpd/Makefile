@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.13 2005/06/28 17:46:43 aanriot Exp $
+# $OpenBSD: Makefile,v 1.14 2005/07/03 18:06:37 aanriot Exp $
 
 COMMENT=		"Ftp daemon which aims to be secure"
 
 VERSION=		2.0.3
 DISTNAME=		vsftpd-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 
 HOMEPAGE=		http://vsftpd.beasts.org/
 
 MAINTAINER=		Alexandre Anriot <aanriot@openbsd.org>
 
-# GPL2
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c util 
+WANTLIB=		c crypto util ssl wrap
 
 MASTER_SITES=		ftp://vsftpd.beasts.org/users/cevans/
 
