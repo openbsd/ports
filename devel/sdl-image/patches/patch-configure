@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2005/07/03 21:35:57 jolan Exp $
+--- configure.orig	Wed Dec 15 22:41:33 2004
++++ configure	Sun Jul  3 15:45:56 2005
+@@ -21138,7 +21138,7 @@ if test "${ac_cv_lib_tiff_TIFFClientOpen
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ltiff  $LIBS"
++LIBS="-ltiff -ljpeg -lz  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -21202,7 +21202,7 @@ fi
+ 
+     if test x$have_libtiff = xyes; then
+         CFLAGS="$CFLAGS -DLOAD_TIF"
+-        IMG_LIBS="$IMG_LIBS -ltiff"
++        IMG_LIBS="$IMG_LIBS -ltiff -ljpeg -lz"
+     else
+         { echo "$as_me:$LINENO: WARNING:
+ *** Unable to find Tiff library (ftp://ftp.sgi.com/graphics/tiff/)

@@ -1,12 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2003/04/03 23:40:05 margarida Exp $
---- Makefile.in.orig	Fri Mar  7 00:27:16 2003
-+++ Makefile.in	Mon Mar 10 05:20:29 2003
-@@ -99,7 +99,7 @@ libSDL_image_la_SOURCES =  	IMG.c				IMG
- EXTRA_DIST =  	CHANGES				VisualC.zip			PBProjects.tar.gz		MPWmake.sea.bin			IMG_xxx.c			SDL_image.spec			SDL_image.spec.in		autogen.sh
+$OpenBSD: patch-Makefile_in,v 1.5 2005/07/03 21:35:57 jolan Exp $
+--- Makefile.in.orig	Thu Dec 16 00:32:18 2004
++++ Makefile.in	Sun Jul  3 15:39:31 2005
+@@ -255,7 +255,6 @@ EXTRA_DIST = \
  
- 
--libSDL_image_la_LDFLAGS =  	-release $(LT_RELEASE)		-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libSDL_image_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ libSDL_image_la_LDFLAGS = \
+ 	-no-undefined		\
+-	-release $(LT_RELEASE)	\
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
  
  libSDL_image_la_LIBADD = @IMG_LIBS@
- 
