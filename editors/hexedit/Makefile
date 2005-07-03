@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2004/11/24 11:08:03 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2005/07/03 01:22:22 brad Exp $
 
 COMMENT=	"view and edit files in hexadecimal or ASCII"
 
-DISTNAME=	hexedit-1.2.2
+DISTNAME=	hexedit-1.2.10
 CATEGORIES=	editors
 MASTER_SITES=	http://www.chez.com/prigaux/	\
 		http://merd.net/pixel/
@@ -12,6 +12,7 @@ HOMEPAGE=	http://www.chez.com/prigaux/hexedit.html
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -21,12 +22,6 @@ WANTLIB=		c curses
 CONFIGURE_STYLE= gnu dest
 NO_REGRESS=	Yes
 
-DOCS=	COPYING TODO Changes
-
 WRKDIST=	${WRKDIR}/hexedit
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hexedit
-	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/hexedit
 
 .include <bsd.port.mk>

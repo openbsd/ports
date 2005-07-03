@@ -1,0 +1,24 @@
+$OpenBSD: patch-hexedit_h,v 1.1 2005/07/03 01:24:09 brad Exp $
+--- hexedit.h.orig	Sat Jul  2 21:14:58 2005
++++ hexedit.h	Sat Jul  2 21:15:31 2005
+@@ -5,6 +5,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <sys/param.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #if HAVE_FCNTL_H
+@@ -42,8 +43,12 @@
+ #define ALT(c) ((c) | 0xa0)
+ #define DIE(M) { fprintf(stderr, M, progName); exit(1); }
+ #define FREE(p) if (p) free(p)
++#ifndef MIN
+ #define MIN(a, b) ((a) < (b) ? (a) : (b))
++#endif
++#ifndef MAX
+ #define MAX(a, b) ((a) > (b) ? (a) : (b))
++#endif
+ #define NORMAL A_NORMAL
+ #define MARKED A_REVERSE
+ #define MODIFIED A_BOLD
