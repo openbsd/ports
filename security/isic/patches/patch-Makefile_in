@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2005/05/24 00:16:28 mjc Exp $
---- Makefile.in.orig	Sat May 21 22:26:05 2005
-+++ Makefile.in	Sat May 21 22:26:17 2005
+$OpenBSD: patch-Makefile_in,v 1.2 2005/07/03 18:02:12 aanriot Exp $
+--- Makefile.in.orig	Sat Nov  6 21:39:55 2004
++++ Makefile.in	Sat Jul  2 20:00:06 2005
 @@ -5,9 +5,9 @@
  PREFIX ?= /usr/local
  
@@ -14,3 +14,35 @@ $OpenBSD: patch-Makefile_in,v 1.1 2005/05/24 00:16:28 mjc Exp $
  LDFLAGS	= @LDFLAGS@
  
  INSTALL	= @INSTALL@
+@@ -20,19 +20,19 @@ BINS	= isic tcpsic udpsic icmpsic esic
+ all: $(BINS)
+ 
+ isic:	isic.c isic.h
+-	gcc -o isic isic.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
++	$(CC) -o isic isic.c $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
+ 
+ tcpsic:	tcpsic.c isic.h
+-	gcc -o tcpsic tcpsic.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
++	$(CC) -o tcpsic tcpsic.c $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
+ 
+ udpsic:	udpsic.c isic.h
+-	gcc -o udpsic udpsic.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
++	$(CC) -o udpsic udpsic.c $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
+ 
+ icmpsic: icmpsic.c isic.h
+-	gcc -o icmpsic icmpsic.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
++	$(CC) -o icmpsic icmpsic.c $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
+ 
+ esic: esic.c isic.h
+-	gcc -o esic esic.c -Wall -W $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
++	$(CC) -o esic esic.c $(CFLAGS) $(DEFS) $(LIBS) $(LDFLAGS)
+ 
+ realclean: distclean
+ distclean: clean
+@@ -48,5 +48,4 @@ package: distclean
+ 	  tar -czvf isic-$(VERSION).tgz isic-$(VERSION)/* )
+ 
+ install: $(BINS)
+-	$(INSTALL) -m 0755 -d ${PREFIX}/bin
+-	$(INSTALL) -m 0755 -c $(BINS) ${PREFIX}/bin
++	$(BSD_INSTALL_PROGRAM) $(BINS) ${PREFIX}/bin
