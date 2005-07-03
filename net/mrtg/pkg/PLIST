@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2004/09/15 18:17:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2005/07/03 00:53:18 brad Exp $
 bin/cfgmaker
 bin/indexmaker
 bin/mrtg
@@ -19,6 +19,7 @@ libdata/perl5/site_perl/locales_mrtg.pm
 @man man/man1/mrtg-logfile.1
 @man man/man1/mrtg-mibhelp.1
 @man man/man1/mrtg-nt-guide.1
+@man man/man1/mrtg-nw-guide.1
 @man man/man1/mrtg-reference.1
 @man man/man1/mrtg-rrd.1
 @man man/man1/mrtg-squid.1
@@ -59,6 +60,9 @@ share/doc/mrtg/mrtg-mibhelp.txt
 share/doc/mrtg/mrtg-nt-guide.html
 share/doc/mrtg/mrtg-nt-guide.pod
 share/doc/mrtg/mrtg-nt-guide.txt
+share/doc/mrtg/mrtg-nw-guide.html
+share/doc/mrtg/mrtg-nw-guide.pod
+share/doc/mrtg/mrtg-nw-guide.txt
 share/doc/mrtg/mrtg-r.png
 share/doc/mrtg/mrtg-reference.html
 share/doc/mrtg/mrtg-reference.pod
