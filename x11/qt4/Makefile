@@ -1,4 +1,4 @@
-#/ $OpenBSD: Makefile,v 1.4 2005/07/04 21:23:06 espie Exp $
+#/ $OpenBSD: Makefile,v 1.5 2005/07/04 21:44:04 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -12,9 +12,9 @@ PKGNAME=		qt4-${VERSION}
 PKGNAME-mysql=		qt4-mysql-${VERSION}
 PKGNAME-postgresql=	qt4-postgresql-${VERSION}
 PKGNAME-examples=	qt4-examples-${VERSION}
-PKGNAME-debug=		qt4-debug-${VERSION}
-FULLPKGNAME=		qt4-${VERSION}p1
-FULLPKGNAME-html=	qt4-html-${VERSION}p1
+PKGNAME-debug=		qt4-debug-${VERSION}p2
+FULLPKGNAME=		qt4-${VERSION}p2
+FULLPKGNAME-html=	qt4-html-${VERSION}p2
 
 VERSION=	4.0.0
 DISTNAME=	qt-x11-opensource-desktop-4.0.0
@@ -195,9 +195,8 @@ post-install:
 	    rm $$i.bak; \
 	done
 .for l v in ${LIBRARIES}
-	if test -f ${QT_LIBDIR}/lib$l.so.$v; then \
-		ln -sf qt4/lib$l.so.$v ${PREFIX}/lib; \
-	fi
+	mv -f ${QT_LIBDIR}/lib$l.so.$v.0 ${QT_LIBDIR}/lib$l.so.$v
+	ln -sf qt4/lib$l.so.$v ${PREFIX}/lib
 .endfor
 # cleanup
 	cd ${PREFIX}/lib/qt4 && ln -sf . lib
