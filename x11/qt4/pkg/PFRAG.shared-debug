@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-debug,v 1.1.1.1 2005/07/04 11:10:15 espie Exp $
+@comment $OpenBSD: PFRAG.shared-debug,v 1.2 2005/07/04 21:16:18 espie Exp $
 @lib lib/libQt3Support_debug.so.4.0
 @lib lib/libQtCore_debug.so.4.0
 @lib lib/libQtDesignerComponents_debug.so.4.0
@@ -8,17 +8,24 @@
 @lib lib/libQtOpenGL_debug.so.4.0
 @lib lib/libQtSql_debug.so.4.0
 @lib lib/libQtXml_debug.so.4.0
+@comment lib/qt4/libQt3Support_debug.so
 @lib lib/qt4/libQt3Support_debug.so.4.0
+@comment lib/qt4/libQtCore_debug.so
 @lib lib/qt4/libQtCore_debug.so.4.0
+@comment lib/qt4/libQtDesignerComponents_debug.so
 @lib lib/qt4/libQtDesignerComponents_debug.so.4.0
+@comment lib/qt4/libQtDesigner_debug.so
 @lib lib/qt4/libQtDesigner_debug.so.4.0
+@comment lib/qt4/libQtGui_debug.so
 @lib lib/qt4/libQtGui_debug.so.4.0
+@comment lib/qt4/libQtNetwork_debug.so
 @lib lib/qt4/libQtNetwork_debug.so.4.0
+@comment lib/qt4/libQtOpenGL_debug.so
 @lib lib/qt4/libQtOpenGL_debug.so.4.0
+@comment lib/qt4/libQtSql_debug.so
 @lib lib/qt4/libQtSql_debug.so.4.0
+@comment lib/qt4/libQtXml_debug.so
 @lib lib/qt4/libQtXml_debug.so.4.0
-lib/qt4/plugins/accessible/libqtcompatwidgets_debug.so
-lib/qt4/plugins/accessible/libqtwidgets_debug.so
 lib/qt4/plugins/codecs/libqcncodecs_debug.so
 lib/qt4/plugins/codecs/libqjpcodecs_debug.so
 lib/qt4/plugins/codecs/libqkrcodecs_debug.so

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/07/04 11:32:50 espie Exp $
+#/ $OpenBSD: Makefile,v 1.3 2005/07/04 21:16:18 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -13,8 +13,8 @@ PKGNAME-mysql=		qt4-mysql-${VERSION}
 PKGNAME-postgresql=	qt4-postgresql-${VERSION}
 PKGNAME-examples=	qt4-examples-${VERSION}
 PKGNAME-debug=		qt4-debug-${VERSION}
-FULLPKGNAME=		qt4-${VERSION}p0
-FULLPKGNAME-html=	qt4-html-${VERSION}p0
+FULLPKGNAME=		qt4-${VERSION}p1
+FULLPKGNAME-html=	qt4-html-${VERSION}p1
 
 VERSION=	4.0.0
 DISTNAME=	qt-x11-opensource-desktop-4.0.0
@@ -68,8 +68,10 @@ CONFIGURE_ARGS=	-qt-gif -system-libpng -system-libjpeg -system-zlib \
 
 
 CONFIGURE_ARGS+=	-prefix ${QT_LIBDIR}
-CONFIGURE_ARGS+=	-plugindir ${QT_PLUGINSDIR}
+#CONFIGURE_ARGS+=	-bindir ${QT_BINDIR}
+CONFIGURE_ARGS+=	-headerdir ${QT_INCDIR}
 CONFIGURE_ARGS+=	-docdir ${QT_DOC}
+#CONFIGURE_ARGS+=	-plugindir ${QT_PLUGINSDIR}
 CONFIGURE_ARGS+=	-sysconfdir ${SYSCONFDIR}
 
 CONFIGURE_ENV=	QTDIR="${WRKSRC}" 
@@ -121,9 +123,8 @@ WANTLIB=	${myWANTLIB}
 PKG_ARCH=	*
 .endif
 
-QT_INCDIR=	${PREFIX}/include/X11/qt4
-TRUEDIR=	${TRUEPREFIX}/lib/qt4
 QT_LIBDIR=	${PREFIX}/lib/qt4
+QT_INCDIR=	${PREFIX}/include/X11/qt4
 QT_EXAMPLES=	${QT_LIBDIR}/examples
 QT_DOC=		${PREFIX}/share/doc/qt4
 QT_PLUGINSDIR=	${QT_LIBDIR}/plugins
@@ -152,72 +153,54 @@ LIBRARIES+=	Qt3Support_debug 4.0 QtCore_debug 4.0 \
 		QtOpenGL_debug 4.0 QtSql_debug 4.0 \
 		QtXml_debug 4.0
 
-INCDIRS=	Qt Qt/arch QtCore QtCore/arch QtXml QtGui QtSql \
-		QtNetwork QtOpenGL Qt3Support QtDesigner
-
 QMAKE=${WRKBUILD}/bin/qmake
 
 
 FAKE_FLAGS=INSTALL_ROOT=${WRKINST}
 
-do-install:
-	# libraries
-	${INSTALL_DATA_DIR} ${QT_LIBDIR} ${QT_PKGCFGDIR}
-.for l v in ${LIBRARIES}
-	@echo -n "Install lib $l $v"
-	@if test -f ${WRKBUILD}/lib/lib$l.a; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/lib$l.a ${QT_LIBDIR}; \
-	 echo -n " unshared"; \
-	fi
-	@if test -f ${WRKBUILD}/lib/lib$l.so.$v; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/lib$l.so.$v ${QT_LIBDIR}; \
-	 ln -sf qt4/lib$l.so.$v ${PREFIX}/lib; \
-	 echo -n " shared"; \
-	fi
-	@if test -f ${WRKBUILD}/lib/$l.pc; then \
-	    sed -e 's,-L${WRKBUILD}/lib,,g' <${WRKBUILD}/lib/$l.pc >${QT_PKGCFGDIR}/$l.pc; \
-	    echo -n " cfg"; \
-	fi
-	@echo
+DIRECTORIES= src/corelib src/gui src/network src/opengl src/qt3support src/sql src/xml \
+	src/plugins/accessible/compat \
+	src/plugins/accessible/widgets \
+	src/plugins/codecs/cn \
+	src/plugins/codecs/jp \
+	src/plugins/codecs/kr \
+	src/plugins/codecs/tw \
+	src/plugins/imageformats/jpeg \
+	src/plugins/sqldrivers/mysql \
+	src/plugins/sqldrivers/psql \
+	tools/designer/src/components/lib \
+	tools/designer/src/lib \
+	tools/designer/src/plugins/widgets
+
+post-install:
+	# extra debugging stuff
+.for i in ${DIRECTORIES}
+	cd ${WRKBUILD}/$i && ${MAKE_PROGRAM} LOCALBASE=${LOCALBASE} ${FAKE_FLAGS} debug-install
 .endfor
-	# includes
-	${INSTALL_DATA_DIR} ${QT_INCDIR}
-.for i in ${INCDIRS}
-	${INSTALL_DATA_DIR} ${QT_INCDIR}/$i
-.endfor
-	cd ${WRKSRC}/include; find .  -type f|while read i; do \
-		${INSTALL_DATA} $$i ${QT_INCDIR}/`dirname $$i`; \
-	done
+	# extra doc
+	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${QT_DOC}
 	# programs
 	${INSTALL_PROGRAM_DIR} ${QT_BINDIR} 
 .for p in ${PROGRAMS4} 
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/$p ${QT_BINDIR}/$p
+	strip ${PREFIX}/lib/qt4/bin/$p
 	@ln -sf ${TRUEPREFIX}/lib/qt4/bin/$p ${PREFIX}/bin/$p4
 .endfor
 .for p in ${PROGRAMS}
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/$p ${QT_BINDIR}/$p
+	strip ${PREFIX}/lib/qt4/bin/$p
 	@ln -sf ${TRUEPREFIX}/lib/qt4/bin/$p ${PREFIX}/bin/$p
 .endfor
-	# data
-	${INSTALL_DATA} ${WRKBUILD}/tools/porting/src/q3porting.xml ${QT_LIBDIR}
-	# documentation
-	${INSTALL_DATA_DIR} ${QT_DOC}/html
-	${INSTALL_DATA_DIR} ${QT_DOC}/html/images
-	${INSTALL_DATA} ${WRKSRC}/doc/html/*.{html,dcf} ${QT_DOC}/html
-	${INSTALL_DATA} ${WRKSRC}/doc/html/images/* ${QT_DOC}/html/images
-	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${QT_DOC}
-	# qmake stuff
-	cp -R ${WRKSRC}/mkspecs ${QT_LIBDIR}/mkspecs
-	# plugins
-	cd ${WRKBUILD}/plugins; find .  -type f|while read i; do \
-		j=`dirname $$i`; \
-		${INSTALL_DATA_DIR} ${QT_PLUGINSDIR}/$$j; \
-		${INSTALL_DATA} $$i ${QT_PLUGINSDIR}/$$j; \
+	# fix pkgconfig stuff
+	@for i in ${QT_PKGCFGDIR}/*.pc; do \
+	    perl -pi.bak -e 's,-L${WRKBUILD}/lib,,g;' $$i; \
+	    rm $$i.bak; \
 	done
-	# examples and demos
-	cd ${WRKBUILD}/examples && ${MAKE_PROGRAM}  install INSTALL_ROOT=${WRKINST}
-	cd ${WRKBUILD}/demos && ${MAKE_PROGRAM}  install INSTALL_ROOT=${WRKINST}
+.for l v in ${LIBRARIES}
+	if test -f ${QT_LIBDIR}/lib$l.so.$v; then \
+		ln -sf qt4/lib$l.so.$v ${PREFIX}/lib; \
+	fi
+.endfor
 
+do-install:
 # cleanup
 	cd ${PREFIX}/lib/qt4 && ln -sf . lib
 	cd ${PREFIX}/lib/qt4 && ln -sf ../../include/X11/qt4 include
