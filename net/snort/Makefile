@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2005/06/29 06:01:38 sturm Exp $
+# $OpenBSD: Makefile,v 1.36 2005/07/04 22:18:51 mjc Exp $
 
 COMMENT=	"highly flexible sniffer/NIDS"
 
 DISTNAME=	snort-2.3.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}/dl/current/
 
@@ -26,7 +27,7 @@ FLAVORS=	postgresql mysql smbalert flexresp
 FLAVOR?=	
 
 .if ${FLAVOR:L:Mflexresp}
-LIB_DEPENDS+=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet
+LIB_DEPENDS+=	lib/libnet-1.0/net.=0:libnet-1.0*:net/libnet/1.0
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+= --enable-flexresp \
 		--with-libnet-includes=${LOCALBASE}/include/libnet-1.0 \
