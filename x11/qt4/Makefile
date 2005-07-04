@@ -1,4 +1,4 @@
-#/ $OpenBSD: Makefile,v 1.3 2005/07/04 21:16:18 espie Exp $
+#/ $OpenBSD: Makefile,v 1.4 2005/07/04 21:23:06 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -199,8 +199,6 @@ post-install:
 		ln -sf qt4/lib$l.so.$v ${PREFIX}/lib; \
 	fi
 .endfor
-
-do-install:
 # cleanup
 	cd ${PREFIX}/lib/qt4 && ln -sf . lib
 	cd ${PREFIX}/lib/qt4 && ln -sf ../../include/X11/qt4 include
