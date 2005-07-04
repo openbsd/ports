@@ -1,0 +1,34 @@
+Qt is a toolkit for building a GUI for X in C++. 
+There are some user documentation files in ${QT_DOC}, but
+the main documentation is in the qt4-html package, 
+or on the web (${HOMEPAGE}).
+
+There is also a qt4-examples package, that contains tutorial, demos
+simple example programs (source + binaries).
+
+There's a debug version of the libraries: qt4-debug.
+
+There are database plugins: qt4-mysql and qt4-postgresql.
+
+People who want to use qt4 to compile applications outside the ports tree
+should note that qt4's installation conforms to OpenBSD habits, not
+TrollTech's recommendations.
+Accordingly:
+- libs are separated from includes.
+- moc is installed as ${PREFIX}/bin/moc4, in order not to conflict 
+  with other qt versions.
+- uic is installed as ${PREFIX}/bin/uic4
+
+Generally, it's just a question of invoking 
+
+env MOC=moc4 UIC=uic4 configure --with-qt-includes=${PREFIX}/include/X11/qt4 
+	--with-qt-libraries=${PREFIX}/lib/qt4
+
+Or to force MOC/UIC in your make/gmake invocation:
+make MOC=moc4 UIC=uic4
+will override the Makefile contents.
+
+Warning: the qt4 library also appears under ${PREFIX}/lib, but you
+*must* make sure your application sees ${PREFIX}/lib/qt4 *first*, because
+${PREFIX}/lib may also contain a later incarnation of Qt, in which case 
+the linker will pick up the most recent library.

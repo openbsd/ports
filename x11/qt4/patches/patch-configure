@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2005/07/04 11:10:15 espie Exp $
+--- configure.orig	Mon Jun 13 12:35:26 2005
++++ configure	Mon Jun 13 12:37:24 2005
+@@ -1016,7 +1016,7 @@ while [ "$#" -gt 0 ]; do
+     v|verbose)
+         if [ "$VAL" = "yes" ]; then
+             if [ "$OPT_VERBOSE" = "$VAL" ]; then            # takes two verboses to turn on qmake debugs
+-                QMAKE_SWITCHES="$QMAKE_SWITCHES -d"
++                : # QMAKE_SWITCHES="$QMAKE_SWITCHES -d"
+             else
+                 OPT_VERBOSE=yes
+             fi
+@@ -1784,7 +1784,7 @@ fi
+ MYSQL_REQ="-lmysqlclient mysql.h"
+ OCI_REQ="-lclntsh oci.h"
+ PSQL_REQ="-lpq libpq-fe.h"
+-ODBC_REQ="-lodbc sql.h sqlext.h"
++ODBC_REQ="-liodbc sql.h sqlext.h"
+ TDS_REQ="-lsybdb sybfront.h sybdb.h"
+ DB2_REQ="-ldb2 sqlcli.h sqlcli1.h"
+ IBASE_REQ="-lgds ibase.h"
