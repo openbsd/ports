@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_porting_src_preprocessorcontrol_cpp,v 1.1 2005/07/04 11:32:50 espie Exp $
+--- tools/porting/src/preprocessorcontrol.cpp.orig	Mon Jul  4 13:30:02 2005
++++ tools/porting/src/preprocessorcontrol.cpp	Mon Jul  4 13:30:07 2005
+@@ -367,7 +367,7 @@ QByteArray defaultDefines =
+ Rpp::DefineMap *defaultMacros(PreprocessorCache &cache)
+ {
+     DefineMap *defineMap = new DefineMap();
+-    //write out defualt macros to a temp file
++    //write out default macros to a temp file
+     QTemporaryFile tempfile;
+     tempfile.open();
+     tempfile.write(defaultDefines);

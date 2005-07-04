@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gui_kernel_qdrag_cpp,v 1.1 2005/07/04 11:32:50 espie Exp $
+--- src/gui/kernel/qdrag.cpp.orig	Mon Jul  4 13:29:47 2005
++++ src/gui/kernel/qdrag.cpp	Mon Jul  4 13:29:52 2005
+@@ -211,7 +211,7 @@ Qt::DropAction QDrag::start(Qt::DropActi
+ 
+ /*!
+     Sets the drag \a cursor for the \a action. This alows you
+-    to overide the defualt native cursors. To revert to using the
++    to overide the default native cursors. To revert to using the
+     native cursor for \a action pass in a null QPixmap as \a cursor.
+     
+     The \a action can only be CopyAction, MoveAction or LinkAction.

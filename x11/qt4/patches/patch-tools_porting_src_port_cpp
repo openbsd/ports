@@ -1,0 +1,26 @@
+$OpenBSD: patch-tools_porting_src_port_cpp,v 1.1 2005/07/04 11:32:50 espie Exp $
+--- tools/porting/src/port.cpp.orig	Mon Jul  4 13:20:47 2005
++++ tools/porting/src/port.cpp	Mon Jul  4 13:21:34 2005
+@@ -130,7 +130,7 @@ int main(int argc, char**argv)
+ {
+     QCoreApplication app(argc, argv);
+     applicationDirPath = app.applicationDirPath();
+-    QString defualtRulesFileName = "q3porting.xml";
++    QString defaultRulesFileName = "q3porting.xml";
+     QStringList inFileNames;
+     QStringList includeSearchDirectories;
+     bool enableCppParsing = true;
+@@ -206,11 +206,11 @@ int main(int argc, char**argv)
+     }
+ 
+     if (rulesFilePath.isEmpty())
+-        rulesFilePath = findRulesFile(defualtRulesFileName);
++        rulesFilePath = findRulesFile(defaultRulesFileName);
+ 
+     //Check if we have a rules file
+     if (!QFile::exists(rulesFilePath)) {
+-        cout << "Error: Could not find the " << defualtRulesFileName.toLocal8Bit().constData() << "rules file: ";
++        cout << "Error: Could not find the " << defaultRulesFileName.toLocal8Bit().constData() << " rules file: ";
+         cout << "Please try specifying the file with the "
+         << rulesFileOption.argument.toLocal8Bit().constData() << " option" << endl;
+         return 0;

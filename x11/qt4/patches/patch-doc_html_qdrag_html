@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_html_qdrag_html,v 1.1 2005/07/04 11:32:50 espie Exp $
+--- doc/html/qdrag.html.orig	Mon Jul  4 13:29:14 2005
++++ doc/html/qdrag.html	Mon Jul  4 13:29:20 2005
+@@ -93,7 +93,7 @@ body { background: #ffffff; color: black
+ <h3 class="fn"><a name="pixmap"></a><a href="qpixmap.html">QPixmap</a> QDrag::pixmap () const</h3>
+ <p>Returns the pixmap used to represent the data in a drag and drop operation.</p>
+ <h3 class="fn"><a name="setDragCursor"></a>void QDrag::setDragCursor ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>cursor</i>, <a href="qt.html#DropAction-enum">Qt::DropAction</a> <i>action</i> )</h3>
+-<p>Sets the drag <i>cursor</i> for the <i>action</i>. This alows you to overide the defualt native cursors. To revert to using the native cursor for <i>action</i> pass in a null <a href="qpixmap.html">QPixmap</a> as <i>cursor</i>.</p>
++<p>Sets the drag <i>cursor</i> for the <i>action</i>. This alows you to overide the default native cursors. To revert to using the native cursor for <i>action</i> pass in a null <a href="qpixmap.html">QPixmap</a> as <i>cursor</i>.</p>
+ <p>The <i>action</i> can only be CopyAction, MoveAction or LinkAction. All other values of DropAction are ignored.</p>
+ <h3 class="fn"><a name="setHotSpot"></a>void QDrag::setHotSpot ( const <a href="qpoint.html">QPoint</a> &amp; <i>hotspot</i> )</h3>
+ <p>Sets the position of the hot spot relative to the top-left corner of the pixmap used to the point specified by <i>hotspot</i>.</p>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/07/04 11:10:13 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/07/04 11:32:50 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -13,8 +13,8 @@ PKGNAME-mysql=		qt4-mysql-${VERSION}
 PKGNAME-postgresql=	qt4-postgresql-${VERSION}
 PKGNAME-examples=	qt4-examples-${VERSION}
 PKGNAME-debug=		qt4-debug-${VERSION}
-FULLPKGNAME=		qt4-${VERSION}
-FULLPKGNAME-html=	qt4-html-${VERSION}
+FULLPKGNAME=		qt4-${VERSION}p0
+FULLPKGNAME-html=	qt4-html-${VERSION}p0
 
 VERSION=	4.0.0
 DISTNAME=	qt-x11-opensource-desktop-4.0.0
@@ -198,6 +198,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/$p ${QT_BINDIR}/$p
 	@ln -sf ${TRUEPREFIX}/lib/qt4/bin/$p ${PREFIX}/bin/$p
 .endfor
+	# data
+	${INSTALL_DATA} ${WRKBUILD}/tools/porting/src/q3porting.xml ${QT_LIBDIR}
 	# documentation
 	${INSTALL_DATA_DIR} ${QT_DOC}/html
 	${INSTALL_DATA_DIR} ${QT_DOC}/html/images
