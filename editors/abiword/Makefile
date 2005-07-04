@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2005/07/01 17:46:02 aanriot Exp $
+# $OpenBSD: Makefile,v 1.42 2005/07/04 18:02:48 aanriot Exp $
 
 COMMENT=	"open-source, cross-platform WYSIWYG word processor"
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	fribidi::devel/fribidi \
 		gthread-2.0.0.0::devel/glib2 \
 		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 		glade-2.0.0.0::devel/libglade2 \
-		xml2.6::textproc/libxml \
+		xml2.9::textproc/libxml \
 		popt::devel/popt
 
 # GPL
@@ -42,11 +42,15 @@ FLAVORS=	gnome
 FLAVOR?=
 
 .if ${FLAVOR:L:Mgnome}
-LIB_DEPENDS+=	gnomeprintui-2-2::x11/gnome/libgnomeprintui
+BROKEN=		"Crash when exiting (canvas)"
+
+LIB_DEPENDS+=	gnomeprintui-2-2::x11/gnome/libgnomeprintui \
+		gnomeui-2::x11/gnome/libgnomeui \
+		ORBit-2::devel/ORBit2
 WANTLIB+=	ORBit-2.0.0 art_lgpl_2.0.0 bonobo-2.0.0	\
 		bonobo-activation bonoboui-2.0.0 gconf-2.0.0 \
 		gnome-2.0.0 gnomecanvas-2.0.0 gnomeprint-2-2.0.0 \
-		gnomeui-2.0.0 gnomevfs-2.0.0
+		gnomeui-2.0.0 gnomevfs-2.0.0 pangoft2-1.0.0.0
 CONFIGURE_ARGS+= --enable-gnome
 .endif
 
