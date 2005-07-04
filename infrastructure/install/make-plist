@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.67 2005/04/11 11:39:12 espie Exp $
+# $OpenBSD: make-plist,v 1.68 2005/07/04 10:46:05 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1047,14 +1047,20 @@ for my $k (sort keys %$foundcomments) {
 		}
 	}
 
+	my $letsdie = 0;
 	if ($something_changed) {
 		for my $plist (@l) {
 			my $orig = $plist->{original};
 			if (defined $orig) {
-				die $orig->{filename}.".orig present" 
-				    if -e $orig->{filename}.".orig";
+				if (-e $orig->{filename}.".orig") {
+				    print $orig->{filename}.".orig present\n";
+				    $letsdie = 1;
+				}
 			}
 		}
+	}
+	if ($letsdie) {
+		exit(1);
 	}
 	for my $plist (@l) {
 		my $orig = $plist->{original};
