@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2005/06/10 05:41:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2005/07/04 22:22:00 alek Exp $
 
 COMMENT=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
 COMMENT-python=	"python interface to subversion"
 
-VERSION=	1.1.4
+VERSION=	1.2.0
 DISTNAME=	subversion-${VERSION}
 PKGNAME=	${DISTNAME}
 PKGNAME-perl=	p5-SVN-${VERSION}
@@ -48,6 +48,8 @@ WANTLIB+=	aprutil-1
 
 .    if ${SUBPACKAGE} == "-python"
 RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+WANTLIB+=	svn_fs_fs-1 svn_ra_svn-1 svn_ra_local-1 neon xml2 m ssl \
+		svn_fs_base-1 crypto svn_ra_dav-1
 .    endif
 .  endif
 
@@ -86,6 +88,7 @@ REGRESS_FLAGS=	LD_LIBRARY_PATH=`find ${WRKBUILD} -name .libs | tr '\012' :`
 
 pre-build: 
 	@perl -pi -e "s,!!PYTHON_VER!!,${PYTHON_VER}," ${WRKBUILD}/Makefile
+	@perl -pi -e "s,!!WRKBUILD!!,${WRKBUILD}," ${WRKBUILD}/Makefile
 
 .if !${FLAVOR:L:Mno_bindings}
 post-build: 
@@ -97,6 +100,7 @@ post-install:
 	@cd ${WRKBUILD} && ${MAKE_PROGRAM} install-swig-pl
 
 post-regress:
+	@cd ${WRKBUILD} && ${MAKE_PROGRAM} ${REGRESS_FLAGS} check FSTYPE=bdb
 	@cd ${WRKBUILD} && ${MAKE_PROGRAM} ${REGRESS_FLAGS} check-swig-pl
 .endif
 

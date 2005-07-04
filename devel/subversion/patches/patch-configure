@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2004/12/01 16:47:54 alek Exp $
---- configure.orig	Fri Oct 22 20:13:20 2004
-+++ configure	Sat Oct 23 19:35:43 2004
-@@ -9560,7 +9560,7 @@ fi
- rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+$OpenBSD: patch-configure,v 1.2 2005/07/04 22:22:00 alek Exp $
+--- configure.orig	Sat May 21 15:53:59 2005
++++ configure	Sat May 21 15:57:27 2005
+@@ -20663,7 +20663,7 @@ rm -f conftest.err conftest.$ac_objext \
+       conftest$ac_exeext conftest.$ac_ext
  if test "$ac_cv_search_bindtextdomain" = no; then
    for ac_lib in intl; do
 -    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
 +    LIBS="-l$ac_lib -liconv $ac_func_search_save_LIBS"
      cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -9596,7 +9596,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_l
+ _ACEOF
+@@ -20708,7 +20708,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_l
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then

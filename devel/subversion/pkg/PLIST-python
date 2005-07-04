@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.1.1.1 2004/12/01 16:47:54 alek Exp $
+@comment $OpenBSD: PLIST-python,v 1.2 2005/07/04 22:22:00 alek Exp $
 %%SHARED%%
 lib/libsvn_swig_py-1.a
 lib/libsvn_swig_py-1.la
@@ -50,7 +50,5 @@ lib/python${PYTHON_VER}/site-packages/svn/ra.py
 lib/python${PYTHON_VER}/site-packages/svn/ra.pyc
 lib/python${PYTHON_VER}/site-packages/svn/repos.py
 lib/python${PYTHON_VER}/site-packages/svn/repos.pyc
-lib/python${PYTHON_VER}/site-packages/svn/util.py
-lib/python${PYTHON_VER}/site-packages/svn/util.pyc
 lib/python${PYTHON_VER}/site-packages/svn/wc.py
 lib/python${PYTHON_VER}/site-packages/svn/wc.pyc
