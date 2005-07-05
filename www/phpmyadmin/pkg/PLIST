@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/05/06 07:23:34 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.9 2005/07/05 04:31:02 kevlo Exp $
 phpMyAdmin/
 phpMyAdmin/CREDITS
 phpMyAdmin/ChangeLog
@@ -7,7 +7,7 @@ phpMyAdmin/Documentation.txt
 phpMyAdmin/INSTALL
 phpMyAdmin/LICENSE
 phpMyAdmin/README
-phpMyAdmin/RELEASE-DATE-2.6.2-pl1
+phpMyAdmin/RELEASE-DATE-2.6.3-pl1
 phpMyAdmin/TODO
 phpMyAdmin/browse_foreigners.php
 phpMyAdmin/calendar.php
@@ -53,8 +53,9 @@ phpMyAdmin/lang/azerbaijani-iso-8859-9.inc.php
 phpMyAdmin/lang/azerbaijani-utf-8.inc.php
 phpMyAdmin/lang/basque-iso-8859-1.inc.php
 phpMyAdmin/lang/basque-utf-8.inc.php
-phpMyAdmin/lang/belarusian-utf-8.inc.php
-phpMyAdmin/lang/belarusian-windows-1251.inc.php
+phpMyAdmin/lang/belarusian_cyrillic-utf-8.inc.php
+phpMyAdmin/lang/belarusian_cyrillic-windows-1251.inc.php
+phpMyAdmin/lang/belarusian_latin-utf-8.inc.php
 phpMyAdmin/lang/bosnian-utf-8.inc.php
 phpMyAdmin/lang/bosnian-windows-1250.inc.php
 phpMyAdmin/lang/brazilian_portuguese-iso-8859-1.inc.php
@@ -81,6 +82,7 @@ phpMyAdmin/lang/dutch-iso-8859-1.inc.php
 phpMyAdmin/lang/dutch-iso-8859-15.inc.php
 phpMyAdmin/lang/dutch-utf-8.inc.php
 phpMyAdmin/lang/english-iso-8859-1.inc.php
+phpMyAdmin/lang/english-iso-8859-15.inc.php
 phpMyAdmin/lang/english-utf-8.inc.php
 phpMyAdmin/lang/estonian-iso-8859-1.inc.php
 phpMyAdmin/lang/estonian-utf-8.inc.php
@@ -119,6 +121,7 @@ phpMyAdmin/lang/lithuanian-utf-8.inc.php
 phpMyAdmin/lang/lithuanian-windows-1257.inc.php
 phpMyAdmin/lang/malay-iso-8859-1.inc.php
 phpMyAdmin/lang/malay-utf-8.inc.php
+phpMyAdmin/lang/mongolian-utf-8.inc.php
 phpMyAdmin/lang/norwegian-iso-8859-1.inc.php
 phpMyAdmin/lang/norwegian-utf-8.inc.php
 phpMyAdmin/lang/persian-utf-8.inc.php
@@ -153,6 +156,8 @@ phpMyAdmin/lang/spanish-utf-8.inc.php
 phpMyAdmin/lang/swedish-iso-8859-1.inc.php
 phpMyAdmin/lang/swedish-utf-8.inc.php
 phpMyAdmin/lang/sync_lang.sh
+phpMyAdmin/lang/tatarish-iso-8859-9.inc.php
+phpMyAdmin/lang/tatarish-utf-8.inc.php
 phpMyAdmin/lang/thai-tis-620.inc.php
 phpMyAdmin/lang/thai-utf-8.inc.php
 phpMyAdmin/lang/translatecount.sh
@@ -296,6 +301,7 @@ phpMyAdmin/scripts/create_tables_mysql_4_1_2+.sql
 phpMyAdmin/scripts/decode_bug.php
 phpMyAdmin/scripts/find_unused_messages.sh
 phpMyAdmin/scripts/remove_control_m.sh
+phpMyAdmin/scripts/upgrade.pl
 phpMyAdmin/scripts/upgrade_tables_mysql_4_1_2+.sql
 phpMyAdmin/server_binlog.php
 phpMyAdmin/server_collations.php
