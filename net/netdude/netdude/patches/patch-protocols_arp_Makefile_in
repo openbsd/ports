@@ -1,6 +1,6 @@
-$OpenBSD: patch-protocols_arp_Makefile_in,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
---- protocols/arp/Makefile.in.orig	Wed Jul 21 22:12:37 2004
-+++ protocols/arp/Makefile.in	Wed Jul 21 22:13:02 2004
+$OpenBSD: patch-protocols_arp_Makefile_in,v 1.2 2005/07/05 00:08:09 mjc Exp $
+--- protocols/arp/Makefile.in.orig	Tue May  3 18:31:35 2005
++++ protocols/arp/Makefile.in	Fri Jun 17 15:41:50 2005
 @@ -64,7 +64,7 @@ host_triplet = @host@
  EXEEXT = @EXEEXT@
  OBJEXT = @OBJEXT@
@@ -10,8 +10,8 @@ $OpenBSD: patch-protocols_arp_Makefile_in,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp 
  AMTAR = @AMTAR@
  AS = @AS@
  AWK = @AWK@
-@@ -128,7 +128,7 @@ INCLUDES = @gtk_cflags@ @LIBNETDUDE_CFLA
-                        $(intl_includes) -I$(top_srcdir)/libltdl -I$(top_srcdir)/src -W -Wall
+@@ -103,7 +103,7 @@ INCLUDES = @gtk_cflags@ @LIBNETDUDE_CFLA
+                        -I$(top_srcdir)/libltdl -I$(top_srcdir)/src -W -Wall
  
  
 -pkgdir = $(pkgdatadir)/$(version_major)/protocols

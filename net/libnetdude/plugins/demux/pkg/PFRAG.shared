@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
-share/libnetdude/plugins/libnd_demux.so
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/07/05 00:08:06 mjc Exp $
+lib/libnetdude/plugins/libnd_demux.so

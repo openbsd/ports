@@ -1,7 +1,16 @@
-$OpenBSD: patch-pixmaps_Makefile_in,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
---- pixmaps/Makefile.in.orig	Wed Jul 21 22:12:04 2004
-+++ pixmaps/Makefile.in	Wed Jul 21 22:12:17 2004
-@@ -117,7 +117,7 @@ lndtool = @lndtool@
+$OpenBSD: patch-pixmaps_Makefile_in,v 1.2 2005/07/05 00:08:09 mjc Exp $
+--- pixmaps/Makefile.in.orig	Tue May  3 18:31:34 2005
++++ pixmaps/Makefile.in	Fri Jun 17 16:21:45 2005
+@@ -33,7 +33,7 @@ infodir = @infodir@
+ mandir = @mandir@
+ includedir = @includedir@
+ oldincludedir = /usr/include
+-pkgdatadir = $(datadir)/@PACKAGE@
++pkgdatadir = $(prefix)/share/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+ top_builddir = ..
+@@ -95,7 +95,7 @@ lndtool = @lndtool@
  version_major = @version_major@
  version_minor = @version_minor@
  

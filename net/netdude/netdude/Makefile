@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
+# $OpenBSD: Makefile,v 1.2 2005/07/05 00:08:08 mjc Exp $
 
 COMMENT=	"network traffic visualization and editing tool"
 
 DISTNAME=	netdude-0.4.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netdude/}
 
@@ -27,6 +28,6 @@ LIB_DEPENDS=	netdude::net/libnetdude/libnetdude \
 WANTLIB=		Xi X11 m c Xext pcap
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc/netdude
-
+CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc/netdude \
+			--disable-gtk-doc --datadir=${PREFIX}/lib
 .include <bsd.port.mk>

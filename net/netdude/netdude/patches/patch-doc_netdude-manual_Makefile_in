@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_netdude-manual_Makefile_in,v 1.1 2005/07/05 00:08:09 mjc Exp $
+--- doc/netdude-manual/Makefile.in.orig	Fri Jun 17 16:31:05 2005
++++ doc/netdude-manual/Makefile.in	Fri Jun 17 16:31:15 2005
+@@ -101,7 +101,7 @@ version_major = @version_major@
+ version_minor = @version_minor@
+ 
+ # The name of the module, e.g. 'glib'.
+-DOC_MODULE = netdude
++DOC_MODULE = 
+ 
+ # The top-level SGML file. Change it if you want.
+ DOC_MAIN_SGML_FILE = $(DOC_MODULE)-manual.sgml

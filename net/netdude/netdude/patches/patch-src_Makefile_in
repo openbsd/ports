@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
---- src/Makefile.in.orig	Sun Apr 18 15:33:41 2004
-+++ src/Makefile.in	Thu Oct 14 16:31:36 2004
+$OpenBSD: patch-src_Makefile_in,v 1.2 2005/07/05 00:08:09 mjc Exp $
+--- src/Makefile.in.orig	Tue May  3 18:31:35 2005
++++ src/Makefile.in	Fri Jun 17 15:41:50 2005
 @@ -65,7 +65,7 @@ EXEEXT = @EXEEXT@
  OBJEXT = @OBJEXT@
  PATH_SEPARATOR = @PATH_SEPARATOR@
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
  AMTAR = @AMTAR@
  AS = @AS@
  AWK = @AWK@
-@@ -475,7 +475,7 @@ info-am:
+@@ -450,7 +450,7 @@ info-am:
  
  install-data-am: install-pkgincludeHEADERS
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
  
  install-info: install-info-am
  
-@@ -517,7 +517,7 @@ install-binPROGRAMS: $(bin_PROGRAMS)
+@@ -492,7 +492,7 @@ install-binPROGRAMS: $(bin_PROGRAMS)
  	  if test -f $$p \
  	     || test -f $$p1 \
  	  ; then \

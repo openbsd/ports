@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_libnd_prefs_c,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
---- src/libnd_prefs.c.orig	Wed Dec  1 14:55:25 2004
-+++ src/libnd_prefs.c	Wed Dec  1 14:55:37 2004
-@@ -129,8 +129,8 @@ libnd_prefs_get_plugin_dir_global(void)
+$OpenBSD: patch-src_libnd_prefs_c,v 1.2 2005/07/05 00:08:05 mjc Exp $
+--- src/libnd_prefs.c.orig	Mon May 10 15:51:37 2004
++++ src/libnd_prefs.c	Fri Jun 17 13:08:25 2005
+@@ -130,8 +130,8 @@ libnd_prefs_get_plugin_dir_global(void)
    if (dir[0] != 0)
      return dir;
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-src_libnd_prefs_c,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
  
    return dir;
  }
-@@ -144,8 +144,8 @@ libnd_prefs_get_plugin_dir_user(void)
+@@ -145,8 +145,8 @@ libnd_prefs_get_plugin_dir_user(void)
    if (dir[0] != 0)
      return dir;
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-src_libnd_prefs_c,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
  
    return dir;
  }
-@@ -159,8 +159,8 @@ libnd_prefs_get_proto_dir_global(void)
+@@ -160,8 +160,8 @@ libnd_prefs_get_proto_dir_global(void)
    if (dir[0] != 0)
      return dir;
  
@@ -34,7 +34,7 @@ $OpenBSD: patch-src_libnd_prefs_c,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
  
    return dir;
  }
-@@ -174,8 +174,8 @@ libnd_prefs_get_proto_dir_user(void)
+@@ -175,8 +175,8 @@ libnd_prefs_get_proto_dir_user(void)
    if (dir[0] != 0)
      return dir;
  
@@ -45,7 +45,7 @@ $OpenBSD: patch-src_libnd_prefs_c,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
  
    return dir;
  }
-@@ -491,8 +491,8 @@ prefs_assert_dirs(void)
+@@ -492,8 +492,8 @@ prefs_assert_dirs(void)
  	    return FALSE;
  	}
  
@@ -56,7 +56,7 @@ $OpenBSD: patch-src_libnd_prefs_c,v 1.1.1.1 2005/05/27 23:36:37 mjc Exp $
  
        if (mkdir(dir, mode_755) < 0)
  	{
-@@ -500,8 +500,8 @@ prefs_assert_dirs(void)
+@@ -501,8 +501,8 @@ prefs_assert_dirs(void)
  	    return FALSE;
  	}
  
