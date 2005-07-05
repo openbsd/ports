@@ -1,39 +1,30 @@
-@comment $OpenBSD: PLIST-debug,v 1.2 2005/07/04 21:16:18 espie Exp $
+@comment $OpenBSD: PLIST-debug,v 1.3 2005/07/05 17:44:46 espie Exp $
 %%SHARED%%
 @comment lib/qt4/libQt3Support_debug.la
 lib/qt4/libQt3Support_debug.prl
 @comment lib/qt4/libQt3Support_debug.so.4
-@comment lib/qt4/libQt3Support_debug.so.4.0.0
 @comment lib/qt4/libQtCore_debug.la
 lib/qt4/libQtCore_debug.prl
 @comment lib/qt4/libQtCore_debug.so.4
-@comment lib/qt4/libQtCore_debug.so.4.0.0
 lib/qt4/libQtDesignerComponents_debug.prl
 @comment lib/qt4/libQtDesignerComponents_debug.so.4
-@comment lib/qt4/libQtDesignerComponents_debug.so.4.0.0
 lib/qt4/libQtDesigner_debug.prl
 @comment lib/qt4/libQtDesigner_debug.so.4
-@comment lib/qt4/libQtDesigner_debug.so.4.0.0
 @comment lib/qt4/libQtGui_debug.la
 lib/qt4/libQtGui_debug.prl
 @comment lib/qt4/libQtGui_debug.so.4
-@comment lib/qt4/libQtGui_debug.so.4.0.0
 @comment lib/qt4/libQtNetwork_debug.la
 lib/qt4/libQtNetwork_debug.prl
 @comment lib/qt4/libQtNetwork_debug.so.4
-@comment lib/qt4/libQtNetwork_debug.so.4.0.0
 @comment lib/qt4/libQtOpenGL_debug.la
 lib/qt4/libQtOpenGL_debug.prl
 @comment lib/qt4/libQtOpenGL_debug.so.4
-@comment lib/qt4/libQtOpenGL_debug.so.4.0.0
 @comment lib/qt4/libQtSql_debug.la
 lib/qt4/libQtSql_debug.prl
 @comment lib/qt4/libQtSql_debug.so.4
-@comment lib/qt4/libQtSql_debug.so.4.0.0
 @comment lib/qt4/libQtXml_debug.la
 lib/qt4/libQtXml_debug.prl
 @comment lib/qt4/libQtXml_debug.so.4
-@comment lib/qt4/libQtXml_debug.so.4.0.0
 lib/qt4/pkgconfig/Qt3Support_debug.pc
 lib/qt4/pkgconfig/QtCore_debug.pc
 lib/qt4/pkgconfig/QtGui_debug.pc

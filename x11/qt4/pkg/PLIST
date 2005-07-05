@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/07/04 21:44:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/07/05 17:44:46 espie Exp $
 %%SHARED%%
 bin/assistant4
 bin/designer4
@@ -2312,43 +2312,33 @@ lib/qt4/bin/rcc
 lib/qt4/bin/uic
 lib/qt4/bin/uic3
 lib/qt4/include
-lib/qt4/lib
 @comment lib/qt4/libQt3Support.la
 lib/qt4/libQt3Support.prl
 @comment lib/qt4/libQt3Support.so.4
-@comment lib/qt4/libQt3Support.so.4.0.0
 lib/qt4/libQtAssistantClient.a
 lib/qt4/libQtAssistantClient.prl
 @comment lib/qt4/libQtCore.la
 lib/qt4/libQtCore.prl
 @comment lib/qt4/libQtCore.so.4
-@comment lib/qt4/libQtCore.so.4.0.0
 lib/qt4/libQtDesigner.prl
 @comment lib/qt4/libQtDesigner.so.4
-@comment lib/qt4/libQtDesigner.so.4.0.0
 lib/qt4/libQtDesignerComponents.prl
 @comment lib/qt4/libQtDesignerComponents.so.4
-@comment lib/qt4/libQtDesignerComponents.so.4.0.0
 @comment lib/qt4/libQtGui.la
 lib/qt4/libQtGui.prl
 @comment lib/qt4/libQtGui.so.4
-@comment lib/qt4/libQtGui.so.4.0.0
 @comment lib/qt4/libQtNetwork.la
 lib/qt4/libQtNetwork.prl
 @comment lib/qt4/libQtNetwork.so.4
-@comment lib/qt4/libQtNetwork.so.4.0.0
 @comment lib/qt4/libQtOpenGL.la
 lib/qt4/libQtOpenGL.prl
 @comment lib/qt4/libQtOpenGL.so.4
-@comment lib/qt4/libQtOpenGL.so.4.0.0
 @comment lib/qt4/libQtSql.la
 lib/qt4/libQtSql.prl
 @comment lib/qt4/libQtSql.so.4
-@comment lib/qt4/libQtSql.so.4.0.0
 @comment lib/qt4/libQtXml.la
 lib/qt4/libQtXml.prl
 @comment lib/qt4/libQtXml.so.4
-@comment lib/qt4/libQtXml.so.4.0.0
 lib/qt4/mkspecs/
 lib/qt4/mkspecs/aix-g++/
 lib/qt4/mkspecs/aix-g++-64/

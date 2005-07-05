@@ -1,4 +1,4 @@
-#/ $OpenBSD: Makefile,v 1.5 2005/07/04 21:44:04 espie Exp $
+#/ $OpenBSD: Makefile,v 1.6 2005/07/05 17:44:46 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -8,13 +8,13 @@ COMMENT-postgresql=	"PostgresSQL plugin for qt4"
 COMMENT-mysql=		"MySQL plugin for qt4"
 COMMENT-debug=		"debug libraries for qt4"
 
-PKGNAME=		qt4-${VERSION}
-PKGNAME-mysql=		qt4-mysql-${VERSION}
-PKGNAME-postgresql=	qt4-postgresql-${VERSION}
-PKGNAME-examples=	qt4-examples-${VERSION}
-PKGNAME-debug=		qt4-debug-${VERSION}p2
-FULLPKGNAME=		qt4-${VERSION}p2
-FULLPKGNAME-html=	qt4-html-${VERSION}p2
+PKGNAME=		qt4-${VERSION}p3
+PKGNAME-mysql=		qt4-mysql-${VERSION}p3
+PKGNAME-postgresql=	qt4-postgresql-${VERSION}p3
+PKGNAME-examples=	qt4-examples-${VERSION}p3
+PKGNAME-debug=		qt4-debug-${VERSION}p3
+FULLPKGNAME=		qt4-${VERSION}p3
+FULLPKGNAME-html=	qt4-html-${VERSION}p3
 
 VERSION=	4.0.0
 DISTNAME=	qt-x11-opensource-desktop-4.0.0
@@ -67,12 +67,16 @@ CONFIGURE_ARGS=	-qt-gif -system-libpng -system-libjpeg -system-zlib \
 
 
 
-CONFIGURE_ARGS+=	-prefix ${QT_LIBDIR}
-#CONFIGURE_ARGS+=	-bindir ${QT_BINDIR}
+CONFIGURE_ARGS+=	-prefix ${QT_BASEDIR}
+CONFIGURE_ARGS+=	-libdir ${QT_BASEDIR}
+CONFIGURE_ARGS+=	-bindir ${QT_BINDIR}
 CONFIGURE_ARGS+=	-headerdir ${QT_INCDIR}
 CONFIGURE_ARGS+=	-docdir ${QT_DOC}
-#CONFIGURE_ARGS+=	-plugindir ${QT_PLUGINSDIR}
+CONFIGURE_ARGS+=	-plugindir ${QT_PLUGINSDIR}
+CONFIGURE_ARGS+=	-datadir ${QT_BASEDIR}
 CONFIGURE_ARGS+=	-sysconfdir ${SYSCONFDIR}
+CONFIGURE_ARGS+=	-examplesdir ${QT_BASEDIR}/examples
+CONFIGURE_ARGS+=	-demosdir ${QT_BASEDIR}/demos
 
 CONFIGURE_ENV=	QTDIR="${WRKSRC}" 
 
@@ -123,16 +127,13 @@ WANTLIB=	${myWANTLIB}
 PKG_ARCH=	*
 .endif
 
-QT_LIBDIR=	${PREFIX}/lib/qt4
+QT_BASEDIR=	${PREFIX}/lib/qt4
 QT_INCDIR=	${PREFIX}/include/X11/qt4
-QT_EXAMPLES=	${QT_LIBDIR}/examples
+QT_EXAMPLES=	${QT_BASEDIR}/examples
 QT_DOC=		${PREFIX}/share/doc/qt4
-QT_PLUGINSDIR=	${QT_LIBDIR}/plugins
-QT_BINDIR=	${QT_LIBDIR}/bin
-QT_PKGCFGDIR=	${QT_LIBDIR}/pkgconfig
-
-# for manpages in MESSAGE
-SUBST_VARS=	QT_LIBDIR QT_DOC
+QT_PLUGINSDIR=	${QT_BASEDIR}/plugins
+QT_BINDIR=	${QT_BASEDIR}/bin
+QT_PKGCFGDIR=	${QT_BASEDIR}/pkgconfig
 
 DOCS=	LICENSE.GPL README OPENSOURCE-NOTICE.TXT
 
@@ -186,7 +187,7 @@ post-install:
 	@ln -sf ${TRUEPREFIX}/lib/qt4/bin/$p ${PREFIX}/bin/$p4
 .endfor
 .for p in ${PROGRAMS}
-	strip ${PREFIX}/lib/qt4/bin/$p
+	strip ${QT_BASEDIR}/bin/$p
 	@ln -sf ${TRUEPREFIX}/lib/qt4/bin/$p ${PREFIX}/bin/$p
 .endfor
 	# fix pkgconfig stuff
@@ -195,11 +196,10 @@ post-install:
 	    rm $$i.bak; \
 	done
 .for l v in ${LIBRARIES}
-	mv -f ${QT_LIBDIR}/lib$l.so.$v.0 ${QT_LIBDIR}/lib$l.so.$v
+	mv -f ${QT_BASEDIR}/lib$l.so.$v.0 ${QT_BASEDIR}/lib$l.so.$v
 	ln -sf qt4/lib$l.so.$v ${PREFIX}/lib
 .endfor
 # cleanup
-	cd ${PREFIX}/lib/qt4 && ln -sf . lib
 	cd ${PREFIX}/lib/qt4 && ln -sf ../../include/X11/qt4 include
 
 USE_GMAKE=Yes

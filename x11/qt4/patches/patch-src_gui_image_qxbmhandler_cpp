@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_gui_image_qxbmhandler_cpp,v 1.1 2005/07/05 17:44:46 espie Exp $
+--- src/gui/image/qxbmhandler.cpp.orig	Tue Jul  5 11:38:23 2005
++++ src/gui/image/qxbmhandler.cpp	Tue Jul  5 11:39:11 2005
+@@ -144,13 +144,14 @@ static bool write_xbm_image(const QImage
+     int	       h = image.height();
+     int	       i;
+     QString    s = fileName; // get file base name
+-    char *buf = new char[s.length() + 100];
++    int 	sz = s.length() + 100;	
++    char *buf = new char[sz];
+ 
+-    sprintf(buf, "#define %s_width %d\n", s.toAscii().data(), w);
++    snprintf(buf, sz, "#define %s_width %d\n", s.toAscii().data(), w);
+     device->write(buf, qstrlen(buf));
+-    sprintf(buf, "#define %s_height %d\n", s.toAscii().data(), h);
++    snprintf(buf, sz, "#define %s_height %d\n", s.toAscii().data(), h);
+     device->write(buf, qstrlen(buf));
+-    sprintf(buf, "static char %s_bits[] = {\n ", s.toAscii().data());
++    snprintf(buf, sz, "static char %s_bits[] = {\n ", s.toAscii().data());
+     device->write(buf, qstrlen(buf));
+ 
+     if (image.format() != QImage::Format_MonoLSB)
