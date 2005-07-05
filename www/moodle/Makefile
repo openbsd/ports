@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2005/05/19 02:25:16 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2005/07/05 08:26:23 kevlo Exp $
 
 COMMENT=	"learning management system"
 
-V=		1.4.5
+V=		1.5
 DISTNAME=	moodle-${V}
 CATEGORIES=	www education
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=moodle/}
+MASTER_SITES=	http://download.moodle.org/stable15/
 EXTRACT_SUFX=	.tgz
 
 NO_BUILD=	Yes
