@@ -1,0 +1,42 @@
+$OpenBSD: patch-lib_silcutil_silcconfig_c,v 1.1 2005/07/05 01:40:45 brad Exp $
+--- lib/silcutil/silcconfig.c.orig	Mon Jul  4 21:17:54 2005
++++ lib/silcutil/silcconfig.c	Mon Jul  4 21:19:22 2005
+@@ -94,7 +94,7 @@ char *silc_config_strerror(int errnum)
+ /* Points the first non-space character */
+ static void my_trim_spaces(SilcConfigFile *file)
+ {
+-  register char *r = file->p;
++  signed char *r = file->p;
+   while ((*r != '\0' && *r != EOF) && isspace(*r))
+     if (*r++ == '\n') file->line++;
+   file->p = r;
+@@ -102,7 +102,7 @@ static void my_trim_spaces(SilcConfigFil
+ /* Skips the current line until newline (lf or cr) */
+ static void my_skip_line(SilcConfigFile *file)
+ {
+-  register char *r = file->p;
++  signed char *r = file->p;
+   while ((*r != '\0' && *r != EOF) && (*r != '\n') && (*r != '\r')) r++;
+   file->p = ((*r != '\0' && *r != EOF) ? r + 1 : r);
+   file->line++;
+@@ -321,9 +321,9 @@ SilcUInt32 silc_config_get_line(SilcConf
+ 
+ char *silc_config_read_line(SilcConfigFile *file, SilcUInt32 line)
+ {
+-  register char *p;
++  signed char *p;
+   int len;
+-  char *ret = NULL, *endbuf;
++  signed char *ret = NULL, *endbuf;
+ 
+   if (!file || (line <= 0))
+     return NULL;
+@@ -446,7 +446,7 @@ bool silc_config_register_table(SilcConf
+ static int silc_config_main_internal(SilcConfigEntity ent)
+ {
+   SilcConfigFile *file = ent->file;
+-  char **p = &file->p;
++  signed char **p = &file->p;
+ 
+   /* loop throught statements */
+   while (1) {

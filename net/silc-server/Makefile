@@ -1,13 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2005/04/07 00:49:18 brad Exp $
-
-.if ${MACHINE_ARCH} == "powerpc"
-BROKEN=		"config file parser bug on ${MACHINE_ARCH}"
-.endif
+# $OpenBSD: Makefile,v 1.19 2005/07/05 01:40:45 brad Exp $
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) server"
 
 DISTNAME=	silc-server-0.9.19p1
-PKGNAME=	silc-server-0.9.19.1
+PKGNAME=	silc-server-0.9.19.1p1
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.silcnet.org/
