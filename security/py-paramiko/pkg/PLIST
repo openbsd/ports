@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/04/11 10:29:41 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/07/05 07:20:16 xsa Exp $
 lib/python${MODPY_VERSION}/site-packages/paramiko/
 lib/python${MODPY_VERSION}/site-packages/paramiko/__init__.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/__init__.pyc
@@ -22,6 +22,8 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/logging22.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/logging22.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/message.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/message.pyc
+lib/python${MODPY_VERSION}/site-packages/paramiko/packet.py
+lib/python${MODPY_VERSION}/site-packages/paramiko/packet.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/pkey.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/pkey.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/primes.py
@@ -87,6 +89,8 @@ share/doc/py-paramiko/private/paramiko.logging22.StreamHandler-class.html
 share/doc/py-paramiko/private/paramiko.logging22.logger-class.html
 share/doc/py-paramiko/private/paramiko.message-module.html
 share/doc/py-paramiko/private/paramiko.message.Message-class.html
+share/doc/py-paramiko/private/paramiko.packet-module.html
+share/doc/py-paramiko/private/paramiko.packet.Packetizer-class.html
 share/doc/py-paramiko/private/paramiko.pkey-module.html
 share/doc/py-paramiko/private/paramiko.pkey.PKey-class.html
 share/doc/py-paramiko/private/paramiko.primes-module.html
@@ -135,6 +139,7 @@ share/doc/py-paramiko/private/toc-paramiko.kex_gex-module.html
 share/doc/py-paramiko/private/toc-paramiko.kex_group1-module.html
 share/doc/py-paramiko/private/toc-paramiko.logging22-module.html
 share/doc/py-paramiko/private/toc-paramiko.message-module.html
+share/doc/py-paramiko/private/toc-paramiko.packet-module.html
 share/doc/py-paramiko/private/toc-paramiko.pkey-module.html
 share/doc/py-paramiko/private/toc-paramiko.primes-module.html
 share/doc/py-paramiko/private/toc-paramiko.rsakey-module.html
