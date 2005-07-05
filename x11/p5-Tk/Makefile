@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2005/01/13 03:23:09 kevlo Exp $
+# $OpenBSD: Makefile,v 1.24 2005/07/05 21:10:44 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT-demo=	"demonstrate the features of ptk"
 
 VERSION=	804.027
 DISTNAME=	Tk-${VERSION}
-PKGNAME=	p5-Tk-${VERSION}
+PKGNAME=	p5-Tk-${VERSION}p0
 PKGNAME-demo=	p5-Tk-demo-${VERSION}
 CATEGORIES=	x11 devel perl5
 
@@ -24,6 +24,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Tk/}
 MULTI_PACKAGES=	-demo
 SUBPACKAGE?=
 
+LIB_DEPENDS=	png.4::graphics/png
 RUN_DEPENDS=	:p5-HTML-Parser-*:www/p5-HTML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
@@ -32,18 +33,22 @@ USE_X11=	Yes
 CONFIGURE_STYLE= perl
 
 REGRESS_IS_INTERACTIVE=	Yes
-MAKE_ENV=	XAUTHORITY=${HOME}/.Xauthority
+REGRESS_FLAGS=	DISPLAY="${DISPLAY}" XAUTHORITY="${HOME}/.Xauthority"
+
+pre-configure:
+	@perl -i -pe 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/PNG/Makefile.PL
 
 pre-regress:
 .ifndef DISPLAY
-	@echo requires access to X; exit 1
+	@echo requires access to X11; exit 1
 .endif
 
 .if empty(SUBPACKAGE)
-WANTLIB=		X11 m
+WANTLIB=		X11 m z
 .endif
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
+LIB_DEPENDS=
 RUN_DEPENDS=	::x11/p5-Tk
 .endif
 

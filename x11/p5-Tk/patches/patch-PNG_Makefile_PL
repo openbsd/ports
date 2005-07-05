@@ -1,0 +1,23 @@
+$OpenBSD: patch-PNG_Makefile_PL,v 1.1 2005/07/05 21:10:44 naddy Exp $
+--- PNG/Makefile.PL.orig	Tue Jul  5 20:57:20 2005
++++ PNG/Makefile.PL	Tue Jul  5 20:58:11 2005
+@@ -15,7 +15,7 @@ foreach my $file (qw(zlib/Makefile.PL li
+  }
+ 
+ if ($Tk::MMtry::VERSION ge '4.007' &&
+-    try_run("config/has_png.c",['-I/usr/local/include'],['-lpng -lz -lm']))
++    try_run("config/has_png.c",['-I%%LOCALBASE%%/include/libpng'],['-L%%LOCALBASE%%/lib -lpng -lz -lm']))
+  {
+   Tk::MMutil::TkExtMakefile(
+        NAME         => 'Tk::PNG',
+@@ -23,8 +23,8 @@ if ($Tk::MMtry::VERSION ge '4.007' &&
+        XS_VERSION   => $Tk::Config::VERSION,
+        dist         => { COMPRESS => 'gzip -f9', SUFFIX => '.gz' },
+        OBJECT       => '$(O_FILES)',
+-       INC          => '-I/usr/local/include',
+-       LIBS         => ['-lpng -lz -lm'],
++       INC          => '-I%%LOCALBASE%%/include/libpng',
++       LIBS         => ['-L%%LOCALBASE%%/lib -lpng -lz -lm'],
+      );
+  }
+ else
