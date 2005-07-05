@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2005/05/26 21:37:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2005/07/05 14:28:40 naddy Exp $
 
 COMMENT=	"extremely fast program for analysing WWW logfiles"
 
 DISTNAME=	analog-5.32
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	www
 
 MASTER_SITES=	http://www.analog.cx/ \
@@ -25,7 +25,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m
+
+LIB_DEPENDS=	gd.18::graphics/gd \
+		pcre.0::devel/pcre
+WANTLIB=	jpeg png ttf c m z
 
 ANALOGDIR=	${PREFIX}/share/analog
 CONFIGFILE=	${SYSCONFDIR}/analog.cfg
@@ -33,15 +36,18 @@ DOCDIR=		${PREFIX}/share/doc/analog
 HTTPDIR=	/var/www
 IMAGEDIR=	/analog-images
 
-CFLAGS+=	-DANALOGDIR=\"${ANALOGDIR}/\" \
+CFLAGS+=	-I${LOCALBASE}/include \
+		-DANALOGDIR=\"${ANALOGDIR}/\" \
 		-DDEFAULTCONFIGFILE=\"${CONFIGFILE}\" \
 		-DHTTPDIR=\"${HTTPDIR}/\" \
 		-DIMAGEDIR=\"${IMAGEDIR}/\" \
 		-DLANGDIR=\"${ANALOGDIR}/lang/\" \
 		-DANALOG=\"${PREFIX}/bin/analog\" \
-		-DHAVE_ADDR_T
+		-DHAVE_GD -DHAVE_ZLIB -DHAVE_PCRE -DHAVE_ADDR_T
 
 ALL_TARGET=	analog
+MAKE_FLAGS=	CC='${CC}' CFLAGS='${CFLAGS}' \
+		LIBS="-L${LOCALBASE}/lib -lm -lgd -lpng -ljpeg -lttf -lz -lpcre"
 
 post-patch:
 	@mv ${WRKSRC}/anlgform.pl ${WRKSRC}/anlgform.pl.src
