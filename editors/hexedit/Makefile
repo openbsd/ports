@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2005/07/03 01:22:22 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2005/07/05 00:59:21 brad Exp $
 
 COMMENT=	"view and edit files in hexadecimal or ASCII"
 
@@ -9,8 +9,6 @@ MASTER_SITES=	http://www.chez.com/prigaux/	\
 EXTRACT_SUFX=	.src.tgz
 
 HOMEPAGE=	http://www.chez.com/prigaux/hexedit.html
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
