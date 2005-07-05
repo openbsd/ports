@@ -1,0 +1,16 @@
+$OpenBSD: patch-config_in,v 1.1 2005/07/05 13:48:10 naddy Exp $
+--- config.in.orig	Tue Jul  5 15:44:05 2005
++++ config.in	Tue Jul  5 15:44:21 2005
+@@ -11,9 +11,9 @@
+ # See to the section "Controlling the version of zlib used by
+ # Compress::Zlib" in the README file for details of how to use this file.
+ 
+-BUILD_ZLIB = True
+-INCLUDE    = ./zlib-src-1.2.2
+-LIB        = ./zlib-src-1.2.2
++BUILD_ZLIB = False
++INCLUDE    = /usr/include
++LIB        = /usr/lib
+ OLD_ZLIB   = False
+ 
+ 
