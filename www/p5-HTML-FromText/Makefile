@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/04/24 08:20:44 peter Exp $
+# $OpenBSD: Makefile,v 1.9 2005/07/06 23:18:12 jolan Exp $
 
 COMMENT=	"convert text to HTML with controlling options"
 
@@ -7,8 +7,6 @@ DISTNAME=	HTML-FromText-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
-
-MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
 
 RUN_DEPENDS=	::textproc/p5-Email-Find ::devel/p5-Exporter-Lite
 REGRESS_DEPENDS=	${RUN_DEPENDS}

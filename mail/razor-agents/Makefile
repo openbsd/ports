@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/06/26 07:35:07 xsa Exp $
+# $OpenBSD: Makefile,v 1.15 2005/07/06 23:18:11 jolan Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -7,8 +7,6 @@ COMMENT=		"agent for Razor spam filtering networks"
 DISTNAME=		razor-agents-2.40
 CATEGORIES=		mail
 HOMEPAGE=		http://razor.sourceforge.net/
-
-MAINTAINER=     Peter Galbavy <peter.galbavy@knowtion.net>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes

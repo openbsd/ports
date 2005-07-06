@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/12/11 13:29:22 alek Exp $
+# $OpenBSD: Makefile,v 1.18 2005/07/06 23:18:11 jolan Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -13,8 +13,6 @@ MASTER_SITES=	http://perl.apache.org/dist/ \
 		${MASTER_SITE_PERL_CPAN:=Apache/}
 
 HOMEPAGE=	http://perl.apache.org/
-
-MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
 
 # Apache
 PERMIT_PACKAGE_CDROM=	Yes

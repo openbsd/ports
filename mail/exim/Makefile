@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2005/01/26 19:33:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.49 2005/07/06 23:18:10 jolan Exp $
 
 COMMENT=	"Flexible mail transfer agent"
 VERSION=	4.44
@@ -10,8 +10,8 @@ MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim4/ \
 MASTER_SITES0=	http://duncanthrax.net/exiscan-acl/
 				
 HOMEPAGE=	http://www.exim.org/
-MAINTAINER=	ilya voronin <ivoronin@ivoronin.pp.ru> \
-		Peter Galbavy <peter.galbavy@knowtion.net>
+
+MAINTAINER=	ilya voronin <ivoronin@ivoronin.pp.ru>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

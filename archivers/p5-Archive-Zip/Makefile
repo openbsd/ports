@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/03/10 10:55:04 db Exp $
+# $OpenBSD: Makefile,v 1.8 2005/07/06 23:18:09 jolan Exp $
 
 COMMENT=	"perl interface to ZIP files"
 DISTNAME=	Archive-Zip-1.14
@@ -6,8 +6,6 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	archivers perl5
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Archive/}
-
-MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
 
 # Perl
 PERMIT_PACKAGE_CDROM=   Yes

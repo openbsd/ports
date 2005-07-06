@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2004/04/24 16:12:13 peter Exp $
+# $OpenBSD: Makefile,v 1.2 2005/07/06 23:18:10 jolan Exp $
 
 COMMENT=		"Check validity of Internet email addresses"
 
@@ -8,8 +8,6 @@ PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		mail perl5
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Email/}
-
-MAINTAINER=		Peter Galbavy <peter.galbavy@knowtion.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

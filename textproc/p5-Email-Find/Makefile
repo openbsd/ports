@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/06/26 07:35:09 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2005/07/06 23:18:11 jolan Exp $
 
 COMMENT=		"Find RFC 822 email addresses in plain text"
 
@@ -8,8 +8,6 @@ PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		textproc perl5
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Email/}
-
-MAINTAINER=		Peter Galbavy <peter.galbavy@knowtion.net>
 
 RUN_DEPENDS=		::mail/p5-Mail-Tools ::mail/p5-Email-Valid
 BUILD_DEPENDS=		${RUN_DEPENDS}

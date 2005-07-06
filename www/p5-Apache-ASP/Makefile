@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/06/26 16:55:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2005/07/06 23:18:11 jolan Exp $
 
 COMMENT=	"Apache ASP support"
 
@@ -11,8 +11,6 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
 RUN_DEPENDS=	:p5-MLDBM-Sync->=0.25:devel/p5-MLDBM-Sync \
 		::www/mod_perl
 BUILD_DEPENDS=	:p5-MLDBM-Sync->=0.25:devel/p5-MLDBM-Sync
-
-MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

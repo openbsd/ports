@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/10/18 19:44:51 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2005/07/06 23:18:12 jolan Exp $
 
 COMMENT=	"Lightweight URL parser"
 
@@ -7,8 +7,6 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=CGI/}
 
-MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
-	
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
