@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2005/07/03 21:36:35 jolan Exp $
+# $OpenBSD: Makefile,v 1.23 2005/07/06 05:04:58 jolan Exp $
 
 COMMENT=	"SDL multi-channel audio mixer library"
 DISTNAME=	SDL_mixer-1.2.6
-PKGNAME=	${DISTNAME:L:S/_/-/}
+PKGNAME=	${DISTNAME:L:S/_/-/}p0
 CATEGORIES=	devel audio
 MASTER_SITES=	${HOMEPAGE}release/
 
@@ -26,10 +26,10 @@ WANTLIB=	X11 Xext c ogg pthread usbhid
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -Dunix=1" \
 		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/play{mus,wave} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/.libs/play{mus,wave} ${PREFIX}/bin
 
 .include <bsd.port.mk>
