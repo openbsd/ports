@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.55 2005/07/01 09:31:11 grunk Exp $
+# $OpenBSD: OpenBSD-markers,v 1.56 2005/07/06 19:13:45 niallo Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -37.457132	144.580589	"Miller"	# Damien
@@ -68,6 +68,7 @@
 52.5		21		"Piotrowski"	# Aleksander
 53.13		9		"Finck"		# Jan-Uwe
 53.22		10.00		"Brauer"	# Henning	
+53.30		-6.24		"O'Higgins"	# Niall
 53.56		-113.51		"Beck"		# Bob
 53.56		-113.51		"Weingartner"	# Tobias
 55.02		82.54		"Safiullin"	# Oleg
