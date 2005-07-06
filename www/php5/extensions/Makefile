@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2005/06/06 17:25:33 robert Exp $
+# $OpenBSD: Makefile,v 1.13 2005/07/06 00:50:32 kevlo Exp $
 
 FULLPKGNAME=	php5-extensions-${V}
 COMMENT=	"informational package about PHP5 extensions"
@@ -154,6 +154,16 @@ MULTI_PACKAGES+=	-ldap
 COMMENT-ldap=		"ldap protocol extensions for php5"
 CONFIGURE_ARGS+=	--with-ldap=shared,${LOCALBASE}
 LDAP_DEPENDS=		ldap.2,lber::databases/openldap
+.endif
+
+# mbstring
+PSEUDO_FLAVORS+=	no_mbstring
+.if ${FLAVOR:L:Mno_mbstring}
+CONFIGURE_ARGS+=	--disable-mbstring
+.else
+MULTI_PACKAGES+=	-mbstring
+COMMENT-mbstring=	"multibyte characters extensions for php5"
+CONFIGURE_ARGS+=	--enable-mbstring=shared
 .endif
 
 # mcrypt
