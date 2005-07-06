@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2005/06/30 02:47:48 jolan Exp $
+# $OpenBSD: Makefile,v 1.16 2005/07/06 10:45:44 jsg Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=		"gcc bug"
@@ -6,7 +6,7 @@ BROKEN=		"gcc bug"
 
 COMMENT=	"graphical adventure game interpreter"
 DISTNAME=	scummvm-0.7.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -20,6 +20,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c m pthread stdc++ usbhid z
+
+.if ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS=	::devel/nasm
+.endif
 
 LIB_DEPENDS=	SDL::devel/sdl \
 		mad.2::audio/libmad \
