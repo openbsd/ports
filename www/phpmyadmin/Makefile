@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/07/05 04:31:02 kevlo Exp $ 
+# $OpenBSD: Makefile,v 1.8 2005/07/06 01:00:03 kevlo Exp $ 
 
 COMMENT=	"tool to handle the administration of MySQL over the web"
 
@@ -27,7 +27,8 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/phpMyAdmin
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	:php5-mysql-*:www/php5/extensions,-mysql
+RUN_DEPENDS=	:php5-mysql-*:www/php5/extensions,-mysql \
+		:php5-mbstring-*:www/php5/extensions,-mbstring
 
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
