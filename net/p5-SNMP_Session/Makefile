@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2003/12/01 06:03:25 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2005/07/07 08:16:09 aanriot Exp $
 
 COMMENT=	"provides rudimentary access to remote SNMP agents"
 
-VERSION=	0.99
-DISTNAME=	SNMP_Session-${VERSION}
+DISTNAME=	SNMP_Session-1.07
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
-MASTER_SITES=	ftp://ftp.switch.ch/software/sources/network/snmp/perl/
 
 HOMEPAGE=	http://www.switch.ch/misc/leinen/snmp/perl/
+MASTER_SITES=	${HOMEPAGE}dist/
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
