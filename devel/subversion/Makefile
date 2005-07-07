@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2005/07/05 21:29:25 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2005/07/07 14:20:34 alek Exp $
 
 COMMENT=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
 COMMENT-python=	"python interface to subversion"
 
-VERSION=	1.2.0
+VERSION=	1.2.1
 DISTNAME=	subversion-${VERSION}
 PKGNAME=	${DISTNAME}
 PKGNAME-perl=	p5-SVN-${VERSION}
