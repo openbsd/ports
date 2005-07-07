@@ -1,13 +1,30 @@
-$OpenBSD: patch-bytesex_h,v 1.1 2005/06/09 22:16:06 pvalchev Exp $
---- bytesex.h.orig	Thu Jun  9 15:36:20 2005
-+++ bytesex.h	Thu Jun  9 15:36:29 2005
-@@ -9,7 +9,8 @@
+$OpenBSD: patch-bytesex_h,v 1.2 2005/07/07 08:25:15 aanriot Exp $
+--- bytesex.h.orig	Sat Jun 18 08:40:22 2005
++++ bytesex.h	Sat Jun 18 08:42:22 2005
+@@ -4,20 +4,17 @@
  
- #if 	defined(__i386__) \
- 	|| defined(__alpha__) \
+ /* $Id: patch-bytesex_h,v 1.2 2005/07/07 08:25:15 aanriot Exp $ */
+ 
++#include <sys/endian.h>
++
+ #ifndef ARS_BYTESEX_H
+ #define ARS_BYTESEX_H
+ 
+-#if 	defined(__i386__) \
+-	|| defined(__alpha__) \
 -	|| (defined(__mips__) && (defined(MIPSEL) || defined (__MIPSEL__)))
-+	|| (defined(__mips__) && (defined(MIPSEL) || defined (__MIPSEL__))) \
-+	|| defined(__amd64__)
++#if 	BYTE_ORDER == LITTLE_ENDIAN
  #define BYTE_ORDER_LITTLE_ENDIAN
- #elif 	defined(__mc68000__) \
- 	|| defined (__sparc__) \
+-#elif 	defined(__mc68000__) \
+-	|| defined (__sparc__) \
+-	|| defined (__sparc) \
+-	|| defined (__PPC__) \
+-	|| defined (__BIG_ENDIAN__) \
+-	|| (defined(__mips__) && (defined(MIPSEB) || defined (__MIPSEB__)))
++
++#elif 	BYTE_ORDER == BIG_ENDIAN
+ #define BYTE_ORDER_BIG_ENDIAN
++
+ #else
+ # error can not find the byte order for this architecture, fix bytesex.h
+ #endif
