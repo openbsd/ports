@@ -1,7 +1,17 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2004/09/15 00:50:09 espie Exp $
-lib/gimp/1.2/modules/libcolorsel_gtk.so
-lib/gimp/1.2/modules/libcolorsel_triangle.so
-lib/gimp/1.2/modules/libcolorsel_water.so
-@lib lib/libgck.so.0.5
-@lib lib/libgimp.so.0.5
-@lib lib/libgimpui.so.0.5
+@comment $OpenBSD: PFRAG.shared,v 1.4 2005/07/08 07:50:56 fgsch Exp $
+lib/gimp/2.0/modules/libcdisplay_colorblind.so
+lib/gimp/2.0/modules/libcdisplay_gamma.so
+lib/gimp/2.0/modules/libcdisplay_highcontrast.so
+lib/gimp/2.0/modules/libcdisplay_proof.so
+lib/gimp/2.0/modules/libcolorsel_cmyk.so
+lib/gimp/2.0/modules/libcolorsel_triangle.so
+lib/gimp/2.0/modules/libcolorsel_water.so
+lib/gimp/2.0/modules/libcontroller_midi.so
+@lib lib/libgimp-2.0.so.200.8
+@lib lib/libgimpbase-2.0.so.200.8
+@lib lib/libgimpcolor-2.0.so.200.8
+@lib lib/libgimpmath-2.0.so.200.8
+@lib lib/libgimpmodule-2.0.so.200.8
+@lib lib/libgimpthumb-2.0.so.200.8
+@lib lib/libgimpui-2.0.so.200.8
+@lib lib/libgimpwidgets-2.0.so.200.8
