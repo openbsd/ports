@@ -1,41 +1,31 @@
-$OpenBSD: patch-config,v 1.1.1.1 2005/05/15 00:42:52 jolan Exp $
---- config.orig	Wed Jan 19 15:20:04 2005
-+++ config	Sat May 14 21:06:43 2005
-@@ -1,25 +1,22 @@
+$OpenBSD: patch-config,v 1.2 2005/07/08 17:57:27 jolan Exp $
+--- config.orig	Wed May 25 07:55:32 2005
++++ config	Thu Jul  7 23:27:58 2005
+@@ -1,22 +1,17 @@
  # Installation directories
  # System's libraries directory (where binary libraries are installed)
 -LUA_LIBDIR= /usr/local/lib/lua/5.0
 +LUA_LIBDIR= $(LOCALBASE)/lib
- # System's lua directory (where Lua libraries are installed)
--LUA_DIR= /usr/local/share/lua/5.0
-+#LUA_DIR= /usr/local/share/lua/5.0
  # Lua includes directory
 -LUA_INC= /usr/local/include/lua5
 +LUA_INC= $(LOCALBASE)/include
  
  # OS dependent
--LIB_EXT= .dylib
--#LIB_EXT= .so
--LIB_OPTION= -dynamiclib #for MacOS X
--#LIB_OPTION= -shared #for Linux
-+#LIB_EXT= .dylib
-+LIB_EXT= .so
-+#LIB_OPTION= -dynamiclib #for MacOS X
-+LIB_OPTION= -shared #for Linux
+ #LIB_OPTION= -bundle -undefined  dynamic_lookup #for MacOS X
+ LIB_OPTION= -shared #for Linux
  
--COMPAT_DIR= .
+-COMPAT_DIR= ../compat/src
 -
  # Compilation directives
  # On FreeBSD systems, the following line should be commented
 -DLLIB= -ldl
++#DLLIB= -ldl
+ #LUA_LIBS= -llua50 -lm
 -WARN= -O2 -Wall -fPIC -W -Waggregate-return -Wcast-align -Wmissing-prototypes -Wnested-externs -Wshadow -Wwrite-strings
 -INCS= -I$(LUA_INC) -I$(COMPAT_DIR)
-+#DLLIB= -ldl
-+#WARN= -O2 -Wall -fPIC -W -Waggregate-return -Wcast-align -Wmissing-prototypes -Wnested-externs -Wshadow -Wwrite-strings
 +INCS= -I$(LUA_INC)
- LIBS= -L$(LUA_LIBDIR) -llua -llualib -lm $(DLLIB)
+ LIBS= $(LUA_LIBS) $(DLLIB)
 -CFLAGS= $(WARN) $(INCS)
 -CC= gcc
 -
 +CFLAGS+= $(WARN) $(INCS) -fPIC
-+#CC= gcc

@@ -1,12 +1,13 @@
-$OpenBSD: patch-lfs_c,v 1.1.1.1 2005/05/15 00:42:52 jolan Exp $
---- lfs.c.orig	Wed Jan 19 15:20:04 2005
-+++ lfs.c	Wed May 11 08:31:54 2005
-@@ -26,13 +26,12 @@
+$OpenBSD: patch-src_lfs_c,v 1.1 2005/07/08 17:57:27 jolan Exp $
+--- src/lfs.c.orig	Fri May 20 13:32:19 2005
++++ src/lfs.c	Thu Jul  7 23:29:53 2005
+@@ -28,14 +28,13 @@
  #include <unistd.h>
  #include <dirent.h>
  #include <fcntl.h>
 -#include <sys/types.h>
 +#include <sys/param.h>
+ #include <utime.h>
  #endif
  
  #include "lua.h"
@@ -16,7 +17,7 @@ $OpenBSD: patch-lfs_c,v 1.1.1.1 2005/05/15 00:42:52 jolan Exp $
  
  #include "lfs.h"
  
-@@ -81,8 +80,8 @@ static int change_dir (lua_State *L) {
+@@ -84,8 +83,8 @@ static int change_dir (lua_State *L) {
  **  and a string describing the error
  */
  static int get_dir (lua_State *L) {

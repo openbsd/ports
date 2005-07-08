@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/15 00:42:52 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2005/07/08 17:57:27 jolan Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	"file system library for the lua language"
-DISTNAME=	luafilesystem-1.0
-PKGNAME=	luafs-1.0
+DISTNAME=	luafilesystem-1.1
+PKGNAME=	luafs-1.1
 CATEGORIES=	devel
-MASTER_SITES=	http://luaforge.net/frs/download.php/430/
+MASTER_SITES=	http://luaforge.net/frs/download.php/831/
 
 HOMEPAGE=	http://www.keplerproject.org/luafilesystem/
 
@@ -28,11 +28,11 @@ post-extract:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lua/luafs
-	${INSTALL_DATA} ${WRKSRC}/*.so ${PREFIX}/lib/luafs.so
+	${INSTALL_DATA} ${WRKBUILD}/src/*.so ${PREFIX}/lib/luafs.so
 	${INSTALL_DATA} ${WRKSRC}/init.lua ${PREFIX}/lua/luafs
 	${INSTALL_DATA} ${FILESDIR}/lfs.lua ${PREFIX}/lua/luafs
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/luafs
-	${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.png \
+	${INSTALL_DATA} ${WRKSRC}/doc/us/*.html ${WRKSRC}/doc/us/*.png \
 		${PREFIX}/share/doc/luafs
 	
 .include <bsd.port.mk>
