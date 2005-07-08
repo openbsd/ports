@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.56 2005/07/06 19:13:45 niallo Exp $
+# $OpenBSD: OpenBSD-markers,v 1.57 2005/07/08 14:50:23 ian Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -37.457132	144.580589	"Miller"	# Damien
@@ -38,6 +38,7 @@
 43.633		-79.500		"Smith"		# Brad
 43.70		-79.42		"Westerback"	# Ken
 43.9183		-78.6838	"Bertrand"	# Louis
+44.01		-79.93		"Darwin"	# Ian
 45.29		-73.34		"Lebel"		# David
 45.4745		-73.6556	"Sauve-Frankel" # Mathieu
 45.5		-73.5		"Cote"		# Yannick
