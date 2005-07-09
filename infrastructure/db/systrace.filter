@@ -71,7 +71,9 @@
 	native-getuid: permit
 	native-ioctl: permit
 	native-issetugid: permit
+	native-kevent: permit
 	native-kill: permit
+	native-kqueue: permit
 	native-lchown: permit
 	native-link: filename match "/tmp" and filename[1] match "/tmp" then permit
 	native-link: filename match "${WRKDIR}" and filename[1] match "${WRKDIR}" then permit
