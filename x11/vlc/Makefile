@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2005/06/23 00:54:40 jolan Exp $
+# $OpenBSD: Makefile,v 1.21 2005/07/09 00:36:43 jolan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"videolan client; multimedia player"
 V=		0.8.1
 DISTNAME=	vlc-${V}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -37,7 +37,8 @@ LIB_DEPENDS=	SDL.3.0::devel/sdl \
 		avcodec.5.0,avformat.5.0,postproc.5.0::graphics/ffmpeg \
 		fribidi.0.0::devel/fribidi \
 		faad.0.0::audio/faad \
-		a52.0.0::audio/liba52
+		a52.0.0::audio/liba52 \
+		theora.1::multimedia/libtheora
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.59
@@ -66,7 +67,8 @@ CONFIGURE_ARGS+=--disable-altivec \
 		--disable-fb \
 		--disable-qnx \
 		--disable-slp \
-		--enable-a52
+		--enable-a52 \
+		--enable-theora
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 

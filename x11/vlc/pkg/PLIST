@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2005/06/23 00:54:40 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.14 2005/07/09 00:36:43 jolan Exp $
 %%SHARED%%
 %%i386%%
 bin/vlc
@@ -109,6 +109,7 @@ lib/vlc/demux/libsgimb_plugin.so
 lib/vlc/demux/libwav_plugin.so
 lib/vlc/gui/
 lib/vlc/libffmpeg.a
+lib/vlc/libtheora.a
 lib/vlc/libxvideo.a
 lib/vlc/misc/
 lib/vlc/misc/libdummy_plugin.so
