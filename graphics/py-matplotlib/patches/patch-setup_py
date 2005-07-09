@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.4 2005/05/09 11:47:50 djm Exp $
---- setup.py.orig	Thu Mar 31 07:42:51 2005
-+++ setup.py	Mon May  9 21:20:52 2005
+$OpenBSD: patch-setup_py,v 1.5 2005/07/09 06:14:05 djm Exp $
+--- setup.py.orig	Thu Jun 16 01:21:27 2005
++++ setup.py	Thu Jun 30 20:55:58 2005
 @@ -35,8 +35,8 @@ BUILD_GTK          = 'auto'
  # build TK GUI with Agg renderer ; requires Tkinter Python extension
  # and Tk includes
@@ -12,7 +12,7 @@ $OpenBSD: patch-setup_py,v 1.4 2005/05/09 11:47:50 djm Exp $
  
  # build a small extension to manage the focus on win32 platforms.
  #BUILD_WINDOWING        = 0
-@@ -79,7 +79,7 @@ data.extend(glob.glob('images/*.png'))
+@@ -84,7 +84,7 @@ data.extend(glob.glob('images/*.png'))
  data.extend(glob.glob('images/*.ppm'))
  data.append('.matplotlibrc')
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-setup_py,v 1.4 2005/05/09 11:47:50 djm Exp $
  
  # Figure out which array packages to provide binary support for
  # and define the NUMERIX value: Numeric, numarray, or both.
-@@ -155,27 +155,31 @@ build_swigagg(ext_modules, packages)
+@@ -161,27 +161,31 @@ build_swigagg(ext_modules, packages)
  build_transforms(ext_modules, packages, NUMERIX)
  build_enthought(ext_modules, packages)
  

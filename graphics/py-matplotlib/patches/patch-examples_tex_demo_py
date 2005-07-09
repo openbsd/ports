@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_tex_demo_py,v 1.1 2005/07/09 06:14:05 djm Exp $
+--- examples/tex_demo.py.orig	Sat Jul  9 13:00:48 2005
++++ examples/tex_demo.py	Sat Jul  9 13:04:37 2005
+@@ -28,7 +28,7 @@ ylabel(r'\it{voltage (mV)}',fontsize=16)
+ title(r"\TeX\ is Number $\displaystyle\sum_{n=1}^\infty\frac{-e^{i\pi}}{2^n}$!", 
+       fontsize=16, color='r')
+ grid(True)
+-savefig('tex_demo.eps')
++#savefig('tex_demo.eps')
+ 
+ 
+ show()

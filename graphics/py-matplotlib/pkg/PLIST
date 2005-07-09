@@ -1,14 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/05/09 11:47:50 djm Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2005/07/09 06:14:05 djm Exp $
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib/_agg.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_contour.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_contour.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_image.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_image.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_mathtext_data.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_mathtext_data.pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib/_nc_backend_gdk.so
+lib/python${MODPY_VERSION}/site-packages/matplotlib/_nc_cntr.so
+lib/python${MODPY_VERSION}/site-packages/matplotlib/_nc_image.so
+lib/python${MODPY_VERSION}/site-packages/matplotlib/_nc_transforms.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_pylab_helpers.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_pylab_helpers.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_transforms.py
@@ -28,8 +34,12 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/backend_bases.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/__init__.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_gtkagg.so
+lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_nc_backend_agg.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_agg.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_agg.pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_agg2.py
+lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_agg2.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_cairo.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_cairo.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_fltkagg.py
@@ -95,6 +105,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/enthought/traits/__init__.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/enthought/traits/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/enthought/traits/category.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/enthought/traits/category.pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib/enthought/traits/ctraits.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/enthought/traits/has_traits.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/enthought/traits/has_traits.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/enthought/traits/info_traits.py
@@ -182,6 +193,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/finance.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/finance.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/font_manager.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/font_manager.pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib/ft2font.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/image.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/image.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/legend.py
@@ -222,12 +234,16 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/pyparsing.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/pyparsing.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/table.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/table.pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib/texmanager.py
+lib/python${MODPY_VERSION}/site-packages/matplotlib/texmanager.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/text.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/text.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/ticker.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/ticker.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/transforms.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/transforms.pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib/widgets.py
+lib/python${MODPY_VERSION}/site-packages/matplotlib/widgets.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/windowing.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/windowing.pyc
 lib/python${MODPY_VERSION}/site-packages/pylab.py
@@ -237,6 +253,7 @@ share/examples/py-matplotlib/README
 share/examples/py-matplotlib/__init__.py
 share/examples/py-matplotlib/accented_text.py
 share/examples/py-matplotlib/agg_oo.py
+share/examples/py-matplotlib/agg_test.py
 share/examples/py-matplotlib/alignment_test.py
 share/examples/py-matplotlib/anim.py
 share/examples/py-matplotlib/anim_tk.py
@@ -251,6 +268,7 @@ share/examples/py-matplotlib/barchart_demo.py
 share/examples/py-matplotlib/barh_demo.py
 share/examples/py-matplotlib/boxplot_demo.py
 share/examples/py-matplotlib/break.py
+share/examples/py-matplotlib/color_by_yvalue.py
 share/examples/py-matplotlib/color_demo.py
 share/examples/py-matplotlib/colours.py
 share/examples/py-matplotlib/contour_demo.py
@@ -263,6 +281,8 @@ share/examples/py-matplotlib/cursor_demo.py
 share/examples/py-matplotlib/custom_ticker1.py
 share/examples/py-matplotlib/customize_rc.py
 share/examples/py-matplotlib/dash_control.py
+share/examples/py-matplotlib/dashpointlabel.py
+share/examples/py-matplotlib/dashtick.py
 share/examples/py-matplotlib/data/
 share/examples/py-matplotlib/data/AAPL.dat
 share/examples/py-matplotlib/data/INTC.dat
@@ -285,6 +305,7 @@ share/examples/py-matplotlib/dynamic_image_gtkagg.py
 share/examples/py-matplotlib/dynamic_image_wxagg.py
 share/examples/py-matplotlib/embedding_in_gtk.py
 share/examples/py-matplotlib/embedding_in_gtk2.py
+share/examples/py-matplotlib/embedding_in_qt.py
 share/examples/py-matplotlib/embedding_in_tk.py
 share/examples/py-matplotlib/embedding_in_tk2.py
 share/examples/py-matplotlib/embedding_in_wx.py
@@ -298,6 +319,7 @@ share/examples/py-matplotlib/figtext.py
 share/examples/py-matplotlib/fill_between.py
 share/examples/py-matplotlib/fill_between_posneg.py
 share/examples/py-matplotlib/fill_demo.py
+share/examples/py-matplotlib/fill_demo2.py
 share/examples/py-matplotlib/fill_spiral.py
 share/examples/py-matplotlib/finance_demo.py
 share/examples/py-matplotlib/font_indexing.py
@@ -307,6 +329,7 @@ share/examples/py-matplotlib/fonts_demo_kw.py
 share/examples/py-matplotlib/ftface_props.py
 share/examples/py-matplotlib/ganged_plots.py
 share/examples/py-matplotlib/gdtest.py
+share/examples/py-matplotlib/glyph_to_path.py
 share/examples/py-matplotlib/gtk_spreadsheet.py
 share/examples/py-matplotlib/histogram_demo.py
 share/examples/py-matplotlib/histogram_demo_canvasagg.py
@@ -325,6 +348,7 @@ share/examples/py-matplotlib/layer_images.py
 share/examples/py-matplotlib/legend_auto.py
 share/examples/py-matplotlib/legend_demo.py
 share/examples/py-matplotlib/legend_demo2.py
+share/examples/py-matplotlib/line_collection.py
 share/examples/py-matplotlib/line_styles.py
 share/examples/py-matplotlib/log_bar.py
 share/examples/py-matplotlib/log_demo.py
@@ -332,6 +356,7 @@ share/examples/py-matplotlib/log_test.py
 share/examples/py-matplotlib/logo.py
 share/examples/py-matplotlib/major_minor_demo1.py
 share/examples/py-matplotlib/major_minor_demo2.py
+share/examples/py-matplotlib/masked_demo.py
 share/examples/py-matplotlib/mathtext_demo.py
 share/examples/py-matplotlib/matplotlib_icon.py
 share/examples/py-matplotlib/matshow.py
@@ -342,6 +367,7 @@ share/examples/py-matplotlib/mri_demo.py
 share/examples/py-matplotlib/mri_with_eeg.py
 share/examples/py-matplotlib/multiline.py
 share/examples/py-matplotlib/multiple_figs_demo.py
+share/examples/py-matplotlib/newscalarformatter_demo.py
 share/examples/py-matplotlib/object_picker.py
 share/examples/py-matplotlib/pcolor_demo.py
 share/examples/py-matplotlib/pcolor_demo2.py
@@ -368,8 +394,11 @@ share/examples/py-matplotlib/specgram_demo.py
 share/examples/py-matplotlib/stem_plot.py
 share/examples/py-matplotlib/stock_demo.py
 share/examples/py-matplotlib/subplot_demo.py
+share/examples/py-matplotlib/subplot_toolbar.py
+share/examples/py-matplotlib/subplots_adjust.py
 share/examples/py-matplotlib/system_monitor.py
 share/examples/py-matplotlib/table_demo.py
+share/examples/py-matplotlib/tex_demo.py
 share/examples/py-matplotlib/text_handles.py
 share/examples/py-matplotlib/text_rotation.py
 share/examples/py-matplotlib/text_themes.py
@@ -380,6 +409,12 @@ share/examples/py-matplotlib/unicode_demo.py
 share/examples/py-matplotlib/vertical_ticklabels.py
 share/examples/py-matplotlib/vline_demo.py
 share/examples/py-matplotlib/webapp_demo.py
+share/examples/py-matplotlib/widgets/
+share/examples/py-matplotlib/widgets/README
+share/examples/py-matplotlib/widgets/buttons.py
+share/examples/py-matplotlib/widgets/check_buttons.py
+share/examples/py-matplotlib/widgets/radio_buttons.py
+share/examples/py-matplotlib/widgets/sliders.py
 share/examples/py-matplotlib/wxcursor_demo.py
 share/examples/py-matplotlib/zorder_demo.py
 share/py-matplotlib/
@@ -488,6 +523,9 @@ share/py-matplotlib/stock_zoom-in.ppm
 share/py-matplotlib/stock_zoom-in.xpm
 share/py-matplotlib/stock_zoom-out.ppm
 share/py-matplotlib/stock_zoom-out.xpm
+share/py-matplotlib/subplots.png
+share/py-matplotlib/subplots.ppm
+share/py-matplotlib/subplots.xpm
 share/py-matplotlib/zoom_to_rect.png
 share/py-matplotlib/zoom_to_rect.ppm
 share/py-matplotlib/zoom_to_rect.svg

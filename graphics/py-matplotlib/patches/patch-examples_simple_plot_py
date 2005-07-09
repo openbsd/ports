@@ -1,0 +1,11 @@
+$OpenBSD: patch-examples_simple_plot_py,v 1.1 2005/07/09 06:14:05 djm Exp $
+--- examples/simple_plot.py.orig	Sat Jul  9 13:00:48 2005
++++ examples/simple_plot.py	Sat Jul  9 13:04:24 2005
+@@ -11,6 +11,6 @@ ylabel('voltage (mV)')
+ title('About as simple as it gets, folks')
+ grid(True)
+ #savefig('simple_plot.png')
+-savefig('simple_plot')
++#savefig('simple_plot')
+ 
+ show()

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2005/05/09 11:47:50 djm Exp $
+# $OpenBSD: Makefile,v 1.9 2005/07/09 06:14:04 djm Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT=	"Python charting and plotting API"
 
-DISTNAME=	matplotlib-0.80
+DISTNAME=	matplotlib-0.82
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	graphics devel
 
@@ -36,17 +38,28 @@ LIB_DEPENDS=	png.3::graphics/png
 
 MAKE_ENV+=      EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng"
 
-# This file interferes with update-patches
+# The matplotlib distributors seem to have an uncanny knack for breaking 
+# update-patches by shipping .orig files, over several releases...
 post-extract:
-	@rm -f ${WRKSRC}/lib/matplotlib/legend.py.orig
+	@find ${WRKSRC} -type f -name \*.orig | xargs rm -f
 
 post-install:
+	# examples
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-matplotlib
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-matplotlib/data
-	${INSTALL_DATA} ${WRKSRC}/examples/*.* ${WRKSRC}/examples/README \
+	${INSTALL_DATA} ${WRKSRC}/examples/README ${WRKSRC}/examples/*.glade \
 	    ${PREFIX}/share/examples/py-matplotlib
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.py \
+	    ${PREFIX}/share/examples/py-matplotlib
+	# examples/data
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-matplotlib/data
 	${INSTALL_DATA} ${WRKSRC}/examples/data/* \
 	    ${PREFIX}/share/examples/py-matplotlib/data
+	# examples/widgets
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-matplotlib/widgets
+	${INSTALL_DATA} ${WRKSRC}/examples/widgets/README \
+	    ${PREFIX}/share/examples/py-matplotlib/widgets
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/widgets/*.py \
+	    ${PREFIX}/share/examples/py-matplotlib/widgets
 
 VMEM_WARNING=	Yes
 NO_REGRESS=	Yes
