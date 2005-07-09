@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/11 03:35:42 djm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/07/09 06:21:18 djm Exp $
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/pytz/
 lib/python${MODPY_VERSION}/site-packages/pytz/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pytz/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pytz/reference.py
 lib/python${MODPY_VERSION}/site-packages/pytz/reference.pyc
-lib/python${MODPY_VERSION}/site-packages/pytz/test_tzinfo.py
-lib/python${MODPY_VERSION}/site-packages/pytz/test_tzinfo.pyc
 lib/python${MODPY_VERSION}/site-packages/pytz/tzinfo.py
 lib/python${MODPY_VERSION}/site-packages/pytz/tzinfo.pyc
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/

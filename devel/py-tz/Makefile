@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2005/05/09 12:14:29 djm Exp $
+# $OpenBSD: Makefile,v 1.5 2005/07/09 06:21:18 djm Exp $
 
 COMMENT=	"Python API for dealing with timezones"
 
-DISTNAME=	pytz-2005e
+DISTNAME=	pytz-2005i
 PKGNAME=	${DISTNAME:S/^py/py-/}
 CATEGORIES=    	devel
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pytz/}
 
 do-regress: fake
-	@cd ${WRKSRC}/pytz && ${MAKE_ENV} \
+	@cd ${WRKSRC}/pytz/tests && ${MAKE_ENV} \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 		${MODPY_BIN} ./test_tzinfo.py
 
