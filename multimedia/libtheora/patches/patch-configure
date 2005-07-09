@@ -1,0 +1,35 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2005/07/09 00:35:02 jolan Exp $
+--- configure.orig	Wed Dec 15 14:06:19 2004
++++ configure	Fri Jul  8 19:11:17 2005
+@@ -20181,7 +20181,7 @@ rm -f conftest.err conftest.$ac_objext \
+ fi
+ 
+ 
+-
++if false; then
+ # Check whether --with-sdl-prefix or --without-sdl-prefix was given.
+ if test "${with_sdl_prefix+set}" = set; then
+   withval="$with_sdl_prefix"
+@@ -20474,11 +20474,11 @@ echo "$as_me: WARNING: *** Unable to fin
+ 
+ 
+   rm -f conf.sdltest
++fi
+ 
+ 
+ 
+-
+-
++if false; then
+ for ac_header in sys/soundcard.h soundcard.h machine/soundcard.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+@@ -20632,7 +20632,7 @@ echo "$as_me: WARNING: OSS audio support
+ fi
+ 
+ done
+-
++fi
+ 
+ if test x$HAVE_SDL = xyes -a x$HAVE_OSS = xyes; then
+   BUILDABLE_EXAMPLES="$BUILDABLE_EXAMPLES player_example"
