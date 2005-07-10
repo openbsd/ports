@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2005/03/13 13:01:26 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2005/07/10 15:10:17 couderc Exp $
 
 COMMENT=		"GnuPG Made Easy"
 
@@ -7,8 +7,6 @@ PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	security devel
 
 HOMEPAGE=		http://www.gnupg.org/gpgme.html
-
-MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
