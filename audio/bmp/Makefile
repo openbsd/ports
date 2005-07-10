@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2005/01/02 18:57:26 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2005/07/10 22:43:11 alek Exp $
 
 COMMENT=	"gtk+2 media player based on XMMS"
 COMMENT-mp3=	"MP3 input plugin for bmp"
 COMMENT-vorbis=	"Ogg Vorbis input plugin for bmp"
 V=		0.9.7
 DISTNAME=	bmp-$V
-PKGNAME=	bmp-$Vp1
-PKGNAME-mp3=	bmp-mp3-$Vp1
-PKGNAME-vorbis=	bmp-vorbis-$Vp1
+PKGNAME=	bmp-$Vp2
+PKGNAME-mp3=	bmp-mp3-$Vp2
+PKGNAME-vorbis=	bmp-vorbis-$Vp2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=beepmp/}
 
@@ -24,7 +24,7 @@ USE_X11=	Yes
 
 MODULES=	devel/gettext
 
-WANTLIB=	X11 Xcursor Xext Xft Xinerama Xrender fontconfig freetype m
+WANTLIB=	X11 Xft Xrender fontconfig freetype m
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk_pixbuf-2.0.400.3,gdk-x11-2.0.400.3::x11/gtk+2 \
