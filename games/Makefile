@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2005/02/19 21:49:18 espie Exp $
+# $OpenBSD: Makefile,v 1.115 2005/07/10 13:14:55 naddy Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -44,7 +44,6 @@
      SUBDIR += forcedattack
      SUBDIR += fotaq
      SUBDIR += freeciv
-     SUBDIR += freeciv,gtk2
      SUBDIR += freedroid
      SUBDIR += frotz
 #    SUBDIR += galaxis
