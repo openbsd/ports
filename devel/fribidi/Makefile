@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2004/11/23 11:22:01 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2005/07/10 15:08:05 couderc Exp $
 
-COMMENT=		"Library implementing the Unicode Bidirectional Algorithm"
+COMMENT=		"library implementing the Unicode Bidirectional Algorithm"
 
 DISTNAME=		fribidi-0.10.4
 CATEGORIES=		devel
 
 HOMEPAGE=		http://fribidi.sourceforge.net/
-
-MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
