@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2005/01/02 01:07:48 alek Exp $
+# $OpenBSD: Makefile,v 1.34 2005/07/10 09:34:52 sturm Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
-DISTNAME=		Mail-SpamAssassin-3.0.2
+DISTNAME=		Mail-SpamAssassin-3.0.4
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		mail perl5
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		${MASTER_SITE_APACHE:=spamassassin/}
+MASTER_SITES=		${MASTER_SITE_APACHE:=spamassassin/source/}
 
 BUILD_DEPENDS=		:p5-HTML-Parser-*:www/p5-HTML-Parser \
 			:p5-Digest-SHA1-*:security/p5-Digest-SHA1
