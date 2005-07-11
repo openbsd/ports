@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2005/06/28 17:46:44 aanriot Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2005/07/11 09:51:09 alek Exp $
 
 VERSION=	2.2.4
 CATEGORIES=	security
@@ -38,4 +38,4 @@ CONFIGURE_ARGS+=	--localstatedir=/var 	\
 
 NO_REGRESS=	Yes
 
-WRKDIST=	${WRKDIR}/${PKGNAME:S/-${VERSION}//}
+WRKDIST=	${WRKDIR}/${DISTNAME:S/-${VERSION}//}
