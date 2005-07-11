@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/27 13:01:57 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/07/11 19:54:30 aanriot Exp $
 
 COMMENT=	"easily create test classes in an xUnit style"
 
-DISTNAME=	Test-Class-0.07
+DISTNAME=	Test-Class-0.11
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
