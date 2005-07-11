@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2005/05/26 03:39:30 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.17 2005/07/11 04:28:58 marcm Exp $
 bin/gswitchit-plugins-capplet
 include/libgswitchit/
 include/libgswitchit/gswitchit_config.h
@@ -884,10 +884,6 @@ share/gnome/help/trashapplet/uk/figures/
 share/gnome/help/trashapplet/uk/figures/trash-applet.png
 share/gnome/help/trashapplet/uk/legal.xml
 share/gnome/help/trashapplet/uk/trashapplet.xml
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/ax-applet.png
 share/icons/hicolor/48x48/apps/charpick.png
 share/icons/hicolor/48x48/apps/gnome-cpu.png

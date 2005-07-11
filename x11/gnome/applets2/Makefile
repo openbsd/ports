@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2005/05/26 03:39:30 marcm Exp $
+# $OpenBSD: Makefile,v 1.21 2005/07/11 04:28:58 marcm Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
 COMMENT-battstat=	"GNOME applet for monitoring battery level"
 
 VERSION=		2.10.1
-SUBVERS=		
+SUBVERS=		p0
 DISTNAME=		gnome-applets-${VERSION}
 PKGNAME=		gnome-applets2-${VERSION}${SUBVERS}
 PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}${SUBVERS}
@@ -35,7 +35,8 @@ MODULES=		devel/gettext
 BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig \
 			:scrollkeeper-*:textproc/scrollkeeper \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
-RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
+RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
+			:hicolor-icon-theme-*:x11/hicolor-icon-theme
 LIB_DEPENDS=		panel-applet-2.0::x11/gnome/panel \
 			gailutil.17::x11/gnome/gail \
 			gstinterfaces-0.8.1.0::devel/gstreamer-plugins,minimal \
@@ -80,8 +81,10 @@ WANTLIB+=		Xext XRes kvm xkbfile gstreamer-0.8.5.0 startup-notification-1 wnck-1
 post-patch:
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
+.if !${FLAVOR:L:Mno_battstat}
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-applets2; \
 	cp -Rp ${WRKINST}/${SYSCONFDIR}/gnome/* ${PREFIX}/share/examples/gnome-applets2/
+.endif
 
 .include <bsd.port.mk>
