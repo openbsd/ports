@@ -1,15 +1,17 @@
-$OpenBSD: patch-scripts_phpize_in,v 1.1 2004/11/24 19:03:15 robert Exp $
---- scripts/phpize.in.orig	Wed Nov 24 19:22:33 2004
-+++ scripts/phpize.in	Wed Nov 24 19:23:02 2004
-@@ -1,8 +1,8 @@
- #! /bin/sh
+$OpenBSD: patch-scripts_phpize_in,v 1.2 2005/07/12 15:49:27 robert Exp $
+--- scripts/phpize.in.orig	Wed Jun 15 19:13:52 2005
++++ scripts/phpize.in	Tue Jul 12 13:43:25 2005
+@@ -1,10 +1,10 @@
+ #!/bin/sh
  
+ # Variable declaration
 -prefix='@prefix@'
--phpdir="$prefix/lib/php/build"
--includedir="$prefix/include/php"
 +prefix=OPENBSD_PEAR_ROOT
+ exec_prefix="`eval echo @exec_prefix@`"
+-phpdir="`eval echo @libdir@`/build"
+-includedir="`eval echo @includedir@`/php"
 +phpdir="$prefix/build"
 +includedir="$prefix/include"
  builddir="`pwd`"
  
- FILES_BUILD="mkdep.awk scan_makefile_in.awk shtool"
+ FILES_BUILD="mkdep.awk scan_makefile_in.awk shtool libtool.m4"

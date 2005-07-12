@@ -1,6 +1,6 @@
-$OpenBSD: patch-php_ini-dist,v 1.15 2005/04/18 18:56:01 robert Exp $
---- php.ini-dist.orig	Mon Feb 14 09:26:10 2005
-+++ php.ini-dist	Mon Apr 18 20:52:00 2005
+$OpenBSD: patch-php_ini-dist,v 1.16 2005/07/12 15:49:27 robert Exp $
+--- php.ini-dist.orig	Thu Apr 28 15:14:45 2005
++++ php.ini-dist	Tue Jul 12 13:34:41 2005
 @@ -408,10 +408,7 @@
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-php_ini-dist,v 1.15 2005/04/18 18:56:01 robert Exp $
  
  ; Whether or not to enable the dl() function.  The dl() function does NOT work
  ; properly in multithreaded servers, such as IIS or Zeus, and is automatically
-@@ -491,7 +488,7 @@
+@@ -494,7 +491,7 @@
  ;;;;;;;;;;;;;;;;;;
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
@@ -31,7 +31,7 @@ $OpenBSD: patch-php_ini-dist,v 1.15 2005/04/18 18:56:01 robert Exp $
  
  ; Define the anonymous ftp password (your email address)
  ;from="john@doe.com"
-@@ -510,77 +507,6 @@
+@@ -513,77 +510,6 @@
  ; auto_detect_line_endings = Off
  
  
@@ -60,6 +60,7 @@ $OpenBSD: patch-php_ini-dist,v 1.15 2005/04/18 18:56:01 robert Exp $
 -;Windows Extensions
 -;Note that MySQL and ODBC support is now built in, so no dll is needed for it.
 -;
+-;extension=php_mbstring.dll
 -;extension=php_bz2.dll
 -;extension=php_cpdf.dll
 -;extension=php_crack.dll
@@ -82,7 +83,6 @@ $OpenBSD: patch-php_ini-dist,v 1.15 2005/04/18 18:56:01 robert Exp $
 -;extension=php_interbase.dll
 -;extension=php_java.dll
 -;extension=php_ldap.dll
--;extension=php_mbstring.dll
 -;extension=php_mcrypt.dll
 -;extension=php_mhash.dll
 -;extension=php_mime_magic.dll
@@ -109,7 +109,7 @@ $OpenBSD: patch-php_ini-dist,v 1.15 2005/04/18 18:56:01 robert Exp $
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
  ;;;;;;;;;;;;;;;;;;;
-@@ -592,13 +518,6 @@
+@@ -595,13 +521,6 @@
  define_syslog_variables  = Off
  
  [mail function]
@@ -123,7 +123,7 @@ $OpenBSD: patch-php_ini-dist,v 1.15 2005/04/18 18:56:01 robert Exp $
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ;sendmail_path =
  
-@@ -1112,3 +1031,56 @@
+@@ -1115,3 +1034,56 @@
  ; Local Variables:
  ; tab-width: 4
  ; End:

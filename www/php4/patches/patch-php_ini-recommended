@@ -1,19 +1,18 @@
-$OpenBSD: patch-php_ini-recommended,v 1.12 2004/07/05 00:00:34 robert Exp $
---- php.ini-recommended.orig	Mon May 17 18:31:14 2004
-+++ php.ini-recommended	Mon Jul  5 01:56:46 2004
-@@ -423,11 +423,8 @@
+$OpenBSD: patch-php_ini-recommended,v 1.13 2005/07/12 15:49:27 robert Exp $
+--- php.ini-recommended.orig	Thu Apr 28 15:14:46 2005
++++ php.ini-recommended	Tue Jul 12 13:38:48 2005
+@@ -423,10 +423,7 @@
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ; UNIX: "/path1:/path2"  
 -;include_path = ".:/php/includes"
-+include_path = ".:OPENBSD_INCLUDE_PATH"
- ;
+-;
 -; Windows: "\path1;\path2"
 -;include_path = ".;c:\php\includes"
--
++include_path = ".:OPENBSD_INCLUDE_PATH"
+ 
  ; The root of the PHP pages, used only if nonempty.
  ; if PHP was not compiled with FORCE_REDIRECT, you SHOULD set doc_root
- ; if you are running php as a CGI under any web server (other than IIS)
 @@ -440,7 +437,7 @@
  user_dir =
  
@@ -23,7 +22,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.12 2004/07/05 00:00:34 robert Exp $
  
  ; Whether or not to enable the dl() function.  The dl() function does NOT work
  ; properly in multithreaded servers, such as IIS or Zeus, and is automatically
-@@ -506,7 +503,7 @@
+@@ -509,7 +506,7 @@
  ;;;;;;;;;;;;;;;;;;
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
@@ -32,7 +31,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.12 2004/07/05 00:00:34 robert Exp $
  
  ; Define the anonymous ftp password (your email address)
  ;from="john@doe.com"
-@@ -525,77 +522,6 @@
+@@ -528,77 +525,6 @@
  ; auto_detect_line_endings = Off
  
  
@@ -61,6 +60,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.12 2004/07/05 00:00:34 robert Exp $
 -;Windows Extensions
 -;Note that MySQL and ODBC support is now built in, so no dll is needed for it.
 -;
+-;extension=php_mbstring.dll
 -;extension=php_bz2.dll
 -;extension=php_cpdf.dll
 -;extension=php_crack.dll
@@ -83,7 +83,6 @@ $OpenBSD: patch-php_ini-recommended,v 1.12 2004/07/05 00:00:34 robert Exp $
 -;extension=php_interbase.dll
 -;extension=php_java.dll
 -;extension=php_ldap.dll
--;extension=php_mbstring.dll
 -;extension=php_mcrypt.dll
 -;extension=php_mhash.dll
 -;extension=php_mime_magic.dll
@@ -110,27 +109,25 @@ $OpenBSD: patch-php_ini-recommended,v 1.12 2004/07/05 00:00:34 robert Exp $
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
  ;;;;;;;;;;;;;;;;;;;
-@@ -607,13 +533,7 @@
+@@ -610,13 +536,6 @@
  define_syslog_variables  = Off
  
  [mail function]
 -; For Win32 only.
 -SMTP = localhost
 -smtp_port = 25
- 
+-
 -; For Win32 only.
 -;sendmail_from = me@example.com
 -
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ;sendmail_path =
  
-@@ -1111,6 +1031,55 @@
- ;exif.decode_jis_motorola = JIS
- ;exif.decode_jis_intel    = JIS
- 
--; Local Variables:
--; tab-width: 4
--; End:
+@@ -1113,3 +1032,56 @@
+ ; Local Variables:
+ ; tab-width: 4
+ ; End:
++
 +;;;;;;;;;;;;;;;;;;;;;;
 +; Dynamic Extensions ;
 +;;;;;;;;;;;;;;;;;;;;;;
@@ -140,7 +137,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.12 2004/07/05 00:00:34 robert Exp $
 +;
 +;   extension=modulename.so
 +;
-+; Note that it should be the name of the module only; no directory information 
++; Note that it should be the name of the module only; no directory information
 +; needs to go here.  Specify the location of the extension with the
 +; extension_dir directive above.
 +

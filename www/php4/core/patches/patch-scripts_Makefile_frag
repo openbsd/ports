@@ -1,12 +1,12 @@
-$OpenBSD: patch-scripts_Makefile_frag,v 1.1 2003/05/23 20:06:22 avsm Exp $
---- scripts/Makefile.frag.orig	Fri May 23 19:42:56 2003
-+++ scripts/Makefile.frag	Fri May 23 19:43:29 2003
+$OpenBSD: patch-scripts_Makefile_frag,v 1.2 2005/07/12 15:49:27 robert Exp $
+--- scripts/Makefile.frag.orig	Wed Jun  8 12:34:41 2005
++++ scripts/Makefile.frag	Tue Jul 12 13:41:33 2005
 @@ -3,8 +3,8 @@
  # Build environment install
  #
  
 -phpincludedir = $(includedir)/php
--phpbuilddir = $(prefix)/lib/php/build
+-phpbuilddir = $(libdir)/build
 +phpincludedir = $(peardir)/include
 +phpbuilddir = $(peardir)/build
  
