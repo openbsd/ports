@@ -1,6 +1,6 @@
-$OpenBSD: patch-libltdl_ltmain_sh,v 1.10 2005/06/17 16:16:46 brad Exp $
+$OpenBSD: patch-libltdl_ltmain_sh,v 1.11 2005/07/12 01:03:07 brad Exp $
 --- libltdl/ltmain.sh.orig	Mon May 16 05:39:29 2005
-+++ libltdl/ltmain.sh	Fri Jun 17 09:52:53 2005
++++ libltdl/ltmain.sh	Mon Jul 11 18:30:08 2005
 @@ -1985,6 +1985,17 @@ EOF
  	;;
      esac
@@ -77,7 +77,57 @@ $OpenBSD: patch-libltdl_ltmain_sh,v 1.10 2005/06/17 16:16:46 brad Exp $
  	    deplibs="$dir/$old_library $deplibs"
  	    link_static=yes
  	  fi
-@@ -5902,40 +5911,6 @@ relink_command=\"$relink_command\""
+@@ -4013,13 +4022,30 @@ EOF
+ 	  IFS="$save_ifs"
+ 	  eval cmd=\"$cmd\"
+ 	  $show "$cmd"
+-	  $run eval "$cmd" || exit $?
++	  $run eval "$cmd" || {
++	    lt_exit=$?
++
++	    # Restore the uninstalled library and exit
++	    if test "$mode" = relink; then
++	      $run eval '(cd $output_objdir && $rm ${realname}T && $mv ${realname}U $realname)'
++	    fi
++
++	    exit $lt_exit
++	  }
+ 	done
+ 	IFS="$save_ifs"
+ 
+ 	# Restore the uninstalled library and exit
+ 	if test "$mode" = relink; then
+ 	  $run eval '(cd $output_objdir && $rm ${realname}T && $mv $realname ${realname}T && $mv "$realname"U $realname)' || exit $?
++
++	  if test -n "$convenience"; then
++	    if test -z "$whole_archive_flag_spec"; then
++	      $show "${rm}r $gentop"
++	      $run ${rm}r "$gentop"
++	    fi
++	  fi
++
+ 	  exit $EXIT_SUCCESS
+ 	fi
+ 
+@@ -5619,7 +5645,16 @@ relink_command=\"$relink_command\""
+ 	    IFS="$save_ifs"
+ 	    eval cmd=\"$cmd\"
+ 	    $show "$cmd"
+-	    $run eval "$cmd" || exit $?
++	    $run eval "$cmd" || {
++	      lt_exit=$?
++
++	      # Restore the uninstalled library and exit
++	      if test "$mode" = relink; then
++		$run eval '(cd $output_objdir && $rm ${realname}T && $mv ${realname}U $realname)'
++	      fi
++
++	      exit $lt_exit
++	    }
+ 	  done
+ 	  IFS="$save_ifs"
+ 	fi
+@@ -5902,40 +5937,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  
