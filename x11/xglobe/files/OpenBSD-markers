@@ -1,4 +1,10 @@
-# $OpenBSD: OpenBSD-markers,v 1.58 2005/07/09 09:19:50 grunk Exp $
+# $OpenBSD: OpenBSD-markers,v 1.59 2005/07/12 05:00:58 jolan Exp $
+#
+# THE PKGNAME MUST BE BUMPED FOR THE FOLLOWING PORTS WHEN YOU COMMIT
+# TO THIS FILE: 
+# 	x11/xglobe
+#	x11/xplanet
+#
 # This is a list of OpenBSD developers and related people.
 #
 -37.457132	144.580589	"Miller"	# Damien
