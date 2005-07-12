@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/23 20:14:34 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/07/12 04:05:30 aanriot Exp $
 
 COMMENT=	"perl implementation of the SSH1 and SSH2 protocols"
 
-DISTNAME=	Net-SSH-Perl-1.27
+DISTNAME=	Net-SSH-Perl-1.28
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net security perl5
 
