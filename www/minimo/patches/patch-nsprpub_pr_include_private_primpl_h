@@ -1,7 +1,7 @@
-$OpenBSD: patch-nsprpub_pr_include_private_primpl_h,v 1.1.1.1 2005/05/25 06:59:10 jolan Exp $
---- nsprpub/pr/include/private/primpl.h.orig	Mon Jan 12 12:19:57 2004
-+++ nsprpub/pr/include/private/primpl.h	Mon Jan 12 12:20:17 2004
-@@ -1861,6 +1861,7 @@ extern void _PR_DestroyZones(void);
+$OpenBSD: patch-nsprpub_pr_include_private_primpl_h,v 1.2 2005/07/13 04:49:56 jolan Exp $
+--- nsprpub/pr/include/private/primpl.h.orig	Mon Jan 17 16:13:36 2005
++++ nsprpub/pr/include/private/primpl.h	Tue Jul 12 22:06:58 2005
+@@ -1867,6 +1867,7 @@ extern void _PR_DestroyZones(void);
          && !defined(DARWIN) \
          && !defined(NEXTSTEP) \
          && !defined(QNX) \

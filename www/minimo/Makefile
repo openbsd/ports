@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2005/06/09 01:57:22 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2005/07/13 04:49:56 jolan Exp $
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
 COMMENT=	"mini mozilla"
-DISTNAME=	minimo-20050608
+DISTNAME=	minimo-20050712
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/
 
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-SO_VERSION=	2.0
+SO_VERSION=	1.0
  
 HOMEPAGE=	http://www.mozilla.org/projects/minimo/
 

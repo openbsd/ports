@@ -1,7 +1,7 @@
-$OpenBSD: patch-security_coreconf_rules_mk,v 1.1.1.1 2005/05/25 06:59:10 jolan Exp $
---- security/coreconf/rules.mk.orig	2004-02-15 14:43:58.000000000 +0100
-+++ security/coreconf/rules.mk	2004-02-15 15:23:12.000000000 +0100
-@@ -348,7 +348,6 @@ ifdef XP_OS2_VACPP
+$OpenBSD: patch-security_coreconf_rules_mk,v 1.2 2005/07/13 04:49:56 jolan Exp $
+--- security/coreconf/rules.mk.orig	Thu Apr 14 19:36:28 2005
++++ security/coreconf/rules.mk	Tue Jul 12 22:06:58 2005
+@@ -352,7 +352,6 @@ ifdef XP_OS2_VACPP
  else
  	$(MKSHLIB) -o $@ $(OBJS) $(SUB_SHLOBJS) $(LD_LIBS) $(EXTRA_LIBS) $(EXTRA_SHARED_LIBS)
  endif

@@ -1,7 +1,7 @@
-$OpenBSD: patch-widget_src_xlib_nsKeyCode_cpp,v 1.1.1.1 2005/05/25 06:59:10 jolan Exp $
---- widget/src/xlib/nsKeyCode.cpp.orig	2002-12-09 18:39:10.000000000 +0100
-+++ widget/src/xlib/nsKeyCode.cpp	2003-12-12 15:43:29.000000000 +0100
-@@ -50,7 +50,7 @@ struct nsKeyConverter 
+$OpenBSD: patch-widget_src_xlib_nsKeyCode_cpp,v 1.2 2005/07/13 04:49:56 jolan Exp $
+--- widget/src/xlib/nsKeyCode.cpp.orig	Sun Apr 18 17:00:30 2004
++++ widget/src/xlib/nsKeyCode.cpp	Tue Jul 12 22:06:58 2005
+@@ -51,7 +51,7 @@ struct nsKeyConverter 
    unsigned int keysym; // XK keysym key code
  };
  

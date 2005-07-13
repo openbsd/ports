@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpfe_bootstrap_mozilla_in,v 1.1.1.1 2005/05/25 06:59:10 jolan Exp $
---- xpfe/bootstrap/mozilla.in.orig	Tue Jan 11 23:29:52 2005
-+++ xpfe/bootstrap/mozilla.in	Tue Jan 11 23:31:51 2005
-@@ -73,6 +73,7 @@ moz_pis_startstop_scripts()
+$OpenBSD: patch-xpfe_bootstrap_mozilla_in,v 1.2 2005/07/13 04:49:56 jolan Exp $
+--- xpfe/bootstrap/mozilla.in.orig	Tue Mar 29 16:02:22 2005
++++ xpfe/bootstrap/mozilla.in	Tue Jul 12 22:06:58 2005
+@@ -93,6 +93,7 @@ moz_pis_startstop_scripts()
  #set -x
  
  moz_libdir=%MOZAPPDIR%
@@ -9,7 +9,7 @@ $OpenBSD: patch-xpfe_bootstrap_mozilla_in,v 1.1.1.1 2005/05/25 06:59:10 jolan Ex
  MRE_HOME=%MREDIR%
  
  # honor MOZILLA_FIVE_HOME if it's there
-@@ -151,7 +152,11 @@ do
+@@ -171,7 +172,11 @@ do
    esac
  done
  

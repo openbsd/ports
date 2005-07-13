@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpcom_components_xcDll_cpp,v 1.1.1.1 2005/05/25 06:59:10 jolan Exp $
---- xpcom/components/xcDll.cpp.orig	Wed Mar  2 11:45:40 2005
-+++ xpcom/components/xcDll.cpp	Wed Mar  2 11:46:08 2005
-@@ -66,7 +66,6 @@
+$OpenBSD: patch-xpcom_components_xcDll_cpp,v 1.2 2005/07/13 04:49:56 jolan Exp $
+--- xpcom/components/xcDll.cpp.orig	Wed Jun 16 19:13:21 2004
++++ xpcom/components/xcDll.cpp	Tue Jul 12 22:06:58 2005
+@@ -67,7 +67,6 @@
  
  #include "nsTraceRefcntImpl.h"
  

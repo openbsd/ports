@@ -1,7 +1,7 @@
-$OpenBSD: patch-widget_src_gtk_nsSound_cpp,v 1.1.1.1 2005/05/25 06:59:10 jolan Exp $
---- widget/src/gtk/nsSound.cpp.orig	Sun Mar  7 20:12:02 2004
-+++ widget/src/gtk/nsSound.cpp	Tue Jan  4 11:24:01 2005
-@@ -86,7 +86,7 @@ nsSound::Init()
+$OpenBSD: patch-widget_src_gtk_nsSound_cpp,v 1.2 2005/07/13 04:49:56 jolan Exp $
+--- widget/src/gtk/nsSound.cpp.orig	Wed Nov  3 03:13:04 2004
++++ widget/src/gtk/nsSound.cpp	Tue Jul 12 22:06:58 2005
+@@ -106,7 +106,7 @@ nsSound::Init()
  
    EsdOpenSoundType EsdOpenSound;
  

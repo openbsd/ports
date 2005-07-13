@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/25 06:59:10 jolan Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/07/13 04:49:56 jolan Exp $
 @lib minimo/components/libcaps.so.${SO_VERSION}
 @lib minimo/components/libchrmlite.so.${SO_VERSION}
 @lib minimo/components/libdocshell.so.${SO_VERSION}
@@ -20,6 +20,7 @@
 @lib minimo/components/libpref.so.${SO_VERSION}
 @lib minimo/components/libremoteservice.so.${SO_VERSION}
 @lib minimo/components/libsearchservice.so.${SO_VERSION}
+@lib minimo/components/libsoftkey.so.${SO_VERSION}
 @lib minimo/components/libtxmgr.so.${SO_VERSION}
 @lib minimo/components/libuconv.so.${SO_VERSION}
 @lib minimo/components/libwebbrwsr.so.${SO_VERSION}

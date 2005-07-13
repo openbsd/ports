@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/06/09 01:57:22 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/07/13 04:49:56 jolan Exp $
 %%SHARED%%
 bin/minimo
 minimo/
@@ -9,6 +9,10 @@ minimo/chrome/HtmlForm.properties
 minimo/chrome/MPL-1.1.html
 minimo/chrome/MediaDocument.properties
 minimo/chrome/NPL-1.1.html
+minimo/chrome/XMLMonoPrint.css
+minimo/chrome/XMLPrettyPrint.css
+minimo/chrome/XMLPrettyPrint.xml
+minimo/chrome/XMLPrettyPrint.xsl
 minimo/chrome/XPCNativeWrapper.js
 minimo/chrome/about.dtd
 minimo/chrome/about.xhtml
@@ -142,6 +146,7 @@ minimo/chrome/pg-portrait.gif
 minimo/chrome/pipnss.properties
 minimo/chrome/platformDialogOverlay.dtd
 minimo/chrome/platformDialogOverlay.xul
+minimo/chrome/platformHTMLBindings.xml
 minimo/chrome/platformKeys.properties
 minimo/chrome/platformNavigationBindings.dtd
 minimo/chrome/platformXUL.css
@@ -150,6 +155,7 @@ minimo/chrome/plugins.html
 minimo/chrome/plugins.properties
 minimo/chrome/popup.css
 minimo/chrome/popup.xml
+minimo/chrome/prettyprint.dtd
 minimo/chrome/preview.gif
 minimo/chrome/printPageSetup.dtd
 minimo/chrome/printPageSetup.js
@@ -191,6 +197,7 @@ minimo/chrome/splitter.css
 minimo/chrome/splitter.xml
 minimo/chrome/stringbundle.xml
 minimo/chrome/strres.js
+minimo/chrome/svg.properties
 minimo/chrome/tab-new.gif
 minimo/chrome/tabbox.css
 minimo/chrome/tabbox.xml
@@ -312,6 +319,8 @@ minimo/components/xpcom_obsolete.xpt
 minimo/components/xpcom_threads.xpt
 minimo/components/xpcom_xpti.xpt
 minimo/components/xpconnect.xpt
+minimo/components/xulappinfo.js
+minimo/components/xulappinfo.xpt
 minimo/components/xuldoc.xpt
 minimo/greprefs/
 minimo/greprefs/all.js
@@ -323,8 +332,6 @@ minimo/res/arrow.gif
 minimo/res/arrowd.gif
 minimo/res/bloatcycle.html
 minimo/res/broken-image.gif
-minimo/res/builtin/
-minimo/res/builtin/platformHTMLBindings.xml
 minimo/res/charsetData.properties
 minimo/res/charsetalias.properties
 minimo/res/dtd/
@@ -339,6 +346,7 @@ minimo/res/fonts/
 minimo/res/fonts/fontEncoding.properties
 minimo/res/fonts/pangoFontEncoding.properties
 minimo/res/forms.css
+minimo/res/hiddenWindow.html
 minimo/res/html/
 minimo/res/html.css
 minimo/res/html/gopher-audio.gif
