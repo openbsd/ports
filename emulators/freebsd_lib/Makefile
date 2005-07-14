@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/11/19 22:12:28 sturm Exp $
+# $OpenBSD: Makefile,v 1.30 2005/07/14 06:56:24 aanriot Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -6,7 +6,7 @@ COMMENT=	"libraries necessary for FreeBSD compatibility"
 
 DISTNAME=	freebsd_lib-4.0
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://openbsd.comstyle.com/pub/brad/source/
+MASTER_SITES=	ftp://ftp.dqc.org/pub/brad/source/
 EXTRACT_ONLY=
 
 HOMEPAGE=	http://www.freebsd.org/
