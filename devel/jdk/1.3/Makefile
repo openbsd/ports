@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2005/06/14 20:10:58 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2005/07/14 17:29:08 kurt Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
 
-ONLY_FOR_ARCHS= 	i386 powerpc
+ONLY_FOR_ARCHS= 	arm i386 powerpc
 
 COMMENT=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.3.1
 DISTNAME=		j2sdk-1_3_1-src
-PKGNAME=		jdk-${V}p0
-PKGNAME-jre=		jre-${V}p0
+PKGNAME=		jdk-${V}p1
+PKGNAME-jre=		jre-${V}p1
 
 CATEGORIES=		devel/jdk java
 
@@ -86,7 +86,7 @@ PATCH_LIST=		patch-* pack-patch-*
 .  endif
 .endif
 
-WANTLIB=		ICE SM X11 Xext Xp Xt Xtst c dps m ossaudio pthread
+WANTLIB=		ICE SM X11 Xext Xp Xt Xtst c dps m ossaudio
 
 ALL_TARGET=		all images
 

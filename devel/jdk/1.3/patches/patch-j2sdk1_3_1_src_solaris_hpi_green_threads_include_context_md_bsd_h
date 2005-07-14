@@ -1,16 +1,31 @@
-$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_include_context_md_bsd_h,v 1.1 2005/06/03 17:27:54 kurt Exp $
---- j2sdk1.3.1/src/solaris/hpi/green_threads/include/context_md_bsd.h.orig	Fri May 27 17:32:10 2005
-+++ j2sdk1.3.1/src/solaris/hpi/green_threads/include/context_md_bsd.h	Fri May 27 17:38:09 2005
-@@ -59,7 +59,7 @@ typedef struct lj_ucontext {
- # endif
- #define BSD_STACK_POINTER	34
- 
--#elif defined(__arm32__)
-+#elif defined(__arm32__) || defined(__arm__)
- 
- #define BSD_FPU_MASK		0
+$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_include_context_md_bsd_h,v 1.2 2005/07/14 17:29:09 kurt Exp $
+--- j2sdk1.3.1/src/solaris/hpi/green_threads/include/context_md_bsd.h.orig	Thu Jul  7 15:44:51 2005
++++ j2sdk1.3.1/src/solaris/hpi/green_threads/include/context_md_bsd.h	Sat Jul  9 18:09:22 2005
+@@ -26,6 +26,9 @@ typedef struct lj_ucontext {
+ 	context_jmpbuf_t	jmpbuf;
+ #if defined(i386)
+ 	char		floatbuf[108];
++#elif defined(__arm__)
++	unsigned int    pc;     /* args for death func are stored here */
++	unsigned int    arg;    /* args for death func are stored here */
+ #elif defined(__powerpc__)
+ 	/* We pretend the fp status & ctl reg (fpscr) is 64 bits */
+ 	unsigned int    pc;     /* args for death func are stored here */
+@@ -65,6 +68,13 @@ typedef struct lj_ucontext {
  #define BSD_SIGNAL_MASK		21
-@@ -90,7 +90,7 @@ typedef lj_ucontext_t	inner_ucontext_t;
+ #define BSD_STACK_POINTER	3
+ 
++#elif defined(__arm__)
++
++#define BSD_MAGIC		0
++#define BSD_STACK_POINTER	23
++#define BSD_LINK_REGISTER	24
++#define BSD_SIGNAL_MASK		25
++
+ #elif defined(__powerpc__)
+ 
+ /* jmpbuf contains sigmask, then r8-31 where r11 is the LR
+@@ -90,7 +100,7 @@ typedef lj_ucontext_t	inner_ucontext_t;
  
  typedef struct {
      unsigned int unix_errno;
@@ -19,3 +34,25 @@ $OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_include_context_md_bsd_
      void *current_sp;
  #endif
      inner_ucontext_t lj_ucontext;
+@@ -200,6 +210,21 @@ extern int netbsd_siglongjmp(sigjmp_buf 
+         (contextp)->unix_errno = errno;					\
+         reschedule();							\
+     }									\
++}
++#elif defined(__arm__)
++#define getcontext(lj_ucontextp) { 				\
++    sigsetjmp((lj_ucontextp)->jmpbuf, -1); 			\
++}
++
++#define setcontext(lj_ucontextp) {		 		\
++    siglongjmp((lj_ucontextp)->jmpbuf, (int)lj_ucontextp);	\
++}
++
++#define yieldContext(contextp) {				\
++    if (!sigsetjmp((contextp)->lj_ucontext.jmpbuf, -1)) {	\
++	(contextp)->unix_errno = errno;				\
++	reschedule();						\
++    }								\
+ }
+ #else
+ #error architecture unsupported

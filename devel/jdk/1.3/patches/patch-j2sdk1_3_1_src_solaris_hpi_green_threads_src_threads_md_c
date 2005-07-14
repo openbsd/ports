@@ -1,12 +1,12 @@
-$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_src_threads_md_c,v 1.1 2005/06/03 17:27:54 kurt Exp $
---- j2sdk1.3.1/src/solaris/hpi/green_threads/src/threads_md.c.orig	Fri May 27 17:40:57 2005
-+++ j2sdk1.3.1/src/solaris/hpi/green_threads/src/threads_md.c	Fri May 27 17:42:24 2005
+$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_src_threads_md_c,v 1.2 2005/07/14 17:29:09 kurt Exp $
+--- j2sdk1.3.1/src/solaris/hpi/green_threads/src/threads_md.c.orig	Thu Jul  7 15:44:51 2005
++++ j2sdk1.3.1/src/solaris/hpi/green_threads/src/threads_md.c	Sat Jul  9 18:18:55 2005
 @@ -80,8 +80,11 @@ sysThreadCheckStack() 
  {
      sys_thread_t *tid = greenThreadSelf();
  
 +    /* workaround a gcc optimization bug on powerpc */
-+    char *currentSP = &currentSP;
++    char *currentSP = (char *)&currentSP;
 +
      /* Stacks grow toward lower addresses on Solaris... */
 -    if ((char *)(tid)->stack.base - (char *)&(tid) + STACK_REDZONE <
@@ -14,12 +14,12 @@ $OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_src_threads_md_c,v 1.1 
  	    tid->stack.size) {
  	return 1;
      } else {
-@@ -327,13 +330,13 @@ start_func(void (*func)(int), start_args
+@@ -327,17 +330,21 @@ start_func(void (*func)(int), start_args
  
  #if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__)
  static void
 -#if defined(__NetBSD__) && defined(__powerpc__)
-+#if defined(__powerpc__)
++#if defined(__powerpc__) || defined(__arm__)
  start_func(lj_ucontext_t *uc)
  #else
  start_func(void (*func)(int), start_args *args)
@@ -30,3 +30,11 @@ $OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_src_threads_md_c,v 1.1 
      start_args *args = (start_args *)uc->arg;
      void (*func)() = (void (*)())uc->pc;
      int arg = args->arg;
+     CONTEXT(args->tid)->current_sp = &func;
++#elif defined(__arm__)
++    start_args *args = (start_args *)uc->arg;
++    void (*func)() = (void (*)())uc->pc;
++    int arg = args->arg;
+ #else
+     int arg = args->arg;
+ #endif
