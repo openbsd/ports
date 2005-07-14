@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2004/12/17 15:18:31 alek Exp $
+# $OpenBSD: Makefile,v 1.22 2005/07/14 12:45:35 aanriot Exp $
 
 COMMENT=	"3D Athena Widget set that looks like Motif"
 
 DISTNAME=	Xaw3d-1.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=widgets/Xaw3d/R6.3/}
