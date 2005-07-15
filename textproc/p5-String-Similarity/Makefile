@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2004/04/19 07:31:33 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2005/07/15 01:27:59 kevlo Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"calculate the similarity of two strings"
 
-DISTNAME=	String-Similarity-1
+DISTNAME=	String-Similarity-1.02
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5 
 
