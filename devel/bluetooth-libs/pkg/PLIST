@@ -1,0 +1,44 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/16 20:45:39 grange Exp $
+%%SHARED%%
+include/bluetooth.h
+include/sdp.h
+lib/libbluetooth.a
+lib/libbluetooth_p.a
+lib/libbluetooth_pic.a
+lib/libsdp.a
+lib/libsdp_p.a
+lib/libsdp_pic.a
+@man man/cat3/SDP_GET128.0
+@man man/cat3/SDP_GET16.0
+@man man/cat3/SDP_GET32.0
+@man man/cat3/SDP_GET64.0
+@man man/cat3/SDP_GET8.0
+@man man/cat3/SDP_PUT128.0
+@man man/cat3/SDP_PUT16.0
+@man man/cat3/SDP_PUT32.0
+@man man/cat3/SDP_PUT64.0
+@man man/cat3/SDP_PUT8.0
+@man man/cat3/bluetooth.0
+@man man/cat3/bt_aton.0
+@man man/cat3/bt_endhostent.0
+@man man/cat3/bt_endprotoent.0
+@man man/cat3/bt_gethostbyaddr.0
+@man man/cat3/bt_gethostbyname.0
+@man man/cat3/bt_gethostent.0
+@man man/cat3/bt_getprotobyname.0
+@man man/cat3/bt_getprotobynumber.0
+@man man/cat3/bt_getprotoent.0
+@man man/cat3/bt_ntoa.0
+@man man/cat3/bt_sethostent.0
+@man man/cat3/bt_setprotoent.0
+@man man/cat3/sdp.0
+@man man/cat3/sdp_attr2desc.0
+@man man/cat3/sdp_change_service.0
+@man man/cat3/sdp_close.0
+@man man/cat3/sdp_error.0
+@man man/cat3/sdp_open.0
+@man man/cat3/sdp_open_local.0
+@man man/cat3/sdp_register_service.0
+@man man/cat3/sdp_search.0
+@man man/cat3/sdp_unregister_service.0
+@man man/cat3/sdp_uuid2desc.0
