@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.381 2005/06/27 18:56:30 niallo Exp $
+# $OpenBSD: Makefile,v 1.382 2005/07/16 20:52:53 grange Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -21,6 +21,7 @@
      SUBDIR += bing
      SUBDIR += bitchx
      SUBDIR += bitlbee
+     SUBDIR += bluetooth-tools
      SUBDIR += bnc
      SUBDIR += cadaver
      SUBDIR += centericq
