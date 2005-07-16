@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/07/16 12:33:50 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/07/16 21:10:37 sturm Exp $
 
 COMMENT='japanese handwriting recognition'
 CATEGORIES=japanese
 HOMEPAGE=http://www.gtk.org/~otaylor/kanjipad/
 
 DISTNAME=kanjipad-1.2.1
-MASTER_SITES=ftp://ftp.gtk.org/pub/users/otaylor/kanjipad
+MASTER_SITES=ftp://ftp.gtk.org/pub/users/otaylor/kanjipad/
 
 # GPL
 PERMIT_PACKAGE_FTP=Yes
