@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_term_termcap_c,v 1.1 2005/07/16 14:46:35 naddy Exp $
+--- src/term_termcap.c.orig	Sat Jul 16 16:34:20 2005
++++ src/term_termcap.c	Sat Jul 16 16:34:55 2005
+@@ -284,8 +284,8 @@ static void init_screen(void)
+ 
+   read_screen_size();
+   size = ZILE_COLS * ZILE_LINES;
+-  screen.array = zrealloc(screen.array, size * sizeof(int));
+-  screen.oarray = zrealloc(screen.oarray, size * sizeof(int));
++  screen.array = zrealloc(screen.array, size * sizeof(size_t));
++  screen.oarray = zrealloc(screen.oarray, size * sizeof(size_t));
+   screen.curx = screen.cury = 0;
+ }
+ 
