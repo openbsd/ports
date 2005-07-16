@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2005/07/11 09:51:09 alek Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2005/07/16 17:51:41 aanriot Exp $
 
 VERSION=	2.2.4
 CATEGORIES=	security
@@ -38,4 +38,4 @@ CONFIGURE_ARGS+=	--localstatedir=/var 	\
 
 NO_REGRESS=	Yes
 
-WRKDIST=	${WRKDIR}/${DISTNAME:S/-${VERSION}//}
+WRKDIST=	${WRKDIR}/${DISTNAME:S/-${VERSION}//:S/-GPL//}
