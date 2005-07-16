@@ -1,0 +1,5 @@
+These are XSL stylesheets for transforming DocBook XML document
+instances into various output formats. (They would also work for
+transforming DocBook SGML document instances, modulo certain namecase
+problems and the fact that there aren't (yet) any XSL implementations
+that work with SGML source documents.)

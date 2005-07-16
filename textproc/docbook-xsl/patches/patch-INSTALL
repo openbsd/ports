@@ -1,0 +1,54 @@
+$OpenBSD: patch-INSTALL,v 1.1.1.1 2005/07/16 13:27:09 alek Exp $
+--- INSTALL.orig	Thu Dec  2 12:39:25 2004
++++ INSTALL	Sat Jul 16 15:20:31 2005
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # $Id: patch-INSTALL,v 1.1.1.1 2005/07/16 13:27:09 alek Exp $
+ 
+ # To "install" this release, execute this INSTALL file by running
+@@ -31,44 +31,3 @@ rm -f $CATALOG
+ xmlcatalog --noout --create $CATALOG || exit 1
+ xmlcatalog --noout --add rewriteURI $URI $DIR/ $CATALOG || exit 1
+ xmlcatalog --noout --add rewriteSystem $URI $DIR/ $CATALOG || exit 1
+-xmlcatalog --noout --add delegateURI $URI $DIR/$CATALOG $DIR/$CATALOG || exit 1
+-xmlcatalog --noout --add delegateSystem $URI $DIR/$CATALOG $DIR/$CATALOG || exit 1
+-
+-if [ -n "$XML_CATALOG_FILES" ]; then
+-  # if $XML_CATALOG_FILES already contains the filename for the
+-  # catalog we are creating, remove that filename
+-  if [ "$XML_CATALOG_FILES"//$DIR\/$CATALOG// != "$XML_CATALOG_FILES" ]; then
+-    export XML_CATALOG_FILES="`echo $XML_CATALOG_FILES | sed "s#$DIR/$CATALOG *##"`";
+-  fi
+-else
+-  XML_CATALOG_FILES=/etc/xml/catalog
+-fi
+-
+-JAVA_CATALOGS=`echo $XML_CATALOG_FILES | tr " " ";"`
+-
+-cat <<- EOF
+-
+- 1. Now edit either your ~/.bash_profile or ~/.cshrc file so it
+-    sets the XML_CATALOG_FILES environment variable to include
+-    $DIR/$CATALOG as its first item; example:
+-
+-      # set XML_CATALOG_FILES for bash/ksh shell
+-      export XML_CATALOG_FILES="$DIR/$CATALOG $XML_CATALOG_FILES"
+-
+-    IMPORTANT: Separate filenames in XML_CATALOG_FILES with spaces
+-
+- 2. If you have a CatalogManager.properties file, change the
+-    "catalogs=" line in that file to something like:
+-
+-      catalogs=$DIR/$CATALOG;$JAVA_CATALOGS
+-
+-    IMPORTANT: In that file, separate filenames with a SEMICOLON.
+-    Also, make sure that your Java CLASSPATH contains the pathname
+-    to the _directory_ containing CatalogManager.properties file.
+-
+- 3. If you're using a stylesheet customization layer, make sure
+-    that it references the canonical URI for the DocBook
+-    stylesheets; for example, use an xsl:import like this:
+-
+-      <xsl:import href="${URI}html/chunk.xsl"/>
+-EOF
