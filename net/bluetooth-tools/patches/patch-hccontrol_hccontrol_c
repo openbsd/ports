@@ -1,0 +1,19 @@
+$OpenBSD: patch-hccontrol_hccontrol_c,v 1.1.1.1 2005/07/16 20:49:46 grange Exp $
+--- hccontrol/hccontrol.c.orig	Sat Jul 16 01:19:36 2005
++++ hccontrol/hccontrol.c	Sat Jul 16 01:20:27 2005
+@@ -135,6 +135,7 @@ socket_open(char const *node)
+ 			(void * const) &filter, sizeof(filter)) < 0)
+ 		err(4, "Could not setsockopt()");
+ 
++#ifdef __FreeBSD__
+ 	size = (sizeof(mib)/sizeof(mib[0]));
+ 	if (sysctlnametomib("net.bluetooth.hci.command_timeout",mib,&size) < 0)
+ 		err(5, "Could not sysctlnametomib()");
+@@ -142,6 +143,7 @@ socket_open(char const *node)
+ 	if (sysctl(mib, sizeof(mib)/sizeof(mib[0]),
+ 			(void *) &timeout, &size, NULL, 0) < 0)
+ 		err(6, "Could not sysctl()");
++#endif
+ 
+ 	timeout ++;
+ 
