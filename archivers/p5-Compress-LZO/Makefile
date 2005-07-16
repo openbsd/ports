@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2004/08/03 11:30:02 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2005/07/16 16:27:25 alek Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"interface to lzo compression library"
 
 DISTNAME=	perl-lzo-1.08
-PKGNAME=	p5-Compress-LZO-1.08
+PKGNAME=	p5-Compress-LZO-1.08p0
 CATEGORIES=	archivers perl5
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/
 
@@ -24,5 +24,8 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= perl
 
 WRKDIST=	${WRKDIR}/Compress-LZO-1.08
+
+pre-configure:
+	@perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE},g" ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
