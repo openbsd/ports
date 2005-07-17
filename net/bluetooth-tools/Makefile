@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/07/16 20:49:46 grange Exp $
+# $OpenBSD: Makefile,v 1.2 2005/07/17 18:20:29 grange Exp $
 
 COMMENT=		"bluetooth network tools"
 DISTNAME=		bluetooth-tools-20050716
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>
 
