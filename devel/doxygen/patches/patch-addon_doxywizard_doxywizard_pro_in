@@ -1,0 +1,19 @@
+$OpenBSD: patch-addon_doxywizard_doxywizard_pro_in,v 1.1.1.1 2005/07/17 08:30:06 alek Exp $
+--- addon/doxywizard/doxywizard.pro.in.orig	Mon Jan  3 20:20:58 2005
++++ addon/doxywizard/doxywizard.pro.in	Fri May  6 21:02:14 2005
+@@ -41,13 +41,13 @@ SOURCES     =	doxywizard.cpp \
+                 config.cpp
+ 
+ # where to put the objects
+-OBJECTS_DIR =   obj
+ 
+ # where to put the intermediate moc stuff
+ MOC_DIR     =   moc
+ 
+ # extra C++ compiler options
+-INCLUDEPATH             += ../../src
++INCLUDEPATH             += ../../src $(LOCALBASE)/lib/qt3/include
++TMAKE_LIBS              += -pthread
+ win32:TMAKE_CXXFLAGS    += -DQT_DLL
+ win32:INCLUDEPATH       += .
+ macosx-c++:LIBS+=-framework CoreFoundation -framework ApplicationServices

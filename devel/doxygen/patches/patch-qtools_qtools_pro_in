@@ -1,0 +1,12 @@
+$OpenBSD: patch-qtools_qtools_pro_in,v 1.1.1.1 2005/07/17 08:30:06 alek Exp $
+--- qtools/qtools.pro.in.orig	Sun May  1 23:27:26 2005
++++ qtools/qtools.pro.in	Sun May  1 23:27:34 2005
+@@ -76,7 +76,7 @@ win32:SOURCES +=  qfile_win32.cpp \
+ 		  qfileinfo_win32.cpp
+ 
+ INCLUDEPATH = .
+-TMAKE_CXXFLAGS += -DQT_NO_CODECS -DQT_LITE_UNICODE
++TMAKE_CXXFLAGS += -DQT_NO_CODECS -DQT_LITE_UNICODE $(_CFLAGS)
+ win32:TMAKE_CXXFLAGS += -DQT_NODLL
+ win32-g++:TMAKE_CXXFLAGS += -D__CYGWIN__ -DALL_STATIC
+ OBJECTS_DIR = ../objects

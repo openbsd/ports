@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/17 08:30:06 alek Exp $
+bin/doxygen
+bin/doxytag
+@man man/man1/doxygen.1
+@man man/man1/doxytag.1

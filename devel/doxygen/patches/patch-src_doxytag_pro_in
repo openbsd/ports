@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_doxytag_pro_in,v 1.1.1.1 2005/07/17 08:30:06 alek Exp $
+--- src/doxytag.pro.in.orig	Sun May  1 23:39:49 2005
++++ src/doxytag.pro.in	Sun May  1 23:40:04 2005
+@@ -26,6 +26,7 @@ win32-msvc:TMAKE_LFLAGS    += /LIBPATH:.
+ win32-borland:LIBS         += qtools.lib shell32.lib
+ win32-borland:TMAKE_LFLAGS += -L..\lib -L$(BCB)\lib\psdk
+ win32:TMAKE_CXXFLAGS       += -DQT_NODLL
++TMAKE_CXXFLAGS             += $(_CFLAGS)
+ INCLUDEPATH                += ../qtools
+ OBJECTS_DIR                =  ../objects
+ TARGET                     =  ../bin/doxytag

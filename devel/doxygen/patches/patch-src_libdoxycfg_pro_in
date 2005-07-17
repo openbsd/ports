@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_libdoxycfg_pro_in,v 1.1.1.1 2005/07/17 08:30:06 alek Exp $
+--- src/libdoxycfg.pro.in.orig	Sun May  1 23:39:04 2005
++++ src/libdoxycfg.pro.in	Sun May  1 23:39:22 2005
+@@ -20,6 +20,7 @@ HEADERS      =  config.h	
+ SOURCES      =	config.cpp 
+ win32:TMAKE_CXXFLAGS       += -DQT_NODLL
+ win32-g++:TMAKE_CXXFLAGS   += -fno-exceptions -fno-rtti
++TMAKE_CXXFLAGS             += $(_CFLAGS)
+ INCLUDEPATH                += ../qtools
+ win32:INCLUDEPATH          += .
+ DESTDIR                    =  ../lib

@@ -1,0 +1,24 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2005/07/17 08:30:06 alek Exp $
+--- Makefile.in.orig	Mon May  2 00:49:54 2005
++++ Makefile.in	Mon May  2 00:50:06 2005
+@@ -44,16 +44,16 @@ distclean: clean
+ 	-rm -f addon/doxywizard/moc/moc_*
+ 	-rm -f addon/doxywizard/config.cpp
+ 
+-DATE=$(shell date "+%B %Y")
++DATE=`date "+%B %Y"`
+ 
+ install: doxywizard_install 
+ 	$(INSTTOOL) -d $(INSTALL)/bin
+ 	$(INSTTOOL) -m 755 bin/doxygen    $(INSTALL)/bin
+ 	$(INSTTOOL) -m 755 bin/doxytag    $(INSTALL)/bin
+ 	$(INSTTOOL) -d $(INSTALL)/man/man1
+-	cat doc/doxygen.1    | sed -e "s/DATE/\$(DATE)/g" -e "s/VERSION/$(VERSION)/g" > $(INSTALL)/man/man1/doxygen.1 ; \
+-	cat doc/doxytag.1    | sed -e "s/DATE/\$(DATE)/g" -e "s/VERSION/$(VERSION)/g" > $(INSTALL)/man/man1/doxytag.1 ; \
+-	cat doc/doxywizard.1 | sed -e "s/DATE/\$(DATE)/g" -e "s/VERSION/$(VERSION)/g" > $(INSTALL)/man/man1/doxywizard.1 ;
++	cat doc/doxygen.1    | sed -e "s/DATE/$(DATE)/g" -e "s/VERSION/$(VERSION)/g" > $(INSTALL)/man/man1/doxygen.1 ; \
++	cat doc/doxytag.1    | sed -e "s/DATE/$(DATE)/g" -e "s/VERSION/$(VERSION)/g" > $(INSTALL)/man/man1/doxytag.1 ; \
++	cat doc/doxywizard.1 | sed -e "s/DATE/$(DATE)/g" -e "s/VERSION/$(VERSION)/g" > $(INSTALL)/man/man1/doxywizard.1 ;
+ 
+ 
+ install_docs: install

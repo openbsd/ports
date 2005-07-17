@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_libdoxygen_pro_in,v 1.1.1.1 2005/07/17 08:30:06 alek Exp $
+--- src/libdoxygen.pro.in.orig	Sun May  1 23:36:20 2005
++++ src/libdoxygen.pro.in	Sun May  1 23:37:02 2005
+@@ -190,8 +190,8 @@ SOURCES      =	ce_lex.cpp \
+ win32:TMAKE_CXXFLAGS       += -DQT_NODLL 
+ win32-msvc:TMAKE_CXXFLAGS  += -Zm200
+ win32-g++:TMAKE_CXXFLAGS   += -fno-exceptions -fno-rtti
++TMAKE_CXXFLAGS             += $(_CFLAGS)
+ INCLUDEPATH                += ../qtools
+-INCLUDEPATH                += ../libpng
+ INCLUDEPATH                += ../libmd5
+ win32:INCLUDEPATH          += .
+ win32-g++:INCLUDEPATH      = ../qtools /usr/include/libpng12 ../libmd5

@@ -1,0 +1,11 @@
+$OpenBSD: patch-libmd5_libmd5_pro_in,v 1.1.1.1 2005/07/17 08:30:06 alek Exp $
+--- libmd5/libmd5.pro.in.orig	Sun May  1 23:31:39 2005
++++ libmd5/libmd5.pro.in	Sun May  1 23:31:46 2005
+@@ -2,6 +2,7 @@ TEMPLATE	= lib
+ CONFIG		= warn_on staticlib $extraopts
+ HEADERS		= md5.h md5_loc.h
+ SOURCES		= md5.c
++TMAKE_CFLAGS += $(_CFLAGS)
+ win32:INCLUDEPATH          += .
+ win32-g++:TMAKE_CFLAGS     += -D__CYGWIN__ -DALL_STATIC
+ DESTDIR                    =  ../lib
