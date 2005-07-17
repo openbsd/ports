@@ -1,0 +1,28 @@
+$OpenBSD: patch-xbsndsrv_c,v 1.1 2005/07/17 08:53:54 aanriot Exp $
+--- xbsndsrv.c.orig	Wed Jan  5 18:12:00 2005
++++ xbsndsrv.c	Sun Jul 17 10:21:04 2005
+@@ -46,8 +46,12 @@
+ #ifdef __FreeBSD__
+ #include <machine/soundcard.h>
+ #else
++#ifdef __OpenBSD__
++#include <soundcard.h>
++#else
+ #include <linux/soundcard.h>
+ #endif
++#endif
+ #include <signal.h>
+ #include "snd.h"
+ 
+@@ -174,7 +178,11 @@ static struct _sound_name {
+ #define SUBSIZE          2048
+ #define FRAGSIZE         0x0004000a
+ 
++#ifdef __OpenBSD__
++#define SOUND_DEVICE "/dev/sound"
++#else
+ #define SOUND_DEVICE "/dev/dsp"
++#endif
+ #define SAMPLE_RATE     22050
+ #define SAMPLE_CHANNELS     1
+ #define SAMPLE_SIZE         8

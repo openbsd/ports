@@ -1,27 +1,29 @@
-# $OpenBSD: Makefile,v 1.17 2004/11/28 22:41:23 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.18 2005/07/17 08:53:54 aanriot Exp $
 
 COMMENT=	"graphical multi-player real-time strategy game for X11"
 
-DISTNAME=       xblast-2.6.beta
-PKGNAME=	xblast-2.6b
+DISTNAME=       xblast-complete-sounds-2.10.0
+PKGNAME=	xblast-2.10.0
 CATEGORIES=	games
 
-# License: GPL
+HOMEPAGE=	http://xblast.sourceforge.net/
+
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext c
+WANTLIB=		c ICE m ossaudio X11
 
-# after end of beta test period:
-# MASTER_SITES= ${MASTER_SITE_XCONTRIB}
-# MASTER_SITE_SUBDIR= games/multiplayer
-# but right now only available from:
-MASTER_SITES=   http://www.ikp.uni-koeln.de/~vogel/archive/
+MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=xblast/}
 
-WRKDIST=	${WRKDIR}/XBlast-2.6.beta
-CONFIGURE_STYLE=imake
+USE_X11=	Yes
+WRKDIST=	${WRKDIR}/${DISTNAME:S/complete-sounds-//}
+
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.59
+CONFIGURE_ENV=		LDFLAGS="-lossaudio"
+CONFIGURE_ARGS=		--enable-sound
 
 NO_REGRESS=	Yes
 
