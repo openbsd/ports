@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/28 11:10:54 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/07/17 18:00:30 alek Exp $
 bin/mlmmj-bounce
 bin/mlmmj-list
 bin/mlmmj-maintd
-bin/mlmmj-make-ml.sh
+bin/mlmmj-make-ml
 bin/mlmmj-process
 bin/mlmmj-recieve
 bin/mlmmj-send
@@ -17,6 +17,13 @@ bin/mlmmj-unsub
 @man man/man1/mlmmj-send.1
 @man man/man1/mlmmj-sub.1
 @man man/man1/mlmmj-unsub.1
+share/doc/mlmmj/
+share/doc/mlmmj/README
+share/doc/mlmmj/README.access
+share/doc/mlmmj/README.exim4
+share/doc/mlmmj/README.security
+share/doc/mlmmj/README.sendmail
+share/doc/mlmmj/TUNABLES
 share/mlmmj/
 share/mlmmj/text.skel/
 share/mlmmj/text.skel/access
