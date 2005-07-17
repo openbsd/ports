@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_Makefile_in,v 1.5 2005/06/18 21:24:40 naddy Exp $
---- man/Makefile.in.orig	Wed May 25 18:25:40 2005
-+++ man/Makefile.in	Wed May 25 18:26:21 2005
-@@ -378,7 +378,6 @@ install-man3: $(man3_MANS) $(man_MANS)
+$OpenBSD: patch-man_Makefile_in,v 1.6 2005/07/17 20:54:36 naddy Exp $
+--- man/Makefile.in.orig	Tue Jul  5 18:38:13 2005
++++ man/Makefile.in	Wed Jul 13 18:52:48 2005
+@@ -382,7 +382,6 @@ install-man3: $(man3_MANS) $(man_MANS)
  	  else file=$$i; fi; \
  	  ext=`echo $$i | sed -e 's/^.*\\.//'`; \
  	  case "$$ext" in \

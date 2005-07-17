@@ -1,12 +1,13 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.4 2005/06/18 21:24:41 naddy Exp $
---- tools/Makefile.in.orig	Tue May 24 16:53:21 2005
-+++ tools/Makefile.in	Tue May 24 16:53:46 2005
-@@ -248,9 +248,9 @@ INSTALL_DATA = @INSTALL_DATA@
+$OpenBSD: patch-tools_Makefile_in,v 1.5 2005/07/17 20:54:36 naddy Exp $
+--- tools/Makefile.in.orig	Tue Jul  5 18:38:16 2005
++++ tools/Makefile.in	Tue Jul 12 13:04:52 2005
+@@ -248,10 +248,10 @@ INSTALL_DATA = @INSTALL_DATA@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
  INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
 -LDFLAGS = @LDFLAGS@
-+LDFLAGS = 
++LDFLAGS =
+ LIBDIR = @LIBDIR@
  LIBOBJS = @LIBOBJS@
 -LIBS = @LIBS@
 +LIBS = @LDFLAGS@ @LIBS@
