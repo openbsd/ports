@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.29 2005/02/16 21:55:55 alek Exp $
+# $OpenBSD: Makefile,v 1.30 2005/07/19 18:13:01 pvalchev Exp $
+
+BROKEN=		"requires update but new version has issues"
 
 COMMENT=	"curses-based icq client implementation"
 
