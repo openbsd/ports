@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_gmake_Makefile,v 1.1 2004/03/02 21:20:12 xsa Exp $
---- build/gmake/Makefile.orig	2003-04-12 08:57:03.000000000 +0200
-+++ build/gmake/Makefile	2004-03-01 19:50:56.000000000 +0100
+$OpenBSD: patch-build_gmake_Makefile,v 1.2 2005/07/19 08:10:10 aanriot Exp $
+--- build/gmake/Makefile.orig	Tue May  3 08:58:08 2005
++++ build/gmake/Makefile	Tue Jul 12 12:03:54 2005
 @@ -58,8 +58,8 @@ SHELL=/bin/sh
  PROJECT=tidy
  
@@ -12,48 +12,52 @@ $OpenBSD: patch-build_gmake_Makefile,v 1.1 2004/03/02 21:20:12 xsa Exp $
  
  bininst = ${runinst_prefix}/bin
  libinst = ${devinst_prefix}/lib
-@@ -76,8 +76,8 @@ LIBDIR = ${TOPDIR}/lib
- BINDIR = ${TOPDIR}/bin
- 
+@@ -79,13 +79,13 @@ DOCDIR = ${TOPDIR}/htmldoc
  # CFLAGS etc..
+ # For optimised builds, flags such as "-O2" should be added and -D_DEBUG=1
+ # disabled.
 -CC= gcc
--CFLAGS= -Wall -Wno-switch -Wno-parentheses -Wno-unused -I $(INCDIR)
+-CFLAGS= -g -Wall -Wno-switch -Wno-parentheses -I $(INCDIR)
 +#CC= gcc
 +CFLAGS+= -I $(INCDIR)
+ # flags only supported with gcc 3.x
+ # CFLAGS += -Wunused-parameter
  
- # OTHERCFLAGS= -DSUPPORT_ACCESSIBILITY_CHECKS=1 -DSUPPORT_UTF16_ENCODINGS=1 -DSUPPORT_ASIAN_ENCODINGS=1
+ OTHERCFLAGS=
+-OTHERCFLAGS+= -D_DEBUG=1
++#OTHERCFLAGS+= -D_DEBUG=1
+ # OTHERCFLAGS+= -DSUPPORT_ACCESSIBILITY_CHECKS=1 -DSUPPORT_UTF16_ENCODINGS=1 -DSUPPORT_ASIAN_ENCODINGS=1
  ifdef SUPPORT_UTF16_ENCODINGS
-@@ -107,7 +107,7 @@ LIBPREFIX = lib
- LIBSUFFIX = .a
+ CFLAGS += -DSUPPORT_UTF16_ENCODINGS=$(SUPPORT_UTF16_ENCODINGS)
+@@ -115,7 +115,7 @@ LIBSUFFIX = .a
+ OBJSUF = .o
  
  LIBRARY = $(LIBDIR)/$(LIBPREFIX)$(PROJECT)$(LIBSUFFIX)
 -AR=ar -r
 +#AR=ar -r
  
- EXES = $(BINDIR)/$(PROJECT) $(BINDIR)/tab2space
+ XSLTPROC = xsltproc
  
-@@ -148,7 +148,7 @@ all:    $(LIBRARY) $(EXES)
+@@ -164,7 +164,7 @@ doc:    $(DOCS)
  
  $(LIBRARY): $(OBJFILES)
  	if [ ! -d $(LIBDIR) ]; then mkdir $(LIBDIR); fi
 -	$(AR) $@ $(OBJFILES)
 +	$(AR) -r $@ $(OBJFILES)
  ifdef RANLIB
- 	$(RANLIB) $@ 
+ 	$(RANLIB) $@
  endif
-@@ -177,21 +177,21 @@ clean:
+@@ -205,19 +205,19 @@ clean:
  	if [ "$(BINDIR)" != "$(TOPDIR)" -a -d $(BINDIR) ]; then rmdir $(BINDIR); fi
  
  installhdrs: $(HFILES)
 -	if [ ! -d "$(incinst)" ]; then mkdir -p "$(incinst)"; fi
--	cp -f $(HFILES) "$(incinst)/"
 +	if [ ! -d "$(incinst)" ]; then ${BSD_INSTALL_DATA_DIR} "$(incinst)"; fi
-+	${BSD_INSTALL_DATA} $(HFILES) "$(incinst)/"
+ 	cp -f $(HFILES) "$(incinst)/"
  
  installib: $(LIBRARY)
--	if [ ! -d "$(libinst)" ]; then mkdir -p "$(libinst)"; fi
+ 	if [ ! -d "$(libinst)" ]; then mkdir -p "$(libinst)"; fi
 -	cp -f $(LIBRARY) "$(libinst)/"
-+	if [ ! -d "$(libinst)" ]; then ${BSD_INSTALL_DATA_DIR} "$(libinst)"; fi
 +	${BSD_INSTALL_DATA} $(LIBRARY) "$(libinst)/"
  
  installexes: $(EXES)
@@ -62,12 +66,10 @@ $OpenBSD: patch-build_gmake_Makefile,v 1.1 2004/03/02 21:20:12 xsa Exp $
 +	if [ ! -d "$(bininst)" ]; then ${BSD_INSTALL_PROGRAM_DIR} "$(bininst)"; fi
 +	${BSD_INSTALL_PROGRAM} $(EXES) "$(bininst)/"
  
- installmanpage:
- 	if [ -f "$(TOPDIR)/htmldoc/man_page.txt" ] ; then \
--    	if [ ! -d "$(maninst)/man1" ]; then mkdir -p "$(maninst)/man1"; fi; \
--    	cp -f $(TOPDIR)/htmldoc/man_page.txt "$(maninst)/man1/tidy.1"; \
-+    	if [ ! -d "$(maninst)/man1" ]; then ${BSD_INSTALL_MAN_DIR} "$(maninst)/man1"; fi; \
-+    	${BSD_INSTALL_MAN} $(TOPDIR)/htmldoc/man_page.txt "$(maninst)/man1/tidy.1"; \
- 	fi
-    
+ installmanpage: $(DOCDIR)/tidy.1
+-	if [ ! -d "$(maninst)/man1" ]; then mkdir -p "$(maninst)/man1"; fi;
+-	cp -f $(DOCDIR)/tidy.1 "$(maninst)/man1/tidy.1";
++	if [ ! -d "$(maninst)/man1" ]; then ${BSD_INSTALL_MAN_DIR} "$(maninst)/man1"; fi;
++	${BSD_INSTALL_MAN} $(DOCDIR)/tidy.1 "$(maninst)/man1/tidy.1";
+ 
  install: installhdrs installib installmanpage installexes
