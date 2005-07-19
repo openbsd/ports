@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2005/03/09 02:58:59 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2005/07/19 21:11:23 jcs Exp $
 
 # not useful on anything else
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"hibernation file creator for phoenix bios laptops"
 
-PKGNAME=	tphdisk-1.0
+PKGNAME=	tphdisk-1.0p0
 DISTFILES=	tphdisk.c
 CATEGORIES=	sysutils
 
