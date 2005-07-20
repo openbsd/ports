@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2005/06/04 14:42:41 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.13 2005/07/20 12:28:10 aanriot Exp $
 
 COMMENT=		"Nostromo webserver"
 
-DISTNAME=		nostromo-1.7.3
+DISTNAME=		nostromo-1.7.4
 CATEGORIES=		www
 MASTER_SITES=		http://www.nazgul.ch/dev/
 
