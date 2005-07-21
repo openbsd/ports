@@ -1,5 +1,6 @@
-Cfengine, or the configuration engine, is an autonomous agent and a middle to 
-high level policy language for building expert systems which administrate and 
-configure large computer networks. Cfengine uses the idea of classes and a 
-primitive intelligence to define and automate the configuration and 
-maintenance of system state, for small to huge configurations.
+Cfengine, or the configuration engine, is an autonomous agent and a
+middle to high level policy language for building expert systems which
+administrate and configure large computer networks. Cfengine uses the
+idea of classes and a primitive intelligence to define and automate the
+configuration and maintenance of system state, for small to huge
+configurations.

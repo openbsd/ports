@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2005/01/12 21:31:06 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2005/07/21 15:16:46 aanriot Exp $
 
 COMMENT=	"GNU system administration tool for networks"
 
-V=		2.1.10
-DISTNAME=      	cfengine-2.1.10
-PKGNAME=	${DISTNAME}p1
+V=		2.1.15
+DISTNAME=      	cfengine-${V}
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.cfengine.org/

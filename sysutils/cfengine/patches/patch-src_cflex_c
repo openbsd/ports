@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_cflex_c,v 1.1 2005/07/21 15:16:46 aanriot Exp $
+--- src/cflex.c.orig	Fri Jun 10 16:02:28 2005
++++ src/cflex.c	Fri Jul 15 12:24:01 2005
+@@ -2376,7 +2376,7 @@ YY_RULE_SETUP
+ #line 236 "cflex.l"
+ {
+                        Debug1("LFARROW %s\n",yytext);
+-                       strcpy(LINKFROM,CURRENTOBJECT);
++                       (void)strlcpy(LINKFROM,CURRENTOBJECT,CF_BUFSIZE);
+                        ACTION_IS_LINKCHILDREN = true;
+                        FORCELINK='y';
+                        return LARROW;
+@@ -2387,7 +2387,7 @@ YY_RULE_SETUP
+ #line 245 "cflex.l"
+ {
+                        Debug1("FARROW %s\n",yytext);
+-                       strcpy(LINKFROM,CURRENTOBJECT);
++                       (void)strlcpy(LINKFROM,CURRENTOBJECT,CF_BUFSIZE);
+                        ACTION_IS_LINK = true;
+                        FORCELINK='y';
+                        return ARROW;
+@@ -2398,7 +2398,7 @@ YY_RULE_SETUP
+ #line 253 "cflex.l"
+ {
+                        Debug1("ARROW %s\n",yytext);
+-                       strcpy(LINKFROM,CURRENTOBJECT);
++                       (void)strlcpy(LINKFROM,CURRENTOBJECT,CF_BUFSIZE);
+                        ACTION_IS_LINK = true;
+                        FORCELINK='n';
+                        return ARROW;
+@@ -2409,7 +2409,7 @@ YY_RULE_SETUP
+ #line 262 "cflex.l"
+ {
+                        Debug1("LARROW %s\n",yytext);
+-                       strcpy(LINKFROM,CURRENTOBJECT);
++                       (void)strlcpy(LINKFROM,CURRENTOBJECT,CF_BUFSIZE);
+                        ACTION_IS_LINKCHILDREN = true;
+                        FORCELINK='n';
+                        return LARROW;

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/10/01 21:22:15 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/07/21 15:16:47 aanriot Exp $
 @comment doc/
 @comment doc/cfengine-${V}/
 @info info/cfengine-Anomalies.info
@@ -12,6 +12,7 @@
 @man man/man8/cfkey.8
 @man man/man8/cfrun.8
 @man man/man8/cfservd.8
+@man man/man8/cfshow.8
 sbin/cfagent
 sbin/cfdoc
 sbin/cfenvd
@@ -20,8 +21,13 @@ sbin/cfexecd
 sbin/cfkey
 sbin/cfrun
 sbin/cfservd
+sbin/cfshow
 sbin/vicf
 share/cfengine/
+share/cfengine/ChangeLog
+share/cfengine/INSTALL
+share/cfengine/NEWS
+share/cfengine/README
 share/cfengine/cfengine.el
 share/examples/cfengine/
 share/examples/cfengine/cf.chflags.example

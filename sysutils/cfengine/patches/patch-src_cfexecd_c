@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cfexecd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
---- src/cfexecd.c.orig	Mon Aug 16 22:12:46 2004
-+++ src/cfexecd.c	Fri Oct  1 23:14:46 2004
-@@ -148,7 +148,7 @@ Banner("Check options");
+$OpenBSD: patch-src_cfexecd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
+--- src/cfexecd.c.orig	Wed May 25 03:52:26 2005
++++ src/cfexecd.c	Fri Jul 15 12:24:00 2005
+@@ -147,7 +147,7 @@ Banner("Check options");
  
  NOSPLAY = false; 
  
@@ -9,49 +9,54 @@ $OpenBSD: patch-src_cfexecd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
 +(void)snprintf(VPREFIX, 40, "cfexecd"); 
  openlog(VPREFIX,LOG_PID|LOG_NOWAIT|LOG_ODELAY,LOG_DAEMON);
  
- while ((c=getopt_long(argc,argv,"L:d:vhpFV1g",CFDOPTIONS,&optindex)) != EOF)
-@@ -229,7 +229,7 @@ strncpy(VLOGDIR,WORKDIR,CF_BUFSIZE-1);
+ while ((c=getopt_long(argc,argv,"L:d:vhpqFV1g",CFDOPTIONS,&optindex)) != EOF)
+@@ -216,15 +216,15 @@ LOGGING = true;                    /* Do
+ 
+  /* XXX Initialize workdir for non privileged users */
+ 
+-strcpy(CFWORKDIR,WORKDIR);
++(void)strlcpy(CFWORKDIR,WORKDIR,sizeof(CFWORKDIR));
+ 
+ if (getuid() > 0)
+    {
+    char *homedir;
+    if ((homedir = getenv("HOME")) != NULL)
+       {
+-      strcpy(CFWORKDIR,homedir);
+-      strcat(CFWORKDIR,"/.cfagent");
++      (void)strlcpy(CFWORKDIR,homedir,sizeof(CFWORKDIR));
++      (void)strlcat(CFWORKDIR,"/.cfagent",sizeof(CFWORKDIR));
+       }
+    }
+ 
+@@ -246,7 +246,7 @@ strncpy(VLOGDIR,CFWORKDIR,CF_BUFSIZE-1);
  VCANONICALFILE = strdup(CanonifyName(VINPUTFILE));
  GetNameInfo();
  
 -strcpy(VUQNAME,VSYSNAME.nodename);
 +(void)strlcpy(VUQNAME,VSYSNAME.nodename,CF_MAXVARSIZE);
+ 
+ MAILTO[0] = '\0';
+ MAILFROM[0] = '\0';
+@@ -555,7 +555,7 @@ for (ip = SCHEDULE; ip != NULL; ip = ip-
+       DeleteItemList(VHEAP);
+       VHEAP = NULL;
+       GetNameInfo();
+-      strcpy(VUQNAME,VSYSNAME.nodename);
++      (void)strlcpy(VUQNAME,VSYSNAME.nodename,CF_MAXVARSIZE);
+       return true;
+       }
+    }
+@@ -563,7 +563,7 @@ for (ip = SCHEDULE; ip != NULL; ip = ip-
+ DeleteItemList(VHEAP);
+ VHEAP = NULL; 
+ GetNameInfo();
+-strcpy(VUQNAME,VSYSNAME.nodename);
++(void)strlcpy(VUQNAME,VSYSNAME.nodename,CF_MAXVARSIZE);
+ return false;
  }
  
- 
-@@ -412,7 +412,7 @@ if (strstr(line,"No SMTP"))
-    CfLog(cferror,"Need: smtpserver = ( ?? ) in control ","");
-    }
- 
--strcpy(VMAILSERVER,line); 
-+(void)strlcpy(VMAILSERVER,line,sizeof(VMAILSERVER)); 
-  
- Debug("Got cfengine SMTP server as (%s)\n",VMAILSERVER); 
- 
-@@ -426,19 +426,19 @@ if (strlen(line) == 0)
-    CfLog(cferror,"Need: sysadm = ( ??@?? ) in control ","");
-    }
- 
--strcpy(MAILTO,line); 
-+(void)strlcpy(MAILTO,line,sizeof(MAILTO)); 
- Debug("Got cfengine sysadm variable (%s)\n",MAILTO); 
- 
- line[0] = '\0'; 
- fgets(line,CF_BUFSIZE,pp); 
- Chop(line); 
--strcpy(VFQNAME,line); 
-+(void)strlcpy(VFQNAME,line,CF_MAXVARSIZE); 
- Debug("Got fully qualified name (%s)\n",VFQNAME); 
- 
- line[0] = '\0'; 
- fgets(line,CF_BUFSIZE,pp); 
- Chop(line); 
--strcpy(VIPADDRESS,line); 
-+(void)strlcpy(VIPADDRESS,line,18); 
- Debug("Got IP (%s)\n",VIPADDRESS); 
- 
- if ((ungetc(fgetc(pp), pp)) != '[')
-@@ -917,7 +917,7 @@ if (!Dialogue(sd,NULL))
+@@ -971,7 +971,7 @@ if (!Dialogue(sd,NULL))
     goto mail_err;
     }
   
@@ -59,23 +64,32 @@ $OpenBSD: patch-src_cfexecd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
 +(void)snprintf(VBUFF,sizeof(VBUFF),"HELO %s\r\n",VFQNAME); 
  Debug("%s",VBUFF);
  
-  if (!Dialogue(sd,VBUFF))
-@@ -930,12 +930,12 @@ sscanf(to,"%*[^@]@%.64s",domain);
+ if (!Dialogue(sd,VBUFF))
+@@ -981,7 +981,7 @@ if (!Dialogue(sd,VBUFF))
  
- if (strlen(domain) > 0)
+ if (strlen(MAILFROM) > 0)
     {
--   sprintf(VBUFF,"MAIL FROM: <cfengine@%s>\r\n",domain);
-+   (void)snprintf(VBUFF,sizeof(VBUFF),"MAIL FROM: <cfengine@%s>\r\n",domain);
-    Debug("%s",VBUFF);
-    }
- else
-    {
--   sprintf(VBUFF,"MAIL FROM: <%s>\r\n",to);
-+   (void)snprintf(VBUFF,sizeof(VBUFF),"MAIL FROM: <%s>\r\n",to);
+-   sprintf(VBUFF,"MAIL FROM: <%s>\r\n",MAILFROM);
++   (void)snprintf(VBUFF,sizeof(VBUFF),"MAIL FROM: <%s>\r\n",MAILFROM);
     Debug("%s",VBUFF);   
     }
- 
-@@ -944,7 +944,7 @@ if (!Dialogue(sd,VBUFF))
+ else
+@@ -991,12 +991,12 @@ else
+    
+    if (strlen(domain) > 0)
+       {
+-      sprintf(VBUFF,"MAIL FROM: <cfengine@%s>\r\n",domain);
++      (void)snprintf(VBUFF,sizeof(VBUFF),"MAIL FROM: <cfengine@%s>\r\n",domain);
+       Debug("%s",VBUFF);
+       }
+    else
+       {
+-      sprintf(VBUFF,"MAIL FROM: <%s>\r\n",to);
++      (void)snprintf(VBUFF,sizeof(VBUFF),"MAIL FROM: <%s>\r\n",to);
+       Debug("%s",VBUFF);   
+       }
+    }
+@@ -1006,7 +1006,7 @@ if (!Dialogue(sd,VBUFF))
     goto mail_err;
     }
   
@@ -84,7 +98,7 @@ $OpenBSD: patch-src_cfexecd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
  Debug("%s",VBUFF);
  
  if (!Dialogue(sd,VBUFF))
-@@ -959,12 +959,12 @@ if (!Dialogue(sd,"DATA\r\n"))
+@@ -1021,12 +1021,12 @@ if (!Dialogue(sd,"DATA\r\n"))
  
  if (anomaly)
     {
@@ -99,20 +113,29 @@ $OpenBSD: patch-src_cfexecd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
     Debug("%s",VBUFF);
     }
   
-@@ -978,10 +978,10 @@ strftime(VBUFF,CF_BUFSIZE,"Date: %a, %d 
- sent=send(sd,VBUFF,strlen(VBUFF),0);
- #endif
+@@ -1042,18 +1042,18 @@ sent=send(sd,VBUFF,strlen(VBUFF),0);
  
--sprintf(VBUFF,"From: cfengine@%s\r\n",VFQNAME);
-+(void)snprintf(VBUFF,sizeof(VBUFF),"From: cfengine@%s\r\n",VFQNAME);
- Debug("%s",VBUFF);
+  if (strlen(MAILFROM) == 0)
+     {
+-    sprintf(VBUFF,"From: cfengine@%s\r\n",VFQNAME);
++    (void)snprintf(VBUFF,sizeof(VBUFF),"From: cfengine@%s\r\n",VFQNAME);
+     Debug("%s",VBUFF);
+     }
+  else
+     {
+-    sprintf(VBUFF,"From: cfengine@%s\r\n",VFQNAME);
++    (void)snprintf(VBUFF,sizeof(VBUFF),"From: cfengine@%s\r\n",VFQNAME);
+     Debug("%s",VBUFF);    
+     }
+  
  sent=send(sd,VBUFF,strlen(VBUFF),0);
+ 
 -sprintf(VBUFF,"To: %s\r\n\r\n",to); 
 +(void)snprintf(VBUFF,sizeof(VBUFF),"To: %s\r\n\r\n",to); 
  Debug("%s",VBUFF);
  sent=send(sd,VBUFF,strlen(VBUFF),0);
  
-@@ -994,14 +994,14 @@ while(!feof(fp))
+@@ -1066,14 +1066,14 @@ while(!feof(fp))
     if (strlen(VBUFF) > 0)
        {
        VBUFF[strlen(VBUFF)-1] = '\r';
@@ -129,12 +152,12 @@ $OpenBSD: patch-src_cfexecd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
        sent=send(sd,VBUFF,strlen(VBUFF),0);
        break;
        }
-@@ -1023,7 +1023,7 @@ mail_err: 
+@@ -1095,7 +1095,7 @@ mail_err: 
  
  fclose(fp);
  close(sd); 
 -sprintf(VBUFF, "Cannot mail to %s.", to);
 +(void)snprintf(VBUFF, sizeof(VBUFF), "Cannot mail to %s.", to);
- CfLog(cferror,VBUFF,"");
+ CfLog(cflogonly,VBUFF,"");
  }
  

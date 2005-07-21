@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cfservd_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
---- src/cfservd.c.orig	Fri Aug 13 11:08:25 2004
-+++ src/cfservd.c	Fri Oct  1 23:14:47 2004
-@@ -172,10 +172,10 @@ void CheckOptsAndInit(int argc,char **ar
+$OpenBSD: patch-src_cfservd_c,v 1.3 2005/07/21 15:16:46 aanriot Exp $
+--- src/cfservd.c.orig	Wed May 25 09:58:03 2005
++++ src/cfservd.c	Fri Jul 15 12:24:01 2005
+@@ -171,10 +171,10 @@ void CheckOptsAndInit(int argc,char **ar
    int c;
  
  SetContext("server");
@@ -15,7 +15,26 @@ $OpenBSD: patch-src_cfservd_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
  OUTPUT[0] = '\0';
  
  /*
-@@ -277,7 +277,7 @@ strncpy(VLOCKDIR,WORKDIR,CF_BUFSIZE-1);
+@@ -272,15 +272,15 @@ if ((CFSTARTTIME = time((time_t *)NULL))
+ 
+  /* XXX Initialize workdir for non privileged users */
+ 
+- strcpy(CFWORKDIR,WORKDIR);
++ (void)strlcpy(CFWORKDIR,WORKDIR,sizeof(CFWORKDIR));
+ 
+  if (getuid() > 0)
+     {
+     char *homedir;
+     if ((homedir = getenv("HOME")) != NULL)
+        {
+-       strcpy(CFWORKDIR,homedir);
+-       strcat(CFWORKDIR,"/.cfagent");
++       (void)strlcpy(CFWORKDIR,homedir,sizeof(CFWORKDIR));
++       (void)strlcat(CFWORKDIR,"/.cfagent",sizeof(CFWORKDIR));
+        }
+     }
+ 
+@@ -293,7 +293,7 @@ strncpy(VLOCKDIR,CFWORKDIR,CF_BUFSIZE-1)
  VIFELAPSED = CF_EXEC_IFELAPSED;
  VEXPIREAFTER = CF_EXEC_EXPIREAFTER;
   
@@ -24,8 +43,8 @@ $OpenBSD: patch-src_cfservd_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
  
  VCANONICALFILE = strdup(CanonifyName(VINPUTFILE));
  VREPOSITORY = strdup("\0");
-@@ -1024,7 +1024,7 @@ if (CFDSTARTTIME < newstat.st_mtime)
-    DeleteItemList(TRUSTKEYLIST);
+@@ -1047,7 +1047,7 @@ if (CFDSTARTTIME < newstat.st_mtime)
+    DeleteItemList(VIMPORT);
     DeleteAuthList(VADMIT);
     DeleteAuthList(VDENY);
 -   strcpy(VDOMAIN,"undefined.domain");
@@ -33,7 +52,7 @@ $OpenBSD: patch-src_cfservd_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
  
     VADMIT = VADMITTOP = NULL;
     VDENY  = VDENYTOP  = NULL;
-@@ -1401,7 +1401,7 @@ switch (GetCommand(recvbuffer))
+@@ -1427,7 +1427,7 @@ switch (GetCommand(recvbuffer))
         
         if ((tloc = time((time_t *)NULL)) == -1)
            {
@@ -42,7 +61,7 @@ $OpenBSD: patch-src_cfservd_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
            CfLog(cfinform,conn->output,"time");
            SendTransaction(conn->sd_reply,"BAD: clocks out of synch",0,CF_DONE);
            return true;
-@@ -1466,7 +1466,7 @@ switch (GetCommand(recvbuffer))
+@@ -1492,7 +1492,7 @@ switch (GetCommand(recvbuffer))
         
     }
   
@@ -51,7 +70,7 @@ $OpenBSD: patch-src_cfservd_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
   SendTransaction(conn->sd_reply,sendbuffer,0,CF_DONE);
   CfLog(cfinform,"Closing connection\n",""); 
   return false;
-@@ -1574,7 +1574,7 @@ if ((CFSTARTTIME = time((time_t *)NULL))
+@@ -1600,7 +1600,7 @@ if ((CFSTARTTIME = time((time_t *)NULL))
  if (GetMacroValue(CONTEXTID,"cfrunCommand") == NULL)
     {
     Verbose("cfservd exec request: no cfrunCommand defined\n");
@@ -60,7 +79,7 @@ $OpenBSD: patch-src_cfservd_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
     SendTransaction(conn->sd_reply,sendbuffer,0,CF_DONE);
     return;
     }
-@@ -1615,8 +1615,8 @@ else
+@@ -1641,8 +1641,8 @@ else
     {
     if ((args != NULL) & (strlen(args) > 0))
        {
@@ -71,7 +90,7 @@ $OpenBSD: patch-src_cfservd_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
  
        snprintf(sendbuffer,CF_BUFSIZE,"cfservd Executing %s\n",ebuff);
        SendTransaction(conn->sd_reply,sendbuffer,0,CF_DONE);
-@@ -2483,7 +2483,7 @@ if (S_ISLNK(statbuf.st_mode))
+@@ -2551,7 +2551,7 @@ if (S_ISLNK(statbuf.st_mode))
         
     if (readlink(filename,linkbuf,CF_BUFSIZE-1) == -1)
        {
@@ -80,7 +99,7 @@ $OpenBSD: patch-src_cfservd_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
        CfLog(cferror,sendbuffer,"readlink");
        SendTransaction(conn->sd_reply,sendbuffer,0,CF_DONE);
        return -1;
-@@ -2586,12 +2586,12 @@ SendTransaction(conn->sd_reply,sendbuffe
+@@ -2654,12 +2654,12 @@ SendTransaction(conn->sd_reply,sendbuffe
  
  if (cfst.cf_readlink != NULL)
     {
@@ -96,7 +115,7 @@ $OpenBSD: patch-src_cfservd_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
     }
  
  SendTransaction(conn->sd_reply,sendbuffer,0,CF_DONE);
-@@ -2793,13 +2793,13 @@ memset(sendbuffer,0,CF_BUFSIZE);
+@@ -2861,13 +2861,13 @@ memset(sendbuffer,0,CF_BUFSIZE);
  
  if (ChecksumChanged(filename,digest,cfverbose,true,'m'))
     {
@@ -112,7 +131,7 @@ $OpenBSD: patch-src_cfservd_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
     Debug("Checksums matched ok\n");
     SendTransaction(conn->sd_reply,sendbuffer,0,CF_DONE);
     }
-@@ -2817,7 +2817,7 @@ Debug("CfOpenDirectory(%s)\n",dirname);
+@@ -2885,7 +2885,7 @@ Debug("CfOpenDirectory(%s)\n",dirname);
    
  if (*dirname != '/')
     {
@@ -121,7 +140,7 @@ $OpenBSD: patch-src_cfservd_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
     SendTransaction(conn->sd_reply,sendbuffer,0,CF_DONE);
     return -1;
     }
-@@ -2849,7 +2849,7 @@ for (dirp = readdir(dirh); dirp != NULL;
+@@ -2917,7 +2917,7 @@ for (dirp = readdir(dirh); dirp != NULL;
     offset += strlen(dirp->d_name) + 1;     /* + zero byte separator */
     }
   
@@ -130,7 +149,7 @@ $OpenBSD: patch-src_cfservd_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
  SendTransaction(conn->sd_reply,sendbuffer,offset+2+strlen(CFD_TERMINATOR),CF_DONE);
  Debug("END CfOpenDirectory(%s)\n",dirname);
  closedir(dirh);
-@@ -2864,7 +2864,7 @@ void Terminate(int sd)
+@@ -2932,7 +2932,7 @@ void Terminate(int sd)
  
  memset(buffer,0,CF_BUFSIZE);
  
@@ -139,7 +158,7 @@ $OpenBSD: patch-src_cfservd_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
  
  if (SendTransaction(sd,buffer,strlen(buffer)+1,CF_DONE) == -1)
     {
-@@ -3083,7 +3083,7 @@ Debug("Checking to see if we have seen t
+@@ -3151,7 +3151,7 @@ Debug("Checking to see if we have seen t
    
  if ((errno = db_create(&dbp,NULL,0)) != 0)
     {
@@ -148,7 +167,7 @@ $OpenBSD: patch-src_cfservd_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
     CfLog(cferror,OUTPUT,"db_open");
     return false;
     }
-@@ -3094,7 +3094,7 @@ if ((errno = dbp->open(dbp,keydb,NULL,DB
+@@ -3162,7 +3162,7 @@ if ((errno = dbp->open(dbp,keydb,NULL,DB
  if ((errno = dbp->open(dbp,NULL,keydb,NULL,DB_BTREE,DB_CREATE,0644)) != 0)    
  #endif
     {
@@ -157,7 +176,7 @@ $OpenBSD: patch-src_cfservd_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
     CfLog(cferror,OUTPUT,"db_open");
     return false;
     }
-@@ -3167,7 +3167,7 @@ if ((DHCPLIST != NULL) && IsFuzzyItemIn(
+@@ -3235,7 +3235,7 @@ if ((DHCPLIST != NULL) && IsFuzzyItemIn(
     
     if ((errno = db_create(&dbp,NULL,0)) != 0)
        {
@@ -166,7 +185,7 @@ $OpenBSD: patch-src_cfservd_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
        CfLog(cferror,OUTPUT,"db_open");
        return;
        }
-@@ -3178,7 +3178,7 @@ if ((DHCPLIST != NULL) && IsFuzzyItemIn(
+@@ -3246,7 +3246,7 @@ if ((DHCPLIST != NULL) && IsFuzzyItemIn(
     if ((errno = dbp->open(dbp,NULL,keydb,NULL,DB_BTREE,DB_CREATE,0644)) != 0)
  #endif
        {

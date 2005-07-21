@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_filters_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
---- src/filters.c.orig	Thu Jun 24 15:01:11 2004
-+++ src/filters.c	Mon Aug  2 13:30:34 2004
+$OpenBSD: patch-src_filters_c,v 1.3 2005/07/21 15:16:46 aanriot Exp $
+--- src/filters.c.orig	Tue Feb  8 06:50:01 2005
++++ src/filters.c	Fri Jul 15 12:24:01 2005
 @@ -177,7 +177,7 @@ else
                         break;
                     }
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_filters_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
                  break;
              case filterexecregex:
                  for (sp = ebuff+strlen(ebuff)-1; (*sp != '(') && (sp > ebuff); sp--)
-@@ -1025,15 +1025,15 @@ int FilterProcSTimeMatch(char *name1,cha
+@@ -1027,15 +1027,15 @@ int FilterProcSTimeMatch(char *name1,cha
    char year[5],month[4],hr[3],min[3],day[3],timestr[256];
    
  memset(year,0,5);
@@ -31,7 +31,7 @@ $OpenBSD: patch-src_filters_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
  
  fromtime = Date2Number(fromexpr,now);
  totime = Date2Number(toexpr,now);
-@@ -1153,7 +1153,7 @@ int FilterOwnerMatch(struct stat *lstatp
+@@ -1155,7 +1155,7 @@ int FilterOwnerMatch(struct stat *lstatp
    char buffer[64];
    struct passwd *pw;
  
@@ -40,7 +40,7 @@ $OpenBSD: patch-src_filters_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
  PrependItem(&attrib,buffer,""); 
  
  if ((pw = getpwuid(lstatptr->st_uid)) != NULL)
-@@ -1185,7 +1185,7 @@ int FilterGroupMatch(struct stat *lstatp
+@@ -1187,7 +1187,7 @@ int FilterGroupMatch(struct stat *lstatp
    char buffer[64];
    struct group *gr;
  

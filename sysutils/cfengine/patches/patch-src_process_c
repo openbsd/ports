@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_process_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
---- src/process.c.orig	2004-06-10 23:27:24.000000000 -0400
-+++ src/process.c	2004-06-10 23:22:19.000000000 -0400
-@@ -400,7 +400,7 @@ for (ip = procdata; ip != NULL; ip=ip->n
+$OpenBSD: patch-src_process_c,v 1.2 2005/07/21 15:16:47 aanriot Exp $
+--- src/process.c.orig	Tue Feb  8 06:50:02 2005
++++ src/process.c	Fri Jul 15 12:24:01 2005
+@@ -414,7 +414,7 @@ for (ip = procdata; ip != NULL; ip=ip->n
              
              if (pp->action == 'm')
                 {

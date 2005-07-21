@@ -1,27 +1,25 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2004/06/17 11:21:42 sturm Exp $
---- doc/Makefile.in.orig	2004-05-05 17:20:31.000000000 +0200
-+++ doc/Makefile.in	2004-06-15 16:25:20.000000000 +0200
-@@ -70,7 +70,7 @@ MANS = $(man_MANS)
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2005/07/21 15:16:46 aanriot Exp $
+--- doc/Makefile.in.orig	Fri Jun 10 16:01:42 2005
++++ doc/Makefile.in	Mon Jul 18 14:31:00 2005
+@@ -79,7 +79,7 @@ am__vpath_adj = case $$p in \
+ am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
  docDATA_INSTALL = $(INSTALL_DATA)
  htmlDATA_INSTALL = $(INSTALL_DATA)
- psDATA_INSTALL = $(INSTALL_DATA)
--DATA = $(doc_DATA) $(html_DATA) $(ps_DATA)
-+DATA = 
+-DATA = $(doc_DATA) $(html_DATA)
++DATA =
  DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
  ACLOCAL = @ACLOCAL@
  AMDEP_FALSE = @AMDEP_FALSE@
-@@ -708,8 +708,8 @@ info: info-am
+@@ -704,7 +704,7 @@ info: info-am
  
  info-am: $(INFO_DEPS)
  
 -install-data-am: install-docDATA install-htmlDATA install-info-am \
--	install-man install-psDATA
-+install-data-am: install-docDATA install-info-am \
-+	install-man
++install-data-am: install-info-am \
+ 	install-man
  
  install-exec-am:
- 
-@@ -774,7 +774,7 @@ uninstall-am: uninstall-docDATA uninstal
+@@ -770,7 +770,7 @@ uninstall-am: uninstall-docDATA uninstal
  uninstall-man: uninstall-man8
  
  .PHONY: all all-am check check-am clean clean-generic dist-info \

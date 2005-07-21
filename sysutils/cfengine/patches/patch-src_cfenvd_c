@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cfenvd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
---- src/cfenvd.c.orig	Wed Aug 11 22:46:48 2004
-+++ src/cfenvd.c	Fri Oct  1 23:14:46 2004
-@@ -188,10 +188,10 @@ void CheckOptsAndInit(int argc,char **ar
+$OpenBSD: patch-src_cfenvd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
+--- src/cfenvd.c.orig	Wed May 25 07:38:54 2005
++++ src/cfenvd.c	Fri Jul 15 12:24:00 2005
+@@ -187,10 +187,10 @@ void CheckOptsAndInit(int argc,char **ar
   int c, i,j,k;
  
  umask(077);
@@ -14,49 +14,62 @@ $OpenBSD: patch-src_cfenvd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
   
  IGNORELOCK = false; 
  OUTPUT[0] = '\0';
-@@ -242,18 +242,18 @@ while ((c=getopt_long(argc,argv,"d:vhHFV
+@@ -243,30 +243,30 @@ LOGGING = true;                    /* Do
  
- LOGGING = true;                    /* Do output to syslog */
+ /* XXX Initialize workdir for non privileged users */
+ 
+-strcpy(CFWORKDIR,WORKDIR);
++(void)strlcpy(CFWORKDIR,WORKDIR,sizeof(CFWORKDIR));
+ 
+ if (getuid() > 0)
+    {
+    char *homedir;
+    if ((homedir = getenv("HOME")) != NULL)
+       {
+-      strcpy(CFWORKDIR,homedir);
+-      strcat(CFWORKDIR,"/.cfagent");
++      (void)strlcpy(CFWORKDIR,homedir,sizeof(CFWORKDIR));
++      (void)strlcat(CFWORKDIR,"/.cfagent",sizeof(CFWORKDIR));
+       }
+    }
   
--sprintf(VBUFF,"%s/test",WORKDIR);
-+(void)snprintf(VBUFF,sizeof(VBUFF),"%s/test",WORKDIR);
+-sprintf(VBUFF,"%s/test",CFWORKDIR);
++(void)snprintf(VBUFF,sizeof(VBUFF),"%s/test",CFWORKDIR);
  MakeDirectoriesFor(VBUFF,'y');
--sprintf(VBUFF,"%s/state/test",WORKDIR);
-+(void)snprintf(VBUFF,sizeof(VBUFF),"%s/state/test",WORKDIR);
+-sprintf(VBUFF,"%s/state/test",CFWORKDIR);
++(void)snprintf(VBUFF,sizeof(VBUFF),"%s/state/test",CFWORKDIR);
  MakeDirectoriesFor(VBUFF,'y');
- strncpy(VLOCKDIR,WORKDIR,CF_BUFSIZE-1);
- strncpy(VLOGDIR,WORKDIR,CF_BUFSIZE-1);
+ strncpy(VLOCKDIR,CFWORKDIR,CF_BUFSIZE-1);
+ strncpy(VLOGDIR,CFWORKDIR,CF_BUFSIZE-1);
  
  for (i = 0; i < ATTR; i++)
     {
--   sprintf(VBUFF,"%s/state/cf_incoming.%s",WORKDIR,ECGSOCKS[i][1]);
-+   (void)snprintf(VBUFF,sizeof(VBUFF),"%s/state/cf_incoming.%s",WORKDIR,ECGSOCKS[i][1]);
+-   sprintf(VBUFF,"%s/state/cf_incoming.%s",CFWORKDIR,ECGSOCKS[i][1]);
++   (void)snprintf(VBUFF,sizeof(VBUFF),"%s/state/cf_incoming.%s",CFWORKDIR,ECGSOCKS[i][1]);
     CreateEmptyFile(VBUFF);
--   sprintf(VBUFF,"%s/state/cf_outgoing.%s",WORKDIR,ECGSOCKS[i][1]);
-+   (void)snprintf(VBUFF,sizeof(VBUFF),"%s/state/cf_outgoing.%s",WORKDIR,ECGSOCKS[i][1]);
+-   sprintf(VBUFF,"%s/state/cf_outgoing.%s",CFWORKDIR,ECGSOCKS[i][1]);
++   (void)snprintf(VBUFF,sizeof(VBUFF),"%s/state/cf_outgoing.%s",CFWORKDIR,ECGSOCKS[i][1]);
     CreateEmptyFile(VBUFF);
     }
  
-@@ -263,13 +263,13 @@ for (i = 0; i < CF_NETATTR; i++)
+@@ -276,7 +276,7 @@ for (i = 0; i < CF_NETATTR; i++)
     NETOUT_DIST[i] = NULL;
     }
   
--sprintf(VBUFF,"%s/state/cf_users",WORKDIR);
-+(void)snprintf(VBUFF,sizeof(VBUFF),"%s/state/cf_users",WORKDIR);
+-sprintf(VBUFF,"%s/state/cf_users",CFWORKDIR);
++(void)snprintf(VBUFF,sizeof(VBUFF),"%s/state/cf_users",CFWORKDIR);
  CreateEmptyFile(VBUFF);
   
--snprintf(AVDB,CF_BUFSIZE,"%s/state/%s",WORKDIR,CF_AVDB_FILE);
--snprintf(STATELOG,CF_BUFSIZE,"%s/state/%s",WORKDIR,CF_STATELOG_FILE);
--snprintf(ENV_NEW,CF_BUFSIZE,"%s/state/%s",WORKDIR,CF_ENVNEW_FILE);
--snprintf(ENV,CF_BUFSIZE,"%s/state/%s",WORKDIR,CF_ENV_FILE);
-+snprintf(AVDB,sizeof(AVDB),"%s/state/%s",WORKDIR,CF_AVDB_FILE);
-+snprintf(STATELOG,sizeof(AVDB),"%s/state/%s",WORKDIR,CF_STATELOG_FILE);
-+snprintf(ENV_NEW,sizeof(AVDB),"%s/state/%s",WORKDIR,CF_ENVNEW_FILE);
-+snprintf(ENV,sizeof(AVDB),"%s/state/%s",WORKDIR,CF_ENV_FILE);
+ snprintf(AVDB,CF_MAXVARSIZE,"%s/state/%s",CFWORKDIR,CF_AVDB_FILE);
+@@ -284,6 +284,7 @@ snprintf(STATELOG,CF_BUFSIZE,"%s/state/%
+ snprintf(ENV_NEW,CF_BUFSIZE,"%s/state/%s",CFWORKDIR,CF_ENVNEW_FILE);
+ snprintf(ENV,CF_BUFSIZE,"%s/state/%s",CFWORKDIR,CF_ENV_FILE);
  
++
  if (!BATCH_MODE)
     {
-@@ -459,7 +459,7 @@ void StartServer(int argc,char **argv)
+    GetDatabaseAge();
+@@ -472,7 +473,7 @@ void StartServer(int argc,char **argv)
  
  if ((!NO_FORK) && (fork() != 0))
     {
@@ -65,7 +78,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
     CfLog(cfinform,OUTPUT,"");
     exit(0);
     }
-@@ -625,7 +625,7 @@ if ((now = time((time_t *)NULL)) == -1)
+@@ -646,7 +647,7 @@ if ((now = time((time_t *)NULL)) == -1)
     exit(1);
     }
  
@@ -74,7 +87,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
  
  return ConvTimeKey(str); 
  }
-@@ -791,14 +791,14 @@ SetVariable("loadavg",LOADAVG,av.expect_
+@@ -812,14 +813,14 @@ SetVariable("loadavg",LOADAVG,av.expect_
  for (i = 0; i < ATTR; i++)
     {
     char name[256];
@@ -93,7 +106,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
  
     sig = SetClasses(name,OUTGOING[i],av.expect_outgoing[i],av.var_outgoing[i],LOCALAV.expect_outgoing[i],LOCALAV.var_outgoing[i],&classlist,timekey);
     SetVariable(name,OUTGOING[i],av.expect_outgoing[i],sig,&classlist);
-@@ -818,13 +818,13 @@ for (i = 0; i < PH_LIMIT; i++)
+@@ -839,13 +840,13 @@ for (i = 0; i < PH_LIMIT; i++)
  for (i = 0; i < CF_NETATTR; i++)
     {
     char name[256];
@@ -111,7 +124,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
     sig = SetClasses(name,NETOUT[i],av.expect_netout[i],av.var_netout[i],LOCALAV.expect_netout[i],LOCALAV.var_netout[i],&classlist,timekey);
     SetVariable(name,NETOUT[i],av.expect_netout[i],sig,&classlist);
     }
-@@ -1141,7 +1141,7 @@ if (ALL_OUTGOING != NULL)
+@@ -1162,7 +1163,7 @@ if (ALL_OUTGOING != NULL)
   
  sscanf(VNETSTAT[VSYSTEMHARDCLASS],"%s",comm);
  
@@ -120,7 +133,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
   
  if ((pp = cfpopen(comm,"r")) == NULL)
     {
-@@ -1472,7 +1472,7 @@ struct Averages *GetCurrentAverages(char
+@@ -1491,7 +1492,7 @@ struct Averages *GetCurrentAverages(char
   
  if ((errno = db_create(&dbp,NULL,0)) != 0)
     {
@@ -129,7 +142,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
     CfLog(cferror,OUTPUT,"db_open");
     return NULL;
     }
-@@ -1483,7 +1483,7 @@ if ((errno = dbp->open(dbp,AVDB,NULL,DB_
+@@ -1502,7 +1503,7 @@ if ((errno = dbp->open(dbp,AVDB,NULL,DB_
  if ((errno = dbp->open(dbp,NULL,AVDB,NULL,DB_BTREE,DB_CREATE,0644)) != 0)    
  #endif
     {
@@ -138,7 +151,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
     CfLog(cferror,OUTPUT,"db_open");
     return NULL;
     }
-@@ -1533,7 +1533,7 @@ void UpdateAverages(char *timekey,struct
+@@ -1552,7 +1553,7 @@ void UpdateAverages(char *timekey,struct
   
  if ((errno = db_create(&dbp,NULL,0)) != 0)
     {
@@ -147,7 +160,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
     CfLog(cferror,OUTPUT,"db_open");
     return;
     }
-@@ -1544,7 +1544,7 @@ if ((errno = dbp->open(dbp,AVDB,NULL,DB_
+@@ -1563,7 +1564,7 @@ if ((errno = dbp->open(dbp,AVDB,NULL,DB_
  if ((errno = dbp->open(dbp,NULL,AVDB,NULL,DB_BTREE,DB_CREATE,0644)) != 0)    
  #endif
     {
@@ -156,7 +169,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
     CfLog(cferror,OUTPUT,"db_open");
     return;
     }
-@@ -1771,27 +1771,27 @@ if (fabs(delta) < cf_noise_threshold) /*
+@@ -1790,27 +1791,27 @@ if (fabs(delta) < cf_noise_threshold) /*
     Debug(" Sensitivity too high ..\n");
  
     buffer[0] = '\0';
@@ -190,7 +203,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
         AppendItem(classlist,buffer2,"2");
         AddPersistentClass(buffer2,40,cfpreserve); 
         }
-@@ -1801,33 +1801,33 @@ if (fabs(delta) < cf_noise_threshold) /*
+@@ -1820,33 +1821,33 @@ if (fabs(delta) < cf_noise_threshold) /*
   else
      {
      buffer[0] = '\0';
@@ -232,7 +245,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
         AppendItem(classlist,buffer2,"0");
         }
      
-@@ -1837,16 +1837,16 @@ if (fabs(delta) < cf_noise_threshold) /*
+@@ -1856,16 +1857,16 @@ if (fabs(delta) < cf_noise_threshold) /*
      
      if (dev > 2.0*sqrt(2.0))
         {
@@ -253,7 +266,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
         AppendItem(classlist,buffer2,"3");
         AddPersistentClass(buffer2,40,cfpreserve); 
         }
-@@ -1861,13 +1861,13 @@ void SetVariable(char *name,double value
+@@ -1880,13 +1881,13 @@ void SetVariable(char *name,double value
  
  { char var[CF_BUFSIZE];
  

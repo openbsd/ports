@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_prototypes_h,v 1.2 2004/08/08 14:02:11 sturm Exp $
---- src/prototypes.h.orig	Fri Jun 25 11:12:38 2004
-+++ src/prototypes.h	Mon Aug  2 13:30:36 2004
-@@ -201,8 +201,8 @@ int EmbeddedWrite ARGLIST((char *new,int
+$OpenBSD: patch-src_prototypes_h,v 1.3 2005/07/21 15:16:47 aanriot Exp $
+--- src/prototypes.h.orig	Sun May 29 07:04:38 2005
++++ src/prototypes.h	Fri Jul 15 12:24:01 2005
+@@ -199,8 +199,8 @@ int EmbeddedWrite ARGLIST((char *new,int
  
  /* dce_acl.c */
  

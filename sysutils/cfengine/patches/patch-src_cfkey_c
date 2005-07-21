@@ -1,14 +1,30 @@
-$OpenBSD: patch-src_cfkey_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
---- src/cfkey.c.orig	2004-06-10 23:26:34.000000000 -0400
-+++ src/cfkey.c	2004-06-10 22:30:18.000000000 -0400
-@@ -147,8 +147,8 @@ void Initialize()
- 
- {
+$OpenBSD: patch-src_cfkey_c,v 1.2 2005/07/21 15:16:46 aanriot Exp $
+--- src/cfkey.c.orig	Thu Apr  7 15:26:44 2005
++++ src/cfkey.c	Fri Jul 15 12:24:00 2005
+@@ -149,20 +149,21 @@ void Initialize()
  umask(077);
--strcpy(VLOCKDIR,WORKDIR);
--strcpy(VLOGDIR,WORKDIR); 
-+(void)strlcpy(VLOCKDIR,WORKDIR,CF_BUFSIZE);
-+(void)strlcpy(VLOGDIR,WORKDIR,CF_BUFSIZE); 
+  /* XXX Initialize workdir for non privileged users */
+ 
+- strcpy(CFWORKDIR,WORKDIR);
++ (void)strlcpy(CFWORKDIR,WORKDIR,sizeof(CFWORKDIR));
+ 
+  if (geteuid() > 0)
+     {
+     char *homedir;
+     if ((homedir = getenv("HOME")) != NULL)
+        {
+-       strcpy(CFWORKDIR,homedir);
+-       strcat(CFWORKDIR,"/.cfagent");
++       (void)strlcpy(CFWORKDIR,homedir,sizeof(CFWORKDIR));
++       (void)strlcat(CFWORKDIR,"/.cfagent",sizeof(CFWORKDIR));
+        }
+     }
+  
+-strcpy(VLOCKDIR,CFWORKDIR);
+-strcpy(VLOGDIR,CFWORKDIR); 
++(void)strlcpy(VLOCKDIR,CFWORKDIR,CF_BUFSIZE);
++(void)strlcpy(VLOGDIR,CFWORKDIR,CF_BUFSIZE); 
++
  
  OpenSSL_add_all_algorithms();
  ERR_load_crypto_strings();

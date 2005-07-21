@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2004/10/01 21:22:15 sturm Exp $
---- configure.orig	Thu Aug 12 00:52:34 2004
-+++ configure	Fri Oct  1 23:14:46 2004
-@@ -9128,6 +9128,7 @@ cat confdefs.h >>conftest.$ac_ext
+$OpenBSD: patch-configure,v 1.3 2005/07/21 15:16:46 aanriot Exp $
+--- configure.orig	Fri Jun 10 16:01:44 2005
++++ configure	Tue Jul 19 11:19:58 2005
+@@ -9135,6 +9135,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -9,3 +9,12 @@ $OpenBSD: patch-configure,v 1.2 2004/10/01 21:22:15 sturm Exp $
  #include <$ac_header>
  _ACEOF
  rm -f conftest.$ac_objext
+@@ -15958,7 +15959,7 @@ echo $ECHO_N "checking Checking for GCC 
+ if test x"$GCC" = "xyes"; then
+ 
+ 
+-	GCC_CFLAG="-g -O2 -Wreturn-type -Wmissing-prototypes -Wuninitialized"
++	GCC_CFLAG="";
+ 	echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+ 

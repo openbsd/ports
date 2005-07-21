@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_proto_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
---- src/proto.c.orig	Mon Jun 28 03:38:20 2004
-+++ src/proto.c	Mon Aug  2 13:30:36 2004
+$OpenBSD: patch-src_proto_c,v 1.3 2005/07/21 15:16:47 aanriot Exp $
+--- src/proto.c.orig	Fri May 27 02:29:36 2005
++++ src/proto.c	Fri Jul 15 12:24:01 2005
 @@ -132,8 +132,8 @@ if (!SKIPIDENTIFY && (strcmp(VDOMAIN,CF_
   
   if ((strstr(hp->h_name,".") == 0) && (strlen(VDOMAIN) > 0))
@@ -12,7 +12,7 @@ $OpenBSD: patch-src_proto_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
      } 
  #endif 
   
-@@ -145,14 +145,14 @@ uname = user_ptr ? user_ptr->pw_name : "
+@@ -145,19 +145,19 @@ uname = user_ptr ? user_ptr->pw_name : "
  if ((strlen(VDOMAIN) > 0) && !IsIPV6Address(dnsname) && !strchr(dnsname,'.'))
     {
     Debug("Appending domain %s to %s\n",VDOMAIN,dnsname);
@@ -28,4 +28,10 @@ $OpenBSD: patch-src_proto_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
 +   (void)strlcpy(dnsname,localip,sizeof(dnsname));
     }
  
-  snprintf(sendbuff,CF_BUFSIZE-1,"CAUTH %s %s %s %d",localip,dnsname,uname,CFSIGNATURE);
+ if (strlen(dnsname) == 0)
+    {
+-   strcpy(dnsname,localip);
++   (void)strlcpy(dnsname,localip,sizeof(dnsname));
+    }
+ 
+ snprintf(sendbuff,CF_BUFSIZE-1,"CAUTH %s %s %s %d",localip,dnsname,uname,CFSIGNATURE);
