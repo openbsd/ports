@@ -1,7 +1,7 @@
-$OpenBSD: patch-wm_h,v 1.1 2005/03/22 20:29:44 matthieu Exp $
---- wm.h.orig	Sat Jan 22 16:09:11 2005
-+++ wm.h	Sat Jan 22 16:09:11 2005
-@@ -66,12 +66,12 @@
+$OpenBSD: patch-wm_h,v 1.2 2005/07/22 19:32:17 fgsch Exp $
+--- wm.h.orig	Wed May 19 18:23:50 2004
++++ wm.h	Wed Jul 13 16:43:40 2005
+@@ -66,12 +66,12 @@ char wm_check(Display *dpy);
  void wm_use_netwm_fullscreen(Bool b);
  dlist *wm_get_stack(Display *dpy);
  Pixmap wm_get_root_pmap(Display *dpy);

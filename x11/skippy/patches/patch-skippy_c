@@ -1,7 +1,7 @@
-$OpenBSD: patch-skippy_c,v 1.1 2005/03/22 20:29:44 matthieu Exp $
---- skippy.c.orig	Sat Jan 22 16:11:17 2005
-+++ skippy.c	Sat Jan 22 16:11:33 2005
-@@ -72,7 +72,7 @@
+$OpenBSD: patch-skippy_c,v 1.2 2005/07/22 19:32:17 fgsch Exp $
+--- skippy.c.orig	Wed May 19 18:23:49 2004
++++ skippy.c	Wed Jul 13 16:43:40 2005
+@@ -72,7 +72,7 @@ skippy_run(MainWin *mw, dlist *clients, 
  	int die = 0;
  	dlist *iter, *tmp;
  	Window dummy_w, *tree_windows;

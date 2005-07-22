@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2004/10/15 18:50:18 fgsch Exp $
---- Makefile.orig	Wed Oct 13 16:47:20 2004
-+++ Makefile	Wed Oct 13 16:47:38 2004
+$OpenBSD: patch-Makefile,v 1.2 2005/07/22 19:32:17 fgsch Exp $
+--- Makefile.orig	Wed May 19 18:23:50 2004
++++ Makefile	Wed Jul 13 16:34:00 2005
 @@ -1,7 +1,7 @@
  PREFIX = /usr/local
  BINDIR = ${PREFIX}/bin
@@ -10,11 +10,20 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2004/10/15 18:50:18 fgsch Exp $
  
  CFLAGS += -I${X11PREFIX}/include `imlib2-config --cflags` `pkg-config xft --cflags` -g -pedantic -Wall
  LDFLAGS += -L${X11PREFIX}/lib -lX11 -lm `imlib2-config --libs` `pkg-config xft --libs`
-@@ -21,7 +21,7 @@ HEADERS = skippy.h wm.h dlist.h mainwin.
+@@ -17,11 +17,15 @@ EXESUFFIX =
+ 
+ SOURCES = skippy.c wm.c dlist.c mainwin.c clientwin.c layout.c focus.c config.c tooltip.c
+ HEADERS = skippy.h wm.h dlist.h mainwin.h clientwin.h layout.h focus.h config.h tooltip.h
++OBJECTS = ${SOURCES:.c=.o}
+ 
  all: skippy${EXESUFFIX}
  
- skippy${EXESUFFIX}: Makefile ${SOURCES} ${HEADERS}
+-skippy${EXESUFFIX}: Makefile ${SOURCES} ${HEADERS}
 -	gcc ${CFLAGS} -o skippy${EXESUFFIX} ${SOURCES} ${LDFLAGS}
++.c.o:
++	${CC} ${CFLAGS} -c $<
++
++skippy${EXESUFFIX}: Makefile ${OBJECTS} ${HEADERS}
 +	${CC} ${CFLAGS} -o skippy${EXESUFFIX} ${SOURCES} ${LDFLAGS}
  
  clean:

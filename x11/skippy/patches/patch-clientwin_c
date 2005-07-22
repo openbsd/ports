@@ -1,7 +1,7 @@
-$OpenBSD: patch-clientwin_c,v 1.1 2005/03/22 20:29:44 matthieu Exp $
---- clientwin.c.orig	Sat Jan 22 16:10:02 2005
-+++ clientwin.c	Sat Jan 22 16:10:51 2005
-@@ -33,7 +33,7 @@
+$OpenBSD: patch-clientwin_c,v 1.2 2005/07/22 19:32:17 fgsch Exp $
+--- clientwin.c.orig	Wed May 19 18:23:49 2004
++++ clientwin.c	Wed Jul 13 16:43:40 2005
+@@ -33,7 +33,7 @@ int
  clientwin_validate_func(dlist *l, void *data)
  {
  	ClientWin *cw = (ClientWin *)l->data;
@@ -10,7 +10,7 @@ $OpenBSD: patch-clientwin_c,v 1.1 2005/03/22 20:29:44 matthieu Exp $
  		w_desktop = wm_get_window_desktop(cw->mainwin->dpy, cw->client.window);
  	
  #ifdef XINERAMA
-@@ -43,7 +43,7 @@
+@@ -43,7 +43,7 @@ clientwin_validate_func(dlist *l, void *
  		return 0;
  #endif
  	
