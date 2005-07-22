@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/18 13:01:48 espie Exp $
-@conflict maradns-<1.1
+@comment $OpenBSD: PLIST,v 1.5 2005/07/22 17:37:36 sturm Exp $
 bin/askmara
 bin/duende
 bin/getzone
