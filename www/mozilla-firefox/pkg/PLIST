@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/04/09 15:43:47 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/07/22 19:34:20 kurt Exp $
 @conflict mozilla-firebird-*
 %%SHARED%%
 bin/firefox
@@ -371,8 +371,6 @@ mozilla-firefox/res/arrow.gif
 mozilla-firefox/res/arrowd.gif
 mozilla-firefox/res/bloatcycle.html
 mozilla-firefox/res/broken-image.gif
-mozilla-firefox/res/builtin/
-mozilla-firefox/res/builtin/platformHTMLBindings.xml
 mozilla-firefox/res/charsetData.properties
 mozilla-firefox/res/charsetalias.properties
 mozilla-firefox/res/cmessage.txt
@@ -399,6 +397,7 @@ mozilla-firefox/res/fonts/mathfontPUA.properties
 mozilla-firefox/res/fonts/mathfontSymbol.properties
 mozilla-firefox/res/forms.css
 mozilla-firefox/res/grabber.gif
+mozilla-firefox/res/hiddenWindow.html
 mozilla-firefox/res/html/
 mozilla-firefox/res/html.css
 mozilla-firefox/res/html/gopher-audio.gif
