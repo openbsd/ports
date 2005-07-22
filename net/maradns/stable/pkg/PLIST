@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/10/31 19:04:57 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/07/22 17:40:28 sturm Exp $
 @newgroup _maradns:537
 @newuser _maradns:537:_maradns::MaraDNS Account:${SYSCONFDIR}/maradns:/sbin/nologin
-@conflict maradns->=1.1
 bin/askmara
 bin/getzone
 @man man/man1/askmara.1
@@ -19,7 +18,6 @@ share/doc/maradns/README
 share/doc/maradns/changelog.html
 share/doc/maradns/changelog.txt
 share/doc/maradns/credits.txt
-share/doc/maradns/download.html
 share/doc/maradns/faq.html
 share/doc/maradns/faq.txt
 share/doc/maradns/files.txt
@@ -138,7 +136,6 @@ share/doc/maradns/source/credits.ej
 share/doc/maradns/source/credits.embed
 share/doc/maradns/source/csv1.ej
 share/doc/maradns/source/data_structures.ej
-share/doc/maradns/source/download.ej
 share/doc/maradns/source/ej.doc.format
 share/doc/maradns/source/ej.template
 share/doc/maradns/source/example_auth_mararc

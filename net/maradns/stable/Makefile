@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2004/10/31 19:04:57 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2005/07/22 17:40:28 sturm Exp $
 
-VERSION=	1.0.23
+VERSION=	1.0.28
 
 MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
