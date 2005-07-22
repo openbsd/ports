@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2005/05/17 23:26:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2005/07/22 21:02:23 naddy Exp $
 
 COMMENT=		"enhanced, MIME capable Berkeley Mail"
 
-DISTNAME=		nail-11.22
+DISTNAME=		nail-11.23
 CATEGORIES=		mail
 HOMEPAGE=		http://nail.sourceforge.net/
 
