@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/07/23 18:39:44 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2005/07/23 18:42:05 fgsch Exp $
 
 COMMENT=		"edit enlightenment's keybindings"
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m
 
-MASTER_SITES=		${MASTER_SITES_SOURCEFORCE:=enlightenment}
+MASTER_SITES=		${MASTER_SITES_SOURCEFORCE:=enlightenment/}
 
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
 RUN_DEPENDS=		:enlightenment-0.16*:x11/enlightenment
