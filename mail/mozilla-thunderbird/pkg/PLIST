@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/04/09 08:48:11 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/07/23 13:56:34 wilfried Exp $
 %%SHARED%%
 bin/mozilla-thunderbird
 bin/thunderbird
@@ -419,8 +419,6 @@ mozilla-thunderbird/res/arrow.gif
 mozilla-thunderbird/res/arrowd.gif
 mozilla-thunderbird/res/bloatcycle.html
 mozilla-thunderbird/res/broken-image.gif
-mozilla-thunderbird/res/builtin/
-mozilla-thunderbird/res/builtin/platformHTMLBindings.xml
 mozilla-thunderbird/res/charsetData.properties
 mozilla-thunderbird/res/charsetalias.properties
 mozilla-thunderbird/res/cmessage.txt
@@ -436,6 +434,7 @@ mozilla-thunderbird/res/fonts/
 mozilla-thunderbird/res/fonts/fontEncoding.properties
 mozilla-thunderbird/res/forms.css
 mozilla-thunderbird/res/grabber.gif
+mozilla-thunderbird/res/hiddenWindow.html
 mozilla-thunderbird/res/html/
 mozilla-thunderbird/res/html.css
 mozilla-thunderbird/res/html/gopher-audio.gif
