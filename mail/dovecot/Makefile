@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2005/07/23 19:34:22 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2005/07/23 20:38:17 brad Exp $
 
 COMMENT= 	"compact IMAP/POP3 server"
 
 DISTNAME=	dovecot-0.99.14
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/
 
@@ -27,11 +27,13 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--with-mysql
 LIB_DEPENDS+=		lib/mysql/mysqlclient.10::databases/mysql
 WANTLIB+=		m z
+CONF_FILE+=		dovecot-mysql.conf
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
 CONFIGURE_ARGS+=	--with-pgsql
 LIB_DEPENDS+=		pq.4::databases/postgresql
+CONF_FILE+=		dovecot-pgsql.conf
 .endif
 
 CONFIGURE_STYLE= autoconf
@@ -48,6 +50,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dovecot
 	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-openssl.cnf \
 		${WRKSRC}/dovecot-example.conf ${PREFIX}/share/examples/dovecot
+.if defined(CONF_FILE) && !empty(CONF_FILE)
+	cd ${WRKSRC}/doc; ${INSTALL_DATA} ${CONF_FILE} \
+		${PREFIX}/share/examples/dovecot
+.endif
 	${INSTALL_SCRIPT} ${WRKSRC}/doc/mkcert.sh \
 		${PREFIX}/sbin/dovecot-mkcert.sh
 
