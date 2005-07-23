@@ -1,0 +1,92 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2005/07/23 16:58:49 aanriot Exp $
+--- Makefile.in.orig	Sun Jun 19 01:09:40 2005
++++ Makefile.in	Sat Jul 23 11:56:12 2005
+@@ -24,7 +24,7 @@ LIBREV = @LIBREV@
+ # Targets
+ MYHEADS = depot.h curia.h relic.h hovel.h cabin.h villa.h vista.h odeum.h
+ MYLIBOBJS = depot.o curia.o relic.o hovel.o cabin.o villa.o vista.o odeum.o myconf.o
+-MYLIBS = libqdbm.a libqdbm.so.$(LIBVER).$(LIBREV).0 libqdbm.so.$(LIBVER) libqdbm.so
++MYLIBS = libqdbm.a libqdbm.so.$(LIBVER).$(LIBREV)
+ MYBINS = dpmgr dptest dptsv crmgr crtest crtsv rlmgr rltest hvmgr hvtest \
+   cbtest cbcodec vlmgr vltest vltsv odmgr odtest odidx
+ MYMAN1S = dpmgr.1 dptest.1 dptsv.1 crmgr.1 crtest.1 crtsv.1 rlmgr.1 rltest.1 hvmgr.1 hvtest.1 \
+@@ -50,21 +50,21 @@ MYPCDIR = @libdir@/pkgconfig
+ DESTDIR =
+ 
+ # Building binaries
+-CC = @CC@
+-RELCFLAGS = -O2 -fomit-frame-pointer -DNDEBUG
+-CPPFLAGS = -I$(srcdir) -I$(HOME)/include -I/usr/local/include @MYDEFS@ \
++#CC = @CC@
++RELCFLAGS = -DNDEBUG
++CPPFLAGS += -I$(srcdir) -I${LOCALBASE}/include @MYDEFS@ \
+   -D_XOPEN_SOURCE_EXTENDED=1 -D_GNU_SOURCE=1 -D__EXTENSIONS__=1 -D_HPUX_SOURCE=1 \
+   -D_POSIX_MAPPED_FILES=1 -D_POSIX_SYNCHRONIZED_IO=1 \
+   -DPIC=1 -D_REENTRANT=1
+-CFLAGS = -Wall -ansi -pedantic -fPIC -fsigned-char $(RELCFLAGS)
++CFLAGS += -Wall -ansi -pedantic -fPIC -fsigned-char $(RELCFLAGS)
+ LD = @LD@
+ LIBS = -lqdbm @LIBS@
+-LIBLDFLAGS = -L. -L$(HOME)/lib -L/usr/local/lib @LIBS@
+-LDFLAGS = -L. -L$(HOME)/lib -L/usr/local/lib $(LIBS)
+-LDENV = LD_RUN_PATH=/lib:/usr/lib:$(HOME)/lib:/usr/local/lib:$(MYLIBDIR)
++LIBLDFLAGS += -L. -L${LOCALBASE}/lib @LIBS@
++LDFLAGS += -L. -L${LOCALBASE}/lib $(LIBS)
++LDENV = LD_RUN_PATH=/lib:/usr/lib:${LOCALBASE}/lib:$(MYLIBDIR)
+ AR = @AR@
+ ARFLAGS = rcsv
+-RUNENV = LD_LIBRARY_PATH=.:/lib:/usr/lib:$(HOME)/lib:/usr/local/lib
++RUNENV = LD_LIBRARY_PATH=.:/lib:/usr/lib:${LOCALBASE}/lib
+ 
+ 
+ 
+@@ -140,20 +140,20 @@ version :
+ 
+ 
+ install :
+-	mkdir -p $(DESTDIR)$(MYHEADDIR)
+-	cd $(srcdir) && cp -Rf $(MYHEADS) $(DESTDIR)$(MYHEADDIR)
+-	mkdir -p $(DESTDIR)$(MYLIBDIR)
+-	cp -Rf $(MYLIBS) $(DESTDIR)$(MYLIBDIR)
+-	mkdir -p $(DESTDIR)$(MYBINDIR)
+-	cp -Rf $(MYBINS) $(DESTDIR)$(MYBINDIR)
+-	mkdir -p $(DESTDIR)$(MYMAN1DIR)
+-	cd $(srcdir)/man1 && cp -Rf $(MYMAN1S) $(DESTDIR)$(MYMAN1DIR)
+-	mkdir -p $(DESTDIR)$(MYMAN3DIR)
+-	cd $(srcdir)/man3 && cp -Rf $(MYMAN3S) $(DESTDIR)$(MYMAN3DIR)
+-	mkdir -p $(DESTDIR)$(MYDATADIR)
+-	cd $(srcdir) && cp -Rf $(MYDOCS) $(DESTDIR)$(MYDATADIR)
+-	mkdir -p $(DESTDIR)$(MYPCDIR)
+-	cd $(srcdir) && cp -Rf $(MYPCS) $(DESTDIR)$(MYPCDIR)
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(MYHEADDIR)/
++	cd $(srcdir) && ${BSD_INSTALL_DATA} $(MYHEADS) $(DESTDIR)$(MYHEADDIR)
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(MYLIBDIR)
++	${BSD_INSTALL_DATA} $(MYLIBS) $(DESTDIR)$(MYLIBDIR)
++	${BSD_INSTALL_PROGRAM_DIR} $(DESTDIR)$(MYBINDIR)
++	${BSD_INSTALL_PROGRAM} $(MYBINS) $(DESTDIR)$(MYBINDIR)
++	${BSD_INSTALL_MAN_DIR} $(DESTDIR)$(MYMAN1DIR)
++	cd $(srcdir)/man1 && ${BSD_INSTALL_MAN} $(MYMAN1S) $(DESTDIR)$(MYMAN1DIR)
++	${BSD_INSTALL_MAN_DIR} $(DESTDIR)$(MYMAN3DIR)
++	cd $(srcdir)/man3 && ${BSD_INSTALL_MAN} $(MYMAN3S) $(DESTDIR)$(MYMAN3DIR)
++#	mkdir -p $(DESTDIR)$(MYDATADIR)
++#	cd $(srcdir) && cp -Rf $(MYDOCS) $(DESTDIR)$(MYDATADIR)
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(MYPCDIR)
++	cd $(srcdir) && ${BSD_INSTALL_DATA} $(MYPCS) $(DESTDIR)$(MYPCDIR)
+ 	@printf '\n'
+ 	@printf '#================================================================\n'
+ 	@printf '# Thanks for using QDBM.\n'
+@@ -435,12 +435,12 @@ libqdbm.a : $(MYLIBOBJS)
+ 	$(AR) $(ARFLAGS) $@ $(MYLIBOBJS)
+ 
+ 
+-libqdbm.so.$(LIBVER).$(LIBREV).0 : $(MYLIBOBJS)
++libqdbm.so.$(LIBVER).$(LIBREV) : $(MYLIBOBJS)
+ 	if $(CC) --print-prog-name=ld | egrep -i '(solaris|/ccs/|/ucb/)' > /dev/null ; \
+ 	  then \
+ 	    $(CC) -shared -Wl,-G,-h,libqdbm.so.$(LIBVER) -o $@ $(MYLIBOBJS) $(LIBLDFLAGS) ; \
+ 	  else \
+-	    $(CC) -shared -Wl,-soname,libqdbm.so.$(LIBVER) -o $@ $(MYLIBOBJS) $(LIBLDFLAGS) ; \
++	    $(CC) -shared -Wl,-soname,libqdbm.so.$(LIBVER).$(LIBREV) -o $@ $(MYLIBOBJS) $(LIBLDFLAGS) ; \
+ 	  fi
+ 
+ 
