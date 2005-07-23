@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/07/23 07:53:43 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2005/07/23 14:15:38 aanriot Exp $
 
-COMMENT=	"Smart, easy and powerful way to access/create XML files/datas"
+COMMENT=	"access/create XML files/datas easily"
 
 DISTNAME=	XML-Smart-1.6.9
 PKGNAME=	p5-${DISTNAME}
@@ -18,8 +18,8 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 CONFIGURE_STYLE=perl
 
-BUILD_DEPENDS=	::textproc/p5-Object-MultiType
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}                                                 
+RUN_DEPENDS=	::textproc/p5-Object-MultiType
 
 PKG_ARCH=	*
 
