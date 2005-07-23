@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2005/02/09 23:41:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2005/07/23 15:23:43 sturm Exp $
 
 COMMENT=		"video stream processing tools"
 
 DISTNAME=		transcode-0.6.14
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.transcoding.org/
@@ -31,6 +31,9 @@ BUILD_DEPENDS+=		::devel/nasm
 PKG_ARGS+=		-Di386=1
 .else
 PKG_ARGS+=		-Di386=0
+.endif
+.if ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=		patch-* gcc-*
 .endif
 
 LIB_DEPENDS=    	SDL.2::devel/sdl \
