@@ -1,0 +1,17 @@
+$OpenBSD: patch-honeyd_c,v 1.1 2005/07/23 14:24:52 aanriot Exp $
+--- honeyd.c.orig	Fri Dec 31 20:13:37 2004
++++ honeyd.c	Sat Jul 16 23:49:53 2005
+@@ -3086,6 +3086,13 @@ main(int argc, char *argv[])
+ 	if (setrand)
+ 		rand_set(honeyd_rand, &setrand, sizeof(setrand));
+ 
++	/*
++	 * Set the environment variable EVENT_NOKQUEUE to Yes because
++	 * kqueue support doesn't handle BPF descriptors
++	 */
++	if (setenv("EVENT_NOKQUEUE", "Yes", 1))
++		printf("EVENT_NOKQUEUE set");
++
+ 	/* Initalize libevent */
+ 	event_init();
+ 

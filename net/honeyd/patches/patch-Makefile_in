@@ -1,12 +1,25 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2003/12/05 22:05:34 sturm Exp $
---- Makefile.in.orig	2003-11-27 04:47:00.000000000 +0100
-+++ Makefile.in	2003-12-05 22:28:34.000000000 +0100
-@@ -136,7 +136,7 @@ honeyd_LDADD = @LIBOBJS@ @PYTHONLIB@ @EV
- # Allow plugins to use honeyd's functions:
- honeyd_LDFLAGS = -export-dynamic 
+$OpenBSD: patch-Makefile_in,v 1.3 2005/07/23 14:24:52 aanriot Exp $
+--- Makefile.in.orig	Fri Dec 31 20:13:47 2004
++++ Makefile.in	Tue Jul  5 18:10:57 2005
+@@ -152,7 +152,7 @@ honeydctl_LDADD = @LIBOBJS@ @EDITLIB@ @L
+ honeydctl_INCLUDES = @EDITINC@
+ honeydctl_CFLAGS = -O2 -Wall
  
--CFLAGS = -O2 -Wall -g 	-DPATH_HONEYDINCLUDE="\"$(honeydincludedir)\"" 	-DPATH_HONEYDDATA="\"$(honeyddatadir)\"" 	-DPATH_HONEYDLIB="\"$(honeydlibdir)\"" 	-DHONEYD_PLUGINS_DECLARE="$(honeydpluginsdeclare)" 	-DHONEYD_PLUGINS="$(honeydplugins)"
-+CFLAGS += -Wall 	-DPATH_HONEYDINCLUDE="\"$(honeydincludedir)\"" 	-DPATH_HONEYDDATA="\"$(honeyddatadir)\"" 	-DPATH_HONEYDLIB="\"$(honeydlibdir)\"" 	-DHONEYD_PLUGINS_DECLARE="$(honeydpluginsdeclare)" 	-DHONEYD_PLUGINS="$(honeydplugins)"
+-CFLAGS = -O2 -Wall -g 	-DPATH_HONEYDINCLUDE="\"$(honeydincludedir)\"" 	-DPATH_HONEYDDATA="\"$(honeyddatadir)\"" 	-DPATH_HONEYDLIB="\"$(honeydlibdir)\"" 	-DHONEYD_PLUGINS_DECLARE="$(honeydpluginsdeclare)" 	-DHONEYD_PLUGINS="$(honeydplugins)" 	-DPATH_RRDTOOL="\"$(PATH_RRDTOOL)\""
++CFLAGS += -Wall 	-DPATH_HONEYDINCLUDE="\"$(honeydincludedir)\"" 	-DPATH_HONEYDDATA="\"$(honeyddatadir)\"" 	-DPATH_HONEYDLIB="\"$(honeydlibdir)\"" 	-DHONEYD_PLUGINS_DECLARE="$(honeydpluginsdeclare)" 	-DHONEYD_PLUGINS="$(honeydplugins)" 	-DPATH_RRDTOOL="\"$(PATH_RRDTOOL)\""
  
  
- INCLUDES = -I$(top_srcdir)/@DNETCOMPAT@ -I$(top_srcdir)/compat 	@PYTHONINC@ @EVENTINC@ @PCAPINC@ @DNETINC@
+ INCLUDES = -I$(top_srcdir)/@DNETCOMPAT@ -I$(top_srcdir)/compat 	@PYTHONINC@ @EVENTINC@ @PCAPINC@ @DNETINC@ @ZINC@
+@@ -664,9 +664,9 @@ libhoneyd.so: $(LIBHONEYDFILES)
+ 
+ install-data-local:
+ 	(cd $(top_srcdir) && tar -cf - $(top_srcdir)/webserver) | \
+-	(cd $(honeyddatadir) && tar -xf -)
+-	find $(honeyddatadir)/webserver -type f | xargs chmod a+r
+-	find $(honeyddatadir)/webserver -type d | xargs chmod a+xr
++	(cd $(DESTDIR)/$(honeyddatadir) && tar -xf -)
++	find $(DESTDIR)/$(honeyddatadir)/webserver -type f | xargs chmod a+r
++	find $(DESTDIR)/$(honeyddatadir)/webserver -type d | xargs chmod a+xr
+ 
+ dist-hook:
+ 	./distribute.py $(distdir)/

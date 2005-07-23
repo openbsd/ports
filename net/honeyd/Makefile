@@ -1,30 +1,34 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/16 00:31:21 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2005/07/23 14:24:52 aanriot Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"utility to create virtual hosts on a network"
-DISTNAME=	honeyd-0.8b
+DISTNAME=	honeyd-1.0
 CATEGORIES=	net
-MASTER_SITES=	${HOMEPAGE} \
+MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 		http://niels.xtdnet.nl/honeyd/
 
-HOMEPAGE=	http://www.citi.umich.edu/u/provos/honeyd/
+HOMEPAGE=	http://www.honeyd.org/
 
-# BSD
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c edit m ncurses pcap
+WANTLIB=		c edit m ncurses pcap pthread util z
 
 USE_LIBTOOL=	Yes
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a::net/libdnet
+LIB_DEPENDS=	dnet.1::net/libdnet \
+		python2.3.0.0::lang/python/2.3
+RUN_DEPENDS=	::net/rrdtool
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--without-python
 
-SCRIPTS=	proxy.pl router-telnet.pl smtp.pl test.sh web.sh
+SCRIPTS=	INSTALL.kuang2 README.cmdexe README.kuang2 	\
+		README.mydoom cmdexe.pl kuang2.conf kuang2.pl 	\
+		mydoom.pl proxy.pl router-telnet.pl smtp.pl 	\
+		test.sh web.sh
 SCRIPTS-snmp=	README buildSNMPConfig.pl default.snmp fake-snmp.pl \
 		linux-2.4.snmp.tpl windows2000.snmp.tpl
 
