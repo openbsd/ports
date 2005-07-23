@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.21 2005/06/19 00:36:32 brad Exp $
---- configure.orig	Thu Jun  9 22:37:13 2005
-+++ configure	Sat Jun 18 20:19:18 2005
+$OpenBSD: patch-configure,v 1.22 2005/07/23 20:57:02 brad Exp $
+--- configure.orig	Thu Jul  7 21:56:58 2005
++++ configure	Sat Jul 23 15:03:32 2005
 @@ -464,7 +464,7 @@ ac_includes_default="\
  # include <unistd.h>
  #endif"

@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_ssl_Makefile_in,v 1.7 2005/06/19 00:36:32 brad Exp $
---- plugins/ssl/Makefile.in.orig	Thu Jun  9 22:37:21 2005
-+++ plugins/ssl/Makefile.in	Sat Jun 18 20:13:37 2005
+$OpenBSD: patch-plugins_ssl_Makefile_in,v 1.8 2005/07/23 20:57:02 brad Exp $
+--- plugins/ssl/Makefile.in.orig	Thu Jul  7 21:57:03 2005
++++ plugins/ssl/Makefile.in	Sat Jul 23 14:49:21 2005
 @@ -59,6 +59,10 @@ am__installdirs = "$(DESTDIR)$(plugindir
  pluginLTLIBRARIES_INSTALL = $(INSTALL)
  LTLIBRARIES = $(plugin_LTLIBRARIES)
