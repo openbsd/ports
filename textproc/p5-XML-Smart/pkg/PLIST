@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/23 07:53:43 aanriot Exp $
+${P5SITE}/XML/
+${P5SITE}/XML/Smart/
+${P5SITE}/XML/Smart.pm
+${P5SITE}/XML/Smart/Base64.pm
+${P5SITE}/XML/Smart/DTD.pm
+${P5SITE}/XML/Smart/Data.pm
+${P5SITE}/XML/Smart/Entity.pm
+${P5SITE}/XML/Smart/FAQ.epod
+${P5SITE}/XML/Smart/FAQ.pod
+${P5SITE}/XML/Smart/HTMLParser.pm
+${P5SITE}/XML/Smart/Parser.pm
+${P5SITE}/XML/Smart/Tie.pm
+${P5SITE}/XML/Smart/Tree.pm
+${P5SITE}/XML/Smart/Tutorial.epod
+${P5SITE}/XML/Smart/Tutorial.pod
+${P5SITE}/XML/Smart/XPath.pm
+@man man/man3p/XML::Smart.3p
+@man man/man3p/XML::Smart::DTD.3p
+@man man/man3p/XML::Smart::FAQ.3p
+@man man/man3p/XML::Smart::Tutorial.3p

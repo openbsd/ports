@@ -1,0 +1,14 @@
+HASH tree that is made of the XML data, and enables dynamic access to it
+with the Perl syntax for Hashes and Arrays, without needing to care if
+you have a Hash or an Array in the tree. In other words, each point in
+the tree work as a Hash and an Array at the same time!
+
+You also have extra resources, like a search for nodes by attribute,
+selection of an attribute value in each multiple node, change the
+returned format, etc...
+
+The module also handles automatically binary data (encoding/decoding
+to/from base64), CDATA (like contents with <tags>) and Unicode. It can
+be used to create XML files, load XML from the Web (just pasting an URL
+as a file path) and it has an easy way to send XML data through sockets,
+just adding the length of the data in the <?xml?> header.
