@@ -1,0 +1,2 @@
+This module returns an object that works like a Hash, Array, Scalar,
+Code and Glob object at the same time.
