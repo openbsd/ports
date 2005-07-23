@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2005/07/23 20:38:17 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2005/07/23 20:41:30 brad Exp $
 
 COMMENT= 	"compact IMAP/POP3 server"
 
@@ -20,7 +20,7 @@ WANTLIB=		c crypto ssl
 
 MODULES=	converters/libiconv
 
-FLAVORS+=      mysql postgresql
+FLAVORS+=	mysql postgresql
 FLAVOR?=
 
 .if ${FLAVOR:L:Mmysql}
