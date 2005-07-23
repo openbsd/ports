@@ -1,0 +1,17 @@
+$OpenBSD: patch-python_setup_py,v 1.1 2005/07/23 17:08:13 sturm Exp $
+--- python/setup.py.orig	Sun Aug 31 10:33:09 2003
++++ python/setup.py	Tue Jun 14 10:11:11 2005
+@@ -15,11 +15,11 @@ LIB_DIRS = ["../libs"]
+ ## Actually, forget that, I'm just going to load and parse the rules.mk
+ ## file and build what I need
+ 
+-if not os.path.exists("../rules.mk"):
++if not os.path.exists("%%WRKSRC%%/rules.mk"):
+   raise "You need to run configure first to generate the rules.mk file!"
+ 
+ make_vars = {}
+-rules = open("../rules.mk").read()
++rules = open("%%WRKSRC%%/rules.mk").read()
+ for line in string.split(rules, "\n"):
+   parts = string.split(line, '=', 1)
+   if len(parts) != 2: continue

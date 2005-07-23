@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/26 01:33:38 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/07/23 17:08:13 sturm Exp $
 bin/cstest
 bin/static.cgi
 include/ClearSilver/
@@ -157,3 +157,4 @@ libexec/mod_ecs.so
 @man man/man3/skipSearch.3
 @man man/man3/wdb_keys.3
 @man man/man3p/ClearSilver.3p
+%%python%%
