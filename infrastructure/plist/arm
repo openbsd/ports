@@ -1,4 +1,4 @@
-# $OpenBSD: arm,v 1.1 2005/04/30 00:08:27 pvalchev Exp $
+# $OpenBSD: arm,v 1.2 2005/07/24 03:51:59 pvalchev Exp $
 # This is the master list of subdirs used to choose arm packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -50,5 +50,14 @@ x11/xautolock
 devel/gmake
 security/dsniff
 net/unison
+x11/blackbox
+www/dillo
+security/gnupg
+net/hping
+x11/icewm
+misc/magicpoint
+net/tcpflow
+sysutils/xbatt
+games/xpat2
 # Builds, but disabled for time reasons
 #x11/kde/base3
