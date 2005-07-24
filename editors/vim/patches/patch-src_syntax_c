@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_syntax_c,v 1.1 2005/07/24 11:28:58 espie Exp $
+--- src/syntax.c.orig	Sun Jul 24 13:07:37 2005
++++ src/syntax.c	Sun Jul 24 13:22:49 2005
+@@ -2347,8 +2347,8 @@ check_state_ends()
+ 		 * "skipempty" */
+ 		current_next_list = cur_si->si_next_list;
+ 		current_next_flags = cur_si->si_flags;
+-		if (!(current_next_flags & (HL_SKIPNL | HL_SKIPEMPTY))
+-			&& syn_getcurline()[current_col] == NUL)
++		if (!(current_next_flags & (HL_SKIPNL | HL_SKIPEMPTY)) 
++			&& STRLEN(syn_getcurline()) <= current_col)
+ 		    current_next_list = NULL;
+ 
+ 		/* When the ended item has "extend", another item with

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2005/02/12 23:00:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2005/07/24 11:28:57 espie Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -6,7 +6,7 @@ COMMENT-lang=	"vi clone, NLS subpackage"
 DISTNAME=	vim-6.3
 REVISION=	61
 VERSION=	6.3.${REVISION}
-PKGNAME=	vim-${VERSION}
+PKGNAME=	vim-${VERSION}p0
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
 MASTER_SITES=   ftp://ftp.vim.org/pub/vim/unix/ \
@@ -62,8 +62,8 @@ FLAVORS=	huge gtk gtk2 athena motif no_x11 perl python ruby
 FLAVOR?=	gtk
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
+		LDFLAGS="-L${DEPBASE}/lib"
 CONFIGURE_ARGS+=--with-tlib="curses" --enable-multibyte
 
 .if ${FLAVOR:L:Mhuge}
@@ -77,16 +77,16 @@ WANTLIB+=	m perl util
 
 .if ${FLAVOR:L:Mpython}
 PYTHON_VER=     2.3
-CONFIGURE_ENV+=	vi_cv_path_python=${LOCALBASE}/bin/python${PYTHON_VER}
+CONFIGURE_ENV+=	vi_cv_path_python=${DEPBASE}/bin/python${PYTHON_VER}
 CONFIGURE_ARGS+=--enable-pythoninterp \
-	--with-python-config-dir=${LOCALBASE}/lib/python${PYTHON_VER}/config
+	--with-python-config-dir=${DEPBASE}/lib/python${PYTHON_VER}/config
 LIB_DEPENDS+=	python${PYTHON_VER}.0.0:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 WANTLIB+=	m pthread util
 .endif
 
 .if ${FLAVOR:L:Mruby}
 CONFIGURE_ARGS+=--enable-rubyinterp
-MAKE_ENV+=	RUBY="${LOCALBASE}/bin/ruby"
+MAKE_ENV+=	RUBY="${DEPBASE}/bin/ruby"
 LIB_DEPENDS+=	ruby::lang/ruby
 WANTLIB+=	m
 .endif
