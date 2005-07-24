@@ -1,16 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/07/05 01:14:16 niallo Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/07/24 00:28:33 brad Exp $
 @newgroup _silcd:512
 @newuser _silcd:512:_silcd:daemon:Silc-server Account:/nonexistent:/sbin/nologin
 @man man/man5/silcd.conf.5
 @man man/man8/silcd.8
 sbin/silcd
 share/doc/silcd/
+@comment share/doc/silcd/CHANGES
+@comment share/doc/silcd/COPYING
+@comment share/doc/silcd/CREDITS
 share/doc/silcd/FAQ
+@comment share/doc/silcd/INSTALL
 share/doc/silcd/README
-share/doc/silcd/examples/
-share/doc/silcd/examples/README
-share/doc/silcd/examples/silcd.prv
-share/doc/silcd/examples/silcd.pub
+@comment share/doc/silcd/TODO
+@comment share/doc/silcd/draft-riikonen-presence-attrs-03.txt
+@comment share/doc/silcd/draft-riikonen-silc-commands-06.txt
+@comment share/doc/silcd/draft-riikonen-silc-flags-payloads-04.txt
+@comment share/doc/silcd/draft-riikonen-silc-ke-auth-08.txt
+@comment share/doc/silcd/draft-riikonen-silc-pp-09.txt
+@comment share/doc/silcd/draft-riikonen-silc-spec-08.txt
 @owner _silcd
 @group _silcd
 @mode 0700

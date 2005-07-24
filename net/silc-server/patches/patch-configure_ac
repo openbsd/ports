@@ -1,16 +1,17 @@
-$OpenBSD: patch-configure_in,v 1.7 2005/04/07 00:49:18 brad Exp $
---- configure.in.orig	Wed Apr  6 06:02:05 2005
-+++ configure.in	Wed Apr  6 11:24:04 2005
-@@ -39,7 +39,7 @@ AM_INIT_AUTOMAKE(silc-server, 0.9.19)
- AC_PREREQ(2.52)
- AC_CONFIG_HEADERS(includes/silcdefs.h)
+$OpenBSD: patch-configure_ac,v 1.1 2005/07/24 00:28:33 brad Exp $
+--- configure.ac.orig	Mon Jul  4 22:52:15 2005
++++ configure.ac	Mon Jul  4 22:53:28 2005
+@@ -51,9 +51,6 @@ case "$target" in
+     ;;
+ esac
  
--CFLAGS=
-+
+-# Control compiler optimizations
+-CFLAGS=`echo $CFLAGS | sed 's/-O[ 0123456789s]*//g'`
+-
  AC_PROG_CC
  AC_C_INLINE
  AC_C_CONST
-@@ -295,31 +295,7 @@ AC_DEFUN([SILC_ADD_CFLAGS],
+@@ -305,35 +302,8 @@ AC_DEFUN([SILC_ADD_CC_FLAGS],
    unset tmp_CFLAGS
  ])
  
@@ -22,10 +23,14 @@ $OpenBSD: patch-configure_in,v 1.7 2005/04/07 00:49:18 brad Exp $
 -    SILC_ADD_CFLAGS(-g -O2)
 -  fi
 -  SILC_ADD_CFLAGS(-Wall -finline-functions)
+-  SILC_ADD_CFLAGS(-Wno-pointer-sign)
 -else
 -  # Other compilers
 -  case "$target" in
 -    alpha*-dec-osf*)
+-      SILC_ADD_CFLAGS(-g3 -O2, SILC_ADD_CFLAGS(-g3 -O, SILC_ADD_CFLAGS(-O)))
+-      ;;
+-    mips*-sgi-irix*)
 -      SILC_ADD_CFLAGS(-g3 -O2, SILC_ADD_CFLAGS(-g3 -O, SILC_ADD_CFLAGS(-O)))
 -      ;;
 -    *)
@@ -40,6 +45,7 @@ $OpenBSD: patch-configure_in,v 1.7 2005/04/07 00:49:18 brad Exp $
 -  fi
 -fi
 +SILC_ADD_CFLAGS(-Wall -finline-functions)
++SILC_ADD_CFLAGS(-Wno-pointer-sign)
  
  #
  # Workaround a bug in GCC 2.x which causes memory exhaustion

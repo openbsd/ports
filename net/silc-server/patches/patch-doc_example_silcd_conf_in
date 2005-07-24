@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_example_silcd_conf_in,v 1.5 2005/04/07 00:49:18 brad Exp $
---- doc/example_silcd.conf.in.orig	Fri Mar 11 07:15:36 2005
-+++ doc/example_silcd.conf.in	Wed Apr  6 11:22:33 2005
+$OpenBSD: patch-doc_example_silcd_conf_in,v 1.6 2005/07/24 00:28:33 brad Exp $
+--- doc/example_silcd.conf.in.orig	Mon May  2 03:47:47 2005
++++ doc/example_silcd.conf.in	Mon Jul  4 22:45:40 2005
 @@ -35,7 +35,7 @@ General {
  	# This is the default path where to search modules.  If omitted
  	# built-in modules will be used.  Built-in modules will also be
@@ -10,7 +10,7 @@ $OpenBSD: patch-doc_example_silcd_conf_in,v 1.5 2005/04/07 00:49:18 brad Exp $
  
  	# If both passphrase and public key authentication is set for a
  	# connection the public key authentication is the preferred one
-@@ -171,14 +171,14 @@ ServerInfo {
+@@ -174,14 +174,14 @@ ServerInfo {
  	#
  	# Server name (FQDN)
  	#
@@ -27,7 +27,7 @@ $OpenBSD: patch-doc_example_silcd_conf_in,v 1.5 2005/04/07 00:49:18 brad Exp $
  		port = 706;
  	};
  
-@@ -198,24 +198,24 @@ ServerInfo {
+@@ -201,24 +201,24 @@ ServerInfo {
  	#
  	# Geographic location
  	#
@@ -57,7 +57,7 @@ $OpenBSD: patch-doc_example_silcd_conf_in,v 1.5 2005/04/07 00:49:18 brad Exp $
  
  	#
  	# Public and private keys
-@@ -441,10 +441,10 @@ Client {
+@@ -444,10 +444,10 @@ Client {
  # required.
  #
  Admin {
@@ -72,7 +72,7 @@ $OpenBSD: patch-doc_example_silcd_conf_in,v 1.5 2005/04/07 00:49:18 brad Exp $
  	# PublicKey = "/path/to/the/public.pub";
  };
  
-@@ -467,13 +467,13 @@ Admin {
+@@ -470,13 +470,13 @@ Admin {
  # to true.  For normal connections set it false.  If it is set to true then
  # your server will be backup router.
  #
@@ -93,7 +93,7 @@ $OpenBSD: patch-doc_example_silcd_conf_in,v 1.5 2005/04/07 00:49:18 brad Exp $
  
  #
  # Configured router connections
-@@ -503,17 +503,17 @@ ServerConnection {
+@@ -506,17 +506,17 @@ ServerConnection {
  # backup router is in our cell then set the "BackupLocal" option to true.
  # If the backup router is in other cell then set it to false.
  #

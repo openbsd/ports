@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_silcsim_Makefile_in,v 1.1 2005/07/24 00:28:33 brad Exp $
+--- lib/silcsim/Makefile.in.orig	Mon Jul  4 23:56:27 2005
++++ lib/silcsim/Makefile.in	Mon Jul  4 23:56:43 2005
+@@ -511,7 +511,6 @@ info-am:
+ 
+ install-data-am:
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ 
+ install-exec-am:
+ 

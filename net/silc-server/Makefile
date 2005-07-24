@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2005/07/05 01:40:45 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2005/07/24 00:28:33 brad Exp $
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) server"
 
-DISTNAME=	silc-server-0.9.19p1
-PKGNAME=	silc-server-0.9.19.1p1
+DISTNAME=	silc-server-1.0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.silcnet.org/
@@ -40,7 +39,6 @@ SUBST_VARS=	CONFDIR
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59
-MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/lib/silcmath/mpi
 CONFIGURE_ARGS+= --enable-ipv6 \
 		 --without-irssi \
 		 --with-docdir=${PREFIX}/share/doc/silcd \
@@ -53,8 +51,6 @@ CONFIGURE_ARGS+= --enable-ipv6 \
 .if ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS+= --disable-asm
 .endif
-
-WRKDIST=	${WRKDIR}/${DISTNAME:S/p1//}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/silcd
