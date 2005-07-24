@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/04/08 20:54:36 brad Exp $
-@comment help/
+@comment $OpenBSD: PLIST,v 1.4 2005/07/24 00:26:13 brad Exp $
 include/silc/
 include/silc/aes.h
 include/silc/blowfish.h
@@ -9,13 +8,13 @@ include/silc/ciphers_def.h
 include/silc/client.h
 include/silc/command.h
 include/silc/command_reply.h
+include/silc/getopti.h
+include/silc/gunicomp.h
+include/silc/gunidecomp.h
 include/silc/idlist.h
 include/silc/md5.h
 include/silc/mp_gmp.h
-include/silc/mp_mpi.h
-include/silc/mpi-config.h
-include/silc/mpi.h
-include/silc/mplogic.h
+include/silc/mp_tma.h
 include/silc/none.h
 include/silc/protocol.h
 include/silc/rc5.h
@@ -45,6 +44,7 @@ include/silc/silcidcache.h
 include/silc/silcincludes.h
 include/silc/silclist.h
 include/silc/silclog.h
+include/silc/silclog_i.h
 include/silc/silcmath.h
 include/silc/silcmemory.h
 include/silc/silcmessage.h
@@ -80,41 +80,40 @@ include/silc/silcvcard.h
 include/silc/silcversion.h
 include/silc/silcwin32.h
 include/silc/stacktrace.h
+include/silc/stringprep.h
+include/silc/tma.h
+include/silc/tma_class.h
+include/silc/tma_superclass.h
 include/silc/twofish.h
-include/silc/version_internal.h
 lib/libsilc.a
 lib/libsilc.la
 lib/libsilcclient.a
 lib/libsilcclient.la
+%%SHARED%%
 lib/pkgconfig/
 lib/pkgconfig/silc.pc
 lib/pkgconfig/silcclient.pc
-@comment logs/
-@comment @man man/man1/silc.1
-@comment @man man/man5/silcd.conf.5
-@comment @man man/man8/silcd.8
 @comment modules/
 share/doc/silc/
-share/doc/silc/CHANGES
-share/doc/silc/COPYING
-share/doc/silc/CREDITS
-share/doc/silc/CodingStyle
+@comment share/doc/silc/BSD
+@comment share/doc/silc/CHANGES
+@comment share/doc/silc/COPYING
+@comment share/doc/silc/CREDITS
+@comment share/doc/silc/CodingStyle
 @comment share/doc/silc/FAQ
-share/doc/silc/INSTALL
+@comment share/doc/silc/GPL
+@comment share/doc/silc/INSTALL
 @comment share/doc/silc/README
-share/doc/silc/README.CVS
+@comment share/doc/silc/README.CVS
 @comment share/doc/silc/README.MACOSX
 @comment share/doc/silc/README.WIN32
-share/doc/silc/TODO
+@comment share/doc/silc/TODO
 share/doc/silc/draft-riikonen-presence-attrs-03.txt
-@comment share/doc/silc/draft-riikonen-silc-commands-06.txt
-@comment share/doc/silc/draft-riikonen-silc-flags-payloads-04.txt
+share/doc/silc/draft-riikonen-silc-commands-06.txt
+share/doc/silc/draft-riikonen-silc-flags-payloads-04.txt
 share/doc/silc/draft-riikonen-silc-ke-auth-08.txt
 share/doc/silc/draft-riikonen-silc-pp-09.txt
-share/doc/silc/draft-riikonen-silc-rfc2779-00.txt
-@comment share/doc/silc/draft-riikonen-silc-spec-08.txt
-share/doc/silc/example_silc.conf
-share/doc/silc/example_silcd.conf
+share/doc/silc/draft-riikonen-silc-spec-08.txt
 share/doc/silc/toolkit/
 share/doc/silc/toolkit/arch.gif
 share/doc/silc/toolkit/box.gif
@@ -583,7 +582,6 @@ share/doc/silc/toolkit/silclist-silc_list_init_prev.html
 share/doc/silc/toolkit/silclist-silc_list_start.html
 share/doc/silc/toolkit/silclist.html
 share/doc/silc/toolkit/silclist.xref
-share/doc/silc/toolkit/silclog-SILC_ENABLE_DEBUG.html
 share/doc/silc/toolkit/silclog-SILC_LOG_DEBUG.html
 share/doc/silc/toolkit/silclog-SILC_LOG_ERROR.html
 share/doc/silc/toolkit/silclog-SILC_LOG_FATAL.html
@@ -594,17 +592,15 @@ share/doc/silc/toolkit/silclog-SilcLogCb.html
 share/doc/silc/toolkit/silclog-SilcLogDebugCb.html
 share/doc/silc/toolkit/silclog-SilcLogHexdumpCb.html
 share/doc/silc/toolkit/silclog-SilcLogType.html
-share/doc/silc/toolkit/silclog-silc_debug.html
-share/doc/silc/toolkit/silclog-silc_debug_hexdump.html
+share/doc/silc/toolkit/silclog-silc_log_debug.html
+share/doc/silc/toolkit/silclog-silc_log_debug_hexdump.html
 share/doc/silc/toolkit/silclog-silc_log_flush_all.html
 share/doc/silc/toolkit/silclog-silc_log_flushdelay.html
 share/doc/silc/toolkit/silclog-silc_log_get_file.html
-share/doc/silc/toolkit/silclog-silc_log_output.html
-share/doc/silc/toolkit/silclog-silc_log_output_debug.html
-share/doc/silc/toolkit/silclog-silc_log_output_hexdump.html
 share/doc/silc/toolkit/silclog-silc_log_quick.html
 share/doc/silc/toolkit/silclog-silc_log_reset_all.html
 share/doc/silc/toolkit/silclog-silc_log_reset_callbacks.html
+share/doc/silc/toolkit/silclog-silc_log_reset_debug_callbacks.html
 share/doc/silc/toolkit/silclog-silc_log_set_callback.html
 share/doc/silc/toolkit/silclog-silc_log_set_debug_callbacks.html
 share/doc/silc/toolkit/silclog-silc_log_set_debug_string.html
@@ -612,6 +608,8 @@ share/doc/silc/toolkit/silclog-silc_log_set_file.html
 share/doc/silc/toolkit/silclog-silc_log_timestamp.html
 share/doc/silc/toolkit/silclog.html
 share/doc/silc/toolkit/silclog.xref
+share/doc/silc/toolkit/silclog_i.html
+share/doc/silc/toolkit/silclog_i.xref
 share/doc/silc/toolkit/silcmath-silc_math_gen_prime.html
 share/doc/silc/toolkit/silcmath-silc_math_prime_test.html
 share/doc/silc/toolkit/silcmath.html
@@ -1037,6 +1035,8 @@ share/doc/silc/toolkit/silcstringprep-silc_stringprep.html
 share/doc/silc/toolkit/silcstringprep.html
 share/doc/silc/toolkit/silcstringprep.xref
 share/doc/silc/toolkit/silcstrutil-SilcStringEncoding.html
+share/doc/silc/toolkit/silcstrutil-silc_channel_name_check.html
+share/doc/silc/toolkit/silcstrutil-silc_channel_name_verify.html
 share/doc/silc/toolkit/silcstrutil-silc_identifier_check.html
 share/doc/silc/toolkit/silcstrutil-silc_identifier_verify.html
 share/doc/silc/toolkit/silcstrutil-silc_mime_parse.html
@@ -1149,4 +1149,14 @@ share/doc/silc/toolkit/silcvcard.xref
 share/doc/silc/toolkit/space.gif
 share/doc/silc/toolkit/toolkit_index.html
 share/doc/silc/toolkit/zlib.html
-%%SHARED%%
+share/doc/silc/tutorial/
+share/doc/silc/tutorial/Makefile
+share/doc/silc/tutorial/Makefile.defines
+share/doc/silc/tutorial/Makefile.defines.in
+share/doc/silc/tutorial/Makefile.defines_int
+share/doc/silc/tutorial/Makefile.defines_int.in
+share/doc/silc/tutorial/Makefile.in
+share/doc/silc/tutorial/README
+share/doc/silc/tutorial/mybot/
+share/doc/silc/tutorial/mybot/README
+share/doc/silc/tutorial/mybot/mybot.c
