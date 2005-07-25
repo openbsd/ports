@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2004/10/20 20:05:30 xsa Exp $
+# $OpenBSD: Makefile,v 1.10 2005/07/25 21:11:54 aanriot Exp $
 
 COMMENT=	"content management system built on top of Zope"
 
-DISTNAME=	Plone-2.0.4
+DISTNAME=	Plone-2.0.5
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.plone.org/
 
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
+MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
