@@ -1,0 +1,17 @@
+$OpenBSD: patch-base_Makefile_in,v 1.1.1.1 2005/07/25 16:32:05 sturm Exp $
+--- base/Makefile.in.orig	Thu Dec  9 07:48:33 2004
++++ base/Makefile.in	Mon Feb  7 22:23:41 2005
+@@ -181,10 +181,10 @@ distclean: clean
+ devclean: distclean
+ 
+ install:
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 774 $(INSTALL_OPTS) @nagios_name@ $(DESTDIR)$(BINDIR)
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
++	$(INSTALL) -m 555 $(INSTALL_OPTS) @nagios_name@ $(DESTDIR)$(prefix)/sbin
+ 	$(STRIP) $(DESTDIR)$(BINDIR)/@nagios_name@
+-	$(INSTALL) -m 774 $(INSTALL_OPTS) @nagiostats_name@ $(DESTDIR)$(BINDIR)
++	$(INSTALL) -m 555 $(INSTALL_OPTS) @nagiostats_name@ $(DESTDIR)$(BINDIR)
+ 	$(STRIP) $(DESTDIR)$(BINDIR)/@nagiostats_name@
+ 
+ 

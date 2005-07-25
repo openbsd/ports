@@ -1,0 +1,59 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2005/07/25 16:32:07 sturm Exp $
+--- configure.orig	Thu Dec 30 18:21:18 2004
++++ configure	Sun Jan 30 19:00:14 2005
+@@ -8257,13 +8257,13 @@ if test "${with_pgsql+set}" = set; then
+   PGSQL=$withval
+ fi;
+ 
+-echo "$as_me:$LINENO: checking for main in -lcrypt" >&5
+-echo $ECHO_N "checking for main in -lcrypt... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for main in -lcrypto" >&5
++echo $ECHO_N "checking for main in -lcrypto... $ECHO_C" >&6
+ if test "${ac_cv_lib_crypt_main+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lcrypt  $LIBS"
++LIBS="-lcrypto  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -8320,7 +8320,7 @@ if test $ac_cv_lib_crypt_main = yes; the
+ #define HAVE_LIBCRYPT 1
+ _ACEOF
+ 
+-  LIBS="-lcrypt $LIBS"
++  LIBS="-lcrypto $LIBS"
+ 
+ fi
+ 
+@@ -8336,7 +8336,7 @@ if test "${ac_cv_lib_pq_PQsetdbLogin+set
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpq -lcrypt $LIBS"
++LIBS="-lpq -lcrypto $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -8855,16 +8855,16 @@ fi
+ done
+ 
+     if [ -n "$PGSQL" -a "$ac_cv_header_libpq_fe_h" = "yes" ]; then
+-      PGLIBS="-L$PGSQL/lib -lpq -lcrypt"
++      PGLIBS="-L$PGSQL/lib -lpq -lcrypto"
+       PGINCLUDE="-I$PGSQL/include"
+     elif test  "$ac_cv_header_pgsql_libpq_fe_h" = "yes"; then
+-      PGLIBS="-lpq -lcrypt"
++      PGLIBS="-lpq -lcrypto"
+       PGINCLUDE="-I/usr/include/pgsql"
+     elif test  "$ac_cv_header_postgresql_libpq_fe_h" = "yes"; then
+-      PGLIBS="-L$PGSQL/lib -lpq -lcrypt"
++      PGLIBS="-L$PGSQL/lib -lpq -lcrypto"
+       PGINCLUDE="-I/usr/include/postgresql"
+     elif test  "$ac_cv_header_libpq_fe_h" = "yes"; then
+-      PGLIBS="-L$PGSQL/lib -lpq -lcrypt"
++      PGLIBS="-L$PGSQL/lib -lpq -lcrypto"
+       PGINCLUDE="-I$PGSQL/include"
+     fi
+     if test -z "$PGINCLUDE"; then

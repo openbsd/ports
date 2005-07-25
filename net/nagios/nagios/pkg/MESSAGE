@@ -1,0 +1,4 @@
+Sample configuration files and web server configuration can be found in
+${PREFIX}/share/examples/nagios.
+
+Beware that Nagios might or might not work correctly on 64bit machines.

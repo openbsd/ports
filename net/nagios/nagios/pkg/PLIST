@@ -1,0 +1,41 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/25 16:32:06 sturm Exp $
+@newgroup _nagios:542
+@newuser _nagios:542:_nagios:daemon:Nagios user:/var/www/nagios:/sbin/nologin
+bin/nagiostats
+sbin/nagios
+share/examples/nagios/
+share/examples/nagios/bigger.cfg
+share/examples/nagios/cgi.cfg
+@sample ${CHROOT}${SYSCONFDIR}/nagios/
+@sample ${CHROOT}${SYSCONFDIR}/nagios/cgi.cfg
+share/examples/nagios/checkcommands.cfg
+share/examples/nagios/httpd.conf
+share/examples/nagios/minimal.cfg
+@sample ${CHROOT}${SYSCONFDIR}/nagios/minimal.cfg
+share/examples/nagios/misccommands.cfg
+share/examples/nagios/nagios.cfg
+@sample ${CHROOT}${SYSCONFDIR}/nagios/nagios.cfg
+share/examples/nagios/resource.cfg
+@sample ${CHROOT}${SYSCONFDIR}/nagios/resource.cfg
+@mode 755
+@owner _nagios
+@group _nagios
+@sample ${CHROOT}/var/log/nagios/
+@sample ${CHROOT}/var/log/nagios/archives/
+@sample ${CHROOT}/var/nagios/
+@sample ${CHROOT}/var/nagios/rw/
+@sample /var/run/nagios/
+@mode
+@owner
+@group
+@sample /var/www/nagios/
+%%chroot%%
+@extra ${CHROOT}/var/log/nagios/nagios
+@extra ${CHROOT}/var/nagios/comments.dat
+@extra ${CHROOT}/var/nagios/downtime.dat
+@extra ${CHROOT}/var/nagios/objects.cache
+@extra ${CHROOT}/var/nagios/retention.dat
+@extra ${CHROOT}/var/nagios/status.dat
+@extra ${CHROOT}/var/nagios/rw/nagios.cmd
+@extraunexec rm -f ${CHROOT}${SYSCONFDIR}/nagios/*
+@extraunexec rm -f ${CHROOT}/var/log/nagios/archives/*

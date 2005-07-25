@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_check_pgsql_c,v 1.1.1.1 2005/07/25 16:32:07 sturm Exp $
+--- plugins/check_pgsql.c.orig	Sun Jan 30 19:15:16 2005
++++ plugins/check_pgsql.c	Sun Jan 30 19:15:30 2005
+@@ -27,7 +27,7 @@ const char *email = "nagiosplug-devel@li
+ #include "utils.h"
+ 
+ #include "netutils.h"
+-#include <libpq-fe.h>
++#include <postgresql/libpq-fe.h>
+ 
+ #define DEFAULT_DB "template1"
+ #define DEFAULT_HOST "127.0.0.1"
