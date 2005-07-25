@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/21 02:11:57 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2005/07/25 19:22:14 aanriot Exp $
 
 COMMENT=	"zeroconf networking implementation"
-DISTNAME=	howl-0.9.8
+DISTNAME=	howl-1.0.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.porchdogsoft.com/download/
 
@@ -18,6 +18,5 @@ BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 WANTLIB=	c pthread
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	LIBS="-pthread"
 
 .include <bsd.port.mk>

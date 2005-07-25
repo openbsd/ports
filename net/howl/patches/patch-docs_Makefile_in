@@ -1,6 +1,6 @@
-$OpenBSD: patch-docs_Makefile_in,v 1.1.1.1 2005/01/21 02:11:57 jolan Exp $
---- docs/Makefile.in.orig	Mon Nov 22 19:12:58 2004
-+++ docs/Makefile.in	Thu Jan 20 20:05:30 2005
+$OpenBSD: patch-docs_Makefile_in,v 1.2 2005/07/25 19:22:14 aanriot Exp $
+--- docs/Makefile.in.orig	Sun Jul 24 23:30:13 2005
++++ docs/Makefile.in	Sun Jul 24 23:30:38 2005
 @@ -96,7 +96,7 @@ VERSION = @VERSION@
  am__include = @am__include@
  am__quote = @am__quote@

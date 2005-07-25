@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_lib_howl_socket_c,v 1.1.1.1 2005/01/21 02:11:57 jolan Exp $
---- src/lib/howl/socket.c.orig	Wed Oct 27 12:39:52 2004
-+++ src/lib/howl/socket.c	Thu Jan 20 02:54:06 2005
+$OpenBSD: patch-src_lib_howl_socket_c,v 1.2 2005/07/25 19:22:14 aanriot Exp $
+--- src/lib/howl/socket.c.orig	Sun Jul 24 23:36:22 2005
++++ src/lib/howl/socket.c	Sun Jul 24 23:43:56 2005
 @@ -261,7 +261,7 @@ sw_multicast_socket_super_init(
  	err = sw_translate_error(self->m_desc != SW_INVALID_SOCKET, sw_socket_errno());
  	sw_check_okay_log(err, exit);
  
--#if defined(__APPLE__) || defined(__VXWORKS__) || defined(__FreeBSD__)
+-#if defined(__APPLE__) || defined(__VXWORKS__) || defined(__FreeBSD__) || defined(__NetBSD__)
 +#if defined(__APPLE__) || defined(__VXWORKS__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
     res = setsockopt(self->m_desc, SOL_SOCKET, SO_REUSEPORT, (char*) &opt, sizeof(opt));
  #else
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_lib_howl_socket_c,v 1.1.1.1 2005/01/21 02:11:57 jolan Exp $
  #endif
  	int							res;
  	sw_result					err;
-+ 	sw_uchar						mttl					= (sw_uchar) ttl;
++	sw_uchar                                                mttl				= (sw_uchar) ttl; 
  
     /*
        initialize the group membership
