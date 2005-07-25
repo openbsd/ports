@@ -1,20 +1,16 @@
-# $OpenBSD: Makefile,v 1.38 2005/01/26 16:41:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2005/07/25 07:12:58 aanriot Exp $
 
 COMMENT=	"retrieve files from the 'net via HTTP and FTP"
 
-DISTNAME=	wget-1.8.2
+DISTNAME=	wget-1.10
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU:=wget/}
-MASTER_SITES0=	ftp://ftp.us.debian.org/debian/pool/main/w/wget/
-
-PATCHFILES=	wget_1.8.2-10.diff.gz:0
-PATCH_DIST_STRIP= -p1
 
 HOMEPAGE=	http://www.gnu.org/software/wget/
 
 MODULES=	devel/gettext
 
-MAINTAINER=	Brad Smith <brad@openbsd.org>
+MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,8 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto ssl 
 
-USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

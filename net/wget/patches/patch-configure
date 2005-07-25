@@ -1,48 +1,21 @@
-$OpenBSD: patch-configure,v 1.4 2003/05/14 15:03:51 brad Exp $
---- configure.orig	Wed May 14 06:11:09 2003
-+++ configure	Wed May 14 06:14:11 2003
-@@ -3468,7 +3468,7 @@ else
-     hardcode_direct=yes
-     hardcode_shlibpath_var=no
-     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
--      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
-+      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-       hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-       export_dynamic_flag_spec='${wl}-E'
-     else
-@@ -3478,7 +3478,7 @@ else
- 	hardcode_libdir_flag_spec='-R$libdir'
-         ;;
-       *)
--        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
-+        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-         hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-         ;;
-       esac
-@@ -7811,7 +7811,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
-   echo $ac_n "(cached) $ac_c" 1>&6
+$OpenBSD: patch-configure,v 1.5 2005/07/25 07:12:58 aanriot Exp $
+--- configure.orig	Wed Jun  8 00:40:03 2005
++++ configure	Mon Jul 18 00:53:03 2005
+@@ -27072,7 +27072,7 @@ if test "${ac_cv_lib_intl_gettext+set}" 
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
 +LIBS="-lintl -liconv $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 7817 "configure"
- #include "confdefs.h"
-@@ -7840,7 +7840,7 @@ fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
-   
--                    LIBS="-lintl $LIBS"
-+                    LIBS="-lintl -liconv $LIBS"
- 	  cat >> confdefs.h <<\EOF
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -27132,7 +27132,7 @@ echo "$as_me:$LINENO: result: $ac_cv_lib
+ echo "${ECHO_T}$ac_cv_lib_intl_gettext" >&6
+ if test $ac_cv_lib_intl_gettext = yes; then
+ 
+-                LIBS="-lintl $LIBS"
++                LIBS="-lintl -liconv $LIBS"
+ 
+ cat >>confdefs.h <<\_ACEOF
  #define HAVE_GETTEXT 1
- EOF
-@@ -7923,7 +7923,7 @@ done
- 
- 
- case "${MAKEINFO}" in
--   *makeinfo) MAKEINFO="${MAKEINFO} \$(srcdir)/wget.texi"  ;;
-+   *makeinfo*) MAKEINFO="${MAKEINFO} \$(srcdir)/wget.texi"  ;;
-    *emacs | *xemacs) MAKEINFO="${MAKEINFO} -batch -q -no-site-file -eval '(find-file \"\$(srcdir)/wget.texi\")' -l texinfmt -f texinfo-format-buffer -f save-buffer"  ;;
-    *) MAKEINFO="makeinfo \$(srcdir)/wget.texi"            ;;
- esac

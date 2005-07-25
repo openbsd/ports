@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2004/08/08 13:51:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2005/07/25 07:12:58 aanriot Exp $
 bin/wget
 @info info/wget.info
 @man man/man1/wget.1
@@ -13,9 +13,20 @@ share/locale/cs/LC_MESSAGES/wget.mo
 share/locale/da/LC_MESSAGES/wget.mo
 share/locale/de/LC_MESSAGES/wget.mo
 share/locale/el/LC_MESSAGES/wget.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/wget.mo
+share/locale/eo/LC_MESSAGES/wget.mo
 share/locale/es/LC_MESSAGES/wget.mo
 share/locale/et/LC_MESSAGES/wget.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
+share/locale/eu/LC_MESSAGES/wget.mo
+share/locale/fi/LC_MESSAGES/wget.mo
 share/locale/fr/LC_MESSAGES/wget.mo
+share/locale/ga/
+share/locale/ga/LC_MESSAGES/
+share/locale/ga/LC_MESSAGES/wget.mo
 share/locale/gl/LC_MESSAGES/wget.mo
 share/locale/he/LC_MESSAGES/wget.mo
 share/locale/hr/LC_MESSAGES/wget.mo
@@ -26,10 +37,18 @@ share/locale/nl/LC_MESSAGES/wget.mo
 share/locale/no/LC_MESSAGES/wget.mo
 share/locale/pl/LC_MESSAGES/wget.mo
 share/locale/pt_BR/LC_MESSAGES/wget.mo
+share/locale/ro/LC_MESSAGES/wget.mo
 share/locale/ru/LC_MESSAGES/wget.mo
 share/locale/sk/LC_MESSAGES/wget.mo
 share/locale/sl/LC_MESSAGES/wget.mo
+share/locale/sr/
+share/locale/sr/LC_MESSAGES/
+share/locale/sr/LC_MESSAGES/wget.mo
 share/locale/sv/LC_MESSAGES/wget.mo
 share/locale/tr/LC_MESSAGES/wget.mo
 share/locale/uk/LC_MESSAGES/wget.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
+share/locale/vi/LC_MESSAGES/wget.mo
+share/locale/zh_CN/LC_MESSAGES/wget.mo
 share/locale/zh_TW/LC_MESSAGES/wget.mo

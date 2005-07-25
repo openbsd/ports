@@ -1,8 +1,8 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2003/05/14 15:03:51 brad Exp $
---- doc/Makefile.in.orig	Wed May 14 16:13:38 2003
-+++ doc/Makefile.in	Wed May 14 16:21:33 2003
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2005/07/25 07:12:58 aanriot Exp $
+--- doc/Makefile.in.orig	Sun Jul  3 09:02:16 2005
++++ doc/Makefile.in	Sun Jul  3 09:03:50 2005
 @@ -51,7 +51,7 @@ RM = rm -f
- TEXI2POD     = $(srcdir)/texi2pod.pl
+ TEXI2POD     = texi2pod.pl
  POD2MAN      = @POD2MAN@
  MAN          = wget.$(manext)
 -WGETRC       = $(sysconfdir)/wgetrc
@@ -13,12 +13,12 @@ $OpenBSD: patch-doc_Makefile_in,v 1.1 2003/05/14 15:03:51 brad Exp $
 @@ -66,6 +66,7 @@ $(SAMPLERCTEXI): $(srcdir)/sample.wgetrc
  	sed s/@/@@/g $? > $@
  
- wget.info: $(SAMPLERCTEXI) $(srcdir)/wget.texi
+ wget.info: $(srcdir)/wget.texi $(SAMPLERCTEXI) $(srcdir)/version.texi
 +	@rm -f wget.info*
- 	$(MAKEINFO) -I$(srcdir)
+ 	$(MAKEINFO) -I$(srcdir) $(srcdir)/wget.texi
  
- $(TEXI2POD): $(TEXI2POD).in
-@@ -127,22 +128,8 @@ install.man: $(MAN)
+ $(TEXI2POD): $(srcdir)/$(TEXI2POD).in
+@@ -131,22 +132,8 @@ install.man: $(MAN)
  
  # install sample.wgetrc
  install.wgetrc: $(srcdir)/sample.wgetrc

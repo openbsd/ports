@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_wget_texi,v 1.1 2003/05/14 15:03:51 brad Exp $
---- doc/wget.texi.orig	Wed May 14 16:25:42 2003
-+++ doc/wget.texi	Wed May 14 16:26:13 2003
-@@ -9,6 +9,11 @@
+$OpenBSD: patch-doc_wget_texi,v 1.2 2005/07/25 07:12:58 aanriot Exp $
+--- doc/wget.texi.orig	Sun Jul  3 09:34:36 2005
++++ doc/wget.texi	Sun Jul  3 09:34:54 2005
+@@ -11,6 +11,11 @@
  @setchapternewpage on
  @c %**end of header
  
