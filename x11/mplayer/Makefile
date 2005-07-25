@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2005/05/09 12:24:38 biorn Exp $
+# $OpenBSD: Makefile,v 1.84 2005/07/25 17:10:09 biorn Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -7,7 +7,7 @@ COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
 DISTNAME=		MPlayer-1.0pre7
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}
+PKGNAME=		${DISTNAME:L}p0
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	"patents"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m pthread stdc++ termcap util z 
+WANTLIB=		c m ogg pthread stdc++ termcap util z 
 
 MASTER_SITES=		http://www2.mplayerhq.hu/MPlayer/releases/
 MASTER_SITES+=		http://www.mplayerhq.hu/MPlayer/releases/
@@ -42,7 +42,8 @@ LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
 		mp3lame::audio/lame \
 		ungif::graphics/libungif \
-		cdda_paranoia,cdda_interface:cdparanoia->=3.a9.8:audio/cdparanoia
+		cdda_paranoia,cdda_interface:cdparanoia->=3.a9.8:audio/cdparanoia \
+		theora::multimedia/libtheora
 
 CONFDIR=	${SYSCONFDIR}/mplayer
 SUBST_VARS=	CONFDIR
@@ -58,6 +59,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-xvid \
 		--disable-libdv \
 		--disable-smb \
+		--enable-theora \
 		--enable-select \
 		--enable-vorbis \
 		--enable-menu \
