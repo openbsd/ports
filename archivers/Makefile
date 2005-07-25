@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2005/03/30 00:03:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2005/07/25 10:35:46 jsg Exp $
 # $FreeBSD: Makefile,v 1.19 1997/11/20 08:21:26 tg Exp $
 
      SUBDIR += arc
@@ -35,6 +35,7 @@
      SUBDIR += unace
      SUBDIR += unarj
      SUBDIR += unrar
+     SUBDIR += unshield
      SUBDIR += unzip
 #    SUBDIR += unzip.with_encryption
      SUBDIR += zip
