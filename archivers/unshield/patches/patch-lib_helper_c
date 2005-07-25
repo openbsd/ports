@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_helper_c,v 1.1.1.1 2005/07/25 09:58:16 jsg Exp $
+--- lib/helper.c.orig	Sat Jul  9 18:40:07 2005
++++ lib/helper.c	Sat Jul  9 18:40:20 2005
+@@ -1,11 +1,12 @@
+ /* $Id: patch-lib_helper_c,v 1.1.1.1 2005/07/25 09:58:16 jsg Exp $ */
+ #define _BSD_SOURCE 1
+-#include "internal.h"
+-#include "log.h"
+ #include <sys/types.h>
+ #include <dirent.h>
+ #include <string.h>
+ #include <errno.h>
++
++#include "internal.h"
++#include "log.h"
+ 
+ #define VERBOSE 0
+ 

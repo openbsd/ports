@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1.1.1 2005/07/25 09:58:16 jsg Exp $
+--- lib/Makefile.in.orig	Sat Jul 23 16:02:27 2005
++++ lib/Makefile.in	Sat Jul 23 16:02:29 2005
+@@ -138,7 +138,7 @@ target_alias = @target_alias@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-AM_CFLAGS = -g -ansi -Wall -Wsign-compare -Wno-long-long -Werror @CFLAGS@ @APPLE_CFLAGS@ -I..
++AM_CFLAGS = -ansi -Wall -Wsign-compare -Wno-long-long -Werror @CFLAGS@ @APPLE_CFLAGS@ -I..
+ 
+ lib_LTLIBRARIES = libunshield.la
+ 

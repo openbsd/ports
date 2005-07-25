@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_internal_h,v 1.1.1.1 2005/07/25 09:58:16 jsg Exp $
+--- lib/internal.h.orig	Sat Jul  9 13:11:23 2005
++++ lib/internal.h	Sat Jul  9 13:11:16 2005
+@@ -109,8 +109,12 @@ uint16_t bswap_16(uint16_t x);
+ uint32_t bswap_32(uint32_t x);
+ #endif
+ 
++#ifndef letoh16
+ #define letoh16(x)    bswap_16(x)
++#endif
++#ifndef letoh32
+ #define letoh32(x)    bswap_32(x)
++#endif
+ 
+ #else
+ #define letoh32(x) (x)

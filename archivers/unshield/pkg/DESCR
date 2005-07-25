@@ -1,0 +1,6 @@
+An installer created by the InstallShield software stores the files it
+will install inside of InstallShield Cabinet Files. It would thus be
+desirable to be able to extract the Microsoft Cabinet Files from the
+InstallShield Cabinet Files in order to be able to install the
+applications without access to Microsoft Windows. Unshield supports
+InstallShield versions 5 and later.

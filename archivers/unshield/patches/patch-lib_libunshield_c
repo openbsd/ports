@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_libunshield_c,v 1.1.1.1 2005/07/25 09:58:16 jsg Exp $
+--- lib/libunshield.c.orig	Sat Jul  9 18:40:36 2005
++++ lib/libunshield.c	Sat Jul  9 18:40:48 2005
+@@ -1,11 +1,12 @@
+ /* $Id: patch-lib_libunshield_c,v 1.1.1.1 2005/07/25 09:58:16 jsg Exp $ */
+ #define _BSD_SOURCE 1
+-#include "internal.h"
+-#include "log.h"
+ #include <assert.h>
+ #include <ctype.h>
+ #include <stdlib.h>
+ #include <string.h>
++
++#include "internal.h"
++#include "log.h"
+ 
+ /**
+   Create filename pattern used by unshield_fopen_for_reading()
