@@ -1,17 +1,17 @@
-$OpenBSD: patch-base_Makefile_in,v 1.1.1.1 2005/07/25 16:32:05 sturm Exp $
+$OpenBSD: patch-base_Makefile_in,v 1.2 2005/07/25 19:23:47 sturm Exp $
 --- base/Makefile.in.orig	Thu Dec  9 07:48:33 2004
-+++ base/Makefile.in	Mon Feb  7 22:23:41 2005
-@@ -181,10 +181,10 @@ distclean: clean
++++ base/Makefile.in	Mon Jul 25 21:05:59 2005
+@@ -181,10 +181,8 @@ distclean: clean
  devclean: distclean
  
  install:
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
 -	$(INSTALL) -m 774 $(INSTALL_OPTS) @nagios_name@ $(DESTDIR)$(BINDIR)
-+	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
-+	$(INSTALL) -m 555 $(INSTALL_OPTS) @nagios_name@ $(DESTDIR)$(prefix)/sbin
- 	$(STRIP) $(DESTDIR)$(BINDIR)/@nagios_name@
+-	$(STRIP) $(DESTDIR)$(BINDIR)/@nagios_name@
 -	$(INSTALL) -m 774 $(INSTALL_OPTS) @nagiostats_name@ $(DESTDIR)$(BINDIR)
-+	$(INSTALL) -m 555 $(INSTALL_OPTS) @nagiostats_name@ $(DESTDIR)$(BINDIR)
- 	$(STRIP) $(DESTDIR)$(BINDIR)/@nagiostats_name@
+-	$(STRIP) $(DESTDIR)$(BINDIR)/@nagiostats_name@
++	$(BSD_INSTALL_PROGRAM_DIR) $(DESTDIR)$(BINDIR)
++	$(BSD_INSTALL_PROGRAM) @nagios_name@ $(DESTDIR)$(prefix)/sbin
++	$(BSD_INSTALL_PROGRAM) @nagiostats_name@ $(DESTDIR)$(BINDIR)
  
  
