@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.382 2005/07/16 20:52:53 grange Exp $
+# $OpenBSD: Makefile,v 1.383 2005/07/25 16:32:53 sturm Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -126,6 +126,7 @@
      SUBDIR += mtr,no_x11
      SUBDIR += mudix
      SUBDIR += mutella
+     SUBDIR += nagios
      SUBDIR += nam
      SUBDIR += nbtscan
      SUBDIR += ncftp
