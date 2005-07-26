@@ -1,0 +1,21 @@
+$OpenBSD: patch-po_Makefile_in,v 1.1 2005/07/26 17:00:51 fgsch Exp $
+--- po/Makefile.in.orig	Wed Jun  8 16:52:10 2005
++++ po/Makefile.in	Tue Jul 26 04:12:19 2005
+@@ -38,7 +38,7 @@ all: $(MO_FILES)
+ 	  if ( test -e $(POT_FILE) ) ; then \
+ 	    if ( test "$(MSGMERGE)" ); then \
+ 	      echo -n "$@: Merging from $(POT_FILE)"; \
+-	      $(MSGMERGE) $(MSGMERGE_OPTS) $@ $(POT_FILE); \
++	      $(MSGMERGE) $(MSGMERGE_OPTS) $@ $(POT_FILE) >/dev/null; \
+ 	      touch $@; \
+ 	    fi \
+ 	  fi \
+@@ -67,7 +67,7 @@ $(POT_FILE): $(SOURCE_FILES)
+ .PHONY:install-%.mo
+ install-%.mo: %.mo
+ 	$(INSTALL) -d $(DESTDIR)$(GETTEXTDIR)/$*/LC_MESSAGES; \
+-	$(INSTALL) --mode=644 $< $(DESTDIR)$(GETTEXTDIR)/$*/LC_MESSAGES/$(PACKAGE_NAME).mo; \
++	$(INSTALL) -m 644 $< $(DESTDIR)$(GETTEXTDIR)/$*/LC_MESSAGES/$(PACKAGE_NAME).mo; \
+ 
+ .PHONY:install
+ install: $(patsubst %,install-%,$(MO_FILES))

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_smspdu_smsud_enc_c,v 1.1 2005/07/26 17:00:51 fgsch Exp $
+--- src/smspdu/smsud_enc.c.orig	Tue Jul 26 01:43:04 2005
++++ src/smspdu/smsud_enc.c	Tue Jul 26 01:43:28 2005
+@@ -21,6 +21,11 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <unistd.h>
++#include <limits.h>
++
++#ifndef UINT16_MAX
++#define UINT16_MAX USHRT_MAX
++#endif
+ 
+ static
+ uint16_t sms_new_sequence_id () {
