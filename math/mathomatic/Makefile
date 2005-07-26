@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/06/28 16:00:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2005/07/26 19:59:52 pvalchev Exp $
 
 COMMENT=	"small, portable, general purpose computer algebra system"
 
-DISTNAME=	mathomatic-12.4.2
+DISTNAME=	mathomatic-12.4.5
 CATEGORIES=	math
 
 HOMEPAGE=	http://mathomatic.orgserve.de/math/
