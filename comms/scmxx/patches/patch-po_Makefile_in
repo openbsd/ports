@@ -1,4 +1,4 @@
-$OpenBSD: patch-po_Makefile_in,v 1.1 2005/07/26 17:00:51 fgsch Exp $
+$OpenBSD: patch-po_Makefile_in,v 1.2 2005/07/26 19:18:45 fgsch Exp $
 --- po/Makefile.in.orig	Wed Jun  8 16:52:10 2005
 +++ po/Makefile.in	Tue Jul 26 04:12:19 2005
 @@ -38,7 +38,7 @@ all: $(MO_FILES)
@@ -6,7 +6,7 @@ $OpenBSD: patch-po_Makefile_in,v 1.1 2005/07/26 17:00:51 fgsch Exp $
  	    if ( test "$(MSGMERGE)" ); then \
  	      echo -n "$@: Merging from $(POT_FILE)"; \
 -	      $(MSGMERGE) $(MSGMERGE_OPTS) $@ $(POT_FILE); \
-+	      $(MSGMERGE) $(MSGMERGE_OPTS) $@ $(POT_FILE) >/dev/null; \
++	      $(MSGMERGE) $(MSGMERGE_OPTS) $@ $(POT_FILE) -o $@; \
  	      touch $@; \
  	    fi \
  	  fi \
