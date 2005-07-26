@@ -1,6 +1,6 @@
-$OpenBSD: patch-graphs_Makefile_in,v 1.1 2004/12/18 16:31:53 naddy Exp $
---- graphs/Makefile.in.orig	Tue Dec 14 21:17:24 2004
-+++ graphs/Makefile.in	Tue Dec 14 21:18:17 2004
+$OpenBSD: patch-graphs_Makefile_in,v 1.2 2005/07/26 18:50:43 naddy Exp $
+--- graphs/Makefile.in.orig	Sat Jul 23 13:54:41 2005
++++ graphs/Makefile.in	Sat Jul 23 13:55:02 2005
 @@ -141,7 +141,7 @@ sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
