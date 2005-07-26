@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_libdoxygen_pro_in,v 1.1.1.1 2005/07/17 08:30:06 alek Exp $
---- src/libdoxygen.pro.in.orig	Sun May  1 23:36:20 2005
-+++ src/libdoxygen.pro.in	Sun May  1 23:37:02 2005
-@@ -190,8 +190,8 @@ SOURCES      =	ce_lex.cpp \
+$OpenBSD: patch-src_libdoxygen_pro_in,v 1.2 2005/07/26 05:45:08 alek Exp $
+--- src/libdoxygen.pro.in.orig	Sun Jun 12 18:06:58 2005
++++ src/libdoxygen.pro.in	Mon Jul 25 21:50:53 2005
+@@ -197,8 +197,8 @@ SOURCES      =	ce_lex.cpp \
  win32:TMAKE_CXXFLAGS       += -DQT_NODLL 
  win32-msvc:TMAKE_CXXFLAGS  += -Zm200
  win32-g++:TMAKE_CXXFLAGS   += -fno-exceptions -fno-rtti

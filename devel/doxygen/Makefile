@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/07/17 08:30:06 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/07/26 05:45:08 alek Exp $
 
 COMMENT=	"documentation system for C++/C/Java/Objective-C/IDL and others"
 COMMENT-gui=	"GUI front-end for doxygen"
 
-VERSION=	1.4.2
+VERSION=	1.4.4
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-${VERSION}
 FULLPKGNAME-gui=doxygen-gui-${VERSION}
