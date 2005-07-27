@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.383 2005/07/25 16:32:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.384 2005/07/27 21:41:44 robert Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -103,6 +103,7 @@
      SUBDIR += jabberd,mysql
      SUBDIR += jabberd,mysql,ldap
      SUBDIR += jftpgw
+     SUBDIR += kismet
      SUBDIR += kissd
      SUBDIR += ldistfp
      SUBDIR += lftp
