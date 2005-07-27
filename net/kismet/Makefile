@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/07/27 21:37:26 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2005/07/27 21:42:44 jolan Exp $
 # Much help came from Alexandre Anrio, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -37,7 +37,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GMAKE=		Yes
 
 SAMPLES_DIR=		${DESTDIR}${LOCALBASE}/share/examples/kismet
-FAKE_FLAGS=		ETC=${SAMPLES_DIR}
+FAKE_FLAGS+=		ETC=${SAMPLES_DIR}
 
 # They don't have tests.
 NO_REGRESS=		Yes
