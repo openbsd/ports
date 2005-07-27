@@ -1,0 +1,39 @@
+$OpenBSD: patch-conf_kismet_conf_in,v 1.1.1.1 2005/07/27 21:37:26 robert Exp $
+--- conf/kismet.conf.in.orig	Wed Jun 22 06:22:13 2005
++++ conf/kismet.conf.in	Wed Jul  6 20:58:14 2005
+@@ -10,7 +10,7 @@ version=2005.06.R1
+ servername=Kismet
+ 
+ # User to setid to (should be your normal user)
+-suiduser=your_user_here
++suiduser=_kismet
+ 
+ # Sources are defined as:
+ # source=sourcetype,interface,name[,initialchannel]
+@@ -169,7 +169,7 @@ writeinterval=300
+ # server itself will play sound.  Primarily for headless or automated systems.
+ sound=false
+ # Path to sound player
+-soundplay=/usr/bin/play
++soundplay=/usr/local/bin/play
+ # Optional parameters to pass to the player
+ # soundopts=--volume=.3
+ # New network found
+@@ -223,7 +223,7 @@ metric=false
+ # recent versions of GPSDrive's native support of Kismet.
+ waypoints=false
+ # GPSMap waypoint file.  This WILL be truncated.
+-waypointdata=%h/.gpsdrive/way_kismet.txt
++waypointdata=/var/log/kismet/way_kismet.txt
+ 
+ # How many alerts do we backlog for new clients?  Only change this if you have
+ # a -very- low memory system and need those extra bytes, or if you have a high
+@@ -322,7 +322,7 @@ piddir=/var/run/
+ 
+ # Where state info, etc, is stored.  You shouldnt ever need to change this.
+ # This is a directory.
+-configdir=%h/.kismet/
++configdir=/var/log/kismet/
+ 
+ # cloaked SSID file.  You shouldn't ever need to change this.
+ ssidmap=ssid_map

@@ -1,0 +1,12 @@
+$OpenBSD: patch-conf_kismet_drone_conf,v 1.1.1.1 2005/07/27 21:37:26 robert Exp $
+--- conf/kismet_drone.conf.orig	Wed Jun 22 06:22:13 2005
++++ conf/kismet_drone.conf	Sun Jun 26 22:04:56 2005
+@@ -6,7 +6,7 @@ version=Feb.04.01a
+ servername=Kismet
+ 
+ # User to setid to (should be your normal user)
+-suiduser=your_user_here
++suiduser=_kismet
+ 
+ # Port to serve packet data... This probably shouldn't be the same as the port
+ # you configured kismet_server for, or else you'll have problems running them 

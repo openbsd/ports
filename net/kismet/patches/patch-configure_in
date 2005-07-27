@@ -1,0 +1,24 @@
+--- configure.in.orig	Mon Jul 25 16:19:44 2005
++++ configure.in	Wed Jul 27 20:45:37 2005
+@@ -127,7 +127,7 @@
+     esac
+ fi
+ 
+-CXXFLAGS="$CXXFLAGS $CFLAGS"
++CXXFLAGS="$CXXFLAGS"
+ 
+ AC_CONFIG_SRCDIR([kismet_server.cc])
+ AC_CONFIG_HEADER([config.h])
+@@ -236,9 +236,9 @@
+ 		#include <sys/types.h>
+ 		#include <sys/socket.h>
+ 		]], [[
+-		int s;
+-		struct sockaddr *addr;
+-		socklen_t *addrlen;
++		int s = 0;
++		struct sockaddr *addr = NULL;
++		socklen_t *addrlen = NULL;
+ 
+ 		accept(s, addr, addrlen);
+ 		return 0;

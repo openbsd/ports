@@ -1,0 +1,12 @@
+$OpenBSD: patch-panelfront_cc,v 1.1.1.1 2005/07/27 21:37:26 robert Exp $
+--- panelfront.cc.orig	Wed Jul 27 12:56:28 2005
++++ panelfront.cc	Wed Jul 27 12:56:45 2005
+@@ -1561,7 +1561,7 @@
+ 			}
+ 			if (bat_available == 1) {
+ 				bat_percentage = (int)api.battery_life;
+-				bat_time = (int)api.minutes_left;
++				bat_time = (int)api.minutes_left * 60;
+ 				if (api.battery_state == APM_BATT_CHARGING) {
+ 					bat_ac = 1;
+ 					bat_charging = 1;

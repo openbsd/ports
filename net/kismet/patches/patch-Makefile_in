@@ -1,0 +1,204 @@
+--- Makefile.in.orig	Mon Jul 25 16:19:44 2005
++++ Makefile.in	Wed Jul 27 20:41:04 2005
+@@ -23,8 +23,8 @@
+ LDFLAGS	= @LDFLAGS@
+ LIBS	= @LIBS@
+ CLIBS   = @CLIBS@
+-CFLAGS	= @CPPFLAGS@
+-CXXFLAGS = -O2 -Wall -DVERSION_MAJOR=\"$(VERSION_MAJOR)\" -DVERSION_MINOR=\"$(VERSION_MINOR)\" -DVERSION_TINY=\"$(VERSION_TINY)\" -DTIMESTAMP=\"`cat TIMESTAMP`\" @CXXFLAGS@
++CFLAGS	= @CFLAGS@
++CXXFLAGS = -DVERSION_MAJOR=\"$(VERSION_MAJOR)\" -DVERSION_MINOR=\"$(VERSION_MINOR)\" -DVERSION_TINY=\"$(VERSION_TINY)\" -DTIMESTAMP=\"`cat TIMESTAMP`\" @CXXFLAGS@
+ CPPFLAGS = @CPPFLAGS@
+ SUID	= @suid@
+ 
+@@ -130,52 +130,52 @@
+ 	fi
+ 
+ binuserinstall:
+-	install -o $(INSTUSR) -g $(INSTGRP) -s -m 755 $(PS) $(BIN)/$(PS); 
+-	install -o $(INSTUSR) -g $(INSTGRP) -s -m 755 $(DRONE) $(BIN)/$(DRONE);
++	$(BSD_INSTALL_PROGRAM) $(PS) $(BIN)/$(PS); 
++	$(BSD_INSTALL_PROGRAM) $(DRONE) $(BIN)/$(DRONE);
+ 
+ binsuidinstall:
+-	install -o $(INSTUSR) -g $(INSTGRP) -s -m 4755 $(PS) $(BIN)/$(PS); 
+-	install -o $(INSTUSR) -g $(INSTGRP) -s -m 4755 $(DRONE) $(BIN)/$(DRONE);
++	$(BSD_INSTALL_PROGRAM) -m 4755 $(PS) $(BIN)/$(PS); 
++	$(BSD_INSTALL_PROGRAM) -m 4755 $(DRONE) $(BIN)/$(DRONE);
+ 	
+ commoninstall:
+-	mkdir -p $(ETC)
+-	mkdir -p $(BIN)
++	$(BSD_INSTALL_DATA_DIR) $(ETC)
++	$(BSD_INSTALL_PROGRAM_DIR) $(BIN)
+ 
+-	install -o $(INSTUSR) -g $(INSTGRP) -m 755 scripts/kismet $(BIN)/kismet
+-	install -o $(INSTUSR) -g $(INSTGRP) -s -m 755 $(NC) $(BIN)/$(NC)
+-	# install -o $(INSTUSR) -g $(INSTGRP) -s -m 755 $(HOPPER) $(BIN)/$(HOPPER)
++	$(BSD_INSTALL_SCRIPT) scripts/kismet $(BIN)/kismet
++	$(BSD_INSTALL_PROGRAM) $(NC) $(BIN)/$(NC)
++	# $(BSD_INSTALL_PROGRAM) $(HOPPER) $(BIN)/$(HOPPER)
+ 	@if test "$(ZAURUS)" = "yes"; then \
+-		install -o $(INSTUSR) -g $(INSTGRP) -s -m 755 $(BUZZER) $(BIN)/buzzme; \
+-		echo install -o $(INSTUSR) -g $(INSTGRP) -s -m 755 $(BUZZER) $(BIN)/buzzme; \
++		$(BSD_INSTALL_PROGRAM) $(BUZZER) $(BIN)/buzzme; \
++		echo $(BSD_INSTALL_PROGRAM) $(BUZZER) $(BIN)/buzzme; \
+ 	fi
+-#install -o $(INSTUSR) -g $(INSTGRP) -m 755 scripts/kismet_monitor $(BIN)/kismet_monitor
+-#install -o $(INSTUSR) -g $(INSTGRP) -m 755 scripts/kismet_unmonitor $(BIN)/kismet_unmonitor
+-	mkdir -p $(MAN)/man1
+-	install -o $(INSTUSR) -g $(MANGRP) -m 644 man/kismet.1 $(MAN)/man1/kismet.1
+-	# install -o $(INSTUSR) -g $(MANGRP) -m 644 man/kismet_monitor.1 $(MAN)/man1/kismet_monitor.1
+-	# install -o $(INSTUSR) -g $(MANGRP) -m 644 man/kismet_hopper.1 $(MAN)/man1/kismet_hopper.1
+-	install -o $(INSTUSR) -g $(MANGRP) -m 644 man/kismet_drone.1 $(MAN)/man1/kismet_drone.1
+-	mkdir -p $(MAN)/man5
+-	install -o $(INSTUSR) -g $(MANGRP) -m 644 man/kismet.conf.5 $(MAN)/man5/kismet.conf.5
+-	install -o $(INSTUSR) -g $(MANGRP) -m 644 man/kismet_ui.conf.5 $(MAN)/man5/kismet_ui.conf.5
+-	install -o $(INSTUSR) -g $(MANGRP) -m 644 man/kismet_drone.conf.5 $(MAN)/man5/kismet_drone.conf.5
++#$(BSD_INSTALL_SCRIPT) scripts/kismet_monitor $(BIN)/kismet_monitor
++#$(BSD_INSTALL_SCRIPT) scripts/kismet_unmonitor $(BIN)/kismet_unmonitor
++	$(BSD_INSTALL_MAN_DIR) $(MAN)/man1
++	$(BSD_INSTALL_MAN) man/kismet.1 $(MAN)/man1/kismet.1
++	# $(BSD_INSTALL_MAN) man/kismet_monitor.1 $(MAN)/man1/kismet_monitor.1
++	# $(BSD_INSTALL_MAN) man/kismet_hopper.1 $(MAN)/man1/kismet_hopper.1
++	$(BSD_INSTALL_MAN) man/kismet_drone.1 $(MAN)/man1/kismet_drone.1
++	$(BSD_INSTALL_MAN_DIR) $(MAN)/man5
++	$(BSD_INSTALL_MAN) man/kismet.conf.5 $(MAN)/man5/kismet.conf.5
++	$(BSD_INSTALL_MAN) man/kismet_ui.conf.5 $(MAN)/man5/kismet_ui.conf.5
++	$(BSD_INSTALL_MAN) man/kismet_drone.conf.5 $(MAN)/man5/kismet_drone.conf.5
+ 
+ 	@if test "$(GPSLBUILD)" = "$(GPSL)"; then \
+-		install -o $(INSTUSR) -g $(INSTGRP) -s -m 755 $(GPSL) $(BIN)/$(GPSL); \
+-		echo install -o $(INSTUSR) -g $(INSTGRP) -s -m 755 $(GPSL) $(BIN)/$(GPSL); \
+-		install -o $(INSTUSR) -g $(INSTGRP) -m 755 scripts/gpsmap-helper-earthamaps $(BIN)/gpsmap-helper-earthamaps; \
+-		echo install -o $(INSTUSR) -g $(INSTGRP) -m 755 scripts/gpsmap-helper-earthamaps $(BIN)/gpsmap-helper-earthamaps; \
+-		install -o $(INSTUSR) -g $(MANGRP) -m 644 man/gpsmap.1 $(MAN)/man1/gpsmap.1; \
+-		echo install -o $(INSTUSR) -g $(MANGRP) -m 644 man/gpsmap.1 $(MAN)/man1/gpsmap.1; \
++		$(BSD_INSTALL_PROGRAM) $(GPSL) $(BIN)/$(GPSL); \
++		echo $(BSD_INSTALL_PROGRAM) $(GPSL) $(BIN)/$(GPSL); \
++		$(BSD_INSTALL_SCRIPT) scripts/gpsmap-helper-earthamaps $(BIN)/gpsmap-helper-earthamaps; \
++		echo $(BSD_INSTALL_SCRIPT) scripts/gpsmap-helper-earthamaps $(BIN)/gpsmap-helper-earthamaps; \
++		$(BSD_INSTALL_MAN) man/gpsmap.1 $(MAN)/man1/gpsmap.1; \
++		echo $(BSD_INSTALL_MAN) man/gpsmap.1 $(MAN)/man1/gpsmap.1; \
+ 	fi
+ 
+-	mkdir -p $(WAV)
+-	install -o $(INSTUSR) -g $(INSTGRP) -m 644 wav/new_network.wav $(WAV)/new_network.wav
+-	install -o $(INSTUSR) -g $(INSTGRP) -m 644 wav/traffic.wav $(WAV)/traffic.wav
+-	install -o $(INSTUSR) -g $(INSTGRP) -m 644 wav/junk_traffic.wav $(WAV)/junk_traffic.wav
+-	install -o $(INSTUSR) -g $(INSTGRP) -m 644 wav/alert.wav $(WAV)/alert.wav
+-	install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/ap_manuf $(ETC)/ap_manuf; 
+-	install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/client_manuf $(ETC)/client_manuf; 
++	$(BSD_INSTALL_DATA_DIR) $(WAV)
++	$(BSD_INSTALL_DATA) wav/new_network.wav $(WAV)/new_network.wav
++	$(BSD_INSTALL_DATA) wav/traffic.wav $(WAV)/traffic.wav
++	$(BSD_INSTALL_DATA) wav/junk_traffic.wav $(WAV)/junk_traffic.wav
++	$(BSD_INSTALL_DATA) wav/alert.wav $(WAV)/alert.wav
++	$(BSD_INSTALL_DATA) conf/ap_manuf $(ETC)/ap_manuf; 
++	$(BSD_INSTALL_DATA) conf/client_manuf $(ETC)/client_manuf; 
+ 
+ 	@if test -f $(BIN)/kismet_curses; then \
+ 		echo "Removing old kismet_curses binary.  The panels frontend is now kismet_client."; \
+@@ -188,22 +188,22 @@
+ 	@if test -f $(ETC)/kismet.conf; then \
+ 		$(MAKE) -e checkconfig; \
+     else \
+-		install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/kismet.conf $(ETC)/kismet.conf;  \
+-		echo install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/kismet.conf $(ETC)/kismet.conf;  \
++		$(BSD_INSTALL_DATA) conf/kismet.conf $(ETC)/kismet.conf;  \
++		echo $(BSD_INSTALL_DATA) conf/kismet.conf $(ETC)/kismet.conf;  \
+ 		echo "Installed config into $(ETC)/kismet.conf."; \
+ 	fi
+ 	@if test -f $(ETC)/kismet_drone.conf; then \
+ 		$(MAKE) -e checkdroneconfig; \
+     else \
+-		install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/kismet_drone.conf $(ETC)/kismet_drone.conf;  \
+-		echo install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/kismet_drone.conf $(ETC)/kismet_drone.conf;  \
++		$(BSD_INSTALL_DATA) conf/kismet_drone.conf $(ETC)/kismet_drone.conf;  \
++		echo $(BSD_INSTALL_DATA) conf/kismet_drone.conf $(ETC)/kismet_drone.conf;  \
+ 		echo "Installed drone config into $(ETC)/kismet_drone.conf."; \
+ 	fi
+ 	@if test -f $(ETC)/kismet_ui.conf; then \
+ 		$(MAKE) -e checkuiconfig; \
+ 	else \
+-		install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/kismet_ui.conf $(ETC)/kismet_ui.conf;  \
+-		echo install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/kismet_ui.conf $(ETC)/kismet_ui.conf;  \
++		$(BSD_INSTALL_DATA) conf/kismet_ui.conf $(ETC)/kismet_ui.conf;  \
++		echo $(BSD_INSTALL_DATA) conf/kismet_ui.conf $(ETC)/kismet_ui.conf;  \
+ 		echo "Installed UI config into $(ETC)/kismet_ui.conf."; \
+ 	fi
+ 	@echo "Installed kismet into $(BIN)/."
+@@ -221,22 +221,22 @@
+ 	@if test -f $(ETC)/kismet.conf; then \
+ 		$(MAKE) -e checkconfig; \
+     else \
+-		install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/kismet.conf $(ETC)/kismet.conf;  \
+-		echo install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/kismet.conf $(ETC)/kismet.conf;  \
++		$(BSD_INSTALL_DATA) conf/kismet.conf $(ETC)/kismet.conf;  \
++		echo $(BSD_INSTALL_DATA) conf/kismet.conf $(ETC)/kismet.conf;  \
+ 		echo "Installed config into $(ETC)/kismet.conf."; \
+ 	fi
+ 	@if test -f $(ETC)/kismet_drone.conf; then \
+ 		$(MAKE) -e checkdroneconfig; \
+     else \
+-		install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/kismet_drone.conf $(ETC)/kismet_drone.conf;  \
+-		echo install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/kismet_drone.conf $(ETC)/kismet_drone.conf;  \
++		$(BSD_INSTALL_DATA) conf/kismet_drone.conf $(ETC)/kismet_drone.conf;  \
++		echo $(BSD_INSTALL_DATA) conf/kismet_drone.conf $(ETC)/kismet_drone.conf;  \
+ 		echo "Installed drone config into $(ETC)/kismet_drone.conf."; \
+ 	fi
+ 	@if test -f $(ETC)/kismet_ui.conf; then \
+ 		$(MAKE) -e checkuiconfig; \
+ 	else \
+-		install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/kismet_ui.conf $(ETC)/kismet_ui.conf;  \
+-		echo install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/kismet_ui.conf $(ETC)/kismet_ui.conf;  \
++		$(BSD_INSTALL_DATA) conf/kismet_ui.conf $(ETC)/kismet_ui.conf;  \
++		echo $(BSD_INSTALL_DATA) conf/kismet_ui.conf $(ETC)/kismet_ui.conf;  \
+ 		echo "Installed UI config into $(ETC)/kismet_ui.conf."; \
+ 	fi
+ 	@echo "Installed kismet into $(BIN)/."
+@@ -252,11 +252,11 @@
+ forceinstall: $(PS)
+ 	$(MAKE) -e commoninstall
+ 	$(MAKE) -e binuserinstall
+-	install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/kismet.conf $(ETC)/kismet.conf;  \
++	$(BSD_INSTALL_DATA) conf/kismet.conf $(ETC)/kismet.conf;  \
+ 		echo "Installed config into $(ETC)/kismet.conf."; 
+-	install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/kismet_drone.conf $(ETC)/kismet_drone.conf;  \
++	$(BSD_INSTALL_DATA) conf/kismet_drone.conf $(ETC)/kismet_drone.conf;  \
+ 		echo "Installed drone config into $(ETC)/kismet_drone.conf."; 
+-	install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/kismet_ui.conf $(ETC)/kismet_ui.conf;  \
++	$(BSD_INSTALL_DATA) conf/kismet_ui.conf $(ETC)/kismet_ui.conf;  \
+ 		echo "Installed UI config into $(ETC)/kismet_ui.conf."; 
+ 	@echo "Installed kismet into $(BIN)/."
+ 	@echo "If you have not done so already, read the README file and the FAQ file.  Additional"
+@@ -271,11 +271,11 @@
+ suidforceinstall: $(PS)
+ 	$(MAKE) -e commoninstall
+ 	$(MAKE) -e binsuidinstall
+-	install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/kismet.conf $(ETC)/kismet.conf;  \
++	$(BSD_INSTALL_DATA) conf/kismet.conf $(ETC)/kismet.conf;  \
+ 		echo "Installed config into $(ETC)/kismet.conf."; 
+-	install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/kismet_drone.conf $(ETC)/kismet_drone.conf;  \
++	$(BSD_INSTALL_DATA) conf/kismet_drone.conf $(ETC)/kismet_drone.conf;  \
+ 		echo "Installed drone config into $(ETC)/kismet_drone.conf."; 
+-	install -o $(INSTUSR) -g $(INSTGRP) -m 644 conf/kismet_ui.conf $(ETC)/kismet_ui.conf;  \
++	$(BSD_INSTALL_DATA) conf/kismet_ui.conf $(ETC)/kismet_ui.conf;  \
+ 		echo "Installed UI config into $(ETC)/kismet_ui.conf."; 
+ 	@echo "Installed kismet into $(BIN)/."
+ 	@echo "If you have not done so already, read the README file and the FAQ file.  Additional"
+@@ -362,13 +362,11 @@
+ 	@$(MAKE) $(DEPEND)
+ 
+ $(DEPEND):
+-	@-rm -f $(DEPEND)
++	@rm -f $(DEPEND)
+ 	@echo "Generating dependencies... "
+ 	@echo > $(DEPEND)
+ 	@$(CXX) $(CFLAGS) -MM \
+ 		`echo $(PSO) $(DRONEO) $(GPSLO) $(NCO) | sed -e "s/\.o/\.cc/g"` >> $(DEPEND)
+-
+-include $(DEPEND)
+ 
+ .c.o:	$(DEPEND)
+ 	$(CC) $(CFLAGS) -c $*.c -o $@ 

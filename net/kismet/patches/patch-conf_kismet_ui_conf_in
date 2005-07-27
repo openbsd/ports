@@ -1,0 +1,12 @@
+$OpenBSD: patch-conf_kismet_ui_conf_in,v 1.1.1.1 2005/07/27 21:37:26 robert Exp $
+--- conf/kismet_ui.conf.in.orig	Wed Jun 22 06:22:13 2005
++++ conf/kismet_ui.conf.in	Tue Jul  5 11:14:28 2005
+@@ -24,7 +24,7 @@ clientcolumns=decay,type,mac,manuf,data,
+ # noise on whatever host it's running on.
+ sound=true
+ # Path to sound player
+-soundplay=/usr/bin/play
++soundplay=/usr/local/bin/play
+ # Optional parameters to pass to the player
+ # soundopts=--volume=.3
+ # New network found

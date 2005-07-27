@@ -1,0 +1,38 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/27 21:37:26 robert Exp $
+@newgroup _kismet:547
+@newuser _kismet:547:_kismet:daemon:Kismet WLAN detector:/nonexistent:/sbin/nologin
+bin/kismet
+bin/kismet_client
+bin/kismet_drone
+bin/kismet_server
+@man man/man1/kismet.1
+@man man/man1/kismet_drone.1
+@man man/man5/kismet.conf.5
+@man man/man5/kismet_drone.conf.5
+@man man/man5/kismet_ui.conf.5
+share/doc/kismet/
+share/doc/kismet/README
+share/examples/kismet/
+share/examples/kismet/ap_manuf
+@mode 770
+@sample ${CONFDIR}/
+@mode
+@sample ${CONFDIR}/ap_manuf
+share/examples/kismet/client_manuf
+@sample ${CONFDIR}/client_manuf
+share/examples/kismet/kismet.conf
+@sample ${CONFDIR}/kismet.conf
+share/examples/kismet/kismet_drone.conf
+@sample ${CONFDIR}/kismet_drone.conf
+share/examples/kismet/kismet_ui.conf
+@sample ${CONFDIR}/kismet_ui.conf
+share/kismet/
+share/kismet/wav/
+share/kismet/wav/alert.wav
+share/kismet/wav/junk_traffic.wav
+share/kismet/wav/new_network.wav
+share/kismet/wav/traffic.wav
+@mode 770
+@owner _kismet
+@group _kismet
+@sample /var/log/kismet/
