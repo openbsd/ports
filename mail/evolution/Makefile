@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2005/04/30 15:11:11 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2005/07/27 14:06:31 xsa Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 COMMENT-devguide=	"Evolution Developer's Guide"
@@ -10,7 +10,7 @@ PKGNAME=		${DISTNAME}p0
 FULLPKGNAME-devguide=	evolution-devguide-${VERSION}p0
 CATEGORIES=    		mail x11
 
-HOMEPAGE=		http://www.ximian.com/products/ximian_evolution/
+HOMEPAGE=		http://www.gnome.org/projects/evolution/
 
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
