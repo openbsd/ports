@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2005/05/26 01:37:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2005/07/27 07:23:06 wilfried Exp $
 
 COMMENT=	"perl module for IPv4 address parsing"
 
-VERSION=	1.21
+VERSION=	1.23
 DISTNAME=	Net-IP-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
