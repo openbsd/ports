@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/09/15 18:17:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2005/07/27 07:25:27 wilfried Exp $
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/DNS/
 ${P5ARCH}/Net/DNS.pm
@@ -36,6 +36,7 @@ ${P5ARCH}/Net/DNS/RR/RP.pm
 ${P5ARCH}/Net/DNS/RR/RT.pm
 ${P5ARCH}/Net/DNS/RR/SOA.pm
 ${P5ARCH}/Net/DNS/RR/SRV.pm
+${P5ARCH}/Net/DNS/RR/SSHFP.pm
 ${P5ARCH}/Net/DNS/RR/TKEY.pm
 ${P5ARCH}/Net/DNS/RR/TSIG.pm
 ${P5ARCH}/Net/DNS/RR/TXT.pm
@@ -87,6 +88,7 @@ ${P5ARCH}/auto/Net/DNS/DNS.so
 @man man/man3p/Net::DNS::RR::RT.3p
 @man man/man3p/Net::DNS::RR::SOA.3p
 @man man/man3p/Net::DNS::RR::SRV.3p
+@man man/man3p/Net::DNS::RR::SSHFP.3p
 @man man/man3p/Net::DNS::RR::TKEY.3p
 @man man/man3p/Net::DNS::RR::TSIG.3p
 @man man/man3p/Net::DNS::RR::TXT.3p
