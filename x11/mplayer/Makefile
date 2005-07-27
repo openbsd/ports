@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2005/07/25 17:10:09 biorn Exp $
+# $OpenBSD: Makefile,v 1.85 2005/07/27 11:56:01 biorn Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -7,7 +7,7 @@ COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
 DISTNAME=		MPlayer-1.0pre7
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}p0
+PKGNAME=		${DISTNAME:L}p1
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -40,7 +40,6 @@ MODULES= converters/libiconv
 
 LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
-		mp3lame::audio/lame \
 		ungif::graphics/libungif \
 		cdda_paranoia,cdda_interface:cdparanoia->=3.a9.8:audio/cdparanoia \
 		theora::multimedia/libtheora
@@ -107,12 +106,14 @@ CONFIGURE_ARGS+=--disable-gui \
 		--disable-x11 \
 		--disable-fontconfig \
 		--disable-freetype
+LIB_DEPENDS+=	mp3lame:lame-*:audio/lame,no_x11
 .  endif
 .else
 CONFIGURE_ARGS+=--enable-gui \
 		--enable-gl
 USE_X11=	Yes
-LIB_DEPENDS+= 	gtk,gdk::x11/gtk+
+LIB_DEPENDS+= 	gtk,gdk::x11/gtk+ \
+		mp3lame:lame-*:audio/lame
 BUILD_DEPENDS+=	:pkgconfig->=0.15.0p0:devel/pkgconfig
 WANTLIB+=	GL X11 Xext Xi Xinerama Xv Xxf86dga Xxf86vm glib gmodule intl 
 WANTLIB+=	freetype fontconfig
@@ -157,7 +158,11 @@ CONFIGURE_ARGS+=--disable-win32 \
 
 .if ${FLAVOR:L:Maa}
 CONFIGURE_ARGS+=--enable-aa
-LIB_DEPENDS+=  aa.1.3::graphics/aalib
+.if ${FLAVOR:L:Mno_x11}
+LIB_DEPENDS+=	aa.1.3:aalib-*-no_x11:graphics/aalib,no_x11
+.else
+LIB_DEPENDS+=	aa.1.3:aalib-*:graphics/aalib
+.endif
 .else
 CONFIGURE_ARGS+=--disable-aa
 .endif
