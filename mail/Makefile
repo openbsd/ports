@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2005/07/23 19:35:54 brad Exp $
+# $OpenBSD: Makefile,v 1.148 2005/07/27 19:47:54 aanriot Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -13,6 +13,7 @@
      SUBDIR += bogofilter,db4
      SUBDIR += bulk_mailer
      SUBDIR += c-client
+     SUBDIR += clamsmtp
      SUBDIR += cmail
      SUBDIR += courier-imap
      SUBDIR += cucipop
