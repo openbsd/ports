@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2005/07/25 18:08:27 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2005/07/28 23:44:17 jolan Exp $
 # XXX hardcoded apm list
 
 COMMENT=	"window bar for holding application launchers"
 DISTNAME=	matchbox-panel-0.9.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 MASTER_SITES=	http://projects.o-hand.com/matchbox/sources/matchbox-panel/0.9/
 
@@ -34,7 +34,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" 
 
 .include <bsd.port.mk>
 
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "macppc" \
+.if ${MACHINE_ARCH} == "i386" || ${ARCH} == "macppc" \
 	|| ${MACHINE_ARCH} == "sparc" || ${ARCH} == "zaurus"
 PKG_ARGS+=-DAPM=1
 .else
