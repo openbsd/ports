@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/01/06 18:43:22 ian Exp $
+# $OpenBSD: Makefile,v 1.3 2005/07/28 22:29:28 ian Exp $
 
 COMMENT=        "Sun's official Java Language Specification"
 
@@ -8,7 +8,7 @@ DISTNAME=	langspec-${VERSION}
 DISTFILES=	${DISTNAME}.pdf
 CATEGORIES=	books
 
-HOMEPAGE=	http://java.sun.com/docs/books/jls/second_edition/
+HOMEPAGE=	http://java.sun.com/docs/books/jls/
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Copyright
 PERMIT_DISTFILES_CDROM=	Copyright
 PERMIT_DISTFILES_FTP=	Copyright
 
-MASTER_SITES=	ftp://ftp.javasoft.com/docs/specs/
+MASTER_SITES=	http://java.sun.com/docs/books/jls/download/
 
 EXTRACT_ONLY=
 
