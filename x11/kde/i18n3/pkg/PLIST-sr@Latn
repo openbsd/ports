@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sr@Latn,v 1.2 2005/06/16 19:07:41 espie Exp $
+@comment $OpenBSD: PLIST-sr@Latn,v 1.3 2005/07/28 08:47:41 espie Exp $
 share/apps/katepart/syntax/logohighlightstyle.sr@Latn.xml
 share/apps/khangman/
 share/apps/khangman/data/
@@ -158,7 +158,6 @@ ${LOC}kcmkonsole.mo
 ${LOC}kcmkontactnt.mo
 ${LOC}kcmktalkd.mo
 ${LOC}kcmkttsd.mo
-${LOC}kcmkttsmgr.mo
 ${LOC}kcmkuick.mo
 ${LOC}kcmkurifilt.mo
 ${LOC}kcmkvaio.mo

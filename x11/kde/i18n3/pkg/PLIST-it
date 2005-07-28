@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-it,v 1.2 2005/06/06 09:25:54 espie Exp $
+@comment $OpenBSD: PLIST-it,v 1.3 2005/07/28 08:47:40 espie Exp $
 share/apps/katepart/syntax/logohighlightstyle.it.xml
 share/apps/khangman/
 share/apps/khangman/data/
@@ -178,6 +178,7 @@ ${DOC}amor/
 ${DOC}amor/common
 ${DOC}amor/${C}
 ${DOC}amor/${I}
+${DOC}amor/man-amor.6.docbook
 ${DOC}ark/
 ${DOC}ark/common
 ${DOC}ark/${C}
@@ -441,6 +442,10 @@ ${DOC}kcontrol/kcmnotify/
 ${DOC}kcontrol/kcmnotify/common
 ${DOC}kcontrol/kcmnotify/${C}
 ${DOC}kcontrol/kcmnotify/${I}
+${DOC}kcontrol/kcmsmserver/
+${DOC}kcontrol/kcmsmserver/common
+${DOC}kcontrol/kcmsmserver/${C}
+${DOC}kcontrol/kcmsmserver/${I}
 ${DOC}kcontrol/kdm/
 ${DOC}kcontrol/kdm/common
 ${DOC}kcontrol/kdm/${C}
@@ -511,6 +516,10 @@ ${DOC}kcontrol/useragent/
 ${DOC}kcontrol/useragent/common
 ${DOC}kcontrol/useragent/${C}
 ${DOC}kcontrol/useragent/${I}
+${DOC}kcontrol/windowmanagement/
+${DOC}kcontrol/windowmanagement/common
+${DOC}kcontrol/windowmanagement/${C}
+${DOC}kcontrol/windowmanagement/${I}
 ${DOC}kcron/
 ${DOC}kcron/common
 ${DOC}kcron/${C}
@@ -736,11 +745,16 @@ ${DOC}khelpcenter/quickstart/${I}
 ${DOC}khelpcenter/support.docbook
 ${DOC}khelpcenter/userguide/
 ${DOC}khelpcenter/userguide/about-desktop.docbook
+${DOC}khelpcenter/userguide/base-kde-applications.docbook
+${DOC}khelpcenter/userguide/burning-cds.docbook
+${DOC}khelpcenter/userguide/creating-graphics.docbook
 ${DOC}khelpcenter/userguide/first-impressions.docbook
+${DOC}khelpcenter/userguide/font-installation.docbook
 ${DOC}khelpcenter/userguide/getting-started.docbook
 ${DOC}khelpcenter/userguide/history.docbook
 ${DOC}khelpcenter/userguide/installation.docbook
 ${DOC}khelpcenter/userguide/intro.docbook
+${DOC}khelpcenter/userguide/kde-as-root.docbook
 ${DOC}khelpcenter/userguide/kdeadmin-apps.docbook
 ${DOC}khelpcenter/userguide/kdebase-apps.docbook
 ${DOC}khelpcenter/userguide/kdeedu-apps.docbook
@@ -752,10 +766,21 @@ ${DOC}khelpcenter/userguide/kdepim-apps.docbook
 ${DOC}khelpcenter/userguide/kdetoys-apps.docbook
 ${DOC}khelpcenter/userguide/kdeutils-apps.docbook
 ${DOC}khelpcenter/userguide/koffice-apps.docbook
+${DOC}khelpcenter/userguide/migrator-dictionary.docbook
 ${DOC}khelpcenter/userguide/more-help.docbook
+${DOC}khelpcenter/userguide/pdf-files.docbook
+${DOC}khelpcenter/userguide/playing-audiocds.docbook
+${DOC}khelpcenter/userguide/playing-movies.docbook
+${DOC}khelpcenter/userguide/programs-controlling.docbook
+${DOC}khelpcenter/userguide/removable-disks.docbook
+${DOC}khelpcenter/userguide/screen-captures.docbook
+${DOC}khelpcenter/userguide/shared-sessions.docbook
 ${DOC}khelpcenter/userguide/shortcuts.docbook
 ${DOC}khelpcenter/userguide/staff.docbook
+${DOC}khelpcenter/userguide/switching-sessions.docbook
 ${DOC}khelpcenter/userguide/ug-faq.docbook
+${DOC}khelpcenter/userguide/where-next.docbook
+${DOC}khelpcenter/userguide/your-kde-account.docbook
 ${DOC}khelpcenter/visualdict/
 ${DOC}khelpcenter/visualdict/common
 ${DOC}khelpcenter/visualdict/${C}
@@ -812,6 +837,10 @@ ${DOC}kinfocenter/nics/
 ${DOC}kinfocenter/nics/common
 ${DOC}kinfocenter/nics/${C}
 ${DOC}kinfocenter/nics/${I}
+${DOC}kinfocenter/opengl/
+${DOC}kinfocenter/opengl/common
+${DOC}kinfocenter/opengl/${C}
+${DOC}kinfocenter/opengl/${I}
 ${DOC}kinfocenter/partitions/
 ${DOC}kinfocenter/partitions/common
 ${DOC}kinfocenter/partitions/${C}

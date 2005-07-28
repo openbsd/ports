@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-es,v 1.2 2005/06/06 09:25:54 espie Exp $
+@comment $OpenBSD: PLIST-es,v 1.3 2005/07/28 08:47:40 espie Exp $
 share/apps/katepart/syntax/logohighlightstyle.es.xml
 share/apps/khangman/
 share/apps/khangman/data/
@@ -184,6 +184,8 @@ ${DOC}kandy/
 ${DOC}kandy/common
 ${DOC}kandy/${C}
 ${DOC}kandy/${I}
+${DOC}kappfinder/
+${DOC}kappfinder/man-kappfinder.1.docbook
 ${DOC}kapptemplate/
 ${DOC}kapptemplate/man-kapptemplate.1.docbook
 ${DOC}karm/
@@ -208,11 +210,15 @@ ${DOC}kate-plugins/textfilter.docbook
 ${DOC}kate-plugins/xmlcheck.docbook
 ${DOC}kate-plugins/xmltools.docbook
 ${DOC}kate/advanced.docbook
+${DOC}kate/common
 ${DOC}kate/configdialog01.png
 ${DOC}kate/configdialog02.png
 ${DOC}kate/configuring.docbook
 ${DOC}kate/fundamentals.docbook
+${DOC}kate/highlighted.png
 ${DOC}kate/highlighting.docbook
+${DOC}kate/${C}
+${DOC}kate/${I}
 ${DOC}kate/kate.png
 ${DOC}kate/mdi.docbook
 ${DOC}kate/menus.docbook
@@ -220,6 +226,7 @@ ${DOC}kate/mimetypechooser.png
 ${DOC}kate/part.docbook
 ${DOC}kate/plugins.docbook
 ${DOC}kate/regular-expressions.docbook
+${DOC}kate/unhighlighted.png
 ${DOC}katomic/
 ${DOC}katomic/common
 ${DOC}katomic/${C}
@@ -250,6 +257,17 @@ ${DOC}kbounce/
 ${DOC}kbounce/common
 ${DOC}kbounce/${C}
 ${DOC}kbounce/${I}
+${DOC}kbruch/
+${DOC}kbruch/checked.png
+${DOC}kbruch/common
+${DOC}kbruch/compare.png
+${DOC}kbruch/convert.png
+${DOC}kbruch/factorize.png
+${DOC}kbruch/gui_main.png
+${DOC}kbruch/${C}
+${DOC}kbruch/${I}
+${DOC}kbruch/reduced.png
+${DOC}kbruch/settings.png
 ${DOC}kbugbuster/
 ${DOC}kbugbuster/common
 ${DOC}kbugbuster/${C}
@@ -321,6 +339,8 @@ ${DOC}kcontrol/filemanager/
 ${DOC}kcontrol/filemanager/common
 ${DOC}kcontrol/filemanager/${C}
 ${DOC}kcontrol/filemanager/${I}
+${DOC}kcontrol/filemanager/kfileman1.png
+${DOC}kcontrol/filemanager/kfileman2.png
 ${DOC}kcontrol/filetypes/
 ${DOC}kcontrol/filetypes/common
 ${DOC}kcontrol/filetypes/${C}
@@ -503,6 +523,12 @@ ${DOC}kdebugdialog/
 ${DOC}kdebugdialog/common
 ${DOC}kdebugdialog/${C}
 ${DOC}kdebugdialog/${I}
+${DOC}kdelibs/
+${DOC}kdelibs/man-artsmessage.1.docbook
+${DOC}kdelibs/man-checkXML.1.docbook
+${DOC}kdelibs/man-dcop.1.docbook
+${DOC}kdelibs/man-kdeoptions.7.docbook
+${DOC}kdelibs/man-qtoptions.7.docbook
 ${DOC}kdelirc/
 ${DOC}kdelirc/irkick/
 ${DOC}kdelirc/irkick/common
@@ -529,6 +555,7 @@ ${DOC}kdeprint/cupsserverconfiguration12_browsingtimeouts.png
 ${DOC}kdeprint/cupsserverconfiguration14_browsingrelay.png
 ${DOC}kdeprint/cupsserverconfiguration15a_resourceallprinters_defineaccess.png
 ${DOC}kdeprint/cupsserverconfiguration15b_resourceallprinters_defineaccess.png
+${DOC}kdeprint/cupsserverconfiguration15c_resourceallprinters_defineaccess.png
 ${DOC}kdeprint/cupsserverconfiguration1_welcome.png
 ${DOC}kdeprint/cupsserverconfiguration2_general.png
 ${DOC}kdeprint/cupsserverconfiguration3_logging.png
@@ -560,7 +587,7 @@ ${DOC}kdeprint/lpd.docbook
 ${DOC}kdeprint/lpr-bsd.docbook
 ${DOC}kdeprint/lprng.docbook
 ${DOC}kdeprint/rlpr.docbook
-${DOC}kdeprint/steinbrush_scaled.png
+${DOC}kdeprint/steinbruch_scaled.png
 ${DOC}kdeprint/tech-overview.docbook
 ${DOC}kdeprint/theory.docbook
 ${DOC}kdesu/
@@ -647,11 +674,14 @@ ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/faq/
 ${DOC}khelpcenter/faq/about.docbook
+${DOC}khelpcenter/faq/common
 ${DOC}khelpcenter/faq/configkde.docbook
 ${DOC}khelpcenter/faq/contrib.docbook
 ${DOC}khelpcenter/faq/desktop.docbook
 ${DOC}khelpcenter/faq/filemng.docbook
 ${DOC}khelpcenter/faq/getkde.docbook
+${DOC}khelpcenter/faq/${C}
+${DOC}khelpcenter/faq/${I}
 ${DOC}khelpcenter/faq/install.docbook
 ${DOC}khelpcenter/faq/intro.docbook
 ${DOC}khelpcenter/faq/kdeapps.docbook
@@ -1620,7 +1650,6 @@ ${DOC}quanta/man-quanta.1.docbook
 ${DOC}quanta/q-and-a.docbook
 ${DOC}quanta/quanta-menus.docbook
 ${DOC}quanta/quanta-projects.docbook
-${DOC}quanta/using-quanta.docbook
 ${DOC}quanta/working-with-quanta.docbook
 ${DOC}scripts/
 ${DOC}scripts/man-adddebug.1.docbook

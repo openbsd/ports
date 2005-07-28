@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-mk,v 1.1 2005/06/06 09:25:54 espie Exp $
-share/locale/mk/
-share/locale/mk/LC_MESSAGES/
+@comment $OpenBSD: PLIST-mk,v 1.2 2005/07/28 08:47:40 espie Exp $
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
 ${LOC}ark.mo

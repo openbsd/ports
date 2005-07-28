@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fi,v 1.2 2005/06/06 09:25:54 espie Exp $
+@comment $OpenBSD: PLIST-fi,v 1.3 2005/07/28 08:47:40 espie Exp $
 share/apps/khangman/
 share/apps/khangman/data/
 share/apps/khangman/data/fi/
@@ -66,6 +66,24 @@ ${DOC}common/web-docbottom.png
 ${DOC}common/web-doctop.png
 ${DOC}common/x11-license.html
 ${DOC}common/xml.dcl
+${DOC}kfind/
+${DOC}kfind/common
+${DOC}kfind/${C}
+${DOC}kfind/${I}
+${DOC}khelpcenter/
+${DOC}khelpcenter/common
+${DOC}khelpcenter/contact.docbook
+${DOC}khelpcenter/glossary/
+${DOC}khelpcenter/glossary/common
+${DOC}khelpcenter/glossary/${C}
+${DOC}khelpcenter/glossary/${I}
+${DOC}khelpcenter/glossary/kdeprintingglossary.docbook
+${DOC}khelpcenter/help.docbook
+${DOC}khelpcenter/${C}
+${DOC}khelpcenter/${I}
+${DOC}khelpcenter/support.docbook
+${DOC}khelpcenter/welcome.docbook
+${DOC}khelpcenter/whatiskde.docbook
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
@@ -350,6 +368,7 @@ ${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
 ${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
+${LOC}kio_groupwise.mo
 ${LOC}kio_help.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
@@ -358,6 +377,7 @@ ${LOC}kio_mac.mo
 ${LOC}kio_man.mo
 ${LOC}kio_media.mo
 ${LOC}kio_mobile.mo
+${LOC}kio_newimap4.mo
 ${LOC}kio_nfs.mo
 ${LOC}kio_nntp.mo
 ${LOC}kio_pop3.mo
@@ -390,6 +410,7 @@ ${LOC}kmail_text_calendar_plugin.mo
 ${LOC}kmail_text_vcard_plugin.mo
 ${LOC}kmailcvt.mo
 ${LOC}kmathapplet.mo
+${LOC}kmathtool.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
@@ -494,6 +515,7 @@ ${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo
 ${LOC}kstyle_keramik_config.mo
+${LOC}kstyle_phase_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo
 ${LOC}ksync.mo

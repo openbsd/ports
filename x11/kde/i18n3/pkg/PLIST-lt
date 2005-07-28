@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-lt,v 1.1 2005/06/06 09:25:54 espie Exp $
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
+@comment $OpenBSD: PLIST-lt,v 1.2 2005/07/28 08:47:40 espie Exp $
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo

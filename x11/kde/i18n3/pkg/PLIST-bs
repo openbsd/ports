@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-bs,v 1.2 2005/06/06 09:25:53 espie Exp $
-share/locale/bs/
-share/locale/bs/LC_MESSAGES/
+@comment $OpenBSD: PLIST-bs,v 1.3 2005/07/28 08:47:40 espie Exp $
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
@@ -133,6 +131,7 @@ ${LOC}kcmperformance.mo
 ${LOC}kcmprintmgr.mo
 ${LOC}kcmsamba.mo
 ${LOC}kcmscreensaver.mo
+${LOC}kcmshell.mo
 ${LOC}kcmsmartcard.mo
 ${LOC}kcmsmserver.mo
 ${LOC}kcmsocks.mo
@@ -328,6 +327,10 @@ ${LOC}krdb.mo
 ${LOC}krdc.mo
 ${LOC}kreadconfig.mo
 ${LOC}krec.mo
+${LOC}kres_exchange.mo
+${LOC}kres_imap.mo
+${LOC}kres_remote.mo
+${LOC}kres_xmlrpc.mo
 ${LOC}krfb.mo
 ${LOC}kruler.mo
 ${LOC}krunapplet.mo

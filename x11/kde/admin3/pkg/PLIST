@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/03/29 21:18:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/07/28 08:47:39 espie Exp $
 bin/kcron
 bin/kpackage
 bin/kuser
@@ -108,6 +108,5 @@ share/icons/crystalsvg/48x48/apps/kpackage.png
 share/icons/crystalsvg/48x48/apps/kuser.png
 share/icons/crystalsvg/64x64/apps/kpackage.png
 share/icons/crystalsvg/64x64/apps/kuser.png
-share/mimelnk/application/x-debian-package.desktop
 share/services/kfile_deb.desktop
 share/services/kfile_rpm.desktop

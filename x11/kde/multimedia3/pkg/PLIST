@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2005/06/02 14:01:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2005/07/28 08:47:41 espie Exp $
 bin/artsbuilder
 bin/artscontrol
 bin/juk
@@ -1169,6 +1169,7 @@ share/doc/HTML/en/kscd/kscd3.png
 share/doc/HTML/en/kscd/kscd5.png
 share/doc/HTML/en/kscd/kscd6.png
 share/doc/HTML/en/kscd/kscd9.png
+share/doc/HTML/en/kscd/kscdannounc.png
 share/doc/HTML/en/noatun/
 share/doc/HTML/en/noatun/common
 share/doc/HTML/en/noatun/index.cache.bz2

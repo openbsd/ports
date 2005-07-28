@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-hi,v 1.2 2005/06/06 09:25:54 espie Exp $
-share/locale/hi/
-share/locale/hi/LC_MESSAGES/
+@comment $OpenBSD: PLIST-hi,v 1.3 2005/07/28 08:47:40 espie Exp $
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
@@ -38,7 +36,6 @@ ${LOC}ffrs.mo
 ${LOC}filetypes.mo
 ${LOC}fontinst.mo
 ${LOC}fsview.mo
-${LOC}gnome-applets-locations.HEAD.hi.mo
 ${LOC}htmlsearch.mo
 ${LOC}imagerename_plugin.mo
 ${LOC}imgalleryplugin.mo
@@ -100,7 +97,6 @@ ${LOC}kbstateapplet.mo
 ${LOC}kbugbuster.mo
 ${LOC}kcachegrind.mo
 ${LOC}kcalc.mo
-${LOC}kcardchooser.mo
 ${LOC}kcharselect.mo
 ${LOC}kcharselectapplet.mo
 ${LOC}kcm_krfb.mo
@@ -381,7 +377,6 @@ ${LOC}korganizer.mo
 ${LOC}korn.mo
 ${LOC}kpackage.mo
 ${LOC}kpager.mo
-${LOC}kpaint.mo
 ${LOC}kpartapp.mo
 ${LOC}kpartsaver.mo
 ${LOC}kpat.mo
@@ -402,7 +397,6 @@ ${LOC}kreadconfig.mo
 ${LOC}krec.mo
 ${LOC}kregexpeditor.mo
 ${LOC}kres_exchange.mo
-${LOC}kres_imap.mo
 ${LOC}kres_kolab.mo
 ${LOC}kres_remote.mo
 ${LOC}kres_xmlrpc.mo

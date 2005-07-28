@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-is,v 1.2 2005/06/06 09:25:54 espie Exp $
-share/locale/is/
-share/locale/is/LC_MESSAGES/
+@comment $OpenBSD: PLIST-is,v 1.3 2005/07/28 08:47:40 espie Exp $
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
@@ -12,6 +10,8 @@ ${LOC}artscontrol.mo
 ${LOC}artsmodules.mo
 ${LOC}atlantik.mo
 ${LOC}atlantikdesigner.mo
+${LOC}audiocd_encoder_lame.mo
+${LOC}audiocd_encoder_vorbis.mo
 ${LOC}audiorename_plugin.mo
 ${LOC}autorefresh.mo
 ${LOC}babelfish.mo

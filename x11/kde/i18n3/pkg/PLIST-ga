@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ga,v 1.1 2005/06/06 09:25:54 espie Exp $
+@comment $OpenBSD: PLIST-ga,v 1.2 2005/07/28 08:47:40 espie Exp $
 share/apps/khangman/
 share/apps/khangman/data/
 share/apps/khangman/data/ga/
@@ -7,8 +7,6 @@ share/apps/khangman/data/ga/easy.kvtml
 share/apps/khangman/data/ga/hard.kvtml
 share/apps/khangman/data/ga/medium.kvtml
 share/apps/khangman/ga.txt
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo

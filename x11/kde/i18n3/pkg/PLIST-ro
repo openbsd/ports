@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ro,v 1.2 2005/06/06 09:25:54 espie Exp $
+@comment $OpenBSD: PLIST-ro,v 1.3 2005/07/28 08:47:40 espie Exp $
 share/apps/ktuberling/
 share/apps/ktuberling/sounds/
 share/apps/ktuberling/sounds/ro/
@@ -359,6 +359,7 @@ ${LOC}kcmkabconfig.mo
 ${LOC}kcmkamera.mo
 ${LOC}kcmkclock.mo
 ${LOC}kcmkded.mo
+${LOC}kcmkdnssd.mo
 ${LOC}kcmkeys.mo
 ${LOC}kcmkicker.mo
 ${LOC}kcmkio.mo
@@ -474,6 +475,7 @@ ${LOC}kfile_rpm.mo
 ${LOC}kfile_sid.mo
 ${LOC}kfile_tga.mo
 ${LOC}kfile_tiff.mo
+${LOC}kfile_torrent.mo
 ${LOC}kfile_ts.mo
 ${LOC}kfile_txt.mo
 ${LOC}kfile_vcf.mo
@@ -495,6 +497,7 @@ ${LOC}kghostview.mo
 ${LOC}kgoldrunner.mo
 ${LOC}kgpg.mo
 ${LOC}kgreet_classic.mo
+${LOC}kgreet_winbind.mo
 ${LOC}khangman.mo
 ${LOC}khelpcenter.mo
 ${LOC}khexedit.mo
@@ -518,6 +521,7 @@ ${LOC}kio_lan.mo
 ${LOC}kio_ldap.mo
 ${LOC}kio_mac.mo
 ${LOC}kio_man.mo
+${LOC}kio_media.mo
 ${LOC}kio_mobile.mo
 ${LOC}kio_newimap4.mo
 ${LOC}kio_nfs.mo
@@ -533,6 +537,7 @@ ${LOC}kio_smtp.mo
 ${LOC}kio_svn.mo
 ${LOC}kio_system.mo
 ${LOC}kio_trash.mo
+${LOC}kio_zeroconf.mo
 ${LOC}kioexec.mo
 ${LOC}kiten.mo
 ${LOC}kjobviewer.mo
@@ -573,6 +578,7 @@ ${LOC}kmousetool.mo
 ${LOC}kmouth.mo
 ${LOC}kmplot.mo
 ${LOC}kmrml.mo
+${LOC}knetattach.mo
 ${LOC}knewsticker.mo
 ${LOC}knode.mo
 ${LOC}knotes.mo
@@ -640,6 +646,7 @@ ${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo
 ${LOC}kstyle_keramik_config.mo
+${LOC}kstyle_phase_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo
 ${LOC}ksync.mo
@@ -690,6 +697,8 @@ ${LOC}kweather.mo
 ${LOC}kwifimanager.mo
 ${LOC}kwin.mo
 ${LOC}kwin4.mo
+${LOC}kwin_art_clients.mo
+${LOC}kwin_clients.mo
 ${LOC}kwireless.mo
 ${LOC}kwordquiz.mo
 ${LOC}kworldclock.mo
@@ -699,6 +708,7 @@ ${LOC}kxmlrpcd.mo
 ${LOC}kxsconfig.mo
 ${LOC}kxsldbg.mo
 ${LOC}libcalendarresources.mo
+${LOC}libdmctl.mo
 ${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkcal.mo
 ${LOC}libkcalsystem.mo
@@ -712,6 +722,8 @@ ${LOC}libkickermenu_kdeprint.mo
 ${LOC}libkickermenu_konsole.mo
 ${LOC}libkickermenu_prefmenu.mo
 ${LOC}libkickermenu_recentdocs.mo
+${LOC}libkickermenu_remotemenu.mo
+${LOC}libkickermenu_systemmenu.mo
 ${LOC}libkickermenu_tom.mo
 ${LOC}libkleopatra.mo
 ${LOC}libkonq.mo
@@ -726,6 +738,7 @@ ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo
 ${LOC}lskat.mo
 ${LOC}lyrics.mo
+${LOC}mediaapplet.mo
 ${LOC}mediacontrol.mo
 ${LOC}minitoolsplugin.mo
 ${LOC}naughtyapplet.mo
@@ -747,6 +760,7 @@ ${LOC}synaescope.mo
 ${LOC}taskbarextension.mo
 ${LOC}timezones.mo
 ${LOC}tippecanoe.mo
+${LOC}trashapplet.mo
 ${LOC}tyler.mo
 ${LOC}uachangerplugin.mo
 ${LOC}umbrello.mo

@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-bn,v 1.2 2005/06/06 09:25:53 espie Exp $
-share/locale/bn/
-share/locale/bn/LC_MESSAGES/
+@comment $OpenBSD: PLIST-bn,v 1.3 2005/07/28 08:47:40 espie Exp $
 ${LOC}appletproxy.mo
 ${LOC}atlantik.mo
 ${LOC}childpanelextension.mo

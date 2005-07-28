@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pt_BR,v 1.2 2005/06/16 19:07:41 espie Exp $
+@comment $OpenBSD: PLIST-pt_BR,v 1.3 2005/07/28 08:47:40 espie Exp $
 share/apps/katepart/syntax/logohighlightstyle.pt_BR.xml
 share/apps/khangman/
 share/apps/khangman/data/
@@ -480,6 +480,7 @@ ${DOC}kdebugdialog/${C}
 ${DOC}kdebugdialog/${I}
 ${DOC}kdelibs/
 ${DOC}kdelibs/man-artsmessage.1.docbook
+${DOC}kdelibs/man-checkXML.1.docbook
 ${DOC}kdelibs/man-dcop.1.docbook
 ${DOC}kdelibs/man-kdeoptions.7.docbook
 ${DOC}kdelibs/man-qtoptions.7.docbook
@@ -1552,6 +1553,7 @@ ${DOC}scripts/man-cheatmake.1.docbook
 ${DOC}scripts/man-create_cvsignore.1.docbook
 ${DOC}scripts/man-create_makefile.1.docbook
 ${DOC}scripts/man-create_makefiles.1.docbook
+${DOC}scripts/man-cvscheck.1.docbook
 ${DOC}scripts/man-cvslastchange.1.docbook
 ${DOC}scripts/man-cvslastlog.1.docbook
 ${DOC}scripts/man-cvsrevertlast.1.docbook

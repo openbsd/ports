@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2005/06/02 14:01:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.32 2005/07/28 08:47:41 espie Exp $
 @conflict kdebase-<3.3
 bin/artsmessage
 bin/checkXML
@@ -5184,6 +5184,7 @@ share/mimelnk/application/x-cpio.desktop
 share/mimelnk/application/x-cue.desktop
 share/mimelnk/application/x-dbase.desktop
 share/mimelnk/application/x-deb.desktop
+share/mimelnk/application/x-debian-package.desktop
 share/mimelnk/application/x-designer.desktop
 share/mimelnk/application/x-desktop.desktop
 share/mimelnk/application/x-dvi.desktop
