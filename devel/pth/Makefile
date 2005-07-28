@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2002/12/29 20:19:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2005/07/28 17:49:27 aanriot Exp $
 
 COMMENT=	"GNU portable threads"
 
-DISTNAME=	pth-1.4.1
+DISTNAME=	pth-2.0.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=pth/}
 
 HOMEPAGE=	http://www.gnu.org/software/pth/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -21,10 +19,6 @@ CONFIGURE_ARGS+= --enable-static \
 		 --enable-syscall-soft \
 		 --enable-optimize \
 		 --enable-batch
-
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
-		patch-*
 
 REGRESS_TARGET=	test
 

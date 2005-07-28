@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2004/08/10 09:43:46 espie Exp $
-@lib lib/libpth.so.14.21
+@comment $OpenBSD: PFRAG.shared,v 1.7 2005/07/28 17:49:27 aanriot Exp $
+@lib lib/libpth.so.20.24
