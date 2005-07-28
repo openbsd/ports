@@ -1,6 +1,6 @@
-$OpenBSD: patch-sound_vorbis_cpp,v 1.1 2005/06/30 02:47:49 jolan Exp $
+$OpenBSD: patch-sound_vorbis_cpp,v 1.2 2005/07/28 17:28:14 jolan Exp $
 --- sound/vorbis.cpp.orig	Sat Nov 27 07:54:08 2004
-+++ sound/vorbis.cpp	Fri Jun 24 16:14:10 2005
++++ sound/vorbis.cpp	Wed Jul 27 17:54:19 2005
 @@ -21,7 +21,7 @@
  
  #include "sound/vorbis.h"
@@ -22,3 +22,40 @@ $OpenBSD: patch-sound_vorbis_cpp,v 1.1 2005/06/30 02:47:49 jolan Exp $
  
  
  static AudioStream *makeVorbisStream(OggVorbis_File *file, int duration);
+@@ -162,16 +166,12 @@ VorbisTrackInfo::~VorbisTrackInfo() {
+ 	}
+ }
+ 
+-#ifdef CHUNKSIZE
+-#define VORBIS_TREMOR
+-#endif
+-
+ void VorbisTrackInfo::play(SoundMixer *mixer, PlayingSoundHandle *handle, int startFrame, int duration) {
+ 
+ 	bool err = openTrack();
+ 	assert(!err);
+ 
+-#ifdef VORBIS_TREMOR
++#ifdef USE_TREMOR
+ 	ov_time_seek(&_ov_file, (ogg_int64_t)(startFrame / 75.0 * 1000));
+ #else
+ 	ov_time_seek(&_ov_file, startFrame / 75.0);
+@@ -229,9 +229,6 @@ public:
+ };
+ 
+ 
+-#ifdef CHUNKSIZE
+-#define VORBIS_TREMOR
+-#endif
+ 
+ 
+ VorbisInputStream::VorbisInputStream(OggVorbis_File *file, int duration, bool deleteFileAfterUse) 
+@@ -284,7 +281,7 @@ void VorbisInputStream::refill() {
+ 
+ 	while (len_left > 0 && _end_pos > ov_pcm_tell(_ov_file)) {
+ 		long result = ov_read(_ov_file, read_pos, len_left,
+-#ifndef VORBIS_TREMOR
++#ifndef USE_TREMOR
+ #ifdef SCUMM_BIG_ENDIAN
+ 						1,
+ #else
