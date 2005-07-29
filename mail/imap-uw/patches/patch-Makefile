@@ -1,7 +1,16 @@
-$OpenBSD: patch-Makefile,v 1.5 2003/10/05 22:00:00 jakob Exp $
---- Makefile.orig	Tue Jul 15 03:17:18 2003
-+++ Makefile	Sun Oct  5 23:44:26 2003
-@@ -425,8 +425,6 @@ sslunix sslsco:
+$OpenBSD: patch-Makefile,v 1.6 2005/07/29 17:30:11 jakob Exp $
+--- Makefile.orig	Sat Apr 30 22:50:20 2005
++++ Makefile	Fri Jul 29 09:26:33 2005
+@@ -311,7 +311,7 @@ aos art asv aux bsd cvx dpx dyn isc pyr 
+ 
+ bsf bso:	an
+ 	$(BUILD) BUILDTYPE=$@ \
+-	SPECIALS="GSSDIR=/usr SSLDIR=/usr SSLINCLUDE=/usr/include/openssl SSLCERTS=/etc/ssl/certs SSLKEYS=/etc/ssl/private LOCKPGM=/usr/sbin/mlock"
++	SPECIALS="GSSDIR=/usr SSLDIR=/usr SSLINCLUDE=/usr/include/openssl SSLCERTS=/etc/ssl SSLKEYS=/etc/ssl/private LOCKPGM=/usr/sbin/mlock"
+ 
+ cyg:	an
+ 	$(BUILD) BUILDTYPE=cyg \
+@@ -475,8 +475,6 @@ sslunix sslsco:
  	@echo ++ SSLTYPE=$(SSLTYPE).nopwd
  	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  	@echo
