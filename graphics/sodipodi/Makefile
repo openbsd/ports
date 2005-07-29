@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/01/24 16:30:53 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/07/29 11:40:40 aanriot Exp $
 
 COMMENT=		"SVG vector drawing application."
 
@@ -16,10 +16,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		X11 Xcursor Xext Xft Xinerama Xrender atk-1.0.0.0 \
-			c fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
-			gobject-2.0.0.0 png z m pango-1.0.0.0 \
-			pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 
+WANTLIB=		X11 Xft Xrender atk-1.0.0.0 c fontconfig freetype \
+			glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
+			png z m pango-1.0.0.0 pangoft2-1.0.0.0 \
+			pangox-1.0.0.0 pangoxft-1.0.0.0 
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sodipodi/}
 
