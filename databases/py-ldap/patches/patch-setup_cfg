@@ -1,12 +1,12 @@
---- setup.cfg.orig	Wed Jun 29 14:07:05 2005
-+++ setup.cfg	Wed Jun 29 14:07:41 2005
-@@ -6,9 +6,6 @@
- # Section for compiling the C extension module
+--- setup.cfg.orig	Fri Jul 29 12:20:10 2005
++++ setup.cfg	Fri Jul 29 12:20:21 2005
+@@ -7,9 +7,6 @@
  # for wrapping OpenLDAP 2 libs
+ [_ldap]
  
--library_dirs = /opt/openldap-OPENLDAP_REL_ENG_2_2/lib
--include_dirs = /opt/openldap-OPENLDAP_REL_ENG_2_2/include /usr/include/sasl
+-library_dirs = /usr/local/openldap-REL_ENG_2_1/lib /usr/local/cyrus-sasl/lib
+-include_dirs = /usr/local/openldap-REL_ENG_2_1/include /usr/local/cyrus-sasl/include
 -
  extra_compile_args = 
- extra_objects =
+ extra_objects = 
  
