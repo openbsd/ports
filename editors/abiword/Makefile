@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2005/07/04 18:02:48 aanriot Exp $
+# $OpenBSD: Makefile,v 1.43 2005/07/29 17:33:56 fgsch Exp $
 
 COMMENT=	"open-source, cross-platform WYSIWYG word processor"
 
-VERSION=	2.2.8
+VERSION=	2.2.9
 DISTNAME=	abiword-${VERSION}
 CATEGORIES=	editors
 
@@ -65,12 +65,11 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/abiword/Manual
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/abiword/Tutorials
-
 	${INSTALL_MAN} ${WRKDIST}/abiword-docs/man/abiword.1 \
-		${PREFIX}/man/man1/
+	    ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKDIST}/abiword-docs/Manual/en/Abiword_Manual.abw \
-		${PREFIX}/share/doc/abiword/Manual
-	cd ${WRKDIST}/abiword-docs/Tutorials/ && $(TAR) cf - jmp klw | \
-		$(TAR) xf - -C ${PREFIX}/share/doc/abiword/Tutorials/
+	    ${PREFIX}/share/doc/abiword/Manual
+	cd ${WRKDIST}/abiword-docs/Tutorials && tar cf - jmp klw | \
+	    tar xf - -C ${PREFIX}/share/doc/abiword/Tutorials
 
 .include <bsd.port.mk>
