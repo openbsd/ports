@@ -1,9 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:36:01 espie Exp $
-bin/p0f
+@comment $OpenBSD: PLIST,v 1.6 2005/07/29 19:40:44 aanriot Exp $
 @man man/man1/p0f.1
+sbin/p0f
+sbin/p0frep
 share/doc/p0f/
 share/doc/p0f/README
+share/doc/p0f/p0f.fp
+@sample ${SYSCONFDIR}/p0f/
+@sample ${SYSCONFDIR}/p0f/p0f.fp
+share/doc/p0f/p0fa.fp
+share/doc/p0f/p0fo.fp
+share/doc/p0f/p0fr.fp
 share/examples/p0f/
-share/examples/p0f/p0f.fp
-@sample ${SYSCONFDIR}/p0f.fp
-%%mysql%%
+share/examples/p0f/sendack.c
+share/examples/p0f/sendack2.c
+share/examples/p0f/sendsyn.c

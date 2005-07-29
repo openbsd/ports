@@ -1,21 +1,28 @@
-$OpenBSD: patch-p0f_c,v 1.7 2004/05/03 19:50:12 naddy Exp $
---- p0f.c.orig	2002-05-13 18:59:40.000000000 +0200
-+++ p0f.c	2004-05-03 21:41:00.000000000 +0200
-@@ -165,7 +165,7 @@ void set_header_len(int type){
-       break;
- #ifdef DLT_PFLOG
-     case DLT_PFLOG:
--      header_len=28;
-+      header_len=48;
-       break;
- #endif
- #ifdef DLT_LINUX_SLL
-@@ -397,7 +397,7 @@ void load_fprints(char *filename) {
-   char *p;
-   //bzero(fips,120000);
-   x=fopen(filename, "r");
--  if (!x) x=fopen("p0f.fp", "r");
-+  if (!x) x=fopen(SYSCONFDIR "p0f.fp", "r");
-   if (!x) {
-     fprintf(stderr, "No OS fingerprint database (%s) found. Dumb mode on.\n", 
-       filename);
+$OpenBSD: patch-p0f_c,v 1.8 2005/07/29 19:40:44 aanriot Exp $
+--- p0f.c.orig	Mon Sep 13 19:51:36 2004
++++ p0f.c	Thu Jul 28 08:25:51 2005
+@@ -735,7 +735,7 @@ static _u8* lookup_link(_u16 mss,_u8 txt
+ unknown:
+ 
+   if (!txt) return 0;
+-  sprintf(tmp,"unknown-%d",mss);
++  snprintf(tmp, sizeof(tmp), "unknown-%d",mss);
+   return tmp;
+ 
+ }
+@@ -1614,13 +1614,13 @@ int main(int argc,char** argv) {
+   load_config(config_file);
+ 
+   if (argv[optind] && *(argv[optind])) {
+-    sprintf(buf,"(%s) and (%3000s)",use_rule,argv[optind]);
++    snprintf(buf, sizeof(buf), "(%s) and (%3000s)",use_rule,argv[optind]);
+     use_rule = buf;
+   } 
+ 
+   if (use_vlan) {
+     _u8* x = strdup(use_rule);
+-    sprintf(buf,"(%1000s) or (vlan and (%1000s))",x,x);
++    snprintf(buf, sizeof(buf), "(%1000s) or (vlan and (%1000s))",x,x);
+     free(x);
+     use_rule = buf;
+   }
