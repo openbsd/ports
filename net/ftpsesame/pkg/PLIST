@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/30 15:45:30 sturm Exp $
+sbin/ftpsesame
+@man man/cat8/ftpsesame.0

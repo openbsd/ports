@@ -1,0 +1,17 @@
+ftpsesame helps the FTP protocol get through your pf firewall. It does
+this by passively analysing FTP control connections and adding rules
+into a pf anchor when an FTP data connection is about to commence.
+
+You might want to try ftpsesame instead of ftp-proxy(8) from the OpenBSD
+base system for the following reasons: 
+- it runs on "transparent" (no IP address) bridges 
+- you need packetfilter performance on all data connections 
+- you have to handle lots of simultaneous sessions 
+- you do not want to redirect any traffic to the firewall itself: for IP
+  accounting or other reasons 
+
+In general, ftpsesame is a good choice to run on a firewall in front of
+multiple FTP servers, where no NAT is involved. ftp-proxy(8) is usually
+the best choice when users behind NAT need to access FTP servers on the
+Internet. In other situations it depends, sometimes they are useful
+together.
