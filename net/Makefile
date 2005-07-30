@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.384 2005/07/27 21:41:44 robert Exp $
+# $OpenBSD: Makefile,v 1.385 2005/07/30 15:46:42 sturm Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -63,6 +63,7 @@
      SUBDIR += flowd
      SUBDIR += fping
      SUBDIR += ftpcopy
+     SUBDIR += ftpsesame
      SUBDIR += gabber
      SUBDIR += gaim
      SUBDIR += gaim,audio
