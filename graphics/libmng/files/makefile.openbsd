@@ -1,0 +1,74 @@
+#
+# For conditions of distribution and use, see copyright notice in libmng.h
+#
+# makefile for libmng - THE MNG library
+# this makefile is suitable for OpenBSD
+#
+
+PREFIX?= /usr/local
+LIBDIR=	${PREFIX}/lib
+MANDIR=	${PREFIX}/man/man
+INCDIR=	${PREFIX}/include
+
+ZLIB_INC= ${LOCALBASE}/include
+ZLIB_LIB= ${LOCALBASE}/lib
+
+JPEG_INC= ${LOCALBASE}/include
+JPEG_LIB= ${LOCALBASE}/lib
+
+LCMS_INC= ${LOCALBASE}/inc
+LCMS_LIB= ${LOCALBASE}/lib
+
+SHLIB_MAJOR=	3
+SHLIB_MINOR=	0
+
+LIB=	mng
+SRCS=	libmng_callback_xs.c libmng_chunk_io.c libmng_chunk_descr.c \
+	libmng_chunk_prc.c libmng_chunk_xs.c libmng_cms.c libmng_display.c \
+	libmng_dither.c libmng_error.c libmng_filter.c libmng_hlapi.c \
+	libmng_jpeg.c libmng_object_prc.c libmng_pixels.c libmng_prop_xs.c \
+	libmng_read.c libmng_trace.c libmng_write.c libmng_zlib.c
+
+HDRS=	libmng.h libmng_conf.h libmng_types.h
+
+CFLAGS+= -Wall
+CPPFLAGS+= -I${ZLIB_INC} -I${JPEG_INC} -I${LCMS_INC}
+.if !defined(NOPIC)
+CPPFLAGS+= -DMNG_BUILD_SO
+.endif
+CPPFLAGS+= -DMNG_FULL_CMS
+
+NOPROFILE= Yes
+
+MAN3=	libmng.3
+MAN5=	mng.5 jng.5
+
+beforeinstall:
+	if [ ! -d ${DESTDIR}${INCDIR} ]; then \
+	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${INCDIR}; \
+	fi
+	if [ ! -d ${DESTDIR}${LIBDIR} ]; then \
+	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${LIBDIR}; \
+	fi
+	if [ ! -d ${DESTDIR}${LIBDIR}/debug ]; then \
+	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${LIBDIR}/debug; \
+	fi
+	if [ ! -d ${DESTDIR}${MANDIR}3 ]; then \
+	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${MANDIR}3; \
+	fi
+	if [ ! -d ${DESTDIR}${MANDIR}5 ]; then \
+	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${MANDIR}5; \
+	fi
+
+afterinstall:
+	@rm -f ${DESTDIR}${LIBDIR}/libmng_pic.a
+	@rm -f ${DESTDIR}${LIBDIR}/debug/libmng.a
+	@rmdir ${DESTDIR}${LIBDIR}/debug 2>/dev/null || true
+	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
+		-m ${NONBINMODE} ${HDRS} ${DESTDIR}${INCDIR}
+	cd doc/man; ${INSTALL} ${INSTALL_COPY} -o ${MANOWN} -g ${MANGRP} \
+		-m ${MANMODE} ${MAN3} ${DESTDIR}${MANDIR}3
+	cd doc/man; ${INSTALL} ${INSTALL_COPY} -o ${MANOWN} -g ${MANGRP} \
+		-m ${MANMODE} ${MAN5} ${DESTDIR}${MANDIR}5
+
+.include <bsd.lib.mk>

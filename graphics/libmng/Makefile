@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2003/12/23 23:50:56 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2005/07/31 23:19:17 brad Exp $
 
 COMMENT=	"Multiple-image Network Graphics (MNG) reference library"
 
-DISTNAME=	libmng-1.0.5
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	libmng-1.0.9
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libmng/}
 
@@ -20,15 +19,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SEPARATE_BUILD=	simple
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+FAKE_FLAGS=	DESTDIR="${WRKINST}" PREFIX="${PREFIX}"
 
-post-install:
-	cd ${WRKSRC}/doc/man && \
-		${INSTALL_MAN} libmng.3 ${PREFIX}/man/man3 && \
-		${INSTALL_MAN} mng.5 jng.5 ${PREFIX}/man/man5
+MAKE_ENV=	CC="${CC}"
+MAKE_FILE=	makefiles/makefile.openbsd
+
+NO_REGRESS=	Yes
+
+post-extract:
+	@cp -f ${FILESDIR}/makefile.openbsd ${WRKSRC}/makefiles
 
 .include <bsd.port.mk>
