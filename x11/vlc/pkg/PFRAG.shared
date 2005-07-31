@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2004/12/17 01:12:53 jolan Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/07/31 19:07:11 jolan Exp $
 lib/vlc/access/libscreen_plugin.so
 lib/vlc/audio_filter/libaudio_format_plugin.so
 lib/vlc/audio_filter/libequalizer_plugin.so
@@ -10,7 +10,6 @@ lib/vlc/demux/libm4a_plugin.so
 lib/vlc/demux/libmjpeg_plugin.so
 lib/vlc/demux/libsubtitle_plugin.so
 lib/vlc/demux/libvobsub_plugin.so
-lib/vlc/gui/libwxwindows_plugin.so
 lib/vlc/misc/libvod_rtsp_plugin.so
 lib/vlc/mux/libmux_mpjpeg_plugin.so
 lib/vlc/mux/libmux_wav_plugin.so
@@ -20,4 +19,3 @@ lib/vlc/video_filter/libblend_plugin.so
 lib/vlc/video_filter/libmarq_plugin.so
 lib/vlc/video_filter/libscale_plugin.so
 lib/vlc/video_filter/libtime_plugin.so
-lib/vlc/video_output/libglx_plugin.so

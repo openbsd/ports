@@ -1,6 +1,6 @@
-$OpenBSD: patch-include_vlc_threads_funcs_h,v 1.1 2005/02/20 03:28:27 naddy Exp $
---- include/vlc_threads_funcs.h.orig	Sat Nov  6 08:36:33 2004
-+++ include/vlc_threads_funcs.h	Mon Feb 14 20:32:03 2005
+$OpenBSD: patch-include_vlc_threads_funcs_h,v 1.2 2005/07/31 19:07:11 jolan Exp $
+--- include/vlc_threads_funcs.h.orig	Sat Jun 25 23:43:15 2005
++++ include/vlc_threads_funcs.h	Sun Jul 10 11:33:17 2005
 @@ -69,7 +69,7 @@ static inline int __vlc_mutex_lock( char
  {
      int i_result;
@@ -23,8 +23,8 @@ $OpenBSD: patch-include_vlc_threads_funcs_h,v 1.1 2005/02/20 03:28:27 naddy Exp 
      if( i_result )
      {
          msg_Err( p_mutex->p_this,
--                 "thread %d: mutex_lock failed at %s:%d (%d:%s)",
-+                 "thread %ld: mutex_lock failed at %s:%d (%d:%s)",
+-                 "thread %u: mutex_lock failed at %s:%d (%d:%s)",
++                 "thread %lu: mutex_lock failed at %s:%d (%d:%s)",
                   i_thread, psz_file, i_line, i_result, psz_error );
      }
      return i_result;
@@ -50,8 +50,8 @@ $OpenBSD: patch-include_vlc_threads_funcs_h,v 1.1 2005/02/20 03:28:27 naddy Exp 
      if( i_result )
      {
          msg_Err( p_mutex->p_this,
--                 "thread %d: mutex_unlock failed at %s:%d (%d:%s)",
-+                 "thread %ld: mutex_unlock failed at %s:%d (%d:%s)",
+-                 "thread %u: mutex_unlock failed at %s:%d (%d:%s)",
++                 "thread %lu: mutex_unlock failed at %s:%d (%d:%s)",
                   i_thread, psz_file, i_line, i_result, psz_error );
      }
  
@@ -77,8 +77,8 @@ $OpenBSD: patch-include_vlc_threads_funcs_h,v 1.1 2005/02/20 03:28:27 naddy Exp 
      if( i_result )
      {
          msg_Err( p_condvar->p_this,
--                 "thread %d: cond_signal failed at %s:%d (%d:%s)",
-+                 "thread %ld: cond_signal failed at %s:%d (%d:%s)",
+-                 "thread %u: cond_signal failed at %s:%d (%d:%s)",
++                 "thread %lu: cond_signal failed at %s:%d (%d:%s)",
                   i_thread, psz_file, i_line, i_result, psz_error );
      }
  
@@ -104,8 +104,8 @@ $OpenBSD: patch-include_vlc_threads_funcs_h,v 1.1 2005/02/20 03:28:27 naddy Exp 
      if( i_result )
      {
          msg_Err( p_condvar->p_this,
--                 "thread %d: cond_wait failed at %s:%d (%d:%s)",
-+                 "thread %ld: cond_wait failed at %s:%d (%d:%s)",
+-                 "thread %u: cond_wait failed at %s:%d (%d:%s)",
++                 "thread %lu: cond_wait failed at %s:%d (%d:%s)",
                   i_thread, psz_file, i_line, i_result, psz_error );
      }
  
