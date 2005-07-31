@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 17:54:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/07/31 13:51:50 robert Exp $
 bin/mc
 bin/mcedit
 bin/mcmfmt
@@ -141,18 +141,23 @@ share/mc/mc.menu.sr
 share/mc/syntax/
 share/mc/syntax/Syntax
 share/mc/syntax/ada95.syntax
+share/mc/syntax/aspx.syntax
+share/mc/syntax/assembler.syntax
 share/mc/syntax/c.syntax
 share/mc/syntax/changelog.syntax
 share/mc/syntax/cs.syntax
 share/mc/syntax/diff.syntax
 share/mc/syntax/dos.syntax
+share/mc/syntax/eiffel.syntax
 share/mc/syntax/fortran.syntax
 share/mc/syntax/html.syntax
+share/mc/syntax/idl.syntax
 share/mc/syntax/java.syntax
 share/mc/syntax/js.syntax
 share/mc/syntax/latex.syntax
 share/mc/syntax/lisp.syntax
 share/mc/syntax/lsm.syntax
+share/mc/syntax/lua.syntax
 share/mc/syntax/m4.syntax
 share/mc/syntax/mail.syntax
 share/mc/syntax/makefile.syntax
@@ -163,6 +168,7 @@ share/mc/syntax/pascal.syntax
 share/mc/syntax/perl.syntax
 share/mc/syntax/php.syntax
 share/mc/syntax/po.syntax
+share/mc/syntax/povray.syntax
 share/mc/syntax/python.syntax
 share/mc/syntax/ruby.syntax
 share/mc/syntax/sh.syntax
