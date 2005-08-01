@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2005/07/16 16:54:14 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2005/08/01 21:49:32 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"secure, fast, compliant, and very flexible web-server"
 
-DISTNAME=	lighttpd-1.3.15
+DISTNAME=	lighttpd-1.3.16
 CATEGORIES=	www net
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
