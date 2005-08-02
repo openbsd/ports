@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_xavante_httpd_lua,v 1.1.1.1 2005/05/25 06:13:16 jolan Exp $
---- bin/xavante/httpd.lua.orig	Tue Mar 15 17:42:48 2005
-+++ bin/xavante/httpd.lua	Mon May 16 10:50:55 2005
+$OpenBSD: patch-src_xavante_httpd_lua,v 1.1 2005/08/02 17:41:08 pedro Exp $
+--- src/xavante/httpd.lua.orig	Thu May 26 01:07:17 2005
++++ src/xavante/httpd.lua	Mon Aug  1 07:24:40 2005
 @@ -5,7 +5,7 @@
  -- Copyright (c) 2004-2005 Kepler Project
  -----------------------------------------------------------------------------
@@ -10,7 +10,7 @@ $OpenBSD: patch-bin_xavante_httpd_lua,v 1.1.1.1 2005/05/25 06:13:16 jolan Exp $
  pcall  = copcall
  xpcall = coxpcall
  
-@@ -71,6 +71,7 @@ function read_method (req)
+@@ -72,6 +72,7 @@ function read_method (req)
  	
  	if not req.cmdline then return nil end
  	req.cmd_mth, req.cmd_url, req.cmd_version = unpack (strsplit (req.cmdline))

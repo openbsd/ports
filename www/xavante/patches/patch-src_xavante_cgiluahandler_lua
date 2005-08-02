@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_xavante_cgiluahandler_lua,v 1.1.1.1 2005/05/25 06:13:16 jolan Exp $
---- bin/xavante/cgiluahandler.lua.orig	Mon May 16 10:43:06 2005
-+++ bin/xavante/cgiluahandler.lua	Mon May 16 10:43:22 2005
+$OpenBSD: patch-src_xavante_cgiluahandler_lua,v 1.1 2005/08/02 17:41:08 pedro Exp $
+--- src/xavante/cgiluahandler.lua.orig	Thu May 26 01:07:16 2005
++++ src/xavante/cgiluahandler.lua	Mon Aug  1 07:33:46 2005
 @@ -9,7 +9,7 @@ module (arg and arg[1])
  
  require "venv"

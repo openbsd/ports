@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_t_xavante_start_lua,v 1.1 2005/08/02 17:41:08 pedro Exp $
+--- src/t_xavante_start.lua.orig	Mon Aug  1 06:52:03 2005
++++ src/t_xavante_start.lua	Mon Aug  1 06:58:39 2005
+@@ -8,18 +8,10 @@
+ -- Copyright (c) 2004-2005 Kepler Project
+ -------------------------------------------------------------------------------
+ 
+---- compatibility code for Lua version 5.0 providing 5.1 behavior
+-if string.find (_VERSION, "Lua 5.0") and not _COMPAT51 then
+-	if not LUA_PATH then
+-		LUA_PATH = [[LUA_PATH]]
+-	end
+-	require"compat-5.1"
+-	package.cpath = [[LUA_CPATH]]
+-end
+ 
+ require "xavante.server"
+ 
+-xavante.setwebdir([[XAVANTE_WEB]])
++xavante.setwebdir([[@xavanteweb@]])
+ 
+ -------------------------------------------------------------------------------
+ -- Loads the configuration file and starts Xavante

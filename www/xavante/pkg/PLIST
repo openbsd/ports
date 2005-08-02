@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/25 06:13:16 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/08/02 17:41:08 pedro Exp $
 @unexec lua ${SYSCONFDIR}/lua/luapkg.lua del xavante
 bin/xavante
 examples/
 examples/xavante/
 examples/xavante/calculator.lp
+examples/xavante/img/
+examples/xavante/img/test.jpg
+examples/xavante/img/xavante.gif
 examples/xavante/index.lp
 examples/xavante/loop.lp
-examples/xavante/sajax.lua
 examples/xavante/test.lp
 lua/xavante/
 lua/xavante/init.lua
@@ -14,6 +16,9 @@ lua/xavante/xavante/
 lua/xavante/xavante/cgiluahandler.lua
 lua/xavante/xavante/config.lua
 lua/xavante/xavante/coxpcall.lua
+lua/xavante/xavante/davFileProps.lua
+lua/xavante/xavante/davFileRepository.lua
+lua/xavante/xavante/davhandler.lua
 lua/xavante/xavante/filehandler.lua
 lua/xavante/xavante/httpd.lua
 lua/xavante/xavante/mime.lua
@@ -24,4 +29,5 @@ share/doc/xavante/
 share/doc/xavante/index.html
 share/doc/xavante/license.html
 share/doc/xavante/manual.html
+share/doc/xavante/sajax.html
 share/doc/xavante/xavante.gif
