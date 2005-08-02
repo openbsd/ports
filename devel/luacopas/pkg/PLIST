@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/15 00:49:08 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/08/02 17:31:30 pedro Exp $
 @unexec lua ${SYSCONFDIR}/lua/luapkg.lua del luacopas
 lua/luacopas/
 lua/luacopas/copas.lua
@@ -8,3 +8,5 @@ share/doc/luacopas/
 share/doc/luacopas/copas.png
 share/doc/luacopas/index.html
 share/doc/luacopas/license.html
+share/doc/luacopas/manual.html
+share/doc/luacopas/reference.html

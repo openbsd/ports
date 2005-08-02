@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/24 22:34:47 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2005/08/02 17:31:30 pedro Exp $
 
 COMMENT=	"coroutine oriented portable asynchronous services for lua"
 DISTNAME=	copas-1.0
-PKGNAME=	luacopas-1.0
+PKGNAME=	luacopas-1.0p0
 CATEGORIES=	devel
-MASTER_SITES=	http://luaforge.net/frs/download.php/461/
+MASTER_SITES=	http://luaforge.net/frs/download.php/823/
 
 HOMEPAGE=	http://www.keplerproject.org/copas/
 
@@ -20,8 +20,6 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 RUN_DEPENDS=	::lang/lua ::devel/luacompat ::net/luasocket
 
-WRKDIST=	${WRKDIR}/copas
-
 post-extract:
 	@sed -e "s:@copaspath@:${PREFIX}/lua/luacopas/?.lua:g" \
 		${FILESDIR}/init.lua > ${WRKSRC}/init.lua
@@ -29,9 +27,9 @@ post-extract:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lua/luacopas
 	${INSTALL_DATA} ${WRKSRC}/init.lua ${PREFIX}/lua/luacopas
-	${INSTALL_DATA} ${WRKSRC}/copas.lua ${PREFIX}/lua/luacopas
+	${INSTALL_DATA} ${WRKSRC}/src/copas/copas.lua ${PREFIX}/lua/luacopas
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/luacopas
-	${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.png \
+	${INSTALL_DATA} ${WRKSRC}/doc/us/*.html ${WRKSRC}/doc/us/*.png \
 		${PREFIX}/share/doc/luacopas
 
 .include <bsd.port.mk>
