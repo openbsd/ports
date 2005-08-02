@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/07/11 09:51:10 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/08/02 12:37:27 aanriot Exp $
 
 COMMENT=	"network security scanner"
 
 DISTNAME=	nessus-core-${VERSION}
-PKGNAME=	${DISTNAME}p0
 
 FLAVORS=	no_x11
 FLAVOR?=
