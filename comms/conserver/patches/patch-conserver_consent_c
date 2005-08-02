@@ -1,24 +1,20 @@
-$OpenBSD: patch-conserver_consent_c,v 1.1 2003/05/26 20:20:53 pvalchev Exp $
---- conserver/consent.c.orig	Sun Apr  6 06:32:41 2003
-+++ conserver/consent.c	Sat May 24 14:14:43 2003
-@@ -45,8 +45,8 @@
- #include <sys/file.h>
- #include <sys/stat.h>
- #include <fcntl.h>
--#include <arpa/inet.h>
- #include <netinet/in.h>
-+#include <arpa/inet.h>
- #include <netdb.h>
- #include <stdio.h>
- #include <ctype.h>
-@@ -508,12 +508,11 @@ VirtDev(pCE)
- 	      strerror(errno));
+$OpenBSD: patch-conserver_consent_c,v 1.2 2005/08/02 07:25:47 pvalchev Exp $
+--- conserver/consent.c.orig	Thu Jun 23 23:28:58 2005
++++ conserver/consent.c	Thu Jun 23 23:30:52 2005
+@@ -528,7 +528,8 @@ VirtDev(pCE)
+ 	Error("[%s] tcgetattr(0): %s", pCE->server, strerror(errno));
  	Bye(EX_OSERR);
      }
 -    n_tio.c_iflag &= ~(IGNCR | IUCLC);
 +
 +    n_tio.c_iflag &= ~(IGNCR);
-     n_tio.c_iflag |= ICRNL | IXON | IXANY;
+     n_tio.c_iflag |= ICRNL;
+     if (pCE->ixon == FLAGTRUE)
+ 	n_tio.c_iflag |= IXON;
+@@ -536,10 +537,8 @@ VirtDev(pCE)
+ 	n_tio.c_iflag |= IXANY;
+     if (pCE->ixoff == FLAGTRUE)
+ 	n_tio.c_iflag |= IXOFF;
 -    n_tio.c_oflag &=
 -	~(OLCUC | ONOCR | ONLRET | OFILL | NLDLY | CRDLY | TABDLY | BSDLY);
      n_tio.c_oflag |= OPOST | ONLCR;

@@ -1,11 +1,18 @@
-$OpenBSD: patch-conserver_Makefile_in,v 1.1 2003/05/26 20:20:53 pvalchev Exp $
---- conserver/Makefile.in.orig	Sat May 24 14:08:15 2003
-+++ conserver/Makefile.in	Sat May 24 14:08:56 2003
-@@ -53,7 +53,5 @@ install: conserver
- 	$(INSTALL_PROGRAM) conserver $(DESTDIR)$(sbindir)
- 	$(MKDIR) $(DESTDIR)$(mandir)/man8
- 	$(INSTALL) conserver.man $(DESTDIR)$(mandir)/man8/conserver.8
--	$(MKDIR) $(DESTDIR)$(sysconfdir)
--	[ -f $(DESTDIR)$(sysconfdir)/conserver.rc ] || $(INSTALL) conserver.rc $(DESTDIR)$(sysconfdir)
+$OpenBSD: patch-conserver_Makefile_in,v 1.2 2005/08/02 07:25:47 pvalchev Exp $
+--- conserver/Makefile.in.orig	Tue Feb 10 01:32:28 2004
++++ conserver/Makefile.in	Sat Jul 30 11:57:23 2005
+@@ -57,11 +57,8 @@ distclean: clean
+ 	rm -f Makefile conserver.rc
+ 
+ install: conserver
+-	$(MKDIR) $(DESTDIR)$(sbindir)
+-	$(INSTALL_PROGRAM) conserver $(DESTDIR)$(sbindir)
+-	$(MKDIR) $(DESTDIR)$(mandir)/man8
+-	$(INSTALL) conserver.man $(DESTDIR)$(mandir)/man8/conserver.8
+-	$(MKDIR) $(DESTDIR)$(exampledir)
+-	$(INSTALL) conserver.rc $(DESTDIR)$(exampledir)
++	$(BSD_INSTALL_PROGRAM) conserver $(DESTDIR)$(sbindir)
++	$(BSD_INSTALL_MAN) conserver.man $(DESTDIR)$(mandir)/man8/conserver.8
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(exampledir)
  
  .PHONY: clean distclean install

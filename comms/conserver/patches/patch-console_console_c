@@ -1,9 +1,9 @@
-$OpenBSD: patch-console_console_c,v 1.1 2003/05/26 20:20:53 pvalchev Exp $
---- console/console.c.orig	Sat May 24 14:15:20 2003
-+++ console/console.c	Sat May 24 14:15:35 2003
-@@ -576,7 +576,7 @@ C2Raw()
+$OpenBSD: patch-console_console_c,v 1.2 2005/08/02 07:25:48 pvalchev Exp $
+--- console/console.c.orig	Mon Oct 25 09:18:20 2004
++++ console/console.c	Thu Jun 23 23:33:26 2005
+@@ -570,7 +570,7 @@ C2Raw()
+ 	Bye(EX_UNAVAILABLE);
      }
- # endif
      n_tios = o_tios;
 -    n_tios.c_iflag &= ~(INLCR | IGNCR | ICRNL | IUCLC | IXON);
 +    n_tios.c_iflag &= ~(INLCR | IGNCR | ICRNL | IXON);

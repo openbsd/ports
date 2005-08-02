@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure_in,v 1.1 2003/05/26 20:20:53 pvalchev Exp $
---- configure.in.orig	Sat May 24 13:54:37 2003
-+++ configure.in	Sat May 24 13:55:07 2003
-@@ -231,7 +231,7 @@ if test "$ac_cv_header_termios_h" != "ye
-   fi
+$OpenBSD: patch-configure_in,v 1.2 2005/08/02 07:25:47 pvalchev Exp $
+--- configure.in.orig	Thu Jun 23 23:10:15 2005
++++ configure.in	Thu Jun 23 23:10:59 2005
+@@ -326,7 +326,7 @@ if test "$ac_cv_sys_posix_termios" != "y
+     AC_MSG_ERROR([POSIX termios interface required])
  fi
  
--AC_CHECK_HEADERS(unistd.h getopt.h sys/vlimit.h sys/resource.h ttyent.h sys/ttold.h sys/uio.h sys/proc.h sys/ioctl_compat.h usersec.h sys/select.h stropts.h sys/audit.h shadow.h sys/time.h crypt.h sysexits.h types.h)
+-AC_CHECK_HEADERS(unistd.h getopt.h sys/vlimit.h sys/resource.h ttyent.h sys/ttold.h sys/uio.h sys/ioctl_compat.h usersec.h sys/select.h stropts.h sys/audit.h shadow.h sys/time.h crypt.h sysexits.h types.h sys/sockio.h sys/param.h)
 +AC_CHECK_HEADERS(unistd.h getopt.h sys/vlimit.h sys/resource.h ttyent.h sys/ttold.h sys/uio.h sys/types.h sys/param.h sys/proc.h sys/ioctl_compat.h usersec.h sys/select.h stropts.h sys/audit.h shadow.h sys/time.h crypt.h sysexits.h types.h)
- AC_HEADER_TIME
- AC_HEADER_SYS_WAIT
- AC_TYPE_MODE_T
+ dnl sys/proc.h needs sys/param.h on openbsd, apparently
+ AC_CHECK_HEADERS(sys/proc.h, [], [],
+ [#if HAVE_SYS_PARAM_H

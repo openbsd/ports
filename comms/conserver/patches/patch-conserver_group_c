@@ -1,16 +1,16 @@
-$OpenBSD: patch-conserver_group_c,v 1.1 2003/05/26 20:20:53 pvalchev Exp $
---- conserver/group.c.orig	Sat May 24 14:10:43 2003
-+++ conserver/group.c	Sat May 24 14:12:07 2003
-@@ -1232,7 +1232,7 @@ SendRealBreak(pCLServing, pCEServing)
- #else
- # if HAVE_TCSENDBREAK
- 	if (-1 == tcsendbreak(pCEServing->fdtty, 0)) {
--	    FileWrite(pCLServing->fd, "failed]\r\n", -1);
-+	    FileWrite(pCLServing->fd, "tcsendbreak failed]\r\n", -1);
- 	    return;
- 	}
- # else
-@@ -3009,13 +3009,11 @@ Kiddie(pGE, sfd)
+$OpenBSD: patch-conserver_group_c,v 1.2 2005/08/02 07:25:48 pvalchev Exp $
+--- conserver/group.c.orig	Mon Oct 25 01:25:35 2004
++++ conserver/group.c	Tue Aug  2 01:20:46 2005
+@@ -2409,7 +2409,7 @@ TelOpt(o)
+     if (o < sizeof(telopts) / sizeof(char *))
+ 	return telopts[o];
+     else {
+-	sprintf(opt, "%d", o);
++	snprintf(opt, sizeof(opt), "%d", o);
+ 	return opt;
+     }
+ }
+@@ -3675,13 +3675,12 @@ DoClientRead(pGE, pCLServing)
  				    continue;
  				}
  #  if !defined(XTABS)		/* XXX hack */
@@ -20,10 +20,29 @@ $OpenBSD: patch-conserver_group_c,v 1.1 2003/05/26 20:20:53 pvalchev Exp $
 -				if (XTABS == (TABDLY & sbuf.c_oflag)) {
 -				    sbuf.c_oflag &= ~TABDLY;
 -				    sbuf.c_oflag |= TAB0;
-+				if (XTABS & sbuf.c_oflag) {
-+				    sbuf.c_oflag &= ~XTABS;
++                                if (XTABS & sbuf.c_oflag) {
++                                   sbuf.c_oflag &= ~XTABS;
++
  				} else {
 -				    sbuf.c_oflag &= ~TABDLY;
  				    sbuf.c_oflag |= XTABS;
  				}
  				if (-1 ==
+@@ -4571,7 +4570,7 @@ Kiddie(pGE, sfd)
+ 	BuildString("<unknown>@", pCL->acid);
+ 	BuildString((char *)0, pCL->username);
+ 	BuildString("<unknown>", pCL->username);
+-	strcpy(pCL->actym, StrTime(&(pCL->tym)));
++	strlcpy(pCL->actym, StrTime(&(pCL->tym)), sizeof(pCL->actym));
+ 	pCL->typetym = pCL->tym;
+ 
+ 	/* link into the control list for the dummy console
+@@ -4681,7 +4680,7 @@ Spawn(pGE)
+ 	Error("Spawn(): path to socket too long: %s", portPath->string);
+ 	Bye(EX_OSERR);
+     }
+-    strcpy(lstn_port.sun_path, portPath->string);
++    strlcpy(lstn_port.sun_path, portPath->string, sizeof(lstn_port.sun_path));
+ 
+     /* create a socket to listen on
+      * (prepared by master so he can see the port number of the kid)

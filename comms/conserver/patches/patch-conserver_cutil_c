@@ -1,0 +1,21 @@
+$OpenBSD: patch-conserver_cutil_c,v 1.1 2005/08/02 07:25:48 pvalchev Exp $
+--- conserver/cutil.c.orig	Tue Nov  9 01:37:05 2004
++++ conserver/cutil.c	Tue Aug  2 01:22:33 2005
+@@ -84,7 +84,7 @@ StrTime(ltime)
+     time_t tyme;
+ 
+     tyme = time((time_t *)0);
+-    strcpy(curtime, ctime(&tyme));
++    strlcpy(curtime, ctime(&tyme), sizeof(curtime));
+     curtime[24] = '\000';	/* might need to adjust this at some point */
+     if (ltime != NULL)
+ 	*ltime = tyme;
+@@ -424,7 +424,7 @@ ReadLine(fp, save, iLine)
+ 	   || peek) {
+ 	/* If we have a previously saved line, use it instead */
+ 	if (save->used) {
+-	    strcpy(buf, save->string);
++	    strlcpy(buf, save->string, sizeof(buf));
+ 	    BuildString((char *)0, save);
+ 	}
+ 

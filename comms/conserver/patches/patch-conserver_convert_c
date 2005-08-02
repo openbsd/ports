@@ -1,0 +1,12 @@
+$OpenBSD: patch-conserver_convert_c,v 1.1 2005/08/02 07:25:48 pvalchev Exp $
+--- conserver/convert.c.orig	Thu May 27 19:08:28 2004
++++ conserver/convert.c	Tue Aug  2 01:22:59 2005
+@@ -86,7 +86,7 @@ ReadLine2(fp, save, iLine)
+ 	   || peek) {
+ 	/* If we have a previously saved line, use it instead */
+ 	if (save->used) {
+-	    strcpy(buf, save->string);
++	    strlcpy(buf, save->string, sizeof(buf));
+ 	    BuildString((char *)0, save);
+ 	}
+ 
