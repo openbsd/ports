@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.5 2005/06/01 16:02:31 naddy Exp $
---- setup.py.orig	Tue May 24 00:01:36 2005
-+++ setup.py	Sat May 28 00:24:22 2005
-@@ -22,10 +22,10 @@ import BitTorrent
+$OpenBSD: patch-setup_py,v 1.6 2005/08/02 14:00:31 naddy Exp $
+--- setup.py.orig	Sat Jul  9 10:48:58 2005
++++ setup.py	Tue Jul 19 20:58:37 2005
+@@ -24,10 +24,10 @@ import BitTorrent
  
  import glob
  
@@ -14,5 +14,5 @@ $OpenBSD: patch-setup_py,v 1.5 2005/06/01 16:02:31 naddy Exp $
 +           "btlaunchmany", "btlaunchmanycurses",
 +           "bttrack", "btreannounce", "btrename", "btshowmetainfo"]
  
- img_root, doc_root = BitTorrent.calc_unix_dirs()
+ img_root, doc_root, locale_root = BitTorrent.calc_unix_dirs()
  
