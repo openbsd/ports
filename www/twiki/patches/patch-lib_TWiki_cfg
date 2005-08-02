@@ -1,28 +1,23 @@
-$OpenBSD: patch-lib_TWiki_cfg,v 1.1.1.1 2004/04/14 08:27:56 kevlo Exp $
---- lib/TWiki.cfg.orig	2003-02-02 02:45:15.000000000 +0000
-+++ lib/TWiki.cfg	2004-04-13 17:43:32.000000000 +0000
-@@ -61,15 +61,15 @@
- #                   URL for TWiki host :    (e.g. "http://myhost.com:123")
- $defaultUrlHost   = "http://your.domain.com";
- #                   %SCRIPTURLPATH% : cgi-bin URL path for TWiki:
--$scriptUrlPath    = "/twiki/bin";
-+$scriptUrlPath    = "/cgi-bin/twiki";
+$OpenBSD: patch-lib_TWiki_cfg,v 1.2 2005/08/02 22:19:06 aanriot Exp $
+--- lib/TWiki.cfg.orig	Thu Jul 14 10:25:57 2005
++++ lib/TWiki.cfg	Thu Jul 14 10:27:08 2005
+@@ -69,11 +69,11 @@ $dispViewPath     = "/view";
  #                   %PUBURLPATH% : Public data URL path for TWiki (root of attachments) :
  $pubUrlPath       = "/twiki/pub";
  #                   Public data directory (file path not URL), must match $pubUrlPath :
 -$pubDir           = "/home/httpd/twiki/pub";
-+$pubDir           = "%%WWWDOCDIR%%/twiki/pub";
++$pubDir           = "%%WWWDOCDIR%%/pub";
  #                   Template directory :
 -$templateDir      = "/home/httpd/twiki/templates";
-+$templateDir      = "%%WWWDOCDIR%%/twiki/templates";
++$templateDir      = "%%WWWDOCDIR%%/templates";
  #                   Data (topic files) root directory (file path not URL):
 -$dataDir          = "/home/httpd/twiki/data";
-+$dataDir          = "%%WWWDOCDIR%%/twiki/data";
++$dataDir          = "%%WWWDOCDIR%%/data";
  #                   Log directory for log files, debug and warning files. Default "$dataDir" :
  $logDir           = "$dataDir";
  
-@@ -200,9 +200,9 @@ $storeTopicImpl = "RcsWrap"; 
- #                   Unix ls command :
+@@ -210,9 +210,9 @@ $storeTopicImpl = "RcsWrap"; 
+ #                   Unix ls command :  (deprecated since 01 Nov 2003)
  $lsCmd            = "/bin/ls";
  #                   Unix egrep command :
 -$egrepCmd         = "/bin/egrep";
@@ -31,5 +26,5 @@ $OpenBSD: patch-lib_TWiki_cfg,v 1.1.1.1 2004/04/14 08:27:56 kevlo Exp $
 -$fgrepCmd         = "/bin/fgrep";
 +$fgrepCmd         = "/usr/bin/fgrep";
  
- 
- # internationalisation setup:
+ #display Time in the following timezones (this only effects the display of times, all internal storage is still in GMT)
+ # gmtime / servertime
