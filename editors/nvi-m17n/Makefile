@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/12/26 21:00:13 sturm Exp $
+# $OpenBSD: Makefile,v 1.22 2005/08/03 18:07:33 aanriot Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
@@ -8,10 +8,7 @@ DISTNAME=	nvi-1.79
 PKGNAME=	nvi-m17n-1.79.19991117p0
 CATEGORIES=	editors
 
-MASTER_SITES0=	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
-
-MASTER_SITES=	ftp://sleepy.vwh.net/pub/ \
-		${MASTER_SITES0}
+MASTER_SITES=	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
 
 PATCHFILES=	nvi-1.79.m17n-19991117.diff.gz
 
