@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_rules_mk,v 1.2 2005/07/13 04:49:56 jolan Exp $
---- config/rules.mk.orig	Tue Jul 12 21:48:11 2005
-+++ config/rules.mk	Tue Jul 12 22:18:52 2005
-@@ -701,7 +701,7 @@ ifdef SHARED_LIBRARY
+$OpenBSD: patch-config_rules_mk,v 1.3 2005/08/04 05:06:54 jolan Exp $
+--- config/rules.mk.orig	Tue Aug  2 14:26:31 2005
++++ config/rules.mk	Tue Aug  2 14:40:23 2005
+@@ -665,7 +665,7 @@ ifdef SHARED_LIBRARY
  ifdef IS_COMPONENT
  ifdef GRE_MODULE
  ifndef DISABLE_DIST_GRE
@@ -10,7 +10,7 @@ $OpenBSD: patch-config_rules_mk,v 1.2 2005/07/13 04:49:56 jolan Exp $
  	$(ELF_DYNSTR_GC) $(GRE_DIST)/components/$(SHARED_LIBRARY)
  ifdef BEOS_ADDON_WORKAROUND
  	( cd $(GRE_DIST)/components && $(CC) -nostart -o $(SHARED_LIBRARY).stub $(SHARED_LIBRARY) )
-@@ -728,7 +728,7 @@ endif # GRE_MODULE
+@@ -692,7 +692,7 @@ endif # GRE_MODULE
  ifneq (,$(filter OS2 WINNT WINCE,$(OS_ARCH)))
  	$(INSTALL) $(IFLAGS2) $(IMPORT_LIBRARY) $(DIST)/lib
  else
@@ -19,7 +19,7 @@ $OpenBSD: patch-config_rules_mk,v 1.2 2005/07/13 04:49:56 jolan Exp $
  endif
  ifndef _SKIP_OLD_GRE_INSTALL
  	$(INSTALL) $(IFLAGS2) $(SHARED_LIBRARY) $(FINAL_TARGET)
-@@ -799,15 +799,15 @@ ifndef NO_INSTALL
+@@ -763,15 +763,15 @@ ifndef NO_INSTALL
  ifdef SHARED_LIBRARY
  ifdef IS_COMPONENT
  ifdef MRE_DIST
@@ -39,7 +39,7 @@ $OpenBSD: patch-config_rules_mk,v 1.2 2005/07/13 04:49:56 jolan Exp $
  endif
  endif
  endif # SHARED_LIBRARY
-@@ -1077,7 +1077,6 @@ endif # NO_LD_ARCHIVE_FLAGS
+@@ -1041,7 +1041,6 @@ endif # NO_LD_ARCHIVE_FLAGS
  else # os2 vacpp
  	$(MKSHLIB) -O:$@ -DLL -INC:_dllentry $(LDFLAGS) $(OBJS) $(LOBJS) $(EXTRA_DSO_LDOPTS) $(OS_LIBS) $(EXTRA_LIBS) $(DEF_FILE)
  endif # !os2 vacpp
@@ -47,7 +47,7 @@ $OpenBSD: patch-config_rules_mk,v 1.2 2005/07/13 04:49:56 jolan Exp $
  ifndef NO_COMPONENT_LINK_MAP
  ifndef MOZ_COMPONENTS_VERSION_SCRIPT_LDFLAGS
  ifndef MOZ_DEBUG
-@@ -1167,6 +1166,14 @@ endif
+@@ -1131,6 +1130,14 @@ endif
  	$(REPORT_BUILD)
  	@$(MAKE_DEPS_AUTO)
  	$(ELOG) $(CCC) $(OUTOPTION)$@ -c $(COMPILE_CXXFLAGS) $(_VPATH_SRCS)

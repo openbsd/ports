@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/07/13 04:49:56 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/08/04 05:06:54 jolan Exp $
 %%SHARED%%
 bin/minimo
 minimo/
@@ -92,6 +92,7 @@ minimo/chrome/fullScreen.js
 minimo/chrome/general.xml
 minimo/chrome/global-strres.properties
 minimo/chrome/global.css
+minimo/chrome/global.dtd
 minimo/chrome/globalBindings.xml
 minimo/chrome/globalOverlay.js
 minimo/chrome/globalOverlay.xul
@@ -119,8 +120,8 @@ minimo/chrome/nativescrollbar.xml
 minimo/chrome/navigator.dtd
 minimo/chrome/navigator.properties
 minimo/chrome/necko.properties
+minimo/chrome/netError.css
 minimo/chrome/netError.dtd
-minimo/chrome/netError.js
 minimo/chrome/netError.xhtml
 minimo/chrome/nsClipboard.js
 minimo/chrome/nsDragAndDrop.js
@@ -222,6 +223,7 @@ minimo/chrome/viewSource.properties
 minimo/chrome/wizard.css
 minimo/chrome/wizard.properties
 minimo/chrome/wizard.xml
+minimo/chrome/xbl-marquee.css
 minimo/chrome/xbl-marquee.xml
 minimo/chrome/xbl.properties
 minimo/chrome/xmlparser.properties
@@ -289,6 +291,7 @@ minimo/components/necko_viewsource.xpt
 minimo/components/nsHelperAppDlg.js
 minimo/components/nsProgressDialog.js
 minimo/components/nsProxyAutoConfig.js
+minimo/components/nsSample.js
 minimo/components/oji.xpt
 minimo/components/pipboot.xpt
 minimo/components/pipnss.xpt
@@ -297,6 +300,7 @@ minimo/components/prefetch.xpt
 minimo/components/profile.xpt
 minimo/components/progressDlg.xpt
 minimo/components/proxyObjInst.xpt
+minimo/components/proxytest.xpt
 minimo/components/rdf.xpt
 minimo/components/search.xpt
 minimo/components/shistory.xpt
@@ -318,7 +322,9 @@ minimo/components/xpcom_io.xpt
 minimo/components/xpcom_obsolete.xpt
 minimo/components/xpcom_threads.xpt
 minimo/components/xpcom_xpti.xpt
+minimo/components/xpcomsample.xpt
 minimo/components/xpconnect.xpt
+minimo/components/xpconnect_tests.xpt
 minimo/components/xulappinfo.js
 minimo/components/xulappinfo.xpt
 minimo/components/xuldoc.xpt
@@ -359,6 +365,7 @@ minimo/res/html/gopher-sound.gif
 minimo/res/html/gopher-telnet.gif
 minimo/res/html/gopher-text.gif
 minimo/res/html/gopher-unknown.gif
+minimo/res/jarlist.dat
 minimo/res/langGroups.properties
 minimo/res/language.properties
 minimo/res/loading-image.gif
@@ -431,8 +438,15 @@ minimo/res/samples/toolbarTest1.xul
 minimo/res/samples/treeTest1.css
 minimo/res/samples/treeTest1.xul
 minimo/res/samples/widgets.xul
+minimo/res/samples/xpconnect-sample.html
 minimo/res/samples/xpmenu.xul
 minimo/res/samples/xulTest.css
+minimo/res/strres-test.dtd
+minimo/res/strres-test.html
+minimo/res/strres-test.js
+minimo/res/strres-test.xul
+minimo/res/strres.properties
+minimo/res/test.properties
 minimo/res/throbber/
 minimo/res/throbber/anim.gif
 minimo/res/throbber/anims00.gif
@@ -467,6 +481,8 @@ minimo/res/throbber/anims28.gif
 minimo/res/throbber/anims29.gif
 minimo/res/ua.css
 minimo/res/unixcharset.properties
+minimo/res/urlparse.dat
+minimo/res/urlparse_unx.dat
 minimo/res/viewer.properties
 minimo/res/viewsource.css
 minimo/run-minimo.sh

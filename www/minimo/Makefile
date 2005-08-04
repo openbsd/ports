@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/07/13 04:49:56 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2005/08/04 05:06:54 jolan Exp $
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
 COMMENT=	"mini mozilla"
-DISTNAME=	minimo-20050712
+DISTNAME=	minimo-20050802
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/
 
@@ -89,7 +89,7 @@ CONFIGURE_ARGS+=						\
 		--enable-image-decoders=png,gif,jpeg 		\
 		--enable-application=suite
 
-CONFIGURE_ARGS+=--enable-debug
+CONFIGURE_ARGS+=--enable-debug --enable-optimize=-O0 --enable-tests
 INSTALL_STRIP=
 
 CONFIGURE_ENV=	PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
@@ -115,6 +115,7 @@ pre-configure:
 	@perl -pi -e 's|_SO_VERSION_|${SO_VERSION}|g' \
 		${WRKSRC}/nsprpub/pr/include/md/_openbsd.h \
 		${WRKSRC}/xpcom/components/nsNativeComponentLoader.cpp
+	touch ${WRKSRC}/embedding/minimo/chrome/skin/m.jpg
 
 post-build:
 	cd ${WRKSRC}/embedding/config && ${MAKE_PROGRAM}
