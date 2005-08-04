@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2005/05/22 11:36:09 alek Exp $
+# $OpenBSD: Makefile,v 1.143 2005/08/04 17:06:24 naddy Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -113,6 +113,7 @@
      SUBDIR += pornview
      SUBDIR += povray
      SUBDIR += povray,no_x11
+     SUBDIR += pstoedit
      SUBDIR += py-Imaging
      SUBDIR += py-dot
      SUBDIR += py-gd
