@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.2 2005/07/27 21:42:44 jolan Exp $
-# Much help came from Alexandre Anrio, Robert Nagy, Bernd Ahlers,
+# $OpenBSD: Makefile,v 1.3 2005/08/04 22:22:33 aanriot Exp $
+# Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
 COMMENT=	"802.11 layer2 wireless network detector, sniffer, and IDS"
@@ -12,7 +12,7 @@ CATEGORIES=	net security
 HOMEPAGE=	http://www.kismetwireless.net/
 MASTER_SITES=	${HOMEPAGE}code/
 
-MAINTAINER=		Matthias Kilian <kili@outback.escape.de>
+MAINTAINER=	Matthias Kilian <kili@outback.escape.de>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
