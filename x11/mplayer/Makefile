@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2005/07/27 11:56:01 biorn Exp $
+# $OpenBSD: Makefile,v 1.86 2005/08/04 22:43:18 robert Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -7,7 +7,7 @@ COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
 DISTNAME=		MPlayer-1.0pre7
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}p1
+PKGNAME=		${DISTNAME:L}p2
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -79,6 +79,11 @@ CONFIGURE_ARGS+=--disable-altivec
 
 FLAVORS=	arts esd sdl ggi debug mad no_x11 aa
 FLAVOR?=
+
+.if ${MACHINE_ARCH:Marm}
+CONFIGURE_ARGS+=--disable-mp3lib
+FLAVOR+=	mad
+.endif
 
 .if ${FLAVOR:L:Marts}
 CONFIGURE_ARGS+=--enable-arts

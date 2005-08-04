@@ -32,6 +32,16 @@ sysctl machdep.userldt=1
 
 Both sysctl settings can also be achieved via /etc/sysctl.conf.
 
+On arm (e.g. Zaurus) you may encounter slow video output.
+In this case you can disable the X.Org screen rotation in
+/etc/X11/xorg.conf. Depending on the video you are playing
+you may want to pass the -framedrop or the -hardframedrop
+option to mplayer.
+By default we disable the internal mp3lib (mpg123), because
+it relies on the FPU. Instead of using mp3lib the mad flavor
+is enabled by default. If you want to use libmad as an audio
+decoder please pass the -ac mad option to mplayer.
+
 Flavors:
 
   arts: enables arts, requires x11/kde/arts3
