@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/08/04 17:05:22 naddy Exp $
+%%SHARED%%
+bin/pstoedit
+bin/pstoedit-config
+include/pstoedit/
+include/pstoedit/base64writer.h
+include/pstoedit/cppcomp.h
+include/pstoedit/drvbase.h
+include/pstoedit/drvfuncs.h
+include/pstoedit/miscutil.h
+include/pstoedit/ordlist.h
+include/pstoedit/poptions.h
+include/pstoedit/psimage.h
+include/pstoedit/pstoedit.h
+include/pstoedit/pstoeditoptions.h
+include/pstoedit/pstoeditoutputlib.h
+include/pstoedit/pstoedll.h
+lib/libpstoedit.a
+lib/libpstoedit.la
+lib/pkgconfig/
+lib/pkgconfig/pstoedit.pc
+lib/pstoedit/
+@comment lib/pstoedit/libp2edrvstd.a
+@comment lib/pstoedit/libp2edrvstd.la
+@man man/man1/pstoedit.1
+share/aclocal/
+share/aclocal/pstoedit.m4
+share/pstoedit/
+share/pstoedit/examplefigmap.fmp
+share/pstoedit/latex2e.fmp
+share/pstoedit/mpost.fmp
+share/pstoedit/safer.ps
+share/pstoedit/svg.fmp
+share/pstoedit/swffonts/
+share/pstoedit/swffonts/default.fdb
+share/pstoedit/wemf.fmp

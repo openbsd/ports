@@ -1,0 +1,33 @@
+pstoedit translates PostScript and PDF graphics into other vector
+formats. Currently pstoedit can generate the following major formats:
+
+- built-in:
+
+   * Flattened PostScript (with or without Bezier curves) (.fps)
+   * Simplified PostScript with curves (.spsc)
+   * .gs (any device that GhostScript provides)
+   * AI (Adobe Illustrator) (based on ps2ai.ps - not a real pstoedit
+      driver - see manual)
+
+- via the libp2edrvstd.so module (not available on static platforms):
+
+   * DXF - CAD exchange format
+   * gnuplot
+   * gschem
+   * HPGL
+   * Idraw (in fact a special form of EPS that idraw can read)
+   * Java 1 or Java 2 applet
+   * Kontour (.kil)
+   * LaTeX2e picture (.tex)
+   * LWO - LightWave 3D
+   * Mathematica Graphics (.mma)
+   * MetaPost (.mp) format for usage with TeX/LaTeX
+   * PCB
+   * PDF - Adobe's Portable Document Format
+   * PIC format for troff/groff
+   * RIB - RenderMan
+   * RPL - Real3D
+   * Skencil/Sketch (.sk)
+   * Tcl/Tk
+   * Tgif .obj format (for tgif version >= 3)
+   * XFig (.fig)

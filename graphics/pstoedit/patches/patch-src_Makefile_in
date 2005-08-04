@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2005/08/04 17:05:22 naddy Exp $
+--- src/Makefile.in.orig	Thu Jan  6 22:03:00 2005
++++ src/Makefile.in	Thu Jul 28 01:07:15 2005
+@@ -472,9 +472,9 @@ clean-pkglibLTLIBRARIES:
+ libp2edrvlplot.la: $(libp2edrvlplot_la_OBJECTS) $(libp2edrvlplot_la_DEPENDENCIES) 
+ 	$(CXXLINK) -rpath $(pkglibdir) $(libp2edrvlplot_la_LDFLAGS) $(libp2edrvlplot_la_OBJECTS) $(libp2edrvlplot_la_LIBADD) $(LIBS)
+ libp2edrvmagick++.la: $(libp2edrvmagick___la_OBJECTS) $(libp2edrvmagick___la_DEPENDENCIES) 
+-	$(CXXLINK) -rpath $(pkglibdir) $(libp2edrvmagick___la_LDFLAGS) $(libp2edrvmagick___la_OBJECTS) $(libp2edrvmagick___la_LIBADD) $(LIBS)
++	$(CXXLINK) -module -avoid-version -rpath $(pkglibdir) $(libp2edrvmagick___la_LDFLAGS) $(libp2edrvmagick___la_OBJECTS) $(libp2edrvmagick___la_LIBADD) $(LIBS)
+ libp2edrvstd.la: $(libp2edrvstd_la_OBJECTS) $(libp2edrvstd_la_DEPENDENCIES) 
+-	$(CXXLINK) -rpath $(pkglibdir) $(libp2edrvstd_la_LDFLAGS) $(libp2edrvstd_la_OBJECTS) $(libp2edrvstd_la_LIBADD) $(LIBS)
++	$(CXXLINK) -module -avoid-version -rpath $(pkglibdir) $(libp2edrvstd_la_LDFLAGS) $(libp2edrvstd_la_OBJECTS) $(libp2edrvstd_la_LIBADD) $(LIBS)
+ libp2edrvswf.la: $(libp2edrvswf_la_OBJECTS) $(libp2edrvswf_la_DEPENDENCIES) 
+ 	$(CXXLINK) -rpath $(pkglibdir) $(libp2edrvswf_la_LDFLAGS) $(libp2edrvswf_la_OBJECTS) $(libp2edrvswf_la_LIBADD) $(LIBS)
+ libp2edrvwmf.la: $(libp2edrvwmf_la_OBJECTS) $(libp2edrvwmf_la_DEPENDENCIES) 

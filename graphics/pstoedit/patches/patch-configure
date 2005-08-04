@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2005/08/04 17:05:22 naddy Exp $
+--- configure.orig	Thu Jan  6 22:03:06 2005
++++ configure	Thu Jul 28 08:17:22 2005
+@@ -21463,9 +21463,7 @@ echo "${ECHO_T}GNU on RiscOS" >&6
+   else
+     echo "$as_me:$LINENO: result: GNU" >&5
+ echo "${ECHO_T}GNU" >&6
+-    SPECIAL_CXXFLAGS="-DBUGGYGPP -pedantic -Wall -Wwrite-strings -Wcast-qual -Wpointer-arith "
+   fi
+-  CXXFLAGS="-g"
+ elif test `echo "$CXX" | egrep -c 'xlC$'` -eq 1; then
+   echo "$as_me:$LINENO: result: AIX xlC" >&5
+ echo "${ECHO_T}AIX xlC" >&6
