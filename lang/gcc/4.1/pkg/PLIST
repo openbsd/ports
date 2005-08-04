@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/05/16 11:14:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/08/04 14:51:37 espie Exp $
 %%SHARED%%
 bin/ecpp
 bin/egcc
@@ -7,6 +7,11 @@ bin/egcov
 bin/${CONFIG}-egcc
 bin/${CONFIG}-gcc-${V}
 include/mf-runtime.h
+include/ssp/
+include/ssp/ssp.h
+include/ssp/stdio.h
+include/ssp/string.h
+include/ssp/unistd.h
 @info info/cpp.info
 @info info/cppinternals.info
 @info info/gcc.info
@@ -31,11 +36,13 @@ lib/gcc/${CONFIG}/${V}/include/sys/
 lib/gcc/${CONFIG}/${V}/include/sys/types.h
 lib/gcc/${CONFIG}/${V}/include/syslimits.h
 lib/gcc/${CONFIG}/${V}/include/unistd.h
+lib/gcc/${CONFIG}/${V}/include/unwind.h
 lib/gcc/${CONFIG}/${V}/install-tools/
 lib/gcc/${CONFIG}/${V}/install-tools/gsyslimits.h
 lib/gcc/${CONFIG}/${V}/install-tools/include/
 lib/gcc/${CONFIG}/${V}/install-tools/include/README
 lib/gcc/${CONFIG}/${V}/install-tools/include/limits.h
+lib/gcc/${CONFIG}/${V}/install-tools/include/unwind.h
 lib/gcc/${CONFIG}/${V}/install-tools/macro_list
 lib/gcc/${CONFIG}/${V}/install-tools/mkheaders.conf
 lib/gcc/${CONFIG}/${V}/libgcc.a
@@ -45,6 +52,10 @@ lib/libmudflap.a
 lib/libmudflap.la
 lib/libmudflapth.a
 lib/libmudflapth.la
+lib/libssp.a
+lib/libssp.la
+lib/libssp_nonshared.a
+lib/libssp_nonshared.la
 libexec/gcc/
 libexec/gcc/${CONFIG}/
 libexec/gcc/${CONFIG}/${V}/

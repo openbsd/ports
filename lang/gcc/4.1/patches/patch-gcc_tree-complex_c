@@ -1,14 +1,12 @@
-$OpenBSD: patch-gcc_tree-complex_c,v 1.1 2005/06/13 19:54:30 espie Exp $
---- gcc/tree-complex.c.orig	Mon Jun 13 20:22:58 2005
-+++ gcc/tree-complex.c	Mon Jun 13 20:23:12 2005
-@@ -333,8 +333,8 @@ create_components (void)
- 	    {
- 	      const char *name = IDENTIFIER_POINTER (DECL_NAME (var));
+$OpenBSD: patch-gcc_tree-complex_c,v 1.2 2005/08/04 14:51:37 espie Exp $
+--- gcc/tree-complex.c.orig	Fri Jul 29 16:51:58 2005
++++ gcc/tree-complex.c	Thu Aug  4 10:54:45 2005
+@@ -397,7 +397,7 @@ create_one_component_var (tree type, tre
+       const char *name = IDENTIFIER_POINTER (DECL_NAME (orig));
+       tree inner_type;
  
--	      DECL_NAME (r) = get_identifier (ACONCAT ((name, "$real", NULL)));
--	      DECL_NAME (i) = get_identifier (ACONCAT ((name, "$imag", NULL)));
-+	      DECL_NAME (r) = get_identifier (ACONCAT ((name, "$real", (char *)0)));
-+	      DECL_NAME (i) = get_identifier (ACONCAT ((name, "$imag", (char *)0)));
+-      DECL_NAME (r) = get_identifier (ACONCAT ((name, suffix, NULL)));
++      DECL_NAME (r) = get_identifier (ACONCAT ((name, suffix, (char *)0)));
  
- 	      SET_DECL_DEBUG_EXPR (r, build1 (REALPART_EXPR, inner_type, var));
- 	      SET_DECL_DEBUG_EXPR (i, build1 (IMAGPART_EXPR, inner_type, var));
+       inner_type = TREE_TYPE (TREE_TYPE (orig));
+       SET_DECL_DEBUG_EXPR (r, build1 (code, type, orig));

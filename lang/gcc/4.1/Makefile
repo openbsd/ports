@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2005/06/13 19:54:30 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2005/08/04 14:51:36 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
 V=4.1.0
-FULL_VERSION=4.1-20050611
+FULL_VERSION=4.1-20050730
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -12,7 +12,7 @@ MAKE_FORTRAN=Yes
 MAKE_OBJC=Yes
 #MAKE_JAVA=Yes
 .if ${MACHINE_ARCH} == "i386"
-#MAKE_ADA=Yes
+MAKE_ADA=Yes
 .endif
 
 MAKE_GXX?=No
@@ -103,6 +103,7 @@ post-extract:
 	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
 	chmod a+x ${WRKDIR}/bin/$f
 .endfor
+	ln -s /usr/bin/nm ${WRKDIR}/bin/enm
 
 .endif
 CONFIGURE_ENV+=am_cv_func_iconv=no
@@ -120,6 +121,10 @@ CONFIGURE_ARGS+= \
 	--disable-checking \
 	--with-system-zlib \
 	--enable-libmudflap \
+	--with-as=/usr/bin/as \
+	--with-ld=/usr/bin/ld \
+	--with-gnu-ld \
+	--with-gnu-as \
 	--enable-languages=${LANGS}
 
 # This is needed, as internal cpp is no longer compatible with the

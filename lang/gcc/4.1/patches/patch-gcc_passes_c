@@ -1,18 +1,18 @@
-$OpenBSD: patch-gcc_tree-optimize_c,v 1.4 2005/05/29 13:26:49 espie Exp $
---- gcc/tree-optimize.c.orig	Wed May 25 14:33:36 2005
-+++ gcc/tree-optimize.c	Sun May 29 13:55:47 2005
-@@ -248,26 +248,26 @@ register_one_dump_file (struct tree_opt_
+$OpenBSD: patch-gcc_passes_c,v 1.1 2005/08/04 14:51:37 espie Exp $
+--- gcc/passes.c.orig	Thu Aug  4 13:49:53 2005
++++ gcc/passes.c	Thu Aug  4 13:50:20 2005
+@@ -316,26 +316,26 @@ register_one_dump_file (struct tree_opt_
      sprintf (num, "%d", ((int) pass->static_pass_number < 0
  			 ? 1 : pass->static_pass_number));
  
 -  dot_name = concat (".", pass->name, num, NULL);
-+  dot_name = concat (".", pass->name, num, (void *)0);
++  dot_name = concat (".", pass->name, num, (char *)0);
    if (ipa)
      {
 -      flag_name = concat ("ipa-", pass->name, num, NULL);
 -      glob_name = concat ("ipa-", pass->name, NULL);
-+      flag_name = concat ("ipa-", pass->name, num, (void *)0);
-+      glob_name = concat ("ipa-", pass->name, (void *)0);
++      flag_name = concat ("ipa-", pass->name, num, (char *)0);
++      glob_name = concat ("ipa-", pass->name, (char *)0);
        /* First IPA dump is cgraph that is dumped via separate channels.  */
        pass->static_pass_number = dump_register (dot_name, flag_name, glob_name,
                                                  TDF_IPA, n + 1, 0);
@@ -21,8 +21,8 @@ $OpenBSD: patch-gcc_tree-optimize_c,v 1.4 2005/05/29 13:26:49 espie Exp $
      {
 -      flag_name = concat ("tree-", pass->name, num, NULL);
 -      glob_name = concat ("tree-", pass->name, NULL);
-+      flag_name = concat ("tree-", pass->name, num, (void *)0);
-+      glob_name = concat ("tree-", pass->name, (void *)0);
++      flag_name = concat ("tree-", pass->name, num, (char *)0);
++      glob_name = concat ("tree-", pass->name, (char *)0);
        pass->static_pass_number = dump_register (dot_name, flag_name, glob_name,
                                                  TDF_TREE, n + TDI_tree_all, 0);
      }
@@ -30,8 +30,8 @@ $OpenBSD: patch-gcc_tree-optimize_c,v 1.4 2005/05/29 13:26:49 espie Exp $
      {
 -      flag_name = concat ("rtl-", pass->name, num, NULL);
 -      glob_name = concat ("rtl-", pass->name, NULL);
-+      flag_name = concat ("rtl-", pass->name, num, (void *)0);
-+      glob_name = concat ("rtl-", pass->name, (void *)0);
++      flag_name = concat ("rtl-", pass->name, num, (char *)0);
++      glob_name = concat ("rtl-", pass->name, (char *)0);
        pass->static_pass_number = dump_register (dot_name, flag_name, glob_name,
                                                  TDF_RTL, n, pass->letter);
      }

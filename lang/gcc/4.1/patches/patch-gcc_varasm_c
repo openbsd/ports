@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_varasm_c,v 1.5 2005/06/13 19:54:30 espie Exp $
---- gcc/varasm.c.orig	Wed Jun  8 02:15:53 2005
-+++ gcc/varasm.c	Mon Jun 13 18:59:33 2005
-@@ -192,7 +192,7 @@ initialize_cold_section_name (void)
+$OpenBSD: patch-gcc_varasm_c,v 1.6 2005/08/04 14:51:37 espie Exp $
+--- gcc/varasm.c.orig	Wed Jul 27 23:02:55 2005
++++ gcc/varasm.c	Thu Aug  4 10:54:02 2005
+@@ -195,7 +195,7 @@ initialize_cold_section_name (void)
  
        stripped_name = targetm.strip_name_encoding (name);
  
