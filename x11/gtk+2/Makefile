@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2005/05/24 21:29:11 marcm Exp $
+# $OpenBSD: Makefile,v 1.23 2005/08/05 17:15:09 kurt Exp $
 
 NOT_FOR_ARCHS=			${NO_SHARED_ARCHS}
 
 COMMENT=			"multi-platform graphical toolkit"
 COMMENT-docs=           	"gtk+-2 documentation"
 
-VERSION=			2.6.7
+VERSION=			2.6.9
 DISTNAME=			gtk+-${VERSION}
 PKGNAME=			gtk+2-${VERSION}
 PKGNAME-docs=			gtk+2-docs-${VERSION}

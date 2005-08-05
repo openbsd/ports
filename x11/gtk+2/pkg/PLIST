@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2005/05/24 21:29:11 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.21 2005/08/05 17:15:09 kurt Exp $
 bin/gdk-pixbuf-csource
 bin/gdk-pixbuf-query-loaders
 bin/gtk-demo
@@ -316,6 +316,7 @@ share/gtk-2.0/demo/button_box.c
 share/gtk-2.0/demo/changedisplay.c
 share/gtk-2.0/demo/clipboard.c
 share/gtk-2.0/demo/colorsel.c
+share/gtk-2.0/demo/combobox.c
 share/gtk-2.0/demo/dialog.c
 share/gtk-2.0/demo/drawingarea.c
 share/gtk-2.0/demo/editable_cells.c
@@ -338,6 +339,7 @@ share/gtk-2.0/demo/images.c
 share/gtk-2.0/demo/list_store.c
 share/gtk-2.0/demo/menus.c
 share/gtk-2.0/demo/panes.c
+share/gtk-2.0/demo/pickers.c
 share/gtk-2.0/demo/pixbufs.c
 share/gtk-2.0/demo/rotated_text.c
 share/gtk-2.0/demo/sizegroup.c
@@ -443,6 +445,10 @@ share/locale/hr/LC_MESSAGES/gtk20-properties.mo
 share/locale/hr/LC_MESSAGES/gtk20.mo
 share/locale/hu/LC_MESSAGES/gtk20-properties.mo
 share/locale/hu/LC_MESSAGES/gtk20.mo
+share/locale/hy/
+share/locale/hy/LC_MESSAGES/
+share/locale/hy/LC_MESSAGES/gtk20-properties.mo
+share/locale/hy/LC_MESSAGES/gtk20.mo
 share/locale/ia/
 share/locale/ia/LC_MESSAGES/
 share/locale/ia/LC_MESSAGES/gtk20-properties.mo
