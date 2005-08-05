@@ -1,12 +1,32 @@
-$OpenBSD: patch-configure_in,v 1.1 2004/10/26 09:13:38 espie Exp $
---- configure.in.orig	Sat Oct 23 07:59:13 2004
-+++ configure.in	Sat Oct 23 08:02:32 2004
-@@ -624,7 +624,7 @@ dnl FILE: ./lib/kospell/configure.in.in
+$OpenBSD: patch-configure_in,v 1.2 2005/08/05 10:49:18 espie Exp $
+--- configure.in.orig	Wed Jun  1 11:20:03 2005
++++ configure.in	Tue Jun 14 12:44:39 2005
+@@ -845,8 +845,8 @@ dnl ====================================
+ if test "$compile_pgsql_plugin" = "yes"; then
+   AC_MSG_CHECKING([for PostgreSQL... Step 2 of 4])
+   pgsql_libdirs="$ac_pgsql_libdir /usr/lib /usr/local/lib /usr/local/pgsql/lib /opt/postgres/lib"
+-  AC_FIND_FILE(libpq.so, $pgsql_libdirs, pgsql_libdir)
+-  if test ! -r $pgsql_libdir/libpq.so; then
++  AC_FIND_FILE(libpq.a, $pgsql_libdirs, pgsql_libdir)
++  if test ! -r $pgsql_libdir/libpq.a; then
+     compile_pgsql_plugin="no"
+     AC_MSG_RESULT([not found])
+   else
+@@ -918,7 +918,7 @@ AC_CACHE_VAL(ac_cv_have_knewstuff,
+ AC_FIND_FILE(knewstuff/downloaddialog.h, $kde_incdirs, knewstuff_incdir)
+ ac_knewstuff_includes="$knewstuff_incdir"
+ 
+-AC_FIND_FILE(libknewstuff.so, $kde_libdirs, knewstuff_libdir)
++AC_FIND_FILE(libknewstuff.so.1.0, $kde_libdirs, knewstuff_libdir)
+ ac_knewstuff_libraries="$knewstuff_libdir"
+ 
+ if test "$ac_knewstuff_includes" = NO || test "$ac_knewstuff_libraries" = NO; then
+@@ -1245,7 +1245,7 @@ dnl FILE: ./lib/kotext/configure.in.in
  dnl =======================================================
  
     AC_LANG_SAVE
 -   AC_LANG_C
 +   AC_LANG_CPLUSPLUS
     dnl Check for aspell library
-    KDE_CHECK_LIB(aspell, new_aspell_config, [LIBASPELL="-laspell"])
-    KDE_CHECK_HEADER(aspell.h)
+    AC_MSG_CHECKING([for kspell2/broker.h (kdelibs>3.2)])
+    AC_FIND_FILE(kspell2/broker.h, $kde_includes, ac_kspell2_includes)
