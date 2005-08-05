@@ -1,26 +1,28 @@
---- Makefile.in.orig	Wed Oct 24 19:42:33 2001
-+++ Makefile.in	Fri Nov  9 16:40:42 2001
-@@ -28,8 +28,8 @@
- DESTDIR=
- prefix=@prefix@
+$OpenBSD: patch-Makefile_in,v 1.3 2005/08/05 22:49:56 aanriot Exp $
+--- Makefile.in.orig	Wed Jul 27 10:38:17 2005
++++ Makefile.in	Fri Aug  5 21:38:17 2005
+@@ -31,6 +31,7 @@ prefix=@prefix@
  exec_prefix=@exec_prefix@
--bindir=@bindir@
--mandir=@mandir@
-+BINDIR=@bindir@
-+MANDIR=@mandir@
+ bindir=@bindir@
+ mandir=@mandir@
++datadir=@datadir@
+ sysconfdir=@sysconfdir@
+ CFGDIR=@CFGDIR@
  PACKAGE=@PACKAGE@
- VERSION=@VERSION@
- CPPFLAGS=@CPPFLAGS@
-@@ -58,10 +58,8 @@
- 	rm -f config.h config.cache config.log config.status Makefile
- 
- install: xprobe
+@@ -55,12 +56,10 @@ distclean: clean
+ 	cd libs-external/USI++/src; ${MAKE} distclean
+ 	cd src; ${MAKE} distclean
+ install: src/xprobe2
 -	$(INSTALL_PROGRAM) -d $(DESTDIR)/$(bindir)
 -	$(INSTALL_PROGRAM) -d $(DESTDIR)/$(mandir)/man1
--	$(INSTALL_PROGRAM) -m 0755 xprobe $(DESTDIR)/$(bindir)
--	$(INSTALL_DATA) xprobe.1 $(mandir)/man1
-+	$(INSTALL_PROGRAM) -m 0755 xprobe $(DESTDIR)/$(BINDIR)
-+	$(INSTALL_DATA) xprobe.1 $(DESTDIR)/$(MANDIR)/man1
+-	$(INSTALL_PROGRAM) -d $(DESTDIR)/$(sysconfdir)/xprobe2
+-	$(INSTALL_PROGRAM) -m 0755 src/xprobe2 $(DESTDIR)/$(bindir)
+-	$(INSTALL_PROGRAM) -m 0444 etc/xprobe2.conf $(DESTDIR)/$(sysconfdir)/xprobe2
+-	$(INSTALL_DATA) docs/xprobe2.1 $(DESTDIR)/$(mandir)/man1
++	$(BSD_INSTALL_PROGRAM) src/xprobe2 $(DESTDIR)/$(bindir)
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)/$(datadir)/examples/xprobe2/
++	$(BSD_INSTALL_DATA) etc/xprobe2.conf $(DESTDIR)/$(datadir)/examples/xprobe2/
++	$(BSD_INSTALL_MAN) docs/xprobe2.1 $(DESTDIR)/$(mandir)/man1
  
  configure: configure.in
  	autoheader
