@@ -1,0 +1,28 @@
+$OpenBSD: patch-main_c,v 1.1.1.1 2005/08/06 21:21:53 aanriot Exp $
+--- main.c.orig	Tue Oct  5 20:46:02 2004
++++ main.c	Sun Jan  2 12:14:22 2005
+@@ -125,6 +125,24 @@ main(int argc, char **argv)
+         i++;
+     }
+ 
++    if (geteuid() == 0) {
++	/* We are root; drop privileges to POLIPO_USER */
++	struct passwd	*pw;
++
++	if ((pw = getpwnam(POLIPO_USER)) == NULL) {
++	    do_log(L_ERROR, "No user %s.\n", POLIPO_USER);
++	    exit(1);
++	}
++
++	if (setgroups(1, &pw->pw_gid) ||
++	    setegid(pw->pw_gid) || setgid(pw->pw_gid) ||
++	    seteuid(pw->pw_uid) || setuid(pw->pw_uid)) {
++	    do_log(L_ERROR, "Can't drop privileges.\n");
++	    exit(1);
++	}
++	endpwent();
++    }
++
+     initChunks();
+     initLog();
+     initObject();

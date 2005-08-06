@@ -1,0 +1,4 @@
+Polipo is a small and fast caching web proxy (a web cache, an HTTP
+proxy) designed to be used by one person or a small group of people. I
+like to think that is similar in spirit to WWWOFFLE, but the
+implementation techniques are more like the ones ones used by Squid.

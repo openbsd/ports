@@ -1,0 +1,15 @@
+When run as the root user, the polipo daemon will drop privileges to
+that of the _polipo user and its login group.
+
+Some sample configuration files have been installed in
+${SYSCONFDIR}/polipo.
+
+Additionally, you may wish to start polipo at system start-up time via
+the /etc/rc.local script.
+
+if [ X"${polipo}" == X"YES" -a -x ${PREFIX}/bin/polipo ]; then
+        echo -n ' polipo'
+        ${PREFIX}/bin/polipo daemonise=yes
+fi
+
+and adding "polipo=YES" to /etc/rc.conf.local
