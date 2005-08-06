@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/22 11:48:33 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/08/06 20:37:47 alek Exp $
 
 COMMENT=	"distributed memory object caching system"
 
-DISTNAME=	memcached-1.1.11
+DISTNAME=	memcached-1.1.12
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.danga.com/memcached/
@@ -20,7 +20,5 @@ MASTER_SITES=	${HOMEPAGE}/dist/
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-libevent=/usr
-
-NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
