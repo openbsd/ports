@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2005/08/06 11:40:36 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2005/08/06 19:11:47 sturm Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
-
-ONLY_FOR_ARCHS=	amd64 arm i386 macppc sparc
 
 COMMENT=	"802.11 layer2 wireless network detector, sniffer, and IDS"
 
 V=		2005-07-R1a
 DISTNAME=	kismet-${V}
-PKGNAME=	kismet-${V:S,-,,g}
+PKGNAME=	kismet-${V:S,-,,g}p0
 CATEGORIES=	net security
 
 HOMEPAGE=	http://www.kismetwireless.net/

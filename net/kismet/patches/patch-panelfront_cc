@@ -1,6 +1,24 @@
-$OpenBSD: patch-panelfront_cc,v 1.1.1.1 2005/07/27 21:37:26 robert Exp $
+$OpenBSD: patch-panelfront_cc,v 1.2 2005/08/06 19:11:47 sturm Exp $
 --- panelfront.cc.orig	Wed Jul 27 12:56:28 2005
 +++ panelfront.cc	Wed Jul 27 12:56:45 2005
+@@ -22,7 +22,7 @@
+ #include <sys/types.h>
+ #include <dirent.h>
+ 
+-#ifdef SYS_OPENBSD
++#if defined(SYS_OPENBSD) && defined(HAVE_MACHINE_APMVAR_H)
+ #include <machine/apmvar.h>
+ #endif
+ 
+@@ -1535,7 +1535,7 @@
+                 closedir(batteries);
+         }
+ 
+-#elif defined(SYS_OPENBSD)
++#elif defined(SYS_OPENBSD) && defined(HAVE_MACHINE_APMVAR_H)
+ 
+ 		struct apm_power_info api;
+ 		int apmfd;
 @@ -1561,7 +1561,7 @@
  			}
  			if (bat_available == 1) {

@@ -1,5 +1,5 @@
 --- configure.in.orig	Mon Jul 25 16:19:44 2005
-+++ configure.in	Wed Jul 27 20:45:37 2005
++++ configure.in	Sat Aug  6 13:57:52 2005
 @@ -127,7 +127,7 @@
      esac
  fi
@@ -22,3 +22,18 @@
  
  		accept(s, addr, addrlen);
  		return 0;
+@@ -845,6 +845,14 @@
+ 	gpslc=""
+ 	pthr="no"
+ fi
++
++# Not all OpenBSD archs have apm:
++
++if test "$bsd" = "yes"; then
++	AC_CHECK_HEADERS([machine/apmvar.h])
++fi
++
++
+ 
+ 
+ AC_ARG_ENABLE(optimization, [  --disable-optimization        disable -Ox gcc optimization],,wantopto=yes)
