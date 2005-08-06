@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/08/04 22:22:33 aanriot Exp $
+# $OpenBSD: Makefile,v 1.4 2005/08/06 11:40:36 robert Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
+
+ONLY_FOR_ARCHS=	amd64 arm i386 macppc sparc
 
 COMMENT=	"802.11 layer2 wireless network detector, sniffer, and IDS"
 
