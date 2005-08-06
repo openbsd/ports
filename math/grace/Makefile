@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/27 07:16:44 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2005/08/06 16:47:38 sturm Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
@@ -18,11 +18,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m z
 
-GRACE_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/ \
-		ftp://ftp.fu-berlin.de/unix/graphics/grace/src/ \
-		ftp://ftp.u-aizu.ac.jp/pub/SciEng/math/grace/src/ \
-		ftp://freedom7.swmed.edu/pub/mirrors/grace/src/
-MASTER_SITES=	${GRACE_SITES} ${GRACE_SITES:S/\/$/\/old\//g}
+GRACE_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/ \
+		ftp://ftp.fu-berlin.de/unix/graphics/ \
+		ftp://ftp.u-aizu.ac.jp/pub/SciEng/math/ \
+		ftp://freedom7.swmed.edu/pub/mirrors/
+MASTER_SITES=	${GRACE_SITES:=grace/src/grace5/}
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/ac-tools
