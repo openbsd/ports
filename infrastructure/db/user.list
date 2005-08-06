@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.31 2005/07/28 10:04:34 robert Exp $
+$OpenBSD: user.list,v 1.32 2005/08/06 21:24:04 aanriot Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -56,3 +56,4 @@ id  user		group		port options
 545 _asterisk		_asterisk	telephony/asterisk
 546 _honeyd		_honeyd		net/honeyd
 547 _kismet		_kismet		net/kismet
+548 _polipo		_polipo		www/polipo
