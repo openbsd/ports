@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2005/03/02 22:31:13 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2005/08/07 14:24:45 sturm Exp $
 
 COMMENT=		"active monitoring tool"
-V=			2.67
+V=			2.71
 DISTNAME=		symon-${V}
-PKGNAME=		${DISTNAME}p0
 CATEGORIES=		sysutils net
 
 HOMEPAGE=		http://www.xs4all.nl/~wpd/symon
