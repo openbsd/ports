@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/08/07 09:45:00 sturm Exp $
+${P5SITE}/Class/
+${P5SITE}/Class/ErrorHandler.pm
+@man man/man3p/Class::ErrorHandler.3p
