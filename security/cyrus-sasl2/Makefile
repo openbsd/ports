@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2005/05/09 14:28:22 jakob Exp $
+# $OpenBSD: Makefile,v 1.27 2005/08/07 22:19:49 aanriot Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
@@ -84,8 +84,6 @@ BROKEN=			choose either mysql or pgsql or sqlite
 LIB_DEPENDS=		sqlite.8.6::databases/sqlite
 CONFIGURE_ARGS+=	--enable-sql \
 			--with-sqlite
-			--without-sqlite \
-			--enable-sql
 .endif
  
 
