@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/06 15:15:40 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/08/07 09:50:32 sturm Exp $
 ${P5SITE}/Convert/PEM/
 ${P5SITE}/Convert/PEM.pm
 ${P5SITE}/Convert/PEM/CBC.pm
-${P5SITE}/Convert/PEM/ErrorHandler.pm
 @man man/man3p/Convert::PEM.3p
 @man man/man3p/Convert::PEM::CBC.3p
-@man man/man3p/Convert::PEM::ErrorHandler.3p

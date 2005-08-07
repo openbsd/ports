@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/06 15:15:40 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/08/07 09:50:32 sturm Exp $
 
 COMMENT=	"read/write access to ASN.1-encoded PEM files"
 
-DISTNAME=	Convert-PEM-0.06
+DISTNAME=	Convert-PEM-0.07
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters security perl5
 
@@ -18,6 +18,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Convert/}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::converters/p5-Convert-ASN1 \
+		::devel/p5-Class-ErrorHandler \
 		::security/p5-Crypt-DES-EDE3
 
 CONFIGURE_STYLE=perl
