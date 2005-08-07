@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2005/06/23 18:14:14 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/08/07 12:41:58 alek Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"ICB protocol plugin for GAIM"
 
-DISTNAME=	gaim-icb-20050618
+DISTNAME=	gaim-icb-20050807
 CATEGORIES=	net
 
 HOMEPAGE=	http://nic.com.pl/~alek/gaim-icb/
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-BUILD_DEPENDS=	::net/gaim \
+BUILD_DEPENDS=	:gaim-*:net/gaim \
 		::devel/pkgconfig
-RUN_DEPENDS=	::net/gaim
+RUN_DEPENDS=	:gaim-*:net/gaim
 
 .include <bsd.port.mk>
