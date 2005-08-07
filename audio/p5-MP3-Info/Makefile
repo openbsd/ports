@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2003/04/18 21:43:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2005/08/07 09:40:06 sturm Exp $
 
 COMMENT=	"Perl5 module for reading MPEG1-Layer3 tags"
 
-DISTNAME=	MP3-Info-1.02
+DISTNAME=	MP3-Info-1.13
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	audio perl5
 
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=MP3/} 
 
-CONFIGURE_STYLE= perl
+CONFIGURE_STYLE=perl
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
