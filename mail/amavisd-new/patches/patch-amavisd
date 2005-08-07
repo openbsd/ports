@@ -1,12 +1,12 @@
-$OpenBSD: patch-amavisd,v 1.1.1.1 2004/04/23 15:24:54 robert Exp $
---- amavisd.orig	2004-04-21 21:29:30.000000000 -0500
-+++ amavisd	2004-04-21 21:31:06.000000000 -0500
-@@ -109,7 +109,7 @@ sub fetch_modules($$@) {
+$OpenBSD: patch-amavisd,v 1.2 2005/08/07 21:25:55 sturm Exp $
+--- amavisd.orig	Sat Jul 16 21:05:50 2005
++++ amavisd	Sat Jul 16 21:07:13 2005
+@@ -128,7 +128,7 @@ sub fetch_modules($$@) {
  
  BEGIN {
-     fetch_modules('REQUIRED BASIC MODULES', 1, qw(
--	Exporter POSIX Fcntl Socket Errno Carp Time::HiRes
-+	Exporter POSIX Fcntl Socket Errno Carp Carp::Heavy Time::HiRes
- 	IO::File IO::Socket IO::Socket::UNIX IO::Socket::INET
- 	IO::Handle IO::Wrap IO::Stringy
- 	Digest::MD5 Unix::Syslog File::Basename File::Copy
+   fetch_modules('REQUIRED BASIC MODULES', 1, qw(
+-    Exporter POSIX Fcntl Socket Errno Carp Time::HiRes
++    Exporter POSIX Fcntl Socket Errno Carp Carp::Heavy Time::HiRes
+     IO::Handle IO::File IO::Socket IO::Socket::UNIX IO::Socket::INET
+     IO::Wrap IO::Stringy Digest::MD5 Unix::Syslog File::Basename
+     Mail::Field Mail::Address Mail::Header Mail::Internet Compress::Zlib

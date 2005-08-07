@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/24 10:54:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/08/07 21:25:55 sturm Exp $
 @newgroup _vscan:530
 @newuser _vscan:530:_vscan::Amavisd-new Daemon:/var/empty:/sbin/nologin
 sbin/amavisd
@@ -8,6 +8,7 @@ share/doc/amavisd-new/INSTALL
 share/doc/amavisd-new/LDAP.schema
 share/doc/amavisd-new/LICENSE
 share/doc/amavisd-new/MANIFEST
+share/doc/amavisd-new/README.banned
 share/doc/amavisd-new/README.chroot
 share/doc/amavisd-new/README.contributed
 share/doc/amavisd-new/README.courier
@@ -26,8 +27,12 @@ share/doc/amavisd-new/README.postfix
 share/doc/amavisd-new/README.protocol
 share/doc/amavisd-new/README.sendmail
 share/doc/amavisd-new/README.sendmail-dual
+share/doc/amavisd-new/README.sql
 share/doc/amavisd-new/RELEASE_NOTES
-share/doc/amavisd-new/amavisd.conf
+share/examples/amavisd-new/
+share/examples/amavisd-new/amavisd.conf-sample
+share/examples/amavisd-new/amavisd.conf-default
+share/examples/amavisd-new/amavisd.conf
 @sample ${SYSCONFDIR}/amavisd.conf
 @owner _vscan
 @group _vscan

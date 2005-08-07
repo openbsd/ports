@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/04/23 15:24:54 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2005/08/07 21:25:55 sturm Exp $
 
 COMMENT=		"interface between mailer MTA and content checkers"
 
-V=20030616
-VPATCH=p9
-DISTNAME=		amavisd-new-${V}-${VPATCH}
-PKGNAME=		amavisd-new-${V}pl9
+VERSION=		2.3.2
+DISTNAME=		amavisd-new-${VERSION}
 CATEGORIES=		mail security
 
 HOMEPAGE=		http://www.ijs.si/software/amavisd/
@@ -25,22 +23,25 @@ RUN_DEPENDS=		::archivers/arc \
 			::archivers/lha \
 			::archivers/lzop \
 			::archivers/p5-Archive-Tar \
-			::archivers/p5-Archive-Zip \
+			:p5-Archive-Zip->=1.14:archivers/p5-Archive-Zip \
 			::archivers/p5-Compress-Zlib \
 			::archivers/unarj \
 			::archivers/unrar \
 			::archivers/unzip \
 			::archivers/zoo \
 			::converters/p5-Convert-TNEF \
-			::converters/p5-Convert-UUlib \
+			:p5-Convert-UUlib->=1.05:converters/p5-Convert-UUlib \
 			::devel/p5-Net-Server \
 			::mail/p5-Mail-SpamAssassin \
 			::mail/p5-MIME-tools \
 			::sysutils/p5-Unix-Syslog
 
-WRKDIST=		${WRKDIR}/amavisd-new-${V}
+WRKDIST=		${WRKDIR}/amavisd-new-${VERSION}
 
 NO_BUILD=		Yes
+NO_REGRESS=		Yes
+
+PKG_ARCH=		*
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/amavisd ${PREFIX}/sbin/amavisd
@@ -54,7 +55,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README_FILES/README.* \
 			${PREFIX}/share/doc/amavisd-new
 	${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES ${PREFIX}/share/doc/amavisd-new
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/amavisd-new
 	${INSTALL_DATA} ${WRKSRC}/amavisd.conf \
-			${PREFIX}/share/doc/amavisd-new/amavisd.conf
+			${PREFIX}/share/examples/amavisd-new/amavisd.conf
+	${INSTALL_DATA} ${WRKSRC}/amavisd.conf-default \
+			${PREFIX}/share/examples/amavisd-new/amavisd.conf-default
+	${INSTALL_DATA} ${WRKSRC}/amavisd.conf-sample \
+			${PREFIX}/share/examples/amavisd-new/amavisd.conf-sample
 
 .include <bsd.port.mk>

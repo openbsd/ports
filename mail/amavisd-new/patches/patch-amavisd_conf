@@ -1,32 +1,28 @@
-$OpenBSD: patch-amavisd_conf,v 1.1.1.1 2004/04/23 15:24:54 robert Exp $
---- amavisd.conf.orig	2004-04-21 21:27:54.000000000 -0500
-+++ amavisd.conf	2004-04-21 21:29:04.000000000 -0500
-@@ -51,7 +51,7 @@ use strict;
- # $MYHOME serves as a quick default for some other configuration settings.
- # More refined control is available with each individual setting further down.
- # $MYHOME is not used directly by the program. No trailing slash!
--#$MYHOME = '/var/lib/amavis';   # (default is '/var/amavis')
-+$MYHOME = '/var/amavisd';   # (default is '/var/amavis')
+$OpenBSD: patch-amavisd_conf,v 1.2 2005/08/07 21:25:55 sturm Exp $
+--- amavisd.conf.orig	Wed Jun 29 12:26:05 2005
++++ amavisd.conf	Sun Aug  7 19:15:35 2005
+@@ -14,12 +14,12 @@ use strict;
+ # @bypass_spam_checks_maps  = (1);  # uncomment to DISABLE anti-spam code
  
- # $mydomain serves as a quick default for some other configuration settings.
- # More refined control is available with each individual setting further down.
-@@ -62,8 +62,8 @@ $mydomain = 'example.com';      # (no us
+ $max_servers = 2;            # number of pre-forked children (2..15 is common)
+-$daemon_user  = 'vscan';     # (no default;  customary: vscan or amavis)
+-$daemon_group = 'vscan';     # (no default;  customary: vscan or amavis)
++$daemon_user  = '_vscan';     # (no default;  customary: vscan or amavis)
++$daemon_group = '_vscan';     # (no default;  customary: vscan or amavis)
  
- # Set the user and group to which the daemon will change if started as root
- # (otherwise just keeps the UID unchanged, and these settings have no effect):
--$daemon_user  = 'vscan';	# (no default;  customary: vscan or amavis)
--$daemon_group = 'sweep';	# (no default;  customary: vscan or amavis)
-+$daemon_user  = '_vscan';	# (no default;  customary: vscan or amavis)
-+$daemon_group = '_vscan';	# (no default;  customary: vscan or amavis)
+ $mydomain = 'example.com';   # a convenient default for other settings
  
- # Runtime working directory (cwd), and a place where
- # temporary directories for unpacking mail are created.
-@@ -276,7 +276,7 @@ $LOGFILE = "$MYHOME/amavis.log";  # (def
- # 3: server, client
- # 4: decompose parts
- # 5: more debug details
--$log_level = 2;		  # (defaults to 0)
-+$log_level = 0;		  # (defaults to 0)
+-$MYHOME   = '/var/amavis';   # a convenient default for other settings
++$MYHOME   = '/var/amavisd';   # a convenient default for other settings
+ $TEMPBASE = "$MYHOME/tmp";   # working directory, needs to be created manually
+ $ENV{TMPDIR} = $TEMPBASE;    # environment variable TMPDIR
+ $QUARANTINEDIR = '/var/virusmails';
+@@ -42,7 +42,7 @@ $log_recip_templ = undef;    # disable b
+ $DO_SYSLOG = 1;              # log via syslogd (preferred)
+ $SYSLOG_LEVEL = 'mail.debug';
  
- # Customizable template for the most interesting log file entry (e.g. with
- # $log_level=0) (take care to properly quote Perl special characters like '\')
+-$enable_db = 1;              # enable use of BerkeleyDB/libdb (SNMP and nanny)
++$enable_db = 0;              # enable use of BerkeleyDB/libdb (SNMP and nanny)
+ $enable_global_cache = 1;    # enable use of libdb-based cache if $enable_db=1
+ 
+ $inet_socket_port = 10024;   # listen on this local TCP port(s) (see $protocol)
