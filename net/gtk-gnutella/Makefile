@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2005/06/04 16:11:33 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2005/08/07 21:27:52 sturm Exp $
 
 COMMENT=		"Gtk-based GUI client for the Gnutella Network"
 
-DISTNAME=		gtk-gnutella-0.95.3
+DISTNAME=		gtk-gnutella-0.95.4
 CATEGORIES=     	net 
 
 HOMEPAGE=		http://gtk-gnutella.sourceforge.net/

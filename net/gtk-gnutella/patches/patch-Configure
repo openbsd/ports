@@ -1,6 +1,6 @@
-$OpenBSD: patch-Configure,v 1.5 2005/06/04 16:11:33 sturm Exp $
---- Configure.orig	Sun May 22 17:35:41 2005
-+++ Configure	Tue May 31 20:02:08 2005
+$OpenBSD: patch-Configure,v 1.6 2005/08/07 21:27:52 sturm Exp $
+--- Configure.orig	Sun Jul 31 20:46:26 2005
++++ Configure	Sun Aug  7 20:58:26 2005
 @@ -307,7 +307,7 @@ d_isascii=''
  d_memcpy=''
  d_nls=''
@@ -19,7 +19,7 @@ $OpenBSD: patch-Configure,v 1.5 2005/06/04 16:11:33 sturm Exp $
  			;;
  		*)
  			sh <"$SRC/$file"
-@@ -6497,15 +6497,6 @@ If you'd like to make any changes to the
+@@ -6524,15 +6524,6 @@ If you'd like to make any changes to the
  to configure things, do it as a shell escape now (e.g. !vi config.sh).
  
  EOM

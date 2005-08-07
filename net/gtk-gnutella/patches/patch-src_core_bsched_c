@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_core_bsched_c,v 1.1 2005/06/04 16:11:33 sturm Exp $
---- src/core/bsched.c.orig	Tue May 31 20:11:13 2005
-+++ src/core/bsched.c	Tue May 31 20:11:29 2005
-@@ -1410,7 +1410,7 @@ bio_sendfile(sendfile_ctx_t *ctx, bio_so
+$OpenBSD: patch-src_core_bsched_c,v 1.2 2005/08/07 21:27:52 sturm Exp $
+--- src/core/bsched.c.orig	Sun Jul 31 20:46:33 2005
++++ src/core/bsched.c	Sun Aug  7 20:58:26 2005
+@@ -1419,7 +1419,7 @@ bio_sendfile(sendfile_ctx_t *ctx, bio_so
  	
  	g_assert_not_reached();
  	/* NOTREACHED */
