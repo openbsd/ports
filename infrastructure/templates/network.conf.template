@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.76 2005/07/04 12:34:23 espie Exp $
+# $OpenBSD: network.conf.template,v 1.77 2005/08/07 21:23:19 sturm Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -145,7 +145,6 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.gnome.org/pub/GNOME
 	
 MASTER_SITE_PERL_CPAN+=	\
-	http://www.cpan.dk/CPAN/modules/by-module/ \
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/ \
 	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/ \
 	ftp://uiarchive.uiuc.edu/pub/ftp/ftp.cpan.org/pub/CPAN/modules/by-module/ \
@@ -166,6 +165,7 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/ \
 	ftp://sunsite.org.uk/packages/perl/CPAN/modules/by-module/ \
 	ftp://ftp.chg.ru/pub/lang/perl/CPAN/modules/by-module/ \
+	http://www.cpan.dk/CPAN/modules/by-module/ \
 	ftp://mirrors.dotsrc.org/cpan/
 
 MASTER_SITE_TEX_CTAN+=	\
