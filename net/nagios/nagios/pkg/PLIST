@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/25 16:32:06 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/08/07 10:48:01 sturm Exp $
 @newgroup _nagios:542
 @newuser _nagios:542:_nagios:daemon:Nagios user:/var/www/nagios:/sbin/nologin
 bin/nagiostats
@@ -23,8 +23,10 @@ share/examples/nagios/resource.cfg
 @sample ${CHROOT}/var/log/nagios/
 @sample ${CHROOT}/var/log/nagios/archives/
 @sample ${CHROOT}/var/nagios/
-@sample ${CHROOT}/var/nagios/rw/
 @sample /var/run/nagios/
+@mode 775
+@group www
+@sample ${CHROOT}/var/nagios/rw/
 @mode
 @owner
 @group

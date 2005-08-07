@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2005/07/25 19:23:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2005/08/07 10:48:01 sturm Exp $
 
 COMMENT=	"host and service monitor"
 COMMENT-web=	"cgis and webpages for nagios"
 
-V=		2.0b3
+V=		2.0b4
 DISTNAME=	nagios-${V}
-PKGNAME=	${DISTNAME}p0
-PKGNAME-web=	nagios-web-${V}p0
+PKGNAME=	${DISTNAME}
+PKGNAME-web=	nagios-web-${V}
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.nagios.org/
@@ -25,7 +25,7 @@ SUBPACKAGE?=
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagios/}
 
 BUILD_DEPENDS=	:gd-*:graphics/gd
-RUN_DEPENDS=	::net/nagios/plugins
+RUN_DEPENDS=	:nagios-plugins-*:net/nagios/plugins
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--datadir=/var/www/nagios \

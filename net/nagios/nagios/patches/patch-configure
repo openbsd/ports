@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2005/07/25 16:32:05 sturm Exp $
---- configure.orig	Tue Dec 14 03:18:58 2004
-+++ configure	Sun Jan 30 17:47:03 2005
+$OpenBSD: patch-configure,v 1.2 2005/08/07 10:48:01 sturm Exp $
+--- configure.orig	Wed Aug  3 01:58:24 2005
++++ configure	Wed Aug  3 12:38:09 2005
 @@ -371,7 +371,7 @@ EOF
      ac_prev=sysconfdir ;;
    -sysconfdir=* | --sysconfdir=* | --sysconfdi=* | --sysconfd=* | --sysconf=* \
@@ -10,23 +10,14 @@ $OpenBSD: patch-configure,v 1.1.1.1 2005/07/25 16:32:05 sturm Exp $
  
    -target | --target | --targe | --targ | --tar | --ta | --t)
      ac_prev=target ;;
-@@ -1901,7 +1901,7 @@ LIBS="$ac_save_LIBS"
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  THREADLIBS="$THREADLIBS -lpthread"
-+  THREADLIBS="$THREADLIBS -pthread"
- else
-   echo "$ac_t""no" 1>&6
- fi
-@@ -1910,14 +1910,14 @@ if test $ac_cv_lib_cma_pthread_create = 
+@@ -1834,14 +1834,14 @@ if test $ac_cv_lib_cma_pthread_create = 
  	have_pthreads="yes"
  fi
  
 -echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
--echo "configure:1915: checking for pthread_create in -lpthread" >&5
+-echo "configure:1839: checking for pthread_create in -lpthread" >&5
 +echo $ac_n "checking for pthread_create in -pthread""... $ac_c" 1>&6
-+echo "configure:1915: checking for pthread_create in -pthread" >&5
++echo "configure:1839: checking for pthread_create in -pthread" >&5
  ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -35,9 +26,9 @@ $OpenBSD: patch-configure,v 1.1.1.1 2005/07/25 16:32:05 sturm Exp $
 -LIBS="-lpthread  $LIBS"
 +LIBS="-pthread  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 1923 "configure"
+ #line 1847 "configure"
  #include "confdefs.h"
-@@ -1945,7 +1945,7 @@ LIBS="$ac_save_LIBS"
+@@ -1869,7 +1869,7 @@ LIBS="$ac_save_LIBS"
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -46,34 +37,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2005/07/25 16:32:05 sturm Exp $
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -1953,14 +1953,14 @@ fi
- if test $ac_cv_lib_pthread_pthread_create = yes; then
- 	have_pthreads="yes"
- else
--		echo $ac_n "checking for pthread_mutex_init in -lpthread""... $ac_c" 1>&6
--echo "configure:1958: checking for pthread_mutex_init in -lpthread" >&5
-+		echo $ac_n "checking for pthread_mutex_init in -pthread""... $ac_c" 1>&6
-+echo "configure:1958: checking for pthread_mutex_init in -pthread" >&5
- ac_lib_var=`echo pthread'_'pthread_mutex_init | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 1966 "configure"
- #include "confdefs.h"
-@@ -1988,7 +1988,7 @@ LIBS="$ac_save_LIBS"
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  THREADLIBS="$THREADLIBS -lpthread"
-+  THREADLIBS="$THREADLIBS -pthread"
- else
-   echo "$ac_t""no" 1>&6
- fi
-@@ -2227,7 +2227,7 @@ cat >> confdefs.h <<EOF
+@@ -2151,7 +2151,7 @@ cat >> confdefs.h <<EOF
  #define DEFAULT_NAGIOS_GROUP "$nagios_grp"
  EOF
  
