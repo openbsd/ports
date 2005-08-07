@@ -1,0 +1,23 @@
+$OpenBSD: patch-amavisd_conf-sample,v 1.1 2005/08/07 21:27:04 sturm Exp $
+--- amavisd.conf-sample.orig	Wed Jun 29 12:25:59 2005
++++ amavisd.conf-sample	Sun Aug  7 19:15:54 2005
+@@ -73,8 +73,8 @@ $mydomain = 'example.com';      # (no us
+ 
+ # Set the user and group to which the daemon will change if started as root
+ # (otherwise just keeps the UID unchanged, and these settings have no effect):
+-$daemon_user  = 'vscan';   # (no default;  customary: vscan or amavis)
+-$daemon_group = 'vscan';   # (no default;  customary: vscan or amavis or sweep)
++$daemon_user  = '_vscan';   # (no default;  customary: vscan or amavis)
++$daemon_group = '_vscan';   # (no default;  customary: vscan or amavis or sweep)
+ 
+ # Runtime working directory (cwd), and a place where
+ # temporary directories for unpacking mail are created.
+@@ -99,7 +99,7 @@ $TEMPBASE = $MYHOME;	        # (must be 
+ $ENV{TMPDIR} = $TEMPBASE;       # wise to set TMPDIR, but not obligatory
+ #...
+ 
+-$enable_db = 1;              # enable use of BerkeleyDB/libdb (SNMP and nanny)
++$enable_db = 0;              # enable use of BerkeleyDB/libdb (SNMP and nanny)
+ $enable_global_cache = 1;    # enable use of libdb-based cache if $enable_db=1
+ 
+ # MTA SETTINGS, UNCOMMENT AS APPROPRIATE,
