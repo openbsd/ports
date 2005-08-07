@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/25 16:32:07 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/08/07 10:47:01 sturm Exp $
 libexec/nagios/
 libexec/nagios/check_by_ssh
 libexec/nagios/check_dhcp
@@ -36,6 +36,7 @@ libexec/nagios/check_simap
 libexec/nagios/check_smtp
 libexec/nagios/check_spop
 libexec/nagios/check_ssh
+libexec/nagios/check_ssmtp
 libexec/nagios/check_swap
 libexec/nagios/check_tcp
 libexec/nagios/check_time
