@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/30 23:35:31 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/08/09 15:52:46 aanriot Exp $
 @option no-default-conflict
-@conflict automake-<=1.9
 @comment bin/aclocal
 bin/aclocal${SUFFIX}
 @comment bin/automake
 bin/automake${SUFFIX}
+@info info/automake${SUFFIX}.info
 share/aclocal${SUFFIX}/
 share/aclocal${SUFFIX}/amversion.m4
 share/aclocal${SUFFIX}/as.m4
@@ -119,5 +119,3 @@ share/automake${SUFFIX}/py-compile
 share/automake${SUFFIX}/symlink-tree
 share/automake${SUFFIX}/texinfo.tex
 share/automake${SUFFIX}/ylwrap
-share/info/
-@info share/info/automake.info

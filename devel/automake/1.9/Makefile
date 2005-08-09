@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/07/30 23:35:31 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2005/08/09 15:52:46 aanriot Exp $
 
 COMMENT=	"GNU standards-compliant Makefile generator"
 
 VERSION=	1.9
 DISTNAME=	automake-${VERSION}.6
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=automake/}
@@ -22,8 +23,8 @@ RUN_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS}
 
 SUFFIX=			-${VERSION}
 CONFIGURE_STYLE=	gnu
-MAKE_FLAGS+=		MAKEINFO="makeinfo --no-split" \
-			pkgvdatadir=${PREFIX}/share/automake${SUFFIX} \
+CONFIGURE_ARGS=		--infodir=${PREFIX}/info
+MAKE_FLAGS+=		pkgvdatadir=${PREFIX}/share/automake${SUFFIX} \
 			APIVERSION=${VERSION}
 FAKE_FLAGS+=		${MAKE_FLAGS}
 SUBST_VARS=		SUFFIX
@@ -49,5 +50,17 @@ do-regress:
 		    ${MAKE_PROGRAM} ${REGRESS_FLAGS} -f ${MAKE_FILE} \
 		    ${REGRESS_TARGET}
 
-.include <bsd.port.mk>
+post-install:
+	cd ${PREFIX}/info && mv automake.info automake${SUFFIX}.info
+	perl -pi -e "s,automake\: \(automake\),automake-1\.9\: \(automake-1\.9\)," \
+		${PREFIX}/info/automake${SUFFIX}.info
+	perl -pi -e "s,aclocal\: \(automake\),aclocal: \(automake-1\.9\)," \
+		${PREFIX}/info/automake${SUFFIX}.info
 
+.for f in info-1 info-2
+	cd ${PREFIX}/info && mv automake.${f} automake${SUFFIX}.${f} \
+		&& perl -pi -e "s,automake.${f},automake${SUFFIX}.${f}," \
+		${PREFIX}/info/automake${SUFFIX}.info
+.endfor
+
+.include <bsd.port.mk>
