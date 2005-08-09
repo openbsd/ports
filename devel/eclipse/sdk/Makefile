@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/06/17 19:15:29 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2005/08/09 14:49:09 kurt Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -6,23 +6,23 @@ COMMENT=		"general-purpose, extensible IDE for Java & other langs"
 COMMENT-gnome=		"gnome integration library for eclipse"
 COMMENT-mozilla=	"mozilla integration library for eclipse HTML Browser Widget"
 
-ECLIPSE_VER=		3.0.2
+ECLIPSE_VER=		3.1
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
-PKGNAME=		eclipse-sdk-${ECLIPSE_VER}p0
-PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p0
-PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p0
+PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
+PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}
+PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}
 CATEGORIES=		devel/eclipse java 
 
 HOMEPAGE=		http://www.eclipse.org/
 
 MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 
-# Common Public License Version 1.0 (http://www.eclipse.org/legal/cpl-v10.html)
 # Eclipse Public License Version 1.0 (http://www.eclipse.org/legal/epl-v10.html)
-# Apache Software License 1.1 (http://www.apache.org/licenses/LICENSE-1.1)
+# Apache Software License 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 # IBM Public License 1.0 (http://oss.software.ibm.com/developerworks/opensource/license10.html)
 # Metro Link Public License 1.00 (http://www.opengroup.org/openmotif/supporters/metrolink/license.html)
 # Mozilla Public License Version 1.1 (http://www.mozilla.org/MPL/MPL-1.1.html)
+# LGPL 2.1 
 PERMIT_PACKAGE_CDROM=	"commercial distribution defend and indemnify clauses"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"commercial distribution defend and indemnify clauses"
@@ -37,7 +37,7 @@ MASTER_SITE_ECLIPSE+=	\
 	ftp://download.eclipse.org/ \
 	ftp://download2.eclipse.org/
 
-MASTER_SITES=		${MASTER_SITE_ECLIPSE:=R-3.0.2-200503110845/}
+MASTER_SITES=		${MASTER_SITE_ECLIPSE:=R-3.1-200506271435/}
 EXTRACT_SUFX=		.zip
 
 VMEM_WARNING=		Yes
@@ -49,11 +49,7 @@ BUILD_DEPENDS=		:mozilla-devel-*-gtk2:www/mozilla,-devel,gtk2 \
 			:apache-ant->=1.6.1:devel/apache-ant \
 			:pkgconfig-*:devel/pkgconfig
 
-RUN_DEPENDS=		:apache-ant->=1.6.1:devel/apache-ant
-
 LIB_DEPENDS=		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
-
-WANTLIB_COMMON=		atk-1.0.0.0 gobject-2.0.0.0 
 
 USE_GMAKE=		Yes
 USE_X11=		Yes
@@ -74,9 +70,14 @@ WANTLIB=		gnome-2 gnomevfs-2
 RUN_DEPENDS=		:${PKGNAME}:devel/eclipse/sdk
 LIB_DEPENDS=		${MOZILLA_LIB_DEPENDS}
 . else
-WANTLIB=		Xtst atk-1.0.0.0 c gobject-2.0.0.0 gthread-2.0.0.0
+MODULES+=		devel/gettext
+WANTLIB=		X11 Xft Xrender Xtst atk-1.0.0.0 c fontconfig \
+			freetype glib-2.0.0.0 gmodule-2.0.0.0 \
+			gobject-2.0.0.0 gthread-2.0.0.0 m pango-1.0.0.0 \
+			pangox-1.0.0.0 pangoxft-1.0.0.0
 . endif
 .else
+MODULES+=		devel/gettext
 . if ${MULTI_PACKAGES:M-gnome}
 LIB_DEPENDS+=		${GNOME_LIB_DEPENDS}
 . endif
@@ -87,31 +88,32 @@ LIB_DEPENDS+=		${MOZILLA_LIB_DEPENDS}
 
 MOZILLA_HOME=		${LOCALBASE}/mozilla
 ECLIPSE_WS=		gtk
-ECLIPSE_BUILD=		3064
-ECLIPSE_COREVER=	3.0.0
+ECLIPSE_BUILD=		3138
+ECLIPSE_COREVER=	3.1.0
 ECLIPSE_OS=		openbsd
 ECLIPSE_ARCH=		x86
 
-MAKE_FLAGS=		ECLIPSE_BUILD=${ECLIPSE_BUILD} \
+MAKE_ENV=		ECLIPSE_BUILD=${ECLIPSE_BUILD} \
 			ECLIPSE_ARCH=${ECLIPSE_ARCH} \
 			ECLIPSE_OS=${ECLIPSE_OS} \
 			ECLIPSE_WS=${ECLIPSE_WS} \
 			JAVA_HOME=${JAVA_HOME} \
-			MOZILLA_HOME=${MOZILLA_HOME}
-MAKE_ENV=		CXX="${CXX}"
+			MOZILLA_HOME=${MOZILLA_HOME} \
+			CC="${CC}" CXX="${CXX}"
 
-FAKE_FLAGS=		${MAKE_FLAGS}
+FAKE_FLAGS=		${MAKE_ENV}
 
 NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}
 
-SUBST_VARS=		ECLIPSE_VER ECLIPSE_COREVER ECLIPSE_BUILD
+SUBST_VARS=		ECLIPSE_COREVER ECLIPSE_BUILD
 
-FIXUP_FILES=		plugins/org.eclipse.update.core.openbsd/src/build.xml \
-			plugins/org.eclipse.swt/Eclipse\ SWT\ PI/gtk/library/make_gtk.xml \
-			plugins/org.eclipse.swt.gtk/build.xml \
-			plugins/org.eclipse.osgi/eclipseAdaptor/src/org/eclipse/core/runtime/adaptor/EclipseBundleData.java
+FIXUP_FILES=		build \
+			features/org.eclipse.platform.launchers/target.build.properties \
+			plugins/org.eclipse.swt/Eclipse\ SWT\ PI/gtk/library/build.xml \
+			plugins/org.eclipse.swt.gtk.openbsd.x86/build.xml \
+			plugins/org.eclipse.update.core.openbsd/src/build.xml
 
 # Build out openbsd source from linux source
 # Avoid patch problems by adding the missing last line feeds
@@ -121,5 +123,21 @@ pre-patch:
 .for file in ${FIXUP_FILES}
 	@echo >> ${WRKSRC}/${file}
 .endfor
+
+do-build:
+	@cd ${WRKBUILD} && exec ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} \
+		./build -os ${ECLIPSE_OS} -ws ${ECLIPSE_WS} -arch ${ECLIPSE_ARCH} -compilelibs
+
+do-install:
+	@tar xzf ${WRKBUILD}/result/${ECLIPSE_OS}-${ECLIPSE_WS}-${ECLIPSE_ARCH}-sdk.tar.gz \
+		-C ${PREFIX}
+	@sed -e "s+%%ECLIPSE_HOME%%+${TRUEPREFIX}/eclipse+g" \
+		-e "s+%%JAVA_HOME%%+${JAVA_HOME}+g" \
+		-e "s+%%LOCALBASE%%+${TRUEPREFIX}+g" \
+		${WRKBUILD}/eclipse.in > ${WRKBUILD}/eclipse.tmp
+	${INSTALL_SCRIPT} ${WRKBUILD}/eclipse.tmp $(PREFIX)/bin/eclipse
+	${INSTALL_PROGRAM} ${WRKBUILD}/launchertmp/eclipse ${PREFIX}/eclipse/eclipse
+	${INSTALL_DATA} ${WRKBUILD}/plugins/org.eclipse.core.resources.openbsd/os/openbsd/x86/libcore_*.so.* ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKBUILD}/plugins/org.eclipse.swt.gtk.openbsd.x86/libswt-*.so.* ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -1,22 +1,16 @@
-$OpenBSD: patch-features_org_eclipse_jdt_build_xml,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
---- features/org.eclipse.jdt/build.xml.orig	Thu Sep 16 11:45:46 2004
-+++ features/org.eclipse.jdt/build.xml	Tue Oct 19 17:26:47 2004
-@@ -173,6 +173,18 @@
+$OpenBSD: patch-features_org_eclipse_jdt_build_xml,v 1.2 2005/08/09 14:49:09 kurt Exp $
+--- features/org.eclipse.jdt/build.xml.orig	Thu Jul 28 12:26:50 2005
++++ features/org.eclipse.jdt/build.xml	Thu Jul 28 12:29:56 2005
+@@ -170,6 +170,12 @@
  			<fileset dir="${basedir}/rootfiles" includes="**"			/>
  		</copy>
  	</target>
 +	<target name="rootFilesopenbsd_gtk_x86">
 +		<mkdir dir="${feature.base}/openbsd.gtk.x86/${collectingFolder}"/>
-+		<copy todir="${feature.base}/openbsd.gtk.x86/${collectingFolder}" failonerror="true">
-+			<fileset dir="${basedir}/rootfiles" includes="**"      />
-+		</copy>
-+	</target>
-+	<target name="rootFilesopenbsd_motif_x86">
-+		<mkdir dir="${feature.base}/openbsd.motif.x86/${collectingFolder}"/>
-+		<copy todir="${feature.base}/openbsd.motif.x86/${collectingFolder}" failonerror="true">
-+			<fileset dir="${basedir}/rootfiles" includes="**"      />
++		<copy todir="${feature.base}/openbsd.gtk.x86/${collectingFolder}" failonerror="true" overwrite="true">
++			<fileset dir="${basedir}/rootfiles" includes="**"			/>
 +		</copy>
 +	</target>
  	<target name="rootFilessolaris_motif_sparc">
  		<mkdir dir="${feature.base}/solaris.motif.sparc/${collectingFolder}"/>
- 		<copy todir="${feature.base}/solaris.motif.sparc/${collectingFolder}" failonerror="true">
+ 		<copy todir="${feature.base}/solaris.motif.sparc/${collectingFolder}" failonerror="true" overwrite="true">

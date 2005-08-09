@@ -1,0 +1,45 @@
+$OpenBSD: patch-plugins_org_eclipse_swt_gtk_openbsd_x86_build_xml,v 1.1 2005/08/09 14:49:09 kurt Exp $
+--- plugins/org.eclipse.swt.gtk.openbsd.x86/build.xml.orig	Mon Aug  8 10:16:42 2005
++++ plugins/org.eclipse.swt.gtk.openbsd.x86/build.xml	Mon Aug  8 11:02:36 2005
+@@ -66,7 +66,7 @@
+ 			<src path="${plugindir}/Eclipse SWT Program/gtk/"/>
+ 		</javac>
+         <property name="includes" value=""/>
+-        <property name="excludes" value="**/*.java,**/library/,**/package.htm*"/>
++        <property name="excludes" value="**/*.java,**/library/,**/package.htm*,**/*.orig"/>
+ 		<copy todir="${temp.folder}/@dot.bin">
+ 			<fileset dir="${plugindir}/Eclipse SWT/cairo/" includes="${includes}" excludes="${excludes}"/>
+ 			<fileset dir="${plugindir}/Eclipse SWT/common/" includes="${includes}" excludes="${excludes}"/>
+@@ -139,7 +139,7 @@
+ 			<fileset dir="${plugindir}/Eclipse SWT PI/common/" includes="**/*.java" excludes=""/>
+ 			<fileset dir="${plugindir}/Eclipse SWT PI/common_j2se/" includes="**/*.java" excludes=""/>
+ 			<fileset dir="${plugindir}/Eclipse SWT PI/gtk/" includes="**/*.java" excludes=""/>
+-			<fileset dir="${plugindir}/Eclipse SWT PI/gtk/library/"/>
++			<fileset dir="${plugindir}/Eclipse SWT PI/gtk/library/" excludes="**/*.orig"/>
+ 			<fileset dir="${plugindir}/Eclipse SWT Printing/common/" includes="**/*.java" excludes=""/>
+ 			<fileset dir="${plugindir}/Eclipse SWT Printing/gtk/" includes="**/*.java" excludes=""/>
+ 			<fileset dir="${plugindir}/Eclipse SWT Program/cde/" includes="**/*.java" excludes=""/>
+@@ -183,12 +183,12 @@
+ 			<fileset dir="${build.result.folder}/@dot" includes="**"/>
+ 		</copy>
+ 		<copy todir="${destination.temp.folder}/${full.name}">
+-			<fileset dir="${basedir}" includes="fragment.properties,swt*.dll,libswt*.so,libswt*.sl,libswt*.a,libswt*.jnilib,META-INF/"/> 
++			<fileset dir="${basedir}" includes="fragment.properties,swt*.dll,libswt*.so*,libswt*.sl,libswt*.a,libswt*.jnilib,META-INF/"/> 
+ 			<fileset dir="${basedir}" includes="about.html"/>
+ 			<fileset dir="${basedir}" includes="about_files/lgpl-v21.txt"/>
+ 			<fileset dir="${basedir}" includes="about_files/mpl-v11.txt"/>
+ 		</copy>
+-	  	<chmod perm="755" dir="${destination.temp.folder}/${full.name}" includes="swt*.dll,libswt*.so,libswt*.sl,libswt*.a,libswt*.jnilib" />
++	  	<chmod perm="755" dir="${destination.temp.folder}/${full.name}" includes="swt*.dll,libswt*.so*,libswt*.sl,libswt*.a,libswt*.jnilib" />
+ 	</target>
+ 	
+ 	<target name="swtdownload" depends="init">	
+@@ -201,7 +201,7 @@
+ 		<copy file="${plugindir}/build/.project" todir="${temp.folder}/swtdownload"/>
+ 		<copy file="${plugindir}/build/.classpath" todir="${temp.folder}/swtdownload"/>
+ 		<copy todir="${temp.folder}/swtdownload">
+-			<fileset dir="${basedir}" includes="swt*.dll,libswt*.so,libswt*.sl,libswt*.a,libswt*.jnilib,libXm.so.2,libcairo.so.1"/>
++			<fileset dir="${basedir}" includes="swt*.dll,libswt*.so*,libswt*.sl,libswt*.a,libswt*.jnilib,libXm.so.3,libcairo.so.*"/>
+ 			<fileset dir="${basedir}" includes="about.html,about_files/"/>
+ 		</copy>
+ 		<chmod dir="${temp.folder}/swtdownload" perm="755" includes="**/lib*"/>

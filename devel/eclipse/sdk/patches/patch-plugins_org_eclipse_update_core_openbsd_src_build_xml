@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_org_eclipse_update_core_openbsd_src_build_xml,v 1.2 2005/04/19 13:56:47 kurt Exp $
---- plugins/org.eclipse.update.core.openbsd/src/build.xml.orig	Mon Apr 18 16:03:27 2005
-+++ plugins/org.eclipse.update.core.openbsd/src/build.xml	Mon Apr 18 17:11:06 2005
+$OpenBSD: patch-plugins_org_eclipse_update_core_openbsd_src_build_xml,v 1.3 2005/08/09 14:49:09 kurt Exp $
+--- plugins/org.eclipse.update.core.openbsd/src/build.xml.orig	Sun Jul 31 21:51:03 2005
++++ plugins/org.eclipse.update.core.openbsd/src/build.xml	Sun Jul 31 22:18:08 2005
 @@ -6,12 +6,12 @@
    <property name="eclipse-home" value="${basedir}/../.."/>
    <property name="jdk-path" value="${java.home}"/>  
@@ -12,11 +12,11 @@ $OpenBSD: patch-plugins_org_eclipse_update_core_openbsd_src_build_xml,v 1.2 2005
    <!-- sets the properties -->
    <property name="library-name" value="libupdate"/>  
 -  <property name="library-platform" value="so"/>    
-+  <property name="library-platform" value="so.1.0"/>    
++  <property name="library-platform" value="so.2.0"/>    
    <property name="library-file" value="${library-name}.${library-platform}"/>
    
    <!-- This target holds all initialization code that needs to be done for -->
-@@ -44,12 +44,12 @@
+@@ -44,15 +44,16 @@
    <target name="build">
      <echo message="Building ${library-file}"/>
  
@@ -25,10 +25,14 @@ $OpenBSD: patch-plugins_org_eclipse_update_core_openbsd_src_build_xml,v 1.2 2005
      <property name="header-openbsd-path" value="${header-path}/openbsd" />
  
 -	<echo message="gcc -o  ${library-file} -shared -I${src-path} -I${header-openbsd-path} ${library-file} -static -lc"/>
-+	<echo message="${CC} -o  ${library-file} -shared -I${src-path} -I${header-path} -I${header-openbsd-path} ${library-file} -static -lc"/>
++	<echo message="${CC} -o  ${library-file} -shared -fPIC -I${src-path} -I${header-path} -I${header-openbsd-path} ${library-file} -static -lc"/>
  
 -    <apply executable="gcc" dest="${eclipse-home}/" parallel="false">
 +    <apply executable="${CC}" dest="${eclipse-home}/" parallel="false">
        <arg value="-o"/>
        <arg value="${library-file}"/>
        <arg value="-shared"/>
++      <arg value="-fPIC"/>
+       <arg value="-I${src-path}"/>
+       <arg value="-I${header-path}"/>      
+       <arg value="-I${header-openbsd-path}"/>  

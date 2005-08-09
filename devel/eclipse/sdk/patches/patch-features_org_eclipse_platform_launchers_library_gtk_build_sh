@@ -1,0 +1,38 @@
+$OpenBSD: patch-features_org_eclipse_platform_launchers_library_gtk_build_sh,v 1.1 2005/08/09 14:49:09 kurt Exp $
+--- features/org.eclipse.platform.launchers/library/gtk/build.sh.orig	Mon Jun 27 14:54:41 2005
++++ features/org.eclipse.platform.launchers/library/gtk/build.sh	Wed Aug  3 14:01:26 2005
+@@ -67,6 +67,19 @@ case $OS in
+ 				;;
+ 		esac
+ 		;;
++	"OpenBSD")
++		makefile="make_openbsd.mak"
++		defaultOS="openbsd"
++		case $MODEL in
++			"i386")
++				defaultOSArch="x86"
++				OUTPUT_DIR="../../bin/$defaultWS/$defaultOS/$defaultOSArch"
++				;;
++			*)
++				echo "*** Unknown MODEL <${MODEL}>"
++				;;
++		esac
++		;;
+ 	"SunOS")
+ 		makefile="make_solaris.mak"
+ 		defaultOS="solaris"
+@@ -112,11 +125,11 @@ export OUTPUT_DIR PROGRAM_OUTPUT DEFAULT
+ # If the OS is supported (a makefile exists)
+ if [ "$makefile" != "" ]; then
+ 	if [ "$extraArgs" != "" ]; then
+-		make -f $makefile $extraArgs
++		gmake -f $makefile $extraArgs
+ 	else
+ 		echo "Building $OS launcher. Defaults: -os $DEFAULT_OS -arch $DEFAULT_OS_ARCH -ws $DEFAULT_WS"
+-		make -f $makefile clean
+-		make -f $makefile all
++		gmake -f $makefile clean
++		gmake -f $makefile all
+ 	fi
+ else
+ 	echo "Unknown OS ($OS) -- build aborted"

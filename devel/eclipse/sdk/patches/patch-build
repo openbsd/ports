@@ -1,20 +1,20 @@
-$OpenBSD: patch-build,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
---- build.orig	Thu Sep 16 11:50:23 2004
-+++ build	Tue Oct 26 14:46:59 2004
+$OpenBSD: patch-build,v 1.2 2005/08/09 14:49:09 kurt Exp $
+--- build.orig	Mon Aug  8 12:14:57 2005
++++ build	Mon Aug  8 12:15:51 2005
 @@ -1,6 +1,6 @@
- #! /bin/sh
+ #!/bin/sh
  
 -export ANT_OPTS=-Xmx1000M
 +export ANT_OPTS=-Xmx128M
- 
- bootclasspath=$JAVA_HOME/jre/lib/rt.jar
  os=""
-@@ -51,7 +51,7 @@ then
+ ws=""
+ arch=""
+@@ -52,7 +52,7 @@ then
  	exit 1
  fi
  
--if [ "$os-$ws-$arch" = "linux-motif-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-amd64" ] || [ "$os-$ws-$arch" = "linux-gtk-ia64" ] ||[ "$os-$ws-$arch" = "solaris-motif-sparc" ] || [ "$os-$ws-$arch" = "aix-motif-ppc" ] || [ "$os-$ws-$arch" = "hpux-motif-PA_RISC" ] || [ "$os-$ws-$arch" = "qnx-photon-x86" ] || [ "$os-$ws-$arch" = "win32-win32-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-ppc" ] || [ "$os-$ws-$arch" = "macosx-carbon-ppc" ]
-+if [ "$os-$ws-$arch" = "linux-motif-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-amd64" ] || [ "$os-$ws-$arch" = "linux-gtk-ia64" ] ||[ "$os-$ws-$arch" = "solaris-motif-sparc" ] || [ "$os-$ws-$arch" = "aix-motif-ppc" ] || [ "$os-$ws-$arch" = "hpux-motif-PA_RISC" ] || [ "$os-$ws-$arch" = "qnx-photon-x86" ] || [ "$os-$ws-$arch" = "win32-win32-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-ppc" ] || [ "$os-$ws-$arch" = "macosx-carbon-ppc" ] || [ "$os-$ws-$arch" = "openbsd-gtk-x86" ] || [ "$os-$ws-$arch" = "openbsd-motif-x86" ]
+-if [ "$os-$ws-$arch" = "linux-motif-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-x86_64" ] || [ "$os-$ws-$arch" = "linux-gtk-ia64" ] || [ "$os-$ws-$arch" = "solaris-motif-sparc" ] || [ "$os-$ws-$arch" = "solaris-gtk-sparc" ] || [ "$os-$ws-$arch" = "aix-motif-ppc" ] || [ "$os-$ws-$arch" = "hpux-motif-PA_RISC" ] || [ "$os-$ws-$arch" = "qnx-photon-x86" ] || [ "$os-$ws-$arch" = "win32-win32-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-ppc" ] || [ "$os-$ws-$arch" = "linux-gtk-ppc64" ] || [ "$os-$ws-$arch" = "macosx-carbon-ppc" ] || [ "$os-$ws-$arch" = "hpux-motif-ia64" ] || [ "$os-$ws-$arch" = "hpux-motif-ia64_32" ]
++if [ "$os-$ws-$arch" = "linux-motif-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-x86_64" ] || [ "$os-$ws-$arch" = "linux-gtk-ia64" ] || [ "$os-$ws-$arch" = "solaris-motif-sparc" ] || [ "$os-$ws-$arch" = "solaris-gtk-sparc" ] || [ "$os-$ws-$arch" = "aix-motif-ppc" ] || [ "$os-$ws-$arch" = "hpux-motif-PA_RISC" ] || [ "$os-$ws-$arch" = "qnx-photon-x86" ] || [ "$os-$ws-$arch" = "win32-win32-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-ppc" ] || [ "$os-$ws-$arch" = "linux-gtk-ppc64" ] || [ "$os-$ws-$arch" = "macosx-carbon-ppc" ] || [ "$os-$ws-$arch" = "hpux-motif-ia64" ] || [ "$os-$ws-$arch" = "hpux-motif-ia64_32" ] || [ "$os-$ws-$arch" = "openbsd-gtk-x86" ]
  then
- 	ant -buildfile build.xml $target -DinstallOs=$os -DinstallWs=$ws -DinstallArch=$arch -Dbootclasspath=$bootclasspath -DjavacTarget=1.2
- else
+ 		 ORIGCLASSPATH=$CLASSPATH;export ORIGCLASSPATH		 
+ 		 ant -q -buildfile jdtcoresrc/compilejdtcorewithjavac.xml

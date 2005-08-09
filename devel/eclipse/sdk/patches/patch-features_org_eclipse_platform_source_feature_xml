@@ -1,14 +1,11 @@
---- features/org.eclipse.platform.source/feature.xml.orig	Fri Mar 11 23:58:23 2005
-+++ features/org.eclipse.platform.source/feature.xml	Mon Mar 28 23:20:39 2005
-@@ -20,9 +20,11 @@
- 	<plugin ws="gtk"  os="solaris" fragment="true" arch="sparc" download-size="0" install-size="0" id="org.eclipse.platform.source.solaris.gtk.sparc" version="3.0.2"/>
- 	<plugin ws="carbon"  os="macosx" fragment="true" arch="ppc" download-size="0" install-size="0" id="org.eclipse.platform.source.macosx.carbon.ppc" version="3.0.2"/>
- 	<plugin ws="gtk"  os="linux" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.gtk.x86" version="3.0.2"/>
-+	<plugin ws="gtk"  os="openbsd" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.openbsd.gtk.x86" version="3.0.2"/>
- 	<plugin ws="motif"  os="aix" fragment="true" arch="ppc" download-size="0" install-size="0" id="org.eclipse.platform.source.aix.motif.ppc" version="3.0.2"/>
- 	<plugin ws="win32"  os="win32" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.win32.win32.x86" version="3.0.2"/>
- 	<plugin ws="motif"  os="solaris" fragment="true" arch="sparc" download-size="0" install-size="0" id="org.eclipse.platform.source.solaris.motif.sparc" version="3.0.2"/>
- 	<plugin ws="gtk"  os="linux" fragment="true" arch="amd64" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.gtk.amd64" version="3.0.2"/>
- 	<plugin ws="motif"  os="linux" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.motif.x86" version="3.0.2"/>
-+	<plugin ws="motif"  os="openbsd" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.openbsd.motif.x86" version="3.0.2"/>
+$OpenBSD: patch-features_org_eclipse_platform_source_feature_xml,v 1.3 2005/08/09 14:49:09 kurt Exp $
+--- features/org.eclipse.platform.source/feature.xml.orig	Thu Jul 28 13:12:10 2005
++++ features/org.eclipse.platform.source/feature.xml	Thu Jul 28 13:13:12 2005
+@@ -23,6 +23,7 @@
+ 	<plugin ws="gtk"  os="linux" fragment="true" arch="ppc64" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.gtk.ppc64" version="3.1.0"/>
+ 	<plugin ws="carbon"  os="macosx" fragment="true" arch="ppc" download-size="0" install-size="0" id="org.eclipse.platform.source.macosx.carbon.ppc" version="3.1.0"/>
+ 	<plugin ws="gtk"  os="linux" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.gtk.x86" version="3.1.0"/>
++	<plugin ws="gtk"  os="openbsd" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.openbsd.gtk.x86" version="3.1.0"/>
+ 	<plugin ws="win32"  os="win32" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.win32.win32.x86" version="3.1.0"/>
+ 	<plugin ws="motif"  os="linux" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.platform.source.linux.motif.x86" version="3.1.0"/>
  </feature>

@@ -1,16 +1,20 @@
---- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh.orig	Fri Mar 11 09:01:58 2005
-+++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	Mon Apr 18 19:17:21 2005
-@@ -58,6 +58,21 @@ case $OS in
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_build_sh,v 1.3 2005/08/09 14:49:09 kurt Exp $
+--- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh.orig	Mon Jun 27 14:54:15 2005
++++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	Wed Aug  3 13:54:28 2005
+@@ -100,6 +100,24 @@ case $OS in
  				;;	
  		esac
  		;;
 +	"OpenBSD")
++		LD=${CC}
++		XTEST_LIB_PATH=/usr/X11R6/lib
++		GECKO_SDK=${MOZILLA_HOME}
++		GECKO_INCLUDES="-I${GECKO_SDK}/include/nspr -I${GECKO_SDK}/include/xpcom -I${GECKO_SDK}/include/string -I${GECKO_SDK}/include/embed_base -I${GECKO_SDK}/include/embedstring"
++		GECKO_LIBS="-L${GECKO_SDK}/lib -lxpcom -lnspr4 -lplds4 -lplc4 -lgtkembedmoz"
 +		case $MODEL in
-+			i386)
-+				LD=${CC}
++			"i386")
 +				AWT_LIB_PATH=${JAVA_HOME}/jre/lib/i386
-+				XTEST_LIB_PATH=/usr/X11R6/lib
-+				OUTPUT_DIR=../../../org.eclipse.swt.gtk/os/openbsd/x86
++				OUTPUT_DIR=../../../org.eclipse.swt.gtk.openbsd.x86
 +				makefile="make_openbsd.mak"
 +				echo "Building OpenBSD GTK x86 version of SWT"
 +				;;
@@ -22,13 +26,9 @@
  	"SunOS")
  		CC=gcc
  		LD=gcc
-@@ -81,6 +96,7 @@ case $OS in
- 	;;
- esac
+@@ -128,4 +146,4 @@ esac
  
--export CC LD JAVA_HOME QT_HOME AWT_LIB_PATH XTEST_LIB_PATH GECKO_SDK SWT_PTR_CFLAGS OUTPUT_DIR
-+export CC LD CXX CFLAGS CXXFLAGS JAVA_HOME QT_HOME AWT_LIB_PATH XTEST_LIB_PATH GECKO_SDK SWT_PTR_CFLAGS OUTPUT_DIR
+ export CC LD JAVA_HOME AWT_LIB_PATH XTEST_LIB_PATH GECKO_SDK GECKO_INCLUDES GECKO_LIBS SWT_PTR_CFLAGS CDE_HOME OUTPUT_DIR
  
 -make -f $makefile ${1} ${2} ${3} ${4}
-+set -x
 +gmake -f $makefile ${1} ${2} ${3} ${4}

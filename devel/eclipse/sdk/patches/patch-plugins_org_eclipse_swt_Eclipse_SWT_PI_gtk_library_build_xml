@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_build_xml,v 1.1 2005/08/09 14:49:09 kurt Exp $
+--- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.xml.orig	Sun Jul 31 22:11:23 2005
++++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.xml	Sun Jul 31 22:13:30 2005
+@@ -15,7 +15,7 @@
+ 		<arg line="make_mozilla"/>
+ 		<arg line="install"/>
+ 	</exec>
+-	<eclipse.refreshLocal resource="org.eclipse.swt.gtk.linux.x86" depth="infinite" />
++	<eclipse.refreshLocal resource="org.eclipse.swt.gtk.openbsd.x86" depth="infinite" />
+ </target>
+ 
+ <!-- Build swt.so for PowerPC 32 bit GTK (no Mozilla)-->
