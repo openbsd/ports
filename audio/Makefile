@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2005/08/07 22:15:17 robert Exp $
+# $OpenBSD: Makefile,v 1.127 2005/08/09 21:15:12 naddy Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -24,7 +24,6 @@
      SUBDIR += flite
 #    SUBDIR += gmod
      SUBDIR += gogo
-     SUBDIR += gom
      SUBDIR += gqmpeg
      SUBDIR += grip
      SUBDIR += gsm
