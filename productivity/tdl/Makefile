@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/27 05:10:38 mjc Exp $
+# $OpenBSD: Makefile,v 1.2 2005/08/09 18:50:45 naddy Exp $
 
 COMMENT=	"to-do list manager"
 
 DISTNAME=	tdl-1.5.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	productivity
 
 MASTER_SITES=	http://www.rpcurnow.force9.co.uk/tdl/

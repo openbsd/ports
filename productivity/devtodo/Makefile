@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2005/02/07 19:01:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2005/08/09 18:50:45 naddy Exp $
 
 COMMENT=		"reminder/task program aimed at developers"
 
-VERSION=		0.1.17
-DISTNAME=		devtodo-${VERSION}
+DISTNAME=		devtodo-0.1.17
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		productivity devel
 
 HOMEPAGE=		http://swapoff.org/DevTodo/
