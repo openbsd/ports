@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2004/10/09 14:44:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2005/08/09 21:59:39 naddy Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -48,7 +48,6 @@
 #    SUBDIR += vile
      SUBDIR += vim
      SUBDIR += vim,no_x11
-     SUBDIR += wordperfect
 #    SUBDIR += xcoral
 #    SUBDIR += xed
 #    SUBDIR += xemacs
