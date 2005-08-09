@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.217 2005/07/04 11:11:19 espie Exp $
+# $OpenBSD: Makefile,v 1.218 2005/08/09 20:15:31 sturm Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
+     SUBDIR += 855resolution
 #    SUBDIR += FWF
 #    SUBDIR += XFree86
 #    SUBDIR += XFree86-contrib
