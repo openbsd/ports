@@ -1,6 +1,7 @@
 Allows several servers to appear as one to the outside and automatically
-detects servers that are down and distributes clients among the available
-servers. This gives high availability and scalable performance.
+detects servers that are down and distributes clients among the
+available servers. This gives high availability and scalable
+performance.
 
 The load balancing algorithm keeps track of clients and will try to send
 them back to the server they visited the last time. The client table has
@@ -10,7 +11,8 @@ pen detects that a server is unavailable, it scans for another starting
 with the server after the most recently used one. That way we get load
 balancing and "fair" failover for free.
 
-A side-effect of the load-balancing is that several logfiles are produced,
-and all accesses seem to come from the load balancer. The program mergelogs
-solves this problem by merging pen's log file with the ones produced by the
-web servers.
+A side-effect of the load-balancing is that several logfiles are
+produced, and all accesses seem to come from the load balancer. The
+program mergelogs solves this problem by merging pen's log file with the
+ones produced by the web servers.
+

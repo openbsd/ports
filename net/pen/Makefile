@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/16 00:31:24 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2005/08/09 18:30:31 aanriot Exp $
 
 COMMENT=		"load balancer for simple TCP-based protocols"
 
-VERSION=		0.10.1
-DISTNAME=		pen-${VERSION}
+DISTNAME=		pen-0.15.0
 CATEGORIES=		net
 HOMEPAGE=		http://siag.nu/pen/
 
-MASTER_SITES=		http://siag.nu/pub/pen/ \
-			http://mirror.csoft.org/pen/
+MASTER_SITES=		http://siag.nu/pub/pen/
 
 MAINTAINER=		Patroklos Argyroudis <argp@ieee.org>
 
@@ -20,5 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--with-docdir=${PREFIX}/share/doc/pen
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pen
 
 .include <bsd.port.mk>
