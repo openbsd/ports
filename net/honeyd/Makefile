@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2005/07/23 14:24:52 aanriot Exp $
+# $OpenBSD: Makefile,v 1.10 2005/08/09 21:02:38 sturm Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"utility to create virtual hosts on a network"
 DISTNAME=	honeyd-1.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 		http://niels.xtdnet.nl/honeyd/
@@ -20,7 +21,7 @@ WANTLIB=		c edit m ncurses pcap pthread util z
 USE_LIBTOOL=	Yes
 
 LIB_DEPENDS=	dnet.1::net/libdnet \
-		python2.3.0.0::lang/python/2.3
+		python2.3.0.0:python-2.3.*:lang/python/2.3
 RUN_DEPENDS=	::net/rrdtool
 
 CONFIGURE_STYLE=gnu
