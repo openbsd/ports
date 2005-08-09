@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2004/12/27 07:16:44 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2005/08/09 22:50:15 aanriot Exp $
+
+BROKEN=	"requires update due to ocaml 3.08"
 
 COMMENT=		"proof assistant based on a typed lambda calculus"
 
