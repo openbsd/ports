@@ -1,23 +1,7 @@
-$OpenBSD: patch-bin_ant,v 1.1.1.1 2004/01/03 13:40:03 sturm Exp $
---- bin/ant.orig	2003-12-18 15:12:18.000000000 -0500
-+++ bin/ant	2003-12-23 04:25:08.000000000 -0500
-@@ -35,14 +35,7 @@ case "`uname`" in
- esac
- 
- if [ -z "$ANT_HOME" -o ! -d "$ANT_HOME" ] ; then
--  # try to find ANT
--  if [ -d /opt/ant ] ; then
--    ANT_HOME=/opt/ant
--  fi
--
--  if [ -d "${HOME}/opt/ant" ] ; then
--    ANT_HOME="${HOME}/opt/ant"
--  fi
-+  ANT_HOME=_anthome_
- 
-   ## resolve links - $0 may be a link to ant's home
-   PRG="$0"
-@@ -74,7 +67,7 @@ if $cygwin ; then
+$OpenBSD: patch-bin_ant,v 1.2 2005/08/09 14:37:58 kurt Exp $
+--- bin/ant.orig	Fri Jul 22 11:09:14 2005
++++ bin/ant	Fri Jul 22 11:09:30 2005
+@@ -117,7 +117,7 @@ if $cygwin ; then
  fi
  
  # set ANT_LIB location

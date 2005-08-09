@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2005/06/17 19:17:41 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2005/08/09 14:37:58 kurt Exp $
 
 COMMENT=        "java equivalent to make"
 
-DISTNAME=	apache-ant-1.6.2
-PKGNAME=	apache-ant-1.6.2p0
+DISTNAME=	apache-ant-1.6.5
 CATEGORIES=	devel
 
 HOMEPAGE=	http://ant.apache.org/
@@ -37,8 +36,8 @@ TXT=		README WHATSNEW LICENSE NOTICE LICENSE.dom LICENSE.sax LICENSE.xerces
 
 do-install:
 	@cd ${WRKDIST}/bin; \
-	    perl -pi -e 's|_anthome_|${TRUEPREFIX}/bin|;' \
-		-e 's|_antlibs_|${TRUEPREFIX}/lib/java/ant|;' ant runant.pl; \
+	    perl -pi -e 's|_antlibs_|${TRUEPREFIX}/lib/java/ant|;' \
+		ant runant.pl; \
 	    ${INSTALL_SCRIPT} ant antRun runant.pl ${PREFIX}/bin
 	@${INSTALL_DATA_DIR} ${ANTDOCS}
 	@cp -Rp ${WRKDIST}/docs/* ${ANTDOCS}
