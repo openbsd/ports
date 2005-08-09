@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/11/24 00:11:03 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2005/08/09 09:07:24 espie Exp $
 
 COMMENT=		"OpenCM change management system"
 
@@ -39,6 +39,8 @@ NO_REGRESS=	Yes
 MAKE_FLAGS+=		TEXI2DVI=: DVIPS=:
 MAKE_FLAGS+= LIBZ=-lz USOURCE_SUBDIRS="libgdiff src"
 MAKE_FLAGS+= LIBGC=
+MAKE_FLAGS+=		infodir=${PREFIX}/info
+MAKE_FLAGS+=		mandir=${PREFIX}/man
 FAKE_FLAGS=		${MAKE_FLAGS}
 
 post-install:
