@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.68 2005/07/04 10:46:05 espie Exp $
+# $OpenBSD: make-plist,v 1.69 2005/08/10 13:09:17 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -884,6 +884,9 @@ sub handle_file
 		if (($type eq 'library' || $type eq 'plugin') && (!defined $item) && !$shared_only) {
 			$p->{wantshared} = 1;
 			$p = $p->{shared};
+			if ($pass == 1) {
+				return;
+			}
 		}
 		handle_modes($p, $item, $o);
 		$o->add_object($p);
