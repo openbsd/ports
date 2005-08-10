@@ -1,6 +1,6 @@
-$OpenBSD: patch-j2sdk1_3_1_make_java_verify_Makefile,v 1.1 2004/06/02 15:23:20 sturm Exp $
---- j2sdk1.3.1/make/java/verify/Makefile.orig  2004-05-30 16:54:51.000000000 -0400
-+++ j2sdk1.3.1/make/java/verify/Makefile       2004-05-30 16:55:11.000000000 -0400
+$OpenBSD: patch-j2sdk1_3_1_make_java_verify_Makefile,v 1.2 2005/08/10 22:36:27 kurt Exp $
+--- j2sdk1.3.1/make/java/verify/Makefile.orig	Tue Aug  9 18:15:58 2005
++++ j2sdk1.3.1/make/java/verify/Makefile	Tue Aug  9 18:16:01 2005
 @@ -29,7 +29,7 @@ endif
  # We want to privatize libverify.so internals.
  #
