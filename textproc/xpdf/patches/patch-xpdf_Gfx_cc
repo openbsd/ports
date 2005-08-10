@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpdf_Gfx_cc,v 1.1 2004/12/22 17:36:24 robert Exp $
+$OpenBSD: patch-xpdf_Gfx_cc,v 1.2 2005/08/10 20:27:25 naddy Exp $
 --- xpdf/Gfx.cc.orig	Thu Jan 22 02:26:45 2004
-+++ xpdf/Gfx.cc	Wed Dec 22 12:59:33 2004
-@@ -2654,7 +2654,9 @@
++++ xpdf/Gfx.cc	Wed Aug 10 22:27:55 2005
+@@ -2654,7 +2654,9 @@ void Gfx::doImage(Object *ref, Stream *s
      haveMask = gFalse;
      dict->lookup("Mask", &maskObj);
      if (maskObj.isArray()) {

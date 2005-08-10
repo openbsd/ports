@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpdf_GfxState_cc,v 1.4 2004/12/22 17:36:24 robert Exp $
+$OpenBSD: patch-xpdf_GfxState_cc,v 1.5 2005/08/10 20:27:25 naddy Exp $
 --- xpdf/GfxState.cc.orig	Thu Jan 22 02:26:45 2004
-+++ xpdf/GfxState.cc	Wed Dec 22 12:59:33 2004
-@@ -708,6 +708,11 @@
++++ xpdf/GfxState.cc	Wed Aug 10 22:27:55 2005
+@@ -708,6 +708,11 @@ GfxColorSpace *GfxICCBasedColorSpace::pa
    }
    nCompsA = obj2.getInt();
    obj2.free();
@@ -13,7 +13,7 @@ $OpenBSD: patch-xpdf_GfxState_cc,v 1.4 2004/12/22 17:36:24 robert Exp $
    if (dict->lookup("Alternate", &obj2)->isNull() ||
        !(altA = GfxColorSpace::parse(&obj2))) {
      switch (nCompsA) {
-@@ -1054,7 +1059,7 @@
+@@ -1054,7 +1059,7 @@ GfxColorSpace *GfxDeviceNColorSpace::par
    }
    nCompsA = obj1.arrayGetLength();
    if (nCompsA > gfxColorMaxComps) {
