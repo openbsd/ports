@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2005/06/09 20:42:37 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2005/08/10 08:53:26 aanriot Exp $
 
 COMMENT=	"multi-threaded routing daemon"
 
 DISTNAME=	quagga-0.96.4
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net
 MASTER_SITES=	http://www.quagga.net/download/
 
