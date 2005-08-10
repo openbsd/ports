@@ -1,6 +1,6 @@
-$OpenBSD: patch-include_Attribute_h,v 1.1 2004/01/14 20:24:31 naddy Exp $
---- include/Attribute.h.orig	2004-01-14 21:09:00.000000000 +0100
-+++ include/Attribute.h	2004-01-14 21:10:44.000000000 +0100
+$OpenBSD: patch-include_Attribute_h,v 1.2 2005/08/10 09:59:13 espie Exp $
+--- include/Attribute.h.orig	Tue Dec 16 09:49:29 1997
++++ include/Attribute.h	Wed Aug 10 11:43:30 2005
 @@ -31,6 +31,27 @@ class AttributeSemantics;
  class AttributeContext;
  class Syntax;
@@ -29,10 +29,12 @@ $OpenBSD: patch-include_Attribute_h,v 1.1 2004/01/14 20:24:31 naddy Exp $
  class SP_API AttributeDefinitionDesc {
  public:
    AttributeDefinitionDesc() { }
-@@ -373,27 +394,6 @@ private:
+@@ -371,27 +392,6 @@ public:
+   AttributeSemantics *copy() const;
+ private:
    ConstPtr<Notation> notation_;
- };
- 
+-};
+-
 -class SP_API AttributeValue : public Resource {
 -public:
 -  enum Type {
@@ -52,8 +54,6 @@ $OpenBSD: patch-include_Attribute_h,v 1.1 2004/01/14 20:24:31 naddy Exp $
 -  virtual Boolean recoverUnquoted(const StringC &, const Location &,
 -				  AttributeContext &, const StringC &);
 -  static Boolean handleAsUnterminated(const Text &, AttributeContext &);
--};
--
+ };
+ 
  class SP_API ImpliedAttributeValue : public AttributeValue {
- public:
-   ImpliedAttributeValue();

@@ -1,12 +1,17 @@
-$OpenBSD: patch-include_config_h,v 1.1 2002/10/16 00:49:04 naddy Exp $
+$OpenBSD: patch-include_config_h,v 1.2 2005/08/10 09:59:13 espie Exp $
 --- include/config.h.orig	Wed Oct 13 07:02:46 1999
-+++ include/config.h	Wed Oct 16 02:07:51 2002
-@@ -26,7 +26,7 @@
++++ include/config.h	Wed Aug 10 11:47:51 2005
+@@ -26,8 +26,12 @@
  #endif
  #if __GNUC__ > 2 || (__GNUC__ == 2 && __GNUC_MINOR__ >= 8)
  #define SP_ANSI_LIB
 -#define SP_NO_STD_NAMESPACE
 +// #define SP_NO_STD_NAMESPACE
  #undef SP_NEW_H_MISSING
++#endif
++#if __GNUC__ > 2
++#define SP_HAVE_TYPENAME
++#define SP_HAVE_PLACEMENT_OPERATOR_DELETE
  #endif
  
+ #endif /* __GNUG__ */
