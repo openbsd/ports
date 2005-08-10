@@ -1,0 +1,147 @@
+$OpenBSD: patch-src_Makefile,v 1.1 2005/08/10 07:53:44 mbalmer Exp $
+--- src/Makefile.orig	Sun Feb  6 20:11:34 2005
++++ src/Makefile	Tue Aug  9 10:04:02 2005
+@@ -7,20 +7,21 @@
+ # path and the #, or you'll get compile errors. DO NOT put blanks before and
+ # after "=", this is parsed and rewritten by the configure script.
+ #
++DOCBASE=$(PLANBASE)/share/doc/plan
+ #				# user-callable executable (plan)
+-DIR=/usr/local/bin
++DIR=$(PLANBASE)/bin
+ #				# auxiliary programs (pland, notifier, PS)
+-LIB=/usr/local/lib
++LIB=$(PLANBASE)/share/plan
+ #				# help file (plan.help)
+-SBIN=/usr/local/bin
++SBIN=$(PLANBASE)/sbin
+ #				# system programs (netplan)
+-HELP=/usr/local/lib
++HELP=$(DOCBASE)
+ #				# netplan expects netplan.dir/ here
+-NETPLANDIR=/usr/local/lib
++NETPLANDIR=/var
+ #				# unformatted nroff manpage (plan.[14])
+-MAN=/usr/local/man/man
++MAN=$(PLANBASE)/man
+ #				# formatted manpage (plan.[14])
+-CATMAN=/usr/catman/local/cat
++CATMAN=NONE
+ #				# subdirectory in home dir, or empty
+ PLANRULE=
+ #				# lockfile for plan, %d is uid
+@@ -34,12 +35,12 @@ LEX=lex
+ #				# standard Unix compiler generator
+ YACC=yacc
+ #				# numerical user ID of <nobody> account
+-NOB_UID=60001
++NOB_UID=32767
+ #				# default numerical group ID of <nobody>
+-NOB_GID=60001
++NOB_GID=32767
+ # 				# used by plan to pre-process holiday files,
+ #				# plan will check if this file really exists
+-CPP_PATH='/lib/cpp -P -I$(HELP)'
++CPP_PATH='/usr/bin/cpp -P -I$(HELP)'
+ #				# by default, fork on startup? TRUE or FALSE
+ DOFORK=TRUE
+ #				# switching to ISO8859-1
+@@ -54,10 +55,11 @@ JAPAN=
+ HOLIDAY=german
+ #				# do NOT define -O2 on DEC OSF/1 machines!
+ #				# use -O instead of -O2 on HP and Solaris
+-DEBUG=-g
+-DEBUG=-O2
++#DEBUG=-g
++#DEBUG=-O2
++DEBUG=${CFLAGS}
+ #				# what to do without make arguments
+-DEFTARGET=linux
++DEFTARGET=openbsd
+ #------------------------- end of configuration section ----------------------
+ 
+ OPT=$(DEBUG) $(PLANRULE) -DPLANLOCK=\"$(PLANLOCK)\" -DPLANDLOCK=\"$(PLANDLOCK)\"
+@@ -141,8 +143,8 @@ NBSD_C	= -ansi -I/usr/X11R6/include -DBS
+ 	  -DNO_MOTIF
+ FBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DNOLOCK -DNOREGEX -DRABBITS\
+ 	  -DSTDLIBMALLOC
+-OBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DRABBITS -DNOLOCK -DNOREGEX\
+-	  -DNO_MOTIF -DSTDLIBMALLOC
++OBSD_C	= -ansi -I${X11BASE}/include -DBSD -DRABBITS -DNOLOCK -DNOREGEX\
++	  -DSTDLIBMALLOC -I${LOCALBASE}/include
+ LINUX_C	= -W -Wall -I/usr/X11R6/include -DNOLOCK -DLINUX
+ SVR4_C	= -DSVR4 -DSYSV -DOLDTZ -DUSERAND -DPID_T=long -DNOMSEP
+ NEWS_C	= -DNEWSOS4 -DNOMSEP -DSUN -DBSD -DRABBITS -DNGROUPS_MAX=16\
+@@ -221,7 +223,7 @@ NBSD_L1	= -L/usr/X11R6/lib -lXm -lXt -lX
+ NBSD_L2	= -L/usr/X11R6/lib -lc
+ FBSD_L1	= -L/usr/X11R6/lib -lXm -lXt -lX11 -lXext -lSM -lICE -lXpm
+ FBSD_L2	= -L/usr/X11R6/lib -lc
+-OBSD_L1	= -L/usr/local/lib -lXm -L/usr/X11R6/lib -lXt -lX11
++OBSD_L1	= ${MOTIFLIB} -L${X11BASE}/lib -lXt -lX11 -lXpm -lc -lXext
+ OBSD_L2	= -lc
+ LINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lSM -lXm -lXt -lX11 -lXpm -lc -lXext -lSM -lICE -lX11
+ LINUX_L2= -lc
+@@ -510,7 +512,7 @@ notifier: $(N_OBJ)
+ 
+ netplan: $(S_OBJ) $(MAKEFILE)
+ 	$(CCLINE) -o netplan $(S_OBJ) \
+-		-L/usr/local/lib $(L2F)
++		-L${LOCALBASE}/lib $(L2F)
+ 
+ .c.o:
+ 	$(CCLINE) -c $<
+@@ -556,36 +558,24 @@ g_dbase.o g_dbfile.o g_formfile.o g_form
+ 
+ #---------------------------------------------------------------
+ install:
+-	-rm -f $(DESTDIR)$(DIR)/pland $(DESTDIR)$(DIR)/notifier $(DESTDIR)$(LIB)/netplan
+-	mkdir -p $(DESTDIR)$(DIR)
+-	cp plan $(DESTDIR)$(DIR)
+-	mkdir -p $(DESTDIR)$(LIB)
+-	cp pland notifier ../misc/plan_cal.ps ../language/* $(DESTDIR)$(LIB)
+-	mkdir -p $(DESTDIR)$(SBIN)
+-	cp netplan $(DESTDIR)$(SBIN)
+-	-(test x'$(JAPAN)' != x && cp ../misc/plan_calSJ.ps $(DESTDIR)$(LIB)) || exit 0
+-	mkdir -p $(DESTDIR)$(HELP)
+-	cp ../language/plan.help $(DESTDIR)$(HELP)
+-	-strip $(DESTDIR)$(DIR)/plan $(DESTDIR)$(LIB)/pland $(DESTDIR)$(LIB)/notifier $(DESTDIR)$(SBIN)/netplan
+-	-chmod 755 $(DESTDIR)$(DIR)/plan $(DESTDIR)$(LIB)/pland $(DESTDIR)$(LIB)/notifier $(DESTDIR)$(LIB)/netplan
+-	-chmod 644 $(DESTDIR)$(HELP)/plan.help $(DESTDIR)$(LIB)/plan_cal.ps $(DESTDIR)$(LIB)/plan.lang.*
+-	-(test x'$(JAPAN)' != x && chmod 644 $(DESTDIR)$(LIB)/plan_calSJ.ps) || exit 0
+-	mkdir -p $(DESTDIR)$(NETPLANDIR)/netplan.dir
+-	-chmod 700 $(DESTDIR)$(NETPLANDIR)/netplan.dir || exit 0
+-	-(test x'$(CATMAN)' != xNONE -a -x "`which nroff`" && nroff -man ../misc/plan.1 >../misc/plan.1cat) || exit 0
+-	-(test x'$(CATMAN)' != xNONE -a -x "`which nroff`" && nroff -man ../misc/plan.4 >../misc/plan.4cat) || exit 0
+-	-(test x'$(CATMAN)' != xNONE -a -x "`which nroff`" && nroff -man ../misc/netplan.1 >../misc/netplan.1cat) || exit 0
+-	-(test x'$(MAN)'    != xNONE -a -d $(DESTDIR)$(MAN)1 && cp ../misc/plan.1 $(DESTDIR)$(MAN)1/plan) || exit 0
+-	-(test x'$(MAN)'    != xNONE -a -d $(DESTDIR)$(MAN)4 && cp ../misc/plan.4 $(DESTDIR)$(MAN)4/plan) || exit 0
+-	-(test x'$(MAN)'    != xNONE -a -d $(DESTDIR)$(MAN)1 && cp ../misc/netplan.1 $(DESTDIR)$(MAN)1/netplan) || exit 0
+-	-(test x'$(CATMAN)' != xNONE -a -d $(DESTDIR)$(CATMAN)1 && cp ../misc/plan.1cat $(DESTDIR)$(CATMAN)1/plan) || exit 0
+-	-(test x'$(CATMAN)' != xNONE -a -d $(DESTDIR)$(CATMAN)4 && cp ../misc/plan.4cat $(DESTDIR)$(CATMAN)4/plan) || exit 0
+-	-(test x'$(CATMAN)' != xNONE -a -d $(DESTDIR)$(CATMAN)1 && cp ../misc/netplan.1cat $(DESTDIR)$(CATMAN)1/netplan) || exit 0
+-	-(test -f ${HOME}/.holiday || cp ../holiday/holiday_$(HOLIDAY) ${HOME}/.holiday) || exit 0
+-	-(test `uname` = IRIX -o `uname` = IRIX64 && mkdir $$HOME/.icons) || exit 0
+-	-(test `uname` = IRIX -o `uname` = IRIX64 && cp ../misc/Plan.icon $$HOME/.icons/Plan.icon) || exit 0
+-	@echo ""
+-	@echo "use ../holiday/* as templates for your ~/.holiday file"
++	${BSD_INSTALL_DATA_DIR} $(DOCBASE)
++	${BSD_INSTALL_DATA_DIR} $(EXAMPLES)
++	${BSD_INSTALL_MAN_DIR} $(MAN)/man1
++	${BSD_INSTALL_MAN_DIR} $(MAN)/man4
++	${BSD_INSTALL_MAN_DIR} $(MAN)/man8
++	${BSD_INSTALL_PROGRAM} plan pland $(DIR)
++	${BSD_INSTALL_PROGRAM} notifier netplan $(SBIN)
++	${BSD_INSTALL_DATA_DIR} $(LIB)
++	${BSD_INSTALL_DATA} ../language/plan.lang.* $(LIB)
++	${BSD_INSTALL_DATA} ../misc/plan_cal.ps ../language/plan.help $(HELP)
++	${BSD_INSTALL_DATA} ../README ../HISTORY $(HELP)
++	${BSD_INSTALL_DATA} ../holiday/holiday_* $(EXAMPLES)
++	${BSD_INSTALL_MAN} ../misc/plan.1 $(MAN)/man1
++	${BSD_INSTALL_MAN} ../misc/plan.4 $(MAN)/man4
++	${BSD_INSTALL_MAN} ../misc/netplan.1 $(MAN)/man8/netplan.8
++
++#	@echo ""
++#	@echo "use ../holiday/* as templates for your ~/.holiday file"
+ 
+ clean:
+ 	-rm -f *.o

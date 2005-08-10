@@ -1,0 +1,10 @@
+$OpenBSD: patch-src_netplan_if_h,v 1.1 2005/08/10 07:53:44 mbalmer Exp $
+--- src/netplan_if.h.orig	Mon Aug  8 14:25:19 2005
++++ src/netplan_if.h	Mon Aug  8 14:26:05 2005
+@@ -39,5 +39,5 @@
+ #define PORT		2983			/* default IANA IP port */
+ #define OLDPORT		5444			/* old IP port */
+ #define HOMEDIR		LIB			/* data file dir go here */
+-#define NETDIR		"netplan.dir"		/* concatenated to HOMEDIR */
++#define NETDIR		"netplan"		/* concatenated to HOMEDIR */
+ #define ACL_FILE	".netplan-acl"		/* access list file */

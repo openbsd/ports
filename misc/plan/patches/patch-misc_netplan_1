@@ -1,0 +1,15 @@
+$OpenBSD: patch-misc_netplan_1,v 1.1 2005/08/10 07:53:44 mbalmer Exp $
+--- misc/netplan.1.orig	Thu Jun  1 13:38:06 2000
++++ misc/netplan.1	Mon Aug  8 19:18:23 2005
+@@ -11,9 +11,8 @@ netplan \- IP server for plan(1) appoint
+ .B netplan
+ is an IP server that serves calendar data to
+ .BR plan (1)
+-programs. It maintains a directory, by default /usr/local/lib/netplan.dir
+-or /usr/freeware/lib/netplan.dir (SGI) or /usr/lib/plan/netplan.dir
+-(Debian Linux), that contains calendar files and an access list file.
++programs. It maintains a directory, by default /var/netplan, that contains calendar
++files and an access list file.
+ .B plan
+ users can name files and hosts in their file list dialog, which causes
+ .B plan

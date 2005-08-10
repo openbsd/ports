@@ -1,35 +1,53 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 17:54:16 espie Exp $
-bin/Killpland
-bin/netplan
-bin/notifier
+@comment $OpenBSD: PLIST,v 1.6 2005/08/10 07:53:44 mbalmer Exp $
+@newgroup _netplan:549
+@newuser _netplan:549:549:daemon:Plan:/nonexistent:/sbin/nologin
 bin/plan
 bin/pland
-@man man/man1/netplan.1
 @man man/man1/plan.1
 @man man/man4/plan.4
+@man man/man8/netplan.8
+sbin/netplan
+sbin/notifier
 share/doc/plan/
-share/doc/plan/BlackWhite
-share/doc/plan/Mkdoc
-share/doc/plan/Mkdoc.nawk
-share/doc/plan/Monochrome
+share/doc/plan/HISTORY
 share/doc/plan/README
 share/doc/plan/plan.help
 share/doc/plan/plan_cal.ps
 share/examples/plan/
 share/examples/plan/holiday_australia
+share/examples/plan/holiday_austria
 share/examples/plan/holiday_bavarian
 share/examples/plan/holiday_belgium
+share/examples/plan/holiday_belgium_french
 share/examples/plan/holiday_canada
+share/examples/plan/holiday_combi
+share/examples/plan/holiday_czech
+share/examples/plan/holiday_denmark
 share/examples/plan/holiday_dutch
 share/examples/plan/holiday_finnish
 share/examples/plan/holiday_french
 share/examples/plan/holiday_frswiss
 share/examples/plan/holiday_german
+share/examples/plan/holiday_greek
+share/examples/plan/holiday_hungary
 share/examples/plan/holiday_italy
 share/examples/plan/holiday_japan
+share/examples/plan/holiday_norway
+share/examples/plan/holiday_portugal
 share/examples/plan/holiday_quebec
+share/examples/plan/holiday_slovak
 share/examples/plan/holiday_spain
 share/examples/plan/holiday_swedish
 share/examples/plan/holiday_uk
 share/examples/plan/holiday_us
-share/netplan.dir/
+share/plan/
+share/plan/plan.lang.dutch
+share/plan/plan.lang.english
+share/plan/plan.lang.french
+share/plan/plan.lang.german
+share/plan/plan.lang.italian
+share/plan/plan.lang.spanish
+@mode 770
+@owner _netplan
+@group _netplan
+@sample /var/netplan/

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_netplan_c,v 1.1 2005/08/10 07:53:44 mbalmer Exp $
+--- src/netplan.c.orig	Sun Jun 12 11:57:26 2005
++++ src/netplan.c	Sun Jun 12 11:57:42 2005
+@@ -136,7 +136,7 @@ int main(
+ 	time_t          t;
+ 	struct stat     st;
+ 	static const char nobody[] = "anonymous";
+-	static const char nobody_name1[] = "netplan";
++	static const char nobody_name1[] = "_netplan";
+ 	static const char nobody_name2[] = "nobody";
+ 	uid_t		nobody_uid = NOBODY_UID;
+ 	gid_t		nobody_gid = NOBODY_GID;
