@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2004/10/21 05:39:35 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2005/08/10 05:24:09 jolan Exp $
 
-BROKEN=		"doesn't respect LDFLAGS, problems loading data files"
+BROKEN=		"problems loading data files; crashes"
 
 COMMENT=	"graphical multiplayer 3-d tank war game"
-DISTNAME=	bzflag-1.10.8.20041007
-PKGNAME=	bzflag-1.10.8
+DISTNAME=	bzflag-2.0.2.20050318
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bzflag/}
 
@@ -16,12 +15,18 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
+USE_GMAKE=	Yes
 USE_X11=	Yes
 
+LIB_DEPENDS=	SDL.4::devel/sdl
+
+WANTLIB=	GL GLU ICE SM X11 Xext c m ncurses pthread stdc++ usbhid z
+
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS+=--disable-adns --disable-curl --enable-debug
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-L${LOCALBASE}/include"
 
-post-extract:
+pre-build:
 	@sed -e 's|@LINUX_TRUE@||g ; s|@LINUX_FALSE@|#|g' \
 		${WRKSRC}/src/platform/Makefile.in > \
 		${WRKSRC}/src/platform/Makefile.sed
