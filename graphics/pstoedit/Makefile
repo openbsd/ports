@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/08/04 17:05:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2005/08/11 17:32:06 naddy Exp $
 
 COMMENT=	"translate PostScript/PDF graphics to other vector formats"
 
-DISTNAME=	pstoedit-3.40
+DISTNAME=	pstoedit-3.41
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.pstoedit.net/
@@ -28,6 +28,10 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED}	\
 		--without-swf		\
 		--without-magick
 WANTLIB=	c stdc++ m
+
+# trailing carriage returns where we need to apply a patch
+pre-patch:
+	@perl -pi -e 's/\r$$//' ${WRKSRC}/src/drvlatex2e.cpp
 
 post-install:
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} pstoedit.1 ${PREFIX}/man/man1

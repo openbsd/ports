@@ -11,6 +11,7 @@ formats. Currently pstoedit can generate the following major formats:
 
 - via the libp2edrvstd.so module (not available on static platforms):
 
+   * Asymptote (.asy)
    * DXF - CAD exchange format
    * gnuplot
    * gschem
