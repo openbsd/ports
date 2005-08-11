@@ -1,6 +1,17 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
---- configure.orig	Sat Feb 19 11:24:28 2005
-+++ configure	Sun Feb 27 15:47:13 2005
+$OpenBSD: patch-configure,v 1.2 2005/08/11 01:15:17 todd Exp $
+--- configure.orig	Sun Jul 24 13:52:08 2005
++++ configure	Tue Aug  9 22:34:48 2005
+@@ -21,8 +21,8 @@ prefix=""
+ interp_prefix="/usr/gnemul/qemu-%M"
+ static="no"
+ cross_prefix=""
+-cc="gcc"
+-host_cc="gcc"
++cc="${CC:-cc}"
++host_cc="${CC:-cc}"
+ ar="ar"
+ make="make"
+ strip="strip"
 @@ -41,7 +41,7 @@ case "$cpu" in
    alpha)
      cpu="alpha"
@@ -10,7 +21,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
      cpu="powerpc"
    ;;
    mips)
-@@ -100,6 +100,7 @@ oss="yes"
+@@ -109,6 +109,7 @@ oss="yes"
  ;;
  OpenBSD)
  bsd="yes"
@@ -18,7 +29,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
  oss="yes"
  ;;
  Darwin)
-@@ -341,7 +342,7 @@ else
+@@ -366,7 +367,7 @@ else
  if test -z "$prefix" ; then
      prefix="/usr/local"
  fi
@@ -27,17 +38,28 @@ $OpenBSD: patch-configure,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
  datadir="$prefix/share/qemu"
  docdir="$prefix/share/doc/qemu"
  bindir="$prefix/bin"
-@@ -533,6 +534,9 @@ fi
+@@ -434,9 +435,7 @@ if test "$darwin" = "yes" ; then
+     echo "Cocoa support     $cocoa"
+ fi
+ echo "SDL support       $sdl"
+-if test "$sdl" != "no" ; then
+-    echo "SDL static link   $sdl_static"
+-fi
++echo "SDL static link   $sdl_static"
+ echo "mingw32 support   $mingw32"
+ echo "Adlib support     $adlib"
+ echo -n "FMOD support      $fmod"
+@@ -567,6 +566,9 @@ fi
  if test "$oss" = "yes" ; then
    echo "CONFIG_OSS=yes" >> $config_mak
    echo "#define CONFIG_OSS 1" >> $config_h
 +  if test "$openbsd"="yes" ; then
-+    echo "CONFIG_OSS_LIBRARY=yes" >> $config_mak
++     echo "CONFIG_OSS_LIBRARY=yes" >> $config_mak
 +  fi
  fi
  if test "$fmod" = "yes" ; then
    echo "CONFIG_FMOD=yes" >> $config_mak
-@@ -563,6 +567,15 @@ if [ "$bsd" = "yes" ] ; then
+@@ -599,6 +601,14 @@ if [ "$bsd" = "yes" ] ; then
    echo "#define MAP_ANONYMOUS MAP_ANON" >> $config_h
    echo "#define _BSD 1" >> $config_h
  fi
@@ -49,7 +71,6 @@ $OpenBSD: patch-configure,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
 +else
 +  echo "#define qemu_siginfo struct siginfo" >> $config_h
 +fi     
-+
  
  for target in $target_list; do 
  

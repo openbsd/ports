@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2005/03/08 16:29:43 todd Exp $
+# $OpenBSD: Makefile,v 1.3 2005/08/11 01:15:17 todd Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc # no success building on other archs yet
 
 COMMENT=		"multi system emulator"
-DISTNAME=		qemu-20050227
+DISTNAME=		qemu-0.7.1
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://fabrice.bellard.free.fr/qemu/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.FreeDaemonHosting.com/pub/users/todd/
+MASTER_SITES=		${HOMEPAGE}
 
 BUILD_DEPENDS=		::textproc/texi2html
 LIB_DEPENDS=    	SDL::devel/sdl

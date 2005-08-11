@@ -1,9 +1,9 @@
-$OpenBSD: patch-target-sparc_cpu_h,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
---- target-sparc/cpu.h.orig	Tue Feb 22 13:08:57 2005
-+++ target-sparc/cpu.h	Sun Feb 27 17:05:36 2005
-@@ -189,8 +189,12 @@ void cpu_set_cwp(CPUSPARCState *env1, in
- 	cpu_set_cwp(env, _tmp & PSR_CWP & (NWINDOWS - 1));		\
+$OpenBSD: patch-target-sparc_cpu_h,v 1.2 2005/08/11 01:15:17 todd Exp $
+--- target-sparc/cpu.h.orig	Sun Jul 24 13:52:08 2005
++++ target-sparc/cpu.h	Tue Aug  9 22:34:49 2005
+@@ -284,8 +284,12 @@ void cpu_set_cwp(CPUSPARCState *env1, in
      } while (0)
+ #endif
  
 +#ifdef _BSD
 +int cpu_sparc_signal_handler(int hostsignum, qemu_siginfo *info, void *puc);
@@ -12,5 +12,5 @@ $OpenBSD: patch-target-sparc_cpu_h,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
  int cpu_sparc_signal_handler(int hostsignum, struct siginfo *info, void *puc);
 +#endif
  
- #define TARGET_PAGE_BITS 12 /* 4k */
  #include "cpu-all.h"
+ 

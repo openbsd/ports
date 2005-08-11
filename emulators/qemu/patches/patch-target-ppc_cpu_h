@@ -1,7 +1,7 @@
-$OpenBSD: patch-target-ppc_cpu_h,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
---- target-ppc/cpu.h.orig	Tue Feb 15 17:06:19 2005
-+++ target-ppc/cpu.h	Sun Feb 27 15:47:13 2005
-@@ -163,8 +163,7 @@ void cpu_ppc_close(CPUPPCState *s);
+$OpenBSD: patch-target-ppc_cpu_h,v 1.2 2005/08/11 01:15:17 todd Exp $
+--- target-ppc/cpu.h.orig	Sun Jul 24 13:52:08 2005
++++ target-ppc/cpu.h	Tue Aug  9 22:34:49 2005
+@@ -589,8 +589,7 @@ void cpu_ppc_close(CPUPPCState *s);
  /* you can call this signal handler from your SIGBUS and SIGSEGV
     signal handlers to inform the virtual CPU of exceptions. non zero
     is returned if the signal was handled by the virtual CPU.  */

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_target,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
---- Makefile.target.orig	Tue Feb 22 13:27:14 2005
-+++ Makefile.target	Tue Mar  1 17:22:05 2005
-@@ -14,7 +14,7 @@ ifdef CONFIG_USER_ONLY
+$OpenBSD: patch-Makefile_target,v 1.2 2005/08/11 01:15:17 todd Exp $
+--- Makefile.target.orig	Sun Jul 24 13:52:08 2005
++++ Makefile.target	Wed Aug 10 16:00:09 2005
+@@ -17,7 +17,7 @@ ifdef CONFIG_USER_ONLY
  VPATH+=:$(SRC_PATH)/linux-user
  DEFINES+=-I$(SRC_PATH)/linux-user -I$(SRC_PATH)/linux-user/$(TARGET_ARCH)
  endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_target,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
  #CFLAGS+=-Werror
  LDFLAGS=-g
  LIBS=
-@@ -127,6 +127,11 @@ else
+@@ -66,6 +66,10 @@ else
  OP_CFLAGS+= -malign-functions=0
  endif
  
@@ -18,11 +18,19 @@ $OpenBSD: patch-Makefile_target,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
 +OP_CFLAGS+= -fno-stack-protector
 +endif
 +
-+
  ifdef TARGET_GPROF
  USE_I386_LD=y
  endif
-@@ -312,7 +317,10 @@ AUDIODRV += sdlaudio.o
+@@ -151,6 +155,8 @@ endif
+ #########################################################
+ 
+ DEFINES+=-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
++
++DEFINES+= #-DDEBUG_GDB -DDEBUG -DDEBUG_KBD -DDEBUG_MOUSE
+ LIBS+=-lm
+ ifndef CONFIG_USER_ONLY
+ LIBS+=-lz
+@@ -269,7 +275,10 @@ AUDIODRV += sdlaudio.o
  endif
  ifdef CONFIG_OSS
  AUDIODRV += ossaudio.o
@@ -33,21 +41,20 @@ $OpenBSD: patch-Makefile_target,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
  
  pc.o: DEFINES := -DUSE_SB16 $(DEFINES)
  
-@@ -404,7 +412,7 @@ gen-op.h: op.o $(DYNGEN)
- 	$(DYNGEN) -g -o $@ $<
- 
- op.o: op.c
--	$(CC) $(OP_CFLAGS) $(DEFINES) -c -o $@ $<
-+	$(CC) $(OP_CFLAGS) $(DEFINES) -fno-stack-protector -c -o $@ $<
- 
- helper.o: helper.c
- 	$(CC) $(HELPER_CFLAGS) $(DEFINES) -c -o $@ $<
-@@ -439,7 +447,7 @@ clean:
+@@ -288,6 +297,7 @@ ifeq ($(TARGET_BASE_ARCH), i386)
+ VL_OBJS+= ide.o ne2000.o pckbd.o vga.o $(SOUND_HW) dma.o $(AUDIODRV)
+ VL_OBJS+= fdc.o mc146818rtc.o serial.o i8259.o i8254.o pc.o
+ VL_OBJS+= cirrus_vga.o mixeng.o apic.o parallel.o
++VL_OBJS+= pcnet.o
+ endif
+ ifeq ($(TARGET_BASE_ARCH), ppc)
+ VL_OBJS+= ppc.o ide.o ne2000.o pckbd.o vga.o $(SOUND_HW) dma.o $(AUDIODRV)
+@@ -427,7 +437,7 @@ clean:
  
  install: all 
  ifneq ($(PROGS),)
 -	install -m 755 -s $(PROGS) "$(bindir)"
-+	install -m 755 -s $(PROGS) $(PREFIX)/bin/
++	install -m 755 -s $(PROGS) "$(PREFIX)/bin/"
  endif
  
  ifneq ($(wildcard .depend),)

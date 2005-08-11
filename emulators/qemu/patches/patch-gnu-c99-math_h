@@ -1,0 +1,28 @@
+$OpenBSD: patch-gnu-c99-math_h,v 1.1 2005/08/11 01:15:17 todd Exp $
+--- gnu-c99-math.h.orig	Thu Apr 28 15:16:19 2005
++++ gnu-c99-math.h	Thu Apr 28 15:38:01 2005
+@@ -0,0 +1,24 @@
++#if (defined(__sun__) || defined(__OpenBSD__)) && defined(__GNUC__)
++
++/*
++ * C99 7.12.3 classification macros
++ * and
++ * C99 7.12.14 comparison macros
++ *
++ * ... do not work on Solaris 10 using GNU CC 3.4.x.
++ * Try to workaround the missing / broken C99 math macros.
++ */
++#include <ieeefp.h>
++
++#define isnormal(x)		(fabs(x) < DBL_EPSILON && !isnan(x) && !isinf(x))
++
++#define	isgreater(x, y)		((x) > (y))
++#define	isgreaterequal(x, y)	((x) >= (y))
++#define	isless(x, y)		((x) < (y))
++#define	islessequal(x, y)	((x) <= (y))
++
++#define	isunordered(x,y)	(isnan(x) || isnan(y))
++#define lrintf(x)		((long)rintf(x))
++#define llrintf(x)		((long long)rintf(x))
++
++#endif

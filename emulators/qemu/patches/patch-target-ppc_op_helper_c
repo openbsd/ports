@@ -1,57 +1,11 @@
-$OpenBSD: patch-target-ppc_op_helper_c,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
---- target-ppc/op_helper.c.orig	Tue Feb 15 17:06:19 2005
-+++ target-ppc/op_helper.c	Sun Feb 27 15:47:13 2005
-@@ -226,6 +226,18 @@ void do_store_fpscr (uint32_t mask)
-     /* Set rounding mode */
-     switch (env->fpscr[0] & 0x3) {
-     case 0:
-+#ifdef _BSD
-+	fpsetround(FP_RN);
-+	break;
-+    case 1:
-+	fpsetround(FP_RZ);
-+	break;
-+    case 2:
-+	fpsetround(FP_RP);
-+	break;
-+    case 3:
-+	fpsetround(FP_RM);
-+#else
-         /* Best approximation (round to nearest) */
-         fesetround(FE_TONEAREST);
-         break;
-@@ -240,6 +252,7 @@ void do_store_fpscr (uint32_t mask)
-     case 3:
-         /* Round toward -infinite */
-         fesetround(FE_DOWNWARD);
-+#endif
-         break;
-     }
- }
-@@ -267,9 +280,14 @@ void do_fctiwz (void)
-         double d;
-         uint64_t i;
-     } *p = (void *)&FT1;
-+#ifdef _BSD
-+    int cround = fpgetround();
-+    fpsetround(FP_RZ);
-+#else
-     int cround = fegetround();
+$OpenBSD: patch-target-ppc_op_helper_c,v 1.2 2005/08/11 01:15:17 todd Exp $
+--- target-ppc/op_helper.c.orig	Sun Jul 24 13:52:08 2005
++++ target-ppc/op_helper.c	Tue Aug  9 22:34:49 2005
+@@ -18,6 +18,7 @@
+  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  */
+ #include <math.h>
++#include <float.h>
+ #include "exec.h"
  
-     fesetround(FE_TOWARDZERO);
-+#endif
-     if (FT0 > (double)0x7FFFFFFF)
-         p->i = 0x7FFFFFFFULL << 32;
-     else if (FT0 < -(double)0x80000000)
-@@ -278,7 +296,11 @@ void do_fctiwz (void)
-         p->i = 0;
-     p->i |= (uint32_t)FT0;
-     FT0 = p->d;
-+#ifdef _BSD
-+    fpsetround(cround);
-+#else
-     fesetround(cround);
-+#endif
- }
- 
- void do_fnmadd (void)
+ #define MEMSUFFIX _raw

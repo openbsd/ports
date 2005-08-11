@@ -1,6 +1,6 @@
-$OpenBSD: patch-dyngen-exec_h,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
---- dyngen-exec.h.orig	Sun Nov 14 14:51:33 2004
-+++ dyngen-exec.h	Sat Feb 26 03:21:02 2005
+$OpenBSD: patch-dyngen-exec_h,v 1.2 2005/08/11 01:15:17 todd Exp $
+--- dyngen-exec.h.orig	Wed Apr 27 10:09:39 2005
++++ dyngen-exec.h	Wed Apr 27 10:23:02 2005
 @@ -20,11 +20,15 @@
  #if !defined(__DYNGEN_EXEC_H__)
  #define __DYNGEN_EXEC_H__
@@ -39,14 +39,6 @@ $OpenBSD: patch-dyngen-exec_h,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
  #undef NULL
  #define NULL 0
 +#endif
- #if defined(_BSD) && !defined(__APPLE__)
- #include <ieeefp.h>
  
-@@ -70,6 +79,7 @@ extern int printf(const char *, ...);
- #define FE_UPWARD      FP_RP
- #define FE_TOWARDZERO  FP_RZ
- #define fesetround(x)  fpsetround(x)
-+#define fegetround()   fpgetround()
- #else
- #include <fenv.h>
- #endif
+ #ifdef __i386__
+ #define AREG0 "ebp"

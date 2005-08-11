@@ -1,7 +1,7 @@
-$OpenBSD: patch-target-arm_cpu_h,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
---- target-arm/cpu.h.orig	Tue Feb 22 13:27:29 2005
-+++ target-arm/cpu.h	Sun Feb 27 15:47:13 2005
-@@ -97,7 +97,7 @@ void cpu_arm_close(CPUARMState *s);
+$OpenBSD: patch-target-arm_cpu_h,v 1.2 2005/08/11 01:15:17 todd Exp $
+--- target-arm/cpu.h.orig	Wed Apr 27 10:10:47 2005
++++ target-arm/cpu.h	Wed Apr 27 10:17:26 2005
+@@ -104,7 +104,7 @@ void cpu_arm_close(CPUARMState *s);
     signal handlers to inform the virtual CPU of exceptions. non zero
     is returned if the signal was handled by the virtual CPU.  */
  struct siginfo;

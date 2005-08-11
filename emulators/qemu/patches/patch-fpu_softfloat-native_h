@@ -1,0 +1,21 @@
+$OpenBSD: patch-fpu_softfloat-native_h,v 1.1 2005/08/11 01:15:17 todd Exp $
+--- fpu/softfloat-native.h.orig	Sun Mar 20 04:33:58 2005
++++ fpu/softfloat-native.h	Wed Apr 27 14:27:41 2005
+@@ -1,4 +1,5 @@
+ /* Native implementation of soft float functions */
++#include "gnu-c99-math.h"
+ #include <math.h>
+ #if defined(_BSD) && !defined(__APPLE__)
+ #include <ieeefp.h>
+@@ -34,6 +35,11 @@ typedef union {
+ | Software IEC/IEEE floating-point rounding mode.
+ *----------------------------------------------------------------------------*/
+ #if defined(_BSD) && !defined(__APPLE__)
++#if defined(__OpenBSD__)
++#define FE_RM FP_RM
++#define FE_RP FP_RP
++#define FE_RZ FP_RZ
++#endif
+ enum {
+     float_round_nearest_even = FP_RN,
+     float_round_down         = FE_RM,
