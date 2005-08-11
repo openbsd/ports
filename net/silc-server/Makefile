@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2005/07/24 00:28:33 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2005/08/11 16:25:13 brad Exp $
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) server"
 
 DISTNAME=	silc-server-1.0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.silcnet.org/
@@ -37,10 +38,12 @@ PATCH_LIST+=	operops-* patch-*
 CONFDIR=	${SYSCONFDIR}/silcd
 SUBST_VARS=	CONFDIR
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59
 CONFIGURE_ARGS+= --enable-ipv6 \
 		 --without-irssi \
+		 --without-libtoolfix \
 		 --with-docdir=${PREFIX}/share/doc/silcd \
 		 --with-etcdir=${CONFDIR} \
 		 --with-logsdir=/var/log/silcd \

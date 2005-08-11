@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.1 2005/07/24 00:28:33 brad Exp $
---- configure.ac.orig	Mon Jul  4 22:52:15 2005
-+++ configure.ac	Mon Jul  4 22:53:28 2005
+$OpenBSD: patch-configure_ac,v 1.2 2005/08/11 16:25:13 brad Exp $
+--- configure.ac.orig	Tue May 10 12:59:04 2005
++++ configure.ac	Thu Aug 11 11:51:29 2005
 @@ -51,9 +51,6 @@ case "$target" in
      ;;
  esac
@@ -11,7 +11,7 @@ $OpenBSD: patch-configure_ac,v 1.1 2005/07/24 00:28:33 brad Exp $
  AC_PROG_CC
  AC_C_INLINE
  AC_C_CONST
-@@ -305,35 +302,8 @@ AC_DEFUN([SILC_ADD_CC_FLAGS],
+@@ -305,36 +302,9 @@ AC_DEFUN([SILC_ADD_CC_FLAGS],
    unset tmp_CFLAGS
  ])
  
@@ -38,14 +38,67 @@ $OpenBSD: patch-configure_ac,v 1.1 2005/07/24 00:28:33 brad Exp $
 -      SILC_ADD_CFLAGS(-O2, SILC_ADD_CFLAGS(-O))
 -      ;;
 -  esac
--
++SILC_ADD_CFLAGS(-Wall -finline-functions)
++SILC_ADD_CFLAGS(-Wno-pointer-sign)
+ 
 -  # Intel C++ Compiler needs -restrict
 -  if test "x$CC" = "xicc"; then
 -    SILC_ADD_CFLAGS(-restrict)
 -  fi
 -fi
-+SILC_ADD_CFLAGS(-Wall -finline-functions)
-+SILC_ADD_CFLAGS(-Wno-pointer-sign)
- 
+-
  #
  # Workaround a bug in GCC 2.x which causes memory exhaustion
+ # when compiling sha1 with optimizations on UltraSPARC.
+@@ -419,51 +389,6 @@ AC_DEFINE_UNQUOTED([SILC_DOCDIR], "$DOCD
+ # SILC library checking
+ compile_libs=true
+ LIBSUBDIR=lib
+-
+-AC_ARG_WITH(silc-includes,
+-  [  --with-silc-includes=DIR SILC Toolkit includes [search in DIR]],
+-  [ac_silc_includes="$withval"], [ac_silc_includes="no"])
+-AC_ARG_WITH(silc-libs,
+-  [  --with-silc-libs=DIR     SILC Toolkit libraries [search in DIR]],
+-  [ac_silc_libs="$withval"], [ac_silc_libs="no"])
+-
+-if test -n "$with_silc_includes" || test -n "$with_silc_libs"; then
+-
+-  # Manually provided libs
+-  if test "$ac_silc_includes" != "no"; then
+-    compile_libs=false
+-    SILC_LIB_INCLUDES="-I$ac_silc_includes"
+-    LIBSUBDIR=
+-  fi
+-  if test "$ac_silc_libs" != "no"; then
+-    compile_libs=false
+-    LIBSUBDIR=
+-    LIBS="$LIBS -L$ac_silc_libs"
+-  fi
+-
+-  # Check libs to link against
+-  f=`$EGREP __SILC_HAVE_PTHREAD $ac_silc_includes/silcincludes.h`
+-  if test -n "$f"; then
+-    LIBS="$LIBS -lpthread"
+-    check_threads=false
+-    has_threads=true
+-  fi
+-  f=`$EGREP __SILC_HAVE_SIM $ac_silc_includes/silcincludes.h`
+-  if test -n "$f"; then
+-    LIBS="$LIBS -ldl"
+-  fi
+-
+-else
+-  # pkg-config check
+-  PKG_CHECK_MODULES(SILC, silc, compile_libs=false, compile_libs=true)
+-
+-  if test x$compile_libs = xfalse; then
+-    LIBSUBDIR=
+-    LIBS="$LIBS $SILC_LIBS"
+-    CFLAGS="$CFLAGS $SILC_CFLAGS"
+-  fi
+-fi
+-
+ AC_SUBST(LIBSUBDIR)
+ 
+ # SOCKS4 support checking
