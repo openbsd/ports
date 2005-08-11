@@ -1,0 +1,31 @@
+$OpenBSD: patch-kpdf_xpdf_fofi_FoFiTrueType_cc,v 1.1 2005/08/11 14:21:46 naddy Exp $
+--- kpdf/xpdf/fofi/FoFiTrueType.cc.orig	Wed Jul 20 12:00:36 2005
++++ kpdf/xpdf/fofi/FoFiTrueType.cc	Wed Aug 10 23:11:25 2005
+@@ -1373,6 +1373,27 @@ void FoFiTrueType::parse() {
+     return;
+   }
+ 
++  // make sure the loca table is sane (correct length and entries are
++  // in bounds)
++  i = seekTable("loca");
++  if (tables[i].len < (nGlyphs + 1) * (locaFmt ? 4 : 2)) {
++    parsedOk = gFalse;
++    return;
++  }
++  for (j = 0; j <= nGlyphs; ++j) {
++    if (locaFmt) {
++      pos = (int)getU32BE(tables[i].offset + j*4, &parsedOk);
++    } else {
++      pos = getU16BE(tables[i].offset + j*2, &parsedOk);
++    }
++    if (pos < 0 || pos > len) {
++      parsedOk = gFalse;
++    }
++  }
++  if (!parsedOk) {
++    return;
++  }
++
+   // read the post table
+   readPostTable();
+   if (!parsedOk) {
