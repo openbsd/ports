@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_protocols_msn_msg_c,v 1.1 2005/08/11 15:54:24 fgsch Exp $
+--- src/protocols/msn/msg.c.orig	Wed Aug 10 20:26:48 2005
++++ src/protocols/msn/msg.c	Wed Aug 10 20:28:08 2005
+@@ -187,7 +187,8 @@ msn_message_parse_slp_body(MsnMessage *m
+ 
+ 	if (body_len > 0) {
+ 		msg->body_len = len - (tmp - body);
+-		msg->body = g_memdup(tmp, msg->body_len);
++		msg->body = g_memdup(tmp, msg->body_len + 1);
++		msg->body[msg->body_len] = '\0';
+ 		tmp += body_len;
+ 	}
+ }
+@@ -300,7 +301,8 @@ msn_message_parse_payload(MsnMessage *ms
+ 		/* Import the body. */
+ 		if (body_len > 0) {
+ 			msg->body_len = body_len;
+-			msg->body = g_memdup(tmp, msg->body_len);
++			msg->body = g_memdup(tmp, msg->body_len + 1);
++			msg->body[msg->body_len] = '\0';
+ 			tmp += body_len;
+ 		}
+ 
+@@ -315,7 +317,8 @@ msn_message_parse_payload(MsnMessage *ms
+ 	{
+ 		if (payload_len - (tmp - tmp_base) > 0) {
+ 			msg->body_len = payload_len - (tmp - tmp_base);
+-			msg->body = g_memdup(tmp, msg->body_len);
++			msg->body = g_memdup(tmp, msg->body_len + 1);
++			msg->body[msg->body_len] = '\0';
+ 		}
+ 	}
+ 
+@@ -511,7 +514,8 @@ msn_message_set_bin_data(MsnMessage *msg
+ 
+ 	if (data != NULL && len > 0)
+ 	{
+-		msg->body = g_memdup(data, len);
++		msg->body = g_memdup(data, len + 1);
++		msg->body[len] = '\0';
+ 		msg->body_len = len;
+ 	}
+ 	else
