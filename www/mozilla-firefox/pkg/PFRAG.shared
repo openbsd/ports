@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/04/09 15:43:47 wilfried Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2005/08/11 18:59:15 kurt Exp $
 @lib mozilla-firefox/components/libaccessibility.so.${SO_VERSION}
 @lib mozilla-firefox/components/libappcomps.so.${SO_VERSION}
 @lib mozilla-firefox/components/libautoconfig.so.${SO_VERSION}
@@ -33,6 +33,7 @@
 @lib mozilla-firefox/components/libpippki.so.${SO_VERSION}
 @lib mozilla-firefox/components/libpref.so.${SO_VERSION}
 @lib mozilla-firefox/components/librdf.so.${SO_VERSION}
+@lib mozilla-firefox/components/libsystem-pref.so.${SO_VERSION}
 @lib mozilla-firefox/components/libtoolkitcomps.so.${SO_VERSION}
 @lib mozilla-firefox/components/libtransformiix.so.${SO_VERSION}
 @lib mozilla-firefox/components/libtxmgr.so.${SO_VERSION}
@@ -41,7 +42,7 @@
 @lib mozilla-firefox/components/libuniversalchardet.so.${SO_VERSION}
 @lib mozilla-firefox/components/libwebbrwsr.so.${SO_VERSION}
 @lib mozilla-firefox/components/libwebsrvcs.so.${SO_VERSION}
-@lib mozilla-firefox/components/libwidget_gtk.so.${SO_VERSION}
+@lib mozilla-firefox/components/libwidget_gtk2.so.${SO_VERSION}
 @lib mozilla-firefox/components/libxmlextras.so.${SO_VERSION}
 @lib mozilla-firefox/components/libxpcom_compat_c.so.${SO_VERSION}
 @lib mozilla-firefox/components/libxpconnect.so.${SO_VERSION}
@@ -50,7 +51,6 @@
 @lib mozilla-firefox/components/libxremoteservice.so.${SO_VERSION}
 @lib mozilla-firefox/libgkgfx.so.${SO_VERSION}
 @lib mozilla-firefox/libgtkembedmoz.so.${SO_VERSION}
-@lib mozilla-firefox/libgtksuperwin.so.${SO_VERSION}
 @lib mozilla-firefox/libgtkxtbin.so.${SO_VERSION}
 @lib mozilla-firefox/libjsj.so.${SO_VERSION}
 @lib mozilla-firefox/libmozjs.so.${SO_VERSION}
