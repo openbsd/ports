@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/08/11 18:59:15 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/08/12 19:01:44 pvalchev Exp $
 @conflict mozilla-firebird-*
 %%SHARED%%
 bin/firefox
@@ -112,9 +112,6 @@ mozilla-firefox/chrome/help/locale/en-US/help/
 mozilla-firefox/chrome/help/skin/
 mozilla-firefox/chrome/help/skin/classic/
 mozilla-firefox/chrome/help/skin/classic/help/
-mozilla-firefox/chrome/icons/
-mozilla-firefox/chrome/icons/default/
-mozilla-firefox/chrome/icons/default/default.xpm
 mozilla-firefox/chrome/inspector/
 mozilla-firefox/chrome/inspector.jar
 mozilla-firefox/chrome/inspector/content/
@@ -196,7 +193,6 @@ mozilla-firefox/chrome/toolkit/content/mozapps/update/
 mozilla-firefox/chrome/toolkit/content/mozapps/xpinstall/
 mozilla-firefox/chrome/toolkit/content/passwordmgr/
 mozilla-firefox/components/
-mozilla-firefox/components/accessibility-atk.xpt
 mozilla-firefox/components/accessibility.xpt
 mozilla-firefox/components/appshell.xpt
 mozilla-firefox/components/autocomplete.xpt
@@ -258,7 +254,6 @@ mozilla-firefox/components/migration.xpt
 mozilla-firefox/components/mimetype.xpt
 mozilla-firefox/components/mozbrwsr.xpt
 mozilla-firefox/components/mozfind.xpt
-mozilla-firefox/components/mozgnome.xpt
 mozilla-firefox/components/necko.xpt
 mozilla-firefox/components/necko_about.xpt
 mozilla-firefox/components/necko_cache.xpt
