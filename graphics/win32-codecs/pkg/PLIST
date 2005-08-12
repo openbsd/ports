@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2005/04/16 07:48:47 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.15 2005/08/12 22:59:15 espie Exp $
 lib/win32/
 lib/win32/AvidQTAVUICodec.qtx
 lib/win32/BeHereiVideo.qtx
@@ -8,10 +8,12 @@ lib/win32/DECVW_32.DLL
 lib/win32/LCMW2.dll
 lib/win32/LCODCCMW2E.dll
 lib/win32/LCodcCMP.dll
+lib/win32/NOTE
 lib/win32/QuickTime.qts
 lib/win32/QuickTimeEssentials.qtx
 lib/win32/QuickTimeInternetExtras.qtx
 @comment lib/win32/README
+@comment lib/win32/Readme.txt
 lib/win32/VDODEC32.dll
 lib/win32/ViVD2.dll
 lib/win32/acelpdec.ax
@@ -23,11 +25,13 @@ lib/win32/asusasvd.dll
 lib/win32/ativcr2.dll
 lib/win32/atrac3.acm
 lib/win32/atrc.so.6.0
+lib/win32/atrc3260.dll
 lib/win32/avimszh.dll
 lib/win32/avizlib.dll
 lib/win32/clrviddd.dll
-lib/win32/cook.so
-lib/win32/cook.so.6.0
+@comment lib/win32/cook.so
+@comment lib/win32/cook.so.6.0
+lib/win32/cook3260.dll
 lib/win32/ctadp32.acm
 lib/win32/ddnt.so.6.0
 lib/win32/divx.dll
@@ -36,10 +40,14 @@ lib/win32/divxa32.acm
 lib/win32/divxc32.dll
 lib/win32/divxdec.ax
 lib/win32/dnet.so.6.0
-lib/win32/drv2.so.6.0
-lib/win32/drv3.so.6.0
-lib/win32/drv4.so.6.0
-lib/win32/drvc.so
+lib/win32/drv13260.dll
+@comment lib/win32/drv2.so.6.0
+lib/win32/drv23260.dll
+@comment lib/win32/drv3.so.6.0
+lib/win32/drv33260.dll
+@comment lib/win32/drv4.so.6.0
+lib/win32/drv43260.dll
+@comment lib/win32/drvc.so
 lib/win32/dspr.so.6.0
 lib/win32/huffyuv.dll
 lib/win32/i263_32.drv
@@ -77,16 +85,19 @@ lib/win32/msvidc32.dll
 lib/win32/mvoiced.vwp
 lib/win32/nsrt2432.acm
 lib/win32/pclepim1.dll
+lib/win32/pncrt.dll
 lib/win32/qdv.dll
 lib/win32/qpeg32.dll
 lib/win32/qtmlClient.dll
 lib/win32/rt32dcmp.dll
 lib/win32/scg726.acm
 lib/win32/sipr.so.6.0
+lib/win32/sipr3260.dll
 lib/win32/sp5x_32.dll
 lib/win32/tm20dec.ax
 lib/win32/tokf.so.6.0
 lib/win32/tokr.so.6.0
+lib/win32/tokr3260.dll
 lib/win32/tsccvid.dll
 lib/win32/tsd32.dll
 lib/win32/tssoft32.acm
