@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-share,v 1.3 2005/07/09 10:36:18 alek Exp $
+@comment $OpenBSD: PLIST-share,v 1.4 2005/08/13 18:19:31 espie Exp $
+share/freeciv/
 share/freeciv/civ1.serv
+share/freeciv/civ1/
 share/freeciv/civ1/buildings.ruleset
 share/freeciv/civ1/game.ruleset
 share/freeciv/civ1/governments.ruleset
@@ -8,12 +10,14 @@ share/freeciv/civ1/techs.ruleset
 share/freeciv/civ1/terrain.ruleset
 share/freeciv/civ1/units.ruleset
 share/freeciv/civ2.serv
+share/freeciv/civ2/
 share/freeciv/civ2/buildings.ruleset
 share/freeciv/civ2/game.ruleset
 share/freeciv/civ2/governments.ruleset
 share/freeciv/civ2/techs.ruleset
 share/freeciv/civ2/terrain.ruleset
 share/freeciv/civ2/units.ruleset
+share/freeciv/default/
 share/freeciv/default/buildings.ruleset
 share/freeciv/default/cities.ruleset
 share/freeciv/default/game.ruleset
@@ -23,12 +27,14 @@ share/freeciv/default/techs.ruleset
 share/freeciv/default/terrain.ruleset
 share/freeciv/default/units.ruleset
 share/freeciv/history.serv
+share/freeciv/history/
 share/freeciv/history/buildings.ruleset
 share/freeciv/history/game.ruleset
 share/freeciv/history/governments.ruleset
 share/freeciv/history/techs.ruleset
 share/freeciv/history/terrain.ruleset
 share/freeciv/history/units.ruleset
+share/freeciv/nation/
 share/freeciv/nation/afghani.ruleset
 share/freeciv/nation/american.ruleset
 share/freeciv/nation/arab.ruleset
@@ -114,21 +120,28 @@ share/freeciv/nation/vietnamese.ruleset
 share/freeciv/nation/viking.ruleset
 share/freeciv/nation/welsh.ruleset
 share/freeciv/nation/zulu.ruleset
+share/freeciv/scenario/
 share/freeciv/scenario/british-isles-85x80-v2.80.sav
 share/freeciv/scenario/earth-160x90-v2.sav
 share/freeciv/scenario/earth-80x50-v2.sav
 share/freeciv/scenario/europe-200x100-v2.sav
 share/freeciv/scenario/hagworld-120x60-v1.2.sav
 share/freeciv/scenario/iberian-peninsula-136x100-v1.0.sav
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/freeciv.mo
 share/locale/cs/LC_MESSAGES/freeciv.mo
 share/locale/da/LC_MESSAGES/freeciv.mo
 share/locale/de/LC_MESSAGES/freeciv.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/freeciv.mo
 share/locale/es/LC_MESSAGES/freeciv.mo
 share/locale/et/LC_MESSAGES/freeciv.mo
 share/locale/fi/LC_MESSAGES/freeciv.mo
 share/locale/fr/LC_MESSAGES/freeciv.mo
+share/locale/he_IL/
+share/locale/he_IL/LC_MESSAGES/
 share/locale/he_IL/LC_MESSAGES/freeciv.mo
 share/locale/hu/LC_MESSAGES/freeciv.mo
 share/locale/it/LC_MESSAGES/freeciv.mo

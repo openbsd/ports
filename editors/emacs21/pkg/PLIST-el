@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-el,v 1.1 2003/07/06 12:46:45 naddy Exp $
+@comment $OpenBSD: PLIST-el,v 1.2 2005/08/13 18:19:32 espie Exp $
+share/emacs/${VERSION}/leim/ja-dic/
 share/emacs/${VERSION}/leim/ja-dic/ja-dic.el
+share/emacs/${VERSION}/leim/quail/
 share/emacs/${VERSION}/leim/quail/4Corner.el
 share/emacs/${VERSION}/leim/quail/ARRAY30.el
 share/emacs/${VERSION}/leim/quail/CCDOSPY.el

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2005/06/12 12:07:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2005/08/13 18:19:31 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT-client=	"single process stack of system monitors for GTK+2"
 
 V=		2.2.4
 DISTNAME=	gkrellm-${V}
-PKGNAME=	gkrellm-server-${V}p0
+PKGNAME=	gkrellm-server-${V}p1
 PKGNAME-client=	gkrellm-${V}p0
 CATEGORIES=	sysutils sysutils/gkrellm
 

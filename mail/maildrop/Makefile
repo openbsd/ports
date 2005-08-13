@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2005/03/26 18:31:45 joel Exp $
+# $OpenBSD: Makefile,v 1.17 2005/08/13 18:19:32 espie Exp $
 
 COMMENT=	"local mail delivery agent with filtering abilities"
 COMMENT-utils=	"userdb and quota tools for the Courier mail suite"
@@ -19,7 +19,7 @@ FLAVOR?=
 MULTI_PACKAGES=	-utils
 SUBPACKAGE?=
 
-FULLPKGNAME-utils= courier-utils-${VERSION}p0
+FULLPKGNAME-utils= courier-utils-${VERSION}p1
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
