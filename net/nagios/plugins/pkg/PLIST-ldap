@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST-ldap,v 1.1.1.1 2005/07/25 16:32:07 sturm Exp $
+@comment $OpenBSD: PLIST-ldap,v 1.2 2005/08/13 18:20:23 espie Exp $
+libexec/nagios/
 libexec/nagios/check_ldap
 libexec/nagios/check_ldaps

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-snmp,v 1.1.1.1 2005/07/25 16:32:07 sturm Exp $
+@comment $OpenBSD: PLIST-snmp,v 1.2 2005/08/13 18:20:23 espie Exp $
+libexec/nagios/
 libexec/nagios/check_breeze
 libexec/nagios/check_hpjd
 libexec/nagios/check_ifoperstatus
