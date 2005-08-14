@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.33 2005/08/10 07:48:49 mbalmer Exp $
+$OpenBSD: user.list,v 1.34 2005/08/14 01:10:31 sturm Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -58,3 +58,4 @@ id  user		group		port options
 547 _kismet		_kismet		net/kismet
 548 _polipo		_polipo		www/polipo
 549 _netplan		_netplan	misc/plan
+550 _nagios		_nagios		net/nagios

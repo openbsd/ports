@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/08/07 10:48:01 sturm Exp $
-@newgroup _nagios:542
-@newuser _nagios:542:_nagios:daemon:Nagios user:/var/www/nagios:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.3 2005/08/14 01:10:31 sturm Exp $
+@newgroup _nagios:550
+@newuser _nagios:550:_nagios:daemon:Nagios user:/var/www/nagios:/sbin/nologin
 bin/nagiostats
 sbin/nagios
 share/examples/nagios/
