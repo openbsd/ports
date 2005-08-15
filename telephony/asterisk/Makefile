@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2005/05/09 16:50:05 jcs Exp $
+# $OpenBSD: Makefile,v 1.5 2005/08/15 17:36:06 jolan Exp $
 
 COMMENT=	"open source PBX"
-DISTNAME=	asterisk-1.0.7
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	asterisk-1.0.9
 CATEGORIES=	telephony
-MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
-		http://mirrors.protection.cx/~jolan/
+MASTER_SITES=	http://www.asterisk.org/html/downloads/ \
+		ftp://ftp.asterisk.org/pub/telephony/asterisk/
 
 HOMEPAGE=	http://www.asterisk.org/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
@@ -22,8 +19,6 @@ NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	:bison-*:devel/bison
-RUN_DEPENDS=	:mpg123-*:audio/mpg123 \
-		:sox-*:audio/sox
 
 MAKE_ENV+=	SYSCONFDIR='${SYSCONFDIR}'
 

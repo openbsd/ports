@@ -8,3 +8,8 @@ Interactive Voice Response, and Call Queuing.  It has support for
 three-way calling, caller ID services, ADSI, SIP and H.323 (as both
 client and gateway). Check the webpage's Features section for a more
 complete list.
+
+Asterisk has the following soft dependencies:
+
+- mpg123 for utilizing mp3s as music on hold
+- sox for mixing recorded conversation streams together

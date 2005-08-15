@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/05/09 16:50:05 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/08/15 17:36:07 jolan Exp $
 @newgroup _asterisk:545
 @newuser _asterisk:545:_asterisk:daemon:asterisk user:/nonexistent:/sbin/nologin
 include/asterisk/
@@ -168,6 +168,7 @@ share/asterisk/sounds/digits/h-8.gsm
 share/asterisk/sounds/digits/h-9.gsm
 share/asterisk/sounds/digits/hundred.gsm
 share/asterisk/sounds/digits/million.gsm
+share/asterisk/sounds/digits/minus.gsm
 share/asterisk/sounds/digits/mon-0.gsm
 share/asterisk/sounds/digits/mon-1.gsm
 share/asterisk/sounds/digits/mon-10.gsm
@@ -387,6 +388,7 @@ share/doc/asterisk/README.ices
 share/doc/asterisk/README.mp3
 share/doc/asterisk/README.mysql
 share/doc/asterisk/README.sms
+share/doc/asterisk/README.tds
 share/doc/asterisk/README.variables
 share/doc/asterisk/SECURITY
 share/doc/asterisk/apps.txt
@@ -459,12 +461,12 @@ share/examples/asterisk/openbsd/sip.conf.sample
 @sample ${SYSCONFDIR}/asterisk/sip.conf
 share/examples/asterisk/openbsd/voicemail.conf.sample
 @sample ${SYSCONFDIR}/asterisk/voicemail.conf
-@group _asterisk
 @owner _asterisk
+@group _asterisk
 @sample /var/asterisk/astdb/
+@sample /var/db/asterisk/
 @sample /var/log/asterisk/
 @sample /var/log/asterisk/cdr-csv/
-@sample /var/run/asterisk/
 @sample /var/spool/asterisk/
 @sample /var/spool/asterisk/voicemail/
 @sample /var/spool/asterisk/voicemail/default/

@@ -1,4 +1,7 @@
-; $OpenBSD: sip.conf.sample,v 1.1.1.1 2004/09/26 00:38:24 jolan Exp $
+; $OpenBSD: sip.conf.sample,v 1.2 2005/08/15 17:36:07 jolan Exp $
+[general]
+disallow=all
+allow=ulaw
 
 ; Phone #1
 [100]
