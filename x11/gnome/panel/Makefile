@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2005/05/26 03:39:32 marcm Exp $
+# $OpenBSD: Makefile,v 1.17 2005/08/15 22:56:44 espie Exp $
 
 COMMENT=		"GNOME panel"
 
 VERSION=		2.10.1
 DISTNAME=		gnome-panel-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org

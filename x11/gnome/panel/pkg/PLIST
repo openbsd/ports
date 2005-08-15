@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2005/05/26 03:39:32 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.17 2005/08/15 22:56:44 espie Exp $
 bin/gnome-desktop-item-edit
 bin/gnome-panel
 bin/panel-test-applets
@@ -327,6 +327,10 @@ share/gtk-doc/html/panel-applet/server-files.html
 share/gtk-doc/html/panel-applet/session-saving.html
 share/gtk-doc/html/panel-applet/style.css
 share/gtk-doc/html/panel-applet/up.png
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/gnome-fish.png
 share/icons/hicolor/48x48/apps/gnome-gegl.png
 share/icons/hicolor/48x48/apps/gnome-main-menu.png
