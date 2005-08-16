@@ -1,4 +1,4 @@
-$OpenBSD: gcc-filter_yuvdenoise_Makefile_in,v 1.1 2005/07/23 15:23:44 sturm Exp $
+$OpenBSD: gcc-filter_yuvdenoise_Makefile_in,v 1.2 2005/08/16 18:24:10 sturm Exp $
 --- filter/yuvdenoise/Makefile.in.orig	Tue Nov 16 05:47:02 2004
 +++ filter/yuvdenoise/Makefile.in	Fri Jul 15 22:22:34 2005
 @@ -529,6 +529,20 @@ distclean-compile:
@@ -6,14 +6,14 @@ $OpenBSD: gcc-filter_yuvdenoise_Makefile_in,v 1.1 2005/07/23 15:23:44 sturm Exp 
  @am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ $<
  
 +deinterlace.lo:
-+@am__fastdepCC_TRUE@	if $(LTCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -O1 -c -o $@ $<; \
++@am__fastdepCC_TRUE@	if $(LTCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -O0 -c -o $@ $<; \
 +@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Plo"; else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
 +@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 +@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/$*.Plo' tmpdepfile='$(DEPDIR)/$*.TPlo' @AMDEPBACKSLASH@
 +@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@@am__fastdepCC_FALSE@   $(LTCOMPILE) -c -o $@ $<
 +
 +denoise.lo:
-+@am__fastdepCC_TRUE@	if $(LTCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -O1 -c -o $@ $<; \
++@am__fastdepCC_TRUE@	if $(LTCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -O0 -c -o $@ $<; \
 +@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Plo"; else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
 +@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 +@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/$*.Plo' tmpdepfile='$(DEPDIR)/$*.TPlo' @AMDEPBACKSLASH@

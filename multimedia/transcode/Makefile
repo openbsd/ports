@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2005/07/23 15:23:43 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2005/08/16 18:24:10 sturm Exp $
 
 COMMENT=		"video stream processing tools"
 
 DISTNAME=		transcode-0.6.14
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.transcoding.org/
