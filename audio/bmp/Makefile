@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/07/10 22:43:11 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2005/08/16 18:22:26 sturm Exp $
 
 COMMENT=	"gtk+2 media player based on XMMS"
 COMMENT-mp3=	"MP3 input plugin for bmp"
@@ -6,7 +6,7 @@ COMMENT-vorbis=	"Ogg Vorbis input plugin for bmp"
 V=		0.9.7
 DISTNAME=	bmp-$V
 PKGNAME=	bmp-$Vp2
-PKGNAME-mp3=	bmp-mp3-$Vp2
+PKGNAME-mp3=	bmp-mp3-$Vp3
 PKGNAME-vorbis=	bmp-vorbis-$Vp2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=beepmp/}
@@ -18,6 +18,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
+
+.if ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=	patch-* gcc-*
+.endif
 
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
