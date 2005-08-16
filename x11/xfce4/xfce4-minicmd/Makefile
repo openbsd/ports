@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/12 04:38:50 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2005/08/16 09:49:55 espie Exp $
 
 COMMENT=	"puts a small entry widget onto your panel"
 DISTNAME=	xfce4-minicmd-plugin-0.3.0
-PKGNAME=	${DISTNAME:S/-plugin//}
+PKGNAME=	${DISTNAME:S/-plugin//}p0
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 
 HOMEPAGE=	http://xfce-goodies.berlios.de/

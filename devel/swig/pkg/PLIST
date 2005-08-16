@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.12 2005/06/09 07:50:54 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.13 2005/08/16 09:49:52 espie Exp $
+@conflict swig-examples-*
 bin/swig
 share/doc/swig/
 share/doc/swig/Devel/

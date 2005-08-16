@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/16 16:02:56 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/08/16 09:49:52 espie Exp $
+@conflict nessus-<2.2.4
 %%SHARED%%
 bin/nasl
 bin/nasl-config

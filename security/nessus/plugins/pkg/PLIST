@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/08/02 12:37:28 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/08/16 09:49:53 espie Exp $
+@conflict nessus-<2.2.4
 bin/nessus-build
 lib/nessus/plugins/12planet_chat_server_xss.nasl
 lib/nessus/plugins/3com_nbx_voip_netset_detection.nasl

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.30 2005/06/02 14:01:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.31 2005/08/16 09:49:53 espie Exp $
+@conflict kdeartwork-<=3.4
+@conflict kdeedu-<3.4
 bin/appletproxy
 bin/drkonqi
 bin/extensionproxy

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-kpov,v 1.5 2005/03/29 21:18:36 espie Exp $
+@comment $OpenBSD: PLIST-kpov,v 1.6 2005/08/16 09:49:53 espie Exp $
+@conflict kdegraphics-<=3.3.2
 bin/kpovmodeler
 ${KDE}/libkpovmodelerpart.la
 ${KDE}/libkpovmodelerpart.so

@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST-doc,v 1.1 2005/05/31 09:09:30 db Exp $
+@comment $OpenBSD: PLIST-doc,v 1.2 2005/08/16 09:49:52 espie Exp $
+@conflict amanda-<=2.4.2.2
+@conflict amanda-client-<=2.4.2.2
+share/doc/amanda/
 share/doc/amanda/AUTHORS
 share/doc/amanda/COPYRIGHT
 share/doc/amanda/COPYRIGHT-REGEX

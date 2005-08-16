@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/12 04:38:50 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2005/08/16 09:49:55 espie Exp $
 
 COMMENT=	"provides sticky notes for the desktop"
 DISTNAME=	xfce4-notes-plugin-0.10.0
-PKGNAME=	${DISTNAME:S/-plugin//}
+PKGNAME=	${DISTNAME:S/-plugin//}p0
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 
 HOMEPAGE=	http://xfce-goodies.berlios.de/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/04/12 20:29:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2005/08/16 09:49:52 espie Exp $
 
 COMMENT=		"lightweight GTK+ based mail/news client"
 COMMENT-dillo=		"dillo plugin for sylpheed-claws"
@@ -53,8 +53,9 @@ FLAVOR?=
 MULTI_PACKAGES=		-dillo -docs -imageviewer -spamassassin -themes \
 			-trayicon
 
+FULLPKGNAME-docs=	sylphee-claws${i}-${VERSION}p0
 .for i in ${MULTI_PACKAGES}
-FULLPKGNAME$i=		sylpheed-claws${i}-${VERSION}
+FULLPKGNAME$i?=		sylpheed-claws${i}-${VERSION}
 .endfor
 
 SUBPACKAGE?=

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/12 04:38:49 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2005/08/16 09:49:55 espie Exp $
 ONLY_FOR_ARCHS=	i386 macppc sparc zaurus
 
 COMMENT=	"battery monitor panel plugin for xfce4"
 DISTNAME=	xfce4-battery-plugin-0.2.0
-PKGNAME=	${DISTNAME:S/-plugin//}
+PKGNAME=	${DISTNAME:S/-plugin//}p0
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 
 HOMEPAGE=	http://xfce-goodies.berlios.de/

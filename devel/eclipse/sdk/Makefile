@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/08/09 14:49:09 kurt Exp $
+# $OpenBSD: Makefile,v 1.6 2005/08/16 09:49:51 espie Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -8,9 +8,9 @@ COMMENT-mozilla=	"mozilla integration library for eclipse HTML Browser Widget"
 
 ECLIPSE_VER=		3.1
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
-PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
-PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}
-PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}
+PKGNAME=		eclipse-sdk-${ECLIPSE_VER}p0
+PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p0
+PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p0
 CATEGORIES=		devel/eclipse java 
 
 HOMEPAGE=		http://www.eclipse.org/
