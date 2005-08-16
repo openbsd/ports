@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2005/08/06 19:11:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2005/08/16 20:35:58 robert Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
 COMMENT=	"802.11 layer2 wireless network detector, sniffer, and IDS"
 
-V=		2005-07-R1a
+V=		2005-08-R1
 DISTNAME=	kismet-${V}
-PKGNAME=	kismet-${V:S,-,,g}p0
+PKGNAME=	kismet-${V:S,-,,g}
 CATEGORIES=	net security
 
 HOMEPAGE=	http://www.kismetwireless.net/
@@ -28,8 +28,7 @@ AUTOCONF_VERSION=	2.59
 CONFDIR=		${SYSCONFDIR}/kismet
 SUBST_VARS+=		CONFDIR
 
-CONFIGURE_ARGS=		--without-ethereal --disable-gpsmap \
-			--sysconfdir=${CONFDIR}
+CONFIGURE_ARGS=		--disable-gpsmap --sysconfdir=${CONFDIR}
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"

@@ -1,6 +1,6 @@
---- configure.in.orig	Mon Jul 25 16:19:44 2005
-+++ configure.in	Sat Aug  6 13:57:52 2005
-@@ -127,7 +127,7 @@
+--- configure.in.orig	Tue Aug 16 03:22:51 2005
++++ configure.in	Tue Aug 16 10:39:12 2005
+@@ -127,7 +127,7 @@ else
      esac
  fi
  
@@ -9,31 +9,15 @@
  
  AC_CONFIG_SRCDIR([kismet_server.cc])
  AC_CONFIG_HEADER([config.h])
-@@ -236,9 +236,9 @@
- 		#include <sys/types.h>
- 		#include <sys/socket.h>
- 		]], [[
--		int s;
--		struct sockaddr *addr;
--		socklen_t *addrlen;
-+		int s = 0;
-+		struct sockaddr *addr = NULL;
-+		socklen_t *addrlen = NULL;
- 
- 		accept(s, addr, addrlen);
- 		return 0;
-@@ -845,6 +845,14 @@
+@@ -856,6 +856,11 @@ else
+ 	gmpl="no"
  	gpslc=""
  	pthr="no"
- fi
-+
-+# Not all OpenBSD archs have apm:
-+
-+if test "$bsd" = "yes"; then
-+	AC_CHECK_HEADERS([machine/apmvar.h])
 +fi
 +
-+
++# Not all OpenBSD archs have apm:
++if test "$bsd" = "yes"; then
++	AC_CHECK_HEADERS([machine/apmvar.h])
+ fi
  
  
- AC_ARG_ENABLE(optimization, [  --disable-optimization        disable -Ox gcc optimization],,wantopto=yes)

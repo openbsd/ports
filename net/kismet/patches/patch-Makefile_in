@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Jul 25 16:19:44 2005
-+++ Makefile.in	Wed Jul 27 20:41:04 2005
-@@ -23,8 +23,8 @@
+--- Makefile.in.orig	Tue Aug 16 03:22:51 2005
++++ Makefile.in	Tue Aug 16 10:35:14 2005
+@@ -23,8 +23,8 @@ LD	= @CXX@
  LDFLAGS	= @LDFLAGS@
  LIBS	= @LIBS@
  CLIBS   = @CLIBS@
@@ -11,7 +11,7 @@
  CPPFLAGS = @CPPFLAGS@
  SUID	= @suid@
  
-@@ -130,52 +130,52 @@
+@@ -130,52 +130,52 @@ checkuiconfig:
  	fi
  
  binuserinstall:
@@ -99,7 +99,7 @@
  
  	@if test -f $(BIN)/kismet_curses; then \
  		echo "Removing old kismet_curses binary.  The panels frontend is now kismet_client."; \
-@@ -188,22 +188,22 @@
+@@ -188,22 +188,22 @@ suidinstall: $(PS) $(DRONE) $(NC) $(GPSL
  	@if test -f $(ETC)/kismet.conf; then \
  		$(MAKE) -e checkconfig; \
      else \
@@ -128,7 +128,7 @@
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; \
  	fi
  	@echo "Installed kismet into $(BIN)/."
-@@ -221,22 +221,22 @@
+@@ -221,22 +221,22 @@ install: $(PS) $(DRONE) $(NC) $(GPSLBUIL
  	@if test -f $(ETC)/kismet.conf; then \
  		$(MAKE) -e checkconfig; \
      else \
@@ -157,7 +157,7 @@
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; \
  	fi
  	@echo "Installed kismet into $(BIN)/."
-@@ -252,11 +252,11 @@
+@@ -252,11 +252,11 @@ install: $(PS) $(DRONE) $(NC) $(GPSLBUIL
  forceinstall: $(PS)
  	$(MAKE) -e commoninstall
  	$(MAKE) -e binuserinstall
@@ -172,7 +172,7 @@
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; 
  	@echo "Installed kismet into $(BIN)/."
  	@echo "If you have not done so already, read the README file and the FAQ file.  Additional"
-@@ -271,11 +271,11 @@
+@@ -271,11 +271,11 @@ forceinstall: $(PS)
  suidforceinstall: $(PS)
  	$(MAKE) -e commoninstall
  	$(MAKE) -e binsuidinstall
@@ -187,7 +187,7 @@
  		echo "Installed UI config into $(ETC)/kismet_ui.conf."; 
  	@echo "Installed kismet into $(BIN)/."
  	@echo "If you have not done so already, read the README file and the FAQ file.  Additional"
-@@ -362,13 +362,11 @@
+@@ -362,13 +362,11 @@ depend:
  	@$(MAKE) $(DEPEND)
  
  $(DEPEND):

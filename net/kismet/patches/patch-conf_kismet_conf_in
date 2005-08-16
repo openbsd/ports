@@ -1,6 +1,6 @@
-$OpenBSD: patch-conf_kismet_conf_in,v 1.1.1.1 2005/07/27 21:37:26 robert Exp $
---- conf/kismet.conf.in.orig	Wed Jun 22 06:22:13 2005
-+++ conf/kismet.conf.in	Wed Jul  6 20:58:14 2005
+$OpenBSD: patch-conf_kismet_conf_in,v 1.2 2005/08/16 20:35:59 robert Exp $
+--- conf/kismet.conf.in.orig	Tue Aug 16 03:22:41 2005
++++ conf/kismet.conf.in	Tue Aug 16 10:36:49 2005
 @@ -10,7 +10,7 @@ version=2005.06.R1
  servername=Kismet
  
@@ -22,13 +22,13 @@ $OpenBSD: patch-conf_kismet_conf_in,v 1.1.1.1 2005/07/27 21:37:26 robert Exp $
 @@ -223,7 +223,7 @@ metric=false
  # recent versions of GPSDrive's native support of Kismet.
  waypoints=false
- # GPSMap waypoint file.  This WILL be truncated.
+ # GPSDrive waypoint file.  This WILL be truncated.
 -waypointdata=%h/.gpsdrive/way_kismet.txt
 +waypointdata=/var/log/kismet/way_kismet.txt
+ # Do we want ESSID or BSSID as the waypoint name ?
+ waypoint_essid=false
  
- # How many alerts do we backlog for new clients?  Only change this if you have
- # a -very- low memory system and need those extra bytes, or if you have a high
-@@ -322,7 +322,7 @@ piddir=/var/run/
+@@ -324,7 +324,7 @@ piddir=/var/run/
  
  # Where state info, etc, is stored.  You shouldnt ever need to change this.
  # This is a directory.
