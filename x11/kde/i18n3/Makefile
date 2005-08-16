@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2005/08/16 09:49:53 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2005/08/16 18:28:56 espie Exp $
 
 LANGS=  ar bg bn br bs ca cs cy da de el en_GB eo es et eu fi fr fy ga he hi \
 	hsb hu is it ja lt mk nb nds nl nn pa pl pt pt_BR ro ru se sk sl \
@@ -15,7 +15,7 @@ FLAVORS+=$l
 .  if ${FLAVOR:M$l}
 DISTFILES=kde-i18n-$l-${VERSION}.tar.bz2
 WRKDIST=${WRKDIR}/kde-i18n-$l-${VERSION}
-FULLPKGNAME=kde-i18n-$l-${VERSION}p0
+FULLPKGNAME=kde-i18n-$l-${VERSION}p1
 COMMENT= "$l translations for KDE"
 DOC=share/doc/HTML/$l/
 LOC=share/locale/$l/LC_MESSAGES/

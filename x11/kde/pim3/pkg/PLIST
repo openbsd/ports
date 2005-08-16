@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.16 2005/08/16 09:49:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2005/08/16 18:28:56 espie Exp $
 @conflict kdelibs-<3.4
 @conflict kdebase-<3.4
+@conflict kpilot-*
 bin/akregator
 bin/egroupwarewizard
 bin/exchangewizard

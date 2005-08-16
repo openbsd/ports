@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2005/08/05 17:15:09 kurt Exp $
+# $OpenBSD: Makefile,v 1.24 2005/08/16 18:28:56 espie Exp $
 
 NOT_FOR_ARCHS=			${NO_SHARED_ARCHS}
 
@@ -8,7 +8,7 @@ COMMENT-docs=           	"gtk+-2 documentation"
 VERSION=			2.6.9
 DISTNAME=			gtk+-${VERSION}
 PKGNAME=			gtk+2-${VERSION}
-PKGNAME-docs=			gtk+2-docs-${VERSION}
+PKGNAME-docs=			gtk+2-docs-${VERSION}p0
 CATEGORIES=			x11 devel
 
 HOMEPAGE=			http://www.gtk.org

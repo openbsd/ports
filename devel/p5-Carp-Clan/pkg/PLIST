@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/01 05:35:58 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/08/16 18:28:55 espie Exp $
+@conflict p5-Bit-Vector-<6.4
 ${P5SITE}/Carp/
 ${P5SITE}/Carp/Clan.pm
 ${P5SITE}/Carp/Clan.pod

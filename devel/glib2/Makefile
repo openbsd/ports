@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2005/05/24 21:26:17 marcm Exp $
+# $OpenBSD: Makefile,v 1.22 2005/08/16 18:28:55 espie Exp $
 
 COMMENT=		"general-purpose utility library"
 COMMENT-docs=           "glib2 documentation"
@@ -6,7 +6,7 @@ COMMENT-docs=           "glib2 documentation"
 VERSION=		2.6.4
 DISTNAME=		glib-${VERSION}
 PKGNAME=		glib2-${VERSION}
-PKGNAME-docs=           glib2-docs-${VERSION}
+PKGNAME-docs=           glib2-docs-${VERSION}p0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gtk.org

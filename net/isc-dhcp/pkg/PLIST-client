@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-client,v 1.1 2005/03/10 16:24:21 jakob Exp $
+@comment $OpenBSD: PLIST-client,v 1.2 2005/08/16 18:28:56 espie Exp $
+@conflict isc-dhcp-*
 @man man/cat5/dhclient.conf.0
 @man man/cat5/dhclient.leases.0
 @man man/cat8/dhclient-script.0
