@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/08/16 09:49:56 espie Exp $
-@comment xfce4-weather-plugin-*
+@comment $OpenBSD: PLIST,v 1.3 2005/08/17 16:02:05 espie Exp $
+@conflict xfce4-weather-plugin-*
 %%SHARED%%
 lib/xfce4/panel-plugins/libweather.a
 lib/xfce4/panel-plugins/libweather.la
