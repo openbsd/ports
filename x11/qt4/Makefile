@@ -1,4 +1,4 @@
-#/ $OpenBSD: Makefile,v 1.6 2005/07/05 17:44:46 espie Exp $
+#/ $OpenBSD: Makefile,v 1.7 2005/08/17 21:06:48 sturm Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -12,7 +12,7 @@ PKGNAME=		qt4-${VERSION}p3
 PKGNAME-mysql=		qt4-mysql-${VERSION}p3
 PKGNAME-postgresql=	qt4-postgresql-${VERSION}p3
 PKGNAME-examples=	qt4-examples-${VERSION}p3
-PKGNAME-debug=		qt4-debug-${VERSION}p3
+PKGNAME-debug=		qt4-debug-${VERSION}p4
 FULLPKGNAME=		qt4-${VERSION}p3
 FULLPKGNAME-html=	qt4-html-${VERSION}p3
 
@@ -125,6 +125,10 @@ WANTLIB=	${myWANTLIB}
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-html"
 PKG_ARCH=	*
+.endif
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-debug"
+PERMIT_PACKAGE_FTP=	"Removed for space constraints"
 .endif
 
 QT_BASEDIR=	${PREFIX}/lib/qt4
