@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2005/02/07 19:01:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2005/08/17 16:10:04 espie Exp $
 
 COMMENT=		"file integrity checker"
 
 VERSION=		3.02.00
 DISTNAME=		integrit-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		security
 
 HOMEPAGE=		http://integrit.sourceforge.net/

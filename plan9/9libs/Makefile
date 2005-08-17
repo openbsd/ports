@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2004/02/21 19:19:35 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2005/08/17 16:10:04 espie Exp $
 
 COMMENT=		"Plan 9 compatibility libraries"
 
 VERSION=		1.0
 DISTNAME=		9libs-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		plan9 devel
 
 HOMEPAGE=		http://www.netlib.org/research/9libs/

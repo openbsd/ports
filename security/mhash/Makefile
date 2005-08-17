@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2004/06/19 20:38:24 jakob Exp $
+# $OpenBSD: Makefile,v 1.14 2005/08/17 16:10:04 espie Exp $
 
 COMMENT=	"strong hash library"
 
 DISTNAME=	mhash-0.9.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mhash/}

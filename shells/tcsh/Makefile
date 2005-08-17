@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2004/12/06 10:44:33 alek Exp $
+# $OpenBSD: Makefile,v 1.35 2005/08/17 16:10:04 espie Exp $
 
 COMMENT=	"extended C-shell with many useful features"
 
 DISTNAME=	tcsh-6.13.00
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/
 

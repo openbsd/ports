@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2004/10/19 06:10:33 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2005/08/17 16:10:04 espie Exp $
 
 COMMENT=		"Advanced Intrusion Detection Environment"
 
 V=			0.10
 DISTNAME=		aide-${V}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		security
 
 BUILD_DEPENDS=		::devel/bison \

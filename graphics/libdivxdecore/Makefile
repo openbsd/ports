@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2005/06/29 04:11:29 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2005/08/17 16:10:03 espie Exp $
 
 COMMENT=	"opendivx decoding API"
 
 DISTNAME=	libdivxdecore-0.4.7
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics devel
 
 MASTER_SITE_OPENBSD=    Yes

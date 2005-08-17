@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2003/10/31 22:29:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2005/08/17 16:10:02 espie Exp $
 
 COMMENT=	"Motif toolkit Linux libraries"
 
-PKGNAME=	redhat_motif-2.1.30p0
+PKGNAME=	redhat_motif-2.1.30p1
 
 MASTER_SITES=	${MASTER_SITE_REDHAT:=contrib/openmotif/linux-rpm/}
 DISTFILES=	openmotif-2.1.30-1_ICS.i386.rpm

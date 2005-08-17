@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/05/30 12:21:30 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2005/08/17 16:10:05 espie Exp $
 
 COMMENT=	"Apache module that provides randomized services"
 
@@ -7,6 +7,7 @@ COMMENT=	"Apache module that provides randomized services"
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 DISTNAME=	mod_random-1.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://software.tangent.org/projects.pl?view=mod_random

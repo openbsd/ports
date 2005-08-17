@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/03/12 06:10:20 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2005/08/17 16:10:03 espie Exp $
 
 # see md.h, add others
 ONLY_FOR_ARCHS=		alpha i386 sparc
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=		alpha i386 sparc
 COMMENT=		"threaded library for writing Internet applications"
 
 DISTNAME=		st-1.4
-PKGNAME=		lib${DISTNAME}
+PKGNAME=		lib${DISTNAME}p0
 CATEGORIES=		net devel
 HOMEPAGE=		http://state-threads.sourceforge.net/
 
