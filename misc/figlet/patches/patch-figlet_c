@@ -1,0 +1,15 @@
+$OpenBSD: patch-figlet_c,v 1.1 2005/08/20 08:01:41 mbalmer Exp $
+--- figlet.c.orig	Sat Aug 13 11:12:19 2005
++++ figlet.c	Sat Aug 13 11:20:11 2005
+@@ -1444,8 +1444,9 @@ inchr c;
+       }
+     else {
+       for (k=0;k<smushamount;k++) {
+-        outputline[row][outlinelen-smushamount+k] =
+-          smushem(outputline[row][outlinelen-smushamount+k],currchar[row][k]);
++        if (outlinelen-smushamount+k >= 0)
++          outputline[row][outlinelen-smushamount+k] =
++            smushem(outputline[row][outlinelen-smushamount+k],currchar[row][k]);
+         }
+       strcat(outputline[row],currchar[row]+smushamount);
+       }
