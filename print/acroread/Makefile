@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.26 2005/04/17 07:18:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.27 2005/08/20 09:02:16 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"view, distribute and print PDF documents"
 COMMENT-plugins="further plugins for acrobat reader"
 
-V=		7.0.0
-DISTNAME=	AdbeRdr70_linux_enu
+V=		7.0.1
+DISTNAME=	AdbeRdr701_linux_enu
 PKGNAME=	acroread-${V}
 PKGNAME-plugins=acroread-plugins-${V}
 CATEGORIES=	print
