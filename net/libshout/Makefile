@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2005/04/19 20:03:49 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2005/08/22 23:25:39 pvalchev Exp $
 
 COMMENT=	"library for communicating with an icecast server"
 
 DISTNAME=	libshout-2.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net audio
 
 HOMEPAGE=	http://www.icecast.org/
