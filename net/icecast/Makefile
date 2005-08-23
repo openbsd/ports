@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2005/04/16 21:24:15 sturm Exp $
+# $OpenBSD: Makefile,v 1.30 2005/08/23 21:26:26 pvalchev Exp $
 
 COMMENT=	"server for streaming Ogg Vorbis and MP3"
 
 DISTNAME=	icecast-2.2.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net audio
 
 HOMEPAGE=	http://www.icecast.org/
