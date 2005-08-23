@@ -1,8 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/05/01 21:28:50 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/08/23 00:32:40 robert Exp $
 @man man/man8/openvpn.8
 sbin/openvpn
 share/examples/openvpn/
 share/examples/openvpn/easy-rsa/
+share/examples/openvpn/easy-rsa/2.0/
+share/examples/openvpn/easy-rsa/2.0/README
+share/examples/openvpn/easy-rsa/2.0/build-ca
+share/examples/openvpn/easy-rsa/2.0/build-dh
+share/examples/openvpn/easy-rsa/2.0/build-inter
+share/examples/openvpn/easy-rsa/2.0/build-key
+share/examples/openvpn/easy-rsa/2.0/build-key-pass
+share/examples/openvpn/easy-rsa/2.0/build-key-pkcs12
+share/examples/openvpn/easy-rsa/2.0/build-key-server
+share/examples/openvpn/easy-rsa/2.0/build-req
+share/examples/openvpn/easy-rsa/2.0/build-req-pass
+share/examples/openvpn/easy-rsa/2.0/clean-all
+share/examples/openvpn/easy-rsa/2.0/inherit-inter
+share/examples/openvpn/easy-rsa/2.0/list-crl
+share/examples/openvpn/easy-rsa/2.0/openssl.cnf
+share/examples/openvpn/easy-rsa/2.0/pkitool
+share/examples/openvpn/easy-rsa/2.0/revoke-full
+share/examples/openvpn/easy-rsa/2.0/scripts
+share/examples/openvpn/easy-rsa/2.0/sign-req
+share/examples/openvpn/easy-rsa/2.0/vars
 share/examples/openvpn/easy-rsa/README
 share/examples/openvpn/easy-rsa/build-ca
 share/examples/openvpn/easy-rsa/build-dh
@@ -45,6 +65,7 @@ share/examples/openvpn/sample-keys/client.key
 share/examples/openvpn/sample-keys/dh1024.pem
 share/examples/openvpn/sample-keys/pass.crt
 share/examples/openvpn/sample-keys/pass.key
+share/examples/openvpn/sample-keys/pkcs12.p12
 share/examples/openvpn/sample-keys/server.crt
 share/examples/openvpn/sample-keys/server.key
 share/examples/openvpn/sample-keys/tmp-ca.crt

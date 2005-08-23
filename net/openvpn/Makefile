@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2005/05/01 21:28:49 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2005/08/23 00:32:39 robert Exp $
 # Original from: Jorge A. Cortes Montiel <jcortes@bsdcoders.org>
 
 COMMENT=	"easy-to-use, robust, and highly configurable VPN"
 
-VERSION=	2.0
+VERSION=	2.0.1
 DISTNAME=	openvpn-${VERSION}
 CATEGORIES=	net security
 
@@ -39,12 +39,12 @@ post-install:
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/sample-config-files
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/sample-keys
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/sample-scripts
-	@perl -pi -e 's,#!/bin/bash,#!/bin/sh,g' ${WRKSRC}/easy-rsa/*
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/easy-rsa
 	@rm -rf ${WRKSRC}/easy-rsa/Windows
 	${INSTALL_DATA} ${WRKSRC}/sample-config-files/* ${SAMPLES_DIR}/sample-config-files/
 	${INSTALL_DATA} ${WRKSRC}/sample-keys/* ${SAMPLES_DIR}/sample-keys/
 	${INSTALL_DATA} ${WRKSRC}/sample-scripts/* ${SAMPLES_DIR}/sample-scripts/
-	${INSTALL_DATA} ${WRKSRC}/easy-rsa/* ${SAMPLES_DIR}/easy-rsa/
+	@find ${WRKSRC}/easy-rsa -type f -exec perl -pi -e 's,#!/bin/bash,#!/bin/sh,g' {} \;
+	@cp -pR ${WRKSRC}/easy-rsa/* ${SAMPLES_DIR}/easy-rsa/
 
 .include <bsd.port.mk>
