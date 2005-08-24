@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/05/16 11:14:36 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2005/08/24 22:54:42 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -60,7 +60,7 @@ PKGNAME=	gcc-${FULL_VERSION}p0
 
 
 DISTFILES=  ${DISTNAME}.tar.bz2
-SUPDISTFILES=adastrap-i386-3.3.5-1.tgz:0
+SUPDISTFILES=adastrap-i386-3.3.6-2.tgz:0
 
 MASTER_SITES=	${MASTER_SITE_GCC:=snapshots/$(FULL_VERSION)/}
 MASTER_SITES0=	ftp://quatramaran.ens.fr/pub/espie/
@@ -89,7 +89,7 @@ CONFIGURE_ARGS+=--enable-java-gc=system-boehm
 .if ${MAKE_ADA:L} == "yes"
 LANGS:=${LANGS},ada
 MULTI_PACKAGES+=-ada
-DISTFILES+=adastrap-${MACHINE_ARCH}-3.3.5-1.tgz:0
+DISTFILES+=adastrap-${MACHINE_ARCH}-3.3.6-2.tgz:0
 #CONFIGURE_ENV=ADAC=${LOCALBASE}/bin/egcc GNATBIND=${LOCALBASE}/bin/gnatbind
 #MAKE_ENV=ADAC=${LOCALBASE}/bin/egcc GNATBIND=${LOCALBASE}/bin/gnatbind
 #BUILD_DEPENDS+=:gnat-*:lang/gcc/3.3,-ada
