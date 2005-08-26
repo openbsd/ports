@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/08/16 09:49:51 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2005/08/26 21:39:14 kurt Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -125,7 +125,7 @@ pre-patch:
 .endfor
 
 do-build:
-	@cd ${WRKBUILD} && exec ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} \
+	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 		./build -os ${ECLIPSE_OS} -ws ${ECLIPSE_WS} -arch ${ECLIPSE_ARCH} -compilelibs
 
 do-install:
