@@ -1,0 +1,55 @@
+$OpenBSD: patch-Src_pcre-2_08_pcre_c,v 1.1 2005/08/27 15:57:31 naddy Exp $
+--- Src/pcre-2.08/pcre.c.orig	Fri Aug 26 20:12:43 2005
++++ Src/pcre-2.08/pcre.c	Fri Aug 26 20:16:47 2005
+@@ -435,14 +435,30 @@ read_repeat_counts(const uschar *p, int 
+ int min = 0;
+ int max = -1;
+ 
++/* Read the minimum value and do a paranoid check: a negative value indicates
++an integer overflow. */
++
+ while ((cd->ctypes[*p] & ctype_digit) != 0) min = min * 10 + *p++ - '0';
++if (min < 0 || min > 65535)
++  {
++  *errorptr = ERR5;
++  return p;
++  }
+ 
++/* Read the maximum value if there is one, and again do a paranoid on its size.
++Also, max must not be less than min. */
++
+ if (*p == '}') max = min; else
+   {
+   if (*(++p) != '}')
+     {
+     max = 0;
+     while((cd->ctypes[*p] & ctype_digit) != 0) max = max * 10 + *p++ - '0';
++    if (max < 0 || max > 65535)
++      {
++      *errorptr = ERR5;
++      return p;
++      }
+     if (max < min)
+       {
+       *errorptr = ERR4;
+@@ -451,16 +467,11 @@ if (*p == '}') max = min; else
+     }
+   }
+ 
+-/* Do paranoid checks, then fill in the required variables, and pass back the
+-pointer to the terminating '}'. */
++/* Fill in the required variables, and pass back the pointer to the terminating
++'}'. */
+ 
+-if (min > 65535 || max > 65535)
+-  *errorptr = ERR5;
+-else
+-  {
+-  *minp = min;
+-  *maxp = max;
+-  }
++*minp = min;
++*maxp = max;
+ return p;
+ }
+ 
