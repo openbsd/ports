@@ -1,0 +1,32 @@
+$OpenBSD: patch-libaf_af_c,v 1.1 2005/08/27 21:11:49 espie Exp $
+--- libaf/af.c.orig	Sat Aug 27 13:31:21 2005
++++ libaf/af.c	Sat Aug 27 13:39:50 2005
+@@ -378,7 +378,7 @@ int af_init(af_stream_t* s, int force_ou
+   if((AF_INIT_TYPE_MASK & s->cfg.force) != AF_INIT_FORCE){
+     af_instance_t* af = NULL; // New filter
+     // Check output frequency if not OK fix with resample
+-    if(s->last->data->rate!=s->output.rate){
++    if(!s->last || s->last->data->rate!=s->output.rate){
+       // try to find a filter that can change samplrate
+       af = af_control_any_rev(s, AF_CONTROL_RESAMPLE_RATE | AF_CONTROL_SET,
+                &(s->output.rate));
+@@ -395,7 +395,7 @@ int af_init(af_stream_t* s, int force_ou
+ 	    af = af_prepend(s,s->first,resampler);
+ 	}		
+ 	else{
+-	  if(!strcmp(s->last->info->name,"format"))
++	  if(s->last && !strcmp(s->last->info->name,"format"))
+ 	    af = af_prepend(s,s->last,resampler);
+ 	  else
+ 	    af = af_append(s,s->last,resampler);
+@@ -423,8 +423,8 @@ int af_init(af_stream_t* s, int force_ou
+       
+     // Check number of output channels fix if not OK
+     // If needed always inserted last -> easy to screw up other filters
+-    if(s->last->data->nch!=s->output.nch){
+-      if(!strcmp(s->last->info->name,"format"))
++    if(!s->last || s->last->data->nch!=s->output.nch){
++      if(s->last && !strcmp(s->last->info->name,"format"))
+ 	af = af_prepend(s,s->last,"channels");
+       else
+ 	af = af_append(s,s->last,"channels");

@@ -1,0 +1,12 @@
+$OpenBSD: patch-libmpdemux_realrtsp_rtsp_c,v 1.2 2005/08/27 21:11:49 espie Exp $
+--- libmpdemux/realrtsp/rtsp.c.orig	Sat Aug 27 13:09:55 2005
++++ libmpdemux/realrtsp/rtsp.c	Sat Aug 27 13:10:08 2005
+@@ -274,7 +274,7 @@ static char *rtsp_get(rtsp_t *s) {
+ 
+   while (n<BUF_SIZE) {
+     read_stream(s->s, &(buffer[n]), 1);
+-    if ((buffer[n-1]==0x0d)&&(buffer[n]==0x0a)) break;
++    if (n > 0 &&(buffer[n-1]==0x0d)&&(buffer[n]==0x0a)) break;
+     n++;
+   }
+ 
