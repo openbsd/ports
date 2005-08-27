@@ -1,0 +1,55 @@
+$OpenBSD: patch-platforms_Cross_plugins_RePlugin_pcre_c,v 1.1 2005/08/27 19:27:57 pvalchev Exp $
+--- platforms/Cross/plugins/RePlugin/pcre.c.orig	Fri Aug 26 15:30:02 2005
++++ platforms/Cross/plugins/RePlugin/pcre.c	Fri Aug 26 15:30:05 2005
+@@ -715,14 +715,30 @@ read_repeat_counts(const uschar *p, int 
+ int min = 0;
+ int max = -1;
+ 
++/* Read the minimum value and do a paranoid check: a negative value indicates
++an integer overflow. */
++
+ while ((cd->ctypes[*p] & ctype_digit) != 0) min = min * 10 + *p++ - '0';
++if (min < 0 || min > 65535)
++  {
++  *errorptr = ERR5;
++  return p;
++  }
+ 
++/* Read the maximum value if there is one, and again do a paranoid on its size.
++Also, max must not be less than min. */
++
+ if (*p == '}') max = min; else
+   {
+   if (*(++p) != '}')
+     {
+     max = 0;
+     while((cd->ctypes[*p] & ctype_digit) != 0) max = max * 10 + *p++ - '0';
++    if (max < 0 || max > 65535)
++      {
++      *errorptr = ERR5;
++      return p;
++      }
+     if (max < min)
+       {
+       *errorptr = ERR4;
+@@ -731,16 +747,11 @@ if (*p == '}') max = min; else
+     }
+   }
+ 
+-/* Do paranoid checks, then fill in the required variables, and pass back the
+-pointer to the terminating '}'. */
++/* Fill in the required variables, and pass back the pointer to the terminating
++'}'. */
+ 
+-if (min > 65535 || max > 65535)
+-  *errorptr = ERR5;
+-else
+-  {
+-  *minp = min;
+-  *maxp = max;
+-  }
++*minp = min;
++*maxp = max;
+ return p;
+ }
+ 

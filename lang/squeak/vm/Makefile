@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/02/23 19:14:49 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2005/08/27 19:27:57 pvalchev Exp $
 
 
 COMMENT=	"smalltalk system, vm"
@@ -6,7 +6,7 @@ COMMENT=	"smalltalk system, vm"
 
 DISTFILES=Squeak-$V-${SRC_V}.src.tar.gz 
 
-PKGNAME=squeak-vm-$V.${SRC_V}p0
+PKGNAME=squeak-vm-$V.${SRC_V}p1
 
 WRKDIST=${WRKDIR}/Squeak-$V-${SRC_V}
 WRKSRC=${WRKDIST}/platforms/unix/config
