@@ -1,0 +1,14 @@
+$OpenBSD: patch-libmpcodecs_ad_pcm_c,v 1.1 2005/08/29 06:53:54 biorn Exp $
+--- libmpcodecs/ad_pcm.c.orig	Sun Feb 27 00:02:09 2005
++++ libmpcodecs/ad_pcm.c	Sat Aug 27 23:38:30 2005
+@@ -96,8 +96,8 @@ static int control(sh_audio_t *sh,int cm
+ 
+ static int decode_audio(sh_audio_t *sh_audio,unsigned char *buf,int minlen,int maxlen)
+ {
+-  int len=sh_audio->channels*sh_audio->samplesize-1;
+-  len=(minlen+len)&(~len); // sample align
++  unsigned len = sh_audio->channels*sh_audio->samplesize;
++  len = maxlen - maxlen % len; // sample align
+   len=demux_read_data(sh_audio->ds,buf,len);
+   return len;
+ }
