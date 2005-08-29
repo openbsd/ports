@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_acss_c,v 1.1 2005/08/29 20:28:17 hshoexer Exp $
+--- src/acss.c.orig	Sun Apr 17 20:48:13 2005
++++ src/acss.c	Wed Aug 24 23:39:20 2005
+@@ -674,12 +674,9 @@ static void genseed(libdvd_t libdvd, uin
+     unsigned char digest[20];
+     RMD160_CTX ctx;
+ 
+-    if (sizeof(salts) < (unsigned int)((offset & 0x3f) * 2 + 1))
+-	return;
+-
+     RMD160Init(&ctx);
+     RMD160Update(&ctx, libdvd->psz_challenge, strlen(libdvd->psz_challenge));
+-    RMD160Update(&ctx, (unsigned char*)&salts[offset * 2], sizeof(u_int32_t));
++    RMD160Update(&ctx, &salts[offset * 8], sizeof(u_int8_t) * 4);
+     RMD160Final(digest, &ctx);
+ 
+     for (i = 0; i < 3; i++)
+@@ -687,7 +684,7 @@ static void genseed(libdvd_t libdvd, uin
+ 
+     RMD160Init(&ctx);
+     RMD160Update(&ctx, libdvd->psz_challenge, strlen(libdvd->psz_challenge));
+-    RMD160Update(&ctx, (unsigned char*)&salts[offset * 2 + 1], sizeof(u_int32_t));
++    RMD160Update(&ctx, &salts[offset * 8 + 4], sizeof(u_int8_t) * 4);
+     RMD160Final(digest, &ctx);
+ 	
+     for (i = 0; i < 2; i++)
