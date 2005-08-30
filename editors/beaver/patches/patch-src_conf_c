@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_conf_c,v 1.1 2005/08/30 20:32:52 alek Exp $
+--- src/conf.c.orig	Sat Aug 27 22:54:54 2005
++++ src/conf.c	Sat Aug 27 22:54:27 2005
+@@ -157,7 +157,7 @@ gint		get_conf(gchar *key, t_conf *conf)
+   for (i = 0; conf->file_content[i]; i++)
+     for (j = 0; conf->file_content[i][j]; j++)
+       if (conf->file_content[i][j] == COMMENT &&
+-	  (conf->file_content[i][j - 1] != '\\' || !j))
++	  (!j || conf->file_content[i][j - 1] != '\\'))
+ 	{
+ 	  conf->file_content[i][j] = '\0';
+ 	  break;
