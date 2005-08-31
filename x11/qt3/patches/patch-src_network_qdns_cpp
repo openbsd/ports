@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_network_qdns_cpp,v 1.1 2005/08/31 22:01:09 espie Exp $
+--- src/network/qdns.cpp.orig	Tue Aug 30 22:22:45 2005
++++ src/network/qdns.cpp	Tue Aug 30 22:23:20 2005
+@@ -2559,7 +2559,7 @@ void QDns::doResInit()
+ 
+ 	    if ( type == "nameserver" ) {
+ 		QHostAddress *address = new QHostAddress();
+-		if ( address->setAddress( QString(line[1]) ) ) {
++		if ( address->setAddress( QString(list[1]) ) ) {
+ 		    // only add ipv6 addresses from resolv.conf if
+ 		    // this host supports ipv6.
+ 		    if ( address->isIPv4Address() || ipv6support )
