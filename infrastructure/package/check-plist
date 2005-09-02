@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $OpenBSD: check-plist,v 1.4 2003/09/03 21:43:59 espie Exp $
+# $OpenBSD: check-plist,v 1.5 2005/09/02 01:11:02 pvalchev Exp $
 # Copyright (c) 2001
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -51,6 +51,7 @@ make ECHO_MSG='echo >&2' SUBDIRLIST=$initial show=FULLPKGPATH >$trimmed
 make ECHO_MSG='echo >&2' SUBDIRLIST=$trimmed run-dir-depends >$depends
 tsort -h $trimmed -r $depends >$list
 make ECHO_MSG='echo >&2' show='FULLPKGNAME${SUBPACKAGE}' SUBDIRLIST=$list|sed -e 's,$,.tgz,' >$packages
+echo "pkglocatedb" >>$packages
 echo "Packages with distribution problems:"
 echo "------------------------------------"
 make ECHO_MSG='echo -n' show=PERMIT_PACKAGE_CDROM SUBDIRLIST=$list|\
