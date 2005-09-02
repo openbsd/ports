@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2005/06/08 03:58:55 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.50 2005/09/02 00:43:50 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -126,8 +126,8 @@ distfiles-update-locatedb:
 	@PORTSDIR=${.CURDIR} /bin/sh ${.CURDIR}/infrastructure/fetch/distfiles-update-locatedb ${DISTFILES_DB}
 
 pkglocatedb:
-	@pkg_mklocatedb ${.CURDIR}/packages/${MACHINE_ARCH}/all/* | \
-	    gzip >${.CURDIR}/packages/${MACHINE_ARCH}/ftp/pkglocatedb.gz
+	@pkg_mklocatedb ${.CURDIR}/packages/${MACHINE_ARCH}/all/* \
+	    >${.CURDIR}/packages/${MACHINE_ARCH}/ftp/pkglocatedb
 
 .PHONY: mirror-maker index search distfiles-update-locatedb \
 	pkglocatedb print-licenses print-index
