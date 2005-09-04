@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/07 00:23:23 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2005/09/04 23:38:18 espie Exp $
 
 COMMENT=		"Scrollkeeper Open Documentation Cataloging System"
 
 VERSION=		0.3.14
 DISTNAME=		scrollkeeper-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://scrollkeeper.sourceforge.net
@@ -24,9 +25,8 @@ MODULES=		devel/gettext
 
 BUILD_DEPENDS=		:docbook->=4.2p1:textproc/docbook \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
-RUN_DEPENDS=		:docbook->=4.2p1:textproc/docbook \
-			:libxml->=2.5.7p1:textproc/libxml
-LIB_DEPENDS=		xml2.7::textproc/libxml \
+RUN_DEPENDS=		:docbook->=4.2p1:textproc/docbook
+LIB_DEPENDS=		xml2.7:libxml->=2.6.16p6:textproc/libxml \
 			xslt.1::textproc/libxslt
 
 USE_GMAKE=		Yes
@@ -41,5 +41,7 @@ CONFIGURE_ENV=   	CPPFLAGS="-I${LOCALBASE}/include" \
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/scrollkeeper; \
 	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/scrollkeeper/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/libxml2
+	${INSTALL_DATA} ${FILESDIR}/scrollkeeper.spec ${PREFIX}/share/libxml2
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/16 13:27:09 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/09/04 23:38:18 espie Exp $
 share/doc/xsl/
 share/doc/xsl/docbook/
 share/doc/xsl/docbook/ChangeLog
@@ -1459,6 +1459,6 @@ share/xsl/docbook/xhtml/titlepage.xsl
 share/xsl/docbook/xhtml/toc.xsl
 share/xsl/docbook/xhtml/verbatim.xsl
 share/xsl/docbook/xhtml/xref.xsl
-@exec %D/bin/xmlcatalog --noout --add "delegateURI" "http://docbook.sourceforge.net/release/xsl/current/" "file://%D/share/xsl/docbook/catalog.xml" /var/db/xmlcatalog
-@exec %D/bin/xmlcatalog --noout --add "delegateSystem" "http://docbook.sourceforge.net/release/xsl/current/" "file://%D/share/xsl/docbook/catalog.xml" /var/db/xmlcatalog
-@unexec %D/bin/xmlcatalog --noout --del "http://docbook.sourceforge.net/release/xsl/current/" /var/db/xmlcatalog
+share/libxml2/docbook-xsl.spec
+@exec %D/share/libxml2/rebuild
+@unexec %D/share/libxml2/rebuild

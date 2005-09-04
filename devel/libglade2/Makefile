@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2005/05/25 23:26:40 marcm Exp $
+# $OpenBSD: Makefile,v 1.9 2005/09/04 23:38:17 espie Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
 V=			2.5.1
 DISTNAME=		libglade-${V}
-PKGNAME=		libglade2-${V}
+PKGNAME=		libglade2-${V}p0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org
@@ -24,7 +24,7 @@ WANTLIB=		X11 Xft Xrender m z \
 MODULES=		devel/gettext
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
-			xml2.7::textproc/libxml
+			xml2.7:libxml->=2.6.16p6:textproc/libxml
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
@@ -38,5 +38,7 @@ CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
 # Other ports that need it will have to have a python-expat *_DEPENDS.
 post-install:
 	@sed 's,@PYTHON@,${LOCALBASE}/bin/python,' ${WRKSRC}/libglade-convert.in > ${PREFIX}/bin/libglade-convert
+	${INSTALL_DATA_DIR} ${PREFIX}/share/libxml2
+	${INSTALL_DATA} ${FILESDIR}/libglade2.spec ${PREFIX}/share/libxml2
 
 .include <bsd.port.mk>

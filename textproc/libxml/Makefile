@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.90 2005/05/01 11:39:14 espie Exp $
+# $OpenBSD: Makefile,v 1.91 2005/09/04 23:38:18 espie Exp $
 
 COMMENT=		"XML parsing library"
 
 VERSION=		2.6.16
 DISTNAME=		libxml2-${VERSION}
-PKGNAME=		libxml-${VERSION}p5
+PKGNAME=		libxml-${VERSION}p6
 CATEGORIES=		textproc
 MASTER_SITES=		ftp://xmlsoft.org/ \
 			${MASTER_SITE_GNOME:=sources/libxml2/2.6/}
@@ -31,6 +31,13 @@ CONFIGURE_ARGS+=	--without-python
 CONFIGURE_ARGS+=	--without-threads
 
 MAKE_FLAGS=	libxml2_la_LDFLAGS='-version-info 9:0:0'
+
+post-configure:
+	sed -e 's,@PREFIX@,${PREFIX},' <${FILESDIR}/rebuild >${WRKBUILD}/rebuild
+
+post-install:
+	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/libxml2
+	${INSTALL_SCRIPT} ${WRKBUILD}/rebuild ${PREFIX}/share/libxml2/
 
 # XXX let's cheat
 #post-configure:

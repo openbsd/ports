@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/07/16 13:26:57 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/09/04 23:38:18 espie Exp $
 
 COMMENT=	"docbook XSL modular stylesheet"
 
 DISTNAME=	docbook-xsl-1.68.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://docbook.sourceforge.net/projects/xsl/
@@ -15,7 +16,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=docbook/}
 
-BUILD_DEPENDS=	::textproc/libxml
+BUILD_DEPENDS=	:libxml->=2.6.16p6:textproc/libxml
+RUN_DEPENDS=	:libxml->=2.6.16p6:textproc/libxml
 
 NO_CONFIGURE=	Yes
 NO_REGRESS=	Yes
@@ -37,6 +39,8 @@ do-install:
 	(cd ${WRKSRC} && \
 		${TAR} -cf - VERSION ${COPYDIRS} | ${TAR} -xf - -C${INSTDIR})
 	${INSTALL_DATA} ${WRKSRC}/catalog.xml ${INSTDIR}/catalog.xml
+	${INSTALL_DATA_DIR} ${PREFIX}/share/libxml2
+	${INSTALL_DATA} ${FILESDIR}/docbook-xsl.spec ${PREFIX}/share/libxml2
 
 post-install:
 	@perl -pi -e "s#${WRKSRC}#${CATALOG_DIR}#g" ${INSTDIR}/catalog.xml

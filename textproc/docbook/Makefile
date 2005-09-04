@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2003/06/17 16:20:04 marcm Exp $
+# $OpenBSD: Makefile,v 1.19 2005/09/04 23:38:17 espie Exp $
 
 COMMENT=	"technical documentation XML/SGML definitions"
 
 DISTNAME=	docbook-4.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 DIST_SUBDIR=	docbook
 CATEGORIES=	textproc
 
@@ -41,10 +41,10 @@ XML_VERSIONS=	4.1 4.1.2 4.2
 SGML_INSTDIR=	${PREFIX}/share/sgml/docbook
 XML_INSTDIR=	${PREFIX}/share/xml/docbook
 
-BUILD_DEPENDS=	:libxml->=2.5.7:textproc/libxml
+BUILD_DEPENDS=	:libxml->=2.6.16p6:textproc/libxml
 RUN_DEPENDS=	::textproc/iso8879 \
 		:docbook-dsssl-*:textproc/docbook-dsssl \
-		:libxml->=2.5.7:textproc/libxml
+		:libxml->=2.6.16p6:textproc/libxml
 
 .for i in ${SGML_VERSIONS} ${XML_VERSIONS:C/(.+)/x\1/g}
 EXTRACT_CASES+=	*docbk${i:S/.//g}.zip) unzip -qa ${FULLDISTDIR}/$$archive -d ${WRKDIR}/$i;;
@@ -69,6 +69,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/x$i/*.* ${XML_INSTDIR}/$i
 	${INSTALL_DATA} ${WRKDIR}/x$i/ent/* ${XML_INSTDIR}/$i/ent
 	${INSTALL_DATA} ${FILESDIR}/xml_db${i:S/.//g}_catalog ${XML_INSTDIR}/$i/catalog
+	${INSTALL_DATA_DIR} ${PREFIX}/share/libxml2
+	${INSTALL_DATA} ${FILESDIR}/docbook.spec ${PREFIX}/share/libxml2
 .endfor
 	sh ${FILESDIR}/makemastercatalog
 

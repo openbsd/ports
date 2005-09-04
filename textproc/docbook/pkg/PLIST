@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:44:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/09/04 23:38:18 espie Exp $
 share/sgml/catalog
 share/sgml/docbook/2.4.1/
 share/sgml/docbook/2.4.1/241chg.txt
@@ -194,12 +194,6 @@ share/xml/docbook/4.2/ent/iso-tech.ent
 share/xml/docbook/4.2/soextblx.dtd
 share/xml/docbook/catalog
 share/xml/docbook/catalog.xml
-@exec %D/bin/xmlcatalog --noout --add "delegatePublic" "-//OASIS//ENTITIES DocBook XML" "file://%D/share/xml/docbook/catalog.xml" /var/db/xmlcatalog
-@exec %D/bin/xmlcatalog --noout --add "delegatePublic" "-//OASIS//DTD DocBook XML" "file://%D/share/xml/docbook/catalog.xml" /var/db/xmlcatalog
-@exec %D/bin/xmlcatalog --noout --add "delegateSystem" "http://www.oasis-open.org/docbook/" "file://%D/share/xml/docbook/catalog.xml" /var/db/xmlcatalog
-@exec %D/bin/xmlcatalog --noout --add "delegateURI" "http://www.oasis-open.org/docbook/" "file://%D/share/xml/docbook/catalog.xml" /var/db/xmlcatalog
-@exec %D/bin/xmlcatalog --noout --add "delegatePublic" "ISO 8879:1986" "file://%D/share/xml/docbook/catalog.xml" /var/db/xmlcatalog
-@unexec xmlcatalog --noout -del "-//OASIS//ENTITIES DocBook XML" /var/db/xmlcatalog
-@unexec xmlcatalog --noout -del "-//OASIS//DTD DocBook XML" /var/db/xmlcatalog
-@unexec xmlcatalog --noout -del "http://www.oasis-open.org/docbook/" /var/db/xmlcatalog
-@unexec xmlcatalog --noout -del "ISO 8879:1986" /var/db/xmlcatalog
+share/libxml2/docbook.spec
+@exec %D/share/libxml2/rebuild
+@unexec %D/share/libxml2/rebuild

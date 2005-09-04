@@ -1,0 +1,18 @@
+#! /bin/sh
+# written by Marc Espie, 2005.
+# public domain
+
+PREFIX=@PREFIX@
+dir=$PREFIX/share/libxml2
+catalog=/var/db/xmlcatalog
+cmd=$PREFIX/bin/xmlcatalog
+$cmd --create --noout $catalog
+for i in $dir/*.spec
+do
+    # protect against no spec
+    test "$i" = $dir/'*.spec' ||
+	sed -e '/^#/d' -e "s,%D,$PREFIX," $i| 
+	    while read type && read name && read url; do
+		$cmd --noout --add "$type" "$name" "$url" $catalog
+	    done
+done
