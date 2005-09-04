@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/22 11:50:30 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2005/09/04 23:31:36 espie Exp $
 # $FreeBSD: Makefile,v 1.10 1998/09/03 00:05:11 jmacd Exp $
 
 COMMENT=	"binary delta generator and prototype RCS replacement"
 
 DISTNAME=	xdelta-1.1.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.xcf.berkeley.edu/pub/xdelta/
 
