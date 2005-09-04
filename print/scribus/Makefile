@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/03/07 14:05:59 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/09/04 23:48:35 espie Exp $
 
 COMMENT=		"DTP program"
 CATEGORIES=		print
-DISTNAME=		scribus-1.2.1
+DISTNAME=		scribus-1.2.2.1
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://www.scribus.org.uk/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=scribus/}
@@ -18,6 +18,17 @@ CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib --with-extra-includes=${LOCA
 CONFIGURE_ENV+=		UIC_PATH=${MODQT_UIC}
 CONFIGURE_ENV+=		CPPFLAGS='-I${MODQT_INCDIR} -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include' LDFLAGS='-L${MODQT_LIBDIR} -L${LOCALBASE}/lib'
 
+FLAVORS=		debug
+
+FLAVOR?=
+
+.if ${FLAVOR:L:Mdebug}
+CONFIGURE_ARGS+=	--enable-debug=Yes
+CFLAGS+=-g
+CXXFLAGS+=-g
+.endif
+
+
 USE_LIBTOOL=		Yes
 LIB_DEPENDS=		lcms::graphics/lcms \
 			xml2::textproc/libxml \
@@ -29,6 +40,7 @@ LIB_DEPENDS=		lcms::graphics/lcms \
 			art_lgpl_2.0.0::graphics/libart
 
 WANTLIB=	ICE SM freetype Xext pthread stdc++ crypto c X11 util m z ssl
+USE_GMAKE=	Yes
 
 WANTLIB+=	iconv
 

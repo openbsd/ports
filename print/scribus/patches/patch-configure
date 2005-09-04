@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2005/03/07 14:05:59 espie Exp $
---- configure.orig	Mon Mar  7 12:57:15 2005
-+++ configure	Mon Mar  7 12:57:31 2005
-@@ -4887,7 +4887,7 @@ if test "${ac_cv_lib_tiff_TIFFOpen+set}"
+$OpenBSD: patch-configure,v 1.2 2005/09/04 23:48:35 espie Exp $
+--- configure.orig	Tue Jul  5 15:14:21 2005
++++ configure	Sun Aug 28 13:43:28 2005
+@@ -4969,7 +4969,7 @@ if test "${ac_cv_lib_tiff_TIFFOpen+set}"
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS

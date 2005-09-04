@@ -1,7 +1,7 @@
-$OpenBSD: patch-scribus_scribus_cpp,v 1.1.1.1 2005/03/07 14:05:59 espie Exp $
---- scribus/scribus.cpp.orig	Mon Mar  7 14:32:21 2005
-+++ scribus/scribus.cpp	Mon Mar  7 14:33:40 2005
-@@ -4422,7 +4422,7 @@ void ScribusApp::slotHelpAbout()
+$OpenBSD: patch-scribus_scribus_cpp,v 1.2 2005/09/04 23:48:35 espie Exp $
+--- scribus/scribus.cpp.orig	Sat Jul  2 23:38:36 2005
++++ scribus/scribus.cpp	Sun Aug 28 13:43:34 2005
+@@ -4495,7 +4495,7 @@ void ScribusApp::slotHelpAbout()
  #if defined(__hpux)
  	pfad += "libs/libabout.sl";
  #else
@@ -10,7 +10,7 @@ $OpenBSD: patch-scribus_scribus_cpp,v 1.1.1.1 2005/03/07 14:05:59 espie Exp $
  #endif
  	mo = dlopen(pfad, RTLD_LAZY);
  	if (!mo)
-@@ -6648,7 +6648,7 @@ void ScribusApp::slotPrefsOrg()
+@@ -6733,7 +6733,7 @@ void ScribusApp::slotPrefsOrg()
  #if defined(__hpux)
  	pfad += "libs/libpreferences.sl";
  #else
@@ -19,7 +19,7 @@ $OpenBSD: patch-scribus_scribus_cpp,v 1.1.1.1 2005/03/07 14:05:59 espie Exp $
  #endif
  	mo = dlopen(pfad, RTLD_LAZY);
  	if (!mo)
-@@ -7138,7 +7138,7 @@ PSLib* ScribusApp::getPSDriver(bool psar
+@@ -7242,7 +7242,7 @@ PSLib* ScribusApp::getPSDriver(bool psar
  #if defined(__hpux)
  	pfad += "libs/libpostscript.sl";
  #else
@@ -28,7 +28,7 @@ $OpenBSD: patch-scribus_scribus_cpp,v 1.1.1.1 2005/03/07 14:05:59 espie Exp $
  #endif
  	PSDriver = dlopen(pfad, RTLD_LAZY);
  	if (!PSDriver)
-@@ -7228,7 +7228,7 @@ bool ScribusApp::getPDFDriver(QString fn
+@@ -7332,7 +7332,7 @@ bool ScribusApp::getPDFDriver(QString fn
  #if defined(__hpux)
  	pfad += "libs/libpdf.sl";
  #else
