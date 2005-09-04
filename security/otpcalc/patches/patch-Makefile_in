@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2005/09/04 20:07:37 aanriot Exp $
+--- Makefile.in.orig	Sun Aug  7 18:44:33 2005
++++ Makefile.in	Sun Aug  7 18:46:01 2005
+@@ -3,8 +3,8 @@ VER = 0.97
+ 
+ CC = @CC@
+ DEFS = -DVERSION=\"$(VER)\" @DEFS@
+-CFLAGS = -s -O3 -Wall -pipe `gtk-config --cflags`
+-LIBS = `gtk-config --libs` @LIBS@
++CFLAGS += `gtk-config --cflags`
++LIBS += `gtk-config --libs` @LIBS@
+ 
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+@@ -29,8 +29,8 @@ distclean: clean
+ 	rm -f Makefile config.h config.status config.cache config.log 
+ 
+ install: otpCalc otpCalc.1
+-	install -m 755 -o root -g root otpCalc $(bindir)/$(NAME)
+-	install -m 644 -o root -g root otpCalc.1 $(mandir)/man1/$(NAME).1
++	${BSD_INSTALL_PROGRAM} otpCalc $(bindir)/$(NAME)
++	${BSD_INSTALL_MAN} otpCalc.1 $(mandir)/man1/$(NAME).1
+ 
+ dist: distclean
+ 	( cd ..; \
