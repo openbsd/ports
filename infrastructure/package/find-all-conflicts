@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
-# $OpenBSD: find-all-conflicts,v 1.9 2005/08/14 11:57:17 espie Exp $
-# Copyright (c) 2000
+# $OpenBSD: find-all-conflicts,v 1.10 2005/09/04 22:34:23 espie Exp $
+# Copyright (c) 2000-2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -34,41 +34,106 @@ use File::Path;
 use OpenBSD::PackageLocator;
 use OpenBSD::PackageInfo;
 use OpenBSD::PackingList;
+use OpenBSD::Getopt;
+use OpenBSD::Error;
 use OpenBSD::PkgCfl;
 
-sub analyze 
+package OpenBSD::PackingElement;
+sub register
 {
-	my ($plist, $all) = @_;
-	my $pkgname = $plist->pkgname();
+}
 
-	for my $item (@{$plist->{items}}) {
-		next unless $item->IsFile();
-		my $file= File::Spec->canonpath($item->fullname());
-		unless (defined $all->{$file}) {
-			$all->{$file} = [];
+package OpenBSD::PackingElement::FileBase;
+
+sub register 
+{
+	my ($self, $all_conflict, $all_deps, $pkgname) = @_;
+
+	my $file= File::Spec->canonpath($self->fullname());
+	unless (defined $all_conflict->{$file}) {
+		$all_conflict->{$file} = [];
+	}
+	push @{$all_conflict->{$file}}, $pkgname;
+}
+
+package OpenBSD::PackingElement::Depend;
+sub register 
+{
+	my ($self, $all_conflict, $all_deps, $pkgname) = @_;
+	if (defined $self->{def}) {
+		unless (defined $all_deps->{$pkgname}) {
+			$all_deps->{$pkgname} = [];
 		}
-		push @{$all->{$file}}, $pkgname;
+		push @{$all_deps->{$pkgname}}, $self->{def};
 	}
 }
 
-sub show_problems
+
+package main;
+
+my $cache = {};
+my $cache2 = {};
+
+sub find_a_conflict
 {
-    my ($h, $conflicts) = @_;
+	my ($conflicts, $deps, $pkg, $pkg2) = @_;
+	
+	if (defined $conflicts->{$pkg} && $conflicts->{$pkg}->conflicts_with($pkg2)) {
+		return 1;
+	}
+	if (defined $deps->{$pkg}) {
+	    for my $dep (@{$deps->{$pkg}}) {
+	    	if (find_a_conflict($conflicts, $deps, $dep, $pkg2)) {
+			return 1;
+		}
+	    }
+	}
+	if (defined $deps->{$pkg2}) {
+	    for my $dep (@{$deps->{$pkg2}}) {
+	    	if (find_a_conflict($conflicts, $deps, $pkg, $dep)) {
+			return 1;
+		}
+	    }
+	}
+	return 0;
+}
+
+sub compute_problems
+{
+    my ($h, $conflicts, $deps) = @_;
 
     while (my ($key, $l) = each %$h) {
 	    my %s = map {($_, 1)} @$l;
-	    @$l = keys %s;
+	    @$l = sort keys %s;
 	    if (@$l > 1) {
-		my $notfound = 0;
-		# create a list of unconflicting packages.
-		my @l2 = ();
-		for my $pkg (@$l) {
-		    next if $conflicts->{$pkg}->conflicts_with(
-			    grep { $_ ne $pkg } (@$l));
-		    push(@l2, $pkg);
+	    	my $hv = join(',', @$l);
+		if (!defined $cache->{$hv}) {
+			# create a list of unconflicting packages.
+			my $l2 = [];
+			for my $pkg (@$l) {
+				my $keepit = 0;
+			    for my $pkg2 (@$l) {
+				next if $pkg2 eq $pkg;
+				if (!(find_a_conflict($conflicts, $deps, $pkg, $pkg2) ||
+					find_a_conflict($conflicts, $deps, $pkg2, $pkg))) {
+					$keepit = 1;
+					last;
+				}
+			    }
+			    if ($keepit) {
+				push(@$l2, $pkg);
+			    }
+			}
+			$cache->{$hv} = $l2;
 		}
-		if (@l2 != 0) {
-		    print "$key: ", join(',', @l2), "\n";
+		my $result = $cache->{$hv};
+		if (@$result != 0) {
+		    my $newkey = join(',', @$result);
+		    if (@$result == 1) {
+			    $newkey.="-> was ".join(',', @$l);
+		    }
+		    $cache2->{$newkey} = [] unless defined($cache2->{$newkey});
+		    push(@{$cache2->{$newkey}}, $key);
 		}
 	    }
     }
@@ -77,26 +142,60 @@ sub show_problems
 my $filehash={};
 my %dirhash=();
 my $conflicts={};
+my $dephash={};
+our ($opt_d, $opt_v);
 
-print "Scanning packages\n";
-print "-----------------\n";
-if (@ARGV==0) {
+sub handle_file
+{
+	my $filename = shift;
+	my $plist = OpenBSD::PackingList->fromfile($filename);
+	if (!defined $plist) {
+		print STDERR "Error reading $filename\n";
+		return;
+	}
+	print "$filename -> ", $plist->pkgname(), "\n" if $opt_v;
+	$plist->forget();
+	$conflicts->{$plist->pkgname()} = 
+	    OpenBSD::PkgCfl->make_conflict_list($plist);
+	$plist->visit('register', $filehash, $dephash, $plist->pkgname());
+}
+
+set_usage('find-all-conflicts [-v] [-d plist_dir] [pkgname ...]');
+try {
+    getopts('d:v');
+} catchall {
+	Usage($_);
+};
+
+print "Scanning packages\n" if $opt_v;
+print "-----------------\n" if $opt_v;
+if ($opt_d) {
+	opendir(my $dir, $opt_d);
+	while (my $pkgname = readdir($dir)) {
+	    next if $pkgname eq '.' or $pkgname eq '..';
+	    handle_file("$opt_d/$pkgname");
+    	}
+	closedir($dir);
+} elsif (@ARGV==0) {
 	@ARGV=(<*.tgz>);
 }
+
 for my $pkgname (@ARGV) {
 	print STDERR "$pkgname\n";
 	my $true_package = OpenBSD::PackageLocator->find($pkgname);
 	next unless $true_package;
 	my $dir = $true_package->info();
 	$true_package->close();
-	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
+	handle_file($dir.CONTENTS);
 	rmtree($dir);
-	$plist->forget();
-	$conflicts->{$plist->pkgname()} = 
-	    OpenBSD::PkgCfl->make_conflict_list($plist);
-	analyze($plist, $filehash);
 }
 
 print "File problems:\n";
 print "-------------\n";
-show_problems($filehash, $conflicts);
+compute_problems($filehash, $conflicts, $dephash);
+for my $cfl (sort keys %$cache2) {
+	print "$cfl\n";
+	for my $f (sort @{$cache2->{$cfl}}) {
+		print "\t$f\n";
+	}
+}
