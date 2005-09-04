@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/05/16 18:49:13 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2005/09/04 23:47:36 espie Exp $
 
 COMMENT='e-donkey client'
 CATEGORIES=net
@@ -18,9 +18,10 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 HOMEPAGE=http://savannah.nongnu.org/projects/mldonkey/
 
 MASTER_SITES=http://savannah.nongnu.org/download/mldonkey/
-DISTNAME=mldonkey-2.5.28.1
+DISTNAME=mldonkey-2.6.3
 EXTRACT_SUFX=.tar.bz2
 
+CONFIGURE_ARGS+=--enable-gui=newgui1
 USE_GMAKE=Yes
 MODULES=lang/ocaml
 BUILD_DEPENDS=::x11/lablgtk
