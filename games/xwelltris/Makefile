@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/28 23:32:07 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2005/09/04 23:29:09 espie Exp $
 
 COMMENT=	"2.5 dimensional tetris-like game"
 
-DISTNAME=	${PKGNAME}.src
-PKGNAME=	xwelltris-1.0.1
+DISTNAME=	xwelltris-1.0.1
+DISTFILES=	${DISTNAME}.src.tar.gz
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}src/
 
@@ -18,8 +19,6 @@ WANTLIB=		X11 Xext c m stdc++
 
 NO_REGRESS=	Yes
 USE_X11=	Yes
-
-WRKDIST=	${WRKDIR}/${PKGNAME}
 
 CONFIGURE_STYLE=gnu
 
@@ -40,5 +39,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/xwelltris
 	${INSTALL_DATA} ${WRKSRC}/data/*.{dat,gif} \
 		${WRKSRC}/README.keys ${PREFIX}/share/xwelltris
+	${INSTALL_DATA} /dev/null ${PREFIX}/share/xwelltris/welltris.scores.template
 
 .include <bsd.port.mk>

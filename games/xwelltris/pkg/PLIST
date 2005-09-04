@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/09/04 23:29:09 espie Exp $
 @mode 2555
 @group games
 bin/xwelltris
@@ -12,5 +12,7 @@ share/xwelltris/polyomino.dat
 share/xwelltris/topnine.gif
 share/xwelltris/wellcuts.gif
 share/xwelltris/wellintro.gif
-@exec install -m 664 -o root -g games /dev/null %B/welltris.scores
-@unexec rm -f %B/welltris.scores
+share/xwelltris/welltris.scores.template
+@mode 644
+@group games
+@sample share/xwelltris/welltris.scores
