@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:01:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/09/04 23:28:43 espie Exp $
 bin/jove
 bin/teachjove
 libexec/jove/
@@ -8,16 +8,6 @@ libexec/jove/recover
 @man man/man1/teachjove.1
 share/jove/
 share/jove/README
-@exec echo ""
-@exec echo "*** See %D/share/jove/README about changes to /etc/rc or"
-@exec echo "*** /etc/rc.local so that the system recovers jove files"
-@exec echo "*** on reboot after a system crash"
-@exec echo ""
-@unexec echo ""
-@unexec echo "*** If you changed your /etc/rc or /etc/rc.local files"
-@unexec echo "*** to recover jove files on reboot after a system crash"
-@unexec echo "*** you should back out those changes now."
-@unexec echo ""
 share/jove/XTermresource
 share/jove/cmds.doc
 share/jove/jove.rc

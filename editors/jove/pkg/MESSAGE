@@ -1,0 +1,3 @@
+See ${PREFIX}/share/jove/README about changes to /etc/rc or
+/etc/rc.local so that the system recovers jove files
+on reboot after a system crash
