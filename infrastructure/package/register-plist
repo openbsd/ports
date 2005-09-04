@@ -1,0 +1,125 @@
+#! /usr/bin/perl
+
+# $OpenBSD: register-plist,v 1.1 2005/09/04 22:30:39 espie Exp $
+# Copyright (c) 2005
+# Marc Espie.  All rights reserved.
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Neither the name of OpenBSD nor the names of its contributors
+#    may be used to endorse or promote products derived from this software
+#    without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY ITS AUTHOR AND THE OpenBSD project ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+
+use strict;
+
+use OpenBSD::PackageLocator;
+use OpenBSD::PackageInfo;
+use OpenBSD::PackingList;
+use File::Path;
+use File::Compare;
+
+package OpenBSD::PackingElement;
+
+sub forget_details
+{
+}
+
+package OpenBSD::PackingElement::FileBase;
+
+sub forget_details
+{
+	my $self = shift;
+	undef $self->{md5};
+	undef $self->{size};
+}
+
+package OpenBSD::PackingElement::SpecialFile;
+sub forget_details
+{
+	my $self = shift;
+	undef $self->{md5};
+	undef $self->{size};
+}
+
+package OpenBSD::PackingElement::Dependency;
+sub forget_details
+{
+	my $self = shift;
+	$self->{def} = 'def';
+}
+
+package OpenBSD::PackingElement::Wantlib;
+
+sub forget_details
+{
+	my $self = shift;
+	$self->{name} =~ s/\d+\.\d+$/0.0/;
+}
+
+package OpenBSD::PackingElement::CVSTag;
+sub forget_details
+{
+	my $self = shift;
+	$self->{name} =~ s/^(\$OpenBSD: register-plist,v 1.1 2005/09/04 22:30:39 espie Exp $$/$1\$/;
+}
+
+package main;
+
+if (@ARGV < 2) {
+	die "usage issue";
+}
+my $dir = shift;
+if (!-d $dir) {
+	die "not a directory: $dir";
+}
+
+my $error =0;
+
+for my $pkgfile (@ARGV) {
+	my $pkg = OpenBSD::PackageLocator->find($pkgfile);
+	if (!$pkg) {
+		die "Bad package $pkgfile";
+	}
+
+	my $infodir = $pkg->info();
+	my $plist = OpenBSD::PackingList->fromfile($infodir.CONTENTS);
+	undef $plist->{ OpenBSD::PackageInfo::COMMENT };
+
+	my $l = $plist->{items};
+	if ($l->[@$l-1]->isa('OpenBSD::PackingElement::Cwd') &&
+		$l->[@$l-1]->{name} eq '.') {
+	    pop @$l;
+	}
+
+	$plist->visit('forget_details');
+	$pkg->close();
+	rmtree($infodir);
+	my $result = $dir.'/'.$plist->pkgname();
+	if (-f $result) {
+		my $t = "$result-new";
+		$plist->tofile($t);
+		if (compare($t, $result) == 0) {
+			unlink($t);
+		} else {
+			print STDERR "Error: $t and $result are different\n";
+			$error++;
+		}
+	} else {
+		$plist->tofile($result);
+	}
+}
+exit($error != 0);
