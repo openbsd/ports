@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2005/05/24 21:37:09 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.12 2005/09/04 23:42:53 marcm Exp $
 bin/gconf-merge-tree
 bin/gconftool-2
 include/gconf/
@@ -188,3 +188,4 @@ share/sgml/gconf/
 share/sgml/gconf/gconf-1.0.dtd
 %%SHARED%%
 @extraunexec rmdir ${SYSCONFDIR}/gconf 2>/dev/null || true
+@extraunexec rm -fr /var/db/gconf

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2005/05/24 21:37:09 marcm Exp $
+# $OpenBSD: Makefile,v 1.11 2005/09/04 23:42:53 marcm Exp $
 
 COMMENT=		"configuration database system for GNOME"
 
 VERSION=		2.10.0
 DISTNAME=		GConf-${VERSION}
-PKGNAME=		gconf2-${VERSION}
+PKGNAME=		gconf2-${VERSION}p0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/projects/gconf/
