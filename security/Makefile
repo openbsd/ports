@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.160 2005/08/09 22:47:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.161 2005/09/04 20:08:52 aanriot Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -69,6 +69,7 @@
      SUBDIR += nikto
      SUBDIR += onesixtyone
      SUBDIR += opencdk
+     SUBDIR += otpcalc
      SUBDIR += outguess
      SUBDIR += p0f
      SUBDIR += p5-Authen-Krb5-Simple
