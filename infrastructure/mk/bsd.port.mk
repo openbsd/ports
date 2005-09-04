@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.704 2005/07/04 12:32:51 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.705 2005/09/04 22:32:37 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -71,6 +71,7 @@ WRKOBJDIR?=
 FAKEOBJDIR?=
 BULK_TARGETS?=
 FORCE_UPDATE?=No
+PKGNAMES=${FULLPKGNAME}
 
 # special purpose user settings
 PATCH_CHECK_ONLY?=No
@@ -101,6 +102,7 @@ BULK_COOKIES_DIR?= ${PORTSDIR}/bulk/${MACHINE_ARCH}
 UPDATE_COOKIES_DIR?= ${PORTSDIR}/update/${MACHINE_ARCH}
 TEMPLATES?=		${PORTSDIR}/infrastructure/templates
 TMPDIR?=		/tmp
+PLIST_DB?=
 
 PKGREPOSITORYBASE?=	${PORTSDIR}/packages/${MACHINE_ARCH}
 PKGREPOSITORY?=		${PKGREPOSITORYBASE}/all
@@ -576,6 +578,7 @@ _PACKAGE_COOKIES= ${_PACKAGE_COOKIE}
 .for _s in ${MULTI_PACKAGES}
 _PACKAGE_COOKIE${_s} = ${PKGFILE${_s}}
 _PACKAGE_COOKIES += ${_PACKAGE_COOKIE${_s}}
+PKGNAMES += ${FULLPKGNAME${_s}}
 .endfor
 
 .if empty(SUBPACKAGE)
@@ -708,6 +711,9 @@ PKG_ARGS+=		-k ${PKGDIR}/DEINSTALL${SUBPACKAGE}
 .endif
 .if exists(${PKGDIR}/REQ${SUBPACKAGE})
 PKG_ARGS+=		-r ${PKGDIR}/REQ${SUBPACKAGE}
+.endif
+.if exists(${PKGDIR}/MODULE${SUBPACKAGE}.pm)
+PKG_ARGS+=		-m ${PKGDIR}/MODULE${SUBPACKAGE}.pm
 .endif
 .if defined(MESSAGE)
 PKG_ARGS+=		-M ${MESSAGE}
@@ -1968,6 +1974,9 @@ _package: ${_PKG_PREREQ}
 	    ${SUDO} ${MAKE} _internal-clean=package; \
 	    exit 1; \
 	  fi
+.if !empty(PLIST_DB)
+	@perl /usr/ports/infrastructure/package/register-plist ${PLIST_DB} ${PKGFILE${SUBPACKAGE}}
+.endif
 # End of PACKAGE.
 .endif
 .if target(post-package)
@@ -1995,7 +2004,7 @@ ${_F}:
 	${_CDROM_OVERRIDE}; \
 	${_SITE_SELECTOR}; \
 	for site in $$sites; do \
-		${ECHO_MSG} ">> Attempting to fetch ${_F} from $${site}."; \
+		${ECHO_MSG} ">> Fetch $${site}$$f."; \
 		if ${FETCH_CMD} $${site}$$f; then \
 				file=${_F:S@^${DISTDIR}/@@}; \
 				ck=`cd ${DISTDIR} && ${_size_fragment}`; \
@@ -2371,6 +2380,13 @@ ${_i:L}-depends-list:
 
 # recursive depend targets
 
+print-package-signature:
+	@echo -n ${FULLPKGNAME${SUBPACKAGE}}
+	@cd ${.CURDIR} && PACKAGING='${SUBPACKAGE}' ${MAKE} _print-package-args | \
+		sed -e 's,^-W ,,' -e 's,^-P .*:,,'|sort -u| \
+		while read i; do echo -n ",$$i"; done
+	@echo
+
 _print-package-args:
 .for _i in ${RUN_DEPENDS}
 	@unset FLAVOR SUBPACKAGE || true; \
@@ -2613,7 +2629,8 @@ uninstall deinstall:
 	post-regress pre-build pre-configure \
 	pre-extract pre-fake pre-fetch \
 	pre-install pre-package pre-patch \
-	pre-regress print-build-depends print-run-depends \
+	pre-regress print-build-depends print-package-signature \
+	print-run-depends \
 	readmes rebuild \
 	regress regress-depends \
 	reinstall repackage run-depends \
