@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/09/15 19:16:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2005/09/04 23:31:07 espie Exp $
 bin/erb
 bin/irb
 bin/rdoc
@@ -586,5 +586,4 @@ lib/ruby/site_ruby/
 lib/ruby/site_ruby/${REV}/
 lib/ruby/site_ruby/${REV}/${SUB}/
 @man man/man1/ruby.1
-@exec mkdir -p %D/lib/ruby/site_ruby/${REV}/${SUB}
 %%SHARED%%
