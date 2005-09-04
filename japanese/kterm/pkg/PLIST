@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 00:56:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/09/04 23:30:16 espie Exp $
 @mode ug+s
 @owner root
 @group utmp
 bin/kterm
-@exec echo "You may wish to install some extra japanese font packages as well"
 @mode
 @owner
 @group
