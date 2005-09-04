@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.postgresql,v 1.1 2005/07/23 20:38:17 brad Exp $
-share/examples/dovecot/dovecot-pgsql.conf

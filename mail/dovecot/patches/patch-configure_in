@@ -1,56 +1,11 @@
-$OpenBSD: patch-configure_in,v 1.5 2005/02/13 18:37:32 alek Exp $
---- configure.in.orig	Wed Jan 19 16:15:45 2005
-+++ configure.in	Sun Feb 13 18:31:22 2005
-@@ -12,6 +12,7 @@ AC_STDC_HEADERS
+$OpenBSD: patch-configure_in,v 1.6 2005/09/04 18:22:30 brad Exp $
+--- configure.in.orig	Sat Mar  5 15:02:47 2005
++++ configure.in	Sun Mar  6 16:46:00 2005
+@@ -12,6 +12,7 @@ AC_PROG_CPP
+ AC_HEADER_STDC
  AC_C_INLINE
- AC_ARG_PROGRAM
  AM_PROG_LIBTOOL
 +LIBS="${LIBS} -liconv"
  AM_ICONV
  
- AC_CHECK_HEADERS(string.h stdlib.h stdint.h unistd.h dirent.h)
-@@ -681,6 +682,44 @@ AC_TRY_COMPILE([
- ], [
-   AC_MSG_RESULT(no)
- ])
-+
-+dnl * If mmap() plays nicely with write()
-+AC_MSG_CHECKING([whether we need to use MS_INVALIDATE with mmaps])
-+AC_TRY_RUN([
-+  #include <stdio.h>
-+  #include <sys/types.h>
-+  #include <sys/stat.h>
-+  #include <unistd.h>
-+  #include <fcntl.h>
-+  #include <sys/mman.h>
-+  int main() {
-+    /* return 0 if we're signed */
-+    int f = open("conftest.mmap", O_RDWR|O_CREAT|O_TRUNC);
-+    void *mem;
-+    if (f == -1) {
-+      perror("open()");
-+      return 1;
-+    }
-+    write(f, "1", 2);
-+    mem = mmap(NULL, 2, PROT_READ|PROT_WRITE, MAP_SHARED, f, 0);
-+    if (mem == MAP_FAILED) {
-+      perror("mmap()");
-+      return 1;
-+    }
-+    strcpy(mem, "2");
-+    msync(mem, 2, MS_SYNC);
-+    lseek(f, 0, SEEK_SET);
-+    write(f, "3", 2);
-+  
-+    return strcmp(mem, "3") == 0 ? 0 : 1;
-+  }
-+], [
-+  AC_MSG_RESULT(no)
-+], [
-+  AC_MSG_RESULT(yes)
-+  AC_DEFINE(NEED_MS_INVALIDATE,, Define if your mmap() implementation requires use of MS_INVALIDATE to work with write())
-+])
-+
- 
- dnl * Solaris compatible sendfilev()
- AC_CHECK_LIB(sendfile, sendfilev, [
+ AC_CHECK_HEADERS(strings.h stdint.h unistd.h dirent.h \
