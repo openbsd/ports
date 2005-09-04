@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/05/26 03:39:31 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2005/09/04 23:37:30 espie Exp $
 bin/gdm
 bin/gdm-binary
 bin/gdmXnest
@@ -33,27 +33,32 @@ share/examples/gdm/
 share/examples/gdm/gdm/
 share/examples/gdm/gdm/Init/
 share/examples/gdm/gdm/Init/Default
+@mode 555
 @sample ${SYSCONFDIR}/X11/gdm/Init/Default
-@exec chmod 555 ${SYSCONFDIR}/X11/gdm/Init/Default
+@mode
 @sample ${SYSCONFDIR}/X11/gdm/PostLogin/
 share/examples/gdm/gdm/PostLogin/
 share/examples/gdm/gdm/PostLogin/Default.sample
 @sample ${SYSCONFDIR}/X11/gdm/PostSession/
 share/examples/gdm/gdm/PostSession/
 share/examples/gdm/gdm/PostSession/Default
+@mode 555
 @sample ${SYSCONFDIR}/X11/gdm/PostSession/Default
-@exec chmod 555 ${SYSCONFDIR}/X11/gdm/PostSession/Default
+@mode
 @sample ${SYSCONFDIR}/X11/gdm/PreSession/
 share/examples/gdm/gdm/PreSession/
 share/examples/gdm/gdm/PreSession/Default
+@mode 555
 @sample ${SYSCONFDIR}/X11/gdm/PreSession/Default
-@exec chmod 555 ${SYSCONFDIR}/X11/gdm/PreSession/Default
+@mode
 share/examples/gdm/gdm/XKeepsCrashing
+@mode 555
 @sample ${SYSCONFDIR}/X11/gdm/XKeepsCrashing
-@exec chmod 555 ${SYSCONFDIR}/X11/gdm/XKeepsCrashing
+@mode
 share/examples/gdm/gdm/Xsession
+@mode 555
 @sample ${SYSCONFDIR}/X11/gdm/Xsession
-@exec chmod 555 ${SYSCONFDIR}/X11/gdm/Xsession
+@mode
 @comment share/examples/gdm/gdm/factory-gdm.conf
 share/examples/gdm/gdm/gdm.conf
 @sample ${SYSCONFDIR}/X11/gdm/gdm.conf
@@ -314,7 +319,8 @@ share/xsessions/
 share/xsessions/gnome.desktop
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
-@exec install -d -g _x11 -m 1770 /var/db/gdm
-@exec install -d -m 0755 /var/log/gdm
-@extraunexec rm -fr /var/db/gdm/
-@extraunexec rm -fr /var/log/gdm/
+@mode 0755
+@sample /var/log/gdm/
+@group _x11
+@mode 1770
+@sample /var/db/gdm/
