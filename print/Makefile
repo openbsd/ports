@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.45 2005/06/14 15:34:27 db Exp $
+#	$OpenBSD: Makefile,v 1.46 2005/09/04 23:22:33 espie Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -44,6 +44,7 @@
     SUBDIR += mpage,legal
     SUBDIR += mpage,letter
 #   SUBDIR += musixtex
+    SUBDIR += openclipart
     SUBDIR += pdflib
     SUBDIR += pkfonts
     SUBDIR += ppower4
