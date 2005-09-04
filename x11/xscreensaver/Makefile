@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2005/06/03 05:38:32 marcm Exp $
+# $OpenBSD: Makefile,v 1.30 2005/09/04 19:53:33 aanriot Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
-VERSION=		4.21
+VERSION=		4.22
 DISTNAME=		xscreensaver-${VERSION}
 CATEGORIES=     	x11
 
@@ -35,7 +35,8 @@ USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-hackdir="${PREFIX}/libexec/xscreensaver"
+CONFIGURE_ARGS+=	--with-hackdir="${PREFIX}/libexec/xscreensaver" \
+			--mandir=${PREFIX}/man
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2005/06/03 05:38:32 marcm Exp $
---- configure.orig	Sun Mar 20 23:18:18 2005
-+++ configure	Mon Apr 18 16:09:02 2005
-@@ -6718,6 +6718,7 @@ EOF
+$OpenBSD: patch-configure,v 1.2 2005/09/04 19:53:33 aanriot Exp $
+--- configure.orig	Sun Jul 24 10:43:47 2005
++++ configure	Sun Jul 24 10:46:12 2005
+@@ -6888,6 +6888,7 @@ EOF
          ac_cv_x_app_defaults="$ac_x_app_defaults"
        fi
  fi
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.1 2005/06/03 05:38:32 marcm Exp $
  echo "$as_me:$LINENO: result: $ac_cv_x_app_defaults" >&5
  echo "${ECHO_T}$ac_cv_x_app_defaults" >&6
      eval ac_x_app_defaults="$ac_cv_x_app_defaults"
-@@ -8616,7 +8617,7 @@ if test "${ac_cv_lib_intl_bindtextdomain
+@@ -8788,7 +8789,7 @@ if test "${ac_cv_lib_intl_bindtextdomain
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.1 2005/06/03 05:38:32 marcm Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -8686,7 +8687,7 @@ if test "${ac_cv_lib_intl_dgettext+set}"
+@@ -8858,7 +8859,7 @@ if test "${ac_cv_lib_intl_dgettext+set}"
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -27,7 +27,16 @@ $OpenBSD: patch-configure,v 1.1 2005/06/03 05:38:32 marcm Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -15634,7 +15635,7 @@ if test "${ac_cv_lib_pthread_pthread_cre
+@@ -8930,7 +8931,7 @@ fi
+ 	  fi
+ 
+           if test "$gt_cv_func_dgettext_libintl" = "yes"; then
+-	    LIBS="$LIBS -lintl";
++	    LIBS="$LIBS -liconv -lintl";
+           fi
+ 
+ 	  if test "$gt_cv_func_dgettext_libc" = "yes" \
+@@ -15820,7 +15821,7 @@ if test "${ac_cv_lib_pthread_pthread_cre
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -36,7 +45,7 @@ $OpenBSD: patch-configure,v 1.1 2005/06/03 05:38:32 marcm Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -15693,7 +15694,7 @@ fi
+@@ -15879,7 +15880,7 @@ fi
  echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
  if test $ac_cv_lib_pthread_pthread_create = yes; then
