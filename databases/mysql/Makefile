@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2005/03/30 03:07:52 brad Exp $
+# $OpenBSD: Makefile,v 1.108 2005/09/04 22:51:24 brad Exp $
 # Uses pthreads
 
 .if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "m88k"
@@ -9,13 +9,13 @@ COMMENT=	"multithreaded SQL database (client)"
 COMMENT-server=	"multithreaded SQL database (server)"
 COMMENT-tests=	"multithreaded SQL database (regression test suite)"
 
-VERSION=	4.0.24
+VERSION=	4.1.14
 DISTNAME=	mysql-${VERSION}
 FULLPKGNAME=	mysql-client-${VERSION}
-PKGNAME-server=	mysql-server-${VERSION}p1
+PKGNAME-server=	mysql-server-${VERSION}
 FULLPKGNAME-tests= mysql-tests-${VERSION}
 CATEGORIES=	databases
-V=		MySQL-4.0
+V=		MySQL-4.1
 MASTER_SITES=	http://mysql.mirrors.pair.com/Downloads/$V/
 
 HOMEPAGE=	http://www.mysql.com/
@@ -77,7 +77,7 @@ MULTI_PACKAGES=	-server -tests
 SUBPACKAGE?=
 
 .if ${SUBPACKAGE} == "-server"
-RUN_DEPENDS=	:mysql-client-4.0.*:databases/mysql \
+RUN_DEPENDS=	:mysql-client-4.1.*:databases/mysql \
 		:p5-DBD-mysql-*:databases/p5-DBD-mysql
 WANTLIB+=	wrap		
 .elif empty(SUBPACKAGE)
@@ -92,12 +92,8 @@ WANTLIB=
 DOCS=	manual.html manual.ps manual_toc.html manual.txt
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql/Flags
-	cd ${WRKSRC}/Docs; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/mysql
-	${INSTALL_DATA} ${WRKSRC}/Docs/Flags/*.gif \
-		${PREFIX}/share/doc/mysql/Flags
-	cd ${PREFIX}/lib && ln -sf mysql/libmysqlclient.so.12.0 . && \
-		ln -sf mysql/libmysqlclient_r.so.12.0 .
+	cd ${PREFIX}/lib && ln -sf mysql/libmysqlclient.so.14.0 . && \
+		ln -sf mysql/libmysqlclient_r.so.14.0 .
 
 do-regress:
 	@cd ${WRKSRC}/mysql-test && ./mysql-test-run --force

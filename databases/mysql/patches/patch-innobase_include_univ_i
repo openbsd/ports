@@ -1,8 +1,8 @@
-$OpenBSD: patch-innobase_include_univ_i,v 1.6 2005/03/23 03:47:20 brad Exp $
---- innobase/include/univ.i.orig	Fri Mar  4 19:38:15 2005
-+++ innobase/include/univ.i	Tue Mar 15 09:38:55 2005
-@@ -131,12 +131,8 @@ by one. */
- #define UNIV_INLINE  	__inline
+$OpenBSD: patch-innobase_include_univ_i,v 1.7 2005/09/04 22:51:24 brad Exp $
+--- innobase/include/univ.i.orig	Fri Jul 15 06:39:35 2005
++++ innobase/include/univ.i	Tue Jul 26 10:22:14 2005
+@@ -122,12 +122,8 @@ by one. */
+ #define UNIV_INLINE	__inline
  #else
  /* config.h contains the right def for 'inline' for the current compiler */
 -#if (__GNUC__ == 2)

@@ -1,27 +1,20 @@
-$OpenBSD: patch-scripts_mysql_install_db.sh,v 1.18 2005/03/23 03:47:20 brad Exp $
---- scripts/mysql_install_db.sh.orig	Fri Mar  4 19:38:15 2005
-+++ scripts/mysql_install_db.sh	Tue Mar 15 09:38:55 2005
-@@ -7,16 +7,12 @@
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.1 2005/09/04 22:51:24 brad Exp $
+--- scripts/mysql_install_db.sh.orig	Fri Jul 15 06:39:34 2005
++++ scripts/mysql_install_db.sh	Tue Jul 26 10:39:29 2005
+@@ -7,10 +7,9 @@
  #
  # All unrecognized arguments to this script are passed to mysqld.
  
 -in_rpm=0
 -windows=0
  defaults=""
- user=""
+-user=""
 +user=_mysql
 +group=_mysql
-+
+ 
  case "$1" in
--    -IN-RPM)
--      in_rpm="1"; shift
--      ;;
--esac
--case "$1" in
      --no-defaults|--defaults-file=*|--defaults-extra-file=*)
-       defaults="$1"; shift
-       ;;
-@@ -35,7 +31,6 @@ parse_arguments() {
+@@ -31,7 +30,6 @@ parse_arguments() {
  
    for arg do
      case "$arg" in
@@ -29,7 +22,7 @@ $OpenBSD: patch-scripts_mysql_install_db.sh,v 1.18 2005/03/23 03:47:20 brad Exp 
        --basedir=*) basedir=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
        --ldata=*|--datadir=*) ldata=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
        --user=*)
-@@ -43,10 +38,9 @@ parse_arguments() {
+@@ -39,10 +37,9 @@ parse_arguments() {
          # as 'user' (crucial e.g. if log-bin=/some_other_path/
          # where a chown of datadir won't help)
  	 user=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
@@ -41,15 +34,15 @@ $OpenBSD: patch-scripts_mysql_install_db.sh,v 1.18 2005/03/23 03:47:20 brad Exp 
        *)
          if test -n "$pick_args"
          then
-@@ -82,7 +76,6 @@ ldata=
+@@ -78,7 +75,6 @@ ldata=
  execdir=
  bindir=
  basedir=
 -force=0
- parse_arguments `$print_defaults $defaults mysqld mysql_install_db`
- parse_arguments PICK-ARGS-FROM-ARGV "$@"
+ verbose=0
+ fill_help_tables=""
  
-@@ -111,52 +104,35 @@ mysqld=$execdir/mysqld
+@@ -127,44 +123,28 @@ mysqld=$execdir/mysqld
  mysqld_opt=""
  scriptdir=$bindir
  
@@ -64,15 +57,13 @@ $OpenBSD: patch-scripts_mysql_install_db.sh,v 1.18 2005/03/23 03:47:20 brad Exp 
  then
 -  if test "$in_rpm" = 1
 -  then
--    echo "FATAL ERROR $mysqld not found!"
--    exit 1
+     echo "FATAL ERROR $mysqld not found!"
+     exit 1
 -  else
 -    echo "Didn't find $mysqld"
 -    echo "You should do a 'make install' before executing this script"
 -    exit 1
 -  fi
-+  echo "FATAL ERROR $mysqld not found!"
-+  exit 1
  fi
  
  # Try to determine the hostname
@@ -84,72 +75,93 @@ $OpenBSD: patch-scripts_mysql_install_db.sh,v 1.18 2005/03/23 03:47:20 brad Exp 
 +if [ $? -ne 0 ]
  then
 -  resolved=`$bindir/resolveip $hostname 2>&1`
-+  resolved=`$bindir/resolveip localhost 2>&1`
-   if [ $? -ne 0 ]
-   then
--    resolved=`$bindir/resolveip localhost 2>&1`
--    if [ $? -ne 0 ]
+-  if [ $? -ne 0 ]
+-  then
+     resolved=`$bindir/resolveip localhost 2>&1`
+     if [ $? -ne 0 ]
 -    then
--      echo "Neither host '$hostname' nor 'localhost' could not be looked up with"
+-      echo "Neither host '$hostname' nor 'localhost' could be looked up with"
 -      echo "$bindir/resolveip"
 -      echo "Please configure the 'hostname' command to return a correct hostname."
 -      echo "If you want to solve this at a later stage, restart this script with"
 -      echo "the --force option"
 -      exit 1
--    fi
--    echo "WARNING: The host '$hostname' could not be looked up with resolveip."
--    echo "This probably means that your libc libraries are not 100 % compatible"
--    echo "with this binary MySQL version. The MySQL daemon, mysqld, should work"
--    echo "normally with the exception that host name resolving will not work."
--    echo "This means that you should use IP addresses instead of hostnames"
--    echo "when specifying MySQL privileges !"
-+    echo "Neither host '$hostname' nor 'localhost' could not be looked up with"
-+    echo "$bindir/resolveip"
-+    echo "Please configure the 'hostname' command to return a correct hostname."
-+    echo "If you want to solve this at a later stage, restart this script with"
-+    echo "the --force option"
-+    exit 1
-   fi
-+  echo "WARNING: The host '$hostname' could not be looked up with resolveip."
-+  echo "This probably means that your libc libraries are not 100 % compatible"
-+  echo "with this binary MySQL version. The MySQL daemon, mysqld, should work"
-+  echo "normally with the exception that host name resolving will not work."
-+  echo "This means that you should use IP addresses instead of hostnames"
-+  echo "when specifying MySQL privileges !"
++	then
++	echo "Neither host '$hostname' nor 'localhost' could be looked up with"
++	echo "$bindir/resolveip"
++	echo "Please configure the 'hostname' command to return a correct hostname."
++	echo "If you want to solve this at a later stage, restart this script with"
++	echo "the --force option"
++	exit 1
+     fi
+     echo "WARNING: The host '$hostname' could not be looked up with resolveip."
+     echo "This probably means that your libc libraries are not 100 % compatible"
+@@ -172,7 +152,6 @@ then
+     echo "normally with the exception that host name resolving will not work."
+     echo "This means that you should use IP addresses instead of hostnames"
+     echo "when specifying MySQL privileges !"
+-  fi
  fi
  
  if test "$ip_only" = "1"
-@@ -166,12 +142,10 @@ then
- fi
+@@ -183,12 +162,10 @@ fi
  
  # Create database directories mysql & test
+ 
 -  if test ! -d $ldata; then mkdir $ldata; chmod 700 $ldata ; fi
 -  if test ! -d $ldata/mysql; then mkdir $ldata/mysql;  chmod 700 $ldata/mysql ; fi
 -  if test ! -d $ldata/test; then mkdir $ldata/test;  chmod 700 $ldata/test ; fi
 -  if test -w / -a ! -z "$user"; then
 -    chown $user $ldata $ldata/mysql $ldata/test;
 -  fi
-+  if test ! -d $ldata; then mkdir -p $ldata; chmod 700 $ldata ; fi
-+  if test ! -d $ldata/mysql; then mkdir -p $ldata/mysql;  chmod 700 $ldata/mysql ; fi
-+  if test ! -d $ldata/test; then mkdir -p $ldata/test;  chmod 700 $ldata/test ; fi
-+  chown -f $user:$group $ldata $ldata/mysql $ldata/test
++if test ! -d $ldata; then mkdir -p $ldata; chmod 700 $ldata ; fi
++if test ! -d $ldata/mysql; then mkdir -p $ldata/mysql;  chmod 700 $ldata/mysql ; fi
++if test ! -d $ldata/test; then mkdir -p $ldata/test;  chmod 700 $ldata/test ; fi
++chown $user $ldata $ldata/mysql $ldata/test;
  
- # Initialize variables
- c_d="" i_d=""
-@@ -363,12 +337,6 @@ $c_c
- END_OF_DATA
+ if test ! -f $mdata/db.frm
  then
-   echo ""
--  if test "$in_rpm" = "0"
+@@ -206,10 +183,7 @@ if test -n "$user"; then
+   args="$args --user=$user"
+ fi
+ 
+-if test "$in_rpm" -eq 0 -a "$windows" -eq 0
+-then
+-  echo "Installing all prepared tables"
+-fi
++echo "Installing all prepared tables"
+ mysqld_install_cmd_line="$mysqld $defaults $mysqld_opt --bootstrap \
+ --skip-grant-tables --basedir=$basedir --datadir=$ldata --skip-innodb \
+ --skip-bdb --skip-ndbcluster $args --max_allowed_packet=8M --net_buffer_length=16K"
+@@ -218,10 +192,7 @@ if $scriptdir/mysql_create_system_tables
+ then
+   if test -n "$fill_help_tables"
+   then
+-    if test "$in_rpm" -eq 0 -a "$windows" -eq 0
+-    then
+-      echo "Fill help tables"
+-    fi
++    echo "Fill help tables"
+     (echo "use mysql;"; cat $fill_help_tables) | eval "$mysqld_install_cmd_line"
+     res=$?
+     if test $res != 0
+@@ -232,15 +203,6 @@ then
+       echo ""
+     fi
+   fi
+-  if test "$in_rpm" = 0 -a "$windows" = 0
 -  then
+-    echo ""
 -    echo "To start mysqld at boot time you have to copy support-files/mysql.server"
 -    echo "to the right place for your system"
 -    echo
 -  fi
+-  if test "$windows" -eq 0
+-  then
    echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
    echo "To do so, start the server, then issue the following commands:"
    echo "$bindir/mysqladmin -u root password 'new-password'"
-@@ -384,15 +352,6 @@ then
+@@ -256,21 +218,11 @@ then
      echo "able to use the new GRANT command!"
    fi
    echo
@@ -165,3 +177,9 @@ $OpenBSD: patch-scripts_mysql_install_db.sh,v 1.18 2005/03/23 03:47:20 brad Exp 
    echo "Please report any problems with the @scriptdir@/mysqlbug script!"
    echo
    echo "The latest information about MySQL is available on the web at"
+   echo "http://www.mysql.com"
+   echo "Support MySQL by buying support/licenses at https://order.mysql.com"
+-  fi
+   exit 0
+ else
+   echo "Installation of system tables failed!"

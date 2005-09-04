@@ -1,9 +1,9 @@
-$OpenBSD: patch-include_my_global_h,v 1.3 2005/01/14 01:42:58 brad Exp $
---- include/my_global.h.orig	Wed Oct 27 20:48:34 2004
-+++ include/my_global.h	Wed Nov  3 21:41:05 2004
-@@ -43,6 +43,10 @@
- #define HAVE_ERRNO_AS_DEFINE
- #endif /* __CYGWIN__ */
+$OpenBSD: patch-include_my_global_h,v 1.4 2005/09/04 22:51:24 brad Exp $
+--- include/my_global.h.orig	Fri Jul 15 06:39:32 2005
++++ include/my_global.h	Tue Jul 26 10:22:14 2005
+@@ -48,6 +48,10 @@
+ #define USE_PRAGMA_INTERFACE
+ #endif
  
 +#if defined(__OpenBSD__)
 +#define HAVE_ERRNO_AS_DEFINE

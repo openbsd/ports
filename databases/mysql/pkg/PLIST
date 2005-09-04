@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.25 2004/08/10 00:52:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.26 2005/09/04 22:51:24 brad Exp $
 bin/mysql
+bin/mysql_client_test
 bin/mysql_config
+bin/mysql_create_system_tables
+bin/mysql_tzinfo_to_sql
 bin/mysqladmin
 bin/mysqlbinlog
 bin/mysqlcheck
@@ -13,6 +16,7 @@ bin/mysqlshow
 bin/mysqltest
 include/mysql/
 include/mysql/errmsg.h
+include/mysql/keycache.h
 include/mysql/m_ctype.h
 include/mysql/m_string.h
 include/mysql/my_alloc.h
@@ -27,22 +31,42 @@ include/mysql/my_no_pthread.h
 include/mysql/my_pthread.h
 include/mysql/my_semaphore.h
 include/mysql/my_sys.h
+include/mysql/my_xml.h
 include/mysql/mysql.h
 include/mysql/mysql_com.h
 include/mysql/mysql_embed.h
+include/mysql/mysql_time.h
 include/mysql/mysql_version.h
 include/mysql/mysqld_error.h
 include/mysql/raid.h
+include/mysql/sql_common.h
+include/mysql/sql_state.h
 include/mysql/sslopt-case.h
 include/mysql/sslopt-longopts.h
 include/mysql/sslopt-vars.h
+include/mysql/typelib.h
 lib/mysql/
 lib/mysql/libmysqlclient.a
 lib/mysql/libmysqlclient.la
 lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.la
+%%SHARED%%
 @man man/man1/mysql.1
 @man man/man1/mysqladmin.1
 @man man/man1/mysqldump.1
 @man man/man1/mysqlshow.1
-%%SHARED%%
+share/mysql-test/include/ctype_innodb_like.inc
+share/mysql-test/include/have_gbk.inc
+share/mysql-test/include/not_windows.inc
+share/mysql-test/r/ctype_gbk.result
+share/mysql-test/r/have_gbk.require
+share/mysql-test/r/ndb_config.result
+share/mysql-test/r/not_embedded_server.result
+share/mysql-test/r/query_cache_notembedded.result
+share/mysql-test/r/rpl_slave_status.result
+share/mysql-test/t/ctype_gbk.test
+share/mysql-test/t/ndb_config.test
+share/mysql-test/t/not_embedded_server.test
+share/mysql-test/t/query_cache_notembedded.test
+share/mysql-test/t/rpl_slave_status.test
+share/mysql/binary-configure
