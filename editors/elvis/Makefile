@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2004/11/24 11:08:03 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2005/09/05 12:14:36 espie Exp $
 
 COMMENT=	"clone of the ex/vi text editor"
 
 DISTNAME=	elvis-2.1_4
-PKGNAME=	${DISTNAME:S/_/./}
+PKGNAME=	${DISTNAME:S/_/./}p0
 CATEGORIES=	editors
 HOMEPAGE=	http://www.fh-wedel.de/elvis/
 
@@ -34,11 +34,12 @@ WANTLIB+=	X11
 NO_REGRESS=	Yes
 
 do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/elvis
+	${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/share/elvis
 .for prog in elvis elvtags ref
 	${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/lib/${prog}.man ${PREFIX}/man/man1/${prog}.1
+	rm -f ${PREFIX}/share/elvis/${prog}.man
 .endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/elvis
-	${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/share/elvis
 
 .include <bsd.port.mk>

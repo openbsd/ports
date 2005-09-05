@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:01:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/09/05 12:14:36 espie Exp $
 bin/elvis
 bin/elvtags
 bin/ref
@@ -6,7 +6,8 @@ bin/ref
 @man man/man1/elvtags.1
 @man man/man1/ref.1
 share/elvis/
-share/elvis/ctags.man
+@comment share/elvis/ctags.man
+@comment share/elvis/ctags.man.orig
 share/elvis/doexec.txt
 share/elvis/elvis.ali
 share/elvis/elvis.arf
@@ -16,7 +17,6 @@ share/elvis/elvis.bwf
 share/elvis/elvis.html
 share/elvis/elvis.ini
 share/elvis/elvis.lat
-share/elvis/elvis.man
 share/elvis/elvis.msg
 share/elvis/elvis.pc8
 share/elvis/elvis.ps
@@ -39,9 +39,7 @@ share/elvis/elvistag.html
 share/elvis/elvistip.html
 share/elvis/elvistrs.msg
 share/elvis/elvisvi.html
-share/elvis/elvtags.man
-share/elvis/fmt.man
+@comment share/elvis/fmt.man
 share/elvis/howto.html
 share/elvis/license
 share/elvis/printdoc.bat
-share/elvis/ref.man
