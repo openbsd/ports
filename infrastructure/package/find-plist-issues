@@ -1,0 +1,354 @@
+#! /usr/bin/perl
+
+# $OpenBSD: find-plist-issues,v 1.1 2005/09/05 10:17:05 espie Exp $
+# Copyright (c) 2000-2005
+# Marc Espie.  All rights reserved.
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Neither the name of OpenBSD nor the names of its contributors
+#    may be used to endorse or promote products derived from this software
+#    without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY ITS AUTHOR AND THE OpenBSD project ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+
+# check all packages in the current directory, and report issues apparent
+# in packing-lists
+
+use strict;
+use warnings;
+
+use File::Spec;
+use File::Path;
+use File::Basename;
+use OpenBSD::PackageLocator;
+use OpenBSD::PackageInfo;
+use OpenBSD::PackingList;
+use OpenBSD::Mtree;
+use OpenBSD::Getopt;
+use OpenBSD::Error;
+use OpenBSD::PkgCfl;
+
+package OpenBSD::PackingElement;
+sub register
+{
+}
+
+sub check_common_dirs
+{
+}
+
+package OpenBSD::PackingElement::FileBase;
+use File::Basename;
+
+sub register_dir
+{
+	my ($self, $d, $h) = @_;
+	return if defined $h->{$d};
+	$h->{$d} = 1;
+	$self->register_dir(dirname($d), $h);
+}
+
+sub register 
+{
+	my ($self, $all_conflict, $all_deps, $pkgname) = @_;
+
+	my $file= File::Spec->canonpath($self->fullname());
+	unless (defined $all_conflict->{$file}) {
+		$all_conflict->{$file} = [];
+	}
+	push @{$all_conflict->{$file}}, $pkgname;
+}
+
+sub check_common_dirs
+{
+	my ($item, $t) = @_;
+	my $d = File::Spec->canonpath($item->fullname());
+	$item->register_dir(dirname($d), $t->{need_dirs});
+}
+
+package OpenBSD::PackingElement::DirlikeObject;
+sub check_common_dirs
+{
+	my ($item, $t) = @_;
+	my $d = File::Spec->canonpath($item->fullname());
+	$t->{dirs}->{$d} = 1;
+}
+
+package OpenBSD::PackingElement::Depend;
+sub register 
+{
+	my ($self, $all_conflict, $all_deps, $pkgname) = @_;
+	if (defined $self->{def}) {
+		unless (defined $all_deps->{$pkgname}) {
+			$all_deps->{$pkgname} = [];
+		}
+		push @{$all_deps->{$pkgname}}, $self->{def};
+	}
+}
+sub check_common_dirs
+{
+	my ($item, $t) = @_;
+	$t->{deps}->{$item->{def}} = 1;
+}
+
+package OpenBSD::PackingElement::PkgDep;
+sub check_common_dirs
+{
+	my ($item, $t) = @_;
+	$t->{deps}->{$item->{name}} = 1;
+}
+
+package OpenBSD::PackingElement::Wantlib;
+sub check_common_dirs
+{
+}
+
+
+
+package main;
+
+my $cache = {};
+my $cache2 = {};
+
+sub find_a_conflict
+{
+	my ($conflicts, $deps, $pkg, $pkg2) = @_;
+	
+	if (defined $conflicts->{$pkg} && $conflicts->{$pkg}->conflicts_with($pkg2)) {
+		return 1;
+	}
+	if (defined $deps->{$pkg}) {
+	    for my $dep (@{$deps->{$pkg}}) {
+	    	if (find_a_conflict($conflicts, $deps, $dep, $pkg2)) {
+			return 1;
+		}
+	    }
+	}
+	if (defined $deps->{$pkg2}) {
+	    for my $dep (@{$deps->{$pkg2}}) {
+	    	if (find_a_conflict($conflicts, $deps, $pkg, $dep)) {
+			return 1;
+		}
+	    }
+	}
+	return 0;
+}
+
+sub compute_conflicts
+{
+    my ($h, $conflicts, $deps) = @_;
+
+    while (my ($key, $l) = each %$h) {
+	    my %s = map {($_, 1)} @$l;
+	    @$l = sort keys %s;
+	    if (@$l > 1) {
+	    	my $hv = join(',', @$l);
+		if (!defined $cache->{$hv}) {
+			# create a list of unconflicting packages.
+			my $l2 = [];
+			for my $pkg (@$l) {
+				my $keepit = 0;
+			    for my $pkg2 (@$l) {
+				next if $pkg2 eq $pkg;
+				if (!(find_a_conflict($conflicts, $deps, $pkg, $pkg2) ||
+					find_a_conflict($conflicts, $deps, $pkg2, $pkg))) {
+					$keepit = 1;
+					last;
+				}
+			    }
+			    if ($keepit) {
+				push(@$l2, $pkg);
+			    }
+			}
+			$cache->{$hv} = $l2;
+		}
+		my $result = $cache->{$hv};
+		if (@$result != 0) {
+		    my $newkey = join(',', @$result);
+		    if (@$result == 1) {
+			    $newkey.="-> was ".join(',', @$l);
+		    }
+		    $cache2->{$newkey} = [] unless defined($cache2->{$newkey});
+		    push(@{$cache2->{$newkey}}, $key);
+		}
+	    }
+    }
+}
+
+sub analyze_dirs
+{
+	my ($plist, $db) = @_;
+	my $pkgname = $plist->pkgname();
+	$db->{$pkgname} = {
+		pkgname => $pkgname,
+		missing_deps => {},
+		dirs => {}, 
+		need_dirs => {}, 
+		deps => {},
+		problems => {}
+	} unless defined $db->{$pkgname};
+	my $t = $db->{$pkgname};
+
+	$plist->visit('check_common_dirs', $t)
+}
+
+sub parent_has_dir
+{
+	my ($db, $t, $dir) = @_;
+
+	for my $dep (keys %{$t->{deps}}) {
+		if (!defined $db->{$dep}) {
+		    if (!defined $t->{missing_deps}->{$dep}) {
+			    print $t->{pkgname}, ": $dep not found\n";
+			    $t->{missing_deps}->{$dep} = 1;
+		    }
+		    next;
+		}
+		if ($db->{$dep}->{dirs}->{$dir} || 
+		    parent_has_dir($db, $db->{$dep}, $dir)) {
+			$t->{dirs}->{$dir} = 1;
+			return 1;
+		}
+	}
+	return 0;
+}
+
+sub parent_has_dir_issue
+{
+	my ($db, $t, $dir) = @_;
+	for my $dep (keys %{$t->{deps}}) {
+		next if !defined $db->{$dep};
+		if ($db->{$dep}->{problems}->{$dir}) {
+			return 1;
+		}
+	}
+	return 0;
+}
+
+sub build_dir_results
+{
+	my ($db, $mtree) = @_;
+
+	for my $pkgname (keys %$db) {
+		my $t = $db->{$pkgname};
+		for my $dir (keys(%{$t->{need_dirs}})) {
+			next if $t->{dirs}->{$dir};
+			next if $mtree->{$dir};
+			next if parent_has_dir($db, $t, $dir);
+			$t->{problems}->{$dir} = 1;
+		}
+	}
+}
+
+sub show_dir_results
+{
+	my ($db, $mtree) = @_;
+
+	for my $pkgname (sort keys %$db) {
+		my @l=();
+		my $t = $db->{$pkgname};
+		for my $dir (keys %{$t->{problems}}) {
+			next if parent_has_dir_issue($db, $t, $dir);
+			push(@l, $dir);
+		}
+		if (@l != 0) {
+			print "$pkgname: ", join(', ', sort @l), "\n";
+		}
+	}
+}
+
+my $filehash={};
+my %dirhash=();
+my $conflicts={};
+my $dephash={};
+my $db = {};
+my $mtree = {};
+our ($opt_d, $opt_v, $opt_C, $opt_D);
+
+
+sub handle_file
+{
+	my $filename = shift;
+	my $plist = OpenBSD::PackingList->fromfile($filename);
+	if (!defined $plist) {
+		print STDERR "Error reading $filename\n";
+		return;
+	}
+	print "$filename -> ", $plist->pkgname(), "\n" if $opt_v;
+	$plist->forget();
+	if ($opt_C) {
+	    $conflicts->{$plist->pkgname()} = 
+		OpenBSD::PkgCfl->make_conflict_list($plist);
+	    $plist->visit('register', $filehash, $dephash, $plist->pkgname());
+	}
+	if ($opt_D) {
+	    analyze_dirs($plist, $db);
+	}
+}
+
+set_usage('find-all-conflicts [-vCD] [-d plist_dir] [pkgname ...]');
+try {
+    getopts('d:vCD');
+} catchall {
+	Usage($_);
+};
+
+OpenBSD::Mtree::parse($mtree, '/usr/local', '/etc/mtree/BSD.local.dist');
+OpenBSD::Mtree::parse($mtree, '/', '/etc/mtree/4.4BSD.dist');
+OpenBSD::Mtree::parse($mtree, '/usr/X11R6', '/etc/mtree/BSD.x11.dist');
+$mtree->{'/usr/local/lib/X11'} = 1;
+$mtree->{'/usr/local/include/X11'} = 1;
+$mtree->{'/usr/local/lib/X11/app-defaults'} = 1;
+
+print "Scanning packages\n" if $opt_v;
+print "-----------------\n" if $opt_v;
+if ($opt_d) {
+	opendir(my $dir, $opt_d);
+	while (my $pkgname = readdir($dir)) {
+	    next if $pkgname eq '.' or $pkgname eq '..';
+	    handle_file("$opt_d/$pkgname");
+    	}
+	closedir($dir);
+} elsif (@ARGV==0) {
+	@ARGV=(<*.tgz>);
+}
+
+for my $pkgname (@ARGV) {
+	print STDERR "$pkgname\n";
+	my $true_package = OpenBSD::PackageLocator->find($pkgname);
+	next unless $true_package;
+	my $dir = $true_package->info();
+	$true_package->close();
+	handle_file($dir.CONTENTS);
+	rmtree($dir);
+}
+
+print "File problems:\n";
+print "-------------\n";
+if ($opt_C) {
+	compute_conflicts($filehash, $conflicts, $dephash);
+	for my $cfl (sort keys %$cache2) {
+		print "$cfl\n";
+		for my $f (sort @{$cache2->{$cfl}}) {
+			print "\t$f\n";
+		}
+	}
+}
+
+if ($opt_D) {
+	build_dir_results($db, $mtree);
+	show_dir_results($db);
+}
