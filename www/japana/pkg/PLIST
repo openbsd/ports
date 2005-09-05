@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/27 21:05:01 espie Exp $
-man/cat1/japana.0
+@comment $OpenBSD: PLIST,v 1.2 2005/09/05 12:27:13 espie Exp $
+@man man/cat1/japana.0
 sbin/japana
 share/examples/japana/
 share/examples/japana/japana.conf

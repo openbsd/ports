@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/27 21:05:01 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/09/05 12:27:13 espie Exp $
 
 COMMENT=	"proxy that can transliterate japanese"
 
 DISTNAME=	japana-2.0.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www japanese converters
 HOMEPAGE=	http://www.h.shuttle.de/mitch/japana.en.html
 
