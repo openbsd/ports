@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.1 2005/09/04 22:30:39 espie Exp $
+# $OpenBSD: register-plist,v 1.2 2005/09/05 10:13:11 espie Exp $
 # Copyright (c) 2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -74,7 +74,8 @@ package OpenBSD::PackingElement::CVSTag;
 sub forget_details
 {
 	my $self = shift;
-	$self->{name} =~ s/^(\$OpenBSD: register-plist,v 1.1 2005/09/04 22:30:39 espie Exp $$/$1\$/;
+	my $openbsd = 'OpenBSD';
+	$self->{name} =~ s/^(\$$openbsd: .*,v).*/$1\$/;
 }
 
 package main;
@@ -82,9 +83,10 @@ package main;
 if (@ARGV < 2) {
 	die "usage issue";
 }
-my $dir = shift;
-if (!-d $dir) {
-	die "not a directory: $dir";
+
+my @dirs = split(/:/, shift);
+if (!-d $dirs[0]) {
+	die "not a directory: ", $dirs[0];
 }
 
 my $error =0;
@@ -108,18 +110,25 @@ for my $pkgfile (@ARGV) {
 	$plist->visit('forget_details');
 	$pkg->close();
 	rmtree($infodir);
-	my $result = $dir.'/'.$plist->pkgname();
-	if (-f $result) {
-		my $t = "$result-new";
-		$plist->tofile($t);
-		if (compare($t, $result) == 0) {
-			unlink($t);
-		} else {
-			print STDERR "Error: $t and $result are different\n";
-			$error++;
+	for my $dir (@dirs) {
+		next unless -d $dir;
+		my $result = $dir.'/'.$plist->pkgname();
+		if (-f $result) {
+			my $t = "$result-new";
+			$plist->tofile($t);
+			if (compare($t, $result) == 0) {
+				unlink($t);
+			} else {
+				print STDERR "Error: $t and $result are different\n";
+				$error++;
+			}
 		}
-	} else {
-		$plist->tofile($result);
+	}
+	if (!$error) {
+		my $result = $dirs[0].'/'.$plist->pkgname();
+		if (!-f $result) {
+			$plist->tofile($result);
+		}
 	}
 }
 exit($error != 0);
