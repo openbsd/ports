@@ -1,28 +1,32 @@
-# $OpenBSD: Makefile,v 1.7 2005/02/07 19:01:48 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2005/09/05 20:19:58 fgsch Exp $
 
-COMMENT=		"rip shoutcast streams to local mp3s"
+COMMENT=	"rip shoutcast streams to local mp3s"
 
-DISTNAME=		streamripper-1.0.5
-CATEGORIES=		audio
+DISTNAME=	streamripper-1.61.11
+CATEGORIES=	audio
 
-HOMEPAGE=		http://streamripper.sourceforge.net/
+HOMEPAGE=	http://streamripper.sourceforge.net/
+
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=streamripper/}
+
+MODULES=	converters/libiconv
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m pthread
 
-MASTER_SITES=		http://streamripper.sourceforge.net/dl/
+WANTLIB=	c m pthread
 
-CONFIGURE_STYLE=	gnu
+LIB_DEPENDS=	mad.2::audio/libmad \
+		ogg.5.2::audio/libogg \
+		vorbis.3.0::audio/libvorbis
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/streamripper ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/streamripper
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/streamripper
+CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	CPPLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-NO_REGRESS=		Yes
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
