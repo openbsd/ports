@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/19 17:15:16 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2005/09/05 13:38:58 espie Exp $
 
 COMMENT=	"one keyboard and/or mouse, multiple X and VNC displays"
 
 DISTNAME=	x2vnc-1.6.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=     x11
 
 # GPL
@@ -24,7 +25,7 @@ ALL_TARGET=	x2vnc x2vnc.0
 NO_REGRESS=	Yes
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/x2vnc.0 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/x2vnc.0 ${PREFIX}/man/cat1
 	${INSTALL_PROGRAM} ${WRKSRC}/x2vnc ${PREFIX}/bin
 
 .include <bsd.port.mk>
