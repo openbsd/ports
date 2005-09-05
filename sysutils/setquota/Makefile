@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/20 10:35:36 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2005/09/05 13:18:57 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	"command line quota tools"
 
 DISTNAME=	setquota-0.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.jurai.net/users/winter/
 
