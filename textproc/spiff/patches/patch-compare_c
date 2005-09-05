@@ -1,6 +1,7 @@
---- compare.c.orig	Mon Feb  5 15:17:15 1990
-+++ compare.c	Wed Sep 23 18:42:18 1998
-@@ -17,12 +17,15 @@
+$OpenBSD: patch-compare_c,v 1.1 2005/09/05 13:25:04 espie Exp $
+--- compare.c.orig	Mon Feb  5 21:17:15 1990
++++ compare.c	Mon Sep  5 15:21:26 2005
+@@ -17,12 +17,15 @@ static char rcsid[]= "$Header: compare.c
  #include "token.h"
  #include "line.h"
  #include "float.h"
@@ -19,7 +20,7 @@
  {
  	K_token atmp,btmp;
  
-@@ -47,9 +50,7 @@
+@@ -47,9 +50,7 @@ int a,b,flags;
  **	same as strcmp() except that case can be optionally ignored
  */
  static int
@@ -30,7 +31,7 @@
  {
  	if (flags & U_NO_CASE)
  	{
-@@ -84,9 +85,7 @@
+@@ -84,9 +85,7 @@ int flags;
  **	routine to compare two tokens
  */
  static int
@@ -41,7 +42,7 @@
  {
  	if (K_gettype(p1) !=  K_gettype(p2))
  	{
-@@ -114,9 +113,7 @@
+@@ -114,9 +113,7 @@ int flags;
  **	compare two F_floats using a tolerance
  */
  static int

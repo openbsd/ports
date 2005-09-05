@@ -1,6 +1,7 @@
---- misc.h.orig	Wed Sep 23 14:07:19 1998
-+++ misc.h	Wed Sep 23 18:42:18 1998
-@@ -33,16 +33,6 @@
+$OpenBSD: patch-misc_h,v 1.1 2005/09/05 13:25:04 espie Exp $
+--- misc.h.orig	Wed Sep 23 20:07:19 1998
++++ misc.h	Mon Sep  5 15:21:26 2005
+@@ -33,16 +33,6 @@ extern char Z_err_buf[];
  #define Z_ALLOC(n,type)	((type*) _Z_myalloc((n) * sizeof (type)))
  extern int *_Z_myalloc();
  

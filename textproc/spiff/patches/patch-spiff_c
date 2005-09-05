@@ -1,6 +1,7 @@
---- spiff.c.orig	Mon Feb  5 15:17:20 1990
-+++ spiff.c	Wed Sep 23 18:42:19 1998
-@@ -27,7 +27,8 @@
+$OpenBSD: patch-spiff_c,v 1.1 2005/09/05 13:25:04 espie Exp $
+--- spiff.c.orig	Mon Feb  5 21:17:20 1990
++++ spiff.c	Mon Sep  5 15:21:26 2005
+@@ -27,7 +27,8 @@ static char rcsid[]= "$Header: spiff.c,v
  #include "visual.h"
  #include "output.h"
  
@@ -10,7 +11,7 @@
  
  static int _Y_eflag = 0;	/* use exact match algorithm */
  static int _Y_vflag = 0;	/* use visual mode */
-@@ -38,9 +39,8 @@
+@@ -38,9 +39,8 @@ static int _Y_vflag = 0;	/* use visual m
  */
  static int _Y_flags;
  
@@ -22,7 +23,7 @@
  {
  	E_edit edit_end;
  	char *filename[2];
-@@ -120,9 +120,9 @@
+@@ -120,9 +120,9 @@ char *argv[];
  	if (E_NULL != edit_end)
  	{
  		O_output(edit_end,_Y_flags);
@@ -34,7 +35,7 @@
  }
  
  /*
-@@ -174,11 +174,7 @@
+@@ -174,11 +174,7 @@ char *from;
  #define SETPTR	{if(strlen(argv[1]) == 2) {argv++;argc--;ptr=argv[1];}else ptr=(&argv[1][2]);}
  
  static void

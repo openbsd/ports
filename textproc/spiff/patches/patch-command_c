@@ -1,6 +1,7 @@
---- command.c.orig	Wed Sep 23 14:06:51 1998
-+++ command.c	Wed Sep 23 18:42:18 1998
-@@ -172,17 +172,17 @@
+$OpenBSD: patch-command_c,v 1.1 2005/09/05 13:25:04 espie Exp $
+--- command.c.orig	Wed Sep 23 20:06:51 1998
++++ command.c	Mon Sep  5 15:21:26 2005
+@@ -172,17 +172,17 @@ C_clear_cmd()
  }
  
  int

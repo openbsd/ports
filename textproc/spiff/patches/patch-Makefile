@@ -1,6 +1,7 @@
+$OpenBSD: patch-Makefile,v 1.1 2005/09/05 13:25:04 espie Exp $
 --- Makefile.orig	Mon May  2 00:51:17 1994
-+++ Makefile	Mon Mar 26 11:11:32 2001
-@@ -18,21 +18,21 @@
++++ Makefile	Mon Sep  5 15:22:50 2005
+@@ -18,21 +18,21 @@ INSDIR=/usr/local/bin
  #		choose a) b) or c)
  #
  # a) for BSD derivitives, enable the following line
@@ -26,7 +27,7 @@
  
  # b) if you are using terminfo on a XENIX machine, enable the following lines
  #TFLAG=-DM_TERMINFO
-@@ -75,14 +75,15 @@
+@@ -75,14 +75,15 @@ OBJ= spiff.o output.o compare.o float.o 
  CFILES= spiff.c output.c compare.c float.c strings.c exact.c miller.c parse.c command.c comment.c tol.c line.c floatrep.c token.c misc.c visual.c
  HFILES=misc.h strings.h line.h float.h floatrep.h tol.h command.h comment.h token.h edit.h parse.h compare.h flagdefs.h exact.h miller.h visual.h output.h
  OTHER=README Makefile Sample.1 Sample.2 Sample.3 Sample.4 paper.ms paper.out
@@ -44,7 +45,7 @@
  
  spiff: $(OBJ)
  	$(CC) $(CFLAGS) -o spiff $(OBJ) $(VISLIB) -l$(TLIB)
-@@ -95,7 +96,6 @@
+@@ -95,7 +96,6 @@ visual.o: visual.c misc.h visual.h $(MGR
  misc.o: misc.c visual.h misc.h
  
  parse.o:  parse.c misc.h line.h command.h float.h tol.h comment.h parse.h token.h flagdefs.h
@@ -52,7 +53,7 @@
  	$(CC) $(CFLAGS) -c parse.c
  
  command.o: command.c float.h tol.h misc.h
-@@ -107,7 +107,6 @@
+@@ -107,7 +107,6 @@ tol.o: tol.c tol.h float.h
  output.o: output.c output.h misc.h edit.h flagdefs.h
  
  compare.o: compare.c misc.h strings.h float.h tol.h token.h line.h compare.h flagdefs.h
@@ -60,11 +61,13 @@
  	$(CC) $(CFLAGS) -c compare.c
  
  float.o: float.c misc.h strings.h float.h floatrep.h
-@@ -146,4 +145,6 @@
+@@ -145,5 +144,7 @@ cmd:
+ 	-$(CMD) $(CFILES) $(HFILES) $(OTHER) $(MANPAGE)
  install:
  	mv spiff $(INSDIR)/bin
- 	cp $(MANPAGE) $(INSDIR)/man/man1
+-	cp $(MANPAGE) $(INSDIR)/man/man1
 -	
++	cp $(MANPAGE) $(INSDIR)/man/cat1
 +
 +spiff.0:	spiff.1
 +			nroff -man spiff.1 > spiff.0
