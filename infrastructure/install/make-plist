@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.69 2005/08/10 13:09:17 espie Exp $
+# $OpenBSD: make-plist,v 1.70 2005/09/05 13:06:01 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -446,6 +446,9 @@ sub is_manpage
 {
 	local $_ = shift;
 	if (m,/man/(?:[^/]*?/)?man(.*?)/[^/]+\.\1[[:alpha:]]?(?:\.gz|\.Z)?$,) {
+		return 1;
+	}
+	if (m,/man/(?:[^/]*?/)?man3p/[^/]+\.3(?:\.gz|\.Z)?$,) {
 		return 1;
 	}
 	if (m,/man/(?:[^/]*/)?cat.*?/[^/]+\.0(?:\.gz|\.Z)?$,) {
