@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2005/01/27 19:41:16 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2005/09/05 20:05:03 marcm Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
@@ -6,8 +6,6 @@ DISTNAME=		gnome-vfs-1.0.5
 PKGNAME=		${DISTNAME}p1
 CATEGORIES=		devel x11/gnome
 HOMEPAGE=		http://www.gnome.org/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-vfs/1.0/}
 

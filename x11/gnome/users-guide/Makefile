@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/10 23:59:35 marcm Exp $
+# $OpenBSD: Makefile,v 1.14 2005/09/05 20:05:03 marcm Exp $
 
 COMMENT=		"General GNOME User Documentation"
 
@@ -7,8 +7,6 @@ DISTNAME=		gnome2-user-docs-${VERSION}
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # GNU FDL
 PERMIT_PACKAGE_CDROM=	Yes

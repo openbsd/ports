@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/15 13:57:56 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2005/09/05 20:05:02 marcm Exp $
 
 COMMENT=		"bonobo configuration system"
 
 DISTNAME=		bonobo-conf-0.16
 CATEGORIES=    		x11/gnome
 HOMEPAGE=		http://developer.gnome.org/arch/component/bonobo.html
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
-
 
 #GPL
 PERMIT_PACKAGE_CDROM=	Yes

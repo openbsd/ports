@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2005/05/11 19:05:20 alek Exp $
+# $OpenBSD: Makefile,v 1.26 2005/09/05 20:05:02 marcm Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
@@ -7,7 +7,6 @@ PKGNAME=		${DISTNAME}p1
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-libs/1.4/}
 

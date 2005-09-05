@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/12/15 13:57:56 alek Exp $
+# $OpenBSD: Makefile,v 1.23 2005/09/05 20:05:02 marcm Exp $
 
 COMMENT=		"GNOME control center"
 
@@ -6,7 +6,6 @@ DISTNAME=		control-center-1.4.0.5
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/control-center/1.4/}
 EXTRACT_SUFX=		.tar.bz2

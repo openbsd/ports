@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2005/01/27 09:57:50 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2005/09/05 20:05:02 marcm Exp $
 
 COMMENT=		"Object Activation Framework for GNOME"
 
@@ -6,8 +6,6 @@ DISTNAME=		oaf-0.6.10
 PKGNAME=		${DISTNAME}p0
 CATEGORIES=		devel x11/gnome
 HOMEPAGE=		http://www.gnome.org/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/oaf/0.6/}
 EXTRACT_SUFX=           .tar.bz2

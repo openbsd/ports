@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/12/30 15:57:53 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2005/09/05 20:05:02 marcm Exp $
 
 COMMENT=		"architecture for creating reusable software components"
 COMMENT-docs=		"documentation for the bonobo architecture"
@@ -8,8 +8,6 @@ DISTNAME=		bonobo-${VERSION}
 PKGNAME-docs=		bonobo-docs-${VERSION}p0
 CATEGORIES=    		x11/gnome
 HOMEPAGE=		http://developer.gnome.org/arch/component/bonobo.html
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # GPL/LGPL
 PERMIT_PACKAGE_CDROM= 	Yes
