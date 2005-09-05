@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2005/02/10 18:39:06 sturm Exp $
+# $OpenBSD: Makefile,v 1.83 2005/09/05 00:36:11 marcm Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -37,6 +37,7 @@
      SUBDIR += geekcode
 #    SUBDIR += git
      SUBDIR += gone
+     SUBDIR += gpsd
      SUBDIR += hfsplus
 #    SUBDIR += ical
      SUBDIR += impress
