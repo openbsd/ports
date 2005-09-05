@@ -1,6 +1,6 @@
-$OpenBSD: patch-Local_config,v 1.3 2002/04/20 01:01:46 pvalchev Exp $
---- Local.config.orig	Sun Apr 14 11:46:26 2002
-+++ Local.config	Fri Apr 19 18:56:40 2002
+$OpenBSD: patch-Local_config,v 1.4 2005/09/05 13:56:39 espie Exp $
+--- Local.config.orig	Sun Jul 14 16:08:26 2002
++++ Local.config	Mon Sep  5 15:54:09 2005
 @@ -36,12 +36,11 @@
  #define	LocalGuru xpilot@xpilot.org	/* The one to contact for problems */
  #endif /* LocalGuru */
@@ -9,9 +9,10 @@ $OpenBSD: patch-Local_config,v 1.3 2002/04/20 01:01:46 pvalchev Exp $
 -
  /* Manual pages for games usually go to section 6. */
  MANSUFFIX = 6
-+PREFIX = $(LOCALBASE)
- INSTMANDIR = $(PREFIX)/man/man$(MANSUFFIX)
+-INSTMANDIR = $(PREFIX)/man/man$(MANSUFFIX)
 -INSTLIBDIR = $(PREFIX)/lib/xpilot
++PREFIX = $(LOCALBASE)
++INSTMANDIR = $(PREFIX)/man/cat$(MANSUFFIX)
 +INSTLIBDIR = $(PREFIX)/share/xpilot
  INSTBINDIR = $(PREFIX)/bin
  
