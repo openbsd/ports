@@ -1,4 +1,4 @@
-#/ $OpenBSD: Makefile,v 1.7 2005/08/17 21:06:48 sturm Exp $
+#/ $OpenBSD: Makefile,v 1.8 2005/09/05 14:57:06 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -13,7 +13,7 @@ PKGNAME-mysql=		qt4-mysql-${VERSION}p3
 PKGNAME-postgresql=	qt4-postgresql-${VERSION}p3
 PKGNAME-examples=	qt4-examples-${VERSION}p3
 PKGNAME-debug=		qt4-debug-${VERSION}p4
-FULLPKGNAME=		qt4-${VERSION}p3
+FULLPKGNAME=		qt4-${VERSION}p4
 FULLPKGNAME-html=	qt4-html-${VERSION}p3
 
 VERSION=	4.0.0

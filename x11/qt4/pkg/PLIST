@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/07/05 17:44:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/09/05 14:57:06 espie Exp $
 %%SHARED%%
 bin/assistant4
 bin/designer4
@@ -2616,6 +2616,7 @@ lib/qt4/plugins/designer/
 lib/qt4/plugins/imageformats/
 lib/qt4/plugins/sqldrivers/
 lib/qt4/q3porting.xml
+share/doc/qt4/
 share/doc/qt4/LICENSE.GPL
 share/doc/qt4/OPENSOURCE-NOTICE.TXT
 share/doc/qt4/README
