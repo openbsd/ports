@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2005/01/02 12:56:05 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2005/09/05 12:49:04 espie Exp $
 
 COMMENT=	"move your mail box to another location"
 
 DISTNAME=	movemail-1.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 MASTER_SITES=	http://people.freebsd.org/~wosch/src/
 
@@ -12,6 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-FAKE_FLAGS=	PREFIX=${PREFIX}
+MAKE_FLAGS=	
+FAKE_FLAGS=	PREFIX=${PREFIX} MANDIR=${PREFIX}/man/cat
 
 .include <bsd.port.mk>

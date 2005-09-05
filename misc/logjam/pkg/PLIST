@@ -1,3 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/02/12 18:14:28 brad Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/09/05 12:42:33 espie Exp $
 bin/logjam
-man/man1/logjam.1
+@man man/man1/logjam.1
+@comment share/locale/en_GB/
+@comment share/locale/en_GB/LC_MESSAGES/
+@comment share/locale/en_GB/LC_MESSAGES/logjam.mo
+@comment share/locale/he/LC_MESSAGES/logjam.mo
+@comment share/locale/ru_RU/
+@comment share/locale/ru_RU/LC_MESSAGES/
+@comment share/locale/ru_RU/LC_MESSAGES/logjam.mo
