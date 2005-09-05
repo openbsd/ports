@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/08/10 00:52:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/09/05 11:41:56 espie Exp $
+%%SHARED%%
 include/gc/
 include/gc.h
 include/gc/gc.h
@@ -35,6 +36,15 @@ include/private/gc_priv.h
 include/private/gcconfig.h
 lib/libgc.a
 lib/libgc.la
+@man man/man3/GC_enable_incremental.3
+@man man/man3/GC_free.3
+@man man/man3/GC_malloc.3
+@man man/man3/GC_malloc_atomic.3
+@man man/man3/GC_malloc_atomic_ignore_off_page.3
+@man man/man3/GC_malloc_ignore_off_page.3
+@man man/man3/GC_realloc.3
+@man man/man3/GC_register_finalizer.3
+@man man/man3/GC_set_warn_proc.3
 @man man/man3/gc.3
 share/gc/
 share/gc/README
@@ -62,10 +72,9 @@ share/gc/README.uts
 share/gc/README.win32
 share/gc/barrett_diagram
 share/gc/debugging.html
-share/gc/gc.man
+@comment share/gc/gc.man
 share/gc/gcdescr.html
 share/gc/gcinterface.html
 share/gc/leak.html
 share/gc/scale.html
 share/gc/tree.html
-%%SHARED%%

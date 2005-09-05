@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2004/03/04 17:49:26 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2005/09/05 11:41:56 espie Exp $
 # $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
 
 COMMENT=	"garbage collection and memory leak detection for C and C++"
 
 VERSION=	6.2
 DISTNAME=	gc${VERSION}
-PKGNAME=	boehm-gc-${VERSION}
+PKGNAME=	boehm-gc-${VERSION}p0
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}gc_source/
 
@@ -39,8 +39,14 @@ post-patch:
 	@sed -e "s,@PREFIX@,${PREFIX},g" ${WRKSRC}/doc/gc.man.in > \
 		${WRKSRC}/doc/gc.man
 
+aliases=	malloc malloc_atomic free realloc enable_incremental \
+		register_finalizer malloc_ignore_off_page \
+		malloc_atomic_ignore_off_page set_warn_proc
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/gc.man ${PREFIX}/man/man3/gc.3
+.for i in ${aliases}
+	ln -s gc.3 ${PREFIX}/man/man3/GC_$i.3
+.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/include/private
 	${INSTALL_DATA} ${WRKSRC}/include/gc{,_{cpp,backptr,gcj,mark,typed}}.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/include/private/gc{config,_{hdrs,locks,priv,pmark}}.h ${PREFIX}/include/private
