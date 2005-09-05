@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/23 18:46:58 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/09/05 20:21:01 fgsch Exp $
 
 COMMENT=	"caching DNS forwarder and DHCP server"
 
@@ -7,7 +7,7 @@ CATEGORIES=	net
 
 MAINTAINER=	Jonathan Weiss <jw@innerewut.de>
 
-HOMEPAGE=	http://www.thekelleys.org.uk/dnsmasq/
+HOMEPAGE=	http://www.thekelleys.org.uk/dnsmasq/doc.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 
 NO_REGRESS=	Yes
 
