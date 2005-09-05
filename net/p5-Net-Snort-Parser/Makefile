@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/01 23:26:49 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2005/09/05 13:12:47 espie Exp $
 
 COMMENT= 	"Perl modules for parsing Snort configuration files"
 
 DISTNAME=	Net-Snort-Parser-1.21
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	net perl5
 
 MAINTAINER= 	Mathieu Sauve-Frankel <msf@openbsd.org>

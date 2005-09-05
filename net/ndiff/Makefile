@@ -1,9 +1,9 @@
-#   $OpenBSD: Makefile,v 1.5 2002/12/29 21:14:11 fgsch Exp $
+#   $OpenBSD: Makefile,v 1.6 2005/09/05 13:12:47 espie Exp $
 
 COMMENT=	"compare two nmap scans and outputs the differences"
 
 DISTNAME=	NDiff-0.04
-PKGNAME=	${DISTNAME:L}
+PKGNAME=	${DISTNAME:L}p0
 CATEGORIES=	net perl5
 
 HOMEPAGE=	http://www.vinecorp.com/ndiff/

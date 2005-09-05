@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:17:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/09/05 13:12:47 espie Exp $
 bin/ndiff
 bin/ndiff2html
 bin/ngen
@@ -17,4 +17,4 @@ ${P5SITE}/PortScan/ndiff.conf.sample
 @man man/man1/ndiff2html.1
 @man man/man1/ngen.1
 @man man/man1/nrun.1
-man/man3p/NDiff_Quickstart.3
+@man man/man3p/NDiff_Quickstart.3

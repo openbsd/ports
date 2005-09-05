@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/08/16 09:49:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/09/05 13:12:47 espie Exp $
 @conflict p5-syberl-*
 ${P5ARCH}/
 ${P5ARCH}/Sybase/
@@ -93,4 +93,4 @@ ${P5ARCH}/sybutil.pl
 @man man/man3p/Sybase::CTlib.3p
 @man man/man3p/Sybase::DBlib.3p
 @man man/man3p/Sybase::Sybperl.3p
-man/man3p/sybperl.3
+@man man/man3p/sybperl.3

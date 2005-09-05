@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:21:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/09/05 13:12:47 espie Exp $
 ${P5SITE}/News/Gateway.pm
 ${P5SITE}/News/Gateway.pod
 ${P5SITE}/auto/
@@ -23,7 +23,7 @@ ${P5SITE}/auto/News/Gateway/nobinaries.al
 ${P5SITE}/auto/News/Gateway/post.al
 ${P5SITE}/auto/News/Gateway/previoushop.al
 ${P5SITE}/auto/News/Gateway/whitelist.al
-man/man3p/News::Gateway.3
+@man man/man3p/News::Gateway.3
 share/examples/p5-Gateway/
 share/examples/p5-Gateway/listgate
 share/examples/p5-Gateway/listgate.m4

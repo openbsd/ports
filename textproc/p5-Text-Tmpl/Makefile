@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2004/01/17 15:58:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2005/09/05 13:12:47 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"very fast Perl templating library"
 
 DISTNAME=	Text-Tmpl-0.29
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	textproc perl5
 
 MAINTAINER=	Alex Feinberg <alex@strlen.net>
