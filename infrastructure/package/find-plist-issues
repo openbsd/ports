@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: find-plist-issues,v 1.1 2005/09/05 10:17:05 espie Exp $
+# $OpenBSD: find-plist-issues,v 1.2 2005/09/05 14:39:57 espie Exp $
 # Copyright (c) 2000-2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -42,8 +42,23 @@ use OpenBSD::Error;
 use OpenBSD::PkgCfl;
 
 package OpenBSD::PackingElement;
+use OpenBSD::PkgSpec;
+
 sub register
 {
+}
+
+sub fix
+{
+	my ($self, $l) = @_;
+	if ($self->{def} eq 'def') {
+		my @m = OpenBSD::PkgSpec::match($self->{pattern}, @$l);
+		if (@m > 0) {
+			$self->{def} = $m[0];
+		} else {
+			$self->{def} = $self->{pattern};
+		}
+	}
 }
 
 sub check_common_dirs
@@ -63,7 +78,7 @@ sub register_dir
 
 sub register 
 {
-	my ($self, $all_conflict, $all_deps, $pkgname) = @_;
+	my ($self, $all_conflict, $all_deps, $pkgname, $avail) = @_;
 
 	my $file= File::Spec->canonpath($self->fullname());
 	unless (defined $all_conflict->{$file}) {
@@ -90,17 +105,20 @@ sub check_common_dirs
 package OpenBSD::PackingElement::Depend;
 sub register 
 {
-	my ($self, $all_conflict, $all_deps, $pkgname) = @_;
+	my ($self, $all_conflict, $all_deps, $pkgname, $avail) = @_;
 	if (defined $self->{def}) {
 		unless (defined $all_deps->{$pkgname}) {
 			$all_deps->{$pkgname} = [];
 		}
+		$self->fix($avail);
 		push @{$all_deps->{$pkgname}}, $self->{def};
 	}
 }
+
 sub check_common_dirs
 {
 	my ($item, $t) = @_;
+	$item->fix($t->{avail});
 	$t->{deps}->{$item->{def}} = 1;
 }
 
@@ -122,6 +140,7 @@ package main;
 
 my $cache = {};
 my $cache2 = {};
+my @available = ();
 
 sub find_a_conflict
 {
@@ -198,7 +217,8 @@ sub analyze_dirs
 		dirs => {}, 
 		need_dirs => {}, 
 		deps => {},
-		problems => {}
+		problems => {},
+		avail => \@available
 	} unless defined $db->{$pkgname};
 	my $t = $db->{$pkgname};
 
@@ -257,16 +277,20 @@ sub show_dir_results
 {
 	my ($db, $mtree) = @_;
 
-	for my $pkgname (sort keys %$db) {
+# first reverse the results
+	my $dir_db = {};
+	for my $pkgname (keys %$db) {
 		my @l=();
 		my $t = $db->{$pkgname};
 		for my $dir (keys %{$t->{problems}}) {
 			next if parent_has_dir_issue($db, $t, $dir);
-			push(@l, $dir);
+			$dir_db->{$dir} = [] if !defined $dir_db->{$dir};
+			push(@{$dir_db->{$dir}}, $pkgname);
 		}
-		if (@l != 0) {
-			print "$pkgname: ", join(', ', sort @l), "\n";
-		}
+	}
+# and print the resulting table:
+	for my $dir (sort keys %$dir_db) {
+		print $dir, ": ", join(',', sort @{$dir_db->{$dir}}), "\n";
 	}
 }
 
@@ -292,7 +316,7 @@ sub handle_file
 	if ($opt_C) {
 	    $conflicts->{$plist->pkgname()} = 
 		OpenBSD::PkgCfl->make_conflict_list($plist);
-	    $plist->visit('register', $filehash, $dephash, $plist->pkgname());
+	    $plist->visit('register', $filehash, $dephash, $plist->pkgname(), \@available);
 	}
 	if ($opt_D) {
 	    analyze_dirs($plist, $db);
@@ -316,15 +340,27 @@ $mtree->{'/usr/local/lib/X11/app-defaults'} = 1;
 print "Scanning packages\n" if $opt_v;
 print "-----------------\n" if $opt_v;
 if ($opt_d) {
-	opendir(my $dir, $opt_d);
-	while (my $pkgname = readdir($dir)) {
-	    next if $pkgname eq '.' or $pkgname eq '..';
-	    handle_file("$opt_d/$pkgname");
-    	}
-	closedir($dir);
+	for my $dirname (split(/:/, $opt_d)) {
+		opendir(my $dir, $dirname) or next;
+		push(@available, grep { $_ ne '.' && $_ ne '..' } readdir($dir));
+		closedir($dir);
+	}
+	for my $dirname (split(/:/, $opt_d)) {
+	    if (opendir(my $dir, $dirname)) {
+		    while (my $pkgname = readdir($dir)) {
+			next if $pkgname eq '.' or $pkgname eq '..';
+			handle_file("$dirname/$pkgname");
+		    }
+		    closedir($dir);
+	    } else {
+	    	print STDERR "No such dir: $dirname\n";
+	    }
+	}
 } elsif (@ARGV==0) {
 	@ARGV=(<*.tgz>);
 }
+
+push(@available, map { s,.*/,,; s/\.tgz$//; } @ARGV);
 
 for my $pkgname (@ARGV) {
 	print STDERR "$pkgname\n";
