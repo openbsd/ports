@@ -1,0 +1,14 @@
+$OpenBSD: patch-muttlib_c,v 1.1 2005/09/05 20:17:33 fgsch Exp $
+--- muttlib.c.orig	Tue Aug 30 20:31:27 2005
++++ muttlib.c	Tue Aug 30 20:39:17 2005
+@@ -809,8 +809,8 @@ void mutt_expand_fmt (char *dest, size_t
+     }
+     else if (p[1] == '%')
+       p++;
+-
+-    p++;
++    else
++      p++;
+   }
+ 
+   if (found)
