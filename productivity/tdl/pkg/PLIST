@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/08/09 18:50:45 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/09/05 13:27:40 espie Exp $
 @conflict devtodo-*
 bin/tdl
 bin/tdla
-bin/tdll
 bin/tdld
 bin/tdlg
-man/man1/tdl.1
-man/man1/tdla.1
-man/man1/tdll.1
-man/man1/tdld.1
-man/man1/tdlg.1
+bin/tdll
+@man man/man1/tdl.1
+@man man/man1/tdla.1
+@man man/man1/tdld.1
+@man man/man1/tdlg.1
+@man man/man1/tdll.1
