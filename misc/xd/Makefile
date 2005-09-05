@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2004/12/22 11:50:30 alek Exp $
+# $OpenBSD: Makefile,v 1.13 2005/09/05 13:50:20 espie Exp $
 
 COMMENT=	"yet another dump utility"
 
 DISTNAME=	xd-8087
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 
