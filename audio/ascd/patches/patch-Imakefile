@@ -1,9 +1,11 @@
-$OpenBSD: patch-Imakefile,v 1.1.1.1 2001/02/06 11:52:44 wilfried Exp $
+$OpenBSD: patch-Imakefile,v 1.2 2005/09/05 11:20:53 espie Exp $
 --- Imakefile.orig	Sun Sep  5 01:24:23 1999
-+++ Imakefile	Sat Feb  3 16:27:57 2001
-@@ -5,11 +5,9 @@ NAME 		= ascd
++++ Imakefile	Mon Sep  5 13:19:15 2005
+@@ -3,13 +3,10 @@
+ 
+ NAME 		= ascd
  BINDIR		= CBINDIR
- MANDIR		= CMANDIR
+-MANDIR		= CMANDIR
  THEMESDIR	= CTHDIR
 -MOREFLAGS	= -I/usr/local/include -I/usr/X11R6/include -I.
 -CCOPTIONS	= $(MOREFLAGS)
@@ -14,7 +16,7 @@ $OpenBSD: patch-Imakefile,v 1.1.1.1 2001/02/06 11:52:44 wilfried Exp $
  
  SRCS_OPT1 =
  SRCS_OPT2 =
-@@ -51,13 +49,3 @@ NormalProgramTarget($(NAME),$(OBJS),Null
+@@ -51,13 +48,3 @@ NormalProgramTarget($(NAME),$(OBJS),Null
  InstallProgram($(NAME),$(BINDIR))
  InstallManPage($(NAME),$(MANDIR))
  InstallMultiple(themes/themes-manual.ps.gz,$(THEMESDIR))
