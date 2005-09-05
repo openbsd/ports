@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:35:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/09/05 12:04:23 espie Exp $
 cops/
 cops/MANIFEST
 cops/README.1
@@ -179,22 +179,22 @@ cops/suid.stop
 cops/tilde
 cops/user.chk
 cops/yp_pass.chk
-man/man1/bug.chk.0
-man/man1/cops.0
-man/man1/cron.chk.0
-man/man1/dev.chk.0
-man/man1/ftp.chk.0
-man/man1/group.chk.0
-man/man1/home.chk.0
-man/man1/is_able.0
-man/man1/is_able.chk.0
-man/man1/is_writable.0
-man/man1/kuang.0
-man/man1/misc.chk.0
-man/man1/pass.chk.0
-man/man1/pass_diff.chk.0
-man/man1/passwd.chk.0
-man/man1/rc.chk.0
-man/man1/root.chk.0
-man/man1/suid.chk.0
-man/man1/user.chk.0
+@man man/cat1/bug.chk.0
+@man man/cat1/cops.0
+@man man/cat1/cron.chk.0
+@man man/cat1/dev.chk.0
+@man man/cat1/ftp.chk.0
+@man man/cat1/group.chk.0
+@man man/cat1/home.chk.0
+@man man/cat1/is_able.0
+@man man/cat1/is_able.chk.0
+@man man/cat1/is_writable.0
+@man man/cat1/kuang.0
+@man man/cat1/misc.chk.0
+@man man/cat1/pass.chk.0
+@man man/cat1/pass_diff.chk.0
+@man man/cat1/passwd.chk.0
+@man man/cat1/rc.chk.0
+@man man/cat1/root.chk.0
+@man man/cat1/suid.chk.0
+@man man/cat1/user.chk.0

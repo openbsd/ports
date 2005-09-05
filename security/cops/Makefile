@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2004/12/27 13:28:33 alek Exp $
+# $OpenBSD: Makefile,v 1.18 2005/09/05 12:04:23 espie Exp $
 
 COMMENT=	"system secureness checker"
 
 DISTNAME=	cops.1.04
-PKGNAME=	cops-1.04
+PKGNAME=	cops-1.04p0
 CATEGORIES=	security
 
 MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/unix/scanners/cops/
@@ -44,7 +44,7 @@ do-install:
 	# move man pages to correct place
 	for i in ${PREFIX}/cops/docs/*.1; do \
 		j=`basename $$i .1`; \
-		${INSTALL_MAN} $$i ${PREFIX}/man/man1/$$j.0; \
+		${INSTALL_MAN} $$i ${PREFIX}/man/cat1/$$j.0; \
 		rm -f ${PREFIX}/cops/docs/$$j $$i; \
 	done
 
