@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/09/18 13:06:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2005/09/05 13:21:09 espie Exp $
 @conflict dante-*
+%%SHARED%%
 bin/rarchie
 bin/rfinger
 bin/rftp
@@ -21,9 +22,9 @@ lib/socks/socks5.conf.singlehomed
 @man man/man1/socks5_clients.1
 @man man/man5/libsocks5.conf.5
 @man man/man5/socks5.conf.5
-man/man5/socks5.conf.5.orig
+@comment man/man5/socks5.conf.5.orig
 @man man/man5/socks5.passwd.5
-man/man5/socks5.passwd.5.orig
+@comment man/man5/socks5.passwd.5.orig
 @man man/man8/socks5.8
 @man man/man8/stopsocks.8
 sbin/rping
@@ -35,4 +36,3 @@ share/doc/socks/rfc1928.txt
 share/doc/socks/rfc1929.txt
 share/doc/socks/rfc1961.txt
 share/doc/socks/socks.faq
-%%SHARED%%
