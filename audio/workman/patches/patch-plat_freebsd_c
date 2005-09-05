@@ -1,6 +1,6 @@
-$OpenBSD: patch-plat_freebsd_c,v 1.1 2003/09/01 03:08:52 krw Exp $
---- plat_freebsd.c.orig	1995-02-20 12:29:55.000000000 -0500
-+++ plat_freebsd.c	2003-08-31 15:29:23.000000000 -0400
+$OpenBSD: patch-plat_freebsd_c,v 1.2 2005/09/05 13:37:20 espie Exp $
+--- plat_freebsd.c.orig	Mon Feb 20 18:29:55 1995
++++ plat_freebsd.c	Mon Sep  5 15:29:27 2005
 @@ -5,10 +5,13 @@
   *
   * Todd Pfaff, 3/20/94
@@ -53,7 +53,7 @@ $OpenBSD: patch-plat_freebsd_c,v 1.1 2003/09/01 03:08:52 krw Exp $
  	vol.vol[LEFT_PORT] = left;
  	vol.vol[RIGHT_PORT] = right;
  
-@@ -345,15 +354,21 @@ gen_eject(d)
+@@ -345,14 +354,20 @@ gen_eject(d)
  	if (fstatfs(stbuf.st_rdev, &buf) == 0)
  		return (-3);
  
@@ -67,13 +67,12 @@ $OpenBSD: patch-plat_freebsd_c,v 1.1 2003/09/01 03:08:52 krw Exp $
 +#if defined(__NetBSD__) || defined(__FreeBSD__)
  	if (rval == 0)
  	    rval = ioctl(d->fd, CDIOCPREVENT);
- #endif
++#endif
 +#if defined(__OpenBSD__)
 +	if (rval == 0) {
 +	    (void) close(d->fd);
 +	    d->fd = -1;
 +	}
-+#endif
+ #endif
  	return rval;
  }
- 
