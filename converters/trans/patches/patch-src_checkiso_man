@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_checkiso_man,v 1.1 2005/09/05 13:48:52 espie Exp $
+--- src/checkiso.man.orig	Mon Sep  5 15:41:06 2005
++++ src/checkiso.man	Mon Sep  5 15:43:02 2005
+@@ -1,6 +1,7 @@
+-checkiso  --  8-bit Character Encoding Proofreader V1.20             1997-07-27
++CHECKISO(1) 					V1.20             1997-07-27
+ 
+-                                 checkiso
++Name
++	checkiso  --  8-bit Character Encoding Proofreader
+ 
+ Function
+         checkiso is a program that reads a Character Encoding Description

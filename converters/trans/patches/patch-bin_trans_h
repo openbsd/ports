@@ -1,0 +1,14 @@
+$OpenBSD: patch-bin_trans_h,v 1.1 2005/09/05 13:48:52 espie Exp $
+--- bin/trans.h.orig	Sun Jul 27 01:20:00 1997
++++ bin/trans.h	Mon Sep  5 15:40:06 2005
+@@ -81,7 +81,9 @@
+ /*
+ 	if you want to use non-ANSI utime (), uncomment the following line
+ */
+-/* #define	USE_UTIMBUF */
++#ifdef __OpenBSD__
++#define      USE_UTIMBUF
++#endif
+ 
+ /*
+ 	if your compiler doesn't define utimbuf, ...

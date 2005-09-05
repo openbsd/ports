@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Makefile,v 1.1 2005/09/05 13:48:52 espie Exp $
+--- src/Makefile.orig	Sun Jul 27 01:20:00 1997
++++ src/Makefile	Mon Sep  5 15:40:06 2005
+@@ -32,14 +32,15 @@ ALL     = $(PROG1)$(EXE) $(PROG2)$(EXE) 
+ #
+ # CC      = bcc
+ # CC      = cl
+-CC      = gcc
++# CC      = gcc
+ #
+ # COPTS are the options (if any) for compilation
+ #
+ # COPTS   = -c -ml
+ # COPTS   = -c -AL
+ # COPTS   = -c -DNO_STRUPR -O2
+-COPTS   = -c -ansi -Wall -DNO_STRDUP -DNO_STRUPR -O2
++# COPTS   = -c -ansi -Wall -DNO_STRDUP -DNO_STRUPR -O2
++COPTS   = ${CFLAGS} -c -Wall -DNO_STRUPR
+ #
+ # LOPTS are linker options (if any)
+ #

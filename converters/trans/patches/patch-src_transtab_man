@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_transtab_man,v 1.1 2005/09/05 13:48:52 espie Exp $
+--- src/transtab.man.orig	Mon Sep  5 15:41:06 2005
++++ src/transtab.man	Mon Sep  5 15:45:51 2005
+@@ -1,6 +1,7 @@
+-transtab  --  8-bit Character Encoding Converter Generator V1.13     1997-06-14
++TRANSTAB(1)					 V1.13     1997-06-14
+ 
+-                                 transtab
++Name
++	transtab  --  8-bit Character Encoding Converter Generator
+ 
+ Function
+         transtab is a program that reads two Character Encoding Descriptions

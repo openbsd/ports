@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_checkuni_man,v 1.1 2005/09/05 13:48:52 espie Exp $
+--- src/checkuni.man.orig	Mon Sep  5 15:41:06 2005
++++ src/checkuni.man	Mon Sep  5 15:43:47 2005
+@@ -1,6 +1,7 @@
+-checkuni  --  8-bit Character Encoding Proofreader V1.20             1997-07-27
++CHECKUNI(1)					V1.20             1997-07-27
+ 
+-                                 checkuni
++Name
++	checkuni  --  8-bit Character Encoding Proofreader 
+ 
+ Function
+         checkuni is a program that reads a Character Encoding Description

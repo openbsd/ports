@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_transce8_man,v 1.1 2005/09/05 13:48:52 espie Exp $
+--- src/transce8.man.orig	Mon Sep  5 15:41:06 2005
++++ src/transce8.man	Mon Sep  5 15:44:23 2005
+@@ -1,6 +1,7 @@
+-transce8 --  8-bit Character Encoding Converter V1.13                1997-06-14
++TRANSCE8(1)					V1.13              1997-06-14
+ 
+-                                 transce8
++Name
++	transce8 --  8-bit Character Encoding Converter 
+ 
+ Function
+         transce8 is a filter (reads stdin, writes stdout) which converts
