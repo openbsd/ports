@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/09/05 00:34:59 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/09/05 19:43:41 marcm Exp $
 
 COMMENT=		"service daemon that monitors one or more GPSes"
 COMMENT-motif=		"motif-based test apps using gpsd"
 
 VERSION=		2.29
 DISTNAME=		gpsd-${VERSION}
-PKGNAME-motif=		gpsd-motif-${VERSION}
+PKGNAME=		gpsd-${VERSION}p0
+PKGNAME-motif=		gpsd-motif-${VERSION}p0
 CATEGORIES=		misc
 
 HOMEPAGE=		http://gpsd.berlios.de/
 
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
+MAINTAINER=		Chris Kuethe <chris.kuethe@gmail.com>
 
 WANTLIB=		m ncurses c pthread
 
@@ -24,7 +25,6 @@ MASTER_SITES=		http://download.berlios.de/gpsd/
 
 USE_LIBTOOL=		yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-garmin
 CONFIGURE_ARGS+=	--disable-ntpshm
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include"
 
