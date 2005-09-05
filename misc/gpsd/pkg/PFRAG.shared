@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/09/05 00:34:59 marcm Exp $
+@lib lib/libgps.so.15.0

@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/05 00:34:59 marcm Exp $
+@newuser _gpsd:551:dialer::GPS server:/nonexistent:/sbin/nologin
+%%SHARED%%
+bin/cgps
+bin/gpsfake
+bin/gpsflash
+bin/gpspipe
+bin/gpsprof
+bin/rtcmdecode
+bin/sirfmon
+include/gps.h
+include/gpsd.h
+include/libgpsmm.h
+lib/libgps.a
+lib/libgps.la
+@man man/man1/gpsfake.1
+@man man/man1/gpsflash.1
+@man man/man1/gpspipe.1
+@man man/man1/gpsprof.1
+@man man/man1/rtcmdecode.1
+@man man/man1/sirfmon.1
+@man man/man1/xgps.1
+@man man/man3/libgps.3
+@man man/man3/libgpsd.3
+@man man/man3/libgpsmm.3
+@man man/man5/rtcm-104.5
+@man man/man5/srec.5
+@man man/man8/gpsd.8
+sbin/gpsd

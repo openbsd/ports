@@ -1,0 +1,21 @@
+$OpenBSD: patch-gpsd_c,v 1.1.1.1 2005/09/05 00:34:59 marcm Exp $
+--- gpsd.c.orig	Fri Aug  5 04:59:38 2005
++++ gpsd.c	Sun Aug 21 18:16:13 2005
+@@ -68,7 +68,7 @@
+  * The name of a tty device from which to pick up whatever the local
+  * owning group for tty devices is.  Used when we drop privileges.
+  */
+-#define PROTO_TTY "/dev/ttyS0"
++#define PROTO_TTY "/dev/tty00"
+ 
+ static fd_set all_fds;
+ static int debuglevel;
+@@ -1174,7 +1174,7 @@ int main(int argc, char *argv[])
+ 	    if (setgid(stb.st_gid) != 0)
+ 		gpsd_report(0, "setgid() failed, errno %s\n", strerror(errno));
+ 	}
+-	pw = getpwnam("nobody");
++	pw = getpwnam("_gpsd");
+ 	if (pw)
+ 	    (void)setuid(pw->pw_uid);
+     }
