@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/09/04 20:07:37 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2005/09/06 10:06:24 aanriot Exp $
 
 COMMENT=	"OTP and S/Key calculator for X"
 
 DISTNAME=	otpCalc-0.97
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=    	security
 
 HOMEPAGE=	http://original.killa.net/infosec/otpCalc/
+
+MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,7 +17,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto m X11 Xext Xi glib gmodule
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	ftp://ftp.erisiandiscord.de/pub/misc/ \
+		${HOMEPAGE}
 
 CONFIGURE_STYLE=gnu dest
 
