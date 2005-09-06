@@ -1,3 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/16 20:49:46 grange Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/09/06 18:59:19 grange Exp $
 bin/hccontrol
 @man man/cat8/hccontrol.0
+share/examples/bluetooth/
+@sample ${SYSCONFDIR}/bluetooth/
+share/examples/bluetooth/hosts
+@sample ${SYSCONFDIR}/bluetooth/hosts
+share/examples/bluetooth/protocols
+@sample ${SYSCONFDIR}/bluetooth/protocols

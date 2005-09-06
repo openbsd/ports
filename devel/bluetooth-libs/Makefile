@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/07/16 20:45:39 grange Exp $
+# $OpenBSD: Makefile,v 1.2 2005/09/06 18:59:19 grange Exp $
 
 COMMENT=		"bluetooth network libraries"
 DISTNAME=		bluetooth-libs-20050716
@@ -11,10 +11,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.erisiandiscord.de/pub/misc/
+MASTER_SITES=		http://www.disorder.ru/openbsd/distfiles/
 
 MAKE_ENV=		LIBDIR=${TRUEPREFIX}/lib MANDIR=${TRUEPREFIX}/man/cat
 NO_REGRESS=		Yes
+
+pre-build:
+	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR},g" \
+	    ${WRKSRC}/libbluetooth/*.[ch3]
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/libbluetooth/bluetooth.h ${PREFIX}/include
