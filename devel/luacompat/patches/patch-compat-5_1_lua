@@ -1,17 +1,18 @@
-$OpenBSD: patch-compat-5_1_lua,v 1.1 2005/04/22 23:58:56 pedro Exp $
---- compat-5.1.lua.orig	Fri Apr 22 20:51:03 2005
-+++ compat-5.1.lua	Fri Apr 22 20:51:41 2005
-@@ -13,10 +13,10 @@ package.path = LUA_PATH or os.getenv("LU
-               "/usr/local/share/lua/5.0/?.lua;" ..
+$OpenBSD: patch-compat-5_1_lua,v 1.2 2005/09/06 13:09:27 pedro Exp $
+--- compat-5.1.lua.orig	Sat Sep  3 10:15:56 2005
++++ compat-5.1.lua	Sat Sep  3 10:17:12 2005
+@@ -26,11 +26,11 @@ package.path = LUA_PATH or os.getenv("LU
+               "/usr/local/share/lua/5.0/?/?.lua;" ..
                "/usr/local/share/lua/5.0/?/init.lua" )
   
 -package.cpath = os.getenv("LUA_CPATH") or
 -             "./?.so;" ..
 +package.cpath = LUA_CPATH or os.getenv("LUA_CPATH") or
 +             ("./?.so;" ..
+              "./l?.so;" ..
               "/usr/local/lib/lua/5.0/?.so;" ..
--             "/usr/local/lib/lua/5.0/lib?.so"
-+             "/usr/local/lib/lua/5.0/lib?.so" )
+-             "/usr/local/lib/lua/5.0/l?.so"
++             "/usr/local/lib/lua/5.0/l?.so")
  
  --
  -- make sure require works with standard libraries
