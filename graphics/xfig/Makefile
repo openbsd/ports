@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2005/04/17 21:31:59 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2005/09/06 23:30:53 pvalchev Exp $
 
 COMMENT=	"CAD drawing program for X11"
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xmu Xp Xpm Xt c m z
 
-MASTER_SITES=	http://www.xfig.org/xfigdist/ \
+MASTER_SITES=	http://www.xfig.org/software/xfig/${VERSION}/ \
 		ftp://www-epb.lbl.gov/xfig/ \
 		ftp://www-epb.lbl.gov/xfig/previous_versions/
 
