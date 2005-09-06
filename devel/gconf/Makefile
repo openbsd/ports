@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2005/01/27 09:56:40 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2005/09/06 03:22:59 marcm Exp $
 
 COMMENT=		"configuration database system written for GNOME"
 
@@ -7,7 +7,6 @@ PKGNAME=		${DISTNAME:L}p0
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/projects/gconf/
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/GConf/1.0/}
 EXTRACT_SUFX=           .tar.bz2
