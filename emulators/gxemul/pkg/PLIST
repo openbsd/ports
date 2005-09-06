@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/06 18:50:38 grange Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/09/06 19:06:38 grange Exp $
 bin/gxemul
 @man man/man1/gxemul.1
 share/doc/gxemul/
@@ -27,7 +27,6 @@ share/doc/gxemul/20041213-debian_3_small.gif
 share/doc/gxemul/20041213-debian_4.png
 share/doc/gxemul/20041213-debian_4_small.gif
 share/doc/gxemul/20050317-example.png
-share/doc/gxemul/20050317-example_medium.png
 share/doc/gxemul/20050317-example_small.png
 share/doc/gxemul/20050413-netbsd-cobalt.png
 share/doc/gxemul/20050413-netbsd-cobalt_small.png
@@ -55,5 +54,6 @@ share/doc/gxemul/openbsd-pmax-20040710_small.png
 share/doc/gxemul/sprite-20040711.png
 share/doc/gxemul/sprite-20040711_small.png
 share/doc/gxemul/technical.html
+share/doc/gxemul/test_disk.c
 share/doc/gxemul/ultrix4.5-20040706.png
 share/doc/gxemul/ultrix4.5-20040706_small.gif
