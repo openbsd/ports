@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/05/24 21:26:52 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/09/06 04:06:36 marcm Exp $
 %%SHARED%%
 include/atk-1.0/
 include/atk-1.0/atk/
@@ -32,6 +32,10 @@ lib/libatk-1.0.a
 lib/libatk-1.0.la
 lib/pkgconfig/
 lib/pkgconfig/atk.pc
-share/gtk-doc/
-share/gtk-doc/html/
-share/gtk-doc/html/atk/
+@comment share/gtk-doc/
+@comment share/gtk-doc/html/
+@comment share/gtk-doc/html/atk/
+@comment share/gtk-doc/html/atk/home.png
+@comment share/gtk-doc/html/atk/left.png
+@comment share/gtk-doc/html/atk/right.png
+@comment share/gtk-doc/html/atk/up.png
