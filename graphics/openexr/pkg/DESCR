@@ -34,5 +34,6 @@ built-in C++ data type.
 Imath, a math library with support for matrices, 2d- and
 * 3d-transformations, solvers for linear/quadratic/cubic equations,
 and more.
-* exrdisplay, a sample application for viewing OpenEXR images on a
-display at various exposure settings.
+
+Applications and documentations are available as separate OpenBSD packages:
+OpenEXR-tools and OpenEXR-doc.

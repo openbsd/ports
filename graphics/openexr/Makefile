@@ -1,12 +1,19 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/07 09:54:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/09/06 11:19:49 espie Exp $
 
 COMMENT=	'high dynamic range image format'
+COMMENT-tools=	'image viewing tools for OpenEXR'
+COMMENT-doc=	'developer documentation for OpenEXR'
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.openexr.com/index.html
 MASTER_SITES=	http://savannah.nongnu.org/download/openexr/
 
-DISTNAME=	OpenEXR-1.2.2
+V=		1.2.2
+DISTNAME=	OpenEXR-$V
+MULTI_PACKAGES=	-tools -doc
+PKGNAME=	OpenEXR-$Vp1
+PKGNAME-tools=  OpenEXR-tools-$V
+PKGNAME-doc=	OpenEXR-doc-$V
 
 # Almost BSD
 # `name of ILM not to be used for advertizing without written agreement'
@@ -15,8 +22,15 @@ PERMIT_PACKAGE_FTP=Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=Yes
 
-LIB_DEPENDS=fltk,fltk_gl::x11/fltk
+SUBPACKAGE?=
+.if !defined(PACKAGING) || ${SUBPACKAGE} == "-tools"
+LIB_DEPENDS+=fltk,fltk_gl::x11/fltk
+.endif
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-tools"
+LIB_DEPENDS+=	Half,Iex,IlmImf,Imath,::graphics/openexr
 WANTLIB=	GL GLU X11 Xext c m stdc++ z
+.endif
 
 # Regress unhappy with separate build
 #SEPARATE_BUILD=		simple
