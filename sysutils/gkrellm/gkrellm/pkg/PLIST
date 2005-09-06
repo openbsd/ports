@@ -1,23 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/08/13 18:19:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/09/06 20:11:28 sturm Exp $
 include/gkrellm2/
 include/gkrellm2/gkrellmd.h
-lib/pkgconfig/
-lib/pkgconfig/gkrellm.pc
 @man man/man1/gkrellmd.1
 @mode 2755
 @group kmem
 sbin/gkrellmd
-@mode
-@group
-share/locale/cs/
-share/locale/cs/LC_MESSAGES/
-share/locale/cs/LC_MESSAGES/gkrellm.mo
-share/locale/da/
-share/locale/da/LC_MESSAGES/
-share/locale/da/LC_MESSAGES/gkrellm.mo
-share/locale/it/
-share/locale/it/LC_MESSAGES/
-share/locale/it/LC_MESSAGES/gkrellm.mo
-share/locale/nl/
-share/locale/nl/LC_MESSAGES/
-share/locale/nl/LC_MESSAGES/gkrellm.mo

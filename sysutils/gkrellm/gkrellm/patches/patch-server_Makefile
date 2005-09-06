@@ -1,10 +1,11 @@
-$OpenBSD: patch-server_Makefile,v 1.5 2004/06/18 08:48:35 robert Exp $
+$OpenBSD: patch-server_Makefile,v 1.6 2005/09/06 20:11:28 sturm Exp $
 --- server/Makefile.orig	2004-04-12 06:30:48.000000000 -0700
 +++ server/Makefile	2004-06-15 10:17:08.000000000 -0700
 @@ -3,22 +3,19 @@ PKG_CONFIG ?= pkg-config
  BINMODE ?= 755
  
- INSTALLROOT ?= $(DESTDIR)$(PREFIX)
+-INSTALLROOT ?= $(DESTDIR)$(PREFIX)
++INSTALLROOT ?= $(PREFIX)
 -ifeq ($(INSTALLROOT),)
 -	INSTALLROOT = /usr/local
 -endif
