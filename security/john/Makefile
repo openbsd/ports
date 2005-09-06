@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2005/05/31 08:08:52 sturm Exp $
+# $OpenBSD: Makefile,v 1.30 2005/09/06 20:20:26 aanriot Exp $
 
 COMMENT=		"extremely fast password cracker"
 
 DISTNAME=		john-1.6.38
-CATEGORIES=     	security
+PKGNAME=		${DISTNAME}p0
+CATEGORIES=		security
 
 HOMEPAGE=		http://www.openwall.com/john/
 
@@ -15,6 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
 MASTER_SITES=		${HOMEPAGE}c/
+DISTFILES=		${DISTNAME}.tar.gz \
+			john-1.6.tar.gz
 
 NO_REGRESS=		Yes
 
@@ -51,10 +54,14 @@ ALL_TARGET=		generic
 do-configure:
 	@perl -pi -e "s,%%PREFIX%%,${PREFIX},;" \
 		-e "s,%%SYSCONFDIR%%,${SYSCONFDIR},;" ${WRKSRC}/params.h
+post-patch:
+	@perl -pi -e 's,%%JOHN%%,${PREFIX}\/share\/john,g;' \
+		${WRKDIST}/run/john.conf
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/john
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/john
+	${INSTALL_DATA_DIR} ${PREFIX}/share/john
 	${INSTALL_PROGRAM} ${WRKDIST}/run/john ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIST}/run/mailer ${PREFIX}/bin
 	@cd ${PREFIX}/bin && \
@@ -63,5 +70,6 @@ do-install:
 		ln -sf john unique
 	${INSTALL_DATA} ${WRKDIST}/run/john.conf ${PREFIX}/share/examples/john
 	${INSTALL_DATA} ${WRKDIST}/doc/* ${PREFIX}/share/doc/john
+	${INSTALL_DATA} ${WRKDIR}/john-1.6/run/*.chr ${PREFIX}/share/john
 
 .include <bsd.port.mk>

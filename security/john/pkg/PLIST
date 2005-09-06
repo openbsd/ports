@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/05/31 08:08:52 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/09/06 20:20:26 aanriot Exp $
 bin/john
 bin/mailer
 bin/unafs
@@ -14,3 +14,8 @@ share/doc/john/README
 share/examples/john/
 share/examples/john/john.conf
 @sample ${SYSCONFDIR}/john.conf
+share/john/
+share/john/all.chr
+share/john/alpha.chr
+share/john/digits.chr
+share/john/lanman.chr

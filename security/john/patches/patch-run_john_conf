@@ -1,6 +1,6 @@
-$OpenBSD: patch-run_john_conf,v 1.1 2003/09/26 17:57:38 marcm Exp $
---- run/john.conf.orig	2003-08-20 14:56:16.000000000 -0700
-+++ run/john.conf	2003-09-25 23:31:27.000000000 -0700
+$OpenBSD: patch-run_john_conf,v 1.2 2005/09/06 20:20:26 aanriot Exp $
+--- run/john.conf.orig	Fri Jun 11 14:29:39 2004
++++ run/john.conf	Tue Sep  6 15:51:38 2005
 @@ -5,7 +5,7 @@
  
  [Options]
@@ -10,3 +10,33 @@ $OpenBSD: patch-run_john_conf,v 1.1 2003/09/26 17:57:38 marcm Exp $
  # Use idle cycles only
  Idle = N
  # Crash recovery file saving delay in seconds
+@@ -316,25 +316,25 @@ l$1$9<-$[6-0]$[9-0]
+ 
+ # Incremental modes
+ [Incremental:All]
+-File = $JOHN/all.chr
++File = %%JOHN%%/all.chr
+ MinLen = 0
+ MaxLen = 8
+ CharCount = 95
+ 
+ [Incremental:Alpha]
+-File = $JOHN/alpha.chr
++File = %%JOHN%%/alpha.chr
+ MinLen = 1
+ MaxLen = 8
+ CharCount = 26
+ 
+ [Incremental:Digits]
+-File = $JOHN/digits.chr
++File = %%JOHN%%/digits.chr
+ MinLen = 1
+ MaxLen = 8
+ CharCount = 10
+ 
+ [Incremental:LanMan]
+-File = $JOHN/lanman.chr
++File = %%JOHN%%/lanman.chr
+ MinLen = 0
+ MaxLen = 7
+ CharCount = 69
