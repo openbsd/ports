@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/17 15:03:18 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2005/09/06 04:59:58 pvalchev Exp $
 
 COMMENT=	"X11 trippy color-cycling toy"
 
 DISTNAME=	xtacy114
-PKGNAME=	xtacy-1.14
+PKGNAME=	xtacy-1.14p0
 CATEGORIES=	x11
 
 MASTER_SITES=	ftp://sidehack.gweep.net/pub/software/ \
