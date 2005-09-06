@@ -1,12 +1,12 @@
-$OpenBSD: patch-gdk--_gdk--_Makefile_in,v 1.1 2001/07/21 00:27:10 pvalchev Exp $
---- gdk--/gdk--/Makefile.in.orig	Sat May 20 12:51:19 2000
-+++ gdk--/gdk--/Makefile.in	Fri Jul 20 16:31:10 2001
-@@ -100,7 +100,7 @@ lib_LTLIBRARIES = libgdkmm.la
- 
- libgdkmm_la_SOURCES =  	bitmap.cc    colormap.cc  font.cc      main.cc      window.cc 	color.cc     drawable.cc  gc.cc        pixmap.cc    visual.cc         image.cc     types.cc     cursor.cc
+$OpenBSD: patch-gdk--_gdk--_Makefile_in,v 1.2 2005/09/06 19:58:03 espie Exp $
+--- gdk--/gdk--/Makefile.in.orig	Sat Jun 15 18:41:32 2002
++++ gdk--/gdk--/Makefile.in	Mon Aug 29 16:33:12 2005
+@@ -110,7 +110,7 @@ libgdkmm_la_SOURCES = \
+ 	color.cc     drawable.cc  gc.cc        pixmap.cc    visual.cc \
+         image.cc     types.cc     cursor.cc
  
 -libgdkmm_la_LDFLAGS = -version-info $(LIBGDKMM_SO_VERSION) -release $(GTKMM_RELEASE)
 +libgdkmm_la_LDFLAGS = -version-info $(LIBGDKMM_SO_VERSION)
  
  libgdkmmincludedir = $(includedir)/gdk--
- libgdkmminclude_HEADERS =  	bitmap.h      colormap.h    gc.h          main.h 	color.h       drawable.h    pixmap.h 	font.h        types.h       window.h      visual.h         image.h       list.h        cursor.h
+ libgdkmminclude_HEADERS = \

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/19 17:36:31 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2005/09/06 19:58:03 espie Exp $
 
 COMMENT=		"C++ interface for gtk+"
 COMMENT-docs=		"C++ interface for gtk+ documentation"
 
 VERSION=		1.2.10
 DISTNAME=		gtkmm-${VERSION}
+PKGNAME=		${DISTNAME}p0
 PKGNAME-docs=		gtkmm-docs-${VERSION}
 CATEGORIES=		devel x11
 
@@ -25,7 +26,6 @@ MULTI_PACKAGES=		-docs
 SUBPACKAGE?=
 
 .if ${SUBPACKAGE} != "-docs"
-BUILD_DEPENDS=		:m4->=1.4:devel/m4
 LIB_DEPENDS=		sigc.0::devel/libsigc++ \
 			gdk.1,gtk.1::x11/gtk+
 .endif
@@ -43,6 +43,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
 			--enable-docs
+CONFIGURE_ENV+=		M4='m4 -g'
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
 
