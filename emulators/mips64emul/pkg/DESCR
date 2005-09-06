@@ -1,5 +1,0 @@
-mips64emul is a MIPS machine emulator. The goals are to
-emulate MIPS-like CPUs and enough surrounding hardware to
-fake real machines, capable of running real (unmodified)
-operating systems (such as NetBSD, Linux, FreeBSD,
-or OpenBSD), and to assist in experimenting with MIPS in general.
