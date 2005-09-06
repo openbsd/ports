@@ -1,0 +1,8 @@
+gxemul is a machine emulator. The main goal is to
+emulate MIPS-like CPUs and enough surrounding hardware to
+fake real machines, capable of running real (unmodified)
+operating systems (such as NetBSD, Linux, FreeBSD,
+or OpenBSD), and to assist in experimenting with MIPS in general.
+
+In addition to emulating MIPS-like CPUs an experimental
+support for other CPU types (like PPC or HPPA) also exists.
