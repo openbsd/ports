@@ -1,6 +1,12 @@
-$OpenBSD: patch-src_t_xavante_start_lua,v 1.1 2005/08/02 17:41:08 pedro Exp $
---- src/t_xavante_start.lua.orig	Mon Aug  1 06:52:03 2005
-+++ src/t_xavante_start.lua	Mon Aug  1 06:58:39 2005
+$OpenBSD: patch-src_t_xavante_start_lua,v 1.2 2005/09/06 16:51:44 pedro Exp $
+--- src/t_xavante_start.lua.orig	Mon Jul  4 15:37:44 2005
++++ src/t_xavante_start.lua	Thu Aug 18 13:57:10 2005
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/lua50
++#!@localbase@/bin/lua
+ -------------------------------------------------------------------------------
+ -- Starts the Xavante Web server.
+ --
 @@ -8,18 +8,10 @@
  -- Copyright (c) 2004-2005 Kepler Project
  -------------------------------------------------------------------------------

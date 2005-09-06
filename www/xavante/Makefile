@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/08/02 17:41:07 pedro Exp $
+# $OpenBSD: Makefile,v 1.3 2005/09/06 16:51:44 pedro Exp $
 
 COMMENT=	"lua web server with cgi support"
 DISTNAME=	xavante-1.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 MASTER_SITES=	http://luaforge.net/frs/download.php/958/
 
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 BUILD_DEPENDS=	::lang/lua ::devel/luafs ::devel/luacompat ::net/luasocket \
-		::devel/luacopas ::devel/luavenv ::www/cgilua
+		::devel/luacopas ::devel/luavenv ::devel/luaposix ::www/cgilua
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 post-extract:
@@ -27,6 +28,8 @@ post-extract:
 
 post-patch:
 	@perl -pi -e 's:\@xavanteweb@:${PREFIX}/examples/xavante/:g;' \
+                ${WRKSRC}/src/t_xavante_start.lua
+	@perl -pi -e 's:\@localbase@:${LOCALBASE}:g;' \
                 ${WRKSRC}/src/t_xavante_start.lua
 
 do-install:
