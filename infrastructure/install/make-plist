@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.70 2005/09/05 13:06:01 espie Exp $
+# $OpenBSD: make-plist,v 1.71 2005/09/07 10:40:00 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -941,7 +941,8 @@ for my $plist (@l) {
 			OpenBSD::PackingElement::NoDefaultConflict->add($plist);
 			$plist->{nonempty} = 1;
 		}
-		for my $listname (qw(pkgcfl conflict groups users)) {
+		for my $listname (qw(pkgcfl conflict groups users 
+		    pkgpath incompatibility updateset module)) {
 			if (defined $orig->{$listname}) {
 				for my $o (@{$orig->{$listname}}) {
 					$o->clone()->add_object($plist);
