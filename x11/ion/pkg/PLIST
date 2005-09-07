@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/06/08 12:45:55 pedro Exp $
+@comment $OpenBSD: PLIST,v 1.11 2005/09/07 19:53:41 pedro Exp $
 %%SHARED%%
 bin/ion3
 bin/pwm3
@@ -13,6 +13,7 @@ lib/ion3/lc/ioncore_bindings.lc
 lib/ion3/lc/ioncore_efbb.lc
 lib/ion3/lc/ioncore_ext.lc
 lib/ion3/lc/ioncore_luaext.lc
+lib/ion3/lc/ioncore_menudb.lc
 lib/ion3/lc/ioncore_misc.lc
 lib/ion3/lc/ioncore_wd.lc
 lib/ion3/lc/ioncore_winprops.lc
