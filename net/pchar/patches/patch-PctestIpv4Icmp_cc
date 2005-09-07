@@ -1,0 +1,19 @@
+$OpenBSD: patch-PctestIpv4Icmp_cc,v 1.1 2005/09/07 08:52:01 markus Exp $
+--- PctestIpv4Icmp.cc.orig	Fri May 11 18:14:42 2001
++++ PctestIpv4Icmp.cc	Thu Aug 25 10:15:20 2005
+@@ -147,13 +147,13 @@ int PctestIpv4Icmp::Test(TestRecord &tr)
+     ipHeader.ip_v = 4;
+ #endif /* __osf__ */
+     ipHeader.ip_tos = Tos;
+-#ifdef linux
++#if defined(linux) || defined (__OpenBSD__)
+     ipHeader.ip_len = htons(tr.size);
+ #else
+     ipHeader.ip_len = tr.size;
+ #endif /* linux */
+     ipHeader.ip_id = htons(0);
+-#ifdef linux
++#if defined(linux) || defined (__OpenBSD__)
+     ipHeader.ip_off = htons(IP_DF);
+ #else
+     ipHeader.ip_off = IP_DF;

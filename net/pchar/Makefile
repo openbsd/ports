@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/16 00:31:24 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2005/09/07 08:52:00 markus Exp $
 # $FreeBSD: ports/net/pchar/Makefile,v 1.1.1.1 1999/11/04 08:33:26 obrien Exp $
 
 COMMENT=	"Sandia Internet path characterization tool"
 
 V=		1.4
 DISTNAME=	pchar-${V}
-PKGNAME=	pchar-${V}p1
+PKGNAME=	pchar-${V}p2
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}

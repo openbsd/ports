@@ -1,0 +1,19 @@
+$OpenBSD: patch-PctestIpv4_cc,v 1.1 2005/09/07 08:52:01 markus Exp $
+--- PctestIpv4.cc.orig	Wed Jun  6 01:09:48 2001
++++ PctestIpv4.cc	Thu Aug 25 10:15:20 2005
+@@ -328,13 +328,13 @@ char *PctestIpv4::GenerateAdvancePacket(
+     ipHeader.ip_v = 4;
+ #endif /* __osf__ */
+     ipHeader.ip_tos = Tos;
+-#ifdef linux
++#if defined(linux) || defined (__OpenBSD__)
+     ipHeader.ip_len = htons(tr.size);
+ #else
+     ipHeader.ip_len = Mtu;
+ #endif /* linux */
+     ipHeader.ip_id = htons(0);
+-#ifdef linux
++#if defined(linux) || defined (__OpenBSD__)
+     ipHeader.ip_off = htons(IP_DF);
+ #else
+     ipHeader.ip_off = IP_DF;
