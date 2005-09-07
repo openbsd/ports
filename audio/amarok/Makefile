@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/01 20:52:32 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/09/07 01:27:55 espie Exp $
 
 CATEGORIES=	audio x11 x11/kde
 COMMENT=	'music player for kde'
 
 HOMEPAGE=	http://amarok.kde.org/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=amarok/}
-DISTNAME=	amarok-1.2.3
+DISTNAME=	amarok-1.3.1
 EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS+=	lib/qt3/qt-mt.3.33::x11/qt3,mt \
-		kdecore.6,DCOP,khtml,kwalletclient,kdefx,kdeprint,kutils,kdeui,kparts,artskde,kio,kdesu,kjs::x11/kde/libs3 \
-		akode,artsmodules,artsgui_kde,artsmodulesmixers,artsmodulescommon,artsgui,artsgui_idl,artsmidi_idl,artsmodulessynth,artsmoduleseffects,artsbuilder,::x11/kde/multimedia3 \
+		kdecore.6,DCOP,khtml,kwalletclient,kdefx,kdeprint,kutils,kdeui,kparts,artskde,kio,kdesu,kjs,knewstuff::x11/kde/libs3 \
+		artsmodules,artsgui_kde,artsmodulesmixers,artsmodulescommon,artsgui,artsgui_idl,artsmidi_idl,artsmodulessynth,artsmoduleseffects,artsbuilder,::x11/kde/multimedia3 \
 		konqsidebarplugin::x11/kde/base3 \
-		tag::audio/taglib \
+		tag.5.0:taglib->=1.4:audio/taglib \
 		xmms::audio/xmms \
-		gstreamer-0.8.0.0::devel/gstreamer \
-		ltdl::devel/libtool,-ltdl
+		gstreamer-0.8.0.0::devel/gstreamer
 
 WANTLIB=	stdc++ Xext Xrender z ossaudio X11 util m Xi SM GL c \
 		pthread ICE \
@@ -32,10 +31,11 @@ WANTLIB+=	gtk gmodule gdk glib
 SHARED_ONLY=Yes
 MODULES=	x11/kde
 MODKDE_LIBTOOL=		Yes
-MODKDE_VERSION=		3.4
+MODKDE_VERSION=		
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.59
 AUTOCONF=		/bin/sh ${WRKDIST}/admin/cvs.sh configure
+LIB_DEPENDS+=		lib/qt3/qt-mt.3.33::x11/qt3,mt
+AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
 USE_GMAKE?=		Yes
 CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}

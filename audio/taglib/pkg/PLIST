@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/14 21:28:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/09/07 01:27:55 espie Exp $
 %%SHARED%%
 bin/taglib-config
 include/taglib/
@@ -35,7 +35,6 @@ include/taglib/tag_c.h
 include/taglib/taglib.h
 include/taglib/tbytevector.h
 include/taglib/tbytevectorlist.h
-include/taglib/tdebug.h
 include/taglib/textidentificationframe.h
 include/taglib/tfile.h
 include/taglib/tlist.h
@@ -52,3 +51,7 @@ include/taglib/xingheader.h
 include/taglib/xiphcomment.h
 lib/libtag.a
 lib/libtag.la
+lib/libtag_c.a
+lib/libtag_c.la
+lib/pkgconfig/
+lib/pkgconfig/taglib.pc
