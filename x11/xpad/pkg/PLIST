@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/30 04:28:43 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/09/07 17:32:26 fgsch Exp $
 bin/xpad
 @man man/man1/xpad.1
 share/applications/
@@ -11,36 +11,22 @@ share/icons/hicolor/48x48/apps/xpad.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/xpad.svg
-share/locale/
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/xpad.mo
-share/locale/bg/
-share/locale/bg/LC_MESSAGES/
 share/locale/bg/LC_MESSAGES/xpad.mo
-share/locale/es/
-share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/xpad.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/xpad.mo
 share/locale/ga/
 share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/xpad.mo
-share/locale/hu/
-share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/xpad.mo
-share/locale/it/
-share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/xpad.mo
-share/locale/nl/
-share/locale/nl/LC_MESSAGES/
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/xpad.mo
 share/locale/nl/LC_MESSAGES/xpad.mo
-share/locale/ro/
-share/locale/ro/LC_MESSAGES/
 share/locale/ro/LC_MESSAGES/xpad.mo
-share/locale/ru/
-share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/xpad.mo
 share/locale/rw/
 share/locale/rw/LC_MESSAGES/
@@ -48,8 +34,6 @@ share/locale/rw/LC_MESSAGES/xpad.mo
 share/locale/vi/
 share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/xpad.mo
-share/locale/zh_TW/
-share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/xpad.mo
 share/pixmaps/
 share/pixmaps/xpad.png
