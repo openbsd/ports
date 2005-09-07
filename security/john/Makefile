@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2005/09/06 20:20:26 aanriot Exp $
+# $OpenBSD: Makefile,v 1.31 2005/09/07 19:43:41 aanriot Exp $
 
 COMMENT=		"extremely fast password cracker"
 
@@ -54,7 +54,7 @@ ALL_TARGET=		generic
 do-configure:
 	@perl -pi -e "s,%%PREFIX%%,${PREFIX},;" \
 		-e "s,%%SYSCONFDIR%%,${SYSCONFDIR},;" ${WRKSRC}/params.h
-post-patch:
+
 	@perl -pi -e 's,%%JOHN%%,${PREFIX}\/share\/john,g;' \
 		${WRKDIST}/run/john.conf
 
