@@ -1,0 +1,24 @@
+$OpenBSD: patch-mail_message-list_c,v 1.1 2005/09/08 04:52:12 marcm Exp $
+--- mail/message-list.c.orig	Mon Mar 14 18:02:04 2005
++++ mail/message-list.c	Wed Apr  6 20:41:11 2005
+@@ -2125,6 +2125,10 @@ clear_tree (MessageList *ml)
+ 
+ 	ml->tree_root = e_tree_memory_node_insert (E_TREE_MEMORY(etm), NULL, 0, NULL);
+ 
++#ifdef BROKEN_ETREE
++	GPtrArray *selected;
++#endif
++
+ #ifdef TIMEIT
+ 	gettimeofday(&end, NULL);
+ 	diff = end.tv_sec * 1000 + end.tv_usec/1000;
+@@ -2671,6 +2675,9 @@ mail_folder_hide_by_flag (CamelFolder *f
+ 	CamelFolderChangeInfo *newchanges, *oldchanges = *changes;
+ 	CamelMessageInfo *info;
+ 	int i;
++#ifdef BROKEN_ETREE
++	GPtrArray *selected;
++#endif
+ 
+ 	newchanges = camel_folder_change_info_new ();
+ 			

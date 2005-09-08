@@ -1,97 +1,84 @@
-# $OpenBSD: Makefile,v 1.20 2005/08/13 18:19:32 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2005/09/08 04:52:12 marcm Exp $
+
+BROKEN=			"unstable, has issues loading it's various modules"
 
 COMMENT=		"integrated email and PIM software for GNOME"
-COMMENT-devguide=	"Evolution Developer's Guide"
 
-V=			1.2
-VERSION=		${V}.4
+PARENT_VERS=		2.2
+VERSION=		${PARENT_VERS}.3
 DISTNAME=		evolution-${VERSION}
-PKGNAME=		${DISTNAME}p0
-FULLPKGNAME-devguide=	evolution-devguide-${VERSION}p1
-CATEGORIES=    		mail x11
+CATEGORIES=    		mail x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/projects/evolution/
-
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	ICE IIOP ORBit ORBitCosNaming ORBitutil SM X11 Xext Xi \
-		art_lgpl asn1 audiofile c com_err crypto esd freetype gal \
-		gconf-1 gconf-gtk-1 gdk gdk_imlib gdk_pixbuf glib gmodule \
-		gnome gnomeprint gnomesupport gnomeui gnomevfs gssapi gthread \
-		gtk jpeg krb5 m oaf png popt pthread ssl tiff ungif wrap xml z
+WANTLIB=		ICE SM X11 Xft Xrender \
+			c crypto fontconfig freetype pthread m ssl z \
+			ORBit-2 ORBitCosNaming-2 art_lgpl_2.5 atk-1.0.0.0 \
+			audiofile bonobo-2 bonobo-activation.4.0 bonoboui-2 \
+			esd.2 gailutil.17 gconf-2 glade-2.0.0.0 \
+			glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 gthread-2.0.0.0 \
+			pango-1.0.0.0 pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
+			gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 gtk-x11-2.0.0.0 \
+			gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 \
+			gnomeprint-2-2 gnomeprintui-2-2 \
+			jpeg popt soup-2.2.7.0 xml2
 
-MASTER_SITES=		${MASTER_SITE_GNOME:S@$@sources/evolution/${V}/@}
-MASTER_SITES0=		ftp://ftp.sleepycat.com/releases/
-
-DISTFILES=		${DISTNAME}.tar.gz \
-			db-3.1.17.tar.gz:0
+MASTER_SITES=		${MASTER_SITE_GNOME:S@$@sources/evolution/${PARENT_VERS}/@}
+EXTRACT_SUFX=           .tar.bz2
 
 MODULES=		devel/gettext
 
+# XXX: Needs gal2-2.4.2, gtkhtml3-3.6.1, eds-1.2.2
 BUILD_DEPENDS=		:bison-*:devel/bison \
-			:scrollkeeper->=0.3.12:textproc/scrollkeeper \
-			:pkgconfig-*:devel/pkgconfig
-RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper
-LIB_DEPENDS=		bonobo.2,bonobo-print.2,bonobox.2::x11/gnome/bonobo \
-			bonobo_conf::x11/gnome/bonobo-conf \
-			glade.5,glade-gnome.5::devel/libglade,gnome \
-			gnomecanvaspixbuf.1::graphics/gdk-pixbuf,-gnome \
-			gtkhtml-1.1.3.2::www/gtkhtml \
-			soup.5::devel/soup
-
-DB3_WRKDIST=		${WRKDIR}/db-3.1.17
-DB3_WRKBUILD=		${DB3_WRKDIST}/build_unix
-DB3_CONFIGURE_SCRIPT=	../dist/configure
+			:scrollkeeper-*:textproc/scrollkeeper \
+			:p5-XML-Parser-*:textproc/p5-XML-Parser
+RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
+LIB_DEPENDS=		camel-1.2.0.0,camel-provider-1.2.4.1,ebook-1.2.4.1,ecal-1.2.2.1,edataserver-1.2.4.0,edataserverui-1.2.5.1,egroupwise-1.2.5.0::databases/evolution-data-server \
+			gal-2.4.0.0,gal-a11y-2.4.0.0::devel/gal2 \
+			gtkhtml-3.6.18.2::www/gtkhtml3 \
+			lber.7,ldap.7::databases/openldap \
+			gstreamer-0.8.5.0::devel/gstreamer
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 YACC=			bison
-CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--with-db3-includes=${DB3_WRKBUILD}
-CONFIGURE_ARGS+=	--with-db3-libs=${DB3_WRKBUILD}
-CONFIGURE_ARGS+=	--with-krb5=/usr
-#CONFIGURE_ARGS+=	--enable-ipv6
-CONFIGURE_ARGS+=	--enable-openssl
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/evolution
+CONFIGURE_ARGS+=	--enable-ipv6
 CONFIGURE_ARGS+=	--disable-pilot-conduits
 CONFIGURE_ARGS+=	--disable-gtk-doc
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=        --enable-default-binary
+CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-sub-version=" OpenBSD/Ports"
+CONFIGURE_ARGS+=	--with-krb5=/usr
+CONFIGURE_ARGS+=	--with-krb5-includes=/usr/include/kerberosV
 
-FLAVORS=		ldap
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib/evolution/${PARENT_VERS}:${LOCALBASE}/lib -Z"
+SUBST_VARS=		PARENT_VERS
+
+FLAVORS=		ssl
 FLAVOR?=
 
-.if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+=		ldap.2,lber.2::databases/openldap
-
-CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE}
-.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
-CONFIGURE_ARGS+=	--with-static-ldap=yes
+.if ${FLAVOR:L:Mssl}
+BUILD_DEPENDS=		::www/mozilla,gtk2,-devel
+CONFIGURE_ARGS+=	--with-nspr-libs=${LOCALBASE}/mozilla/lib
+CONFIGURE_ARGS+=	--with-nspr-includes=${LOCALBASE}/mozilla/include/nspr
+CONFIGURE_ARGS+=	--with-nss-libs=${LOCALBASE}/mozilla/lib
+CONFIGURE_ARGS+=	--with-nss-includes=${LOCALBASE}/mozilla/include/nss
+CONFIGURE_ARGS+=	--enable-nss=static
+CONFIGURE_ARGS+=	--enable-smime=yes
 .else
-CONFIGURE_ARGS+=	--with-static-ldap=no
-.endif
-.endif
-
-MULTI_PACKAGES=		-devguide
-SUBPACKAGE?=
-
-.if defined(PACKAGING)
-.  if ${SUBPACKAGE} == "-devguide"
-RUN_DEPENDS=
-LIB_DEPENDS=
-PKG_ARCH=		*
-WANTLIB=
-MODULES=
-.  endif
+CONFIGURE_ARGS+=	--disable-nss
 .endif
 
 post-patch:
-	@cd ${DB3_WRKDIST} && patch -s < ${PATCHDIR}/db3-patch-dist_configure
 	@ln -s /usr/bin/true ${WRKDIR}/bin/scrollkeeper-update
 
 pre-configure:
@@ -100,8 +87,8 @@ pre-configure:
 			:; \
 		else \
 			echo 1>&2 "+-------------------"; \
-			echo 1>&2 "| Error: you must remove the existing evolution installation"; \
-			echo 1>&2 "| before compiling this version. To fully remove run"; \
+			echo 1>&2 "| Error: you must remove your existing evolution installation"; \
+			echo 1>&2 "| before compiling this version.  To fully remove run"; \
 			echo 1>&2 "| these commands as user root"; \
 			echo 1>&2 "|"; \
 			echo 1>&2 "|	  pkg_delete -f `pkg_info -e 'evolution-*'`"; \
@@ -110,11 +97,8 @@ pre-configure:
 			exit 1; \
 		fi; \
 	fi
-	@cd ${DB3_WRKBUILD} && ./${DB3_CONFIGURE_SCRIPT} ${DB3_CONFIGURE_ARGS}
-	@cd ${DB3_WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKEFILE} ${ALL_TARGET}
 
 post-install:
-	find ${PREFIX}/share/evolution/default_user -perm 444 -exec chmod 644 {} \;
-	chmod u-s ${PREFIX}/sbin/camel-lock-helper
+	find ${PREFIX}/share/evolution/${PARENT_VERS}/default -perm 444 -exec chmod 644 {} \;
 
 .include <bsd.port.mk>
