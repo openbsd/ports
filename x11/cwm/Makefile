@@ -1,19 +1,21 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/17 15:18:32 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/09/08 22:13:54 marcm Exp $
 
 COMMENT=	"calm window manager"
-DISTNAME=	calmwm-0.95
-PKGNAME=	${DISTNAME:S/alm//}
+DISTNAME=	cwm-3
 CATEGORIES=	x11
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://monkey.org/~marius/cwm/
+
+BUILD_DEPENDS=	pkgconfig-*::devel/pkgconfig
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=		X11 Xext c
+
+WANTLIB=		X11 Xext Xft Xrender c fontconfig freetype
 
 CONFIGURE_STYLE=gnu
 
