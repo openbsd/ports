@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2005/05/24 22:15:18 marcm Exp $
+# $OpenBSD: Makefile,v 1.21 2005/09/08 15:23:13 marcm Exp $
 
      SUBDIR += applets2
      SUBDIR += bonobo
-     SUBDIR += bonobo-conf
      SUBDIR += controlcenter
      SUBDIR += controlcenter2
      SUBDIR += desktop
