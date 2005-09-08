@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2004/09/14 23:44:01 espie Exp $
-@lib lib/libsoup-apache.so.6.4
-@lib lib/libsoup.so.6.4
-@lib lib/libwsdl.so.6.4

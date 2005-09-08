@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.330 2005/08/07 09:45:49 sturm Exp $
+# $OpenBSD: Makefile,v 1.331 2005/09/08 15:24:52 marcm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -340,7 +340,6 @@
      SUBDIR += smarty
      SUBDIR += smpeg
      SUBDIR += snit
-     SUBDIR += soup
      SUBDIR += splint
      SUBDIR += startup-notification
      SUBDIR += subversion
