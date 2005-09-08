@@ -1,0 +1,15 @@
+$OpenBSD: patch-_mysql_c,v 1.1 2005/09/08 03:45:17 pvalchev Exp $
+--- _mysql.c.orig	Wed Jul 31 23:01:30 2002
++++ _mysql.c	Wed Sep  7 20:12:48 2005
+@@ -1353,7 +1353,11 @@ _mysql_ConnectionObject_shutdown(
+ 	if (!PyArg_NoArgs(args)) return NULL;
+ 	check_connection(self);
+ 	Py_BEGIN_ALLOW_THREADS
++#if (MYSQL_VERSION_ID >= 40103 && MYSQL_VERSION_ID != 50000)
++	r = mysql_shutdown(&(self->connection), SHUTDOWN_DEFAULT);
++#else
+ 	r = mysql_shutdown(&(self->connection));
++#endif
+ 	Py_END_ALLOW_THREADS
+ 	if (r) return _mysql_Exception(self);
+ 	Py_INCREF(Py_None);
