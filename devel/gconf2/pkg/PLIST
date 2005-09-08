@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2005/09/04 23:42:53 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.13 2005/09/08 15:43:34 marcm Exp $
 bin/gconf-merge-tree
 bin/gconftool-2
 include/gconf/
@@ -29,16 +29,17 @@ libexec/gconfd-2
 @man man/man1/gconftool-2.1
 share/aclocal/gconf-2.m4
 share/examples/gconf2/
-@sample ${SYSCONFDIR}/gconf/
-@sample ${SYSCONFDIR}/gconf/2/
 share/examples/gconf2/gconf/
+@sample ${SYSCONFDIR}/gconf/
 share/examples/gconf2/gconf/2/
+@sample ${SYSCONFDIR}/gconf/2/
 share/examples/gconf2/gconf/2/path
 @sample ${SYSCONFDIR}/gconf/2/path
-@sample /var/db/gconf/gconf.xml.defaults/
-@sample /var/db/gconf/gconf.xml.mandatory/
+@sample /var/db/gconf/
 @comment share/examples/gconf2/gconf/gconf.xml.defaults/
+@sample /var/db/gconf/gconf.xml.defaults/
 @comment share/examples/gconf2/gconf/gconf.xml.mandatory/
+@sample /var/db/gconf/gconf.xml.mandatory/
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gconf/
@@ -187,5 +188,5 @@ share/sgml/
 share/sgml/gconf/
 share/sgml/gconf/gconf-1.0.dtd
 %%SHARED%%
-@extraunexec rmdir ${SYSCONFDIR}/gconf 2>/dev/null || true
-@extraunexec rm -fr /var/db/gconf
+@extraunexec rm -fr /var/db/gconf/gconf.xml.defaults/*
+@extraunexec rm -fr /var/db/gconf/gconf.xml.mandatory/*
