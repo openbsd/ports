@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2005/05/24 22:10:45 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2005/09/08 04:46:25 marcm Exp $
 
 COMMENT=		"data backends for the Evolution mail/PIM suite"
 
-DISTNAME=		evolution-data-server-1.2.2
+DISTNAME=		evolution-data-server-1.2.3
 CATEGORIES=		databases
 
 HOMEPAGE=		http://www.gnome.org
-MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/evolution-data-server/1.2/}
 EXTRACT_SUFX=           .tar.bz2

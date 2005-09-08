@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/05/24 22:10:45 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/09/08 04:46:25 marcm Exp $
 %%SHARED%%
 include/evolution-data-server-1.2/
 include/evolution-data-server-1.2/camel/
@@ -784,8 +784,6 @@ share/gtk-doc/html/libedataserver/left.png
 share/gtk-doc/html/libedataserver/libedataserver-ETrie.html
 share/gtk-doc/html/libedataserver/libedataserver-EUrl.html
 share/gtk-doc/html/libedataserver/libedataserver-EXMLHash.html
-share/gtk-doc/html/libedataserver/libedataserver-MD5-Utility-Functions.html
-share/gtk-doc/html/libedataserver/libedataserver-Time-Related-Utility-Functions.html
 share/gtk-doc/html/libedataserver/libedataserver-Utility-Functions.html
 share/gtk-doc/html/libedataserver/libedataserver.devhelp
 share/gtk-doc/html/libedataserver/right.png

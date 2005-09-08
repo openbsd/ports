@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2005/05/24 22:10:45 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2005/09/08 04:46:25 marcm Exp $
 lib/evolution-data-server-1.2/camel-providers/libcamelgroupwise.so
 lib/evolution-data-server-1.2/camel-providers/libcamelimap.so
 lib/evolution-data-server-1.2/camel-providers/libcamelimap4.so
@@ -16,11 +16,11 @@ lib/evolution-data-server-1.2/extensions/libecalbackendgroupwise.so
 lib/evolution-data-server-1.2/extensions/libecalbackendhttp.so
 lib/evolution-data-server-1.2/extensions/libecalbackendweather.so
 @lib lib/libcamel-1.2.so.0.0
-@lib lib/libcamel-provider-1.2.so.4.2
-@lib lib/libebook-1.2.so.4.1
-@lib lib/libecal-1.2.so.3.0
-@lib lib/libedata-book-1.2.so.3.0
-@lib lib/libedata-cal-1.2.so.3.1
-@lib lib/libedataserver-1.2.so.4.0
-@lib lib/libedataserverui-1.2.so.5.2
-@lib lib/libegroupwise-1.2.so.5.0
+@lib lib/libcamel-provider-1.2.so.4.3
+@lib lib/libebook-1.2.so.4.2
+@lib lib/libecal-1.2.so.3.1
+@lib lib/libedata-book-1.2.so.3.1
+@lib lib/libedata-cal-1.2.so.3.2
+@lib lib/libedataserver-1.2.so.4.1
+@lib lib/libedataserverui-1.2.so.5.3
+@lib lib/libegroupwise-1.2.so.5.1
