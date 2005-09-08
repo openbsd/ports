@@ -1,0 +1,2 @@
+This module provides functions to generate LM/NT hashes used in Samba's
+'password' files, like smbpasswd.
