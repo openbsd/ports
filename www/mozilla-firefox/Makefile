@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2005/08/12 19:01:44 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.33 2005/09/08 12:48:39 kurt Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -6,8 +6,8 @@ COMMENT=	"redesign of Mozilla's browser component"
 
 VER=		1.0.6
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}p1
-SO_VERSION=	5.0
+PKGNAME=	mozilla-firefox-${VER}p2
+SO_VERSION=	6.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
@@ -20,27 +20,27 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xft Xi Xp Xrender Xt c fontconfig freetype \
-			m pthread z
+WANTLIB=		X11 Xext Xft Xp Xrender Xt c fontconfig freetype \
+			m pthread z atk-1.0.0.0 glib-2.0.0.0 \
+			gmodule-2.0.0.0 gobject-2.0.0.0 jpeg pango-1.0.0.0 \
+			pangox-1.0.0.0 pangoxft-1.0.0.0 png
 .if empty(MACHINE_ARCH:Malpha)
 WANTLIB+=		stdc++
 .endif
 
 MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/${VER}/source/ \
-		http://ftp.mozilla.org/pub/firefox/releases/${VER}/source/
+		http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${VER}/source/
 DISTFILES=	firefox-${VER}-source.tar.bz2
 
 MODULES=	gcc3 devel/gettext
 MODGCC3_ARCHES=	alpha
 MODGCC3_LANGS=	C++
 RUN_DEPENDS=	:esound-*:audio/esound
-BUILD_DEPENDS=	:ORBit-*:devel/ORBit \
+
+BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \
-		glib.1,gmodule.1::devel/glib \
-		jpeg.62::graphics/jpeg \
-		png.3::graphics/png
+LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 
 VMEM_WARNING=	Yes
 
@@ -62,6 +62,7 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--without-system-nspr		\
 		--enable-xft			\
 		--enable-optimize=-Os		\
+		--enable-default-toolkit=gtk2	\
 		--disable-debug			\
 		--disable-tests			\
 		--disable-pedantic		\
@@ -70,7 +71,7 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 # from browser/config/mozconfig
 CONFIGURE_ARGS+=--disable-ldap			\
 		--disable-mailnews		\
-		--enable-extensions=cookie,xml-rpc,xmlextras,pref,transformiix,universalchardet,webservices,inspector,gnomevfs,negotiateauth \
+		--enable-extensions=cookie,xml-rpc,xmlextras,pref,transformiix,universalchardet,webservices,inspector,negotiateauth \
 		--enable-crypto			\
 		--disable-composer		\
 		--enable-single-profile		\
