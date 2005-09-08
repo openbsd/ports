@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2005/02/25 23:37:38 alek Exp $
+# $OpenBSD: Makefile,v 1.18 2005/09/08 01:51:00 pvalchev Exp $
 
 COMMENT=		"C++ API for MySQL"
 COMMENT-docs=		"C++ API for MySQL documentation"
 
 VERSION=		1.7.9
 DISTNAME=		mysql++-${VERSION}
-PKGNAME-docs=		mysql++-docs-${VERSION}
+PKGNAME=		${DISTNAME}p0
+PKGNAME-docs=		mysql++-docs-${VERSION}p0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.mysql.com/downloads/api-mysql++.html
