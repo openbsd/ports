@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2005/09/06 04:06:36 marcm Exp $
+# $OpenBSD: Makefile,v 1.13 2005/09/09 19:05:10 marcm Exp $
 
 COMMENT=		"accessibility toolkit used by gtk+"
 
 DISTNAME=		atk-1.10.3
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gtk.org
