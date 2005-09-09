@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain_in,v 1.11 2005/07/12 01:03:07 brad Exp $
---- ltmain.in.orig	Wed May  4 15:13:00 2005
-+++ ltmain.in	Mon Jul 11 18:28:52 2005
-@@ -1985,6 +1985,17 @@ EOF
+$OpenBSD: patch-ltmain_in,v 1.12 2005/09/09 17:30:32 brad Exp $
+--- ltmain.in.orig	Wed Aug 31 14:25:28 2005
++++ ltmain.in	Thu Sep  1 21:43:55 2005
+@@ -1984,6 +1984,17 @@ EOF
  	;;
      esac
      for pass in $passes; do
@@ -19,7 +19,7 @@ $OpenBSD: patch-ltmain_in,v 1.11 2005/07/12 01:03:07 brad Exp $
        if test "$linkmode,$pass" = "lib,link" ||
  	 test "$linkmode,$pass" = "prog,scan"; then
  	libs="$deplibs"
-@@ -2246,20 +2257,20 @@ EOF
+@@ -2245,20 +2256,20 @@ EOF
  	    # It is a libtool convenience library, so add in its objects.
  	    convenience="$convenience $ladir/$objdir/$old_library"
  	    old_convenience="$old_convenience $ladir/$objdir/$old_library"
@@ -50,16 +50,7 @@ $OpenBSD: patch-ltmain_in,v 1.11 2005/07/12 01:03:07 brad Exp $
  	  continue
  	fi # $pass = conv
  
-@@ -2409,7 +2420,7 @@ EOF
- 	      case "$temp_rpath " in
- 	      *" $dir "*) ;;
- 	      *" $absdir "*) ;;
--	      *) temp_rpath="$temp_rpath $dir" ;;
-+	      *) temp_rpath="$temp_rpath $absdir" ;;
- 	      esac
- 	    fi
- 
-@@ -2645,7 +2656,7 @@ EOF
+@@ -2644,7 +2655,7 @@ EOF
  	    add_dir=
  	    add=
  	    # Finalize command for both is simple: just hardcode it.
@@ -68,66 +59,7 @@ $OpenBSD: patch-ltmain_in,v 1.11 2005/07/12 01:03:07 brad Exp $
  	      add="$libdir/$linklib"
  	    elif test "$hardcode_minus_L" = yes; then
  	      add_dir="-L$libdir"
-@@ -2729,8 +2740,6 @@ EOF
- 	      fi
- 	    fi
- 	  else
--	    convenience="$convenience $dir/$old_library"
--	    old_convenience="$old_convenience $dir/$old_library"
- 	    deplibs="$dir/$old_library $deplibs"
- 	    link_static=yes
- 	  fi
-@@ -4013,13 +4022,30 @@ EOF
- 	  IFS="$save_ifs"
- 	  eval cmd=\"$cmd\"
- 	  $show "$cmd"
--	  $run eval "$cmd" || exit $?
-+	  $run eval "$cmd" || {
-+	    lt_exit=$?
-+
-+	    # Restore the uninstalled library and exit
-+	    if test "$mode" = relink; then
-+	      $run eval '(cd $output_objdir && $rm ${realname}T && $mv ${realname}U $realname)'
-+	    fi
-+
-+	    exit $lt_exit
-+	  }
- 	done
- 	IFS="$save_ifs"
- 
- 	# Restore the uninstalled library and exit
- 	if test "$mode" = relink; then
- 	  $run eval '(cd $output_objdir && $rm ${realname}T && $mv $realname ${realname}T && $mv "$realname"U $realname)' || exit $?
-+
-+	  if test -n "$convenience"; then
-+	    if test -z "$whole_archive_flag_spec"; then
-+	      $show "${rm}r $gentop"
-+	      $run ${rm}r "$gentop"
-+	    fi
-+	  fi
-+
- 	  exit $EXIT_SUCCESS
- 	fi
- 
-@@ -5619,7 +5645,16 @@ relink_command=\"$relink_command\""
- 	    IFS="$save_ifs"
- 	    eval cmd=\"$cmd\"
- 	    $show "$cmd"
--	    $run eval "$cmd" || exit $?
-+	    $run eval "$cmd" || {
-+	      lt_exit=$?
-+
-+	      # Restore the uninstalled library and exit
-+	      if test "$mode" = relink; then
-+		$run eval '(cd $output_objdir && $rm ${realname}T && $mv ${realname}U $realname)'
-+	      fi
-+
-+	      exit $lt_exit
-+	    }
- 	  done
- 	  IFS="$save_ifs"
- 	fi
-@@ -5902,40 +5937,6 @@ relink_command=\"$relink_command\""
+@@ -5932,40 +5943,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  

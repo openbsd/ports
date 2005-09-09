@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared-ltdl,v 1.3 2005/04/17 10:14:55 brad Exp $
-@lib lib/libltdl.so.4.1
+@comment $OpenBSD: PFRAG.shared-ltdl,v 1.4 2005/09/09 17:30:32 brad Exp $
+@lib lib/libltdl.so.4.2
