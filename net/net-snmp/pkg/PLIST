@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/12/26 12:33:17 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/09/09 19:10:52 marcm Exp $
+%%SHARED%%
 bin/encode_keychange
 bin/fixproc
 @comment bin/ipf-mod.pl
@@ -164,19 +165,14 @@ include/net-snmp/varbind_api.h
 include/net-snmp/version.h
 lib/libnetsnmp.a
 lib/libnetsnmp.la
-@lib lib/libnetsnmp.so.6.2
 lib/libnetsnmpagent.a
 lib/libnetsnmpagent.la
-@lib lib/libnetsnmpagent.so.6.2
 lib/libnetsnmphelpers.a
 lib/libnetsnmphelpers.la
-@lib lib/libnetsnmphelpers.so.6.2
 lib/libnetsnmpmibs.a
 lib/libnetsnmpmibs.la
-@lib lib/libnetsnmpmibs.so.6.2
 lib/libnetsnmptrapd.a
 lib/libnetsnmptrapd.la
-@lib lib/libnetsnmptrapd.so.6.2
 @man man/man1/mib2c.1
 @man man/man1/snmpbulkget.1
 @man man/man1/snmpbulkwalk.1
@@ -386,7 +382,7 @@ share/snmp/snmpconf-data/snmptrapd-data/
 share/snmp/snmpconf-data/snmptrapd-data/formatting
 share/snmp/snmpconf-data/snmptrapd-data/snmpconf-config
 share/snmp/snmpconf-data/snmptrapd-data/traphandle
-@extraunexec rm -rf /var/net-snmp/*
 @sample /var/net-snmp/
+@extraunexec rm -rf /var/net-snmp/*
 @extra ${SYSCONFDIR}/snmp/snmp.conf
 @extra ${SYSCONFDIR}/snmp/snmptrapd.conf
