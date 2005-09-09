@@ -1,0 +1,130 @@
+$OpenBSD: patch-spatial_score_c,v 1.1.1.1 2005/09/09 08:26:58 espie Exp $
+--- spatial/score.c.orig	Fri Aug 27 21:49:34 1993
++++ spatial/score.c	Thu Sep  8 23:45:54 2005
+@@ -3,6 +3,9 @@
+  notice is retained. */
+ 
+ #include <stdio.h>
++#include <unistd.h>
++#include <string.h>
++#include <stdlib.h>
+ #include <errno.h>
+ #include <ctype.h> 
+ #include <pwd.h>    
+@@ -13,23 +16,20 @@
+ #endif
+ #include "spatial.h"
+ 
+-extern char *getenv();
+ char ProgramName[] = "spatial";
+ 
+ gamer hscores[NUMGAMERS];
+-char hscorefl[512];
+ char userid[16], gamename[16];
+ 
+-extern int errno;
++int checkmod_scores(void);
++FILE *fl;
+ 
+-void load_hscores(save)
+-int save;
++void init_scores()
+ {
+-    FILE *fl;
+-    register int ix, jx;
+-    int fd, res;
+-    char buf[255];
++    char hscorefl[512];
++    int ix;
+ 
++    strlcpy(hscorefl, SCOREFILENAME, sizeof hscorefl);
+     fl = fopen(hscorefl, "r+");
+     if (!fl) {
+ 	fprintf(stderr,
+@@ -55,7 +55,15 @@ int save;
+ 	    exit(-1);
+ 	}
+     }
++}
+ 
++void load_hscores(save)
++int save;
++{
++    register int ix, jx;
++    int fd, res;
++    char buf[255];
++
+     fd = fileno(fl);
+ #ifdef USELOCKF
+     res = lockf(fd, F_LOCK, 0);
+@@ -94,14 +102,14 @@ int save;
+ 	for (jx=0; buf[jx]!='\n'; jx++) 
+ 	    val = val*10 + buf[jx] - '0';
+ 	hscores[ix].score = val;
+-	sprintf(hscores[ix].scoret, "%d", val);
++	snprintf(hscores[ix].scoret, 16, "%ld", val);
+     };
+ 
+     if (save) {
+ 	if (checkmod_scores()) {
+ 	    rewind(fl);
+ 	    for (ix=0; ix<NUMGAMERS; ix++) {
+-		fprintf(fl, "%s\n%s\n%d\n", hscores[ix].userid,
++		fprintf(fl, "%s\n%s\n%ld\n", hscores[ix].userid,
+ 			hscores[ix].name, hscores[ix].score);
+ 	    }
+ 	}
+@@ -113,7 +121,7 @@ int save;
+     flock(fd, LOCK_UN);
+ #endif
+ 
+-    fclose(fl);
++    rewind(fl);
+ }
+ 
+ int checkmod_scores()
+@@ -136,15 +144,15 @@ int checkmod_scores()
+ 
+     for (new=0; score<=hscores[new].score; new++);
+     for (ix=bottom; ix>new; ix--) {
+-	strcpy(hscores[ix].name, hscores[ix-1].name);
+-	strcpy(hscores[ix].userid, hscores[ix-1].userid);
+-	strcpy(hscores[ix].scoret, hscores[ix-1].scoret);
++	strlcpy(hscores[ix].name, hscores[ix-1].name, 16);
++	strlcpy(hscores[ix].userid, hscores[ix-1].userid, 16);
++	strlcpy(hscores[ix].scoret, hscores[ix-1].scoret, 16);
+ 	hscores[ix].score = hscores[ix-1].score;
+     };
+-    strcpy(hscores[new].name, gamename);
+-    strcpy(hscores[new].userid, userid);
++    strlcpy(hscores[new].name, gamename, 16);
++    strlcpy(hscores[new].userid, userid, 16);
+     hscores[new].score = score;
+-    sprintf(hscores[new].scoret, "%d", score);
++    snprintf(hscores[new].scoret, 16, "%ld", score);
+ 
+     return 1;
+ }
+@@ -155,12 +163,10 @@ void get_names()
+     struct passwd *tp;
+     char *tcp;
+ 
+-    strcpy(hscorefl, SCOREFILENAME);
+-
+     tp = getpwuid(getuid());
+     if (!tp) {
+ 	printf("unable to get userid!\n");
+-	strcpy(userid, "????");
++	strlcpy(userid, "????", sizeof userid);
+     }
+     else {
+ 	strncpy(userid, tp->pw_name, 16);
+@@ -177,7 +183,7 @@ void get_names()
+ 	gamename[15] = '\0';
+     }
+     else {
+-	strcpy(gamename, userid);
++	strlcpy(gamename, userid, 16);
+     };
+ 
+     printf("Welcome, %s (%s)\n", gamename, userid);

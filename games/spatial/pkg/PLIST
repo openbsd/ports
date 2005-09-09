@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/09 08:26:58 espie Exp $
+@mode g+s
+@group games
+bin/spatial
+@mode
+@group
+@man man/man6/spatial.6
+@mode g+rwx
+@group games
+share/spatial/
+@mode
+@group
+share/spatial/spatial.shp

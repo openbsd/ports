@@ -1,0 +1,55 @@
+$OpenBSD: patch-spatial_spatial_h,v 1.1.1.1 2005/09/09 08:26:58 espie Exp $
+--- spatial/spatial.h.orig	Mon Aug 23 20:48:54 1993
++++ spatial/spatial.h	Thu Sep  8 23:42:22 2005
+@@ -87,14 +87,45 @@ extern long score, dropticks;
+ extern double boardscale;
+ extern int halfboard, halfboard2;
+ 
+-extern void clearfield();
++extern void clearfield(void);
+ /* zero out field[][][] */
+-extern void setup_fieldpm();
++extern void setup_fieldpm(void);
+ /* clear, draw field box and side text. Also set
+  shape{x,y}{1,2} to window size */
+-extern void startpiece();
++extern void startpiece(void);
+ /* pick a piece and put it in the pipeline */
+-extern long current_usec();
+-extern int elapsed();
++extern long current_usec(void);
++extern int elapsed(long, long);
+ 
+-extern long random();
++extern int checkmod_scores();
++extern int collision(int);
++extern void add_cubie(int, int, int);
++extern void add_cubies(int);
++extern void add_one_cubie(fieldplist, int, int, int);
++extern void back_to_disp(int);
++extern void draw_curpiece(Drawable);
++extern void draw_score(Drawable);
++extern void dumppiece(short);
++extern void gameloop(void);
++extern void get_names(void); 
++extern void initgame(void);
++extern void initintro(void); 
++extern void intro_redraw(void);
++extern void introloop(void); 
++extern void load_hscores(int);
++extern void loadpieces(char *); 
++extern void pause_redraw(void);
++extern void pauseloop(void);
++extern void plop_piece(void); 
++extern void redo_board_globals(void);
++extern void redraw_cubies(void);
++extern void rotate_piece(int, double);
++extern void round_piece(void);
++extern void setup_backpm(void);
++extern void setup_cubies(void);
++extern void setup_one_fieldpm(fieldplist);
++extern void update_meter(void);
++extern void updatepiece(void); 
++extern void updatetemp_tra(short, short, short, short, short);
++extern void xinit(void); 
++extern void init_scores();

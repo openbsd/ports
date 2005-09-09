@@ -1,0 +1,35 @@
+$OpenBSD: patch-spatial_intro_c,v 1.1.1.1 2005/09/09 08:26:58 espie Exp $
+--- spatial/intro.c.orig	Fri Aug 27 21:02:51 1993
++++ spatial/intro.c	Thu Sep  8 14:20:42 2005
+@@ -3,8 +3,13 @@
+  notice is retained. */
+ 
+ #include <stdio.h>
++#include <string.h>
++#include <stdlib.h>
++#include <sys/types.h>
+ #include <sys/time.h>
++#include <unistd.h>
+ #include <X11/Xlib.h>
++#include <X11/Xutil.h>
+ #include <X11/keysym.h>
+ #include "spatial.h"
+ 
+@@ -18,8 +23,6 @@ XDrawLine(dpy, win, gcwhite, x1, y1, x2,
+ extern GC gcblack, gcwhite, gcinv, gccopy, gcline,
+ gcfield, gccubes[];
+ 
+-extern void intro_redraw(), redo_board_globals();
+-
+ void initintro()
+ {
+     intro_redraw();
+@@ -118,7 +121,7 @@ void intro_redraw()
+     xputs(50, 220, "(C) Copyright 1991-3 Andrew Plotkin");
+     xputs(50, 240, " (ap1i@andrew.cmu.edu)");
+     if (score!=(-1)) {
+-	sprintf(buf, "Your score: %d", score);
++	snprintf(buf, sizeof buf, "Your score: %ld", score);
+ 	xputs(50, 260, buf);
+     }
+ 

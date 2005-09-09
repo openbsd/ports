@@ -1,0 +1,40 @@
+$OpenBSD: patch-spatial_spatial_c,v 1.1.1.1 2005/09/09 08:26:58 espie Exp $
+--- spatial/spatial.c.orig	Thu Aug 26 00:26:15 1993
++++ spatial/spatial.c	Thu Sep  8 23:42:45 2005
+@@ -3,6 +3,9 @@ given to copy and use, as long as this c
+  notice is retained. */
+ 
+ #include <stdio.h>
++#include <unistd.h>
++#include <string.h>
++#include <stdlib.h>
+ #include <X11/Xlib.h>
+ #include "spatial.h"
+ #include "patchlevel.h"
+@@ -10,21 +13,20 @@ given to copy and use, as long as this c
+ #define INITWINSIZEX (720)
+ #define INITWINSIZEY (740)
+ 
+-extern void srandom();
+-
+ extern double focallen;
+ extern int forcemono;
+ 
+-extern void xinit(), loadpieces(), gameloop(),
+-initintro(), introloop(), get_names(), load_hscores(),
+-redo_board_globals();
+-extern int checkmod_scores();
+ 
++int
+ main(argc, argv)
+ int argc;
+ char *argv[];
+ {
+     int ix;
++
++    init_scores();
++    setegid(getgid());
++    setgid(getgid());
+ 
+     srandom(getpid());
+ 

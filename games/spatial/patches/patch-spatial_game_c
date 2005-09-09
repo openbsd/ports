@@ -1,0 +1,44 @@
+$OpenBSD: patch-spatial_game_c,v 1.1.1.1 2005/09/09 08:26:58 espie Exp $
+--- spatial/game.c.orig	Mon Aug 23 21:28:21 1993
++++ spatial/game.c	Thu Sep  8 12:06:42 2005
+@@ -3,8 +3,13 @@
+  notice is retained. */
+ 
+ #include <stdio.h>
++#include <string.h>
++#include <stdlib.h>
++#include <sys/types.h>
+ #include <sys/time.h>
++#include <unistd.h>
+ #include <X11/Xlib.h>
++#include <X11/Xutil.h>
+ #include <X11/keysym.h>
+ #include "spatial.h"
+ 
+@@ -26,13 +31,6 @@ double fieldoffx, fieldoffx2, fieldoffy,
+ extern double offx, offy, offz;
+ long score=(-1), dropticks;
+ 
+-extern void plop_piece(), setup_cubies(), redo_board_globals();
+-extern void setup_fieldpm(), clearfield(),
+-back_to_disp(), setup_backpm();
+-extern void startpiece(), rotate_piece(),
+-updatetemp_tra(), updatepiece(), round_piece();
+-extern void pauseloop();
+-extern int collision();
+ 
+ void clearfield()
+ {
+@@ -382,11 +380,10 @@ long current_usec() /* returns the curre
+     return tv.tv_usec + 1000000*(tv.tv_sec%100);
+ }
+ 
+-int elapsed(start, length) /* returns whether
++int elapsed(long start, long length) /* returns whether
+  length microseconds have elapsed since start.
+  Not reliable when length is more than 10^8 usec
+  (100 seconds) */
+-long start, length;
+ {
+     long now;
+ 

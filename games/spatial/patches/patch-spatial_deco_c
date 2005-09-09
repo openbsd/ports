@@ -1,0 +1,22 @@
+$OpenBSD: patch-spatial_deco_c,v 1.1.1.1 2005/09/09 08:26:58 espie Exp $
+--- spatial/deco.c.orig	Mon Aug 23 20:31:10 1993
++++ spatial/deco.c	Thu Sep  8 14:12:49 2005
+@@ -3,14 +3,16 @@
+  notice is retained. */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
++#include <sys/types.h>
+ #include <sys/time.h>
++#include <unistd.h>
+ #include <X11/Xlib.h>
++#include <X11/Xutil.h>
+ #include <X11/keysym.h>
+ #include "spatial.h"
+ 
+ extern GC gcblack, gcwhite, gcinv, gccopy, gcline, gcfield, gccubes[]; 
+-
+-extern void pause_redraw(), add_cubie();
+ 
+ void pauseloop()
+ {

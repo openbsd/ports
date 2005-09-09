@@ -1,0 +1,31 @@
+$OpenBSD: patch-spatial_disp_c,v 1.1.1.1 2005/09/09 08:26:58 espie Exp $
+--- spatial/disp.c.orig	Thu Aug 26 01:09:16 1993
++++ spatial/disp.c	Thu Sep  8 11:57:48 2005
+@@ -3,6 +3,7 @@
+  notice is retained. */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
+ #include "spatial.h"
+@@ -43,9 +44,6 @@ int shapex1, shapex2, shapey1, shapey2;
+ int ddispx1, ddispx2, ddispy1, ddispy2;
+ /* coords of rectangle of display that is different from fieldpm */
+ 
+-extern void dumppiece(), setup_fieldpm(),
+-setup_one_fieldpm(), draw_curpiece();
+-
+ void xinit() /* using dispx, dispy */
+ {
+     register int ix;
+@@ -444,8 +442,7 @@ char *flname;
+     }
+ }
+ 
+-void dumppiece(pnum)
+-short pnum;
++void dumppiece(short pnum)
+ {
+     piecelist *p = &(pieces[pnum]);
+     register int ix;
