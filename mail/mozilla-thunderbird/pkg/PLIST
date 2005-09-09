@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/07/23 13:56:34 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/09/09 16:22:28 wilfried Exp $
 %%SHARED%%
 bin/mozilla-thunderbird
 bin/thunderbird
@@ -165,6 +165,7 @@ mozilla-thunderbird/chrome/icons/default/abcardWindow.xpm
 mozilla-thunderbird/chrome/icons/default/abcardWindow16.xpm
 mozilla-thunderbird/chrome/icons/default/addressbookWindow.xpm
 mozilla-thunderbird/chrome/icons/default/addressbookWindow16.xpm
+mozilla-thunderbird/chrome/icons/default/default.xpm
 mozilla-thunderbird/chrome/icons/default/messengerWindow.xpm
 mozilla-thunderbird/chrome/icons/default/messengerWindow16.xpm
 mozilla-thunderbird/chrome/icons/default/msgcomposeWindow.xpm
@@ -176,6 +177,7 @@ mozilla-thunderbird/chrome/messenger/content/
 mozilla-thunderbird/chrome/messenger/content/editor/
 mozilla-thunderbird/chrome/messenger/content/editor/images/
 mozilla-thunderbird/chrome/messenger/content/messenger/
+mozilla-thunderbird/chrome/messenger/content/messenger-mapi/
 mozilla-thunderbird/chrome/messenger/content/messenger-mdn/
 mozilla-thunderbird/chrome/messenger/content/messenger-region/
 mozilla-thunderbird/chrome/messenger/content/messenger-smime/
@@ -217,6 +219,7 @@ mozilla-thunderbird/chrome/toolkit/content/mozapps/shared/
 mozilla-thunderbird/chrome/toolkit/content/mozapps/update/
 mozilla-thunderbird/chrome/toolkit/content/mozapps/xpinstall/
 mozilla-thunderbird/components/
+mozilla-thunderbird/components/accessibility-atk.xpt
 mozilla-thunderbird/components/accessibility.xpt
 mozilla-thunderbird/components/addrbook.xpt
 mozilla-thunderbird/components/appshell.xpt
@@ -279,6 +282,7 @@ mozilla-thunderbird/components/mime.xpt
 mozilla-thunderbird/components/mimetype.xpt
 mozilla-thunderbird/components/mozbrwsr.xpt
 mozilla-thunderbird/components/mozfind.xpt
+mozilla-thunderbird/components/mozgnome.xpt
 mozilla-thunderbird/components/mozldap.xpt
 mozilla-thunderbird/components/msgbase.xpt
 mozilla-thunderbird/components/msgcompose.xpt

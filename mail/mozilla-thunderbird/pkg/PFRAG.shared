@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/04/09 08:48:11 wilfried Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2005/09/09 16:22:28 wilfried Exp $
 @lib mozilla-thunderbird/components/libaccessibility.so.${SO_VERSION}
 @lib mozilla-thunderbird/components/libappcomps.so.${SO_VERSION}
 @lib mozilla-thunderbird/components/libcaps.so.${SO_VERSION}
@@ -40,7 +40,7 @@
 @lib mozilla-thunderbird/components/libwalletviewers.so.${SO_VERSION}
 @lib mozilla-thunderbird/components/libwebbrwsr.so.${SO_VERSION}
 @lib mozilla-thunderbird/components/libwebsrvcs.so.${SO_VERSION}
-@lib mozilla-thunderbird/components/libwidget_gtk.so.${SO_VERSION}
+@lib mozilla-thunderbird/components/libwidget_gtk2.so.${SO_VERSION}
 @lib mozilla-thunderbird/components/libxmlextras.so.${SO_VERSION}
 @lib mozilla-thunderbird/components/libxpcom_compat_c.so.${SO_VERSION}
 @lib mozilla-thunderbird/components/libxpconnect.so.${SO_VERSION}
@@ -49,7 +49,6 @@
 @lib mozilla-thunderbird/components/libxremoteservice.so.${SO_VERSION}
 @lib mozilla-thunderbird/libgkgfx.so.${SO_VERSION}
 @lib mozilla-thunderbird/libgtkembedmoz.so.${SO_VERSION}
-@lib mozilla-thunderbird/libgtksuperwin.so.${SO_VERSION}
 @lib mozilla-thunderbird/libgtkxtbin.so.${SO_VERSION}
 @lib mozilla-thunderbird/libldap50.so.${SO_VERSION}
 @lib mozilla-thunderbird/libmozjs.so.${SO_VERSION}
