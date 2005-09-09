@@ -1,40 +1,20 @@
-$OpenBSD: patch-xpdf_XPDFCore_cc,v 1.2 2004/01/25 06:02:40 brad Exp $
---- xpdf/XPDFCore.cc.orig	2004-01-21 20:26:45.000000000 -0500
-+++ xpdf/XPDFCore.cc	2004-01-24 23:34:15.000000000 -0500
-@@ -940,9 +940,6 @@ void XPDFCore::moveSelection(int mx, int
- // global variables (currentSelection and currentSelectionOwner).
+$OpenBSD: patch-xpdf_XPDFCore_cc,v 1.3 2005/09/09 17:34:53 brad Exp $
+--- xpdf/XPDFCore.cc.orig	Wed Aug 17 07:34:31 2005
++++ xpdf/XPDFCore.cc	Thu Aug 18 10:23:14 2005
+@@ -377,9 +377,6 @@ void XPDFCore::copySelection() {
+   int pg;
+   double ulx, uly, lrx, lry;
  
- void XPDFCore::copySelection() {
 -  if (!doc->okToCopy()) {
 -    return;
 -  }
-   if (currentSelection) {
-     delete currentSelection;
-   }
-@@ -997,9 +994,6 @@ GBool XPDFCore::getSelection(int *xMin, 
- }
- 
- GString *XPDFCore::extractText(int xMin, int yMin, int xMax, int yMax) {
--  if (!doc->okToCopy()) {
--    return NULL;
--  }
-   return out->getText(xMin, yMin, xMax, yMax);
- }
- 
-@@ -1008,9 +1002,6 @@ GString *XPDFCore::extractText(int pageN
-   TextOutputDev *textOut;
-   GString *s;
- 
--  if (!doc->okToCopy()) {
--    return NULL;
--  }
-   textOut = new TextOutputDev(NULL, gTrue, gFalse, gFalse);
-   if (!textOut->isOk()) {
-     delete textOut;
-@@ -1649,11 +1640,7 @@ void XPDFCore::inputCbk(Widget widget, X
+   if (getSelection(&pg, &ulx, &uly, &lrx, &lry)) {
+     //~ for multithreading: need a mutex here
+     if (currentSelection) {
+@@ -1108,11 +1105,7 @@ void XPDFCore::inputCbk(Widget widget, X
  #ifndef NO_TEXT_SELECT
- 	  if (core->selectXMin != core->selectXMax &&
- 	      core->selectYMin != core->selectYMax) {
+ 	  if (core->selectULX != core->selectLRX &&
+ 	      core->selectULY != core->selectLRY) {
 -	    if (core->doc->okToCopy()) {
  	      core->copySelection();
 -	    } else {

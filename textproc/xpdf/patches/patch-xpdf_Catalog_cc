@@ -1,6 +1,6 @@
-$OpenBSD: patch-xpdf_Catalog_cc,v 1.1 2004/10/23 02:24:37 brad Exp $
---- xpdf/Catalog.cc.orig	Wed Jan 21 20:26:45 2004
-+++ xpdf/Catalog.cc	Fri Oct 22 21:54:48 2004
+$OpenBSD: patch-xpdf_Catalog_cc,v 1.2 2005/09/09 17:34:53 brad Exp $
+--- xpdf/Catalog.cc.orig	Wed Aug 17 07:34:31 2005
++++ xpdf/Catalog.cc	Thu Aug 18 10:15:28 2005
 @@ -64,6 +64,15 @@ Catalog::Catalog(XRef *xrefA) {
    }
    pagesSize = numPages0 = (int)obj.getNum();
@@ -14,18 +14,18 @@ $OpenBSD: patch-xpdf_Catalog_cc,v 1.1 2004/10/23 02:24:37 brad Exp $
 +    return;
 +  }
 +
-   pages = (Page **)gmalloc(pagesSize * sizeof(Page *));
-   pageRefs = (Ref *)gmalloc(pagesSize * sizeof(Ref));
+   pages = (Page **)gmallocn(pagesSize, sizeof(Page *));
+   pageRefs = (Ref *)gmallocn(pagesSize, sizeof(Ref));
    for (i = 0; i < pagesSize; ++i) {
-@@ -191,6 +200,11 @@ int Catalog::readPageTree(Dict *pagesDic
+@@ -195,6 +204,11 @@ int Catalog::readPageTree(Dict *pagesDic
        }
        if (start >= pagesSize) {
  	pagesSize += 32;
-+        if (pagesSize*sizeof(Page *)/sizeof(Page *) != pagesSize ||
-+		pagesSize*sizeof(Ref)/sizeof(Ref) != pagesSize) {
-+          error(-1, "Invalid 'pagesSize' parameter.");
-+          goto err3;
-+        }
- 	pages = (Page **)grealloc(pages, pagesSize * sizeof(Page *));
- 	pageRefs = (Ref *)grealloc(pageRefs, pagesSize * sizeof(Ref));
++         if (pagesSize*sizeof(Page *)/sizeof(Page *) != pagesSize ||
++                pagesSize*sizeof(Ref)/sizeof(Ref) != pagesSize) {
++           error(-1, "Invalid 'pagesSize' parameter.");
++           goto err3;
++         }
+ 	pages = (Page **)greallocn(pages, pagesSize, sizeof(Page *));
+ 	pageRefs = (Ref *)greallocn(pageRefs, pagesSize, sizeof(Ref));
  	for (j = pagesSize - 32; j < pagesSize; ++j) {
