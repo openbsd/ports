@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_silcmath_tma_h,v 1.1 2005/09/09 20:08:54 brad Exp $
+--- lib/silcmath/tma.h.orig	Fri Sep  9 13:20:46 2005
++++ lib/silcmath/tma.h	Fri Sep  9 13:21:40 2005
+@@ -48,7 +48,7 @@ extern "C" {
+ 
+ 
+ /* detect 64-bit mode if possible */
+-#if defined(__x86_64__)
++#if defined(__x86_64__) && !defined(__OpenBSD__)
+    #if !(defined(MP_64BIT) && defined(MP_16BIT) && defined(MP_8BIT))
+       #define MP_64BIT
+    #endif

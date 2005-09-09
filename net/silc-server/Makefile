@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2005/09/09 17:03:34 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2005/09/09 20:08:54 brad Exp $
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) server"
 
@@ -32,7 +32,7 @@ FLAVORS=	operops
 FLAVOR?=
 
 .if ${FLAVOR:L:Moperops}
-PATCH_LIST+=	operops-* patch-*
+PATCH_LIST+=	patch-* operops-*
 .endif
 
 CONFDIR=	${SYSCONFDIR}/silcd
