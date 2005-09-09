@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2005/07/10 13:14:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.116 2005/09/09 08:28:38 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -104,6 +104,7 @@
      SUBDIR += slash-em
      SUBDIR += slash-em,no_x11
 #    SUBDIR += sokoban
+     SUBDIR += spatial
      SUBDIR += speyes
      SUBDIR += spider
      SUBDIR += starlanes
