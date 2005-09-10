@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/03/29 19:33:40 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/09/10 07:02:05 wilfried Exp $
 bin/galeon
 bin/galeon-bin
 bin/galeon-config-tool
@@ -11,7 +11,9 @@ share/applications/
 share/applications/galeon.desktop
 share/examples/galeon/
 share/examples/galeon/sound/
+@sample ${SYSCONFDIR}/sound/
 share/examples/galeon/sound/events/
+@sample ${SYSCONFDIR}/sound/events/
 share/examples/galeon/sound/events/galeon.soundlist
 @sample ${SYSCONFDIR}/sound/events/galeon.soundlist
 share/galeon/
