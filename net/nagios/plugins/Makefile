@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/08/13 18:20:23 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2005/09/10 17:37:40 espie Exp $
 
 COMMENT=	"nagios base plugins"
 COMMENT-fping=	"fping plugin"
@@ -12,7 +12,7 @@ COMMENT-snmp=	"plugins using snmp"
 
 V=		1.4.1
 DISTNAME=	nagios-plugins-${V}
-PKGNAME=	nagios-plugins-${V}
+PKGNAME=	nagios-plugins-${V}p0
 PKGNAME-fping=	nagios-plugins-fping-${V}p0
 PKGNAME-game=	nagios-plugins-game-${V}p0
 PKGNAME-ldap=	nagios-plugins-ldap-${V}p0
@@ -107,7 +107,7 @@ RUN_DEPENDS=	smbclient::net/samba
 RUN_DEPENDS=	snmpget::net/net-snmp \
 		::net/p5-Net-SNMP
 .  else
-WANTLIB+=	crypto ssl
+WANTLIB+=	crypto ssl m
 .  endif
 .else
 MODULES=	gettext
