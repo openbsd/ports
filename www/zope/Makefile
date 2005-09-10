@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2005/03/27 00:18:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2005/09/10 19:42:53 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	"object-oriented web application server"
 
 VERSION=	2.7.4
 DISTNAME=	Zope-${VERSION}-0
-PKGNAME=	${DISTNAME:S/-0//g:L}
+PKGNAME=	${DISTNAME:S/-0//g:L}p0
 CATEGORIES=     www
 
 HOMEPAGE=	http://www.zope.org/
@@ -28,6 +28,9 @@ PYTHON_BIN=	${LOCALBASE}/bin/python${PYTHON_VER}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
 		:python-expat-${PYTHON_VER}*:lang/python/${PYTHON_VER},-expat
+
+LIB_DEPENDS=	python2.3.0.0::lang/python/${PYTHON_VER}
+WANTLIB=	m c stdc++ pthread util
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	--with-python=${LOCALBASE}/bin/python${PYTHON_VER} \
