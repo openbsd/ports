@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/13 15:06:37 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2005/09/10 18:00:15 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"python interface to flow-tools file format"
 
 DISTNAME=	pyflowtools-0.3
-PKGNAME=	${DISTNAME:S/pyflow/py-flow/g}
+PKGNAME=	${DISTNAME:S/pyflow/py-flow/g}p0
 CATEGORIES=	net
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
@@ -25,6 +25,7 @@ NO_REGRESS= 	Yes
 
 MODPY_DISTUTILS_BUILD=	build_ext
 MODPY_DISTUTILS_BUILDARGS=-I${LOCALBASE}/include -L${LOCALBASE}/lib
+WANTLIB+=	z
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-flowtools
