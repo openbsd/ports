@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2005/01/21 13:26:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2005/09/10 18:07:43 espie Exp $
 
 COMMENT=		"Quake/Quake-world client"
 COMMENT-server=		"Quake world server"
 CATEGORIES=		games
 
-FULLPKGNAME-server=	quakeworld-server-20000101
+FULLPKGNAME-server=	quakeworld-server-20000101p0
 PKGNAME=		quake-20000101
 DISTNAME=		quake-v6-bsd-kame
 PATCHFILES=		quake6-00-v6-20000202b.diff.gz:0
@@ -60,6 +60,9 @@ CFLAGS+=		-pthread
 CONFIGURE_ARGS+=	--without-sdl --without-ggi
 MAKE_FLAGS=	
 WANTLIB+=		X11 Xext
+.endif
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-server"
+WANTLIB+=		pthread
 .endif
 
 WRKDIST=		${WRKDIR}/quakeforge
