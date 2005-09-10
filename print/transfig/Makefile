@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2003/04/04 14:28:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2005/09/10 18:26:20 espie Exp $
 
 COMMENT=	"tools to convert Xfig's .fig files"
 
 VERSION=	3.2.4
 DISTNAME=	transfig.${VERSION}
-PKGNAME=	transfig-${VERSION}
+PKGNAME=	transfig-${VERSION}p0
 CATEGORIES=	print
 MASTER_SITES=	ftp://www-epb.lbl.gov/xfig/ \
 		ftp://www-epb.lbl.gov/xfig/previous_versions/
@@ -23,6 +23,7 @@ CONFIGURE_STYLE= imake
 
 FLAVORS=	a4
 FLAVOR?=
+WANTLIB=	m X11 c z Xpm
 
 .if ${FLAVOR:L:Ma4}
 PATCH_LIST=	patch-* a4-*

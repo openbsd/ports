@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2005/04/04 18:51:03 sturm Exp $
+# $OpenBSD: Makefile,v 1.57 2005/09/10 18:26:20 espie Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
@@ -41,6 +41,8 @@ CONFIGURE_ARGS+=	--disable-compface
 .if ${FLAVOR:L:Mgpgme}
 LIB_DEPENDS+=		gpgme.4::security/gpgme
 CONFIGURE_ARGS+=	--enable-gpgme
+WANTLIB+=		gpg-error
+PKGNAME=		${DISTNAME}p0
 .else
 CONFIGURE_ARGS+=	--disable-gpgme
 .endif
