@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/09/04 23:47:36 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2005/09/10 17:29:58 espie Exp $
 
 COMMENT='e-donkey client'
 CATEGORIES=net
@@ -10,7 +10,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m z
+WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m z pthread
 CONFIGURE_STYLE=	gnu
 #CONFIGURE_ARGS+=	--enable-ocamlver=3.07
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
@@ -19,6 +19,7 @@ HOMEPAGE=http://savannah.nongnu.org/projects/mldonkey/
 
 MASTER_SITES=http://savannah.nongnu.org/download/mldonkey/
 DISTNAME=mldonkey-2.6.3
+PKGNAME=${DISTNAME}p0
 EXTRACT_SUFX=.tar.bz2
 
 CONFIGURE_ARGS+=--enable-gui=newgui1
