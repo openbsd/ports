@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.706 2005/09/05 12:43:07 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.707 2005/09/10 18:07:47 naddy Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1955,7 +1955,7 @@ ${_UPDATE_COOKIE}: ${_PACKAGE_COOKIES}
 .if empty(PLIST_DB)
 _register_plist=:
 .else
-_register_plist=perl /usr/ports/infrastructure/package/register-plist ${PLIST_DB} ${PKGFILE${SUBPACKAGE}}
+_register_plist=perl ${PORTSDIR}/infrastructure/package/register-plist ${PLIST_DB} ${PKGFILE${SUBPACKAGE}}
 .endif
 
 _package: ${_PKG_PREREQ}
