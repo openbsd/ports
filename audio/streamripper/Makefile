@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2005/09/05 20:19:58 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2005/09/10 17:25:42 espie Exp $
 
 COMMENT=	"rip shoutcast streams to local mp3s"
 
 DISTNAME=	streamripper-1.61.11
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://streamripper.sourceforge.net/
@@ -17,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c m pthread
+WANTLIB=	c m pthread charset
 
 LIB_DEPENDS=	mad.2::audio/libmad \
 		ogg.5.2::audio/libogg \
