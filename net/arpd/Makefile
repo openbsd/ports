@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2005/04/30 12:59:58 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2005/09/10 09:18:47 espie Exp $
 			
 COMMENT=		"ARP reply daemon"
 
 DISTNAME=		arpd-0.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=    		net
 
 MAINTAINER=		Jason Peel <jsyn@openbsd.org>
@@ -20,6 +21,6 @@ CONFIGURE_STYLE=	autoconf
 
 WRKDIST=		${WRKDIR}/arpd
 
-BUILD_DEPENDS=		${LOCALBASE}/lib/libdnet.a::net/libdnet
+LIB_DEPENDS=		dnet::net/libdnet
 
 .include <bsd.port.mk>
