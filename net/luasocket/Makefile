@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2005/04/19 15:14:38 pedro Exp $
+# $OpenBSD: Makefile,v 1.3 2005/09/10 17:32:15 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"network support for the lua language"
 DISTNAME=	luasocket-2.0-beta3
-PKGNAME=	${DISTNAME:S/0-b/0b/}
+PKGNAME=	${DISTNAME:S/0-b/0b/}p0
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}
 
@@ -22,6 +22,7 @@ NO_REGRESS=	Yes
 
 BUILD_DEPENDS=	::lang/lua ::devel/luacompat
 RUN_DEPENDS=	${BUILD_DEPENDS}
+LIB_DEPENDS=	luacompat::devel/luacompat
 
 MAKE_FILE=	makefile.Linux	# heh, yeah, linux, sure...
 
