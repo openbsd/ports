@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2005/03/06 08:42:29 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2005/09/10 10:44:29 espie Exp $
 
 COMMENT=		"Lightweight GNOME text editor"
 DISTNAME=		gedit-2.8.3
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		editors x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/projects/gedit/
@@ -21,7 +22,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xcursor Xext Xft \
 		gnome-keyring gnomecanvas-2 gnomeprint-2-2 gnomevfs-2 \
 		gobject-2.0.0.0 gthread-2.0.0.0 gtk-x11-2.0.0.0 jpeg m \
 		pango-1.0.0.0 pangoft2-1.0.0.0 pangox-1.0.0.0 \
-		pangoxft-1.0.0.0 popt pthread ssl stdc++ xml2 z
+		pangoxft-1.0.0.0 popt pthread ssl stdc++ xml2 z \
+		gnome-menu gnome-desktop-2 startup-notification-1
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gedit/2.8/}	
 EXTRACT_SUFX=		.tar.bz2
