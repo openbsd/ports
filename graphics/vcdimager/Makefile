@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2004/06/19 21:26:36 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2005/09/10 18:29:55 espie Exp $
 
 COMMENT=	"(S)VCD authoring software"
 
 VERSION=	0.6.2
 DISTNAME=	vcdimager-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics
 
 MASTER_SITES=	http://www.vcdimager.org/pub/vcdimager/vcdimager-0.6/
@@ -17,5 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		concurrent
+WANTLIB=		c m
 
 .include <bsd.port.mk>
