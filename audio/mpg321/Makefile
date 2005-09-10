@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/11/21 17:51:46 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2005/09/10 16:42:01 naddy Exp $
 
 # not very useful with static libao
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
@@ -6,6 +6,7 @@ NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 COMMENT=	"free clone of mpg123, a command-line mp3 player"
 
 DISTNAME=	mpg321-0.2.10
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 HOMEPAGE=	http://mpg321.sourceforge.net/
 
