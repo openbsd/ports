@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2005/06/19 17:59:37 marcm Exp $
+# $OpenBSD: Makefile,v 1.10 2005/09/10 22:33:17 espie Exp $
 
 COMMENT=		"Text widget that extends GTK2's GtkTextView widget"
 DISTNAME=		gtksourceview-1.2.0
-#PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.gnome.org/softwaremap/projects/gtksourceview	
@@ -14,7 +14,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		m gtk-x11-2.0.600.0 xml2 z
+WANTLIB=		m gtk-x11-2.0.600.0 xml2 z Xrender glib-2.0.600.0 \
+			intl gmodule-2.0.600.0 pangox-1.0.0.0 freetype \
+			gobject-2.0.600.0 pangoxft-1.0.0.0 pango-1.0.0.0 \
+			gdk_pixbuf-2.0.600.0 Xft gdk-x11-2.0.600.0 \
+			art_lgpl_2 atk-1.0.0.0 X11 fontconfig
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtksourceview/1.2/}	
 EXTRACT_SUFX=		.tar.bz2
