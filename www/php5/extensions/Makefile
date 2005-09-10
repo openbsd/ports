@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2005/07/06 00:50:32 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2005/09/10 18:23:00 espie Exp $
 
 FULLPKGNAME=	php5-extensions-${V}
 COMMENT=	"informational package about PHP5 extensions"
@@ -142,7 +142,8 @@ COMMENT-imap=		"imap, pop3 and nntp extensions for php5"
 CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 			--with-kerberos=/usr --with-imap-ssl
 IMAP_DEPENDS=		c-client.3::mail/c-client
-IMAP_WANTLIB=		gssapi crypto krb5 ssl
+IMAP_WANTLIB=		gssapi crypto krb5 ssl des
+FULLPKGNAME-imap=	php5-imap-${V}p0
 .endif
 
 # ldap
@@ -250,6 +251,8 @@ CONFIGURE_ARGS+=	--without-soap
 MULTI_PACKAGES+=	-soap
 COMMENT-soap=		"SOAP functions for php5"
 CONFIGURE_ARGS+=	--enable-soap=shared
+SOAP_WANTLIB=		xml2 z iconv
+FULLPKGNAME-soap=	php5-soap-${V}p0
 .endif
 
 # snmp
@@ -306,7 +309,9 @@ CONFIGURE_ARGS+=	--without-xsl
 MULTI_PACKAGES+=	-xsl
 COMMENT-xsl=		"XSL functions for php5"
 CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
-XSL_DEPENDS=		xslt.3::textproc/libxslt
+XSL_DEPENDS=		xslt.3,exslt::textproc/libxslt
+XSL_WANTLIB=		xml2 z iconv
+FULLPKGNAME-xsl=	php5-xsl-${V}p0
 .endif
 
 .for i in ${MULTI_PACKAGES}
