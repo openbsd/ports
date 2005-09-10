@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2004/08/09 19:56:15 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2005/09/10 18:11:28 espie Exp $
 
 COMMENT=	"Ruby binding to Gdk-imlib"
 
 VERSION=	0.34
 DISTNAME=	ruby-gnome-all-${VERSION}
-PKGNAME=	ruby-gdk-imlib-${VERSION}
+PKGNAME=	ruby-gdk-imlib-${VERSION}p0
 CATEGORIES=	graphics devel
 
 HOMEPAGE=	http://ruby-gnome.sourceforge.net/
@@ -21,6 +21,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ruby-gnome/}
 MODULES=	lang/ruby
 LIB_DEPENDS=	gdk_imlib.19::graphics/imlib
 RUN_DEPENDS=	:ruby-gtk->=0.31:x11/ruby-gtk
+WANTLIB=	c gmodule iconv intl gtk Xmu jpeg ungif \
+		Xext Xi m X11 glib z gdk tiff png
 
 CONFIGURE_STYLE= simple
 INSTALL_TARGET=	site-install
