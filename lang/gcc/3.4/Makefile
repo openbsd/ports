@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2005/05/16 11:14:36 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2005/09/11 07:40:59 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
 V=3.4.4
 FULL_VERSION=3.4-20050401
+FULL_PKGVERSION=3.4.20050401
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -58,7 +59,6 @@ BUILD_DEPENDS+=:bison-*:devel/bison
 
 
 DISTNAME=	gcc-${FULL_VERSION}
-PKGNAME=	gcc-${FULL_VERSION}p0
 
 
 DISTFILES=  ${DISTNAME}.tar.bz2
@@ -150,7 +150,7 @@ PKG_ARGS+=-DPPC=0
 
 .if defined(PACKAGING) && defined(SUBPACKAGE)
 .  if !empty(SUBPACKAGE) && ${SUBPACKAGE} != "-estdc"
-RUN_DEPENDS+=::${PKGPATH}
+RUN_DEPENDS+=:gcc-${FULL_PKGVERSION}:${PKGPATH}
 .  endif
 .  if ${SUBPACKAGE} == "-c++"
 RUN_DEPENDS+=::${PKGPATH},-estdc

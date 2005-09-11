@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2005/08/04 14:51:36 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2005/09/11 07:40:59 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
 V=4.1.0
 FULL_VERSION=4.1-20050730
+FULL_PKGVERSION=4.1.20050730
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -175,7 +176,7 @@ SUBPACKAGE?=
 RUN_DEPENDS+=::${PKGPATH}
 .  endif
 .  if ${SUBPACKAGE} == "-c++"
-RUN_DEPENDS+=::${PKGPATH},-estdc
+RUN_DEPENDS+=:gcc-${FULL_PKGVERSION}:${PKGPATH},-estdc
 .  endif
 .endif
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-f95"

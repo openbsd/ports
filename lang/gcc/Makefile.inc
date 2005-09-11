@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2005/05/16 11:14:36 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2005/09/11 07:40:58 espie Exp $
 
 # common stuff for all gcc ports
 # we assume each one defines a V variable.
@@ -20,14 +20,14 @@ COMMENT-java=	${COM}: java compiler
 COMMENT-objc=	${COM}: obj C compiler
 COMMENT-ada=	${COM}: Ada compiler
 
-PKGNAME?=	gcc-${FULL_VERSION}
-PKGNAME-c++ ?=	g++-${FULL_VERSION}
-PKGNAME-estdc?=	libstdc++-${FULL_VERSION}
-PKGNAME-g77?=	g77-${FULL_VERSION}
-PKGNAME-f95?=	g95-${FULL_VERSION}
-PKGNAME-java?=	gcj-${FULL_VERSION}
-PKGNAME-objc?=	gobjc-${FULL_VERSION}
-PKGNAME-ada?=	gnat-${FULL_VERSION}
+PKGNAME?=	gcc-${FULL_PKGVERSION}
+PKGNAME-c++ ?=	g++-${FULL_PKGVERSION}
+PKGNAME-estdc?=	libstdc++-${FULL_PKGVERSION}
+PKGNAME-g77?=	g77-${FULL_PKGVERSION}
+PKGNAME-f95?=	g95-${FULL_PKGVERSION}
+PKGNAME-java?=	gcj-${FULL_PKGVERSION}
+PKGNAME-objc?=	gobjc-${FULL_PKGVERSION}
+PKGNAME-ada?=	gnat-${FULL_PKGVERSION}
 
 DIST_SUBDIR=gcc
 CONFIG=${MACHINE_ARCH}-unknown-openbsd${OSREV}
