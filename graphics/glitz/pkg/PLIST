@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/11 05:04:32 marcm Exp $
+%%SHARED%%
+include/glitz-glx.h
+include/glitz.h
+lib/libglitz-glx.a
+lib/libglitz-glx.la
+lib/libglitz.a
+lib/libglitz.la
+lib/pkgconfig/
+lib/pkgconfig/glitz-glx.pc
+lib/pkgconfig/glitz.pc
