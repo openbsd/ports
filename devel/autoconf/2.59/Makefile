@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/07/31 21:17:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2005/09/11 08:14:45 espie Exp $
 
 COMMENT=	"automatically configure source code on many Un*x platforms"
 
@@ -28,7 +28,5 @@ MAKE_FLAGS=		pkgdatadir=${PREFIX}/share/autoconf${SUFFIX}
 FAKE_FLAGS=		${MAKE_FLAGS} DESTDIR=${WRKINST} lispdir=
 #USE_GMAKE=		Yes
 SUBST_VARS=		SUFFIX
-
-NO_REGRESS=		Yes
 
 .include <bsd.port.mk>
