@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2004/11/28 22:41:21 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2005/09/11 12:26:02 espie Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Hard"
-DISTNAME=	se006e4f8
+DISTNAME=	se007e7f1
 CATEGORIES=	games
 
 HOMEPAGE=	http://slashem.sourceforge.net
@@ -16,15 +16,17 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c termlib
 
-PKGNAME=slash-em-3.3.1.6e4f8
-WRKDIST=${WRKDIR}/slashem-0.0.6E4F8
+PKGNAME=slash-em-3.4.3.7e7f1
+V=	3.4.3.7e7f1
+
+WRKDIST=${WRKDIR}/slashem-0.0.7E7F1
 
 FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
 
-GAMEDIR=lib/slashemdir
+GAMEDIR=lib/slashemdir-$V
 NHDIR=	${PREFIX}/${GAMEDIR}
 MAKE_ENV+= NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
-SUBST_VARS=GAMEDIR
+SUBST_VARS=GAMEDIR V
 
 # qt flavor is apparently not working yet
 FLAVORS=no_x11 #qt
@@ -57,13 +59,14 @@ post-build:
 	@cd ${WRKSRC}/doc && perl -p ${FILESDIR}/substitute <recover.6 >strecover.6
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/util/strecover ${PREFIX}/bin
-	@cd ${WRKSRC}/doc && \
-	    ${INSTALL_MAN} slashem.6 strecover.6 ${PREFIX}/man/man6
+	${INSTALL_PROGRAM} ${PREFIX}/bin/slashem ${PREFIX}/bin/slashem-$V
+	${INSTALL_PROGRAM} ${WRKBUILD}/util/strecover ${PREFIX}/bin/strecover-$V
+	${INSTALL_MAN} ${WRKSRC}/doc/slashem.6 ${PREFIX}/man/man6/slashem-$V.6
+	${INSTALL_MAN} ${WRKSRC}/doc/strecover.6 ${PREFIX}/man/man6/strecover-$V.6
 .if ${FLAVOR:L} == ""
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/app-defaults
 	@cd ${WRKSRC}/win/X11 && \
-	    ${INSTALL_DATA} SlashEM.ad ${PREFIX}/lib/X11/app-defaults/SlashEM
+	    ${INSTALL_DATA} SlashEM.ad ${PREFIX}/lib/X11/app-defaults/SlashEM-$V
 .endif
 
 .include <bsd.port.mk>

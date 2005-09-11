@@ -1,15 +1,15 @@
-$OpenBSD: patch-sys_unix_Makefile_src,v 1.1.1.1 2001/07/04 11:14:54 espie Exp $
---- sys/unix/Makefile.src.orig	Wed May  2 01:08:03 2001
-+++ sys/unix/Makefile.src	Tue Jul  3 19:03:00 2001
+$OpenBSD: patch-sys_unix_Makefile_src,v 1.2 2005/09/11 12:26:02 espie Exp $
+--- sys/unix/Makefile.src.orig	Sat Jul  2 09:24:44 2005
++++ sys/unix/Makefile.src	Sun Sep 11 13:53:12 2005
 @@ -1,6 +1,7 @@
  #	NetHack Makefile.
- #	SCCS Id: @(#)Makefile.src	3.3	97/04/17
+ #	SCCS Id: @(#)Makefile.src	3.4	2002/03/02
  
 +include ${NETHACKCONFIG}
  # newer makes predefine $(MAKE) to 'make' and do smarter processing of
  # recursive make calls if $(MAKE) is used
  # these makes allow $(MAKE) to be overridden by the environment if someone
-@@ -144,8 +145,7 @@ GNOMEINC=-I/usr/lib/glib/include -I/usr/
+@@ -144,8 +145,7 @@ SYSOBJ = ioctl.o unixmain.o unixtty.o un
  # flags for debugging:
  # CFLAGS = -g -I../include
  
@@ -17,10 +17,10 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.1.1.1 2001/07/04 11:14:54 espie Exp $
 -LFLAGS =
 +CFLAGS += -DHACKDIR=\"${NHDIR}\" -DHAVE_SYS_PARAM_H -I../include 
  
- # QT windowing system
- # SuSE 6.1
-@@ -239,8 +239,6 @@ WINBEOBJ =
- #WINBEOBJ = winbe.o NHWindow.o NHMenuWindow.o NHMapWindow.o nhwin.a
+ # Only used for the Gnome interface.
+ # When including the Gnome interface, you need to include gnome specific
+@@ -291,8 +291,6 @@ WINGLOBJ = gl_conf.o gl_emul.o gl_font.o
+ SDLGL_CFLAGS = `sdl-config --cflags`
  
  # Use these declarations if you only want to support the TTY windowing system
 -WINSRC = $(WINTTYSRC)
@@ -28,7 +28,7 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.1.1.1 2001/07/04 11:14:54 espie Exp $
  # Use these declarations if you want to support the X11 windowing system
  # WINSRC = $(WINTTYSRC) $(WINX11SRC)
  # WINOBJ = $(WINTTYOBJ) $(WINX11OBJ)
-@@ -271,7 +269,7 @@ WINTTYLIB = -ltermlib
+@@ -341,7 +339,7 @@ WINTTYLIB = -ltermlib
  #
  # libraries for X11
  # If USE_XPM is defined in config.h, you will also need -lXpm here.
@@ -37,24 +37,28 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.1.1.1 2001/07/04 11:14:54 espie Exp $
  # WINX11LIB = -lXaw -lXmu -lXt -lX11
  # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
  # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
-@@ -295,7 +293,6 @@ WINGEMLIB = -le_gem -lgem
- WINBELIB = -lbe
+@@ -372,7 +370,6 @@ WINGLLIB = -lGL
+ WINPROXYLIB = -lpthread
  
  # Use this declaration if you only want to support the TTY windowing system
 -WINLIB = $(WINTTYLIB)
  # Use this declaration if you want to support the X11 windowing system
  # WINLIB = $(WINTTYLIB) $(WINX11LIB)
  # Use this declaration if you want to support the Qt windowing system
-@@ -508,10 +505,10 @@ objects.o:
+@@ -601,13 +598,13 @@ objects.o:
  
  # Qt windowport meta-object-compiler output
  qt_kde0.moc: ../include/qt_kde0.h
--	$(QTBINDIR)/moc ../include/qt_kde0.h > qt_kde0.moc
-+	moc2 ../include/qt_kde0.h > qt_kde0.moc
+-	$(QTBINDIR)/moc -o qt_kde0.moc ../include/qt_kde0.h
++	${MOC} -o qt_kde0.moc ../include/qt_kde0.h
  
  qt_win.moc: ../include/qt_win.h
--	$(QTBINDIR)/moc ../include/qt_win.h > qt_win.moc
-+	moc2 ../include/qt_win.h > qt_win.moc
+-	$(QTBINDIR)/moc -o qt_win.moc ../include/qt_win.h
++	${MOC} -o qt_win.moc ../include/qt_win.h
+ 
+ qttableview.moc: ../include/qttableview.h
+-	$(QTDIR)/bin/moc -o qttableview.moc ../include/qttableview.h
++	${MOC} -o qttableview.moc ../include/qttableview.h
  
  # NetHack windows library for modules needed by more than one windows
  # interface.

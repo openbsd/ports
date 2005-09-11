@@ -1,7 +1,7 @@
-$OpenBSD: patch-include_config_h,v 1.1.1.1 2001/07/04 11:14:54 espie Exp $
---- include/config.h.orig	Wed May  2 01:07:54 2001
-+++ include/config.h	Tue Jul  3 18:57:56 2001
-@@ -139,7 +139,7 @@
+$OpenBSD: patch-include_config_h,v 1.2 2005/09/11 12:26:02 espie Exp $
+--- include/config.h.orig	Sat Jul  2 09:24:44 2005
++++ include/config.h	Sun Sep 11 13:32:57 2005
+@@ -183,7 +183,7 @@
   *  xpmtoppm <x11tiles.xpm | pnmscale 1.25 | pnmdepth 255 |
   *     ppmquant 90 | ppmtoxpm >x11tiles_big.xpm
   */
@@ -10,15 +10,15 @@ $OpenBSD: patch-include_config_h,v 1.1.1.1 2001/07/04 11:14:54 espie Exp $
  # ifdef USE_XPM
  #  define GRAPHIC_TOMBSTONE	/* Use graphical tombstone (rip.xpm) */
  # endif
-@@ -152,6 +152,7 @@
-  *		LOGFILE and NEWS refer to files in the playground.
+@@ -197,6 +197,7 @@
+  *		playground.
   */
  
 +#define WIZARD "games"
  #ifndef WIZARD		/* allow for compile-time or Makefile changes */
  # ifndef KR1ED
  #  define WIZARD  "wizard" /* the person allowed to use the -D option */
-@@ -181,12 +182,12 @@
+@@ -227,12 +228,12 @@
  
  #ifdef UNIX
  /* path and file name extension for compression program */
@@ -35,7 +35,7 @@ $OpenBSD: patch-include_config_h,v 1.1.1.1 2001/07/04 11:14:54 espie Exp $
  
  /* # define COMPRESS "/usr/bin/bzip2"	*//* bzip2 compression */
  /* # define COMPRESS_EXTENSION ".bz2"	*//* bzip2 extension */
-@@ -315,7 +316,7 @@ typedef unsigned char	uchar;
+@@ -367,7 +368,7 @@ typedef unsigned char	uchar;
   * functions that have been macroized.
   */
  /* WAC Can be defined under DJGPP,  even though it's DOS*/

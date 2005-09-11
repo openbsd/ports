@@ -1,9 +1,9 @@
-$OpenBSD: patch-sys_unix_Makefile_utl,v 1.1.1.1 2001/07/04 11:14:54 espie Exp $
---- sys/unix/Makefile.utl.orig	Mon Apr 17 15:36:44 2000
-+++ sys/unix/Makefile.utl	Fri Mar 23 03:09:23 2001
+$OpenBSD: patch-sys_unix_Makefile_utl,v 1.2 2005/09/11 12:26:02 espie Exp $
+--- sys/unix/Makefile.utl.orig	Sat Jul  2 09:24:44 2005
++++ sys/unix/Makefile.utl	Sun Sep 11 13:32:57 2005
 @@ -1,6 +1,7 @@
  #	Makefile for NetHack's utility programs.
- #	SCCS Id: @(#)Makefile.utl	3.3	97/04/19
+ #	SCCS Id: @(#)Makefile.utl	3.4	1997/04/19
  
 +include ${NETHACKCONFIG}
  # newer makes predefine $(MAKE) to 'make' and do smarter processing of
