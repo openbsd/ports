@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2005/04/09 12:12:47 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/09/11 11:05:10 espie Exp $
 
 COMMENT=		"kde image database"
 CATEGORIES=		graphics x11 x11/kde
-DISTNAME=		kimdaba-2.0
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		kimdaba-2.1
+PKGNAME=		${DISTNAME}
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://ktown.kde.org/kimdaba/
 MASTER_SITES=		${HOMEPAGE}download/
@@ -16,7 +16,7 @@ LIB_DEPENDS=	kdecore.6,DCOP,kdefx,kdesu,kdeui,kio,kwalletclient::x11/kde/libs3 \
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 SHARED_ONLY=Yes
-MODKDE_VERSION=	3.3.0
+MODKDE_VERSION=	3.4
 MODULES=	x11/kde
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
