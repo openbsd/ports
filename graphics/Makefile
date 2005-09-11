@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2005/08/04 17:06:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.144 2005/09/11 05:06:59 marcm Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -10,6 +10,7 @@
 #    SUBDIR += aero
      SUBDIR += blender
      SUBDIR += cadubi
+     SUBDIR += cairo
 #    SUBDIR += camediaplay
      SUBDIR += camlimages
      SUBDIR += compface
@@ -42,6 +43,7 @@
      SUBDIR += gii
      SUBDIR += gimp
      SUBDIR += gle
+     SUBDIR += glitz
      SUBDIR += glut
      SUBDIR += gphoto
      SUBDIR += gphoto2
