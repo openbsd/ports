@@ -12,3 +12,5 @@ plugins.
 Digikam can also make use of the KIPI image handling plugins to
 extend its capabilities even further.  The kipi-plugins package 
 contains many useful extensions.
+
+Most of the documentation now comes as a separate package: digikam-doc

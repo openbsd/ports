@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2005/04/19 10:55:24 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/09/11 10:03:26 espie Exp $
 
 COMMENT=		"digital image kde application"
 CATEGORIES=		graphics x11 x11/kde
-DISTNAME=		digikam-0.7.2
-EXTRACT_SUFX=		.tar.bz2
+V=			0.7.4
+DISTNAME=		digikam-$V
 HOMEPAGE=		http://extragear.kde.org/apps/kipi/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}
+DISTFILES=		${DISTNAME}.tar.bz2
 
 SHARED_ONLY=Yes
 LIB_DEPENDS+=	lib/qt3/qt-mt.3.33::x11/qt3,mt \

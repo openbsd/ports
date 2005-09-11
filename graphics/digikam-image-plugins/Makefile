@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/04/19 10:55:24 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/09/11 10:03:27 espie Exp $
 
 COMMENT=		"plugins for digikam"
 CATEGORIES=		graphics x11 x11/kde
-DISTNAME=		digikamimageplugins-0.7.2
+DISTNAME=		digikamimageplugins-0.7.4
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://extragear.kde.org/apps/kipi/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}
