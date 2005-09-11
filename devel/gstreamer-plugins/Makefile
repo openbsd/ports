@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2005/06/06 20:38:33 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2005/09/11 05:12:41 marcm Exp $
 
 COMMENT=		"GStreamer Streaming-media framework plug-ins."
 
 VERSION=		0.8.8
-PATCHLEVEL=		p0
+PATCHLEVEL=		p1
 DISTNAME=		gst-plugins-${VERSION}
 PKGNAME=		gstreamer-plugins-${VERSION}${PATCHLEVEL}
 CATEGORIES=		devel
@@ -44,6 +44,7 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gst-plu
 # Disable plugins might try to build that we shouldn't
 #CONFIGURE_ARGS+=	--disable-mpeg2enc
 CONFIGURE_ARGS+=	--disable-tests
+CONFIGURE_ARGS+=	--disable-cairo
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
