@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_passes_c,v 1.1 2005/08/04 14:51:37 espie Exp $
---- gcc/passes.c.orig	Thu Aug  4 13:49:53 2005
-+++ gcc/passes.c	Thu Aug  4 13:50:20 2005
-@@ -316,26 +316,26 @@ register_one_dump_file (struct tree_opt_
+$OpenBSD: patch-gcc_passes_c,v 1.2 2005/09/11 22:04:41 espie Exp $
+--- gcc/passes.c.orig	Fri Sep  9 02:46:38 2005
++++ gcc/passes.c	Mon Sep 12 00:01:24 2005
+@@ -315,26 +315,26 @@ register_one_dump_file (struct tree_opt_
      sprintf (num, "%d", ((int) pass->static_pass_number < 0
  			 ? 1 : pass->static_pass_number));
  

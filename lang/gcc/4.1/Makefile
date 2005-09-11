@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2005/09/11 07:40:59 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/09/11 22:04:41 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
 V=4.1.0
-FULL_VERSION=4.1-20050730
-FULL_PKGVERSION=4.1.20050730
+DATE=20050909
+FULL_VERSION=4.1-${DATE}
+FULL_PKGVERSION=4.1.${DATE}
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -25,6 +26,8 @@ MAKE_ADA?=No
 
 BUILD_DEPENDS+= ::devel/autoconf/2.59
 BUILD_DEPENDS+=	::devel/metaauto
+USE_LIBTOOL=	Yes
+
 SUBPACKAGE?=
 WANTLIB=c
 .if ${SUBPACKAGE} == "-estdc"
