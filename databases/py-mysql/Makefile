@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.22 2005/09/08 03:45:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2005/09/12 04:29:35 brad Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Python interface to MySQL"
 
-VERSION=	0.9.2
+VERSION=	1.2.0
 DISTNAME=	MySQL-python-${VERSION}
-PKGNAME=	py-mysql-${VERSION}p0
+PKGNAME=	py-mysql-${VERSION}
 CATEGORIES=	databases
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mysql-python/}
 
-HOMEPAGE=	http://sourceforge.net/projects/mysql-python
+HOMEPAGE=	http://sourceforge.net/projects/mysql-python/
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
@@ -30,12 +30,8 @@ NO_REGRESS=	Yes
 
 DOC_DIR=	${PREFIX}/share/doc/MySQL-python
 
-do-configure:
-	@perl -i -pe 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
-
 post-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR}
 	${INSTALL_DATA} ${WRKBUILD}/doc/*.html ${DOC_DIR}
-
 
 .include <bsd.port.mk>

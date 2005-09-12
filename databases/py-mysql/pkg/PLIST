@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:31:46 espie Exp $
-lib/python${MODPY_VERSION}/site-packages/CompatMysqldb.py
-lib/python${MODPY_VERSION}/site-packages/CompatMysqldb.pyc
+@comment $OpenBSD: PLIST,v 1.7 2005/09/12 04:29:35 brad Exp $
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/__init__.pyc
@@ -25,20 +23,21 @@ lib/python${MODPY_VERSION}/site-packages/MySQLdb/converters.py
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/converters.pyc
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/cursors.py
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/cursors.pyc
+lib/python${MODPY_VERSION}/site-packages/MySQLdb/mxdatetimes.py
+lib/python${MODPY_VERSION}/site-packages/MySQLdb/mxdatetimes.pyc
+lib/python${MODPY_VERSION}/site-packages/MySQLdb/pytimes.py
+lib/python${MODPY_VERSION}/site-packages/MySQLdb/pytimes.pyc
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/sets.py
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/sets.pyc
+lib/python${MODPY_VERSION}/site-packages/MySQLdb/stringtimes.py
+lib/python${MODPY_VERSION}/site-packages/MySQLdb/stringtimes.pyc
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/times.py
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/times.pyc
 lib/python${MODPY_VERSION}/site-packages/_mysql.so
 lib/python${MODPY_VERSION}/site-packages/_mysql_exceptions.py
 lib/python${MODPY_VERSION}/site-packages/_mysql_exceptions.pyc
 share/doc/MySQL-python/
-share/doc/MySQL-python/MySQLdb-1.html
-share/doc/MySQL-python/MySQLdb-2.html
-share/doc/MySQL-python/MySQLdb-3.html
-share/doc/MySQL-python/MySQLdb-4.html
-share/doc/MySQL-python/MySQLdb-FAQ-1.html
-share/doc/MySQL-python/MySQLdb-FAQ-2.html
-share/doc/MySQL-python/MySQLdb-FAQ-3.html
-share/doc/MySQL-python/MySQLdb-FAQ.html
 share/doc/MySQL-python/MySQLdb.html
+share/doc/MySQL-python/README.html
+share/doc/MySQL-python/index.html
+share/doc/MySQL-python/pep-0249.html
