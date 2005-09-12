@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2005/09/12 16:54:29 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.57 2005/09/12 16:57:39 mbalmer Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
@@ -50,7 +50,8 @@ CONFIGURE_ARGS= --localstatedir="/var" \
 		--with-swatdir="${PREFIX}/share/swat" \
 		--with-ssl \
 		--with-sslinc="/usr/include/ssl" \
-		--with-ssllib="/usr/lib"
+		--with-ssllib="/usr/lib" \
+		--with-utmp
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
