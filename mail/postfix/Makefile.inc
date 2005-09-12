@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.50 2005/05/06 16:35:41 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.51 2005/09/12 14:34:57 krw Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -70,7 +70,7 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpq
 .endif
 
 post-patch:
-	@find ${WRKSRC} -type f -name '*.bak.orig' -print | xargs rm
+	@find ${WRKSRC} -type f -name '*.bak.orig' -print | xargs -r rm
 
 do-configure:
 	@cd ${WRKSRC}; ${MAKE_PROGRAM} makefiles \
