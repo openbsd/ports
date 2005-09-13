@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/21 17:51:45 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/09/13 07:42:54 alek Exp $
 
 COMMENT=		"interactive console id3 tag editor"
 
 DISTNAME=		id3ed-1.10.4
 CATEGORIES=     	audio
 
-HOMEPAGE=		http://www.azstarnet.com/~donut/programs/id3ed.html
+HOMEPAGE=		http://www.dakotacom.net/~donut/programs/id3ed.html
 
 MAINTAINER=		Nick Nauwelaerts <nick@nauwelaerts.net>
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses m readline stdc++
 
-MASTER_SITES=		http://www.azstarnet.com/~donut/programs/id3ed/
+MASTER_SITES=		http://www.dakotacom.net/~donut/programs/id3ed/
 
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu
