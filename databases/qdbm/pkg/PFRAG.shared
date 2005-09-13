@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/07/23 16:58:49 aanriot Exp $
-@lib lib/libqdbm.so.11.3
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/09/13 18:52:14 bernd Exp $
+@lib lib/libqdbm.so.11.5

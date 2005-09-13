@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/07/23 16:58:49 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2005/09/13 18:52:14 bernd Exp $
 
 COMMENT=		"high performance embedded database library"
 
-DISTNAME=		qdbm-1.8.31
+DISTNAME=		qdbm-1.8.33
 CATEGORIES=		databases
 
 HOMEPAGE=		http://qdbm.sourceforge.net
 
-MAINTAINER=		Bernd Ahlers <b.ahlers@ba-net.org>
+MAINTAINER=		Bernd Ahlers <bernd@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
