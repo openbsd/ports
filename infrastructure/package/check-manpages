@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: check-manpages,v 1.4 2004/11/13 11:49:48 espie Exp $
+# $OpenBSD: check-manpages,v 1.5 2005/09/13 20:48:41 espie Exp $
 #
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
@@ -56,6 +56,8 @@ for my $pkgname (@ARGV) {
 		}
 	}
 	$true_package->close();
+	$true_package->wipe_info();
+	$plist->forget();
 }
 
 print STDERR "Running makewhatis in ", join(' ', keys(%mandirs)), "\n";

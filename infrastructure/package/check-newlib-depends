@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.10 2005/09/10 09:48:54 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.11 2005/09/13 20:48:41 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -254,7 +254,7 @@ sub do_pkg
 	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
 	analyze($plist, $db, $true_package);
 	$true_package->close();
-	rmtree($dir);
+	$true_package->wipe_info();
 	$plist->forget();
 	return 1;
 }
