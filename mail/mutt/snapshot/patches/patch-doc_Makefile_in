@@ -1,12 +1,28 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.2 2005/02/07 17:16:16 naddy Exp $
---- doc/Makefile.in.orig	Thu Feb  3 09:26:40 2005
-+++ doc/Makefile.in	Thu Feb  3 09:26:54 2005
-@@ -63,7 +63,7 @@ topsrcdir_DOCFILES = COPYRIGHT GPL INSTA
+$OpenBSD: patch-doc_Makefile_in,v 1.3 2005/09/14 21:00:03 bernd Exp $
+--- doc/Makefile.in.orig	Thu Aug 11 21:37:02 2005
++++ doc/Makefile.in	Fri Aug 12 09:36:51 2005
+@@ -64,7 +64,7 @@ topsrcdir_DOCFILES = COPYRIGHT GPL INSTA
  	ChangeLog.old					\
  	README NEWS TODO README.SECURITY README.SSL 
  
--all: muttrc.man try-html try-txt
-+all: muttrc.man # try-html try-txt
+-all: mutt.1 muttrc.man try-html try-txt
++all: mutt.1 muttrc.man
  
- try-html: ../makedoc
+ try-html: ../makedoc$(EXEEXT)
  	test -f manual.html || $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
+@@ -170,12 +170,13 @@ EDIT = sed -e 's,@sysconfdir\@,$(sysconf
+ 	-e 's,@docdir\@,$(docdir),g'
+ 
+ mutt.1: $(srcdir)/mutt.man
+-	$(EDIT) $< > $@
++	$(EDIT) $(srcdir)/mutt.man > $@
+ 
+ muttrc.man stamp-doc-man: ../makedoc$(EXEEXT) $(top_srcdir)/init.h muttrc.man.head muttrc.man.tail
+ 	$(MAKEDOC_CPP) $(top_srcdir)/init.h | ../makedoc -m | 	    \
+ 		cat $(srcdir)/muttrc.man.head - $(srcdir)/muttrc.man.tail\
+-		> muttrc.man
++		> muttrc.man.tbl
++	/usr/bin/tbl muttrc.man.tbl > muttrc.man
+ 	touch stamp-doc-man
+ 
+ manual.sgml stamp-doc-sgml: ../makedoc$(EXEEXT) $(top_srcdir)/init.h manual.sgml.head manual.sgml.tail $(top_srcdir)/VERSION

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.14 2005/05/03 15:37:16 jolan Exp $
+# $OpenBSD: Makefile.inc,v 1.15 2005/09/14 21:00:03 bernd Exp $
 
 DISTNAME=	mutt-${VERSION}i
 CATEGORIES=	mail
@@ -11,7 +11,6 @@ MASTER_SITES_MUTT= ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 		   ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/
 
 MASTER_SITES0=	http://www.spinnaker.de/mutt/compressed/
-MASTER_SITES1=	http://wwwcip.informatik.uni-erlangen.de/~sithglan/mutt/
 
 MODULES=	devel/gettext
 
@@ -72,12 +71,9 @@ RUN_DEPENDS+=		::mail/mixmaster
 .endif
 
 .if ${FLAVOR:L:Mhcache}
-PATCHFILES+=		mutt-cvs-header-cache.29:1
-PATCH_DIST_STRIP=	-p1
 CONFIGURE_ARGS+=	--enable-hcache
 LIB_DEPENDS+=		gdbm.2::databases/gdbm
 .else
-SUPDISTFILES+=		mutt-cvs-header-cache.29:1
 CONFIGURE_ARGS+=	--without-gdbm
 .endif
 
