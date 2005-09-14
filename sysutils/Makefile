@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2005/07/23 07:46:27 aanriot Exp $
+# $OpenBSD: Makefile,v 1.95 2005/09/14 16:02:35 jcs Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -43,6 +43,7 @@
      SUBDIR += p5-Proc-Queue
      SUBDIR += p5-UPS-Nut
      SUBDIR += p5-Unix-Syslog
+     SUBDIR += perfd
      SUBDIR += pftop
      SUBDIR += proctools
      SUBDIR += pstree
