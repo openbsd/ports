@@ -1,0 +1,6 @@
+perfd automatically adjusts the sysctl(3) hw.setperf value depending
+on current processor usage. This allows laptop users to conserve
+battery life whilst the machine is idling, but to have good
+performance when performing CPU-intensive tasks. It also allows
+desktop and server users to keep their machine running at low
+temperatures when not performing CPU-intensive tasks.
