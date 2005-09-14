@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-objc,v 1.1.1.1 2005/01/03 15:21:30 espie Exp $
+@comment $OpenBSD: PLIST-objc,v 1.2 2005/09/14 10:41:02 espie Exp $
 @conflict egcs-*-core
+@pkgpath lang/egcs/stable,-objc
 lib/gcc-lib/${CONFIG}/${V}/cc1obj
 lib/gcc-lib/${CONFIG}/${V}/include/objc/
 lib/gcc-lib/${CONFIG}/${V}/include/objc/NXConstStr.h

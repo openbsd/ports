@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-g77,v 1.1.1.1 2005/01/03 15:21:30 espie Exp $
+@comment $OpenBSD: PLIST-g77,v 1.2 2005/09/14 10:41:02 espie Exp $
 @conflict egcs-*-core
+@pkgpath lang/egcs/stable,-g77
 bin/eg77
 @info info/g77.info
 lib/gcc-lib/${CONFIG}/${V}/f771
