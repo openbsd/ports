@@ -1,7 +1,7 @@
-$OpenBSD: patch-php_ini-dist,v 1.2 2004/12/20 20:59:44 robert Exp $
---- php.ini-dist.orig	Sun Nov 28 14:22:11 2004
-+++ php.ini-dist	Sat Dec 18 19:30:46 2004
-@@ -430,10 +430,7 @@
+$OpenBSD: patch-php_ini-dist,v 1.3 2005/09/14 15:44:19 robert Exp $
+--- php.ini-dist.orig	Thu May  5 14:33:56 2005
++++ php.ini-dist	Wed Sep 14 16:43:30 2005
+@@ -437,10 +437,7 @@
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ; UNIX: "/path1:/path2"
@@ -13,7 +13,7 @@ $OpenBSD: patch-php_ini-dist,v 1.2 2004/12/20 20:59:44 robert Exp $
  
  ; The root of the PHP pages, used only if nonempty.
  ; if PHP was not compiled with FORCE_REDIRECT, you SHOULD set doc_root
-@@ -447,7 +444,7 @@
+@@ -454,7 +451,7 @@
  user_dir =
  
  ; Directory in which the loadable extensions (modules) reside.
@@ -22,7 +22,7 @@ $OpenBSD: patch-php_ini-dist,v 1.2 2004/12/20 20:59:44 robert Exp $
  
  ; Whether or not to enable the dl() function.  The dl() function does NOT work
  ; properly in multithreaded servers, such as IIS or Zeus, and is automatically
-@@ -505,7 +502,7 @@
+@@ -515,7 +512,7 @@
  ;;;;;;;;;;;;;;;;;;
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
@@ -31,7 +31,7 @@ $OpenBSD: patch-php_ini-dist,v 1.2 2004/12/20 20:59:44 robert Exp $
  
  ; Define the anonymous ftp password (your email address)
  ;from="john@doe.com"
-@@ -524,74 +521,6 @@
+@@ -534,74 +531,6 @@
  ; auto_detect_line_endings = Off
  
  
@@ -61,6 +61,7 @@ $OpenBSD: patch-php_ini-dist,v 1.2 2004/12/20 20:59:44 robert Exp $
 -;Note that ODBC support is built in, so no dll is needed for it.
 -;
 -
+-;extension=php_mbstring.dll
 -;extension=php_bz2.dll
 -;extension=php_cpdf.dll
 -;extension=php_curl.dll
@@ -78,7 +79,6 @@ $OpenBSD: patch-php_ini-dist,v 1.2 2004/12/20 20:59:44 robert Exp $
 -;extension=php_interbase.dll
 -;extension=php_java.dll
 -;extension=php_ldap.dll
--;extension=php_mbstring.dll
 -;extension=php_mcrypt.dll
 -;extension=php_mhash.dll
 -;extension=php_mime_magic.dll
@@ -106,7 +106,7 @@ $OpenBSD: patch-php_ini-dist,v 1.2 2004/12/20 20:59:44 robert Exp $
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
  ;;;;;;;;;;;;;;;;;;;
-@@ -603,14 +532,6 @@
+@@ -613,13 +542,6 @@
  define_syslog_variables  = Off
  
  [mail function]
@@ -117,18 +117,16 @@ $OpenBSD: patch-php_ini-dist,v 1.2 2004/12/20 20:59:44 robert Exp $
 -; For Win32 only.
 -;sendmail_from = me@example.com
 -
--; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
+ ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ;sendmail_path =
  
- ; Force the addition of the specified parameters to be passed as extra parameters
-@@ -1191,6 +1112,54 @@
+@@ -1197,6 +1119,53 @@
  ; instead of original one.
  soap.wsdl_cache_ttl=86400
  
 -; Local Variables:
 -; tab-width: 4
 -; End:
-+
 +;;;;;;;;;;;;;;;;;;;;;;
 +; Dynamic Extensions ;
 +;;;;;;;;;;;;;;;;;;;;;;
