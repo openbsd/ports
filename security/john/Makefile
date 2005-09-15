@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2005/09/09 06:10:29 marcm Exp $
+# $OpenBSD: Makefile,v 1.33 2005/09/15 22:52:01 aanriot Exp $
 
 COMMENT=		"extremely fast password cracker"
 
-DISTNAME=		john-1.6.38
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		john-1.6.39
 CATEGORIES=		security
 
 HOMEPAGE=		http://www.openwall.com/john/

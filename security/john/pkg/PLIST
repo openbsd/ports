@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/09/09 06:10:29 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/09/15 22:52:01 aanriot Exp $
 bin/john
 bin/mailer
 bin/unafs
@@ -12,7 +12,7 @@ share/doc/john/EXAMPLES
 share/doc/john/EXTERNAL
 share/doc/john/FAQ
 share/doc/john/INSTALL
-share/doc/john/LICENSING
+share/doc/john/LICENSE
 share/doc/john/MODES
 @comment share/doc/john/NEWS
 share/doc/john/OPTIONS
