@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2005/09/14 16:02:35 jcs Exp $
+# $OpenBSD: Makefile,v 1.96 2005/09/15 16:18:14 jolan Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -16,10 +16,12 @@
      SUBDIR += dmidecode
      SUBDIR += dvd+rw-tools
      SUBDIR += e2fsprogs
+     SUBDIR += expiretable
      SUBDIR += findlib
      SUBDIR += freedt
      SUBDIR += ggrep
      SUBDIR += gkrellm
+     SUBDIR += gpioflicker
      SUBDIR += hot-babe
      SUBDIR += idled
      SUBDIR += knutclient
