@@ -1,0 +1,4 @@
+gpioflicker changes the state of a GPIO pin on startup, on reception of
+a signal, or whenever a packet arrives on a network interface.  A
+popular application is to flash GPIO-connected LEDs on firewall systems
+when packets are blocked.
