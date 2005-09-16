@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/09/10 17:37:40 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2005/09/16 09:51:27 espie Exp $
 
 COMMENT=	"nagios base plugins"
 COMMENT-fping=	"fping plugin"
@@ -12,7 +12,7 @@ COMMENT-snmp=	"plugins using snmp"
 
 V=		1.4.1
 DISTNAME=	nagios-plugins-${V}
-PKGNAME=	nagios-plugins-${V}p0
+PKGNAME=	nagios-plugins-${V}p1
 PKGNAME-fping=	nagios-plugins-fping-${V}p0
 PKGNAME-game=	nagios-plugins-game-${V}p0
 PKGNAME-ldap=	nagios-plugins-ldap-${V}p0

@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/10/03 03:13:10 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2005/09/16 09:51:28 espie Exp $
+@pkgpath sysutils/nut,no_cgi
+@pkgpath sysutils/nut,snmp
+@pkgpath sysutils/nut,no_cgi,snmp
 @conflict upsd-*
 @newuser ${NUT_USER}:${NUT_ID}:::UPS User:/var/empty:/sbin/nologin
 bin/apcsmart

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2005/08/16 18:22:26 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2005/09/16 09:51:26 espie Exp $
 
 COMMENT=	"gtk+2 media player based on XMMS"
 COMMENT-mp3=	"MP3 input plugin for bmp"
 COMMENT-vorbis=	"Ogg Vorbis input plugin for bmp"
 V=		0.9.7
 DISTNAME=	bmp-$V
-PKGNAME=	bmp-$Vp2
+PKGNAME=	bmp-$Vp3
 PKGNAME-mp3=	bmp-mp3-$Vp3
 PKGNAME-vorbis=	bmp-vorbis-$Vp2
 CATEGORIES=	audio

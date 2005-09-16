@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/25 17:27:54 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/09/16 09:51:27 espie Exp $
+@pkgpath devel/jdk/1.5,native_bootstrap
 @option no-default-conflict
 @conflict jdk->=1.5,<1.6
 ${JDKHOME}/

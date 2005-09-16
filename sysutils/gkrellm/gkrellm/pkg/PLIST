@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/09/06 20:11:28 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/09/16 09:51:28 espie Exp $
+@pkgpath sysutils/gkrellm/gkrellm,no_client
 include/gkrellm2/
 include/gkrellm2/gkrellmd.h
 @man man/man1/gkrellmd.1

@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/19 07:59:24 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/09/16 09:51:26 espie Exp $
+@pkgpath audio/bmp,no_mp3
+@pkgpath audio/bmp,no_vorbis
+@pkgpath audio/bmp,no_mp3,no_vorbis
 bin/beep-media-player
 include/bmp/
 include/bmp/beepctrl.h

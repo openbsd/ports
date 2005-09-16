@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/10/22 16:37:08 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/09/16 09:51:26 espie Exp $
+@pkgpath audio/libao,no_arts
+@pkgpath audio/libao,no_arts,no_esd
+@pkgpath audio/libao,no_esd
 include/ao/
 include/ao/ao.h
 include/ao/os_types.h

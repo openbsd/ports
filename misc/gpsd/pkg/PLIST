@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/05 00:34:59 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/09/16 09:51:27 espie Exp $
+@pkgpath misc/gpsd,no_motif
 @newuser _gpsd:551:dialer::GPS server:/nonexistent:/sbin/nologin
 %%SHARED%%
 bin/cgps

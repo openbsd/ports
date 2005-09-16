@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2005/09/05 19:43:41 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2005/09/16 09:51:27 espie Exp $
 
 COMMENT=		"service daemon that monitors one or more GPSes"
 COMMENT-motif=		"motif-based test apps using gpsd"
 
 VERSION=		2.29
 DISTNAME=		gpsd-${VERSION}
-PKGNAME=		gpsd-${VERSION}p0
+PKGNAME=		gpsd-${VERSION}p1
 PKGNAME-motif=		gpsd-motif-${VERSION}p0
 CATEGORIES=		misc
 

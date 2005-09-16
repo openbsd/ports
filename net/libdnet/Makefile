@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2005/06/16 05:14:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2005/09/16 09:51:27 espie Exp $
 
 COMMENT=	"portable low-level networking library"
 COMMENT-python= "python interface to libdnet"
 
 DISTNAME=	libdnet-1.10
+PKGNAME=	${DISTNAME}p0
 PKGNAME-python= ${DISTNAME:S/^libdnet/py-libdnet/}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libdnet/}

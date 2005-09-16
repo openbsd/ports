@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2005/02/10 23:44:03 espie Exp $ 
+# $OpenBSD: Makefile,v 1.46 2005/09/16 09:51:27 espie Exp $ 
 
 COMMENT=	"imap server for maildir format mailboxes"
 COMMENT-pop3=	"pop3 server for maildir format mailboxes"
@@ -10,7 +10,7 @@ MAINTAINER=	David Gwynne <loki@animata.net>
 
 COURIERVER=	3.0.5
 DISTNAME=	courier-imap-${COURIERVER}
-FULLPKGNAME=	courier-imap-${COURIERVER}p2
+FULLPKGNAME=	courier-imap-${COURIERVER}p3
 FULLPKGNAME-pop3= courier-pop3-${COURIERVER}p0
 FULLPKGNAME-ldap= courier-ldap-${COURIERVER}p0
 FULLPKGNAME-mysql= courier-mysql-${COURIERVER}p0

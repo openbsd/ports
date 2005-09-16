@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2005/09/11 05:12:41 marcm Exp $
+# $OpenBSD: Makefile,v 1.8 2005/09/16 09:51:26 espie Exp $
 
 COMMENT=		"GStreamer Streaming-media framework plug-ins."
 
 VERSION=		0.8.8
 PATCHLEVEL=		p1
 DISTNAME=		gst-plugins-${VERSION}
-PKGNAME=		gstreamer-plugins-${VERSION}${PATCHLEVEL}
+PKGNAME=		gstreamer-plugins-${VERSION}p2
 CATEGORIES=		devel
 
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>

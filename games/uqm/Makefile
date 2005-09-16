@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2005/06/23 00:50:17 jolan Exp $
+# $OpenBSD: Makefile,v 1.15 2005/09/16 09:51:27 espie Exp $
 
 # 64-bit issues, unaligned memory access
 ONLY_FOR_ARCHS=	arm i386 powerpc
@@ -24,7 +24,7 @@ DISTFILES=		${PDIST} ${CDIST}
 SUPDISTFILES=		${MDIST} ${VDIST} ${RM1DIST} ${RM2DIST} ${RM3DIST}
 DIST_SUBDIR=		uqm
 CATEGORIES=		games x11
-PKGNAME=		uqm-${VER}
+PKGNAME=		uqm-${VER}p0
 PKGNAME-remix1=		uqm-remix1-${VER}
 PKGNAME-remix2=		uqm-remix2-${VER}
 PKGNAME-remix3=		uqm-remix3-${VER}

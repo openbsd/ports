@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2005/09/10 18:23:00 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2005/09/16 09:51:28 espie Exp $
 
-FULLPKGNAME=	php5-extensions-${V}
+FULLPKGNAME=	php5-extensions-${V}p0
 COMMENT=	"informational package about PHP5 extensions"
 
 MULTI_PACKAGES=
@@ -117,7 +117,7 @@ GD_WANTLIB+=		X11 Xpm
 .  endif
 . else
 CONFIGURE_ARGS+=       --without-xpm-dir
-FULLPKGNAME-gd=		php5-gd-${V}p1-no_x11
+FULLPKGNAME-gd=		php5-gd-${V}p2-no_x11
 . endif
 .endif
 
@@ -143,7 +143,7 @@ CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 			--with-kerberos=/usr --with-imap-ssl
 IMAP_DEPENDS=		c-client.3::mail/c-client
 IMAP_WANTLIB=		gssapi crypto krb5 ssl des
-FULLPKGNAME-imap=	php5-imap-${V}p0
+FULLPKGNAME-imap=	php5-imap-${V}p1
 .endif
 
 # ldap
@@ -252,7 +252,7 @@ MULTI_PACKAGES+=	-soap
 COMMENT-soap=		"SOAP functions for php5"
 CONFIGURE_ARGS+=	--enable-soap=shared
 SOAP_WANTLIB=		xml2 z iconv
-FULLPKGNAME-soap=	php5-soap-${V}p0
+FULLPKGNAME-soap=	php5-soap-${V}p1
 .endif
 
 # snmp
@@ -311,12 +311,12 @@ COMMENT-xsl=		"XSL functions for php5"
 CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 XSL_DEPENDS=		xslt.3,exslt::textproc/libxslt
 XSL_WANTLIB=		xml2 z iconv
-FULLPKGNAME-xsl=	php5-xsl-${V}p0
+FULLPKGNAME-xsl=	php5-xsl-${V}p1
 .endif
 
 .for i in ${MULTI_PACKAGES}
 .if !defined(FULLPKGNAME${i})
-FULLPKGNAME${i}=	php5${i}-${V}
+FULLPKGNAME${i}=	php5${i}-${V}p0
 .endif
 .endfor
 

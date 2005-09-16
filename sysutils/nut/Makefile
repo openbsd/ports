@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2005/06/03 19:46:43 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.17 2005/09/16 09:51:28 espie Exp $
 
 COMMENT=		"UPS monitoring program supporting many brands"
 COMMENT-cgi=		"CGIs for monitoring Nut-based UPSs"
@@ -6,6 +6,7 @@ COMMENT-snmp=		"driver for monitoring UPSs via SNMP"
 
 VERSION=		2.0.0
 DISTNAME=		nut-${VERSION}
+PKGNAME=		${DISTNAME}p0
 PKGNAME-cgi=		nut-cgi-${VERSION}
 PKGNAME-snmp=		nut-snmp-${VERSION}
 CATEGORIES=		sysutils

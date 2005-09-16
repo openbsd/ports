@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2005/01/23 10:30:03 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/09/16 09:51:26 espie Exp $
 
 REVISION=	3
 DBLIBDIR=	lib/db
 VERSION=	${REVISION}.1.17
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 
 CONFIGURE_STYLE=gnu dest
 
