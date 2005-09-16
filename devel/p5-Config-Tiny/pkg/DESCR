@@ -1,0 +1,3 @@
+Config::Tiny is a perl class to read and write .ini style configuration
+files with as little code as possible, reducing load time and memory
+overhead.
