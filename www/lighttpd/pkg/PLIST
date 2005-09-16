@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/07/16 16:54:14 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/09/16 16:31:04 brad Exp $
 bin/spawn-fcgi
 lib/lighttpd/
 @comment lib/lighttpd/mod_access.la
@@ -15,12 +15,16 @@ lib/lighttpd/mod_cgi.so
 lib/lighttpd/mod_cml.so
 @comment lib/lighttpd/mod_compress.la
 lib/lighttpd/mod_compress.so
+@comment lib/lighttpd/mod_dirlisting.la
+lib/lighttpd/mod_dirlisting.so
 @comment lib/lighttpd/mod_evhost.la
 lib/lighttpd/mod_evhost.so
 @comment lib/lighttpd/mod_expire.la
 lib/lighttpd/mod_expire.so
 @comment lib/lighttpd/mod_fastcgi.la
 lib/lighttpd/mod_fastcgi.so
+@comment lib/lighttpd/mod_indexfile.la
+lib/lighttpd/mod_indexfile.so
 @comment lib/lighttpd/mod_mysql_vhost.la
 lib/lighttpd/mod_mysql_vhost.so
 @comment lib/lighttpd/mod_proxy.la
@@ -41,6 +45,8 @@ lib/lighttpd/mod_setenv.so
 lib/lighttpd/mod_simple_vhost.so
 @comment lib/lighttpd/mod_ssi.la
 lib/lighttpd/mod_ssi.so
+@comment lib/lighttpd/mod_staticfile.la
+lib/lighttpd/mod_staticfile.so
 @comment lib/lighttpd/mod_status.la
 lib/lighttpd/mod_status.so
 @comment lib/lighttpd/mod_trigger_b4_dl.la
@@ -49,6 +55,8 @@ lib/lighttpd/mod_trigger_b4_dl.so
 lib/lighttpd/mod_userdir.so
 @comment lib/lighttpd/mod_usertrack.la
 lib/lighttpd/mod_usertrack.so
+@comment lib/lighttpd/mod_webdav.la
+lib/lighttpd/mod_webdav.so
 @man man/man1/lighttpd.1
 @man man/man1/spawn-fcgi.1
 sbin/lighttpd
