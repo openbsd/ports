@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.51 2005/09/12 14:34:57 krw Exp $
+# $OpenBSD: Makefile.inc,v 1.52 2005/09/16 01:06:52 brad Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -68,9 +68,6 @@ LIB_DEPENDS+=	pq.3:postgresql-client-*:databases/postgresql
 MAKE_CCARGS+=	-I${LOCALBASE}/include/postgresql -DHAS_PGSQL
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpq
 .endif
-
-post-patch:
-	@find ${WRKSRC} -type f -name '*.bak.orig' -print | xargs -r rm
 
 do-configure:
 	@cd ${WRKSRC}; ${MAKE_PROGRAM} makefiles \
