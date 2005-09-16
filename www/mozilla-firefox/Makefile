@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2005/09/08 12:48:39 kurt Exp $
+# $OpenBSD: Makefile,v 1.34 2005/09/16 15:54:53 david Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -6,7 +6,7 @@ COMMENT=	"redesign of Mozilla's browser component"
 
 VER=		1.0.6
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}p2
+PKGNAME=	mozilla-firefox-${VER}p3
 SO_VERSION=	6.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -121,6 +121,7 @@ do-install:
 	ln -f ${MOZ}/firefox-bin ${MOZ}/mozilla-firefox-bin
 
 	${INSTALL_DATA_DIR} ${MOZ}/extensions
+	${INSTALL_DATA} ${FILESDIR}/bug307259.js ${MOZ}/defaults/pref/
 	${INSTALL_DATA} ${FILESDIR}/Extensions.rdf ${MOZ}/extensions/
 	${INSTALL_DATA_DIR} ${MOZ}/extensions/${MAGIC}
 	${INSTALL_DATA} ${MOZ}/defaults/profile/extensions/installed-extensions.txt ${MOZ}/extensions/installed-extensions-processed.txt
