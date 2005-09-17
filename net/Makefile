@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.385 2005/07/30 15:46:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.386 2005/09/17 12:22:19 bernd Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -61,6 +61,7 @@
      SUBDIR += firewalk
      SUBDIR += flow-tools
      SUBDIR += flowd
+     SUBDIR += fmirror
      SUBDIR += fping
      SUBDIR += ftpcopy
      SUBDIR += ftpsesame
