@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2005/08/10 00:25:16 jolan Exp $
+# $OpenBSD: Makefile,v 1.41 2005/09/17 00:38:15 pvalchev Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
 
-VERSION=	1.2.8
+VERSION=	1.2.9
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p0
+PKGNAME=	${DISTNAME:L}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -28,6 +28,7 @@ FLAVORS=	sun esd arts aa caca no_x11
 FLAVOR?=	sun
 
 AUTOCONF_VERSION=	2.59
+AUTOMAKE_VERSION=	1.9
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test
@@ -101,6 +102,6 @@ WANTLIB+=	X11 Xext
 
 NO_REGRESS=	Yes
 
-MAKE_FLAGS=	libSDL_la_LDFLAGS="-version-info 4:0:0"
+MAKE_FLAGS=	libSDL_la_LDFLAGS="-version-info 5:0:0"
 
 .include <bsd.port.mk>
