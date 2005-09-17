@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/17 12:19:41 bernd Exp $
+bin/fmirror
+@man man/man1/fmirror.1
+share/examples/fmirror/
+share/examples/fmirror/generic.conf
+share/examples/fmirror/redhat.conf
+share/examples/fmirror/sample.conf
