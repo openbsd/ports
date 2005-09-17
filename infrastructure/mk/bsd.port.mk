@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.708 2005/09/16 09:51:25 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.709 2005/09/17 14:47:40 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -583,9 +583,9 @@ PKGNAMES += ${FULLPKGNAME${_s}}
 .endfor
 
 .if empty(SUBPACKAGE)
-FULLPKGPATH=${PKGPATH}${_FLAVOR_EXT:S/-/,/g}
+FULLPKGPATH=${PKGPATH}${FLAVOR_EXT:S/-/,/g}
 .else
-FULLPKGPATH=${PKGPATH},${SUBPACKAGE}${_FLAVOR_EXT:S/-/,/g}
+FULLPKGPATH=${PKGPATH},${SUBPACKAGE}${FLAVOR_EXT:S/-/,/g}
 .endif
 
 # A few aliases for *-install targets
