@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.709 2005/09/17 14:47:40 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.710 2005/09/18 12:20:00 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1197,10 +1197,13 @@ README_NAME?=	${TEMPLATES}/README.port
 REORDER_DEPENDENCIES?=
 
 # Lock infrastructure:
-# nothing happens unless LOCKDIR, LOCK_CMD and UNLOCK_CMD are defined
+# nothing happens unless LOCKDIR is defined to a non-empty value
 
+LOCKDIR?=
+LOCK_CMD?=	perl ${PORTSDIR}/infrastructure/build/dolock
+UNLOCK_CMD?=rm -f
 LOCK_VERBOSE?=No
-.if defined(LOCKDIR) && defined(LOCK_CMD) && defined(UNLOCK_CMD)
+.if !empty(LOCKDIR)
 .  if ${LOCK_VERBOSE:L} == "yes"
 _LOCK=echo "Locking $$lock from $@"; ${LOCK_CMD} ${LOCKDIR}/$$lock.lock
 _UNLOCK=echo "Unlocking $$lock from $@"; ${UNLOCK_CMD} ${LOCKDIR}/$$lock.lock
