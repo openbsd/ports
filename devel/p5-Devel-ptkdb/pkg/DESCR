@@ -1,0 +1,4 @@
+ptkdb is a debugger for Perl with a Tk GUI. Features include push button
+controls, restart, expression evaluation window, conditional
+breakpoints, and hot variables. This is not a GUI wrapper on the
+existing debugger, but a new debugger built from the ground up.
