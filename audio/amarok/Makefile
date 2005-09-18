@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/09/07 01:27:55 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2005/09/18 12:21:41 espie Exp $
 
 CATEGORIES=	audio x11 x11/kde
 COMMENT=	'music player for kde'
@@ -31,10 +31,8 @@ WANTLIB+=	gtk gmodule gdk glib
 SHARED_ONLY=Yes
 MODULES=	x11/kde
 MODKDE_LIBTOOL=		Yes
-MODKDE_VERSION=		
+MODKDE_VERSION=		3.5
 CONFIGURE_STYLE=	autoconf
-AUTOCONF=		/bin/sh ${WRKDIST}/admin/cvs.sh configure
-LIB_DEPENDS+=		lib/qt3/qt-mt.3.33::x11/qt3,mt
 AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
 USE_GMAKE?=		Yes
