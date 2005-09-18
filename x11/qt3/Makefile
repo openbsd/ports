@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2005/09/16 09:51:28 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2005/09/18 00:52:40 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -167,13 +167,13 @@ LIBRARIES=qt-mt.so.3.34 qui.so.1.0 \
 .if !${FLAVOR:L:Mdebug}
 post-configure:
 	@cd ${WRKSRC} && cp -R examples examples-src
-	@find ${WRKSRC}/examples-src -name '*.orig' |xargs rm
-	@find ${WRKSRC}/examples-src -name '.moc' |xargs rm -r
-	@find ${WRKSRC}/examples-src -name '.obj' |xargs rm -r
+	@find ${WRKSRC}/examples-src -name '*.orig' |xargs rm -f
+	@find ${WRKSRC}/examples-src -name '.moc' |xargs rm -rf
+	@find ${WRKSRC}/examples-src -name '.obj' |xargs rm -rf
 	@cd ${WRKSRC} && cp -R tutorial tutorial-src
-	@find ${WRKSRC}/tutorial-src -name '*.orig' |xargs rm
-	@find ${WRKSRC}/tutorial-src -name '.moc' |xargs rm -r
-	@find ${WRKSRC}/tutorial-src -name '.obj' |xargs rm -r
+	@find ${WRKSRC}/tutorial-src -name '*.orig' |xargs rm -f
+	@find ${WRKSRC}/tutorial-src -name '.moc' |xargs rm -rf
+	@find ${WRKSRC}/tutorial-src -name '.obj' |xargs rm -rf
 
 pre-install:
 	${INSTALL_DATA_DIR} ${QT_EXAMPLES}
