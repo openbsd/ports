@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2005/09/18 00:52:40 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2005/09/18 09:08:42 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -8,11 +8,11 @@ COMMENT-postgresql=	"PostgresSQL plugin for qt3"
 COMMENT-mysql=		"MySQL plugin for qt3"
 
 PKGNAME=		qt3-${VERSION}
-PKGNAME-mysql=		qt3-mysql-${VERSION}
-PKGNAME-postgresql=	qt3-postgresql-${VERSION}
-PKGNAME-examples=	qt3-examples-${VERSION}
+PKGNAME-mysql=		qt3-mysql-${VERSION}p0
+PKGNAME-postgresql=	qt3-postgresql-${VERSION}p0
+PKGNAME-examples=	qt3-examples-${VERSION}p0
 FULLPKGNAME=		qt3-mt-${VERSION}${PKGDEBUG}p4
-FULLPKGNAME-html=	qt3-html-${VERSION}
+FULLPKGNAME-html=	qt3-html-${VERSION}p0
 
 VERSION=	3.4
 DISTNAME=	qt-x11-free-3.${VERSION}
