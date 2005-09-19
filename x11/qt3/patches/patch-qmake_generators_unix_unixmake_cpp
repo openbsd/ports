@@ -1,7 +1,7 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake_cpp,v 1.1 2005/05/18 14:24:32 espie Exp $
---- qmake/generators/unix/unixmake.cpp.orig	Fri Jan 21 18:16:26 2005
-+++ qmake/generators/unix/unixmake.cpp	Wed May 18 16:21:46 2005
-@@ -802,7 +802,7 @@ UnixMakefileGenerator::defaultInstall(co
+$OpenBSD: patch-qmake_generators_unix_unixmake_cpp,v 1.2 2005/09/19 10:24:57 espie Exp $
+--- qmake/generators/unix/unixmake.cpp.orig	Fri Sep  2 14:43:19 2005
++++ qmake/generators/unix/unixmake.cpp	Sun Sep 18 15:49:44 2005
+@@ -803,7 +803,7 @@ UnixMakefileGenerator::defaultInstall(co
  		uninst.append("\n\t");
  	    uninst.append("-$(DEL_FILE) \"" + dst_pc + "\"");
  	}

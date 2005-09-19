@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2005/02/27 16:03:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.24 2005/09/19 10:24:57 espie Exp $
 @conflict qt3-*
 @conflict qt3-base-*
 %%SHARED%%
@@ -1318,6 +1318,9 @@ lib/qt3/mkspecs/dgux-g++/qplatformdefs.h
 lib/qt3/mkspecs/freebsd-g++/
 lib/qt3/mkspecs/freebsd-g++/qmake.conf
 lib/qt3/mkspecs/freebsd-g++/qplatformdefs.h
+lib/qt3/mkspecs/freebsd-g++34/
+lib/qt3/mkspecs/freebsd-g++34/qmake.conf
+lib/qt3/mkspecs/freebsd-g++34/qplatformdefs.h
 lib/qt3/mkspecs/freebsd-icc/
 lib/qt3/mkspecs/freebsd-icc/qmake.conf
 lib/qt3/mkspecs/freebsd-icc/qplatformdefs.h
@@ -1470,6 +1473,9 @@ lib/qt3/mkspecs/win32-msvc/qplatformdefs.h
 lib/qt3/mkspecs/win32-msvc/win32app.dsp
 lib/qt3/mkspecs/win32-msvc/win32dll.dsp
 lib/qt3/mkspecs/win32-msvc/win32lib.dsp
+lib/qt3/mkspecs/win32-msvc2005/
+lib/qt3/mkspecs/win32-msvc2005/qmake.conf
+lib/qt3/mkspecs/win32-msvc2005/qplatformdefs.h
 lib/qt3/mkspecs/win32-watcom/
 lib/qt3/mkspecs/win32-watcom/qmake.conf
 lib/qt3/plugins/
@@ -1481,4 +1487,4 @@ share/doc/qt3/FAQ
 share/doc/qt3/LICENSE.GPL
 share/doc/qt3/README
 share/doc/qt3/README-QT.TXT
-share/doc/qt3/changes-3.3.4
+share/doc/qt3/changes-3.3.5

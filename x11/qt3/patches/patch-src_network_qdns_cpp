@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_network_qdns_cpp,v 1.1 2005/08/31 22:01:09 espie Exp $
---- src/network/qdns.cpp.orig	Tue Aug 30 22:22:45 2005
-+++ src/network/qdns.cpp	Tue Aug 30 22:23:20 2005
-@@ -2559,7 +2559,7 @@ void QDns::doResInit()
+$OpenBSD: patch-src_network_qdns_cpp,v 1.2 2005/09/19 10:24:57 espie Exp $
+--- src/network/qdns.cpp.orig	Fri Sep  2 14:42:59 2005
++++ src/network/qdns.cpp	Sun Sep 18 15:49:44 2005
+@@ -2565,7 +2565,7 @@ void QDns::doResInit()
  
  	    if ( type == "nameserver" ) {
  		QHostAddress *address = new QHostAddress();

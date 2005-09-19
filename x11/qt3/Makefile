@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2005/09/18 09:08:42 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2005/09/19 10:24:56 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -8,13 +8,13 @@ COMMENT-postgresql=	"PostgresSQL plugin for qt3"
 COMMENT-mysql=		"MySQL plugin for qt3"
 
 PKGNAME=		qt3-${VERSION}
-PKGNAME-mysql=		qt3-mysql-${VERSION}p0
-PKGNAME-postgresql=	qt3-postgresql-${VERSION}p0
-PKGNAME-examples=	qt3-examples-${VERSION}p0
-FULLPKGNAME=		qt3-mt-${VERSION}${PKGDEBUG}p4
-FULLPKGNAME-html=	qt3-html-${VERSION}p0
+PKGNAME-mysql=		qt3-mysql-${VERSION}
+PKGNAME-postgresql=	qt3-postgresql-${VERSION}
+PKGNAME-examples=	qt3-examples-${VERSION}
+FULLPKGNAME=		qt3-mt-${VERSION}${PKGDEBUG}
+FULLPKGNAME-html=	qt3-html-${VERSION}
 
-VERSION=	3.4
+VERSION=	3.5
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
@@ -161,7 +161,7 @@ NO_REGRESS=	Yes
 PROGRAMS3=designer findtr moc qt20fix qtrename140 uic
 PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig 
 
-LIBRARIES=qt-mt.so.3.34 qui.so.1.0 \
+LIBRARIES=qt-mt.so.3.35 qui.so.1.0 \
 	editor.a designercore.a qassistantclient.a
 
 .if !${FLAVOR:L:Mdebug}
