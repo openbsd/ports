@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/07/09 06:14:05 djm Exp $
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
+@comment $OpenBSD: PLIST,v 1.6 2005/09/19 01:42:12 djm Exp $
 lib/python${MODPY_VERSION}/site-packages/matplotlib/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/__init__.pyc
@@ -11,7 +9,6 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/_image.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_image.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_mathtext_data.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_mathtext_data.pyc
-lib/python${MODPY_VERSION}/site-packages/matplotlib/_nc_backend_gdk.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_nc_cntr.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_nc_image.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/_nc_transforms.so
@@ -36,12 +33,15 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/__init__.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_gtkagg.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_nc_backend_agg.so
+lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/_nc_backend_gdk.so
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_agg.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_agg.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_agg2.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_agg2.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_cairo.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_cairo.pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_cocoaagg.py
+lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_cocoaagg.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_fltkagg.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_fltkagg.pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/backends/backend_gd.py
@@ -253,6 +253,7 @@ share/examples/py-matplotlib/README
 share/examples/py-matplotlib/__init__.py
 share/examples/py-matplotlib/accented_text.py
 share/examples/py-matplotlib/agg_oo.py
+share/examples/py-matplotlib/agg_resize.py
 share/examples/py-matplotlib/agg_test.py
 share/examples/py-matplotlib/alignment_test.py
 share/examples/py-matplotlib/anim.py
@@ -303,6 +304,7 @@ share/examples/py-matplotlib/dynamic_demo.py
 share/examples/py-matplotlib/dynamic_demo_wx.py
 share/examples/py-matplotlib/dynamic_image_gtkagg.py
 share/examples/py-matplotlib/dynamic_image_wxagg.py
+share/examples/py-matplotlib/dynamic_image_wxagg2.py
 share/examples/py-matplotlib/embedding_in_gtk.py
 share/examples/py-matplotlib/embedding_in_gtk2.py
 share/examples/py-matplotlib/embedding_in_qt.py
@@ -418,7 +420,6 @@ share/examples/py-matplotlib/widgets/sliders.py
 share/examples/py-matplotlib/wxcursor_demo.py
 share/examples/py-matplotlib/zorder_demo.py
 share/py-matplotlib/
-share/py-matplotlib/.matplotlibrc
 share/py-matplotlib/Vera.ttf
 share/py-matplotlib/VeraBI.ttf
 share/py-matplotlib/VeraBd.ttf
@@ -460,6 +461,7 @@ share/py-matplotlib/home.ppm
 share/py-matplotlib/home.svg
 share/py-matplotlib/home.xpm
 share/py-matplotlib/matplotlib.svg
+share/py-matplotlib/matplotlibrc
 share/py-matplotlib/move.png
 share/py-matplotlib/move.ppm
 share/py-matplotlib/move.svg

@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.5 2005/07/09 06:14:05 djm Exp $
---- setup.py.orig	Thu Jun 16 01:21:27 2005
-+++ setup.py	Thu Jun 30 20:55:58 2005
+$OpenBSD: patch-setup_py,v 1.6 2005/09/19 01:42:12 djm Exp $
+--- setup.py.orig	Wed Jul  6 23:49:36 2005
++++ setup.py	Mon Sep 19 10:46:46 2005
 @@ -35,8 +35,8 @@ BUILD_GTK          = 'auto'
  # build TK GUI with Agg renderer ; requires Tkinter Python extension
  # and Tk includes
@@ -14,7 +14,7 @@ $OpenBSD: patch-setup_py,v 1.5 2005/07/09 06:14:05 djm Exp $
  #BUILD_WINDOWING        = 0
 @@ -84,7 +84,7 @@ data.extend(glob.glob('images/*.png'))
  data.extend(glob.glob('images/*.ppm'))
- data.append('.matplotlibrc')
+ data.append('matplotlibrc')
  
 -data_files=[('share/matplotlib', data),]
 +data_files=[('share/py-matplotlib', data),]

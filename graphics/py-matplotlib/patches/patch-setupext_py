@@ -1,6 +1,6 @@
-$OpenBSD: patch-setupext_py,v 1.4 2005/07/09 06:14:05 djm Exp $
---- setupext.py.orig	Thu Jun  9 03:57:59 2005
-+++ setupext.py	Thu Jun 30 20:56:09 2005
+$OpenBSD: patch-setupext_py,v 1.5 2005/09/19 01:42:12 djm Exp $
+--- setupext.py.orig	Wed Jul  6 01:36:37 2005
++++ setupext.py	Mon Sep 19 10:46:46 2005
 @@ -34,6 +34,7 @@ WIN32
  import os
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-setupext_py,v 1.4 2005/07/09 06:14:05 djm Exp $
      'win32'  : ['win32_static',],
      'linux2' : ['/usr/local', '/usr',],
      'linux'  : ['/usr/local', '/usr',],
-@@ -94,6 +95,8 @@ def temp_copy(_from, _to):
+@@ -97,6 +98,8 @@ def temp_copy(_from, _to):
  def add_base_flags(module):
      incdirs = [os.path.join(p, 'include') for p in basedir[sys.platform]
                 if os.path.exists(p)]

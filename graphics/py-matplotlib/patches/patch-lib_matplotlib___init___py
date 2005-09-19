@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_matplotlib___init___py,v 1.4 2005/07/09 06:14:05 djm Exp $
---- lib/matplotlib/__init__.py.orig	Thu Jun 16 04:27:37 2005
-+++ lib/matplotlib/__init__.py	Thu Jun 30 20:55:58 2005
-@@ -285,21 +285,21 @@ def _get_data_path():
+$OpenBSD: patch-lib_matplotlib___init___py,v 1.5 2005/09/19 01:42:12 djm Exp $
+--- lib/matplotlib/__init__.py.orig	Sat Jul  9 00:10:19 2005
++++ lib/matplotlib/__init__.py	Mon Sep 19 10:46:46 2005
+@@ -342,21 +342,21 @@ def _get_data_path():
          path = os.environ['MATPLOTLIBDATA']
          if os.path.isdir(path): return path
  
