@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2002/06/14 17:43:51 fgsch Exp $
---- doc/Makefile.in.orig	Tue Nov  6 16:12:31 2001
-+++ doc/Makefile.in	Mon Jun 10 15:47:15 2002
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2005/09/19 16:18:36 bernd Exp $
+--- doc/Makefile.in.orig	Tue Nov  6 20:12:31 2001
++++ doc/Makefile.in	Fri Sep 16 10:11:50 2005
 @@ -60,7 +60,7 @@ srcdir_DOCFILES = PGP-Notes.txt applying
  topsrcdir_DOCFILES = COPYRIGHT GPL INSTALL ChangeLog	\
  	README NEWS TODO README.SECURITY README.SSL 
@@ -10,3 +10,14 @@ $OpenBSD: patch-doc_Makefile_in,v 1.1 2002/06/14 17:43:51 fgsch Exp $
  
  try-html: ../makedoc
  	test -f manual.html || $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
+@@ -155,8 +155,8 @@ update-doc:  ../makedoc stamp-doc-sgml s
+ 
+ muttrc.man stamp-doc-man: ../makedoc $(top_srcdir)/init.h muttrc.man.head muttrc.man.tail
+ 	$(MAKEDOC_CPP) $(top_srcdir)/init.h | ../makedoc -m | 	    \
+-		cat $(srcdir)/muttrc.man.head - $(srcdir)/muttrc.man.tail\
+-		> muttrc.man
++		cat $(srcdir)/muttrc.man.head - $(srcdir)/muttrc.man.tail | \
++		/usr/bin/tbl > muttrc.man
+ 	touch stamp-doc-man
+ 
+ manual.sgml stamp-doc-sgml: ../makedoc $(top_srcdir)/init.h manual.sgml.head manual.sgml.tail $(top_srcdir)/VERSION
