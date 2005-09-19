@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2005/03/22 22:02:59 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2005/09/19 13:35:17 jakob Exp $
 
 COMMENT=	syslogd replacement
 
-CATEGORIES=	sysutils
+CATEGORIES=	sysutil
 
-DISTNAME=	syslog-ng-1.6.5
-LIBOL=		libol-0.3.15
+DISTNAME=	syslog-ng-1.6.8
+LIBOL=		libol-0.3.16
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
@@ -25,7 +25,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c wrap 
+WANTLIB=		c
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-libol=${WRKDIR}/${LIBOL} \

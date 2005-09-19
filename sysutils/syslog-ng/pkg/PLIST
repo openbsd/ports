@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:39:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/09/19 13:35:17 jakob Exp $
 @man man/man5/syslog-ng.conf.5
 @man man/man8/syslog-ng.8
 sbin/syslog-ng
@@ -13,14 +13,16 @@ share/doc/syslog-ng/syslog-ng.html/msgroute.html
 share/doc/syslog-ng/syslog-ng.html/reference.html
 share/doc/syslog-ng/syslog-ng.html/tuning.html
 share/doc/syslog-ng/syslog-ng.html/x172.html
-share/doc/syslog-ng/syslog-ng.html/x359.html
-share/doc/syslog-ng/syslog-ng.html/x726.html
-share/doc/syslog-ng/syslog-ng.html/x766.html
-share/doc/syslog-ng/syslog-ng.html/x898.html
-share/doc/syslog-ng/syslog-ng.html/x904.html
+share/doc/syslog-ng/syslog-ng.html/x361.html
+share/doc/syslog-ng/syslog-ng.html/x728.html
+share/doc/syslog-ng/syslog-ng.html/x768.html
+share/doc/syslog-ng/syslog-ng.html/x900.html
+share/doc/syslog-ng/syslog-ng.html/x906.html
 share/doc/syslog-ng/syslog-ng.html/x97.html
 share/doc/syslog-ng/syslog-ng.ps
 share/doc/syslog-ng/syslog-ng.sgml
 share/doc/syslog-ng/syslog-ng.txt
 share/examples/syslog-ng/
+@sample ${SYSCONFDIR}/syslog-ng/
 share/examples/syslog-ng/syslog-ng.conf.sample
+@sample ${SYSCONFDIR}/syslog-ng/syslog-ng.conf
