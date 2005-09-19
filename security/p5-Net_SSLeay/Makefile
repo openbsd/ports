@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2005/01/27 03:27:04 kevlo Exp $
+# $OpenBSD: Makefile,v 1.19 2005/09/19 05:24:42 pvalchev Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -8,7 +8,6 @@ VERSION=	1.25
 DISTNAME=	Net_SSLeay.pm-${VERSION}
 PKGNAME=	p5-Net-SSLeay-${VERSION}
 CATEGORIES=	security perl5
-NOT_FOR_ARCHES=	${NO_SHARED_ARCHES}
 
 HOMEPAGE=	http://www.bacus.pt/Net_SSLeay/index.html
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/}

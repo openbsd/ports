@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2005/07/27 07:25:27 wilfried Exp $
+# $OpenBSD: Makefile,v 1.26 2005/09/19 05:24:42 pvalchev Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
 COMMENT=		'module to interface the DNS resolver'
 
 DISTNAME=		Net-DNS-0.53
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		net perl5
-NOT_FOR_ARCHES=		${NO_SHARED_ARCHES}
 
 HOMEPAGE=		http://www.net-dns.org/
 

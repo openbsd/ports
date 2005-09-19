@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.9 2004/12/16 00:31:24 alek Exp $
+#   $OpenBSD: Makefile,v 1.10 2005/09/19 05:24:42 pvalchev Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -8,7 +8,6 @@ DISTNAME=	Net-Pcap-0.04
 PKGNAME=	p5-Net-Pcap-0.04
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/}
-NOT_FOR_ARCHES=	${NO_SHARED_ARCHES}
 
 MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 
