@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.1.1.1 2005/07/04 11:10:14 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.2 2005/09/19 20:40:16 espie Exp $
 %%SHARED%%
 bin/qtdemo
 lib/qt4/bin/qtdemo
@@ -779,7 +779,7 @@ lib/qt4/examples/tools/qtdemo/displaywidget.cpp
 lib/qt4/examples/tools/qtdemo/displaywidget.h
 lib/qt4/examples/tools/qtdemo/examples.xml
 lib/qt4/examples/tools/qtdemo/images/
-lib/qt4/examples/tools/qtdemo/images/qt-logo.png
+lib/qt4/examples/tools/qtdemo/images/qt4-logo.png
 lib/qt4/examples/tools/qtdemo/images/trolltech-logo.png
 lib/qt4/examples/tools/qtdemo/launcher.cpp
 lib/qt4/examples/tools/qtdemo/launcher.h

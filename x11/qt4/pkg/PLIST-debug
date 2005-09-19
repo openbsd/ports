@@ -1,5 +1,12 @@
-@comment $OpenBSD: PLIST-debug,v 1.3 2005/07/05 17:44:46 espie Exp $
+@comment $OpenBSD: PLIST-debug,v 1.4 2005/09/19 20:40:16 espie Exp $
 %%SHARED%%
+lib/qt4/Qt3Support_debug.pc
+lib/qt4/QtCore_debug.pc
+lib/qt4/QtGui_debug.pc
+lib/qt4/QtNetwork_debug.pc
+lib/qt4/QtOpenGL_debug.pc
+lib/qt4/QtSql_debug.pc
+lib/qt4/QtXml_debug.pc
 @comment lib/qt4/libQt3Support_debug.la
 lib/qt4/libQt3Support_debug.prl
 @comment lib/qt4/libQt3Support_debug.so.4
@@ -25,10 +32,3 @@ lib/qt4/libQtSql_debug.prl
 @comment lib/qt4/libQtXml_debug.la
 lib/qt4/libQtXml_debug.prl
 @comment lib/qt4/libQtXml_debug.so.4
-lib/qt4/pkgconfig/Qt3Support_debug.pc
-lib/qt4/pkgconfig/QtCore_debug.pc
-lib/qt4/pkgconfig/QtGui_debug.pc
-lib/qt4/pkgconfig/QtNetwork_debug.pc
-lib/qt4/pkgconfig/QtOpenGL_debug.pc
-lib/qt4/pkgconfig/QtSql_debug.pc
-lib/qt4/pkgconfig/QtXml_debug.pc

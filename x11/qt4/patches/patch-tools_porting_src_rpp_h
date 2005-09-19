@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_porting_src_rpp_h,v 1.1 2005/07/04 11:32:50 espie Exp $
---- tools/porting/src/rpp.h.orig	Mon Jul  4 13:21:12 2005
-+++ tools/porting/src/rpp.h	Mon Jul  4 13:21:16 2005
-@@ -136,7 +136,7 @@ struct Item
+$OpenBSD: patch-tools_porting_src_rpp_h,v 1.2 2005/09/19 20:40:16 espie Exp $
+--- tools/porting/src/rpp.h.orig	Tue Aug 16 10:41:14 2005
++++ tools/porting/src/rpp.h	Sun Sep 18 15:42:27 2005
+@@ -128,7 +128,7 @@ struct Item
       { return TokenEngine::TokenSection(); }
  
  protected:

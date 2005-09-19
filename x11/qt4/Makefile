@@ -1,4 +1,4 @@
-#/ $OpenBSD: Makefile,v 1.8 2005/09/05 14:57:06 espie Exp $
+#/ $OpenBSD: Makefile,v 1.9 2005/09/19 20:40:16 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -8,16 +8,16 @@ COMMENT-postgresql=	"PostgresSQL plugin for qt4"
 COMMENT-mysql=		"MySQL plugin for qt4"
 COMMENT-debug=		"debug libraries for qt4"
 
-PKGNAME=		qt4-${VERSION}p3
-PKGNAME-mysql=		qt4-mysql-${VERSION}p3
-PKGNAME-postgresql=	qt4-postgresql-${VERSION}p3
-PKGNAME-examples=	qt4-examples-${VERSION}p3
-PKGNAME-debug=		qt4-debug-${VERSION}p4
-FULLPKGNAME=		qt4-${VERSION}p4
-FULLPKGNAME-html=	qt4-html-${VERSION}p3
+PKGNAME=		qt4-${VERSION}
+PKGNAME-mysql=		qt4-mysql-${VERSION}
+PKGNAME-postgresql=	qt4-postgresql-${VERSION}
+PKGNAME-examples=	qt4-examples-${VERSION}
+PKGNAME-debug=		qt4-debug-${VERSION}
+FULLPKGNAME=		qt4-${VERSION}
+FULLPKGNAME-html=	qt4-html-${VERSION}
 
-VERSION=	4.0.0
-DISTNAME=	qt-x11-opensource-desktop-4.0.0
+VERSION=	4.0.1
+DISTNAME=	qt-x11-opensource-src-4.0.1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.rediris.es/mirror/Qt/source/ \
 		ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/sources/ \
@@ -137,7 +137,7 @@ QT_EXAMPLES=	${QT_BASEDIR}/examples
 QT_DOC=		${PREFIX}/share/doc/qt4
 QT_PLUGINSDIR=	${QT_BASEDIR}/plugins
 QT_BINDIR=	${QT_BASEDIR}/bin
-QT_PKGCFGDIR=	${QT_BASEDIR}/pkgconfig
+QT_PKGCFGDIR=	${QT_BASEDIR}
 
 DOCS=	LICENSE.GPL README OPENSOURCE-NOTICE.TXT
 
@@ -148,15 +148,17 @@ PROGRAMS4=assistant designer findtr linguist lrelease lupdate moc qm2ts qmake \
 	qtconfig uic uic3
 PROGRAMS= rcc qtdemo qt3to4 syncqt
 
-LIBRARIES=	Qt3Support 4.0 QtCore 4.0 QtDesigner 4.0 \
-		QtDesignerComponents 4.0 QtGui 4.0 QtNetwork 4.0 \
-		QtOpenGL 4.0 QtSql 4.0 QtXml 4.0
+LIBRARIES=	Qt3Support 4.0.1 4.1 QtCore 4.0.1 4.1 QtDesigner 4.0.1 4.1 \
+		QtDesignerComponents 4.0.1 4.1 QtGui 4.0.1 4.1 \
+		QtNetwork 4.0.1 4.1 \
+		QtOpenGL 4.0.1 4.1 QtSql 4.0.1 4.1 QtXml 4.0.1 4.1
 
-LIBRARIES+=	Qt3Support_debug 4.0 QtCore_debug 4.0 \
-		QtDesigner_debug 4.0 QtDesignerComponents_debug 4.0 \
-		QtGui_debug 4.0 QtNetwork_debug 4.0 \
-		QtOpenGL_debug 4.0 QtSql_debug 4.0 \
-		QtXml_debug 4.0
+LIBRARIES+=	Qt3Support_debug 4.0.1 4.1 QtCore_debug 4.0.1 4.1 \
+		QtDesigner_debug 4.0.1 4.1 \
+		QtDesignerComponents_debug 4.0.1 4.1 \
+		QtGui_debug 4.0.1 4.1 QtNetwork_debug 4.0.1 4.1 \
+		QtOpenGL_debug 4.0.1 4.1 QtSql_debug 4.0.1 4.1 \
+		QtXml_debug 4.0.1 4.1
 
 QMAKE=${WRKBUILD}/bin/qmake
 
@@ -199,9 +201,9 @@ post-install:
 	    perl -pi.bak -e 's,-L${WRKBUILD}/lib,,g;' $$i; \
 	    rm $$i.bak; \
 	done
-.for l v in ${LIBRARIES}
-	mv -f ${QT_BASEDIR}/lib$l.so.$v.0 ${QT_BASEDIR}/lib$l.so.$v
-	ln -sf qt4/lib$l.so.$v ${PREFIX}/lib
+.for l v w in ${LIBRARIES}
+	mv -f ${QT_BASEDIR}/lib$l.so.$v ${QT_BASEDIR}/lib$l.so.$w
+	ln -sf qt4/lib$l.so.$w ${PREFIX}/lib
 .endfor
 # cleanup
 	cd ${PREFIX}/lib/qt4 && ln -sf ../../include/X11/qt4 include

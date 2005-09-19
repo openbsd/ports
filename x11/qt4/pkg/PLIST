@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/09/05 14:57:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/09/19 20:40:16 espie Exp $
 %%SHARED%%
 bin/assistant4
 bin/designer4
@@ -431,6 +431,7 @@ include/X11/qt4/Qt/QMetaProperty
 include/X11/qt4/Qt/QMetaType
 include/X11/qt4/Qt/QMetaTypeId
 include/X11/qt4/Qt/QMimeData
+include/X11/qt4/Qt/QMimeSource
 include/X11/qt4/Qt/QModelIndex
 include/X11/qt4/Qt/QModelIndexList
 include/X11/qt4/Qt/QMotifStyle
@@ -610,6 +611,7 @@ include/X11/qt4/Qt/QTemporaryFile
 include/X11/qt4/Qt/QTextBlock
 include/X11/qt4/Qt/QTextBlockFormat
 include/X11/qt4/Qt/QTextBlockGroup
+include/X11/qt4/Qt/QTextBlockUserData
 include/X11/qt4/Qt/QTextBrowser
 include/X11/qt4/Qt/QTextCharFormat
 include/X11/qt4/Qt/QTextCodec
@@ -1398,6 +1400,10 @@ include/X11/qt4/Qt3Support/q3whatsthis.h
 include/X11/qt4/Qt3Support/q3widgetstack.h
 include/X11/qt4/Qt3Support/q3wizard.h
 include/X11/qt4/Qt3Support/qiconset.h
+include/X11/qt4/QtAssistant/
+include/X11/qt4/QtAssistant/QAssistantClient
+include/X11/qt4/QtAssistant/QtAssistant
+include/X11/qt4/QtAssistant/qassistantclient.h
 include/X11/qt4/QtCore/
 include/X11/qt4/QtCore/QAbstractEventDispatcher
 include/X11/qt4/QtCore/QAbstractItemModel
@@ -1682,7 +1688,6 @@ include/X11/qt4/QtDesigner/QDesignerFormWindowInterface
 include/X11/qt4/QtDesigner/QDesignerFormWindowManagerInterface
 include/X11/qt4/QtDesigner/QDesignerFormWindowToolInterface
 include/X11/qt4/QtDesigner/QDesignerIconCacheInterface
-include/X11/qt4/QtDesigner/QDesignerImageCollectionInterface
 include/X11/qt4/QtDesigner/QDesignerLayoutDecorationExtension
 include/X11/qt4/QtDesigner/QDesignerMemberSheetExtension
 include/X11/qt4/QtDesigner/QDesignerMetaDataBaseInterface
@@ -1698,6 +1703,7 @@ include/X11/qt4/QtDesigner/QDesignerWidgetFactoryInterface
 include/X11/qt4/QtDesigner/QExtensionFactory
 include/X11/qt4/QtDesigner/QExtensionManager
 include/X11/qt4/QtDesigner/QFormBuilder
+include/X11/qt4/QtDesigner/QtDesigner
 include/X11/qt4/QtDesigner/abstractdnditem.h
 include/X11/qt4/QtDesigner/abstractformbuilder.h
 include/X11/qt4/QtDesigner/abstractformeditor.h
@@ -1707,7 +1713,6 @@ include/X11/qt4/QtDesigner/abstractformwindowcursor.h
 include/X11/qt4/QtDesigner/abstractformwindowmanager.h
 include/X11/qt4/QtDesigner/abstractformwindowtool.h
 include/X11/qt4/QtDesigner/abstracticoncache.h
-include/X11/qt4/QtDesigner/abstractimagecollection.h
 include/X11/qt4/QtDesigner/abstractmetadatabase.h
 include/X11/qt4/QtDesigner/abstractobjectinspector.h
 include/X11/qt4/QtDesigner/abstractpropertyeditor.h
@@ -1862,6 +1867,7 @@ include/X11/qt4/QtGui/QMenu
 include/X11/qt4/QtGui/QMenuBar
 include/X11/qt4/QtGui/QMenuItem
 include/X11/qt4/QtGui/QMessageBox
+include/X11/qt4/QtGui/QMimeSource
 include/X11/qt4/QtGui/QMotifStyle
 include/X11/qt4/QtGui/QMouseEvent
 include/X11/qt4/QtGui/QMoveEvent
@@ -1961,6 +1967,7 @@ include/X11/qt4/QtGui/QTabletEvent
 include/X11/qt4/QtGui/QTextBlock
 include/X11/qt4/QtGui/QTextBlockFormat
 include/X11/qt4/QtGui/QTextBlockGroup
+include/X11/qt4/QtGui/QTextBlockUserData
 include/X11/qt4/QtGui/QTextBrowser
 include/X11/qt4/QtGui/QTextCharFormat
 include/X11/qt4/QtGui/QTextCursor
@@ -2297,6 +2304,13 @@ include/X11/qt4/QtXml/QtXml
 include/X11/qt4/QtXml/qdom.h
 include/X11/qt4/QtXml/qxml.h
 lib/qt4/
+lib/qt4/Qt3Support.pc
+lib/qt4/QtCore.pc
+lib/qt4/QtGui.pc
+lib/qt4/QtNetwork.pc
+lib/qt4/QtOpenGL.pc
+lib/qt4/QtSql.pc
+lib/qt4/QtXml.pc
 lib/qt4/bin/
 lib/qt4/bin/assistant
 lib/qt4/bin/designer
@@ -2498,10 +2512,6 @@ lib/qt4/mkspecs/macx-g++/Info.plist.app
 lib/qt4/mkspecs/macx-g++/Info.plist.lib
 lib/qt4/mkspecs/macx-g++/qmake.conf
 lib/qt4/mkspecs/macx-g++/qplatformdefs.h
-lib/qt4/mkspecs/macx-mwerks/
-lib/qt4/mkspecs/macx-mwerks/mwerkstmpl.xml
-lib/qt4/mkspecs/macx-mwerks/qmake.conf
-lib/qt4/mkspecs/macx-mwerks/qplatformdefs.h
 lib/qt4/mkspecs/macx-pbuilder/
 lib/qt4/mkspecs/macx-pbuilder/Info.plist.app
 lib/qt4/mkspecs/macx-pbuilder/qmake.conf
@@ -2602,14 +2612,6 @@ lib/qt4/phrasebooks/norwegian.qph
 lib/qt4/phrasebooks/russian.qph
 lib/qt4/phrasebooks/spanish.qph
 lib/qt4/phrasebooks/swedish.qph
-lib/qt4/pkgconfig/
-lib/qt4/pkgconfig/Qt3Support.pc
-lib/qt4/pkgconfig/QtCore.pc
-lib/qt4/pkgconfig/QtGui.pc
-lib/qt4/pkgconfig/QtNetwork.pc
-lib/qt4/pkgconfig/QtOpenGL.pc
-lib/qt4/pkgconfig/QtSql.pc
-lib/qt4/pkgconfig/QtXml.pc
 lib/qt4/plugins/
 lib/qt4/plugins/codecs/
 lib/qt4/plugins/designer/

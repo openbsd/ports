@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_corelib_kernel_qcrashhandler_cpp,v 1.1 2005/07/05 17:44:46 espie Exp $
---- src/corelib/kernel/qcrashhandler.cpp.orig	Tue Jul  5 11:35:40 2005
-+++ src/corelib/kernel/qcrashhandler.cpp	Tue Jul  5 11:35:52 2005
-@@ -102,7 +102,7 @@ static bool backtrace_command(FILE *outb
+$OpenBSD: patch-src_corelib_kernel_qcrashhandler_cpp,v 1.2 2005/09/19 20:40:16 espie Exp $
+--- src/corelib/kernel/qcrashhandler.cpp.orig	Tue Aug 16 10:41:07 2005
++++ src/corelib/kernel/qcrashhandler.cpp	Sun Sep 18 15:42:26 2005
+@@ -97,7 +97,7 @@ static bool backtrace_command(FILE *outb
      va_list args;
      char cmd[512];
      va_start(args, format);
