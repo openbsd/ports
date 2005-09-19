@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/09/19 01:42:12 djm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/09/19 02:05:20 djm Exp $
 lib/python${MODPY_VERSION}/site-packages/matplotlib/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/__init__.pyc
@@ -307,6 +307,7 @@ share/examples/py-matplotlib/dynamic_image_wxagg.py
 share/examples/py-matplotlib/dynamic_image_wxagg2.py
 share/examples/py-matplotlib/embedding_in_gtk.py
 share/examples/py-matplotlib/embedding_in_gtk2.py
+share/examples/py-matplotlib/embedding_in_gtk3.py
 share/examples/py-matplotlib/embedding_in_qt.py
 share/examples/py-matplotlib/embedding_in_tk.py
 share/examples/py-matplotlib/embedding_in_tk2.py
@@ -415,8 +416,10 @@ share/examples/py-matplotlib/widgets/
 share/examples/py-matplotlib/widgets/README
 share/examples/py-matplotlib/widgets/buttons.py
 share/examples/py-matplotlib/widgets/check_buttons.py
+share/examples/py-matplotlib/widgets/cursor.py
 share/examples/py-matplotlib/widgets/radio_buttons.py
 share/examples/py-matplotlib/widgets/sliders.py
+share/examples/py-matplotlib/widgets/span_selector.py
 share/examples/py-matplotlib/wxcursor_demo.py
 share/examples/py-matplotlib/zorder_demo.py
 share/py-matplotlib/
