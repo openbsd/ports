@@ -1,0 +1,14 @@
+$OpenBSD: patch-karbon_dockers_vdocumentdocker_cc,v 1.1 2005/09/20 18:04:30 espie Exp $
+--- karbon/dockers/vdocumentdocker.cc.orig	Tue Sep 20 19:29:31 2005
++++ karbon/dockers/vdocumentdocker.cc	Tue Sep 20 19:29:43 2005
+@@ -846,8 +846,8 @@ void
+ VHistoryItem::init()
+ {
+ 	kdDebug(38000) << "In VHistoryItem::init() : " << m_command->name() << endl;
+-	char buffer[64];
+-	sprintf( buffer, "%064ld", ++g_lastKey );
++	char buffer[70];
++	snprintf( buffer, 70, "%064ld", ++g_lastKey );
+ 	m_key = buffer;
+ 	setPixmap( 0, QPixmap( KGlobal::iconLoader()->iconPath( m_command->icon(), KIcon::Small ) ) );
+ 	setText( 0, m_command->name() );

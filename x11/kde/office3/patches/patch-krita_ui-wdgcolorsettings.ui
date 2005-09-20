@@ -1,6 +1,6 @@
---- krita/ui/wdgcolorsettings.ui.orig	Thu Sep 15 18:25:18 2005
-+++ krita/ui/wdgcolorsettings.ui	Thu Sep 15 18:25:26 2005
-@@ -361,8 +361,4 @@
+--- krita/ui/wdgcolorsettings.ui.orig	Tue Jul 19 16:10:21 2005
++++ krita/ui/wdgcolorsettings.ui	Tue Sep 20 12:04:01 2005
+@@ -361,8 +361,4 @@ result in neutral grays. Intended for im
      <tabstop>radioPerceptual</tabstop>
  </tabstops>
  <layoutdefaults spacing="6" margin="11"/>
