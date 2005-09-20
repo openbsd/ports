@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2005/04/12 18:28:12 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2005/09/20 20:43:56 espie Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 8.0"
 
-PKGNAME=	redhat_base-8.0p5
+PKGNAME=	redhat_base-8.0p6
 
 MAINTAINER=	Jason Ish <ish@openbsd.org>
 
@@ -90,9 +90,8 @@ do-install:
 
 post-install:
 # remove setuid root bits
-	@find ${PREFIX} -perm -4000 -exec chmod u-s {} \;
-
+	@find ${PREFIX} -perm -4000 |xargs -r chmod u-s
 # Fix ownerships
-	@find ${PREFIX} -user 5041 -exec chown -h root.wheel {} \;
+	@find ${PREFIX} \( -user 37 -o -user 5041 -o -group 37 \) -print|xargs -r chown -h root.wheel
 
 .include <bsd.port.mk>
