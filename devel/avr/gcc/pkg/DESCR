@@ -1,0 +1,14 @@
+This port is an almost carbon-copy of the compiler in-tree, with a few
+differences:
+
+- it's taken off a more recent snapshot from gcc 3.3 branch.
+
+- it's not the system compiler, and so it looks for includes in
+  /usr/local, and for libraries in /usr/local/lib.
+
+- it can bootstrap itself fully, including ada on i386, and java (though
+  java does not yet work. There's an issue with boehm-gc).
+
+- it may build on platforms for which system gcc is still 2.95.3.
+
+- it's a cross-compiler, targetting avr machines

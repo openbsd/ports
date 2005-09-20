@@ -1,0 +1,65 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/20 15:22:43 aanriot Exp $
+avr/
+avr/bin/
+avr/bin/ar
+avr/bin/as
+avr/bin/ld
+avr/bin/nm
+avr/bin/ranlib
+avr/bin/strip
+avr/lib/
+avr/lib/ldscripts/
+avr/lib/ldscripts/avr1.x
+avr/lib/ldscripts/avr1.xbn
+avr/lib/ldscripts/avr1.xn
+avr/lib/ldscripts/avr1.xr
+avr/lib/ldscripts/avr1.xu
+avr/lib/ldscripts/avr2.x
+avr/lib/ldscripts/avr2.xbn
+avr/lib/ldscripts/avr2.xn
+avr/lib/ldscripts/avr2.xr
+avr/lib/ldscripts/avr2.xu
+avr/lib/ldscripts/avr3.x
+avr/lib/ldscripts/avr3.xbn
+avr/lib/ldscripts/avr3.xn
+avr/lib/ldscripts/avr3.xr
+avr/lib/ldscripts/avr3.xu
+avr/lib/ldscripts/avr4.x
+avr/lib/ldscripts/avr4.xbn
+avr/lib/ldscripts/avr4.xn
+avr/lib/ldscripts/avr4.xr
+avr/lib/ldscripts/avr4.xu
+avr/lib/ldscripts/avr5.x
+avr/lib/ldscripts/avr5.xbn
+avr/lib/ldscripts/avr5.xn
+avr/lib/ldscripts/avr5.xr
+avr/lib/ldscripts/avr5.xu
+bin/avr-addr2line
+bin/avr-ar
+bin/avr-as
+bin/avr-c++filt
+bin/avr-ld
+bin/avr-nm
+bin/avr-objcopy
+bin/avr-objdump
+bin/avr-ranlib
+bin/avr-readelf
+bin/avr-size
+bin/avr-strings
+bin/avr-strip
+@man man/man1/avr-addr2line.1
+@man man/man1/avr-ar.1
+@man man/man1/avr-as.1
+@man man/man1/avr-c++filt.1
+@man man/man1/avr-dlltool.1
+@man man/man1/avr-ld.1
+@man man/man1/avr-nlmconv.1
+@man man/man1/avr-nm.1
+@man man/man1/avr-objcopy.1
+@man man/man1/avr-objdump.1
+@man man/man1/avr-ranlib.1
+@man man/man1/avr-readelf.1
+@man man/man1/avr-size.1
+@man man/man1/avr-strings.1
+@man man/man1/avr-strip.1
+@man man/man1/avr-windres.1

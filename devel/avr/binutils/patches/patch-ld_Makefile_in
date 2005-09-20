@@ -1,0 +1,21 @@
+$OpenBSD: patch-ld_Makefile_in,v 1.1.1.1 2005/09/20 15:22:43 aanriot Exp $
+--- ld/Makefile.in.orig	Sat Jun 25 09:38:16 2005
++++ ld/Makefile.in	Sat Jun 25 09:38:44 2005
+@@ -114,7 +114,7 @@ INTLLIBS = @INTLLIBS@
+ 
+ AUTOMAKE_OPTIONS = cygnus dejagnu
+ 
+-SUBDIRS = po
++SUBDIRS =
+ 
+ tooldir = $(exec_prefix)/$(target_alias)
+ 
+@@ -588,7 +588,7 @@ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
+ TEXI2DVI = `if test -f $(top_srcdir)/../texinfo/util/texi2dvi; then echo $(top_srcdir)/../texinfo/util/texi2dvi; else echo texi2dvi; fi`
+ TEXINFO_TEX = $(top_srcdir)/../texinfo/texinfo.tex
+-INFO_DEPS = ld.info
++INFO_DEPS =
+ DVIS = ld.dvi
+ TEXINFOS = ld.texinfo
+ man1dir = $(mandir)/man1

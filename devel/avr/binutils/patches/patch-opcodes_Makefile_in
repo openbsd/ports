@@ -1,0 +1,12 @@
+$OpenBSD: patch-opcodes_Makefile_in,v 1.1.1.1 2005/09/20 15:22:43 aanriot Exp $
+--- opcodes/Makefile.in.orig	Sat Jun 25 09:32:09 2005
++++ opcodes/Makefile.in	Sat Jun 25 09:32:40 2005
+@@ -754,7 +754,7 @@ install-data: install-data-recursive
+ 
+ install-am: all-am
+ 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+-install: install-recursive
++install:
+ uninstall-am: uninstall-bfdlibLTLIBRARIES
+ uninstall: uninstall-recursive
+ all-am: Makefile $(LIBRARIES) $(LTLIBRARIES) config.h

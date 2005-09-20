@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/20 15:22:43 aanriot Exp $
+bin/avr-gdb
+bin/avr-gdbtui
+@info info/annotate.info
+@info info/bfd.info
+@info info/configure.info
+@info info/gdb.info
+@info info/gdbint.info
+@info info/stabs.info
+@info info/standards.info
+lib/libiberty.a
+@man man/man1/avr-gdb.1
+@man man/man1/avr-gdbtui.1

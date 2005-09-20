@@ -1,0 +1,12 @@
+$OpenBSD: patch-binutils_Makefile_in,v 1.1.1.1 2005/09/20 15:22:43 aanriot Exp $
+--- binutils/Makefile.in.orig	Fri Nov 28 05:58:41 2003
++++ binutils/Makefile.in	Sat Jun 25 15:44:24 2005
+@@ -120,7 +120,7 @@ INTLLIBS = @INTLLIBS@
+ 
+ AUTOMAKE_OPTIONS = cygnus dejagnu
+ 
+-SUBDIRS = doc po
++SUBDIRS = doc
+ 
+ tooldir = $(exec_prefix)/$(target_alias)
+ 
