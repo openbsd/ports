@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.334 2005/09/20 15:23:09 aanriot Exp $
+# $OpenBSD: Makefile,v 1.335 2005/09/21 16:48:17 jolan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -254,6 +254,7 @@
      SUBDIR += p5-PerlIO-via-symlink
      SUBDIR += p5-Pod-Coverage
      SUBDIR += p5-Proc-Daemon
+     SUBDIR += p5-Proc-Simple
      SUBDIR += p5-Regexp-Shellish
      SUBDIR += p5-SVN-Mirror
      SUBDIR += p5-SVN-Notify
