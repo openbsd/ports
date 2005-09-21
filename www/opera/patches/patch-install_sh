@@ -1,6 +1,6 @@
-$OpenBSD: patch-install_sh,v 1.12 2005/06/18 20:46:32 sturm Exp $
---- install.sh.orig	Wed Jun 15 11:17:40 2005
-+++ install.sh	Sat Jun 18 19:20:22 2005
+$OpenBSD: patch-install_sh,v 1.13 2005/09/21 11:38:51 sturm Exp $
+--- install.sh.orig	Fri Sep 16 12:16:47 2005
++++ install.sh	Tue Sep 20 11:14:10 2005
 @@ -1132,7 +1132,7 @@ run_install()
  	    mkdir $mkdirv $mkdirp $share_dir/help/
  	    chmod $chmodv 755 $share_dir/help
@@ -30,16 +30,14 @@ $OpenBSD: patch-install_sh,v 1.12 2005/06/18 20:46:32 sturm Exp $
  	    echo
  	    echo "System wide configuration files:"
  	    echo "  $config_dir/opera6rc"
-@@ -1317,12 +1315,6 @@ run_install()
+@@ -1322,9 +1320,7 @@ run_install()
+ 	if test "$flag_mode" = "--force" -o "$flag_mode" = "--prefix="; then
+ 	    echo
+ 	    echo "Shortcut icons cannot be installed with the prefix \"$prefix\"."
+-	    if not con_firm "Do you still want to install them"; then
+-		bool_icons=0
+-	    fi
++	    bool_icons=0
  	fi
  
-      # Shorcuts and Icons
--	icons
--	gnome
--	kde 3
--	kde 2
--	kde1
--	mandrake
- 
- 	fi # OPERADESTDIR
- 
+ 	if test "${bool_icons}" -ne 0; then
