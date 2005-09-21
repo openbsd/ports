@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2005/08/07 12:41:58 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2005/09/21 14:00:45 alek Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"ICB protocol plugin for GAIM"
 
-DISTNAME=	gaim-icb-20050807
+DISTNAME=	gaim-icb-20050918
 CATEGORIES=	net
 
 HOMEPAGE=	http://nic.com.pl/~alek/gaim-icb/
