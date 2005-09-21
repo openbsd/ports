@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2005/09/20 15:22:42 aanriot Exp $
-
-ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
+# $OpenBSD: Makefile.inc,v 1.2 2005/09/21 16:21:25 martin Exp $
 
 CATEGORIES=	devel
 
