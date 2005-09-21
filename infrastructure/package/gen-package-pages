@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: gen-package-pages,v 1.10 2005/09/20 17:59:40 pvalchev Exp $
+# $OpenBSD: gen-package-pages,v 1.11 2005/09/21 04:52:22 pvalchev Exp $
 
 # Copyright (c) 2004 Michael Coulter
 #
@@ -62,14 +62,27 @@ sub dprint
 	if($debug) { print @_; }
 }
 
-sub getfile
+sub getdesc
+{
+	my $fname = shift;
+	local $_;
+
+	open(my $f, '<', $fname) or die "No such file $fname\n";
+	$_ = <$f>;
+	my $result = join('', <$f>);
+	close($f);
+	return $result;
+}
+
+sub getline
 {
 	my $fname = shift;
 
 	open(my $f, '<', $fname) or die "No such file $fname\n";
-	my $result = join('', <$f>);
+	my $line = <$f>;
+	chomp($line);
 	close($f);
-	return $result;
+	return $line;
 }
 
 sub htmlfile
@@ -100,8 +113,10 @@ sub gen_arch_page
 		my $dir = $package->info();
 		$package->close();
 
-		print $archfile arch_body($arch,$file,getfile($dir.COMMENT));
+		print $archfile arch_body($arch,$file,getline($dir.DESC));
 		gen_pkg_page($arch,$file,$dir);
+
+		$package->wipe_info();
 	}
 	closedir($pkgs);
 
@@ -116,7 +131,7 @@ sub gen_pkg_page
 	my ($arch,$pkg, $dir) = @_;
 	my $long = htmlfile("$arch/$pkg-long.html");
 
-	my $pkg_info = getfile($dir.DESC);
+	my $pkg_info = getdesc($dir.DESC);
 
 	$pkg_info =~ s/\&/\&amp\;/g;
 	$pkg_info =~ s/\</\&lt\;/g;
