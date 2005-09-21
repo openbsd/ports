@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2005/08/09 21:15:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.128 2005/09/21 15:25:26 alek Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -61,6 +61,7 @@
      SUBDIR += mpg123
      SUBDIR += mpg123,esd
      SUBDIR += mpg321
+     SUBDIR += mt-daapd
 #    SUBDIR += mxv
      SUBDIR += nap
 #    SUBDIR += nas
