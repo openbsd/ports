@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2005/07/25 21:11:54 aanriot Exp $
+# $OpenBSD: Makefile,v 1.11 2005/09/21 14:32:42 aanriot Exp $
 
 COMMENT=	"content management system built on top of Zope"
 
-DISTNAME=	Plone-2.0.5
+DISTNAME=	Plone-2.1
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	www
 
@@ -24,7 +24,8 @@ RUN_DEPENDS=	::www/zope-cmf
 
 PLONEITEMS=	CMFActionIcons CMFPlone CMFFormController \
 		CMFQuickInstallerTool BTreeFolder2 \
-		Formulator GroupUserFolder PlacelessTranslationService
+		GroupUserFolder PlacelessTranslationService \
+		PloneLanguageTool PloneTranslations
 
 do-build:
 .for i in ${PLONEITEMS}
