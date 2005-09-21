@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.218 2005/08/09 20:15:31 sturm Exp $
+# $OpenBSD: Makefile,v 1.219 2005/09/21 11:58:18 bernd Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 855resolution
@@ -77,6 +77,7 @@
 #    SUBDIR += gwm
      SUBDIR += hicolor-icon-theme
      SUBDIR += icewm
+     SUBDIR += idesk
      SUBDIR += ion
 #    SUBDIR += iv
      SUBDIR += jmk-fonts
