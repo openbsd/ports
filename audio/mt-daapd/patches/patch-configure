@@ -1,0 +1,38 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2005/09/21 15:15:49 alek Exp $
+--- configure	Sat Aug  6 15:41:11 2005
++++ configure	Sat Aug  6 15:44:13 2005
+@@ -1358,7 +1358,6 @@ fi
+ rend_posix=true
+ 
+ STATIC_LIBS=no
+-CPPFLAGS="${CPPFLAGS} -g"
+ 
+ echo $ac_n "checking for pthread_creat in -lc_r""... $ac_c" 1>&6
+ echo "configure:1365: checking for pthread_creat in -lc_r" >&5
+@@ -1399,14 +1398,14 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+ else
+   echo "$ac_t""no" 1>&6
+ 
+-  echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
+-echo "configure:1404: checking for pthread_create in -lpthread" >&5
++  echo $ac_n "checking for pthread_create in -pthread""... $ac_c" 1>&6
++echo "configure:1404: checking for pthread_create in -pthread" >&5
+ ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1412 "configure"
+ #include "confdefs.h"
+@@ -1434,7 +1433,7 @@ LIBS="$ac_save_LIBS"
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  LDFLAGS="${LDFLAGS} -lpthread"
++  LDFLAGS="${LDFLAGS} -pthread"
+ else
+   echo "$ac_t""no" 1>&6
+ fi

@@ -1,0 +1,13 @@
+mt-daapd is a program which acts as an iTunes (DAAP) server for Linux
+and other POSIX unixes.
+
+Some random features:
+
+ o Can advertise shoutcast streams.
+ o Is web-configurable and managable.
+ o Supports dynamic playlists, like iTunes "Smart" playlists
+
+Things to watch out for:
+
+The database is indexed by inode so all music must be on the same
+filesystem.
