@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2005/09/21 15:25:26 alek Exp $
+# $OpenBSD: Makefile,v 1.129 2005/09/21 16:34:17 alek Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -42,6 +42,7 @@
      SUBDIR += libmikmod
      SUBDIR += libmikmod,esd
      SUBDIR += libogg
+     SUBDIR += libsamplerate
      SUBDIR += libsidplay
      SUBDIR += libsndfile
      SUBDIR += libvorbis
