@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.196 2005/09/20 07:33:00 jolan Exp $
+# $OpenBSD: Makefile,v 1.197 2005/09/21 16:42:58 jolan Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -92,6 +92,7 @@
      SUBDIR += nostromo
      SUBDIR += nscache
      SUBDIR += opera
+     SUBDIR += opera-flashplugin
      SUBDIR += p5-Apache-ASP
      SUBDIR += p5-Apache-DBI
      SUBDIR += p5-Apache-Gallery
