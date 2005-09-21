@@ -1,0 +1,14 @@
+iDesk gives users of minimal wm's (fluxbox, pekwm, windowmaker...) icons
+on their desktop. Each icon can be configured to execute one or more
+shell commands.
+
+Features:
+	* Execution of multiple shell commands
+	* Completely configurable actions
+	* PNG image support
+	* Xft anti-aliased fonts
+	* Pseudo-transparency
+	* Shadowed fonts
+	* Snap to grid icon placement
+	* Only show caption on mouseover
+	* Automatic background updating with Esetroot

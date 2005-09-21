@@ -1,0 +1,17 @@
+--- examples/default.lnk.orig	Sat Sep  3 22:51:34 2005
++++ examples/default.lnk	Sat Sep 17 08:23:41 2005
+@@ -1,9 +1,9 @@
+ table Icon
+-  Caption: Idesk
+-  Command: /usr/bin/Xdialog --msgbox "IDESK -- Icon Desktop Manager \n\n\n by FixXxeR \n\n\n 2005" 15 30 
+-  Icon: /usr/local/share/idesk/folder_home.xpm
+-  Width: 48
+-  Height: 48
++  Caption: Xterm
++  Command: /usr/X11R6/bin/xterm
++  Icon: /usr/X11R6/include/X11/pixmaps/xterm.xpm
++  Width: 64
++  Height: 38
+   X: 30
+   Y: 30
+ end

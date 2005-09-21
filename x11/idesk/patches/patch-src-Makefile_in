@@ -1,0 +1,14 @@
+--- src/Makefile.in.orig	Sun Jul 24 08:31:38 2005
++++ src/Makefile.in	Mon Sep 19 18:51:27 2005
+@@ -384,8 +384,10 @@ uninstall-local uninstall-am uninstall a
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-defaults.h: Makefile
++defaults.h:
+ 	echo '// This file is generated from makefile. Do not edit!' > defaults.h
++	echo '#include <sys/types.h>' >> defaults.h
++	echo '#include <sys/stat.h>' >> defaults.h
+ 	echo '#define DEFAULT_PREFIX "@DEFAULT_PREFIX@"' >> defaults.h
+ 	echo '#define PACKAGE "@PACKAGE@"' >> defaults.h
+ 
