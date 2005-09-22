@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.no-gtk2,v 1.2 2005/04/11 15:03:18 kurt Exp $
-@lib mozilla/components/libwidget_gtk.so.${SO_VERSION}
-@lib mozilla/libgtksuperwin.so.${SO_VERSION}

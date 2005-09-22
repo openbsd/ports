@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.88 2005/05/15 16:24:06 kurt Exp $
+# $OpenBSD: Makefile,v 1.89 2005/09/22 17:00:24 kurt Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
 COMMENT=	"open source version of the Netscape browser"
 COMMENT-devel=	"devel files for Gecko"
 
-VER=		1.7.8
+VER=		1.7.11
 DISTNAME=	mozilla
 PKGNAME=	mozilla-${VER}
 PKGNAME-devel=	mozilla-devel-${VER}
 DISTFILES=	mozilla-${VER}-source.tar.bz2
-SO_VERSION=	3.0
+SO_VERSION=	4.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
  
@@ -32,50 +32,30 @@ VMEM_WARNING=yes
 MULTI_PACKAGES=	-devel
 SUBPACKAGE?=
 
-FLAVORS=	gtk2
-FLAVOR?=
-
 MODULES=	gcc3 devel/gettext
 MODGCC3_ARCHES=	alpha
 MODGCC3_LANGS=	C++
-BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
+BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
+		:zip->=2.3:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	jpeg.62::graphics/jpeg \
-		png.3::graphics/png
-
-WANTLIB=	X11 Xext Xt m
+LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+WANTLIB=	X11 Xt Xft Xrender atk-1.0.0.0 fontconfig freetype \
+		glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 m \
+		pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-devel"
-LIB_DEPENDS=
 MODULES=	devel/gettext
-.  if ${FLAVOR:L:Mgtk2}
-RUN_DEPENDS=	:${PKGNAME}-gtk2:www/mozilla,gtk2
-WANTLIB+=	Xft Xrender fontconfig freetype
-.  else
 RUN_DEPENDS=	:${PKGNAME}:www/mozilla
-.  endif
 .else
+LIB_DEPENDS+=	gnomevfs-2::x11/gnome/vfs2 \
+		jpeg.62::graphics/jpeg \
+		png.3::graphics/png
 RUN_DEPENDS=	:esound-0.2.*:audio/esound
-WANTLIB+=	Xft Xp Xrender c fontconfig freetype pthread z
+WANTLIB+=	Xext Xp ORBit-2 bonobo-2 bonobo-activation c \
+		gconf-2 gthread-2.0.0.0 pthread z
 .  if empty(MACHINE_ARCH:Malpha)
 WANTLIB+=	stdc++
 .  endif
-
-.  if ${FLAVOR:L:Mgtk2}
-LIB_DEPENDS+=	gnomevfs-2::x11/gnome/vfs2
-WANTLIB+=	ORBit-2 bonobo-2 bonobo-activation gconf-2 gthread-2.0.0.0
-.  endif
-.endif
-
-.if ${FLAVOR:L:Mgtk2}
-BUILD_DEPENDS+=	:libIDL-*:devel/libIDL
-LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
-WANTLIB+=	Xcursor Xinerama atk-1.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
-		gobject-2.0.0.0 pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
-.else
-BUILD_DEPENDS+=	:ORBit-*:devel/ORBit
-LIB_DEPENDS+=	gtk.1,gdk.1::x11/gtk+
-WANTLIB+=	Xi glib gmodule
 .endif
 
 USE_X11=	Yes
@@ -96,6 +76,7 @@ CONFIGURE_ARGS=					\
 		--with-system-zlib=/usr/lib	\
 		--with-pthreads			\
 		--without-system-nspr		\
+		--enable-default-toolkit=gtk2	\
 		--enable-xft			\
 		--enable-optimize=-Os		\
 		--enable-crypto			\
@@ -104,12 +85,6 @@ CONFIGURE_ARGS=					\
 		--disable-debug			\
 		--disable-tests			\
 		--disable-ldap
-
-.if ${FLAVOR:L:Mgtk2}
-CONFIGURE_ARGS+=--enable-default-toolkit=gtk2
-.else
-CONFIGURE_ARGS+=--enable-default-toolkit=gtk
-.endif
 
 CONFIGURE_ENV=	PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
 		BUILD_OFFICIAL=1 \

@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.32 2005/04/11 15:03:18 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.33 2005/09/22 17:00:24 kurt Exp $
 %%SHARED%%
-%%gtk2%%
-!%%gtk2%%
 bin/mozilla
+lib/pkgconfig/
 mozilla/
 mozilla/LICENSE
 mozilla/chrome/
@@ -202,6 +201,7 @@ mozilla/chrome/icons/default/calendar-window.xpm
 mozilla/chrome/icons/default/calendar-window16.xpm
 mozilla/chrome/icons/default/chatzilla-window.xpm
 mozilla/chrome/icons/default/chatzilla-window16.xpm
+mozilla/chrome/icons/default/default.xpm
 mozilla/chrome/icons/default/downloadManager.xpm
 mozilla/chrome/icons/default/downloadManager16.xpm
 mozilla/chrome/icons/default/editorWindow.xpm
@@ -360,6 +360,7 @@ mozilla/chrome/venkman/skin/modern/
 mozilla/chrome/venkman/skin/modern/venkman/
 mozilla/chrome/venkman/skin/modern/venkman/images/
 mozilla/components/
+mozilla/components/accessibility-atk.xpt
 mozilla/components/accessibility.xpt
 mozilla/components/addrbook.xpt
 mozilla/components/appshell.xpt
@@ -568,6 +569,8 @@ mozilla/greprefs/all.js
 mozilla/greprefs/non-shared.txt
 mozilla/greprefs/security-prefs.js
 mozilla/greprefs/xpinstall.js
+mozilla/include/dom/nsIDOMNSEventTarget.h
+mozilla/lib/libgfxft2_s.a
 mozilla/mozilla-bin
 mozilla/mozilla-config
 mozilla/mozilla-xremote-client
@@ -579,8 +582,6 @@ mozilla/res/arrow.gif
 mozilla/res/arrowd.gif
 mozilla/res/bloatcycle.html
 mozilla/res/broken-image.gif
-mozilla/res/builtin/
-mozilla/res/builtin/platformHTMLBindings.xml
 mozilla/res/charsetData.properties
 mozilla/res/charsetalias.properties
 mozilla/res/cmessage.txt
@@ -607,6 +608,7 @@ mozilla/res/fonts/mathfontPUA.properties
 mozilla/res/fonts/mathfontSymbol.properties
 mozilla/res/forms.css
 mozilla/res/grabber.gif
+mozilla/res/hiddenWindow.html
 mozilla/res/html/
 mozilla/res/html.css
 mozilla/res/html/gopher-audio.gif

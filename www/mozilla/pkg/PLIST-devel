@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST-devel,v 1.11 2005/03/29 19:18:51 wilfried Exp $
+@comment $OpenBSD: PLIST-devel,v 1.12 2005/09/22 17:00:24 kurt Exp $
 %%SHARED%%
-%%gtk2%%
-!%%gtk2%%
 lib/pkgconfig/mozilla-gtkmozembed.pc
 lib/pkgconfig/mozilla-js.pc
 lib/pkgconfig/mozilla-nspr.pc
@@ -13,17 +11,25 @@ mozilla/include/accessibility/
 mozilla/include/accessibility/nsAccessNode.h
 mozilla/include/accessibility/nsAccessNodeWrap.h
 mozilla/include/accessibility/nsAccessibleEventData.h
+mozilla/include/accessibility/nsAccessibleText.h
 mozilla/include/accessibility/nsAccessibleWrap.h
 mozilla/include/accessibility/nsDocAccessibleWrap.h
 mozilla/include/accessibility/nsIAccessNode.h
 mozilla/include/accessibility/nsIAccessibilityService.h
 mozilla/include/accessibility/nsIAccessible.h
+mozilla/include/accessibility/nsIAccessibleAction.h
 mozilla/include/accessibility/nsIAccessibleCaret.h
 mozilla/include/accessibility/nsIAccessibleDocument.h
+mozilla/include/accessibility/nsIAccessibleEditableText.h
 mozilla/include/accessibility/nsIAccessibleEvent.h
+mozilla/include/accessibility/nsIAccessibleHyperLink.h
+mozilla/include/accessibility/nsIAccessibleHyperText.h
 mozilla/include/accessibility/nsIAccessibleProvider.h
 mozilla/include/accessibility/nsIAccessibleRetrieval.h
 mozilla/include/accessibility/nsIAccessibleSelectable.h
+mozilla/include/accessibility/nsIAccessibleTable.h
+mozilla/include/accessibility/nsIAccessibleText.h
+mozilla/include/accessibility/nsIAccessibleValue.h
 mozilla/include/accessibility/nsPIAccessNode.h
 mozilla/include/accessibility/nsPIAccessible.h
 mozilla/include/accessibility/nsPIAccessibleDocument.h
@@ -1857,6 +1863,9 @@ mozilla/include/string/nsXPIDLString.h
 mozilla/include/string/string-template-def-char.h
 mozilla/include/string/string-template-def-unichar.h
 mozilla/include/string/string-template-undef.h
+mozilla/include/system-pref/
+mozilla/include/system-pref/nsSystemPrefLog.h
+mozilla/include/system-pref/nsSystemPrefService.h
 mozilla/include/txmgr/
 mozilla/include/txmgr/nsITransaction.h
 mozilla/include/txmgr/nsITransactionList.h
@@ -2010,6 +2019,8 @@ mozilla/include/websrvcs/nsIWSPInterfaceInfoService.h
 mozilla/include/websrvcs/nsIWebScriptsAccessService.h
 mozilla/include/websrvcs/nsIWebServiceProxy.h
 mozilla/include/widget/
+mozilla/include/widget/mozcontainer.h
+mozilla/include/widget/mozdrawingarea.h
 mozilla/include/widget/nsEvent.h
 mozilla/include/widget/nsGUIEvent.h
 mozilla/include/widget/nsIAppShell.h
@@ -2469,6 +2480,7 @@ mozilla/lib/libssl.a
 mozilla/lib/libstring_s.a
 mozilla/lib/libstrres_s.a
 mozilla/lib/libswfci.a
+mozilla/lib/libsystem-pref_s.a
 mozilla/lib/libtransmgr_s.a
 mozilla/lib/libtransmgrcom_s.a
 mozilla/lib/libtxbase_s.a

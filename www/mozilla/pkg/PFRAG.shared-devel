@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-devel,v 1.7 2005/04/11 15:03:18 kurt Exp $
+@comment $OpenBSD: PFRAG.shared-devel,v 1.8 2005/09/22 17:00:24 kurt Exp $
 @comment @lib mozilla/lib/components/libaccessibility.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libaddrbook.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libappcomps.so.${SO_VERSION}
@@ -43,6 +43,7 @@
 @comment @lib mozilla/lib/components/libmyspell.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libnecko.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libnecko2.so.${SO_VERSION}
+@comment @lib mozilla/lib/components/libnkgnomevfs.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libnsappshell.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libnsprefm.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/liboji.so.${SO_VERSION}
@@ -54,6 +55,7 @@
 @comment @lib mozilla/lib/components/libprofile.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/librdf.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libspellchecker.so.${SO_VERSION}
+@comment @lib mozilla/lib/components/libsystem-pref.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libtransformiix.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libtxmgr.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libtypeaheadfind.so.${SO_VERSION}
@@ -65,6 +67,7 @@
 @comment @lib mozilla/lib/components/libwalletviewers.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libwebbrwsr.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libwebsrvcs.so.${SO_VERSION}
+@comment @lib mozilla/lib/components/libwidget_gtk2.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libxmlextras.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libxpcom_compat_c.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libxpconnect.so.${SO_VERSION}

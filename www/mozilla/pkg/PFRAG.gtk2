@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.gtk2,v 1.4 2005/04/11 15:03:18 kurt Exp $
-mozilla/chrome/icons/default/default.xpm
-mozilla/components/accessibility-atk.xpt
-@lib mozilla/components/libnkgnomevfs.so.${SO_VERSION}
-@lib mozilla/components/libsystem-pref.so.${SO_VERSION}
-@lib mozilla/components/libwidget_gtk2.so.${SO_VERSION}
