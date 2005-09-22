@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2005/09/04 23:38:17 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2005/09/22 12:28:54 avsm Exp $
 
 COMMENT=	"technical documentation XML/SGML definitions"
 
@@ -22,8 +22,6 @@ MASTER_SITES7=	${ROOT_SITE}/xml/4.2/ ${MIRROR_SITE}/xml/4.2/
 MASTER_SITES8=	http://www.docbook.org/tdg/
 
 DISTFILES=	docbk241.zip:0 docbk30.zip:1 docbk31.zip:2 docbk40.zip:3 docbk41.zip:4 docbkx41.zip:5 docbkx412.zip:6 docbook-xml-4.2.zip:7 examples.zip:8
-
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # permission granted in dtd copyright notice
 PERMIT_PACKAGE_CDROM=	Yes
