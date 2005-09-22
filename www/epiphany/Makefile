@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2005/03/16 02:02:56 kurt Exp $
+# $OpenBSD: Makefile,v 1.4 2005/09/22 17:04:43 kurt Exp $
 
 COMMENT=	"extremely lightweight and simple web browser for gnome"
 
 M=		1.4
 V=		1.4.8
 DISTNAME=	epiphany-${V}
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.gnome.org/projects/epiphany/
@@ -23,7 +23,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 MOZDIR=		mozilla
 
-BUILD_DEPENDS=	:mozilla-devel-*-gtk2:www/mozilla,-devel,gtk2 \
+BUILD_DEPENDS=	:mozilla-devel->=1.7.11:www/mozilla,-devel \
 		:pkgconfig-*:devel/pkgconfig \
 		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		:scrollkeeper-*:textproc/scrollkeeper
@@ -31,7 +31,7 @@ RUN_DEPENDS=	:gnome-desktop-*:x11/gnome/desktop \
 		:gnome-themes-*:x11/gnome/themes \
 		:gnome-icon-theme-*:x11/gnome/icon-theme
 LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui \
-		${MOZDIR}/gtkembedmoz,${MOZDIR}/nspr4,${MOZDIR}/plc4,${MOZDIR}/plds4,${MOZDIR}/xpcom:mozilla-*-gtk2:www/mozilla,gtk2
+		${MOZDIR}/gtkembedmoz,${MOZDIR}/nspr4,${MOZDIR}/plc4,${MOZDIR}/plds4,${MOZDIR}/xpcom:mozilla->=1.7.11:www/mozilla
 
 WANTLIB=	ORBit-2 ORBitCosNaming-2 art_lgpl_2 atk-1.0.0.0 \
 		audiofile bonobo-2 bonobo-activation bonoboui-2 esd \
@@ -40,9 +40,8 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 art_lgpl_2 atk-1.0.0.0 \
 		intl jpeg gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomevfs-2 gobject-2.0.0.0 gthread-2.0.0.0 pango-1.0.0.0 \
 		pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
-		popt xml2 ICE SM X11 Xcursor Xext Xft Xinerama \
-		Xrender c crypto fontconfig freetype m pthread ssl \
-		stdc++ z
+		popt xml2 ICE SM X11 Xft Xrender c crypto fontconfig \
+		freetype m pthread ssl stdc++ z
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
