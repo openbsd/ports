@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.219 2005/09/21 11:58:18 bernd Exp $
+# $OpenBSD: Makefile,v 1.220 2005/09/22 09:17:46 alek Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 855resolution
@@ -47,6 +47,7 @@
      SUBDIR += fleditor
      SUBDIR += fltk
      SUBDIR += fluxbox
+     SUBDIR += fluxter
      SUBDIR += flvw
      SUBDIR += flwm
      SUBDIR += freefonts
