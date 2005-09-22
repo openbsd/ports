@@ -1,0 +1,3 @@
+The Calendar library is a library providing a set of operations
+over dates and times.  This library is written for version 3.06
+or greater of Objective Caml.

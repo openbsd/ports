@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/22 14:38:41 avsm Exp $
+lib/ocaml/
+lib/ocaml/calendar.cma
+lib/ocaml/calendar.cmi
+lib/ocaml/calendar.mli
+lib/ocaml/date.cmi
+lib/ocaml/date.mli
+lib/ocaml/period.cmi
+lib/ocaml/period.mli
+lib/ocaml/printer.cmi
+lib/ocaml/printer.mli
+lib/ocaml/time.cmi
+lib/ocaml/time.mli
+lib/ocaml/time_Zone.cmi
+lib/ocaml/time_Zone.mli
+%%native%%

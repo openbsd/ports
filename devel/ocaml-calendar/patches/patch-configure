@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2005/09/22 14:38:41 avsm Exp $
+--- configure.orig	Thu Sep 22 14:53:52 2005
++++ configure	Thu Sep 22 14:54:14 2005
+@@ -1515,9 +1515,7 @@ echo "${ECHO_T}no" >&6
+ fi
+ 
+ if test "$OCAMLFIND" = no ; then
+-    { { echo "$as_me:$LINENO: error: Cannot find ocamlfind." >&5
+-echo "$as_me: error: Cannot find ocamlfind." >&2;}
+-   { (exit 1); exit 1; }; }
++	OCAMLFIND=""
+ fi
+ 
+ # Not mandatory tools
