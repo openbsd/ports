@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/05/09 13:51:35 avsm Exp $
+# $OpenBSD: Makefile,v 1.8 2005/09/22 13:10:47 avsm Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=		"ocamldoc hangs build"
@@ -7,13 +7,13 @@ BROKEN=		"ocamldoc hangs build"
 COMMENT=	"Objective Caml bindings for PostgreSQL"
 CATEGORIES=	databases
 
-V=		1.4.5
+V=		1.4.6
 DISTNAME=	postgresql-ocaml-${V}
 PKGNAME=	ocaml-postgresql-${V}
-MASTER_SITES=	http://www.oefai.at/~markus/ocaml_sources/
+MASTER_SITES=	http://ocaml.info/ocaml_sources/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
-HOMEPAGE=	http://www.oefai.at/~markus/ocaml_sources/
+HOMEPAGE=	http://ocaml.info/home/ocaml_sources.html#toc9
 
 # LGPL
 PERMIT_PACKAGE_FTP=	Yes
