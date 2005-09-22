@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2005/07/23 21:35:24 aanriot Exp $
+# $OpenBSD: Makefile,v 1.14 2005/09/22 12:58:51 avsm Exp $
 
 COMMENT=	"multiprocessing HTTP performance testing client"
 
@@ -8,7 +8,6 @@ CATEGORIES=	www benchmarks
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://www.acme.com/software/http_load/
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
