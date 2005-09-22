@@ -1,5 +1,5 @@
---- configure.orig	Thu Jun 23 23:12:00 2005
-+++ configure	Wed Jun 29 11:05:52 2005
+--- configure.orig	Fri Sep 16 01:34:05 2005
++++ configure	Mon Sep 19 20:06:08 2005
 @@ -10549,11 +10549,11 @@ extern "C"
  #endif
  /* We use char because int might match the return type of a gcc2
@@ -23,11 +23,11 @@
  #include <resolv.h>
  _ACEOF
  rm -f conftest.$ac_objext
-@@ -11821,13 +11823,9 @@ _ACEOF
+@@ -11856,13 +11858,9 @@ _ACEOF
  openbsd*)
      if test "$have_pthreads" = "yes"; then
  	LIBCLAMAV_LIBS="$LIBCLAMAV_LIBS -pthread"
--	if test "$disable_cr" = "yes"; then
+-	if test "$use_cr" = "no"; then
 -	    CLAMD_LIBS="$CLAMD_LIBS -pthread"
 -	    CLAMAV_MILTER_LIBS="$CLAMAV_MILTER_LIBS -pthread"
 -	else
@@ -40,7 +40,7 @@
  	TH_SAFE="-thread-safe"
  
  cat >>confdefs.h <<\_ACEOF
-@@ -13016,6 +13014,8 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -12996,6 +12994,8 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  
