@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2004/12/16 00:31:21 alek Exp $
+# $OpenBSD: Makefile,v 1.38 2005/09/22 16:15:41 naddy Exp $
 
 COMMENT=	"portable CVS repository synchronization utility"
 
-DISTNAME=	cvsync-0.24.18
+DISTNAME=	cvsync-0.24.19
 CATEGORIES=	net
 HOMEPAGE=	http://www.cvsync.org/
 
