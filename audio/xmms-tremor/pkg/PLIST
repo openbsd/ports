@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/22 05:26:29 jolan Exp $
+lib/xmms/
+lib/xmms/Input/
+@comment lib/xmms/Input/libxmmstremor.a
+@comment lib/xmms/Input/libxmmstremor.la
+lib/xmms/Input/libxmmstremor.so
