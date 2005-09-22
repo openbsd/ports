@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/18 13:53:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/09/22 16:20:01 bernd Exp $
 
 COMMENT=	"translate common internet acronyms"
 
-DISTNAME=	wtf-20040124
+DISTNAME=	wtf-20050505
 CATEGORIES=	games
 
 MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
