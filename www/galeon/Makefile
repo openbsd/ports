@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2005/09/10 17:14:28 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2005/09/22 17:05:49 kurt Exp $
 
 COMMENT=	"GNOME web browser based on gecko"
 
 V=		1.3.21
 DISTNAME=	galeon-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www
 
 HOMEPAGE=	http://galeon.sourceforge.net/
@@ -31,14 +31,14 @@ MODULES=	devel/gettext gcc3
 MODGCC3_ARCHES=	alpha
 MODGCC3_LANGS=	C++
 
-BUILD_DEPENDS=	:mozilla-*-gtk2:www/mozilla,gtk2 \
-		:mozilla-devel-*-gtk2:www/mozilla,-devel,gtk2 \
+BUILD_DEPENDS=	:mozilla->=1.7.11:www/mozilla \
+		:mozilla-devel->=1.7.11:www/mozilla,-devel \
  		:pkgconfig-*:devel/pkgconfig \
 		:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		:scrollkeeper->=0.3.12:textproc/scrollkeeper
 LIB_DEPENDS= 	gnome-desktop-2::x11/gnome/desktop \
 		gnomeui-2.0::x11/gnome/libgnomeui \
-		mozilla/gtkembedmoz,mozilla/xpcom,mozilla/plds4,mozilla/plc4,mozilla/nspr4:mozilla-*-gtk2:www/mozilla,gtk2
+		mozilla/gtkembedmoz,mozilla/xpcom,mozilla/plds4,mozilla/plc4,mozilla/nspr4:mozilla->=1.7.11:www/mozilla
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/mozilla -L${LOCALBASE}/lib" \

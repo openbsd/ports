@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/09/07 15:44:36 kurt Exp $
+# $OpenBSD: Makefile,v 1.9 2005/09/22 17:07:20 kurt Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -8,9 +8,9 @@ COMMENT-mozilla=	"mozilla integration library for eclipse HTML Browser Widget"
 
 ECLIPSE_VER=		3.1
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
-PKGNAME=		eclipse-sdk-${ECLIPSE_VER}p1
-PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p1
-PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p1
+PKGNAME=		eclipse-sdk-${ECLIPSE_VER}p2
+PKGNAME-gnome=		eclipse-sdk-gnome-${ECLIPSE_VER}p2
+PKGNAME-mozilla=	eclipse-sdk-mozilla-${ECLIPSE_VER}p2
 CATEGORIES=		devel/eclipse java 
 
 HOMEPAGE=		http://www.eclipse.org/
@@ -45,7 +45,7 @@ VMEM_WARNING=		Yes
 MODULES=		java
 MODJAVA_VER=		1.4+
 
-BUILD_DEPENDS=		:mozilla-devel-*-gtk2:www/mozilla,-devel,gtk2 \
+BUILD_DEPENDS=		:mozilla-devel->=1.7.11:www/mozilla,-devel \
 			:apache-ant->=1.6.1:devel/apache-ant \
 			:pkgconfig-*:devel/pkgconfig
 
@@ -59,7 +59,7 @@ SUBPACKAGE?=
 
 GNOME_LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui
 
-MOZILLA_LIB_DEPENDS=	mozilla/xpcom,mozilla/gtkembedmoz,mozilla/nspr4,mozilla/plc4,mozilla/plds4:mozilla-*-gtk2:www/mozilla,gtk2
+MOZILLA_LIB_DEPENDS=	mozilla/xpcom,mozilla/gtkembedmoz,mozilla/nspr4,mozilla/plc4,mozilla/plds4:mozilla->=1.7.11:www/mozilla
 
 .if defined(PACKAGING)
 . if ${SUBPACKAGE} == "-gnome"
