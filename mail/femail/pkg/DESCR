@@ -1,0 +1,4 @@
+femail is intended to be used on servers that do not run a real MTA or
+inside chroot(8) environments.  It features a sendmail(8)-compatible
+command line interface and forwards mail via SMTP to the host given in
+the config file, an environment variable or localhost.
