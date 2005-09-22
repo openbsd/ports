@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/09/06 16:51:44 pedro Exp $
+# $OpenBSD: Makefile,v 1.4 2005/09/22 16:36:17 jolan Exp $
 
 COMMENT=	"lua web server with cgi support"
 DISTNAME=	xavante-1.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www
 MASTER_SITES=	http://luaforge.net/frs/download.php/958/
 
@@ -27,7 +27,7 @@ post-extract:
                 ${FILESDIR}/init.lua > ${WRKSRC}/init.lua
 
 post-patch:
-	@perl -pi -e 's:\@xavanteweb@:${PREFIX}/examples/xavante/:g;' \
+	@perl -pi -e 's:\@xavanteweb@:${PREFIX}/share/examples/xavante/:g;' \
                 ${WRKSRC}/src/t_xavante_start.lua
 	@perl -pi -e 's:\@localbase@:${LOCALBASE}:g;' \
                 ${WRKSRC}/src/t_xavante_start.lua
@@ -42,11 +42,11 @@ do-install:
 		${PREFIX}/lua/xavante/xavante/coxpcall.lua
 	${INSTALL_PROGRAM} ${WRKSRC}/src/t_xavante_start.lua \
 		${PREFIX}/bin/xavante
-	${INSTALL_DATA_DIR} ${PREFIX}/examples/xavante
-	${INSTALL_DATA} ${WRKSRC}/web/*.lp ${PREFIX}/examples/xavante
-	${INSTALL_DATA_DIR} ${PREFIX}/examples/xavante/img
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xavante
+	${INSTALL_DATA} ${WRKSRC}/web/*.lp ${PREFIX}/share/examples/xavante
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xavante/img
 	${INSTALL_DATA} ${WRKSRC}/web/img/*.{gif,jpg} \
-		${PREFIX}/examples/xavante/img
+		${PREFIX}/share/examples/xavante/img
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xavante
 	${INSTALL_DATA} ${WRKSRC}/doc/us/* ${PREFIX}/share/doc/xavante
 
