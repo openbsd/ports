@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/06/26 07:35:07 xsa Exp $
+# $OpenBSD: Makefile,v 1.14 2005/09/23 19:36:02 pvalchev Exp $
 
 COMMENT=		"modules for parsing (and creating!) MIME entities"
 
@@ -7,8 +7,6 @@ PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		mail perl5
 
 HOMEPAGE=		http://www.zeegee.com/code/perl/MIME-tools/
-
-MAINTAINER=		Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

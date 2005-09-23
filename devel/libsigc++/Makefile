@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/11/27 02:22:20 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2005/09/23 19:36:02 pvalchev Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=		"signal-related bug? any program linked with this hangs"
@@ -11,8 +11,6 @@ CATEGORIES=	devel
 
 HOMEPAGE=	http://libsigc.sf.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libsigc/}
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

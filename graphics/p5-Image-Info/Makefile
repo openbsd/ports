@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/12/24 15:36:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2005/09/23 19:36:02 pvalchev Exp $
 
 COMMENT=	"perl module for getting image information"
 
@@ -8,8 +8,6 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	graphics perl5
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
-
-MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=Image/}
 
 RUN_DEPENDS=	:p5-IO-String->=1:devel/p5-IO-String
 BUILD_DEPENDS=	${RUN_DEPENDS}

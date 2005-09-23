@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2005/03/11 15:08:00 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2005/09/23 19:36:02 pvalchev Exp $
 
 COMMENT=	"client interface to LDAP servers"
 
@@ -10,8 +10,6 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/}
 
 HOMEPAGE=	http://perl-ldap.sourceforge.net/
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 RUN_DEPENDS=	:p5-Convert-ASN1->0.07:converters/p5-Convert-ASN1 \
 		:p5-URI->=1.08:www/p5-URI \

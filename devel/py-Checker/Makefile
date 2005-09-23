@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/08/03 14:27:33 xsa Exp $
-
+# $OpenBSD: Makefile,v 1.24 2005/09/23 19:36:02 pvalchev Exp $
 
 COMMENT=	"Python codes checker"
 
@@ -9,8 +8,6 @@ PKGNAME=	py-Checker-${VERSION}
 CATEGORIES=    	devel
 
 HOMEPAGE=	http://pychecker.sourceforge.net/
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

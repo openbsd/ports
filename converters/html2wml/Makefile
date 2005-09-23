@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/12/01 02:53:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2005/09/23 19:36:02 pvalchev Exp $
 
 COMMENT=	"on-the-fly HTML to WML conversion"
 
@@ -7,8 +7,6 @@ CATEGORIES=     converters www perl5
 
 MASTER_SITES=	http://maddingue.free.fr/softwares/download/Html2Wml/html2wml-0.4.x/
 HOMEPAGE=	http://maddingue.free.fr/softwares/html2wml.html.en
-
-MAINTAINER=     Shell Hung <shell@openbsd.org>
 
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes

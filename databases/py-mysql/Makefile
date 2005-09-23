@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2005/09/12 04:29:35 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2005/09/23 19:36:02 pvalchev Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -12,8 +12,6 @@ CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mysql-python/}
 
 HOMEPAGE=	http://sourceforge.net/projects/mysql-python/
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_FTP=	Yes

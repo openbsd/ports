@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/24 14:25:03 shell Exp $
+# $OpenBSD: Makefile,v 1.7 2005/09/23 19:36:02 pvalchev Exp $
 
 COMMENT=	"defines RGB values for common color names"
 
@@ -8,8 +8,6 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	graphics perl5
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Graphics/}
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2004/06/26 07:35:06 xsa Exp $
+# $OpenBSD: Makefile,v 1.18 2005/09/23 19:36:02 pvalchev Exp $
 
 COMMENT=	"create HTML table from sql queries"
 
@@ -8,8 +8,6 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases www perl5
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=DBIx/}
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

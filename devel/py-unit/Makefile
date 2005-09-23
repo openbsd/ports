@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/08/19 22:04:30 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2005/09/23 19:36:02 pvalchev Exp $
 
 
 COMMENT=		"unit testing framework for Python"
@@ -9,8 +9,6 @@ PKGNAME=		py-unit-${VERSION}
 CATEGORIES=     	devel
 
 HOMEPAGE=		http://pyunit.sourceforge.net/
-
-MAINTAINER=		Shell Hung <shell@openbsd.org>
 
 # Python License
 PERMIT_PACKAGE_CDROM=	Yes
