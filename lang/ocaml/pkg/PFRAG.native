@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.4 2005/05/09 13:50:41 avsm Exp $
+@comment $OpenBSD: PFRAG.native,v 1.5 2005/09/23 14:23:42 avsm Exp $
 bin/camlp4o.opt
 bin/camlp4r.opt
 bin/ocamlc.opt
@@ -25,6 +25,8 @@ lib/ocaml/callback.cmx
 lib/ocaml/callback.p.cmx
 lib/ocaml/camlinternalOO.cmx
 lib/ocaml/camlinternalOO.p.cmx
+lib/ocaml/camlp4/argl.cmx
+lib/ocaml/camlp4/argl.o
 lib/ocaml/camlp4/camlp4.a
 lib/ocaml/camlp4/camlp4.cmxa
 lib/ocaml/camlp4/extfold.cmx
@@ -38,8 +40,6 @@ lib/ocaml/camlp4/odyl.a
 lib/ocaml/camlp4/odyl.cmx
 lib/ocaml/camlp4/odyl.cmxa
 lib/ocaml/camlp4/odyl.o
-lib/ocaml/camlp4/argl.cmx
-lib/ocaml/camlp4/argl.o
 lib/ocaml/camlp4/pa_extend.cmx
 lib/ocaml/camlp4/pa_extend.o
 lib/ocaml/camlp4/pa_extend_m.cmx

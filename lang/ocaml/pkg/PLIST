@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2005/05/09 13:50:41 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.15 2005/09/23 14:23:42 avsm Exp $
 bin/camlp4
 bin/camlp4o
 bin/camlp4r
@@ -402,15 +402,14 @@ lib/ocaml/ld.conf
 lib/ocaml/lexing.cmi
 lib/ocaml/lexing.ml
 lib/ocaml/lexing.mli
-lib/ocaml/libcamlrun.a
-lib/ocaml/libunix.a
-lib/ocaml/libstr.a
-lib/ocaml/libnums.a
 lib/ocaml/libbigarray.a
-lib/ocaml/libthreads.a
-lib/ocaml/vmthreads/libvmthreads.a
+lib/ocaml/libcamlrun.a
 lib/ocaml/libgraphics.a
 lib/ocaml/libmldbm.a
+lib/ocaml/libnums.a
+lib/ocaml/libstr.a
+lib/ocaml/libthreads.a
+lib/ocaml/libunix.a
 lib/ocaml/list.cmi
 lib/ocaml/list.ml
 lib/ocaml/list.mli
@@ -576,6 +575,7 @@ lib/ocaml/vmthreads/condition.cmi
 lib/ocaml/vmthreads/condition.mli
 lib/ocaml/vmthreads/event.cmi
 lib/ocaml/vmthreads/event.mli
+lib/ocaml/vmthreads/libvmthreads.a
 lib/ocaml/vmthreads/mutex.cmi
 lib/ocaml/vmthreads/mutex.mli
 lib/ocaml/vmthreads/stdlib.cma
