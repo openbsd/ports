@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2003/11/03 07:43:55 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2005/09/23 03:01:06 kevlo Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"color terminal emulator Linux binary"
 
-PKGNAME=	zh-rxvt-big5-2.7.8p0
+PKGNAME=	zh-rxvt-big5-2.7.8p1
 CATEGORIES=	chinese
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
@@ -52,9 +52,9 @@ do-install:
 
 post-install:
 # remove setuid root bits
-	@find ${PREFIX} -perm -4000 -exec chmod u-s {} \;
+	@find ${PREFIX} -perm -4000 |xargs -r chmod u-s
 
 # fix ownerships
-	@find ${PREFIX} -user 5041 -exec chown -h root.wheel {} \;
+	@find ${PREFIX} \( -user 37 -o -user 5041 -o -group 22 -o -group 37 \) -print|xargs -r chown -h root.wheel
 
 .include <bsd.port.mk>
