@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/06 08:53:52 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2005/09/23 06:19:07 kevlo Exp $
 
 COMMENT=	"select a pager if destination is a TTY"
 
-DISTNAME=	IO-Pager-0.05
+DISTNAME=	IO-Pager-0.06
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
