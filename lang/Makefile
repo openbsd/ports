@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2005/05/28 17:58:59 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.68 2005/09/23 14:28:10 avsm Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -55,6 +55,7 @@
      SUBDIR += nhc98
 #    SUBDIR += objc
      SUBDIR += ocaml
+     SUBDIR += ocamlduce
      SUBDIR += open-cobol
      SUBDIR += otcl
 #    SUBDIR += p2c
