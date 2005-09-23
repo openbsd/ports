@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/27 13:28:35 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/09/23 19:41:44 pvalchev Exp $
 # Uses pthreads
 
 COMMENT=	"resource manager for PCSC"
@@ -8,8 +8,6 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.linuxnet.com/middleware/files/
 
 HOMEPAGE=	http://www.linuxnet.com/
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

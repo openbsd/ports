@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/08/17 16:10:04 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2005/09/23 19:41:45 pvalchev Exp $
 
 COMMENT=	"c++ compliant CGI applications libraries"
 
@@ -8,8 +8,6 @@ CATEGORIES=     www devel
 
 MASTER_SITES=	${MASTER_SITE_GNU:=cgicc/}
 HOMEPAGE=	http://www.gnu.org/software/cgicc/cgicc.html
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

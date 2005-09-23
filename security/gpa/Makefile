@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/27 13:28:34 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2005/09/23 19:41:44 pvalchev Exp $
 
 COMMENT=	"graphical interface for GnuPG"
 
@@ -7,8 +7,6 @@ DISTNAME=	gpa-${VERSION}
 CATEGORIES=    	security x11
 
 HOMEPAGE=	http://www.gnupg.org/gpa.html
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

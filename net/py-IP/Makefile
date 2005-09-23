@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/08/04 19:14:30 xsa Exp $
+# $OpenBSD: Makefile,v 1.10 2005/09/23 19:41:44 pvalchev Exp $
 
 COMMENT=	"Python module to handle IPv4 and IPv6 address"
 
@@ -8,8 +8,6 @@ PKGNAME=	py-IP-${VERSION}
 CATEGORIES=    	net
 
 HOMEPAGE=	http://c0re.23.nu/c0de/IPy/
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

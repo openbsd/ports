@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2005/07/05 21:10:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2005/09/23 19:41:45 pvalchev Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -10,8 +10,6 @@ DISTNAME=	Tk-${VERSION}
 PKGNAME=	p5-Tk-${VERSION}p0
 PKGNAME-demo=	p5-Tk-demo-${VERSION}
 CATEGORIES=	x11 devel perl5
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 # GPL + custom
 PERMIT_PACKAGE_CDROM=	Yes

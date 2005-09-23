@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/08/03 21:34:43 xsa Exp $
+# $OpenBSD: Makefile,v 1.16 2005/09/23 19:41:45 pvalchev Exp $
 
 
 COMMENT=	"Python library for creating postscript or PDF charts"
@@ -9,8 +9,6 @@ PKGNAME=	py-Chart-${VERSION}
 CATEGORIES=	textproc devel
 
 HOMEPAGE=	http://www.hpl.hp.com/personal/Yasushi_Saito/pychart/
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

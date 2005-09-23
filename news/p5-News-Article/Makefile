@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/06/26 07:35:08 xsa Exp $
+# $OpenBSD: Makefile,v 1.10 2005/09/23 19:41:44 pvalchev Exp $
 
 COMMENT=	"perl module for accessing NNTP articles"
 
@@ -6,8 +6,6 @@ DISTNAME=	News-Article-1.13
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	news perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=News/}
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 RUN_DEPENDS=	:p5-PGP-Sign-*:security/p5-PGP-Sign
 BUILD_DEPENDS=	${RUN_DEPENDS}

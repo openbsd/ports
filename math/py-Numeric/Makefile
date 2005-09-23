@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/27 07:41:44 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2005/09/23 19:41:43 pvalchev Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -8,8 +8,6 @@ VERSION=	23.1
 DISTNAME=	Numeric-${VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	math
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 # Python License
 PERMIT_PACKAGE_CDROM=	Yes

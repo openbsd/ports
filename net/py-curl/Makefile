@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/16 00:31:25 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2005/09/23 19:41:44 pvalchev Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -10,8 +10,6 @@ PKGNAME=	py-curl-${VERSION}
 CATEGORIES=    	net
 
 HOMEPAGE=	http://pycurl.sourceforge.net/
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

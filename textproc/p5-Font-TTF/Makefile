@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/11/15 15:12:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2005/09/23 19:41:45 pvalchev Exp $
 
 COMMENT=	"perl module for TrueType font hacking"
 
@@ -7,8 +7,6 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Font/}
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

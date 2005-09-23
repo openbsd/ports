@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2005/09/19 05:24:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2005/09/23 19:41:44 pvalchev Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -11,8 +11,6 @@ CATEGORIES=	security perl5
 
 HOMEPAGE=	http://www.bacus.pt/Net_SSLeay/index.html
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/}
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

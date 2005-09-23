@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/08/03 21:31:07 xsa Exp $
+# $OpenBSD: Makefile,v 1.9 2005/09/23 19:41:44 pvalchev Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -9,8 +9,6 @@ PKGNAME=	py-${DISTNAME}
 CATEGORIES=    	security devel
 
 HOMEPAGE=	http://eevolved.com/cryptkit/
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

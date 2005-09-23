@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/12/07 00:23:22 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2005/09/23 19:41:45 pvalchev Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -10,8 +10,6 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 LIB_DEPENDS=	xml2.6::textproc/libxml
 RUN_DEPENDS=	::textproc/p5-LibXML-Common \

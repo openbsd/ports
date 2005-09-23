@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/12/07 00:23:22 alek Exp $
+# $OpenBSD: Makefile,v 1.23 2005/09/23 19:41:45 pvalchev Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -12,8 +12,6 @@ CATEGORIES=	textproc perl5
 HOMEPAGE=	http://www.axkit.org/
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 RUN_DEPENDS=	:p5-XML-LibXML->=0.94:textproc/p5-XML-LibXML
 BUILD_DEPENDS=	${RUN_DEPENDS}

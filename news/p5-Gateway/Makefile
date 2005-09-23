@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2005/09/05 13:12:47 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2005/09/23 19:41:44 pvalchev Exp $
 
 COMMENT=	"perl module to gateway between news and mail"
 
@@ -6,8 +6,6 @@ DISTNAME=	Gateway-0.42
 PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	news perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=News/}
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 RUN_DEPENDS=	:p5-PGP-Sign-*:security/p5-PGP-Sign \
 		:p5-News-Article->=1.07:news/p5-News-Article

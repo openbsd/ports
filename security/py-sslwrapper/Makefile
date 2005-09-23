@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/27 13:28:35 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2005/09/23 19:41:45 pvalchev Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -10,8 +10,6 @@ PKGNAME=	py-sslwrapper-${VERSION}
 CATEGORIES=    	security devel
 
 HOMEPAGE=	http://www.sourceforge.net/projects/pow/
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

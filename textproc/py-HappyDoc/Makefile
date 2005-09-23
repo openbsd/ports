@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/08/03 21:34:44 xsa Exp $
+# $OpenBSD: Makefile,v 1.10 2005/09/23 19:41:45 pvalchev Exp $
 
 COMMENT=	"Python tool for generate Python API documents"
 
@@ -8,8 +8,6 @@ CATEGORIES=    	textproc
 
 HOMEPAGE=	http://happydoc.sf.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=happydoc/}
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 # BSD License, badly worded
 PERMIT_PACKAGE_CDROM=	Yes

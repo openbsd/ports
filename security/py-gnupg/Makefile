@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/08/03 21:31:07 xsa Exp $
+# $OpenBSD: Makefile,v 1.14 2005/09/23 19:41:45 pvalchev Exp $
 
 COMMENT=	"Python module for GnuPG interface"
 
@@ -8,8 +8,6 @@ PKGNAME=	py-gnupg-${VERSION}
 CATEGORIES=    	security devel
 
 HOMEPAGE=	http://py-gnupg.sourceforge.net/
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

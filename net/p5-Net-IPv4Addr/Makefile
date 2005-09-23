@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 21:14:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2005/09/23 19:41:44 pvalchev Exp $
 
 COMMENT=	"perl module for IPv4 address parsing"
 
@@ -8,8 +8,6 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/}
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

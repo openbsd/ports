@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/08/08 09:29:01 xsa Exp $
+# $OpenBSD: Makefile,v 1.22 2005/09/23 19:41:45 pvalchev Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -12,8 +12,6 @@ CATEGORIES=	textproc devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyxml/}
 
 HOMEPAGE=	http://pyxml.sourceforge.net/
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 # BSD, badly worded
 PERMIT_PACKAGE_FTP=	Yes

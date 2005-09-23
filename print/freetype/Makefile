@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2005/01/24 15:05:56 alek Exp $
+# $OpenBSD: Makefile,v 1.34 2005/09/23 19:41:44 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 COMMENT=	"free and portable TrueType font rendering engine"
@@ -13,8 +13,6 @@ CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freetype/}
 
 HOMEPAGE=	http://www.freetype.org/
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 # See http://www.freetype.org/patents.html
 # bytecode interpreter disabled

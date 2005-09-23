@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2004/06/26 07:35:09 xsa Exp $
+# $OpenBSD: Makefile,v 1.18 2005/09/23 19:41:45 pvalchev Exp $
 
 COMMENT=	"perl modules for creating and manipulating PDF"
 
 DISTNAME=	Text-PDF-0.25
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
-
-MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
