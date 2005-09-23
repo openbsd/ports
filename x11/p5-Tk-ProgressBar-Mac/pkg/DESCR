@@ -1,0 +1,3 @@
+This widget provides a dynamic image that looks just like a Mac OS
+9 progress bar.  Packed around it are four Frames, north, south,
+east and west, within which you can stuff additional widgets.
