@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/06 08:15:08 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2005/09/23 03:54:09 kevlo Exp $
 
 COMMENT=	"run-time class loading on first method call"
 
-DISTNAME=	Class-Autouse-1.17
+DISTNAME=	Class-Autouse-1.20
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Class/}
