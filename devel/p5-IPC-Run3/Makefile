@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/09 06:30:06 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2005/09/23 07:03:52 kevlo Exp $
 
 COMMENT=	"run a subprocess in batch mode"
 
-DISTNAME=	IPC-Run3-0.01
+DISTNAME=	IPC-Run3-0.030
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
