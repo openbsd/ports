@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/06/29 14:18:39 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/09/23 11:59:02 mbalmer Exp $
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/_ldap.so
 lib/python${MODPY_VERSION}/site-packages/dsml.py
 lib/python${MODPY_VERSION}/site-packages/dsml.pyc
@@ -64,10 +66,13 @@ share/examples/py-ldap/Demo/Lib/ldap/res/sizelimit.py
 share/examples/py-ldap/Demo/Lib/ldapurl/
 share/examples/py-ldap/Demo/Lib/ldapurl/urlsearch.py
 share/examples/py-ldap/Demo/Lib/ldif/
+share/examples/py-ldap/Demo/Lib/ldif/filterldif.py
 share/examples/py-ldap/Demo/Lib/ldif/ldifcopy.py
+share/examples/py-ldap/Demo/dn_search.py
 share/examples/py-ldap/Demo/initialize.py
 share/examples/py-ldap/Demo/ldapcontrols.py
 share/examples/py-ldap/Demo/options.py
+share/examples/py-ldap/Demo/page_control.py
 share/examples/py-ldap/Demo/passwd_ext_op.py
 share/examples/py-ldap/Demo/pickle_ldapobject.py
 share/examples/py-ldap/Demo/reconnect.py
