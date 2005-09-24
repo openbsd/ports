@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2005/09/16 15:54:54 david Exp $
+@comment $OpenBSD: PLIST,v 1.13 2005/09/24 16:19:29 bernd Exp $
 @conflict mozilla-firebird-*
 %%SHARED%%
 bin/firefox
@@ -337,7 +337,6 @@ mozilla-firefox/defaults/autoconfig/
 mozilla-firefox/defaults/autoconfig/platform.js
 mozilla-firefox/defaults/autoconfig/prefcalls.js
 mozilla-firefox/defaults/pref/
-mozilla-firefox/defaults/pref/bug307259.js
 mozilla-firefox/defaults/pref/firefox-l10n.js
 mozilla-firefox/defaults/pref/firefox.js
 mozilla-firefox/defaults/pref/inspector.js
