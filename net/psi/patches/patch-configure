@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2005/05/19 20:29:58 niallo Exp $
---- configure.orig	Tue May  3 10:05:02 2005
-+++ configure	Tue May  3 10:25:00 2005
+$OpenBSD: patch-configure,v 1.2 2005/09/24 00:02:48 espie Exp $
+--- configure.orig	Sat Nov 20 14:05:03 2004
++++ configure	Sat Sep 24 01:20:20 2005
 @@ -261,7 +261,7 @@ public:
  
  		s = conf->getenv("QC_WITH_QCA_LIB");
  		if(!s.isEmpty()) {
 -			if(!conf->checkLibrary(s, "qca"))
-+			if(!conf->checkLibrary(s, "qca -lpthread -lstdc++ -L%%X11BASE%%/lib"))
++			if(!conf->checkLibrary(s, "qca -lpthread -lstdc++ -L/usr/X11R6/lib"))
  				return false;
  			lib = s;
  		}
