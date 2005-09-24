@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2005/03/06 14:17:45 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2005/09/24 07:48:41 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples and tutorial for qt2"
@@ -97,9 +97,9 @@ post-patch:
 
 post-configure:
 	@cd ${WRKSRC} && cp -R examples examples-src
-	@find ${WRKSRC}/examples-src -name '*.orig' |xargs rm
+	@find ${WRKSRC}/examples-src -name '*.orig' |xargs -r rm
 	@cd ${WRKSRC} && cp -R tutorial tutorial-src
-	@find ${WRKSRC}/tutorial-src -name '*.orig' |xargs rm
+	@find ${WRKSRC}/tutorial-src -name '*.orig' |xargs -r rm
 
 do-install:
 	${INSTALL_DATA_DIR} ${QT_INCDIR}
