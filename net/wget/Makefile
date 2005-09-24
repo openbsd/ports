@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2005/07/25 07:12:58 aanriot Exp $
+# $OpenBSD: Makefile,v 1.40 2005/09/24 21:19:25 aanriot Exp $
 
 COMMENT=	"retrieve files from the 'net via HTTP and FTP"
 
-DISTNAME=	wget-1.10
+DISTNAME=	wget-1.10.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU:=wget/}
 
