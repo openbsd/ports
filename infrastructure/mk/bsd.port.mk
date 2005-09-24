@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.710 2005/09/18 12:20:00 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.711 2005/09/24 19:46:56 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -700,10 +700,14 @@ DESCR?=		${PKGDIR}/DESCR${SUBPACKAGE}
 MTREE_FILE?=
 MTREE_FILE+=${PORTSDIR}/infrastructure/db/fake.mtree
 
+_NODEPS?=no
 # Fill out package command, and package dependencies
 _PKG_PREREQ= ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}/COMMENT${SUBPACKAGE}
 PKG_ARGS+= -c '${WRKPKG}/COMMENT${SUBPACKAGE}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
-PKG_ARGS+=-f ${PLIST} -p ${PREFIX} `${MAKE} _print-package-args|sort -u`
+PKG_ARGS+=-f ${PLIST} -p ${PREFIX} 
+.if ${_NODEPS:L} == "no"
+PKG_ARGS+=`${MAKE} _print-package-args|sort -u`
+.endif
 .if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
 PKG_ARGS+=		-i ${PKGDIR}/INSTALL${SUBPACKAGE}
 .endif
@@ -1053,7 +1057,7 @@ _syslibresolve_fragment = \
 		/*) shdir="$${d%/*}/"; shprefix=""; d=$${d\#\#*/};; \
 		*/*) shprefix="$${d%/*}/"; shdir="${DEPBASE}/$${d%/*}"; \
 			d=$${d\#\#*/};; \
-		*) shprefix="" shdir="/usr/lib /usr/X11R6/lib ${DEPBASE}/lib";; \
+		*) shprefix="" shdir="${DEPBASE}/lib"; listlibs="$$listlibs; ls /usr/lib /usr/X11R6/lib 2>/dev/null";; \
 		esac; \
 		check=`eval $$listlibs| perl \
 			${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} $$d` \
@@ -1961,6 +1965,12 @@ _register_plist=:
 _register_plist=perl ${PORTSDIR}/infrastructure/package/register-plist ${PLIST_DB} ${PKGFILE${SUBPACKAGE}}
 .endif
 
+print-plist:
+	@${PKG_CMD} -q ${PKG_ARGS} ${PKGFILE${SUBPACKAGE}}
+
+print-plist-contents:
+	@${PKG_CMD} -q -Q ${PKG_ARGS} ${PKGFILE${SUBPACKAGE}}
+
 _package: ${_PKG_PREREQ}
 .if target(pre-package)
 	@cd ${.CURDIR} && exec ${MAKE} pre-package
@@ -2391,8 +2401,8 @@ ${_i:L}-depends-list:
 
 print-package-signature:
 	@echo -n ${FULLPKGNAME${SUBPACKAGE}}
-	@cd ${.CURDIR} && PACKAGING='${SUBPACKAGE}' ${MAKE} _print-package-args | \
-		sed -e 's,^-W ,,' -e 's,^-P .*:,,'|sort -u| \
+	@cd ${.CURDIR} && PACKAGING='${SUBPACKAGE}' LIST_LIBS=`${MAKE} _list-port-libs` ${MAKE} _print-package-signature-helper | \
+		sort -u| \
 		while read i; do echo -n ",$$i"; done
 	@echo
 
@@ -2420,7 +2430,7 @@ _print-package-args:
 			listlibs='ls ${DEPDIR}$$shdir 2>/dev/null'; \
 		else \
 			eval 1>&2 $$toset ${MAKE} ${PKGREPOSITORY}/$$default.tgz; \
-			listlibs='pkg_info -L -K ${PKGREPOSITORY}/$$default.tgz|grep "@lib $$shdir" |sed -e "s:@lib $$shdir/::"'; \
+			listlibs='pkg_info -L -K ${PKGREPOSITORY}/$$default.tgz|grep "^@lib $$shdir" |sed -e "s:@lib $$shdir/::"'; \
 		fi; \
 		IFS=,; for d in $$dep; do \
 			${_libresolve_fragment}; \
@@ -2446,6 +2456,62 @@ _print-package-args:
 		exit 1;; \
 	*) \
 		echo "-W $$shprefix$$check";; \
+	esac
+.   endfor
+.endif
+
+_list-port-libs:
+	@${MAKE} run-dir-depends|tsort -r|sed -e '$$d'|while read dir; do \
+		unset FLAVOR SUBPACKAGE || true; \
+		${_flavor_fragment}; \
+		eval $$toset _NODEPS=Yes ${MAKE} print-plist-contents ; \
+	done | grep '^@lib '| sed -e 's:@lib ::'
+
+_print-package-signature-helper:
+.for _i in ${RUN_DEPENDS}
+	@unset FLAVOR SUBPACKAGE || true; \
+	echo '${_i}' |{ \
+		IFS=:; read dep pkg pkgpath target; \
+		dir=$$pkgpath; ${_flavor_fragment}; \
+		default=`eval $$toset ${MAKE} _print-packagename`; \
+		case "X$$pkg" in X) pkg=`echo $$default|sed -e 's,-[0-9].*,-*,'`;; esac; \
+		echo "$$default"; \
+	}
+.endfor
+.if ${NO_SHARED_LIBS:L} != "yes"
+.  for _i in ${LIB_DEPENDS}
+	@unset FLAVOR SUBPACKAGE || true; \
+	echo '${_i}'|{ \
+		IFS=:; read dep pkg pkgpath target; \
+		dir=$$pkgpath; ${_flavor_fragment}; \
+		libspecs='';comma=''; \
+		default=`eval $$toset ${MAKE} _print-packagename`; \
+		case "X$$pkg" in X) pkg=`echo $$default|sed -e 's,-[0-9].*,-*,'`;; esac; \
+		listlibs='echo $$LIST_LIBS|tr "\040" "\012"|fgrep "$$shdir" |sed -e "s:$$shdir/::"'; \
+		IFS=,; for d in $$dep; do \
+			${_libresolve_fragment}; \
+			case "$$check" in \
+			*.a) continue;; \
+			Missing\ library|Error:*) \
+				echo 1>&2 "Can't resolve libspec $$d"; \
+				exit 1;; \
+			*) \
+				echo "$$shprefix$$check";; \
+			esac; \
+		done; \
+		echo "$$default"; \
+	}
+.  endfor
+.  for _i in ${WANTLIB}
+	@d=${_i}; listlibs='echo $$LIST_LIBS|tr "\040" "\012"|fgrep "$$shdir" |sed -e "s:$$shdir/::"'; \
+	${_syslibresolve_fragment}; \
+	case "$$check" in \
+	*.a) continue;; \
+	Missing\ library|Error:*) \
+		echo 1>&2 "Can't resolve libspec $$d"; \
+		exit 1;; \
+	*) \
+		echo "$$shprefix$$check";; \
 	esac
 .   endfor
 .endif
@@ -2655,4 +2721,5 @@ uninstall deinstall:
 	_internal-regress _internal-clean _internal-lib-depends-check \
 	_internal-newlib-depends-check \
 	_internal-manpages-check _internal-plist _internal-update-plist \
-	_internal-update update
+	_internal-update update print-plist print-plist-contents \
+	_list-port-libs _print-package-signature-helper
