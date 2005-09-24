@@ -1,5 +1,6 @@
---- polipo.texi.orig	Thu Jan 20 00:41:31 2005
-+++ polipo.texi	Fri Aug  5 22:42:17 2005
+$OpenBSD: patch-polipo_texi,v 1.1 2005/09/24 17:58:23 bernd Exp $
+--- polipo.texi.orig	Fri Sep 23 20:19:08 2005
++++ polipo.texi	Sat Sep 24 19:00:33 2005
 @@ -1245,7 +1245,7 @@ from the server.  If the latter arrives,
  the rest of the POST request@footnote{This, of course, is only part of
  the story.  Additionally, the server is not required to reply with
