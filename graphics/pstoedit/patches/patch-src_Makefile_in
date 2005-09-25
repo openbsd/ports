@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2005/08/11 17:32:06 naddy Exp $
---- src/Makefile.in.orig	Sun Aug  7 22:07:42 2005
-+++ src/Makefile.in	Thu Aug 11 18:42:11 2005
-@@ -473,9 +473,9 @@ clean-pkglibLTLIBRARIES:
+$OpenBSD: patch-src_Makefile_in,v 1.3 2005/09/25 22:46:21 naddy Exp $
+--- src/Makefile.in.orig	Sat Sep 24 00:24:29 2005
++++ src/Makefile.in	Sat Sep 24 00:29:33 2005
+@@ -466,9 +466,9 @@ clean-pkglibLTLIBRARIES:
  libp2edrvlplot.la: $(libp2edrvlplot_la_OBJECTS) $(libp2edrvlplot_la_DEPENDENCIES) 
- 	$(CXXLINK) -rpath $(pkglibdir) $(libp2edrvlplot_la_LDFLAGS) $(libp2edrvlplot_la_OBJECTS) $(libp2edrvlplot_la_LIBADD) $(LIBS)
+ 	$(CXXLINK) $(am_libp2edrvlplot_la_rpath) $(libp2edrvlplot_la_LDFLAGS) $(libp2edrvlplot_la_OBJECTS) $(libp2edrvlplot_la_LIBADD) $(LIBS)
  libp2edrvmagick++.la: $(libp2edrvmagick___la_OBJECTS) $(libp2edrvmagick___la_DEPENDENCIES) 
--	$(CXXLINK) -rpath $(pkglibdir) $(libp2edrvmagick___la_LDFLAGS) $(libp2edrvmagick___la_OBJECTS) $(libp2edrvmagick___la_LIBADD) $(LIBS)
-+	$(CXXLINK) -module -avoid-version -rpath $(pkglibdir) $(libp2edrvmagick___la_LDFLAGS) $(libp2edrvmagick___la_OBJECTS) $(libp2edrvmagick___la_LIBADD) $(LIBS)
+-	$(CXXLINK) $(am_libp2edrvmagick___la_rpath) $(libp2edrvmagick___la_LDFLAGS) $(libp2edrvmagick___la_OBJECTS) $(libp2edrvmagick___la_LIBADD) $(LIBS)
++	$(CXXLINK) -module -avoid-version $(am_libp2edrvmagick___la_rpath) $(libp2edrvmagick___la_LDFLAGS) $(libp2edrvmagick___la_OBJECTS) $(libp2edrvmagick___la_LIBADD) $(LIBS)
  libp2edrvstd.la: $(libp2edrvstd_la_OBJECTS) $(libp2edrvstd_la_DEPENDENCIES) 
 -	$(CXXLINK) -rpath $(pkglibdir) $(libp2edrvstd_la_LDFLAGS) $(libp2edrvstd_la_OBJECTS) $(libp2edrvstd_la_LIBADD) $(LIBS)
 +	$(CXXLINK) -module -avoid-version -rpath $(pkglibdir) $(libp2edrvstd_la_LDFLAGS) $(libp2edrvstd_la_OBJECTS) $(libp2edrvstd_la_LIBADD) $(LIBS)
  libp2edrvswf.la: $(libp2edrvswf_la_OBJECTS) $(libp2edrvswf_la_DEPENDENCIES) 
- 	$(CXXLINK) -rpath $(pkglibdir) $(libp2edrvswf_la_LDFLAGS) $(libp2edrvswf_la_OBJECTS) $(libp2edrvswf_la_LIBADD) $(LIBS)
+ 	$(CXXLINK) $(am_libp2edrvswf_la_rpath) $(libp2edrvswf_la_LDFLAGS) $(libp2edrvswf_la_OBJECTS) $(libp2edrvswf_la_LIBADD) $(LIBS)
  libp2edrvwmf.la: $(libp2edrvwmf_la_OBJECTS) $(libp2edrvwmf_la_DEPENDENCIES) 
