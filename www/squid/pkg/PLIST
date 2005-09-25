@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2005/05/25 02:27:13 brad Exp $
+@comment $OpenBSD: PLIST,v 1.23 2005/09/25 17:03:33 brad Exp $
 @newgroup _squid:515
 @newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
 bin/RunAccel
@@ -642,6 +642,68 @@ share/examples/squid/errors/German/ERR_WRITE_ERROR
 @sample share/squid/errors/German/ERR_WRITE_ERROR
 share/examples/squid/errors/German/ERR_ZERO_SIZE_OBJECT
 @sample share/squid/errors/German/ERR_ZERO_SIZE_OBJECT
+share/examples/squid/errors/Greek/
+@sample share/squid/errors/Greek/
+share/examples/squid/errors/Greek/ERR_ACCESS_DENIED
+@sample share/squid/errors/Greek/ERR_ACCESS_DENIED
+share/examples/squid/errors/Greek/ERR_CACHE_ACCESS_DENIED
+@sample share/squid/errors/Greek/ERR_CACHE_ACCESS_DENIED
+share/examples/squid/errors/Greek/ERR_CACHE_MGR_ACCESS_DENIED
+@sample share/squid/errors/Greek/ERR_CACHE_MGR_ACCESS_DENIED
+share/examples/squid/errors/Greek/ERR_CANNOT_FORWARD
+@sample share/squid/errors/Greek/ERR_CANNOT_FORWARD
+share/examples/squid/errors/Greek/ERR_CONNECT_FAIL
+@sample share/squid/errors/Greek/ERR_CONNECT_FAIL
+share/examples/squid/errors/Greek/ERR_DNS_FAIL
+@sample share/squid/errors/Greek/ERR_DNS_FAIL
+share/examples/squid/errors/Greek/ERR_FORWARDING_DENIED
+@sample share/squid/errors/Greek/ERR_FORWARDING_DENIED
+share/examples/squid/errors/Greek/ERR_FTP_DISABLED
+@sample share/squid/errors/Greek/ERR_FTP_DISABLED
+share/examples/squid/errors/Greek/ERR_FTP_FAILURE
+@sample share/squid/errors/Greek/ERR_FTP_FAILURE
+share/examples/squid/errors/Greek/ERR_FTP_FORBIDDEN
+@sample share/squid/errors/Greek/ERR_FTP_FORBIDDEN
+share/examples/squid/errors/Greek/ERR_FTP_NOT_FOUND
+@sample share/squid/errors/Greek/ERR_FTP_NOT_FOUND
+share/examples/squid/errors/Greek/ERR_FTP_PUT_CREATED
+@sample share/squid/errors/Greek/ERR_FTP_PUT_CREATED
+share/examples/squid/errors/Greek/ERR_FTP_PUT_ERROR
+@sample share/squid/errors/Greek/ERR_FTP_PUT_ERROR
+share/examples/squid/errors/Greek/ERR_FTP_PUT_MODIFIED
+@sample share/squid/errors/Greek/ERR_FTP_PUT_MODIFIED
+share/examples/squid/errors/Greek/ERR_FTP_UNAVAILABLE
+@sample share/squid/errors/Greek/ERR_FTP_UNAVAILABLE
+share/examples/squid/errors/Greek/ERR_INVALID_REQ
+@sample share/squid/errors/Greek/ERR_INVALID_REQ
+share/examples/squid/errors/Greek/ERR_INVALID_RESP
+@sample share/squid/errors/Greek/ERR_INVALID_RESP
+share/examples/squid/errors/Greek/ERR_INVALID_URL
+@sample share/squid/errors/Greek/ERR_INVALID_URL
+share/examples/squid/errors/Greek/ERR_LIFETIME_EXP
+@sample share/squid/errors/Greek/ERR_LIFETIME_EXP
+share/examples/squid/errors/Greek/ERR_NO_RELAY
+@sample share/squid/errors/Greek/ERR_NO_RELAY
+share/examples/squid/errors/Greek/ERR_ONLY_IF_CACHED_MISS
+@sample share/squid/errors/Greek/ERR_ONLY_IF_CACHED_MISS
+share/examples/squid/errors/Greek/ERR_READ_ERROR
+@sample share/squid/errors/Greek/ERR_READ_ERROR
+share/examples/squid/errors/Greek/ERR_READ_TIMEOUT
+@sample share/squid/errors/Greek/ERR_READ_TIMEOUT
+share/examples/squid/errors/Greek/ERR_SHUTTING_DOWN
+@sample share/squid/errors/Greek/ERR_SHUTTING_DOWN
+share/examples/squid/errors/Greek/ERR_SOCKET_FAILURE
+@sample share/squid/errors/Greek/ERR_SOCKET_FAILURE
+share/examples/squid/errors/Greek/ERR_TOO_BIG
+@sample share/squid/errors/Greek/ERR_TOO_BIG
+share/examples/squid/errors/Greek/ERR_UNSUP_REQ
+@sample share/squid/errors/Greek/ERR_UNSUP_REQ
+share/examples/squid/errors/Greek/ERR_URN_RESOLVE
+@sample share/squid/errors/Greek/ERR_URN_RESOLVE
+share/examples/squid/errors/Greek/ERR_WRITE_ERROR
+@sample share/squid/errors/Greek/ERR_WRITE_ERROR
+share/examples/squid/errors/Greek/ERR_ZERO_SIZE_OBJECT
+@sample share/squid/errors/Greek/ERR_ZERO_SIZE_OBJECT
 share/examples/squid/errors/Hebrew/
 @sample share/squid/errors/Hebrew/
 share/examples/squid/errors/Hebrew/ERR_ACCESS_DENIED
