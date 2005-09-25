@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2004/06/26 16:55:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2005/09/25 09:22:49 espie Exp $
 
 COMMENT=	"extensible emacs interface for TeX"
 
 DISTNAME=	auctex-11.14
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	print
 
 HOMEPAGE=	http://www.gnu.org/software/auctex/
@@ -17,10 +18,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=auctex/11.14/}
 
-FAKE_FLAGS=	lispdir=${DESTDIR}/${PREFIX}/share/emacs/site-lisp
+FAKE_FLAGS=	lispdir=${DESTDIR}${PREFIX}/share/emacs/site-lisp
 
 RUN_DEPENDS=	:emacs-21.*:editors/emacs21 \
 		:teTeX_base-*:print/teTeX/base
 BUILD_DEPENDS=	:emacs-21.*:editors/emacs21
+
+post-install:
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/emacs/site-lisp/auctex
 
 .include <bsd.port.mk>

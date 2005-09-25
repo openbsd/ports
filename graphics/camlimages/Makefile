@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2005/06/30 04:46:05 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2005/09/25 09:22:49 espie Exp $
 
 COMMENT=	"image manipulation functions for Objective Caml"
 CATEGORIES=	graphics
 
 DISTNAME=	camlimages-2.2.0
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.tgz
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/caml-light/bazar-ocaml/
 
@@ -25,7 +26,7 @@ WRKDIST=	${WRKDIR}/camlimages-2.2
 EXAMPLES_DIR=	${PREFIX}/share/examples/camlimages
 USE_GMAKE=	Yes
 
-CAMLDIR=	${DESTDIR}/${PREFIX}/lib/ocaml
+CAMLDIR=	${DESTDIR}/${TRUEPREFIX}/lib/ocaml
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -I${X11BASE}/include/freetype2 \
 		-I${X11BASE}/include -I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/libpng" LDFLAGS="-L${LOCALBASE}/lib"
@@ -42,6 +43,7 @@ pre-install:
 	${INSTALL_DATA_DIR} ${OCAML_LIBDIR}
 
 post-install:
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${CAMLDIR}
 	@cp -R ${WRKSRC}/examples/ ${EXAMPLES_DIR}
 
 .include <bsd.port.mk>

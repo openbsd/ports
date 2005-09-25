@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2005/08/09 14:37:58 kurt Exp $
+# $OpenBSD: Makefile,v 1.6 2005/09/25 09:22:49 espie Exp $
 
 COMMENT=        "java equivalent to make"
 
 DISTNAME=	apache-ant-1.6.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://ant.apache.org/
@@ -41,6 +42,7 @@ do-install:
 	    ${INSTALL_SCRIPT} ant antRun runant.pl ${PREFIX}/bin
 	@${INSTALL_DATA_DIR} ${ANTDOCS}
 	@cp -Rp ${WRKDIST}/docs/* ${ANTDOCS}
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${ANTDOCS}
 	@cd ${WRKDIST} && ${INSTALL_DATA} ${TXT} ${ANTDOCS}
 	@${INSTALL_DATA_DIR} ${PREFIX}/lib/java/ant
 	@cd ${WRKDIST}/lib && ${INSTALL_DATA} *.jar ${PREFIX}/lib/java/ant

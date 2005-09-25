@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2004/11/28 22:41:15 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2005/09/25 09:22:49 espie Exp $
 
 COMMENT=	"jump'n run game with unique video effects"
 
 VERSION=	0.8.10
 DVERSION=	0.8.6
 DISTNAME=	amphetamine-${VERSION}
-PKGNAME=	amph-${VERSION}
+PKGNAME=	amph-${VERSION}p0
 CATEGORIES=	games x11
 EXTRACT_SUFX=	.tar.bz2
 
@@ -37,6 +37,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/amph
 	${INSTALL_DATA_DIR} ${PREFIX}/share/amph
 	@cp -Rp ${WRKDIR}/amph/* ${PREFIX}/share/amph/
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/amph
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/amph
 
 .include <bsd.port.mk>

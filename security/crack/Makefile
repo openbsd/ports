@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2004/12/27 13:28:33 alek Exp $
+# $OpenBSD: Makefile,v 1.24 2005/09/25 09:22:49 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	'sensible unix password cracker'
 
 DISTNAME=	crack5.0
-PKGNAME=	crack-5.0p0
+PKGNAME=	crack-5.0p1
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.crypticide.org/users/alecm/
@@ -48,6 +48,7 @@ do-install:
 	@rm -f ${WRKSRC}/Run/*
 	@${INSTALL_SCRIPT} ${FILESDIR}/openbsd2spf ${WRKSRC}/scripts
 	@(cd ${WRKSRC} ; tar cf - . | (cd ${PREFIX}/crack; tar xfBp -))
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/crack
 	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/crack
 	@perl -pi -e "s,%%TRUEPREFIX%%,${TRUEPREFIX}," ${PREFIX}/crack/README.OpenBSD
 	@perl -pi -e "s,^make.*,# make removed for runtime," ${PREFIX}/crack/Crack
