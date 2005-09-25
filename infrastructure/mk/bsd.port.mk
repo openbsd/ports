@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.711 2005/09/24 19:46:56 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.712 2005/09/25 09:43:09 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2465,7 +2465,8 @@ _list-port-libs:
 		unset FLAVOR SUBPACKAGE || true; \
 		${_flavor_fragment}; \
 		eval $$toset _NODEPS=Yes ${MAKE} print-plist-contents ; \
-	done | grep '^@lib '| sed -e 's:@lib ::'
+	done | grep -e '^@lib ' -e '^@file .*/lib/.*\.a$$'| \
+	sed -e 's:@lib ::' -e 's:@file ::'
 
 _print-package-signature-helper:
 .for _i in ${RUN_DEPENDS}
