@@ -1,0 +1,18 @@
+$OpenBSD: patch-fax_faxspool_in,v 1.1 2005/09/25 18:18:24 aanriot Exp $
+--- fax/faxspool.in.orig	Sun Feb 27 13:10:51 2005
++++ fax/faxspool.in	Sun Sep 11 13:26:33 2005
+@@ -401,11 +401,11 @@ fs_cvt_pdf()
+ 
+ # user name (for fax header only! auth is done by faxq-helper via getuid())
+ ##########
+-if user=`logname 2>/dev/null`
+-then :
++if [ `id -u` = 0 ]; then
++    user=root
+ else
+     id=`id`
+-    user=`expr "$id" : "[^( ]*(\([^)]*\)"`
++    user=`logname`
+ fi
+ test -z "$user" && user=$LOGNAME
+ test -z "$user" && user=$USER

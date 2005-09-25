@@ -1,0 +1,39 @@
+$OpenBSD: patch-policy_h_dist,v 1.1 2005/09/25 18:18:24 aanriot Exp $
+--- policy.h-dist.orig	Tue Dec 16 12:43:07 2003
++++ policy.h-dist	Sun Jun 26 16:15:01 2005
+@@ -48,7 +48,7 @@
+  * Normally, this is "/bin/login", just a few systems put "login"
+  * elsewhere (e.g. Free/NetBSD in "/usr/bin/login").
+  */
+-#define DEFAULT_LOGIN_PROGRAM "/bin/login"
++#define DEFAULT_LOGIN_PROGRAM "/usr/bin/login"
+ 
+ /* FidoNet mailer support
+  * 
+@@ -114,7 +114,7 @@
+ /* group id that the device is chown()ed to. If not defined, the
+  * primary group of "DEVICE_OWNER" is used.
+  */
+-#define DEVICE_GROUP	"modem"
++#define DEVICE_GROUP	"dialer"
+ 
+ /* access mode for the line while getty has it - it should be accessible
+  * by uucp / uucp, but not by others (imagine someone dialing into your
+@@ -264,7 +264,7 @@
+ # ifdef linux
+ #  define LOCK	"/var/lock/LCK..%s"
+ # endif
+-# if defined(__FreeBSD__) || defined(__NetBSD__)
++# if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #  define LOCK "/var/spool/lock/LCK..%s"
+ # endif 
+ #endif
+@@ -591,7 +591,7 @@
+ #endif
+ 
+ #ifndef MAILER
+-# define MAILER		"/usr/lib/sendmail"
++# define MAILER		"/usr/sbin/sendmail"
+ # define NEED_MAIL_HEADERS
+ #endif
+ 

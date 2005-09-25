@@ -1,40 +1,62 @@
-# $OpenBSD: Makefile,v 1.23 2002/07/17 16:30:58 naddy Exp $
-# $FreeBSD: Makefile,v 1.25 1998/07/16 06:44:37 vanilla Exp $
+# $OpenBSD: Makefile,v 1.24 2005/09/25 18:18:23 aanriot Exp $
 
 COMMENT=	"handle external logins, send and receive faxes"
 
-BROKEN=		insecure tempfile handling: can overwrite any file on the system
-
-DISTNAME=	mgetty1.1.21-Jul24
-PKGNAME=	mgetty-1.1.21
+VERSION=	1.1.33
+RELEASE=	Apr10
+DISTNAME=	mgetty${VERSION}-${RELEASE}
+PKGNAME=	mgetty+sendfax-${VERSION}
 CATEGORIES=	comms
-
-PERMIT_PACKAGE_CDROM=
-PERMIT_PACKAGE_FTP=
-PERMIT_DISTFILES_CDROM=
-PERMIT_DISTFILES_FTP=
-
-FAKE=No
-MASTER_SITES=	ftp://alpha.greenie.net/pub/mgetty/source/1.1/ \
-		ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
 
 HOMEPAGE=	http://alpha.greenie.net/mgetty/
 
-MAKE_ENV+=	prefix="${PREFIX}" spool="/var/spool" \
-		CONFDIR="/etc/mgetty+sendfax" \
-		PHONE_GROUP="wheel" PHONE_PERMS="700"
+MAINTAINER=	Antoine Jacoutot <ajacoutot@lphp.org>
 
-WRKDIST=	${WRKDIR}/${PKGNAME}
+# GPL
+PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE_FTP=	yes
+PERMIT_DISTFILES_CDROM=	yes
+PERMIT_DISTFILES_FTP=	yes
+WANTLIB=		c m util
 
-post-build:
-	@sed -e "s,@prefix@,${PREFIX},g" ${FILESDIR}/setup > ${WRKDIR}/setup
+MASTER_SITES=	ftp://alpha.greenie.net/pub/mgetty/source/1.1/ \
+		ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
 
+RUN_DEPENDS=	::print/ghostscript/gnu \
+		::graphics/netpbm
+
+WRKDIST=	${WRKDIR}/mgetty-${VERSION}
+
+MAKE_ENV+=	SYSCONFDIR=${SYSCONFDIR}
+
+pre-configure:
+	@sed -e "s,@prefix@,${PREFIX},g" \
+		-e "s,@sysconfdir@,${SYSCONFDIR},g" \
+		${FILESDIR}/setup > ${WRKDIR}/setup
+	@cp ${WRKSRC}/policy.h-dist ${WRKSRC}/policy.h
+
+pre-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mgetty+sendfax
+	
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/setup ${PREFIX}/lib/mgetty+sendfax
-	@echo "***"
-	@echo "*** Finished installing mgetty+sendfax."
-	@echo "*** To complete the install, run ${PREFIX}/lib/mgetty+sendfax/setup"
-	@echo "*** script."
-	@echo "***"
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mgetty+sendfax
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mgetty+sendfax/faq
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mgetty+sendfax/voice
+	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/mgetty+sendfax
+	${INSTALL_DATA} ${WRKSRC}/faq/SGML/* ${PREFIX}/share/doc/mgetty+sendfax/faq
+	${INSTALL_DATA} ${WRKSRC}/voice/doc/* ${PREFIX}/share/doc/mgetty+sendfax/voice
+	${INSTALL_DATA} -m 600 ${WRKSRC}/voice/voice.conf-dist ${PREFIX}/share/examples/mgetty+sendfax/voice.conf
+	${TAR} -cf - -C ${WRKSRC} samples | ${TAR} -xf - -C ${PREFIX}/share/examples/mgetty+sendfax
+
+REGRESS_TARGET=		check
+TESTS_ENVIRONMENT=	MAKE=${GMAKE}
+
+do-regress:
+	@cd ${WRKBUILD} && \
+		exec ${SETENV} ${MAKE_ENV} \
+		TESTS_ENVIRONMENT='${TESTS_ENVIRONMENT}' \
+			${MAKE_PROGRAM} ${REGRESS_FLAGS} -f ${MAKE_FILE} \
+			${REGRESS_TARGET}
 
 .include <bsd.port.mk>

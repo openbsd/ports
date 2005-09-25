@@ -1,0 +1,36 @@
+$OpenBSD: patch-fax_Makefile,v 1.1 2005/09/25 18:18:24 aanriot Exp $
+--- fax/Makefile.orig	Wed Feb 16 16:54:46 2005
++++ fax/Makefile	Tue Aug  9 12:02:02 2005
+@@ -57,19 +57,19 @@ install: all
+ #
+ 	-for i in $(FAX_SCRIPTS); do \
+ 		mv -f $(BINDIR)/$$i $(BINDIR)/$$i.old 2>/dev/null ; \
+-		$(INSTALL) -m 755 $$i $(BINDIR) ; \
++		$(BSD_INSTALL_SCRIPT) $$i $(BINDIR) ; \
+ 	done
+-	$(INSTALL) -m 755 faxrunqd $(SBINDIR)
+-	$(INSTALL) faxq-helper $(LIBDIR)
++	$(BSD_INSTALL_SCRIPT) faxrunqd $(SBINDIR)
++	$(BSD_INSTALL_PROGRAM) faxq-helper $(LIBDIR)
+ 	chown $(FAX_OUT_USER) $(LIBDIR)/faxq-helper
+ 	chmod 4711 $(LIBDIR)/faxq-helper
+ #
+ # data files
+ #
+-	$(INSTALL) -m 644 cour25.pbm $(LIBDIR)
+-	$(INSTALL) -m 644 cour25n.pbm $(LIBDIR)
+-	-test -f $(CONFDIR)/faxheader || \
+-		$(INSTALL) -m 644 faxheader $(CONFDIR)
++	$(BSD_INSTALL_DATA) cour25.pbm $(LIBDIR)
++	$(BSD_INSTALL_DATA) cour25n.pbm $(LIBDIR)
++#	-test -f $(CONFDIR)/faxheader || \
++		$(BSD_INSTALL_DATA) faxheader ${PREFIX}/share/examples/mgetty+sendfax
+ #
+ # /etc/magic
+ #
+@@ -82,4 +82,4 @@ install: all
+ #
+ # faxspool.rules sample file
+ #
+-	$(INSTALL) -m 644 faxspool.rules $(CONFDIR)/faxspool.rules.sample
++	$(BSD_INSTALL_DATA) faxspool.rules ${PREFIX}/share/examples/mgetty+sendfax/faxspool.rules.sample

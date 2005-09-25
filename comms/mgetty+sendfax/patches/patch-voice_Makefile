@@ -1,0 +1,35 @@
+$OpenBSD: patch-voice_Makefile,v 1.1 2005/09/25 18:18:24 aanriot Exp $
+--- voice/Makefile.orig	Sun Dec 23 16:08:13 2001
++++ voice/Makefile	Tue Jun 14 09:25:07 2005
+@@ -83,20 +83,20 @@ vgetty-install: vgetty-all
+ 	@echo "  Installing the voice extensions"
+ 	@echo "  -------------------------------"
+ 	@echo ""
+-	$(INSTALL) -m 700 vgetty/vgetty $(SBINDIR)
+-	$(INSTALL) -m 755 vm/vm $(BINDIR)
++	$(BSD_INSTALL_PROGRAM) -m 700 vgetty/vgetty $(SBINDIR)
++	$(BSD_INSTALL_PROGRAM) vm/vm $(BINDIR)
+ 	for i in $(PVFTOOLS); \
+ 	do \
+-	     $(INSTALL) -m 755 pvftools/$$i $(BINDIR); \
++	     $(BSD_INSTALL_PROGRAM) pvftools/$$i $(BINDIR); \
+ 	done
+-	$(INSTALL) -m 644 man/man1/zplay.1 $(MAN1DIR)
+-	$(INSTALL) -m 644 man/man1/pvf.1 $(MAN1DIR)
+-	$(INSTALL) -m 644 man/man8/vgetty.8 $(MAN8DIR)
+-	cd $(MAN1DIR); \
+-	for i in $(PVFTOOLS); \
+-	do \
+-	     $(RM) -f $$i.1; $(LN) -s pvf.1 $$i.1; \
+-	done
++	$(BSD_INSTALL_MAN) man/man1/zplay.1 $(MAN1DIR)
++	$(BSD_INSTALL_MAN) man/man1/pvf.1 $(MAN1DIR)
++	$(BSD_INSTALL_MAN) man/man8/vgetty.8 $(MAN8DIR)
++#	cd $(MAN1DIR); \
++#	for i in $(PVFTOOLS); \
++#	do \
++#	     $(RM) -f $$i.1; $(LN) -s pvf.1 $$i.1; \
++#	done
+ #	[ -d $(VOICE_DIR) ] || mkdir $(VOICE_DIR)
+ #	[ -d $(VOICE_DIR)/incoming ] || mkdir $(VOICE_DIR)/incoming
+ #	chown 0 $(VOICE_DIR)/incoming

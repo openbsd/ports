@@ -1,10 +1,15 @@
-Mgetty is a ``smart'' getty replacement, designed to be used with hayes
-compatible data and data/fax modems.
-Mgetty knows about modem initialization, manual modem answering (so your
-modem doesn't answer if the machine isn't ready), UUCP locking (so you can
-use the same device for dial-in and dial-out).
-Mgetty provides very extensive logging facilities.
+Mgetty+sendfax is a collection of programs to send and receive faxes in
+a unix environment using a class 2.0 or 2 (they're different) faxmodem.
+vgetty is an extension to mgetty, distributed with it, that implements
+incoming voice call handling for certain voice-capable modems, with new
+ones added regularly, if specs are available.
 
-Sendfax send the named g3 fax files to the fax machine at "phone number". 
-The g3 files can be created with pbmtog3(1) or GNU's GhostScript with the
-"digifax" driver.
+More specifically, the program `mgetty' allows you to use a class 2.0 or
+2 fax modem for receiving faxes and handling external logins without
+interfering with outgoing calls. `sendfax' is a standalone program which
+sends fax files. `vgetty' is an extended version of mgetty that can
+answer the telephone like an answering machine and record a voice-mail
+message (if it finds one), or perform `mgetty's fax or data call
+handling otherwise. The mgetty+sendfax distribution includes vgetty and
+a good-sized gob of utility programs that help you manage faxes and
+voice messages.

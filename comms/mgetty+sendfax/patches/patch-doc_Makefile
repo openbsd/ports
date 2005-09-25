@@ -1,0 +1,48 @@
+$OpenBSD: patch-doc_Makefile,v 1.1 2005/09/25 18:18:23 aanriot Exp $
+--- doc/Makefile.orig	Sun Feb 27 13:09:53 2005
++++ doc/Makefile	Tue Jun 14 09:18:01 2005
+@@ -26,7 +26,7 @@ MAN_FMT_PRG=$(NROFF) -man
+ 
+ all:
+ 
+-doc-all: mgetty.asc mgetty.info mgetty.dvi mgetty.ps fmt-manpages $(MANSRC) 
++doc-all: mgetty.info fmt-manpages $(MANSRC) 
+ 
+ manpages: $(MANSRC)
+ 
+@@ -43,7 +43,7 @@ mgetty.html: mgetty.texi
+ 	-texi2html -verbose mgetty.texi
+ 
+ mgetty.info: mgetty.texi
+-	-makeinfo mgetty.texi
++	-makeinfo --no-split mgetty.texi
+ 
+ mgetty.ps: mgetty.dvi
+ 	-dvips -o mgetty.ps mgetty.dvi
+@@ -67,21 +67,21 @@ fullclean: clean
+ install: $(MANSRC) mgetty.info
+ 	-mkdir `dirname $(MAN1DIR)` $(MAN1DIR) $(MAN4DIR) $(MAN5DIR) $(MAN8DIR) 2>/dev/null
+ 	for i in $(MAN1PAGES) ; do \
+-		$(INSTALL) -m 644 $$i $(MAN1DIR) ; \
++		$(BSD_INSTALL_MAN) $$i $(MAN1DIR) ; \
+ 	done
+ 	for i in $(MAN4PAGES) ; do \
+-		$(INSTALL) -m 644 $$i $(MAN4DIR) ; \
++		$(BSD_INSTALL_MAN) $$i $(MAN4DIR) ; \
+ 	done
+ 	for i in $(MAN5PAGES) ; do \
+-		$(INSTALL) -m 644 $$i $(MAN5DIR) ; \
++		$(BSD_INSTALL_MAN) $$i $(MAN5DIR) ; \
+ 	done
+ 	for i in $(MAN8PAGES) ; do \
+-		$(INSTALL) -m 644 $$i $(MAN8DIR) ; \
++		$(BSD_INSTALL_MAN) $$i $(MAN8DIR) ; \
+ 	done
+ 	if [ -f mgetty.info ] ; then\
+ 	    test -d $(INFODIR) || mkdir $(INFODIR) 2>/dev/null ; \
+ 	    for i in mgetty.info* ; do \
+-		$(INSTALL) -m 644 $$i $(INFODIR) ; \
++		$(BSD_INSTALL_MAN) $$i $(INFODIR) ; \
+ 	    done ; \
+ 	else \
+ 	    echo "mgetty.info not made, skipping" ; \

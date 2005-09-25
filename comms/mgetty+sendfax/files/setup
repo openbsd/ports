@@ -1,6 +1,9 @@
 #!/usr/bin/perl
-$confdir = "/etc/mgetty+sendfax";
-$defport = "tty00";
+
+# $OpenBSD: setup,v 1.2 2005/09/25 18:18:23 aanriot Exp $
+
+$confdir = "@sysconfdir@/mgetty+sendfax";
+$defport = "cua00";
 
 print STDERR "\n\n*** mgetty+sendfax configuration program ***\n\n";
 
