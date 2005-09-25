@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/09/20 15:22:42 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2005/09/25 14:48:53 espie Exp $
 
 COMMENT=	"Atmel AVR 8-bit RISC microcontrollers' XGCC"
 
@@ -25,7 +25,7 @@ MAKE_ADA?=No
 
 DISTNAME=	gcc-${FULL_VERSION}
 EXTRACT_SUFX=	.tar.bz2
-PKGNAME=	avr-gcc-${V}
+PKGNAME=	avr-gcc-${V}p0
 
 MASTER_SITE_GCC=	ftp://gcc.gnu.org/pub/gcc/ \
 			ftp://ftp.uvsq.fr/pub/gcc/ \

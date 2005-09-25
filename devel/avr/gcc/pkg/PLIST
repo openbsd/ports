@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/20 15:22:43 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/09/25 14:48:53 espie Exp $
 avr/
 avr/lib/
 bin/avr-c++
@@ -70,6 +70,6 @@ libexec/gcc/avr/3.4.5/install-tools/mkinstalldirs
 @man man/man1/avr-gcov.1
 @man man/man1/avr-grepjar.1
 @man man/man1/avr-jar.1
-@man man/man7/fsf-funding.7
-@man man/man7/gfdl.7
-@man man/man7/gpl.7
+@comment @man man/man7/fsf-funding.7
+@comment @man man/man7/gfdl.7
+@comment @man man/man7/gpl.7
