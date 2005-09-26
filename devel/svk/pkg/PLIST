@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/05/06 09:02:23 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/09/26 03:18:53 kevlo Exp $
 @conflict p5-SVK-*
 bin/svk
 ${P5SITE}/SVK/
@@ -75,6 +75,7 @@ ${P5SITE}/SVK/Resolve.pm
 ${P5SITE}/SVK/Resolve/AraxisMerge.pm
 ${P5SITE}/SVK/Resolve/Emacs.pm
 ${P5SITE}/SVK/Resolve/FileMerge.pm
+${P5SITE}/SVK/Resolve/GVim.pm
 ${P5SITE}/SVK/Resolve/GtkDiff.pm
 ${P5SITE}/SVK/Resolve/Guiffy.pm
 ${P5SITE}/SVK/Resolve/KDiff3.pm
@@ -82,6 +83,7 @@ ${P5SITE}/SVK/Resolve/Meld.pm
 ${P5SITE}/SVK/Resolve/P4WinMerge.pm
 ${P5SITE}/SVK/Resolve/TkDiff.pm
 ${P5SITE}/SVK/Resolve/TortoiseMerge.pm
+${P5SITE}/SVK/Resolve/Vim.pm
 ${P5SITE}/SVK/Resolve/XXDiff.pm
 ${P5SITE}/SVK/Target/
 ${P5SITE}/SVK/Target.pm

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/06/10 06:41:52 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2005/09/26 03:18:53 kevlo Exp $
 
 COMMENT=	"decentralized version control system"
 
-V=		1.00
+V=		1.04
 DISTNAME=	SVK-${V}
 PKGNAME=	svk-${V}
 CATEGORIES=	devel perl5
@@ -31,8 +31,7 @@ BUILD_DEPENDS=	:p5-Compress-Zlib->=1.34:archivers/p5-Compress-Zlib \
 		:p5-IO-Digest->=0.10:devel/p5-IO-Digest \
 		:p5-IO-Pager->=0.05:devel/p5-IO-Pager \
 		:p5-PerlIO-via-symlink->=0.05:devel/p5-PerlIO-via-symlink \
-		:p5-SVN-Mirror->=0.61:devel/p5-SVN-Mirror \
-		:p5-Time-TimeDate->=1.16:devel/p5-Time-TimeDate \
+		:p5-SVN-Mirror->=0.67:devel/p5-SVN-Mirror \
 		:p5-YAML->=0.36:devel/p5-YAML \
 		:p5-Pod-Simple->=3.02:textproc/p5-Pod-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
