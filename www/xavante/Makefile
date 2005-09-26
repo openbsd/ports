@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2005/09/22 16:36:17 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2005/09/26 22:31:58 jolan Exp $
 
 COMMENT=	"lua web server with cgi support"
 DISTNAME=	xavante-1.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www
 MASTER_SITES=	http://luaforge.net/frs/download.php/958/
 
@@ -43,6 +43,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/t_xavante_start.lua \
 		${PREFIX}/bin/xavante
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xavante
+	${INSTALL_DATA} ${WRKSRC}/src/sajax/sajax.lua \
+		${PREFIX}/share/examples/xavante
 	${INSTALL_DATA} ${WRKSRC}/web/*.lp ${PREFIX}/share/examples/xavante
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xavante/img
 	${INSTALL_DATA} ${WRKSRC}/web/img/*.{gif,jpg} \
