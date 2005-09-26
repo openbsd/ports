@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/26 02:50:23 kevlo Exp $
+${P5SITE}/File/
+${P5SITE}/File/chdir.pm
+@man man/man3p/File::chdir.3p
