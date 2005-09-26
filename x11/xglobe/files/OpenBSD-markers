@@ -1,8 +1,8 @@
-# $OpenBSD: OpenBSD-markers,v 1.62 2005/09/19 18:32:43 bernd Exp $
+# $OpenBSD: OpenBSD-markers,v 1.63 2005/09/26 12:58:33 grunk Exp $
 #
 # THE PKGNAME MUST BE BUMPED FOR THE FOLLOWING PORTS WHEN YOU COMMIT
-# TO THIS FILE: 
-# 	x11/xglobe
+# TO THIS FILE:
+#	x11/xglobe
 #	x11/xplanet
 #
 # This is a list of OpenBSD developers and related people.
@@ -47,23 +47,24 @@
 43.9183		-78.6838	"Bertrand"	# Louis
 44.01		-79.93		"Darwin"	# Ian
 45.29		-73.34		"Lebel"		# David
-45.4745		-73.6556	"Sauve-Frankel" # Mathieu
+45.4745		-73.6556	"Sauve-Frankel"	# Mathieu
 45.5		-73.5		"Cote"		# Yannick
 45.78		3.08		"Vallat"	# Miodrag
 47.25		-61.48		"Cobb"		# Wilbern
 47.50		7.60		"Hartmeier"	# Daniel
 47.53		21.63		"Nagy"		# Robert
 47.581		7.589		"Balmer"	# Marc
+48.0718		11.9582		"von Gernler"	# Alexander
 48.2		16.367		"Reindl"	# Martin
 48.3		15.7		"Sammer"	# Reinhard J.
 48.87		2.33		"Espie"		# Marc
+48.1247		11.5975		"Pfatschbacher"	# Marco
 48.137970	11.542279	"Friedl"	# Markus
 48.35		7.46		"Couderc"	# Damien
 48.750		2.317		"Kadhi"		# Saad
 49.22		-123.10		"Hugh"		# Hugh
 49.28		-123.12		"McBride"	# Ryan Thomas
 49.313446	-123.063975	"Coulter"	# Michael
-49.4601		11.0669		"von Gernler"	# Alexander
 49.48		8.42		"Weisgerber"	# Christian
 48.08		11.31		"Sturm"		# Nikolay
 48.76472	9.17027		"Buehler"	# Philipp
