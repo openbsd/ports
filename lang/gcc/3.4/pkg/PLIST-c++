@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-c++,v 1.1 2004/11/23 18:31:46 espie Exp $
+@comment $OpenBSD: PLIST-c++,v 1.2 2005/09/26 09:47:33 espie Exp $
 bin/ec++
 bin/eg++
 bin/${CONFIG}-ec++
@@ -203,9 +203,9 @@ include/c++/${V}/${CONFIG}/bits/gthr-single.h
 include/c++/${V}/${CONFIG}/bits/gthr.h
 include/c++/${V}/${CONFIG}/bits/messages_members.h
 include/c++/${V}/${CONFIG}/bits/os_defines.h
-include/c++/${V}/${CONFIG}/bits/stdc++.h.gch/
-include/c++/${V}/${CONFIG}/bits/stdc++.h.gch/O0g
-include/c++/${V}/${CONFIG}/bits/stdc++.h.gch/O2g
+@comment include/c++/${V}/${CONFIG}/bits/stdc++.h.gch/
+@comment include/c++/${V}/${CONFIG}/bits/stdc++.h.gch/O0g
+@comment include/c++/${V}/${CONFIG}/bits/stdc++.h.gch/O2g
 include/c++/${V}/${CONFIG}/bits/time_members.h
 include/c++/${V}/iomanip
 include/c++/${V}/ios
