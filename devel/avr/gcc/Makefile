@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/09/26 08:13:17 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2005/09/26 08:59:06 aanriot Exp $
 
 COMMENT=	"Atmel AVR 8-bit RISC microcontrollers' XGCC"
 
@@ -12,21 +12,15 @@ PERMIT_DISTFILES_CDROM=	Yes
 WANTLIB=		c
 DIST_SUBDIR=gcc
 
-MAKE_GXX=Yes
+MAKE_GXX=No
 MAKE_FORTRAN=No
 MAKE_OBJC=No
 MAKE_JAVA=No
 MAKE_ADA=No
 
-MAKE_GXX?=No
-MAKE_FORTRAN?=No
-MAKE_OBJC?=No
-MAKE_JAVA?=No
-MAKE_ADA?=No
-
 DISTNAME=	gcc-${FULL_VERSION}
 EXTRACT_SUFX=	.tar.bz2
-PKGNAME=	avr-gcc-${V}p0
+PKGNAME=	avr-gcc-${V}p1
 
 MASTER_SITE_GCC=	ftp://gcc.gnu.org/pub/gcc/ \
 			ftp://ftp.uvsq.fr/pub/gcc/ \
@@ -34,7 +28,7 @@ MASTER_SITE_GCC=	ftp://gcc.gnu.org/pub/gcc/ \
 
 MASTER_SITES= 		${MASTER_SITE_GCC:=snapshots/$(FULL_VERSION)/}
 
-BUILD_DEPENDS+= 	::devel/autoconf/2.13		\
+BUILD_DEPENDS+=		::devel/autoconf/2.13		\
 			:bison-*:devel/bison		\
 			::devel/metaauto		\
 			::devel/avr/binutils
