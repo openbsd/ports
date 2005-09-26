@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/09/14 16:01:22 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2005/09/26 21:39:03 sturm Exp $
+
+ONLY_FOR_ARCHS=	i386 macppc zaurus
 
 COMMENT=	"utility to adjust cpu performance relative to usage"
 CATEGORIES=	sysutils
