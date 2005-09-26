@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/09/25 14:48:53 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/09/26 08:13:17 espie Exp $
 
 COMMENT=	"Atmel AVR 8-bit RISC microcontrollers' XGCC"
 
@@ -10,6 +10,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 WANTLIB=		c
+DIST_SUBDIR=gcc
 
 MAKE_GXX=Yes
 MAKE_FORTRAN=No
