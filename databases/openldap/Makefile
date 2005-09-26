@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.53 2005/06/29 13:25:19 msf Exp $
+# $OpenBSD: Makefile,v 1.54 2005/09/26 05:55:03 jakob Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
 
 VERSION=	2.2.27
 DISTNAME=	openldap-${VERSION}
-FULLPKGNAME=	openldap-client-${VERSION}p0
-PKGNAME-server=	openldap-server-${VERSION}p0
+FULLPKGNAME=	openldap-client-${VERSION}p1
+PKGNAME-server=	openldap-server-${VERSION}p1
 CATEGORIES=	databases net
 
 HOMEPAGE=	http://www.openldap.org/
@@ -84,7 +84,7 @@ CONFIGURE_ARGS+=	--without-cyrus-sasl \
 
 .if ${FLAVOR:L:Mbdb}
 CONFIGURE_ARGS+=	--enable-bdb
-BUILD_DEPENDS+=   	:db-4.*:databases/db/v4
+LIB_DEPENDS+=		lib/db4/db.=4:db-4.*:databases/db/v4
 CPPFLAGS+=		-I${LOCALBASE}/include/db4
 LDFLAGS+=		-L${LOCALBASE}/lib/db4
 LIBS+=			-ldb
