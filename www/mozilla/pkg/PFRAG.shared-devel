@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-devel,v 1.8 2005/09/22 17:00:24 kurt Exp $
+@comment $OpenBSD: PFRAG.shared-devel,v 1.9 2005/09/26 21:04:48 kurt Exp $
 @comment @lib mozilla/lib/components/libaccessibility.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libaddrbook.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libappcomps.so.${SO_VERSION}
@@ -43,7 +43,6 @@
 @comment @lib mozilla/lib/components/libmyspell.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libnecko.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libnecko2.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libnkgnomevfs.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libnsappshell.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/libnsprefm.so.${SO_VERSION}
 @comment @lib mozilla/lib/components/liboji.so.${SO_VERSION}

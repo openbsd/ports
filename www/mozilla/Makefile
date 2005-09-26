@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.89 2005/09/22 17:00:24 kurt Exp $
+# $OpenBSD: Makefile,v 1.90 2005/09/26 21:04:48 kurt Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
 COMMENT=	"open source version of the Netscape browser"
 COMMENT-devel=	"devel files for Gecko"
 
-VER=		1.7.11
+VER=		1.7.12
 DISTNAME=	mozilla
 PKGNAME=	mozilla-${VER}
 PKGNAME-devel=	mozilla-devel-${VER}
 DISTFILES=	mozilla-${VER}-source.tar.bz2
-SO_VERSION=	4.0
+SO_VERSION=	5.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
  
@@ -47,12 +47,8 @@ WANTLIB=	X11 Xt Xft Xrender atk-1.0.0.0 fontconfig freetype \
 MODULES=	devel/gettext
 RUN_DEPENDS=	:${PKGNAME}:www/mozilla
 .else
-LIB_DEPENDS+=	gnomevfs-2::x11/gnome/vfs2 \
-		jpeg.62::graphics/jpeg \
-		png.3::graphics/png
 RUN_DEPENDS=	:esound-0.2.*:audio/esound
-WANTLIB+=	Xext Xp ORBit-2 bonobo-2 bonobo-activation c \
-		gconf-2 gthread-2.0.0.0 pthread z
+WANTLIB+=	Xext Xp c jpeg png pthread z
 .  if empty(MACHINE_ARCH:Malpha)
 WANTLIB+=	stdc++
 .  endif
@@ -84,7 +80,8 @@ CONFIGURE_ARGS=					\
 		--disable-pedantic		\
 		--disable-debug			\
 		--disable-tests			\
-		--disable-ldap
+		--disable-ldap			\
+		--disable-gnomevfs
 
 CONFIGURE_ENV=	PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
 		BUILD_OFFICIAL=1 \
