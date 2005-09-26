@@ -1,7 +1,7 @@
-DBD::SQLite2 is the Perl5 Database Interface driver for the SQLite3
+DBD::SQLite2 is the Perl5 Database Interface driver for the SQLite2
 database.
 
 In other words: DBD::SQLite2 is an interface between the Perl
-programming language and the SQLite3 programming API that comes with
+programming language and the SQLite2 programming API that comes with
 the SQLite Embeddable database management system.  Most functions
 provided by the respective programming API's are supported.
