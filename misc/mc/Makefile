@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.24 2005/07/31 13:51:50 robert Exp $
+# $OpenBSD: Makefile,v 1.25 2005/09/27 13:37:49 robert Exp $
 
 COMMENT=		"free Norton Commander clone with many useful features"
 
 DISTNAME=		mc-4.6.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.ibiblio.org/mc/
-MASTER_SITES=		http://www.ibiblio.org/pub/Linux/utils/file/managers/mc/
+MASTER_SITES=	http://www.ibiblio.org/pub/Linux/utils/file/managers/mc/
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE_FTP=		Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c termcap
@@ -26,5 +27,5 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-vfs --without-mcfs --enable-charset
 CONFIGURE_ENV=		LOCALBASE=${LOCALBASE}
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
-
+USE_GMAKE= Yes
 .include <bsd.port.mk>
