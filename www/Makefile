@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2005/09/22 17:02:18 kurt Exp $
+# $OpenBSD: Makefile,v 1.199 2005/09/27 13:22:32 alek Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -156,6 +156,7 @@
      SUBDIR += py-jonpy
      SUBDIR += rawdog
      SUBDIR += reportmagic
+     SUBDIR += sarg
      SUBDIR += snownews
      SUBDIR += squid
      SUBDIR += squid,snmp
