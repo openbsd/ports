@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.57 2005/02/08 19:06:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.58 2005/09/27 09:53:37 aanriot Exp $
 
 COMMENT=	"scan ports and fingerprint stack of network hosts"
 
-DISTNAME=	nmap-3.81
+DISTNAME=	nmap-3.93
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}dist/
 EXTRACT_SUFX=	.tgz
@@ -18,10 +18,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto m pcap ssl stdc++ 
 
+USE_GMAKE=		yes
+
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--with-libpcap=/usr \
+			--with-openssl=/usr \
 			--with-libpcre=${LOCALBASE} \
-			--with-openssl=/usr
+			--with-libdnet=${LOCALBASE}
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} \
 				${WRKSRC}/nbase \
 				${WRKSRC}/nsock/src
@@ -29,7 +32,8 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} \
 FLAVORS=	no_x11
 FLAVOR?=	
 
-LIB_DEPENDS+=	pcre::devel/pcre
+LIB_DEPENDS+=	pcre::devel/pcre \
+		dnet::net/libdnet
 
 .if ${FLAVOR:L:Mno_x11}
 ALL_TARGET=	nmap
