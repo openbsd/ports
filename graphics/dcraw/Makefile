@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2005/06/18 18:14:49 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2005/09/27 08:24:22 alek Exp $
 
 COMMENT=	"digital camera RAW format conversion tool"
 
-PKGNAME=	dcraw-7.30
+PKGNAME=	dcraw-7.65
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.cybercom.net/~dcoffin/dcraw/
 
-MASTER_SITES=	${HOMEPAGE} \
-		http://bruno.rohee.free.fr/dcraw/${PKGNAME}/
+MASTER_SITES=	http://bruno.rohee.free.fr/dcraw/${PKGNAME}/
+	
 DISTFILES=	dcraw.c dcraw.1
 DIST_SUBDIR=	${PKGNAME}
 
