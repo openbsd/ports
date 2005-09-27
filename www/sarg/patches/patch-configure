@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2005/09/27 13:03:45 alek Exp $
+--- configure.orig	Tue Sep 27 13:48:07 2005
++++ configure	Tue Sep 27 13:48:21 2005
+@@ -2331,12 +2331,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ ;;
+ esac
+ 
+-if test "${CC}" = "cc" ; then
+-   CFLAGS="${CFLAGS} -w -g -O2 -Aa"
+-else
+-   CFLAGS="${CFLAGS} -w"
+-fi
+-
+ case "$host" in
+    *-solaris*)
+    LDFLAGS="${LDFLAGS} -lsocket -lnsl"

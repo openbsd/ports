@@ -1,0 +1,3 @@
+Sarg is a Squid Analysis Report Generator that allows to view "where"
+your users are going to on the Internet. Sarg generate reports in HTML,
+with many fields, like: users, IP addresses, bytes, sites and times.
