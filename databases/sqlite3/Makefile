@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2005/09/17 22:05:39 jolan Exp $
+# $OpenBSD: Makefile,v 1.11 2005/09/27 03:49:35 jolan Exp $
 
 COMMENT=	"Embedded SQL implementation"
 COMMENT-tcl=	"TCL bindings for Sqlite3"
-V=		3.2.6
+V=		3.2.7
 PKGNAME=	sqlite3-${V}
 PKGNAME-tcl=	sqlite3-tcl-${V}
 DISTNAME=	sqlite-${V}
