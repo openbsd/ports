@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2005/09/26 19:24:25 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2005/09/27 18:43:01 msf Exp $
 
 COMMENT=	"Nessus Attack Scripting Language"
 
 DISTNAME=	libnasl-${VERSION}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 WANTLIB=  	c crypto pcap ssl util
 
