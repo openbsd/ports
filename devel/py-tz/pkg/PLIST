@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/09/19 10:32:30 djm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/09/28 09:25:01 djm Exp $
 lib/python${MODPY_VERSION}/site-packages/pytz/
 lib/python${MODPY_VERSION}/site-packages/pytz/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pytz/__init__.pyc
@@ -6,7 +6,6 @@ lib/python${MODPY_VERSION}/site-packages/pytz/reference.py
 lib/python${MODPY_VERSION}/site-packages/pytz/reference.pyc
 lib/python${MODPY_VERSION}/site-packages/pytz/tzinfo.py
 lib/python${MODPY_VERSION}/site-packages/pytz/tzinfo.pyc
-lib/python${MODPY_VERSION}/site-packages/pytz/zone.tab
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Africa/
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Africa/Abidjan.py
