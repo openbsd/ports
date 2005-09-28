@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2005/07/09 00:35:46 jolan Exp $
-#
+# $OpenBSD: Makefile,v 1.10 2005/09/28 08:01:31 jolan Exp $
 
+     SUBDIR += dvdauthor
      SUBDIR += libdv
      SUBDIR += libdvdnav
      SUBDIR += libquicktime
