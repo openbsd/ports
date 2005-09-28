@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.21 2005/05/10 18:21:00 fgsch Exp $
+# $OpenBSD: Makefile,v 1.22 2005/09/28 05:59:36 fgsch Exp $
 
 COMMENT=	"graphics and text browser with javascript support"
 
-VER=		2.1pre17
+VER=		2.1pre18
 DISTNAME=	links-${VER}
 PKGNAME=	links+-${VER}
 CATEGORIES=	www
-MASTER_SITES=	http://atrey.karlin.mff.cuni.cz/~clock/twibright/links/download/
+MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/local/clock/links/
 
 MAINTAINER=	Federico G. Schwindt <fgsch@openbsd.org>
 
-HOMEPAGE=	http://atrey.karlin.mff.cuni.cz/~clock/twibright/links/
+HOMEPAGE=	http://links.twibright.com/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,8 +22,7 @@ WANTLIB=		c crypto m ssl
 FLAVORS=	no_x11
 FLAVOR?=
 
-AUTOCONF_VERSION= 2.13
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --enable-javascript --with-ssl --without-sdl
 
 .if !${FLAVOR:L:Mno_x11}
@@ -36,6 +35,8 @@ CONFIGURE_ENV= CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 	       LDFLAGS="-L${LOCALBASE}/lib"
 WANTLIB+=	X11 z
 .endif
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/links+
