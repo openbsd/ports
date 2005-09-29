@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2005/09/21 14:32:42 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2005/09/29 19:56:03 aanriot Exp $
 @conflict zope-btreefolder2-*
 @conflict zope-cmfquickinstaller-*
 @conflict zope-formulator-*
@@ -26,113 +26,113 @@ lib/zope/lib/python/Products/BTreeFolder2/tests/__init__.pyc
 lib/zope/lib/python/Products/BTreeFolder2/tests/testBTreeFolder2.py
 lib/zope/lib/python/Products/BTreeFolder2/tests/testBTreeFolder2.pyc
 lib/zope/lib/python/Products/BTreeFolder2/version.txt
-lib/zope/lib/python/Products/CMFActionIcons/
-lib/zope/lib/python/Products/CMFActionIcons/ActionIconsTool.py
-lib/zope/lib/python/Products/CMFActionIcons/ActionIconsTool.pyc
-lib/zope/lib/python/Products/CMFActionIcons/DEPENDENCIES.txt
-lib/zope/lib/python/Products/CMFActionIcons/Extensions/
-lib/zope/lib/python/Products/CMFActionIcons/Extensions/Install.py
-lib/zope/lib/python/Products/CMFActionIcons/Extensions/Install.pyc
-lib/zope/lib/python/Products/CMFActionIcons/Extensions/__init__.py
-lib/zope/lib/python/Products/CMFActionIcons/Extensions/__init__.pyc
-lib/zope/lib/python/Products/CMFActionIcons/README.txt
-lib/zope/lib/python/Products/CMFActionIcons/__init__.py
-lib/zope/lib/python/Products/CMFActionIcons/__init__.pyc
-lib/zope/lib/python/Products/CMFActionIcons/permissions.py
-lib/zope/lib/python/Products/CMFActionIcons/permissions.pyc
-lib/zope/lib/python/Products/CMFActionIcons/skins/
-lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/
-lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/actionicons_macros.pt
-lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/approve_icon.png
-lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/edit_icon.png
-lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/expire_icon.png
-lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/folder_icon.png
-lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/metadata_icon.png
-lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/policies_icon.png
-lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/preview_icon.png
-lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/reject_icon.png
-lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/retract_icon.png
-lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/submit_icon.png
-lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/undo_icon.png
-lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/user_icon.png
-lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/worklist_icon.png
-lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/yank_icon.png
-lib/zope/lib/python/Products/CMFActionIcons/standard_mappings.py
-lib/zope/lib/python/Products/CMFActionIcons/standard_mappings.pyc
-lib/zope/lib/python/Products/CMFActionIcons/tests/
-lib/zope/lib/python/Products/CMFActionIcons/tests/__init__.py
-lib/zope/lib/python/Products/CMFActionIcons/tests/__init__.pyc
-lib/zope/lib/python/Products/CMFActionIcons/tests/test_ActionIconsTool.py
-lib/zope/lib/python/Products/CMFActionIcons/tests/test_ActionIconsTool.pyc
-lib/zope/lib/python/Products/CMFActionIcons/tests/test_all.py
-lib/zope/lib/python/Products/CMFActionIcons/tests/test_all.pyc
-lib/zope/lib/python/Products/CMFActionIcons/tool.gif
-lib/zope/lib/python/Products/CMFActionIcons/version.txt
-lib/zope/lib/python/Products/CMFActionIcons/www/
-lib/zope/lib/python/Products/CMFActionIcons/www/aitEdit.zpt
-lib/zope/lib/python/Products/CMFFormController/
-lib/zope/lib/python/Products/CMFFormController/AUTHORS
-lib/zope/lib/python/Products/CMFFormController/Actions/
-lib/zope/lib/python/Products/CMFFormController/Actions/BaseFormAction.py
-lib/zope/lib/python/Products/CMFFormController/Actions/BaseFormAction.pyc
-lib/zope/lib/python/Products/CMFFormController/Actions/IFormAction.py
-lib/zope/lib/python/Products/CMFFormController/Actions/IFormAction.pyc
-lib/zope/lib/python/Products/CMFFormController/Actions/RedirectTo.py
-lib/zope/lib/python/Products/CMFFormController/Actions/RedirectTo.pyc
-lib/zope/lib/python/Products/CMFFormController/Actions/RedirectToAction.py
-lib/zope/lib/python/Products/CMFFormController/Actions/RedirectToAction.pyc
-lib/zope/lib/python/Products/CMFFormController/Actions/TraverseTo.py
-lib/zope/lib/python/Products/CMFFormController/Actions/TraverseTo.pyc
-lib/zope/lib/python/Products/CMFFormController/Actions/TraverseToAction.py
-lib/zope/lib/python/Products/CMFFormController/Actions/TraverseToAction.pyc
-lib/zope/lib/python/Products/CMFFormController/Actions/__init__.py
-lib/zope/lib/python/Products/CMFFormController/Actions/__init__.pyc
-lib/zope/lib/python/Products/CMFFormController/BaseControllerPageTemplate.py
-lib/zope/lib/python/Products/CMFFormController/BaseControllerPageTemplate.pyc
-lib/zope/lib/python/Products/CMFFormController/ChangeLog
-lib/zope/lib/python/Products/CMFFormController/ControllerBase.py
-lib/zope/lib/python/Products/CMFFormController/ControllerBase.pyc
-lib/zope/lib/python/Products/CMFFormController/ControllerPageTemplate.py
-lib/zope/lib/python/Products/CMFFormController/ControllerPageTemplate.pyc
-lib/zope/lib/python/Products/CMFFormController/ControllerPageTemplateFile.py
-lib/zope/lib/python/Products/CMFFormController/ControllerPageTemplateFile.pyc
-lib/zope/lib/python/Products/CMFFormController/ControllerPythonScript.py
-lib/zope/lib/python/Products/CMFFormController/ControllerPythonScript.pyc
-lib/zope/lib/python/Products/CMFFormController/ControllerState.py
-lib/zope/lib/python/Products/CMFFormController/ControllerState.pyc
-lib/zope/lib/python/Products/CMFFormController/ControllerValidator.py
-lib/zope/lib/python/Products/CMFFormController/ControllerValidator.pyc
-lib/zope/lib/python/Products/CMFFormController/Extensions/
-lib/zope/lib/python/Products/CMFFormController/Extensions/Install.py
-lib/zope/lib/python/Products/CMFFormController/Extensions/Install.pyc
-lib/zope/lib/python/Products/CMFFormController/Extensions/__init__.py
-lib/zope/lib/python/Products/CMFFormController/Extensions/__init__.pyc
-lib/zope/lib/python/Products/CMFFormController/FSControllerBase.py
-lib/zope/lib/python/Products/CMFFormController/FSControllerBase.pyc
-lib/zope/lib/python/Products/CMFFormController/FSControllerPageTemplate.py
-lib/zope/lib/python/Products/CMFFormController/FSControllerPageTemplate.pyc
-lib/zope/lib/python/Products/CMFFormController/FSControllerPythonScript.py
-lib/zope/lib/python/Products/CMFFormController/FSControllerPythonScript.pyc
-lib/zope/lib/python/Products/CMFFormController/FSControllerValidator.py
-lib/zope/lib/python/Products/CMFFormController/FSControllerValidator.pyc
-lib/zope/lib/python/Products/CMFFormController/FormAction.py
-lib/zope/lib/python/Products/CMFFormController/FormAction.pyc
-lib/zope/lib/python/Products/CMFFormController/FormController.py
-lib/zope/lib/python/Products/CMFFormController/FormController.pyc
-lib/zope/lib/python/Products/CMFFormController/FormValidator.py
-lib/zope/lib/python/Products/CMFFormController/FormValidator.pyc
-lib/zope/lib/python/Products/CMFFormController/Key.py
-lib/zope/lib/python/Products/CMFFormController/Key.pyc
-lib/zope/lib/python/Products/CMFFormController/LICENSE.txt
-lib/zope/lib/python/Products/CMFFormController/README.txt
-lib/zope/lib/python/Products/CMFFormController/Script.py
-lib/zope/lib/python/Products/CMFFormController/Script.pyc
-lib/zope/lib/python/Products/CMFFormController/ValidationError.py
-lib/zope/lib/python/Products/CMFFormController/ValidationError.pyc
-lib/zope/lib/python/Products/CMFFormController/__init__.py
-lib/zope/lib/python/Products/CMFFormController/__init__.pyc
-lib/zope/lib/python/Products/CMFFormController/config.py
-lib/zope/lib/python/Products/CMFFormController/config.pyc
+@comment lib/zope/lib/python/Products/CMFActionIcons/
+@comment lib/zope/lib/python/Products/CMFActionIcons/ActionIconsTool.py
+@comment lib/zope/lib/python/Products/CMFActionIcons/ActionIconsTool.pyc
+@comment lib/zope/lib/python/Products/CMFActionIcons/DEPENDENCIES.txt
+@comment lib/zope/lib/python/Products/CMFActionIcons/Extensions/
+@comment lib/zope/lib/python/Products/CMFActionIcons/Extensions/Install.py
+@comment lib/zope/lib/python/Products/CMFActionIcons/Extensions/Install.pyc
+@comment lib/zope/lib/python/Products/CMFActionIcons/Extensions/__init__.py
+@comment lib/zope/lib/python/Products/CMFActionIcons/Extensions/__init__.pyc
+@comment lib/zope/lib/python/Products/CMFActionIcons/README.txt
+@comment lib/zope/lib/python/Products/CMFActionIcons/__init__.py
+@comment lib/zope/lib/python/Products/CMFActionIcons/__init__.pyc
+@comment lib/zope/lib/python/Products/CMFActionIcons/permissions.py
+@comment lib/zope/lib/python/Products/CMFActionIcons/permissions.pyc
+@comment lib/zope/lib/python/Products/CMFActionIcons/skins/
+@comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/
+@comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/actionicons_macros.pt
+@comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/approve_icon.png
+@comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/edit_icon.png
+@comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/expire_icon.png
+@comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/folder_icon.png
+@comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/metadata_icon.png
+@comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/policies_icon.png
+@comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/preview_icon.png
+@comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/reject_icon.png
+@comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/retract_icon.png
+@comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/submit_icon.png
+@comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/undo_icon.png
+@comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/user_icon.png
+@comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/worklist_icon.png
+@comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/yank_icon.png
+@comment lib/zope/lib/python/Products/CMFActionIcons/standard_mappings.py
+@comment lib/zope/lib/python/Products/CMFActionIcons/standard_mappings.pyc
+@comment lib/zope/lib/python/Products/CMFActionIcons/tests/
+@comment lib/zope/lib/python/Products/CMFActionIcons/tests/__init__.py
+@comment lib/zope/lib/python/Products/CMFActionIcons/tests/__init__.pyc
+@comment lib/zope/lib/python/Products/CMFActionIcons/tests/test_ActionIconsTool.py
+@comment lib/zope/lib/python/Products/CMFActionIcons/tests/test_ActionIconsTool.pyc
+@comment lib/zope/lib/python/Products/CMFActionIcons/tests/test_all.py
+@comment lib/zope/lib/python/Products/CMFActionIcons/tests/test_all.pyc
+@comment lib/zope/lib/python/Products/CMFActionIcons/tool.gif
+@comment lib/zope/lib/python/Products/CMFActionIcons/version.txt
+@comment lib/zope/lib/python/Products/CMFActionIcons/www/
+@comment lib/zope/lib/python/Products/CMFActionIcons/www/aitEdit.zpt
+@comment lib/zope/lib/python/Products/CMFFormController/
+@comment lib/zope/lib/python/Products/CMFFormController/AUTHORS
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/BaseFormAction.py
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/BaseFormAction.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/IFormAction.py
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/IFormAction.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/RedirectTo.py
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/RedirectTo.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/RedirectToAction.py
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/RedirectToAction.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/TraverseTo.py
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/TraverseTo.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/TraverseToAction.py
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/TraverseToAction.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/__init__.py
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/__init__.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/BaseControllerPageTemplate.py
+@comment lib/zope/lib/python/Products/CMFFormController/BaseControllerPageTemplate.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/ChangeLog
+@comment lib/zope/lib/python/Products/CMFFormController/ControllerBase.py
+@comment lib/zope/lib/python/Products/CMFFormController/ControllerBase.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/ControllerPageTemplate.py
+@comment lib/zope/lib/python/Products/CMFFormController/ControllerPageTemplate.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/ControllerPageTemplateFile.py
+@comment lib/zope/lib/python/Products/CMFFormController/ControllerPageTemplateFile.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/ControllerPythonScript.py
+@comment lib/zope/lib/python/Products/CMFFormController/ControllerPythonScript.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/ControllerState.py
+@comment lib/zope/lib/python/Products/CMFFormController/ControllerState.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/ControllerValidator.py
+@comment lib/zope/lib/python/Products/CMFFormController/ControllerValidator.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/Install.py
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/Install.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/__init__.py
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/__init__.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/FSControllerBase.py
+@comment lib/zope/lib/python/Products/CMFFormController/FSControllerBase.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/FSControllerPageTemplate.py
+@comment lib/zope/lib/python/Products/CMFFormController/FSControllerPageTemplate.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/FSControllerPythonScript.py
+@comment lib/zope/lib/python/Products/CMFFormController/FSControllerPythonScript.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/FSControllerValidator.py
+@comment lib/zope/lib/python/Products/CMFFormController/FSControllerValidator.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/FormAction.py
+@comment lib/zope/lib/python/Products/CMFFormController/FormAction.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/FormController.py
+@comment lib/zope/lib/python/Products/CMFFormController/FormController.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/FormValidator.py
+@comment lib/zope/lib/python/Products/CMFFormController/FormValidator.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/Key.py
+@comment lib/zope/lib/python/Products/CMFFormController/Key.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/LICENSE.txt
+@comment lib/zope/lib/python/Products/CMFFormController/README.txt
+@comment lib/zope/lib/python/Products/CMFFormController/Script.py
+@comment lib/zope/lib/python/Products/CMFFormController/Script.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/ValidationError.py
+@comment lib/zope/lib/python/Products/CMFFormController/ValidationError.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/__init__.py
+@comment lib/zope/lib/python/Products/CMFFormController/__init__.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/config.py
+@comment lib/zope/lib/python/Products/CMFFormController/config.pyc
 @comment lib/zope/lib/python/Products/CMFFormController/debian/
 @comment lib/zope/lib/python/Products/CMFFormController/debian/README.Debian
 @comment lib/zope/lib/python/Products/CMFFormController/debian/changelog
@@ -145,42 +145,42 @@ lib/zope/lib/python/Products/CMFFormController/config.pyc
 @comment lib/zope/lib/python/Products/CMFFormController/debian/prerm
 @comment lib/zope/lib/python/Products/CMFFormController/debian/rules
 @comment lib/zope/lib/python/Products/CMFFormController/debian/templates
-lib/zope/lib/python/Products/CMFFormController/documentation/
-lib/zope/lib/python/Products/CMFFormController/documentation/FormControllerTutorial.pdf
-lib/zope/lib/python/Products/CMFFormController/documentation/fctutorial_source.txt
-lib/zope/lib/python/Products/CMFFormController/globalVars.py
-lib/zope/lib/python/Products/CMFFormController/globalVars.pyc
-lib/zope/lib/python/Products/CMFFormController/makefile.in
-lib/zope/lib/python/Products/CMFFormController/refresh.txt
-lib/zope/lib/python/Products/CMFFormController/tests/
-lib/zope/lib/python/Products/CMFFormController/tests/__init__.py
-lib/zope/lib/python/Products/CMFFormController/tests/__init__.pyc
-lib/zope/lib/python/Products/CMFFormController/tests/framework.py
-lib/zope/lib/python/Products/CMFFormController/tests/framework.pyc
-lib/zope/lib/python/Products/CMFFormController/tests/runalltests.py
-lib/zope/lib/python/Products/CMFFormController/tests/runalltests.pyc
-lib/zope/lib/python/Products/CMFFormController/tests/testCopyRename.py
-lib/zope/lib/python/Products/CMFFormController/tests/testCopyRename.pyc
-lib/zope/lib/python/Products/CMFFormController/tool.gif
-lib/zope/lib/python/Products/CMFFormController/utils.py
-lib/zope/lib/python/Products/CMFFormController/utils.pyc
-lib/zope/lib/python/Products/CMFFormController/version.txt
-lib/zope/lib/python/Products/CMFFormController/www/
-lib/zope/lib/python/Products/CMFFormController/www/cpt.gif
-lib/zope/lib/python/Products/CMFFormController/www/cptAdd.zpt
-lib/zope/lib/python/Products/CMFFormController/www/cpy.gif
-lib/zope/lib/python/Products/CMFFormController/www/cpyAdd.zpt
-lib/zope/lib/python/Products/CMFFormController/www/default.html
-lib/zope/lib/python/Products/CMFFormController/www/default_cpy
-lib/zope/lib/python/Products/CMFFormController/www/default_vpy
-lib/zope/lib/python/Products/CMFFormController/www/docs.stx
-lib/zope/lib/python/Products/CMFFormController/www/manage_docs.zpt
-lib/zope/lib/python/Products/CMFFormController/www/manage_formActionsForm.zpt
-lib/zope/lib/python/Products/CMFFormController/www/manage_formValidatorsForm.zpt
-lib/zope/lib/python/Products/CMFFormController/www/manage_overview.zpt
-lib/zope/lib/python/Products/CMFFormController/www/manage_purgeForm.zpt
-lib/zope/lib/python/Products/CMFFormController/www/vpy.gif
-lib/zope/lib/python/Products/CMFFormController/www/vpyAdd.zpt
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/FormControllerTutorial.pdf
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/fctutorial_source.txt
+@comment lib/zope/lib/python/Products/CMFFormController/globalVars.py
+@comment lib/zope/lib/python/Products/CMFFormController/globalVars.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/makefile.in
+@comment lib/zope/lib/python/Products/CMFFormController/refresh.txt
+@comment lib/zope/lib/python/Products/CMFFormController/tests/
+@comment lib/zope/lib/python/Products/CMFFormController/tests/__init__.py
+@comment lib/zope/lib/python/Products/CMFFormController/tests/__init__.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/tests/framework.py
+@comment lib/zope/lib/python/Products/CMFFormController/tests/framework.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/tests/runalltests.py
+@comment lib/zope/lib/python/Products/CMFFormController/tests/runalltests.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/tests/testCopyRename.py
+@comment lib/zope/lib/python/Products/CMFFormController/tests/testCopyRename.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/tool.gif
+@comment lib/zope/lib/python/Products/CMFFormController/utils.py
+@comment lib/zope/lib/python/Products/CMFFormController/utils.pyc
+@comment lib/zope/lib/python/Products/CMFFormController/version.txt
+@comment lib/zope/lib/python/Products/CMFFormController/www/
+@comment lib/zope/lib/python/Products/CMFFormController/www/cpt.gif
+@comment lib/zope/lib/python/Products/CMFFormController/www/cptAdd.zpt
+@comment lib/zope/lib/python/Products/CMFFormController/www/cpy.gif
+@comment lib/zope/lib/python/Products/CMFFormController/www/cpyAdd.zpt
+@comment lib/zope/lib/python/Products/CMFFormController/www/default.html
+@comment lib/zope/lib/python/Products/CMFFormController/www/default_cpy
+@comment lib/zope/lib/python/Products/CMFFormController/www/default_vpy
+@comment lib/zope/lib/python/Products/CMFFormController/www/docs.stx
+@comment lib/zope/lib/python/Products/CMFFormController/www/manage_docs.zpt
+@comment lib/zope/lib/python/Products/CMFFormController/www/manage_formActionsForm.zpt
+@comment lib/zope/lib/python/Products/CMFFormController/www/manage_formValidatorsForm.zpt
+@comment lib/zope/lib/python/Products/CMFFormController/www/manage_overview.zpt
+@comment lib/zope/lib/python/Products/CMFFormController/www/manage_purgeForm.zpt
+@comment lib/zope/lib/python/Products/CMFFormController/www/vpy.gif
+@comment lib/zope/lib/python/Products/CMFFormController/www/vpyAdd.zpt
 lib/zope/lib/python/Products/CMFPlone/
 lib/zope/lib/python/Products/CMFPlone/ActionIconsTool.py
 lib/zope/lib/python/Products/CMFPlone/ActionIconsTool.pyc
