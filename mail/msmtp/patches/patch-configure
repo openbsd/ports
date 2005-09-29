@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1 2005/09/29 18:54:02 bernd Exp $
+--- configure.orig	Mon Aug 15 15:32:45 2005
++++ configure	Thu Sep 29 14:32:27 2005
+@@ -13131,10 +13131,10 @@ s,@GMSGFMT@,$GMSGFMT,;t t
+ s,@XGETTEXT@,$XGETTEXT,;t t
+ s,@MSGMERGE@,$MSGMERGE,;t t
+ s,@INTL_MACOSX_LIBS@,$INTL_MACOSX_LIBS,;t t
+-s,@LIBICONV@,$LIBICONV,;t t
++s,@LIBICONV@,$LTLIBICONV,;t t
+ s,@LTLIBICONV@,$LTLIBICONV,;t t
+ s,@INTLLIBS@,$INTLLIBS,;t t
+-s,@LIBINTL@,$LIBINTL,;t t
++s,@LIBINTL@,$LTLIBINTL,;t t
+ s,@LTLIBINTL@,$LTLIBINTL,;t t
+ s,@POSUB@,$POSUB,;t t
+ s,@have_pkgconfig@,$have_pkgconfig,;t t

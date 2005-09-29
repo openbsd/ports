@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/05/31 03:50:31 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.4 2005/09/29 18:54:02 bernd Exp $
 
 COMMENT=		"SMTP plugin for MUAs"
 
-DISTNAME=		msmtp-1.4.1
+DISTNAME=		msmtp-1.4.4
 CATEGORIES=		mail
 
 HOMEPAGE=		http://msmtp.sourceforge.net/
@@ -18,6 +18,8 @@ WANTLIB=		c crypto ssl
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=msmtp/}
 EXTRACT_SUFX=		.tar.bz2
+
+MODULES=		devel/gettext
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
