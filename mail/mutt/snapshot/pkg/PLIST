@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2005/02/07 19:33:14 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.14 2005/09/29 17:25:28 bernd Exp $
 bin/flea
 bin/mutt
 bin/mutt_dotlock
@@ -25,19 +25,18 @@ share/doc/mutt/README
 share/doc/mutt/README.SECURITY
 share/doc/mutt/README.SSL
 share/doc/mutt/TODO
+share/doc/mutt/advancedusage.html
 share/doc/mutt/applying-patches.txt
+share/doc/mutt/configuration.html
 share/doc/mutt/devel-notes.txt
-share/doc/mutt/html/
-share/doc/mutt/html/manual-1.html
-share/doc/mutt/html/manual-2.html
-share/doc/mutt/html/manual-3.html
-share/doc/mutt/html/manual-4.html
-share/doc/mutt/html/manual-5.html
-share/doc/mutt/html/manual-6.html
-share/doc/mutt/html/manual-7.html
-share/doc/mutt/html/manual.html
+share/doc/mutt/gettingstarted.html
+share/doc/mutt/index.html
+share/doc/mutt/manual.html
 share/doc/mutt/manual.txt
+share/doc/mutt/mimesupport.html
+share/doc/mutt/miscellany.html
 share/doc/mutt/patch-notes.txt
+share/doc/mutt/reference.html
 share/doc/mutt/samples/
 share/doc/mutt/smime-notes.txt
 share/examples/mutt/

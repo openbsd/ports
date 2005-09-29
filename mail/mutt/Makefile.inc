@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile.inc,v 1.15 2005/09/14 21:00:03 bernd Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2005/09/29 17:25:27 bernd Exp $
 
-DISTNAME=	mutt-${VERSION}i
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.mutt.org/
