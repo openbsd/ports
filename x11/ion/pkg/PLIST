@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2005/09/07 19:53:41 pedro Exp $
+@comment $OpenBSD: PLIST,v 1.12 2005/09/29 22:19:39 pedro Exp $
 %%SHARED%%
 bin/ion3
 bin/pwm3
@@ -67,6 +67,7 @@ share/examples/ion3/cfg_pwm_menus.lua
 share/examples/ion3/cfg_query.lua
 share/examples/ion3/cfg_sp.lua
 share/examples/ion3/cfg_statusbar.lua
+share/examples/ion3/detach.lua
 share/examples/ion3/dock-draw.lua
 share/examples/ion3/look.lua
 share/examples/ion3/look_brownsteel.lua
@@ -80,6 +81,7 @@ share/examples/ion3/look_simpleblue.lua
 share/examples/ion3/look_wheat2.lua
 share/examples/ion3/lookcommon_clean.lua
 share/examples/ion3/lookcommon_emboss.lua
+share/examples/ion3/nest-ws.lua
 share/ion3/
 share/ion3/ion-completeman
 share/ion3/ion-runinxterm

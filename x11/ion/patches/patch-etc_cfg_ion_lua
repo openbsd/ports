@@ -1,0 +1,15 @@
+$OpenBSD: patch-etc_cfg_ion_lua,v 1.1 2005/09/29 22:19:39 pedro Exp $
+--- etc/cfg_ion.lua.orig	Sat Aug 20 08:33:49 2005
++++ etc/cfg_ion.lua	Thu Sep 29 18:20:00 2005
+@@ -57,6 +57,11 @@ dopath("cfg_bindings")
+ -- Define some menus (mod_menu required)
+ dopath("cfg_menus")
+ 
++-- Load workspace nesting stuff.
++dopath("detach")
++dopath("nest-ws")
++detach.setup_hooks()
++
+ -- Load additional user configuration. 'true' as second parameter asks
+ -- Ion not to complain if the file is not found.
+ dopath("cfg_user", true)
