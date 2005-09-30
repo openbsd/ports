@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_am,v 1.2 2005/06/20 18:26:17 niallo Exp $
---- Makefile.am.orig	Mon Jun 20 08:48:41 2005
-+++ Makefile.am	Mon Jun 20 08:51:05 2005
+$OpenBSD: patch-Makefile_am,v 1.3 2005/09/30 07:47:27 aanriot Exp $
+--- Makefile.am.orig	Fri Sep 30 07:30:26 2005
++++ Makefile.am	Fri Sep 30 07:30:31 2005
 @@ -1,13 +1,13 @@
 -CC=gcc
 -LIB=-lpcre -L./pcre-3.9/ -I./pcre-3.9/
@@ -30,7 +30,7 @@ $OpenBSD: patch-Makefile_am,v 1.2 2005/06/20 18:26:17 niallo Exp $
 -	-test -e amap.exe && cp -f amap.exe amapcrap.exe $(PREFIX)$(BINDIR) || echo
 -	-cp -f $(SCRIPTS) $(PREFIX)$(DATADIR)
 -	-cp -f $(MANPAGE) $(PREFIX)$(MANDIR)
--	-cd $(PREFIX)$(BINDIR) && ln -s amap amap6
+-	-test $(PREFIX)$(BINDIR)/amap6 || cd $(PREFIX)$(BINDIR) && ln -s amap amap6
 +	@test -e amap && $(BSD_INSTALL_PROGRAM) amap amap6 amapcrap $(PREFIX)$(BINDIR)
 +	@test -d $(PREFIX)$(MANDIR) || mkdir -p $(PREFIX)$(MANDIR)
 +	$(BSD_INSTALL_MAN) $(MANPAGE) $(PREFIX)$(MANDIR)
