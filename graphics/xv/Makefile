@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2005/06/23 20:23:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.29 2005/09/30 04:23:20 fgsch Exp $
 # Original from: Marco S Hyman <marc@OpenBSD.ORG>
 
 COMMENT=	"X11 image display and modification tool"
 
 DISTNAME=	xv-3.10a
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	graphics x11
 
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/
@@ -36,6 +36,9 @@ pre-patch:
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xv-3.10a-jumbo-enh-patch-20050501.txt
 
 post-install:
+	@for f in bggen vdcomp xcmap xv xvpictoppm; do \
+	    strip ${PREFIX}/bin/$$f; \
+	done
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xv
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xv
 	${INSTALL_DATA} ${WRKSRC}/docs/xvdocs.ps ${PREFIX}/share/doc/xv
