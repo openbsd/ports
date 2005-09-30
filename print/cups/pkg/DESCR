@@ -9,3 +9,5 @@ JetDirect) protocols are also supported with reduced
 functionality.  CUPS adds network printer browsing and
 PostScript Printer Description ("PPD") based printing options to
 support real-world printing under UNIX.
+
+For extra printer drivers check http://www.cups.org/ppd.php.
