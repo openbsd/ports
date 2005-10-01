@@ -1,0 +1,12 @@
+$OpenBSD: patch-libavcodec_bitstream_h,v 1.1 2005/10/01 13:40:35 espie Exp $
+--- libavcodec/bitstream.h.orig	Sat Oct  1 14:36:49 2005
++++ libavcodec/bitstream.h	Sat Oct  1 14:36:58 2005
+@@ -360,7 +360,7 @@ for examples see get_bits, show_bits, sk
+ 
+ static inline int unaligned32_be(const void *v)
+ {
+-#ifdef CONFIG_ALIGN
++#if 1
+ 	const uint8_t *p=v;
+ 	return (((p[0]<<8) | p[1])<<16) | (p[2]<<8) | (p[3]);
+ #else
