@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/07/27 19:43:58 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2005/10/01 10:48:41 aanriot Exp $
 
 COMMENT=	"SMTP virus filter"
 
-DISTNAME=	clamsmtp-1.4.1
+DISTNAME=	clamsmtp-1.5
 CATEGORIES=    	mail
 
 HOMEPAGE=	http://memberwebs.com/nielsen/software/clamsmtp/
