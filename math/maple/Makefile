@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/12/29 19:43:50 fgsch Exp $
+# $OpenBSD: Makefile,v 1.23 2005/10/01 14:39:52 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
@@ -16,9 +16,11 @@ MAPLE_DIR?=${PREFIX}/maple
 TRUEMAPLE_DIR?=${TRUEPREFIX}/maple
 
 DISTNAME=	maple-5.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=     math
 
-RUN_DEPENDS=	:redhat_base-*:emulators/redhat/base
+RUN_DEPENDS=	:redhat_base->=8.0:emulators/redhat/base \
+		:redhat_libc5-*:emulators/redhat/libc5
 
 # if someone wants to buy the sparc version and check it, be my guest...
 
@@ -92,5 +94,7 @@ do-install:
 	@cd ${MAPLE_DIR} && cat ${PATCHDIR}/install-*| patch -s && \
 		rm ${MAPLE_DIR}/bin/*.orig
 	@${INSTALL_PROGRAM} ${WRKBUILD}/resolv_display ${MAPLE_DIR}/bin
+	cd ${PREFIX} && find . -user 292 -print|xargs -r chown ${SHAREOWN}:${SHAREGRP}
+	cd ${PREFIX} && find . -user 400 -print|xargs -r chown ${BINOWN}:${BINGRP}
 
 .include <bsd.port.mk>
