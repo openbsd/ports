@@ -1,48 +1,91 @@
-#!/bin/sh
-# $OpenBSD: out-of-date,v 1.9 2004/05/31 14:39:40 sturm Exp $
-# Copyright (c) 1999
-# Marc Espie.  All rights reserved.
-# Redistribution and use in source and binary forms, with or without
-# modification, are permitted provided that the following conditions
-# are met:
-# 1. Redistributions of code must retain the above copyright
-#    notice, this list of conditions and the following disclaimer.
-# 2. Neither the name of OpenBSD nor the names of its contributors
-#    may be used to endorse or promote products derived from this software
-#    without specific prior written permission.
+#!/usr/bin/perl
+
+# $OpenBSD: out-of-date,v 1.10 2005/10/01 13:17:54 bernd Exp $
 #
-# THIS SOFTWARE IS PROVIDED BY ITS AUTHOR AND THE OpenBSD project ``AS IS'' AND
-# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-# ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
-# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-# SUCH DAMAGE.
+# Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
 
-# Check for simple discrepancies between installed packages and the ports tree
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-: ${PORTSDIR:=/usr/ports}
+use strict;
+use warnings;
+use OpenBSD::PackageInfo;
+use OpenBSD::PackingList;
+use OpenBSD::PackageName;
 
-echo "Make sure your ports tree is up-to-date"
+my $portsdir = $ENV{PORTSDIR} || "/usr/ports";
+my $pkg      = {};
+my $port     = {};
+my $subdirs  = "";
+my @output   = ();
+my @notfound = ();
 
-TMPDIR=`mktemp -d /tmp/outdated.XXXXXXXXX`
-trap "rm -r $TMPDIR" 0 1 2 3 15
-echo "Generating specs"
-SPECS=`pkg_info -f -a | sed -n -e 's/.*[Cc]omment:* subdir=//p' | \
-	sed -e 's/ cdrom=.*//'`
-for s in $SPECS; do
-	dir=`echo $s | sed -e 's/,.*$//'`
-	if [ -d $PORTSDIR/$dir ]; then
-		echo $s >> $TMPDIR/specs;
-	fi
-done
-echo "Checking new package names"
-cd $PORTSDIR && make SUBDIRLIST=$TMPDIR/specs show=FULLPKGNAME\${SUBPACKAGE} ECHO_MSG=: REPORT_PROBLEM=true|sort >$TMPDIR/new
-echo "Recording old package names"
-pkg_info|cut -d\  -f1|sort >$TMPDIR/old
-echo "Showing discrepancies"
-diff -u $TMPDIR/old $TMPDIR/new
+print STDERR "Collecting installed packages\n";
+for my $name (installed_packages(1)) {
+	my ($stem, $version) = OpenBSD::PackageName::splitname($name);
+	my $plist = OpenBSD::PackingList->from_installation($name,
+	    \&OpenBSD::PackingList::UpdateInfoOnly);
+
+	$pkg->{$stem}->{version}   = $version;
+	$pkg->{$stem}->{subdir}    = $plist->{extrainfo}->{subdir};
+	$pkg->{$stem}->{signature} = $plist->signature;
+
+	$pkg->{$stem}->{subdir} =~ s/mystuff\///;
+	$pkg->{$stem}->{subdir} =~ s/\/usr\/ports\///;
+
+	my ($dir) = split(/,/, $pkg->{$stem}->{subdir});
+
+	if (-d "$portsdir/$dir") {
+		$subdirs .= $pkg->{$stem}->{subdir} . " ";
+	} else {
+		push(@notfound, $pkg->{$stem}->{subdir});
+	}
+}
+
+print STDERR "Collecting port versions\n";
+my @cmd = ("cd", "$portsdir", "&&", "SUBDIR=\"$subdirs\"", "ECHO_MSG=:",
+    "REPORT_PROBLEM=true", "make", "print-package-signature");
+
+open(my $fh, join(' ', @cmd) . " |");
+while (<$fh>) {
+	chomp;
+	next unless $_;
+	my ($name) = split(/,/, $_);
+	my ($stem, $version) = OpenBSD::PackageName::splitname($name);
+
+	$port->{$stem}->{version}   = $version;
+	$port->{$stem}->{signature} = $_;
+}
+close($fh);
+
+for my $stem (keys %{$pkg}) {
+	next unless $port->{$stem};
+
+	if ($pkg->{$stem}->{signature} eq $port->{$stem}->{signature}) {
+		next;
+	} else {
+		push(@output, sprintf("%-40s # %s -> %s\n",
+		    $pkg->{$stem}->{subdir}, $pkg->{$stem}->{version},
+		    $port->{$stem}->{version}));
+	}
+}
+
+print STDERR "Outdated ports:\n\n";
+print $_ for sort @output;
+print STDERR "\n";
+
+if (@notfound > 0) {
+	print STDERR "Ports that can't be found in the official ports tree:\n";
+	for my $pkg (sort @notfound) {
+		print STDERR "  ", $pkg, "\n";
+	}
+}
