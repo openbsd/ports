@@ -15,7 +15,7 @@ support         stream  tcp     nowait  _gnats	y0y0y0/libexec/gnats/gnatsd	gnats
     http://sunsite.ualberta.ca/Documentation/Gnu/gnats-3.113/)
    to your liking, then run (as root):
 
-	su -m _gnats -c 'GNATS_ROOT=y0y0y0/share/gnats/gnats-db y0y0y0/libexec/gnats/mkcat'
+	su -m _gnats -c 'y0y0y0/libexec/gnats/mkcat --directory=y0y0y0/share/gnats/gnats-db'
 
 4. As root, do
 
@@ -40,7 +40,7 @@ monkey-gnats: bugs
 127.0.0.1:view:
 
 to y0y0y0/share/gnats/gnats-db/gnats-adm/gnatsd.access. You may
-increase priveleges for all users of gnatsweb by changing 'view' to
+increase privileges for all users of gnatsweb by changing 'view' to
 'edit', or for individual users by adding rules to
 y0y0y0/share/gnats/gnats-db/gnats-adm/gnatsd.access.
 
