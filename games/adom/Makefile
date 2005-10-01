@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2003/10/18 15:46:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2005/10/01 13:47:56 espie Exp $
 # Author: Thomas Biskup <rpg@saranxis.ruhr.de>
 
 COMMENT=	"Ancient Domains of Mystery - roguelike"
 
 DISTNAME=	adom-1.1.1
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games
 MASTER_SITES=   http://www.adom.de/adom/download/linux/
 HOMEPAGE=	http://www.adom.de/
@@ -36,15 +37,14 @@ pre-fetch:
 	@echo "Your kernel must have COMPAT_LINUX (GENERIC does)"
 .endif
 
-RUN_DEPENDS=	:redhat_base-*:emulators/redhat/base
+RUN_DEPENDS=	:redhat_base->=8.0:emulators/redhat/base
 
 do-install:
 	@${INSTALL_DATA_DIR} ${ADOM_DOC}
 	@cd ${WRKSRC} && ${INSTALL_DATA} adomfaq.txt manual.doc readme.1st ${ADOM_DOC}
 # Kludge to work around the absence of libncurses.
-	@cd ${WRKSRC} && sed -e s,libncurses.so.5,libncurses.so.4, adom >adom.new
 	@cd ${WRKSRC} && ${INSTALL} ${INSTALL_COPY} \
-		-o ${BINOWN} -g ${ADOMOWN} -m 2555 adom.new ${PREFIX}/bin/adom
+		-o ${BINOWN} -g ${ADOMOWN} -m 2555 adom ${PREFIX}/bin/adom
 	@${INSTALL} -d -o ${SHAREOWN} -g ${ADOMOWN} -m 775 ${WRKINST}${HISCORE_DIR}
 
 .include <bsd.port.mk>
