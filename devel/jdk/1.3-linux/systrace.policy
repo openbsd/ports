@@ -1,5 +1,5 @@
-# $OpenBSD: systrace.policy,v 1.4 2005/02/09 20:36:29 sturm Exp $
-Policy: ${WRKDIR}/j2sdk-1_3_1_15-linux-i586.bin, Emulation: linux
+# $OpenBSD: systrace.policy,v 1.5 2005/10/01 12:16:47 sturm Exp $
+Policy: ${WRKDIR}/j2sdk-1_3_1_16-linux-i586.bin, Emulation: linux
 	linux-brk: permit
 	linux-chmod: permit
 	linux-clone: permit
