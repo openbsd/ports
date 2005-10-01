@@ -1,0 +1,78 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/01 14:37:52 espie Exp $
+lib/
+lib/ld-linux.so.1
+lib/ld-linux.so.1.9.5
+lib/ld.so
+lib/ld.so.1.9.5
+lib/libdl.so.1.9.5
+usr/
+usr/i486-linux-libc5/
+usr/i486-linux-libc5/lib/
+usr/i486-linux-libc5/lib/libICE.so.6.3
+usr/i486-linux-libc5/lib/libPEX5.so.6.0
+usr/i486-linux-libc5/lib/libSM.so.6.0
+usr/i486-linux-libc5/lib/libX11.so.6.1
+usr/i486-linux-libc5/lib/libXIE.so.6.0
+usr/i486-linux-libc5/lib/libXaw.so.6.1
+usr/i486-linux-libc5/lib/libXaw3d.so.6.1
+usr/i486-linux-libc5/lib/libXext.so.6.1
+usr/i486-linux-libc5/lib/libXext.so.6.3
+usr/i486-linux-libc5/lib/libXi.so.6.0
+usr/i486-linux-libc5/lib/libXmu.so.6.0
+usr/i486-linux-libc5/lib/libXp.so.6.2
+usr/i486-linux-libc5/lib/libXpm.so.4.9
+usr/i486-linux-libc5/lib/libXt.so.6.0
+usr/i486-linux-libc5/lib/libXtst.so.6.1
+usr/i486-linux-libc5/lib/libc.so.5.3.12
+usr/i486-linux-libc5/lib/libdb.so.2.0.0
+usr/i486-linux-libc5/lib/libform.so.1.9.9e
+usr/i486-linux-libc5/lib/libg++.so.27.1.4
+usr/i486-linux-libc5/lib/libm.so.5.0.6
+usr/i486-linux-libc5/lib/libmenu.so.1.9.9e
+usr/i486-linux-libc5/lib/libncurses.so.1.9.9e
+usr/i486-linux-libc5/lib/libpanel.so.1.9.9e
+usr/i486-linux-libc5/lib/libstdc++.so.27.1.4
+usr/i486-linux-libc5/lib/libtermcap.so.2.0.8
+usr/i486-linux-libc5/lib/libvga.so.1.2.13
+usr/i486-linux-libc5/lib/libvgagl.so.1.2.13
+usr/i486-linux-libc5/lib/libz.so.1.0.4
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libICE.so.6
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libPEX5.so.6
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libSM.so.6
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libX11.so.6
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libXIE.so.6
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libXaw.so.6
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libXaw3d.so.6
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libXext.so.6
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libXi.so.6
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libXmu.so.6
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libXp.so.6
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libXpm.so.4
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libXt.so.6
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libXtst.so.6
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libc.so.5
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libdb.so.2
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libform.so.3.0
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libg++.so.27
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libm.so.5
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libmenu.so.3.0
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libncurses.so.3.0
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libpanel.so.3.0
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libstdc++.so.27
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libtermcap.so.2
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libvga.so.1
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libvgagl.so.1
+@unexec rm -f %D/usr/i486-linux-libc5/lib/libz.so.1
+@comment usr/man/
+@comment usr/man/man1/
+@comment @man usr/man/man1/ldd.1.gz
+@comment usr/man/man3/
+@comment @man usr/man/man3/dlclose.3.gz
+@comment @man usr/man/man3/dlerror.3.gz
+@comment @man usr/man/man3/dlopen.3.gz
+@comment @man usr/man/man3/dlsym.3.gz
+@comment usr/man/man8/
+@comment @man usr/man/man8/ld.so.8.gz
+@comment @man usr/man/man8/ldconfig.8.gz
+@exec %D/sbin/ldconfig
+@unexec %D/sbin/ldconfig
