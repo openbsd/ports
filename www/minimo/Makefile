@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.6 2005/09/29 14:45:02 jolan Exp $
-ONLY_FOR_ARCHS=	amd64 sparc64
+# $OpenBSD: Makefile,v 1.7 2005/10/01 00:04:44 jolan Exp $
+ONLY_FOR_ARCHS=	alpha amd64 sparc64
 
 COMMENT=	"mini mozilla"
 DISTNAME=	minimo-20050802
@@ -18,7 +18,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext gcc3
+MODGCC3_ARCHES=	alpha
+MODGCC3_LANGS=	C++
 
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
 		:unzip-*:archivers/unzip \
@@ -27,11 +29,13 @@ BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		png.3::graphics/png \
 		gdk-x11-2.0.600.0,gdk_pixbuf-2.0.600.0,gtk-x11-2.0.600.0::x11/gtk+2
-WANTLIB=	ICE SM X11 Xft Xrender Xt c fontconfig freetype m pthread \
-		stdc++ z \
+WANTLIB=	ICE SM X11 Xft Xrender Xt c fontconfig freetype m pthread z \
 		atk-1.0.1011.0 glib-2.0.600.0 gmodule-2.0.600.0 \
 		gobject-2.0.600.0 pango-1.0.800.0 pangox-1.0.800.0 \
 		pangoxft-1.0.800.0
+.if empty(MACHINE_ARCH:Malpha)
+WANTLIB+=	stdc++
+.endif
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
