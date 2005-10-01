@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: out-of-date,v 1.10 2005/10/01 13:17:54 bernd Exp $
+# $OpenBSD: out-of-date,v 1.11 2005/10/01 16:36:03 espie Exp $
 #
 # Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
 #
@@ -21,63 +21,101 @@ use warnings;
 use OpenBSD::PackageInfo;
 use OpenBSD::PackingList;
 use OpenBSD::PackageName;
+use OpenBSD::ProgressMeter;
 
-my $portsdir = $ENV{PORTSDIR} || "/usr/ports";
-my $pkg      = {};
-my $port     = {};
-my $subdirs  = "";
-my @output   = ();
-my @notfound = ();
+sub collect_installed
+{
+	my $pkg = {};
+	for my $name (installed_packages(1)) {
+		my ($stem, $version) = OpenBSD::PackageName::splitname($name);
+		my $plist = OpenBSD::PackingList->from_installation($name,
+		    \&OpenBSD::PackingList::UpdateInfoOnly);
 
-print STDERR "Collecting installed packages\n";
-for my $name (installed_packages(1)) {
-	my ($stem, $version) = OpenBSD::PackageName::splitname($name);
-	my $plist = OpenBSD::PackingList->from_installation($name,
-	    \&OpenBSD::PackingList::UpdateInfoOnly);
+		$pkg->{$stem}->{version}   = $version;
+		$pkg->{$stem}->{subdir}    = $plist->{extrainfo}->{subdir};
+		$pkg->{$stem}->{signature} = $plist->signature();
 
-	$pkg->{$stem}->{version}   = $version;
-	$pkg->{$stem}->{subdir}    = $plist->{extrainfo}->{subdir};
-	$pkg->{$stem}->{signature} = $plist->signature;
+		$pkg->{$stem}->{subdir} =~ s/mystuff\///;
+		$pkg->{$stem}->{subdir} =~ s/\/usr\/ports\///;
+	}
+	return $pkg;
+}
 
-	$pkg->{$stem}->{subdir} =~ s/mystuff\///;
-	$pkg->{$stem}->{subdir} =~ s/\/usr\/ports\///;
+sub check_existing_ports
+{
+	my ($pkg, $portsdir, $subdirs, $notfound) = @_;
+	
+	for my $stem (keys %$pkg) {
 
-	my ($dir) = split(/,/, $pkg->{$stem}->{subdir});
+		my ($dir) = split(/,/, $pkg->{$stem}->{subdir});
 
-	if (-d "$portsdir/$dir") {
-		$subdirs .= $pkg->{$stem}->{subdir} . " ";
-	} else {
-		push(@notfound, $pkg->{$stem}->{subdir});
+		if (-d "$portsdir/$dir") {
+			push @$subdirs, $pkg->{$stem}->{subdir};
+		} else {
+			push(@$notfound, $pkg->{$stem}->{subdir});
+		}
 	}
 }
 
-print STDERR "Collecting port versions\n";
-my @cmd = ("cd", "$portsdir", "&&", "SUBDIR=\"$subdirs\"", "ECHO_MSG=:",
-    "REPORT_PROBLEM=true", "make", "print-package-signature");
+sub collect_port_versions
+{
+	my $portsdir = shift;
 
-open(my $fh, join(' ', @cmd) . " |");
-while (<$fh>) {
-	chomp;
-	next unless $_;
-	my ($name) = split(/,/, $_);
-	my ($stem, $version) = OpenBSD::PackageName::splitname($name);
+	my $cmd = "cd $portsdir && SUBDIR=\"".join(' ', @_)."\" ECHO_MSG=: REPORT_PROBLEM=true make print-package-signature |";
 
-	$port->{$stem}->{version}   = $version;
-	$port->{$stem}->{signature} = $_;
+	my $count = 0;
+	my $port     = {};
+	my $total = scalar @_;
+	open(my $fh, $cmd);
+	my $old = select $fh; 
+	$| = 1; 
+	select STDERR;
+	OpenBSD::ProgressMeter::enable();
+	OpenBSD::ProgressMeter::set_header("Collecting port versions");
+	while (<$fh>) {
+		chomp;
+		$count++;
+		OpenBSD::ProgressMeter::show($count, $total);
+		next unless $_;
+		my ($name) = split(/,/, $_);
+		my ($stem, $version) = OpenBSD::PackageName::splitname($name);
+
+		$port->{$stem}->{version}   = $version;
+		$port->{$stem}->{signature} = $_;
+	}
+	close($fh);
+	OpenBSD::ProgressMeter::next();
+	select $old;
+	return $port;
 }
-close($fh);
 
-for my $stem (keys %{$pkg}) {
-	next unless $port->{$stem};
+sub find_outdated
+{
+	my ($pkg, $port) = @_;
+	my @output = ();
 
-	if ($pkg->{$stem}->{signature} eq $port->{$stem}->{signature}) {
-		next;
-	} else {
+	for my $stem (keys %{$pkg}) {
+		next unless $port->{$stem};
+
+		next if $pkg->{$stem}->{signature} eq $port->{$stem}->{signature};
 		push(@output, sprintf("%-40s # %s -> %s\n",
 		    $pkg->{$stem}->{subdir}, $pkg->{$stem}->{version},
 		    $port->{$stem}->{version}));
 	}
+	return @output;
 }
+
+my $portsdir = $ENV{PORTSDIR} || "/usr/ports";
+
+print STDERR "Collecting installed packages\n";
+my $pkg = collect_installed();
+
+my @subdirs  = ();
+my @notfound = ();
+check_existing_ports($pkg, $portsdir, \@subdirs, \@notfound);
+
+my $port = collect_port_versions($portsdir, @subdirs);
+my @output = find_outdated($pkg, $port);
 
 print STDERR "Outdated ports:\n\n";
 print $_ for sort @output;
