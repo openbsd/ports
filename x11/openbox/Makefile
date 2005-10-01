@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/17 15:18:34 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2005/10/01 23:44:34 brad Exp $
 
 COMMENT=	"small, fast & usable window manager"
 
 DISTNAME=	openbox-3.2
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 MASTER_SITES=	http://icculus.org/openbox/releases/
 
@@ -11,7 +12,7 @@ HOMEPAGE=	http://www.openbox.org/
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 MODULES=	devel/gettext
-LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
+LIB_DEPENDS+=	glib-2.0.0.0::devel/glib2 \
 		xml2.6::textproc/libxml \
 		startup-notification-1.0.0::devel/startup-notification
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
@@ -22,10 +23,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 Xext Xft Xinerama Xrandr Xrender Xxf86vm c \
-			fontconfig freetype glib-2.0.0.0 m z 
+			fontconfig freetype m z 
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
 
