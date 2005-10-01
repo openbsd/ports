@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/16 16:47:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2005/10/01 14:39:31 espie Exp $
 
      SUBDIR += base
+     SUBDIR += libc5
      SUBDIR += motif
 
 .include <bsd.port.subdir.mk>
