@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2005/02/06 17:11:03 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2005/10/02 15:41:19 aanriot Exp $
 
 COMMENT=	"Web and CGI vulnerability scanner with SSL support"
 
-DISTNAME=	nikto-1.34
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	nikto-1.35
 CATEGORIES=	security www
 
 HOMEPAGE=	http://www.cirt.net/code/nikto.shtml
@@ -26,13 +25,13 @@ PKG_ARCH=	*
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nikto
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nikto
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nikto
 
 	@perl -pi -e 's,# PLUGINDIR=.+,PLUGINDIR=${LOCALBASE}/share/nikto,' \
 		${WRKSRC}/config.txt
 	@perl -pi -e 's,config.txt,${SYSCONFDIR}/nikto.conf,' ${WRKSRC}/nikto.pl
 
 	${INSTALL_SCRIPT} ${WRKSRC}/nikto.pl ${PREFIX}/bin/nikto
-	@ln -s nikto ${PREFIX}/bin/nikto.pl
 	${INSTALL_DATA} ${WRKSRC}/config.txt \
 		${PREFIX}/share/examples/nikto/nikto.conf
 
@@ -40,4 +39,8 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/plugins/$$i ${PREFIX}/share/nikto; \
 	done
 
+	${INSTALL_DATA} ${WRKSRC}/docs/nikto_usage.txt ${PREFIX}/share/doc/nikto
+	${INSTALL_DATA} ${WRKSRC}/docs/README_plugins.txt ${PREFIX}/share/doc/nikto
+	${INSTALL_MAN} ${WRKSRC}/docs/nikto-1.34.man ${PREFIX}/man/man1/nikto.1
+	
 .include <bsd.port.mk>
