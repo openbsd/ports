@@ -1,0 +1,3 @@
+libpqxx is a front-end (in the sense of "language binding") for writing
+C++ programs that use PostgreSQL. It supersedes the older libpq++
+interface, which came bundled with the DBMS.
