@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2005/07/31 23:19:17 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2005/10/02 22:12:38 brad Exp $
 
 COMMENT=	"Multiple-image Network Graphics (MNG) reference library"
 
-DISTNAME=	libmng-1.0.9
+DISTNAME=	lm1009
+PKGNAME=	libmng-1.0.9p1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libmng/}
+EXTRACT_SUFX=	.zip
+UNZIP=		unzip -a
+
 
 HOMEPAGE=	http://www.libmng.com/
 
@@ -23,6 +27,8 @@ FAKE_FLAGS=	DESTDIR="${WRKINST}" PREFIX="${PREFIX}"
 
 MAKE_ENV=	CC="${CC}"
 MAKE_FILE=	makefiles/makefile.openbsd
+
+WRKDIST=	${WRKDIR}/libmng
 
 NO_REGRESS=	Yes
 
