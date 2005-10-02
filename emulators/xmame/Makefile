@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2005/10/02 20:36:49 aanriot Exp $
+# $OpenBSD: Makefile,v 1.15 2005/10/02 20:56:38 espie Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -45,9 +45,9 @@ USE_X11=	Yes
 
 MULTI_PACKAGES=	-mame -mess
 
-PKGNAME=	xmame+xmess-${VERSION}
-PKGNAME-mame=	xmame-${VERSION}
-PKGNAME-mess=	xmess-${VERSION}
+PKGNAME=	xmame+xmess-${VERSION}p0
+PKGNAME-mame=	xmame-${VERSION}p0
+PKGNAME-mess=	xmess-${VERSION}p0
 
 FLAVORS=	x11 sdl
 FLAVORS+=	esd
