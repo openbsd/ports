@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2005/05/04 08:49:36 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2005/10/02 11:07:20 alek Exp $
 
 COMMENT=	"Soundscope for GkrellM2 using ESD"
 
 DISTNAME=	gkrellmss-2.6
 CATEGORIES=	audio sysutils/gkrellm
 
-HOMEPAGE=	http://web.wt.net/~billw/gkrellmss/gkrellmss.html
+HOMEPAGE=http://members.dslextreme.com/users/billw/gkrellmss/gkrellmss.html
 
-MASTER_SITES=	http://web.wt.net/~billw/gkrellmss/
+MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellmss/
 
 LIB_DEPENDS+=	esd::audio/esound \
 		fftw,rfftw::math/fftw
