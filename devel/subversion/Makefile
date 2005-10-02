@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2005/09/16 09:51:27 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2005/10/02 09:02:05 alek Exp $
 
 COMMENT=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
 COMMENT-python=	"python interface to subversion"
 
-VERSION=	1.2.1
+VERSION=	1.2.3
 DISTNAME=	subversion-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}
 PKGNAME-perl=	p5-SVN-${VERSION}
 PKGNAME-python=	py-subversion-${VERSION}
 CATEGORIES=	devel
@@ -59,7 +59,7 @@ BUILD_DEPENDS=	::lang/python/${PYTHON_VER} \
 .  endif
 .endif
 
-.if defined(PACKAGING) && empty(SUBPACKAGE)
+.if defined(PACKAGING) && (!defined(SUBPACKAGE) || empty(SUBPACKAGE))
 WANTLIB+=	crypto m ssl xml2 c
 .endif
 
@@ -95,13 +95,40 @@ post-build:
 	@cd ${WRKBUILD} && ${MAKE_PROGRAM} swig-py
 	@cd ${WRKBUILD} && ${MAKE_PROGRAM} swig-pl
 
-post-install:
-	@cd ${WRKBUILD} && ${MAKE_PROGRAM} install-swig-py
-	@cd ${WRKBUILD} && ${MAKE_PROGRAM} install-swig-pl
-
 post-regress:
 	@cd ${WRKBUILD} && ${MAKE_PROGRAM} ${REGRESS_FLAGS} check FSTYPE=bdb
 	@cd ${WRKBUILD} && ${MAKE_PROGRAM} ${REGRESS_FLAGS} check-swig-pl
 .endif
+
+post-install:
+.if !${FLAVOR:L:Mno_bindings}
+	@cd ${WRKBUILD} && ${MAKE_PROGRAM} install-swig-py
+	@cd ${WRKBUILD} && ${MAKE_PROGRAM} install-swig-pl
+.endif
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/backup
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/hook-scripts
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/hook-scripts/mailer
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/hook-scripts/mailer/tests
+	${INSTALL_DATA} ${WRKBUILD}/tools/backup/hot-backup.py \
+			${PREFIX}/share/examples/subversion/backup
+	${INSTALL_DATA} ${WRKBUILD}/tools/hook-scripts/* \
+			${PREFIX}/share/examples/subversion/hook-scripts
+	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/README \
+			${PREFIX}/share/examples/subversion/hook-scripts
+	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/commit-access-control.cfg.example \
+			${PREFIX}/share/examples/subversion/hook-scripts
+	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/commit-email.rb \
+			${PREFIX}/share/examples/subversion/hook-scripts
+	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/svnperms.conf.example \
+			${PREFIX}/share/examples/subversion/hook-scripts
+	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/svnperms.py \
+			${PREFIX}/share/examples/subversion/hook-scripts
+	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/mailer/mailer.conf.example \
+			${PREFIX}/share/examples/subversion/hook-scripts/mailer
+	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/mailer/mailer.py \
+			${PREFIX}/share/examples/subversion/hook-scripts/mailer
+	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/mailer/tests/* \
+			${PREFIX}/share/examples/subversion/hook-scripts/mailer/tests
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/09/16 09:51:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/10/02 09:02:05 alek Exp $
 @pkgpath devel/subversion,no_bindings
 %%SHARED%%
 bin/svn
@@ -76,40 +76,35 @@ lib/libsvn_wc-1.la
 @man man/man1/svnversion.1
 @man man/man5/svnserve.conf.5
 @man man/man8/svnserve.8
-share/locale/
-share/locale/de/
-share/locale/de/LC_MESSAGES/
+share/examples/subversion/
+share/examples/subversion/backup/
+share/examples/subversion/backup/hot-backup.py
+share/examples/subversion/hook-scripts/
+share/examples/subversion/hook-scripts/README
+share/examples/subversion/hook-scripts/commit-access-control.cfg.example
+share/examples/subversion/hook-scripts/commit-access-control.pl
+share/examples/subversion/hook-scripts/commit-email.pl
+share/examples/subversion/hook-scripts/commit-email.rb
+share/examples/subversion/hook-scripts/mailer/
+share/examples/subversion/hook-scripts/mailer/mailer.conf.example
+share/examples/subversion/hook-scripts/mailer/mailer.py
+share/examples/subversion/hook-scripts/mailer/tests/
+share/examples/subversion/hook-scripts/mailer/tests/mailer-init.sh
+share/examples/subversion/hook-scripts/mailer/tests/mailer-t1.output
+share/examples/subversion/hook-scripts/mailer/tests/mailer-t1.sh
+share/examples/subversion/hook-scripts/mailer/tests/mailer-tweak.py
+share/examples/subversion/hook-scripts/propchange-email.pl
+share/examples/subversion/hook-scripts/svnperms.conf.example
+share/examples/subversion/hook-scripts/svnperms.py
 share/locale/de/LC_MESSAGES/subversion.mo
-share/locale/es/
-share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/subversion.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/subversion.mo
-share/locale/it/
-share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/subversion.mo
-share/locale/ja/
-share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/subversion.mo
-share/locale/ko/
-share/locale/ko/LC_MESSAGES/
 share/locale/ko/LC_MESSAGES/subversion.mo
-share/locale/nb/
-share/locale/nb/LC_MESSAGES/
 share/locale/nb/LC_MESSAGES/subversion.mo
-share/locale/pl/
-share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/subversion.mo
-share/locale/pt_BR/
-share/locale/pt_BR/LC_MESSAGES/
 share/locale/pt_BR/LC_MESSAGES/subversion.mo
-share/locale/sv/
-share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/subversion.mo
-share/locale/zh_CN/
-share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/subversion.mo
-share/locale/zh_TW/
-share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/subversion.mo

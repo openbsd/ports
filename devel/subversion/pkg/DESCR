@@ -13,5 +13,5 @@ is only used as a client, however.
 
 Note that you need to install the following subpackages to gain
 the appropriate functionality:
-        -perl   Python bindings to Subversion
-        -python Perl bindings to Subversion
+        -perl   Perl bindings to Subversion
+        -python Python bindings to Subversion
