@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_ui_text_h,v 1.1 2005/10/02 01:39:38 fgsch Exp $
+--- src/ui_text.h.orig	Wed Sep 28 16:53:12 2005
++++ src/ui_text.h	Wed Sep 28 16:53:20 2005
+@@ -7,7 +7,9 @@
+ 
+ ***************************************************************************/
+ 
++#ifndef __GNUC__
+ #pragma once
++#endif
+ 
+ #ifndef __UI_TEXT_H__
+ #define __UI_TEXT_H__

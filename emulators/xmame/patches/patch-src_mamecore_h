@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_mamecore_h,v 1.1 2005/10/02 01:39:38 fgsch Exp $
+--- src/mamecore.h.orig	Wed Sep 28 16:44:48 2005
++++ src/mamecore.h	Wed Sep 28 16:44:59 2005
+@@ -6,7 +6,9 @@
+ 
+ ***************************************************************************/
+ 
++#ifndef __GNUC__
+ #pragma once
++#endif
+ 
+ #ifndef __MAMECORE_H__
+ #define __MAMECORE_H__

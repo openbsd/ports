@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_timer_h,v 1.1 2005/10/02 01:39:38 fgsch Exp $
+--- src/timer.h.orig	Wed Sep 28 16:50:14 2005
++++ src/timer.h	Wed Sep 28 16:50:21 2005
+@@ -7,7 +7,9 @@
+ 
+ ***************************************************************************/
+ 
++#ifndef __GNUC__
+ #pragma once
++#endif
+ 
+ #ifndef __TIMER_H__
+ #define __TIMER_H__

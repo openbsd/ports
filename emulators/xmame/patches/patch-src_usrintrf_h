@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_usrintrf_h,v 1.1 2005/10/02 01:39:38 fgsch Exp $
+--- src/usrintrf.h.orig	Wed Sep 28 16:50:29 2005
++++ src/usrintrf.h	Wed Sep 28 16:50:38 2005
+@@ -6,7 +6,9 @@
+ 
+ ***************************************************************************/
+ 
++#ifndef __GNUC__
+ #pragma once
++#endif
+ 
+ #ifndef __USRINTRF_H__
+ #define __USRINTRF_H__

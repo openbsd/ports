@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_profiler_h,v 1.1 2005/10/02 01:39:38 fgsch Exp $
+--- src/profiler.h.orig	Wed Sep 28 16:50:44 2005
++++ src/profiler.h	Wed Sep 28 16:50:53 2005
+@@ -6,7 +6,9 @@
+ 
+ ***************************************************************************/
+ 
++#ifndef __GNUC__
+ #pragma once
++#endif
+ 
+ #ifndef __PROFILER_H__
+ #define __PROFILER_H__

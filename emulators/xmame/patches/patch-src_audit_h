@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_audit_h,v 1.1 2005/10/02 01:39:37 fgsch Exp $
+--- src/audit.h.orig	Fri Sep 16 17:18:57 2005
++++ src/audit.h	Wed Sep 28 16:42:42 2005
+@@ -6,7 +6,9 @@
+ 
+ ***************************************************************************/
+ 
++#ifndef __GNUC__
+ #pragma once
++#endif
+ 
+ #ifndef __AUDIT_H__
+ #define __AUDIT_H__

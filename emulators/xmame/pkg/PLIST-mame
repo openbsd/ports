@@ -1,31 +1,33 @@
-@comment $OpenBSD: PLIST-mame,v 1.6 2004/11/20 20:41:00 alek Exp $
+@comment $OpenBSD: PLIST-mame,v 1.7 2005/10/02 01:39:38 fgsch Exp $
 @conflict xmame+xmess-*
 @conflict xmess-*
+bin/romcmp
 bin/xmame
+bin/xml2info
 @man man/man6/xmame.6
 share/doc/xmame/
 share/doc/xmame/README
-share/doc/xmame/changes.mame
 share/doc/xmame/changes.opengl
 share/doc/xmame/changes.unix
 share/doc/xmame/dga2.txt
-share/doc/xmame/gamelist.mame
-share/doc/xmame/hsnew.txt
 share/doc/xmame/img/
 share/doc/xmame/img/xmame.jpg
-share/doc/xmame/imgtool.txt
 share/doc/xmame/liesmich.unix
+share/doc/xmame/mame/
+share/doc/xmame/mame/ctrlr.txt
+share/doc/xmame/mame/license.txt
+share/doc/xmame/mame/listinfo.txt
+share/doc/xmame/mame/mame.txt
+share/doc/xmame/mame/whatsnew.txt
+share/doc/xmame/mame/whatsold.txt
+share/doc/xmame/mame/windows.txt
 share/doc/xmame/multiplayer-readme.txt
-share/doc/xmame/readhist.txt
-share/doc/xmame/readme.mame
-share/doc/xmame/xmame-doc-1.html
 share/doc/xmame/xmame-doc-2.html
 share/doc/xmame/xmame-doc-3.html
 share/doc/xmame/xmame-doc-4.html
 share/doc/xmame/xmame-doc-5.html
 share/doc/xmame/xmame-doc-6.html
 share/doc/xmame/xmame-doc-7.html
-share/doc/xmame/xmame-doc-8.html
 share/doc/xmame/xmame-doc.html
 share/doc/xmame/xmame-doc.lyx
 share/doc/xmame/xmame-doc.man.skel
@@ -40,9 +42,29 @@ share/doc/xmame/xmame-gdoc-7.html
 share/doc/xmame/xmame-gdoc-8.html
 share/doc/xmame/xmame-gdoc.html
 share/doc/xmame/xmame.css
+share/doc/xmame/xmamerc.dist
 share/xmame/
+share/xmame/cab/
+share/xmame/cab/glmame/
+share/xmame/cab/glmame/cabfront.jpg
+share/xmame/cab/glmame/cabtitle.jpg
+share/xmame/cab/glmame/glmame.cab
+share/xmame/cab/glmamejau/
+share/xmame/cab/glmamejau/cabfront.jpg
+share/xmame/cab/glmamejau/cabside.jpg
+share/xmame/cab/glmamejau/cabtitle.jpg
+share/xmame/cab/glmamejau/glmamejau.cab
+share/xmame/cab/trans/
+share/xmame/cab/trans/trans.cab
 share/xmame/cheat.dat
+share/xmame/ctrlr/
+share/xmame/ctrlr/hotrod.cfg
+share/xmame/ctrlr/hotrodse.cfg
+share/xmame/ctrlr/slikstik.cfg
+share/xmame/ctrlr/standard.cfg
+share/xmame/ctrlr/xarcade.cfg
 share/xmame/hiscore.dat
 share/xmame/history.dat
+share/xmame/unofficial_hiscore.txt
 share/xmame/xmamerc
 @sample ${SYSCONFDIR}/xmamerc

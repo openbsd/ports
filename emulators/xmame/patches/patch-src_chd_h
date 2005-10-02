@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_chd_h,v 1.1 2005/10/02 01:39:37 fgsch Exp $
+--- src/chd.h.orig	Fri Sep 16 17:18:55 2005
++++ src/chd.h	Wed Sep 28 16:42:42 2005
+@@ -4,7 +4,9 @@
+ 
+ ***************************************************************************/
+ 
++#ifndef __GNUC__
+ #pragma once
++#endif
+ 
+ #ifndef __CHD_H__
+ #define __CHD_H__

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_osdepend_h,v 1.1 2005/10/02 01:39:38 fgsch Exp $
+--- src/osdepend.h.orig	Wed Sep 28 16:46:56 2005
++++ src/osdepend.h	Wed Sep 28 16:47:06 2005
+@@ -6,7 +6,9 @@
+ 
+ ***************************************************************************/
+ 
++#ifndef __GNUC__
+ #pragma once
++#endif
+ 
+ #ifndef __OSDEPEND_H__
+ #define __OSDEPEND_H__

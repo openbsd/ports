@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_unzip_h,v 1.1 2005/10/02 01:39:38 fgsch Exp $
+--- src/unzip.h.orig	Wed Sep 28 16:53:28 2005
++++ src/unzip.h	Wed Sep 28 16:53:35 2005
+@@ -6,7 +6,9 @@
+ 
+ ***************************************************************************/
+ 
++#ifndef __GNUC__
+ #pragma once
++#endif
+ 
+ #ifndef __UNZIP_H__
+ #define __UNZIP_H__

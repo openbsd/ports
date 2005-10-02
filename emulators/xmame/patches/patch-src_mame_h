@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_mame_h,v 1.1 2005/10/02 01:39:38 fgsch Exp $
+--- src/mame.h.orig	Wed Sep 28 16:45:26 2005
++++ src/mame.h	Wed Sep 28 16:45:45 2005
+@@ -6,7 +6,9 @@
+ 
+ ***************************************************************************/
+ 
++#ifndef __GNUC__
+ #pragma once
++#endif
+ 
+ #ifndef __MAME_H__
+ #define __MAME_H__

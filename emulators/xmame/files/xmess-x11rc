@@ -1,5 +1,107 @@
-# $OpenBSD: xmess-x11rc,v 1.2 2002/02/05 15:27:17 naddy Exp $
+# $OpenBSD: xmess-x11rc,v 1.3 2005/10/02 01:39:37 fgsch Exp $
 ### xmess running parameters ###
+
+### Video Related ###
+video-mode              0
+fullscreen              0
+arbheight               0
+widthscale              1
+heightscale             1
+effect                  6
+autodouble              1
+frameskipper            1
+throttle                1
+frames_to_run           0
+sleepidle               1
+autoframeskip           1
+maxautoframeskip        8
+frameskip               0
+brightness              1.000000
+pause_brightness        0.650000
+gamma                   1.000000
+norotate                0
+ror                     0
+rol                     0
+autoror                 0
+autorol                 0
+flipx                   0
+flipy                   0
+
+### Use additional game artwork? ###
+artwork                 1
+use_backdrops           1
+use_overlays            1
+use_bezels              1
+artwork_crop            0
+artwork_scale           1
+
+### Vector Games Related ###
+beam                    1.000000
+flicker                 0.000000
+intensity               1.500000
+antialias               1
+translucency            1
+hardware-vectors        1
+
+### Aspect ratio handling ###
+keepaspect              1
+perfectaspect           0
+displayaspectratio      1.333333
+
+### X11 Related ###
+#geometry                
+xsync                   1
+root_window_id          0
+run-in-root-window      0
+
+### X11-window Related ###
+mitshm                  1
+
+### DGA Related ###
+vsync-pagelimit         2
+
+### Video Mode Selection Related ###
+
+### XV Related ###
+force-yuv               0
+perfect-yuv             1
+
+### OpenGL Related ###
+gldblbuffer             1
+gltexture_size          0
+glbilinear              1
+glbeam                  1.000000
+glantialias             0
+glantialiasvec          0
+cabview                 0
+cabinet                 glmamejau
+
+### X11-input related ###
+grabmouse               0
+grabkeyboard            0
+alwaysusemouse          0
+cursor                  0
+winkeys                 0
+
+### Input device options ###
+joytype                 0
+analogstick             0
+joyusb-calibrate        0
+ugcicoin                0
+steadykey               0
+a2d_deadzone            0.300000
+# ctrlr                 <NULL> (not set)
+digital                 none
+usbpspad                0
+rapidfire               0
+
+### Sound Related ###
+samples                 1
+samplefreq              44100
+bufsize                 3.000000
+volume                  -3
+# audiodevice           <NULL> (not set)
+# mixerdevice           <NULL> (not set)
 
 ### Digital sound related ###
 # dsp-plugin            <NULL> (not set)
@@ -8,84 +110,54 @@ timer                   0
 ### Sound mixer related ###
 # sound-mixer-plugin    <NULL> (not set)
 
-### Video Related ###
-bpp                     0
-heightscale             1
-widthscale              1
-autodouble              1
-dirty                   1
-scanlines               1
-artwork                 1
-frameskipper            0
-throttle                1
-sleepidle               0
-autoframeskip           1
-maxautoframeskip        8
-frameskip               0
-brightness              100
-gamma-correction        1.000000
+### File I/O-related ###
+biospath                /usr/local/share/xmess/bios
+softwarepath            /usr/local/share/xmess/software
+hash_directory          /usr/local/share/xmess/hash
+samplepath              /usr/local/share/xmess/samples
+inipath                 /usr/local/share/xmess/ini
+cfg_directory           $HOME/.xmess/cfg
+nvram_directory         $HOME/.xmess/nvram
+memcard_directory       $HOME/.xmess/memcard
+input_directory         $HOME/.xmess/inp
+hiscore_directory       $HOME/.xmess/hi
+state_directory         $HOME/.xmess/sta
+artwork_directory       /usr/local/share/xmess/artwork
+snapshot_directory      /usr/local/share/xmess/snap
+diff_directory          $HOME/.xmess/diff
+ctrlr_directory         /usr/local/share/xmess/ctrlr
+cheat_file              /usr/local/share/xmess/cheat.dat
+hiscore_file            /usr/local/share/xmess/hiscore.dat
+sysinfo_file            /usr/local/share/xmess/sysinfo.dat
+messinfo_file           /usr/local/share/xmess/messinfo.dat
+# record                <NULL> (not set)
+# playback              <NULL> (not set)
 
-### Vector Games Related ###
-# vectorres             <NULL> (not set)
-beam                    1.000000
-flicker                 0.000000
-antialias               1
-translucency            1
-
-### X11 Related ###
-x11-mode                0
-
-### X11-window Related ###
-cursor                  1
-mitshm                  1
-xsync                   1
-privatecmap             0
-xil                     1
-mtxil                   0
-run-in-root-window      0
-root_window_id          0
-geometry                640x480
-
-### XFree86 DGA Related ###
-
-### Video Mode Selection Related ###
-keepaspect              1
-displayaspectratio      1.330000
-
-### X11-input related ###
-grabmouse               0
-winkeys                 0
-
-### Sound Related ###
-sound                   1
-samples                 1
-samplefreq              22050
-bufsize                 3.000000
-volume                  -3
-# audiodevice           <NULL> (not set)
-# mixerdevice           <NULL> (not set)
-
-### Input Related ###
-joytype                 0
-analogstick             0
-joydevname              /dev/joy
-mouse                   1
-
-### Fileio Related ###
-rompath                 %%PREFIX%%/share/xmess
-spooldir                %%PREFIX%%/share/xmess
-screenshotdir           .
-cheatdir                %%PREFIX%%/share/xmess/cheat
-crcdir                  %%PREFIX%%/share/xmess/crc
-cheatfile               cheat.cdb
-hiscorefile             %%PREFIX%%/share/xmess/hiscore.dat
-historyfile             %%PREFIX%%/share/xmess/history.dat
-mameinfofile            %%PREFIX%%/share/xmess/sysinfo.dat
-
-### Mess Related ###
+### MESS specific options ###
+# cartridge             <NULL> (not set)
+# floppydisk            <NULL> (not set)
+# harddisk              <NULL> (not set)
+# cylinder              <NULL> (not set)
+# cassette              <NULL> (not set)
+# punchcard             <NULL> (not set)
+# punchtape             <NULL> (not set)
+# printer               <NULL> (not set)
+# serial                <NULL> (not set)
+# parallel              <NULL> (not set)
+# snapshot              <NULL> (not set)
+# quickload             <NULL> (not set)
+# memcard               <NULL> (not set)
+# cdrom                 <NULL> (not set)
+# ramsize               <NULL> (not set)
 language                english
 fuzzycmp                1
 cheat                   0
+skip_disclaimer         0
+skip_gameinfo           0
+skip_validitychecks     1
+crconly                 0
+bios                    default
+# state                 <NULL> (not set)
 
 ### Frontend Related ###
 clones                  1

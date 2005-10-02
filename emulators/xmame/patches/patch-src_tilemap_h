@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_tilemap_h,v 1.1 2005/10/02 01:39:38 fgsch Exp $
+--- src/tilemap.h.orig	Wed Sep 28 16:50:38 2005
++++ src/tilemap.h	Wed Sep 28 16:50:44 2005
+@@ -6,7 +6,9 @@
+ 
+ ***************************************************************************/
+ 
++#ifndef __GNUC__
+ #pragma once
++#endif
+ 
+ #ifndef __TILEMAP_H__
+ #define __TILEMAP_H__

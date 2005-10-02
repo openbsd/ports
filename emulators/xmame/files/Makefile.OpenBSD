@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile.OpenBSD,v 1.2 2001/08/12 23:03:10 naddy Exp $
+# $OpenBSD: Makefile.OpenBSD,v 1.3 2005/10/02 01:39:37 fgsch Exp $
 
 all install:
-	@for i in mame mess; do \
-		${MAKE} -f makefile.unix TARGET=$$i \
-			XMAMEROOT=${PREFIX}/share/x$$i $@; \
-	done
+	@for i in mame mess; do ${MAKE} TARGET=$$i $@; done

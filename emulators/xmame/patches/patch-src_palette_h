@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_palette_h,v 1.1 2005/10/02 01:39:38 fgsch Exp $
+--- src/palette.h.orig	Wed Sep 28 16:47:40 2005
++++ src/palette.h	Wed Sep 28 16:50:06 2005
+@@ -67,7 +67,9 @@
+ 
+ ******************************************************************************/
+ 
++#ifndef __GNUC__
+ #pragma once
++#endif
+ 
+ #ifndef __PALETTE_H__
+ #define __PALETTE_H__

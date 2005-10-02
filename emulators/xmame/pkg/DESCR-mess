@@ -7,7 +7,9 @@ Packages can be built with additional FLAVORs:
 
   x11:  built with x11 support (default).
 
-  gl:   built with GL support.
-
   sdl:  built with SDL support.
         This FLAVOR requires the sdl package.
+
+  esd:	built with esound audio plugin.
+	This FLAVOR requires the esound package.
+

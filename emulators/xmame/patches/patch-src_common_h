@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_common_h,v 1.1 2005/10/02 01:39:38 fgsch Exp $
+--- src/common.h.orig	Fri Sep 16 17:18:56 2005
++++ src/common.h	Wed Sep 28 16:42:42 2005
+@@ -6,7 +6,9 @@
+ 
+ *********************************************************************/
+ 
++#ifndef __GNUC__
+ #pragma once
++#endif
+ 
+ #ifndef __COMMON_H__
+ #define __COMMON_H__
