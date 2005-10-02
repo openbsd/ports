@@ -1,7 +1,7 @@
-$OpenBSD: patch-platforms_unix_vm_sqUnixMain_c,v 1.1 2004/07/21 15:42:09 espie Exp $
---- platforms/unix/vm/sqUnixMain.c.orig	Wed Jul 21 17:23:07 2004
-+++ platforms/unix/vm/sqUnixMain.c	Wed Jul 21 17:23:40 2004
-@@ -679,6 +679,7 @@ static struct moduleDescription moduleDe
+$OpenBSD: patch-platforms_unix_vm_sqUnixMain_c,v 1.2 2005/10/02 13:16:23 espie Exp $
+--- platforms/unix/vm/sqUnixMain.c.orig	Sat Mar 19 21:38:22 2005
++++ platforms/unix/vm/sqUnixMain.c	Sun Oct  2 14:45:18 2005
+@@ -689,6 +689,7 @@ static struct moduleDescription moduleDe
    { &soundModule,   "sound",   "MacOSX" },
    { &soundModule,   "sound",   "Sun"    },
    { &soundModule,   "sound",   "OSS"    },

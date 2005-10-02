@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1 2004/07/21 11:19:30 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/10/02 13:16:23 espie Exp $
 
 
 COMMENT=	"smalltalk system, runtime image"
 
 PKG_ARCH=*
 
-IMAGE_V=5429
+IMAGE_V=5989
 DISTFILES=Squeak-$V-${IMAGE_V}.image.tar.gz
 DISTNAME=squeak-image-$V.${IMAGE_V}
 EXTRACT_ONLY=

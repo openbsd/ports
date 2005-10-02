@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:16:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/10/02 13:16:23 espie Exp $
 bin/squeak
-lib/squeak/${V}-${MAJOR}/
-lib/squeak/${V}-${MAJOR}/B${MAJOR}DAcceleratorPlugin
-lib/squeak/${V}-${MAJOR}/UnixOSProcessPlugin
-lib/squeak/${V}-${MAJOR}/XDisplayControlPlugin
-lib/squeak/${V}-${MAJOR}/npsqueakrun
-lib/squeak/${V}-${MAJOR}/squeak
-lib/squeak/${V}-${MAJOR}/vm-display-X11
-lib/squeak/${V}-${MAJOR}/vm-display-null
-lib/squeak/${V}-${MAJOR}/vm-sound-OpenBSD
-lib/squeak/${V}-${MAJOR}/vm-sound-null
+lib/squeak/${FULLV}/
+lib/squeak/${FULLV}/B${MAJOR}DAcceleratorPlugin
+lib/squeak/${FULLV}/Squeak${MAJOR}D
+lib/squeak/${FULLV}/XDisplayControlPlugin
+lib/squeak/${FULLV}/squeak
+lib/squeak/${FULLV}/vm-display-X11
+lib/squeak/${FULLV}/vm-display-null
+lib/squeak/${FULLV}/vm-sound-OpenBSD
+lib/squeak/${FULLV}/vm-sound-null
 lib/squeak/npsqueakregister
+lib/squeak/npsqueakrun
 @man man/man1/inisqueak.1
 @man man/man1/squeak.1
 share/doc/squeak/

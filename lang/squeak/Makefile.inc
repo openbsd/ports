@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2004/07/21 11:19:30 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2005/10/02 13:16:23 espie Exp $
 
 CATEGORIES=	lang
 MAINTAINER=	Marc Espie <espie@openbsd.org>
@@ -13,14 +13,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
 HOMEPAGE=	http://squeak.org/
-MASTER_SITES= http://www-sor.inria.fr/~piumarta/squeak/unix/release/
+MASTER_SITES= http://squeak.hpl.hp.com/unix/release/
 
 MAJOR=3
-MINOR=6
-SRC_V=3
+MINOR=7
+SRC_V=7
 
 V=${MAJOR}.${MINOR}
+FULLV=${MAJOR}.${MINOR}-${SRC_V}
 
-SUBST_VARS=V MAJOR
-DIST_SUBDIR=squeak-$V
+SUBST_VARS=FULLV V MAJOR 
+DIST_SUBDIR?=squeak-$V
 
