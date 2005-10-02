@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.339 2005/09/26 02:51:26 kevlo Exp $
+# $OpenBSD: Makefile,v 1.340 2005/10/02 15:39:23 bernd Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -108,6 +108,7 @@
      SUBDIR += libgtop,gnome
      SUBDIR += libgtop2
      SUBDIR += libicq2000
+     SUBDIR += libidn
      SUBDIR += libio
      SUBDIR += liboil
      SUBDIR += libproplist
