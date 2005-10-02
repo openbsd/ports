@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2005/10/02 15:37:33 bernd Exp $
+--- doc/Makefile.in.orig	Fri Sep 30 09:31:12 2005
++++ doc/Makefile.in	Fri Sep 30 09:33:09 2005
+@@ -579,7 +579,7 @@ distclean-libtool:
+ 	    rm -rf $(@:.html=); else rm -Rf $(@:.html=.htp) $@; fi; \
+ 	  exit 1; \
+ 	fi
+-$(srcdir)/libidn.info: libidn.texi $(srcdir)/version.texi $(libidn_TEXINFOS)
++libidn.info: libidn.texi $(srcdir)/version.texi $(libidn_TEXINFOS)
+ libidn.dvi: libidn.texi $(srcdir)/version.texi $(libidn_TEXINFOS)
+ libidn.pdf: libidn.texi $(srcdir)/version.texi $(libidn_TEXINFOS)
+ libidn.html: libidn.texi $(srcdir)/version.texi $(libidn_TEXINFOS)

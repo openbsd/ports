@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/10/02 15:37:33 bernd Exp $
+@lib lib/libidn.so.16.12

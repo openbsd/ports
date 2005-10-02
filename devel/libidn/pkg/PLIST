@@ -1,0 +1,82 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/02 15:37:33 bernd Exp $
+%%SHARED%%
+bin/idn
+include/idn-free.h
+include/idn-int.h
+include/idna.h
+include/punycode.h
+include/stringprep.h
+include/tld.h
+@info info/libidn.info
+lib/libidn.a
+@comment lib/libidn.la
+lib/pkgconfig/
+lib/pkgconfig/libidn.pc
+@man man/man1/idn.1
+@man man/man3/idna_strerror.3
+@man man/man3/idna_to_ascii_4i.3
+@man man/man3/idna_to_ascii_4z.3
+@man man/man3/idna_to_ascii_8z.3
+@man man/man3/idna_to_ascii_lz.3
+@man man/man3/idna_to_unicode_44i.3
+@man man/man3/idna_to_unicode_4z4z.3
+@man man/man3/idna_to_unicode_8z4z.3
+@man man/man3/idna_to_unicode_8z8z.3
+@man man/man3/idna_to_unicode_8zlz.3
+@man man/man3/idna_to_unicode_lzlz.3
+@man man/man3/pr29_4.3
+@man man/man3/pr29_4z.3
+@man man/man3/pr29_8z.3
+@man man/man3/pr29_strerror.3
+@man man/man3/punycode_decode.3
+@man man/man3/punycode_encode.3
+@man man/man3/punycode_strerror.3
+@man man/man3/stringprep.3
+@man man/man3/stringprep_4i.3
+@man man/man3/stringprep_4zi.3
+@man man/man3/stringprep_check_version.3
+@man man/man3/stringprep_convert.3
+@man man/man3/stringprep_locale_charset.3
+@man man/man3/stringprep_locale_to_utf8.3
+@man man/man3/stringprep_profile.3
+@man man/man3/stringprep_strerror.3
+@man man/man3/stringprep_ucs4_nfkc_normalize.3
+@man man/man3/stringprep_ucs4_to_utf8.3
+@man man/man3/stringprep_unichar_to_utf8.3
+@man man/man3/stringprep_utf8_nfkc_normalize.3
+@man man/man3/stringprep_utf8_to_locale.3
+@man man/man3/stringprep_utf8_to_ucs4.3
+@man man/man3/stringprep_utf8_to_unichar.3
+@man man/man3/tld_check_4.3
+@man man/man3/tld_check_4t.3
+@man man/man3/tld_check_4tz.3
+@man man/man3/tld_check_4z.3
+@man man/man3/tld_check_8z.3
+@man man/man3/tld_check_lz.3
+@man man/man3/tld_default_table.3
+@man man/man3/tld_get_4.3
+@man man/man3/tld_get_4z.3
+@man man/man3/tld_get_table.3
+@man man/man3/tld_get_z.3
+@man man/man3/tld_strerror.3
+share/locale/da/LC_MESSAGES/libidn.mo
+share/locale/de/LC_MESSAGES/libidn.mo
+share/locale/en@boldquot/LC_MESSAGES/libidn.mo
+share/locale/en@quot/LC_MESSAGES/libidn.mo
+share/locale/eo/LC_MESSAGES/libidn.mo
+share/locale/fr/LC_MESSAGES/libidn.mo
+share/locale/it/LC_MESSAGES/libidn.mo
+share/locale/nl/LC_MESSAGES/libidn.mo
+share/locale/pl/LC_MESSAGES/libidn.mo
+share/locale/ro/LC_MESSAGES/libidn.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
+share/locale/rw/LC_MESSAGES/libidn.mo
+share/locale/sr/
+share/locale/sr/LC_MESSAGES/
+share/locale/sr/LC_MESSAGES/libidn.mo
+share/locale/sv/LC_MESSAGES/libidn.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
+share/locale/vi/LC_MESSAGES/libidn.mo
+share/locale/zh_CN/LC_MESSAGES/libidn.mo

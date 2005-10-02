@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2005/10/02 15:37:33 bernd Exp $
+--- src/Makefile.in.orig	Mon Sep 19 15:27:09 2005
++++ src/Makefile.in	Wed Sep 28 11:46:47 2005
+@@ -518,7 +518,7 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-dist_lispDATA
++install-data-am:
+ 
+ install-exec-am: install-binPROGRAMS
+ 

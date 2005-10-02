@@ -1,0 +1,10 @@
+$OpenBSD: patch-libidn_pc_in,v 1.1.1.1 2005/10/02 15:37:33 bernd Exp $
+--- libidn.pc.in.orig	Fri Sep 30 20:06:02 2005
++++ libidn.pc.in	Fri Sep 30 20:06:02 2005
+@@ -17,5 +17,5 @@ includedir=@includedir@
+ Name: Libidn
+ Description: IETF stringprep, nameprep, punycode, IDNA text processing.
+ Version: @VERSION@
+-Libs: -L${libdir} -lidn
++Libs: -L${libdir} -lidn -liconv
+ Cflags: -I${includedir}

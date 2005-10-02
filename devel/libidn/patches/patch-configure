@@ -1,0 +1,48 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2005/10/02 15:37:33 bernd Exp $
+--- configure.orig	Mon Sep 19 15:26:59 2005
++++ configure	Thu Sep 29 14:55:09 2005
+@@ -9724,7 +9724,6 @@ openbsd*)
+   need_lib_prefix=no
+   need_version=yes
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in
+@@ -13428,7 +13427,6 @@ openbsd*)
+   need_lib_prefix=no
+   need_version=yes
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in
+@@ -16581,7 +16579,6 @@ openbsd*)
+   need_lib_prefix=no
+   need_version=yes
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in
+@@ -18939,7 +18936,6 @@ openbsd*)
+   need_lib_prefix=no
+   need_version=yes
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in
+@@ -27523,10 +27519,10 @@ s,@AMDEPBACKSLASH@,$AMDEPBACKSLASH,;t t
+ s,@CCDEPMODE@,$CCDEPMODE,;t t
+ s,@am__fastdepCC_TRUE@,$am__fastdepCC_TRUE,;t t
+ s,@am__fastdepCC_FALSE@,$am__fastdepCC_FALSE,;t t
+-s,@LIBICONV@,$LIBICONV,;t t
++s,@LIBICONV@,$LTLIBICONV,;t t
+ s,@LTLIBICONV@,$LTLIBICONV,;t t
+ s,@INTLLIBS@,$INTLLIBS,;t t
+-s,@LIBINTL@,$LIBINTL,;t t
++s,@LIBINTL@,$LTLIBINTL,;t t
+ s,@LTLIBINTL@,$LTLIBINTL,;t t
+ s,@POSUB@,$POSUB,;t t
+ s,@EGREP@,$EGREP,;t t
