@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/17 15:03:18 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/10/02 08:32:03 alek Exp $
 
 COMMENT=	"displays text on your screen"
 
 DISTNAME=	xosd-2.2.12
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11 graphics
 HOMEPAGE=	http://www.ignavus.net/software.html
 
@@ -21,5 +22,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --disable-new-plugin --disable-old-plugin
 
 USE_X11=	yes
+USE_LIBTOOL=	Yes
 
 .include <bsd.port.mk>
