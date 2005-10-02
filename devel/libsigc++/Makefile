@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2005/09/23 19:36:02 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2005/10/02 08:22:33 espie Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=		"signal-related bug? any program linked with this hangs"
@@ -7,6 +7,7 @@ BROKEN=		"signal-related bug? any program linked with this hangs"
 COMMENT=	"callback framework for C++"
 
 DISTNAME=	libsigc++-1.0.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://libsigc.sf.net/
@@ -21,6 +22,7 @@ CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/scripts
 
 DOCDIR=		${PREFIX}/share/doc/libsigc++/
+MAKE_FLAGS=	M4=/usr/bin/m4
 
 post-patch:
 	@cd ${WRKSRC}/scripts; \
@@ -38,4 +40,6 @@ do-regress:
 	@cd ${WRKSRC}/tests/$i; ${MAKE} check-TESTS
 .endfor
 
+V=		1.0
+SUBST_VARS=	V
 .include <bsd.port.mk>
