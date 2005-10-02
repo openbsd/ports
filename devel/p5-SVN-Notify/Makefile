@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/13 20:14:56 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2005/10/02 15:13:22 alek Exp $
 
 COMMENT=	"subversion activity notification"
 
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=	::devel/subversion,-perl \
 		::www/p5-HTML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
-REGRESS_DEPENDS= ::devel/p5-Test-Pod-Coverage
+REGRESS_DEPENDS= ::devel/p5-Test-Pod-Coverage \
+		 ::devel/p5-Test-Pod
 
 CONFIGURE_STYLE= perl modbuild
 
