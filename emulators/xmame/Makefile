@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2005/10/02 01:39:37 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2005/10/02 20:36:49 aanriot Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -28,10 +28,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${HISCORE_FILE}:0 \
 # Need to know endianness
 ONLY_FOR_ARCHS=	amd64 alpha hppa i386 m68k powerpc sparc
 
+# xmame license, see
+# http://x.mame.net/license.html
 PERMIT_PACKAGE_CDROM=	"may not sell"
-PERMIT_PACKAGE_FTP=	"may not sell"
+PERMIT_PACKAGE_FTP=	"Yes"
 PERMIT_DISTFILES_CDROM=	"may not sell"
-PERMIT_DISTFILES_FTP=	"may not sell"
+PERMIT_DISTFILES_FTP=	"Yes"
 WANTLIB=		X11 Xext Xv Xxf86dga Xxf86vm c m usbhid z
 
 EXTRACT_SUFX=	.tar.bz2
