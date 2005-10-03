@@ -1,0 +1,15 @@
+$OpenBSD: patch-getmail,v 1.1 2005/10/03 17:59:55 sturm Exp $
+
+work around a bug in python 2.3.5
+
+--- getmail.orig	Mon Oct  3 19:54:56 2005
++++ getmail	Mon Oct  3 19:55:12 2005
+@@ -1,5 +1,8 @@
+ #!/usr/bin/env python2.3
+ 
++import warnings
++warnings.filterwarnings('ignore', category=FutureWarning)
++
+ import sys
+ import os.path
+ import time
