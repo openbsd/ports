@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/03 14:36:58 robert Exp $
+bin/pngmeta
+@man man/man1/pngmeta.1
