@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/27 07:16:44 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2005/10/03 12:53:33 sturm Exp $
 # $FreeBSD: ports/math/fftw/Makefile,v 1.11 2000/06/16 21:51:38 asami Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 
 COMMENT=	"C routines for computing the Discrete Fourier Transform"
 
-DISTNAME=	fftw-2.1.3
+DISTNAME=	fftw-2.1.5
 CATEGORIES=	math
 
 HOMEPAGE=	http://www.fftw.org/
@@ -19,13 +19,10 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		m
 
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
-		ftp://ftp.kusastro.kyoto-u.ac.jp/pub/src/GNU/fftw/
+		ftp://ftp.kusastro.kyoto-u.ac.jp/pub/src/GNU/fftw/ \
+		http://fftw.mirror.fr/
 
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltmain_sh \
-		patch-*
-
-SEPARATE_BUILD=		concurrent
+USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 
