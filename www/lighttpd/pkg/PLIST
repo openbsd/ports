@@ -1,60 +1,88 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/09/16 16:31:04 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2005/10/03 00:53:50 brad Exp $
 bin/spawn-fcgi
 lib/lighttpd/
+@comment lib/lighttpd/mod_access.a
 @comment lib/lighttpd/mod_access.la
 lib/lighttpd/mod_access.so
+@comment lib/lighttpd/mod_accesslog.a
 @comment lib/lighttpd/mod_accesslog.la
 lib/lighttpd/mod_accesslog.so
+@comment lib/lighttpd/mod_alias.a
 @comment lib/lighttpd/mod_alias.la
 lib/lighttpd/mod_alias.so
+@comment lib/lighttpd/mod_auth.a
 @comment lib/lighttpd/mod_auth.la
 lib/lighttpd/mod_auth.so
+@comment lib/lighttpd/mod_cgi.a
 @comment lib/lighttpd/mod_cgi.la
 lib/lighttpd/mod_cgi.so
+@comment lib/lighttpd/mod_cml.a
 @comment lib/lighttpd/mod_cml.la
 lib/lighttpd/mod_cml.so
+@comment lib/lighttpd/mod_compress.a
 @comment lib/lighttpd/mod_compress.la
 lib/lighttpd/mod_compress.so
+@comment lib/lighttpd/mod_dirlisting.a
 @comment lib/lighttpd/mod_dirlisting.la
 lib/lighttpd/mod_dirlisting.so
+@comment lib/lighttpd/mod_evhost.a
 @comment lib/lighttpd/mod_evhost.la
 lib/lighttpd/mod_evhost.so
+@comment lib/lighttpd/mod_expire.a
 @comment lib/lighttpd/mod_expire.la
 lib/lighttpd/mod_expire.so
+@comment lib/lighttpd/mod_fastcgi.a
 @comment lib/lighttpd/mod_fastcgi.la
 lib/lighttpd/mod_fastcgi.so
+@comment lib/lighttpd/mod_indexfile.a
 @comment lib/lighttpd/mod_indexfile.la
 lib/lighttpd/mod_indexfile.so
+@comment lib/lighttpd/mod_mysql_vhost.a
 @comment lib/lighttpd/mod_mysql_vhost.la
 lib/lighttpd/mod_mysql_vhost.so
+@comment lib/lighttpd/mod_proxy.a
 @comment lib/lighttpd/mod_proxy.la
 lib/lighttpd/mod_proxy.so
+@comment lib/lighttpd/mod_redirect.a
 @comment lib/lighttpd/mod_redirect.la
 lib/lighttpd/mod_redirect.so
+@comment lib/lighttpd/mod_rewrite.a
 @comment lib/lighttpd/mod_rewrite.la
 lib/lighttpd/mod_rewrite.so
+@comment lib/lighttpd/mod_rrdtool.a
 @comment lib/lighttpd/mod_rrdtool.la
 lib/lighttpd/mod_rrdtool.so
+@comment lib/lighttpd/mod_scgi.a
 @comment lib/lighttpd/mod_scgi.la
 lib/lighttpd/mod_scgi.so
+@comment lib/lighttpd/mod_secdownload.a
 @comment lib/lighttpd/mod_secdownload.la
 lib/lighttpd/mod_secdownload.so
+@comment lib/lighttpd/mod_setenv.a
 @comment lib/lighttpd/mod_setenv.la
 lib/lighttpd/mod_setenv.so
+@comment lib/lighttpd/mod_simple_vhost.a
 @comment lib/lighttpd/mod_simple_vhost.la
 lib/lighttpd/mod_simple_vhost.so
+@comment lib/lighttpd/mod_ssi.a
 @comment lib/lighttpd/mod_ssi.la
 lib/lighttpd/mod_ssi.so
+@comment lib/lighttpd/mod_staticfile.a
 @comment lib/lighttpd/mod_staticfile.la
 lib/lighttpd/mod_staticfile.so
+@comment lib/lighttpd/mod_status.a
 @comment lib/lighttpd/mod_status.la
 lib/lighttpd/mod_status.so
+@comment lib/lighttpd/mod_trigger_b4_dl.a
 @comment lib/lighttpd/mod_trigger_b4_dl.la
 lib/lighttpd/mod_trigger_b4_dl.so
+@comment lib/lighttpd/mod_userdir.a
 @comment lib/lighttpd/mod_userdir.la
 lib/lighttpd/mod_userdir.so
+@comment lib/lighttpd/mod_usertrack.a
 @comment lib/lighttpd/mod_usertrack.la
 lib/lighttpd/mod_usertrack.so
+@comment lib/lighttpd/mod_webdav.a
 @comment lib/lighttpd/mod_webdav.la
 lib/lighttpd/mod_webdav.so
 @man man/man1/lighttpd.1
