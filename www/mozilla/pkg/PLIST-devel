@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.12 2005/09/22 17:00:24 kurt Exp $
+@comment $OpenBSD: PLIST-devel,v 1.13 2005/10/03 19:28:25 kurt Exp $
 %%SHARED%%
 lib/pkgconfig/mozilla-gtkmozembed.pc
 lib/pkgconfig/mozilla-js.pc
@@ -490,6 +490,7 @@ mozilla/include/dom/nsIDOMMutationEvent.h
 mozilla/include/dom/nsIDOMMutationListener.h
 mozilla/include/dom/nsIDOMNSDocument.h
 mozilla/include/dom/nsIDOMNSEvent.h
+mozilla/include/dom/nsIDOMNSEventTarget.h
 mozilla/include/dom/nsIDOMNSHTMLAnchorElement.h
 mozilla/include/dom/nsIDOMNSHTMLAreaElement.h
 mozilla/include/dom/nsIDOMNSHTMLButtonElement.h

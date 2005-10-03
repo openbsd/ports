@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2005/09/22 17:00:24 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.34 2005/10/03 19:28:25 kurt Exp $
 %%SHARED%%
 bin/mozilla
 lib/pkgconfig/
@@ -569,7 +569,6 @@ mozilla/greprefs/all.js
 mozilla/greprefs/non-shared.txt
 mozilla/greprefs/security-prefs.js
 mozilla/greprefs/xpinstall.js
-mozilla/include/dom/nsIDOMNSEventTarget.h
 mozilla/lib/libgfxft2_s.a
 mozilla/mozilla-bin
 mozilla/mozilla-config
