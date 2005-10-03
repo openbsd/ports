@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2005/05/31 00:28:23 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2005/10/03 21:43:08 alek Exp $
 #
 
      SUBDIR += R
@@ -16,6 +16,7 @@
 #    SUBDIR += femlab
 #    SUBDIR += fftpack
      SUBDIR += fftw
+     SUBDIR += fftw3
 #    SUBDIR += freefem
 #    SUBDIR += fudgit
      SUBDIR += galculator
