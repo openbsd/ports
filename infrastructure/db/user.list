@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.36 2005/09/06 16:49:20 pedro Exp $
+$OpenBSD: user.list,v 1.37 2005/10/03 21:23:28 alek Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -61,3 +61,4 @@ id  user		group		port options
 550 _nagios		_nagios		net/nagios
 551 _gpsd				misc/gpsd
 552 _xavante		_xavante	www/xavante
+553 _saned		_saned		graphics/sane-backends
