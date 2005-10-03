@@ -1,0 +1,27 @@
+SANE stands for "Scanner Access Now Easy" and is an application
+programming interface (API) that provides standardized access to any
+raster image scanner hardware (flatbed scanner, hand-held scanner,
+video- and still-cameras, frame-grabbers, etc.). The SANE API is public
+domain and its discussion and development is open to everybody. The
+current source code is written for UNIX (including GNU/Linux) and is
+available under the GNU General Public License (the SANE API is
+available to proprietary applications and backends as well, however).
+More details about the license can be found on our license page. Ports
+to MacOS X, OS/2 and Microsoft Windows are either already done or in
+progress.
+
+SANE is a universal scanner interface. The value of such a universal
+interface is that it allows writing just one driver per image
+acquisition device rather than one driver for each device and
+application. So, if you have three applications and four devices,
+traditionally you'd have had to write 12 different programs. With SANE,
+this number is reduced to seven: the three applications plus the four
+drivers. Of course, the savings get even bigger as more and more drivers
+and/or applications are added.
+
+SANE-BACKENDS comes complete with documentation, several backends,
+scanimage command line frontend, and networking support. For
+other/graphical frontends take a look at sane-frontends and XSane.
+
+Available flavors:
+        gphoto2 - Build gphoto2 support

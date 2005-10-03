@@ -1,0 +1,34 @@
+--- backend/Makefile.in.orig	Sat Jul 30 14:28:10 2005
++++ backend/Makefile.in	Sun Sep 18 17:05:02 2005
+@@ -25,7 +25,7 @@ infodir = @infodir@
+ mandir = @mandir@
+ includedir = @includedir@
+ oldincludedir = /usr/include
+-configdir = ${sysconfdir}/sane.d
++configdir = ${datadir}/examples/$(PACKAGE)/sane.d
+ BEOS_ADDONDIR = @BEOS_ADDONDIR@
+ 
+ V_MAJOR = @V_MAJOR@
+@@ -197,14 +197,14 @@ install-be:
+ 	done
+ 	@$(LIBTOOL) $(MINST) --finish $(DESTDIR)$(libsanedir)
+ #	@# Assume the dll name without any versions is last
+-#	@dllend=`../tools/libtool-get-dll-ext libsane-dll.la`; \
+-#	list="$(ALL_BACKENDS)"; cd $(DESTDIR)$(libsanedir) && for be in $$list; do \
+-#	  file=libsane-$${be}.$$dllend.$(V_MAJOR); \
+-#	  lib=`grep dlname= libsane-$${be}.la | cut -f2 -d"'"`; \
+-#	  if test ! -f $${file} -a -n "$${lib}"; then \
+-#	    $(LN_S) $${lib} $${file}; \
+-#	  fi; \
+-#	done
++	@dllend=`../tools/libtool-get-dll-ext libsane-dll.la`; \
++	list="$(ALL_BACKENDS)"; cd $(DESTDIR)$(libsanedir) && for be in $$list; do \
++	  file=libsane-$${be}.$$dllend.$(V_MAJOR); \
++	  lib=`grep dlname= libsane-$${be}.la | cut -f2 -d"'"`; \
++	  if test ! -f $${file} -a -n "$${lib}"; then \
++	    $(LN_S) $${lib} $${file}; \
++	  fi; \
++	done
+ #	@# Assume the dll name without any versions is last
+ #	@dllend=`../tools/libtool-get-dll-ext libsane-dll.la`; \
+ #	rm -f $(DESTDIR)$(libdir)/libsane.a $(DESTDIR)$(libdir)/libsane.$$dllend \

@@ -1,0 +1,12 @@
+$OpenBSD: patch-backend_fujitsu_c,v 1.1.1.1 2005/10/03 21:15:04 alek Exp $
+--- backend/fujitsu.c.orig	Sun Oct  2 16:01:38 2005
++++ backend/fujitsu.c	Sun Oct  2 16:13:22 2005
+@@ -7629,7 +7629,7 @@ setDefaults3096 (struct fujitsu *scanner
+ 
+   scanner->imprinter_direction = S_im_dir_top_bottom;
+   scanner->imprinter_y_offset = 7;
+-  memcpy(scanner->imprinter_string, "%05ud", max_imprinter_string_length);
++  strlcpy(scanner->imprinter_string, "%05ud", max_imprinter_string_length);
+   scanner->imprinter_ctr_init = 0;
+   scanner->imprinter_ctr_step = 1;
+   scanner->imprinter_ctr_dir = S_im_dir_inc;

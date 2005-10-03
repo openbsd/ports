@@ -1,0 +1,12 @@
+$OpenBSD: patch-frontend_scanimage_c,v 1.1.1.1 2005/10/03 21:15:04 alek Exp $
+--- frontend/scanimage.c.orig	Sun Oct  2 16:17:35 2005
++++ frontend/scanimage.c	Sun Oct  2 16:23:55 2005
+@@ -172,7 +172,7 @@ auth_callback (SANE_String_Const resourc
+ 	      else
+ 		len = strlen (resource);
+ 
+-	      while (fgets (tmp, 512, pass_file))
++	      while (fgets (tmp, sizeof(tmp), pass_file))
+ 		{
+ 
+ 		  if ((strlen (tmp) > 0) && (tmp[strlen (tmp) - 1] == '\n'))

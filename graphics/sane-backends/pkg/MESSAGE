@@ -1,0 +1,11 @@
+Before using this program, make sure you read the
+${PREFIX}/share/doc/sane-backends/PROBLEMS file.
+
+With some USB backends, the OpenBSD uscanner driver does not support
+getting USB vendor and product ids. To make your scanner work with sane,
+you'll have to disable uscanner in your kernel - see config(8) - which
+will allow libusb to claim your device instead.
+
+If you're planning on using the SANE network daemon (saned), add the
+following line in /etc/services:
+sane-port 6566/tcp saned # SANE network scanner daemon

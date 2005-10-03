@@ -1,0 +1,30 @@
+$OpenBSD: patch-backend_dll_conf,v 1.1.1.1 2005/10/03 21:15:04 alek Exp $
+--- backend/dll.conf.orig	Sun Sep 25 18:10:33 2005
++++ backend/dll.conf	Sun Sep 25 18:11:51 2005
+@@ -23,7 +23,7 @@ fujitsu
+ genesys
+ gt68xx
+ hp
+-hpsj5s
++#hpsj5s
+ hp5400
+ ibm
+ leo
+@@ -41,7 +41,7 @@ pint
+ plustek
+ #plustek_pp
+ #pnm
+-qcam
++#qcam
+ ricoh
+ s9036
+ sceptre
+@@ -60,7 +60,7 @@ u12
+ umax
+ #umax_pp
+ umax1220u
+-v4l
++#v4l
+ #
+ # The following backends are not included in the sane-backends distribution
+ # If you want to use them, download them from their webpages and read their
