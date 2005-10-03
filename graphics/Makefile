@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2005/09/11 10:05:58 espie Exp $
+# $OpenBSD: Makefile,v 1.146 2005/10/03 14:37:55 robert Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -113,6 +113,7 @@
      SUBDIR += png
      SUBDIR += png2ico
      SUBDIR += pngcrush
+	 SUBDIR += pngmeta
      SUBDIR += pornview
      SUBDIR += povray
      SUBDIR += povray,no_x11
