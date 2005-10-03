@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2005/10/03 00:53:50 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2005/10/03 13:27:52 aanriot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c z 
+WANTLIB=		c m z 
 
 MASTER_SITES=	${HOMEPAGE}download/
 
