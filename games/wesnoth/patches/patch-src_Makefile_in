@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2005/10/03 13:40:14 robert Exp $
+--- src/Makefile.in.orig	Thu Jul 21 22:44:46 2005
++++ src/Makefile.in	Mon Aug  8 23:03:00 2005
+@@ -817,7 +817,7 @@
+ 	serialization/string_utils.hpp \
+ 	zipios++/xcoll.hpp
+ 
+-wesnothd_LDADD = @SDL_NET_LIBS@ @SDL_LIBS@ $(LIBZIPIOS) $(LIBINTL)
++wesnothd_LDADD = @SDL_NET_LIBS@ @SDL_LIBS@ $(LIBZIPIOS) $(LIBINTL) $(LTLIBINTL)
+ 
+ #############################################################################
+ #    Campaign Server                                                        #
+@@ -856,7 +856,7 @@
+ 	tstring.hpp \
+ 	zipios++/xcoll.hpp
+ 
+-campaignd_LDADD = @SDL_NET_LIBS@ @SDL_LIBS@ $(LIBZIPIOS) $(LIBINTL)
++campaignd_LDADD = @SDL_NET_LIBS@ @SDL_LIBS@ $(LIBZIPIOS) $(LIBINTL) $(LTLIBINTL)
+ 
+ #############################################################################
+ #    Castle building helpers                                                #

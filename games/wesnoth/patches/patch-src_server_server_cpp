@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_server_server_cpp,v 1.1 2005/10/03 13:40:14 robert Exp $
+--- src/server/server.cpp.orig	Wed May 25 20:06:47 2005
++++ src/server/server.cpp	Wed May 25 20:07:08 2005
+@@ -875,7 +875,7 @@
+ #ifndef FIFODIR
+ # define FIFODIR "/var/run/wesnothd"
+ #endif
+-	std::string fifo_path = std::string(FIFODIR) + "/socket";
++	std::string fifo_path = std::string(FIFODIR) + "/wesnothd.sock";
+ 
+ 	for(int arg = 1; arg != argc; ++arg) {
+ 		const std::string val(argv[arg]);
