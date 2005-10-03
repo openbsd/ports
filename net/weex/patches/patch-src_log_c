@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_log_c,v 1.1 2005/10/03 14:23:27 naddy Exp $
+--- src/log.c.orig	Mon Oct  3 15:56:58 2005
++++ src/log.c	Mon Oct  3 15:57:35 2005
+@@ -183,7 +183,7 @@ void log_flush(void)
+ 
+ 	fp=log_open();
+ 	for(i=0;i<max_log;i++){
+-		fprintf(fp,log_str[i]);
++		fprintf(fp,"%s",log_str[i]);
+ 		free(log_str[i]);
+ 	}
+ 	free(log_str);
