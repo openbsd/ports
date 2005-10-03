@@ -1,10 +1,13 @@
-Sylpheed is an e-mail client (and news reader) based on GTK+, running
+Sylpheed is an e-mail client (and news reader) based on GTK2+, running
 on the X Window System, and aiming for:
 
      Quick response 
      Graceful, and sophisticated interface 
      Easy configuration, intuitive operation 
      Abundant features 
+
+You may wish to install bogofilter to use junk-mail feature (not
+enabled by default).
 
 FLAVORS:
 	* compface: support X-Face header

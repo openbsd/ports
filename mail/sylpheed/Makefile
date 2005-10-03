@@ -1,25 +1,31 @@
-# $OpenBSD: Makefile,v 1.57 2005/09/10 18:26:20 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2005/10/03 20:20:28 couderc Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
-VERSION=	1.0.4
+VERSION=	2.0.2
 DISTNAME=	sylpheed-${VERSION}
 CATEGORIES=    	mail news x11
 HOMEPAGE=	http://sylpheed.good-day.net
 
 MAINTAINER=	Damien Couderc <couderc@openbsd.org>
 
-LIB_DEPENDS=	gdk_pixbuf.2::graphics/gdk-pixbuf
-
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xi c crypto gdk glib gmodule gtk iconv intl \
-			jpeg m png pthread ssl tiff z
 
-MASTER_SITES=	${HOMEPAGE}/sylpheed/v1.0/
+MODULES=	devel/gettext
+LIB_DEPENDS=	gtk-x11-2.0.0.9,gdk_pixbuf-2.0.0.9,gdk-x11-2.0.0.9::x11/gtk+2
+WANTLIB=	X11 Xext Xft Xcursor Xrender Xinerama atk-1.0.0.0 c \
+		crypto fontconfig freetype glib-2.0.0.0 gdk-x11-2.0.0.0 \
+		gdk_pixbuf-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
+		gtk-x11-2.0.0.0 m pthread pango-1.0.0.0 \
+		pangox-1.0.0.0 pangoft2-1.0.0.0 pangoxft-1.0.0.0 ssl
+
+
+MASTER_SITES=	${HOMEPAGE}/sylpheed/v2.0/
+MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=sylpheed-claws/}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-ssl --enable-ipv6 \
@@ -27,7 +33,7 @@ CONFIGURE_ARGS=		--enable-ssl --enable-ipv6 \
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
-FLAVORS=	compface gpgme ldap
+FLAVORS=	compface gpgme
 FLAVOR?=
 
 .if ${FLAVOR:L:Mcompface}
@@ -42,17 +48,9 @@ CONFIGURE_ARGS+=	--disable-compface
 LIB_DEPENDS+=		gpgme.4::security/gpgme
 CONFIGURE_ARGS+=	--enable-gpgme
 WANTLIB+=		gpg-error
-PKGNAME=		${DISTNAME}p0
 .else
 CONFIGURE_ARGS+=	--disable-gpgme
 .endif
 
-.if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+=		ldap.2,lber.2::databases/openldap
-CONFIGURE_ARGS+=	--enable-ldap
-WANTLIB+=		gthread
-.else
-CONFIGURE_ARGS+=	--disable-ldap
-.endif
-
 .include <bsd.port.mk>
+
