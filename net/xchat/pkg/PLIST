@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/11/28 19:50:20 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.16 2005/10/03 20:39:59 couderc Exp $
 bin/xchat
 share/applications/
 share/applications/xchat.desktop
@@ -42,6 +42,9 @@ share/locale/fi/LC_MESSAGES/xchat.mo
 share/locale/fr/
 share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/xchat.mo
+share/locale/hi/
+share/locale/hi/LC_MESSAGES/
+share/locale/hi/LC_MESSAGES/xchat.mo
 share/locale/it/
 share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/xchat.mo
@@ -72,9 +75,15 @@ share/locale/nl/LC_MESSAGES/xchat.mo
 share/locale/no/
 share/locale/no/LC_MESSAGES/
 share/locale/no/LC_MESSAGES/xchat.mo
+share/locale/pa/
+share/locale/pa/LC_MESSAGES/
+share/locale/pa/LC_MESSAGES/xchat.mo
 share/locale/pt/
 share/locale/pt/LC_MESSAGES/
 share/locale/pt/LC_MESSAGES/xchat.mo
+share/locale/pt_BR/
+share/locale/pt_BR/LC_MESSAGES/
+share/locale/pt_BR/LC_MESSAGES/xchat.mo
 share/locale/ru/
 share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/xchat.mo
@@ -96,6 +105,9 @@ share/locale/sv/LC_MESSAGES/xchat.mo
 share/locale/uk/
 share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/xchat.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
+share/locale/vi/LC_MESSAGES/xchat.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/xchat.mo
