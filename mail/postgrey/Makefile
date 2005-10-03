@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/03/10 07:51:17 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2005/10/03 08:02:13 alek Exp $
 
 COMMENT=	"postfix greylist daemon"
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=		Yes
+NO_REGRESS=		Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::devel/p5-Net-Server \
