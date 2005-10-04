@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_xterm_h,v 1.1 2005/10/04 16:43:30 pvalchev Exp $
+--- src/xterm.h.orig	Fri Feb 22 03:41:44 2002
++++ src/xterm.h	Tue Oct  4 10:26:16 2005
+@@ -21,8 +21,8 @@ Boston, MA 02111-1307, USA.  */
+ 
+ #include <X11/Xlib.h>
+ #include <X11/cursorfont.h>
+-#include <X11/Xutil.h>
+ #include <X11/keysym.h>
++#include <X11/Xutil.h>
+ #include <X11/Xatom.h>
+ #include <X11/Xresource.h>
+ 
