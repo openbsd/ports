@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2005/02/13 18:03:36 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2005/10/04 14:00:12 matthieu Exp $
 
 COMMENT=	"Libedit interface to Tcl/Tk interpreters"
 
-VERSION=	1.5
-DISTNAME=	eltclsh-${VERSION}
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	eltclsh-1.6
+PKGNAME=	${DISTNAME}
 CATEGORIES=	lang x11
 
 MASTER_SITES=	http://softs.laas.fr/openrobots/php/download.php/
@@ -27,8 +26,6 @@ USE_GMAKE=		Yes
 FAKE_FLAGS=		prefix=${WRKINST}${PREFIX} ELTCL_LIBRARY=${WRKINST}${PREFIX}/share/eltcl
 
 NO_REGRESS=		Yes
-
-WRKDIST=		${WRKDIR}/eltclsh
 
 LIB_DEPENDS+=		tcl84:tcl-8.4.*:lang/tcl/8.4
 LIB_DEPENDS+=		tk84:tk-8.4.*:x11/tk/8.4
