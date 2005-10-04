@@ -1,0 +1,21 @@
+$OpenBSD: patch-backend_dll_c,v 1.1 2005/10/04 21:42:38 alek Exp $
+--- backend/dll.c.orig	Tue Oct  4 12:05:45 2005
++++ backend/dll.c	Tue Oct  4 12:06:06 2005
+@@ -391,7 +391,7 @@ load (struct backend *be)
+ #   define PREFIX ""
+ #   define POSTFIX ".dll"
+ # else
+-#   define POSTFIX ".so.%u"
++#   define POSTFIX ".so"
+ # endif
+   mode = getenv ("LD_BIND_NOW") ? RTLD_NOW : RTLD_LAZY;
+ #elif defined(HAVE_SHL_LOAD)
+@@ -453,7 +453,7 @@ load (struct backend *be)
+                                             (be->name)+2, V_MAJOR);
+ #else
+       snprintf (libname, sizeof (libname), "%s/" PREFIX "%s" POSTFIX,
+-		dir, be->name, V_MAJOR);
++		dir, be->name);
+ #endif
+       DBG (4, "load: trying to load `%s'\n", libname);
+       fp = fopen (libname, "r");

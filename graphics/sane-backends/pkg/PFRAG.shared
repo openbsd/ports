@@ -1,114 +1,58 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/10/03 21:15:04 alek Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/10/04 21:42:39 alek Exp $
 @lib lib/libsane.so.1.16
-@comment lib/sane/libsane-abaton.so.1
-@lib lib/sane/libsane-abaton.so.1.16
-@comment lib/sane/libsane-agfafocus.so.1
-@lib lib/sane/libsane-agfafocus.so.1.16
-@comment lib/sane/libsane-apple.so.1
-@lib lib/sane/libsane-apple.so.1.16
-@comment lib/sane/libsane-artec.so.1
-@lib lib/sane/libsane-artec.so.1.16
-@comment lib/sane/libsane-artec_eplus48u.so.1
-@lib lib/sane/libsane-artec_eplus48u.so.1.16
-@comment lib/sane/libsane-as6e.so.1
-@lib lib/sane/libsane-as6e.so.1.16
-@comment lib/sane/libsane-avision.so.1
-@lib lib/sane/libsane-avision.so.1.16
-@comment lib/sane/libsane-bh.so.1
-@lib lib/sane/libsane-bh.so.1.16
-@comment lib/sane/libsane-canon.so.1
-@lib lib/sane/libsane-canon.so.1.16
-@comment lib/sane/libsane-canon630u.so.1
-@lib lib/sane/libsane-canon630u.so.1.16
-@comment lib/sane/libsane-coolscan.so.1
-@lib lib/sane/libsane-coolscan.so.1.16
-@comment lib/sane/libsane-coolscan2.so.1
-@lib lib/sane/libsane-coolscan2.so.1.16
-@comment lib/sane/libsane-dc210.so.1
-@lib lib/sane/libsane-dc210.so.1.16
-@comment lib/sane/libsane-dc240.so.1
-@lib lib/sane/libsane-dc240.so.1.16
-@comment lib/sane/libsane-dc25.so.1
-@lib lib/sane/libsane-dc25.so.1.16
-@comment lib/sane/libsane-dll.so.1
-@lib lib/sane/libsane-dll.so.1.16
-@comment lib/sane/libsane-dmc.so.1
-@lib lib/sane/libsane-dmc.so.1.16
-@comment lib/sane/libsane-epson.so.1
-@lib lib/sane/libsane-epson.so.1.16
-@comment lib/sane/libsane-fujitsu.so.1
-@lib lib/sane/libsane-fujitsu.so.1.16
-@comment lib/sane/libsane-genesys.so.1
-@lib lib/sane/libsane-genesys.so.1.16
-@comment lib/sane/libsane-gt68xx.so.1
-@lib lib/sane/libsane-gt68xx.so.1.16
-@comment lib/sane/libsane-hp.so.1
-@lib lib/sane/libsane-hp.so.1.16
-@comment lib/sane/libsane-hp5400.so.1
-@lib lib/sane/libsane-hp5400.so.1.16
-@comment lib/sane/libsane-ibm.so.1
-@lib lib/sane/libsane-ibm.so.1.16
-@comment lib/sane/libsane-leo.so.1
-@lib lib/sane/libsane-leo.so.1.16
-@comment lib/sane/libsane-ma1509.so.1
-@lib lib/sane/libsane-ma1509.so.1.16
-@comment lib/sane/libsane-matsushita.so.1
-@lib lib/sane/libsane-matsushita.so.1.16
-@comment lib/sane/libsane-microtek.so.1
-@lib lib/sane/libsane-microtek.so.1.16
-@comment lib/sane/libsane-microtek2.so.1
-@lib lib/sane/libsane-microtek2.so.1.16
-@comment lib/sane/libsane-mustek.so.1
-@lib lib/sane/libsane-mustek.so.1.16
-@comment lib/sane/libsane-mustek_usb.so.1
-@lib lib/sane/libsane-mustek_usb.so.1.16
-@comment lib/sane/libsane-nec.so.1
-@lib lib/sane/libsane-nec.so.1.16
-@comment lib/sane/libsane-net.so.1
-@lib lib/sane/libsane-net.so.1.16
-@comment lib/sane/libsane-niash.so.1
-@lib lib/sane/libsane-niash.so.1.16
-@comment lib/sane/libsane-pie.so.1
-@lib lib/sane/libsane-pie.so.1.16
-@comment lib/sane/libsane-pint.so.1
-@lib lib/sane/libsane-pint.so.1.16
-@comment lib/sane/libsane-plustek.so.1
-@lib lib/sane/libsane-plustek.so.1.16
-@comment lib/sane/libsane-plustek_pp.so.1
-@lib lib/sane/libsane-plustek_pp.so.1.16
-@comment lib/sane/libsane-ricoh.so.1
-@lib lib/sane/libsane-ricoh.so.1.16
-@comment lib/sane/libsane-s9036.so.1
-@lib lib/sane/libsane-s9036.so.1.16
-@comment lib/sane/libsane-sceptre.so.1
-@lib lib/sane/libsane-sceptre.so.1.16
-@comment lib/sane/libsane-sharp.so.1
-@lib lib/sane/libsane-sharp.so.1.16
-@comment lib/sane/libsane-sm3600.so.1
-@lib lib/sane/libsane-sm3600.so.1.16
-@comment lib/sane/libsane-sm3840.so.1
-@lib lib/sane/libsane-sm3840.so.1.16
-@comment lib/sane/libsane-snapscan.so.1
-@lib lib/sane/libsane-snapscan.so.1.16
-@comment lib/sane/libsane-sp15c.so.1
-@lib lib/sane/libsane-sp15c.so.1.16
-@comment lib/sane/libsane-st400.so.1
-@lib lib/sane/libsane-st400.so.1.16
-@comment lib/sane/libsane-tamarack.so.1
-@lib lib/sane/libsane-tamarack.so.1.16
-@comment lib/sane/libsane-teco1.so.1
-@lib lib/sane/libsane-teco1.so.1.16
-@comment lib/sane/libsane-teco2.so.1
-@lib lib/sane/libsane-teco2.so.1.16
-@comment lib/sane/libsane-teco3.so.1
-@lib lib/sane/libsane-teco3.so.1.16
-@comment lib/sane/libsane-test.so.1
-@lib lib/sane/libsane-test.so.1.16
-@comment lib/sane/libsane-u12.so.1
-@lib lib/sane/libsane-u12.so.1.16
-@comment lib/sane/libsane-umax.so.1
-@lib lib/sane/libsane-umax.so.1.16
-@comment lib/sane/libsane-umax1220u.so.1
-@lib lib/sane/libsane-umax1220u.so.1.16
-@comment lib/sane/libsane-umax_pp.so.1
-@lib lib/sane/libsane-umax_pp.so.1.16
+lib/sane/libsane-abaton.so
+lib/sane/libsane-agfafocus.so
+lib/sane/libsane-apple.so
+lib/sane/libsane-artec.so
+lib/sane/libsane-artec_eplus48u.so
+lib/sane/libsane-as6e.so
+lib/sane/libsane-avision.so
+lib/sane/libsane-bh.so
+lib/sane/libsane-canon.so
+lib/sane/libsane-canon630u.so
+lib/sane/libsane-coolscan.so
+lib/sane/libsane-coolscan2.so
+lib/sane/libsane-dc210.so
+lib/sane/libsane-dc240.so
+lib/sane/libsane-dc25.so
+lib/sane/libsane-dll.so
+lib/sane/libsane-dmc.so
+lib/sane/libsane-epson.so
+lib/sane/libsane-fujitsu.so
+lib/sane/libsane-genesys.so
+lib/sane/libsane-gt68xx.so
+lib/sane/libsane-hp.so
+lib/sane/libsane-hp5400.so
+lib/sane/libsane-ibm.so
+lib/sane/libsane-leo.so
+lib/sane/libsane-ma1509.so
+lib/sane/libsane-matsushita.so
+lib/sane/libsane-microtek.so
+lib/sane/libsane-microtek2.so
+lib/sane/libsane-mustek.so
+lib/sane/libsane-mustek_usb.so
+lib/sane/libsane-nec.so
+lib/sane/libsane-net.so
+lib/sane/libsane-niash.so
+lib/sane/libsane-pie.so
+lib/sane/libsane-pint.so
+lib/sane/libsane-plustek.so
+lib/sane/libsane-plustek_pp.so
+lib/sane/libsane-ricoh.so
+lib/sane/libsane-s9036.so
+lib/sane/libsane-sceptre.so
+lib/sane/libsane-sharp.so
+lib/sane/libsane-sm3600.so
+lib/sane/libsane-sm3840.so
+lib/sane/libsane-snapscan.so
+lib/sane/libsane-sp15c.so
+lib/sane/libsane-st400.so
+lib/sane/libsane-tamarack.so
+lib/sane/libsane-teco1.so
+lib/sane/libsane-teco2.so
+lib/sane/libsane-teco3.so
+lib/sane/libsane-test.so
+lib/sane/libsane-u12.so
+lib/sane/libsane-umax.so
+lib/sane/libsane-umax1220u.so
+lib/sane/libsane-umax_pp.so

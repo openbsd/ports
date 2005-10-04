@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/10/03 21:15:04 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/10/04 21:42:38 alek Exp $
 
 COMMENT=	"API for accessing scanners, backends"
 
 DISTNAME=	sane-backends-1.0.16
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.sane-project.org/
@@ -42,6 +43,7 @@ FLAVOR?=
 LIB_DEPENDS+=	gphoto2,gphoto2_port::graphics/libgphoto2
 CONFIGURE_ARGS+=--with-gphoto2
 WANTLIB+=	exif
+MODULES=	devel/gettext
 .else
 CONFIGURE_ARGS+=--without-gphoto2
 .endif
@@ -51,7 +53,7 @@ NO_REGRESS=	Yes
 MKFILES=	lib/Makefile.in sanei/Makefile.in backend/Makefile.in \
 		frontend/Makefile.in tools/Makefile.in japi/Makefile.in
 
-post-patch:
+pre-build:
 .for i in ${MKFILES}
 	perl -pi -e "s,\.\.\/libtool,${LIBTOOL},g" ${WRKSRC}/${i}
 .endfor
