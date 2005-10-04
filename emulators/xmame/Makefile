@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2005/10/02 20:56:38 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2005/10/04 02:21:41 fgsch Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -45,9 +45,9 @@ USE_X11=	Yes
 
 MULTI_PACKAGES=	-mame -mess
 
-PKGNAME=	xmame+xmess-${VERSION}p0
-PKGNAME-mame=	xmame-${VERSION}p0
-PKGNAME-mess=	xmess-${VERSION}p0
+PKGNAME=	xmame+xmess-${VERSION}p1
+PKGNAME-mame=	xmame-${VERSION}p1
+PKGNAME-mess=	xmess-${VERSION}p1
 
 FLAVORS=	x11 sdl
 FLAVORS+=	esd
@@ -87,16 +87,17 @@ LIB_DEPENDS+=	esd::audio/esound
 MAKE_FLAGS+=	SOUND_ESOUND=1
 .endif
 
-.if ${MACHINE_ARCH} == "i386"
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
+. if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	nasm::devel/nasm
-MAKE_FLAGS+=	MY_CPU=i386 \
-		X86_ASM_68000=1 \
+MAKE_FLAGS+=	X86_ASM_68000=1 \
 		EFFECT_MMX_ASM=1
+. endif
+MAKE_FLAGS+=	MY_CPU=${MACHINE_ARCH}
 . if ${DISPLAY_METHOD} == "x11"
 MAKE_FLAGS+=	X11_DGA=1 
 . endif
-.elif ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "m68k" || \
-      ${MACHINE_ARCH} == "amd64"
+.elif ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "m68k"
 MAKE_FLAGS+=	MY_CPU=${MACHINE_ARCH}
 .elif ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "powerpc" || \
       ${MACHINE_ARCH} == "sparc"
