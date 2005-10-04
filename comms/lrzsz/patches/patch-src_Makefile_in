@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2005/10/04 20:35:53 sturm Exp $
+--- src/Makefile.in.orig	Tue Oct  4 22:27:28 2005
++++ src/Makefile.in	Tue Oct  4 22:28:16 2005
+@@ -372,16 +372,16 @@ install-exec-local:
+ 	rm -f $(DESTDIR)/$(bindir)/`echo lsb | sed -e '$(transform)'`
+ 	ln $(DESTDIR)/$(bindir)/`echo lsz |sed -e '$(transform)'` \
+ 		$(DESTDIR)/$(bindir)/`echo lsb |sed -e '$(transform)'` 
+-	rm -f $(bindir)/`echo lsx | sed -e '$(transform)'`
++	rm -f $(DESTDIR)/$(bindir)/`echo lsx | sed -e '$(transform)'`
+ 	ln $(DESTDIR)/$(bindir)/`echo lsz |sed -e '$(transform)'` \
+ 		$(DESTDIR)/$(bindir)/`echo lsx |sed -e '$(transform)'` 
+-	rm -f $(bindir)/`echo lrb | sed -e '$(transform)'`
++	rm -f $(DESTDIR)/$(bindir)/`echo lrb | sed -e '$(transform)'`
+ 	ln $(DESTDIR)/$(bindir)/`echo lrz |sed -e '$(transform)'` \
+ 		$(DESTDIR)/$(bindir)/`echo lrb |sed -e '$(transform)'` 
+-	rm -f $(bindir)/`echo lrx | sed -e '$(transform)'`
++	rm -f $(DESTDIR)/$(bindir)/`echo lrx | sed -e '$(transform)'`
+ 	ln $(DESTDIR)/$(bindir)/`echo lrz |sed -e '$(transform)'` \
+ 		$(DESTDIR)/$(bindir)/`echo lrx |sed -e '$(transform)'` 
+-#	rm -f $(bindir)/`echo lrzszbug | sed -e '$(transform)'`
++#	rm -f $(DESTDIR)/$(bindir)/`echo lrzszbug | sed -e '$(transform)'`
+ #	ln $(bindir)/`echo lrzszbug |sed -e '$(transform)'` \
+ #		$(bindir)/`echo lrzszbug |sed -e '$(transform)'` 
+ 
