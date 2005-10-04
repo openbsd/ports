@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_drivers_openbsd_c,v 1.1 2003/05/18 07:40:55 naddy Exp $
---- src/drivers/openbsd.c.orig	Sat May 17 14:40:43 2003
-+++ src/drivers/openbsd.c	Sat May 17 15:15:37 2003
+$OpenBSD: patch-src_drivers_openbsd_c,v 1.2 2005/10/04 20:16:04 espie Exp $
+--- src/drivers/openbsd.c.orig	Fri Dec 29 19:08:08 2000
++++ src/drivers/openbsd.c	Tue Oct  4 22:12:46 2005
 @@ -39,7 +39,6 @@ static void shutdown (void);
  static void dummy () { }
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_drivers_openbsd_c,v 1.1 2003/05/18 07:40:55 naddy Exp $
      "buffer=val", "Audio buffer size (default is 32768)",
      NULL
  };
-@@ -75,29 +74,22 @@ struct xmp_drv_info drv_openbsd = {
+@@ -75,35 +74,36 @@ struct xmp_drv_info drv_openbsd = {
  static int setaudio (struct xmp_control *ctl)
  {
      audio_info_t ainfo;
@@ -40,3 +40,17 @@ $OpenBSD: patch-src_drivers_openbsd_c,v 1.1 2003/05/18 07:40:55 naddy Exp $
      ainfo.play.buffer_size = bsize;
  
      if (ioctl (audio_fd, AUDIO_SETINFO, &ainfo) == -1) {
+ 	close (audio_fd);
+ 	return XMP_ERR_DINIT;
+     }
++
++    ioctl (audio_fd, AUDIO_GETINFO, &ainfo);
++    ctl->freq = ainfo.play.sample_rate;
++    if (ainfo.play.channels == 2)
++    	ctl->outfmt &= ~XMP_FMT_MONO;
++    else
++    	ctl->outfmt |= XMP_FMT_MONO;
++    ctl->resol = ainfo.play.precision;
+ 
+     drv_openbsd.description = "OpenBSD PCM audio";
+     return XMP_OK;
