@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2005/10/03 13:40:14 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2005/10/04 19:24:16 robert Exp $
 
 COMMENT=	"strategy game with fantasy theme"
-DISTNAME=	wesnoth-1.0rc1
+DISTNAME=	wesnoth-1.0
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wesnoth/}
 
@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=--enable-lite
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--enable-server --enable-campaign-server --enable-editor \
-		--with-fifodir=/var/run --enable-tinygui
+		--with-fifodir=/var/run
 
 MAKE_FLAGS=LIBINTL='-L${LOCALBASE}/lib -lintl -liconv'
 

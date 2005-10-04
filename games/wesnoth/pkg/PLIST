@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/10/03 13:40:14 robert Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/10/04 19:24:17 robert Exp $
 bin/campaignd
 bin/wesnoth
 bin/wesnoth_editor
@@ -578,6 +578,7 @@ share/wesnoth/data/units/Young_Ogre.cfg
 share/wesnoth/data/units/Youth.cfg
 share/wesnoth/data/utils.cfg
 share/wesnoth/fonts/
+share/wesnoth/fonts/COPYING
 share/wesnoth/fonts/DejaVuSans.ttf
 share/wesnoth/images/
 share/wesnoth/images/arch-mage+female-defend.png
@@ -820,6 +821,10 @@ share/wesnoth/images/drake-clasher-die-1.png
 share/wesnoth/images/drake-clasher-die-2.png
 share/wesnoth/images/drake-clasher-flying.png
 share/wesnoth/images/drake-clasher.png
+share/wesnoth/images/drake-enforcer-attack-mace.png
+share/wesnoth/images/drake-enforcer-attack-spear.png
+share/wesnoth/images/drake-enforcer-attack-sword.png
+share/wesnoth/images/drake-enforcer-defend.png
 share/wesnoth/images/drake-enforcer.png
 share/wesnoth/images/drake-fighter-attack-close1.png
 share/wesnoth/images/drake-fighter-attack-close2.png
@@ -3495,6 +3500,9 @@ share/wesnoth/images/undead-ghoul.png
 share/wesnoth/images/undead-initiate-attack1.png
 share/wesnoth/images/undead-initiate-attack2.png
 share/wesnoth/images/undead-initiate-defend.png
+share/wesnoth/images/undead-initiate-die1.png
+share/wesnoth/images/undead-initiate-die2.png
+share/wesnoth/images/undead-initiate-die3.png
 share/wesnoth/images/undead-initiate.png
 share/wesnoth/images/undead-lich-defend.png
 share/wesnoth/images/undead-lich-melee.png
@@ -3785,6 +3793,14 @@ share/wesnoth/sounds/wolf-attack.wav
 share/wesnoth/sounds/zombie-attack.wav
 share/wesnoth/sounds/zombie-hit.wav
 share/wesnoth/translations/
+share/wesnoth/translations/af/
+share/wesnoth/translations/af/LC_MESSAGES/
+share/wesnoth/translations/af/LC_MESSAGES/wesnoth-editor.mo
+share/wesnoth/translations/af/LC_MESSAGES/wesnoth-ei.mo
+share/wesnoth/translations/af/LC_MESSAGES/wesnoth-httt.mo
+share/wesnoth/translations/af/LC_MESSAGES/wesnoth-lib.mo
+share/wesnoth/translations/af/LC_MESSAGES/wesnoth-sotbe.mo
+share/wesnoth/translations/af/LC_MESSAGES/wesnoth.mo
 share/wesnoth/translations/ca/
 share/wesnoth/translations/ca/LC_MESSAGES/
 share/wesnoth/translations/ca/LC_MESSAGES/wesnoth-editor.mo
@@ -3827,6 +3843,7 @@ share/wesnoth/translations/es/LC_MESSAGES/wesnoth-editor.mo
 share/wesnoth/translations/es/LC_MESSAGES/wesnoth-httt.mo
 share/wesnoth/translations/es/LC_MESSAGES/wesnoth-lib.mo
 share/wesnoth/translations/es/LC_MESSAGES/wesnoth-sotbe.mo
+share/wesnoth/translations/es/LC_MESSAGES/wesnoth-trow.mo
 share/wesnoth/translations/es/LC_MESSAGES/wesnoth.mo
 share/wesnoth/translations/fi/
 share/wesnoth/translations/fi/LC_MESSAGES/
@@ -3897,6 +3914,7 @@ share/wesnoth/translations/ru/LC_MESSAGES/wesnoth.mo
 share/wesnoth/translations/sk/
 share/wesnoth/translations/sk/LC_MESSAGES/
 share/wesnoth/translations/sk/LC_MESSAGES/wesnoth-editor.mo
+share/wesnoth/translations/sk/LC_MESSAGES/wesnoth-ei.mo
 share/wesnoth/translations/sk/LC_MESSAGES/wesnoth-httt.mo
 share/wesnoth/translations/sk/LC_MESSAGES/wesnoth-lib.mo
 share/wesnoth/translations/sk/LC_MESSAGES/wesnoth-sotbe.mo
