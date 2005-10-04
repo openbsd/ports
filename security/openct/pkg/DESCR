@@ -1,0 +1,15 @@
+OpenCT implements drivers for several smart card readers. It comes as
+driver in ifdhandler format for PC/SC-Lite, as CT-API driver, or as a
+small and lean middleware, so applications can use it with minimal
+overhead. OpenCT also has a primitive mechanism to export smart card
+readers to remote machines via tcp/ip.
+
+All recent usb readers most likely implement the CCID specification and
+thus the generic USB CCID driver should work.
+
+    * generic USB CCID driver 
+    * Towitoko readers and compatibles 
+    * Schlumberger/Axalto e-gate tokens 
+    * Aladdin eToken PRO 
+    * Rainbow iKey 3000
+    * PertoSmart USB and Serial (ACS AC-1030)

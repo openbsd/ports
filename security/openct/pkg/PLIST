@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/04 21:58:54 alek Exp $
+%%SHARED%%
+bin/openct-tool
+include/openct/
+include/openct/apdu.h
+include/openct/buffer.h
+include/openct/conf.h
+include/openct/ctapi.h
+include/openct/device.h
+include/openct/driver.h
+include/openct/error.h
+include/openct/ifd.h
+include/openct/logging.h
+include/openct/openct.h
+include/openct/protocol.h
+include/openct/server.h
+include/openct/socket.h
+include/openct/tlv.h
+include/openct/types.h
+lib/libopenct.a
+lib/libopenct.la
+lib/libopenctapi.a
+lib/libopenctapi.la
+lib/pkgconfig/
+lib/pkgconfig/libopenct.pc
+@man man/man1/openct-tool.1
+sbin/ifdhandler
+sbin/ifdproxy
+sbin/openct-control
+share/examples/openct/
+share/examples/openct/openct.conf
+@mode 644
+@sample ${SYSCONFDIR}/openct.conf
+@mode 755
+@sample /var/run/openct/
+@extraunexec rm -rf /var/run/openct/*
