@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2005/01/20 20:19:40 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2005/10/05 20:30:53 sturm Exp $
 
 COMMENT=	"GrekllM2 will remind you to do important events"
 
 DISTNAME=	gkrellm-reminder-2.0.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	misc sysutils/gkrellm
 
-HOMEPAGE=	http://web.wt.net/~billw/gkrellm/Plugins.html\#REMINDER
+HOMEPAGE=	${MASTER_SITES}Plugins.html\#REMINDER
 
-MASTER_SITES=	http://web.wt.net/~billw/gkrellm/Plugins/
+MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/Plugins/
 
 PLUGIN=		${WRKSRC}/reminder.so
 
