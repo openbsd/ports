@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/09/07 17:32:26 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/10/05 15:19:11 fgsch Exp $
 bin/xpad
 @man man/man1/xpad.1
 share/applications/
@@ -31,6 +31,8 @@ share/locale/ru/LC_MESSAGES/xpad.mo
 share/locale/rw/
 share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/xpad.mo
+share/locale/sk/LC_MESSAGES/xpad.mo
+share/locale/sl/LC_MESSAGES/xpad.mo
 share/locale/vi/
 share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/xpad.mo
