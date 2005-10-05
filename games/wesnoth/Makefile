@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/10/04 19:24:16 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2005/10/05 13:44:26 robert Exp $
 
 COMMENT=	"strategy game with fantasy theme"
 DISTNAME=	wesnoth-1.0
@@ -21,6 +21,12 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		SDL_mixer::devel/sdl-mixer \
 		zipios::archivers/zipios
 
+
+.if ${MACHINE_ARCH} == "zaurus"
+BUILD_DEPENDS+=		pngmeta::graphics/pngmeta \
+					:ImageMagick-*:graphics/ImageMagick
+CONFIGURE_ARGS+=	--enable-tinygui
+.endif
 
 # The detection of kde-config/gnome-config will only lead to some
 # desktop file installation...
