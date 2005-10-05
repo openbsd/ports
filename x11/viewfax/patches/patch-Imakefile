@@ -1,6 +1,6 @@
-$OpenBSD: patch-aa,v 1.3 2004/05/17 16:32:33 naddy Exp $
---- Imakefile.orig	Wed May 12 10:57:28 2004
-+++ Imakefile	Wed May 12 11:00:07 2004
+$OpenBSD: patch-Imakefile,v 1.1 2005/10/05 09:51:47 bernd Exp $
+--- Imakefile.orig	Sun Nov 14 11:19:13 2004
++++ Imakefile	Fri Sep 30 12:07:27 2005
 @@ -1,13 +1,6 @@
  # Imakefile for viewfax
  
@@ -14,5 +14,5 @@ $OpenBSD: patch-aa,v 1.3 2004/05/17 16:32:33 naddy Exp $
 -HELPDIR = ${USRLIBDIR}/X11
 +HELPDIR = ${USRLIBDIR}/X11/viewfax
  DEFINES = -DHELPFILE=\"$(HELPDIR)/viewfax.tif\"
+ /* add -DREAL_ROOT to the line above if you are running KDE2.1 */
  
- SRCS = viewfax.c faxinput.c faxinit.c faxexpand.c

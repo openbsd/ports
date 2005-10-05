@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2004/12/19 17:27:02 alek Exp $
+# $OpenBSD: Makefile,v 1.18 2005/10/05 09:51:47 bernd Exp $
 # $FreeBSD: Makefile,v 1.9 1998/03/07 23:26:23 jmz Exp $
 
 COMMENT=	"display files containing g3 and/or g4 coded fax pages"
 
-DISTNAME=	viewfax-2.5
+DISTNAME=	viewfax-2.6
 CATEGORIES=	x11
 
-MASTER_SITES=	ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
+MASTER_SITES=	ftp://ftp.ping.de/pub/unix/ \
+		ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
 
 CONFIGURE_STYLE=	imake
 
