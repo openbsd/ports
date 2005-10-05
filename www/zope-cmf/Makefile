@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2004/08/10 13:24:15 xsa Exp $
+# $OpenBSD: Makefile,v 1.13 2005/10/05 14:17:51 aanriot Exp $
 
 COMMENT=	"Zope content management framework"
 
-DISTNAME=	CMF-1.4.6
+DISTNAME=	CMF-1.5.4
 PKGNAME=	zope-${DISTNAME:L}
 CATEGORIES=	www
 
 HOMEPAGE=	http://cmf.zope.org/
 
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
+MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
 
 # Zope Public License (ZPL) 2.0 <http://www.zope.org/Resources/ZPL>
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,11 +16,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://zope.org/Products/CMF/${DISTNAME}/
+MASTER_SITES=	http://www.zope.org/Products/CMF/CMF-${VERS}/
 
 MODULES=	www/zope
 
-CMFDIRS=	CMFCalendar CMFCore CMFDefault CMFTopic DCWorkflow
+CMFDIRS=	CMFActionIcons CMFCalendar CMFCore CMFDefault \
+		CMFSetup CMFTopic CMFUid DCWorkflow
 DOCSDIR=	${PREFIX}/share/doc/zope-cmf
 
 do-build:
