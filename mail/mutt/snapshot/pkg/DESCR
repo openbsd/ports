@@ -15,11 +15,11 @@ Other features include:
 - small and efficient
 
 Flavors:
-	slang	   - build using the S-Lang library for screen handling.
-	compressed - build with compressed folder support 
+	slang	   - build using the S-Lang library for screen handling
+	compressed - build with compressed folder support
 		     (see: http://www.spinnaker.de/mutt/compressed/)
-	mixmaster  - build with anonymous remailing support.
+	mixmaster  - build with anonymous remailing support
 	hcache	   - build with maildir header caching support
-		 (see: http://wwwcip.informatik.uni-erlangen.de/~sithglan/mutt/)
+	idn	   - build with internationalized domain name support
 
 This is the development version of mutt.

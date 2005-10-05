@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.16 2005/09/29 17:25:27 bernd Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2005/10/05 09:48:10 bernd Exp $
 
 CATEGORIES=	mail
 
@@ -74,6 +74,13 @@ CONFIGURE_ARGS+=	--enable-hcache
 LIB_DEPENDS+=		gdbm.2::databases/gdbm
 .else
 CONFIGURE_ARGS+=	--without-gdbm
+.endif
+
+.if ${FLAVOR:L:Midn}
+CONFIGURE_ARGS+=	--with-idn
+LIB_DEPENDS+=		idn.16::devel/libidn
+.else
+CONFIGURE_ARGS+=	--without-idn
 .endif
 
 .if defined(HOMESPOOL)
