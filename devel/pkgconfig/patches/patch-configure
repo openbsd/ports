@@ -1,19 +1,12 @@
-$OpenBSD: patch-configure,v 1.1 2003/09/23 05:59:34 marcm Exp $
---- configure.orig	2003-09-05 11:24:10.000000000 -0700
-+++ configure	2003-09-05 11:24:38.000000000 -0700
-@@ -3479,13 +3479,13 @@ else
-     hardcode_direct=yes
-     hardcode_shlibpath_var=no
-     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
--      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
-+      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-       hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-       export_dynamic_flag_spec='${wl}-E'
-     else
-       case "$host_os" in
-       openbsd[01].* | openbsd2.[0-7] | openbsd2.[0-7].*)
--	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
-+	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $compiler_flags'
- 	hardcode_libdir_flag_spec='-R$libdir'
-         ;;
-       *)
+$OpenBSD: patch-configure,v 1.2 2005/10/05 08:50:21 espie Exp $
+--- configure.orig	Sat Jul 16 12:23:36 2005
++++ configure	Tue Sep 20 23:36:23 2005
+@@ -7227,7 +7227,7 @@ if test -z "$aix_libpath"; then aix_libp
+       else
+        case $host_os in
+ 	 openbsd[01].* | openbsd2.[0-7] | openbsd2.[0-7].*)
+-	   archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
++	   archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $compiler_flags'
+ 	   hardcode_libdir_flag_spec='-R$libdir'
+ 	   ;;
+ 	 *)

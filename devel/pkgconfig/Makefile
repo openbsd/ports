@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.18 2005/09/19 19:01:20 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2005/10/05 08:50:20 espie Exp $
 
 COMMENT=		"tool for managing library compile/link flags"
 
-VERSION=		0.15.0
-DISTNAME=		pkgconfig-${VERSION}
-PKGNAME=		${DISTNAME}p1
+VERSION=		0.19
+DISTNAME=		pkg-config-${VERSION}
+PKGNAME=		pkgconfig-${VERSION}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.freedesktop.org/software/pkgconfig/
 MASTER_SITES=		${HOMEPAGE}releases/ \
-			${MASTER_SITE_GNOME:=sources/pkgconfig/0.15/}
+			${MASTER_SITE_GNOME:=sources/pkg-config/0.19/}
 
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
-MAKE_FLAGS+=		pkglibdir=${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig
+CONFIGURE_ARGS+=	--with-pc_path=${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

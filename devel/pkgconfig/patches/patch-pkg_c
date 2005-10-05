@@ -1,30 +1,7 @@
-$OpenBSD: patch-pkg_c,v 1.5 2005/04/09 13:07:43 espie Exp $
---- pkg.c.orig	Thu Jan 16 22:07:09 2003
-+++ pkg.c	Mon Apr  4 14:12:07 2005
-@@ -202,7 +202,21 @@ package_init ()
-       path_positions = g_hash_table_new (g_str_hash, g_str_equal);
-       
-       g_slist_foreach (search_dirs, (GFunc)scan_dir, NULL);
--      scan_dir (pkglibdir);
-+      {
-+      char **config_dirs;
-+      char **iter;
-+
-+      config_dirs = g_strsplit (pkglibdir, G_SEARCHPATH_SEPARATOR_S, -1);
-+      iter = config_dirs;
-+      while (*iter)
-+        {
-+          scan_dir (*iter);
-+
-+          ++iter;
-+        }
-+
-+      g_strfreev (config_dirs);
-+      }
-     }
- }
- 
-@@ -339,7 +353,55 @@ get_package (const char *name)
+$OpenBSD: patch-pkg_c,v 1.6 2005/10/05 08:50:21 espie Exp $
+--- pkg.c.orig	Fri Jul 15 10:20:20 2005
++++ pkg.c	Tue Sep 20 23:34:22 2005
+@@ -372,7 +372,55 @@ get_package (const char *name)
    return internal_get_package (name, TRUE, TRUE);
  }
  
@@ -80,7 +57,7 @@ $OpenBSD: patch-pkg_c,v 1.5 2005/04/09 13:07:43 espie Exp $
  string_list_strip_duplicates (GSList *list)
  {
    GHashTable *table;
-@@ -929,6 +991,8 @@ get_multi_merged (GSList *pkgs, GetListF
+@@ -965,6 +1013,8 @@ get_merged_from_back (Package *pkg, GetL
  
    g_slist_free (dups_list);
    
