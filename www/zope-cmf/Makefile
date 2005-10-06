@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2005/10/05 14:17:51 aanriot Exp $
+# $OpenBSD: Makefile,v 1.14 2005/10/06 20:42:07 aanriot Exp $
 
 COMMENT=	"Zope content management framework"
 
-DISTNAME=	CMF-1.5.4
+VERS=		1.5.4
+DISTNAME=	CMF-${VERS}p0
 PKGNAME=	zope-${DISTNAME:L}
 CATEGORIES=	www
 
