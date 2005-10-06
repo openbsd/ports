@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_saned_man,v 1.1.1.1 2005/10/03 21:15:04 alek Exp $
---- doc/saned.man.orig	Sun Sep 18 17:59:14 2005
-+++ doc/saned.man	Sun Sep 18 18:01:44 2005
+$OpenBSD: patch-doc_saned_man,v 1.2 2005/10/06 22:37:45 alek Exp $
+--- doc/saned.man.orig	Sat Apr 16 15:06:50 2005
++++ doc/saned.man	Thu Oct  6 11:00:15 2005
 @@ -92,7 +92,7 @@ support IPv6, check the documentation fo
  The configuration line normally looks like this:
  .PP
@@ -15,7 +15,7 @@ $OpenBSD: patch-doc_saned_man,v 1.1.1.1 2005/10/03 21:15:04 alek Exp $
  .PP
  .RS
 -sane-port stream tcp nowait saned.saned /usr/sbin/tcpd @SBINDIR@/saned
-+sane-port stream tcp nowait _saned._saned /usr/sbin/tcpd @SBINDIR@/saned
++sane-port stream tcp nowait _saned._saned /usr/libexec/tcpd @SBINDIR@/saned
  .RE
  .PP
  Note that both examples assume that there is a
