@@ -1,7 +1,7 @@
-$OpenBSD: patch-unixos_c,v 1.1 2002/08/09 01:15:19 naddy Exp $
---- unixos.c.orig	Thu Feb 16 22:39:50 1995
-+++ unixos.c	Fri Aug  9 02:58:47 2002
-@@ -36,7 +36,9 @@
+$OpenBSD: patch-unixos_c,v 1.2 2005/10/06 20:46:02 aanriot Exp $
+--- unixos.c.orig	Mon Jul 21 22:54:05 2003
++++ unixos.c	Mon Oct  3 19:45:28 2005
+@@ -38,7 +38,9 @@
  #define MAXHOSTNAMELEN 64
  #endif
  
@@ -11,24 +11,3 @@ $OpenBSD: patch-unixos_c,v 1.1 2002/08/09 01:15:19 naddy Exp $
  extern char *malloc();
  extern char *getenv();
  
-@@ -89,7 +91,7 @@ char *id;
- 	strcpy(buf, getenv("TMPDIR"));
-     }
-     else {
--	strcpy(buf, "/usr/tmp");
-+	strcpy(buf, "/var/tmp");
-     }
-     strcat(buf, "/m-prts-");
-     p = getenv("USER");
-@@ -159,6 +161,11 @@ params contentParams;
- 
-     /* Get rid of leading ~ or ~/ */
-     while (*fname == '~' || *fname == '/') fname++;
-+
-+    /* Debian fix: the loop below handles internal "/../" but not
-+     * leading "../" */
-+    /* Get rid of leading "../" */
-+    while (!strncmp(fname, "../", 3)) fname += 3;
-     
-     /* Clean out bad characters, create directories along path */
-     for (p=fname; *p; p++) {
