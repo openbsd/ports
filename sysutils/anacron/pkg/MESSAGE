@@ -20,7 +20,7 @@ Comment out the invocation of these jobs in root's crontab.
 
 Invoke anacron from /etc/rc.local like this:
 
-if [ X"\${anacron}" == X"YES" -a -x ${PREFIX}/sbin/anacron ]; then
+if [ X"${anacron}" == X"YES" -a -x ${PREFIX}/sbin/anacron ]; then
     echo -n ' anacron'
     ${PREFIX}/sbin/anacron -s
 fi
