@@ -7,5 +7,6 @@ accessing the mailboxes directly.
 
 Flavors:
 
+         ldap - Build with LDAP support as an authentication source
         mysql - Build with MySQL support as an authentication source
    postgresql - Build with PostgreSQL support as an authentication source
