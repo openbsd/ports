@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/06 18:15:02 msf Exp $
+${P5SITE}/ExtUtils/
+${P5SITE}/ExtUtils/PkgConfig.pm
+@man man/man3p/ExtUtils::PkgConfig.3p
