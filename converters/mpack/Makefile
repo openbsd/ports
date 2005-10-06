@@ -1,7 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2005/10/06 20:46:02 aanriot Exp $
+# $OpenBSD: Makefile,v 1.19 2005/10/06 21:09:21 aanriot Exp $
 
 COMMENT=	"external MIME packer/unpacker"
-DISTNAME=	mpack-1.6
+
+V=		1.5
+DISTNAME=	mpack-${V}-src
+PKGNAME=	mpack-${V}p1
 CATEGORIES=	converters mail news
 
 # License: BSD
@@ -12,9 +15,17 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/mpack/
+EXTRACT_SUFX=	.tar.Z
 
-CONFIGURE_STYLE=gnu
+WRKDIST=	${WRKDIR}/mpack
+MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 NO_REGRESS=	Yes
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/mpack ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/munpack ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/unixpk.man ${PREFIX}/man/man1/mpack.1
+	${INSTALL_MAN} ${WRKSRC}/unixunpk.man ${PREFIX}/man/man1/munpack.1
 
 .include <bsd.port.mk>

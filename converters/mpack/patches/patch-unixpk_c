@@ -1,8 +1,8 @@
-$OpenBSD: patch-unixpk_c,v 1.2 2005/10/06 20:46:02 aanriot Exp $
---- unixpk.c.orig	Mon Jul 21 22:50:41 2003
-+++ unixpk.c	Mon Oct  3 16:26:38 2005
-@@ -167,7 +167,7 @@ int main(int argc, char **argv)
- 	    strcpy(fnamebuf, "/usr/tmp");
+$OpenBSD: patch-unixpk_c,v 1.3 2005/10/06 21:09:22 aanriot Exp $
+--- unixpk.c.orig	Thu Feb 16 22:39:50 1995
++++ unixpk.c	Mon Aug  5 12:30:30 2002
+@@ -165,7 +165,7 @@ char **argv;
+ 	    strcpy(fnamebuf, "/tmp");
  	}
  	strcat(fnamebuf, "/mpackXXXXXX");
 -	mktemp(fnamebuf);

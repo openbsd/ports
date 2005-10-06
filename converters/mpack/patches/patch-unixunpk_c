@@ -1,9 +1,9 @@
-$OpenBSD: patch-unixunpk_c,v 1.2 2005/10/06 20:46:02 aanriot Exp $
---- unixunpk.c.orig	Mon Jul 21 22:51:55 2003
-+++ unixunpk.c	Mon Oct  3 16:26:38 2005
-@@ -100,7 +100,7 @@ int main(int argc, char **argv)
+$OpenBSD: patch-unixunpk_c,v 1.3 2005/10/06 21:09:22 aanriot Exp $
+--- unixunpk.c.orig	Fri Aug  9 02:44:18 2002
++++ unixunpk.c	Fri Aug  9 02:44:38 2002
+@@ -100,7 +100,7 @@ char **argv;
  
- void usage(void) {
+ usage() {
      fprintf(stderr, "munpack version %s\n", MPACK_VERSION);
 -    fprintf(stderr, "usage: munpack [-f] [-q] [-C directory] [files...]\n");
 +    fprintf(stderr, "usage: munpack [-f] [-q] [-t] [-C directory] [files...]\n");
