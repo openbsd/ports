@@ -1,38 +1,37 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2005/09/21 15:15:49 alek Exp $
---- configure	Sat Aug  6 15:41:11 2005
-+++ configure	Sat Aug  6 15:44:13 2005
-@@ -1358,7 +1358,6 @@ fi
+$OpenBSD: patch-configure,v 1.2 2005/10/07 20:15:13 alek Exp $
+--- configure.orig	Wed Sep 14 08:34:42 2005
++++ configure	Fri Oct  7 21:52:45 2005
+@@ -2959,7 +2959,6 @@ fi
  rend_posix=true
  
  STATIC_LIBS=no
 -CPPFLAGS="${CPPFLAGS} -g"
  
- echo $ac_n "checking for pthread_creat in -lc_r""... $ac_c" 1>&6
- echo "configure:1365: checking for pthread_creat in -lc_r" >&5
-@@ -1399,14 +1398,14 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+ echo "$as_me:$LINENO: checking for pthread_creat in -lc_r" >&5
+ echo $ECHO_N "checking for pthread_creat in -lc_r... $ECHO_C" >&6
+@@ -3028,13 +3027,13 @@ if test $ac_cv_lib_c_r_pthread_creat = y
+   LDFLAGS="${LDFLAGS} -lc_r"
  else
-   echo "$ac_t""no" 1>&6
  
--  echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
--echo "configure:1404: checking for pthread_create in -lpthread" >&5
-+  echo $ac_n "checking for pthread_create in -pthread""... $ac_c" 1>&6
-+echo "configure:1404: checking for pthread_create in -pthread" >&5
- ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
+-  echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6
++  echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
 +LIBS="-pthread  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 1412 "configure"
- #include "confdefs.h"
-@@ -1434,7 +1433,7 @@ LIBS="$ac_save_LIBS"
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -3092,7 +3091,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
+ if test $ac_cv_lib_pthread_pthread_create = yes; then
 -  LDFLAGS="${LDFLAGS} -lpthread"
 +  LDFLAGS="${LDFLAGS} -pthread"
- else
-   echo "$ac_t""no" 1>&6
+ fi
+ 
  fi

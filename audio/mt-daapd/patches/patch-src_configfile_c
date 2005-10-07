@@ -1,0 +1,62 @@
+$OpenBSD: patch-src_configfile_c,v 1.1 2005/10/07 20:15:13 alek Exp $
+--- src/configfile.c.orig	Sun Jan 30 05:32:35 2005
++++ src/configfile.c	Fri Oct  7 21:50:05 2005
+@@ -377,7 +377,7 @@ int config_read(char *file) {
+     
+ 
+     /* sanity check the paths */
+-    sprintf(path_buffer,"%s/index.html",config.web_root);
++    snprintf(path_buffer,sizeof(path_buffer),"%s/index.html",config.web_root);
+     if((fin=fopen(path_buffer,"r")) == NULL) {
+ 	err=-1;
+ 	DPRINTF(E_LOG,L_CONF,"Invalid web_root\n");
+@@ -737,6 +737,7 @@ void config_emit_service_status(WS_CONNI
+     int mdns_running;
+     char *html;
+     char buf[256];
++	char tmpbuf[32];
+     int r_days, r_hours, r_mins, r_secs;
+     int scanning;
+ 
+@@ -795,21 +796,28 @@ void config_emit_service_status(WS_CONNI
+     r_mins=r_secs/60;
+     r_secs -= 60 * r_mins;
+ 
+-    memset(buf,0x0,sizeof(buf));
+-    if(r_days) 
+-	sprintf((char*)&buf[strlen(buf)],"%d day%s, ", r_days,
+-		r_days == 1 ? "" : "s");
++	memset(buf,0x0,sizeof(buf));
++    if(r_days) {
++		snprintf(tmpbuf,sizeof(tmpbuf),"%d day%s, ", r_days, 
++				 r_days == 1 ? "" : "s");
++		strlcat(buf,tmpbuf,sizeof(buf));
++	}
++	
++    if(r_days || r_hours) {
++		snprintf(tmpbuf,sizeof(tmpbuf),"%d hour%s, ", r_hours, 
++				 r_hours == 1 ? "" : "s");
++		strlcat(buf,tmpbuf,sizeof(buf));
++	}
+ 
+-    if(r_days || r_hours) 
+-	sprintf((char*)&buf[strlen(buf)],"%d hour%s, ", r_hours,
+-		r_hours == 1 ? "" : "s");
++    if(r_days || r_hours || r_mins) {
++		snprintf(tmpbuf,sizeof(tmpbuf),"%d minute%s, ", r_mins, 
++				 r_mins == 1 ? "" : "s");
++		strlcat(buf,tmpbuf,sizeof(buf));
++	}
+ 
+-    if(r_days || r_hours || r_mins)
+-	sprintf((char*)&buf[strlen(buf)],"%d minute%s, ", r_mins,
+-		r_mins == 1 ? "" : "s");
+-
+-    sprintf((char*)&buf[strlen(buf)],"%d second%s ", r_secs,
+-	    r_secs == 1 ? "" : "s");
++    snprintf(tmpbuf,sizeof(tmpbuf),"%d second%s ", r_secs, 
++			 r_secs == 1 ? "" : "s");
++	strlcat(buf,tmpbuf,sizeof(buf));
+     
+     ws_writefd(pwsc," <TD>%s</TD>\n",buf);
+     ws_writefd(pwsc,"</TR>\n");

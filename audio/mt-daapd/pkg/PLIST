@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/21 15:15:49 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/10/07 20:15:13 alek Exp $
 sbin/mt-daapd
 share/examples/mt-daapd/
 share/examples/mt-daapd/mt-daapd.conf
+@sample ${SYSCONFDIR}/mt-daapd.conf
 share/examples/mt-daapd/mt-daapd.playlist
+@sample ${SYSCONFDIR}/mt-daapd.playlist
 share/examples/mt-daapd/mt-daapd.spec
 share/mt-daapd/
 share/mt-daapd/admin-root/
