@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2005/09/10 19:42:53 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2005/10/07 12:02:19 aanriot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,7 +19,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}Products/Zope/${VERSION}/
+MASTER_SITES=	${HOMEPAGE}Products/Zope/${VERSION}/ \
+		http://catai.net/distfiles/
 EXTRACT_SUFX=	.tgz
 
 PYTHON_VER=	2.3
