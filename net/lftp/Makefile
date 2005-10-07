@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.54 2005/06/07 02:49:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.55 2005/10/07 08:38:36 kevlo Exp $
 
 COMMENT=	"shell-like command line ftp and sftp client"
 
-DISTNAME=	lftp-3.2.1
+DISTNAME=	lftp-3.3.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
-		ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/old/ \
-		http://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
-		http://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/old/
+MASTER_SITES=	http://ftp.yars.free.net/pub/source/lftp/
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://lftp.yar.ru/

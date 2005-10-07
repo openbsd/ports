@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/09/22 22:39:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2005/10/07 08:38:36 kevlo Exp $
 bin/lftp
 bin/lftpget
 lib/lftp/
@@ -7,8 +7,10 @@ share/examples/lftp/
 share/examples/lftp/lftp.conf-sample
 @sample ${SYSCONFDIR}/lftp.conf
 share/lftp/
+share/lftp/convert-netscape-cookies
 share/lftp/import-ncftp
 share/lftp/import-netscape
+share/lftp/verify-file
 share/locale/de/LC_MESSAGES/lftp.mo
 share/locale/es/LC_MESSAGES/lftp.mo
 share/locale/fr/LC_MESSAGES/lftp.mo
