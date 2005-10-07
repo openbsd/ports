@@ -1,0 +1,22 @@
+$OpenBSD: patch-makemake_sh,v 1.1 2005/10/07 13:24:53 wilfried Exp $
+--- makemake.sh.orig	Mon Sep 26 16:21:50 2005
++++ makemake.sh	Thu Oct  6 13:25:29 2005
+@@ -1,7 +1,7 @@
+-#!/bin/bash
++:
+ 
+ # Display usage message
+-function usage() {
++function usage {
+ 	echo 'usage: makemake [simple] {gcc|mingw} [args]'
+ 	echo
+ 	echo '    You must give one of the compiler parameters:'
+@@ -16,7 +16,7 @@ function usage() {
+ }
+ 
+ # Simplify a Makefile
+-function simplify() {
++function simplify {
+ 	# Strip comments, remove pointless macros, remove $(EXE), substitute
+ 	# .o for .$(OBJ), remove $(LDSTARTUP), and squash multiple blank
+ 	# lines.

@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.18 2005/09/08 01:51:00 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2005/10/07 13:21:27 wilfried Exp $
+
+NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
 COMMENT=		"C++ API for MySQL"
 COMMENT-docs=		"C++ API for MySQL documentation"
 
-VERSION=		1.7.9
+VERSION=		2.0.6
 DISTNAME=		mysql++-${VERSION}
-PKGNAME=		${DISTNAME}p0
-PKGNAME-docs=		mysql++-docs-${VERSION}p0
+PKGNAME=		${DISTNAME}
+PKGNAME-docs=		mysql++-docs-${VERSION}
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.mysql.com/downloads/api-mysql++.html
+HOMEPAGE=		http://tangentsoft.net/mysql++/
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
@@ -19,12 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/mysql++/ \
-			ftp://ftp.mysql.com/mysql++/
-
-PATCH_LIST=		${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
-			${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltmain_sh \
-			patch-*
+MASTER_SITES=		${HOMEPAGE}releases/
 
 MULTI_PACKAGES=		-docs
 SUBPACKAGE?=
@@ -38,15 +35,12 @@ PKG_ARCH=		*
 .endif
 
 NO_REGRESS=		Yes
-USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--includedir=${LOCALBASE}/include/mysql++
-
-post-extract:
-	@rm -rf ${WRKSRC}/sqlplusint/.deps
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql++/html
-	${INSTALL_DATA} ${WRKSRC}/doc/man-html/* ${PREFIX}/share/doc/mysql++/html
+.for dir in refman userman
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql++/${dir}/
+	${INSTALL_DATA} ${WRKSRC}/doc/${dir}/html/* ${PREFIX}/share/doc/mysql++/${dir}/
+.endfor
 
 .include <bsd.port.mk>
