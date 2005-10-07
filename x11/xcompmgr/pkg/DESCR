@@ -1,3 +1,9 @@
 xcompmgr is a sample compositing manager for X servers supporting the
 XFIXES, DAMAGE, and COMPOSITE extensions.  It enables basic eye-candy
 effects.
+To enable the COMPOSITE extenstion, add the following at the end of 
+/etc/X11/xorg.conf:
+
+Section "Extensions"
+        Option  "Composite" "On"
+EndSection
