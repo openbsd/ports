@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.19 2005/10/03 14:17:52 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2005/10/07 20:07:04 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"secure, fast, compliant, and very flexible web-server"
 
 DISTNAME=	lighttpd-1.4.5
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www net
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 HOMEPAGE=	http://www.lighttpd.net/
 
-LIB_DEPENDS+=	bz2::archivers/bzip2 \
-		pcre::devel/pcre
+LIB_DEPENDS+=	pcre::devel/pcre
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,6 +26,7 @@ MASTER_SITES=	${HOMEPAGE}download/
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --without-openssl \
+		 --without-bzip2 \
 		 --libdir="${PREFIX}/lib/lighttpd"
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
