@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/09/29 20:39:48 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.13 2005/10/07 18:52:58 alek Exp $
 bin/Xvnc
 bin/vncconnect
 bin/vncpasswd
@@ -13,6 +13,8 @@ share/vnc/classes/AuthPanel.class
 share/vnc/classes/ButtonPanel.class
 share/vnc/classes/ClipboardFrame.class
 share/vnc/classes/DesCipher.class
+share/vnc/classes/HTTPConnectSocket.class
+share/vnc/classes/HTTPConnectSocketFactory.class
 share/vnc/classes/OptionsFrame.class
 share/vnc/classes/RecordingFrame.class
 share/vnc/classes/ReloginPanel.class
