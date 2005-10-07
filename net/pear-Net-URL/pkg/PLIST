@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/07 14:53:30 mbalmer Exp $
+lib/
+lib/php/
+pear/doc/Net_URL/
+pear/doc/Net_URL/docs/
+pear/doc/Net_URL/docs/example.php
+pear/lib/.registry/net_url.reg
+pear/lib/Net/URL.php
