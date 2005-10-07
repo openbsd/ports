@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.386 2005/09/17 12:22:19 bernd Exp $
+# $OpenBSD: Makefile,v 1.387 2005/10/07 14:56:07 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -221,6 +221,7 @@
      SUBDIR += pear-Net-IMAP
      SUBDIR += pear-Net-SMTP
      SUBDIR += pear-Net-Socket
+     SUBDIR += pear-Net-URL
      SUBDIR += pear-Services-Weather
      SUBDIR += pebrot,cjk
      SUBDIR += pen
