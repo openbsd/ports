@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2005/10/05 13:44:26 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2005/10/07 12:10:18 robert Exp $
 
 COMMENT=	"strategy game with fantasy theme"
 DISTNAME=	wesnoth-1.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wesnoth/}
 

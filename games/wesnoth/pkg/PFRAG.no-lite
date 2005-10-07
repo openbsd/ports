@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-lite,v 1.1.1.1 2005/02/19 21:48:44 espie Exp $
+@comment $OpenBSD: PFRAG.no-lite,v 1.2 2005/10/07 12:10:18 robert Exp $
 share/wesnoth/images/campaigns/Heir_To_The_Throne/
 share/wesnoth/images/campaigns/Heir_To_The_Throne/story/
 share/wesnoth/images/campaigns/Heir_To_The_Throne/story/story0a.png
@@ -20,6 +20,8 @@ share/wesnoth/images/campaigns/Son_Of_The_Black_Eye/maps/sotbe2.png
 share/wesnoth/images/campaigns/Son_Of_The_Black_Eye/maps/sotbe3.png
 share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/story/
 share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/story/east.png
+share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/story/fall_of_eldaric.png
+share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/story/prince_finds_wesnoth.png
 share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/story/the_duel.png
 share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/story/trow-logo.png
 share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/story/west.png

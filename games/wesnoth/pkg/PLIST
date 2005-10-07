@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/10/04 19:24:17 robert Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/10/07 12:10:18 robert Exp $
 bin/campaignd
 bin/wesnoth
 bin/wesnoth_editor
@@ -753,8 +753,6 @@ share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/
 share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/maps/
 share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/maps/the_great_continent.png
 share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/maps/the_green_isle.png
-share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/story/fall_of_eldaric.png
-share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/story/prince_finds_wesnoth.png
 share/wesnoth/images/cavespider-attack-melee.png
 share/wesnoth/images/cavespider-attack-ranged.png
 share/wesnoth/images/cavespider-defend.png
