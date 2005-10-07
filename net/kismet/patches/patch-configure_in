@@ -1,5 +1,5 @@
 --- configure.in.orig	Tue Aug 16 03:22:51 2005
-+++ configure.in	Tue Aug 16 10:39:12 2005
++++ configure.in	Sat Sep 10 12:52:13 2005
 @@ -127,7 +127,7 @@ else
      esac
  fi
@@ -9,7 +9,24 @@
  
  AC_CONFIG_SRCDIR([kismet_server.cc])
  AC_CONFIG_HEADER([config.h])
-@@ -856,6 +856,11 @@ else
+@@ -752,7 +752,6 @@ if test "$wantgpsmap" = "yes"; then
+ 	save_cxxflags="$CXXFLAGS"
+ 	save_libs="$LIBS"
+ 	save_ldflags="$LDFLAGS"
+-	AC_CHECK_PROG(wget, [wget --version], yes, no)
+ 	AC_CHECK_PROG(magickconfig, [Magick-config --version], yes, no)
+ 
+ 	if test "$magickconfig" = "yes"; then
+@@ -774,8 +773,6 @@ if test "$wantgpsmap" = "yes"; then
+ 		AC_MSG_WARN(*** Old version of ImageMagick ($magickversion) found.  Please upgrade to 5.4.7 or newer.  gpsmap will not be built. ***)
+ 	elif test $magickconfig = "no"; then
+ 		AC_MSG_WARN(*** Missing Magick-config (or it is not in the path).  gpsmap will not be built. ***)
+-	elif test $wget = "no"; then
+-		AC_MSG_WARN(*** Missing wget (or it is not in the path).  gpsmap will not be build. ***)
+ 	else
+ 		#CPPFLAGS="$CPPFLAGS `Magick-config --cppflags` -I`Magick-config --prefix`/include"
+ 		CPPFLAGS="$CPPFLAGS `Magick-config --cppflags`"
+@@ -856,6 +853,11 @@ else
  	gmpl="no"
  	gpslc=""
  	pthr="no"

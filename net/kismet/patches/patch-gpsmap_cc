@@ -1,0 +1,21 @@
+$OpenBSD: patch-gpsmap_cc,v 1.1 2005/10/07 14:13:57 bernd Exp $
+--- gpsmap.cc.orig	Tue Aug 16 03:22:51 2005
++++ gpsmap.cc	Sat Sep 10 12:50:18 2005
+@@ -97,7 +97,7 @@ const char url_template_ti[] = "http://t
+ const char url_template_em[] = "gpsmap-helper-earthamaps %s %f %f %d %d %ld";
+ 
+ // Download template for sources that we fetch using wget
+-const char download_template[] = "wget \"%s\" -O %s";
++const char download_template[] = "/usr/bin/ftp -o %s \"%s\"";
+ 
+ // Image scales we try to autofetch
+ long int scales[] = { 1000, 2000, 5000, 10000, 20000, 30000, 50000, 60000, 
+@@ -4177,7 +4177,7 @@ int main(int argc, char *argv[]) {
+             }
+         } else {
+             char geturl[1024];
+-            snprintf(geturl, 1024, download_template, url, mapname);
++            snprintf(geturl, 1024, download_template, mapname, url);
+             system(geturl);
+         }
+ 
