@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.221 2005/09/23 19:15:06 fgsch Exp $
+# $OpenBSD: Makefile,v 1.222 2005/10/07 21:18:41 matthieu Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 855resolution
@@ -214,6 +214,7 @@
      SUBDIR += xco
      SUBDIR += xcoloredit
      SUBDIR += xcolors
+     SUBDIR += xcompmgr
      SUBDIR += xcursorgen
      SUBDIR += xdaliclock
      SUBDIR += xdmchoose
