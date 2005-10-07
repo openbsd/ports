@@ -1,0 +1,75 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/07 17:49:23 msf Exp $
+${P5ARCH}/
+${P5ARCH}/Glib/
+${P5ARCH}/Glib.pm
+${P5ARCH}/Glib/Boxed.pod
+${P5ARCH}/Glib/CodeGen.pm
+${P5ARCH}/Glib/Error.pod
+${P5ARCH}/Glib/Flags.pod
+${P5ARCH}/Glib/GenPod.pm
+${P5ARCH}/Glib/Install/
+${P5ARCH}/Glib/Install/Files.pm
+${P5ARCH}/Glib/Install/doctypes
+${P5ARCH}/Glib/Install/gperl.h
+${P5ARCH}/Glib/Install/gperl_marshal.h
+${P5ARCH}/Glib/Install/typemap
+${P5ARCH}/Glib/KeyFile.pod
+${P5ARCH}/Glib/Log.pod
+${P5ARCH}/Glib/MainLoop.pod
+${P5ARCH}/Glib/MakeHelper.pm
+${P5ARCH}/Glib/Markup.pod
+${P5ARCH}/Glib/Object/
+${P5ARCH}/Glib/Object.pod
+${P5ARCH}/Glib/Object/Subclass.pm
+${P5ARCH}/Glib/Param/
+${P5ARCH}/Glib/Param/Boolean.pod
+${P5ARCH}/Glib/Param/Double.pod
+${P5ARCH}/Glib/Param/Enum.pod
+${P5ARCH}/Glib/Param/Flags.pod
+${P5ARCH}/Glib/Param/Int.pod
+${P5ARCH}/Glib/Param/String.pod
+${P5ARCH}/Glib/Param/UInt.pod
+${P5ARCH}/Glib/Param/Unichar.pod
+${P5ARCH}/Glib/ParamSpec.pod
+${P5ARCH}/Glib/ParseXSDoc.pm
+${P5ARCH}/Glib/Signal.pod
+${P5ARCH}/Glib/Type.pod
+${P5ARCH}/Glib/Utils.pod
+${P5ARCH}/Glib/devel.pod
+${P5ARCH}/Glib/index.pod
+${P5ARCH}/Glib/version.pod
+${P5ARCH}/Glib/xsapi.pod
+${P5ARCH}/auto/
+${P5ARCH}/auto/Glib/
+${P5ARCH}/auto/Glib/Glib.bs
+${P5ARCH}/auto/Glib/Glib.so
+@man man/man3p/Glib.3p
+@man man/man3p/Glib::Boxed.3p
+@man man/man3p/Glib::CodeGen.3p
+@man man/man3p/Glib::Error.3p
+@man man/man3p/Glib::Flags.3p
+@man man/man3p/Glib::GenPod.3p
+@man man/man3p/Glib::KeyFile.3p
+@man man/man3p/Glib::Log.3p
+@man man/man3p/Glib::MainLoop.3p
+@man man/man3p/Glib::MakeHelper.3p
+@man man/man3p/Glib::Markup.3p
+@man man/man3p/Glib::Object.3p
+@man man/man3p/Glib::Object::Subclass.3p
+@man man/man3p/Glib::Param::Boolean.3p
+@man man/man3p/Glib::Param::Double.3p
+@man man/man3p/Glib::Param::Enum.3p
+@man man/man3p/Glib::Param::Flags.3p
+@man man/man3p/Glib::Param::Int.3p
+@man man/man3p/Glib::Param::String.3p
+@man man/man3p/Glib::Param::UInt.3p
+@man man/man3p/Glib::Param::Unichar.3p
+@man man/man3p/Glib::ParamSpec.3p
+@man man/man3p/Glib::ParseXSDoc.3p
+@man man/man3p/Glib::Signal.3p
+@man man/man3p/Glib::Type.3p
+@man man/man3p/Glib::Utils.3p
+@man man/man3p/Glib::devel.3p
+@man man/man3p/Glib::index.3p
+@man man/man3p/Glib::version.3p
+@man man/man3p/Glib::xsapi.3p
