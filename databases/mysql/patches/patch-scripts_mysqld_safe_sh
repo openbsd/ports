@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.8 2005/09/04 22:51:24 brad Exp $
---- scripts/mysqld_safe.sh.orig	Wed Aug 17 13:06:29 2005
-+++ scripts/mysqld_safe.sh	Sun Sep  4 13:36:37 2005
+$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.9 2005/10/07 22:48:12 brad Exp $
+--- scripts/mysqld_safe.sh.orig	Wed Aug 17 17:06:29 2005
++++ scripts/mysqld_safe.sh	Fri Oct  7 15:51:03 2005
 @@ -84,50 +84,12 @@ parse_arguments() {
  }
  
@@ -57,15 +57,17 @@ $OpenBSD: patch-scripts_mysqld_safe_sh,v 1.8 2005/09/04 22:51:24 brad Exp $
  niceness=0
  
  # Use the mysqld-max binary by default if the user doesn't specify a binary
-@@ -167,6 +129,7 @@ fi
- parse_arguments `$print_defaults $defaults --loose-verbose mysqld_safe safe_mysqld`
- parse_arguments PICK-ARGS-FROM-ARGV "$@"
- safe_mysql_unix_port=${mysql_unix_port:-${MYSQL_UNIX_PORT:-@MYSQL_UNIX_ADDR@}}
-+socket_dir=`dirname $safe_mysql_unix_port`
+@@ -173,7 +135,8 @@ mysql_unix_port_dir=`dirname $safe_mysql
+ if [ ! -d $mysql_unix_port_dir ]
+ then
+   mkdir $mysql_unix_port_dir
+-  chown $user $mysql_unix_port_dir
++  chown $user:$group $mysql_unix_port_dir
++  chmod 711 $mysql_unix_port_dir
+ fi
  
- # Make sure that directory for $safe_mysql_unix_port exists
- mysql_unix_port_dir=`dirname $safe_mysql_unix_port`
-@@ -320,11 +283,12 @@ fi
+ 
+@@ -320,12 +283,6 @@ fi
  
  echo "Starting $MYSQLD daemon with databases from $DATADIR"
  
@@ -74,16 +76,11 @@ $OpenBSD: patch-scripts_mysqld_safe_sh,v 1.8 2005/09/04 22:51:24 brad Exp $
 -#then
 -#  ulimit -n 256 > /dev/null 2>&1		# Fix for BSD and FreeBSD systems
 -#fi
-+if test ! -d $socket_dir
-+then
-+   mkdir -p $socket_dir
-+   chown $user:$group $socket_dir
-+   chmod 711 $socket_dir
-+fi
- 
+-
  echo "`date +'%y%m%d %H:%M:%S  mysqld started'`" >> $err_log
  while true
-@@ -342,35 +306,6 @@ do
+ do
+@@ -342,35 +299,6 @@ do
      break
    fi
  
