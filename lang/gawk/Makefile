@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2005/02/21 14:15:47 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2005/10/07 14:08:34 wilfried Exp $
 
 COMMENT=		"GNU awk"
 
-DISTNAME=		gawk-3.1.3
+DISTNAME=		gawk-3.1.5
 CATEGORIES=		lang
 
 HOMEPAGE=		http://www.gnu.org/software/gawk/gawk.html
@@ -21,7 +21,7 @@ MASTER_SITES=		${MASTER_SITE_GNU:=gawk/}
 MODULES=		devel/gettext
 
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.57
+AUTOCONF_VERSION=	2.59
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

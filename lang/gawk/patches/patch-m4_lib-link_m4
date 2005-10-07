@@ -1,7 +1,7 @@
-$OpenBSD: patch-aclocal_m4,v 1.1 2004/12/22 08:59:47 wilfried Exp $
---- aclocal.m4.orig	Tue Oct  5 19:47:27 2004
-+++ aclocal.m4	Tue Oct  5 19:48:42 2004
-@@ -2170,9 +2170,9 @@ AC_DEFUN([AC_LIB_LINKFLAGS_BODY],
+$OpenBSD: patch-m4_lib-link_m4,v 1.1 2005/10/07 14:08:34 wilfried Exp $
+--- m4/lib-link.m4.orig	Wed May 11 17:28:16 2005
++++ m4/lib-link.m4	Fri Oct  7 16:02:34 2005
+@@ -197,9 +197,9 @@ AC_DEFUN([AC_LIB_LINKFLAGS_BODY],
            found_so=
            found_a=
            if test $use_additional = yes; then
@@ -13,7 +13,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2004/12/22 08:59:47 wilfried Exp $
                if test -f "$additional_libdir/lib$name.la"; then
                  found_la="$additional_libdir/lib$name.la"
                fi
-@@ -2192,9 +2192,9 @@ AC_DEFUN([AC_LIB_LINKFLAGS_BODY],
+@@ -219,9 +219,9 @@ AC_DEFUN([AC_LIB_LINKFLAGS_BODY],
                case "$x" in
                  -L*)
                    dir=`echo "X$x" | sed -e 's/^X-L//'`
