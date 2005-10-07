@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/07/05 04:31:02 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/10/07 08:11:10 kevlo Exp $
 phpMyAdmin/
 phpMyAdmin/CREDITS
 phpMyAdmin/ChangeLog
@@ -7,7 +7,7 @@ phpMyAdmin/Documentation.txt
 phpMyAdmin/INSTALL
 phpMyAdmin/LICENSE
 phpMyAdmin/README
-phpMyAdmin/RELEASE-DATE-2.6.3-pl1
+phpMyAdmin/RELEASE-DATE-2.6.4-pl1
 phpMyAdmin/TODO
 phpMyAdmin/browse_foreigners.php
 phpMyAdmin/calendar.php
@@ -35,6 +35,7 @@ phpMyAdmin/db_operations.php
 phpMyAdmin/db_printview.php
 phpMyAdmin/db_search.php
 phpMyAdmin/docs.css
+phpMyAdmin/error.php
 phpMyAdmin/export.php
 phpMyAdmin/footer.inc.php
 phpMyAdmin/header.inc.php
@@ -176,6 +177,7 @@ phpMyAdmin/libraries/auth/http.auth.lib.php
 phpMyAdmin/libraries/blowfish.php
 phpMyAdmin/libraries/bookmark.lib.php
 phpMyAdmin/libraries/charset_conversion.lib.php
+phpMyAdmin/libraries/check_user_privileges.lib.php
 phpMyAdmin/libraries/common.lib.php
 phpMyAdmin/libraries/config_import.lib.php
 phpMyAdmin/libraries/database_interface.lib.php
@@ -188,6 +190,7 @@ phpMyAdmin/libraries/dbi/
 phpMyAdmin/libraries/dbi/mysql.dbi.lib.php
 phpMyAdmin/libraries/dbi/mysqli.dbi.lib.php
 phpMyAdmin/libraries/defines.lib.php
+phpMyAdmin/libraries/display_create_database.lib.php
 phpMyAdmin/libraries/display_export.lib.php
 phpMyAdmin/libraries/display_tbl.lib.php
 phpMyAdmin/libraries/display_tbl_links.lib.php
@@ -247,6 +250,7 @@ phpMyAdmin/libraries/ob.lib.php
 phpMyAdmin/libraries/read_dump.lib.php
 phpMyAdmin/libraries/relation.lib.php
 phpMyAdmin/libraries/relation_cleanup.lib.php
+phpMyAdmin/libraries/sanitizing.lib.php
 phpMyAdmin/libraries/select_lang.lib.php
 phpMyAdmin/libraries/select_server.lib.php
 phpMyAdmin/libraries/select_theme.lib.php
@@ -267,6 +271,7 @@ phpMyAdmin/libraries/transformations/README
 phpMyAdmin/libraries/transformations/TEMPLATE
 phpMyAdmin/libraries/transformations/TEMPLATE_MIMETYPE
 phpMyAdmin/libraries/transformations/application_octetstream__download.inc.php
+phpMyAdmin/libraries/transformations/application_octetstream__hex.inc.php
 phpMyAdmin/libraries/transformations/generator.sh
 phpMyAdmin/libraries/transformations/global.inc.php
 phpMyAdmin/libraries/transformations/image_jpeg__inline.inc.php
@@ -284,6 +289,7 @@ phpMyAdmin/libraries/transformations/text_plain__substr.inc.php
 phpMyAdmin/libraries/url_generating.lib.php
 phpMyAdmin/libraries/user_password.js
 phpMyAdmin/libraries/zip.lib.php
+phpMyAdmin/license.php
 phpMyAdmin/main.php
 phpMyAdmin/mult_submits.inc.php
 phpMyAdmin/pdf_pages.php
@@ -292,6 +298,7 @@ phpMyAdmin/phpinfo.php
 phpMyAdmin/queryframe.php
 phpMyAdmin/querywindow.php
 phpMyAdmin/read_dump.php
+phpMyAdmin/readme.php
 phpMyAdmin/scripts/
 phpMyAdmin/scripts/check_lang.php
 phpMyAdmin/scripts/convertcfg.pl
@@ -555,6 +562,7 @@ phpMyAdmin/themes/original/img/dot_green.png
 phpMyAdmin/themes/original/img/dot_red.png
 phpMyAdmin/themes/original/img/dot_violet.png
 phpMyAdmin/themes/original/img/dot_yellow.png
+phpMyAdmin/themes/original/img/error.ico
 phpMyAdmin/themes/original/img/frm_linevrlt.png
 phpMyAdmin/themes/original/img/item.png
 phpMyAdmin/themes/original/img/item_ltr.png
