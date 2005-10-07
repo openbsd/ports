@@ -1,12 +1,12 @@
-$OpenBSD: patch-abi_src_af_util_xp_ut_iconv_cpp,v 1.1 2005/06/23 10:01:21 fgsch Exp $
---- abi/src/af/util/xp/ut_iconv.cpp.orig	Thu Jun 23 04:55:28 2005
-+++ abi/src/af/util/xp/ut_iconv.cpp	Thu Jun 23 04:56:18 2005
+$OpenBSD: patch-abi_src_af_util_xp_ut_iconv_cpp,v 1.2 2005/10/07 15:42:06 fgsch Exp $
+--- abi/src/af/util/xp/ut_iconv.cpp.orig	Fri Jul  8 13:22:11 2005
++++ abi/src/af/util/xp/ut_iconv.cpp	Tue Oct  4 06:19:07 2005
 @@ -67,7 +67,7 @@ extern "C" {
  #if defined (WIN32) || defined(__QNXNTO__) || defined(__CYGWIN__) ||  \
  (defined (__MACH__) && defined (__APPLE__)) || \
  (defined(TARGET_OS_MAC) && TARGET_OS_MAC) || \
--defined(__BEOS__) || defined (__AIX__) || \
-+defined(__BEOS__) || defined (__AIX__) || defined(__OpenBSD__) || \
+-defined (__AIX__) || \
++defined (__AIX__) || defined(__OpenBSD__) || \
  (defined(__linux__) && defined(__powerpc__) && (__GLIBC__ <= 2) && (__GLIBC_MINOR__ <= 1))
  
  #define ICONV_CONST const

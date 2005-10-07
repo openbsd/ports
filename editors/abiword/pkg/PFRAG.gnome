@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.gnome,v 1.4 2005/06/23 10:01:21 fgsch Exp $
-share/AbiSuite-2.2/icons/abiword_logo.xpm
+@comment $OpenBSD: PFRAG.gnome,v 1.5 2005/10/07 15:42:06 fgsch Exp $
+share/AbiSuite-${MAJORVER}/icons/abiword_logo.xpm

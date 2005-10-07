@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2005/09/27 05:19:38 fgsch Exp $
+# $OpenBSD: Makefile,v 1.45 2005/10/07 15:42:06 fgsch Exp $
 
-COMMENT=	"open-source, cross-platform WYSIWYG word processor"
+COMMENT=	"free cross-platform WYSIWYG word processor"
 
-VERSION=	2.2.10
+VERSION=	2.4.0
+MAJORVER=	${VERSION:C/..$//}
 DISTNAME=	abiword-${VERSION}
 CATEGORIES=	editors
 
@@ -13,11 +14,8 @@ MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 LIB_DEPENDS=	fribidi::devel/fribidi \
-		gthread-2.0.0.0::devel/glib2 \
 		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
-		glade-2.0.0.0::devel/libglade2 \
-		xml2.9::textproc/libxml \
-		popt::devel/popt
+		gnomeprintui-2-2::x11/gnome/libgnomeprintui
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,9 +23,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xft Xrender atk-1.0.0.0 c fontconfig freetype \
-		glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 m pango-1.0.0.0 \
-		pangox-1.0.0.0 pangoxft-1.0.0.0 png pthread stdc++ z
+WANTLIB=	ICE SM X11 Xft Xrender art_lgpl_2.0.0 atk-1.0.0.0 c \
+		fontconfig freetype glade-2.0.0.0 glib-2.0.0.0 \
+		gmodule-2.0.0.0 gnomecanvas-2.0.0 gnomeprint-2-2.0.0 \
+		gobject-2.0.0.0 gthread-2.0.0.0 m pango-1.0.0.0 \
+		pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 png \
+		popt.0 pthread stdc++ xml2.9 z
 
 MASTER_SITES=   ${HOMEPAGE}/downloads/abiword/${VERSION}/source/
 
@@ -42,15 +43,10 @@ FLAVORS=	gnome
 FLAVOR?=
 
 .if ${FLAVOR:L:Mgnome}
-BROKEN=		"Crash when exiting (canvas)"
-
-LIB_DEPENDS+=	gnomeprintui-2-2::x11/gnome/libgnomeprintui \
-		gnomeui-2::x11/gnome/libgnomeui \
+LIB_DEPENDS+=	gnomeui-2::x11/gnome/libgnomeui \
 		ORBit-2::devel/ORBit2
-WANTLIB+=	ORBit-2.0.0 art_lgpl_2.0.0 bonobo-2.0.0	\
-		bonobo-activation bonoboui-2.0.0 gconf-2.0.0 \
-		gnome-2.0.0 gnomecanvas-2.0.0 gnomeprint-2-2.0.0 \
-		gnomeui-2.0.0 gnomevfs-2.0.0 pangoft2-1.0.0.0
+WANTLIB+=	ORBit-2.0.0 bonobo-2.0.0 bonobo-activation bonoboui-2.0.0 \
+		gconf-2.0.0 gnome-2.0.0 gnomeui-2.0.0 gnomevfs-2.0.0 
 CONFIGURE_ARGS+= --enable-gnome
 .endif
 
@@ -58,6 +54,8 @@ MAKE_FILE=	GNUmakefile
 
 WRKDIST=	${WRKDIR}/abiword-${VERSION}
 WRKSRC=		${WRKDIST}/abi
+
+SUBST_VARS=	MAJORVER
 
 pre-configure:
 	@perl -pi -e "s|libpng12|libpng|g" ${WRKSRC}/configure
