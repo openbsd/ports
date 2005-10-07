@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2005/10/06 20:42:07 aanriot Exp $
+# $OpenBSD: Makefile,v 1.15 2005/10/07 10:16:04 aanriot Exp $
 
 COMMENT=	"Zope content management framework"
 
 VERS=		1.5.4
-DISTNAME=	CMF-${VERS}p0
-PKGNAME=	zope-${DISTNAME:L}
+DISTNAME=	CMF-${VERS}
+PKGNAME=	zope-${DISTNAME:L}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://cmf.zope.org/
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://www.zope.org/Products/CMF/CMF-${VERS}/
+MASTER_SITES=	http://zope.org/Products/CMF/CMF-${VERS}/
 
 MODULES=	www/zope
 
