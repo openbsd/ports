@@ -1,7 +1,7 @@
-$OpenBSD: patch-docs_Makefile_in,v 1.1.1.1 2005/06/07 17:24:49 fgsch Exp $
---- docs/Makefile.in.orig	Sat Jun  4 21:36:46 2005
-+++ docs/Makefile.in	Sat Jun  4 21:37:54 2005
-@@ -319,7 +319,7 @@ dist_doc_DATA = ABOUT-NLS \
+$OpenBSD: patch-docs_Makefile_in,v 1.2 2005/10/07 16:20:34 fgsch Exp $
+--- docs/Makefile.in.orig	Wed Jun 15 14:06:59 2005
++++ docs/Makefile.in	Sat Sep 24 17:55:07 2005
+@@ -320,7 +320,7 @@ dist_doc_DATA = ABOUT-NLS \
  		EC_Protocol.txt \
  		socks4.protocol
  

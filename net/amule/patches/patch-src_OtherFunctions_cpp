@@ -1,0 +1,60 @@
+$OpenBSD: patch-src_OtherFunctions_cpp,v 1.1 2005/10/07 16:20:34 fgsch Exp $
+--- src/OtherFunctions.cpp.orig	Sat Sep 24 19:27:28 2005
++++ src/OtherFunctions.cpp	Sat Sep 24 19:32:51 2005
+@@ -235,49 +235,49 @@ wxString GetFiletypeDesc(FileType type, 
+ 			if (translated) {
+ 				return _("Videos");
+ 			} else {
+-				return wxT("Videos");
++				return ED2KFTSTR_VIDEO;
+ 			}
+ 			break;
+ 		case ftAudio:
+ 			if (translated) {
+ 				return _("Audio");
+ 			} else {
+-				return wxT("Audio");
++				return ED2KFTSTR_AUDIO;
+ 			}
+ 			break;			
+ 		case ftArchive:	
+ 			if (translated) {
+ 				return _("Archives");
+ 			} else {
+-				return wxT("Archives");
++				return ED2KFTSTR_ARCHIVE;
+ 			}
+ 			break;			
+ 		case ftCDImage:
+ 			if (translated) {
+ 				return _("CD-Images");
+ 			} else {
+-				return wxT("CD-Images");
++				return ED2KFTSTR_CDIMAGE;
+ 			}
+ 			break;			
+ 		case ftPicture:
+ 			if (translated) {
+ 				return _("Pictures");
+ 			} else {
+-				return wxT("Pictures");
++				return ED2KFTSTR_IMAGE;
+ 			}
+ 			break;			
+ 		case ftText:
+ 			if (translated) {
+ 				return _("Texts");
+ 			} else {
+-				return wxT("Texts");
++				return ED2KFTSTR_DOCUMENT;
+ 			}
+ 			break;			
+ 		case ftProgram:
+ 			if (translated) {
+ 				return _("Programs");
+ 			} else {
+-				return wxT("Programs");
++				return ED2KFTSTR_PROGRAM;
+ 			}
+ 			break;			
+ 		default:

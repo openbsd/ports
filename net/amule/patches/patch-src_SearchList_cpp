@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_SearchList_cpp,v 1.1 2005/10/07 16:20:34 fgsch Exp $
+--- src/SearchList.cpp.orig	Fri Apr  1 21:05:19 2005
++++ src/SearchList.cpp	Sat Sep 24 20:34:35 2005
+@@ -407,10 +407,10 @@ bool CSearchList::AddToList(CSearchFile*
+ 		delete toadd;
+ 		return false;
+ 	}
+-	
++
+ 	// If the result was not the type user wanted, drop it.
+ 	if (	!bClientResponse &&
+-		!(m_resultType == wxString(wxT("Any")) ||
++		!(m_resultType == wxEmptyString ||
+ 		GetFiletypeByName(toadd->GetFileName(), false) == m_resultType)) {
+ 		AddDebugLogLineM( false, logSearch,
+ 			CFormat( wxT("Dropped result type %s != %s, file %s") )
