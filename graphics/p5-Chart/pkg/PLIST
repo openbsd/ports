@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/07 23:09:09 djm Exp $
+${P5SITE}/Chart/
+${P5SITE}/Chart/Bars.pm
+${P5SITE}/Chart/Base.pm
+${P5SITE}/Chart/Composite.pm
+${P5SITE}/Chart/Direction.pm
+${P5SITE}/Chart/ErrorBars.pm
+${P5SITE}/Chart/HorizontalBars.pm
+${P5SITE}/Chart/Lines.pm
+${P5SITE}/Chart/LinesPoints.pm
+${P5SITE}/Chart/Mountain.pm
+${P5SITE}/Chart/Pareto.pm
+${P5SITE}/Chart/Pie.pm
+${P5SITE}/Chart/Points.pm
+${P5SITE}/Chart/Split.pm
+${P5SITE}/Chart/StackedBars.pm

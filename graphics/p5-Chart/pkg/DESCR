@@ -1,0 +1,4 @@
+p5-Chart is a Perl module that provides an API to create many 
+different types of graphical charts: Bars, Composite, Direction, 
+ErrorBars, HorizontalBars, Lines, LinesPoints, Mountain, Pareto,
+Pie, Points, Split, StackedBars.
