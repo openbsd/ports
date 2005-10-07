@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-perl,v 1.1 2005/05/15 10:12:37 robert Exp $
+@comment $OpenBSD: PLIST-perl,v 1.2 2005/10/07 12:34:25 robert Exp $
 libdata/perl5/${MACHINE_ARCH}-openbsd/
 libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.6/
 libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.6/perllocal.pod
@@ -11,4 +11,4 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/OSSP/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/OSSP/uuid/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/OSSP/uuid/uuid.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/OSSP/uuid/uuid.so
-@man man/man3p/OSSP::uuid.3p
+@man man/man3p/OSSP::uuid.3

@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/01/25 21:34:55 robert Exp $
-@lib lib/libuuid.so.12.20
+@comment $OpenBSD: PFRAG.shared,v 1.5 2005/10/07 12:34:25 robert Exp $
+@lib lib/libuuid.so.13.21
