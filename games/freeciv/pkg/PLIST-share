@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-share,v 1.4 2005/08/13 18:19:31 espie Exp $
+@comment $OpenBSD: PLIST-share,v 1.5 2005/10/07 20:52:09 alek Exp $
 share/freeciv/
-share/freeciv/civ1.serv
 share/freeciv/civ1/
+share/freeciv/civ1.serv
 share/freeciv/civ1/buildings.ruleset
 share/freeciv/civ1/game.ruleset
 share/freeciv/civ1/governments.ruleset
@@ -9,8 +9,8 @@ share/freeciv/civ1/nations.ruleset
 share/freeciv/civ1/techs.ruleset
 share/freeciv/civ1/terrain.ruleset
 share/freeciv/civ1/units.ruleset
-share/freeciv/civ2.serv
 share/freeciv/civ2/
+share/freeciv/civ2.serv
 share/freeciv/civ2/buildings.ruleset
 share/freeciv/civ2/game.ruleset
 share/freeciv/civ2/governments.ruleset
@@ -26,8 +26,8 @@ share/freeciv/default/nations.ruleset
 share/freeciv/default/techs.ruleset
 share/freeciv/default/terrain.ruleset
 share/freeciv/default/units.ruleset
-share/freeciv/history.serv
 share/freeciv/history/
+share/freeciv/history.serv
 share/freeciv/history/buildings.ruleset
 share/freeciv/history/game.ruleset
 share/freeciv/history/governments.ruleset
