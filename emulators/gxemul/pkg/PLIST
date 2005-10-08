@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/09/06 19:06:38 grange Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/10/08 03:54:25 grange Exp $
 bin/gxemul
 @man man/man1/gxemul.1
 share/doc/gxemul/
@@ -40,6 +40,14 @@ share/doc/gxemul/20050622-netbsd-evbmips-malta.png
 share/doc/gxemul/20050622-netbsd-evbmips-malta_small.png
 share/doc/gxemul/20050626-netbsd-sgimips-netboot.png
 share/doc/gxemul/20050626-netbsd-sgimips-netboot_small.png
+share/doc/gxemul/20050817-sgi-o2-success-7.png
+share/doc/gxemul/20050817-sgi-o2-success-7_small.png
+share/doc/gxemul/20050817-sgi-o2-success-8.png
+share/doc/gxemul/20050817-sgi-o2-success-8_small.png
+share/doc/gxemul/20051007-netbsd-cats-installed.png
+share/doc/gxemul/20051007-netbsd-cats-installed_small.png
+share/doc/gxemul/20051007-openbsd-cats-installed.png
+share/doc/gxemul/20051007-openbsd-cats-installed_small.png
 share/doc/gxemul/configfiles.html
 share/doc/gxemul/experiments.html
 share/doc/gxemul/guestoses.html
@@ -51,6 +59,8 @@ share/doc/gxemul/maddr.gif
 share/doc/gxemul/misc.html
 share/doc/gxemul/openbsd-pmax-20040710.png
 share/doc/gxemul/openbsd-pmax-20040710_small.png
+share/doc/gxemul/sgi-o2-real.jpg
+share/doc/gxemul/sgi-o2-real_small.jpg
 share/doc/gxemul/sprite-20040711.png
 share/doc/gxemul/sprite-20040711_small.png
 share/doc/gxemul/technical.html
