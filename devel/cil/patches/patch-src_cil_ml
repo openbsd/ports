@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cil_ml,v 1.1 2005/05/27 06:31:52 avsm Exp $
---- src/cil.ml.orig	Thu May 26 08:47:56 2005
-+++ src/cil.ml	Thu May 26 08:48:27 2005
-@@ -1979,6 +1979,7 @@ let gccBuiltins : (string, typ * typ lis
+$OpenBSD: patch-src_cil_ml,v 1.2 2005/10/08 08:06:52 pvalchev Exp $
+--- src/cil.ml.orig	Wed Jun  1 06:37:13 2005
++++ src/cil.ml	Sat Oct  8 02:22:14 2005
+@@ -2566,6 +2566,7 @@ let gccBuiltins : (string, typ * typ lis
    (* When we parse builtin_next_arg we drop the second argument *)
    H.add h "__builtin_next_arg" 
      ((if hasbva then TBuiltin_va_list [] else voidPtrType), [], false);

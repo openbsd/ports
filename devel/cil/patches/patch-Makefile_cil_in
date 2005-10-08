@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_cil_in,v 1.4 2005/05/27 21:46:23 avsm Exp $
---- Makefile.cil.in.orig	Mon Jan 31 09:56:18 2005
-+++ Makefile.cil.in	Fri May 27 09:00:17 2005
-@@ -64,7 +64,7 @@ CILLY_LIBRARY_MODULES = pretty inthash e
+$OpenBSD: patch-Makefile_cil_in,v 1.5 2005/10/08 08:06:52 pvalchev Exp $
+--- Makefile.cil.in.orig	Wed Jun  1 06:37:13 2005
++++ Makefile.cil.in	Sat Oct  8 02:22:14 2005
+@@ -70,7 +70,7 @@ CILLY_LIBRARY_MODULES = pretty inthash e
                patch frontc check mergecil \
                dataflow dominators bitmap ssa \
                usedef logcalls logwrites rmtmps \
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_cil_in,v 1.4 2005/05/27 21:46:23 avsm Exp $
                setp uref steensgaard olf dummy ptranal \
                canonicalize heap oneret partial simplemem simplify \
  	      dataslicing \
-@@ -351,7 +351,8 @@ DISTRIB_SRC_FRONTC = cabs.ml cprint.ml c
+@@ -363,7 +363,8 @@ DISTRIB_SRC_FRONTC = cabs.ml cprint.ml c
  
  DISTRIB_SRC_EXT = logcalls.ml logcalls.mli \
                    astslicer.ml simplemem.ml heap.ml partial.ml \

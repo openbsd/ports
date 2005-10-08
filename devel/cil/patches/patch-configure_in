@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.3 2005/05/09 13:52:38 avsm Exp $
---- configure.in.orig	Mon Jan 31 09:56:18 2005
-+++ configure.in	Tue Mar  1 10:03:19 2005
-@@ -226,6 +226,8 @@ AC_MSG_CHECKING([for Perl])
+$OpenBSD: patch-configure_in,v 1.4 2005/10/08 08:06:52 pvalchev Exp $
+--- configure.in.orig	Wed Jun  1 06:37:13 2005
++++ configure.in	Sat Oct  8 02:22:16 2005
+@@ -228,6 +228,8 @@ AC_MSG_CHECKING([for Perl])
          ;;
      openbsd)
          ;;
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.3 2005/05/09 13:52:38 avsm Exp $
      darwin) # Mac OS X
          ;;
      *)
-@@ -393,6 +395,13 @@ case "$target" in
+@@ -395,6 +397,13 @@ case "$target" in
      ARCHOS=x86_LINUX
      ;;
  
@@ -24,12 +24,12 @@ $OpenBSD: patch-configure_in,v 1.3 2005/05/09 13:52:38 avsm Exp $
    # Mac OS X
    *powerpc*darwin*)
      AC_MSG_RESULT(configuring for powerpc/darwin, which we treat like linux/x86)
-@@ -421,7 +430,7 @@ case "$target" in
+@@ -423,7 +432,7 @@ case "$target" in
      ])
      ;;
  esac
 -CILHOME=$CCUREDHOME
 +CILHOME=${LOCALBASE}
  
- # We will use substitution variables whose definition contains newlines. The
- # problem is that when config.status runs, it wants to break the series of
+ # Make the object directory if not already present
+ AC_CHECK_FILE(obj/$ARCHOS,, AC_MSG_RESULT(creating obj/$ARCHOS);
