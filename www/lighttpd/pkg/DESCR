@@ -5,3 +5,8 @@ care of cpu-load. Its advanced feature-set (FastCGI, CGI, Auth,
 Output-Compression, URL-Rewriting and many more) make lighttpd the
 perfect web-server software for every server that is suffering load
 problems.
+
+Flavors:
+
+         ldap - Enable LDAP support for authentication in mod_auth.
+        mysql - Enable MySQL virtual hosting with mod_mysql_vhost.
