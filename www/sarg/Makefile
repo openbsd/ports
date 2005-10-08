@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/09/27 13:03:45 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/10/08 08:13:21 pvalchev Exp $
 
 COMMENT=		"Squid Analysis Report Generator"
 
@@ -27,6 +27,7 @@ CONFIGURE_ARGS=		--enable-bindir=${LOCALBASE}/bin \
 NO_REGRESS=		Yes
 
 EXAMPLESDIR=		${PREFIX}/share/examples/sarg
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/cfgaux
 
 post-extract:
 	@chmod 755 ${WRKSRC}/sarg-php/locale	
