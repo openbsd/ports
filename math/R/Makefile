@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2004/12/27 07:41:44 alek Exp $
+# $OpenBSD: Makefile,v 1.13 2005/10/08 09:47:36 mbalmer Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"clone of S, a powerful math/statistics/graphics language"
-DISTNAME=	R-1.9.1
+DISTNAME=	R-2.1.1
 CATEGORIES=    	math
 HOMEPAGE=	http://www.r-project.org/
+
+MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,22 +16,23 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE SM X11 c g2c m ncurses readline z
 
-MASTER_SITES=	http://cran.r-project.org/src/base/R-1/ \
-		http://cran.uk.r-project.org/src/base/R-1/ \
-		http://cran.us.r-project.org/src/base/R-1/ \
-		http://cran.dk.r-project.org/src/base/R-1/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
+		http://cran.uk.r-project.org/src/base/R-2/ \
+		http://cran.us.r-project.org/src/base/R-2/ \
+		http://cran.dk.r-project.org/src/base/R-2/
 
 USE_X11=	Yes
+MODULES=	devel/gettext
 LIB_DEPENDS=	bz2.10::archivers/bzip2 \
 		jpeg.62::graphics/jpeg \
-		png.2::graphics/png \
-		pcre.0::devel/pcre
+		pcre.0::devel/pcre \
+		tcl84.1::lang/tcl/8.4 \
+		tk84.1::x11/tk/8.4
 
 CONFIGURE_STYLE=gnu dest
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/tools
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-readline --without-tcltk \
+		--with-readline --with-tcltk \
 		--with-zlib --with-bzlib --with-pcre
 CONFIGURE_ENV=	FFLAGS="${FFLAGS}"
 

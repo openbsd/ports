@@ -1,0 +1,55 @@
+$OpenBSD: patch-src_main_Rdynload_c,v 1.1 2005/10/08 09:47:37 mbalmer Exp $
+--- src/main/Rdynload.c.orig	Fri May 20 14:51:46 2005
++++ src/main/Rdynload.c	Wed Aug 10 16:11:19 2005
+@@ -496,7 +496,8 @@ static DllInfo* AddDLL(char *path, int a
+ 
+     DeleteDLL(path);
+     if(CountDLL == MAX_NUM_DLLS) {
+-	strcpy(DLLerror, _("Maximal number of DLLs reached..."));
++	strlcpy(DLLerror, _("Maximal number of DLLs reached..."),
++	    sizeof(DLLerror));
+ 	return NULL;
+     }
+ 
+@@ -548,11 +549,12 @@ DllInfo *R_RegisterDLL(HINSTANCE handle,
+ 
+     dpath = malloc(strlen(path)+1);
+     if(dpath == NULL) {
+-	strcpy(DLLerror, _("could not allocate space for 'path'"));
++	strlcpy(DLLerror, _("could not allocate space for 'path'"),
++	    sizeof(DLLerror));
+ 	R_osDynSymbol->closeLibrary(handle);
+ 	return 0;
+     }
+-    strcpy(dpath, path);
++    strlcpy(dpath, path, strlen(path) + 1);
+ 
+     if(R_osDynSymbol->fixPath)
+ 	R_osDynSymbol->fixPath(dpath);
+@@ -560,7 +562,7 @@ DllInfo *R_RegisterDLL(HINSTANCE handle,
+     /* keep only basename from path */
+     p = Rf_strrchr(dpath, FILESEP[0]);
+     if(!p) p = dpath; else p++;
+-    if(strlen(p) < PATH_MAX) strcpy(DLLname, p);
++    if(strlen(p) < PATH_MAX) strlcpy(DLLname, p, sizeof(DLLname));
+     else error(_("DLLname '%s' is too long"), p);
+ 
+     /* remove SHLIB_EXT if present */
+@@ -582,14 +584,15 @@ addDLL(char *dpath, char *DLLname, HINST
+     int ans = CountDLL;
+     char *name = malloc(strlen(DLLname)+1);
+     if(name == NULL) {
+-	strcpy(DLLerror, _("could not allocate space for 'name'"));
++	strlcpy(DLLerror, _("could not allocate space for 'name'"),
++	    sizeof(DLLname));
+ 	if(handle)
+ 	   R_osDynSymbol->closeLibrary(handle);
+ 	free(dpath);
+ 	return 0;
+     }
+ 
+-    strcpy(name, DLLname);
++    strlcpy(name, DLLname, strlen(DLLname) + 1);
+     LoadedDLL[CountDLL].path = dpath;
+     LoadedDLL[CountDLL].name = name;
+     LoadedDLL[CountDLL].handle = handle;

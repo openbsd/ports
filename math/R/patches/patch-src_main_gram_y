@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_main_gram_y,v 1.1 2005/10/08 09:47:37 mbalmer Exp $
+--- src/main/gram.y.orig	Wed Aug 10 14:41:13 2005
++++ src/main/gram.y	Wed Aug 10 14:41:58 2005
+@@ -83,7 +83,7 @@ static int 	xxcharcount, xxcharsave;
+ 
+ static int mbcs_get_next(int c, wchar_t *wc)
+ {
+-    int i, res, clen = 1; char s[9];
++    int i, res, clen = 1; signed char s[9];
+     mbstate_t mb_st;
+ 
+     s[0] = c;

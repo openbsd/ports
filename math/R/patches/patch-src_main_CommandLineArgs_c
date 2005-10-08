@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_main_CommandLineArgs_c,v 1.1 2005/10/08 09:47:37 mbalmer Exp $
+--- src/main/CommandLineArgs.c.orig	Wed Aug 10 15:42:50 2005
++++ src/main/CommandLineArgs.c	Wed Aug 10 15:45:05 2005
+@@ -182,7 +182,7 @@ R_common_command_line(int *pac, char **a
+ 		     !strcmp(*av, "-V") ||
+ 		     !strcmp(*av, "-n") ||
+ 		     !strcmp(*av, "-v")) {
+-		snprintf(msg, 1024,
++		snprintf(msg, sizeof(msg),
+ 			 _("WARNING: option '%s' no longer supported\n"), *av);
+ 		R_ShowMessage(msg);
+ 	    }
+@@ -193,7 +193,7 @@ R_common_command_line(int *pac, char **a
+ 		}
+ 		else p = &(*av)[12];
+ 		if (p == NULL) {
+-		    snprintf(msg, 1024,
++		    snprintf(msg, sizeof(msg),
+ 			     _("WARNING: no value given for '%s'\n"), *av);
+ 		    R_ShowMessage(msg);
+ 		    break;
+@@ -201,11 +201,11 @@ R_common_command_line(int *pac, char **a
+ 		value = R_Decode2Long(p, &ierr);
+ 		if(ierr) {
+ 		    if(ierr < 0)
+-			snprintf(msg, 1024,
++			snprintf(msg, sizeof(msg),
+ 				 _("WARNING: '%s' value is invalid: ignored\n"),
+ 				 *av);
+ 		    else
+-			sprintf(msg, 
++			snprintf(msg, sizeof(msg),
+ 				_("WARNING: %s=%lu'%c': too large and ignored\n"),
+ 				*av, (unsigned long) value,
+ 				(ierr == 1) ? 'M': ((ierr == 2) ? 'K' : 'k'));

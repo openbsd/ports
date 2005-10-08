@@ -1,0 +1,66 @@
+$OpenBSD: patch-src_main_Renviron_c,v 1.1 2005/10/08 09:47:37 mbalmer Exp $
+--- src/main/Renviron.c.orig	Mon Apr 18 13:34:05 2005
++++ src/main/Renviron.c	Wed Aug 10 16:13:14 2005
+@@ -67,10 +67,12 @@ static void Putenv(char *a, char *b)
+ {
+     char *buf, *value, *p, *q, quote='\0';
+     int inquote = 0;
++    size_t slen;
+ 
+-    buf = (char *) malloc((strlen(a) + strlen(b) + 2) * sizeof(char));
++    slen = strlen(a) + strlen(b) + 2;    
++    buf = (char *) malloc(slen);
+     if(!buf) R_Suicide("allocation failure in reading Renviron");
+-    strcpy(buf, a); strcat(buf, "=");
++    strlcpy(buf, a, slen); strlcat(buf, "=", slen);
+     value = buf+strlen(buf);
+ 
+     /* now process the value */
+@@ -108,7 +110,7 @@ static int process_Renviron(char *filena
+     int errs = 0;
+ 
+     if (!filename || !(fp = fopen(filename, "r"))) return 0;
+-    snprintf(msg, MSG_SIZE+50, 
++    snprintf(msg, sizeof(msg), 
+ 	     "\n   File %s contains invalid line(s)", filename);
+ 
+     while(fgets(sm, BUF_SIZE, fp)) {
+@@ -118,7 +120,8 @@ static int process_Renviron(char *filena
+ 	if(!(p = Rf_strchr(s, '='))) {
+ 	    errs++;
+ 	    if(strlen(msg) < MSG_SIZE) {
+-		strcat(msg, "\n      "); strcat(msg, s);
++		strlcat(msg, "\n      ", sizeof(msg));
++		strlcat(msg, s, sizeof(msg));
+ 	    }
+ 	    continue;
+ 	}
+@@ -130,7 +133,7 @@ static int process_Renviron(char *filena
+     }
+     fclose(fp);
+     if (errs) {
+-	strcat(msg, "\n   They were ignored\n");
++	strlcat(msg, "\n   They were ignored\n", sizeof(msg));
+ 	R_ShowMessage(msg);
+     }
+     return 1;
+@@ -146,8 +149,8 @@ void process_system_Renviron()
+ 	R_ShowMessage("path to system Renviron is too long: skipping");
+ 	return;
+     }
+-    strcpy(buf, R_Home);
+-    strcat(buf, "/etc/Renviron");
++    strlcpy(buf, R_Home, sizeof(buf));
++    strlcat(buf, "/etc/Renviron", sizeof(buf));
+     if(!process_Renviron(buf))
+ 	R_ShowMessage("cannot find system Renviron");
+ }
+@@ -165,7 +168,7 @@ void process_site_Renviron ()
+ 	R_ShowMessage("path to Renviron.site is too long: skipping");
+ 	return;
+     }
+-    snprintf(buf, PATH_MAX, "%s/etc/Renviron.site", R_Home);
++    snprintf(buf, sizeof(buf), "%s/etc/Renviron.site", R_Home);
+     process_Renviron(buf);
+ }
+ 

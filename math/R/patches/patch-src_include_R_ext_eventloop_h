@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_include_R_ext_eventloop_h,v 1.1 2005/10/08 09:47:37 mbalmer Exp $
+--- src/include/R_ext/eventloop.h.orig	Wed Aug 10 15:00:50 2005
++++ src/include/R_ext/eventloop.h	Wed Aug 10 15:01:10 2005
+@@ -24,6 +24,7 @@
+    Needed at least on FreeBSD so that fd_set is defined.
+ */
+ #include <sys/types.h>
++#include <sys/time.h>
+ 
+ #ifdef  __cplusplus
+ extern "C" {
