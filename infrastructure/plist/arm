@@ -1,4 +1,4 @@
-# $OpenBSD: arm,v 1.4 2005/08/16 02:04:13 pvalchev Exp $
+# $OpenBSD: arm,v 1.5 2005/10/08 07:22:25 pvalchev Exp $
 # This is the master list of subdirs used to choose arm packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -31,6 +31,8 @@ devel/id-utils
 www/konqueror-embedded
 textproc/antiword
 textproc/xpdf
+x11/rdesktop
+net/samba
 games/xkobo,harder
 games/xlife
 x11/xglobe
