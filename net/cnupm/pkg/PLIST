@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/24 09:45:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/10/08 04:06:14 grange Exp $
 @newgroup _cnupm:531
 @newuser _cnupm:531:_cnupm::cnupm traffic collector:/var/cnupm:/sbin/nologin
 @man man/cat8/cnupm.0
 @man man/cat8/cnupmstat.0
 sbin/cnupm
 sbin/cnupmstat
+@mode 750
 @owner _cnupm
 @group _cnupm
-@mode 750
 @sample /var/cnupm/
