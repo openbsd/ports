@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.715 2005/10/09 13:31:50 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.716 2005/10/09 23:22:41 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1187,7 +1187,7 @@ _RUN_DEP=
 .if !empty(_DEPLIBS) && ${NO_DEPENDS:L} == "no"
 _DEPlibs_COOKIE=${WRKDIR}/.
 .  for i in ${WANTLIB:C,[|:./<=>*],-,g}
-_DEPlibs_COOKIE:=${_DEPlibs_COOKIE},$i
+_DEPlibs_COOKIE:=${_DEPlibs_COOKIE}$i
 .  endfor
 .else
 _DEPlibs_COOKIE=
