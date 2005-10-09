@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.7 2003/10/18 19:44:41 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2005/10/09 13:13:25 mbalmer Exp $
 
 DIST_SUBDIR?=			amaya
 CATEGORIES?=			www
 
 EXTRACT_SUFX?=			.tgz
-
-MAINTAINER?=			Heikki Korpela <heko@openbsd.org>
 
 # BSD-like, but missing distribution grant
 # dictionaries are covered by amaya license

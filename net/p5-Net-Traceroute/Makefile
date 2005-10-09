@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/01/17 01:49:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2005/10/09 13:13:25 mbalmer Exp $
 
 COMMENT=		"traceroute(1) functionality in perl"
 
@@ -7,8 +7,6 @@ PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.linnaean.org/~hag/perl/traceroute/traceroute.html
-
-MAINTAINER=		Heikki Korpela <heko@openbsd.org>
 
 # License: MIT
 PERMIT_PACKAGE_CDROM=	Yes 

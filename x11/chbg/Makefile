@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/17 15:18:32 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2005/10/09 13:13:25 mbalmer Exp $
 
 COMMENT=		"Desktop wallpaper manager and X11 screensaver"
 
@@ -7,8 +7,6 @@ CATEGORIES=     	x11
 
 HOMEPAGE=		http://chbg.sf.net
 EXTRACT_SUFX=		.tgz
-
-MAINTAINER=		Heikki Korpela <heko@openbsd.org>
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes 
