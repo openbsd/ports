@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/03 21:15:04 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/10/09 09:12:20 alek Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:Scanner Daemon:/var/empty:/sbin/nologin
 %%SHARED%%
@@ -446,5 +446,6 @@ share/sane/
 share/sane/gt68xx/
 %%gphoto2%%
 @mode 775
+@group _saned
 @sample /var/spool/lock/sane/
 @extraunexec rm -rf /var/spool/lock/sane/

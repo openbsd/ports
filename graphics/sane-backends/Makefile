@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2005/10/06 22:37:45 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2005/10/09 09:12:19 alek Exp $
 
 COMMENT=	"API for accessing scanners, backends"
 
 DISTNAME=	sane-backends-1.0.16
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.sane-project.org/
@@ -34,8 +34,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--sbindir=${LOCALBASE}/libexec \
 		--with-docdir=${LOCALBASE}/share/doc/sane-backends \
-		--localstatedir=/var \
-		--with-group=dialer
+		--localstatedir=/var/spool \
+		--with-group=553
 
 FLAVORS=	gphoto2
 FLAVOR?=
