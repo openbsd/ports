@@ -1,8 +1,8 @@
-#!/usr/bin/perl
-# $OpenBSD: resolve-lib,v 1.4 2002/11/28 19:20:37 espie Exp $
+#! /usr/bin/perl
+# $OpenBSD: resolve-lib,v 1.5 2005/10/09 12:01:22 espie Exp $
 #
-# Copyright (c) 2001
-# Marc Espie.  All rights reserved.
+# Copyright (c) 2001, 2005 Marc Espie <espie@openbsd.org>
+#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
 # are met:
@@ -25,108 +25,158 @@
 # SUCH DAMAGE.
 
 use strict;
+use warnings;
+
+my $LOCALBASE = $ENV{'LOCALBASE'};
+my $X11BASE = $ENV{'X11BASE'};
+
+sub parse_spec_path
+{
+    	my $req = shift;
+	my $spec = $req->{spec};
+	if ($spec =~ m|^/.*/|) {
+		$req->{specdir}=$&;
+		$req->{prefix} = '';
+		$req->{libname} = $';
+	} elsif ($spec =~ m|^.*/|) {
+		$req->{specdir} = "$LOCALBASE/$&";
+		$req->{prefix} =$&;
+		$req->{libname} = $';
+	} else {
+		$req->{libname} = $spec;
+		$req->{prefix} = '';
+	}
+}
+
+sub parse_spec_versions
+{
+    	my $spec = shift;
+	my $noshared = shift;
+
+	my $req = {noshared => $noshared, strict => 0, sharedonly => 0 };
+	$spec =~ s/\.$//;
+	if ($spec =~ m/\.a$/) {
+		$spec = $`;
+		$req->{noshared} = 1;
+	} else {
+		if ($spec =~ m/\.(\d+)\.(\d+)$/) {
+			$req->{major} = $1;
+			$req->{minor} = $2;
+			$spec = $`;
+		} elsif ($spec =~ m/\.\=(\d+)\.(\d+)$/) {
+			$req->{major} = $1;
+			$req->{minor} = $2;
+			$spec = $`;
+			$req->{strict} = 1;
+		} elsif ($spec =~ m/\.(\d+)$/) {
+			$req->{major} = $1;
+			$req->{minor} = 0;
+			$spec = $`;
+		} elsif ($spec =~ m/\.\=(\d+)$/) {
+			$req->{major} = $1;
+			$req->{minor} = 0;
+			$req->{strict} = 1;
+			$spec = $`;
+		} else {
+			$req->{major} = 0;
+			$req->{minor} = 0;
+		}
+		if ($spec =~ m/\.so$/) {
+			$spec = $`;
+			$req->{sharedonly} = 1;
+		}
+	}
+	$req->{spec} = $spec;
+	return $req;
+}
+
+sub parse_spec
+{
+	my ($spec, $noshared) = @_;
+	my $req = parse_spec_versions($spec);
+	parse_spec_path($req);
+	return $req;
+}
+
+sub solve_spec
+{
+	my $spec = shift;
+	my $noshared = shift;
+	my $req = parse_spec($spec, $noshared);
+
+	my $found_shared;
+	my $found_goodshared;
+	my $bestmajor=-1; my $bestminor=-1;
+	my $found_unshared;
+	my $libname = $req->{libname};
+
+	for my $file (@_) {
+		next unless $file =~ m|(.*/)|;
+		if (defined $req->{specdir}) {
+			next unless $1 eq $req->{specdir};
+		} else {
+			next unless $1 eq '/usr/lib/' or 
+			    $1 eq "$LOCALBASE/lib/" or
+			    $1 eq "$X11BASE/lib/";
+		}
+		local $_=$';
+		if (!$req->{noshared} && 
+		    m/^lib\Q$libname\E\.so\.(\d+)\.(\d+)$/) {
+			$found_shared = 1;
+			my $major = $1;
+			my $minor = $2;
+			if ($req->{strict}) {
+				if ($major > $req->{major}) {
+					print "Error: strict library too high\n";
+					last;
+				}
+				if ($major < $req->{major}) {
+					next;
+				}
+				if ($minor < $req->{minor}) {
+					next;
+				}
+				$found_goodshared = 1;
+				$bestmajor = $major;
+				if ($minor >= $bestminor) {
+					$bestminor = $minor;
+				}
+			} else {
+				if ($major < $req->{major} || 
+				    ($major == $req->{major} && $minor < $req->{minor})) {
+					next;
+				}
+				$found_goodshared = 1;
+				if ($major > $bestmajor || ($major == $bestmajor &&
+				    $minor > $bestminor)) {
+					$bestmajor = $major;
+					$bestminor = $minor;
+				}
+			}
+		} elsif (!$req->{sharedonly} && m/^lib\Q$libname\E\.a$/) {
+			$found_unshared = 1;
+		}
+	}
+	if ($found_goodshared) {
+		print $req->{prefix},"$libname.$bestmajor.$bestminor\n";
+	} elsif ($found_shared) {
+		print STDERR "Error: bad shared library\n";
+	} elsif ($found_unshared) {
+		print $req->{prefix},"$libname.a\n";
+	} else {
+		print STDERR "Missing library for $spec\n";
+	}
+}
+
 
 my $noshared; 
-my $sharedonly;
-my $strict;
-my $reqmajor;
-my $reqminor;
-
 # Grab arguments
-$_=shift;
-if ($_ eq '-noshared') {
+if ($ARGV[0] eq '-noshared') {
 	$noshared = 1;
-	$_ = shift;
+	shift;
 }
 
-s/\.$//;
-# Parse spec
-if (m/\.a$/) {
-	$_ = $`;
-	$noshared = 1;
-} else {
-	if (m/\.(\d+)\.(\d+)$/) {
-		$reqmajor = $1;
-		$reqminor = $2;
-		$_ = $`;
-	} elsif (m/\.\=(\d+)\.(\d+)$/) {
-		$reqmajor = $1;
-		$reqminor = $2;
-		$_ = $`;
-		$strict = 1;
-	} elsif (m/\.(\d+)$/) {
-		$reqmajor = $1;
-		$reqminor = 0;
-		$_ = $`;
-	} elsif (m/\.\=(\d+)$/) {
-		$reqmajor = $1;
-		$reqminor = 0;
-		$strict = 1;
-		$_ = $`;
-	}
-	if (m/\.so$/) {
-		$_ = $`;
-		$sharedonly = 1;
-	}
-}
-
-{
-my $libname=$_;
-
-my $bestmajor=-1;
-my $bestminor=-1;
-
-my $found_shared;
-my $found_goodshared;
-my $found_unshared;
-
-while(<>) {
-	chomp;
-	if (!$noshared && m/^lib\Q$libname\E\.so\.(\d+)\.(\d+)$/) {
-		$found_shared = 1;
-		my $major = $1;
-		my $minor = $2;
-		if ($strict) {
-			if ($major > $reqmajor) {
-				print "Error: strict library too high\n";
-				exit(0);
-			}
-			if ($major < $reqmajor) {
-				next;
-			}
-			if ($minor < $reqminor) {
-				next;
-			}
-			$found_goodshared = 1;
-			$bestmajor = $major;
-			if ($minor >= $bestminor) {
-				$bestminor = $minor;
-			}
-		} else {
-			if ($major < $reqmajor || ($major == $reqmajor &&
-			    $minor < $reqminor)) {
-				next;
-		    	}
-			$found_goodshared = 1;
-			if ($major > $bestmajor || ($major == $bestmajor &&
-			    $minor > $bestminor)) {
-			    	$bestmajor = $major;
-				$bestminor = $minor;
-			}
-		}
-	} elsif (!$sharedonly && m/^lib\Q$libname\E\.a$/) {
-		$found_unshared = 1;
-	}
-}
-
-if ($found_goodshared) {
-	print "$libname.$bestmajor.$bestminor\n";
-} elsif ($found_shared) {
-	print "Error: bad shared library\n";
-} elsif ($found_unshared) {
-	print "$libname.a\n";
-} else {
-	print "Missing library\n";
-}
-
+my @available = split(/\s+/, <STDIN>);
+for my $spec (@ARGV) {
+	solve_spec($spec, $noshared, @available);
 }

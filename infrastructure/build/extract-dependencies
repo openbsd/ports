@@ -1,0 +1,56 @@
+#! /usr/bin/perl
+
+# $OpenBSD: extract-dependencies,v 1.1 2005/10/09 12:01:22 espie Exp $
+#
+# Copyright (c) 2005 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+# Usage: extract-dependencies  < 'tsort-pairs' seed
+# extracts all the dependencies for seed from a list that contains more
+# than that.
+
+use strict;
+use warnings;
+
+
+# build dependency graph
+my $dep = {};
+while(<STDIN>) {
+	chomp;
+	my($a, $b) = split(/\s+/, $_);
+	$dep->{$a} = {} unless defined $dep->{$a};
+	$dep->{$a}->{$b} = 1;
+}
+
+# get the starting point
+my $pkgpath = shift;
+
+my @todo = ();
+my $done = {};
+
+# walk the graph repeatedly starting from it
+push(@todo, $pkgpath);
+
+while (my $x = shift @todo) {
+	next if $done->{$x};
+	$done->{$x} = 1;
+	next unless defined $dep->{$x};
+	push(@todo, keys %{$dep->{$x}});
+}
+
+# display all nodes, except for the seed
+for my $d (keys %$done) {
+	next if $d eq $pkgpath;
+	print "$d\n";
+}
