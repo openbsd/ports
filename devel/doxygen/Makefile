@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2005/07/26 05:45:08 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/10/09 21:42:04 bernd Exp $
 
 COMMENT=	"documentation system for C++/C/Java/Objective-C/IDL and others"
 COMMENT-gui=	"GUI front-end for doxygen"
 
-VERSION=	1.4.4
+VERSION=	1.4.5
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-${VERSION}
 FULLPKGNAME-gui=doxygen-gui-${VERSION}
@@ -59,8 +59,5 @@ WRKDIST=	${WRKDIR}/doxygen-${VERSION}
 
 NO_REGRESS=	Yes
 VMEM_WARNING=	Yes
-
-post-extract:
-	${CHMOD} +x ${WRKSRC}/configure
 
 .include <bsd.port.mk>

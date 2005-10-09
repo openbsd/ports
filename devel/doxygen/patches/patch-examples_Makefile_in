@@ -1,10 +1,11 @@
-$OpenBSD: patch-examples_Makefile_in,v 1.1.1.1 2005/07/17 08:30:06 alek Exp $
---- examples/Makefile.in.orig	Thu May  5 00:04:48 2005
-+++ examples/Makefile.in	Thu May  5 00:04:50 2005
-@@ -98,6 +98,4 @@ memgrp/html/index.html: memgrp.cpp memgr
- 	$(DOXYGEN)/bin/doxygen memgrp.cfg
+$OpenBSD: patch-examples_Makefile_in,v 1.2 2005/10/09 21:42:04 bernd Exp $
+--- examples/Makefile.in.orig	Mon Jul 25 10:28:13 2005
++++ examples/Makefile.in	Wed Oct  5 14:15:32 2005
+@@ -106,7 +106,5 @@ docstring/html/index.html: docstring.py 
+ 	$(DOXYGEN)/bin/doxygen docstring.cfg
  
  diagrams/html/index.html: diagrams_a.h diagrams_b.h diagrams_c.h diagrams_d.h diagrams_e.h diagrams.cfg
 -ifneq ($(HAVE_DOT),)
  	$(DOXYGEN)/bin/doxygen diagrams.cfg
 -endif
+ 
