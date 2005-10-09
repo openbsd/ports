@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2005/07/10 09:34:52 sturm Exp $
+# $OpenBSD: Makefile,v 1.35 2005/10/09 09:05:43 mbalmer Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
-DISTNAME=		Mail-SpamAssassin-3.0.4
+DISTNAME=		Mail-SpamAssassin-3.1.0
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		mail perl5
 
@@ -15,21 +15,29 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c
+WANTLIB=		c crypto ssl
 
 MASTER_SITES=		${MASTER_SITE_APACHE:=spamassassin/source/}
 
 BUILD_DEPENDS=		:p5-HTML-Parser-*:www/p5-HTML-Parser \
-			:p5-Digest-SHA1-*:security/p5-Digest-SHA1
-RUN_DEPENDS=		:p5-Net-DNS-*:net/p5-Net-DNS \
-			:p5-HTML-Parser-*:www/p5-HTML-Parser
+			:p5-Digest-SHA1-*:security/p5-Digest-SHA1 \
+			:p5-Net-DNS-*:net/p5-Net-DNS \
+			:p5-HTML-Parser-*:www/p5-HTML-Parser \
+			:p5-IO-INET6-*:net/p5-IO-INET6 \
+			:p5-IO-Socket-SSL-*:security/p5-IO-Socket-SSL \
+			:p5-libwww-*:www/p5-libwww \
+			:p5-Archive-Tar-*:archivers/p5-Archive-Tar \
+			:p5-IO-Zlib-*:archivers/p5-IO-Zlib
+
+RUN_DEPENDS=		${BUILD_DEPENDS}
 
 MAKE_ENV+=		CC="${CC}"
 
 CONFIGURE_STYLE=	perl
 CONFIGURE_ARGS+=	RUN_NET_TESTS="no" \
 			SYSCONFDIR=${SYSCONFDIR} \
-			CONTACT_ADDRESS="the administrator of this system"
+			CONTACT_ADDRESS="the administrator of this system" \
+			ENABLE_SSL="yes"
 
 CONFDIR=		${SYSCONFDIR}/mail/spamassassin
 RULES_DIR=		${PREFIX}/share/spamassassin

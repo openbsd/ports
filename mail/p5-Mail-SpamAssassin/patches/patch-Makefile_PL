@@ -1,55 +1,7 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2004/10/31 08:44:44 sturm Exp $
---- Makefile.PL.orig	Fri Aug 27 09:37:35 2004
-+++ Makefile.PL	Sun Oct  3 10:47:17 2004
-@@ -356,15 +356,15 @@ else {
- }
- $makefile{'macro'}{'RUN_NET_TESTS'} = yesno($opt{'run_net_tests'});
- 
--if (HAS_DBI) {
--  $opt{'run_awl_sql_tests'} = prompt(
--    "Run SQL-based Auto-whitelist tests during 'make test' (additional\n".
--    "information required) (y/n)", "n");
--  print "\n";
-+# if (HAS_DBI) {
-+#   $opt{'run_awl_sql_tests'} = prompt(
-+#     "Run SQL-based Auto-whitelist tests during 'make test' (additional\n".
-+#     "information required) (y/n)", "n");
-+#   print "\n";
-+# 
-+#   $opt{'run_awl_sql_tests'} = bool($opt{'run_awl_sql_tests'});
-+# }
- 
--  $opt{'run_awl_sql_tests'} = bool($opt{'run_awl_sql_tests'});
--}
--
- if ($opt{'run_awl_sql_tests'}) {
-   my $user_awl_dsn = prompt("SQL AWL DSN (user_awl_dsn): ", "dbi:mysql:spamassassin:localhost");
-   my $user_awl_sql_username = prompt("SQL AWL DB username (user_awl_sql_username): ", "");
-@@ -386,15 +386,15 @@ else {
-   unlink("t/sql_based_whitelist.cf");
- }
- 
--if (HAS_DBI) {
--  $opt{'run_bayes_sql_tests'} = prompt(
--    "Run Bayes SQL storage tests during 'make test' (additional\n".
--    "information required)? (y/n)", 'n');
--  print "\n";
-+# if (HAS_DBI) {
-+#   $opt{'run_bayes_sql_tests'} = prompt(
-+#     "Run Bayes SQL storage tests during 'make test' (additional\n".
-+#     "information required)? (y/n)", 'n');
-+#   print "\n";
-+# 
-+#   $opt{'run_bayes_sql_tests'} = bool($opt{'run_bayes_sql_tests'});
-+# }
- 
--  $opt{'run_bayes_sql_tests'} = bool($opt{'run_bayes_sql_tests'});
--}
--
- if ($opt{'run_bayes_sql_tests'}) {
-   my $bayes_sql_dsn = prompt("Bayes SQL DSN (bayes_sql_dsn): ", "dbi:mysql:spamassassin:localhost");
-   my $bayes_sql_username = prompt("Bayes SQL DB username (bayes_sql_username): ", "");
-@@ -855,7 +855,7 @@ sub MY::install {
+$OpenBSD: patch-Makefile_PL,v 1.3 2005/10/09 09:05:43 mbalmer Exp $
+--- Makefile.PL.orig	Wed Oct  5 09:35:06 2005
++++ Makefile.PL	Wed Oct  5 09:35:33 2005
+@@ -809,7 +809,7 @@ sub MY::install {
  
    foreach (@code) {
      # Add our install targets as a dependency to all top-level install targets
@@ -58,18 +10,16 @@ $OpenBSD: patch-Makefile_PL,v 1.2 2004/10/31 08:44:44 sturm Exp $
  
      # Now do the DESTDIR hack, if necessary.
      next if !$mm_needs_destdir;
-@@ -1118,14 +1118,6 @@ qmail/qmail-spamc$(EXE_EXT): spamc/qmail
- 	$(MKPATH) qmail
- 	$(MAKE_SPAMC_OLD)
- 	$(CHMOD) $(PERM_RWX) $@
--
+@@ -1085,12 +1085,6 @@ qmail/qmail-spamc$(EXE_EXT): spamc/qmail
+ #bin__install: $(INST_SCRIPT)/sa-filter
+ #        # $(RM_F) $(B_SCRIPTDIR)/spamassassin
+ #        # $(SYMLINK) $(INST_SCRIPT)/sa-filter $(B_SCRIPTDIR)/spamassassin
 -
 -conf__install:
 -	-$(MKPATH) $(B_CONFDIR)
--	$(PERL) -MFile::Spec -MFile::Copy \
--	  -e "copy(q{rules/local.cf}, q{$(B_CONFDIR)/local.cf}) unless -f q{$(B_CONFDIR)/local.cf};"
--	$(PERL) -MFile::Spec -MFile::Copy \
--	  -e "copy(q{rules/init.pre}, q{$(B_CONFDIR)/init.pre}) unless -f q{$(B_CONFDIR)/init.pre};"
+-	$(PERL) -MFile::Copy -e "copy(q{rules/local.cf}, q{$(B_CONFDIR)/local.cf}) unless -f q{$(B_CONFDIR)/local.cf}"
+-	$(PERL) -MFile::Copy -e "copy(q{rules/init.pre}, q{$(B_CONFDIR)/init.pre}) unless -f q{$(B_CONFDIR)/init.pre}"
+-	$(PERL) -MFile::Copy -e "copy(q{rules/v310.pre}, q{$(B_CONFDIR)/v310.pre}) unless -f q{$(B_CONFDIR)/v310.pre}"
  
  data__install:
  	-$(MKPATH) $(B_DATADIR)
