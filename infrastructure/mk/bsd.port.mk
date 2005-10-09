@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.714 2005/10/09 12:01:22 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.715 2005/10/09 13:31:50 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -441,7 +441,8 @@ ${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_REGRESS_COOKIE} \
 ${_SYSTRACE_COOKIE} ${_PACKAGE_COOKIES} \
 ${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
 ${_WRKDIR_COOKIE} ${_DEPlib_COOKIES} ${_DEPbuild_COOKIES} \
-${_DEPrun_COOKIES} ${_DEPregress_COOKIES} ${_UPDATE_COOKIE}
+${_DEPrun_COOKIES} ${_DEPregress_COOKIES} ${_UPDATE_COOKIE} \
+${_DEPlibs_COOKIE}
 
 _MAKE_COOKIE=touch -f
 
@@ -1065,17 +1066,8 @@ _lib_depends_fragment = \
 	if $$defaulted; then \
 		pkg=`echo $$pkg|sed -e 's,-[0-9].*,-*,'`; \
 	fi; \
-	found2=false; \
-	what="$$dep ($$pkg)"; \
-	IFS=,; bad=false; for d in $$dep; do \
-		listlibs='echo $$shdir/lib*'; \
-		${_libresolve_fragment}; \
-		case "$$check" in \
-		Missing\ library) bad=true; msg="$$msg $$d missing...";; \
-		Error:*) bad=true; msg="$$msg $$d unsolvable...";; \
-		esac; \
-	done; $$bad || found2=true; \
-	if pkg_info -q -e "$$pkg" && $$found2; then \
+	what="$$pkg"; \
+	if pkg_info -q -e "$$pkg"; then \
 		found=true; \
 	fi
 
@@ -1187,6 +1179,18 @@ _RUN_DEP = ${_RUN_DEP2:C/[^:]*://}
 .else
 _RUN_DEP2=
 _RUN_DEP=
+.endif
+
+# build a deplibs cookie that changes each time WANTLIB is modified
+# we do not need to include LIB_DEPENDS, as DEPlibs_COOKIE depends on
+# DEPlibs_COOKIES, and that would make a too long filename for some ports
+.if !empty(_DEPLIBS) && ${NO_DEPENDS:L} == "no"
+_DEPlibs_COOKIE=${WRKDIR}/.
+.  for i in ${WANTLIB:C,[|:./<=>*],-,g}
+_DEPlibs_COOKIE:=${_DEPlibs_COOKIE},$i
+.  endfor
+.else
+_DEPlibs_COOKIE=
 .endif
 
 
@@ -1334,7 +1338,7 @@ addsum: fetch-all
 
 
 _internal-depends: _internal-lib-depends _internal-build-depends \
-	_internal-run-depends _internal-regress-depends
+	_internal-run-depends _internal-libs-depends _internal-regress-depends
 
 # and the rules for the actual dependencies
 
@@ -1417,6 +1421,31 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 .  endif
 _internal-${_DEP}-depends: ${_DEP${_DEP}_COOKIES}
 .endfor
+
+.if !empty(_DEPlibs_COOKIE)
+${_DEPlibs_COOKIE}: ${_DEPlib_COOKIES} ${_DEPbuild_COOKIES} ${_WRKDIR_COOKIE}
+	@${ECHO_MSG} "===> Verifying specs: ${_DEPLIBS}"
+	@listlibs="echo ${LOCALBASE}/lib/lib* /usr/lib/lib* ${X11BASE}/lib/lib*"; \
+	for d in ${_DEPLIBS}; do \
+		case "$$d" in \
+		/*) listlibs="$$listlibs $${d%/*}/lib*";; \
+		*/*) listlibs="$$listlibs ${DEPBASE}/$${d%/*}/lib*";; \
+		esac; \
+	done; \
+	if found=`eval $$listlibs 2>/dev/null| \
+		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} perl \
+		${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} ${_DEPLIBS}`; then \
+		line="===> found"; \
+		for k in $$found; do line="$$line $$k"; done; \
+		${ECHO_MSG} "$$line"; \
+	else \
+		echo 1>&2 "Fatal error"; \
+		exit 1; \
+	fi
+	@${_MAKE_COOKIE} $@
+.endif
+
+_internal-libs-depends: ${_DEPlibs_COOKIE}
 
 .if defined(IGNORE) && !defined(NO_IGNORE)
 _internal-fetch _internal-checksum _internal-extract _internal-patch \
@@ -1535,14 +1564,14 @@ _refetch:
 # The cookie's recipe hold the real rule for each of those targets.
 
 _internal-extract: ${_EXTRACT_COOKIE}
-_internal-patch: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
+_internal-patch: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPlibs_COOKIE} \
 	${_PATCH_COOKIE}
-_internal-distpatch: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
+_internal-distpatch: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPlibs_COOKIE} \
 	${_DISTPATCH_COOKIE}
-_internal-configure: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
+_internal-configure: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} ${_DEPlibs_COOKIE} \
 	${_CONFIGURE_COOKIE}
 _internal-build _internal-all: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
-	${_BUILD_COOKIE}
+	${_DEPlibs_COOKIE} ${_BUILD_COOKIE}
 _internal-install: ${_INSTALL_DEPS}
 _internal-fake: ${_FAKE_COOKIE}
 _internal-package: ${_PACKAGE_DEPS}
@@ -1648,7 +1677,7 @@ ${_WRKDIR_COOKIE}:
 	@${_MAKE_COOKIE} $@
 
 ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
-	@cd ${.CURDIR} && exec ${MAKE} _internal-checksum _internal-build-depends _internal-lib-depends
+	@cd ${.CURDIR} && exec ${MAKE} _internal-checksum _internal-build-depends _internal-lib-depends _internal-libs-depends
 	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}${_MASTER}"
 .if target(pre-extract)
 	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} pre-extract
@@ -2721,7 +2750,8 @@ uninstall deinstall:
 	_internal-extract _internal-distpatch _internal-configure \
 	_internal-build _internal-all _internal_install _internal-fake \
 	_internal-package _internal_fetch _internal-checksum \
-	_internal-depends _internal-lib-depends _internal-build-depends \
+	_internal-depends _internal-lib-depends _internal-libs-depends \
+	_internal-build-depends \
 	_internal-run-depends _internal-regress-depends \
 	_internal-regress _internal-clean _internal-lib-depends-check \
 	_internal-newlib-depends-check \
