@@ -1,0 +1,59 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/09 11:33:47 alek Exp $
+${P5SITE}/Nmap/
+${P5SITE}/Nmap/Scanner/
+${P5SITE}/Nmap/Scanner.pm
+${P5SITE}/Nmap/Scanner/Address.pm
+${P5SITE}/Nmap/Scanner/Backend/
+${P5SITE}/Nmap/Scanner/Backend.pm
+${P5SITE}/Nmap/Scanner/Backend/Processor.pm
+${P5SITE}/Nmap/Scanner/Backend/Results.pm
+${P5SITE}/Nmap/Scanner/Backend/XML.pm
+${P5SITE}/Nmap/Scanner/ExtraPorts.pm
+${P5SITE}/Nmap/Scanner/Host.pm
+${P5SITE}/Nmap/Scanner/HostList.pm
+${P5SITE}/Nmap/Scanner/Hostname.pm
+${P5SITE}/Nmap/Scanner/Hosts.pm
+${P5SITE}/Nmap/Scanner/NmapRun.pm
+${P5SITE}/Nmap/Scanner/OS/
+${P5SITE}/Nmap/Scanner/OS.pm
+${P5SITE}/Nmap/Scanner/OS/Class.pm
+${P5SITE}/Nmap/Scanner/OS/IPIdSequence.pm
+${P5SITE}/Nmap/Scanner/OS/Match.pm
+${P5SITE}/Nmap/Scanner/OS/PortUsed.pm
+${P5SITE}/Nmap/Scanner/OS/TCPSequence.pm
+${P5SITE}/Nmap/Scanner/OS/TCPTSSequence.pm
+${P5SITE}/Nmap/Scanner/OS/Uptime.pm
+${P5SITE}/Nmap/Scanner/Port.pm
+${P5SITE}/Nmap/Scanner/PortList.pm
+${P5SITE}/Nmap/Scanner/RunStats/
+${P5SITE}/Nmap/Scanner/RunStats.pm
+${P5SITE}/Nmap/Scanner/RunStats/Finished.pm
+${P5SITE}/Nmap/Scanner/ScanInfo.pm
+${P5SITE}/Nmap/Scanner/Scanner.pm
+${P5SITE}/Nmap/Scanner/Service.pm
+${P5SITE}/Nmap/Scanner/Util/
+${P5SITE}/Nmap/Scanner/Util.pm
+${P5SITE}/Nmap/Scanner/Util/BannerScanner.pm
+@man man/man3p/Nmap::Scanner.3p
+@man man/man3p/Nmap::Scanner::Address.3p
+@man man/man3p/Nmap::Scanner::Backend::Processor.3p
+@man man/man3p/Nmap::Scanner::Backend::Results.3p
+@man man/man3p/Nmap::Scanner::ExtraPorts.3p
+@man man/man3p/Nmap::Scanner::Host.3p
+@man man/man3p/Nmap::Scanner::Hostname.3p
+@man man/man3p/Nmap::Scanner::Hosts.3p
+@man man/man3p/Nmap::Scanner::NmapRun.3p
+@man man/man3p/Nmap::Scanner::OS.3p
+@man man/man3p/Nmap::Scanner::OS::Class.3p
+@man man/man3p/Nmap::Scanner::OS::IPIdSequence.3p
+@man man/man3p/Nmap::Scanner::OS::Match.3p
+@man man/man3p/Nmap::Scanner::OS::PortUsed.3p
+@man man/man3p/Nmap::Scanner::OS::TCPSequence.3p
+@man man/man3p/Nmap::Scanner::OS::TCPTSSequence.3p
+@man man/man3p/Nmap::Scanner::OS::Uptime.3p
+@man man/man3p/Nmap::Scanner::Port.3p
+@man man/man3p/Nmap::Scanner::RunStats.3p
+@man man/man3p/Nmap::Scanner::RunStats::Finished.3p
+@man man/man3p/Nmap::Scanner::ScanInfo.3p
+@man man/man3p/Nmap::Scanner::Scanner.3p
+@man man/man3p/Nmap::Scanner::Service.3p
