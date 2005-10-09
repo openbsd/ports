@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: resolve-lib,v 1.5 2005/10/09 12:01:22 espie Exp $
+# $OpenBSD: resolve-lib,v 1.6 2005/10/09 13:27:39 espie Exp $
 #
 # Copyright (c) 2001, 2005 Marc Espie <espie@openbsd.org>
 #
@@ -29,6 +29,7 @@ use warnings;
 
 my $LOCALBASE = $ENV{'LOCALBASE'};
 my $X11BASE = $ENV{'X11BASE'};
+my $error = 0;
 
 sub parse_spec_path
 {
@@ -127,7 +128,8 @@ sub solve_spec
 			my $minor = $2;
 			if ($req->{strict}) {
 				if ($major > $req->{major}) {
-					print "Error: strict library too high\n";
+					print STDERR "Error: strict library too high\n";
+					$error = 1;
 					last;
 				}
 				if ($major < $req->{major}) {
@@ -161,10 +163,12 @@ sub solve_spec
 		print $req->{prefix},"$libname.$bestmajor.$bestminor\n";
 	} elsif ($found_shared) {
 		print STDERR "Error: bad shared library\n";
+		$error = 1;
 	} elsif ($found_unshared) {
 		print $req->{prefix},"$libname.a\n";
 	} else {
 		print STDERR "Missing library for $spec\n";
+		$error = 1;
 	}
 }
 
@@ -180,3 +184,5 @@ my @available = split(/\s+/, <STDIN>);
 for my $spec (@ARGV) {
 	solve_spec($spec, $noshared, @available);
 }
+
+exit($error);
