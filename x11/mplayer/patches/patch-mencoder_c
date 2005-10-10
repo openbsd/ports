@@ -1,0 +1,11 @@
+$OpenBSD: patch-mencoder_c,v 1.1 2005/10/10 15:37:24 espie Exp $
+--- mencoder.c.orig	Mon Oct 10 15:51:36 2005
++++ mencoder.c	Mon Oct 10 15:51:43 2005
+@@ -1829,6 +1829,7 @@ if(sh_audio && !demuxer2){
+ 
+ } // while(!at_eof)
+ 
++mux_v->aspect=sh_video->aspect;
+ if (!interrupted && filelist[++curfile].name != 0) {
+ 	if (sh_video && sh_video->vfilter) {
+         // Before uniniting sh_video and the filter chain, break apart the VE.
