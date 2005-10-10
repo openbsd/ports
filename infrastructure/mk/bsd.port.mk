@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.716 2005/10/09 23:22:41 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.717 2005/10/10 00:29:38 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -442,7 +442,7 @@ ${_SYSTRACE_COOKIE} ${_PACKAGE_COOKIES} \
 ${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
 ${_WRKDIR_COOKIE} ${_DEPlib_COOKIES} ${_DEPbuild_COOKIES} \
 ${_DEPrun_COOKIES} ${_DEPregress_COOKIES} ${_UPDATE_COOKIE} \
-${_DEPlibs_COOKIE}
+${_DEPlibs_COOKIE} ${_DEPlibs_COOKIES}
 
 _MAKE_COOKIE=touch -f
 
@@ -1181,16 +1181,14 @@ _RUN_DEP2=
 _RUN_DEP=
 .endif
 
-# build a deplibs cookie that changes each time WANTLIB is modified
-# we do not need to include LIB_DEPENDS, as DEPlibs_COOKIE depends on
-# DEPlibs_COOKIES, and that would make a too long filename for some ports
+_DEPlibs_COOKIES=
 .if !empty(_DEPLIBS) && ${NO_DEPENDS:L} == "no"
-_DEPlibs_COOKIE=${WRKDIR}/.
 .  for i in ${WANTLIB:C,[|:./<=>*],-,g}
-_DEPlibs_COOKIE:=${_DEPlibs_COOKIE}$i
+_DEPlibs_COOKIES+=${WRKDIR}/.wantlib-$i
 .  endfor
+_DEPlibs_COOKIE=${WRKDIR}/.wantlibs
 .else
-_DEPlibs_COOKIE=
+_DEPlibs_COOKIE=${WRKDIR}/.wantlibs
 .endif
 
 
@@ -1423,7 +1421,10 @@ _internal-${_DEP}-depends: ${_DEP${_DEP}_COOKIES}
 .endfor
 
 .if !empty(_DEPlibs_COOKIE)
-${_DEPlibs_COOKIE}: ${_DEPlib_COOKIES} ${_DEPbuild_COOKIES} ${_WRKDIR_COOKIE}
+${_DEPlibs_COOKIES}: ${_WRKDIR_COOKIE}
+	@${_MAKE_COOKIE} $@
+
+${_DEPlibs_COOKIE}: ${_DEPlibs_COOKIES} ${_DEPlib_COOKIES} ${_DEPbuild_COOKIES} ${_WRKDIR_COOKIE}
 	@${ECHO_MSG} "===> Verifying specs: ${_DEPLIBS}"
 	@listlibs="echo ${LOCALBASE}/lib/lib* /usr/lib/lib* ${X11BASE}/lib/lib*"; \
 	for d in ${_DEPLIBS}; do \
