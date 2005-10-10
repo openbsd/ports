@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.78 2005/08/16 09:49:51 espie Exp $
+# $OpenBSD: Makefile,v 1.79 2005/10/10 22:48:24 mbalmer Exp $
 
 COMMENT=	"PostgreSQL RDBMS (client)"
 COMMENT-server=	"PostgreSQL RDBMS (server)"
 COMMENT-docs=	"PostgreSQL RDBMS documentation"
 
-VERSION=	8.0.3
+VERSION=	8.0.4
 DISTNAME=	postgresql-${VERSION}
 FULLPKGNAME=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
-PKGNAME-docs=	postgresql-docs-${VERSION}p0
+PKGNAME-docs=	postgresql-docs-${VERSION}
 
 CATEGORIES=	databases
 
@@ -74,7 +74,7 @@ WANTLIB+=	perl
 
 .if defined(PACKAGING)
 .  if ${SUBPACKAGE} == "-server"
-LIB_DEPENDS=	pq.3:postgresql-client-${VERSION}:databases/postgresql
+LIB_DEPENDS=	pq.4:postgresql-client-${VERSION}:databases/postgresql
 .  elif ${SUBPACKAGE} == "-docs"
 WANTLIB=
 PKG_ARCH=	*

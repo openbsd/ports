@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2005/05/11 10:10:39 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.29 2005/10/10 22:48:24 mbalmer Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -323,6 +323,7 @@ share/postgresql/timezone/America/Cayenne
 share/postgresql/timezone/America/Cayman
 share/postgresql/timezone/America/Chicago
 share/postgresql/timezone/America/Chihuahua
+share/postgresql/timezone/America/Coral_Harbour
 share/postgresql/timezone/America/Cordoba
 share/postgresql/timezone/America/Costa_Rica
 share/postgresql/timezone/America/Cuiaba
@@ -548,6 +549,7 @@ share/postgresql/timezone/Australia/Adelaide
 share/postgresql/timezone/Australia/Brisbane
 share/postgresql/timezone/Australia/Broken_Hill
 share/postgresql/timezone/Australia/Canberra
+share/postgresql/timezone/Australia/Currie
 share/postgresql/timezone/Australia/Darwin
 share/postgresql/timezone/Australia/Hobart
 share/postgresql/timezone/Australia/LHI
