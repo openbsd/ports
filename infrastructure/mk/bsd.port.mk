@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.717 2005/10/10 00:29:38 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.718 2005/10/10 16:07:33 bernd Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1425,7 +1425,7 @@ ${_DEPlibs_COOKIES}: ${_WRKDIR_COOKIE}
 	@${_MAKE_COOKIE} $@
 
 ${_DEPlibs_COOKIE}: ${_DEPlibs_COOKIES} ${_DEPlib_COOKIES} ${_DEPbuild_COOKIES} ${_WRKDIR_COOKIE}
-	@${ECHO_MSG} "===> Verifying specs: ${_DEPLIBS}"
+	@${ECHO_MSG} "===>  Verifying specs: ${_DEPLIBS}"
 	@listlibs="echo ${LOCALBASE}/lib/lib* /usr/lib/lib* ${X11BASE}/lib/lib*"; \
 	for d in ${_DEPLIBS}; do \
 		case "$$d" in \
@@ -1436,7 +1436,7 @@ ${_DEPlibs_COOKIE}: ${_DEPlibs_COOKIES} ${_DEPlib_COOKIES} ${_DEPbuild_COOKIES} 
 	if found=`eval $$listlibs 2>/dev/null| \
 		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} perl \
 		${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} ${_DEPLIBS}`; then \
-		line="===> found"; \
+		line="===>  found"; \
 		for k in $$found; do line="$$line $$k"; done; \
 		${ECHO_MSG} "$$line"; \
 	else \
