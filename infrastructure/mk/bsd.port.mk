@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.718 2005/10/10 16:07:33 bernd Exp $
+#	$OpenBSD: bsd.port.mk,v 1.719 2005/10/10 19:20:00 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2469,8 +2469,7 @@ _print-package-args:
 		if pkg_info -q -e $$pkg; then \
 			listlibs='echo ${DEPDIR}$$shdir/lib*'; \
 		else \
-			eval 1>&2 $$toset ${MAKE} ${PKGREPOSITORY}/$$default.tgz; \
-			listlibs='pkg_info -L -K ${PKGREPOSITORY}/$$default.tgz|grep -e "^@lib $$shdir/lib" -e "^$$shdir/lib.*.a"|sed -e "s:@lib "'; \
+		    listlibs="$$toset _NODEPS=Yes ${MAKE} print-plist-contents|grep -e '^@lib ' -e '^@file .*/lib/lib.*\.a'|sed -e 's:@lib ::' -e 's:@file ::'"; \
 		fi; \
 		IFS=,; for d in $$dep; do \
 			${_libresolve_fragment}; \
@@ -2506,16 +2505,16 @@ _list-port-libs:
 		${MAKE} run-dir-depends >>${_DEPENDS_CACHE}; \
 	fi
 	@perl ${PORTSDIR}/infrastructure/build/extract-dependencies ${FULLPKGPATH} <${_DEPENDS_CACHE}|while read dir; do \
-		fulldir=$$dir; \
-		if test -f ${_PORT_LIBS_CACHE}/$$fulldir; then \
-			cat ${_PORT_LIBS_CACHE}/$$fulldir; \
+		fulldir=${_PORT_LIBS_CACHE}/$$dir; \
+		if test -f $$fulldir; then \
+			cat $$fulldir; \
 		else \
-			mkdir -p `dirname ${_PORT_LIBS_CACHE}/$$fulldir`; \
+			mkdir -p $${fulldir%/*}; \
 			unset FLAVOR SUBPACKAGE || true; \
 			${_flavor_fragment}; \
 			eval $$toset _NODEPS=Yes ${MAKE} print-plist-contents | \
-				grep -e '^@lib ' -e '^@file .*/lib/.*\.a$$'| \
-				sed -e 's:@lib ::' -e 's:@file ::' |tee ${_PORT_LIBS_CACHE}/$$fulldir; \
+				grep -e '^@lib ' -e '^@file .*/lib/lib.*\.a$$'| \
+				sed -e 's:@lib ::' -e 's:@file ::' |tee $$fulldir; \
 		fi; \
 	done
 .else
