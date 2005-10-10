@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: out-of-date,v 1.12 2005/10/10 22:08:27 bernd Exp $
+# $OpenBSD: out-of-date,v 1.13 2005/10/10 22:25:06 espie Exp $
 #
 # Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
 #
@@ -22,6 +22,7 @@ use OpenBSD::PackageInfo;
 use OpenBSD::PackingList;
 use OpenBSD::PackageName;
 use OpenBSD::ProgressMeter;
+use File::Temp;
 
 sub collect_installed
 {
@@ -126,6 +127,13 @@ sub collect_port_signatures
 		}
 	}
 
+	my $TMPDIR = $ENV{'TMPDIR'} || "/tmp";
+	my $tempdir = File::Temp::tempdir("libcache.XXXXXXX", DIR => $TMPDIR, CLEANUP => 1);
+	$ENV{'_DEPENDS_CACHE'} = "$tempdir/depends_cache";
+	$ENV{'_DEPENDS_FILE'} = "$tempdir/depends_file";
+	$ENV{'_PORT_LIBS_CACHE'} = $tempdir;
+	open(my $touch, '>', "$tempdir/depends_file");
+	close($touch);
 	my $cmd = "cd $portsdir && SUBDIR=\"".join(' ', @subdirs)
 	    ."\" REPORT_PROBLEM=true make print-package-signature |";
 
