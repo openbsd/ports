@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2005/10/09 08:30:39 alek Exp $
+# $OpenBSD: Makefile,v 1.201 2005/10/10 01:32:29 brad Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -47,6 +47,9 @@
 #    SUBDIR += libpics
 #    SUBDIR += libwww
      SUBDIR += lighttpd
+     SUBDIR += lighttpd,ldap
+     SUBDIR += lighttpd,ldap,mysql
+     SUBDIR += lighttpd,mysql
 #    SUBDIR += linemode
      SUBDIR += linkchecker
      SUBDIR += links
