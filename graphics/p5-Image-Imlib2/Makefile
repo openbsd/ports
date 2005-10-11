@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/05/23 17:46:43 msf Exp $
+# $OpenBSD: Makefile,v 1.6 2005/10/11 17:02:25 mbalmer Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -8,7 +8,7 @@ DISTNAME=	Image-Imlib2-1.07
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	graphics perl5
 
-MAINTAINER=	Michael Knudsen <e@molioner.dk>
+MAINTAINER=	Michael Knudsen <mk@molioner.dk>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

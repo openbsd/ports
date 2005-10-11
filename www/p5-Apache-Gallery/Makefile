@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/28 03:31:30 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2005/10/11 17:02:25 mbalmer Exp $
 
 
 COMMENT=		"mod_perl Apache gallery handler"
@@ -7,7 +7,7 @@ DISTNAME=		Apache-Gallery-0.9.1
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		www perl5
 
-MAINTAINER=		Michael Knudsen <e@molioner.dk>
+MAINTAINER=		Michael Knudsen <mk@molioner.dk>
 HOMEPAGE=		http://www.apachegallery.dk/
 
 # Artistic
