@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/03/05 16:27:14 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/10/11 05:53:47 kevlo Exp $
 phpicalendar/
 phpicalendar/AUTHORS
 phpicalendar/COPYING
@@ -12,14 +12,15 @@ phpicalendar/calendars/US Holidays.ics
 phpicalendar/calendars/Work.ics
 phpicalendar/calendars/publish.ical.php
 phpicalendar/calendars/publish.mozilla.php
-phpicalendar/config.inc.php
+phpicalendar/config.inc.php.default
+@sample phpicalendar/config.inc.php
 phpicalendar/day.php
+phpicalendar/error.php
 phpicalendar/functions/
 phpicalendar/functions/admin_functions.php
 phpicalendar/functions/calendar_functions.php
 phpicalendar/functions/date_functions.php
 phpicalendar/functions/draw_functions.php
-phpicalendar/functions/error.php
 phpicalendar/functions/event.js
 phpicalendar/functions/ical_parser.php
 phpicalendar/functions/init.inc.php
@@ -27,7 +28,6 @@ phpicalendar/functions/list_functions.php
 phpicalendar/functions/overlapping_events.php
 phpicalendar/functions/template.php
 phpicalendar/functions/timezones.php
-phpicalendar/functions/upload_functions.php
 phpicalendar/functions/userauth_functions.php
 phpicalendar/images/
 phpicalendar/images/cancelled.gif
@@ -46,6 +46,7 @@ phpicalendar/includes/login.php
 phpicalendar/includes/todo.php
 phpicalendar/index.php
 phpicalendar/languages/
+phpicalendar/languages/afrikaans.inc.php
 phpicalendar/languages/brazilian.inc.php
 phpicalendar/languages/catalan.inc.php
 phpicalendar/languages/czech.inc.php
@@ -129,6 +130,7 @@ phpicalendar/templates/default/preferences.tpl
 phpicalendar/templates/default/print.tpl
 phpicalendar/templates/default/rss_index.tpl
 phpicalendar/templates/default/search.tpl
+phpicalendar/templates/default/search_box.tpl
 phpicalendar/templates/default/sidebar.tpl
 phpicalendar/templates/default/todo.tpl
 phpicalendar/templates/default/week.tpl

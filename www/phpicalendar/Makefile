@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/03/05 16:27:14 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2005/10/11 05:53:47 kevlo Exp $
 
 COMMENT=	"web-based iCal file parser"
 
-V=		2.0b
+V=		2.0.1
 DISTNAME=	phpicalendar-${V}
 CATEGORIES=	www
 
@@ -34,5 +34,6 @@ SUBST_VARS=	INSTDIR
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 	@mv ${INSTDIR}-${V} ${INSTDIR}
+	@mv ${INSTDIR}/config.inc.php ${INSTDIR}/config.inc.php.default
 
 .include <bsd.port.mk>
