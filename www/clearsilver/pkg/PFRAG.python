@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.python,v 1.1 2005/07/23 17:08:13 sturm Exp $
-lib/python2.3/site-packages/neo_cgi.so
+@comment $OpenBSD: PFRAG.python,v 1.2 2005/10/11 03:59:24 fgsch Exp $
+lib/python${MODPY_VERSION}/site-packages/neo_cgi.so

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2005/10/11 03:59:24 fgsch Exp $
+--- configure.orig	Sun Oct  2 18:35:07 2005
++++ configure	Sun Oct  2 18:35:47 2005
+@@ -3084,7 +3084,7 @@ echo "configure:3048: checking for pytho
+     PYTHON=$python_bin
+     PYTHON_INC="-I$python_inc"
+     PYTHON_LIB=$python_lib
+-    PYTHON_SITE=`$python_bin -c "import site; print site.sitedirs[0]"`
++    PYTHON_SITE=`$python_bin -c "import sys; print [path for path in sys.path if path.find('site-packages') != -1][0]"`
+     BUILD_WRAPPERS="$BUILD_WRAPPERS python"
+   fi
+ fi

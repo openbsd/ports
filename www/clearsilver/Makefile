@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2005/07/23 17:08:13 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2005/10/11 03:59:24 fgsch Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"fast, powerful, and language-neutral HTML template system"
 
 DISTNAME=	clearsilver-0.9.14
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www net
 
 HOMEPAGE=       http://www.clearsilver.net/
@@ -32,9 +32,11 @@ FLAVORS+=	python
 FLAVOR?=
 
 .if ${FLAVOR:L:Mpython}
-CONFIGURE_ARGS+=	--with-python=${LOCALBASE}/bin/python
-BUILD_DEPENDS+=		:python-2.3*:lang/python/2.3
-RUN_DEPENDS+=		:python-2.3*:lang/python/2.3
+MODPY_VERSION?=	2.3
+CONFIGURE_ARGS+=	--with-python=${LOCALBASE}/bin/python${MODPY_VERSION}
+BUILD_DEPENDS+=		:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION}
+RUN_DEPENDS+=		:python-${MODPY_VERSION}*:lang/python/${MODPY_VERSION}
+SUBST_VARS=		MODPY_VERSION
 .else
 CONFIGURE_ARGS+=	--disable-python
 .endif
