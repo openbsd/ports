@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2005/10/12 05:37:43 fgsch Exp $
+--- Makefile.in.orig	Wed Nov  3 20:14:44 2004
++++ Makefile.in	Sun Oct  2 05:13:13 2005
+@@ -248,7 +248,7 @@ INSTALL_DATA = @INSTALL_DATA@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = -L./.libs @LDFLAGS@
+ LIBICONV = @LIBICONV@
+ LIBOBJS = @LIBOBJS@
+ LIBPNG12_CONFIG = @LIBPNG12_CONFIG@
+@@ -321,7 +321,7 @@ EXTRA_DIST = README-JPEG.TXT README.TXT 
+ include_HEADERS = gd.h gdfx.h gd_io.h gdcache.h gdfontg.h gdfontl.h gdfontmb.h gdfonts.h gdfontt.h entities.h
+ lib_LTLIBRARIES = libgd.la
+ libgd_la_SOURCES = gd.c gdfx.c gd_security.c gd_gd.c gd_gd2.c gd_io.c gd_io_dp.c gd_gif_in.c gd_gif_out.c gd_io_file.c gd_io_ss.c gd_jpeg.c gd_png.c gd_ss.c gd_topal.c gd_wbmp.c gdcache.c gdfontg.c gdfontl.c gdfontmb.c gdfonts.c gdfontt.c gdft.c gdhelpers.c gdhelpers.h gdkanji.c gdtables.c gdxpm.c jisx0208.h wbmp.c wbmp.h
+-libgd_la_LDFLAGS = -version-info 2:0:0
++libgd_la_LDFLAGS = -version-info @GDLIB_MAJOR@@GDLIB_MINOR@:@GDLIB_REVISION@:0
+ LDADD = ./libgd.la
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive

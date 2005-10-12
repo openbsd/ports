@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2005/10/12 05:37:43 fgsch Exp $
+--- configure.orig	Wed Nov  3 20:14:47 2004
++++ configure	Wed Sep 21 04:11:05 2005
+@@ -11338,7 +11338,7 @@ if test `eval echo '${'$as_ac_Header'}'`
+   cat >>confdefs.h <<_ACEOF
+ #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
+ _ACEOF
+- CPPFLAGS="$CPPFLAGS $libpng_CPPFLAGS/libpng"
++ CPPFLAGS="$CPPFLAGS $libpng_CPPFLAGS"
+ else
+   CPPFLAGS="$_cppflags"
+ fi
