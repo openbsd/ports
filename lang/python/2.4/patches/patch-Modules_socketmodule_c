@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_socketmodule_c,v 1.1.1.1 2005/06/07 01:12:58 alek Exp $
---- Modules/socketmodule.c.orig	Sun Nov  7 15:24:25 2004
-+++ Modules/socketmodule.c	Thu Dec 30 22:46:12 2004
+$OpenBSD: patch-Modules_socketmodule_c,v 1.2 2005/10/12 02:41:41 fgsch Exp $
+--- Modules/socketmodule.c.orig	Sun Nov  7 11:24:25 2004
++++ Modules/socketmodule.c	Mon Oct  3 13:54:53 2005
 @@ -63,9 +63,6 @@ Local naming conventions:
  
  #include "Python.h"
@@ -11,7 +11,26 @@ $OpenBSD: patch-Modules_socketmodule_c,v 1.1.1.1 2005/06/07 01:12:58 alek Exp $
  /* Socket object documentation */
  PyDoc_STRVAR(sock_doc,
  "socket([family[, type[, proto]]]) -> socket object\n\
-@@ -3220,7 +3217,7 @@ socket_inet_aton(PyObject *self, PyObjec
+@@ -1736,10 +1733,15 @@ internal_connect(PySocketSockObject *s, 
+ 
+ 	if (s->sock_timeout > 0.0) {
+ 		if (res < 0 && errno == EINPROGRESS) {
++			socklen_t res_size = sizeof res;
++			int save_errno;
++
+ 			timeout = internal_select(s, 1);
+-			res = connect(s->sock_fd, addr, addrlen);
+-			if (res < 0 && errno == EISCONN)
+-				res = 0;
++			save_errno = errno;
++			(void)getsockopt(s->sock_fd, SOL_SOCKET, SO_ERROR,
++			    &res, &res_size);
++			errno = save_errno;
++			res = res ? -1 : 0;
+ 		}
+ 	}
+ 
+@@ -3220,7 +3222,7 @@ socket_inet_aton(PyObject *self, PyObjec
  	struct in_addr buf;
  #else
  	/* Have to use inet_addr() instead */
