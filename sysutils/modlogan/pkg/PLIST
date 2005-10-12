@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/02/24 23:20:09 mjc Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/10/12 05:40:32 fgsch Exp $
 bin/modlogan
 lib/modlogan/
 lib/modlogan/libmla_input_bsdftpd.a
@@ -118,29 +118,12 @@ share/examples/modlogan/modlogan.css-dist
 @sample ${SYSCONFDIR}/modlogan/modlogan.css
 share/examples/modlogan/modlogan.def.conf-dist
 @sample ${SYSCONFDIR}/modlogan/modlogan.def.conf
-share/locale/
-share/locale/cs/
-share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/modlogan.mo
-share/locale/de/
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/modlogan.mo
-share/locale/es/
-share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/modlogan.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/modlogan.mo
-share/locale/hu/
-share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/modlogan.mo
-share/locale/it/
-share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/modlogan.mo
-share/locale/pl/
-share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/modlogan.mo
-share/locale/ru/
-share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/modlogan.mo
 %%SHARED%%
