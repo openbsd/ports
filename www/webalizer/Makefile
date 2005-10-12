@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/11 13:29:22 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2005/10/12 05:41:07 fgsch Exp $
 
 COMMENT=	"web server log file analysis program"
 
 DISTNAME=	webalizer-2.01-10-src
-PKGNAME=	webalizer-2.01.10p1
-CATEGORIES=     www
+PKGNAME=	webalizer-2.01.10p2
+CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.mrunix.net/webalizer/
 
-LIB_DEPENDS=    gd.18::graphics/gd
+LIB_DEPENDS=	gd.18::graphics/gd
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
@@ -21,12 +21,14 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes 
 WANTLIB=		c jpeg m png ttf z
 
+MODULES=	converters/libiconv
+
 WRKDIST=	${WRKDIR}/webalizer-2.01-10
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--enable-dns
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="-ljpeg -lttf"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		LIBS="-ljpeg -lttf -liconv"
 
 NO_REGRESS=	Yes
 
