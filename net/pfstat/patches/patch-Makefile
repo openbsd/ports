@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1 2005/10/12 05:39:33 fgsch Exp $
+--- Makefile.orig	Thu Sep 22 03:21:48 2005
++++ Makefile	Thu Sep 22 03:22:00 2005
+@@ -4,8 +4,8 @@ PROG=	pfstat
+ SRCS=	pfstat.c parse.y
+ CFLAGS+=	-Wall
+ CFLAGS+=	-I${LOCALBASE}/include
+-LDFLAGS+=	-L${LOCALBASE}/lib
+-LDFLAGS+=	-lgd -lm -lpng -lz -ljpeg -lttf
++LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
++LDFLAGS+=	-lgd -lm -lpng -lz -ljpeg -lttf -liconv
+ NOMAN=	1
+ 
+ .include <bsd.prog.mk>

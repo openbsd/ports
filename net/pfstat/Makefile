@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/16 00:31:24 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2005/10/12 05:39:32 fgsch Exp $
 
 COMMENT=	"packet filter statistics visualization"
 
 DISTNAME=	pfstat-1.7
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 MASTER_SITES=	http://www.benzedrine.cx/
 
@@ -15,6 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c jpeg m png ttf z 
+
+MODULES=	converters/libiconv
 
 LIB_DEPENDS=	gd.18::graphics/gd
 
