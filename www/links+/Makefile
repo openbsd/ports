@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.22 2005/09/28 05:59:36 fgsch Exp $
+# $OpenBSD: Makefile,v 1.23 2005/10/12 04:02:22 fgsch Exp $
 
 COMMENT=	"graphics and text browser with javascript support"
 
-VER=		2.1pre18
+VER=		2.1pre19
 DISTNAME=	links-${VER}
 PKGNAME=	links+-${VER}
 CATEGORIES=	www
-MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/local/clock/links/
+MASTER_SITES=	${HOMEPAGE}download/
 
 MAINTAINER=	Federico G. Schwindt <fgsch@openbsd.org>
 

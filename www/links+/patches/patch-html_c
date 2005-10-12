@@ -1,11 +1,11 @@
-$OpenBSD: patch-html_c,v 1.9 2005/09/28 05:59:36 fgsch Exp $
---- html.c.orig	Tue Sep 27 20:38:17 2005
-+++ html.c	Tue Sep 27 20:38:34 2005
-@@ -909,6 +909,7 @@ void html_a(unsigned char *a)
+$OpenBSD: patch-html_c,v 1.10 2005/10/12 04:02:22 fgsch Exp $
+--- html.c.orig	Sun Aug 21 21:15:07 2005
++++ html.c	Wed Oct 12 00:40:37 2005
+@@ -925,6 +925,7 @@ void html_a(unsigned char *a)
  			format.target = stracpy(format.target_base);
  		}
  		/*format.attr ^= AT_BOLD;*/
 +		format.attr |= AT_UNDERLINE;
- 		memcpy(&format.fg, &format.clink, sizeof(struct rgb));
+ 		set_link_attr();
  	} else if (!ev) kill_html_stack_item(&html_top);
  	if ((al = get_attr_val(a, "name"))) {
