@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2004/11/28 17:07:43 alek Exp $
+@comment $OpenBSD: PLIST,v 1.25 2005/10/12 05:42:31 fgsch Exp $
 @conflict chipmunk-*
 bin/analog
 share/analog/
@@ -7,8 +7,8 @@ share/analog/anlgform.pl
 @mode 111
 @group bin
 @sample /var/www/cgi-bin/anlgform.pl
-@group
 @mode
+@group
 share/analog/images/
 @group bin
 @sample /var/www/htdocs/analog-images/
@@ -303,6 +303,7 @@ share/analog/lang/README.txt
 share/analog/lang/am.lng
 share/analog/lang/amdom.tab
 share/analog/lang/ba.lng
+share/analog/lang/baq.lng
 share/analog/lang/bg.lng
 share/analog/lang/bgdesc.txt
 share/analog/lang/bgdom.tab
@@ -320,6 +321,8 @@ share/analog/lang/cata.lng
 share/analog/lang/catadom.tab
 share/analog/lang/catdom.tab
 share/analog/lang/cn.lng
+share/analog/lang/cndesc.txt
+share/analog/lang/cndom.tab
 share/analog/lang/cz.lng
 share/analog/lang/cz1.lng
 share/analog/lang/cz1a.lng
@@ -464,11 +467,12 @@ share/analog/lang/yua.lng
 share/analog/lang/yudom.tab
 share/doc/analog/
 share/doc/analog/LicBSD.txt
-share/doc/analog/Licapach.txt
+share/doc/analog/Licbzip2.txt
 share/doc/analog/Licence.txt
 share/doc/analog/Licgd.txt
 share/doc/analog/Licpcre.txt
 share/doc/analog/Licpng.txt
+share/doc/analog/Licunzip.txt
 share/doc/analog/Liczlib.txt
 share/doc/analog/Readme.html
 share/doc/analog/acknow.html
@@ -525,6 +529,7 @@ share/doc/analog/wasnew1.html
 share/doc/analog/wasnew2.html
 share/doc/analog/wasnew3.html
 share/doc/analog/wasnew4.html
+share/doc/analog/wasnew5.html
 share/doc/analog/webworks.html
 share/doc/analog/whatsnew.html
 share/examples/analog/

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2005/07/05 14:28:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2005/10/12 05:42:31 fgsch Exp $
 
 COMMENT=	"extremely fast program for analysing WWW logfiles"
 
-DISTNAME=	analog-5.32
-PKGNAME=	${DISTNAME}p3
+DISTNAME=	analog-6.0
 CATEGORIES=	www
 
 MASTER_SITES=	http://www.analog.cx/ \
@@ -28,7 +27,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	gd.18::graphics/gd \
 		pcre.0::devel/pcre
-WANTLIB=	jpeg png ttf c m z
+WANTLIB=	c m jpeg png ttf z
+
+MODULES=	converters/libiconv
 
 ANALOGDIR=	${PREFIX}/share/analog
 CONFIGFILE=	${SYSCONFDIR}/analog.cfg
@@ -47,7 +48,7 @@ CFLAGS+=	-I${LOCALBASE}/include \
 
 ALL_TARGET=	analog
 MAKE_FLAGS=	CC='${CC}' CFLAGS='${CFLAGS}' \
-		LIBS="-L${LOCALBASE}/lib -lm -lgd -lpng -ljpeg -lttf -lz -lpcre"
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm -lgd -lpng -ljpeg -lttf -lz -lpcre -liconv"
 
 post-patch:
 	@mv ${WRKSRC}/anlgform.pl ${WRKSRC}/anlgform.pl.src
@@ -59,15 +60,14 @@ NO_REGRESS=	Yes
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/analog
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/analog
-	${INSTALL_DATA_DIR} ${ANALOGDIR}/lang
-	${INSTALL_DATA_DIR} ${ANALOGDIR}/images
+	${INSTALL_DATA_DIR} ${ANALOGDIR}/lang ${ANALOGDIR}/images
 	${INSTALL_PROGRAM} ${WRKBUILD}/analog ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/analog
 	${INSTALL_DATA} ${WRKSRC}/examples/*.cfg \
-		${PREFIX}/share/examples/analog
+	    ${PREFIX}/share/examples/analog
 	${INSTALL_DATA} ${WRKSRC}/images/* ${ANALOGDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/lang/* ${ANALOGDIR}/lang
-	${INSTALL_DATA} ${WRKSRC}/anlgform.html ${ANALOGDIR}
-	${INSTALL_DATA} ${WRKSRC}/anlgform.pl ${ANALOGDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} anlgform.html anlgform.pl \
+	    ${ANALOGDIR}
 
 .include <bsd.port.mk>
