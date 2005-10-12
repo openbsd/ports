@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/23 11:22:01 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/10/12 05:38:51 fgsch Exp $
 
 COMMENT=		"graphical representation of CVS repository"
 
 DISTNAME=		cvsgraph-1.5.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		devel
 HOMEPAGE=		http://www.akhphd.au.dk/~bertho/cvsgraph
 
@@ -15,6 +16,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c jpeg m png ttf z
 
+MODULES=		converters/libiconv
+
 MASTER_SITES=		${HOMEPAGE}/release/
 
 LIB_DEPENDS=		gd.18::graphics/gd
@@ -22,10 +25,11 @@ LIB_DEPENDS=		gd.18::graphics/gd
 ALL_TARGET=		
 
 CONFIGURE_STYLE=	gnu dest
-CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
-			LIBS="-lpng -lttf -ljpeg -lz"
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+			LIBS="-lpng -lttf -ljpeg -lz -liconv"
 CONFIGURE_ARGS=		--with-gd-inc=${LOCALBASE}/include \
-			--with-gd-lib=${LOCALBASE}/lib
+			--with-gd-lib=${LOCALBASE}/lib \
+			--with-freetype-lib=${X11BASE}/lib
 
 NO_REGRESS=		Yes
 
