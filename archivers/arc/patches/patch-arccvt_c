@@ -1,6 +1,7 @@
---- ./arccvt.c.orig	Tue Aug 10 23:03:24 1999
-+++ ./arccvt.c	Tue Aug 10 23:01:55 1999
-@@ -120,7 +120,7 @@
+$OpenBSD: patch-arccvt_c,v 1.2 2005/10/13 18:05:20 naddy Exp $
+--- arccvt.c.orig	Tue Oct 11 23:46:34 2005
++++ arccvt.c	Tue Oct 11 23:46:44 2005
+@@ -120,7 +120,7 @@ cvtfile(hdr)			/* convert a file */
  	writehdr(hdr, new);	/* write out real header */
  	fseek(new, hdr->size, 1);	/* skip over data to next header */
  	fclose(tmp);		/* all done with the file */

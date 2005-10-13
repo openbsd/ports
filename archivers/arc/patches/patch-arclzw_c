@@ -1,6 +1,7 @@
---- ./arclzw.c.orig	Tue Aug 10 23:03:25 1999
-+++ ./arclzw.c	Tue Aug 10 23:01:57 1999
-@@ -546,7 +546,7 @@
+$OpenBSD: patch-arclzw_c,v 1.2 2005/10/13 18:05:20 naddy Exp $
+--- arclzw.c.orig	Tue Oct 11 23:48:21 2005
++++ arclzw.c	Tue Oct 11 23:48:30 2005
+@@ -560,7 +560,7 @@ decomp(squash, f, t)		/* decompress a fi
  		 */
  		if (code >= free_ent) {
  			if (code > free_ent) {

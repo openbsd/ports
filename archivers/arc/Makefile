@@ -1,23 +1,30 @@
-# $OpenBSD: Makefile,v 1.24 2004/11/21 12:50:32 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2005/10/13 18:05:20 naddy Exp $
 
 COMMENT=	"create & extract files from DOS .ARC files"
 
-DISTNAME=       arc521e.pl8
-PKGNAME=        arc-5.21e
+DISTNAME=	arc-5.21n
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
-EXTRACT_SUFX=   .tar.Z
-WANTLIB=	c
 
-# Restrictive
-PERMIT_PACKAGE_CDROM=	"no modifications"
-PERMIT_PACKAGE_FTP=	"no modifications"
-PERMIT_DISTFILES_CDROM=	"no fee"
+# GPL
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_FLAGS=	CC="${CC}" OPT="${CFLAGS}"
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=arc/}
+EXTRACT_SUFX=	.tgz
 
-WRKDIST=	${WRKDIR}
+WANTLIB=	c
+
+MAKE_FLAGS=	CC="${CC}" OPT="${CFLAGS}" TMCLOCK=""
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/arc ${WRKBUILD}/marc ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/arc.1 ${PREFIX}/man/man1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/arc
+	${INSTALL_DATA} ${WRKSRC}/Arc521.doc ${WRKSRC}/Arcinfo \
+		${PREFIX}/share/doc/arc
+
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

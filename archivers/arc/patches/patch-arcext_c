@@ -1,15 +1,16 @@
---- ./arcext.c.orig	Tue Aug 10 23:03:25 1999
-+++ ./arcext.c	Tue Aug 10 23:01:56 1999
-@@ -143,7 +143,7 @@
+$OpenBSD: patch-arcext_c,v 1.2 2005/10/13 18:05:20 naddy Exp $
+--- arcext.c.orig	Tue Oct 11 23:47:29 2005
++++ arcext.c	Tue Oct 11 23:47:45 2005
+@@ -143,7 +143,7 @@ extfile(hdr, path, prt)		/* extract a fi
  	if (note)
  		printf("Extracting file: %s\n", fix);
  
 -	if (warn && !overlay) {
 +	if (arcwarn && !overlay) {
- 		if (f = fopen(fix, "r")) {	/* see if it exists */
+ 		if ((f = fopen(fix, "r"))) {	/* see if it exists */
  				fclose(f);
  				printf("WARNING: File %s already exists!", fix);
-@@ -190,7 +190,7 @@
+@@ -190,7 +190,7 @@ extfile(hdr, path, prt)		/* extract a fi
  	if (!f)
  #endif
  	{
