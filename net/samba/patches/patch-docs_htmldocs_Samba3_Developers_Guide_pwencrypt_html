@@ -1,0 +1,19 @@
+--- ../docs/htmldocs/Samba3-Developers-Guide/pwencrypt.html.orig	Fri Aug 19 20:01:27 2005
++++ ../docs/htmldocs/Samba3-Developers-Guide/pwencrypt.html	Sat Aug 20 06:17:25 2005
+@@ -51,12 +51,12 @@
+ 	containing this 16 byte value must be kept. To minimise problems with
+ 	these two password files, getting out of sync, the UNIX <code class="filename">
+ 	/etc/passwd</code> and the <code class="filename">smbpasswd</code> file, 
+-	a utility, <span><strong class="command">mksmbpasswd.sh</strong></span>, is provided to generate
++	a utility, <span><strong class="command">mksmbpasswd</strong></span>, is provided to generate
+ 	a smbpasswd file from a UNIX <code class="filename">/etc/passwd</code> file.
+ 	</p><p>To generate the smbpasswd file from your <code class="filename">/etc/passwd
+-	</code> file use the following command:</p><p><code class="prompt">$ </code><strong class="userinput"><code>cat /etc/passwd | mksmbpasswd.sh
+-	&gt; /usr/local/samba/private/smbpasswd</code></strong></p><p>If you are running on a system that uses NIS, use</p><p><code class="prompt">$ </code><strong class="userinput"><code>ypcat passwd | mksmbpasswd.sh
+-	&gt; /usr/local/samba/private/smbpasswd</code></strong></p><p>The <span><strong class="command">mksmbpasswd.sh</strong></span> program is found in 
++	</code> file use the following command:</p><p><code class="prompt">$ </code><strong class="userinput"><code>cat /etc/passwd | mksmbpasswd
++	&gt; /usr/local/samba/private/smbpasswd</code></strong></p><p>If you are running on a system that uses NIS, use</p><p><code class="prompt">$ </code><strong class="userinput"><code>ypcat passwd | mksmbpasswd
++	&gt; /usr/local/samba/private/smbpasswd</code></strong></p><p>The <span><strong class="command">mksmbpasswd</strong></span> program is found in 
+ 	the Samba source directory. By default, the smbpasswd file is 
+ 	stored in :</p><p><code class="filename">/usr/local/samba/private/smbpasswd</code></p><p>The owner of the <code class="filename">/usr/local/samba/private/</code> 
+ 	directory should be set to root, and the permissions on it should 

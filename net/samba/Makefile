@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2005/09/12 16:57:39 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.58 2005/10/13 21:00:38 mbalmer Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
 
-DISTNAME=		samba-3.0.13
-PKGNAME=		${DISTNAME}p2
-FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}p2
+DISTNAME=		samba-3.0.20b
+FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 
 CATEGORIES=	net
 

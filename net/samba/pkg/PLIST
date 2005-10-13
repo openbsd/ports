@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2005/09/07 10:42:05 espie Exp $
-@pkgpath net/samba/stable
+@comment $OpenBSD: PLIST,v 1.22 2005/10/13 21:00:38 mbalmer Exp $
 bin/findsmb
 bin/mksmbpasswd
 bin/net
@@ -21,7 +20,6 @@ bin/tdbbackup
 bin/tdbdump
 bin/tdbtool
 bin/testparm
-bin/testprns
 include/libsmbclient.h
 lib/samba/
 lib/samba/auth/
@@ -34,7 +32,6 @@ lib/samba/fr.msg
 lib/samba/idmap/
 lib/samba/it.msg
 lib/samba/ja.msg
-lib/samba/libsmbclient.a
 lib/samba/lowcase.dat
 lib/samba/nl.msg
 lib/samba/pdb/
@@ -80,6 +77,7 @@ libexec/swat
 @man man/man5/smbgetrc.5
 @man man/man5/smbpasswd.5
 @man man/man7/samba.7
+@man man/man8/libsmbclient.8
 @man man/man8/mount.cifs.8
 @man man/man8/net.8
 @man man/man8/nmbd.8
@@ -94,64 +92,12 @@ libexec/swat
 @man man/man8/swat.8
 @man man/man8/tdbbackup.8
 @man man/man8/tdbdump.8
+@man man/man8/umount.cifs.8
 @man man/man8/winbindd.8
-share/examples/samba/
-share/examples/samba/LDAP/smbldap-tools-0.8.7/
-share/examples/samba/LDAP/smbldap-tools-0.8.7/CONTRIBUTORS
-share/examples/samba/LDAP/smbldap-tools-0.8.7/COPYING
-share/examples/samba/LDAP/smbldap-tools-0.8.7/ChangeLog
-share/examples/samba/LDAP/smbldap-tools-0.8.7/FILES
-share/examples/samba/LDAP/smbldap-tools-0.8.7/INFRA
-share/examples/samba/LDAP/smbldap-tools-0.8.7/INSTALL
-share/examples/samba/LDAP/smbldap-tools-0.8.7/Makefile
-share/examples/samba/LDAP/smbldap-tools-0.8.7/README
-share/examples/samba/LDAP/smbldap-tools-0.8.7/TODO
-share/examples/samba/LDAP/smbldap-tools-0.8.7/configure.pl
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/contents_motif.gif
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/index.html
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/next_motif.gif
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/previous_motif.gif
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools.html
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools001.html
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools002.html
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools003.html
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools004.html
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools005.html
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools006.html
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools007.html
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools008.html
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools009.html
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/html/smbldap-tools010.html
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/smbldap-migrate-accounts
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/smbldap-migrate-groups
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/smbldap-migrate-unix-accounts
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/smbldap-migrate-unix-groups
-share/examples/samba/LDAP/smbldap-tools-0.8.7/doc/smbldap-tools.pdf
-share/examples/samba/LDAP/smbldap-tools-0.8.7/smb.conf
-share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-groupadd
-share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-groupdel
-share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-groupmod
-share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-groupshow
-share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-passwd
-share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-populate
-share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-useradd
-share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-userdel
-share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-userinfo
-share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-usermod
-share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap-usershow
-share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap.conf
-share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap_bind.conf
-share/examples/samba/LDAP/smbldap-tools-0.8.7/smbldap_tools.pm
-share/examples/samba/misc/adssearch.pl
-share/examples/samba/misc/check_multiple_LDAP_entries.pl
 share/examples/samba/smb.conf.default
 @sample ${SYSCONFDIR}/samba/
 @sample ${SYSCONFDIR}/samba/smb.conf
 share/swat/
-share/swat/help/Samba-Guide/nw4migration.html
-share/swat/help/Samba-HOWTO-Collection/largefile.html
 share/swat/images/
 share/swat/images/globals.gif
 share/swat/images/home.gif
