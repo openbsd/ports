@@ -1,6 +1,6 @@
-$OpenBSD: patch-xpfe_bootstrap_mozilla_in,v 1.7 2005/09/26 21:04:48 kurt Exp $
---- xpfe/bootstrap/mozilla.in.orig	Tue Sep 20 17:08:38 2005
-+++ xpfe/bootstrap/mozilla.in	Fri Sep 23 18:12:35 2005
+$OpenBSD: patch-xpfe_bootstrap_mozilla_in,v 1.8 2005/10/13 04:32:41 bernd Exp $
+--- xpfe/bootstrap/mozilla.in.orig	Tue Sep 20 23:08:38 2005
++++ xpfe/bootstrap/mozilla.in	Wed Oct 12 15:28:09 2005
 @@ -73,6 +73,7 @@ moz_pis_startstop_scripts()
  #set -x
  
@@ -9,7 +9,100 @@ $OpenBSD: patch-xpfe_bootstrap_mozilla_in,v 1.7 2005/09/26 21:04:48 kurt Exp $
  MRE_HOME=%MREDIR%
  
  # honor MOZILLA_FIVE_HOME if it's there
-@@ -154,7 +155,11 @@ do
+@@ -84,6 +85,7 @@ else
+   found=0
+   progname=$0
+   curdir=`dirname "$progname"`
++  progbase=`basename "$progname"`
+   run_moz="$curdir/run-mozilla.sh"
+   if test -x "$run_moz"; then
+     dist_bin=$curdir
+@@ -112,6 +114,7 @@ else
+     # Check default compile-time libdir
+     if [ -x "$moz_libdir/run-mozilla.sh" ]; then
+       dist_bin=$moz_libdir
++      run_moz="$dist_bin/run-mozilla.sh"
+     else 
+       echo "Cannot find mozilla runtime directory. Exiting."
+       exit 1
+@@ -123,10 +126,76 @@ script_args=""
+ debugging=0
+ MOZILLA_BIN="%MOZILLA-BIN%"
+ 
++# The following is to check for a currently running instance.
++# This is taken almost verbatim from the Mozilla RPM package's launch script.
++MOZ_CLIENT_PROGRAM="$dist_bin/mozilla-xremote-client"
++check_running() {
++    "${run_moz}" "$MOZ_CLIENT_PROGRAM" -a "${progbase}" 'ping()' 2>/dev/null >/dev/null
++    RETURN_VAL=$?
++    if [ $RETURN_VAL -eq 0 ]; then
++        echo 1
++        return 1
++    else
++        echo 0
++        return 0
++    fi
++}
++
+ if [ "$OSTYPE" = "beos" ]; then
+   mimeset -F $MOZILLA_BIN
+ fi
+ 
++ALREADY_RUNNING=`check_running`
++
++################################################################ Parse Arguments
++# If there's a command line argument but it doesn't begin with a -
++# it's probably a url.  Try to send it to a running instance.
++_USE_EXIST=0
++_optOne="$1"
++case "${_optOne}" in
++	-*) 
++		;;
++	*)
++		_USE_EXIST=1
++		;;
++esac
++
++_optLast=
++for i in "$@"; do 
++	_optLast="${i}"
++done #last arg
++
++if [ `expr "${_optLast}" : '.*:/.*'` -eq 0 -a \( -f "${_optLast}" -o -d "${_optLast}" \) ]; then
++	# Last argument seems to be a local file/directory
++	# Check, if it is absolutely specified (ie. /home/foo/file vs. ./file)
++	# If it is just "relatively" (./file) specified, make it absolutely
++	[ `expr "${_optLast}" : '/.*'` -eq 0 ] && _optLast="file://`pwd`/${_optLast}"
++fi
++################################################################ Parse Arguments
++
++########################################################################### Main
++if [ $ALREADY_RUNNING -eq 1 ]; then
++	# There's an instance already running. Use it.
++	# Any command line args passed in?
++	if [ $# -gt 0 ]; then
++		# There were "some" command line args.
++		if [ ${_USE_EXIST} -eq 1 ]; then
++			# We should use an existing instance, as _USE_EXIST=$_USE_EXIST=-1
++			_remote_cmd="openURL(${_optLast})"
++			"${run_moz}" "$MOZ_CLIENT_PROGRAM" -a "${progbase}" "${_remote_cmd}"
++			unset _remote_cmd
++			exit $?
++		fi
++	else
++		# No command line args. Open new window/tab
++		#exec "${run_moz}" "$MOZ_CLIENT_PROGRAM" -a "${progbase}" "xfeDoCommand(openBrowser)"
++		"${run_moz}" "$MOZ_CLIENT_PROGRAM" -a "${progbase}" "xfeDoCommand(openBrowser)"
++		exit $?
++	fi
++fi
++# Default action - no running instance or _USE_EXIST (${_USE_EXIST}) ! -eq 1
++########################################################################### Main
++
+ pass_arg_count=0
+ while [ $# -gt $pass_arg_count ]
+ do
+@@ -154,7 +223,11 @@ do
    esac
  done
  
