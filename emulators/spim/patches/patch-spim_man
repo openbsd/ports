@@ -1,9 +1,0 @@
-$OpenBSD: patch-spim_man,v 1.1 2004/10/01 06:18:14 robert Exp $
---- spim.man.orig	Thu Jul  8 03:24:24 2004
-+++ spim.man	Wed Sep 29 11:38:37 2004
-@@ -1,5 +1,4 @@
- .\" $Header: /home/cvs/ports/emulators/spim/patches/Attic/patch-spim_man,v 1.1 2004/10/01 06:18:14 robert Exp $
--
- .TH spim 1
- .SH NAME
- spim \- A MIPS32 Simulator

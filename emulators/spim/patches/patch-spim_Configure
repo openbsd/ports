@@ -1,0 +1,9 @@
+$OpenBSD: patch-spim_Configure,v 1.1 2005/10/13 09:06:54 kevlo Exp $
+--- spim/Configure.orig	Thu Oct 13 15:18:37 2005
++++ spim/Configure	Thu Oct 13 15:18:54 2005
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/usr/bin/env sh
+ #
+ # Shell script to configure SPIM.
+ #

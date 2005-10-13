@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2005/01/31 06:18:23 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2005/10/13 09:06:54 kevlo Exp $
 
 COMMENT=	"MIPS R2000/R3000 simulator"
 
 DISTNAME=	spim
-PKGNAME=	spim-7.1
+PKGNAME=	spim-7.2.1
 CATEGORIES=	emulators
 
 HOMEPAGE=	http://www.cs.wisc.edu/~larus/spim.html
@@ -19,26 +19,24 @@ WANTLIB=		ICE SM X11 Xaw Xext Xmu Xp Xpm Xt c m
 
 MASTER_SITES=	http://www.cs.wisc.edu/~larus/SPIM/
 
-CONFIGURE_STYLE= gnu imake
-CONFIGURE_SCRIPT= Configure
+BUILD_DEPENDS=	:bison-*:devel/bison
+
+XMKMF=		xmkmf
 
 WRKDIST=	${WRKDIR}/${PKGNAME}
 
-ALL_TARGET=	spim xspim	
+FAKE_FLAGS=	PREFIX="${PREFIX}"
 
-REGRESS_DEPENDS=::emulators/spim
-REGRESS_TARGET=	test
-
-DOCS=	cycle.ps
+do-build:
+	(cd ${WRKSRC}/spim; ./Configure && ${MAKE})
+	(cd ${WRKSRC}/xspim; ${XMKMF} && ${MAKE})
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/spim
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/spim
-	${INSTALL_DATA} ${WRKSRC}/exceptions.s ${PREFIX}/share/spim
-	${INSTALL_PROGRAM} ${WRKSRC}/spim ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/xspim ${PREFIX}/bin
-	cd ${WRKSRC}/Documentation; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/spim
-	${INSTALL_MAN} ${WRKSRC}/spim.man ${PREFIX}/man/man1/spim.1
-	${INSTALL_MAN} ${WRKSRC}/xspim.man ${PREFIX}/man/man1/xspim.1
+	${INSTALL_PROGRAM} ${WRKSRC}/spim/spim ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xspim/xspim ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/CPU/exceptions.s ${PREFIX}/share/spim
+	${INSTALL_MAN} ${WRKSRC}/Documentation/spim.man ${PREFIX}/man/man1/spim.1
+	${INSTALL_MAN} ${WRKSRC}/Documentation/xspim.man ${PREFIX}/man/man1/xspim.1
 
 .include <bsd.port.mk>
