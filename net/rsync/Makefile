@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2005/08/09 18:40:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2005/10/14 19:31:39 naddy Exp $
 
 COMMENT=	"mirroring/synchronization over low bandwidth links"
 
 DISTNAME=	rsync-2.6.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 HOMEPAGE=	http://rsync.samba.org/
 
@@ -23,7 +24,8 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/rsync/ \
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-included-popt \
-		--with-rsyncd-conf="${SYSCONFDIR}/rsyncd.conf"
+		--with-rsyncd-conf="${SYSCONFDIR}/rsyncd.conf" \
+		--with-rsh="ssh -T"
 
 DOCDIR=	${PREFIX}/share/doc/rsync
 
