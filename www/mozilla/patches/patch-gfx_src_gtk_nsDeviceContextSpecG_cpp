@@ -1,30 +1,12 @@
-$OpenBSD: patch-gfx_src_gtk_nsDeviceContextSpecG_cpp,v 1.1 2005/04/11 15:03:18 kurt Exp $
---- gfx/src/gtk/nsDeviceContextSpecG.cpp.orig	Thu Feb 17 16:24:34 2005
-+++ gfx/src/gtk/nsDeviceContextSpecG.cpp	Mon Apr  4 12:56:30 2005
-@@ -68,6 +68,8 @@
- 
- #include "prlink.h"
- 
-+static PRLibrary *clib = nsnull;
-+
- typedef struct				/**** Printer Options ****/
- {
-   char		*name;			/* Name of option */
-@@ -1133,7 +1135,8 @@ nsresult GlobalPrinters::InitializeGloba
+$OpenBSD: patch-gfx_src_gtk_nsDeviceContextSpecG_cpp,v 1.2 2005/10/14 04:00:38 kurt Exp $
+--- gfx/src/gtk/nsDeviceContextSpecG.cpp.orig	Thu Feb 17 16:25:16 2005
++++ gfx/src/gtk/nsDeviceContextSpecG.cpp	Mon Sep 26 17:14:17 2005
+@@ -1133,7 +1133,7 @@ nsresult GlobalPrinters::InitializeGloba
        free(printerList);
      } else {
        /* Try to use CUPS */
 -      PRLibrary *clib = PR_LoadLibrary("libcups.so.2");
-+      if (clib == nsnull)
-+        clib = PR_LoadLibrary("libcups.so");
++      PRLibrary *clib = PR_LoadLibrary("libcups.so");
        if (clib) {
          CupsGetDestsType  CupsGetDests;
          CupsGetDestType   CupsGetDest;
-@@ -1178,7 +1181,6 @@ nsresult GlobalPrinters::InitializeGloba
-             (*CupsFreeDests)(num_dests, dests);
-           }
-         }
--        PR_UnloadLibrary(clib);
-       }
-     }
- 
