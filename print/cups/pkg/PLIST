@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/09/30 06:56:34 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/10/14 18:10:15 fgsch Exp $
 @conflict LPRng-*
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS:/nonexistent:/sbin/nologin
@@ -23,9 +23,7 @@ include/cups/md5.h
 include/cups/ppd.h
 include/cups/raster.h
 lib/libcups.a
-@comment lib/libcups.so
 lib/libcupsimage.a
-@comment lib/libcupsimage.so
 libexec/cups/
 libexec/cups/backend/
 libexec/cups/backend/http
@@ -769,42 +767,44 @@ share/examples/cups/ppd/
 @sample ${SYSCONFDIR}/cups/ppd/
 share/examples/cups/printers.conf
 @sample ${SYSCONFDIR}/cups/printers.conf
-@comment share/locale/
-@comment share/locale/C/
-@comment share/locale/C/cups_C
-@comment share/locale/be/
-@comment share/locale/be/cups_be
-@comment share/locale/cs/
-@comment share/locale/cs/cups_cs
-@comment share/locale/de/
-@comment share/locale/de/cups_de
-@comment share/locale/en/
-@comment share/locale/en/cups_en
-@comment share/locale/en_US/
-@comment share/locale/en_US/cups_en_US
-@comment share/locale/es/
-@comment share/locale/es/cups_es
-@comment share/locale/fr/
-@comment share/locale/fr/cups_fr
-@comment share/locale/he/
-@comment share/locale/he/cups_he
-@comment share/locale/it/
-@comment share/locale/it/cups_it
-@comment share/locale/ru_RU/
-@comment share/locale/ru_RU/cups_ru_RU
-@comment share/locale/sv/
-@comment share/locale/sv/cups_sv
-@comment share/locale/uk/
-@comment share/locale/uk/cups_uk
-@comment share/locale/uk_UA/
-@comment share/locale/uk_UA/cups_uk_UA
-@comment share/locale/zh_CN/
-@comment share/locale/zh_CN/cups_zh_CN
 %%SHARED%%
 @owner _cups
 @group _cups
 @sample /var/log/cups/
 @sample /var/spool/cups/
 @sample /var/spool/cups/tmp/
+@owner
+@group
+share/locale/
+share/locale/C/
+share/locale/C/cups_C
+share/locale/be/
+share/locale/be/cups_be
+share/locale/cs/
+share/locale/cs/cups_cs
+share/locale/de/
+share/locale/de/cups_de
+share/locale/en/
+share/locale/en/cups_en
+share/locale/en_US/
+share/locale/en_US/cups_en_US
+share/locale/es/
+share/locale/es/cups_es
+share/locale/fr/
+share/locale/fr/cups_fr
+share/locale/he/
+share/locale/he/cups_he
+share/locale/it/
+share/locale/it/cups_it
+share/locale/ru_RU/
+share/locale/ru_RU/cups_ru_RU
+share/locale/sv/
+share/locale/sv/cups_sv
+share/locale/uk/
+share/locale/uk/cups_uk
+share/locale/uk_UA/
+share/locale/uk_UA/cups_uk_UA
+share/locale/zh_CN/
+share/locale/zh_CN/cups_zh_CN
 @extraunexec rm -fr /var/log/cups
 @extraunexec rm -fr /var/spool/cups

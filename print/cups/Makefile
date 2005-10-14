@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2005/10/09 10:29:46 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.7 2005/10/14 18:10:15 fgsch Exp $
 
 COMMENT=		"Common Unix Printing System"
 
 VERSION=		1.1.23
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		${DISTNAME:S/-source//}p4
+PKGNAME=		${DISTNAME:S/-source//}p5
 CATEGORIES=		print sysutils
 
 HOMEPAGE=		http://www.cups.org/
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c crypto m ssl z
+WANTLIB=		c m z
 
 MASTER_SITES=		http://ftp.easysw.com/pub/cups/${VERSION}/ \
 			http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
@@ -61,6 +61,19 @@ REGRESS_FLAGS=		LOCALBASE=${LOCALBASE}
 
 REGRESS_DEPENDS=	::print/htmldoc
 REGRESS_IS_INTERACTIVE=	Yes
+
+FLAVORS=	no_gnutls
+FLAVOR?=
+
+.if ${FLAVOR:L:Mno_gnutls}
+WANTLIB+=	crypto ssl
+.else
+MODULES=	devel/gettext
+
+CONFIGURE_ARGS+= --disable-openssl --enable-gnutls
+LIB_DEPENDS+=	gnutls.12::security/gnutls
+WANTLIB+=	gpg-error.1 gcrypt.12
+.endif
 
 post-configure:
 .for i in cups.sh config.h cups-config conf/cupsd.conf

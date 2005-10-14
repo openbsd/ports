@@ -1,3 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/01/16 12:36:51 mbalmer Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/10/14 18:10:15 fgsch Exp $
+@comment lib/libcups.so
 @lib lib/libcups.so.2.2
+@comment lib/libcupsimage.so
 @lib lib/libcupsimage.so.2.2
