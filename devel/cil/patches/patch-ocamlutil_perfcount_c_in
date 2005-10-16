@@ -1,0 +1,49 @@
+$OpenBSD: patch-ocamlutil_perfcount_c_in,v 1.1 2005/10/16 21:55:15 pvalchev Exp $
+--- ocamlutil/perfcount.c.in.orig	Sat Oct  8 02:22:55 2005
++++ ocamlutil/perfcount.c.in	Sat Oct  8 02:23:45 2005
+@@ -22,7 +22,7 @@ inline static unsigned long long read_pp
+ #if !defined(__i386__)
+   printf ("Reading of performance counters is supported only on Intel x86\n");
+   exit(1);
+-#endif
++#else
+ 
+   // RDTSC puts the result in EAX and EDX. We tell gcc to use those registers
+   // for "low" and "high"
+@@ -37,6 +37,7 @@ inline static unsigned long long read_pp
+     first_value = lowhigh;
+   }
+   return lowhigh - first_value;
++#endif
+ }
+ 
+ 
+@@ -50,9 +51,15 @@ inline static unsigned long long read_pp
+ inline static unsigned long sample_ppc_20()
+ {
+   unsigned long low, high;
++
++#if !defined(__i386__)
++  printf ("Reading of performance counters is supported only on Intel x86\n");
++  exit(1);
++#else
+   __asm__ volatile ("rdtsc" : "=a" (low), "=d" (high));
+ 
+   return ((low >> 20) | (high << 12)) & 0x3FFFFFFF;
++#endif
+ }
+ 
+ /* This version drops the low 10 bits, yielding something like
+@@ -60,7 +67,12 @@ inline static unsigned long sample_ppc_2
+ inline static unsigned long sample_ppc_10()
+ {
+   unsigned long low, high;
++#if !defined(__i386__)
++  printf ("Reading of performance counters is supported only on Intel x86\n");
++  exit(1);
++#else
+   __asm__ volatile ("rdtsc" : "=a" (low), "=d" (high));
++#endif
+ 
+   return ((low >> 10) | (high << 22)) & 0x3FFFFFFF;
+ }
