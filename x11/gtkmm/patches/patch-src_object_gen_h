@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_object_gen_h,v 1.1 2005/10/16 13:10:37 grange Exp $
+--- src/object.gen_h.orig	Sun Jul 15 17:33:38 2001
++++ src/object.gen_h	Sun Oct 16 13:09:58 2005
+@@ -267,7 +267,6 @@ void Object::destroy_()
+ //                        GtkFunction(&gtkmm_object_destroy_callback),
+ //		        gtkobj());
+     gtk_object_destroy(gtkobject);
+-  destroyed_=true;
+ }
+ 
+ void Object::gtkmm_sigsegv(const char *pos) {
