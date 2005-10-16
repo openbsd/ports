@@ -1,42 +1,58 @@
-$OpenBSD: patch-dbinc_mutex_h,v 1.1 2004/05/27 21:05:25 pvalchev Exp $
---- dbinc/mutex.h.orig	2003-09-20 15:40:49.000000000 -0600
-+++ dbinc/mutex.h	2004-05-27 14:51:44.000000000 -0600
-@@ -578,28 +578,28 @@ typedef u_int32_t tsl_t;
+$OpenBSD: patch-dbinc_mutex_h,v 1.2 2005/10/16 00:11:00 brad Exp $
+--- dbinc/mutex.h.orig	Fri Oct 14 20:53:37 2005
++++ dbinc/mutex.h	Fri Oct 14 20:55:23 2005
+@@ -578,33 +578,27 @@ typedef u_int32_t tsl_t;
   * 'set' mutexes have the value 1, like on Intel; the returned value from
   * MUTEX_SET() is 1 if the mutex previously had its low bit clear, 0 otherwise.
   */
 -#ifdef HAVE_MUTEX_PPC_GCC_ASSEMBLY
- static inline int
- MUTEX_SET(int *tsl)  {
+-static inline int
+-MUTEX_SET(int *tsl)  {
 -         int __r;
 -         asm volatile (
-+          int __r;
-+          int __tmp = (int)tsl;
-+    asm volatile (
- "0:                             \n\t"
+-"0:                             \n\t"
 -"       lwarx   %0,0,%1         \n\t"
-+"       lwarx   %0,0,%2         \n\t"
- "       cmpwi   %0,0            \n\t"
- "       bne-    1f              \n\t"
+-"       cmpwi   %0,0            \n\t"
+-"       bne-    1f              \n\t"
 -"       stwcx.  %1,0,%1         \n\t"
-+"       stwcx.  %2,0,%2         \n\t"
- "       isync                   \n\t"
- "       beq+    2f              \n\t"
- "       b       0b              \n\t"
- "1:                             \n\t"
- "       li      %1, 0           \n\t"
- "2:                             \n\t"
+-"       isync                   \n\t"
+-"       beq+    2f              \n\t"
+-"       b       0b              \n\t"
+-"1:                             \n\t"
+-"       li      %1, 0           \n\t"
+-"2:                             \n\t"
 -         : "=&r" (__r), "+r" (tsl)
 -         :
 -         : "cr0", "memory");
 -         return (int)tsl;
-+          : "=&r" (__r), "=r" (tsl)
-+          : "r" (__tmp)
-+          : "cr0", "memory");
-+          return (int)tsl;
- }
+-}
 -#endif
-+
- static inline int
- MUTEX_UNSET(tsl_t *tsl) {
-          asm volatile("sync" : : : "memory");
+-static inline int
+-MUTEX_UNSET(tsl_t *tsl) {
+-         asm volatile("sync" : : : "memory");
+-         return *tsl = 0;
+-}
++#define MUTEX_SET(tsl)  ({			\
++	int __one = 1;				\
++	int __r;				\
++	tsl_t *__l = (tsl);			\
++	asm volatile ("				\
++0:						\
++	lwarx %0,0,%1;				\
++	cmpwi %0,0;				\
++	bne 1f;					\
++	stwcx. %2,0,%1;				\
++	bne- 0b;				\
++	isync;					\
++1:"						\
++	: "=&r" (__r)				\
++	: "r" (__l), "r" (__one));		\
++	!(__r & 1);				\
++})
++#define MUTEX_UNSET(tsl) ({			\
++	asm volatile("lwsync":::"memory");	\
++	(*(tsl) = 0);				\
++})
+ #define	MUTEX_INIT(tsl)		MUTEX_UNSET(tsl)
+ #endif
+ #endif
