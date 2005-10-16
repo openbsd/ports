@@ -1,15 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.4 2005/10/08 08:06:52 pvalchev Exp $
+$OpenBSD: patch-configure_in,v 1.5 2005/10/16 15:52:31 avsm Exp $
 --- configure.in.orig	Wed Jun  1 06:37:13 2005
 +++ configure.in	Sat Oct  8 02:22:16 2005
-@@ -228,6 +228,8 @@ AC_MSG_CHECKING([for Perl])
-         ;;
-     openbsd)
-         ;;
-+    openbsd)
-+	;;
-     darwin) # Mac OS X
-         ;;
-     *)
 @@ -395,6 +397,13 @@ case "$target" in
      ARCHOS=x86_LINUX
      ;;
