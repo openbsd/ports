@@ -1,7 +1,16 @@
-$OpenBSD: patch-libmpcodecs_ad_pcm_c,v 1.1 2005/08/29 06:53:54 biorn Exp $
+$OpenBSD: patch-libmpcodecs_ad_pcm_c,v 1.2 2005/10/16 21:29:30 espie Exp $
 --- libmpcodecs/ad_pcm.c.orig	Sun Feb 27 00:02:09 2005
-+++ libmpcodecs/ad_pcm.c	Sat Aug 27 23:38:30 2005
-@@ -96,8 +96,8 @@ static int control(sh_audio_t *sh,int cm
++++ libmpcodecs/ad_pcm.c	Sun Oct 16 23:23:48 2005
+@@ -20,6 +20,8 @@ LIBAD_EXTERN(pcm)
+ static int init(sh_audio_t *sh_audio)
+ {
+   WAVEFORMATEX *h=sh_audio->wf;
++  if (!h)
++  	return 0;
+   sh_audio->i_bps=h->nAvgBytesPerSec;
+   sh_audio->channels=h->nChannels;
+   sh_audio->samplerate=h->nSamplesPerSec;
+@@ -96,8 +98,8 @@ static int control(sh_audio_t *sh,int cm
  
  static int decode_audio(sh_audio_t *sh_audio,unsigned char *buf,int minlen,int maxlen)
  {
