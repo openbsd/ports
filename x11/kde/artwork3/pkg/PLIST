@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2005/07/28 08:47:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.22 2005/10/17 11:28:24 espie Exp $
 bin/kbanner.kss
 bin/kblob.kss
 bin/kclock.kss
@@ -54,7 +54,6 @@ share/applnk/System/ScreenSavers/KBanner.desktop
 share/applnk/System/ScreenSavers/KBlob.desktop
 share/applnk/System/ScreenSavers/KClock.desktop
 share/applnk/System/ScreenSavers/KEuphoria.desktop
-share/applnk/System/ScreenSavers/KFiresaver.desktop
 share/applnk/System/ScreenSavers/KFlux.desktop
 share/applnk/System/ScreenSavers/KFountain.desktop
 share/applnk/System/ScreenSavers/KGravity.desktop

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2005/07/28 08:47:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.26 2005/10/17 11:28:26 espie Exp $
 @conflict sirc-*
 bin/dsirc
 bin/feedbrowser
@@ -1317,6 +1317,7 @@ share/apps/kppp/Rules/Israel/Bezeq_Interurban.rst
 share/apps/kppp/Rules/Israel/Bezeq_Local.rst
 share/apps/kppp/Rules/Italy/
 share/apps/kppp/Rules/Italy/Atlanet.rst
+share/apps/kppp/Rules/Italy/Cheapnet.rst
 share/apps/kppp/Rules/Italy/Infostrada_Internet_SpZero.rst
 share/apps/kppp/Rules/Italy/Infostrada_Libero1055_Base.rst
 share/apps/kppp/Rules/Italy/Infostrada_Libero1055_SpZero.rst

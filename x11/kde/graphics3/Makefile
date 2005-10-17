@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.50 2005/08/16 09:49:53 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2005/10/17 11:28:25 espie Exp $
 
 COMMENT=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
 COMMENT-kpov=		"KDE modeller for povray"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.4.2
+VERSION=		3.4.3
 DISTNAME=		kdegraphics-${VERSION}
 MODKDE_VERSION=		3.4
 
 FLAVORS=debug
 SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-kpov -kamera
-PKGNAME=${DISTNAME}p0
+PKGNAME=${DISTNAME}
 FULLPKGNAME-kamera=kamera-${VERSION}
-FULLPKGNAME-kpov=kpovmodeller-${VERSION}p0
+FULLPKGNAME-kpov=kpovmodeller-${VERSION}
 SUBPACKAGE?=
 
 LIB_DEPENDS= \

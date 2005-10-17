@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2005/08/16 09:49:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.34 2005/10/17 11:28:25 espie Exp $
 @conflict kdebase-<3.4
 @conflict kdeartwork-<3.4
 @conflict kdeaddons-<3.4
@@ -4710,6 +4710,7 @@ share/icons/crystalsvg/64x64/actions/fileprint.png
 share/icons/crystalsvg/64x64/actions/filequickprint.png
 share/icons/crystalsvg/64x64/actions/frameprint.png
 share/icons/crystalsvg/64x64/actions/knewstuff.png
+share/icons/crystalsvg/64x64/actions/player_play.png
 share/icons/crystalsvg/64x64/actions/player_playlist.png
 share/icons/crystalsvg/64x64/actions/share.png
 share/icons/crystalsvg/64x64/apps/

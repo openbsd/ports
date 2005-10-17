@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpeglib_example_mpgplay_Makefile_in,v 1.12 2005/03/29 21:18:36 espie Exp $
---- mpeglib/example/mpgplay/Makefile.in.orig	Fri Mar  4 13:31:49 2005
-+++ mpeglib/example/mpgplay/Makefile.in	Sat Mar 26 10:36:24 2005
-@@ -178,7 +178,7 @@ LAME_INCS = @LAME_INCS@
+$OpenBSD: patch-mpeglib_example_mpgplay_Makefile_in,v 1.13 2005/10/17 11:28:25 espie Exp $
+--- mpeglib/example/mpgplay/Makefile.in.orig	Fri Oct  7 10:00:42 2005
++++ mpeglib/example/mpgplay/Makefile.in	Sun Oct 16 22:40:18 2005
+@@ -176,7 +176,7 @@ LAME_INCS = @LAME_INCS@
  LAME_LIBS = @LAME_LIBS@
  LAME_RPATH = @LAME_RPATH@
  LDADD_GST = @LDADD_GST@
@@ -10,7 +10,7 @@ $OpenBSD: patch-mpeglib_example_mpgplay_Makefile_in,v 1.12 2005/03/29 21:18:36 e
  LDFLAGS_AS_NEEDED = @LDFLAGS_AS_NEEDED@
  LDFLAGS_GST = @LDFLAGS_GST@
  LDFLAGS_NEW_DTAGS = @LDFLAGS_NEW_DTAGS@
-@@ -486,7 +486,7 @@ INCLUDES = $(all_includes)
+@@ -485,7 +485,7 @@ INCLUDES = $(all_includes)
  EXTRA_DIST = 
  mpgplay_SOURCES = mpgplay.cpp
  noinst_HEADERS = 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2005/03/29 21:18:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.26 2005/10/17 11:28:25 espie Exp $
 bin/kcolorchooser
 bin/kcoloredit
 bin/kdvi
@@ -262,6 +262,8 @@ ${KDE}/libkviewcanvas.la
 ${KDE}/libkviewcanvas.so
 ${KDE}/libkviewviewer.la
 ${KDE}/libkviewviewer.so
+${KDE}/libphotobook.la
+${KDE}/libphotobook.so
 ${KDE}/mrmlsearch.la
 ${KDE}/mrmlsearch.so
 ${KDE}/svgthumbnail.la
@@ -280,8 +282,6 @@ lib/libkmultipage.la
 @lib lib/libkmultipage.so.0.0
 lib/libksvg.la
 @lib lib/libksvg.so.0.1
-lib/libphotobook.la
-lib/libphotobook.so
 lib/libtext2path.la
 @lib lib/libtext2path.so.0.0
 share/applications/kde/kamera.desktop

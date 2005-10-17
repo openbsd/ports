@@ -1,7 +1,7 @@
-$OpenBSD: patch-kjsembed_Makefile_in,v 1.9 2005/07/28 08:47:40 espie Exp $
---- kjsembed/Makefile.in.orig	Sun Jul 24 18:54:56 2005
-+++ kjsembed/Makefile.in	Tue Jul 26 11:41:29 2005
-@@ -519,7 +519,7 @@ libkjsembed_la_LDFLAGS = -no-undefined $
+$OpenBSD: patch-kjsembed_Makefile_in,v 1.10 2005/10/17 11:28:24 espie Exp $
+--- kjsembed/Makefile.in.orig	Wed Oct  5 21:43:38 2005
++++ kjsembed/Makefile.in	Mon Oct 17 12:02:10 2005
+@@ -517,7 +517,7 @@ libkjsembed_la_LDFLAGS = -no-undefined $
  libkjsembed_la_LIBADD = bindings/libkjsembedbindings.la \
  			builtins/libkjsembedbuiltins.la \
  			qtbindings/libkjsembedqtbindings.la \

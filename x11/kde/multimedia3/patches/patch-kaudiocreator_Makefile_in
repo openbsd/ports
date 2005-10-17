@@ -1,7 +1,7 @@
-$OpenBSD: patch-kaudiocreator_Makefile_in,v 1.4 2005/03/29 21:18:36 espie Exp $
---- kaudiocreator/Makefile.in.orig	Fri Mar  4 13:31:47 2005
-+++ kaudiocreator/Makefile.in	Sat Mar 26 10:32:57 2005
-@@ -74,7 +74,7 @@ kaudiocreator_nofinal_OBJECTS = main.$(O
+$OpenBSD: patch-kaudiocreator_Makefile_in,v 1.5 2005/10/17 11:28:25 espie Exp $
+--- kaudiocreator/Makefile.in.orig	Fri Oct  7 10:00:40 2005
++++ kaudiocreator/Makefile.in	Sun Oct 16 22:40:18 2005
+@@ -72,7 +72,7 @@ kaudiocreator_nofinal_OBJECTS = main.$(O
  am__DEPENDENCIES_1 =
  kaudiocreator_DEPENDENCIES = $(am__DEPENDENCIES_1) \
  	$(top_builddir)/libkcddb/libkcddb.la \
@@ -10,7 +10,7 @@ $OpenBSD: patch-kaudiocreator_Makefile_in,v 1.4 2005/03/29 21:18:36 espie Exp $
  updateSCRIPT_INSTALL = $(INSTALL_SCRIPT)
  SCRIPTS = $(update_SCRIPTS)
  DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
-@@ -534,7 +534,7 @@ kaudiocreator_SOURCES=main.cpp kaudiocre
+@@ -533,7 +533,7 @@ kaudiocreator_SOURCES=main.cpp kaudiocre
  EXTRA_DIST = encoder.h kaudiocreator.h kaudiocreator.desktop encoderconfigimp.h  jobqueimp.h  ripper.h  tracksimp.h  encodefileimp.h
  kaudiocreator_LDFLAGS = $(all_libraries) $(KDE_RPATH) -lkutils
  #>- METASOURCES = AUTO

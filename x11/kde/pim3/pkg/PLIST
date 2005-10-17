@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2005/08/16 18:28:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2005/10/17 11:28:26 espie Exp $
 @conflict kdelibs-<3.4
 @conflict kdebase-<3.4
 @conflict kpilot-*
@@ -1173,6 +1173,7 @@ share/apps/libkholidays/holiday_co
 share/apps/libkholidays/holiday_cz
 share/apps/libkholidays/holiday_de
 share/apps/libkholidays/holiday_dk
+share/apps/libkholidays/holiday_ee
 share/apps/libkholidays/holiday_es
 share/apps/libkholidays/holiday_fi
 share/apps/libkholidays/holiday_fr

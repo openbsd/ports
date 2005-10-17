@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2005/08/16 09:49:54 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2005/10/17 11:28:27 espie Exp $
 
 COMMENT= 		"K Desktop Environment, utilities"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.4.2
+VERSION=		3.4.3
 DISTNAME=		kdeutils-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}
 MODKDE_VERSION=		3.4
 
 LIB_DEPENDS=	DCOP,kabc,kdecore.6,kdefx,kdeprint,kdesu,kdeui,kio,kparts,kresources,kutils,kwalletclient,vcard::x11/kde/libs3 \

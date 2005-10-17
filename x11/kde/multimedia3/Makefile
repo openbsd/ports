@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2005/07/28 08:47:41 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2005/10/17 11:28:25 espie Exp $
 
 COMMENT= 		"K Desktop Environment, multimedia applications"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.4.2
+VERSION=		3.4.3
 DISTNAME=		kdemultimedia-${VERSION}
 PKGNAME=		${DISTNAME}
 MODKDE_VERSION=		3.4
@@ -19,7 +19,8 @@ LIB_DEPENDS= DCOP,kdecore.6,kdefakes,kdefx,kdesu,kdeui,kio,khtml,kmid,kparts,kme
 	speex::audio/speex \
 	popt::devel/popt \
 	gstreamer-0.8.0.0::devel/gstreamer \
-	ltdl::devel/libtool,-ltdl
+	ltdl::devel/libtool,-ltdl \
+	theora::multimedia/libtheora
 
 EXTRA_CONFIG=	xdg/menus/applications-merged/kde-multimedia-music.menu 
 SAMPLECONFDIR=${PREFIX}/share/apps/kde-conf-sample

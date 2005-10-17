@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2005/07/28 08:47:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2005/10/17 11:28:26 espie Exp $
 bin/artsbuilder
 bin/artscontrol
 bin/juk
@@ -221,6 +221,8 @@ ${KDE}/kfile_ogg.la
 ${KDE}/kfile_ogg.so
 ${KDE}/kfile_sid.la
 ${KDE}/kfile_sid.so
+${KDE}/kfile_theora.la
+${KDE}/kfile_theora.so
 ${KDE}/kfile_wav.la
 ${KDE}/kfile_wav.so
 ${KDE}/kio_audiocd.la
@@ -1285,6 +1287,7 @@ share/services/kfile_mp3.desktop
 share/services/kfile_mpc.desktop
 share/services/kfile_ogg.desktop
 share/services/kfile_sid.desktop
+share/services/kfile_theora.desktop
 share/services/kfile_wav.desktop
 share/services/kmixctrl_restore.desktop
 share/services/krec_exportogg.desktop
