@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/03/09 16:17:51 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2005/10/17 14:45:42 aanriot Exp $
 
 COMMENT=	"a RRDtool frontend for Postfix statistics"
 
@@ -6,7 +6,8 @@ VERSION=	1.10
 DISTNAME=	mailgraph-${VERSION}
 CATEGORIES=	net
 
-MASTER_SITES=	http://people.ee.ethz.ch/~dws/software/mailgraph/pub/
+MASTER_SITES=	${HOMEPAGE}/pub/ \
+		${HOMEPAGE}/pub/old/
 
 HOMEPAGE=	http://people.ee.ethz.ch/~dws/software/mailgraph/
 
