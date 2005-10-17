@@ -1,7 +1,7 @@
-$OpenBSD: patch-karbon_dockers_vdocumentdocker_cc,v 1.1 2005/09/20 18:04:30 espie Exp $
---- karbon/dockers/vdocumentdocker.cc.orig	Tue Sep 20 19:29:31 2005
-+++ karbon/dockers/vdocumentdocker.cc	Tue Sep 20 19:29:43 2005
-@@ -846,8 +846,8 @@ void
+$OpenBSD: patch-karbon_dockers_vdocumentdocker_cc,v 1.2 2005/10/17 15:15:40 espie Exp $
+--- karbon/dockers/vdocumentdocker.cc.orig	Wed Sep 21 14:27:52 2005
++++ karbon/dockers/vdocumentdocker.cc	Fri Sep 23 01:29:44 2005
+@@ -1147,8 +1147,8 @@ void
  VHistoryItem::init()
  {
  	kdDebug(38000) << "In VHistoryItem::init() : " << m_command->name() << endl;

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2005/08/05 13:54:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2005/10/17 15:15:40 espie Exp $
 bin/karbon
 bin/kchart
 bin/kexi
@@ -176,6 +176,8 @@ ${KDE}/kexi.la
 ${KDE}/kexi.so
 ${KDE}/kexidb_mysqldriver.la
 ${KDE}/kexidb_mysqldriver.so
+${KDE}/kexidb_pqxxsqldriver.la
+${KDE}/kexidb_pqxxsqldriver.so
 ${KDE}/kexidb_sqlite2driver.la
 ${KDE}/kexidb_sqlite2driver.so
 ${KDE}/kexidb_sqlite3driver.la
@@ -196,6 +198,8 @@ ${KDE}/kexihandler_table.la
 ${KDE}/kexihandler_table.so
 ${KDE}/keximigrate_mysql.la
 ${KDE}/keximigrate_mysql.so
+${KDE}/keximigrate_pqxx.la
+${KDE}/keximigrate_pqxx.so
 ${KDE}/kfile_koffice.la
 ${KDE}/kfile_koffice.so
 ${KDE}/kfile_ooo.la
@@ -553,7 +557,9 @@ lib/libkwmf.la
 lib/libkwordexportfilters.la
 @lib lib/libkwordexportfilters.so.1.1
 share/applications/kde/kexi.desktop
+share/applications/kde/kformdesigner.desktop
 share/applications/kde/kivio.desktop
+share/applications/kde/krita.desktop
 share/applnk/
 share/applnk/Office/
 share/applnk/Office/KThesaurus.desktop
@@ -562,13 +568,11 @@ share/applnk/Office/kchart.desktop
 share/applnk/Office/kformula.desktop
 share/applnk/Office/koshell.desktop
 share/applnk/Office/kpresenter.desktop
-share/applnk/Office/krita.desktop
+share/applnk/Office/krita_magick.desktop
 share/applnk/Office/kspread.desktop
 share/applnk/Office/kudesigner.desktop
 share/applnk/Office/kugar.desktop
 share/applnk/Office/kword.desktop
-share/applnk/Utilities/
-share/applnk/Utilities/kformdesigner.desktop
 share/apps/karbon/
 share/apps/karbon/gradients/
 share/apps/karbon/gradients/allcolors.kgr
@@ -979,6 +983,7 @@ share/apps/kivio/icons/crystalsvg/22x22/actions/arrowheads.png
 share/apps/kivio/icons/crystalsvg/22x22/actions/font_bold.png
 share/apps/kivio/icons/crystalsvg/22x22/actions/font_italic.png
 share/apps/kivio/icons/crystalsvg/22x22/actions/font_under.png
+share/apps/kivio/icons/crystalsvg/22x22/actions/kivio_connector.png
 share/apps/kivio/icons/crystalsvg/22x22/actions/open_stencilset.png
 share/apps/kivio/icons/crystalsvg/32x32/
 share/apps/kivio/icons/crystalsvg/32x32/actions/
@@ -1052,6 +1057,7 @@ share/apps/kivio/icons/hicolor/22x22/actions/font_bold.png
 share/apps/kivio/icons/hicolor/22x22/actions/font_italic.png
 share/apps/kivio/icons/hicolor/22x22/actions/font_under.png
 share/apps/kivio/icons/hicolor/22x22/actions/group_stencils.png
+share/apps/kivio/icons/hicolor/22x22/actions/kivio_connector.png
 share/apps/kivio/icons/hicolor/22x22/actions/linestyle.png
 share/apps/kivio/icons/hicolor/22x22/actions/linewidth.png
 share/apps/kivio/icons/hicolor/22x22/actions/open_stencilset.png
@@ -4172,9 +4178,11 @@ share/services/kexi/kexireporthandler.desktop
 share/services/kexi/kexiscripthandler.desktop
 share/services/kexi/kexitablehandler.desktop
 share/services/kexidb_mysqldriver.desktop
+share/services/kexidb_pqxxsqldriver.desktop
 share/services/kexidb_sqlite2driver.desktop
 share/services/kexidb_sqlite3driver.desktop
 share/services/keximigrate_mysql.desktop
+share/services/keximigrate_pqxx.desktop
 share/services/kfile_koffice.desktop
 share/services/kfile_ooo.desktop
 share/services/kformdesigner/

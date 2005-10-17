@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.25 2005/09/20 18:04:29 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2005/10/17 15:15:40 espie Exp $
 
 COMMENT=		"office suite for KDE"
 
 CATEGORIES=		x11 x11/kde productivity
 VMEM_WARNING=		Yes
-MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-1.4.1/src/@}
+MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-1.4.2/src/@}
 
-DISTNAME=	koffice-1.4.1
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	koffice-1.4.2
+PKGNAME=	${DISTNAME}
 
 FLAVORS=debug
 FAKE_FLAGS=	${MAKE_FLAGS} TAR=tar DESTDIR=${WRKINST}
@@ -35,6 +35,7 @@ WANTLIB=	ICE SM X11 Xext Xrender artsflow artsflow_idl audiofile bz2 c \
 		soundserver_idl stdc++ tiff util vorbis vorbisenc vorbisfile \
 		xml2 xslt z Xt termcap Xi fontconfig crypto readline ssl
 
-CONFIGURE_ARGS+= --disable-pgsql
-# --with-pgsqlincdir=${LOCALBASE}/include/postgresql
+CONFIGURE_ARGS+= --with-pgsqlincdir=${LOCALBASE}/include/postgresql
+LIB_DEPENDS+=	pqxx::databases/libpqxx \
+		pq::databases/postgresql
 .include <bsd.port.mk>
