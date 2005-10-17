@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2005/03/23 20:19:54 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2005/10/17 18:59:50 espie Exp $
 
 COMMENT=	"manipulating PostScript documents"
 
+BROKEN=		"Who put this shit in our ports tree without proper flavors"
 DISTNAME=	psutils-p17
 CATEGORIES=	print
 
