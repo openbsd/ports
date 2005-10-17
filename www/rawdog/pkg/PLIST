@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/02/17 14:02:16 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/10/17 16:12:08 xsa Exp $
 bin/rawdog
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/__init__.pyc
