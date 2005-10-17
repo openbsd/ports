@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-es,v 1.4 2005/08/16 09:49:54 espie Exp $
+@comment $OpenBSD: PLIST-es,v 1.5 2005/10/17 14:11:02 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.es.xml
 share/apps/khangman/
@@ -75,6 +75,7 @@ ${DOC}ark/${C}
 ${DOC}ark/${I}
 ${DOC}artsbuilder/
 ${DOC}artsbuilder/apis.docbook
+${DOC}artsbuilder/arts-structure.png
 ${DOC}artsbuilder/artsbuilder.docbook
 ${DOC}artsbuilder/detail.docbook
 ${DOC}artsbuilder/digitalaudio.docbook
@@ -83,6 +84,49 @@ ${DOC}artsbuilder/future.docbook
 ${DOC}artsbuilder/glossary.docbook
 ${DOC}artsbuilder/gui.docbook
 ${DOC}artsbuilder/helping.docbook
+${DOC}artsbuilder/images/
+${DOC}artsbuilder/images/Synth_ADD.png
+${DOC}artsbuilder/images/Synth_AMAN_PLAY.png
+${DOC}artsbuilder/images/Synth_AMAN_RECORD.png
+${DOC}artsbuilder/images/Synth_BRICKWALL_LIMITER.png
+${DOC}artsbuilder/images/Synth_BUS_DOWNLINK.png
+${DOC}artsbuilder/images/Synth_BUS_UPLINK.png
+${DOC}artsbuilder/images/Synth_CAPTURE.png
+${DOC}artsbuilder/images/Synth_CDELAY.png
+${DOC}artsbuilder/images/Synth_COMPRESSOR.png
+${DOC}artsbuilder/images/Synth_DATA.png
+${DOC}artsbuilder/images/Synth_DEBUG.png
+${DOC}artsbuilder/images/Synth_DELAY.png
+${DOC}artsbuilder/images/Synth_DIV.png
+${DOC}artsbuilder/images/Synth_ENVELOPE_ADSR.png
+${DOC}artsbuilder/images/Synth_FM_SOURCE.png
+${DOC}artsbuilder/images/Synth_FREEVERB.png
+${DOC}artsbuilder/images/Synth_FREQUENCY.png
+${DOC}artsbuilder/images/Synth_FX_CFLANGER.png
+${DOC}artsbuilder/images/Synth_MIDI_DEBUG.png
+${DOC}artsbuilder/images/Synth_MIDI_TEST.png
+${DOC}artsbuilder/images/Synth_MOOG_VCF.png
+${DOC}artsbuilder/images/Synth_MUL.png
+${DOC}artsbuilder/images/Synth_MULTI_ADD.png
+${DOC}artsbuilder/images/Synth_NIL.png
+${DOC}artsbuilder/images/Synth_NOISE.png
+${DOC}artsbuilder/images/Synth_PITCH_SHIFT.png
+${DOC}artsbuilder/images/Synth_PLAY.png
+${DOC}artsbuilder/images/Synth_PLAY_WAV.png
+${DOC}artsbuilder/images/Synth_PSCALE.png
+${DOC}artsbuilder/images/Synth_RC.png
+${DOC}artsbuilder/images/Synth_RECORD.png
+${DOC}artsbuilder/images/Synth_SEQUENCE.png
+${DOC}artsbuilder/images/Synth_SEQUENCE_FREQ.png
+${DOC}artsbuilder/images/Synth_SHELVE_CUTOFF.png
+${DOC}artsbuilder/images/Synth_STD_EQUALIZER.png
+${DOC}artsbuilder/images/Synth_TREMOLO.png
+${DOC}artsbuilder/images/Synth_WAVE_PULSE.png
+${DOC}artsbuilder/images/Synth_WAVE_SIN.png
+${DOC}artsbuilder/images/Synth_WAVE_SOFTSAW.png
+${DOC}artsbuilder/images/Synth_WAVE_SQUARE.png
+${DOC}artsbuilder/images/Synth_WAVE_TRI.png
+${DOC}artsbuilder/images/Synth_XFADE.png
 ${DOC}artsbuilder/mcop.docbook
 ${DOC}artsbuilder/midi.docbook
 ${DOC}artsbuilder/midiintro.docbook
@@ -324,6 +368,10 @@ ${DOC}kcontrol/desktop/
 ${DOC}kcontrol/desktop/common
 ${DOC}kcontrol/desktop/${C}
 ${DOC}kcontrol/desktop/${I}
+${DOC}kcontrol/desktopbehavior/
+${DOC}kcontrol/desktopbehavior/common
+${DOC}kcontrol/desktopbehavior/${C}
+${DOC}kcontrol/desktopbehavior/${I}
 ${DOC}kcontrol/ebrowsing/
 ${DOC}kcontrol/ebrowsing/common
 ${DOC}kcontrol/ebrowsing/${C}
@@ -469,6 +517,10 @@ ${DOC}kcontrol/panel/
 ${DOC}kcontrol/panel/common
 ${DOC}kcontrol/panel/${C}
 ${DOC}kcontrol/panel/${I}
+${DOC}kcontrol/panelappearance/
+${DOC}kcontrol/panelappearance/common
+${DOC}kcontrol/panelappearance/${C}
+${DOC}kcontrol/panelappearance/${I}
 ${DOC}kcontrol/passwords/
 ${DOC}kcontrol/passwords/common
 ${DOC}kcontrol/passwords/${C}
@@ -541,6 +593,7 @@ ${DOC}kdelirc/kcmlirc/${C}
 ${DOC}kdelirc/kcmlirc/${I}
 ${DOC}kdeprint/
 ${DOC}kdeprint/add-printer-wiz.docbook
+${DOC}kdeprint/common
 ${DOC}kdeprint/cups-config.docbook
 ${DOC}kdeprint/cupsaddprinterwizard1.png
 ${DOC}kdeprint/cupsaddprinterwizard2_backendselection.png
@@ -576,6 +629,8 @@ ${DOC}kdeprint/external-command.docbook
 ${DOC}kdeprint/final-word.docbook
 ${DOC}kdeprint/getting-started.docbook
 ${DOC}kdeprint/highlights.docbook
+${DOC}kdeprint/${C}
+${DOC}kdeprint/${I}
 ${DOC}kdeprint/kcontrolcenter-printmanager-jobcontrol-2.png
 ${DOC}kdeprint/kcron_to_be_printed.png
 ${DOC}kdeprint/kdeprint-jobviewer.png
@@ -1084,6 +1139,9 @@ ${DOC}kmix/
 ${DOC}kmix/common
 ${DOC}kmix/${C}
 ${DOC}kmix/${I}
+${DOC}kmix/kmix-channel-playback.png
+${DOC}kmix/kmix-channel-record.png
+${DOC}kmix/kmix-window.png
 ${DOC}kmoon/
 ${DOC}kmoon/common
 ${DOC}kmoon/${C}
@@ -1128,6 +1186,8 @@ ${DOC}kmplot/settingsdlg.png
 ${DOC}kmplot/stepdlg.png
 ${DOC}kmplot/toolbar.png
 ${DOC}kmplot/using.docbook
+${DOC}knetattach/
+${DOC}knetattach/screenshot.png
 ${DOC}knode/
 ${DOC}knode/commands.docbook
 ${DOC}knode/common
@@ -1269,6 +1329,8 @@ ${DOC}konsole/
 ${DOC}konsole/common
 ${DOC}konsole/${C}
 ${DOC}konsole/${I}
+${DOC}konsole/konsole.png
+${DOC}konsole/tabbar.png
 ${DOC}konsolekalendar/
 ${DOC}konsolekalendar/common
 ${DOC}konsolekalendar/${C}
@@ -1493,6 +1555,10 @@ ${DOC}ksysv/
 ${DOC}ksysv/common
 ${DOC}ksysv/${C}
 ${DOC}ksysv/${I}
+${DOC}ktalkd/
+${DOC}ktalkd/common
+${DOC}ktalkd/${C}
+${DOC}ktalkd/${I}
 ${DOC}kteatime/
 ${DOC}kteatime/common
 ${DOC}kteatime/config.png

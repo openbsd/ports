@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-eu,v 1.3 2005/07/28 08:47:40 espie Exp $
+@comment $OpenBSD: PLIST-eu,v 1.4 2005/10/17 14:11:02 espie Exp $
 share/doc/HTML/eu/
 ${DOC}common/
 ${DOC}common/1.png
@@ -162,6 +162,7 @@ ${LOC}kbinaryclock.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
 ${LOC}kbruch.mo
+${LOC}kbstateapplet.mo
 ${LOC}kbugbuster.mo
 ${LOC}kcachegrind.mo
 ${LOC}kcalc.mo
@@ -206,6 +207,7 @@ ${LOC}kcmkonqhtml.mo
 ${LOC}kcmkonsole.mo
 ${LOC}kcmkontactnt.mo
 ${LOC}kcmktalkd.mo
+${LOC}kcmkttsd.mo
 ${LOC}kcmkuick.mo
 ${LOC}kcmkurifilt.mo
 ${LOC}kcmkvaio.mo
@@ -224,6 +226,7 @@ ${LOC}kcmlirc.mo
 ${LOC}kcmlocale.mo
 ${LOC}kcmmediacontrol.mo
 ${LOC}kcmmidi.mo
+${LOC}kcmnic.mo
 ${LOC}kcmnotify.mo
 ${LOC}kcmperformance.mo
 ${LOC}kcmprintmgr.mo
@@ -399,6 +402,7 @@ ${LOC}klines.mo
 ${LOC}klinkstatus.mo
 ${LOC}klipper.mo
 ${LOC}klock.mo
+${LOC}kmag.mo
 ${LOC}kmahjongg.mo
 ${LOC}kmail.mo
 ${LOC}kmail_text_calendar_plugin.mo
@@ -415,12 +419,15 @@ ${LOC}kmilo_delli8k.mo
 ${LOC}kmilo_generic.mo
 ${LOC}kmilo_kvaio.mo
 ${LOC}kmilo_powerbook.mo
+${LOC}kmilo_thinkpad.mo
 ${LOC}kmilod.mo
 ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
 ${LOC}kmobile.mo
 ${LOC}kmoon.mo
+${LOC}kmousetool.mo
+${LOC}kmouth.mo
 ${LOC}kmplot.mo
 ${LOC}kmrml.mo
 ${LOC}knetattach.mo
@@ -487,6 +494,7 @@ ${LOC}krfb.mo
 ${LOC}kruler.mo
 ${LOC}krunapplet.mo
 ${LOC}ksame.mo
+${LOC}ksayit.mo
 ${LOC}kscd.mo
 ${LOC}kscreensaver.mo
 ${LOC}kshisen.mo
@@ -522,6 +530,7 @@ ${LOC}ktexteditor_docwordcompletion.mo
 ${LOC}ktexteditor_insertfile.mo
 ${LOC}ktexteditor_isearch.mo
 ${LOC}ktexteditor_kdatatool.mo
+${LOC}ktexteditor_kttsd.mo
 ${LOC}kthememanager.mo
 ${LOC}ktimemon.mo
 ${LOC}ktimer.mo
@@ -529,6 +538,19 @@ ${LOC}ktip.mo
 ${LOC}ktnef.mo
 ${LOC}ktouch.mo
 ${LOC}ktron.mo
+${LOC}kttsd.mo
+${LOC}kttsd_commandplugin.mo
+${LOC}kttsd_eposplugin.mo
+${LOC}kttsd_festivalintplugin.mo
+${LOC}kttsd_fliteplugin.mo
+${LOC}kttsd_freettsplugin.mo
+${LOC}kttsd_hadifixplugin.mo
+${LOC}kttsd_sbdplugin.mo
+${LOC}kttsd_stringreplacerplugin.mo
+${LOC}kttsd_talkerchooserplugin.mo
+${LOC}kttsd_xmltransformerplugin.mo
+${LOC}kttsjobmgr.mo
+${LOC}kttsmgr.mo
 ${LOC}ktuberling.mo
 ${LOC}kturtle.mo
 ${LOC}ktux.mo
@@ -564,6 +586,7 @@ ${LOC}kxkb.mo
 ${LOC}kxmlrpcd.mo
 ${LOC}kxsconfig.mo
 ${LOC}kxsldbg.mo
+${LOC}libKTTSD.mo
 ${LOC}libcalendarresources.mo
 ${LOC}libdmctl.mo
 ${LOC}libkaddrbk_geo_xxport.mo

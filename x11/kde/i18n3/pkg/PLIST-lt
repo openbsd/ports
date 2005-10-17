@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lt,v 1.2 2005/07/28 08:47:40 espie Exp $
+@comment $OpenBSD: PLIST-lt,v 1.3 2005/10/17 14:11:02 espie Exp $
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
@@ -447,6 +447,7 @@ ${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo
 ${LOC}kstyle_keramik_config.mo
+${LOC}kstyle_phase_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo
 ${LOC}ksync.mo
@@ -462,6 +463,7 @@ ${LOC}ktexteditor_docwordcompletion.mo
 ${LOC}ktexteditor_insertfile.mo
 ${LOC}ktexteditor_isearch.mo
 ${LOC}ktexteditor_kdatatool.mo
+${LOC}ktexteditor_kttsd.mo
 ${LOC}kthememanager.mo
 ${LOC}ktimemon.mo
 ${LOC}ktimer.mo
@@ -470,7 +472,12 @@ ${LOC}ktnef.mo
 ${LOC}ktouch.mo
 ${LOC}ktron.mo
 ${LOC}kttsd.mo
+${LOC}kttsd_commandplugin.mo
+${LOC}kttsd_eposplugin.mo
 ${LOC}kttsd_festivalintplugin.mo
+${LOC}kttsd_fliteplugin.mo
+${LOC}kttsd_freettsplugin.mo
+${LOC}kttsd_hadifixplugin.mo
 ${LOC}kttsd_sbdplugin.mo
 ${LOC}kttsd_stringreplacerplugin.mo
 ${LOC}kttsd_talkerchooserplugin.mo

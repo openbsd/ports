@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fi,v 1.4 2005/08/16 09:49:54 espie Exp $
+@comment $OpenBSD: PLIST-fi,v 1.5 2005/10/17 14:11:02 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/data/
@@ -164,6 +164,7 @@ ${LOC}katepart.mo
 ${LOC}katepartkttsd.mo
 ${LOC}kateprojectmanager.mo
 ${LOC}katepybrowse.mo
+${LOC}katesnippets.mo
 ${LOC}katespell.mo
 ${LOC}katetabbarextension.mo
 ${LOC}katetextfilter.mo
@@ -282,6 +283,7 @@ ${LOC}kdevdesigner.mo
 ${LOC}kdevelop.mo
 ${LOC}kdevtipofday.mo
 ${LOC}kdf.mo
+${LOC}kdgantt.mo
 ${LOC}kdialog.mo
 ${LOC}kdict.mo
 ${LOC}kdictapplet.mo
@@ -297,11 +299,13 @@ ${LOC}kfifteenapplet.mo
 ${LOC}kfile_au.mo
 ${LOC}kfile_avi.mo
 ${LOC}kfile_bmp.mo
+${LOC}kfile_cert.mo
 ${LOC}kfile_cpp.mo
 ${LOC}kfile_dds.mo
 ${LOC}kfile_deb.mo
 ${LOC}kfile_desktop.mo
 ${LOC}kfile_diff.mo
+${LOC}kfile_drgeo.mo
 ${LOC}kfile_dvi.mo
 ${LOC}kfile_exr.mo
 ${LOC}kfile_flac.mo
@@ -312,8 +316,10 @@ ${LOC}kfile_html.mo
 ${LOC}kfile_ico.mo
 ${LOC}kfile_ics.mo
 ${LOC}kfile_jpeg.mo
+${LOC}kfile_kig.mo
 ${LOC}kfile_lnk.mo
 ${LOC}kfile_m3u.mo
+${LOC}kfile_mhtml.mo
 ${LOC}kfile_mp3.mo
 ${LOC}kfile_mpc.mo
 ${LOC}kfile_ogg.mo
@@ -355,6 +361,7 @@ ${LOC}kgreet_winbind.mo
 ${LOC}khangman.mo
 ${LOC}khelpcenter.mo
 ${LOC}khexedit.mo
+${LOC}khexedit2part.mo
 ${LOC}khotkeys.mo
 ${LOC}khtmlkttsd.mo
 ${LOC}khtmlsettingsplugin.mo
@@ -393,10 +400,12 @@ ${LOC}kio_svn.mo
 ${LOC}kio_system.mo
 ${LOC}kio_trash.mo
 ${LOC}kioexec.mo
+${LOC}kiten.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
 ${LOC}kjumpingcube.mo
 ${LOC}klaptopdaemon.mo
+${LOC}klatin.mo
 ${LOC}klegacyimport.mo
 ${LOC}klettres.mo
 ${LOC}klickety.mo
@@ -571,6 +580,7 @@ ${LOC}kviewscannerplugin.mo
 ${LOC}kviewshell.mo
 ${LOC}kviewtemplateplugin.mo
 ${LOC}kviewviewer.mo
+${LOC}kvoctrain.mo
 ${LOC}kwalletmanager.mo
 ${LOC}kweather.mo
 ${LOC}kwifimanager.mo
@@ -579,6 +589,7 @@ ${LOC}kwin4.mo
 ${LOC}kwin_art_clients.mo
 ${LOC}kwin_clients.mo
 ${LOC}kwireless.mo
+${LOC}kwordquiz.mo
 ${LOC}kworldclock.mo
 ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo
@@ -589,6 +600,7 @@ ${LOC}libKTTSD.mo
 ${LOC}libcalendarresources.mo
 ${LOC}libdmctl.mo
 ${LOC}libkaddrbk_geo_xxport.mo
+${LOC}libkaddrbk_gmx_xxport.mo
 ${LOC}libkcal.mo
 ${LOC}libkcalsystem.mo
 ${LOC}libkcddb.mo
@@ -631,6 +643,7 @@ ${LOC}privacy.mo
 ${LOC}qeditor.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
+${LOC}rellinks.mo
 ${LOC}searchbarplugin.mo
 ${LOC}secpolicy.mo
 ${LOC}spy.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-de,v 1.4 2005/08/16 09:49:54 espie Exp $
+@comment $OpenBSD: PLIST-de,v 1.5 2005/10/17 14:11:01 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.de_DE.xml
 share/apps/khangman/
@@ -243,11 +243,14 @@ ${DOC}kate-plugins/textfilter.docbook
 ${DOC}kate-plugins/xmlcheck.docbook
 ${DOC}kate-plugins/xmltools.docbook
 ${DOC}kate/advanced.docbook
+${DOC}kate/common
 ${DOC}kate/configdialog01.png
 ${DOC}kate/configdialog02.png
 ${DOC}kate/configuring.docbook
 ${DOC}kate/fundamentals.docbook
 ${DOC}kate/highlighting.docbook
+${DOC}kate/${C}
+${DOC}kate/${I}
 ${DOC}kate/kate.png
 ${DOC}kate/mdi.docbook
 ${DOC}kate/menus.docbook
@@ -620,6 +623,10 @@ ${DOC}kenolaba/common
 ${DOC}kenolaba/${C}
 ${DOC}kenolaba/${I}
 ${DOC}kenolaba/man-kenolaba.6.docbook
+${DOC}kfilereplace/
+${DOC}kfilereplace/common
+${DOC}kfilereplace/${C}
+${DOC}kfilereplace/${I}
 ${DOC}kfind/
 ${DOC}kfind/common
 ${DOC}kfind/${C}
@@ -1765,14 +1772,18 @@ ${DOC}opengl/${C}
 ${DOC}opengl/${I}
 ${DOC}quanta/
 ${DOC}quanta/adv-quanta.docbook
+${DOC}quanta/common
 ${DOC}quanta/config-quanta.docbook
 ${DOC}quanta/credits-license.docbook
 ${DOC}quanta/debugging-quanta.docbook
 ${DOC}quanta/extending-quanta.docbook
 ${DOC}quanta/fundamentals.docbook
 ${DOC}quanta/glossary.docbook
+${DOC}quanta/${C}
+${DOC}quanta/${I}
 ${DOC}quanta/installation.docbook
 ${DOC}quanta/introduction.docbook
+${DOC}quanta/man-quanta.1.docbook
 ${DOC}quanta/q-and-a.docbook
 ${DOC}quanta/quanta-menus.docbook
 ${DOC}quanta/quanta-projects.docbook

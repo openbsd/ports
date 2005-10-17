@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sk,v 1.4 2005/08/16 18:28:56 espie Exp $
+@comment $OpenBSD: PLIST-sk,v 1.5 2005/10/17 14:11:02 espie Exp $
 @conflict kdeedu-<3.3
 share/apps/klettres/
 share/apps/klettres/sk/
@@ -1208,6 +1208,7 @@ ${LOC}kfile_avi.mo
 ${LOC}kfile_bmp.mo
 ${LOC}kfile_cert.mo
 ${LOC}kfile_cpp.mo
+${LOC}kfile_dds.mo
 ${LOC}kfile_deb.mo
 ${LOC}kfile_desktop.mo
 ${LOC}kfile_diff.mo
@@ -1387,6 +1388,7 @@ ${LOC}krdc.mo
 ${LOC}kreadconfig.mo
 ${LOC}krec.mo
 ${LOC}kregexpeditor.mo
+${LOC}kres_bugzilla.mo
 ${LOC}kres_exchange.mo
 ${LOC}kres_remote.mo
 ${LOC}kres_xmlrpc.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mk,v 1.2 2005/07/28 08:47:40 espie Exp $
+@comment $OpenBSD: PLIST-mk,v 1.3 2005/10/17 14:11:02 espie Exp $
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
@@ -33,6 +33,7 @@ ${LOC}kabc_sql.mo
 ${LOC}kabcformat_binary.mo
 ${LOC}kaboodle.mo
 ${LOC}kaccess.mo
+${LOC}kaddressbook.mo
 ${LOC}kalzium.mo
 ${LOC}kappfinder.mo
 ${LOC}karm.mo
@@ -43,6 +44,7 @@ ${LOC}katedefaultproject.mo
 ${LOC}katepart.mo
 ${LOC}katomic.mo
 ${LOC}kaudiocreator.mo
+${LOC}kbabel.mo
 ${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
 ${LOC}kblackbox.mo
@@ -213,6 +215,7 @@ ${LOC}kio_finger.mo
 ${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_help.mo
+${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
 ${LOC}kio_ldap.mo
 ${LOC}kio_mac.mo

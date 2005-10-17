@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fr,v 1.4 2005/08/16 09:49:54 espie Exp $
+@comment $OpenBSD: PLIST-fr,v 1.5 2005/10/17 14:11:02 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.fr_FR.xml
 share/apps/khangman/
@@ -725,6 +725,7 @@ ${DOC}khelpcenter/userguide/creating-graphics.docbook
 ${DOC}khelpcenter/userguide/credits-and-license.docbook
 ${DOC}khelpcenter/userguide/email.docbook
 ${DOC}khelpcenter/userguide/first-impressions.docbook
+${DOC}khelpcenter/userguide/font-installation.docbook
 ${DOC}khelpcenter/userguide/getting-help.docbook
 ${DOC}khelpcenter/userguide/getting-started.docbook
 ${DOC}khelpcenter/userguide/glossary.docbook
@@ -734,8 +735,11 @@ ${DOC}khelpcenter/userguide/${I}
 ${DOC}khelpcenter/userguide/installation.docbook
 ${DOC}khelpcenter/userguide/intro.docbook
 ${DOC}khelpcenter/userguide/kde-as-root.docbook
+${DOC}khelpcenter/userguide/kde-edutainment.docbook
 ${DOC}khelpcenter/userguide/kde-for-admins.docbook
 ${DOC}khelpcenter/userguide/kde-office.docbook
+${DOC}khelpcenter/userguide/konsole-intro.docbook
+${DOC}khelpcenter/userguide/messaging-intro.docbook
 ${DOC}khelpcenter/userguide/migrator-dictionary.docbook
 ${DOC}khelpcenter/userguide/more-help.docbook
 ${DOC}khelpcenter/userguide/net-connection-setup.docbook
@@ -1682,6 +1686,7 @@ ${DOC}kvoctrain/${I}
 ${DOC}kvoctrain/lang1-dlg.png
 ${DOC}kvoctrain/learnmenu.png
 ${DOC}kvoctrain/mainview.png
+${DOC}kvoctrain/man-spotlight2kvtml.1.docbook
 ${DOC}kvoctrain/mu-query-dlg.png
 ${DOC}kvoctrain/options1-dlg.png
 ${DOC}kvoctrain/options2-dlg.png

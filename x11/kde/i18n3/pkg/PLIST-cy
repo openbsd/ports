@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-cy,v 1.3 2005/07/28 08:47:40 espie Exp $
+@comment $OpenBSD: PLIST-cy,v 1.4 2005/10/17 14:11:01 espie Exp $
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo
@@ -95,6 +95,7 @@ ${LOC}kbinaryclock.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
 ${LOC}kbruch.mo
+${LOC}kbstateapplet.mo
 ${LOC}kbugbuster.mo
 ${LOC}kcachegrind.mo
 ${LOC}kcalc.mo

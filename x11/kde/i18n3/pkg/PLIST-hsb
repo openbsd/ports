@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hsb,v 1.2 2005/06/06 09:25:54 espie Exp $
+@comment $OpenBSD: PLIST-hsb,v 1.3 2005/10/17 14:11:02 espie Exp $
 share/locale/hsb/
 share/locale/hsb/LC_MESSAGES/
 ${LOC}appletproxy.mo
@@ -38,9 +38,9 @@ ${LOC}kgreet_classic.mo
 ${LOC}khotkeys.mo
 ${LOC}kicker.mo
 ${LOC}kio.mo
-${LOC}kio_devices.mo
 ${LOC}kio_help.mo
 ${LOC}kio_mac.mo
+${LOC}kio_media.mo
 ${LOC}kio_nntp.mo
 ${LOC}kio_settings.mo
 ${LOC}kio_smb.mo
