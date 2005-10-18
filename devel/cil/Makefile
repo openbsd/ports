@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/10/16 15:52:31 avsm Exp $
+# $OpenBSD: Makefile,v 1.11 2005/10/18 19:09:46 espie Exp $
 
 # until tested on others, even though bytecode is produced
 ONLY_FOR_ARCHS=	i386 amd64 macppc
@@ -39,7 +39,7 @@ post-extract:
 	@cp ${FILESDIR}/$i.ml ${WRKSRC}/src/ext
 .endfor
 
-pre-fake:
+pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/cil
 	${INSTALL_DATA_DIR} ${P5INST}/CIL
 
