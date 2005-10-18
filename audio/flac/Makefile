@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2005/03/09 14:41:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2005/10/18 23:24:25 naddy Exp $
 
 COMMENT=	"free lossless audio codec"
 
 DISTNAME=	flac-1.1.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio archivers
 HOMEPAGE=	http://flac.sourceforge.net/
 
@@ -25,6 +26,7 @@ LIB_DEPENDS=	ogg.5::audio/libogg
 BUILD_DEPENDS+=	::devel/nasm
 .endif
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-libiconv-prefix="${LOCALBASE}" \

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2005/07/02 19:38:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2005/10/18 23:24:25 naddy Exp $
 
 COMMENT=	"audio compression codec library"
 
 DISTNAME=	libvorbis-1.1.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=    	audio
 HOMEPAGE=	http://www.xiph.org/ogg/vorbis/
 
@@ -19,6 +20,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
 LIB_DEPENDS=	ogg.5::audio/libogg
 WANTLIB=	m
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --with-ogg=${LOCALBASE}
 SEPARATE_BUILD=	simple

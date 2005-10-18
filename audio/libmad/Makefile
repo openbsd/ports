@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2005/06/04 15:30:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2005/10/18 23:24:25 naddy Exp $
 
 COMMENT=	"high-quality MPEG audio decoder"
 
 DISTNAME=	libmad-0.15.1b
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio
 HOMEPAGE=	http://www.underbit.com/products/mad/
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.mars.org/pub/mpeg/ \
 		${MASTER_SITE_SOURCEFORGE:=mad/}
 
+USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

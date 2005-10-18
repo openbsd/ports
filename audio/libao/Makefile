@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2005/09/18 09:34:50 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2005/10/18 23:24:25 naddy Exp $
 
 COMMENT=	"portable audio output library"
 COMMENT-arts=	"aRts module for portable audio output library"
@@ -6,9 +6,9 @@ COMMENT-esd=	"ESounD module for portable audio output library"
 
 VERSION=	0.8.5
 DISTNAME=	libao-${VERSION}
-FULLPKGNAME=	libao-${VERSION}p1
-PKGNAME-arts=	libao-arts-${VERSION}p0
-PKGNAME-esd=	libao-esd-${VERSION}p0
+FULLPKGNAME=	libao-${VERSION}p2
+PKGNAME-arts=	libao-arts-${VERSION}p1
+PKGNAME-esd=	libao-esd-${VERSION}p1
 CATEGORIES=    	audio
 HOMEPAGE=	http://www.xiph.org/ao/
 
@@ -36,6 +36,7 @@ MULTI_PACKAGES+= -esd
 
 SUBPACKAGE?=
 
+USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static

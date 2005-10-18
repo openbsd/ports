@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2005/07/05 13:35:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2005/10/18 23:24:26 naddy Exp $
 
 COMMENT=	"play, encode, and manage Ogg Vorbis files"
 
@@ -24,6 +24,7 @@ LIB_DEPENDS=	ao.3::audio/libao \
 		vorbis.4,vorbisenc.2,vorbisfile.4::audio/libvorbis
 WANTLIB=	c crypto m ogg pthread ssl z
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-vcut
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
