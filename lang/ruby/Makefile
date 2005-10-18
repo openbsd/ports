@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2005/09/04 23:31:07 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2005/10/18 17:33:20 couderc Exp $
 
 COMMENT=		"object oriented script language with threads"
 
@@ -9,8 +9,6 @@ PKGNAME=		${DISTNAME}p1
 CATEGORIES=		lang
 
 HOMEPAGE=		http://www.ruby-lang.org/
-
-MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
