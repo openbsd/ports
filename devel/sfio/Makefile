@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/04 23:07:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2005/10/18 19:08:31 espie Exp $
 
 COMMENT=	"Safe/Fast I/O Library"
 
@@ -29,7 +29,7 @@ do-build:
 	    ${MAKE} CCMODE="${CFLAGS}" \
 	    vthread libsfio.a libstdio.a libsfio-mt.a libstdio-mt.a
 
-pre-fake:
+pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/sfio
 
 do-install:
