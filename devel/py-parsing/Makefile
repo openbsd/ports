@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2005/03/27 17:44:10 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2005/10/18 17:06:27 xsa Exp $
 
 COMMENT=	"Python parsing module"
 
-DISTNAME=	pyparsing-1.3
+DISTNAME=	pyparsing-1.3.3
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	devel
 

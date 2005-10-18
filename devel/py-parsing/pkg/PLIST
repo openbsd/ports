@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/03/27 17:44:10 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/10/18 17:06:27 xsa Exp $
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/pyparsing.py
 lib/python${MODPY_VERSION}/site-packages/pyparsing.pyc
 share/doc/py-parsing/
@@ -19,6 +21,7 @@ share/doc/py-parsing/pyparsing.CaselessLiteral-class.html
 share/doc/py-parsing/pyparsing.CharsNotIn-class.html
 share/doc/py-parsing/pyparsing.Combine-class.html
 share/doc/py-parsing/pyparsing.Dict-class.html
+share/doc/py-parsing/pyparsing.Each-class.html
 share/doc/py-parsing/pyparsing.Empty-class.html
 share/doc/py-parsing/pyparsing.FollowedBy-class.html
 share/doc/py-parsing/pyparsing.Forward-class.html
@@ -34,9 +37,11 @@ share/doc/py-parsing/pyparsing.NotAny-class.html
 share/doc/py-parsing/pyparsing.OneOrMore-class.html
 share/doc/py-parsing/pyparsing.Optional-class.html
 share/doc/py-parsing/pyparsing.Or-class.html
+share/doc/py-parsing/pyparsing.ParseBaseException-class.html
 share/doc/py-parsing/pyparsing.ParseElementEnhance-class.html
 share/doc/py-parsing/pyparsing.ParseException-class.html
 share/doc/py-parsing/pyparsing.ParseExpression-class.html
+share/doc/py-parsing/pyparsing.ParseFatalException-class.html
 share/doc/py-parsing/pyparsing.ParseResults-class.html
 share/doc/py-parsing/pyparsing.ParserElement-class.html
 share/doc/py-parsing/pyparsing.PositionToken-class.html
@@ -57,7 +62,7 @@ share/doc/py-parsing/toc.html
 share/doc/py-parsing/trees.html
 share/examples/py-parsing/
 share/examples/py-parsing/AcManForm.dfm
-share/examples/py-parsing/Setup.ini
+share/examples/py-parsing/SimpleCalc.py
 share/examples/py-parsing/SingleForm.dfm
 share/examples/py-parsing/chemicalFormulas.py
 share/examples/py-parsing/commasep.py
@@ -70,8 +75,10 @@ share/examples/py-parsing/ebnftest.py
 share/examples/py-parsing/fourFn.py
 share/examples/py-parsing/getNTPservers.py
 share/examples/py-parsing/greeting.py
+share/examples/py-parsing/greetingInKorean.py
 share/examples/py-parsing/httpServerLogParser.py
 share/examples/py-parsing/idlParse.py
+share/examples/py-parsing/makeHTMLTagExample.py
 share/examples/py-parsing/mozilla.ics
 share/examples/py-parsing/mozillaCalendarParser.py
 share/examples/py-parsing/pgn.py
