@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2005/06/09 01:19:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2005/10/18 19:11:02 espie Exp $
 
 COMMENT=	"interactive tutorial for algorithms and data structures"
 
@@ -29,7 +29,7 @@ SUBST_VARS=	P5SITE
 do-configure:
 	@perl -i -pe 's@%%P5INST%%@${P5INST}@g' ${WRKSRC}/algotutor
 
-pre-fake:
+pre-install:
 	${INSTALL_DATA_DIR} ${P5INST}/algotutor
 
 do-install:
