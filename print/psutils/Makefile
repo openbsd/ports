@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2005/10/17 19:08:59 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2005/10/18 22:33:29 espie Exp $
 
 COMMENT=	"manipulating PostScript documents"
 
 DISTNAME=	psutils-p17
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	psutils-0.17p0
 CATEGORIES=	print
 
 MASTER_SITES=   ftp://ftp.tardis.ed.ac.uk/users/ajcd/
