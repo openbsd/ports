@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/12/16 00:31:22 alek Exp $
+# $OpenBSD: Makefile,v 1.13 2005/10/18 19:51:59 sturm Exp $
 
 COMMENT=	"gtk-based icq 2000 client"
 
@@ -23,6 +23,7 @@ WANTLIB=		X11 Xext Xi Xss c gdk glib gmodule gtk iconv intl m \
 USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--with-gnome=no
+# --enable-debug permits -g in CFLAGS, doesn't do anything else
+CONFIGURE_ARGS=		--enable-debug --with-gnome=no
 
 .include <bsd.port.mk>
