@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/18 19:51:58 niallo Exp $
+bin/stella
+share/doc/stella/
+share/doc/stella/cheat.html
+share/doc/stella/debugger.html
+share/doc/stella/graphics/
+share/doc/stella/graphics/chucky_cheese.png
+share/doc/stella/graphics/circuit.png
+share/doc/stella/graphics/console.png
+share/doc/stella/graphics/eventmapping.png
+share/doc/stella/graphics/eventmapping_remap.png
+share/doc/stella/graphics/jr_pacman.png
+share/doc/stella/graphics/launcher.png
+share/doc/stella/graphics/launcher_options_rom.png
+share/doc/stella/graphics/launcher_options_snap.png
+share/doc/stella/graphics/options_about.png
+share/doc/stella/graphics/options_audio.png
+share/doc/stella/graphics/options_gameinfo.png
+share/doc/stella/graphics/options_help.png
+share/doc/stella/graphics/options_video.png
+share/doc/stella/graphics/pacman.png
+share/doc/stella/graphics/rom_browser.png
+share/doc/stella/graphics/secret_quest.png
+share/doc/stella/graphics/space_invaders.png
+share/doc/stella/stella.html
