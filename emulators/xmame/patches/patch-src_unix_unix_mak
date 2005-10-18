@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_unix_unix_mak,v 1.8 2005/10/18 19:08:00 aanriot Exp $
+--- src/unix/unix.mak.orig	Tue Oct 11 07:28:35 2005
++++ src/unix/unix.mak	Tue Oct 11 07:29:23 2005
+@@ -256,7 +256,7 @@ MY_CFLAGS = $(CFLAGS) $(IL) $(CFLAGS.$(M
+ 	-Dstricmp=strcasecmp -Dstrnicmp=strncasecmp \
+ 	-DPI=M_PI -DXMAME -DUNIX -DSIGNED_SAMPLES -DCLIB_DECL= \
+ 	$(COREDEFS) $(SOUNDDEFS) $(CPUDEFS) $(ASMDEFS) \
+-	$(INCLUDES) $(INCLUDE_PATH)
++	$(INCLUDE_PATH) $(INCLUDES)
+ 
+ MY_LIBS = $(LIBS) $(LIBS.$(ARCH)) $(LIBS.$(DISPLAY_METHOD)) -lz
+ 
