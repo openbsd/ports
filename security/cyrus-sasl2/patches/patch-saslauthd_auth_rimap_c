@@ -1,0 +1,21 @@
+$OpenBSD: patch-saslauthd_auth_rimap_c,v 1.1 2005/10/18 10:02:13 jakob Exp $
+--- saslauthd/auth_rimap.c.orig	Wed Jun 30 16:49:28 2004
++++ saslauthd/auth_rimap.c	Tue Oct 18 11:57:18 2005
+@@ -438,7 +438,7 @@ auth_rimap (
+ 	syslog(LOG_WARNING, "auth_rimap: writev: %m");
+ 	memset(qlogin, 0, strlen(qlogin));
+ 	free(qlogin);
+-	memset(qpass, 0, strlen(qlogin));
++	memset(qpass, 0, strlen(qpass));
+ 	free(qpass);
+ 	(void)close(s);
+ 	return strdup(RESP_IERROR);
+@@ -447,7 +447,7 @@ auth_rimap (
+     /* don't need these any longer */
+     memset(qlogin, 0, strlen(qlogin));
+     free(qlogin);
+-    memset(qpass, 0, strlen(qlogin));
++    memset(qpass, 0, strlen(qpass));
+     free(qpass);
+ 
+     /* read and parse the LOGIN response */
