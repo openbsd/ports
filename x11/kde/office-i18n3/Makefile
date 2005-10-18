@@ -1,38 +1,47 @@
-# $OpenBSD: Makefile,v 1.9 2005/03/29 21:18:37 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2005/10/18 18:32:55 espie Exp $
 
-LANGS=  af ar bg bn bs ca cs cy da de el en_GB eo es et eu fa fi fr gl he hi \
-	hr hsb hu is it ja mn ms nb nds nl nn pa pl pt pt_BR ro ru sk sl \
-	sr sr@Latn sv ta tg tr uk uz zh_CN zh_TW
+LANGS= bg ca cs cy da de el en_GB es et eu fi fr hu it nb nl nn pl \
+	pt pt_BR ru sl sr sr@Latn sv ta tg zh_CN
 
 # some extra vars to compact PLISTs
 I=index.docbook
 C=index.cache.bz2
 
+FLAVOR?=fr
 SUBST_VARS=I C
 .for l in ${LANGS}
-MULTI_PACKAGES += -$l
-FULLPKGNAME-$l = koffice-i18n-$l-${VERSION}
-COMMENT-$l= "$l translations for koffice"
-DOC-$l=share/doc/HTML/$l/
-LOC-$l=share/locale/$l/LC_MESSAGES/
-SUBST_VARS+=DOC-$l LOC-$l
+FLAVORS+=$l
+.  if ${FLAVOR:M$l}
+DISTFILES=koffice-l10n-$l-${VERSION}.tar.bz2
+WRKDIST=${WRKDIR}/koffice-l10n-$l-${VERSION}
+FULLPKGNAME=koffice-i18n-$l-${VERSION}
+COMMENT= "$l translations for KDE"
+DOC=share/doc/HTML/$l/
+LOC=share/locale/$l/LC_MESSAGES/
+.  endif
+SUPDISTFILES+= koffice-l10n-$l-${VERSION}.tar.bz2
+SUBST_VARS+=DOC LOC
 .endfor
 
-COMMENT="all translations for koffice"
-
-CATEGORIES=		x11 x11/kde
-VERSION=		1.3.5
 DISTNAME=		koffice-i18n-${VERSION}
+CATEGORIES=		x11 x11/kde
+VERSION=		1.4.2
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}
-MASTER_SITES= ${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
+MASTER_SITES=	${MASTER_SITE_KDE:=stable/koffice-1.4.2/src/koffice-l10n/}
 
 BUILD_DEPENDS = ::x11/kde/libs3
+RUN_DEPENDS = ::x11/kde/libs3
 
+PATCH_LIST=	patch-*
 MODKDE_VERSION=
-MODKDE_NODEBUG=Yes
+CONFIGURE_STYLE=gnu
 
 MAKE_FLAGS+=MEINPROC=
 FAKE_FLAGS=DESTDIR=${WRKINST} MEINPROC=
 CONFIGURE_ARGS+=-C
+
+DESCR=${PKGDIR}/DESCR
+PLIST=${PKGDIR}/PLIST-${FLAVOR}
+MODKDE_NODEBUG=Yes
 
 .include <bsd.port.mk>
