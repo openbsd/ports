@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/10/17 14:45:42 aanriot Exp $
+# $OpenBSD: Makefile,v 1.4 2005/10/18 15:31:55 saad Exp $
 
 COMMENT=	"a RRDtool frontend for Postfix statistics"
 
-VERSION=	1.10
+VERSION=	1.12
 DISTNAME=	mailgraph-${VERSION}
 CATEGORIES=	net
 
