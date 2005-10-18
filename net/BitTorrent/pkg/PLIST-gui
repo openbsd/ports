@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-gui,v 1.1 2005/05/15 14:58:09 naddy Exp $
-bin/btdownloadgui
-bin/btmaketorrentgui
+@comment $OpenBSD: PLIST-gui,v 1.2 2005/10/18 14:12:35 naddy Exp $
+bin/bittorrent
+bin/maketorrent
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/Desktop.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/Desktop.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/GUI.py
@@ -20,3 +20,6 @@ share/pixmaps/BitTorrent/play.png
 share/pixmaps/BitTorrent/queued.png
 share/pixmaps/BitTorrent/remove.png
 share/pixmaps/BitTorrent/running.png
+share/pixmaps/BitTorrent/status-natted.png
+share/pixmaps/BitTorrent/status-running.png
+share/pixmaps/BitTorrent/status-stopped.png

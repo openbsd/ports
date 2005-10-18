@@ -1,0 +1,12 @@
+$OpenBSD: patch-BitTorrent_platform_py,v 1.1 2005/10/18 14:12:35 naddy Exp $
+--- BitTorrent/platform.py.orig	Wed Oct 12 06:08:35 2005
++++ BitTorrent/platform.py	Sun Oct 16 23:06:10 2005
+@@ -51,7 +51,7 @@ if os_name == 'nt':
+     del wh, wv, wk
+ 
+ def calc_unix_dirs():
+-    appdir = '%s-%s'%(app_name, version)
++    appdir = app_name
+     ip = os.path.join('share', 'pixmaps', appdir)
+     dp = os.path.join('share', 'doc'    , appdir)
+     lp = os.path.join('share', 'locale')

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2005/08/02 14:00:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2005/10/18 14:12:35 naddy Exp $
 
 COMMENT=	"cooperative file distribution system implemented in Python"
 COMMENT-gui=	"graphical interface components for BitTorrent"
 
-VERSION=	4.1.3
+VERSION=	4.1.6
 DISTNAME=	BitTorrent-${VERSION}
 PKGNAME-gui=	BitTorrent-gui-${VERSION}
 CATEGORIES=	net
@@ -22,7 +22,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bittorrent/}
 MASTER_SITES0=	http://grappa.unix-ag.uni-kl.de/~naddy/
 DISTFILES=	${DISTNAME}.tar.gz
 # pre-built file because our gettext tools are too old
-DISTFILES+=	bt413-messages.pot:0
+DISTFILES+=	bt416-messages.pot:0
 
 MODULES=	lang/python
 
@@ -39,8 +39,7 @@ NO_REGRESS=	Yes
 EXTRACT_CASES=	*.pot) cp ${FULLDISTDIR}/$$archive ${WRKDIST}/messages.pot ;;
 
 post-configure:
-	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' ${WRKBUILD}/bt*.py
-	@for file in ${WRKBUILD}/bt*.py; do mv $$file $${file%.py}; done
+	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' ${WRKBUILD}/*.py
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \

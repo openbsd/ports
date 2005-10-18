@@ -1,10 +1,10 @@
-#	$OpenBSD: README.OpenBSD,v 1.3 2005/06/01 16:02:31 naddy Exp $
+#	$OpenBSD: README.OpenBSD,v 1.4 2005/10/18 14:12:35 naddy Exp $
 
 To begin using BitTorrent quickly, simply fetch a torrent file and
-run btdownloadgui (X11) or btdownloadcurses:
+run bittorrent (X11) or bittorrent-curses:
 
 $ ftp http://www.somesite.com/some.torrent
-$ btdownloadcurses some.torrent
+$ bittorrent-curses some.torrent
 
 Note that for machines behind NAT, you will need to pass in the ports
 outlined in README.txt.  An example pf.conf stub for doing this is:

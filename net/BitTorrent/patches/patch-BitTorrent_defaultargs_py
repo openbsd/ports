@@ -1,7 +1,7 @@
-$OpenBSD: patch-BitTorrent_defaultargs_py,v 1.3 2005/08/02 14:00:31 naddy Exp $
---- BitTorrent/defaultargs.py.orig	Sat Jul  9 01:22:38 2005
-+++ BitTorrent/defaultargs.py	Tue Jul 19 20:58:37 2005
-@@ -112,7 +112,7 @@ rare_options = [
+$OpenBSD: patch-BitTorrent_defaultargs_py,v 1.4 2005/10/18 14:12:35 naddy Exp $
+--- BitTorrent/defaultargs.py.orig	Tue Aug 16 01:06:26 2005
++++ BitTorrent/defaultargs.py	Mon Oct  3 16:30:54 2005
+@@ -114,7 +114,7 @@ rare_options = [
       _("do not connect to several peers that have the same IP address")),
      ('peer_socket_tos', 8,
       _("if nonzero, set the TOS option for peer connections to this value")),
