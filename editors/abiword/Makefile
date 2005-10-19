@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2005/10/14 16:55:23 fgsch Exp $
+# $OpenBSD: Makefile,v 1.47 2005/10/19 22:24:11 fgsch Exp $
 
 COMMENT=	"free cross-platform WYSIWYG word processor"
 
 VERSION=	2.4.1
 MAJORVER=	${VERSION:C/..$//}
 DISTNAME=	abiword-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	editors
 
 HOMEPAGE=	http://www.abisource.com/
@@ -36,7 +37,7 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-gucharmap --disable-enchant --without-pspell
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DMAXSTRINGCHARS=512" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 FLAVORS=	gnome

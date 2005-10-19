@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2005/10/07 15:42:06 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.17 2005/10/19 22:24:12 fgsch Exp $
 bin/AbiWord-${MAJORVER}
 bin/abiword
 bin/ttfadmin.sh
@@ -208,7 +208,7 @@ share/AbiSuite-${MAJORVER}/clipart/tux_bordelais.png
 share/AbiSuite-${MAJORVER}/clipart/weather.png
 share/AbiSuite-${MAJORVER}/clipart/write.png
 share/AbiSuite-${MAJORVER}/dictionary/
-share/AbiSuite-${MAJORVER}/dictionary/american.hash
+@comment share/AbiSuite-${MAJORVER}/dictionary/american.hash
 share/AbiSuite-${MAJORVER}/dictionary/ispell_dictionary_list.xml
 share/AbiSuite-${MAJORVER}/icons/
 share/AbiSuite-${MAJORVER}/icons/abiword_16.xpm
