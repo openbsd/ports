@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.28 2005/04/17 23:02:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2005/10/19 18:35:43 naddy Exp $
 
 COMMENT=	"graphics file viewer for X11"
 
 VERSION=	4.1
-REVISION=	14	# Debian
+REVISION=	15	# Debian
 
 DISTNAME=	xloadimage.${VERSION}
-PKGNAME=	xloadimage-${VERSION}.${REVISION}p0
+PKGNAME=	xloadimage-${VERSION}.${REVISION}
 CATEGORIES=	x11 graphics
 
 FAKE=		lib
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 c jpeg m z 
 
 MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
 MASTER_SITES0=	ftp://ftp.debian.org/debian/pool/main/x/xloadimage/ \
@@ -27,6 +26,7 @@ PATCHFILES=	xloadimage_${VERSION}-${REVISION}.diff.gz:0
 PATCH_DIST_STRIP= -p1
 
 LIB_DEPENDS=	png.2::graphics/png tiff.35::graphics/tiff
+WANTLIB=	X11 c jpeg m z 
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
