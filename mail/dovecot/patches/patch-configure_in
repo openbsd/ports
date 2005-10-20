@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.6 2005/09/04 18:22:30 brad Exp $
---- configure.in.orig	Sat Mar  5 15:02:47 2005
-+++ configure.in	Sun Mar  6 16:46:00 2005
+$OpenBSD: patch-configure_in,v 1.7 2005/10/20 18:28:48 brad Exp $
+--- configure.in.orig	Thu Oct 20 05:12:19 2005
++++ configure.in	Thu Oct 20 14:00:00 2005
 @@ -12,6 +12,7 @@ AC_PROG_CPP
  AC_HEADER_STDC
  AC_C_INLINE
@@ -8,4 +8,4 @@ $OpenBSD: patch-configure_in,v 1.6 2005/09/04 18:22:30 brad Exp $
 +LIBS="${LIBS} -liconv"
  AM_ICONV
  
- AC_CHECK_HEADERS(strings.h stdint.h unistd.h dirent.h \
+ AC_CHECK_HEADERS(strings.h stdint.h unistd.h dirent.h inttypes.h \

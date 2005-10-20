@@ -1,6 +1,6 @@
-$OpenBSD: patch-dovecot-example_conf,v 1.10 2005/09/04 18:22:30 brad Exp $
---- dovecot-example.conf.orig	Fri Jul 22 13:49:52 2005
-+++ dovecot-example.conf	Fri Jul 22 13:58:29 2005
+$OpenBSD: patch-dovecot-example_conf,v 1.11 2005/10/20 18:28:48 brad Exp $
+--- dovecot-example.conf.orig	Sun Oct 16 11:48:53 2005
++++ dovecot-example.conf	Thu Oct 20 14:02:48 2005
 @@ -5,13 +5,12 @@
  # value inside quotes, eg.: key = "# char and trailing whitespace  "
  
@@ -64,7 +64,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.10 2005/09/04 18:22:30 brad Exp $
  
  # Set max. process size in megabytes. If you don't use
  # login_process_per_connection you might need to grow this.
-@@ -301,7 +300,7 @@
+@@ -303,7 +302,7 @@
  
  # Don't write() to mmaped files. This is required for some operating systems
  # which use separate caches for them, such as OpenBSD.
@@ -73,7 +73,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.10 2005/09/04 18:22:30 brad Exp $
  
  # Locking method for index files. Alternatives are fcntl, flock and dotlock.
  # Dotlocking uses some tricks which may create more disk I/O than other locking
-@@ -389,12 +388,12 @@
+@@ -391,12 +390,12 @@
  
  protocol imap {
    # Login executable location.
@@ -89,7 +89,7 @@ $OpenBSD: patch-dovecot-example_conf,v 1.10 2005/09/04 18:22:30 brad Exp $
  
    # Maximum IMAP command line length in bytes. Some clients generate very long
    # command lines with huge mailboxes, so you may need to raise this if you get
-@@ -442,10 +441,10 @@ protocol imap {
+@@ -444,10 +443,10 @@ protocol imap {
  
  protocol pop3 {
    # Login executable location.
@@ -102,7 +102,16 @@ $OpenBSD: patch-dovecot-example_conf,v 1.10 2005/09/04 18:22:30 brad Exp $
  
    # Don't try to set mails non-recent or seen with POP3 sessions. This is
    # mostly intended to reduce disk I/O. With maildir it doesn't move files
-@@ -506,7 +505,7 @@ protocol pop3 {
+@@ -484,7 +483,7 @@ protocol pop3 {
+   # installations. %08Xu%08Xv will be the new default, so use it for new
+   # installations.
+   #
+-  #pop3_uidl_format = 
++  pop3_uidl_format = %08Xv%08Xu
+ 
+   # POP3 logout format string:
+   #  %t - number of TOP commands
+@@ -515,7 +514,7 @@ protocol pop3 {
  ##
  
  # Executable location
@@ -111,16 +120,16 @@ $OpenBSD: patch-dovecot-example_conf,v 1.10 2005/09/04 18:22:30 brad Exp $
  
  # Set max. process size in megabytes.
  #auth_process_size = 256
-@@ -573,7 +572,7 @@ auth default {
+@@ -596,7 +595,7 @@ auth default {
    # Note that PAM can only be used to verify if user's password is correct,
    # so it can't be used as userdb. If you don't want to use a separate user
    # database (passwd usually), you can use static userdb.
 -  passdb pam {
 +  #passdb pam {
-     # [-session] [<service name>]
+     # [-session] [cache_key=<key>] [<service name>]
      #
      # -session makes Dovecot open and immediately close PAM session. Some
-@@ -582,13 +581,13 @@ auth default {
+@@ -616,13 +615,13 @@ auth default {
      # If service name is "*", it means the authenticating service name
      # is used, eg. pop3 or imap.
      #args = dovecot
