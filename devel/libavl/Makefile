@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/07/19 02:04:03 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2005/10/20 06:28:59 kevlo Exp $
 
 COMMENT=	"library for balanced binary trees"
 
@@ -7,7 +7,7 @@ DISTNAME=	avl-${VERSION}
 PKGNAME=	libavl-${VERSION}
 CATEGORIES=	devel
 
-HOMEPAGE=	http://www.msu.edu/user/pfaffben/avl/
+HOMEPAGE=	http://www.stanford.edu/~blp/avl/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
