@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2005/10/20 04:20:28 jolan Exp $
+--- Makefile.orig	Tue Sep  6 10:30:19 2005
++++ Makefile	Tue Oct 18 22:28:50 2005
+@@ -9,7 +9,7 @@ OPTFLAGS	= 
+ export OPTFLAGS
+ LIBDIR		= /lib
+ export LIBDIR
+-MANDIR		= $(DESTDIR)$(PREFIX)/share/man
++MANDIR		= $(DESTDIR)$(PREFIX)/man
+ 
+ FIND		= find . \( -name '*.glade' -o -name '*.py' -o -name '*.xpm' -o -name '*.gif' -o -name '*.png' -o -name '*.wav' \)
+ 

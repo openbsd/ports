@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_common_optparser_py,v 1.1.1.1 2005/10/20 04:20:28 jolan Exp $
+--- src/common/optparser.py.orig	Wed Oct 19 01:25:36 2005
++++ src/common/optparser.py	Wed Oct 19 01:25:44 2005
+@@ -86,8 +86,11 @@ class OptionsParser:
+ 	
+ 	def write(self):
+ 		(base_dir, filename) = os.path.split(self.__filename)
+-		base_dir = base_dir.decode(sys.getfilesystemencoding())
+-		filename = filename.decode(sys.getfilesystemencoding())
++		try:
++			base_dir = base_dir.decode(sys.getfilesystemencoding())
++			filename = filename.decode(sys.getfilesystemencoding())
++		except:
++			pass
+ 		self.__tempfile = os.path.join(base_dir, '.' + filename)
+ 		try:
+ 			fd = open(self.__tempfile, 'w')

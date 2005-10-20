@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_common_logger_py,v 1.1.1.1 2005/10/20 04:20:28 jolan Exp $
+--- src/common/logger.py.orig	Tue Sep  6 12:30:14 2005
++++ src/common/logger.py	Wed Oct 19 01:37:07 2005
+@@ -36,7 +36,10 @@ if os.name == 'nt':
+ 		# win9x, ./logs
+ 		LOGPATH = 'Logs'
+ 
+-LOGPATH = LOGPATH.decode(sys.getfilesystemencoding())
++try:
++	LOGPATH = LOGPATH.decode(sys.getfilesystemencoding())
++except:
++	pass
+ 
+ class Logger:
+ 	def __init__(self):

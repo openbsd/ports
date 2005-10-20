@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Makefile,v 1.1.1.1 2005/10/20 04:20:28 jolan Exp $
+--- src/Makefile.orig	Tue Sep  6 10:30:15 2005
++++ src/Makefile	Tue Oct 18 22:02:26 2005
+@@ -1,7 +1,7 @@
+ # Set the C flags to include the GTK+ and Python libraries
+ PYTHONVER = `python -c 'import sys; print sys.version[:3]'`
+-CFLAGS = `pkg-config --cflags gtk+-2.0 pygtk-2.0` -fPIC -I/usr/include/python$(PYTHONVER) -I.
+-LDFLAGS = `pkg-config --libs gtk+-2.0 pygtk-2.0`
++CFLAGS += `pkg-config --cflags gtk+-2.0 pygtk-2.0` -fPIC ${PY_CFLAGS} -I.
++LDFLAGS += `pkg-config --libs gtk+-2.0 pygtk-2.0`
+ 
+ all: trayicon.so gtkspell.so
+ 
