@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2005/09/27 03:49:35 jolan Exp $
+# $OpenBSD: Makefile,v 1.12 2005/10/20 04:42:56 jolan Exp $
 
 COMMENT=	"Embedded SQL implementation"
 COMMENT-tcl=	"TCL bindings for Sqlite3"
 V=		3.2.7
-PKGNAME=	sqlite3-${V}
-PKGNAME-tcl=	sqlite3-tcl-${V}
+PKGNAME=	sqlite3-${V}p0
+PKGNAME-tcl=	sqlite3-tcl-${V}p0
 DISTNAME=	sqlite-${V}
 CATEGORIES=	databases
 MASTER_SITES=	${HOMEPAGE}
@@ -23,6 +23,11 @@ WANTLIB=	c ncurses readline
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
+
+# XXX gcc bug? some regress tests crash at w/-O2 but not -Os
+.if ${MACHINE_ARCH} == "amd64"
+CFLAGS+=-Os
+.endif
 
 PSEUDO_FLAVORS=	no_tcl
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
