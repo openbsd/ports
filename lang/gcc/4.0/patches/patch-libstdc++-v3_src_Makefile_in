@@ -1,7 +1,7 @@
-$OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.3 2005/01/17 19:20:10 espie Exp $
---- libstdc++-v3/src/Makefile.in.orig	Mon Jan 10 18:07:49 2005
-+++ libstdc++-v3/src/Makefile.in	Mon Jan 17 16:23:21 2005
-@@ -274,7 +274,7 @@ WARN_CXXFLAGS = \
+$OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.4 2005/10/20 23:28:02 espie Exp $
+--- libstdc++-v3/src/Makefile.in.orig	Wed Jun 22 22:39:26 2005
++++ libstdc++-v3/src/Makefile.in	Tue Oct  4 02:01:18 2005
+@@ -273,7 +273,7 @@ WARN_CXXFLAGS = \
  AM_CPPFLAGS = $(GLIBCXX_INCLUDES)
  
  # Cross compiler support.

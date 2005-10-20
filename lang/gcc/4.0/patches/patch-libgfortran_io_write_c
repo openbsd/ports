@@ -1,7 +1,7 @@
-$OpenBSD: patch-libgfortran_io_write_c,v 1.1 2005/06/16 18:04:41 espie Exp $
---- libgfortran/io/write.c.orig	Thu Jun 16 13:12:55 2005
-+++ libgfortran/io/write.c	Thu Jun 16 19:36:34 2005
-@@ -346,7 +346,7 @@ output_float (fnode *f, double value, in
+$OpenBSD: patch-libgfortran_io_write_c,v 1.2 2005/10/20 23:28:02 espie Exp $
+--- libgfortran/io/write.c.orig	Wed Sep  7 22:21:34 2005
++++ libgfortran/io/write.c	Tue Oct  4 02:01:18 2005
+@@ -370,7 +370,7 @@ output_float (fnode *f, double value, in
  	ndigits = 27 - edigits;
      }
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-libgfortran_io_write_c,v 1.1 2005/06/16 18:04:41 espie Exp $
    
    /* Check the resulting string has punctuation in the correct places.  */
    if (buffer[2] != '.' || buffer[ndigits + 2] != 'e')
-@@ -1344,6 +1344,7 @@ nml_write_obj (namelist_info * obj, inde
+@@ -1399,6 +1399,7 @@ nml_write_obj (namelist_info * obj, inde
    index_type clen;
    index_type elem_ctr;
    index_type obj_name_len;
@@ -18,7 +18,7 @@ $OpenBSD: patch-libgfortran_io_write_c,v 1.1 2005/06/16 18:04:41 espie Exp $
    void * p ;
    char cup;
    char * obj_name;
-@@ -1476,33 +1477,34 @@ nml_write_obj (namelist_info * obj, inde
+@@ -1531,33 +1532,34 @@ nml_write_obj (namelist_info * obj, inde
  			    components.  */
  
  	      /* First ext_name => get length of all possible components  */

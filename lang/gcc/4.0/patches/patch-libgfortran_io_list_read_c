@@ -1,7 +1,7 @@
-$OpenBSD: patch-libgfortran_io_list_read_c,v 1.1 2005/06/16 18:04:41 espie Exp $
---- libgfortran/io/list_read.c.orig	Thu Jun 16 19:20:22 2005
-+++ libgfortran/io/list_read.c	Thu Jun 16 19:22:37 2005
-@@ -1656,8 +1656,8 @@ nml_touch_nodes (namelist_info * nl)
+$OpenBSD: patch-libgfortran_io_list_read_c,v 1.2 2005/10/20 23:28:02 espie Exp $
+--- libgfortran/io/list_read.c.orig	Mon Sep  5 23:14:36 2005
++++ libgfortran/io/list_read.c	Tue Oct  4 02:01:18 2005
+@@ -1665,8 +1665,8 @@ nml_touch_nodes (namelist_info * nl)
    index_type len = strlen (nl->var_name) + 1;
    int dim;
    char * ext_name = (char*)get_mem (len + 1);
@@ -12,7 +12,7 @@ $OpenBSD: patch-libgfortran_io_list_read_c,v 1.1 2005/06/16 18:04:41 espie Exp $
    for (nl = nl->next; nl; nl = nl->next)
      {
        if (strncmp (nl->var_name, ext_name, len) == 0)
-@@ -1900,8 +1900,8 @@ nml_read_obj (namelist_info * nl, index_
+@@ -1909,8 +1909,8 @@ nml_read_obj (namelist_info * nl, index_
  	  case GFC_DTYPE_DERIVED:
  	    obj_name_len = strlen (nl->var_name) + 1;
  	    obj_name = get_mem (obj_name_len+1);
@@ -23,7 +23,7 @@ $OpenBSD: patch-libgfortran_io_list_read_c,v 1.1 2005/06/16 18:04:41 espie Exp $
  
  	    /* Now loop over the components. Update the component pointer
  	       with the return value from nml_write_obj.  This loop jumps
-@@ -2108,11 +2108,11 @@ get_name:
+@@ -2117,11 +2117,11 @@ get_name:
  
    if (component_flag)
      {
