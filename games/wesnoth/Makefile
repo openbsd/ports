@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2005/10/07 12:10:18 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2005/10/20 06:49:50 jolan Exp $
 
 COMMENT=	"strategy game with fantasy theme"
 DISTNAME=	wesnoth-1.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wesnoth/}
 
@@ -22,13 +22,6 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		SDL_mixer::devel/sdl-mixer \
 		zipios::archivers/zipios
 
-
-.if ${MACHINE_ARCH} == "zaurus"
-BUILD_DEPENDS+=		pngmeta::graphics/pngmeta \
-					:ImageMagick-*:graphics/ImageMagick
-CONFIGURE_ARGS+=	--enable-tinygui
-.endif
-
 # The detection of kde-config/gnome-config will only lead to some
 # desktop file installation...
 # png is only required for the tools, which we don't build yet.
@@ -36,11 +29,17 @@ CONFIGURE_ARGS+=	--enable-tinygui
 MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu
-FLAVORS=	lite
+FLAVORS=	lite tinygui
 FLAVOR?=
 
 .if ${FLAVOR:L:Mlite}
 CONFIGURE_ARGS+=--enable-lite
+.endif
+
+.if ${FLAVOR:L:Mtinygui}
+BUILD_DEPENDS+=	::graphics/pngmeta \
+		:ImageMagick-*:graphics/ImageMagick
+CONFIGURE_ARGS+=--enable-tinygui
 .endif
 
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
