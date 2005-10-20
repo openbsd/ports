@@ -1,0 +1,100 @@
+$OpenBSD: patch-src_copyin_c,v 1.1 2005/10/20 21:45:18 naddy Exp $
+--- src/copyin.c.orig	Wed Sep  8 13:10:02 2004
++++ src/copyin.c	Thu Oct 20 23:33:40 2005
+@@ -389,19 +389,20 @@ create_final_defers ()
+ 	  continue;
+ 	}
+ 
+-      if (close (out_file_des) < 0)
+-	error (0, errno, "%s", d->header.c_name);
+-
+       /* File is now copied; set attributes.  */
+       if (!no_chown_flag)
+-	if ((chown (d->header.c_name,
++	if ((fchown (out_file_des,
+ 		    set_owner_flag ? set_owner : d->header.c_uid,
+ 	       set_group_flag ? set_group : d->header.c_gid) < 0)
+ 	    && errno != EPERM)
+ 	  error (0, errno, "%s", d->header.c_name);
+       /* chown may have turned off some permissions we wanted. */
+-      if (chmod (d->header.c_name, (int) d->header.c_mode) < 0)
++      if (fchmod (out_file_des, (int) d->header.c_mode) < 0)
+ 	error (0, errno, "%s", d->header.c_name);
++
++      if (close (out_file_des) < 0)
++	error (0, errno, "%s", d->header.c_name);
++
+       if (retain_time_flag)
+ 	{
+ 	  times.actime = times.modtime = d->header.c_mtime;
+@@ -1335,6 +1336,48 @@ swab_array (char *ptr, int count)
+     }
+ }
+ 
++/* Return a safer suffix of FILE_NAME, or "." if it has no safer
++   suffix.  Check for fully specified file names and other atrocities.  */
++static const char *
++safer_name_suffix (char const *file_name)
++{
++  char const *p;
++
++  /* Skip leading file name components that contain "..", and leading slashes.  */
++  size_t prefix_len = 0;
++
++  for (p = file_name; *p;)
++    {
++      if (p[0] == '.' && p[1] == '.' && ((p[2] == '/') || !p[2]))
++	prefix_len = p + 2 - file_name;
++
++      do
++	{
++	  if (*p++ == '/')
++	    break;
++	}
++      while (*p);
++    }
++
++  for (p = file_name + prefix_len; *p == '/'; p++)
++    continue;
++  prefix_len = p - file_name;
++
++  if (prefix_len)
++    {
++      char *prefix = alloca (prefix_len + 1);
++      memcpy (prefix, file_name, prefix_len);
++      prefix[prefix_len] = '\0';
++
++      error (0, 0, ("Removing leading `%s' from member names"), prefix);
++    }
++
++  if (!*p)
++    p = ".";
++
++  return p;
++}
++
+ /* Read the collection from standard input and create files
+    in the file system.  */
+ 
+@@ -1445,18 +1488,11 @@ process_copy_in ()
+ 
+       /* Do we have to ignore absolute paths, and if so, does the filename
+          have an absolute path?  */
+-      if (no_abs_paths_flag && file_hdr.c_name && file_hdr.c_name [0] == '/')
++      if (no_abs_paths_flag && file_hdr.c_name && file_hdr.c_name [0])
+ 	{
+-	  char *p;
++	  const char *p = safer_name_suffix (file_hdr.c_name);
+ 
+-	  p = file_hdr.c_name;
+-	  while (*p == '/')
+-	    ++p;
+-	  if (*p == '\0')
+-	    {
+-	      strcpy (file_hdr.c_name, ".");
+-	    }
+-	  else
++	  if (p != file_hdr.c_name)
+ 	    {
+               /* Debian hack: file_hrd.c_name is sometimes set to
+                  point to static memory by code in tar.c.  This

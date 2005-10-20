@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_copypass_c,v 1.1 2005/10/20 21:45:18 naddy Exp $
+--- src/copypass.c.orig	Mon Sep  6 14:09:04 2004
++++ src/copypass.c	Thu Oct 20 23:33:41 2005
+@@ -181,19 +181,20 @@ process_copy_pass ()
+ 		}
+ 	      if (close (in_file_des) < 0)
+ 		error (0, errno, "%s", input_name.ds_string);
+-	      if (close (out_file_des) < 0)
+-		error (0, errno, "%s", output_name.ds_string);
+-
+ 	      /* Set the attributes of the new file.  */
+ 	      if (!no_chown_flag)
+-		if ((chown (output_name.ds_string,
++		if ((fchown (out_file_des,
+ 			    set_owner_flag ? set_owner : in_file_stat.st_uid,
+ 		      set_group_flag ? set_group : in_file_stat.st_gid) < 0)
+ 		    && errno != EPERM)
+ 		  error (0, errno, "%s", output_name.ds_string);
+ 	      /* chown may have turned off some permissions we wanted. */
+-	      if (chmod (output_name.ds_string, in_file_stat.st_mode) < 0)
++	      if (fchmod (out_file_des, in_file_stat.st_mode) < 0)
+ 		error (0, errno, "%s", output_name.ds_string);
++		
++	      if (close (out_file_des) < 0)
++		error (0, errno, "%s", output_name.ds_string);
++
+ 	      if (reset_time_flag)
+ 		{
+ 		  times.actime = in_file_stat.st_atime;

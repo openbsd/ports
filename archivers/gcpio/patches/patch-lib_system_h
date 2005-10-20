@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_system_h,v 1.1 2005/10/20 21:45:18 naddy Exp $
+--- lib/system.h.orig	Thu Oct 20 21:27:34 2005
++++ lib/system.h	Thu Oct 20 21:27:49 2005
+@@ -467,7 +467,7 @@ char *getenv ();
+   ((sizeof (t) * CHAR_BIT - TYPE_SIGNED (t)) * 302 / 1000 \
+    + 1 + TYPE_SIGNED (t))
+ 
+-#define UINTMAX_STRSIZE_BOUND (INT_STRLEN_BOUND (uintmax_t) + 1)
++#define UINTMAX_STRSIZE_BOUND (INT_STRLEN_BOUND (uint64_t) + 1)
+ 
+ /* Prototypes for external functions.  */
+ 

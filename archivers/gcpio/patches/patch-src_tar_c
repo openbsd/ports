@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_tar_c,v 1.1 2005/10/20 21:45:18 naddy Exp $
+--- src/tar.c.orig	Thu Oct 20 21:59:27 2005
++++ src/tar.c	Thu Oct 20 22:06:49 2005
+@@ -107,6 +107,18 @@ to_oct (register long value, register in
+     where[--digits] = '0';
+ }
+ 
++/* Convert a number into a string of octal digits.
++   Convert long VALUE into a DIGITS-digit field at WHERE,
++   including a trailing space.  DIGITS==2 means
++   1 digit, and a space.
++*/
++
++static void
++to_oct_no_nul (register long value, register int digits, register char *where)
++{
++  to_oct (value, digits + 1, where);
++}
++
+ 
+ 
+ /* Compute and return a checksum for TAR_HDR,
+@@ -167,8 +179,8 @@ write_out_tar_header (struct new_cpio_he
+   to_oct (file_hdr->c_mode & MODE_ALL, 8, tar_hdr->mode);
+   to_oct (file_hdr->c_uid, 8, tar_hdr->uid);
+   to_oct (file_hdr->c_gid, 8, tar_hdr->gid);
+-  to_oct (file_hdr->c_filesize, 12, tar_hdr->size);
+-  to_oct (file_hdr->c_mtime, 12, tar_hdr->mtime);
++  to_oct_no_nul (file_hdr->c_filesize, 12, tar_hdr->size);
++  to_oct_no_nul (file_hdr->c_mtime, 12, tar_hdr->mtime);
+ 
+   switch (file_hdr->c_mode & CP_IFMT)
+     {

@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_main_c,v 1.1 2005/10/20 21:45:18 naddy Exp $
+--- src/main.c.orig	Tue Nov 23 01:42:18 2004
++++ src/main.c	Thu Oct 20 21:57:59 2005
+@@ -740,7 +740,6 @@ main (int argc, char *argv[])
+   textdomain (PACKAGE);
+ 
+   program_name = argv[0];
+-  umask (0);
+ 
+ #ifdef __TURBOC__
+   _fmode = O_BINARY;		/* Put stdin and stdout in binary mode.  */
+@@ -751,6 +750,7 @@ main (int argc, char *argv[])
+ #endif
+ 
+   process_args (argc, argv);
++  umask (0);
+ 
+   initialize_buffers ();
+ 

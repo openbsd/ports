@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2005/10/20 21:45:18 naddy Exp $
+--- configure.orig	Thu Oct 20 23:11:17 2005
++++ configure	Thu Oct 20 23:11:43 2005
+@@ -16167,7 +16167,7 @@ s,@host_vendor@,$host_vendor,;t t
+ s,@host_os@,$host_os,;t t
+ s,@LIBICONV@,$LIBICONV,;t t
+ s,@LTLIBICONV@,$LTLIBICONV,;t t
+-s,@INTLLIBS@,$INTLLIBS,;t t
++s,@INTLLIBS@,$LTLIBINTL,;t t
+ s,@LIBINTL@,$LIBINTL,;t t
+ s,@LTLIBINTL@,$LTLIBINTL,;t t
+ s,@POSUB@,$POSUB,;t t

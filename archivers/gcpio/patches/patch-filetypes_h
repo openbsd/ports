@@ -1,9 +1,0 @@
-$OpenBSD: patch-filetypes_h,v 1.1.1.1 2001/04/10 00:41:32 lebel Exp $
---- filetypes.h.orig	Sun Jul 19 01:53:46 1992
-+++ filetypes.h	Fri Apr  6 10:10:36 2001
-@@ -80,5 +80,3 @@
- #ifndef S_ISLNK
- #define lstat stat
- #endif
--int lstat ();
--int stat ();
