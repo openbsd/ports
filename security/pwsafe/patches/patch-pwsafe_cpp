@@ -1,7 +1,7 @@
-$OpenBSD: patch-pwsafe_cpp,v 1.1.1.1 2005/02/20 13:42:08 mbalmer Exp $
---- pwsafe.cpp.orig	Tue Mar  2 07:27:56 2004
-+++ pwsafe.cpp	Wed Feb 16 17:40:54 2005
-@@ -123,8 +123,8 @@ typedef struct option long_option;
+$OpenBSD: patch-pwsafe_cpp,v 1.2 2005/10/20 09:02:52 mbalmer Exp $
+--- pwsafe.cpp.orig	Fri Sep 30 12:30:56 2005
++++ pwsafe.cpp	Sat Oct  8 22:53:08 2005
+@@ -371,8 +371,8 @@ secstring operator+(const secstring& t1,
  
  // The name the program was run with, stripped of any leading path
  const char *program_name = "pwsafe"; // make sure program_name always points to something valid so we can use it in constructors of globals
@@ -10,9 +10,9 @@ $OpenBSD: patch-pwsafe_cpp,v 1.1.1.1 2005/02/20 13:42:08 mbalmer Exp $
 +// uid_t saved_uid;
 +// gid_t saved_gid;
  
- // Option flags and variables
- const char* arg_dbname = NULL;
-@@ -377,14 +377,14 @@ int main(int argc, char **argv) {
+ // database version
+ enum Version { VERSION_UNKNOWN, VERSION_1_7, VERSION_2_0 };
+@@ -893,14 +893,14 @@ int main(int argc, char **argv) {
  
    try {
      try {
@@ -33,14 +33,67 @@ $OpenBSD: patch-pwsafe_cpp,v 1.1.1.1 2005/02/20 13:42:08 mbalmer Exp $
  
  #if WITH_READLINE
        rl_readline_name = const_cast<char*>(program_name); // so readline() can parse its config files and handle if (pwsafe) sections; some older readline's type rl_readline_name as char*, hence the const_cast
-@@ -2217,32 +2217,32 @@ secalloc::Pool::Pool(size_t n) : next(0)
+@@ -918,10 +918,11 @@ int main(int argc, char **argv) {
+         
+         const char* home = getenv("HOME");
+         if (home && datname[0] != '/') {
+-          char* dbname = reinterpret_cast<char*>(malloc(strlen(home)+1+strlen(datname)+1));
+-          strcpy(dbname, home);
+-          strcat(dbname, "/");
+-          strcat(dbname, datname);
++	  size_t dbnamelen = strlen(home)+1+strlen(datname)+1;
++          char* dbname = reinterpret_cast<char*>(malloc(dbnamelen));
++          strlcpy(dbname, home, dbnamelen);
++          strlcat(dbname, "/", dbnamelen);
++          strlcat(dbname, datname, dbnamelen);
+           arg_dbname = dbname;
+         } else {
+           // datname is already an absolute path
+@@ -1130,7 +1131,7 @@ int main(int argc, char **argv) {
+       }
+ 
+       // save the rng seed for next time
+-      if (rng_filename[0]) {
++      if (rng_filename[0] && strncmp(rng_filename, "/dev/", 5)) {
+         int rc = RAND_write_file(rng_filename);
+         if (arg_verbose > 0) printf("wrote %d bytes to %s\n", rc, rng_filename);
+       } // else they already got an error above when we tried to read rng_filename
+@@ -1619,7 +1621,7 @@ static secstring random_password() {
+     snprintf(ent_buf, sizeof(ent_buf), "%d", entropy_needed);
+     ent_buf[sizeof(ent_buf)-1] = '\0';
+     char len_buf[24];
+-    snprintf(len_buf, sizeof(len_buf), "%d", pw.length());
++    snprintf(len_buf, sizeof(len_buf), "%d", (int)pw.length());
+     len_buf[sizeof(len_buf)-1] = '\0';
+     switch (tolower(get1char("Use "+pw+"\ntype "+type_name+", length "+len_buf+", "+ent_buf+" bits of entropy [y/N/ /+/-/q/?] ? ", 'n'))) {
+       case 'y':
+@@ -2380,7 +2382,7 @@ bool DB::open(const secstring* pw_to_try
+     version = VERSION_1_7;
+   }
+  
+-  if (arg_verbose > 1) printf("read in %u entries\n", entries.size());
++  if (arg_verbose > 1) printf("read in %u entries\n", (unsigned int)entries.size());
+ 
+   opened = true;
+   return true;
+@@ -2601,7 +2603,7 @@ const DB::Entry& DB::find1(const char* r
+       for (matches_t::const_iterator i=matches.begin(); i!=matches.end() && count < 3; ++i, ++count)
+         printf("%s%s", (count?", ":""), (*i)->groupname().c_str());
+       if (count != matches.size())
+-        printf(", ... (%u more) ", matches.size()-3);
++        printf(", ... (%u more) ", (unsigned int)matches.size()-3);
+       printf(".\n");
+       throw FailEx();
+     }
+@@ -3235,26 +3237,26 @@ secalloc::Pool::Pool(size_t n) : next(0)
    top = z + ((bottom-z+pagesize+n+pagesize) & ~(pagesize-1)); // round top down to a page boundary
  
    // mark level..top as non-swapabble
 -  int rc = mlock(level,top-level);
--  if (rc && errno == EPERM && (saved_uid != geteuid() || saved_gid != getegid())) {
 +  // int rc = mlock(level,top-level);
-+  // if (rc && errno == EPERM && (saved_uid != geteuid() || saved_gid != getegid())) {
+   // Redhat FC3 returns ENOMEM if not root, not EPERM, so dont bother checking for EPERM error from mlock(); treat any error to mean 'try mlock() against as SUID user'
+-  if (rc && (saved_uid != geteuid() || saved_gid != getegid())) {
++  // if (rc && (saved_uid != geteuid() || saved_gid != getegid())) {
      // try again as root (or whoever saved_uid really is)
 -    if (saved_uid != geteuid()) 
 -      seteuid(saved_uid);
@@ -53,7 +106,8 @@ $OpenBSD: patch-pwsafe_cpp,v 1.1.1.1 2005/02/20 13:42:08 mbalmer Exp $
 -  if (rc) {
 -    static bool reported = false;
 -    if (!reported) {
--      fprintf(stderr, "WARNING: %s unable to use secure ram (need to be setuid root)\n", program_name);
+-      if (arg_verbose >= 0)
+-        fprintf(stderr, "WARNING: %s unable to use secure ram (need to be setuid root)\n", program_name);
 -      reported = true;
 -    }
 -  }
@@ -68,22 +122,11 @@ $OpenBSD: patch-pwsafe_cpp,v 1.1.1.1 2005/02/20 13:42:08 mbalmer Exp $
 +  // if (rc) {
 +  //   static bool reported = false;
 +  //   if (!reported) {
-+  //     fprintf(stderr, "WARNING: %s unable to use secure ram (need to be setuid root)\n", program_name);
++  //     if (arg_verbose >= 0)
++  //       fprintf(stderr, "WARNING: %s unable to use secure ram (need to be setuid root)\n", program_name);
 +  //     reported = true;
 +  //   }
 +  // }
  }
  
  secalloc::Pool::~Pool() {
--  char*const z = 0;
--  const size_t pagesize = secalloc::pagesize;
-+  // char*const z = 0;
-+  // const size_t pagesize = secalloc::pagesize;
-   memset(bottom, 0, top-bottom); // clear it once more, just in case everything wasn't properly deallocate()ed
--  char*const l = z + ((bottom-z+pagesize-1) & ~(pagesize-1)); // recalculate original value we passed to mlock()
--  munlock(l, top-l); // might fail; that's ok if it does
-+  // char*const l = z + ((bottom-z+pagesize-1) & ~(pagesize-1)); // recalculate original value we passed to mlock()
-+  // munlock(l, top-l); // might fail; that's ok if it does
-   free(bottom);
- }
- 

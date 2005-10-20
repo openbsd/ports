@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/20 13:42:08 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2005/10/20 09:02:52 mbalmer Exp $
 
 COMMENT=		"program that manages encrypted password databases"
-DISTNAME=		pwsafe-0.1.6
+DISTNAME=		pwsafe-0.2.0
 CATEGORIES=		security
 
 HOMEPAGE=		http://nsd.dyndns.org/pwsafe/
@@ -14,7 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		Xmu m X11 ncurses crypto c stdc++ SM readline ICE
+WANTLIB=		Xmu m X11 ncurses crypto c stdc++ SM readline ICE \
+			curses
 
 MASTER_SITES=		${HOMEPAGE}releases/
 
