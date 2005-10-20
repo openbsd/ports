@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.9 2005/10/20 05:32:01 jolan Exp $
-ONLY_FOR_ARCHS=	alpha amd64 powerpc sparc64
+# $OpenBSD: Makefile,v 1.10 2005/10/20 16:18:26 jolan Exp $
+ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc64
 
 COMMENT=	"mini mozilla"
 DISTNAME=	minimo-20050802
