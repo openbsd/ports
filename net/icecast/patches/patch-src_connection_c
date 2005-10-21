@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_connection_c,v 1.1 2005/10/21 15:59:54 naddy Exp $
+--- src/connection.c.orig	Mon Sep 26 22:54:02 2005
++++ src/connection.c	Mon Sep 26 19:21:07 2005
+@@ -872,7 +872,7 @@ static void _handle_shoutcast_compatible
+ 
+     if (node->shoutcast == 1)
+     {
+-        char *source_password, *ptr;
++        char *source_password, *ptr, *headers;
+         mount_proxy *mountinfo = config_find_mount (config, config->shoutcast_mount);
+ 
+         if (mountinfo && mountinfo->password)
+@@ -883,8 +883,14 @@ static void _handle_shoutcast_compatible
+ 
+         /* Get rid of trailing \r\n or \n after password */
+         ptr = strstr (client->refbuf->data, "\r\n");
+-        if (ptr == NULL)
++        if (ptr)
++            headers = ptr+2;
++        else
++        {
+             ptr = strstr (client->refbuf->data, "\n");
++            if (ptr)
++                headers = ptr+1;
++        }
+ 
+         if (ptr == NULL)
+         {
+@@ -901,9 +907,9 @@ static void _handle_shoutcast_compatible
+             /* send this non-blocking but if there is only a partial write
+              * then leave to header timeout */
+             sock_write (client->con->sock, "OK2\r\n");
+-            memset (client->refbuf->data, 0, client->refbuf->len);
++            node->offset -= (headers - client->refbuf->data);
++            memmove (client->refbuf->data, headers, node->offset+1);
+             node->shoutcast = 2;
+-            node->offset = 0;
+             /* we've checked the password, now send it back for reading headers */
+             _add_request_queue (node);
+             free (source_password);

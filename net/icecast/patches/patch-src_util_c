@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_util_c,v 1.3 2005/08/23 21:26:27 pvalchev Exp $
---- src/util.c.orig	Mon Nov  8 02:21:54 2004
-+++ src/util.c	Tue Aug 23 13:58:40 2005
+$OpenBSD: patch-src_util_c,v 1.4 2005/10/21 15:59:54 naddy Exp $
+--- src/util.c.orig	Fri Aug 19 04:01:58 2005
++++ src/util.c	Tue Aug 23 14:12:44 2005
 @@ -229,12 +229,22 @@ char *util_get_path_from_normalised_uri(
      char *fullpath;
      char *webroot;
@@ -27,7 +27,7 @@ $OpenBSD: patch-src_util_c,v 1.3 2005/08/23 21:26:27 pvalchev Exp $
      config_release_config();
  
      return fullpath;
-@@ -568,24 +578,40 @@ char *util_dict_urlencode(util_dict *dic
+@@ -572,24 +582,40 @@ char *util_dict_urlencode(util_dict *dic
      char *res, *tmp;
      char *enc;
      int start = 1;
@@ -73,7 +73,7 @@ $OpenBSD: patch-src_util_c,v 1.3 2005/08/23 21:26:27 pvalchev Exp $
          }
  
          /* encode value */
-@@ -596,14 +622,25 @@ char *util_dict_urlencode(util_dict *dic
+@@ -600,14 +626,25 @@ char *util_dict_urlencode(util_dict *dic
              return NULL;
          }
  

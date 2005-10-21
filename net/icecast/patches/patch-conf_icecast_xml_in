@@ -1,16 +1,7 @@
-$OpenBSD: patch-conf_icecast_xml_in,v 1.3 2005/04/16 15:37:31 sturm Exp $
---- conf/icecast.xml.in.orig	Thu Dec  2 22:15:35 2004
-+++ conf/icecast.xml.in	Mon Mar  7 20:20:46 2005
-@@ -100,7 +100,7 @@
-     </mount>
-     -->
- 
--    <fileserve>1</fileserve>
-+    <fileserve>0</fileserve>
- 
-     <!-- set the mountpoint for a shoutcast source to use, the default if not
-          specified is /stream but you can change it here if an alternative is
-@@ -117,7 +117,7 @@
+$OpenBSD: patch-conf_icecast_xml_in,v 1.4 2005/10/21 15:59:54 naddy Exp $
+--- conf/icecast.xml.in.orig	Thu Sep  8 16:03:51 2005
++++ conf/icecast.xml.in	Sat Sep 24 15:23:12 2005
+@@ -139,7 +139,7 @@
          <logdir>@localstatedir@/log/@PACKAGE@</logdir>
          <webroot>@pkgdatadir@/web</webroot>
          <adminroot>@pkgdatadir@/admin</adminroot>

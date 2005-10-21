@@ -1,8 +1,8 @@
 Icecast v2 is very versatile and can be used in many different setups.
-Because there is not "one true way" to install and configure it - every
-user will have his individual preferences and needs (a streaming service
+Since there is not "one true way" to install and configure it and every
+user will have individual preferences and needs. A streaming service
 provider has different requirements than someone who wants to set up a
-jukebox at home.)
+jukebox at home.
 
 To make things easier, here is a small step-by-step guide to get Icecast v2
 running in a basic setup, which uses its chrooting feature and drops
@@ -10,11 +10,14 @@ privileges to an unprivileged account.
 
   1. Read the documentation, so you know what you are doing. It is also
      very helpful to know what Icecast v2 is doing for you, and what it
-     is not.
+     is not. If you do not understand the concept of streaming with Icecast,
+     yet, http://liveice.sourceforge.net/understanding.html might be of use
+     to you.
 
   2. Create an unprivileged user _icecast - preferrably with an UID that
      does not conflict with other ports, system UIDs or regular users.
-     I suggest something between 200 and 499.
+     I suggest something between 200 and 499. This example uses the UID/
+     GID combo 400:
 
      # useradd -c "Icecast Server" -d /nonexistent -g =uid \
            -s /sbin/nologin -u 400 _icecast
@@ -35,40 +38,68 @@ privileges to an unprivileged account.
      # touch log/error.log log/access.log
      # chown _icecast:_icecast log/*.log
 
-  6. There is an icecast.xml.dist in /var/icecast - rename it and adjust it.
+  6. Complete the chroot environment with additional system files --
+     this is optional, but it allows YP directory listing (DNS lookups are
+     required for those) to work and the log files will contain correct
+     timestamps.
+
+     # mkdir /var/icecast/etc
+     # cp -p /etc/{hosts,localtime,resolv.conf} /var/icecast/etc
+
+  7. There is an icecast.xml.dist in /var/icecast - rename it and adjust it.
      Consult the documentation and comments about the various options.
      Important settings for this particular setup are outlined below.
 
      # mv icecast.xml.dist icecast.xml
      # chmod 600 icecast.xml
      (Mode 600 is highly recommended; icecast.xml contains plain-text
-     passwords.)
+     passwords. At least keep it inaccessible to "others".)
 
      Now load icecast.xml in your favorite editor, and:
 
-     Change <basedir> to /var/icecast
+     * CHANGE THE DEFAULT PASSWORDS FOR SOURCE CLIENTS, RELAYS AND
+       THE ADMIN INTERFACE
 
-     Change <logdir> to /log
-     Change <webroot> to /web
-     Change <adminroot> to /admin
+     * Change <basedir> to /var/icecast
 
-     Change <chroot> to 1
-     Uncomment the <changeowner> directive, replace "nobody" and "nogroup"
-         with "_icecast", respectively
+     * Change <logdir> to /log
+     * Change <webroot> to /web
+     * Change <adminroot> to /admin
 
-  7. Start Icecast and monitor error.log for errors and clues on how to
+     * Change <chroot> to 1
+     * Uncomment the <changeowner> directive, replace both "nobody" and
+       "nogroup" with "_icecast".
+
+  8. Start Icecast and monitor error.log for errors and clues on how to
      solve any issues.
 
      # icecast -c /var/icecast/icecast.xml
 
-  8. Connect to the server with a source client and have fun. There are
-     many different source clients available for different platforms.
-     *nix users may find Ices0 to stream MP3, and Ices2 to stream Ogg Vorbis
-     useful. For WinAMP and XMMS there is Oddcast DSP on
-     http://www.oddsock.org/
-     Remember to give your mountpoint a proper name - MP3 streams should
-     use no extension, Ogg Vorbis streams should use .ogg, so that dumb or
-     broken players can send the stream to the appropriate decoder.
-     For starters, you should let the source client set the mountpoint;
-     pre-defined mountpoints are an advanced feature and not necessary
-     for basic streaming.
+     If things look good, add the command line parameter `-b' to send
+     Icecast into daemon land.
+
+  9. Test your server.
+     Use a source client to create a stream and listen to it with your
+     favorite player that supports streaming.
+     Also test Icecast's web interface. Be aware that Icecast sends
+     everything located in <webroot> to those who request it like a regular
+     (basic) web server. You can restrict this behavior to serve only
+     .xsl files by setting <fileserve> to 0 in your icecast.xml, however,
+     you should definitely take a closer look at what you actually want
+     to show the world here. There is no reason for paranoia, it's all
+     safe, but you should spend some time thinking about it. Note that
+     disabling <fileserve> will also prevent CSS stylesheets and images
+     from being sent, making the web interface less pleasant to look at.
+
+
+  Random hints:
+
+     * Remember to give your mountpoint a proper name -- MP3 streams should
+       use no extension, Ogg Vorbis streams should use .ogg, so that dumb or
+       broken players can send the stream to the appropriate decoder.
+
+     * There are many different source clients available for different
+       platforms. On OpenBSD, there are at least the ices-0 and ices-2
+       packages available to stream MP3 and Ogg Vorbis audio respectively.
+       There are a lot more alternatives available that are easy to find
+       with a search engine like Google.
