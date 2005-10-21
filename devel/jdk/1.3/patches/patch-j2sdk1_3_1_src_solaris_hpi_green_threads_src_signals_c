@@ -1,6 +1,6 @@
-$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_src_signals_c,v 1.1 2004/08/14 21:50:38 naddy Exp $
---- j2sdk1.3.1/src/solaris/hpi/green_threads/src/signals.c.orig	Thu Jul 15 10:40:42 2004
-+++ j2sdk1.3.1/src/solaris/hpi/green_threads/src/signals.c	Thu Jul 15 10:41:21 2004
+$OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_src_signals_c,v 1.2 2005/10/21 22:36:30 kurt Exp $
+--- j2sdk1.3.1/src/solaris/hpi/green_threads/src/signals.c.orig	Fri Oct 21 17:26:08 2005
++++ j2sdk1.3.1/src/solaris/hpi/green_threads/src/signals.c	Fri Oct 21 17:35:14 2005
 @@ -29,7 +29,6 @@
  #include "schedule.h"
  #include "signals.h"
@@ -17,3 +17,22 @@ $OpenBSD: patch-j2sdk1_3_1_src_solaris_hpi_green_threads_src_signals_c,v 1.1 200
  
  /*
   * The following functions, interposed in front of sigprocmask and
+@@ -595,7 +595,7 @@ green_sigprocmask(int how, const sigset_
+ 
+     if (func == NULL) {
+ #ifndef RTLD_NEXT
+-#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__)
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__bsdi__)
+         void *dlMain = dlopen("libc.so", RTLD_LAZY);
+ 	func = (fn_t *)dlsym(dlMain, 
+ #if defined(__NetBSD__)
+@@ -608,6 +608,9 @@ green_sigprocmask(int how, const sigset_
+         dlMain = dlopen("/lib/libc.so.6", RTLD_LAZY);
+         func = (fn_t *)dlsym(dlMain, BSD_C_SYM("__sigprocmask"));
+ #endif
++#elif defined(__OpenBSD__)
++        void *dlMain = dlopen("libc.so", RTLD_LAZY);
++        func = (fn_t *)dlsym(dlMain, BSD_C_SYM("sigprocmask"));
+ #elif defined(__solaris__)
+         func = (fn_t *)dlsym(RTLD_NEXT, BSD_C_SYM("_sigprocmask"));
+ #else
