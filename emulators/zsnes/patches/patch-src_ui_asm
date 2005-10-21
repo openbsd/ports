@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ui_asm,v 1.1 2005/10/21 18:07:11 naddy Exp $
+--- src/ui.asm.orig	Tue Oct  4 00:11:28 2005
++++ src/ui.asm	Tue Oct  4 00:11:51 2005
+@@ -1237,7 +1237,7 @@ NEWSYM gotoroot, db '\',0
+ 
+ SECTION .bss
+ NEWSYM InitDir, resb 512
+-NEWSYM LoadDir, resb 512
++NEWSYM LoadDir, resb 1024
+ 
+ SECTION .text
+ 

@@ -1,6 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/02/13 10:56:23 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/10/21 18:07:11 naddy Exp $
 bin/zsnes
 @man man/man1/zsnes.1
 share/doc/zsnes/
-share/doc/zsnes/opengl.txt
-share/doc/zsnes/whatsnew.txt
+share/doc/zsnes/about.htm
+share/doc/zsnes/bugs.htm
+share/doc/zsnes/credits.htm
+share/doc/zsnes/faq.htm
+share/doc/zsnes/gui.htm
+share/doc/zsnes/images/
+share/doc/zsnes/images/cheat.png
+share/doc/zsnes/images/config.png
+share/doc/zsnes/images/corner.png
+share/doc/zsnes/images/f1_menu.png
+share/doc/zsnes/images/game.png
+share/doc/zsnes/images/get.png
+share/doc/zsnes/images/gui.png
+share/doc/zsnes/images/linuxlogo.png
+share/doc/zsnes/images/misc.png
+share/doc/zsnes/images/netplay.png
+share/doc/zsnes/images/quick.png
+share/doc/zsnes/images/safer.png
+share/doc/zsnes/images/valid-xhtml11.png
+share/doc/zsnes/images/vcss.png
+share/doc/zsnes/images/zsneslogo.png
+share/doc/zsnes/license.txt
+share/doc/zsnes/netplay.htm
+share/doc/zsnes/readme.htm
+share/doc/zsnes/style.css

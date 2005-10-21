@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_cfgload_c,v 1.1 2005/10/21 18:07:10 naddy Exp $
+--- src/cfgload.c.orig	Tue Oct  4 00:12:19 2005
++++ src/cfgload.c	Tue Oct  4 00:13:22 2005
+@@ -68,7 +68,7 @@ Foundation, Inc., 675 Mass Ave, Cambridg
+ #define ASCIIChar2Bool(x) (((x)-'0') ? 1 : 0)
+ 
+ extern char CMDLineStr[256];
+-extern char LoadDir[128];
++extern char LoadDir[1024];
+ extern char LoadDrive[2];
+ 
+ extern unsigned int pl2selk;
+@@ -146,7 +146,7 @@ extern char zcfgdir[1024];
+ char SRAMDir[1024];
+ 
+ char LoadDriveB[2];
+-char LoadDirB[128];
++char LoadDirB[1024];
+ 
+ //extern "C"{
+ unsigned char cfgsoundon = 0;

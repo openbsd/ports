@@ -1,6 +1,7 @@
---- src/gblhdr.h.orig	Tue Jun 25 05:25:37 2002
-+++ src/gblhdr.h	Tue Jun 25 05:25:43 2002
-@@ -70,9 +70,7 @@
+$OpenBSD: patch-src_gblhdr_h,v 1.3 2005/10/21 18:07:10 naddy Exp $
+--- src/gblhdr.h.orig	Mon Oct  3 23:14:52 2005
++++ src/gblhdr.h	Mon Oct  3 23:15:10 2005
+@@ -72,9 +72,7 @@ Foundation, Inc., 675 Mass Ave, Cambridg
  
  // unistd.h stuff
  

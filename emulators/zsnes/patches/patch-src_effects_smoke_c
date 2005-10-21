@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_effects_smoke_c,v 1.1 2005/10/21 18:07:10 naddy Exp $
+--- src/effects/smoke.c.orig	Mon Oct  3 23:21:02 2005
++++ src/effects/smoke.c	Mon Oct  3 23:21:35 2005
+@@ -13,9 +13,10 @@ Should be fire, but looks more like smok
+ 
+ */
+ 
+-
++#ifndef MIN
+ #define MIN(x, y)    \
+     (((x) < (y)) ? (x) : (y))
++#endif
+ 
+ #define ABS(x)      \
+     (((x) >= 0) ? (x) : ( - (x)))

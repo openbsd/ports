@@ -1,15 +1,7 @@
---- src/configure.in.orig	Thu May 23 10:11:18 2002
-+++ src/configure.in	Fri Apr 25 22:46:33 2003
-@@ -16,7 +16,7 @@ dnl See also: remarks supplied in the de
- AC_INIT(init.asm)
- AC_CONFIG_HEADER(config.h)	
- dnl -- Where is our compiler, and who are we compiling for?
--CFLAGS="-pipe -I. -Wall"
-+CFLAGS="$CFLAGS -I. -Wall"
- AC_PROG_CC
- AC_PATH_PROG(NASMPATH,nasm,[AC_MSG_ERROR(nasm 0.98 is required)])
- NFLAGS="$NFLAGS -w-orphan-labels"
-@@ -29,7 +29,7 @@ case "$target" in
+$OpenBSD: patch-src_configure_in,v 1.7 2005/10/21 18:07:10 naddy Exp $
+--- src/configure.in.orig	Mon Oct  3 23:11:56 2005
++++ src/configure.in	Mon Oct  3 23:14:21 2005
+@@ -39,7 +39,7 @@ case "$target" in
  		;;
  	*-*-*openbsd*)
  		CFLAGS="$CFLAGS -D__LINUX__ -D__FreeBSD__"
@@ -18,36 +10,37 @@
  		;;
  	*-*-*bsd*)
  		CFLAGS="$CFLAGS -D__LINUX__ -D__FreeBSD__"
-@@ -143,33 +143,8 @@ else
- 	dnl zsnes more easily deal with small instruction caches, and more
- 	dnl effectivly use branch prediction.
+@@ -118,34 +118,9 @@ if test x$debug = xyes; then
+ else
+ 	AC_MSG_RESULT(no)
  	
--	CFLAGS="$CFLAGS -Os -ffast-math -fomit-frame-pointer -fschedule-insns2 -s"
-+	CFLAGS="$CFLAGS -Os -ffast-math -fomit-frame-pointer -fschedule-insns2"
+-	CFLAGS="$CFLAGS -O3 -ffast-math -fomit-frame-pointer -fexpensive-optimizations -s"
++	CFLAGS="$CFLAGS -O3 -ffast-math -fomit-frame-pointer -fexpensive-optimizations"
+ 	NFLAGS="$NFLAGS -O1"
  	ZSNESEXE="zsnes"
 -fi
 -
 -AC_MSG_CHECKING(which processor class to optimize for)
 -if test x$debug != xyes; then
--			case "$target" in
--				i486-*-*)
--					CFLAGS="$CFLAGS -march=i486"
--					AC_MSG_RESULT(486)
--					;;
--				i586-*-*)
--					CFLAGS="$CFLAGS -march=pentium"
--					AC_MSG_RESULT(Pentium)
--					;;
--				i686-*-*)
--					CFLAGS="$CFLAGS -march=pentiumpro"
--					AC_MSG_RESULT(PPro/P2)
--					;;
--				*)
--					AC_MSG_RESULT(386)
--					AC_MSG_WARN(*** This is probably not what you want use --target)
--					;;
--			esac
--
+-	case "$target" in
+-		i486-*-*)
+-			CFLAGS="$CFLAGS -march=i486"
+-			AC_MSG_RESULT(486)
+-			;;
+-		i586-*-*)
+-			CFLAGS="$CFLAGS -march=pentium"
+-			AC_MSG_RESULT(586)
+-			;;
+-		i686-*-*)
+-			CFLAGS="$CFLAGS -march=pentiumpro"
+-			dnl CFLAGS="$CFLAGS -march=pentium3 -mmmx -msse -mfpmath=sse,387"
+-			AC_MSG_RESULT(686)
+-			;;
+-		*)
+-			AC_MSG_RESULT(386)
+-			AC_MSG_WARN(*** This is probably not what you want use --target)
+-			;;
+-	esac
 -else
 -	AC_MSG_RESULT(no optimization because debug enabled)
  fi

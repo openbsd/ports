@@ -1,9 +1,13 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2002/08/31 03:54:58 wcobb Exp $
---- src/Makefile.in.orig	Sat Aug 31 00:37:51 2002
-+++ src/Makefile.in	Sat Aug 31 00:37:59 2002
-@@ -61,10 +61,10 @@ OBJS=${CHIPSOBJ} ${CPUOBJ} ${WINOBJ} ${W
+$OpenBSD: patch-src_Makefile_in,v 1.4 2005/10/21 18:07:10 naddy Exp $
+--- src/Makefile.in.orig	Mon Oct  3 23:10:46 2005
++++ src/Makefile.in	Mon Oct  3 23:10:51 2005
+@@ -76,13 +76,13 @@ OBJS=${CHIPSOBJ} ${CPUOBJ} ${WINOBJ} ${W
  
- .SUFFIXES: .c .asm 
+ .SUFFIXES: .cpp .c .asm 
+ 
+-%.o: %.cpp
++.cpp.o:
+ 	@CXX@ @CFLAGS@ -o $@ -c $<
  
 -%.o: %.c
 +.c.o:

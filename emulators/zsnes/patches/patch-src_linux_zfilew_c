@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_linux_zfilew_c,v 1.1 2005/10/21 18:07:10 naddy Exp $
+--- src/linux/zfilew.c.orig	Fri Jan 14 14:11:19 2005
++++ src/linux/zfilew.c	Tue Oct  4 00:42:40 2005
+@@ -459,7 +459,7 @@ DWORD GetDate()
+ }
+ 
+ extern char SRAMDir[1024];
+-extern char LoadDir[512];
++extern char LoadDir[1024];
+ 
+ #ifdef __LINUX__
+ 
+@@ -474,11 +474,12 @@ void obtaindir()
+ 
+   if ((homedir = (char *)getenv("HOME")) == 0)
+   {
+-    homedir = (char *)malloc(ZCFG_DIR_LEN);
+-    getcwd(homedir, ZCFG_DIR_LEN);
++    getcwd(zcfgdir, ZCFG_DIR_LEN);
+   }
+-  strcpy(zcfgdir, homedir);
+-  free(homedir);
++  else
++  {
++    strcpy(zcfgdir, homedir);
++  }
+   strcat(zcfgdir, ZCFG_DIR);
+   tmp = opendir(zcfgdir);
+   if (tmp == NULL) 
+@@ -496,7 +497,7 @@ void obtaindir()
+   }
+   if (*LoadDir == 0) 
+   {
+-    getcwd(LoadDir, 512);
++    getcwd(LoadDir, 1024);
+   }
+ }
+ 
