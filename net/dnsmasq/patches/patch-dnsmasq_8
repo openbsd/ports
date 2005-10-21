@@ -1,7 +1,7 @@
-$OpenBSD: patch-dnsmasq_8,v 1.1.1.1 2005/05/23 18:46:58 alek Exp $
---- dnsmasq.8.orig	Sun May 22 11:05:48 2005
-+++ dnsmasq.8	Sun May 22 11:06:08 2005
-@@ -514,7 +514,7 @@ Add the domain-suffix to simple names (w
+$OpenBSD: patch-dnsmasq_8,v 1.2 2005/10/21 16:20:23 naddy Exp $
+--- dnsmasq.8.orig	Fri Aug 26 12:20:41 2005
++++ dnsmasq.8	Fri Oct 21 18:17:52 2005
+@@ -531,7 +531,7 @@ Add the domain to simple names (without 
  in the same way as for DHCP-derived names.
  .SH CONFIG FILE
  At startup, dnsmasq reads
@@ -10,7 +10,7 @@ $OpenBSD: patch-dnsmasq_8,v 1.1.1.1 2005/05/23 18:46:58 alek Exp $
  if it exists. (On
  FreeBSD, the file is 
  .I /usr/local/etc/dnsmasq.conf
-@@ -653,7 +653,7 @@ configurations, allowing some control ov
+@@ -670,7 +670,7 @@ configurations, allowing some control ov
  different classes of hosts.
  
  .SH FILES

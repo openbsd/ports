@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/09/05 20:21:01 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2005/10/21 16:20:23 naddy Exp $
 
 COMMENT=	"caching DNS forwarder and DHCP server"
 
-DISTNAME=	dnsmasq-2.22
+DISTNAME=	dnsmasq-2.23
 CATEGORIES=	net
 
 MAINTAINER=	Jonathan Weiss <jw@innerewut.de>
@@ -19,6 +19,7 @@ WANTLIB=		c
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 
 NO_REGRESS=	Yes
+USE_GMAKE=	Yes
 
 pre-build:
 	@perl -pi -e "s,!!SYSCONFDIR!!,${SYSCONFDIR},g" \
