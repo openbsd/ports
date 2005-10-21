@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2005/10/05 08:50:20 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2005/10/21 19:16:40 espie Exp $
 
 COMMENT=		"tool for managing library compile/link flags"
 
 VERSION=		0.19
 DISTNAME=		pkg-config-${VERSION}
-PKGNAME=		pkgconfig-${VERSION}
+PKGNAME=		pkgconfig-${VERSION}p0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.freedesktop.org/software/pkgconfig/
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
+USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 

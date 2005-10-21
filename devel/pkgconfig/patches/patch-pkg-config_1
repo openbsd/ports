@@ -1,0 +1,25 @@
+$OpenBSD: patch-pkg-config_1,v 1.1 2005/10/21 19:16:40 espie Exp $
+--- pkg-config.1.orig	Fri Oct 21 21:02:54 2005
++++ pkg-config.1	Fri Oct 21 21:03:10 2005
+@@ -9,17 +9,17 @@
+ .  de DW
+ .    nr .oldwarn \n[.warn]
+ .    warn 0
+-.  .
++..
+ .  de EW
+ .    warn \n[.oldwarn]
+-.  .
++..
+ .\}
+ .el \
+ .\{ \
+ .  de DW
+-.  .
++..
+ .  de EW
+-.  .
++..
+ .\}
+ .
+ .TH pkg-config 1
