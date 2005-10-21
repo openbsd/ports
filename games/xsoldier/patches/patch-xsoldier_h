@@ -1,0 +1,12 @@
+$OpenBSD: patch-xsoldier_h,v 1.1 2005/10/21 20:07:05 naddy Exp $
+--- xsoldier.h.orig	Wed Oct 19 22:01:37 2005
++++ xsoldier.h	Wed Oct 19 22:01:58 2005
+@@ -34,7 +34,7 @@ typedef unsigned long Pixel;
+ #endif /* WAIT */
+ 
+ #define PIXMAP DATADIR "/games/xsoldier/"
+-#define SCORE LOCALSTATEDIR "/games/xsoldier/"
++#define SCORE LOCALSTATEDIR "/games/"
+ #define SCOREFILE "xsoldier.scores"
+ 
+ #define MaxStage 8

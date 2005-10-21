@@ -1,27 +1,34 @@
-# $OpenBSD: Makefile,v 1.17 2004/11/28 22:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2005/10/21 20:07:05 naddy Exp $
 
-COMMENT=	"shooting game for X11"
+COMMENT=	"space-based shoot'em up game for X11"
 
-DISTNAME=	xsoldier-0.96
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	xsoldier-1.3
 CATEGORIES=	games x11
 
-# License: GPL
+HOMEPAGE=	http://www.interq.or.jp/libra/oohara/xsoldier/
+
+MAINTAINER=	Steven Mestdagh <steven.mestdagh@esat.kuleuven.be>
+
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xpm c
 
-MASTER_SITES=	http://www.surfline.ne.jp/hachi/xsoldier/
+WANTLIB=	ICE SM X11 Xpm c
 
-CONFIGURE_STYLE=	imake noman
+MASTER_SITES=	${HOMEPAGE}
 
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--localstatedir=/var
+
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
-# empty template for pkg install
+# template for pkg install
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xsoldier
-	${INSTALL_DATA} /dev/null ${PREFIX}/share/examples/xsoldier/xsoldier.scores
+	${INSTALL_DATA} ${WRKSRC}/scorefile.txt \
+		 ${PREFIX}/share/examples/xsoldier/xsoldier.scores
 
 .include <bsd.port.mk>

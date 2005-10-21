@@ -1,41 +1,51 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/23 07:21:44 espie Exp $
-@group games
+@comment $OpenBSD: PLIST,v 1.8 2005/10/21 20:07:05 naddy Exp $
 @mode 2755
+@group games
 bin/xsoldier
 @mode
 @group
-lib/X11/xsoldier/
-lib/X11/xsoldier/Boss1.xpm
-lib/X11/xsoldier/Boss2.xpm
-lib/X11/xsoldier/Boss3.xpm
-lib/X11/xsoldier/Boss4.xpm
-lib/X11/xsoldier/Boss5.xpm
-lib/X11/xsoldier/Boss6.xpm
-lib/X11/xsoldier/Boss7.xpm
-lib/X11/xsoldier/Enemy1.xpm
-lib/X11/xsoldier/Enemy2.xpm
-lib/X11/xsoldier/Enemy3.xpm
-lib/X11/xsoldier/Enemy4.xpm
-lib/X11/xsoldier/Enemy5.xpm
-lib/X11/xsoldier/Enemy6.xpm
-lib/X11/xsoldier/Enemy7.xpm
-lib/X11/xsoldier/EnemyBound.xpm
-lib/X11/xsoldier/EnemyLaser.xpm
-lib/X11/xsoldier/EnemyMiss.xpm
-lib/X11/xsoldier/EnemyRing.xpm
-lib/X11/xsoldier/EnemyShot.xpm
-lib/X11/xsoldier/ExpLarge.xpm
-lib/X11/xsoldier/ExpSmall.xpm
-lib/X11/xsoldier/Item.xpm
-lib/X11/xsoldier/Player.xpm
-lib/X11/xsoldier/PlayerShot1.xpm
-lib/X11/xsoldier/PlayerShot2.xpm
-lib/X11/xsoldier/PlayerShot3.xpm
-lib/X11/xsoldier/Star1.xpm
-lib/X11/xsoldier/Star2.xpm
-lib/X11/xsoldier/Title.xpm
+@man man/man6/xsoldier.6
 share/examples/xsoldier/
 share/examples/xsoldier/xsoldier.scores
-@group games
 @mode 664
+@group games
 @sample /var/games/xsoldier.scores
+@mode
+@group
+share/games/
+share/games/xsoldier/
+share/games/xsoldier/Boss1.xpm
+share/games/xsoldier/Boss2.xpm
+share/games/xsoldier/Boss3.xpm
+share/games/xsoldier/Boss4.xpm
+share/games/xsoldier/Boss5.xpm
+share/games/xsoldier/Boss6.xpm
+share/games/xsoldier/Boss7.xpm
+share/games/xsoldier/Enemy1.xpm
+share/games/xsoldier/Enemy2.xpm
+share/games/xsoldier/Enemy3.xpm
+share/games/xsoldier/Enemy4.xpm
+share/games/xsoldier/Enemy5.xpm
+share/games/xsoldier/Enemy6.xpm
+share/games/xsoldier/Enemy7.xpm
+share/games/xsoldier/EnemyBound.xpm
+share/games/xsoldier/EnemyLaser.xpm
+share/games/xsoldier/EnemyMiss.xpm
+share/games/xsoldier/EnemyRing.xpm
+share/games/xsoldier/EnemyShot.xpm
+share/games/xsoldier/ExpLarge.xpm
+share/games/xsoldier/ExpSmall.xpm
+share/games/xsoldier/Item.xpm
+share/games/xsoldier/Player.xpm
+share/games/xsoldier/PlayerShot1.xpm
+share/games/xsoldier/PlayerShot2.xpm
+share/games/xsoldier/PlayerShot3.xpm
+share/games/xsoldier/Star1.xpm
+share/games/xsoldier/Star2.xpm
+share/games/xsoldier/Title.xpm
+share/games/xsoldier/font1.xpm
+share/games/xsoldier/font2.xpm
+share/games/xsoldier/font3.xpm
+share/games/xsoldier/font4.xpm
+share/games/xsoldier/font5.xpm
+share/games/xsoldier/font6.xpm

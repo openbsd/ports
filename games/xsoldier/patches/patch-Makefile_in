@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2005/10/21 20:07:05 naddy Exp $
+--- Makefile.in.orig	Sun May 26 10:37:48 2002
++++ Makefile.in	Wed Oct 19 21:05:31 2005
+@@ -72,7 +72,7 @@ SDL_CFLAGS = @SDL_CFLAGS@
+ VERSION = @VERSION@
+ 
+ bin_PROGRAMS = xsoldier
+-xsoldier_SOURCES = boss.c   callback.c   common.c   ending.c   enemy.c   enemyshot.c   game.c   graphic.c   image.c   input.c   joystick.c   main.c   manage.c   opening.c   player.c   score.c   sin.c   star.c   boss.h   callback.h   common.h   ending.h   enemy.h   enemyshot.h   extern.h   game.h   graphic.h   image.h   input.h   joystick.h   key.h   manage.h   opening.h   player.h   score.h   sin.h   star.h   version.h   xsoldier.h
++xsoldier_SOURCES = boss.c   callback.c   common.c   ending.c   enemy.c   enemyshot.c   game.c   graphic.c   image.c   input.c   main.c   manage.c   opening.c   player.c   score.c   sin.c   star.c   boss.h   callback.h   common.h   ending.h   enemy.h   enemyshot.h   extern.h   game.h   graphic.h   image.h   input.h   key.h   manage.h   opening.h   player.h   score.h   sin.h   star.h   version.h   xsoldier.h
+ 
+ 
+ man_MANS = xsoldier.6
+@@ -102,7 +102,7 @@ X_LIBS = @X_LIBS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_PRE_LIBS = @X_PRE_LIBS@
+ xsoldier_OBJECTS =  boss.o callback.o common.o ending.o enemy.o \
+-enemyshot.o game.o graphic.o image.o input.o joystick.o main.o manage.o \
++enemyshot.o game.o graphic.o image.o input.o main.o manage.o \
+ opening.o player.o score.o sin.o star.o
+ xsoldier_LDADD = $(LDADD)
+ xsoldier_DEPENDENCIES = 

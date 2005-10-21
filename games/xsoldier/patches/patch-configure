@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2005/10/21 20:07:05 naddy Exp $
+--- configure.orig	Wed Oct 19 21:10:17 2005
++++ configure	Wed Oct 19 21:10:27 2005
+@@ -4098,10 +4098,6 @@ done
+ if test "${enable_joystick+set}" = set; then
+   enableval="$enable_joystick"
+ 
+-cat >>confdefs.h <<\EOF
+-#define JSTK
+-EOF
+-
+ fi;
+ # debug
+ # Check whether --enable-debug or --disable-debug was given.
