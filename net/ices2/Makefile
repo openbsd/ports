@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2005/04/18 20:14:34 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2005/10/21 16:14:02 naddy Exp $
 
 COMMENT=	"icecast source for streaming Ogg Vorbis"
 
 DISTNAME=	ices-2.0.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net audio
 
 HOMEPAGE=	http://www.icecast.org/
@@ -22,6 +22,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/ices/
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-suffix=2
 	
+USE_LIBTOOL=	Yes
 MODULES=	converters/libiconv
 BUILD_DEPENDS=	::devel/pkgconfig
 LIB_DEPENDS=	shout.3::net/libshout \
