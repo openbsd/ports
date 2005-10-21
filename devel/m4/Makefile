@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2005/05/19 09:50:51 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2005/10/21 13:58:00 naddy Exp $
 # $FreeBSD: Makefile,v 1.7 1997/06/16 08:22:35 max Exp $
 
 COMMENT=	"GNU m4"
 
-DISTNAME=	m4-1.4.3
+DISTNAME=	m4-1.4.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=m4/}
 
