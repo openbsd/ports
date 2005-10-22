@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2005/09/20 20:43:56 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2005/10/22 19:07:42 sturm Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 8.0"
 
-PKGNAME=	redhat_base-8.0p6
+PKGNAME=	redhat_base-8.0p7
 
 MAINTAINER=	Jason Ish <ish@openbsd.org>
 
@@ -10,6 +10,8 @@ MASTER_SITES=	${MASTER_SITE_REDHAT:=redhat/linux/8.0/en/os/i386/RedHat/RPMS/}
 MASTER_SITES0=	${MASTER_SITE_REDHAT:=redhat/linux/updates/8.0/en/os/i386/}
 
 DISTFILES=	${RPMS}
+
+BUILD_DEPENDS=	:gcpio-*:archivers/gcpio
 
 RPMDIR=		${FULLDISTDIR}
 
@@ -59,8 +61,10 @@ pre-install:
 
 do-install:
 .for rpm in ${RPMS:S/:0//}
-	@cd ${PREFIX}; ${LOCALBASE}/bin/rpm2cpio ${RPMDIR}/${rpm} | cpio -id
+	@cd ${PREFIX}; ${LOCALBASE}/bin/rpm2cpio ${RPMDIR}/${rpm} | gcpio -idm --quiet
 .endfor
+# Fix gcpio -d creating dirs with mode 700
+	@find ${PREFIX} -type d -perm 700 | xargs -r chmod 755
 
 # Get rid of some unnecessary files and directories.
 .for D in ${REMOVE_DIRS}
