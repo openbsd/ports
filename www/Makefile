@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2005/10/10 01:32:29 brad Exp $
+# $OpenBSD: Makefile,v 1.202 2005/10/22 13:43:40 alek Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -20,6 +20,7 @@
      SUBDIR += clearsilver,python
 #    SUBDIR += comline
      SUBDIR += cronolog
+     SUBDIR += cssed
      SUBDIR += decss
      SUBDIR += dillo
      SUBDIR += elinks
