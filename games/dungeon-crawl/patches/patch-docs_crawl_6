@@ -1,0 +1,15 @@
+$OpenBSD: patch-docs_crawl_6,v 1.1.1.1 2005/10/22 15:20:28 espie Exp $
+--- docs/crawl.6.orig	Wed Oct 19 12:01:32 2005
++++ docs/crawl.6	Wed Oct 19 12:01:42 2005
+@@ -1,9 +1,9 @@
+ .TH crawl 6 "02 April 2001"
+ .IX crawl
+ .SH NAME
+-crawl - play the roguelike game of crawl
++dungeon-crawl - play the roguelike game of crawl
+ .SH SYNOPSIS
+-.BR crawl
++.BR dungeon-crawl
+ [-scores [N]]
+ [-name <string>]
+ [-race <letter>]

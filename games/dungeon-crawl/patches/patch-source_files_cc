@@ -1,0 +1,17 @@
+$OpenBSD: patch-source_files_cc,v 1.1.1.1 2005/10/22 15:20:28 espie Exp $
+--- source/files.cc.orig	Sat Oct 22 16:03:22 2005
++++ source/files.cc	Sat Oct 22 16:04:16 2005
+@@ -925,8 +925,13 @@ void save_game(bool leave_game)
+               "%s.sav", name_buff );
+ 
+ #else
++# ifdef SAVE_DIR_PATH
++    snprintf( charFile, sizeof(charFile), 
++              SAVE_DIR_PATH "%s%d", you.your_name, (int) getuid() );
++# else
+     strncpy(charFile, you.your_name, kFileNameLen);
+     charFile[kFileNameLen] = 0;
++# endif
+     strcat(charFile, ".sav");
+ 
+ #ifdef DOS

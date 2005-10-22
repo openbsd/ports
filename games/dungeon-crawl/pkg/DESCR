@@ -1,0 +1,12 @@
+Linley's dungeon-crawl is a dungeon slashing game. 
+It's very similar to nethack, to the extent that 
+most of the keys are the same, but it is a much harder game.
+
+Development has been somewhat sporadic, there might be a 4.1 version
+at some point.
+
+It's a text terminal-only game, but you can get colors, provided your
+TERM defines them.
+
+This package can coexist with later versions of dungeon-crawl, to allow
+players to finish their game.

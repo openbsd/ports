@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_spl-cast_h,v 1.1.1.1 2005/10/22 15:20:28 espie Exp $
+--- source/spl-cast.h.orig	Tue Oct 18 23:55:20 2005
++++ source/spl-cast.h	Tue Oct 18 23:55:25 2005
+@@ -43,7 +43,7 @@ bool your_spells( int spc2, int powc = 0
+  *              misc - mstuff2 - religion - spell - spl-book - spells4
+  * *********************************************************************** */
+ bool miscast_effect( unsigned int sp_type, int mag_pow, int mag_fail, 
+-                     int force_effect, const char *cause = NULL );
++                     int force_effect, const char *cause = 0 );
+ 
+ 
+ #endif

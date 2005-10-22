@@ -1,0 +1,34 @@
+$OpenBSD: patch-source_religion_cc,v 1.1.1.1 2005/10/22 15:20:28 espie Exp $
+--- source/religion.cc.orig	Tue Oct 18 23:53:56 2005
++++ source/religion.cc	Tue Oct 18 23:54:14 2005
+@@ -53,18 +53,18 @@
+ #include "stuff.h"
+ 
+ const char *sacrifice[] = {
+-    {" glows silver and disappears."},
+-    {" glows a brilliant golden colour and disappears."},
+-    {" rots away in an instant."},
+-    {" crumbles to dust."},
+-    {" is eaten by a bug."},    /* Xom - no sacrifices */
+-    {" explodes into nothingness."},
+-    {" is consumed in a burst of flame."},
+-    {" is consumed in a roaring column of flame."},
+-    {" glows faintly for a moment, then is gone."},
+-    {" is consumed in a roaring column of flame."},
+-    {" glows with a rainbow of weird colours and disappears."},
+-    {" evaporates."}
++    " glows silver and disappears.",
++    " glows a brilliant golden colour and disappears.",
++    " rots away in an instant.",
++    " crumbles to dust.",
++    " is eaten by a bug.",    /* Xom - no sacrifices */
++    " explodes into nothingness.",
++    " is consumed in a burst of flame.",
++    " is consumed in a roaring column of flame.",
++    " glows faintly for a moment, then is gone.",
++    " is consumed in a roaring column of flame.",
++    " glows with a rainbow of weird colours and disappears.",
++    " evaporates."
+ };
+ 
+ void altar_prayer(void);

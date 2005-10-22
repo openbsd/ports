@@ -1,0 +1,17 @@
+$OpenBSD: patch-source_newgame_cc,v 1.1.1.1 2005/10/22 15:20:28 espie Exp $
+--- source/newgame.cc.orig	Sat Oct 22 16:05:21 2005
++++ source/newgame.cc	Sat Oct 22 16:06:32 2005
+@@ -253,8 +253,13 @@ static bool check_saved_game(void)
+     }
+ 
+ #else
++# ifdef SAVE_DIR_PATH
++    snprintf( char_fil, sizeof(char_fil), 
++              SAVE_DIR_PATH "%s%d", you.your_name, (int) getuid() );
++# else
+     strcpy(char_fil, "");
+     strncat(char_fil, you.your_name, kFileNameLen);
++# endif
+     strcat(char_fil, ".sav");
+ #endif
+ 

@@ -1,0 +1,41 @@
+$OpenBSD: patch-source_AppHdr_h,v 1.1.1.1 2005/10/22 15:20:28 espie Exp $
+--- source/AppHdr.h.orig	Mon Mar 24 02:05:12 2003
++++ source/AppHdr.h	Wed Oct 19 13:14:04 2005
+@@ -151,7 +151,7 @@
+     // Most of the linux stuff applies, and so we want it
+     #define LINUX
+     #define PLAIN_TERM
+-//#define MULTIUSER
++    #define MULTIUSER
+     #include "liblinux.h"
+ 
+     // The ALTCHARSET may come across as DEC characters/JIS on non-ibm platforms
+@@ -167,7 +167,7 @@
+ 
+     // This is used for BSD tchars type ioctl, use this if you can't
+     // use the Posix support above.
+-    #define USE_TCHARS_IOCTL
++    // #define USE_TCHARS_IOCTL
+ 
+     // This uses Unix signal control to block some things, may be
+     // useful in conjunction with USE_TCHARS_IOCTL.
+@@ -377,7 +377,9 @@
+     // Setting it to nothing or not setting it will cause all game files to
+     // be dumped in the current directory.
+     //
++#if !defined(SAVE_DIR_PATH)
+     #define SAVE_DIR_PATH       "/opt/crawl/lib/"
++#endif
+ 
+     // will make this little thing go away.  Define SAVE_PACKAGE_CMD
+     // to a command to compress and bundle the save game files into a
+@@ -389,9 +391,6 @@
+     //
+     // Comment these lines out if you want to leave the save files uncompressed.
+     //
+-    #define SAVE_PACKAGE_CMD    "/usr/bin/zip -m -q -j -1 %s.zip %s.*"
+-    #define LOAD_UNPACKAGE_CMD  "/usr/bin/unzip -q -o %s.zip -d" SAVE_DIR_PATH
+-    #define PACKAGE_SUFFIX      ".zip"
+ 
+     // This provides some rudimentary protection against people using
+     // save file cheats on multi-user systems.

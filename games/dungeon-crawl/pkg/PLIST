@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/22 15:20:28 espie Exp $
+@option no-default-conflict
+@conflict dungeon-crawl-${V}
+@mode g+s
+@group games
+bin/dungeon-crawl-${V}
+@mode g+w
+lib/dungeon-crawl-${V}/
+@mode
+@group
+@man man/man6/dungeon-crawl-${V}.6
+share/doc/dungeon-crawl-${V}/
+share/doc/dungeon-crawl-${V}/buglist.txt
+share/doc/dungeon-crawl-${V}/changes.340
+share/doc/dungeon-crawl-${V}/changes.400
+share/doc/dungeon-crawl-${V}/crawl.txt
+share/doc/dungeon-crawl-${V}/init.txt
+share/doc/dungeon-crawl-${V}/licence.txt
+share/doc/dungeon-crawl-${V}/macro.txt
+share/doc/dungeon-crawl-${V}/quickstart
+share/doc/dungeon-crawl-${V}/todo.txt
+share/doc/dungeon-crawl-${V}/versions.txt
