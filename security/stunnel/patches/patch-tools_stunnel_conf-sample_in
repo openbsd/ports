@@ -1,8 +1,7 @@
-$OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.2 2004/12/27 08:24:44 jakob Exp $
---- tools/stunnel.conf-sample.in.orig	Sat Nov  6 21:54:03 2004
-+++ tools/stunnel.conf-sample.in	Mon Dec 27 09:14:36 2004
+--- tools/stunnel.conf-sample.in.orig	Thu Sep 22 10:11:48 2005
++++ tools/stunnel.conf-sample.in	Sat Oct 22 19:45:44 2005
 @@ -1,17 +1,18 @@
- ; Sample stunnel configuration file by Michal Trojnara 2002-2004
+ ; Sample stunnel configuration file by Michal Trojnara 2002-2005
 +# Modified for OpenBSD by Michael Schubert 2003
  ; Some options used here may not be adequate for your particular configuration
  ; Please make sure you understand them (especially the effect of chroot jail)
@@ -26,15 +25,16 @@ $OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.2 2004/12/27 08:24:44 jakob Exp
  
  ; Some performance tunings
  socket = l:TCP_NODELAY=1
-@@ -26,11 +27,11 @@ socket = r:TCP_NODELAY=1
- ; Don't forget to c_rehash CApath;  CApath is located inside chroot jail:
+@@ -27,12 +28,12 @@
+ ; CApath is located inside chroot jail
  ;CApath = /certs
- ; It's often easier to use CAfile:
+ ; It's often easier to use CAfile
 -;CAfile = @prefix@/etc/stunnel/certs.pem
 +;CAfile = @sysconfdir@/ssl/certs.pem
- ; Don't forget to c_rehash CRLpath;  CRLpath is located inside chroot jail:
+ ; Don't forget to c_rehash CRLpath
+ ; CRLpath is located inside chroot jail
  ;CRLpath = /crls
- ; Alternatively you can use CRLfile:
+ ; Alternatively you can use CRLfile
 -;CRLfile = @prefix@/etc/stunnel/crls.pem
 +;CRLfile = @sysconfdir@/ssl/crls.pem
  
