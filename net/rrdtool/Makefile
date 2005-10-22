@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2005/10/12 05:40:00 fgsch Exp $
+# $OpenBSD: Makefile,v 1.32 2005/10/22 17:18:53 bernd Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -8,9 +8,8 @@ RRDVERSION=	1.0.49
 DISTNAME=	rrdtool-${RRDVERSION}
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
-MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/ \
-		ftp://ftp.sunet.se/pub/network/monitoring/rrdtool/ \
-		http://ftp.sunet.se/pub/network/monitoring/rrdtool/
+MASTER_SITES=	${HOMEPAGE}pub/rrdtool-1.0.x/ \
+		http://ftp.sunet.se/pub/network/monitoring/rrdtool/rrdtool-1.0.x/
 
 HOMEPAGE=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/
 
