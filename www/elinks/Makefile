@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/09/04 19:02:32 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2005/10/22 23:55:20 espie Exp $
 
 COMMENT=		"full-featured text WWW browser"
 DISTNAME=		elinks-0.10.5
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
-BUILD_DEPENDS=		:automake-1.4:devel/automake/1.4
+BUILD_DEPENDS=		:automake-1.4.*:devel/automake/1.4
 USE_GMAKE=		Yes
 
 RUN_DEPENDS=		::devel/gettext
