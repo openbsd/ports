@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2005/07/03 00:53:18 brad Exp $
+# $OpenBSD: Makefile,v 1.47 2005/10/22 14:11:23 fgsch Exp $
 
 COMMENT=	"multi-router traffic grapher"
 
 DISTNAME=	mrtg-2.12.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}pub/
@@ -15,6 +16,8 @@ RUN_DEPENDS=	::net/p5-SNMP_Session \
 		::textproc/p5-Pod-Simple
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
+
+MODULES=	converters/libiconv
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,6 +32,11 @@ CONFIGURE_ARGS=	--with-gd-inc="${LOCALBASE}/include" \
 		--with-gd-lib="${LOCALBASE}/lib" \
 		--with-png-inc="${LOCALBASE}/include" \
 		--with-png-lib="${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		LIBS="-liconv"
+
+USE_X11=	Yes
 
 NO_REGRESS=	Yes
 
