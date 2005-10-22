@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_r_draw_c,v 1.1 2005/10/22 20:26:40 canacar Exp $
+--- src/r_draw.c.orig	Fri Oct 21 02:54:37 2005
++++ src/r_draw.c	Fri Oct 21 02:54:06 2005
+@@ -273,7 +273,16 @@ void R_DrawTLColumn (void)
+     register const byte *source = dc_source;
+     register const lighttable_t *colormap = dc_colormap;
+     register unsigned heightmask = dc_texheight-1; // CPhipps - specify type
+-    if (dc_texheight & heightmask)   // not a power of 2 -- killough
++    if (dc_texheight == 0)
++      {
++  /* cea - another special case */
++        while (count--) {
++          *dest = tranmap[(*dest<<8)+colormap[source[frac>>FRACBITS]]]; // phares
++          dest += SCREENWIDTH;
++          frac += fracstep;
++        }
++      }
++    else if (dc_texheight & heightmask)   // not a power of 2 -- killough
+       {
+         heightmask++;
+         heightmask <<= FRACBITS;

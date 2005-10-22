@@ -1,12 +1,12 @@
-$OpenBSD: patch-data_Makefile_in,v 1.2 2003/09/24 08:30:09 jolan Exp $
---- data/Makefile.in.orig	2003-09-20 08:06:10.000000000 -0500
-+++ data/Makefile.in	2003-09-24 03:21:43.000000000 -0500
-@@ -90,7 +90,7 @@ SDL_LIBS = @SDL_LIBS@
- VERSION = @VERSION@
- ac_aux_dir = @ac_aux_dir@
- 
+$OpenBSD: patch-data_Makefile_in,v 1.3 2005/10/22 20:26:40 canacar Exp $
+--- data/Makefile.in.orig	Mon Sep 27 20:31:31 2004
++++ data/Makefile.in	Fri Oct 21 01:44:54 2005
+@@ -163,7 +163,7 @@ target_alias = @target_alias@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
 -waddir = $(datadir)/games/doom
 +waddir = $(datadir)/prboom
  wad_DATA = prboom.wad
  EXTRA_DIST = prboom.wad
- mkinstalldirs = $(SHELL) $(top_srcdir)/autotools/mkinstalldirs
+ all: all-am

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2004/11/28 22:41:20 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2005/10/22 20:26:40 canacar Exp $
 
 COMMENT=	"enhanced clone of Id Software's Doom game; multiplayer"
-DISTNAME=	prboom-2.2.4
+DISTNAME=	prboom-2.2.6
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=prboom/}
 

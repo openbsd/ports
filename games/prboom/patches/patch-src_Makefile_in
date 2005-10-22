@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2003/09/24 08:30:09 jolan Exp $
---- src/Makefile.in.orig	2003-09-20 08:06:11.000000000 -0500
-+++ src/Makefile.in	2003-09-24 03:21:43.000000000 -0500
-@@ -96,7 +96,7 @@ EXTRA_SUBDIRS = Posix SDL
- 
+$OpenBSD: patch-src_Makefile_in,v 1.3 2005/10/22 20:26:40 canacar Exp $
+--- src/Makefile.in.orig	Mon Sep 27 20:31:32 2004
++++ src/Makefile.in	Fri Oct 21 01:45:48 2005
+@@ -276,7 +276,7 @@ target_os = @target_os@
+ target_vendor = @target_vendor@
+ EXTRA_SUBDIRS = Posix SDL
  SUBDIRS = SDL POSIX
- 
 -gamesdir = $(prefix)/games
 +gamesdir = $(prefix)/bin
- EXTRA_PROGRAMS = prboom-game-server
- games_PROGRAMS = prboom @BUILD_SERVER@
- 
+ prboom_game_server_SOURCES = d_server.c i_udp_sdl.c protocol.h
+ prboom_game_server_LDADD = POSIX/libposixdoom.a @NET_LIBS@ @SDL_LIBS@
+ COMMON_SRC = \

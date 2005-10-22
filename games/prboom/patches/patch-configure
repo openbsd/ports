@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2003/09/24 08:30:09 jolan Exp $
---- configure.orig	2003-09-19 11:14:09.000000000 -0500
-+++ configure	2003-09-24 03:23:05.000000000 -0500
-@@ -922,9 +922,9 @@ fi
+$OpenBSD: patch-configure,v 1.3 2005/10/22 20:26:40 canacar Exp $
+--- configure.orig	Mon Sep 27 20:31:33 2004
++++ configure	Fri Oct 21 01:44:00 2005
+@@ -1859,9 +1859,9 @@ INSTALL_STRIP_PROGRAM="\${SHELL} \$(inst
  
  
  if test "x$prefix" != xNONE; then
@@ -11,9 +11,9 @@ $OpenBSD: patch-configure,v 1.2 2003/09/24 08:30:09 jolan Exp $
 -  DOOMWADDIR="$ac_default_prefix/share/games/doom"
 +  DOOMWADDIR="$ac_default_prefix/share/prboom"
  fi
- cat >> confdefs.h <<EOF
+ cat >>confdefs.h <<_ACEOF
  #define DOOMWADDIR "$DOOMWADDIR"
-@@ -1220,7 +1220,6 @@ EOF
+@@ -3073,7 +3073,6 @@ _ACEOF
    echo '    the source to insert the relevant pragmas so structures are packed.'
  fi
  
