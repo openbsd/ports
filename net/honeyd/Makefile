@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2005/08/09 21:02:38 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2005/10/23 08:16:18 aanriot Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"utility to create virtual hosts on a network"
 DISTNAME=	honeyd-1.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 		http://niels.xtdnet.nl/honeyd/

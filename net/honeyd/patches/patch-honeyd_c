@@ -1,17 +1,28 @@
-$OpenBSD: patch-honeyd_c,v 1.1 2005/07/23 14:24:52 aanriot Exp $
+$OpenBSD: patch-honeyd_c,v 1.2 2005/10/23 08:16:18 aanriot Exp $
 --- honeyd.c.orig	Fri Dec 31 20:13:37 2004
-+++ honeyd.c	Sat Jul 16 23:49:53 2005
-@@ -3086,6 +3086,13 @@ main(int argc, char *argv[])
++++ honeyd.c	Thu Oct 20 11:23:17 2005
+@@ -154,8 +154,8 @@ int                      honeyd_show_inc
+ int                      honeyd_show_version;
+ int                      honeyd_show_usage;
+ int			 honeyd_debug;
+-uid_t			 honeyd_uid = 32767;
+-gid_t			 honeyd_gid = 32767;
++uid_t			 honeyd_uid = 546;
++gid_t			 honeyd_gid = 546;
+ int			 honeyd_needsroot;	/* Need different IDs */
+ int			 honeyd_disable_webserver = 0;
+ int			 honeyd_disable_update = 0;
+@@ -3085,6 +3085,13 @@ main(int argc, char *argv[])
+ 	/* We need reproduceable random numbers for regression testing */
  	if (setrand)
  		rand_set(honeyd_rand, &setrand, sizeof(setrand));
- 
++
 +	/*
 +	 * Set the environment variable EVENT_NOKQUEUE to Yes because
 +	 * kqueue support doesn't handle BPF descriptors
 +	 */
 +	if (setenv("EVENT_NOKQUEUE", "Yes", 1))
 +		printf("EVENT_NOKQUEUE set");
-+
+ 
  	/* Initalize libevent */
  	event_init();
- 

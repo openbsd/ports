@@ -1,0 +1,12 @@
+$OpenBSD: patch-honeyd_8,v 1.1 2005/10/23 08:16:18 aanriot Exp $
+--- honeyd.8.orig	Thu Oct 20 11:23:59 2005
++++ honeyd.8	Thu Oct 20 11:24:54 2005
+@@ -543,7 +543,7 @@ add template tcp port 80 "sh scripts/web
+ add template tcp port 22 "sh scripts/test.sh $ipsrc $dport"
+ add template udp port 53 proxy yournameserver:53
+ set template default tcp action reset
+-set template uid 32767 gid 32767
++set template uid 546 gid 546
+ 
+ bind 10.11.69.2 template
+ set 10.11.69.2 uptime 1327650
