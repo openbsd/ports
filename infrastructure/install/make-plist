@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.72 2005/10/18 21:05:53 aanriot Exp $
+# $OpenBSD: make-plist,v 1.73 2005/10/23 10:48:39 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -774,6 +774,11 @@ sub create_object
 	} elsif ($type eq "library") {
 		return OpenBSD::PackingElement::Lib->new($short);
 	} else {
+		if (defined $item) {
+			if ($item->isa("OpenBSD::PackingElement::Shell")) {
+				return OpenBSD::PackingElement::Shell->new($short);
+		    	}
+		}
 		return OpenBSD::PackingElement::File->new($short);
 	}
 }
