@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2005/05/16 20:26:51 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2005/10/23 09:52:21 alek Exp $
 
 COMMENT=	"easy to use, graphical editor"
 
@@ -35,6 +35,7 @@ CONFIGURE_ENV+=	XTERM_CMD=xterm LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=--enable-static --disable-mail-author
 
+# GPL
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
