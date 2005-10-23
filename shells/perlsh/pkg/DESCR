@@ -1,0 +1,3 @@
+The Perl Shell is a shell that combines the interactive nature of a Unix
+shell with the power of Perl. The goal is to have a full featured shell
+that behaves as expected for normal shell activity.

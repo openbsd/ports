@@ -1,0 +1,20 @@
+$OpenBSD: patch-lib_Psh_StrategyBunch_tail,v 1.1.1.1 2005/10/23 10:29:21 alek Exp $
+--- lib/Psh/StrategyBunch.tail.orig	Tue Oct 11 21:15:46 2005
++++ lib/Psh/StrategyBunch.tail	Tue Oct 11 21:15:46 2005
+@@ -0,0 +1,16 @@
++
++__END__
++
++=head1 NAME
++
++Psh::StrategyBunch - A collection of modules.
++
++=head1 DESCRIPTION
++
++A bunch of modules for "psh".
++
++=head1 AUTHOR
++
++The author of "psh" is Gregor N. Purdy.
++
++=cut
