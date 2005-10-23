@@ -1,0 +1,18 @@
+$OpenBSD: patch-joystick_c,v 1.1 2005/10/23 18:23:25 naddy Exp $
+--- joystick.c.orig	Sat Oct 22 20:48:10 2005
++++ joystick.c	Sat Oct 22 20:48:31 2005
+@@ -8,6 +8,8 @@
+ 
+ #include <config.h>
+ 
++#ifdef JSTK
++
+ /* read */
+ #include <unistd.h>
+ /* exit */
+@@ -95,3 +97,5 @@ void readJS(void)
+ 	if (js.y >  150) joymask |= Down; /* Was 1000 */
+     }
+ }
++
++#endif	/* JSTK */
