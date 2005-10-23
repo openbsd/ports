@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.35 2005/04/05 09:18:20 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2005/10/23 18:48:38 sturm Exp $
 
 COMMENT=	"TeX distribution, executables"
 COMMENT-fmt=	"format files"
 
 VERSION=	3.0
 DISTNAME=	tetex-base-${VERSION}
-PKGNAME=	teTeX_base-${VERSION}p1
-FULLPKGNAME-fmt=teTeX_base-fmt-${VERSION}
+PKGNAME=	teTeX_base-${VERSION}p2
+FULLPKGNAME-fmt=teTeX_base-fmt-${VERSION}p0
 CATEGORIES=	print
 
 DISTFILES=	tetex-src-${VERSION}.tar.gz
@@ -14,8 +14,6 @@ DISTFILES=	tetex-src-${VERSION}.tar.gz
 WANTLIB=	c m ncurses stdc++ z
 
 BUILD_DEPENDS=	:teTeX_texmf->=3.0:print/teTeX/texmf
-RUN_DEPENDS=	:teTeX_texmf->=3.0:print/teTeX/texmf \
-		:texi2html->=1.56:textproc/texi2html
 LIB_DEPENDS=	png.3::graphics/png
 
 CONFIGURE_STYLE=gnu dest
@@ -41,14 +39,16 @@ CONFIGURE_ARGS+=--without-x
 PATCH_LIST=	patch-* gcc-*
 .  endif
 .else
-WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xp Xpm Xt
 CONFIGURE_ARGS+=--with-system-t1lib \
 		--with-t1lib-libdir=${PREFIX}/lib \
 		--with-t1lib-include=${PREFIX}/include \
 		--with-xdvi-x-toolkit=xaw
 LIB_DEPENDS+=	t1.4::devel/t1lib
-RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
 USE_X11=	Yes
+WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xp Xpm Xt
+.  if defined(PACKAGING) && ${SUBPACKAGE} != "-fmt"
+RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
+.  endif
 .endif
 
 MULTI_PACKAGES=	-fmt
@@ -56,9 +56,13 @@ SUBPACKAGE?=
 
 .if defined(PACKAGING)
 .  if ${SUBPACKAGE} == "-fmt"
+WANTLIB=
+LIB_DEPENDS=
 PREFIX=		/var
+RUN_DEPENDS=	:teTeX_texmf->=3.0:print/teTeX/texmf
 .  else
-RUN_DEPENDS+=	:teTeX_base-fmt-${VERSION}:print/teTeX/base,-fmt
+RUN_DEPENDS+=	:teTeX_base-fmt-${VERSION}:print/teTeX/base,-fmt \
+		:texi2html->=1.56:textproc/texi2html
 .  endif
 .endif
 
