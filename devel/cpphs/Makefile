@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2005/03/23 05:21:57 dons Exp $
+# $OpenBSD: Makefile,v 1.4 2005/10/24 03:14:57 dons Exp $
 
 COMMENT=	"liberalised reimplementation of cpp in Haskell"
 
-V=		0.9
+V=		1.0
 DISTNAME=	cpphs-${V}
 CATEGORIES=	devel
 MAINTAINER=	Don Stewart <dons@openbsd.org>
-HOMEPAGE=	http://www.cs.york.ac.uk/fp/cpphs/
-MASTER_SITES=	${HOMEPAGE}
+HOMEPAGE=	http://haskell.org/cpphs/
+MASTER_SITES=	http://www.cs.york.ac.uk/fp/cpphs/
 
 # Pure Haskell 98. Could also interpret via Hugs
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
