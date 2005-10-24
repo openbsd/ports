@@ -1,6 +1,17 @@
-$OpenBSD: patch-configure,v 1.1 2005/10/12 05:37:43 fgsch Exp $
+$OpenBSD: patch-configure,v 1.2 2005/10/24 05:02:41 fgsch Exp $
 --- configure.orig	Wed Nov  3 20:14:47 2004
-+++ configure	Wed Sep 21 04:11:05 2005
++++ configure	Sat Oct 22 20:58:33 2005
+@@ -10497,8 +10497,8 @@ _ACEOF
+ 
+   fi
+ 
+-if test -n "$LIBICONV" ; then
+-  LIBS="$LIBS $LIBICONV"
++if test -n "$LTLIBICONV" ; then
++  LIBS="$LIBS $LTLIBICONV"
+ fi
+ 
+ 
 @@ -11338,7 +11338,7 @@ if test `eval echo '${'$as_ac_Header'}'`
    cat >>confdefs.h <<_ACEOF
  #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
@@ -10,3 +21,30 @@ $OpenBSD: patch-configure,v 1.1 2005/10/12 05:37:43 fgsch Exp $
  else
    CPPFLAGS="$_cppflags"
  fi
+@@ -12307,7 +12307,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_l
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  acx_pthread_ok=yes
++  acx_pthread_ok=no
+ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+@@ -12444,7 +12444,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_l
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  acx_pthread_ok=yes
++  acx_pthread_ok=no
+ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+@@ -13396,7 +13396,7 @@ s,@ac_ct_RANLIB@,$ac_ct_RANLIB,;t t
+ s,@CPP@,$CPP,;t t
+ s,@EGREP@,$EGREP,;t t
+ s,@LIBTOOL@,$LIBTOOL,;t t
+-s,@LIBICONV@,$LIBICONV,;t t
++s,@LIBICONV@,$LTLIBICONV,;t t
+ s,@LTLIBICONV@,$LTLIBICONV,;t t
+ s,@LIBPNG12_CONFIG@,$LIBPNG12_CONFIG,;t t
+ s,@LIBPNG_CONFIG@,$LIBPNG_CONFIG,;t t
