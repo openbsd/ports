@@ -1,7 +1,7 @@
-$OpenBSD: patch-VAX_vax_sysdev_c,v 1.1 2005/06/19 03:47:25 david Exp $
---- VAX/vax_sysdev.c.orig	Thu Mar 10 17:46:32 2005
-+++ VAX/vax_sysdev.c	Sat Jun 18 03:33:38 2005
-@@ -51,6 +51,10 @@
+$OpenBSD: patch-VAX_vax_sysdev_c,v 1.2 2005/10/24 15:53:26 fgsch Exp $
+--- VAX/vax_sysdev.c.orig	Thu Sep 22 16:55:16 2005
++++ VAX/vax_sysdev.c	Mon Oct 24 12:16:10 2005
+@@ -52,6 +52,10 @@
  
  #include "vax_defs.h"
  
@@ -9,20 +9,20 @@ $OpenBSD: patch-VAX_vax_sysdev_c,v 1.1 2005/06/19 03:47:25 david Exp $
 +#define PATH_KA655X_BIN "ka655x.bin"
 +#endif
 +
- #define UNIT_V_NODELAY	(UNIT_V_UF + 0)			/* ROM access equal to RAM access */
- #define UNIT_NODELAY	(1u << UNIT_V_NODELAY)
+ #define UNIT_V_NODELAY  (UNIT_V_UF + 0)                 /* ROM access equal to RAM access */
+ #define UNIT_NODELAY    (1u << UNIT_V_NODELAY)
  
-@@ -1369,10 +1373,10 @@ conpc = 0;
+@@ -1518,10 +1522,10 @@ conpc = 0;
  conpsl = PSL_IS | PSL_IPL1F | CON_PWRUP;
  if (rom == NULL) return SCPE_IERR;
- if (*rom == 0) {					/* no boot? */
--	printf ("Loading boot code from ka655x.bin\n");
-+	printf ("Loading boot code from %s\n", PATH_KA655X_BIN);
- 	if (sim_log) fprintf (sim_log, 
--	    "Loading boot code from ka655x.bin\n");
--	r = load_cmd (0, "-R ka655x.bin");
-+	    "Loading boot code from %s\n", PATH_KA655X_BIN);
-+	r = load_cmd (0, "-R " PATH_KA655X_BIN);
- 	if (r != SCPE_OK) return r;  }
+ if (*rom == 0) {                                        /* no boot? */
+-    printf ("Loading boot code from ka655x.bin\n");
++    printf ("Loading boot code from %s\n", PATH_KA655X_BIN);
+     if (sim_log) fprintf (sim_log, 
+-        "Loading boot code from ka655x.bin\n");
+-    r = load_cmd (0, "-R ka655x.bin");
++        "Loading boot code from %s\n", PATH_KA655X_BIN);
++    r = load_cmd (0, "-R " PATH_KA655X_BIN);
+     if (r != SCPE_OK) return r;
+     }
  return SCPE_OK;
- }
