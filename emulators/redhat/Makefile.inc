@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2002/12/29 15:06:49 fgsch Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2005/10/24 10:36:02 aanriot Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -16,7 +16,7 @@ MASTER_SITE_REDHAT=ftp://ftp.redhat.com/pub/ \
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=
 
-BUILD_DEPENDS=	:rpm->=3.0.6p1:misc/rpm
+BUILD_DEPENDS+=	:rpm->=3.0.6p1:misc/rpm
 
 NO_BUILD=	Yes
 
