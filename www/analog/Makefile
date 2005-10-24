@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2005/10/12 05:42:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.45 2005/10/24 05:08:11 fgsch Exp $
 
 COMMENT=	"extremely fast program for analysing WWW logfiles"
 
 DISTNAME=	analog-6.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 MASTER_SITES=	http://www.analog.cx/ \
@@ -27,7 +28,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	gd.18::graphics/gd \
 		pcre.0::devel/pcre
-WANTLIB=	c m jpeg png ttf z
+WANTLIB=	c m jpeg png z
 
 MODULES=	converters/libiconv
 
@@ -48,7 +49,7 @@ CFLAGS+=	-I${LOCALBASE}/include \
 
 ALL_TARGET=	analog
 MAKE_FLAGS=	CC='${CC}' CFLAGS='${CFLAGS}' \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm -lgd -lpng -ljpeg -lttf -lz -lpcre -liconv"
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm -lgd -lpng -ljpeg -lz -lpcre -liconv"
 
 post-patch:
 	@mv ${WRKSRC}/anlgform.pl ${WRKSRC}/anlgform.pl.src
