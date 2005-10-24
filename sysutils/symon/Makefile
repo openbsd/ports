@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2005/08/07 14:24:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2005/10/24 05:13:17 fgsch Exp $
 
 COMMENT=		"active monitoring tool"
 V=			2.71
 DISTNAME=		symon-${V}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		sysutils net
 
 HOMEPAGE=		http://www.xs4all.nl/~wpd/symon
@@ -29,7 +30,7 @@ COMMENT-mux=		"symon data gatherer"
 MUX_LIBDEPENDS=		rrd:rrdtool-*:net/rrdtool
 
 .for i in ${MULTI_PACKAGES}
-FULLPKGNAME${i}=        symon${i}-${V}
+FULLPKGNAME${i}=        symon${i}-${V}p0
 .endfor
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
@@ -40,9 +41,13 @@ MESSAGE=                ${PKGDIR}/MESSAGE${SUBPACKAGE}
 LIB_DEPENDS=		rrd:rrdtool-*:net/rrdtool
 .endif
 
+USE_X11=		Yes
+
+NO_REGRESS=		Yes
+
 WRKDIST=		${WRKDIR}/symon
 SUBST_VARS=		V
 
-NO_REGRESS=		Yes
+MAKE_ENV=		LIBS="-L${X11BASE}/lib"
 
 .include <bsd.port.mk>
