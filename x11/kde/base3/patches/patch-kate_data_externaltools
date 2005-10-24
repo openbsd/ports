@@ -1,0 +1,12 @@
+$OpenBSD: patch-kate_data_externaltools,v 1.1 2005/10/24 10:56:03 espie Exp $
+--- kate/data/externaltools.orig	Mon Oct 24 12:52:36 2005
++++ kate/data/externaltools	Mon Oct 24 12:52:56 2005
+@@ -9,7 +9,7 @@ externaltool_RunScript=Ctrl+Shift+X
+ [externaltool_CVSLogforCurrentDocument]
+ acname=externaltool_CVSLogforCurrentDocument
+ cmdname=cvs-log
+-command=if grep %filename %directory/CVS/Entries 2>&1>/dev/null ; then\n  cd %directory && cervisia -log %filename\nelse\n  kdialog --title Error --msgbox "The file '%filename' is not in CVS."\nfi
++command=if grep %filename %directory/CVS/Entries 2>&1 >/dev/null ; then\n  cd %directory && cervisia -log %filename\nelse\n  kdialog --title Error --msgbox "The file '%filename' is not in CVS."\nfi
+ executable=cervisia
+ icon=cervisia
+ mimetypes=
