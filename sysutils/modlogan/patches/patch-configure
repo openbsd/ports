@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/05/02 02:53:05 margarida Exp $
+$OpenBSD: patch-configure,v 1.2 2005/10/24 05:14:50 fgsch Exp $
 --- configure.orig	Mon Apr 21 23:13:06 2003
 +++ configure	Mon Apr 21 23:13:31 2003
 @@ -16778,7 +16778,7 @@ echo $ECHO_N "checking gd and its deps..
@@ -6,7 +6,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/05/02 02:53:05 margarida Exp $
  
  	# gd + png support
 -	LIBS="$GDLPATH -lz -lpng -lgd -lz"
-+	LIBS="$GDLPATH -lz -lpng -ljpeg -lttf -lgd -lz"
++	LIBS="$GDLPATH -lz -lpng -ljpeg -lgd -lz"
  	cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
