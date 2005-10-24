@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2005/10/22 14:11:23 fgsch Exp $
+# $OpenBSD: Makefile,v 1.48 2005/10/24 05:12:31 fgsch Exp $
 
 COMMENT=	"multi-router traffic grapher"
 
 DISTNAME=	mrtg-2.12.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}pub/
@@ -24,7 +24,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m png ttf jpeg z
+WANTLIB=		c m png jpeg z
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.57
@@ -33,10 +33,7 @@ CONFIGURE_ARGS=	--with-gd-inc="${LOCALBASE}/include" \
 		--with-png-inc="${LOCALBASE}/include" \
 		--with-png-lib="${LOCALBASE}/lib"
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-		LIBS="-liconv"
-
-USE_X11=	Yes
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 NO_REGRESS=	Yes
 

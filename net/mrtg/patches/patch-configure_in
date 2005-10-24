@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.2 2005/02/27 10:13:51 alek Exp $
+$OpenBSD: patch-configure_in,v 1.3 2005/10/24 05:12:31 fgsch Exp $
 --- configure.in.orig	Tue Jan 13 07:28:11 2004
 +++ configure.in	Sun Feb 27 10:05:00 2005
 @@ -113,6 +113,11 @@ AC_CHECK_LIB(gd,gdImagePng,[
@@ -7,8 +7,8 @@ $OpenBSD: patch-configure_in,v 1.2 2005/02/27 10:13:51 alek Exp $
  
 +AC_CHECK_LIB(gd,gdImageStringTTF,[
 +   GDFORM_EXT=png
-+   GLIBS="-lgd -lpng -lz -ljpeg -lttf"
-+        ],:,[-lgd -lpng -lz -ljpeg -lttf ${MATHLIBS}])
++   GLIBS="-lgd -lpng -lz -ljpeg"
++        ],:,[-lgd -lpng -lz -ljpeg ${MATHLIBS}])
 +
  AC_CHECK_LIB(gd,gdImagePng_jpg,[
     GDFORM_EXT=png
