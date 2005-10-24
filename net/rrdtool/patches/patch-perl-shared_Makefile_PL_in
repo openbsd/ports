@@ -1,4 +1,4 @@
-$OpenBSD: patch-perl-shared_Makefile_PL_in,v 1.3 2004/10/13 13:43:26 danh Exp $
+$OpenBSD: patch-perl-shared_Makefile_PL_in,v 1.4 2005/10/24 05:11:01 fgsch Exp $
 --- perl-shared/Makefile.PL.in.orig	Wed Apr  7 17:04:53 2004
 +++ perl-shared/Makefile.PL.in	Wed Oct 13 09:24:47 2004
 @@ -10,11 +10,11 @@ WriteMakefile(
@@ -12,6 +12,6 @@ $OpenBSD: patch-perl-shared_Makefile_PL_in,v 1.3 2004/10/13 13:43:26 danh Exp $
      # Perl will figure out which one is valid
      'depend'	   => {'RRDs.c' => "@top_srcdir@/src/.libs/librrd_private.a"},
 -    'dynamic_lib'  => {'OTHERLDFLAGS' => "$librrd -lm"},
-+    'dynamic_lib'  => {'OTHERLDFLAGS' => "$librrd -lgd -ljpeg -lttf -lz -lm"},
++    'dynamic_lib'  => {'OTHERLDFLAGS' => "$librrd -lgd -ljpeg -lz -lm"},
      'realclean'    => {FILES => 't/demo?.rrd t/demo?.gif' }
  );
