@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/10/10 18:42:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2005/10/24 05:11:59 fgsch Exp $
 
 COMMENT=	"host and service monitor"
 COMMENT-web=	"cgis and webpages for nagios"
@@ -6,7 +6,7 @@ COMMENT-web=	"cgis and webpages for nagios"
 V=		2.0b4
 DISTNAME=	nagios-${V}
 PKGNAME=	${DISTNAME}p2
-PKGNAME-web=	nagios-web-${V}
+PKGNAME-web=	nagios-web-${V}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.nagios.org/
@@ -39,6 +39,7 @@ CONFIGURE_ARGS+=--datadir=/var/www/nagios \
 		--with-lockfile=/var/run/nagios/nagios.pid \
 		--with-nagios-group=_nagios \
 		--with-nagios-user=_nagios
+CONFIGURE_ENV+=	LDFLAGS="-L${X11BASE}/lib"
 
 FLAVORS=	chroot
 FLAVOR?=
@@ -53,13 +54,14 @@ CHROOT=
 .if defined(PACKAGING)
 WANTLIB=	c m
 .  if ${SUBPACKAGE} == "-web"
-WANTLIB+=	jpeg png ttf z
+WANTLIB+=	jpeg png z
 PREFIX=		/var/www
 # overwrite RUN_DEPENDS in order to only depend on the base package
 .    if ${FLAVOR:L:Mchroot}
 WANTLIB=
 RUN_DEPENDS=	nagios:nagios-${V}-chroot:net/nagios/nagios,chroot
 .    else
+MODULES+=	converters/libiconv
 LIB_DEPENDS+=	gd::graphics/gd
 RUN_DEPENDS=	nagios:nagios-${V}-!chroot:net/nagios/nagios
 .    endif
