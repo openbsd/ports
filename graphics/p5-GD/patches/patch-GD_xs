@@ -1,6 +1,6 @@
-$OpenBSD: patch-GD_xs,v 1.2 2005/10/21 10:29:17 fgsch Exp $
+$OpenBSD: patch-GD_xs,v 1.3 2005/10/24 05:03:48 fgsch Exp $
 --- GD.xs.orig	Sat Jul 20 12:43:49 2002
-+++ GD.xs	Thu Oct 20 20:41:29 2005
++++ GD.xs	Fri Oct 21 07:40:55 2005
 @@ -17,6 +17,7 @@
  #endif
  /* Copyright 1995 - 1998, Lincoln D. Stein.  See accompanying README file for
@@ -72,21 +72,3 @@ $OpenBSD: patch-GD_xs,v 1.2 2005/10/21 10:29:17 fgsch Exp $
  	OUTPUT:
  	RETVAL
  
-@@ -1351,7 +1352,7 @@ gdstringUp(image,font,x,y,s,color)
- 	}
- 
- void
--gdstringFT(image,fgcolor,fontname,ptsize,angle,x,y,string)
-+gdstringTTF(image,fgcolor,fontname,ptsize,angle,x,y,string)
-         SV *	        image
-         int             fgcolor
- 	char *          fontname
-@@ -1376,7 +1377,7 @@ gdstringFT(image,fgcolor,fontname,ptsize
- 	    img = NULL;
- 	  }
- 
--	  err = gdImageStringFT(img,brect,fgcolor,fontname,ptsize,angle,x,y,string);
-+	  err = gdImageStringTTF(img,brect,fgcolor,fontname,ptsize,angle,x,y,string);
- 	  if (err) {
- 	    errormsg = perl_get_sv("@",0);
- 	    if (errormsg != NULL)

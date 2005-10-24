@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2002/11/30 05:28:40 brad Exp $
---- Makefile.PL.orig	Wed Jun 19 19:02:59 2002
-+++ Makefile.PL	Sun Nov 24 14:31:44 2002
+$OpenBSD: patch-Makefile_PL,v 1.3 2005/10/24 05:03:48 fgsch Exp $
+--- Makefile.PL.orig	Sat Oct 22 20:27:34 2005
++++ Makefile.PL	Sat Oct 22 20:29:19 2005
 @@ -1,35 +1,25 @@
  use ExtUtils::MakeMaker qw(prompt WriteMakefile);
  
@@ -9,8 +9,8 @@ $OpenBSD: patch-Makefile_PL,v 1.2 2002/11/30 05:28:40 brad Exp $
  # =====> PATHS: CHECK AND ADJUST <=====
 -my @INC     = qw(-I/usr/local/include -I/usr/local/include/gd); 
 -my @LIBPATH = qw(-L/usr/lib/X11 -L/usr/X11R6/lib -L/usr/X11/lib -L/usr/local/lib );
-+my @INC     = qw(-I/usr/local/include);
-+my @LIBPATH = qw(-L/usr/local/lib);
++my @INC     = qw(-I%%LOCALBASE%%/include -I%%X11BASE%%/include);
++my @LIBPATH = qw(-L%%LOCALBASE%%/lib -L%%X11BASE%%/lib);
  my @LIBS    = qw(-lgd -lpng -lz);
  
  # FEATURE FLAGS
@@ -23,7 +23,7 @@ $OpenBSD: patch-Makefile_PL,v 1.2 2002/11/30 05:28:40 brad Exp $
 +my $JPEG    = 1;
 +my $TTF     = 1;
 +my $XPM     = 0;
-+my $GIF	    = 0;
++my $GIF     = 1;
  
  my $FCGI    = 0;   # set to 1 to build compatability with fastCGI
  
@@ -32,8 +32,7 @@ $OpenBSD: patch-Makefile_PL,v 1.2 2002/11/30 05:28:40 brad Exp $
 -
  #### no user-serviceable parts below #####
  
--push @LIBS,'-lfreetype' if $TTF;
-+push @LIBS,'-lttf' if $TTF;
+ push @LIBS,'-lfreetype' if $TTF;
  push @LIBS,'-ljpeg' if $JPEG;
  push @LIBS, '-lm' unless $^O eq 'MSWin32';
 -
