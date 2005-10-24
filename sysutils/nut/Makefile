@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2005/09/16 09:51:28 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2005/10/24 05:14:13 fgsch Exp $
 
 COMMENT=		"UPS monitoring program supporting many brands"
 COMMENT-cgi=		"CGIs for monitoring Nut-based UPSs"
@@ -6,9 +6,9 @@ COMMENT-snmp=		"driver for monitoring UPSs via SNMP"
 
 VERSION=		2.0.0
 DISTNAME=		nut-${VERSION}
-PKGNAME=		${DISTNAME}p0
-PKGNAME-cgi=		nut-cgi-${VERSION}
-PKGNAME-snmp=		nut-snmp-${VERSION}
+PKGNAME=		${DISTNAME}p1
+PKGNAME-cgi=		nut-cgi-${VERSION}p0
+PKGNAME-snmp=		nut-snmp-${VERSION}p0
 CATEGORIES=		sysutils
 HOMEPAGE=		http://www.networkupstools.org/
 MAINTAINER=		Marc Balmer <mbalmer@openbsd.org>
@@ -62,7 +62,7 @@ BUILD_DEPENDS+=		:gd->=1.8.3:graphics/gd
 
 CONFIGURE_ARGS+=	--with-cgi
 CONFIGURE_ARGS+=	--with-cgipath="${WEB_ROOT}/cgi-bin/nut"
-CONFIGURE_ARGS+=	--with-gd-libs="-L${LOCALBASE}/lib -lgd -lpng -lz -ljpeg -lttf -lm"
+CONFIGURE_ARGS+=	--with-gd-libs="-L${LOCALBASE}/lib -lgd -lpng -lz -ljpeg -lm"
 CONFIGURE_ARGS+=	--with-gd-includes="-I${LOCALBASE}/include"
 
 ALL_TARGET+=		cgi

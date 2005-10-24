@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/09/16 09:51:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/10/24 05:14:13 fgsch Exp $
+@conflict upsd-*
 @pkgpath sysutils/nut,no_cgi
 @pkgpath sysutils/nut,snmp
 @pkgpath sysutils/nut,no_cgi,snmp
-@conflict upsd-*
 @newuser ${NUT_USER}:${NUT_ID}:::UPS User:/var/empty:/sbin/nologin
 bin/apcsmart
 bin/belkin
@@ -65,6 +65,7 @@ bin/victronups
 @man man/man8/powercom.8
 @man man/man8/safenet.8
 @man man/man8/sms.8
+@man man/man8/snmp-ups.8
 @man man/man8/tripplite.8
 @man man/man8/tripplitesu.8
 @man man/man8/upsc.8
