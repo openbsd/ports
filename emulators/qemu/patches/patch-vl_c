@@ -1,6 +1,6 @@
-$OpenBSD: patch-vl_c,v 1.2 2005/08/11 01:15:17 todd Exp $
---- vl.c.orig	Sun Jul 24 13:52:08 2005
-+++ vl.c	Wed Aug 10 17:49:15 2005
+$OpenBSD: patch-vl_c,v 1.3 2005/10/25 03:25:44 todd Exp $
+--- vl.c.orig	Sun Sep  4 12:11:31 2005
++++ vl.c	Mon Oct 24 21:55:47 2005
 @@ -42,7 +42,7 @@
  #include <dirent.h>
  #ifdef _BSD
@@ -18,7 +18,7 @@ $OpenBSD: patch-vl_c,v 1.2 2005/08/11 01:15:17 todd Exp $
  int sb16_enabled = 1;
  int adlib_enabled = 1;
  int gus_enabled = 1;
-@@ -1610,11 +1611,35 @@ static int tun_open(char *ifname, int if
+@@ -1637,11 +1638,35 @@ static int tun_open(char *ifname, int if
      char *dev;
      struct stat s;
  
@@ -54,7 +54,7 @@ $OpenBSD: patch-vl_c,v 1.2 2005/08/11 01:15:17 todd Exp $
  
      fstat(fd, &s);
      dev = devname(s.st_rdev, S_IFCHR);
-@@ -2819,6 +2844,7 @@ void help(void)
+@@ -2846,6 +2871,7 @@ void help(void)
  #if defined(TARGET_PPC) || defined(TARGET_SPARC)
             "-g WxH[xDEPTH]  Set the initial graphical resolution and depth\n"
  #endif
@@ -62,7 +62,7 @@ $OpenBSD: patch-vl_c,v 1.2 2005/08/11 01:15:17 todd Exp $
             "\n"
             "Network options:\n"
             "-nics n         simulate 'n' network cards [default=1]\n"
-@@ -2932,6 +2958,7 @@ enum {
+@@ -2959,6 +2985,7 @@ enum {
      QEMU_OPTION_L,
      QEMU_OPTION_no_code_copy,
      QEMU_OPTION_pci,
@@ -70,7 +70,7 @@ $OpenBSD: patch-vl_c,v 1.2 2005/08/11 01:15:17 todd Exp $
      QEMU_OPTION_isa,
      QEMU_OPTION_prep,
      QEMU_OPTION_k,
-@@ -3020,6 +3047,7 @@ const QEMUOption qemu_options[] = {
+@@ -3047,6 +3074,7 @@ const QEMUOption qemu_options[] = {
      
      /* temporary options */
      { "pci", 0, QEMU_OPTION_pci },
@@ -78,7 +78,7 @@ $OpenBSD: patch-vl_c,v 1.2 2005/08/11 01:15:17 todd Exp $
      { "cirrusvga", 0, QEMU_OPTION_cirrusvga },
      { NULL },
  };
-@@ -3425,6 +3453,9 @@ int main(int argc, char **argv)
+@@ -3452,6 +3480,9 @@ int main(int argc, char **argv)
                  break;
              case QEMU_OPTION_pci:
                  pci_enabled = 1;

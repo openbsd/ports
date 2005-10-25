@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_target,v 1.3 2005/09/26 20:47:56 todd Exp $
---- Makefile.target.orig	Sun Jul 24 13:52:08 2005
-+++ Makefile.target	Mon Sep 26 13:06:13 2005
+$OpenBSD: patch-Makefile_target,v 1.4 2005/10/25 03:25:44 todd Exp $
+--- Makefile.target.orig	Sun Sep  4 12:11:31 2005
++++ Makefile.target	Mon Oct 24 21:59:30 2005
 @@ -17,7 +17,7 @@ ifdef CONFIG_USER_ONLY
  VPATH+=:$(SRC_PATH)/linux-user
  DEFINES+=-I$(SRC_PATH)/linux-user -I$(SRC_PATH)/linux-user/$(TARGET_ARCH)
@@ -10,6 +10,24 @@ $OpenBSD: patch-Makefile_target,v 1.3 2005/09/26 20:47:56 todd Exp $
  #CFLAGS+=-Werror
  LDFLAGS=-g
  LIBS=
+@@ -61,7 +61,7 @@ ifeq ($(ARCH),i386)
+ CFLAGS+=-fomit-frame-pointer
+ OP_CFLAGS=$(CFLAGS) -mpreferred-stack-boundary=2
+ ifeq ($(HAVE_GCC3_OPTIONS),yes)
+-OP_CFLAGS+= -falign-functions=0 -fno-gcse
++OP_CFLAGS+= -falign-functions=0 -fno-gcse -mfpmath=387
+ else
+ OP_CFLAGS+= -malign-functions=0
+ endif
+@@ -83,7 +83,7 @@ endif
+ endif
+ 
+ ifeq ($(ARCH),x86_64)
+-OP_CFLAGS=$(CFLAGS) -falign-functions=0
++OP_CFLAGS=$(CFLAGS) -falign-functions=0 -mfpmath=387
+ LDFLAGS+=-Wl,-T,$(SRC_PATH)/x86_64.ld
+ endif
+ 
 @@ -138,6 +138,12 @@ OP_CFLAGS=$(CFLAGS) -fomit-frame-pointer
  LDFLAGS+=-Wl,-T,m68k.ld
  endif
