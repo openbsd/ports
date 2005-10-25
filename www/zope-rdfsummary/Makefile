@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/08/03 12:12:41 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2005/10/25 18:37:15 xsa Exp $
 
 COMMENT=	"Zope product to display RSS files"
 
@@ -8,8 +8,6 @@ PKGNAME=	zope-rdfsummary-${V:S/-/./}
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.zope.org/Members/EIONET/RDFSummary/
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

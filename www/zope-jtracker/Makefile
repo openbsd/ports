@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/08/03 14:05:29 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2005/10/25 18:37:15 xsa Exp $
 
 COMMENT=	"Zope-based issues tracker"
 
@@ -8,8 +8,6 @@ PKGNAME=	zope-${DISTNAME:S/_/./:L}
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.dataflake.org/software/jtracker/
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # ZPL
 PERMIT_PACKAGE_CDROM=	Yes

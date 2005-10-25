@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/03 12:12:41 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2005/10/25 18:37:14 xsa Exp $
 
 COMMENT=	"framework that eases the creation and validation of web forms"
 
@@ -7,8 +7,6 @@ PKGNAME=	zope-${DISTNAME:L}
 CATEGORIES=	www
 
 HOMEPAGE=	http://zope.org/Members/infrae/Formulator/
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # BSD 
 PERMIT_PACKAGE_CDROM=	Yes

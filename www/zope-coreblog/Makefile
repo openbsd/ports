@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/05/06 15:08:37 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2005/10/25 18:37:14 xsa Exp $
 
 COMMENT=	"weblog system for Zope"
 
@@ -8,8 +8,6 @@ PKGNAME=	zope-coreblog-${V}
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.coreblog.org/
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

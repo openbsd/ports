@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/08/03 12:12:41 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2005/10/25 18:37:15 xsa Exp $
 
 COMMENT=	"web page hit counter for Zope"
 
@@ -10,8 +10,6 @@ CATEGORIES=	www
 HOMEPAGE=	http://www.zope.org/Members/andym/FSCounter/	
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tar	
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # Zope Public License
 PERMIT_PACKAGE_CDROM=	Yes

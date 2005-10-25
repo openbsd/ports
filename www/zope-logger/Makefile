@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/08/03 17:32:21 xsa Exp $
+# $OpenBSD: Makefile,v 1.7 2005/10/25 18:37:15 xsa Exp $
 
 COMMENT=	"logging product for Zope"
 
@@ -8,8 +8,6 @@ PKGNAME=	zope-logger-${VERSION}
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.zope.org/Members/Zen/Logger/
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2005/05/10 12:52:34 xsa Exp $
+# $OpenBSD: Makefile,v 1.15 2005/10/25 18:37:15 xsa Exp $
 
 COMMENT=	"Wiki engine for Zope"
 
@@ -7,8 +7,6 @@ PKGNAME=	zope-${DISTNAME:L}
 CATEGORIES=	www
 
 HOMEPAGE=	http://zwiki.org/
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

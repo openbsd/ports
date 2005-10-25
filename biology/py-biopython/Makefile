@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/03 11:18:02 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/10/25 18:37:14 xsa Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	"Python tools for computational molecular biology"
@@ -8,8 +8,6 @@ PKGNAME=	py-${DISTNAME:L}
 CATEGORIES=	biology
 
 HOMEPAGE=	http://www.biopython.org/
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # BSD-like 
 PERMIT_PACKAGE_CDROM=	Yes

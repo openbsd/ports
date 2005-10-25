@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/03/29 07:41:18 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2005/10/25 18:37:14 xsa Exp $
 
 COMMENT=	"facility for activation/deactivation of CMF compliant products"
 
@@ -6,8 +6,6 @@ V=		1.5.2
 DISTNAME=	CMFQuickInstallerTool-${V}
 PKGNAME=	zope-cmfquickinstaller-${V}
 CATEGORIES=	www
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

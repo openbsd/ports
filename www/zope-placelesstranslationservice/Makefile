@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/10/06 08:51:49 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2005/10/25 18:37:15 xsa Exp $
 
 COMMENT=	"translation service based on potfiles for Zope"
 
 DISTNAME=	PlacelessTranslationService-1.2-rc1
 PKGNAME=	zope-${DISTNAME:L}
 CATEGORIES=	www
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

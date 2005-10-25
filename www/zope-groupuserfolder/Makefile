@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/03/28 18:44:13 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2005/10/25 18:37:15 xsa Exp $
 
 COMMENT=	"tool to manage groups of users within Zope"
 
@@ -7,8 +7,6 @@ PKGNAME=	zope-${DISTNAME:L}
 CATEGORIES=	www
 
 HOMEPAGE=	http://ingeniweb.sourceforge.net/Products/GroupUserFolder/
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # ZPL
 PERMIT_PACKAGE_CDROM=	Yes

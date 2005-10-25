@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/08/03 12:12:41 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2005/10/25 18:37:15 xsa Exp $
 
 COMMENT=	"insert random 'Zippy the Pinhead' quotes in your documents"
 
@@ -12,8 +12,6 @@ HOMEPAGE=	http://www.zope.org/Members/michel/Products/Zippy/
 MASTER_SITES=	${HOMEPAGE}
 DIST_SUBDIR=	zope-zippy-${VERSION}
 EXTRACT_SUFX=	.tgz	
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # Zope Public License
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/01/25 22:37:46 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2005/10/25 18:37:14 xsa Exp $
 
 COMMENT=	"Zope folder-like product to store many more items"
 
@@ -7,8 +7,6 @@ PKGNAME=	zope-${DISTNAME:L}
 CATEGORIES=	www
 
 HOMEPAGE=	http://hathawaymix.org/Software/BTreeFolder2/
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # ZPL
 PERMIT_PACKAGE_CDROM=	Yes
