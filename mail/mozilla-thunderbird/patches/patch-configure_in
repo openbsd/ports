@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.5 2005/04/09 08:11:19 wilfried Exp $
+$OpenBSD: patch-configure_in,v 1.6 2005/10/25 21:08:41 wilfried Exp $
 --- configure.in.orig	Sun Oct 31 08:17:58 2004
-+++ configure.in	Fri Jan  7 11:26:09 2005
++++ configure.in	Tue Oct 25 16:39:58 2005
 @@ -1349,7 +1349,7 @@ case "$target" in
  	;;
  
@@ -28,3 +28,15 @@ $OpenBSD: patch-configure_in,v 1.5 2005/04/09 08:11:19 wilfried Exp $
      PNG_LIBS="-L${PNG_DIR}/lib ${PNG_LIBS}"
  fi
  
+@@ -3526,9 +3526,9 @@ then
+     dnl GTK2 toolkit is in use.
+     if test "$MOZ_ENABLE_GTK2"
+     then
+-        MOZ_ENABLE_GNOMEVFS=1
++        MOZ_ENABLE_GNOMEVFS=
+         MOZ_ENABLE_GCONF=1
+-        MOZ_ENABLE_LIBGNOME=1
++        MOZ_ENABLE_LIBGNOME=
+     fi
+ 
+     MOZ_ARG_DISABLE_BOOL(gnomevfs,

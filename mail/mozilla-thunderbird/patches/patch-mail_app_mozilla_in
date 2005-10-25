@@ -1,6 +1,6 @@
-$OpenBSD: patch-mail_app_mozilla_in,v 1.4 2005/10/13 04:32:41 bernd Exp $
---- mail/app/mozilla.in.orig	Sun Jul 25 01:58:06 2004
-+++ mail/app/mozilla.in	Wed Oct 12 14:03:05 2005
+$OpenBSD: patch-mail_app_mozilla_in,v 1.5 2005/10/25 21:08:41 wilfried Exp $
+--- mail/app/mozilla.in.orig	Tue Sep 20 23:10:29 2005
++++ mail/app/mozilla.in	Mon Oct 24 21:49:38 2005
 @@ -73,6 +73,7 @@ moz_pis_startstop_scripts()
  #set -x
  
@@ -17,7 +17,7 @@ $OpenBSD: patch-mail_app_mozilla_in,v 1.4 2005/10/13 04:32:41 bernd Exp $
    else 
      echo "Cannot find mozilla runtime directory. Exiting."
      exit 1
-@@ -225,7 +227,11 @@ do
+@@ -228,7 +230,11 @@ do
    esac
  done
  
@@ -27,6 +27,6 @@ $OpenBSD: patch-mail_app_mozilla_in,v 1.4 2005/10/13 04:32:41 bernd Exp $
 +fi
 +
 +export MOZ_PLUGIN_PATH MRE_HOME
- eval "set -- $moreargs"
  
  ## Start addon scripts
+ moz_pis_startstop_scripts "start"
