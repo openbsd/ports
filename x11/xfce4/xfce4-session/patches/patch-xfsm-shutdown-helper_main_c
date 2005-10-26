@@ -1,0 +1,12 @@
+$OpenBSD: patch-xfsm-shutdown-helper_main_c,v 1.1 2005/10/26 06:20:11 jolan Exp $
+--- xfsm-shutdown-helper/main.c.orig	Sun May 15 03:21:04 2005
++++ xfsm-shutdown-helper/main.c	Wed Oct 26 01:16:58 2005
+@@ -58,7 +58,7 @@
+ #endif
+ 
+ #if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+-#define POWEROFF_CMD  "/sbin/shutdown -p now"
++#define POWEROFF_CMD  "/sbin/shutdown -p -h now"
+ #define REBOOT_CMD    "/sbin/shutdown -r now"
+ #else
+ #define POWEROFF_CMD  "/sbin/shutdown -h now"

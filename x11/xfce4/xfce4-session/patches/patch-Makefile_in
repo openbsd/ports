@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2005/05/12 04:38:38 jolan Exp $
---- Makefile.in.orig	Sun Jan  2 06:51:13 2005
-+++ Makefile.in	Wed May 11 22:15:02 2005
-@@ -244,7 +244,7 @@ SUBDIRS = \
+$OpenBSD: patch-Makefile_in,v 1.2 2005/10/26 06:20:11 jolan Exp $
+--- Makefile.in.orig	Sun May 15 12:16:16 2005
++++ Makefile.in	Wed Oct 26 01:16:58 2005
+@@ -249,7 +249,7 @@ SUBDIRS = \
  	xfce4-session-logout						\
  	xfsm-shutdown-helper
  
