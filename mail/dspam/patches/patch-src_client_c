@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_client_c,v 1.1 2005/10/26 06:18:38 jakob Exp $
+--- src/client.c.orig	Sat Sep 24 19:49:48 2005
++++ src/client.c	Mon Oct 17 14:48:42 2005
+@@ -108,7 +108,7 @@ int client_process(AGENT_CTX *ATX, buffe
+ 
+   /* RCPT TO - Send recipient information */
+ 
+-  strcpy(buf, "RCPT TO: ");
++  strlcpy(buf, "RCPT TO: ", sizeof (buf));
+   node_nt = c_nt_first(ATX->users, &c_nt);
+   while(node_nt != NULL) {
+     const char *ptr = (const char *) node_nt->ptr;
+@@ -308,7 +308,7 @@ int client_connect(AGENT_CTX *ATX, int f
+   if (domain) {
+     sockfd = socket(AF_UNIX, SOCK_STREAM, 0);
+     saun.sun_family = AF_UNIX;
+-    strcpy(saun.sun_path, host);
++    strlcpy(saun.sun_path, host, sizeof (saun.sun_path));
+     addr_len = sizeof(saun.sun_family) + strlen(saun.sun_path) + 1;
+ 
+     LOGDEBUG(INFO_CLIENT_CONNECTING, host, 0);

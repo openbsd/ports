@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_example_c,v 1.1 2005/10/26 06:18:38 jakob Exp $
+--- src/example.c.orig	Sat Sep 24 19:49:49 2005
++++ src/example.c	Mon Oct 17 14:48:42 2005
+@@ -68,7 +68,7 @@ main (int argc, char **argv)
+       fprintf (stderr, "out of memory!");
+       exit (EXIT_FAILURE);
+     }
+-    strcat (message, buffer);
++    strlcat (message, buffer, len);
+   }
+ 
+   /* MESSAGE PROCESSING */

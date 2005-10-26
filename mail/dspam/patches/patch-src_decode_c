@@ -1,0 +1,63 @@
+$OpenBSD: patch-src_decode_c,v 1.1 2005/10/26 06:18:38 jakob Exp $
+--- src/decode.c.orig	Thu Oct 13 16:28:13 2005
++++ src/decode.c	Tue Oct 25 22:47:02 2005
+@@ -1,4 +1,4 @@
+-/* $Id: patch-src_decode_c,v 1.1 2005/10/26 06:18:38 jakob Exp $ */
++/* $Id: patch-src_decode_c,v 1.1 2005/10/26 06:18:38 jakob Exp $ */
+ 
+ /*
+  DSPAM
+@@ -528,11 +528,12 @@ _ds_analyze_header (
+ 
+   if (!strcasecmp (header->heading, "Content-Type"))
+   {
++    int len = strlen(header->data);
+     if (!strncasecmp (header->data, "text", 4)) {
+       block->media_type = MT_TEXT;
+-      if (!strncasecmp (header->data + 5, "plain", 5))
++      if (len >= 5 && !strncasecmp (header->data + 5, "plain", 5))
+         block->media_subtype = MST_PLAIN;
+-      else if (!strncasecmp (header->data + 5, "html", 4))
++      else if (len >= 5 && !strncasecmp (header->data + 5, "html", 4))
+         block->media_subtype = MST_HTML;
+       else
+         block->media_subtype = MST_OTHER;
+@@ -541,7 +542,7 @@ _ds_analyze_header (
+     else if (!strncasecmp (header->data, "application", 11))
+     {
+       block->media_type = MT_APPLICATION;
+-      if (!strncasecmp (header->data + 12, "dspam-signature", 15))
++      if (len >= 12 && !strncasecmp (header->data + 12, "dspam-signature", 15))
+         block->media_subtype = MST_DSPAM_SIGNATURE;
+       else
+         block->media_subtype = MST_OTHER;
+@@ -550,9 +551,9 @@ _ds_analyze_header (
+     else if (!strncasecmp (header->data, "message", 7))
+     {
+       block->media_type = MT_MESSAGE;
+-      if (!strncasecmp (header->data + 8, "rfc822", 6))
++      if (len >= 8 && !strncasecmp (header->data + 8, "rfc822", 6))
+         block->media_subtype = MST_RFC822;
+-      else if (!strncasecmp (header->data + 8, "inoculation", 11))
++      else if (len >= 8 && !strncasecmp (header->data + 8, "inoculation", 11))
+         block->media_subtype = MST_INOCULATION;
+       else
+         block->media_subtype = MST_OTHER;
+@@ -563,13 +564,13 @@ _ds_analyze_header (
+       char boundary[128];
+ 
+       block->media_type = MT_MULTIPART;
+-      if (!strncasecmp (header->data + 10, "mixed", 5))
++      if (len >= 10 && !strncasecmp (header->data + 10, "mixed", 5))
+         block->media_subtype = MST_MIXED;
+-      else if (!strncasecmp (header->data + 10, "alternative", 11))
++      else if (len >= 10 && !strncasecmp (header->data + 10, "alternative", 11))
+         block->media_subtype = MST_ALTERNATIVE;
+-      else if (!strncasecmp (header->data + 10, "signed", 6))
++      else if (len >= 10 && !strncasecmp (header->data + 10, "signed", 6))
+         block->media_subtype = MST_SIGNED;
+-      else if (!strncasecmp (header->data + 10, "encrypted", 9))
++      else if (len >= 10 && !strncasecmp (header->data + 10, "encrypted", 9))
+         block->media_subtype = MST_ENCRYPTED;
+       else
+         block->media_subtype = MST_OTHER;

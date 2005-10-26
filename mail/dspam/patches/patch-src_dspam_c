@@ -1,0 +1,61 @@
+$OpenBSD: patch-src_dspam_c,v 1.1 2005/10/26 06:18:38 jakob Exp $
+--- src/dspam.c.orig	Tue Oct  4 18:22:58 2005
++++ src/dspam.c	Mon Oct 17 14:48:42 2005
+@@ -382,7 +382,7 @@ process_message (
+       CTX->confidence = 1.0;
+       STATUS("A virus was detected in the message contents");
+       result = DSR_ISSPAM;
+-      strcpy(CTX->class, LANG_CLASS_VIRUS);
++      strlcpy(CTX->class, LANG_CLASS_VIRUS, sizeof (CTX->class));
+       internally_canned = 1;
+     }
+   }
+@@ -395,7 +395,7 @@ process_message (
+     result = DSR_ISSPAM;
+     CTX->probability = 1.0;
+     CTX->confidence = 1.0;
+-    strcpy(CTX->class, LANG_CLASS_BLOCKLISTED);
++    strlcpy(CTX->class, LANG_CLASS_BLOCKLISTED, sizeof (CTX->class));
+     internally_canned = 1;
+   }
+ 
+@@ -415,7 +415,7 @@ process_message (
+         result = DSR_ISSPAM;
+         CTX->probability = 1.0;
+         CTX->confidence = 1.0;
+-        strcpy(CTX->class, LANG_CLASS_BLACKLISTED);
++        strlcpy(CTX->class, LANG_CLASS_BLACKLISTED, sizeof (CTX->class));
+         internally_canned = 1;
+       }
+     }
+@@ -763,10 +763,10 @@ process_message (
+ 
+     switch (CTX->result) {
+       case DSR_ISSPAM:
+-        strcpy(data, "Spam");
++        strlcpy(data, "Spam", sizeof (data));
+         break;
+       default:
+-        strcpy(data, "Innocent");
++        strlcpy(data, "Innocent", sizeof (data));
+         break;
+     }
+ 
+@@ -1031,7 +1031,7 @@ int tag_message(AGENT_CTX *ATX, ds_messa
+   int tagged = 0;
+   char spam_subject[16];
+ 
+-  strcpy(spam_subject, "[SPAM]");
++  strlcpy(spam_subject, "[SPAM]", sizeof (spam_subject));
+   if (_ds_pref_val(ATX->PTX, "spamSubject")[0] != '\n' &&
+       _ds_pref_val(ATX->PTX, "spamSubject")[0] != 0)
+   {
+@@ -1572,7 +1572,7 @@ int process_users(AGENT_CTX *ATX, buffer
+     if (parse_message == NULL) {
+       LOG(LOG_CRIT, ERR_MEM_ALLOC);
+       presult->exitcode = ERC_PROCESS;
+-      strcpy(presult->text, ERR_MEM_ALLOC);
++      strlcpy(presult->text, ERR_MEM_ALLOC, sizeof (presult->text));
+ 
+       if (ATX->results)
+         nt_add(ATX->results, presult);

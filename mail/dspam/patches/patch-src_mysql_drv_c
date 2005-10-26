@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mysql_drv_c,v 1.1 2005/10/26 06:18:39 jakob Exp $
+--- src/mysql_drv.c.orig	Sat Oct  1 17:33:44 2005
++++ src/mysql_drv.c	Mon Oct 17 14:48:42 2005
+@@ -1350,7 +1350,7 @@ _ds_get_nextuser (DSPAM_CTX * CTX)
+       virtual_username, 
+       virtual_table);
+ #else
+-    strcpy (query, "select distinct uid from dspam_stats");
++    strlcpy (query, "select distinct uid from dspam_stats", sizeof (query));
+ #endif
+     if (MYSQL_RUN_QUERY (s->dbh, query))
+     {

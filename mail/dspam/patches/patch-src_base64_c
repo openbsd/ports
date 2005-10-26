@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_base64_c,v 1.1 2005/10/26 06:18:38 jakob Exp $
+--- src/base64.c.orig	Sat Sep 24 19:49:48 2005
++++ src/base64.c	Mon Oct 17 14:48:42 2005
+@@ -199,7 +199,7 @@ base64encode (const char *buf)
+   }
+ 
+   if (out[strlen (out) - 1] != '\n')
+-    strcat (out, "\n");
++    strlcat (out, "\n", strlen (buf) * 2);
+ 
+   return out;
+ }

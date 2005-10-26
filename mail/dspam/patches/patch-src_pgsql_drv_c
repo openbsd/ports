@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_pgsql_drv_c,v 1.1 2005/10/26 06:18:39 jakob Exp $
+--- src/pgsql_drv.c.orig	Mon Oct 10 15:52:21 2005
++++ src/pgsql_drv.c	Mon Oct 17 14:48:42 2005
+@@ -1390,7 +1390,7 @@ _ds_get_nextuser (DSPAM_CTX * CTX)
+         virtual_username,
+         virtual_table);
+ #else
+-    strcpy (query, "DECLARE dscursor CURSOR FOR SELECT DISTINCT uid FROM dspam_stats");
++    strlcpy (query, "DECLARE dscursor CURSOR FOR SELECT DISTINCT uid FROM dspam_stats", sizeof (query));
+ #endif
+ 
+     result = PQexec(s->dbh, query);

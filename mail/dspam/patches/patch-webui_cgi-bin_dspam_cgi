@@ -1,0 +1,14 @@
+$OpenBSD: patch-webui_cgi-bin_dspam_cgi,v 1.1 2005/10/26 06:18:39 jakob Exp $
+--- webui/cgi-bin/dspam.cgi.orig	Sun Oct 16 16:43:36 2005
++++ webui/cgi-bin/dspam.cgi	Mon Oct 17 22:57:56 2005
+@@ -195,8 +195,8 @@ sub DisplayHistory {
+     }
+     close (LINES);
+ 
+-    $end = $all_lines - (($history_site-1) * $CONFIG{'HISTORY_PER_SITE'});
+-    $begin = $end - $CONFIG{'HISTORY_PER_SITE'} + 1 ;
++    $end = $all_lines - (($history_site-1) * $CONFIG{'HISTORY_PER_PAGE'});
++    $begin = $end - $CONFIG{'HISTORY_PER_PAGE'} + 1 ;
+ 
+     if ($begin < 0) {
+       $begin = 1;

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_daemon_c,v 1.1 2005/10/26 06:18:38 jakob Exp $
+--- src/daemon.c.orig	Tue Oct 25 22:46:43 2005
++++ src/daemon.c	Tue Oct 25 22:47:02 2005
+@@ -1,4 +1,4 @@
+-/* $Id: patch-src_daemon_c,v 1.1 2005/10/26 06:18:38 jakob Exp $ */
++/* $Id: patch-src_daemon_c,v 1.1 2005/10/26 06:18:38 jakob Exp $ */
+ 
+ /*
+  DSPAM
+@@ -732,8 +732,9 @@ GETCMD:
+     /* Send a terminating '.' if --stdout in 'dspam' mode */
+ 
+     if (ATX->sockfd_output) {
+-      if (send_socket(TTX, ".")<=0)
+-        goto CLOSE;
++      if (!(ATX->flags & DAF_SUMMARY))
++        if (send_socket(TTX, ".")<=0)
++          goto CLOSE;
+ 
+     /* Otherwise, produce standard delivery results */
+ 

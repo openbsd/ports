@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/11 16:06:04 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/10/26 06:18:39 jakob Exp $
 @newgroup _dspam:540
 @newuser _dspam:540:540:daemon:DSPAM Account:/var/dspam:/sbin/nologin
 %%SHARED%%
@@ -10,19 +10,23 @@ bin/dspam_corpus
 bin/dspam_crc
 bin/dspam_dump
 bin/dspam_genaliases
+bin/dspam_logrotate
 bin/dspam_merge
 bin/dspam_stats
+bin/dspamc
 include/dspam/
 include/dspam/buffer.h
 include/dspam/config.h
+include/dspam/config_shared.h
 include/dspam/decode.h
+include/dspam/diction.h
 include/dspam/error.h
-include/dspam/lht.h
+include/dspam/heap.h
 include/dspam/libdspam.h
 include/dspam/libdspam_objects.h
 include/dspam/nodetree.h
 include/dspam/storage_driver.h
-include/dspam/tbt.h
+include/dspam/tokenizer.h
 lib/libdspam.a
 lib/libdspam.la
 lib/pkgconfig/
@@ -44,17 +48,23 @@ lib/pkgconfig/dspam.pc
 @man man/man3/libdspam.3
 share/doc/dspam/
 share/doc/dspam/README
-share/doc/dspam/README.courier
-share/doc/dspam/README.exim
-share/doc/dspam/README.pop3filter
-share/doc/dspam/README.postfix
-share/doc/dspam/README.qmail
-share/doc/dspam/README.sendmail
+share/doc/dspam/RELEASE.NOTES
+share/doc/dspam/UPGRADING
+share/doc/dspam/courier.txt
+share/doc/dspam/exim.txt
+share/doc/dspam/markov.txt
+share/doc/dspam/pop3filter.txt
+share/doc/dspam/postfix.txt
+share/doc/dspam/qmail.txt
+share/doc/dspam/relay.txt
+share/doc/dspam/sendmail.txt
 share/examples/dspam/
 share/examples/dspam/dspam.conf
+%%sqlite3%%
 %%sqlite%%
 %%mysql%%
 %%pgsql%%
+%%hash%%
+@exec install -o _dspam -g _dspam -m 755 -d /var/dspam
 @extraunexec rm -rf /var/dspam
 @extra /etc/dspam.conf
-@exec install -o _dspam -g _dspam -m 755 -d /var/dspam

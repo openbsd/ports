@@ -6,3 +6,25 @@ provide highly-accurate, personalized filtering for each user on even a
 large system and provides an administratively maintenance free solution 
 capable of learning each user's email behaviors with very few false 
 positives.
+
+Available flavors are:
+
+- daemon: add the ability to run dspam as multiple clients connecting to a
+central server. This flavor is required in order to use the --daemon and
+--client command-line switches. However, the daemon mode is currently
+incompatible with sqlite.
+
+- clamav: enable usage of the clam antivirus.
+
+- ldap: include support for LDAP verification.
+
+- sqlite: use the sqlite 2.x library as a storage engine.
+
+- sqlite3: use the sqlite 3.x library as a storage engine. This is the
+default.
+
+- pgsql: use a posgresql server as a storage engine.
+
+- mysql: use a mysql server as a storage engine.
+
+- hash: use the CRM Sparse Spectra (CSS) storage engine.
