@@ -1,0 +1,3 @@
+wmwlmon is a wmDockapp which shows the state of a wireless network
+interface; link status, signal strength, link speed, channel number, wep
+status, and network id.
