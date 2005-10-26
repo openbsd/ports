@@ -1,7 +1,7 @@
-$OpenBSD: patch-speech_tools_audio_voxware_cc,v 1.3 2005/04/04 15:35:45 espie Exp $
---- speech_tools/audio/voxware.cc.orig	Fri Apr 30 18:56:49 2004
-+++ speech_tools/audio/voxware.cc	Mon Apr  4 16:42:40 2005
-@@ -61,11 +61,13 @@
+$OpenBSD: patch-speech_tools_audio_voxware_cc,v 1.4 2005/10/26 02:45:23 jolan Exp $
+--- speech_tools/audio/voxware.cc.orig	Fri Apr 30 11:56:49 2004
++++ speech_tools/audio/voxware.cc	Wed Aug  4 20:05:58 2004
+@@ -61,11 +61,12 @@
  #include "EST_error.h"
  
  #ifdef SUPPORT_FREEBSD16
@@ -12,28 +12,10 @@ $OpenBSD: patch-speech_tools_audio_voxware_cc,v 1.3 2005/04/04 15:35:45 espie Ex
  int linux16_supported = FALSE;
  static char *aud_sys_name = "FreeBSD";
 +static int stereo_only = 0;
-+static int resample = 0;
  #endif
  
  #ifdef SUPPORT_LINUX16
-@@ -116,11 +118,15 @@ static int sb_set_sample_rate(int sbdevi
-     int fmt;
-     int sfmts;
-     int stereo=0;
-+    int ssamp_rate=0;
-     int sstereo;
-     int channels=1;
- 
-     ioctl(sbdevice,SNDCTL_DSP_RESET,0);
--    ioctl(sbdevice,SNDCTL_DSP_SPEED,&samp_rate);
-+    ssamp_rate = samp_rate;
-+    ioctl(sbdevice,SNDCTL_DSP_SPEED,&ssamp_rate);
-+    if (samp_rate != ssamp_rate)
-+    	resample = ssamp_rate;
-     sstereo = stereo;
-     ioctl(sbdevice,SNDCTL_DSP_STEREO,&sstereo);
-     /* Some devices don't do mono even when you ask them nicely */
-@@ -157,7 +163,7 @@ int play_voxware_wave(EST_Wave &inwave, 
+@@ -157,7 +158,7 @@ int play_voxware_wave(EST_Wave &inwave, 
      if (al.present("-audiodevice"))
  	audiodevice = al.val("-audiodevice");
      else
@@ -42,19 +24,7 @@ $OpenBSD: patch-speech_tools_audio_voxware_cc,v 1.3 2005/04/04 15:35:45 espie Ex
  
      if ((audio = open(audiodevice,O_WRONLY)) == -1)
      {
-@@ -172,6 +178,11 @@ int play_voxware_wave(EST_Wave &inwave, 
-     sample_rate = inwave.sample_rate();
- 
-     actual_fmt = sb_set_sample_rate(audio,sample_rate);
-+    if (resample) {
-+    	inwave.resample(resample);
-+	sample_rate = inwave.sample_rate();
-+	num_samples = inwave.num_samples();
-+    }
- 
-     if (stereo_only)
-     {
-@@ -284,7 +295,7 @@ int record_voxware_wave(EST_Wave &inwave
+@@ -284,7 +285,7 @@ int record_voxware_wave(EST_Wave &inwave
      if (al.present("-audiodevice"))
  	audiodevice = al.val("-audiodevice");
      else
