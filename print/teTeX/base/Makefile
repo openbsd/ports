@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2005/10/23 18:48:38 sturm Exp $
+# $OpenBSD: Makefile,v 1.37 2005/10/26 20:07:29 bernd Exp $
 
 COMMENT=	"TeX distribution, executables"
 COMMENT-fmt=	"format files"
@@ -33,6 +33,9 @@ CONFIGURE_ARGS= --disable-multiplatform \
 
 FLAVORS=	no_x11
 FLAVOR?= 
+MULTI_PACKAGES=	-fmt
+SUBPACKAGE?=
+
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=--without-x
 .  if ${MACHINE_ARCH} == "sparc64"
@@ -50,9 +53,6 @@ WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xp Xpm Xt
 RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
 .  endif
 .endif
-
-MULTI_PACKAGES=	-fmt
-SUBPACKAGE?=
 
 .if defined(PACKAGING)
 .  if ${SUBPACKAGE} == "-fmt"
