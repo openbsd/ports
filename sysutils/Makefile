@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2005/09/15 16:18:14 jolan Exp $
+# $OpenBSD: Makefile,v 1.97 2005/10/26 10:06:39 bernd Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -80,6 +80,7 @@
      SUBDIR += wmcube
      SUBDIR += wmcube-gdk
      SUBDIR += wmmon
+     SUBDIR += wmwlmon
      SUBDIR += xbatt
      SUBDIR += xosview
      SUBDIR += xps
