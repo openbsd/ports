@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/11 13:29:22 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2005/10/27 20:03:25 sturm Exp $
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"perl binding for curl"
 DISTNAME=	p5-WWW-Curl-20040519
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www net perl5
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/
 
