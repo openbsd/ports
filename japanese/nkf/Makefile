@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2005/02/28 01:22:25 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2005/10/27 10:14:40 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Network Kanji code conversion Filter"
 
-VERSION=	2.04
-DISTNAME=	nkf204
+VERSION=	2.05
+DISTNAME=	nkf205
 PKGNAME=	ja-nkf-${VERSION}
 CATEGORIES=	japanese textproc
 
