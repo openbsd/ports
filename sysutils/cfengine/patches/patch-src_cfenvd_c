@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_cfenvd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
---- src/cfenvd.c.orig	Wed May 25 07:38:54 2005
-+++ src/cfenvd.c	Fri Jul 15 12:24:00 2005
+$OpenBSD: patch-src_cfenvd_c,v 1.5 2005/10/27 21:47:28 sturm Exp $
+--- src/cfenvd.c.orig	Fri Jul 15 11:16:04 2005
++++ src/cfenvd.c	Fri Oct 21 16:35:54 2005
 @@ -187,10 +187,10 @@ void CheckOptsAndInit(int argc,char **ar
   int c, i,j,k;
  
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
   
  IGNORELOCK = false; 
  OUTPUT[0] = '\0';
-@@ -243,30 +243,30 @@ LOGGING = true;                    /* Do
+@@ -247,30 +247,30 @@ SetSignals();
  
  /* XXX Initialize workdir for non privileged users */
  
@@ -52,7 +52,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     CreateEmptyFile(VBUFF);
     }
  
-@@ -276,7 +276,7 @@ for (i = 0; i < CF_NETATTR; i++)
+@@ -280,7 +280,7 @@ for (i = 0; i < CF_NETATTR; i++)
     NETOUT_DIST[i] = NULL;
     }
   
@@ -61,7 +61,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  CreateEmptyFile(VBUFF);
   
  snprintf(AVDB,CF_MAXVARSIZE,"%s/state/%s",CFWORKDIR,CF_AVDB_FILE);
-@@ -284,6 +284,7 @@ snprintf(STATELOG,CF_BUFSIZE,"%s/state/%
+@@ -288,6 +288,7 @@ snprintf(STATELOG,CF_BUFSIZE,"%s/state/%
  snprintf(ENV_NEW,CF_BUFSIZE,"%s/state/%s",CFWORKDIR,CF_ENVNEW_FILE);
  snprintf(ENV,CF_BUFSIZE,"%s/state/%s",CFWORKDIR,CF_ENV_FILE);
  
@@ -69,7 +69,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  if (!BATCH_MODE)
     {
     GetDatabaseAge();
-@@ -472,7 +473,7 @@ void StartServer(int argc,char **argv)
+@@ -476,7 +477,7 @@ void StartServer(int argc,char **argv)
  
  if ((!NO_FORK) && (fork() != 0))
     {
@@ -78,7 +78,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     CfLog(cfinform,OUTPUT,"");
     exit(0);
     }
-@@ -646,7 +647,7 @@ if ((now = time((time_t *)NULL)) == -1)
+@@ -650,7 +651,7 @@ if ((now = time((time_t *)NULL)) == -1)
     exit(1);
     }
  
@@ -87,7 +87,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  
  return ConvTimeKey(str); 
  }
-@@ -812,14 +813,14 @@ SetVariable("loadavg",LOADAVG,av.expect_
+@@ -816,14 +817,14 @@ SetVariable("loadavg",LOADAVG,av.expect_
  for (i = 0; i < ATTR; i++)
     {
     char name[256];
@@ -106,7 +106,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  
     sig = SetClasses(name,OUTGOING[i],av.expect_outgoing[i],av.var_outgoing[i],LOCALAV.expect_outgoing[i],LOCALAV.var_outgoing[i],&classlist,timekey);
     SetVariable(name,OUTGOING[i],av.expect_outgoing[i],sig,&classlist);
-@@ -839,13 +840,13 @@ for (i = 0; i < PH_LIMIT; i++)
+@@ -843,13 +844,13 @@ for (i = 0; i < PH_LIMIT; i++)
  for (i = 0; i < CF_NETATTR; i++)
     {
     char name[256];
@@ -124,7 +124,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     sig = SetClasses(name,NETOUT[i],av.expect_netout[i],av.var_netout[i],LOCALAV.expect_netout[i],LOCALAV.var_netout[i],&classlist,timekey);
     SetVariable(name,NETOUT[i],av.expect_netout[i],sig,&classlist);
     }
-@@ -1162,7 +1163,7 @@ if (ALL_OUTGOING != NULL)
+@@ -1166,7 +1167,7 @@ if (ALL_OUTGOING != NULL)
   
  sscanf(VNETSTAT[VSYSTEMHARDCLASS],"%s",comm);
  
@@ -133,7 +133,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
   
  if ((pp = cfpopen(comm,"r")) == NULL)
     {
-@@ -1491,7 +1492,7 @@ struct Averages *GetCurrentAverages(char
+@@ -1495,7 +1496,7 @@ struct Averages *GetCurrentAverages(char
   
  if ((errno = db_create(&dbp,NULL,0)) != 0)
     {
@@ -142,7 +142,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     CfLog(cferror,OUTPUT,"db_open");
     return NULL;
     }
-@@ -1502,7 +1503,7 @@ if ((errno = dbp->open(dbp,AVDB,NULL,DB_
+@@ -1506,7 +1507,7 @@ if ((errno = dbp->open(dbp,AVDB,NULL,DB_
  if ((errno = dbp->open(dbp,NULL,AVDB,NULL,DB_BTREE,DB_CREATE,0644)) != 0)    
  #endif
     {
@@ -151,7 +151,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     CfLog(cferror,OUTPUT,"db_open");
     return NULL;
     }
-@@ -1552,7 +1553,7 @@ void UpdateAverages(char *timekey,struct
+@@ -1556,7 +1557,7 @@ void UpdateAverages(char *timekey,struct
   
  if ((errno = db_create(&dbp,NULL,0)) != 0)
     {
@@ -160,7 +160,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     CfLog(cferror,OUTPUT,"db_open");
     return;
     }
-@@ -1563,7 +1564,7 @@ if ((errno = dbp->open(dbp,AVDB,NULL,DB_
+@@ -1567,7 +1568,7 @@ if ((errno = dbp->open(dbp,AVDB,NULL,DB_
  if ((errno = dbp->open(dbp,NULL,AVDB,NULL,DB_BTREE,DB_CREATE,0644)) != 0)    
  #endif
     {
@@ -169,7 +169,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     CfLog(cferror,OUTPUT,"db_open");
     return;
     }
-@@ -1790,27 +1791,27 @@ if (fabs(delta) < cf_noise_threshold) /*
+@@ -1794,27 +1795,27 @@ if (fabs(delta) < cf_noise_threshold) /*
     Debug(" Sensitivity too high ..\n");
  
     buffer[0] = '\0';
@@ -203,7 +203,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
         AppendItem(classlist,buffer2,"2");
         AddPersistentClass(buffer2,40,cfpreserve); 
         }
-@@ -1820,33 +1821,33 @@ if (fabs(delta) < cf_noise_threshold) /*
+@@ -1824,33 +1825,33 @@ if (fabs(delta) < cf_noise_threshold) /*
   else
      {
      buffer[0] = '\0';
@@ -245,7 +245,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
         AppendItem(classlist,buffer2,"0");
         }
      
-@@ -1856,16 +1857,16 @@ if (fabs(delta) < cf_noise_threshold) /*
+@@ -1860,16 +1861,16 @@ if (fabs(delta) < cf_noise_threshold) /*
      
      if (dev > 2.0*sqrt(2.0))
         {
@@ -266,7 +266,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
         AppendItem(classlist,buffer2,"3");
         AddPersistentClass(buffer2,40,cfpreserve); 
         }
-@@ -1880,13 +1881,13 @@ void SetVariable(char *name,double value
+@@ -1884,13 +1885,13 @@ void SetVariable(char *name,double value
  
  { char var[CF_BUFSIZE];
  

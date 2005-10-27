@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
---- src/do.c.orig	Sun May 29 06:21:19 2005
-+++ src/do.c	Fri Jul 15 12:24:01 2005
+$OpenBSD: patch-src_do_c,v 1.5 2005/10/27 21:47:28 sturm Exp $
+--- src/do.c.orig	Thu Sep  8 16:31:21 2005
++++ src/do.c	Fri Oct 21 16:35:55 2005
 @@ -76,9 +76,9 @@ for (ip = VMOUNTLIST; ip != NULL; ip=ip-
           continue;
           }
@@ -89,7 +89,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
              
              ExpandWildCardsAndDo(pathbuff,basename,DirectoriesWrapper,ptr);  
              }
-@@ -634,7 +634,7 @@ if (strcmp(VDEFAULTBINSERVER.name,mailho
+@@ -636,7 +636,7 @@ if (strcmp(VDEFAULTBINSERVER.name,mailho
     return;
     }
  
@@ -98,7 +98,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  
  
  if (IsItemIn(VMOUNTED,lmailpath))                             /* Remote file system mounted on */
-@@ -644,9 +644,9 @@ if (IsItemIn(VMOUNTED,lmailpath))       
+@@ -646,9 +646,9 @@ if (IsItemIn(VMOUNTED,lmailpath))       
     return;
     }
  
@@ -110,7 +110,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  
  MakeDirectoriesFor(mailserver,'n');                                  /* Check directory is in place */
  
-@@ -714,9 +714,9 @@ if (always || (strncmp(VMAILSERVER,VFQNA
+@@ -716,9 +716,9 @@ if (always || (strncmp(VMAILSERVER,VFQNA
           continue;
           }
  
@@ -122,7 +122,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  
        if (stat(VBUFF,&statbuf) != -1)
           {
-@@ -1191,9 +1191,9 @@ if (!IsPrivileged())                    
+@@ -1194,9 +1194,9 @@ if (!IsPrivileged())                    
            }
         pathbuff[0]='\0';
         basename[0]='\0';
@@ -134,7 +134,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
         
         ExpandWildCardsAndDo(pathbuff,basename,RecHomeTidyWrapper,NULL);
         }
-@@ -1430,6 +1430,7 @@ void GetSetuidLog()
+@@ -1434,6 +1434,7 @@ void GetSetuidLog()
    struct Item *ip;
    FILE *fp;
    char *sp;
@@ -142,7 +142,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  
  if (!IsPrivileged())                     /* Ignore this if not root */
     {
-@@ -1456,7 +1457,8 @@ else
+@@ -1460,7 +1461,8 @@ else
           FatalError("GetSetuidList() couldn't allocate memory #1");
           }
  
@@ -152,7 +152,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
           {
           perror("malloc");
           FatalError("GetSetuidList() couldn't allocate memory #2");
-@@ -1473,7 +1475,7 @@ else
+@@ -1477,7 +1479,7 @@ else
  
        Debug2("SETUID-LOG: %s\n",VBUFF);
  
@@ -161,7 +161,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
        ip->name = sp;
        ip->next = NULL;
        filetop = ip;
-@@ -1762,7 +1764,7 @@ for (dp = VDISABLELIST; dp != NULL; dp=d
+@@ -1768,7 +1770,7 @@ for (dp = VDISABLELIST; dp != NULL; dp=d
                 }
              else
                 {
@@ -170,7 +170,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
                 ChopLastNode(path);
                 AddSlash(path);
                 if (BufferOverflow(path,dp->destination))
-@@ -1773,13 +1775,13 @@ for (dp = VDISABLELIST; dp != NULL; dp=d
+@@ -1779,13 +1781,13 @@ for (dp = VDISABLELIST; dp != NULL; dp=d
                    ReleaseCurrentLock();
                    continue;
                    }
@@ -187,7 +187,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
              }
  
           snprintf(OUTPUT,CF_BUFSIZE*2,"Disabling/renaming file %s to %s (pending repository move)\n",workname,path);
-@@ -1907,15 +1909,15 @@ for (mp = VMOUNTABLES; mp != NULL; mp=mp
+@@ -1913,15 +1915,15 @@ for (mp = VMOUNTABLES; mp != NULL; mp=mp
     
     Debug("Mount: checking %s\n",mp->filesystem);
  
@@ -206,7 +206,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
        }
  
     if (strcmp(host,VDEFAULTBINSERVER.name) == 0) /* A host never mounts itself nfs */
-@@ -1927,11 +1929,11 @@ for (mp = VMOUNTABLES; mp != NULL; mp=mp
+@@ -1933,11 +1935,11 @@ for (mp = VMOUNTABLES; mp != NULL; mp=mp
     /* HvB: Bas van der Vlies */
     if ( mp->readonly ) 
        {
@@ -220,7 +220,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
        }
  
     if (IsHomeDir(mountdir))
-@@ -2001,15 +2003,15 @@ for (mp = VMISCMOUNT; mp != NULL; mp=mp-
+@@ -2007,15 +2009,15 @@ for (mp = VMISCMOUNT; mp != NULL; mp=mp-
        mp->done = 'y';
        }
     
@@ -239,7 +239,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
        }
  
     if (strcmp(host,VDEFAULTBINSERVER.name) == 0) /* A host never mounts itself nfs */
-@@ -2163,8 +2165,8 @@ for (ptr=VUNMOUNT; ptr != NULL; ptr=ptr-
+@@ -2170,8 +2172,8 @@ for (ptr=VUNMOUNT; ptr != NULL; ptr=ptr-
        {
        if (VSYSTEMHARDCLASS == aix)
           {
@@ -250,7 +250,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
           
           item = LocateNextItemContaining(filelist,VBUFF);
           
-@@ -2188,8 +2190,8 @@ for (ptr=VUNMOUNT; ptr != NULL; ptr=ptr-
+@@ -2195,8 +2197,8 @@ for (ptr=VUNMOUNT; ptr != NULL; ptr=ptr-
           
           if (VSYSTEMHARDCLASS == ultrx)   /* ensure name is not just a substring */
              {
@@ -261,7 +261,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
              DeleteItemContaining(&filelist,VBUFF);
              }
           else
-@@ -2568,14 +2570,14 @@ for (ip = VTIMEZONE; ip != NULL; ip=ip->
+@@ -2577,14 +2579,14 @@ for (ip = VTIMEZONE; ip != NULL; ip=ip->
  #ifdef NT
     
     tzset();
@@ -278,7 +278,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  
  #else
  
-@@ -2583,7 +2585,7 @@ for (ip = VTIMEZONE; ip != NULL; ip=ip->
+@@ -2592,7 +2594,7 @@ for (ip = VTIMEZONE; ip != NULL; ip=ip->
        {
        printf("Couldn't read system clock\n\n");
        }
@@ -287,7 +287,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
        
  #endif /* SUN4 */
  #endif /* AOS  */
-@@ -2739,8 +2741,8 @@ for (ptr = VPKG; ptr != NULL; ptr=ptr->n
+@@ -2750,8 +2752,8 @@ for (ptr = VPKG; ptr != NULL; ptr=ptr->n
           }
  
           /* Finally add the name to the list. */
@@ -298,7 +298,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
         }
       }
     
-@@ -2878,14 +2880,14 @@ if (S_ISDIR(statbuf.st_mode))
+@@ -2890,14 +2892,14 @@ if (S_ISDIR(statbuf.st_mode))
  
        filecount++;
  
@@ -316,7 +316,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  
        if (lstat(buff,&localstat) == -1)
           {
-@@ -2913,14 +2915,14 @@ if (S_ISDIR(statbuf.st_mode))
+@@ -2925,14 +2927,14 @@ if (S_ISDIR(statbuf.st_mode))
  
     if (sizeinbytes < SENSIBLEFSSIZE)
        {
@@ -333,7 +333,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
        CfLog(cferror,OUTPUT,"");
        return(false);
        }
-@@ -2968,7 +2970,7 @@ for (dirp = readdir(dirh); dirp != NULL;
+@@ -2980,7 +2982,7 @@ for (dirp = readdir(dirh); dirp != NULL;
        continue;
        }
     
@@ -342,7 +342,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     AddSlash(pcwd);
  
     if (BufferOverflow(pcwd,dirp->d_name))
-@@ -2977,7 +2979,7 @@ for (dirp = readdir(dirh); dirp != NULL;
+@@ -2989,7 +2991,7 @@ for (dirp = readdir(dirh); dirp != NULL;
        return true;
        }
  
@@ -351,7 +351,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  
     if (lstat(dirp->d_name,&statbuf) == -1)
        {
-@@ -3021,9 +3023,9 @@ void InstallMountedItem(char *host,char 
+@@ -3033,9 +3035,9 @@ void InstallMountedItem(char *host,char 
  
  { char buf[CF_BUFSIZE];
   
@@ -364,7 +364,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
   
  if (IsItemIn(VMOUNTED,buf))
     {
-@@ -3126,16 +3128,16 @@ if (MatchStringInFstab(mountpt))
+@@ -3138,16 +3140,16 @@ if (MatchStringInFstab(mountpt))
        CfLog(cfinform,"---------------------------------------------------","");
        
        /* delete current fstab entry and unmount if necessary */
@@ -385,7 +385,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
        
        /* delete current fstab entry and unmount if necessary (don't rmdir) */
        cleaner.name        = mountspec;
-@@ -3284,14 +3286,14 @@ for (ip1 = VHOMEPATLIST; ip1 != NULL; ip
+@@ -3296,14 +3298,14 @@ for (ip1 = VHOMEPATLIST; ip1 != NULL; ip
           }
        pathbuff[0]='\0';
        basename[0]='\0';
@@ -403,7 +403,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
           AddSlash(pathbuff);
           
           if (*(ptr->path+4) != '/')
-@@ -3302,7 +3304,7 @@ for (ip1 = VHOMEPATLIST; ip1 != NULL; ip
+@@ -3314,7 +3316,7 @@ for (ip1 = VHOMEPATLIST; ip1 != NULL; ip
              }
           else
              {
@@ -412,7 +412,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
              }
           
           ExpandWildCardsAndDo(pathbuff,basename,RecFileCheck,ptr);
-@@ -3337,7 +3339,7 @@ void EditItemsInResolvConf(struct Item *
+@@ -3349,7 +3351,7 @@ void EditItemsInResolvConf(struct Item *
         }
      else
         {
@@ -421,7 +421,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
         }
      
      DeleteItemMatching(list,buf); /* del+prep = move to head of list */
-@@ -3409,7 +3411,7 @@ if (strlen(extract) == 0)
+@@ -3421,7 +3423,7 @@ if (strlen(extract) == 0)
     {
     if (isdir)
        {
@@ -430,7 +430,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
        }
     (*function)(buffer,argptr);
     return;
-@@ -3417,20 +3419,20 @@ if (strlen(extract) == 0)
+@@ -3429,20 +3431,20 @@ if (strlen(extract) == 0)
   
  if (! IsWildCard(extract))
     {
@@ -454,7 +454,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     
     if ((dirh=opendir(buffer)) == NULL)
        {
-@@ -3440,7 +3442,7 @@ else
+@@ -3452,7 +3454,7 @@ else
        }
  
     count = 0;
@@ -463,7 +463,7 @@ $OpenBSD: patch-src_do_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
   
     for (dp = readdir(dirh); dp != 0; dp = readdir(dirh))
        {
-@@ -3450,8 +3452,8 @@ else
+@@ -3462,8 +3464,8 @@ else
           }
  
        count++;

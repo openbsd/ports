@@ -1,0 +1,173 @@
+$OpenBSD: patch-src_cfetoolgraph_c,v 1.1 2005/10/27 21:47:28 sturm Exp $
+--- src/cfetoolgraph.c.orig	Thu Jun 30 03:53:06 2005
++++ src/cfetoolgraph.c	Fri Oct 21 16:35:55 2005
+@@ -138,7 +138,7 @@ int main(int argc, char **argv)
+         break;
+ 
+       case 'p':
+-        strcpy(PATHNAME,optarg);
++        (void)strlcpy(PATHNAME,optarg,sizeof(PATHNAME));
+         break;
+ 
+       case 'd':
+@@ -161,9 +161,9 @@ int main(int argc, char **argv)
+   }
+ 
+   if(PATHNAME[0] != '\0')
+-    sprintf(LOCATION, "%s/%s", PATHNAME, NAME);
++    (void)snprintf(LOCATION, sizeof(LOCATION), "%s/%s", PATHNAME, NAME);
+   else
+-    sprintf(LOCATION, "./%s", NAME);
++    (void)snprintf(LOCATION, sizeof(LOCATION), "./%s", NAME);
+ 
+   if(daily) {
+     snprintf(FILENAME, CF_BUFSIZE, "%s/daily.db", LOCATION);
+@@ -277,7 +277,7 @@ void ReadAverages(int dbtype)
+     memset(&value, 0, sizeof(value));
+     memset(&ENTRY, 0, sizeof(ENTRY));
+ 
+-    strcpy(TIMEKEY, GenTimeKey2(NOW, dbtype));
++    (void)strlcpy(TIMEKEY, GenTimeKey2(NOW, dbtype), sizeof(TIMEKEY));
+ 
+     key.data = TIMEKEY;
+     key.size = strlen(TIMEKEY) + 1;
+@@ -397,13 +397,13 @@ void WriteGraphFiles(int dbtype)
+     switch(dbtype)
+     {
+       case DAILY:
+-        sprintf(DIRNAME, "%s/daily-%s", LOCATION, ctime(&NOW));
++        (void)snprintf(DIRNAME, sizeof(DIRNAME), "%s/daily-%s", LOCATION, ctime(&NOW));
+         break;
+       case YEARLY:
+-        sprintf(DIRNAME, "%s/yearly-%s", LOCATION, ctime(&NOW));
++        (void)snprintf(DIRNAME, sizeof(DIRNAME), "%s/yearly-%s", LOCATION, ctime(&NOW));
+         break;
+       default: /* weekly */
+-        sprintf(DIRNAME, "%s/weekly-%s", LOCATION, ctime(&NOW));
++        (void)snprintf(DIRNAME, sizeof(DIRNAME), "%s/weekly-%s", LOCATION, ctime(&NOW));
+         break;
+     }
+ 
+@@ -420,13 +420,13 @@ void WriteGraphFiles(int dbtype)
+     switch(dbtype)
+     {
+       case DAILY:
+-        sprintf(DIRNAME, "%s/daily-snapshot", LOCATION);
++        (void)snprintf(DIRNAME, sizeof(DIRNAME), "%s/daily-snapshot", LOCATION);
+         break;
+       case YEARLY:
+-        sprintf(DIRNAME, "%s/yearly-snapshot", LOCATION);
++        (void)snprintf(DIRNAME, sizeof(DIRNAME), "%s/yearly-snapshot", LOCATION);
+         break;
+       default: /* weekly */
+-        sprintf(DIRNAME, "%s/weekly-snapshot", LOCATION);
++        (void)snprintf(DIRNAME, sizeof(DIRNAME), "%s/weekly-snapshot", LOCATION);
+         break;
+     }
+   }
+@@ -444,7 +444,7 @@ void WriteGraphFiles(int dbtype)
+   printf("Writing data to directory %s\n ", DIRNAME);
+ 
+ 
+-  sprintf(FLNAME, "%s/average", DIRNAME);
++  (void)snprintf(FLNAME, sizeof(FLNAME), "%s/average", DIRNAME);
+ 
+   if ((FPAV = fopen(FLNAME, "w")) == NULL)
+   {
+@@ -452,7 +452,7 @@ void WriteGraphFiles(int dbtype)
+     exit(1);
+   }
+ 
+-  sprintf(FLNAME, "%s/stddev", DIRNAME);
++  (void)snprintf(FLNAME, sizeof(FLNAME), "%s/stddev", DIRNAME);
+ 
+   if ((FPVAR = fopen(FLNAME, "w")) == NULL)
+   {
+@@ -460,7 +460,7 @@ void WriteGraphFiles(int dbtype)
+     exit(1);
+   }
+ 
+-  sprintf(FLNAME,"%s/graph", DIRNAME); 
++  (void)snprintf(FLNAME,sizeof(FLNAME),"%s/graph", DIRNAME); 
+ 
+   if ((FP = fopen(FLNAME,"w")) == NULL)
+   {
+@@ -488,7 +488,7 @@ void WriteGraphFiles(int dbtype)
+       memset(&key, 0, sizeof(key));
+       memset(&value, 0, sizeof(value));
+ 
+-      strcpy(TIMEKEY, GenTimeKey2(NOW, dbtype));
++      (void)strlcpy(TIMEKEY, GenTimeKey2(NOW, dbtype), sizeof(TIMEKEY));
+       key.data = TIMEKEY;
+       key.size = strlen(TIMEKEY) + 1;
+ 
+@@ -628,7 +628,7 @@ void WriteHistogram(int dbtype)
+     }
+   }
+ 
+-  sprintf(FLNAME, "%s/distr", DIRNAME);
++  (void)snprintf(FLNAME, sizeof(FLNAME), "%s/distr", DIRNAME);
+   if ((FPHIST = fopen(FLNAME, "w")) == NULL)
+   {
+     perror("fopen");
+@@ -712,7 +712,7 @@ char *CanonifyName(char *str)
+   char *sp;
+ 
+   memset(buffer, 0, CF_BUFSIZE);
+-  strcpy(buffer, str);
++  (void)strlcpy(buffer, str, sizeof(buffer));
+ 
+   for (sp = buffer; *sp != '\0'; sp++)
+   {
+@@ -786,7 +786,7 @@ struct Average FindHurstFunction(int sam
+     memset(&value, 0, sizeof(value));
+     memset(&ENTRY, 0, sizeof(ENTRY));
+ 
+-    strcpy(TIMEKEY, GenTimeKey2(NOW, dbtype));
++    (void)strlcpy(TIMEKEY, GenTimeKey2(NOW, dbtype), sizeof(TIMEKEY));
+ 
+     key.data = TIMEKEY;
+     key.size = strlen(TIMEKEY) + 1;
+@@ -871,7 +871,7 @@ char *GenTimeKey2(time_t now, int dbtype
+ {
+   char str[64];
+ 
+-  sprintf(str, "%s", ctime(&now));
++  (void)snprintf(str, sizeof(str), "%s", ctime(&now));
+ 
+   return ConvTimeKey2(str, dbtype);
+ }
+@@ -897,10 +897,10 @@ char *ConvTimeKey2(char *str, int dbtype
+     case DAILY:
+       break;
+     case YEARLY:
+-      sprintf(timekey, "%s%s:", buf2, buf3);
++      (void)snprintf(timekey, (64 * sizeof(char)), "%s%s:", buf2, buf3);
+       break;
+     default: /* weekly */
+-      sprintf(timekey, "%s:", buf1);
++      (void)snprintf(timekey, (64 * sizeof(char)), "%s:", buf1);
+       break;
+   }
+ 
+@@ -910,15 +910,15 @@ char *ConvTimeKey2(char *str, int dbtype
+   timeinmins = 60*hr + min;
+ 
+   if(STEP == 1)
+-    sprintf(minbuf, "%04d", timeinmins / STEP );
++    (void)snprintf(minbuf, sizeof(minbuf), "%04d", timeinmins / STEP );
+   else if (STEP < 15)
+-    sprintf(minbuf, "%03d", timeinmins / STEP );
++    (void)snprintf(minbuf, sizeof(minbuf), "%03d", timeinmins / STEP );
+   else if (STEP < 145)
+-    sprintf(minbuf, "%02d", timeinmins / STEP );
++    (void)snprintf(minbuf, sizeof(minbuf), "%02d", timeinmins / STEP );
+   else
+-    sprintf(minbuf, "%d", timeinmins / STEP );
++    (void)snprintf(minbuf, sizeof(minbuf), "%d", timeinmins / STEP );
+ 
+-  strcat(timekey, minbuf);
++  (void)strlcat(timekey, minbuf, (64 * sizeof(char)));
+ 
+   return timekey;
+ }

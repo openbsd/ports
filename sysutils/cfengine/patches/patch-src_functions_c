@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
---- src/functions.c.orig	Sat Apr  9 11:02:50 2005
-+++ src/functions.c	Fri Jul 15 12:24:01 2005
-@@ -221,13 +221,13 @@ switch (fn = FunctionStringToCode(name))
+$OpenBSD: patch-src_functions_c,v 1.5 2005/10/27 21:47:28 sturm Exp $
+--- src/functions.c.orig	Sat Aug 13 15:10:56 2005
++++ src/functions.c	Fri Oct 21 16:35:55 2005
+@@ -247,13 +247,13 @@ switch (fn = FunctionStringToCode(name))
      {
      if (strcmp(value,CF_NOCLASS) == 0)
         {
@@ -17,7 +17,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
         return value;
         }
      }
-@@ -321,46 +321,46 @@ FunctionArgs(args,argv,1);
+@@ -347,46 +347,46 @@ FunctionArgs(args,argv,1);
  
  if (lstat(args,&statbuf) == -1)
     {
@@ -71,7 +71,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  }
  
  /*********************************************************************/
-@@ -375,7 +375,7 @@ if (strchr(args,','))
+@@ -401,7 +401,7 @@ if (strchr(args,','))
     return;
     }
   
@@ -80,7 +80,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  
  if (!FuzzyMatchParse(args))
     {
-@@ -390,7 +390,7 @@ for (ip = IPADDRESSES; ip != NULL; ip = 
+@@ -416,7 +416,7 @@ for (ip = IPADDRESSES; ip != NULL; ip = 
     if (FuzzySetMatch(args,ip->name) == 0)
        {
        Debug("IPRange Matched\n");
@@ -89,7 +89,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
        return;
        }
     }
-@@ -401,12 +401,12 @@ Debug("Checking IP Range against RDNS %s
+@@ -427,12 +427,12 @@ Debug("Checking IP Range against RDNS %s
  if (FuzzySetMatch(args,VIPADDRESS) == 0)
     {
     Debug("IPRange Matched\n");
@@ -104,7 +104,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  }
  
  /*********************************************************************/
-@@ -419,7 +419,7 @@ Debug("SRDEBUG args=%s value=%s\n",args,
+@@ -445,7 +445,7 @@ Debug("SRDEBUG args=%s value=%s\n",args,
  
  if (!FuzzyHostParse(args))
     {
@@ -112,8 +112,8 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
 +   (void)strlcpy(value,CF_NOCLASS,CF_EXPANDSIZE);
     return;
     }
- /* VDEFAULTBINSERVER.name is relative domain name */
-@@ -428,12 +428,12 @@ if (!FuzzyHostParse(args))
+ 
+@@ -455,12 +455,12 @@ if (!FuzzyHostParse(args))
  if (FuzzyHostMatch(args,VDEFAULTBINSERVER.name) == 0)
     {
     Debug("SRDEBUG SUCCESS!\n");
@@ -128,8 +128,8 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     }
   
  return;
-@@ -447,7 +447,7 @@ void HandleCompareStat(enum builtin fn,c
-   char argv[CF_MAXFARGS][CF_MAXVARSIZE];
+@@ -474,7 +474,7 @@ void HandleCompareStat(enum builtin fn,c
+   char argv[CF_MAXFARGS][CF_EXPANDSIZE];
  
  FunctionArgs(args,argv,2); 
 -strcpy(value,CF_NOCLASS);
@@ -137,7 +137,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
   
  if (stat(argv[0],&frombuf) == -1)
     {
-@@ -464,7 +464,7 @@ switch(fn)
+@@ -491,7 +491,7 @@ switch(fn)
     case fn_newerthan:
         if (frombuf.st_mtime < tobuf.st_mtime)
            {
@@ -146,7 +146,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
            return;
            }
         break;
-@@ -472,7 +472,7 @@ switch(fn)
+@@ -499,7 +499,7 @@ switch(fn)
     case fn_accessedbefore:
         if (frombuf.st_atime < tobuf.st_atime)
            {
@@ -155,7 +155,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
            return;
            }
         break;
-@@ -480,13 +480,13 @@ switch(fn)
+@@ -507,13 +507,13 @@ switch(fn)
     case fn_changedbefore:
         if (frombuf.st_ctime < tobuf.st_ctime)
            {
@@ -171,7 +171,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  }
  
  
-@@ -533,7 +533,7 @@ if (*args == '/')
+@@ -560,7 +560,7 @@ if (*args == '/')
     
     if (ShellCommandReturnsZero(command))
        {
@@ -180,7 +180,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
        return;
        }
     }
-@@ -542,7 +542,7 @@ if (*args == '/')
+@@ -569,7 +569,7 @@ if (*args == '/')
      yyerror("ExecResult(/command) must specify an absolute path");
      }
   
@@ -189,7 +189,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  }
  
  
-@@ -560,11 +560,11 @@ Debug("HandleIsDefined(%s)\n",args); 
+@@ -587,11 +587,11 @@ Debug("HandleIsDefined(%s)\n",args); 
   
  if (GetMacroValue(CONTEXTID,args))
     {
@@ -203,7 +203,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  }
  
  /*********************************************************************/
-@@ -580,7 +580,7 @@ value[0] = '\0';
+@@ -607,7 +607,7 @@ value[0] = '\0';
  
  if (PARSING)
     {
@@ -212,7 +212,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     return;
     }
   
-@@ -634,11 +634,11 @@ FunctionArgs(args,argv,2); 
+@@ -661,11 +661,11 @@ FunctionArgs(args,argv,2); 
   
  if (strcmp(argv[0],argv[1]) == 0)
     {
@@ -226,7 +226,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     } 
  }
  
-@@ -662,11 +662,11 @@ if ((a != CF_NOVAL) && (b != CF_NOVAL)) 
+@@ -689,11 +689,11 @@ if ((a != CF_NOVAL) && (b != CF_NOVAL)) 
        {
        if (a > b)
           {
@@ -240,7 +240,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
           }
        return;
        }
-@@ -674,11 +674,11 @@ if ((a != CF_NOVAL) && (b != CF_NOVAL)) 
+@@ -701,11 +701,11 @@ if ((a != CF_NOVAL) && (b != CF_NOVAL)) 
        {
        if (a < b)  
           {
@@ -254,7 +254,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
           }
        return;
        }
-@@ -690,22 +690,22 @@ if (strcmp(argv[0],argv[1]) > 0)
+@@ -717,22 +717,22 @@ if (strcmp(argv[0],argv[1]) > 0)
     {
     if (ch == '+')
        {
@@ -281,7 +281,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
        }
     } 
  }
-@@ -731,11 +731,11 @@ ret = LocateNextItemMatching(list,argv[0
+@@ -760,11 +760,11 @@ ret = LocateNextItemMatching(list,argv[0
       
  if (ret != NULL)
     {
@@ -295,7 +295,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     }
   
  DeleteItemList(list); 
-@@ -1080,7 +1080,7 @@ first[0] = '\0';
+@@ -1169,7 +1169,7 @@ first[0] = '\0';
   
  if (psize < 2)
     {
@@ -304,7 +304,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     CfLog(cferror,"Partitioning of size < 2 is silly","");
     return;
     }
-@@ -1089,7 +1089,7 @@ Verbose("Searching for my peer group in 
+@@ -1178,7 +1178,7 @@ Verbose("Searching for my peer group in 
  
  if (!((strcmp("random",policy) == 0) || (strcmp("first",policy) == 0)))
     {
@@ -313,7 +313,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     CfLog(cferror,"Partition leader policy is first/random only","");
     return;
     }
-@@ -1244,7 +1244,7 @@ value[0] = '\0'; 
+@@ -1333,7 +1333,7 @@ value[0] = '\0'; 
   
  if (psize < 2)
     {
@@ -322,7 +322,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     CfLog(cferror,"Partitioning of size < 2 is silly","");
     return;
     }
-@@ -1253,7 +1253,7 @@ Verbose("Searching for my peer group nei
+@@ -1342,7 +1342,7 @@ Verbose("Searching for my peer group nei
  
  if (!(strcmp("random",policy) == 0 || strcmp("first",policy) == 0))
     {
@@ -331,7 +331,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     CfLog(cferror,"Partition leader policy is first/random only","");
     return;
     }
-@@ -1376,7 +1376,7 @@ for (ip = SplitStringAsItemList(args,','
+@@ -1465,7 +1465,7 @@ for (ip = SplitStringAsItemList(args,','
     AppendItem(&METHODRETURNVARS,ip->name,CLASSBUFF);
     }
   
@@ -340,7 +340,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  }
  
  /*********************************************************************/
-@@ -1392,7 +1392,7 @@ for (ip = SplitStringAsItemList(args,','
+@@ -1481,7 +1481,7 @@ for (ip = SplitStringAsItemList(args,','
     AppendItem(&METHODRETURNCLASSES,args,CLASSBUFF);
     }
  
@@ -349,7 +349,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  }
  
  /*********************************************************************/
-@@ -1418,7 +1418,7 @@ Debug("ShowState(%s)\n",args); 
+@@ -1507,7 +1507,7 @@ Debug("ShowState(%s)\n",args); 
  
  if (PARSING)
     {
@@ -358,7 +358,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     return;
     }
   
-@@ -1604,12 +1604,12 @@ if (stat(buffer,&statbuf) == 0)
+@@ -1693,12 +1693,12 @@ if (stat(buffer,&statbuf) == 0)
     
     printf("%s: -----------------------------------------------------------------------------------\n",VPREFIX);
     snprintf(buffer,CF_BUFSIZE,"State of %s peaked at %s\n",args,ctime(&statbuf.st_mtime));
@@ -373,7 +373,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     }
  
  DeleteItemList(addresses); 
-@@ -1636,7 +1636,7 @@ FunctionArgs(args,argv,1);
+@@ -1725,7 +1725,7 @@ FunctionArgs(args,argv,1);
  
  if (PARSING)
     {
@@ -382,7 +382,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     return;
     }
  
-@@ -1647,7 +1647,7 @@ if (time >= 0)
+@@ -1736,7 +1736,7 @@ if (time >= 0)
     CheckFriendConnections(time);
     }
   
@@ -391,7 +391,7 @@ $OpenBSD: patch-src_functions_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  }
  
  /*********************************************************************/
-@@ -1721,11 +1721,11 @@ Debug("PrepModule(%s,%s)\n",argv[0],argv
+@@ -1810,11 +1810,11 @@ Debug("PrepModule(%s,%s)\n",argv[0],argv
   
  if (CheckForModule(argv[0],argv[1]))
     {

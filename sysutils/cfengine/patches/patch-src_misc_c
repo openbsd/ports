@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_misc_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
---- src/misc.c.orig	Fri Mar 11 12:57:29 2005
-+++ src/misc.c	Fri Jul 15 12:24:01 2005
+$OpenBSD: patch-src_misc_c,v 1.5 2005/10/27 21:47:28 sturm Exp $
+--- src/misc.c.orig	Fri Jul 15 11:15:25 2005
++++ src/misc.c	Fri Oct 21 16:35:56 2005
 @@ -540,17 +540,17 @@ char *ChecksumPrint(char type,unsigned c
  
  switch(type)
@@ -22,7 +22,7 @@ $OpenBSD: patch-src_misc_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
     }
  
  return buffer; 
-@@ -926,17 +926,17 @@ char strmajor[CF_MAXVARSIZE];
+@@ -894,17 +894,17 @@ char strmajor[CF_MAXVARSIZE];
      release += strlen(RELEASE_FLAG);
      if (sscanf(release, "%d", &major) == 1)
         {
@@ -44,7 +44,7 @@ $OpenBSD: patch-src_misc_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
      AddClassToHeap(classbuf);
      }
   
-@@ -1094,15 +1094,15 @@ Verbose("Looking for redhat linux info i
+@@ -1062,15 +1062,15 @@ Verbose("Looking for redhat linux info i
      release += strlen(RELEASE_FLAG);
      if (sscanf(release, "%d.%d", &major, &minor) == 2)
         {
@@ -63,7 +63,7 @@ $OpenBSD: patch-src_misc_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
         minor = -2;
         };
      }
-@@ -1110,21 +1110,21 @@ Verbose("Looking for redhat linux info i
+@@ -1078,21 +1078,21 @@ Verbose("Looking for redhat linux info i
   if (major != -1 && minor != -1 && vendor != "")
      {
      classbuf[0] = '\0';
@@ -92,7 +92,7 @@ $OpenBSD: patch-src_misc_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
         AddClassToHeap(classbuf);
         }
      }
-@@ -1171,13 +1171,13 @@ FILE *fp;
+@@ -1139,13 +1139,13 @@ FILE *fp;
   if(!strncmp(relstring, SUSE_SLES8_ID, strlen(SUSE_SLES8_ID)))
      {
      classbuf[0] = '\0';
@@ -108,7 +108,7 @@ $OpenBSD: patch-src_misc_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
      AddClassToHeap(classbuf);
      }
   
-@@ -1198,19 +1198,19 @@ FILE *fp;
+@@ -1166,19 +1166,19 @@ FILE *fp;
      {
      release += strlen(SUSE_RELEASE_FLAG);
      sscanf(release, "%d.%d", &major, &minor);
@@ -135,7 +135,7 @@ $OpenBSD: patch-src_misc_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
      AddClassToHeap(classbuf);
      }
   
-@@ -1323,8 +1323,8 @@ char strminor[CF_MAXVARSIZE];
+@@ -1297,8 +1297,8 @@ char strminor[CF_MAXVARSIZE];
      release += strlen(RELEASE_FLAG);
      if (sscanf(release, "%d.%d", &major, &minor) == 2)
         {
@@ -146,7 +146,7 @@ $OpenBSD: patch-src_misc_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
         }
      else
         {
-@@ -1336,15 +1336,15 @@ char strminor[CF_MAXVARSIZE];
+@@ -1310,15 +1310,15 @@ char strminor[CF_MAXVARSIZE];
   if (major != -1 && minor != -1 && vendor != "")
      {
      classbuf[0] = '\0';

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_macro_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
---- src/macro.c.orig	Wed May 25 09:43:58 2005
-+++ src/macro.c	Fri Jul 15 12:24:01 2005
+$OpenBSD: patch-src_macro_c,v 1.5 2005/10/27 21:47:28 sturm Exp $
+--- src/macro.c.orig	Mon Aug 15 10:06:46 2005
++++ src/macro.c	Fri Oct 21 16:35:56 2005
 @@ -200,6 +200,7 @@ void AddMacroValue(char *scope,char *nam
  { char *sp, buffer[CF_BUFSIZE],exp[CF_EXPANDSIZE];
    struct cfObject *ptr; 
@@ -26,7 +26,7 @@ $OpenBSD: patch-src_macro_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
  
  slot = Hash(name);
   
-@@ -360,7 +362,7 @@ if (strstr(name,"."))
+@@ -363,7 +365,7 @@ if (strstr(name,"."))
   
  if (ptr == NULL)
     {

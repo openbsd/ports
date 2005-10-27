@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ifconf_c,v 1.2 2005/07/21 15:16:46 aanriot Exp $
---- src/ifconf.c.orig	Fri Mar 18 12:05:24 2005
-+++ src/ifconf.c	Fri Jul 15 12:35:26 2005
+$OpenBSD: patch-src_ifconf_c,v 1.3 2005/10/27 21:47:28 sturm Exp $
+--- src/ifconf.c.orig	Thu Jun 30 04:36:09 2005
++++ src/ifconf.c	Fri Oct 21 16:35:55 2005
 @@ -113,7 +113,7 @@ if (vbroadcast[0] == '\0')
     return;
     }
@@ -64,77 +64,3 @@ $OpenBSD: patch-src_ifconf_c,v 1.2 2005/07/21 15:16:46 aanriot Exp $
  }
  
  /****************************************************************/
-@@ -362,7 +362,9 @@ sprintf(VNUMBROADCAST,"%u.%u.%u.%u",ba,b
- void SetDefaultRoute()
- 
- { int sk, defaultokay = 1;
-+# ifndef __OpenBSD__
-   struct sockaddr_in sindst,singw;
-+# endif		/* __OpenBSD__ */
- 
- # ifdef HAVE_ORTENTRY
-    struct ortentry route;
-@@ -474,6 +476,7 @@ if ((sk = socket(AF_INET,SOCK_RAW,0)) ==
-    FatalError("Error in SetDefaultRoute()");
-    }
- 
-+# ifndef __OpenBSD__
- sindst.sin_family = AF_INET;
- singw.sin_family = AF_INET;
- 
-@@ -491,6 +494,55 @@ if (! DONTDO)
-       CfLog(cferror,"","ioctl SIOCADDRT:");
-       FatalError("Software error: set default route");
-       }
-+
-+# else		/* __OpenBSD__ */
-+
-+if (! DONTDO)
-+   {
-+   /* swiped from net/net-snmp/patches/patch-agent_mibgroup_mibII_route_write_c */
-+
-+   int	s, rc;
-+   struct {
-+	struct	rt_msghdr hdr;
-+	struct	sockaddr_in dst;
-+	struct	sockaddr_in gateway;
-+	} rtmsg;
-+
-+   s = socket(PF_ROUTE, SOCK_RAW, 0);
-+   if (s < 0) {
-+	CfLog(cferror,"","socket");
-+	FatalError("Software error: socket");
-+	}
-+
-+   shutdown(s, SHUT_RD);
-+
-+   /* possible panic otherwise */
-+   /* flags |= (RTF_UP | RTF_GATEWAY); */
-+
-+   bzero(&rtmsg, sizeof(rtmsg));
-+
-+   rtmsg.hdr.rtm_type = RTM_ADD;
-+   rtmsg.hdr.rtm_version = RTM_VERSION;
-+   rtmsg.hdr.rtm_addrs = RTA_DST | RTA_GATEWAY;
-+   rtmsg.hdr.rtm_flags = RTF_GATEWAY;
-+
-+   rtmsg.dst.sin_len = sizeof(rtmsg.dst);
-+   rtmsg.dst.sin_family = AF_INET;
-+   rtmsg.dst.sin_addr.s_addr = htonl(INADDR_ANY);
-+
-+   rtmsg.gateway.sin_len = sizeof(rtmsg.gateway);
-+   rtmsg.gateway.sin_family = AF_INET;
-+   rtmsg.gateway.sin_addr.s_addr = htonl(inet_addr(VDEFAULTROUTE->name));
-+
-+   rc = sizeof(rtmsg);
-+   rtmsg.hdr.rtm_msglen = rc;
-+
-+   if ((rc = write(s, &rtmsg, rc)) < 0) {
-+	CfLog(cferror,"","writing to routing socket");
-+	FatalError("Software error: writing to routing socket");
-+	}
-+
-+# endif		/* __OpenBSD__ */
- 
-    CfLog(cferror,"The routing table did not contain a default route.\n","");
-    snprintf(OUTPUT,CF_BUFSIZE*2,"I'm setting it to %s\n",VDEFAULTROUTE->name);

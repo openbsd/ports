@@ -1,0 +1,498 @@
+$OpenBSD: patch-src_cfetool_c,v 1.1 2005/10/27 21:47:28 sturm Exp $
+--- src/cfetool.c.orig	Thu Jun 30 03:53:06 2005
++++ src/cfetool.c	Fri Oct 21 16:35:55 2005
+@@ -326,7 +326,7 @@ void parse_create_opts(int argc, char **
+ 
+       case 'f':
+         BATCH_MODE = true;
+-        strcpy(BATCHFILE, optarg);
++        (void)strlcpy(BATCHFILE, optarg, sizeof(BATCHFILE));
+         break;
+ 
+       case 'v':
+@@ -338,7 +338,7 @@ void parse_create_opts(int argc, char **
+         break;
+ 
+       case 'p':
+-        strcpy(PATHNAME,optarg);
++        (void)strlcpy(PATHNAME,optarg,sizeof(PATHNAME));
+         break;
+ 
+       case 's':
+@@ -420,7 +420,7 @@ void parse_update_opts(int argc, char **
+         break;
+ 
+       case 'p':
+-        strcpy(PATHNAME,optarg);
++        (void)strlcpy(PATHNAME,optarg,sizeof(PATHNAME));
+         break;
+ 
+       case 't':
+@@ -522,7 +522,7 @@ void parse_check_opts(int argc, char **a
+         break;
+ 
+       case 'p':
+-        strcpy(PATHNAME,optarg);
++        (void)strlcpy(PATHNAME,optarg,sizeof(PATHNAME));
+         break;
+ 
+       case 't':
+@@ -603,7 +603,7 @@ void parse_info_opts(int argc, char **ar
+         break;
+ 
+       case 'p':
+-        strcpy(PATHNAME,optarg);
++        (void)strlcpy(PATHNAME,optarg,sizeof(PATHNAME));
+         break;
+ 
+       case 'E':
+@@ -675,7 +675,7 @@ void parse_dump_opts(int argc, char **ar
+         break;
+ 
+       case 'p':
+-        strcpy(PATHNAME,optarg);
++        (void)strlcpy(PATHNAME,optarg,sizeof(PATHNAME));
+         break;
+ 
+       case 'Y':
+@@ -687,7 +687,7 @@ void parse_dump_opts(int argc, char **ar
+         break;
+ 
+       case 'f':
+-        strcpy(DUMPFILE, optarg);
++        (void)strlcpy(DUMPFILE, optarg, sizeof(DUMPFILE));
+         break;
+ 
+       case 'd':
+@@ -772,7 +772,7 @@ void parse_import_opts(int argc, char **
+         break;
+ 
+       case 'p':
+-        strcpy(PATHNAME,optarg);
++        (void)strlcpy(PATHNAME,optarg,sizeof(PATHNAME));
+         break;
+ 
+       case 'v':
+@@ -780,7 +780,7 @@ void parse_import_opts(int argc, char **
+         break;
+ 
+       case 'f':
+-        strcpy(IMPORTFILE, optarg);
++        (void)strlcpy(IMPORTFILE, optarg, sizeof(IMPORTFILE));
+         break;
+ 
+       case 'd':
+@@ -851,22 +851,22 @@ void Create(int step, int dbtype)
+   if(getcwd(current_dir, cwdbufsize) == NULL)
+     perror("getcwd");
+   if(PATHNAME[0] == '\0')
+-    sprintf(LOCATION, "%s/%s", current_dir, NAME);
++    (void)snprintf(LOCATION, sizeof(LOCATION), "%s/%s", current_dir, NAME);
+   else if(PATHNAME[0] == '/')
+-    sprintf(LOCATION, "%s/%s", PATHNAME, NAME);
++    (void)snprintf(LOCATION, sizeof(LOCATION), "%s/%s", PATHNAME, NAME);
+   else
+-    sprintf(LOCATION, "%s/%s/%s", current_dir, PATHNAME, NAME);
++    (void)snprintf(LOCATION, sizeof(LOCATION), "%s/%s/%s", current_dir, PATHNAME, NAME);
+ 
+   switch(dbtype)
+   {
+     case DAILY:
+-      sprintf(AVDB, "%s/daily.db", LOCATION);
++      (void)snprintf(AVDB, CF_MAXVARSIZE-1, "%s/daily.db", LOCATION);
+       break;
+     case YEARLY:
+-      sprintf(AVDB, "%s/yearly.db", LOCATION);
++      (void)snprintf(AVDB, CF_MAXVARSIZE-1, "%s/yearly.db", LOCATION);
+       break;
+     default: /* weekly */
+-      sprintf(AVDB, "%s/weekly.db", LOCATION);
++      (void)snprintf(AVDB, CF_MAXVARSIZE-1, "%s/weekly.db", LOCATION);
+       break;
+   }
+   Verbose("Creating new database: %s\n", AVDB);
+@@ -989,20 +989,20 @@ int Update(double value, time_t u_time, 
+   VALUE = value;
+ 
+   if(PATHNAME[0] != '\0')
+-    sprintf(LOCATION, "%s/%s", PATHNAME, NAME);
++    (void)snprintf(LOCATION, sizeof(LOCATION), "%s/%s", PATHNAME, NAME);
+   else
+-    sprintf(LOCATION, "./%s", NAME);
++    (void)snprintf(LOCATION, sizeof(LOCATION), "./%s", NAME);
+ 
+   switch(dbtype)
+   {
+     case DAILY:
+-      sprintf(AVDB, "%s/daily.db", LOCATION);
++      (void)snprintf(AVDB, CF_MAXVARSIZE-1, "%s/daily.db", LOCATION);
+       break;
+     case YEARLY:
+-      sprintf(AVDB, "%s/yearly.db", LOCATION);
++      (void)snprintf(AVDB, CF_MAXVARSIZE-1, "%s/yearly.db", LOCATION);
+       break;
+     default: /* weekly */
+-      sprintf(AVDB, "%s/weekly.db", LOCATION);
++      (void)snprintf(AVDB, CF_MAXVARSIZE-1, "%s/weekly.db", LOCATION);
+       break;
+   }
+ 
+@@ -1049,20 +1049,20 @@ int Check(double value, time_t u_time, i
+   VALUE = value;
+ 
+   if(PATHNAME[0] != '\0')
+-    sprintf(LOCATION, "%s/%s", PATHNAME, NAME);
++    (void)snprintf(LOCATION, sizeof(LOCATION), "%s/%s", PATHNAME, NAME);
+   else
+-    sprintf(LOCATION, "./%s", NAME);
++    (void)snprintf(LOCATION, sizeof(LOCATION), "./%s", NAME);
+ 
+   switch(dbtype)
+   {
+     case DAILY:
+-      sprintf(AVDB, "%s/daily.db", LOCATION);
++      (void)snprintf(AVDB, CF_MAXVARSIZE-1, "%s/daily.db", LOCATION);
+       break;
+     case YEARLY:
+-      sprintf(AVDB, "%s/yearly.db", LOCATION);
++      (void)snprintf(AVDB, CF_MAXVARSIZE-1, "%s/yearly.db", LOCATION);
+       break;
+     default: /* weekly */
+-      sprintf(AVDB, "%s/weekly.db", LOCATION);
++      (void)snprintf(AVDB, CF_MAXVARSIZE-1, "%s/weekly.db", LOCATION);
+       break;
+   }
+ 
+@@ -1113,23 +1113,23 @@ void Info(int dbtype)
+   Verbose("Gathering database info...\n");
+ 
+   if(PATHNAME[0] != '\0')
+-    sprintf(LOCATION, "%s/%s", PATHNAME, NAME);
++    (void)snprintf(LOCATION, sizeof(LOCATION), "%s/%s", PATHNAME, NAME);
+   else
+-    sprintf(LOCATION, "./%s", NAME);
++    (void)snprintf(LOCATION, sizeof(LOCATION), "./%s", NAME);
+ 
+   switch(dbtype)
+   {
+     case DAILY:
+-      sprintf(AVDB, "%s/daily.db", LOCATION);
+-      sprintf(histfile, "%s/daily.hist", LOCATION);
++      (void)snprintf(AVDB, CF_MAXVARSIZE-1, "%s/daily.db", LOCATION);
++      (void)snprintf(histfile, sizeof(histfile), "%s/daily.hist", LOCATION);
+       break;
+     case YEARLY:
+-      sprintf(AVDB, "%s/yearly.db", LOCATION);
+-      sprintf(histfile, "%s/yearly.hist", LOCATION);
++      (void)snprintf(AVDB, CF_MAXVARSIZE-1, "%s/yearly.db", LOCATION);
++      (void)snprintf(histfile, sizeof(histfile), "%s/yearly.hist", LOCATION);
+       break;
+     default: /* weekly */
+-      sprintf(AVDB, "%s/weekly.db", LOCATION);
+-      sprintf(histfile, "%s/weekly.hist", LOCATION);
++      (void)snprintf(AVDB, CF_MAXVARSIZE-1, "%s/weekly.db", LOCATION);
++      (void)snprintf(histfile, sizeof(histfile), "%s/weekly.hist", LOCATION);
+       break;
+   }
+ 
+@@ -1231,25 +1231,25 @@ void Dump(FILE * fp, int dbtype)
+   int begin_time;
+   int total_time;
+   if(PATHNAME[0] != '\0')
+-    sprintf(LOCATION, "%s/%s", PATHNAME, NAME);
++    (void)snprintf(LOCATION, sizeof(LOCATION), "%s/%s", PATHNAME, NAME);
+   else
+-    sprintf(LOCATION, "./%s", NAME);
++    (void)snprintf(LOCATION, sizeof(LOCATION), "./%s", NAME);
+   memset(str, 0, 256);
+ 
+   switch(dbtype)
+   {
+     case DAILY:
+-      sprintf(AVDB, "%s/daily.db", LOCATION);
++      (void)snprintf(AVDB, CF_MAXVARSIZE-1, "%s/daily.db", LOCATION);
+       begin_time = MONDAY_MORNING;
+       total_time = ONE_DAY;
+       break;
+     case YEARLY:
+-      sprintf(AVDB, "%s/yearly.db", LOCATION);
++      (void)snprintf(AVDB, CF_MAXVARSIZE-1, "%s/yearly.db", LOCATION);
+       begin_time = JANUARY_FIRST;
+       total_time = ONE_YEAR;
+       break;
+     default: /* weekly */
+-      sprintf(AVDB, "%s/weekly.db", LOCATION);
++      (void)snprintf(AVDB, CF_MAXVARSIZE-1, "%s/weekly.db", LOCATION);
+       begin_time = MONDAY_MORNING;
+       total_time = ONE_WEEK;
+       break;
+@@ -1365,7 +1365,7 @@ void Dump(FILE * fp, int dbtype)
+   for (NOW = begin_time; NOW < begin_time + total_time;
+        NOW += INTERVAL)
+   {
+-    sprintf(str, "%s", ctime(&NOW));
++    (void)snprintf(str, sizeof(str), "%s", ctime(&NOW));
+     timekey = ConvTimeKey2(str, dbtype);
+ 
+     memset(&value, 0, sizeof(value));
+@@ -1423,9 +1423,9 @@ void Import(FILE * fp, int dbtype)
+   char begincommand[128], endcommand[128];
+ 
+   if(PATHNAME[0] != '\0')
+-    sprintf(LOCATION, "%s/%s", PATHNAME, NAME);
++    (void)snprintf(LOCATION, sizeof(LOCATION), "%s/%s", PATHNAME, NAME);
+   else
+-    sprintf(LOCATION, "./%s", NAME);
++    (void)snprintf(LOCATION, sizeof(LOCATION), "./%s", NAME);
+ 
+   LOCALAV.expect = 0.0;
+   LOCALAV.var = 0.0;
+@@ -1439,19 +1439,19 @@ void Import(FILE * fp, int dbtype)
+   {
+     case DAILY:
+       dumpcommand = "dailydump";
+-      sprintf(AVDB, "%s/daily.db", LOCATION);
++      (void)snprintf(AVDB, CF_MAXVARSIZE-1, "%s/daily.db", LOCATION);
+       break;
+     case YEARLY:
+       dumpcommand = "yearlydump";
+-      sprintf(AVDB, "%s/yearly.db", LOCATION);
++      (void)snprintf(AVDB, CF_MAXVARSIZE-1, "%s/yearly.db", LOCATION);
+       break;
+     default: /* weekly */
+       dumpcommand = "weeklydump";
+-      sprintf(AVDB, "%s/weekly.db", LOCATION);
++      (void)snprintf(AVDB, CF_MAXVARSIZE-1, "%s/weekly.db", LOCATION);
+       break;
+   }
+-  sprintf(begincommand, "<%s>", dumpcommand);
+-  sprintf(endcommand, "/%s", dumpcommand);
++  (void)snprintf(begincommand, sizeof(begincommand), "<%s>", dumpcommand);
++  (void)snprintf(endcommand, sizeof(endcommand), "/%s", dumpcommand);
+ 
+   Verbose("Importing to database: %s\n", AVDB);
+ 
+@@ -1561,7 +1561,7 @@ void Import(FILE * fp, int dbtype)
+       exit(1);
+     }
+     skip(&buffer);
+-    sprintf(temp, "</%s>", command);
++    (void)snprintf(temp, sizeof(temp), "</%s>", command);
+     if (strncmp(buffer, temp, strlen(temp)) != 0)
+     {
+       fprintf(stderr, "Couldn't find </%s>!\n", command);
+@@ -1727,7 +1727,7 @@ void parse_entry(char **buffer)
+       exit(1);
+     }
+     skip(buffer);
+-    sprintf(temp, "</%s>", command);
++    (void)snprintf(temp, sizeof(temp), "</%s>", command);
+     if (strncmp(*buffer, temp, strlen(temp)) != 0)
+     {
+       fprintf(stderr, "Couldn't find </%s>!\n", command);
+@@ -2044,7 +2044,7 @@ struct Average *GetCurrentAverage(char *
+     Debug("No previous value for time index %s\n", timekey);
+   }
+ 
+-  sprintf(str, "%s", ctime(&last_time));
++  (void)snprintf(str, sizeof(str), "%s", ctime(&last_time));
+   Verbose("time key for last update was %s\n", ConvTimeKey2(str, dbtype));
+   Verbose("comparing to current timekey %s\n", timekey);
+   if (strcmp(ConvTimeKey2(str, dbtype), timekey) != 0)
+@@ -2438,12 +2438,12 @@ int ArmClasses(struct Average av, char *
+   if(cfenvd_compatible)
+   {
+     unlink(ENV_NEW);
+-    strcpy(temp1, NAME);
+-    strcat(temp1, "_");
++    (void)strlcpy(temp1, NAME, sizeof(temp1));
++    (void)strlcat(temp1, "_", sizeof(temp1));
+     temp2[0] = '_';
+     temp2[1] = '\0';
+-    strcat(temp2, NAME);
+-    strcat(temp2, "=");
++    (void)strlcat(temp2, NAME, sizeof(temp2));
++    (void)strlcat(temp2, "=", sizeof(temp2));
+ 
+     for (i=0; i<10; i++)
+     {
+@@ -2518,21 +2518,21 @@ int SetClasses(char *name, double variab
+     Debug(" Sensitivity too high ..\n");
+ 
+     buffer[0] = '\0';
+-    strcpy(buffer, name);
++    (void)strlcpy(buffer, name, sizeof(buffer));
+ 
+     if ((delta > 0) && (ldelta > 0))
+     {
+-      strcat(buffer, "_high");
++      (void)strlcat(buffer, "_high", sizeof(buffer));
+       *code = -6;
+     }
+     else if ((delta < 0) && (ldelta < 0))
+     {
+-      strcat(buffer, "_low");
++      (void)strlcat(buffer, "_low", sizeof(buffer));
+       *code = -4;
+     }
+     else
+     {
+-      strcat(buffer, "_normal");
++      (void)strlcat(buffer, "_normal", sizeof(buffer));
+       *code = -5;
+     }
+ 
+@@ -2542,8 +2542,8 @@ int SetClasses(char *name, double variab
+ 
+     if (dev > 2.0 * sqrt(2.0))
+     {
+-      strcpy(buffer2, buffer);
+-      strcat(buffer2, "_microanomaly");
++      (void)strlcpy(buffer2, buffer, sizeof(buffer2));
++      (void)strlcat(buffer2, "_microanomaly", sizeof(buffer2));
+       Debugging2("!! %s !!\n", buffer2);
+       *code += -10;
+       AppendItem(classlist,buffer2,"2");
+@@ -2553,21 +2553,21 @@ int SetClasses(char *name, double variab
+   else
+   {
+     buffer[0] = '\0';
+-    strcpy(buffer, name);
++    (void)strlcpy(buffer, name, sizeof(buffer));
+ 
+     if ((delta > 0) && (ldelta > 0))
+     {
+-      strcat(buffer, "_high");
++      (void)strlcat(buffer, "_high", sizeof(buffer));
+       *code = -6;
+     }
+     else if ((delta < 0) && (ldelta < 0))
+     {
+-      strcat(buffer, "_low");
++      (void)strlcat(buffer, "_low", sizeof(buffer));
+       *code = -4;
+     }
+     else
+     {
+-      strcat(buffer, "_normal");
++      (void)strlcat(buffer, "_normal", sizeof(buffer));
+       *code = -5;
+     }
+ 
+@@ -2577,16 +2577,16 @@ int SetClasses(char *name, double variab
+ 
+     if (dev <= sqrt(2.0))
+     {
+-      strcpy(buffer2, buffer);
+-      strcat(buffer2, "_normal");
++      (void)strlcpy(buffer2, buffer, sizeof(buffer2));
++      (void)strlcat(buffer2, "_normal", sizeof(buffer2));
+       Debugging2("!! %s !!\n", buffer2);
+       *code += -20;
+       AppendItem(classlist,buffer2,"0");
+     }
+     else
+     {
+-      strcpy(buffer2, buffer);
+-      strcat(buffer2, "_dev1");
++      (void)strlcpy(buffer2, buffer, sizeof(buffer2));
++      (void)strlcat(buffer2, "_dev1", sizeof(buffer2));
+       Debugging2("!! %s !!\n", buffer2);
+       *code += -30;
+       AppendItem(classlist,buffer2,"0");
+@@ -2594,8 +2594,8 @@ int SetClasses(char *name, double variab
+ 
+     if (dev > 2.0*sqrt(2.0))
+     {
+-      strcpy(buffer2, buffer);
+-      strcat(buffer2, "_dev2");
++      (void)strlcpy(buffer2, buffer, sizeof(buffer2));
++      (void)strlcat(buffer2, "_dev2", sizeof(buffer2));
+       Debugging2("!! %s !!\n", buffer2);
+       *code += -10;
+       AppendItem(classlist,buffer2,"2");
+@@ -2604,8 +2604,8 @@ int SetClasses(char *name, double variab
+ 
+     if (dev > 3.0*sqrt(2.0))
+     {
+-      strcpy(buffer2, buffer);
+-      strcat(buffer2, "_anomaly");
++      (void)strlcpy(buffer2, buffer, sizeof(buffer2));
++      (void)strlcat(buffer2, "_anomaly", sizeof(buffer2));
+       Debugging2("!! %s !!\n", buffer2);
+       *code += -10;
+       AppendItem(classlist,buffer2,"3");
+@@ -2625,13 +2625,13 @@ void SetVariable(char *name,double value
+ { 
+   char var[CF_BUFSIZE];
+ 
+-  sprintf(var,"value_%s=%d",name,(int)value);
++  (void)snprintf(var,sizeof(var),"value_%s=%d",name,(int)value);
+   AppendItem(classlist,var,"");
+ 
+-  sprintf(var,"average_%s=%1.1f",name,average);
++  (void)snprintf(var,sizeof(var),"average_%s=%1.1f",name,average);
+   AppendItem(classlist,var,"");
+ 
+-  sprintf(var,"stddev_%s=%1.1f",name,stddev);
++  (void)snprintf(var,sizeof(var),"stddev_%s=%1.1f",name,stddev);
+   AppendItem(classlist,var,""); 
+ }
+ 
+@@ -2762,11 +2762,11 @@ void DoBatch(int dbtype)
+     } else {
+       update_time = (time_t) timeint;
+     }
+-    strcpy(timebuf, ctime(&update_time));
++    (void)strlcpy(timebuf, ctime(&update_time), sizeof(timebuf));
+     Debug("- Time converted to %s, ", timebuf);
+     if(strcmp(timekey, ConvTimeKey2(timebuf, dbtype)) != 0)
+       k++;
+-    strcpy(timekey, ConvTimeKey2(timebuf, dbtype));
++    (void)strlcpy(timekey, ConvTimeKey2(timebuf, dbtype), sizeof(timekey));
+     Debug("then to %s\n", timekey);
+ 
+     if (feof(fp)) 
+@@ -2961,7 +2961,7 @@ int OpenDatabase(int create)
+ char *GenTimeKey2(time_t now, int dbtype)
+ {
+   char str[64];
+-  sprintf(str, "%s", ctime(&now));
++  (void)snprintf(str, sizeof(str), "%s", ctime(&now));
+   return ConvTimeKey2(str, dbtype);
+ }
+ 
+@@ -2986,10 +2986,10 @@ char *ConvTimeKey2(char *str, int dbtype
+     case DAILY:
+       break;
+     case YEARLY:
+-      sprintf(timekey, "%s%s:", buf2, buf3);
++      (void)snprintf(timekey, (64 * sizeof(char)), "%s%s:", buf2, buf3);
+       break;
+     default: /* weekly */
+-      sprintf(timekey, "%s:", buf1);
++      (void)snprintf(timekey, (64 * sizeof(char)), "%s:", buf1);
+       break;
+   }
+ 
+@@ -2999,15 +2999,15 @@ char *ConvTimeKey2(char *str, int dbtype
+   timeinmins = 60*hr + min;
+ 
+   if(STEP == 1)
+-    sprintf(minbuf, "%04d", timeinmins / STEP );
++    (void)snprintf(minbuf, sizeof(minbuf), "%04d", timeinmins / STEP );
+   else if (STEP < 15)
+-    sprintf(minbuf, "%03d", timeinmins / STEP );
++    (void)snprintf(minbuf, sizeof(minbuf), "%03d", timeinmins / STEP );
+   else if (STEP < 145)
+-    sprintf(minbuf, "%02d", timeinmins / STEP );
++    (void)snprintf(minbuf, sizeof(minbuf), "%02d", timeinmins / STEP );
+   else
+-    sprintf(minbuf, "%d", timeinmins / STEP );
++    (void)snprintf(minbuf, sizeof(minbuf), "%d", timeinmins / STEP );
+ 
+-  strcat(timekey, minbuf);
++  (void)strlcat(timekey, minbuf, (64 * sizeof(char)));
+ 
+   return timekey;
+ }

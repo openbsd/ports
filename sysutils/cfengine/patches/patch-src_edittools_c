@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_edittools_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
---- src/edittools.c.orig	Tue Feb  8 06:50:01 2005
-+++ src/edittools.c	Fri Jul 15 12:24:01 2005
+$OpenBSD: patch-src_edittools_c,v 1.5 2005/10/27 21:47:28 sturm Exp $
+--- src/edittools.c.orig	Thu Jun 30 06:05:48 2005
++++ src/edittools.c	Fri Oct 21 16:35:55 2005
 @@ -74,7 +74,7 @@ for (dirp = readdir(dirh); dirp != NULL;
        continue;
        }
@@ -65,7 +65,7 @@ $OpenBSD: patch-src_edittools_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
        
        if (!FileObjectFilter(realname,&statbuf2,ptr->filters,editfiles))
           {
-@@ -405,8 +405,8 @@ NUMBEROFEDITS = 0;
+@@ -406,8 +406,8 @@ NUMBEROFEDITS = 0;
  EDITVERBOSE = VERBOSE;
  CURRENTLINENUMBER = 1;
  CURRENTLINEPTR = filestart;
@@ -76,7 +76,7 @@ $OpenBSD: patch-src_edittools_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  EDITGROUPLEVEL = 0;
  SEARCHREPLACELEVEL = 0;
  FOREACHLEVEL = 0;
-@@ -1354,6 +1354,7 @@ return true;
+@@ -1355,6 +1355,7 @@ return true;
  int ReplaceEditLineWith (char *string)
  
  { char *sp;
@@ -84,7 +84,7 @@ $OpenBSD: patch-src_edittools_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  
  if (strcmp(string,CURRENTLINEPTR->name) == 0)
     {
-@@ -1361,14 +1362,15 @@ if (strcmp(string,CURRENTLINEPTR->name) 
+@@ -1362,14 +1363,15 @@ if (strcmp(string,CURRENTLINEPTR->name) 
     return true;
     }
  
@@ -102,7 +102,7 @@ $OpenBSD: patch-src_edittools_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  free (CURRENTLINEPTR->name);
  CURRENTLINEPTR->name = sp;
  NUMBEROFEDITS++;
-@@ -2077,10 +2079,10 @@ int SaveBinaryFile(char *file,off_t size
+@@ -2078,10 +2080,10 @@ int SaveBinaryFile(char *file,off_t size
  Debug("SaveBinaryFile(%s,%d)\n",file,size);
  Verbose("Saving %s\n",file);
   

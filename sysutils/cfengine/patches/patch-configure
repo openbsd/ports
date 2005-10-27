@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.3 2005/07/21 15:16:46 aanriot Exp $
---- configure.orig	Fri Jun 10 16:01:44 2005
-+++ configure	Tue Jul 19 11:19:58 2005
+$OpenBSD: patch-configure,v 1.4 2005/10/27 21:47:28 sturm Exp $
+--- configure.orig	Sat Oct  1 08:32:10 2005
++++ configure	Fri Oct 21 16:35:54 2005
 @@ -9135,6 +9135,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -14,7 +14,7 @@ $OpenBSD: patch-configure,v 1.3 2005/07/21 15:16:46 aanriot Exp $
  
  
 -	GCC_CFLAG="-g -O2 -Wreturn-type -Wmissing-prototypes -Wuninitialized"
-+	GCC_CFLAG="";
++	GCC_CFLAG=""
  	echo "$as_me:$LINENO: result: yes" >&5
  echo "${ECHO_T}yes" >&6
  

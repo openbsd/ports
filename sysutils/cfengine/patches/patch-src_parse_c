@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_parse_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
---- src/parse.c.orig	Sun May 29 06:34:15 2005
-+++ src/parse.c	Fri Jul 15 12:24:01 2005
+$OpenBSD: patch-src_parse_c,v 1.5 2005/10/27 21:47:28 sturm Exp $
+--- src/parse.c.orig	Fri Sep  9 01:54:30 2005
++++ src/parse.c	Fri Oct 21 16:35:56 2005
 @@ -258,7 +258,7 @@ SetStrategies(); 
  Debug1("\n\n==============================BEGIN NEW ACTION %s=============\n\n",ACTIONTEXT[action]);
  
@@ -206,7 +206,7 @@ $OpenBSD: patch-src_parse_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
  return result;
  }
  
-@@ -1194,8 +1194,8 @@ void InitializeAction()                 
+@@ -1201,8 +1201,8 @@ void InitializeAction()                 
   HAVE_RESTART = false;
   VAGE = 99999;
   strncpy(FINDERTYPE,"*",CF_BUFSIZE);
@@ -217,7 +217,7 @@ $OpenBSD: patch-src_parse_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
   HAVE_RESTART = 0;
   FILEACTION=warnall;
   PIFELAPSED=-1;
-@@ -1216,7 +1216,7 @@ void InitializeAction()                 
+@@ -1223,7 +1223,7 @@ void InitializeAction()                 
   PARSEMETHODRETURNCLASSES[0] = '\0';
   METHODFORCE[0] = '\0';
   CHROOT[0] = '\0';
@@ -226,7 +226,7 @@ $OpenBSD: patch-src_parse_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
   PTRAVLINKS = (short) '?';
   IMAGEBACKUP = 'y';
   ENCRYPT = 'n';
-@@ -1259,7 +1259,7 @@ void InitializeAction()                 
+@@ -1266,7 +1266,7 @@ void InitializeAction()                 
   memset(ALLCLASSBUFFER,0,CF_BUFSIZE);
   memset(ELSECLASSBUFFER,0,CF_BUFSIZE);
   

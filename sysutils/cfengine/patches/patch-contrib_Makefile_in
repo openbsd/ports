@@ -1,0 +1,15 @@
+$OpenBSD: patch-contrib_Makefile_in,v 1.1 2005/10/27 21:47:28 sturm Exp $
+
+vicf has security issues
+
+--- contrib/Makefile.in.orig	Tue Oct 25 10:59:38 2005
++++ contrib/Makefile.in	Tue Oct 25 10:59:40 2005
+@@ -170,7 +170,7 @@ target_os = @target_os@
+ target_vendor = @target_vendor@
+ s1 = cfdoc
+ s2 = cfengine.el
+-sbin_SCRIPTS = vicf $(s1)
++sbin_SCRIPTS = $(s1)
+ pkgdata_SCRIPTS = $(s2)
+ EXTRA_DIST = README README.vicf $(s1) $(s2)
+ 

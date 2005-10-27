@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_image_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
---- src/image.c.orig	Sun May 29 07:04:05 2005
-+++ src/image.c	Fri Jul 15 12:24:01 2005
+$OpenBSD: patch-src_image_c,v 1.5 2005/10/27 21:47:28 sturm Exp $
+--- src/image.c.orig	Thu Aug 18 12:02:59 2005
++++ src/image.c	Fri Oct 21 16:35:55 2005
 @@ -59,8 +59,8 @@ for (ip = VRPCPEERLIST; ip != NULL; ip =
        }
     else
@@ -23,7 +23,7 @@ $OpenBSD: patch-src_image_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
     snprintf(VUIDNAME,CF_MAXVARSIZE,"%d",getuid());
     snprintf(VGIDNAME,CF_MAXVARSIZE,"%d",getgid());
     IMGCOMP = '>';
-@@ -190,7 +190,7 @@ for (dirp = cfreaddir(dirh,ip); dirp != 
+@@ -193,7 +193,7 @@ for (dirp = cfreaddir(dirh,ip); dirp != 
        return;
        }
  
@@ -32,7 +32,7 @@ $OpenBSD: patch-src_image_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
  
     if (TRAVLINKS || ip->linktype == 'n')
        {
-@@ -361,9 +361,9 @@ for (itp = VMOUNTLIST; itp != NULL; itp=
+@@ -364,9 +364,9 @@ for (itp = VMOUNTLIST; itp != NULL; itp=
           continue;
           }
  
@@ -44,7 +44,7 @@ $OpenBSD: patch-src_image_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
  
        if (! IsHomeDir(homedir))
           {
-@@ -384,10 +384,10 @@ for (itp = VMOUNTLIST; itp != NULL; itp=
+@@ -387,10 +387,10 @@ for (itp = VMOUNTLIST; itp != NULL; itp=
              continue;
              }
  
@@ -58,7 +58,7 @@ $OpenBSD: patch-src_image_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
           
           if (strlen(ip->destination) > 4)
              {
-@@ -400,7 +400,7 @@ for (itp = VMOUNTLIST; itp != NULL; itp=
+@@ -403,7 +403,7 @@ for (itp = VMOUNTLIST; itp != NULL; itp=
                 }
              else
                 {
@@ -67,7 +67,7 @@ $OpenBSD: patch-src_image_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
                 }
              }
           
-@@ -502,9 +502,9 @@ if ((ip->gid)->gid == (gid_t)-1)
+@@ -505,9 +505,9 @@ if ((ip->gid)->gid == (gid_t)-1)
  
  if (S_ISDIR(sourcestatbuf.st_mode))
     {
@@ -79,7 +79,7 @@ $OpenBSD: patch-src_image_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
     AddSlash(destdir);
  
     if ((dirh = cfopendir(sourcedir,ip)) == NULL)
-@@ -536,22 +536,22 @@ if (S_ISDIR(sourcestatbuf.st_mode))
+@@ -539,22 +539,22 @@ if (S_ISDIR(sourcestatbuf.st_mode))
           continue;
           }
  
@@ -106,7 +106,7 @@ $OpenBSD: patch-src_image_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
        
        if (cflstat(sourcefile,&sourcestatbuf,ip) == -1)
           {
-@@ -572,8 +572,8 @@ if (S_ISDIR(sourcestatbuf.st_mode))
+@@ -575,8 +575,8 @@ if (S_ISDIR(sourcestatbuf.st_mode))
     return;
     }
   
@@ -117,7 +117,7 @@ $OpenBSD: patch-src_image_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
   
   ImageCopy(sourcefile,destfile,sourcestatbuf,ip);
   (ip->uid)->uid = save_uid;
-@@ -1008,7 +1008,7 @@ if (ip->linktype != 'n')
+@@ -1011,7 +1011,7 @@ if (ip->linktype != 'n')
        
        if (ip->linktype == 'a' && linkbuf[0] != '/')      /* Not absolute path - must fix */
           {
@@ -126,7 +126,7 @@ $OpenBSD: patch-src_image_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
           ChopLastNode(VBUFF);
           AddSlash(VBUFF);
           strncat(VBUFF,linkbuf,CF_BUFSIZE-1);
-@@ -1396,7 +1396,7 @@ for (sp = ip->cache; sp != NULL; sp=sp->
+@@ -1399,7 +1399,7 @@ for (sp = ip->cache; sp != NULL; sp=sp->
    else
       {
       memset(linkbuf,0,buffsize);
@@ -135,7 +135,7 @@ $OpenBSD: patch-src_image_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
       return 0;
       }
    }
-@@ -1584,13 +1584,13 @@ if (BufferOverflow(dest,CF_NEW))
+@@ -1587,13 +1587,13 @@ if (BufferOverflow(dest,CF_NEW))
     printf(" culprit: CopyReg\n");
     return false;
     }
@@ -151,7 +151,7 @@ $OpenBSD: patch-src_image_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
  
  if (remote)
     {
-@@ -1629,22 +1629,22 @@ if (IMAGEBACKUP != 'n')
+@@ -1632,22 +1632,22 @@ if (IMAGEBACKUP != 'n')
     time_t STAMPNOW;
     STAMPNOW = time((time_t *)NULL);
     

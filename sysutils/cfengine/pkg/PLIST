@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/07/21 15:16:47 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2005/10/27 21:47:28 sturm Exp $
 @comment doc/
 @comment doc/cfengine-${V}/
 @info info/cfengine-Anomalies.info
@@ -8,6 +8,13 @@
 @man man/man8/cfengine.8
 @man man/man8/cfenvd.8
 @man man/man8/cfenvgraph.8
+@man man/man8/cfetoolcheck.8
+@man man/man8/cfetoolcreate.8
+@man man/man8/cfetooldump.8
+@man man/man8/cfetoolgraph.8
+@man man/man8/cfetoolimport.8
+@man man/man8/cfetoolinfo.8
+@man man/man8/cfetoolupdate.8
 @man man/man8/cfexecd.8
 @man man/man8/cfkey.8
 @man man/man8/cfrun.8
@@ -17,12 +24,13 @@ sbin/cfagent
 sbin/cfdoc
 sbin/cfenvd
 sbin/cfenvgraph
+sbin/cfetool
+sbin/cfetoolgraph
 sbin/cfexecd
 sbin/cfkey
 sbin/cfrun
 sbin/cfservd
 sbin/cfshow
-sbin/vicf
 share/cfengine/
 share/cfengine/ChangeLog
 share/cfengine/INSTALL

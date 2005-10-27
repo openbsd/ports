@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_nameinfo_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
---- src/nameinfo.c.orig	Wed May 25 03:29:36 2005
-+++ src/nameinfo.c	Fri Jul 15 12:24:01 2005
+$OpenBSD: patch-src_nameinfo_c,v 1.5 2005/10/27 21:47:28 sturm Exp $
+--- src/nameinfo.c.orig	Tue Jul 26 08:26:33 2005
++++ src/nameinfo.c	Fri Oct 21 16:35:56 2005
 @@ -59,6 +59,7 @@ void GetNameInfo()
    time_t tloc;
    struct hostent *hp;
@@ -54,7 +54,7 @@ $OpenBSD: patch-src_nameinfo_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
     
     for (i=0; hp->h_aliases[i]!= NULL; i++)
        {
-@@ -411,7 +413,7 @@ for (j = 0,len = 0,ifp = list.ifc_req; l
+@@ -414,7 +416,7 @@ for (j = 0,len = 0,ifp = list.ifc_req; l
              }
           
           /* Old style compat */
@@ -63,7 +63,7 @@ $OpenBSD: patch-src_nameinfo_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
           AppendItem(&IPADDRESSES,ip,"");
           
           for (sp = ip+strlen(ip)-1; *sp != '.'; sp--)
-@@ -422,8 +424,8 @@ for (j = 0,len = 0,ifp = list.ifc_req; l
+@@ -425,8 +427,8 @@ for (j = 0,len = 0,ifp = list.ifc_req; l
           
              
           /* New style */
@@ -74,7 +74,7 @@ $OpenBSD: patch-src_nameinfo_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
           AddClassToHeap(CanonifyName(ip));
           snprintf(name,CF_MAXVARSIZE-1,"ipv4[%s]",CanonifyName(ifp->ifr_name));
           AddMacroValue(CONTEXTID,name,inet_ntoa(sin->sin_addr));
-@@ -544,9 +546,9 @@ void AddNetworkClass(char *netmask) /* F
+@@ -567,9 +569,9 @@ void AddNetworkClass(char *netmask) /* F
    if ((nm.s_addr = inet_addr(netmask)) != -1 && (ip.s_addr = inet_addr(VIPADDRESS)) != -1)
       {
       ip.s_addr &= nm.s_addr; /* Will not work with IPv6 */
@@ -86,7 +86,7 @@ $OpenBSD: patch-src_nameinfo_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
       
       while( (sp = strrchr(nmbuf,'.')) && strcmp(sp,".0") == 0 )
          {
-@@ -569,22 +571,22 @@ void SetDomainName(char *sp)           /
+@@ -592,22 +594,22 @@ void SetDomainName(char *sp)           /
  
  if (gethostname(fqn, sizeof(fqn)) != -1)
     {

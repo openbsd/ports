@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_item_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
---- src/item.c.orig	Thu Feb 17 02:37:07 2005
-+++ src/item.c	Fri Jul 15 12:24:01 2005
+$OpenBSD: patch-src_item_c,v 1.5 2005/10/27 21:47:28 sturm Exp $
+--- src/item.c.orig	Thu Aug 11 04:22:28 2005
++++ src/item.c	Fri Oct 21 16:35:56 2005
 @@ -212,6 +212,7 @@ void PrependItem (struct Item **liststar
  
  { struct Item *ip;
@@ -145,7 +145,7 @@ $OpenBSD: patch-src_item_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
     ip->classes = spe;
     }
  else
-@@ -1061,7 +1079,7 @@ char *s1, *s2;
+@@ -1072,7 +1090,7 @@ char *s1, *s2;
       return 1;
       }
    sscanf(sp,"%ld",&cmp);
@@ -154,7 +154,7 @@ $OpenBSD: patch-src_item_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
  
    /* HvB basename is */
    strncpy(host_basename, s2, strlen(s2) - strlen(sp));
-@@ -1110,7 +1128,7 @@ struct Item *SplitStringAsItemList(char 
+@@ -1121,7 +1139,7 @@ struct Item *SplitStringAsItemList(char 
    
  Debug("SplitStringAsItemList(%s,%c)\n",string,sep);
  

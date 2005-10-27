@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_cfexecd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
---- src/cfexecd.c.orig	Wed May 25 03:52:26 2005
-+++ src/cfexecd.c	Fri Jul 15 12:24:00 2005
+$OpenBSD: patch-src_cfexecd_c,v 1.5 2005/10/27 21:47:28 sturm Exp $
+--- src/cfexecd.c.orig	Wed Aug 10 13:25:08 2005
++++ src/cfexecd.c	Fri Oct 21 16:35:55 2005
 @@ -147,7 +147,7 @@ Banner("Check options");
  
  NOSPLAY = false; 
@@ -38,7 +38,7 @@ $OpenBSD: patch-src_cfexecd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  
  MAILTO[0] = '\0';
  MAILFROM[0] = '\0';
-@@ -555,7 +555,7 @@ for (ip = SCHEDULE; ip != NULL; ip = ip-
+@@ -564,7 +564,7 @@ for (ip = SCHEDULE; ip != NULL; ip = ip-
        DeleteItemList(VHEAP);
        VHEAP = NULL;
        GetNameInfo();
@@ -47,7 +47,7 @@ $OpenBSD: patch-src_cfexecd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
        return true;
        }
     }
-@@ -563,7 +563,7 @@ for (ip = SCHEDULE; ip != NULL; ip = ip-
+@@ -572,7 +572,7 @@ for (ip = SCHEDULE; ip != NULL; ip = ip-
  DeleteItemList(VHEAP);
  VHEAP = NULL; 
  GetNameInfo();
@@ -56,7 +56,7 @@ $OpenBSD: patch-src_cfexecd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  return false;
  }
  
-@@ -971,7 +971,7 @@ if (!Dialogue(sd,NULL))
+@@ -980,7 +980,7 @@ if (!Dialogue(sd,NULL))
     goto mail_err;
     }
   
@@ -65,7 +65,7 @@ $OpenBSD: patch-src_cfexecd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  Debug("%s",VBUFF);
  
  if (!Dialogue(sd,VBUFF))
-@@ -981,7 +981,7 @@ if (!Dialogue(sd,VBUFF))
+@@ -990,7 +990,7 @@ if (!Dialogue(sd,VBUFF))
  
  if (strlen(MAILFROM) > 0)
     {
@@ -74,7 +74,7 @@ $OpenBSD: patch-src_cfexecd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     Debug("%s",VBUFF);   
     }
  else
-@@ -991,12 +991,12 @@ else
+@@ -1000,12 +1000,12 @@ else
     
     if (strlen(domain) > 0)
        {
@@ -89,7 +89,7 @@ $OpenBSD: patch-src_cfexecd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
        Debug("%s",VBUFF);   
        }
     }
-@@ -1006,7 +1006,7 @@ if (!Dialogue(sd,VBUFF))
+@@ -1015,7 +1015,7 @@ if (!Dialogue(sd,VBUFF))
     goto mail_err;
     }
   
@@ -98,7 +98,7 @@ $OpenBSD: patch-src_cfexecd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  Debug("%s",VBUFF);
  
  if (!Dialogue(sd,VBUFF))
-@@ -1021,12 +1021,12 @@ if (!Dialogue(sd,"DATA\r\n"))
+@@ -1030,12 +1030,12 @@ if (!Dialogue(sd,"DATA\r\n"))
  
  if (anomaly)
     {
@@ -113,7 +113,7 @@ $OpenBSD: patch-src_cfexecd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     Debug("%s",VBUFF);
     }
   
-@@ -1042,18 +1042,18 @@ sent=send(sd,VBUFF,strlen(VBUFF),0);
+@@ -1051,18 +1051,18 @@ sent=send(sd,VBUFF,strlen(VBUFF),0);
  
   if (strlen(MAILFROM) == 0)
      {
@@ -123,8 +123,8 @@ $OpenBSD: patch-src_cfexecd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
      }
   else
      {
--    sprintf(VBUFF,"From: cfengine@%s\r\n",VFQNAME);
-+    (void)snprintf(VBUFF,sizeof(VBUFF),"From: cfengine@%s\r\n",VFQNAME);
+-    sprintf(VBUFF,"From: %s\r\n",MAILFROM);
++    (void)snprintf(VBUFF,sizeof(VBUFF),"From: %s\r\n",MAILFROM);
      Debug("%s",VBUFF);    
      }
   
@@ -135,7 +135,7 @@ $OpenBSD: patch-src_cfexecd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  Debug("%s",VBUFF);
  sent=send(sd,VBUFF,strlen(VBUFF),0);
  
-@@ -1066,14 +1066,14 @@ while(!feof(fp))
+@@ -1075,14 +1075,14 @@ while(!feof(fp))
     if (strlen(VBUFF) > 0)
        {
        VBUFF[strlen(VBUFF)-1] = '\r';
@@ -152,7 +152,7 @@ $OpenBSD: patch-src_cfexecd_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
        sent=send(sd,VBUFF,strlen(VBUFF),0);
        break;
        }
-@@ -1095,7 +1095,7 @@ mail_err: 
+@@ -1104,7 +1104,7 @@ mail_err: 
  
  fclose(fp);
  close(sd); 

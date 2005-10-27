@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
---- src/install.c.orig	Sun May 29 06:34:15 2005
-+++ src/install.c	Fri Jul 15 12:24:01 2005
+$OpenBSD: patch-src_install_c,v 1.5 2005/10/27 21:47:28 sturm Exp $
+--- src/install.c.orig	Thu Sep  8 09:43:45 2005
++++ src/install.c	Fri Oct 21 16:35:56 2005
 @@ -113,7 +113,7 @@ else
             FatalError("Redefinition of basic system variable");
             }
@@ -292,7 +292,7 @@ $OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
  
  if (work[strlen(work)-1] != ')')
     {
-@@ -4848,12 +4848,12 @@ Debug1("InstallImageItem (%s) (+%o)(-%o)
+@@ -4857,12 +4857,12 @@ Debug1("InstallImageItem (%s) (+%o)(-%o)
  
  if (strlen(action) == 0)   /* default action */
     {
@@ -307,7 +307,7 @@ $OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
     yyerror(VBUFF);
     return;
     }
-@@ -4944,7 +4944,7 @@ for (spl = Get2DListEnt(tp); spl != NULL
+@@ -4953,7 +4953,7 @@ for (spl = Get2DListEnt(tp); spl != NULL
        
        if (strlen(destination) == 0)
           {
@@ -316,7 +316,7 @@ $OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
           }
        else
           {
-@@ -5275,11 +5275,11 @@ if (strlen(CURRENTITEM) != 0)
+@@ -5284,11 +5284,11 @@ if (strlen(CURRENTITEM) != 0)
  
  if (strcmp(value,"link") == 0 || strcmp(value,"links") == 0)
     {
@@ -330,7 +330,7 @@ $OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
     }
  else
     {
-@@ -5398,7 +5398,7 @@ void HandleNetmask(char *value)
+@@ -5407,7 +5407,7 @@ void HandleNetmask(char *value)
  {
   if (strlen(DESTINATION) == 0)
      {
@@ -339,7 +339,7 @@ $OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
      }
   else
      {
-@@ -5413,7 +5413,7 @@ void HandleIPAddress(char *value)
+@@ -5422,7 +5422,7 @@ void HandleIPAddress(char *value)
  {
   if (strlen(LINKTO) == 0)
      {
@@ -348,7 +348,7 @@ $OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
      }
   else
      {
-@@ -5434,19 +5434,19 @@ if (strlen(CURRENTOBJECT) != 0)
+@@ -5443,19 +5443,19 @@ if (strlen(CURRENTOBJECT) != 0)
   
  if (strcmp("ones",value) == 0)
     {
@@ -371,7 +371,7 @@ $OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
     return;
     }
  
-@@ -5459,6 +5459,7 @@ void AppendToActionSequence (char *actio
+@@ -5468,6 +5468,7 @@ void AppendToActionSequence (char *actio
  
  { int j = 0;
    char *sp,cbuff[CF_BUFSIZE],actiontxt[CF_BUFSIZE];
@@ -379,7 +379,7 @@ $OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
  
  Debug1("Installing item (%s) in the action sequence list\n",action);
  
-@@ -5490,8 +5491,10 @@ while (*sp != '\0')
+@@ -5499,8 +5500,10 @@ while (*sp != '\0')
   
     if (IsHardClass(cbuff))
        {
@@ -392,7 +392,7 @@ $OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
        yyerror(tmp);
        free(tmp);
        yyerror("You cannot add a reserved class!");
-@@ -5500,7 +5503,7 @@ while (*sp != '\0')
+@@ -5509,7 +5512,7 @@ while (*sp != '\0')
   
     if (j == 1)
        {
@@ -401,7 +401,7 @@ $OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
        continue;
        }
     else if (!IsSpecialClass(cbuff))
-@@ -5527,7 +5530,7 @@ if (isalpha((int)user[0]))
+@@ -5536,7 +5539,7 @@ if (isalpha((int)user[0]))
        return;
        }
  
@@ -410,7 +410,7 @@ $OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
     AppendItem(&VACCESSLIST,id,NULL);
     }
  else
-@@ -5625,7 +5628,7 @@ void HandleServer(char *value)
+@@ -5634,7 +5637,7 @@ void HandleServer(char *value)
  
  {
  Debug("Server in copy set to : %s\n",value);
@@ -419,7 +419,7 @@ $OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
  }
  
  /*******************************************************************/
-@@ -5647,7 +5650,7 @@ if (strlen(value) > CF_BUFSIZE)
+@@ -5656,7 +5659,7 @@ if (strlen(value) > CF_BUFSIZE)
     yyerror(OUTPUT);
     }
  */
@@ -428,7 +428,7 @@ $OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
  
  for (sp = value; *sp != '\0'; sp++)
     {
-@@ -5677,7 +5680,7 @@ if (strlen(value) > CF_BUFSIZE)
+@@ -5686,7 +5689,7 @@ if (strlen(value) > CF_BUFSIZE)
     yyerror("class list too long - can't handle it!");
     }
  
@@ -437,7 +437,7 @@ $OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
  
  for (sp = value; *sp != '\0'; sp++)
     {
-@@ -5707,7 +5710,7 @@ if (strlen(value) > CF_BUFSIZE)
+@@ -5716,7 +5719,7 @@ if (strlen(value) > CF_BUFSIZE)
     yyerror("class list too long - can't handle it!");
     }
  
@@ -446,7 +446,7 @@ $OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
  
  for (sp = value; *sp != '\0'; sp++)
     {
-@@ -6320,8 +6323,8 @@ switch(GetCommAttribute(attribute))
+@@ -6329,8 +6332,8 @@ switch(GetCommAttribute(attribute))
                  {
                  if (strlen(copyhost)+strlen(VDOMAIN) < CF_MAXVARSIZE-2)
                     {
@@ -457,7 +457,7 @@ $OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
                     }
                  else
                     {
-@@ -6354,6 +6357,7 @@ void PrependTidy(struct TidyPattern **li
+@@ -6363,6 +6366,7 @@ void PrependTidy(struct TidyPattern **li
  
  { struct TidyPattern *tp;
    char *spe = NULL,*sp, buffer[CF_EXPANDSIZE];
@@ -465,7 +465,7 @@ $OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
  
  if ((tp = (struct TidyPattern *)malloc(sizeof(struct TidyPattern))) == NULL)
     {
-@@ -6383,10 +6387,14 @@ if ((tp->elsedef = strdup(buffer)) == NU
+@@ -6392,10 +6396,14 @@ if ((tp->elsedef = strdup(buffer)) == NU
  AddInstallable(tp->defines);
  AddInstallable(tp->elsedef); 
   
@@ -483,7 +483,7 @@ $OpenBSD: patch-src_install_c,v 1.4 2005/07/21 15:16:47 aanriot Exp $
     }
  
  if (travlinks == '?')
-@@ -6412,7 +6420,7 @@ tp->rmdirs =tidydirs;
+@@ -6421,7 +6429,7 @@ tp->rmdirs =tidydirs;
  
  if (classes != NULL)
     {

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cfagent_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
---- src/cfagent.c.orig	Thu Apr  7 15:29:49 2005
-+++ src/cfagent.c	Fri Jul 15 12:24:00 2005
-@@ -206,7 +206,7 @@ void Initialize(int argc,char *argv[])
+$OpenBSD: patch-src_cfagent_c,v 1.5 2005/10/27 21:47:28 sturm Exp $
+--- src/cfagent.c.orig	Wed Sep 21 16:06:14 2005
++++ src/cfagent.c	Fri Oct 21 16:35:54 2005
+@@ -205,7 +205,7 @@ void Initialize(int argc,char *argv[])
    unsigned char s[16];
    char ebuff[CF_EXPANDSIZE];
    
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_cfagent_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  
  PreLockState();
  
-@@ -219,7 +219,7 @@ VMAILSERVER[0] = '\0';
+@@ -218,7 +218,7 @@ VMAILSERVER[0] = '\0';
  ALLCLASSBUFFER[0] = '\0';
  VREPOSITORY = strdup("\0");
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_cfagent_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  METHODREPLYTO[0] = '\0';
  METHODFOR[0] = '\0';
   
-@@ -227,8 +227,8 @@ METHODFOR[0] = '\0';
+@@ -226,8 +226,8 @@ METHODFOR[0] = '\0';
  re_syntax_options |= RE_INTERVALS;
  #endif
   
@@ -30,7 +30,7 @@ $OpenBSD: patch-src_cfagent_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  
  IDClasses();
   
-@@ -271,27 +271,28 @@ for (i = 1; i < argc; i++)
+@@ -270,27 +270,28 @@ for (i = 1; i < argc; i++)
  
   /* XXX Initialize workdir for non privileged users */
  
@@ -65,7 +65,7 @@ $OpenBSD: patch-src_cfagent_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
   
   OpenSSL_add_all_algorithms();
   ERR_load_crypto_strings();
-@@ -324,8 +325,8 @@ if (NOPRECONFIG)
+@@ -323,8 +324,8 @@ if (NOPRECONFIG)
     return;
     }
  
@@ -76,7 +76,7 @@ $OpenBSD: patch-src_cfagent_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
   
  if ((sp=getenv(CF_INPUTSVAR)) != NULL)
     {
-@@ -618,8 +619,8 @@ if (strlen(ebuff) != 0)
+@@ -617,8 +618,8 @@ if (strlen(ebuff) != 0)
     }
  else
     {
@@ -87,7 +87,7 @@ $OpenBSD: patch-src_cfagent_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     }
  
  p2 = SortItemListNames(VHEAP);
-@@ -766,7 +767,7 @@ if (VACTIONSEQ == NULL)
+@@ -765,7 +766,7 @@ if (VACTIONSEQ == NULL)
     Warning("perhaps cfagent.conf/update.conf have not yet been set up?");
     }
  
@@ -96,7 +96,7 @@ $OpenBSD: patch-src_cfagent_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
  
  if (VACCESSLIST != NULL && !IsItemIn(VACCESSLIST,id))
     {
-@@ -921,7 +922,7 @@ if (OptionIs(CONTEXTID,"DryRun",true))
+@@ -920,7 +921,7 @@ if (OptionIs(CONTEXTID,"DryRun",true))
  
  if (GetMacroValue(CONTEXTID,"BinaryPaddingChar"))
     {
@@ -105,16 +105,7 @@ $OpenBSD: patch-src_cfagent_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
     
     if (ebuff[0] == '\\')
        {
-@@ -1106,7 +1107,7 @@ if ((tloc = time((time_t *)NULL)) == -1)
- 
- CFSTARTTIME = tloc;
- 
--snprintf(vbuff,CF_BUFSIZE,"%s",ctime(&tloc));
-+snprintf(vbuff,CF_MAXVARSIZE,"%s",ctime(&tloc));
- 
- Verbose("Reference time set to %s\n",ctime(&tloc));
- 
-@@ -1491,7 +1492,7 @@ while (*sp != '\0')
+@@ -1520,7 +1521,7 @@ while (*sp != '\0')
        {
        VIFELAPSED = VDEFAULTIFELAPSED;
        VEXPIREAFTER = VDEFAULTEXPIREAFTER;
@@ -123,7 +114,7 @@ $OpenBSD: patch-src_cfagent_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
        continue;
        }
     else
-@@ -1926,8 +1927,8 @@ for (ip = VHEAP; ip != NULL; ip=ip->next
+@@ -1861,8 +1862,8 @@ for (ip = VHEAP; ip != NULL; ip=ip->next
        else
           {
           size++; /* Allow for : separator */
@@ -134,7 +125,7 @@ $OpenBSD: patch-src_cfagent_c,v 1.4 2005/07/21 15:16:46 aanriot Exp $
           }
  
        fprintf(fp,"%s\n",ip->name);
-@@ -1946,8 +1947,8 @@ for (ip = VHEAP; ip != NULL; ip=ip->next
+@@ -1881,8 +1882,8 @@ for (ip = VHEAP; ip != NULL; ip=ip->next
        else
           {
           size++; /* Allow for : separator */
