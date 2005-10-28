@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_Makefile_in,v 1.1 2005/10/28 17:44:12 sturm Exp $
+--- plugins/Makefile.in.orig	Fri Oct 28 18:58:58 2005
++++ plugins/Makefile.in	Fri Oct 28 18:59:09 2005
+@@ -977,7 +977,7 @@ $(check_tcp_programs): check_tcp
+ install-exec-hook:
+ 	cd $(DESTDIR)$(libexecdir) && \
+ 	for i in $(check_tcp_programs) ; do rm -f $$i; ln -s check_tcp $$i ; done ;\
+-	if [ -x check_ldaps ] ; then rm -f check_ldaps ; ln -s check_ldap check_ldaps ; fi
++	if [ -x check_ldap ] ; then rm -f check_ldaps ; ln -s check_ldap check_ldaps ; fi
+ 
+ clean-local:
+ 	rm -f $(check_tcp_programs)

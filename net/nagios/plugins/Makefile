@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/09/16 09:51:27 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2005/10/28 17:44:12 sturm Exp $
 
 COMMENT=	"nagios base plugins"
 COMMENT-fping=	"fping plugin"
@@ -10,17 +10,17 @@ COMMENT-pgsql=	"postgresql plugin"
 COMMENT-samba=	"samba plugin"
 COMMENT-snmp=	"plugins using snmp"
 
-V=		1.4.1
+V=		1.4.2
 DISTNAME=	nagios-plugins-${V}
-PKGNAME=	nagios-plugins-${V}p1
-PKGNAME-fping=	nagios-plugins-fping-${V}p0
-PKGNAME-game=	nagios-plugins-game-${V}p0
-PKGNAME-ldap=	nagios-plugins-ldap-${V}p0
-PKGNAME-mysql=	nagios-plugins-mysql-${V}p0
-PKGNAME-ntp=	nagios-plugins-ntp-${V}p0
-PKGNAME-pgsql=	nagios-plugins-pgsql-${V}p0
-PKGNAME-samba=	nagios-plugins-samba-${V}p0
-PKGNAME-snmp=	nagios-plugins-snmp-${V}p0
+PKGNAME=	nagios-plugins-${V}
+PKGNAME-fping=	nagios-plugins-fping-${V}
+PKGNAME-game=	nagios-plugins-game-${V}
+PKGNAME-ldap=	nagios-plugins-ldap-${V}
+PKGNAME-mysql=	nagios-plugins-mysql-${V}
+PKGNAME-ntp=	nagios-plugins-ntp-${V}
+PKGNAME-pgsql=	nagios-plugins-pgsql-${V}
+PKGNAME-samba=	nagios-plugins-samba-${V}
+PKGNAME-snmp=	nagios-plugins-snmp-${V}
 CATEGORIES=	net
 
 HOMEPAGE=	http://nagiosplug.sourceforge.net/
