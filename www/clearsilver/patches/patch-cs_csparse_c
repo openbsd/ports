@@ -1,16 +1,27 @@
-$OpenBSD: patch-cs_csparse_c,v 1.1 2005/06/04 11:56:50 sturm Exp $
---- cs/csparse.c.orig	Wed Jun  1 23:46:41 2005
-+++ cs/csparse.c	Wed Jun  1 23:45:35 2005
-@@ -3359,9 +3359,9 @@ static NEOERR * _builtin_str_slice (CSPA
-   NEOERR *err;
-   char *s = NULL;
-   char *slice;
--  int b = 0;
--  int e = 0;
--  int len;
-+  long int b = 0;
-+  long int e = 0;
-+  size_t len;
+$OpenBSD: patch-cs_csparse_c,v 1.2 2005/10/28 12:48:49 markus Exp $
+--- cs/csparse.c.orig	Tue Oct 25 10:52:42 2005
++++ cs/csparse.c	Tue Oct 25 10:55:12 2005
+@@ -1667,6 +1667,7 @@ static NEOERR *eval_expr_string(CSPARSE 
+ {
+   char *s1, *s2;
+   int out;
++  size_t need;
  
-   result->op_type = CS_TYPE_STRING;
-   result->s = "";
+   result->op_type = CS_TYPE_NUM;
+   s1 = arg_eval (parse, arg1);
+@@ -1741,11 +1742,12 @@ static NEOERR *eval_expr_string(CSPARSE 
+       case CS_OP_ADD:
+ 	result->op_type = CS_TYPE_STRING;
+ 	result->alloc = 1;
+-	result->s = (char *) calloc ((strlen(s1) + strlen(s2) + 1), sizeof(char));
++	need = strlen(s1) + strlen(s2) + 1;
++	result->s = (char *) calloc (need, sizeof(char));
+ 	if (result->s == NULL)
+ 	  return nerr_raise (NERR_NOMEM, "Unable to allocate memory to concatenate strings in expression: %s + %s", s1, s2);
+-	strcpy(result->s, s1);
+-	strcat(result->s, s2);
++	strlcpy(result->s, s1, need);
++	strlcat(result->s, s2, need);
+ 	break;
+       default:
+ 	ne_warn ("Unsupported op %s in eval_expr_string", expand_token_type(op, 1));

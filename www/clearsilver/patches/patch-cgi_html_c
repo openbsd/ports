@@ -1,0 +1,12 @@
+$OpenBSD: patch-cgi_html_c,v 1.1 2005/10/28 12:48:49 markus Exp $
+--- cgi/html.c.orig	Tue Oct 25 10:49:12 2005
++++ cgi/html.c	Tue Oct 25 10:50:27 2005
+@@ -390,7 +390,7 @@ static NEOERR *split_and_convert (unsign
+ 		  "Unable to allocate memory to convert url");
+ 	      break;
+ 	    }
+-	    strcpy(url, "http://");
++	    strlcpy(url, "http://", url_len + 1);
+ 	    strncat(url, src + x, parts[i].end - x - suffix);
+ 	  }
+ 	  else

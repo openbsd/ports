@@ -1,0 +1,12 @@
+$OpenBSD: patch-util_rcfs_h,v 1.1 2005/10/28 12:48:49 markus Exp $
+--- util/rcfs.h.orig	Tue Oct 25 10:28:03 2005
++++ util/rcfs.h	Tue Oct 25 10:28:11 2005
+@@ -21,7 +21,7 @@ NEOERR * rcfs_init (RCFS **rcfs);
+ NEOERR * rcfs_destroy (RCFS **rcfs);
+ 
+ NEOERR * rcfs_load (char *path, int version, char **data);
+-NEOERR * rcfs_save (char *path, char *data, char *user, char *log);
++NEOERR * rcfs_save (char *path, char *data, char *user, char *neolog);
+ NEOERR * rcfs_lock (char *path, int *lock);
+ void rcfs_unlock (int lock);
+ NEOERR * rcfs_meta_load (char *path, HDF **meta);

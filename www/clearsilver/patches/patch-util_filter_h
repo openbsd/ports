@@ -1,0 +1,22 @@
+$OpenBSD: patch-util_filter_h,v 1.1 2005/10/28 12:48:49 markus Exp $
+--- util/filter.h.orig	Tue Oct 25 10:46:52 2005
++++ util/filter.h	Tue Oct 25 10:47:35 2005
+@@ -75,15 +75,15 @@ NEOERR *filter_create_fd(char *cmd, int 
+  *              want the stdin pipe
+  *        out -> pointer to return the stdout pipe, or NULL if you don't
+  *               want the stdout pipe
+- *        err -> pointer to return the stderr pipe, or NULL if you don't
++ *        ferr -> pointer to return the stderr pipe, or NULL if you don't
+  *                 want the stderr pipe
+  * Output: in -> the stdin FILE of the sub process
+  *         out -> the stdout FILE of the sub process
+- *         err -> the stderr FILE of the sub process
++ *         ferr -> the stderr FILE of the sub process
+  *         pid -> the pid of the sub process
+  * Returns: NERR_SYSTEM, NERR_IO
+  */
+-NEOERR *filter_create_fp(char *cmd, FILE **in, FILE **out, FILE **err, pid_t *pid);
++NEOERR *filter_create_fp(char *cmd, FILE **in, FILE **out, FILE **ferr, pid_t *pid);
+ 
+ __END_DECLS
+ 

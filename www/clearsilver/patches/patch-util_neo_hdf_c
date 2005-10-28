@@ -1,0 +1,15 @@
+$OpenBSD: patch-util_neo_hdf_c,v 1.1 2005/10/28 12:48:49 markus Exp $
+--- util/neo_hdf.c.orig	Tue Oct 25 11:07:12 2005
++++ util/neo_hdf.c	Tue Oct 25 11:07:52 2005
+@@ -1146,8 +1146,9 @@ static NEOERR* hdf_dump_cb(HDF *hdf, cha
+     {
+       if (prefix && (dtype == DUMP_TYPE_DOTTED))
+       {
+-	p = (char *) malloc (strlen(hdf->name) + strlen(prefix) + 2);
+-	sprintf (p, "%s.%s", prefix, hdf->name);
++	size_t need = strlen(hdf->name) + strlen(prefix) + 2;
++	p = (char *) malloc (need);
++	snprintf (p, need, "%s.%s", prefix, hdf->name);
+ 	err = hdf_dump_cb (hdf, p, dtype, lvl+1, rock, dump_cbf);
+ 	free(p);
+       }
