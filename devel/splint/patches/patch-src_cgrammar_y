@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_cgrammar_y,v 1.1 2005/10/28 19:43:32 espie Exp $
+--- src/cgrammar.y.orig	Fri Oct 28 21:30:19 2005
++++ src/cgrammar.y	Fri Oct 28 21:30:34 2005
+@@ -218,7 +218,7 @@ extern void yyerror (char *);
+ %type <entry> endIter 
+ 
+ %type <funcclauselist> functionClauses functionClausesPlain
+-%type <funcclause> functionClause functionClause functionClausePlain
++%type <funcclause> functionClause functionClausePlain
+ 
+ %type <globsclause> globalsClause globalsClausePlain
+ %type <modsclause> modifiesClause modifiesClausePlain nomodsClause

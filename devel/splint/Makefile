@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2004/11/24 00:11:04 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2005/10/28 19:43:32 espie Exp $
 
 COMMENT=	"advanced lint: statically check C programs"
 DISTNAME=	splint-3.1.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.splint.org/
