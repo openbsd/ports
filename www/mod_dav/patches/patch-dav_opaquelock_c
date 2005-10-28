@@ -1,0 +1,17 @@
+$OpenBSD: patch-dav_opaquelock_c,v 1.1 2005/10/28 01:04:53 brad Exp $
+--- dav_opaquelock.c.orig	Thu Oct 27 20:54:30 2005
++++ dav_opaquelock.c	Thu Oct 27 20:55:22 2005
+@@ -116,10 +116,10 @@ const char *dav_format_opaquelocktoken(p
+ }
+ 
+ /* convert a pair of hex digits to an integer value [0,255] */
+-static int dav_parse_hexpair(const char *s)
++static unsigned int dav_parse_hexpair(const char *s)
+ {
+-    int result;
+-    int temp;
++    unsigned int result;
++    unsigned int temp;
+ 
+ #ifdef CHARSET_EBCDIC
+     ebcdic2ascii(s, s, 2);

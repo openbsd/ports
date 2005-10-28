@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/02/08 12:39:57 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2005/10/28 01:04:53 brad Exp $
 
 COMMENT=	"class 1 and 2 DAV server for the Apache webserver"
 
@@ -6,8 +6,8 @@ COMMENT=	"class 1 and 2 DAV server for the Apache webserver"
 # and has Apache that supports DSO's.
 SHARED_ONLY=	Yes
 
-PKGNAME=	mod_dav-1.0.3p0
 DISTNAME=	mod_dav-1.0.3-1.3.6
+PKGNAME=	mod_dav-1.0.3p1
 CATEGORIES=	www
 
 MASTER_SITES=	http://www.webdav.org/mod_dav/
