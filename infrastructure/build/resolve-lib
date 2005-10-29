@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: resolve-lib,v 1.8 2005/10/10 19:43:33 espie Exp $
+# $OpenBSD: resolve-lib,v 1.9 2005/10/29 12:12:39 espie Exp $
 #
 # Copyright (c) 2001, 2005 Marc Espie <espie@openbsd.org>
 #
@@ -162,7 +162,7 @@ sub solve_spec
 	if ($found_goodshared) {
 		print $req->{prefix},"$libname.$bestmajor.$bestminor\n";
 	} elsif ($found_shared) {
-		print STDERR "Error: bad shared library\n";
+		print STDERR "Error: bad shared library $file ($spec)\n";
 		$error = 1;
 	} elsif ($found_unshared) {
 		print $req->{prefix},"$libname.a\n";
