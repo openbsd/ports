@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2005/10/17 14:11:01 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2005/10/29 12:00:17 sturm Exp $
 
 LANGS=  af ar bg bn br bs ca cs cy da de el en_GB eo es et eu fi fr fy ga he hi \
 	hsb hu is it ja lt mk nb nds nl nn pa pl pt pt_BR ro ru se sk sl \
@@ -12,11 +12,12 @@ FLAVOR?=fr
 SUBST_VARS=I C
 .for l in ${LANGS}
 FLAVORS+=$l
-.  if ${FLAVOR:M$l}
+.  if ${FLAVOR:L:M${l:L}}
 DISTFILES=kde-i18n-$l-${VERSION}.tar.bz2
 WRKDIST=${WRKDIR}/kde-i18n-$l-${VERSION}
 FULLPKGNAME=kde-i18n-$l-${VERSION}
 COMMENT= "$l translations for KDE"
+PLIST=${PKGDIR}/PLIST-$l
 DOC=share/doc/HTML/$l/
 LOC=share/locale/$l/LC_MESSAGES/
 .  endif
@@ -42,7 +43,6 @@ FAKE_FLAGS=DESTDIR=${WRKINST} MEINPROC=
 CONFIGURE_ARGS+=-C
 
 DESCR=${PKGDIR}/DESCR
-PLIST=${PKGDIR}/PLIST-${FLAVOR}
 MODKDE_NODEBUG=Yes
 
 .include <bsd.port.mk>
