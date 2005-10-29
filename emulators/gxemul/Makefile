@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2005/10/12 19:24:28 grange Exp $
+# $OpenBSD: Makefile,v 1.5 2005/10/29 19:33:43 grange Exp $
 
 COMMENT=		"MIPS (and other) machines emulator"
-DISTNAME=		gxemul-0.3.6.1
+DISTNAME=		gxemul-0.3.6.2
 CATEGORIES=		emulators
 HOMEPAGE=		http://gavare.se/gxemul/
 MAINTAINER=		Alexander Yurchenko <grange@openbsd.org>
