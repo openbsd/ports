@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: resolve-lib,v 1.10 2005/10/29 12:14:26 espie Exp $
+# $OpenBSD: resolve-lib,v 1.11 2005/10/29 12:27:31 espie Exp $
 #
 # Copyright (c) 2001, 2005 Marc Espie <espie@openbsd.org>
 #
@@ -128,7 +128,7 @@ sub solve_spec
 			my $minor = $2;
 			if ($req->{strict}) {
 				if ($major > $req->{major}) {
-					print STDERR "Error: strict library too high\n";
+					print STDERR "Error: found library has too high a version $major: $spec\n";
 					$error = 1;
 					last;
 				}
