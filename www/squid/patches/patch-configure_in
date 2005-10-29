@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.17 2005/09/25 17:03:32 brad Exp $
---- configure.in.orig	Fri Sep 16 18:11:37 2005
-+++ configure.in	Mon Sep 19 11:02:26 2005
-@@ -1733,18 +1733,6 @@ dnl during compile.
+$OpenBSD: patch-configure_in,v 1.18 2005/10/29 23:26:39 brad Exp $
+--- configure.in.orig	Sat Oct 22 05:56:01 2005
++++ configure.in	Tue Oct 25 21:27:31 2005
+@@ -1735,18 +1735,6 @@ dnl during compile.
  		;;
  esac
  

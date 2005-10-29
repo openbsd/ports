@@ -1,7 +1,7 @@
-$OpenBSD: patch-errors_Makefile_in,v 1.6 2005/05/25 02:27:13 brad Exp $
---- errors/Makefile.in.orig	Fri Mar 18 19:55:41 2005
-+++ errors/Makefile.in	Wed May 18 18:10:12 2005
-@@ -119,7 +119,7 @@ am__quote = @am__quote@
+$OpenBSD: patch-errors_Makefile_in,v 1.7 2005/10/29 23:26:39 brad Exp $
+--- errors/Makefile.in.orig	Wed Sep 28 16:57:16 2005
++++ errors/Makefile.in	Tue Oct 25 21:27:32 2005
+@@ -121,7 +121,7 @@ am__quote = @am__quote@
  install_sh = @install_sh@
  makesnmplib = @makesnmplib@
  

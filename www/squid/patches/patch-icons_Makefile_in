@@ -1,7 +1,7 @@
-$OpenBSD: patch-icons_Makefile_in,v 1.6 2005/05/25 02:27:13 brad Exp $
---- icons/Makefile.in.orig	Fri Mar 18 19:55:51 2005
-+++ icons/Makefile.in	Wed May 18 18:10:12 2005
-@@ -147,7 +147,7 @@ ICON2 = anthony-bomb.gif \
+$OpenBSD: patch-icons_Makefile_in,v 1.7 2005/10/29 23:26:39 brad Exp $
+--- icons/Makefile.in.orig	Wed Sep 28 16:57:20 2005
++++ icons/Makefile.in	Tue Oct 25 21:27:32 2005
+@@ -149,7 +149,7 @@ ICON2 = anthony-bomb.gif \
  		anthony-xpm.gif
  
  
