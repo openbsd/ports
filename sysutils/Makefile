@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2005/10/26 10:06:39 bernd Exp $
+# $OpenBSD: Makefile,v 1.98 2005/10/29 09:47:52 espie Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -65,6 +65,7 @@
      SUBDIR += stat
      SUBDIR += stow
      SUBDIR += stress
+     SUBDIR += superscript
      SUBDIR += symon
      SUBDIR += sysgen
      SUBDIR += syslog-ng
