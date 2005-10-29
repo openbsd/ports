@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/29 09:45:49 espie Exp $
+bin/superscript
+@man man/man1/superscript.1

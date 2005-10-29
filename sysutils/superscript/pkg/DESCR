@@ -1,0 +1,4 @@
+superscript is a superset of the script(1) command, containing
+some useful options such as -p. Instead of first logging a
+session to a file and then analysing it, it becomes possible
+to log the commands in real time.
