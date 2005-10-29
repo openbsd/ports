@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/10/22 12:37:32 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/10/29 12:12:04 alek Exp $
 
 COMMENT=	"CSS editor"
 
 DISTNAME=	cssed-0.3.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://cssed.sourceforge.net/
@@ -29,7 +30,7 @@ LIB_DEPENDS=	gtk-x11-2.0.600.10,gdk_pixbuf-2.0.600.0,gdk-x11-2.0.600.0::x11/gtk+
 MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=--with-help-menus
 
