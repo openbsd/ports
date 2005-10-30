@@ -1,37 +1,16 @@
-$OpenBSD: patch-configure,v 1.1 2003/05/13 00:12:37 naddy Exp $
---- configure.orig	Mon May 12 16:37:29 2003
-+++ configure	Mon May 12 16:42:29 2003
-@@ -9649,7 +9649,6 @@ else
- #include "confdefs.h"
- #include <libintl.h>
- extern int _nl_msg_cat_cntr;
--extern int *_nl_domain_bindings;
- extern
- #ifdef __cplusplus
- "C"
-@@ -9665,7 +9664,7 @@ int
- main ()
- {
- bindtextdomain ("", "");
--return (int) gettext ("") + (int) ngettext ("", "", 0) + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
-+return (int) gettext ("") + (int) ngettext ("", "", 0) + _nl_msg_cat_cntr + *_nl_expand_alias (0)
-   ;
-   return 0;
- }
-@@ -9696,7 +9695,6 @@ rm -f conftest.$ac_objext conftest$ac_ex
- #include "confdefs.h"
- #include <libintl.h>
- extern int _nl_msg_cat_cntr;
--extern int *_nl_domain_bindings;
- extern
- #ifdef __cplusplus
- "C"
-@@ -9712,7 +9710,7 @@ int
- main ()
- {
- bindtextdomain ("", "");
--return (int) gettext ("") + (int) ngettext ("", "", 0) + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
-+return (int) gettext ("") + (int) ngettext ("", "", 0) + _nl_msg_cat_cntr + *_nl_expand_alias (0)
-   ;
-   return 0;
- }
+$OpenBSD: patch-configure,v 1.2 2005/10/30 18:07:35 naddy Exp $
+--- configure.orig	Thu Oct 27 20:27:44 2005
++++ configure	Thu Oct 27 20:28:03 2005
+@@ -15190,10 +15190,10 @@ s,@host_cpu@,$host_cpu,;t t
+ s,@host_vendor@,$host_vendor,;t t
+ s,@host_os@,$host_os,;t t
+ s,@INTL_MACOSX_LIBS@,$INTL_MACOSX_LIBS,;t t
+-s,@LIBICONV@,$LIBICONV,;t t
++s,@LIBICONV@,$LTLIBICONV,;t t
+ s,@LTLIBICONV@,$LTLIBICONV,;t t
+ s,@INTLLIBS@,$INTLLIBS,;t t
+-s,@LIBINTL@,$LIBINTL,;t t
++s,@LIBINTL@,$LTLIBINTL,;t t
+ s,@LTLIBINTL@,$LTLIBINTL,;t t
+ s,@POSUB@,$POSUB,;t t
+ s,@BISON_LOCALEDIR@,$BISON_LOCALEDIR,;t t
