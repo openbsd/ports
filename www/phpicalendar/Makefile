@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2005/10/11 05:53:47 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2005/10/30 10:57:40 xsa Exp $
 
 COMMENT=	"web-based iCal file parser"
 
-V=		2.0.1
+V=		2.1
 DISTNAME=	phpicalendar-${V}
 CATEGORIES=	www
 
