@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2005/10/02 22:12:38 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2005/10/30 00:10:41 fgsch Exp $
 
 COMMENT=	"Multiple-image Network Graphics (MNG) reference library"
 
@@ -14,8 +14,6 @@ HOMEPAGE=	http://www.libmng.com/
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		lcms::graphics/lcms
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

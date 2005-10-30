@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2004/11/21 18:01:03 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2005/10/30 00:10:39 fgsch Exp $
 # Uses pthreads
 
 COMMENT=	"performance test of sequential file I/O"
@@ -10,8 +10,6 @@ MASTER_SITES=	http://www.iozone.org/src/current/
 EXTRACT_SUFX=	.tar
 
 HOMEPAGE=	http://www.iozone.org/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"incomplete/bad license"
 PERMIT_PACKAGE_FTP=	"incomplete/bad license"

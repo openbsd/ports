@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2005/04/09 12:15:19 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2005/10/30 00:10:40 fgsch Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,8 +10,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gwenview/}
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://gwenview.sourceforge.net/home/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

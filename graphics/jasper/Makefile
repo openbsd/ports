@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/30 01:06:36 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2005/10/30 00:10:40 fgsch Exp $
 
 COMMENT=	"reference implementation of JPEG-2000"
 
@@ -8,8 +8,6 @@ MASTER_SITES=	${HOMEPAGE}software/
 EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://www.ece.uvic.ca/~mdadams/jasper/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

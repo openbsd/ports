@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2005/05/16 23:00:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2005/10/30 00:10:39 fgsch Exp $
 
 COMMENT=	"block-sorting file compressor, unencumbered"
 
@@ -8,8 +8,6 @@ CATEGORIES=	archivers
 MASTER_SITES=	${HOMEPAGE}${VERSION}/
 
 HOMEPAGE=	http://www.bzip.org/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

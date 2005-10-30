@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/11/30 01:06:39 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2005/10/30 00:10:41 fgsch Exp $
 # $FreeBSD: Makefile,v 1.1 1999/12/22 14:53:53 jedgar Exp $
 
 COMMENT=	"optimizer for PNG files"
@@ -9,8 +9,6 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pmt/}
 
 HOMEPAGE=	http://pmt.sourceforge.net/pngcrush/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

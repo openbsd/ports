@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/30 01:06:37 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/10/30 00:10:41 fgsch Exp $
 
 COMMENT=	"tools and library routines for working with GIF images"
 
@@ -8,8 +8,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libungif/}
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://sourceforge.net/projects/libungif/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

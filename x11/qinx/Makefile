@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/19 20:18:55 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2005/10/30 00:10:42 fgsch Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -9,8 +9,6 @@ CATEGORIES=	x11 x11/kde
 MASTER_SITES=	http://www.usermode.org/code/
 
 HOMEPAGE=	http://www.usermode.org/code.html
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

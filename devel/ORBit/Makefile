@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2005/01/27 09:52:05 alek Exp $
+# $OpenBSD: Makefile,v 1.37 2005/10/30 00:10:39 fgsch Exp $
 
 COMMENT=	"high-performance CORBA ORB with support for the C language"
 
@@ -16,8 +16,6 @@ PATCH_LIST=		patch-* sup-alpha-*
 
 LIB_DEPENDS=	glib.1.2,gmodule.1.2::devel/glib \
 		popt::devel/popt
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # GPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes

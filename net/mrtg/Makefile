@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2005/10/24 05:12:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.49 2005/10/30 00:10:42 fgsch Exp $
 
 COMMENT=	"multi-router traffic grapher"
 
@@ -14,8 +14,6 @@ LIB_DEPENDS=	gd.18::graphics/gd
 
 RUN_DEPENDS=	::net/p5-SNMP_Session \
 		::textproc/p5-Pod-Simple
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 MODULES=	converters/libiconv
 

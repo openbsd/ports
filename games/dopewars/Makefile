@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2005/02/13 18:31:15 alek Exp $
+# $OpenBSD: Makefile,v 1.29 2005/10/30 00:10:40 fgsch Exp $
 
 COMMENT=	"game where you deal drugs on the streets of NY"
 
@@ -8,8 +8,6 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dopewars/}
 
 HOMEPAGE=	http://dopewars.sourceforge.net/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

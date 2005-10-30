@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/11/21 22:53:59 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2005/10/30 00:10:39 fgsch Exp $
 
 COMMENT=	"library providing routines to access Microsoft Word/Excel files"
 
@@ -8,8 +8,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wvware/}
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://wvware.sourceforge.net/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

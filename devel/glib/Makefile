@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2005/04/25 16:29:19 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2005/10/30 00:10:40 fgsch Exp $
 # Uses pthreads
 
 COMMENT=	"useful routines for C programming"
@@ -9,8 +9,6 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/glib/1.2/}
 
 HOMEPAGE=	http://www.gtk.org/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

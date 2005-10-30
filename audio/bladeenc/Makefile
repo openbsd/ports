@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2004/11/21 17:51:44 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2005/10/30 00:10:39 fgsch Exp $
 
 COMMENT=	"high-quality MP3 encoder"
 
@@ -10,8 +10,6 @@ MASTER_SITES=	http://bladeenc.mp3.no/source/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
 HOMEPAGE=	http://bladeenc.mp3.no/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	"MP3 patent, http://mp3licensing.com/royalty/swenc.html"

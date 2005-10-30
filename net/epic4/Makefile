@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2005/07/24 00:14:28 brad Exp $
+# $OpenBSD: Makefile,v 1.58 2005/10/30 00:10:42 fgsch Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 COMMENT=	"(E)nhanced (P)rogrammable (I)RC-II (C)lient"
@@ -11,8 +11,6 @@ MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/
 DISTFILES=	epic4-${VERSION}.tar.bz2 epic4-help-${HELP_DATE}.tar.gz
 
 HOMEPAGE=	http://www.epicsol.org/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/06/23 17:46:52 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2005/10/30 00:10:40 fgsch Exp $
 
 COMMENT=	"image manipulation library"
 
@@ -7,8 +7,6 @@ PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.enlightenment.org/pages/imlib2.html
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

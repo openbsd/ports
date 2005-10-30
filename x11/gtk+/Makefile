@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2005/05/11 19:18:42 alek Exp $
+# $OpenBSD: Makefile,v 1.60 2005/10/30 00:10:42 fgsch Exp $
 
 COMMENT=	"General Toolkit for X11 GUI"
 
@@ -11,8 +11,6 @@ HOMEPAGE=	http://www.gtk.org/
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	glib.1.2,gmodule.1.2::devel/glib
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 FAKE=			all
 # GPL

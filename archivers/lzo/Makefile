@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2005/04/17 19:26:20 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2005/10/30 00:10:39 fgsch Exp $
 
 COMMENT=	"portable speedy lossless data compression library"
 
@@ -8,8 +8,6 @@ CATEGORIES=	archivers devel
 MASTER_SITES=	${HOMEPAGE}download/
 
 HOMEPAGE=	http://www.oberhumer.com/opensource/lzo/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2004/11/30 01:06:36 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2005/10/30 00:10:41 fgsch Exp $
 
 COMMENT=	"lossless image compression library"
 
 DISTNAME=	jbigkit-1.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cl.cam.ac.uk/~mgk25/download/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2005/10/01 23:44:34 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2005/10/30 00:10:42 fgsch Exp $
 
 COMMENT=	"small, fast & usable window manager"
 
@@ -8,8 +8,6 @@ CATEGORIES=	x11
 MASTER_SITES=	http://icculus.org/openbox/releases/
 
 HOMEPAGE=	http://www.openbox.org/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 MODULES=	devel/gettext
 LIB_DEPENDS+=	glib-2.0.0.0::devel/glib2 \

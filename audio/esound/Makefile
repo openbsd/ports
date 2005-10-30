@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2004/11/21 17:51:44 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2005/10/30 00:10:39 fgsch Exp $
 # $FreeBSD: Makefile,v 1.8 1999/03/09 01:08:46 nectar Exp $
 
 COMMENT=	"sound library for Enlightenment"
@@ -10,8 +10,6 @@ MASTER_SITES=	${MASTER_SITE_GNOME:=sources/esound/0.2/}
 HOMEPAGE=	http://www.tux.org/~ricdude/EsounD.html
 
 LIB_DEPENDS=	audiofile::devel/libaudiofile
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # GPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes

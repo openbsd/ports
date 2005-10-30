@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/12/07 00:23:21 alek Exp $
+# $OpenBSD: Makefile,v 1.24 2005/10/30 00:10:42 fgsch Exp $
 # $FreeBSD: Makefile,v 1.2 1999/08/31 02:09:14 peter Exp $
 
 COMMENT=	"XML 1.0 parser written in C"
@@ -8,8 +8,6 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=expat/}
 
 HOMEPAGE=	http://expat.sourceforge.net/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=   Yes

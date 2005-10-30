@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2004/11/30 01:06:36 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2005/10/30 00:10:40 fgsch Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	"image manipulation library for X11"
@@ -15,8 +15,6 @@ LIB_DEPENDS= 	gtk.1.2,gdk.1.2::x11/gtk+ \
 		ungif.5::graphics/libungif \
 		png.2::graphics/png \
 		tiff.35::graphics/tiff
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

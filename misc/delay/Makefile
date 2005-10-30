@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/22 11:48:33 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2005/10/30 00:10:42 fgsch Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1999/03/05 17:07:28 nectar Exp $
 
 COMMENT=	"delay program with feedback to the user"
@@ -8,8 +8,6 @@ CATEGORIES=	misc
 MASTER_SITES=	http://onegeek.org/~tom/software/delay/dl/
 
 HOMEPAGE=	http://onegeek.org/~tom/software/delay/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

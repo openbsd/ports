@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2004/10/30 04:34:09 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2005/10/30 00:10:40 fgsch Exp $
 
 # XXX This will panic any vax
 NOT_FOR_ARCHS=	vax
@@ -10,8 +10,6 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/mm/
 
 HOMEPAGE=	http://www.ossp.org/pkg/lib/mm/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

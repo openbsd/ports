@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2005/07/03 01:28:58 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2005/10/30 00:10:40 fgsch Exp $
 
 COMMENT=	"ascii art library"
 
@@ -7,8 +7,6 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
 
 HOMEPAGE=	http://aa-project.sourceforge.net/aalib/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

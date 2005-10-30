@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2004/12/19 20:18:55 alek Exp $
+# $OpenBSD: Makefile,v 1.67 2005/10/30 00:10:42 fgsch Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=	"C++ X11 GUI toolkit"
@@ -18,8 +18,6 @@ HOMEPAGE=	http://www.trolltech.com/products/qt/
 # for the qt image extension
 BUILD_DEPENDS=	::graphics/jpeg \
 		::graphics/png
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"Restrictive license"
 PERMIT_PACKAGE_FTP=	Yes

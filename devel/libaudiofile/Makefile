@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2004/11/23 21:34:27 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2005/10/30 00:10:40 fgsch Exp $
 
 COMMENT=	"SGI audiofile library clone"
 
@@ -8,8 +8,6 @@ CATEGORIES=	devel audio
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/audiofile/0.2/}
 
 HOMEPAGE=	http://www.68k.org/~michael/audiofile/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # GPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes

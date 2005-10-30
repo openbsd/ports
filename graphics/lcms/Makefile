@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/03/14 08:46:54 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/10/30 00:10:41 fgsch Exp $
 
 COMMENT=	"color management library"
 
@@ -11,8 +11,6 @@ HOMEPAGE=	http://www.littlecms.com/
 
 LIB_DEPENDS+=	jpeg::graphics/jpeg \
 		tiff::graphics/tiff
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

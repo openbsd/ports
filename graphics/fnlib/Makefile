@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/12/14 18:28:57 alek Exp $
+# $OpenBSD: Makefile,v 1.24 2005/10/30 00:10:40 fgsch Exp $
 
 COMMENT=	"color font rendering library for X"
 
@@ -7,8 +7,6 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
 
 LIB_DEPENDS=	Imlib.19::graphics/imlib
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

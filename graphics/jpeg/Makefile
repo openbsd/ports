@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2005/04/17 13:37:42 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2005/10/30 00:10:41 fgsch Exp $
 
 COMMENT=	"IJG's JPEG compression utilities"
 
@@ -7,8 +7,6 @@ PKGNAME=	jpeg-6bp2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.uu.net/graphics/jpeg/ \
 		ftp://ftp.shellhung.org/pub/Mirror/enlightenment/enlightenment/libs/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
