@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2005/10/30 09:27:09 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2005/10/30 10:10:52 espie Exp $
 # losely based on the FreeBSD port
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "vax" || \
     ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc" || \
     ${MACHINE_ARCH} == "sparc64"
-BROKEN=		"hangs at runtime during build process"
+BROKEN=		"segfaults in longjump return while testing continuations"
 .endif
 
 COMMENT=	"scheme r5 interpreter"
