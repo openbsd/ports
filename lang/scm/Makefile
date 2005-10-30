@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2005/02/24 13:20:41 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2005/10/30 09:27:09 espie Exp $
 # losely based on the FreeBSD port
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "vax" || \
@@ -11,7 +11,7 @@ COMMENT=	"scheme r5 interpreter"
 
 CATEGORIES=	lang
 
-V=5d9
+V=5e1
 DISTNAME=	scm$V
 PKGNAME=	scm-$V
 EXTRACT_SUFX=	.zip
@@ -33,7 +33,7 @@ WANTLIB=		c curses termcap m readline
 FLAVORS=no_x11
 
 FLAVOR?=
-SCM_DATA=	COPYING Iedline.scm Init5d9.scm Link.scm \
+SCM_DATA=	COPYING Idiffer.scm Iedline.scm Init5e1.scm Link.scm \
 		Macexp.scm Macro.scm Transcen.scm Tscript.scm \
 		build build.scm compile.scm hobbit.scm mkimpcat.scm \
 		r4rstest.scm scmhob.scm \
@@ -61,18 +61,23 @@ WANTLIB+=	X11
 BUILD_DEPENDS=::devel/slib
 RUN_DEPENDS=::devel/slib
 
+FEATURE_LIST=
+.for f in ${FEATURES}
+FEATURE_LIST+=-F $f
+.endfor
+
 pre-build:
 	@echo "srcdir=${WRKSRC}" >${WRKSRC}/srcdir.mk
 
 post-build:
 	cd ${WRKSRC} && ${MAKE_ENV} PATH=${WRKSRC}:${PORTPATH} /bin/sh ./build \
-	    -F '${FEATURES}' \
+	    ${FEATURE_LIST} \
 	    ${OPTIONS} \
 	    -h system \
 	    -o scm \
 	    -s "${PREFIX}/share/scm/"
 	cd ${WRKSRC} && ${MAKE_ENV} PATH=${WRKSRC}:${PORTPATH} /bin/sh ./build \
-	    -F '${FEATURES} sicp' \
+	    ${FEATURE_LIST} -F sicp \
 	    ${OPTIONS} \
 	    -h system \
 	    -o scm-sicp \

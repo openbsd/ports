@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 19:12:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/10/30 09:27:09 espie Exp $
 bin/scm
 bin/scm-sicp
 bin/scmlit
@@ -12,8 +12,9 @@ include/scm/scmhob.h
 @man man/man1/scm.1
 share/scm/
 share/scm/COPYING
+share/scm/Idiffer.scm
 share/scm/Iedline.scm
-share/scm/Init5d9.scm
+share/scm/Init5e1.scm
 share/scm/Link.scm
 share/scm/Macexp.scm
 share/scm/Macro.scm

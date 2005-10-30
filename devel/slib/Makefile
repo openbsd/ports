@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2004/09/14 23:34:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2005/10/30 09:27:08 espie Exp $
 
 COMMENT=	"scheme r5 library"
 
 CATEGORIES=	devel
 
-V=3a1
+V=3a2
 DISTNAME=	slib$V
 PKGNAME=	slib-$V
 EXTRACT_SUFX=	.zip
