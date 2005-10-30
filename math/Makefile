@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2005/10/03 21:43:08 alek Exp $
+# $OpenBSD: Makefile,v 1.48 2005/10/30 11:14:08 espie Exp $
 #
 
      SUBDIR += R
@@ -31,6 +31,7 @@
      SUBDIR += hexcalc
      SUBDIR += hoc
      SUBDIR += kst
+     SUBDIR += jacal
 #    SUBDIR += lapack
 #    SUBDIR += libranlib
 #    SUBDIR += linpack
