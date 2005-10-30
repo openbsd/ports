@@ -1,0 +1,21 @@
+$OpenBSD: patch-genchars_pl,v 1.1 2005/10/30 22:49:13 millert Exp $
+--- genchars.pl.orig	Tue Jan 11 16:15:17 2005
++++ genchars.pl	Sun Oct 30 11:02:36 2005
+@@ -174,7 +174,7 @@ XS(XS_Term__ReadKey_GetControlChars)
+ 			EXTEND(sp,MAXCC*2);		".join('',map("
+ #if defined($values[$_]) && ($values[$_] < LEGALMAXCC)	"."
+ PUSHs(sv_2mortal(newSVpv(cc_names[$_],strlen(cc_names[$_])))); /* $possible{$values[$_]} */
+-PUSHs(sv_2mortal(newSVpv((char*)&s.c_cc[$values[$_]],1))); 	"."
++PUSHs(sv_2mortal(newSViv((IV)s.c_cc[$values[$_]]))); 	"."
+ #endif			"				,0..$#values))."
+ 			
+ 		}
+@@ -394,7 +394,7 @@ XS(XS_Term__ReadKey_GetControlChars)
+ 			int i;
+ 			EXTEND(sp,MAXCC*2);		".join('',map("
+ PUSHs(sv_2mortal(newSVpv(cc_names[$_],strlen(cc_names[$_])))); /* $values[$_] */
+-PUSHs(sv_2mortal(newSVpv(&s.$billy{$values[$_]},1))); 	",0..$#values))."
++PUSHs(sv_2mortal(newSViv((IV)s.$billy{$values[$_]}))); 	",0..$#values))."
+ 			
+ 		}
+ 		PUTBACK;
