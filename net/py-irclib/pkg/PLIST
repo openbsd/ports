@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/10/30 10:32:44 xsa Exp $
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/ircbot.py
 lib/python${MODPY_VERSION}/site-packages/ircbot.pyc
 lib/python${MODPY_VERSION}/site-packages/irclib.py
