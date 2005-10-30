@@ -1,0 +1,45 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2005/10/30 11:13:25 espie Exp $
+--- Makefile.orig	Sun Oct 30 11:39:54 2005
++++ Makefile	Sun Oct 30 11:40:32 2005
+@@ -71,25 +71,25 @@ $(infodir)jacal.info.gz:	$(infodir)jacal
+ 	gzip -f $(infodir)jacal.info
+ 
+ pinstall:	jacal.1
+-	test -d $(mandir) || mkdir $(mandir)
+-	test -d $(man1dir) || mkdir $(man1dir)
+-	-cp jacal.1 $(man1dir)
+-	test -d $(libdir) || mkdir $(libdir)
+-	test -d $(JACALLIB) || mkdir $(JACALLIB)
+-	-cp $(sfiles) $(cfiles) $(gfiles) jacalcat Makefile COPYING HELP $(JACALLIB)
++	test -d $(DESTDIR)$(mandir) || mkdir $(DESTDIR)$(mandir)
++	test -d $(DESTDIR)$(man1dir) || mkdir $(DESTDIR)$(man1dir)
++	-cp jacal.1 $(DESTDIR)$(man1dir)
++	test -d $(DESTDIR)$(libdir) || mkdir $(DESTDIR)$(libdir)
++	test -d $(DESTDIR)$(JACALLIB) || mkdir $(DESTDIR)$(JACALLIB)
++	-cp $(sfiles) $(cfiles) $(gfiles) jacalcat Makefile COPYING HELP $(DESTDIR)$(JACALLIB)
+ 
+ install:	pinstall
+-	echo "(use-modules (ice-9 slib))"	 > $(JACALLIB)guile.scm
+-	echo "(slib:load \"$(JACALLIB)math\")"  >> $(JACALLIB)guile.scm
+-	echo "(math)"			        >> $(JACALLIB)guile.scm
+-	echo "(slib:load \"$(JACALLIB)math\")"	 > $(JACALLIB)go.scm
+-	echo "(math)"				>> $(JACALLIB)go.scm
++	echo "(use-modules (ice-9 slib))"	 > $(DESTDIR)$(JACALLIB)guile.scm
++	echo "(slib:load \"$(JACALLIB)math\")"  >> $(DESTDIR)$(JACALLIB)guile.scm
++	echo "(math)"			        >> $(DESTDIR)$(JACALLIB)guile.scm
++	echo "(slib:load \"$(JACALLIB)math\")"	 > $(DESTDIR)$(JACALLIB)go.scm
++	echo "(math)"				>> $(DESTDIR)$(JACALLIB)go.scm
+ 	test -d $(bindir) || mkdir $(bindir)
+-	echo '#! /bin/sh'			 > $(bindir)jacal
+-	echo JACALDIR=$(JACALLIB)		>> $(bindir)jacal
+-	echo VERSION=$(VERSION)			>> $(bindir)jacal
+-	cat jacal.sh				>> $(bindir)jacal
+-	chmod +x $(bindir)jacal
++	echo '#! /bin/sh'			 > $(DESTDIR)$(bindir)jacal
++	echo JACALDIR=$(JACALLIB)		>> $(DESTDIR)$(bindir)jacal
++	echo VERSION=$(VERSION)			>> $(DESTDIR)$(bindir)jacal
++	cat jacal.sh				>> $(DESTDIR)$(bindir)jacal
++	chmod +x $(DESTDIR)$(bindir)jacal
+ 
+ uninstall:
+ 	-rm $(bindir)jacal

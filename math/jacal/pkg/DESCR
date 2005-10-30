@@ -1,0 +1,7 @@
+Jacal is a symbolics computation program written in scheme.
+
+Its features include partial derivation, matrix computations 
+and tensor calculus.
+
+There are some demonstration files under 
+${PREFIX}/share/doc/jacal
