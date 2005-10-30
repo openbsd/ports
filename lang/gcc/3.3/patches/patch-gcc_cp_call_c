@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_cp_call_c,v 1.1.1.1 2005/01/03 15:21:26 espie Exp $
---- gcc/cp/call.c.orig	Wed Jul 28 04:17:21 2004
-+++ gcc/cp/call.c	Mon Jan  3 10:17:44 2005
-@@ -4616,6 +4616,10 @@ build_over_call (cand, args, flags)
+$OpenBSD: patch-gcc_cp_call_c,v 1.2 2005/10/30 19:24:11 espie Exp $
+--- gcc/cp/call.c.orig	Mon Apr  4 09:42:15 2005
++++ gcc/cp/call.c	Sun Oct 30 13:19:46 2005
+@@ -4599,6 +4599,10 @@ build_over_call (cand, args, flags)
      check_function_format (NULL, TYPE_ATTRIBUTES (TREE_TYPE (fn)),
  			   converted_args);
  

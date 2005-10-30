@@ -1,0 +1,19 @@
+$OpenBSD: patch-libstdc++-v3_config_io_basic_file_stdio_cc,v 1.1 2005/10/30 19:24:11 espie Exp $
+--- libstdc++-v3/config/io/basic_file_stdio.cc.orig	Sun Oct 30 17:42:46 2005
++++ libstdc++-v3/config/io/basic_file_stdio.cc	Sun Oct 30 17:43:10 2005
+@@ -104,6 +104,7 @@ namespace std 
+   __basic_file<char>::~__basic_file()
+   { this->close(); }
+ 
++#if 0
+   // Preserved for binary compatibility only.
+   // Do not use.  Gone in 3.4.
+   void 
+@@ -114,6 +115,7 @@ namespace std 
+     if (r)
+       strcpy(__c_mode, r);
+   }
++#endif
+   
+   __basic_file<char>*
+   __basic_file<char>::sys_open(__c_file* __file, ios_base::openmode) 

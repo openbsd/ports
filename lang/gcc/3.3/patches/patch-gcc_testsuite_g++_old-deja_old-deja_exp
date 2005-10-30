@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_testsuite_g++_old-deja_old-deja_exp,v 1.1 2005/10/30 19:24:11 espie Exp $
+--- gcc/testsuite/g++.old-deja/old-deja.exp.orig	Sun Oct 30 18:15:19 2005
++++ gcc/testsuite/g++.old-deja/old-deja.exp	Sun Oct 30 18:15:27 2005
+@@ -52,7 +52,7 @@ foreach file [lsort [find $srcdir/$subdi
+     # We don't want old-dejagnu.exp to have to know about all the global
+     # variables we use.  For now we tell it about CXXFLAGS and LIBS and
+     # leave LDFLAGS alone.
+-    old-dejagnu $GXX_UNDER_TEST "$file" "$tfile" "" "$DEFAULT_CXXFLAGS" "-lstdc++"
++    old-dejagnu $GXX_UNDER_TEST "$file" "$tfile" "" "$DEFAULT_CXXFLAGS" "-lestdc++"
+ }
+ 
+ # The framework doesn't like to see any error remnants,

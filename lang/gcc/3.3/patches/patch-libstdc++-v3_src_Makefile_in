@@ -1,6 +1,6 @@
-$OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.1.1.1 2005/01/03 15:21:29 espie Exp $
---- libstdc++-v3/src/Makefile.in.orig	Mon Jan  3 10:54:34 2005
-+++ libstdc++-v3/src/Makefile.in	Mon Jan  3 10:55:23 2005
+$OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.2 2005/10/30 19:24:11 espie Exp $
+--- libstdc++-v3/src/Makefile.in.orig	Tue Jan 13 00:00:29 2004
++++ libstdc++-v3/src/Makefile.in	Sun Oct 30 19:08:43 2005
 @@ -145,7 +145,7 @@ glibcpp_srcdir = @glibcpp_srcdir@
  glibcpp_builddir = @glibcpp_builddir@
  toolexecdir = @glibcpp_toolexecdir@
