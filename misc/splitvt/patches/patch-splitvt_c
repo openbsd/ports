@@ -1,23 +1,11 @@
-$OpenBSD: patch-splitvt_c,v 1.1 2002/02/20 22:34:10 pvalchev Exp $
---- splitvt.c.orig	Tue Dec 12 14:52:15 1995
-+++ splitvt.c	Wed Feb 20 15:29:23 2002
-@@ -105,7 +105,7 @@ char *argv[];
- 	extern int errno, optind;
- 	extern char *optarg;
- 
--	int i, len, maxfds, numready;
-+	int i, len, maxfds, numready, x;
- 	char buffer[BUFSIZ], *ptr;
- 	char *xterm_title=NULL;
- 	struct timeval tv, *tvptr;
-@@ -379,8 +379,9 @@ char *argv[];
- 		if ( FD_ISSET(ttyfd, &read_mask) )
- 		{
- 			do {
--				if ( (buffer[0]=event_getc(&X_event)) == EOF )
-+				if ( (x=event_getc(&X_event)) == EOF )
- 					finish(0);
-+				buffer[0] = x;
- 
- 				if ( X_event.happening ) {
- 					/* Work only on button press */
+$OpenBSD: patch-splitvt_c,v 1.2 2005/10/31 20:27:14 naddy Exp $
+--- splitvt.c.orig	Mon Oct 31 21:03:34 2005
++++ splitvt.c	Mon Oct 31 21:03:53 2005
+@@ -19,6 +19,7 @@ static char *version=
+ #include	<fcntl.h>
+ #include	<signal.h>
+ #include	<stdio.h>
++#include	<stdlib.h>
+ #include	<errno.h>
+ #include	<pwd.h>
+ #ifdef HAVE_UNISTD_H

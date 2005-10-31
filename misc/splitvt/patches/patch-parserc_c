@@ -1,0 +1,11 @@
+$OpenBSD: patch-parserc_c,v 1.1 2005/10/31 20:27:14 naddy Exp $
+--- parserc.c.orig	Mon Oct 31 21:12:34 2005
++++ parserc.c	Mon Oct 31 21:12:56 2005
+@@ -8,6 +8,7 @@
+ #include <pwd.h>
+ #include <fcntl.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <ctype.h>
+ #include "splitvt.h"
+ 

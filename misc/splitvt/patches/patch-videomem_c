@@ -1,0 +1,11 @@
+$OpenBSD: patch-videomem_c,v 1.1 2005/10/31 20:27:14 naddy Exp $
+--- videomem.c.orig	Mon Oct 31 21:11:17 2005
++++ videomem.c	Mon Oct 31 21:11:33 2005
+@@ -2,6 +2,7 @@
+ /* This file holds the functions for manipulating video memory */
+ 
+ #include	<stdio.h>
++#include	<stdlib.h>
+ #include	"video.h"
+ #include	"terminal.h"
+ 

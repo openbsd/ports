@@ -1,0 +1,11 @@
+$OpenBSD: patch-misc_c,v 1.1 2005/10/31 20:27:14 naddy Exp $
+--- misc.c.orig	Mon Oct 31 21:07:07 2005
++++ misc.c	Mon Oct 31 21:07:22 2005
+@@ -4,6 +4,7 @@
+ #include	<sys/stat.h>
+ #include	<fcntl.h>
+ #include	<stdio.h>
++#include	<stdlib.h>
+ #include	<signal.h>
+ 
+ 

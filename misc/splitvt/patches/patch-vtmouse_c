@@ -1,0 +1,11 @@
+$OpenBSD: patch-vtmouse_c,v 1.1 2005/10/31 20:27:14 naddy Exp $
+--- vtmouse.c.orig	Mon Oct 31 21:11:57 2005
++++ vtmouse.c	Mon Oct 31 21:12:14 2005
+@@ -8,6 +8,7 @@
+ #define SPLITVT_SOURCE
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "vtmouse.h"
+ 
+ extern FILE *safe_popen();		/* From misc.c */

@@ -1,0 +1,13 @@
+$OpenBSD: patch-utmp_c,v 1.1 2005/10/31 20:27:14 naddy Exp $
+--- utmp.c.orig	Mon Oct 31 21:10:02 2005
++++ utmp.c	Mon Oct 31 21:10:14 2005
+@@ -6,6 +6,9 @@
+ #include	<fcntl.h>
+ #include	<utmp.h>
+ #include	<stdio.h>
++#ifdef HAVE_UNISTD_H
++#include        <unistd.h>
++#endif
+ 
+ #ifdef DEBUG_UTMP
+ #undef  UTMP_FILE

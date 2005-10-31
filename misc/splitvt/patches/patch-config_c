@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_c,v 1.1 2001/03/12 16:21:17 wilfried Exp $
---- config.c.orig	Fri Jan 20 21:45:51 1995
-+++ config.c	Mon Mar 12 17:21:35 2001
+$OpenBSD: patch-config_c,v 1.2 2005/10/31 20:27:14 naddy Exp $
+--- config.c.orig	Sat May  3 22:48:04 2003
++++ config.c	Mon Oct 31 20:53:56 2005
 @@ -2,6 +2,7 @@
  #include	<stdio.h>
  #include	<sys/stat.h>

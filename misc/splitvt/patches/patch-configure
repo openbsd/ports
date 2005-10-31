@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.1 2005/10/31 20:27:14 naddy Exp $
+--- configure.orig	Mon Oct 31 20:54:06 2005
++++ configure	Mon Oct 31 20:56:05 2005
+@@ -4,7 +4,6 @@
+ QUIET="-v"
+ # use $CC if set, else set it to cc
+ : ${CC:=cc}
+-CFLAGS=
+ MAKE="echo \"Done.  Type 'make' to build\"" 
+ 
+ echo "Making configuration..."

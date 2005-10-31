@@ -1,0 +1,11 @@
+$OpenBSD: patch-vt100_c,v 1.1 2005/10/31 20:27:14 naddy Exp $
+--- vt100.c.orig	Mon Oct 31 21:08:40 2005
++++ vt100.c	Mon Oct 31 21:08:58 2005
+@@ -16,6 +16,7 @@
+ #endif
+ #include	<errno.h>
+ #include	<stdio.h>
++#include	<stdlib.h>
+ #include	<ctype.h>
+ #include	"vt100.h"
+ #include	"video.h"
