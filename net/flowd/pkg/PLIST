@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/03 07:15:28 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/10/31 15:06:07 alek Exp $
 @newgroup _flowd:542
-@newuser _flowd:542:542:daemon:flowd user:/nonexistent:/sbin/nologin
+@newuser _flowd:542:542:daemon:flowd user:/var/empty:/sbin/nologin
 bin/flowd-reader
 include/flowd/
 include/flowd/addr.h
@@ -13,4 +13,4 @@ lib/libflowd.a
 sbin/flowd
 share/examples/flowd/
 share/examples/flowd/flowd.conf
-@sample /etc/flowd.conf
+@sample ${SYSCONFDIR}/flowd.conf
