@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/03/09 07:13:11 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/10/31 15:37:25 mbalmer Exp $
 horde/turba/
-horde/turba/COPYING
+horde/turba/LICENSE
 horde/turba/README
 horde/turba/add.php
 horde/turba/browse.php
@@ -59,19 +59,10 @@ horde/turba/lib/Driver/ldap.php
 horde/turba/lib/Driver/prefs.php
 horde/turba/lib/Driver/sql.php
 horde/turba/lib/Group.php
-horde/turba/lib/List/
 horde/turba/lib/List.php
-horde/turba/lib/List/Plain.php
-horde/turba/lib/List/Tree.php
-horde/turba/lib/ListView/
 horde/turba/lib/ListView.php
-horde/turba/lib/ListView/Rolodex.php
-horde/turba/lib/ListView/Tree.php
 horde/turba/lib/Object.php
-horde/turba/lib/ObjectView/
 horde/turba/lib/ObjectView.php
-horde/turba/lib/ObjectView/List.php
-horde/turba/lib/ObjectView/PhotoID.php
 horde/turba/lib/Renderer.php
 horde/turba/lib/Turba.php
 horde/turba/lib/api.php
@@ -181,6 +172,9 @@ horde/turba/locale/sl_SI/LC_MESSAGES/turba.mo
 horde/turba/locale/sv_SE/
 horde/turba/locale/sv_SE/LC_MESSAGES/
 horde/turba/locale/sv_SE/LC_MESSAGES/turba.mo
+horde/turba/locale/tr_TR/
+horde/turba/locale/tr_TR/LC_MESSAGES/
+horde/turba/locale/tr_TR/LC_MESSAGES/turba.mo
 horde/turba/locale/uk_UA/
 horde/turba/locale/uk_UA/LC_MESSAGES/
 horde/turba/locale/uk_UA/LC_MESSAGES/turba.mo
@@ -225,6 +219,7 @@ horde/turba/po/ru_RU.po
 horde/turba/po/sk_SK.po
 horde/turba/po/sl_SI.po
 horde/turba/po/sv_SE.po
+horde/turba/po/tr_TR.po
 horde/turba/po/turba.pot
 horde/turba/po/uk_UA.po
 horde/turba/po/zh_CN.po
@@ -244,7 +239,7 @@ horde/turba/scripts/sql/turba_objects.pgsql.sql
 horde/turba/scripts/sql/turba_objects.sql
 horde/turba/scripts/sql/turba_weddingguests.sql
 horde/turba/scripts/upgrades/
-horde/turba/scripts/upgrades/1.2_to_2.0.mysql.sql
+horde/turba/scripts/upgrades/1.2_to_2.0.sql
 horde/turba/scripts/upgrades/2004-10-26_create_default_histories.php
 horde/turba/search.php
 horde/turba/templates/
@@ -274,6 +269,7 @@ horde/turba/test.php
 horde/turba/themes/
 horde/turba/themes/graphics/
 horde/turba/themes/graphics/contact.png
+horde/turba/themes/graphics/favicon.ico
 horde/turba/themes/graphics/group.png
 horde/turba/themes/graphics/menu/
 horde/turba/themes/graphics/menu/browse.png
