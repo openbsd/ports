@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/03/09 07:16:46 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/10/31 15:34:35 mbalmer Exp $
 horde/${HORDE_MODULE}/
 horde/${HORDE_MODULE}/COPYING
 horde/${HORDE_MODULE}/README
@@ -197,6 +197,7 @@ horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.pgsql.sql
 horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.sql
 horde/${HORDE_MODULE}/scripts/upgrades/
 horde/${HORDE_MODULE}/scripts/upgrades/1.1_to_2.0.mysql.sql
+horde/${HORDE_MODULE}/scripts/upgrades/1.1_to_2.0.pgsql.sql
 horde/${HORDE_MODULE}/scripts/upgrades/2004-05-19_convert_categories_to_strings.php
 horde/${HORDE_MODULE}/scripts/upgrades/2004-12-21_add_event_uid.pgsql.sql
 horde/${HORDE_MODULE}/scripts/upgrades/2004-12-21_add_event_uid.sql
@@ -263,11 +264,14 @@ horde/${HORDE_MODULE}/templates/week/head_side_by_side.inc
 horde/${HORDE_MODULE}/themes/
 horde/${HORDE_MODULE}/themes/bluewhite/
 horde/${HORDE_MODULE}/themes/bluewhite/screen.css
+horde/${HORDE_MODULE}/themes/burntorange/
+horde/${HORDE_MODULE}/themes/burntorange/screen.css
 horde/${HORDE_MODULE}/themes/graphics/
 horde/${HORDE_MODULE}/themes/graphics/alarm_small.png
 horde/${HORDE_MODULE}/themes/graphics/attendees.png
 horde/${HORDE_MODULE}/themes/graphics/calendars.png
 horde/${HORDE_MODULE}/themes/graphics/dayview.png
+horde/${HORDE_MODULE}/themes/graphics/favicon.ico
 horde/${HORDE_MODULE}/themes/graphics/goto.png
 horde/${HORDE_MODULE}/themes/graphics/${HORDE_MODULE}.png
 horde/${HORDE_MODULE}/themes/graphics/monthview.png
