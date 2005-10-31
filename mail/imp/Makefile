@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2005/03/09 07:10:58 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.14 2005/10/31 15:11:20 mbalmer Exp $ 
 
 COMMENT=	"highly configurable pop3/imap4 webmail client"
 
 HORDE_MODULE=	imp
 HORDE_NAME=	IMP
 
-DISTNAME=	${HORDE_MODULE}-h3-4.0.2
+DISTNAME=	${HORDE_MODULE}-h3-4.0.4
 CATEGORIES=	mail www
 HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
 
