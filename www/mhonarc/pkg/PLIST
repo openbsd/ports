@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/10/31 14:01:34 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/10/31 18:31:56 naddy Exp $
 bin/mha-dbedit
 bin/mha-dbrecover
 bin/mha-decode
@@ -481,21 +481,20 @@ share/doc/mhonarc/ssbg75.jpg
 share/doc/mhonarc/stampwb2.png
 share/doc/mhonarc/up.png
 share/examples/mhonarc/
-share/examples/mhonarc/examples/
-share/examples/mhonarc/examples/blog.mrc
-share/examples/mhonarc/examples/date.mrc
-share/examples/mhonarc/examples/def-mime.mrc
-share/examples/mhonarc/examples/frames.mrc
-share/examples/mhonarc/examples/icons.mrc
-share/examples/mhonarc/examples/mha-preview
-share/examples/mhonarc/examples/mhasiteinit.pl
-share/examples/mhonarc/examples/mhonarc.vim
-share/examples/mhonarc/examples/subject.mrc
-share/examples/mhonarc/examples/utf-8-encode.mrc
-share/examples/mhonarc/examples/utf-8.mrc
-share/examples/mhonarc/extras/
-share/examples/mhonarc/extras/INSTALL
-share/examples/mhonarc/extras/README.txt
-share/examples/mhonarc/extras/mha-mhedit
-share/examples/mhonarc/extras/mha-mhedit.html
-share/examples/mhonarc/extras/mha-repl.mrc
+share/examples/mhonarc/blog.mrc
+share/examples/mhonarc/date.mrc
+share/examples/mhonarc/def-mime.mrc
+share/examples/mhonarc/frames.mrc
+share/examples/mhonarc/icons.mrc
+share/examples/mhonarc/mha-mhedit/
+share/examples/mhonarc/mha-mhedit/INSTALL
+share/examples/mhonarc/mha-mhedit/README.txt
+share/examples/mhonarc/mha-mhedit/mha-mhedit
+share/examples/mhonarc/mha-mhedit/mha-mhedit.html
+share/examples/mhonarc/mha-mhedit/mha-repl.mrc
+share/examples/mhonarc/mha-preview
+share/examples/mhonarc/mhasiteinit.pl
+share/examples/mhonarc/mhonarc.vim
+share/examples/mhonarc/subject.mrc
+share/examples/mhonarc/utf-8-encode.mrc
+share/examples/mhonarc/utf-8.mrc

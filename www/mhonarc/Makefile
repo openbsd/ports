@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2005/10/31 14:01:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2005/10/31 18:31:56 naddy Exp $
 
 COMMENT=		"highly customizable e-mail to HTML converter"
 
-VERSION=		2.6.15
-DISTNAME=		MHonArc-${VERSION}
-PKGNAME=		${DISTNAME:L}
+DISTNAME=		MHonArc-2.6.15
+PKGNAME=		${DISTNAME:L}p0
 CATEGORIES=		www mail
 
 HOMEPAGE=		http://www.mhonarc.org/
@@ -13,14 +12,13 @@ MASTER_SITES=		http://www.mhonarc.org/release/MHonArc/tar/ \
 			http://www.nacs.uci.edu/indiv/ehood/tar/ \
 			ftp://ftp.plig.org/pub/CPAN/authors/id/EHOOD/
 
+MAINTAINER=		Christian Rueger <cr+openbsd@rueger-net.de>
+
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-post-extract:
-			@chmod -R u+w ${WRKDIST}
 
 CONFIGURE_STYLE=	perl
 
@@ -37,11 +35,10 @@ EXTRAS=			mha-mhedit/*
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mhonarc
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mhonarc/examples
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mhonarc/extras
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mhonarc/mha-mhedit
 	cd ${WRKSRC}/examples && ${INSTALL_DATA} ${EXAMPLES} \
-	  ${PREFIX}/share/examples/mhonarc/examples
+	  ${PREFIX}/share/examples/mhonarc
 	cd ${WRKSRC}/extras && ${INSTALL_DATA} ${EXTRAS} \
-	  ${PREFIX}/share/examples/mhonarc/extras
+	  ${PREFIX}/share/examples/mhonarc/mha-mhedit
 
 .include <bsd.port.mk>
