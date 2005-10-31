@@ -1,0 +1,5 @@
+GTK Theme Switch is a small and fast command line utility to switch GTK themes
+on the fly. It also has an optional GUI to preview the requested theme and
+change the font used with it, an optional GUI dock, and it can install themes
+downloaded from http://gtk.themes.org, preview them, or switch to them
+immediately.
