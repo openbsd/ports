@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.223 2005/10/29 12:18:20 alek Exp $
+# $OpenBSD: Makefile,v 1.224 2005/10/31 20:19:51 alek Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 855resolution
@@ -72,6 +72,7 @@
      SUBDIR += gtk-theme-switch
      SUBDIR += gtk-thinice-engine
      SUBDIR += gtk2-clearlooks-engine
+     SUBDIR += gtk2-theme-switch
      SUBDIR += gtkglarea
      SUBDIR += gtkmm
      SUBDIR += gtksourceview
