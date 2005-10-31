@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/03/09 06:58:18 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/10/31 15:52:43 mbalmer Exp $
 horde/${HORDE_MODULE}/
 horde/${HORDE_MODULE}/COPYING
 horde/${HORDE_MODULE}/README
+@mode 700
 @owner www
 @group www
-@mode 700
 horde/${HORDE_MODULE}/config/
 @mode 600
 horde/${HORDE_MODULE}/config/.htaccess
@@ -13,9 +13,9 @@ horde/${HORDE_MODULE}/config/menu.php.dist
 @sample horde/${HORDE_MODULE}/config/menu.php
 horde/${HORDE_MODULE}/config/prefs.php.dist
 @sample horde/${HORDE_MODULE}/config/prefs.php
+@mode
 @owner
 @group
-@mode
 horde/${HORDE_MODULE}/data.php
 horde/${HORDE_MODULE}/docs/
 horde/${HORDE_MODULE}/docs/CHANGES
@@ -174,6 +174,7 @@ horde/${HORDE_MODULE}/scripts/sql/
 horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.sql
 horde/${HORDE_MODULE}/scripts/upgrades/
 horde/${HORDE_MODULE}/scripts/upgrades/1.1_to_2.0.mysql.sql
+horde/${HORDE_MODULE}/scripts/upgrades/1.1_to_2.0.pgsql.sql
 horde/${HORDE_MODULE}/scripts/upgrades/2004-09-13_add_uid_field.php
 horde/${HORDE_MODULE}/search.php
 horde/${HORDE_MODULE}/task.php
@@ -207,13 +208,10 @@ horde/${HORDE_MODULE}/themes/graphics/alarm.png
 horde/${HORDE_MODULE}/themes/graphics/alarm_small.png
 horde/${HORDE_MODULE}/themes/graphics/checkbox.png
 horde/${HORDE_MODULE}/themes/graphics/checked.png
+horde/${HORDE_MODULE}/themes/graphics/favicon.ico
 horde/${HORDE_MODULE}/themes/graphics/${HORDE_MODULE}.png
 horde/${HORDE_MODULE}/themes/graphics/note.png
 horde/${HORDE_MODULE}/themes/graphics/tasklists.png
 horde/${HORDE_MODULE}/themes/graphics/unchecked.png
-horde/${HORDE_MODULE}/themes/grey/
-horde/${HORDE_MODULE}/themes/grey/screen.css
 horde/${HORDE_MODULE}/themes/screen.css
-horde/${HORDE_MODULE}/themes/simplex/
-horde/${HORDE_MODULE}/themes/simplex/screen.css
 horde/${HORDE_MODULE}/view.php

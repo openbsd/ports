@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2005/03/09 06:58:18 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.8 2005/10/31 15:52:43 mbalmer Exp $ 
 
 COMMENT=	"multiuser task list manager"
 
 HORDE_MODULE=	nag
 HORDE_NAME=	Nag
 
-DISTNAME=	${HORDE_MODULE}-h3-2.0.1
+DISTNAME=	${HORDE_MODULE}-h3-2.0.3
 CATEGORIES=	www
 HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
 
