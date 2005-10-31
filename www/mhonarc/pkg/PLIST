@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:49:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2005/10/31 14:01:34 naddy Exp $
 bin/mha-dbedit
 bin/mha-dbrecover
 bin/mha-decode
@@ -222,6 +222,8 @@ share/doc/mhonarc/resources/addressmodifycode.html
 share/doc/mhonarc/resources/afs.html
 share/doc/mhonarc/resources/annotate.html
 share/doc/mhonarc/resources/archive.html
+share/doc/mhonarc/resources/attachmentdir.html
+share/doc/mhonarc/resources/attachmenturl.html
 share/doc/mhonarc/resources/authorbegin.html
 share/doc/mhonarc/resources/authorend.html
 share/doc/mhonarc/resources/authsort.html
@@ -305,6 +307,7 @@ share/doc/mhonarc/resources/mimeargs.html
 share/doc/mhonarc/resources/mimedecoders.html
 share/doc/mhonarc/resources/mimeexcs.html
 share/doc/mhonarc/resources/mimefilters.html
+share/doc/mhonarc/resources/mimeincs.html
 share/doc/mhonarc/resources/modifybodyaddresses.html
 share/doc/mhonarc/resources/modtime.html
 share/doc/mhonarc/resources/months.html
@@ -324,6 +327,7 @@ share/doc/mhonarc/resources/msgprefix.html
 share/doc/mhonarc/resources/msgsep.html
 share/doc/mhonarc/resources/multipg.html
 share/doc/mhonarc/resources/news.html
+share/doc/mhonarc/resources/newsurl.html
 share/doc/mhonarc/resources/nextbutton.html
 share/doc/mhonarc/resources/nextbuttonia.html
 share/doc/mhonarc/resources/nextlink.html
@@ -345,6 +349,7 @@ share/doc/mhonarc/resources/prevlink.html
 share/doc/mhonarc/resources/prevlinkia.html
 share/doc/mhonarc/resources/prevpglink.html
 share/doc/mhonarc/resources/prevpglinkia.html
+share/doc/mhonarc/resources/printxcomments.html
 share/doc/mhonarc/resources/quiet.html
 share/doc/mhonarc/resources/rcfile.html
 share/doc/mhonarc/resources/reconvert.html
@@ -490,7 +495,7 @@ share/examples/mhonarc/examples/utf-8-encode.mrc
 share/examples/mhonarc/examples/utf-8.mrc
 share/examples/mhonarc/extras/
 share/examples/mhonarc/extras/INSTALL
-share/examples/mhonarc/extras/README
+share/examples/mhonarc/extras/README.txt
 share/examples/mhonarc/extras/mha-mhedit
 share/examples/mhonarc/extras/mha-mhedit.html
 share/examples/mhonarc/extras/mha-repl.mrc

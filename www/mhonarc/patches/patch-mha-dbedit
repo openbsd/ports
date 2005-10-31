@@ -1,9 +1,0 @@
-$OpenBSD: patch-mha-dbedit,v 1.1.1.1 2000/10/09 00:04:58 avsm Exp $
---- mha-dbedit.orig	Fri Sep 29 22:58:55 2000
-+++ mha-dbedit	Fri Sep 29 22:59:04 2000
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/perl
-+#!/usr/bin/perl
- ##---------------------------------------------------------------------------##
- ##  File:
- ##	@(#) mha-dbedit 1.3 00/04/24 00:13:52

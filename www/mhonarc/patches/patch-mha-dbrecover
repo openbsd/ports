@@ -1,9 +1,0 @@
-$OpenBSD: patch-mha-dbrecover,v 1.1.1.1 2000/10/09 00:04:58 avsm Exp $
---- mha-dbrecover.orig	Fri Sep 29 22:58:02 2000
-+++ mha-dbrecover	Fri Sep 29 22:58:14 2000
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/perl
-+#!/usr/bin/perl
- ##---------------------------------------------------------------------------##
- ##  File:
- ##	@(#) mha-dbrecover 1.3 00/04/24 00:13:55

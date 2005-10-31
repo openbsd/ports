@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.21 2005/02/07 19:01:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.22 2005/10/31 14:01:33 naddy Exp $
 
 COMMENT=		"highly customizable e-mail to HTML converter"
 
-VERSION=		2.6.8
+VERSION=		2.6.15
 DISTNAME=		MHonArc-${VERSION}
 PKGNAME=		${DISTNAME:L}
-CATEGORIES=     	www mail
+CATEGORIES=		www mail
 
 HOMEPAGE=		http://www.mhonarc.org/
 
 MASTER_SITES=		http://www.mhonarc.org/release/MHonArc/tar/ \
 			http://www.nacs.uci.edu/indiv/ehood/tar/ \
-			ftp://ftp.plig.org/pub/CPAN/authors/id/EHOOD/ 
+			ftp://ftp.plig.org/pub/CPAN/authors/id/EHOOD/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -37,7 +37,7 @@ EXTRAS=			mha-mhedit/*
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mhonarc
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mhonarc/examples	
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mhonarc/examples
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mhonarc/extras
 	cd ${WRKSRC}/examples && ${INSTALL_DATA} ${EXAMPLES} \
 	  ${PREFIX}/share/examples/mhonarc/examples

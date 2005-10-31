@@ -1,9 +1,0 @@
-$OpenBSD: patch-mha-decode,v 1.1.1.1 2000/10/09 00:04:58 avsm Exp $
---- mha-decode.orig	Fri Sep 29 22:58:22 2000
-+++ mha-decode	Fri Sep 29 22:58:42 2000
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/perl
-+#!/usr/bin/perl
- ##---------------------------------------------------------------------------##
- ##  File:
- ##	@(#) mha-decode 1.3 00/04/24 00:13:53
