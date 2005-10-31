@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/03/29 14:57:53 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/10/31 15:02:34 mbalmer Exp $
 horde/
 horde/COPYING
 horde/README
@@ -65,16 +65,19 @@ horde/docs/TRANSLATIONS
 horde/docs/UPGRADING
 horde/index.php
 horde/js/
+horde/js/addEvent.php
 horde/js/alphaImageLoader.php
 horde/js/enter_key_trap.js
 horde/js/form_assign.js
 horde/js/form_helpers.js
 horde/js/hideable.js
 horde/js/httpclient.js
+horde/js/ieEscGuard.js
 horde/js/image.js
 horde/js/open_colorpicker.js
 horde/js/popup.js
 horde/js/sorter.js
+horde/js/stripe.js
 horde/js/tooltip.js
 horde/lib/
 horde/lib/.htaccess
@@ -88,6 +91,7 @@ horde/lib/Block/moon.php
 horde/lib/Block/sunrise.php
 horde/lib/Block/time.php
 horde/lib/Block/weatherdotcom.php
+horde/lib/Block/weatherdotcom_strings.php
 horde/lib/File/
 horde/lib/File/PDF/
 horde/lib/File/PDF.php
@@ -257,7 +261,6 @@ horde/lib/Horde/MIME/Viewer/default.php
 horde/lib/Horde/MIME/Viewer/enriched.php
 horde/lib/Horde/MIME/Viewer/enscript.php
 horde/lib/Horde/MIME/Viewer/html.php
-horde/lib/Horde/MIME/Viewer/icalendar.php
 horde/lib/Horde/MIME/Viewer/images.php
 horde/lib/Horde/MIME/Viewer/msexcel.php
 horde/lib/Horde/MIME/Viewer/mspowerpoint.php
@@ -355,7 +358,10 @@ horde/lib/Horde/Serialize.php
 horde/lib/Horde/SessionHandler/
 horde/lib/Horde/SessionHandler.php
 horde/lib/Horde/SessionHandler/dbm.php
+horde/lib/Horde/SessionHandler/ldap.php
+horde/lib/Horde/SessionHandler/memcached.php
 horde/lib/Horde/SessionHandler/mysql.php
+horde/lib/Horde/SessionHandler/none.php
 horde/lib/Horde/SessionHandler/oci8.php
 horde/lib/Horde/SessionHandler/pgsql.php
 horde/lib/Horde/SessionHandler/sapdb.php
@@ -365,6 +371,7 @@ horde/lib/Horde/Share.php
 horde/lib/Horde/String.php
 horde/lib/Horde/SyncML/
 horde/lib/Horde/SyncML.php
+horde/lib/Horde/SyncML/Backend.php
 horde/lib/Horde/SyncML/Command/
 horde/lib/Horde/SyncML/Command.php
 horde/lib/Horde/SyncML/Command/Alert.php
@@ -372,25 +379,20 @@ horde/lib/Horde/SyncML/Command/Final.php
 horde/lib/Horde/SyncML/Command/Get.php
 horde/lib/Horde/SyncML/Command/Map.php
 horde/lib/Horde/SyncML/Command/Put.php
-horde/lib/Horde/SyncML/Command/Replace.php
 horde/lib/Horde/SyncML/Command/Results.php
 horde/lib/Horde/SyncML/Command/Status.php
-horde/lib/Horde/SyncML/Command/Sync/
 horde/lib/Horde/SyncML/Command/Sync.php
-horde/lib/Horde/SyncML/Command/Sync/Add.php
-horde/lib/Horde/SyncML/Command/Sync/ContentSyncElement.php
-horde/lib/Horde/SyncML/Command/Sync/Delete.php
-horde/lib/Horde/SyncML/Command/Sync/Replace.php
-horde/lib/Horde/SyncML/Command/Sync/SyncElement.php
+horde/lib/Horde/SyncML/Command/SyncElement.php
+horde/lib/Horde/SyncML/Constants.php
+horde/lib/Horde/SyncML/Device/
+horde/lib/Horde/SyncML/Device.php
+horde/lib/Horde/SyncML/Device/P800.php
+horde/lib/Horde/SyncML/Device/Sync4j.php
+horde/lib/Horde/SyncML/Device/Synthesis.php
+horde/lib/Horde/SyncML/DeviceInfo.php
+horde/lib/Horde/SyncML/ResultsSender.php
 horde/lib/Horde/SyncML/State.php
-horde/lib/Horde/SyncML/Sync/
 horde/lib/Horde/SyncML/Sync.php
-horde/lib/Horde/SyncML/Sync/OneWayFromClientSync.php
-horde/lib/Horde/SyncML/Sync/OneWayFromServerSync.php
-horde/lib/Horde/SyncML/Sync/RefreshFromClientSync.php
-horde/lib/Horde/SyncML/Sync/RefreshFromServerSync.php
-horde/lib/Horde/SyncML/Sync/SlowSync.php
-horde/lib/Horde/SyncML/Sync/TwoWaySync.php
 horde/lib/Horde/Template.php
 horde/lib/Horde/Text/
 horde/lib/Horde/Text.php
@@ -528,6 +530,7 @@ horde/lib/XML/tests/
 horde/lib/api.php
 horde/lib/base.php
 horde/lib/core.php
+horde/lib/data/
 horde/lib/prefs.php
 horde/lib/version.php
 horde/locale/
@@ -539,6 +542,9 @@ horde/locale/bg_BG/
 horde/locale/bg_BG/LC_MESSAGES/
 horde/locale/bg_BG/LC_MESSAGES/horde.mo
 horde/locale/bg_BG/help.xml
+horde/locale/bs_BA/
+horde/locale/bs_BA/LC_MESSAGES/
+horde/locale/bs_BA/LC_MESSAGES/horde.mo
 horde/locale/ca_ES/
 horde/locale/ca_ES/LC_MESSAGES/
 horde/locale/ca_ES/LC_MESSAGES/horde.mo
@@ -571,6 +577,7 @@ horde/locale/et_EE/help.xml
 horde/locale/fa_IR/
 horde/locale/fa_IR/LC_MESSAGES/
 horde/locale/fa_IR/LC_MESSAGES/horde.mo
+horde/locale/fa_IR/help.xml
 horde/locale/fi_FI/
 horde/locale/fi_FI/LC_MESSAGES/
 horde/locale/fi_FI/LC_MESSAGES/horde.mo
@@ -675,6 +682,7 @@ horde/po/.htaccess
 horde/po/README
 horde/po/ar_SY.po
 horde/po/bg_BG.po
+horde/po/bs_BA.po
 horde/po/ca_ES.po
 horde/po/cs_CZ.po
 horde/po/da_DK.po
@@ -728,6 +736,7 @@ horde/scripts/setup.php
 horde/scripts/sql/
 horde/scripts/sql/README
 horde/scripts/sql/README.OCI8
+horde/scripts/sql/create.msde.sql
 horde/scripts/sql/create.mysql.sql
 horde/scripts/sql/create.oci8.sql
 horde/scripts/sql/create.pgsql.sql
@@ -900,11 +909,6 @@ horde/templates/admin/user/nolist.inc
 horde/templates/admin/user/remove.inc
 horde/templates/admin/user/removequeued.inc
 horde/templates/admin/user/update.inc
-horde/templates/categorytree/
-horde/templates/categorytree/rowend.inc
-horde/templates/categorytree/rowstart.inc
-horde/templates/categorytree/tablefoot.inc
-horde/templates/categorytree/tablehead.inc
 horde/templates/common-footer.inc
 horde/templates/common-header.inc
 horde/templates/contents/
