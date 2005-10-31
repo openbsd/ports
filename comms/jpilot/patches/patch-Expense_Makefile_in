@@ -1,11 +1,12 @@
-$OpenBSD: patch-Expense_Makefile_in,v 1.6 2005/01/23 06:06:01 pvalchev Exp $
---- Expense/Makefile.in.orig	Sat Feb 28 16:19:47 2004
-+++ Expense/Makefile.in	Sat Jan 22 15:17:40 2005
-@@ -70,6 +70,7 @@ LTCOMPILE = $(LIBTOOL) --mode=compile $(
- 	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
- 	$(AM_CFLAGS) $(CFLAGS)
- CCLD = $(CC)
-+libexpense_la_LDFLAGS = -module -avoid-version
- LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
- 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
- SOURCES = $(libexpense_la_SOURCES)
+$OpenBSD: patch-Expense_Makefile_in,v 1.7 2005/10/31 21:08:15 naddy Exp $
+--- Expense/Makefile.in.orig	Mon Oct 31 19:48:02 2005
++++ Expense/Makefile.in	Mon Oct 31 19:48:19 2005
+@@ -247,7 +247,7 @@ target_alias = @target_alias@
+ @MAKE_EXPENSE_TRUE@lib_LTLIBRARIES = libexpense.la
+ @MAKE_EXPENSE_TRUE@libexpense_la_SOURCES = expense.c
+ @MAKE_EXPENSE_TRUE@libexpense_la_CFLAGS = -Wall @PILOT_FLAGS@ @GTK_CFLAGS@ -I$(top_srcdir)
+-@MAKE_EXPENSE_TRUE@libexpense_la_LDFLAGS = @GTK_LIBS@
++@MAKE_EXPENSE_TRUE@libexpense_la_LDFLAGS = @GTK_LIBS@ -module -avoid-version
+ all: all-am
+ 
+ .SUFFIXES:

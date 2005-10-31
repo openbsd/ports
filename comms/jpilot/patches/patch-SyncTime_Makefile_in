@@ -1,11 +1,12 @@
-$OpenBSD: patch-SyncTime_Makefile_in,v 1.6 2005/01/23 06:06:01 pvalchev Exp $
---- SyncTime/Makefile.in.orig	Sat Feb 28 16:19:48 2004
-+++ SyncTime/Makefile.in	Sat Jan 22 15:17:58 2005
-@@ -70,6 +70,7 @@ LTCOMPILE = $(LIBTOOL) --mode=compile $(
- 	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
- 	$(AM_CFLAGS) $(CFLAGS)
- CCLD = $(CC)
-+libsynctime_la_LDFLAGS = -module -avoid-version
- LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
- 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
- SOURCES = $(libsynctime_la_SOURCES)
+$OpenBSD: patch-SyncTime_Makefile_in,v 1.7 2005/10/31 21:08:15 naddy Exp $
+--- SyncTime/Makefile.in.orig	Mon Oct 31 19:46:59 2005
++++ SyncTime/Makefile.in	Mon Oct 31 19:47:17 2005
+@@ -247,7 +247,7 @@ target_alias = @target_alias@
+ @MAKE_SYNCTIME_TRUE@lib_LTLIBRARIES = libsynctime.la
+ @MAKE_SYNCTIME_TRUE@libsynctime_la_SOURCES = synctime.c
+ @MAKE_SYNCTIME_TRUE@libsynctime_la_CFLAGS = -Wall @PILOT_FLAGS@ @GTK_CFLAGS@ -I$(top_srcdir)
+-@MAKE_SYNCTIME_TRUE@libsynctime_la_LDFLAGS = @GTK_LIBS@
++@MAKE_SYNCTIME_TRUE@libsynctime_la_LDFLAGS = @GTK_LIBS@ -module -avoid-version
+ all: all-am
+ 
+ .SUFFIXES:

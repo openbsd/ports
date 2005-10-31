@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.3 2005/10/31 21:08:15 naddy Exp $
+--- configure.orig	Mon Oct 31 21:51:42 2005
++++ configure	Mon Oct 31 21:57:35 2005
+@@ -20056,7 +20056,7 @@ fi
+ if test "x" != "xno-xml"; then
+    echo "$as_me:$LINENO: checking for XML::Parser" >&5
+ echo $ECHO_N "checking for XML::Parser... $ECHO_C" >&6
+-   if `$INTLTOOL_PERL -e "require XML::Parser" 2>/dev/null`; then
++   if : `$INTLTOOL_PERL -e "require XML::Parser" 2>/dev/null`; then
+        echo "$as_me:$LINENO: result: ok" >&5
+ echo "${ECHO_T}ok" >&6
+    else

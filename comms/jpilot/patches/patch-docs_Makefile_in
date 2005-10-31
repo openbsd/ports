@@ -1,12 +1,12 @@
-$OpenBSD: patch-docs_Makefile_in,v 1.1 2005/01/23 06:06:01 pvalchev Exp $
---- docs/Makefile.in.orig	Sat Feb 28 16:19:49 2004
-+++ docs/Makefile.in	Sat Jan 22 15:23:45 2005
-@@ -219,7 +219,7 @@ target_alias = @target_alias@
- man_MANS = jpilot.1 jpilot-dial.1 jpilot-sync.1 jpilot-dump.1 jpilot-upgrade-99.1
+$OpenBSD: patch-docs_Makefile_in,v 1.2 2005/10/31 21:08:15 naddy Exp $
+--- docs/Makefile.in.orig	Mon Oct 31 18:58:28 2005
++++ docs/Makefile.in	Mon Oct 31 19:05:36 2005
+@@ -231,7 +231,7 @@ target_alias = @target_alias@
  
- # install the manual docs
--docdir = $(prefix)/share/doc/$(PACKAGE)-$(VERSION)
-+docdir = $(prefix)/share/doc/$(PACKAGE)
- doc_DATA = manual.html \
- 	    plugin.html \
- 	    jpilot-address.png \
+ # install the man pages
+ man_MANS = jpilot.1 jpilot-dial.1 jpilot-sync.1 jpilot-dump.1
+-miscdir = $(prefix)/share/doc/$(PACKAGE)-$(VERSION)
++miscdir = $(prefix)/share/doc/$(PACKAGE)
+ misc_DATA = ../BUGS \
+ 	../ChangeLog \
+ 	../COPYING \

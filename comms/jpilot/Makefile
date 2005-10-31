@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2005/07/11 19:38:04 alek Exp $
+# $OpenBSD: Makefile,v 1.30 2005/10/31 21:08:14 naddy Exp $
 
 COMMENT=	"desktop organizer software for the palm pilot"
 
-DISTNAME=	jpilot-0.99.7
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	jpilot-0.99.8
 CATEGORIES=	comms palm
 
 MASTER_SITES=	${HOMEPAGE}
@@ -23,9 +22,6 @@ WANTLIB=	c readline crypto m ncurses X11 Xft pangoxft-1.0.600.0 \
 		gdk_pixbuf-2.0.400.14 glib-2.0.400.8 gmodule-2.0.400.8 \
 		gobject-2.0.400.8 pango-1.0.600.0 pangoft2-1.0.600.0
 
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-		patch-*
-
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	pisock.8::comms/pilot-link \
 		gtk-x11-2.0.400.13,gdk-x11-2.0.400.13,gdk_pixbuf-2.0.400.13::x11/gtk+2
@@ -37,7 +33,6 @@ USE_X11=		yes
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			CFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-gtk2 \
@@ -50,7 +45,5 @@ pre-build:
 .for i in ${MAN1}
 	perl -pi -e "s,/usr/share,${LOCALBASE}/share,g" ${WRKSRC}/docs/${i}
 .endfor
-
-NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
