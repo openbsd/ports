@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/03/09 06:31:48 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.2 2005/10/31 15:18:48 mbalmer Exp $ 
 
 COMMENT=	"memo application"
 
 HORDE_MODULE=	mnemo
 HORDE_NAME=	Mnemo
 
-DISTNAME=	${HORDE_MODULE}-h3-2.0.1
+DISTNAME=	${HORDE_MODULE}-h3-2.0.2
 CATEGORIES=	databases
 HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
 

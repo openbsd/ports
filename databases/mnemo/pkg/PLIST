@@ -1,19 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/09 06:31:48 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/10/31 15:18:49 mbalmer Exp $
 horde/${HORDE_MODULE}/
 horde/${HORDE_MODULE}/LICENSE
 horde/${HORDE_MODULE}/README
+@mode 700
 @owner www
 @group www
-@mode 700
 horde/${HORDE_MODULE}/config/
 @mode 600
 horde/${HORDE_MODULE}/config/.htaccess
 horde/${HORDE_MODULE}/config/conf.xml
 horde/${HORDE_MODULE}/config/prefs.php.dist
 @sample horde/${HORDE_MODULE}/config/prefs.php
+@mode
 @owner
 @group
-@mode
 horde/${HORDE_MODULE}/data.php
 horde/${HORDE_MODULE}/docs/
 horde/${HORDE_MODULE}/docs/CHANGES
@@ -75,6 +75,9 @@ horde/${HORDE_MODULE}/locale/it_IT/
 horde/${HORDE_MODULE}/locale/it_IT/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/it_IT/LC_MESSAGES/${HORDE_MODULE}.mo
 horde/${HORDE_MODULE}/locale/it_IT/help.xml
+horde/${HORDE_MODULE}/locale/ja_JP/
+horde/${HORDE_MODULE}/locale/ja_JP/LC_MESSAGES/
+horde/${HORDE_MODULE}/locale/ja_JP/LC_MESSAGES/${HORDE_MODULE}.mo
 horde/${HORDE_MODULE}/locale/lt_LT/
 horde/${HORDE_MODULE}/locale/lt_LT/LC_MESSAGES/
 horde/${HORDE_MODULE}/locale/lt_LT/LC_MESSAGES/${HORDE_MODULE}.mo
@@ -130,6 +133,7 @@ horde/${HORDE_MODULE}/po/fi_FI.po
 horde/${HORDE_MODULE}/po/fr_FR.po
 horde/${HORDE_MODULE}/po/hu_HU.po
 horde/${HORDE_MODULE}/po/it_IT.po
+horde/${HORDE_MODULE}/po/ja_JP.po
 horde/${HORDE_MODULE}/po/lt_LT.po
 horde/${HORDE_MODULE}/po/lv_LV.po
 horde/${HORDE_MODULE}/po/${HORDE_MODULE}.pot
@@ -147,9 +151,11 @@ horde/${HORDE_MODULE}/po/zh_TW.po
 horde/${HORDE_MODULE}/scripts/
 horde/${HORDE_MODULE}/scripts/.htaccess
 horde/${HORDE_MODULE}/scripts/sql/
+horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.oci8.sql
 horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.sql
 horde/${HORDE_MODULE}/scripts/upgrades/
 horde/${HORDE_MODULE}/scripts/upgrades/1.1_to_2.0.mysql.sql
+horde/${HORDE_MODULE}/scripts/upgrades/1.1_to_2.0.pgsq.sql
 horde/${HORDE_MODULE}/scripts/upgrades/2004-12-21_add_memo_uid.sql
 horde/${HORDE_MODULE}/search.php
 horde/${HORDE_MODULE}/templates/
@@ -178,6 +184,7 @@ horde/${HORDE_MODULE}/templates/view/memo.inc
 horde/${HORDE_MODULE}/themes/
 horde/${HORDE_MODULE}/themes/graphics/
 horde/${HORDE_MODULE}/themes/graphics/add.png
+horde/${HORDE_MODULE}/themes/graphics/favicon.ico
 horde/${HORDE_MODULE}/themes/graphics/${HORDE_MODULE}.png
 horde/${HORDE_MODULE}/themes/graphics/notepads.png
 horde/${HORDE_MODULE}/view.php
