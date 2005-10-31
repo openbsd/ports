@@ -1,0 +1,22 @@
+The Zope External Editor is a new way to integrate Zope more seamlessly with
+client-side tools. It has the following features:
+
+  - Edit objects locally, directly from the ZMI.
+  - Works with any graphical editor application that can open a file from the
+    command line, including: emacs, gvim, xemacs, nedit, gimp, etc.
+  - Automatically saves changes back to Zope without ending the editing
+    session.
+  - Associate any client-side editor application with any Zope object by
+    meta-type or content-type. Both text and binary object content can be
+    edited.
+  - Locks objects while they are being edited. Automatically unlocks them when
+    the editing session ends.
+  - Can add file extensions automatically to improve syntax highlighting or
+    file type detection.
+  - Works with basic auth, cookie auth and Zope versions. Credentials are
+    automatically passed down to the helper application. No need to
+    reauthenticate.
+  - https support (Openssl required)
+
+zopeedit is the client part that launches the appropriate editor when
+an application/x-zope-edit object is loaded.

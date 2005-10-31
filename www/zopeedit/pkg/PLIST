@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/31 16:46:46 mbalmer Exp $
+bin/zopeedit
+@man man/man1/zopeedit.1
+share/doc/zopeedit/
+share/doc/zopeedit/README.txt
