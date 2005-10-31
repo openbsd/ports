@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.64 2005/09/29 21:36:34 pedro Exp $
+# $OpenBSD: OpenBSD-markers,v 1.65 2005/10/31 22:31:35 miod Exp $
 #
 # THE PKGNAME MUST BE BUMPED FOR THE FOLLOWING PORTS WHEN YOU COMMIT
 # TO THIS FILE:
@@ -43,6 +43,7 @@
 43.1342		-78.966048	"Harnett"	# Daniel L.
 43.30		5.37		"Anriot"	# Alexandre
 43.5826		1.4376		"Herrb"		# Matthieu
+43.5826		1.4376		"Vallat"	# Miod
 43.633		-79.500		"Smith"		# Brad
 43.70		-79.42		"Westerback"	# Ken
 43.9183		-78.6838	"Bertrand"	# Louis
@@ -50,7 +51,6 @@
 45.29		-73.34		"Lebel"		# David
 45.4745		-73.6556	"Sauve-Frankel"	# Mathieu
 45.5		-73.5		"Cote"		# Yannick
-45.78		3.08		"Vallat"	# Miodrag
 47.25		-61.48		"Cobb"		# Wilbern
 47.50		7.60		"Hartmeier"	# Daniel
 47.53		21.63		"Nagy"		# Robert
