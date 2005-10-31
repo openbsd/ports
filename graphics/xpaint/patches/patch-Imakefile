@@ -1,6 +1,6 @@
-$OpenBSD: patch-Imakefile,v 1.1 2005/05/24 19:49:28 naddy Exp $
---- Imakefile.orig	Wed Apr 27 14:59:37 2005
-+++ Imakefile	Tue May 24 11:39:09 2005
+$OpenBSD: patch-Imakefile,v 1.2 2005/10/31 23:24:19 naddy Exp $
+--- Imakefile.orig	Fri Jun  3 14:26:03 2005
++++ Imakefile	Tue Nov  1 00:16:20 2005
 @@ -102,7 +102,7 @@ SGI_LIB = -limage
  #endif
  
@@ -10,21 +10,16 @@ $OpenBSD: patch-Imakefile,v 1.1 2005/05/24 19:49:28 naddy Exp $
  
  SUBDIRS = rw
  
-@@ -152,7 +152,7 @@ install::
+@@ -136,8 +136,10 @@ install::
+ 	chmod -R a+r $(DESTDIR)$(SHAREDIR)/
  
  xaw::
- 	-$(RM) $(XAWDEPENDS)
--	-$(RM) xaw_incdir ; ln -sf /usr/include/X11/Xaw xaw_incdir
-+	-$(RM) xaw_incdir ; ln -sf ${X11BASE}/include/X11/Xaw xaw_incdir
- 	echo "XAWLIB_DEFINES = -DXAWPLAIN" > Local.xawdefs			
- 	echo "SYS_LIBRARIES = XawClientLibs -lm" >> Local.xawdefs
- 	xmkmf -a ; make
-@@ -164,7 +164,7 @@ xaw::
- 
- xaw3d::
- 	-$(RM) $(XAWDEPENDS)
--	-$(RM) xaw_incdir ; ln -sf /usr/include/X11/Xaw3d xaw_incdir	
-+	-$(RM) xaw_incdir ; ln -sf $(INCDIR)/X11/Xaw3d xaw_incdir	
- 	echo "XAWLIB_DEFINES = -DXAW3D" > Local.xawdefs
- 	echo "SYS_LIBRARIES = -lXaw3d -L." >> Local.xawdefs
- 	xmkmf ; cd rw ; xmkmf ; cd .. ; make
+-	-$(RM) $(XAWDEPENDS)
+-	./configure xaw ; make		
++	-$(RM) $(XAWDEPENDS) ; ln -sf ${X11BASE}/include/X11/Xaw xaw_incdir
++	echo "XAWLIB_DEFINES = -DXAWPLAIN" > Local.xawdefs
++	echo "SYS_LIBRARIES = XawClientLibs -lm" >> Local.xawdefs
++	xmkmf ; (cd rw ; xmkmf) ; make
+ 	@echo ""
+ 	@echo "'xpaint' compiled with Xaw widgets (old and ugly)"
+ 	@echo "You should rather use Xaw3d, neXtaw or Xaw95 !!"	

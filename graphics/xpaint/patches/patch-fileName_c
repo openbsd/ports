@@ -1,6 +1,6 @@
-$OpenBSD: patch-fileName_c,v 1.1 2005/05/24 19:49:28 naddy Exp $
---- fileName.c.orig	Mon May 23 23:12:09 2005
-+++ fileName.c	Mon May 23 23:13:09 2005
+$OpenBSD: patch-fileName_c,v 1.2 2005/10/31 23:24:19 naddy Exp $
+--- fileName.c.orig	Wed Aug 17 14:31:56 2005
++++ fileName.c	Tue Nov  1 00:03:27 2005
 @@ -39,7 +39,7 @@
  #include <stdio.h>
  #include <sys/types.h>
@@ -10,7 +10,7 @@ $OpenBSD: patch-fileName_c,v 1.1 2005/05/24 19:49:28 naddy Exp $
  #include <dirent.h>
  #else
  #include <sys/dir.h>
-@@ -455,7 +455,7 @@ static void 
+@@ -461,7 +461,7 @@ static void 
  setCWD(arg_t * arg, char *dir)
  {
      DIR *dirp;
