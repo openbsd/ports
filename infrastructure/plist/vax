@@ -1,5 +1,5 @@
-# $OpenBSD: vax,v 1.9 2005/03/18 07:45:30 pvalchev Exp $
-# This is the master list of subdirs used to choose i386 packages.
+# $OpenBSD: vax,v 1.10 2005/11/01 16:33:15 pvalchev Exp $
+# This is the master list of subdirs used to choose vax packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
 net/rsync

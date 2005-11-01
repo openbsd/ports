@@ -1,5 +1,5 @@
-# $OpenBSD: amd64,v 1.21 2005/09/04 18:36:53 pvalchev Exp $
-# This is the master list of subdirs used to choose i386 packages.
+# $OpenBSD: amd64,v 1.22 2005/11/01 16:33:14 pvalchev Exp $
+# This is the master list of subdirs used to choose amd64 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
 net/rsync
