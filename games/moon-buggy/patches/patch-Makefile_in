@@ -1,6 +1,24 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2004/01/09 20:49:36 sturm Exp $
---- Makefile.in.orig	2004-01-09 21:17:06.000000000 +0100
-+++ Makefile.in	2004-01-09 21:17:19.000000000 +0100
+$OpenBSD: patch-Makefile_in,v 1.2 2005/11/01 14:07:20 naddy Exp $
+--- Makefile.in.orig	Sun May  7 13:03:18 2000
++++ Makefile.in	Tue Nov  1 14:56:46 2005
+@@ -86,7 +86,7 @@ bin_SCRIPTS = maint-buggy
+ info_TEXINFOS = moon-buggy.texi
+ man_MANS = moon-buggy.6 maint-buggy.6
+ 
+-scoredir = $(sharedstatedir)/moon-buggy
++scoredir = $(sharedstatedir)/games
+ 
+ BUILT_SOURCES = copying.h buggy.h
+ 
+@@ -643,7 +643,7 @@ install-exec-hook:
+ 	@$(POST_INSTALL)
+ 	if test "x@GAMEGROUP@" != "x"; then \
+ 	  chgrp "@GAMEGROUP@" "$(DESTDIR)$(bindir)/moon-buggy" \
+-	    && chmod 2111 "$(DESTDIR)$(bindir)/moon-buggy" ; \
++	    && chmod g+s "$(DESTDIR)$(bindir)/moon-buggy" ; \
+ 	fi
+ 	chmod go-x "$(DESTDIR)$(bindir)/maint-buggy"
+ 	@$(NORMAL_INSTALL)
 @@ -661,7 +661,6 @@ install-data-hook:
  		 || chmod 664 "$(DESTDIR)$(scoredir)/mbscore" ; } \
  	    && chmod 575 "$(DESTDIR)$(scoredir)" ; \

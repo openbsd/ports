@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/11/14 10:31:08 alek Exp $
-bin/maint-buggy
+@comment $OpenBSD: PLIST,v 1.5 2005/11/01 14:07:20 naddy Exp $
+@comment bin/maint-buggy
+@mode g+s
+@group games
 bin/moon-buggy
+@mode
+@group
 @info info/moon-buggy.info
-@man man/man6/maint-buggy.6
+@comment @man man/man6/maint-buggy.6
 @man man/man6/moon-buggy.6
-@mode 775
-@sample /var/games/moon-buggy/
-@extraunexec rm -fr /var/games/moon-buggy/*
+@extra /var/games/mbscore
