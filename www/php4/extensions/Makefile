@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.46 2005/10/27 20:03:25 sturm Exp $
+# $OpenBSD: Makefile,v 1.47 2005/11/01 11:09:31 mbalmer Exp $
 
-FULLPKGNAME=	php4-extensions-${V}p0
+FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
 
 MULTI_PACKAGES=
@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=	--without-curl
 .else
 MULTI_PACKAGES+=	-curl
 COMMENT-curl=		"curl URL library extensions for php4"
-FULLPKGNAME-curl=	php4-curl-${V}p0
+FULLPKGNAME-curl=	php4-curl-${V}
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 CURL_DEPENDS=		curl.2::net/curl
 CURL_WANTLIB=		crypto ssl z
@@ -309,7 +309,7 @@ XSLT_WANTLIB=		iconv
 
 .for i in ${MULTI_PACKAGES}
 .if !defined(FULLPKGNAME${i})
-FULLPKGNAME${i}=	php4${i}-${V}p0
+FULLPKGNAME${i}=	php4${i}-${V}
 .endif
 .endfor
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pear,v 1.15 2005/07/12 15:49:27 robert Exp $
+@comment $OpenBSD: PLIST-pear,v 1.16 2005/11/01 11:09:31 mbalmer Exp $
 @conflict php5-pear-*
 pear/
 pear/build/
@@ -199,7 +199,6 @@ pear/include/include/php_sab_info.h
 pear/include/main/
 pear/include/main/SAPI.h
 pear/include/main/build-defs.h
-pear/include/main/config.nw.h
 pear/include/main/config.w32.h
 pear/include/main/fopen_wrappers.h
 pear/include/main/internal_functions_registry.h
