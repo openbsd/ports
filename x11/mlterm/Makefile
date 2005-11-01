@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2005/03/11 21:30:14 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2005/11/01 11:58:57 naddy Exp $
 
 COMMENT=	"color terminal emulator with transparency and unicode support"
 DISTNAME=	mlterm-2.9.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 
 MAINTAINER=	Waldemar Brodkorb <wbx@openbsd.de>
@@ -26,6 +26,7 @@ SHARED_ONLY=Yes
 BUILD_DEPENDS=	:pkgconfig->=0.14.0p1:devel/pkgconfig
 LIB_DEPENDS=	gdk_pixbuf-2.0.0.14,gtk-x11-2.0.0.14::x11/gtk+2
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-anti-alias --enable-utmp \
 		--with-imagelib=gdk-pixbuf2 --with-type-engines=xft,xcore
