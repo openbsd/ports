@@ -1,7 +1,35 @@
-$OpenBSD: patch-configure,v 1.1 2004/08/11 18:01:32 naddy Exp $
---- configure.orig	Wed Aug 11 11:50:32 2004
-+++ configure	Wed Aug 11 11:51:26 2004
-@@ -9524,13 +9524,13 @@ echo "${ECHO_T}$ac_cv_func_gettext" >&6
+$OpenBSD: patch-configure,v 1.2 2005/11/01 17:28:34 wilfried Exp $
+--- configure.orig	Sun Jun 19 05:23:02 2005
++++ configure	Tue Nov  1 16:26:27 2005
+@@ -9921,6 +9921,9 @@ if test -z "$aix_libpath"; then aix_libp
+     # Workaround some broken pre-1.5 toolchains
+     output_verbose_link_cmd='$CC -shared $CFLAGS -v conftest.$objext 2>&1 | grep conftest.$objext | $SED -e "s:-lgcc -lc -lgcc::"'
+     ;;
++  openbsd*)
++    ld_shlibs_CXX=yes
++    ;;
+   osf3*)
+     case $cc_basename in
+       KCC)
+@@ -21237,7 +21240,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+ int
+ main ()
+ {
+-{int x; asm volatile("movl %%eax, %%ebx\n"::
++{int x; asm volatile("pushal\n movl %%eax, %%ebx\n popal\n"::
+                           "m" (x),"m" (x),"m" (x),"m" (x),"m" (x),"m" (x),
+                           "m" (x),"m" (x),"m" (x),"m" (x),"m" (x),"m" (x));}
+   ;
+@@ -21301,7 +21304,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+ int
+ main ()
+ {
+-asm ("movq %mm0, %mm1");
++asm ("movq (%ebx), %mm1");
+   ;
+   return 0;
+ }
+@@ -21489,13 +21492,13 @@ echo "${ECHO_T}$ac_cv_func_gettext" >&6
  if test $ac_cv_func_gettext = yes; then
    HAVEGETTEXT="yes"
  else
@@ -16,9 +44,9 @@ $OpenBSD: patch-configure,v 1.1 2004/08/11 18:01:32 naddy Exp $
 -LIBS="-lintl  $LIBS"
 +LIBS="-lintl -liconv $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- #include "confdefs.h"
-@@ -9580,7 +9580,7 @@ fi
+ /* confdefs.h.  */
+ _ACEOF
+@@ -21553,7 +21556,7 @@ fi
  echo "$as_me:$LINENO: result: $ac_cv_lib_intl_gettext" >&5
  echo "${ECHO_T}$ac_cv_lib_intl_gettext" >&6
  if test $ac_cv_lib_intl_gettext = yes; then

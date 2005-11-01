@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lang,v 1.3 2004/09/15 19:26:32 espie Exp $
+@comment $OpenBSD: PLIST-lang,v 1.4 2005/11/01 17:28:34 wilfried Exp $
 share/WindowMaker/menu.bg
 share/WindowMaker/menu.ca
 share/WindowMaker/menu.cs
@@ -26,7 +26,7 @@ share/WindowMaker/menu.sl
 share/WindowMaker/menu.sv
 share/WindowMaker/menu.tr
 share/WindowMaker/menu.zh_CN
-share/WindowMaker/menu.zh_TW.Big5
+share/WindowMaker/menu.zh_TW
 share/WindowMaker/plmenu.bg
 share/WindowMaker/plmenu.da
 share/WindowMaker/plmenu.de
@@ -41,9 +41,21 @@ share/WindowMaker/plmenu.pl
 share/WindowMaker/plmenu.ro
 share/WindowMaker/plmenu.sk
 share/WindowMaker/plmenu.zh_CN
-share/WindowMaker/plmenu.zh_TW.Big5
+share/WindowMaker/plmenu.zh_TW
+share/locale/be/
+share/locale/be/LC_MESSAGES/
+share/locale/be/LC_MESSAGES/WindowMaker.mo
+share/locale/bg/LC_MESSAGES/WINGs.mo
 share/locale/bg/LC_MESSAGES/WPrefs.mo
 share/locale/bg/LC_MESSAGES/WindowMaker.mo
+share/locale/bs/
+share/locale/bs/LC_MESSAGES/
+share/locale/bs/LC_MESSAGES/WindowMaker.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
+share/locale/ca/LC_MESSAGES/WINGs.mo
+share/locale/ca/LC_MESSAGES/WPrefs.mo
+share/locale/ca/LC_MESSAGES/WindowMaker.mo
 share/locale/cs/LC_MESSAGES/WINGs.mo
 share/locale/cs/LC_MESSAGES/WPrefs.mo
 share/locale/cs/LC_MESSAGES/WindowMaker.mo
@@ -58,6 +70,7 @@ share/locale/et/LC_MESSAGES/WPrefs.mo
 share/locale/et/LC_MESSAGES/WindowMaker.mo
 share/locale/fi/LC_MESSAGES/WPrefs.mo
 share/locale/fi/LC_MESSAGES/WindowMaker.mo
+share/locale/fr/LC_MESSAGES/WINGs.mo
 share/locale/fr/LC_MESSAGES/WPrefs.mo
 share/locale/fr/LC_MESSAGES/WindowMaker.mo
 share/locale/gl/LC_MESSAGES/WindowMaker.mo
@@ -89,7 +102,5 @@ share/locale/sv/LC_MESSAGES/WindowMaker.mo
 share/locale/tr/LC_MESSAGES/WindowMaker.mo
 share/locale/zh_CN/LC_MESSAGES/WPrefs.mo
 share/locale/zh_CN/LC_MESSAGES/WindowMaker.mo
-share/locale/zh_TW.Big5/
-share/locale/zh_TW.Big5/LC_MESSAGES/
-share/locale/zh_TW.Big5/LC_MESSAGES/WPrefs.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/WindowMaker.mo
+share/locale/zh_TW/LC_MESSAGES/WPrefs.mo
+share/locale/zh_TW/LC_MESSAGES/WindowMaker.mo

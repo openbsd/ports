@@ -1,21 +1,21 @@
-$OpenBSD: patch-WPrefs_app_Menu_c,v 1.2 2001/10/24 13:54:38 wilfried Exp $
---- WPrefs.app/Menu.c.orig	Wed Oct 24 10:28:41 2001
-+++ WPrefs.app/Menu.c	Wed Oct 24 10:35:13 2001
-@@ -544,7 +544,7 @@ createPanel(_Panel *p)
- 	data->param.exec.command = "xv";
+$OpenBSD: patch-WPrefs_app_Menu_c,v 1.3 2005/11/01 17:28:34 wilfried Exp $
+--- WPrefs.app/Menu.c.orig	Tue Oct 26 04:23:39 2004
++++ WPrefs.app/Menu.c	Mon Oct 31 18:55:49 2005
+@@ -577,7 +577,7 @@ createPanel(_Panel *p)
+         data->param.exec.command = "xv";
  
- 	data = putNewItem(panel, pad, ExecInfo, _("Acrobat Reader"));
--	data->param.exec.command = "acroread || /usr/local/Acrobat4/bin/acroread";
-+	data->param.exec.command = "acroread";
+         data = putNewItem(panel, pad, ExecInfo, _("Acrobat Reader"));
+-        data->param.exec.command = "acroread || /usr/local/Acrobat4/bin/acroread";
++        data->param.exec.command = "acroread";
  
- 	data = putNewItem(panel, pad, ExecInfo, _("ghostview"));
- 	data->param.exec.command = "gv";
-@@ -583,7 +583,7 @@ createPanel(_Panel *p)
+         data = putNewItem(panel, pad, ExecInfo, _("ghostview"));
+         data->param.exec.command = "gv";
+@@ -616,7 +616,7 @@ createPanel(_Panel *p)
  
- 	data = putNewItem(panel, pad, DirectoryInfo, _("Themes"));
- 	data->param.directory.command = "setstyle";
--	data->param.directory.directory = "/usr/share/WindowMaker/Themes /usr/local/share/WindowMaker/Themes $HOME/GNUstep/Library/WindowMaker/Themes";
-+	data->param.directory.directory = "/usr/share/WindowMaker/Themes %%PREFIX%%/share/WindowMaker/Themes $HOME/GNUstep/Library/WindowMaker/Themes";
- 	data->param.directory.stripExt = 1;
- 	
- 	data = putNewItem(panel, pad, DirectoryInfo, _("Bg Images (scale)"));
+         data = putNewItem(panel, pad, DirectoryInfo, _("Themes"));
+         data->param.directory.command = "setstyle";
+-        data->param.directory.directory = "/usr/share/WindowMaker/Themes /usr/local/share/WindowMaker/Themes $HOME/GNUstep/Library/WindowMaker/Themes";
++        data->param.directory.directory = "/usr/share/WindowMaker/Themes %%PREFIX%%/share/WindowMaker/Themes $HOME/GNUstep/Library/WindowMaker/Themes";
+         data->param.directory.stripExt = 1;
+ 
+         data = putNewItem(panel, pad, DirectoryInfo, _("Bg Images (scale)"));

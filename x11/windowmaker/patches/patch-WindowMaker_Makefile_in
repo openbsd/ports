@@ -1,12 +1,12 @@
-$OpenBSD: patch-WindowMaker_Makefile_in,v 1.4 2002/01/04 22:40:02 wilfried Exp $
---- WindowMaker/Makefile.in.orig	Tue Dec 18 06:44:16 2001
-+++ WindowMaker/Makefile.in	Fri Jan  4 13:51:55 2002
-@@ -99,7 +99,7 @@ SUBDIRS = Backgrounds Defaults IconSets 
+$OpenBSD: patch-WindowMaker_Makefile_in,v 1.5 2005/11/01 17:28:34 wilfried Exp $
+--- WindowMaker/Makefile.in.orig	Sun Jun 19 05:23:01 2005
++++ WindowMaker/Makefile.in	Mon Oct 31 18:58:06 2005
+@@ -116,7 +116,7 @@ SUBDIRS = Backgrounds Defaults IconSets 
  
  prefsdatadir = $(pkgdatadir)
  
--prefsdata_DATA =  	README 	README.themes 	autostart.sh 	exitscript.sh 	menu 	menu.bg 	menu.ca 	menu.cz 	menu.da 	menu.de 	menu.el 	menu.es 	menu.fi 	menu.fr 	menu.gl 	menu.he 	menu.hr 	menu.hu 	menu.it 	menu.ja 	menu.ko 	menu.nl 	menu.no 	menu.pl 	menu.pt 	menu.ro 	menu.ru 	menu.se 	menu.sk 	menu.sl 	menu.tr 	menu.zh_CN 	menu.zh_TW.Big5 	plmenu 	plmenu.bg 	plmenu.da 	plmenu.de 	plmenu.es 	plmenu.fi 	plmenu.fr 	plmenu.hr 	plmenu.it 	plmenu.ja 	plmenu.ko 	plmenu.pl 	plmenu.ro 	plmenu.sk 	plmenu.zh_CN 	plmenu.zh_TW.Big5 	wmmacros 	xtree.dat
-+prefsdata_DATA =  	README 	README.themes 	autostart.sh 	exitscript.sh 	menu 	menu.bg 	menu.ca 	menu.cs 	menu.da 	menu.de 	menu.el 	menu.es 	menu.fi 	menu.fr 	menu.gl 	menu.he 	menu.hr 	menu.hu 	menu.it 	menu.ja 	menu.ko 	menu.nl 	menu.no 	menu.pl 	menu.pt 	menu.ro 	menu.ru 	menu.sv 	menu.sk 	menu.sl 	menu.tr 	menu.zh_CN 	menu.zh_TW.Big5 	plmenu 	plmenu.bg 	plmenu.da 	plmenu.de 	plmenu.es 	plmenu.fi 	plmenu.fr 	plmenu.hr 	plmenu.it 	plmenu.ja 	plmenu.ko 	plmenu.pl 	plmenu.ro 	plmenu.sk 	plmenu.zh_CN 	plmenu.zh_TW.Big5 	wmmacros 	xtree.dat
+-prefsdata_DATA =  	README 	README.themes 	autostart.sh 	exitscript.sh 	menu 	menu.bg 	menu.ca 	menu.cz 	menu.da 	menu.de 	menu.el 	menu.es 	menu.fi 	menu.fr 	menu.gl 	menu.he 	menu.hr 	menu.hu 	menu.it 	menu.ja 	menu.ko 	menu.nl 	menu.no 	menu.pl 	menu.pt 	menu.ro 	menu.ru 	menu.se 	menu.sk 	menu.sl 	menu.tr 	menu.zh_CN 	menu.zh_TW 	plmenu 	plmenu.bg 	plmenu.da 	plmenu.de 	plmenu.es 	plmenu.fi 	plmenu.fr 	plmenu.hr 	plmenu.it 	plmenu.ja 	plmenu.ko 	plmenu.pl 	plmenu.ro 	plmenu.sk 	plmenu.zh_CN 	plmenu.zh_TW 	wmmacros 	xtree.dat
++prefsdata_DATA =  	README 	README.themes 	autostart.sh 	exitscript.sh 	menu 	menu.bg 	menu.ca 	menu.cs 	menu.da 	menu.de 	menu.el 	menu.es 	menu.fi 	menu.fr 	menu.gl 	menu.he 	menu.hr 	menu.hu 	menu.it 	menu.ja 	menu.ko 	menu.nl 	menu.no 	menu.pl 	menu.pt 	menu.ro 	menu.ru 	menu.sv 	menu.sk 	menu.sl 	menu.tr 	menu.zh_CN 	menu.zh_TW 	plmenu 	plmenu.bg 	plmenu.da 	plmenu.de 	plmenu.es 	plmenu.fi 	plmenu.fr 	plmenu.hr 	plmenu.it 	plmenu.ja 	plmenu.ko 	plmenu.pl 	plmenu.ro 	plmenu.sk 	plmenu.zh_CN 	plmenu.zh_TW 	wmmacros 	xtree.dat
  
  
  EXTRA_DIST = $(prefsdata_DATA) mkMakefile

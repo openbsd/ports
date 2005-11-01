@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/15 19:26:32 espie Exp $
-@lib lib/libwraster.so.4.0
+@comment $OpenBSD: PFRAG.shared,v 1.6 2005/11/01 17:28:34 wilfried Exp $
+@lib lib/libwraster.so.5.0

@@ -1,0 +1,19 @@
+$OpenBSD: patch-wrlib_Makefile_in,v 1.1 2005/11/01 17:28:34 wilfried Exp $
+--- wrlib/Makefile.in.orig	Sun Jun 19 05:23:01 2005
++++ wrlib/Makefile.in	Tue Nov  1 15:24:12 2005
+@@ -112,13 +112,13 @@ supported_locales = @supported_locales@
+ wprefs_bindir = @wprefs_bindir@
+ wprefs_datadir = @wprefs_datadir@
+ 
+-SUBDIRS = . tests
++SUBDIRS = .
+ 
+ AUTOMAKE_OPTIONS = no-dependencies
+ 
+ lib_LTLIBRARIES = libwraster.la
+ 
+-libwraster_la_LDFLAGS = -version-info 4:0:1
++libwraster_la_LDFLAGS = -version-info 5:0:0
+ 
+ bin_SCRIPTS = get-wraster-flags
+ 

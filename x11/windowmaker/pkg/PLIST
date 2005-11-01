@@ -1,76 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.27 2004/09/15 19:26:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.28 2005/11/01 17:28:34 wilfried Exp $
 GNUstep/
-GNUstep/Apps/
-GNUstep/Apps/WPrefs.app/
-GNUstep/Apps/WPrefs.app/WPrefs
-GNUstep/Apps/WPrefs.app/WPrefs.tiff
-GNUstep/Apps/WPrefs.app/WPrefs.xpm
-GNUstep/Apps/WPrefs.app/tiff/
-GNUstep/Apps/WPrefs.app/tiff/advancetonewworkspace.tiff
-GNUstep/Apps/WPrefs.app/tiff/animations.tiff
-GNUstep/Apps/WPrefs.app/tiff/appearance.tiff
-GNUstep/Apps/WPrefs.app/tiff/clip.tiff
-GNUstep/Apps/WPrefs.app/tiff/configs.tiff
-GNUstep/Apps/WPrefs.app/tiff/cycleworkspaces.tiff
-GNUstep/Apps/WPrefs.app/tiff/dock.tiff
-GNUstep/Apps/WPrefs.app/tiff/dontlinkworkspaces.tiff
-GNUstep/Apps/WPrefs.app/tiff/ergonomic.tiff
-GNUstep/Apps/WPrefs.app/tiff/expert.tiff
-GNUstep/Apps/WPrefs.app/tiff/fonts.tiff
-GNUstep/Apps/WPrefs.app/tiff/iconprefs.tiff
-GNUstep/Apps/WPrefs.app/tiff/keyboard.tiff
-GNUstep/Apps/WPrefs.app/tiff/keyboardprefs.tiff
-GNUstep/Apps/WPrefs.app/tiff/keyshortcuts.tiff
-GNUstep/Apps/WPrefs.app/tiff/menualign1.tiff
-GNUstep/Apps/WPrefs.app/tiff/menualign2.tiff
-GNUstep/Apps/WPrefs.app/tiff/menuprefs.tiff
-GNUstep/Apps/WPrefs.app/tiff/menus.tiff
-GNUstep/Apps/WPrefs.app/tiff/moreanim.tiff
-GNUstep/Apps/WPrefs.app/tiff/mousesettings.tiff
-GNUstep/Apps/WPrefs.app/tiff/mousespeed.tiff
-GNUstep/Apps/WPrefs.app/tiff/msty1.tiff
-GNUstep/Apps/WPrefs.app/tiff/msty2.tiff
-GNUstep/Apps/WPrefs.app/tiff/msty3.tiff
-GNUstep/Apps/WPrefs.app/tiff/newstyle.tiff
-GNUstep/Apps/WPrefs.app/tiff/nonopaque.tiff
-GNUstep/Apps/WPrefs.app/tiff/oldstyle.tiff
-GNUstep/Apps/WPrefs.app/tiff/opaque.tiff
-GNUstep/Apps/WPrefs.app/tiff/paths.tiff
-GNUstep/Apps/WPrefs.app/tiff/smooth.tiff
-GNUstep/Apps/WPrefs.app/tiff/sound.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed0.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed0s.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed1.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed1s.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed2.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed2s.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed3.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed3s.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed4.tiff
-GNUstep/Apps/WPrefs.app/tiff/speed4s.tiff
-GNUstep/Apps/WPrefs.app/tiff/tdel.tiff
-GNUstep/Apps/WPrefs.app/tiff/tedit.tiff
-GNUstep/Apps/WPrefs.app/tiff/textr.tiff
-GNUstep/Apps/WPrefs.app/tiff/theme.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer0.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer0s.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer1.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer1s.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer2.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer2s.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer3.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer3s.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer4.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer4s.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer5.tiff
-GNUstep/Apps/WPrefs.app/tiff/timer5s.tiff
-GNUstep/Apps/WPrefs.app/tiff/tnew.tiff
-GNUstep/Apps/WPrefs.app/tiff/whandling.tiff
-GNUstep/Apps/WPrefs.app/tiff/windowfocus.tiff
-GNUstep/Apps/WPrefs.app/tiff/workspace.tiff
-GNUstep/Apps/WPrefs.app/tiff/workspacename.tiff
-GNUstep/Apps/WPrefs.app/tiff/xis.tiff
-GNUstep/Apps/WPrefs.app/xpm/
+GNUstep/Applications/
+GNUstep/Applications/WPrefs.app
+bin/WPrefs
+bin/convertfonts
 bin/get-wings-flags
 bin/get-wraster-flags
 bin/get-wutil-flags
@@ -78,7 +11,6 @@ bin/geticonset
 bin/getstyle
 bin/seticons
 bin/setstyle
-bin/wcopy
 bin/wdread
 bin/wdwrite
 bin/wkdemenu.pl
@@ -86,11 +18,8 @@ bin/wm-oldmenu2new
 bin/wmagnify
 bin/wmaker
 bin/wmaker.inst
-bin/wmchlocale
 bin/wmsetbg
 bin/wmsetup
-bin/wpaste
-bin/wsetfont
 bin/wxcopy
 bin/wxpaste
 include/WINGs/
@@ -108,15 +37,17 @@ lib/libWMaker.a
 lib/libWUtil.a
 lib/libwraster.a
 lib/libwraster.la
+lib/pkgconfig/
+lib/pkgconfig/WINGs.pc
+lib/pkgconfig/wmlib.pc
+lib/pkgconfig/wrlib.pc
 @man man/man1/geticonset.1x
 @man man/man1/getstyle.1x
 @man man/man1/seticons.1x
 @man man/man1/setstyle.1x
-@man man/man1/wcopy.1x
 @man man/man1/wdwrite.1x
 @man man/man1/wmaker.1x
 @man man/man1/wmsetbg.1x
-@man man/man1/wsetfont.1x
 @man man/man1/wxcopy.1x
 @man man/man1/wxpaste.1x
 man/sk/
@@ -128,7 +59,6 @@ man/sk/man1/
 @man man/sk/man1/wdwrite.1x
 @man man/sk/man1/wmaker.1x
 @man man/sk/man1/wmsetbg.1x
-@man man/sk/man1/wsetfont.1x
 @man man/sk/man1/wxcopy.1x
 @man man/sk/man1/wxpaste.1x
 share/WINGs/
@@ -136,16 +66,78 @@ share/WINGs/Images.tiff
 share/WINGs/Images.xpm
 share/WINGs/defaultIcon.tiff
 share/WINGs/defaultIcon.xpm
+share/WPrefs/
+share/WPrefs/WPrefs.tiff
+share/WPrefs/WPrefs.xpm
+share/WPrefs/tiff/
+share/WPrefs/tiff/advancetonewworkspace.tiff
+share/WPrefs/tiff/animations.tiff
+share/WPrefs/tiff/appearance.tiff
+share/WPrefs/tiff/clip.tiff
+share/WPrefs/tiff/configs.tiff
+share/WPrefs/tiff/cycleworkspaces.tiff
+share/WPrefs/tiff/dock.tiff
+share/WPrefs/tiff/dontlinkworkspaces.tiff
+share/WPrefs/tiff/ergonomic.tiff
+share/WPrefs/tiff/expert.tiff
+share/WPrefs/tiff/fonts.tiff
+share/WPrefs/tiff/iconprefs.tiff
+share/WPrefs/tiff/keyboard.tiff
+share/WPrefs/tiff/keyboardprefs.tiff
+share/WPrefs/tiff/keyshortcuts.tiff
+share/WPrefs/tiff/menualign1.tiff
+share/WPrefs/tiff/menualign2.tiff
+share/WPrefs/tiff/menuprefs.tiff
+share/WPrefs/tiff/menus.tiff
+share/WPrefs/tiff/moreanim.tiff
+share/WPrefs/tiff/mousesettings.tiff
+share/WPrefs/tiff/mousespeed.tiff
+share/WPrefs/tiff/msty1.tiff
+share/WPrefs/tiff/msty2.tiff
+share/WPrefs/tiff/msty3.tiff
+share/WPrefs/tiff/newstyle.tiff
+share/WPrefs/tiff/nonopaque.tiff
+share/WPrefs/tiff/oldstyle.tiff
+share/WPrefs/tiff/opaque.tiff
+share/WPrefs/tiff/paths.tiff
+share/WPrefs/tiff/smooth.tiff
+share/WPrefs/tiff/sound.tiff
+share/WPrefs/tiff/speed0.tiff
+share/WPrefs/tiff/speed0s.tiff
+share/WPrefs/tiff/speed1.tiff
+share/WPrefs/tiff/speed1s.tiff
+share/WPrefs/tiff/speed2.tiff
+share/WPrefs/tiff/speed2s.tiff
+share/WPrefs/tiff/speed3.tiff
+share/WPrefs/tiff/speed3s.tiff
+share/WPrefs/tiff/speed4.tiff
+share/WPrefs/tiff/speed4s.tiff
+share/WPrefs/tiff/tdel.tiff
+share/WPrefs/tiff/tedit.tiff
+share/WPrefs/tiff/textr.tiff
+share/WPrefs/tiff/theme.tiff
+share/WPrefs/tiff/timer0.tiff
+share/WPrefs/tiff/timer0s.tiff
+share/WPrefs/tiff/timer1.tiff
+share/WPrefs/tiff/timer1s.tiff
+share/WPrefs/tiff/timer2.tiff
+share/WPrefs/tiff/timer2s.tiff
+share/WPrefs/tiff/timer3.tiff
+share/WPrefs/tiff/timer3s.tiff
+share/WPrefs/tiff/timer4.tiff
+share/WPrefs/tiff/timer4s.tiff
+share/WPrefs/tiff/timer5.tiff
+share/WPrefs/tiff/timer5s.tiff
+share/WPrefs/tiff/tnew.tiff
+share/WPrefs/tiff/whandling.tiff
+share/WPrefs/tiff/windowfocus.tiff
+share/WPrefs/tiff/workspace.tiff
+share/WPrefs/tiff/workspacename.tiff
+share/WPrefs/tiff/xis.tiff
+share/WPrefs/xpm/
 share/WindowMaker/
 share/WindowMaker/Backgrounds/
 share/WindowMaker/Backgrounds/BlueImage.jpeg
-share/WindowMaker/Defaults/
-share/WindowMaker/Defaults/WindowMaker/
-share/WindowMaker/Defaults/WindowMaker/WMGLOBAL
-share/WindowMaker/Defaults/WindowMaker/WMRootMenu
-share/WindowMaker/Defaults/WindowMaker/WMState
-share/WindowMaker/Defaults/WindowMaker/WMWindowAttributes
-share/WindowMaker/Defaults/WindowMaker/WindowMaker
 share/WindowMaker/IconSets/
 share/WindowMaker/IconSets/Default.iconset
 share/WindowMaker/Icons/
@@ -215,6 +207,9 @@ share/WindowMaker/Icons/xdvi.xpm
 share/WindowMaker/Icons/xv.tiff
 share/WindowMaker/Icons/xv.xpm
 share/WindowMaker/Pixmaps/
+share/WindowMaker/Pixmaps/swback.png
+share/WindowMaker/Pixmaps/swback2.png
+share/WindowMaker/Pixmaps/swtile.png
 share/WindowMaker/Pixmaps/tile.tiff
 share/WindowMaker/Pixmaps/tile.xpm
 share/WindowMaker/README
@@ -268,3 +263,15 @@ share/WindowMaker/plmenu
 share/WindowMaker/wmmacros
 share/WindowMaker/xtree.dat
 %%SHARED%%
+share/examples/WindowMaker/
+@sample ${SYSCONFDIR}/WindowMaker/
+share/examples/WindowMaker/WMGLOBAL
+@sample ${SYSCONFDIR}/WindowMaker/WMGLOBAL
+share/examples/WindowMaker/WMRootMenu
+@sample ${SYSCONFDIR}/WindowMaker/WMRootMenu
+share/examples/WindowMaker/WMState
+@sample ${SYSCONFDIR}/WindowMaker/WMState
+share/examples/WindowMaker/WMWindowAttributes
+@sample ${SYSCONFDIR}/WindowMaker/WMWindowAttributes
+share/examples/WindowMaker/WindowMaker
+@sample ${SYSCONFDIR}/WindowMaker/WindowMaker

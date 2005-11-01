@@ -1,12 +1,12 @@
-$OpenBSD: patch-ltmain_sh,v 1.6 2002/01/04 22:40:02 wilfried Exp $
---- ltmain.sh.orig	Fri Nov 30 01:22:10 2001
-+++ ltmain.sh	Fri Jan  4 13:54:20 2002
-@@ -1062,6 +1062,17 @@ compiler."
+$OpenBSD: patch-ltmain_sh,v 1.7 2005/11/01 17:28:34 wilfried Exp $
+--- ltmain.sh.orig	Sun Jun 19 05:22:56 2005
++++ ltmain.sh	Mon Oct 31 18:43:20 2005
+@@ -1371,6 +1371,17 @@ EOF
  	continue
  	;;
  
 +      -pthread)
-+	case $host in
++        case $host in
 +	*-*-openbsd*)
 +	  deplibs="$deplibs $arg"
 +	  ;;
@@ -19,44 +19,34 @@ $OpenBSD: patch-ltmain_sh,v 1.6 2002/01/04 22:40:02 wilfried Exp $
        -module)
  	module=yes
  	continue
-@@ -4491,40 +4502,6 @@ relink_command=\"$relink_command\""
-     # Exit here if they wanted silent mode.
-     test "$show" = ":" && exit 0
- 
--    echo "----------------------------------------------------------------------"
--    echo "Libraries have been installed in:"
--    for libdir in $libdirs; do
--      echo "   $libdir"
--    done
--    echo
--    echo "If you ever happen to want to link against installed libraries"
--    echo "in a given directory, LIBDIR, you must either use libtool, and"
--    echo "specify the full pathname of the library, or use the \`-LLIBDIR'"
--    echo "flag during linking and do at least one of the following:"
--    if test -n "$shlibpath_var"; then
--      echo "   - add LIBDIR to the \`$shlibpath_var' environment variable"
--      echo "     during execution"
--    fi
--    if test -n "$runpath_var"; then
--      echo "   - add LIBDIR to the \`$runpath_var' environment variable"
--      echo "     during linking"
--    fi
--    if test -n "$hardcode_libdir_flag_spec"; then
--      libdir=LIBDIR
--      eval flag=\"$hardcode_libdir_flag_spec\"
--
--      echo "   - use the \`$flag' linker flag"
--    fi
--    if test -n "$admincmds"; then
--      echo "   - have your system administrator run these commands:$admincmds"
--    fi
--    if test -f /etc/ld.so.conf; then
--      echo "   - have your system administrator add LIBDIR to \`/etc/ld.so.conf'"
--    fi
--    echo
--    echo "See any operating system documentation about shared libraries for"
--    echo "more information, such as the ld(1) and ld.so(8) manual pages."
--    echo "----------------------------------------------------------------------"
-     exit 0
-     ;;
- 
+@@ -2020,6 +2031,30 @@ EOF
+ 	  fi
+ 	  continue
+ 	  ;;
++	-pthread)
++	  case $linkmode in
++	  lib)
++	    deplibs="$deplib $deplibs"
++	    test "$pass" = conv && continue
++	    newdependency_libs="$deplib $newdependency_libs"
++	    ;;
++	  prog)
++	    if test "$pass" = conv; then
++	      deplibs="$deplib $deplibs"
++	      continue
++	    fi
++	    if test "$pass" = scan; then
++	      deplibs="$deplib $deplibs"
++	    else
++	      compile_deplibs="$deplib $compile_deplibs"
++	      finalize_deplibs="$deplib $finalize_deplibs"
++	    fi
++	    ;;
++	  *)
++	    ;;
++	  esac # linkmode
++	  continue
++	  ;; # -pthread
+ 	%DEPLIBS%)
+ 	  alldeplibs=yes
+ 	  continue
