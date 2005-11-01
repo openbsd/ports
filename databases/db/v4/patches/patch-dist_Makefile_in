@@ -1,6 +1,6 @@
-$OpenBSD: patch-dist_Makefile_in,v 1.5 2004/01/14 19:50:15 sturm Exp $
---- dist/Makefile.in.orig	2003-11-28 19:50:06.000000000 +0100
-+++ dist/Makefile.in	2004-01-10 16:20:16.000000000 +0100
+$OpenBSD: patch-dist_Makefile_in,v 1.6 2005/11/01 15:44:24 bernd Exp $
+--- dist/Makefile.in.orig	Fri Nov 28 19:50:06 2003
++++ dist/Makefile.in	Tue Nov  1 15:43:00 2005
 @@ -11,7 +11,8 @@ exec_prefix=@exec_prefix@
  bindir=	@bindir@
  includedir=@includedir@
@@ -138,6 +138,15 @@ $OpenBSD: patch-dist_Makefile_in,v 1.5 2004/01/14 19:50:15 sturm Exp $
  	$(CCLINK) -o $@ $(LDFLAGS) \
  	    db_verify@o@ util_cache@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
  	$(POSTLINK) $@
+@@ -797,7 +798,7 @@ install_include:
+ 	    ($(mkdir) -p $(DESTDIR)$(includedir) && \
+ 	    $(chmod) $(dmode) $(DESTDIR)$(includedir))
+ 	@cd $(DESTDIR)$(includedir) && $(rm) -f $(INCDOT)
+-	@$(cp) -p $(INCDOT) $(DESTDIR)$(includedir)
++	@${BSD_INSTALL_DATA} -p $(INCDOT) $(DESTDIR)$(includedir)
+ 	@cd $(DESTDIR)$(includedir) && $(chmod) $(fmode) $(INCDOT)
+ 
+ uninstall_include:
 @@ -820,6 +821,10 @@ install_lib:
  	    test -f $(libjso) && $(ln) -s $(libjso) $(libjso_default); \
  	    test -f $(libjso) && $(ln) -s $(libjso) $(libjso_major); \
@@ -149,3 +158,11 @@ $OpenBSD: patch-dist_Makefile_in,v 1.5 2004/01/14 19:50:15 sturm Exp $
  	@(test -f $(libj_jarfile) && \
  	    $(cp) $(libj_jarfile) $(DESTDIR)$(libdir) && \
  	    $(chmod) $(fmode) $(DESTDIR)$(libdir)/$(libj_jarfile)) || true
+@@ -853,6 +858,7 @@ install_docs:
+ 	    $(chmod) $(dmode) $(DESTDIR)$(docdir))
+ 	@cd $(DESTDIR)$(docdir) && $(rm) -rf $(DOCLIST)
+ 	@cd $(srcdir)/docs && $(cp) -pr $(DOCLIST) $(DESTDIR)$(docdir)/
++	@chown -R root:wheel $(DESTDIR)$(docdir)/
+ 
+ uninstall_docs:
+ 	@cd $(docdir) && $(rm) -rf $(DESTDIR)$(DOCLIST)

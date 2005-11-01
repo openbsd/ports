@@ -1,6 +1,15 @@
-$OpenBSD: patch-dist_configure,v 1.2 2004/09/24 20:47:22 sturm Exp $
+$OpenBSD: patch-dist_configure,v 1.3 2005/11/01 15:44:24 bernd Exp $
 --- dist/configure.orig	Mon Jul 31 18:58:18 2000
-+++ dist/configure	Thu Sep 16 21:07:31 2004
++++ dist/configure	Tue Nov  1 12:34:21 2005
+@@ -728,7 +728,7 @@ echo "$ac_t""no" 1>&6
+ 
+ 
+ o=.o
+-INSTALLER="\$(cp)"
++INSTALLER="\${BSD_INSTALL_PROGRAM}"
+ DEFAULT_LIB="\$(libdb)"
+ DEFAULT_INSTALL="install_static"
+ 
 @@ -1602,7 +1602,6 @@ echo "configure:1601: checking libtool c
  	${CONFIG_SHELL-/bin/sh} $srcdir/ltconfig \
  		--no-verify $srcdir/ltmain.sh \
@@ -9,9 +18,12 @@ $OpenBSD: patch-dist_configure,v 1.2 2004/09/24 20:47:22 sturm Exp $
  	|| { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
  
  	SOSUFFIX=`sed -e '/^library_names_spec=/!d' -e 's/.*\.\([a-zA-Z0-9_]*\).*/\1/' ./libtool`
-@@ -1617,7 +1616,7 @@ echo "configure:1601: checking libtool c
+@@ -1615,9 +1614,9 @@ echo "configure:1601: checking libtool c
+ 	MAKEFILE_CXX="\$(LIBTOOL) --mode=compile ${SAVE_CXX}"
+ 	MAKEFILE_CCLINK="\$(LIBTOOL) --mode=link ${SAVE_CC}"
  
- 	INSTALLER="\$(LIBTOOL) --mode=install cp"
+-	INSTALLER="\$(LIBTOOL) --mode=install cp"
++	INSTALLER="\$(LIBTOOL) --mode=install \${BSD_INSTALL_PROGRAM}"
  	POSTLINK="\$(LIBTOOL) --mode=execute true"
 -	SOLINK="\$(LIBTOOL) --mode=link ${SAVE_CC} -avoid-version"
 +	SOLINK="\$(LIBTOOL) --mode=link ${SAVE_CC} -version-info @DB_VERSION_MAJOR@:@DB_VERSION_MINOR@"

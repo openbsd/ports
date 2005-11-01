@@ -1,6 +1,6 @@
-$OpenBSD: patch-dist_configure,v 1.3 2004/07/03 23:19:07 brad Exp $
---- dist/configure.orig	Wed Dec  3 16:10:02 2003
-+++ dist/configure	Sat Jul  3 17:30:18 2004
+$OpenBSD: patch-dist_configure,v 1.4 2005/11/01 15:44:24 bernd Exp $
+--- dist/configure.orig	Wed Dec  3 22:10:02 2003
++++ dist/configure	Tue Nov  1 14:25:29 2005
 @@ -5889,12 +5889,10 @@ nto-qnx | nto-qnx6*)
    ;;
  
@@ -45,8 +45,12 @@ $OpenBSD: patch-dist_configure,v 1.3 2004/07/03 23:19:07 brad Exp $
    osf3*)
      case $cc_basename in
        KCC)
-@@ -20138,10 +20151,10 @@ echo "${ECHO_T}$JMODSUFFIX" >&6
- INSTALLER="\$(LIBTOOL) --mode=install cp -p"
+@@ -20135,13 +20148,13 @@ echo "${ECHO_T}$JMODSUFFIX" >&6
+ 
+ 
+ 
+-INSTALLER="\$(LIBTOOL) --mode=install cp -p"
++INSTALLER="\$(LIBTOOL) --mode=install \${BSD_INSTALL_PROGRAM} -p"
  
  MAKEFILE_CC="\$(LIBTOOL) --mode=compile ${MAKEFILE_CC}"
 -MAKEFILE_SOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK} -avoid-version"

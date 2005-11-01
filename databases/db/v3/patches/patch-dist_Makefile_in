@@ -1,6 +1,6 @@
-$OpenBSD: patch-dist_Makefile_in,v 1.3 2004/01/10 08:36:28 sturm Exp $
---- dist/Makefile.in.orig	2000-07-18 17:37:57.000000000 +0200
-+++ dist/Makefile.in	2004-01-09 23:47:00.000000000 +0100
+$OpenBSD: patch-dist_Makefile_in,v 1.4 2005/11/01 15:44:24 bernd Exp $
+--- dist/Makefile.in.orig	Tue Jul 18 17:37:57 2000
++++ dist/Makefile.in	Tue Nov  1 13:02:45 2005
 @@ -34,11 +34,11 @@ SOVERSION=	@DB_VERSION_MAJOR@.@DB_VERSIO
  libdb=		libdb.a
  
@@ -71,6 +71,15 @@ $OpenBSD: patch-dist_Makefile_in,v 1.3 2004/01/10 08:36:28 sturm Exp $
  
  dmode=	755
  emode=	555
+@@ -398,7 +399,7 @@ install_include:
+ 	@test -d $(includedir) || \
+ 	    ($(mkdir) -p $(includedir) && $(chmod) $(dmode) $(includedir))
+ 	@cd $(includedir) && $(rm) -f db.h db_185.h db_cxx.h
+-	@$(cp) -p db.h db_185.h $(srcdir)/include/db_cxx.h $(includedir)
++	@${BSD_INSTALL_DATA} -p db.h db_185.h $(srcdir)/include/db_cxx.h $(includedir)
+ 	@cd $(includedir) && $(chmod) $(fmode) db.h db_185.h db_cxx.h
+ 
+ install_static: install_setup
 @@ -424,9 +425,9 @@ install_dynamic: install_setup
  	@cd $(libdir) && \
  	    $(rm) -f $(libso) $(libso_default) $(libso_major)
@@ -97,4 +106,20 @@ $OpenBSD: patch-dist_Makefile_in,v 1.3 2004/01/10 08:36:28 sturm Exp $
 +	@cd $(libsdir) && $(ln) -s db/$(libtso)
  	@cd $(libdir) && $(ln) -s $(libtso) $(libtso_default)
  	@cd $(libdir) && $(ln) -s $(libtso) $(libtso_major)
+ 
+@@ -465,13 +468,14 @@ install_docs: install_setup
+ 	    ($(mkdir) -p $(docdir) && $(chmod) $(dmode) $(docdir))
+ 	@cd $(docdir) && $(rm) -rf *
+ 	@cd $(srcdir)/docs && $(cp) -pr * $(docdir)/
++	@chown -R root:wheel $(docdir)/
+ 
+ install_utilities: install_setup
+ 	@echo "Installing DB utilities: $(bindir) ..."
+ 	@test -d $(bindir) || \
+ 	    ($(mkdir) -p $(bindir) && $(chmod) $(dmode) $(bindir))
+ 	@cd $(bindir) && $(rm) -f $(PROGS)
+-	@$(INSTALLER) -fp $(PROGS) $(bindir)
++	@$(INSTALLER) $(PROGS) $(bindir)
+ 	@cd $(bindir) && (test ! -f $(strip) || $(strip) $(PROGS))
+ 	@cd $(bindir) && $(chmod) $(emode) $(PROGS)
  
