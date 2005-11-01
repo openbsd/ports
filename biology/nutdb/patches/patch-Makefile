@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Oct 19 11:28:46 2004
-+++ Makefile	Tue Oct 19 11:32:01 2004
+--- Makefile.orig	Sat Dec 11 01:08:13 2004
++++ Makefile	Tue Nov  1 17:39:44 2005
 @@ -1,15 +1,18 @@
  objects := $(patsubst %.c,%.o,$(wildcard *.c))
  
@@ -21,6 +21,6 @@
 -# DO NOT DELETE
 +install:
 +	mkdir $(PREFIX)/lib/nutdb/
-+	install -m 755 nut $(PREFIX)/bin/nutdb
-+	install -m 644 nut.1 $(PREFIX)/man/man1/nutdb.1
-+	mv raw.data/* $(PREFIX)/lib/nutdb/
++	${BSD_INSTALL_PROGRAM} nut $(PREFIX)/bin/nutdb
++	${BSD_INSTALL_MAN} nut.1 $(PREFIX)/man/man1/nutdb.1
++	${BSD_INSTALL_DATA} raw.data/* $(PREFIX)/lib/nutdb/

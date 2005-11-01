@@ -1,5 +1,5 @@
---- nut.1.orig	Wed Jan 26 17:12:39 2005
-+++ nut.1	Sun Feb  6 11:16:39 2005
+--- nut.1.orig	Thu Jan 27 00:12:39 2005
++++ nut.1	Tue Nov  1 17:38:01 2005
 @@ -1,16 +1,16 @@
 -.\" manual page [] for nut
 +.\" manual page [] for nutdb
@@ -21,7 +21,7 @@
  allows you to record what you eat and analyze your meals for nutrient
  composition.  The database included is the 
  USDA Nutrient Database for Standard Reference, Release 17, which contains
-@@ -39,7 +39,7 @@
+@@ -39,7 +39,7 @@ You may add your own recipes to the data
  by creating them from the foods in the database.
  You can also add foods from the information on commercial food labels. The program is completely menu-driven and there are no commands to learn.
  
@@ -30,7 +30,7 @@
  can be called with an optional argument to specify a database subdirectory.
  For example, if a user tracks meals for other family members, each person
  can have his own database, and each database is entirely separate.
-@@ -122,7 +122,7 @@
+@@ -122,7 +122,7 @@ desired,
  and provides an opportunity to adjust the weight of the servings to allow
  for water gained or lost in preparation.
  
@@ -39,7 +39,7 @@
  with an ordered list of ingredients and a nutrition statement, 
  The new food will have  additional nutrients that
  were not on the nutrition statement, but that the database says are in the food.
-@@ -141,18 +141,18 @@
+@@ -141,18 +141,18 @@ the program are the USA standard 2000-ca
  customized options--but users can always set the label's nutrient information in grams.
  Only Daily Value nutrients greater than zero are considered as
  constraints when
@@ -61,7 +61,7 @@
  in the same manner as a recipe.
  
  To modify the serving size of an existing food, the food is selected
-@@ -226,7 +226,7 @@
+@@ -226,7 +226,7 @@ non-fiber carb as  "." and fiber as ":".
  
  .B Record 'The Usual'--Customary Meals:
  When 
@@ -70,7 +70,7 @@
  asks what you are having, you can answer "the usual."  Specifically,
  this function allows you to record a customary meal, 
  and give it a name.  Later, when
-@@ -257,7 +257,7 @@
+@@ -257,7 +257,7 @@ food.db         Food database
  meal.db         Meal database
  theusual.db     Customary Meals database
  OPTIONS.txt     Personal Options records
