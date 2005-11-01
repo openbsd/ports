@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2005/10/17 04:40:57 jolan Exp $
+# $OpenBSD: Makefile,v 1.132 2005/11/01 17:31:21 wilfried Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -123,9 +123,6 @@
      SUBDIR += wmtune
      SUBDIR += wmtune,zoltrix
      SUBDIR += workman
-     SUBDIR += wsoundprefs
-     SUBDIR += wsoundserver
-     SUBDIR += wsoundserver,esd
      SUBDIR += xcd
      SUBDIR += xcdplayer
      SUBDIR += xhippo
