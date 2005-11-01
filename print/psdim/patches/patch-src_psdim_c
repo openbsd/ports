@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_psdim_c,v 1.1.1.1 2005/11/01 00:19:17 alek Exp $
+--- src/psdim.c.orig	Thu Mar 31 05:20:13 2005
++++ src/psdim.c	Sat Oct 22 14:33:58 2005
+@@ -52,10 +52,11 @@ int x2list[] = { 0, 8, 7, 8, 6, 8, 7, 8,
+ 		 4, 8, 7, 8, 6, 8, 7, 8, 5, 8, 7, 8, 6, 8, 7, 8, };
+ 
+ char *strcat_safe(char *dest, const char *src) {
+-
+-  dest = realloc(dest, strlen(dest)+strlen(src)+1);
++  int siz;
++  siz = strlen(dest)+strlen(src)+1;
++  dest = realloc(dest, siz);
+   if (dest) {
+-    strcat(dest, src);
++    strlcat(dest, src, siz);
+   }
+   return dest;
+ }

@@ -1,0 +1,8 @@
+psdim is a small utility to be used in conjunction with pstops.
+It looks at the contents of a postscript document to determine the
+size of the printed pages. From this, it calculates the optimal
+placement of the pages for n-up printing. It outputs a format
+string suitable for processing by pstops.
+
+Flavors:
+       a4 - Use A4 paper size by default
