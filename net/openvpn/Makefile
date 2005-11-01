@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2005/08/29 14:22:04 robert Exp $
+# $OpenBSD: Makefile,v 1.9 2005/11/01 18:07:08 bernd Exp $
 # Original from: Jorge A. Cortes Montiel <jcortes@bsdcoders.org>
 
 COMMENT=	"easy-to-use, robust, and highly configurable VPN"
 
 VERSION=	2.0.2
 DISTNAME=	openvpn-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net security
 
 HOMEPAGE=	http://openvpn.net/
@@ -46,5 +47,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/sample-scripts/* ${SAMPLES_DIR}/sample-scripts/
 	@find ${WRKSRC}/easy-rsa -type f -exec perl -pi -e 's,#!/bin/bash,#!/bin/sh,g' {} \;
 	@cp -pR ${WRKSRC}/easy-rsa/* ${SAMPLES_DIR}/easy-rsa/
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${SAMPLES_DIR}/easy-rsa/
 
 .include <bsd.port.mk>
