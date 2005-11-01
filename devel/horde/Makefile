@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2005/10/31 15:06:40 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.19 2005/11/01 11:34:15 mbalmer Exp $ 
 
 COMMENT=	"modular framework for web-based applications"
 
 DISTNAME=	horde-3.0.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel www
 HOMEPAGE=	http://www.horde.org/
 
@@ -32,8 +33,10 @@ RUN_DEPENDS+=	:php${PHP_VERSION}-core-*:www/php${PHP_VERSION}/core \
 		::devel/pear-Log \
 		::mail/pear-Mail-Mime \
 		:pear-DB-*:databases/pear-DB
+
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+	@chown -R root:daemon ${PREFIX}/${DISTNAME}
 	@mv ${PREFIX}/${DISTNAME} ${INSTDIR}
 
 .include <bsd.port.mk>
