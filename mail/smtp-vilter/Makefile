@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2005/09/07 21:36:18 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.6 2005/11/01 16:26:49 mbalmer Exp $
 
 COMMENT=	"sendmail milter to scan messages for viruses and spam"
 
 DISTNAME=	smtp-vilter-1.1.9
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=    	mail
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m pthread
+WANTLIB=		c m pthread milter
 
 MASTER_SITES=  	ftp://ftp.etc.msys.ch/pub/sources/smtp-vilter/
 EXTRACT_SUFX=	.tgz
