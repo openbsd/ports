@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/10/01 09:32:07 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/11/01 13:53:26 niallo Exp $
+@group games
+@mode 755
 bin/moria
+@mode
 share/moria/
 share/moria/hours
 share/moria/news
@@ -9,11 +12,9 @@ share/moria/roglcmds.hlp
 share/moria/rwizcmds.hlp
 share/moria/scores
 @mode 775
-@group games
 @sample /var/games/moria/
 @mode 664
 @sample /var/games/moria/scores
 @mode
-@group
 share/moria/version.hlp
 share/moria/welcome.hlp
