@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2005/01/26 16:41:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2005/11/01 14:43:45 naddy Exp $
 
 COMMENT=	"UUCP suite"
 
 DISTNAME=	uucp-1.07
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net mail
 
 PERMIT_PACKAGE_CDROM=	Yes

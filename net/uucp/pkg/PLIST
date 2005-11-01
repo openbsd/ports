@@ -1,19 +1,43 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/11/01 14:43:45 naddy Exp $
 bin/cu
+@owner uucp
+@mode 4555
 bin/uucp
+@owner
+@mode
 bin/uulog
+@owner uucp
+@mode 4555
 bin/uuname
+@owner
+@mode
 bin/uupick
 bin/uusched
+@owner uucp
+@mode 4555
 bin/uustat
+@owner
+@mode
 bin/uuto
+@owner uucp
+@mode 4555
 bin/uux
+@owner
+@mode
 @info info/uucp.info
 libexec/uucp/
 libexec/uucp/uuchk
+@owner uucp
+@mode 4555
 libexec/uucp/uucico
+@owner
+@mode
 libexec/uucp/uuconv
+@owner uucp
+@mode 4555
 libexec/uucp/uuxqt
+@owner
+@mode
 @man man/man1/cu.1
 @man man/man1/uucp.1
 @man man/man1/uustat.1
