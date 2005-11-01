@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.719 2005/10/10 19:20:00 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.720 2005/11/01 13:56:30 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1347,6 +1347,8 @@ _print-packagename:
 	@echo ${FULLPKGNAME${SUBPACKAGE}}
 .endif
 
+# _internal-build-depends, _internal-run-depends,
+# _internal-lib-depends, _internal-regress-depends
 .for _DEP in build run lib regress
 .  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
 .    for _i in ${${_DEP:U}_DEPENDS}
