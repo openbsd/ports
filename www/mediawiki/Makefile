@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2005/10/13 03:34:52 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2005/11/01 17:16:25 bernd Exp $
 
 COMMENT=	"web-based collaborative editing environment"
 
 V=		1.5.0
 DISTNAME=	mediawiki-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://wikipedia.sourceforge.net/
@@ -31,6 +32,7 @@ RUN_DEPENDS=	:php5-mysql-*:www/php5/extensions,-mysql \
 
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
 	@mv ${INSTDIR}-${V} ${INSTDIR}
 
 .include <bsd.port.mk>
