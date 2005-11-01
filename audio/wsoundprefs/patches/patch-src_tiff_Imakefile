@@ -1,9 +1,0 @@
-$OpenBSD: patch-src_tiff_Imakefile,v 1.1.1.1 2001/01/09 21:01:14 naddy Exp $
---- src/tiff/Imakefile.orig	Sun Nov  7 22:03:42 1999
-+++ src/tiff/Imakefile	Tue Jan  9 21:43:41 2001
-@@ -1,4 +1,4 @@
--TIFFDIR = /Apps/WSoundPrefs.app/tiff/
-+TIFFDIR = /usr/local/GNUstep/Apps/WSoundPrefs.app/tiff/
- 
- TIFFS = loadset.tiff saveset.tiff
- 

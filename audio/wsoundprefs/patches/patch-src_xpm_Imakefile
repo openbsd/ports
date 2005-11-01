@@ -1,9 +1,0 @@
-$OpenBSD: patch-src_xpm_Imakefile,v 1.1.1.1 2001/01/09 21:01:14 naddy Exp $
---- src/xpm/Imakefile.orig	Sun Nov  7 22:03:52 1999
-+++ src/xpm/Imakefile	Tue Jan  9 21:43:41 2001
-@@ -1,4 +1,4 @@
--XPMDIR = /Apps/WSoundPrefs.app/xpm/
-+XPMDIR = /usr/local/GNUstep/Apps/WSoundPrefs.app/xpm/
- 
- XPMS = loadset.xpm saveset.xpm
- 
