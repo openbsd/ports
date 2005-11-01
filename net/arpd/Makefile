@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2005/09/10 09:18:47 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2005/11/01 15:25:01 espie Exp $
 			
 COMMENT=		"ARP reply daemon"
 
 DISTNAME=		arpd-0.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=    		net
 
 MAINTAINER=		Jason Peel <jsyn@openbsd.org>
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c pcap
+WANTLIB=		c pcap event
 
 MASTER_SITES=		http://www.citi.umich.edu/u/provos/honeyd/
 
