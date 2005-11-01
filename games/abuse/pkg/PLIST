@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:46:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/11/01 14:27:39 niallo Exp $
+@group games
+@mode 755
 bin/abuse
 bin/abuse.x11R6
+@mode
 share/abuse/
 share/abuse/abuse.lsp
 share/abuse/addon/

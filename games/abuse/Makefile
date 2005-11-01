@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2004/11/28 22:41:14 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2005/11/01 14:27:39 niallo Exp $
 
 COMMENT=	"full color 320x200 arcade quality platform shooter"
 
 DISTNAME=	abuse-2.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_GNU:=abuse/}
 MASTER_SITES0=	ftp://ftp.NetBSD.ORG/pub/NetBSD/packages/distfiles/
