@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: dolock,v 1.1 2004/11/07 10:09:35 espie Exp $
+# $OpenBSD: dolock,v 1.2 2005/11/01 10:54:42 sturm Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -17,12 +17,19 @@
 use strict;
 use warnings;
 use Fcntl;
+use File::Basename;
 
 if (@ARGV != 1) {
 	exit(1);
 }
 my $fname = shift;
+my $dname = dirname $fname;
 my $done = 0;
+
+unless (-d $dname) {
+	require File::Path;
+	File::Path::mkpath($dname);
+}
 
 while(1) {
 	if (sysopen my $handle, $fname, O_WRONLY | O_EXCL | O_CREAT, 0666) {
