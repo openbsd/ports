@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.720 2005/11/01 13:56:30 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.721 2005/11/01 14:04:21 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1347,8 +1347,6 @@ _print-packagename:
 	@echo ${FULLPKGNAME${SUBPACKAGE}}
 .endif
 
-# _internal-build-depends, _internal-run-depends,
-# _internal-lib-depends, _internal-regress-depends
 .for _DEP in build run lib regress
 .  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
 .    for _i in ${${_DEP:U}_DEPENDS}
@@ -2712,6 +2710,9 @@ uninstall deinstall:
 .  endif
 .endif
 
+show-required-by:
+	@cd ${PORTSDIR} && make all-dir-depends | perl ${PORTSDIR}/infrastructure/build/extract-dependencies -r ${FULLPKGPATH}
+
 .PHONY: \
 	_build-dir-depends _delete-package-links _fetch-makefile _fetch-onefile \
 	_package _package-links _print-packagename \
@@ -2759,4 +2760,5 @@ uninstall deinstall:
 	_internal-newlib-depends-check \
 	_internal-manpages-check _internal-plist _internal-update-plist \
 	_internal-update update print-plist print-plist-contents \
-	_list-port-libs _print-package-signature-lib _print-package-signature-run
+	_list-port-libs _print-package-signature-lib _print-package-signature-run \
+	show-required-by
