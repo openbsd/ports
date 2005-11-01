@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: out-of-date,v 1.13 2005/10/10 22:25:06 espie Exp $
+# $OpenBSD: out-of-date,v 1.14 2005/11/01 10:11:40 bernd Exp $
 #
 # Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
 #
@@ -18,11 +18,21 @@
 
 use strict;
 use warnings;
+use OpenBSD::Getopt;
+use OpenBSD::Error;
 use OpenBSD::PackageInfo;
 use OpenBSD::PackingList;
 use OpenBSD::PackageName;
 use OpenBSD::ProgressMeter;
 use File::Temp;
+
+our $opt_q;
+set_usage('out-of-date [-q]');
+try {
+	getopts('q');
+} catchall {
+	Usage($_);
+};
 
 sub collect_installed
 {
@@ -198,6 +208,7 @@ sub find_outdated
 			    $pkg->{$dir}->{version}, $port->{$dir}->{version}));
 			next;
 		}
+		next if $opt_q;
 		if ($pkg->{$dir}->{signature} ne $port->{$dir}->{signature}) {
 			push(@$output, sprintf("%-30s # %s -> %s\n", $dir,
 			    diff_sig($dir, $pkg, $port)));
@@ -214,11 +225,18 @@ my @output   = ();
 my @notfound = ();
 my ($port, $errors) = collect_port_versions($pkg, $portsdir, \@notfound);
 
-collect_port_signatures($pkg, $port, $portsdir, \@output);
+collect_port_signatures($pkg, $port, $portsdir, \@output) unless $opt_q;
 find_outdated($pkg, $port, \@output);
 
 print STDERR "Outdated ports:\n\n";
 print $_ for sort @output;
+
+if ($opt_q) {
+	print STDERR "\nWARNING: You've used the -q option. With this,\n"
+	    . "out-of-date only looks for changed package names\nbut not "
+	    . "for changed package signatures. If you\nwant to see ALL "
+	    . "of your outdated packages,\ndon't use -q.\n";
+}
 
 if (@notfound > 0) {
 	print STDERR "\nPorts that can't be found in the official "
