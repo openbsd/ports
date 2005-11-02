@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.44 2004/07/15 22:08:00 sturm Exp $
+# $OpenBSD: Makefile.template,v 1.45 2005/11/02 17:39:06 wilfried Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -84,9 +84,8 @@ MASTER_SITES=		???
 #SEPARATE_BUILD=	simple  (configure/build still recreates files in source)
 #USE_X11=		Yes
 #USE_GMAKE=		Yes
-# Programs that come with libtool should NOT use this option.
-# Instead they should have the appropriate patches added if needed
-# to bring the OpenBSD support up to spec.
+# Programs that uses libtool should use this option,
+# unless there is a really good reson not to.
 #USE_LIBTOOL=		Yes
 # Set CONFIGURE_STYLE to value corresponding to some standard configuration
 # 	  perl [modbuild]: perl's MakeMaker Makefile.PL (modbuild: perl's
