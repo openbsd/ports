@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.389 2005/10/20 04:22:12 jolan Exp $
+# $OpenBSD: Makefile,v 1.390 2005/11/02 20:23:20 alek Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -72,6 +72,7 @@
      SUBDIR += gaim,gtkspell
      SUBDIR += gaim-icb
      SUBDIR += gajim
+     SUBDIR += gftp
      SUBDIR += gmudix
      SUBDIR += gnet
      SUBDIR += gtk-gnutella
