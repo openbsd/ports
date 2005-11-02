@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2005/10/03 21:20:31 alek Exp $
+# $OpenBSD: Makefile,v 1.149 2005/11/02 01:13:28 cathcart Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -46,6 +46,7 @@
      SUBDIR += gle
      SUBDIR += glitz
      SUBDIR += glut
+     SUBDIR += gmt 
      SUBDIR += gphoto
      SUBDIR += gphoto2
      SUBDIR += gqview
