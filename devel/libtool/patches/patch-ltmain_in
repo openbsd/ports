@@ -1,7 +1,24 @@
-$OpenBSD: patch-ltmain_in,v 1.12 2005/09/09 17:30:32 brad Exp $
+$OpenBSD: patch-ltmain_in,v 1.13 2005/11/02 02:47:09 brad Exp $
 --- ltmain.in.orig	Wed Aug 31 14:25:28 2005
-+++ ltmain.in	Thu Sep  1 21:43:55 2005
-@@ -1984,6 +1984,17 @@ EOF
++++ ltmain.in	Tue Nov  1 15:13:43 2005
+@@ -1089,14 +1089,15 @@ EOF
+ 	  if test -n "$link_static_flag"; then
+ 	    dlopen_self=$dlopen_self_static
+ 	  fi
++	  prefer_static_libs=yes
+ 	else
+ 	  if test -z "$pic_flag" && test -n "$link_static_flag"; then
+ 	    dlopen_self=$dlopen_self_static
+ 	  fi
++	  prefer_static_libs=built
+ 	fi
+ 	build_libtool_libs=no
+ 	build_old_libs=yes
+-	prefer_static_libs=yes
+ 	break
+ 	;;
+       esac
+@@ -1984,6 +1985,17 @@ EOF
  	;;
      esac
      for pass in $passes; do
@@ -19,7 +36,7 @@ $OpenBSD: patch-ltmain_in,v 1.12 2005/09/09 17:30:32 brad Exp $
        if test "$linkmode,$pass" = "lib,link" ||
  	 test "$linkmode,$pass" = "prog,scan"; then
  	libs="$deplibs"
-@@ -2245,20 +2256,20 @@ EOF
+@@ -2245,20 +2257,20 @@ EOF
  	    # It is a libtool convenience library, so add in its objects.
  	    convenience="$convenience $ladir/$objdir/$old_library"
  	    old_convenience="$old_convenience $ladir/$objdir/$old_library"
@@ -50,7 +67,21 @@ $OpenBSD: patch-ltmain_in,v 1.12 2005/09/09 17:30:32 brad Exp $
  	  continue
  	fi # $pass = conv
  
-@@ -2644,7 +2655,7 @@ EOF
+@@ -2445,8 +2457,12 @@ EOF
+ 	fi
+ 
+ 	link_static=no # Whether the deplib will be linked statically
++	use_static_libs=$prefer_static_libs
++	if test "$use_static_libs" = built && test "$installed" = yes ; then
++	  use_static_libs=no
++	fi
+ 	if test -n "$library_names" &&
+-	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
++	   { test "$use_static_libs" = no || test -z "$old_library"; }; then
+ 	  if test "$installed" = no; then
+ 	    notinst_deplibs="$notinst_deplibs $lib"
+ 	    need_relink=yes
+@@ -2644,7 +2660,7 @@ EOF
  	    add_dir=
  	    add=
  	    # Finalize command for both is simple: just hardcode it.
@@ -59,7 +90,7 @@ $OpenBSD: patch-ltmain_in,v 1.12 2005/09/09 17:30:32 brad Exp $
  	      add="$libdir/$linklib"
  	    elif test "$hardcode_minus_L" = yes; then
  	      add_dir="-L$libdir"
-@@ -5932,40 +5943,6 @@ relink_command=\"$relink_command\""
+@@ -5932,40 +5948,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  
