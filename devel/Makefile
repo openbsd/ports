@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.342 2005/10/07 17:50:32 msf Exp $
+# $OpenBSD: Makefile,v 1.343 2005/11/02 23:54:39 wilfried Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -63,6 +63,7 @@
      SUBDIR += glade,gnome
      SUBDIR += glib
      SUBDIR += glib2
+     SUBDIR += glib2mm
      SUBDIR += gmake
      SUBDIR += gmp
      SUBDIR += goopy
@@ -114,6 +115,7 @@
      SUBDIR += libproplist
      SUBDIR += libregexp9
      SUBDIR += libsigc++
+     SUBDIR += libsigc++-2
      SUBDIR += libslang
      SUBDIR += libsoup
      SUBDIR += libspectrum
