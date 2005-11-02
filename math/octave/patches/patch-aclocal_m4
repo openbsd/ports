@@ -1,0 +1,23 @@
+$OpenBSD: patch-aclocal_m4,v 1.1 2005/11/02 18:20:58 alek Exp $
+--- aclocal.m4.orig	Sun Sep 25 11:59:39 2005
++++ aclocal.m4	Sun Sep 25 12:00:17 2005
+@@ -539,18 +539,9 @@ dnl Is DejaGNU installed?
+ dnl
+ dnl OCTAVE_PROG_RUNTEST
+ AC_DEFUN(OCTAVE_PROG_RUNTEST,
+-[if test "$cross_compiling" = yes; then
+-  RUNTEST=runtest
++[ RUNTEST=runtest
+   AC_MSG_RESULT(assuming $RUNTEST exists on $canonical_host_type host)
+   AC_SUBST(RUNTEST)
+-else
+-  AC_CHECK_PROG(RUNTEST, runtest, runtest, [])
+-  if test -z "$RUNTEST"; then
+-    warn_runtest="I didn't find runtest -- install DejaGNU if you want to run \`make check'"
+-    AC_MSG_WARN($warn_runtest)
+-  fi
+-  AC_SUBST(RUNTEST)
+-fi
+ ])
+ dnl
+ dnl Is gperf installed?

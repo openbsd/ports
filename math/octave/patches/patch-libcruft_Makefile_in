@@ -1,23 +1,28 @@
-$OpenBSD: patch-libcruft_Makefile_in,v 1.2 2004/06/07 14:43:39 naddy Exp $
---- libcruft/Makefile.in.orig	1998-11-12 00:27:35.000000000 +0100
-+++ libcruft/Makefile.in	2004-06-05 21:08:03.000000000 +0200
-@@ -37,7 +37,7 @@ ifeq ($(SHARED_LIBS), true)
-   BINDISTLIBS = libcruft/libcruft.$(SHLEXT)
- endif
+$OpenBSD: patch-libcruft_Makefile_in,v 1.3 2005/11/02 18:20:58 alek Exp $
+--- libcruft/Makefile.in.orig	Fri Mar  4 17:13:56 2005
++++ libcruft/Makefile.in	Mon Sep 26 07:43:35 2005
+@@ -101,12 +101,8 @@ libcruft.$(LIBEXT): $(CRUFT_OBJ)
+ 	$(AR) $(ARFLAGS) $@ $^
+ 	$(RANLIB) $@
  
--all: $(SUBDIRS) shared-lib
-+all: $(SUBDIRS) libcruft.$(LIBEXT) shared-lib
- .PHONY: all
+-libcruft.$(SHLEXT_VER): libcruft.$(SHLEXT)
++libcruft.$(SHLEXT_VER): $(CRUFT_PICOBJ)
+ 	rm -f $@
+-	$(LN_S) $< $@
+-
+-libcruft.$(SHLEXT): $(CRUFT_PICOBJ)
+-	rm -f $@
+ 	$(SH_LD) $(SH_LDFLAGS) $(SONAME_FLAGS) -o $@ $^ $(LINK_DEPS)
  
- $(SUBDIRS):
-@@ -77,6 +77,10 @@ endif
- libcruft.$(SHLEXT): $(CRUFT_PICOBJ)
- 	$(SH_LD) $(SH_LDFLAGS) -o $@ $^
- 
-+libcruft.$(LIBEXT): $(CRUFT_OBJ)
-+	$(AR) $(ARFLAGS) $@ $^
-+	$(RANLIB) $@
-+
  $(CRUFT_OBJ):
- 
- check: all
+@@ -131,9 +127,7 @@ install::
+ 	if $(SHARED_LIBS); then \
+ 	  rm -f $(DESTDIR)$(octlibdir)/libcruft.$(SHLLIB_VER); \
+ 	  $(INSTALL) \
+-	    libcruft.$(SHLLIB) $(DESTDIR)$(octlibdir)/libcruft.$(SHLLIB_VER); \
+-	  rm -f $(DESTDIR)$(octlibdir)/libcruft.$(SHLLIB); \
+-	  $(LN_S) libcruft.$(SHLLIB_VER) $(DESTDIR)$(octlibdir)/libcruft.$(SHLLIB); \
++	    libcruft.$(SHLLIB_VER) $(DESTDIR)$(octlibdir)/libcruft.$(SHLLIB_VER); \
+ 	  if  test x$(SHLBIN) != x ; then \
+ 	    rm -f $(DESTDIR)$(bindir)/libcruft.$(SHLBIN); \
+ 	    $(INSTALL_PROGRAM) \

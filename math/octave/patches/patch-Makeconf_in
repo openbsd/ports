@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makeconf_in,v 1.1 2005/11/02 18:20:58 alek Exp $
+--- Makeconf.in.orig	Sun Sep 25 11:32:52 2005
++++ Makeconf.in	Sun Sep 25 11:32:06 2005
+@@ -26,6 +26,7 @@ xfiles := $(TOPDIR)/src/version.h $(srcd
+ version_file := $(firstword $(foreach file, $(xfiles), $(wildcard $(file))))
+ version := $(shell $(getversion) $(version_file))
+ apiversion := $(shell $(getapiversion) $(version_file))
++libversion := $(SHLIB_VER)
+ 
+ #### Start of system configuration section. ####
+ 

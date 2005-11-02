@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_interpreter_Makefile_in,v 1.1 2005/11/02 18:20:58 alek Exp $
+--- doc/interpreter/Makefile.in.orig	Tue Sep 20 13:52:39 2005
++++ doc/interpreter/Makefile.in	Tue Sep 20 13:53:19 2005
+@@ -65,7 +65,7 @@ SPELL = $(patsubst %.texi, %.spell, $(TE
+ 	$(SED) -e 's/@@/ at /g' -e 's/@[a-zA-Z]*//g' $< | spell > $@.tmp
+ 	mv $@.tmp $@
+ 
+-all: octave.info octave.dvi octave.ps octave.pdf octave_toc.html
++all: octave.info octave_toc.html
+ .PHONY: all
+ 
+ $(TEXINFO): src-DOCSTRINGS scripts-DOCSTRINGS munge-texi$(BUILD_EXEEXT)

@@ -1,35 +1,28 @@
-$OpenBSD: patch-liboctave_Makefile_in,v 1.1.1.1 2001/07/15 18:07:16 naddy Exp $
---- liboctave/Makefile.in.orig	Fri Mar 26 18:24:48 1999
-+++ liboctave/Makefile.in	Fri Jul 13 00:23:01 2001
-@@ -18,8 +18,7 @@ INSTALL = @INSTALL@
- INSTALL_PROGRAM = @INSTALL_PROGRAM@
- INSTALL_DATA = @INSTALL_DATA@
+$OpenBSD: patch-liboctave_Makefile_in,v 1.2 2005/11/02 18:20:58 alek Exp $
+--- liboctave/Makefile.in.orig	Wed May 18 14:20:25 2005
++++ liboctave/Makefile.in	Mon Sep 26 07:42:42 2005
+@@ -211,12 +211,8 @@ liboctave.$(LIBEXT): $(LIBOCTAVE_OBJECTS
+ 	$(TEMPLATE_AR) $(TEMPLATE_ARFLAGS) $@ $(LIBOCTAVE_OBJECTS)
+ 	$(RANLIB) $@
  
--LIBOCTAVE_LFLAGS = -L../libcruft -L../readline -L../kpathsea \
--	-L../glob -L. $(RLD_FLAG)
-+LIBOCTAVE_LFLAGS = -L../libcruft -L../kpathsea -L. $(RLD_FLAG)
+-liboctave.$(SHLEXT_VER): liboctave.$(SHLEXT)
++liboctave.$(SHLEXT_VER): $(LIBOCTAVE_PICOBJ)
+ 	rm -f $@
+-	$(LN_S) $< $@
+-
+-liboctave.$(SHLEXT): $(LIBOCTAVE_PICOBJ)
+-	rm -f $@
+ 	$(SH_LD) $(SH_LDFLAGS) $(SONAME_FLAGS) -o $@ \
+ 	$(LIBOCTAVE_PICOBJ) $(LINK_DEPS)
  
- LIBOCTAVE_LIBS = -lcruft -lreadline -lkpathsea -lglob
- 
-@@ -115,13 +114,19 @@ pic:
- 
- ifeq ($(SHARED_LIBS), true)
-   ifeq ($(STATIC_LIBS), true)
--    libraries: liboctave.$(LIBEXT)($(OBJECTS)) liboctave.$(SHLEXT)
-+    libraries: liboctave.$(LIBEXT) liboctave.$(SHLEXT)
-+    liboctave.$(LIBEXT): $(OBJECTS)
-+	ar cr $@ $^
-+	ranlib $@
-   else
-     libraries: liboctave.$(SHLEXT)
-   endif
- else
-   ifeq ($(STATIC_LIBS), true)
--    libraries: liboctave.$(LIBEXT)($(OBJECTS))
-+    libraries: liboctave.$(LIBEXT)
-+    liboctave.$(LIBEXT): $(OBJECTS)
-+	ar cr $@ $^
-+	ranlib $@
-   else
-     libraries:
-   endif
+@@ -243,9 +239,7 @@ install-lib:
+ 	if $(SHARED_LIBS); then \
+ 	  rm -f $(DESTDIR)$(octlibdir)/liboctave.$(SHLLIB_VER); \
+ 	  $(INSTALL) \
+-	    liboctave.$(SHLLIB) $(DESTDIR)$(octlibdir)/liboctave.$(SHLLIB_VER); \
+-	  rm -f $(DESTDIR)$(octlibdir)/liboctave.$(SHLLIB); \
+-	  $(LN_S) liboctave.$(SHLLIB_VER) $(DESTDIR)$(octlibdir)/liboctave.$(SHLLIB); \
++	    liboctave.$(SHLLIB_VER) $(DESTDIR)$(octlibdir)/liboctave.$(SHLLIB_VER); \
+ 	  if  test x$(SHLBIN) != x ; then \
+ 	    rm -f $(DESTDIR)$(bindir)/liboctave.$(SHLBIN); \
+ 	    $(INSTALL_PROGRAM) \

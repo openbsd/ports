@@ -1,0 +1,38 @@
+$OpenBSD: patch-configure_in,v 1.1 2005/11/02 18:20:58 alek Exp $
+--- configure.in.orig	Wed May 18 14:19:59 2005
++++ configure.in	Sun Sep 25 11:43:10 2005
+@@ -57,7 +57,7 @@ OCTAVE_SET_DEFAULT(localapifcnfiledir,
+ OCTAVE_SET_DEFAULT(localverfcnfiledir, '$(datadir)/octave/$(version)/site/m')
+ OCTAVE_SET_DEFAULT(localfcnfilepath,
+   '$(localverfcnfiledir)//:$(localapifcnfiledir)//:$(localfcnfiledir)//')
+-OCTAVE_SET_DEFAULT(octlibdir, '$(libdir)/octave-$(version)')
++OCTAVE_SET_DEFAULT(octlibdir, '$(libdir)')
+ OCTAVE_SET_DEFAULT(archlibdir,
+   '$(libexecdir)/octave/$(version)/exec/$(canonical_host_type)')
+ OCTAVE_SET_DEFAULT(localarchlibdir,
+@@ -662,8 +662,8 @@ FPICFLAG=-fPIC
+ SHLEXT=so
+ SHLLIB='$(SHLEXT)'
+ SHLBIN=
+-SHLEXT_VER='$(SHLEXT).$(version)'
+-SHLLIB_VER='$(SHLLIB).$(version)'
++SHLEXT_VER='$(SHLEXT).$(libversion)'
++SHLLIB_VER='$(SHLLIB).$(libversion)'
+ SHLBIN_VER='$(SHLBIN).$(version)'
+ SHLLINKEXT=
+ SH_LD='$(CXX)'
+@@ -678,9 +678,13 @@ TEMPLATE_AR='$(AR)'
+ TEMPLATE_ARFLAGS="$ARFLAGS"
+ library_path_var=LD_LIBRARY_PATH
+ case "$canonical_host_type" in
+-  *-*-386bsd* | *-*-openbsd* | *-*-netbsd*)
++  *-*-386bsd* | *-*-netbsd*)
+     SH_LD=ld
+     SH_LDFLAGS=-Bshareable
++  ;;
++  *-*-openbsd*)
++    SH_LD='$(CXX)'
++    SH_LDFLAGS='-shared -fPIC'
+   ;;
+   *-*-freebsd*)
+     SH_LD='$(CC)'

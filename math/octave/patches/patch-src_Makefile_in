@@ -1,25 +1,39 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2001/07/15 18:07:15 naddy Exp $
---- src/Makefile.in.orig	Thu Nov  4 05:18:25 1999
-+++ src/Makefile.in	Fri Jul 13 00:23:01 2001
-@@ -196,13 +196,19 @@ pic:
+$OpenBSD: patch-src_Makefile_in,v 1.2 2005/11/02 18:20:58 alek Exp $
+--- src/Makefile.in.orig	Wed May 18 14:20:54 2005
++++ src/Makefile.in	Wed Nov  2 10:32:55 2005
+@@ -270,12 +270,8 @@ liboctinterp.$(LIBEXT): $(OBJECTS) $(XER
+ 	$(TEMPLATE_AR) $(TEMPLATE_ARFLAGS) $@ $^
+ 	$(RANLIB) $@
  
- ifeq ($(SHARED_LIBS), true)
-   ifeq ($(STATIC_LIBS), true)
--    libraries: liboctinterp.$(LIBEXT)($(OBJECTS)) liboctinterp.$(SHLEXT)
-+    libraries: liboctinterp.$(LIBEXT) liboctinterp.$(SHLEXT)
-+    liboctinterp.$(LIBEXT): $(OBJECTS)
-+	ar cr $@ $^
-+	ranlib $@
-   else
-     libraries: liboctinterp.$(SHLEXT)
-   endif
- else
-   ifeq ($(STATIC_LIBS), true)
--    libraries: liboctinterp.$(LIBEXT)($(OBJECTS))
-+    libraries: liboctinterp.$(LIBEXT)
-+    liboctinterp.$(LIBEXT): $(OBJECTS)
-+	ar cr $@ $^
-+	ranlib $@
-   else
-     libraries:
-   endif
+-liboctinterp.$(SHLEXT_VER): liboctinterp.$(SHLEXT)
++liboctinterp.$(SHLEXT_VER): $(PICOBJ) $(PIC_XERBLA)
+ 	rm -f $@
+-	$(LN_S) $< $@
+-
+-liboctinterp.$(SHLEXT): $(PICOBJ) $(PIC_XERBLA)
+-	rm -f $@
+ 	$(SH_LD) $(SH_LDFLAGS) $(SONAME_FLAGS) -o $@ $^ $(OCTINTERP_LINK_DEPS)
+ 
+ stamp-oct-links: $(OCT_FILES)
+@@ -368,8 +364,7 @@ install-strip:
+ install-bin:
+ 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(bindir)
+ 	rm -f $(DESTDIR)$(bindir)/octave$(EXEEXT)
+-	$(INSTALL_PROGRAM) octave$(EXEEXT) $(DESTDIR)$(bindir)/octave-$(version)$(EXEEXT)
+-	$(LN_S) octave-$(version)$(EXEEXT) $(DESTDIR)$(bindir)/octave$(EXEEXT)
++	$(INSTALL_PROGRAM) octave$(EXEEXT) $(DESTDIR)$(bindir)/octave
+ .PHONY: install-bin
+ 
+ install-oct:
+@@ -393,10 +388,8 @@ install-lib:
+ 	fi
+ 	if $(SHARED_LIBS); then \
+ 	  rm -f $(DESTDIR)$(octlibdir)/liboctinterp.$(SHLEXT_VER); \
+-	  $(INSTALL) liboctinterp.$(SHLLIB) \
++	  $(INSTALL) liboctinterp.$(SHLLIB_VER) \
+ 	    $(DESTDIR)$(octlibdir)/liboctinterp.$(SHLLIB_VER); \
+-	  rm -f $(DESTDIR)$(octlibdir)/liboctinterp.$(SHLLIB); \
+-	  $(LN_S) liboctinterp.$(SHLLIB_VER) $(DESTDIR)$(octlibdir)/liboctinterp.$(SHLLIB); \
+ 	  if  test x$(SHLBIN) != x ; then \
+ 	    rm -f $(DESTDIR)$(bindir)/liboctinterp.$(SHLBIN); \
+ 	    $(INSTALL_PROGRAM) \

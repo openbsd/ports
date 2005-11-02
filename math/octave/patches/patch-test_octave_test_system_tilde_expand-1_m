@@ -1,0 +1,10 @@
+$OpenBSD: patch-test_octave_test_system_tilde_expand-1_m,v 1.1 2005/11/02 18:20:58 alek Exp $
+--- test/octave.test/system/tilde_expand-1.m.orig	Sat Oct 29 08:30:28 2005
++++ test/octave.test/system/tilde_expand-1.m	Sat Oct 29 08:56:56 2005
+@@ -1,4 +1,3 @@
+-x = getpwuid (getuid ());
+-(strcmp (x.dir, tilde_expand ("~"))
+- && strcmp (x.dir, tilde_expand (sprintf ("~%s", x.name)))
++x = getpwuid (32767);
++(strcmp (x.dir, tilde_expand (sprintf ("~%s", x.name)))
+  && strcmp ("foobar", tilde_expand ("foobar")))
