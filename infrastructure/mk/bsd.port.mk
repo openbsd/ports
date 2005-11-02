@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.723 2005/11/01 20:39:00 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.724 2005/11/02 20:28:11 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -701,14 +701,10 @@ DESCR?=		${PKGDIR}/DESCR${SUBPACKAGE}
 MTREE_FILE?=
 MTREE_FILE+=${PORTSDIR}/infrastructure/db/fake.mtree
 
-_NODEPS?=no
 # Fill out package command, and package dependencies
 _PKG_PREREQ= ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}/COMMENT${SUBPACKAGE}
 PKG_ARGS+= -c '${WRKPKG}/COMMENT${SUBPACKAGE}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
 PKG_ARGS+=-f ${PLIST} -p ${PREFIX} 
-.if ${_NODEPS:L} == "no"
-PKG_ARGS+=`${MAKE} _print-package-args|sort -u`
-.endif
 .if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
 PKG_ARGS+=		-i ${PKGDIR}/INSTALL${SUBPACKAGE}
 .endif
@@ -1050,7 +1046,7 @@ _libresolve_fragment = \
 		esac; \
 		check=`eval $$listlibs 2>/dev/null| LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} perl \
 			${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} $$d` \
-			|| true
+			|| check=Failed
 
 _syslibresolve_fragment = \
 		case "$$d" in \
@@ -1060,7 +1056,7 @@ _syslibresolve_fragment = \
 		esac; \
 		check=`eval $$listlibs 2>/dev/null| LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} perl \
 			${PORTSDIR}/infrastructure/build/resolve-lib ${_noshared} $$d` \
-			|| true
+			|| check=Failed
 
 _lib_depends_fragment = \
 	if $$defaulted; then \
@@ -2021,7 +2017,8 @@ _package: ${_PKG_PREREQ}
 	   fi; \
 	fi
 	@cd ${.CURDIR} && \
-	  if ${SUDO} ${PKG_CMD} ${PKG_ARGS} ${PKGFILE${SUBPACKAGE}}; then \
+      deps=`${MAKE} _print-package-args` && \
+	  if ${SUDO} ${PKG_CMD} `echo "$$deps"|sort -u` ${PKG_ARGS} ${PKGFILE${SUBPACKAGE}}; then \
 	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${PKGFILE${SUBPACKAGE}}; \
 		if ${_register_plist}; then \
 			${MAKE} _package-links; \
@@ -2468,13 +2465,13 @@ _print-package-args:
 		if pkg_info -q -e $$pkg; then \
 			listlibs='echo ${DEPDIR}$$shdir/lib*'; \
 		else \
-		    listlibs="$$toset _NODEPS=Yes ${MAKE} print-plist-contents|grep -e '^@lib ' -e '^@file .*/lib/lib.*\.a'|sed -e 's:@lib ::' -e 's:@file ::'"; \
+		    listlibs="$$toset ${MAKE} print-plist-contents|grep -e '^@lib ' -e '^@file .*/lib/lib.*\.a'|sed -e 's:@lib ::' -e 's:@file ::'"; \
 		fi; \
 		IFS=,; for d in $$dep; do \
 			${_libresolve_fragment}; \
 			case "$$check" in \
 			*.a) continue;; \
-			Missing\ library|Error:*) \
+			Failed) \
 				echo 1>&2 "Can't resolve libspec $$d"; \
 				exit 1;; \
 			*) \
@@ -2489,7 +2486,7 @@ _print-package-args:
 	${_syslibresolve_fragment}; \
 	case "$$check" in \
 	*.a) ;; \
-	Missing\ library|Error:*) \
+	Failed) \
 		echo 1>&2 "Can't resolve libspec $$d"; \
 		exit 1;; \
 	*) \
@@ -2511,7 +2508,7 @@ _list-port-libs:
 			mkdir -p $${fulldir%/*}; \
 			unset FLAVOR SUBPACKAGE || true; \
 			${_flavor_fragment}; \
-			eval $$toset _NODEPS=Yes ${MAKE} print-plist-contents | \
+			eval $$toset ${MAKE} print-plist-contents | \
 				grep -e '^@lib ' -e '^@file .*/lib/lib.*\.a$$'| \
 				sed -e 's:@lib ::' -e 's:@file ::' |tee $$fulldir; \
 		fi; \
@@ -2520,7 +2517,7 @@ _list-port-libs:
 	@${MAKE} run-dir-depends|tsort -r|sed -e '$$d'|while read dir; do \
 		unset FLAVOR SUBPACKAGE || true; \
 		${_flavor_fragment}; \
-		eval $$toset _NODEPS=Yes ${MAKE} print-plist-contents ; \
+		eval $$toset ${MAKE} print-plist-contents ; \
 	done | grep -e '^@lib ' -e '^@file .*/lib/.*\.a$$'| \
 	sed -e 's:@lib ::' -e 's:@file ::'
 .endif
