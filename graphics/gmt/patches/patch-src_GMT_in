@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_GMT_in,v 1.1.1.1 2005/11/02 00:02:50 cathcart Exp $
+--- src/GMT.in.orig	Tue Nov  1 23:29:48 2005
++++ src/GMT.in	Tue Nov  1 23:30:06 2005
+@@ -125,8 +125,7 @@ can be found in each program's manual pa
+ Look up the individual man pages for more details and full syntax.
+ By default, those man pages are in @prefix@/man/man@mansection@.
+ Information is also available on the GMT World Wide Web home page
+-(http://gmt.soest.hawaii.edu) and, if installed, locally from
+-@prefix@/www/gmt/gmt_services.html.
++(http://gmt.soest.hawaii.edu).
+ EOF
+ 	exit
+ fi

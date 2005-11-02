@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.full,v 1.1.1.1 2005/11/02 00:02:50 cathcart Exp $
+share/gmt/share/binned_GSHHS_f.cdf
+share/gmt/share/binned_border_f.cdf
+share/gmt/share/binned_river_f.cdf

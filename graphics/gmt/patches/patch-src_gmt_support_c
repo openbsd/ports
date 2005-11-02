@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gmt_support_c,v 1.1.1.1 2005/11/02 00:02:50 cathcart Exp $
+--- src/gmt_support.c.orig	Thu Sep 23 22:17:42 2004
++++ src/gmt_support.c	Tue Nov  1 23:29:24 2005
+@@ -5911,7 +5911,7 @@ void GMT_list_custom_symbols (void)
+ 	/* Opens up GMT_Custom_Symbols.lis and dislays the list of custom symbols */
+ 	
+ 	FILE *fp;
+-	char list[256], buffer[256];
++	char list[256], buffer[BUFSIZ];
+ 	
+ 	/* Open the list in $GMTHOME/share */
+ 

@@ -1,0 +1,375 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/02 00:02:50 cathcart Exp $
+bin/GMT
+bin/blockmean
+bin/blockmedian
+bin/blockmode
+bin/filter1d
+bin/fitcircle
+bin/gmt2rgb
+bin/gmtconvert
+bin/gmtdefaults
+bin/gmtmath
+bin/gmtselect
+bin/gmtset
+bin/grd2cpt
+bin/grd2xyz
+bin/grdblend
+bin/grdclip
+bin/grdcontour
+bin/grdcut
+bin/grdedit
+bin/grdfft
+bin/grdfilter
+bin/grdgradient
+bin/grdhisteq
+bin/grdimage
+bin/grdinfo
+bin/grdlandmask
+bin/grdmask
+bin/grdmath
+bin/grdpaste
+bin/grdproject
+bin/grdreformat
+bin/grdsample
+bin/grdtrack
+bin/grdtrend
+bin/grdvector
+bin/grdview
+bin/grdvolume
+bin/makecpt
+bin/mapproject
+bin/minmax
+bin/nearneighbor
+bin/project
+bin/psbasemap
+bin/psclip
+bin/pscoast
+bin/pscontour
+bin/pshistogram
+bin/psimage
+bin/pslegend
+bin/psmask
+bin/psrose
+bin/psscale
+bin/pstext
+bin/pswiggle
+bin/psxy
+bin/psxyz
+bin/sample1d
+bin/spectrum1d
+bin/splitxyz
+bin/surface
+bin/trend1d
+bin/trend2d
+bin/triangulate
+bin/xyz2grd
+include/gmt.h
+include/gmt_bcr.h
+include/gmt_boundcond.h
+include/gmt_calclock.h
+include/gmt_colors.h
+include/gmt_contour.h
+include/gmt_customio.h
+include/gmt_funcnames.h
+include/gmt_grd.h
+include/gmt_grdio.h
+include/gmt_io.h
+include/gmt_keywords.h
+include/gmt_map.h
+include/gmt_math.h
+include/gmt_mgg_header2.h
+include/gmt_nan.h
+include/gmt_notposix.h
+include/gmt_notunix.h
+include/gmt_project.h
+include/gmt_shore.h
+include/gmt_symbol.h
+include/gmt_time_systems.h
+include/gmt_unique.h
+include/pslib.h
+lib/libgmt.a
+lib/libpsl.a
+@man man/man1/GMT.1
+@man man/man1/blockmean.1
+@man man/man1/blockmedian.1
+@man man/man1/blockmode.1
+@man man/man1/filter1d.1
+@man man/man1/fitcircle.1
+@man man/man1/gmt2rgb.1
+@man man/man1/gmtconvert.1
+@man man/man1/gmtdefaults.1
+@man man/man1/gmtmath.1
+@man man/man1/gmtselect.1
+@man man/man1/gmtset.1
+@man man/man1/grd2cpt.1
+@man man/man1/grd2xyz.1
+@man man/man1/grdblend.1
+@man man/man1/grdclip.1
+@man man/man1/grdcontour.1
+@man man/man1/grdcut.1
+@man man/man1/grdedit.1
+@man man/man1/grdfft.1
+@man man/man1/grdfilter.1
+@man man/man1/grdgradient.1
+@man man/man1/grdhisteq.1
+@man man/man1/grdimage.1
+@man man/man1/grdinfo.1
+@man man/man1/grdlandmask.1
+@man man/man1/grdmask.1
+@man man/man1/grdmath.1
+@man man/man1/grdpaste.1
+@man man/man1/grdproject.1
+@man man/man1/grdreformat.1
+@man man/man1/grdsample.1
+@man man/man1/grdtrack.1
+@man man/man1/grdtrend.1
+@man man/man1/grdvector.1
+@man man/man1/grdview.1
+@man man/man1/grdvolume.1
+@man man/man1/makecpt.1
+@man man/man1/mapproject.1
+@man man/man1/minmax.1
+@man man/man1/nearneighbor.1
+@man man/man1/project.1
+@man man/man1/psbasemap.1
+@man man/man1/psclip.1
+@man man/man1/pscoast.1
+@man man/man1/pscontour.1
+@man man/man1/pshistogram.1
+@man man/man1/psimage.1
+@man man/man1/pslegend.1
+@man man/man1/pslib.1
+@man man/man1/psmask.1
+@man man/man1/psrose.1
+@man man/man1/psscale.1
+@man man/man1/pstext.1
+@man man/man1/pswiggle.1
+@man man/man1/psxy.1
+@man man/man1/psxyz.1
+@man man/man1/sample1d.1
+@man man/man1/spectrum1d.1
+@man man/man1/splitxyz.1
+@man man/man1/surface.1
+@man man/man1/trend1d.1
+@man man/man1/trend2d.1
+@man man/man1/triangulate.1
+@man man/man1/xyz2grd.1
+share/gmt/
+share/gmt/share/
+share/gmt/share/.gmtdefaults_SI
+@comment share/gmt/share/.gmtdefaults_SI.orig
+share/gmt/share/.gmtdefaults_US
+@comment share/gmt/share/.gmtdefaults_US.orig
+share/gmt/share/GMT_CPT.lis
+share/gmt/share/GMT_CustomSymbols.lis
+share/gmt/share/binned_GSHHS_c.cdf
+share/gmt/share/binned_GSHHS_i.cdf
+share/gmt/share/binned_GSHHS_l.cdf
+share/gmt/share/binned_border_c.cdf
+share/gmt/share/binned_border_i.cdf
+share/gmt/share/binned_border_l.cdf
+share/gmt/share/binned_river_c.cdf
+share/gmt/share/binned_river_i.cdf
+share/gmt/share/binned_river_l.cdf
+%%full%%
+%%high%%
+share/gmt/share/cpt/
+share/gmt/share/cpt/GMT_cool.cpt
+share/gmt/share/cpt/GMT_copper.cpt
+share/gmt/share/cpt/GMT_drywet.cpt
+share/gmt/share/cpt/GMT_gebco.cpt
+share/gmt/share/cpt/GMT_globe.cpt
+share/gmt/share/cpt/GMT_gray.cpt
+share/gmt/share/cpt/GMT_haxby.cpt
+share/gmt/share/cpt/GMT_hot.cpt
+share/gmt/share/cpt/GMT_jet.cpt
+share/gmt/share/cpt/GMT_no_green.cpt
+share/gmt/share/cpt/GMT_ocean.cpt
+share/gmt/share/cpt/GMT_polar.cpt
+share/gmt/share/cpt/GMT_rainbow.cpt
+share/gmt/share/cpt/GMT_red2green.cpt
+share/gmt/share/cpt/GMT_relief.cpt
+share/gmt/share/cpt/GMT_sealand.cpt
+share/gmt/share/cpt/GMT_seis.cpt
+share/gmt/share/cpt/GMT_split.cpt
+share/gmt/share/cpt/GMT_topo.cpt
+share/gmt/share/cpt/GMT_wysiwyg.cpt
+share/gmt/share/custom/
+share/gmt/share/custom/astroid.def
+share/gmt/share/custom/circle.def
+share/gmt/share/custom/cross.def
+share/gmt/share/custom/crosshair.def
+share/gmt/share/custom/deltoid.def
+share/gmt/share/custom/diamond.def
+share/gmt/share/custom/flash.def
+share/gmt/share/custom/hexagon.def
+share/gmt/share/custom/hlens.def
+share/gmt/share/custom/hlozenge.def
+share/gmt/share/custom/hneedle.def
+share/gmt/share/custom/invtriangle.def
+share/gmt/share/custom/lcrescent.def
+share/gmt/share/custom/lflag.def
+share/gmt/share/custom/ltriangle.def
+share/gmt/share/custom/meca.def
+share/gmt/share/custom/octagon.def
+share/gmt/share/custom/pacman.def
+share/gmt/share/custom/pentagon.def
+share/gmt/share/custom/rcrescent.def
+share/gmt/share/custom/rflag.def
+share/gmt/share/custom/rtriangle.def
+share/gmt/share/custom/sectoid.def
+share/gmt/share/custom/square.def
+share/gmt/share/custom/squaroid.def
+share/gmt/share/custom/star.def
+share/gmt/share/custom/star3.def
+share/gmt/share/custom/star4.def
+share/gmt/share/custom/starp.def
+share/gmt/share/custom/sun.def
+share/gmt/share/custom/triangle.def
+share/gmt/share/custom/vlens.def
+share/gmt/share/custom/vlozenge.def
+share/gmt/share/custom/vneedle.def
+share/gmt/share/custom/volcano.def
+share/gmt/share/gmt.conf
+@comment share/gmt/share/gmt.conf.orig
+share/gmt/share/gmtformats.d
+share/gmt/share/gmtmedia.d
+share/gmt/share/pattern/
+share/gmt/share/pattern/ps_pattern_01.ras
+share/gmt/share/pattern/ps_pattern_02.ras
+share/gmt/share/pattern/ps_pattern_03.ras
+share/gmt/share/pattern/ps_pattern_04.ras
+share/gmt/share/pattern/ps_pattern_05.ras
+share/gmt/share/pattern/ps_pattern_06.ras
+share/gmt/share/pattern/ps_pattern_07.ras
+share/gmt/share/pattern/ps_pattern_08.ras
+share/gmt/share/pattern/ps_pattern_09.ras
+share/gmt/share/pattern/ps_pattern_10.ras
+share/gmt/share/pattern/ps_pattern_11.ras
+share/gmt/share/pattern/ps_pattern_12.ras
+share/gmt/share/pattern/ps_pattern_13.ras
+share/gmt/share/pattern/ps_pattern_14.ras
+share/gmt/share/pattern/ps_pattern_15.ras
+share/gmt/share/pattern/ps_pattern_16.ras
+share/gmt/share/pattern/ps_pattern_17.ras
+share/gmt/share/pattern/ps_pattern_18.ras
+share/gmt/share/pattern/ps_pattern_19.ras
+share/gmt/share/pattern/ps_pattern_20.ras
+share/gmt/share/pattern/ps_pattern_21.ras
+share/gmt/share/pattern/ps_pattern_22.ras
+share/gmt/share/pattern/ps_pattern_23.ras
+share/gmt/share/pattern/ps_pattern_24.ras
+share/gmt/share/pattern/ps_pattern_25.ras
+share/gmt/share/pattern/ps_pattern_26.ras
+share/gmt/share/pattern/ps_pattern_27.ras
+share/gmt/share/pattern/ps_pattern_28.ras
+share/gmt/share/pattern/ps_pattern_29.ras
+share/gmt/share/pattern/ps_pattern_30.ras
+share/gmt/share/pattern/ps_pattern_31.ras
+share/gmt/share/pattern/ps_pattern_32.ras
+share/gmt/share/pattern/ps_pattern_33.ras
+share/gmt/share/pattern/ps_pattern_34.ras
+share/gmt/share/pattern/ps_pattern_35.ras
+share/gmt/share/pattern/ps_pattern_36.ras
+share/gmt/share/pattern/ps_pattern_37.ras
+share/gmt/share/pattern/ps_pattern_38.ras
+share/gmt/share/pattern/ps_pattern_39.ras
+share/gmt/share/pattern/ps_pattern_40.ras
+share/gmt/share/pattern/ps_pattern_41.ras
+share/gmt/share/pattern/ps_pattern_42.ras
+share/gmt/share/pattern/ps_pattern_43.ras
+share/gmt/share/pattern/ps_pattern_44.ras
+share/gmt/share/pattern/ps_pattern_45.ras
+share/gmt/share/pattern/ps_pattern_46.ras
+share/gmt/share/pattern/ps_pattern_47.ras
+share/gmt/share/pattern/ps_pattern_48.ras
+share/gmt/share/pattern/ps_pattern_49.ras
+share/gmt/share/pattern/ps_pattern_50.ras
+share/gmt/share/pattern/ps_pattern_51.ras
+share/gmt/share/pattern/ps_pattern_52.ras
+share/gmt/share/pattern/ps_pattern_53.ras
+share/gmt/share/pattern/ps_pattern_54.ras
+share/gmt/share/pattern/ps_pattern_55.ras
+share/gmt/share/pattern/ps_pattern_56.ras
+share/gmt/share/pattern/ps_pattern_57.ras
+share/gmt/share/pattern/ps_pattern_58.ras
+share/gmt/share/pattern/ps_pattern_59.ras
+share/gmt/share/pattern/ps_pattern_60.ras
+share/gmt/share/pattern/ps_pattern_61.ras
+share/gmt/share/pattern/ps_pattern_62.ras
+share/gmt/share/pattern/ps_pattern_63.ras
+share/gmt/share/pattern/ps_pattern_64.ras
+share/gmt/share/pattern/ps_pattern_65.ras
+share/gmt/share/pattern/ps_pattern_66.ras
+share/gmt/share/pattern/ps_pattern_67.ras
+share/gmt/share/pattern/ps_pattern_68.ras
+share/gmt/share/pattern/ps_pattern_69.ras
+share/gmt/share/pattern/ps_pattern_70.ras
+share/gmt/share/pattern/ps_pattern_71.ras
+share/gmt/share/pattern/ps_pattern_72.ras
+share/gmt/share/pattern/ps_pattern_73.ras
+share/gmt/share/pattern/ps_pattern_74.ras
+share/gmt/share/pattern/ps_pattern_75.ras
+share/gmt/share/pattern/ps_pattern_76.ras
+share/gmt/share/pattern/ps_pattern_77.ras
+share/gmt/share/pattern/ps_pattern_78.ras
+share/gmt/share/pattern/ps_pattern_79.ras
+share/gmt/share/pattern/ps_pattern_80.ras
+share/gmt/share/pattern/ps_pattern_81.ras
+share/gmt/share/pattern/ps_pattern_82.ras
+share/gmt/share/pattern/ps_pattern_83.ras
+share/gmt/share/pattern/ps_pattern_84.ras
+share/gmt/share/pattern/ps_pattern_85.ras
+share/gmt/share/pattern/ps_pattern_86.ras
+share/gmt/share/pattern/ps_pattern_87.ras
+share/gmt/share/pattern/ps_pattern_88.ras
+share/gmt/share/pattern/ps_pattern_89.ras
+share/gmt/share/pattern/ps_pattern_90.ras
+share/gmt/share/pslib/
+share/gmt/share/pslib/ISO-8859-1.ps
+share/gmt/share/pslib/ISO-8859-10.ps
+share/gmt/share/pslib/ISO-8859-13.ps
+share/gmt/share/pslib/ISO-8859-14.ps
+share/gmt/share/pslib/ISO-8859-15.ps
+share/gmt/share/pslib/ISO-8859-2.ps
+share/gmt/share/pslib/ISO-8859-3.ps
+share/gmt/share/pslib/ISO-8859-4.ps
+share/gmt/share/pslib/ISO-8859-5.ps
+share/gmt/share/pslib/ISO-8859-6.ps
+share/gmt/share/pslib/ISO-8859-7.ps
+share/gmt/share/pslib/ISO-8859-8.ps
+share/gmt/share/pslib/ISO-8859-9.ps
+share/gmt/share/pslib/ISOLatin1+.ps
+share/gmt/share/pslib/ISOLatin1.ps
+share/gmt/share/pslib/PSL_label.ps
+share/gmt/share/pslib/PSL_prologue.ps
+share/gmt/share/pslib/PSL_text.ps
+share/gmt/share/pslib/PS_font_info.d
+share/gmt/share/pslib/Standard+.ps
+share/gmt/share/pslib/Standard.ps
+share/gmt/share/time/
+share/gmt/share/time/br.d
+share/gmt/share/time/cn1.d
+share/gmt/share/time/cn2.d
+share/gmt/share/time/de.d
+share/gmt/share/time/dk.d
+share/gmt/share/time/eh.d
+share/gmt/share/time/es.d
+share/gmt/share/time/fi.d
+share/gmt/share/time/fr.d
+share/gmt/share/time/gr.d
+share/gmt/share/time/hu.d
+share/gmt/share/time/ie.d
+share/gmt/share/time/il.d
+share/gmt/share/time/it.d
+share/gmt/share/time/jp.d
+share/gmt/share/time/nl.d
+share/gmt/share/time/no.d
+share/gmt/share/time/pl.d
+share/gmt/share/time/pt.d
+share/gmt/share/time/ru.d
+share/gmt/share/time/se.d
+share/gmt/share/time/to.d
+share/gmt/share/time/tr.d
+share/gmt/share/time/uk.d
+share/gmt/share/time/us.d
