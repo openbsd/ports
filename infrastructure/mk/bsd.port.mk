@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.724 2005/11/02 20:28:11 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.725 2005/11/02 20:30:12 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1347,9 +1347,9 @@ _print-packagename:
 .  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
 .    for _i in ${${_DEP:U}_DEPENDS}
 ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
-	@unset PACKAGING DEPENDS_TARGET FLAVOR SUBPACKAGE _MASTER WRKDIR|| true; \
+	@unset PACKAGING DEPENDS_TARGET _MASTER WRKDIR|| true; \
 	echo '${_i}'|{ \
-		IFS=:; read dep pkg dir target; \
+		IFS=:; read dep pkg subdir target; \
 		${_flavor_fragment}; defaulted=false; \
 		case "X$$target" in X) target=${_${_DEP}_depends_target};; esac; \
 		toset="$$toset _MASTER_LOCK=${_LOCKNAME}"; \
@@ -2100,8 +2100,7 @@ _delete-package-links:
 
 _internal-clean:
 .if ${_clean:L:Mdepends} && ${_CLEANDEPENDS:L} == "yes"
-	@PACKAGING='${SUBPACKAGE}' ${MAKE} all-dir-depends|tsort -r|while read dir; do \
-		unset FLAVOR SUBPACKAGE || true; \
+	@PACKAGING='${SUBPACKAGE}' ${MAKE} all-dir-depends|tsort -r|while read subdir; do \
 		${_flavor_fragment}; \
 		eval $$toset ${MAKE} _CLEANDEPENDS=No clean _MASTER_LOCK=${_LOCKNAME}; \
 	done
@@ -2385,8 +2384,7 @@ print-run-depends:
 
 .for _i in build all run
 full-${_i}-depends:
-	@${MAKE} ${_i}-dir-depends|tsort -r|sed -e '$$d'|while read dir; do \
-		unset FLAVOR SUBPACKAGE || true; \
+	@${MAKE} ${_i}-dir-depends|tsort -r|sed -e '$$d'|while read subdir; do \
 		${_flavor_fragment}; \
 		eval $$toset ${MAKE} _print-packagename ; \
 	done
@@ -2394,8 +2392,7 @@ full-${_i}-depends:
 
 license-check:
 .if ${PERMIT_PACKAGE_CDROM:L} == "yes" || ${PERMIT_PACKAGE_FTP:L} == "yes"
-	@${MAKE} all-dir-depends|tsort -r|sed -e '$$d'|while read dir; do \
-		unset FLAVOR SUBPACKAGE || true; \
+	@${MAKE} all-dir-depends|tsort -r|sed -e '$$d'|while read subdir; do \
 		${_flavor_fragment}; \
 		_MASTER_PERMIT_CDROM=${PERMIT_PACKAGE_CDROM:Q}; \
 		_MASTER_PERMIT_FTP=${PERMIT_PACKAGE_FTP:Q}; \
@@ -2444,21 +2441,19 @@ print-package-signature:
 
 _print-package-args:
 .for _i in ${RUN_DEPENDS}
-	@unset FLAVOR SUBPACKAGE || true; \
-	echo '${_i}' |{ \
-		IFS=:; read dep pkg pkgpath target; \
-		dir=$$pkgpath; ${_flavor_fragment}; \
+	@echo '${_i}' |{ \
+		IFS=:; read dep pkg subdir target; \
+		${_flavor_fragment}; \
 		default=`eval $$toset ${MAKE} _print-packagename`; \
 		case "X$$pkg" in X) pkg=`echo $$default|sed -e 's,-[0-9].*,-*,'`;; esac; \
-		echo "-P $$pkgpath:$$pkg:$$default"; \
+		echo "-P $$subdir:$$pkg:$$default"; \
 	}
 .endfor
 .if ${NO_SHARED_LIBS:L} != "yes"
 .  for _i in ${LIB_DEPENDS}
-	@unset FLAVOR SUBPACKAGE || true; \
-	echo '${_i}'|{ \
-		IFS=:; read dep pkg pkgpath target; \
-		dir=$$pkgpath; ${_flavor_fragment}; \
+	@echo '${_i}'|{ \
+		IFS=:; read dep pkg subdir target; \
+		${_flavor_fragment}; \
 		libspecs='';comma=''; \
 		default=`eval $$toset ${MAKE} _print-packagename`; \
 		case "X$$pkg" in X) pkg=`echo $$default|sed -e 's,-[0-9].*,-*,'`;; esac; \
@@ -2478,7 +2473,7 @@ _print-package-args:
 				echo "-W $$check";; \
 			esac; \
 		done; \
-		echo "-P $$pkgpath:$$pkg:$$default"; \
+		echo "-P $$subdir:$$pkg:$$default"; \
 	}
 .  endfor
 .  for _i in ${WANTLIB}
@@ -2500,13 +2495,12 @@ _list-port-libs:
 	@if ! fgrep -q -e "r|${FULLPKGPATH}|" -e "a|${FULLPKGPATH}" $${_DEPENDS_FILE}; then \
 		${MAKE} run-dir-depends >>${_DEPENDS_CACHE}; \
 	fi
-	@perl ${PORTSDIR}/infrastructure/build/extract-dependencies ${FULLPKGPATH} <${_DEPENDS_CACHE}|while read dir; do \
-		fulldir=${_PORT_LIBS_CACHE}/$$dir; \
+	@perl ${PORTSDIR}/infrastructure/build/extract-dependencies ${FULLPKGPATH} <${_DEPENDS_CACHE}|while read subdir; do \
+		fulldir=${_PORT_LIBS_CACHE}/$$subdir; \
 		if test -f $$fulldir; then \
 			cat $$fulldir; \
 		else \
 			mkdir -p $${fulldir%/*}; \
-			unset FLAVOR SUBPACKAGE || true; \
 			${_flavor_fragment}; \
 			eval $$toset ${MAKE} print-plist-contents | \
 				grep -e '^@lib ' -e '^@file .*/lib/lib.*\.a$$'| \
@@ -2514,8 +2508,7 @@ _list-port-libs:
 		fi; \
 	done
 .else
-	@${MAKE} run-dir-depends|tsort -r|sed -e '$$d'|while read dir; do \
-		unset FLAVOR SUBPACKAGE || true; \
+	@${MAKE} run-dir-depends|tsort -r|sed -e '$$d'|while read subdir; do \
 		${_flavor_fragment}; \
 		eval $$toset ${MAKE} print-plist-contents ; \
 	done | grep -e '^@lib ' -e '^@file .*/lib/.*\.a$$'| \
@@ -2525,10 +2518,9 @@ _list-port-libs:
 
 _print-package-signature-run:
 .for _i in ${RUN_DEPENDS}
-	@unset FLAVOR SUBPACKAGE || true; \
-	echo '${_i}' |{ \
-		IFS=:; read dep pkg pkgpath target; \
-		dir=$$pkgpath; ${_flavor_fragment}; \
+	@echo '${_i}' |{ \
+		IFS=:; read dep pkg subdir target; \
+		${_flavor_fragment}; \
 		default=`eval $$toset ${MAKE} _print-packagename`; \
 		echo "$$default"; \
 	}
@@ -2537,10 +2529,9 @@ _print-package-signature-run:
 _print-package-signature-lib:
 	@echo $$LIST_LIBS| LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} perl ${PORTSDIR}/infrastructure/build/resolve-lib ${_DEPLIBS}
 .for _i in ${LIB_DEPENDS}
-	@unset FLAVOR SUBPACKAGE || true; \
-	echo '${_i}' |{ \
-		IFS=:; read dep pkg pkgpath target; \
-		dir=$$pkgpath; ${_flavor_fragment}; \
+	@echo '${_i}' |{ \
+		IFS=:; read dep pkg subdir target; \
+		${_flavor_fragment}; \
 		default=`eval $$toset ${MAKE} _print-packagename`; \
 		echo "$$default"; \
 	}
@@ -2549,12 +2540,10 @@ _print-package-signature-lib:
 # recursively build a list of dirs for package running, ready for tsort
 _recurse-run-dir-depends:
 .for _dir in ${_ALWAYS_DEP} ${_RUN_DEP}
-	@unset FLAVOR SUBPACKAGE || true; \
-	echo "$$self ${_dir}"; \
+	@echo "$$self ${_dir}"; \
 	if ! fgrep -q -e "r|${_dir}|" -e "a|${_dir}|" $${_DEPENDS_FILE}; then \
 		echo "r|${_dir}|" >> $${_DEPENDS_FILE}; \
-		dir=${_dir}; \
-		${_flavor_fragment}; \
+		subdir=${_dir}; ${_flavor_fragment}; \
 		toset="$$toset self=\"${_dir}\""; \
 		if ! eval $$toset ${MAKE} _recurse-run-dir-depends; then  \
 			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
@@ -2578,12 +2567,10 @@ run-dir-depends:
 # second and further stages need _RUN_DEP.
 _recurse-all-dir-depends:
 .for _dir in ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP}
-	@unset FLAVOR SUBPACKAGE || true; \
-	echo "$$self ${_dir}"; \
+	@echo "$$self ${_dir}"; \
 	if ! fgrep -q "a|${_dir}|" $${_DEPENDS_FILE}; then \
 		echo "a|${_dir}|" >> $${_DEPENDS_FILE}; \
-		dir=${_dir}; \
-		${_flavor_fragment}; \
+		subdir=${_dir}; ${_flavor_fragment}; \
 		toset="$$toset self=\"${_dir}\""; \
 		if ! eval $$toset ${MAKE} _recurse-all-dir-depends; then  \
 			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
@@ -2595,12 +2582,10 @@ _recurse-all-dir-depends:
 # first stage does not need _RUN_DEP
 _build-dir-depends:
 .for _dir in ${_ALWAYS_DEP} ${_BUILD_DEP}
-	@unset FLAVOR SUBPACKAGE || true; \
-	echo "$$self ${_dir}"; \
+	@echo "$$self ${_dir}"; \
 	if ! fgrep -q -e "b|${_dir}|" -e "a|${_dir}|" $${_DEPENDS_FILE}; then \
 		echo "b|${_dir}|" >> $${_DEPENDS_FILE}; \
-		dir=${_dir}; \
-		${_flavor_fragment}; \
+		subdir=${_dir}; ${_flavor_fragment}; \
 		toset="$$toset self=\"${_dir}\""; \
 		if ! eval $$toset ${MAKE} _recurse-all-dir-depends; then  \
 			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \

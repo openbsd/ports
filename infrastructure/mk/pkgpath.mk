@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.4 2003/08/28 21:50:12 naddy Exp $
+# $OpenBSD: pkgpath.mk,v 1.5 2005/11/02 20:30:12 espie Exp $
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
 
@@ -20,10 +20,11 @@ PORTSDIR_PATH?=${PORTSDIR}:${PORTSDIR}/mystuff
 # Code to invoke to split dir,-multi,flavor
 
 _flavor_fragment= \
+	unset FLAVOR SUBPACKAGE || true; \
 	multi=''; flavor=''; space=''; sawflavor=false; \
-	case "$$dir" in \
+	case "$$subdir" in \
 	*,*) \
-		IFS=,; first=true; for i in $$dir; do \
+		IFS=,; first=true; for i in $$subdir; do \
 			if $$first; then \
 				dir=$$i; first=false; \
 			else \
@@ -37,6 +38,8 @@ _flavor_fragment= \
 				esac \
 			fi; \
 		done; unset IFS;; \
+	*) \
+		dir=$$subdir;; \
 	esac; \
 	toset="PKGPATH=$$dir"; \
 	case X$$multi in "X");; *) \

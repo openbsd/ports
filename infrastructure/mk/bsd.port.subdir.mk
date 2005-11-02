@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.70 2005/09/23 08:26:21 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.71 2005/11/02 20:30:12 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -88,10 +88,9 @@ _subdir_fragment= \
 	for i in ${_SKIPPED}; do \
 		eval $${echo_msg} "===\> $$i skipped"; \
 	done; \
-	for d in ${_FULLSUBDIR}; do \
-		dir=$$d; \
+	for subdir in ${_FULLSUBDIR}; do \
 		${_flavor_fragment}; \
-		eval $${echo_msg} "===\> $$d"; \
+		eval $${echo_msg} "===\> $$subdir"; \
 		set +e; \
 		if ! eval  $$toset ${MAKE} $$target; then \
 			${REPORT_PROBLEM}; \
@@ -118,8 +117,7 @@ ${__target}:
 clean:
 .if defined(clean) && ${clean:L:Mdepends}
 	@{ target=all-dir-depends; echo_msg=:; \
-	${_depfile_fragment}; ${_subdir_fragment}; }| tsort -r|while read dir; do \
-		unset FLAVOR SUBPACKAGE || true; \
+	${_depfile_fragment}; ${_subdir_fragment}; }| tsort -r|while read subdir; do \
 		${_flavor_fragment}; \
 		eval $$toset ${MAKE} _CLEANDEPENDS=No clean; \
 	done
@@ -145,7 +143,7 @@ README=	${TEMPLATES}/README.category
 README.html:
 	@>$@.tmp
 .for d in ${_FULLSUBDIR}
-	@dir=$d; ${_flavor_fragment}; \
+	@subdir=$d; ${_flavor_fragment}; \
 	name=`eval $$toset ${MAKE} _print-packagename`; \
 	case $$name in \
 		README) comment='';; \
