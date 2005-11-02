@@ -1,0 +1,3 @@
+gtkmm is the official C++ interface for the popular GUI library
+GTK+. Highlights include typesafe callbacks, widgets extensible via
+inheritance and a comprehensive set of widgets.
