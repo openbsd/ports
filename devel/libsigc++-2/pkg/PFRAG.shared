@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/11/02 23:50:01 wilfried Exp $
+@lib lib/libsigc-${V}.so.0.0

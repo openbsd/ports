@@ -1,0 +1,21 @@
+Libsigc++ - A Signal Framework for C++
+
+Provides following features:
+  * compile time typesafe callbacks (faster than run time checks)
+  * typesafty violations line number reports correctly with 
+    template names (no tracing template failures into headers)
+  * no compiler extensions or meta compilers required
+  * proper handling of dynamic objects and signals
+    (deleted objects will not cause seg faults)
+
+  * extendable API at any level
+    Slot, Connection, Object, and Signal
+  * extensions do not require alteration of basic components
+    to allow use of extensions
+  * User definable marshallers
+
+  * provides headers for up to 7 arguments and 2 callback data
+  * M4 Macros for building templates with various numbers 
+    of arguments and callback data
+  * Easily build support for templates with number of arguments
+    and callback data not defined in library headers
