@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2005/10/16 13:10:37 grange Exp $
+# $OpenBSD: Makefile,v 1.21 2005/11/02 20:44:56 wilfried Exp $
 
 COMMENT=		"C++ interface for gtk+"
 COMMENT-docs=		"C++ interface for gtk+ documentation"
@@ -26,7 +26,7 @@ MULTI_PACKAGES=		-docs
 SUBPACKAGE?=
 
 .if ${SUBPACKAGE} != "-docs"
-LIB_DEPENDS=		sigc.0::devel/libsigc++ \
+LIB_DEPENDS=		sigc.0:libsigc++-1.*:devel/libsigc++ \
 			gdk.1,gtk.1::x11/gtk+
 .endif
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
