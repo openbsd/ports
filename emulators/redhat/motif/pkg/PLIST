@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:42:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/11/02 01:20:19 bernd Exp $
 usr/X11R6/lib/libMrm.so.2.1
 usr/X11R6/lib/libUil.so.2.1
 usr/X11R6/lib/libXm.so.2.1
+@sysctl kern.emul.linux=1
 @unexec rm -f %D/usr/X11R6/lib/libMrm.so.2
 @unexec rm -f %D/usr/X11R6/lib/libUil.so.2
 @unexec rm -f %D/usr/X11R6/lib/libXm.so.2

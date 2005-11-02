@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/01 14:37:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/11/02 01:20:18 bernd Exp $
 lib/
 lib/ld-linux.so.1
 lib/ld-linux.so.1.9.5
@@ -74,5 +74,6 @@ usr/i486-linux-libc5/lib/libz.so.1.0.4
 @comment usr/man/man8/
 @comment @man usr/man/man8/ld.so.8.gz
 @comment @man usr/man/man8/ldconfig.8.gz
+@sysctl kern.emul.linux=1
 @exec %D/sbin/ldconfig
 @unexec %D/sbin/ldconfig
