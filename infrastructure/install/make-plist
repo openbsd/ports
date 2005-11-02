@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.74 2005/11/02 18:58:44 espie Exp $
+# $OpenBSD: make-plist,v 1.75 2005/11/02 21:39:43 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1083,9 +1083,11 @@ for my $k (sort keys %$foundcomments) {
 		if ($plist->{changed}) {
 
 			if (defined $orig) {
-				rename($orig->{filename}, $orig->{filename}.".orig");
+				rename($orig->{filename}, $orig->{filename}.".orig") or 
+				    die "Can't rename file ", $orig->{filename}, "\n";
 			}
-			$plist->tofile($plist->{filename});
+			$plist->tofile($plist->{filename}) or 
+			    die "Can't write plist: ", $plist->{filename}, "\n";
 		}
 	}
 }
