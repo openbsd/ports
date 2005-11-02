@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_local_c,v 1.1.1.1 2005/11/02 20:19:29 alek Exp $
+--- lib/local.c.orig	Tue Oct 25 10:44:00 2005
++++ lib/local.c	Tue Oct 25 10:44:17 2005
+@@ -372,7 +372,7 @@ local_get_file_size (gftp_request * requ
+ static int
+ local_chdir (gftp_request * request, const char *directory)
+ {
+-  char tempstr[255];
++  char tempstr[PATH_MAX];
+ 
+   g_return_val_if_fail (request != NULL, GFTP_EFATAL);
+   g_return_val_if_fail (request->protonum == GFTP_LOCAL_NUM, GFTP_EFATAL);

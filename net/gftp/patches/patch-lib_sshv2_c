@@ -1,0 +1,37 @@
+$OpenBSD: patch-lib_sshv2_c,v 1.1.1.1 2005/11/02 20:19:29 alek Exp $
+--- lib/sshv2.c.orig	Thu Oct 20 10:48:22 2005
++++ lib/sshv2.c	Thu Oct 20 10:49:54 2005
+@@ -1867,31 +1867,13 @@ sshv2_put_file (gftp_request * request, 
+ }
+ 
+ 
+-#ifdef G_HAVE_GINT64
+-
+-static gint64
+-sshv2_hton64 (gint64 val)
+-{
+-#if G_BYTE_ORDER != G_BIG_ENDIAN
+-  return (GINT64_TO_BE (val));
+-#else
+-  return (val);
+-#endif
+-}
+-
+-#endif
+-
+-
+ static void
+ sshv2_setup_file_offset (sshv2_params * params, char *buf)
+ {
+   guint32 hinum, lownum;
+ #ifdef G_HAVE_GINT64
+-  gint64 offset;
+-
+-  offset = sshv2_hton64 (params->offset);
+-  lownum = offset >> 32;
+-  hinum = (guint32) offset;
++  lownum = htonl((guint32) params->offset);
++  hinum = htonl(params->offset >> 32);
+ #else
+   hinum = 0;
+   lownum = htonl (params->offset);

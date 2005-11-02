@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_fsplib_fsplib_c,v 1.1.1.1 2005/11/02 20:19:29 alek Exp $
+--- lib/fsplib/fsplib.c.orig	Mon Oct 17 17:14:01 2005
++++ lib/fsplib/fsplib.c	Mon Oct 17 17:14:59 2005
+@@ -27,6 +27,14 @@ use of this software.
+ #include "fsplib.h"
+ #include "lock.h"
+ 
++#ifndef ENOMSG
++# define ENOMSG EINVAL
++#endif
++
++#ifndef ENOTSUP
++# define ENOTSUP EINVAL
++#endif
++
+ /* ************ Internal functions **************** */ 
+ 
+ /* builds filename in packet output buffer, appends password if needed */

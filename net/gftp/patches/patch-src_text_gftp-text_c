@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_text_gftp-text_c,v 1.1.1.1 2005/11/02 20:19:29 alek Exp $
+--- src/text/gftp-text.c.orig	Thu Oct 20 11:39:31 2005
++++ src/text/gftp-text.c	Thu Oct 20 11:40:18 2005
+@@ -185,7 +185,12 @@ gftp_text_ask_question (const char *ques
+   else
+     infd = stdin;
+ 
++#if GLIB_MAJOR_VERSION > 1
+   locale_question = g_locale_from_utf8 (question, -1, NULL, NULL, NULL);
++#else
++  locale_question = NULL;
++#endif
++
+   if (locale_question != NULL)
+     {
+       printf ("%s%s%s ", GFTPUI_COMMON_COLOR_BLUE, locale_question,
