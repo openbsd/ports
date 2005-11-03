@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2005/11/03 14:51:34 niallo Exp $
+# $OpenBSD: Makefile,v 1.12 2005/11/03 22:32:40 naddy Exp $
 
 COMMENT=	"Zangband (Zelazny Angband) with color, X11 support"
 
@@ -19,7 +19,8 @@ HOMEPAGE=		http://www.zangband.org/
 USE_GMAKE=		Yes
 MAKE_ENV=		CC="${CC}" CFLAGS="${CFLAGS}"
 
-AUTOCONF_VERSION=	2.13
+AUTOCONF_VERSION=	2.52
+AUTOMAKE_VERSION=	1.4
 CONFIGURE_STYLE=	autoconf automake
 CONFIGURE_ENV=		TRUEPREFIX="${TRUEPREFIX}"
 
@@ -36,9 +37,17 @@ WANTLIB+=		ICE SM X11 Xaw Xmu Xt
 CONFIGURE_ARGS+=	--without-x
 .endif
 
+# Autotools bootstrap
+
+post-patch:
+	@cd ${WRKSRC}; AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal
+
+# autoconf...
+# autoheader...
+
 pre-configure:
-	@cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ${WRKSRC}/bootstrap
+	@cd ${WRKSRC}; AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		automake --foreign --add-missing --copy
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zangband
