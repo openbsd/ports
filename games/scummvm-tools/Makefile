@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2005/06/24 15:25:37 jolan Exp $
+# $OpenBSD: Makefile,v 1.8 2005/11/03 10:17:10 jsg Exp $
 # XXX hardcoded endian list
 
 COMMENT=	"collection of various tools for scummvm"
-DISTNAME=	scummvm-tools-0.7.0
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	scummvm-tools-0.8.0
+PKGNAME=	${DISTNAME}
+WRKDIST=	${WRKDIR}/${DISTNAME:S/scummvm-//}
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -37,17 +38,10 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scummvm-tools
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/scummvm-tools	
 	${INSTALL_PROGRAM} \
-		${WRKBUILD}/compress_san \
-		${WRKBUILD}/convbdf \
-		${WRKBUILD}/dekyra \
-		${WRKBUILD}/descumm \
-		${WRKBUILD}/desword2 \
-		${WRKBUILD}/extract \
-		${WRKBUILD}/queenrebuild \
-		${WRKBUILD}/rescumm \
-		${WRKBUILD}/saga2mp3 \
-		${WRKBUILD}/simon{1decr,2mp3} \
-		${WRKBUILD}/sword{1mp3,2mp3} \
+		${WRKBUILD}/compress_{queen,san,scumm_bun,scumm_sou} \
+		${WRKBUILD}/compress_{simon,sword1,sword2} \
+		${WRKBUILD}/de{kyra,scumm,sword2} \
+		${WRKBUILD/extract_{mm_nes,scumm_mac,zak_c64} \
 		${PREFIX}/bin
 
 .include <bsd.port.mk>
