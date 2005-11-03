@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2005/10/25 03:25:44 todd Exp $
+# $OpenBSD: Makefile,v 1.6 2005/11/03 18:41:55 fgsch Exp $
 
-ONLY_FOR_ARCHS=	i386 macppc # no success building on other archs yet
+# no success building on other archs yet
+ONLY_FOR_ARCHS=		amd64 i386 macppc
 
 COMMENT=		"multi system emulator"
 DISTNAME=		qemu-0.7.2
-PKGNAME=		qemu-0.7.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://fabrice.bellard.free.fr/qemu/
@@ -24,5 +25,9 @@ USE_GMAKE=		Yes
 USE_X11=		Yes
 WANTLIB=		m z ossaudio X11 Xext usbhid util pthread c
 CONFIGURE_STYLE=	gnu
+
+.if ${MACHINE_ARCH} == "amd64"
+PATCH_LIST=     patch-* misc-*
+.endif
 
 .include <bsd.port.mk>

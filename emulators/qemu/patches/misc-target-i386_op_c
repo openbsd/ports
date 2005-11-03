@@ -1,0 +1,18 @@
+$OpenBSD: misc-target-i386_op_c,v 1.1 2005/11/03 18:41:55 fgsch Exp $
+--- target-i386/op.c.orig	Tue Oct 25 02:58:19 2005
++++ target-i386/op.c	Tue Oct 25 02:59:25 2005
+@@ -2100,12 +2100,12 @@ void OPPROTO op_fdivr_STN_ST0(void)
+ /* misc FPU operations */
+ void OPPROTO op_fchs_ST0(void)
+ {
+-    ST0 = floatx_chs(ST0);
++    helper_fchs_ST0();
+ }
+ 
+ void OPPROTO op_fabs_ST0(void)
+ {
+-    ST0 = floatx_abs(ST0);
++    helper_fabs_ST0();
+ }
+ 
+ void OPPROTO op_fxam_ST0(void)
