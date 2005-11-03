@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.17 2005/10/05 09:48:10 bernd Exp $
+# $OpenBSD: Makefile.inc,v 1.18 2005/11/03 21:57:55 naddy Exp $
 
 CATEGORIES=	mail
 
@@ -59,7 +59,6 @@ WANTLIB+=		ncurses
 PATCHFILES+=		patch-${VERSION}.rr.compressed.1.gz:0
 PATCH_DIST_STRIP=	-p1
 CONFIGURE_ARGS+=	--enable-compressed
-CONFIGURE_STYLE+=	automake
 .else
 SUPDISTFILES+=		patch-${VERSION}.rr.compressed.1.gz:0
 .endif
