@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/11/23 23:23:47 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2005/11/03 22:25:24 david Exp $
 
 COMMENT=	"Web intrusion detection and prevention engine"
 
@@ -6,8 +6,8 @@ COMMENT=	"Web intrusion detection and prevention engine"
 # and has Apache that supports DSO's.
 SHARED_ONLY=	Yes
 
-DISTNAME=	mod_security-1.8.6
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	modsecurity-1.8.7
+PKGNAME=	${DISTNAME}
 CATEGORIES=	www
 
 MASTER_SITES=	http://www.modsecurity.org/download/
