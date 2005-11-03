@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2005/11/03 17:58:10 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.61 2005/11/03 19:52:18 mbalmer Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
@@ -33,7 +33,7 @@ FAKE_FLAGS=	DESTDIR="${DESTDIR}"
  
 CONFDIR=        ${SYSCONFDIR}/samba
 SAMBA_LOGDIR=   /var/log
-SUBST_VARS=     CONFDIR
+SUBST_VARS=     CONFDIR LOCALBASE SYSCONFDIR
 
 SEPARATE_BUILD= concurrent
 AUTOCONF_VERSION= 2.59
