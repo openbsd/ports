@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2005/11/03 09:42:29 alek Exp $
+--- configure.orig	Thu Nov  3 00:06:21 2005
++++ configure	Thu Nov  3 00:06:23 2005
+@@ -17247,8 +17247,6 @@ else
+   GCC_FALSE=
+ fi
+ 
+-CFLAGS=`echo $CFLAGS | sed -e s,-O2,-O3,`
+-
+ NEWS=NEWS
+ 
+ 

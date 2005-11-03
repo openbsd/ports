@@ -1,0 +1,4 @@
+Blame displays the last modification for each line in an RCS file. It is
+the RCS equivalent of CVS's annotate command.  An annotated RCS file
+describes the revision and date in which each line was added to the
+file, and the author of each line.
