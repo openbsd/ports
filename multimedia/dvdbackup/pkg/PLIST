@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/03 07:46:02 jakemsr Exp $
+bin/dvdbackup
+share/doc/dvdbackup/
+share/doc/dvdbackup/README

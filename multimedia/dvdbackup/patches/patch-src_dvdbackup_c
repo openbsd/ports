@@ -1,0 +1,244 @@
+$OpenBSD: patch-src_dvdbackup_c,v 1.1.1.1 2005/11/03 07:46:02 jakemsr Exp $
+--- src/dvdbackup.c.orig	Sun Aug  4 23:08:39 2002
++++ src/dvdbackup.c	Wed Nov  2 23:24:35 2005
+@@ -30,11 +30,11 @@
+ #include <unistd.h>
+ #include <string.h>
+ #include <limits.h>
+-#include <dvdread/dvd_reader.h>
+-#include <dvdread/ifo_read.h>
+-#include <dvdread/ifo_print.h>
++#include <dvdnav/dvd_reader.h>
++#include <dvdnav/ifo_read.h>
++#include <dvdnav/ifo_print.h>
++#include <dvdnav/dvd_udf.h>
+ 
+-
+ #define MAXNAME 256
+ 
+ /*Flag for verbose mode */
+@@ -227,7 +227,8 @@ void usage(){
+ }
+ 
+ int CheckSizeArray(const int size_array[], int reference, int target) {
+-	if ( (size_array[reference]/size_array[target] == 1) &&
++	if ( (size_array[target] != 0) &&
++	     (size_array[reference]/size_array[target] == 1) &&
+ 	     ((size_array[reference] * 2 - size_array[target])/ size_array[target] == 1) &&
+ 	     ((size_array[reference]%size_array[target] * 3) < size_array[reference]) ) {
+ 		/* We have a dual DVD with two feature films - now lets see if they have the same amount of chapters*/
+@@ -301,7 +302,7 @@ int DVDWriteCells(dvd_reader_t * dvd, in
+ 
+ 
+ 	/* Vob control */
+-	int vob;
++	int vob = 0;
+ 
+ 	/* Temp filename,dirname */
+ 	char targetname[PATH_MAX];
+@@ -313,9 +314,9 @@ int DVDWriteCells(dvd_reader_t * dvd, in
+ 	/* File Handler */
+ 	int streamout;
+ 
+-	int size;
+-	int left;
+-	int leftover;
++	int size = 0;
++	int left = 0;
++	int leftover = 0;
+ 
+ 	/* Buffer size in DVD sectors */
+ 	/* Currently set to 1MB */
+@@ -353,7 +354,7 @@ int DVDWriteCells(dvd_reader_t * dvd, in
+ 	/* Remove all old files silently if they exists */
+ 
+ 	for ( i = 0 ; i < 10 ; i++ ) {
+-		sprintf(targetname,"%s/%s/VIDEO_TS/VTS_%02i_%i.VOB",targetdir, title_name, title_set, i + 1);
++		snprintf(targetname, sizeof(targetname),"%s/%s/VIDEO_TS/VTS_%02i_%i.VOB",targetdir, title_name, title_set, i + 1);
+ #ifdef DEBUG
+ 		fprintf(stderr,"DVDWriteCells: file is %s\n", targetname);
+ 
+@@ -423,7 +424,7 @@ int DVDWriteCells(dvd_reader_t * dvd, in
+ 			fprintf(stderr,"Don't try to copy chapters from the VMG domain there aren't any\n");
+ 			return(1);
+ 		} else {
+-			sprintf(targetname,"%s/%s/VIDEO_TS/VTS_%02i_%i.VOB",targetdir, title_name, title_set, vob);
++			snprintf(targetname,sizeof(targetname),"%s/%s/VIDEO_TS/VTS_%02i_%i.VOB",targetdir, title_name, title_set, vob);
+ 		}
+ 
+ #ifdef DEBUG
+@@ -504,7 +505,7 @@ int DVDWriteCells(dvd_reader_t * dvd, in
+ 				fprintf(stderr,"Don't try to copy chapters from the VMG domain there aren't any\n");
+ 				return(1);
+ 			} else {
+-				sprintf(targetname,"%s/%s/VIDEO_TS/VTS_%02i_%i.VOB",targetdir, title_name, title_set, vob);
++				snprintf(targetname,sizeof(targetname),"%s/%s/VIDEO_TS/VTS_%02i_%i.VOB",targetdir, title_name, title_set, vob);
+ 			}
+ 
+ 
+@@ -602,7 +603,7 @@ titles_info_t * DVDGetInfo(dvd_reader_t 
+ 	int counter, i, f;
+ 
+ 	/* Our guess */
+-	int candidate;
++	int candidate = 0;
+ 	int multi = 0;
+ 	int dual = 0;
+ 
+@@ -1083,7 +1084,7 @@ int DVDCopyTileVobX(dvd_reader_t * dvd, 
+ 		fprintf(stderr,"Don't try to copy a Title VOB from the VMG domain there aren't any\n");
+ 		return(1);
+ 	} else {
+-		sprintf(targetname,"%s/%s/VIDEO_TS/VTS_%02i_%i.VOB",targetdir, title_name, title_set, vob);
++		snprintf(targetname,sizeof(targetname),"%s/%s/VIDEO_TS/VTS_%02i_%i.VOB",targetdir, title_name, title_set, vob);
+ 	}
+ 
+ 
+@@ -1217,9 +1218,9 @@ int DVDCopyMenu(dvd_reader_t * dvd, titl
+ 
+ 	/* Create VIDEO_TS.VOB or VTS_XX_0.VOB */
+ 	if (title_set == 0) {
+-		sprintf(targetname,"%s/%s/VIDEO_TS/VIDEO_TS.VOB",targetdir, title_name);
++		snprintf(targetname,sizeof(targetname),"%s/%s/VIDEO_TS/VIDEO_TS.VOB",targetdir, title_name);
+ 	} else {
+-		sprintf(targetname,"%s/%s/VIDEO_TS/VTS_%02i_0.VOB",targetdir, title_name, title_set);
++		snprintf(targetname,sizeof(targetname),"%s/%s/VIDEO_TS/VTS_%02i_0.VOB",targetdir, title_name, title_set);
+ 	}
+ 
+ 
+@@ -1330,9 +1331,9 @@ int DVDCopyIfoBup (dvd_reader_t * dvd, t
+ 	/* Create VIDEO_TS.IFO or VTS_XX_0.IFO */
+ 
+ 	if (title_set == 0) {
+-		sprintf(targetname,"%s/%s/VIDEO_TS/VIDEO_TS.IFO",targetdir, title_name);
++		snprintf(targetname,sizeof(targetname),"%s/%s/VIDEO_TS/VIDEO_TS.IFO",targetdir, title_name);
+ 	} else {
+-		sprintf(targetname,"%s/%s/VIDEO_TS/VTS_%02i_0.IFO",targetdir, title_name, title_set);
++		snprintf(targetname,sizeof(targetname),"%s/%s/VIDEO_TS/VTS_%02i_0.IFO",targetdir, title_name, title_set);
+ 	}
+ 
+ 	if (stat(targetname, &fileinfo) == 0) {
+@@ -1396,9 +1397,9 @@ int DVDCopyIfoBup (dvd_reader_t * dvd, t
+ 	/* Create VIDEO_TS.BUP or VTS_XX_0.BUP */
+ 
+ 	if (title_set == 0) {
+-		sprintf(targetname,"%s/%s/VIDEO_TS/VIDEO_TS.BUP",targetdir, title_name);
++		snprintf(targetname,sizeof(targetname),"%s/%s/VIDEO_TS/VIDEO_TS.BUP",targetdir, title_name);
+ 	} else {
+-		sprintf(targetname,"%s/%s/VIDEO_TS/VTS_%02i_0.BUP",targetdir, title_name, title_set);
++		snprintf(targetname,sizeof(targetname),"%s/%s/VIDEO_TS/VTS_%02i_0.BUP",targetdir, title_name, title_set);
+ 	}
+ 
+ 
+@@ -1687,7 +1688,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
+ 
+ 	/* Find VIDEO_TS.IFO is present - must be present since we did a ifo open 0*/
+ 
+-	sprintf(filename,"/VIDEO_TS/VIDEO_TS.IFO");
++	snprintf(filename,sizeof(filename),"/VIDEO_TS/VIDEO_TS.IFO");
+ 
+ 	if ( UDFFindFile(_dvd, filename, &size) != 0 ) {
+ 		title_set_info->title_set[0].size_ifo = size;
+@@ -1700,7 +1701,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
+ 
+ 	/* Find VIDEO_TS.VOB if present*/
+ 
+-	sprintf(filename,"/VIDEO_TS/VIDEO_TS.VOB");
++	snprintf(filename,sizeof(filename),"/VIDEO_TS/VIDEO_TS.VOB");
+ 
+ 	if ( UDFFindFile(_dvd, filename, &size) != 0 ) {
+ 		title_set_info->title_set[0].size_menu = size;
+@@ -1710,7 +1711,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
+ 
+ 	/* Find VIDEO_TS.BUP if present */
+ 
+-	sprintf(filename,"/VIDEO_TS/VIDEO_TS.BUP");
++	snprintf(filename,sizeof(filename),"/VIDEO_TS/VIDEO_TS.BUP");
+ 
+ 	if ( UDFFindFile(_dvd, filename, &size) != 0 ) {
+ 		title_set_info->title_set[0].size_bup = size;
+@@ -1745,7 +1746,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
+ 			}
+ 
+ 
+-			sprintf(filename,"/VIDEO_TS/VTS_%02i_0.IFO",counter + 1);
++			snprintf(filename,sizeof(filename),"/VIDEO_TS/VTS_%02i_0.IFO",counter + 1);
+ 
+ 			if ( UDFFindFile(_dvd, filename, &size) != 0 ) {
+ 				title_set_info->title_set[counter + 1].size_ifo = size;
+@@ -1761,7 +1762,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
+ 
+ 			/* Find VTS_XX_0.VOB if present*/
+ 
+-			sprintf(filename,"/VIDEO_TS/VTS_%02i_0.VOB", counter + 1);
++			snprintf(filename,sizeof(filename),"/VIDEO_TS/VTS_%02i_0.VOB", counter + 1);
+ 
+ 			if ( UDFFindFile(_dvd, filename, &size) != 0 ) {
+ 				title_set_info->title_set[counter + 1].size_menu = size;
+@@ -1778,7 +1779,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
+ 			/* Find all VTS_XX_[1 to 9].VOB files if they are present*/
+ 
+ 			for( i = 0; i < 9; ++i ) {
+-				sprintf(filename,"/VIDEO_TS/VTS_%02i_%i.VOB", counter + 1, i + 1 );
++				snprintf(filename,sizeof(filename),"/VIDEO_TS/VTS_%02i_%i.VOB", counter + 1, i + 1 );
+ 				if(UDFFindFile(_dvd, filename, &size) == 0 ) {
+ 					break;
+ 				}
+@@ -1791,7 +1792,7 @@ title_set_info_t *DVDGetFileSet(dvd_read
+ 			}
+ 
+ 
+-			sprintf(filename,"/VIDEO_TS/VTS_%02i_0.BUP", counter + 1);
++			snprintf(filename,sizeof(filename),"/VIDEO_TS/VTS_%02i_0.BUP", counter + 1);
+ 
+ 			if ( UDFFindFile(_dvd, filename, &size) != 0 ) {
+ 				title_set_info->title_set[counter +1].size_bup = size;
+@@ -2265,9 +2266,9 @@ int main(int argc, char *argv[]){
+ 
+ 	/* Switches */
+ 	int title_set = 0;
+-	int titles;
+-	int start_chapter;
+-	int end_chapter;
++	int titles = 0;
++	int start_chapter = 0;
++	int end_chapter = 0;
+ 
+ 	int do_mirror = 0;
+ 	int do_title_set = 0;
+@@ -2278,7 +2279,7 @@ int main(int argc, char *argv[]){
+ 
+ 
+ 
+-	int return_code;
++	int return_code = 0;
+ 
+ 	/* DVD Video device */
+ 	char * dvd=NULL;
+@@ -2499,7 +2500,7 @@ int main(int argc, char *argv[]){
+ 
+ 
+ 
+-	sprintf(targetname,"%s",targetdir);
++	snprintf(targetname,sizeof(targetname),"%s",targetdir);
+ 
+ 	if (stat(targetname, &fileinfo) == 0) {
+ 		if (! S_ISDIR(fileinfo.st_mode)) {
+@@ -2515,7 +2516,7 @@ int main(int argc, char *argv[]){
+ 	}
+ 
+ 
+-	sprintf(targetname,"%s/%s",targetdir, title_name);
++	snprintf(targetname,sizeof(targetname),"%s/%s",targetdir, title_name);
+ 
+ 	if (stat(targetname, &fileinfo) == 0) {
+ 		if (! S_ISDIR(fileinfo.st_mode)) {
+@@ -2530,7 +2531,7 @@ int main(int argc, char *argv[]){
+ 		}
+ 	}
+ 
+-	sprintf(targetname,"%s/%s/VIDEO_TS",targetdir, title_name);
++	snprintf(targetname,sizeof(targetname),"%s/%s/VIDEO_TS",targetdir, title_name);
+ 
+ 	if (stat(targetname, &fileinfo) == 0) {
+ 		if (! S_ISDIR(fileinfo.st_mode)) {
