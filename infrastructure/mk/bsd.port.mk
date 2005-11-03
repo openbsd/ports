@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.727 2005/11/03 19:32:25 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.728 2005/11/03 22:33:04 david Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2065,7 +2065,7 @@ ${_F}:
 				else \
 					if grep -q "SIZE ($$file)" ${CHECKSUM_FILE}; then \
 						${ECHO_MSG} ">> Size does not match for ${_F}"; \
-						test `wc -c "$$file" 2>/dev/null|awk '{print $$1}' || echo 0` -lt 30000 && rm -f $$file; \
+						test `wc -c "$$file" 2>/dev/null || echo 0 | awk '{print $$1}'` -lt 30000 && rm -f $$file; \
 					else \
 						${ECHO_MSG} ">> No size recorded for ${_F}"; \
 						exit 0; \
