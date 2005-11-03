@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2005/10/21 18:07:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2005/11/03 16:14:47 naddy Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -29,6 +29,7 @@ LIB_DEPENDS=		SDL.:sdl-*-!no_x11:devel/sdl \
 
 USE_X11=		Yes
 
+AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-sdl-prefix=${LOCALBASE} \
 			--with-png \
