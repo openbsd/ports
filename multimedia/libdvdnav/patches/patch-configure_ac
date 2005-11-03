@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1 2005/11/03 04:25:08 jolan Exp $
+--- configure.ac.orig	Mon Jan  3 14:24:21 2005
++++ configure.ac	Wed Nov  2 14:04:07 2005
+@@ -174,7 +174,7 @@ dnl ------------------------------------
+ dnl cflags
+ dnl ---------------------------------------------
+ dnl Common cflags for all platforms
+-CFLAGS="-O3 -Wall -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE $CFLAGS"
++CFLAGS="-Wall -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE $CFLAGS"
+ DEBUG_CFLAGS="-g -DDEBUG $CFLAGS"
+ 
+ AC_SUBST(DEBUG_CFLAGS)
