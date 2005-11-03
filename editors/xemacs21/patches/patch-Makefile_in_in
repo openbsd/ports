@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in_in,v 1.1 2003/04/24 18:15:39 lebel Exp $
---- Makefile.in.in.orig	Fri Nov  1 04:51:47 2002
-+++ Makefile.in.in	Mon Feb 24 10:35:03 2003
-@@ -425,7 +425,7 @@ install-arch-dep: mkdir
+$OpenBSD: patch-Makefile_in_in,v 1.2 2005/11/03 15:51:05 aanriot Exp $
+--- Makefile.in.in.orig	Mon Jan 31 03:54:47 2005
++++ Makefile.in.in	Mon Oct 10 21:36:19 2005
+@@ -429,7 +429,7 @@ install-arch-dep: mkdir
  	     do (cd $${subdir} && $(RM) -r RCS CVS SCCS \#* *~) ; done ; \
  	else true; fi
  #ifdef PDUMP
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in_in,v 1.1 2003/04/24 18:15:39 lebel Exp $
  #endif
  #ifdef WIN32_NATIVE
  	${INSTALL_PROGRAM} src/${PROGNAME} ${bindir}/${PROGNAME}
-@@ -488,9 +488,14 @@ install-arch-indep: mkdir info
+@@ -494,9 +494,14 @@ install-arch-indep: mkdir info
  	  done ; \
  	fi
  	cd ${srcdir}/etc && \

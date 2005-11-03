@@ -1,0 +1,18 @@
+$OpenBSD: patch-info_emodules_info,v 1.1 2005/11/03 15:51:05 aanriot Exp $
+--- info/emodules.info.orig	Thu Sep  8 08:44:25 2005
++++ info/emodules.info	Thu Sep  8 08:47:03 2005
+@@ -1,6 +1,14 @@
+ This is ../info/emodules.info, produced by makeinfo version 4.6 from
+ emodules.texi.
+ 
++INFO-DIR-SECTION XEmacs Editor
++START-INFO-DIR-ENTRY
++* Dynamic loadable modules: (emodules).     Dynamic loadable module support.
++END-INFO-DIR-ENTRY
++
++^_
++File: emodules.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
++
+    This file documents the module loading technology of XEmacs.
+ 
+    Copyright (C) 1998 J. Kean Johnston.

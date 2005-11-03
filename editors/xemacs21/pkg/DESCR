@@ -1,24 +1,13 @@
-XEmacs is a powerful, extensible text editor with full GUI support.
+XEmacs is a powerful, extensible text editor with full GUI support. It
+provides a great number of new features.  More details on XEmacs's
+functionality, can be obtained through the info on-line information
+system.
 
-XEmacs provides a great number of new features.  More details on
-XEmacs's functionality, can be obtained through the info on-line 
-information system.
-
-The XEmacs web page can be browsed, using any WWW browser at
-
-	${HOMEPAGE}
-
-NOTE:
-	This package contains the XEmacs engine.
-	Every major functionality of XEmacs is a separate module.
-	A complete set of theses modules is bundled in the
-	"xemacs21-sumo" package.
+Every major functionality of XEmacs is a separate module, a complete set
+of theses modules is bundled in the "xemacs21-sumo" package.
 
 Flavors:
-	mule 		- MUlti-Lingual Emacs
-	wnn 		- input method (needs mule) [1]
-	canna 		- another input method (needs mule) [1]
-	no_x11		- disable X11 support
-
-[1] XEmacs coredumps if the {canna,wnn} server is killed before it closes
-    connection.
+	* mule 		- MUlti-Lingual Emacs
+	* wnn 		- input method (needs mule)
+	* canna 	- another input method (needs mule)
+	* no_x11	- disable X11 support

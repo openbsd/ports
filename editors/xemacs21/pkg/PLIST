@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/11/07 10:00:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2005/11/03 15:51:05 aanriot Exp $
+%%mule%%
 bin/ellcc
 bin/gnuattach
 bin/gnuclient
@@ -11,15 +12,17 @@ bin/xemacs-b2m
 bin/xemacs-ctags
 bin/xemacs-etags
 bin/xemacs-rcs-checkin
-@info info/xemacs-${VERSION}/
+info/xemacs-${VERSION}/
 @info info/xemacs-${VERSION}/cl.info
 @info info/xemacs-${VERSION}/custom.info
+@comment info/xemacs-${VERSION}/dir
 @info info/xemacs-${VERSION}/emodules.info
-info/xemacs-${VERSION}/external-widget.info
+@comment info/xemacs-${VERSION}/emodules.info.orig
+@info info/xemacs-${VERSION}/external-widget.info
 @info info/xemacs-${VERSION}/info.info
 @info info/xemacs-${VERSION}/internals.info
 @info info/xemacs-${VERSION}/lispref.info
-info/xemacs-${VERSION}/new-users-guide.info
+@info info/xemacs-${VERSION}/new-users-guide.info
 @info info/xemacs-${VERSION}/standards.info
 @info info/xemacs-${VERSION}/term.info
 @info info/xemacs-${VERSION}/termcap.info
@@ -27,6 +30,7 @@ info/xemacs-${VERSION}/new-users-guide.info
 @info info/xemacs-${VERSION}/widget.info
 @info info/xemacs-${VERSION}/xemacs-faq.info
 @info info/xemacs-${VERSION}/xemacs.info
+lib/xemacs/
 lib/xemacs-${VERSION}/
 lib/xemacs-${VERSION}/etc/
 lib/xemacs-${VERSION}/etc/BETA
@@ -146,6 +150,7 @@ lib/xemacs-${VERSION}/etc/gnudoit.1
 lib/xemacs-${VERSION}/etc/gnuserv.1
 lib/xemacs-${VERSION}/etc/gnuserv.README
 lib/xemacs-${VERSION}/etc/gray1.xbm
+lib/xemacs-${VERSION}/etc/gtkrc
 lib/xemacs-${VERSION}/etc/idd/
 lib/xemacs-${VERSION}/etc/idd/drop
 lib/xemacs-${VERSION}/etc/idd/dropmsk
@@ -904,7 +909,7 @@ lib/xemacs-${VERSION}/lisp/files.elc
 lib/xemacs-${VERSION}/lisp/fill.el
 lib/xemacs-${VERSION}/lisp/fill.elc
 lib/xemacs-${VERSION}/lisp/find-paths.el
-lib/xemacs-${VERSION}/lisp/find-paths.el.orig
+@comment lib/xemacs-${VERSION}/lisp/find-paths.el.orig
 lib/xemacs-${VERSION}/lisp/find-paths.elc
 lib/xemacs-${VERSION}/lisp/finder-inf.el
 lib/xemacs-${VERSION}/lisp/finder-inf.elc
@@ -1053,67 +1058,6 @@ lib/xemacs-${VERSION}/lisp/msw-mouse.el
 lib/xemacs-${VERSION}/lisp/msw-mouse.elc
 lib/xemacs-${VERSION}/lisp/msw-select.el
 lib/xemacs-${VERSION}/lisp/msw-select.elc
-lib/xemacs-${VERSION}/lisp/mule/
-lib/xemacs-${VERSION}/lisp/mule/arabic.el
-lib/xemacs-${VERSION}/lisp/mule/arabic.elc
-lib/xemacs-${VERSION}/lisp/mule/auto-autoloads.el
-lib/xemacs-${VERSION}/lisp/mule/auto-autoloads.elc
-lib/xemacs-${VERSION}/lisp/mule/canna-leim.el
-lib/xemacs-${VERSION}/lisp/mule/canna-leim.elc
-lib/xemacs-${VERSION}/lisp/mule/chinese.el
-lib/xemacs-${VERSION}/lisp/mule/chinese.elc
-lib/xemacs-${VERSION}/lisp/mule/custom-load.el
-lib/xemacs-${VERSION}/lisp/mule/custom-load.elc
-lib/xemacs-${VERSION}/lisp/mule/cyrillic.el
-lib/xemacs-${VERSION}/lisp/mule/cyrillic.elc
-lib/xemacs-${VERSION}/lisp/mule/english.el
-lib/xemacs-${VERSION}/lisp/mule/english.elc
-lib/xemacs-${VERSION}/lisp/mule/ethiopic.el
-lib/xemacs-${VERSION}/lisp/mule/ethiopic.elc
-lib/xemacs-${VERSION}/lisp/mule/european.el
-lib/xemacs-${VERSION}/lisp/mule/european.elc
-lib/xemacs-${VERSION}/lisp/mule/greek.el
-lib/xemacs-${VERSION}/lisp/mule/greek.elc
-lib/xemacs-${VERSION}/lisp/mule/hebrew.el
-lib/xemacs-${VERSION}/lisp/mule/hebrew.elc
-lib/xemacs-${VERSION}/lisp/mule/japanese.el
-lib/xemacs-${VERSION}/lisp/mule/japanese.elc
-lib/xemacs-${VERSION}/lisp/mule/kinsoku.el
-lib/xemacs-${VERSION}/lisp/mule/kinsoku.elc
-lib/xemacs-${VERSION}/lisp/mule/korean.el
-lib/xemacs-${VERSION}/lisp/mule/korean.elc
-lib/xemacs-${VERSION}/lisp/mule/latin.el
-lib/xemacs-${VERSION}/lisp/mule/latin.elc
-lib/xemacs-${VERSION}/lisp/mule/misc-lang.el
-lib/xemacs-${VERSION}/lisp/mule/misc-lang.elc
-lib/xemacs-${VERSION}/lisp/mule/mule-category.el
-lib/xemacs-${VERSION}/lisp/mule/mule-category.elc
-lib/xemacs-${VERSION}/lisp/mule/mule-ccl.el
-lib/xemacs-${VERSION}/lisp/mule/mule-ccl.elc
-lib/xemacs-${VERSION}/lisp/mule/mule-charset.el
-lib/xemacs-${VERSION}/lisp/mule/mule-charset.elc
-lib/xemacs-${VERSION}/lisp/mule/mule-cmds.el
-lib/xemacs-${VERSION}/lisp/mule/mule-cmds.elc
-lib/xemacs-${VERSION}/lisp/mule/mule-coding.el
-lib/xemacs-${VERSION}/lisp/mule/mule-coding.elc
-lib/xemacs-${VERSION}/lisp/mule/mule-help.el
-lib/xemacs-${VERSION}/lisp/mule/mule-help.elc
-lib/xemacs-${VERSION}/lisp/mule/mule-init.el
-lib/xemacs-${VERSION}/lisp/mule/mule-init.elc
-lib/xemacs-${VERSION}/lisp/mule/mule-misc.el
-lib/xemacs-${VERSION}/lisp/mule/mule-misc.elc
-lib/xemacs-${VERSION}/lisp/mule/mule-tty-init.el
-lib/xemacs-${VERSION}/lisp/mule/mule-tty-init.elc
-lib/xemacs-${VERSION}/lisp/mule/mule-x-init.el
-lib/xemacs-${VERSION}/lisp/mule/mule-x-init.elc
-lib/xemacs-${VERSION}/lisp/mule/thai-xtis-chars.el
-lib/xemacs-${VERSION}/lisp/mule/thai-xtis-chars.elc
-lib/xemacs-${VERSION}/lisp/mule/thai-xtis.el
-lib/xemacs-${VERSION}/lisp/mule/thai-xtis.elc
-lib/xemacs-${VERSION}/lisp/mule/viet-chars.el
-lib/xemacs-${VERSION}/lisp/mule/viet-chars.elc
-lib/xemacs-${VERSION}/lisp/mule/vietnamese.el
-lib/xemacs-${VERSION}/lisp/mule/vietnamese.elc
 lib/xemacs-${VERSION}/lisp/multicast.el
 lib/xemacs-${VERSION}/lisp/multicast.elc
 lib/xemacs-${VERSION}/lisp/mwheel.el
@@ -1267,6 +1211,8 @@ lib/xemacs-${VERSION}/lisp/x-win-sun.el
 lib/xemacs-${VERSION}/lisp/x-win-sun.elc
 lib/xemacs-${VERSION}/lisp/x-win-xfree86.el
 lib/xemacs-${VERSION}/lisp/x-win-xfree86.elc
+lib/xemacs/site-lisp/
+lib/xemacs/site-modules/
 @man man/man1/gnuattach.1
 @man man/man1/gnuclient.1
 @man man/man1/gnudoit.1
