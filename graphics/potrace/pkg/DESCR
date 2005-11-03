@@ -1,0 +1,12 @@
+potrace is a utility for tracing a bitmap, which means, transforming a
+bitmap into a smooth, scalable image. The input is a bitmap (PBM, PGM,
+PPM, or BMP format), and the default output is an encapsulated
+PostScript file (EPS). A typical use is to create EPS files from scanned
+data, such as company or university logos, handwritten notes, etc. The
+resulting image is not "jaggy" like a bitmap, but smooth. It can then be
+rendered at any resolution. 
+
+potrace can currently produce the following output formats: EPS,
+PostScript, PDF, SVG (scalable vector graphics), Xfig, Gimppath, and PGM
+(for easy antialiasing). Additional backends might be added in the
+future.

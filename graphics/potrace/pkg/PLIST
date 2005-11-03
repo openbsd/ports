@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/03 13:11:52 alek Exp $
+bin/mkbitmap
+bin/potrace
+@man man/man1/mkbitmap.1
+@man man/man1/potrace.1
