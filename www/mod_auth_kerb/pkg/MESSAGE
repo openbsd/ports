@@ -1,4 +1,4 @@
-To finish the install of mod_auth_krb, you need
+To finish the install of mod_auth_kerb, you need
 to enable the module using the following command
 
   ${PREFIX}/sbin/mod_auth_kerb-enable
