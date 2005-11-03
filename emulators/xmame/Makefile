@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2005/10/18 19:08:00 aanriot Exp $
+# $OpenBSD: Makefile,v 1.18 2005/11/03 22:04:41 aanriot Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -13,9 +13,10 @@ PKGNAME-mess=	xmess-${VERSION}p1
 
 CATEGORIES=	emulators games
 MASTER_SITES=	${HOMEPAGE}/download/ \
-		ftp://ftp.kaupp.cx/pub/xmame/
-MASTER_SITES0=	http://www.mameworld.net/highscore/
-MASTER_SITES1=	ftp://ftp.atlantilde.com/pub/distfiles/
+		ftp://ftp.kaupp.cx/pub/xmame/ \
+		ftp://ftp.atlantilde.com/pub/distfiles/
+MASTER_SITES0=	http://www.mameworld.net/highscore/ \
+		ftp://ftp.atlantilde.com/pub/distfiles/
 
 HOMEPAGE=	http://x.mame.net
 
@@ -25,7 +26,7 @@ HISCORE_FILE=	uhsdat${VERSION:S/.//}.zip
 HISTORY_FILE=	history1_02.zip
 CHEAT_FILE=	cheat_20051018.zip
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${HISCORE_FILE}:0 \
-		${HISTORY_FILE}:1 ${CHEAT_FILE}:1
+		${HISTORY_FILE} ${CHEAT_FILE}
 
 # Need to know endianness
 ONLY_FOR_ARCHS=	amd64 alpha hppa i386 m68k powerpc sparc
