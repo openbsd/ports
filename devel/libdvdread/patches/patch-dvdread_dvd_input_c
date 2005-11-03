@@ -1,6 +1,6 @@
-$OpenBSD: patch-dvdread_dvd_input_c,v 1.3 2005/05/01 09:31:20 hshoexer Exp $
---- dvdread/dvd_input.c.orig	Thu Feb 13 22:48:24 2003
-+++ dvdread/dvd_input.c	Fri Mar 25 12:20:54 2005
+$OpenBSD: patch-dvdread_dvd_input_c,v 1.4 2005/11/03 22:29:48 kurt Exp $
+--- dvdread/dvd_input.c.orig	Thu Feb 13 16:48:24 2003
++++ dvdread/dvd_input.c	Thu Nov  3 15:03:34 2005
 @@ -36,30 +36,30 @@ int         (*dvdinput_read)  (dvd_input
  char *      (*dvdinput_error) (dvd_input_t);
  
@@ -129,37 +129,9 @@ $OpenBSD: patch-dvdread_dvd_input_c,v 1.3 2005/05/01 09:31:20 hshoexer Exp $
  
    if(ret < 0)
      return ret;
-@@ -257,85 +257,115 @@ static int file_close(dvd_input_t dev)
-   return 0;
- }
+@@ -259,83 +259,83 @@ static int file_close(dvd_input_t dev)
  
-+#ifdef __OpenBSD__
-+#include <dirent.h>
-+#include <string.h>
-+static void *findlibrary(char *base)
-+{
-+	DIR *d;
-+	struct dirent *de;
-+	size_t len;
-+	void *lib = NULL;
  
-+	len = strlen(base);
-+
-+	d = opendir(".");
-+	if (!d)
-+		return lib;
-+	while ((de = readdir(d)) != NULL) {
-+	    if (strncmp(de->d_name, base, len) != 0)
-+		continue;
-+	    lib = dlopen(de->d_name, RTLD_LAZY);
-+	    if (lib)
-+	    	break;
-+	}
-+	closedir(d);
-+	return lib;
-+}
-+#endif
-+
  /**
 - * Setup read functions with either libdvdcss or minimal DVD access.
 + * Setup read functions with either libdvd or minimal DVD access.
@@ -186,10 +158,6 @@ $OpenBSD: patch-dvdread_dvd_input_c,v 1.3 2005/05/01 09:31:20 hshoexer Exp $
 -  dvdcss_library = dlopen("libdvdcss.so.2", RTLD_LAZY);
 +  /* dlopening dvdcss */
 +  libdvd_library = dlopen("libdvd.so.0", RTLD_LAZY);
-+#if defined(__OpenBSD__)
-+  if (!libdvd_library)
-+  	libdvd_library = findlibrary("libdvd.so.0.");
-+#endif
    
 -  if(dvdcss_library != NULL) {
 +  if(libdvd_library != NULL) {
