@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/03 14:27:33 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2005/11/03 09:08:25 xsa Exp $
 
 COMMENT=	"Python-powered template engine and code generator"
 
-DISTNAME=	Cheetah-0.9.15
+DISTNAME=	Cheetah-0.9.18
 PKGNAME=	py-${DISTNAME:L}
 CATEGORIES=	devel textproc
 
@@ -21,12 +21,5 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cheetahtemplate/}
 MODULES=	lang/python
 
 NO_REGRESS=	Yes
-
-EXAMPLESDIR=	${PREFIX}/share/examples/py-cheetah
-
-post-install:
-	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/webware_examples/cheetahSite/* \
-		${EXAMPLESDIR}
 
 .include <bsd.port.mk>

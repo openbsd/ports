@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:44:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/11/03 09:08:25 xsa Exp $
 bin/cheetah
 bin/cheetah-compile
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/Cheetah/
+lib/python${MODPY_VERSION}/site-packages/Cheetah/CacheRegion.py
+lib/python${MODPY_VERSION}/site-packages/Cheetah/CacheRegion.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/CheetahWrapper.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/CheetahWrapper.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Compiler.py
@@ -18,8 +22,6 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/ImportHooks.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/ImportHooks.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/ImportManager.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/ImportManager.pyc
-lib/python${MODPY_VERSION}/site-packages/Cheetah/Lexer.py
-lib/python${MODPY_VERSION}/site-packages/Cheetah/Lexer.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/NameMapper.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/NameMapper.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Parser.py
@@ -96,25 +98,3 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/Version.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/_namemapper.so
-lib/python${MODPY_VERSION}/site-packages/Cheetah/_properties.py
-lib/python${MODPY_VERSION}/site-packages/Cheetah/_properties.pyc
-share/examples/py-cheetah/
-share/examples/py-cheetah/README
-share/examples/py-cheetah/SiteTemplate.tmpl
-share/examples/py-cheetah/banner copy.jpg
-share/examples/py-cheetah/banner2.jpg
-share/examples/py-cheetah/banner3.jpg
-share/examples/py-cheetah/banner_cheetah.jpg
-share/examples/py-cheetah/banner_text.gif
-share/examples/py-cheetah/cheetah-face-black-medium.jpg
-share/examples/py-cheetah/cheetah-face-black.jpg
-share/examples/py-cheetah/cheetah-face-black.psd
-share/examples/py-cheetah/cheetah-face-original.jpg
-share/examples/py-cheetah/cheetah-face.jpg
-share/examples/py-cheetah/cheetah-face_medium.jpg
-share/examples/py-cheetah/contribute.tmpl
-share/examples/py-cheetah/download.tmpl
-share/examples/py-cheetah/index.tmpl
-share/examples/py-cheetah/learn.tmpl
-share/examples/py-cheetah/sourceforge_logo.gif
-share/examples/py-cheetah/spacer.gif
