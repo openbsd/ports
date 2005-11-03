@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/11/03 16:44:41 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2005/11/03 21:52:46 pvalchev Exp $
 
 COMMENT=	"zombies clone"
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=	SDL_image::devel/sdl-image \
 
 USE_X11=	Yes
 
-CONFIGURE_STYLE= automake
+CONFIGURE_STYLE= gnu
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sdlzombies
