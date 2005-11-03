@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/22 06:31:05 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2005/11/03 13:18:23 naddy Exp $
 
 COMMENT=	"redhat package manager"
 
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 DISTNAME=	rpm-3.0.6
 CATEGORIES=	misc archivers emulators
 
@@ -21,13 +21,14 @@ MODULES=	devel/gettext
 LIB_DEPENDS+=	bz2.::archivers/bzip2 \
 		popt.0.::devel/popt
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/popt
 
 # Enforce check for pgp, so no build-time depend is needed
 CONFIGURE_ENV=		PGPBIN=$(LOCALBASE)/bin/pgp
 CONFIGURE_ENV+=		CPPFLAGS=-I${LOCALBASE}/include
-CONFIGURE_ENV+=		LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 CONFIGURE_ENV+=		varprefix=/var
 
 MAKE_FLAGS=	librpm_la_LDFLAGS='-version-info 0:1:0'
