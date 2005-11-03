@@ -1,0 +1,12 @@
+$OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2005/11/03 03:11:22 pvalchev Exp $
+--- nsprpub/pr/src/misc/prdtoa.c.orig	Thu Nov  3 04:06:59 2005
++++ nsprpub/pr/src/misc/prdtoa.c	Thu Nov  3 04:07:12 2005
+@@ -617,7 +617,7 @@ static Bigint *mult(CONST Bigint *a, CON
+ 	wc = wa + wb;
+ 	if (wc > a->maxwds)
+ 		k++;
+-	c = Balloc(k);
++	c = Balloc(k+2);
+ 	for(xc = c->x, xce = xc + wc; xc < xce; xc++)
+ 		*xc = 0;
+ 	xa = a->x;
