@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/09/11 07:27:51 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/11/03 18:28:56 naddy Exp $
 
 COMMENT=		"Virtual desktop manager for X11"
 
@@ -21,6 +21,7 @@ USE_X11=		Yes
 WANTLIB=		SM ICE X11 Xext Xinerama Xrender Xrandr Xft stdc++ m c \
 			freetype fontconfig
 USE_GMAKE=		Yes
+AUTOCONF_VERSION=	2.52
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--disable-pixmap
 

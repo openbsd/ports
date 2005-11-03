@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/12/11 13:29:20 alek Exp $
+# $OpenBSD: Makefile,v 1.13 2005/11/03 18:28:56 naddy Exp $
 #
 # Many variables moved to ../Makefile.inc
 
@@ -43,6 +43,7 @@ WRKBUILD=		${WRKDIR}/Amaya/obj
 WRKDIST=		${WRKDIR}
 
 USE_GMAKE=		Yes
+AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf dest
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/../libwww/config
 CONFIGURE_SCRIPT=	../configure

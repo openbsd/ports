@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2005/02/13 18:07:31 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2005/11/03 18:28:55 naddy Exp $
 
 COMMENT=	"Ericsson's high-level functional programming language"
 
@@ -17,6 +17,7 @@ MASTER_SITES=		http://erlang.stacken.kth.se/download/ \
 EXTRACT_SUFX=		.base.tar.gz
 
 USE_GMAKE=		Yes
+AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/erts-${VERSION}/autoconf
 

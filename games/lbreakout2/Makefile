@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/02/14 00:35:53 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2005/11/03 18:28:55 naddy Exp $
 
 COMMENT=	"breakout game with many levels, powerups, good graphics" 
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		SDL_mixer::devel/sdl-mixer \
 		png.2.0::graphics/png
 		
+AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ARGS+=--with-doc-path=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \

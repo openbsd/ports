@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2005/08/09 09:07:24 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2005/11/03 18:28:55 naddy Exp $
 
 COMMENT=		"OpenCM change management system"
 
@@ -24,6 +24,7 @@ WANTLIB=		c crypto ncurses readline ssl z
 MASTER_SITES=		${HOMEPAGE}releases/
 
 USE_GMAKE=		Yes
+AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf
 
 LDFLAGS+= -L${LOCALBASE}/lib -lgc

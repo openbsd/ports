@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2005/10/30 00:10:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.30 2005/11/03 18:28:55 naddy Exp $
 
 COMMENT=	"game where you deal drugs on the streets of NY"
 
@@ -22,6 +22,7 @@ LIB_DEPENDS+=   glib-2.0.0.0::devel/glib2
 BUILD_DEPENDS+= :pkgconfig-*:devel/pkgconfig
 
 USE_GMAKE=	Yes
+AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS+= --enable-nls \
 		 --enable-strict \

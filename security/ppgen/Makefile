@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/27 13:28:35 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2005/11/03 18:28:56 naddy Exp $
 
 COMMENT=	"secure passphrase generator"
 
@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/ppgen/
 DISTFILES=	${DISTNAME}.tar.gz en.gz
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
+AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE=autoconf dest no-autoheader
 
 post-install:

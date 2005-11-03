@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/11/01 15:25:01 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2005/11/03 18:28:56 naddy Exp $
 			
 COMMENT=		"ARP reply daemon"
 
@@ -17,6 +17,7 @@ WANTLIB=		c pcap event
 
 MASTER_SITES=		http://www.citi.umich.edu/u/provos/honeyd/
 
+AUTOCONF_VERSION=	2.52
 CONFIGURE_STYLE=	autoconf
 
 WRKDIST=		${WRKDIR}/arpd

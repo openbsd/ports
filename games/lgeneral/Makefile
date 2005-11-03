@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/28 22:41:19 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/11/03 18:28:55 naddy Exp $
 
 COMMENT=	"turn-based strategy engine"
 
@@ -23,6 +23,7 @@ LIB_DEPENDS=	SDL::devel/sdl \
 
 USE_X11=	Yes
 
+AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf
 
 post-install:

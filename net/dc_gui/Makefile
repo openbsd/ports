@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/02/13 15:54:28 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2005/11/03 18:28:56 naddy Exp $
 
 COMMENT=		"GUI for dctc (Direct Connect Text Clone)"
 
@@ -21,6 +21,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		:dctc-*:net/dctc
 
 SEPARATE_BUILD=		simple
+AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

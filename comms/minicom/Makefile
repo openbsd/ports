@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2005/01/06 19:51:44 alek Exp $
+# $OpenBSD: Makefile,v 1.44 2005/11/03 18:28:55 naddy Exp $
 
 COMMENT=		"MS-DOS Telix-like serial communication program"
 
@@ -23,6 +23,7 @@ WANTLIB=		c ncurses
 WRKDIST=		${WRKDIR}/minicom-${VER}
 
 COPTS+=			-DHAS_EUID
+AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"

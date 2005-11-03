@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/19 17:27:01 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2005/11/03 18:28:56 naddy Exp $
 
 COMMENT=	"graphical toolkit for Tcl"
 
@@ -30,6 +30,7 @@ FAKE_FLAGS=	INSTALL="install -c" INSTALL_ROOT="${WRKINST}" \
 
 SEPARATE_BUILD=	concurrent
 USE_X11=	Yes
+AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf no-autoheader
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-tcl="${LOCALBASE}/lib/tcl8.4"

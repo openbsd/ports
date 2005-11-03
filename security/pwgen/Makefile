@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/27 13:28:35 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/03 18:28:56 naddy Exp $
 
 COMMENT=	"simple password generator"
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
+AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE=autoconf
 MAKE_FLAGS=	WALL_OPTS=""
 

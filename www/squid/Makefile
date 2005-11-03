@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2005/10/29 23:26:38 brad Exp $
+# $OpenBSD: Makefile,v 1.76 2005/11/03 18:28:56 naddy Exp $
 
 COMMENT=	"WWW and FTP proxy cache and accelerator"
 
@@ -34,6 +34,7 @@ PATCH_LIST=     patch-* gcc-*
 .endif
 
 SEPARATE_BUILD=	concurrent
+AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/cfgaux
 CONFIGURE_ARGS+=--datadir="${PREFIX}/share/squid" \

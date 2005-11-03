@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/16 00:31:21 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2005/11/03 18:28:56 naddy Exp $
 
 COMMENT=		"Direct Connect clone"
 
@@ -18,6 +18,7 @@ MASTER_SITES=		${HOMEPAGE}
 LIB_DEPENDS=    	glib.1.2,gthread.1.2::devel/glib
 
 SEPARATE_BUILD=		concurrent
+AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ENV=		CPPFLAGS="-DMSG_NOSIGNAL=0"
 

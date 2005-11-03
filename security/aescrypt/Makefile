@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/27 13:28:33 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/11/03 18:28:56 naddy Exp $
 
 COMMENT=		"encrypt/decrypt using Rijndael encryption algorithm"
 
@@ -18,6 +18,7 @@ WANTLIB=		c
 MASTER_SITES=		http://aescrypt.sourceforge.net/ \
 			${MASTER_SITE_SOURCEFORGE:=aescrypt/}
 
+AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf
 
 NO_REGRESS=		Yes

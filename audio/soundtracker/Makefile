@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/11/21 17:51:46 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2005/11/03 18:28:55 naddy Exp $
 # Uses pthreads
 
 COMMENT=		"Music tracking tool for X11"
@@ -30,6 +30,7 @@ FLAVORS=		gnome esd
 FLAVOR?=
 
 USE_X11=		Yes
+AUTOCONF_VERSION=	2.52
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-audiofile-prefix=${LOCALBASE} \
 			--disable-alsa \

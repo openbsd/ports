@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2005/04/19 09:41:41 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2005/11/03 18:28:55 naddy Exp $
 
 COMMENT=	"stack-based interpreter for terminal applications"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf no-autoheader
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/autoconf
 

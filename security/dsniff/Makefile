@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2005/10/19 05:05:41 aanriot Exp $
+# $OpenBSD: Makefile,v 1.38 2005/11/03 18:28:56 naddy Exp $
 
 COMMENT=	"sniffing tools for penetration testing"
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto des pcap ssl rpcsvc
 
+AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-db="${LOCALBASE}"
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I/usr/local/include/db"

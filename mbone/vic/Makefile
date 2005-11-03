@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2005/03/08 07:56:44 alek Exp $
+# $OpenBSD: Makefile,v 1.29 2005/11/03 18:28:56 naddy Exp $
 
 COMMENT=	"MBONE video tool"
 
@@ -19,6 +19,7 @@ LIB_DEPENDS=	tcl80.1.5:tcl-8.0.*:lang/tcl/8.0 \
 		tk80.1.5:tk-8.0.*:x11/tk/8.0
 
 USE_X11=	Yes
+AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf
 MAKE_ENV=	CC="${CC}" CCOPT="${CFLAGS}"
 

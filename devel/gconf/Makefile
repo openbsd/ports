@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2005/09/06 03:22:59 marcm Exp $
+# $OpenBSD: Makefile,v 1.21 2005/11/03 18:28:55 naddy Exp $
 
 COMMENT=		"configuration database system written for GNOME"
 
@@ -28,6 +28,7 @@ WANTLIB=		IIOP ORBit ORBitCosNaming ORBitutil \
 DEFAULT_GCONF_SOURCE=	xml::/var/db/gconf/gconf.xml.defaults
 
 SEPARATE_BUILD=		concurrent
+AUTOCONF_VERSION=	2.52
 CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-gconf-source=${DEFAULT_GCONF_SOURCE}

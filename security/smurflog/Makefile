@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2005/06/30 20:31:46 todd Exp $
+# $OpenBSD: Makefile,v 1.15 2005/11/03 18:28:56 naddy Exp $
 
 COMMENT=	"logs smurf attacks"
 DISTNAME=	smurflog-2.1
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap
 
+AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	gnu autoconf no-autoheader
 
 NO_REGRESS=	Yes

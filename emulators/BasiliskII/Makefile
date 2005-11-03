@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/27 10:39:13 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/11/03 18:28:55 naddy Exp $
 # $RuOBSD: Makefile,v 1.4 2002/04/29 11:07:18 grange Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2001/12/29 00:22:02 abs Exp $
 
@@ -28,6 +28,7 @@ LIB_DEPENDS=		gtk.1.2,gdk::x11/gtk+ \
 USE_X11=		Yes
 USE_GMAKE=		Yes
 
+AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf
 
 WRKDIST=		${WRKDIR}/BasiliskII-0.9

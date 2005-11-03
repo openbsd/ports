@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/12/22 11:48:33 alek Exp $
+# $OpenBSD: Makefile,v 1.13 2005/11/03 18:28:56 naddy Exp $
 
 COMMENT=		"Qt-based CD creation tool"
 
@@ -26,6 +26,7 @@ RUN_DEPENDS=		:cdrtools-*:sysutils/cdrtools
 
 SEPARATE_BUILD=		concurrent
 
+AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--datadir=${PREFIX}/share/doc/cdrchive \
 			--x-includes=${X11BASE}/include \

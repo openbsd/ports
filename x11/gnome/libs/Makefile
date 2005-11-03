@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2005/09/05 20:05:02 marcm Exp $
+# $OpenBSD: Makefile,v 1.27 2005/11/03 18:28:56 naddy Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
@@ -30,6 +30,7 @@ WANTLIB=		ICE SM X11 Xext Xi Xpm audiofile c glib gmodule gtk \
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE= 	autoconf
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}

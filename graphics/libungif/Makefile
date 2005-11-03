@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/10/30 00:10:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2005/11/03 18:28:55 naddy Exp $
 
 COMMENT=	"tools and library routines for working with GIF images"
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
+AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --without-x

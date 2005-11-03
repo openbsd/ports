@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2005/10/30 00:10:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.38 2005/11/03 18:28:55 naddy Exp $
 
 COMMENT=	"high-performance CORBA ORB with support for the C language"
 
@@ -25,6 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m wrap
 
 USE_GMAKE=	Yes
+AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/popt ${WRKSRC}/libIDL
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

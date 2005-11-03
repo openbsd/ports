@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2005/11/03 15:51:04 aanriot Exp $
+# $OpenBSD: Makefile,v 1.31 2005/11/03 18:28:55 naddy Exp $
 
 COMMENT=	"heavily customizable and extensible editor"
 
@@ -27,6 +27,7 @@ MASTER_SITES= 	ftp://ftp.xemacs.org/pub/xemacs/xemacs-21.4/ \
 GCCARCH=        ${MACHINE_ARCH}-unknown-openbsd${OSREV}
 SUBST_VARS=	GCCARCH VERSION
 
+AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE=autoconf old dest no-autoheader
 
 CONFIGURE_ARGS+=--infodir='$${DESTDIR}${PREFIX}/info/${DISTNAME}' \

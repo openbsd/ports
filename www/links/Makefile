@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/12/11 13:29:21 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2005/11/03 18:28:56 naddy Exp $
 
 COMMENT=	"text browser, displays while downloading"
 
@@ -19,6 +19,7 @@ WANTLIB=		c crypto ssl
 MASTER_SITES=	http://artax.karlin.mff.cuni.cz/%7Emikulas/links/download/ \
 		http://links.sourceforge.net/download/
 
+AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf
 
 .include <bsd.port.mk>
