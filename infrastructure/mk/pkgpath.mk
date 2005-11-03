@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.5 2005/11/02 20:30:12 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.6 2005/11/03 19:32:25 espie Exp $
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
 
@@ -23,6 +23,9 @@ _flavor_fragment= \
 	unset FLAVOR SUBPACKAGE || true; \
 	multi=''; flavor=''; space=''; sawflavor=false; \
 	case "$$subdir" in \
+	"") \
+		    echo 1>&2 ">> Broken dependency: empty directory $$extra_msg"; \
+		    exit 1;; \
 	*,*) \
 		IFS=,; first=true; for i in $$subdir; do \
 			if $$first; then \
@@ -52,7 +55,7 @@ _flavor_fragment= \
 	for base in $$bases; do \
 	    cd $$base 2>/dev/null || continue; \
 	    if [ -L $$dir ]; then \
-		    echo 1>&2 ">> Broken dependency: $$base/$$dir is a symbolic link"; \
+		    echo 1>&2 ">> Broken dependency: $$base/$$dir is a symbolic link $$extra_msg"; \
 		    exit 1; \
 	    fi; \
 	    if cd $$dir 2>/dev/null; then \
@@ -61,7 +64,7 @@ _flavor_fragment= \
 	    fi; \
 	done; unset IFS; \
 	if ! $$found_dir; then \
-	    echo 1>&2 ">> Broken dependency: $$dir non existent"; \
+	    echo 1>&2 ">> Broken dependency: $$dir non existent $$extra_msg"; \
 	    exit 1; \
 	fi
 
