@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/11/01 13:54:34 niallo Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/11/03 14:51:34 niallo Exp $
 @group games
-@mode 755
+@mode g+s
 bin/zangband
 @mode
 share/zangband/
