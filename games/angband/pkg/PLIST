@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/03/07 21:01:35 niallo Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/11/03 17:01:05 niallo Exp $
+@group games
+@mode g+s
 bin/angband
+@mode
 share/angband/
 @comment share/angband/apex/
 @comment share/angband/bone/
@@ -81,14 +84,11 @@ share/angband/script/spell.lua
 share/angband/script/store.lua
 share/angband/script/test.lua
 share/angband/script/trace.lua
-@comment share/angband/user/
+share/angband/user/
+share/angband/xtra/
 share/angband/xtra/font/
 share/angband/xtra/font/16x16.txt
-@comment share/angband/save/
-@comment share/angband/user/
-share/angband/xtra/
 @mode 775
-@group games
 @sample /var/games/angband/
 @sample /var/games/angband/apex/
 @sample /var/games/angband/save/

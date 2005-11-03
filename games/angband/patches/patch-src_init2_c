@@ -1,32 +1,27 @@
---- src/init2.c	2005/02/24 20:54:51	1.1
-+++ src/init2.c	2005/02/24 20:56:56
-@@ -135,12 +135,10 @@
- 	/*** Build the sub-directory names ***/
+$OpenBSD: patch-src_init2_c,v 1.3 2005/11/03 17:01:05 niallo Exp $
+--- src/init2.c.orig	Sun Jan 16 14:35:57 2005
++++ src/init2.c	Thu Nov  3 14:11:16 2005
+@@ -200,19 +200,19 @@ void init_file_paths(char *path)
  
  	/* Build a path name */
--	strcpy(tail, "bone");
--	ANGBAND_DIR_BONE = string_make(path);
-+	ANGBAND_DIR_BONE = string_make("/var/games/angband/bone");
- 
- 	/* Build a path name */
--	strcpy(tail, "data");
--	ANGBAND_DIR_DATA = string_make(path);
-+	ANGBAND_DIR_DATA = string_make("/var/games/angband/data");
- 
- 	/* Build a path name */
- 	strcpy(tail, "edit");
-@@ -195,12 +193,10 @@
- #else /* USE_PRIVATE_SAVE_PATH */
- 
- 	/* Build a path name */
--	strcpy(tail, "apex");
+ 	strcpy(tail, "apex");
 -	ANGBAND_DIR_APEX = string_make(path);
 +	ANGBAND_DIR_APEX = string_make("/var/games/angband/apex");
  
  	/* Build a path name */
--	strcpy(tail, "save");
+ 	strcpy(tail, "bone");
+-	ANGBAND_DIR_BONE = string_make(path);
++	ANGBAND_DIR_BONE = string_make("/var/games/angband/bone");
+ 
+ 	/* Build a path name */
+ 	strcpy(tail, "data");
+-	ANGBAND_DIR_DATA = string_make(path);
++	ANGBAND_DIR_DATA = string_make("/var/games/angband/data");
+ 
+ 	/* Build a path name */
+ 	strcpy(tail, "save");
 -	ANGBAND_DIR_SAVE = string_make(path);
 +	ANGBAND_DIR_SAVE = string_make("/var/games/angband/save");
  
- #endif /* USE_PRIVATE_SAVE_PATH */
+ #endif /* USE_PRIVATE_PATHS */
  
