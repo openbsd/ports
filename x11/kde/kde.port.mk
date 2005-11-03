@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.17 2005/09/18 12:21:07 espie Exp $
+# $OpenBSD: kde.port.mk,v 1.18 2005/11/03 15:56:57 espie Exp $
 
 SHARED_ONLY?=	Yes
 
@@ -14,7 +14,7 @@ FLAVORS+=	debug
 FLAVOR?=
 
 MODKDE_CONFIGURE_ARGS=${MODQT_CONFIGURE_ARGS}
-MODKDE_CONFIGURE_ARGS+=	--with-extra-libs="${LOCALBASE}/lib"
+MODKDE_CONFIGURE_ARGS+=	--with-extra-libs="${LOCALBASE}/lib/samba:${LOCALBASE}/lib"
 MODKDE_CONFIGURE_ARGS+=	--with-extra-includes="${LOCALBASE}/include/libpng:${LOCALBASE}/include"
 MODKDE_CONFIGURE_ARGS+=	--with-xdmdir=/var/X11/kdm
 MODKDE_CONFIGURE_ARGS+=	--enable-mitshm

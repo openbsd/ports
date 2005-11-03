@@ -72,3 +72,6 @@ over on your .kde files.  Managing legacy config files is quite buggy yet.
 - Konqueror does not execute JavaScript nor Java by default. You will need
 a recent JVM installed, and referenced from Konqueror's menu, for Java to
 work.
+
+- samba share do only work is you install samba. There is no hard coded
+dependency on samba, though...

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2005/08/16 09:49:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.32 2005/11/03 15:56:57 espie Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 bin/appletproxy
@@ -389,6 +389,8 @@ ${KDE}/kio_settings.la
 ${KDE}/kio_settings.so
 ${KDE}/kio_sftp.la
 ${KDE}/kio_sftp.so
+${KDE}/kio_smb.la
+${KDE}/kio_smb.so
 ${KDE}/kio_smtp.la
 ${KDE}/kio_smtp.so
 ${KDE}/kio_system.la
@@ -1718,6 +1720,9 @@ share/apps/konqueror/about/plugins_rtl.html
 share/apps/konqueror/about/specs.html
 share/apps/konqueror/about/tips.html
 share/apps/konqueror/about/top-right-konqueror.png
+share/apps/konqueror/dirtree/
+share/apps/konqueror/dirtree/remote/
+share/apps/konqueror/dirtree/remote/smb-network.desktop
 share/apps/konqueror/icons/
 share/apps/konqueror/icons/crystalsvg/
 share/apps/konqueror/icons/crystalsvg/16x16/
@@ -1975,6 +1980,8 @@ share/apps/naughtyapplet/pics/naughty-happy.png
 share/apps/naughtyapplet/pics/naughty-sad.png
 share/apps/plugin/
 share/apps/plugin/nspluginpart.rc
+share/apps/remoteview/
+share/apps/remoteview/smb-network.desktop
 share/apps/systemview/
 share/apps/systemview/home.desktop
 share/apps/systemview/media.desktop
@@ -4209,6 +4216,8 @@ share/mimelnk/application/x-kate-project.desktop
 share/mimelnk/application/x-konsole.desktop
 share/mimelnk/application/x-ksysguard.desktop
 share/mimelnk/application/x-ktheme.desktop
+share/mimelnk/application/x-smb-server.desktop
+share/mimelnk/application/x-smb-workgroup.desktop
 share/mimelnk/fonts/
 share/mimelnk/fonts/folder.desktop
 share/mimelnk/fonts/system-folder.desktop
@@ -4404,6 +4413,7 @@ share/services/searchproviders/wikipedia.desktop
 share/services/searchproviders/wordref.desktop
 share/services/settings.protocol
 share/services/sftp.protocol
+share/services/smb.protocol
 share/services/smtp.protocol
 share/services/smtps.protocol
 share/services/system.protocol

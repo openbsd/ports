@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2005/10/24 10:56:03 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2005/11/03 15:56:57 espie Exp $
 
 COMMENT= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.4.3
 DISTNAME=		kdebase-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 MODKDE_VERSION?=	3.4
 
 FLAVORS=		debug
@@ -26,9 +26,12 @@ EXTRA_CONFIG=	xdg/menus/kde-settings.menu \
 LIB_DEPENDS+= \
 	glib-2.0.0.0,gmodule-2.0.0.0,gthread-2.0.0.0::devel/glib2
 
+.if !defined(PACKAGING)
+LIB_DEPENDS+=	lib/samba/smbclient:samba->=3:net/samba
+.endif
 
-CONFIGURE_ENV+=ac_cv_header_libsmbclient=no \
-	PKG_CONFIG_PATH=${X11BASE}/lib/pkgconfig
+
+CONFIGURE_ENV+= PKG_CONFIG_PATH=${X11BASE}/lib/pkgconfig
 
 SAMPLECONFDIR=${PREFIX}/share/apps/kde-conf-sample
 
