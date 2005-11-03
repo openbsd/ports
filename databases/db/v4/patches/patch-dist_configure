@@ -1,6 +1,6 @@
-$OpenBSD: patch-dist_configure,v 1.4 2005/11/01 15:44:24 bernd Exp $
---- dist/configure.orig	Wed Dec  3 22:10:02 2003
-+++ dist/configure	Tue Nov  1 14:25:29 2005
+$OpenBSD: patch-dist_configure,v 1.5 2005/11/03 23:12:45 brad Exp $
+--- dist/configure.orig	Wed Dec  3 16:10:02 2003
++++ dist/configure	Thu Nov  3 17:30:31 2005
 @@ -5889,12 +5889,10 @@ nto-qnx | nto-qnx6*)
    ;;
  
@@ -71,3 +71,12 @@ $OpenBSD: patch-dist_configure,v 1.4 2005/11/01 15:44:24 bernd Exp $
  fi
  
  # Checks for include files, structures, C types.
+@@ -28525,7 +28538,7 @@ int
+ main ()
+ {
+ 
+-#if (defined(i386) || defined(__i386__)) && defined(__GNUC__)
++#if (defined(i386) || defined(__i386__) || defined(__x86_64__)) && defined(__GNUC__)
+ 	exit(0);
+ #else
+ 	FAIL TO COMPILE/LINK

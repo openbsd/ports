@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2005/11/01 15:44:24 bernd Exp $
+# $OpenBSD: Makefile,v 1.17 2005/11/03 23:12:45 brad Exp $
 
 REVISION=	4
 VERSION=	${REVISION}.2.52
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 DBLIBDIR=	lib/db4
 
 MASTER_SITES0=	${MASTER_SITES:S/snapshot/${VERSION}/}
