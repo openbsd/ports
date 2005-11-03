@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/03 15:30:12 alek Exp $
+bin/scanadf
+bin/xcam
+bin/xscanimage
+@man man/man1/scanadf.1
+@man man/man1/xcam.1
+@man man/man1/xscanimage.1
+share/sane/
+share/sane/sane-style.rc
+%%gimp%%

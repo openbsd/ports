@@ -1,0 +1,9 @@
+sane-frontends contains applications for SANE (Scanner Access Now Easy).
+This package provides the graphical frontends xscanimage and xcam. Both
+use the GTK+ toolkit. xscanimage is used for scanners, xcam for cameras.
+xscanimage can also be used as gimp plugin. The package also provides
+the command-line frontend scanadf which is based on scanimage and is
+intended for scanners that use automatic document feeders.
+
+Available flavors:
+        gimp - Build the gimp xscanimage plugin

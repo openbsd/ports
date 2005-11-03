@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_xscanimage_c,v 1.1.1.1 2005/11/03 15:30:12 alek Exp $
+--- src/xscanimage.c.orig	Tue Oct 11 12:22:56 2005
++++ src/xscanimage.c	Tue Oct 11 12:23:30 2005
+@@ -1284,7 +1284,7 @@ scan_dialog (GtkWidget * widget, gpointe
+     {				/* We are running in standalone mode */
+       /* test for pnm formats */
+       strncpy (testfilename, preferences.filename, sizeof (testfilename));
+-      testfilename[sizeof (testfilename)] = 0;
++      testfilename[sizeof (testfilename) - 1] = 0;
+       g_strreverse (testfilename);
+       if (!((!strncmp (testfilename, "mnp.", 4)) ||
+ 	    (!strncmp (testfilename, "mgp.", 4)) ||
