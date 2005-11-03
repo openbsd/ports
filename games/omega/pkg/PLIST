@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/11/01 15:24:06 niallo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/11/03 14:58:17 niallo Exp $
 @group games
-@mode 755
+@mode g+s
 bin/Omega
 @mode
 share/omega/
