@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2005/11/01 21:33:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.40 2005/11/03 14:46:01 espie Exp $
 
 COMMENT=	"X11-based presentation tool"
 
 DISTNAME=	magicpoint-1.09a
 # hack
-PKGNAME=	magicpoint-1.11bp2
+PKGNAME=	magicpoint-1.11bp3
 CATEGORIES=	misc productivity
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
@@ -53,6 +53,7 @@ SAMPLES=	README README.jp cloud.jpg dad.eps dad.jpg default.mgp \
 		v6-jp.mgp v6.mgp v6header.eps v6header.jpg
 EMACS=	README mgp.el mgp.sty sample.tex ../mgp-mode.el
 
+MAKE_FLAGS+=	CDEBUGFLAGS="${CFLAGS}"
 # NOTE: there are some discussions/twists in gzip'ing xmindpath.1.
 post-install:
 	@cd ${WRKSRC}/contrib/xmindpath && ${MAKE_PROGRAM} install

@@ -1,0 +1,21 @@
+$OpenBSD: patch-draw_c,v 1.1 2005/11/03 14:46:01 espie Exp $
+--- draw.c.orig	Thu Nov  3 15:24:04 2005
++++ draw.c	Thu Nov  3 15:38:39 2005
+@@ -1893,9 +1893,16 @@ obj_draw(state, target, xpos, ypos)
+ #endif /* FREETYPE */
+ 	}
+ 	if (obj != NULL) {	/* VFONT exist */
++		int pad;
++		if (depth <= 8) {
++			pad = 8;
++		} else if (depth <=16) {
++			pad = 16;
++		} else pad = 32;
++
+ 		xim = XCreateImage(display, visual, depth, ZPixmap,
+ 				0, NULL, width, height,
+-				8 << (depth - 1) / 8, 0);
++				pad, 0);
+ 		xim->data = malloc(xim->bytes_per_line * height);
+ 		if (COMPLEX_BGIMAGE) {
+ 			u_int bw, bh, bx, by, ox, oy;
