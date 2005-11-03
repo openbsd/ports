@@ -1,31 +1,38 @@
-# $OpenBSD: Makefile,v 1.8 2005/04/29 00:02:05 djm Exp $
+# $OpenBSD: Makefile,v 1.9 2005/11/03 23:05:01 jolan Exp $
 
 COMMENT=	"Embedded SQL implementation"
-
 DISTNAME=	sqlite-2.8.16
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	databases
-HOMEPAGE=	http://www.sqlite.org/
 MASTER_SITES=	${HOMEPAGE}
 
-# Public Domain
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
+HOMEPAGE=	http://www.sqlite.org/
+
+# PD
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c ncurses readline
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
 
-CONFIGURE_STYLE=	autoconf no-autoheader
-AUTOCONF_VERSION=	2.59
-USE_GMAKE=		Yes
+AUTOCONF_VERSION=2.59
+USE_GMAKE=	Yes
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
-			tcl84::lang/tcl/8.4
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
+WANTLIB=	c ncurses readline
 
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
-CONFIGURE_ENV=		config_TARGET_TCL_LIBS="-L${LOCALBASE}/lib -ltcl84 -lm"
-CONFIGURE_ENV+=		config_TARGET_TCL_INC="-I${LOCALBASE}/include/tcl8.4"
+FLAVORS=no_tcl
+FLAVOR?=
 
-REGRESS_TARGET=		test
+CONFIGURE_STYLE=autoconf no-autoheader
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+.if ${FLAVOR:Mno_tcl}
+NO_REGRESS=	Yes
+CONFIGURE_ARGS+=--disable-tcl
+.else
+REGRESS_TARGET=	test
+BUILD_DEPENDS+=	tcl84::lang/tcl/8.4
+CONFIGURE_ENV+=	config_TARGET_TCL_LIBS="-L${LOCALBASE}/lib -ltcl84 -lm"
+CONFIGURE_ENV+=	config_TARGET_TCL_INC="-I${LOCALBASE}/include/tcl8.4"
+.endif
 
 .include <bsd.port.mk>
-

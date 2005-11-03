@@ -5,3 +5,5 @@ standalone command-line access program (sqlite) that can be used to
 administer an SQLite database and which serves as an example of how to
 use the SQLite library.
 
+Flavors:
+	no_tcl	- disables TCL-based regression tests
