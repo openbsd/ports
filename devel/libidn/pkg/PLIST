@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/02 15:37:33 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/11/03 13:49:41 bernd Exp $
 %%SHARED%%
 bin/idn
 include/idn-free.h
 include/idn-int.h
 include/idna.h
+include/pr29.h
 include/punycode.h
 include/stringprep.h
 include/tld.h
