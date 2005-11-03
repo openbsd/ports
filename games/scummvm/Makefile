@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2005/07/28 17:28:14 jolan Exp $
+# $OpenBSD: Makefile,v 1.18 2005/11/03 09:35:31 jsg Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=		"gcc bug"
 .endif
 
 COMMENT=	"graphical adventure game interpreter"
-DISTNAME=	scummvm-0.7.1
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	scummvm-0.8.0
+PKGNAME=	${DISTNAME}
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -57,7 +57,7 @@ CXXFLAGS+=	-O0
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scummvm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/scummvm
+	${INSTALL_DATA} ${WRKSRC}/{NEWS,AUTHORS,README} ${PREFIX}/share/doc/scummvm
 	${INSTALL_DATA} ${WRKSRC}/scummvm.xpm ${PREFIX}/share/pixmaps
 	${INSTALL_MAN} ${WRKSRC}/scummvm.6 ${PREFIX}/man/man6
 	${INSTALL_PROGRAM} ${WRKSRC}/scummvm ${PREFIX}/bin
