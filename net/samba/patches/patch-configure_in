@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_in,v 1.8 2005/11/03 15:10:20 mbalmer Exp $
+--- configure.in.orig	Tue Nov  1 22:37:43 2005
++++ configure.in	Tue Nov  1 22:40:03 2005
+@@ -1422,6 +1422,7 @@ if test "$enable_shared" = "yes"; then
+ 			DYNEXP="-Wl,-Bdynamic"
+ 			SONAMEFLAG="-Wl,-soname,"
+ 			PICFLAGS="-fPIC"
++			SHLIBEXT="so"
+ 			AC_DEFINE(STAT_ST_BLOCKSIZE,512,[The size of a block])
+ 			AC_DEFINE(BROKEN_GETGRNAM,1,[Does getgrnam work correctly])
+ 			;;

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2005/10/13 21:00:38 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.23 2005/11/03 15:10:20 mbalmer Exp $
 bin/findsmb
 bin/mksmbpasswd
 bin/net
@@ -23,9 +23,6 @@ bin/testparm
 include/libsmbclient.h
 lib/samba/
 lib/samba/auth/
-lib/samba/charset/
-lib/samba/charset/CP437.so
-lib/samba/charset/CP850.so
 lib/samba/de.msg
 lib/samba/en.msg
 lib/samba/fr.msg
@@ -40,15 +37,6 @@ lib/samba/rpc/
 lib/samba/tr.msg
 lib/samba/upcase.dat
 lib/samba/valid.dat
-lib/samba/vfs/
-lib/samba/vfs/audit.so
-lib/samba/vfs/cap.so
-lib/samba/vfs/default_quota.so
-lib/samba/vfs/extd_audit.so
-lib/samba/vfs/fake_perms.so
-lib/samba/vfs/netatalk.so
-lib/samba/vfs/readonly.so
-lib/samba/vfs/recycle.so
 libexec/nmbd
 libexec/smbd
 libexec/swat

@@ -1,0 +1,38 @@
+$OpenBSD: patch-Makefile_in,v 1.3 2005/11/03 15:10:20 mbalmer Exp $
+--- Makefile.in.orig	Thu Nov  3 13:59:45 2005
++++ Makefile.in	Thu Nov  3 15:17:03 2005
+@@ -93,9 +93,10 @@ LOCKDIR = @lockdir@
+ # the directory where pid files go
+ PIDDIR = @piddir@
+ 
+-LIBSMBCLIENT=bin/libsmbclient.a @LIBSMBCLIENT_SHARED@
+ LIBSMBCLIENT_MAJOR=0
+ LIBSMBCLIENT_MINOR=1
++LIBSMBCLIENT=bin/libsmbclient.a \
++	@LIBSMBCLIENT_SHARED@.${LIBSMBCLIENT_MAJOR}.${LIBSMBCLIENT_MINOR}
+ 
+ LIBSMBSHAREMODES=bin/libsmbsharemodes.a @LIBSMBSHAREMODES_SHARED@
+ LIBSMBSHAREMODES_MAJOR=0
+@@ -992,11 +993,10 @@ bin/smbwrapper.@SHLIBEXT@: $(PICOBJS) bi
+ 		$(KRB5LIBS) $(LDAP_LIBS) \
+ 		@SONAMEFLAG@`basename $@`
+ 
+-bin/libsmbclient.@SHLIBEXT@: $(LIBSMBCLIENT_PICOBJS)
++bin/libsmbclient.@SHLIBEXT@.${LIBSMBCLIENT_MAJOR}.${LIBSMBCLIENT_MINOR}: $(LIBSMBCLIENT_PICOBJS)
+ 	@echo Linking libsmbclient shared library $@
+ 	@$(SHLD) $(LDSHFLAGS) -o $@ $(LIBSMBCLIENT_PICOBJS) $(LDFLAGS) $(LIBS) \
+-		$(KRB5LIBS) $(LDAP_LIBS) \
+-		@SONAMEFLAG@`basename $@`.$(LIBSMBCLIENT_MAJOR)
++		$(KRB5LIBS) $(LDAP_LIBS)
+ 
+ bin/libsmbclient.a: $(LIBSMBCLIENT_PICOBJS)
+ 	@echo Linking libsmbclient non-shared library $@
+@@ -1364,7 +1364,7 @@ installswat: installdirs installmsg
+ 
+ installclientlib: installdirs libsmbclient
+ 	@$(SHELL) $(srcdir)/script/installdirs.sh $(DESTDIR)$(LIBDIR)
+-	-$(INSTALLCLIENTCMD_SH) bin/libsmbclient.@SHLIBEXT@ $(DESTDIR)$(LIBDIR)
++	-$(INSTALLCLIENTCMD_SH) bin/libsmbclient.@SHLIBEXT@.${LIBSMBCLIENT_MAJOR}.${LIBSMBCLIENT_MINOR} $(DESTDIR)$(LIBDIR)
+ 	-$(INSTALLCLIENTCMD_A) bin/libsmbclient.a $(DESTDIR)$(LIBDIR)
+ 	@$(SHELL) $(srcdir)/script/installdirs.sh $(DESTDIR)${prefix}/include
+ 	-$(INSTALLCMD) $(srcdir)/include/libsmbclient.h $(DESTDIR)${prefix}/include

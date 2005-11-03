@@ -1,5 +1,18 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2005/04/03 11:20:38 mbalmer Exp $
-lib/samba/libsmbclient.so
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/11/03 15:10:20 mbalmer Exp $
+@lib lib/libsmbclient.so.0.1
+lib/samba/charset/
+lib/samba/charset/CP437.so
+lib/samba/charset/CP850.so
+@lib lib/samba/libsmbclient.so.0.1
+lib/samba/vfs/
+lib/samba/vfs/audit.so
+lib/samba/vfs/cap.so
+lib/samba/vfs/default_quota.so
 lib/samba/vfs/expand_msdfs.so
+lib/samba/vfs/extd_audit.so
+lib/samba/vfs/fake_perms.so
 lib/samba/vfs/full_audit.so
+lib/samba/vfs/netatalk.so
+lib/samba/vfs/readonly.so
+lib/samba/vfs/recycle.so
 lib/samba/vfs/shadow_copy.so

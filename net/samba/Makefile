@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2005/10/13 21:00:38 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.59 2005/11/03 15:10:20 mbalmer Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 COMMENT-docs=	"documentation and examples for samba"
 
 DISTNAME=		samba-3.0.20b
+PKGNAME=		${DISTNAME}p0
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 
 CATEGORIES=	net
@@ -119,5 +120,8 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/script/mksmbpasswd.sh \
 	 ${PREFIX}/bin/mksmbpasswd
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/smbpasswd
+	#@rm ${PREFIX}/lib/libsmbclient.so.0.1
+	@ln -s samba/libsmbclient.so.0.1 \
+	 ${PREFIX}/lib/libsmbclient.so.0.1
 
 .include <bsd.port.mk>
