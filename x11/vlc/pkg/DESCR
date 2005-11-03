@@ -4,7 +4,7 @@ well as DVDs, and various streaming protocols.
 
 As shipped, vlc cannot descramble DVDs.  There are a few DVDs out there
 with no scramble protection.  However, vlc will recognize and use an
-installed descrambling library (see converters/libdvdcss in the ports
+installed descrambling library (see converters/libdvd in the ports
 tree).
 
 FLAVORs:
