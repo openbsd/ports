@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/03 16:23:13 alek Exp $
+lib/mod_auth_kerb.so
+sbin/mod_auth_kerb-enable
+share/doc/mod_auth_kerb/
+share/doc/mod_auth_kerb/README
+@unexec rm -f /usr/lib/apache/modules/mod_auth_kerb.so
