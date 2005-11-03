@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2004/06/24 17:38:13 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2005/11/03 15:55:07 aanriot Exp $
 
-# 
-# What port/package will be created
-#
-VERSION=		2002-09-19
+VERSION=		2005-07-15
 PKGNAME=		xemacs-sumo-21.${VERSION:S/-//g}
-EXTRACT_SUFX=		.tar.bz2
+EXTRACT_SUFX=		.tar.gz
 DISTFILES=		xemacs-sumo-${VERSION}${EXTRACT_SUFX}
 SUP_mule=		xemacs-mule-sumo-${VERSION}${EXTRACT_SUFX}
 SUPDISTFILES=		${SUP_mule}
@@ -22,44 +19,35 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-# where the source files and patches can be fetched
 MASTER_SITES= 	ftp://ftp.xemacs.org/pub/xemacs/packages/ \
 		ftp://ftp.oleane.net/pub/xemacs/packages/ \
 		ftp://ftp.pasteur.fr/pub/computing/xemacs/packages/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/packages/ \
-		ftp://ftp.usyd.edu.au/pub/Xemacs/packages/ \
-		ftp://ftp.lab.kdd.co.jp/xemacs/packages/ \
-		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/packages/
-
-# Dependencies
-#
-# It is quite impossible to find a reliable cookie
-# to tell whether xemacs21 is installed or not and is
-# mule-compliant or not. it does not matter anyway.
-
-# build/configuration variables
+		ftp://ftp.lab.kdd.co.jp/xemacs/packages/
 
 SEPARATE_BUILD=	concurrent
+
+MULE=		mule
+SUBST_VARS=	MULE
 
 FLAVORS=mule
 FLAVOR?=
 
 .if ${FLAVOR:L:Mmule}
-DISTFILES+= ${SUP_mule}
+DISTFILES+=	${SUP_mule}
 .endif
 
-# have to force the bzip2 dependency, since setting extract_only to nil
-# does not set the automatic one
-BUILD_DEPENDS=		:bzip2-*:archivers/bzip2
-
 EXTRACT_ONLY=
-NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_BUILD=	Yes
+NO_REGRESS=	Yes
+
+GUNZIP_CMD=	/usr/bin/gunzip -dc
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/xemacs
 .for archive in ${DISTFILES}
-	${BZIP2} -dc ${FULLDISTDIR}/${archive} |tar -C ${PREFIX}/lib/xemacs -xf -
+	${GUNZIP_CMD} ${FULLDISTDIR}/${archive} \
+		| ${TAR} -C ${PREFIX}/lib/xemacs -xf -
 .endfor
 
 .include <bsd.port.mk>

@@ -1,4 +1,5 @@
-Here is a list of bundled XEmacs' packages : (note that some are MULE-only)
+Here is a list of bundled XEmacs' packages : (note that some are
+MULE-only).
 
             ada	           apel	         auctex           bbdb
           build	      c-support	           calc       calendar
