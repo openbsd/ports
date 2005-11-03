@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2005/11/03 13:15:13 alek Exp $
+# $OpenBSD: Makefile,v 1.151 2005/11/03 15:33:33 alek Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -130,6 +130,7 @@
      SUBDIR += ruby-gdk-pixbuf
      SUBDIR += s10sh
      SUBDIR += sane-backends
+     SUBDIR += sane-frontends
 #    SUBDIR += sced
      SUBDIR += scrot
      SUBDIR += smpeg-xmms
