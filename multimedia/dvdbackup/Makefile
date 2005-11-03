@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/11/03 07:46:02 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.2 2005/11/03 08:00:56 jakemsr Exp $
 
 COMMENT=		"DVD ripper"
 
 DISTNAME=		dvdbackup-0.1.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://dvd-create.sourceforge.net/
