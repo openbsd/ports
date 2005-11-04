@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2005/10/02 13:32:45 alek Exp $
+# $OpenBSD: Makefile,v 1.78 2005/11/04 14:05:30 wilfried Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -14,6 +14,8 @@
      SUBDIR += luasqlite3
      SUBDIR += mnemo
      SUBDIR += mysql
+     SUBDIR += mysql-administrator
+     SUBDIR += mysql-query-browser
      SUBDIR += mysql2pgsql
      SUBDIR += mysqlcc
      SUBDIR += mytop
