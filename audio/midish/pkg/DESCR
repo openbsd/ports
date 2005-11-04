@@ -1,0 +1,12 @@
+Midish is an open-source MIDI sequencer/filter for Unix-like operating
+systems. Implemented as a simple command-line interpreter, it's intended to
+be lightweight, fast and reliable for real-time performance.
+
+Important features:
+	- multiple MIDI devices handling
+	- synchronisation to external midi devices
+	- real-time MIDI filtering/routing (controller 
+	  mapping, keyboard splitting, ...)
+	- track recording, editing and quantisation
+	- import/export of standard MIDI files
+	- system exclusive messages handling
