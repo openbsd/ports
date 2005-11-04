@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2005/07/04 22:18:51 mjc Exp $
+# $OpenBSD: Makefile,v 1.37 2005/11/04 16:20:42 msf Exp $
 
 COMMENT=	"highly flexible sniffer/NIDS"
 
@@ -8,8 +8,6 @@ CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}/dl/current/
 
 HOMEPAGE=       http://www.snort.org/
-
-MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 
 # License: GPL
 PERMIT_PACKAGE_CDROM= 	Yes
