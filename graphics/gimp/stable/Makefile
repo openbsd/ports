@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2005/07/08 07:50:55 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2005/11/04 07:36:10 bernd Exp $
 
 COMMENT=	"GNU Image Manipulation Program"
 
-DISTNAME=	gimp-2.2.8
+DISTNAME=	gimp-2.2.9
 CATEGORIES=	graphics
 DIR=		gimp/v2.2
 MASTER_SITES=	ftp://ftp.gimp.org/pub/${DIR}/ \
@@ -44,7 +44,7 @@ AUTOCONF_VERSION= 2.59
 
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --disable-print --disable-gtkhtml --disable-svg \
+CONFIGURE_ARGS+= --disable-print --without-gtkhtml2 --without-librsvg \
 		 --disable-sse
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/07/08 07:50:56 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/11/04 07:36:10 bernd Exp $
 %%SHARED%%
 bin/gimp
 bin/gimp-2.2
@@ -1349,6 +1349,7 @@ share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpRGB.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor.devhelp
 share/gtk-doc/html/libgimpcolor/libgimpcolor.html
 share/gtk-doc/html/libgimpcolor/right.png
+share/gtk-doc/html/libgimpcolor/style.css
 share/gtk-doc/html/libgimpcolor/up.png
 share/gtk-doc/html/libgimpmath/
 share/gtk-doc/html/libgimpmath/home.png
@@ -1362,6 +1363,7 @@ share/gtk-doc/html/libgimpmath/libgimpmath-GimpVector.html
 share/gtk-doc/html/libgimpmath/libgimpmath.devhelp
 share/gtk-doc/html/libgimpmath/libgimpmath.html
 share/gtk-doc/html/libgimpmath/right.png
+share/gtk-doc/html/libgimpmath/style.css
 share/gtk-doc/html/libgimpmath/up.png
 share/gtk-doc/html/libgimpmodule/
 share/gtk-doc/html/libgimpmodule/GimpModule.html
@@ -1373,6 +1375,7 @@ share/gtk-doc/html/libgimpmodule/left.png
 share/gtk-doc/html/libgimpmodule/libgimpmodule.devhelp
 share/gtk-doc/html/libgimpmodule/libgimpmodule.html
 share/gtk-doc/html/libgimpmodule/right.png
+share/gtk-doc/html/libgimpmodule/style.css
 share/gtk-doc/html/libgimpmodule/up.png
 share/gtk-doc/html/libgimpthumb/
 share/gtk-doc/html/libgimpthumb/GimpThumbnail.html
@@ -1427,6 +1430,7 @@ share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpHelpUI.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpQueryBox.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpScrolledPreview.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpStock.html
+@comment share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpStock.html~
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpWidgets.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-cell-renderers.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-colordisplay.html
@@ -1746,8 +1750,6 @@ share/locale/en_CA/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/en_CA/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/en_CA/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/en_CA/LC_MESSAGES/gimp20.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/en_GB/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/en_GB/LC_MESSAGES/gimp20-std-plug-ins.mo
@@ -1756,8 +1758,6 @@ share/locale/es/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/es/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/es/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/es/LC_MESSAGES/gimp20.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/eu/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/eu/LC_MESSAGES/gimp20-std-plug-ins.mo
@@ -1770,8 +1770,6 @@ share/locale/fr/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/fr/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/fr/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/fr/LC_MESSAGES/gimp20.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ga/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ga/LC_MESSAGES/gimp20-std-plug-ins.mo
@@ -1814,6 +1812,12 @@ share/locale/lt/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/lt/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/lt/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/lt/LC_MESSAGES/gimp20.mo
+share/locale/mk/
+share/locale/mk/LC_MESSAGES/
+share/locale/mk/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/mk/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/mk/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/mk/LC_MESSAGES/gimp20.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/gimp20-libgimp.mo
@@ -1862,8 +1866,6 @@ share/locale/sk/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/sk/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/sk/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/sk/LC_MESSAGES/gimp20.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/sr/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/sr/LC_MESSAGES/gimp20-std-plug-ins.mo
@@ -1886,8 +1888,6 @@ share/locale/uk/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/uk/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/uk/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/uk/LC_MESSAGES/gimp20.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/vi/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/vi/LC_MESSAGES/gimp20-std-plug-ins.mo
