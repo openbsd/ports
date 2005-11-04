@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.729 2005/11/04 09:34:50 sturm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.730 2005/11/04 09:40:30 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1279,7 +1279,7 @@ ${_PACKAGE_COOKIE${_s}}:
 .    else
 ${_PACKAGE_COOKIE${_s}}: ${_PACKAGE_COOKIE_DEPS}
 .    endif
-	@cd ${.CURDIR} && SUBPACKAGE='${_s}' FLAVOR='${FLAVOR}' PACKAGING='${_s}' exec ${MAKE} _package
+	@cd ${.CURDIR} && SUBPACKAGE='${_s}' PACKAGING='${_s}' exec ${MAKE} _package
 .  endif
 .endfor
 
@@ -2269,10 +2269,10 @@ _fetch-onefile:
 #
 describe:
 .if defined(MULTI_PACKAGES) && !defined(PACKAGING)
-	@cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' FLAVOR='${FLAVOR}' PACKAGING='${SUBPACKAGE}' exec ${MAKE} describe
+	@cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' PACKAGING='${SUBPACKAGE}' exec ${MAKE} describe
 .  if empty(SUBPACKAGE)
 .    for _sub in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' PACKAGING='${_sub}' exec ${MAKE} describe
+	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' PACKAGING='${_sub}' exec ${MAKE} describe
 .    endfor
 .  endif
 .else
@@ -2331,10 +2331,10 @@ describe:
 
 readmes:
 .if defined(MULTI_PACKAGES) && !defined(PACKAGING)
-	@cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' FLAVOR='${FLAVOR}' PACKAGING='${SUBPACKAGE}' exec ${MAKE} readmes
+	@cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' PACKAGING='${SUBPACKAGE}' exec ${MAKE} readmes
 .  if empty(SUBPACKAGE)
 .    for _sub in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' PACKAGING='${_sub}' exec ${MAKE} readmes
+	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' PACKAGING='${_sub}' exec ${MAKE} readmes
 .    endfor
 .  endif
 .else
