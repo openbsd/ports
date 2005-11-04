@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/04 23:06:25 jolan Exp $
+bin/aimsniff
+share/doc/aimsniff/
+share/doc/aimsniff/README
+share/examples/aimsniff/
+share/examples/aimsniff/aimsniff.config
+share/examples/aimsniff/rc.aimsniff
+share/examples/aimsniff/table.struct

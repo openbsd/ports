@@ -1,0 +1,8 @@
+AIM Sniff is a utility for monitoring and archiving AOL Instant
+Messenger messages across a network.  You can either do a live dump
+(actively sniff the network) or read a PCAP file and parse the file for
+IM messages.  You also have the option of dumping the information to a
+MySQL database, a flat file, STDOUT, or any combination of the three.
+AIM Sniff allows administrators to see how often users are chatting to
+monitor for abuse and you can also use AIM Sniff to monitor for cases of
+harassment or pirated software trading.

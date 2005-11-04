@@ -1,0 +1,13 @@
+$OpenBSD: patch-aimSniff_pl,v 1.1.1.1 2005/11/04 23:06:25 jolan Exp $
+--- aimSniff.pl.orig	Wed Feb 11 21:25:19 2004
++++ aimSniff.pl	Fri Nov  4 02:49:27 2005
+@@ -44,7 +44,8 @@ use Proc::Daemon;
+ use Proc::Simple;
+ use FileHandle;
+ use Unix::Syslog;
+-use GDBM_File;
++# XXX No GDBM_File port and no one replied when I asked how to make one.
++#use GDBM_File;
+ use Fcntl;
+ 
+ autoflush STDOUT 1;
