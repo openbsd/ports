@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2005/11/01 17:31:21 wilfried Exp $
+# $OpenBSD: Makefile,v 1.133 2005/11/04 02:21:14 naddy Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -50,6 +50,7 @@
      SUBDIR += lopster
      SUBDIR += madplay
 #    SUBDIR += maplay
+     SUBDIR += midish
 #    SUBDIR += mikmod
      SUBDIR += mixer.app
      SUBDIR += morseplayer
