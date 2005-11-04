@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.344 2005/11/03 09:57:00 alek Exp $
+# $OpenBSD: Makefile,v 1.345 2005/11/04 14:03:09 wilfried Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -139,6 +139,7 @@
      SUBDIR += mico
      SUBDIR += mk
      SUBDIR += mm
+     SUBDIR += mysql-gui-common
      SUBDIR += mysql++
      SUBDIR += nasm
      SUBDIR += nspr
