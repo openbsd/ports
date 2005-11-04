@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2005/09/04 23:48:35 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/11/04 14:18:43 kurt Exp $
 
 COMMENT=		"DTP program"
 CATEGORIES=		print
 DISTNAME=		scribus-1.2.2.1
+PKGNAME=		${DISTNAME}p0
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://www.scribus.org.uk/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=scribus/}
