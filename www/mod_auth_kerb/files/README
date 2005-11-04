@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2005/11/03 16:23:13 alek Exp $
+$OpenBSD: README,v 1.2 2005/11/04 09:31:25 alek Exp $
 
 If you haven't already run the module enabler, you can manually enable
 Kerberos support by adding the following lines into httpd.conf near the
@@ -9,9 +9,9 @@ other authentication modules.
 
 To require Kerberos authenication for a directory (or file or location),
 enclose that location in a block that looks like this. The mod_auth_kerb
-documenation is a bit sketchy yet, but this was taken from a working openbsd
+documentation is a bit sketchy yet, but this was taken from a working OpenBSD
 machine using mod_auth_kerb. Only the names have been changed to protect
-the realm. Obviously, you must have working Kerberos before this module can
+the realm. Obviously, you must have Kerberos working before this module can
 do anything useful.
 
 	# A Kerberos Authenticated Directory
