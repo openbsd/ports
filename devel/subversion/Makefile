@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2005/10/02 09:02:05 alek Exp $
+# $OpenBSD: Makefile,v 1.12 2005/11/04 09:42:31 alek Exp $
 
 COMMENT=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
@@ -6,7 +6,7 @@ COMMENT-python=	"python interface to subversion"
 
 VERSION=	1.2.3
 DISTNAME=	subversion-${VERSION}
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 PKGNAME-perl=	p5-SVN-${VERSION}
 PKGNAME-python=	py-subversion-${VERSION}
 CATEGORIES=	devel
@@ -63,6 +63,7 @@ BUILD_DEPENDS=	::lang/python/${PYTHON_VER} \
 WANTLIB+=	crypto m ssl xml2 c
 .endif
 
+USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	PYTHON2=${LOCALBASE}/bin/python${PYTHON_VER}
@@ -85,6 +86,10 @@ CONFIGURE_ARGS+=--disable-swig-bindings \
 REGRESS_DEPENDS=::lang/python/${PYTHON_VER} \
 		::devel/p5-IO-String
 REGRESS_FLAGS=	LD_LIBRARY_PATH=`find ${WRKBUILD} -name .libs | tr '\012' :`
+
+pre-configure:
+	@perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE}," ${WRKSRC}/configure
+	@perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE}," ${WRKSRC}/configure.in
 
 pre-build: 
 	@perl -pi -e "s,!!PYTHON_VER!!,${PYTHON_VER}," ${WRKBUILD}/Makefile
