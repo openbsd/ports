@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.728 2005/11/03 22:33:04 david Exp $
+#	$OpenBSD: bsd.port.mk,v 1.729 2005/11/04 09:34:50 sturm Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -63,6 +63,7 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 # User settings
 TRUST_PACKAGES?=No
 BIN_PACKAGES?=No
+FETCH_PACKAGES?=No
 CLEANDEPENDS?=No
 USE_SYSTRACE?=	No
 BULK?=No
@@ -1239,25 +1240,47 @@ _size_fragment=wc -c $$file 2>/dev/null| awk '{print "SIZE (" $$2 ") = " $$1}'
 ### end of variable setup. Only targets now
 ###
 
-.if ${BIN_PACKAGES:L} == "yes"
+.if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE})
+${_PACKAGE_COOKIE}:
+	@echo -n "===>  Looking for ${FULLPKGNAME} in \$$PKG_PATH - "
+	@if ${SETENV} PKG_CACHE=${PKGREPOSITORY} PKG_PATH=${PKGREPOSITORY}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n ${FULLPKGNAME} >/dev/null 2>&1; then \
+		echo "found"; \
+		exit 0; \
+	fi; \
+	echo "not found"; \
+	cd ${.CURDIR} && exec ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE}=Yes ${_PACKAGE_COOKIE}
+.else
+.  if ${BIN_PACKAGES:L} == "yes"
 ${_PACKAGE_COOKIE}:
 	@cd ${.CURDIR} && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS}
-.else
+.  else
 ${_PACKAGE_COOKIE}: ${_PACKAGE_COOKIE_DEPS}
-.endif
-	@cd ${.CURDIR} && SUBPACKAGE='' FLAVOR='${FLAVOR}' PACKAGING='' exec ${MAKE} _package
-.if !defined(PACKAGE_NOINSTALL)
+.  endif
+	@cd ${.CURDIR} && SUBPACKAGE='' PACKAGING='' exec ${MAKE} _package
+.  if !defined(PACKAGE_NOINSTALL)
 	@${_MAKE_COOKIE} $@
+.  endif
 .endif
 
 .for _s in ${MULTI_PACKAGES}
-.  if ${BIN_PACKAGES:L} == "yes"
+.  if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE_${_s}})
+${_PACKAGE_COOKIE${_s}}:
+	@echo -n "===>  Looking for ${FULLPKGNAME${_s}} in \$$PKG_PATH - "
+	@if ${SETENV} PKG_CACHE=${PKGREPOSITORY} PKG_PATH=${PKGREPOSITORY}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n ${FULLPKGNAME${_s}} >/dev/null 2>&1; then \
+		echo "found"; \
+		exit 0; \
+	fi; \
+	echo "not found"; \
+	cd ${.CURDIR} && exec ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE_${_s}}=Yes ${_PACKAGE_COOKIE${_s}}
+.  else
+.    if ${BIN_PACKAGES:L} == "yes"
 ${_PACKAGE_COOKIE${_s}}:
 	@cd ${.CURDIR} && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS}
-.  else
+.    else
 ${_PACKAGE_COOKIE${_s}}: ${_PACKAGE_COOKIE_DEPS}
-.  endif
+.    endif
 	@cd ${.CURDIR} && SUBPACKAGE='${_s}' FLAVOR='${FLAVOR}' PACKAGING='${_s}' exec ${MAKE} _package
+.  endif
 .endfor
 
 .PRECIOUS: ${_PACKAGE_COOKIES} ${_INSTALL_COOKIE}
@@ -1387,7 +1410,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 				ln -sfh /usr/lib ${DEPDIR}/usr/lib; \
 				ln -sfh /usr/X11R6/lib ${DEPDIR}/usr/X11R6/lib; \
 				test -e ${DEPDIR}/pkgdb/$$pkg && exit 0; \
-				cd ${PKGREPOSITORY} && PKG_DBDIR=${DEPDIR}/pkgdb pkg_add -F nonroot -Q ${DEPDIR} $$pkg && exit 0;; \
+				cd ${PKGREPOSITORY} && PKG_DBDIR=${DEPDIR}/pkgdb PKG_PATH=${PKGREPOSITORY}/ pkg_add -F nonroot -Q ${DEPDIR} $$pkg && exit 0;; \
 			*)  \
 				$$early_exit || ${_force_update_fragment}; \
 				${_${_DEP}_depends_fragment}; \
@@ -1955,10 +1978,10 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
 	@if pkg_info -q -e ${FULLPKGNAME${SUBPACKAGE}}; then \
 		echo "Package ${FULLPKGNAME${SUBPACKAGE}} is already installed"; \
 	else \
-		${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} ${PKGFILE${SUBPACKAGE}}; \
+		${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}/ PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} ${PKGFILE${SUBPACKAGE}}; \
 	fi
 .  else
-	@${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} ${PKGFILE${SUBPACKAGE}}
+	@${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}/ PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} ${PKGFILE${SUBPACKAGE}}
 .  endif
 	@-${SUDO} ${_MAKE_COOKIE} $@
 .endif
@@ -1975,7 +1998,7 @@ ${_UPDATE_COOKIE}: ${_PACKAGE_COOKIES}
 	case $$a in \
 		'') ${ECHO_MSG} "Not installed, no update";; \
 		*) ${ECHO_MSG} "Upgrading from $$a"; \
-		   ${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} -F update -F updatedepends -F installed -r ${PKGFILE${SUBPACKAGE}};; \
+		   ${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}/ PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} -F update -F updatedepends -F installed -r ${PKGFILE${SUBPACKAGE}};; \
 	esac
 .else
 	@a=`pkg_info -e ${FULLPKGPATH} 2>/dev/null || true`; \
@@ -1983,7 +2006,7 @@ ${_UPDATE_COOKIE}: ${_PACKAGE_COOKIES}
 		'') ${ECHO_MSG} "Not installed, no update";; \
 		'${FULLPKGNAME${SUBPACKAGE}}') ${ECHO_MSG} "Already installed, no update";; \
 		*) ${ECHO_MSG} "Upgrading from $$a"; \
-		   ${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} -r ${PKGFILE${SUBPACKAGE}};; \
+		   ${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}/ PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} -r ${PKGFILE${SUBPACKAGE}};; \
 	esac
 .endif
 	@${_MAKE_COOKIE} $@
