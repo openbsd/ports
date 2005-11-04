@@ -1,0 +1,11 @@
+$OpenBSD: patch-source_linux_MAServerLogsPanel_cc,v 1.1.1.1 2005/11/04 14:00:11 wilfried Exp $
+--- source/linux/MAServerLogsPanel.cc.orig	Fri Oct  7 16:53:54 2005
++++ source/linux/MAServerLogsPanel.cc	Thu Nov  3 00:33:57 2005
+@@ -14,7 +14,6 @@
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA */
+ 
+-#define _XOPEN_SOURCE /* glibc2 needs this */
+ #include <time.h>
+ 
+ #include "myadmin.h"

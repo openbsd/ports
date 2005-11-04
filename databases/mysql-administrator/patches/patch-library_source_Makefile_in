@@ -1,0 +1,16 @@
+$OpenBSD: patch-library_source_Makefile_in,v 1.1.1.1 2005/11/04 14:00:11 wilfried Exp $
+--- library/source/Makefile.in.orig	Tue Oct 18 02:18:30 2005
++++ library/source/Makefile.in	Thu Nov  3 16:02:19 2005
+@@ -176,9 +176,9 @@ target_alias = @target_alias@
+ noinst_LIBRARIES = libadmin.a
+ INCLUDES = -Wsign-compare -Wall \
+ 	 -I../include @MYSQL_CFLAGS@ \
+-	-I$(top_srcdir)/../mysql-gui-common/source/linux\
+-	-I$(top_srcdir)/../mysql-gui-common/library/include\
+-	-I$(top_srcdir)/../mysql-gui-common/library/shared_include\
++	-I${LOCALBASE}/share/mysql-gui/common/source/linux\
++	-I${LOCALBASE}/share/mysql-gui/common/library/include\
++	-I${LOCALBASE}/share/mysql-gui/common/library/shared_include\
+ 	@PCRE_CFLAGS@\
+ 	@GLIB_CFLAGS@
+ 

@@ -1,0 +1,38 @@
+$OpenBSD: patch-source_linux_Makefile_in,v 1.1.1.1 2005/11/04 14:00:11 wilfried Exp $
+--- source/linux/Makefile.in.orig	Tue Oct 18 02:18:31 2005
++++ source/linux/Makefile.in	Thu Nov  3 16:27:13 2005
+@@ -71,8 +71,8 @@ mysql_administrator_bin_OBJECTS =  \
+ 	$(am_mysql_administrator_bin_OBJECTS)
+ mysql_administrator_bin_DEPENDENCIES =  \
+ 	$(top_srcdir)/library/source/libadmin.a \
+-	$(top_srcdir)/../mysql-gui-common/source/linux/libmacommongui.a \
+-	$(top_srcdir)/../mysql-gui-common/library/source/libmysqlx.a
++	${LOCALBASE}/share/mysql-gui/common/source/linux/libmacommongui.a \
++	${LOCALBASE}/share/mysql-gui/common/library/source/libmysqlx.a
+ binSCRIPT_INSTALL = $(INSTALL_SCRIPT)
+ SCRIPTS = $(bin_SCRIPTS)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I.
+@@ -217,9 +217,9 @@ mysql_administrator_bin_SOURCES = \
+ 	MADummyPanel.cc
+ 
+ INCLUDES = @GNOME_CFLAGS@ @MYSQL_CFLAGS@ @PCRE_CFLAGS@\
+-	-I$(top_srcdir)/../mysql-gui-common/source/linux\
+-	-I$(top_srcdir)/../mysql-gui-common/library/include\
+-	-I$(top_srcdir)/../mysql-gui-common/library/shared_include\
++	-I${LOCALBASE}/share/mysql-gui/common/source/linux\
++	-I${LOCALBASE}/share/mysql-gui/common/library/include\
++	-I${LOCALBASE}/share/mysql-gui/common/library/shared_include\
+ 	-I$(top_srcdir)/library/include\
+ 	-DPREFIX=\""$(PREFIX)"\"\
+         -DDATADIRNAME=\""$(DATADIRNAME)"\"\
+@@ -229,8 +229,8 @@ INCLUDES = @GNOME_CFLAGS@ @MYSQL_CFLAGS@
+ # mysql_administrator_bin_LDFLAGS=-pthread
+ mysql_administrator_bin_LDADD = \
+ 	$(top_srcdir)/library/source/libadmin.a\
+-	$(top_srcdir)/../mysql-gui-common/source/linux/libmacommongui.a\
+-	$(top_srcdir)/../mysql-gui-common/library/source/libmysqlx.a\
++	${LOCALBASE}/share/mysql-gui/common/source/linux/libmacommongui.a\
++	${LOCALBASE}/share/mysql-gui/common/library/source/libmysqlx.a\
+ 	@MYSQL_LIBS@ @PCRE_LIBS@ @GNOME_LIBS@ 
+ 
+ all: config.h

@@ -1,0 +1,27 @@
+$OpenBSD: patch-source_linux_MInstanceInfo_cc,v 1.1.1.1 2005/11/04 14:00:11 wilfried Exp $
+--- source/linux/MInstanceInfo.cc.orig	Fri Oct  7 16:53:54 2005
++++ source/linux/MInstanceInfo.cc	Wed Nov  2 21:53:54 2005
+@@ -830,7 +830,7 @@ static bool do_get_info(MInstanceInfo::F
+ 
+ 
+ #else // !sun
+-#define FSTAB_FILE "/etc/mtab"
++#define FSTAB_FILE "/etc/fstab"
+ 
+ static bool do_get_info(MInstanceInfo::FilesystemInfo &info, const std::string &path)
+ {
+@@ -847,14 +847,6 @@ static bool do_get_info(MInstanceInfo::F
+   info.free= (long long)fs.f_bsize * fs.f_bavail;
+ 
+   info.type= "unknown";
+-  for (unsigned int i= 0; i < sizeof(fstypes)/sizeof(FSType); i++)
+-  {
+-    if (fstypes[i].id == fs.f_type)
+-    {
+-      info.type= fstypes[i].name;
+-      break;
+-    }
+-  }
+   return true;
+ }
+ 
