@@ -1,0 +1,13 @@
+$OpenBSD: patch-source_linux_MQHistory_cc,v 1.1.1.1 2005/11/04 14:01:54 wilfried Exp $
+--- source/linux/MQHistory.cc.orig	Sun Mar 13 15:42:26 2005
++++ source/linux/MQHistory.cc	Thu Nov  3 21:49:54 2005
+@@ -16,9 +16,6 @@
+ 
+ #include "myqb.h"
+ 
+-#ifndef _XOPEN_SOURCE
+-#define _XOPEN_SOURCE /* glibc2 needs this */
+-#endif
+ #include <time.h>
+ 
+ #include "myx_public_interface.h"

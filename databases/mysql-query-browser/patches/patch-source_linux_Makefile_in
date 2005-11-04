@@ -1,0 +1,51 @@
+$OpenBSD: patch-source_linux_Makefile_in,v 1.1.1.1 2005/11/04 14:01:54 wilfried Exp $
+--- source/linux/Makefile.in.orig	Sat Oct 22 02:02:13 2005
++++ source/linux/Makefile.in	Thu Nov  3 23:13:24 2005
+@@ -71,8 +71,8 @@ mysql_query_browser_bin_OBJECTS =  \
+ 	$(am_mysql_query_browser_bin_OBJECTS)
+ mysql_query_browser_bin_DEPENDENCIES =  \
+ 	$(top_builddir)/library/source/libqb.a \
+-	$(top_builddir)/../mysql-gui-common/source/linux/libqbcommongui.a \
+-	$(top_builddir)/../mysql-gui-common/library/source/libmysqlx.a \
++	${LOCALBASE}/share/mysql-gui/common/source/linux/libqbcommongui.a \
++	${LOCALBASE}/share/mysql-gui/common/library/source/libmysqlx.a \
+ 	$(top_builddir)/source/linux/gtksourceview/gtksourceview/.libs/libgtksourceview-1.0.a
+ binSCRIPT_INSTALL = $(INSTALL_SCRIPT)
+ SCRIPTS = $(bin_SCRIPTS)
+@@ -236,9 +236,9 @@ mysql_query_browser_bin_SOURCES = \
+ 	MGCompletionList.cc
+ 
+ INCLUDES = @GNOME_CFLAGS@ @MYSQL_CFLAGS@ @PCRE_CFLAGS@\
+-        -I$(top_srcdir)/../mysql-gui-common/source/linux\
+-        -I$(top_srcdir)/../mysql-gui-common/library/include\
+-        -I$(top_srcdir)/../mysql-gui-common/library/shared_include\
++        -I${LOCALBASE}/share/mysql-gui/common/source/linux\
++        -I${LOCALBASE}/share/mysql-gui/common/library/include\
++        -I${LOCALBASE}/share/mysql-gui/common/library/shared_include\
+         -I$(top_srcdir)/library/include\
+ 	-I$(top_srcdir)/source/linux/gtksourceview\
+ 	-DPREFIX=\""$(PREFIX)"\"\
+@@ -246,8 +246,8 @@ INCLUDES = @GNOME_CFLAGS@ @MYSQL_CFLAGS@
+         -DCOMMONDIRNAME=\""$(MG_COMMONDIR)"\"
+ 
+ mysql_query_browser_bin_LDADD = $(top_builddir)/library/source/libqb.a\
+-	$(top_builddir)/../mysql-gui-common/source/linux/libqbcommongui.a\
+-	$(top_builddir)/../mysql-gui-common/library/source/libmysqlx.a\
++	${LOCALBASE}/share/mysql-gui/common/source/linux/libqbcommongui.a\
++	${LOCALBASE}/share/mysql-gui/common/library/source/libmysqlx.a\
+ 	$(top_builddir)/source/linux/gtksourceview/gtksourceview/.libs/libgtksourceview-1.0.a\
+         @MYSQL_LIBS@ @GNOME_LIBS@ @PCRE_LIBS@ 
+ 
+@@ -570,10 +570,10 @@ uninstall-am: uninstall-binPROGRAMS unin
+ # If a solution is found, this could be removed.
+ #
+ $(top_builddir)/source/linux/gtksourceview/gtksourceview/.libs/libgtksourceview-1.0.a:
+-	(cd gtksourceview; ./configure --enable-static --disable-shared --disable-build-tests; make)
++	(cd gtksourceview; ./configure --enable-static --disable-shared --disable-build-tests; ${MAKE})
+ 
+ clean-generic:
+-	-make -C gtksourceview distclean
++	-${MAKE} -C gtksourceview distclean
+ 	(cd gtksourceview; rm -fr autom4te.cache config.log)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
