@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/09/11 05:05:11 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/11/04 01:12:58 naddy Exp $
 
 COMMENT=		"vector graphics library"
 
-DISTNAME=		cairo-1.0.0
+DISTNAME=		cairo-1.0.2
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://cairographics.org/introduction

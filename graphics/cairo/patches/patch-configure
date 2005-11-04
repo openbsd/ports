@@ -1,6 +1,7 @@
---- configure.orig	Mon May 23 11:33:35 2005
-+++ configure	Mon May 23 11:32:06 2005
-@@ -22509,7 +22509,8 @@
+$OpenBSD: patch-configure,v 1.2 2005/11/04 01:12:58 naddy Exp $
+--- configure.orig	Tue Oct  4 02:48:32 2005
++++ configure	Fri Nov  4 01:35:40 2005
+@@ -24143,7 +24143,8 @@ fi;
  if test "x$use_png" = "xyes"; then
    use_png=no
    # libpng13 is GnuWin32's libpng-1.2.8 :-(

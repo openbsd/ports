@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/09/11 05:05:11 marcm Exp $
-@lib lib/libcairo.so.4.2
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/11/04 01:12:58 naddy Exp $
+@lib lib/libcairo.so.4.3
