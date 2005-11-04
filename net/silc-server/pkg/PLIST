@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/07/24 00:28:33 brad Exp $
+@comment $OpenBSD: PLIST,v 1.11 2005/11/04 00:09:56 naddy Exp $
 @newgroup _silcd:512
 @newuser _silcd:512:_silcd:daemon:Silc-server Account:/nonexistent:/sbin/nologin
 @man man/man5/silcd.conf.5
@@ -11,6 +11,11 @@ share/doc/silcd/
 share/doc/silcd/FAQ
 @comment share/doc/silcd/INSTALL
 share/doc/silcd/README
+@mode 0700
+@owner _silcd
+@group _silcd
+@sample /var/log/silcd/
+@sample ${CONFDIR}/
 @comment share/doc/silcd/TODO
 @comment share/doc/silcd/draft-riikonen-presence-attrs-03.txt
 @comment share/doc/silcd/draft-riikonen-silc-commands-06.txt
@@ -18,33 +23,28 @@ share/doc/silcd/README
 @comment share/doc/silcd/draft-riikonen-silc-ke-auth-08.txt
 @comment share/doc/silcd/draft-riikonen-silc-pp-09.txt
 @comment share/doc/silcd/draft-riikonen-silc-spec-08.txt
-@owner _silcd
-@group _silcd
-@mode 0700
-@sample /var/log/silcd/
-@sample ${CONFDIR}/
+@mode
 @owner
 @group
-@mode
 share/examples/silcd/
+@comment share/examples/silcd/README
 share/examples/silcd/cell_backup.conf
 share/examples/silcd/cell_router.conf
 share/examples/silcd/cell_server1.conf
 share/examples/silcd/cell_server2.conf
 share/examples/silcd/silcalgs.conf
+@mode 0600
 @owner _silcd
 @group _silcd
-@mode 0600
 @sample ${CONFDIR}/silcalgs.conf
+@mode
 @owner
 @group
-@mode
 share/examples/silcd/silcd.conf
+@mode 0600
 @owner _silcd
 @group _silcd
-@mode 0600
 @sample ${CONFDIR}/silcd.conf
-@owner
-@group
-@mode
+@comment share/examples/silcd/silcd.prv
+@comment share/examples/silcd/silcd.pub
 @extraunexec rm -rf /var/log/silcd/*

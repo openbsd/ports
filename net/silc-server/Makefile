@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2005/09/13 02:38:52 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2005/11/04 00:09:56 naddy Exp $
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) server"
 
 DISTNAME=	silc-server-1.0
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.silcnet.org/
@@ -54,13 +54,10 @@ CONFIGURE_ARGS+= --disable-asm
 .endif
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/silcd
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/silcd
 	${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${PREFIX}/share/doc/silcd
 	${INSTALL_DATA} ${WRKSRC}/doc/example_silcd.conf \
 		${PREFIX}/share/examples/silcd/silcd.conf
-	${INSTALL_DATA} ${WRKSRC}/doc/examples/cell_*.conf \
-		${PREFIX}/share/examples/silcd
 	${INSTALL_DATA} ${WRKSRC}/doc/silcalgs.conf \
 		${PREFIX}/share/examples/silcd
 
