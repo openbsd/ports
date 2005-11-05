@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.731 2005/11/05 10:35:02 sturm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.732 2005/11/05 11:11:17 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -741,8 +741,6 @@ GUNZIP_CMD?=	/usr/bin/gunzip -f
 GZCAT?=		/usr/bin/gzcat
 GZIP?=		-9
 GZIP_CMD?=	/usr/bin/gzip -nf ${GZIP}
-LDCONFIG?=	[ ! -x /sbin/ldconfig ] || /sbin/ldconfig
-LDCONFIG_SED_SCRIPT?=${PORTSDIR}/infrastructure/install/ldconfig-new.sed
 M4?=		/usr/bin/m4
 STRIP?=		/usr/bin/strip
 
@@ -1061,7 +1059,7 @@ _syslibresolve_fragment = \
 
 _lib_depends_fragment = \
 	if $$defaulted; then \
-		pkg=`echo $$pkg|sed -e 's,-[0-9].*,-*,'`; \
+		pkg=`echo $$pkg|${_version2default}`; \
 	fi; \
 	what="$$pkg"; \
 	if pkg_info -q -e "$$pkg"; then \
@@ -1237,6 +1235,21 @@ _DO_LOCK=:
 .endif
 
 _size_fragment=wc -c $$file 2>/dev/null| awk '{print "SIZE (" $$2 ") = " $$1}' 
+
+# commands used all the time
+_lines2list= tr '\012' '\040' | sed -e 's, $$,,'
+
+_zap_last_line= sed -e '$$d'
+
+_sort_dependencies=tsort -r|${_zap_last_line}
+
+_version2default= sed -e 's,-[0-9].*,-*,'
+
+_grab_libs_from_plist= sed -n -e '/^@lib /{ s///; p; }' \
+	-e '/^@file .*\/lib\/lib.*\.a$$/{ s/^@file //; p; }'
+
+
+
 ###
 ### end of variable setup. Only targets now
 ###
@@ -2396,20 +2409,20 @@ ${FULLPKGNAME${SUBPACKAGE}}.html:
 print-build-depends:
 .if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP)
 	@echo -n 'This port requires package(s) "'
-	@${MAKE} full-build-depends|tr '\012' '\040'|sed -e 's, $$,,'
+	@${MAKE} full-build-depends| ${_lines2list}
 	@echo '" to build.'
 .endif
 
 print-run-depends:
 .if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
 	@echo -n 'This port requires package(s) "'
-	@${MAKE} full-run-depends|tr '\012' '\040'|sed -e 's, $$,,'
+	@${MAKE} full-run-depends| ${_lines2list}
 	@echo '" to run.'
 .endif
 
 .for _i in build all run
 full-${_i}-depends:
-	@${MAKE} ${_i}-dir-depends|tsort -r|sed -e '$$d'|while read subdir; do \
+	@${MAKE} ${_i}-dir-depends|${_sort_dependencies}|while read subdir; do \
 		${_flavor_fragment}; \
 		eval $$toset ${MAKE} _print-packagename ; \
 	done
@@ -2417,7 +2430,7 @@ full-${_i}-depends:
 
 license-check:
 .if ${PERMIT_PACKAGE_CDROM:L} == "yes" || ${PERMIT_PACKAGE_FTP:L} == "yes"
-	@${MAKE} all-dir-depends|tsort -r|sed -e '$$d'|while read subdir; do \
+	@${MAKE} all-dir-depends|${_sort_dependencies}|while read subdir; do \
 		${_flavor_fragment}; \
 		_MASTER_PERMIT_CDROM=${PERMIT_PACKAGE_CDROM:Q}; \
 		_MASTER_PERMIT_FTP=${PERMIT_PACKAGE_FTP:Q}; \
@@ -2470,7 +2483,7 @@ _print-package-args:
 		IFS=:; read dep pkg subdir target; \
 		${_flavor_fragment}; \
 		default=`eval $$toset ${MAKE} _print-packagename`; \
-		case "X$$pkg" in X) pkg=`echo $$default|sed -e 's,-[0-9].*,-*,'`;; esac; \
+		case "X$$pkg" in X) pkg=`echo $$default|${_version2default}`;; esac; \
 		echo "-P $$subdir:$$pkg:$$default"; \
 	}
 .endfor
@@ -2481,11 +2494,11 @@ _print-package-args:
 		${_flavor_fragment}; \
 		libspecs='';comma=''; \
 		default=`eval $$toset ${MAKE} _print-packagename`; \
-		case "X$$pkg" in X) pkg=`echo $$default|sed -e 's,-[0-9].*,-*,'`;; esac; \
+		case "X$$pkg" in X) pkg=`echo $$default|${_version2default}`;; esac; \
 		if pkg_info -q -e $$pkg; then \
 			listlibs='echo ${DEPDIR}$$shdir/lib*'; \
 		else \
-		    listlibs="$$toset ${MAKE} print-plist-contents|grep -e '^@lib ' -e '^@file .*/lib/lib.*\.a'|sed -e 's:@lib ::' -e 's:@file ::'"; \
+		    listlibs="$$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}"; \
 		fi; \
 		IFS=,; for d in $$dep; do \
 			${_libresolve_fragment}; \
@@ -2528,16 +2541,14 @@ _list-port-libs:
 			mkdir -p $${fulldir%/*}; \
 			${_flavor_fragment}; \
 			eval $$toset ${MAKE} print-plist-contents | \
-				grep -e '^@lib ' -e '^@file .*/lib/lib.*\.a$$'| \
-				sed -e 's:@lib ::' -e 's:@file ::' |tee $$fulldir; \
+				${_grab_libs_from_plist}|tee $$fulldir; \
 		fi; \
 	done
 .else
-	@${MAKE} run-dir-depends|tsort -r|sed -e '$$d'|while read subdir; do \
+	@${MAKE} run-dir-depends|${_sort_dependencies}|while read subdir; do \
 		${_flavor_fragment}; \
 		eval $$toset ${MAKE} print-plist-contents ; \
-	done | grep -e '^@lib ' -e '^@file .*/lib/.*\.a$$'| \
-	sed -e 's:@lib ::' -e 's:@file ::'
+	done | ${_grab_libs_from_plist}
 .endif
 	@echo /usr/lib/lib* ${X11BASE}/lib/lib*
 
