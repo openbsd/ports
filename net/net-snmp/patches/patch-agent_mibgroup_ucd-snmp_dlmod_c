@@ -1,7 +1,7 @@
-$OpenBSD: patch-agent_mibgroup_ucd-snmp_dlmod_c,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
---- agent/mibgroup/ucd-snmp/dlmod.c.orig	Sun Feb 29 19:33:07 2004
-+++ agent/mibgroup/ucd-snmp/dlmod.c	Tue Jul 20 10:31:30 2004
-@@ -179,7 +179,12 @@ dlmod_load_module(struct dlmod *dlm)
+$OpenBSD: patch-agent_mibgroup_ucd-snmp_dlmod_c,v 1.2 2005/11/05 19:09:38 bernd Exp $
+--- agent/mibgroup/ucd-snmp/dlmod.c.orig	Fri May 20 23:34:43 2005
++++ agent/mibgroup/ucd-snmp/dlmod.c	Thu Nov  3 23:31:04 2005
+@@ -180,7 +180,12 @@ dlmod_load_module(struct dlmod *dlm)
          if (dlm->status == DLMOD_ERROR)
              return;
      }
@@ -14,7 +14,7 @@ $OpenBSD: patch-agent_mibgroup_ucd-snmp_dlmod_c,v 1.1.1.1 2004/08/03 17:47:12 da
      dl_init = dlsym(dlm->handle, sym_init);
      if (dl_init == NULL) {
          dlclose(dlm->handle);
-@@ -203,7 +208,11 @@ dlmod_unload_module(struct dlmod *dlm)
+@@ -204,7 +209,11 @@ dlmod_unload_module(struct dlmod *dlm)
      if (!dlm || dlm->status != DLMOD_LOADED)
          return;
  

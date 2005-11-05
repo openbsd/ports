@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/09/09 19:10:52 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2005/11/05 19:09:38 bernd Exp $
 %%SHARED%%
 bin/encode_keychange
 bin/fixproc
@@ -136,11 +136,14 @@ include/net-snmp/system/bsdi3.h
 include/net-snmp/system/bsdi4.h
 include/net-snmp/system/cygwin.h
 include/net-snmp/system/darwin.h
+include/net-snmp/system/darwin7.h
 include/net-snmp/system/dynix.h
 include/net-snmp/system/freebsd.h
 include/net-snmp/system/freebsd2.h
 include/net-snmp/system/freebsd3.h
 include/net-snmp/system/freebsd4.h
+include/net-snmp/system/freebsd5.h
+include/net-snmp/system/freebsd6.h
 include/net-snmp/system/generic.h
 include/net-snmp/system/hpux.h
 include/net-snmp/system/irix.h

@@ -1,7 +1,7 @@
-$OpenBSD: patch-snmplib_container_c,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
---- snmplib/container.c.orig	Mon Feb 23 01:00:18 2004
-+++ snmplib/container.c	Tue Jul 20 08:25:07 2004
-@@ -28,7 +28,7 @@ _factory_free(container_type *data, void
+$OpenBSD: patch-snmplib_container_c,v 1.2 2005/11/05 19:09:38 bernd Exp $
+--- snmplib/container.c.orig	Fri May 20 23:34:42 2005
++++ snmplib/container.c	Thu Nov  3 23:31:05 2005
+@@ -29,7 +29,7 @@ _factory_free(void *dat, void *context)
      if (data->name != NULL) {
          DEBUGMSGTL(("container", "  _factory_free_list() called for %s\n",
                      data->name));

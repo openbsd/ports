@@ -1,0 +1,12 @@
+$OpenBSD: patch-agent_mibgroup_mibII_mta_sendmail_c,v 1.1 2005/11/05 19:09:38 bernd Exp $
+--- agent/mibgroup/mibII/mta_sendmail.c.orig	Fri Nov  4 00:56:43 2005
++++ agent/mibgroup/mibII/mta_sendmail.c	Fri Nov  4 00:57:02 2005
+@@ -520,7 +520,7 @@ open_sendmailst(BOOL config)
+ count_queuegroup(struct QGrp *qg)
+ {
+     struct QDir    *d;
+-    char            cwd[200];
++    char            cwd[MAXPATHLEN];
+     time_t          current_time = time(NULL);
+ 
+     if (current_time <= (qg->last + dir_cache_time)) {

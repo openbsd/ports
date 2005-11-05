@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2005/06/13 20:33:17 naddy Exp $
---- configure.orig	Sat Aug  7 10:14:33 2004
-+++ configure	Mon Jun 13 22:31:57 2005
-@@ -6954,6 +6954,7 @@ openbsd*)
+$OpenBSD: patch-configure,v 1.3 2005/11/05 19:09:38 bernd Exp $
+--- configure.orig	Thu Jun 30 04:45:09 2005
++++ configure	Thu Nov  3 23:55:00 2005
+@@ -7452,6 +7452,7 @@ openbsd*)
    need_lib_prefix=no
    need_version=no
    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.2 2005/06/13 20:33:17 naddy Exp $
      case "$host_os" in
      openbsd2.[89] | openbsd2.[89].*)
        shlibpath_overrides_runpath=no
-@@ -6966,7 +6967,7 @@ openbsd*)
+@@ -7464,7 +7465,7 @@ openbsd*)
      shlibpath_overrides_runpath=yes
    fi
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.2 2005/06/13 20:33:17 naddy Exp $
    shlibpath_var=LD_LIBRARY_PATH
    ;;
  
-@@ -9206,34 +9207,6 @@ fi
+@@ -9807,34 +9808,6 @@ fi
  echo "$as_me:$LINENO: result: $EXTRACPPFLAGS" >&5
  echo "${ECHO_T}$EXTRACPPFLAGS" >&6
  
@@ -53,36 +53,28 @@ $OpenBSD: patch-configure,v 1.2 2005/06/13 20:33:17 naddy Exp $
  # Set SNMPLIBPATH & SNMPSHAREPATH
  
  SNMPLIBPATH=""
-@@ -11383,6 +11356,7 @@ _ACEOF
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#include <sys/types.h>
- #include <tcpd.h>
- 		     int allow_severity = 0;
- 		     int deny_severity  = 0;
-@@ -11575,6 +11549,7 @@ _ACEOF
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#include <sys/types.h>
- #include <tcpd.h>
- 		         int allow_severity = 0;
- 	                 int deny_severity  = 0;
-@@ -14158,7 +14133,7 @@ done
- 
- 
- 
--for ac_header in malloc.h sys/param.h net/if_dl.h sys/sysctl.h stdlib.h net/if_mib.h net/if_types.h net/if_var.h sys/queue.h osreldate.h machine/types.h sys/socketvar.h
-+for ac_header in sys/param.h net/if_dl.h sys/sysctl.h stdlib.h net/if_mib.h net/if_types.h net/if_var.h sys/queue.h osreldate.h machine/types.h sys/socketvar.h
- do
- as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
- if eval "test \"\${$as_ac_Header+set}\" = set"; then
-@@ -14181,6 +14156,7 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -14282,6 +14255,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
-+#include <sys/param.h>
- #include <$ac_header>
++#include <sys/types.h>
+ #include <tcpd.h>
  _ACEOF
  rm -f conftest.$ac_objext
+@@ -14326,6 +14300,7 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/types.h>
+ #include <tcpd.h>
+ _ACEOF
+ if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
+@@ -17818,7 +17793,7 @@ done
+ 
+ 
+ 
+-for ac_header in malloc.h sys/param.h net/if_dl.h sys/sysctl.h stdlib.h net/if_types.h sys/queue.h osreldate.h machine/types.h sys/socketvar.h sys/user.h sys/proc.h sys/mbuf.h sys/mount.h
++for ac_header in sys/param.h net/if_dl.h sys/sysctl.h stdlib.h net/if_types.h sys/queue.h osreldate.h machine/types.h sys/socketvar.h sys/user.h sys/proc.h sys/mbuf.h sys/mount.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ echo "$as_me:$LINENO: checking for $ac_header" >&5

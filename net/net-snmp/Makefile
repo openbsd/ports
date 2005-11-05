@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2005/09/09 19:07:46 marcm Exp $
+# $OpenBSD: Makefile,v 1.12 2005/11/05 19:09:38 bernd Exp $
 
 COMMENT=	"extendable SNMP implementation"
 COMMENT-perl=	"SNMP modules for Perl"
 
-DISTNAME=	net-snmp-5.1.2
-PKGNAME=	${DISTNAME}p3
-FULLPKGNAME-perl= p5-SNMP-5.1.2p1
+DISTNAME=	net-snmp-5.1.3
+FULLPKGNAME-perl= p5-SNMP-5.1.3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=net-snmp/}
 

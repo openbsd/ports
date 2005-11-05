@@ -1,7 +1,7 @@
-$OpenBSD: patch-agent_mibgroup_mibII_tcpTable_c,v 1.2 2005/06/13 20:33:17 naddy Exp $
---- agent/mibgroup/mibII/tcpTable.c.orig	Wed Jul 21 08:26:18 2004
-+++ agent/mibgroup/mibII/tcpTable.c	Mon Jun 13 22:31:56 2005
-@@ -446,7 +446,7 @@ tcpTable_next_entry( void **loop_context
+$OpenBSD: patch-agent_mibgroup_mibII_tcpTable_c,v 1.3 2005/11/05 19:09:38 bernd Exp $
+--- agent/mibgroup/mibII/tcpTable.c.orig	Mon Jun 20 15:17:03 2005
++++ agent/mibgroup/mibII/tcpTable.c	Fri Nov  4 01:25:25 2005
+@@ -450,7 +450,7 @@ tcpTable_next_entry( void **loop_context
       * and update the loop context ready for the next one.
       */
      *data_context = (void*)entry;
@@ -10,7 +10,7 @@ $OpenBSD: patch-agent_mibgroup_mibII_tcpTable_c,v 1.2 2005/06/13 20:33:17 naddy 
      return index;
  }
  
-@@ -456,7 +456,7 @@ tcpTable_free(netsnmp_cache *cache, void
+@@ -460,7 +460,7 @@ tcpTable_free(netsnmp_cache *cache, void
      TCPTABLE_ENTRY_TYPE *p;
      while (tcp_head) {
          p = tcp_head;
@@ -19,12 +19,12 @@ $OpenBSD: patch-agent_mibgroup_mibII_tcpTable_c,v 1.2 2005/06/13 20:33:17 naddy 
          free(p);
      }
  
-@@ -792,7 +792,7 @@ tcpTable_load(netsnmp_cache *cache, void
+@@ -796,7 +796,7 @@ tcpTable_load(netsnmp_cache *cache, void
              nnew->state == 8 /*  closeWait  */ )
              tcp_estab++;
  
--        entry      = nnew->inp_queue.cqe_next;	/* Next kernel entry */
-+        entry      = nnew->pcb.inp_queue.cqe_next; /* Next kernel entry */
+-        entry      = nnew->INP_NEXT_SYMBOL;	/* Next kernel entry */
++        entry      = nnew->inp_next;	/* Next kernel entry */
  	nnew->inp_next = tcp_head;
  	tcp_head   = nnew;
  
