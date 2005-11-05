@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.733 2005/11/05 11:16:17 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.734 2005/11/05 23:39:51 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2421,6 +2421,7 @@ print-run-depends:
 	@echo '" to run.'
 .endif
 
+# full-build-depends, full-all-depends, full-run-depends
 .for _i in build all run
 full-${_i}-depends:
 	@${MAKE} ${_i}-dir-depends|${_sort_dependencies}|while read subdir; do \
@@ -2447,6 +2448,7 @@ _license-check:
 .  endif
 .endfor
 
+# run-depends-list, build-depends-list, lib-depends-list
 .for _i in RUN BUILD LIB
 ${_i:L}-depends-list:
 .  if !empty(_${_i}_DEP2)
