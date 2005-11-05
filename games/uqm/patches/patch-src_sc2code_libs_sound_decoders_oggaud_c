@@ -1,0 +1,59 @@
+$OpenBSD: patch-src_sc2code_libs_sound_decoders_oggaud_c,v 1.1 2005/11/05 03:48:41 jolan Exp $
+--- src/sc2code/libs/sound/decoders/oggaud.c.orig	Fri Nov  4 15:45:15 2005
++++ src/sc2code/libs/sound/decoders/oggaud.c	Fri Nov  4 15:45:24 2005
+@@ -25,8 +25,13 @@
+ #include "types.h"
+ #include "uio.h"
+ #include "decoder.h"
+-#include <vorbis/codec.h>
+-#include <vorbis/vorbisfile.h>
++#ifdef OVCODEC_TREMOR
++#	include <tremor/ivorbiscodec.h>
++#	include <tremor/ivorbisfile.h>
++#else
++#	include <vorbis/codec.h>
++#	include <vorbis/vorbisfile.h>
++#endif  /* OVCODEC_TREMOR */
+ #include "oggaud.h"
+ 
+ 
+@@ -194,8 +199,14 @@ ova_Open (THIS_PTR, uio_DirHandle *dir, 
+ 	}
+ 	
+ 	This->frequency = vinfo->rate;
++#ifdef OVCODEC_TREMOR
++	// With tremor ov_time_total returns an integer, in milliseconds.
++	This->length = ((float) ov_time_total (&ova->vf, -1)) / 1000.0f;
++#else
++	// With libvorbis ov_time_total returns a double, in seconds.
+ 	This->length = (float) ov_time_total (&ova->vf, -1);
+-
++#endif  /* OVCODEC_TREMOR */
++	
+ 	if (vinfo->channels == 1)
+ 		This->format = ova_formats->mono16;
+ 	else
+@@ -221,8 +232,12 @@ ova_Decode (THIS_PTR, void* buf, sint32 
+ 	long rc;
+ 	int bitstream;
+ 
++#ifdef OVCODEC_TREMOR
++	rc = ov_read (&ova->vf, buf, bufsize, &bitstream);
++#else
+ 	rc = ov_read (&ova->vf, buf, bufsize, ova_formats->want_big_endian,
+ 			2, 1, &bitstream);
++#endif  /* OVCODEC_TREMOR */
+ 	
+ 	if (rc < 0)
+ 		ova->last_error = rc;
+@@ -254,5 +269,10 @@ ova_GetFrame (THIS_PTR)
+ 	TFB_OggSoundDecoder* ova = (TFB_OggSoundDecoder*) This;
+ 	// this is the closest to a frame there is in ogg vorbis stream
+ 	// doesn't seem to be a func to retrive it
++#ifdef OVCODEC_TREMOR
++	return ova->vf.os->pageno;
++#else
+ 	return ova->vf.os.pageno;
++#endif  /* OVCODEC_TREMOR */
+ }
++

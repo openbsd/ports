@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_sc2code_libs_graphics_drawable_c,v 1.1 2005/11/05 03:48:41 jolan Exp $
+--- src/sc2code/libs/graphics/drawable.c.orig	Wed Jan 26 17:55:47 2005
++++ src/sc2code/libs/graphics/drawable.c	Fri Nov  4 19:37:56 2005
+@@ -21,6 +21,7 @@
+ #include "tfb_draw.h"
+ #include "units.h"
+ #include "libs/mathlib.h"
++#include "gfxother.h"
+ 
+ FRAMEPTR _CurFramePtr;
+ 
+@@ -244,4 +245,14 @@ RotateFrame (FRAMEPTR Frame, COUNT angle
+ 	ReleaseDrawable (RotFramePtr);
+ 
+ 	return Drawable;
++}
++
++void
++SetFrameTransparentColor (FRAMEPTR Frame, COLOR c32k)
++{
++	TFB_Palette color;
++	
++	COLORtoPalette (c32k, &color);
++	TFB_DrawCanvas_SetTransparentColor (Frame->image->NormalImg,
++			color.r, color.g, color.b, TRUE);
+ }

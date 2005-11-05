@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_sc2code_intro_c,v 1.1 2005/11/05 03:48:41 jolan Exp $
+--- src/sc2code/intro.c.orig	Tue May  3 23:25:53 2005
++++ src/sc2code/intro.c	Fri Nov  4 19:30:52 2005
+@@ -196,6 +196,7 @@ Present_GenerateSIS (PRESENTATION_INPUT_
+ 	HOT_SPOT hs;
+ 	int slot;
+ 	COUNT piece;
++	COLOR SisBack;
+ 
+ 	LockMutex (GraphicsLock);
+ 	OldContext = SetContext (OffScreenContext);
+@@ -213,8 +214,11 @@ Present_GenerateSIS (PRESENTATION_INPUT_
+ 			WANT_PIXMAP, r.extent.width, r.extent.height, 1
+ 			));
+ 	SetContextFGFrame (SisFrame);
+-	SetContextForeGroundColor (BUILD_COLOR (MAKE_RGB15 (1, 1, 1), 7));
+-	DrawFilledRectangle (&r);
++	SetContextClipRect (NULL_PTR);
++	SisBack = BUILD_COLOR (MAKE_RGB15 (1, 1, 1), 7);
++	SetContextBackGroundColor (SisBack);
++	ClearDrawable ();
++	SetFrameTransparentColor (SisFrame, SisBack);
+ 
+ 	s.frame = SetAbsFrameIndex (SkelFrame, 0);
+ 	s.origin.x = 0;
+@@ -264,11 +268,6 @@ Present_GenerateSIS (PRESENTATION_INPUT_
+ 	hs.x = r.extent.width / 2;
+ 	hs.y = r.extent.height / 2;
+ 	SetFrameHot (SisFrame, hs);
+-
+-	/* TODO: this is a hack to get it to work
+-	 * anyone know how to do this better? */
+-	TFB_DrawCanvas_SetTransparentColor (
+-			((PFRAME_DESC)SisFrame)->image->NormalImg, 8, 8, 8, TRUE);
+ 
+ 	SetContext (OldContext);
+ 	FlushGraphics ();

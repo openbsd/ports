@@ -1,0 +1,176 @@
+$OpenBSD: patch-src_sc2code_comm_c,v 1.1 2005/11/05 03:48:41 jolan Exp $
+--- src/sc2code/comm.c.orig	Fri Nov  4 19:29:18 2005
++++ src/sc2code/comm.c	Fri Nov  4 19:29:56 2005
+@@ -41,7 +41,19 @@
+ 
+ #include <ctype.h>
+ 
++// Maximum ambient animation frame rate (actual execution rate)
++// A gfx frame is not always produced during an execution frame,
++// and several animations are combined into one gfx frame.
++// The rate was originally 120fps which allowed for more animation
++// precision which is ultimately wasted on the human eye anyway.
++// The highest known stable animation rate is 40fps, so that's what we use.
++#define AMBIENT_ANIM_RATE   40
+ 
++// Oscilloscope frame rate
++// Should be <= AMBIENT_ANIM_RATE
++// XXX: was 32 picked experimentally?
++#define OSCILLOSCOPE_RATE   32
++
+ static void init_xform_control (void);
+ static void uninit_xform_control (void);
+ static void xform_complete (void);
+@@ -126,8 +138,10 @@ static int subtitle_state = DONE_SUBTITL
+ static Mutex subtitle_mutex;
+ 
+ static const UNICODE * volatile last_subtitle;
+-static TFB_Image *subtitle_cache;
+ 
++CONTEXT TextCacheContext;
++FRAME TextCacheFrame;
++
+ /* _count_lines - sees how many lines a given input string would take to
+  * display given the line wrapping information
+  */
+@@ -166,28 +180,29 @@ add_text (int status, PTEXT pTextIn)
+ 	int num_lines = 0;
+ 	static COORD last_baseline;
+ 	BOOLEAN eol;
++	CONTEXT OldContext;
+ 	
+ 	BatchGraphics ();
+ 
+ 	maxchars = (COUNT)~0;
+ 	if (status == 1)
+ 	{
+-		RECT r;
+-		GetContextClipRect (&r);
+-
+ 		if (last_subtitle == pTextIn->pStr)
+ 		{
+ 			// draws cached subtitle
+-			TFB_DrawScreen_Image (subtitle_cache, r.corner.x, r.corner.y, 0, 0, TFB_SCREEN_MAIN);
++			STAMP s;
++
++			s.origin.x = s.origin.y = 0;
++			s.frame = TextCacheFrame;
++			DrawStamp (&s);
+ 			UnbatchGraphics ();
+ 			return last_baseline;
+ 		}
+ 		else
+ 		{
+-			// saves background to extra screen
+-			TFB_DrawScreen_Copy (&r, TFB_SCREEN_MAIN, TFB_SCREEN_EXTRA);
+-			// fills screen with transparent color
+-			TFB_DrawScreen_Rect (&r, 0, 0, 128, TFB_SCREEN_MAIN);
++			// draw to subtitle cache; prepare first
++			OldContext = SetContext (TextCacheContext);
++			ClearDrawable ();
+ 
+ 			last_subtitle = pTextIn->pStr;
+ 		}
+@@ -302,16 +317,13 @@ add_text (int status, PTEXT pTextIn)
+ 
+ 	if (status == 1)
+ 	{
+-		RECT r;
+-		GetContextClipRect (&r);
++		STAMP s;
+ 		
+-		// copies subtitle to cache
+-		TFB_DrawScreen_CopyToImage (subtitle_cache, &r, TFB_SCREEN_MAIN);
+-		// restores background
+-		TFB_DrawScreen_Copy (&r, TFB_SCREEN_EXTRA, TFB_SCREEN_MAIN);
+-		// draws cached subtitle
+-		TFB_DrawScreen_Image (subtitle_cache, r.corner.x, r.corner.y, 0, 0,
+-				TFB_SCREEN_MAIN);
++		// we were drawing to cache -- flush to screen
++		SetContext (OldContext);
++		s.origin.x = s.origin.y = 0;
++		s.frame = TextCacheFrame;
++		DrawStamp (&s);
+ 		
+ 		last_baseline = pText->baseline.y;
+ 	}
+@@ -547,15 +559,8 @@ xform_complete (void)
+ void
+ init_communication (void)
+ {
+-	TFB_Canvas canvas;
+-
+ 	subtitle_mutex = CreateMutex ("Subtitle Lock", SYNC_CLASS_TOPLEVEL | SYNC_CLASS_VIDEO);
+ 	init_xform_control ();
+-
+-	canvas = TFB_DrawCanvas_New_TrueColor (SIS_SCREEN_WIDTH,
+-		SIS_SCREEN_HEIGHT - SLIDER_Y - SLIDER_HEIGHT + 2, FALSE);
+-	subtitle_cache = TFB_DrawImage_New (canvas);
+-	TFB_DrawCanvas_SetTransparentColor (subtitle_cache->NormalImg, 0, 0, 128, TRUE);
+ }
+ 
+ void
+@@ -563,8 +568,6 @@ uninit_communication (void)
+ {
+ 	DestroyMutex (subtitle_mutex);
+ 	uninit_xform_control ();
+-	TFB_DrawImage_Delete (subtitle_cache);
+-	subtitle_cache = NULL;
+ }
+ 
+ static volatile BOOLEAN ColorChange;
+@@ -893,7 +896,7 @@ ambient_anim_task (void *data)
+ 		BOOLEAN Change, CanTalk;
+ 		DWORD CurTime, ElapsedTicks;
+ 
+-		SleepThreadUntil (LastTime + ONE_SECOND / 120);
++		SleepThreadUntil (LastTime + ONE_SECOND / AMBIENT_ANIM_RATE);
+ 
+ 		LockMutex (GraphicsLock);
+ 		BatchGraphics ();
+@@ -1275,7 +1278,7 @@ ambient_anim_task (void *data)
+ 
+ 			SetContext (OldContext);
+ 		}
+-		if (LastOscillTime + (ONE_SECOND / 32) < CurTime)
++		if (LastOscillTime + (ONE_SECOND / OSCILLOSCOPE_RATE) < CurTime)
+ 		{
+ 			LastOscillTime = CurTime;
+ 			UpdateSpeechGraphics (FALSE);
+@@ -1967,6 +1970,7 @@ HailAlien (void)
+ 	ENCOUNTER_STATE ES;
+ 	FONT PlayerFont, OldFont;
+ 	MUSIC_REF SongRef = 0;
++	COLOR TextBack;
+ 
+ 	pCurInputState = &ES;
+ 	memset (pCurInputState, 0, sizeof (*pCurInputState));
+@@ -1997,6 +2001,18 @@ HailAlien (void)
+ 			LoadStringTableInstance ((RESOURCE)CommData.ConversationPhrases)
+ 			);
+ 
++	// init subtitle cache context
++	TextCacheContext = CaptureContext (CreateContext ());
++	TextCacheFrame = CaptureDrawable (CreateDrawable (WANT_PIXMAP | WANT_MASK,
++		SIS_SCREEN_WIDTH, SIS_SCREEN_HEIGHT - SLIDER_Y - SLIDER_HEIGHT + 2,
++		1));
++	SetContext (TextCacheContext);
++	SetContextFGFrame (TextCacheFrame);
++	TextBack = BUILD_COLOR (MAKE_RGB15 (0, 0, 0x10), 1);
++	SetContextBackGroundColor (TextBack);
++	ClearDrawable ();
++	SetFrameTransparentColor (TextCacheFrame, TextBack);
++
+ 	ES.phrase_buf_index = 1;
+ 	ES.phrase_buf[0] = '\0';
+ 
+@@ -2069,6 +2085,9 @@ HailAlien (void)
+ 	DestroyColorMap (ReleaseColorMap (CommData.AlienColorMap));
+ 	DestroyFont (ReleaseFont (CommData.AlienFont));
+ 	DestroyDrawable (ReleaseDrawable (CommData.AlienFrame));
++
++	DestroyContext (ReleaseContext (TextCacheContext));
++	DestroyDrawable (ReleaseDrawable (TextCacheFrame));
+ 
+ 	SetContext (SpaceContext);
+ 	SetContextFont (OldFont);

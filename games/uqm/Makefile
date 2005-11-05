@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.15 2005/09/16 09:51:27 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2005/11/05 03:48:40 jolan Exp $
+# XXX hardcoded endian list
 
 # 64-bit issues, unaligned memory access
 ONLY_FOR_ARCHS=	arm i386 powerpc
@@ -24,12 +25,12 @@ DISTFILES=		${PDIST} ${CDIST}
 SUPDISTFILES=		${MDIST} ${VDIST} ${RM1DIST} ${RM2DIST} ${RM3DIST}
 DIST_SUBDIR=		uqm
 CATEGORIES=		games x11
-PKGNAME=		uqm-${VER}p0
-PKGNAME-remix1=		uqm-remix1-${VER}
-PKGNAME-remix2=		uqm-remix2-${VER}
-PKGNAME-remix3=		uqm-remix3-${VER}
-PKGNAME-threedomusic=	uqm-threedomusic-${VER}
-PKGNAME-voice=		uqm-voice-${VER}
+PKGNAME=		uqm-${VER}p1
+PKGNAME-remix1=		uqm-remix1-${VER}p0
+PKGNAME-remix2=		uqm-remix2-${VER}p0
+PKGNAME-remix3=		uqm-remix3-${VER}p0
+PKGNAME-threedomusic=	uqm-threedomusic-${VER}p0
+PKGNAME-voice=		uqm-voice-${VER}p0
 EXTRACT_ONLY=		${PDIST}
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sc2/}
 
@@ -40,10 +41,17 @@ PERMIT_PACKAGE_CDROM=	"Unresolved licensing issues"
 PERMIT_PACKAGE_FTP=	"Unresolved licensing issues"
 PERMIT_DISTFILES_CDROM=	"Unresolved licensing issues"
 PERMIT_DISTFILES_FTP=	"Unresolved licensing issues"
-WANTLIB=		SDL X11 Xext c m ogg pthread usbhid z
 
-LIB_DEPENDS=	SDL_image::devel/sdl-image \
-		vorbis.0,vorbisfile.1::audio/libvorbis
+LIB_DEPENDS=	SDL_image::devel/sdl-image
+WANTLIB=	X11 Xext c m pthread usbhid z \
+		SDL
+
+.if ${MACHINE_ARCH} == "arm"
+LIB_DEPENDS+=	vorbisidec.1::audio/tremor
+.else
+LIB_DEPENDS+=	vorbis.0,vorbisfile.1::audio/libvorbis
+WANTLIB+=	ogg
+.endif
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
@@ -77,6 +85,9 @@ MULTI_PACKAGES+=-voice
 SUBPACKAGE?=
 
 .if defined(PACKAGING)
+. if !empty(SUBPACKAGE)
+WANTLIB=
+. endif
 . if ${SUBPACKAGE} == "-remix1"
 PKG_ARCH=	*
 RUN_DEPENDS=	::games/uqm
@@ -111,10 +122,21 @@ do-configure:
 	@sed -e "s|@PREFIX@|${PREFIX}|g ; s|@ENDIAN@|define|g" \
 		${FILESDIR}/config_unix.h > ${WRKSRC}/src/config_unix.h
 .endif
+.if ${MACHINE_ARCH} == "arm"
 	@sed -e "s|@CC@|${CC}|g ; s|@CFLAGS@|${CFLAGS}|g ; \
+		s|@CFLAGS_TREMOR@|-DOVCODEC_TREMOR|g ; \
 		s|@LOCALBASE@|${LOCALBASE}|g ; s|@PREFIX@|${PREFIX}|g ; \
+		s|@SOUNDLIB@|-lvorbisidec|g ; \
 		s|@X11BASE@|${X11BASE}|g" ${FILESDIR}/build.vars \
 		> ${WRKSRC}/build.vars
+.else
+	@sed -e "s|@CC@|${CC}|g ; s|@CFLAGS@|${CFLAGS}|g ; \
+		s|@CFLAGS_TREMOR@||g ; \
+		s|@LOCALBASE@|${LOCALBASE}|g ; s|@PREFIX@|${PREFIX}|g ; \
+		s|@SOUNDLIB@|-lvorbisfile -lvorbis -logg|g ; \
+		s|@X11BASE@|${X11BASE}|g" ${FILESDIR}/build.vars \
+		> ${WRKSRC}/build.vars
+.endif
 
 do-build:
 	cd ${WRKBUILD}; ./build.sh uqm
