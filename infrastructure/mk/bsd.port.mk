@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.732 2005/11/05 11:11:17 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.733 2005/11/05 11:16:17 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -640,9 +640,9 @@ SUBST_VARS+=MACHINE_ARCH ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT MAINTAINER
 _tmpvars=
 _SED_SUBST=sed
 
-_PKGADD_AUTO?=
+_PKG_ADD_AUTO?=
 .if ${_SOLVING_DEP:L} == "yes"
-_PKGADD_AUTO+=-a
+_PKG_ADD_AUTO+=-a
 .endif
 
 .for _v in ${SUBST_VARS}
@@ -1091,9 +1091,10 @@ _regress_depends_target=${DEPENDS_TARGET}
 
 .if ${FORCE_UPDATE:L} == "yes"
 _force_update_fragment=eval $$toset ${MAKE} update
-_PKGADD_FORCE=-F update -F updatedepends -F installed -r
+_PKG_ADD_FORCE=-F update -F updatedepends -F installed -r
 .else
 _force_update_fragment=:
+_PKG_ADD_FORCE=
 .endif
 
 _FULL_PACKAGE_NAME?=No
@@ -1257,7 +1258,7 @@ _grab_libs_from_plist= sed -n -e '/^@lib /{ s///; p; }' \
 .if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE})
 ${_PACKAGE_COOKIE}:
 	@${ECHO_MSG} -n "===>  Looking for ${FULLPKGNAME} in \$$PKG_PATH - "
-	@if ${SETENV} PKG_CACHE=${PKGREPOSITORY} PKG_PATH=${PKGREPOSITORY}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKGADD_FORCE} ${FULLPKGNAME} >/dev/null 2>&1; then \
+	@if ${SETENV} PKG_CACHE=${PKGREPOSITORY} PKG_PATH=${PKGREPOSITORY}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKG_ADD_FORCE} ${FULLPKGNAME} >/dev/null 2>&1; then \
 		${ECHO_MSG} "found"; \
 		exit 0; \
 	fi; \
@@ -1280,7 +1281,7 @@ ${_PACKAGE_COOKIE}: ${_PACKAGE_COOKIE_DEPS}
 .  if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE_${_s}})
 ${_PACKAGE_COOKIE${_s}}:
 	@${ECHO_MSG} -n "===>  Looking for ${FULLPKGNAME${_s}} in \$$PKG_PATH - "
-	@if ${SETENV} PKG_CACHE=${PKGREPOSITORY} PKG_PATH=${PKGREPOSITORY}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKGADD_FORCE} ${FULLPKGNAME${_s}} >/dev/null 2>&1; then \
+	@if ${SETENV} PKG_CACHE=${PKGREPOSITORY} PKG_PATH=${PKGREPOSITORY}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKG_ADD_FORCE} ${FULLPKGNAME${_s}} >/dev/null 2>&1; then \
 		${ECHO_MSG} "found"; \
 		exit 0; \
 	fi; \
@@ -1992,10 +1993,10 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
 	@if pkg_info -q -e ${FULLPKGNAME${SUBPACKAGE}}; then \
 		echo "Package ${FULLPKGNAME${SUBPACKAGE}} is already installed"; \
 	else \
-		${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}/ PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} ${PKGFILE${SUBPACKAGE}}; \
+		${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}/ PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} ${PKGFILE${SUBPACKAGE}}; \
 	fi
 .  else
-	@${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}/ PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} ${PKGFILE${SUBPACKAGE}}
+	@${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}/ PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} ${PKGFILE${SUBPACKAGE}}
 .  endif
 	@-${SUDO} ${_MAKE_COOKIE} $@
 .endif
@@ -2012,7 +2013,7 @@ ${_UPDATE_COOKIE}: ${_PACKAGE_COOKIES}
 	case $$a in \
 		'') ${ECHO_MSG} "Not installed, no update";; \
 		*) ${ECHO_MSG} "Upgrading from $$a"; \
-		   ${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}/ PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} ${_PKGADD_FORCE} ${PKGFILE${SUBPACKAGE}};; \
+		   ${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}/ PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} ${_PKG_ADD_FORCE} ${PKGFILE${SUBPACKAGE}};; \
 	esac
 .else
 	@a=`pkg_info -e ${FULLPKGPATH} 2>/dev/null || true`; \
@@ -2020,7 +2021,7 @@ ${_UPDATE_COOKIE}: ${_PACKAGE_COOKIES}
 		'') ${ECHO_MSG} "Not installed, no update";; \
 		'${FULLPKGNAME${SUBPACKAGE}}') ${ECHO_MSG} "Already installed, no update";; \
 		*) ${ECHO_MSG} "Upgrading from $$a"; \
-		   ${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}/ PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} -r ${PKGFILE${SUBPACKAGE}};; \
+		   ${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}/ PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} -r ${PKGFILE${SUBPACKAGE}};; \
 	esac
 .endif
 	@${_MAKE_COOKIE} $@
