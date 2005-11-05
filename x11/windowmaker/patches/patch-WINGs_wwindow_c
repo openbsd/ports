@@ -1,0 +1,29 @@
+$OpenBSD: patch-WINGs_wwindow_c,v 1.1 2005/11/05 23:32:44 wilfried Exp $
+--- WINGs/wwindow.c~	Sun Oct 24 04:58:20 2004
++++ WINGs/wwindow.c	Sat Nov  5 15:38:16 2005
+@@ -254,14 +254,14 @@
+ setMiniwindow(WMWindow *win, RImage *image)
+ {
+     WMScreen *scr= win->view->screen;
+-    CARD32 *data;
++    long *data;
+     int x, y;
+     int o;
+ 
+     if (!image)
+       return;
+ 
+-    data = wmalloc((image->width * image->height + 2) * sizeof(CARD32));
++    data = wmalloc((image->width * image->height + 2) * sizeof(long));
+ 
+     o= 0;
+     data[o++] = image->width;
+@@ -269,7 +269,7 @@
+ 
+     for (y= 0; y < image->height; y++) {
+         for (x= 0; x < image->width; x++) {
+-            CARD32 pixel;
++            long pixel;
+             int offs= (x+y*image->width);
+             
+             if (image->format == RRGBFormat)

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.60 2005/11/01 17:28:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.61 2005/11/05 23:32:44 wilfried Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 COMMENT-lang=		"language subpackage for Window Maker"
 
 V=			0.92.0
 DISTNAME=		WindowMaker-${V}
-PKGNAME=		${DISTNAME:L}
+PKGNAME=		${DISTNAME:L}p0
 CATEGORIES=		x11 x11/windowmaker
 
 HOMEPAGE=		http://www.windowmaker.org/
