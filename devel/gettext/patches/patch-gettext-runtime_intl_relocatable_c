@@ -1,0 +1,26 @@
+$OpenBSD: patch-gettext-runtime_intl_relocatable_c,v 1.1 2005/11/05 23:47:58 naddy Exp $
+--- gettext-runtime/intl/relocatable.c.orig	Wed Nov  2 21:45:39 2005
++++ gettext-runtime/intl/relocatable.c	Wed Nov  2 21:48:14 2005
+@@ -429,15 +429,19 @@ relocate (const char *pathname)
+ 	{
+ 	  /* pathname starts with orig_prefix.  */
+ 	  const char *pathname_tail = &pathname[orig_prefix_len];
+-	  char *result =
+-	    (char *) xmalloc (curr_prefix_len + strlen (pathname_tail) + 1);
++	  size_t len;
++	  char *result;
++	  
++	  len = curr_prefix_len + strlen (pathname_tail) + 1;
++	  result = (char *) xmalloc (len);
+ 
+ #ifdef NO_XMALLOC
+ 	  if (result != NULL)
+ #endif
+ 	    {
+ 	      memcpy (result, curr_prefix, curr_prefix_len);
+-	      strcpy (result + curr_prefix_len, pathname_tail);
++	      result[curr_prefix_len] = '\0';
++	      strlcat (result, pathname_tail, len);
+ 	      return result;
+ 	    }
+ 	}

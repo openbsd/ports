@@ -1,0 +1,25 @@
+$OpenBSD: patch-gettext-runtime_intl_log_c,v 1.1 2005/11/05 23:47:58 naddy Exp $
+--- gettext-runtime/intl/log.c.orig	Wed Nov  2 21:44:38 2005
++++ gettext-runtime/intl/log.c	Wed Nov  2 21:45:26 2005
+@@ -56,6 +56,7 @@ _nl_log_untranslated (const char *logfil
+   static char *last_logfilename = NULL;
+   static FILE *last_logfile = NULL;
+   FILE *logfile;
++  size_t len;
+ 
+   /* Can we reuse the last opened logfile?  */
+   if (last_logfilename == NULL || strcmp (logfilename, last_logfilename) != 0)
+@@ -72,10 +73,11 @@ _nl_log_untranslated (const char *logfil
+ 	  last_logfilename = NULL;
+ 	}
+       /* Open the logfile.  */
+-      last_logfilename = (char *) malloc (strlen (logfilename) + 1);
++      len = strlen (logfilename) + 1;
++      last_logfilename = (char *) malloc (len);
+       if (last_logfilename == NULL)
+ 	return;
+-      strcpy (last_logfilename, logfilename);
++      strlcpy (last_logfilename, logfilename, len);
+       last_logfile = fopen (logfilename, "a");
+       if (last_logfile == NULL)
+ 	return;

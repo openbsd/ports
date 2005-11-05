@@ -1,0 +1,61 @@
+$OpenBSD: patch-gettext-tools_src_Makefile_in,v 1.1 2005/11/05 23:47:58 naddy Exp $
+--- gettext-tools/src/Makefile.in.orig	Mon May 23 13:24:29 2005
++++ gettext-tools/src/Makefile.in	Wed Nov  2 21:57:32 2005
+@@ -591,8 +591,7 @@ urlget_SOURCES = urlget.c
+ # Need @LTLIBICONV@ because po-charset.c, po-lex.c, msgl-iconv.c, write-po.c
+ # use iconv().
+ libgettextsrc_la_LDFLAGS = \
+-  -release @VERSION@ \
+-  ../lib/libgettextlib.la @LTLIBINTL@ @LTLIBICONV@ -lc -no-undefined
++  ../lib/libgettextlib.la -no-undefined
+ 
+ 
+ # How to build libgettextpo.la.
+@@ -601,7 +600,7 @@ libgettextsrc_la_LDFLAGS = \
+ libgettextpo_la_LDFLAGS = \
+   -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
+   -rpath $(libdir) \
+-  libgettextsrc.la ../lib/libgettextlib.la @LTLIBINTL@ @LTLIBICONV@ -lc -no-undefined
++  libgettextsrc.la ../lib/libgettextlib.la -no-undefined
+ 
+ # Build order. Only needed for "make -j[N]".
+ libgettextpo_la_DEPENDENCIES = libgettextsrc.la
+@@ -610,23 +609,23 @@ libgettextpo_la_DEPENDENCIES = libgettex
+ # INTL_MACOSX_LIBS is needed because the programs depend on libintl.la
+ # but libtool doesn't put -Wl,-framework options into .la files.
+ # For msginit, it is also needed because of localename.c.
+-msgcmp_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
+-msgfmt_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
+-msgmerge_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
+-msgunfmt_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
+-xgettext_LDADD = $(LIBUNINAME) libgettextsrc.la @INTL_MACOSX_LIBS@ @LTLIBEXPAT@
+-msgattrib_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
+-msgcat_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
+-msgcomm_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
+-msgconv_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
+-msgen_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
+-msgexec_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
+-msgfilter_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
+-msggrep_LDADD = $(LIBGREP) libgettextsrc.la @INTL_MACOSX_LIBS@
++msgcmp_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msgfmt_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msgmerge_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msgunfmt_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++xgettext_LDADD = $(LIBUNINAME) libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@ @LTLIBEXPAT@
++msgattrib_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msgcat_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msgcomm_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msgconv_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msgen_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msgexec_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msgfilter_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
++msggrep_LDADD = $(LIBGREP) libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
+ msginit_LDADD = ../intl/localename.@INTL_LIBTOOL_SUFFIX_PREFIX@o \
+-                libgettextsrc.la @INTL_MACOSX_LIBS@
++                libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
+ 
+-msguniq_LDADD = libgettextsrc.la @INTL_MACOSX_LIBS@
++msguniq_LDADD = libgettextsrc.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
+ 
+ # Specify installation directory, for --enable-relocatable.
+ msgcmp_CFLAGS = -DINSTALLDIR=\"$(bindir)\"

@@ -1,0 +1,12 @@
+$OpenBSD: patch-gettext-tools_tests_xgettext-java-2,v 1.1 2005/11/05 23:47:58 naddy Exp $
+--- gettext-tools/tests/xgettext-java-2.orig	Tue Nov  1 23:15:23 2005
++++ gettext-tools/tests/xgettext-java-2	Tue Nov  1 23:15:31 2005
+@@ -62,7 +62,7 @@ tmpfiles="$tmpfiles xg-j-2.tmp xg-j-2.po
+ : ${XGETTEXT=xgettext}
+ ${XGETTEXT} --from-code=ISO-8859-1 -c -o xg-j-2.tmp xg-j-2.java 2>/dev/null
+ test $? = 0 || { rm -fr $tmpfiles; exit 1; }
+-grep -v 'POT-Creation-Date' < xg-j-2.tmp > xg-j-2.pot
++grep -av 'POT-Creation-Date' < xg-j-2.tmp > xg-j-2.pot
+ 
+ tmpfiles="$tmpfiles xg-j-2.ok"
+ cat <<\EOF > xg-j-2.ok

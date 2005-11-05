@@ -1,0 +1,12 @@
+$OpenBSD: patch-gettext-tools_libuniname_Makefile_in,v 1.1 2005/11/05 23:47:58 naddy Exp $
+--- gettext-tools/libuniname/Makefile.in.orig	Tue Nov  1 18:59:00 2005
++++ gettext-tools/libuniname/Makefile.in	Tue Nov  1 19:00:55 2005
+@@ -345,7 +345,7 @@ TESTS = test-names.sh
+ TESTS_ENVIRONMENT = top_srcdir=$(top_srcdir) $(SHELL)
+ # INTL_MACOSX_LIBS is needed because libgettextlib.la depends on libintl.la
+ # but libtool doesn't put -Wl,-framework options into .la files.
+-test_names_LDADD = libuniname.a ../lib/libgettextlib.la @INTL_MACOSX_LIBS@
++test_names_LDADD = libuniname.a ../lib/libgettextlib.la ../intl/libintl.la @LTLIBICONV@ @INTL_MACOSX_LIBS@
+ all: all-am
+ 
+ .SUFFIXES:

@@ -1,2 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2004/10/24 19:54:46 brad Exp $
-@lib lib/libintl.so.2.0
+@comment $OpenBSD: PFRAG.shared,v 1.6 2005/11/05 23:47:58 naddy Exp $
+@lib lib/libasprintf.so.0.0
+@lib lib/libgettextlib.so.0.0
+@lib lib/libgettextpo.so.1.0
+@lib lib/libgettextsrc.so.0.0
+@lib lib/libintl.so.3.0

@@ -1,0 +1,13 @@
+$OpenBSD: patch-gettext-tools_lib_Makefile_in,v 1.1 2005/11/05 23:47:58 naddy Exp $
+--- gettext-tools/lib/Makefile.in.orig	Mon May 23 13:24:27 2005
++++ gettext-tools/lib/Makefile.in	Wed Nov  2 21:57:01 2005
+@@ -454,8 +454,7 @@ libgettextlib_la_LIBADD = @LTLIBOBJS@
+ # Need @LTLIBINTL@ because many source files use gettext().
+ # Need @LTLIBICONV@ because linebreak.c uses iconv().
+ libgettextlib_la_LDFLAGS = \
+-  -release @VERSION@ \
+-  @LTLIBINTL@ @LTLIBICONV@ -lc -no-undefined
++  -no-undefined
+ 
+ 
+ # Extra files to be installed.

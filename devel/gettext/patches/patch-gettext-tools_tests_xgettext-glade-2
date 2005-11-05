@@ -1,0 +1,12 @@
+$OpenBSD: patch-gettext-tools_tests_xgettext-glade-2,v 1.1 2005/11/05 23:47:58 naddy Exp $
+--- gettext-tools/tests/xgettext-glade-2.orig	Tue Nov  1 23:14:09 2005
++++ gettext-tools/tests/xgettext-glade-2	Tue Nov  1 23:14:36 2005
+@@ -60,7 +60,7 @@ tmpfiles="$tmpfiles xg-gl-2.tmp xg-gl-2.
+ : ${XGETTEXT=xgettext}
+ ${XGETTEXT} --add-comments -o xg-gl-2.tmp simple.glade 
+ test $? = 0 || { rm -fr $tmpfiles; exit 1; }
+-grep -v 'POT-Creation-Date' < xg-gl-2.tmp > xg-gl-2.pot
++grep -av 'POT-Creation-Date' < xg-gl-2.tmp > xg-gl-2.pot
+ 
+ tmpfiles="$tmpfiles xg-gl-2.ok"
+ cat <<\EOF > xg-gl-2.ok
