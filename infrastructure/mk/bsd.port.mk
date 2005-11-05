@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.730 2005/11/04 09:40:30 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.731 2005/11/05 10:35:02 sturm Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1093,6 +1093,7 @@ _regress_depends_target=${DEPENDS_TARGET}
 
 .if ${FORCE_UPDATE:L} == "yes"
 _force_update_fragment=eval $$toset ${MAKE} update
+_PKGADD_FORCE=-F update -F updatedepends -F installed -r
 .else
 _force_update_fragment=:
 .endif
@@ -1242,12 +1243,12 @@ _size_fragment=wc -c $$file 2>/dev/null| awk '{print "SIZE (" $$2 ") = " $$1}'
 
 .if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE})
 ${_PACKAGE_COOKIE}:
-	@echo -n "===>  Looking for ${FULLPKGNAME} in \$$PKG_PATH - "
-	@if ${SETENV} PKG_CACHE=${PKGREPOSITORY} PKG_PATH=${PKGREPOSITORY}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n ${FULLPKGNAME} >/dev/null 2>&1; then \
-		echo "found"; \
+	@${ECHO_MSG} -n "===>  Looking for ${FULLPKGNAME} in \$$PKG_PATH - "
+	@if ${SETENV} PKG_CACHE=${PKGREPOSITORY} PKG_PATH=${PKGREPOSITORY}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKGADD_FORCE} ${FULLPKGNAME} >/dev/null 2>&1; then \
+		${ECHO_MSG} "found"; \
 		exit 0; \
 	fi; \
-	echo "not found"; \
+	${ECHO_MSG} "not found"; \
 	cd ${.CURDIR} && exec ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE}=Yes ${_PACKAGE_COOKIE}
 .else
 .  if ${BIN_PACKAGES:L} == "yes"
@@ -1265,12 +1266,12 @@ ${_PACKAGE_COOKIE}: ${_PACKAGE_COOKIE_DEPS}
 .for _s in ${MULTI_PACKAGES}
 .  if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE_${_s}})
 ${_PACKAGE_COOKIE${_s}}:
-	@echo -n "===>  Looking for ${FULLPKGNAME${_s}} in \$$PKG_PATH - "
-	@if ${SETENV} PKG_CACHE=${PKGREPOSITORY} PKG_PATH=${PKGREPOSITORY}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n ${FULLPKGNAME${_s}} >/dev/null 2>&1; then \
-		echo "found"; \
+	@${ECHO_MSG} -n "===>  Looking for ${FULLPKGNAME${_s}} in \$$PKG_PATH - "
+	@if ${SETENV} PKG_CACHE=${PKGREPOSITORY} PKG_PATH=${PKGREPOSITORY}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKGADD_FORCE} ${FULLPKGNAME${_s}} >/dev/null 2>&1; then \
+		${ECHO_MSG} "found"; \
 		exit 0; \
 	fi; \
-	echo "not found"; \
+	${ECHO_MSG} "not found"; \
 	cd ${.CURDIR} && exec ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE_${_s}}=Yes ${_PACKAGE_COOKIE${_s}}
 .  else
 .    if ${BIN_PACKAGES:L} == "yes"
@@ -1998,7 +1999,7 @@ ${_UPDATE_COOKIE}: ${_PACKAGE_COOKIES}
 	case $$a in \
 		'') ${ECHO_MSG} "Not installed, no update";; \
 		*) ${ECHO_MSG} "Upgrading from $$a"; \
-		   ${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}/ PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} -F update -F updatedepends -F installed -r ${PKGFILE${SUBPACKAGE}};; \
+		   ${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}/ PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} ${_PKGADD_FORCE} ${PKGFILE${SUBPACKAGE}};; \
 	esac
 .else
 	@a=`pkg_info -e ${FULLPKGPATH} 2>/dev/null || true`; \
