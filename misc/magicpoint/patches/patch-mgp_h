@@ -1,0 +1,24 @@
+$OpenBSD: patch-mgp_h,v 1.1 2005/11/05 09:28:42 espie Exp $
+--- mgp.h.orig	Sat Nov  5 10:09:50 2005
++++ mgp.h	Sat Nov  5 10:15:33 2005
+@@ -276,6 +276,7 @@ struct ctrl {
+ 	u_char ct_flag;
+ 	u_int ct_page;
+ 	struct ctrl *ct_next;
++	int ct_type;
+ 	union {
+ 		struct ctrl_double ctrl_double;
+ 		struct ctrl_int ctrl_int;
+@@ -291,6 +292,12 @@ struct ctrl {
+ 		struct ctrl_pcache ctrl_pcache;
+ 	} ct_val;
+ };
++
++#define CTL_INT 0
++#define CTL_CHAR 1
++#define CTL_CHAR2 2
++#define CTL_DOUBLE 3
++#define CTL_LONG 4
+ 
+ #define ctf_value	ct_val.ctrl_double.ct_value
+ #define cti_value	ct_val.ctrl_int.ct_value

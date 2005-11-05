@@ -1,0 +1,35 @@
+$OpenBSD: patch-grammar_y,v 1.1 2005/11/05 09:28:42 espie Exp $
+--- grammar.y.orig	Sat Nov  5 10:10:34 2005
++++ grammar.y	Sat Nov  5 10:15:31 2005
+@@ -145,6 +145,7 @@ gen_double_int(op, v)
+ 		return ct;
+ 	}
+ 	ct->ctf_value = (double)v;
++	ct->ct_type = CTL_DOUBLE;
+ 	return ct;
+ }
+ 
+@@ -175,6 +176,7 @@ gen_int(op, v)
+ 		return ct;
+ 	}
+ 	ct->cti_value = v;
++	ct->ct_type = CTL_INT;
+ 	return ct;
+ }
+ 
+@@ -190,6 +192,7 @@ gen_str(op, str)
+ 		return ct;
+ 	}
+ 	ct->ctc_value = strdup(str);
++	ct->ct_type = CTL_CHAR;
+ 	return ct;
+ }
+ 
+@@ -207,6 +210,7 @@ gen_str2(op, str1, str2)
+ 	}
+ 	ct->ctc2_value1 = strdup(str1);
+ 	ct->ctc2_value2 = strdup(str2);
++	ct->ct_type = CTL_CHAR2;
+ 	return ct;
+ }
+ 

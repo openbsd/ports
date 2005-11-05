@@ -1,0 +1,29 @@
+$OpenBSD: patch-parse_c,v 1.1 2005/11/05 09:28:42 espie Exp $
+--- parse.c.orig	Sat Nov  5 10:15:39 2005
++++ parse.c	Sat Nov  5 10:20:57 2005
+@@ -355,14 +355,17 @@ read_file(fp, filename, page, line, prea
+ 
+ 		case CTL_TAB:
+ 		    {
+-			int i = root->cti_value - 1;
+-			if (i < 0) {
+-				fprintf(stderr, "%s:%d: "
+-					"invalid tab index %d\n",
+-					filename, lineno, root->cti_value);
+-				exit(-1);
+-			}
+-			if (i >= MAXTAB) {	/*XXX*/
++		    	int i;
++
++		    	if (root->ct_type == CTL_INT) {
++				i = root->cti_value - 1;
++				if (i < 0) {
++					fprintf(stderr, "%s:%d: "
++						"invalid tab index %d\n",
++						filename, lineno, root->cti_value);
++					exit(-1);
++				}
++			} else {
+ 				/* must be a string */
+ 				/* find a free entry */
+ 				for (i = MAXTAB ; i < MAXTAB + MAXSTYLE ; i++) {
