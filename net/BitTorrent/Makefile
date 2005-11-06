@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2005/10/18 14:12:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2005/11/06 01:06:07 naddy Exp $
 
 COMMENT=	"cooperative file distribution system implemented in Python"
 COMMENT-gui=	"graphical interface components for BitTorrent"
@@ -19,12 +19,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bittorrent/}
-MASTER_SITES0=	http://grappa.unix-ag.uni-kl.de/~naddy/
-DISTFILES=	${DISTNAME}.tar.gz
-# pre-built file because our gettext tools are too old
-DISTFILES+=	bt416-messages.pot:0
 
 MODULES=	lang/python
+BUILD_DEPENDS=	::devel/gettext
 
 MULTI_PACKAGES=	-gui
 SUBPACKAGE?=
@@ -35,8 +32,6 @@ RUN_DEPENDS=	:${PKGNAME}:net/BitTorrent \
 .endif
 
 NO_REGRESS=	Yes
-
-EXTRACT_CASES=	*.pot) cp ${FULLDISTDIR}/$$archive ${WRKDIST}/messages.pot ;;
 
 post-configure:
 	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' ${WRKBUILD}/*.py
