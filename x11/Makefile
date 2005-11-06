@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.225 2005/11/02 23:54:59 wilfried Exp $
+# $OpenBSD: Makefile,v 1.226 2005/11/06 13:25:34 alek Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 855resolution
@@ -10,6 +10,7 @@
      SUBDIR += aewm
      SUBDIR += afterstep
      SUBDIR += amiwm
+     SUBDIR += artwiz-aleczapka
      SUBDIR += asapm
      SUBDIR += asclock
      SUBDIR += asfiles
