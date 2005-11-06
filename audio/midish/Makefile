@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/11/04 02:19:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2005/11/06 02:10:48 naddy Exp $
  
 COMMENT=		"command line MIDI sequencer and filter"
 DISTNAME=		midish-0.2.2
@@ -17,16 +17,15 @@ WANTLIB=		c termcap readline
 NO_REGRESS=		Yes
 
 do-install:
-.for i in midish rmidish smfplay smfrec
-	${INSTALL_PROGRAM} ${WRKBUILD}/$i ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/$i.1 ${PREFIX}/man/man1
-.endfor
+	${INSTALL_PROGRAM} ${WRKBUILD}/midish ${WRKBUILD}/rmidish ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/smfplay ${WRKSRC}/smfrec ${PREFIX}/bin
+	cd ${WRKSRC}; ${INSTALL_MAN} midish.1 rmidish.1 smfplay.1 smfrec.1 \
+		${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/midish
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/manual.html \
 	        ${PREFIX}/share/doc/midish
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/midish
 	${INSTALL_DATA} ${WRKSRC}/midishrc ${WRKSRC}/sample.sng \
 		${PREFIX}/share/examples/midish
-
 
 .include <bsd.port.mk>
