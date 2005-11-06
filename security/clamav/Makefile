@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2005/11/01 16:22:40 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.12 2005/11/06 19:31:43 mbalmer Exp $
 
-COMMENT=		"free virus scanner"
-DISTNAME=		clamav-0.87
-PKGNAME=		${DISTNAME}p1
+COMMENT=		"virus scanner"
+DISTNAME=		clamav-0.87.1
 CATEGORIES=		security
 
 HOMEPAGE=		http://www.clamav.net/
@@ -28,7 +27,8 @@ RUN_DEPENDS=		:lha-*:archivers/lha \
 			:arc-*:archivers/arc \
 			:unzip-*:archivers/unzip 
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=clamav/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=clamav/} \
+			${HOMEPAGE}
 
 CONFIGURE_STYLE=        gnu
 CONFIGURE_ARGS+=        ${CONFIGURE_SHARED}
