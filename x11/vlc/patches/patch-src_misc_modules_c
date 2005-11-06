@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_misc_modules_c,v 1.1 2005/11/06 00:33:44 jolan Exp $
+--- src/misc/modules.c.orig	Sat Jun 25 08:43:02 2005
++++ src/misc/modules.c	Sat Nov  5 17:51:12 2005
+@@ -1399,10 +1399,7 @@ static int LoadModule( vlc_object_t *p_t
+     /* Update: FYI, this is Debian bug #180505, and seems to be fixed. */
+     if( !b_kde && !strstr( psz_file, "kde" ) )
+     {
+-        dlopen( "libstdc++.so.6", RTLD_NOW )
+-         || dlopen( "libstdc++.so.5", RTLD_NOW )
+-         || dlopen( "libstdc++.so.4", RTLD_NOW )
+-         || dlopen( "libstdc++.so.3", RTLD_NOW );
++        dlopen( "libstdc++.so", RTLD_NOW );
+         b_kde = VLC_TRUE;
+     }
+ 
