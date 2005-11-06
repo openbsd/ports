@@ -1,9 +1,9 @@
-# $OpenBSD: zope.port.mk,v 1.2 2004/08/03 17:08:29 xsa Exp $
+# $OpenBSD: zope.port.mk,v 1.3 2005/11/06 20:20:58 mbalmer Exp $
 #
 #	zope.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
 
-MODZOPE_PYTHON_VERSION=	2.3
+MODZOPE_PYTHON_VERSION=	2.4
 
 BUILD_DEPENDS+= ::lang/python/${MODZOPE_PYTHON_VERSION}
 RUN_DEPENDS+=	::www/zope

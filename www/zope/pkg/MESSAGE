@@ -1,7 +1,7 @@
-This package uses the INSTANCE_HOME installation method, as described
-at http://www.zope.org/Members/4am/instancehome.  This allows you
-to install the Zope package once and create as many sites as you
-want without changing your core Zope installation.
+This package uses the INSTANCE_HOME installation method, as described at
+http://www.zope.org/Members/4am/instancehome.  This allows you to install the
+Zope package once and create as many sites as you want without changing your
+core Zope installation.
 
 Have a look at ${ZOPEHOME}/doc/README.OpenBSD
 to see how to create your instance and have it start at boot time.

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2005/10/07 12:02:19 aanriot Exp $
+# $OpenBSD: Makefile,v 1.25 2005/11/06 20:20:58 mbalmer Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"object-oriented web application server"
 
-VERSION=	2.7.4
-DISTNAME=	Zope-${VERSION}-0
-PKGNAME=	${DISTNAME:S/-0//g:L}p0
+VERSION=	2.8.4
+DISTNAME=	Zope-${VERSION}-final
+PKGNAME=	${DISTNAME:S/-final//:L}
 CATEGORIES=     www
 
 HOMEPAGE=	http://www.zope.org/
@@ -19,33 +19,31 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}Products/Zope/${VERSION}/ \
-		http://catai.net/distfiles/
+MASTER_SITES=	${HOMEPAGE}Products/Zope/${VERSION}/
 EXTRACT_SUFX=	.tgz
 
-PYTHON_VER=	2.3
-PYTHON_BIN=	${LOCALBASE}/bin/python${PYTHON_VER}
+MODPY_VERSION=	2.4
+MODULES=	lang/python
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
-		:python-expat-${PYTHON_VER}*:lang/python/${PYTHON_VER},-expat
+.if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
+RUN_DEPENDS+=	expat::textproc/expat
+.endif
 
-LIB_DEPENDS=	python2.3.0.0::lang/python/${PYTHON_VER}
-WANTLIB=	m c stdc++ pthread util
+NO_CONFIGURE=Yes
 
-CONFIGURE_STYLE=simple
-CONFIGURE_ARGS=	--with-python=${LOCALBASE}/bin/python${PYTHON_VER} \
-		--prefix=${WRKINST}/${ZOPEHOME} \
-		--build-base=${WRKSRC}
-
-MAKE_FILE=	makefile
-ALL_TARGET=	build
+BUILD_ARGS=		--build-base=${WRKSRC} \
+			--build-lib="${WRKSRC}/build-lib" \
+			--build-scripts="${WRKSRC}/build-scripts" \
+			--build-temp="${WRKSRC}/build-temp"
 
 ZOPEHOME=	${PREFIX}/lib/zope
 ZOPELIBDIR=	${ZOPEHOME}/lib/python
 ZOPEPRODUCTSDIR=${ZOPELIBDIR}/Products
 ZOPEUSER=	_zope
 ZOPEGROUP=	_zope
+
+MODPY_DISTUTILS_BUILD=	build ${BUILD_ARGS}
+MODPY_DISTUTILS_INSTALL=	install --prefix=${ZOPEHOME} ${BUILD_ARGS}
 
 SUBST_VARS+=	PYTHON_VER ZOPEHOME ZOPEUSER ZOPEGROUP
 

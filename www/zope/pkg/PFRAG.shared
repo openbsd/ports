@@ -1,35 +1,16 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/06 07:35:11 xsa Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2005/11/06 20:20:59 mbalmer Exp $
 lib/zope/lib/python/AccessControl/cAccessControl.so
-lib/zope/lib/python/Acquisition.so
-lib/zope/lib/python/BDBStorage/_helper.so
-lib/zope/lib/python/BTree.so
 lib/zope/lib/python/BTrees/_IIBTree.so
 lib/zope/lib/python/BTrees/_IOBTree.so
 lib/zope/lib/python/BTrees/_OIBTree.so
 lib/zope/lib/python/BTrees/_OOBTree.so
 lib/zope/lib/python/BTrees/_fsBTree.so
-lib/zope/lib/python/ComputedAttribute.so
 lib/zope/lib/python/DocumentTemplate/cDocumentTemplate.so
-lib/zope/lib/python/ExtensionClass.so
-lib/zope/lib/python/IIBTree.so
-lib/zope/lib/python/IOBTree.so
-lib/zope/lib/python/MethodObject.so
-lib/zope/lib/python/Missing.so
-lib/zope/lib/python/MultiMapping.so
-lib/zope/lib/python/OIBTree.so
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter/ISO_8859_1_Splitter.so
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/UnicodeSplitter/UnicodeSplitter.so
 lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter/ZopeSplitter.so
 lib/zope/lib/python/Products/ZCTextIndex/okascore.so
 lib/zope/lib/python/Products/ZCTextIndex/stopper.so
-lib/zope/lib/python/Record.so
-lib/zope/lib/python/SearchIndex/Splitter.so
 lib/zope/lib/python/Shared/DC/xml/pyexpat/dcpyexpat.so
-lib/zope/lib/python/ThreadLock.so
-lib/zope/lib/python/ZODB/TimeStamp.so
-lib/zope/lib/python/ZODB/cPersistence.so
-lib/zope/lib/python/ZODB/cPickleCache.so
-lib/zope/lib/python/ZODB/coptimizations.so
 lib/zope/lib/python/ZODB/winlock.so
 lib/zope/lib/python/initgroups.so
-lib/zope/lib/python/intSet.so
