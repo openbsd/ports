@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: out-of-date,v 1.14 2005/11/01 10:11:40 bernd Exp $
+# $OpenBSD: out-of-date,v 1.15 2005/11/06 09:34:20 espie Exp $
 #
 # Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
 #
@@ -41,6 +41,11 @@ sub collect_installed
 		my ($stem, $version) = OpenBSD::PackageName::splitname($name);
 		my $plist = OpenBSD::PackingList->from_installation($name,
 		    \&OpenBSD::PackingList::UpdateInfoOnly);
+		if (!defined $plist or !defined $plist->{extrainfo}->{subdir}) {
+			print STDERR "Package $name has no valid packing-list\n";
+			next;
+		}
+			
 		my $subdir = $plist->{extrainfo}->{subdir};
 		$subdir =~ s/mystuff\///;
 		$subdir =~ s/\/usr\/ports\///;
