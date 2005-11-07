@@ -1,17 +1,17 @@
-$OpenBSD: patch-configure,v 1.1 2003/12/26 10:44:10 jakob Exp $
---- configure.orig	2003-10-12 00:39:44.000000000 +0200
-+++ configure	2003-11-19 22:48:20.000000000 +0100
-@@ -6411,7 +6411,6 @@ openbsd*)
-     shlibpath_overrides_runpath=yes
-   fi
-   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+$OpenBSD: patch-configure,v 1.2 2005/11/07 15:59:08 mbalmer Exp $
+--- configure.orig	Wed Oct  5 20:41:09 2005
++++ configure	Tue Oct 18 14:30:27 2005
+@@ -9443,7 +9443,6 @@ openbsd*)
+     *)                         need_version=no  ;;
+   esac
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
 -  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
-   ;;
- 
-@@ -19751,6 +19750,7 @@ echo "configure:19748: checking for TCP 
- #line 19752 "configure"
- #include "confdefs.h"
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in
+@@ -34518,6 +34517,7 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
  
 +#include <sys/types.h>
  #include <tcpd.h>

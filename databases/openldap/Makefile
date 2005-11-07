@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.55 2005/10/08 09:12:38 jakob Exp $
+# $OpenBSD: Makefile,v 1.56 2005/11/07 15:59:08 mbalmer Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
 
-VERSION=	2.2.29
-DISTNAME=	openldap-${VERSION}
-FULLPKGNAME=	openldap-client-${VERSION}
-PKGNAME-server=	openldap-server-${VERSION}
+DISTNAME=	openldap-2.3.11
+FULLPKGNAME=	${DISTNAME:S/-/-client-/}
+PKGNAME-server=	${DISTNAME:S/-/-server-/}
 CATEGORIES=	databases net
 
 HOMEPAGE=	http://www.openldap.org/
 
-MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=     Marc Balmer <mbalmer@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -44,7 +43,9 @@ CONFIGURE_ARGS+=	\
 			--enable-cleartext \
 			--enable-crypt \
 			--enable-rewrite \
-			--enable-wrappers
+			--enable-wrappers \
+			--enable-sasl \
+			--enable-spasswd
 
 # slapd modules
 CONFIGURE_ARGS+=	\
@@ -66,38 +67,31 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/build
 
 REGRESS_TARGET=	test
 
-FLAVORS=	sasl bdb
+FLAVORS=	bdb
 FLAVOR?=
 
 MULTI_PACKAGES=	-server
 SUBPACKAGE?=
 
-.if ${FLAVOR:L:Msasl}
-CONFIGURE_ARGS+=	--with-cyrus-sasl \
-			--enable-spasswd
 LIB_DEPENDS+=		sasl2::security/cyrus-sasl2
 CPPFLAGS+=		-I${LOCALBASE}/include/sasl
-.else
-CONFIGURE_ARGS+=	--without-cyrus-sasl \
-			--disable-spasswd
-.endif
 
 .if ${FLAVOR:L:Mbdb}
-CONFIGURE_ARGS+=	--enable-bdb
+CONFIGURE_ARGS+=	--enable-bdb --enable-hdb
 LIB_DEPENDS+=		lib/db4/db.=4:db-4.*:databases/db/v4
 CPPFLAGS+=		-I${LOCALBASE}/include/db4
 LDFLAGS+=		-L${LOCALBASE}/lib/db4
 LIBS+=			-ldb
 .else
-CONFIGURE_ARGS+=	--disable-bdb
+CONFIGURE_ARGS+=	--disable-bdb --disable-hdb
 .endif
 
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
+			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
 			LIBS="${LIBS}"
 
 .if ${SUBPACKAGE} == "-server"
-RUN_DEPENDS=	openldap:openldap-client-${VERSION}:databases/openldap
+RUN_DEPENDS=	openldap:${FULLPKGNAME}:databases/openldap
 WANTLIB+=	perl util wrap m pthread
 .endif
 
@@ -106,7 +100,8 @@ pre-build:
 
 post-patch:
 .if ${FLAVOR:L:Msasl}
-	perl -pi -e 's,KRB5_LIBS=,KRB5_LIBS="-lgssapi -lkrb5 -lasn1 -lcom_err",g' ${WRKSRC}/configure
+	perl -pi -e 's,KRB5_LIBS=,KRB5_LIBS="-lgssapi -lkrb5 -lasn1 -lcom_err",g' \
+		${WRKSRC}/configure
 .endif
 
 post-install:
