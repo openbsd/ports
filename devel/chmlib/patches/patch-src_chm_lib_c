@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_chm_lib_c,v 1.1.1.1 2005/11/08 10:40:17 espie Exp $
+--- src/chm_lib.c.orig	Sun Nov  6 17:07:44 2005
++++ src/chm_lib.c	Sun Nov  6 17:16:20 2005
+@@ -731,7 +731,7 @@ static Int64 _chm_fetch_bytes(struct chm
+ #ifdef CHM_USE_IO64
+     readLen = pread64(h->fd, buf, (long)len, os);
+ #else
+-    readLen = pread(h->fd, buf, (long)len, (unsigned int)os);
++    readLen = pread(h->fd, buf, (size_t)len, (off_t)os);
+ #endif
+ #else
+ #ifdef CHM_USE_IO64
+@@ -741,9 +741,9 @@ static Int64 _chm_fetch_bytes(struct chm
+     lseek64(h->fd, oldOs, SEEK_SET);
+ #else
+     oldOs = lseek(h->fd, 0, SEEK_CUR);
+-    lseek(h->fd, (long)os, SEEK_SET);
++    lseek(h->fd, (off_t)os, SEEK_SET);
+     readLen = read(h->fd, buf, len);
+-    lseek(h->fd, (long)oldOs, SEEK_SET);
++    lseek(h->fd, (off_t)oldOs, SEEK_SET);
+ #endif
+ #endif
+ #endif
