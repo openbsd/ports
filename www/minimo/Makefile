@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2005/10/20 16:18:26 jolan Exp $
+# $OpenBSD: Makefile,v 1.11 2005/11/08 07:19:07 jolan Exp $
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc64
+SHARED_ONLY=	Yes
 
 COMMENT=	"mini mozilla"
 DISTNAME=	minimo-20050802
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/
 
@@ -94,13 +95,17 @@ CONFIGURE_ARGS+=						\
 		--enable-image-decoders=png,gif,jpeg 		\
 		--enable-application=suite
 
+FLAVORS=	debug
+FLAVOR?=
+
+.if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+=--enable-debug --enable-optimize=-O0 --enable-tests
 INSTALL_STRIP=
+.endif
 
 CONFIGURE_ENV=	PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig" \
 		MINIMO=1 \
 		SO_VERSION=${SO_VERSION}
-#ac_cv_cpp_dynamic_cast_void_ptr="no"
 
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
 		MINIMO=1 \

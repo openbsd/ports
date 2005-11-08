@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/08/04 05:06:54 jolan Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2005/11/08 07:19:07 jolan Exp $
 bin/minimo
 minimo/
 minimo/LICENSE
@@ -271,6 +270,34 @@ minimo/components/jsconsole.xpt
 minimo/components/layout_base.xpt
 minimo/components/layout_printing.xpt
 minimo/components/layout_xul.xpt
+@lib minimo/components/libcaps.so.${SO_VERSION}
+@lib minimo/components/libchrmlite.so.${SO_VERSION}
+@lib minimo/components/libdocshell.so.${SO_VERSION}
+@lib minimo/components/libeditor.so.${SO_VERSION}
+@lib minimo/components/libembedcomponents.so.${SO_VERSION}
+@lib minimo/components/libgfx_gtk.so.${SO_VERSION}
+@lib minimo/components/libgklayout.so.${SO_VERSION}
+@lib minimo/components/libhtmlpars.so.${SO_VERSION}
+@lib minimo/components/libi18n.so.${SO_VERSION}
+@lib minimo/components/libimglib2.so.${SO_VERSION}
+@lib minimo/components/libjar50.so.${SO_VERSION}
+@lib minimo/components/libmork.so.${SO_VERSION}
+@lib minimo/components/libnecko.so.${SO_VERSION}
+@lib minimo/components/libnsappshell.so.${SO_VERSION}
+@lib minimo/components/liboji.so.${SO_VERSION}
+@lib minimo/components/libpipboot.so.${SO_VERSION}
+@lib minimo/components/libpipnss.so.${SO_VERSION}
+@lib minimo/components/libpopuplite.so.${SO_VERSION}
+@lib minimo/components/libpref.so.${SO_VERSION}
+@lib minimo/components/libremoteservice.so.${SO_VERSION}
+@lib minimo/components/libsearchservice.so.${SO_VERSION}
+@lib minimo/components/libsoftkey.so.${SO_VERSION}
+@lib minimo/components/libtxmgr.so.${SO_VERSION}
+@lib minimo/components/libuconv.so.${SO_VERSION}
+@lib minimo/components/libwebbrwsr.so.${SO_VERSION}
+@lib minimo/components/libwidget_gtk2.so.${SO_VERSION}
+@lib minimo/components/libxpcom_compat_c.so.${SO_VERSION}
+@lib minimo/components/libxpconnect.so.${SO_VERSION}
 minimo/components/locale.xpt
 minimo/components/lwbrk.xpt
 minimo/components/mimetype.xpt
@@ -291,7 +318,6 @@ minimo/components/necko_viewsource.xpt
 minimo/components/nsHelperAppDlg.js
 minimo/components/nsProgressDialog.js
 minimo/components/nsProxyAutoConfig.js
-minimo/components/nsSample.js
 minimo/components/oji.xpt
 minimo/components/pipboot.xpt
 minimo/components/pipnss.xpt
@@ -300,7 +326,6 @@ minimo/components/prefetch.xpt
 minimo/components/profile.xpt
 minimo/components/progressDlg.xpt
 minimo/components/proxyObjInst.xpt
-minimo/components/proxytest.xpt
 minimo/components/rdf.xpt
 minimo/components/search.xpt
 minimo/components/shistory.xpt
@@ -322,15 +347,29 @@ minimo/components/xpcom_io.xpt
 minimo/components/xpcom_obsolete.xpt
 minimo/components/xpcom_threads.xpt
 minimo/components/xpcom_xpti.xpt
-minimo/components/xpcomsample.xpt
 minimo/components/xpconnect.xpt
-minimo/components/xpconnect_tests.xpt
 minimo/components/xulappinfo.js
 minimo/components/xulappinfo.xpt
 minimo/components/xuldoc.xpt
 minimo/greprefs/
 minimo/greprefs/all.js
 minimo/greprefs/security-prefs.js
+@lib minimo/libgkgfx.so.${SO_VERSION}
+@lib minimo/libgtkembedmoz.so.${SO_VERSION}
+@lib minimo/libgtkxtbin.so.${SO_VERSION}
+@lib minimo/libjsj.so.${SO_VERSION}
+@lib minimo/libmozjs.so.${SO_VERSION}
+@lib minimo/libnspr4.so.${SO_VERSION}
+@lib minimo/libnss3.so.${SO_VERSION}
+@lib minimo/libnssckbi.so.${SO_VERSION}
+@lib minimo/libplc4.so.${SO_VERSION}
+@lib minimo/libplds4.so.${SO_VERSION}
+@lib minimo/libsmime3.so.${SO_VERSION}
+@lib minimo/libsoftokn3.so.${SO_VERSION}
+@lib minimo/libssl3.so.${SO_VERSION}
+@lib minimo/libxpcom.so.${SO_VERSION}
+@lib minimo/libxpcom_compat.so.${SO_VERSION}
+@lib minimo/libxpcom_core.so.${SO_VERSION}
 minimo/minimo-bin
 minimo/regxpcom
 minimo/res/
@@ -365,7 +404,6 @@ minimo/res/html/gopher-sound.gif
 minimo/res/html/gopher-telnet.gif
 minimo/res/html/gopher-text.gif
 minimo/res/html/gopher-unknown.gif
-minimo/res/jarlist.dat
 minimo/res/langGroups.properties
 minimo/res/language.properties
 minimo/res/loading-image.gif
@@ -438,15 +476,8 @@ minimo/res/samples/toolbarTest1.xul
 minimo/res/samples/treeTest1.css
 minimo/res/samples/treeTest1.xul
 minimo/res/samples/widgets.xul
-minimo/res/samples/xpconnect-sample.html
 minimo/res/samples/xpmenu.xul
 minimo/res/samples/xulTest.css
-minimo/res/strres-test.dtd
-minimo/res/strres-test.html
-minimo/res/strres-test.js
-minimo/res/strres-test.xul
-minimo/res/strres.properties
-minimo/res/test.properties
 minimo/res/throbber/
 minimo/res/throbber/anim.gif
 minimo/res/throbber/anims00.gif
@@ -481,11 +512,10 @@ minimo/res/throbber/anims28.gif
 minimo/res/throbber/anims29.gif
 minimo/res/ua.css
 minimo/res/unixcharset.properties
-minimo/res/urlparse.dat
-minimo/res/urlparse_unx.dat
 minimo/res/viewer.properties
 minimo/res/viewsource.css
 minimo/run-minimo.sh
+%%debug%%
 @cwd ${LOCALBASE}/minimo
 @exec cd %D && env HOME=/tmp LD_LIBRARY_PATH=%D ./regxpcom
 @exec rm -rf /tmp/.mozilla

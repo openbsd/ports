@@ -1,0 +1,20 @@
+@comment $OpenBSD: PFRAG.debug,v 1.1 2005/11/08 07:19:07 jolan Exp $
+@lib minimo/components/libMyService.so.${SO_VERSION}
+@lib minimo/components/libtestdynamic.so.${SO_VERSION}
+@lib minimo/components/libxpcomsample.so.${SO_VERSION}
+@lib minimo/components/libxpctest.so.${SO_VERSION}
+minimo/components/nsSample.js
+minimo/components/proxytest.xpt
+minimo/components/xpcomsample.xpt
+minimo/components/xpconnect_tests.xpt
+@lib minimo/libDebugRobot.so.${SO_VERSION}
+minimo/res/jarlist.dat
+minimo/res/samples/xpconnect-sample.html
+minimo/res/strres-test.dtd
+minimo/res/strres-test.html
+minimo/res/strres-test.js
+minimo/res/strres-test.xul
+minimo/res/strres.properties
+minimo/res/test.properties
+minimo/res/urlparse.dat
+minimo/res/urlparse_unx.dat

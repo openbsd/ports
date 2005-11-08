@@ -1,12 +1,12 @@
-#	$Id: TODO,v 1.1.1.1 2005/05/25 06:59:10 jolan Exp $
+#	$Id: TODO,v 1.2 2005/11/08 07:19:07 jolan Exp $
 
-- keep it from crashing...
 - zaurus/arm support (need proper xptc asm stubs for arm)
+- update to a recent snapshot
+- don't hardcode /usr/local in ${FILESDIR}/minimo
 - some patches from mozilla don't apply anymore, need to doublecheck them:
 	patch-gfx_src_gtk_nsDeviceContextSpecG_cpp 
 	patch-nsprpub_pr_src_io_prprf_c
 - configure looks for libgnomeui
 - make sure gnomevfs isn't needed
-- don't hardcode /usr/local in ${FILESDIR}/minimo
 - ~/.Minimo -> ~/.minimo maybe
-- install method could use some tweaks
+- install method could use some tweaks -- make clean needs to be done as root
