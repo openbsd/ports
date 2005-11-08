@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.15 2005/05/11 10:10:39 mbalmer Exp $
-@lib lib/libecpg.so.5.0
-@lib lib/libecpg_compat.so.2.0
-@lib lib/libpgtypes.so.2.0
-@lib lib/libpq.so.4.0
+@comment $OpenBSD: PFRAG.shared,v 1.16 2005/11/08 15:20:42 mbalmer Exp $
+@lib lib/libecpg.so.5.1
+@lib lib/libecpg_compat.so.2.1
+@lib lib/libpgtypes.so.2.1
+@lib lib/libpq.so.4.1

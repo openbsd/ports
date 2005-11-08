@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2005/10/10 22:48:24 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.30 2005/11/08 15:20:42 mbalmer Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -15,6 +15,7 @@ bin/pg_dump
 bin/pg_dumpall
 bin/pg_restore
 bin/psql
+bin/reindexdb
 bin/vacuumdb
 include/postgresql/
 include/postgresql/ecpg_informix.h
@@ -47,6 +48,24 @@ include/postgresql/pgtypes_interval.h
 include/postgresql/pgtypes_numeric.h
 include/postgresql/pgtypes_timestamp.h
 include/postgresql/postgres_ext.h
+include/postgresql/server/access/gist_private.h
+include/postgresql/server/access/multixact.h
+include/postgresql/server/access/twophase.h
+include/postgresql/server/access/twophase_rmgr.h
+include/postgresql/server/catalog/pg_auth_members.h
+include/postgresql/server/catalog/pg_authid.h
+include/postgresql/server/catalog/pg_autovacuum.h
+include/postgresql/server/catalog/pg_pltemplate.h
+include/postgresql/server/catalog/pg_shdepend.h
+include/postgresql/server/executor/nodeBitmapAnd.h
+include/postgresql/server/executor/nodeBitmapHeapscan.h
+include/postgresql/server/executor/nodeBitmapIndexscan.h
+include/postgresql/server/executor/nodeBitmapOr.h
+include/postgresql/server/nodes/tidbitmap.h
+include/postgresql/server/optimizer/predtest.h
+include/postgresql/server/storage/procarray.h
+include/postgresql/server/utils/flatfiles.h
+include/postgresql/server/utils/pg_rusage.h
 include/postgresql/sql3types.h
 include/postgresql/sqlca.h
 lib/libecpg.a
@@ -86,6 +105,7 @@ lib/postgresql/pgxs/src/nls-global.mk
 @man man/man1/pg_dumpall.1
 @man man/man1/pg_restore.1
 @man man/man1/psql.1
+@man man/man1/reindexdb.1
 @man man/man1/vacuumdb.1
 @man man/man7/abort.7
 @man man/man7/alter_aggregate.7
@@ -98,6 +118,7 @@ lib/postgresql/pgxs/src/nls-global.mk
 @man man/man7/alter_language.7
 @man man/man7/alter_operator.7
 @man man/man7/alter_operator_class.7
+@man man/man7/alter_role.7
 @man man/man7/alter_schema.7
 @man man/man7/alter_sequence.7
 @man man/man7/alter_table.7
@@ -112,6 +133,7 @@ lib/postgresql/pgxs/src/nls-global.mk
 @man man/man7/cluster.7
 @man man/man7/comment.7
 @man man/man7/commit.7
+@man man/man7/commit_prepared.7
 @man man/man7/copy.7
 @man man/man7/create_aggregate.7
 @man man/man7/create_cast.7
@@ -125,6 +147,7 @@ lib/postgresql/pgxs/src/nls-global.mk
 @man man/man7/create_language.7
 @man man/man7/create_operator.7
 @man man/man7/create_operator_class.7
+@man man/man7/create_role.7
 @man man/man7/create_rule.7
 @man man/man7/create_schema.7
 @man man/man7/create_sequence.7
@@ -149,6 +172,7 @@ lib/postgresql/pgxs/src/nls-global.mk
 @man man/man7/drop_language.7
 @man man/man7/drop_operator.7
 @man man/man7/drop_operator_class.7
+@man man/man7/drop_role.7
 @man man/man7/drop_rule.7
 @man man/man7/drop_schema.7
 @man man/man7/drop_sequence.7
@@ -170,54 +194,23 @@ lib/postgresql/pgxs/src/nls-global.mk
 @man man/man7/move.7
 @man man/man7/notify.7
 @man man/man7/prepare.7
+@man man/man7/prepare_transaction.7
 @man man/man7/reindex.7
 @man man/man7/release_savepoint.7
 @man man/man7/reset.7
 @man man/man7/revoke.7
 @man man/man7/rollback.7
+@man man/man7/rollback_prepared.7
 @man man/man7/rollback_to_savepoint.7
 @man man/man7/savepoint.7
 @man man/man7/select.7
 @man man/man7/select_into.7
 @man man/man7/set.7
 @man man/man7/set_constraints.7
+@man man/man7/set_role.7
 @man man/man7/set_session_authorization.7
 @man man/man7/set_transaction.7
 @man man/man7/show.7
-@man man/man7/spi_connect.7
-@man man/man7/spi_copytuple.7
-@man man/man7/spi_cursor_close.7
-@man man/man7/spi_cursor_fetch.7
-@man man/man7/spi_cursor_find.7
-@man man/man7/spi_cursor_move.7
-@man man/man7/spi_cursor_open.7
-@man man/man7/spi_exec.7
-@man man/man7/spi_execp.7
-@man man/man7/spi_execute.7
-@man man/man7/spi_execute_plan.7
-@man man/man7/spi_finish.7
-@man man/man7/spi_fname.7
-@man man/man7/spi_fnumber.7
-@man man/man7/spi_freeplan.7
-@man man/man7/spi_freetuple.7
-@man man/man7/spi_freetuptable.7
-@man man/man7/spi_getargcount.7
-@man man/man7/spi_getargtypeid.7
-@man man/man7/spi_getbinval.7
-@man man/man7/spi_getrelname.7
-@man man/man7/spi_gettype.7
-@man man/man7/spi_gettypeid.7
-@man man/man7/spi_getvalue.7
-@man man/man7/spi_is_cursor_plan.7
-@man man/man7/spi_modifytuple.7
-@man man/man7/spi_palloc.7
-@man man/man7/spi_pfree.7
-@man man/man7/spi_pop.7
-@man man/man7/spi_prepare.7
-@man man/man7/spi_push.7
-@man man/man7/spi_repalloc.7
-@man man/man7/spi_returntuple.7
-@man man/man7/spi_saveplan.7
 @man man/man7/start_transaction.7
 @man man/man7/truncate.7
 @man man/man7/unlisten.7

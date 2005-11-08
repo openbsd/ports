@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-server,v 1.1 2004/07/26 10:10:46 peter Exp $
+@comment $OpenBSD: PFRAG.shared-server,v 1.2 2005/11/08 15:20:42 mbalmer Exp $
 lib/postgresql/ascii_and_mic.so
 lib/postgresql/cyrillic_and_mic.so
 lib/postgresql/euc_cn_and_mic.so
@@ -22,8 +22,9 @@ lib/postgresql/utf8_and_iso8859.so
 lib/postgresql/utf8_and_iso8859_1.so
 lib/postgresql/utf8_and_johab.so
 lib/postgresql/utf8_and_sjis.so
-lib/postgresql/utf8_and_tcvn.so
 lib/postgresql/utf8_and_uhc.so
 lib/postgresql/utf8_and_win1250.so
+lib/postgresql/utf8_and_win1252.so
 lib/postgresql/utf8_and_win1256.so
+lib/postgresql/utf8_and_win1258.so
 lib/postgresql/utf8_and_win874.so
