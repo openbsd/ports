@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2005/11/08 15:20:42 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.31 2005/11/08 22:07:33 mbalmer Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -48,24 +48,6 @@ include/postgresql/pgtypes_interval.h
 include/postgresql/pgtypes_numeric.h
 include/postgresql/pgtypes_timestamp.h
 include/postgresql/postgres_ext.h
-include/postgresql/server/access/gist_private.h
-include/postgresql/server/access/multixact.h
-include/postgresql/server/access/twophase.h
-include/postgresql/server/access/twophase_rmgr.h
-include/postgresql/server/catalog/pg_auth_members.h
-include/postgresql/server/catalog/pg_authid.h
-include/postgresql/server/catalog/pg_autovacuum.h
-include/postgresql/server/catalog/pg_pltemplate.h
-include/postgresql/server/catalog/pg_shdepend.h
-include/postgresql/server/executor/nodeBitmapAnd.h
-include/postgresql/server/executor/nodeBitmapHeapscan.h
-include/postgresql/server/executor/nodeBitmapIndexscan.h
-include/postgresql/server/executor/nodeBitmapOr.h
-include/postgresql/server/nodes/tidbitmap.h
-include/postgresql/server/optimizer/predtest.h
-include/postgresql/server/storage/procarray.h
-include/postgresql/server/utils/flatfiles.h
-include/postgresql/server/utils/pg_rusage.h
 include/postgresql/sql3types.h
 include/postgresql/sqlca.h
 lib/libecpg.a
@@ -81,6 +63,7 @@ lib/libpgtypes.a
 lib/libpq.a
 @comment lib/libpq.so
 @comment lib/libpq.so.4
+lib/postgresql/
 lib/postgresql/pgxs/
 lib/postgresql/pgxs/config/
 lib/postgresql/pgxs/config/install-sh

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.20 2005/11/08 15:20:42 mbalmer Exp $
+@comment $OpenBSD: PLIST-docs,v 1.21 2005/11/08 22:07:33 mbalmer Exp $
 share/doc/postgresql/
 share/doc/postgresql/COPYRIGHT
 share/doc/postgresql/FAQ
@@ -6,6 +6,7 @@ share/doc/postgresql/FAQ_DEV
 share/doc/postgresql/HISTORY
 share/doc/postgresql/INSTALL
 share/doc/postgresql/README
+share/doc/postgresql/README.OpenBSD
 share/doc/postgresql/README.mb.big5
 share/doc/postgresql/README.mb.jp
 share/doc/postgresql/TODO
