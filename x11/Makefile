@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.226 2005/11/06 13:25:34 alek Exp $
+# $OpenBSD: Makefile,v 1.227 2005/11/08 10:45:46 espie Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 855resolution
@@ -214,6 +214,7 @@
      SUBDIR += xawtv
 #    SUBDIR += xbuffy
      SUBDIR += xcb
+     SUBDIR += xchm
      SUBDIR += xclip
      SUBDIR += xco
      SUBDIR += xcoloredit
