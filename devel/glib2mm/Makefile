@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/11/02 23:51:51 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2005/11/09 20:04:08 wilfried Exp $
 
 COMMENT=		"C++ interface for glib2"
 COMMENT-docs=		"C++ interface for glib2 documentation"
 
 VERSION=		2.6.1
 DISTNAME=		glibmm-${VERSION}
-PKGNAME=		glib2mm-${VERSION}
+PKGNAME=		glib2mm-${VERSION}p1
 PKGNAME-docs=		glib2mm-docs-${VERSION}
 CATEGORIES=		devel
 
@@ -31,7 +31,7 @@ PKG_ARCH=		*
 .else
 MODULES=		gettext
 LIB_DEPENDS=		sigc-2.0.0.0:libsigc++-2.*:devel/libsigc++-2 \
-			glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0:glib2-2.6.*:devel/glib2 
+			glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0:glib2->=2.6:devel/glib2 
 .endif
 
 SEPARATE_BUILD=		concurrent
