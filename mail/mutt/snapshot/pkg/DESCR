@@ -21,5 +21,7 @@ Flavors:
 	mixmaster  - build with anonymous remailing support
 	hcache	   - build with maildir header caching support
 	idn	   - build with internationalized domain name support
+	sidebar	   - adds a sidebar that has a folder list
+		     (see: http://thomer.com/mutt/)
 
 This is the development version of mutt.
