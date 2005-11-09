@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.391 2005/11/04 23:08:37 jolan Exp $
+# $OpenBSD: Makefile,v 1.392 2005/11/09 09:24:25 wilfried Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -42,6 +42,7 @@
 #    SUBDIR += cvsup-mirror
      SUBDIR += cvsync
      SUBDIR += dc_gui
+     SUBDIR += dclib
      SUBDIR += dctc
      SUBDIR += ddclient
      SUBDIR += dhcping
@@ -313,6 +314,7 @@
      SUBDIR += udptunnel
      SUBDIR += unison
      SUBDIR += uucp
+     SUBDIR += valknut
      SUBDIR += vicq
      SUBDIR += vsftpd
      SUBDIR += vtun
