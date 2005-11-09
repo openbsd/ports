@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/14 23:44:02 espie Exp $
-bin/type1afm
+@comment $OpenBSD: PLIST,v 1.10 2005/11/09 21:10:49 brad Exp $
+%%SHARED%%
 include/t1lib.h
 lib/libt1.a
 lib/libt1.la
+share/t1lib/t1lib.config
+@endfake
 share/t1lib/
 share/t1lib/doc/
 share/t1lib/doc/t1lib_doc.pdf
-share/t1lib/t1lib.config
-%%SHARED%%

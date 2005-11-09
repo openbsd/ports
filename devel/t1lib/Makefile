@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2004/11/24 00:11:04 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2005/11/09 21:10:48 brad Exp $
 
 COMMENT=	"Type 1 rasterizer library for UNIX/X11"
 
-DISTNAME=	t1lib-5.0.0
+DISTNAME=	t1lib-5.1.0
 CATEGORIES=	devel textproc
-MASTER_SITES=	${MASTER_SITE_BACKUP}
+MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
+		${MASTER_SITE_BACKUP}
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -15,12 +16,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
-# work around optimizer bug in gcc 3.3.2 (in-tree)
+# work around optimizer bug in gcc 3.3.5 (in-tree)
 .if ${MACHINE_ARCH} == "sparc64"
 PATCH_LIST=	gcc-patch-* patch-*
 .endif
 
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/ac-tools
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
@@ -29,12 +31,5 @@ CONFIGURE_ARGS+= --without-x
 NO_REGRESS=	Yes
 
 ALL_TARGET=	without_doc
-
-post-patch:
-	@cd ${WRKSRC}/ac-tools; \
-	${PATCH} --forward --quiet -E < \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig && \
-	${PATCH} --forward --quiet -E < \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh
 
 .include <bsd.port.mk>
