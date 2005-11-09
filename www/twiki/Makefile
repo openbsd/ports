@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2005/09/16 08:11:03 aanriot Exp $
+# $OpenBSD: Makefile,v 1.5 2005/11/09 10:27:06 aanriot Exp $
 
 COMMENT=	"web-based collaboration platform"
 
 DISTNAME=	TWiki20040903
-PKGNAME=	TWiki-20040903
+PKGNAME=	TWiki-20040903p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://twiki.org/
