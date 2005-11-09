@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/18 12:45:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/11/09 21:17:20 brad Exp $
 @conflict giflib-*
+%%SHARED%%
 bin/gif2epsn
 bin/gif2ps
 bin/gif2rgb
@@ -34,8 +35,9 @@ lib/libgif.a
 lib/libgif.la
 lib/libungif.a
 lib/libungif.la
+@endfake
 share/doc/libungif/
-share/doc/libungif/COPYING
+share/doc/libungif/README
 share/doc/libungif/UNCOMPRESSED_GIF
 share/doc/libungif/html/
 share/doc/libungif/html/GifFileType.png
@@ -78,4 +80,3 @@ share/doc/libungif/html/raw2gif.html
 share/doc/libungif/html/rgb2gif.html
 share/doc/libungif/html/rle2gif.html
 share/doc/libungif/html/text2gif.html
-%%SHARED%%

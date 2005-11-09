@@ -1,6 +1,7 @@
---- configure.in.orig	Thu Feb 17 07:51:53 2000
-+++ configure.in	Sun Mar 10 22:33:14 2002
-@@ -21,21 +21,17 @@ dnl Checks for libraries.
+$OpenBSD: patch-configure_ac,v 1.1 2005/11/09 21:17:20 brad Exp $
+--- configure.ac.orig	Sat Nov  5 18:33:38 2005
++++ configure.ac	Sat Nov  5 18:35:06 2005
+@@ -19,21 +19,17 @@ dnl Checks for libraries.
      AC_CHECK_LIB(m, pow, [MATH_LIB="${MATH_LIB} -lm"
                   COMPILABLE_EXTRAS="${COMPILABLE_EXTRAS} gifclrmp gifrotat"] )
  
@@ -13,12 +14,12 @@
  dnl I don't have this on my system.  Could someone else configure it and
  dnl check that it works?
      AC_CHECK_LIB(gl_s, main, [GL_S_LIB="${GL_S_LIB} -lgl_s $X_LIBS"
-                              AC_DEFINE(HAVE_LIBGL_S)
+                              AC_DEFINE(HAVE_LIBGL_S, [1], [Define if the gl_s library is installed (SGI GL library)])
                   COMPILABLE_EXTRAS="${COMPILABLE_EXTRAS} gif2iris"],, $X_LIBS)
  
 +    if test "x$with_x" != xno; then
-     AC_CHECK_LIB(X11, main, [X11_LIB="${X11_LIB} $X_LIBS -lX11"
-                              AC_DEFINE(HAVE_LIBX11)
+     AC_CHECK_LIB(X11, main, [X11_LIB="${X11_LIB} ${X_PRE_LIBS} $X_LIBS ${X_EXTRA_LIBS} -lX11"
+                              AC_DEFINE(HAVE_LIBX11, [1], [Define if the X11 library is installed])
                   COMPILABLE_EXTRAS="${COMPILABLE_EXTRAS} gif2x11"],, $X_LIBS)
 +    fi
      DEVS="${GL_S_LIB} ${X11_LIB}" 
