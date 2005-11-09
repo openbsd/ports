@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dvdread_dvd_input_c,v 1.1 2005/11/03 09:03:38 jakemsr Exp $
---- src/dvdread/dvd_input.c.orig	Fri Apr  9 05:15:26 2004
-+++ src/dvdread/dvd_input.c	Thu Nov  3 00:22:19 2005
-@@ -37,14 +37,14 @@ int         (*dvdinput_read)  (dvd_input
+$OpenBSD: patch-src_dvdread_dvd_input_c,v 1.2 2005/11/09 16:37:46 jolan Exp $
+--- src/dvdread/dvd_input.c.orig	Fri Apr  9 07:15:26 2004
++++ src/dvdread/dvd_input.c	Wed Nov  9 10:31:53 2005
+@@ -37,17 +37,17 @@ int         (*dvdinput_read)  (dvd_input
  char *      (*dvdinput_error) (dvd_input_t);
  
  #ifdef HAVE_DVDCSS_DVDCSS_H
@@ -23,7 +23,11 @@ $OpenBSD: patch-src_dvdread_dvd_input_c,v 1.1 2005/11/03 09:03:38 jakemsr Exp $
 +#define DVD_error   libdvd_error
  #else
  
- /* dlopening libdvdcss */
+-/* dlopening libdvdcss */
++/* dlopening dvdcss */
+ #ifdef HAVE_DLFCN_H
+ #include <dlfcn.h>
+ #else
 @@ -55,19 +55,19 @@ char *      (*dvdinput_error) (dvd_input
  #include "../../msvc/contrib/dlfcn.c"
  #endif
@@ -132,40 +136,12 @@ $OpenBSD: patch-src_dvdread_dvd_input_c,v 1.1 2005/11/03 09:03:38 jakemsr Exp $
  
    if(ret < 0)
      return ret;
-@@ -269,90 +269,121 @@ static int file_close(dvd_input_t dev)
-   return 0;
- }
+@@ -271,88 +271,88 @@ static int file_close(dvd_input_t dev)
  
-+#ifdef __OpenBSD__
-+#include <dirent.h>
-+#include <string.h>
-+static void *findlibrary(char *base)
-+{
-+	DIR *d;
-+	struct dirent *de;
-+	size_t len;
-+	void *lib = NULL;
  
-+	len = strlen(base);
-+
-+	d = opendir(".");
-+	if (!d)
-+		return lib;
-+	while ((de = readdir(d)) != NULL) {
-+	    if (strncmp(de->d_name, base, len) != 0)
-+		continue;
-+	    lib = dlopen(de->d_name, RTLD_LAZY);
-+	    if (lib)
-+	    	break;
-+	}
-+	closedir(d);
-+	return lib;
-+}
-+#endif
-+
-+
  /**
-  * Setup read functions with either libdvdcss or minimal DVD access.
+- * Setup read functions with either libdvdcss or minimal DVD access.
++ * Setup read functions with either libdvd or minimal DVD access.
   */
  int dvdinput_setup(void)
  {
@@ -191,10 +167,6 @@ $OpenBSD: patch-src_dvdread_dvd_input_c,v 1.1 2005/11/03 09:03:38 jakemsr Exp $
  #ifndef WIN32
 -  dvdcss_library = dlopen("libdvdcss.so.2", RTLD_LAZY);
 +  libdvd_library = dlopen("libdvd.so.0", RTLD_LAZY);
-+#if defined(__OpenBSD__)
-+  if (!libdvd_library)
-+  	libdvd_library = findlibrary("libdvd.so.0.");
-+#endif
  #else
    dvdcss_library = dlopen("libdvdcss.dll", RTLD_LAZY);
  #endif

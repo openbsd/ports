@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/03 09:03:37 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.5 2005/11/09 16:37:46 jolan Exp $
 
 COMMENT=	"DVD read/navigation library"
 DISTNAME=	libdvdnav-20051102
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/
 
