@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_top_mk,v 1.1 2005/11/09 15:42:50 mbalmer Exp $
+--- build/top.mk.orig	Wed Nov  9 16:11:04 2005
++++ build/top.mk	Wed Nov  9 16:11:24 2005
+@@ -112,7 +112,7 @@ LTCOMPILE_LIB = $(LIBTOOL) $(LTONLY_LIB)
+ 	$(CC) $(LT_CFLAGS) $(LT_CPPFLAGS) $(LIB_DEFS) -c
+ 
+ LTLINK_LIB = $(LIBTOOL) $(LTONLY_LIB) --mode=link \
+-	$(CC) $(LT_CFLAGS) $(LDFLAGS) $(LTFLAGS_LIB)
++	$(CC) $(LT_CFLAGS) $(LTFLAGS_LIB)
+ 
+ LTCOMPILE_MOD = $(LIBTOOL) $(LTONLY_MOD) --mode=compile \
+ 	$(CC) $(LT_CFLAGS) $(LT_CPPFLAGS) $(MOD_DEFS) -c
