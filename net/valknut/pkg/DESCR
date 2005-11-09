@@ -1,0 +1,5 @@
+Valknut Direct-Connect Client
+
+This is a client for Direct-Connect networks, featuring a graphical
+Qt interface.  It is the successor to the older, Gtk+-based "dc_gui"
+client.
