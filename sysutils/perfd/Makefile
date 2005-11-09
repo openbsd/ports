@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/09/26 21:48:46 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/09 01:25:38 jcs Exp $
 
 ONLY_FOR_ARCHS=	i386 macppc sparc zaurus
 
@@ -8,8 +8,6 @@ CATEGORIES=	sysutils
 DISTNAME=	perfd-0.2
 HOMEPAGE=	http://tratt.net/laurie/obsd/perfd/
 MASTER_SITES=	${HOMEPAGE}releases/
-
-MAINTAINER=	joshua stein <jcs@jcs.org>
 
 # bsd
 PERMIT_PACKAGE_CDROM=	yes

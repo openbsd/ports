@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/05/13 20:12:23 msf Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/09 01:25:38 jcs Exp $
 
 # requires nvram(4) device
 ONLY_FOR_ARCHS=	i386
@@ -11,8 +11,6 @@ CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.nongnu.org/tpb/
 MASTER_SITES=	http://savannah.nongnu.org/download/tpb/
-
-MAINTAINER=	joshua stein <jcs@openbsd.org>
 
 # gpl
 PERMIT_PACKAGE_CDROM=	yes

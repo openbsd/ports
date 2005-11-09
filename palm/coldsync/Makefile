@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/03/11 19:47:50 jcs Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/09 01:25:38 jcs Exp $
 
 COMMENT=		"tool for synchronizing PalmOS devices"
 
@@ -7,8 +7,6 @@ PKGNAME=		coldsync-3.0pre4p1
 CATEGORIES=		palm comms
 
 MASTER_SITES=		http://www.coldsync.org/download/
-
-MAINTAINER=		joshua stein <jcs@openbsd.org>
 
 # artistic
 PERMIT_PACKAGE_CDROM=	Yes

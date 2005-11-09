@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/07/19 21:11:23 jcs Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/09 01:25:38 jcs Exp $
 
 # not useful on anything else
 ONLY_FOR_ARCHS=	i386
@@ -10,8 +10,6 @@ DISTFILES=	tphdisk.c
 CATEGORIES=	sysutils
 
 MASTER_SITES=	http://samba.org/ftp/unpacked/junkcode/
-
-MAINTAINER=	joshua stein <jcs@openbsd.org>
 
 # gpl
 PERMIT_PACKAGE_CDROM=	yes
