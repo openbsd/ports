@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2005/11/03 10:07:42 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2005/11/09 20:05:36 wilfried Exp $
 
 COMMENT=		"C++ interface for gtk2+"
 COMMENT-docs=		"C++ interface for gtk2+ documentation"
 
 VERSION=		2.6.4
 DISTNAME=		gtkmm-${VERSION}
-PKGNAME=		gtk2mm-${VERSION}
+PKGNAME=		gtk2mm-${VERSION}p1
 PKGNAME-docs=		gtk2mm-docs-${VERSION}
 CATEGORIES=		devel x11
 
@@ -33,8 +33,8 @@ WANTLIB=		X11 Xft Xrender fontconfig freetype m atk-1.0.0.0 glib-2.0.0.0 \
 			gmodule-2.0.0.0 gobject-2.0.0.0 pango-1.0.0.0 pangoft2-1.0.0.0 \
 			pangox-1.0.0.0 pangoxft-1.0.0.0 sigc-2.0.0.0
 MODULES=		gettext
-LIB_DEPENDS=		glibmm-2.4.0.0:glib2mm-2.6.*:devel/glib2mm \
-			gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0:gtk+2-2.6.*:x11/gtk+2
+LIB_DEPENDS=		glibmm-2.4.0.0:glib2mm->=2.4:devel/glib2mm \
+			gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0:gtk+2->=2.4:x11/gtk+2
 .endif
 
 SEPARATE_BUILD=		concurrent
