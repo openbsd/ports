@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.24 2005/09/19 10:24:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.25 2005/11/10 11:15:13 espie Exp $
 @conflict qt3-*
 @conflict qt3-base-*
+@pkgpath x11/qt3,mt
 %%SHARED%%
 bin/assistant
 bin/assistant-mt
