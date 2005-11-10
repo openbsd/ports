@@ -1,0 +1,12 @@
+$OpenBSD: patch-type1afm_Makefile_in,v 1.1 2005/11/10 13:00:28 naddy Exp $
+--- type1afm/Makefile.in.orig	Thu Nov 10 13:37:44 2005
++++ type1afm/Makefile.in	Thu Nov 10 13:38:01 2005
+@@ -89,7 +89,7 @@ clean: dummy
+ install: dummy
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(bindir)
+ 	$(LIBTOOL) --mode=install \
+-		$(INSTALL_PROGRAM) type1afm $(bindir)/type1afm
++		$(INSTALL_PROGRAM) type1afm $(DESTDIR)$(bindir)/type1afm
+ 
+ 
+ uninstall: dummy
