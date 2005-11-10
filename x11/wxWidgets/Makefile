@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/16 21:01:35 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2005/11/10 12:18:25 espie Exp $
 
   SUBDIR += headers
   SUBDIR += base
+  SUBDIR += gtkheaders
   SUBDIR += gtk
   SUBDIR += gtk2
   SUBDIR += motif

@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2005/02/13 10:56:23 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/10 12:18:25 espie Exp $
 COMMENT=	"C++ cross-platform GUI toolkit - GTK2 version"
-PKGNAME=		wxWidgets-gtk-${VERSION}p0-gtk2
-# Name must conflict with gtk because both install headers in the same dir
+PKGNAME=		wxWidgets-gtk2-${VERSION}
 
 CONFIGURE_ARGS=	--enable-gtk2
 
@@ -10,6 +9,7 @@ LIB_DEPENDS=	gdk_pixbuf_xlib-2.0.0.0::x11/gtk+2 \
 		glade-2.0.0.1::devel/libglade2 \
 		glib-2.0.0.0::devel/glib2
 RUN_DEPENDS=		::x11/wxWidgets/headers
+RUN_DEPENDS=		::x11/wxWidgets/gtkheaders
 
 WANTLIB=	X11 Xcursor Xext Xft Xinerama Xrender atk-1.0.0.0 fontconfig \
 		freetype gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 gmodule-2.0.0.0 \

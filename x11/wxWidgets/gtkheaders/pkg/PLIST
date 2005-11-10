@@ -1,8 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/11/10 12:18:25 espie Exp $
-%%SHARED%%
-!%%SHARED%%
-@comment bin/wx-config
-bin/wxgtk-2.4-config
+@comment $OpenBSD: PLIST,v 1.1 2005/11/10 12:18:25 espie Exp $
+@conflict wxWidgets-gtk-<=2.4.2p0
 @comment include/wx/accel.h
 @comment include/wx/app.h
 @comment include/wx/arrimpl.cpp
@@ -136,69 +133,69 @@ bin/wxgtk-2.4-config
 @comment include/wx/glcanvas.h
 @comment include/wx/grid.h
 @comment include/wx/gsocket.h
-@comment include/wx/gtk/
-@comment include/wx/gtk/accel.h
-@comment include/wx/gtk/app.h
-@comment include/wx/gtk/bitmap.h
-@comment include/wx/gtk/bmpbuttn.h
-@comment include/wx/gtk/brush.h
-@comment include/wx/gtk/button.h
-@comment include/wx/gtk/checkbox.h
-@comment include/wx/gtk/checklst.h
-@comment include/wx/gtk/choice.h
-@comment include/wx/gtk/clipbrd.h
-@comment include/wx/gtk/colour.h
-@comment include/wx/gtk/combobox.h
-@comment include/wx/gtk/control.h
-@comment include/wx/gtk/cursor.h
-@comment include/wx/gtk/dataform.h
-@comment include/wx/gtk/dataobj.h
-@comment include/wx/gtk/dataobj2.h
-@comment include/wx/gtk/dc.h
-@comment include/wx/gtk/dcclient.h
-@comment include/wx/gtk/dcmemory.h
-@comment include/wx/gtk/dcscreen.h
-@comment include/wx/gtk/dialog.h
-@comment include/wx/gtk/dnd.h
-@comment include/wx/gtk/filedlg.h
-@comment include/wx/gtk/font.h
-@comment include/wx/gtk/fontdlg.h
-@comment include/wx/gtk/frame.h
-@comment include/wx/gtk/gauge.h
-@comment include/wx/gtk/gdiobj.h
-@comment include/wx/gtk/glcanvas.h
-@comment include/wx/gtk/icon.h
-@comment include/wx/gtk/joystick.h
-@comment include/wx/gtk/listbox.h
-@comment include/wx/gtk/mdi.h
-@comment include/wx/gtk/menu.h
-@comment include/wx/gtk/menuitem.h
-@comment include/wx/gtk/minifram.h
-@comment include/wx/gtk/notebook.h
-@comment include/wx/gtk/pen.h
-@comment include/wx/gtk/popupwin.h
-@comment include/wx/gtk/radiobox.h
-@comment include/wx/gtk/radiobut.h
-@comment include/wx/gtk/region.h
-@comment include/wx/gtk/scrolbar.h
-@comment include/wx/gtk/scrolwin.h
-@comment include/wx/gtk/slider.h
-@comment include/wx/gtk/spinbutt.h
-@comment include/wx/gtk/spinctrl.h
-@comment include/wx/gtk/statbmp.h
-@comment include/wx/gtk/statbox.h
-@comment include/wx/gtk/statline.h
-@comment include/wx/gtk/stattext.h
-@comment include/wx/gtk/tbargtk.h
-@comment include/wx/gtk/textctrl.h
-@comment include/wx/gtk/tglbtn.h
-@comment include/wx/gtk/timer.h
-@comment include/wx/gtk/tooltip.h
-@comment include/wx/gtk/toplevel.h
-@comment include/wx/gtk/treectrl.h
-@comment include/wx/gtk/wave.h
-@comment include/wx/gtk/win_gtk.h
-@comment include/wx/gtk/window.h
+include/wx/gtk/
+include/wx/gtk/accel.h
+include/wx/gtk/app.h
+include/wx/gtk/bitmap.h
+include/wx/gtk/bmpbuttn.h
+include/wx/gtk/brush.h
+include/wx/gtk/button.h
+include/wx/gtk/checkbox.h
+include/wx/gtk/checklst.h
+include/wx/gtk/choice.h
+include/wx/gtk/clipbrd.h
+include/wx/gtk/colour.h
+include/wx/gtk/combobox.h
+include/wx/gtk/control.h
+include/wx/gtk/cursor.h
+include/wx/gtk/dataform.h
+include/wx/gtk/dataobj.h
+include/wx/gtk/dataobj2.h
+include/wx/gtk/dc.h
+include/wx/gtk/dcclient.h
+include/wx/gtk/dcmemory.h
+include/wx/gtk/dcscreen.h
+include/wx/gtk/dialog.h
+include/wx/gtk/dnd.h
+include/wx/gtk/filedlg.h
+include/wx/gtk/font.h
+include/wx/gtk/fontdlg.h
+include/wx/gtk/frame.h
+include/wx/gtk/gauge.h
+include/wx/gtk/gdiobj.h
+include/wx/gtk/glcanvas.h
+include/wx/gtk/icon.h
+include/wx/gtk/joystick.h
+include/wx/gtk/listbox.h
+include/wx/gtk/mdi.h
+include/wx/gtk/menu.h
+include/wx/gtk/menuitem.h
+include/wx/gtk/minifram.h
+include/wx/gtk/notebook.h
+include/wx/gtk/pen.h
+include/wx/gtk/popupwin.h
+include/wx/gtk/radiobox.h
+include/wx/gtk/radiobut.h
+include/wx/gtk/region.h
+include/wx/gtk/scrolbar.h
+include/wx/gtk/scrolwin.h
+include/wx/gtk/slider.h
+include/wx/gtk/spinbutt.h
+include/wx/gtk/spinctrl.h
+include/wx/gtk/statbmp.h
+include/wx/gtk/statbox.h
+include/wx/gtk/statline.h
+include/wx/gtk/stattext.h
+include/wx/gtk/tbargtk.h
+include/wx/gtk/textctrl.h
+include/wx/gtk/tglbtn.h
+include/wx/gtk/timer.h
+include/wx/gtk/tooltip.h
+include/wx/gtk/toplevel.h
+include/wx/gtk/treectrl.h
+include/wx/gtk/wave.h
+include/wx/gtk/win_gtk.h
+include/wx/gtk/window.h
 @comment include/wx/hash.h
 @comment include/wx/hashmap.h
 @comment include/wx/help.h
@@ -367,38 +364,3 @@ bin/wxgtk-2.4-config
 @comment include/wx/xpmdecod.h
 @comment include/wx/zipstrm.h
 @comment include/wx/zstream.h
-lib/wx/
-lib/wx/include/
-lib/wx/include/gtk-2.4/
-lib/wx/include/gtk-2.4/wx/
-lib/wx/include/gtk-2.4/wx/setup.h
-lib/wx/include/univ/
-@comment share/aclocal/
-@comment share/aclocal/wxwin.m4
-@comment share/locale/
-@comment share/wx/2.4/afm/Cour.afm
-@comment share/wx/2.4/afm/CourBo.afm
-@comment share/wx/2.4/afm/CourBoO.afm
-@comment share/wx/2.4/afm/CourO.afm
-@comment share/wx/2.4/afm/Helv.afm
-@comment share/wx/2.4/afm/HelvBo.afm
-@comment share/wx/2.4/afm/HelvBoO.afm
-@comment share/wx/2.4/afm/HelvO.afm
-@comment share/wx/2.4/afm/TimesBo.afm
-@comment share/wx/2.4/afm/TimesBoO.afm
-@comment share/wx/2.4/afm/TimesO.afm
-@comment share/wx/2.4/afm/TimesRo.afm
-@comment share/wx/2.4/afm/Zapf.afm
-@comment share/wx/2.4/gs_afm/Cour.afm
-@comment share/wx/2.4/gs_afm/CourBo.afm
-@comment share/wx/2.4/gs_afm/CourBoO.afm
-@comment share/wx/2.4/gs_afm/CourO.afm
-@comment share/wx/2.4/gs_afm/Helv.afm
-@comment share/wx/2.4/gs_afm/HelvBo.afm
-@comment share/wx/2.4/gs_afm/HelvBoO.afm
-@comment share/wx/2.4/gs_afm/HelvO.afm
-@comment share/wx/2.4/gs_afm/TimesBo.afm
-@comment share/wx/2.4/gs_afm/TimesBoO.afm
-@comment share/wx/2.4/gs_afm/TimesO.afm
-@comment share/wx/2.4/gs_afm/TimesRo.afm
-@comment share/wx/2.4/gs_afm/Zapf.afm
