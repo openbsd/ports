@@ -1,0 +1,16 @@
+$OpenBSD: patch-member_c,v 1.1.1.1 2005/11/10 21:13:11 jolan Exp $
+--- member.c.orig	Thu Nov 10 13:22:21 2005
++++ member.c	Thu Nov 10 13:56:55 2005
+@@ -362,9 +362,11 @@ int member_exec( struct ast_channel* cha
+ 	//
+ 	// setup asterisk read/write formats
+ 	//
+-	
++
++/*
+ 	ast_log( AST_CONF_DEBUG, "CHANNEL INFO, CHANNEL => %s, DNID => %s, CALLER_ID => %s, ANI => %s\n", 
+ 		chan->name, chan->cid.cid_dnid, chan->cid.cid_num, chan->cid.cid_ani ) ;
++*/
+ 
+ 	ast_log( AST_CONF_DEBUG, "CHANNEL CODECS, CHANNEL => %s, NATIVE => %d, READ => %d, WRITE => %d\n", 
+ 		chan->name, chan->nativeformats, member->read_format, member->write_format ) ;

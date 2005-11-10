@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/10 21:13:11 jolan Exp $
+lib/asterisk/modules/app_conference.so
+share/doc/app_conference/
+share/doc/app_conference/README
