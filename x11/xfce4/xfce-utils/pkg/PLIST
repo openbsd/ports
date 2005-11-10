@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/05/22 01:30:45 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/11/10 22:57:38 jolan Exp $
 %%SHARED%%
 bin/startxfce4
 bin/xfce4-about
@@ -12,7 +12,6 @@ lib/xfce4/
 lib/xfce4/mcs-plugins/
 lib/xfce4/mcs-plugins/xftaskbar_plugin.a
 lib/xfce4/mcs-plugins/xftaskbar_plugin.la
-@comment lib/xfce4/mcs-plugins/xftaskbar_plugin.so.0.0
 share/applications/xfce-taskbar-settings.desktop
 share/examples/xfce-utils/
 @sample ${SYSCONFDIR}/xdg/xfce4/
@@ -23,6 +22,7 @@ share/icons/hicolor/48x48/apps/xfce4-taskbar.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/xfce4-taskbar.svg
+share/locale/af/LC_MESSAGES/xfce-utils.mo
 share/locale/ar/LC_MESSAGES/xfce-utils.mo
 share/locale/az/LC_MESSAGES/xfce-utils.mo
 share/locale/be/LC_MESSAGES/xfce-utils.mo
@@ -34,6 +34,7 @@ share/locale/da/LC_MESSAGES/xfce-utils.mo
 share/locale/de/LC_MESSAGES/xfce-utils.mo
 share/locale/el/LC_MESSAGES/xfce-utils.mo
 share/locale/en_GB/LC_MESSAGES/xfce-utils.mo
+share/locale/eo/LC_MESSAGES/xfce-utils.mo
 share/locale/es/LC_MESSAGES/xfce-utils.mo
 share/locale/es_MX/LC_MESSAGES/xfce-utils.mo
 share/locale/et/LC_MESSAGES/xfce-utils.mo
@@ -45,9 +46,13 @@ share/locale/gu/LC_MESSAGES/xfce-utils.mo
 share/locale/he/LC_MESSAGES/xfce-utils.mo
 share/locale/hi/LC_MESSAGES/xfce-utils.mo
 share/locale/hu/LC_MESSAGES/xfce-utils.mo
+share/locale/hy/
+share/locale/hy/LC_MESSAGES/
+share/locale/hy/LC_MESSAGES/xfce-utils.mo
 share/locale/it/LC_MESSAGES/xfce-utils.mo
 share/locale/ja/LC_MESSAGES/xfce-utils.mo
 share/locale/ko/LC_MESSAGES/xfce-utils.mo
+share/locale/ku/LC_MESSAGES/xfce-utils.mo
 share/locale/lt/LC_MESSAGES/xfce-utils.mo
 share/locale/mr/LC_MESSAGES/xfce-utils.mo
 share/locale/ms/LC_MESSAGES/xfce-utils.mo
@@ -59,6 +64,7 @@ share/locale/pt_PT/LC_MESSAGES/xfce-utils.mo
 share/locale/ro/LC_MESSAGES/xfce-utils.mo
 share/locale/ru/LC_MESSAGES/xfce-utils.mo
 share/locale/sk/LC_MESSAGES/xfce-utils.mo
+share/locale/sl/LC_MESSAGES/xfce-utils.mo
 share/locale/sv/LC_MESSAGES/xfce-utils.mo
 share/locale/ta/LC_MESSAGES/xfce-utils.mo
 share/locale/tr/LC_MESSAGES/xfce-utils.mo
@@ -90,6 +96,7 @@ share/xfce4/AUTHORS.html.ro
 share/xfce4/AUTHORS.html.ru
 share/xfce4/AUTHORS.html.sk
 share/xfce4/AUTHORS.html.vi
+share/xfce4/AUTHORS.html.zh_TW
 share/xfce4/AUTHORS.it
 share/xfce4/AUTHORS.ja
 share/xfce4/AUTHORS.lt
@@ -98,6 +105,7 @@ share/xfce4/AUTHORS.ru
 share/xfce4/AUTHORS.sk
 share/xfce4/AUTHORS.uk
 share/xfce4/AUTHORS.vi
+share/xfce4/AUTHORS.zh_TW
 share/xfce4/BSD
 share/xfce4/BSD.html
 share/xfce4/COPYING
@@ -162,5 +170,22 @@ share/xfce4/doc/fr/xfce4-install.html
 share/xfce4/doc/fr/xfce4-intro.html
 share/xfce4/doc/fr/xfce4-use.html
 share/xfce4/doc/fr/xfce4-user-guide.html
+share/xfce4/doc/he/BSD.html
+share/xfce4/doc/he/GPL.html
+share/xfce4/doc/he/LGPL.html
+share/xfce4/doc/he/images/about-dialog.png
+share/xfce4/doc/he/images/default-session.png
+share/xfce4/doc/he/images/link_xfce.jpg
+share/xfce4/doc/he/images/run-dialog.png
+share/xfce4/doc/he/images/taskbar_settings.png
+share/xfce4/doc/he/index.html
+share/xfce4/doc/he/xfce-utils.html
+share/xfce4/doc/he/xfce4-components.html
+share/xfce4/doc/he/xfce4-copyright.html
+share/xfce4/doc/he/xfce4-install.html
+share/xfce4/doc/he/xfce4-intro.html
+share/xfce4/doc/he/xfce4-use.html
+share/xfce4/doc/he/xfce4-user-guide.html
 share/xfce4/doc/xfce-mouse.png
+share/xfce4/doc/xfce-rtl.css
 share/xfce4/doc/xfce.css

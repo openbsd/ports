@@ -1,7 +1,7 @@
-$OpenBSD: patch-Rodent_scalable_mimetypes_Makefile_in,v 1.1.1.1 2005/05/12 04:38:49 jolan Exp $
---- Rodent/scalable/mimetypes/Makefile.in.orig	Sat Dec  4 11:05:44 2004
-+++ Rodent/scalable/mimetypes/Makefile.in	Sat Feb 19 17:37:26 2005
-@@ -135,7 +135,7 @@ gnome-mime-application-vnd.ms-powerpoint
+$OpenBSD: patch-Rodent_scalable_mimetypes_Makefile_in,v 1.2 2005/11/10 22:57:39 jolan Exp $
+--- Rodent/scalable/mimetypes/Makefile.in.orig	Sun Nov  6 04:45:37 2005
++++ Rodent/scalable/mimetypes/Makefile.in	Thu Nov 10 06:35:23 2005
+@@ -134,7 +134,7 @@ gnome-mime-application-vnd.ms-powerpoint
  gnome-mime-application-vnd.rn-realmedia.svg          gnome-mime-image.svg\
  gnome-mime-application-vnd.stardivision.calc.svg     gnome-mime-image-svg.svg\
  gnome-mime-application-vnd.stardivision.chart.svg    gnome-mime-image-tiff.svg\

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/10/26 06:20:11 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/10 22:57:40 jolan Exp $
 
 COMMENT=	"xfce4 session manager"
-V=		4.2.2
+V=		4.2.3
 DISTNAME=	xfce4-session-${V}
-PKGNAME=	${DISTNAME}p0
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 
 HOMEPAGE=	http://www.xfce.org/
@@ -28,6 +27,5 @@ WANTLIB=	ICE SM X11 Xcursor Xext Xft Xinerama Xrender c fontconfig \
 		gmodule-2.0.0.0 gobject-2.0.0.0 gtk-x11-2.0.0.0 pango-1.0.0.0 \
 		pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
 		startup-notification-1.0.0 xfce4util.1
-
 
 .include <bsd.port.mk>

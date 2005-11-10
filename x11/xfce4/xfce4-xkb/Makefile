@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/12 05:21:24 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2005/11/10 22:57:41 jolan Exp $
 
 COMMENT=	"xkb layout switcher panel plugin for xfce4"
 DISTNAME=	xfce4-xkb-plugin-0.3.2
-PKGNAME=	${DISTNAME:S/-plugin//}
+PKGNAME=	${DISTNAME:S/-plugin//}p0
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 
 HOMEPAGE=	http://xfce-goodies.berlios.de/
@@ -24,10 +24,5 @@ WANTLIB=	X11 Xcursor Xext Xft Xinerama Xpm Xrender fontconfig freetype \
 		atk-1.0.0.0 gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 glib-2.0.0.0 \
 		gmodule-2.0.0.0 gobject-2.0.0.0 gtk-x11-2.0.0.0 pango-1.0.0.0 \
 		pangox-1.0.0.0 pangoxft-1.0.0.0 xfce4util.1
-
-# XXX workaround libtool's versioning of simple shared object modules
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/panel-plugin/.libs/libxkb.so.0.0 \
-		${PREFIX}/lib/xfce4/panel-plugins/libxkb.so
 
 .include <bsd.port.mk>

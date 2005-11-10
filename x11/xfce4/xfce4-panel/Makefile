@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/22 01:30:45 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2005/11/10 22:57:40 jolan Exp $
 
 COMMENT=	"xfce4 panel"
-V=		4.2.2
+V=		4.2.3
 DISTNAME=	xfce4-panel-${V}
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 
@@ -26,15 +26,5 @@ WANTLIB=	ICE SM X11 Xcursor Xext Xft Xinerama Xrender c fontconfig \
 		gmodule-2.0.0.0 gobject-2.0.0.0 gtk-x11-2.0.0.0 pango-1.0.0.0 \
 		pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
 		startup-notification-1.0.0 xfce4util.1
-
-
-# XXX workaround libtool's versioning of simple shared object modules
-post-install:
-.for n in clock mailcheck pager separator switcher systembuttons
-	${INSTALL_DATA} ${WRKSRC}/plugins/${n}/.libs/lib${n}.so.0.0 \
-		${PREFIX}/lib/xfce4/panel-plugins/lib${n}.so
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/settings/.libs/libxfce4settings.so.0.0 \
-		${PREFIX}/lib/xfce4/mcs-plugins/libxfce4settings.so
 
 .include <bsd.port.mk>

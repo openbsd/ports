@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/08/16 09:49:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/11/10 22:57:39 jolan Exp $
 
 COMMENT=	"clipboard history plugin for the xfce4 panel"
 DISTNAME=	xfce4-clipman-plugin-0.4.1
-PKGNAME=	${DISTNAME:S/-plugin//}p0
+PKGNAME=	${DISTNAME:S/-plugin//}p1
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 
 HOMEPAGE=	http://xfce-goodies.berlios.de/

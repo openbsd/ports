@@ -1,0 +1,43 @@
+# $OpenBSD: Makefile.ordered,v 1.1 2005/11/10 22:57:37 jolan Exp $
+#
+# The following ports are also dependencies:
+# 
+# databases/dbh
+# devel/libxfce4util
+
+     SUBDIR+= libxfcegui4
+     SUBDIR+= libxfce4mcs
+     SUBDIR+= xfce-mcs-manager
+     SUBDIR+= xfce-mcs-plugins
+     SUBDIR+= xfwm4
+     SUBDIR+= xfce4-panel
+     SUBDIR+= xfdesktop
+     SUBDIR+= xfce-utils
+     SUBDIR+= xffm
+     SUBDIR+= xfce4-appfinder
+     SUBDIR+= xfce4-session
+     SUBDIR+= xfce4-systray
+     SUBDIR+= xfce4-toys
+     SUBDIR+= xfcalendar
+     SUBDIR+= xfce4-trigger-launcher
+     SUBDIR+= xfce4-iconbox
+     SUBDIR+= xfwm4-themes
+     SUBDIR+= xfce4-icon-theme
+     SUBDIR+= gtk-xfce-engine
+# goodies stufff
+     SUBDIR+= xfce4-battery
+     SUBDIR+= xfce4-clipman
+     SUBDIR+= xfce4-datetime
+     SUBDIR+= xfce4-diskperf
+     SUBDIR+= xfce4-fsguard
+     SUBDIR+= xfce4-minicmd
+     SUBDIR+= xfce4-netload
+     SUBDIR+= xfce4-notes
+     SUBDIR+= xfce4-showdesktop
+     SUBDIR+= xfce4-systemload
+     SUBDIR+= xfce4-taskbar
+     SUBDIR+= xfce4-wavelan
+     SUBDIR+= xfce4-weather
+     SUBDIR+= xfce4-xkb
+
+.include <bsd.port.subdir.mk>

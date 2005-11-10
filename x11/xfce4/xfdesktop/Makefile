@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2005/08/16 09:49:56 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/10 22:57:41 jolan Exp $
 
 COMMENT=	"xfce4 desktop background manager"
-V=		4.2.2
+V=		4.2.3
 DISTNAME=	xfdesktop-${V}
 PKGNAME=	${DISTNAME}p0
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
@@ -29,15 +29,5 @@ WANTLIB=	ICE SM X11 Xcursor Xext Xft Xinerama Xrender c fontconfig \
 		gmodule-2.0.0.0 gobject-2.0.0.0 gtk-x11-2.0.0.0 pango-1.0.0.0 \
 		pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
 		startup-notification-1.0.0 xfce4util.1
-
-
-# XXX workaround libtool's versioning of simple shared object modules
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/modules/menu/.libs/xfce4_desktop_menu.so.0.0 \
-		${PREFIX}/lib/xfce4/modules/xfce4_desktop_menu.so
-	${INSTALL_DATA} ${WRKSRC}/panel-plugin/.libs/libdesktopmenu.so.0.0 \
-		${PREFIX}/lib/xfce4/panel-plugins/libdesktopmenu.so
-	${INSTALL_DATA} ${WRKSRC}/settings/.libs/backdrop_settings.so.0.0 \
-		${PREFIX}/lib/xfce4/mcs-plugins/backdrop_settings.so
 
 .include <bsd.port.mk>

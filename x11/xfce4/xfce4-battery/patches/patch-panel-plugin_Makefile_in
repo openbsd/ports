@@ -1,37 +1,27 @@
-$OpenBSD: patch-panel-plugin_Makefile_in,v 1.1.1.1 2005/05/12 04:38:49 jolan Exp $
---- panel-plugin/Makefile.in.orig	2003-08-08 21:05:08.000000000 -0500
-+++ panel-plugin/Makefile.in	2004-01-13 21:58:23.000000000 -0600
-@@ -152,8 +152,6 @@ libbattmon_la_LDFLAGS = \
- libbattmon_la_SOURCES = \
- 	apmlib.c							\
- 	apm.h							\
--	libacpi.c							\
--	libacpi.h							\
- 	battmon.c
- 
- 
-@@ -173,7 +171,7 @@ LTLIBRARIES = $(plugin_LTLIBRARIES)
- 
+$OpenBSD: patch-panel-plugin_Makefile_in,v 1.2 2005/11/10 22:57:39 jolan Exp $
+--- panel-plugin/Makefile.in.orig	Sat Aug  6 06:13:24 2005
++++ panel-plugin/Makefile.in	Thu Nov 10 15:34:39 2005
+@@ -52,14 +52,13 @@ pluginLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(plugin_LTLIBRARIES)
  libbattmon_la_DEPENDENCIES =
  am_libbattmon_la_OBJECTS = libbattmon_la-apmlib.lo \
 -	libbattmon_la-libacpi.lo libbattmon_la-battmon.lo
 +	libbattmon_la-battmon.lo
  libbattmon_la_OBJECTS = $(am_libbattmon_la_OBJECTS)
- 
- DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
-@@ -181,7 +179,6 @@ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
  @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/libbattmon_la-apmlib.Plo \
  @AMDEP_TRUE@	./$(DEPDIR)/libbattmon_la-battmon.Plo \
 -@AMDEP_TRUE@	./$(DEPDIR)/libbattmon_la-libacpi.Plo
  COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
  	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
- LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
-@@ -241,7 +238,6 @@ distclean-compile:
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) \
+@@ -269,7 +268,6 @@ distclean-compile:
  
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbattmon_la-apmlib.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbattmon_la-battmon.Plo@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbattmon_la-libacpi.Plo@am__quote@
  
- distclean-depend:
- 	-rm -rf ./$(DEPDIR)
+ .c.o:
+ @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \

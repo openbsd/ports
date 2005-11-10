@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_Makefile_in,v 1.1.1.1 2005/05/12 04:38:34 jolan Exp $
---- scripts/Makefile.in.orig	Sat Nov  6 10:24:05 2004
-+++ scripts/Makefile.in	Wed May 11 22:08:50 2005
-@@ -226,7 +226,7 @@ edit = sed \
+$OpenBSD: patch-scripts_Makefile_in,v 1.2 2005/11/10 22:57:38 jolan Exp $
+--- scripts/Makefile.in.orig	Sun Nov  6 04:38:45 2005
++++ scripts/Makefile.in	Thu Nov 10 06:04:31 2005
+@@ -233,7 +233,7 @@ edit = sed \
          -e 's,@sysconfdir\@,$(sysconfdir),g' \
  	-e 's,@BROWSER_DEFAULT\@,@BROWSER_DEFAULT@,g'
  

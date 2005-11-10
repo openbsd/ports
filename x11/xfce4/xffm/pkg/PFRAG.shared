@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/12 04:38:37 jolan Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/11/10 22:57:41 jolan Exp $
 @lib lib/libxffm_actions.so.1.0
 @lib lib/libxffm_basic.so.1.0
 @lib lib/libxffm_calls.so.1.0
@@ -7,7 +7,6 @@
 @lib lib/libxffm_secondary.so.1.0
 @lib lib/libxffm_tubo.so.1.0
 lib/xfce4/mcs-plugins/libxffmsettings.so
-@comment lib/xfce4/mcs-plugins/libxffmsettings.so.0.0
 lib/xfce4/xffm/libxffm_book.so
 @comment lib/xfce4/xffm/libxffm_book.so.1.0
 lib/xfce4/xffm/libxffm_find.so

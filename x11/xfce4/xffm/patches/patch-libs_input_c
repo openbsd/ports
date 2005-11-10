@@ -1,7 +1,7 @@
-$OpenBSD: patch-libs_input_c,v 1.1.1.1 2005/05/12 04:38:37 jolan Exp $
---- libs/input.c.orig	Wed Dec 29 15:51:17 2004
-+++ libs/input.c	Wed May 11 01:19:22 2005
-@@ -528,7 +528,7 @@ void ok_input (GtkTreeView * treeview)
+$OpenBSD: patch-libs_input_c,v 1.2 2005/11/10 22:57:41 jolan Exp $
+--- libs/input.c.orig	Sat Nov  5 11:13:43 2005
++++ libs/input.c	Thu Nov 10 06:08:22 2005
+@@ -527,7 +527,7 @@ void ok_input (GtkTreeView * treeview)
  	      /* XXX: probably should warn on overwritting */
  	      if (fork()) wait(&status);
  	      else {

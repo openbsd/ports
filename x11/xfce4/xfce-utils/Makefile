@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/22 01:30:45 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2005/11/10 22:57:38 jolan Exp $
 
 COMMENT=	"essential utilities and scripts for xfce4"
-V=		4.2.2
+V=		4.2.3
 DISTNAME=	xfce-utils-${V}
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 
@@ -28,11 +28,5 @@ WANTLIB=	ICE SM X11 Xcursor Xext Xft Xinerama Xrender c fontconfig \
 		startup-notification-1.0.0 xfce4util.1
 
 CONFIGURE_ARGS+=--with-browser="xterm -e lynx"
-
-# XXX workaround libtool's versioning of simple shared object modules
-post-install:
-	${INSTALL_DATA} \
-		${WRKSRC}/xftaskbar/plugin/.libs/xftaskbar_plugin.so.0.0 \
-		${PREFIX}/lib/xfce4/mcs-plugins/xftaskbar_plugin.so
 
 .include <bsd.port.mk>

@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/12 04:38:34 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/11/10 22:57:38 jolan Exp $
 %%SHARED%%
 include/xfce4/
 include/xfce4/libxfce4mcs/
+include/xfce4/libxfce4mcs/mcs-client-enum-types.h
 include/xfce4/libxfce4mcs/mcs-client.h
 include/xfce4/libxfce4mcs/mcs-common.h
 include/xfce4/libxfce4mcs/mcs-manager.h

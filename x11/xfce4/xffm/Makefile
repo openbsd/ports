@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/22 01:30:46 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2005/11/10 22:57:41 jolan Exp $
 
 COMMENT=	"xfce4 file manager"
-V=		4.2.2
+V=		4.2.3
 DISTNAME=	xffm-${V}
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 
@@ -40,8 +40,6 @@ post-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/modules/.libs/libxffm_prop.so.1.0 \
 		${PREFIX}/lib/xfce4/xffm/libxffm_prop.so
-	${INSTALL_DATA} ${WRKSRC}/plugin-mcs/.libs/libxffmsettings.so.0.0 \
-		${PREFIX}/lib/xfce4/mcs-plugins/libxffmsettings.so
 	${INSTALL_DATA} ${WRKSRC}/smb/.libs/libxffm_smb.so.1.0 \
 		${PREFIX}/lib/xfce4/xffm/libxffm_smb.so
 

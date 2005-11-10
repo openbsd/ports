@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/12 04:38:50 jolan Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/11/10 22:57:38 jolan Exp $
 lib/gtk-2.0/2.4.0/engines/libxfce.so
-@comment lib/gtk-2.0/2.4.0/engines/libxfce.so.0.0

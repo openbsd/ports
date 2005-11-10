@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2005/05/12 04:38:34 jolan Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2005/11/10 22:57:37 jolan Exp $
 
 CATEGORIES=	x11
 DIST_SUBDIR=	xfce4
 
+USE_LIBTOOL=	Yes
 USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/08/16 09:49:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/11/10 22:57:39 jolan Exp $
 
 COMMENT=	"monitors a chosen mountpoint for free disk space"
-DISTNAME=	xfce4-fsguard-plugin-0.2.0
-PKGNAME=	${DISTNAME:S/-plugin//}p0
+DISTNAME=	xfce4-fsguard-plugin-0.2.1
+PKGNAME=	${DISTNAME:S/-plugin//}
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 
 HOMEPAGE=	http://xfce-goodies.berlios.de/
@@ -23,8 +23,5 @@ WANTLIB=	X11 Xcursor Xext Xft Xinerama Xrender fontconfig freetype m z \
 		atk-1.0.0.0 gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 glib-2.0.0.0 \
 		gmodule-2.0.0.0 gobject-2.0.0.0 gtk-x11-2.0.0.0 pango-1.0.0.0 \
 		pangox-1.0.0.0 pangoxft-1.0.0.0 xfce4util.1
-
-WRKDIST=	${WRKDIR}/xfce4-fsguard-plugin
-
 
 .include <bsd.port.mk>

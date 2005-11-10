@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/12 05:21:24 jolan Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/11/10 22:57:41 jolan Exp $
 lib/xfce4/panel-plugins/libxkb.so
-@comment @lib lib/xfce4/panel-plugins/libxkb.so.0.0

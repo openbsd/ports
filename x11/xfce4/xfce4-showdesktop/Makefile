@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/08/17 16:02:05 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/10 22:57:40 jolan Exp $
 
 COMMENT=	"hides/unhides all unsticky windows with one click"
 DISTNAME=	xfce4-showdesktop-plugin-0.4.0
-PKGNAME=	${DISTNAME:S/-plugin//}p1
+PKGNAME=	${DISTNAME:S/-plugin//}p2
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 
 HOMEPAGE=	http://xfce-goodies.berlios.de/
@@ -25,11 +25,5 @@ WANTLIB=	X11 Xcursor Xext Xft Xinerama Xrender fontconfig freetype m z \
 		pangox-1.0.0.0 pangoxft-1.0.0.0 xfce4util.1
 
 WRKDIST=	${WRKDIR}/xfce4-showdesktop-plugin
-
-
-# XXX workaround libtool's versioning of simple shared object modules
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/panel-plugin/.libs/libshowdesktop.so.0.0 \
-		${PREFIX}/lib/xfce4/panel-plugins/libshowdesktop.so
 
 .include <bsd.port.mk>

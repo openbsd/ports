@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/05/22 01:30:45 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/11/10 22:57:38 jolan Exp $
 %%SHARED%%
 include/xfce4/
 include/xfce4/libxfcegui4/
@@ -61,14 +61,13 @@ lib/xfce4/modules/libxfce4_mime.a
 lib/xfce4/modules/libxfce4_mime.la
 lib/xfce4/modules/libxfce4_mime_icons.a
 lib/xfce4/modules/libxfce4_mime_icons.la
-share/locale/be/
-share/locale/be/LC_MESSAGES/
+share/locale/af/
+share/locale/af/LC_MESSAGES/
+share/locale/af/LC_MESSAGES/libxfcegui4.mo
 share/locale/be/LC_MESSAGES/libxfcegui4.mo
 share/locale/bn_IN/
 share/locale/bn_IN/LC_MESSAGES/
 share/locale/bn_IN/LC_MESSAGES/libxfcegui4.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/libxfcegui4.mo
 share/locale/cs/LC_MESSAGES/libxfcegui4.mo
 share/locale/da/LC_MESSAGES/libxfcegui4.mo
@@ -77,6 +76,7 @@ share/locale/el/LC_MESSAGES/libxfcegui4.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/libxfcegui4.mo
+share/locale/eo/LC_MESSAGES/libxfcegui4.mo
 share/locale/es/LC_MESSAGES/libxfcegui4.mo
 share/locale/et/LC_MESSAGES/libxfcegui4.mo
 share/locale/eu/
@@ -92,9 +92,15 @@ share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/libxfcegui4.mo
 share/locale/he/LC_MESSAGES/libxfcegui4.mo
 share/locale/hu/LC_MESSAGES/libxfcegui4.mo
+share/locale/hy/
+share/locale/hy/LC_MESSAGES/
+share/locale/hy/LC_MESSAGES/libxfcegui4.mo
 share/locale/it/LC_MESSAGES/libxfcegui4.mo
 share/locale/ja/LC_MESSAGES/libxfcegui4.mo
 share/locale/ko/LC_MESSAGES/libxfcegui4.mo
+share/locale/ku/
+share/locale/ku/LC_MESSAGES/
+share/locale/ku/LC_MESSAGES/libxfcegui4.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/libxfcegui4.mo
@@ -110,11 +116,14 @@ share/locale/pt_BR/LC_MESSAGES/libxfcegui4.mo
 share/locale/ro/LC_MESSAGES/libxfcegui4.mo
 share/locale/ru/LC_MESSAGES/libxfcegui4.mo
 share/locale/sk/LC_MESSAGES/libxfcegui4.mo
+share/locale/sl/LC_MESSAGES/libxfcegui4.mo
+share/locale/sv/LC_MESSAGES/libxfcegui4.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/libxfcegui4.mo
 share/locale/uk/LC_MESSAGES/libxfcegui4.mo
 share/locale/zh_CN/LC_MESSAGES/libxfcegui4.mo
+share/locale/zh_TW/LC_MESSAGES/libxfcegui4.mo
 share/xfce4/
 share/xfce4/hicolor-index.theme
 share/xfce4/mime/

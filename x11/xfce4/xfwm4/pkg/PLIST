@@ -1,14 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/05/22 01:30:46 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/11/10 22:57:41 jolan Exp $
 %%SHARED%%
 bin/xfwm4
 lib/xfce4/
 lib/xfce4/mcs-plugins/
 lib/xfce4/mcs-plugins/workspaces_plugin.a
 lib/xfce4/mcs-plugins/workspaces_plugin.la
-@comment lib/xfce4/mcs-plugins/workspaces_plugin.so.0.0
 lib/xfce4/mcs-plugins/xfwm4_plugin.a
 lib/xfce4/mcs-plugins/xfwm4_plugin.la
-@comment lib/xfce4/mcs-plugins/xfwm4_plugin.so.0.0
 share/applications/xfce-wm-settings.desktop
 share/applications/xfce-workspaces-settings.desktop
 share/icons/hicolor/48x48/apps/xfce4-keys.png
@@ -18,6 +16,7 @@ share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/xfce4-workspaces.svg
 share/icons/hicolor/scalable/apps/xfwm4.svg
+share/locale/af/LC_MESSAGES/xfwm4.mo
 share/locale/ar/LC_MESSAGES/xfwm4.mo
 share/locale/az/LC_MESSAGES/xfwm4.mo
 share/locale/be/LC_MESSAGES/xfwm4.mo
@@ -28,6 +27,7 @@ share/locale/cs/LC_MESSAGES/xfwm4.mo
 share/locale/de/LC_MESSAGES/xfwm4.mo
 share/locale/el/LC_MESSAGES/xfwm4.mo
 share/locale/en_GB/LC_MESSAGES/xfwm4.mo
+share/locale/eo/LC_MESSAGES/xfwm4.mo
 share/locale/es/LC_MESSAGES/xfwm4.mo
 share/locale/es_MX/LC_MESSAGES/xfwm4.mo
 share/locale/et/LC_MESSAGES/xfwm4.mo
@@ -42,6 +42,7 @@ share/locale/hu/LC_MESSAGES/xfwm4.mo
 share/locale/it/LC_MESSAGES/xfwm4.mo
 share/locale/ja/LC_MESSAGES/xfwm4.mo
 share/locale/ko/LC_MESSAGES/xfwm4.mo
+share/locale/ku/LC_MESSAGES/xfwm4.mo
 share/locale/lt/LC_MESSAGES/xfwm4.mo
 share/locale/mr/LC_MESSAGES/xfwm4.mo
 share/locale/ms/LC_MESSAGES/xfwm4.mo
@@ -54,6 +55,7 @@ share/locale/pt_PT/LC_MESSAGES/xfwm4.mo
 share/locale/ro/LC_MESSAGES/xfwm4.mo
 share/locale/ru/LC_MESSAGES/xfwm4.mo
 share/locale/sk/LC_MESSAGES/xfwm4.mo
+share/locale/sl/LC_MESSAGES/xfwm4.mo
 share/locale/sv/LC_MESSAGES/xfwm4.mo
 share/locale/ta/LC_MESSAGES/xfwm4.mo
 share/locale/tr/LC_MESSAGES/xfwm4.mo
@@ -734,5 +736,14 @@ share/xfce4/doc/fr/images/titlebar.png
 share/xfce4/doc/fr/images/workspace_margins.png
 share/xfce4/doc/fr/images/xfwm_workspaces.png
 share/xfce4/doc/fr/xfwm4.html
+share/xfce4/doc/he/images/compose_shortcut.png
+share/xfce4/doc/he/images/decoration_style.png
+share/xfce4/doc/he/images/focus.png
+share/xfce4/doc/he/images/keyboard_shortcuts.png
+share/xfce4/doc/he/images/misc_wm_prefs.png
+share/xfce4/doc/he/images/titlebar.png
+share/xfce4/doc/he/images/workspace_margins.png
+share/xfce4/doc/he/images/xfwm_workspaces.png
+share/xfce4/doc/he/xfwm4.html
 share/xfwm4/
 share/xfwm4/defaults

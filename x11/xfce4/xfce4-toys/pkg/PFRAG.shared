@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/12 04:38:38 jolan Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/11/10 22:57:40 jolan Exp $
 lib/xfce4/panel-plugins/libeyes.so
-@comment lib/xfce4/panel-plugins/libeyes.so.0.0
