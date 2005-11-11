@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.7 2005/10/20 18:28:48 brad Exp $
---- configure.in.orig	Thu Oct 20 05:12:19 2005
-+++ configure.in	Thu Oct 20 14:00:00 2005
+$OpenBSD: patch-configure_in,v 1.8 2005/11/11 14:53:27 bernd Exp $
+--- configure.in.orig	Thu Oct 20 11:12:19 2005
++++ configure.in	Fri Nov 11 14:17:19 2005
 @@ -12,6 +12,7 @@ AC_PROG_CPP
  AC_HEADER_STDC
  AC_C_INLINE
@@ -9,3 +9,11 @@ $OpenBSD: patch-configure_in,v 1.7 2005/10/20 18:28:48 brad Exp $
  AM_ICONV
  
  AC_CHECK_HEADERS(strings.h stdint.h unistd.h dirent.h inttypes.h \
+@@ -1193,6 +1194,7 @@ if test $want_bsdauth = yes; then
+ fi
+ 
+ if test $want_ldap = yes; then
++	LIBS="$LIBS -lsasl2"
+ 	AC_CHECK_LIB(ldap, ldap_init, [
+ 		AC_CHECK_HEADER(ldap.h, [
+ 			AC_CHECK_LIB(ldap, ldap_initialize, [
