@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2005/11/02 20:44:56 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2005/11/11 21:19:13 naddy Exp $
 
 COMMENT=	"protocol icq2000/2001 library"
 
 DISTNAME=	libicq2000-0.3.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libicq2000/}
 
