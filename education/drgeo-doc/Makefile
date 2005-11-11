@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2005/01/14 03:45:32 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2005/11/11 20:24:48 wilfried Exp $
 
 COMMENT=	"interactive geometry program, documentation"
 
-DISTNAME=	drgeo-doc-1.5
+DISTNAME=	drgeo-doc-1.6
 CATEGORIES=	education math
 
-HOMEPAGE=	http://www.ofset.org/drgeo/	
+HOMEPAGE=	http://www.ofset.org/drgeo/
+
+MAINTAINER=	Steven Mestdagh <steven.mestdagh@esat.kuleuven.be>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,9 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ofset/}
+MASTER_SITES=	http://documentation.ofset.org/drgeo/
 
-USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 
 NO_BUILD=Yes
