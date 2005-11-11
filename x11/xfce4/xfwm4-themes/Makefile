@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/11/10 22:57:41 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/11 04:30:05 jolan Exp $
 PKG_ARCH=	*
 
 COMMENT=	"window decoration themes for xfwm4"
@@ -13,6 +13,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
+
+USE_LIBTOOL=	No
 
 RUN_DEPENDS=	:xfwm4-*:x11/xfce4/xfwm4
 
