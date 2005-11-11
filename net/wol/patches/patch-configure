@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2005/11/11 09:23:55 alek Exp $
+--- configure.orig	Fri Nov 11 10:15:49 2005
++++ configure	Fri Nov 11 10:15:56 2005
+@@ -16523,7 +16523,7 @@ s,@GENCAT@,$GENCAT,;t t
+ s,@INTLOBJS@,$INTLOBJS,;t t
+ s,@INTL_LIBTOOL_SUFFIX_PREFIX@,$INTL_LIBTOOL_SUFFIX_PREFIX,;t t
+ s,@INTLLIBS@,$INTLLIBS,;t t
+-s,@LIBINTL@,$LIBINTL,;t t
++s,@LIBINTL@,$LTLIBINTL,;t t
+ s,@LTLIBINTL@,$LTLIBINTL,;t t
+ s,@POSUB@,$POSUB,;t t
+ s,@LIBOBJS@,$LIBOBJS,;t t

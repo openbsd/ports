@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/30 00:17:52 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2005/11/11 09:23:54 alek Exp $
 
 COMMENT=		"Wake On Lan client"
 
 DISTNAME=		wol-0.7.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		net
 
 HOMEPAGE=		http://ahh.sourceforge.net/wol/
 
-MAINTAINER=		Johan Fredin <griffin@legonet.org>
+MAINTAINER=		Johan Fredin <johan@spelaroll.se>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
