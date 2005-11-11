@@ -1,120 +1,21 @@
-$OpenBSD: patch-tunip_c,v 1.2 2005/05/05 10:54:48 sturm Exp $
---- tunip.c.orig	Wed Nov 17 21:23:43 2004
-+++ tunip.c	Wed May  4 20:25:47 2005
-@@ -87,8 +87,8 @@ struct sa_desc {
- 	unsigned char use_fallback; /* use initial address as fallback? */
- 	unsigned char use_dest; /* is dest address known yet? */
- 
--	unsigned long spi; /* security parameters index */
--	unsigned long seq_id; /* for replay protection (not implemented) */
-+	uint32_t spi; /* security parameters index */
-+	uint32_t seq_id; /* for replay protection (not implemented) */
- 
- 	/* Encryption key */
- 	const unsigned char *enc_secret;
-@@ -118,8 +118,8 @@ struct peer_desc {
- 
- /* A real ESP header (RFC 2406) */
- typedef struct esp_encap_header {
--	unsigned long spi; /* security parameters index */
--	unsigned long seq_id; /* sequence id (unimplemented) */
-+	uint32_t spi; /* security parameters index */
-+	uint32_t seq_id; /* sequence id (unimplemented) */
- 	/* variable-length payload data + padding */
- 	/* unsigned char next_header */
- 	/* optional auth data */
-@@ -136,7 +136,7 @@ struct encap_method {
- 	unsigned int bufsize, bufpayload, var_header_size;
- 	int buflen;
- 	struct sockaddr_in from;
--	int fromlen;
-+	socklen_t fromlen;
- 
- 	int (*recv) (struct encap_method * encap,
- 		unsigned char *buf, unsigned int bufsize, struct sockaddr_in * from);
-@@ -151,7 +151,7 @@ void encap_esp_send_peer(struct encap_me
- 	struct peer_desc *peer, unsigned char *buf, unsigned int bufsize);
- void encap_udp_send_peer(struct encap_method *encap,
- 	struct peer_desc *peer, unsigned char *buf, unsigned int bufsize);
--struct peer_desc *peer_find(unsigned long spi, struct encap_method *encap);
-+struct peer_desc *peer_find(uint32_t spi, struct encap_method *encap);
- int encap_esp_recv_peer(struct encap_method *encap, struct peer_desc *peer);
- 
- /* Yuck! Global variables... */
-@@ -220,7 +220,7 @@ u_short in_cksum(addr, len)
- int encap_rawip_recv(struct encap_method *encap,
- 	unsigned char *buf, unsigned int bufsize, struct sockaddr_in *from)
- {
--	int r;
-+	ssize_t r;
- 	struct ip *p = (struct ip *)buf;
- 
- 	encap->fromlen = sizeof(encap->from);
-@@ -268,7 +268,7 @@ int encap_udp_recv(struct encap_method *
- 	unsigned char *buf, unsigned int bufsize,
- 	struct sockaddr_in *from)
- {
--	int r;
-+	ssize_t r;
- 
- 	encap->fromlen = sizeof(encap->from);
- 
-@@ -447,11 +447,11 @@ int update_sa_addr(struct sa_desc *p)
- /*
-  * Find the peer record associated with a given local SPI.
-  */
--struct peer_desc *peer_find(unsigned long spi, struct encap_method *encap)
-+struct peer_desc *peer_find(uint32_t spi, struct encap_method *encap)
- {
- 	if (vpnpeer.local_sa->spi == spi && vpnpeer.local_sa->em == encap)
- 		return &vpnpeer;
--	syslog(LOG_ALERT, "unknown spi %ld", spi);
-+	syslog(LOG_ALERT, "unknown spi %u", spi);
- 	return NULL;
- }
- 
-@@ -623,7 +623,7 @@ void encap_esp_send_peer(struct encap_me
- 		return;
- 	}
- 	if (sent != encap->buflen)
--		syslog(LOG_ALERT, "truncated out (%d out of %d)", sent, encap->buflen);
-+		syslog(LOG_ALERT, "truncated out (%ld out of %d)", (long)sent, encap->buflen);
- }
- 
- /*
-@@ -659,8 +659,8 @@ void encap_udp_send_peer(struct encap_me
- 		return;
- 	}
- 	if (sent != encap->buflen)
--		syslog(LOG_ALERT, "truncated out (%Zd out of %Zd)",
--			sent, encap->buflen);
-+		syslog(LOG_ALERT, "truncated out (%ld out of %d)",
-+			(long)sent, encap->buflen);
- }
- 
- int encap_esp_recv_peer(struct encap_method *encap, struct peer_desc *peer)
-@@ -686,6 +686,7 @@ int encap_esp_recv_peer(struct encap_met
- 	/* Handle optional authentication field */
- 	if (peer->local_sa->md_algo) {
- 		len -= 12; /*gcry_md_get_algo_dlen(peer->local_sa->md_algo); */
-+		encap->buflen -= 12;
- 		if (hmac_compute(peer->local_sa->md_algo,
- 				encap->buf + encap->bufpayload,
- 				encap->fixed_header_size + encap->var_header_size + len,
-@@ -748,6 +749,7 @@ int encap_esp_recv_peer(struct encap_met
- 	printf("pad len: %d, next_header: %d\n", padlen, next_header);
- #endif
- 	len -= padlen + 2;
-+	encap->buflen -= padlen + 2;
- 
- 	/* Check padding */
- 	pad = encap->buf + encap->bufpayload
-@@ -838,7 +840,7 @@ static void vpnc_main_loop(struct peer_d
+$OpenBSD: patch-tunip_c,v 1.3 2005/11/11 19:38:07 sturm Exp $
+--- tunip.c.orig	Thu May  5 12:25:00 2005
++++ tunip.c	Fri Nov  4 00:09:30 2005
+@@ -436,7 +436,7 @@ int update_sa_addr(struct sa_desc *p)
+ 	if (new_addr.sin_addr.s_addr != p->source.sin_addr.s_addr) {
+ 		char addr1[16];
+ 		p->source.sin_addr = new_addr.sin_addr;
+-		strcpy(addr1, inet_ntoa(p->dest.sin_addr));
++		strlcpy(addr1, inet_ntoa(p->dest.sin_addr), sizeof(addr1));
+ 		syslog(LOG_NOTICE,
+ 			"local address for %s is %s", addr1, inet_ntoa(p->source.sin_addr));
+ 		return 1;
+@@ -844,7 +844,7 @@ static void vpnc_main_loop(struct peer_d
+ 				|| from.sin_addr.s_addr != peer->remote_sa->dest.sin_addr.s_addr) {
+ 				/* remote end changed address */
  				char addr1[16];
- 				strcpy(addr1, inet_ntoa(peer->remote_sa->dest.sin_addr));
+-				strcpy(addr1, inet_ntoa(peer->remote_sa->dest.sin_addr));
++				strlcpy(addr1, inet_ntoa(peer->remote_sa->dest.sin_addr), sizeof(addr1));
  				syslog(LOG_NOTICE,
--					"spi %ld: remote address changed from %s to %s",
-+					"spi %u: remote address changed from %s to %s",
+ 					"spi %u: remote address changed from %s to %s",
  					peer->remote_sa->spi, addr1, inet_ntoa(from.sin_addr));
- 				peer->remote_sa->dest.sin_addr.s_addr = from.sin_addr.s_addr;
- 				peer->remote_sa->use_dest = 1;

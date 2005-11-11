@@ -1,14 +1,19 @@
-$OpenBSD: patch-vpnc_c,v 1.1 2005/03/08 06:38:08 sturm Exp $
---- vpnc.c.orig	Mon Nov 22 01:12:02 2004
-+++ vpnc.c	Mon Mar  7 23:06:44 2005
-@@ -468,8 +468,8 @@ static uint16_t unpack_verify_phase2(str
- 	*r_p = NULL;
+$OpenBSD: patch-vpnc_c,v 1.2 2005/11/11 19:38:07 sturm Exp $
+--- vpnc.c.orig	Fri Nov  4 00:09:49 2005
++++ vpnc.c	Fri Nov  4 00:11:03 2005
+@@ -196,10 +196,11 @@ static void addenv(const void *name, con
  
- 	if (r_length < ISAKMP_PAYLOAD_O || ((r_length - ISAKMP_PAYLOAD_O) % s->ivlen != 0)) {
--		DEBUG(2, printf("payload to short or not padded: len=%d, min=%d (ivlen=%d)\n",
--			r_length, ISAKMP_PAYLOAD_O, s->ivlen));
-+		DEBUG(2, printf("payload to short or not padded: len=%lu, min=%d (ivlen=%lu)\n",
-+			(unsigned long)r_length, ISAKMP_PAYLOAD_O, (unsigned long)s->ivlen));
- 		return ISAKMP_N_UNEQUAL_PAYLOAD_LENGTHS;
+ 	oldval = getenv(name);
+ 	if (oldval != NULL) {
+-		strbuf = xallocc(strlen(oldval) + 1 + strlen(value) + 1);
+-		strcat(strbuf, oldval);
+-		strcat(strbuf, " ");
+-		strcat(strbuf, value);
++		size_t sz = strlen(oldval) + 1 + strlen(value) + 1;
++		strbuf = xallocc(sz);
++		strlcpy(strbuf, oldval, sz);
++		strlcat(strbuf, " ", sz);
++		strlcat(strbuf, value, sz);
  	}
  
+ 	setenv(name, strbuf ? strbuf : value, 1);

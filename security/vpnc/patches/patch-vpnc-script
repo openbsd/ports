@@ -1,0 +1,64 @@
+$OpenBSD: patch-vpnc-script,v 1.1 2005/11/11 19:38:07 sturm Exp $
+--- vpnc-script.orig	Thu Nov  3 23:39:23 2005
++++ vpnc-script	Thu Nov  3 23:51:02 2005
+@@ -70,7 +70,7 @@ do_ifconfig() {
+ 	ifconfig "$TUNDEV" inet "$INTERNAL_IP4_ADDRESS" $ifconfig_syntax_ptp "$INTERNAL_IP4_ADDRESS" netmask 255.255.255.255 mtu 1412 up
+ }
+ 
+-if [ -n "$IPROUTE" ]; then
++if [ -x "$IPROUTE" ]; then
+ 	fix_ip_get_output () {
+ 		sed 's/cache//;s/metric[0-9]\+ [0-9]\+//g'
+ 	}
+@@ -117,7 +117,11 @@ if [ -n "$IPROUTE" ]; then
+ 	}
+ else
+ 	get_default_gw() {
+-		netstat -r -n | grep '^0.0.0.0' | awk '{print $2}'
++		if [ "$OS" = "OpenBSD" ]; then
++			netstat -r -n | grep '^default' | awk '{print $2}'
++		else
++			netstat -r -n | grep '^0.0.0.0' | awk '{print $2}'
++		fi
+ 	}
+ 	
+ 	set_vpngateway_route() {
+@@ -215,15 +219,21 @@ do_connect() {
+ 		echo "$CISCO_BANNER" | while read LINE ; do echo "|" "$LINE" ; done
+ 		echo
+ 	fi
+-	
++
++	if [ ! -d /var/run/vpnc ]; then
++		mkdir /var/run/vpnc || exit $?
++	fi
++
+ 	do_ifconfig
+ 	set_vpngateway_route
+ 	if [ -n "$CISCO_SPLIT_INC" ]; then
+-		for ((i = 0 ; i < CISCO_SPLIT_INC ; i++ )) ; do
++		i=0
++		while [ $i -lt $CISCO_SPLIT_INC ]; do
+ 			eval NETWORK="\${CISCO_SPLIT_INC_${i}_ADDR}"
+ 			eval NETMASK="\${CISCO_SPLIT_INC_${i}_MASK}"
+ 			eval NETMASKLEN="\${CISCO_SPLIT_INC_${i}_MASKLEN}"
+ 			set_network_route "$NETWORK" "$NETMASK" "$NETMASKLEN"
++			i=`expr $i + 1`
+ 		done
+ 		for i in $INTERNAL_IP4_DNS ; do
+ 			set_network_route "$i" "255.255.255.255" "32"
+@@ -239,11 +249,13 @@ do_connect() {
+ 
+ do_disconnect() {
+ 	if [ -n "$CISCO_SPLIT_INC" ]; then
+-		for ((i = 0 ; i < CISCO_SPLIT_INC ; i++ )) ; do
++		i=0
++		while [ $i -lt $CISCO_SPLIT_INC ]; do
+ 			eval NETWORK="\${CISCO_SPLIT_INC_${i}_ADDR}"
+ 			eval NETMASK="\${CISCO_SPLIT_INC_${i}_MASK}"
+ 			eval NETMASKLEN="\${CISCO_SPLIT_INC_${i}_MASKLEN}"
+ 			del_network_route "$NETWORK" "$NETMASK" "$NETMASKLEN"
++			i=`expr $i + 1`
+ 		done
+ 		for i in $INTERNAL_IP4_DNS ; do
+ 			del_network_route "$i" "255.255.255.255" "32"
