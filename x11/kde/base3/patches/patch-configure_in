@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.15 2005/10/17 11:28:24 espie Exp $
+$OpenBSD: patch-configure_in,v 1.16 2005/11/11 11:33:02 espie Exp $
 --- configure.in.orig	Wed Oct  5 23:39:40 2005
-+++ configure.in	Sun Oct  9 00:12:06 2005
++++ configure.in	Fri Nov 11 12:17:19 2005
 @@ -593,6 +593,7 @@ if test "$KFI_FOUND_FREETYPE" -eq 1; the
              *-*-aix*) UNAME='AIX' ;;
              *-*-hpux*) UNAME='HPUX' ;;
@@ -9,3 +9,12 @@ $OpenBSD: patch-configure_in,v 1.15 2005/10/17 11:28:24 espie Exp $
              *) UNAME='Unknown' ;;
              esac
                  AC_MSG_RESULT($UNAME)
+@@ -1265,7 +1266,7 @@ if test "x$with_ldap" = "xCHECK" ; then
+           LDAP_LIBS="-L$ldap_libdir "
+           test "$USE_RPATH" = yes && LDAP_RPATH="-R $ldap_libdir"
+         fi
+-        LDAP_LIBS="${LDAP_LIBS}-lldap -llber ${LIBRESOLV}"
++        LDAP_LIBS="${LDAP_LIBS}-lldap -llber ${SASL2_LIBS} ${LIBRESOLV}"
+         with_ldap=FOUND
+         break
+       fi
