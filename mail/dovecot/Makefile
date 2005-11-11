@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2005/10/20 18:28:48 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2005/11/11 12:11:41 bernd Exp $
 
 COMMENT= 	"compact IMAP/POP3 server"
 
 DISTNAME=	dovecot-1.0.alpha4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/
 
@@ -24,7 +25,8 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--with-ldap
-LIB_DEPENDS+=		lber,ldap::databases/openldap
+LIB_DEPENDS+=		lber,ldap::databases/openldap \
+			sasl2.2::security/cyrus-sasl2
 .endif
 
 .if ${FLAVOR:L:Mmysql}
