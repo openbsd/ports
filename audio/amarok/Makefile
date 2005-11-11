@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2005/09/18 12:21:41 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2005/11/11 14:21:22 espie Exp $
 
 CATEGORIES=	audio x11 x11/kde
 COMMENT=	'music player for kde'
 
 HOMEPAGE=	http://amarok.kde.org/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=amarok/}
-DISTNAME=	amarok-1.3.1
+DISTNAME=	amarok-1.3.6
 EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS+=	lib/qt3/qt-mt.3.33::x11/qt3,mt \
