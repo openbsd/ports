@@ -1,0 +1,12 @@
+$OpenBSD: patch-geo_drgeo_figure_cc,v 1.1 2005/11/11 20:23:53 wilfried Exp $
+--- geo/drgeo_figure.cc.orig	Sun Nov  6 12:07:33 2005
++++ geo/drgeo_figure.cc	Sun Nov  6 12:11:08 2005
+@@ -1044,7 +1044,7 @@ drgeoFigure::getKeyFromValueOnHash (gpoi
+     return NULL;
+   else
+     // data.key is a * gchar get it content as a gpointer
+-    return GINT_TO_POINTER (strtol ((gchar *) data.key, NULL, 16));
++    return GUINT_TO_POINTER (strtoul ((gchar *) data.key, NULL, 16));
+ }
+ 
+ void

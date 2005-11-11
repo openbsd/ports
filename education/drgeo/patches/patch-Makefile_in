@@ -1,7 +1,16 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2004/02/21 12:31:02 espie Exp $
---- Makefile.in.orig	2004-02-12 01:31:23.000000000 +0100
-+++ Makefile.in	2004-02-12 01:31:29.000000000 +0100
-@@ -218,8 +218,7 @@ drgeo_LDADD = \
+$OpenBSD: patch-Makefile_in,v 1.2 2005/11/11 20:23:53 wilfried Exp $
+--- Makefile.in.orig	Wed Jul 27 09:36:20 2005
++++ Makefile.in	Fri Nov  4 13:55:44 2005
+@@ -182,7 +182,7 @@ helpdir = $(datadir)/drgeo/help
+ gladedir = $(datadir)/drgeo/glade
+ scmdir = $(datadir)/drgeo/scm
+ appicondir = $(datadir)/pixmaps
+-SUBDIRS = po geo examples icons glade scm plugin encode
++SUBDIRS = po geo examples icons glade scm encode
+ 
+ INCLUDES = \
+ 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	\
+@@ -226,8 +226,7 @@ drgeo_LDADD = \
     $(top_builddir)/geo/libgeo.a \
  	$(INTLLIBS) \
  	$(DRGEO_LIBS) \
