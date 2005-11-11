@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.736 2005/11/05 23:54:53 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.737 2005/11/11 11:31:53 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2139,64 +2139,63 @@ _delete-package-links:
 
 _internal-clean:
 .if ${_clean:L:Mdepends} && ${_CLEANDEPENDS:L} == "yes"
-	@PACKAGING='${SUBPACKAGE}' ${MAKE} all-dir-depends|tsort -r|while read subdir; do \
+	@PACKAGING='${SUBPACKAGE}' ${MAKE} all-dir-depends|tsort -r|${_zap_last_line}|while read subdir; do \
 		${_flavor_fragment}; \
 		eval $$toset ${MAKE} _CLEANDEPENDS=No clean _MASTER_LOCK=${_LOCKNAME}; \
 	done
-.else
+.endif
 	@${ECHO_MSG} "===>  Cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
-.  if ${_clean:L:Mfake}
+.if ${_clean:L:Mfake}
 	@if cd ${WRKINST} 2>/dev/null; then ${SUDO} rm -rf ${WRKINST}; fi
-.  endif
-.  if ${_clean:L:Mwork}
-.    if ${_clean:L:Mflavors}
+.endif
+.if ${_clean:L:Mwork}
+.  if ${_clean:L:Mflavors}
 	@for i in ${.CURDIR}/w-*; do \
 		if [ -L $$i ]; then ${SUDO} rm -rf `readlink $$i`; fi; \
 		${SUDO} rm -rf $$i; \
 	done
-.    else
+.  else
 	@if [ -L ${WRKDIR} ]; then rm -rf `readlink ${WRKDIR}`; fi
 	@rm -rf ${WRKDIR}
-.    endif
 .  endif
-.  if ${_clean:L:Mdist}
+.endif
+.if ${_clean:L:Mdist}
 	@${ECHO_MSG} "===>  Dist cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
 	@if cd ${FULLDISTDIR} 2>/dev/null; then \
 		rm -f ${_DISTFILES} ${_PATCHFILES}; \
 	fi
-.    if !empty(DIST_SUBDIR)
+.  if !empty(DIST_SUBDIR)
 	-@rmdir ${FULLDISTDIR}
-.    endif
 .  endif
-.  if ${_clean:L:Minstall}
-.    if ${_clean:L:Msub}
-.      for _s in ${MULTI_PACKAGES}
+.endif
+.if ${_clean:L:Minstall}
+.  if ${_clean:L:Msub}
+.    for _s in ${MULTI_PACKAGES}
 	-${SUDO} ${PKG_DELETE} ${FULLPKGNAME${_s}}
-.      endfor
-.    else
+.    endfor
+.  else
 	-${SUDO} ${PKG_DELETE} ${FULLPKGNAME${SUBPACKAGE}}
-.    endif
 .  endif
-.  if ${_clean:L:Mpackages} || ${_clean:L:Mpackage} && ${_clean:L:Msub}
+.endif
+.if ${_clean:L:Mpackages} || ${_clean:L:Mpackage} && ${_clean:L:Msub}
 	rm -f ${_PACKAGE_COOKIES}
-.    if defined(MULTI_PACKAGES)
-.      for _s in ${MULTI_PACKAGES}
+.  if defined(MULTI_PACKAGES)
+.    for _s in ${MULTI_PACKAGES}
 	@cd ${.CURDIR} && SUBPACKAGE='${_s}' exec ${MAKE} _delete-package-links
-.      endfor
-.    endif
-.  elif ${_clean:L:Mpackage}
+.    endfor
+.  endif
+.elif ${_clean:L:Mpackage}
 	@cd ${.CURDIR} && exec ${MAKE} _delete-package-links
 	rm -f ${PKGFILE${SUBPACKAGE}}
-.  endif
-.  if ${_clean:L:Mreadmes}
+.endif
+.if ${_clean:L:Mreadmes}
 	rm -f ${.CURDIR}/${FULLPKGNAME}.html
-.      for _s in ${MULTI_PACKAGES}
+.    for _s in ${MULTI_PACKAGES}
 	rm -f ${.CURDIR}/${FULLPKGNAME${_s}}.html
-.      endfor
-.  endif
-.  if ${_clean:L:Mbulk}
+.    endfor
+.endif
+.if ${_clean:L:Mbulk}
 	rm -f ${_BULK_COOKIE}
-.  endif
 .endif
 
 # mirroring utilities
