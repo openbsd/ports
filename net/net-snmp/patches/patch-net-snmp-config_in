@@ -1,0 +1,12 @@
+$OpenBSD: patch-net-snmp-config_in,v 1.1 2005/11/12 00:30:48 bernd Exp $
+--- net-snmp-config.in.orig	Thu Nov 10 22:29:23 2005
++++ net-snmp-config.in	Thu Nov 10 22:29:53 2005
+@@ -31,7 +31,7 @@ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ NSC_LDFLAGS="@LDFLAGS@"
+ NSC_LIBDIR=-L@libdir@
+-NSC_LIBS="@LIBS@ @WRAPLIBS@"
++NSC_LIBS="@LIBS@"
+ NSC_AGENTLIBS="@AGENTLIBS@ @WRAPLIBS@"
+ NSC_PREFIX=@prefix@
+ NSC_EXEC_PREFIX=@exec_prefix@
