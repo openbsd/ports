@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_util_c,v 1.1 2005/02/28 13:30:07 mbalmer Exp $
---- src/util.c.orig	Sat Oct 12 14:50:20 2002
-+++ src/util.c	Wed Jan 26 23:27:26 2005
-@@ -1588,27 +1588,51 @@ GList *get_suffixes(struct ldapserver *s
+$OpenBSD: patch-src_util_c,v 1.2 2005/11/12 10:39:08 espie Exp $
+--- src/util.c.orig	Mon Nov  3 23:28:24 2003
++++ src/util.c	Sat Nov 12 04:34:27 2005
+@@ -1909,27 +1909,51 @@ GList *get_suffixes(int error_context, s
  char **gq_ldap_explode_dn(const char *dn, int dummy)
  {
       int i, rc;

@@ -1,5 +1,17 @@
 --- configure.in.orig	Mon Nov  3 23:56:14 2003
-+++ configure.in	Tue Feb 15 03:58:15 2005
++++ configure.in	Sat Nov 12 11:30:15 2005
+@@ -278,9 +278,9 @@ AC_CHECK_LIB(lber, ber_alloc,
+ )
+ 
+ AC_CHECK_LIB(ldap, ldap_simple_bind,
+-	     [LIBS="-lldap $HAVE_LLBER $LIBS"],
++	     [LIBS="-lldap -lsasl2 $HAVE_LLBER $LIBS"],
+ 	     AC_MSG_ERROR(Cannot find libldap),
+-	     $HAVE_LLBER
++	     $HAVE_LLBER -lsasl2
+ )
+ 
+ AC_CACHE_CHECK([OpenLDAP version], gq_cv_OpenLDAP_version,
 @@ -340,7 +340,7 @@ AC_CHECK_FUNCS(ldap_str2objectclass ldap
  AC_ARG_WITH(kerberos-prefix,
  	    [  --with-kerberos-prefix=PFX Prefix where Kerberos is installed],
