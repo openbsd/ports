@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2005/04/04 22:49:50 todd Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/12 12:49:59 kurt Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
 COMMENT=	"Quicken-like money and finance manager"
 DISTNAME=	gnucash-1.8.11
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	gnome productivity
 MASTER_SITE_GNUCASH=	http://www.gnucash.org/pub/gnucash/ \
 		ftp://ftp.gnucash.org/pub/gnucash/ \
