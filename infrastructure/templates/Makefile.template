@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.45 2005/11/02 17:39:06 wilfried Exp $
+# $OpenBSD: Makefile.template,v 1.46 2005/11/12 00:07:22 sturm Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -48,6 +48,7 @@ CATEGORIES=		???
 #PERMIT_PACKAGE_FTP=	Yes | "Reason if No"
 #PERMIT_DISTFILES_CDROM=Yes | "Reason if No"
 #PERMIT_DISTFILES_FTP=	Yes | "Reason if No"
+#WANTLIB=		???
 
 # where the source files and patches can be fetched
 #
