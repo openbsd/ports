@@ -1,0 +1,12 @@
+$OpenBSD: patch-SOAPpy_Types_py,v 1.1.1.1 2005/11/12 00:57:13 djm Exp $
+--- SOAPpy/Types.py.orig	Sat Sep 11 13:03:33 2004
++++ SOAPpy/Types.py	Fri Nov 11 18:52:56 2005
+@@ -590,7 +590,7 @@ class timeType(anyType):
+             d = self._data
+             s = ''
+ 
+-            s = time.strftime("%H:%M:%S", (0, 0, 0) + d + (0, 0, -1))
++            s = time.strftime("%H:%M:%S", (2000, 1, 1) + d + (1, 1, -1))
+             f = d[2] - int(d[2])
+             if f != 0:
+                 s += ("%g" % f)[1:]
