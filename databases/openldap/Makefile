@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.57 2005/11/09 15:42:49 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.58 2005/11/12 17:22:58 mbalmer Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
 
 DISTNAME=	openldap-2.3.11
-FULLPKGNAME=	${DISTNAME:S/-/-client-/}p0
-PKGNAME-server=	${DISTNAME:S/-/-server-/}p0
+FULLPKGNAME=	${DISTNAME:S/-/-client-/}p1
+PKGNAME-server=	${DISTNAME:S/-/-server-/}p1
 CATEGORIES=	databases net
 
 HOMEPAGE=	http://www.openldap.org/
@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=	\
 			--enable-crypt \
 			--enable-rewrite \
 			--enable-wrappers \
-			--enable-sasl \
+			--with-cyrus-sasl \
 			--enable-spasswd
 
 # slapd modules
@@ -94,6 +94,8 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
 RUN_DEPENDS=	openldap:${FULLPKGNAME}:databases/openldap
 WANTLIB+=	perl util wrap m pthread
 .endif
+
+USE_LIBTOOL=	Yes
 
 pre-build:
 	@cd ${WRKBUILD}; ${MAKE_PROGRAM} depend

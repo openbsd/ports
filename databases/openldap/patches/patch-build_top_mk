@@ -1,12 +1,12 @@
-$OpenBSD: patch-build_top_mk,v 1.1 2005/11/09 15:42:50 mbalmer Exp $
---- build/top.mk.orig	Wed Nov  9 16:11:04 2005
-+++ build/top.mk	Wed Nov  9 16:11:24 2005
-@@ -112,7 +112,7 @@ LTCOMPILE_LIB = $(LIBTOOL) $(LTONLY_LIB)
- 	$(CC) $(LT_CFLAGS) $(LT_CPPFLAGS) $(LIB_DEFS) -c
+$OpenBSD: patch-build_top_mk,v 1.2 2005/11/12 17:22:59 mbalmer Exp $
+--- build/top.mk.orig	Sat Nov 12 14:42:32 2005
++++ build/top.mk	Sat Nov 12 14:43:05 2005
+@@ -121,7 +121,7 @@ LTLINK_MOD = $(LIBTOOL) $(LTONLY_MOD) --
+ 	$(CC) $(LT_CFLAGS) $(LDFLAGS) $(LTFLAGS_MOD)
  
- LTLINK_LIB = $(LIBTOOL) $(LTONLY_LIB) --mode=link \
--	$(CC) $(LT_CFLAGS) $(LDFLAGS) $(LTFLAGS_LIB)
-+	$(CC) $(LT_CFLAGS) $(LTFLAGS_LIB)
+ LTINSTALL = $(LIBTOOL) --mode=install $(INSTALL) 
+-LTFINISH = $(LIBTOOL) --mode=finish
++LTFINISH = true 
  
- LTCOMPILE_MOD = $(LIBTOOL) $(LTONLY_MOD) --mode=compile \
- 	$(CC) $(LT_CFLAGS) $(LT_CPPFLAGS) $(MOD_DEFS) -c
+ # Misc UNIX commands used in build environment
+ AR = @AR@
