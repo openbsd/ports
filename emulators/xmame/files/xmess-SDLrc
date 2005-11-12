@@ -1,4 +1,4 @@
-# $OpenBSD: xmess-SDLrc,v 1.3 2005/10/02 01:39:37 fgsch Exp $
+# $OpenBSD: xmess-SDLrc,v 1.4 2005/11/12 04:25:23 kurt Exp $
 ### xmess running parameters ###
 
 ### Video Related ###
@@ -101,8 +101,8 @@ diff_directory          $HOME/.xmess/diff
 ctrlr_directory         /usr/local/share/xmess/ctrlr
 cheat_file              /usr/local/share/xmess/cheat.dat
 hiscore_file            /usr/local/share/xmess/hiscore.dat
-sysinfo_file            /usr/local/share/xmess/sysinfo.dat
-messinfo_file           /usr/local/share/xmess/messinfo.dat
+# sysinfo_file            /usr/local/share/xmess/sysinfo.dat
+# messinfo_file           /usr/local/share/xmess/messinfo.dat
 # record                <NULL> (not set)
 # playback              <NULL> (not set)
 
@@ -128,7 +128,7 @@ cheat                   0
 skip_disclaimer         0
 skip_gameinfo           0
 skip_validitychecks     1
-crconly                 0
+# crconly                 0
 bios                    default
 # state                 <NULL> (not set)
 

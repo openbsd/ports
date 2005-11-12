@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2005/11/03 22:04:41 aanriot Exp $
+# $OpenBSD: Makefile,v 1.19 2005/11/12 04:25:22 kurt Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -7,9 +7,9 @@ COMMENT-mess=	"emulates game consoles and old home computers"
 VERSION=	0.100
 DISTNAME=	xmame-${VERSION}
 
-PKGNAME=	xmame+xmess-${VERSION}p1
-PKGNAME-mame=	xmame-${VERSION}p1
-PKGNAME-mess=	xmess-${VERSION}p1
+PKGNAME=	xmame+xmess-${VERSION}p2
+PKGNAME-mame=	xmame-${VERSION}p2
+PKGNAME-mess=	xmess-${VERSION}p2
 
 CATEGORIES=	emulators games
 MASTER_SITES=	${HOMEPAGE}/download/ \
@@ -109,7 +109,7 @@ MAKE_ENV=	PREFIX="${PREFIX}"
 MAKE_FILE=	Makefile.OpenBSD
 FAKE_FLAGS=	${MAKE_FLAGS}
 MAKE_FLAGS+=	ARCH=openbsd \
-		CC="${CC}" CFLAGS="${CFLAGS} -DRTLD_GLOBAL=0" \
+		CC="${CC}" CFLAGS="${CFLAGS}" \
 		DISPLAY_METHOD="${DISPLAY_METHOD}" \
 		INCLUDES="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lexpat -lz" GLLIBS="" \

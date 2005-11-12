@@ -1,4 +1,4 @@
-# $OpenBSD: xmame-SDLrc,v 1.3 2005/10/02 01:39:37 fgsch Exp $
+# $OpenBSD: xmame-SDLrc,v 1.4 2005/11/12 04:25:23 kurt Exp $
 ### xmame running parameters ###
 
 ### Video Related ###
@@ -99,8 +99,8 @@ diff_directory          $HOME/.xmame/diff
 ctrlr_directory         /usr/local/share/xmame/ctrlr
 cheat_file              /usr/local/share/xmame/cheat.dat
 hiscore_file            /usr/local/share/xmame/hiscore.dat
-history_file            /usr/local/share/xmame/history.dat
-mameinfo_file           /usr/local/share/xmame/mameinfo.dat
+# history_file            /usr/local/share/xmame/history.dat
+# mameinfo_file           /usr/local/share/xmame/mameinfo.dat
 # record                <NULL> (not set)
 # playback              <NULL> (not set)
 
@@ -112,7 +112,7 @@ cheat                   0
 skip_disclaimer         0
 skip_gameinfo           0
 skip_validitychecks     1
-crconly                 0
+# crconly                 0
 bios                    default
 # state                 <NULL> (not set)
 
