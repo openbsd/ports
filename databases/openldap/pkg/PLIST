@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2005/11/07 15:59:08 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.14 2005/11/12 18:12:06 mbalmer Exp $
 bin/ldapadd
 bin/ldapcompare
 bin/ldapdelete
@@ -203,4 +203,3 @@ share/examples/openldap/
 share/examples/openldap/ldap.conf
 @sample ${SYSCONFDIR}/openldap/ldap.conf
 %%SHARED%%
-share/examples/openldap/schema/ppolicy.schema

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.11 2005/11/07 15:59:08 mbalmer Exp $
+@comment $OpenBSD: PLIST-server,v 1.12 2005/11/12 18:12:06 mbalmer Exp $
 @newgroup _openldap:544
 @newuser _openldap:544:_openldap:daemon:OpenLDAP Account:/nonexistent:/sbin/nologin
 libexec/slapd
@@ -53,5 +53,7 @@ share/examples/openldap/schema/nis.schema
 @sample ${SYSCONFDIR}/openldap/schema/nis.schema
 share/examples/openldap/schema/openldap.schema
 @sample ${SYSCONFDIR}/openldap/schema/openldap.schema
+share/examples/openldap/schema/ppolicy.schema
+@sample ${SYSCONFDIR}/openldap/schema/ppolicy.schema
 share/examples/openldap/slapd.conf
 @sample ${SYSCONFDIR}/openldap/slapd.conf
