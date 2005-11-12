@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.19 2005/11/09 21:19:03 bernd Exp $
+# $OpenBSD: Makefile.inc,v 1.20 2005/11/12 02:29:47 jolan Exp $
 
 CATEGORIES=	mail
 
@@ -10,7 +10,7 @@ MASTER_SITES_MUTT= ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 		   ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/
 
 MASTER_SITES0=	http://www.spinnaker.de/mutt/compressed/
-MASTER_SITES1=	http://thomer.com/mutt/
+MASTER_SITES1=	http://mirrors.protection.cx/~jolan/
 
 MODULES=	devel/gettext
 
@@ -84,10 +84,10 @@ CONFIGURE_ARGS+=	--without-idn
 .endif
 
 .if ${FLAVOR:L:Msidebar}
-PATCHFILES+=		patch-1.5.10i.sidebar.20050816.txt:1
+PATCHFILES+=		patch-1.5.10i.sidebar.20050816.txt-fixed:1
 PATCH_DIST_STRIP=	-p1
 .else
-SUPDISTFILES+=		patch-1.5.10i.sidebar.20050816.txt:1
+SUPDISTFILES+=		patch-1.5.10i.sidebar.20050816.txt-fixed:1
 .endif
 
 .if defined(HOMESPOOL)
