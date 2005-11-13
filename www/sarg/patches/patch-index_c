@@ -1,0 +1,19 @@
+$OpenBSD: patch-index_c,v 1.1 2005/11/13 17:32:27 pvalchev Exp $
+--- index.c.orig	Thu Aug  4 19:32:44 2005
++++ index.c	Fri Nov  4 17:06:04 2005
+@@ -113,11 +113,11 @@ void geraindex()
+    (void)closedir( dirp );
+ 
+    if(strcmp(IndexSortOrder,"A") == 0)
+-//      sprintf(html,"sort -t';' -k 7,7 %s -o %s", wdir_tmp, wdir_tmp2);
+-      sprintf(html,"sort -t';' +6.5n +6.2M +6.0n '%s' -o '%s'", wdir_tmp, wdir_tmp2);
++      sprintf(html,"sort -t';' -k 7,7 %s -o %s", wdir_tmp, wdir_tmp2);
++//      sprintf(html,"sort -t';' +6.5n +6.2M +6.0n '%s' -o '%s'", wdir_tmp, wdir_tmp2);
+    else
+-//      sprintf(html,"sort -t';' -r -k 7,7 %s -o %s", wdir_tmp, wdir_tmp2);
+-      sprintf(html,"sort -t';' +6.5nr +6.2Mr +6.0nr '%s' -o '%s'", wdir_tmp, wdir_tmp2);
++      sprintf(html,"sort -t';' -r -k 7,7 %s -o %s", wdir_tmp, wdir_tmp2);
++//      sprintf(html,"sort -t';' +6.5nr +6.2Mr +6.0nr '%s' -o '%s'", wdir_tmp, wdir_tmp2);
+ 
+    system(html);
+ 
