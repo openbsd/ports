@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/19 17:36:32 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2005/11/13 13:19:23 naddy Exp $
 
 COMMENT=	"minimal wm based on GNU screen"
 
 DISTNAME=	ratpoison-1.3.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
-HOMEPAGE=	http://ratpoison.sourceforge.net/
+HOMEPAGE=	http://www.nongnu.org/ratpoison/
 
 MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xinerama c
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ratpoison/} \
+MASTER_SITES=	http://savannah.nongnu.org/download/ratpoison/ \
 		http://openbsd.rutgers.edu/
 
 USE_X11=		Yes
