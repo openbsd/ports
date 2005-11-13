@@ -1,6 +1,15 @@
-$OpenBSD: patch-src_chm_lib_c,v 1.1.1.1 2005/11/08 10:40:17 espie Exp $
---- src/chm_lib.c.orig	Sun Nov  6 17:07:44 2005
-+++ src/chm_lib.c	Sun Nov  6 17:16:20 2005
+$OpenBSD: patch-src_chm_lib_c,v 1.2 2005/11/13 09:22:28 sturm Exp $
+--- src/chm_lib.c.orig	Wed Oct 26 06:17:50 2005
++++ src/chm_lib.c	Sun Nov 13 02:18:12 2005
+@@ -171,7 +171,7 @@ typedef unsigned long long      UInt64;
+ 
+ /* x86-64 */
+ /* Note that these may be appropriate for other 64-bit machines. */
+-#elif __x86_64__
++#elif __x86_64__ || __sparc64__
+ typedef unsigned char           UChar;
+ typedef short                   Int16;
+ typedef unsigned short          UInt16;
 @@ -731,7 +731,7 @@ static Int64 _chm_fetch_bytes(struct chm
  #ifdef CHM_USE_IO64
      readLen = pread64(h->fd, buf, (long)len, os);
