@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2005/07/28 23:44:17 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2005/11/13 14:23:21 wilfried Exp $
 # XXX hardcoded apm list
 
 COMMENT=	"window bar for holding application launchers"
 DISTNAME=	matchbox-panel-0.9.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11
 MASTER_SITES=	http://projects.o-hand.com/matchbox/sources/matchbox-panel/0.9/
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	:matchbox-common-*:x11/matchbox/matchbox-common
 MODULES=	devel/gettext
 WANTLIB=	X11 Xext Xft Xrender c fontconfig freetype m z \
 		glib-2.0.600.0 gmodule-2.0.600.0 gobject-2.0.600.0 jpeg \
-		pango-1.0.800.0 pangoxft-1.0.800.0 png
+		pango-1.0.0.0 pangoft2-1.0.0.0 pangoxft-1.0.0.0 png
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-nls

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/06/17 02:57:30 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2005/11/13 14:26:37 wilfried Exp $
 
 COMMENT=	"window manager with a classic pda management policy"
 DISTNAME=	matchbox-window-manager-0.9.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 MASTER_SITES=	http://projects.o-hand.com/matchbox/sources/matchbox-window-manager/0.9/
 
@@ -21,7 +22,7 @@ RUN_DEPENDS=	:matchbox-common-*:x11/matchbox/matchbox-common
 MODULES=	devel/gettext
 WANTLIB=	ICE SM X11 Xext Xft Xrender c fontconfig freetype m z \
 		glib-2.0.600.0 gmodule-2.0.600.0 gobject-2.0.600.0 jpeg \
-		pango-1.0.800.0 pangoxft-1.0.800.0 png
+		pango-1.0.0.0 pangoft2-1.0.0.0 pangoxft-1.0.0.0 png
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-session
