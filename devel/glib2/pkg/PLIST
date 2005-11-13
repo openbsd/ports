@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2005/05/24 21:26:17 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.15 2005/11/13 06:22:03 marcm Exp $
 bin/glib-genmarshal
 bin/glib-gettextize
 bin/glib-mkenums
@@ -29,6 +29,7 @@ include/glib-2.0/glib/gkeyfile.h
 include/glib-2.0/glib/glist.h
 include/glib-2.0/glib/gmacros.h
 include/glib-2.0/glib/gmain.h
+include/glib-2.0/glib/gmappedfile.h
 include/glib-2.0/glib/gmarkup.h
 include/glib-2.0/glib/gmem.h
 include/glib-2.0/glib/gmessages.h
@@ -91,6 +92,7 @@ lib/libgthread-2.0.la
 lib/pkgconfig/
 lib/pkgconfig/glib-2.0.pc
 lib/pkgconfig/gmodule-2.0.pc
+lib/pkgconfig/gmodule-export-2.0.pc
 lib/pkgconfig/gmodule-no-export-2.0.pc
 lib/pkgconfig/gobject-2.0.pc
 lib/pkgconfig/gthread-2.0.pc
@@ -223,6 +225,12 @@ share/locale/sv/LC_MESSAGES/glib20.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/glib20.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/glib20.mo
+share/locale/th/
+share/locale/th/LC_MESSAGES/
+share/locale/th/LC_MESSAGES/glib20.mo
 share/locale/tl/
 share/locale/tl/LC_MESSAGES/
 share/locale/tl/LC_MESSAGES/glib20.mo

@@ -1,7 +1,15 @@
-$OpenBSD: patch-ltmain_sh,v 1.7 2005/05/24 21:26:17 marcm Exp $
---- ltmain.sh.orig	Tue May 24 13:39:03 2005
-+++ ltmain.sh	Tue May 24 13:46:06 2005
-@@ -1832,6 +1832,17 @@ EOF
+$OpenBSD: patch-ltmain_sh,v 1.8 2005/11/13 06:22:03 marcm Exp $
+--- ltmain.sh.orig	Mon May 16 21:29:31 2005
++++ ltmain.sh	Mon Jul 11 21:28:49 2005
+@@ -1523,6 +1523,7 @@ EOF
+ 	compiler_flags="$compiler_flags $arg"
+ 	compile_command="$compile_command $arg"
+ 	finalize_command="$finalize_command $arg"
++	deplibs="$deplibs $arg"
+ 	continue
+ 	;;
+ 
+@@ -1985,6 +1986,17 @@ EOF
  	;;
      esac
      for pass in $passes; do
@@ -19,15 +27,15 @@ $OpenBSD: patch-ltmain_sh,v 1.7 2005/05/24 21:26:17 marcm Exp $
        if test "$linkmode,$pass" = "lib,link" ||
  	 test "$linkmode,$pass" = "prog,scan"; then
  	libs="$deplibs"
-@@ -1859,6 +1870,7 @@ EOF
+@@ -2012,6 +2024,7 @@ EOF
  	    finalize_deplibs="$deplib $finalize_deplibs"
  	  else
- 	    deplibs="$deplib $deplibs"
+ 	    compiler_flags="$compiler_flags $deplib"
 +	    test "$linkmode" = lib && newdependency_libs="$deplib $newdependency_libs"
  	  fi
  	  continue
  	  ;;
-@@ -2080,20 +2092,20 @@ EOF
+@@ -2246,20 +2259,20 @@ EOF
  	    # It is a libtool convenience library, so add in its objects.
  	    convenience="$convenience $ladir/$objdir/$old_library"
  	    old_convenience="$old_convenience $ladir/$objdir/$old_library"
@@ -58,7 +66,7 @@ $OpenBSD: patch-ltmain_sh,v 1.7 2005/05/24 21:26:17 marcm Exp $
  	  continue
  	fi # $pass = conv
  
-@@ -2471,7 +2483,7 @@ EOF
+@@ -2645,7 +2658,7 @@ EOF
  	    add_dir=
  	    add=
  	    # Finalize command for both is simple: just hardcode it.
@@ -67,7 +75,7 @@ $OpenBSD: patch-ltmain_sh,v 1.7 2005/05/24 21:26:17 marcm Exp $
  	      add="$libdir/$linklib"
  	    elif test "$hardcode_minus_L" = yes; then
  	      add_dir="-L$libdir"
-@@ -5827,40 +5839,6 @@ relink_command=\"$relink_command\""
+@@ -5902,40 +5915,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  

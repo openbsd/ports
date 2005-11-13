@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.11 2005/05/24 21:26:17 marcm Exp $
-@lib lib/libglib-2.0.so.600.4
-@lib lib/libgmodule-2.0.so.600.4
-@lib lib/libgobject-2.0.so.600.4
-@lib lib/libgthread-2.0.so.600.4
+@comment $OpenBSD: PFRAG.shared,v 1.12 2005/11/13 06:22:03 marcm Exp $
+@lib lib/libglib-2.0.so.800.3
+@lib lib/libgmodule-2.0.so.800.3
+@lib lib/libgobject-2.0.so.800.3
+@lib lib/libgthread-2.0.so.800.3

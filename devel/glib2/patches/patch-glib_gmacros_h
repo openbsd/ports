@@ -1,6 +1,6 @@
-$OpenBSD: patch-glib_gmacros_h,v 1.4 2005/05/24 21:26:17 marcm Exp $
---- glib/gmacros.h.orig	Mon Nov 29 06:50:47 2004
-+++ glib/gmacros.h	Wed Mar 30 20:41:22 2005
+$OpenBSD: patch-glib_gmacros_h,v 1.5 2005/11/13 06:22:03 marcm Exp $
+--- glib/gmacros.h.orig	Mon Mar  7 21:41:42 2005
++++ glib/gmacros.h	Tue Aug 23 21:22:07 2005
 @@ -34,6 +34,7 @@
  /* We include stddef.h to get the system's definition of NULL
   */
@@ -9,7 +9,7 @@ $OpenBSD: patch-glib_gmacros_h,v 1.4 2005/05/24 21:26:17 marcm Exp $
  
  /* Here we provide G_GNUC_EXTENSION as an alias for __extension__,
   * where this is valid. This allows for warningless compilation of
-@@ -150,11 +151,13 @@
+@@ -156,11 +157,13 @@
  #define	TRUE	(!FALSE)
  #endif
  
