@@ -1,16 +1,40 @@
-$OpenBSD: patch-src_chm_lib_c,v 1.2 2005/11/13 09:22:28 sturm Exp $
+$OpenBSD: patch-src_chm_lib_c,v 1.3 2005/11/13 17:35:58 pvalchev Exp $
 --- src/chm_lib.c.orig	Wed Oct 26 06:17:50 2005
-+++ src/chm_lib.c	Sun Nov 13 02:18:12 2005
-@@ -171,7 +171,7 @@ typedef unsigned long long      UInt64;
- 
- /* x86-64 */
- /* Note that these may be appropriate for other 64-bit machines. */
--#elif __x86_64__
-+#elif __x86_64__ || __sparc64__
++++ src/chm_lib.c	Sun Nov 13 10:15:17 2005
+@@ -160,7 +160,8 @@ typedef unsigned __int64        UInt64;
+ /* Sparc        */
+ /* MIPS         */
+ /* PPC          */
+-#elif __i386__ || __sun || __sgi || __ppc__
++/* other non-64 bit */
++#elif !__LP64__
  typedef unsigned char           UChar;
  typedef short                   Int16;
  typedef unsigned short          UInt16;
-@@ -731,7 +731,7 @@ static Int64 _chm_fetch_bytes(struct chm
+@@ -170,8 +171,8 @@ typedef long long               Int64;
+ typedef unsigned long long      UInt64;
+ 
+ /* x86-64 */
+-/* Note that these may be appropriate for other 64-bit machines. */
+-#elif __x86_64__
++/* other 64-bit machines. */
++#else
+ typedef unsigned char           UChar;
+ typedef short                   Int16;
+ typedef unsigned short          UInt16;
+@@ -179,11 +180,6 @@ typedef int                     Int32;
+ typedef unsigned int            UInt32;
+ typedef long                    Int64;
+ typedef unsigned long           UInt64;
+-
+-#else
+-
+-/* yielding an error is preferable to yielding incorrect behavior */
+-#error "Please define the sized types for your platform in chm_lib.c"
+ #endif
+ 
+ /* GCC */
+@@ -731,7 +727,7 @@ static Int64 _chm_fetch_bytes(struct chm
  #ifdef CHM_USE_IO64
      readLen = pread64(h->fd, buf, (long)len, os);
  #else
@@ -19,7 +43,7 @@ $OpenBSD: patch-src_chm_lib_c,v 1.2 2005/11/13 09:22:28 sturm Exp $
  #endif
  #else
  #ifdef CHM_USE_IO64
-@@ -741,9 +741,9 @@ static Int64 _chm_fetch_bytes(struct chm
+@@ -741,9 +737,9 @@ static Int64 _chm_fetch_bytes(struct chm
      lseek64(h->fd, oldOs, SEEK_SET);
  #else
      oldOs = lseek(h->fd, 0, SEEK_CUR);
