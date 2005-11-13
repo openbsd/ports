@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.26 2005/09/07 20:51:14 kurt Exp $
+# $OpenBSD: Makefile,v 1.27 2005/11/13 06:23:58 marcm Exp $
 
 NOT_FOR_ARCHS=			${NO_SHARED_ARCHS}
 
 COMMENT=			"multi-platform graphical toolkit"
 COMMENT-docs=           	"gtk+-2 documentation"
 
-VERSION=			2.6.10
+VERSION=			2.8.6
 DISTNAME=			gtk+-${VERSION}
-PKGNAME=			gtk+2-${VERSION}p0
-PKGNAME-docs=			gtk+2-docs-${VERSION}p0
+PKGNAME=			gtk+2-${VERSION}
+PKGNAME-docs=			gtk+2-docs-${VERSION}
 CATEGORIES=			x11 devel
 
 HOMEPAGE=			http://www.gtk.org
@@ -20,18 +20,20 @@ PERMIT_PACKAGE_FTP=		Yes
 PERMIT_DISTFILES_CDROM=		Yes
 PERMIT_DISTFILES_FTP=		Yes
 
-MASTER_SITES=			ftp://ftp.gtk.org/pub/gtk/v2.6/
+MASTER_SITES=			ftp://ftp.gtk.org/pub/gtk/v2.8/ \
+				${MASTER_SITE_GNOME:=sources/gtk+/2.8/}
 EXTRACT_SUFX=           	.tar.bz2
 
 MULTI_PACKAGES=         	-docs
 SUBPACKAGE?=
 
 .if ${SUBPACKAGE} != "-docs"
-WANTLIB=			X11 Xcursor Xext Xfixes Xft Xinerama Xrender c fontconfig freetype m z
+WANTLIB=			X11 Xcursor Xext Xfixes Xinerama Xrender \
+				Xrandr c cairo fontconfig freetype glitz m z
 MODULES=			devel/gettext
 
-LIB_DEPENDS=			glib-2.0.600.0,gmodule-2.0.600.0,gobject-2.0.600.0::devel/glib2 \
-				pango-1.0.800.1,pangoft2-1.0.800.1,pangox-1.0.800.1,pangoxft-1.0.800.1::devel/pango \
+LIB_DEPENDS=			glib-2.0.800.0,gmodule-2.0.800.0,gobject-2.0.800.0::devel/glib2 \
+				pango-1.0.1000.0,pangoft2-1.0.1000.0,pangocairo-1.0.1000.0::devel/pango \
 				atk-1.0.0.1::devel/atk \
 				tiff.35::graphics/tiff \
 				png.3::graphics/png \

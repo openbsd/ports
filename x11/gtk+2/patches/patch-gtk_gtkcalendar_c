@@ -1,0 +1,11 @@
+$OpenBSD: patch-gtk_gtkcalendar_c,v 1.1 2005/11/13 06:23:58 marcm Exp $
+--- gtk/gtkcalendar.c.orig	Mon Oct  3 20:24:16 2005
++++ gtk/gtkcalendar.c	Mon Oct 31 08:07:49 2005
+@@ -566,6 +566,7 @@ gtk_calendar_init (GtkCalendar *calendar
+   GtkCalendarPrivate *priv;
+   gchar *year_before;
+   gchar *langinfo;
++  gchar *week_start;
+   gint week_1stday = 0;
+   gint first_weekday = 1;
+   guint week_origin;

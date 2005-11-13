@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.13 2005/08/16 18:28:56 espie Exp $
+@comment $OpenBSD: PLIST-docs,v 1.14 2005/11/13 06:23:58 marcm Exp $
 @conflict gtk+2-<2.4.9
 share/gtk-doc/
 share/gtk-doc/html/
@@ -37,6 +37,7 @@ share/gtk-doc/html/gdk-pixbuf/ix02.html
 share/gtk-doc/html/gdk-pixbuf/ix03.html
 share/gtk-doc/html/gdk-pixbuf/ix04.html
 share/gtk-doc/html/gdk-pixbuf/ix05.html
+share/gtk-doc/html/gdk-pixbuf/ix06.html
 share/gtk-doc/html/gdk-pixbuf/left.png
 share/gtk-doc/html/gdk-pixbuf/license.html
 share/gtk-doc/html/gdk-pixbuf/right.png
@@ -75,6 +76,7 @@ share/gtk-doc/html/gdk/draped_box.png
 share/gtk-doc/html/gdk/exchange.png
 share/gtk-doc/html/gdk/fleur.png
 share/gtk-doc/html/gdk/gdk-Bitmaps-and-Pixmaps.html
+share/gtk-doc/html/gdk/gdk-Cairo-Interaction.html
 share/gtk-doc/html/gdk/gdk-Colormaps-and-Colors.html
 share/gtk-doc/html/gdk/gdk-Cursors.html
 share/gtk-doc/html/gdk/gdk-Drag-and-Drop.html
@@ -114,6 +116,7 @@ share/gtk-doc/html/gdk/ix02.html
 share/gtk-doc/html/gdk/ix03.html
 share/gtk-doc/html/gdk/ix04.html
 share/gtk-doc/html/gdk/ix05.html
+share/gtk-doc/html/gdk/ix06.html
 share/gtk-doc/html/gdk/left.png
 share/gtk-doc/html/gdk/left_ptr.png
 share/gtk-doc/html/gdk/left_side.png
@@ -341,6 +344,7 @@ share/gtk-doc/html/gtk/ch02.html
 share/gtk-doc/html/gtk/check-button.png
 share/gtk-doc/html/gtk/checklist-gdkeventexpose-region.html
 share/gtk-doc/html/gtk/checklist-modifiers.html
+share/gtk-doc/html/gtk/checklist-named-icons.html
 share/gtk-doc/html/gtk/color-button.png
 share/gtk-doc/html/gtk/colorsel.png
 share/gtk-doc/html/gtk/combo-box-entry.png
@@ -407,6 +411,7 @@ share/gtk-doc/html/gtk/ix02.html
 share/gtk-doc/html/gtk/ix03.html
 share/gtk-doc/html/gtk/ix04.html
 share/gtk-doc/html/gtk/ix05.html
+share/gtk-doc/html/gtk/ix06.html
 share/gtk-doc/html/gtk/label.png
 share/gtk-doc/html/gtk/left.png
 share/gtk-doc/html/gtk/list-and-tree.png
@@ -463,13 +468,16 @@ share/gtk-doc/html/gtk/stock_exit_24.png
 share/gtk-doc/html/gtk/stock_file_24.png
 share/gtk-doc/html/gtk/stock_first_24.png
 share/gtk-doc/html/gtk/stock_font_24.png
+share/gtk-doc/html/gtk/stock_fullscreen_24.png
 share/gtk-doc/html/gtk/stock_harddisk_24.png
 share/gtk-doc/html/gtk/stock_help_24.png
 share/gtk-doc/html/gtk/stock_home_24.png
 share/gtk-doc/html/gtk/stock_index_24.png
+share/gtk-doc/html/gtk/stock_info_24.png
 share/gtk-doc/html/gtk/stock_jump_to_24.png
 share/gtk-doc/html/gtk/stock_jump_to_rtl_24.png
 share/gtk-doc/html/gtk/stock_last_24.png
+share/gtk-doc/html/gtk/stock_leave_fullscreen_24.png
 share/gtk-doc/html/gtk/stock_left_arrow_24.png
 share/gtk-doc/html/gtk/stock_media_forward_24.png
 share/gtk-doc/html/gtk/stock_media_next_24.png
