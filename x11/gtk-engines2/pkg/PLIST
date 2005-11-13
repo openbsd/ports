@@ -1,22 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.11 2005/08/16 09:49:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2005/11/13 06:24:32 marcm Exp $
 @conflict gtk-thinice-engine-*
 @conflict gnome-themes-<2.10
 %%SHARED%%
 lib/gtk-2.0/
 lib/gtk-2.0/2.4.0/
 lib/gtk-2.0/2.4.0/engines/
+lib/gtk-2.0/2.4.0/engines/libclearlooks.a
+lib/gtk-2.0/2.4.0/engines/libclearlooks.la
+lib/gtk-2.0/2.4.0/engines/libcrux-engine.a
 lib/gtk-2.0/2.4.0/engines/libcrux-engine.la
+lib/gtk-2.0/2.4.0/engines/libhcengine.a
 lib/gtk-2.0/2.4.0/engines/libhcengine.la
+lib/gtk-2.0/2.4.0/engines/libindustrial.a
 lib/gtk-2.0/2.4.0/engines/libindustrial.la
+lib/gtk-2.0/2.4.0/engines/liblighthouseblue.a
 lib/gtk-2.0/2.4.0/engines/liblighthouseblue.la
+lib/gtk-2.0/2.4.0/engines/libmetal.a
 lib/gtk-2.0/2.4.0/engines/libmetal.la
+lib/gtk-2.0/2.4.0/engines/libmist.a
 lib/gtk-2.0/2.4.0/engines/libmist.la
+lib/gtk-2.0/2.4.0/engines/libredmond95.a
 lib/gtk-2.0/2.4.0/engines/libredmond95.la
+lib/gtk-2.0/2.4.0/engines/libsmooth.a
 lib/gtk-2.0/2.4.0/engines/libsmooth.la
+lib/gtk-2.0/2.4.0/engines/libthinice.a
 lib/gtk-2.0/2.4.0/engines/libthinice.la
 lib/pkgconfig/
 lib/pkgconfig/gtk-engines-2.pc
 share/themes/
+share/themes/Clearlooks/
+share/themes/Clearlooks/gtk-2.0/
+share/themes/Clearlooks/gtk-2.0/gtkrc
 share/themes/Crux/
 share/themes/Crux/gtk-2.0/
 share/themes/Crux/gtk-2.0/gtkrc
@@ -108,8 +122,6 @@ share/themes/Metal/gtk-2.0/gtkrc
 share/themes/Mist/
 share/themes/Mist/gtk-2.0/
 share/themes/Mist/gtk-2.0/gtkrc
-share/themes/Pixmap/
-share/themes/Pixmap/gtk-2.0/
 share/themes/Redmond/
 share/themes/Redmond/gtk/
 share/themes/Redmond/gtk-2.0/

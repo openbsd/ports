@@ -1,4 +1,4 @@
-This package provides three sample theme engines for GTK+2:
+This package provides several theme engines for GTK+2 including:
 
 * Pixmap: A generic engine that renders using pixmaps.
   One theme using this theme engine is included.

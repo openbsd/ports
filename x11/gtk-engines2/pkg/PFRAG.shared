@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/05/24 21:30:28 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2005/11/13 06:24:32 marcm Exp $
+lib/gtk-2.0/2.4.0/engines/libclearlooks.so
 lib/gtk-2.0/2.4.0/engines/libcrux-engine.so
 lib/gtk-2.0/2.4.0/engines/libhcengine.so
 lib/gtk-2.0/2.4.0/engines/libindustrial.so
