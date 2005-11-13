@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2005/09/14 10:41:02 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2005/11/13 18:48:45 bernd Exp $
 
 COMMENT=		"jabber server"
 DISTNAME=		jabberd-2.0s9
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		net
 HOMEPAGE=		http://jabberd.jabberstudio.org/2/
 MAINTAINER=		Gerardo Santana Gomez Garrido <santana@openbsd.org.mx>
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto ssl
+WANTLIB=		c crypto ssl sasl2
 
 MASTER_SITES=		http://files.jabberstudio.org/jabberd2/
 
@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=	--disable-db
 .endif
 
 .if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+=		ldap.2,lber::databases/openldap
+LIB_DEPENDS+=		ldap.8,lber.8:openldap-*->=2.3:databases/openldap
 CONFIGURE_ARGS+=	--enable-ldap
 .else
 CONFIGURE_ARGS+=	--disable-ldap
