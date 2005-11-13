@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/11/17 01:19:28 alek Exp $
+@comment $OpenBSD: PLIST,v 1.11 2005/11/13 18:19:31 jakob Exp $
 bin/buildhash
 bin/findaffix
 bin/icombine
@@ -14,8 +14,6 @@ lib/ispell/americanmed+.hash
 lib/ispell/british.aff
 lib/ispell/british.hash
 lib/ispell/britishxlg.hash
-lib/ispell/default.aff
-lib/ispell/default.hash
 @man man/man1/buildhash.1
 @man man/man1/findaffix.1
 @man man/man1/ispell.1
@@ -25,3 +23,5 @@ lib/ispell/default.hash
 @man man/man4/ispell.4
 @comment 1 - american, 2 - british
 @exec %D/bin/ispell-config 2
+@unexec rm -f ${PREFIX}/lib/ispell/default.aff
+@unexec rm -f ${PREFIX}/lib/ispell/default.hash

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2005/02/21 21:04:13 alek Exp $
+# $OpenBSD: Makefile,v 1.42 2005/11/13 18:19:31 jakob Exp $
 
 COMMENT=		"interactive spelling checker"
 COMMENT-dutch=		"ispell dictionary for Dutch"
@@ -12,7 +12,7 @@ COMMENT-swedish=	"ispell dictionary for Swedish"
 
 VERSION=	3.2.06
 DISTNAME=	ispell-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	textproc
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
@@ -178,9 +178,6 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/languages/british/britishxlg.hash \
 		${PREFIX}/lib/ispell/britishxlg.hash
 	ln -s britishxlg.hash ${PREFIX}/lib/ispell/british.hash
-
-	ln -s american.aff ${PREFIX}/lib/ispell/default.aff
-	ln -s american.hash ${PREFIX}/lib/ispell/default.hash
 
 	${INSTALL_DATA} ${WRKDIR}/${DUTCH_DICT}/nederlands.{aff,hash} \
 		${PREFIX}/lib/ispell
