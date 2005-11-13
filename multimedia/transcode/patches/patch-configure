@@ -1,25 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2005/02/09 23:41:43 naddy Exp $
---- configure.orig	Mon Nov 15 20:46:34 2004
-+++ configure	Thu Jan 27 20:46:05 2005
-@@ -27170,7 +27170,7 @@ else
-   with_ffmpeg_libs_l="/usr${deflib}"
- fi
- 
--FFMPEG_LIBS_EXTRALIBS="-lm -lz $PTHREAD_LIBS"
-+FFMPEG_LIBS_EXTRALIBS="$FFMPEG_LIBS_EXTRALIBS -lm -lz $PTHREAD_LIBS"
- 
- save_CPPFLAGS="$CPPFLAGS"
- CPPFLAGS="$CPPFLAGS -I$with_ffmpeg_libs_i"
-@@ -27450,7 +27450,7 @@ fi
- echo "$as_me:$LINENO: result: $ac_cv_lib_avcodec_avcodec_thread_init" >&5
- echo "${ECHO_T}$ac_cv_lib_avcodec_avcodec_thread_init" >&6
- if test $ac_cv_lib_avcodec_avcodec_thread_init = yes; then
--  FFMPEG_LIBS_LIBS="-L$with_ffmpeg_libs_l -lavcodec $FFMPEG_LIB_EXTRALIBS"
-+  FFMPEG_LIBS_LIBS="-L$with_ffmpeg_libs_l -lavcodec $FFMPEG_LIBS_EXTRALIBS"
- else
-   { { echo "$as_me:$LINENO: error: error transcode depends on the FFmpeg (libavcodec) libraries and headers" >&5
- echo "$as_me: error: error transcode depends on the FFmpeg (libavcodec) libraries and headers" >&2;}
-@@ -37422,7 +37422,7 @@ if test "${ac_cv_lib_mjpegutils_y4m_si_g
+$OpenBSD: patch-configure,v 1.3 2005/11/13 21:11:13 jakemsr Exp $
+--- configure.orig	Sun Oct  2 19:50:44 2005
++++ configure	Sun Oct  9 14:46:27 2005
+@@ -40618,7 +40618,7 @@ if test "${ac_cv_lib_mjpegutils_y4m_si_g
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -28,21 +10,12 @@ $OpenBSD: patch-configure,v 1.2 2005/02/09 23:41:43 naddy Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -37481,7 +37481,7 @@ fi
+@@ -40677,7 +40677,7 @@ fi
  echo "$as_me:$LINENO: result: $ac_cv_lib_mjpegutils_y4m_si_get_height" >&5
  echo "${ECHO_T}$ac_cv_lib_mjpegutils_y4m_si_get_height" >&6
  if test $ac_cv_lib_mjpegutils_y4m_si_get_height = yes; then
 -  MJPEGTOOLS_LIBS="$mjpegtools_ll -lmjpegutils $MJPEGTOOLS_EXTRA_LIBS"
 +  MJPEGTOOLS_LIBS="$mjpegtools_ll -lmjpegutils_pic $MJPEGTOOLS_EXTRA_LIBS"
  else
-   { { echo "$as_me:$LINENO: error: mjpegtools requested, but cannot link against libmjpegutils" >&5
- echo "$as_me: error: mjpegtools requested, but cannot link against libmjpegutils" >&2;}
-@@ -37496,7 +37496,7 @@ ac_link='$CC -o conftest$ac_exeext $CFLA
- ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
-   else
--    MJPEGTOOLS_LIBS="$mjpegtools_ll -lmjpegutils $MJPEGTOOLS_EXTRA_LIBS",
-+    MJPEGTOOLS_LIBS="$mjpegtools_ll -lmjpegutils_pic $MJPEGTOOLS_EXTRA_LIBS",
-   fi
- 
-   # got here without error so all is well
+ tc_pkg_err="yes"

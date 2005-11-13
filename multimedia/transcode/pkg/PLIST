@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/25 21:59:00 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/11/13 21:11:13 jakemsr Exp $
 %%i386%%
+%%lzo%%
 %%mjpegtools%%
 %%quicktime%%
-%%lzo%%
 bin/avifix
 bin/aviindex
 bin/avimerge
@@ -14,7 +14,6 @@ bin/tcdemux
 bin/tcextract
 bin/tcmodinfo
 bin/tcmp3cut
-bin/tcmplex
 bin/tcprobe
 bin/tcrequant
 bin/tcscan
@@ -22,229 +21,358 @@ bin/tcxmlcheck
 bin/tcxpm2rgb
 bin/transcode
 lib/transcode/
+@comment lib/transcode/a52_decore.a
 @comment lib/transcode/a52_decore.la
 lib/transcode/a52_decore.so
+@comment lib/transcode/af6_decore.a
 @comment lib/transcode/af6_decore.la
 @comment lib/transcode/af6_decore.so
+@comment lib/transcode/export_ac3.a
 @comment lib/transcode/export_ac3.la
 lib/transcode/export_ac3.so
 @comment lib/transcode/export_af6.conf
+@comment lib/transcode/export_debugppm.a
 @comment lib/transcode/export_debugppm.la
 lib/transcode/export_debugppm.so
+@comment lib/transcode/export_divx4.a
 @comment lib/transcode/export_divx4.la
 @comment lib/transcode/export_divx4.so
+@comment lib/transcode/export_divx4raw.a
 @comment lib/transcode/export_divx4raw.la
 @comment lib/transcode/export_divx4raw.so
+@comment lib/transcode/export_divx5.a
 @comment lib/transcode/export_divx5.la
 @comment lib/transcode/export_divx5.so
+@comment lib/transcode/export_divx5raw.a
 @comment lib/transcode/export_divx5raw.la
 @comment lib/transcode/export_divx5raw.so
+@comment lib/transcode/export_dv.a
 @comment lib/transcode/export_dv.la
 lib/transcode/export_dv.so
+@comment lib/transcode/export_dvraw.a
 @comment lib/transcode/export_dvraw.la
 lib/transcode/export_dvraw.so
+@comment lib/transcode/export_ffmpeg.a
 @comment lib/transcode/export_ffmpeg.la
 lib/transcode/export_ffmpeg.so
+@comment lib/transcode/export_jpg.a
 @comment lib/transcode/export_jpg.la
 lib/transcode/export_jpg.so
+@comment lib/transcode/export_lame.a
 @comment lib/transcode/export_lame.la
 lib/transcode/export_lame.so
+@comment lib/transcode/export_mjpeg.a
 @comment lib/transcode/export_mjpeg.la
 lib/transcode/export_mjpeg.so
+@comment lib/transcode/export_mp1e.a
 @comment lib/transcode/export_mp1e.la
-@comment lib/transcode/export_mp1e.so
+lib/transcode/export_mp1e.so
+@comment lib/transcode/export_mp2.a
 @comment lib/transcode/export_mp2.la
 lib/transcode/export_mp2.so
+@comment lib/transcode/export_net.a
+@comment lib/transcode/export_net.la
+lib/transcode/export_net.so
+@comment lib/transcode/export_null.a
 @comment lib/transcode/export_null.la
 lib/transcode/export_null.so
+@comment lib/transcode/export_ogg.a
 @comment lib/transcode/export_ogg.la
 lib/transcode/export_ogg.so
+@comment lib/transcode/export_pcm.a
 @comment lib/transcode/export_pcm.la
 lib/transcode/export_pcm.so
+@comment lib/transcode/export_ppm.a
 @comment lib/transcode/export_ppm.la
 lib/transcode/export_ppm.so
+@comment lib/transcode/export_pvn.a
 @comment lib/transcode/export_pvn.la
 lib/transcode/export_pvn.so
+@comment lib/transcode/export_raw.a
 @comment lib/transcode/export_raw.la
 lib/transcode/export_raw.so
+@comment lib/transcode/export_toolame.a
 @comment lib/transcode/export_toolame.la
 lib/transcode/export_toolame.so
+@comment lib/transcode/export_wav.a
 @comment lib/transcode/export_wav.la
 lib/transcode/export_wav.so
 lib/transcode/export_xvid.so
+@comment lib/transcode/export_xvid2.a
 @comment lib/transcode/export_xvid2.la
 @comment lib/transcode/export_xvid2.so
+@comment lib/transcode/export_xvid3.a
 @comment lib/transcode/export_xvid3.la
 @comment lib/transcode/export_xvid3.so
+@comment lib/transcode/export_xvid4.a
 @comment lib/transcode/export_xvid4.la
 lib/transcode/export_xvid4.so
+@comment lib/transcode/filter_29to23.a
 @comment lib/transcode/filter_29to23.la
 lib/transcode/filter_29to23.so
+@comment lib/transcode/filter_32detect.a
 @comment lib/transcode/filter_32detect.la
 lib/transcode/filter_32detect.so
+@comment lib/transcode/filter_32drop.a
 @comment lib/transcode/filter_32drop.la
 lib/transcode/filter_32drop.so
+@comment lib/transcode/filter_aclip.a
 @comment lib/transcode/filter_aclip.la
 lib/transcode/filter_aclip.so
+@comment lib/transcode/filter_ascii.a
+@comment lib/transcode/filter_ascii.la
+lib/transcode/filter_ascii.so
+@comment lib/transcode/filter_astat.a
 @comment lib/transcode/filter_astat.la
 lib/transcode/filter_astat.so
+@comment lib/transcode/filter_clone.a
 @comment lib/transcode/filter_clone.la
 lib/transcode/filter_clone.so
+@comment lib/transcode/filter_control.a
 @comment lib/transcode/filter_control.la
 lib/transcode/filter_control.so
+@comment lib/transcode/filter_cpaudio.a
 @comment lib/transcode/filter_cpaudio.la
 lib/transcode/filter_cpaudio.so
+@comment lib/transcode/filter_cshift.a
 @comment lib/transcode/filter_cshift.la
 lib/transcode/filter_cshift.so
+@comment lib/transcode/filter_cut.a
 @comment lib/transcode/filter_cut.la
 lib/transcode/filter_cut.so
+@comment lib/transcode/filter_decimate.a
 @comment lib/transcode/filter_decimate.la
 lib/transcode/filter_decimate.so
+@comment lib/transcode/filter_denoise3d.a
 @comment lib/transcode/filter_denoise3d.la
 lib/transcode/filter_denoise3d.so
+@comment lib/transcode/filter_detectclipping.a
 @comment lib/transcode/filter_detectclipping.la
 lib/transcode/filter_detectclipping.so
+@comment lib/transcode/filter_detectsilence.a
 @comment lib/transcode/filter_detectsilence.la
 lib/transcode/filter_detectsilence.so
+@comment lib/transcode/filter_divxkey.a
 @comment lib/transcode/filter_divxkey.la
 lib/transcode/filter_divxkey.so
+@comment lib/transcode/filter_dnr.a
 @comment lib/transcode/filter_dnr.la
 lib/transcode/filter_dnr.so
+@comment lib/transcode/filter_doublefps.a
 @comment lib/transcode/filter_doublefps.la
 lib/transcode/filter_doublefps.so
+@comment lib/transcode/filter_extsub.a
 @comment lib/transcode/filter_extsub.la
 lib/transcode/filter_extsub.so
+@comment lib/transcode/filter_extsub2.a
 @comment lib/transcode/filter_extsub2.la
 lib/transcode/filter_extsub2.so
+@comment lib/transcode/filter_facemask.a
+@comment lib/transcode/filter_facemask.la
+lib/transcode/filter_facemask.so
+@comment lib/transcode/filter_fieldanalysis.a
 @comment lib/transcode/filter_fieldanalysis.la
 lib/transcode/filter_fieldanalysis.so
+@comment lib/transcode/filter_fields.a
 @comment lib/transcode/filter_fields.la
 lib/transcode/filter_fields.so
+@comment lib/transcode/filter_fps.a
 @comment lib/transcode/filter_fps.la
 lib/transcode/filter_fps.so
+@comment lib/transcode/filter_hqdn3d.a
 @comment lib/transcode/filter_hqdn3d.la
 lib/transcode/filter_hqdn3d.so
+@comment lib/transcode/filter_invert.a
 @comment lib/transcode/filter_invert.la
 lib/transcode/filter_invert.so
+@comment lib/transcode/filter_ivtc.a
 @comment lib/transcode/filter_ivtc.la
 lib/transcode/filter_ivtc.so
+@comment lib/transcode/filter_levels.a
 @comment lib/transcode/filter_levels.la
 lib/transcode/filter_levels.so
 lib/transcode/filter_list.awk
+@comment lib/transcode/filter_lowpass.a
 @comment lib/transcode/filter_lowpass.la
 lib/transcode/filter_lowpass.so
+@comment lib/transcode/filter_mask.a
 @comment lib/transcode/filter_mask.la
 lib/transcode/filter_mask.so
+@comment lib/transcode/filter_modfps.a
 @comment lib/transcode/filter_modfps.la
 lib/transcode/filter_modfps.so
+@comment lib/transcode/filter_msharpen.a
 @comment lib/transcode/filter_msharpen.la
 lib/transcode/filter_msharpen.so
+@comment lib/transcode/filter_nored.a
 @comment lib/transcode/filter_nored.la
 lib/transcode/filter_nored.so
+@comment lib/transcode/filter_normalize.a
 @comment lib/transcode/filter_normalize.la
 lib/transcode/filter_normalize.so
+@comment lib/transcode/filter_null.a
 @comment lib/transcode/filter_null.la
 lib/transcode/filter_null.so
+@comment lib/transcode/filter_pp.a
 @comment lib/transcode/filter_pp.la
 lib/transcode/filter_pp.so
+@comment lib/transcode/filter_preview.a
 @comment lib/transcode/filter_preview.la
 lib/transcode/filter_preview.so
+@comment lib/transcode/filter_pv.a
 @comment lib/transcode/filter_pv.la
 lib/transcode/filter_pv.so
+@comment lib/transcode/filter_resample.a
 @comment lib/transcode/filter_resample.la
 lib/transcode/filter_resample.so
+@comment lib/transcode/filter_skip.a
 @comment lib/transcode/filter_skip.la
 lib/transcode/filter_skip.so
+@comment lib/transcode/filter_slowmo.a
 @comment lib/transcode/filter_slowmo.la
 lib/transcode/filter_slowmo.so
+@comment lib/transcode/filter_smartbob.a
 @comment lib/transcode/filter_smartbob.la
 lib/transcode/filter_smartbob.so
+@comment lib/transcode/filter_smartdeinter.a
 @comment lib/transcode/filter_smartdeinter.la
 lib/transcode/filter_smartdeinter.so
+@comment lib/transcode/filter_smartyuv.a
 @comment lib/transcode/filter_smartyuv.la
 lib/transcode/filter_smartyuv.so
+@comment lib/transcode/filter_smooth.a
 @comment lib/transcode/filter_smooth.la
 lib/transcode/filter_smooth.so
+@comment lib/transcode/filter_subtitler.a
 @comment lib/transcode/filter_subtitler.la
-@comment lib/transcode/filter_subtitler.so
+lib/transcode/filter_subtitler.so
+@comment lib/transcode/filter_tc_audio.a
 @comment lib/transcode/filter_tc_audio.la
 lib/transcode/filter_tc_audio.so
+@comment lib/transcode/filter_tc_video.a
 @comment lib/transcode/filter_tc_video.la
 lib/transcode/filter_tc_video.so
+@comment lib/transcode/filter_test.a
 @comment lib/transcode/filter_test.la
 lib/transcode/filter_test.so
+@comment lib/transcode/filter_testframe.a
 @comment lib/transcode/filter_testframe.la
 lib/transcode/filter_testframe.so
+@comment lib/transcode/filter_text.a
 @comment lib/transcode/filter_text.la
 lib/transcode/filter_text.so
+@comment lib/transcode/filter_unsharp.a
 @comment lib/transcode/filter_unsharp.la
 lib/transcode/filter_unsharp.so
+@comment lib/transcode/filter_videocore.a
 @comment lib/transcode/filter_videocore.la
 lib/transcode/filter_videocore.so
+@comment lib/transcode/filter_whitebalance.a
 @comment lib/transcode/filter_whitebalance.la
 lib/transcode/filter_whitebalance.so
+@comment lib/transcode/filter_xsharpen.a
 @comment lib/transcode/filter_xsharpen.la
 lib/transcode/filter_xsharpen.so
+@comment lib/transcode/filter_yuvdenoise.a
 @comment lib/transcode/filter_yuvdenoise.la
 lib/transcode/filter_yuvdenoise.so
+@comment lib/transcode/filter_yuvmedian.a
 @comment lib/transcode/filter_yuvmedian.la
 lib/transcode/filter_yuvmedian.so
+@comment lib/transcode/filter_yuy2toyv12.a
 @comment lib/transcode/filter_yuy2toyv12.la
 lib/transcode/filter_yuy2toyv12.so
+@comment lib/transcode/import_ac3.a
 @comment lib/transcode/import_ac3.la
 lib/transcode/import_ac3.so
+@comment lib/transcode/import_avi.a
 @comment lib/transcode/import_avi.la
 lib/transcode/import_avi.so
+@comment lib/transcode/import_bktr.a
 @comment lib/transcode/import_bktr.la
 lib/transcode/import_bktr.so
+@comment lib/transcode/import_bsdav.a
+@comment lib/transcode/import_bsdav.la
+lib/transcode/import_bsdav.so
+@comment lib/transcode/import_divx.a
 @comment lib/transcode/import_divx.la
-@comment lib/transcode/import_divx.so
+lib/transcode/import_divx.so
+@comment lib/transcode/import_dv.a
 @comment lib/transcode/import_dv.la
 lib/transcode/import_dv.so
+@comment lib/transcode/import_dvd.a
 @comment lib/transcode/import_dvd.la
 lib/transcode/import_dvd.so
+@comment lib/transcode/import_ffbin.a
 @comment lib/transcode/import_ffbin.la
 lib/transcode/import_ffbin.so
+@comment lib/transcode/import_ffmpeg.a
 @comment lib/transcode/import_ffmpeg.la
 lib/transcode/import_ffmpeg.so
+@comment lib/transcode/import_fraps.a
 @comment lib/transcode/import_fraps.la
 lib/transcode/import_fraps.so
+@comment lib/transcode/import_lav.a
+@comment lib/transcode/import_lav.la
+lib/transcode/import_lav.so
+@comment lib/transcode/import_mp3.a
 @comment lib/transcode/import_mp3.la
 lib/transcode/import_mp3.so
+@comment lib/transcode/import_mpeg2.a
 @comment lib/transcode/import_mpeg2.la
 lib/transcode/import_mpeg2.so
+@comment lib/transcode/import_mplayer.a
 @comment lib/transcode/import_mplayer.la
 lib/transcode/import_mplayer.so
+@comment lib/transcode/import_net.a
+@comment lib/transcode/import_net.la
+lib/transcode/import_net.so
+@comment lib/transcode/import_null.a
 @comment lib/transcode/import_null.la
 lib/transcode/import_null.so
+@comment lib/transcode/import_nuv.a
 @comment lib/transcode/import_nuv.la
 lib/transcode/import_nuv.so
+@comment lib/transcode/import_nvrec.a
 @comment lib/transcode/import_nvrec.la
-@comment lib/transcode/import_nvrec.so
+lib/transcode/import_nvrec.so
+@comment lib/transcode/import_ogg.a
 @comment lib/transcode/import_ogg.la
 lib/transcode/import_ogg.so
+@comment lib/transcode/import_pvn.a
 @comment lib/transcode/import_pvn.la
 lib/transcode/import_pvn.so
+@comment lib/transcode/import_raw.a
 @comment lib/transcode/import_raw.la
 lib/transcode/import_raw.so
+@comment lib/transcode/import_rawlist.a
 @comment lib/transcode/import_rawlist.la
 lib/transcode/import_rawlist.so
+@comment lib/transcode/import_sh.a
 @comment lib/transcode/import_sh.la
 lib/transcode/import_sh.so
+@comment lib/transcode/import_sunau.a
 @comment lib/transcode/import_sunau.la
 lib/transcode/import_sunau.so
+@comment lib/transcode/import_vdrac3.a
 @comment lib/transcode/import_vdrac3.la
 lib/transcode/import_vdrac3.so
+@comment lib/transcode/import_vnc.a
 @comment lib/transcode/import_vnc.la
-@comment lib/transcode/import_vnc.so
+lib/transcode/import_vnc.so
+@comment lib/transcode/import_vob.a
 @comment lib/transcode/import_vob.la
 lib/transcode/import_vob.so
+@comment lib/transcode/import_xml.a
 @comment lib/transcode/import_xml.la
 lib/transcode/import_xml.so
+@comment lib/transcode/import_xvid.a
 @comment lib/transcode/import_xvid.la
 lib/transcode/import_xvid.so
+@comment lib/transcode/import_yuv.a
 @comment lib/transcode/import_yuv.la
 lib/transcode/import_yuv.so
+@comment lib/transcode/import_yuv4mpeg.a
 @comment lib/transcode/import_yuv4mpeg.la
 lib/transcode/import_yuv4mpeg.so
 lib/transcode/parse_csv.awk
@@ -284,7 +412,8 @@ share/doc/transcode/clone.txt
 share/doc/transcode/export-API.txt
 share/doc/transcode/export_ffmpeg.txt
 share/doc/transcode/export_mp2.txt
-@comment share/doc/transcode/export_pvm.txt
+share/doc/transcode/export_mpeg.txt
+share/doc/transcode/export_pvm.txt
 share/doc/transcode/faq
 share/doc/transcode/filter-API.txt
 share/doc/transcode/filter-socket.txt
@@ -295,26 +424,15 @@ share/doc/transcode/filter_text.txt
 share/doc/transcode/filter_yuvdenoise.txt
 share/doc/transcode/framerate.txt
 share/doc/transcode/html/
-share/doc/transcode/html/about.html
-share/doc/transcode/html/anim.html
-share/doc/transcode/html/cluster_guide.txt
-share/doc/transcode/html/core.html
 share/doc/transcode/html/dv.html
 share/doc/transcode/html/dvd.html
-share/doc/transcode/html/export_af6.html
 @comment share/doc/transcode/html/export_divx.html
 @comment share/doc/transcode/html/export_divx4.php
 @comment share/doc/transcode/html/export_divx5.php
-@comment share/doc/transcode/html/export_fame.php
-@comment share/doc/transcode/html/export_iv50.html
-share/doc/transcode/html/export_null.html
+share/doc/transcode/html/export_fame.php
 share/doc/transcode/html/export_ogg.php
 @comment share/doc/transcode/html/export_opendivx.php
-share/doc/transcode/html/export_raw.html
 share/doc/transcode/html/export_xvid.php
-share/doc/transcode/html/faq.html
-share/doc/transcode/html/filter.html
-share/doc/transcode/html/import_ac3.html
 share/doc/transcode/html/import_avi.html
 share/doc/transcode/html/import_dv.html
 share/doc/transcode/html/import_dvd.html
@@ -338,7 +456,6 @@ share/doc/transcode/html/misc.html
 share/doc/transcode/html/modules.html
 share/doc/transcode/html/mpeg.html
 share/doc/transcode/html/new.png
-share/doc/transcode/html/options.html
 share/doc/transcode/html/other.html
 share/doc/transcode/html/post.html
 share/doc/transcode/html/pre.html
@@ -356,7 +473,8 @@ share/doc/transcode/import-API.txt
 share/doc/transcode/import-xml.txt
 @comment share/doc/transcode/import_nvrec.txt
 @comment share/doc/transcode/import_v4l2.txt
-@comment share/doc/transcode/pvm.cfg
+share/doc/transcode/import_yuv.txt
+share/doc/transcode/pvm.cfg
 share/doc/transcode/release-notes/
 share/doc/transcode/release-notes/README-0.6.13
 share/doc/transcode/template.cfg.txt

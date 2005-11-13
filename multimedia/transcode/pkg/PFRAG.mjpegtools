@@ -1,9 +1,10 @@
-@comment $OpenBSD: PFRAG.mjpegtools,v 1.1.1.1 2005/01/25 21:59:00 naddy Exp $
+@comment $OpenBSD: PFRAG.mjpegtools,v 1.2 2005/11/13 21:11:13 jakemsr Exp $
+@comment lib/transcode/export_mp2enc.a
 @comment lib/transcode/export_mp2enc.la
 lib/transcode/export_mp2enc.so
+@comment lib/transcode/export_mpeg2enc.a
 @comment lib/transcode/export_mpeg2enc.la
 lib/transcode/export_mpeg2enc.so
+@comment lib/transcode/export_yuv4mpeg.a
 @comment lib/transcode/export_yuv4mpeg.la
 lib/transcode/export_yuv4mpeg.so
-@comment lib/transcode/import_lav.la
-lib/transcode/import_lav.so
