@@ -1,7 +1,7 @@
-$OpenBSD: patch-vfs-methods_fontilus_Makefile_in,v 1.1 2005/05/26 03:39:30 marcm Exp $
---- vfs-methods/fontilus/Makefile.in.orig	Fri Apr  8 20:39:34 2005
-+++ vfs-methods/fontilus/Makefile.in	Fri Apr  8 20:39:47 2005
-@@ -813,7 +813,6 @@ install-data-local: install-gconf-schema
+$OpenBSD: patch-vfs-methods_fontilus_Makefile_in,v 1.2 2005/11/13 06:29:03 marcm Exp $
+--- vfs-methods/fontilus/Makefile.in.orig	Mon Jul  4 13:42:06 2005
++++ vfs-methods/fontilus/Makefile.in	Mon Aug 29 10:05:24 2005
+@@ -812,7 +812,6 @@ install-data-local: install-gconf-schema
  @GCONF_SCHEMAS_INSTALL_FALSE@install-gconf-schemas:
  
  install-desktop-database: install-desktopDATA

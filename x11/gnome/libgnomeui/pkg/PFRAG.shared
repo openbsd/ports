@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2005/05/24 22:02:45 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.10 2005/11/13 06:29:05 marcm Exp $
 lib/gtk-2.0/2.4.0/filesystems/libgnome-vfs.so
 lib/libglade/2.0/libgnome.so
-@lib lib/libgnomeui-2.so.1000.0
+@lib lib/libgnomeui-2.so.1000.1

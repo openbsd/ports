@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2005/05/26 03:39:32 marcm Exp $
-@lib lib/libpanel-applet-2.so.1.4
+@comment $OpenBSD: PFRAG.shared,v 1.8 2005/11/13 06:29:05 marcm Exp $
+@lib lib/libpanel-applet-2.so.1.5

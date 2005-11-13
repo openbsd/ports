@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/12 21:20:02 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/11/13 06:29:05 marcm Exp $
 
 COMMENT=		"Implementation of the FreeDesktop Desktop Menu Spec"
 
-VERSION=		2.10.1
+VERSION=		2.10.2
 DISTNAME=		gnome-menus-${VERSION}
 #PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11/gnome

@@ -1,6 +1,6 @@
---- test-gnome/Makefile.in.orig	Mon Mar  7 05:43:12 2005
-+++ test-gnome/Makefile.in	Tue Apr  5 08:38:29 2005
-@@ -321,13 +321,13 @@ test-entry$(EXEEXT): $(test_entry_OBJECT
+--- test-gnome/Makefile.in.orig	Mon Jul  4 06:57:27 2005
++++ test-gnome/Makefile.in	Sun Sep 11 14:55:18 2005
+@@ -322,13 +322,13 @@ test-entry$(EXEEXT): $(test_entry_OBJECT
  	$(LINK) $(test_entry_LDFLAGS) $(test_entry_OBJECTS) $(test_entry_LDADD) $(LIBS)
  test-gnome$(EXEEXT): $(test_gnome_OBJECTS) $(test_gnome_DEPENDENCIES) 
  	@rm -f test-gnome$(EXEEXT)

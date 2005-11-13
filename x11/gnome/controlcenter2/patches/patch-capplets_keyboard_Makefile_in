@@ -1,0 +1,12 @@
+$OpenBSD: patch-capplets_keyboard_Makefile_in,v 1.1 2005/11/13 06:29:03 marcm Exp $
+--- capplets/keyboard/Makefile.in.orig	Mon Aug 29 12:39:35 2005
++++ capplets/keyboard/Makefile.in	Mon Aug 29 12:40:30 2005
+@@ -174,7 +174,7 @@ INTLTOOL_XML_RULE = @INTLTOOL_XML_RULE@
+ LDFLAGS = @LDFLAGS@
+ LIBBONOBO_IDL_DIR = @LIBBONOBO_IDL_DIR@
+ LIBOBJS = @LIBOBJS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lpangoxft-1.0
+ LIBTOOL = @LIBTOOL@
+ LIBXKLAVIER_CFLAGS = @LIBXKLAVIER_CFLAGS@
+ LIBXKLAVIER_LIBS = @LIBXKLAVIER_LIBS@

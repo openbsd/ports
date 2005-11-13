@@ -1,7 +1,7 @@
-$OpenBSD: patch-libgnome-desktop_gnome-desktop-item_c,v 1.6 2005/05/26 03:39:30 marcm Exp $
---- libgnome-desktop/gnome-desktop-item.c.orig	Mon Feb  7 11:33:06 2005
-+++ libgnome-desktop/gnome-desktop-item.c	Thu Apr  7 17:15:02 2005
-@@ -2387,13 +2387,13 @@ init_kde_dirs (void)
+$OpenBSD: patch-libgnome-desktop_gnome-desktop-item_c,v 1.7 2005/11/13 06:29:03 marcm Exp $
+--- libgnome-desktop/gnome-desktop-item.c.orig	Mon Jun 27 12:26:23 2005
++++ libgnome-desktop/gnome-desktop-item.c	Thu Sep 15 08:39:06 2005
+@@ -2402,13 +2402,13 @@ init_kde_dirs (void)
  #define ADD_DIRS(color,size) \
  	dirname = g_build_filename (kde_icondir, #color,	\
  				    #size "x" #size , NULL);	\

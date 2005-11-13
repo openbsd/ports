@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/05/24 22:05:26 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/11/13 06:29:04 marcm Exp $
 bin/gnome-keyring-daemon
 include/gnome-keyring-1/
 include/gnome-keyring-1/gnome-keyring.h
+lib/libgnome-keyring.a
 lib/libgnome-keyring.la
 lib/pkgconfig/
 lib/pkgconfig/gnome-keyring-1.pc
@@ -36,6 +37,7 @@ share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gnome-keyring.mo
 share/locale/es/LC_MESSAGES/gnome-keyring.mo
+share/locale/et/LC_MESSAGES/gnome-keyring.mo
 share/locale/eu/
 share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/gnome-keyring.mo
@@ -44,6 +46,7 @@ share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/gnome-keyring.mo
 share/locale/fi/LC_MESSAGES/gnome-keyring.mo
 share/locale/fr/LC_MESSAGES/gnome-keyring.mo
+share/locale/gl/LC_MESSAGES/gnome-keyring.mo
 share/locale/hr/LC_MESSAGES/gnome-keyring.mo
 share/locale/hu/LC_MESSAGES/gnome-keyring.mo
 share/locale/id/LC_MESSAGES/gnome-keyring.mo
@@ -76,6 +79,9 @@ share/locale/pt/LC_MESSAGES/gnome-keyring.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-keyring.mo
 share/locale/ro/LC_MESSAGES/gnome-keyring.mo
 share/locale/ru/LC_MESSAGES/gnome-keyring.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
+share/locale/rw/LC_MESSAGES/gnome-keyring.mo
 share/locale/sk/LC_MESSAGES/gnome-keyring.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
@@ -95,6 +101,9 @@ share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gnome-keyring.mo
 share/locale/tr/LC_MESSAGES/gnome-keyring.mo
 share/locale/uk/LC_MESSAGES/gnome-keyring.mo
+share/locale/xh/
+share/locale/xh/LC_MESSAGES/
+share/locale/xh/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-keyring.mo
 %%SHARED%%

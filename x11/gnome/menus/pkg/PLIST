@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/12 21:20:02 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/11/13 06:29:05 marcm Exp $
 %%SHARED%%
 bin/gnome-menu-spec-test
 include/gnome-menus/
@@ -64,9 +64,11 @@ share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/gnome-menus.mo
 share/locale/fi/LC_MESSAGES/gnome-menus.mo
 share/locale/fr/LC_MESSAGES/gnome-menus.mo
+share/locale/gl/LC_MESSAGES/gnome-menus.mo
 share/locale/gu/
 share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/gnome-menus.mo
+share/locale/he/LC_MESSAGES/gnome-menus.mo
 share/locale/hi/
 share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/gnome-menus.mo
@@ -99,7 +101,11 @@ share/locale/pt/LC_MESSAGES/gnome-menus.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-menus.mo
 share/locale/ro/LC_MESSAGES/gnome-menus.mo
 share/locale/ru/LC_MESSAGES/gnome-menus.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
+share/locale/rw/LC_MESSAGES/gnome-menus.mo
 share/locale/sk/LC_MESSAGES/gnome-menus.mo
+share/locale/sl/LC_MESSAGES/gnome-menus.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gnome-menus.mo
@@ -118,5 +124,8 @@ share/locale/uk/LC_MESSAGES/gnome-menus.mo
 share/locale/vi/
 share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/gnome-menus.mo
+share/locale/xh/
+share/locale/xh/LC_MESSAGES/
+share/locale/xh/LC_MESSAGES/gnome-menus.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-menus.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo

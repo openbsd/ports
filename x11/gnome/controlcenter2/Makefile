@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2005/05/26 03:39:30 marcm Exp $
+# $OpenBSD: Makefile,v 1.14 2005/11/13 06:29:03 marcm Exp $
 
 COMMENT=		"GNOME control center"
 
-VERSION=		2.10.1
+VERSION=		2.10.2
 DISTNAME=		control-center-${VERSION}
 PKGNAME=		control-center2-${VERSION}
 CATEGORIES=		x11 x11/gnome
@@ -34,9 +34,9 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xext Xft Xss \
 		glib-2.0.0.0 gmodule-2.0.0.0 gnome-2 gnome-desktop-2 \
 		gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 \
 		gobject-2.0.0.0 gthread-2.0.0.0 gtk-x11-2.0.0.0 jpeg m \
-		pango-1.0.0.0 pangoft2-1.0.0.0 pangox-1.0.0.0 \
+		pango-1.0.0.0 pangoft2-1.0.0.0 pangocairo-1.0.1000.0 \
 		pangoxft-1.0.0.0 popt pthread ssl startup-notification-1 \
-		xkbfile xml2 z gstreamer-0.8.5.0
+		xkbfile xml2 z gstreamer-0.8.5.0 cairo png
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

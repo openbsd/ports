@@ -1,7 +1,7 @@
-$OpenBSD: patch-vfs-methods_themus_Makefile_in,v 1.1 2005/05/26 03:39:30 marcm Exp $
---- vfs-methods/themus/Makefile.in.orig	Fri Apr  8 20:28:14 2005
-+++ vfs-methods/themus/Makefile.in	Fri Apr  8 20:30:14 2005
-@@ -868,7 +868,6 @@ install-data-local: install-gconf-schema
+$OpenBSD: patch-vfs-methods_themus_Makefile_in,v 1.2 2005/11/13 06:29:03 marcm Exp $
+--- vfs-methods/themus/Makefile.in.orig	Mon Jul  4 13:42:04 2005
++++ vfs-methods/themus/Makefile.in	Mon Aug 29 10:05:24 2005
+@@ -867,7 +867,6 @@ install-data-local: install-gconf-schema
  @GCONF_SCHEMAS_INSTALL_FALSE@install-gconf-schemas:
  
  install-desktop-database: install-desktopDATA
