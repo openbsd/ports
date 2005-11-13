@@ -1,0 +1,12 @@
+$OpenBSD: patch-tcp_zoneserver_c,v 1.1 2005/11/13 01:10:12 naddy Exp $
+--- tcp/zoneserver.c.orig	Sat Nov 12 23:19:53 2005
++++ tcp/zoneserver.c	Sat Nov 12 23:20:09 2005
+@@ -32,7 +32,7 @@
+ #include <errno.h>
+ #include <string.h>
+ #include <time.h>
+-#ifdef __FreeBSD__
++#if defined __FreeBSD__ || defined __OpenBSD__
+ #include <sys/time.h>
+ #endif
+ #include <sys/types.h>
