@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/11/04 14:01:53 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2005/11/13 20:12:38 wilfried Exp $
 
 COMMENT=	"visual query tool for MySQL"
 
 DISTNAME=	mysql-query-browser-1.1.17
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.mysql.com/products/tools/query-browser/
@@ -21,12 +22,12 @@ MASTER_SITES=	ftp://na.mirror.garr.it/mirrors/MySQL/Downloads/MySQLAdministratio
 		ftp://gd.tuwien.ac.at/db/mysql/Downloads/MySQLAdministrationSuite/ \
 		ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQLAdministrationSuite/
 
-WANTLIB=	ICE SM X11 Xft Xrender c crypto fontconfig freetype m pthread ssl stdc++ z \
+WANTLIB=	ICE SM X11 c crypto fontconfig freetype m pthread ssl stdc++ z \
 		ORBit-2 art_lgpl_2 atk-1.0.0.0 atkmm-1.6.0.0 bonobo-2 bonobo-activation \
-		bonoboui-2 gconf-2 gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 gdkmm-2.4.0.0 glade-2.0.0.0 \
-		glibmm-2.4.0.0 gnome-2 gnomecanvas-2 gnomeprint-2-2.1.0 gnomeprintui-2-2.1.0 \
-		gnomeui-2 gnomevfs-2 gtk-x11-2.0.0.0 pango-1.0.0.0 pangoft2-1.0.0.0 \
-		pangomm-1.4.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 popt sigc-2.0.0.0
+		bonoboui-2 cairo gconf-2 gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 gdkmm-2.4.0.0 \
+		glade-2.0.0.0 glibmm-2.4.0.0 gnome-2 gnomecanvas-2 gnomeprint-2-2.1.0 \
+		gnomeprintui-2-2.1.0 gnomeui-2 gnomevfs-2 gtk-x11-2.0.0.0 pango-1.0.0.0 \
+		pangocairo-1.0.0.0 pangoft2-1.0.0.0 pangomm-1.4.0.0 popt sigc-2.0.0.0
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
