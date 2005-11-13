@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.3 2004/09/15 04:20:24 marcm Exp $
---- tests/Makefile.in.orig	Thu Aug 26 13:33:27 2004
-+++ tests/Makefile.in	Sun Sep  5 20:07:08 2004
-@@ -154,7 +154,7 @@ LIBGNUTLS_CONFIG = @LIBGNUTLS_CONFIG@
+$OpenBSD: patch-tests_Makefile_in,v 1.4 2005/11/13 06:44:55 marcm Exp $
+--- tests/Makefile.in.orig	Mon Aug  1 07:55:58 2005
++++ tests/Makefile.in	Fri Aug 19 14:29:50 2005
+@@ -160,7 +160,7 @@ LIBGNUTLS_CONFIG = @LIBGNUTLS_CONFIG@
  LIBGNUTLS_LIBS = @LIBGNUTLS_LIBS@
  LIBGNUTLS_LIBS_STATIC = @LIBGNUTLS_LIBS_STATIC@
  LIBOBJS = @LIBOBJS@

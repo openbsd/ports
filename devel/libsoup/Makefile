@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2005/05/24 22:08:03 marcm Exp $
+# $OpenBSD: Makefile,v 1.9 2005/11/13 06:44:55 marcm Exp $
 
 COMMENT=		"a SOAP implementation in C"
 
-DISTNAME=		libsoup-2.2.3
+DISTNAME=		libsoup-2.2.5
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
@@ -25,6 +25,7 @@ LIB_DEPENDS=		glib-2.0.0.0,gobject-2.0.0.0,gthread-2.0.0.0::devel/glib2 \
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--disable-gtk-doc
