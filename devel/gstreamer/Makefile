@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/24 21:31:54 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2005/11/13 06:46:50 marcm Exp $
 
 COMMENT=		"GStreamer streaming media framework runtime"
 
-DISTNAME=		gstreamer-0.8.10
+DISTNAME=		gstreamer-0.8.11
 CATEGORIES=		devel
 
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>

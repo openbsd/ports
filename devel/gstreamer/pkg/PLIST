@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/05/24 21:31:54 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/11/13 06:46:50 marcm Exp $
+%%SHARED%%
 bin/gst-complete
 bin/gst-complete-0.8
 bin/gst-compprep
@@ -134,10 +135,10 @@ lib/pkgconfig/gstreamer-control-0.8.pc
 @man man/man1/gst-xmlinspect-0.8.1
 @man man/man1/gst-xmllaunch-0.8.1
 share/aclocal/gst-element-check-0.8.m4
-@comment share/doc/gstreamer-0.8.10/
-@comment share/doc/gstreamer-0.8.10/faq/
-@comment share/doc/gstreamer-0.8.10/manual/
-@comment share/doc/gstreamer-0.8.10/pwg/
+@comment share/doc/gstreamer-0.8.11/
+@comment share/doc/gstreamer-0.8.11/faq/
+@comment share/doc/gstreamer-0.8.11/manual/
+@comment share/doc/gstreamer-0.8.11/pwg/
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gstreamer-0.8/
@@ -202,6 +203,7 @@ share/gtk-doc/html/gstreamer-0.8/gstreamer-support.html
 share/gtk-doc/html/gstreamer-0.8/gstreamer.html
 share/gtk-doc/html/gstreamer-0.8/index.html
 share/gtk-doc/html/gstreamer-0.8/index.sgml
+share/gtk-doc/html/gstreamer-0.8/style.css
 share/gtk-doc/html/gstreamer-libs-0.8/
 share/gtk-doc/html/gstreamer-libs-0.8/GstDParam.html
 share/gtk-doc/html/gstreamer-libs-0.8/GstDParamLinInterp.html
@@ -247,10 +249,10 @@ share/locale/sr/LC_MESSAGES/gstreamer-0.8.mo
 share/locale/sv/LC_MESSAGES/gstreamer-0.8.mo
 share/locale/tr/LC_MESSAGES/gstreamer-0.8.mo
 share/locale/uk/LC_MESSAGES/gstreamer-0.8.mo
-%%SHARED%%
 share/locale/vi/
 share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/gstreamer-0.8.mo
+@exec %D/bin/gst-register > /dev/null 2>&1
 @cwd /var/db
 @extra gstreamer/registry.xml
 @extra gstreamer/
