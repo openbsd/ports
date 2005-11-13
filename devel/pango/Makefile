@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2005/06/14 01:58:56 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2005/11/13 06:22:59 marcm Exp $
 
 COMMENT=		"library for layout and rendering of text"
 
-DISTNAME=		pango-1.8.1
+DISTNAME=		pango-1.10.1
 CATEGORIES=		devel x11
 
 HOMEPAGE=		http://www.gtk.org
@@ -13,17 +13,20 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xft Xrender c fontconfig freetype iconv intl m
+WANTLIB=		X11 Xext Xft Xrender c fontconfig freetype \
+			glitz iconv intl m png z
 
-MASTER_SITES=		ftp://ftp.gtk.org/pub/gtk/v2.6/ \
-			${MASTER_SITE_GNOME:=sources/pango/1.8/}
+MASTER_SITES=		ftp://ftp.gtk.org/pub/gtk/v2.8/ \
+			${MASTER_SITE_GNOME:=sources/pango/1.10/}
 EXTRACT_SUFX=           .tar.bz2
 
-LIB_DEPENDS=		glib-2.0.600.0,gmodule-2.0.600.0,gobject-2.0.600.0::devel/glib2
+LIB_DEPENDS=		glib-2.0.800.0,gmodule-2.0.800.0,gobject-2.0.800.0::devel/glib2 \
+			cairo.3::graphics/cairo
 BUILD_DEPENDS=          :pkgconfig-*:devel/pkgconfig
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

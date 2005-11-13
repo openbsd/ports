@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2005/05/24 21:27:29 marcm Exp $
---- Makefile.in.orig	Fri Mar  4 12:08:21 2005
-+++ Makefile.in	Wed Mar 30 21:02:52 2005
-@@ -235,7 +235,7 @@ target_alias = @target_alias@
+$OpenBSD: patch-Makefile_in,v 1.3 2005/11/13 06:22:59 marcm Exp $
+--- Makefile.in.orig	Mon Oct  3 06:12:52 2005
++++ Makefile.in	Sun Oct 30 11:32:42 2005
+@@ -253,7 +253,7 @@ target_alias = @target_alias@
  
  AUTOMAKE_OPTIONS = 1.7
  
@@ -9,4 +9,4 @@ $OpenBSD: patch-Makefile_in,v 1.2 2005/05/24 21:27:29 marcm Exp $
 +SUBDIRS = pango modules examples docs tools
  
  EXTRA_DIST = \
- 	pango.pc.in	\
+ 	pango.pc.in		\

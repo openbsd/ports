@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_Makefile_in,v 1.7 2005/05/24 21:27:29 marcm Exp $
---- modules/Makefile.in.orig	Fri Mar  4 12:08:21 2005
-+++ modules/Makefile.in	Wed Mar 30 21:02:53 2005
-@@ -543,21 +543,11 @@ uninstall-info: uninstall-info-recursive
+$OpenBSD: patch-modules_Makefile_in,v 1.8 2005/11/13 06:22:59 marcm Exp $
+--- modules/Makefile.in.orig	Mon Oct  3 06:12:52 2005
++++ modules/Makefile.in	Sun Oct 30 11:32:42 2005
+@@ -561,21 +561,11 @@ uninstall-info: uninstall-info-recursive
  
  
  install-data-local:

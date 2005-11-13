@@ -1,14 +1,16 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2005/05/24 21:27:29 marcm Exp $
-@lib lib/libpango-1.0.so.800.1
-@lib lib/libpangoft2-1.0.so.800.1
-@lib lib/libpangox-1.0.so.800.1
-@lib lib/libpangoxft-1.0.so.800.1
+@comment $OpenBSD: PFRAG.shared,v 1.10 2005/11/13 06:23:00 marcm Exp $
+@lib lib/libpango-1.0.so.1001.0
+@lib lib/libpangocairo-1.0.so.1001.0
+@lib lib/libpangoft2-1.0.so.1001.0
+@lib lib/libpangox-1.0.so.1001.0
+@lib lib/libpangoxft-1.0.so.1001.0
 lib/pango/1.4.0/modules/pango-arabic-fc.so
 lib/pango/1.4.0/modules/pango-basic-fc.so
 lib/pango/1.4.0/modules/pango-basic-x.so
 lib/pango/1.4.0/modules/pango-hangul-fc.so
 lib/pango/1.4.0/modules/pango-hebrew-fc.so
 lib/pango/1.4.0/modules/pango-indic-fc.so
+lib/pango/1.4.0/modules/pango-khmer-fc.so
 lib/pango/1.4.0/modules/pango-syriac-fc.so
 lib/pango/1.4.0/modules/pango-thai-fc.so
 lib/pango/1.4.0/modules/pango-tibetan-fc.so

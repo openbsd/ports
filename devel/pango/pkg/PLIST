@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2005/05/24 21:27:29 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.12 2005/11/13 06:23:00 marcm Exp $
 bin/pango-querymodules
 include/pango-1.0/
 include/pango-1.0/pango/
@@ -23,6 +23,7 @@ include/pango-1.0/pango/pango-tabs.h
 include/pango-1.0/pango/pango-types.h
 include/pango-1.0/pango/pango-utils.h
 include/pango-1.0/pango/pango.h
+include/pango-1.0/pango/pangocairo.h
 include/pango-1.0/pango/pangofc-decoder.h
 include/pango-1.0/pango/pangofc-font.h
 include/pango-1.0/pango/pangofc-fontmap.h
@@ -32,6 +33,8 @@ include/pango-1.0/pango/pangoxft-render.h
 include/pango-1.0/pango/pangoxft.h
 lib/libpango-1.0.a
 lib/libpango-1.0.la
+lib/libpangocairo-1.0.a
+lib/libpangocairo-1.0.la
 lib/libpangoft2-1.0.a
 lib/libpangoft2-1.0.la
 lib/libpangox-1.0.a
@@ -53,6 +56,8 @@ lib/pango/1.4.0/modules/pango-hebrew-fc.a
 lib/pango/1.4.0/modules/pango-hebrew-fc.la
 lib/pango/1.4.0/modules/pango-indic-fc.a
 lib/pango/1.4.0/modules/pango-indic-fc.la
+lib/pango/1.4.0/modules/pango-khmer-fc.a
+lib/pango/1.4.0/modules/pango-khmer-fc.la
 lib/pango/1.4.0/modules/pango-syriac-fc.a
 lib/pango/1.4.0/modules/pango-syriac-fc.la
 lib/pango/1.4.0/modules/pango-thai-fc.a
@@ -61,6 +66,7 @@ lib/pango/1.4.0/modules/pango-tibetan-fc.a
 lib/pango/1.4.0/modules/pango-tibetan-fc.la
 lib/pkgconfig/
 lib/pkgconfig/pango.pc
+lib/pkgconfig/pangocairo.pc
 lib/pkgconfig/pangoft2.pc
 lib/pkgconfig/pangox.pc
 lib/pkgconfig/pangoxft.pc
@@ -87,6 +93,7 @@ share/gtk-doc/html/pango/ix01.html
 share/gtk-doc/html/pango/layout.gif
 share/gtk-doc/html/pango/left.png
 share/gtk-doc/html/pango/lowlevel.html
+share/gtk-doc/html/pango/pango-Cairo-Rendering.html
 share/gtk-doc/html/pango/pango-Coverage-Maps.html
 share/gtk-doc/html/pango/pango-Engines.html
 share/gtk-doc/html/pango/pango-Fonts.html
@@ -107,6 +114,8 @@ share/gtk-doc/html/pango/pango.devhelp
 share/gtk-doc/html/pango/pango.html
 share/gtk-doc/html/pango/rendering.html
 share/gtk-doc/html/pango/right.png
+share/gtk-doc/html/pango/rotated-text.png
+share/gtk-doc/html/pango/style.css
 share/gtk-doc/html/pango/tools.html
 share/gtk-doc/html/pango/up.png
 %%SHARED%%
