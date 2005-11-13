@@ -1,7 +1,7 @@
-$OpenBSD: patch-gconf_Makefile_in,v 1.2 2005/05/24 21:33:33 marcm Exp $
---- gconf/Makefile.in.orig	Mon Mar  7 08:42:51 2005
-+++ gconf/Makefile.in	Mon Apr 11 15:06:16 2005
-@@ -867,13 +867,7 @@ gstreamer-@GST_MAJORMINOR@.schemas: gstr
+$OpenBSD: patch-gconf_Makefile_in,v 1.3 2005/11/13 06:49:01 marcm Exp $
+--- gconf/Makefile.in.orig	Thu Jun 30 16:10:56 2005
++++ gconf/Makefile.in	Mon Jul 11 05:27:53 2005
+@@ -875,13 +875,7 @@ gstreamer-@GST_MAJORMINOR@.schemas: gstr
  	cp gstreamer.schemas gstreamer-@GST_MAJORMINOR@.schemas
  
  install-data-local:

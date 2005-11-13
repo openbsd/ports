@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2005/09/16 09:51:26 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/11/13 06:49:01 marcm Exp $
 
 COMMENT=		"GStreamer Streaming-media framework plug-ins."
 
-VERSION=		0.8.8
-PATCHLEVEL=		p1
+VERSION=		0.8.11
+PATCHLEVEL=		
 DISTNAME=		gst-plugins-${VERSION}
 PKGNAME=		gstreamer-plugins-${VERSION}p2
 CATEGORIES=		devel
@@ -17,12 +17,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		GL GLU ICE SM X11 Xext Xft Xrender Xv \
+WANTLIB=		ICE SM X11 Xdamage Xext Xfixes Xrender Xv \
 			fontconfig freetype m ossaudio xml2 z \
 			glib-2.0.0.0 gmodule-2.0.0.0 gthread-2.0.0.0 \
-			gobject-2.0.0.0 atk-1.0.0.0 \
-			pango-1.0.0.0 pangoft2-1.0.0.0 pangox-1.0.0.0 \
-			pangoxft-1.0.0.0 popt ORBit-2\
+			gobject-2.0.0.0 atk-1.0.0.0 png cairo \
+			pango-1.0.0.0 pangoft2-1.0.0.0 glitz \
+			pangocairo-1.0.1000.0 popt ORBit-2\
 			gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 gtk-x11-2.0.0.0
 			
 
@@ -44,7 +44,6 @@ CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gst-plu
 # Disable plugins might try to build that we shouldn't
 #CONFIGURE_ARGS+=	--disable-mpeg2enc
 CONFIGURE_ARGS+=	--disable-tests
-CONFIGURE_ARGS+=	--disable-cairo
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
