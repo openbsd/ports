@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2005/10/25 21:08:40 wilfried Exp $
+# $OpenBSD: Makefile,v 1.29 2005/11/14 12:51:57 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -6,7 +6,7 @@ COMMENT=	"redesign of the integrated Mozilla App-Suite mail component"
 
 VER=		1.0.7
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}
+PKGNAME=	mozilla-thunderbird-${VER}p0
 SO_VERSION=	4.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -20,10 +20,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xft Xp Xrender Xt c fontconfig freetype \
+WANTLIB=		X11 Xext Xft Xp Xrender Xt c cairo fontconfig freetype \
 			m pthread z atk-1.0.0.0 glib-2.0.0.0 \
 			gmodule-2.0.0.0 gobject-2.0.0.0 jpeg pango-1.0.0.0 \
-			pangox-1.0.0.0 pangoxft-1.0.0.0 png
+			pangoft2-1.0.0.0 pangocairo-1.0.0.0
 .if empty(MACHINE_ARCH:Malpha)
 WANTLIB+=		stdc++
 .endif
@@ -35,10 +35,10 @@ DISTFILES=	thunderbird-${VER}-source.tar.bz2
 MODULES=	gcc3 devel/gettext
 MODGCC3_ARCHES=	alpha
 MODGCC3_LANGS=	C++
-RUN_DEPENDS=	:esound-*:audio/esound
-BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
+RUN_DEPENDS=	::audio/esound
+BUILD_DEPENDS=	::devel/libIDL \
 		:zip->=2.3:archivers/zip \
-		:pkgconfig-*:devel/pkgconfig
+		::devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 
 VMEM_WARNING=	Yes
