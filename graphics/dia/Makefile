@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2005/07/17 07:50:32 alek Exp $
+# $OpenBSD: Makefile,v 1.32 2005/11/14 11:52:21 wilfried Exp $
 
 COMMENT=	"technical diagrams drawing tool"
 
 DISTNAME=	dia-0.94
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.gnome.org/projects/dia/
@@ -15,13 +15,14 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 Xft Xrender atk-1.0.0.0 c png z xml2 \
+WANTLIB=		X11 Xext Xrender atk-1.0.0.0 c png z xml2 \
 			fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
 			gobject-2.0.0.0 iconv intl m pango-1.0.0.0 \
-			pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
+			pangoft2-1.0.0.0 cairo glitz pangocairo-1.0.0.0
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
-		:p5-XML-Parser-*:textproc/p5-XML-Parser \
+
+BUILD_DEPENDS=	::devel/pkgconfig \
+		::textproc/p5-XML-Parser \
 		::textproc/docbook-xsl
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 		art_lgpl_2.5::graphics/libart \
