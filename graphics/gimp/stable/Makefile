@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2005/11/04 07:36:10 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2005/11/14 14:39:14 wilfried Exp $
 
 COMMENT=	"GNU Image Manipulation Program"
 
 DISTNAME=	gimp-2.2.9
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics
 DIR=		gimp/v2.2
 MASTER_SITES=	ftp://ftp.gimp.org/pub/${DIR}/ \
@@ -13,8 +14,8 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/${DIR}/ \
 HOMEPAGE=	http://www.gimp.org/
 
 BUILD_DEPENDS=	:pkgconfig->=0.12.0p1:devel/pkgconfig \
-		:p5-XML-Parser-*:textproc/p5-XML-Parser
-RUN_DEPENDS=    :wget-*:net/wget
+		::textproc/p5-XML-Parser
+RUN_DEPENDS=    ::net/wget
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 		aa.1.3::graphics/aalib \
 		art_lgpl_2.5::graphics/libart \
@@ -29,10 +30,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xft Xmu Xpm Xrender Xt atk-1.0.0.0 c fontconfig \
-		freetype glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
-		jpeg.62 lcms.1 m pango-1.0.0.0 pangoft2-1.0.0.0 \
-		pangox-1.0.0.0 pangoxft-1.0.0.0 png.4 xml2 z
+WANTLIB=	ICE SM X11 Xext Xmu Xpm Xrender Xt atk-1.0.0.0 c cairo \
+		fontconfig freetype glib-2.0.0.0 glitz gmodule-2.0.0.0 \
+		gobject-2.0.0.0 jpeg.62 lcms.1 m pango-1.0.0.0 \
+		pangocairo-1.0.0.0 pangoft2-1.0.0.0 png.4 xml2 z
 
 MODULES=	devel/gettext
 
