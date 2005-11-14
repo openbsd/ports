@@ -1,15 +1,6 @@
-$OpenBSD: patch-src_main_c,v 1.1.1.1 2005/05/22 11:32:11 alek Exp $
+$OpenBSD: patch-src_main_c,v 1.2 2005/11/14 17:09:22 pvalchev Exp $
 --- src/main.c.orig	Tue Sep 16 15:49:01 2003
 +++ src/main.c	Thu May 12 15:36:47 2005
-@@ -2889,7 +2889,7 @@ if((in=fopen(filename,"rb"))==NULL)
-   return(0);
- 
- fgets(buf,sizeof(buf),in);
--if(strcmp(buf,"P7 332\n")!=0)
-+if(strncmp(buf,"P7 332\n",sizeof(buf))!=0)
-   return(0);
- 
- /* we're not worried about any comments */
 @@ -3007,25 +3007,25 @@ if(l<=4) return(0);
   * natively, and uses ImageMagick's `convert' for others.
   * But we have our own GIF/PNG/mrf readers.
@@ -66,17 +57,6 @@ $OpenBSD: patch-src_main_c,v 1.1.1.1 2005/05/22 11:32:11 alek Exp $
      
      datptr=gtk_clist_get_row_data(GTK_CLIST(clist),*entryp);
      
-@@ -3386,8 +3386,8 @@ while((dent=readdir(dirfile))!=NULL)
-     continue;				/* skip (most) 'dot' files */
-   
-   /* no `.' ever, and no `..' if at root. */
--  if(strcmp(dent->d_name,".")==0 ||
--     (strcmp(cdir,"/")==0 && strcmp(dent->d_name,"..")==0))
-+  if(strncmp(dent->d_name,".",2)==0 ||
-+     (strncmp(cdir,"/",2)==0 && strncmp(dent->d_name,"..",3)==0))
-     continue;
-   
-   /* see if it's a dir */
 @@ -3433,10 +3433,10 @@ void set_title(int include_dir)
  {
  static char buf[1024];
@@ -168,12 +148,3 @@ $OpenBSD: patch-src_main_c,v 1.1.1.1 2005/05/22 11:32:11 alek Exp $
  
  /* ok, now kludge it :-) - the black right/bottom edge turns to white,
   * which is too bright. Make that the same as the grey line above/left of it.
-@@ -4703,7 +4709,7 @@ if(read_dir)
-     
-     /* check it's really `..' (won't be if in root dir) */
-     gtk_clist_get_text(GTK_CLIST(clist),0,SELECTOR_NAME_COL,&ptr);
--    if(strcmp(ptr,"..")==0)
-+    if(strncmp(ptr,"..",3)==0)
-       set_focus_row(1);
-     }
-   }

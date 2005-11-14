@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_logoconv_c,v 1.1.1.1 2005/05/22 11:32:11 alek Exp $
+$OpenBSD: patch-src_logoconv_c,v 1.2 2005/11/14 17:09:22 pvalchev Exp $
 --- src/logoconv.c.orig	Sat Oct  7 15:25:25 2000
 +++ src/logoconv.c	Thu May 12 15:35:40 2005
 @@ -10,6 +10,7 @@
@@ -9,12 +9,3 @@ $OpenBSD: patch-src_logoconv_c,v 1.1.1.1 2005/05/22 11:32:11 alek Exp $
  
  
  /* we take an extremely generous outlook - anything other than a decimal
-@@ -49,7 +50,7 @@ unsigned char buf[128];
- int w,h,x,y,c;
- 
- fgets(buf,sizeof(buf),stdin);
--if(strcmp(buf,"P6\n")!=0)
-+if(strncmp(buf,"P6\n",4)!=0)
-   fprintf(stderr,"logoconv: stdin not a raw PPM file.\n"),exit(1);
- 
- w=read_next_number(stdin);

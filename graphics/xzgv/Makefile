@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/22 11:32:11 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/11/14 17:09:22 pvalchev Exp $
 
 COMMENT=	"picture viewer for X, with thumbnail-based file selector"
 DISTNAME=	xzgv-0.8
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://rus.members.beeb.net/xzgv.html

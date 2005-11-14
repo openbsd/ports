@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_install-info_c,v 1.1.1.1 2005/05/22 11:32:11 alek Exp $
+$OpenBSD: patch-src_install-info_c,v 1.2 2005/11/14 17:09:22 pvalchev Exp $
 --- src/install-info.c.orig	Thu May 12 15:09:12 2005
 +++ src/install-info.c	Thu May 12 15:26:28 2005
 @@ -166,12 +166,12 @@ concat (s1, s2, s3)
@@ -19,21 +19,3 @@ $OpenBSD: patch-src_install-info_c,v 1.1.1.1 2005/05/22 11:32:11 alek Exp $
  
    return result;
  }
-@@ -674,7 +674,7 @@ For more information about these matters
-     basename_len = strlen (infile_basename);
-     infile_sans_info
-       = (strlen (infile_basename) > 5
--         && strcmp (infile_basename + basename_len - 5, ".info") == 0)
-+         && strncmp (infile_basename + basename_len - 5, ".info",6) == 0)
-         ? copy_string (infile_basename, basename_len - 5)
-         : infile_basename;
- 
-@@ -880,7 +880,7 @@ For more information about these matters
-       /* Mark the end of the Top node as the place to add any
-          new sections that are needed.  */
-       for (node = dir_nodes; node; node = node->next)
--        if (node->name && strcmp (node->name, "Top") == 0)
-+        if (node->name && strncmp (node->name, "Top", 4) == 0)
-           dir_lines[node->end_line].add_sections_before = 1;
-     }
- 
