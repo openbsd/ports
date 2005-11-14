@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2005/05/25 23:29:47 marcm Exp $
+# $OpenBSD: Makefile,v 1.11 2005/11/14 18:30:02 wilfried Exp $
 
 COMMENT=		"window navigator construction kit"
 
 DISTNAME=		libwnck-2.10.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org
@@ -15,14 +16,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 XRes Xext Xft Xrender \
-			atk-1.0.0.0 fontconfig freetype \
+WANTLIB=		ICE SM X11 XRes Xext \
+			atk-1.0.0.0 cairo fontconfig freetype \
 			glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
-			m pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
+			m pango-1.0.0.0 pangocairo-1.0.0.0 pangoft2-1.0.0.0
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS= 		::devel/pkgconfig
 LIB_DEPENDS=		gdk-x11-2.0.0.10,gdk_pixbuf-2.0.0.10,gtk-x11-2.0.0.10::x11/gtk+2 \
 			startup-notification-1::devel/startup-notification
 
