@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2005/11/09 20:05:36 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/14 20:02:37 wilfried Exp $
 
 COMMENT=		"C++ interface for gtk2+"
 COMMENT-docs=		"C++ interface for gtk2+ documentation"
 
 VERSION=		2.6.4
 DISTNAME=		gtkmm-${VERSION}
-PKGNAME=		gtk2mm-${VERSION}p1
+PKGNAME=		gtk2mm-${VERSION}p2
 PKGNAME-docs=		gtk2mm-docs-${VERSION}
 CATEGORIES=		devel x11
 
@@ -24,14 +24,15 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtkmm/2.6/}
 MULTI_PACKAGES=		-docs
 SUBPACKAGE?=
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS=		::devel/pkgconfig
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
 PKG_ARCH=	*
 .else
-WANTLIB=		X11 Xft Xrender fontconfig freetype m atk-1.0.0.0 glib-2.0.0.0 \
-			gmodule-2.0.0.0 gobject-2.0.0.0 pango-1.0.0.0 pangoft2-1.0.0.0 \
-			pangox-1.0.0.0 pangoxft-1.0.0.0 sigc-2.0.0.0
+WANTLIB=		X11 Xext Xrender atk-1.0.0.0 cairo fontconfig freetype \
+			glib-2.0.0.0 glitz gmodule-2.0.0.0 gobject-2.0.0.0 m \
+			pango-1.0.0.0 pangocairo-1.0.0.0 pangoft2-1.0.0.0 png \
+			sigc-2.0.0.0 z
 MODULES=		gettext
 LIB_DEPENDS=		glibmm-2.4.0.0:glib2mm->=2.4:devel/glib2mm \
 			gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0:gtk+2->=2.4:x11/gtk+2
