@@ -1,4 +1,4 @@
-$OpenBSD: patch-sanyo_c,v 1.1.1.1 2004/05/17 05:09:53 robert Exp $
+$OpenBSD: patch-sanyo_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
 --- sanyo.c.orig	2004-05-03 11:50:01.000000000 -0700
 +++ sanyo.c	2004-05-03 11:58:29.000000000 -0700
 @@ -318,7 +318,7 @@ sanyo_prop(struct exifprop *prop, struct
@@ -22,12 +22,3 @@ $OpenBSD: patch-sanyo_c,v 1.1.1.1 2004/05/17 05:09:53 robert Exp $
  		break;
  
  	/* Color adjust. */
-@@ -357,7 +357,7 @@ sanyo_ifd(u_int32_t offset, struct tiffm
- 	 * try reading the IFD starting at offset + 8 ("SANYO" + 3).
- 	 */
- 
--	if (!strcmp((const char *)(md->btiff + offset), "SANYO"))
-+	if (!strncmp((const char *)(md->btiff + offset), "SANYO", 5))
- 		readifd(offset + strlen("SANYO") + 3, &myifd, sanyo_tags, md);
- 	else
- 		readifd(offset, &myifd, sanyo_tags, md);

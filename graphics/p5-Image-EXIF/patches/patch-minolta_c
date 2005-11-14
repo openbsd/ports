@@ -1,4 +1,4 @@
-$OpenBSD: patch-minolta_c,v 1.1.1.1 2004/05/17 05:09:53 robert Exp $
+$OpenBSD: patch-minolta_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
 --- minolta.c.orig	2004-05-03 11:35:20.000000000 -0700
 +++ minolta.c	2004-05-03 11:56:00.000000000 -0700
 @@ -484,10 +484,10 @@ minolta_cprop(struct exifprop *prop, uns
@@ -113,21 +113,3 @@ $OpenBSD: patch-minolta_c,v 1.1.1.1 2004/05/17 05:09:53 robert Exp $
  	prop->lvl = ED_BAD;
  }
  
-@@ -699,7 +699,7 @@ minolta_prop(struct exifprop *prop, stru
- 
- 		/* We recognize two types: MLT0 and mlt0. */
- 
--		if (strcmp(prop->str, "MLT0") && strcmp(prop->str, "mlt0"))
-+		if (strncmp(prop->str, "MLT0", 4) && strncmp(prop->str, "mlt0", 4))
- 			exifwarn2("Minolta maker note version not supported",
- 			    prop->str);
- 		break;
-@@ -793,7 +793,7 @@ minolta_ifd(u_int32_t offset, struct tif
- 
- 	/* DiMAGE E201. */
- 
--	if (!strcmp((const char *)(md->btiff + offset), "+M")) {
-+	if (!strncmp((const char *)(md->btiff + offset), "+M", 2)) {
- 		exifwarn("Minolta maker note version not supported");
- 		return (NULL);
- 	}

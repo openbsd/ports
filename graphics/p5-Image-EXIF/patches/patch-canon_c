@@ -1,4 +1,4 @@
-$OpenBSD: patch-canon_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
+$OpenBSD: patch-canon_c,v 1.2 2005/11/14 17:39:03 pvalchev Exp $
 --- canon.c.orig	2004-05-03 11:31:28.000000000 -0700
 +++ canon.c	2004-05-03 11:56:30.000000000 -0700
 @@ -775,14 +775,14 @@ canon_prop01(struct exifprop *aprop, str
@@ -30,24 +30,6 @@ $OpenBSD: patch-canon_c,v 1.1.1.1 2004/05/17 05:09:52 robert Exp $
  			    (float)exif2byte(off + 37 * 2, o) /
  			    (float)exif2byte(off + 36 * 2, o));
  		} else
-@@ -802,7 +802,7 @@ canon_prop01(struct exifprop *aprop, str
- 		break;
- 	case 16:
- 		/* ISO overrides standard one if known. */
--		if (!strcmp(aprop->str, "Unknown")) {
-+		if (!strncmp(aprop->str, "Unknown", 7)) {
- 			aprop->lvl = ED_VRB;
- 			break;
- 		}
-@@ -810,7 +810,7 @@ canon_prop01(struct exifprop *aprop, str
- 		break;
- 	case 17:
- 		/* Maker meter mode overrides standard one if known. */
--		if (!strcmp(aprop->str, "Unknown")) {
-+		if (!strncmp(aprop->str, "Unknown", 7)) {
- 			aprop->lvl = ED_VRB;
- 			break;
- 		}
 @@ -857,8 +857,8 @@ canon_propA0(struct exifprop *aprop, str
  
  	switch (aprop->tag) {
