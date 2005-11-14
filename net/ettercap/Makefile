@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2005/02/07 19:01:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.29 2005/11/14 12:31:20 wilfried Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -6,6 +6,7 @@ COMMENT=	"multi-purpose sniffer/interceptor/logger"
 
 VER=		0.6.b
 DISTNAME=	ettercap-${VER}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://ettercap.sourceforge.net/
@@ -26,16 +27,16 @@ FLAVOR?=
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-https
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS=		::devel/pkgconfig
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--enable-gtk=no
 .else
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
-WANTLIB+=		X11 Xext Xft Xinerama Xrender atk-1.0.0.0 fontconfig \
+WANTLIB+=		X11 atk-1.0.0.0 cairo fontconfig \
 			freetype glib-2.0.0.0 gmodule-2.0.0.0 \
 			gobject-2.0.0.0 iconv intl m pango-1.0.0.0 \
-			pangox-1.0.0.0 pangoxft-1.0.0.0 Xcursor
+			pangocairo-1.0.0.0 pangoft2-1.0.0.0
 .endif
 
 NO_REGRESS=	Yes
