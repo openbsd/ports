@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/11/14 22:19:51 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2005/11/14 23:03:45 wilfried Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
@@ -22,7 +22,7 @@ WANTLIB=	X11 Xext Xrender art_lgpl_2 atk-1.0.0.0 cairo fontconfig \
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgtkhtml/2.6/}
 EXTRACT_SUFX=		.tar.bz2
 
-BUILD_DEPENDS=		::devel/pkgconfig
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gailutil.17::x11/gnome/gail
 
 USE_GMAKE=		Yes
