@@ -1,12 +1,12 @@
-$OpenBSD: patch-main_u_c,v 1.1 2005/04/05 21:34:50 fgsch Exp $
---- main_u.c.orig	Tue Mar 22 16:45:47 2005
-+++ main_u.c	Tue Mar 22 16:48:39 2005
-@@ -29,7 +29,7 @@
- #include <fcntl.h>
- #include <io.h>
- #endif /* __dos */
+$OpenBSD: patch-main_u_c,v 1.2 2005/11/14 02:03:20 cathcart Exp $
+--- main_u.c.orig	Sat Jan 15 20:08:51 2005
++++ main_u.c	Tue Nov  8 13:00:55 2005
+@@ -252,7 +252,7 @@ main(int argc, char **argv)
+ 
+ #if !defined(__dos)
+ 	if (is_locale_utf8()) {
 -#if defined(__STDC_ISO_10646__)
 +#if defined(__STDC_ISO_10646__) || defined(__OpenBSD__)
- #include <locale.h>
- #endif /* __STDC_ISO_10646__ */
- #if defined(N_PLAT_NLM)
+ 		/*
+ 		 * If the user wants UTF-8 and the envirionment variables
+ 		 * support UTF-8, than set the locale accordingly

@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.11 2005/04/05 21:34:02 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.12 2005/11/14 02:03:20 cathcart Exp $
 bin/antiword
 @man man/man1/antiword.1
 share/antiword/
 share/antiword/8859-1.txt
 share/antiword/8859-10.txt
+share/antiword/8859-11.txt
 share/antiword/8859-13.txt
 share/antiword/8859-14.txt
 share/antiword/8859-15.txt
@@ -39,6 +40,7 @@ share/antiword/koi8-u.txt
 share/antiword/roman.txt
 share/doc/antiword/
 share/doc/antiword/FAQ
+share/doc/antiword/Mutt
 share/doc/antiword/Netscape
 share/doc/antiword/QandA
 share/doc/antiword/ReadMe

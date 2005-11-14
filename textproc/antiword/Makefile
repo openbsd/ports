@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2005/04/05 21:34:02 fgsch Exp $
+# $OpenBSD: Makefile,v 1.22 2005/11/14 02:03:19 cathcart Exp $
 
 COMMENT=	"converts MSWord Documents to ASCII Text and PostScript"
 
-DISTNAME=	antiword-0.36.1
+DISTNAME=	antiword-0.37
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.winfield.demon.nl/
+
+MAINTAINER=	David Cathcart <cathcart@openbsd.org>
 
 MASTER_SITES=	${HOMEPAGE}/linux/
 
@@ -21,7 +23,7 @@ MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -Wall -DNDEBUG" \
 
 NO_REGRESS=	Yes
 
-DOCS=		FAQ Netscape QandA ReadMe
+DOCS=		FAQ Netscape QandA ReadMe Mutt
 
 post-patch:
 	@perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" \

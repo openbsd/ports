@@ -1,8 +1,8 @@
-$OpenBSD: patch-antiword_h,v 1.8 2005/04/05 21:34:02 fgsch Exp $
---- antiword.h.orig	Thu Sep 30 15:55:56 2004
-+++ antiword.h	Tue Mar 22 16:45:31 2005
-@@ -217,7 +217,7 @@
- #define ANTIWORD_DIR		"lib/antiword"
+$OpenBSD: patch-antiword_h,v 1.9 2005/11/14 02:03:20 cathcart Exp $
+--- antiword.h.orig	Wed Jul  6 18:46:22 2005
++++ antiword.h	Tue Nov  8 12:54:38 2005
+@@ -224,7 +224,7 @@
+ #define ANTIWORD_DIR		".antiword"
  #define FONTNAMES_FILE		"fontnames"
  #else	/* All others */
 -#define GLOBAL_ANTIWORD_DIR	"/usr/share/antiword"
