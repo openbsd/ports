@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/14 19:16:46 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2005/11/14 21:11:17 wilfried Exp $
 
 COMMENT=	"full-screen ncurses or GTK-based audio mixer"
 
 DISTNAME=	aumix-2.8
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://jpj.net/~trevor/aumix.html
@@ -33,13 +34,12 @@ CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --without-gtk
 .else
-BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS+=	::devel/pkgconfig
 LIB_DEPENDS+=	gdk-x11-2.0.0.14,gdk_pixbuf-2.0.0.14,gtk-x11-2.0.0.14::x11/gtk+2
 USE_X11=	Yes
-WANTLIB+=	X11 Xext Xft Xinerama Xrender Xcursor
-WANTLIB+=	fontconfig freetype.13
+WANTLIB+=	X11 fontconfig freetype.13
 WANTLIB+=	glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0
-WANTLIB+=	pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 atk-1.0.0.0
+WANTLIB+=	atk-1.0.0.0 cairo pango-1.0.0.0 pangocairo-1.0.0.0 pangoft2-1.0.0.0
 .endif
 
 .if ${FLAVOR:L:Mno_curses} 
