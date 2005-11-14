@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/12 04:36:23 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/11/14 05:12:29 jolan Exp $
 %%SHARED%%
 include/xfce4/
 include/xfce4/libxfce4util/
@@ -7,6 +7,7 @@ include/xfce4/libxfce4util/i18n.h
 include/xfce4/libxfce4util/libxfce4util-config.h
 include/xfce4/libxfce4util/libxfce4util.h
 include/xfce4/libxfce4util/utf8.h
+include/xfce4/libxfce4util/util-enum-types.h
 include/xfce4/libxfce4util/util.h
 include/xfce4/libxfce4util/xfce-desktopentry.h
 include/xfce4/libxfce4util/xfce-fileutils.h

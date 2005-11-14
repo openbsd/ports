@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2005/05/12 04:36:23 jolan Exp $
---- Makefile.in.orig	Sun Jan  2 06:51:01 2005
-+++ Makefile.in	Sun Feb 20 15:06:42 2005
-@@ -190,7 +190,6 @@ sysconfdir = @sysconfdir@
+$OpenBSD: patch-Makefile_in,v 1.2 2005/11/14 05:12:29 jolan Exp $
+--- Makefile.in.orig	Mon Nov  7 14:20:04 2005
++++ Makefile.in	Thu Nov 10 05:28:55 2005
+@@ -189,7 +189,6 @@ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  SUBDIRS = \
  	libxfce4util							\
