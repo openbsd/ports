@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/10/29 11:26:25 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/11/15 21:54:19 wilfried Exp $
 
 COMMENT=	"GTK+ 2.x engine based on Bluecurve"
 
 VERSION=	0.6.2
 DISTNAME=	clearlooks-${VERSION}
-PKGNAME=	gtk2-clearlooks-engine-${VERSION}
+PKGNAME=	gtk2-clearlooks-engine-${VERSION}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://clearlooks.sourceforge.net/
@@ -20,9 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=clearlooks/}
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB=	Xrender freetype Xft m X11 fontconfig \
-		atk-1.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 glib-2.0.0.0 \
-		pango-1.0.0.0 pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
+WANTLIB=	Xext Xrender freetype m X11 fontconfig z png \
+		atk-1.0.0.0 cairo glitz gmodule-2.0.0.0 gobject-2.0.0.0 \
+		glib-2.0.0.0 pango-1.0.0.0 pangoft2-1.0.0.0 pangocairo-1.0.0.0
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	gdk-x11-2.0.600.10,gdk_pixbuf-2.0.600.10,gtk-x11-2.0.600.10::x11/gtk+2
