@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2005/06/03 19:09:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2005/11/15 22:29:18 wilfried Exp $
 
 COMMENT=	"extensible window manager"
 
 VERSION=	1.3
 DISTNAME=	sawfish-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sawmill/}
@@ -20,7 +20,7 @@ WANTLIB=	ICE SM X11 Xext Xft.5 Xinerama Xrender.3 atk-1.0.0.0 c \
 		fontconfig.2 freetype.13 gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 \
 		gdk_pixbuf_xlib-2.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
 		gobject-2.0.0.0 gtk-x11-2.0.0.0 iconv intl m pango-1.0.0.0 \
-		pangox-1.0.0.0 pangoxft-1.0.0.0 rep.12
+		cairo pangocairo-1.0.0.0 pangoft2-1.0.0.0 rep.12
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		::devel/pkgconfig
