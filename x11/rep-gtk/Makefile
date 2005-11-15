@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2005/11/14 13:58:38 wilfried Exp $
+# $OpenBSD: Makefile,v 1.15 2005/11/15 09:21:52 wilfried Exp $
 
 COMMENT=	"GTK+ binding for librep Lisp environment"
 
 VERSION=	0.18
 DISTNAME=	rep-gtk-${VERSION}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=     x11
 
 HOMEPAGE=       http://rep-gtk.sourceforge.net/
@@ -20,7 +20,7 @@ WANTLIB=	X11 atk-1.0.0.0 cairo fontconfig freetype glib-2.0.0.0 \
 
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=rep-gtk/}
 
-BUILD_DEPENDS=	::devel/pkgconfig \
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	::lang/librep
 LIB_DEPENDS= 	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2

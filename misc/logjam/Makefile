@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2005/11/14 12:13:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2005/11/15 09:21:51 wilfried Exp $
 
 COMMENT=	"gtk livejournal client"
 
 VERSION=	4.0.1
 DISTNAME=	logjam-${VERSION}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	misc x11
 
 HOMEPAGE=	http://logjam.danga.com/
@@ -22,7 +22,7 @@ MASTER_SITES=	http://logjam.danga.com/download/
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS+=	::devel/pkgconfig
+BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	glib-2.0.0.0,gobject-2.0.0.0,gmodule-2.0.0.0::devel/glib2 \
 		gtk-x11-2.0.0.0,gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0::x11/gtk+2 \
 		curl.2::net/curl \

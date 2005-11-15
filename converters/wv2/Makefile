@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2005/11/13 22:22:58 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2005/11/15 09:21:51 wilfried Exp $
 
 COMMENT=	"library providing routines to access Microsoft Word/Excel files"
 
 DISTNAME=	wv2-0.2.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wvware/}
 EXTRACT_SUFX=	.tar.bz2
@@ -19,7 +19,7 @@ WANTLIB=		gobject-2.0.0.0 m z
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS+=	::devel/pkgconfig
+BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS+=	glib-2.0.0.0::devel/glib2 \
 		xml2::textproc/libxml \
 		gsf-1::devel/libgsf,no_gnome \

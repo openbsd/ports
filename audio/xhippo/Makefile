@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2005/11/14 21:11:42 wilfried Exp $
+# $OpenBSD: Makefile,v 1.17 2005/11/15 09:21:51 wilfried Exp $
 
 COMMENT=	"generic playlist manager for UNIX"
 
 DISTNAME=	xhippo-3.3
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.gnu.org/software/xhippo/
@@ -21,7 +21,7 @@ WANTLIB=	X11 fontconfig freetype \
 
 MASTER_SITES=	${MASTER_SITE_GNU:=xhippo/}
 
-BUILD_DEPENDS=	::devel/pkgconfig
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk_pixbuf-2.0.0.0,gdk-x11-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 		id3tag.2::audio/libid3tag
 

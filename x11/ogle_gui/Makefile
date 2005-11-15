@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2005/11/14 16:05:10 wilfried Exp $
+# $OpenBSD: Makefile,v 1.14 2005/11/15 09:21:52 wilfried Exp $
 
 CATEGORIES=	x11
 
 COMMENT=	"GUI for ogle"
 DISTNAME=	ogle_gui-0.9.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
 # Authors can be reached at dvd@dtek.chalmers.se
 MASTER_SITES=	${HOMEPAGE}dist/
@@ -29,7 +29,7 @@ LIB_DEPENDS+= 	glade.5.0::devel/libglade \
 		gtk.1.2::x11/gtk+
 WANTLIB+=	Xi gdk glib gmodule xml
 .else
-BUILD_DEPENDS+=	::devel/pkgconfig
+BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS+=	glade-2.0.0.0::devel/libglade2 \
 		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 CONFIGURE_ARGS+=--enable-gtk2

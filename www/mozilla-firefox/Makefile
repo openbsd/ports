@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2005/11/14 15:50:18 wilfried Exp $
+# $OpenBSD: Makefile,v 1.41 2005/11/15 09:21:52 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -6,7 +6,7 @@ COMMENT=	"redesign of Mozilla's browser component"
 
 VER=		1.0.7
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}p4
+PKGNAME=	mozilla-firefox-${VER}p5
 SO_VERSION=	7.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -35,11 +35,11 @@ DISTFILES=	firefox-${VER}-source.tar.bz2
 MODULES=	gcc3 devel/gettext
 MODGCC3_ARCHES=	alpha
 MODGCC3_LANGS=	C++
-RUN_DEPENDS=	::audio/esound
+RUN_DEPENDS=	:esound-*:audio/esound
 
-BUILD_DEPENDS=	::devel/libIDL \
+BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip \
-		::devel/pkgconfig
+		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 
 VMEM_WARNING=	Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2005/11/14 14:39:14 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2005/11/15 09:21:51 wilfried Exp $
 
 COMMENT=	"GNU Image Manipulation Program"
 
 DISTNAME=	gimp-2.2.9
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	graphics
 DIR=		gimp/v2.2
 MASTER_SITES=	ftp://ftp.gimp.org/pub/${DIR}/ \
@@ -14,8 +14,8 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/${DIR}/ \
 HOMEPAGE=	http://www.gimp.org/
 
 BUILD_DEPENDS=	:pkgconfig->=0.12.0p1:devel/pkgconfig \
-		::textproc/p5-XML-Parser
-RUN_DEPENDS=    ::net/wget
+		:p5-XML-Parser-*:textproc/p5-XML-Parser
+RUN_DEPENDS=    :wget-*:net/wget
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 		aa.1.3::graphics/aalib \
 		art_lgpl_2.5::graphics/libart \

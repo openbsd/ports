@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2005/11/14 13:31:44 wilfried Exp $
+# $OpenBSD: Makefile,v 1.15 2005/11/15 09:21:52 wilfried Exp $
 
 DISTNAME=	aewm-1.3.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11
 
 # X11/9wm
@@ -21,7 +21,7 @@ MASTER_SITES=	${HOMEPAGE}
 USE_GMAKE=	Yes
 USE_X11=	Yes
 MODULES=	devel/gettext
-BUILD_DEPENDS=	::devel/pkgconfig
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 NO_REGRESS=	Yes
 

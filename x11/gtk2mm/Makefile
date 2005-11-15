@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/14 20:02:37 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2005/11/15 09:21:52 wilfried Exp $
 
 COMMENT=		"C++ interface for gtk2+"
 COMMENT-docs=		"C++ interface for gtk2+ documentation"
 
 VERSION=		2.6.4
 DISTNAME=		gtkmm-${VERSION}
-PKGNAME=		gtk2mm-${VERSION}p2
+PKGNAME=		gtk2mm-${VERSION}p3
 PKGNAME-docs=		gtk2mm-docs-${VERSION}
 CATEGORIES=		devel x11
 
@@ -24,7 +24,7 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtkmm/2.6/}
 MULTI_PACKAGES=		-docs
 SUBPACKAGE?=
 
-BUILD_DEPENDS=		::devel/pkgconfig
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-docs"
 PKG_ARCH=	*

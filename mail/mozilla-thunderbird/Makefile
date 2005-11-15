@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2005/11/14 12:51:57 wilfried Exp $
+# $OpenBSD: Makefile,v 1.30 2005/11/15 09:21:51 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -6,7 +6,7 @@ COMMENT=	"redesign of the integrated Mozilla App-Suite mail component"
 
 VER=		1.0.7
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}p0
+PKGNAME=	mozilla-thunderbird-${VER}p1
 SO_VERSION=	4.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -35,10 +35,10 @@ DISTFILES=	thunderbird-${VER}-source.tar.bz2
 MODULES=	gcc3 devel/gettext
 MODGCC3_ARCHES=	alpha
 MODGCC3_LANGS=	C++
-RUN_DEPENDS=	::audio/esound
-BUILD_DEPENDS=	::devel/libIDL \
+RUN_DEPENDS=	:esound-*:audio/esound
+BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip \
-		::devel/pkgconfig
+		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 
 VMEM_WARNING=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2005/11/14 12:31:20 wilfried Exp $
+# $OpenBSD: Makefile,v 1.30 2005/11/15 09:21:52 wilfried Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -6,7 +6,7 @@ COMMENT=	"multi-purpose sniffer/interceptor/logger"
 
 VER=		0.6.b
 DISTNAME=	ettercap-${VER}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 
 HOMEPAGE=	http://ettercap.sourceforge.net/
@@ -27,7 +27,7 @@ FLAVOR?=
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-https
 
-BUILD_DEPENDS=		::devel/pkgconfig
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--enable-gtk=no

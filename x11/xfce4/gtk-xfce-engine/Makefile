@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2005/11/14 16:11:46 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2005/11/15 09:21:52 wilfried Exp $
 
 COMMENT=	"theme engine for GTK2"
 V=		4.2.3.1
 DISTNAME=	gtk-xfce-engine-2.2.8
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 
 HOMEPAGE=	http://www.xfce.org/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	::devel/pkgconfig
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0.600.0,gdk_pixbuf-2.0.600.0,gtk-x11-2.0.600.0::x11/gtk+2
 RUN_DEPENDS=	::x11/xfce4/xfwm4
 WANTLIB=	X11 Xext Xrender atk-1.0.0.0 cairo fontconfig freetype \

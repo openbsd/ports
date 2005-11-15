@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.22 2005/11/14 13:18:45 wilfried Exp $
+# $OpenBSD: Makefile,v 1.23 2005/11/15 09:21:52 wilfried Exp $
 
 COMMENT=	"parallelized login hacker"
 COMMENT-gui=	"GTK frontend for hydra"
 
 VERSION=	4.6
 DISTNAME=	hydra-4.6-src
-PKGNAME=	hydra-${VERSION}p0
-PKGNAME-gui=	hydra-gui-${VERSION}p0
+PKGNAME=	hydra-${VERSION}p1
+PKGNAME-gui=	hydra-gui-${VERSION}p1
 CATEGORIES=    	security
 
 HOMEPAGE=	http://thc.org/thc-hydra/
@@ -36,7 +36,7 @@ NO_REGRESS=	Yes
 ALL_TARGET=	hydra pw-inspector
 INSTALL_TARGET=	install
 .else
-BUILD_DEPENDS=	::devel/pkgconfig
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 
 MULTI_PACKAGES+=-gui
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2005/11/14 18:30:02 wilfried Exp $
+# $OpenBSD: Makefile,v 1.12 2005/11/15 09:21:51 wilfried Exp $
 
 COMMENT=		"window navigator construction kit"
 
 DISTNAME=		libwnck-2.10.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org
@@ -23,7 +23,7 @@ WANTLIB=		ICE SM X11 XRes Xext \
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS= 		::devel/pkgconfig
+BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gdk-x11-2.0.0.10,gdk_pixbuf-2.0.0.10,gtk-x11-2.0.0.10::x11/gtk+2 \
 			startup-notification-1::devel/startup-notification
 
