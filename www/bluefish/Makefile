@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2005/09/10 10:03:37 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2005/11/15 20:22:36 wilfried Exp $
 
 COMMENT=	"HTML editor for experienced web designers"
 
 VERSION=	1.0
 DISTNAME=	bluefish-${VERSION}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	www 
 HOMEPAGE=	http://bluefish.openoffice.nl/
 
@@ -21,10 +21,10 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 Xext Xft Xinerama Xrender atk-1.0.0.0 c \
+WANTLIB=		X11 atk-1.0.0.0 c \
 			fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
-			gobject-2.0.0.0 m pango-1.0.0.0 pangox-1.0.0.0 \
-			pangoxft-1.0.0.0 \
+			gobject-2.0.0.0 m pango-1.0.0.0 \
+			cairo pangocairo-1.0.0.0 \
 			gthread-2.0.0.0 SM ICE gnomevfs-2 \
 			bonobo-activation art_lgpl_2 bonobo-2 bonoboui-2 \
 			gconf-2 popt  pangoft2-1.0.0.0 gnome-2 \
@@ -36,7 +36,6 @@ BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
 		::misc/shared-mime-info
 LIB_DEPENDS=	gtk-x11-2.0.0.14,gdk-x11-2.0.0.14,gdk_pixbuf-2.0.0.14::x11/gtk+2 \
 		pcre::devel/pcre \
-		aspell::textproc/aspell/core \
 		gnomeui-2::x11/gnome/libgnomeui
 
 CONFIGURE_STYLE=gnu
