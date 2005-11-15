@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.82 2005/08/17 16:22:34 robert Exp $
+# $OpenBSD: Makefile,v 1.83 2005/11/15 16:13:59 wilfried Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"Gtk AIM, ICQ, IRC, Jabber, MSN, Yahoo, SILC and Zephyr client"
 
 DISTNAME=	gaim-1.5.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://gaim.sourceforge.net/
@@ -16,11 +17,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		glib-2.0.0.0 ICE SM X11 Xext Xft Xinerama Xrender \
+WANTLIB=		glib-2.0.0.0 ICE SM X11 Xext Xrender Xss \
 			atk-1.0.0.0 c crypto fontconfig freetype \
 			gmodule-2.0.0.0 gobject-2.0.0.0 m pango-1.0.0.0 \
-			pangox-1.0.0.0 pangoxft-1.0.0.0 ssl stdc++ Xss \
-			pangoft2-1.0.0.0 Xcursor
+			ssl stdc++ z cairo glitz png pangocairo-1.0.0.0 \
+			pangoft2-1.0.0.0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gaim/}
 
