@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2005/11/12 10:39:07 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2005/11/15 13:23:15 wilfried Exp $
 
 COMMENT=	"GTK-based LDAP client"
 
 DISTNAME=	gq-1.0beta1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	databases
 
 HOMEPAGE=	http://biot.com/gq/
@@ -18,10 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gqclient/}
 
-WANTLIB=	X11 Xft Xrender atk-1.0.0.0 \
-		c crypto fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
-		gobject-2.0.0.0 m pango-1.0.0.0 pangox-1.0.0.0 \
-		pangoxft-1.0.0.0 ssl z krb5 sasl2
+WANTLIB=	X11 atk-1.0.0.0 c cairo crypto fontconfig freetype glib-2.0.0.0 \
+		gmodule-2.0.0.0 gobject-2.0.0.0 krb5 m pango-1.0.0.0 \
+		pangocairo-1.0.0.0 pangoft2-1.0.0.0 sasl2 ssl z
 
 MODULES=	devel/gettext
 
