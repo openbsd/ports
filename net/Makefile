@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.392 2005/11/09 09:24:25 wilfried Exp $
+# $OpenBSD: Makefile,v 1.393 2005/11/15 16:45:12 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -304,6 +304,7 @@
      SUBDIR += tinyfugue
      SUBDIR += tircproxy
      SUBDIR += tkirc
+     SUBDIR += tn5250
      SUBDIR += tor
      SUBDIR += totd
      SUBDIR += trafd
