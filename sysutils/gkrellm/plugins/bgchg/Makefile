@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2005/10/05 20:30:52 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2005/11/15 19:25:55 wilfried Exp $
 
 COMMENT=	"Change Background Image with GkrellM2"
 
 DISTNAME=	gkrellmbgchg2-0.1.3
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11 sysutils/gkrellm
 
 HOMEPAGE=	http://www.bender-suhl.de/stefan/english/comp/gkrellmbgchg.html
