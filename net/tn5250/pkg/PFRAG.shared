@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/11/15 16:44:03 naddy Exp $
+@lib lib/lib5250.so.0.0
