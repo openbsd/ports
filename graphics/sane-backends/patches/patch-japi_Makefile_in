@@ -1,0 +1,11 @@
+$OpenBSD: patch-japi_Makefile_in,v 1.1 2005/11/15 21:04:58 wilfried Exp $
+--- japi/Makefile.in.orig	Sat Apr 24 17:42:19 2004
++++ japi/Makefile.in	Tue Nov 15 21:52:51 2005
+@@ -112,7 +112,6 @@ install:
+ 	$(MKDIR) $(libdir) $(configdir)
+ 	$(LIBTOOL) $(MINST) $(INSTALL_PROGRAM) libsanej.la \
+ 		$(libdir)/libsanej.la || exit 1;
+-	@$(LIBTOOL) $(MINST) --finish $(libdir)
+ 
+ 
+ # fixme

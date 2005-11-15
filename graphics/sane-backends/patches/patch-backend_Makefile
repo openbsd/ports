@@ -1,5 +1,5 @@
 --- backend/Makefile.in.orig	Sat Jul 30 14:28:10 2005
-+++ backend/Makefile.in	Tue Oct  4 14:09:44 2005
++++ backend/Makefile.in	Tue Nov 15 21:52:39 2005
 @@ -25,7 +25,7 @@ infodir = @infodir@
  mandir = @mandir@
  includedir = @includedir@
@@ -19,3 +19,11 @@
  
  %-s.lo:	%-s.c
  	@$(LIBTOOL) $(MCOMP) $(COMPILE) -DSTUBS -DBACKEND_NAME=$* $<
+@@ -195,7 +196,6 @@ install-be:
+ 	  $(LIBTOOL) $(MINST) $(INSTALL_PROGRAM) $${be} \
+               $(DESTDIR)$(libsanedir)/$${be} || exit 1; \
+ 	done
+-	@$(LIBTOOL) $(MINST) --finish $(DESTDIR)$(libsanedir)
+ #	@# Assume the dll name without any versions is last
+ #	@dllend=`../tools/libtool-get-dll-ext libsane-dll.la`; \
+ #	list="$(ALL_BACKENDS)"; cd $(DESTDIR)$(libsanedir) && for be in $$list; do \
