@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2005/11/10 12:14:05 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2005/11/15 23:05:30 wilfried Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"videolan client; multimedia player"
 V=		0.8.2
 DISTNAME=	vlc-${V}
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -38,12 +38,12 @@ LIB_DEPENDS=	SDL.3.0::devel/sdl \
 		theora.1::multimedia/libtheora \
 		xml2.9::textproc/libxml
 
-WANTLIB=	X11 Xext Xft Xinerama Xrender Xv c fontconfig freetype m \
+WANTLIB=	X11 Xext Xinerama Xv c fontconfig freetype m \
 		ncurses ossaudio pthread usbhid z \
 		atk-1.0.0.0 gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 glib-2.0.0.0 \
 		gmodule-2.0.0.0 gobject-2.0.0.0 gthread-2.0.0.0 \
-		gtk-x11-2.0.0.0 mp3lame pango-1.0.0.0 pangox-1.0.0.0 \
-		pangoxft-1.0.0.0
+		gtk-x11-2.0.0.0 mp3lame pango-1.0.0.0 cairo pangoft2-1.0.0.0 \
+		pangocairo-1.0.0.0
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.59

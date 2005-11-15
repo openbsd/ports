@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2005/10/07 20:52:09 alek Exp $
+# $OpenBSD: Makefile,v 1.52 2005/11/15 23:04:18 wilfried Exp $
 
 COMMENT=	"Civilization clone for X11; multiplayer; game server"
 COMMENT-client=	"Freeciv client"
@@ -7,7 +7,7 @@ COMMENT-share=	"shared data files for Freeciv"
 VERSION=	2.0.6
 DISTNAME=	freeciv-${VERSION}
 PKGNAME=	freeciv-server-${VERSION}
-PKGNAME-client=	freeciv-client-${VERSION}
+PKGNAME-client=	freeciv-client-${VERSION}p0
 PKGNAME-share=	freeciv-share-${VERSION}
 CATEGORIES=	games
 HOMEPAGE=	http://www.freeciv.org/
@@ -44,9 +44,9 @@ LIB_DEPENDS=	gtk-x11-2.0.0.5,gdk-x11-2.0.0.5,gdk_pixbuf-2.0.0.5::x11/gtk+2 \
 CONFIGURE_ARGS=	--enable-client=gtk2 \
 		--disable-sdl-mixer \
 		--with-esd-prefix=${LOCALBASE}
-WANTLIB-client=	X11  Xft Xrender atk-1.0.0.0 fontconfig freetype audiofile \
+WANTLIB-client=	X11 atk-1.0.0.0 cairo fontconfig freetype audiofile \
 		glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 pango-1.0.0.0 \
-		pangox-1.0.0.0 pangoxft-1.0.0.0 audiofile
+		pangocairo-1.0.0.0 pangoft2-1.0.0.0 audiofile
 .else
 CONFIGURE_ARGS=	--enable-client=no
 .endif
