@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2005/05/27 07:08:42 marcm Exp $
+# $OpenBSD: Makefile,v 1.16 2005/11/15 20:12:30 wilfried Exp $
 
 COMMENT=		"GNOME shell and file manager"
 
 VERSION=		2.10.1
 DISTNAME=		nautilus-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/projects/nautilus/
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xext Xft \
+WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xext \
 		Xrender art_lgpl_2 atk-1.0.0.0 audiofile bonobo-2 \
 		bonobo-activation bonoboui-2 bz2 c \
 		crypto esd fontconfig freetype gailutil gconf-2 \
@@ -24,7 +25,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xext Xft \
 		gmodule-2.0.0.0 gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2 \
 		gnomevfs-2 gobject-2.0.0.0 gsf-1 gthread-2.0.0.0 \
 		gtk-x11-2.0.0.0 jpeg m pango-1.0.0.0 pangoft2-1.0.0.0 \
-		pangox-1.0.0.0 pangoxft-1.0.0.0 popt pthread ssl \
+		popt pthread ssl cairo glitz pangocairo-1.0.0.0 png \
 		startup-notification-1 gnome-menu xml2 z
 
 MODULES=		devel/gettext
