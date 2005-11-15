@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/22 06:17:28 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/11/15 12:50:36 wilfried Exp $
 
 COMMENT=		"Music Management Application"
 
 DISTNAME=		rhythmbox-0.8.7
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio
 
 HOMEPAGE=		http://www.rhythmbox.org
@@ -15,16 +16,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xcursor Xext Xft Xinerama Xrender \
+WANTLIB=		ICE SM X11 Xext Xrender \
 			c crypto fontconfig freetype pthread m ssl z \
 			ORBit-2 ORBitCosNaming-2 art_lgpl_2.5 atk-1.0.0.0 \
 			audiofile bonobo-2 bonobo-activation.4.0 bonoboui-2 \
 			esd.2 gconf-2 glade-2.0.0.0 jpeg popt xml2 \
 			glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 gthread-2.0.0.0 \
-			pango-1.0.0.0 pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
+			pango-1.0.0.0 pangocairo-1.0.0.0 pangoft2-1.0.0.0 \
 			gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 gtk-x11-2.0.0.0 \
 			gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 \
 			gstcontrol-0.8.5.0 gstreamer-0.8.5.0 \
+			cairo glitz png
 
 MODULES=		gettext
 
