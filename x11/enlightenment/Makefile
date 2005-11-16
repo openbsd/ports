@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2005/06/22 04:48:28 fgsch Exp $
+# $OpenBSD: Makefile,v 1.38 2005/11/16 19:22:57 sturm Exp $
 
 COMMENT=	"themed window manager"
 
@@ -56,12 +56,12 @@ post-configure:
 	done
 
 post-install:
-	@cd ${WRKDIR}/${DOCS} && ${SUDO} ${_SYSTRACE_CMD} ${SETENV} \
+	@cd ${WRKDIR}/${DOCS} && ${SUDO} ${SETENV} \
 	    ${MAKE_ENV} ${_FAKE_SETUP} ${MAKE_PROGRAM} ${FAKE_FLAGS} \
 	    -f ${MAKE_FILE} ${FAKE_TARGET}
 	@for i in ${THEMES}; do \
 		cd ${WRKDIR}/$$i && \
-		    ${SUDO} ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} \
+		    ${SUDO} ${SETENV} ${MAKE_ENV} \
 		    ${_FAKE_SETUP} ${MAKE_PROGRAM} ${FAKE_FLAGS} \
 		    -f ${MAKE_FILE} ${FAKE_TARGET}; \
 	done
