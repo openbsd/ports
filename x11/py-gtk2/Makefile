@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/06/16 21:53:38 mjc Exp $
+# $OpenBSD: Makefile,v 1.9 2005/11/16 08:48:59 wilfried Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -6,7 +6,7 @@ COMMENT=	"gtk+2 Python bindings"
 
 V=		2.4.1
 DISTNAME=	pygtk-${V}
-PKGNAME=	py-gtk2-${V}
+PKGNAME=	py-gtk2-${V}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.pygtk.org/
@@ -18,10 +18,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xcursor Xext Xft Xinerama Xrender atk-1.0.0.0 \
-			fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
-			gobject-2.0.0.0 intl m pango-1.0.0.0 pangoft2-1.0.0.0 \
-			pangox-1.0.0.0 pangoxft-1.0.0.0 xml2 z
+WANTLIB=		X11 Xext Xrender atk-1.0.0.0 cairo fontconfig freetype \
+			glitz intl m pango-1.0.0.0 pangocairo-1.0.0.0 \
+			pangoft2-1.0.0.0 png xml2 z
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/pygtk/2.4/}
 EXTRACT_SUFX=	.tar.bz2
@@ -30,7 +29,7 @@ MODULES=	converters/libiconv lang/python
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
 		:py-Numeric-*:math/py-Numeric
-LIB_DEPENDS=	gthread-2.0.0.0::devel/glib2 \
+LIB_DEPENDS=	glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0,gthread-2.0.0.0::devel/glib2 \
 		glade-2.0.0.0::devel/libglade2 \
 		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 
