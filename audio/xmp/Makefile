@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2005/10/04 20:16:04 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2005/11/16 19:50:53 naddy Exp $
 
 COMMENT=	"extended module player"
 COMMENT-xmms=	"extended module player plugin for XMMS"
 DISTNAME=	xmp-2.0.4
 PKGNAME=	${DISTNAME}p2
-PKGNAME-xmms=	xmms-${DISTNAME}p0
+PKGNAME-xmms=	xmms-${DISTNAME}p1
 CATEGORIES=	audio
 
 HOMEPAGE=	http://xmp.sourceforge.net/
@@ -55,6 +55,7 @@ pre-install:
 
 .if defined(PACKAGING)
 .  if ${SUBPACKAGE} == "-xmms"
+WANTLIB=
 LIB_DEPENDS=
 RUN_DEPENDS=	::audio/xmms
 .  else
