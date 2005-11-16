@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2005/11/08 07:19:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.12 2005/11/16 11:45:33 wilfried Exp $
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc64
 SHARED_ONLY=	Yes
 
 COMMENT=	"mini mozilla"
 DISTNAME=	minimo-20050802
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/
 
@@ -32,9 +32,9 @@ LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		png.3::graphics/png \
 		gdk-x11-2.0.600.0,gdk_pixbuf-2.0.600.0,gtk-x11-2.0.600.0::x11/gtk+2
 WANTLIB=	ICE SM X11 Xft Xrender Xt c fontconfig freetype m pthread z \
-		atk-1.0.1011.0 glib-2.0.600.0 gmodule-2.0.600.0 \
-		gobject-2.0.600.0 pango-1.0.800.0 pangox-1.0.800.0 \
-		pangoxft-1.0.800.0
+		atk-1.0.1011.0 cairo glib-2.0.600.0 gmodule-2.0.600.0 \
+		gobject-2.0.600.0 pango-1.0.800.0 pangocairo-1.0.0.0 \
+		pangoft2-1.0.0.0
 .if empty(MACHINE_ARCH:Malpha)
 WANTLIB+=	stdc++
 .endif
