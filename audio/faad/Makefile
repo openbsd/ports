@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2005/09/16 09:51:26 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2005/11/16 07:57:31 jakemsr Exp $
 
 COMMENT=	"MPEG2 and MPEG-4 AAC decoder"
 COMMENT-xmms=	"XMMS input plugin for AAC files"
@@ -51,7 +51,7 @@ WANTLIB+=	c
 .else
 . if ${MULTI_PACKAGES:M-xmms}
 LIB_DEPENDS=	xmms.3::audio/xmms
-BUILD_DEPENDS=	xmms-config::audio/xmms \
+BUILD_DEPENDS+=	::audio/xmms \
 		::audio/id3lib
 CONFIGURE_ARGS+= --with-xmms
 . endif
