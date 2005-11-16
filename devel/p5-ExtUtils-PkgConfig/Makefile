@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/10/06 18:15:02 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2005/11/16 12:50:36 msf Exp $
 
 COMMENT=	"simplistic perl interface to pkg-config"
 
 DISTNAME=	ExtUtils-PkgConfig-1.07
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel perl5
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
@@ -15,6 +15,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=ExtUtils/}
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	::devel/pkgconfig
 
 CONFIGURE_STYLE= perl
 
