@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/11/10 22:57:38 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/16 09:52:34 wilfried Exp $
 
 COMMENT=	"settings management library used by most xfce4 modules"
 DISTNAME=	libxfce4mcs-${V}
+PKGNAME=	${DISTNAME}p0
 V=		4.2.3
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 
@@ -15,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	glib-2.0.400.8::devel/glib2 \
+LIB_DEPENDS=	glib-2.0.0.0,gobject-2.0.0.0::devel/glib2 \
 		xfce4util.1.6::devel/libxfce4util
 WANTLIB=	ICE SM X11
 
