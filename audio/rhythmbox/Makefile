@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/11/15 12:50:36 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2005/11/16 06:39:22 marcm Exp $
 
 COMMENT=		"Music Management Application"
 
-DISTNAME=		rhythmbox-0.8.7
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		rhythmbox-0.8.8
 CATEGORIES=		audio
 
 HOMEPAGE=		http://www.rhythmbox.org
@@ -32,10 +31,12 @@ MODULES=		gettext
 
 BUILD_DEPENDS=  	:pkgconfig-*:devel/pkgconfig \
 			:scrollkeeper-*:textproc/scrollkeeper \
-			:p5-XML-Parser-*:textproc/p5-XML-Parser
+			:p5-XML-Parser-*:textproc/p5-XML-Parser \
+			:gstreamer-gnome-*:devel/gstreamer-plugins,-gnome
 LIB_DEPENDS= 		gstgconf-0.8.0.0::devel/gstreamer-plugins \
 			gnomeui-2::x11/gnome/libgnomeui
-RUN_DEPENDS=		:gstreamer-flac-*:devel/gstreamer-plugins,-flac \
+RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
+			:gstreamer-flac-*:devel/gstreamer-plugins,-flac \
 			:gstreamer-gnome-*:devel/gstreamer-plugins,-gnome \
 			:gstreamer-mad-*:devel/gstreamer-plugins,-mad \
 			:gstreamer-ogg-*:devel/gstreamer-plugins,-ogg \
@@ -43,9 +44,11 @@ RUN_DEPENDS=		:gstreamer-flac-*:devel/gstreamer-plugins,-flac \
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/rhythmbox/
 CONFIGURE_ARGS+=	--disable-schemas-install
+CONFIGURE_ARGS+=	--enable-nautilus-menu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

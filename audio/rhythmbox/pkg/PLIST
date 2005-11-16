@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/22 06:17:28 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/11/16 06:39:23 marcm Exp $
 bin/rhythmbox
 lib/bonobo/
 lib/bonobo/librb-nautilus-context-menu.a
@@ -92,19 +92,13 @@ share/gnome/help/rhythmbox/ja/rhythmbox.xml
 share/gnome/help/rhythmbox/ja/user-guide.xml
 share/idl/
 share/idl/Rhythmbox.idl
-share/locale/am/
-share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/rhythmbox.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/rhythmbox.mo
 share/locale/az/LC_MESSAGES/rhythmbox.mo
-share/locale/be/
-share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/rhythmbox.mo
 share/locale/bg/LC_MESSAGES/rhythmbox.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/rhythmbox.mo
 share/locale/cs/LC_MESSAGES/rhythmbox.mo
 share/locale/cy/
@@ -116,6 +110,8 @@ share/locale/el/LC_MESSAGES/rhythmbox.mo
 share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/rhythmbox.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/rhythmbox.mo
 share/locale/es/LC_MESSAGES/rhythmbox.mo
 share/locale/et/LC_MESSAGES/rhythmbox.mo
@@ -124,8 +120,6 @@ share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/rhythmbox.mo
 share/locale/fi/LC_MESSAGES/rhythmbox.mo
 share/locale/fr/LC_MESSAGES/rhythmbox.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/rhythmbox.mo
 share/locale/he/LC_MESSAGES/rhythmbox.mo
 share/locale/hr/LC_MESSAGES/rhythmbox.mo
@@ -160,20 +154,15 @@ share/locale/ro/LC_MESSAGES/rhythmbox.mo
 share/locale/ru/LC_MESSAGES/rhythmbox.mo
 share/locale/sk/LC_MESSAGES/rhythmbox.mo
 share/locale/sr/LC_MESSAGES/rhythmbox.mo
-share/locale/sr@Latn/
-share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/rhythmbox.mo
 share/locale/sv/LC_MESSAGES/rhythmbox.mo
 share/locale/tr/LC_MESSAGES/rhythmbox.mo
 share/locale/uk/LC_MESSAGES/rhythmbox.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/rhythmbox.mo
 share/locale/zh_CN/LC_MESSAGES/rhythmbox.mo
 share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
 share/mime-info/
 share/mime-info/rhythmbox.keys
-share/omf/
 share/omf/rhythmbox/
 share/omf/rhythmbox/rhythmbox-C.omf
 share/omf/rhythmbox/rhythmbox-ja.omf
@@ -223,6 +212,7 @@ share/rhythmbox/glade/station-new.glade
 share/rhythmbox/glade/station-properties.glade
 share/rhythmbox/glade/uri.glade
 share/rhythmbox/iradio-initial.pls
+share/schemas/
 share/schemas/rhythmbox/
 share/schemas/rhythmbox/rhythmbox.schemas
 @exec %D/bin/scrollkeeper-update -q
