@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2005/09/22 17:04:43 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2005/11/16 09:37:00 wilfried Exp $
 
 COMMENT=	"extremely lightweight and simple web browser for gnome"
 
 M=		1.4
 V=		1.4.8
 DISTNAME=	epiphany-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.gnome.org/projects/epiphany/
@@ -39,8 +39,8 @@ WANTLIB=	ORBit-2 ORBitCosNaming-2 art_lgpl_2 atk-1.0.0.0 \
 		glib-2.0.0.0 gmodule-2.0.0.0 gtk-x11-2.0.0.0 iconv \
 		intl jpeg gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomevfs-2 gobject-2.0.0.0 gthread-2.0.0.0 pango-1.0.0.0 \
-		pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
-		popt xml2 ICE SM X11 Xft Xrender c crypto fontconfig \
+		pangoft2-1.0.0.0 pangocairo-1.0.0.0 cairo glitz png \
+		popt xml2 ICE SM X11 Xext Xrender c crypto fontconfig \
 		freetype m pthread ssl stdc++ z
 
 USE_GMAKE=	Yes
