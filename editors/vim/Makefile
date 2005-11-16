@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2005/07/27 18:37:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.57 2005/11/16 12:18:15 wilfried Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -6,7 +6,7 @@ COMMENT-lang=	"vi clone, NLS subpackage"
 DISTNAME=	vim-6.3
 REVISION=	85
 VERSION=	6.3.${REVISION}
-PKGNAME=	vim-${VERSION}p0
+PKGNAME=	vim-${VERSION}p1
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
 MASTER_SITES=   ftp://ftp.vim.org/pub/vim/unix/ \
@@ -42,8 +42,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c curses
 
-MODULES=	devel/gettext converters/libiconv
-
 MULTI_PACKAGES= -lang
 SUBPACKAGE?=
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-lang"
@@ -52,10 +50,12 @@ _flavor:=${_flavor},$i
 .  endfor
 RUN_DEPENDS=::editors/vim${_flavor}
 PKG_ARCH=*
+.else
+MODULES=	devel/gettext converters/libiconv
 .endif
 
 .for i in ${MULTI_PACKAGES}
-PKGNAME$i=      vim$i-${VERSION}
+PKGNAME$i=      vim$i-${VERSION}p0
 .endfor
 
 FLAVORS=	huge gtk gtk2 athena motif no_x11 perl python ruby
@@ -114,12 +114,16 @@ WANTLIB+=	ICE SM X11 Xext Xi Xt glib gmodule m
 LIB_DEPENDS+=   gdk-x11-2.0.0.11,gdk_pixbuf-2.0.0.11,gtk-x11-2.0.0.11::x11/gtk+2
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 CONFIGURE_ARGS+=--enable-gui="gtk2" --with-x --enable-fontset --enable-xim --disable-gtk-check --enable-gtk2-check
-WANTLIB+=	ICE SM X11 Xext Xft Xinerama Xrender Xt atk-1.0.0.0 \
-		fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
-		gobject-2.0.0.0 m pango-1.0.0.0 pangox-1.0.0.0 \
-		pangoxft-1.0.0.0
+WANTLIB+=	ICE SM X11 Xt atk-1.0.0.0 \
+		cairo fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
+		gobject-2.0.0.0 m pango-1.0.0.0 pangocairo-1.0.0.0 \
+		pangoft2-1.0.0.0
 .else
 ERRORS+="Fatal: You must select one GUI interface: no_x11, gtk, athena or motif"
+.endif
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-lang"
+LIB_DEPENDS=
+WANTLIB=
 .endif
 
 WRKDIST=		${WRKDIR}/${P}
