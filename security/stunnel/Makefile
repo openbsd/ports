@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2005/11/07 07:26:06 jakob Exp $
+# $OpenBSD: Makefile,v 1.40 2005/11/17 02:50:55 naddy Exp $
 
 COMMENT=	"SSL encryption wrapper for standard network daemons"
 
 VERSION=	4.14
 DISTNAME=	stunnel-${VERSION}
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto pthread ssl util wrap
+WANTLIB=		c crypto pthread ssl util wrap z
 
 HOMEPAGE=	http://www.stunnel.org/
 
@@ -38,6 +38,7 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers \
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/auto
 NO_REGRESS=		Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/stunnel ${PREFIX}/sbin
