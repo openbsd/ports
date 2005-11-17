@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2005/11/03 18:28:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2005/11/17 00:54:32 naddy Exp $
 
 COMMENT=	"heavily customizable and extensible editor"
 
 VERSION=	21.4.17
 DISTNAME=	xemacs-${VERSION}
+#PKGNAME=	# also see below
 CATEGORIES=	editors
 
 HOMEPAGE=	http://www.xemacs.org/
@@ -83,17 +84,22 @@ CONFIGURE_ARGS+=--with-xim=xlib
 .endif
 
 .if ${FLAVOR:L:Mmule}
-MODULES=		devel/gettext
+PKGNAME=	${DISTNAME}p0
+MODULES=	devel/gettext
 CONFIGURE_ARGS+=--with-mule
 
 . if ${FLAVOR:L:Mcanna}
-LIB_DEPENDS+=	canna16::japanese/canna
+LIB_DEPENDS+=	canna.1,RKC.1::japanese/canna
 CONFIGURE_ARGS+=--with-canna
+. else
+CONFIGURE_ARGS+=--with-canna=no
 . endif
 
 . if ${FLAVOR:L:Mwnn}
 BUILD_DEPENDS+= ::japanese/Wnn
 CONFIGURE_ARGS+=--with-wnn
+. else
+CONFIGURE_ARGS+=--with-wnn=no
 . endif
 
 .else
