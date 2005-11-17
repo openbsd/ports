@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2005/06/15 06:13:53 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/17 02:49:54 naddy Exp $
 # $FreeBSD: Makefile,v 1.2 2005/04/21 14:22:54 pav Exp $
 
 COMMENT=	"The portable OTR Messaging Library and toolkit"
 
 DISTNAME=	libotr-2.0.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.cypherpunks.ca/otr/
@@ -17,8 +18,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	gpg-error::security/libgpg-error \
 		gcrypt::security/libgcrypt
+WANTLIB=	c iconv intl
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 USE_LIBTOOL=		Yes
 
 MAN1=		otr_toolkit.1
