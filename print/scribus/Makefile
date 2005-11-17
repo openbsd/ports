@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2005/11/04 14:18:43 kurt Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/17 21:06:27 naddy Exp $
 
 COMMENT=		"DTP program"
 CATEGORIES=		print
 DISTNAME=		scribus-1.2.2.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://www.scribus.org.uk/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=scribus/}
@@ -40,10 +40,9 @@ LIB_DEPENDS=		lcms::graphics/lcms \
 			cups::print/cups \
 			art_lgpl_2.0.0::graphics/libart
 
-WANTLIB=	ICE SM freetype Xext pthread stdc++ crypto c X11 util m z ssl
+WANTLIB=	ICE SM X11 Xext c freetype gcrypt gnutls gpg-error \
+		iconv intl m pthread stdc++ util z
 USE_GMAKE=	Yes
-
-WANTLIB+=	iconv
 
 
 
