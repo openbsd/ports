@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/16 00:31:23 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2005/11/17 02:28:39 naddy Exp $
 
 COMMENT=	"AFP file and print services for AppleTalk/IP networks"
 
 DISTNAME=	netatalk-1.6.3
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net
 HOMEPAGE=	http://netatalk.sourceforge.net/
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=		Yes
 PERMIT_PACKAGE_FTP=		Yes
 PERMIT_DISTFILES_CDROM=		Yes
 PERMIT_DISTFILES_FTP=		Yes
-WANTLIB=			c crypto des
+WANTLIB=			c crypto des rpcsvc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netatalk/}
 

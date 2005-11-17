@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2005/01/27 00:38:37 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2005/11/17 02:28:40 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"quota manipulation module"
 
 DISTNAME=	Quota-1.5.0
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	sysutils perl5
 
 MAINTAINER=	Joshua Stein <jcs@openbsd.org>
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Quota/}
+
+WANTLIB=	rpcsvc
 
 CONFIGURE_STYLE= perl
 
