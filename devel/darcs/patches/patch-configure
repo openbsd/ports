@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.5 2005/05/16 03:17:28 dons Exp $
+$OpenBSD: patch-configure,v 1.6 2005/11/17 09:31:16 dons Exp $
 
 Don't build the postscript manual
 
---- configure.orig	Mon May 16 10:27:57 2005
-+++ configure	Mon May 16 10:29:05 2005
-@@ -3798,7 +3798,7 @@ if test "$enable_mmap" = "no"; then
+--- configure.orig	Thu Sep  1 21:33:16 2005
++++ configure	Mon Sep 12 12:02:06 2005
+@@ -3980,7 +3980,7 @@ if test "$enable_mmap" = "no"; then
  fi
  
  
@@ -13,7 +13,7 @@ Don't build the postscript manual
  INSTALLWHAT="installbin"
  BUILDDOC="no"
  
-@@ -4005,7 +4005,7 @@ if test -z "$DVIPS"; then
+@@ -4170,7 +4170,7 @@ if test -z "$DVIPS"; then
  echo "$as_me: WARNING: Cannot find dvips in your path!" >&2;}
  fi
  if test ! '(' '(' -z "$LATEX" ')' -o '(' -z "$DVIPS" ')' ')'; then
@@ -22,7 +22,7 @@ Don't build the postscript manual
     INSTALLWHAT="$INSTALLWHAT installdocs"
     BUILDDOC="yes"
  fi
-@@ -4126,15 +4126,15 @@ fi
+@@ -4291,15 +4291,15 @@ fi
  echo "$as_me: WARNING: Cannot find hevea in your path either!" >&2;}
            MAKEMANUAL="touch manual/index.html; echo Cannot make manual!"
          else

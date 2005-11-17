@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2005/05/26 01:45:38 dons Exp $
+# $OpenBSD: Makefile,v 1.14 2005/11/17 09:31:16 dons Exp $
 
 COMMENT=	"advanced revision control system written in Haskell"
 
-V=		1.0.3
+V=		1.0.4
 DISTNAME=	darcs-${V}
 CATEGORIES=	devel
 HOMEPAGE=	http://www.darcs.net/
@@ -13,8 +13,11 @@ MODULES=	lang/ghc
 LIB_DEPENDS=	curl.2::net/curl
 
 CONFIGURE_STYLE=simple
-CONFIGURE_ARGS=	--prefix=${PREFIX} --datadir=${PREFIX}/share \
-                --libexecdir=${PREFIX}/libexec/darcs --sysconfdir=${PREFIX}/share/darcs
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+                --datadir=${PREFIX}/share \
+                --libexecdir=${PREFIX}/libexec/darcs \
+                --sysconfdir=${PREFIX}/share/darcs \
+                --disable-mmap
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" CFLAGS=""
 
