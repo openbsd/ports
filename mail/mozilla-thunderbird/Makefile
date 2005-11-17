@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2005/11/15 09:21:51 wilfried Exp $
+# $OpenBSD: Makefile,v 1.31 2005/11/17 15:53:51 naddy Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -6,7 +6,7 @@ COMMENT=	"redesign of the integrated Mozilla App-Suite mail component"
 
 VER=		1.0.7
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}p1
+PKGNAME=	mozilla-thunderbird-${VER}p2
 SO_VERSION=	4.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xft Xp Xrender Xt c cairo fontconfig freetype \
 			m pthread z atk-1.0.0.0 glib-2.0.0.0 \
 			gmodule-2.0.0.0 gobject-2.0.0.0 jpeg pango-1.0.0.0 \
-			pangoft2-1.0.0.0 pangocairo-1.0.0.0
+			pangoft2-1.0.0.0 pangocairo-1.0.0.0 png
 .if empty(MACHINE_ARCH:Malpha)
 WANTLIB+=		stdc++
 .endif
