@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/16 10:06:45 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2005/11/18 16:15:15 jolan Exp $
 
 COMMENT=	"xfce4 window manager"
-V=		4.2.3.1
+V=		4.2.3.2
 DISTNAME=	xfwm4-${V}
-PKGNAME=	${DISTNAME}p0
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 
 HOMEPAGE=	http://www.xfce.org/
