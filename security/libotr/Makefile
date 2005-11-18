@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/17 02:49:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2005/11/18 04:10:35 marcm Exp $
 # $FreeBSD: Makefile,v 1.2 2005/04/21 14:22:54 pav Exp $
 
 COMMENT=	"The portable OTR Messaging Library and toolkit"
 
-DISTNAME=	libotr-2.0.2
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	libotr-3.0.0
+#PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.cypherpunks.ca/otr/
