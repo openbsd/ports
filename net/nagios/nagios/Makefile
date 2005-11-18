@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/10/24 05:11:59 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2005/11/18 16:45:55 sturm Exp $
 
 COMMENT=	"host and service monitor"
 COMMENT-web=	"cgis and webpages for nagios"
@@ -6,7 +6,7 @@ COMMENT-web=	"cgis and webpages for nagios"
 V=		2.0b4
 DISTNAME=	nagios-${V}
 PKGNAME=	${DISTNAME}p2
-PKGNAME-web=	nagios-web-${V}p0
+PKGNAME-web=	nagios-web-${V}p1
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.nagios.org/
@@ -54,7 +54,6 @@ CHROOT=
 .if defined(PACKAGING)
 WANTLIB=	c m
 .  if ${SUBPACKAGE} == "-web"
-WANTLIB+=	jpeg png z
 PREFIX=		/var/www
 # overwrite RUN_DEPENDS in order to only depend on the base package
 .    if ${FLAVOR:L:Mchroot}
