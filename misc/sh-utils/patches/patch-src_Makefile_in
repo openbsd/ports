@@ -1,6 +1,15 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2001/03/15 17:15:04 brad Exp $
---- src/Makefile.in.orig	Sat Aug 14 11:42:37 1999
-+++ src/Makefile.in	Thu Mar 15 11:24:44 2001
+$OpenBSD: patch-src_Makefile_in,v 1.3 2005/11/19 01:23:42 alek Exp $
+--- src/Makefile.in.orig	Sat Aug 14 17:42:37 1999
++++ src/Makefile.in	Sat Nov 19 01:19:38 2005
+@@ -126,7 +126,7 @@ EXTRA_DIST = ansi2knr.1 ansi2knr.c \
+ 
+ CLEANFILES = $(SCRIPTS) su
+ 
+-INCLUDES = -I.. -I$(srcdir) -I$(top_srcdir)/lib -I../intl
++INCLUDES = -I.. -I$(srcdir) -I$(top_srcdir)/lib
+ DEFS = -DLOCALEDIR=\"$(localedir)\" @DEFS@
+ LDADD = @INTLLIBS@ ../lib/libsu.a
+ 
 @@ -150,7 +150,7 @@ su_DEPENDENCIES = $(LDADD)
  
  SUFFIXES = .sh

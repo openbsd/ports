@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1 2005/11/19 01:23:42 alek Exp $
+--- lib/Makefile.in.orig	Sat Nov 19 01:40:25 2005
++++ lib/Makefile.in	Sat Nov 19 01:40:34 2005
+@@ -109,7 +109,7 @@ AUTOMAKE_OPTIONS = ../src/ansi2knr
+ 
+ noinst_LIBRARIES = libsu.a
+ 
+-INCLUDES = -I.. -I$(srcdir) -I../intl
++INCLUDES = -I.. -I$(srcdir)
+ 
+ libsu_a_SOURCES = getdate.y posixtm.c readtokens.c \
+   argmatch.c basename.c canon-host.c closeout.c full-write.c \

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2004/12/22 11:50:29 alek Exp $
+# $OpenBSD: Makefile,v 1.12 2005/11/19 01:23:42 alek Exp $
 
 COMMENT=		"GNU command line utilities"
 
 DISTNAME=		sh-utils-2.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		misc
 
 # GPL

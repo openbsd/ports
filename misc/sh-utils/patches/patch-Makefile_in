@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2005/11/19 01:23:42 alek Exp $
+--- Makefile.in.orig	Sat Nov 19 01:11:37 2005
++++ Makefile.in	Sat Nov 19 01:11:45 2005
+@@ -107,7 +107,7 @@ l = @l@
+ 
+ AUTOMAKE_OPTIONS = gnits 1.2h
+ 
+-SUBDIRS = lib intl src doc man m4 po tests
++SUBDIRS = lib src doc man m4 po tests
+ EXTRA_DIST = ChangeLog.0 Makefile.maint
+ 
+ # Remove this file here (it is created via configure), not from within intl.
