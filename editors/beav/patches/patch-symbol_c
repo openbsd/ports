@@ -1,0 +1,11 @@
+$OpenBSD: patch-symbol_c,v 1.1 2005/11/19 15:45:12 naddy Exp $
+--- symbol.c.orig	Sat Nov 19 08:39:06 2005
++++ symbol.c	Sat Nov 19 08:39:16 2005
+@@ -219,7 +219,6 @@ extern char save_region ();	/* Save regi
+ * Defined by "spawn.c".
+ */
+ extern char spawncli ();	/* Run CLI in a subjob.	 */
+-extern char clock ();		/* display time in modeline */
+ 
+ /*
+ * Defined by "window.c".
