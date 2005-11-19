@@ -1,6 +1,6 @@
-$OpenBSD: patch-logo_setup_c,v 1.1 2003/08/24 22:15:56 naddy Exp $
---- logo_setup.c.orig	1993-01-12 19:59:46.000000000 +0100
-+++ logo_setup.c	2003-08-24 23:14:57.000000000 +0200
+$OpenBSD: patch-logo_setup_c,v 1.2 2005/11/19 15:37:10 naddy Exp $
+--- logo_setup.c.orig	Tue Jan 12 11:59:46 1993
++++ logo_setup.c	Wed Nov 16 21:18:21 2005
 @@ -28,6 +28,9 @@
  # include <stdio.h>
  
@@ -31,8 +31,8 @@ $OpenBSD: patch-logo_setup_c,v 1.1 2003/08/24 22:15:56 naddy Exp $
 +static void     volume_scroll_proc();
 +static void     popup_title_dialog();
 +static void     popdown_title_dialog();
-+
  
++
  void
  logo_setup(parent_widget)
  	Widget		parent_widget;

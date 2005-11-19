@@ -1,7 +1,7 @@
-$OpenBSD: patch-top_setup_c,v 1.1 2003/08/24 22:15:56 naddy Exp $
---- top_setup.c.orig	1993-01-12 19:59:40.000000000 +0100
-+++ top_setup.c	2003-08-24 23:18:32.000000000 +0200
-@@ -26,18 +26,8 @@
+$OpenBSD: patch-top_setup_c,v 1.2 2005/11/19 15:37:10 naddy Exp $
+--- top_setup.c.orig	Tue Jan 12 11:59:40 1993
++++ top_setup.c	Wed Nov 16 21:18:21 2005
+@@ -26,19 +26,9 @@
  # include "logo.xbm"
  
  XtAppContext	appc;
@@ -17,11 +17,12 @@ $OpenBSD: patch-top_setup_c,v 1.1 2003/08/24 22:15:56 naddy Exp $
 -float		scanPauseInterval	= .062;
 -float		pausePauseInterval	= .500;
 -char		*cdInfoDir = NULL;
-+
-+AppData app_data;
  
++AppData app_data;
++
  extern char	*getenv();
  
+ static Widget	top_shell;
 @@ -55,36 +45,36 @@ static XrmOptionDescRec options[] = {
  };
  

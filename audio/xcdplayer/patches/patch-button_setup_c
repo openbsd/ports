@@ -1,6 +1,6 @@
-$OpenBSD: patch-button_setup_c,v 1.1 2003/08/24 22:15:56 naddy Exp $
---- button_setup.c.orig	1993-01-12 19:59:47.000000000 +0100
-+++ button_setup.c	2003-08-24 22:38:23.000000000 +0200
+$OpenBSD: patch-button_setup_c,v 1.2 2005/11/19 15:37:10 naddy Exp $
+--- button_setup.c.orig	Tue Jan 12 11:59:47 1993
++++ button_setup.c	Wed Nov 16 21:18:21 2005
 @@ -20,6 +20,9 @@
  # include <X11/Xaw/Toggle.h>
  
@@ -35,10 +35,11 @@ $OpenBSD: patch-button_setup_c,v 1.1 2003/08/24 22:15:56 naddy Exp $
  
  static Widget	buttons_form_widget;
  static Widget	play_button_widget;
-@@ -72,25 +92,6 @@ button_setup(parent_widget)
+@@ -71,25 +91,6 @@ button_setup(parent_widget)
+ 	Widget		parent_widget;
  {
  	Arg		args[1];
- 
+-
 -	extern void	title_dialog_setup();
 -	extern void	play_button_setup();
 -	extern void	stop_button_setup();
@@ -57,7 +58,6 @@ $OpenBSD: patch-button_setup_c,v 1.1 2003/08/24 22:15:56 naddy Exp $
 -	extern void	pgm_button_setup();
 -	extern void	buttons_reset();
 -
--
+ 
  	buttons_form_widget = XtCreateManagedWidget("buttonsForm",
  						    formWidgetClass,
- 						    parent_widget,
