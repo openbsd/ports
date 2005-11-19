@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2005/11/03 13:49:41 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2005/11/19 13:15:21 bernd Exp $
 
 COMMENT=	"internationalized string handling"
 
 DISTNAME=	libidn-0.5.20
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.gnu.org/software/libidn/

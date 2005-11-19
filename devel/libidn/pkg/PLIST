@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/11/03 13:49:41 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/11/19 13:15:21 bernd Exp $
 %%SHARED%%
 bin/idn
 include/idn-free.h
@@ -73,11 +73,7 @@ share/locale/ro/LC_MESSAGES/libidn.mo
 share/locale/rw/
 share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/libidn.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/libidn.mo
 share/locale/sv/LC_MESSAGES/libidn.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/libidn.mo
 share/locale/zh_CN/LC_MESSAGES/libidn.mo
