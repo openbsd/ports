@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2005/10/27 20:03:25 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2005/11/19 01:57:25 alek Exp $
 
 COMMENT=		"Tcl bindings for Curl"
 NOT_FOR_ARCHS= 		${NO_SHARED_ARCHS}
 
 DISTNAME=		TclCurl-0.10.5
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		net
 
 HOMEPAGE=		http://personal.iddeo.es/andresgarci/tclcurl/english/
@@ -19,7 +19,7 @@ WANTLIB=		crypto ssl z
 MASTER_SITES=		${HOMEPAGE}download/tarball/
 
 LIB_DEPENDS=    	curl.2.2::net/curl \
-			tcl84:tcl-8.4.*:lang/tcl/8.4
+			tclstub84:tcl-8.4.*:lang/tcl/8.4
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
