@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/10/03 14:23:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/19 01:52:26 alek Exp $
 
 COMMENT=		"noninteractive ftp client"
 DISTNAME=		weex-2.6.1.5
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		net	
 
 HOMEPAGE=		http://weex.sourceforge.net	
