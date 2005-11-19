@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2005/09/24 07:48:41 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2005/11/19 12:42:45 alek Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples and tutorial for qt2"
@@ -65,7 +65,7 @@ WANTLIB=	${myWANTLIB}
 .endif
 .if defined(PACKAGING)
 .  if ${SUBPACKAGE} == "-examples"
-LIB_DEPENDS+=	lib/qt2/qt.2.::x11/qt2
+LIB_DEPENDS=	lib/qt2/qt.2.::x11/qt2
 .  elif ${SUBPACKAGE} == "-html"
 PKG_ARCH=	*
 .  endif
@@ -150,7 +150,7 @@ do-install:
 	ln -s ${TRUEPREFIX}/share/doc/qt2/html ${QT_LIBDIR}/doc/html
 
 PKGNAME=		qt2-${VERSION}p0
-PKGNAME-examples=	qt2-examples-${VERSION}
+PKGNAME-examples=	qt2-examples-${VERSION}p0
 PKGNAME-html=		qt2-html-${VERSION}p0
 
 .include <bsd.port.mk>
