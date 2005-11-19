@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2005/02/07 19:01:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2005/11/19 01:20:09 alek Exp $
 
 COMMENT=		"simple tcp re-engineering tool"
 
-VERSION=		1.2.4
-DISTNAME=		tcpreen-${VERSION}
+DISTNAME=		tcpreen-1.2.4
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.simphalempin.com/dev/tcpreen/
