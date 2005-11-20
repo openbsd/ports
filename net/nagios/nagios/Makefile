@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2005/11/18 16:45:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2005/11/20 21:20:25 sturm Exp $
 
 COMMENT=	"host and service monitor"
 COMMENT-web=	"cgis and webpages for nagios"
 
-V=		2.0b4
+V=		2.0b5
 DISTNAME=	nagios-${V}
-PKGNAME=	${DISTNAME}p2
-PKGNAME-web=	nagios-web-${V}p1
+PKGNAME-web=	nagios-web-${V}
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.nagios.org/
@@ -25,6 +24,7 @@ SUBPACKAGE?=
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagios/}
 
 BUILD_DEPENDS=	:gd-*:graphics/gd
+LIB_DEPENDS=	ltdl.4::devel/libtool,-ltdl
 RUN_DEPENDS=	:nagios-plugins-*:net/nagios/plugins
 
 CONFIGURE_STYLE=gnu
@@ -58,10 +58,11 @@ PREFIX=		/var/www
 # overwrite RUN_DEPENDS in order to only depend on the base package
 .    if ${FLAVOR:L:Mchroot}
 WANTLIB=
+LIB_DEPENDS=
 RUN_DEPENDS=	nagios:nagios-${V}-chroot:net/nagios/nagios,chroot
 .    else
-MODULES+=	converters/libiconv
-LIB_DEPENDS+=	gd::graphics/gd
+WANTLIB+=	fontconfig freetype jpeg png z
+LIB_DEPENDS=	gd::graphics/gd
 RUN_DEPENDS=	nagios:nagios-${V}-!chroot:net/nagios/nagios
 .    endif
 .  else

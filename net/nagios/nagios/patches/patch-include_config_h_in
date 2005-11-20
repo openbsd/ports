@@ -1,9 +1,9 @@
-$OpenBSD: patch-include_config_h_in,v 1.1 2005/08/07 10:48:01 sturm Exp $
---- include/config.h.in.orig	Wed Aug  3 10:55:04 2005
-+++ include/config.h.in	Wed Aug  3 10:56:30 2005
-@@ -108,11 +108,6 @@
- #include <stdio.h>
- #include <stdlib.h>
+$OpenBSD: patch-include_config_h_in,v 1.2 2005/11/20 21:20:25 sturm Exp $
+--- include/config.h.in.orig	Fri Aug 12 00:15:25 2005
++++ include/config.h.in	Sat Nov 19 19:48:05 2005
+@@ -115,11 +115,6 @@
+ #endif
+ #endif
  
 -#undef HAVE_SYS_RESOURCE_H
 -#ifdef HAVE_SYS_RESOURCE_H
@@ -13,7 +13,7 @@ $OpenBSD: patch-include_config_h_in,v 1.1 2005/08/07 10:48:01 sturm Exp $
  #undef HAVE_PWD_H
  #ifdef HAVE_PWD_H
  #include <pwd.h>
-@@ -195,6 +190,11 @@
+@@ -188,6 +183,11 @@
  #undef HAVE_SYS_TIMEB_H
  #if HAVE_SYS_TIMEB_H
  #include <sys/timeb.h>

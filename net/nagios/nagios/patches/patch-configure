@@ -1,66 +1,89 @@
-$OpenBSD: patch-configure,v 1.3 2005/11/18 16:45:56 sturm Exp $
---- configure.orig	Wed Aug  3 01:58:24 2005
-+++ configure	Thu Nov 17 08:44:41 2005
-@@ -371,7 +371,7 @@ EOF
+$OpenBSD: patch-configure,v 1.4 2005/11/20 21:20:25 sturm Exp $
+--- configure.orig	Tue Nov 15 05:23:35 2005
++++ configure	Sat Nov 19 19:49:54 2005
+@@ -571,7 +571,7 @@ do
      ac_prev=sysconfdir ;;
    -sysconfdir=* | --sysconfdir=* | --sysconfdi=* | --sysconfd=* | --sysconf=* \
    | --syscon=* | --sysco=* | --sysc=* | --sys=* | --sy=*)
--    sysconfdir="$ac_optarg" ;;
-+    sysconfdir="$ac_optarg/nagios" ;;
+-    sysconfdir=$ac_optarg ;;
++    sysconfdir=$ac_optarg/nagios ;;
  
    -target | --target | --targe | --targ | --tar | --ta | --t)
-     ac_prev=target ;;
-@@ -1834,14 +1834,14 @@ if test $ac_cv_lib_cma_pthread_create = 
+     ac_prev=target_alias ;;
+@@ -4283,13 +4283,13 @@ if test $ac_cv_lib_cma_pthread_create = 
  	have_pthreads="yes"
  fi
  
--echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
--echo "configure:1839: checking for pthread_create in -lpthread" >&5
-+echo $ac_n "checking for pthread_create in -pthread""... $ac_c" 1>&6
-+echo "configure:1839: checking for pthread_create in -pthread" >&5
- ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
+-echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
 +LIBS="-pthread  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 1847 "configure"
- #include "confdefs.h"
-@@ -1869,7 +1869,7 @@ LIBS="$ac_save_LIBS"
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -4348,19 +4348,19 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
+ if test $ac_cv_lib_pthread_pthread_create = yes; then
 -  THREADLIBS="$THREADLIBS -lpthread"
 +  THREADLIBS="$THREADLIBS -pthread"
- else
-   echo "$ac_t""no" 1>&6
  fi
-@@ -2151,7 +2151,7 @@ cat >> confdefs.h <<EOF
+ 
+ if test $ac_cv_lib_pthread_pthread_create = yes; then
+ 	have_pthreads="yes"
+ else
+-		echo "$as_me:$LINENO: checking for pthread_mutex_init in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_mutex_init in -lpthread... $ECHO_C" >&6
++		echo "$as_me:$LINENO: checking for pthread_mutex_init in -pthread" >&5
++echo $ECHO_N "checking for pthread_mutex_init in -pthread... $ECHO_C" >&6
+ if test "${ac_cv_lib_pthread_pthread_mutex_init+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -4419,7 +4419,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_mutex_init" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_mutex_init" >&6
+ if test $ac_cv_lib_pthread_pthread_mutex_init = yes; then
+-  THREADLIBS="$THREADLIBS -lpthread"
++  THREADLIBS="$THREADLIBS -pthread"
+ fi
+ 
+ 	if test $ac_cv_lib_pthread_pthread_mutex_init = yes; then
+@@ -4809,7 +4809,7 @@ cat >>confdefs.h <<_ACEOF
  #define DEFAULT_NAGIOS_GROUP "$nagios_grp"
- EOF
+ _ACEOF
  
 -INSTALL_OPTS="-o $nagios_user -g $nagios_grp"
 +INSTALL_OPTS=""
  
  
- # Check whether --with-command_user or --without-command_user was given.
-@@ -2446,7 +2446,7 @@ echo "configure:2444: checking for gdIma
-   echo $ac_n "(cached) $ac_c" 1>&6
+ 
+@@ -5132,7 +5132,7 @@ echo $ECHO_N "checking for gdImagePng in
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_save_LIBS="$LIBS"
 -	LIBS="-lgd -lttf -lpng -ljpeg -lz -lm $LIBS"
-+	LIBS="-lgd $LIBS"
- 	cat > conftest.$ac_ext <<EOF
- #line 2452 "configure"
- #include "confdefs.h"
-@@ -2476,7 +2476,7 @@ fi
- 	  echo "$ac_t""yes" 1>&6
- 	  
++	LIBS="-lgd -lfontconfig -lfreetype -lpng -ljpeg -lz -lm $LIBS"
+ 	cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -5191,7 +5191,7 @@ fi
+ echo "${ECHO_T}yes" >&6
+ 
  			GDLIBFOUND=yep
 -			GDLIBS="-lgd -lttf -lpng -ljpeg -lz -lm"
-+			GDLIBS="-lgd"
- 			
++			GDLIBS="-lgd -lfontconfig -lfreetype -lpng -ljpeg -lz -lm"
+ 
  	else
- 	  echo "$ac_t""no" 1>&6
+ 	  echo "$as_me:$LINENO: result: no" >&5
