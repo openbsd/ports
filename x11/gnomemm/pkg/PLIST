@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/11/20 13:29:19 wilfried Exp $
 include/gnome--/
 include/gnome--.h
 include/gnome--/about.h
@@ -121,6 +121,5 @@ include/gnome--/types.h
 lib/gnomemmConf.sh
 lib/libgnomemm.a
 lib/libgnomemm.la
-share/aclocal/
 share/aclocal/gnome--.m4
 %%SHARED%%
