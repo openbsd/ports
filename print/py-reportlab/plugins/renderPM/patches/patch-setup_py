@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2004/07/27 08:55:23 xsa Exp $
+$OpenBSD: patch-setup_py,v 1.2 2005/11/20 14:11:54 alek Exp $
 --- setup.py.orig	Sun Aug 25 10:31:36 2002
-+++ setup.py	Tue Jul 13 20:01:41 2004
++++ setup.py	Sun Nov 20 00:58:01 2005
 @@ -1,9 +1,9 @@
  #!/usr/bin/env python
  import os, sys, string
@@ -14,7 +14,7 @@ $OpenBSD: patch-setup_py,v 1.1.1.1 2004/07/27 08:55:23 xsa Exp $
  		l = string.split(string.strip(l),'=')
  		if len(l)>1 and string.strip(l[0]) in K:
  			D[string.strip(l[0])] = string.strip(l[1])
-@@ -31,11 +31,11 @@ if __name__=='__main__': #NO RUNTESTS
+@@ -31,12 +31,12 @@ if __name__=='__main__': #NO RUNTESTS
  	LIBART_VERSION = libart_version()
  	SOURCES=['_renderPM.c']
  	DEVEL_DIR=os.curdir
@@ -24,10 +24,12 @@ $OpenBSD: patch-setup_py,v 1.1.1.1 2004/07/27 08:55:23 xsa Exp $
  	GT1_DIR=pJoin(DEVEL_DIR,'gt1')
  	GLIB_DIR=pJoin(DEVEL_DIR,'glib')
 -	if sys.platform in ['darwin', 'win32', 'sunos5', 'freebsd4', 'mac', 'linux2','aix4']:
+-		LIBS=[]
 +	if sys.platform in ['openbsd3', 'darwin', 'win32', 'sunos5', 'freebsd4', 'mac', 'linux2','aix4']:
- 		LIBS=[]
++		LIBS=['art_lgpl_2']
  	else:
  		raise ValueError, "Don't know about other systems"
+ 
 @@ -47,16 +47,8 @@ if __name__=='__main__': #NO RUNTESTS
  			author_email = "robin@reportlab.com",
  			url = "http://www.reportlab.com",
