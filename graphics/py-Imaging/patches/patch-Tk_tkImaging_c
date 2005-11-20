@@ -1,11 +1,14 @@
-$OpenBSD: patch-Tk_tkImaging_c,v 1.2 2004/05/23 15:58:01 xsa Exp $
---- Tk/tkImaging.c.orig	2004-05-20 11:41:23.000000000 +0200
-+++ Tk/tkImaging.c	2004-05-20 11:57:56.000000000 +0200
-@@ -194,6 +194,6 @@ PyImagingPhoto(ClientData clientdata, Tc
+$OpenBSD: patch-Tk_tkImaging_c,v 1.3 2005/11/20 13:59:50 alek Exp $
+--- Tk/tkImaging.c.orig	Sat Sep 11 22:05:11 2004
++++ Tk/tkImaging.c	Fri Nov 11 15:03:32 2005
+@@ -240,8 +240,8 @@ PyImagingPhotoGet(ClientData clientdata,
  void
  TkImaging_Init(Tcl_Interp* interp)
  {
--    Tcl_CreateCommand(interp, "PyImagingPhoto", PyImagingPhoto,
-+    Tcl_CreateCommand(interp, "PyImagingPhoto", (Tcl_CmdProc *)PyImagingPhoto,
+-    Tcl_CreateCommand(interp, "PyImagingPhoto", PyImagingPhotoPut,
++    Tcl_CreateCommand(interp, "PyImagingPhoto", (Tcl_CmdProc *) PyImagingPhotoPut,
+                       (ClientData) 0, (Tcl_CmdDeleteProc*) NULL);
+-    Tcl_CreateCommand(interp, "PyImagingPhotoGet", PyImagingPhotoGet,
++    Tcl_CreateCommand(interp, "PyImagingPhotoGet", (Tcl_CmdProc *) PyImagingPhotoGet,
                        (ClientData) 0, (Tcl_CmdDeleteProc*) NULL);
  }

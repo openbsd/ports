@@ -1,46 +1,31 @@
-$OpenBSD: patch-setup_py,v 1.1 2004/05/23 16:00:18 xsa Exp $
---- setup.py.orig	2003-05-09 14:00:56.000000000 +0200
-+++ setup.py	2004-03-31 16:39:04.000000000 +0200
-@@ -41,8 +41,8 @@ PY_VERSION = sys.version[0] + sys.versio
+$OpenBSD: patch-setup_py,v 1.2 2005/11/20 13:59:50 alek Exp $
+--- setup.py.orig	Wed Mar 23 19:16:40 2005
++++ setup.py	Sun Nov 20 13:20:20 2005
+@@ -183,6 +183,9 @@ class pil_build_ext(build_ext):
+         add_directory(library_dirs, "/usr/lib")
+         add_directory(include_dirs, "/usr/include")
  
- MODULES = []
++	add_directory(library_dirs, "/usr/X11R6/lib")
++	add_directory(include_dirs, "/usr/X11R6/include")
++
+         #
+         # insert new dirs *before* default libs, to avoid conflicts
+         # between Python PYD stub libs and real libraries
+@@ -312,7 +315,8 @@ class pil_build_ext(build_ext):
+         elif feature.tcl and feature.tk:
+             exts.append(Extension(
+                 "_imagingtk", ["_imagingtk.c", "Tk/tkImaging.c"],
+-                libraries=[feature.tcl, feature.tk]
++                libraries=[feature.tcl, feature.tk],
++		include_dirs=["/usr/local/include/tk8.4", "/usr/local/include/tcl8.4", "/usr/X11R6/include"]
+                 ))
  
--INCLUDE_DIRS = ["libImaging"]
--LIBRARY_DIRS = ["libImaging"]
-+INCLUDE_DIRS = ["libImaging", "!LOCALBASE!/include"]
-+LIBRARY_DIRS = ["libImaging", "!LOCALBASE!/lib"]
- LIBRARIES = ["Imaging"]
- 
- # Add some standard search spots for MacOSX/darwin
-@@ -121,12 +121,12 @@ if HAVE_LIBZ:
- 
- try:
-     import _tkinter
--    TCL_VERSION = _tkinter.TCL_VERSION[:3]
-+    TCL_VERSION = _tkinter.TCL_VERSION[:3].replace('.', '')
- except (ImportError, AttributeError):
-     pass
- else:
--    INCLUDE_DIRS = ["libImaging"]
--    LIBRARY_DIRS = ["libImaging"]
-+    INCLUDE_DIRS = ["libImaging", "!LOCALBASE!/include/tk8.4/", "!LOCALBASE!/include/tcl8.4/", "!X11BASE!/include/"] 
-+    LIBRARY_DIRS = ["libImaging", "!LOCALBASE!/lib/", "!X11BASE!/lib/"]
-     LIBRARIES = ["Imaging"]
-     EXTRA_COMPILE_ARGS = None
-     EXTRA_LINK_ARGS = None
-@@ -260,12 +260,13 @@ if os.path.isdir(FREETYPEDIR) or os.name
-     if FILES:
-         INCLUDE_DIRS.append(os.path.join(FREETYPEDIR, "include"))
-         INCLUDE_DIRS.append(os.path.join(FREETYPEDIR, "src"))
--    elif os.path.isdir("/usr/include/freetype2"):
-+    elif os.path.isdir("!X11BASE!/include/freetype2"):
-         # assume that the freetype library is installed in a
-         # standard location
-         # FIXME: search for libraries
-         LIBRARIES.append("freetype")
--        INCLUDE_DIRS.append("/usr/include/freetype2")
-+        INCLUDE_DIRS += ["!X11BASE!/include/freetype2", "!X11BASE!/include"]
-+        LIBRARY_DIRS.append("!X11BASE!/lib")
-     elif os.path.isdir("/sw/include/freetype2"):
-         # assume that the freetype library is installed in a
-         # standard location
+         if os.path.isfile("_pilmath.c"):
+@@ -433,7 +437,6 @@ if __name__ == "__main__":
+         package_dir={"": "PIL"},
+         packages=[""],
+         platforms="Python 1.5.2 and later.",
+-        scripts = glob.glob("Scripts/pil*.py"),
+         url=HOMEPAGE,
+         version=VERSION,
+         )

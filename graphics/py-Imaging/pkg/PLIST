@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 00:50:10 espie Exp $
-include/python${MODPY_VERSION}/ImConfig.h
-include/python${MODPY_VERSION}/ImPlatform.h
-include/python${MODPY_VERSION}/Imaging.h
+@comment $OpenBSD: PLIST,v 1.7 2005/11/20 13:59:50 alek Exp $
+bin/pilconvert
+bin/pildriver
+bin/pilfile
+bin/pilfont
+bin/pilprint
 lib/python${MODPY_VERSION}/site-packages/PIL/
 lib/python${MODPY_VERSION}/site-packages/PIL.pth
 lib/python${MODPY_VERSION}/site-packages/PIL/ArgImagePlugin.py
@@ -10,6 +12,8 @@ lib/python${MODPY_VERSION}/site-packages/PIL/BdfFontFile.py
 lib/python${MODPY_VERSION}/site-packages/PIL/BdfFontFile.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/BmpImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/BmpImagePlugin.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/BufrStubImagePlugin.py
+lib/python${MODPY_VERSION}/site-packages/PIL/BufrStubImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ContainerIO.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ContainerIO.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/CurImagePlugin.py
@@ -20,6 +24,8 @@ lib/python${MODPY_VERSION}/site-packages/PIL/EpsImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/EpsImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ExifTags.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ExifTags.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/FitsStubImagePlugin.py
+lib/python${MODPY_VERSION}/site-packages/PIL/FitsStubImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/FliImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/FliImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/FontFile.py
@@ -36,6 +42,12 @@ lib/python${MODPY_VERSION}/site-packages/PIL/GimpGradientFile.py
 lib/python${MODPY_VERSION}/site-packages/PIL/GimpGradientFile.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/GimpPaletteFile.py
 lib/python${MODPY_VERSION}/site-packages/PIL/GimpPaletteFile.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/GribStubImagePlugin.py
+lib/python${MODPY_VERSION}/site-packages/PIL/GribStubImagePlugin.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/Hdf5StubImagePlugin.py
+lib/python${MODPY_VERSION}/site-packages/PIL/Hdf5StubImagePlugin.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/IcnsImagePlugin.py
+lib/python${MODPY_VERSION}/site-packages/PIL/IcnsImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/IcoImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/IcoImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImImagePlugin.py
@@ -58,6 +70,8 @@ lib/python${MODPY_VERSION}/site-packages/PIL/ImageFilter.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageFilter.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageFont.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageFont.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/ImageGL.py
+lib/python${MODPY_VERSION}/site-packages/PIL/ImageGL.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageGrab.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageGrab.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageOps.py
@@ -116,6 +130,8 @@ lib/python${MODPY_VERSION}/site-packages/PIL/PsdImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PsdImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/SgiImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/SgiImagePlugin.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/SpiderImagePlugin.py
+lib/python${MODPY_VERSION}/site-packages/PIL/SpiderImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/SunImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/SunImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/TarIO.py
@@ -141,3 +157,18 @@ lib/python${MODPY_VERSION}/site-packages/PIL/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/_imaging.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingft.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingtk.so
+share/examples/py-Imaging/
+share/examples/py-Imaging/README
+share/examples/py-Imaging/enhancer.py
+share/examples/py-Imaging/explode.py
+share/examples/py-Imaging/gifmaker.py
+share/examples/py-Imaging/image2py.py
+share/examples/py-Imaging/painter.py
+share/examples/py-Imaging/pilconvert.py
+share/examples/py-Imaging/pildriver.py
+share/examples/py-Imaging/pilfile.py
+share/examples/py-Imaging/pilfont.py
+share/examples/py-Imaging/pilprint.py
+share/examples/py-Imaging/player.py
+share/examples/py-Imaging/thresholder.py
+share/examples/py-Imaging/viewer.py

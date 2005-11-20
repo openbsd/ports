@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.26 2005/01/25 14:25:46 alek Exp $
+# $OpenBSD: Makefile,v 1.27 2005/11/20 13:59:50 alek Exp $
 
-NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
-COMMENT=		"Python imaging library"
-COMMENT-examples=	"examples for Python imaging library"
+COMMENT=	"Python imaging library"
 
-VERSION=		1.1.4
-DISTNAME=		Imaging-${VERSION}
-PKGNAME=		py-${DISTNAME}p0
-CATEGORIES=		graphics
+DISTNAME=	Imaging-1.1.5
+PKGNAME=	py-${DISTNAME}
+CATEGORIES=	graphics
 
-HOMEPAGE=		http://www.pythonware.com/products/pil/
+HOMEPAGE=	http://www.pythonware.com/products/pil/
 
 MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
 
@@ -20,57 +18,32 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		freetype tcl84 z
+WANTLIB=	freetype tcl84 z
 
-MASTER_SITES=		http://www.pythonware.net/storage/
+MASTER_SITES=	http://www.pythonware.net/storage/
 
-MODULES=		lang/python
+MODULES=	lang/python
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		${MODPY_TKINTER_DEPENDS}
-LIB_DEPENDS=		jpeg.62::graphics/jpeg \
-			tk84:tk-8.4.*:x11/tk/8.4
-
-MULTI_PACKAGES=		-examples
-SUBPACKAGE?=
-
-PKGNAME-examples=	py-Imaging-examples-${VERSION}
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-examples"
-RUN_DEPENDS=		:py-Imaging-*:graphics/py-Imaging
-LIB_DEPENDS=
-PKG_ARCH=		*
-WANTLIB=
-.endif
-
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-jpeg=${LOCALBASE}/lib
-
-LIB_IMAGING=		${WRKSRC}/libImaging
-PIL_INCLUDES=		ImConfig.h ImPlatform.h Imaging.h
+RUN_DEPENDS=	${MODPY_TKINTER_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+LIB_DEPENDS=	jpeg.62::graphics/jpeg \
+		tk84:tk-8.4.*:x11/tk/8.4
 
 do-configure:
-	@perl -pi -e "s|!LOCALBASE!|${LOCALBASE}|g; s|!X11BASE!|${X11BASE}|g" \
-		${WRKSRC}/setup.py
-	@cd ${LIB_IMAGING}; ${SETENV} ${CONFIGURE_ENV} \
-		./configure ${CONFIGURE_ARGS}
-
-pre-build:
-	@cd ${LIB_IMAGING} && \
-		${MAKE_ENV} ${MAKE_PROGRAM} CC="${CC}" OPT="${CFLAGS}"
+	@perl -pi -e "s|!LOCALBASE!|${LOCALBASE}|g; s|!X11BASE!|${X11BASE}|g; s|!MODPY_VERSION!|${MODPY_VERSION}|g" \
+		${WRKSRC}/setup.py ${WRKSRC}/Scripts/pil*.py
 
 post-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/examples/py-Imaging
-	for file in ${WRKSRC}/Scripts/*; do \
-		${INSTALL_SCRIPT} $$file \
-			${PREFIX}/share/examples/py-Imaging; \
+	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/*.py \
+		${PREFIX}/share/examples/py-Imaging
+	${INSTALL_DATA} ${WRKSRC}/Scripts/README \
+		${PREFIX}/share/examples/py-Imaging
+	for file in ${WRKSRC}/Scripts/pil*.py; do \
+		${INSTALL_SCRIPT} $$file ${PREFIX}/bin/`basename $$file .py`; \
 	done
-	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_INCDIR}
-.for a in ${PIL_INCLUDES}
-	${INSTALL_DATA} ${LIB_IMAGING}/$a ${WRKINST}${MODPY_INCDIR}
-.endfor
 
 do-regress: fake
-	@cd ${LIB_IMAGING} && ./coretest
 	@cd ${WRKSRC} && \
 		${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG}/PIL \
 		${MODPY_BIN} ./selftest.py

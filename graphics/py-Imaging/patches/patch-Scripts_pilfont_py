@@ -1,0 +1,9 @@
+$OpenBSD: patch-Scripts_pilfont_py,v 1.1 2005/11/20 13:59:50 alek Exp $
+--- Scripts/pilfont.py.orig	Sun Nov 20 13:14:05 2005
++++ Scripts/pilfont.py	Sun Nov 20 13:15:22 2005
+@@ -1,4 +1,4 @@
+-#
++#! !LOCALBASE!/bin/python!MODPY_VERSION!
+ # The Python Imaging Library
+ # $Id: patch-Scripts_pilfont_py,v 1.1 2005/11/20 13:59:50 alek Exp $
+ #
