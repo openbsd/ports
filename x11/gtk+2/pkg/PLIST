@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2005/11/13 06:23:58 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.23 2005/11/20 07:20:23 marcm Exp $
 bin/gdk-pixbuf-csource
 bin/gdk-pixbuf-query-loaders
 bin/gtk-demo
@@ -370,8 +370,6 @@ share/locale/az_IR/
 share/locale/az_IR/LC_MESSAGES/
 share/locale/az_IR/LC_MESSAGES/gtk20-properties.mo
 share/locale/az_IR/LC_MESSAGES/gtk20.mo
-share/locale/be/
-share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/gtk20-properties.mo
 share/locale/be/LC_MESSAGES/gtk20.mo
 share/locale/bg/LC_MESSAGES/gtk20-properties.mo
@@ -388,8 +386,6 @@ share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/gtk20-properties.mo
 share/locale/bs/LC_MESSAGES/gtk20.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/gtk20-properties.mo
 share/locale/ca/LC_MESSAGES/gtk20.mo
 share/locale/cs/LC_MESSAGES/gtk20-properties.mo
@@ -428,8 +424,6 @@ share/locale/fi/LC_MESSAGES/gtk20-properties.mo
 share/locale/fi/LC_MESSAGES/gtk20.mo
 share/locale/fr/LC_MESSAGES/gtk20-properties.mo
 share/locale/fr/LC_MESSAGES/gtk20.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/gtk20-properties.mo
 share/locale/ga/LC_MESSAGES/gtk20.mo
 share/locale/gl/LC_MESSAGES/gtk20-properties.mo
@@ -548,8 +542,6 @@ share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gtk20-properties.mo
 share/locale/sq/LC_MESSAGES/gtk20.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/gtk20-properties.mo
 share/locale/sr/LC_MESSAGES/gtk20.mo
 share/locale/sr@Latn/
@@ -590,8 +582,6 @@ share/locale/uz@Latn/
 share/locale/uz@Latn/LC_MESSAGES/
 share/locale/uz@Latn/LC_MESSAGES/gtk20-properties.mo
 share/locale/uz@Latn/LC_MESSAGES/gtk20.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/gtk20-properties.mo
 share/locale/vi/LC_MESSAGES/gtk20.mo
 share/locale/wa/
@@ -627,3 +617,4 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @cwd /var/db
 @extra gtk-2.0/gtk.immodules
 @extra gtk-2.0/gdk-pixbuf.loaders
+@extra gtk-2.0/

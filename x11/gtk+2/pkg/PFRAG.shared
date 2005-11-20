@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.16 2005/11/13 06:23:58 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.17 2005/11/20 07:20:23 marcm Exp $
 lib/gtk-2.0/2.4.0/engines/libpixmap.so
 lib/gtk-2.0/2.4.0/immodules/im-am-et.so
 lib/gtk-2.0/2.4.0/immodules/im-cedilla.so
@@ -24,7 +24,7 @@ lib/gtk-2.0/2.4.0/loaders/libpixbufloader-tiff.so
 lib/gtk-2.0/2.4.0/loaders/libpixbufloader-wbmp.so
 lib/gtk-2.0/2.4.0/loaders/libpixbufloader-xbm.so
 lib/gtk-2.0/2.4.0/loaders/libpixbufloader-xpm.so
-@lib lib/libgdk-x11-2.0.so.800.6
-@lib lib/libgdk_pixbuf-2.0.so.800.6
-@lib lib/libgdk_pixbuf_xlib-2.0.so.800.6
-@lib lib/libgtk-x11-2.0.so.800.6
+@lib lib/libgdk-x11-2.0.so.800.7
+@lib lib/libgdk_pixbuf-2.0.so.800.7
+@lib lib/libgdk_pixbuf_xlib-2.0.so.800.7
+@lib lib/libgtk-x11-2.0.so.800.7
