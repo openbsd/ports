@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/02 21:10:04 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2005/11/20 13:37:48 alek Exp $
 
 COMMENT=	"PDF-generating toolkit for Python"
 
 VERSION=	1.19
 DISTNAME=	ReportLab_${VERSION:S/./_/}
-PKGNAME=	py-reportlab-${VERSION}
+PKGNAME=	py-reportlab-${VERSION}p0
 CATEGORIES=	print graphics
 
 HOMEPAGE=	http://www.reportlab.org/rl_toolkit.html
@@ -23,7 +23,7 @@ EXTRACT_SUFX=	.tgz
 MODULES=	lang/python
 
 RUN_DEPENDS=	:py-Imaging-*:graphics/py-Imaging \
-		${MOD_EXPAT_DEPENDS}
+		${MODPY_EXPAT_DEPENDS}
 
 WRKDIST=	${WRKDIR}/reportlab-${VERSION:S/./_/}
 WRKSRC=		${WRKDIST}/reportlab
