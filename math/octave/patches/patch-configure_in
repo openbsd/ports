@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1 2005/11/02 18:20:58 alek Exp $
---- configure.in.orig	Wed May 18 14:19:59 2005
-+++ configure.in	Sun Sep 25 11:43:10 2005
+$OpenBSD: patch-configure_in,v 1.2 2005/11/20 17:44:20 naddy Exp $
+--- configure.in.orig	Fri Nov 11 20:46:55 2005
++++ configure.in	Sun Nov 20 16:53:15 2005
 @@ -57,7 +57,7 @@ OCTAVE_SET_DEFAULT(localapifcnfiledir,
  OCTAVE_SET_DEFAULT(localverfcnfiledir, '$(datadir)/octave/$(version)/site/m')
  OCTAVE_SET_DEFAULT(localfcnfilepath,
@@ -10,6 +10,15 @@ $OpenBSD: patch-configure_in,v 1.1 2005/11/02 18:20:58 alek Exp $
  OCTAVE_SET_DEFAULT(archlibdir,
    '$(libexecdir)/octave/$(version)/exec/$(canonical_host_type)')
  OCTAVE_SET_DEFAULT(localarchlibdir,
+@@ -413,7 +413,7 @@ AC_ARG_WITH(fftw, 
+ if test "$with_fftw" = "yes"; then
+   have_fftw3_header=no
+   with_fftw3=no
+-  AC_CHECK_HEADER(fftw3.h, [have_fftw3_header=yes; break])
++  AC_CHECK_HEADER(fftw3.h, [have_fftw3_header=yes])
+   if test "$have_fftw3_header" = yes; then
+       AC_CHECK_LIB(fftw3, fftw_plan_dft_1d, [FFTW_LIBS="-lfftw3"; with_fftw3=yes])
+   fi
 @@ -662,8 +662,8 @@ FPICFLAG=-fPIC
  SHLEXT=so
  SHLLIB='$(SHLEXT)'

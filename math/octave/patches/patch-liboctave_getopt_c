@@ -1,0 +1,21 @@
+$OpenBSD: patch-liboctave_getopt_c,v 1.1 2005/11/20 17:44:20 naddy Exp $
+--- liboctave/getopt.c.orig	Mon Nov 14 16:53:58 2005
++++ liboctave/getopt.c	Mon Nov 14 18:19:04 2005
+@@ -65,7 +65,7 @@
+ 
+ /* This needs to come after some library #include
+    to get __GNU_LIBRARY__ defined.  */
+-#ifdef	__GNU_LIBRARY__
++#if defined(__GNU_LIBRARY__) || defined(__OpenBSD__)
+ /* Don't include stdlib.h for non-GNU C libraries because some of them
+    contain conflicting prototypes for getopt.  */
+ #include <stdlib.h>
+@@ -199,7 +199,7 @@ static enum
+ /* Value of POSIXLY_CORRECT environment variable.  */
+ static char *posixly_correct;
+ 
+-#if defined(__GNU_LIBRARY__) || defined(WIN32)
++#if defined(__GNU_LIBRARY__) || defined(WIN32) || defined(__OpenBSD__)
+ /* We want to avoid inclusion of string.h with non-GNU libraries
+    because there are many ways it can cause trouble.
+    On some systems, it contains special magic macros that don't work

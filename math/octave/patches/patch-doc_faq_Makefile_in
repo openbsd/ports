@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_faq_Makefile_in,v 1.1 2005/11/20 17:44:20 naddy Exp $
+--- doc/faq/Makefile.in.orig	Sun Nov 13 01:00:03 2005
++++ doc/faq/Makefile.in	Sun Nov 13 01:00:14 2005
+@@ -36,7 +36,7 @@ SPELL := $(patsubst %.texi, %.spell, $(A
+ 	$(SED) -e 's/@@/ at /g' -e 's/@[a-zA-Z]*//g' $< | spell > $@.tmp
+ 	mv $@.tmp $@
+ 
+-all: Octave-FAQ.info Octave-FAQ.dvi Octave-FAQ.ps Octave-FAQ.pdf HTML/index.html
++all: Octave-FAQ.info HTML/index.html
+ .PHONY: all
+ 
+ Octave-FAQ.info: $(TEXINFO)
