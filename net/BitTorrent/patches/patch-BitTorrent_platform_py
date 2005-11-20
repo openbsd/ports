@@ -1,8 +1,8 @@
-$OpenBSD: patch-BitTorrent_platform_py,v 1.1 2005/10/18 14:12:35 naddy Exp $
---- BitTorrent/platform.py.orig	Wed Oct 12 06:08:35 2005
-+++ BitTorrent/platform.py	Sun Oct 16 23:06:10 2005
-@@ -51,7 +51,7 @@ if os_name == 'nt':
-     del wh, wv, wk
+$OpenBSD: patch-BitTorrent_platform_py,v 1.2 2005/11/20 17:46:53 naddy Exp $
+--- BitTorrent/platform.py.orig	Wed Nov 16 02:48:34 2005
++++ BitTorrent/platform.py	Sat Nov 19 22:42:56 2005
+@@ -56,7 +56,7 @@ elif os_name == 'posix':
+ user_agent = "M" + version.replace('.', '-') + "--(%s/%s)" % (os_name, os_version)
  
  def calc_unix_dirs():
 -    appdir = '%s-%s'%(app_name, version)

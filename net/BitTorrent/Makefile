@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2005/11/06 01:06:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2005/11/20 17:46:53 naddy Exp $
 
 COMMENT=	"cooperative file distribution system implemented in Python"
 COMMENT-gui=	"graphical interface components for BitTorrent"
 
-VERSION=	4.1.6
+VERSION=	4.1.8
 DISTNAME=	BitTorrent-${VERSION}
 PKGNAME-gui=	BitTorrent-gui-${VERSION}
 CATEGORIES=	net
@@ -35,6 +35,7 @@ NO_REGRESS=	Yes
 
 post-configure:
 	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' ${WRKBUILD}/*.py
+	@perl -pi -e 's,python,${MODPY_BIN},' ${WRKSRC}/makei18n.sh
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
