@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2004/12/20 10:35:35 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2005/11/20 12:55:08 wilfried Exp $
 
 COMMENT=		'wm-dockapp; display CPU and memory load'
 
 DISTNAME=		bubblemon-dockapp-1.4
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	sysutils x11 x11/windowmaker
 
 HOMEPAGE=		http://www.ne.jp/asahi/linux/timecop/
@@ -18,7 +19,7 @@ WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m
 
 MASTER_SITES=		${HOMEPAGE}software/
 
-LIB_DEPENDS=		gtk.1,gdk.1::x11/gtk+
+LIB_DEPENDS=		gdk.1::x11/gtk+
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

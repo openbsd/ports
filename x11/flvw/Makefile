@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2002/11/05 16:17:35 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2005/11/20 12:59:30 wilfried Exp $
 
 COMMENT=		'FLTK Virtual Styles, List, Table, and Complex Table Widgets'
 
 DISTNAME=		flvw-20000224
-PKGNAME=		flvw-1.0
+PKGNAME=		flvw-1.0p0
 CATEGORIES=		x11 devel
 
 HOMEPAGE=		http://flvw.sourceforge.net/
@@ -20,7 +20,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=flvw/}
 
 EXTRACT_SUFX=		.tgz
 
-LIB_DEPENDS=		fltk.1::x11/fltk
+LIB_DEPENDS=		::x11/fltk
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu

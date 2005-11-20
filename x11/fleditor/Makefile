@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2002/09/17 15:17:41 wilfried Exp $
+# $OpenBSD: Makefile,v 1.13 2005/11/20 12:58:52 wilfried Exp $
 
 COMMENT=		'Text Editor for FLTK'
 
 V=			0.4.5
 DISTNAME=		fl_editor-${V}
-PKGNAME=		fleditor-${V}
+PKGNAME=		fleditor-${V}p0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.robertk.com/source/
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.robertk.com/source/fl_editor/
 EXTRACT_SUFX=		.tgz
 
-LIB_DEPENDS=		fltk.1::x11/fltk
+LIB_DEPENDS=		::x11/fltk
 
 USE_X11=		Yes
 REGRESS_TARGET=		test

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/11/04 13:58:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2005/11/20 12:54:05 wilfried Exp $
 
 COMMENT=	"common libraries and data for the MySQL GUI Suites"
 
 DISTNAME=	mysql-query-browser-1.1.17
-PKGNAME=	mysql-gui-common-2.0.11beta
+PKGNAME=	mysql-gui-common-2.0.11betap0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.mysql.com/products/tools/administrator/
@@ -22,8 +22,8 @@ MASTER_SITES=	ftp://na.mirror.garr.it/mirrors/MySQL/Downloads/MySQLAdministratio
 		ftp://gd.tuwien.ac.at/db/mysql/Downloads/MySQLAdministrationSuite/ \
 		ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQLAdministrationSuite/
 
-MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
+		::devel/gettext \
 		:libxml->=2.6.2:textproc/libxml \
 		:glib2->=2.6.2:devel/glib2 \
 		::devel/libglade2 \
