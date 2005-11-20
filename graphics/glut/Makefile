@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/10/09 01:26:56 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2005/11/20 18:03:25 naddy Exp $
 
 COMMENT=	"OpenGL Utility Toolkit"
 
@@ -19,7 +19,9 @@ NO_REGRESS=		Yes
 
 post-extract:
 	@perl -i -p -e 's/3GLUT/3/;' ${WRKSRC}/man/glut/*.man
-	@perl -i -p -e 's/\r//;' ${WRKSRC}/man/glut/*.man
+	@perl -i -p -e 's/\r//;' ${WRKSRC}/man/glut/*.man \
+		${WRKSRC}/lib/glut/strokegen.y \
+		${WRKSRC}/lib/glut/strokelex.l
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/GL

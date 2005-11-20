@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_mui_Imakefile,v 1.3 2004/04/18 11:54:09 sturm Exp $
---- lib/mui/Imakefile.orig	1998-08-08 02:20:51.000000000 +0200
-+++ lib/mui/Imakefile	2004-04-18 11:26:43.000000000 +0200
-@@ -2,10 +2,12 @@
+$OpenBSD: patch-lib_mui_Imakefile,v 1.4 2005/11/20 18:03:25 naddy Exp $
+--- lib/mui/Imakefile.orig	Sat Aug  8 02:20:51 1998
++++ lib/mui/Imakefile	Sun Nov 20 18:52:58 2005
+@@ -2,17 +2,23 @@
  /* Copyright (c) Mark J. Kilgard, 1994. */
  
  #define DoNormalLib YES
@@ -11,13 +11,13 @@ $OpenBSD: patch-lib_mui_Imakefile,v 1.3 2004/04/18 11:54:09 sturm Exp $
 +#define SoRev SOMUIREV
  
 -#include <Library.tmpl>
--
--#include "../../Glut.cf"
 +SOMUIREV = 3.7
  
+-#include "../../Glut.cf"
+-
  SRCS = button.c displaylist.c gizmo.c glutmui.c \
     hslider.c miscui.c mui.c pulldown.c textlist.c uicolor.c vslider.c
-@@ -13,6 +15,10 @@ SRCS = button.c displaylist.c gizmo.c gl
+ 
  OBJS = button.o displaylist.o gizmo.o glutmui.o \
     hslider.o miscui.o mui.o pulldown.o textlist.o uicolor.o vslider.o
  
@@ -28,10 +28,11 @@ $OpenBSD: patch-lib_mui_Imakefile,v 1.3 2004/04/18 11:54:09 sturm Exp $
  #ifdef LibraryObjectRule
  LibraryObjectRule()
  #else
-@@ -21,6 +27,4 @@ LibraryObjectRule()
+@@ -20,7 +26,5 @@ LibraryObjectRule()
+    will probably do essentially what LibraryObjectRule does. */
  NormalLibraryObjectRule()
  #endif
- 
--NormalLibraryTarget(mui,$(OBJS))
 -
+-NormalLibraryTarget(mui,$(OBJS))
+ 
  DependTarget()

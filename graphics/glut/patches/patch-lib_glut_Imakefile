@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_glut_Imakefile,v 1.3 2004/04/18 11:54:09 sturm Exp $
---- lib/glut/Imakefile.orig	1998-08-08 02:20:51.000000000 +0200
-+++ lib/glut/Imakefile	2004-04-18 11:26:43.000000000 +0200
-@@ -2,10 +2,12 @@
+$OpenBSD: patch-lib_glut_Imakefile,v 1.4 2005/11/20 18:03:25 naddy Exp $
+--- lib/glut/Imakefile.orig	Sun Nov 20 18:53:41 2005
++++ lib/glut/Imakefile	Sun Nov 20 18:52:58 2005
+@@ -2,11 +2,13 @@
  /* Copyright (c) Mark J. Kilgard, 1994. */
  
  #define DoNormalLib YES
@@ -11,12 +11,13 @@ $OpenBSD: patch-lib_glut_Imakefile,v 1.3 2004/04/18 11:54:09 sturm Exp $
 +#define SoRev SOGLUTREV
  
 -#include <Library.tmpl>
--
--#include "../../Glut.cf"
 +SOGLUTREV = 3.7
  
+-#include "../../Glut.cf"
+-
  HDRS = \
  	glutint.h \
+ 	glutstroke.h \
 @@ -108,6 +110,10 @@ OBJS = \
  	glut_winmisc.o \
  	layerutil.o
@@ -28,12 +29,12 @@ $OpenBSD: patch-lib_glut_Imakefile,v 1.3 2004/04/18 11:54:09 sturm Exp $
  #ifdef LibraryObjectRule
  LibraryObjectRule()
  #else
-@@ -116,8 +122,6 @@ LibraryObjectRule()
+@@ -115,8 +121,6 @@ LibraryObjectRule()
+    will probably do essentially what LibraryObjectRule does. */
  NormalLibraryObjectRule()
  #endif
- 
--NormalLibraryTarget(glut,$(OBJS))
 -
+-NormalLibraryTarget(glut,$(OBJS))
+ 
  /* I've gotten too many complaints from people (mostly Linux users)
     trying to build GLUT that have problems using lex and yacc to
-    build the stroke fonts for GLUT so I will simply supply the
