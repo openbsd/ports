@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2004/11/23 11:22:02 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2005/11/21 01:16:53 jakemsr Exp $
 
 COMMENT=	"SDL C++ GUI widget library"
 
-VER=		1.1.1
-PROJ=		GUIlib
-DISTNAME=	${PROJ}-${VER}
-PKGNAME=	guilib-${VER}
+DISTNAME=	GUIlib-1.1.1
+PKGNAME=	${DISTNAME:L}p0
 CATEGORIES=	devel graphics
-MASTER_SITES=	http://www.libsdl.org/projects/${PROJ}/src/
+MASTER_SITES=	http://www.libsdl.org/projects/GUIlib/src/
 
 HOMEPAGE=	http://www.libsdl.org/projects/GUIlib/
 
@@ -21,10 +19,10 @@ WANTLIB=		X11 Xext m usbhid
 LIB_DEPENDS=	SDL.::devel/sdl
 
 USE_X11=	Yes
-
+USE_LIBTOOL=	Yes
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+CONFIGURE_ENV+=		LDFLAGS="-L${X11BASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 .include <bsd.own.mk>
