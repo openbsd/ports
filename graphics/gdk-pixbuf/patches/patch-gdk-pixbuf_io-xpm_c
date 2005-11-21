@@ -1,7 +1,27 @@
-$OpenBSD: patch-gdk-pixbuf_io-xpm_c,v 1.1 2004/09/19 23:41:32 brad Exp $
---- gdk-pixbuf/io-xpm.c.orig	Sat Sep 18 22:04:13 2004
-+++ gdk-pixbuf/io-xpm.c	Sat Sep 18 22:06:26 2004
-@@ -352,17 +352,30 @@ pixbuf_create_from_xpm (const gchar * (*
+$OpenBSD: patch-gdk-pixbuf_io-xpm_c,v 1.2 2005/11/21 20:20:54 naddy Exp $
+--- gdk-pixbuf/io-xpm.c.orig	Thu Mar  1 21:16:28 2001
++++ gdk-pixbuf/io-xpm.c	Sat Nov 19 20:30:14 2005
+@@ -281,7 +281,8 @@ file_buffer (enum buf_op op, gpointer ha
+ 		/* Fall through to the xpm_read_string. */
+ 
+ 	case op_body:
+-		xpm_read_string (h->infile, &h->buffer, &h->buffer_size);
++		if (!xpm_read_string (h->infile, &h->buffer, &h->buffer_size))
++			return NULL;
+ 		return h->buffer;
+ 
+ 	default:
+@@ -342,7 +343,8 @@ pixbuf_create_from_xpm (const gchar * (*
+ 	gchar pixel_str[32];
+ 	GHashTable *color_hash;
+ 	_XPMColor *colors, *color, *fallbackcolor;
+-	guchar *pixels, *pixtmp;
++	guchar *pixtmp;
++	GdkPixbuf* pixbuf;
+ 
+ 	fallbackcolor = NULL;
+ 
+@@ -352,17 +354,31 @@ pixbuf_create_from_xpm (const gchar * (*
  		return NULL;
  	}
  	sscanf (buffer, "%d %d %d %d", &w, &h, &n_col, &cpp);
@@ -10,7 +30,8 @@ $OpenBSD: patch-gdk-pixbuf_io-xpm_c,v 1.1 2004/09/19 23:41:32 brad Exp $
  		g_warning ("XPM has more than 31 chars per pixel.");
  		return NULL;
  	}
-+	if (n_col <= 0 || n_col >= G_MAXINT / (cpp + 1)) {
++	if (n_col <= 0 || n_col >= G_MAXINT / (cpp + 1) ||
++	    n_col >= G_MAXINT / sizeof (_XPMColor)) {
 +		g_warning ("XPM file has invalid number of colors.");
 +		return NULL;
 +	}
@@ -35,3 +56,38 @@ $OpenBSD: patch-gdk-pixbuf_io-xpm_c,v 1.1 2004/09/19 23:41:32 brad Exp $
  	for (cnt = 0; cnt < n_col; cnt++) {
  		gchar *color_name;
  
+@@ -397,12 +413,8 @@ pixbuf_create_from_xpm (const gchar * (*
+ 			fallbackcolor = color;
+ 	}
+ 
+-	if (is_trans)
+-		pixels = malloc (w * h * 4);
+-	else
+-		pixels = malloc (w * h * 3);
+-
+-	if (!pixels) {
++	pixbuf = gdk_pixbuf_new(GDK_COLORSPACE_RGB, is_trans, 8, w, h);
++	if (!pixbuf) {
+ 		g_hash_table_destroy (color_hash);
+ 		g_free (colors);
+ 		g_free (name_buf);
+@@ -410,7 +422,7 @@ pixbuf_create_from_xpm (const gchar * (*
+ 	}
+ 
+ 	wbytes = w * cpp;
+-	pixtmp = pixels;
++	pixtmp = pixbuf->pixels;
+ 
+ 	for (ycnt = 0; ycnt < h; ycnt++) {
+ 		buffer = (*get_buf) (op_body, handle);
+@@ -443,9 +455,7 @@ pixbuf_create_from_xpm (const gchar * (*
+ 	g_free (colors);
+ 	g_free (name_buf);
+ 
+-	return gdk_pixbuf_new_from_data (pixels, GDK_COLORSPACE_RGB, is_trans, 8,
+-					 w, h, is_trans ? (w * 4) : (w * 3),
+-					 free_buffer, NULL);
++	return pixbuf;
+ }
+ 
+ /* Shared library entry point for file loading */

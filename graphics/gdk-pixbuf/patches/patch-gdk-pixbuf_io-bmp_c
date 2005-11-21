@@ -1,7 +1,24 @@
-$OpenBSD: patch-gdk-pixbuf_io-bmp_c,v 1.1 2004/09/19 23:41:32 brad Exp $
---- gdk-pixbuf/io-bmp.c.orig	Sat Sep 18 22:08:18 2004
-+++ gdk-pixbuf/io-bmp.c	Sat Sep 18 22:16:29 2004
-@@ -870,8 +870,10 @@ DoCompressed(struct bmp_progressive_stat
+$OpenBSD: patch-gdk-pixbuf_io-bmp_c,v 1.2 2005/11/21 20:20:54 naddy Exp $
+--- gdk-pixbuf/io-bmp.c.orig	Fri Sep 27 23:12:40 2002
++++ gdk-pixbuf/io-bmp.c	Sat Nov 19 18:23:36 2005
+@@ -245,7 +245,15 @@ lsb_16 (guchar *src)
+ static gboolean
+ grow_buffer (struct bmp_progressive_state *State)
+ {
+-  guchar *tmp = realloc (State->buff, State->BufferSize);
++  guchar *tmp;
++
++  if (State->BufferSize == 0) {
++    State->read_state = READ_STATE_ERROR;
++    return FALSE;
++  }
++
++  tmp = realloc (State->buff, State->BufferSize);
++
+   if (!tmp) {
+     State->read_state = READ_STATE_ERROR;
+     return FALSE;
+@@ -870,8 +878,10 @@ DoCompressed(struct bmp_progressive_stat
  	guchar c;
  	gint idx;
  
