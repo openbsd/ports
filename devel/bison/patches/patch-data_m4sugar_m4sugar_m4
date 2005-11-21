@@ -1,0 +1,17 @@
+$OpenBSD: patch-data_m4sugar_m4sugar_m4,v 1.1 2005/11/21 09:15:11 espie Exp $
+--- data/m4sugar/m4sugar.m4.orig	Sat Nov 19 16:05:49 2005
++++ data/m4sugar/m4sugar.m4	Sat Nov 19 16:06:24 2005
+@@ -55,13 +55,6 @@ divert(-1)#                             
+ changequote()
+ changequote([, ])
+ 
+-# Some old m4's don't support m4exit.  But they provide
+-# equivalent functionality by core dumping because of the
+-# long macros we define.
+-ifdef([__gnu__], ,
+-[errprint(M4sugar requires GNU M4. Install it before installing M4sugar or
+-set the M4 environment variable to its absolute file name.)
+-m4exit(2)])
+ 
+ 
+ ## ------------------------------- ##
