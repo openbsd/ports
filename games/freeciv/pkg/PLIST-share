@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-share,v 1.5 2005/10/07 20:52:09 alek Exp $
+@comment $OpenBSD: PLIST-share,v 1.6 2005/11/21 23:37:18 alek Exp $
 share/freeciv/
 share/freeciv/civ1/
 share/freeciv/civ1.serv
@@ -127,21 +127,15 @@ share/freeciv/scenario/earth-80x50-v2.sav
 share/freeciv/scenario/europe-200x100-v2.sav
 share/freeciv/scenario/hagworld-120x60-v1.2.sav
 share/freeciv/scenario/iberian-peninsula-136x100-v1.0.sav
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/freeciv.mo
 share/locale/cs/LC_MESSAGES/freeciv.mo
 share/locale/da/LC_MESSAGES/freeciv.mo
 share/locale/de/LC_MESSAGES/freeciv.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/freeciv.mo
 share/locale/es/LC_MESSAGES/freeciv.mo
 share/locale/et/LC_MESSAGES/freeciv.mo
 share/locale/fi/LC_MESSAGES/freeciv.mo
 share/locale/fr/LC_MESSAGES/freeciv.mo
-share/locale/he_IL/
-share/locale/he_IL/LC_MESSAGES/
 share/locale/he_IL/LC_MESSAGES/freeciv.mo
 share/locale/hu/LC_MESSAGES/freeciv.mo
 share/locale/it/LC_MESSAGES/freeciv.mo
