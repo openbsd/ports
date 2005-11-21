@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/10/13 03:34:52 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/11/21 05:54:53 kevlo Exp $
 mediawiki/
 mediawiki/AdminSettings.sample
 mediawiki/COPYING
@@ -316,8 +316,6 @@ mediawiki/maintenance/alltrans.php
 mediawiki/maintenance/apache-ampersand.diff
 mediawiki/maintenance/archives/
 mediawiki/maintenance/archives/.htaccess
-mediawiki/maintenance/archives/moveCustomMessages.inc
-mediawiki/maintenance/archives/moveCustomMessages.php
 mediawiki/maintenance/archives/patch-archive-rev_id.sql
 mediawiki/maintenance/archives/patch-archive-text_id.sql
 mediawiki/maintenance/archives/patch-bot.sql
@@ -421,10 +419,13 @@ mediawiki/maintenance/importLogs.inc
 mediawiki/maintenance/importLogs.php
 mediawiki/maintenance/importPhase2.php
 mediawiki/maintenance/importUseModWiki.php
+mediawiki/maintenance/initStats.php
 mediawiki/maintenance/interwiki.sql
 mediawiki/maintenance/liveCmdLine.inc
 mediawiki/maintenance/mcc.php
 mediawiki/maintenance/mwdocgen.php
+mediawiki/maintenance/mysql5/
+mediawiki/maintenance/mysql5/tables.sql
 mediawiki/maintenance/namespace2sql.php
 mediawiki/maintenance/namespaceDupes.php
 mediawiki/maintenance/orphans.php
@@ -445,7 +446,6 @@ mediawiki/maintenance/rebuildrecentchanges.inc
 mediawiki/maintenance/rebuildrecentchanges.php
 mediawiki/maintenance/rebuildtextindex.inc
 mediawiki/maintenance/rebuildtextindex.php
-mediawiki/maintenance/recount.sql
 mediawiki/maintenance/redundanttrans.php
 mediawiki/maintenance/refreshLinks.inc
 mediawiki/maintenance/refreshLinks.php
