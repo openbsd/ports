@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2005/10/13 06:04:30 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.12 2005/11/21 06:01:25 kevlo Exp $
 phpMyAdmin/
 phpMyAdmin/CREDITS
 phpMyAdmin/ChangeLog
@@ -7,7 +7,7 @@ phpMyAdmin/Documentation.txt
 phpMyAdmin/INSTALL
 phpMyAdmin/LICENSE
 phpMyAdmin/README
-phpMyAdmin/RELEASE-DATE-2.6.4-pl2
+phpMyAdmin/RELEASE-DATE-2.6.4-pl4
 phpMyAdmin/TODO
 phpMyAdmin/browse_foreigners.php
 phpMyAdmin/calendar.php
