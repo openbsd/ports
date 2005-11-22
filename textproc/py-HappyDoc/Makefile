@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2005/09/23 19:41:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2005/11/22 22:13:23 alek Exp $
 
 COMMENT=	"Python tool for generate Python API documents"
 
 DISTNAME=	HappyDoc_r2_1
-PKGNAME=	py-HappyDoc-2.1
+PKGNAME=	py-HappyDoc-2.1p0
 CATEGORIES=    	textproc
 
 HOMEPAGE=	http://happydoc.sf.net/
@@ -18,6 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/python
 
 NO_REGRESS=	Yes
-WRKSRC=		${WRKDIR}/HappyDoc-r2_1
+WRKDIST=	${WRKDIR}/HappyDoc-r2_1
 
 .include <bsd.port.mk>
