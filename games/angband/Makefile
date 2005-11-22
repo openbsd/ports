@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2005/11/03 17:01:05 niallo Exp $
+# $OpenBSD: Makefile,v 1.15 2005/11/22 20:06:13 niallo Exp $
 # Original from: Robert Ruehlmann
 
 COMMENT=		"rogue-like game with X11 support"
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_CDROM= "unclear license"
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c ncurses
 
-MASTER_SITES=		ftp://clockwork.dementia.org/angband/Source/ \
+MASTER_SITES=		ftp://ftp.thangorodrim.net/pub/angband/Source/ \
+			ftp://clockwork.dementia.org/angband/Source/ \
 			ftp://ftp.sunet.se/pub/games/Angband/Source/
 
 CONFIGURE_STYLE=	gnu
