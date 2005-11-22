@@ -1,5 +1,0 @@
-$OpenBSD: patch-j2se_src_share_classes_com_sun_tools_javah_resources_OpenBSD_i386_properties,v 1.1.1.1 2005/05/25 17:27:53 kurt Exp $
---- j2se/src/share/classes/com/sun/tools/javah/resources/OpenBSD_i386.properties.orig	Tue Jan 25 22:16:08 2005
-+++ j2se/src/share/classes/com/sun/tools/javah/resources/OpenBSD_i386.properties	Tue Jan 25 22:16:08 2005
-@@ -0,0 +1 @@
-+# OpenBSD/i386 specific properties

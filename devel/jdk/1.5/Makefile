@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/09/16 09:51:27 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2005/11/22 14:43:05 kurt Exp $
 
 ONLY_FOR_ARCHS= 	i386
 
@@ -21,7 +21,7 @@ MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 
 DISTFILES=		${DISTNAME}-src-scsl.zip \
 			${DISTNAME}-bin-scsl.zip \
-			bsd-jdk15-patches-1.tar.bz2
+			bsd-jdk15-patches-2.tar.bz2
 
 # Sun Community Source License
 # http://www.sun.com/software/communitysource/j2se/java2/license.html
@@ -67,7 +67,7 @@ FETCH_MANUALLY+=	"    ${DISTNAME}-src-scsl.zip"
 FETCH_MANUALLY+=	"    ${DISTNAME}-bin-scsl.zip"
 FETCH_MANUALLY+=	"from http://wwws.sun.com/software/communitysource/j2se/java2/download.html"
 FETCH_MANUALLY+=	"Get the BSD patchset file:"
-FETCH_MANUALLY+=	"    bsd-jdk15-patches-1.tar.bz2"
+FETCH_MANUALLY+=	"    bsd-jdk15-patches-2.tar.bz2"
 FETCH_MANUALLY+=	"from http://www.eyesbeyond.com/freebsddom/java/jdk15.html"
 
 FLAVORS=		with_ipv6

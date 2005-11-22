@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_build_bsd_makefiles_vm_make,v 1.1.1.1 2005/05/25 17:27:53 kurt Exp $
---- hotspot/build/bsd/makefiles/vm.make.orig	Wed Feb 16 21:21:03 2005
-+++ hotspot/build/bsd/makefiles/vm.make	Wed Feb 16 21:54:14 2005
+$OpenBSD: patch-hotspot_build_bsd_makefiles_vm_make,v 1.2 2005/11/22 14:43:05 kurt Exp $
+--- hotspot/build/bsd/makefiles/vm.make.orig	Wed Nov 16 17:13:31 2005
++++ hotspot/build/bsd/makefiles/vm.make	Wed Nov 16 21:21:40 2005
 @@ -71,6 +71,10 @@ BUILD_VERSION$(HOTSPOT_BUILD_VERSION) = 
  
  CPPFLAGS = ${SYSDEFS} ${INCLUDES} ${BUILD_VERSION}
@@ -12,24 +12,3 @@ $OpenBSD: patch-hotspot_build_bsd_makefiles_vm_make,v 1.1.1.1 2005/05/25 17:27:5
  # Suppress warnings (for now)
  CFLAGS += -w
  
-@@ -140,6 +144,11 @@ verbose-echo$(MAKE_VERBOSE) = :
- 
- LIBS += -lm -pthread
- 
-+# g++ doesn't recognize -pthread, add it manually
-+ifeq ($(TRUE_PLATFORM), OpenBSD)
-+LIBS += -lpthread
-+endif
-+
- JVM = jvm$(G_SUFFIX)
- LIBJVM = lib$(JVM).so
- 
-@@ -200,7 +209,7 @@ LIBJVM.o/LINK_INTO_LIBJVM  = $(Obj_Files
- 
- $(LIBJVM): $(LIBJVM.o)
- 	echo Linking vm... ; \
--	${LINK_LIB} ${LIB_FLAGS} ${LFLAGS_VM} -z noversion -o $@ $(LIBJVM.o) $(LIBS)
-+	${LINK_LIB} ${LIB_FLAGS} ${LFLAGS_VM} -o $@ $(LIBJVM.o) $(LIBS)
- ifdef STRIP
- 	echo Stripping vm... ; \
- 	$(STRIP) $(LIBJVM)
