@@ -1,6 +1,6 @@
-$OpenBSD: patch-mergemaster_sh,v 1.7 2003/07/23 19:12:18 naddy Exp $
+$OpenBSD: patch-mergemaster_sh,v 1.8 2005/11/22 18:36:00 naddy Exp $
 --- mergemaster.sh.orig	Sun May 11 00:06:02 2003
-+++ mergemaster.sh	Wed Jul 23 02:40:22 2003
++++ mergemaster.sh	Tue Nov 22 16:20:13 2005
 @@ -10,7 +10,7 @@
  
  # $FreeBSD: mergemaster.sh,v 1.46 2003/05/03 06:35:19 dougb Exp $
@@ -66,18 +66,19 @@ $OpenBSD: patch-mergemaster_sh,v 1.7 2003/07/23 19:12:18 naddy Exp $
    ;; # End of the "RERUN" test
  esac
  
-@@ -567,10 +559,7 @@ esac
+@@ -567,11 +559,8 @@ esac
  # or spwd.db.  Instead, we want to compare the text versions, and run *_mkdb.
  # Prompt the user to do so below, as needed.
  #
 -rm -f ${TEMPROOT}/etc/*.db ${TEMPROOT}/etc/passwd
--
--# We only need to compare things like freebsd.cf once
--find ${TEMPROOT}/usr/obj -type f -delete 2>/dev/null
 +rm -f ${TEMPROOT}/etc/*.db ${TEMPROOT}/etc/mail/*.db ${TEMPROOT}/etc/passwd
  
+-# We only need to compare things like freebsd.cf once
+-find ${TEMPROOT}/usr/obj -type f -delete 2>/dev/null
+-
  # Get ready to start comparing files
  
+ # Check umask if not specified on the command line,
 @@ -605,50 +594,6 @@ fi
  
  CONFIRMED_UMASK=${NEW_UMASK:-0022}
@@ -143,7 +144,7 @@ $OpenBSD: patch-mergemaster_sh,v 1.7 2003/07/23 19:12:18 naddy Exp $
  }
  
  mm_install () {
-@@ -698,7 +639,9 @@ mm_install () {
+@@ -698,65 +639,17 @@ mm_install () {
        NEED_NEWALIASES=yes
        ;;
      /etc/login.conf)
@@ -154,7 +155,65 @@ $OpenBSD: patch-mergemaster_sh,v 1.7 2003/07/23 19:12:18 naddy Exp $
        ;;
      /etc/master.passwd)
        do_install_and_rm 600 "${1}" "${DESTDIR}${INSTALL_DIR}"
-@@ -1015,47 +958,27 @@ fi
+       NEED_PWD_MKDB=yes
+       DONT_INSTALL=yes
+       ;;
+-    /.cshrc | /.profile)
+-    case "${AUTO_INSTALL}" in
+-    '')
+-      case "${LINK_EXPLAINED}" in
+-      '')
+-        echo "   *** Historically BSD derived systems have had a"
+-        echo "       hard link from /.cshrc and /.profile to"
+-        echo "       their namesakes in /root.  Please indicate"
+-        echo "       your preference below for bringing your"
+-        echo "       installed files up to date."
+-        echo ''
+-        LINK_EXPLAINED=yes
+-        ;;
+-      esac
+-
+-      echo "   Use 'd' to delete the temporary ${COMPFILE}"
+-      echo "   Use 'l' to delete the existing ${DESTDIR}${COMPFILE#.} and create the link"
+-      echo ''
+-      echo "   Default is to leave the temporary file to deal with by hand"
+-      echo ''
+-      echo -n "  How should I handle ${COMPFILE}? [Leave it to install later] "
+-      read HANDLE_LINK
+-      ;;
+-    *)  # Part of AUTO_INSTALL
+-      HANDLE_LINK=l
+-      ;;
+     esac
+ 
+-      case "${HANDLE_LINK}" in
+-      [dD]*)
+-        rm "${COMPFILE}"
+-        echo ''
+-        echo "   *** Deleting ${COMPFILE}"
+-        ;;
+-      [lL]*)
+-        echo ''
+-        rm -f "${DESTDIR}${COMPFILE#.}"
+-        if ln "${DESTDIR}/root/${COMPFILE##*/}" "${DESTDIR}${COMPFILE#.}"; then
+-          echo "   *** Link from ${DESTDIR}${COMPFILE#.} to ${DESTDIR}/root/${COMPFILE##*/} installed successfully"
+-          rm "${COMPFILE}"
+-        else
+-          echo "   *** Error linking ${DESTDIR}${COMPFILE#.} to ${DESTDIR}/root/${COMPFILE##*/}, ${COMPFILE} will remain to install by hand"
+-        fi
+-        ;;
+-      *)
+-        echo "   *** ${COMPFILE} will remain for your consideration"
+-        ;;
+-      esac
+-      DONT_INSTALL=yes
+-      ;;
+-    esac
+-
+     case "${DONT_INSTALL}" in
+     '')
+       do_install_and_rm "${FILE_MODE}" "${1}" "${DESTDIR}${INSTALL_DIR}"
+@@ -1015,47 +908,27 @@ fi
  case "${COMP_CONFS}" in
  '') ;;
  *)
