@@ -1,43 +1,21 @@
-$OpenBSD: patch-install_sh,v 1.13 2005/09/21 11:38:51 sturm Exp $
---- install.sh.orig	Fri Sep 16 12:16:47 2005
-+++ install.sh	Tue Sep 20 11:14:10 2005
-@@ -1132,7 +1132,7 @@ run_install()
- 	    mkdir $mkdirv $mkdirp $share_dir/help/
- 	    chmod $chmodv 755 $share_dir/help
- 	    cp $cpv $cpf $cpR help/* $share_dir/help/
--	    if not test -d "$doc_dir/help"; then ln -s $str_localdirshare/help $doc_dir/help; fi
-+	    ln -s $str_localdirshare/help $doc_dir/help
- 	fi
- 
- 	mkdir $mkdirv $mkdirp $share_dir/config/
-@@ -1182,9 +1182,7 @@ run_install()
- 	chmod $chmodv 755 $share_dir/styles/user
- 	cp $cpv $cpf $cpR styles/user/* $share_dir/styles/user/
- 
--	if not test -f "$share_dir/styles/OPF.css"; then
--	    ln $lns opf.css $share_dir/styles/OPF.css
--	fi
-+	ln $lns opf.css $share_dir/styles/OPF.css
- 
- 	cp $cpv $cpf chartables.bin $share_dir/
- 
-@@ -1295,7 +1293,7 @@ run_install()
- 
+$OpenBSD: patch-install_sh,v 1.14 2005/11/22 21:44:22 sturm Exp $
+--- install.sh.orig	Tue Nov 22 22:07:45 2005
++++ install.sh	Tue Nov 22 22:13:47 2005
+@@ -1302,7 +1302,7 @@ run_install()
+     then
  	# System wide configuration files
  	config_dir="/etc"
--	if can_write_to "$config_dir"; then
-+	if false can_write_to "$config_dir"; then
+-	if can_write_to "$config_dir"
++	if false can_write_to "$config_dir"
+ 	then
  	    echo
  	    echo "System wide configuration files:"
- 	    echo "  $config_dir/opera6rc"
-@@ -1322,9 +1320,7 @@ run_install()
- 	if test "$flag_mode" = "--force" -o "$flag_mode" = "--prefix="; then
+@@ -1332,7 +1332,7 @@ run_install()
+ 	then
  	    echo
- 	    echo "Shortcut icons cannot be installed with the prefix \"$prefix\"."
--	    if not con_firm "Do you still want to install them"; then
--		bool_icons=0
--	    fi
+ 	    echo "Shortcut icons will be ignored if installed with the prefix \"$prefix\"."
+-	    con_firm "Do you want to (try to) install them in default locations" || bool_icons=0
 +	    bool_icons=0
  	fi
  
- 	if test "${bool_icons}" -ne 0; then
+ 	if test "${bool_icons}" -ne 0
