@@ -1,0 +1,11 @@
+--- pine-4.64.orig/imap/src/osdep/unix/env_unix.h
++++ imap/src/osdep/unix/env_unix.h
+@@ -56,7 +56,7 @@
+  * for they are subtle and quick to anger.
+  */
+ 
+-#define MANDATORYLOCKPROT 0666	/* don't change this */
++#define MANDATORYLOCKPROT 0600	/* don't change this */
+ 
+ /* Function prototypes */
+ 
