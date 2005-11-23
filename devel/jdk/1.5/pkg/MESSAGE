@@ -1,0 +1,12 @@
+To use the Java plugin with Mozilla or Mozilla-firefox you must create
+a symbolic link (do not copy or hard link) from
+
+${PREFIX}/${JDKHOME}/jre/plugin/i386/ns7/libjavaplugin_oji.so
+
+to your local Mozilla plugins directory, which is found at
+
+~/.mozilla/plugins/
+
+or to the shared Mozilla plugins directory, which is found at
+
+${PREFIX}/lib/mozilla-plugins/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/11/22 14:48:07 kurt Exp $
+# $OpenBSD: Makefile,v 1.8 2005/11/23 19:39:13 kurt Exp $
 
 ONLY_FOR_ARCHS= 	i386
 
@@ -6,8 +6,8 @@ COMMENT=		"Java2(TM) Standard Edition Dev Kit v${V}"
 COMMENT-jre=		"Java2(TM) Standard Edition Runtime Environment v${V}"
 V=			1.5.0
 DISTNAME=		jdk-1_5_0
-PKGNAME=		jdk-${V}p3
-PKGNAME-jre=		jre-${V}p3
+PKGNAME=		jdk-${V}p4
+PKGNAME-jre=		jre-${V}p4
 
 CATEGORIES=		devel/jdk java
 
@@ -52,7 +52,6 @@ TAR=			${LOCALBASE}/bin/gtar
 MAKE_ENV=		ALT_MOTIF_DIR="${LOCALBASE}" \
 			SKIP_COMPARE_IMAGES="YES" \
 			DONT_BUILD_DOCS="YES" \
-			DONT_BUILD_DEPLOY="YES" \
 			DONT_BUILD_INSTALL="YES" \
 			LANG="C" \
 			CC="${CC}" \
@@ -70,7 +69,7 @@ FETCH_MANUALLY+=	"Get the BSD patchset file:"
 FETCH_MANUALLY+=	"    bsd-jdk15-patches-2.tar.bz2"
 FETCH_MANUALLY+=	"from http://www.eyesbeyond.com/freebsddom/java/jdk15.html"
 
-FLAVORS=		with_ipv6
+FLAVORS=		no_web with_ipv6
 PSEUDO_FLAVORS=		native_bootstrap
 FLAVOR?=
 
@@ -84,6 +83,14 @@ MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/${JDKHOME}"
 .else
 BUILD_DEPENDS+=		:jdk-1.4*:devel/jdk/1.4
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/jdk-1.4.2/"
+.endif
+
+.if !${FLAVOR:L:Mno_web}
+BUILD_DEPENDS+=		:mozilla-devel-*:www/mozilla,-devel
+.else
+#no plugin - no messages
+MESSAGE=                /dev/null
+MAKE_ENV+=		DONT_BUILD_DEPLOY="YES"
 .endif
 
 JDKHOME=		jdk-${V}
@@ -106,6 +113,7 @@ pre-patch:
 
 post-build:
 	@rm -rf ${JDKIMAGEDIR}/demo/jfc/SwingSet2/resources \
+		${JDKIMAGEDIR}/demo/plugin/jfc/SwingSet2/resources \
 		${JDKIMAGEDIR}/man/ja \
 		${JDKIMAGEDIR}/man/ja_JP.eucJP \
 		${JREIMAGEDIR}/man/ja \

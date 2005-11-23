@@ -15,6 +15,9 @@ Flavors:
     previously installed devel/jdk/1.5 package, the port will
     build the jdk twice!
 
+  no_web
+    The Mozilla plugin and Java Web Start (javaws) are not built.
+
   with_ipv6
     Build the jdk/jre with ipv6 support. When the jdk/jre is built
     with this flavor, java will create only ipv6 sockets by default.

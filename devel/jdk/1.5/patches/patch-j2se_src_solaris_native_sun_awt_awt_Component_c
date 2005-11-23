@@ -1,0 +1,12 @@
+$OpenBSD: patch-j2se_src_solaris_native_sun_awt_awt_Component_c,v 1.1 2005/11/23 19:39:13 kurt Exp $
+--- j2se/src/solaris/native/sun/awt/awt_Component.c.orig	Mon Nov 21 17:05:11 2005
++++ j2se/src/solaris/native/sun/awt/awt_Component.c	Mon Nov 21 17:05:36 2005
+@@ -1276,7 +1276,7 @@ void processTree(Widget from, Widget to,
+             }
+             XtVaSetValues(to, XmNtraversalOn, True, NULL);
+         }
+-    } else if (from != NULL) {
++    } else if (from != NULL && to != NULL) {
+         // disable the tree starting from uncommon part to 'from'
+         if (parents_from[index] == parents_to[index]) {
+             if (index == count_from - 1) {
