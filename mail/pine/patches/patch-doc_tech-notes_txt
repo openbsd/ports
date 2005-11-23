@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_tech-notes_txt,v 1.5 2005/04/29 19:51:35 jakob Exp $
---- doc/tech-notes.txt.orig	Thu Apr 28 20:29:46 2005
-+++ doc/tech-notes.txt	Fri Apr 29 19:49:47 2005
+$OpenBSD: patch-doc_tech-notes_txt,v 1.6 2005/11/23 13:44:25 jakob Exp $
+--- doc/tech-notes.txt.orig	Thu Sep 15 23:03:43 2005
++++ doc/tech-notes.txt	Wed Nov 23 14:26:30 2005
 @@ -333,14 +333,14 @@ SMTP and Sendmail
            sendmail-path, smtp-server, and compile-time options. The first
            MTA specified in the following list is used:
@@ -154,7 +154,7 @@ $OpenBSD: patch-doc_tech-notes_txt,v 1.5 2005/04/29 19:51:35 jakob Exp $
     the definitions for SYSTEM_PINERC and SYSTEM_PINERC_FIXED in
     pine/osdep/os-xxx.h are set to.) The location of the pine.conf file
     can be changed with the -P command line argument. Both _Pine_ and
-@@ -3757,7 +3758,7 @@ General Configuration Variables
+@@ -3761,7 +3762,7 @@ General Configuration Variables
            spell checker. If your Unix system has _ispell_ it is probably
            reasonable to make it the default speller by configuring it as
            the default in the system configuration file,
@@ -163,7 +163,7 @@ $OpenBSD: patch-doc_tech-notes_txt,v 1.5 2005/04/29 19:51:35 jakob Exp $
            If this option is not set, then the system's _spell_ command is
            used. The spell command does not work the same as the alternate
            speller. It produces a list of misspelled words on its standard
-@@ -4153,11 +4154,11 @@ General Configuration Variables
+@@ -4157,11 +4158,11 @@ General Configuration Variables
            Now for an example:
            
       url-viewers=_TEST("test -n '${DISPLAY}'")_ /usr/local/bin/netscape,
@@ -177,7 +177,7 @@ $OpenBSD: patch-doc_tech-notes_txt,v 1.5 2005/04/29 19:51:35 jakob Exp $
            exist. If it doesn't, then the final path and file must exist.
            Note that the last entry is a DOS/Windows path. This is one way
            to support _Pine_ running on more than one architecture with
-@@ -10084,10 +10085,10 @@ Configuration Inheritance
+@@ -10121,10 +10122,10 @@ Configuration Inheritance
      5. the system-wide _fixed_ configuration file (Unix _Pine_ only)
         
     The fixed configuration file is normally
@@ -190,7 +190,7 @@ $OpenBSD: patch-doc_tech-notes_txt,v 1.5 2005/04/29 19:51:35 jakob Exp $
     _PC-Pine_. For _PC-Pine_, if the environment variable _$PINECONF_ is
     set, that is used for the system-wide configuration. This location can
     be set or changed on the command line with the -P flag. The
-@@ -10347,17 +10348,16 @@ SMTP Servers
+@@ -10384,17 +10385,16 @@ SMTP Servers
       * A program that implements the SMTP or ESMTP protocol via stdio.
       * An entry in /etc/services for the alternate service.
       * An entry in /etc/inetd.conf for the alternate service.
@@ -212,7 +212,7 @@ $OpenBSD: patch-doc_tech-notes_txt,v 1.5 2005/04/29 19:51:35 jakob Exp $
     
     In DOS and OS/2, _Pine_ looks in the same directory as the PINERC file
     and the same dir as PINE.EXE. This is similar to the UNIX situation
-@@ -11532,7 +11532,7 @@ Printers and Printing
+@@ -11569,7 +11569,7 @@ Printers and Printing
     
     The second selection is the standard UNIX print command. The default
     is _lpr_, but it can be changed on a system basis to anything so
@@ -221,7 +221,7 @@ $OpenBSD: patch-doc_tech-notes_txt,v 1.5 2005/04/29 19:51:35 jakob Exp $
     
     The third selection is the user's personal choice for a UNIX print
     command. The text to be printed is piped into the command. _Enscript_
-@@ -11986,9 +11986,9 @@ Test Checklist
+@@ -12023,9 +12023,9 @@ Test Checklist
            Error messages for incorrect terminal types (try "foo" and
            "vt52")
     ___

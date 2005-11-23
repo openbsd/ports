@@ -1,7 +1,7 @@
-$OpenBSD: patch-pine_mailview_c,v 1.3 2005/04/29 19:51:35 jakob Exp $
---- pine/mailview.c.orig	Wed Apr 27 20:55:02 2005
-+++ pine/mailview.c	Fri Apr 29 19:49:47 2005
-@@ -4391,6 +4391,9 @@ url_hilite(linenum, line, ins, local)
+$OpenBSD: patch-pine_mailview_c,v 1.4 2005/11/23 13:44:25 jakob Exp $
+--- pine/mailview.c.orig	Tue Sep 20 20:26:20 2005
++++ pine/mailview.c	Wed Nov 23 14:26:30 2005
+@@ -4392,6 +4392,9 @@ url_hilite(linenum, line, ins, local)
      char	   buf[256], color[256];
      HANDLE_S	  *h;
  
@@ -11,7 +11,7 @@ $OpenBSD: patch-pine_mailview_c,v 1.3 2005/04/29 19:51:35 jakob Exp $
      for(lp = line; ; lp = up + n){
  	/* scan for all of them so we can choose the first */
  	if(F_ON(F_VIEW_SEL_URL,ps_global))
-@@ -4466,6 +4469,9 @@ url_hilite_hdr(linenum, line, ins, local
+@@ -4467,6 +4470,9 @@ url_hilite_hdr(linenum, line, ins, local
      static int     check_for_urls = 0;
      register char *lp;
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-pine_mailview_c,v 1.3 2005/04/29 19:51:35 jakob Exp $
      if(isspace((unsigned char)*line))	/* continuation, check or not 
  					   depending on last line */
        lp = line;
-@@ -4509,7 +4515,7 @@ url_hilite_abook(linenum, line, ins, loc
+@@ -4510,7 +4516,7 @@ url_hilite_abook(linenum, line, ins, loc
  {
      register char *lp;
  
