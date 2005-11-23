@@ -9,11 +9,6 @@ positives.
 
 Available flavors are:
 
-- daemon: add the ability to run dspam as multiple clients connecting to a
-central server. This flavor is required in order to use the --daemon and
---client command-line switches. However, the daemon mode is currently
-incompatible with sqlite.
-
 - clamav: enable usage of the clam antivirus.
 
 - ldap: include support for LDAP verification.

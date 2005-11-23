@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_util_c,v 1.1 2005/10/26 06:18:39 jakob Exp $
---- src/util.c.orig	Sat Oct  1 06:32:19 2005
-+++ src/util.c	Mon Oct 17 14:48:42 2005
+$OpenBSD: patch-src_util_c,v 1.2 2005/11/23 08:52:49 jakob Exp $
+--- src/util.c.orig	Wed Oct 26 19:39:32 2005
++++ src/util.c	Tue Nov  8 16:13:59 2005
 @@ -278,7 +278,7 @@ const char * _ds_userdir_path (char *pat
  #endif
  
@@ -19,23 +19,7 @@ $OpenBSD: patch-src_util_c,v 1.1 2005/10/26 06:18:39 jakob Exp $
  #endif
  
    /* Use home/opt-in/ and home/opt-out/ to store opt files, instead of
-@@ -675,6 +675,7 @@ float _ds_round(float n) {
-   return (r/100.0);
- }
- 
-+#ifndef __HAVE_STRCASESTR__
- char *
- strcasestr(s, find)
- 	const char *s, *find;
-@@ -695,6 +696,7 @@ strcasestr(s, find)
- 	}
- 	return ((char *)s);
- }
-+#endif
- 
- #ifndef HAVE_INET_NTOA_R
- /*
-@@ -746,6 +748,7 @@ inet_ntoa_r(struct in_addr in, char *buf
+@@ -748,6 +748,7 @@ inet_ntoa_r(struct in_addr in, char *buf
      return(NULL);
    }
  

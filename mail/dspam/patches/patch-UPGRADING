@@ -1,0 +1,16 @@
+$OpenBSD: patch-UPGRADING,v 1.1 2005/11/23 08:52:49 jakob Exp $
+--- UPGRADING.orig	Tue Oct 25 14:32:09 2005
++++ UPGRADING	Tue Nov  8 23:44:49 2005
+@@ -8,8 +8,10 @@ UPGRADING FROM < 3.6.1
+ 
+ - For users of hash_drv: A cssconvert tool has been provided to convert all
+   v3.6.0 databases to the correct, 8-byte aligned format used in all newer
+-  versions. Please run cssconvert on all of your .css databases before 
+-  turning on your new version of dspam.
++  versions. 
++  
++  The OpenBSD port of DSPAM 3.6.0 already used the correctly aligned format,
++  so that you don't need to run cssconvert before upgrading to 3.6.1 and later.
+ 
+ UPGRADING FROM < 3.6.0
+ ----------------------

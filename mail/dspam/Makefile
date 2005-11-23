@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2005/10/26 06:18:38 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2005/11/23 08:52:48 jakob Exp $
 
 COMMENT=	"anti-spam filter"
 
-VERSION=	3.6.0
+VERSION=	3.6.1
 DISTNAME=	dspam-${VERSION}
 CATEGORIES=	mail
 
@@ -40,7 +40,7 @@ DOCS=		${WRKSRC}/README ${WRKSRC}/UPGRADING ${WRKSRC}/RELEASE.NOTES \
 EXAMPLESDIR=	${PREFIX}/share/examples/dspam
 DRIVER=
 
-FLAVORS=	sqlite3 sqlite mysql pgsql hash daemon clamav ldap
+FLAVORS=	sqlite3 sqlite mysql pgsql hash clamav ldap
 FLAVOR?=	sqlite3
 
 .if ${FLAVOR:L:Mmysql}
@@ -83,7 +83,7 @@ BROKEN=			choose either mysql or pgsql or sqlite or sqlite3 or hash
 CONFIGURE_ARGS+=	--with-storage-driver=sqlite_drv \
 			--with-sqlite-includes=${LOCALBASE}/include \
 			--with-sqlite-libraries=${LOCALBASE}/lib
-LIB_DEPENDS=		sqlite::databases/sqlite
+LIB_DEPENDS+=		sqlite.8::databases/sqlite
 DRIVER=			sqlite
 .endif
 
@@ -96,29 +96,23 @@ FLAVOR+=		sqlite3
 CONFIGURE_ARGS+=	--with-storage-driver=sqlite3_drv \
 			--with-sqlite-includes=${LOCALBASE}/include \
 			--with-sqlite-libraries=${LOCALBASE}/lib
-LIB_DEPENDS=		sqlite3::databases/sqlite3
+LIB_DEPENDS+=		sqlite3.8::databases/sqlite3
 DRIVER=			sqlite
 .endif
 
 .if ${FLAVOR:L:Mclamav}
 CONFIGURE_ARGS+=	--enable-clamav
-LIB_DEPENDS=		clamav.1::security/clamav
+LIB_DEPENDS+=		clamav.1::security/clamav
 .endif
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--enable-ldap
-LIB_DEPENDS=		ldap_r.7,lber.7::databases/openldap
+LIB_DEPENDS+=		ldap_r.8,lber.8::databases/openldap
 CONFIGURE_ENV=		CPPFLAGS="-I${DEPBASE}/include" \
 			LDFLAGS="-L${DEPBASE}/lib"
 .endif
 
-.if ${FLAVOR:L:Mdaemon}
-.if ${FLAVOR:L:Msqlite3}
-BROKEN=			daemon mode is currently incompatible with sqlite3
-.endif
-.if ${FLAVOR:L:Msqlite}
-BROKEN=			daemon mode is currently incompatible with sqlite
-.endif
+.if empty(FLAVOR:L:Msqlite3) && empty(FLAVOR:L:Msqlite)
 CONFIGURE_ARGS+=	--enable-daemon
 .endif
 

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_dspam_c,v 1.1 2005/10/26 06:18:38 jakob Exp $
---- src/dspam.c.orig	Tue Oct  4 18:22:58 2005
-+++ src/dspam.c	Mon Oct 17 14:48:42 2005
+$OpenBSD: patch-src_dspam_c,v 1.2 2005/11/23 08:52:49 jakob Exp $
+--- src/dspam.c.orig	Tue Oct 25 14:32:09 2005
++++ src/dspam.c	Tue Nov  8 16:11:16 2005
 @@ -382,7 +382,7 @@ process_message (
        CTX->confidence = 1.0;
        STATUS("A virus was detected in the message contents");
@@ -50,7 +50,7 @@ $OpenBSD: patch-src_dspam_c,v 1.1 2005/10/26 06:18:38 jakob Exp $
    if (_ds_pref_val(ATX->PTX, "spamSubject")[0] != '\n' &&
        _ds_pref_val(ATX->PTX, "spamSubject")[0] != 0)
    {
-@@ -1572,7 +1572,7 @@ int process_users(AGENT_CTX *ATX, buffer
+@@ -1596,7 +1596,7 @@ int process_users(AGENT_CTX *ATX, buffer
      if (parse_message == NULL) {
        LOG(LOG_CRIT, ERR_MEM_ALLOC);
        presult->exitcode = ERC_PROCESS;
