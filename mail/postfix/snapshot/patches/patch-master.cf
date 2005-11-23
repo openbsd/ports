@@ -1,23 +1,23 @@
-$OpenBSD: patch-master.cf,v 1.14 2005/02/07 22:31:32 jakob Exp $
+$OpenBSD: patch-master.cf,v 1.15 2005/11/23 01:02:39 brad Exp $
 
---- conf/master.cf.orig	Mon Jan 24 20:12:46 2005
-+++ conf/master.cf	Mon Feb  7 23:15:42 2005
+--- conf/master.cf.orig	Wed Nov  9 15:42:38 2005
++++ conf/master.cf	Tue Nov 22 19:24:39 2005
 @@ -6,41 +6,41 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (yes)   (never) (100)
  # ==========================================================================
 -smtp      inet  n       -       n       -       -       smtpd
--#submission inet n      -       n       -       -       smtpd
+-#submission inet n       -       n       -       -       smtpd
 +smtp      inet  n       -       -       -       -       smtpd
-+#submission inet n      -       -       -       -       smtpd
- #	-o smtpd_etrn_restrictions=reject
- #	-o smtpd_client_restrictions=permit_sasl_authenticated,reject
--#smtps    inet  n       -       n       -       -       smtpd
-+#smtps    inet  n       -       -       -       -       smtpd
- #  -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes
- #submission   inet    n       -       n       -       -       smtpd
- #  -o smtpd_etrn_restrictions=reject
- #  -o smtpd_enforce_tls=yes -o smtpd_sasl_auth_enable=yes
++#submission inet n       -       -       -       -       smtpd
+ #  -o smtpd_enforce_tls=yes
+ #  -o smtpd_sasl_auth_enable=yes
+ #  -o smtpd_client_restrictions=permit_sasl_authenticated,reject
+-#smtps     inet  n       -       n       -       -       smtpd
++#smtps     inet  n       -       -       -       -       smtpd
+ #  -o smtpd_tls_wrappermode=yes
+ #  -o smtpd_sasl_auth_enable=yes
+ #  -o smtpd_client_restrictions=permit_sasl_authenticated,reject
 -#628      inet  n       -       n       -       -       qmqpd
 -pickup    fifo  n       -       n       60      1       pickup
 -cleanup   unix  n       -       n       -       0       cleanup

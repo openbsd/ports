@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2005/06/22 18:16:53 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.36 2005/11/23 01:02:39 brad Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -52,6 +52,7 @@ libexec/postfix/virtual
 @man man/man5/access.5
 @man man/man5/aliases.5
 @man man/man5/body_checks.5
+@man man/man5/bounce.5
 @man man/man5/canonical.5
 @man man/man5/cidr_table.5
 @man man/man5/generic.5
@@ -275,6 +276,7 @@ share/examples/postfix/LICENSE
 share/examples/postfix/TLS_LICENSE
 share/examples/postfix/access
 share/examples/postfix/aliases
+share/examples/postfix/bounce.cf.default
 share/examples/postfix/canonical
 share/examples/postfix/generic
 share/examples/postfix/header_checks
