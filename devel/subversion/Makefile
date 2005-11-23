@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2005/11/04 09:42:31 alek Exp $
+# $OpenBSD: Makefile,v 1.13 2005/11/23 15:16:30 robert Exp $
+
+.if ${MACHINE_ARCH} == "alpha"
+BROKEN=		"svnversion segfaults during fake"
+.endif
 
 COMMENT=	"subversion revision control system"
 COMMENT-perl=	"perl interface to subversion"
