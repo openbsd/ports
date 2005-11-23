@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2005/11/20 17:46:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2005/11/23 20:38:26 naddy Exp $
 
 COMMENT=	"cooperative file distribution system implemented in Python"
 COMMENT-gui=	"graphical interface components for BitTorrent"
 
-VERSION=	4.1.8
+VERSION=	4.2.0
 DISTNAME=	BitTorrent-${VERSION}
 PKGNAME-gui=	BitTorrent-gui-${VERSION}
 CATEGORIES=	net
@@ -13,9 +13,9 @@ HOMEPAGE=	http://www.bittorrent.com/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # Custom
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_CDROM=	"may not sell without modification"
 PERMIT_DISTFILES_FTP=	Yes
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM=	"may not sell without modification"
 PERMIT_PACKAGE_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bittorrent/}
