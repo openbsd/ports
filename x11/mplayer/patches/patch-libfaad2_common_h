@@ -1,0 +1,12 @@
+$OpenBSD: patch-libfaad2_common_h,v 1.1 2005/11/23 00:05:39 biorn Exp $
+--- libfaad2/common.h.orig	Tue Nov 22 22:00:39 2005
++++ libfaad2/common.h	Tue Nov 22 22:12:29 2005
+@@ -341,7 +341,7 @@ char *strchr(), *strrchr();
+         }
+         return i;
+     }
+-  #elif (defined(__i386__) && defined(__GNUC__)) && !defined(__MINGW32__)
++  #elif (defined(__i386__) && defined(__GNUC__)) && !defined(__MINGW32__) && !defined(HAVE_LRINTF)
+     #define HAS_LRINTF
+     // from http://www.stereopsis.com/FPU.html
+     static INLINE int lrintf(float f)
