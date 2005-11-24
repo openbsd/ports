@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/10/02 12:25:01 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/11/24 20:38:40 sturm Exp $
 
 COMMENT=		"documentation for digikam"
 CATEGORIES=		graphics x11 x11/kde
@@ -16,6 +16,7 @@ MODKDE_VERSION=		3.4
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
+BUILD_DEPENDS+=		::x11/kde/libs3
 USE_GMAKE?=		Yes
 CONFIGURE_ENV+=		${MODKDE_CONFIGURE_ENV}
 MAKE_ENV=		${CONFIGURE_ENV}
