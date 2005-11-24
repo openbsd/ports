@@ -1,0 +1,85 @@
+$OpenBSD: patch-SConstruct,v 1.1 2005/11/24 22:22:57 steven Exp $
+--- SConstruct.orig	Mon Jun 13 22:56:19 2005
++++ SConstruct	Mon Nov 21 10:27:22 2005
+@@ -607,9 +607,9 @@ elif sys.platform=='openbsd3':
+ 	build_blender_static = 'false'
+ 	build_blender_player = 'false'
+ 	build_blender_plugin = 'false'
+-	release_flags = ['-O2']
+-	debug_flags = ['-O2', '-g']
+-	extra_flags = ['-pipe', '-fPIC', '-funsigned-char']
++	release_flags = []
++	debug_flags = ['-g']
++	extra_flags = ['-fPIC', '-funsigned-char']
+ 	cxxflags = []
+ 	defines = []
+ 	warn_flags = ['-Wall','-W']
+@@ -623,17 +623,17 @@ elif sys.platform=='openbsd3':
+ 	z_include = ['/usr/include']
+ 	# png library information
+ 	png_lib = ['png']
+-	png_libpath = ['/usr/local/lib']
+-	png_include = ['/usr/local/include/libpng']
++	png_libpath = ['!!LOCALBASE!!/lib']
++	png_include = ['!!LOCALBASE!!/include/libpng']
+ 	# jpeg library information
+ 	jpeg_lib = ['jpeg']
+-	jpeg_libpath = ['/usr/local/lib']
+-	jpeg_include = ['/usr/local/include']
++	jpeg_libpath = ['!!LOCALBASE!!/lib']
++	jpeg_include = ['!!LOCALBASE!!/include']
+ 	# OpenGL library information
+ 	opengl_lib = ['GL', 'GLU']
+-	opengl_static = ['/usr/lib/libGL.a', '/usr/lib/libGLU.a']
+-	opengl_libpath = ['/usr/lib', '/usr/X11R6/lib']
+-	opengl_include = ['/usr/X11R6/include/']
++	opengl_static = ['!!X11BASE!!/lib/libGL.a', '!!X11BASE!!/lib/libGLU.a']
++	opengl_libpath = ['!!X11BASE!!/lib']
++	opengl_include = ['!!X11BASE!!/include/']
+ 	# SDL library information
+ 	sdl_env.ParseConfig ('sdl-config --cflags --libs')
+ 	sdl_cflags = sdl_env.Dictionary()['CCFLAGS']
+@@ -660,13 +660,13 @@ elif sys.platform=='openbsd3':
+         ftgl_lib = []
+         ftgl_libpath = []
+         ftgl_include = ['#extern/bFTGL/include']
+-	freetype_env.ParseConfig('pkg-config --cflags --libs freetype2')
++	freetype_env.ParseConfig('freetype-config --cflags --libs 2>/dev/null')
+ 	freetype_lib = freetype_env.Dictionary()['LIBS']
+ 	freetype_libpath = freetype_env.Dictionary()['LIBPATH']
+ 	freetype_include = freetype_env.Dictionary()['CPPPATH']
+-	gettext_lib = []
+-	gettext_libpath = []
+-	gettext_include = []
++	gettext_lib = ['intl', 'iconv']
++	gettext_libpath = ['!!LOCALBASE!!/lib']
++	gettext_include = ['!!LOCALBASE!!/include']
+ 	# OpenAL library information
+ 	openal_lib = ['openal']
+ 	openal_libpath = ['/usr/lib']
+@@ -786,8 +786,8 @@ else:
+ 	
+ 	config.write ("\n# Extra compiler flags can be defined here.\n")
+ 	config.write ("DEFINES = %s\n"%(my_defines))
+-	config.write ("CCFLAGS = %s\n"%(my_ccflags))
+-	config.write ("CXXFLAGS = %s\n"%(my_cxxflags))
++	config.write ("CCFLAGS = %s\n"%(env['ENV']['CFLAGS'].split()))
++	config.write ("CXXFLAGS = %s\n"%(env['ENV']['CXXFLAGS'].split()))
+ 	config.write ("LDFLAGS = %s\n"%(my_ldflags))
+ 
+ 	config.write ("USE_INTERNATIONAL = %r\n"%(use_international))
+@@ -800,10 +800,10 @@ else:
+ 	config.write ("USE_FMOD = %r\n"%(use_fmod))
+ 	config.write ("USE_QUICKTIME = %r\n"%(use_quicktime))
+ 	config.write ("\n# Compiler information.\n")
+-	config.write ("HOST_CC = %r\n"%(env_dict['CC']))
+-	config.write ("HOST_CXX = %r\n"%(env_dict['CXX']))
+-	config.write ("TARGET_CC = %r\n"%(env_dict['CC']))
+-	config.write ("TARGET_CXX = %r\n"%(env_dict['CXX']))
++	config.write ("HOST_CC = %r\n"%(env['ENV']['CC']))
++	config.write ("HOST_CXX = %r\n"%(env['ENV']['CXX']))
++	config.write ("TARGET_CC = %r\n"%(env['ENV']['CC']))
++	config.write ("TARGET_CXX = %r\n"%(env['ENV']['CXX']))
+ 	config.write ("TARGET_AR = %r\n"%(env_dict['AR']))
+ 	config.write ("PATH = %r\n"%(os.environ['PATH']))
+ 	config.write ("\n# External library information.\n")

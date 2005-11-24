@@ -1,0 +1,76 @@
+$OpenBSD: patch-source_blender_render_intern_source_shadbuf_c,v 1.1 2005/11/24 22:22:57 steven Exp $
+--- source/blender/render/intern/source/shadbuf.c.orig	Mon Nov 21 22:36:42 2005
++++ source/blender/render/intern/source/shadbuf.c	Mon Nov 21 22:38:40 2005
+@@ -375,7 +375,7 @@ static float readshadowbuf(struct ShadBu
+ {
+ 	float temp;
+ 	int *rz, ofs;
+-	int zsamp=0;
++	long zsamp=0;
+ 	char *ct, *cz;
+ 
+ 	/* simpleclip */
+@@ -401,7 +401,7 @@ static float readshadowbuf(struct ShadBu
+ 	else if(*ct==2) {
+ 		ct= ((char *)rz);
+ 		ct+= 4+2*16*(ys & 15)+2*(xs & 15);
+-		zsamp= *rz;
++		zsamp= (long) *rz;
+ 	
+ 		cz= (char *)&zsamp;
+ 		cz[BCOMP]= ct[0];
+@@ -410,7 +410,7 @@ static float readshadowbuf(struct ShadBu
+ 	else if(*ct==1) {
+ 		ct= ((char *)rz);
+ 		ct+= 4+16*(ys & 15)+(xs & 15);
+-		zsamp= *rz;
++		zsamp= (long) *rz;
+ 
+ 		cz= (char *)&zsamp;
+ 		cz[GCOMP]= ct[0];
+@@ -419,7 +419,7 @@ static float readshadowbuf(struct ShadBu
+ 	else {
+ 		/* got warning on this from DEC alpha (64 bits).... */
+ 		/* but it's working code! (ton) */
+- 		zsamp= (int) rz;
++ 		zsamp= (long) rz;
+ 	}
+ 
+ 	/* if(zsamp >= 0x7FFFFE00) return 1.0; */	/* no shaduw when sampling at eternal distance */
+@@ -540,7 +540,8 @@ static float readshadowbuf_halo(struct S
+ {
+ 	float temp;
+ 	int *rz, ofs;
+-	int bias, zbias, zsamp;
++	int bias, zbias;
++	long zsamp;
+ 	char *ct, *cz;
+ 
+ 	/* negative! The other side is more important */
+@@ -566,7 +567,7 @@ static float readshadowbuf_halo(struct S
+ 	else if(*ct==2) {
+ 		ct= ((char *)rz);
+ 		ct+= 4+2*16*(ys & 15)+2*(xs & 15);
+-		zsamp= *rz;
++		zsamp= (long) *rz;
+ 	
+ 		cz= (char *)&zsamp;
+ 		cz[BCOMP]= ct[0];
+@@ -575,7 +576,7 @@ static float readshadowbuf_halo(struct S
+ 	else if(*ct==1) {
+ 		ct= ((char *)rz);
+ 		ct+= 4+16*(ys & 15)+(xs & 15);
+-		zsamp= *rz;
++		zsamp= (long) *rz;
+ 
+ 		cz= (char *)&zsamp;
+ 		cz[GCOMP]= ct[0];
+@@ -584,7 +585,7 @@ static float readshadowbuf_halo(struct S
+ 	else {
+ 		/* same as before */
+ 		/* still working code! (ton) */
+- 		zsamp= (int) rz;
++ 		zsamp= (long) rz;
+ 	}
+ 
+ 	/* NO schadow when sampled at 'eternal' distance */

@@ -1,0 +1,30 @@
+$OpenBSD: patch-source_blender_blenlib_intern_storage_c,v 1.1 2005/11/24 22:22:57 steven Exp $
+--- source/blender/blenlib/intern/storage.c.orig	Mon Oct 17 07:33:52 2005
++++ source/blender/blenlib/intern/storage.c	Mon Oct 17 08:31:26 2005
+@@ -50,7 +50,7 @@
+ #include <time.h>
+ #include <sys/stat.h>
+ 
+-#if !defined(linux) && (defined(__sgi) || defined(__sun__) || defined(__sun) || defined(__sparc) || defined(__sparc__))
++#if !defined(__OpenBSD__) && !defined(linux) && (defined(__sgi) || defined(__sun__) || defined(__sun) || defined(__sparc) || defined(__sparc__))
+ #include <sys/statfs.h>
+ #endif
+ 
+@@ -89,7 +89,7 @@ struct statfs {
+ #include <pwd.h>
+ #endif
+ 
+-#if !defined(__FreeBSD__) && !defined(__APPLE__)
++#if !defined(__OpenBSD__) && !defined(__FreeBSD__) && !defined(__APPLE__)
+ #include <malloc.h>
+ #endif
+ 
+@@ -194,7 +194,7 @@ double BLI_diskfree(char *dir)
+ #ifdef __BeOS
+ 	return -1;
+ #endif
+-#if !defined(linux) && (defined (__sgi) || defined (__sun__) || defined (__sun) || defined(__sparc) || defined(__sparc__))
++#if !defined(__OpenBSD__) && !defined(linux) && (defined (__sgi) || defined (__sun__) || defined (__sun) || defined(__sparc) || defined(__sparc__))
+ 
+ 	if (statfs(name, &disk, sizeof(struct statfs), 0)){
+ 		/* printf("diskfree: Couldn't get information about %s.\n",dir); */

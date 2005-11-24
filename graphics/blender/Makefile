@@ -1,37 +1,54 @@
-# $OpenBSD: Makefile,v 1.9 2002/12/29 20:08:46 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2005/11/24 22:22:56 steven Exp $
 
 COMMENT=	"3D creation software"
-ONLY_FOR_ARCHS=	i386
 
-V=		2.23
-PKGNAME=	blender-${V}
-DISTNAME=	blender-creator-${V}-linux-glibc2.1.2-i386-static
+DISTNAME=	blender-2.37a
 CATEGORIES=	graphics
 
-HOMEPAGE=	http://www.blender.nl/
+HOMEPAGE=	http://www.blender.org/
 
-MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
+MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"no commercial use"
-PERMIT_PACKAGE_FTP=	"no commercial use"
-PERMIT_DISTFILES_CDROM=	"no commercial use"
-PERMIT_DISTFILES_FTP=	"no commercial use"
+# GPL
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.cs.umn.edu/pub/blender/pub/ \
-		http://www.download.blender.pl/mirror/
+MASTER_SITES=	ftp://ftp.cs.umn.edu/pub/blender.org/source/ \
+		http://download.blender.org/source/ \
+		http://public.planetmirror.com/pub/blender/source/
 
-RUN_DEPENDS=	:redhat_base-*:emulators/redhat/base
+BUILD_DEPENDS=	:scons-*:devel/scons \
+		:pkgconfig-*:devel/pkgconfig
+LIB_DEPENDS=	png::graphics/png \
+		jpeg::graphics/jpeg \
+		SDL::devel/sdl \
+		python2.3.0.0:python-2.3.*:lang/python/2.3
 
-INSTALL_STRIP=
-NO_BUILD=	Yes
+WANTLIB=	GL GLU X11 Xext c m pthread stdc++ usbhid util z
+
+MODULES=	devel/gettext
+USE_X11=	Yes
 NO_REGRESS=	Yes
 
+WRKDIST=	${WRKDIR}/blender
+
+pre-build:
+	@perl -pi -e 's#!!LOCALBASE!!#${LOCALBASE}#g' ${WRKSRC}/SConstruct
+	@perl -pi -e 's#!!X11BASE!!#${X11BASE}#g' ${WRKSRC}/SConstruct
+
+do-build:
+	@${SETENV} ${MAKE_ENV} CC=${CC} CXX=${CXX} CXXFLAGS="${CXXFLAGS}" \
+		scons -C ${WRKBUILD}
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/blender ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/blender
-	${INSTALL_DATA} ${WRKSRC}/{README,copyright.txt} \
-		${PREFIX}/share/examples/blender
-	cd ${WRKSRC} && tar cf - plugins | \
-		(cd ${PREFIX}/share/examples/blender && tar xf -)
+	${INSTALL_PROGRAM} ${WRKBUILD}/blender ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/blender/scripts
+	${INSTALL_DATA} ${WRKSRC}/release/scripts/*.py \
+		${PREFIX}/share/blender/scripts
+	${INSTALL_DATA_DIR} ${PREFIX}/share/blender/scripts/bpymodules
+	${INSTALL_DATA} ${WRKSRC}/release/scripts/bpymodules/*.py \
+		${PREFIX}/share/blender/scripts/bpymodules
 
 .include <bsd.port.mk>

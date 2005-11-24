@@ -1,0 +1,14 @@
+$OpenBSD: patch-source_blender_src_transform_conversions_c,v 1.1 2005/11/24 22:22:57 steven Exp $
+--- source/blender/src/transform_conversions.c.orig	Mon Nov 21 22:32:14 2005
++++ source/blender/src/transform_conversions.c	Mon Nov 21 22:32:33 2005
+@@ -892,8 +892,8 @@ static void createTransLatticeVerts(Tran
+ /* ********************* mesh ****************** */
+ 
+ /* proportional distance based on connectivity  */
+-#define E_VEC(a)	(vectors + (3 * (int)(a)->vn))
+-#define E_NEAR(a)	(nears[((int)(a)->vn)])
++#define E_VEC(a)	(vectors + (3 * (long)(a)->vn))
++#define E_NEAR(a)	(nears[((long)(a)->vn)])
+ static void editmesh_set_connectivity_distance(int total, float *vectors, EditVert **nears)
+ {
+ 	EditMesh *em = G.editMesh;

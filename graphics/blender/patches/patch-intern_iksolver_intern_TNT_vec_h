@@ -1,0 +1,21 @@
+$OpenBSD: patch-intern_iksolver_intern_TNT_vec_h,v 1.1 2005/11/24 22:22:57 steven Exp $
+--- intern/iksolver/intern/TNT/vec.h.orig	Thu Jul 22 02:15:49 2004
++++ intern/iksolver/intern/TNT/vec.h	Mon Oct 17 09:41:08 2005
+@@ -37,7 +37,7 @@
+ #include <stdlib.h>
+ #include <assert.h>
+ #include <iostream>
+-#include <strstream>
++#include <sstream>
+ 
+ namespace TNT
+ {
+@@ -189,7 +189,7 @@ class Vector 
+     Vector(Subscript N, char *s) :  v_(0), vm1_(0), n_(0)
+     {
+         initialize(N);
+-        std::istrstream ins(s);
++        std::istringstream ins(s);
+ 
+         Subscript i;
+ 

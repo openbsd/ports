@@ -1,0 +1,21 @@
+$OpenBSD: patch-source_blender_blenlib_intern_fileops_c,v 1.1 2005/11/24 22:22:57 steven Exp $
+--- source/blender/blenlib/intern/fileops.c.orig	Mon Nov 21 11:14:49 2005
++++ source/blender/blenlib/intern/fileops.c	Mon Nov 21 11:15:34 2005
+@@ -65,7 +65,7 @@ char *first_slash(char *string) {
+ 	if (!ffslash) return fbslash;
+ 	else if (!fbslash) return ffslash;
+ 	
+-	if ((int)ffslash < (int)fbslash) return ffslash;
++	if (ffslash < fbslash) return ffslash;
+ 	else return fbslash;
+ }
+ 
+@@ -78,7 +78,7 @@ char *BLI_last_slash(char *string) {
+ 	if (!lfslash) return lbslash; 
+ 	else if (!lbslash) return lfslash;
+ 	
+-	if ((int)lfslash < (int)lbslash) return lbslash;
++	if (lfslash < lbslash) return lbslash;
+ 	else return lfslash;
+ }
+ 

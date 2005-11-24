@@ -1,0 +1,12 @@
+$OpenBSD: patch-extern_solid_SConscript,v 1.1 2005/11/24 22:22:57 steven Exp $
+--- extern/solid/SConscript.orig	Sun Oct 16 17:44:24 2005
++++ extern/solid/SConscript	Sun Oct 16 17:44:37 2005
+@@ -18,7 +18,7 @@ if sys.platform=='win32':
+ 	defines += ['WIN32','NDEBUG', '_WINDOWS', '_LIB']
+ 	#cflags += ['/MT', '/W3', '/GX', '/O2', '/Op']
+ 	cflags += ['/MT', '/W3', '/GX', '/Og', '/Ot', '/Ob1', '/Op', '/G6']
+-elif sys.platform=='linux2' or sys.platform=='linux-i386' or sys.platform=='freebsd4' or sys.platform=='freebsd5':
++elif sys.platform=='linux2' or sys.platform=='linux-i386' or sys.platform=='freebsd4' or sys.platform=='freebsd5' or sys.platform=='openbsd3':
+ 	defines += ['NDEBUG']
+ 	cflags += ['-O2']
+ elif sys.platform=='darwin' :

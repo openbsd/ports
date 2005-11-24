@@ -1,0 +1,15 @@
+$OpenBSD: patch-source_blender_blenkernel_intern_blender_c,v 1.1 2005/11/24 22:22:57 steven Exp $
+--- source/blender/blenkernel/intern/blender.c.orig	Mon May 30 15:20:13 2005
++++ source/blender/blenkernel/intern/blender.c	Thu Nov 24 10:54:56 2005
+@@ -696,9 +696,10 @@ void BKE_undo_save_quit(void)
+ 	/* no undo state to save */
+ 	if(undobase.first==undobase.last) return;
+ 		
++	strlcpy(U.tempdir, BLI_gethome(), sizeof(U.tempdir));
+ 	BLI_make_file_string("/", str, U.tempdir, "quit.blend");
+ 
+-	file = open(str,O_BINARY+O_WRONLY+O_CREAT+O_TRUNC, 0666);
++	file = open(str,O_WRONLY|O_CREAT|O_TRUNC, 0666);
+ 	if(file == -1) {
+ 		printf("Unable to save %s\n", str);
+ 		return;
