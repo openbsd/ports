@@ -1,19 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.18 2005/05/03 17:43:25 sturm Exp $
+$OpenBSD: patch-Makefile_in,v 1.19 2005/11/24 20:06:32 sturm Exp $
 
---- Makefile.in.orig	Tue Apr 26 00:58:28 2005
-+++ Makefile.in	Tue May  3 19:41:04 2005
-@@ -1351,14 +1351,7 @@ install-data-hook: amiroot
- 	set -e ; for i in . leaf.node failed.postings interesting.groups \
- 		out.going message.id temp.files ; do \
-         mkdir -p $(DESTDIR)$(SPOOLDIR)/$$i ; \
--	if ./amiroot ; then \
--	 chown @NEWS_USER@:@NEWS_GROUP@ $(DESTDIR)$(SPOOLDIR)/$$i ; \
--	 chmod 2775      $(DESTDIR)$(SPOOLDIR)/$$i ; fi ; \
- 	done
--	d="`dirname $(DESTDIR)@LOCKFILE@`" ; mkdir -p "$${d}" && \
--	if ./amiroot ; then \
--          chown @NEWS_USER@:@NEWS_GROUP@ "$${d}" ; \
--	  chmod 2775 "$${d}" ; fi
+--- Makefile.in.orig	Wed Nov 23 12:00:09 2005
++++ Makefile.in	Thu Nov 24 21:00:10 2005
+@@ -1229,7 +1229,6 @@ info-am:
  
- uninstall-local:
- 	rm -rf $(DESTDIR)$(SPOOLDIR) $(DESTDIR)@LOCKFILE@
+ install-data-am: install-man
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ 
+ install-exec-am: install-binPROGRAMS install-sbinPROGRAMS \
+ 	install-sysconfDATA
