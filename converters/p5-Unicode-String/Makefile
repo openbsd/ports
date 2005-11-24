@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2004/08/06 16:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2005/11/24 03:35:28 kevlo Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"modules to handle various Unicode issues"
 
-DISTNAME=	Unicode-String-2.07
+DISTNAME=	Unicode-String-2.09
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
 
