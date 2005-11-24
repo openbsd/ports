@@ -1,0 +1,57 @@
+$OpenBSD: patch-src_lang_c,v 1.1 2005/11/24 17:40:16 fgsch Exp $
+--- src/lang.c.orig	Tue Dec 14 21:59:25 2004
++++ src/lang.c	Wed Nov 23 19:30:32 2005
+@@ -100,13 +100,14 @@ EstrInt2Enc(const char *str, int want_ut
+    if (str == NULL)
+       return NULL;
+ 
+-   if (want_utf8)
++   if (want_utf8 && iconv_cd_int2utf8)
+       return Eiconv(iconv_cd_int2utf8, str, strlen(str));
+ 
+-   return Eiconv(iconv_cd_int2loc, str, strlen(str));
+-#else
+-   return (char *)str;
++   if (iconv_cd_int2loc)
++      return Eiconv(iconv_cd_int2loc, str, strlen(str));
+ #endif
++
++   return Estrndup(str, strlen(str));
+ }
+ 
+ /* Free string returned by EstrInt2Enc() */
+@@ -116,10 +117,10 @@ EstrInt2EncFree(const char *str, int wan
+ #if HAVE_ICONV
+    if (Mode.text.utf8_int == want_utf8)
+       return;
++#endif
+ 
+    if (str)
+       Efree((char *)str);
+-#endif
+ }
+ 
+ void
+@@ -167,14 +168,22 @@ LangInit(void)
+    if (Mode.text.utf8_int)
+      {
+ 	iconv_cd_loc2int = iconv_open("UTF-8", enc_loc);
++	if (iconv_cd_loc2int == (iconv_t)-1)
++	   iconv_cd_loc2int = NULL;
+ 	iconv_cd_int2loc = iconv_open(enc_loc, "UTF-8");
++	if (iconv_cd_int2loc == (iconv_t)-1)
++	   iconv_cd_int2loc = NULL;
+ 	iconv_cd_utf82int = iconv_cd_int2utf8 = NULL;
+      }
+    else
+      {
+ 	iconv_cd_loc2int = iconv_cd_int2loc = NULL;
+ 	iconv_cd_utf82int = iconv_open(enc_loc, "UTF-8");
++	if (iconv_cd_utf82int == (iconv_t)-1)
++	   iconv_cd_utf82int = NULL;
+ 	iconv_cd_int2utf8 = iconv_open("UTF-8", enc_loc);
++	if (iconv_cd_int2utf8 == (iconv_t)-1)
++	   iconv_cd_int2utf8 = NULL;
+      }
+ #endif
+ }

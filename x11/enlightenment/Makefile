@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2005/11/16 19:22:57 sturm Exp $
+# $OpenBSD: Makefile,v 1.39 2005/11/24 17:40:15 fgsch Exp $
 
 COMMENT=	"themed window manager"
 
 DISTNAME=	enlightenment-0.16.7.2
+PKGNAME=	${DISTNAME}p0
 DOCS=		enlightenment-docs-0.16.7
 THEMES=		enlightenment-theme-BlueSteel-0.16 \
 		enlightenment-theme-BrushedMetal-Tigert-0.16 \
