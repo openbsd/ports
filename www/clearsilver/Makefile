@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2005/10/28 12:48:49 markus Exp $
+# $OpenBSD: Makefile,v 1.6 2005/11/24 17:56:19 sturm Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"fast, powerful, and language-neutral HTML template system"
 
 DISTNAME=	clearsilver-0.9.14
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	www net
 
 HOMEPAGE=       http://www.clearsilver.net/
