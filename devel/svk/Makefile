@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2005/09/26 03:18:53 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2005/11/24 03:55:17 kevlo Exp $
 
 COMMENT=	"decentralized version control system"
 
-V=		1.04
+V=		1.05
 DISTNAME=	SVK-${V}
 PKGNAME=	svk-${V}
 CATEGORIES=	devel perl5
