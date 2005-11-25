@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/09 01:25:38 jcs Exp $
+# $OpenBSD: Makefile,v 1.5 2005/11/25 15:51:00 jolan Exp $
 
 # requires nvram(4) device
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"utility to use ibm thinkpad(tm) special keys"
 
-DISTNAME=	tpb-0.6.3
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	tpb-0.6.4
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.nongnu.org/tpb/
