@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/12/01 19:59:59 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2005/11/25 10:45:39 sturm Exp $
 # Uses pthreads
 
 COMMENT=		"threaded DNS daemon, optimized for caching"
@@ -7,10 +7,13 @@ COMMENT=		"threaded DNS daemon, optimized for caching"
 # good enough shape to run this app.
 ONLY_FOR_ARCHS=	i386
 
-DISTNAME=		pdnsd-1.1.7a
-PKGNAME=		${DISTNAME}p1
+PORTNAME=		pdnsd-1.2.3
+DISTNAME=		${PORTNAME}-par
+PKGNAME=		${PORTNAME}
 CATEGORIES=     	net
-HOMEPAGE=		http://home.t-online.de/home/Moestl/
+HOMEPAGE=		http://www.phys.uu.nl/~rombouts/pdnsd
+
+WRKDIST=		${WRKDIR}/${PORTNAME}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,11 +22,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pthread
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		${HOMEPAGE}/releases/
 
 NO_REGRESS=		Yes
 
 SEPARATE_BUILD=		concurrent
+
+USE_GMAKE=		yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-target=BSD \

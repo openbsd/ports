@@ -1,12 +1,11 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.3 2003/06/22 14:07:21 sturm Exp $
---- doc/Makefile.in.orig	Mon Jan  7 20:30:11 2002
-+++ doc/Makefile.in	Tue Jan  8 00:02:01 2002
-@@ -230,7 +230,7 @@ maintainer-clean-generic clean mostlycle
+--- doc/Makefile.in.orig	Mon Jul 11 20:37:39 2005
++++ doc/Makefile.in	Sun Nov 13 17:07:23 2005
+@@ -398,7 +398,7 @@
  # builds
  install-data-hook:
- 	$(mkinstalldirs) $(DESTDIR)/$(sysconfdir)
+ 	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
 -	if test `whoami` = "root"; then \
 +	if test `userinfo -e _pdnsd`; then \
- 	  $(INSTALL) -o 0 -g 0 -m 644 pdnsd.conf $(DESTDIR)/$(sysconfdir)/pdnsd.conf.sample ; \
+ 	  $(INSTALL) -o 0 -g 0 -m 644 pdnsd.conf $(DESTDIR)$(sysconfdir)/pdnsd.conf.sample ; \
  	else \
- 	  $(INSTALL) -m 644 pdnsd.conf $(DESTDIR)/$(sysconfdir)/pdnsd.conf.sample ; \
+ 	  $(INSTALL) -m 644 pdnsd.conf $(DESTDIR)$(sysconfdir)/pdnsd.conf.sample ; \

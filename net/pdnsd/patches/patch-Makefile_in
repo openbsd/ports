@@ -1,10 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2003/06/22 14:07:21 sturm Exp $
---- Makefile.in.orig	Mon Jul  2 21:37:32 2001
-+++ Makefile.in	Sun Jul 15 20:42:16 2001
-@@ -374,7 +374,7 @@ install-data-hook:
- 	else \
- 	  touch $(DESTDIR)$(cachedir)/pdnsd.cache; \
- 	fi
+--- Makefile.in.orig	Mon Jul 11 20:37:41 2005
++++ Makefile.in	Sun Nov 13 17:06:06 2005
+@@ -584,7 +584,7 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(cachedir)
+ 	test -f $(DESTDIR)$(cachedir)/pdnsd.cache || \
+ 	  touch $(DESTDIR)$(cachedir)/pdnsd.cache
 -	if test `whoami` = "root"; then \
 +	if test `userinfo -e _pdnsd`; then \
  	  chown $(def_id) $(DESTDIR)$(cachedir)/pdnsd.cache; \
