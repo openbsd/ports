@@ -1,7 +1,7 @@
-$OpenBSD: patch-gnu-c99-math_h,v 1.1 2005/08/11 01:15:17 todd Exp $
---- gnu-c99-math.h.orig	Thu Apr 28 15:16:19 2005
-+++ gnu-c99-math.h	Thu Apr 28 15:38:01 2005
-@@ -0,0 +1,24 @@
+$OpenBSD: patch-gnu-c99-math_h,v 1.2 2005/11/25 04:12:54 todd Exp $
+--- gnu-c99-math.h.orig	Thu Nov 24 20:19:46 2005
++++ gnu-c99-math.h	Thu Nov 24 20:22:25 2005
+@@ -0,0 +1,22 @@
 +#if (defined(__sun__) || defined(__OpenBSD__)) && defined(__GNUC__)
 +
 +/*
@@ -22,7 +22,5 @@ $OpenBSD: patch-gnu-c99-math_h,v 1.1 2005/08/11 01:15:17 todd Exp $
 +#define	islessequal(x, y)	((x) <= (y))
 +
 +#define	isunordered(x,y)	(isnan(x) || isnan(y))
-+#define lrintf(x)		((long)rintf(x))
-+#define llrintf(x)		((long long)rintf(x))
 +
 +#endif
