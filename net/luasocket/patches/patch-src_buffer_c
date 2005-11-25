@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_buffer_c,v 1.1 2005/11/25 15:09:44 pedro Exp $
+--- src/buffer.c.orig	Tue Nov 22 19:19:38 2005
++++ src/buffer.c	Wed Nov 23 21:50:51 2005
+@@ -75,7 +75,9 @@ int buffer_meth_setstats(lua_State *L, p
+ \*-------------------------------------------------------------------------*/
+ int buffer_meth_send(lua_State *L, p_buffer buf) {
+     int top = lua_gettop(L);
++#ifdef LUASOCKET_DEBUG
+     p_timeout tm = timeout_markstart(buf->tm);
++#endif
+     int err = IO_DONE;
+     size_t size = 0, sent = 0;
+     const char *data = luaL_checklstring(L, 2, &size);
+@@ -108,7 +110,9 @@ int buffer_meth_send(lua_State *L, p_buf
+ \*-------------------------------------------------------------------------*/
+ int buffer_meth_receive(lua_State *L, p_buffer buf) {
+     int err = IO_DONE, top = lua_gettop(L);
++#ifdef LUASOCKET_DEBUG
+     p_timeout tm = timeout_markstart(buf->tm);
++#endif
+     luaL_Buffer b;
+     size_t size;
+     const char *part = luaL_optlstring(L, 3, "", &size);

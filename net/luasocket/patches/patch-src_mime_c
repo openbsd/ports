@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mime_c,v 1.1 2005/11/25 15:09:44 pedro Exp $
+--- src/mime.c.orig	Wed Nov 23 21:40:59 2005
++++ src/mime.c	Wed Nov 23 21:41:54 2005
+@@ -10,7 +10,7 @@
+ #include "lauxlib.h"
+ 
+ #if !defined(LUA_VERSION_NUM) || (LUA_VERSION_NUM < 501)
+-#include "compat-5.1.h"
++#include <luacompat.h>
+ #endif
+ 
+ #include "mime.h"

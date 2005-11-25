@@ -1,0 +1,64 @@
+$OpenBSD: patch-config,v 1.1 2005/11/25 15:09:44 pedro Exp $
+--- config.orig	Tue Nov 22 19:19:38 2005
++++ config	Thu Nov 24 15:08:17 2005
+@@ -6,22 +6,22 @@
+ # Output file names
+ #
+ EXT=so
+-SOCKET_V=2.0.0
+-MIME_V=1.0.0
+-SOCKET_SO=socket.$(EXT).$(SOCKET_V) 
+-MIME_SO=mime.$(EXT).$(MIME_V)
++SOCKET_V=2.0
++MIME_V=1.0
++SOCKET_SO= socket.so
++MIME_SO= mime.so
+ UNIX_SO=unix.$(EXT)
+ 
+ #------
+ # Lua includes and libraries
+ #
+-LUAINC=-Ilua-5.0.2/include
+-LUALIB=-Llua-5.0.2/lib
++LUAINC= -I$(LOCALBASE)/include
++LUALIB= -L$(LOCALBASE)/lib
+ 
+ #------
+ # Compat-5.1 directory
+ #
+-COMPAT=compat-5.1r4
++#COMPAT=compat-5.1r4
+ 
+ #------
+ # Top of your Lua installation
+@@ -37,20 +37,19 @@ INSTALL_EXEC=cp
+ # Compiler and linker settings
+ # for Mac OS X
+ #
+-CC=gcc
+-DEF=-DLUASOCKET_DEBUG -DUNIX_HAS_SUN_LEN
+-CFLAGS= $(LUAINC) -I$(COMPAT) $(DEF) -pedantic -Wall -O2 -fno-common
+-LDFLAGS=-bundle -undefined dynamic_lookup
+-LD=export MACOSX_DEPLOYMENT_TARGET="10.3"; gcc
++#CC=gcc
++#DEF=-DLUASOCKET_DEBUG -DUNIX_HAS_SUN_LEN
++#CFLAGS+= $(LUAINC) -I$(COMPAT) $(DEF) -pedantic -Wall -O2 -fno-common
++#LDFLAGS+=-bundle -undefined dynamic_lookup
++#LD=export MACOSX_DEPLOYMENT_TARGET="10.3"; gcc
+ 
+ #------
+ # Compiler and linker settings
+-# for Linux
+-#CC=gcc
+-#DEF=-DLUASOCKET_DEBUG 
+-#CFLAGS= $(LUAINC) -I$(COMPAT) $(DEF) -pedantic -Wall -O2 -fpic
+-#LDFLAGS=-O -shared
+-#LD=gcc 
++# for Unix
++CC=cc
++CFLAGS+= $(LUAINC) -fPIC -DPIC
++LDFLAGS+= -O -shared $(LUALIB) -lluacompat -llualib -llua -lm
++LD=cc
+ 
+ #------
+ # End of makefile configuration

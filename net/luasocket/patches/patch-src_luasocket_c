@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_luasocket_c,v 1.1 2005/11/25 15:09:44 pedro Exp $
+--- src/luasocket.c.orig	Wed Nov 23 21:41:03 2005
++++ src/luasocket.c	Wed Nov 23 21:41:40 2005
+@@ -21,7 +21,7 @@
+ #include "lauxlib.h"
+ 
+ #if !defined(LUA_VERSION_NUM) || (LUA_VERSION_NUM < 501)
+-#include "compat-5.1.h"
++#include <luacompat.h>
+ #endif
+ 
+ /*=========================================================================*\
