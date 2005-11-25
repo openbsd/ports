@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2005/11/02 01:20:19 bernd Exp $
+# $OpenBSD: Makefile,v 1.13 2005/11/25 23:04:21 bernd Exp $
 
 COMMENT=	"Motif toolkit Linux libraries"
 
-PKGNAME=	redhat_motif-2.1.30p2
+PKGNAME=	redhat_motif-2.1.30p3
 
 MASTER_SITES=	${MASTER_SITE_REDHAT:=contrib/openmotif/linux-rpm/}
 DISTFILES=	openmotif-2.1.30-1_ICS.i386.rpm
@@ -21,5 +21,6 @@ do-install:
 	@cd ${PREFIX}; \
 	    ${LOCALBASE}/bin/rpm2cpio ${FULLDISTDIR}/${DISTFILES} \
 		| cpio -idum ${EXTRACT_FILES}
+	@cd ${PREFIX} && chown ${SHAREOWN}:${SHAREGRP} ${EXTRACT_FILES}
 
 .include <bsd.port.mk>
