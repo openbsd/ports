@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2005/05/31 09:09:30 db Exp $
+@comment $OpenBSD: PLIST,v 1.18 2005/11/25 09:08:01 sturm Exp $
 @conflict amanda-client-*
 lib/libamanda.a
 @comment lib/libamanda.la
@@ -8,6 +8,8 @@ lib/libamserver.a
 @comment lib/libamserver.la
 lib/libamtape.a
 @comment lib/libamtape.la
+@owner operator
+@group operator
 libexec/amanda/
 libexec/amanda/amandad
 libexec/amanda/amcat.awk
@@ -18,10 +20,18 @@ libexec/amanda/amlogroll
 libexec/amanda/amplot.awk
 libexec/amanda/amplot.g
 libexec/amanda/amplot.gp
+@owner root
+@mode 4550
 libexec/amanda/amqde
+@owner operator
+@mode
 libexec/amanda/amtrmidx
 libexec/amanda/amtrmlog
+@owner root
+@mode 4550
 libexec/amanda/calcsize
+@owner operator
+@mode
 libexec/amanda/chg-chio
 libexec/amanda/chg-chs
 libexec/amanda/chg-disk
@@ -37,17 +47,26 @@ libexec/amanda/chg-rth
 libexec/amanda/chg-scsi
 libexec/amanda/chg-zd-mtx
 libexec/amanda/driver
+@owner root
+@mode 4550
 libexec/amanda/dumper
 libexec/amanda/killpgrp
+@owner operator
+@mode
 libexec/amanda/patch-system
+@owner root
+@mode 4550
 libexec/amanda/planner
 libexec/amanda/rundump
 libexec/amanda/runtar
+@owner operator
+@mode
 libexec/amanda/selfcheck
 libexec/amanda/sendbackup
 libexec/amanda/sendsize
 libexec/amanda/taper
 libexec/amanda/versionsuffix
+@man man/man5/amanda.conf.5
 @man man/man8/amadmin.8
 @man man/man8/amanda.8
 @man man/man8/amcheck.8
@@ -71,8 +90,14 @@ libexec/amanda/versionsuffix
 @man man/man8/amtoc.8
 @man man/man8/amverify.8
 @man man/man8/amverifyrun.8
+@owner operator
+@group operator
 sbin/amadmin
+@owner root
+@mode 4550
 sbin/amcheck
+@owner operator
+@mode
 sbin/amcheckdb
 sbin/amcleanup
 sbin/amdd

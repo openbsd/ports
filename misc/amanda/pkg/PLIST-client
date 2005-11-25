@@ -1,13 +1,23 @@
-@comment $OpenBSD: PLIST-client,v 1.7 2005/05/31 09:09:30 db Exp $
+@comment $OpenBSD: PLIST-client,v 1.8 2005/11/25 09:08:01 sturm Exp $
 @conflict amanda-*
+@owner operator
+@group operator
 libexec/amanda/
 libexec/amanda/amandad
+@mode 4550
+@owner root
 libexec/amanda/amqde
 libexec/amanda/calcsize
 libexec/amanda/killpgrp
+@mode
+@owner operator
 libexec/amanda/patch-system
+@mode 4550
+@owner root
 libexec/amanda/rundump
 libexec/amanda/runtar
+@mode
+@owner operator
 libexec/amanda/selfcheck
 libexec/amanda/sendbackup
 libexec/amanda/sendsize
@@ -20,8 +30,6 @@ sbin/amrestore
 share/examples/amanda/
 share/examples/amanda/amandates
 %%gpg%%
-@owner operator
-@group operator
 @sample /etc/amandates
 @sample /var/amanda/
 @sample /var/amanda/gnutar-lists/
