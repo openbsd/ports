@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2004/06/12 21:12:35 msf Exp $
+# $OpenBSD: Makefile,v 1.3 2005/11/25 21:06:58 sturm Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"perl module for parsing huge XML documents"
 
-DISTNAME=	XML-Twig-3.15
+DISTNAME=	XML-Twig-3.22
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.xmltwig.com/xmltwig/
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
