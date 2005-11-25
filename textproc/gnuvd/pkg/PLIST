@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/25 21:34:18 steven Exp $
+bin/gnuvd
+@man man/man1/gnuvd.1

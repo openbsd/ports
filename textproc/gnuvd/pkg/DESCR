@@ -1,0 +1,3 @@
+gnuvd is a commandline frontend for the online Van Dale dictionary.
+It will search any word in the dictionary and return its description
+in Dutch.
