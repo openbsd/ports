@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.13 2003/11/02 00:38:32 margarida Exp $
---- configure.orig	2003-07-10 09:25:31.000000000 +0100
-+++ configure	2003-11-02 00:29:07.000000000 +0000
+$OpenBSD: patch-configure,v 1.14 2005/11/26 21:17:54 kurt Exp $
+--- configure.orig	Thu Jul 10 04:25:31 2003
++++ configure	Sat Nov 26 10:55:41 2005
+@@ -10037,7 +10037,7 @@ echo $ECHO_N "checking for gcc option to
+          DLLEXPORTS="dlltool -e ./src/$PROG.exp -l ./$PROG.a -D $PROG.exe -d ./src/ec_cygwin.def"
+          EXPFILE="./src/$PROG.exp"
+       else
+-         LIBS="$LIBS -rdynamic"
++         LIBS="$LIBS -Wl,--export-dynamic"
+          PICFLAG="-fPIC -DPIC -shared"
+       fi
+ 
 @@ -10105,7 +10105,7 @@ if test $check_ssh -ne 0; then
  
     if test -f $ssl_path/include/openssl/ssl.h; then

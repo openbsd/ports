@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2005/11/15 09:21:52 wilfried Exp $
+# $OpenBSD: Makefile,v 1.31 2005/11/26 21:17:54 kurt Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -6,7 +6,7 @@ COMMENT=	"multi-purpose sniffer/interceptor/logger"
 
 VER=		0.6.b
 DISTNAME=	ettercap-${VER}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net
 
 HOMEPAGE=	http://ettercap.sourceforge.net/
