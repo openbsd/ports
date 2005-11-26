@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2005/11/15 16:13:59 wilfried Exp $
+# $OpenBSD: Makefile,v 1.84 2005/11/26 14:50:03 jolan Exp $
 
 SHARED_ONLY=	Yes
 
@@ -45,7 +45,8 @@ CONFIGURE_ARGS+= --disable-gevolution \
 		 --enable-openssl \
 		 --with-silc-includes="${LOCALBASE}/include/silc"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBS="-liconv"
 
 FLAVORS=	audio debug gtkspell
 FLAVOR?=	
