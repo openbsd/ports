@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2005/02/14 22:14:25 couderc Exp $
-@lib lib/libgpgme-pthread.so.14.3
-@lib lib/libgpgme.so.14.3
+@comment $OpenBSD: PFRAG.shared,v 1.9 2005/11/26 10:03:13 sturm Exp $
+@lib lib/libgpgme-pthread.so.16.0
+@lib lib/libgpgme.so.16.0
