@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2005/11/15 21:14:27 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/26 17:05:55 steven Exp $
 
 COMMENT=	"CSS editor"
 
-DISTNAME=	cssed-0.3.0
-PKGNAME=	${DISTNAME}p1
-CATEGORIES=	www
+DISTNAME=	cssed-0.4.0
+CATEGORIES=	www editors
 
 HOMEPAGE=	http://cssed.sourceforge.net/
 
@@ -19,19 +18,22 @@ PERMIT_DISTFILES_FTP=	yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cssed/}
 
 WANTLIB=	c freetype pthread stdc++ m X11 fontconfig \
-		gthread-2.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
-		gobject-2.0.0.0 atk-1.0.0.0 cairo pango-1.0.0.0 \
-		pangocairo-1.0.0.0 pangoft2-1.0.0.0
+		z gthread-2.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
+		gobject-2.0.0.0 pangoft2-1.0.0.0 cairo \
+		pangocairo-1.0.0.0 pango-1.0.0.0 atk-1.0.0.0
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gtk-x11-2.0.600.10,gdk_pixbuf-2.0.600.0,gdk-x11-2.0.600.0::x11/gtk+2 \
-		expat.4::textproc/expat
+		xml2.8::textproc/libxml
 
 MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=--with-help-menus
+CONFIGURE_ARGS=	--with-help-menus \
+		--with-plugin-headers \
+		--without-terminal \
+		--without-ipc-queue
 
 .include <bsd.port.mk>

@@ -1,0 +1,12 @@
+$OpenBSD: patch-libcroco_parser_Makefile_in,v 1.1 2005/11/26 17:05:55 steven Exp $
+--- libcroco/parser/Makefile.in.orig	Fri Nov 25 12:01:19 2005
++++ libcroco/parser/Makefile.in	Fri Nov 25 12:01:30 2005
+@@ -228,7 +228,7 @@ cr-tknzr.c \
+ *.h
+ 
+ libcroco_a_SOURCES = $(SRCS)
+-INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/intl
++INCLUDES = -I$(top_srcdir)
+ all: all-am
+ 
+ .SUFFIXES:

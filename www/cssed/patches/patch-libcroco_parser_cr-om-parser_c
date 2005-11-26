@@ -1,0 +1,12 @@
+$OpenBSD: patch-libcroco_parser_cr-om-parser_c,v 1.1 2005/11/26 17:05:55 steven Exp $
+--- libcroco/parser/cr-om-parser.c.orig	Fri Nov 25 11:11:15 2005
++++ libcroco/parser/cr-om-parser.c	Fri Nov 25 11:15:54 2005
+@@ -1006,7 +1006,7 @@ cr_om_parser_parse_paths_to_cascade (CRO
+ 
+         g_return_val_if_fail (a_this, CR_BAD_PARAM_ERROR);
+ 
+-        memset (sheets, 0, sizeof (CRStyleSheet) * 3);
++        memset (sheets, 0, sizeof (sheets));
+         paths[0] = (guchar *) a_author_path;
+         paths[1] = (guchar *) a_user_path;
+         paths[2] = (guchar *) a_ua_path;
