@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/27 12:38:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/11/26 20:55:55 sturm Exp $
 
 SHARED-ONLY=	Yes
 
 COMMENT=	"shared data cache using memory mapped files"
 
-DISTNAME=	Cache-Mmap-0.081
+DISTNAME=	Cache-Mmap-0.09
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
