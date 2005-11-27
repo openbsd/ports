@@ -1,0 +1,99 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/27 11:01:14 alek Exp $
+%%SHARED%%
+bin/cardos-info
+bin/cryptoflex-tool
+bin/opensc-config
+bin/opensc-explorer
+bin/opensc-tool
+bin/pkcs11-tool
+bin/pkcs15-crypt
+bin/pkcs15-init
+bin/pkcs15-tool
+include/opensc/
+include/opensc/asn1.h
+include/opensc/cardctl.h
+include/opensc/emv.h
+include/opensc/errors.h
+include/opensc/log.h
+include/opensc/opensc.h
+include/opensc/pkcs11.h
+include/opensc/pkcs15-init.h
+include/opensc/pkcs15.h
+include/opensc/rsaref/
+include/opensc/rsaref/pkcs11.h
+include/opensc/rsaref/pkcs11f.h
+include/opensc/rsaref/pkcs11t.h
+include/opensc/rsaref/unix.h
+include/opensc/rsaref/win32.h
+include/opensc/scconf.h
+include/opensc/scldap.h
+include/opensc/types.h
+include/opensc/ui.h
+lib/libopensc.a
+lib/libopensc.la
+lib/libpkcs15init.a
+lib/libpkcs15init.la
+lib/libscam.a
+lib/libscam.la
+lib/libscconf.a
+lib/libscconf.la
+lib/opensc/
+lib/opensc/engine_opensc.a
+lib/opensc/engine_opensc.la
+lib/opensc/engine_pkcs11.a
+lib/opensc/engine_pkcs11.la
+lib/pkcs11/
+lib/pkcs11/libpkcs11.a
+lib/pkcs11/libpkcs11.la
+lib/pkcs11/opensc-pkcs11.a
+lib/pkcs11/opensc-pkcs11.la
+lib/pkcs11/pkcs11-spy.a
+lib/pkcs11/pkcs11-spy.la
+lib/pkgconfig/
+lib/pkgconfig/libopensc.pc
+lib/pkgconfig/libpkcs15init.pc
+lib/pkgconfig/libscam.pc
+lib/pkgconfig/libscconf.pc
+lib/pkgconfig/libscldap.pc
+lib/security/
+@man man/man1/cardos-info.1
+@man man/man1/cryptoflex-tool.1
+@man man/man1/opensc-config.1
+@man man/man1/opensc-explorer.1
+@man man/man1/opensc-tool.1
+@man man/man1/pkcs11-tool.1
+@man man/man1/pkcs15-crypt.1
+@man man/man1/pkcs15-init.1
+@man man/man1/pkcs15-tool.1
+@man man/man3/sc_connect_card.3
+@man man/man3/sc_detect_card_presence.3
+@man man/man3/sc_disconnect_card.3
+@man man/man3/sc_establish_context.3
+@man man/man3/sc_file.3
+@man man/man3/sc_file_free.3
+@man man/man3/sc_file_new.3
+@man man/man3/sc_list_files.3
+@man man/man3/sc_lock.3
+@man man/man3/sc_pkcs15_compute_signature.3
+@man man/man3/sc_read_binary.3
+@man man/man3/sc_read_record.3
+@man man/man3/sc_release_context.3
+@man man/man3/sc_select_file.3
+@man man/man5/pkcs15-profile.5
+@man man/man7/opensc.7
+@man man/man7/pkcs15.7
+share/examples/opensc/
+share/examples/opensc/opensc.conf
+@mode 644
+@sample ${SYSCONFDIR}/opensc.conf
+@mode
+share/opensc/
+share/opensc/cyberflex.profile
+share/opensc/etoken.profile
+share/opensc/flex.profile
+share/opensc/gpk.profile
+share/opensc/jcop.profile
+share/opensc/miocos.profile
+share/opensc/oberthur.profile
+share/opensc/pkcs15.profile
+share/opensc/starcos.profile

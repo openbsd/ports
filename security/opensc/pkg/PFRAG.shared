@@ -1,0 +1,10 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/11/27 11:01:14 alek Exp $
+@lib lib/libopensc.so.1.0
+@lib lib/libpkcs15init.so.1.0
+@lib lib/libscam.so.1.0
+@lib lib/libscconf.so.1.0
+lib/opensc/engine_opensc.so
+lib/opensc/engine_pkcs11.so
+@lib lib/pkcs11/libpkcs11.so.1.0
+lib/pkcs11/opensc-pkcs11.so
+lib/pkcs11/pkcs11-spy.so
