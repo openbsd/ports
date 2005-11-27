@@ -1,14 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.12 2005/09/29 19:56:03 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2005/11/27 14:12:03 aanriot Exp $
 @conflict zope-btreefolder2-*
 @conflict zope-cmfquickinstaller-*
 @conflict zope-formulator-*
 @conflict zope-groupuserfolder-*
 @conflict zope-placelesstranslationservice-*
-lib/zope/
-lib/zope/lib/
-lib/zope/lib/python/
-lib/zope/lib/python/Products/
-lib/zope/lib/python/Products/BTreeFolder2/
 lib/zope/lib/python/Products/BTreeFolder2/BTreeFolder2.py
 lib/zope/lib/python/Products/BTreeFolder2/BTreeFolder2.pyc
 lib/zope/lib/python/Products/BTreeFolder2/CHANGES.txt
@@ -20,17 +15,14 @@ lib/zope/lib/python/Products/BTreeFolder2/__init__.pyc
 lib/zope/lib/python/Products/BTreeFolder2/btreefolder2.gif
 lib/zope/lib/python/Products/BTreeFolder2/contents.dtml
 lib/zope/lib/python/Products/BTreeFolder2/folderAdd.dtml
-lib/zope/lib/python/Products/BTreeFolder2/tests/
 lib/zope/lib/python/Products/BTreeFolder2/tests/__init__.py
 lib/zope/lib/python/Products/BTreeFolder2/tests/__init__.pyc
 lib/zope/lib/python/Products/BTreeFolder2/tests/testBTreeFolder2.py
 lib/zope/lib/python/Products/BTreeFolder2/tests/testBTreeFolder2.pyc
 lib/zope/lib/python/Products/BTreeFolder2/version.txt
-@comment lib/zope/lib/python/Products/CMFActionIcons/
 @comment lib/zope/lib/python/Products/CMFActionIcons/ActionIconsTool.py
 @comment lib/zope/lib/python/Products/CMFActionIcons/ActionIconsTool.pyc
 @comment lib/zope/lib/python/Products/CMFActionIcons/DEPENDENCIES.txt
-@comment lib/zope/lib/python/Products/CMFActionIcons/Extensions/
 @comment lib/zope/lib/python/Products/CMFActionIcons/Extensions/Install.py
 @comment lib/zope/lib/python/Products/CMFActionIcons/Extensions/Install.pyc
 @comment lib/zope/lib/python/Products/CMFActionIcons/Extensions/__init__.py
@@ -40,8 +32,6 @@ lib/zope/lib/python/Products/BTreeFolder2/version.txt
 @comment lib/zope/lib/python/Products/CMFActionIcons/__init__.pyc
 @comment lib/zope/lib/python/Products/CMFActionIcons/permissions.py
 @comment lib/zope/lib/python/Products/CMFActionIcons/permissions.pyc
-@comment lib/zope/lib/python/Products/CMFActionIcons/skins/
-@comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/
 @comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/actionicons_macros.pt
 @comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/approve_icon.png
 @comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/edit_icon.png
@@ -59,7 +49,6 @@ lib/zope/lib/python/Products/BTreeFolder2/version.txt
 @comment lib/zope/lib/python/Products/CMFActionIcons/skins/actionicons/yank_icon.png
 @comment lib/zope/lib/python/Products/CMFActionIcons/standard_mappings.py
 @comment lib/zope/lib/python/Products/CMFActionIcons/standard_mappings.pyc
-@comment lib/zope/lib/python/Products/CMFActionIcons/tests/
 @comment lib/zope/lib/python/Products/CMFActionIcons/tests/__init__.py
 @comment lib/zope/lib/python/Products/CMFActionIcons/tests/__init__.pyc
 @comment lib/zope/lib/python/Products/CMFActionIcons/tests/test_ActionIconsTool.py
@@ -68,11 +57,174 @@ lib/zope/lib/python/Products/BTreeFolder2/version.txt
 @comment lib/zope/lib/python/Products/CMFActionIcons/tests/test_all.pyc
 @comment lib/zope/lib/python/Products/CMFActionIcons/tool.gif
 @comment lib/zope/lib/python/Products/CMFActionIcons/version.txt
-@comment lib/zope/lib/python/Products/CMFActionIcons/www/
 @comment lib/zope/lib/python/Products/CMFActionIcons/www/aitEdit.zpt
 @comment lib/zope/lib/python/Products/CMFFormController/
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/README.txt
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/dir-wcprops
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/empty-file
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/entries
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/format
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/AUTHORS.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/BaseControllerPageTemplate.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/ChangeLog.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/ControllerBase.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/ControllerPageTemplate.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/ControllerPageTemplateFile.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/ControllerPythonScript.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/ControllerState.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/ControllerValidator.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/FSControllerBase.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/FSControllerPageTemplate.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/FSControllerPythonScript.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/FSControllerValidator.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/FormAction.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/FormController.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/FormValidator.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/Key.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/LICENSE.txt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/README.txt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/Script.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/ValidationError.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/__init__.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/config.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/globalVars.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/makefile.in.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/refresh.txt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/tool.gif.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/utils.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/prop-base/version.txt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/AUTHORS.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/BaseControllerPageTemplate.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/ChangeLog.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/ControllerBase.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/ControllerPageTemplate.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/ControllerPageTemplateFile.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/ControllerPythonScript.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/ControllerState.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/ControllerValidator.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/FSControllerBase.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/FSControllerPageTemplate.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/FSControllerPythonScript.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/FSControllerValidator.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/FormAction.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/FormController.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/FormValidator.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/Key.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/LICENSE.txt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/README.txt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/Script.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/ValidationError.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/__init__.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/config.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/globalVars.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/makefile.in.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/refresh.txt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/tool.gif.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/utils.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/props/version.txt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/AUTHORS.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/BaseControllerPageTemplate.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/ChangeLog.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/ControllerBase.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/ControllerPageTemplate.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/ControllerPageTemplateFile.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/ControllerPythonScript.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/ControllerState.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/ControllerValidator.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/FSControllerBase.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/FSControllerPageTemplate.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/FSControllerPythonScript.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/FSControllerValidator.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/FormAction.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/FormController.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/FormValidator.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/Key.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/LICENSE.txt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/README.txt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/Script.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/ValidationError.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/__init__.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/config.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/globalVars.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/makefile.in.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/refresh.txt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/tool.gif.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/utils.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/text-base/version.txt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/AUTHORS.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/BaseControllerPageTemplate.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/ChangeLog.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/ControllerBase.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/ControllerPageTemplate.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/ControllerPageTemplateFile.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/ControllerPythonScript.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/ControllerState.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/ControllerValidator.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/FSControllerBase.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/FSControllerPageTemplate.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/FSControllerPythonScript.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/FSControllerValidator.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/FormAction.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/FormController.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/FormValidator.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/Key.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/LICENSE.txt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/README.txt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/Script.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/ValidationError.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/__init__.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/config.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/globalVars.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/makefile.in.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/refresh.txt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/tool.gif.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/utils.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/.svn/wcprops/version.txt.svn-work
 @comment lib/zope/lib/python/Products/CMFFormController/AUTHORS
 @comment lib/zope/lib/python/Products/CMFFormController/Actions/
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/README.txt
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/dir-wcprops
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/empty-file
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/entries
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/format
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/prop-base/
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/prop-base/BaseFormAction.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/prop-base/IFormAction.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/prop-base/RedirectTo.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/prop-base/RedirectToAction.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/prop-base/TraverseTo.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/prop-base/TraverseToAction.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/prop-base/__init__.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/props/
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/props/BaseFormAction.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/props/IFormAction.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/props/RedirectTo.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/props/RedirectToAction.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/props/TraverseTo.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/props/TraverseToAction.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/props/__init__.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/text-base/
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/text-base/BaseFormAction.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/text-base/IFormAction.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/text-base/RedirectTo.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/text-base/RedirectToAction.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/text-base/TraverseTo.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/text-base/TraverseToAction.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/text-base/__init__.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/wcprops/
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/wcprops/BaseFormAction.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/wcprops/IFormAction.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/wcprops/RedirectTo.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/wcprops/RedirectToAction.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/wcprops/TraverseTo.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/wcprops/TraverseToAction.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/Actions/.svn/wcprops/__init__.py.svn-work
 @comment lib/zope/lib/python/Products/CMFFormController/Actions/BaseFormAction.py
 @comment lib/zope/lib/python/Products/CMFFormController/Actions/BaseFormAction.pyc
 @comment lib/zope/lib/python/Products/CMFFormController/Actions/IFormAction.py
@@ -103,6 +255,24 @@ lib/zope/lib/python/Products/BTreeFolder2/version.txt
 @comment lib/zope/lib/python/Products/CMFFormController/ControllerValidator.py
 @comment lib/zope/lib/python/Products/CMFFormController/ControllerValidator.pyc
 @comment lib/zope/lib/python/Products/CMFFormController/Extensions/
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/.svn/
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/.svn/README.txt
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/.svn/dir-wcprops
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/.svn/empty-file
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/.svn/entries
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/.svn/format
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/.svn/prop-base/
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/.svn/prop-base/Install.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/.svn/prop-base/__init__.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/.svn/props/
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/.svn/props/Install.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/.svn/props/__init__.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/.svn/text-base/
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/.svn/text-base/Install.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/.svn/text-base/__init__.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/.svn/wcprops/
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/.svn/wcprops/Install.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/Extensions/.svn/wcprops/__init__.py.svn-work
 @comment lib/zope/lib/python/Products/CMFFormController/Extensions/Install.py
 @comment lib/zope/lib/python/Products/CMFFormController/Extensions/Install.pyc
 @comment lib/zope/lib/python/Products/CMFFormController/Extensions/__init__.py
@@ -134,6 +304,60 @@ lib/zope/lib/python/Products/BTreeFolder2/version.txt
 @comment lib/zope/lib/python/Products/CMFFormController/config.py
 @comment lib/zope/lib/python/Products/CMFFormController/config.pyc
 @comment lib/zope/lib/python/Products/CMFFormController/debian/
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/README.txt
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/dir-wcprops
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/empty-file
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/entries
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/format
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/prop-base/
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/prop-base/README.Debian.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/prop-base/changelog.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/prop-base/compat.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/prop-base/config.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/prop-base/control.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/prop-base/copyright.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/prop-base/docs.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/prop-base/postinst.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/prop-base/prerm.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/prop-base/rules.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/prop-base/templates.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/props/
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/props/README.Debian.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/props/changelog.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/props/compat.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/props/config.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/props/control.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/props/copyright.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/props/docs.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/props/postinst.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/props/prerm.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/props/rules.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/props/templates.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/text-base/
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/text-base/README.Debian.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/text-base/changelog.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/text-base/compat.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/text-base/config.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/text-base/control.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/text-base/copyright.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/text-base/docs.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/text-base/postinst.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/text-base/prerm.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/text-base/rules.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/text-base/templates.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/wcprops/
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/wcprops/README.Debian.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/wcprops/changelog.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/wcprops/compat.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/wcprops/config.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/wcprops/control.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/wcprops/copyright.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/wcprops/docs.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/wcprops/postinst.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/wcprops/prerm.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/wcprops/rules.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/debian/.svn/wcprops/templates.svn-work
 @comment lib/zope/lib/python/Products/CMFFormController/debian/README.Debian
 @comment lib/zope/lib/python/Products/CMFFormController/debian/changelog
 @comment lib/zope/lib/python/Products/CMFFormController/debian/compat
@@ -146,6 +370,24 @@ lib/zope/lib/python/Products/BTreeFolder2/version.txt
 @comment lib/zope/lib/python/Products/CMFFormController/debian/rules
 @comment lib/zope/lib/python/Products/CMFFormController/debian/templates
 @comment lib/zope/lib/python/Products/CMFFormController/documentation/
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/.svn/
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/.svn/README.txt
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/.svn/dir-wcprops
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/.svn/empty-file
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/.svn/entries
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/.svn/format
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/.svn/prop-base/
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/.svn/prop-base/FormControllerTutorial.pdf.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/.svn/prop-base/fctutorial_source.txt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/.svn/props/
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/.svn/props/FormControllerTutorial.pdf.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/.svn/props/fctutorial_source.txt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/.svn/text-base/
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/.svn/text-base/FormControllerTutorial.pdf.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/.svn/text-base/fctutorial_source.txt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/.svn/wcprops/
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/.svn/wcprops/FormControllerTutorial.pdf.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/documentation/.svn/wcprops/fctutorial_source.txt.svn-work
 @comment lib/zope/lib/python/Products/CMFFormController/documentation/FormControllerTutorial.pdf
 @comment lib/zope/lib/python/Products/CMFFormController/documentation/fctutorial_source.txt
 @comment lib/zope/lib/python/Products/CMFFormController/globalVars.py
@@ -153,6 +395,32 @@ lib/zope/lib/python/Products/BTreeFolder2/version.txt
 @comment lib/zope/lib/python/Products/CMFFormController/makefile.in
 @comment lib/zope/lib/python/Products/CMFFormController/refresh.txt
 @comment lib/zope/lib/python/Products/CMFFormController/tests/
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/README.txt
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/dir-wcprops
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/empty-file
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/entries
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/format
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/prop-base/
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/prop-base/__init__.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/prop-base/framework.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/prop-base/runalltests.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/prop-base/testCopyRename.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/props/
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/props/__init__.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/props/framework.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/props/runalltests.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/props/testCopyRename.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/text-base/
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/text-base/__init__.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/text-base/framework.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/text-base/runalltests.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/text-base/testCopyRename.py.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/wcprops/
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/wcprops/__init__.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/wcprops/framework.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/wcprops/runalltests.py.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/tests/.svn/wcprops/testCopyRename.py.svn-work
 @comment lib/zope/lib/python/Products/CMFFormController/tests/__init__.py
 @comment lib/zope/lib/python/Products/CMFFormController/tests/__init__.pyc
 @comment lib/zope/lib/python/Products/CMFFormController/tests/framework.py
@@ -166,6 +434,76 @@ lib/zope/lib/python/Products/BTreeFolder2/version.txt
 @comment lib/zope/lib/python/Products/CMFFormController/utils.pyc
 @comment lib/zope/lib/python/Products/CMFFormController/version.txt
 @comment lib/zope/lib/python/Products/CMFFormController/www/
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/README.txt
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/dir-wcprops
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/empty-file
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/entries
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/format
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/prop-base/
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/prop-base/cpt.gif.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/prop-base/cptAdd.zpt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/prop-base/cpy.gif.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/prop-base/cpyAdd.zpt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/prop-base/default.html.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/prop-base/default_cpy.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/prop-base/default_vpy.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/prop-base/docs.stx.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/prop-base/manage_docs.zpt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/prop-base/manage_formActionsForm.zpt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/prop-base/manage_formValidatorsForm.zpt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/prop-base/manage_overview.zpt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/prop-base/manage_purgeForm.zpt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/prop-base/vpy.gif.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/prop-base/vpyAdd.zpt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/props/
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/props/cpt.gif.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/props/cptAdd.zpt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/props/cpy.gif.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/props/cpyAdd.zpt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/props/default.html.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/props/default_cpy.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/props/default_vpy.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/props/docs.stx.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/props/manage_docs.zpt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/props/manage_formActionsForm.zpt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/props/manage_formValidatorsForm.zpt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/props/manage_overview.zpt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/props/manage_purgeForm.zpt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/props/vpy.gif.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/props/vpyAdd.zpt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/text-base/
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/text-base/cpt.gif.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/text-base/cptAdd.zpt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/text-base/cpy.gif.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/text-base/cpyAdd.zpt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/text-base/default.html.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/text-base/default_cpy.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/text-base/default_vpy.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/text-base/docs.stx.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/text-base/manage_docs.zpt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/text-base/manage_formActionsForm.zpt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/text-base/manage_formValidatorsForm.zpt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/text-base/manage_overview.zpt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/text-base/manage_purgeForm.zpt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/text-base/vpy.gif.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/text-base/vpyAdd.zpt.svn-base
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/wcprops/
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/wcprops/cpt.gif.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/wcprops/cptAdd.zpt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/wcprops/cpy.gif.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/wcprops/cpyAdd.zpt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/wcprops/default.html.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/wcprops/default_cpy.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/wcprops/default_vpy.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/wcprops/docs.stx.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/wcprops/manage_docs.zpt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/wcprops/manage_formActionsForm.zpt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/wcprops/manage_formValidatorsForm.zpt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/wcprops/manage_overview.zpt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/wcprops/manage_purgeForm.zpt.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/wcprops/vpy.gif.svn-work
+@comment lib/zope/lib/python/Products/CMFFormController/www/.svn/wcprops/vpyAdd.zpt.svn-work
 @comment lib/zope/lib/python/Products/CMFFormController/www/cpt.gif
 @comment lib/zope/lib/python/Products/CMFFormController/www/cptAdd.zpt
 @comment lib/zope/lib/python/Products/CMFFormController/www/cpy.gif
@@ -367,6 +705,8 @@ lib/zope/lib/python/Products/CMFPlone/migrations/v2_1/alphas.py
 lib/zope/lib/python/Products/CMFPlone/migrations/v2_1/alphas.pyc
 lib/zope/lib/python/Products/CMFPlone/migrations/v2_1/betas.py
 lib/zope/lib/python/Products/CMFPlone/migrations/v2_1/betas.pyc
+lib/zope/lib/python/Products/CMFPlone/migrations/v2_1/final_two11.py
+lib/zope/lib/python/Products/CMFPlone/migrations/v2_1/final_two11.pyc
 lib/zope/lib/python/Products/CMFPlone/migrations/v2_1/rcs.py
 lib/zope/lib/python/Products/CMFPlone/migrations/v2_1/rcs.pyc
 lib/zope/lib/python/Products/CMFPlone/patches/
@@ -673,8 +1013,7 @@ lib/zope/lib/python/Products/CMFPlone/skins/plone_ecmascript/ie5fixes.js
 lib/zope/lib/python/Products/CMFPlone/skins/plone_ecmascript/login.js
 lib/zope/lib/python/Products/CMFPlone/skins/plone_ecmascript/mark_special_links.js
 lib/zope/lib/python/Products/CMFPlone/skins/plone_ecmascript/nodeutilities.js
-lib/zope/lib/python/Products/CMFPlone/skins/plone_ecmascript/plone_javascript_variables.js.dtml
-lib/zope/lib/python/Products/CMFPlone/skins/plone_ecmascript/plone_javascript_variables.js.dtml.metadata
+lib/zope/lib/python/Products/CMFPlone/skins/plone_ecmascript/plone_javascript_variables.js.pt
 lib/zope/lib/python/Products/CMFPlone/skins/plone_ecmascript/plone_minwidth.js.dtml
 lib/zope/lib/python/Products/CMFPlone/skins/plone_ecmascript/plone_minwidth.js.dtml.metadata
 lib/zope/lib/python/Products/CMFPlone/skins/plone_ecmascript/register_function.js
@@ -1790,3 +2129,541 @@ lib/zope/lib/python/Products/PlacelessTranslationService/www/catalog_broken.pt
 lib/zope/lib/python/Products/PlacelessTranslationService/www/catalog_info.pt
 lib/zope/lib/python/Products/PlacelessTranslationService/www/catalog_test.pt
 lib/zope/lib/python/Products/PlacelessTranslationService/www/manage_trackerForm.pt
+lib/zope/lib/python/Products/PloneLanguageTool/
+lib/zope/lib/python/Products/PloneLanguageTool/ChangeLog
+lib/zope/lib/python/Products/PloneLanguageTool/Extensions/
+lib/zope/lib/python/Products/PloneLanguageTool/Extensions/Install.py
+lib/zope/lib/python/Products/PloneLanguageTool/Extensions/Install.pyc
+lib/zope/lib/python/Products/PloneLanguageTool/Extensions/__init__.py
+lib/zope/lib/python/Products/PloneLanguageTool/Extensions/__init__.pyc
+lib/zope/lib/python/Products/PloneLanguageTool/HISTORY.txt
+lib/zope/lib/python/Products/PloneLanguageTool/LICENSE.GPL
+lib/zope/lib/python/Products/PloneLanguageTool/LanguageTool.py
+lib/zope/lib/python/Products/PloneLanguageTool/LanguageTool.pyc
+lib/zope/lib/python/Products/PloneLanguageTool/README.txt
+lib/zope/lib/python/Products/PloneLanguageTool/__init__.py
+lib/zope/lib/python/Products/PloneLanguageTool/__init__.pyc
+lib/zope/lib/python/Products/PloneLanguageTool/availablelanguages.py
+lib/zope/lib/python/Products/PloneLanguageTool/availablelanguages.pyc
+lib/zope/lib/python/Products/PloneLanguageTool/i18n/
+lib/zope/lib/python/Products/PloneLanguageTool/i18n/README.txt
+lib/zope/lib/python/Products/PloneLanguageTool/interfaces.py
+lib/zope/lib/python/Products/PloneLanguageTool/interfaces.pyc
+lib/zope/lib/python/Products/PloneLanguageTool/skins/
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageTool/
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageTool/addSupportedLanguage.py
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageTool/global_languageselector.pt
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageTool/isTranslatable.py
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageTool/langConfig.pt
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageTool/langConfig.pt.metadata
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageTool/languageSelectorMacro.pt
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageTool/portlet_languages.pt
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageTool/prefs_languages.pt
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageTool/prefs_languages.pt.metadata
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageTool/switchLanguage.py
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageTool/switchLanguage.pyc
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/README.txt
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ae.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-af.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ar-bh.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ar-dz.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ar-eg.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ar-iq.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ar-jo.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ar-kw.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ar-lb.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ar-ly.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ar-ma.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ar-om.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ar-ps.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ar-qa.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ar-sa.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ar-sy.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ar-tn.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ar-ye.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ar.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-at.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-az.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-be.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-bg.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ca.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ch.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-cs.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-da.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-de.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-el.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-en-us.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-en.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-eo.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-es-ar.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-es-cu.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-es-mx.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-es-uy.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-es.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-et.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-eu.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-fa.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-fi.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-fo.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-fr-be.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-fr-ca.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-fr-dj.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-fr-qc.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-fr.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-he.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-hr.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-hu.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-hy.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-is.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-it.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ja.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ka.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-km.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ko.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-lo.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-lt.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-lv.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-mk.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-nl.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-nn.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-no.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-pl.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-plone.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-pt-br.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-pt.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ro.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-ru.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-sk.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-sl.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-so.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-sr.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-su.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-sv.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-th.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-tr.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-uk.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-un.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-vi.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/flag-zh.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/ke.gif
+lib/zope/lib/python/Products/PloneLanguageTool/skins/LanguageToolFlags/tz.gif
+lib/zope/lib/python/Products/PloneLanguageTool/tool.gif
+lib/zope/lib/python/Products/PloneLanguageTool/version.txt
+lib/zope/lib/python/Products/PloneLanguageTool/www/
+lib/zope/lib/python/Products/PloneLanguageTool/www/config.zpt
+lib/zope/lib/python/Products/PloneTranslations/
+lib/zope/lib/python/Products/PloneTranslations/ChangeLog
+lib/zope/lib/python/Products/PloneTranslations/HISTORY.txt
+lib/zope/lib/python/Products/PloneTranslations/README.txt
+lib/zope/lib/python/Products/PloneTranslations/VERSION.txt
+lib/zope/lib/python/Products/PloneTranslations/__init__.py
+lib/zope/lib/python/Products/PloneTranslations/__init__.pyc
+lib/zope/lib/python/Products/PloneTranslations/__pkginfo__.py
+lib/zope/lib/python/Products/PloneTranslations/__pkginfo__.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/
+lib/zope/lib/python/Products/PloneTranslations/i18n/__init__.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/__init__.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-af.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-ar.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-bg.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-bn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-ca.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-cs.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-da.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-de.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-el.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-en.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-eo.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-es.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-et.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-eu.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-fa.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-fi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-fr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-he.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-hi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-hr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-hu.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-hy.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-id.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-it.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-ja.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-ka.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-kn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-ko.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-lt.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-manual.pot
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-mi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-my.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-nl.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-nn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-no.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-pl.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-pt-br.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-pt.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-ro.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-ru.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-sk.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-sl.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-sm.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-sq.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-sr-Latn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-sr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-sv.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-ta.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-te.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-to.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-tr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-uk.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-vi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-zh-cn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-zh-hk.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-zh-tw.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes-zh.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/archetypes.pot
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-af.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-ar.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-bg.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-bn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-ca.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-cs.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-da.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-de.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-el.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-en.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-eo.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-es.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-et.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-eu.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-fa.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-fi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-fr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-generated.pot
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-he.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-hi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-hr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-hu.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-hy.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-id.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-it.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-ja.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-ka.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-kn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-ko.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-lt.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-manual.pot
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-mi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-my.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-nl.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-nn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-no.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-pl.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-pt-br.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-pt.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-ro.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-ru.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-sk.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-sl.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-sm.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-sq.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-sr-Latn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-sr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-sv.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-ta.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-te.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-to.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-tr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-uk.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-vi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-zh-cn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-zh-hk.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-zh-tw.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes-zh.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atcontenttypes.pot
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-af.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-ar.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-bg.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-bn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-ca.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-cs.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-da.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-de.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-el.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-en.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-eo.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-es.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-et.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-eu.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-fa.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-fi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-fr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-he.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-hi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-hr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-hu.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-hy.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-id.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-it.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-ja.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-ka.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-kn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-ko.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-lt.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-manual.pot
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-mi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-my.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-nl.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-nn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-no.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-pl.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-pt-br.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-pt.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-ro.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-ru.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-sk.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-sl.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-sm.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-sq.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-sr-Latn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-sr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-sv.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-ta.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-te.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-to.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-tr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-uk.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-vi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-zh-cn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-zh-hk.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-zh-tw.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget-zh.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/atreferencebrowserwidget.pot
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-af.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-ar.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-bg.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-bn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-ca.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-cs.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-da.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-de.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-el.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-eo.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-es.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-et.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-eu.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-fa.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-fi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-fr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-he.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-hi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-hr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-hu.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-hy.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-id.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-it.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-ja.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-ka.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-kn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-ko.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-lt.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-manual.pot
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-mi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-my.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-nl.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-nn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-no.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-pl.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-pt-br.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-pt.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-ro.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-ru.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-sk.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-sl.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-sm.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-sq.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-sr-Latn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-sr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-sv.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-ta.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-te.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-to.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-tr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-uk.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-vi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-zh-cn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-zh-hk.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-zh-tw.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone-zh.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/linguaplone.pot
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-af.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-ar.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-bg.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-bn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-ca.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-cs.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-da.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-de.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-el.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-en.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-eo.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-es.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-et.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-eu.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-fa.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-fi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-fr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-generated.pot
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-he.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-hi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-hr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-hu.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-hy.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-id.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-it.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-ja.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-ka.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-kn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-ko.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-lt.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-manual.pot
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-mi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-my.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-nl.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-nn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-no.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-pl.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-pt-br.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-pt.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-ro.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-ru.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-sk.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-sl.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-sm.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-sq.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-sr-Latn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-sr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-sv.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-ta.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-te.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-to.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-tr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-uk.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-vi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-zh-cn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-zh-hk.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-zh-tw.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone-zh.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plone.pot
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-af.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-ar.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-bg.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-bn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-ca.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-cs.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-da.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-de.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-el.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-eo.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-es.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-et.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-eu.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-fa.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-fi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-fr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-he.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-hi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-hr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-hu.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-hy.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-id.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-it.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-ja.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-ka.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-kn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-ko.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-lt.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-manual.pot
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-mi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-my.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-nl.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-nn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-no.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-pl.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-pt-br.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-pt.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-ro.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-ru.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-sk.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-sl.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-sm.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-sq.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-sr-Latn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-sr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-sv.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-ta.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-te.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-to.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-tr.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-uk.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-vi.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-zh-cn.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-zh-hk.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-zh-tw.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool-zh.po
+lib/zope/lib/python/Products/PloneTranslations/i18n/plonelanguagetool.pot
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/admix.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/admix.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/chart.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/chart.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/combinedchart.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/combinedchart.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/copymsgid.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/copymsgid.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/create.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/create.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/filter.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/filter.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/find-untranslated.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/find-untranslated.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/i18ngenerate.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/i18ngenerate.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/merge.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/merge.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/rebuild-pot.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/rebuild-pot.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/relocate.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/relocate.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/renamemsgid.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/renamemsgid.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/rescue.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/rescue.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/setcomment.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/setcomment.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/setdomain.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/setdomain.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/setenv.bat.example
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/setenv.sh.example
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/setprojid.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/setprojid.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/similar.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/similar.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/sync.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/sync.pyc
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/utils.py
+lib/zope/lib/python/Products/PloneTranslations/i18n/utils/utils.pyc
+lib/zope/lib/python/Products/PloneTranslations/tests/
+lib/zope/lib/python/Products/PloneTranslations/tests/README.txt
+lib/zope/lib/python/Products/PloneTranslations/tests/__init__.py
+lib/zope/lib/python/Products/PloneTranslations/tests/__init__.pyc
+lib/zope/lib/python/Products/PloneTranslations/tests/framework.py
+lib/zope/lib/python/Products/PloneTranslations/tests/framework.pyc
+lib/zope/lib/python/Products/PloneTranslations/tests/i18ngenerator.py
+lib/zope/lib/python/Products/PloneTranslations/tests/i18ngenerator.pyc
+lib/zope/lib/python/Products/PloneTranslations/tests/runalltests.py
+lib/zope/lib/python/Products/PloneTranslations/tests/runalltests.pyc
+lib/zope/lib/python/Products/PloneTranslations/tests/runtests.bat.example
+lib/zope/lib/python/Products/PloneTranslations/tests/runtests.sh.example
+lib/zope/lib/python/Products/PloneTranslations/tests/test_i18n.py
+lib/zope/lib/python/Products/PloneTranslations/tests/test_i18n.pyc
