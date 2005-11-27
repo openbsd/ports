@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2005/03/31 23:38:26 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/27 10:54:10 sturm Exp $
 
 COMMENT=	"g-wrap"
 DISTNAME=	g-wrap-1.3.4
 PKGNAME=	${DISTNAME}p0
-CATEGORIES=	gnome databases
+CATEGORIES=	x11/gnome databases
 MASTER_SITES=	${HOMEPAGE}/source/
 
 HOMEPAGE=	http://www.gnucash.org/pub/g-wrap

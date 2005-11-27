@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2005/09/19 13:35:17 jakob Exp $
+# $OpenBSD: Makefile,v 1.7 2005/11/27 10:54:10 sturm Exp $
 
 COMMENT=	syslogd replacement
 
-CATEGORIES=	sysutil
+CATEGORIES=	sysutils
 
 DISTNAME=	syslog-ng-1.6.8
 LIBOL=		libol-0.3.16
