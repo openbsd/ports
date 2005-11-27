@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.739 2005/11/27 12:15:59 sturm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.740 2005/11/27 12:31:18 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1251,10 +1251,6 @@ _grab_libs_from_plist= sed -n -e '/^@lib /{ s///; p; }' \
 
 
 
-###
-### end of variable setup. Only targets now
-###
-
 _fetch_packages_fragment= \
 	${ECHO_MSG} -n "===>  Looking for $$fullpkgname in \$$PKG_PATH - "; \
 	if ${SETENV} PKG_CACHE=${PKGREPOSITORY} PKG_PATH=${PKGREPOSITORY}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKG_ADD_FORCE} $$fullpkgname >/dev/null 2>&1; then \
@@ -1280,6 +1276,10 @@ _pkgrepository_fragment= \
 			exit 1; \
 		fi; \
 	fi
+
+###
+### end of variable setup. Only targets now
+###
 
 .if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE})
 ${_PACKAGE_COOKIE}:
