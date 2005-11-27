@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2005/10/06 17:36:06 brad Exp $
+# $OpenBSD: Makefile,v 1.151 2005/11/27 17:43:45 sturm Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -8,6 +8,8 @@
      SUBDIR += amavisd-new
      SUBDIR += archivemail
      SUBDIR += asmail
+     SUBDIR += avenger
+     SUBDIR += avenger,sasl2
      SUBDIR += bmf
      SUBDIR += bogofilter
      SUBDIR += bogofilter,db4
