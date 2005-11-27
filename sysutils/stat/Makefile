@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2005/09/05 13:25:55 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2005/11/27 15:09:00 sturm Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
+
+IGNORE=		"-- a stat utility is included in ${OPSYS} as of release 3.8"
 
 COMMENT=	"print inode contents"
 

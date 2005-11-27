@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2005/11/09 19:33:13 xsa Exp $
+# $OpenBSD: Makefile,v 1.6 2005/11/27 15:09:01 sturm Exp $
+
+IGNORE=		"- similar functionality is included in apmd as of ${OPSYS} 3.9"
 
 ONLY_FOR_ARCHS=	i386 macppc sparc zaurus
 
