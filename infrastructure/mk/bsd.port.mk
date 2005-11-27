@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.738 2005/11/15 18:14:56 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.739 2005/11/27 12:15:59 sturm Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1255,15 +1255,39 @@ _grab_libs_from_plist= sed -n -e '/^@lib /{ s///; p; }' \
 ### end of variable setup. Only targets now
 ###
 
-.if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE})
-${_PACKAGE_COOKIE}:
-	@${ECHO_MSG} -n "===>  Looking for ${FULLPKGNAME} in \$$PKG_PATH - "
-	@if ${SETENV} PKG_CACHE=${PKGREPOSITORY} PKG_PATH=${PKGREPOSITORY}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKG_ADD_FORCE} ${FULLPKGNAME} >/dev/null 2>&1; then \
+_fetch_packages_fragment= \
+	${ECHO_MSG} -n "===>  Looking for $$fullpkgname in \$$PKG_PATH - "; \
+	if ${SETENV} PKG_CACHE=${PKGREPOSITORY} PKG_PATH=${PKGREPOSITORY}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKG_ADD_FORCE} $$fullpkgname >/dev/null 2>&1; then \
 		${ECHO_MSG} "found"; \
+		if [ ! -f $$pkg_cookie ]; then \
+			for _d in ${PKG_PATH:S,/:,/ ,g}; do \
+				if [ -f $${_d}$$fullpkgname${PKG_SUFX} ]; then \
+ 					ln $${_d}$$fullpkgname${PKG_SUFX} ${PKGREPOSITORY} 2>/dev/null || \
+ 					  cp -p $${_d}$$fullpkgname${PKG_SUFX} ${PKGREPOSITORY}; \
+					break; \
+				fi; \
+			done; \
+		fi; \
 		exit 0; \
 	fi; \
 	${ECHO_MSG} "not found"; \
-	cd ${.CURDIR} && exec ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE}=Yes ${_PACKAGE_COOKIE}
+	cd ${.CURDIR} && exec ${MAKE} $$tried=Yes $$pkg_cookie
+
+_pkgrepository_fragment= \
+	if [ ! -d ${PKGREPOSITORY} ]; then \
+		if ! mkdir -p ${PKGREPOSITORY}; then \
+			echo ">> Cannot create directory ${PKGREPOSITORY}."; \
+			exit 1; \
+		fi; \
+	fi
+
+.if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE})
+${_PACKAGE_COOKIE}:
+	@${_pkgrepository_fragment}
+	@fullpkgname=${FULLPKGNAME}; \
+	pkg_cookie=${_PACKAGE_COOKIE}; \
+	tried=_TRIED_FETCHING_${_PACKAGE_COOKIE}; \
+	${_fetch_packages_fragment}
 .else
 .  if ${BIN_PACKAGES:L} == "yes"
 ${_PACKAGE_COOKIE}:
@@ -1271,6 +1295,7 @@ ${_PACKAGE_COOKIE}:
 .  else
 ${_PACKAGE_COOKIE}: ${_PACKAGE_COOKIE_DEPS}
 .  endif
+	@${_pkgrepository_fragment}
 	@cd ${.CURDIR} && SUBPACKAGE='' PACKAGING='' exec ${MAKE} _package
 .  if !defined(PACKAGE_NOINSTALL)
 	@${_MAKE_COOKIE} $@
@@ -1278,15 +1303,13 @@ ${_PACKAGE_COOKIE}: ${_PACKAGE_COOKIE_DEPS}
 .endif
 
 .for _s in ${MULTI_PACKAGES}
-.  if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE_${_s}})
+.  if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE${_s}})
 ${_PACKAGE_COOKIE${_s}}:
-	@${ECHO_MSG} -n "===>  Looking for ${FULLPKGNAME${_s}} in \$$PKG_PATH - "
-	@if ${SETENV} PKG_CACHE=${PKGREPOSITORY} PKG_PATH=${PKGREPOSITORY}/:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add -n -q ${_PKG_ADD_FORCE} ${FULLPKGNAME${_s}} >/dev/null 2>&1; then \
-		${ECHO_MSG} "found"; \
-		exit 0; \
-	fi; \
-	${ECHO_MSG} "not found"; \
-	cd ${.CURDIR} && exec ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE_${_s}}=Yes ${_PACKAGE_COOKIE${_s}}
+	@${_pkgrepository_fragment}
+	@fullpkgname=${FULLPKGNAME${_s}}; \
+	pkg_cookie=${_PACKAGE_COOKIE${_s}}; \
+	tried=_TRIED_FETCHING_${_PACKAGE_COOKIE${_s}}; \
+	${_fetch_packages_fragment}
 .  else
 .    if ${BIN_PACKAGES:L} == "yes"
 ${_PACKAGE_COOKIE${_s}}:
@@ -1294,6 +1317,7 @@ ${_PACKAGE_COOKIE${_s}}:
 .    else
 ${_PACKAGE_COOKIE${_s}}: ${_PACKAGE_COOKIE_DEPS}
 .    endif
+	@${_pkgrepository_fragment}
 	@cd ${.CURDIR} && SUBPACKAGE='${_s}' PACKAGING='${_s}' exec ${MAKE} _package
 .  endif
 .endfor
@@ -2039,12 +2063,6 @@ _package: ${_PKG_PREREQ}
 .else
 # What PACKAGE normally does:
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${SUBPACKAGE}}"
-	@if [ ! -d ${PKGREPOSITORY} ]; then \
-	   if ! mkdir -p ${PKGREPOSITORY}; then \
-	      echo ">> Can't create directory ${PKGREPOSITORY}."; \
-		  exit 1; \
-	   fi; \
-	fi
 	@cd ${.CURDIR} && \
       deps=`${MAKE} _print-package-args` && \
 	  if ${SUDO} ${PKG_CMD} `echo "$$deps"|sort -u` ${PKG_ARGS} ${PKGFILE${SUBPACKAGE}}; then \
