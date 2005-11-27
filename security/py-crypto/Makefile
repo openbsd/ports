@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2005/05/28 05:39:45 djm Exp $
+# $OpenBSD: Makefile,v 1.4 2005/11/27 15:20:42 alek Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"cryptographic tools for Python"
 
-VERSION=	2.0
+VERSION=	2.0.1
 DISTNAME=	pycrypto-${VERSION}
 PKGNAME=	py-crypto-${VERSION}
 CATEGORIES=    	security devel
