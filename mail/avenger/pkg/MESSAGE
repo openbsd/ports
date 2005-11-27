@@ -1,0 +1,10 @@
+
+You must configure Mail Avenger before running it:
+
+  - Edit the ${SYSCONFDIR}/avenger/asmtpd.conf file for your system.
+
+  - If you don't run sendmail, edit ${SYSCONFDIR}/avenger/unknown.
+
+  - See ${SYSCONFDIR}/avenger/smtp-filter if you want Mail Avenger to take
+    advantage of OpenBSD's pf packet filter.
+

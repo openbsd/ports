@@ -1,0 +1,50 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/27 17:42:48 sturm Exp $
+@conflict macutil-*
+@comment XXX avenger needs to read aliases.db which might end up mode 640
+@newuser _avenger:554:wheel:daemon:Mail Avenger:/var/avenger:/sbin/nologin
+bin/aliascheck
+bin/dbutil
+bin/deliver
+bin/dotlock
+bin/edinplace
+bin/escape
+bin/macutil
+bin/mailexec
+bin/match
+bin/omacutil
+bin/sendmac
+bin/smtpdcheck
+bin/synos
+libexec/avenger
+libexec/avenger.local
+@man man/man1/aliascheck.1
+@man man/man1/avenger.1
+@man man/man1/dbutil.1
+@man man/man1/deliver.1
+@man man/man1/dotlock.1
+@man man/man1/edinplace.1
+@man man/man1/escape.1
+@man man/man1/macutil.1
+@man man/man1/mailexec.1
+@man man/man1/match.1
+@man man/man1/smtpdcheck.1
+@man man/man1/synos.1
+@man man/man5/asmtpd.conf.5
+@man man/man8/asmtpd.8
+@man man/man8/avenger.local.8
+sbin/asmtpd
+share/avenger/
+share/avenger/INSTALL
+share/avenger/INSTALL.html
+share/avenger/asmtpd.conf
+@sample ${SYSCONFDIR}/avenger/
+@sample ${SYSCONFDIR}/avenger/asmtpd.conf
+share/avenger/avsendmail.m4
+share/avenger/smtp-filter.iptables
+share/avenger/smtp-filter.pf
+@mode 0755
+@sample ${SYSCONFDIR}/avenger/smtp-filter
+@mode
+share/avenger/unknown
+@sample ${SYSCONFDIR}/avenger/unknown
+@comment share/pf.os

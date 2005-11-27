@@ -1,0 +1,12 @@
+$OpenBSD: patch-etc_asmtpd_conf,v 1.1.1.1 2005/11/27 17:42:48 sturm Exp $
+--- etc/asmtpd.conf.orig	Fri Oct 21 05:49:40 2005
++++ etc/asmtpd.conf	Sat Nov 26 11:47:12 2005
+@@ -44,7 +44,7 @@ Sendmail sendmail -Am -oi -os -oee
+ # If the user you created for mail avenger is called anything other
+ # than "avenger", you will want to change the following line:
+ #
+-AvengerUser avenger
++AvengerUser _avenger
+ 
+ # The following line allows mail from legitimate sites that "forge"
+ # mail (the way evite used to).  You are strongly advised not to
