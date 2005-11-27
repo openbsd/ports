@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/10/08 03:54:25 grange Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/11/27 10:15:27 grange Exp $
 bin/gxemul
 @man man/man1/gxemul.1
 share/doc/gxemul/
@@ -48,6 +48,8 @@ share/doc/gxemul/20051007-netbsd-cats-installed.png
 share/doc/gxemul/20051007-netbsd-cats-installed_small.png
 share/doc/gxemul/20051007-openbsd-cats-installed.png
 share/doc/gxemul/20051007-openbsd-cats-installed_small.png
+share/doc/gxemul/20051123-netbsd-prep.png
+share/doc/gxemul/20051123-netbsd-prep_small.png
 share/doc/gxemul/configfiles.html
 share/doc/gxemul/experiments.html
 share/doc/gxemul/guestoses.html
