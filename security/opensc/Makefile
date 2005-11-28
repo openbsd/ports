@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/11/27 11:01:14 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/11/28 07:26:35 alek Exp $
 
 COMMENT=	"set of libraries and utilities to access smart cards"
 
 DISTNAME=	opensc-0.9.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security
 
-HOMEPAGE=	http://www.opensc.org
+HOMEPAGE=	http://www.opensc.org/
 
 MAINTAINER=	Douglas Santos <dsantos@hydroxyl.org>
 
@@ -15,7 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
 
-MASTER_SITES=	${HOMEPAGE}/files/
+MASTER_SITES=	${HOMEPAGE}/files/ \
+		${HOMEPAGE}/files/old/
 
 WANTLIB=	readline crypto termcap c pthread
 
