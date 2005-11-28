@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/11/15 19:25:55 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2005/11/28 19:07:30 sturm Exp $
 
 COMMENT=	"Change Background Image with GkrellM2"
 
@@ -13,7 +13,8 @@ PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
 
-MASTER_SITES=	http://www.bender-suhl.de/stefan/comp/sources/
+MASTER_SITES=	http://www.bender-suhl.de/stefan/comp/sources/old/ \
+		http://www.bender-suhl.de/stefan/comp/sources/
 
 PLUGIN=		${WRKSRC}/gkrellmbgchg.so
 
