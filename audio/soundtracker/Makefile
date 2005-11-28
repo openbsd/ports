@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2005/11/03 18:28:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2005/11/28 16:09:52 kurt Exp $
 # Uses pthreads
 
 COMMENT=		"Music tracking tool for X11"
 
 VERSION=		0.6.6
 DISTNAME=		soundtracker-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio
 HOMEPAGE=		http://www.soundtracker.org/
 
