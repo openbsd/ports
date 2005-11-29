@@ -4,5 +4,4 @@ engineers committed to free software development. KDE seeks to fill
 the need for an easy to use desktop for Unix workstations, similar to
 the desktop environments found under the MacOS or Window95/NT. 
 
-This package holds the base libraries necessary for kde3 to work.
-Install kdecups as well if you want to use cups within kde.
+This package holds the samba glue for kde.

@@ -1,7 +1,7 @@
-$OpenBSD: patch-admin_ltmain_sh,v 1.1 2005/09/18 12:21:07 espie Exp $
---- admin/ltmain.sh.orig	Sat Sep 10 16:28:22 2005
-+++ admin/ltmain.sh	Sun Sep 18 14:09:00 2005
-@@ -1307,6 +1307,17 @@ EOF
+$OpenBSD: patch-admin_ltmain_sh,v 1.2 2005/11/29 14:00:13 espie Exp $
+--- admin/ltmain.sh.orig	Wed Nov  9 10:30:02 2005
++++ admin/ltmain.sh	Mon Nov 21 12:00:07 2005
+@@ -1301,6 +1301,17 @@ EOF
  	continue
  	;;
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-admin_ltmain_sh,v 1.1 2005/09/18 12:21:07 espie Exp $
        -module)
  	module=yes
  	continue
-@@ -2003,6 +2014,30 @@ EOF
+@@ -1997,6 +2008,30 @@ EOF
  	  fi
  	  continue
  	  ;;

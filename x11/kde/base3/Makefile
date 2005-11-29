@@ -1,20 +1,44 @@
-# $OpenBSD: Makefile,v 1.48 2005/11/11 11:33:01 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2005/11/29 14:00:12 espie Exp $
 
 COMMENT= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
+COMMENT-samba=		"K Desktop Environment, samba support"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.4.3
+VERSION=		3.5.0
 DISTNAME=		kdebase-${VERSION}
-PKGNAME=		${DISTNAME}p2
-MODKDE_VERSION?=	3.4
+PKGNAME=		${DISTNAME}
+PKGNAME-samba=		kdesamba-${VERSION}
+MODKDE_VERSION?=	3.5
 
+MULTI_PACKAGES=		-samba
+SUBPACKAGE?=
 FLAVORS=		debug
-LIB_DEPENDS= kdecore.6,kabc,katepartinterfaces,kdefakes,kdefx,kdnssd,kdeprint,kdeprint_management,kdesu,kdeui,khtml,kio,kjs,knewstuff,kmid,kmdi2,kparts,kresources,kscreensaver,kscript,ktexteditor,kutils,kwalletclient,DCOP,vcard,artskde::x11/kde/libs3 \
+
+BUILD_DEPENDS+=::devel/pkgconfig
+
+WANTLIB+=ICE Xrender SM pthread util X11 m z png jpeg art_lgpl_2 Xext 
+
+.if !defined(PACKAGING) || ${SUBPACKAGE:L} == ""
+LIB_DEPENDS+= kdecore.6,kabc,katepartinterfaces,kdefakes,kdefx,kdnssd,kdeprint,kdeprint_management,kdesu,kdeui,khtml,kio,kjs,knewstuff,kmid,kparts,kresources,kscreensaver,ktexteditor,kutils,kwalletclient,DCOP,vcard,artskde::x11/kde/libs3 \
 	lber,ldap.2:openldap-client-2.*:databases/openldap \
 	sasl2::security/cyrus-sasl2 \
 	usb::devel/libusb
+LIB_DEPENDS+= \
+	glib-2.0.0.0,gmodule-2.0.0.0,gthread-2.0.0.0::devel/glib2
+WANTLIB+=	Xcursor Xrandr Xss Xt Xtst Xxf86misc \
+		artsflow artsflow_idl audiofile c crypto esd \
+		freetype iconv intl kmedia2_idl mad mcop ogg ossaudio \
+		pcre pcreposix qtmcop soundserver_idl ssl stdc++ \
+		vorbis vorbisenc vorbisfile xkbfile GLU fontenc \
+		Xinerama Xft Xfixes fontconfig GL Xcomposite Xdamage \
+		Half Imath IlmImf Iex
 
-BUILD_DEPENDS+=::devel/pkgconfig
+.endif
+
+.if !defined(PACKAGING) || ${SUBPACKAGE:L} == "-samba"
+LIB_DEPENDS+=	lib/samba/smbclient:samba->=3:net/samba
+LIB_DEPENDS+=	DCOP,kdecore.6,kio,kdeui,kdefx,kdesu,kwalletclient::x11/kde/libs3
+.endif
 
 SEPARATE_BUILD=	flavored
 EXTRA_CONFIG=	xdg/menus/kde-settings.menu \
@@ -22,13 +46,6 @@ EXTRA_CONFIG=	xdg/menus/kde-settings.menu \
 		xdg/menus/kde-screensavers.menu \
 		xdg/menus/applications-merged/kde-essential.menu \
 		ksysguarddrc
-
-LIB_DEPENDS+= \
-	glib-2.0.0.0,gmodule-2.0.0.0,gthread-2.0.0.0::devel/glib2
-
-.if !defined(PACKAGING)
-LIB_DEPENDS+=	lib/samba/smbclient:samba->=3:net/samba
-.endif
 
 
 CONFIGURE_ENV+= PKG_CONFIG_PATH=${X11BASE}/lib/pkgconfig
@@ -44,13 +61,6 @@ post-install:
 FAKE_FLAGS=DESTDIR=${WRKINST} sysconfdir=${SAMPLECONFDIR}
 
 #CONFIGURE_ARGS+=--without-motif
-
-WANTLIB=	ICE SM X11 Xcursor Xext Xrandr Xrender Xss Xt Xtst Xxf86misc \
-		art_lgpl_2 artsflow artsflow_idl audiofile c crypto esd \
-		freetype iconv intl jpeg kmedia2_idl m mad mcop ogg ossaudio \
-		pcre pcreposix png pthread qtmcop soundserver_idl ssl stdc++ \
-		util vorbis vorbisenc vorbisfile xkbfile z GLU fontenc \
-		Xinerama Xft Xfixes fontconfig GL Xcomposite Xdamage \
-		Half Imath IlmImf Iex
+#CONFIGURE_ARGS+=--without-samba
 
 .include <bsd.port.mk>

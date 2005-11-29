@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST-samba,v 1.1 2005/11/29 14:00:13 espie Exp $
+@conflict kdebase-<3.5
+${KDE}/kio_smb.la
+${KDE}/kio_smb.so
+share/apps/konqueror/dirtree/
+share/apps/konqueror/dirtree/remote/
+share/apps/konqueror/dirtree/remote/smb-network.desktop
+share/apps/remoteview/
+share/apps/remoteview/smb-network.desktop
+share/mimelnk/application/x-smb-server.desktop
+share/mimelnk/application/x-smb-workgroup.desktop
+share/services/smb.protocol

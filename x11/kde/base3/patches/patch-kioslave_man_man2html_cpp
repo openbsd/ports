@@ -1,7 +1,7 @@
-$OpenBSD: patch-kioslave_man_man2html_cpp,v 1.10 2005/03/29 21:18:35 espie Exp $
---- kioslave/man/man2html.cpp.orig	Wed Feb 23 12:26:40 2005
-+++ kioslave/man/man2html.cpp	Wed Mar 23 11:50:59 2005
-@@ -1918,6 +1918,7 @@ static const char *section_list[] = {
+$OpenBSD: patch-kioslave_man_man2html_cpp,v 1.11 2005/11/29 14:00:12 espie Exp $
+--- kioslave/man/man2html.cpp.orig	Tue Nov  8 23:36:08 2005
++++ kioslave/man/man2html.cpp	Mon Nov 21 14:25:00 2005
+@@ -2696,6 +2696,7 @@ static const char *section_list[] = {
      "3L", "Lightweight Processes Library",
      "3M", "Mathematical Library",
      "3N", "Network Functions",
@@ -9,7 +9,7 @@ $OpenBSD: patch-kioslave_man_man2html_cpp,v 1.10 2005/03/29 21:18:35 espie Exp $
      "3R", "RPC Services Library",
      "3S", "Standard I/O Functions",
      "3V", "C Library Functions",
-@@ -4019,16 +4020,17 @@ static char *scan_troff_mandoc(char *c, 
+@@ -5460,16 +5461,17 @@ static char *scan_troff_mandoc(char *c, 
          end++;
      }
  

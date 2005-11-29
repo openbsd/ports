@@ -1,34 +1,56 @@
-# $OpenBSD: Makefile,v 1.58 2005/10/17 11:28:25 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2005/11/29 14:00:12 espie Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
+COMMENT-cups=		"K Desktop Environment, cups support"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.4.3
+VERSION=		3.5.0
 DISTNAME=		kdelibs-${VERSION}
 PKGNAME=		${DISTNAME}
-MODKDE_VERSION?=	3.4
+PKGNAME-cups=		kdecups-${VERSION}
+MODKDE_VERSION?=	3.5
 
 FLAVORS=debug
 VMEM_WARNING=	Yes
-LIB_DEPENDS=	art_lgpl_2::graphics/libart \
-		artsflow.1.0,artsflow_idl,qtmcop,soundserver_idl,mcop,kmedia2_idl::x11/kde/arts3 \
+
+
+MULTI_PACKAGES=	-cups
+CONFIGURE_ARGS+= --enable-cups
+
+SUBPACKAGE?=
+
+BUILD_DEPENDS+= ::textproc/docbook-to-man \
+		::devel/pkgconfig
+LIB_DEPENDS+=	art_lgpl_2::graphics/libart
+WANTLIB+=	intl iconv util jpeg m X11 ICE Xrender c SM pthread \
+		stdc++ Xext z png
+
+.if !defined(PACKAGING) || ${SUBPACKAGE:L} == ""
+
+LIB_DEPENDS+=	artsflow.1.0,artsflow_idl,qtmcop,soundserver_idl,mcop,kmedia2_idl::x11/kde/arts3 \
 		pcreposix,pcre::devel/pcre \
 		xslt.1.10:libxslt->=1.0.10:textproc/libxslt \
 		bz2::archivers/bzip2 \
 		tiff.35::graphics/tiff \
 		jasper::graphics/jasper
 
-WANTLIB=	c ICE SM X11 Xext Xrender audiofile esd glib-2.0.0.0 \
-		gmodule-2.0.0.0 gthread-2.0.0.0 iconv intl jpeg m mad ogg \
-		ossaudio png pthread stdc++ util vorbis vorbisenc vorbisfile \
-		xml2 z krb5 gssapi ssl crypto asn1
+WANTLIB+=	audiofile esd glib-2.0.0.0 \
+		gmodule-2.0.0.0 gthread-2.0.0.0 mad ogg \
+		ossaudio vorbisenc vorbis vorbisfile \
+		xml2 krb5 gssapi crypto asn1
 
-CONFIGURE_ARGS+= --enable-cups
 
-BUILD_DEPENDS+=	::print/cups # crypto,ssl,cups
-BUILD_DEPENDS+= ::textproc/docbook-to-man \
-		::devel/pkgconfig
 LIB_DEPENDS+=	Half,Iex,Imath,IlmImf::graphics/openexr	\
 		aspell::textproc/aspell/core
+.endif
+
+.if !defined(PACKAGING) || ${SUBPACKAGE:L} == "-cups"
+LIB_DEPENDS+=	cups::print/cups
+WANTLIB+=	gcrypt gnutls gpg-error
+.endif
+
+.if defined(PACKAGING) && ${SUBPACKAGE:L} == "-cups"
+LIB_DEPENDS+=	kdecore.6,kwalletclient,kdefakes,kdefx,kdeprint,kio,kparts,kdeui,kdesu,kdeprint_management,DCOP::x11/kde/libs3
+.endif
 
 SEPARATE_BUILD=	flavored
 SAMPLECONFDIR=${TRUEPREFIX}/share/apps/kde-conf-sample

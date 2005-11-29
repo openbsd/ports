@@ -1,6 +1,6 @@
-$OpenBSD: patch-kdesu_su_cpp,v 1.6 2004/09/18 09:36:44 espie Exp $
---- kdesu/su.cpp.orig	Sat May 22 22:55:16 2004
-+++ kdesu/su.cpp	Mon Sep  6 02:36:32 2004
+$OpenBSD: patch-kdesu_su_cpp,v 1.7 2005/11/29 14:00:12 espie Exp $
+--- kdesu/su.cpp.orig	Sat Sep 10 10:27:02 2005
++++ kdesu/su.cpp	Mon Nov 21 12:27:29 2005
 @@ -41,19 +41,35 @@
  #ifndef __PATH_SU
  #define __PATH_SU "false"
@@ -41,15 +41,15 @@ $OpenBSD: patch-kdesu_su_cpp,v 1.6 2004/09/18 09:36:44 espie Exp $
  }
  
  /*
-- * Execute a command with su(1).
-+ * Execute a command with su(1) or sudo
-  */
+-* Execute a command with su(1).
++* Execute a command with su(1) or sudo
+ */
  
  int SuProcess::exec(const char *password, int check)
-@@ -74,11 +90,19 @@ int SuProcess::exec(const char *password
- 	setTerminal(true);
+@@ -75,12 +91,20 @@ int SuProcess::exec(const char *password
  
      QCStringList args;
+ 
 +    if (d->m_useSudo)
 +    {
 +	args += "-S";
@@ -58,51 +58,52 @@ $OpenBSD: patch-kdesu_su_cpp,v 1.6 2004/09/18 09:36:44 espie Exp $
 +	args += "-u";
 +    }
      if ((m_Scheduler != SchedNormal) || (m_Priority > 50))
- 	args += "root";
+         args += "root";
      else
- 	args += m_User;
+         args += m_User;
+     
 -    args += "-c";
 +    if (!d->m_useSudo)
 +	args += "-c";
      args += QCString(__KDE_BINDIR) + "/kdesu_stub";
      args += "-";
  
-@@ -91,7 +115,7 @@ int SuProcess::exec(const char *password
+@@ -93,7 +117,7 @@ int SuProcess::exec(const char *password
      }
  
      // kdDebug(900) << k_lineinfo << "Call StubProcess::exec()" << endl;
 -    if (StubProcess::exec(command, args) < 0)
 +    if (StubProcess::exec(d->m_useSudo ? __PATH_SUDO : __PATH_SU, args) < 0)
      {
- 	return check ? SuNotFound : -1;
+         return check ? SuNotFound : -1;
      }
-@@ -103,7 +127,8 @@ int SuProcess::exec(const char *password
+@@ -105,7 +129,8 @@ int SuProcess::exec(const char *password
      if (ret == error) 
      {
- 	if (!check)
--	    kdError(900) << k_lineinfo << "Conversation with su failed\n";
+         if (!check)
+-            kdError(900) << k_lineinfo << "Conversation with su failed\n";
 +	    kdError(900) << k_lineinfo << "Conversation with " <<
 +		(d->m_useSudo ? "sudo" : "su") << " failed\n";
- 	return ret;
-     } 
+         return ret;
+     }
      if (check == NeedPassword)
-@@ -201,6 +226,9 @@ int SuProcess::ConverseSU(const char *pa
- 		kdDebug(900) << k_lineinfo << "Read line <" << more << ">" << endl;
+@@ -211,6 +236,9 @@ int SuProcess::ConverseSU(const char *pa
+                     kdDebug(900) << k_lineinfo << "Read line <" << more << ">" << endl;
+                 }
+     
++       	        if (d->m_useSudo && line != "Password:")
++ 		    break;
++ 
+                 // Match "Password: " with the regex ^[^:]+:[\w]*$.
+                 const uint len = line.length();
+                 for (i=0,j=0,colon=0; i<len; i++) 
+@@ -265,6 +293,9 @@ int SuProcess::ConverseSU(const char *pa
              }
-             
-+ 	    if (d->m_useSudo && line != "Password:")
-+ 		break;
+             //////////////////////////////////////////////////////////////////////////
+             case HandleStub:
++		if (d->m_useSudo && line == "Password:")
++		    return -1;
 + 
- 	    // Match "Password: " with the regex ^[^:]+:[\w]*$.
- 	    for (i=0,j=0,colon=0; i<line.length(); i++) 
- 	    {
-@@ -252,6 +280,9 @@ int SuProcess::ConverseSU(const char *pa
- 	}
- 
- 	case HandleStub:
-+ 	    if (d->m_useSudo && line == "Password:")
-+ 		return -1;
-+ 
- 	    // Read till we get "kdesu_stub"
- 	    if (line == "kdesu_stub")
- 	    {
+                 // Read till we get "kdesu_stub"
+                 if (line == "kdesu_stub")
+                 {

@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST-cups,v 1.1 2005/11/29 14:00:12 espie Exp $
+@conflict kdelibs-<3.5
+bin/cupsdconf
+bin/cupsdoprint
+bin/make_driver_db_cups
+${KDE}/cupsdconf.la
+${KDE}/cupsdconf.so
+${KDE}/kdeprint_cups.la
+${KDE}/kdeprint_cups.so
+lib/libkdeinit_cupsdconf.la
+lib/libkdeinit_cupsdconf.so
+share/apps/kdeprint/cups_logo.png
+share/apps/kdeprint/cupsd.conf.template
+share/apps/kdeprint/kde_logo.png
+share/apps/kdeprint/plugins/cups.print
+share/apps/kdeprint/preview-mini.png
+share/apps/kdeprint/preview.png
