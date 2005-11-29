@@ -1,0 +1,15 @@
+$OpenBSD: patch-kioslave_file_file_cc,v 1.1 2005/11/29 14:01:48 espie Exp $
+--- kioslave/file/file.cc.orig	Mon Nov 21 12:59:13 2005
++++ kioslave/file/file.cc	Mon Nov 21 12:59:38 2005
+@@ -193,9 +193,11 @@ void FileProtocol::chmod( const KURL& ur
+             case EACCES:
+                 error( KIO::ERR_ACCESS_DENIED, url.path() );
+                 break;
++#if defined(ENOTSUP)
+             case ENOTSUP:
+                 error( KIO::ERR_UNSUPPORTED_ACTION, url.path() );
+                 break;
++#endif
+             case ENOSPC:
+                 error( KIO::ERR_DISK_FULL, url.path() );
+                 break;
