@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2005/02/07 19:01:48 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2005/11/29 07:40:50 alek Exp $
 
 COMMENT=	"perl module to implementing delay loading of object-data"
 
-VERSION=	0.14
+VERSION=	0.15
 DISTNAME=	Object-Realize-Later-${VERSION}
 PKGNAME=	p5-Object-Realize-${VERSION}
 CATEGORIES=	devel perl5
 
 HOMEPAGE=	http://perl.overmeer.net/
+
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
