@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2004/08/10 08:10:18 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2005/11/29 02:19:42 kevlo Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"interface for cyclic redundancy check generation"
 
-DISTNAME=	String-CRC32-1.2
+DISTNAME=	String-CRC32-1.3
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
 
