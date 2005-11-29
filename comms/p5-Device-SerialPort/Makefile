@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/08/03 14:44:18 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2005/11/29 02:43:23 pvalchev Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,5 +23,9 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/C/CO/COOK/}
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= perl
+
+.if ${MACHINE_ARCH} == "sparc"
+CONFIGURE_ARGS= TESTPORT=/dev/cuaa
+.endif
 
 .include <bsd.port.mk>
