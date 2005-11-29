@@ -1,11 +1,11 @@
-$OpenBSD: patch-kalarm_kalarmapp_cpp,v 1.4 2005/09/20 09:25:46 espie Exp $
---- kalarm/kalarmapp.cpp.orig	Wed Jul 20 12:03:04 2005
-+++ kalarm/kalarmapp.cpp	Mon Sep 19 22:52:48 2005
-@@ -63,6 +63,7 @@
+$OpenBSD: patch-kalarm_kalarmapp_cpp,v 1.5 2005/11/29 16:00:58 espie Exp $
+--- kalarm/kalarmapp.cpp.orig	Sat Sep 10 16:34:09 2005
++++ kalarm/kalarmapp.cpp	Tue Nov 22 13:06:34 2005
+@@ -65,6 +65,7 @@
  #include "kalarmapp.moc"
  
  #include <netwm.h>
 +#undef Unsorted
  
- int         marginKDE2 = 0;
  
+ static bool convWakeTime(const QCString timeParam, QDateTime&, bool& noTime);
