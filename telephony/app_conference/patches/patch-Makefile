@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2005/11/10 21:13:11 jolan Exp $
+$OpenBSD: patch-Makefile,v 1.2 2005/11/29 03:40:38 jolan Exp $
 --- Makefile.orig	Thu Oct 27 12:53:35 2005
-+++ Makefile	Thu Nov 10 14:03:54 2005
++++ Makefile	Mon Nov 28 21:38:08 2005
 @@ -17,13 +17,13 @@
  # app_conference defines which can be passed on the command-line
  #
@@ -31,7 +31,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2005/11/10 21:13:11 jolan Exp $
  DEBUG := -g 
  
 -CFLAGS = -pipe -Wall -Wmissing-prototypes -Wmissing-declarations $(DEBUG) $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE
-+CFLAGS += -Wall -Wmissing-prototypes -Wmissing-declarations $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE
++CFLAGS += -fPIC -Wall -Wmissing-prototypes -Wmissing-declarations $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE
  #CFLAGS += -O2
  #CFLAGS += -O3 -march=pentium3 -msse -mfpmath=sse,387 -ffast-math 
  # PERF: below is 10% faster than -O2 or -O3 alone.
@@ -58,6 +58,15 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2005/11/10 21:13:11 jolan Exp $
  
  ifeq ($(APP_CONFERENCE_DEBUG), 1)
  CFLAGS += -DAPP_CONFERENCE_DEBUG
+@@ -89,7 +89,7 @@ OSARCH=$(shell uname -s)
+ ifeq (${OSARCH},Darwin)
+ SOLINK=-dynamic -bundle -undefined suppress -force_flat_namespace
+ else
+-SOLINK=-shared -Xlinker -x
++SOLINK=-shared -fPIC -Xlinker -x
+ endif
+ 
+ #
 @@ -102,7 +102,7 @@ clean:
  	rm -f *.so *.o $(OBJS)
  
