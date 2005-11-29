@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.33 2005/09/18 12:21:07 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.34 2005/11/29 15:40:47 naddy Exp $
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
 .if defined(VERSION) && ${VERSION} == "3.1.95"
@@ -9,6 +9,8 @@ MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/3.2/src/@}
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/3.3/src/@}
 .elif defined(VERSION) && ${VERSION} == "3.4.0"
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/3.4/src/@}
+.elif defined(VERSION) && ${VERSION} == "3.5.0"
+MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/3.5/src/@}
 .else
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/@}
 .endif
