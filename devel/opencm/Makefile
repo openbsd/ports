@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2005/11/03 18:28:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2005/11/30 20:43:44 todd Exp $
 
 COMMENT=		"OpenCM change management system"
 
-V=			0.1.2alpha7pl1
-sV=			-1
+V=			0.1.2alpha8
+sV=			-2
 DISTFILES=		opencm-${V}${sV}-src.tgz
 DISTNAME=		opencm-${V}
 CATEGORIES=		devel
@@ -19,8 +19,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto ncurses readline ssl z
 
-# where the source files and patches can be fetched
-#
 MASTER_SITES=		${HOMEPAGE}releases/
 
 USE_GMAKE=		Yes
@@ -30,7 +28,8 @@ CONFIGURE_STYLE=	autoconf
 LDFLAGS+= -L${LOCALBASE}/lib -lgc
 
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS}" \
-			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -DUSE_SYSTEM_ZLIB" \
+			CPPFLAGS="${CPPFLAGS} \
+			-I${LOCALBASE}/include -DUSE_SYSTEM_ZLIB" \
 			vl_cv_lib_kerberos=1
 
 MAKE_ENV= LDFLAGS="${LDFLAGS}"
