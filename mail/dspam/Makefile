@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2005/11/23 08:52:48 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2005/11/30 08:33:16 jakob Exp $
 
 COMMENT=	"anti-spam filter"
 
-VERSION=	3.6.1
+VERSION=	3.6.2
 DISTNAME=	dspam-${VERSION}
 CATEGORIES=	mail
 
@@ -22,6 +22,8 @@ WANTLIB=		c m
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		concurrent
 
+USE_LIBTOOL=		Yes
+
 CONFIGURE_ARGS+=	--with-dspam-home=/var/dspam \
 			--with-dspam-home-owner=_dspam \
 			--with-dspam-home-group=_dspam \
@@ -39,6 +41,7 @@ DOCS=		${WRKSRC}/README ${WRKSRC}/UPGRADING ${WRKSRC}/RELEASE.NOTES \
 
 EXAMPLESDIR=	${PREFIX}/share/examples/dspam
 DRIVER=
+DAEMON_SUPPORT=
 
 FLAVORS=	sqlite3 sqlite mysql pgsql hash clamav ldap
 FLAVOR?=	sqlite3
@@ -100,6 +103,10 @@ LIB_DEPENDS+=		sqlite3.8::databases/sqlite3
 DRIVER=			sqlite
 .endif
 
+.if empty(FLAVOR:L:Msqlite3) && empty(FLAVOR:L:Msqlite)
+DAEMON_SUPPORT=		Yes
+.endif
+
 .if ${FLAVOR:L:Mclamav}
 CONFIGURE_ARGS+=	--enable-clamav
 LIB_DEPENDS+=		clamav.1::security/clamav
@@ -107,13 +114,14 @@ LIB_DEPENDS+=		clamav.1::security/clamav
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--enable-ldap
-LIB_DEPENDS+=		ldap_r.8,lber.8::databases/openldap
 CONFIGURE_ENV=		CPPFLAGS="-I${DEPBASE}/include" \
 			LDFLAGS="-L${DEPBASE}/lib"
+LIB_DEPENDS+=		ldap.8,lber.8::databases/openldap
 .endif
 
-.if empty(FLAVOR:L:Msqlite3) && empty(FLAVOR:L:Msqlite)
+.if !empty(DAEMON_SUPPORT)
 CONFIGURE_ARGS+=	--enable-daemon
+WANTLIB+=		pthread
 .endif
 
 post-install:
