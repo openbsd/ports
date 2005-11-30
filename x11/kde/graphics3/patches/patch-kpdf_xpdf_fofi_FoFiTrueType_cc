@@ -1,7 +1,7 @@
-$OpenBSD: patch-kpdf_xpdf_fofi_FoFiTrueType_cc,v 1.1 2005/08/11 14:21:46 naddy Exp $
---- kpdf/xpdf/fofi/FoFiTrueType.cc.orig	Wed Jul 20 12:00:36 2005
-+++ kpdf/xpdf/fofi/FoFiTrueType.cc	Wed Aug 10 23:11:25 2005
-@@ -1373,6 +1373,27 @@ void FoFiTrueType::parse() {
+$OpenBSD: patch-kpdf_xpdf_fofi_FoFiTrueType_cc,v 1.2 2005/11/30 11:22:09 espie Exp $
+--- kpdf/xpdf/fofi/FoFiTrueType.cc.orig	Sat Sep 10 10:18:43 2005
++++ kpdf/xpdf/fofi/FoFiTrueType.cc	Mon Nov 21 21:41:36 2005
+@@ -1663,6 +1663,27 @@ void FoFiTrueType::parse() {
      return;
    }
  
@@ -28,4 +28,4 @@ $OpenBSD: patch-kpdf_xpdf_fofi_FoFiTrueType_cc,v 1.1 2005/08/11 14:21:46 naddy E
 +
    // read the post table
    readPostTable();
-   if (!parsedOk) {
+ }
