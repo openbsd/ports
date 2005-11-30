@@ -1,12 +1,13 @@
-$OpenBSD: patch-libiberty_dummy_c,v 1.1 2003/12/30 10:07:48 espie Exp $
---- libiberty/dummy.c.orig	2003-12-30 10:53:57.000000000 +0100
-+++ libiberty/dummy.c	2003-12-30 10:58:42.000000000 +0100
-@@ -2,6 +2,8 @@
+$OpenBSD: patch-libiberty_dummy_c,v 1.2 2005/11/30 21:51:44 sturm Exp $
+--- libiberty/dummy.c.orig	Thu Nov  5 12:54:15 1998
++++ libiberty/dummy.c	Wed Nov 30 14:35:38 2005
+@@ -2,7 +2,8 @@
  
  #ifdef __STDC__
  #include <stddef.h>
+-#define clock_t unsigned long
 +#include <stdarg.h>
 +#include <stdio.h>
- #define clock_t unsigned long
  #define DEF(NAME, RETURN_TYPE, ARGLIST, ARGS) extern RETURN_TYPE NAME (ARGS);
  #define DEFFUNC(NAME, RETURN_TYPE, ARGLIST, ARGS) extern RETURN_TYPE NAME (ARGS);
+ #else
