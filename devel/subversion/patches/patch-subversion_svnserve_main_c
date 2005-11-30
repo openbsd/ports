@@ -1,0 +1,12 @@
+$OpenBSD: patch-subversion_svnserve_main_c,v 1.1 2005/11/30 19:45:08 sturm Exp $
+--- subversion/svnserve/main.c.orig	Tue Nov 29 14:28:06 2005
++++ subversion/svnserve/main.c	Tue Nov 29 14:28:15 2005
+@@ -213,7 +213,7 @@ static void * APR_THREAD_FUNC serve_thre
+ static svn_error_t *
+ check_lib_versions(void)
+ {
+-  static const svn_version_checklist_t checklist[] =
++  static svn_version_checklist_t checklist[] =
+     {
+       { "svn_subr",  svn_subr_version },
+       { "svn_repos", svn_repos_version },
