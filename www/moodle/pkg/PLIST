@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/11/22 07:47:46 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/11/30 21:20:07 sturm Exp $
 moodle/
 moodle/README.txt
 moodle/admin/
@@ -11139,7 +11139,7 @@ moodle/lib/adodb/datadict/datadict-generic.inc.php
 moodle/lib/adodb/datadict/datadict-ibase.inc.php
 moodle/lib/adodb/datadict/datadict-informix.inc.php
 moodle/lib/adodb/datadict/datadict-mssql.inc.php
-moodle/lib/adodb/datadict/datadict${FLAVOR_EXT}.inc.php
+moodle/lib/adodb/datadict/datadict-mysql.inc.php
 moodle/lib/adodb/datadict/datadict-oci8.inc.php
 moodle/lib/adodb/datadict/datadict-postgres.inc.php
 moodle/lib/adodb/datadict/datadict-sapdb.inc.php
@@ -11165,9 +11165,9 @@ moodle/lib/adodb/drivers/adodb-informix72.inc.php
 moodle/lib/adodb/drivers/adodb-ldap.inc.php
 moodle/lib/adodb/drivers/adodb-mssql.inc.php
 moodle/lib/adodb/drivers/adodb-mssqlpo.inc.php
-moodle/lib/adodb/drivers/adodb${FLAVOR_EXT}.inc.php
-moodle/lib/adodb/drivers/adodb${FLAVOR_EXT}i.inc.php
-moodle/lib/adodb/drivers/adodb${FLAVOR_EXT}t.inc.php
+moodle/lib/adodb/drivers/adodb-mysql.inc.php
+moodle/lib/adodb/drivers/adodb-mysqli.inc.php
+moodle/lib/adodb/drivers/adodb-mysqlt.inc.php
 moodle/lib/adodb/drivers/adodb-netezza.inc.php
 moodle/lib/adodb/drivers/adodb-oci8.inc.php
 moodle/lib/adodb/drivers/adodb-oci805.inc.php
@@ -11227,7 +11227,7 @@ moodle/lib/adodb/perf/
 moodle/lib/adodb/perf/perf-db2.inc.php
 moodle/lib/adodb/perf/perf-informix.inc.php
 moodle/lib/adodb/perf/perf-mssql.inc.php
-moodle/lib/adodb/perf/perf${FLAVOR_EXT}.inc.php
+moodle/lib/adodb/perf/perf-mysql.inc.php
 moodle/lib/adodb/perf/perf-oci8.inc.php
 moodle/lib/adodb/perf/perf-postgres.inc.php
 moodle/lib/adodb/pivottable.inc.php
