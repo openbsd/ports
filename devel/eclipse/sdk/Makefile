@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/11/16 13:41:46 kurt Exp $
+# $OpenBSD: Makefile,v 1.11 2005/11/30 18:34:25 kurt Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -99,7 +99,8 @@ MAKE_ENV=		ECLIPSE_BUILD=${ECLIPSE_BUILD} \
 			ECLIPSE_WS=${ECLIPSE_WS} \
 			JAVA_HOME=${JAVA_HOME} \
 			MOZILLA_HOME=${MOZILLA_HOME} \
-			CC="${CC}" CXX="${CXX}"
+			CC="${CC}" CXX="${CXX}" \
+			MALLOC_OPTIONS="j"
 
 FAKE_FLAGS=		${MAKE_ENV}
 
