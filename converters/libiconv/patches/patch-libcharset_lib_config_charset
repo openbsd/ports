@@ -1,7 +1,7 @@
-$OpenBSD: patch-libcharset_lib_config_charset,v 1.5 2005/04/16 21:10:22 espie Exp $
+$OpenBSD: patch-libcharset_lib_config_charset,v 1.6 2005/12/01 11:23:42 bernd Exp $
 --- libcharset/lib/config.charset.orig	Wed Jan 21 19:53:20 2004
-+++ libcharset/lib/config.charset	Sun Apr 10 17:20:33 2005
-@@ -345,7 +345,7 @@ case "$os" in
++++ libcharset/lib/config.charset	Wed Nov 30 17:52:14 2005
+@@ -345,13 +345,14 @@ case "$os" in
  	#echo "sun_eu_greek ?" # what is this?
  	echo "UTF-8 UTF-8"
  	;;
@@ -10,3 +10,10 @@ $OpenBSD: patch-libcharset_lib_config_charset,v 1.5 2005/04/16 21:10:22 espie Ex
  	# FreeBSD 4.2 doesn't have nl_langinfo(CODESET); therefore
  	# localcharset.c falls back to using the full locale name
  	# from the environment variables.
+ 	# Likewise for OS/2. OS/2 has XFree86 just like FreeBSD. Just
+ 	# reuse FreeBSD's locale data for OS/2.
+ 	echo "C ASCII"
++	echo "646 ASCII"
+ 	echo "US-ASCII ASCII"
+ 	for l in la_LN lt_LN; do
+ 	  echo "$l.ASCII ASCII"
