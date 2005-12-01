@@ -1,22 +1,19 @@
-@comment $OpenBSD: PLIST-fy,v 1.1 2005/06/06 09:25:54 espie Exp $
+@comment $OpenBSD: PLIST-fy,v 1.2 2005/12/01 22:27:38 espie Exp $
 share/locale/fy/
 share/locale/fy/LC_MESSAGES/
 ${LOC}appletproxy.mo
 ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
 ${LOC}cupsdconf.mo
-${LOC}devicesapplet.mo
 ${LOC}display.mo
 ${LOC}dockbarextension.mo
 ${LOC}drkonqi.mo
 ${LOC}extensionproxy.mo
 ${LOC}filetypes.mo
-${LOC}fontinst.mo
 ${LOC}htmlsearch.mo
 ${LOC}joystick.mo
 ${LOC}kabc_dir.mo
 ${LOC}kabc_file.mo
-${LOC}kabc_ldap.mo
 ${LOC}kabc_ldapkio.mo
 ${LOC}kabc_net.mo
 ${LOC}kabc_sql.mo
@@ -29,6 +26,7 @@ ${LOC}katedefaultproject.mo
 ${LOC}katekttsd.mo
 ${LOC}katepart.mo
 ${LOC}katepartkttsd.mo
+${LOC}kay.mo
 ${LOC}kcmaccess.mo
 ${LOC}kcmaccessibility.mo
 ${LOC}kcmarts.mo
@@ -39,7 +37,6 @@ ${LOC}kcmcolors.mo
 ${LOC}kcmcomponentchooser.mo
 ${LOC}kcmcrypto.mo
 ${LOC}kcmcss.mo
-${LOC}kcmemail.mo
 ${LOC}kcmenergy.mo
 ${LOC}kcmfonts.mo
 ${LOC}kcmhtmlsearch.mo
@@ -59,12 +56,11 @@ ${LOC}kcmkonsole.mo
 ${LOC}kcmkurifilt.mo
 ${LOC}kcmkwindecoration.mo
 ${LOC}kcmkwinrules.mo
-${LOC}kcmkwintheme.mo
 ${LOC}kcmkwm.mo
 ${LOC}kcmlaunch.mo
 ${LOC}kcmlayout.mo
 ${LOC}kcmlocale.mo
-${LOC}kcmmidi.mo
+${LOC}kcmmedia.mo
 ${LOC}kcmnic.mo
 ${LOC}kcmnotify.mo
 ${LOC}kcmperformance.mo
@@ -114,6 +110,7 @@ ${LOC}kio_finger.mo
 ${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_help.mo
+${LOC}kio_home.mo
 ${LOC}kio_ldap.mo
 ${LOC}kio_mac.mo
 ${LOC}kio_man.mo
@@ -169,6 +166,7 @@ ${LOC}kthememanager.mo
 ${LOC}ktip.mo
 ${LOC}kwin.mo
 ${LOC}kwin_clients.mo
+${LOC}kwin_lib.mo
 ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo
 ${LOC}libdmctl.mo
@@ -188,7 +186,6 @@ ${LOC}lockout.mo
 ${LOC}mediaapplet.mo
 ${LOC}naughtyapplet.mo
 ${LOC}nsplugin.mo
-${LOC}passwords.mo
 ${LOC}privacy.mo
 ${LOC}quicklauncher.mo
 ${LOC}taskbarextension.mo

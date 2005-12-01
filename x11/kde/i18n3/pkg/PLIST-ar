@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ar,v 1.4 2005/10/17 14:11:01 espie Exp $
+@comment $OpenBSD: PLIST-ar,v 1.5 2005/12/01 22:27:37 espie Exp $
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -12,12 +12,10 @@ ${LOC}autorefresh.mo
 ${LOC}babelfish.mo
 ${LOC}cervisia.mo
 ${LOC}charlatanui.mo
-${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
 ${LOC}crashesplugin.mo
 ${LOC}cupsdconf.mo
 ${LOC}cvsservice.mo
-${LOC}devicesapplet.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}display.mo
 ${LOC}dockbarextension.mo
@@ -27,13 +25,11 @@ ${LOC}dub.mo
 ${LOC}extensionproxy.mo
 ${LOC}ffrs.mo
 ${LOC}filetypes.mo
-${LOC}fontinst.mo
 ${LOC}fsview.mo
 ${LOC}htmlsearch.mo
 ${LOC}imagerename_plugin.mo
 ${LOC}imgalleryplugin.mo
 ${LOC}irkick.mo
-${LOC}jefferson.mo
 ${LOC}kabc2mutt.mo
 ${LOC}kabc_dir.mo
 ${LOC}kabc_file.mo
@@ -54,7 +50,6 @@ ${LOC}kasbarextension.mo
 ${LOC}kasteroids.mo
 ${LOC}kate.mo
 ${LOC}katecppsymbolviewer.mo
-${LOC}katedefaultproject.mo
 ${LOC}katefll_initplugin.mo
 ${LOC}katefll_plugin.mo
 ${LOC}katehelloworld.mo
@@ -64,9 +59,7 @@ ${LOC}katemake.mo
 ${LOC}katemodeline.mo
 ${LOC}kateopenheader.mo
 ${LOC}katepart.mo
-${LOC}kateprojectmanager.mo
 ${LOC}katepybrowse.mo
-${LOC}katespell.mo
 ${LOC}katetextfilter.mo
 ${LOC}katexmlcheck.mo
 ${LOC}katexmltools.mo
@@ -95,7 +88,6 @@ ${LOC}kcmcolors.mo
 ${LOC}kcmcomponentchooser.mo
 ${LOC}kcmcrypto.mo
 ${LOC}kcmcss.mo
-${LOC}kcmemail.mo
 ${LOC}kcmenergy.mo
 ${LOC}kcmfonts.mo
 ${LOC}kcmhtmlsearch.mo
@@ -109,7 +101,6 @@ ${LOC}kcmkded.mo
 ${LOC}kcmkeys.mo
 ${LOC}kcmkicker.mo
 ${LOC}kcmkio.mo
-${LOC}kcmkmix.mo
 ${LOC}kcmkonq.mo
 ${LOC}kcmkonqhtml.mo
 ${LOC}kcmkonsole.mo
@@ -120,9 +111,7 @@ ${LOC}kcmkurifilt.mo
 ${LOC}kcmkvaio.mo
 ${LOC}kcmkwallet.mo
 ${LOC}kcmkwindecoration.mo
-${LOC}kcmkwintheme.mo
 ${LOC}kcmkwm.mo
-${LOC}kcmkxmlrpcd.mo
 ${LOC}kcmlanbrowser.mo
 ${LOC}kcmlaptop.mo
 ${LOC}kcmlaunch.mo
@@ -130,8 +119,6 @@ ${LOC}kcmlayout.mo
 ${LOC}kcmlilo.mo
 ${LOC}kcmlirc.mo
 ${LOC}kcmlocale.mo
-${LOC}kcmmediacontrol.mo
-${LOC}kcmmidi.mo
 ${LOC}kcmnic.mo
 ${LOC}kcmnotify.mo
 ${LOC}kcmperformance.mo
@@ -140,14 +127,12 @@ ${LOC}kcmsamba.mo
 ${LOC}kcmscreensaver.mo
 ${LOC}kcmsmartcard.mo
 ${LOC}kcmsmserver.mo
-${LOC}kcmsocks.mo
 ${LOC}kcmspellchecking.mo
 ${LOC}kcmstyle.mo
 ${LOC}kcmtaskbar.mo
 ${LOC}kcmthinkpad.mo
 ${LOC}kcmusb.mo
 ${LOC}kcmview1394.mo
-${LOC}kcmvim.mo
 ${LOC}kcmxinerama.mo
 ${LOC}kcoloredit.mo
 ${LOC}kcontrol.mo
@@ -173,7 +158,6 @@ ${LOC}kdgantt.mo
 ${LOC}kdialog.mo
 ${LOC}kdict.mo
 ${LOC}kdictapplet.mo
-${LOC}kdmchooser.mo
 ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
 ${LOC}kdvi.mo
@@ -190,7 +174,6 @@ ${LOC}kfile_deb.mo
 ${LOC}kfile_desktop.mo
 ${LOC}kfile_diff.mo
 ${LOC}kfile_folder.mo
-${LOC}kfile_font.mo
 ${LOC}kfile_gif.mo
 ${LOC}kfile_html.mo
 ${LOC}kfile_ico.mo
@@ -259,7 +242,6 @@ ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
 ${LOC}kjumpingcube.mo
 ${LOC}klaptopdaemon.mo
-${LOC}klegacyimport.mo
 ${LOC}klettres.mo
 ${LOC}klickety.mo
 ${LOC}klines.mo
@@ -268,7 +250,6 @@ ${LOC}klock.mo
 ${LOC}kmag.mo
 ${LOC}kmahjongg.mo
 ${LOC}kmail.mo
-${LOC}kmathtool.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
@@ -290,7 +271,6 @@ ${LOC}kodo.mo
 ${LOC}kolf.mo
 ${LOC}kolourpicker.mo
 ${LOC}kompare.mo
-${LOC}konq_smbmounterplugin.mo
 ${LOC}konqsidebar_mediaplayer.mo
 ${LOC}konqsidebar_news.mo
 ${LOC}konqueror.mo
@@ -303,7 +283,6 @@ ${LOC}korganizer.mo
 ${LOC}korn.mo
 ${LOC}kpackage.mo
 ${LOC}kpager.mo
-${LOC}kpartapp.mo
 ${LOC}kpartsaver.mo
 ${LOC}kpat.mo
 ${LOC}kpdf.mo
@@ -352,8 +331,6 @@ ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo
 ${LOC}ksysv.mo
-${LOC}ktalkd.mo
-${LOC}ktaskbarapplet.mo
 ${LOC}kteatime.mo
 ${LOC}ktexteditor_autobookmarker.mo
 ${LOC}ktexteditor_docwordcompletion.mo
@@ -377,7 +354,6 @@ ${LOC}kviewbrowserplugin.mo
 ${LOC}kviewpresenterplugin.mo
 ${LOC}kviewscannerplugin.mo
 ${LOC}kviewshell.mo
-${LOC}kviewtemplateplugin.mo
 ${LOC}kvoctrain.mo
 ${LOC}kwalletmanager.mo
 ${LOC}kweather.mo
@@ -388,14 +364,11 @@ ${LOC}kwireless.mo
 ${LOC}kworldclock.mo
 ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo
-${LOC}kxmlrpcd.mo
 ${LOC}kxsconfig.mo
-${LOC}libcalendarresources.mo
 ${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkcal.mo
 ${LOC}libkcalsystem.mo
 ${LOC}libkdegames.mo
-${LOC}libkdehighscores.mo
 ${LOC}libkdepim.mo
 ${LOC}libkicker.mo
 ${LOC}libkickermenu_kdeprint.mo
@@ -414,13 +387,13 @@ ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo
 ${LOC}lskat.mo
 ${LOC}lyrics.mo
+${LOC}mediaapplet.mo
 ${LOC}mediacontrol.mo
 ${LOC}minitoolsplugin.mo
 ${LOC}naughtyapplet.mo
 ${LOC}nexscope.mo
 ${LOC}noatun.mo
 ${LOC}nsplugin.mo
-${LOC}passwords.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
@@ -429,14 +402,12 @@ ${LOC}quicklauncher.mo
 ${LOC}secpolicy.mo
 ${LOC}spy.mo
 ${LOC}synaescope.mo
-${LOC}taskbarextension.mo
 ${LOC}timezones.mo
 ${LOC}tippecanoe.mo
 ${LOC}tyler.mo
 ${LOC}uachangerplugin.mo
 ${LOC}umbrello.mo
 ${LOC}validatorsplugin.mo
-${LOC}vimpart.mo
 ${LOC}wakeup.mo
 ${LOC}wavecapture.mo
 ${LOC}webarchiver.mo

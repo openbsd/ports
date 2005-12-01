@@ -1,20 +1,16 @@
-@comment $OpenBSD: PLIST-bn,v 1.4 2005/10/17 14:11:01 espie Exp $
+@comment $OpenBSD: PLIST-bn,v 1.5 2005/12/01 22:27:37 espie Exp $
 ${LOC}appletproxy.mo
 ${LOC}atlantik.mo
-${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
-${LOC}devicesapplet.mo
 ${LOC}display.mo
 ${LOC}dockbarextension.mo
 ${LOC}drkonqi.mo
 ${LOC}extensionproxy.mo
 ${LOC}filetypes.mo
-${LOC}fontinst.mo
 ${LOC}htmlsearch.mo
 ${LOC}juk.mo
 ${LOC}kabc_dir.mo
 ${LOC}kabc_file.mo
-${LOC}kabc_ldap.mo
 ${LOC}kabc_ldapkio.mo
 ${LOC}kabc_net.mo
 ${LOC}kabc_sql.mo
@@ -25,7 +21,6 @@ ${LOC}kalzium.mo
 ${LOC}kappfinder.mo
 ${LOC}kasteroids.mo
 ${LOC}kate.mo
-${LOC}katedefaultproject.mo
 ${LOC}katepart.mo
 ${LOC}katomic.mo
 ${LOC}kbackgammon.mo
@@ -38,7 +33,6 @@ ${LOC}kcmaccessibility.mo
 ${LOC}kcmarts.mo
 ${LOC}kcmbackground.mo
 ${LOC}kcmcgi.mo
-${LOC}kcmemail.mo
 ${LOC}kcmenergy.mo
 ${LOC}kcmfonts.mo
 ${LOC}kcmicons.mo
@@ -51,11 +45,9 @@ ${LOC}kcmkio.mo
 ${LOC}kcmkonq.mo
 ${LOC}kcmkonqhtml.mo
 ${LOC}kcmkonsole.mo
-${LOC}kcmkwintheme.mo
 ${LOC}kcmkwm.mo
 ${LOC}kcmlayout.mo
 ${LOC}kcmlocale.mo
-${LOC}kcmmidi.mo
 ${LOC}kcmnic.mo
 ${LOC}kcmnotify.mo
 ${LOC}kcmprintmgr.mo
@@ -75,14 +67,12 @@ ${LOC}kdeprint_part.mo
 ${LOC}kdeprintfax.mo
 ${LOC}kdesktop.mo
 ${LOC}kdesud.mo
-${LOC}kdmchooser.mo
 ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
 ${LOC}keduca.mo
 ${LOC}kenolaba.mo
 ${LOC}kfile_avi.mo
 ${LOC}kfile_drgeo.mo
-${LOC}kfile_font.mo
 ${LOC}kfile_kig.mo
 ${LOC}kfile_m3u.mo
 ${LOC}kfile_mp3.mo
@@ -117,7 +107,6 @@ ${LOC}klettres.mo
 ${LOC}klipper.mo
 ${LOC}kmahjongg.mo
 ${LOC}kmail.mo
-${LOC}kmathtool.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
@@ -128,7 +117,6 @@ ${LOC}knode.mo
 ${LOC}knotify.mo
 ${LOC}konqueror.mo
 ${LOC}konsole.mo
-${LOC}kpartapp.mo
 ${LOC}kpersonalizer.mo
 ${LOC}kreadconfig.mo
 ${LOC}kreversi.mo
@@ -161,7 +149,6 @@ ${LOC}kwordquiz.mo
 ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo
 ${LOC}libkdegames.mo
-${LOC}libkdehighscores.mo
 ${LOC}libkicker.mo
 ${LOC}libkickermenu_kdeprint.mo
 ${LOC}libkickermenu_konsole.mo
@@ -171,11 +158,10 @@ ${LOC}libkonq.mo
 ${LOC}libkscreensaver.mo
 ${LOC}libtaskbar.mo
 ${LOC}lockout.mo
+${LOC}mediaapplet.mo
 ${LOC}naughtyapplet.mo
-${LOC}passwords.mo
 ${LOC}privacy.mo
 ${LOC}quicklauncher.mo
-${LOC}taskbarextension.mo
 ${LOC}timezones.mo
 share/locale/bn/charset
 share/locale/bn/entry.desktop
