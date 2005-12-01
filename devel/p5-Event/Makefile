@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/01 18:23:09 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/01 08:02:16 steven Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"event loop processing"
 
-DISTNAME=	Event-1.00
+DISTNAME=	Event-1.06
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
