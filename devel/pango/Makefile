@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2005/11/13 06:22:59 marcm Exp $
+# $OpenBSD: Makefile,v 1.15 2005/12/01 15:41:09 bernd Exp $
 
 COMMENT=		"library for layout and rendering of text"
 
-DISTNAME=		pango-1.10.1
+DISTNAME=		pango-1.10.2
 CATEGORIES=		devel x11
 
 HOMEPAGE=		http://www.gtk.org
