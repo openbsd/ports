@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/29 00:54:52 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/01 22:35:25 steven Exp $
 
 COMMENT=	"finding memory usage of perl variables"
 SHARED_ONLY=	Yes
 
-DISTNAME=	Devel-Size-0.59
+DISTNAME=	Devel-Size-0.63
 PKGNAME=	p5-${DISTNAME}
-CATEGORIES=	devel perl5 
+CATEGORIES=	devel perl5
 
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+
+# Artistic
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
