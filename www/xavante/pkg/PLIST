@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/09/26 22:31:58 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/12/01 20:17:05 pedro Exp $
 @newgroup _xavante:552
 @newuser _xavante:552:552:daemon:Xavante WWW Server:/var/empty:/sbin/nologin
 @unexec lua ${SYSCONFDIR}/lua/luapkg.lua del xavante
 bin/xavante
+lua/sajax/
+lua/sajax/sajax.lua
 lua/xavante/
 lua/xavante/init.lua
 lua/xavante/xavante/
@@ -31,5 +33,4 @@ share/examples/xavante/img/test.jpg
 share/examples/xavante/img/xavante.gif
 share/examples/xavante/index.lp
 share/examples/xavante/loop.lp
-share/examples/xavante/sajax.lua
 share/examples/xavante/test.lp
