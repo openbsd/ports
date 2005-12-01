@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/12/01 11:38:00 mbalmer Exp $
+bin/ldapvacation
+@man man/cat1/ldapvacation.0
+@man man/cat5/ldapvacation.conf.0
+share/examples/ldapvacation/
+share/examples/ldapvacation/ldapvacation.conf
+@sample ${SYSCONFDIR}/ldapvacation.conf
