@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/12/01 20:17:05 pedro Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/12/02 01:12:08 jolan Exp $
 @newgroup _xavante:552
 @newuser _xavante:552:552:daemon:Xavante WWW Server:/var/empty:/sbin/nologin
 @unexec lua ${SYSCONFDIR}/lua/luapkg.lua del xavante
@@ -9,7 +9,6 @@ lua/xavante/
 lua/xavante/init.lua
 lua/xavante/xavante/
 lua/xavante/xavante/cgiluahandler.lua
-lua/xavante/xavante/config.lua
 lua/xavante/xavante/coxpcall.lua
 lua/xavante/xavante/davFileProps.lua
 lua/xavante/xavante/davFileRepository.lua
@@ -27,10 +26,14 @@ share/doc/xavante/manual.html
 share/doc/xavante/sajax.html
 share/doc/xavante/xavante.gif
 share/examples/xavante/
-share/examples/xavante/calculator.lp
-share/examples/xavante/img/
-share/examples/xavante/img/test.jpg
-share/examples/xavante/img/xavante.gif
-share/examples/xavante/index.lp
-share/examples/xavante/loop.lp
-share/examples/xavante/test.lp
+@sample ${SYSCONFDIR}/xavante/
+share/examples/xavante/config.lua
+@sample ${SYSCONFDIR}/xavante/config.lua
+share/examples/xavante/htdocs/
+share/examples/xavante/htdocs/calculator.lp
+share/examples/xavante/htdocs/img/
+share/examples/xavante/htdocs/img/test.jpg
+share/examples/xavante/htdocs/img/xavante.gif
+share/examples/xavante/htdocs/index.lp
+share/examples/xavante/htdocs/loop.lp
+share/examples/xavante/htdocs/test.lp

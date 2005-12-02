@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_xavante_config_lua,v 1.1 2005/12/02 01:12:08 jolan Exp $
+--- src/xavante/config.lua.orig	Tue Jun  7 10:43:02 2005
++++ src/xavante/config.lua	Thu Dec  1 18:28:56 2005
+@@ -19,6 +19,8 @@ require "xavante.filehandler"
+ require "xavante.cgiluahandler"
+ require "xavante.redirecthandler"
+ 
++xavante.setwebdir([[@xavanteweb@]])
++
+ local simplerules = {
+     -- URL remapping example
+     {match = "/", with = xavante.redirecthandler, params = {"index.lp"}}, 
+@@ -36,4 +38,4 @@ xavante.HTTP{
+     defaultHost = {
+     	rules = simplerules
+     },
+-}
+\ No newline at end of file
++}

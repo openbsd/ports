@@ -1,0 +1,17 @@
+$OpenBSD: patch-web_index_lp,v 1.1 2005/12/02 01:12:08 jolan Exp $
+--- web/index.lp.orig	Wed Mar 16 15:35:24 2005
++++ web/index.lp	Thu Dec  1 18:43:21 2005
+@@ -12,10 +12,10 @@
+ If you are reading this page, <strong><%= cgilua.servervariable("SERVER_SOFTWARE") %></strong>
+ has been successfully installed on your system.<br />
+ <br />
+-From here you can browse the <a href="/doc/index.html">Xavante documentation</a>
++From here you can browse the <a href="http://www.keplerproject.org/xavante/">Xavante documentation</a>
+  or run some <a href="test.lp">Xavante tests</a>. <br />
+ <br />
+ Copyright 2004-2005 - <a href="http://www.keplerproject.org">Kepler Project</a><br />
+ </center>
+ </body>
+-</html>
+\ No newline at end of file
++</html>
