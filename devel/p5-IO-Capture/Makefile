@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/12 08:58:43 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/02 11:32:54 kevlo Exp $
 
 COMMENT=		"module for capturing output"
 
-DISTNAME=		IO-Capture-0.03
+DISTNAME=		IO-Capture-0.05
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
 

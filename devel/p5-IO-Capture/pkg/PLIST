@@ -1,14 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/12 08:58:43 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/12/02 11:32:54 kevlo Exp $
 ${P5SITE}/IO/
 ${P5SITE}/IO/Capture/
 ${P5SITE}/IO/Capture.pm
-${P5SITE}/IO/Capture/ErrorMessages.pm
 ${P5SITE}/IO/Capture/Overview.pod
 ${P5SITE}/IO/Capture/Stderr.pm
 ${P5SITE}/IO/Capture/Stdout.pm
 ${P5SITE}/IO/Capture/Tie_STDx.pm
 @man man/man3p/IO::Capture.3p
-@man man/man3p/IO::Capture::ErrorMessages.3p
 @man man/man3p/IO::Capture::Overview.3p
 @man man/man3p/IO::Capture::Stderr.3p
 @man man/man3p/IO::Capture::Stdout.3p
