@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2005/10/18 21:07:34 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2005/12/02 02:07:23 naddy Exp $
 
      SUBDIR+= arts3
      SUBDIR+= libs3
@@ -42,7 +42,6 @@
      SUBDIR+=i18n3,ga
      SUBDIR+=i18n3,he
      SUBDIR+=i18n3,hi
-     SUBDIR+=i18n3,hsb
      SUBDIR+=i18n3,hu
      SUBDIR+=i18n3,is
      SUBDIR+=i18n3,it
