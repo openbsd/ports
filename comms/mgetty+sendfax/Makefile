@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.24 2005/09/25 18:18:23 aanriot Exp $
+# $OpenBSD: Makefile,v 1.25 2005/12/03 07:01:56 steven Exp $
 
 COMMENT=	"handle external logins, send and receive faxes"
 
-VERSION=	1.1.33
-RELEASE=	Apr10
+VERSION=	1.1.34
+RELEASE=	Nov30
 DISTNAME=	mgetty${VERSION}-${RELEASE}
 PKGNAME=	mgetty+sendfax-${VERSION}
 CATEGORIES=	comms
 
-HOMEPAGE=	http://alpha.greenie.net/mgetty/
+HOMEPAGE=	http://mgetty.greenie.net
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@lphp.org>
 
@@ -19,8 +19,7 @@ PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 WANTLIB=		c m util
 
-MASTER_SITES=	ftp://alpha.greenie.net/pub/mgetty/source/1.1/ \
-		ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
+MASTER_SITES=	ftp://mgetty.greenie.net/pub/mgetty/source/1.1/
 
 RUN_DEPENDS=	::print/ghostscript/gnu \
 		::graphics/netpbm

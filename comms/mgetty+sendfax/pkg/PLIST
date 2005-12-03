@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/09/25 18:18:24 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/12/03 07:01:57 steven Exp $
 @conflict hylafax-*
 bin/autopvf
 bin/basictopvf
@@ -130,4 +130,4 @@ share/examples/mgetty+sendfax/voice.conf
 @sample /var/spool/fax/
 @sample /var/spool/fax/incoming/
 @sample /var/spool/fax/outgoing/
-@extraunexec rm -rf /var/spool/fax/*
+@extraunexec rm -rf /var/spool/fax/
