@@ -1,0 +1,19 @@
+$OpenBSD: patch-plugins_check_snmp_c,v 1.1 2005/12/03 07:46:28 pvalchev Exp $
+--- plugins/check_snmp.c.orig	Fri Dec  2 23:55:17 2005
++++ plugins/check_snmp.c	Fri Dec  2 23:55:47 2005
+@@ -206,6 +206,7 @@ main (int argc, char **argv)
+ 	strcat(perfstr, "| ");
+ 	while (ptr) {
+ 		char *foo;
++		char *str[MAX_INPUT_BUFFER];
+ 
+ 		foo = strstr (ptr, delimiter);
+ 		strncat(perfstr, ptr, foo-ptr);
+@@ -338,7 +339,6 @@ main (int argc, char **argv)
+ 
+ 		i++;
+ 
+-		char *str[MAX_INPUT_BUFFER];
+ 		asprintf(str, "=%s%s;;;; ", show, type ? type : "");
+ 		strcat(perfstr, *str);
+ 
