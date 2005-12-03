@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2005/09/19 05:24:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2005/12/03 11:23:26 aanriot Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"module to manipulate raw ip packets"
 
-DISTNAME=	Net-RawIP-0.09d
+DISTNAME=	Net-RawIP-0.2
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/}
