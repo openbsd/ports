@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2005/10/30 11:14:08 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2005/12/03 21:59:05 steven Exp $
 #
 
      SUBDIR += R
@@ -6,7 +6,7 @@
      SUBDIR += aamath
      SUBDIR += abs
 #    SUBDIR += apc
-#    SUBDIR += blas
+     SUBDIR += blas
      SUBDIR += calc
      SUBDIR += calcoo
 #    SUBDIR += calctool
