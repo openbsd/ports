@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2005/10/25 18:37:14 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2005/12/03 22:34:52 alek Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	"Python tools for computational molecular biology"
 
-DISTNAME=	biopython-1.24
-PKGNAME=	py-${DISTNAME:L}
+DISTNAME=	biopython-1.41
+PKGNAME=	py-${DISTNAME}
 CATEGORIES=	biology
 
 HOMEPAGE=	http://www.biopython.org/
@@ -19,10 +19,12 @@ MASTER_SITES=	${HOMEPAGE}files/
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/py-mxDateTime \
-		::math/py-Numeric
-
+BUILD_DEPENDS=	${MODPY_EXPAT_DEPENDS} \
+		::math/py-Numeric 
+RUN_DEPENDS=	${MODPY_EXPAT_DEPENDS} \
+		:py-mxDateTime-*:devel/py-mxDateTime \
+		:py-Numeric-*:math/py-Numeric \
+		:py-reportlab-*:print/py-reportlab/reportlab
 REGRESS_DEPENDS=${RUN_DEPENDS}
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-biopython
@@ -32,8 +34,9 @@ post-install:
 	cd ${WRKSRC}/Tests; tar cf - * | tar xf - -C ${EXAMPLESDIR} 
 
 do-regress: fake
+	@rm -f ${WRKSRC}/Tests/test_copen.py*
 	@cd ${WRKSRC}/Tests && ${MAKE_ENV} \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-		${MODPY_BIN} ./run_tests.py
+		${MODPY_BIN} ./run_tests.py --no-gui
 
 .include <bsd.port.mk>

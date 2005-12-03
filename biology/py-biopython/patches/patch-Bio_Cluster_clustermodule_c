@@ -1,0 +1,216 @@
+$OpenBSD: patch-Bio_Cluster_clustermodule_c,v 1.1 2005/12/03 22:34:52 alek Exp $
+--- Bio/Cluster/clustermodule.c.orig	Wed Apr 27 10:09:08 2005
++++ Bio/Cluster/clustermodule.c	Mon Nov 21 21:06:54 2005
+@@ -111,7 +111,7 @@ parse_mask (PyObject* object, PyArrayObj
+     return mask;
+   }
+   if(!PyArray_Check (object)) /* Try to convert object to a 2D double array */
+-  { *array = (PyArrayObject*) PyArray_FromObject(object, PyArray_LONG, 2, 2);
++  { *array = (PyArrayObject*) PyArray_FromObject(object, PyArray_INT, 2, 2);
+     if (!(*array))
+     { strcpy (message, "mask cannot be converted to needed array");
+       PyErr_SetString(ErrorObject, buffer);
+@@ -121,8 +121,8 @@ parse_mask (PyObject* object, PyArrayObj
+   else /* User passed an array */
+   { *array = (PyArrayObject*) object;
+     Py_INCREF(object);
+-    if ((*array)->descr->type_num != PyArray_LONG)
+-    { PyArrayObject* av = (PyArrayObject*) PyArray_Cast (*array, PyArray_LONG);
++    if ((*array)->descr->type_num != PyArray_INT)
++    { PyArrayObject* av = (PyArrayObject*) PyArray_Cast (*array, PyArray_INT);
+       Py_DECREF((PyObject*) *array);
+       *array = av;
+       if (!(*array))
+@@ -281,7 +281,7 @@ parse_initialid(PyObject* object, int* n
+   PyArrayObject* array;
+   /* -- First we create the clusterid variable ------------------------ */
+   PyArrayObject* clusterid =
+-    (PyArrayObject*) PyArray_FromDims(1, &nitems, PyArray_LONG);
++    (PyArrayObject*) PyArray_FromDims(1, &nitems, PyArray_INT);
+   if (!clusterid)
+   { strcpy(message, "Could not create clusterid array -- too big?");
+     PyErr_SetString (ErrorObject, buffer);
+@@ -291,7 +291,7 @@ parse_initialid(PyObject* object, int* n
+   if (object==NULL) return clusterid;
+   /* -- Check if the specified object is an array --------------------- */
+   if(!PyArray_Check (object))
+-  { array = (PyArrayObject*) PyArray_FromObject(object, PyArray_LONG,1,1);
++  { array = (PyArrayObject*) PyArray_FromObject(object, PyArray_INT,1,1);
+     if (!array)
+     { strcpy (message, "initialid cannot be converted to needed array.");
+       PyErr_SetString(ErrorObject, buffer);
+@@ -304,8 +304,8 @@ parse_initialid(PyObject* object, int* n
+     Py_INCREF(object);
+   }
+   /* -- Check if the array contains integers -------------------------- */
+-  if (array->descr->type_num != PyArray_LONG)
+-  { PyArrayObject* av = (PyArrayObject*) PyArray_Cast(array, PyArray_LONG);
++  if (array->descr->type_num != PyArray_INT)
++  { PyArrayObject* av = (PyArrayObject*) PyArray_Cast(array, PyArray_INT);
+     Py_DECREF((PyObject*) array);
+     array = av;
+     if (!array)
+@@ -394,7 +394,7 @@ parse_clusterid(PyObject* object, PyArra
+   }
+   /* -- The user specified something. Let's see if it is an array ----- */
+   if(!PyArray_Check (object))
+-  { *array = (PyArrayObject*) PyArray_FromObject(object, PyArray_LONG,1,1);
++  { *array = (PyArrayObject*) PyArray_FromObject(object, PyArray_INT,1,1);
+     if (!(*array))
+     { strcpy (message, "clusterid cannot be converted to needed array.");
+       PyErr_SetString(ErrorObject, buffer);
+@@ -406,8 +406,8 @@ parse_clusterid(PyObject* object, PyArra
+     Py_INCREF(object);
+   }
+   /* -- Check if the array contains integers -------------------------- */
+-  if ((*array)->descr->type_num != PyArray_LONG)
+-  { PyArrayObject* av = (PyArrayObject*) PyArray_Cast(*array, PyArray_LONG);
++  if ((*array)->descr->type_num != PyArray_INT)
++  { PyArrayObject* av = (PyArrayObject*) PyArray_Cast(*array, PyArray_INT);
+     Py_DECREF((PyObject*) (*array));
+     *array = av;
+     if (!(*array))
+@@ -663,7 +663,7 @@ parse_index(PyObject* object, PyArrayObj
+   /* Check if the user specified an array */
+   if(!PyArray_Check (object)) /* Try to convert to an array of type long */
+   { *array = (PyArrayObject*)
+-      PyArray_ContiguousFromObject(object, PyArray_LONG, 1, 1);
++      PyArray_ContiguousFromObject(object, PyArray_INT, 1, 1);
+     if (!(*array))
+     { strcpy(message, "index argument cannot be converted to needed type.");
+       PyErr_SetString (ErrorObject, buffer);
+@@ -672,7 +672,7 @@ parse_index(PyObject* object, PyArrayObj
+     }
+   }
+   /* If an array, make sure it contains integers */
+-  else if ((*array)->descr->type_num == PyArray_LONG)
++  else if ((*array)->descr->type_num == PyArray_INT)
+   { *array = (PyArrayObject*) object;
+     Py_INCREF(object);
+   }
+@@ -697,7 +697,7 @@ parse_index(PyObject* object, PyArrayObj
+   }
+   if (!(*array)->flags & CONTIGUOUS)
+   { PyObject* av =
+-      PyArray_ContiguousFromObject((PyObject*) array, PyArray_LONG, 0, 0);
++      PyArray_ContiguousFromObject((PyObject*) array, PyArray_INT, 0, 0);
+     Py_DECREF(object); /* can only happen if *array==(PyArrayObject*)object */
+     if(!av)
+     { strcpy(message, "Failed making argument index contiguous.");
+@@ -800,7 +800,7 @@ py_kcluster (PyObject* self, PyObject* a
+                             "dist",
+                             "initialid",
+                              NULL };
+-  if(!PyArg_ParseTupleAndKeywords(args, keywords, "O|lOOllccO", kwlist,
++  if(!PyArg_ParseTupleAndKeywords(args, keywords, "O|iOOiiccO", kwlist,
+                                   &DATA,
+                                   &NCLUSTERS,
+                                   &MASK,
+@@ -899,7 +899,7 @@ py_kcluster (PyObject* self, PyObject* a
+   free_weight(aWEIGHT, weight);
+   /* --------------------------------------------------------------------- */
+ 
+-  return Py_BuildValue("Ndl", aCLUSTERID, ERROR, IFOUND);
++  return Py_BuildValue("Ndi", aCLUSTERID, ERROR, IFOUND);
+ } 
+ /* end of wrapper for kcluster */
+ 
+@@ -1015,7 +1015,7 @@ py_kmedoids (PyObject* self, PyObject* a
+     strcpy(message, "Unknown error in kmedoids");
+     return NULL;
+   }
+-  return Py_BuildValue("Ndl",aCLUSTERID, ERROR, IFOUND);
++  return Py_BuildValue("Ndi",aCLUSTERID, ERROR, IFOUND);
+ } 
+ /* end of wrapper for kmedoids */
+ 
+@@ -1091,7 +1091,7 @@ py_treecluster (PyObject* self, PyObject
+                             "dist",
+                             "distancematrix",
+                              NULL };
+-  if(!PyArg_ParseTupleAndKeywords(args, keywords, "|OOOlccO", kwlist,
++  if(!PyArg_ParseTupleAndKeywords(args, keywords, "|OOOiccO", kwlist,
+                                   &DATA,
+                                   &MASK,
+                                   &WEIGHT,
+@@ -1165,7 +1165,7 @@ py_treecluster (PyObject* self, PyObject
+     /* -- Create the output variable tree ---------------------------------- */
+     shape[0] = nnodes;
+     shape[1] = 2;
+-    aRESULT = (PyArrayObject*) PyArray_FromDims(2, shape, PyArray_LONG);
++    aRESULT = (PyArrayObject*) PyArray_FromDims(2, shape, PyArray_INT);
+     if (!aRESULT)
+     { strcpy(message, "Could not create array for return value -- too big?");
+       PyErr_SetString(ErrorObject, buffer);
+@@ -1228,7 +1228,7 @@ py_treecluster (PyObject* self, PyObject
+     /* -- Create the output variable tree ---------------------------------- */
+     shape[0] = nnodes;
+     shape[1] = 2;
+-    aRESULT = (PyArrayObject*) PyArray_FromDims(2, shape, PyArray_LONG);
++    aRESULT = (PyArrayObject*) PyArray_FromDims(2, shape, PyArray_INT);
+     if (!aRESULT)
+     { strcpy(message, "Could not create array for return value -- too big?");
+       PyErr_SetString(ErrorObject, buffer);
+@@ -1341,7 +1341,7 @@ py_somcluster (PyObject* self, PyObject*
+                             "niter",
+                             "dist",
+                              NULL };
+-  if(!PyArg_ParseTupleAndKeywords(args, keywords, "O|OOllldlc", kwlist,
++  if(!PyArg_ParseTupleAndKeywords(args, keywords, "O|OOiiidic", kwlist,
+                                   &DATA,
+                                   &MASK,
+                                   &WEIGHT,
+@@ -1403,7 +1403,7 @@ py_somcluster (PyObject* self, PyObject*
+   /* --------------------------------------------------------------------- */
+   shape[0] = nitems;
+   shape[1] = 2;
+-  aCLUSTERID = (PyArrayObject*) PyArray_FromDims(2, shape, PyArray_LONG);
++  aCLUSTERID = (PyArrayObject*) PyArray_FromDims(2, shape, PyArray_INT);
+   if (!aCLUSTERID)
+   { strcpy(buffer, "somcluster: Could not create clusterid array -- too big?");
+     PyErr_SetString (ErrorObject, buffer);
+@@ -1656,7 +1656,7 @@ py_clusterdistance (PyObject* self, PyOb
+                             "dist",
+                             "transpose",
+                              NULL };
+-  if(!PyArg_ParseTupleAndKeywords(args, keywords, "O|OOOOccl", kwlist,
++  if(!PyArg_ParseTupleAndKeywords(args, keywords, "O|OOOOcci", kwlist,
+                                   &DATA,
+                                   &MASK,
+                                   &WEIGHT,
+@@ -1826,7 +1826,7 @@ py_clustercentroid (PyObject* self, PyOb
+   for (i=0; i<shape[0]; i++)
+     cdata[i] = ((double*) (aCDATA->data)) + i*shape[1];
+   /* -- Create the centroid mask output variable ------------------------- */
+-  aCMASK = (PyArrayObject*) PyArray_FromDims(2, shape, PyArray_LONG);
++  aCMASK = (PyArrayObject*) PyArray_FromDims(2, shape, PyArray_INT);
+   if (!aCMASK)
+   { strcpy(message, "Could not create centroids array -- too big?");
+     PyErr_SetString (ErrorObject, buffer);
+@@ -1934,7 +1934,7 @@ py_distancematrix (PyObject* self, PyObj
+                             "transpose",
+                             "dist",
+                              NULL };
+-  if(!PyArg_ParseTupleAndKeywords(args, keywords, "O|OOlc", kwlist,
++  if(!PyArg_ParseTupleAndKeywords(args, keywords, "O|OOic", kwlist,
+                                   &DATA,
+                                   &MASK,
+                                   &WEIGHT,
+@@ -2056,7 +2056,7 @@ py_cuttree (PyObject* self, PyObject* ar
+   { aTREE = (PyArrayObject*) TREE;
+     Py_INCREF((PyObject*) aTREE);
+   }
+-  if (aTREE->descr->type_num != PyArray_LONG)
++  if (aTREE->descr->type_num != PyArray_INT)
+   { PyErr_SetString (ErrorObject,
+       "cuttree: Argument tree should contain integer values only");
+     return NULL;
+@@ -2095,7 +2095,7 @@ py_cuttree (PyObject* self, PyObject* ar
+     return NULL;
+   }
+   /* -- Create the clusterid output variable ----------------------------- */
+-  aCLUSTERID = (PyArrayObject*) PyArray_FromDims(1, &NELEMENTS, PyArray_LONG);
++  aCLUSTERID = (PyArrayObject*) PyArray_FromDims(1, &NELEMENTS, PyArray_INT);
+   if (!aCLUSTERID) {
+     PyErr_SetString (ErrorObject,
+       "cuttree: Could not create array for return value -- too big?");
