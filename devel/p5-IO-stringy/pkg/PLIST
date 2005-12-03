@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/14 23:43:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/12/03 07:32:37 steven Exp $
 ${P5SITE}/IO/
 ${P5SITE}/IO/AtomicFile.pm
 ${P5SITE}/IO/InnerFile.pm
 ${P5SITE}/IO/Lines.pm
 ${P5SITE}/IO/Scalar.pm
-${P5SITE}/IO/Scalar.pm.html
 ${P5SITE}/IO/ScalarArray.pm
 ${P5SITE}/IO/Stringy.pm
 ${P5SITE}/IO/Wrap.pm
@@ -17,21 +16,3 @@ ${P5SITE}/IO/WrapTie.pm
 @man man/man3p/IO::Stringy.3p
 @man man/man3p/IO::Wrap.3p
 @man man/man3p/IO::WrapTie.3p
-share/doc/p5-IO-stringy/
-share/doc/p5-IO-stringy/IO/
-share/doc/p5-IO-stringy/IO/AtomicFile.pm.html
-share/doc/p5-IO-stringy/IO/InnerFile.pm.html
-share/doc/p5-IO-stringy/IO/Lines.pm.html
-share/doc/p5-IO-stringy/IO/Scalar.pm.html
-share/doc/p5-IO-stringy/IO/ScalarArray.pm.html
-share/doc/p5-IO-stringy/IO/Stringy.pm.html
-share/doc/p5-IO-stringy/IO/Wrap.pm.html
-share/doc/p5-IO-stringy/IO/WrapTie.pm.html
-share/doc/p5-IO-stringy/IO/icons/
-share/doc/p5-IO-stringy/IO/icons/h1bullet.gif
-share/doc/p5-IO-stringy/IO/icons/h2bullet.gif
-share/doc/p5-IO-stringy/IO/icons/itembullet.gif
-share/doc/p5-IO-stringy/IO/icons/zeegee.gif
-share/doc/p5-IO-stringy/index-menu.html
-share/doc/p5-IO-stringy/index.html
-share/doc/p5-IO-stringy/index.menu
