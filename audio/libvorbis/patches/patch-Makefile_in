@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2005/07/02 19:38:45 naddy Exp $
---- Makefile.in.orig	Mon Jun 27 11:03:05 2005
-+++ Makefile.in	Sat Jul  2 21:31:35 2005
+$OpenBSD: patch-Makefile_in,v 1.7 2005/12/03 21:15:51 naddy Exp $
+--- Makefile.in.orig	Mon Nov 28 06:43:44 2005
++++ Makefile.in	Fri Dec  2 16:47:21 2005
 @@ -217,7 +217,7 @@ target_cpu = @target_cpu@
  target_os = @target_os@
  target_vendor = @target_vendor@
  AUTOMAKE_OPTIONS = foreign dist-zip
--SUBDIRS = lib include doc examples win32 debian vq
+-SUBDIRS = lib include doc examples vq
 +SUBDIRS = lib include doc
  m4datadir = $(datadir)/aclocal
  m4data_DATA = vorbis.m4
