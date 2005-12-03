@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2004/12/16 00:31:22 alek Exp $
+# $OpenBSD: Makefile,v 1.27 2005/12/03 17:13:24 sturm Exp $
 # $FreeBSD: Makefile,v 1.19 1998/12/09 20:15:29 billf Exp $
 
 COMMENT=	"internet relay chat (irc) server"
 
 DISTNAME=       irc2.10.3p1
-PKGNAME=        irc-2.10.3p1p1
+PKGNAME=        irc-2.10.3.1p2
 CATEGORIES=	net
 
 MASTER_SITES=   ftp://ftp.irc.org/irc/server/Old/ \
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--logdir="/var/log/ircd" \
 		--localstatedir="/var/run" \
 		--sysconfdir=${CONFDIR}
 
-FLAVORS=	ipv6
+FLAVORS=	ipv6 hub
 FLAVOR?=	
 
 .if ${FLAVOR:L:Mipv6}
@@ -42,10 +42,11 @@ WRKBUILD=	${WRKSRC}/support
 
 SUBST_VARS=	CONFDIR
 
-post-patch:
-	@sed -e s#!!SYSLOG_FACILITY!!#$(SYSLOG_FACILITY)#g \
-		$(WRKSRC)/support/config.h.dist > $(WRKSRC)/support/config.h.dist.new
-	@mv $(WRKSRC)/support/config.h.dist.new $(WRKSRC)/support/config.h
+pre-configure:
+.if ${FLAVOR:L:Mhub}
+	@perl -pi -e 's,^/\* #define\tHUB \*/,#define\tHUB,g' ${WRKSRC}/support/config.h.dist
+.endif
+	@cp $(WRKSRC)/support/config.h.dist $(WRKSRC)/support/config.h
 
 NO_REGRESS=	Yes
 
