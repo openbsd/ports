@@ -1,9 +1,5 @@
-DESCRIPTION
-
 This module implements an Object-Oriented interface to a POP3 server.
 It is based on RFC1081.
-
-USAGE
 
 Here is a simple example to list out the headers in your remote
 mailbox:
