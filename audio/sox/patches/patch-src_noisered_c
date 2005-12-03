@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_noisered_c,v 1.1 2005/12/03 08:03:19 pvalchev Exp $
+--- src/noisered.c.orig	Fri Dec  2 23:12:21 2005
++++ src/noisered.c	Fri Dec  2 23:12:41 2005
+@@ -133,10 +133,9 @@ static void reduce_noise(chandata_t* cha
+     float *power = (float*)calloc(WINDOWSIZE, sizeof(float));
+     float *smoothing = chan->smoothing;
+     static int callnum = 0;
++    int i;
+ 
+     callnum ++;
+-
+-    int i;
+ 
+     for (i = 0; i < FREQCOUNT; i ++) {
+         assert(smoothing[i] >= 0 && smoothing[i] <= 1);
