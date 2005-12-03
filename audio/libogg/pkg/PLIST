@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/06 14:37:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/12/03 21:14:22 naddy Exp $
 include/ogg/
 include/ogg/config_types.h
 include/ogg/ogg.h
@@ -13,6 +13,7 @@ share/doc/libogg/
 share/doc/libogg/framing.html
 share/doc/libogg/index.html
 share/doc/libogg/ogg/
+share/doc/libogg/ogg-multiplex.html
 share/doc/libogg/ogg/bitpacking.html
 share/doc/libogg/ogg/datastructures.html
 share/doc/libogg/ogg/decoding.html

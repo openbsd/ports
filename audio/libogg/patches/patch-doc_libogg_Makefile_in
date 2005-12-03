@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_ogg_Makefile_in,v 1.5 2004/09/23 22:46:06 naddy Exp $
---- doc/ogg/Makefile.in.orig	Fri Sep 24 00:32:01 2004
-+++ doc/ogg/Makefile.in	Fri Sep 24 00:32:13 2004
-@@ -159,7 +159,7 @@ sbindir = @sbindir@
+$OpenBSD: patch-doc_libogg_Makefile_in,v 1.1 2005/12/03 21:14:22 naddy Exp $
+--- doc/libogg/Makefile.in.orig	Mon Nov 28 05:26:30 2005
++++ doc/libogg/Makefile.in	Fri Dec  2 16:18:24 2005
+@@ -168,7 +168,7 @@ sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
