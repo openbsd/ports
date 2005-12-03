@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/05/17 07:39:20 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/12/03 22:03:44 alek Exp $
 %%SHARED%%
 lib/python${MODPY_VERSION}/site-packages/pcap.py
 lib/python${MODPY_VERSION}/site-packages/pcap.pyc
 share/examples/py-libpcap/
+share/examples/py-libpcap/findalldevs.py
 share/examples/py-libpcap/sniff.py

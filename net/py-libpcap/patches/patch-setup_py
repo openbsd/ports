@@ -1,30 +1,12 @@
-$OpenBSD: patch-setup_py,v 1.2 2005/05/17 07:39:20 xsa Exp $
---- setup.py.orig	Thu Apr 25 06:32:30 2002
-+++ setup.py	Wed May 11 14:13:57 2005
-@@ -56,7 +56,7 @@ class pcap_build_ext(build_ext):
-           return new_sources
-   
-       swig = self.find_swig()
--      swig_cmd = [swig, "-python", "-dnone", "-shadow", "-ISWIG"]
-+      swig_cmd = [swig, "-python", "-shadow", "-ISWIG"]
-       if self.swig_cpp:
-           swig_cmd.append("-c++")
-   
-@@ -74,7 +74,7 @@ class pcap_build_ext(build_ext):
- setup (# Distribution meta-data
-         name = "pylibpcap",
-         version = "0.3.1",
--        licence = "BSD",
-+        license = "BSD",
-         description = 'pylibpcap is a python module for the libpcap packet capture library.',
-         long_description = 'pylibpcap is a python module for the libpcap packet capture library.',
-         url = "http://pylibpcap.sourceforge.net/",
-@@ -86,7 +86,7 @@ setup (# Distribution meta-data
-         # platforms = "",
-         py_modules = [ "pcap" ],
-         ext_modules = [ Extension(
--                            "pcapcmodule",
-+                            "_pcap",
-                             ["pcap.i","pcap_interface.c","exception.c","error.c"],
-                             include_dirs=["/usr/include/pcap"],
-                             extra_objects=[],
+$OpenBSD: patch-setup_py,v 1.3 2005/12/03 22:03:44 alek Exp $
+--- setup.py.orig	Mon Nov 28 22:20:33 2005
++++ setup.py	Mon Nov 28 22:20:41 2005
+@@ -150,7 +150,7 @@ defines = [ ('SWIG_COBJECT_TYPES', None)
+           map(lambda x: (x, None), config_defines)
+ 
+ if libpcap_dir is None:
+-   pcap_extension = Extension("_pcapmodule",
++   pcap_extension = Extension("_pcap",
+                               sourcefiles,
+                               include_dirs = include_dirs,
+                               define_macros = defines,
