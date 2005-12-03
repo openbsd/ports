@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 09:09:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/12/03 08:32:01 steven Exp $
 ${P5SITE}/MIME/
 ${P5SITE}/MIME/Body.pm
 ${P5SITE}/MIME/Decoder/
 ${P5SITE}/MIME/Decoder.pm
 ${P5SITE}/MIME/Decoder/Base64.pm
+${P5SITE}/MIME/Decoder/BinHex.pm
 ${P5SITE}/MIME/Decoder/Binary.pm
 ${P5SITE}/MIME/Decoder/Gzip64.pm
 ${P5SITE}/MIME/Decoder/NBit.pm
@@ -27,6 +28,7 @@ ${P5SITE}/MIME/Words.pm
 @man man/man3p/MIME::Body.3p
 @man man/man3p/MIME::Decoder.3p
 @man man/man3p/MIME::Decoder::Base64.3p
+@man man/man3p/MIME::Decoder::BinHex.3p
 @man man/man3p/MIME::Decoder::Binary.3p
 @man man/man3p/MIME::Decoder::Gzip64.3p
 @man man/man3p/MIME::Decoder::NBit.3p
