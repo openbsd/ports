@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/12 21:35:26 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/03 18:10:34 steven Exp $
 
 COMMENT=		"freedesktop.org compliant system tray"
 
-DISTNAME=		peksystray-0.2.1
+DISTNAME=		peksystray-0.3.0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://sourceforge.net/projects/peksystray/
