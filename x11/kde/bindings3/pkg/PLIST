@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/04/03 22:38:09 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2005/12/03 12:36:40 espie Exp $
 bin/embedjs
 bin/jsaccess
 bin/kjscmd
@@ -58,11 +58,11 @@ lib/libsmokekde.la
 @lib lib/libsmokekde.so.3.2
 lib/libsmokeqt.la
 @lib lib/libsmokeqt.so.3.2
-lib/python2.3/
-lib/python2.3/pydcop.py
-lib/python2.3/site-packages/
-lib/python2.3/site-packages/pcop.la
-lib/python2.3/site-packages/pcop.so
+lib/python2.4/
+lib/python2.4/pydcop.py
+lib/python2.4/site-packages/
+lib/python2.4/site-packages/pcop.la
+lib/python2.4/site-packages/pcop.so
 lib/ruby/site_ruby/1.8/KDE/
 lib/ruby/site_ruby/1.8/KDE/korundum.rb
 lib/ruby/site_ruby/1.8/Korundum.rb
@@ -89,8 +89,10 @@ share/apps/kate/scripts/swaptabs.js
 share/apps/kate/scripts/swaptabs.ui
 share/apps/kjsembed/
 share/apps/kjsembed/cmdline.js
+share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/embedjs.png
+share/icons/hicolor/32x32/
 share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/embedjs.png
 share/services/customobject_plugin.desktop
