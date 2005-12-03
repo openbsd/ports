@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2005/09/08 04:52:12 marcm Exp $
-
-BROKEN=			"unstable, has issues loading it's various modules"
+# $OpenBSD: Makefile,v 1.22 2005/12/03 00:26:40 brad Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 
