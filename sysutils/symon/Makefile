@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2005/10/24 05:13:17 fgsch Exp $
+# $OpenBSD: Makefile,v 1.18 2005/12/04 10:55:47 sturm Exp $
 
 COMMENT=		"active monitoring tool"
-V=			2.71
+V=			2.72
 DISTNAME=		symon-${V}
-PKGNAME=		${DISTNAME}p0
 CATEGORIES=		sysutils net
 
 HOMEPAGE=		http://www.xs4all.nl/~wpd/symon
@@ -30,7 +29,7 @@ COMMENT-mux=		"symon data gatherer"
 MUX_LIBDEPENDS=		rrd:rrdtool-*:net/rrdtool
 
 .for i in ${MULTI_PACKAGES}
-FULLPKGNAME${i}=        symon${i}-${V}p0
+FULLPKGNAME${i}=        symon${i}-${V}
 .endfor
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
