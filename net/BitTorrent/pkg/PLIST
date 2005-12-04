@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/11/20 17:46:53 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2005/12/04 12:38:15 naddy Exp $
 bin/bittorrent-console
 bin/bittorrent-curses
 bin/bittorrent-tracker
@@ -187,6 +187,12 @@ share/locale/hu/LC_MESSAGES/bittorrent.mo
 share/locale/it/
 share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/bittorrent.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
+share/locale/ja/LC_MESSAGES/bittorrent.mo
+share/locale/ko/
+share/locale/ko/LC_MESSAGES/
+share/locale/ko/LC_MESSAGES/bittorrent.mo
 share/locale/nb_NO/
 share/locale/nb_NO/LC_MESSAGES/
 share/locale/nb_NO/LC_MESSAGES/bittorrent.mo
