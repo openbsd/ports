@@ -1,0 +1,54 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/12/04 17:36:51 alek Exp $
+bin/kedpm
+lib/python${MODPY_VERSION}/site-packages/kedpm/
+lib/python${MODPY_VERSION}/site-packages/kedpm/__init__.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/config.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/config.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/crypt.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/crypt.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/exceptions.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/__init__.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/cli.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/cli.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/frontend.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/frontend.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/gtk/
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/gtk/__init__.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/gtk/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/gtk/app.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/gtk/app.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/gtk/base.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/gtk/base.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/gtk/dialogs.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/gtk/dialogs.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/gtk/globals.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/gtk/globals.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/gtk/preferences.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/gtk/preferences.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/gtk/wnd_main.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/frontends/gtk/wnd_main.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/parser.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/parser.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/passdb.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/passdb.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/password.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/password.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/password_tree.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/password_tree.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/plugins/
+lib/python${MODPY_VERSION}/site-packages/kedpm/plugins/__init__.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/plugins/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/kedpm/plugins/pdb_figaro.py
+lib/python${MODPY_VERSION}/site-packages/kedpm/plugins/pdb_figaro.pyc
+share/kedpm/
+@comment share/kedpm/AUTHORS
+@comment share/kedpm/COPYING
+@comment share/kedpm/INSTALL
+share/kedpm/glade/
+share/kedpm/glade/cloud16.png
+share/kedpm/glade/kedpm.glade
+share/kedpm/glade/logo.png
