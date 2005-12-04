@@ -1,0 +1,24 @@
+--- tests/lha-test13.orig	Tue Jul 29 14:15:43 2003
++++ tests/lha-test13	Sun Dec  4 17:40:11 2005
+@@ -46,17 +46,17 @@ diff test-tmp-euc test-tmp-euc-d2/test-t
+ 							check $? $LINENO
+ 
+ i=0
+-while ((i < 10))
++while [ $i -lt 10 ]
+ do
+   cat test-tmp-euc
+-  ((i = i + 1))
++  i=`expr $i + 1`
+ done > test-tmp-euc2
+ 
+ i=0
+-while ((i < 10))
++while [ $i -lt 10 ]
+ do
+   cat test-tmp-sjis
+-  ((i = i + 1))
++  i=`expr $i + 1`
+ done > test-tmp-sjis2
+ 
+ # no convert

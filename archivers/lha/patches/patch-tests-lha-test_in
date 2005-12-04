@@ -1,0 +1,58 @@
+--- tests/lha-test.in.orig	Sun Jul 27 19:37:51 2003
++++ tests/lha-test.in	Sun Dec  4 17:40:11 2005
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ : ${lha_dir=@top_builddir@/src}
+ : ${lha_cmd=$(cd $lha_dir && pwd)/lha}
+@@ -6,8 +6,8 @@
+ 
+ trap '_stat=$?; rm -rf test-*; exit $_stat' 0 1 2 3 15
+ 
+-typeset -i i	# for loop
+-typeset -i test_number=0 error_num=0
++## typeset -i i	# for loop
++test_number=0 error_num=0
+ error_tests=""
+ 
+ # fd 1: for logging
+@@ -30,15 +30,15 @@ message()
+ 
+ check()
+ {
+-  ((test_number = test_number + 1))
+-  typeset status=$1
+-  typeset lineno=$2
+-  if [[ $status -eq 0 ]]; then
++  test_number=`expr ${test_number} + 1`
++  status=$1
++  lineno=$2
++  if [ $status -eq 0 ]; then
+     echo    "$FILENAME #$test_number ... ok" >&2
+     echo    "$FILENAME #$test_number ... ok at line $lineno"
+   else
+     message "$FILENAME #$test_number ... failed at line $lineno"
+-    ((error_num = error_num + 1))
++    error_num=`expr ${error_num} + 1`
+     error_tests="$error_tests $FILENAME #$test_number"
+     result=1
+   fi
+@@ -63,7 +63,7 @@ testsuite()
+ 
+ change_timestamp()
+ {
+-    typeset time=$1; shift
++    time=$1; shift
+ 
+     # assume that `touch' command supports POSIX's -t switch.
+ 
+@@ -101,7 +101,7 @@ case `$lha --version 2>&1` in
+ esac
+ testsuite lha-test15
+ 
+-if (( $error_num != 0 )); then
++if [ $error_num != 0 ]; then
+   message $error_num tests failed!
+   message test number: $error_tests
+ fi

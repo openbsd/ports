@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2004/11/21 12:50:32 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2005/12/04 17:05:50 alek Exp $
 
 COMMENT=	"archive files using LZW compression (.lzh files)"
 
-VERSION=	1.14i
-DISTNAME=	lha-${VERSION:S/.//}
-PKGNAME=	lha-${VERSION}.p0
+DISTNAME=	lha-1.14i-ac20050924
+PKGNAME=	lha-1.14i.ac20050924
 CATEGORIES=	archivers
 
-HOMEPAGE=       http://www2m.biglobe.ne.jp/~dolphin/lha/lha.htm
+HOMEPAGE=       http://www.sourceforge.jp/projects/lha/
 
 MAINTAINER=	Yozo Toda <yozo@v007.vaio.ne.jp>
 
@@ -18,19 +17,14 @@ PERMIT_DISTFILES_CDROM=	"requires advance notification"
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	http://www2m.biglobe.ne.jp/~dolphin/lha/prog/ \
-		ftp://ftp.win.ne.jp/pub/misc/
+MASTER_SITES=	http://keihanna.dl.sourceforge.jp/lha/16650/ \
+		http://osdn.dl.sourceforge.jp/lha/16650/
 
-MAKE_FLAGS=	CC="${CC}" OPTIMIZE="${CFLAGS}" \
-		MACHINE="-DSYSTIME_HAS_NO_TM -DSYSV_SYSTEM_DIR -DMKTIME \
-			 -DUSESTRCASECMP" \
-		SWITCHES="-DNEED_INCREMENTAL_INDICATOR -DEUC -DSUPPORT_LH7"
+CONFIGURE_STYLE=gnu
 
-FAKE_FLAGS=	BINDIR="${WRKINST}${PREFIX}/bin" \
-		MANDIR="${WRKINST}${PREFIX}/man/ja_JP.EUC" MANSECT="1" \
-		INSTALL="" INSTALLBIN="${INSTALL_PROGRAM}" \
-		INSTALLMAN="${INSTALL_MAN}"
+post-install:
+	${INSTALL_MAN_DIR} ${PREFIX}/man/ja_JP.EUC/man1
+	${INSTALL_MAN} ${WRKSRC}/man/lha.n ${PREFIX}/man/ja_JP.EUC/man1/lha.1
 
-NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
