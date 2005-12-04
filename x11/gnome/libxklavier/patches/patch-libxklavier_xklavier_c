@@ -1,0 +1,15 @@
+$OpenBSD: patch-libxklavier_xklavier_c,v 1.1 2005/12/04 07:05:34 pvalchev Exp $
+--- libxklavier/xklavier.c.orig	Sat Dec  3 19:56:28 2005
++++ libxklavier/xklavier.c	Sat Dec  3 19:57:02 2005
+@@ -772,9 +772,10 @@ void _XklEnsureVTableInited( void )
+ {
+   if ( xklVTable == NULL )
+   {
++    char *p = NULL;
+     XklDebug( 0, "ERROR: XKL VTable is NOT initialized.\n" );
+     /* force the crash! */
+-    char *p = NULL; *p = '\0';
++    *p = '\0';
+   }
+ }
+ 
