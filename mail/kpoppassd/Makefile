@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2005/12/04 14:54:44 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2005/12/04 15:57:17 steven Exp $
 
 COMMENT=	"pop password changing daemon using KerberosV"
 
 DISTNAME=	kpoppassd-0.5
+PKGNAME=	kpoppassd-0.5p0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://kpoppassd.sourceforge.net/
