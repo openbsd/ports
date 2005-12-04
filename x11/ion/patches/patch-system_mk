@@ -1,6 +1,6 @@
-$OpenBSD: patch-system_mk,v 1.5 2005/04/23 16:22:26 pedro Exp $
---- system.mk.orig	Wed Apr  6 07:39:56 2005
-+++ system.mk	Sat Apr 23 11:11:54 2005
+$OpenBSD: patch-system_mk,v 1.6 2005/12/04 16:26:20 pedro Exp $
+--- system.mk.orig	Sat Oct 29 10:33:25 2005
++++ system.mk	Fri Dec  2 21:06:08 2005
 @@ -7,7 +7,7 @@
  ## Installation paths
  ##
@@ -57,7 +57,7 @@ $OpenBSD: patch-system_mk,v 1.5 2005/04/23 16:22:26 pedro Exp $
  
  # Use the Xutf8 routines (XFree86 extension) instead of Xmb routines in
  # an UTF8 locale given the -i18n command line option?
-@@ -107,13 +108,13 @@ DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WOR
+@@ -107,7 +108,7 @@ DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WOR
  # asprintf and vasprintf in the c library. (gnu libc has.)
  # If HAS_SYSTEM_ASPRINTF is not defined, an implementation
  # in sprintf_2.2/ is used.
@@ -66,14 +66,17 @@ $OpenBSD: patch-system_mk,v 1.5 2005/04/23 16:22:26 pedro Exp $
  
  
  # If you're on an archaic system (such as relatively recent *BSD releases)
- # without even dummy multibyte/widechar and localisation support, you may 
- # have to uncomment the following line:
--#DEFINES += -DCF_NO_LOCALE
-+DEFINES += -DCF_NO_LOCALE
+@@ -116,24 +117,24 @@ DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WOR
+ #DEFINES += -DCF_NO_LOCALE
  
  # On some other systems you may something like this:
- #EXTRA_LIBS += -lintl
-@@ -124,16 +125,16 @@ DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WOR
+-#EXTRA_LIBS += -lintl
+-#EXTRA_INCLUDES +=
++EXTRA_LIBS += -L$(LOCALBASE)/lib -lintl -liconv
++EXTRA_INCLUDES += -I$(LOCALBASE)/include
+ 
+ 
+ ##
  ## C compiler
  ##
  
