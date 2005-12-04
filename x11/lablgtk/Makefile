@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/17 15:18:33 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/12/04 12:08:05 sturm Exp $
 
 COMMENT=	"OCaml interface to GTK+"
 
-DISTNAME=	lablgtk-1.2.5
+DISTNAME=	lablgtk-1.2.7
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
