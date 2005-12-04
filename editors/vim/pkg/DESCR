@@ -13,8 +13,7 @@ Macintosh, BeOS, VMS, RISC OS, OS/2 and almost all flavours of UNIX.
 Porting to other systems should not be very difficult.
 
 Flavors:
-        gtk        - build using the Gtk+ toolkit (default);
-        gtk2       - build using the Gtk+2 toolkit;
+        gtk2       - build using the Gtk+2 toolkit (default);
 	motif	   - build using the Motif toolkit;
 	athena	   - build using the Athena toolkit;
 	no_x11	   - build without X11 support;

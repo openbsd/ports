@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.57 2005/11/16 12:18:15 wilfried Exp $
+# $OpenBSD: Makefile,v 1.58 2005/12/04 14:39:13 alek Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
 
-DISTNAME=	vim-6.3
-REVISION=	85
-VERSION=	6.3.${REVISION}
-PKGNAME=	vim-${VERSION}p1
+DISTNAME=	vim-6.4
+REVISION=	4
+VERSION=	6.4.${REVISION}
+PKGNAME=	vim-${VERSION}
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
-MASTER_SITES=   ftp://ftp.vim.org/pub/vim/unix/ \
-	        ftp://ftp.home.vim.org/pub/vim/unix/ \
-	        ftp://ftp.berlin.de.vim.org/unix/
-MASTER_SITES0=  ${MASTER_SITES:S/unix/patches\/6.3/}
+MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
+		ftp://ftp.home.vim.org/pub/vim/unix/ \
+		ftp://ftp.berlin.de.vim.org/unix/
+MASTER_SITES0=	${MASTER_SITES:S/unix/patches\/6.4/}
 MASTER_SITES1=	${MASTER_SITES:S/unix/extra/}
 DISTFILES=	${DISTNAME}.tar.bz2 \
-	        ${DISTNAME}-extra.tar.gz:1 \
+		${DISTNAME}-extra.tar.gz:1 \
 		${DISTNAME}-lang.tar.gz:1 
 DIST_SUBDIR=	vim6
 
@@ -25,43 +25,34 @@ MAINTAINER=	Chris Kuethe <chris.kuethe@gmail.com>
 PATCHFILES=	#
 _patches!=	jot -w%03d - 1 ${REVISION} 1
 .for p in ${_patches}
-PATCHFILES+=	6.3.${p}:0
+PATCHFILES+=	6.4.${p}:0
 .endfor
 
 # allow vim to build on m68k and vax
 .if (${MACHINE_ARCH} == "m68k")
-PATCH_LIST=     patch-* sup-m68k-*
+PATCH_LIST=	patch-* sup-m68k-*
 .elif (${MACHINE_ARCH} == "vax")
-PATCH_LIST=     patch-* sup-vax-*
+PATCH_LIST=	patch-* sup-vax-*
 .endif
 
 # donation-ware
-PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses
 
-MULTI_PACKAGES= -lang
+MULTI_PACKAGES=	-lang
 SUBPACKAGE?=
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-lang"
-.  for i in ${FLAVOR:L}
-_flavor:=${_flavor},$i
-.  endfor
-RUN_DEPENDS=::editors/vim${_flavor}
-PKG_ARCH=*
-.else
-MODULES=	devel/gettext converters/libiconv
-.endif
 
 .for i in ${MULTI_PACKAGES}
-PKGNAME$i=      vim$i-${VERSION}p0
+PKGNAME$i=	vim$i-${VERSION}
 .endfor
 
-FLAVORS=	huge gtk gtk2 athena motif no_x11 perl python ruby
-FLAVOR?=	gtk
+FLAVORS=	huge gtk2 athena motif no_x11 perl python ruby
+FLAVOR?=	gtk2
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
 		LDFLAGS="-L${DEPBASE}/lib"
 CONFIGURE_ARGS+=--with-tlib="curses" --enable-multibyte
@@ -76,7 +67,7 @@ WANTLIB+=	m perl util
 .endif
 
 .if ${FLAVOR:L:Mpython}
-PYTHON_VER=     2.3
+PYTHON_VER=	2.4
 CONFIGURE_ENV+=	vi_cv_path_python=${DEPBASE}/bin/python${PYTHON_VER}
 CONFIGURE_ARGS+=--enable-pythoninterp \
 	--with-python-config-dir=${DEPBASE}/lib/python${PYTHON_VER}/config
@@ -92,44 +83,47 @@ WANTLIB+=	m
 .endif
 
 .if ${FLAVOR:L:Mno_x11} && \
-	!${FLAVOR:L:Mgtk} && !${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk2}
+	!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS+=--disable-gui --without-x
 .elif ${FLAVOR:L:Mmotif} && \
-	!${FLAVOR:L:Mgtk} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk2}
+	!${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS+=--enable-gui="motif" --with-x --enable-fontset --enable-xim
 CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
-USE_MOTIF=any
+USE_MOTIF=	any
 WANTLIB+=	ICE SM X11 Xext Xmu Xpm Xt
 .elif ${FLAVOR:L:Mathena} && \
-	!${FLAVOR:L:Mgtk} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mgtk2}
+	!${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS+=--enable-gui="athena" --with-x --enable-fontset --enable-xim
 WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xpm Xt
-.elif ${FLAVOR:L:Mgtk} && \
-	!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk2}
-LIB_DEPENDS+=	gtk.1.2,gdk.1.2::x11/gtk+
-CONFIGURE_ARGS+=--enable-gui="gtk" --with-x --enable-fontset --enable-xim --disable-gtk2-check
-WANTLIB+=	ICE SM X11 Xext Xi Xt glib gmodule m
 .elif ${FLAVOR:L:Mgtk2} && \
-	        !${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk}
-LIB_DEPENDS+=   gdk-x11-2.0.0.11,gdk_pixbuf-2.0.0.11,gtk-x11-2.0.0.11::x11/gtk+2
+		!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena}
+LIB_DEPENDS+=	gdk-x11-2.0.0.11,gdk_pixbuf-2.0.0.11,gtk-x11-2.0.0.11::x11/gtk+2
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 CONFIGURE_ARGS+=--enable-gui="gtk2" --with-x --enable-fontset --enable-xim --disable-gtk-check --enable-gtk2-check
-WANTLIB+=	ICE SM X11 Xt atk-1.0.0.0 \
-		cairo fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
-		gobject-2.0.0.0 m pango-1.0.0.0 pangocairo-1.0.0.0 \
+WANTLIB+=	ICE SM X11 Xt atk-1.0.0.0 cairo pangocairo-1.0.0.0 \
+		fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
+		gobject-2.0.0.0 m pango-1.0.0.0 \
 		pangoft2-1.0.0.0
 .else
-ERRORS+="Fatal: You must select one GUI interface: no_x11, gtk, athena or motif"
+ERRORS=		"Fatal: You must select one GUI interface: no_x11, gtk2, athena or motif"
 .endif
+
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-lang"
+.  for i in ${FLAVOR:L}
+_flavor:=	${_flavor},$i
+.  endfor
+RUN_DEPENDS=	::editors/vim${_flavor}
+PKG_ARCH=	*
 LIB_DEPENDS=
 WANTLIB=
+.else
+MODULES=	devel/gettext
 .endif
 
-WRKDIST=		${WRKDIR}/${P}
-WRKSRC=			${WRKDIST}/src
+WRKDIST=	${WRKDIR}/${P}
+WRKSRC=		${WRKDIST}/src
 
-SUBST_VARS=     	P
+SUBST_VARS=	P
 
 .include <bsd.own.mk>
 
