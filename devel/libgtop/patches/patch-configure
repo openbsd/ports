@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.3 2004/10/01 23:54:45 naddy Exp $
+$OpenBSD: patch-configure,v 1.4 2005/12/04 12:17:47 alek Exp $
 --- configure.orig	Mon Nov 26 23:50:58 2001
-+++ configure	Thu Sep 30 22:55:40 2004
++++ configure	Fri Nov 18 23:06:25 2005
 @@ -15,6 +15,7 @@ if test "X${PATH_SEPARATOR+set}" != Xset
      *-DOS) lt_cv_sys_path_separator=';' ;;
      *)     lt_cv_sys_path_separator=':' ;;
@@ -149,3 +149,12 @@ $OpenBSD: patch-configure,v 1.3 2004/10/01 23:54:45 naddy Exp $
  	       LIBS=`echo $LIBS | sed -e 's/-lintl//'`
  	    fi
  
+@@ -18288,7 +18335,7 @@ else
+   guile_def=""
+ fi
+ 
+-INCLUDES="-D_IN_LIBGTOP -D_GNU_SOURCE -DGLIBTOP_NAMES -I\$(top_builddir) -I\$(top_srcdir) -I\$(top_srcdir)/sysdeps/$sysdeps_dir -I\$(top_srcdir)/include -I\$(top_srcdir)/intl $SUPPORTINCS $GLIB_CFLAGS $CFLAGS $X_CFLAGS $guile_def "'-DGTOPLOCALEDIR=\"$(datadir)/locale\" -DLIBGTOP_VERSION=\"'"$LIBGTOP_VERSION"'\" -DLIBGTOP_SERVER_VERSION=\"'"$LIBGTOP_SERVER_VERSION"'\" -DLIBGTOP_VERSION_CODE='$LIBGTOP_VERSION_CODE' -DLIBGTOP_SERVER=\"'"$LIBGTOP_SERVER"'\"'
++INCLUDES="-D_IN_LIBGTOP -D_GNU_SOURCE -DGLIBTOP_NAMES -I\$(top_builddir) -I\$(top_srcdir) -I\$(top_srcdir)/sysdeps/$sysdeps_dir -I\$(top_srcdir)/include $SUPPORTINCS $GLIB_CFLAGS $CFLAGS $X_CFLAGS $guile_def "'-DGTOPLOCALEDIR=\"$(datadir)/locale\" -DLIBGTOP_VERSION=\"'"$LIBGTOP_VERSION"'\" -DLIBGTOP_SERVER_VERSION=\"'"$LIBGTOP_SERVER_VERSION"'\" -DLIBGTOP_VERSION_CODE='$LIBGTOP_VERSION_CODE' -DLIBGTOP_SERVER=\"'"$LIBGTOP_SERVER"'\"'
+ 
+ if test x$libgtop_need_server = xyes ; then
+    sysdeps_suid_lib="\$(top_builddir)/sysdeps/\$(sysdeps_dir)/libgtop_sysdeps_suid.la"

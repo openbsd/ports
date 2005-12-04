@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_daemon_Makefile_in,v 1.1 2005/12/04 12:17:47 alek Exp $
+--- src/daemon/Makefile.in.orig	Fri Nov 18 23:06:42 2005
++++ src/daemon/Makefile.in	Fri Nov 18 23:07:02 2005
+@@ -197,13 +197,13 @@ libgtop_daemon_SOURCES = gnuserv.c slave
+ libgtop_daemon_LDADD = $(top_builddir)/lib/libgtop.la 				  $(top_builddir)/sysdeps/common/libgtop_common.la 				  $(top_builddir)/sysdeps/@sysdeps_dir@/libgtop_sysdeps.la 				  @sysdeps_suid_lib@ 				  $(suid_sysdeps) $(suid_common) 				  $(GLIB_LIBS) 				  @LIBSUPPORT@ @INTLLIBS@ @libs_xauth@
+ 
+ 
+-@ENABLE_STATIC_TRUE@libgtop_daemon_LDFLAGS = -static
++@ENABLE_STATIC_TRUE@libgtop_daemon_LDFLAGS =
+ 
+ libgtop_server_SOURCES = server.c slave.c io.c version.c daemon.h
+ libgtop_server_LDADD = $(top_builddir)/sysdeps/@sysdeps_dir@/libgtop_sysdeps_suid.la 				  $(top_builddir)/sysdeps/common/libgtop_suid_common.la
+ 
+ 
+-@ENABLE_STATIC_TRUE@libgtop_server_LDFLAGS = -static
++@ENABLE_STATIC_TRUE@libgtop_server_LDFLAGS =
+ 
+ EXTRA_DIST = server_config.h.in server_config.pl
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
