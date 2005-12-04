@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/10/31 21:08:15 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2005/12/04 22:19:24 steven Exp $
 %%SHARED%%
 bin/jpilot
 bin/jpilot-dump
@@ -64,8 +64,6 @@ share/jpilot/jpilotrc.default
 share/jpilot/jpilotrc.green
 share/jpilot/jpilotrc.purple
 share/jpilot/jpilotrc.steel
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/jpilot.mo
 share/locale/cs/LC_MESSAGES/jpilot.mo
 share/locale/da/LC_MESSAGES/jpilot.mo
@@ -82,8 +80,6 @@ share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/jpilot.mo
 share/locale/sv/LC_MESSAGES/jpilot.mo
 share/locale/tr/LC_MESSAGES/jpilot.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/jpilot.mo
 share/locale/zh_CN/LC_MESSAGES/jpilot.mo
 share/locale/zh_TW/LC_MESSAGES/jpilot.mo
