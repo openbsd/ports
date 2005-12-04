@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2005/01/12 21:31:06 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2005/12/04 20:15:56 jakob Exp $
 
 COMMENT=		"Berkeley DB module"
 
-DISTNAME=		BerkeleyDB-0.26
-PKGNAME=		p5-${DISTNAME}p0
+DISTNAME=		BerkeleyDB-0.27
+PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		databases perl5
 
 MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
@@ -20,5 +20,6 @@ CONFIGURE_ENV+=		BERKELEYDB_INCLUDE=${LOCALBASE}/include/db4 \
 			BERKELEYDB_LIB=${LOCALBASE}/lib/db4
 
 LIB_DEPENDS=		lib/db4/db.=4:db-4.*:databases/db/v4
+REGRESS_DEPENDS=	::devel/p5-MLDBM
 
 .include <bsd.port.mk>
