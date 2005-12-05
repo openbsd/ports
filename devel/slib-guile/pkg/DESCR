@@ -1,0 +1,4 @@
+This is just a stub port that deals with the common installation of
+guile + slib: any port requiring both guile and slib needs a common
+file installed (slibcat) which can only be generated when both ports
+are present.

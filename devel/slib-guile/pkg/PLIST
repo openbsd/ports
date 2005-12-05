@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/12/05 16:36:31 espie Exp $
+share/guile/
+share/guile/slibcat
