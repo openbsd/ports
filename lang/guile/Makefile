@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2005/12/03 18:33:18 steven Exp $
+# $OpenBSD: Makefile,v 1.23 2005/12/05 14:46:01 espie Exp $
 
 COMMENT=	"GNU's Ubiquitous Intelligent Language for Extension"
 
 DISTNAME=	guile-1.6.7
+PKGNAME=	$(DISTNAME)p0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU:=guile/}
 

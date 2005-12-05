@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/10/30 09:27:08 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2005/12/05 14:46:01 espie Exp $
 
 COMMENT=	"scheme r5 library"
 
@@ -6,7 +6,7 @@ CATEGORIES=	devel
 
 V=3a2
 DISTNAME=	slib$V
-PKGNAME=	slib-$V
+PKGNAME=	slib-$Vp0
 EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://swissnet.ai.mit.edu/~jaffer/SCM.html

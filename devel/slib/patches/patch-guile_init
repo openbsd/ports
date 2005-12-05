@@ -1,0 +1,13 @@
+$OpenBSD: patch-guile_init,v 1.1 2005/12/05 14:46:01 espie Exp $
+--- guile.init.orig	Mon Dec  5 15:31:51 2005
++++ guile.init	Mon Dec  5 15:32:07 2005
+@@ -124,7 +124,8 @@
+ 		   ((NOSVE) ".")
+ 		   ((MACOS THINKC) ":")
+ 		   ((MS-DOS WINDOWS ATARIST OS/2) "\\")
+-		   ((UNIX COHERENT PLAN9 AMIGA) "/"))))
++		   ((UNIX COHERENT PLAN9 AMIGA) "/")
++		   (else "/"))))
+ 	    (lambda (vic name)
+ 	      (string-append vic name *vicinity-suffix*))))))
+ ;@
