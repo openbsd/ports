@@ -1,0 +1,17 @@
+$OpenBSD: patch-mklibcat_scm,v 1.1 2005/12/05 16:28:33 espie Exp $
+--- mklibcat.scm.orig	Mon Dec  5 17:26:54 2005
++++ mklibcat.scm	Mon Dec  5 17:27:04 2005
+@@ -17,7 +17,12 @@
+ ;promotional, or sales literature without prior written consent in
+ ;each case.
+ 
+-(let ((catpath (in-vicinity (implementation-vicinity) "slibcat")))
++(let ((catpath 
++	(let (
++	    (basepath (in-vicinity (implementation-vicinity) "slibcat"))
++	    (destdir (getenv "DESTDIR")))
++	    (if destdir (string-append destdir basepath) basepath)
++	)))
+   (and (file-exists? catpath) (delete-file catpath))
+   (call-with-output-file catpath
+     (lambda (op)
