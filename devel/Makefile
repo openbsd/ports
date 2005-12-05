@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.349 2005/11/22 09:02:30 kevlo Exp $
+# $OpenBSD: Makefile,v 1.350 2005/12/05 16:38:14 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -356,6 +356,7 @@
      SUBDIR += shtool
      SUBDIR += silc-toolkit
      SUBDIR += slib
+     SUBDIR += slib-guile
      SUBDIR += smarty
      SUBDIR += smpeg
      SUBDIR += snit
