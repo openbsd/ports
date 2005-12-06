@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2005/10/29 09:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.99 2005/12/06 16:59:48 jolan Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -24,6 +24,7 @@
      SUBDIR += gpioflicker
      SUBDIR += hot-babe
      SUBDIR += idled
+     SUBDIR += iogen
      SUBDIR += knutclient
      SUBDIR += libretto-config
      SUBDIR += login_ldap
