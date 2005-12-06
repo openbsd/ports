@@ -1,4 +1,4 @@
-/* $OpenBSD: iogen.c,v 1.2 2005/12/06 17:38:58 marco Exp $ */
+/* $OpenBSD: iogen.c,v 1.3 2005/12/06 19:03:42 marco Exp $ */
 /*
  * Copyright (c) 2005 Marco Peereboom <marco@peereboom.us>
  *
@@ -166,7 +166,7 @@ err_log(int flags, const char *fmt, ...)
 	va_end(ap);
 
 	if (flags & LOGERR)
-		strlcat(buf, strerror(errno_save), sizeof buf);
+		snprintf(buf, sizeof buf, "%s: %s", buf, strerror(errno_save));
 
 	syslog(flags & LOGFATAL ? LOG_CRIT : LOG_NOTICE, buf);
 
