@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2005/12/06 17:38:58 marco Exp $
+# $OpenBSD: Makefile,v 1.3 2005/12/06 18:56:25 marco Exp $
 
 COMMENT=	"i/o generator"
-PKGNAME=	iogen-1.01
+PKGNAME=	iogen-1.02
 CATEGORIES=	sysutils
 DISTFILES=
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 NO_CHECKSUM=	Yes
 NO_REGRESS=	Yes
 
-CFLAGS+=	-DVERSION="${PKGNAME:S/iogen-//}"
+CFLAGS+=	-DVERSION=\"${PKGNAME:S/iogen-//}\"
 FAKE_FLAGS+=	BINDIR="${PREFIX}/bin" DESTDIR="${WRKINST}"
 MAKE_ENV=	CC="${CC}"
 WRKDIST=	${WRKDIR}
