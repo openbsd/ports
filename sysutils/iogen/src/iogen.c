@@ -1,3 +1,4 @@
+/* $OpenBSD: iogen.c,v 1.2 2005/12/06 17:38:58 marco Exp $ */
 /*
  * Copyright (c) 2005 Marco Peereboom <marco@peereboom.us>
  *
@@ -30,8 +31,6 @@
 #include <sys/param.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-
-#define VERSION		"v1.00"
 
 #define LOGFATAL	0x01
 #define LOGERR		0x02
@@ -342,10 +341,10 @@ run_io(void)
 
 			if (!randomize)
 				if (memcmp(src, dst, io_size) != 0)
-					err_log(LOGFATAL | LOGERR,
+					err_log(LOGFATAL,
 					    "source and destination "
 					    "buffer not the same in process %i",
-					    getpid()); /* XXX no stderr */
+					    getpid());
 		}
 
 		/* writes */
