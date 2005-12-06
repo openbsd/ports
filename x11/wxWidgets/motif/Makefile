@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2005/02/13 10:56:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2005/12/06 19:16:03 alek Exp $
 
 COMMENT=	"C++ cross-platform GUI toolkit - motif version"
-PKGNAME=		wxWidgets-motif-${VERSION}p0
+PKGNAME=		wxWidgets-motif-${VERSION}p1
 
 USE_MOTIF=		openmotif
 CONFIGURE_ARGS+=	--with-motif
