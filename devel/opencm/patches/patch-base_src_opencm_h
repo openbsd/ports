@@ -1,11 +1,11 @@
-$OpenBSD: patch-base_src_opencm_h,v 1.7 2003/10/15 13:12:04 todd Exp $
---- base/src/opencm.h.orig	Sat Mar 29 16:15:28 2003
-+++ base/src/opencm.h	Tue Apr  1 07:30:18 2003
+$OpenBSD: patch-base_src_opencm_h,v 1.8 2005/12/06 19:05:21 todd Exp $
+--- base/src/opencm.h.orig	Sun Oct 24 20:06:46 2004
++++ base/src/opencm.h	Tue Dec  6 13:00:01 2005
 @@ -77,7 +77,7 @@
  #include <paths.h>
  #endif
  
--#include "../gc6.1/include/gc.h"
+-#include "../gc6.3/include/gc.h"
 +#include <gc.h>
  
  /* #define USE_BASE16 */

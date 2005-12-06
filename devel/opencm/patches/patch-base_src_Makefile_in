@@ -1,12 +1,12 @@
-$OpenBSD: patch-base_src_Makefile_in,v 1.4 2003/10/15 13:12:04 todd Exp $
---- base/src/Makefile.in.orig	Sun Jun 15 11:50:42 2003
-+++ base/src/Makefile.in	Tue Jun 24 11:36:29 2003
+$OpenBSD: patch-base_src_Makefile_in,v 1.5 2005/12/06 19:05:21 todd Exp $
+--- base/src/Makefile.in.orig	Sun Oct 24 20:06:46 2004
++++ base/src/Makefile.in	Tue Dec  6 13:00:38 2005
 @@ -110,8 +110,7 @@ CMINCLUDE=@SSL_INC@
  # COMREADLINE=-DUSE_READLINE -I/usr/include/readline
  SESSIONTIMEOUT=-DCLIENT_TIMEOUT=1800
  LIBDIFF=$(TOPDIR)/../libgdiff/libgdiff.a
 -LIBZ=$(TOPDIR)/../zlib/libz.a
--LIBGC=$(TOPDIR)/../gc6.1/.libs/libgc.a
+-LIBGC=$(TOPDIR)/../gc6.3/.libs/libgc.a
 +LIBZ=-lz
  
  XCFLAGS = -Wmissing-prototypes -Wall -Wreturn-type -DDATADIR=\"$(datadir)\"
