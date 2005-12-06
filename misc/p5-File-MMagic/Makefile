@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/10 18:35:06 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/06 20:26:23 sturm Exp $
 
 COMMENT=	"Perl module to guess file type"
 
-DISTNAME=	File-MMagic-1.22
+DISTNAME=	File-MMagic-1.25
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	misc
 
