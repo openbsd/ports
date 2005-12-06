@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/08/17 16:10:05 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2005/12/06 17:07:02 ian Exp $
 
 COMMENT=	"Java servlet 2.2 and Java server pages 1.1 server"
 
@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://archive.apache.org/dist/jakarta/tomcat-3/archive/v${V}/bin/
 EXTRACT_SUFX=	.zip
 
-HOMEPAGE=	http://jakarta.apache.org/
+HOMEPAGE=	http://tomcat.apache.org/
 
 MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
