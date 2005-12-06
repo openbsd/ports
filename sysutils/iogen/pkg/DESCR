@@ -1,1 +1,6 @@
-iogen is an i/o generator.
+iogen is an i/o generator.  It forks child processes that each run a mix of
+reads and writes.  The idea is to generate heavily fragmented files to make the
+hardware suffer as much as possible.  This tool has been used to test
+filesystems, drivers, firmware and hardware devices.  It is by no means meant
+as a performance measuring tool since it tries to recreate the worst case
+scenario i/o.
