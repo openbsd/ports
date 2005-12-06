@@ -1,2 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/12/06 16:57:47 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/12/06 20:56:06 marco Exp $
 bin/iogen
+@man man/cat8/iogen.0

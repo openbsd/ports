@@ -1,7 +1,7 @@
 PROG=	iogen
 SRCS=	iogen.c
 CFLAGS+=-Wall
-NOMAN=	notgay
+MAN=	iogen.8
 BINDIR=	${PREFIX}/bin
 
 .include <bsd.prog.mk>
