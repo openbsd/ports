@@ -1,0 +1,12 @@
+$OpenBSD: patch-superkaramba_src_misc_python_cpp,v 1.1 2005/12/06 07:06:20 espie Exp $
+--- superkaramba/src/misc_python.cpp.orig	Fri Nov 25 09:22:25 2005
++++ superkaramba/src/misc_python.cpp	Fri Nov 25 09:22:51 2005
+@@ -425,7 +425,7 @@ PyObject* py_hide(PyObject *, PyObject *
+ #include <sys/ioctl.h>
+ #include <net/if.h>
+ #include <arpa/inet.h>
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <netinet/in.h>
+ #endif
+ #if defined(Q_OS_SOLARIS)

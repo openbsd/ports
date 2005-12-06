@@ -1,0 +1,13 @@
+$OpenBSD: patch-kcalc_knumber_knumber_priv_h,v 1.1 2005/12/06 07:06:20 espie Exp $
+--- kcalc/knumber/knumber_priv.h.orig	Thu Nov 24 11:59:31 2005
++++ kcalc/knumber/knumber_priv.h	Thu Nov 24 12:00:01 2005
+@@ -29,7 +29,8 @@ class QString;
+ #endif
+ // this is really ugly
+ #ifndef NAN
+-#define NAN (atof("nan"))
++#include <cstdlib>
++#define NAN (std::atof("nan"))
+ #endif
+ 
+ class _knumber
