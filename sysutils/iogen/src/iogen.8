@@ -1,0 +1,116 @@
+.\" $OpenBSD: iogen.8,v 1.1 2005/12/06 20:54:59 marco Exp $
+.\"
+.\" Copyright (c) 2005 Marco Peereboom <marco@peereboom.us>
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\"
+.Dd Dec 6, 2005
+.Dt IOGEN 8
+.Os
+.Sh NAME
+.Nm iogen
+.Nd i/o generator.
+.Sh SYNOPSIS
+.Nm iogen
+.Op Fl r
+.Op Fl k
+.Op Fl s Ar max-file-size
+.Op Fl b Ar max-io-size
+.Op Fl p Ar read-percentage
+.Op Fl d Ar target-directory
+.Op Fl f Ar result-directory
+.Op Fl n Ar nr-forks
+.Op Fl t Ar update-time
+.Sh DESCRIPTION
+.Nm
+is a lightweight tool that generates heavily fragmented i/o.
+It accomplishes this by forking an N number of children that run io to a
+filesystem.
+.Pp
+This tool is intended to test storage stacks under stress and worst case
+scenarios.
+However due to heavy fragmentation of the io files it tends to bypass caching
+algorithms in storage stacks.
+.Pp
+The options are as follows:
+.Pp
+.Bl -tag -width xlxltarget-directory
+.It Fl r
+Randomize io size between 1 and max-io-size.
+Enabling this flag will disable data verification.
+Default is disabled.
+.It Fl k
+Kill all running iogen processes.
+.It Fl s Ar max-file-size
+The file where the io is run to and from will grow sequentially until it is
+bigger or equal to this value.
+At that point all write io will also become random.
+Default is 1GB.
+.It Fl b Ar max-io-size
+This is the fixed io size unless the -r flag is set.
+Default is 64KB.
+.It Fl d Ar target-directory
+This is the directory where the io file will be written to.
+Default is current directory.
+.It Fl f Ar result-directory
+This is the directory where the result file will be written to.
+The result file is update every update-time seconds with statistics.
+Default is current directory.
+.It Fl n Ar nr-forks
+This will determine how many identical processes will be forked to run io.
+Default is 1.
+.It Fl t Ar update-time
+This determines the minimal amount of time between updates.
+Under heavy io this value can be skewed due to asynchronous nature of alarm(3).
+Default is 60 seconds.
+.El
+.Pp
+Examples:
+.Bd -literal -offset indent
+Run iogen with all defaults in the current directory:
+$ iogen
+.Pp
+Run iogen with all defaults with a 1 second result file update:
+$ iogen -t 1
+.Pp
+Run iogen with a 2GB max file, 128KB io size and result in /tmp:
+$ iogen -s 2g -b 128k -t 1 -f /tmp
+.Ed
+.Pp
+The algorithm for io generation is incredibly simple however it has proven to
+be very effective at bringing out issues in storage stacks.
+It first grows the initial file a minimal amount to be able to start running
+io in it.
+After the initial growth it reads randomly within the current file size.
+Every run is a distribution between reads and writes which is governed by
+the read percentage value.
+The file is grown sequentially until it reaches maximum file size.
+Whenever this happens a message is logged to syslogd(8) and all writes become
+random.
+.Pp
+To monitor progress one can tail(1) the result file which is updated every
+update-time interval or send the process a HUP signal.
+Whenever an io processes receives a HUP signal it prints statistical values
+to stderr(4) at its earliest convenience.
+.Pp
+.Sh HISTORY
+The first version of
+.Nm
+was written in 2005.
+.Sh AUTHORS
+Marco Peereboom
+.Aq marco@peereboom.us
+.Sh CAVEATS
+This tool is capable of running extremely heavy io.
+It is known to have broken hardware before so please use caution and don't
+complain if something bad happens.
