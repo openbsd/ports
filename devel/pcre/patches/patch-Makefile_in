@@ -1,10 +1,21 @@
---- Makefile.in.orig	2003-12-10 17:45:44.000000000 +0100
-+++ Makefile.in	2004-01-14 18:20:00.000000000 +0100
-@@ -216,7 +216,6 @@ install:        all @ON_WINDOWS@ wininst
- @NOT_ON_WINDOWS@	       $(LIBTOOL) --mode=install $(INSTALL) libpcre.la $(DESTDIR)$(LIBDIR)/libpcre.la
- @NOT_ON_WINDOWS@	       echo "$(LIBTOOL) --mode=install $(INSTALL) libpcreposix.la $(DESTDIR)$(LIBDIR)/libpcreposix.la"
+--- Makefile.in.orig	Mon Sep 12 10:45:39 2005
++++ Makefile.in	Sun Dec  4 19:06:52 2005
+@@ -438,7 +438,6 @@ install:        all @ON_WINDOWS@ wininst
  @NOT_ON_WINDOWS@	       $(LIBTOOL) --mode=install $(INSTALL) libpcreposix.la $(DESTDIR)$(LIBDIR)/libpcreposix.la
+ @NOT_ON_WINDOWS@@HAVE_CPP@		echo "$(LIBTOOL) --mode=install $(INSTALL) libpcrecpp.la $(DESTDIR)$(LIBDIR)/libpcrecpp.la"
+ @NOT_ON_WINDOWS@@HAVE_CPP@		$(LIBTOOL) --mode=install $(INSTALL) libpcrecpp.la $(DESTDIR)$(LIBDIR)/libpcrecpp.la
 -@NOT_ON_WINDOWS@	       $(LIBTOOL) --finish $(DESTDIR)$(LIBDIR)
  		$(mkinstalldirs) $(DESTDIR)$(INCDIR)
  		$(INSTALL_DATA) pcre.h $(DESTDIR)$(INCDIR)/pcre.h
  		$(INSTALL_DATA) $(top_srcdir)/pcreposix.h $(DESTDIR)$(INCDIR)/pcreposix.h
+@@ -479,8 +478,8 @@ install:        all @ON_WINDOWS@ wininst
+ 		$(INSTALL_DATA) $(top_srcdir)/doc/pcregrep.1 $(DESTDIR)$(MANDIR)/man1/pcregrep.1
+ 		$(INSTALL_DATA) $(top_srcdir)/doc/pcretest.1 $(DESTDIR)$(MANDIR)/man1/pcretest.1
+ 		$(mkinstalldirs) $(DESTDIR)$(BINDIR)
+-		$(LIBTOOL) --mode=install $(INSTALL) pcregrep@EXEEXT@ $(DESTDIR)$(BINDIR)/pcregrep@EXEEXT@
+-		$(LIBTOOL) --mode=install $(INSTALL) pcretest@EXEEXT@ $(DESTDIR)$(BINDIR)/pcretest@EXEEXT@
++		$(LIBTOOL) --mode=install $(INSTALL) $(INSTALL_STRIP) pcregrep@EXEEXT@ $(DESTDIR)$(BINDIR)/pcregrep@EXEEXT@
++		$(LIBTOOL) --mode=install $(INSTALL) $(INSTALL_STRIP) pcretest@EXEEXT@ $(DESTDIR)$(BINDIR)/pcretest@EXEEXT@
+ 		$(INSTALL) pcre-config $(DESTDIR)$(BINDIR)/pcre-config
+ 		$(mkinstalldirs) $(DESTDIR)$(LIBDIR)/pkgconfig
+ 		$(INSTALL_DATA) libpcre.pc $(DESTDIR)$(LIBDIR)/pkgconfig/libpcre.pc

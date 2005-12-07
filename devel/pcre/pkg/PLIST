@@ -1,13 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/08/10 08:36:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/12/07 20:11:49 bernd Exp $
 bin/pcre-config
 bin/pcregrep
 bin/pcretest
 include/pcre.h
+include/pcre_scanner.h
+include/pcre_stringpiece.h
+include/pcrecpp.h
 include/pcreposix.h
 lib/libpcre.a
 lib/libpcre.la
+lib/libpcrecpp.a
+lib/libpcrecpp.la
 lib/libpcreposix.a
 lib/libpcreposix.la
+lib/pkgconfig/
+lib/pkgconfig/libpcre.pc
 @man man/man1/pcregrep.1
 @man man/man1/pcretest.1
 @man man/man3/pcre.3
@@ -15,6 +22,7 @@ lib/libpcreposix.la
 @man man/man3/pcre_config.3
 @man man/man3/pcre_copy_named_substring.3
 @man man/man3/pcre_copy_substring.3
+@man man/man3/pcre_dfa_exec.3
 @man man/man3/pcre_exec.3
 @man man/man3/pcre_free_substring.3
 @man man/man3/pcre_free_substring_list.3
@@ -25,12 +33,15 @@ lib/libpcreposix.la
 @man man/man3/pcre_get_substring_list.3
 @man man/man3/pcre_info.3
 @man man/man3/pcre_maketables.3
+@man man/man3/pcre_refcount.3
 @man man/man3/pcre_study.3
 @man man/man3/pcre_version.3
 @man man/man3/pcreapi.3
 @man man/man3/pcrebuild.3
 @man man/man3/pcrecallout.3
 @man man/man3/pcrecompat.3
+@man man/man3/pcrecpp.3
+@man man/man3/pcrematching.3
 @man man/man3/pcrepattern.3
 @man man/man3/pcreperform.3
 @man man/man3/pcreposix.3
