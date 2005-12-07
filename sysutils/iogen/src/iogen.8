@@ -1,4 +1,4 @@
-.\" $OpenBSD: iogen.8,v 1.2 2005/12/07 16:09:39 marco Exp $
+.\" $OpenBSD: iogen.8,v 1.3 2005/12/07 16:16:56 marco Exp $
 .\"
 .\" Copyright (c) 2005 Marco Peereboom <marco@peereboom.us>
 .\"
@@ -64,6 +64,10 @@ processes.
 .It Fl n Ar nr-forks
 This will determine how many identical processes will be forked to run I/O.
 The default is 1.
+.It Fl p Ar read-precentage
+This determins the read vs write distribution.
+The range is from 10% to 90%.
+The default is 50.
 .It Fl r
 Randomize I/O size between 1 and
 .Ar max-io-size .
