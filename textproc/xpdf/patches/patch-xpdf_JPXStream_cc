@@ -1,0 +1,28 @@
+$OpenBSD: patch-xpdf_JPXStream_cc,v 1.1 2005/12/07 09:22:15 bernd Exp $
+--- xpdf/JPXStream.cc.orig	Wed Aug 17 07:34:31 2005
++++ xpdf/JPXStream.cc	Tue Dec  6 21:13:44 2005
+@@ -783,7 +783,7 @@ GBool JPXStream::readCodestream(Guint le
+   int segType;
+   GBool haveSIZ, haveCOD, haveQCD, haveSOT;
+   Guint precinctSize, style;
+-  Guint segLen, capabilities, comp, i, j, r;
++  Guint segLen, capabilities, nTiles, comp, i, j, r;
+ 
+   //----- main header
+   haveSIZ = haveCOD = haveQCD = haveSOT = gFalse;
+@@ -818,8 +818,13 @@ GBool JPXStream::readCodestream(Guint le
+ 	            / img.xTileSize;
+       img.nYTiles = (img.ySize - img.yTileOffset + img.yTileSize - 1)
+ 	            / img.yTileSize;
+-      img.tiles = (JPXTile *)gmallocn(img.nXTiles * img.nYTiles,
+-				      sizeof(JPXTile));
++      nTiles = img.nXTiles * img.nYTiles;
++      // check for overflow before allocating memory
++      if (nTiles == 0 || nTiles / img.nXTiles != img.nYTiles) {
++	error(getPos(), "Bad tile count in JPX SIZ marker segment");
++	return gFalse;
++      }
++      img.tiles = (JPXTile *)gmallocn(nTiles, sizeof(JPXTile));
+       for (i = 0; i < img.nXTiles * img.nYTiles; ++i) {
+ 	img.tiles[i].tileComps = (JPXTileComp *)gmallocn(img.nComps,
+ 							 sizeof(JPXTileComp));

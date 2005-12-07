@@ -1,0 +1,20 @@
+$OpenBSD: patch-xpdf_Stream_h,v 1.1 2005/12/07 09:22:15 bernd Exp $
+--- xpdf/Stream.h.orig	Wed Aug 17 07:34:31 2005
++++ xpdf/Stream.h	Tue Dec  6 21:13:44 2005
+@@ -232,6 +232,8 @@ public:
+ 
+   ~StreamPredictor();
+ 
++  GBool isOk() { return ok; }
++
+   int lookChar();
+   int getChar();
+ 
+@@ -249,6 +251,7 @@ private:
+   int rowBytes;			// bytes per line
+   Guchar *predLine;		// line buffer
+   int predIdx;			// current index in predLine
++  GBool ok;
+ };
+ 
+ //------------------------------------------------------------------------
