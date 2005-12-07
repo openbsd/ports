@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2005/09/19 05:24:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.27 2005/12/07 20:03:00 wilfried Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
 COMMENT=		'module to interface the DNS resolver'
 
-DISTNAME=		Net-DNS-0.53
+DISTNAME=		Net-DNS-0.54
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		net perl5
 
@@ -23,6 +23,8 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Net/} \
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		:p5-Digest-HMAC->=1.00:security/p5-Digest-HMAC \
 			:p5-Net-IP->=1.20:net/p5-Net-IP
+REGRESS_DEPENDS=	::security/p5-Digest-BubbleBabble \
+			::devel/p5-Test-Pod
 
 CONFIGURE_STYLE=	perl
 CONFIGURE_ARGS=		--online-tests
