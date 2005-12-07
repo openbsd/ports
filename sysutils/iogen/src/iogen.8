@@ -1,4 +1,4 @@
-.\" $OpenBSD: iogen.8,v 1.1 2005/12/06 20:54:59 marco Exp $
+.\" $OpenBSD: iogen.8,v 1.2 2005/12/07 16:09:39 marco Exp $
 .\"
 .\" Copyright (c) 2005 Marco Peereboom <marco@peereboom.us>
 .\"
@@ -14,103 +14,123 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd Dec 6, 2005
+.Dd December 6, 2005
 .Dt IOGEN 8
 .Os
 .Sh NAME
 .Nm iogen
-.Nd i/o generator.
+.Nd I/O generator
 .Sh SYNOPSIS
 .Nm iogen
-.Op Fl r
-.Op Fl k
-.Op Fl s Ar max-file-size
+.Bk -words
+.Op Fl kr
 .Op Fl b Ar max-io-size
-.Op Fl p Ar read-percentage
 .Op Fl d Ar target-directory
 .Op Fl f Ar result-directory
 .Op Fl n Ar nr-forks
+.Op Fl p Ar read-percentage
+.Op Fl s Ar max-file-size
 .Op Fl t Ar update-time
+.Ek
 .Sh DESCRIPTION
 .Nm
-is a lightweight tool that generates heavily fragmented i/o.
-It accomplishes this by forking an N number of children that run io to a
+is a lightweight tool that generates heavily fragmented I/O.
+It accomplishes this by forking a number of children that run I/O to a
 filesystem.
 .Pp
 This tool is intended to test storage stacks under stress and worst case
 scenarios.
-However due to heavy fragmentation of the io files it tends to bypass caching
-algorithms in storage stacks.
+However due to heavy fragmentation of the I/O files,
+it tends to bypass caching algorithms in storage stacks.
 .Pp
 The options are as follows:
-.Pp
-.Bl -tag -width xlxltarget-directory
-.It Fl r
-Randomize io size between 1 and max-io-size.
-Enabling this flag will disable data verification.
-Default is disabled.
-.It Fl k
-Kill all running iogen processes.
-.It Fl s Ar max-file-size
-The file where the io is run to and from will grow sequentially until it is
-bigger or equal to this value.
-At that point all write io will also become random.
-Default is 1GB.
+.Bl -tag -width Ds
 .It Fl b Ar max-io-size
-This is the fixed io size unless the -r flag is set.
-Default is 64KB.
+This is the fixed I/O size unless the -r flag is set.
+The default is 64KB.
 .It Fl d Ar target-directory
-This is the directory where the io file will be written to.
-Default is current directory.
+This is the directory where the I/O file will be written to.
+The default is the current working directory.
 .It Fl f Ar result-directory
 This is the directory where the result file will be written to.
-The result file is update every update-time seconds with statistics.
-Default is current directory.
+The result file is updated every
+.Ar update-time
+seconds with statistics.
+The default is the current working directory.
+.It Fl k
+Kill all running
+.Nm
+processes.
 .It Fl n Ar nr-forks
-This will determine how many identical processes will be forked to run io.
-Default is 1.
+This will determine how many identical processes will be forked to run I/O.
+The default is 1.
+.It Fl r
+Randomize I/O size between 1 and
+.Ar max-io-size .
+Enabling this flag will disable data verification.
+The default is disabled.
+.It Fl s Ar max-file-size
+The file where the I/O is run to and from will grow sequentially until it is
+bigger or equal to this value.
+At that point all write I/O will also become random.
+The default is 1GB.
 .It Fl t Ar update-time
 This determines the minimal amount of time between updates.
-Under heavy io this value can be skewed due to asynchronous nature of alarm(3).
-Default is 60 seconds.
+Under heavy I/O this value can be skewed due to
+the asynchronous nature of
+.Xr alarm 3 .
+The default is 60 seconds.
 .El
 .Pp
-Examples:
-.Bd -literal -offset indent
-Run iogen with all defaults in the current directory:
-$ iogen
-.Pp
-Run iogen with all defaults with a 1 second result file update:
-$ iogen -t 1
-.Pp
-Run iogen with a 2GB max file, 128KB io size and result in /tmp:
-$ iogen -s 2g -b 128k -t 1 -f /tmp
-.Ed
-.Pp
-The algorithm for io generation is incredibly simple however it has proven to
-be very effective at bringing out issues in storage stacks.
+Although the algorithm for I/O generation is incredibly simple,
+it has proven to be very effective at
+bringing out issues in storage stacks.
 It first grows the initial file a minimal amount to be able to start running
-io in it.
-After the initial growth it reads randomly within the current file size.
+I/O in it.
+After the initial growth,
+it reads randomly within the current file size.
 Every run is a distribution between reads and writes which is governed by
 the read percentage value.
 The file is grown sequentially until it reaches maximum file size.
 Whenever this happens a message is logged to syslogd(8) and all writes become
 random.
 .Pp
-To monitor progress one can tail(1) the result file which is updated every
-update-time interval or send the process a HUP signal.
-Whenever an io processes receives a HUP signal it prints statistical values
-to stderr(4) at its earliest convenience.
+To monitor progress one can
+.Xr tail 1
+the result file which is updated every
+.Ar update-time
+interval or send the process a
+.Dv HUP
+signal.
+Whenever an I/O process receives a
+.Dv HUP
+signal, it prints statistical values to
+.Xr stderr 4
+at its earliest convenience.
+.Sh EXAMPLES
+Run iogen with all defaults in the current working directory:
 .Pp
+.Dl $ iogen
+.Pp
+Run
+.Nm
+with all defaults and a 1 second result file update:
+.Pp
+.Dl $ iogen -t 1
+.Pp
+Run
+.Nm
+with a 2GB max file, 128KB I/O size, and result file in
+.Pa /tmp :
+.Pp
+.Dl $ iogen -s 2g -b 128k -t 1 -f /tmp
 .Sh HISTORY
 The first version of
 .Nm
 was written in 2005.
 .Sh AUTHORS
-Marco Peereboom
-.Aq marco@peereboom.us
+.An Marco Peereboom Aq marco@peereboom.us
 .Sh CAVEATS
-This tool is capable of running extremely heavy io.
+This tool is capable of running extremely heavy I/O.
 It is known to have broken hardware before so please use caution and don't
 complain if something bad happens.
