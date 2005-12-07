@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2005/10/26 20:07:29 bernd Exp $
+# $OpenBSD: Makefile,v 1.38 2005/12/07 21:04:31 bernd Exp $
 
 COMMENT=	"TeX distribution, executables"
 COMMENT-fmt=	"format files"
 
 VERSION=	3.0
 DISTNAME=	tetex-base-${VERSION}
-PKGNAME=	teTeX_base-${VERSION}p2
+PKGNAME=	teTeX_base-${VERSION}p3
 FULLPKGNAME-fmt=teTeX_base-fmt-${VERSION}p0
 CATEGORIES=	print
 
