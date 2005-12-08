@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2005/12/07 08:29:50 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2005/12/08 22:52:33 steven Exp $
 
 COMMENT=	"handle external logins, send and receive faxes"
 
 VERSION=	1.1.34
 RELEASE=	Nov30
 DISTNAME=	mgetty${VERSION}-${RELEASE}
-PKGNAME=	mgetty+sendfax-${VERSION}p0
+PKGNAME=	mgetty+sendfax-${VERSION}p1
 CATEGORIES=	comms
 
 HOMEPAGE=	http://mgetty.greenie.net
@@ -28,6 +28,9 @@ WRKDIST=	${WRKDIR}/mgetty-${VERSION}
 
 MAKE_ENV+=	SYSCONFDIR=${SYSCONFDIR}
 
+SAMPLE_SCRIPTS=	answer_fax.sh coverpg* fax* printfax* \
+		new_fax.{NeXT,hpa,lj,m*,pbm,th,tiff}
+
 pre-configure:
 	@sed -e "s,@prefix@,${PREFIX},g" \
 		-e "s,@sysconfdir@,${SYSCONFDIR},g" \
@@ -46,8 +49,18 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/faq/SGML/* ${PREFIX}/share/doc/mgetty+sendfax/faq
 	${INSTALL_DATA} ${WRKSRC}/voice/doc/* ${PREFIX}/share/doc/mgetty+sendfax/voice
 	${INSTALL_DATA} -m 600 ${WRKSRC}/voice/voice.conf-dist ${PREFIX}/share/examples/mgetty+sendfax/voice.conf
-	${TAR} -cf - -C ${WRKSRC} samples | ${TAR} -xf - -C ${PREFIX}/share/examples/mgetty+sendfax
-	${TAR} -cf - -C ${WRKSRC} voice/scripts | ${TAR} -xf - -C ${PREFIX}/share/examples/mgetty+sendfax
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mgetty+sendfax/samples/new_fax.all
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mgetty+sendfax/voice/scripts
+.for s in ${SAMPLE_SCRIPTS}
+	${INSTALL_SCRIPT} ${WRKSRC}/samples/$s \
+		${PREFIX}/share/examples/mgetty+sendfax/samples
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/samples/new_fax.all/* \
+		${PREFIX}/share/examples/mgetty+sendfax/samples/new_fax.all
+	${INSTALL_SCRIPT} ${WRKSRC}/samples/new_fax.all/new_fax \
+		${PREFIX}/share/examples/mgetty+sendfax/samples/new_fax.all
+	${INSTALL_SCRIPT} ${WRKSRC}/voice/scripts/*.{sh,pl} \
+		${PREFIX}/share/examples/mgetty+sendfax/voice/scripts
 
 REGRESS_TARGET=		check
 TESTS_ENVIRONMENT=	MAKE=${GMAKE}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/12/07 08:29:50 steven Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/12/08 22:52:34 steven Exp $
 @conflict hylafax-*
 bin/autopvf
 bin/basictopvf
@@ -117,7 +117,6 @@ share/examples/mgetty+sendfax/samples/new_fax.mime4
 share/examples/mgetty+sendfax/samples/new_fax.pbm
 share/examples/mgetty+sendfax/samples/new_fax.th
 share/examples/mgetty+sendfax/samples/new_fax.tiff
-share/examples/mgetty+sendfax/samples/new_fax.vacation
 share/examples/mgetty+sendfax/samples/printfax
 share/examples/mgetty+sendfax/samples/printfax.ps
 share/examples/mgetty+sendfax/sendfax.config
@@ -125,7 +124,6 @@ share/examples/mgetty+sendfax/voice/
 share/examples/mgetty+sendfax/voice.conf
 share/examples/mgetty+sendfax/voice/scripts/
 share/examples/mgetty+sendfax/voice/scripts/Vgetty.sh
-share/examples/mgetty+sendfax/voice/scripts/Vgetty.sh.EXAMPLE
 share/examples/mgetty+sendfax/voice/scripts/button.sh
 share/examples/mgetty+sendfax/voice/scripts/convert_wav_to_rmd.sh
 share/examples/mgetty+sendfax/voice/scripts/demo.pl
@@ -136,8 +134,6 @@ share/examples/mgetty+sendfax/voice/scripts/events.sh
 share/examples/mgetty+sendfax/voice/scripts/faxback.sh
 share/examples/mgetty+sendfax/voice/scripts/listen.sh
 share/examples/mgetty+sendfax/voice/scripts/message.sh
-share/examples/mgetty+sendfax/voice/scripts/new_voice.craig_southern
-share/examples/mgetty+sendfax/voice/scripts/rsynth-0.9.linuxA.pch
 share/examples/mgetty+sendfax/voice/scripts/speakdate.pl
 share/examples/mgetty+sendfax/voice/scripts/speakdate.sh
 share/examples/mgetty+sendfax/voice/scripts/vmtest.sh
