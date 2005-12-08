@@ -1,4 +1,0 @@
-The dvdauthor package is a simple set of tools for DVD authoring.  The
-idea is to be able to create menus, buttons, chapters, etc.  For now
-functionality is mostly limited to creating DVD filesystems from mpeg
-streams that were created by mplex -f 8 from mjpegtools 1.6.0 or newer.
