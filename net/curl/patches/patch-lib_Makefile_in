@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.1 2005/10/16 15:31:39 naddy Exp $
+$OpenBSD: patch-lib_Makefile_in,v 1.2 2005/12/08 17:10:02 naddy Exp $
 --- lib/Makefile.in.orig	Sun Oct 16 16:15:38 2005
 +++ lib/Makefile.in	Sun Oct 16 16:15:53 2005
 @@ -188,7 +188,7 @@ USE_MANUAL_FALSE = @USE_MANUAL_FALSE@
@@ -6,7 +6,7 @@ $OpenBSD: patch-lib_Makefile_in,v 1.1 2005/10/16 15:31:39 naddy Exp $
  USE_SSLEAY = @USE_SSLEAY@
  USE_WINDOWS_SSPI = @USE_WINDOWS_SSPI@
 -VERSION = -version-info 3:0:0
-+VERSION = -version-info 3:1:0
++VERSION = -version-info 3:2:0
  VERSIONNUM = @VERSIONNUM@
  ac_ct_AR = @ac_ct_AR@
  ac_ct_AS = @ac_ct_AS@
