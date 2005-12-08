@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2005/11/21 05:54:53 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2005/12/08 09:16:10 bernd Exp $
 
 COMMENT=	"web-based collaborative editing environment"
 
-V=		1.5.2
+V=		1.5.3
 DISTNAME=	mediawiki-${V}
 CATEGORIES=	www
 
@@ -31,6 +31,7 @@ RUN_DEPENDS=	:php5-mysql-*:www/php5/extensions,-mysql \
 
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+	@find ${PREFIX} -name '.cvsignore' | xargs rm
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
 	@mv ${INSTDIR}-${V} ${INSTDIR}
 

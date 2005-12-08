@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/11/21 05:54:53 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/12/08 09:16:10 bernd Exp $
 mediawiki/
 mediawiki/AdminSettings.sample
 mediawiki/COPYING
@@ -396,8 +396,6 @@ mediawiki/maintenance/cleanupDupes.php
 mediawiki/maintenance/clear_interwiki_cache.php
 mediawiki/maintenance/clear_stats.php
 mediawiki/maintenance/commandLine.inc
-mediawiki/maintenance/compressOld.inc
-mediawiki/maintenance/compressOld.php
 mediawiki/maintenance/convertLinks.inc
 mediawiki/maintenance/convertLinks.php
 mediawiki/maintenance/convertUtf8.php
