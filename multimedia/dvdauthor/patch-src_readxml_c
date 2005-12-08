@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_readxml_c,v 1.1 2005/12/08 05:47:28 jakemsr Exp $
+--- src/readxml.c.orig	Mon Dec  5 20:52:14 2005
++++ src/readxml.c	Mon Dec  5 20:57:19 2005
+@@ -34,6 +34,8 @@
+ #include <locale.h>
+ #endif
+ 
++#include <localcharset.h>
++
+ static const char RCSID[]="$Id: patch-src_readxml_c,v 1.1 2005/12/08 05:47:28 jakemsr Exp $";
+ 
+ int parser_err=0, parser_acceptbody=0;
+@@ -207,7 +209,7 @@ static iconv_t get_conv()
+             }
+         } else
+             fprintf(stderr,"WARN: Error reading locale (%m), assuming C\n");
+-        enc=nl_langinfo(CODESET);
++        enc=locale_charset();
+         fprintf(stderr,"INFO: Converting filenames to %s\n",enc);
+         ic=iconv_open(enc,"UTF-8");
+         if( ic==((iconv_t)-1) ) {

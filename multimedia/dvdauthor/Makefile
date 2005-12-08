@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/09/28 06:52:55 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/08 05:47:26 jakemsr Exp $
 
 COMMENT=		creates DVD file structures
 DISTNAME=		dvdauthor-0.6.11
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://dvdauthor.sourceforge.net/
 
-MAINTAINER=		Jacob Meuser <jakemsr@jakemsr.com>
+MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
