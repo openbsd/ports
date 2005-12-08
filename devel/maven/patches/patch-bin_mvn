@@ -1,0 +1,14 @@
+$OpenBSD: patch-bin_mvn,v 1.1.1.1 2005/12/08 09:48:02 bernd Exp $
+--- bin/mvn.orig	Wed Oct 19 21:11:17 2005
++++ bin/mvn	Mon Dec  5 15:53:30 2005
+@@ -18,8 +18,8 @@
+ #   Copyright (c) 2001-2002 The Apache Software Foundation.  All rights
+ #   reserved.
+ 
+-if [ -f /etc/mavenrc ] ; then
+-  . /etc/mavenrc
++if [ -f %%SYSCONFDIR%%/maven/maven.rc ] ; then
++  . %%SYSCONFDIR%%/maven/maven.rc
+ fi
+ 
+ if [ -f "$HOME/.mavenrc" ] ; then
