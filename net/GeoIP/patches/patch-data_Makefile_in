@@ -1,0 +1,21 @@
+$OpenBSD: patch-data_Makefile_in,v 1.1 2005/12/09 19:33:45 steven Exp $
+--- data/Makefile.in.orig	Wed Sep  7 23:07:45 2005
++++ data/Makefile.in	Wed Dec  7 17:25:01 2005
+@@ -209,7 +209,7 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-pkgdataDATA
++install-data-am:
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ 
+@@ -242,7 +242,7 @@ uninstall-am: uninstall-info-am uninstal
+ 	uninstall-pkgdataDATA
+ 
+ 
+-install-data-hook: install-pkgdataDATA
++install-data-hook:
+ 	@if test -f $(DESTDIR)$(DEFAULT_DB_FILE) ; then \
+ 	        echo "$@ will not overwrite existing $(DESTDIR)$(DEFAULT_DB_FILE)" ; \
+ 	else \

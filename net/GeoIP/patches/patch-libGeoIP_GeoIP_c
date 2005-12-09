@@ -1,0 +1,12 @@
+$OpenBSD: patch-libGeoIP_GeoIP_c,v 1.1 2005/12/09 19:33:45 steven Exp $
+--- libGeoIP/GeoIP.c.orig	Wed Dec  7 19:29:07 2005
++++ libGeoIP/GeoIP.c	Wed Dec  7 21:51:05 2005
+@@ -500,7 +500,7 @@ unsigned long _GeoIP_lookupaddress (cons
+ 			free(buf);
+ 			return 0;
+ 		}
+-		addr = *((unsigned long *) phe->h_addr_list[0]);
++		addr = (unsigned long) *((in_addr_t *) phe->h_addr_list[0]);
+ 	}
+ #ifdef HAVE_GETHOSTBYNAME_R
+ 	free(buf);

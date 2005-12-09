@@ -1,16 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/11/11 19:32:57 naddy Exp $
-bin/geoipexport
-bin/geoipexportlocations
+@comment $OpenBSD: PLIST,v 1.6 2005/12/09 19:33:45 steven Exp $
 bin/geoiplookup
 bin/geoipupdate
 include/GeoIP.h
-include/GeoIPBitReader.h
 include/GeoIPCity.h
 include/GeoIPUpdate.h
 lib/libGeoIP.a
 lib/libGeoIP.la
-lib/libGeoIPBitReader.a
-lib/libGeoIPBitReader.la
 lib/libGeoIPUpdate.a
 lib/libGeoIPUpdate.la
 @man man/man1/geoiplookup.1
