@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/05/26 20:45:41 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/12/09 09:41:25 mbalmer Exp $
 @newgroup _vilter:538
 @newuser _vilter:538:538:daemon:smtp-vilter:/nonexistent:/sbin/nologin
 %%SHARED%%
@@ -8,8 +8,6 @@
 @comment lib/libvilter-clamd_pic.a
 @comment lib/libvilter-icap.a
 @comment lib/libvilter-icap_pic.a
-@comment lib/libvilter-savse.a
-@comment lib/libvilter-savse_pic.a
 @comment lib/libvilter-spamd.a
 @comment lib/libvilter-spamd_pic.a
 @man man/cat5/smtp-vilter.conf.0
@@ -27,9 +25,6 @@ share/examples/smtp-vilter/clamd.conf
 share/examples/smtp-vilter/icap.conf
 share/examples/smtp-vilter/recipient-notification
 @sample ${SYSCONFDIR}/smtp-vilter/recipient-notification
-share/examples/smtp-vilter/regexp.conf
-share/examples/smtp-vilter/savse.conf
-@sample ${SYSCONFDIR}/smtp-vilter/savse.conf
 share/examples/smtp-vilter/smtp-vilter.conf
 @sample ${SYSCONFDIR}/smtp-vilter/smtp-vilter.conf
 share/examples/smtp-vilter/spamd.conf

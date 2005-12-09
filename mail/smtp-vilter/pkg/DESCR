@@ -1,27 +1,28 @@
-smtp-vilter is a high performance content filter for sendmail
-to detect e-mail viruses and spam.  smtp-vilter decides whether
-to pass, discard or simply mark an e-mail message based on the
-results of a content scan and user defined strategies.
+smtp-vilter is a high performance content filter for sendmail to detect e-mail
+viruses and spam.  smtp-vilter decides whether to pass, discard or simply mark
+an e-mail message based on the results of a content scan and user defined
+strategies.  It can interact with the pf packet filter when it detects spam,
+viruses or unwanted content by adding the IP address of the sending host to a
+PF table.
 
-smtp-vilter does not do the scanning by itself, it relies on
-third-party products like ClamAV, Symantec Antivirus or
-SpamAssassin for this purpose. smtp-vilter uses the milter API
-to communicate with sendmail and one or more backends to
-communicate with the actual virus or spam scanning engines.
-The backends can be chained to perform a series of checks on
-one message in one run.
+smtp-vilter does not do the scanning by itself, it relies on third-party
+products like ClamAV, SpamAssassin, or any ICAP capable scanner for this
+purpose. smtp-vilter uses the milter API to communicate with sendmail and one
+or more backends to communicate with the actual virus or spam scanning engines.
+The backends can be chained to perform a series of checks on one message in one
+run.
 
-The software is highly configurable and provides mechanisms
-for secure operation.
+The software is highly configurable and provides mechanisms for secure
+operation.
 
-The backends included in the distribution provide support for
-the Clam AntiVirus Daemon (clamd), the Symantec Anti Virus
-Scan Engine (savse), and Spamassassins Daemon (spamd).  The
-backends are realised as shared libraries that are loaded
-dynamically when smtp-vilter starts.  All backends have their
-own configuration file.
+The backends included in the distribution provide support for the Clam
+AntiVirus Daemon (clamd), the Spamassassins Daemon (spamd), ICAP capable
+backends (icap), and the standalone attachment backend to filter out unwanted
+attachments.  The backends are realised as shared libraries that are loaded
+dynamically when smtp-vilter starts.  All backends have their own configuration
+file.
 
-    smtp-vilter is documented in the following manpages:
+smtp-vilter is documented in the following manpages:
 	
 	smtp-vilter(8)			Running the smtp-vilter
 	smtp-vilter.conf(5)		The smtp-vilter config file
