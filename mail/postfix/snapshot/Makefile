@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.109 2005/11/30 07:07:04 jakob Exp $
+# $OpenBSD: Makefile,v 1.110 2005/12/09 03:33:41 brad Exp $
 
-VERSION=	2.3-20051128
+VERSION=	2.3-20051207-nonprod
+PKGNAME=	postfix-2.3.20051207
 
 MASTER_SITES=	${MASTER_SITE_POSTFIX:=experimental/}
 
