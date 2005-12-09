@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.13 2005/10/03 19:28:25 kurt Exp $
+@comment $OpenBSD: PLIST-devel,v 1.14 2005/12/09 19:59:54 wilfried Exp $
 %%SHARED%%
 lib/pkgconfig/mozilla-gtkmozembed.pc
 lib/pkgconfig/mozilla-js.pc
@@ -2366,6 +2366,7 @@ mozilla/lib/libexthandler_s.a
 mozilla/lib/libfdm.a
 mozilla/lib/libfind_s.a
 mozilla/lib/libfreebl.a
+mozilla/lib/libgfxft2_s.a
 mozilla/lib/libgfxshared_s.a
 mozilla/lib/libgkbase_s.a
 mozilla/lib/libgkconbase_s.a
