@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2005/09/21 16:21:25 martin Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2005/12/09 16:01:00 aanriot Exp $
 
 CATEGORIES=	devel
 
@@ -7,7 +7,7 @@ MAINTAINER=	Martin Reindl <martin@openbsd.org>	\
 
 CONFIGURE_STYLE=gnu
 
-CONFIGURE_ARGS=	--target=avr		\
-		--program-prefix=avr-	\
-		--disable-shared	\
-		--disable-nls
+CONFIGURE_ARGS+=	--target=avr		\
+			--program-prefix=avr-	\
+			--disable-shared	\
+			--disable-nls

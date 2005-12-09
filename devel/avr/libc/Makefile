@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/10/01 19:30:00 martin Exp $
+# $OpenBSD: Makefile,v 1.4 2005/12/09 16:01:01 aanriot Exp $
 
 COMMENT=	"Atmel AVR 8-bit RISC microcontrollers' libc"
 
-VER=		1.2.5
+VER=		1.4.0
 DISTNAME=	avr-libc-${VER}
 
 HOMEPAGE=	http://www.nongnu.org/avr-libc/
@@ -13,8 +13,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=		http://savannah.nongnu.org/download/avr-libc/ \
-			http://people.freebsd.org/~joerg/
+MASTER_SITES=		http://savannah.nongnu.org/download/avr-libc/
 
 EXTRACT_SUFX=		.tar.bz2
 
@@ -23,15 +22,9 @@ BUILD_DEPENDS+=		::devel/avr/binutils \
 
 RUN_DEPENDS+=		${BUILD_DEPENDS}
 
-CONFIGURE_ENV+=		CC=avr-gcc PREFIX="${PREFIX}"
-CONFIGURE_SCRIPT=	doconf
+CONFIGURE_ENV=		CC=avr-gcc PREFIX="${PREFIX}"
+CONFIGURE_ARGS=		--host=avr
 
 USE_GMAKE=		Yes
-
-do-build:
-	(cd ${WRKSRC}; ./domake MAKE=${GMAKE})
-
-do-install:
-	(cd ${WRKSRC}; ./domake MAKE=${GMAKE} install)
 
 .include <bsd.port.mk>
