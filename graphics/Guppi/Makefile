@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/24 01:44:39 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/10 15:34:34 alek Exp $
 # Original from: Adam Skutt <LordHunter317@softhome.net>
 
 COMMENT=		"GNOME-based plot program with statistics capabilities"
-VERSION=		0.40.3
-DISTNAME=		Guppi-${VERSION}
+DISTNAME=		Guppi-0.40.3
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		graphics
 HOMEPAGE=		http://www.gnome.org/projects/guppi/
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
@@ -23,7 +23,7 @@ LIB_DEPENDS=	bonobo.2,bonobox,bonobo-print::x11/gnome/bonobo \
 		ORBit.5,IIOP,ORBitCosNaming,ORBitutil::devel/ORBit \
 		gnomeprint.16::x11/gnome/print \
 		gnomeui.46,gnome.36,gnomesupport.0,art_lgpl.4,zvt::x11/gnome/libs \
-		glade.5.0,glade-gnome.5.0::devel/libglade,gnome \
+		glade.5.0,glade-gnome.5.0:libglade-*-gnome:devel/libglade,gnome \
 		gdk_imlib.19::graphics/imlib \
 		ungif.5::graphics/libungif \
 		esd.2::audio/esound \
