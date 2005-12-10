@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/12/10 15:52:51 steven Exp $
+${P5SITE}/Module/
+${P5SITE}/Module/Load.pm
+@man man/man3p/Module::Load.3p
