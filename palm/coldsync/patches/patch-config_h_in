@@ -1,0 +1,19 @@
+$OpenBSD: patch-config_h_in,v 1.1 2005/12/10 20:21:33 millert Exp $
+--- config.h.in.orig	Tue Feb  4 03:22:10 2003
++++ config.h.in	Tue Nov 22 20:29:56 2005
+@@ -341,6 +341,7 @@
+ 				 */
+ #endif	/* HAVE_O_BINARY */
+ 
++#if 0
+ #ifndef _POSIX_C_SOURCE
+ #  define _POSIX_C_SOURCE  2
+ #endif	/* _POSIX_C_SOURCE */
+@@ -377,6 +378,7 @@
+  */
+ #ifdef __osf__
+ #  define _OSF_SOURCE
++#endif
+ #endif
+ 
+ #if WITH_LEAK_DETECTION
