@@ -1,4 +1,4 @@
--- $OpenBSD: init.lua,v 1.2 2005/04/19 14:31:27 pedro Exp $
+-- $OpenBSD: init.lua,v 1.3 2005/12/10 23:02:05 pedro Exp $
 -- Written by Pedro Martelletto <pedro@openbsd.org> in 2004. Public domain.
 
 -- add an entry to a path list
@@ -32,8 +32,8 @@ lua_addcpath(entry)
 end
 
 -- get the package table
-f = assert(loadfile("@pkgconf@"))
-setfenv(f, {}) f() pt = getfenv(f).installed_packages
+local f = assert(loadfile("@pkgconf@"))
+setfenv(f, {}) f() local pt = getfenv(f).installed_packages
 
 -- iterate over the table, loading each package
 for i, v in pt do
@@ -46,7 +46,6 @@ end
 -- finally, run user's initialization file, if it exists
 local f = loadfile((os.getenv("HOME") or "") .. "/.lua/init.lua")
 if f then f() end
-f = nil
 
 lua_addpath("?;?.lua") -- set the default path
 
