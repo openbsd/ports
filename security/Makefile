@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.165 2005/12/04 17:40:17 alek Exp $
+# $OpenBSD: Makefile,v 1.166 2005/12/10 14:25:57 alek Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -111,7 +111,6 @@
      SUBDIR += p5-Net_SSLeay
      SUBDIR += p5-PGP-Sign
      SUBDIR += p5-PGP-Sign,pgp
-     SUBDIR += p5-PGP-Sign,pgp5
      SUBDIR += p5-Tie-EncryptedHash
      SUBDIR += parse
      SUBDIR += passwdqc
