@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:50:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/12/10 18:50:48 steven Exp $
 ${P5SITE}/Graphics/
 ${P5SITE}/Graphics/ColorNames/
 ${P5SITE}/Graphics/ColorNames.pm
@@ -6,8 +6,20 @@ ${P5SITE}/Graphics/ColorNames/HTML.pm
 ${P5SITE}/Graphics/ColorNames/Netscape.pm
 ${P5SITE}/Graphics/ColorNames/Windows.pm
 ${P5SITE}/Graphics/ColorNames/X.pm
+${P5SITE}/Graphics/ColourNames.pm
+${P5SITE}/auto/
+${P5SITE}/auto/Graphics/
+${P5SITE}/auto/Graphics/ColorNames/
+${P5SITE}/auto/Graphics/ColorNames/_find_schemes.al
+${P5SITE}/auto/Graphics/ColorNames/_load_scheme_from_file.al
+${P5SITE}/auto/Graphics/ColorNames/all_schemes.al
+${P5SITE}/auto/Graphics/ColorNames/autosplit.ix
+${P5SITE}/auto/Graphics/ColorNames/hex.al
+${P5SITE}/auto/Graphics/ColorNames/load_scheme.al
+${P5SITE}/auto/Graphics/ColorNames/rgb.al
 @man man/man3p/Graphics::ColorNames.3p
-@man man/man3p/Graphics::HTML.3p
-@man man/man3p/Graphics::Netscape.3p
-@man man/man3p/Graphics::Windows.3p
-@man man/man3p/Graphics::X.3p
+@man man/man3p/Graphics::ColorNames::HTML.3p
+@man man/man3p/Graphics::ColorNames::Netscape.3p
+@man man/man3p/Graphics::ColorNames::Windows.3p
+@man man/man3p/Graphics::ColorNames::X.3p
+@man man/man3p/Graphics::ColourNames.3p
