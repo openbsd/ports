@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2005/10/04 16:43:29 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.29 2005/12/10 11:57:40 aanriot Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=			"hangs indefinitely until machine panics/hangs"
@@ -8,9 +8,8 @@ COMMENT=		"GNU editor: extensible, customizable, self documenting"
 COMMENT-el=		"elisp sources for those who want to read/modify them"
 COMMENT-leim=		"Library of Emacs Input Methods"
 
-VERSION=		21.3
+VERSION=		21.4
 DISTNAME=		emacs-${VERSION}
-PKGNAME=		${DISTNAME}p3
 FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGNAME-leim=	emacs-leim-${VERSION}
 
@@ -27,7 +26,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNU:=emacs/}
-DISTFILES=		emacs-${VERSION}.tar.gz leim-${VERSION}.tar.gz
+DISTFILES=		emacs-${VERSION}a.tar.gz leim-${VERSION}.tar.gz
 
 MULTI_PACKAGES=		-el -leim
 SUBPACKAGE?=

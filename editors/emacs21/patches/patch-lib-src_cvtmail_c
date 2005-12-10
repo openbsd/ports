@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib-src_cvtmail_c,v 1.1 2005/12/10 11:57:40 aanriot Exp $
+--- lib-src/cvtmail.c.orig	Mon Oct 10 21:40:20 2005
++++ lib-src/cvtmail.c	Mon Oct 10 21:40:30 2005
+@@ -60,7 +60,7 @@ main (int argc, char *argv[])
+   FILE *mfilef;
+   FILE *cff;
+   char pre[10];
+-  char name[14];
++  char name[15];
+   int c;
+ 
+   hd = getenv ("HOME");

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/09/15 17:56:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2005/12/10 11:57:40 aanriot Exp $
 bin/b2m
 bin/ctags
 bin/ebrowse
@@ -12,7 +12,6 @@ bin/rcs-checkin
 @info info/autotype
 @info info/ccmode
 @info info/cl
-@comment info/dir
 @info info/dired-x
 @info info/ebrowse
 @info info/ediff
