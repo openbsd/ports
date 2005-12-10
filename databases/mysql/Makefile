@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2005/10/16 18:16:27 wilfried Exp $
+# $OpenBSD: Makefile,v 1.111 2005/12/10 00:19:09 pvalchev Exp $
 # Uses pthreads
 
 .if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "m88k"
@@ -57,6 +57,10 @@ CONFIGURE_ARGS+= --enable-thread-safe-client \
 		 --without-docs \
 		 --without-extra-tools \
 		 --without-readline
+
+.if ${MACHINE_ARCH} == "arm"
+CONFIGURE_ARGS+= --with-low-memory
+.endif
 
 .include <bsd.own.mk>
 
