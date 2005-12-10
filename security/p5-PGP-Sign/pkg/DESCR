@@ -10,5 +10,4 @@ By default, it works with the GNU Privacy Guard (security/gnupg),
 and the following flavors are available for alternatives:
 
 Flavors:
- pgp  - Use PGP 2.x
- pgp5 - Use PGP 5.x
+ pgp - Use PGP 5.x

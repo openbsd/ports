@@ -1,25 +1,23 @@
-# $OpenBSD: Makefile,v 1.10 2005/09/23 19:41:44 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2005/12/10 13:28:07 steven Exp $
 
 COMMENT=	"perl module to create/verify PGP signatures"
 
-DISTNAME=	PGP-Sign-0.17
+DISTNAME=	PGP-Sign-0.19
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
+
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=PGP/}
 
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	pgp pgp5
-FLAVOR?=	
+FLAVORS=	pgp
+FLAVOR?=
 
 .if ${FLAVOR:L:Mpgp}
-RUN_DEPENDS=	:pgp-2.*:security/pgp
-CONFIGURE_ARGS=	PGPV="${LOCALBASE}/bin/pgpv" PGPS="${LOCALBASE}/bin/pgps" PGPSTYLE="PGP"
-
-.elif ${FLAVOR:L:Mpgp5}
 RUN_DEPENDS=	:pgp-5.*:security/pgp5
 CONFIGURE_ARGS=	PGPV="${LOCALBASE}/bin/pgpv" PGPS="${LOCALBASE}/bin/pgps" PGPSTYLE="PGP5"
 
@@ -30,5 +28,7 @@ CONFIGURE_ARGS=	PGP="${LOCALBASE}/bin/gpg" PGPSTYLE="GPG"
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 CONFIGURE_STYLE= perl
+
+PKG_ARCH= *
 
 .include <bsd.port.mk>
