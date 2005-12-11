@@ -1,4 +1,4 @@
-# $OpenBSD: arm,v 1.8 2005/11/30 21:23:30 pvalchev Exp $
+# $OpenBSD: arm,v 1.9 2005/12/11 00:57:14 pvalchev Exp $
 # This is the master list of subdirs used to choose arm packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -66,6 +66,8 @@ audio/tremor-tools
 net/kismet
 # XXX warning mplayer not for CD just FTP
 x11/mplayer
+shells/bash
+shells/tcsh
 shells/zsh
 graphics/gphoto2
 print/gv
