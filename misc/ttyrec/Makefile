@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/22 11:50:30 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/12/11 18:45:17 alek Exp $
 
 COMMENT=	"tty recorder"
 
 DISTNAME=	ttyrec-1.0.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	misc
 MASTER_SITES=	http://namazu.org/~satoru/ttyrec/
 
@@ -25,5 +26,7 @@ do-install:
 	@cd ${WRKSRC} && ${INSTALL_PROGRAM} ${BIN} ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ttyrec
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ttyrec
+	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/*.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
