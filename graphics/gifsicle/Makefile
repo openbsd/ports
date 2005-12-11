@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2004/11/30 01:06:35 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2005/12/11 16:45:14 alek Exp $
 
 COMMENT=	"creating & editing GIF images and animations"
 
-DISTNAME=	gifsicle-1.40
+DISTNAME=	gifsicle-1.44
 CATEGORIES=    	graphics
 
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=	Eric Faurot <eric.faurot@gmail.com>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
