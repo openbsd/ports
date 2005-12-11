@@ -1,25 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.13 2005/11/27 14:12:03 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2005/12/11 20:57:56 aanriot Exp $
 @conflict zope-btreefolder2-*
 @conflict zope-cmfquickinstaller-*
 @conflict zope-formulator-*
 @conflict zope-groupuserfolder-*
 @conflict zope-placelesstranslationservice-*
-lib/zope/lib/python/Products/BTreeFolder2/BTreeFolder2.py
-lib/zope/lib/python/Products/BTreeFolder2/BTreeFolder2.pyc
-lib/zope/lib/python/Products/BTreeFolder2/CHANGES.txt
-lib/zope/lib/python/Products/BTreeFolder2/CMFBTreeFolder.py
-lib/zope/lib/python/Products/BTreeFolder2/CMFBTreeFolder.pyc
-lib/zope/lib/python/Products/BTreeFolder2/README.txt
-lib/zope/lib/python/Products/BTreeFolder2/__init__.py
-lib/zope/lib/python/Products/BTreeFolder2/__init__.pyc
-lib/zope/lib/python/Products/BTreeFolder2/btreefolder2.gif
-lib/zope/lib/python/Products/BTreeFolder2/contents.dtml
-lib/zope/lib/python/Products/BTreeFolder2/folderAdd.dtml
-lib/zope/lib/python/Products/BTreeFolder2/tests/__init__.py
-lib/zope/lib/python/Products/BTreeFolder2/tests/__init__.pyc
-lib/zope/lib/python/Products/BTreeFolder2/tests/testBTreeFolder2.py
-lib/zope/lib/python/Products/BTreeFolder2/tests/testBTreeFolder2.pyc
-lib/zope/lib/python/Products/BTreeFolder2/version.txt
+@comment lib/zope/lib/python/Products/BTreeFolder2/BTreeFolder2.py
+@comment lib/zope/lib/python/Products/BTreeFolder2/BTreeFolder2.pyc
+@comment lib/zope/lib/python/Products/BTreeFolder2/CHANGES.txt
+@comment lib/zope/lib/python/Products/BTreeFolder2/CMFBTreeFolder.py
+@comment lib/zope/lib/python/Products/BTreeFolder2/CMFBTreeFolder.pyc
+@comment lib/zope/lib/python/Products/BTreeFolder2/README.txt
+@comment lib/zope/lib/python/Products/BTreeFolder2/__init__.py
+@comment lib/zope/lib/python/Products/BTreeFolder2/__init__.pyc
+@comment lib/zope/lib/python/Products/BTreeFolder2/btreefolder2.gif
+@comment lib/zope/lib/python/Products/BTreeFolder2/contents.dtml
+@comment lib/zope/lib/python/Products/BTreeFolder2/folderAdd.dtml
+@comment lib/zope/lib/python/Products/BTreeFolder2/tests/__init__.py
+@comment lib/zope/lib/python/Products/BTreeFolder2/tests/__init__.pyc
+@comment lib/zope/lib/python/Products/BTreeFolder2/tests/testBTreeFolder2.py
+@comment lib/zope/lib/python/Products/BTreeFolder2/tests/testBTreeFolder2.pyc
+@comment lib/zope/lib/python/Products/BTreeFolder2/version.txt
 @comment lib/zope/lib/python/Products/CMFActionIcons/ActionIconsTool.py
 @comment lib/zope/lib/python/Products/CMFActionIcons/ActionIconsTool.pyc
 @comment lib/zope/lib/python/Products/CMFActionIcons/DEPENDENCIES.txt
