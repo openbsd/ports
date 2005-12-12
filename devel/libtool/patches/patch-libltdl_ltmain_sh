@@ -1,7 +1,46 @@
-$OpenBSD: patch-libltdl_ltmain_sh,v 1.13 2005/11/02 02:47:09 brad Exp $
---- libltdl/ltmain.sh.orig	Wed Aug 31 14:55:39 2005
-+++ libltdl/ltmain.sh	Tue Nov  1 15:15:22 2005
-@@ -1089,14 +1089,15 @@ EOF
+$OpenBSD: patch-libltdl_ltmain_sh,v 1.14 2005/12/12 15:15:16 espie Exp $
+--- libltdl/ltmain.sh.orig	Wed Aug 31 20:55:39 2005
++++ libltdl/ltmain.sh	Wed Dec  7 09:44:14 2005
+@@ -352,6 +352,8 @@ func_extract_archives ()
+ # Darwin sucks
+ eval std_shrext=\"$shrext_cmds\"
+ 
++disable_libs=no
++
+ # Parse our command line options once, thoroughly.
+ while test "$#" -gt 0
+ do
+@@ -468,7 +470,9 @@ do
+     preserve_args="$preserve_args $arg"
+     ;;
+ 
+-  --tag) prevopt="--tag" prev=tag ;;
++  --tag) prevopt="--tag" prev=tag
++    preserve_args="$preserve_args --tag"
++    ;;
+   --tag=*)
+     set tag "$optarg" ${1+"$@"}
+     shift
+@@ -500,6 +504,18 @@ if test -n "$prevopt"; then
+   exit $EXIT_FAILURE
+ fi
+ 
++case $disable_libs in
++no) 
++  ;;
++shared)
++  build_libtool_libs=no
++  build_old_libs=yes
++  ;;
++static)
++  build_old_libs=`case $build_libtool_libs in yes) $echo no;; *) $echo yes;; esac`
++  ;;
++esac
++
+ # If this variable is set in any of the actions, the command in it
+ # will be execed at the end.  This prevents here-documents from being
+ # left over by shells.
+@@ -1089,14 +1105,15 @@ EOF
  	  if test -n "$link_static_flag"; then
  	    dlopen_self=$dlopen_self_static
  	  fi
@@ -18,7 +57,7 @@ $OpenBSD: patch-libltdl_ltmain_sh,v 1.13 2005/11/02 02:47:09 brad Exp $
  	break
  	;;
        esac
-@@ -1984,6 +1985,17 @@ EOF
+@@ -1984,6 +2001,17 @@ EOF
  	;;
      esac
      for pass in $passes; do
@@ -36,7 +75,7 @@ $OpenBSD: patch-libltdl_ltmain_sh,v 1.13 2005/11/02 02:47:09 brad Exp $
        if test "$linkmode,$pass" = "lib,link" ||
  	 test "$linkmode,$pass" = "prog,scan"; then
  	libs="$deplibs"
-@@ -2245,20 +2257,20 @@ EOF
+@@ -2245,20 +2273,20 @@ EOF
  	    # It is a libtool convenience library, so add in its objects.
  	    convenience="$convenience $ladir/$objdir/$old_library"
  	    old_convenience="$old_convenience $ladir/$objdir/$old_library"
@@ -67,7 +106,7 @@ $OpenBSD: patch-libltdl_ltmain_sh,v 1.13 2005/11/02 02:47:09 brad Exp $
  	  continue
  	fi # $pass = conv
  
-@@ -2445,8 +2457,12 @@ EOF
+@@ -2445,8 +2473,12 @@ EOF
  	fi
  
  	link_static=no # Whether the deplib will be linked statically
@@ -81,7 +120,7 @@ $OpenBSD: patch-libltdl_ltmain_sh,v 1.13 2005/11/02 02:47:09 brad Exp $
  	  if test "$installed" = no; then
  	    notinst_deplibs="$notinst_deplibs $lib"
  	    need_relink=yes
-@@ -2644,7 +2660,7 @@ EOF
+@@ -2644,7 +2676,7 @@ EOF
  	    add_dir=
  	    add=
  	    # Finalize command for both is simple: just hardcode it.
@@ -90,7 +129,7 @@ $OpenBSD: patch-libltdl_ltmain_sh,v 1.13 2005/11/02 02:47:09 brad Exp $
  	      add="$libdir/$linklib"
  	    elif test "$hardcode_minus_L" = yes; then
  	      add_dir="-L$libdir"
-@@ -5932,40 +5948,6 @@ relink_command=\"$relink_command\""
+@@ -5932,40 +5964,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  
@@ -131,3 +170,18 @@ $OpenBSD: patch-libltdl_ltmain_sh,v 1.13 2005/11/02 02:47:09 brad Exp $
      exit $EXIT_SUCCESS
      ;;
  
+@@ -6516,12 +6514,11 @@ exit $?
+ # configuration.  But we'll never go from static-only to shared-only.
+ 
+ # ### BEGIN LIBTOOL TAG CONFIG: disable-shared
+-build_libtool_libs=no
+-build_old_libs=yes
++disable_libs=shared
+ # ### END LIBTOOL TAG CONFIG: disable-shared
+ 
+ # ### BEGIN LIBTOOL TAG CONFIG: disable-static
+-build_old_libs=`case $build_libtool_libs in yes) $echo no;; *) $echo yes;; esac`
++disable_libs=static
+ # ### END LIBTOOL TAG CONFIG: disable-static
+ 
+ # Local Variables:
