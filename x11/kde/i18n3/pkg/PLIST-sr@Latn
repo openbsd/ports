@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sr@Latn,v 1.5 2005/12/01 22:27:39 espie Exp $
+@comment $OpenBSD: PLIST-sr@Latn,v 1.6 2005/12/12 14:37:56 espie Exp $
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.sr@Latn.xml
 share/apps/khangman/
@@ -9,24 +9,24 @@ share/apps/khangman/data/sr@Latn/easy.kvtml
 share/apps/khangman/data/sr@Latn/hard.kvtml
 share/apps/khangman/data/sr@Latn/medium.kvtml
 share/apps/khangman/sr@Latn.txt
-share/apps/ktuberling/
-share/apps/ktuberling/sounds/
-share/apps/ktuberling/sounds/sr/
-share/apps/ktuberling/sounds/sr/brkovi.wav
-share/apps/ktuberling/sounds/sr/cigara.wav
-share/apps/ktuberling/sounds/sr/krompirko.wav
-share/apps/ktuberling/sounds/sr/masna.wav
-share/apps/ktuberling/sounds/sr/mindjusa.wav
-share/apps/ktuberling/sounds/sr/naocare.wav
-share/apps/ktuberling/sounds/sr/naocare_za_sunce.wav
-share/apps/ktuberling/sounds/sr/nos.wav
-share/apps/ktuberling/sounds/sr/obrva.wav
-share/apps/ktuberling/sounds/sr/oko.wav
-share/apps/ktuberling/sounds/sr/sat.wav
-share/apps/ktuberling/sounds/sr/sesir.wav
-share/apps/ktuberling/sounds/sr/usta.wav
-share/apps/ktuberling/sounds/sr/uvo.wav
-share/apps/ktuberling/sounds/sr/znacka.wav
+@comment share/apps/ktuberling/
+@comment share/apps/ktuberling/sounds/
+@comment share/apps/ktuberling/sounds/sr/
+@comment share/apps/ktuberling/sounds/sr/brkovi.wav
+@comment share/apps/ktuberling/sounds/sr/cigara.wav
+@comment share/apps/ktuberling/sounds/sr/krompirko.wav
+@comment share/apps/ktuberling/sounds/sr/masna.wav
+@comment share/apps/ktuberling/sounds/sr/mindjusa.wav
+@comment share/apps/ktuberling/sounds/sr/naocare.wav
+@comment share/apps/ktuberling/sounds/sr/naocare_za_sunce.wav
+@comment share/apps/ktuberling/sounds/sr/nos.wav
+@comment share/apps/ktuberling/sounds/sr/obrva.wav
+@comment share/apps/ktuberling/sounds/sr/oko.wav
+@comment share/apps/ktuberling/sounds/sr/sat.wav
+@comment share/apps/ktuberling/sounds/sr/sesir.wav
+@comment share/apps/ktuberling/sounds/sr/usta.wav
+@comment share/apps/ktuberling/sounds/sr/uvo.wav
+@comment share/apps/ktuberling/sounds/sr/znacka.wav
 share/apps/kturtle/
 share/apps/kturtle/data/
 share/apps/kturtle/data/logokeywords.sr@Latn.xml
