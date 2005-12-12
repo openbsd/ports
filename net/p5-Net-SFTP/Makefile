@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/23 20:16:09 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/12 19:06:10 sturm Exp $
 
 COMMENT=	"client for the Secure File Transfer Protocol"
 
-DISTNAME=	Net-SFTP-0.09
+DISTNAME=	Net-SFTP-0.10
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net security perl5
 
