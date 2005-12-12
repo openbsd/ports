@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/07 19:47:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/12 21:28:59 sturm Exp $
 
 COMMENT=	"Perl extension for retrieving bridge tables"
 
-DISTNAME=	SNMP-BridgeQuery-0.58
+DISTNAME=	SNMP-BridgeQuery-0.59
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
 MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
-# GPL
+# GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -20,5 +20,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::net/p5-Net-SNMP
 
 CONFIGURE_STYLE=perl
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
