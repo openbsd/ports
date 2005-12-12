@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/10/07 12:34:25 robert Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/12/12 14:32:54 espie Exp $
 @conflict e2fsprogs-*
 bin/uuid
 bin/uuid-config
@@ -11,4 +11,3 @@ lib/pkgconfig/uuid.pc
 @man man/man1/uuid.1
 @man man/man3/uuid.3
 %%SHARED%%
-man/man3p/OSSP::uuid.3
