@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/23 20:08:48 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/12 21:14:02 sturm Exp $
 
 COMMENT=	"RSA public-key cryptosystem"
 
-DISTNAME=	Crypt-RSA-1.55
+DISTNAME=	Crypt-RSA-1.57
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
 
