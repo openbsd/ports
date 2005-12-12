@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/09/11 12:26:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/12/12 14:07:02 espie Exp $
 @option no-default-conflict
-@conflict slashem-${V}
+@conflict slash-em-${V}
 @comment bin/slashem
 bin/slashem-${V}
 @group games
