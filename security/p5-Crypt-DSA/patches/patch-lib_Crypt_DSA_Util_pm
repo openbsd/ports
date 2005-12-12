@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Crypt_DSA_Util_pm,v 1.1 2005/12/12 20:50:12 sturm Exp $
+--- lib/Crypt/DSA/Util.pm.orig	Mon Dec 12 21:25:08 2005
++++ lib/Crypt/DSA/Util.pm	Mon Dec 12 21:26:10 2005
+@@ -50,7 +50,7 @@ sub makerandom {
+     my %param = @_;
+     my $size = $param{Size};
+     my $bytes = int($size / 8) + 1;
+-    sysopen my $fh, '/dev/random', O_RDONLY
++    sysopen my $fh, '/dev/arandom', O_RDONLY
+         or return;
+     my($r, $read) = ('', 0);
+     while ($read < $bytes) {
