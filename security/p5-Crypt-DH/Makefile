@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/23 20:08:48 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/12 19:30:58 sturm Exp $
 
 COMMENT=	"Diffie-Hellman key exchange system"
 
-DISTNAME=	Crypt-DH-0.03
+DISTNAME=	Crypt-DH-0.06
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
 
@@ -22,5 +22,10 @@ RUN_DEPENDS=	::security/p5-Crypt-Random
 CONFIGURE_STYLE=perl
 
 PKG_ARCH=	*
+
+NO_REGRESS=	"tests take ages to complete"
+
+pre-build:
+	@perl -pi -e "s/urandom/arandom/g" ${WRKSRC}/lib/Crypt/DH.pm
 
 .include <bsd.port.mk>
