@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/03/16 15:34:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2005/12/12 08:48:04 alek Exp $
 
 COMMENT=		"SOCKS client wrapper for *BSD"
 DISTNAME=		dsocks-1.2
@@ -16,6 +16,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
+
+FAKE_FLAGS=		DEBUGLIBS=No
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dsocks.sh ${WRKSRC}/dsocks-torify.sh \
