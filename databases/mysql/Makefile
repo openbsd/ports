@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2005/12/10 00:19:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.112 2005/12/12 04:55:43 brad Exp $
 # Uses pthreads
 
 .if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "m88k"
@@ -9,11 +9,11 @@ COMMENT=	"multithreaded SQL database (client)"
 COMMENT-server=	"multithreaded SQL database (server)"
 COMMENT-tests=	"multithreaded SQL database (regression test suite)"
 
-VERSION=	4.1.14
+VERSION=	4.1.15
 DISTNAME=	mysql-${VERSION}
-FULLPKGNAME=	mysql-client-${VERSION}p1
-PKGNAME-server=	mysql-server-${VERSION}p2
-FULLPKGNAME-tests= mysql-tests-${VERSION}p1
+FULLPKGNAME=	mysql-client-${VERSION}
+PKGNAME-server=	mysql-server-${VERSION}
+FULLPKGNAME-tests= mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-4.1
 MASTER_SITES=	http://mysql.mirrors.pair.com/Downloads/$V/
@@ -48,6 +48,7 @@ CONFIGURE_ARGS+= --enable-thread-safe-client \
 		 --localstatedir="${DB_DIR}" \
 		 --with-comment='OpenBSD port: ${FULLPKGNAME-server}' \
 		 --with-libwrap \
+		 --with-low-memory \
 		 --with-mysqld-user="_mysql" \
 		 --with-openssl \
 		 --with-unix-socket-path="${SOCKET_DIR}/mysql.sock" \
@@ -58,10 +59,6 @@ CONFIGURE_ARGS+= --enable-thread-safe-client \
 		 --without-extra-tools \
 		 --without-readline
 
-.if ${MACHINE_ARCH} == "arm"
-CONFIGURE_ARGS+= --with-low-memory
-.endif
-
 .include <bsd.own.mk>
 
 USE_GCC3?= No
@@ -69,8 +66,6 @@ USE_GCC3?= No
 .if ${USE_GCC3:L} == "yes"
 CONFIGURE_ARGS+= --with-client-ldflags=-lsupc++ \
 		 --with-mysqld-ldflags=-lsupc++
-.else
-PATCH_LIST=	gcc-* patch-*
 .endif
 
 . if ${MACHINE_ARCH} == "i386"

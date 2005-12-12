@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.14 2005/10/16 18:16:27 wilfried Exp $
+@comment $OpenBSD: PLIST-tests,v 1.15 2005/12/12 04:55:44 brad Exp $
 share/mysql-test/
 share/mysql-test/README
 share/mysql-test/cacert.pem
@@ -9,6 +9,7 @@ share/mysql-test/include/check_var_limit.inc
 share/mysql-test/include/ctype_common.inc
 share/mysql-test/include/ctype_filesort.inc
 share/mysql-test/include/ctype_innodb_like.inc
+share/mysql-test/include/ctype_like_escape.inc
 share/mysql-test/include/endspace.inc
 share/mysql-test/include/have_archive.inc
 share/mysql-test/include/have_bdb.inc
@@ -25,6 +26,7 @@ share/mysql-test/include/have_gbk.inc
 share/mysql-test/include/have_geometry.inc
 share/mysql-test/include/have_innodb.inc
 share/mysql-test/include/have_isam.inc
+share/mysql-test/include/have_lowercase0.inc
 share/mysql-test/include/have_multi_ndb.inc
 share/mysql-test/include/have_ndb.inc
 share/mysql-test/include/have_openssl.inc
@@ -36,6 +38,8 @@ share/mysql-test/include/have_tis620.inc
 share/mysql-test/include/have_ucs2.inc
 share/mysql-test/include/have_ujis.inc
 share/mysql-test/include/master-slave.inc
+share/mysql-test/include/mysqltest-x.inc
+share/mysql-test/include/mysqltest_while.inc
 share/mysql-test/include/not_embedded.inc
 share/mysql-test/include/not_openssl.inc
 share/mysql-test/include/not_windows.inc
@@ -48,6 +52,7 @@ share/mysql-test/include/ps_renew.inc
 share/mysql-test/include/rpl_stmt_seq.inc
 share/mysql-test/include/system_db_struct.inc
 share/mysql-test/include/test_outfile.inc
+share/mysql-test/include/windows.inc
 share/mysql-test/install_test_db
 share/mysql-test/lib/
 share/mysql-test/lib/init_db.sql
@@ -60,6 +65,7 @@ share/mysql-test/lib/mtr_match.pl
 share/mysql-test/lib/mtr_misc.pl
 share/mysql-test/lib/mtr_process.pl
 share/mysql-test/lib/mtr_report.pl
+share/mysql-test/lib/mtr_timer.pl
 share/mysql-test/mysql-test-run
 share/mysql-test/r/
 share/mysql-test/r/alias.result
@@ -345,6 +351,7 @@ share/mysql-test/r/rpl_deadlock.result
 share/mysql-test/r/rpl_delete_all.result
 share/mysql-test/r/rpl_do_grant.result
 share/mysql-test/r/rpl_drop.result
+share/mysql-test/r/rpl_drop_db.result
 share/mysql-test/r/rpl_drop_temp.result
 share/mysql-test/r/rpl_empty_master_crash.result
 share/mysql-test/r/rpl_error_ignored_table.result
@@ -360,6 +367,7 @@ share/mysql-test/r/rpl_init_slave.result
 share/mysql-test/r/rpl_innodb.result
 share/mysql-test/r/rpl_insert_id.result
 share/mysql-test/r/rpl_insert_ignore.result
+share/mysql-test/r/rpl_insert_select.result
 share/mysql-test/r/rpl_loaddata.result
 share/mysql-test/r/rpl_loaddata_rule_m.result
 share/mysql-test/r/rpl_loaddata_rule_s.result
@@ -445,6 +453,7 @@ share/mysql-test/r/user_var.result
 share/mysql-test/r/varbinary.result
 share/mysql-test/r/variables.result
 share/mysql-test/r/warnings.result
+share/mysql-test/r/windows.result
 share/mysql-test/server-cert.pem
 share/mysql-test/server-key.pem
 share/mysql-test/std_data/
@@ -533,6 +542,7 @@ share/mysql-test/t/delayed.test
 share/mysql-test/t/delete.test
 share/mysql-test/t/derived.test
 share/mysql-test/t/dirty_close.test
+share/mysql-test/t/disabled.def
 share/mysql-test/t/distinct.test
 share/mysql-test/t/drop.test
 share/mysql-test/t/drop_temp_table.test
@@ -755,6 +765,7 @@ share/mysql-test/t/rpl_deadlock.test
 share/mysql-test/t/rpl_delete_all.test
 share/mysql-test/t/rpl_do_grant.test
 share/mysql-test/t/rpl_drop.test
+share/mysql-test/t/rpl_drop_db.test
 share/mysql-test/t/rpl_drop_temp-slave.opt
 share/mysql-test/t/rpl_drop_temp.test
 share/mysql-test/t/rpl_empty_master_crash.test
@@ -782,6 +793,7 @@ share/mysql-test/t/rpl_insert_id-slave.opt
 share/mysql-test/t/rpl_insert_id.test
 share/mysql-test/t/rpl_insert_ignore-slave.opt
 share/mysql-test/t/rpl_insert_ignore.test
+share/mysql-test/t/rpl_insert_select.test
 share/mysql-test/t/rpl_loaddata.test
 share/mysql-test/t/rpl_loaddata_rule_m-master.opt
 share/mysql-test/t/rpl_loaddata_rule_m.test
@@ -893,3 +905,4 @@ share/mysql-test/t/variables-master.opt
 share/mysql-test/t/variables.test
 share/mysql-test/t/warnings-master.opt
 share/mysql-test/t/warnings.test
+share/mysql-test/t/windows.test
