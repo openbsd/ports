@@ -1,4 +1,4 @@
-# $OpenBSD: sparc,v 1.14 2005/11/01 16:33:15 pvalchev Exp $
+# $OpenBSD: sparc,v 1.15 2005/12/12 23:32:22 pvalchev Exp $
 # This is the master list of subdirs used to choose sparc packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -18,8 +18,8 @@ mail/fetchmail
 misc/screen
 #net/samba
 shells/zsh
-shells/bash,static
-shells/tcsh,static
+shells/bash
+shells/tcsh
 mail/mutt/stable
 net/curl
 #print/ghostscript/gnu

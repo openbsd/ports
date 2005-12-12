@@ -1,4 +1,4 @@
-# $OpenBSD: arm,v 1.9 2005/12/11 00:57:14 pvalchev Exp $
+# $OpenBSD: arm,v 1.10 2005/12/12 23:32:22 pvalchev Exp $
 # This is the master list of subdirs used to choose arm packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -20,7 +20,7 @@ devel/automake
 books/autobook
 devel/bison
 sysutils/colorls
-archivers/gtar,static
+archivers/gtar
 mail/mutt/stable
 audio/libao,-esd
 audio/vorbis-tools
