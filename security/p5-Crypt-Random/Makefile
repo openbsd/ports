@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/23 20:08:48 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/12 19:43:57 sturm Exp $
 
 COMMENT=	"cryptographically secure random number generator"
 
-DISTNAME=	Crypt-Random-1.23
+DISTNAME=	Crypt-Random-1.25
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
 
@@ -22,7 +22,6 @@ RUN_DEPENDS=	::devel/p5-Class-Loader \
 
 CONFIGURE_STYLE=perl
 
-NO_REGRESS=	"/dev/srandom tests might take forever"
 PKG_ARCH=	*
 
 post-configure:
