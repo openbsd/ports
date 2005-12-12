@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/07/12 04:05:30 aanriot Exp $
+# $OpenBSD: Makefile,v 1.3 2005/12/12 19:05:42 sturm Exp $
 
 COMMENT=	"perl implementation of the SSH1 and SSH2 protocols"
 
-DISTNAME=	Net-SSH-Perl-1.28
+DISTNAME=	Net-SSH-Perl-1.29
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net security perl5
 
@@ -26,7 +26,8 @@ RUN_DEPENDS+=	::converters/p5-Convert-PEM \
 		::security/p5-Crypt-DSA \
 		::security/p5-Crypt-RSA \
 		::security/p5-Digest-BubbleBabble \
-		::security/p5-Digest-HMAC
+		::security/p5-Digest-HMAC \
+		:p5-Digest-SHA1->=2.10:security/p5-Digest-SHA1
 
 CONFIGURE_STYLE=perl
 
