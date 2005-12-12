@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/11/13 06:24:32 marcm Exp $
+# $OpenBSD: Makefile,v 1.11 2005/12/12 14:29:30 espie Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
@@ -6,7 +6,7 @@ COMMENT=		"collection of theme engines for GTK+2"
 
 VERSION=		2.6.5
 DISTNAME=		gtk-engines-${VERSION}
-PKGNAME=		gtk-engines2-${VERSION}
+PKGNAME=		gtk-engines2-${VERSION}p0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.gnome.org

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.12 2005/11/13 06:24:32 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.13 2005/12/12 14:29:30 espie Exp $
 @conflict gtk-thinice-engine-*
+@conflict gtk2-clearlooks-engine-*
 @conflict gnome-themes-<2.10
 %%SHARED%%
 lib/gtk-2.0/
