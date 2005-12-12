@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2005/05/09 12:09:12 djm Exp $
+# $OpenBSD: Makefile,v 1.3 2005/12/12 08:52:29 djm Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Perl defines relating to AF_INET6 sockets"
 
-DISTNAME=	Socket6-0.18
+DISTNAME=	Socket6-0.19
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net devel perl5
 
-HOMEPAGE=	http://search.cpan.org/~umemoto/Socket6-0.17/
-
-MAINTAINER=	Damien Miller <djm@openbsd.org>
+HOMEPAGE=	http://search.cpan.org/~umemoto/${DISTNAME}/
 
 # 3-term BSD
 PERMIT_PACKAGE_CDROM=	Yes
