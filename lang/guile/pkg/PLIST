@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/12/03 18:33:19 steven Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/12/12 13:42:21 espie Exp $
 %%SHARED%%
 bin/guile
 bin/guile-config
@@ -108,7 +108,7 @@ include/libguile/weaks.h
 @info info/goops.info
 @info info/guile-tut.info
 @info info/guile.info
-@info info/r5rs.info
+@comment @info info/r5rs.info
 lib/libguile-ltdl.a
 lib/libguile-ltdl.la
 lib/libguile-srfi-srfi-13-14-v-1.a
