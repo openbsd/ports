@@ -1,2 +1,5 @@
 aMule is a peer to peer file sharing client, based on the well known
 eMule.
+
+If you get `Bad file descriptor' errors, be sure to raise the file
+descriptor limits.
