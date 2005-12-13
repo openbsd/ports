@@ -1,12 +1,6 @@
-@comment $OpenBSD: PLIST-examples,v 1.1 2005/03/03 21:50:43 kurt Exp $
-@comment conf/
+@comment $OpenBSD: PLIST-examples,v 1.2 2005/12/13 18:59:09 kurt Exp $
 @owner _tomcat
 @group _tomcat
-conf/Catalina/
-conf/Catalina/localhost/
-conf/Catalina/localhost/admin.xml
-conf/Catalina/localhost/balancer.xml
-conf/Catalina/localhost/manager.xml
 @comment webapps/
 webapps/ROOT/
 webapps/ROOT/RELEASE-NOTES.txt
@@ -1802,3 +1796,9 @@ webapps/webdav/WEB-INF/web.xml
 webapps/webdav/index.html
 webapps/webdav/tomcat-power.gif
 webapps/webdav/tomcat.gif
+@cwd ${CONFDIR}
+Catalina/
+Catalina/localhost/
+Catalina/localhost/admin.xml
+Catalina/localhost/balancer.xml
+Catalina/localhost/manager.xml

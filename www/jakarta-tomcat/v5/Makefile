@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2005/12/06 17:07:02 ian Exp $
+# $OpenBSD: Makefile,v 1.6 2005/12/13 18:59:09 kurt Exp $
 
 COMMENT=	"Java servlet 2.4 and Java server pages 2.0 server"
 COMMENT-examples="example applications and documentation"
 
 V=		5.0.28
 DISTNAME=	jakarta-tomcat-${V}
-PKGNAME=	${DISTNAME}p1
-PKGNAME-examples=jakarta-tomcat-examples-${V}p1
+PKGNAME=	${DISTNAME}p2
+PKGNAME-examples=jakarta-tomcat-examples-${V}p2
 CATEGORIES=	www
 
-MASTER_SITES=	${MASTER_SITE_APACHE:=jakarta/tomcat-5/v$V/bin/} \
-		http://archive.apache.org/dist/jakarta/tomcat-5/archive/v${V}/bin/
+MASTER_SITES=	${MASTER_SITE_APACHE:=tomcat/tomcat-5/v$V/bin/} \
+		http://archive.apache.org/dist/tomcat/tomcat-5/archive/v${V}/bin/
 
 HOMEPAGE=	http://tomcat.apache.org/
 
@@ -56,9 +56,9 @@ do-install:
 	cd ${WRKDIST} && \
 		tar cf - webapps | \
 		tar -C ${WRKINST}/${CATALINA_BASE} -xf -
-	${INSTALL_DATA_DIR} ${WRKINST}/${CATALINA_BASE}/conf/Catalina/localhost
+	${INSTALL_DATA_DIR} ${WRKINST}/${CONFDIR}/Catalina/localhost
 	${INSTALL_DATA} ${WRKDIST}/conf/Catalina/localhost/* \
-		${WRKINST}/${CATALINA_BASE}/conf/Catalina/localhost
+		${WRKINST}/${CONFDIR}/Catalina/localhost
 	find ${WRKINST} -name \*.orig -or -name \*.bat -or -name \*.exe | \
 		xargs rm
 	@perl -pi -e 's,%%SYSCONFDIR%%,${SYSCONFDIR},' \
