@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2005/08/17 16:10:04 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2005/12/13 19:56:17 naddy Exp $
 
 COMMENT=	"extended C-shell with many useful features"
 
 DISTNAME=	tcsh-6.13.00
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/
 
@@ -15,14 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
 
-FLAVORS=	static
-FLAVOR?=
-
-.if ${FLAVOR:L} == "static"
-CONFIGURE_ENV=	LDFLAGS="-static"
-.else
 WANTLIB=	c termlib 
-.endif
 
 ALL_TARGET=	all catalogs
 NO_REGRESS=	Yes

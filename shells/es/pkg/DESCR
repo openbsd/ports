@@ -7,6 +7,3 @@ implementation of rc.
 Es is in the public domain. We hold no copyrights or patents on
 the source code, and do not place any restrictions on its distribution.
 We would appreciate it if any distributions do credit the authors.
-
-Flavors:
-	static - Build with statically linked binaries.

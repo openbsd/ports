@@ -1,5 +1,2 @@
 TCSH is an extended C-shell with many useful features like
 filename completion, history editing, etc.
-
-Flavors:
-	static - Build with statically linked binaries.

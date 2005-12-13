@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/06 10:44:33 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2005/12/13 19:56:17 naddy Exp $
 
 COMMENT=	"extensible shell, derived from plan9's rc"
 
 DISTNAME=	es-0.9-beta1
-PKGNAME=	es-0.9b1
+PKGNAME=	es-0.9b1p0
 CATEGORIES=	shells
 
 MASTER_SITES=	ftp://ftp.sys.toronto.edu/pub/es/
@@ -13,22 +13,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu dest
+SEPARATE_BUILD=	simple
+CONFIGURE_STYLE=gnu dest
 
-FLAVORS=	static
-FLAVOR?=
-
-.if ${FLAVOR:L} == "static"
-CONFIGURE_ENV=	LDFLAGS="-static"
-.else
 WANTLIB=	c 
-.endif
 
 ALL_TARGET=	es
-
-post-extract:
-	@cp ${FILESDIR}/{config.guess,config.sub} ${WRKSRC}
 
 NO_REGRESS=	Yes
 
