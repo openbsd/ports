@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/01/30 15:38:15 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/12/14 06:38:24 david Exp $
 sbin/mod_security-enable
 share/doc/mod_security/
 share/doc/mod_security/CHANGES
 share/doc/mod_security/INSTALL
 share/doc/mod_security/LICENSE
 share/doc/mod_security/README
-share/doc/mod_security/modsecurity-manual.pdf
+share/doc/mod_security/modsecurity-apache-manual-1.9.pdf
 share/examples/mod_security/
 share/examples/mod_security/httpd.conf.example-minimal
 %%SHARED%%
