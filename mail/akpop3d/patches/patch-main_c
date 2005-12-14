@@ -1,12 +1,12 @@
-$OpenBSD: patch-main_c,v 1.1.1.1 2004/11/08 21:57:05 naddy Exp $
---- main.c.orig	Sat Aug  2 16:54:56 2003
-+++ main.c	Wed Oct 27 19:36:57 2004
+$OpenBSD: patch-main_c,v 1.2 2005/12/14 06:02:09 jolan Exp $
+--- main.c.orig	Sun Aug  3 00:54:56 2003
++++ main.c	Mon Nov 28 11:25:21 2005
 @@ -23,26 +23,34 @@
  #include "ssl.h"
  #include "strlcpy.h"
  
 +#ifndef DEFAULT_GROUP_NAME
-+# define DEFAULT_GROUP_NAME "mail"
++# define DEFAULT_GROUP_NAME "_akpop3d"
 +#endif
 +
  static char * port = NULL;

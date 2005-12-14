@@ -1,6 +1,15 @@
-$OpenBSD: patch-lock_maildrop_c,v 1.1.1.1 2004/11/08 21:57:05 naddy Exp $
---- lock_maildrop.c.orig	Sun Aug 17 19:44:55 2003
-+++ lock_maildrop.c	Fri Aug 27 01:45:07 2004
+$OpenBSD: patch-lock_maildrop_c,v 1.2 2005/12/14 06:02:09 jolan Exp $
+--- lock_maildrop.c.orig	Mon Aug 18 03:44:55 2003
++++ lock_maildrop.c	Mon Nov 28 11:40:13 2005
+@@ -35,7 +35,7 @@ int lock_maildrop(char * maildrop, uid_t
+   }
+   for (i=0;i<5;i++) { 
+     /* only create file when it doesn't exist */
+-    fd = open(lf,O_WRONLY|O_EXCL|O_CREAT,0600);
++    fd = open(lf,O_WRONLY|O_EXCL|O_CREAT,0660);
+     if (fd < 0)
+       sleep(1);
+     else
 @@ -49,13 +49,14 @@ int lock_maildrop(char * maildrop, uid_t
    return 1;
  }
