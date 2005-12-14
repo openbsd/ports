@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.40 2005/03/31 04:08:21 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.41 2005/12/14 21:47:17 steven Exp $
 # $NetBSD: Makefile,v 1.37 2004/10/03 00:13:16 tv Exp $
 
 COMMENT=	"tools to connect your PalmOS® compatible handheld"
 
 DISTNAME=	pilot-link-0.11.8
-CATEGORIES=     comms
-MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/misc/ \
-		http://mirror.astro.ufl.edu/pub/slackware/slackware-current/source/l/pilot-link/ \
-		http://gentoo.oregonstate.edu/distfiles/ \
-		http://oss.redundant.com/pub/gentoo/distfiles/ \
+CATEGORIES=	comms
+MASTER_SITES=	http://gentoo.oregonstate.edu/distfiles/ \
+		http://www.slackware.at/data/slackware-10.2/source/l/pilot-link/ \
+		http://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/distfiles/ \
 		http://downloads.pilot-link.org/
 
 HOMEPAGE=	http://www.pilot-link.org/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@lphp.org>
 
-EXTRACT_SUFX=   .tar.bz2
+EXTRACT_SUFX=	.tar.bz2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
