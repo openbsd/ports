@@ -1,16 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/09/15 18:44:03 espie Exp $
-bin/check_attach.plx
-bin/eurofix.plx
-bin/hackos2.plx
-bin/psfix.plx
-bin/ttfbuilder.plx
-bin/ttfname.plx
-bin/ttfremap.plx
+@comment $OpenBSD: PLIST,v 1.11 2005/12/14 17:29:38 steven Exp $
 ${P5SITE}/Font/
 ${P5SITE}/Font/TTF/
 ${P5SITE}/Font/TTF/AATKern.pm
 ${P5SITE}/Font/TTF/AATutils.pm
-@comment ${P5SITE}/Font/TTF/AATutils.pm.orig
 ${P5SITE}/Font/TTF/Anchor.pm
 ${P5SITE}/Font/TTF/Bsln.pm
 ${P5SITE}/Font/TTF/Changes
@@ -72,7 +64,6 @@ ${P5SITE}/Font/TTF/Vmtx.pm
 ${P5SITE}/Font/TTF/Win32.pm
 ${P5SITE}/Font/TTF/XMLparse.pm
 ${P5SITE}/ttfmod.pl
-@man man/man1/ttfbuilder.plx.1
 @man man/man3p/Font::TTF::AATKern.3p
 @man man/man3p/Font::TTF::AATutils.3p
 @man man/man3p/Font::TTF::Anchor.3p
@@ -118,6 +109,7 @@ ${P5SITE}/ttfmod.pl
 @man man/man3p/Font::TTF::OldCmap.3p
 @man man/man3p/Font::TTF::OldMort.3p
 @man man/man3p/Font::TTF::PCLT.3p
+@man man/man3p/Font::TTF::PSNames.3p
 @man man/man3p/Font::TTF::Post.3p
 @man man/man3p/Font::TTF::Prep.3p
 @man man/man3p/Font::TTF::Prop.3p
@@ -129,15 +121,3 @@ ${P5SITE}/ttfmod.pl
 @man man/man3p/Font::TTF::Vhea.3p
 @man man/man3p/Font::TTF::Vmtx.3p
 @man man/man3p/Font::TTF::XMLparse.3p
-share/examples/p5-Font-TTF/
-share/examples/p5-Font-TTF/StripCmap.plx
-share/examples/p5-Font-TTF/addpclt.plx
-share/examples/p5-Font-TTF/makemono.plx
-share/examples/p5-Font-TTF/symbol.rmp
-share/examples/p5-Font-TTF/ttfaddname.plx
-share/examples/p5-Font-TTF/ttfdeltable.plx
-share/examples/p5-Font-TTF/ttfenc.plx
-share/examples/p5-Font-TTF/ttfwidth.plx
-share/examples/p5-Font-TTF/ttunadopter.plx
-share/examples/p5-Font-TTF/xmldump.plx
-share/examples/p5-Font-TTF/zerohyph.plx
