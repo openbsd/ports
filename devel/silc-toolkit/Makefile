@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2005/08/16 09:49:52 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2005/12/14 03:21:53 brad Exp $
 
 COMMENT=	"toolkit for the development of SILC applications"
 
-DISTNAME=	silc-toolkit-1.0
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	silc-toolkit-1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.silcnet.org/download/toolkit/sources/
 
@@ -17,14 +16,14 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	converters/libiconv
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-ipv6 \
 		--with-docdir=${PREFIX}/share/doc/silc \
 		--includedir=${PREFIX}/include/silc
 
 .if (${MACHINE_ARCH} != "i386")
-CONFIGURE_ARGS+=	--disable-asm
+CONFIGURE_ARGS+=--disable-asm
 .endif
 
 .include <bsd.port.mk>

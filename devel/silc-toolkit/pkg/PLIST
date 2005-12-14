@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/08/16 09:49:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/12/14 03:21:53 brad Exp $
 @conflict silc-client-<=1.0.1
 include/silc/
 include/silc/aes.h
@@ -21,6 +21,7 @@ include/silc/protocol.h
 include/silc/rc5.h
 include/silc/rsa.h
 include/silc/sha1.h
+include/silc/sha256.h
 include/silc/silcapputil.h
 include/silc/silcargument.h
 include/silc/silcattrs.h
@@ -49,6 +50,7 @@ include/silc/silclog_i.h
 include/silc/silcmath.h
 include/silc/silcmemory.h
 include/silc/silcmessage.h
+include/silc/silcmime.h
 include/silc/silcmode.h
 include/silc/silcmp.h
 include/silc/silcmutex.h
@@ -643,6 +645,28 @@ share/doc/silc/toolkit/silcmessage-silc_message_signed_payload_parse.html
 share/doc/silc/toolkit/silcmessage-silc_message_signed_verify.html
 share/doc/silc/toolkit/silcmessage.html
 share/doc/silc/toolkit/silcmessage.xref
+share/doc/silc/toolkit/silcmime-SilcMime.html
+share/doc/silc/toolkit/silcmime-SilcMimeAssembler.html
+share/doc/silc/toolkit/silcmime-silc_mime_add_data.html
+share/doc/silc/toolkit/silcmime-silc_mime_add_field.html
+share/doc/silc/toolkit/silcmime-silc_mime_add_multipart.html
+share/doc/silc/toolkit/silcmime-silc_mime_alloc.html
+share/doc/silc/toolkit/silcmime-silc_mime_assemble.html
+share/doc/silc/toolkit/silcmime-silc_mime_assembler_alloc.html
+share/doc/silc/toolkit/silcmime-silc_mime_assembler_free.html
+share/doc/silc/toolkit/silcmime-silc_mime_decode.html
+share/doc/silc/toolkit/silcmime-silc_mime_encode.html
+share/doc/silc/toolkit/silcmime-silc_mime_encode_partial.html
+share/doc/silc/toolkit/silcmime-silc_mime_free.html
+share/doc/silc/toolkit/silcmime-silc_mime_get_data.html
+share/doc/silc/toolkit/silcmime-silc_mime_get_field.html
+share/doc/silc/toolkit/silcmime-silc_mime_get_multiparts.html
+share/doc/silc/toolkit/silcmime-silc_mime_is_multipart.html
+share/doc/silc/toolkit/silcmime-silc_mime_is_partial.html
+share/doc/silc/toolkit/silcmime-silc_mime_partial_free.html
+share/doc/silc/toolkit/silcmime-silc_mime_set_multipart.html
+share/doc/silc/toolkit/silcmime.html
+share/doc/silc/toolkit/silcmime.xref
 share/doc/silc/toolkit/silcmode-ChannelModes.html
 share/doc/silc/toolkit/silcmode-ChannelUserModes.html
 share/doc/silc/toolkit/silcmode-SilcUserMode.html
