@@ -1,15 +1,38 @@
-$OpenBSD: patch-configure_in,v 1.19 2005/06/02 14:01:26 espie Exp $
---- configure.in.orig	Mon May 23 18:02:52 2005
-+++ configure.in	Sun May 29 21:32:52 2005
-@@ -187,7 +187,7 @@ AC_CHECK_LIB(vorbisfile, ov_open,
+$OpenBSD: patch-configure_in,v 1.20 2005/12/15 15:42:24 naddy Exp $
+--- configure.in.orig	Fri Oct  7 01:57:47 2005
++++ configure.in	Thu Dec 15 06:35:47 2005
+@@ -183,11 +183,11 @@ AC_CHECK_HEADER(vorbis/vorbisfile.h,
+ 
+ AC_CHECK_LIB(vorbisfile, ov_open,
+ 	[USELESS_VAR=1],
+-	[oggv_have_vorbis=""], -lvorbis -logg)
++	[oggv_have_vorbis=""], -lvorbis -logg -lm)
  
  AC_CHECK_LIB(vorbis, vorbis_info_init,
  	[USELESS_VAR=1],
 -	[oggv_have_vorbis=""])
-+	[oggv_have_vorbis=""], -logg)
++	[oggv_have_vorbis=""], -logg -lm)
  
  AC_CHECK_LIB(ogg, ogg_page_version,
  	[USELESS_VAR=1],
+@@ -321,7 +321,7 @@ int main ()
+      AC_MSG_RESULT($msg)
+      AC_DEFINE_UNQUOTED(HAVE_VORBIS, $have_vorbis_value, [Define if you have vorbis])
+      VORBISFILE_LIBS="-lvorbisfile"
+-     VORBISENC_LIBS="-lvorbisenc -lvorbis -logg"
++     VORBISENC_LIBS="-lvorbisenc -lvorbis -logg -lm"
+      KCM_AUDIOCD="kcmaudiocd"	
+      KAUDIOCREATOR="kaudiocreator"
+   else
+@@ -381,7 +381,7 @@ KDE_CHECK_HEADER(theora/theora.h,
+ 
+ KDE_CHECK_LIB(theora, theora_info_init,
+ 	[USELESS_VAR=1],
+-	[oggv_have_theora=""], -ltheora -lvorbis -logg)
++	[oggv_have_theora=""], -ltheora -lvorbis -logg -lm)
+ 
+ ])
+ 
 @@ -579,7 +579,7 @@ AC_DEFUN([AC_CHECK_LIBOGGFLAC],
    KDE_CHECK_HEADER(OggFLAC/seekable_stream_decoder.h,
    [
@@ -19,6 +42,20 @@ $OpenBSD: patch-configure_in,v 1.19 2005/06/02 14:01:26 espie Exp $
  
      ])
    if test "x$have_libOggFLAC" = "xyes"; then
+@@ -1891,11 +1891,11 @@ AC_MSG_RESULT($ogg_vorbis)
+ if test x$ogg_vorbis = xyes; then
+    dnl we need the ogg_vorbis_lib because otherwise we override LIBS !
+    AC_CHECK_LIB(vorbisfile,ov_open,ogg_vorbis_lib=yes,
+-                ogg_vorbis=no,[-lvorbisfile -lvorbis -logg])
++                ogg_vorbis=no,[-lvorbisfile -lvorbis -logg -lm])
+ fi
+ if test x$ogg_vorbis = xyes; then
+    AC_DEFINE(OGG_VORBIS,1,[Define if you have ogg/vorbis installed])
+-   OGG_VORBISLIBS="-lvorbisfile -lvorbis -logg"
++   OGG_VORBISLIBS="-lvorbisfile -lvorbis -logg -lm"
+ fi
+ fi
+ 
 @@ -1929,6 +1929,9 @@ case "$OS_TYPE" in
    NetBSD)
      kde_mpeglib_compiles=yes
