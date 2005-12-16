@@ -1,0 +1,12 @@
+$OpenBSD: patch-dfasyn_n2d_h,v 1.1 2005/12/16 22:17:26 cathcart Exp $
+--- dfasyn/n2d.h.orig	Fri Dec 16 22:09:17 2005
++++ dfasyn/n2d.h	Fri Dec 16 22:09:27 2005
+@@ -31,7 +31,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ 
+-#define new(T) ((T *) malloc(sizeof(T)))
++#define new(T) ((T *) calloc(1, sizeof(T)))
+ #define new_array(T,N) ((T *) malloc((N) * sizeof(T)))
+ #define resize_array(T,arr,newN) ((T *) ((arr) ? realloc(arr,(newN)*sizeof(T)) : malloc((newN)*sizeof(T))))
+ #define new_string(s) strcpy((char *)malloc((strlen(s)+1)*sizeof(char)),s)
