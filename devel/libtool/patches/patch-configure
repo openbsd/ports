@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.1 2005/12/16 23:03:35 espie Exp $
+--- configure.orig	Thu Dec 15 19:34:34 2005
++++ configure	Thu Dec 15 19:34:56 2005
+@@ -8646,6 +8646,7 @@ nto-qnx*)
+ 
+ openbsd*)
+   version_type=sunos
++  sys_lib_dlsearch_path_spec="/usr/lib"
+   need_lib_prefix=no
+   # Some older versions of OpenBSD (3.3 at least) *do* need versioned libs.
+   case $host_os in
