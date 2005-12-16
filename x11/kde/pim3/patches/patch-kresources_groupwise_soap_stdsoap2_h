@@ -1,0 +1,12 @@
+$OpenBSD: patch-kresources_groupwise_soap_stdsoap2_h,v 1.1 2005/12/16 23:03:26 sturm Exp $
+--- kresources/groupwise/soap/stdsoap2.h.orig	Fri Dec 16 08:54:18 2005
++++ kresources/groupwise/soap/stdsoap2.h	Fri Dec 16 08:54:48 2005
+@@ -551,7 +551,7 @@ extern "C" {
+ /* Portability: define SOAP_SOCKLEN_T */
+ #if defined(SOCKLEN_T)
+ # define SOAP_SOCKLEN_T SOCKLEN_T
+-#elif defined(__socklen_t_defined) || defined(_SOCKLEN_T) || defined(CYGWIN) || defined(FREEBSD) || defined(__FreeBSD__) || defined(__QNX__) || defined(QNX) || defined(_AIX)
++#elif defined(__socklen_t_defined) || defined(_SOCKLEN_T) || defined(CYGWIN) || defined(FREEBSD) || defined(__FreeBSD__) || defined(__QNX__) || defined(QNX) || defined(_AIX) || defined(__OpenBSD__)
+ # define SOAP_SOCKLEN_T socklen_t
+ #elif defined(IRIX) || defined(WIN32) || defined(__APPLE__) || defined(HP_UX) || defined(SUN_OS) || defined(OPENSERVER) || defined(TRU64) || defined(VXWORKS)
+ # define SOAP_SOCKLEN_T int
