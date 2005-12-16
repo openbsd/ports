@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/12/16 16:57:35 steven Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/FTP/
+${P5SITE}/Net/FTP/Recursive.pm
+@man man/man3p/Net::FTP::Recursive.3p
+share/examples/p5-Net-FTP-Recursive/
+share/examples/p5-Net-FTP-Recursive/rdelete
+share/examples/p5-Net-FTP-Recursive/rdir
+share/examples/p5-Net-FTP-Recursive/rget
+share/examples/p5-Net-FTP-Recursive/rput

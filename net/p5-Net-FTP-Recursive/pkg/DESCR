@@ -1,0 +1,3 @@
+Net::FTP::Recursive is a class built on top of the Net::FTP
+package that implements recursive get and put methods for
+the retrieval and sending of entire directory structures.
