@@ -1,0 +1,12 @@
+$OpenBSD: patch-bwm-ng_1,v 1.1 2005/12/16 08:27:42 steven Exp $
+--- bwm-ng.1.orig	Fri Dec 16 08:55:59 2005
++++ bwm-ng.1	Fri Dec 16 08:56:06 2005
+@@ -102,7 +102,7 @@ bwm-ng -o csv -c 0
+ .fi
+ .TP
+ .BR "html" :
+-This is designed for use in the WWW. It uses the CSS file bwm-nd.css in 
++This is designed for use in the WWW. It uses the CSS file bwm-ng.css in 
+ current working dir. "--htmlrefresh" only affects the refresh of the page
+ by the browser. For best results use the same value for --timeout and 
+ --htmlrefresh.

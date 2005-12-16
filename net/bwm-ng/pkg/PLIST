@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/21 21:52:46 niallo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/12/16 08:27:42 steven Exp $
 bin/bwm-ng
 @man man/man1/bwm-ng.1
 share/examples/bwm-ng/
 share/examples/bwm-ng/bwm-ng.conf-example
+share/examples/bwm-ng/bwm-ng.css
