@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.58 2005/09/27 09:53:37 aanriot Exp $
+# $OpenBSD: Makefile,v 1.59 2005/12/17 15:47:12 sturm Exp $
 
 COMMENT=	"scan ports and fingerprint stack of network hosts"
 
-DISTNAME=	nmap-3.93
+DISTNAME=	nmap-3.95
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}dist/
 EXTRACT_SUFX=	.tgz
@@ -39,10 +39,14 @@ LIB_DEPENDS+=	pcre::devel/pcre \
 ALL_TARGET=	nmap
 CONFIGURE_ARGS+=--without-nmapfe
 .else
-LIB_DEPENDS+=	gtk.1.2,gdk.1.2::x11/gtk+
+BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
+LIB_DEPENDS+=	gdk_pixbuf-2.0.0.0,gdk-x11-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+
 USE_X11=	Yes
 ALL_TARGET=	nmap nmapfe/nmapfe
-WANTLIB+=	X11 Xext Xi glib gmodule iconv intl 
+WANTLIB+=	X11 iconv intl fontconfig freetype cairo \
+		atk-1.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
+		pango-1.0.0.0 pangocairo-1.0.0.0 pangoft2-1.0.0.0
 .endif
 
 NO_REGRESS=	Yes
