@@ -1,11 +1,11 @@
-$OpenBSD: patch-akregator_src_mk4storage_metakit_src_header_h,v 1.1 2005/12/16 23:03:26 sturm Exp $
+$OpenBSD: patch-akregator_src_mk4storage_metakit_src_header_h,v 1.2 2005/12/17 08:45:47 sturm Exp $
 --- akregator/src/mk4storage/metakit/src/header.h.orig	Wed Dec 14 13:49:48 2005
 +++ akregator/src/mk4storage/metakit/src/header.h	Wed Dec 14 13:51:37 2005
 @@ -81,6 +81,8 @@
  #elif defined (__alpha)
  #define q4_AXP 1
  #define q4_LONG64 1
-+#elif defined (_LP64)
++#elif defined (__LP64__)
 +#define q4_LONG64 1
  #elif defined (__VMS)
  #define q4_VAX 1
