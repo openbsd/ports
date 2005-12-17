@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/12/09 09:41:25 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/12/17 20:17:23 mbalmer Exp $
 @newgroup _vilter:538
 @newuser _vilter:538:538:daemon:smtp-vilter:/nonexistent:/sbin/nologin
 %%SHARED%%
