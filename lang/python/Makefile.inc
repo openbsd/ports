@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.33 2005/11/11 09:45:29 alek Exp $
+# $OpenBSD: Makefile.inc,v 1.34 2005/12/17 12:45:39 alek Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -34,11 +34,20 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS+=	no_expat no_gdbm no_idle no_mpz no_tkinter no_bsddb
+FLAVORS=	no_expat no_gdbm no_idle no_mpz no_tkinter no_bsddb \
+		no_tests no_tools
 FLAVOR?=
 
-MULTI_PACKAGES=	-tests -tools
+MULTI_PACKAGES?=
 SUBPACKAGE?=
+
+.if empty(FLAVOR:L:Mno_tests)
+MULTI_PACKAGES+=-tests
+.endif
+
+.if empty(FLAVOR:L:Mno_tools)
+MULTI_PACKAGES+=-tools
+.endif
 
 LIB_DEPENDS=	bz2::archivers/bzip2
 
@@ -46,7 +55,7 @@ LIB_DEPENDS=	bz2::archivers/bzip2
 
 .if defined(PACKAGING)
 .  if !empty(SUBPACKAGE)
-RUN_DEPENDS=	::lang/python/${VERSION}
+RUN_DEPENDS=	:python-${VERSION}${PATCHLEVEL}:lang/python/${VERSION}
 LIB_DEPENDS=
 .  else
 WANTLIB=	ssl curses termcap panel m crypto c util z readline pthread \
@@ -130,17 +139,19 @@ LIB_DEPENDS+=		gmp::devel/gmp
 LIB_DEPENDS=		gmp::devel/gmp
 .endif
 
-.if empty(FLAVOR:L:Mno_expat) && ${VERSION} == "2.3"
+.if empty(FLAVOR:L:Mno_expat)
+.  if ${VERSION} == "2.3"
 BUILD_DEPENDS+=		::textproc/expat
 SETUP_LOCAL+=		Setup.expat
+.  endif
 .  if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
 MULTI_PACKAGES+= 	-expat
-.  else
+.  else if ${VERSION} == "2.3"
 LIB_DEPENDS+=		expat.4.0:expat->=1.95.6:textproc/expat
 .  endif
 .endif
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-expat"
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-expat" && ${VERSION} == "2.3"
 LIB_DEPENDS=		expat.4.0:expat->=1.95.6:textproc/expat
 .endif
 
@@ -148,7 +159,7 @@ LIB_DEPENDS=		expat.4.0:expat->=1.95.6:textproc/expat
 # building the "monster" Python for platforms without shared libraries.
 
 .if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
-FULLPKGNAME=${PKGNAME}${FLAVOR_EXT:S/-no_bsddb//:S/-no_expat//:S/-no_gdbm//:S/-no_idle//:S/-no_mpz//:S/-no_tkinter//}
+FULLPKGNAME=${PKGNAME}${FLAVOR_EXT:S/-no_bsddb//:S/-no_expat//:S/-no_gdbm//:S/-no_idle//:S/-no_mpz//:S/-no_tkinter//:S/-no_tools//:S/-no_tests//}
 .endif
 
 FULLPKGNAME-expat=	python-expat-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
