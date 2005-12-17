@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2005/11/29 14:00:11 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2005/12/17 11:27:44 espie Exp $
 
 COMMENT=		"K Desktop Environment, aRTs"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.0
 DISTNAME=		arts-1.5.0
 MODKDE_VERSION?=	3.5
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 
 SHARED_ONLY=		No
 LIB_DEPENDS= 	audiofile::devel/libaudiofile \
@@ -22,6 +22,7 @@ BUILD_DEPENDS=	::devel/pkgconfig
 CONFIGURE_ENV=LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	${ENABLE_SHARED} --enable-static
 
+USE_LIBTOOL=	Yes
 WANTLIB=	ICE SM X11 Xext c iconv intl jpeg m ossaudio png pthread \
 		stdc++ vorbisenc z
 		

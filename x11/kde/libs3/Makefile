@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.59 2005/11/29 14:00:12 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2005/12/17 11:27:44 espie Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 COMMENT-cups=		"K Desktop Environment, cups support"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.0
 DISTNAME=		kdelibs-${VERSION}
-PKGNAME=		${DISTNAME}
-PKGNAME-cups=		kdecups-${VERSION}
+PKGNAME=		${DISTNAME}p0
+PKGNAME-cups=		kdecups-${VERSION}p0
 MODKDE_VERSION?=	3.5
 
 FLAVORS=debug
@@ -86,5 +86,7 @@ post-install:
 	done
 	${INSTALL_PROGRAM} ${WRKBUILD}/libtool ${PREFIX}/bin/kdelibtool
 
+USE_LIBTOOL=Yes
+LIBTOOL_FLAGS=--tag=disable-static
 .include <bsd.port.mk>
 MODGNU_AUTOCONF_FILES+= dcop/dcop-path.h.in

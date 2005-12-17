@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2005/11/29 14:00:12 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2005/12/17 11:27:44 espie Exp $
 
 COMMENT= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
@@ -6,8 +6,8 @@ COMMENT-samba=		"K Desktop Environment, samba support"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.0
 DISTNAME=		kdebase-${VERSION}
-PKGNAME=		${DISTNAME}
-PKGNAME-samba=		kdesamba-${VERSION}
+PKGNAME=		${DISTNAME}p0
+PKGNAME-samba=		kdesamba-${VERSION}p0
 MODKDE_VERSION?=	3.5
 
 MULTI_PACKAGES=		-samba
@@ -59,6 +59,8 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/kdm/kfrontend/genkdmconf ${PREFIX}/libexec
 
 FAKE_FLAGS=DESTDIR=${WRKINST} sysconfdir=${SAMPLECONFDIR}
+USE_LIBTOOL=Yes
+LIBTOOL_FLAGS=--tag=disable-static
 
 #CONFIGURE_ARGS+=--without-motif
 #CONFIGURE_ARGS+=--without-samba
