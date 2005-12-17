@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tools,v 1.1.1.1 2005/06/07 01:12:57 alek Exp $
+@comment $OpenBSD: PLIST-tools,v 1.2 2005/12/17 12:33:00 alek Exp $
 @option no-default-conflict
 @conflict python-tools->=2.4,<2.5
 lib/python2.4/Tools/
@@ -185,7 +185,7 @@ lib/python2.4/Tools/scripts/pickle2db.py
 lib/python2.4/Tools/scripts/pindent.py
 lib/python2.4/Tools/scripts/ptags.py
 lib/python2.4/Tools/scripts/pydoc
-lib/python2.4/Tools/scripts/pydoc.orig
+@comment lib/python2.4/Tools/scripts/pydoc.orig
 lib/python2.4/Tools/scripts/pydocgui.pyw
 lib/python2.4/Tools/scripts/redemo.py
 lib/python2.4/Tools/scripts/reindent.py

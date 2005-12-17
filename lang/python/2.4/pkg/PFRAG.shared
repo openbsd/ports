@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/06/07 01:12:55 alek Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/17 12:33:00 alek Exp $
 %%mm%%
 @comment lib/libpython2.4.so
 @lib lib/libpython2.4.so.0.0
@@ -38,7 +38,6 @@ lib/python2.4/lib-dynload/fpectlmodule.so
 lib/python2.4/lib-dynload/fpetestmodule.so
 lib/python2.4/lib-dynload/grpmodule.so
 lib/python2.4/lib-dynload/itertools.so
-@comment lib/python2.4/lib-dynload/itertools_failed.so
 lib/python2.4/lib-dynload/mathmodule.so
 lib/python2.4/lib-dynload/md5module.so
 lib/python2.4/lib-dynload/mmapmodule.so
@@ -46,7 +45,6 @@ lib/python2.4/lib-dynload/nismodule.so
 lib/python2.4/lib-dynload/operator.so
 lib/python2.4/lib-dynload/parsermodule.so
 lib/python2.4/lib-dynload/pwdmodule.so
-lib/python2.4/lib-dynload/pyexpat.so
 lib/python2.4/lib-dynload/readline.so
 lib/python2.4/lib-dynload/regex.so
 lib/python2.4/lib-dynload/resource.so

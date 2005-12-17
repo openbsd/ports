@@ -1,2 +1,3 @@
-If you want to use this package as your system default idle, make
-${PREFIX}/bin/idle a symlink to ${PREFIX}/bin/idle2.4.
+If you want to use this package as your system default idle, create
+symbolic links like so:
+ln -s ${PREFIX}/bin/idle2.4 ${PREFIX}/bin/idle

@@ -1,3 +1,4 @@
-If you want to use this package as your default system python, make
-${PREFIX}/bin/python a symlink to ${PREFIX}/bin/python2.4 and
-${PREFIX}/bin/pydoc a symlink to ${PREFIX}/bin/pydoc2.4.
+If you want to use this package as your default system python, create
+symbolic links like so:
+ln -s ${PREFIX}/bin/python2.4 ${PREFIX}/bin/python
+ln -s ${PREFIX}/bin/pydoc2.4  ${PREFIX}/bin/pydoc
