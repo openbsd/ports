@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2005/07/18 17:02:48 aanriot Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.2 2005/12/18 22:33:42 pvalchev Exp $
 --- src/Makefile.in.orig	Sun Jul 17 22:37:10 2005
 +++ src/Makefile.in	Sun Jul 17 22:38:32 2005
 @@ -102,7 +102,7 @@ guile_only_sources = crank_wrap.c scheme
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1 2005/07/18 17:02:48 aanriot Exp $
  plugindir = $(pkglibdir)/plugins
  INCLUDES = -DPLUGINDIR=\""$(plugindir)"\" -DDATADIR=\""$(pkgdatadir)"\"
 -CFLAGS = @CFLAGS@ @GTK_CFLAGS@ -Wall
-+CFLAGS = @CPPFLAGS@ @CFLAGS@ @GTK_CFLAGS@ -Wno-endif-labels
++CFLAGS = @CPPFLAGS@ @CFLAGS@ @GTK_CFLAGS@
  LIBS = @LIBS@ @GTK_LIBS@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../config.h
