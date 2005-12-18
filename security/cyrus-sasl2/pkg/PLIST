@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2005/10/29 14:57:45 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.14 2005/12/18 10:37:26 jakob Exp $
 @conflict cyrus-sasl-*
 include/sasl/
 include/sasl/hmac-md5.h
@@ -80,23 +80,23 @@ share/doc/sasl2/
 share/doc/sasl2/advanced.html
 share/doc/sasl2/appconvert.html
 share/doc/sasl2/components.html
-share/doc/sasl2/draft-burdis-cat-srp-sasl-08.txt
-share/doc/sasl2/draft-ietf-sasl-anon-02.txt
-share/doc/sasl2/draft-ietf-sasl-crammd5-01.txt
-share/doc/sasl2/draft-ietf-sasl-gssapi-00.txt
-share/doc/sasl2/draft-ietf-sasl-plain-03.txt
-share/doc/sasl2/draft-ietf-sasl-rfc2222bis-03.txt
-share/doc/sasl2/draft-ietf-sasl-rfc2831bis-02.txt
-share/doc/sasl2/draft-ietf-sasl-saslprep-04.txt
-share/doc/sasl2/draft-murchison-sasl-login-00.txt
-share/doc/sasl2/draft-newman-sasl-c-api-01.txt
+share/doc/sasl2/draft-burdis-cat-srp-sasl-xx.txt
+share/doc/sasl2/draft-ietf-sasl-anon-xx.txt
+share/doc/sasl2/draft-ietf-sasl-crammd5-xx.txt
+share/doc/sasl2/draft-ietf-sasl-gssapi-xx.txt
+share/doc/sasl2/draft-ietf-sasl-plain-xx.txt
+share/doc/sasl2/draft-ietf-sasl-rfc2222bis-xx.txt
+share/doc/sasl2/draft-ietf-sasl-rfc2831bis-xx.txt
+share/doc/sasl2/draft-ietf-sasl-saslprep-xx.txt
+share/doc/sasl2/draft-murchison-sasl-login-xx.txt
+share/doc/sasl2/draft-newman-sasl-c-api-xx.txt
+share/doc/sasl2/draft-newman-sasl-passdss-xx.txt
 share/doc/sasl2/gssapi.html
 share/doc/sasl2/index.html
 share/doc/sasl2/install.html
 share/doc/sasl2/macosx.html
 share/doc/sasl2/mechanisms.html
 share/doc/sasl2/options.html
-share/doc/sasl2/os390.html
 share/doc/sasl2/plugprog.html
 share/doc/sasl2/programming.html
 share/doc/sasl2/readme.html

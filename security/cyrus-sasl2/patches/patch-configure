@@ -1,25 +1,7 @@
-$OpenBSD: patch-configure,v 1.7 2004/11/03 10:33:31 jakob Exp $
---- configure.orig	Mon Oct 25 06:21:08 2004
-+++ configure	Sun Oct 31 22:50:04 2004
-@@ -4526,7 +4526,7 @@ if test "${ac_cv_lib_resolv_res_search+s
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lresolv  $LIBS"
-+ #LIBS="-lresolv  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- /* confdefs.h.  */
-@@ -8920,7 +8920,7 @@ if test "${ac_cv_lib_resolv_res_search+s
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lresolv  $LIBS"
-+ #LIBS="-lresolv  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- /* confdefs.h.  */
-@@ -8973,7 +8973,7 @@ if test $ac_cv_lib_resolv_res_search = y
+$OpenBSD: patch-configure,v 1.8 2005/12/18 10:37:26 jakob Exp $
+--- configure.orig	Sun May 15 15:58:28 2005
++++ configure	Thu Jun  9 07:12:35 2005
+@@ -9447,7 +9447,7 @@ if test $ac_cv_lib_resolv_res_search = y
  #define HAVE_LIBRESOLV 1
  _ACEOF
  
@@ -28,35 +10,26 @@ $OpenBSD: patch-configure,v 1.7 2004/11/03 10:33:31 jakob Exp $
  
  fi
  
-@@ -9687,6 +9687,9 @@ fi;
-       *-*-aix*)
-         platform=__aix
-         ;;
-+      *-*-openbsd*)
-+	platform=__openbsd
-+	;;
-       *)
-         { echo "$as_me:$LINENO: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&5
+@@ -10159,6 +10159,9 @@ if test "$gssapi" != no; then
+     *-*-aix*)
+       platform=__aix
+       ;;
++    *-*-openbsd*)
++      platform=__openbsd
++      ;;
+     *)
+       { echo "$as_me:$LINENO: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&5
  echo "$as_me: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&2;}
-@@ -9701,7 +9704,7 @@ echo "$as_me: error: CyberSafe was force
-     cmu_saved_CPPFLAGS=$CPPFLAGS
+@@ -10173,7 +10176,7 @@ echo "$as_me: error: CyberSafe was force
+   cmu_saved_CPPFLAGS=$CPPFLAGS
  
-     if test -d ${gssapi}; then
--       CPPFLAGS="$CPPFLAGS -I$gssapi/include"
-+       CPPFLAGS="$CPPFLAGS -I$gssapi/include/kerberosV"
+   if test -d ${gssapi}; then
+-    CPPFLAGS="$CPPFLAGS -I$gssapi/include"
++    CPPFLAGS="$CPPFLAGS -I$gssapi/include/kerberosV"
  # We want to keep -I in our CPPFLAGS, but only if we succeed
-        cmu_saved_CPPFLAGS=$CPPFLAGS
-        LDFLAGS="$LDFLAGS -L$gssapi/lib"
-@@ -10006,7 +10009,7 @@ if test "${ac_cv_lib_resolv_res_search+s
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lresolv  $LIBS"
-+ #LIBS="-lresolv  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- /* confdefs.h.  */
-@@ -10059,7 +10062,7 @@ if test $ac_cv_lib_resolv_res_search = y
+     cmu_saved_CPPFLAGS=$CPPFLAGS
+     LDFLAGS="$LDFLAGS -L$gssapi/lib"
+@@ -10537,7 +10540,7 @@ if test $ac_cv_lib_resolv_res_search = y
  #define HAVE_LIBRESOLV 1
  _ACEOF
  
@@ -65,16 +38,16 @@ $OpenBSD: patch-configure,v 1.7 2004/11/03 10:33:31 jakob Exp $
  
  fi
  
-@@ -10084,7 +10087,7 @@ if test "${ac_cv_lib_gssapi_gss_unwrap+s
+@@ -10564,7 +10567,7 @@ if test "${ac_cv_lib_gssapi_gss_unwrap+s
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
--LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
-+LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lcrypto ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
+-LIBS="-lgssapi ${GSSAPIBASE_LIBS} -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
++LIBS="-lgssapi ${GSSAPIBASE_LIBS} -lgssapi -lkrb5 -lasn1 -lcrypto ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -10434,8 +10437,8 @@ fi
+@@ -10914,8 +10917,8 @@ fi
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
    elif test "$gss_impl" = "heimdal"; then
      CPPFLAGS="$CPPFLAGS -DKRB5_HEIMDAL"
@@ -85,39 +58,30 @@ $OpenBSD: patch-configure,v 1.7 2004/11/03 10:33:31 jakob Exp $
    elif test "$gss_impl" = "cybersafe03"; then
  # Version of CyberSafe with two libraries
      CPPFLAGS="$CPPFLAGS -D$platform -I${gssapi}/appsec-sdk/include"
-@@ -10627,7 +10630,7 @@ if test "${ac_cv_lib_resolv_res_search+s
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lresolv  $LIBS"
-+ #LIBS="-lresolv  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- /* confdefs.h.  */
-@@ -10676,7 +10679,7 @@ fi
+@@ -11154,7 +11157,7 @@ fi
  echo "$as_me:$LINENO: result: $ac_cv_lib_resolv_res_search" >&5
  echo "${ECHO_T}$ac_cv_lib_resolv_res_search" >&6
  if test $ac_cv_lib_resolv_res_search = yes; then
 -  GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lresolv"
-+ GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS"
++  GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS"
  fi
  
    SASL_MECHS="$SASL_MECHS libgssapiv2.la"
-@@ -11881,7 +11884,7 @@ if test "${ac_cv_lib_resolv_inet_aton+se
+@@ -12760,7 +12763,7 @@ if test "${ac_cv_lib_resolv_inet_aton+se
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lresolv  $LIBS"
-+ #LIBS="-lresolv  $LIBS"
++#LIBS="-lresolv  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -11934,7 +11937,7 @@ if test $ac_cv_lib_resolv_inet_aton = ye
+@@ -12813,7 +12816,7 @@ if test $ac_cv_lib_resolv_inet_aton = ye
  #define HAVE_LIBRESOLV 1
  _ACEOF
  
 -  LIBS="-lresolv $LIBS"
-+  #LIBS="-lresolv $LIBS"
++  #IBS="-lresolv $LIBS"
  
  fi
  

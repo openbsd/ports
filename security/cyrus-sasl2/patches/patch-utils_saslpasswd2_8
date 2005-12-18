@@ -1,6 +1,6 @@
-$OpenBSD: patch-utils_saslpasswd2_8,v 1.1 2005/11/01 23:41:13 aanriot Exp $
---- utils/saslpasswd2.8.orig	Tue Nov  1 12:32:50 2005
-+++ utils/saslpasswd2.8	Tue Nov  1 12:33:32 2005
+$OpenBSD: patch-utils_saslpasswd2_8,v 1.2 2005/12/18 10:37:26 jakob Exp $
+--- utils/saslpasswd2.8.orig	Mon Apr 11 06:51:26 2005
++++ utils/saslpasswd2.8	Sun Dec 18 11:34:29 2005
 @@ -1,7 +1,6 @@
  .\" saslpasswd.8 -- saslpasswd man page
  .\" Rob Earhart
@@ -15,5 +15,5 @@ $OpenBSD: patch-utils_saslpasswd2_8,v 1.1 2005/11/01 23:41:13 aanriot Exp $
  .\" OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 -
  .\"
- .TH SASLPASSWD 8 "Jan 11, 1999" "CMU SASL"
+ .TH SASLPASSWD2 8 "Mar 7, 2005" "CMU SASL"
  .SH NAME

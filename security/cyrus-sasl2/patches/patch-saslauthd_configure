@@ -1,6 +1,6 @@
-$OpenBSD: patch-saslauthd_configure,v 1.8 2004/11/03 10:33:32 jakob Exp $
---- saslauthd/configure.orig	Mon Oct 25 06:21:13 2004
-+++ saslauthd/configure	Sun Oct 31 23:09:13 2004
+$OpenBSD: patch-saslauthd_configure,v 1.9 2005/12/18 10:37:26 jakob Exp $
+--- saslauthd/configure.orig	Sun May 15 15:59:04 2005
++++ saslauthd/configure	Thu Jun  9 07:18:10 2005
 @@ -753,10 +753,10 @@ ac_env_CC_set=${CC+set}
  ac_env_CC_value=$CC
  ac_cv_env_CC_set=${CC+set}
@@ -16,35 +16,17 @@ $OpenBSD: patch-saslauthd_configure,v 1.8 2004/11/03 10:33:32 jakob Exp $
  ac_env_LDFLAGS_set=${LDFLAGS+set}
  ac_env_LDFLAGS_value=$LDFLAGS
  ac_cv_env_LDFLAGS_set=${LDFLAGS+set}
-@@ -5995,6 +5995,9 @@ fi;
-       *-*-aix*)
-         platform=__aix
-         ;;
-+      *-*-openbsd*)
-+	platform=__openbsd
-+	;;
-       *)
-         { echo "$as_me:$LINENO: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&5
+@@ -6377,6 +6377,9 @@ if test "$gssapi" != no; then
+     *-*-aix*)
+       platform=__aix
+       ;;
++    *-*-openbsd*)
++      platform=__openbsd
++      ;;
+     *)
+       { echo "$as_me:$LINENO: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&5
  echo "$as_me: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&2;}
-@@ -6009,7 +6012,7 @@ echo "$as_me: error: CyberSafe was force
-     cmu_saved_CPPFLAGS=$CPPFLAGS
- 
-     if test -d ${gssapi}; then
--       CPPFLAGS="$CPPFLAGS -I$gssapi/include"
-+       CPPFLAGS="$CPPFLAGS -I$gssapi/include/kerberosV"
- # We want to keep -I in our CPPFLAGS, but only if we succeed
-        cmu_saved_CPPFLAGS=$CPPFLAGS
-        LDFLAGS="$LDFLAGS -L$gssapi/lib"
-@@ -6392,7 +6395,7 @@ if test "${ac_cv_lib_gssapi_gss_unwrap+s
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
-+LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lcrypto ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- /* confdefs.h.  */
-@@ -6738,12 +6741,12 @@ fi
+@@ -7128,12 +7131,12 @@ fi
    fi
  
    if test "$gss_impl" = "mit"; then

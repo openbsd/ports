@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.30 2005/11/01 23:41:13 aanriot Exp $
+# $OpenBSD: Makefile,v 1.31 2005/12/18 10:37:26 jakob Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
-DISTNAME=	cyrus-sasl-2.1.20
-PKGNAME=	${DISTNAME}p7
+VERSION=	2.1.21
+LIBVERSION=	2.21
+
+DISTNAME=	cyrus-sasl-${VERSION}
+PKGNAME=	${DISTNAME}
 CATEGORIES=	security
 
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -19,6 +22,8 @@ PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 WANTLIB=		asn1 c com_err crypto gssapi krb5
 
+SUBST_VARS+=		LIBVERSION
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS='${LDFLAGS}'
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
@@ -59,6 +64,7 @@ CONFIGURE_ARGS+=	--without-ldap
 BROKEN=			choose either mysql or pgsql or sqlite
 .endif
 LIB_DEPENDS+=		lib/mysql/mysqlclient.10::databases/mysql
+WANTLIB+=		m ssl z
 CONFIGURE_ARGS+=	--enable-sql \
 			--with-mysql \
 			--without-pgsql \
@@ -83,14 +89,16 @@ BROKEN=			choose either mysql or pgsql or sqlite
 .endif
 LIB_DEPENDS=		sqlite.8.6::databases/sqlite
 CONFIGURE_ARGS+=	--enable-sql \
+			--without-mysql \
+			--without-pgsql \
 			--with-sqlite
 .endif
  
 
 post-build:
-	(cd ${WRKBUILD}/saslauthd; \
+	cd ${WRKBUILD}/saslauthd; \
 	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} testsaslauthd \
-	saslauthd.8)
+	saslauthd.8
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sasl2
