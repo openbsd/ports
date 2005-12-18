@@ -1,7 +1,51 @@
-$OpenBSD: patch-src_cflex_c,v 1.1 2005/07/21 15:16:46 aanriot Exp $
---- src/cflex.c.orig	Fri Jun 10 16:02:28 2005
-+++ src/cflex.c	Fri Jul 15 12:24:01 2005
-@@ -2376,7 +2376,7 @@ YY_RULE_SETUP
+$OpenBSD: patch-src_cflex_c,v 1.2 2005/12/18 20:44:43 pvalchev Exp $
+--- src/cflex.c.orig	Sat Oct  1 06:34:57 2005
++++ src/cflex.c	Sun Dec 18 12:28:19 2005
+@@ -9,6 +11,7 @@
+ #define YY_FLEX_MINOR_VERSION 5
+ 
+ #include <stdio.h>
++#include <errno.h>
+ 
+ 
+ /* cfront 1.2 defines "c_plusplus" instead of "__cplusplus" */
+@@ -32,7 +35,7 @@
+ 
+ #else	/* ! __cplusplus */
+ 
+-#if __STDC__
++#ifdef __STDC__
+ 
+ #define YY_USE_PROTOS
+ #define YY_USE_CONST
+@@ -1941,7 +1944,7 @@ char *yytext;
+ #define INASSIGN 3
+ #define CFSERVD 4
+ 
+-#line 1945 "lex.yy.c"
++#line 1948 "lex.yy.c"
+ 
+ /* Macros after this point can all be overridden by user definitions in
+  * section 1.
+@@ -1998,7 +2001,7 @@ static int yy_top_state YY_PROTO(( void 
+ #ifdef YY_MALLOC_DECL
+ YY_MALLOC_DECL
+ #else
+-#if __STDC__
++#ifdef __STDC__
+ #ifndef __cplusplus
+ #include <stdlib.h>
+ #endif
+@@ -2096,7 +2099,7 @@ YY_DECL
+ 
+ 
+ 
+-#line 2100 "lex.yy.c"
++#line 2103 "lex.yy.c"
+ 
+ 	if ( yy_init )
+ 		{
+@@ -2376,7 +2379,7 @@ YY_RULE_SETUP
  #line 236 "cflex.l"
  {
                         Debug1("LFARROW %s\n",yytext);
@@ -10,7 +54,7 @@ $OpenBSD: patch-src_cflex_c,v 1.1 2005/07/21 15:16:46 aanriot Exp $
                         ACTION_IS_LINKCHILDREN = true;
                         FORCELINK='y';
                         return LARROW;
-@@ -2387,7 +2387,7 @@ YY_RULE_SETUP
+@@ -2387,7 +2390,7 @@ YY_RULE_SETUP
  #line 245 "cflex.l"
  {
                         Debug1("FARROW %s\n",yytext);
@@ -19,7 +63,7 @@ $OpenBSD: patch-src_cflex_c,v 1.1 2005/07/21 15:16:46 aanriot Exp $
                         ACTION_IS_LINK = true;
                         FORCELINK='y';
                         return ARROW;
-@@ -2398,7 +2398,7 @@ YY_RULE_SETUP
+@@ -2398,7 +2401,7 @@ YY_RULE_SETUP
  #line 253 "cflex.l"
  {
                         Debug1("ARROW %s\n",yytext);
@@ -28,7 +72,7 @@ $OpenBSD: patch-src_cflex_c,v 1.1 2005/07/21 15:16:46 aanriot Exp $
                         ACTION_IS_LINK = true;
                         FORCELINK='n';
                         return ARROW;
-@@ -2409,7 +2409,7 @@ YY_RULE_SETUP
+@@ -2409,7 +2412,7 @@ YY_RULE_SETUP
  #line 262 "cflex.l"
  {
                         Debug1("LARROW %s\n",yytext);
@@ -37,3 +81,38 @@ $OpenBSD: patch-src_cflex_c,v 1.1 2005/07/21 15:16:46 aanriot Exp $
                         ACTION_IS_LINKCHILDREN = true;
                         FORCELINK='n';
                         return LARROW;
+@@ -2710,7 +2713,7 @@ YY_RULE_SETUP
+ #line 510 "cflex.l"
+ ECHO;
+ 	YY_BREAK
+-#line 2714 "lex.yy.c"
++#line 2717 "lex.yy.c"
+ case YY_STATE_EOF(INITIAL):
+ case YY_STATE_EOF(INCONTROL):
+ case YY_STATE_EOF(BRACELIST):
+@@ -3280,7 +3283,7 @@ YY_BUFFER_STATE b;
+ 
+ #ifndef YY_ALWAYS_INTERACTIVE
+ #ifndef YY_NEVER_INTERACTIVE
+-extern int isatty YY_PROTO(( int ));
++#include <unistd.h>
+ #endif
+ #endif
+ 
+@@ -3294,6 +3297,8 @@ FILE *file;
+ 
+ 
+ 	{
++	int oerrno = errno;
++
+ 	yy_flush_buffer( b );
+ 
+ 	b->yy_input_file = file;
+@@ -3308,6 +3313,7 @@ FILE *file;
+ 	b->yy_is_interactive = file ? (isatty( fileno(file) ) > 0) : 0;
+ #endif
+ #endif
++	errno = oerrno;
+ 	}
+ 
+ 
