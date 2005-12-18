@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_cfetool_c,v 1.1 2005/10/27 21:47:28 sturm Exp $
---- src/cfetool.c.orig	Thu Jun 30 03:53:06 2005
-+++ src/cfetool.c	Fri Oct 21 16:35:55 2005
+$OpenBSD: patch-src_cfetool_c,v 1.2 2005/12/18 20:45:41 pvalchev Exp $
+--- src/cfetool.c.orig	Thu Jun 30 01:53:06 2005
++++ src/cfetool.c	Sun Dec 18 11:58:21 2005
 @@ -326,7 +326,7 @@ void parse_create_opts(int argc, char **
  
        case 'f':
@@ -438,6 +438,17 @@ $OpenBSD: patch-src_cfetool_c,v 1.1 2005/10/27 21:47:28 sturm Exp $
 +  (void)snprintf(var,sizeof(var),"stddev_%s=%1.1f",name,stddev);
    AppendItem(classlist,var,""); 
  }
+ 
+@@ -2646,9 +2646,9 @@ void DoBatch(int dbtype)
+   double val=0;
+   float val1=0, val2=0, val3=0, val4=0, val5=0, val6=0, val7=0, val8=0, val9=0, val10=0;
+   int i = 0, j = 0, n = 0, y = 0, k = 0, w = 0;
+-  time_to_update = false;
+   int timeint = -1;
+   struct Average av;
++  time_to_update = false;
+ 
+   Verbose("Batch mode\n");
  
 @@ -2762,11 +2762,11 @@ void DoBatch(int dbtype)
      } else {

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_cfetoolgraph_c,v 1.1 2005/10/27 21:47:28 sturm Exp $
---- src/cfetoolgraph.c.orig	Thu Jun 30 03:53:06 2005
-+++ src/cfetoolgraph.c	Fri Oct 21 16:35:55 2005
+$OpenBSD: patch-src_cfetoolgraph_c,v 1.2 2005/12/18 20:45:41 pvalchev Exp $
+--- src/cfetoolgraph.c.orig	Thu Jun 30 01:53:06 2005
++++ src/cfetoolgraph.c	Sun Dec 18 12:41:13 2005
 @@ -138,7 +138,7 @@ int main(int argc, char **argv)
          break;
  
@@ -101,6 +101,26 @@ $OpenBSD: patch-src_cfetoolgraph_c,v 1.1 2005/10/27 21:47:28 sturm Exp $
        key.data = TIMEKEY;
        key.size = strlen(TIMEKEY) + 1;
  
+@@ -542,6 +542,9 @@ void WriteGraphFiles(int dbtype)
+ void WriteHistogram(int dbtype)
+ {
+   int numdays=0;
++  int position, day;
++  int weekly[CF_GRAINS];
++
+   /* Finally, look at the histogram */
+ 
+   printf("Writing histogram file now!\n");
+@@ -554,9 +557,6 @@ void WriteHistogram(int dbtype)
+     }
+   }
+ 
+-  int position, day;
+-  int weekly[CF_GRAINS];
+-
+   switch(dbtype)
+   {
+     case DAILY:
 @@ -628,7 +628,7 @@ void WriteHistogram(int dbtype)
      }
    }
