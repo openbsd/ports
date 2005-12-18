@@ -1,0 +1,12 @@
+$OpenBSD: patch-gettext-tools_src_msggrep_c,v 1.1 2005/12/18 21:53:18 sturm Exp $
+--- gettext-tools/src/msggrep.c.orig	Sun Dec 18 12:00:32 2005
++++ gettext-tools/src/msggrep.c	Sun Dec 18 12:00:44 2005
+@@ -81,7 +81,7 @@ struct grep_task {
+ static struct grep_task grep_task[3];
+ 
+ /* Long options.  */
+-static const struct option long_options[] =
++static struct option long_options[] =
+ {
+   { "add-location", no_argument, &line_comment, 1 },
+   { "comment", no_argument, NULL, 'C' },

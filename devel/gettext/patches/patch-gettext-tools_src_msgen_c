@@ -1,0 +1,12 @@
+$OpenBSD: patch-gettext-tools_src_msgen_c,v 1.1 2005/12/18 21:53:18 sturm Exp $
+--- gettext-tools/src/msgen.c.orig	Sun Dec 18 11:58:59 2005
++++ gettext-tools/src/msgen.c	Sun Dec 18 11:59:09 2005
+@@ -48,7 +48,7 @@
+ static int force_po;
+ 
+ /* Long options.  */
+-static const struct option long_options[] =
++static struct option long_options[] =
+ {
+   { "add-location", no_argument, &line_comment, 1 },
+   { "directory", required_argument, NULL, 'D' },

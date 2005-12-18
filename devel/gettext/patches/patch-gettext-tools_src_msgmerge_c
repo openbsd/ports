@@ -1,0 +1,12 @@
+$OpenBSD: patch-gettext-tools_src_msgmerge_c,v 1.1 2005/12/18 21:53:18 sturm Exp $
+--- gettext-tools/src/msgmerge.c.orig	Sun Dec 18 12:01:04 2005
++++ gettext-tools/src/msgmerge.c	Sun Dec 18 12:01:15 2005
+@@ -84,7 +84,7 @@ static const char *version_control_strin
+ static const char *backup_suffix_string;
+ 
+ /* Long options.  */
+-static const struct option long_options[] =
++static struct option long_options[] =
+ {
+   { "add-location", no_argument, &line_comment, 1 },
+   { "backup", required_argument, NULL, CHAR_MAX + 1 },

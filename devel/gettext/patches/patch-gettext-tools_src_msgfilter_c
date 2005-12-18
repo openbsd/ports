@@ -1,0 +1,12 @@
+$OpenBSD: patch-gettext-tools_src_msgfilter_c,v 1.1 2005/12/18 21:53:18 sturm Exp $
+--- gettext-tools/src/msgfilter.c.orig	Sun Dec 18 11:59:28 2005
++++ gettext-tools/src/msgfilter.c	Sun Dec 18 11:59:38 2005
+@@ -97,7 +97,7 @@ static char **sub_argv;
+ static int sub_argc;
+ 
+ /* Long options.  */
+-static const struct option long_options[] =
++static struct option long_options[] =
+ {
+   { "add-location", no_argument, &line_comment, 1 },
+   { "directory", required_argument, NULL, 'D' },

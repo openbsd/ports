@@ -1,0 +1,12 @@
+$OpenBSD: patch-gettext-tools_src_msgcat_c,v 1.1 2005/12/18 21:53:18 sturm Exp $
+--- gettext-tools/src/msgcat.c.orig	Sun Dec 18 11:57:28 2005
++++ gettext-tools/src/msgcat.c	Sun Dec 18 11:57:40 2005
+@@ -53,7 +53,7 @@ static int force_po;
+ static const char *to_code;
+ 
+ /* Long options.  */
+-static const struct option long_options[] =
++static struct option long_options[] =
+ {
+   { "add-location", no_argument, &line_comment, 1 },
+   { "directory", required_argument, NULL, 'D' },

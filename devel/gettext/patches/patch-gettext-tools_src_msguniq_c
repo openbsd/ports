@@ -1,0 +1,12 @@
+$OpenBSD: patch-gettext-tools_src_msguniq_c,v 1.1 2005/12/18 21:53:18 sturm Exp $
+--- gettext-tools/src/msguniq.c.orig	Sun Dec 18 12:01:40 2005
++++ gettext-tools/src/msguniq.c	Sun Dec 18 12:01:51 2005
+@@ -52,7 +52,7 @@ static int force_po;
+ static const char *to_code;
+ 
+ /* Long options.  */
+-static const struct option long_options[] =
++static struct option long_options[] =
+ {
+   { "add-location", no_argument, &line_comment, 1 },
+   { "directory", required_argument, NULL, 'D' },
