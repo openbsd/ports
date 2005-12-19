@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/12/27 13:28:35 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2005/12/19 12:53:51 naddy Exp $
 
 COMMENT=		"radius sniffer"
 
@@ -23,7 +23,7 @@ do-build:
 	-DDICTIONARY_FILENAME=\"${PREFIX}/share/radiusniff/dictionary\" \
 	-DCLIENTS_FILENAME=\"${PREFIX}/share/radiusniff/clients\" \
 	-I${LOCALBASE}/include -L${LOCALBASE}/lib -o radiusniff \
-	radiusniff.c md5.c -lpcap -lresolv
+	radiusniff.c md5.c -lpcap
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/radiusniff ${PREFIX}/bin
