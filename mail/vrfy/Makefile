@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/30 19:04:22 alek Exp $
-# Original from: Bruno Rohee <rohee@OpenBSD.ORG>
-#
+# $OpenBSD: Makefile,v 1.17 2005/12/19 02:06:07 naddy Exp $
 
 COMMENT=		"verify email addresses and mailing lists"
 
@@ -20,6 +18,7 @@ MASTER_SITES=		http://ftp.ksut.edu.tw/FTP/Unix/Network/tools/
 EXTRACT_SUFX=		.tar.Z
 
 WRKDIST=		${WRKDIR}/
+MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}" RES=""
 
 NO_REGRESS=		Yes
 
