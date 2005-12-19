@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2005/11/13 06:44:55 marcm Exp $
+# $OpenBSD: Makefile,v 1.10 2005/12/19 18:41:51 marcm Exp $
 
 COMMENT=		"a SOAP implementation in C"
 
 DISTNAME=		libsoup-2.2.5
+PACKAGENAME=		${DISTNAME}p0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
@@ -41,6 +42,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Mssl}
 CONFIGURE_ARGS+=	--enable-ssl
 LIB_DEPENDS+=		gnutls.12::security/gnutls
+WANTLIB+=		gcrypt gpg-error
 .else
 CONFIGURE_ARGS+=	--disable-ssl
 .endif
