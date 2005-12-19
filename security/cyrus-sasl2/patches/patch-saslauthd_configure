@@ -1,6 +1,6 @@
-$OpenBSD: patch-saslauthd_configure,v 1.9 2005/12/18 10:37:26 jakob Exp $
---- saslauthd/configure.orig	Sun May 15 15:59:04 2005
-+++ saslauthd/configure	Thu Jun  9 07:18:10 2005
+$OpenBSD: patch-saslauthd_configure,v 1.10 2005/12/19 18:11:27 jakob Exp $
+--- saslauthd/configure.orig	Sun May 15 07:59:04 2005
++++ saslauthd/configure	Mon Dec 19 15:56:57 2005
 @@ -753,10 +753,10 @@ ac_env_CC_set=${CC+set}
  ac_env_CC_value=$CC
  ac_cv_env_CC_set=${CC+set}
@@ -16,6 +16,24 @@ $OpenBSD: patch-saslauthd_configure,v 1.9 2005/12/18 10:37:26 jakob Exp $
  ac_env_LDFLAGS_set=${LDFLAGS+set}
  ac_env_LDFLAGS_value=$LDFLAGS
  ac_cv_env_LDFLAGS_set=${LDFLAGS+set}
+@@ -5612,7 +5612,7 @@ if test "${ac_cv_lib_resolv_res_search+s
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lresolv  $LIBS"
++# LIBS="-lresolv  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -5665,7 +5665,7 @@ if test $ac_cv_lib_resolv_res_search = y
+ #define HAVE_LIBRESOLV 1
+ _ACEOF
+ 
+-  LIBS="-lresolv $LIBS"
++# LIBS="-lresolv $LIBS"
+ 
+ fi
+ 
 @@ -6377,6 +6377,9 @@ if test "$gssapi" != no; then
      *-*-aix*)
        platform=__aix
@@ -26,6 +44,24 @@ $OpenBSD: patch-saslauthd_configure,v 1.9 2005/12/18 10:37:26 jakob Exp $
      *)
        { echo "$as_me:$LINENO: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&5
  echo "$as_me: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&2;}
+@@ -6702,7 +6705,7 @@ if test "${ac_cv_lib_resolv_res_search+s
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lresolv  $LIBS"
++#LIBS="-lresolv  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -6755,7 +6758,7 @@ if test $ac_cv_lib_resolv_res_search = y
+ #define HAVE_LIBRESOLV 1
+ _ACEOF
+ 
+-  LIBS="-lresolv $LIBS"
++# LIBS="-lresolv $LIBS"
+ 
+ fi
+ 
 @@ -7128,12 +7131,12 @@ fi
    fi
  
@@ -43,3 +79,30 @@ $OpenBSD: patch-saslauthd_configure,v 1.9 2005/12/18 10:37:26 jakob Exp $
    elif test "$gss_impl" = "cybersafe03"; then
  # Version of CyberSafe with two libraries
      CPPFLAGS="$CPPFLAGS -D$platform -I${gssapi}/appsec-sdk/include"
+@@ -7323,7 +7326,7 @@ if test "${ac_cv_lib_resolv_res_search+s
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lresolv  $LIBS"
++#LIBS="-lresolv  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -9568,7 +9571,7 @@ if test "${ac_cv_lib_resolv_inet_aton+se
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lresolv  $LIBS"
++#LIBS="-lresolv  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -9621,7 +9624,7 @@ if test $ac_cv_lib_resolv_inet_aton = ye
+ #define HAVE_LIBRESOLV 1
+ _ACEOF
+ 
+-  LIBS="-lresolv $LIBS"
++# LIBS="-lresolv $LIBS"
+ 
+ fi
+ 
