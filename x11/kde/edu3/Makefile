@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2005/11/29 14:11:33 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2005/12/19 09:54:29 espie Exp $
 
 COMMENT=		"K Desktop Environment, edutainment"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.0
 DISTNAME=		kdeedu-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION?=	3.5
 FLAVORS=debug
 
@@ -19,5 +19,8 @@ WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg katepartinterfaces \
 		artsflow vorbis ogg esd mcop \
 		intl iconv artsflow_idl audiofile mad vorbisfile vorbisenc \
 		gthread-2.0.800.0 gmodule-2.0.800.0 glib-2.0.800.0
+
+USE_LIBTOOL=Yes
+LIBTOOL_FLAGS=--tag=disable-static
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2005/11/30 11:22:09 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2005/12/19 09:54:29 espie Exp $
 
 COMMENT=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
@@ -12,10 +12,10 @@ MODKDE_VERSION=		3.5
 FLAVORS=debug
 SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-kpov -kamera -sane
-PKGNAME=${DISTNAME}
-PKGNAME-kamera=kamera-${VERSION}
-PKGNAME-kpov=kpovmodeller-${VERSION}
-PKGNAME-sane=ksane-${VERSION}
+PKGNAME=${DISTNAME}p0
+PKGNAME-kamera=kamera-${VERSION}p0
+PKGNAME-kpov=kpovmodeller-${VERSION}p0
+PKGNAME-sane=ksane-${VERSION}p0
 SUBPACKAGE?=
 
 BUILD_DEPENDS+=	::print/teTeX/base \
@@ -68,6 +68,8 @@ post-patch:
 SUP_PATCH_LIST=	gcc-*
 .endif
 
+USE_LIBTOOL=Yes
+LIBTOOL_FLAGS=--tag=disable-static
 CONFIGURE_ENV+=TIFF_LIBS='-L${LOCALBASE}/lib -ltiff -ljpeg -lz' \
 		TIFF_CFLAGS='-I${LOCALBASE}/include'
 

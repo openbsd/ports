@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2005/11/29 14:12:59 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2005/12/19 09:54:29 espie Exp $
 
 COMMENT= 		"K Desktop Environment, additional artwork"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.5.0
 DISTNAME=		kdeartwork-${VERSION}
+PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION=		3.5
 
 LIB_DEPENDS=kdecore.6,DCOP,kdefx,kdesu,kdeui,kio,kparts,kscreensaver::x11/kde/libs3 \
@@ -21,4 +22,6 @@ WANTLIB=	GL GLU ICE SM X11 Xext Xrender Xt art_lgpl_2 artsflow \
 		kwalletclient m mad mcop ogg ossaudio png pthread qtmcop \
 		soundserver_idl stdc++ util vorbis vorbisenc vorbisfile z
 
+USE_LIBTOOL=Yes
+LIBTOOL_FLAGS=--tag=disable-static
 .include <bsd.port.mk>
