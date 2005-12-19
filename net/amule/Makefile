@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2005/10/07 16:20:34 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2005/12/19 21:26:53 fgsch Exp $
 
 COMMENT=	"another eMule p2p client"
 
 DISTNAME=	aMule-2.0.3
-PKGNAME=	${DISTNAME:L}p1
+PKGNAME=	${DISTNAME:L}p2
 CATEGORIES=	net
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=amule/}
