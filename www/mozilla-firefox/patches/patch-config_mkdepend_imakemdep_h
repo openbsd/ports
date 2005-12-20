@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_mkdepend_imakemdep_h,v 1.1 2004/03/01 07:14:48 pvalchev Exp $
---- config/mkdepend/imakemdep.h.orig	1998-09-05 06:22:25.000000000 +0200
-+++ config/mkdepend/imakemdep.h	2004-02-28 00:46:55.000000000 +0100
-@@ -277,6 +277,9 @@ char *cpp_argv[ARGUMENTS] = {
+$OpenBSD: patch-config_mkdepend_imakemdep_h,v 1.2 2005/12/20 23:44:00 bernd Exp $
+--- config/mkdepend/imakemdep.h.orig	Tue Apr 20 23:38:14 2004
++++ config/mkdepend/imakemdep.h	Sat Sep 10 09:47:31 2005
+@@ -440,6 +440,9 @@ char *cpp_argv[ARGUMENTS] = {
  # ifdef __i386__
  	"-D__i386__",
  # endif

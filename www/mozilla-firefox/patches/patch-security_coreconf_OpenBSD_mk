@@ -1,7 +1,7 @@
-$OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.3 2005/04/09 15:43:47 wilfried Exp $
---- security/coreconf/OpenBSD.mk.orig	Tue Sep 16 22:50:50 2003
-+++ security/coreconf/OpenBSD.mk	Wed Apr  6 21:19:25 2005
-@@ -35,12 +35,12 @@
+$OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.4 2005/12/20 23:44:00 bernd Exp $
+--- security/coreconf/OpenBSD.mk.orig	Sun Apr 25 17:02:17 2004
++++ security/coreconf/OpenBSD.mk	Sat Sep 10 09:47:32 2005
+@@ -37,12 +37,12 @@
  
  include $(CORE_DEPTH)/coreconf/UNIX.mk
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.3 2005/04/09 15:43:47 wilfried 
  ifeq ($(CPU_ARCH),i386)
  OS_REL_CFLAGS		= -Di386
  CPU_ARCH		= x86
-@@ -53,7 +53,7 @@ OS_LIBS			+= -pthread
+@@ -55,7 +55,7 @@ OS_LIBS			+= -pthread
  DSO_LDOPTS		+= -pthread
  endif
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.3 2005/04/09 15:43:47 wilfried 
  
  OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -ansi -Wall -pipe -DOPENBSD
  
-@@ -62,7 +62,7 @@ OS_LIBS			= 
+@@ -64,7 +64,7 @@ OS_LIBS			= 
  ARCH			= openbsd
  
  DSO_CFLAGS		= -fPIC -DPIC

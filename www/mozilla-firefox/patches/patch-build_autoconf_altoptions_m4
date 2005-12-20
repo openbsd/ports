@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_autoconf_altoptions_m4,v 1.1.1.1 2004/02/15 19:37:25 wilfried Exp $
---- build/autoconf/altoptions.m4.orig	2001-10-29 23:59:28.000000000 +0100
-+++ build/autoconf/altoptions.m4	2003-12-12 12:41:29.000000000 +0100
-@@ -127,14 +127,3 @@ echo "
+$OpenBSD: patch-build_autoconf_altoptions_m4,v 1.2 2005/12/20 23:44:00 bernd Exp $
+--- build/autoconf/altoptions.m4.orig	Sun Apr 18 16:17:09 2004
++++ build/autoconf/altoptions.m4	Sat Sep 10 09:47:31 2005
+@@ -143,14 +143,3 @@ echo "
          [$3]
      fi
  ])

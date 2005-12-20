@@ -1,0 +1,11 @@
+$OpenBSD: patch-browser_locales_en-US_chrome_branding_brand_dtd,v 1.1 2005/12/20 23:44:00 bernd Exp $
+--- browser/locales/en-US/chrome/branding/brand.dtd.orig	Thu Dec  1 18:34:19 2005
++++ browser/locales/en-US/chrome/branding/brand.dtd	Thu Dec  1 18:35:24 2005
+@@ -1,5 +1,5 @@
+-<!ENTITY  brandShortName        "Deer Park">
+-<!ENTITY  brandFullName         "Deer Park">            
++<!ENTITY  brandShortName        "Firefox Community Edition">
++<!ENTITY  brandFullName         "Firefox Community Edition">            
+ <!ENTITY  vendorShortName       "Mozilla">
+ 
+ <!ENTITY  releaseURL            "http://www.mozilla.org/">
