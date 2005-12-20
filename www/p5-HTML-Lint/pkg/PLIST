@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/12/20 22:06:00 sturm Exp $
+bin/weblint
+${P5SITE}/HTML/
+${P5SITE}/HTML/Lint/
+${P5SITE}/HTML/Lint.pm
+${P5SITE}/HTML/Lint/Error.pm
+${P5SITE}/HTML/Lint/HTML4.pm
+${P5SITE}/Test/
+${P5SITE}/Test/HTML/
+${P5SITE}/Test/HTML/Lint.pm
+@man man/man3p/HTML::Lint.3p
+@man man/man3p/HTML::Lint::Error.3p
+@man man/man3p/HTML::Lint::HTML4.3p
+@man man/man3p/Test::HTML::Lint.3p
