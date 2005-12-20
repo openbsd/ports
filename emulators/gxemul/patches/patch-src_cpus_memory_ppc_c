@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_cpus_memory_ppc_c,v 1.1 2005/12/20 08:06:02 pvalchev Exp $
+--- src/cpus/memory_ppc.c.orig	Mon Dec 19 23:00:42 2005
++++ src/cpus/memory_ppc.c	Mon Dec 19 23:00:55 2005
+@@ -57,11 +57,11 @@ int ppc_bat(struct cpu *cpu, uint64_t va
+ 
+ 	/*  4 instruction BATs, 4 data BATs...  */
+ 	for (i=0; i<8; i++) {
+-		regnr = SPR_IBAT0U + i * 2;
+ 		uint32_t upper = cpu->cd.ppc.spr[regnr];
+ 		uint32_t lower = cpu->cd.ppc.spr[regnr + 1];
+ 		uint32_t phys = lower & BAT_RPN, ebs = upper & BAT_EPI;
+ 		uint32_t mask = ((upper & BAT_BL) << 15) | 0x1ffff;
++		regnr = SPR_IBAT0U + i * 2;
+ 
+ 		/*  Instruction BAT, but not instruction lookup? Then skip.  */
+ 		if (i < 4 && !(flags & FLAG_INSTR))
