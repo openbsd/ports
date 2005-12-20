@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2004/05/16 09:21:08 xsa Exp $
+# $OpenBSD: Makefile,v 1.10 2005/12/20 17:40:18 steven Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"module to calculate SHA1 digests"
 
-VERSION=	2.10
-DISTNAME=	Digest-SHA1-${VERSION}
-PKGNAME=	p5-${DISTNAME}
+DISTNAME=	Digest-SHA1-2.10
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Digest/}
 
-MAINTAINER=	Jim Geovedi <jim@corebsd.or.id>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
 
 # Artistic licence
 PERMIT_PACKAGE_CDROM=	Yes
