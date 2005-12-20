@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2005/12/12 14:32:54 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2005/12/20 08:34:07 robert Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"ISO-C API and CLI for generating Universally Unique Identifiers"
 COMMENT-perl=	"UUID modules for Perl"
 
-VERSION=		1.3.1
+VERSION=		1.3.2
 DISTNAME=		uuid-${VERSION}
-FULLPKGNAME=		uuid-${VERSION}p0
+FULLPKGNAME=		uuid-${VERSION}
 FULLPKGNAME-perl= 	p5-UUID-${VERSION}
 CATEGORIES=		devel
 
