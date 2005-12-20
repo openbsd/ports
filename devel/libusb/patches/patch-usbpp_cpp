@@ -1,0 +1,11 @@
+$OpenBSD: patch-usbpp_cpp,v 1.1 2005/12/20 08:07:32 pvalchev Exp $
+--- usbpp.cpp.orig	Mon Dec 19 23:53:55 2005
++++ usbpp.cpp	Mon Dec 19 23:54:05 2005
+@@ -8,6 +8,7 @@
+  */
+ 
+ #include <errno.h>
++#include <stdio.h>
+ #include <cstdlib>
+ 
+ //remove after debugging
