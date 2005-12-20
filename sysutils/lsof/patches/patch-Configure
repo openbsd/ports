@@ -1,0 +1,37 @@
+$OpenBSD: patch-Configure,v 1.19 2005/12/20 08:13:46 pvalchev Exp $
+--- Configure.orig	Mon May 16 19:06:05 2005
++++ Configure	Mon Dec 19 23:57:01 2005
+@@ -3357,16 +3357,20 @@ return(0); }
+ 	LSOF_TSTBIGF=" "
+ 	LSOF_VERS=3070
+ 	;;
++      3.8*)
++	LSOF_TSTBIGF=" "
++	LSOF_VERS=3080
++	;;
+       3*)
+ 	LSOF_TSTBIGF=" "
+-	LSOF_VERS=3070
++	LSOF_VERS=3080
+ 	echo "!!!WARNING!!!  Unsupported OpenBSD 3.x version: $LSOF_VSTR"
+-	echo "!!!WARNING!!!  Configuring for OpenBSD 3.7"
++	echo "!!!WARNING!!!  Configuring for OpenBSD 3.8"
+ 	;;
+       *)
+ 	echo "Unknown OpenBSD release: $LSOF_VSTR"
+-	echo Assuming OpenBSD 3.7
+-	LSOF_VERS=3070
++	echo Assuming OpenBSD 3.8
++	LSOF_VERS=3080
+ 	;;
+       esac	# }
+     fi	# }
+@@ -3374,7 +3378,7 @@ return(0); }
+     # Test for legal OpenBSD version.
+ 
+     case $LSOF_VERS in	# {
+-    1020|2050|2060|2070|2080|2090|3000|3010|3020|3030|3040|3050|3060|3070)
++    1020|2050|2060|2070|2080|2090|3000|3010|3020|3030|3040|3050|3060|3070|3080)
+       ;;
+     *)
+       echo "Unknown OpenBSD version: $LSOF_VERS"
