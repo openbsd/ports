@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_slideshow_c,v 1.1 2005/12/20 06:08:17 pvalchev Exp $
+--- src/slideshow.c.orig	Mon Dec 19 22:28:52 2005
++++ src/slideshow.c	Mon Dec 19 22:29:04 2005
+@@ -353,8 +353,8 @@ feh_action_run(feh_file * file, char *ac
+   D_ENTER(4);
+   if (action)
+   {
+-    D(3, ("Running action %s\n", action));
+     char *sys;
++    D(3, ("Running action %s\n", action));
+     sys = feh_printf(action, file);
+ 
+     if (opt.verbose && !opt.list && !opt.customlist)

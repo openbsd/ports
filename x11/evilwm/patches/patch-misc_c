@@ -1,0 +1,23 @@
+$OpenBSD: patch-misc_c,v 1.1 2005/12/20 06:05:03 pvalchev Exp $
+--- misc.c.orig	Mon Dec 19 22:26:02 2005
++++ misc.c	Mon Dec 19 22:26:48 2005
+@@ -34,8 +34,8 @@ void spawn(const char *const cmd[]) {
+ }
+ 
+ void handle_signal(int signo) {
+-	(void)signo;  /* unused */
+ 	int i;
++	(void)signo;  /* unused */
+ 	/* SIGCHLD check no longer necessary */
+ 	/* Quit Nicely */
+ 	quitting = 1;
+@@ -52,8 +52,8 @@ void handle_signal(int signo) {
+ }
+ 
+ int handle_xerror(Display *dsply, XErrorEvent *e) {
+-	(void)dsply;  /* unused */
+ 	Client *c = find_client(e->resourceid);
++	(void)dsply;  /* unused */
+ 
+ 	/* If this error actually occurred while setting up the new
+ 	 * window, best let make_new_client() know not to bother */
