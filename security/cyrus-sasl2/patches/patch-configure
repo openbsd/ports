@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.8 2005/12/18 10:37:26 jakob Exp $
---- configure.orig	Sun May 15 15:58:28 2005
-+++ configure	Thu Jun  9 07:12:35 2005
+$OpenBSD: patch-configure,v 1.9 2005/12/20 05:57:19 pvalchev Exp $
+--- configure.orig	Sat May 14 23:58:28 2005
++++ configure	Mon Dec 19 18:27:04 2005
+@@ -3944,7 +3944,7 @@ _ACEOF
+ fi
+ 
+ if test "$ac_cv_c_compiler_gnu" = yes; then
+-  CFLAGS="-Wall -W ${CFLAGS}"
++  CFLAGS="-Wall -W -fPIC ${CFLAGS}"
+ fi
+ 
+ 
 @@ -9447,7 +9447,7 @@ if test $ac_cv_lib_resolv_res_search = y
  #define HAVE_LIBRESOLV 1
  _ACEOF
