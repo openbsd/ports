@@ -1,0 +1,12 @@
+$OpenBSD: patch-sim_ether_c,v 1.6 2005/12/21 02:24:56 fgsch Exp $
+--- sim_ether.c.orig	Wed Dec 21 02:13:18 2005
++++ sim_ether.c	Wed Dec 21 02:13:57 2005
+@@ -656,7 +656,7 @@ t_stat eth_open(ETH_DEV* dev, char* name
+     /* are they trying to use device description? */
+     savname = eth_getname_bydesc(name, temp);
+     if (savname == 0) /* didn't translate */
+-      return SCPE_OPENERR;
++      savname = name;
+   }
+ 
+   /* attempt to connect device */
