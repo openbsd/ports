@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2005/12/01 11:23:42 bernd Exp $
+# $OpenBSD: Makefile,v 1.23 2005/12/21 14:43:58 espie Exp $
 
 COMMENT=	"character set conversion library"
 
 DISTNAME=	libiconv-1.9.2
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	converters devel
 MASTER_SITES=	${MASTER_SITE_GNU:=libiconv/}
 
@@ -27,6 +27,8 @@ CONFIGURE_ARGS+= --enable-static \
 		 --enable-extra-encodings \
 		 --disable-nls \
 		 --mandir=${PREFIX}/man
+
+USE_LIBTOOL=Yes
 
 .include <bsd.port.mk>
 
