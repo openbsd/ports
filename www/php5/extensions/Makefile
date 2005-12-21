@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2005/09/16 09:51:28 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2005/12/21 15:42:06 robert Exp $
 
-FULLPKGNAME=	php5-extensions-${V}p0
+FULLPKGNAME=	php5-extensions-${V}
 COMMENT=	"informational package about PHP5 extensions"
 
 MULTI_PACKAGES=
@@ -73,16 +73,6 @@ CONFIGURE_ARGS+=	--disable-dbase
 MULTI_PACKAGES+=	-dbase
 COMMENT-dbase=		"dBase database access extensions for php5"
 CONFIGURE_ARGS+=	--enable-dbase=shared
-.endif
-
-# dbx
-PSEUDO_FLAVORS+=	no_dbx
-.if ${FLAVOR:L:Mno_dbx}
-CONFIGURE_ARGS+=	--disable-dbx
-.else
-MULTI_PACKAGES+=	-dbx
-COMMENT-dbx=		"dbx database abstraction interface for php5"
-CONFIGURE_ARGS+=	--enable-dbx=shared
 .endif
 
 # filepro
@@ -316,7 +306,7 @@ FULLPKGNAME-xsl=	php5-xsl-${V}p1
 
 .for i in ${MULTI_PACKAGES}
 .if !defined(FULLPKGNAME${i})
-FULLPKGNAME${i}=	php5${i}-${V}p0
+FULLPKGNAME${i}=	php5${i}-${V}
 .endif
 .endfor
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/09/14 15:44:19 robert Exp $
+# $OpenBSD: Makefile,v 1.11 2005/12/21 15:42:06 robert Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -7,6 +7,8 @@ COMMENT=	"server-side HTML-embedded scripting language"
 COMMENT-pear=	"base classes for common PHP tasks"
 PKGNAME=	php5-core-${V}
 FULLPKGNAME-pear= php5-pear-${V}
+DISTFILES=	php-${V}.tar.gz \
+			pear-core-20051215.tar.gz:0
 
 CONFIGURE_ARGS+= --with-apxs=/usr/sbin/apxs \
 		--without-mysql \
@@ -55,14 +57,17 @@ LIB_DEPENDS=	xml2.8::textproc/libxml
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/${APACHE_MODULE_SUBDIR}
+	@perl -p -i.orig -e "s,OPENBSD_PEAR_ROOT,'${CHROOT_DIR}/pear',g" \
+		${WRKDIR}/pear-core/PEAR/Config.php ${WRKDIR}/pear-core/install-pear.php
+	@cd ${WRKDIR}/pear-core && ${WRKSRC}/sapi/cli/php -n make-installpear-nozlib-phar.php
+	@cp ${WRKDIR}/pear-core/install-pear-nozlib.phar ${WRKSRC}/pear/
 
 INSTALL_TARGET= install-pear install-headers install-build install-programs
-FAKE_FLAGS= 	INSTALL_ROOT=${DESTDIR}
+FAKE_FLAGS=     INSTALL_ROOT=${DESTDIR}
 
 post-patch:
 	@perl -p -i.orig -e "s,OPENBSD_PEAR_ROOT,'${CHROOT_DIR}/pear',g" \
-		${WRKSRC}/pear/PEAR/Config.php ${WRKSRC}/scripts/phpize.in \
-		${WRKSRC}/scripts/php-config.in
+		${WRKSRC}/scripts/phpize.in ${WRKSRC}/scripts/php-config.in 
 
 post-install:
 	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp5.so ${PREFIX}/${APACHE_MODULE_SUBDIR}
