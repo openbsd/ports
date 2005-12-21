@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.8 2005/06/19 03:47:25 david Exp $
+$OpenBSD: patch-makefile,v 1.9 2005/12/21 01:32:29 fgsch Exp $
 --- makefile.orig	Thu Apr  7 16:56:36 2005
 +++ makefile	Sat Jun 18 03:49:17 2005
 @@ -3,28 +3,29 @@
@@ -27,7 +27,7 @@ $OpenBSD: patch-makefile,v 1.8 2005/06/19 03:47:25 david Exp $
 +#ifeq ($(USE_NETWORK),)
 +#else
 +#NETWORK_OPT = -DUSE_NETWORK -isystem /usr/local/include /usr/local/lib/libpcap.a
-+NETWORK_OPT = -DUSE_NETWORK -DNEED_PCAP_SENDPACKET -DDONT_USE_PCAP_FINDALLDEVS -lpcap
++NETWORK_OPT = -DUSE_NETWORK -DNEED_PCAP_SENDPACKET -lpcap
 +#endif
 +#else
  #Win32 Environments
