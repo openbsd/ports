@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2005/12/21 07:58:32 jolan Exp $
+--- Makefile.in.orig	Wed Dec 21 01:47:20 2005
++++ Makefile.in	Wed Dec 21 01:47:37 2005
+@@ -141,6 +141,7 @@ SRC = \
+ # Source code to the test files.
+ #
+ TESTSRC = \
++  $(TOP)/src/test-util.c \
+   $(TOP)/src/btree.c \
+   $(TOP)/src/func.c \
+   $(TOP)/src/os.c \

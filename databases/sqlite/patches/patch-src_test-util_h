@@ -1,0 +1,10 @@
+$OpenBSD: patch-src_test-util_h,v 1.1 2005/12/21 07:58:32 jolan Exp $
+--- src/test-util.h.orig	Wed Dec 21 01:47:37 2005
++++ src/test-util.h	Wed Dec 21 01:47:37 2005
+@@ -0,0 +1,6 @@
++#ifndef TEST_UTIL_H
++#define TEST_UTIL_H
++
++extern void *sqliteTextToPtr(const char *z);
++
++#endif /* TEST_UTIL_H */
