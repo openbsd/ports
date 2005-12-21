@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2005/11/03 23:05:01 jolan Exp $
+# $OpenBSD: Makefile,v 1.10 2005/12/21 03:58:11 jolan Exp $
 
 COMMENT=	"Embedded SQL implementation"
-DISTNAME=	sqlite-2.8.16
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	sqlite-2.8.17
 CATEGORIES=	databases
 MASTER_SITES=	${HOMEPAGE}
 
