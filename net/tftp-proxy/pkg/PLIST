@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/12/21 04:00:28 jolan Exp $
+libexec/tftp-proxy
+@man man/man8/tftp-proxy.8
