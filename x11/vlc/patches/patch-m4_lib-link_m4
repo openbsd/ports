@@ -1,36 +1,27 @@
-$OpenBSD: patch-aclocal_m4,v 1.3 2005/07/31 19:07:11 jolan Exp $
---- aclocal.m4.orig	Sat Jun 25 23:44:01 2005
-+++ aclocal.m4	Sun Jul 10 12:12:03 2005
-@@ -1000,7 +1000,7 @@ AC_DEFUN([VLC_LIBRARY_SUFFIX], [
-     darwin*)
-       LIBEXT=".dylib"
-       ;;
--    *mingw32* | *cygwin* | *wince* | *mingwce* | *pe*)
-+    *mingw32* | *cygwin* | *wince* | *mingwce* )
-       LIBEXT=".dll"
-       ;;
-     hpux*)
-@@ -2287,9 +2287,9 @@ AC_DEFUN([AC_LIB_LINKFLAGS_BODY],
+$OpenBSD: patch-m4_lib-link_m4,v 1.1 2005/12/22 03:45:36 jolan Exp $
+--- m4/lib-link.m4.orig	Sun Dec 11 15:36:12 2005
++++ m4/lib-link.m4	Tue Dec 13 21:39:07 2005
+@@ -198,9 +198,9 @@ AC_DEFUN([AC_LIB_LINKFLAGS_BODY],
            found_so=
            found_a=
            if test $use_additional = yes; then
 -            if test -n "$shlibext" && test -f "$additional_libdir/lib$name.$shlibext"; then
-+            if test -n "$shlibext" && test "`echo $additional_libdir/lib$name.$shlibext*`" != "$additional_libdir/lib$name.$shlibext*"; then
++	    if test -n "$shlibext" && test "`echo $additional_libdir/lib$name.$shlibext*`" != "$additional_libdir/lib$name.$shlibext*"; then
                found_dir="$additional_libdir"
 -              found_so="$additional_libdir/lib$name.$shlibext"
-+              found_so="-l$name"
++	      found_so="-l$name"
                if test -f "$additional_libdir/lib$name.la"; then
                  found_la="$additional_libdir/lib$name.la"
                fi
-@@ -2309,9 +2309,9 @@ AC_DEFUN([AC_LIB_LINKFLAGS_BODY],
+@@ -220,9 +220,9 @@ AC_DEFUN([AC_LIB_LINKFLAGS_BODY],
                case "$x" in
                  -L*)
                    dir=`echo "X$x" | sed -e 's/^X-L//'`
 -                  if test -n "$shlibext" && test -f "$dir/lib$name.$shlibext"; then
-+                  if test -n "$shlibext" && test "`echo $dir/lib$name.$shlibext*`" != "$dir/lib$name.$shlibext*"; then
++		  if test -n "$shlibext" && test "`echo $dir/lib$name.$shlibext*`" != "$dir/lib$name.$shlibext*"; then
                      found_dir="$dir"
 -                    found_so="$dir/lib$name.$shlibext"
-+                    found_so="-l$name"
++		    found_so="-l$name"
                      if test -f "$dir/lib$name.la"; then
                        found_la="$dir/lib$name.la"
                      fi

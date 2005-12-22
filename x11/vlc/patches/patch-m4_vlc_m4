@@ -1,0 +1,21 @@
+$OpenBSD: patch-m4_vlc_m4,v 1.1 2005/12/22 03:45:36 jolan Exp $
+--- m4/vlc.m4.orig	Sun Dec 11 15:36:12 2005
++++ m4/vlc.m4	Fri Dec 16 10:58:32 2005
+@@ -139,7 +139,7 @@ AC_DEFUN([VLC_LIBRARY_SUFFIX], [
+     darwin*)
+       LIBEXT=".dylib"
+       ;;
+-    *mingw32* | *cygwin* | *wince* | *mingwce* | *pe*)
++    *mingw32* | *cygwin* | *wince* | *mingwce*)
+       LIBEXT=".dll"
+       ;;
+     hpux*)
+@@ -157,7 +157,7 @@ AC_DEFUN([VLC_SYMBOL_PREFIX], [
+   AC_MSG_CHECKING(for prefix to exported symbols)
+   SYMPREF=""
+   case "${target_os}" in
+-    darwin* | *mingw32* | *cygwin* | *wince* | *mingwce* | *pe*)
++    darwin* | *mingw32* | *cygwin* | *wince* | *mingwce*)
+       SYMPREF="_"
+       ;;
+   esac
