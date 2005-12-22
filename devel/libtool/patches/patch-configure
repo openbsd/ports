@@ -1,7 +1,21 @@
-$OpenBSD: patch-configure,v 1.1 2005/12/16 23:03:35 espie Exp $
---- configure.orig	Thu Dec 15 19:34:34 2005
-+++ configure	Thu Dec 15 19:34:56 2005
-@@ -8646,6 +8646,7 @@ nto-qnx*)
+$OpenBSD: patch-configure,v 1.2 2005/12/22 11:36:00 espie Exp $
+--- configure.orig	Wed Aug 31 20:54:29 2005
++++ configure	Sun Dec 18 15:26:14 2005
+@@ -8240,6 +8240,13 @@ if test "$GCC" = yes; then
+ else
+   sys_lib_search_path_spec="/lib /usr/lib /usr/local/lib"
+ fi
++tmp="$sys_lib_search_path_spec"
++sys_lib_search_path_spec=""
++for i in $tmp
++do
++    test -d $i && sys_lib_search_path_spec="$sys_lib_search_path_spec $i"
++done
++
+ need_lib_prefix=unknown
+ hardcode_into_libs=no
+ 
+@@ -8646,6 +8653,7 @@ nto-qnx*)
  
  openbsd*)
    version_type=sunos

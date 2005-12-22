@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltmain_in,v 1.15 2005/12/16 23:03:35 espie Exp $
+$OpenBSD: patch-ltmain_in,v 1.16 2005/12/22 11:36:00 espie Exp $
 --- ltmain.in.orig	Wed Aug 31 20:25:28 2005
-+++ ltmain.in	Thu Dec 15 19:09:43 2005
++++ ltmain.in	Mon Dec 19 09:47:01 2005
 @@ -352,6 +352,8 @@ func_extract_archives ()
  # Darwin sucks
  eval std_shrext=\"$shrext_cmds\"
@@ -120,7 +120,7 @@ $OpenBSD: patch-ltmain_in,v 1.15 2005/12/16 23:03:35 espie Exp $
  	  continue
  	fi # $pass = conv
  
-@@ -2445,8 +2480,12 @@ EOF
+@@ -2445,11 +2480,15 @@ EOF
  	fi
  
  	link_static=no # Whether the deplib will be linked statically
@@ -133,7 +133,11 @@ $OpenBSD: patch-ltmain_in,v 1.15 2005/12/16 23:03:35 espie Exp $
 +	   { test "$use_static_libs" = no || test -z "$old_library"; }; then
  	  if test "$installed" = no; then
  	    notinst_deplibs="$notinst_deplibs $lib"
- 	    need_relink=yes
+-	    need_relink=yes
++	    test -z "$DESTDIR" && need_relink=yes
+ 	  fi
+ 	  # This is a shared library
+ 
 @@ -2644,7 +2683,7 @@ EOF
  	    add_dir=
  	    add=
