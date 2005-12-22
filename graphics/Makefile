@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2005/11/03 19:53:55 alek Exp $
+# $OpenBSD: Makefile,v 1.153 2005/12/22 22:08:44 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -92,6 +92,7 @@
      SUBDIR += mplex
      SUBDIR += netpbm
      SUBDIR += openexr
+     SUBDIR += p5-Chart
      SUBDIR += p5-GD
      SUBDIR += p5-GD-Barcode
      SUBDIR += p5-GD-Graph
