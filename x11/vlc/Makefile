@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2005/12/22 03:45:36 jolan Exp $
+# $OpenBSD: Makefile,v 1.29 2005/12/22 04:45:38 jolan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"videolan client; multimedia player"
 V=		0.8.4a
 DISTNAME=	vlc-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -88,7 +89,6 @@ CONFIGURE_ARGS+=--disable-pth \
 		--disable-testsuite \
 		--disable-hal \
 		--disable-optimizations \
-		--disable-altivec \
 		--disable-gnutls \
 		--disable-dshow \
 		--disable-smb \
@@ -160,6 +160,14 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
 FLAVORS=	no_dvd
 FLAVOR?=
+
+.if ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ARGS+=--enable-altivec
+PKG_ARGS+=-Daltivec=1
+.else
+CONFIGURE_ARGS+=--disable-altivec
+PKG_ARGS+=-Daltivec=0
+.endif
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=-Dx86opt=1
