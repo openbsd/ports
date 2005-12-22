@@ -1,11 +1,11 @@
-#	$OpenBSD: Makefile,v 1.20 2005/10/24 05:03:48 fgsch Exp $
+# $OpenBSD: Makefile,v 1.21 2005/12/22 23:21:50 steven Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"module to interface with the GD graphics library"
 
-DISTNAME=	GD-1.41
-PKGNAME=	p5-${DISTNAME}p3
+DISTNAME=	GD-2.30
+PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	graphics perl5
 
 HOMEPAGE=	http://stein.cshl.org/WWW/software/GD
@@ -17,18 +17,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	freetype jpeg m png z
-
-USE_X11=	Yes
+WANTLIB=	fontconfig freetype jpeg m png z
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=GD/}
 
-LIB_DEPENDS=	gd.18::graphics/gd
+LIB_DEPENDS=	gd.20.28::graphics/gd
+
+MODULES=	converters/libiconv
+
+USE_X11=	Yes
 
 CONFIGURE_STYLE= perl
-
-post-patch:
-	@perl -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g;" \
-	    -e "s,%%X11BASE%%,${X11BASE},g" ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

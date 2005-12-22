@@ -1,11 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/15 00:50:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/12/22 23:21:50 steven Exp $
+bin/bdf2gdfont.pl
 ${P5ARCH}/
+${P5ARCH}/GD/
 ${P5ARCH}/GD.pm
+${P5ARCH}/GD/Image.pm
+${P5ARCH}/GD/Polygon.pm
+${P5ARCH}/GD/Polyline.pm
+${P5ARCH}/GD/Simple.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/GD/
 ${P5ARCH}/auto/GD/GD.bs
 ${P5ARCH}/auto/GD/GD.so
 ${P5ARCH}/auto/GD/autosplit.ix
-@comment ${P5ARCH}/patch_gd.pl
 ${P5ARCH}/qd.pl
+@man man/man1/bdf2gdfont.pl.1
 @man man/man3p/GD.3p
+@man man/man3p/GD::Image.3p
+@man man/man3p/GD::Polygon.3p
+@man man/man3p/GD::Polyline.3p
+@man man/man3p/GD::Simple.3p
