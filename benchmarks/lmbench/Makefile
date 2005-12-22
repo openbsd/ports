@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/11/21 18:01:03 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2005/12/22 22:38:52 sturm Exp $
 
 COMMENT=	"system performance measurement"
 DISTNAME=	lmbench
@@ -57,6 +57,6 @@ do-install:
 
 # Fix packaging for non-root
 post-install:
-	@chmod -R a+rX * ${PREFIX}/lib/lmbench
+	@chmod -R a+rX ${PREFIX}/lib/lmbench
 
 .include <bsd.port.mk>
