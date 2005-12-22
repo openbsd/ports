@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/12/12 13:42:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2005/12/22 12:21:44 steven Exp $
 %%SHARED%%
 bin/guile
 bin/guile-config
@@ -218,3 +218,4 @@ share/guile/1.6/srfi/srfi-4.scm
 share/guile/1.6/srfi/srfi-6.scm
 share/guile/1.6/srfi/srfi-8.scm
 share/guile/1.6/srfi/srfi-9.scm
+share/guile/slib

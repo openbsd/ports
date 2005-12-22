@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2005/12/12 13:42:21 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2005/12/22 12:21:44 steven Exp $
 
 COMMENT=	"GNU's Ubiquitous Intelligent Language for Extension"
 
 DISTNAME=	guile-1.6.7
-PKGNAME=	$(DISTNAME)p1
+PKGNAME=	$(DISTNAME)p2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU:=guile/}
 
@@ -25,5 +25,6 @@ USE_GMAKE=		Yes
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/aclocal
 	${INSTALL_DATA} ${WRKSRC}/guile-config/qthreads.m4 ${PREFIX}/share/aclocal
+	@cd ${PREFIX}/share/guile && ln -s ../slib
 
 .include <bsd.port.mk>
