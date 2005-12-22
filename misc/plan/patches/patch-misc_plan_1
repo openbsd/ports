@@ -1,0 +1,21 @@
+$OpenBSD: patch-misc_plan_1,v 1.1 2005/12/22 08:33:34 mbalmer Exp $
+--- misc/plan.1.orig	Wed Aug 28 22:19:41 2002
++++ misc/plan.1	Wed Dec 21 23:17:23 2005
+@@ -237,7 +237,7 @@ also contains "." as its last item.
+ .IP ~/.dayplan
+ Database with all public entries and configuration options of
+ .BR plan .
+-See plan(4) for details.
++See plan(5) for details.
+ .IP ~/.dayplan.priv
+ Database with all private entries.
+ .IP ~/.holiday
+@@ -316,7 +316,7 @@ front-end in this version. Refer to
+ for details.
+ 
+ .SS SEE ALSO
+-plan(4), netplan(8)
++plan(5), netplan(8)
+ 
+ .SS AUTHOR
+ Thomas Driemeyer <thomas@bitrot.de>

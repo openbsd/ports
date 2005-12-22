@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile,v 1.1 2005/08/10 07:53:44 mbalmer Exp $
+$OpenBSD: patch-src_Makefile,v 1.2 2005/12/22 08:33:34 mbalmer Exp $
 --- src/Makefile.orig	Sun Feb  6 20:11:34 2005
-+++ src/Makefile	Tue Aug  9 10:04:02 2005
++++ src/Makefile	Wed Dec 21 23:26:44 2005
 @@ -7,20 +7,21 @@
  # path and the #, or you'll get compile errors. DO NOT put blanks before and
  # after "=", this is parsed and rewritten by the configure script.
@@ -127,7 +127,7 @@ $OpenBSD: patch-src_Makefile,v 1.1 2005/08/10 07:53:44 mbalmer Exp $
 +	${BSD_INSTALL_DATA_DIR} $(DOCBASE)
 +	${BSD_INSTALL_DATA_DIR} $(EXAMPLES)
 +	${BSD_INSTALL_MAN_DIR} $(MAN)/man1
-+	${BSD_INSTALL_MAN_DIR} $(MAN)/man4
++	${BSD_INSTALL_MAN_DIR} $(MAN)/man5
 +	${BSD_INSTALL_MAN_DIR} $(MAN)/man8
 +	${BSD_INSTALL_PROGRAM} plan pland $(DIR)
 +	${BSD_INSTALL_PROGRAM} notifier netplan $(SBIN)
@@ -137,7 +137,7 @@ $OpenBSD: patch-src_Makefile,v 1.1 2005/08/10 07:53:44 mbalmer Exp $
 +	${BSD_INSTALL_DATA} ../README ../HISTORY $(HELP)
 +	${BSD_INSTALL_DATA} ../holiday/holiday_* $(EXAMPLES)
 +	${BSD_INSTALL_MAN} ../misc/plan.1 $(MAN)/man1
-+	${BSD_INSTALL_MAN} ../misc/plan.4 $(MAN)/man4
++	${BSD_INSTALL_MAN} ../misc/plan.4 $(MAN)/man5/plan.5
 +	${BSD_INSTALL_MAN} ../misc/netplan.1 $(MAN)/man8/netplan.8
 +
 +#	@echo ""

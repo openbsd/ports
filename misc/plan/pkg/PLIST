@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/08/10 07:53:44 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/12/22 08:33:34 mbalmer Exp $
 @newgroup _netplan:549
 @newuser _netplan:549:549:daemon:Plan:/nonexistent:/sbin/nologin
 bin/plan
 bin/pland
 @man man/man1/plan.1
-@man man/man4/plan.4
+@man man/man5/plan.5
 @man man/man8/netplan.8
 sbin/netplan
 sbin/notifier
