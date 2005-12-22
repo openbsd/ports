@@ -1,26 +1,26 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/27 13:28:34 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2005/12/22 07:32:03 steven Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"implements DSA using OpenSSL"
-
-VERSION=	0.11
-DISTNAME=	Crypt-OpenSSL-DSA-${VERSION}
+DISTNAME=	Crypt-OpenSSL-DSA-0.13
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
+
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@nedbsd.nl>
+
 HOMEPAGE=	http://perl-openssl.sourceforge.net/
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Crypt/}
 
-MAINTAINER=	Wesley Griffin <wgriffin@jtan.com>
-
+# Artistic/GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		crypto ssl
 
-RUN_DEPENDS=	:p5-Crypt-OpenSSL-Random->=0.03:security/p5-Crypt-OpenSSL-Random
-BUILD_DEPENDS=	${RUN_DEPENDS}
+MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Crypt/}
+
+REGRESS_DEPENDS=	::security/p5-Digest-SHA1
 
 CONFIGURE_STYLE=	perl
 
