@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2005/06/10 00:57:16 mjc Exp $
+# $OpenBSD: Makefile,v 1.13 2005/12/22 09:30:16 bernd Exp $
 
 COMMENT=		"fixed width fonts especially for long hacking sessions"
 
-DISTNAME=		terminus-font-4.14
+DISTNAME=		terminus-font-4.16
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.is-vn.bg/hamster/jimmy-en.html
