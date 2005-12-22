@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/05/30 17:58:08 canacar Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/12/22 07:35:20 canacar Exp $
 %%SHARED%%
 bin/gsl-config
 bin/gsl-histogram
@@ -8,7 +8,6 @@ include/gsl/gsl_blas.h
 include/gsl/gsl_blas_types.h
 include/gsl/gsl_block.h
 include/gsl/gsl_block_char.h
-include/gsl/gsl_block_complex.h
 include/gsl/gsl_block_complex_double.h
 include/gsl/gsl_block_complex_float.h
 include/gsl/gsl_block_complex_long_double.h
