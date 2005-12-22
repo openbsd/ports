@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2005/07/23 16:58:49 aanriot Exp $
---- Makefile.in.orig	Sun Jun 19 01:09:40 2005
-+++ Makefile.in	Sat Jul 23 11:56:12 2005
+$OpenBSD: patch-Makefile_in,v 1.2 2005/12/22 11:42:02 bernd Exp $
+--- Makefile.in.orig	Tue Nov 29 18:14:55 2005
++++ Makefile.in	Thu Dec 22 12:18:01 2005
 @@ -24,7 +24,7 @@ LIBREV = @LIBREV@
  # Targets
  MYHEADS = depot.h curia.h relic.h hovel.h cabin.h villa.h vista.h odeum.h
@@ -75,7 +75,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2005/07/23 16:58:49 aanriot Exp $
  	@printf '\n'
  	@printf '#================================================================\n'
  	@printf '# Thanks for using QDBM.\n'
-@@ -435,12 +435,12 @@ libqdbm.a : $(MYLIBOBJS)
+@@ -436,12 +436,12 @@ libqdbm.a : $(MYLIBOBJS)
  	$(AR) $(ARFLAGS) $@ $(MYLIBOBJS)
  
  

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2005/12/06 18:49:24 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2005/12/22 11:42:02 bernd Exp $
 
 COMMENT=		"high performance embedded database library"
 
-DISTNAME=		qdbm-1.8.35
+DISTNAME=		qdbm-1.8.36
 CATEGORIES=		databases
 
 HOMEPAGE=		http://qdbm.sourceforge.net
