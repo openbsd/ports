@@ -1,8 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/05 14:16:40 alek Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/23 14:38:31 bernd Exp $
 
 COMMENT=		"wrapper class around the pcre library"
 
 DISTNAME=		pcre++-0.9.5
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		pcre++ 0.0
+MODGNU_SHARED_LIBS=	pcre++ ''
+LIBpcre++_ALIAS=	pcre__
+
 CATEGORIES=		devel
 HOMEPAGE=		http://www.daemon.de/PCRE
 
@@ -24,6 +29,7 @@ CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GMAKE=      	Yes
+USE_LIBTOOL=		Yes
 
 do-regress:
 	@cd ${WRKBUILD}/test && ./test testinput

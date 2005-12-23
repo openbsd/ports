@@ -1,8 +1,16 @@
-# $OpenBSD: Makefile,v 1.16 2005/12/07 20:11:49 bernd Exp $
+# $OpenBSD: Makefile,v 1.17 2005/12/23 14:38:32 bernd Exp $
 
 COMMENT=	"perl-compatible regular expression library"
 
 DISTNAME=	pcre-6.4
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=		pcre		1.0 \
+			pcrecpp		1.0 \
+			pcreposix	1.0
+MODGNU_SHARED_LIBS=	pcre		'' \
+			pcrecpp		'' \
+			pcreposix	''
+
 CATEGORIES=	devel
 
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/ \
@@ -21,7 +29,6 @@ WANTLIB=		c
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
-CONFIGURE_ENV=		PCRE_LIB_VERSION=1:0:0
 
 USE_LIBTOOL=		Yes
 

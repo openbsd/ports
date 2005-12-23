@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2005/12/07 20:11:49 bernd Exp $
-@lib lib/libpcre.so.1.0
-@lib lib/libpcrecpp.so.1.0
-@lib lib/libpcreposix.so.1.0
+@comment $OpenBSD: PFRAG.shared,v 1.8 2005/12/23 14:38:32 bernd Exp $
+@lib lib/libpcre.so.${LIBpcre_VERSION}
+@lib lib/libpcrecpp.so.${LIBpcrecpp_VERSION}
+@lib lib/libpcreposix.so.${LIBpcreposix_VERSION}
