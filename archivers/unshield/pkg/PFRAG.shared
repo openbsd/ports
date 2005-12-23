@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/07/25 09:58:16 jsg Exp $
-@lib lib/libunshield.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/23 13:57:22 espie Exp $
+@lib lib/libunshield.so.${LIBunshield_VERSION}

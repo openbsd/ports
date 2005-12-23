@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/02/19 12:31:30 espie Exp $
-@lib lib/libzipios.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/23 13:57:22 espie Exp $
+@lib lib/libzipios.so.${LIBzipios_VERSION}

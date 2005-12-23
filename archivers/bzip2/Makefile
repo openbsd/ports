@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2005/10/30 00:10:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.52 2005/12/23 13:57:21 espie Exp $
 
 COMMENT=	"block-sorting file compressor, unencumbered"
 
@@ -6,6 +6,7 @@ VERSION=	1.0.3
 DISTNAME=	bzip2-${VERSION}
 CATEGORIES=	archivers
 MASTER_SITES=	${HOMEPAGE}${VERSION}/
+SHARED_LIBS=	bz2	10.3
 
 HOMEPAGE=	http://www.bzip.org/
 
@@ -21,8 +22,8 @@ BZ2_CFLAGS=	-Wall -Winline
 BZ2_CFLAGS+=	-fomit-frame-pointer -fno-strength-reduce
 .endif
 
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} ${BZ2_CFLAGS}"
-FAKE_FLAGS=	${MAKE_FLAGS} PREFIX="${PREFIX}" DESTDIR="${WRKINST}"
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} ${BZ2_CFLAGS}" LIBbz2_VERSION=${LIBbz2_VERSION} PREFIX=${TRUEPREFIX}
+FAKE_FLAGS=${MAKE_FLAGS} DESTDIR=${WRKINST}
 REGRESS_FLAGS=	LD_LIBRARY_PATH="${WRKBUILD}"
 
 REGRESS_TARGET=	test

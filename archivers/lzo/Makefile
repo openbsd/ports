@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.34 2005/10/30 00:10:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.35 2005/12/23 13:57:21 espie Exp $
 
 COMMENT=	"portable speedy lossless data compression library"
 
 DISTNAME=	lzo-1.08
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	archivers devel
 MASTER_SITES=	${HOMEPAGE}download/
+SHARED_LIBS=	lzo	1.0
+MODGNU_SHARED_LIBS=lzo	''
 
 HOMEPAGE=	http://www.oberhumer.com/opensource/lzo/
 
@@ -23,6 +25,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/acconfig
 
 REGRESS_TARGET=	test
 
+USE_LIBTOOL=	Yes
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lzo
 	${INSTALL_DATA}	${WRKSRC}/doc/* ${PREFIX}/share/doc/lzo

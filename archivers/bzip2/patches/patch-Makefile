@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.9 2005/05/16 23:00:59 naddy Exp $
---- Makefile.orig	Mon May 16 23:27:51 2005
-+++ Makefile	Mon May 16 23:49:38 2005
+$OpenBSD: patch-Makefile,v 1.10 2005/12/23 13:57:21 espie Exp $
+--- Makefile.orig	Thu Feb 17 12:28:24 2005
++++ Makefile	Thu Dec 22 09:39:51 2005
 @@ -10,10 +10,9 @@ LDFLAGS=
  BIGFILES=-D_FILE_OFFSET_BITS=64
  CFLAGS=-Wall -Winline -O -g $(BIGFILES)
@@ -8,7 +8,7 @@ $OpenBSD: patch-Makefile,v 1.9 2005/05/16 23:00:59 naddy Exp $
 -# Where you want it installed when you do 'make install'
 -PREFIX=/usr
 +PICFLAG= -fpic
-+SHLIB= libbz2.so.10.3
++SHLIB= libbz2.so.${LIBbz2_VERSION}
  
 -
  OBJS= blocksort.o  \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/02/19 22:18:31 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/12/23 13:57:22 espie Exp $
 
 COMMENT=	"java-like zip interface"
 DISTNAME=	zipios++-0.1.5.9+cvs.2004.02.07
@@ -6,6 +6,8 @@ PKGNAME=	zipios++-0.1.5.9
 CATEGORIES=	devel archivers
 MASTER_SITES=	http://http.us.debian.org/debian/pool/main/z/zipios++/
 MASTER_SITES0=	${MASTER_SITE_GNU:=automake/}
+SHARED_LIBS=	zipios	0.0
+MODGNU_SHARED_LIBS=	zipios	''
 
 DISTFILES=	zipios++_0.1.5.9+cvs.2004.02.07.orig.tar.gz \
 		automake-1.7.tar.gz:0
@@ -25,7 +27,7 @@ post-extract:
 	done
 
 MAKE_FLAGS=SUBDIRS='zipios++ src'
-FAKE_FLAGS=SUBDIRS='zipios++ src' DESTDIR=${WRKINST}
+FAKE_FLAGS=${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 post-install:
 	${INSTALL_DATA} ${WRKBUILD}/zipios++/zipios-config.h ${PREFIX}/include/zipios++/

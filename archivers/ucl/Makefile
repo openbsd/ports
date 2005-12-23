@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2005/05/22 10:54:35 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/12/23 13:57:22 espie Exp $
 
 COMMENT=	"portable lossless data compression library"
 
 DISTNAME=	ucl-1.03
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	archivers devel
+SHARED_LIBS=	ucl	1.0
+MODGNU_SHARED_LIBS=	ucl	''
 
 HOMEPAGE=	http://www.oberhumer.com/opensource/ucl
 
@@ -26,6 +29,7 @@ SEPARATE_BUILD=		concurrent
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} --enable-static
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/acconfig
 MAKE_FLAGS=		CFLAGS_O=""
+USE_LIBTOOL=		Yes
 
 do-regress:
 	${WRKBUILD}/examples/simple
