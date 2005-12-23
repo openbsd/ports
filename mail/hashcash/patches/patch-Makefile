@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2005/06/16 17:35:22 niallo Exp $
---- Makefile.orig	Wed Mar 30 12:27:47 2005
-+++ Makefile	Sat Jun 11 11:03:15 2005
-@@ -2,9 +2,9 @@ HC_VERS = 1.17
+$OpenBSD: patch-Makefile,v 1.2 2005/12/23 12:55:05 steven Exp $
+--- Makefile.orig	Tue Dec 20 22:54:48 2005
++++ Makefile	Wed Dec 21 13:39:55 2005
+@@ -2,9 +2,9 @@ HC_VERS = 1.20
  CHANGEME1 = 1 # put PACKAGER = EBUILD|RPM etc here
  CHANGEME2 = 2
  CHANGEME3 = 3
@@ -14,7 +14,37 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2005/06/16 17:35:22 niallo Exp $
  MAKEDEPEND = makedepend
  MSLIB = mslib 
  # here you can choose the regexp style your system has
-@@ -130,7 +130,8 @@ all:	$(EXES)
+@@ -16,9 +16,9 @@ MSLIB = mslib 
+ # 	REGEXP = 
+ REGEXP=-DREGEXP_POSIX
+ COPT_DEBUG = -g
+-COPT_GENERIC = -O3
++COPT_GENERIC =
+ COPT_GNU = -O3 -funroll-loops
+-COPT_X86 = -O3 -funroll-loops -march=pentium-mmx -mmmx \
++COPT_X86 = -funroll-loops -march=pentium-mmx -mmmx \
+ 	-D_REENTRANT -D_THREAD_SAFE -fPIC
+ COPT_MINGW = -O3 -funroll-loops -march=pentium-mmx -mmmx \
+         -D_REENTRANT -D_THREAD_SAFE
+@@ -28,7 +28,7 @@ COPT_PPC_LINUX = -O3 -funroll-loops -fno
+ LIB=.a
+ # request static link of -lcrypto only
+ LIBCRYPTO=/usr/lib/libcrypto.a
+-EXES = hashcash$(EXE) sha1$(EXE) sha1test$(EXE)
++EXES = hashcash$(EXE)
+ INSTALL = install
+ POD2MAN = pod2man
+ POD2HTML = pod2html
+@@ -109,7 +109,7 @@ debug-openssl:
+ 	$(MAKE) debug "CFLAGS=$(CFLAGS) -DOPENSSL" "LDFLAGS=$(LDFLAGS) $(LIBCRYPTO)"
+ 
+ 
+-build:	hashcash$(EXE) sha1$(EXE)
++build:	hashcash$(EXE)
+ 
+ build-dll:      hashcash-dll$(EXE) sha1$(EXE)
+ 
+@@ -132,7 +132,8 @@ all:	$(EXES)
  
  libhashcash$(LIB):	$(LIBOBJS)
  	$(DELETE) $@
@@ -24,18 +54,20 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2005/06/16 17:35:22 niallo Exp $
  
  hashcash.dll:   $(LIBOBJS)
  	$(CC) -shared -o hashcash.dll $(LIBOBJS) \
-@@ -161,12 +162,10 @@ sha1-hashcash.txt: sha1-hashcash.pod
+@@ -162,13 +163,11 @@ sha1-hashcash.html:	sha1-hashcash.pod
+ sha1-hashcash.txt: sha1-hashcash.pod
  	$(POD2TEXT) $? > $@
  
- install:	hashcash sha1 hashcash.1 sha1-hashcash.1
+-install:	hashcash sha1 hashcash.1 sha1-hashcash.1
 -	$(INSTALL) -d $(INSTALL_PATH)
 -	$(INSTALL) hashcash sha1 $(INSTALL_PATH)
 -	$(INSTALL) -d $(MAN_INSTALL_PATH)
 -	$(INSTALL) -m 644 hashcash.1 sha1-hashcash.1 $(MAN_INSTALL_PATH)
 -	$(INSTALL) -d $(DOC_INSTALL_PATH)
 -	$(INSTALL) -m 644 README LICENSE CHANGELOG $(DOC_INSTALL_PATH)
-+	$(BSD_INSTALL_PROGRAM) hashcash sha1 $(INSTALL_PATH)
-+	$(BSD_INSTALL_MAN) hashcash.1 sha1-hashcash.1 $(MAN_INSTALL_PATH)
++install:	hashcash hashcash.1
++	$(BSD_INSTALL_PROGRAM) hashcash $(INSTALL_PATH)
++	$(BSD_INSTALL_MAN) hashcash.1 $(MAN_INSTALL_PATH)
 +	$(BSD_INSTALL_DATA_DIR) $(DOC_INSTALL_PATH)
 +	$(BSD_INSTALL_DATA) README LICENSE CHANGELOG $(DOC_INSTALL_PATH)
  
