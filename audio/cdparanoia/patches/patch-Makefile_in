@@ -1,14 +1,14 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2003/06/22 19:13:40 pvalchev Exp $
---- Makefile.in.orig	Tue Mar 27 15:46:58 2001
-+++ Makefile.in	Fri Jun 13 01:17:13 2003
+$OpenBSD: patch-Makefile_in,v 1.7 2005/12/23 15:03:06 espie Exp $
+--- Makefile.in.orig	Wed Mar 28 00:46:58 2001
++++ Makefile.in	Fri Dec 23 15:40:44 2005
 @@ -23,33 +23,33 @@ BINDIR=@bindir@
  MANDIR=@mandir@
  INCLUDEDIR=@includedir@
  LIBDIR=@libdir@
 -PWD = $(shell pwd)
 +PWD != pwd
-+MAJOR=0
-+MINOR=0
++LIBcdda_interface_VERSION=0.0
++LIBcdda_paranoia_VERSION=0.0
  
  OFILES = main.o report.o header.o buffering_write.o
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-Makefile_in,v 1.6 2003/06/22 19:13:40 pvalchev Exp $
 -	LIBDEP = interface/libcdda_interface.so paranoia/libcdda_paranoia.so
 -endif
 +SHLIBS = -lcdda_interface -lcdda_paranoia -lm
-+SHLIBDEP = interface/libcdda_interface.so.$(MAJOR).$(MINOR) paranoia/libcdda_paranoia.so.$(MAJOR).$(MINOR)
++SHLIBDEP = interface/libcdda_interface.so.$(LIBcdda_interface_VERSION) paranoia/libcdda_paranoia.so.$(LIBcdda_paranoia_VERSION)
  
  
 -all: 	
@@ -85,10 +85,10 @@ $OpenBSD: patch-Makefile_in,v 1.6 2003/06/22 19:13:40 pvalchev Exp $
 +	$(INSTALL) -d -m 0755 $(DESTDIR)$(INCLUDEDIR)
 +	$(INSTALL) -m 0644 $(srcdir)/paranoia/cdda_paranoia.h $(DESTDIR)$(INCLUDEDIR)
 +	$(INSTALL) -d -m 0755 $(DESTDIR)$(LIBDIR)
-+	$(INSTALL) -m 0644 $(srcdir)/paranoia/libcdda_paranoia.so.$(MAJOR).$(MINOR) $(DESTDIR)$(LIBDIR)
++	$(INSTALL) -m 0644 $(srcdir)/paranoia/libcdda_paranoia.so.$(LIBcdda_paranoia_VERSION) $(DESTDIR)$(LIBDIR)
 +	$(INSTALL) -m 0644 $(srcdir)/paranoia/libcdda_paranoia.a $(DESTDIR)$(LIBDIR)
 +	$(INSTALL) -m 0644 $(srcdir)/interface/cdda_interface.h $(DESTDIR)$(INCLUDEDIR)
-+	$(INSTALL) -m 0644 $(srcdir)/interface/libcdda_interface.so.$(MAJOR).$(MINOR) $(DESTDIR)$(LIBDIR)
++	$(INSTALL) -m 0644 $(srcdir)/interface/libcdda_interface.so.$(LIBcdda_interface_VERSION) $(DESTDIR)$(LIBDIR)
 +	$(INSTALL) -m 0644 $(srcdir)/interface/libcdda_interface.a $(DESTDIR)$(LIBDIR)
 +	$(INSTALL) -m 0644 $(srcdir)/utils.h $(DESTDIR)$(INCLUDEDIR)
 +

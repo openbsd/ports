@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2005/12/03 21:14:22 naddy Exp $
-@lib lib/libogg.so.5.3
+@comment $OpenBSD: PFRAG.shared,v 1.10 2005/12/23 15:03:09 espie Exp $
+@lib lib/libogg.so.${LIBogg_VERSION}

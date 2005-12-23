@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2005/12/03 21:15:51 naddy Exp $
-@lib lib/libvorbis.so.5.1
-@lib lib/libvorbisenc.so.2.2
-@lib lib/libvorbisfile.so.4.1
+@comment $OpenBSD: PFRAG.shared,v 1.10 2005/12/23 15:03:09 espie Exp $
+@lib lib/libvorbis.so.${LIBvorbis_VERSION}
+@lib lib/libvorbisenc.so.${LIBvorbisenc_VERSION}
+@lib lib/libvorbisfile.so.${LIBvorbisfile_VERSION}

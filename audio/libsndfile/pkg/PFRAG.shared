@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2005/05/23 23:49:28 naddy Exp $
-@lib lib/libsndfile.so.1.11
+@comment $OpenBSD: PFRAG.shared,v 1.7 2005/12/23 15:03:09 espie Exp $
+@lib lib/libsndfile.so.${LIBsndfile_VERSION}

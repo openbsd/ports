@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2005/12/23 06:29:38 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.17 2005/12/23 15:03:05 espie Exp $
 
 COMMENT=	"CDDA reading utility with extra data verification features"
 
 DISTNAME=	cdparanoia-III-alpha9.8
 PKGNAME=	cdparanoia-3.a9.8p0
 CATEGORIES=	audio
+SHARED_LIBS=	cdda_interface	0.0 \
+		cdda_paranoia	0.0
 
 HOMEPAGE=	http://www.xiph.org/paranoia/
 
@@ -21,6 +23,9 @@ EXTRACT_SUFX=	.src.tgz
 CONFIGURE_STYLE=	autoconf autoheader
 AUTOCONF_VERSION=	2.52
 CONFIGURE_ENV=		GCC=${CC}
+MAKE_FLAGS=	LIBcdda_interface_VERSION=${LIBcdda_interface_VERSION} \
+		LIBcdda_paranoia_VERSION=${LIBcdda_paranoia_VERSION}
+FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 NO_REGRESS=		Yes
 

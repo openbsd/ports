@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.25 2005/03/23 21:02:30 alek Exp $
+# $OpenBSD: Makefile,v 1.26 2005/12/23 15:03:07 espie Exp $
 
 COMMENT=	"lame ain't an MP3 encoder"
 
 VERSION=	3.96.1
 
 DISTNAME=	lame-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lame/}
+SHARED_LIBS=	mp3lame	0.1
+MODGNU_SHARED_LIBS=	mp3lame	'-no-undefined'
 
 HOMEPAGE=	http://www.mp3dev.org/
 
@@ -28,7 +30,8 @@ FLAVOR?=
 
 CONFIGURE_ARGS+=	--enable-mp3rtp
 MAKE_FLAGS=	pkghtmldir=${TRUEPREFIX}/share/doc/lame
-FAKE_FLAGS=	${MAKE_FLAGS}
+FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
+USE_LIBTOOL=	Yes
 
 # XXX gcc3/nasm issue
 .if (${MACHINE_ARCH} == "i386") && (${CC} != "egcc")

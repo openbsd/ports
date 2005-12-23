@@ -1,28 +1,27 @@
-$OpenBSD: patch-paranoia_Makefile_in,v 1.4 2005/12/23 06:31:31 jakemsr Exp $
---- paranoia/Makefile.in.orig	Mon Dec 13 20:28:04 1999
-+++ paranoia/Makefile.in	Thu Dec 22 22:30:04 2005
-@@ -22,8 +22,10 @@ OFILES = paranoia.o p_block.o overlap.o 
+$OpenBSD: patch-paranoia_Makefile_in,v 1.5 2005/12/23 15:03:06 espie Exp $
+--- paranoia/Makefile.in.orig	Tue Dec 14 05:28:04 1999
++++ paranoia/Makefile.in	Fri Dec 23 15:42:25 2005
+@@ -22,8 +22,9 @@ OFILES = paranoia.o p_block.o overlap.o 
  #TFILES = isort.t gap.t p_block.t paranoia.t
  
  LIBS = ../interface/libcdda_interface.a -lm
 -export VERSION
  
-+MAJOR=0
-+MINOR=0
++LIBcdda_paranoia_VERSION=0.0
 +
  all: lib slib
  
  debug: 
-@@ -34,7 +36,7 @@ lib:	
+@@ -34,7 +35,7 @@ lib:	
  
  slib:	
  	$(MAKE) lessmessy
 -	$(MAKE) libcdda_paranoia.so CFLAGS="$(OPT) -fpic" 
-+	$(MAKE) libcdda_paranoia.so.$(MAJOR).$(MINOR) VERSION=$(VERSION) CFLAGS="$(OPT) -fpic" 
++	$(MAKE) libcdda_paranoia.so.$(LIBcdda_paranoia_VERSION) VERSION=$(VERSION) CFLAGS="$(OPT) -fpic" 
  
  #test:	$(TFILES)
  #
-@@ -43,10 +45,8 @@ libcdda_paranoia.a: 	$(OFILES)	
+@@ -43,10 +44,8 @@ libcdda_paranoia.a: 	$(OFILES)	
  	$(AR) -r libcdda_paranoia.a $(OFILES)
  	$(RANLIB) libcdda_paranoia.a
  
@@ -30,8 +29,8 @@ $OpenBSD: patch-paranoia_Makefile_in,v 1.4 2005/12/23 06:31:31 jakemsr Exp $
 -	$(CC) -fpic -shared -o libcdda_paranoia.so.0.$(VERSION) -Wl,-soname -Wl,libcdda_paranoia.so.0 $(OFILES)
 -	[ -e libcdda_paranoia.so.0 ] || ln -s libcdda_paranoia.so.0.$(VERSION) libcdda_paranoia.so.0
 -	[ -e libcdda_paranoia.so ] || ln -s libcdda_paranoia.so.0.$(VERSION) libcdda_paranoia.so
-+libcdda_paranoia.so.$(MAJOR).$(MINOR): 	$(OFILES)	
-+	$(CC) -fpic -shared -o libcdda_paranoia.so.$(MAJOR).$(MINOR) $(OFILES)
++libcdda_paranoia.so.$(LIBcdda_paranoia_VERSION): 	$(OFILES)	
++	$(CC) -fpic -shared -o $@ $(OFILES)
  
  .c.o:
  	$(CC) $(CFLAGS) -c $<

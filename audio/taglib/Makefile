@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2005/11/18 16:46:30 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2005/12/23 15:03:09 espie Exp $
 
 COMMENT=	"managing meta-data of audio formats"
 DISTNAME=	taglib-1.4
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio devel
 MASTER_SITES=	http://ktown.kde.org/~wheeler/files/src/
+SHARED_LIBS=	tag	5.0 \
+		tag_c	0.0
+MODGNU_SHARED_LIBS=	tag	'-no-undefined'	\
+			tag_c	'-no-undefined'
 
 HOMEPAGE= 	http://ktown.kde.org/~wheeler/taglib.html
 
