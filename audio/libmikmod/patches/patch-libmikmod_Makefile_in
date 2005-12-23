@@ -1,0 +1,20 @@
+$OpenBSD: patch-libmikmod_Makefile_in,v 1.1 2005/12/23 15:30:08 espie Exp $
+--- libmikmod/Makefile.in.orig	Wed Jan 23 23:15:14 2002
++++ libmikmod/Makefile.in	Fri Dec 23 16:18:39 2005
+@@ -33,6 +33,7 @@ CFLAGS=@CFLAGS@ -Dunix
+ COMPILE=$(LIBTOOL) --silent --mode=compile $(CC) $(DEFS) $(CFLAGS) -I$(top_srcdir)/include -I$(top_builddir) -I$(top_builddir)/include -DMIKMOD_H=$(top_srcdir)/include/mikmod.h
+ 
+ LIB = libmikmod.la
++libmikmod_la_LDFLAGS=-version-info 2:4:0
+ OBJ = $(LIBOBJS) $(DLOBJS) \
+       drv_AF.lo drv_aix.lo drv_alsa.lo drv_esd.lo drv_hp.lo drv_nos.lo \
+       drv_oss.lo drv_pipe.lo drv_raw.lo drv_sam9407.lo drv_sgi.lo \
+@@ -72,7 +73,7 @@ distclean:	clean
+ 	rm -f Makefile
+ 
+ $(LIB): $(OBJ)
+-	$(LIBTOOL) --mode=link $(CC) -version-info 2:4:0 -o $@ $(OBJ) $(LIBRARY_LIB) -rpath $(DESTDIR)$(libdir)
++	$(LIBTOOL) --mode=link $(CC) $(libmikmod_la_LDFLAGS) -o $@ $(OBJ) $(LIBRARY_LIB) -rpath $(libdir)
+ 
+ dl_hpux.lo:	$(top_srcdir)/dlapi/dl_hpux.c \
+ 			$(top_srcdir)/dlapi/dlfcn.h
