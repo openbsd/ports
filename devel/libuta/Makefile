@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2005/11/17 21:15:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2005/12/23 17:02:47 bernd Exp $
 
 COMMENT=	"graphical user interface library for C++"
 
 DISTNAME=	libuta-0.4.4
 PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=		uta 41.0
+MODGNU_SHARED_LIBS=	uta ''
+
 CATEGORIES=	devel
 
 HOMEPAGE=	http://libuta.sourceforge.net/
@@ -33,7 +36,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype1 -I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_FLAGS=	libuta_la_LDFLAGS="-version-info 41:0:0"
 
 VMEM_WARNING=	Yes
 

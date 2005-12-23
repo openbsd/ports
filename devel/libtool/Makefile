@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2005/12/22 11:36:00 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2005/12/23 17:02:46 bernd Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
 COMMENT=	"generic shared library support script"
@@ -8,6 +8,9 @@ VERSION=	1.5.20
 DISTNAME=	libtool-${VERSION}
 PKGNAME=	${DISTNAME}p4
 PKGNAME-ltdl=	libltdl-${VERSION}p1
+SHARED_LIBS=		ltdl 4.2
+MODGNU_SHARED_LIBS=	ltdl '-no-undefined'
+
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=libtool/}
 
@@ -26,6 +29,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+FAKE_FLAGS=	 FAKE_FLAGS=${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 MULTI_PACKAGES=	-ltdl
 SUBPACKAGE?=
