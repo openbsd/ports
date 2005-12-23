@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2005/12/12 08:48:04 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2005/12/23 16:06:27 todd Exp $
 
 COMMENT=		"SOCKS client wrapper for *BSD"
 DISTNAME=		dsocks-1.2
 PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
+SHARED_LIBS=		dsocks 1.0
 
 HOMEPAGE=		http://monkey.org/~dugsong/dsocks/
 
@@ -17,7 +18,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 
-FAKE_FLAGS=		DEBUGLIBS=No
+MAKE_FLAGS=		SHLIB_MAJOR=${LIBdsocks_VERSION:R} \
+			SHLIB_MINOR=${LIBdsocks_VERSION:E}
+
+FAKE_FLAGS=		SHLIB_MAJOR=${LIBdsocks_VERSION:R} \
+			SHLIB_MINOR=${LIBdsocks_VERSION:E} \
+			DEBUGLIBS=No
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dsocks.sh ${WRKSRC}/dsocks-torify.sh \
