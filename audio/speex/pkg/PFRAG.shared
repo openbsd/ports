@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2005/05/10 20:29:11 naddy Exp $
-@lib lib/libspeex.so.4.0
+@comment $OpenBSD: PFRAG.shared,v 1.7 2005/12/23 15:05:19 espie Exp $
+@lib lib/libspeex.so.${LIBspeex_VERSION}
