@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/04/15 02:21:31 jolan Exp $
-@lib lib/libvorbisidec.so.1.2
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/23 16:12:24 espie Exp $
+@lib lib/libvorbisidec.so.${LIBvorbisidec_VERSION}

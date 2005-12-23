@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2004/11/21 17:51:46 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2005/12/23 16:12:24 espie Exp $
 
 COMMENT=		"utility for Rio mp3 players"
 
 DISTNAME=		rioutil-1.4.4
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		rioutil	5.1
+MODGNU_SHARED_LIBS=	rioutil	''
 CATEGORIES=		audio
 
 HOMEPAGE=		http://rioutil.sf.net
@@ -20,6 +23,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=rioutil/}
 
 LIB_DEPENDS=		usb.7.0::devel/libusb
 
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-libusb
 CONFIGURE_ENV=		CPPFLAGS=-I${LOCALBASE}/include \
