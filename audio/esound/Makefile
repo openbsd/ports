@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.36 2005/11/03 18:28:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2005/12/23 16:57:17 espie Exp $
 # $FreeBSD: Makefile,v 1.8 1999/03/09 01:08:46 nectar Exp $
 
 COMMENT=	"sound library for Enlightenment"
 
 DISTNAME=	esound-0.2.34
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=	esd	2.34
+MODGNU_SHARED_LIBS=	esd	'-no-undefined'
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/esound/0.2/}
 
@@ -18,6 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m wrap
 
+USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	concurrent
 AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf

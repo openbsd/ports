@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/12/19 07:59:24 jolan Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/23 16:57:16 espie Exp $
 lib/bmp/Input/libcdaudio.so
 lib/bmp/Input/libwav.so
 lib/bmp/Output/libesdout.so
 lib/bmp/Visualization/libbscope.so
-@lib lib/libbeep.so.2.0
+@lib lib/libbeep.so.${LIBbeep_VERSION}
