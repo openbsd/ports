@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2004/11/21 17:51:47 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2005/12/23 15:08:37 espie Exp $
 
 COMMENT=	"MOD player"
 DISTNAME=	tracker-5.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
 MASTER_SITES=	ftp://ftp.uni-trier.de/pub/unix/audio/tracker/
@@ -23,11 +24,11 @@ MAKE_FLAGS=	MACHINE=openbsd CC=$(CC) INSTALL="$(INSTALL)" \
 		INST_BIN_OPT="-c -s -m $(BINMODE) -o $(BINOWN) -g $(BINGRP)" \
 		INST_MAN_OPT="-c -m 644 -o $(BINOWN) -g $(BINGRP)" \
 		COMPRESSION_FILE='$${DESTDIR}${SYSCONFDIR}/compression_methods' \
-		PREFIX='$${DESTDIR}/${PREFIX}'
+		PREFIX='$${DESTDIR}/${TRUEPREFIX}'
+FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 NO_REGRESS=	Yes
 
-FAKE_FLAGS=	${MAKE_FLAGS}
 
 post-extract:
 	@mkdir -p ${WRKSRC}/Arch/OpenBSD

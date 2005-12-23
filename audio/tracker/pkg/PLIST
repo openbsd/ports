@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/08/06 14:37:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2005/12/23 15:08:37 espie Exp $
 bin/randomize
 bin/tracker
 @info info/tracker.info
@@ -17,7 +17,7 @@ share/doc/tracker/Html/Amiga_implementation.html
 share/doc/tracker/Html/Architecture_dependent_problems.html
 share/doc/tracker/Html/Arpeggio.html
 share/doc/tracker/Html/Availability.html
-share/doc/tracker/Html/Availability.html.orig
+@comment share/doc/tracker/Html/Availability.html.orig
 share/doc/tracker/Html/Background_information.html
 share/doc/tracker/Html/Base_effects.html
 share/doc/tracker/Html/Concept_Index.html
