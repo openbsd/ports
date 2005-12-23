@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.76 2005/12/23 12:48:59 espie Exp $
+# $OpenBSD: make-plist,v 1.77 2005/12/23 13:30:05 bernd Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -42,6 +42,7 @@ my $base;
 my (@backsubst, @libbacksubst);
 my $destdir = $ENV{'DESTDIR'};
 my %known_libs;
+my $lib_warnings = {};
 
 die "No $destdir" unless -d $destdir;
 
@@ -51,10 +52,11 @@ sub lib_backsubst
 	if (m/lib([^\/]+)\.so\.(\d+\.\d+)$/) {
 		my ($name, $v) = ($1, $2);
 		if (!defined $known_libs{$name}) {
-			print STDERR "Warning: unregistered shared lib: $name\n";
+			$lib_warnings->{$name}->{missing} = 1;
 		} else {
 			if ($known_libs{$name} ne $v) {
-				print STDERR "Warning: version mismatch for lib $name ($v vs. ", $known_libs{$name}, ")\n";
+				$lib_warnings->{$name}->{version} = [$v,
+				    $known_libs{$name}];
 			}
 		}
 		$_ =~ s/\d+\.\d+$/\$\{LIB$name\_VERSION\}/;
@@ -1051,6 +1053,17 @@ if (($default->{wantshared} || (defined $default->{shared}) && $default->{shared
 for my $k (sort keys %$foundcomments) {
 	next if defined $foundcomments->{$k}->{accounted_for};
 	print "Not accounted for: \@comment $k\n";
+}
+
+for my $name (sort keys %$lib_warnings) {
+	if (defined $lib_warnings->{$name}->{missing}) {
+		print STDERR "WARNING: unregistered shared lib: $name\n";
+	}
+	if (defined $lib_warnings->{$name}->{version}) {
+		my ($v1, $v2) = @{$lib_warnings->{$name}->{version}};
+		print STDERR "WARNING: version mismatch for lib $name "
+		    . "($v1 vs. $v2)\n";
+	}
 }
 
 
