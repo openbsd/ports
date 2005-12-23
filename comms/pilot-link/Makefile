@@ -1,9 +1,17 @@
-# $OpenBSD: Makefile,v 1.41 2005/12/14 21:47:17 steven Exp $
+# $OpenBSD: Makefile,v 1.42 2005/12/23 14:16:01 bernd Exp $
 # $NetBSD: Makefile,v 1.37 2004/10/03 00:13:16 tv Exp $
 
 COMMENT=	"tools to connect your PalmOS® compatible handheld"
 
 DISTNAME=	pilot-link-0.11.8
+SHARED_LIBS=		pisock++	0.0 \
+			pisock		8.5 \
+			pisync 		0.1
+MODGNU_SHARED_LIBS=	pisock++ 	'-export-dynamic' \
+			pisock 		'-export-dynamic' \
+			pisync 		'-export-dynamic'
+LIBpisock++_ALIAS=	pisock__
+
 CATEGORIES=	comms
 MASTER_SITES=	http://gentoo.oregonstate.edu/distfiles/ \
 		http://www.slackware.at/data/slackware-10.2/source/l/pilot-link/ \

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/12/11 04:59:46 pvalchev Exp $
-@lib lib/libpisock++.so.0.0
-@lib lib/libpisock.so.8.5
-@lib lib/libpisync.so.0.1
+@comment $OpenBSD: PFRAG.shared,v 1.5 2005/12/23 14:16:01 bernd Exp $
+@lib lib/libpisock++.so.${LIBpisock++_VERSION}
+@lib lib/libpisock.so.${LIBpisock_VERSION}
+@lib lib/libpisync.so.${LIBpisync_VERSION}
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/Pilot.so
