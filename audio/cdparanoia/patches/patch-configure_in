@@ -1,13 +1,13 @@
-$OpenBSD: patch-configure_in,v 1.8 2004/02/25 23:24:35 espie Exp $
---- configure.in.orig	2000-03-26 09:33:22.000000000 +0200
-+++ configure.in	2004-02-26 00:18:11.000000000 +0100
+$OpenBSD: patch-configure_in,v 1.9 2005/12/23 06:31:31 jakemsr Exp $
+--- configure.in.orig	Sat Mar 25 23:33:22 2000
++++ configure.in	Thu Dec 22 22:30:04 2005
 @@ -1,34 +1,33 @@
  AC_INIT(interface/interface.c)
--
--cp $srcdir/configure.guess $srcdir/config.guess
--cp $srcdir/configure.sub $srcdir/config.sub
 +AC_CONFIG_HEADERS(config.h)
  
+-cp $srcdir/configure.guess $srcdir/config.guess
+-cp $srcdir/configure.sub $srcdir/config.sub
+-
  AC_CANONICAL_HOST
  
 -if test -z "$CC"; then

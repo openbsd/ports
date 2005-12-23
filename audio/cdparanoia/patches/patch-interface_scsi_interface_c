@@ -1,6 +1,6 @@
-$OpenBSD: patch-interface_scsi_interface_c,v 1.2 2002/09/16 13:35:52 lebel Exp $
---- interface/scsi_interface.c.orig	Sat Mar 24 02:15:46 2001
-+++ interface/scsi_interface.c	Mon Sep 16 14:02:54 2002
+$OpenBSD: patch-interface_scsi_interface_c,v 1.3 2005/12/23 06:31:31 jakemsr Exp $
+--- interface/scsi_interface.c.orig	Fri Mar 23 17:15:46 2001
++++ interface/scsi_interface.c	Thu Dec 22 22:30:02 2005
 @@ -23,6 +23,7 @@ static void tweak_SG_buffer(cdrom_drive 
    int table,reserved;
    char buffer[256];
@@ -88,7 +88,7 @@ $OpenBSD: patch-interface_scsi_interface_c,v 1.2 2002/09/16 13:35:52 lebel Exp $
      }
    }
 +#endif /* __linux__ */
-+
+ 
 +#if defined(__NetBSD__) || defined(__OpenBSD__)
 +  if (in_size && out_size) {
 +    warnx("handle_scsi_cmd: in and out is not supported");
@@ -116,7 +116,7 @@ $OpenBSD: patch-interface_scsi_interface_c,v 1.2 2002/09/16 13:35:52 lebel Exp $
 +  if (status < 0)
 +    return(TR_ILLEGAL);
 +#endif
- 
++
    errno=0;
 +#ifdef __linux__
    status = read(d->cdda_fd, sg_hd, SG_OFF + out_size);
