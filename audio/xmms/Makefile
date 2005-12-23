@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2005/09/21 14:40:19 bernd Exp $
+# $OpenBSD: Makefile,v 1.45 2005/12/23 16:37:10 espie Exp $
 
 COMMENT=		"Multimedia player for the X Window System"
 COMMENT-esd=		"Esound output plugin for XMMS"
@@ -6,13 +6,15 @@ COMMENT-vorbis=		"Ogg Vorbis input plugin for XMMS"
 COMMENT-mikmod=		"Mikmod input plugin for XMMS"
 COMMENT-mp3=		"MP3 input plugin for XMMS"
 
-VERSION=		1.2.10p5
-DISTNAME=		xmms-${VERSION:S,p5,,}
-PKGNAME=		xmms-${VERSION}
-PKGNAME-esd=		xmms-esd-${VERSION}
-PKGNAME-vorbis=		xmms-vorbis-${VERSION}
-PKGNAME-mikmod=		xmms-mikmod-${VERSION}
-PKGNAME-mp3=		xmms-mp3-${VERSION}
+VERSION=		1.2.10
+DISTNAME=		xmms-${VERSION}
+PKGNAME=		xmms-${VERSION}p6
+PKGNAME-esd=		xmms-esd-${VERSION}p5
+PKGNAME-vorbis=		xmms-vorbis-${VERSION}p5
+PKGNAME-mikmod=		xmms-mikmod-${VERSION}p5
+PKGNAME-mp3=		xmms-mp3-${VERSION}p5
+SHARED_LIBS=		xmms	4.1
+MODGNU_SHARED_LIBS=	xmms	'-export-dynamic'
 CATEGORIES=		audio
 HOMEPAGE=		http://www.xmms.org
 

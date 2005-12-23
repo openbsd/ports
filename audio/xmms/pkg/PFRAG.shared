@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.12 2004/09/14 23:16:56 espie Exp $
-@lib lib/libxmms.so.4.1
+@comment $OpenBSD: PFRAG.shared,v 1.13 2005/12/23 16:37:10 espie Exp $
+@lib lib/libxmms.so.${LIBxmms_VERSION}
 lib/xmms/
 lib/xmms/Effect/
 lib/xmms/Effect/libecho.so
