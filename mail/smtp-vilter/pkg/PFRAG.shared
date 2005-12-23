@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2005/12/17 22:07:54 mbalmer Exp $
-@lib lib/libvilter-attachment.so.5.1
-@lib lib/libvilter-clamd.so.5.1
-@lib lib/libvilter-icap.so.5.1
-@lib lib/libvilter-spamd.so.5.1
+@comment $OpenBSD: PFRAG.shared,v 1.6 2005/12/23 16:05:48 mbalmer Exp $
+@lib lib/libvilter-attachment.so.${LIBvilter-attachment_VERSION}
+@lib lib/libvilter-clamd.so.${LIBvilter-clamd_VERSION}
+@lib lib/libvilter-icap.so.${LIBvilter-icap_VERSION}
+@lib lib/libvilter-spamd.so.${LIBvilter-spamd_VERSION}
