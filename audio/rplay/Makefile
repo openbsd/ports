@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2005/04/17 21:18:29 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2005/12/23 15:07:05 espie Exp $
 
 COMMENT=	"network audio player"
 DISTNAME=	rplay-3.3.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio
+SHARED_LIBS=	rplay	0.0
 
 HOMEPAGE=	http://rplay.doit.org/
 
@@ -25,6 +26,8 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
 		LDFLAGS="-L${DEPBASE}/lib"
+MAKE_FLAGS=	LIBrplay_VERSION=${LIBrplay_VERSION}
+FAKE_FLAGS=	${MAKE_FLAGS}	DESTDIR=${WRKINST}
 
 post-extract:
 	@cd ${WRKSRC}/doc && mv rplay.texi rplayd.texi

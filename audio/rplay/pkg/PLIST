@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2005/04/17 21:18:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2005/12/23 15:07:06 espie Exp $
 %%SHARED%%
 include/rplay.h
 @comment include/rxposix.h
@@ -7,10 +7,12 @@ lib/librplay.a
 @endfake
 bin/rplay
 bin/rptp
+@comment include/rxposix.h
 @info info/RPLAY.info
 @info info/RPTP.info
 @info info/librplay.info
 @info info/rplayd.info
+@comment lib/librx.a
 @man man/man1/rplay.1
 @man man/man1/rptp.1
 @man man/man5/rplay.conf.5
@@ -19,9 +21,9 @@ bin/rptp
 @man man/man5/rplay.servers.5
 @man man/man8/rplayd.8
 sbin/rplayd
+@mode 755
 @owner root
 @group wheel
-@mode 755
 share/examples/rplay/
 @sample ${SYSCONFDIR}/rplay/
 @mode 644
