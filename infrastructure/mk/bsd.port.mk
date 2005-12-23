@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.740 2005/11/27 12:31:18 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.741 2005/12/23 12:41:37 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -633,6 +633,13 @@ _SYSTRACE_POLICIES+=	/bin/sh /usr/bin/env /usr/bin/make \
 SYSTRACE_SUBST_VARS+=	DISTDIR PKG_TMPDIR PORTSDIR TMPDIR WRKDIR
 .for _v in ${SYSTRACE_SUBST_VARS}
 _SYSTRACE_SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
+.endfor
+
+SHARED_LIBS?=
+
+.for _n _v in ${SHARED_LIBS}
+LIB${_n}_VERSION=${_v}
+SUBST_VARS+=LIB${_n}_VERSION
 .endfor
 
 # Create the generic variable substitution list, from subst vars
