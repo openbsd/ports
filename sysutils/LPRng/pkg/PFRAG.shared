@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 18:39:31 espie Exp $
-@lib lib/liblpr.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.3 2005/12/23 19:54:18 mbalmer Exp $
+@lib lib/liblpr.so.${LIBlpr_VERSION}
