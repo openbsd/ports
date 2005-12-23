@@ -1,6 +1,6 @@
-$OpenBSD: patch-interface_scan_devices_c,v 1.3 2002/09/16 13:35:52 lebel Exp $
---- interface/scan_devices.c.orig	Mon Mar 26 07:44:01 2001
-+++ interface/scan_devices.c	Mon Sep 16 13:05:57 2002
+$OpenBSD: patch-interface_scan_devices_c,v 1.4 2005/12/23 06:29:38 jakemsr Exp $
+--- interface/scan_devices.c.orig	Sun Mar 25 21:44:01 2001
++++ interface/scan_devices.c	Thu Dec 22 00:36:43 2005
 @@ -19,6 +19,8 @@
  #include "common_interface.h"
  #include "utils.h"
@@ -176,6 +176,15 @@ $OpenBSD: patch-interface_scan_devices_c,v 1.3 2002/09/16 13:35:52 lebel Exp $
    }
    
    idmessage(messagedest,messages,"\t\tgeneric device: %s",generic_device);
+@@ -535,7 +579,7 @@ cdrom_drive *cdda_identify_scsi(const ch
+   }
+ 
+   if(ioctl_device)i_fd=open(ioctl_device,O_RDONLY|O_NONBLOCK);
+-  g_fd=open(generic_device,O_RDWR);
++  g_fd=open(generic_device,O_RDONLY);
+   
+   if(ioctl_device && i_fd==-1)
+     idperror(messagedest,messages,"\t\tCould not open SCSI cdrom device "
 @@ -556,6 +600,7 @@ cdrom_drive *cdda_identify_scsi(const ch
  
      type=(int)(i_st.st_rdev>>8);
