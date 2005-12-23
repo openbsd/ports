@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.75 2005/11/02 21:39:43 espie Exp $
+# $OpenBSD: make-plist,v 1.76 2005/12/23 12:48:59 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -39,10 +39,28 @@ use File::Temp;
 # both ways to recognize existing entries.
 
 my $base;
-my @backsubst;
+my (@backsubst, @libbacksubst);
 my $destdir = $ENV{'DESTDIR'};
+my %known_libs;
 
 die "No $destdir" unless -d $destdir;
+
+sub lib_backsubst
+{
+	local $_ = shift;
+	if (m/lib([^\/]+)\.so\.(\d+\.\d+)$/) {
+		my ($name, $v) = ($1, $2);
+		if (!defined $known_libs{$name}) {
+			print STDERR "Warning: unregistered shared lib: $name\n";
+		} else {
+			if ($known_libs{$name} ne $v) {
+				print STDERR "Warning: version mismatch for lib $name ($v vs. ", $known_libs{$name}, ")\n";
+			}
+		}
+		$_ =~ s/\d+\.\d+$/\$\{LIB$name\_VERSION\}/;
+	}
+	return var_backsubst($_);
+}
 
 sub var_backsubst
 {
@@ -62,7 +80,7 @@ sub var_backsubst
 sub var_subst
 {
 	local $_ = shift;
-	for my $l (@backsubst) {
+	for my $l (@backsubst, @libbacksubst) {
 		my $v = $l->[0];
 		my $r = $l->[1];
 		s/\Q$v\E/$r/g;
@@ -223,6 +241,18 @@ sub register
 	my ($self, $plist, $files, $comments) = @_;
 	$plist->{state}->{lastobject} = $self;
 	$self->SUPER::register($plist, $files, $comments);
+}
+
+package OpenBSD::PackingElement::Lib;
+sub register
+{
+	my ($self, $plist, $files, $comments) = @_;
+	$plist->{state}->{lastobject} = $self;
+	$self->{plist} = $plist;
+	$self->{end_faked} = $plist->{state}->{end_faked};
+	my $fullname = $self->fullname();
+	my $n = main::lib_backsubst($fullname);
+	$files->{$n} = $self;
 }
 
 package OpenBSD::PackingElement::Dir;
@@ -833,7 +863,13 @@ sub handle_file
 	my ($i, $type, $foundfiles, $foundcomments, $allplists, $shared_only, $pass) = @_;
 
 	my $default = $allplists->[0];
-	my $k = var_backsubst($i);
+	my $k;
+	
+	if ($type eq 'library') {
+		$k = lib_backsubst($i);
+	} else {
+		$k = var_backsubst($i);
+	}
 	my $short;
 	my $p;
 	my $item;
@@ -870,7 +906,11 @@ sub handle_file
 		print "Bogus element outside of base: $i\n";
 		return;
 	}
-	$short = var_backsubst($short);
+	if ($type eq 'library') {
+		$short = lib_backsubst($short);
+	} else {
+		$short = var_backsubst($short);
+	}
 	# If the resulting name is arch-dependent, we warn.
 	# We don't fix it automatically, as this may need special handling.
 	if ($short =~ m/i386|m68k|sparc/) {
@@ -924,7 +964,12 @@ for (@ARGV) {
 	if (m/\=/) {
 		my $back = $`;
 		my $v = $';
-		push(@backsubst, ["\${$back}", $v]) if $v ne '';
+		if ($back =~ m/^LIB(.*)_VERSION$/) {
+			$known_libs{$1}=$v;
+			push(@libbacksubst, ["\${$back}", $v]) if $v ne '';
+		} else {
+			push(@backsubst, ["\${$back}", $v]) if $v ne '';
+		}
 	}
 }
 
