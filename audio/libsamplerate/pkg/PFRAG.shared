@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/09/21 16:30:53 alek Exp $
-@lib lib/libsamplerate.so.1.1
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/23 15:29:08 espie Exp $
+@lib lib/libsamplerate.so.${LIBsamplerate_VERSION}

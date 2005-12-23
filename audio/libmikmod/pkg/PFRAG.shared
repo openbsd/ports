@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/06 14:37:27 espie Exp $
-@lib lib/libmikmod.so.2.4
+@comment $OpenBSD: PFRAG.shared,v 1.3 2005/12/23 15:29:08 espie Exp $
+@lib lib/libmikmod.so.${LIBmikmod_VERSION}

@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2004/11/21 17:51:45 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2005/12/23 15:29:08 espie Exp $
 
 COMMENT=	"mikmod sound library"
 
 VERSION=	3.1.10
 DISTNAME=	libmikmod-${VERSION}
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
+SHARED_LIBS=	mikmod	2.4
+MODGNU_SHARED_LIBS=	mikmod	''
 CATEGORIES=    	audio devel
 
 HOMEPAGE=	http://mikmod.raphnet.net/
@@ -25,6 +27,7 @@ PATCH_LIST=     ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
+USE_LIBTOOL=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --disable-dl \
 		 --enable-oss
