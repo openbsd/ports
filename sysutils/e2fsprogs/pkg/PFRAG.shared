@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 18:39:32 espie Exp $
-@lib lib/libe2p.so.2.3
-@lib lib/libext2fs.so.2.4
-@lib lib/libext2fs_com_err.so.2.0
-@lib lib/libss.so.2.0
-@lib lib/libuuid.so.1.2
+@comment $OpenBSD: PFRAG.shared,v 1.3 2005/12/23 16:43:08 mbalmer Exp $
+@lib lib/libe2p.so.${LIBe2p_VERSION}
+@lib lib/libext2fs.so.${LIBext2fs_VERSION}
+@lib lib/libext2fs_com_err.so.${LIBext2fs_com_err_VERSION}
+@lib lib/libss.so.${LIBss_VERSION}
+@lib lib/libuuid.so.${LIBuuid_VERSION}
