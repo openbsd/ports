@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2005/02/11 19:44:38 alek Exp $
+# $OpenBSD: Makefile,v 1.32 2005/12/23 20:22:30 mbalmer Exp $
 
 COMMENT=	"format ascii files for printing on PostScript printers"
 
@@ -6,6 +6,7 @@ DISTNAME=	a2ps-4.13b
 PKGNAME=	${DISTNAME}p0
 WRKDIST=	${WRKDIR}/a2ps-4.13
 CATEGORIES=	print
+SHARED_LIBS=	a2ps	2.0
 
 # License info.  There is some questionable Sun and
 # Adobe Copyrighted things in this source tree.  It
