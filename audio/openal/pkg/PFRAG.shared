@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/10/21 05:04:16 jolan Exp $
-@lib lib/libopenal.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/23 16:10:48 espie Exp $
+@lib lib/libopenal.so.${LIBopenal_VERSION}

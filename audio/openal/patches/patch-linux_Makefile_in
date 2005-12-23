@@ -1,6 +1,6 @@
-$OpenBSD: patch-linux_Makefile_in,v 1.1.1.1 2004/10/21 05:04:16 jolan Exp $
---- linux/Makefile.in.orig	2002-09-06 00:54:36.000000000 +0200
-+++ linux/Makefile.in	2004-01-10 22:26:25.000000000 +0100
+$OpenBSD: patch-linux_Makefile_in,v 1.2 2005/12/23 16:10:48 espie Exp $
+--- linux/Makefile.in.orig	Thu Jul 24 19:06:38 2003
++++ linux/Makefile.in	Fri Dec 23 17:04:50 2005
 @@ -1,13 +1,13 @@
  INSTALL=@INSTALL@
  LN_S=@LN_S@
@@ -19,3 +19,14 @@ $OpenBSD: patch-linux_Makefile_in,v 1.1.1.1 2004/10/21 05:04:16 jolan Exp $
  SO_EXT=@SHARED_LIBRARY_EXT@
  DO_MINOR_LIBS=@DO_MINOR_LIBS@
  INSTALL_DEPS=all
+@@ -52,8 +52,8 @@ test:	all
+ install_minor_libs:
+ 	$(INSTALL) -d -m 755 $(DESTLIB)
+ 	$(INSTALL) -m 755 src/libopenal.$(SO_EXT).$(VERSION) $(DESTLIB)
+-	$(LN_S) -f $(DESTLIB)/libopenal.$(SO_EXT).$(VERSION) $(DESTLIB)/libopenal.$(SO_EXT).$(MAJOR_VERSION)
+-	$(LN_S) -f $(DESTLIB)/libopenal.$(SO_EXT).$(VERSION) $(DESTLIB)/libopenal.so
++#	$(LN_S) -f $(DESTLIB)/libopenal.$(SO_EXT).$(VERSION) $(DESTLIB)/libopenal.$(SO_EXT).$(MAJOR_VERSION)
++#	$(LN_S) -f $(DESTLIB)/libopenal.$(SO_EXT).$(VERSION) $(DESTLIB)/libopenal.so
+ 
+ install_major_lib_only:
+ 	$(INSTALL) -d -m 755 $(DESTLIB)

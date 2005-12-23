@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2004/11/21 17:51:46 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/12/23 16:10:48 espie Exp $
 
 COMMENT=	"cross-platform 3D audio API"
 DISTNAME=	openal-20040816
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
+SHARED_LIBS=	openal	0.0
 MASTER_SITES=	http://math.smsu.edu/~erik/files/fbsd/ \
 		http://www.smluc.org/~erik/files/fbsd/
 
@@ -26,5 +28,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-vorbis
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
 	LIBS="-logg"
+
+MAKE_FLAGS=MAJOR_VERSION=${LIBopenal_VERSION:R} VERSION=${LIBopenal_VERSION}
+FAKE_FLAGS=${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/21 05:04:16 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/12/23 16:10:48 espie Exp $
 include/AL/
 include/AL/al.h
 include/AL/alc.h
@@ -12,5 +12,3 @@ include/AL/aluttypes.h
 include/AL/alutypes.h
 lib/libopenal.a
 %%SHARED%%
-@comment lib/libopenal.so
-@comment lib/libopenal.so.0
