@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/27 21:45:34 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2005/12/23 16:36:20 todd Exp $
 
 COMMENT=		"asynchronous dns resolver client library and utilities"
 DISTNAME=		adns-1.1
 PKGNAME=		$(DISTNAME)p0
 CATEGORIES=		net devel
+SHARED_LIBS=		adns	1.0
 
 HOMEPAGE=		http://www.chiark.greenend.org.uk/~ian/adns/
 
@@ -20,6 +21,11 @@ MASTER_SITES=		${HOMEPAGE}/ftp/
 
 CONFIGURE_STYLE=	gnu dest
 USE_GMAKE=		Yes
+MAKE_FLAGS=		MAJOR=${LIBadns_MAJOR} MINOR=${LIBadns_VERSION:E}
+FAKE_FLAGS=		MAJOR=${LIBadns_MAJOR} MINOR=${LIBadns_VERSION:E}
+
+LIBadns_MAJOR=${LIBadns_VERSION:R}
+SUBST_VARS+=		LIBadns_MAJOR
 
 REGRESS_TARGET=		check
 
