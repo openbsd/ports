@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_rules_make,v 1.1 2005/12/24 14:45:38 steven Exp $
+--- src/rules.make.orig	Sat Dec 24 10:21:12 2005
++++ src/rules.make	Sat Dec 24 10:27:53 2005
+@@ -73,6 +73,8 @@ shared_library:
+ 	    $(MAKE) irix_shared_library;; \
+ 	Linux*) \
+ 	    $(MAKE) linux_shared_library;; \
++	OpenBSD*) \
++	    $(MAKE) openbsd_shared_library;; \
+ 	OSF1*) \
+ 	    $(MAKE) osf1_shared_library;; \
+ 	'SunOS 4'*) \
+@@ -95,6 +97,8 @@ irix_shared_library:
+ 	    -all $(LIBRARY) -none -lc -lC $(LIBS)
+ linux_shared_library:
+ 	ld -o $(LIBRARY:.a=.so) -shared --whole-archive $(LIBRARY)
++openbsd_shared_library:
++	ld -X -o $(LIBRARY:.a=.so).$(LIBVER) -shared --whole-archive $(LIBRARY)
+ osf1_shared_library:
+ 	ld -o $(LIBRARY:.a=.so) -shared -all $(LIBRARY)
+ sunos4_shared_library:

@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2005/12/04 12:10:12 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/12/24 14:46:37 steven Exp $
 
 COMMENT=	"Basic Linear Algebra Subprograms"
 
 DISTNAME=	blas
-PKGNAME=	blas-${SHLIB_VER}
+PKGNAME=	${DISTNAME}-${LIBblas_VERSION}
+SHARED_LIBS=	blas	1.0
+SHLIB_MAJOR=	${LIBblas_VERSION:R}
+SHLIB_MINOR=	${LIBblas_VERSION:E}
+
 CATEGORIES=	math
 
 HOMEPAGE=	http://www.netlib.org/blas/
@@ -16,9 +20,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SHLIB_MAJOR=	1
-SHLIB_MINOR=	0
-
 MASTER_SITES=	ftp://ftp.netlib.org/blas/ \
 		ftp://netlib.bell-labs.com/netlib/blas/ \
 		http://www.netlib.no/netlib/blas/
@@ -29,9 +30,5 @@ WRKDIST=	${WRKDIR}
 MAKE_FILE=	${FILESDIR}/Makefile
 MAKE_ENV=	SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
 FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
-
-# need shared library version for machines which support shared libraries.
-SHLIB_VER=	${SHLIB_MAJOR}.${SHLIB_MINOR}
-SUBST_VARS=	SHLIB_VER
 
 .include <bsd.port.mk>

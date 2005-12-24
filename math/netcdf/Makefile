@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/27 07:16:44 alek Exp $ 
+# $OpenBSD: Makefile,v 1.7 2005/12/24 14:45:38 steven Exp $ 
 # $FreeBSD: ports/math/netcdf/Makefile,v 1.7 2000/06/16 21:51:39 asami Exp $
 #
 
@@ -6,6 +6,9 @@ COMMENT=	"library for machine-independent, array-oriented data access"
 
 DISTNAME=	netcdf-3.5.0
 CATEGORIES=	math
+
+SHARED_LIBS=	netcdf		1.0 \
+		netcdf_c++	1.0
 
 HOMEPAGE=	http://www.unidata.ucar.edu/packages/netcdf/
 
@@ -32,14 +35,14 @@ REGRESS_DEPENDS=	::math/netcdf
 
 post-build:
 	@(cd ${WRKSRC}/libsrc && \
-		${SETENV} ${MAKE_ENV} ${MAKE} linux_shared_library)
+		${SETENV} ${MAKE_ENV} ${MAKE} LIBVER=${LIBnetcdf_VERSION} shared_library)
 	@(cd ${WRKSRC}/cxx && \
-		${SETENV} ${MAKE_ENV} ${MAKE} linux_shared_library)
+		${SETENV} ${MAKE_ENV} ${MAKE} LIBVER=${LIBnetcdf_c++_VERSION} shared_library)
 
 post-install:
-	test -f ${WRKSRC}/libsrc/libnetcdf.so && ${INSTALL_DATA} \
-		${WRKSRC}/libsrc/libnetcdf.so ${PREFIX}/lib/libnetcdf.so.1.0
-	test -f ${WRKSRC}/cxx/libnetcdf_c++.so && ${INSTALL_DATA} \
-		${WRKSRC}/cxx/libnetcdf_c++.so ${PREFIX}/lib/libnetcdf_c++.so.1.0
+	${INSTALL_DATA} \
+		${WRKSRC}/libsrc/libnetcdf.so.${LIBnetcdf_VERSION} \
+		${WRKSRC}/cxx/libnetcdf_c++.so.${LIBnetcdf_c++_VERSION} \
+		${PREFIX}/lib
 
 .include <bsd.port.mk>

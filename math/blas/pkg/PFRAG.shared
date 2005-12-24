@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/12/03 21:56:25 steven Exp $
-@lib lib/libblas.so.${SHLIB_VER}
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/24 14:46:37 steven Exp $
+@lib lib/libblas.so.${LIBblas_VERSION}
