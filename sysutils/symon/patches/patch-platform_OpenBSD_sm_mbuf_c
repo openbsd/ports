@@ -1,0 +1,13 @@
+$OpenBSD: patch-platform_OpenBSD_sm_mbuf_c,v 1.1 2005/12/24 08:48:49 pvalchev Exp $
+--- platform/OpenBSD/sm_mbuf.c.orig	Fri Dec 23 23:49:41 2005
++++ platform/OpenBSD/sm_mbuf.c	Fri Dec 23 23:49:52 2005
+@@ -33,8 +33,8 @@
+ #include <sys/param.h>
+ #include <sys/mbuf.h>
+ #include <sys/sysctl.h>
+-#include <sys/errno.h>
+ 
++#include <errno.h>
+ #include <string.h>
+ #include <unistd.h>
+ 
