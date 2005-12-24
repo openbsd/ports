@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/14 23:25:51 espie Exp $
-@lib lib/libwv2.so.1.6
+@comment $OpenBSD: PFRAG.shared,v 1.3 2005/12/24 16:11:52 espie Exp $
+@lib lib/libwv2.so.${LIBwv2_VERSION}

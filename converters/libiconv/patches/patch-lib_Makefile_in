@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.8 2004/09/23 07:07:01 pvalchev Exp $
---- lib/Makefile.in.orig	2003-05-18 08:19:16.000000000 -0600
-+++ lib/Makefile.in	2004-06-13 00:31:54.000000000 -0600
+$OpenBSD: patch-lib_Makefile_in,v 1.9 2005/12/24 16:11:52 espie Exp $
+--- lib/Makefile.in.orig	Sun May 18 16:19:16 2003
++++ lib/Makefile.in	Sat Dec 24 17:04:04 2005
 @@ -26,7 +26,7 @@ LIBTOOL_COMPILE = $(LIBTOOL) --mode=comp
  LIBTOOL_LINK = $(LIBTOOL) --mode=link
  LIBTOOL_INSTALL = $(LIBTOOL) --mode=install
@@ -10,7 +10,19 @@ $OpenBSD: patch-lib_Makefile_in,v 1.8 2004/09/23 07:07:01 pvalchev Exp $
  MV = mv
  LN = @LN@
  LN_S = @LN_S@
-@@ -89,19 +89,19 @@ libiconv_plug_osf.so : $(SOURCES)
+@@ -55,8 +55,10 @@ OBJECTS = iconv.lo localcharset.lo reloc
+ 
+ all : @PLUGLIB@ libiconv.la
+ 
++libiconv_la_LDFLAGS=-version-info $(LIBICONV_VERSION_INFO) -no-undefined
++
+ libiconv.la : $(OBJECTS)
+-	$(LIBTOOL_LINK) $(CC) $(LDFLAGS) -o libiconv.la -rpath $(libdir) -version-info $(LIBICONV_VERSION_INFO) -no-undefined $(OBJECTS)
++	$(LIBTOOL_LINK) $(CC) $(LDFLAGS) -o libiconv.la -rpath $(libdir) $(libiconv_la_LDFLAGS) $(OBJECTS)
+ 
+ libiconv_plug.so : libiconv_plug_@OS@.so
+ 	$(RM) libiconv_plug.so
+@@ -89,19 +91,19 @@ libiconv_plug_osf.so : $(SOURCES)
  	fi
  
  iconv.lo : $(srcdir)/iconv.c $(srcdir)/converters.h $(srcdir)/encodings.def $(srcdir)/encodings_aix.def $(srcdir)/encodings_osf1.def $(srcdir)/encodings_dos.def $(srcdir)/encodings_local.def $(srcdir)/aliases.h $(srcdir)/aliases_aix.h $(srcdir)/aliases_osf1.h $(srcdir)/aliases_dos.h $(srcdir)/flags.h
