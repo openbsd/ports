@@ -1,0 +1,12 @@
+$OpenBSD: patch-pty_c,v 1.1 2005/12/24 08:33:20 pvalchev Exp $
+--- pty.c.orig	Fri Dec 23 23:57:50 2005
++++ pty.c	Fri Dec 23 23:57:55 2005
+@@ -18,7 +18,7 @@ CAMLprim value dumpFd(value fdVal) {
+ }
+ 
+ #include <caml/fail.h>     // failwith
+-#include <sys/errno.h>     // errno
++#include <errno.h>     // errno
+ #include <string.h>        // strerror
+ #include <caml/alloc.h>    // alloc_tuple
+ #include <caml/memory.h>   // Store_field
