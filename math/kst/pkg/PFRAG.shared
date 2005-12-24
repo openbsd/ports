@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/31 00:27:21 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/24 22:27:22 steven Exp $
 ${KDE}/kstdata_ascii.so
 ${KDE}/kstdata_dirfile.so
 ${KDE}/kstdata_frame.so
@@ -43,7 +43,7 @@ ${KDE}/kstplugins/periodogram.so
 ${KDE}/kstplugins/phase.so
 ${KDE}/kstplugins/statistics.so
 ${KDE}/kstplugins/syncbin.so
-@lib lib/libkst.so.1.1
-@lib lib/libkstapp.so.1.1
-@lib lib/libkstguiapp.so.1.1
-@lib lib/libkstmath.so.1.1
+@lib lib/libkst.so.${LIBkst_VERSION}
+@lib lib/libkstapp.so.${LIBkstapp_VERSION}
+@lib lib/libkstguiapp.so.${LIBkstguiapp_VERSION}
+@lib lib/libkstmath.so.${LIBkstmath_VERSION}

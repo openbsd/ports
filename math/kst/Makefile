@@ -1,9 +1,18 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/31 00:27:21 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/24 22:27:22 steven Exp $
 
 CATEGORIES=math x11/kde
 COMMENT='data viewing/plotting tool'
 
 DISTNAME=kst-1.1.0
+SHARED_LIBS=	kst		1.1 \
+		kstapp		1.1 \
+		kstguiapp	1.1 \
+		kstmath		1.1	
+MODGNU_SHARED_LIBS=	kst		'-no-undefined' \
+			kstapp		'' \
+			kstguiapp	'' \
+			kstmath		''
+
 MASTER_SITES=${MASTER_SITE_KDE:=stable/apps/KDE3.x/scientific/}
 
 PERMIT_PACKAGE_CDROM=Yes
