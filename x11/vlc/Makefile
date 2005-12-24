@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2005/12/22 16:36:17 jolan Exp $
+# $OpenBSD: Makefile,v 1.32 2005/12/24 09:01:17 jolan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"videolan client; multimedia player"
 V=		0.8.4a
 DISTNAME=	vlc-${V}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -131,8 +131,7 @@ CONFIGURE_ARGS+=--disable-pth \
 		--disable-daap \
 		--disable-pda \
 		--disable-wxwidgets \
-		--disable-xosd \
-		--disable-loader
+		--disable-xosd
 
 CONFIGURE_ARGS+=--enable-ncurses \
 		--enable-sout \
@@ -161,18 +160,26 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 FLAVORS=	no_dvd
 FLAVOR?=
 
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+PKG_ARGS+=-Dx86opt=1
+.else
+PKG_ARGS+=-Dx86opt=0
+.endif
+
+.if ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS+=--enable-loader
+PKG_ARGS+=-Dwin32=1
+.else
+CONFIGURE_ARGS+=--disable-loader
+PKG_ARGS+=-Dwin32=0
+.endif
+
 .if ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS+=--enable-altivec
 PKG_ARGS+=-Daltivec=1
 .else
 CONFIGURE_ARGS+=--disable-altivec
 PKG_ARGS+=-Daltivec=0
-.endif
-
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-PKG_ARGS+=-Dx86opt=1
-.else
-PKG_ARGS+=-Dx86opt=0
 .endif
 
 # XXX video window initialization fails without this
@@ -186,6 +193,13 @@ CONFIGURE_ARGS+=--disable-dvdread --disable-dvdnav
 CONFIGURE_ARGS+=--enable-dvdread --enable-dvdnav
 LIB_DEPENDS+=	dvdnav.3.0::multimedia/libdvdnav \
 		dvdread.3.0::devel/libdvdread
+.endif
+
+# win32 codecs support uses i386_set_ldt
+post-configure:
+.if ${MACHINE_ARCH} == "i386"
+	@perl -pi -e s,'VLC_ENTRY = vlc_entry__0_8_4','VLC_ENTRY = vlc_entry__0_8_4 -li386',g \
+	${WRKSRC}/modules/codec/Makefile ${WRKSRC}/modules/codec/dmo/Makefile
 .endif
 
 # this was used for the pda interface which is disabled now, it may be

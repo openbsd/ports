@@ -7,6 +7,15 @@ with no scramble protection.  However, vlc will recognize and use an
 installed descrambling library (see converters/libdvd in the ports
 tree).
 
+On i386 vlc can use win32 codecs if they are installed (package
+win32-codecs) and if the machdep.userldt sysctl is enabled, e.g. by
+running:
+
+# sysctl machdep.userldt=1
+
+This value can be made permanent by editing /etc/sysctl.conf, see
+sysctl.conf(5) for more details.
+
 FLAVORs:
 
 	no_dvd - disable dvd playing code

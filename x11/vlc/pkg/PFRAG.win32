@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.win32,v 1.1 2005/12/24 09:01:17 jolan Exp $
+lib/vlc/codec/libdmo_plugin.so
+lib/vlc/codec/libquicktime_plugin.so
