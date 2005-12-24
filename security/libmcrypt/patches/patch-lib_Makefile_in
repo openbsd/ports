@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1 2005/12/24 22:32:53 sturm Exp $
+--- lib/Makefile.in.orig	Sat Dec 24 23:05:02 2005
++++ lib/Makefile.in	Sat Dec 24 23:05:21 2005
+@@ -157,8 +157,7 @@ libmcrypt_la_SOURCES = mcrypt_extra.c mc
+ 
+ 
+ libmcrypt_la_LDFLAGS = \
+-	  -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
+-	  -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
++	  ${librealmcrypt_la_LDFLAGS} \
+ 	  -export-symbols libmcrypt.sym @LIBLTDL@ 
+ 
+ libmcrypt_la_LIBADD = @EXTRA_OBJECTS@

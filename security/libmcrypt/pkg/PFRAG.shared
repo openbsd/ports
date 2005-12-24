@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2004/10/20 18:27:38 avsm Exp $
-@lib lib/libmcrypt.so.8.7
+@comment $OpenBSD: PFRAG.shared,v 1.9 2005/12/24 22:32:53 sturm Exp $
+@lib lib/libmcrypt.so.${LIBmcrypt_VERSION}

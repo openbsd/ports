@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/02/14 22:14:25 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/12/24 22:32:53 sturm Exp $
 bin/gpgme-config
 include/gpgme.h
 @info info/gpgme.info
+lib/libgpgme-pthread.a
 lib/libgpgme-pthread.la
+lib/libgpgme.a
 lib/libgpgme.la
 share/aclocal/gpgme.m4
 %%SHARED%%
