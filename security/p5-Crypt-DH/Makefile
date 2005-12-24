@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/12/12 19:30:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2005/12/24 16:46:22 sturm Exp $
 
 COMMENT=	"Diffie-Hellman key exchange system"
 
@@ -23,7 +23,8 @@ CONFIGURE_STYLE=perl
 
 PKG_ARCH=	*
 
-NO_REGRESS=	"tests take ages to complete"
+# use a fast computer, tests will finish eventually
+#NO_REGRESS=	"tests take ages to complete"
 
 pre-build:
 	@perl -pi -e "s/urandom/arandom/g" ${WRKSRC}/lib/Crypt/DH.pm
