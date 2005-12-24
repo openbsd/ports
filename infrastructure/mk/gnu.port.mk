@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.23 2005/12/23 12:41:37 espie Exp $
+# $OpenBSD: gnu.port.mk,v 1.24 2005/12/24 20:11:03 sturm Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -97,7 +97,7 @@ _MODGNU_loop+= ${_SYSTRACE_CMD} ${SETENV} ${AUTOCONF_ENV} ${AUTOHEADER};
 REORDER_DEPENDENCIES+=${PORTSDIR}/infrastructure/mk/automake.dep
 .    endif
 .  endif
-.  endif
+.endif
 
 MODGNU_SHARED_LIBS?=
 .for _n _e in ${MODGNU_SHARED_LIBS}
