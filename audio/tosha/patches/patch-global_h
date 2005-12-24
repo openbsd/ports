@@ -1,6 +1,15 @@
-$OpenBSD: patch-global_h,v 1.1 2001/03/14 15:04:12 naddy Exp $
---- global.h.orig	Sat Jan  2 00:57:37 1999
-+++ global.h	Wed Mar 14 15:23:37 2001
+$OpenBSD: patch-global_h,v 1.2 2005/12/24 08:28:59 pvalchev Exp $
+--- global.h.orig	Fri Jan  1 16:57:37 1999
++++ global.h	Fri Dec 23 23:52:10 2005
+@@ -40,7 +40,7 @@ static const char cvsid_global_h[]
+ 
+ #include <stdio.h>
+ #include <string.h>
+-#include <sys/errno.h>
++#include <errno.h>
+ #include <sys/time.h>
+ #include <fcntl.h>
+ #include <sys/types.h>
 @@ -48,7 +48,6 @@ static const char cvsid_global_h[]
  #include <unistd.h>
  
