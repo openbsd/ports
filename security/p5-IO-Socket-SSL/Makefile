@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/12/09 00:38:42 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2005/12/24 11:13:22 sturm Exp $
 
 COMMENT=	"perl interface to SSL sockets"
 
@@ -27,7 +27,7 @@ PKG_ARCH=	*
 EXDIR=		${PREFIX}/share/examples/p5-IO-Socket-SSL/
 
 post-install:
-	${INSTALL_DATA_DIR} ${DOCDIR} ${EXDIR}
+	${INSTALL_DATA_DIR} ${EXDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/example/*.pl ${EXDIR}
 
 .include <bsd.port.mk>
