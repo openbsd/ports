@@ -1,6 +1,15 @@
-$OpenBSD: patch-com_gw_c,v 1.1 2001/11/27 10:06:50 form Exp $
---- com_gw.c.orig	Fri Feb  9 06:34:55 2001
-+++ com_gw.c	Tue Nov 27 15:37:43 2001
+$OpenBSD: patch-com_gw_c,v 1.2 2005/12/24 08:20:40 pvalchev Exp $
+--- com_gw.c.orig	Thu Feb  8 17:34:55 2001
++++ com_gw.c	Fri Dec 23 23:43:42 2005
+@@ -9,7 +9,7 @@
+ #endif
+ #include <sys/types.h>
+ #include <sys/time.h>
+-#include <sys/errno.h>
++#include <errno.h>
+ #include <unistd.h> 
+ #include <string.h>
+ #include <stdlib.h>
 @@ -169,7 +169,7 @@ simpleServerPipe(int netfd, encoding *en
    int  cnt = 0; \
    while(cnt < ENTLEN && *from && *from!=';' && !isspace(*from)) \

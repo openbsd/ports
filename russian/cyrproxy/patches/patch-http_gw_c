@@ -1,6 +1,15 @@
-$OpenBSD: patch-http_gw_c,v 1.1 2001/11/27 10:06:50 form Exp $
---- http_gw.c.orig	Fri Feb  9 07:33:04 2001
-+++ http_gw.c	Tue Nov 27 15:37:42 2001
+$OpenBSD: patch-http_gw_c,v 1.2 2005/12/24 08:20:40 pvalchev Exp $
+--- http_gw.c.orig	Thu Feb  8 18:33:04 2001
++++ http_gw.c	Fri Dec 23 23:45:13 2005
+@@ -13,7 +13,7 @@
+ #include	<syslog.h>
+ #include 	<stdlib.h>
+ #include 	<stdio.h>
+-#include 	<sys/errno.h>
++#include 	<errno.h>
+ #include	<stdarg.h>
+ #include	<unistd.h>
+ #ifdef _AIX
 @@ -344,8 +344,6 @@ http_response(int netfd,encoding *enc)
  	  char *p = strstr(buf,"charset=");
  	  if(p)

@@ -1,6 +1,15 @@
-$OpenBSD: patch-readconf_c,v 1.1 2004/01/04 23:37:27 espie Exp $
---- readconf.c.orig	2004-01-05 00:22:47.000000000 +0100
-+++ readconf.c	2004-01-05 00:23:15.000000000 +0100
+$OpenBSD: patch-readconf_c,v 1.2 2005/12/24 08:20:40 pvalchev Exp $
+--- readconf.c.orig	Sat May  3 05:57:22 1997
++++ readconf.c	Fri Dec 23 23:44:56 2005
+@@ -17,7 +17,7 @@
+ #include <syslog.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+-#include <sys/errno.h>
++#include <errno.h>
+ 		
+ #include "policy.h"
+ #include "readconf.h"
 @@ -648,7 +648,7 @@ EncodingByAddress(void)
  	  retval=NULL;							\
  	  while(list!=NULL)						\
