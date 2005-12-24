@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2004/07/31 19:29:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2005/12/24 15:03:42 espie Exp $
 
 COMMENT=	"descramble scrambled DVDs"
 
 VER=		1.2.8
 DISTNAME=	libdvdcss-${VER}
+SHARED_LIBS=	dvdcss	2.7
+MODGNU_SHARED_LIBS=	dvdcss '-no-undefined'
 CATEGORIES=	converters
 MASTER_SITES=	http://www.videolan.org/pub/videolan/libdvdcss/${VER}/ \
 		http://www.fr.videolan.org/pub/videolan/vlc/${VER}/
@@ -16,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	"Free speech issue"
 PERMIT_PACKAGE_FTP=	Yes
 
+USE_LIBTOOL=Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 

@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2004/08/06 16:06:03 espie Exp $
-@lib lib/libdvdcss.so.2.7
+@comment $OpenBSD: PFRAG.shared,v 1.9 2005/12/24 15:03:42 espie Exp $
+@lib lib/libdvdcss.so.${LIBdvdcss_VERSION}

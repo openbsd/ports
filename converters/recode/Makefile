@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2005/01/28 21:00:28 alek Exp $
+# $OpenBSD: Makefile,v 1.26 2005/12/24 15:03:42 espie Exp $
 
 COMMENT=	"convert files between character sets and usages"
 
 DISTNAME=	recode-3.6
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
+SHARED_LIBS=	recode	0.0
+MODGNU_SHARED_LIBS=	recode ''
 
 CATEGORIES=	converters textproc
 
@@ -20,6 +22,7 @@ WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_GNU:=recode/}
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--without-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
