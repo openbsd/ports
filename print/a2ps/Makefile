@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2005/12/23 20:22:30 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.33 2005/12/24 05:30:25 espie Exp $
 
 COMMENT=	"format ascii files for printing on PostScript printers"
 
@@ -7,6 +7,7 @@ PKGNAME=	${DISTNAME}p0
 WRKDIST=	${WRKDIR}/a2ps-4.13
 CATEGORIES=	print
 SHARED_LIBS=	a2ps	2.0
+MODGNU_SHARED_LIBS=a2ps	''
 
 # License info.  There is some questionable Sun and
 # Adobe Copyrighted things in this source tree.  It
@@ -40,7 +41,8 @@ PAPERSIZE=	Letter
 CONFIGURE_ARGS=	--with-medium=${PAPERSIZE} \
 		${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_prog_EMACS=no
 
 pre-build:
 	/usr/bin/touch $(WRKSRC)/doc/*.info
