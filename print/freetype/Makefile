@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2005/12/24 05:11:55 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2005/12/24 05:14:51 espie Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 COMMENT=	"free and portable TrueType font rendering engine"
@@ -6,7 +6,7 @@ COMMENT-doc=	"documentation for FreeType"
 
 VERSION=	1.3.1
 DISTNAME=	freetype-${VERSION}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 PKGNAME-doc=	freetype-doc-${VERSION}
 
 CATEGORIES=	print
@@ -26,6 +26,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		m
 
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
