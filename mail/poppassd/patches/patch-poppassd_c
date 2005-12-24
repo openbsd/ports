@@ -1,5 +1,6 @@
---- poppassd.c.orig	2004-01-05 04:15:51.000000000 +0100
-+++ poppassd.c	2004-01-05 04:16:07.000000000 +0100
+$OpenBSD: patch-poppassd_c,v 1.1 2005/12/24 16:42:43 sturm Exp $
+--- poppassd.c.orig	Sun Dec  4 12:19:00 2005
++++ poppassd.c	Sun Dec  4 12:27:07 2005
 @@ -13,11 +13,11 @@
   * 
   * Doesn't actually change any passwords itself.  It simply listens for
@@ -41,7 +42,7 @@
  #include <pwd.h>
  #include <string.h>
  #include <termios.h>
-@@ -145,8 +145,9 @@
+@@ -145,19 +145,20 @@
  static char *P1[] =
     {"Old password:",
      "Changing password for *.\nOld password:",
@@ -52,6 +53,19 @@
      "Changing password for *\n*'s Old password:",
      ""};
  
+ static char *P2[] =
+-   {"\nNew password:",
++   {"New password:",
+     "\n*'s New password:",
+     ""};
+ 
+ static char *P3[] =
+    {"\nRe-enter new password:",
+-    "\nRetype new password:",
++    "Retype new password:",
+     "\nEnter the new password again:",
+     "\n*Re-enter *'s new password:",
+     "\nVerify:",
 @@ -165,9 +166,12 @@ static char *P3[] =
      
  static char *P4[] =
@@ -222,15 +236,20 @@
       return SUCCESS;
  }
  
-@@ -566,6 +569,7 @@ char *buf;
- 	}
+@@ -563,9 +566,11 @@ char *buf;
+ 	if (m < 0) {
+ 	   syslog(LOG_ERR, "read error from child: %m");
+ 	   return FAILURE;
+-	}
++	} else if (m == 0)
++	   return SUCCESS;
  	n += m;
  	buf[n] = 0;
 +/* syslog(LOG_ERR, "read from child: %s",buf); */
  	initialSegment = 0;
          for (s = expected; **s != 0; s++) {
             result = match(buf, *s);
-@@ -630,13 +634,12 @@ char *buf;
+@@ -630,13 +635,12 @@ char *buf;
     }
  }
  

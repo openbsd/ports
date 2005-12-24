@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2005/01/02 01:07:49 alek Exp $
+# $OpenBSD: Makefile,v 1.22 2005/12/24 16:42:43 sturm Exp $
 
 COMMENT=	"server: allow users to change password from within Eudora"
 
 DISTNAME=	poppassd-4.0
+PKGNAME=	${DISTNAME}p0
 DISTFILES=	pwserve-4
 CATEGORIES=	mail
 
