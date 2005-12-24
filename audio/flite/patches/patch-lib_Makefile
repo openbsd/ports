@@ -1,15 +1,21 @@
-$OpenBSD: patch-lib_Makefile,v 1.1.1.1 2003/04/23 05:33:19 jason Exp $
---- lib/Makefile.orig	Sun Apr 20 23:36:07 2003
-+++ lib/Makefile	Sun Apr 20 23:55:23 2003
-@@ -47,6 +47,7 @@ SHAREDLIBS = $(LIBNAMES:%=lib%.so)
+$OpenBSD: patch-lib_Makefile,v 1.2 2005/12/24 16:01:55 espie Exp $
+--- lib/Makefile.orig	Tue Feb 18 17:50:46 2003
++++ lib/Makefile	Sat Dec 24 16:59:35 2005
+@@ -47,6 +47,13 @@ SHAREDLIBS = $(LIBNAMES:%=lib%.so)
  VERSIONSHAREDLIBS = $(SHAREDLIBS:%=%.${PROJECT_VERSION}) \
                      $(SHAREDLIBS:%=%.${PROJECT_SHLIB_VERSION})
  ALL_LIBS = $(STATICLIBS) $(SHAREDLIBS) $(VERSIONSHAREDLIBS)
-+INSTLIBS = $(STATICLIBS) $(SHAREDLIBS:%=%.${PROJECT_VERSION})
++INSTLIBS = $(STATICLIBS) \
++	libflite.so.${LIBlibflite.so_VERSION} \
++	libflite_cmu_time_awb.so.${LIBlibflite_cmu_time_awb.so_VERSION} \
++	libflite_cmu_us_kal.so.${LIBlibflite_cmu_us_kal.so_VERSION} \
++	libflite_cmu_us_kal16.so.${LIBlibflite_cmu_us_kal16.so_VERSION} \
++	libflite_cmulex.so.${LIBlibflite_cmulex.so_VERSION} \
++	libflite_usenglish.so.${LIBlibflite_usenglish.so_VERSION}
  
  ALL = shared_libs
  
-@@ -61,4 +62,4 @@ shared_libs: nothing
+@@ -61,4 +68,4 @@ shared_libs: nothing
  endif
  
  install:
