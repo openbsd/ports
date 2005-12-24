@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2005/05/11 02:08:12 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2005/12/24 13:40:32 espie Exp $
 
 COMMENT=	"library for Chinese language processing"
 
 DISTNAME=	libtabe-0.2.6
-PKGNAME=	zh-${DISTNAME}
+PKGNAME=	zh-${DISTNAME}p0
 CATEGORIES=	chinese
+SHARED_LIBS=	bims 2.1 \
+		tabe 2.1
+MODGNU_SHARED_LIBS=	bims '' \
+			tabe ''
 
 HOMEPAGE=	http://libtabe.sourceforge.net/
 
@@ -20,6 +24,7 @@ MASTER_SITES=	http://www.kpvs.tp.edu.tw/
 
 LIB_DEPENDS=	lib/db/db.=3:db-3.*:databases/db/v3
 
+USE_LIBTOOL=	Yes
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--with-db-inc=${LOCALBASE}/include/db \

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.3 2005/12/24 13:40:32 espie Exp $
+--- src/Makefile.in.orig	Sat Dec 24 14:31:58 2005
++++ src/Makefile.in	Sat Dec 24 14:32:11 2005
+@@ -55,7 +55,7 @@ all: $(LIBNAME) bims
+ 
+ $(LIBNAME): $(LIBOBJS)
+ 	$(LIBTOOL) --mode=link $(CC) -o $@ $(LIBOBJS) -rpath $(libdir) \
+-		-version-info $(CURRENT_VER):$(REVISION_VER):$(AGE_VER)
++		$(libtabe_la_LDFLAGS)
+ 
+ bims:
+ 	(cd supports/bims; $(MAKE))
