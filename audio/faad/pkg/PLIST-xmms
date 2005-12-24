@@ -1,2 +1,6 @@
-@comment $OpenBSD: PLIST-xmms,v 1.1 2004/12/09 04:57:56 jcs Exp $
+@comment $OpenBSD: PLIST-xmms,v 1.2 2005/12/24 19:51:53 espie Exp $
 %%SHARED%%
+lib/xmms/
+lib/xmms/Input/
+lib/xmms/Input/libmp4.a
+lib/xmms/Input/libmp4.la

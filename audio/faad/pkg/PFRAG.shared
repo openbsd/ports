@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2004/08/10 00:52:44 espie Exp $
-@lib lib/libfaad.so.0.0
-@lib lib/libmp4ff.so.0.0
-@lib lib/libmp4v2.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/24 19:51:53 espie Exp $
+@lib lib/libfaad.so.${LIBfaad_VERSION}
+@lib lib/libmp4ff.so.${LIBmp4ff_VERSION}
+@lib lib/libmp4v2.so.${LIBmp4v2_VERSION}
