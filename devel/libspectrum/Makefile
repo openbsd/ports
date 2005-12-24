@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2005/03/12 12:47:53 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2005/12/24 15:04:18 bernd Exp $
 
 COMMENT=		"ZX Spectrum emulator file format library"
 
 DISTNAME=		libspectrum-0.2.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
+SHARED_LIBS=		spectrum 3.0
+MODGNU_SHARED_LIBS=	spectrum ''
+
 CATEGORIES=		devel
 
 HOMEPAGE=		http://fuse-emulator.sourceforge.net/libspectrum.php
@@ -24,6 +27,7 @@ BUILD_DEPENDS=		::devel/pkgconfig
 LIB_DEPENDS=		glib-2.0.0.11::devel/glib2 \
 			gcrypt.12::security/libgcrypt
 
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 

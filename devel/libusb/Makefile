@@ -1,9 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2005/05/21 22:24:20 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2005/12/24 15:04:18 bernd Exp $
 
 COMMENT=	"USB access library"
 
-VERSION=	0.1.10a	
-DISTNAME=	libusb-${VERSION}
+DISTNAME=	libusb-0.1.10a
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=		usb	8.2 \
+			usbpp	8.2
+MODGNU_SHARED_LIBS=	usb	'-export-dynamic' \
+			usbpp	'-export-dynamic'
+
 CATEGORIES=	devel
 
 HOMEPAGE=	http://libusb.sourceforge.net/
@@ -18,6 +23,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libusb/}
 
+USE_LIBTOOL=		Yes
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
