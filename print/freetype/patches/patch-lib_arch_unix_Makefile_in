@@ -1,12 +1,17 @@
-$OpenBSD: patch-lib_arch_unix_Makefile_in,v 1.1 2001/02/19 20:04:10 danh Exp $
---- lib/arch/unix/Makefile.in.orig	Sat Jul 31 02:48:17 1999
-+++ lib/arch/unix/Makefile.in	Mon Feb 19 14:57:25 2001
-@@ -197,7 +197,7 @@ freetype.lo: $(SRC_S) $(SRC_M)
+$OpenBSD: patch-lib_arch_unix_Makefile_in,v 1.2 2005/12/24 05:11:55 espie Exp $
+--- lib/arch/unix/Makefile.in.orig	Sat Jul 31 08:48:17 1999
++++ lib/arch/unix/Makefile.in	Sat Dec 24 06:07:39 2005
+@@ -194,10 +194,12 @@ freetype.lo: $(SRC_S) $(SRC_M)
+                                         -DTT_MAKE_OPTION_SINGLE_OBJECT \
+                                         $(SRC_S)
+ 
++libttf_la_LDFLAGS=-version-info 1:3:0
++
  libttf.la: $(LIB_FILES)
  	$(LIBTOOL) --mode=link $(CC) -o libttf.la $(LIB_FILES) \
                                 -rpath $(libdir) \
 -                               -version-info $(version_info) $(FT_LIBS)
-+                               -version-info 1:3:0 $(FT_LIBS)
++                               $(libttf_la_LDFLAGS) $(FT_LIBS)
  
  install: libttf.la
  	$(MKINSTALLDIRS) $(libdir) $(includedir)/freetype

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2005/12/23 20:40:20 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.36 2005/12/24 05:11:55 espie Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 COMMENT=	"free and portable TrueType font rendering engine"
@@ -11,6 +11,7 @@ PKGNAME-doc=	freetype-doc-${VERSION}
 
 CATEGORIES=	print
 SHARED_LIBS=	ttf	1.3
+MODGNU_SHARED_LIBS=	ttf	''
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freetype/}
 
