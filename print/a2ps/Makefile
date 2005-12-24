@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2005/12/24 05:30:25 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2005/12/24 09:14:42 espie Exp $
 
 COMMENT=	"format ascii files for printing on PostScript printers"
 
 DISTNAME=	a2ps-4.13b
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 WRKDIST=	${WRKDIR}/a2ps-4.13
 CATEGORIES=	print
 SHARED_LIBS=	a2ps	2.0
@@ -22,6 +22,7 @@ MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/
 
 MODULES=	devel/gettext
 
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/auxdir
 
@@ -42,7 +43,12 @@ CONFIGURE_ARGS=	--with-medium=${PAPERSIZE} \
 		${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		ac_cv_prog_EMACS=no
+		ac_cv_prog_EMACS=no \
+		lispdir=${PREFIX}/share/a2ps/emacs
+.for p in bzip2 gv ghostview dvips pdf2ps acroread convert tex latex ps2pdf \
+	psselect psnup bzip
+CONFIGURE_ENV+= ac_cv_prog_COM_$p=no
+.endfor
 
 pre-build:
 	/usr/bin/touch $(WRKSRC)/doc/*.info

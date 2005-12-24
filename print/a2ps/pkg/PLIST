@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2005/12/24 05:30:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2005/12/24 09:14:43 espie Exp $
 bin/a2ps
 bin/card
 bin/composeglyphs
@@ -60,6 +60,9 @@ share/a2ps/afm/ptmi.afm
 share/a2ps/afm/ptmr.afm
 share/a2ps/afm/pzcmi.afm
 share/a2ps/afm/pzdr.afm
+share/a2ps/emacs/
+share/a2ps/emacs/a2ps-print.el
+share/a2ps/emacs/a2ps.el
 share/a2ps/encoding/
 share/a2ps/encoding/ascii.edf
 share/a2ps/encoding/encoding.map
