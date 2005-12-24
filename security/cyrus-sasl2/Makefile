@@ -1,13 +1,33 @@
-# $OpenBSD: Makefile,v 1.32 2005/12/20 05:57:19 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.33 2005/12/24 20:52:58 sturm Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
 VERSION=	2.1.21
-LIBVERSION=	2.21
 
 DISTNAME=	cyrus-sasl-${VERSION}
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security
+SHARED_LIBS=	anonymous	2.21 \
+		crammd5		2.21 \
+		digestmd5	2.21 \
+		gssapiv2	2.21 \
+		login		2.21 \
+		otp		2.21 \
+		plain		2.21 \
+		sasl2		2.21 \
+		sasldb		2.21 \
+		sql		2.21
+MODGNU_SHARED_LIBS=anonymous	'' \
+		crammd5		'' \
+		digestmd5	'' \
+		gssapiv2	'' \
+		login		'' \
+		otp		'' \
+		plain		'' \
+		sasl2		'' \
+		sasldb		'' \
+		sql		''
+LIBsql_ALIAS=	realsql
 
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/OLD-VERSIONS/sasl/
@@ -22,7 +42,6 @@ PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 WANTLIB=		asn1 c com_err crypto gssapi krb5
 
-SUBST_VARS+=		LIBVERSION
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS='${LDFLAGS}'

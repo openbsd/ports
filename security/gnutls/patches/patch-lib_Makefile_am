@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_Makefile_am,v 1.1 2005/12/24 20:52:58 sturm Exp $
+--- lib/Makefile.am.orig	Sat Dec 24 20:53:02 2005
++++ lib/Makefile.am	Sat Dec 24 20:53:40 2005
+@@ -67,8 +67,7 @@ COBJECTS = gnutls_record.c gnutls_compre
+ libgnutls_la_SOURCES = $(COBJECTS) $(X509_COBJECTS) $(MINITASN1_COBJECTS)
+ 
+ libgnutls_la_LDFLAGS = $(LIBTASN1_LIBS) $(LIBGCRYPT_LIBS) \
+-	$(LIBGNUTLS_EXPORTS) \
+-	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++	$(LIBGNUTLS_EXPORTS) ${librealgnutls_la_LDFLAGS}
+ 
+ pkix_asn1_tab.c: pkix.asn
+ 	-asn1Parser pkix.asn pkix_asn1_tab.c

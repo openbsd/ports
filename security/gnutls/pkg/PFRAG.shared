@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2005/05/11 11:16:07 robert Exp $
-@lib lib/libgnutls-extra.so.12.25
-@lib lib/libgnutls-openssl.so.12.25
-@lib lib/libgnutls.so.12.25
+@comment $OpenBSD: PFRAG.shared,v 1.6 2005/12/24 20:52:59 sturm Exp $
+@lib lib/libgnutls-extra.so.${LIBgnutls-extra_VERSION}
+@lib lib/libgnutls-openssl.so.${LIBgnutls-openssl_VERSION}
+@lib lib/libgnutls.so.${LIBgnutls_VERSION}

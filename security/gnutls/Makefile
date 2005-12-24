@@ -1,10 +1,19 @@
-# $OpenBSD: Makefile,v 1.9 2005/05/11 11:16:07 robert Exp $
+# $OpenBSD: Makefile,v 1.10 2005/12/24 20:52:58 sturm Exp $
 
 COMMENT=		"GNU Transport Layer Security library"
 
-VERSION=		1.0.25
-DISTNAME=		gnutls-${VERSION}
+DISTNAME=		gnutls-1.0.25
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		security
+SHARED_LIBS=		gnutls-extra	12.25 \
+			gnutls-openssl	12.25 \
+			gnutls		12.25
+MODGNU_SHARED_LIBS=	gnutls-extra	'' \
+			gnutls-openssl	'' \
+			gnutls		''
+LIBgnutls-extra_ALIAS=	realgnutls_extra
+LIBgnutls-openssl_ALIAS=gnutls_openssl
+LIBgnutls_ALIAS=	realgnutls
 
 HOMEPAGE=		http://www.gnutls.org/
 MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
@@ -24,6 +33,8 @@ MASTER_SITES=	ftp://ftp.gnutls.org/pub/gnutls/ \
 MODULES=	converters/libiconv
 LIB_DEPENDS=	gcrypt.12::security/libgcrypt \
 		opencdk.8::security/opencdk
+
+USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

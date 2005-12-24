@@ -1,0 +1,12 @@
+$OpenBSD: patch-libextra_Makefile_in,v 1.1 2005/12/24 20:52:58 sturm Exp $
+--- libextra/Makefile.in.orig	Sat Dec 24 21:17:52 2005
++++ libextra/Makefile.in	Sat Dec 24 21:18:19 2005
+@@ -345,7 +345,7 @@ COBJECTS_EXTRA = ext_srp.c \
+ 	gnutls_extra.c auth_srp_rsa.c
+ 
+ libgnutls_extra_la_LDFLAGS = $(LIBGNUTLS_EXTRA_EXPORTS) \
+-	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
++	${librealgnutls_extra_la_LDFLAGS} \
+ 	$(LIBOPENCDK_LIBS) $(LZO_LIBS)
+ 
+ libgnutls_extra_la_SOURCES = $(COBJECTS_EXTRA) $(LZO_OBJECTS) \

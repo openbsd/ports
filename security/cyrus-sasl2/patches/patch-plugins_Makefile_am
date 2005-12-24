@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_Makefile_am,v 1.1 2005/12/24 20:52:58 sturm Exp $
+--- plugins/Makefile.am.orig	Sat May  7 06:54:18 2005
++++ plugins/Makefile.am	Sat Dec 24 21:43:55 2005
+@@ -148,7 +148,7 @@ libldapdb_la_DEPENDENCIES = $(COMPAT_OBJ
+ libldapdb_la_LIBADD = $(COMPAT_OBJS)
+ 
+ libsql_la_SOURCES = sql.c sql_init.c $(common_sources)
+-libsql_la_LDFLAGS = $(LIB_MYSQL) $(LIB_PGSQL) $(LIB_SQLITE) -version-info $(sql_version)
++libsql_la_LDFLAGS = $(LIB_MYSQL) $(LIB_PGSQL) $(LIB_SQLITE) ${librealsql_la_LDFLAGS}
+ libsql_la_DEPENDENCIES = $(COMPAT_OBJS)
+ libsql_la_LIBADD = $(COMPAT_OBJS)
+ 

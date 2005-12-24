@@ -1,0 +1,12 @@
+$OpenBSD: patch-libclamav_Makefile_am,v 1.1 2005/12/24 20:52:58 sturm Exp $
+--- libclamav/Makefile.am.orig	Sat Dec 24 19:26:40 2005
++++ libclamav/Makefile.am	Sat Dec 24 19:27:59 2005
+@@ -20,7 +20,7 @@ INCLUDES = -I$(top_srcdir) -I@srcdir@/zz
+ 
+ libclamav_la_LIBADD = @LIBCLAMAV_LIBS@
+ 
+-libclamav_la_LDFLAGS = @TH_SAFE@ -version-info @LIBCLAMAV_VERSION@ -no-undefined
++libclamav_la_LDFLAGS = @TH_SAFE@ ${librealclamav_la_LDFLAGS} -no-undefined
+ 
+ include_HEADERS = clamav.h
+ 

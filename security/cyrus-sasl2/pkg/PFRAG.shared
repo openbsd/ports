@@ -1,10 +1,10 @@
-@comment $OpenBSD: PFRAG.shared,v 1.12 2005/12/18 10:37:26 jakob Exp $
-@lib lib/libsasl2.so.${LIBVERSION}
-@lib lib/sasl2/libanonymous.so.${LIBVERSION}
-@lib lib/sasl2/libcrammd5.so.${LIBVERSION}
-@lib lib/sasl2/libdigestmd5.so.${LIBVERSION}
-@lib lib/sasl2/libgssapiv2.so.${LIBVERSION}
-@lib lib/sasl2/liblogin.so.${LIBVERSION}
-@lib lib/sasl2/libotp.so.${LIBVERSION}
-@lib lib/sasl2/libplain.so.${LIBVERSION}
-@lib lib/sasl2/libsasldb.so.${LIBVERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.13 2005/12/24 20:52:58 sturm Exp $
+@lib lib/libsasl2.so.${LIBsasl2_VERSION}
+@lib lib/sasl2/libanonymous.so.${LIBanonymous_VERSION}
+@lib lib/sasl2/libcrammd5.so.${LIBcrammd5_VERSION}
+@lib lib/sasl2/libdigestmd5.so.${LIBdigestmd5_VERSION}
+@lib lib/sasl2/libgssapiv2.so.${LIBgssapiv2_VERSION}
+@lib lib/sasl2/liblogin.so.${LIBlogin_VERSION}
+@lib lib/sasl2/libotp.so.${LIBotp_VERSION}
+@lib lib/sasl2/libplain.so.${LIBplain_VERSION}
+@lib lib/sasl2/libsasldb.so.${LIBsasldb_VERSION}

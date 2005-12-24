@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/09/18 13:06:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2005/12/24 20:52:58 sturm Exp $
 @conflict socks5-*
 bin/socksify
 include/socks.h
+lib/libdsocks.a
 lib/libdsocks.la
 lib/libsocks.a
 lib/libsocks.la

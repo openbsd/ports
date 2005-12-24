@@ -1,10 +1,15 @@
-# $OpenBSD: Makefile,v 1.31 2005/09/14 14:10:14 jakob Exp $
+# $OpenBSD: Makefile,v 1.32 2005/12/24 20:52:58 sturm Exp $
 
 COMMENT=	"SOCKS client and server"
 
 DISTNAME=	dante-1.1.18
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security
+SHARED_LIBS=	dsocks	1.1 \
+		socks	1.1
+MODGNU_SHARED_LIBS=dsocks	'-all-dynamic' \
+		socks		''
+
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/
 
 HOMEPAGE=	http://www.inet.no/dante/
@@ -22,6 +27,8 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
 MODGNU_CONFIG_GUESS_DIRS+= ${WRKSRC}
+
+USE_LIBTOOL=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dante
