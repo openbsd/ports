@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2005/09/17 00:38:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.42 2005/12/24 17:40:00 pvalchev Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
@@ -32,6 +32,8 @@ AUTOMAKE_VERSION=	1.9
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test
+SHARED_LIBS=	SDL	5.0
+MODGNU_SHARED_LIBS=	SDL	'-no-undefined'
 CONFIGURE_ENV+=	X11BASE="${X11BASE}" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
@@ -101,7 +103,5 @@ WANTLIB+=	X11 Xext
 .endif
 
 NO_REGRESS=	Yes
-
-MAKE_FLAGS=	libSDL_la_LDFLAGS="-version-info 5:0:0"
 
 .include <bsd.port.mk>
