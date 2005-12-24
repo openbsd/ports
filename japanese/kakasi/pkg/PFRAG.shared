@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2005/02/27 20:31:52 espie Exp $
-@lib lib/libkakasi.so.3.0
+@comment $OpenBSD: PFRAG.shared,v 1.7 2005/12/24 16:21:03 espie Exp $
+@lib lib/libkakasi.so.${LIBkakasi_VERSION}

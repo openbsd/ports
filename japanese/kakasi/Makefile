@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2005/02/27 20:31:52 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2005/12/24 16:21:03 espie Exp $
 # FreeBSD Id: Makefile,v 1.14 1998/04/05 04:46:33 max Exp $
 
 COMMENT=	"Kanji -> kana converter"
 
 DISTNAME=	kakasi-2.3.4
+SHARED_LIBS=	kakasi	3.0
+MODGNU_SHARED_LIBS=	kakasi	-export-dynamic
 CATEGORIES=	japanese
 MASTER_SITES=	http://kakasi.namazu.org/stable/
 
