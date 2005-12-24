@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2005/11/20 17:44:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2005/12/24 20:05:27 steven Exp $
 
 NOT_FOR_ARCHS=	vax
 
@@ -7,6 +7,10 @@ COMMENT=	"high-level language for numerical computations"
 VERSION=	2.1.72
 DISTNAME=	octave-${VERSION}
 CATEGORIES=	math
+
+SHARED_LIBS=	cruft		2.0 \
+		octave		2.0 \
+		octinterp	2.0
 
 HOMEPAGE=	http://www.octave.org/
 
@@ -43,13 +47,14 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-hdf5
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_ENV=	SHLIB_VER=${SHLIB_VER}
+MAKE_ENV=	LIBcruft_VERSION=${LIBcruft_VERSION} \
+		LIBoctave_VERSION=${LIBoctave_VERSION} \
+		LIBoctinterp_VERSION=${LIBoctinterp_VERSION}
 
-# need shared library version for machines which support shared libraries.
-SHLIB_VER=	2.0
+# needed to build on amd64
 GCC_ARCH=	${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}
 GNU_ARCH=	${GCC_ARCH:S/amd64/x86_64/}
-SUBST_VARS=	GNU_ARCH VERSION SHLIB_VER
+SUBST_VARS=	GNU_ARCH VERSION
 
 # need to use fpic version of libgcc.a
 post-configure:

@@ -1,7 +1,17 @@
-$OpenBSD: patch-libcruft_Makefile_in,v 1.3 2005/11/02 18:20:58 alek Exp $
---- libcruft/Makefile.in.orig	Fri Mar  4 17:13:56 2005
-+++ libcruft/Makefile.in	Mon Sep 26 07:43:35 2005
-@@ -101,12 +101,8 @@ libcruft.$(LIBEXT): $(CRUFT_OBJ)
+$OpenBSD: patch-libcruft_Makefile_in,v 1.4 2005/12/24 20:05:27 steven Exp $
+--- libcruft/Makefile.in.orig	Fri Nov 11 20:47:15 2005
++++ libcruft/Makefile.in	Sat Dec 24 12:28:55 2005
+@@ -78,6 +78,9 @@ ifeq ($(SHARED_LIBS), true)
+   endif
+ endif
+ 
++SHLLIB_VER=$(SHLEXT).$(LIBcruft_VERSION)
++SHLEXT_VER=$(SHLLIB_VER)
++
+ ifeq ($(SHARED_LIBS), true)
+   ifeq ($(STATIC_LIBS), true)
+     LIBRARIES = libcruft.$(LIBEXT) libcruft.$(SHLEXT_VER)
+@@ -101,12 +104,8 @@ libcruft.$(LIBEXT): $(CRUFT_OBJ)
  	$(AR) $(ARFLAGS) $@ $^
  	$(RANLIB) $@
  
@@ -15,7 +25,7 @@ $OpenBSD: patch-libcruft_Makefile_in,v 1.3 2005/11/02 18:20:58 alek Exp $
  	$(SH_LD) $(SH_LDFLAGS) $(SONAME_FLAGS) -o $@ $^ $(LINK_DEPS)
  
  $(CRUFT_OBJ):
-@@ -131,9 +127,7 @@ install::
+@@ -131,9 +130,7 @@ install::
  	if $(SHARED_LIBS); then \
  	  rm -f $(DESTDIR)$(octlibdir)/libcruft.$(SHLLIB_VER); \
  	  $(INSTALL) \

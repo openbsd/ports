@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/11/20 17:44:20 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/12/24 20:05:27 steven Exp $
 %%SHARED%%
 bin/mkoctfile
 bin/octave
@@ -676,7 +676,7 @@ share/doc/octave/faq/Short-circuit-boolean-operators.html
 share/doc/octave/faq/Unwind-protect.html
 share/doc/octave/faq/Variable-length-argument-lists.html
 share/doc/octave/faq/Variable-length-return-lists.html
-share/doc/octave/faq/Version-${SHLIB_VER}.html
+share/doc/octave/faq/Version-2.0.html
 share/doc/octave/faq/What-else-do-I-need-.html
 share/doc/octave/faq/What-is-Octave-.html
 share/doc/octave/faq/index.html
