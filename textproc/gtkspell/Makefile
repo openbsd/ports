@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2005/11/15 19:48:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.14 2005/12/25 16:15:36 steven Exp $
 
 COMMENT=	"gtk2 spelling checker"
 DISTNAME=	gtkspell-2.0.5
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=		gtkspell	0.0
+MODGNU_SHARED_LIBS=	gtkspell	''
 CATEGORIES=	textproc x11
 MASTER_SITES=	${HOMEPAGE}download/
 
@@ -27,6 +29,7 @@ BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	aspell.15.2::textproc/aspell/core \
 		gdk_pixbuf-2.0.0.0,gdk-x11-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

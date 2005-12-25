@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/07 00:23:23 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2005/12/25 16:13:44 steven Exp $
 
 COMMENT=	"fast, compact and portable XSL/XSLT processor"
 
 V=		1.0.1
 DISTNAME=	Sablot-${V}
-PKGNAME=	sablotron-${V}
+PKGNAME=	sablotron-${V}p0
+SHARED_LIBS=		sablot	100.1
+MODGNU_SHARED_LIBS=	sablot	''
 CATEGORIES=    	textproc
 
 HOMEPAGE=	http://www.gingerall.com/
@@ -23,6 +25,7 @@ MODULES=	converters/libiconv
 LIB_DEPENDS=	expat.2::textproc/expat
 BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser
 
+USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 AUTOCONF_VERSION= 2.57
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autocfg

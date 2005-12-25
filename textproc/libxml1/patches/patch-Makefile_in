@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.3 2005/12/25 16:12:06 steven Exp $
+--- Makefile.in.orig	Sun Dec 25 13:00:07 2005
++++ Makefile.in	Sun Dec 25 13:00:29 2005
+@@ -110,7 +110,7 @@ bin_SCRIPTS = xml-config
+ lib_LTLIBRARIES = libxml.la
+ libxml_la_LIBADD = @Z_LIBS@
+ 
+-libxml_la_LDFLAGS = -version-info @LIBXML_VERSION_INFO@ @Z_LIBS@
++libxml_la_LDFLAGS = $(librealxml_la_LDFLAGS) @Z_LIBS@
+ 
+ libxml_la_SOURCES = \
+ 		SAX.c \

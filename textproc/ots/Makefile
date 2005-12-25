@@ -1,7 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/15 07:59:13 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/25 16:14:45 steven Exp $
 
 COMMENT=	"open source tool for summarizing texts"
 DISTNAME=	ots-0.4.2
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=	ots-1	4.2
+MODGNU_SHARED_LIBS=	ots-1	''
+LIBots-1_ALIAS=	ots_1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libots/}
 
@@ -24,6 +28,7 @@ LIB_DEPENDS=	glib-2.0.400.8::devel/glib2 \
 
 WANTLIB=	c m z
 
+USE_LIBTOOL=Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 

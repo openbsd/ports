@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2004/09/15 18:44:03 espie Exp $
-@lib lib/libxml.so.9.17
+@comment $OpenBSD: PFRAG.shared,v 1.7 2005/12/25 16:12:06 steven Exp $
+@lib lib/libxml.so.${LIBxml_VERSION}
