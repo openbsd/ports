@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.29 2004/12/17 15:18:32 alek Exp $
+# $OpenBSD: Makefile,v 1.30 2005/12/25 20:23:18 naddy Exp $
 
 COMMENT=	"Fast-Light Tool Kit"
 
 VER=		1.1.4
 DISTNAME=	fltk-${VER}
 CATEGORIES=	x11
+SHARED_LIBS=	fltk		4.0 \
+		fltk_forms	4.0 \
+		fltk_gl		4.0 \
+		fltk_images	4.0
 
 HOMEPAGE=	http://www.fltk.org/
 
@@ -34,7 +38,13 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LIBS="-L${LOCALBASE}/lib" \
+		FL_MAJOR_VERSION=${LIBfltk_VERSION:R} \
+		FL_MINOR_VERSION=${LIBfltk_VERSION:E} \
+		FL_PATCH_VERSION=0
+.for n v in ${SHARED_LIBS}
+MAKE_ENV+=	LIB$n_VERSION=${LIB$n_VERSION}
+.endfor
 
 pre-build:
 	perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," \

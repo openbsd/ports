@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/09/15 19:26:28 espie Exp $
-@lib lib/libfleditor.so.2.0
+@comment $OpenBSD: PFRAG.shared,v 1.5 2005/12/25 20:23:18 naddy Exp $
+@lib lib/libfleditor.so.${LIBfleditor_VERSION}

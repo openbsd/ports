@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.8 2003/12/26 14:18:30 wilfried Exp $
+$OpenBSD: patch-configure_in,v 1.9 2005/12/25 20:23:18 naddy Exp $
 --- configure.in.orig	2003-08-06 00:40:45.000000000 +0200
 +++ configure.in	2003-12-26 14:53:25.000000000 +0100
 @@ -32,9 +32,9 @@ dnl Required file in package...
@@ -8,9 +8,9 @@ $OpenBSD: patch-configure_in,v 1.8 2003/12/26 14:18:30 wilfried Exp $
 -FL_MAJOR_VERSION=1
 -FL_MINOR_VERSION=1
 -FL_PATCH_VERSION=4
-+FL_MAJOR_VERSION=4
-+FL_MINOR_VERSION=0
-+FL_PATCH_VERSION=0
++#FL_MAJOR_VERSION=1
++#FL_MINOR_VERSION=1
++#FL_PATCH_VERSION=4
  FL_RELEASE_VERSION=
  FL_API_VERSION=${FL_MAJOR_VERSION}.${FL_MINOR_VERSION}
  

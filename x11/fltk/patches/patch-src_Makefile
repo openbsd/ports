@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile,v 1.6 2003/12/26 14:18:30 wilfried Exp $
+$OpenBSD: patch-src_Makefile,v 1.7 2005/12/25 20:23:18 naddy Exp $
 --- src/Makefile.orig	2003-08-24 15:09:06.000000000 +0200
 +++ src/Makefile	2003-12-26 14:58:32.000000000 +0100
 @@ -198,11 +198,9 @@ $(LIBNAME): $(OBJECTS)
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_Makefile,v 1.6 2003/12/26 14:18:30 wilfried Exp $
  	$(RANLIB) $@
  
 -libfltk.so.1.1: $(OBJECTS)
-+libfltk.so.4.0: $(OBJECTS)
++libfltk.so.$(LIBfltk_VERSION): $(OBJECTS)
  	echo $(DSOCOMMAND) $@ ...
  	$(DSOCOMMAND) $@ $(OBJECTS)
 -	-$(RM) libfltk.so
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_Makefile,v 1.6 2003/12/26 14:18:30 wilfried Exp $
  	$(RANLIB) $@
  
 -libfltk_forms.so.1.1: $(FLOBJECTS) libfltk.so.1.1
-+libfltk_forms.so.4.0: $(FLOBJECTS) libfltk.so.4.0
++libfltk_forms.so.$(LIBfltk_forms_VERSION): $(FLOBJECTS) libfltk.so.$(LIBfltk_VERSION)
  	echo $(DSOCOMMAND) $@ ...
  	$(DSOCOMMAND) $@ $(FLOBJECTS) -L. -lfltk
 -	-$(RM) libfltk_forms.so
@@ -32,7 +32,7 @@ $OpenBSD: patch-src_Makefile,v 1.6 2003/12/26 14:18:30 wilfried Exp $
  	$(RANLIB) $@
  
 -libfltk_gl.so.1.1: $(GLOBJECTS) libfltk.so.1.1
-+libfltk_gl.so.4.0: $(GLOBJECTS) libfltk.so.4.0
++libfltk_gl.so.$(LIBfltk_gl_VERSION): $(GLOBJECTS) libfltk.so.$(LIBfltk_VERSION)
  	echo $(DSOCOMMAND) $@ ...
  	$(DSOCOMMAND) $@ $(GLOBJECTS) -L. -lfltk
 -	-$(RM) libfltk_gl.so
@@ -45,7 +45,7 @@ $OpenBSD: patch-src_Makefile,v 1.6 2003/12/26 14:18:30 wilfried Exp $
  	$(RANLIB) $@
  
 -libfltk_images.so.1.1: $(IMGOBJECTS) libfltk.so.1.1
-+libfltk_images.so.4.0: $(IMGOBJECTS) libfltk.so.4.0
++libfltk_images.so.$(LIBfltk_images_VERSION): $(IMGOBJECTS) libfltk.so.$(LIBfltk_VERSION)
  	echo $(DSOCOMMAND) $@ ...
  	$(DSOCOMMAND) $@ $(IMGOBJECTS) $(IMAGELIBS) -L. -lfltk
 -	-$(RM) libfltk_images.so
@@ -58,13 +58,13 @@ $OpenBSD: patch-src_Makefile,v 1.6 2003/12/26 14:18:30 wilfried Exp $
  	fi
  	$(RANLIB) $(libdir)/$(IMGLIBNAME)
 -	if test x$(DSONAME) = xlibfltk.so.1.1; then\
-+	if test x$(DSONAME) = xlibfltk.so.4.0; then\
++	if test x$(DSONAME) = xlibfltk.so.$(LIBfltk_VERSION); then\
  		$(RM) $(libdir)/libfltk.so*;\
 -		$(CP) libfltk.so.1.1 $(libdir); \
 -		$(CHMOD) 755 $(libdir)/libfltk.so.1.1; \
 -		$(LN) libfltk.so.1.1 $(libdir)/libfltk.so;\
-+		$(CP) libfltk.so.4.0 $(libdir); \
-+		$(CHMOD) 755 $(libdir)/libfltk.so.4.0; \
++		$(CP) libfltk.so.$(LIBfltk_VERSION) $(libdir); \
++		$(CHMOD) 755 $(libdir)/libfltk.so.$(LIBfltk_VERSION); \
  	fi
  	if test x$(DSONAME) = xlibfltk.sl.1.1; then\
  		$(RM) $(libdir)/libfltk.sl*;\
@@ -73,13 +73,13 @@ $OpenBSD: patch-src_Makefile,v 1.6 2003/12/26 14:18:30 wilfried Exp $
  		$(CHMOD) 755 $(libdir)/libfltk_s.a; \
  	fi
 -	if test x$(FLDSONAME) = xlibfltk_forms.so.1.1; then\
-+	if test x$(FLDSONAME) = xlibfltk_forms.so.4.0; then\
++	if test x$(FLDSONAME) = xlibfltk_forms.so.$(LIBfltk_forms_VERSION); then\
  		$(RM) $(libdir)/libfltk_forms.so*;\
 -		$(CP) libfltk_forms.so.1.1 $(libdir); \
 -		$(CHMOD) 755 $(libdir)/libfltk_forms.so.1.1; \
 -		$(LN) libfltk_forms.so.1.1 $(libdir)/libfltk_forms.so;\
-+		$(CP) libfltk_forms.so.4.0 $(libdir); \
-+		$(CHMOD) 755 $(libdir)/libfltk_forms.so.4.0; \
++		$(CP) libfltk_forms.so.$(LIBfltk_forms_VERSION) $(libdir); \
++		$(CHMOD) 755 $(libdir)/libfltk_forms.so.$(LIBfltk_forms_VERSION); \
  	fi
  	if test x$(FLDSONAME) = xlibfltk_forms.sl.1.1; then\
  		$(RM) $(libdir)/libfltk_forms.sl*;\
@@ -88,13 +88,13 @@ $OpenBSD: patch-src_Makefile,v 1.6 2003/12/26 14:18:30 wilfried Exp $
  		$(CHMOD) 755 $(libdir)/libfltk_forms.a; \
  	fi
 -	if test x$(GLDSONAME) = xlibfltk_gl.so.1.1; then\
-+	if test x$(GLDSONAME) = xlibfltk_gl.so.4.0; then\
++	if test x$(GLDSONAME) = xlibfltk_gl.so.$(LIBfltk_gl_VERSION); then\
  		$(RM) $(libdir)/libfltk_gl.so*;\
 -		$(CP) libfltk_gl.so.1.1 $(libdir); \
 -		$(CHMOD) 755 $(libdir)/libfltk_gl.so.1.1; \
 -		$(LN) libfltk_gl.so.1.1 $(libdir)/libfltk_gl.so;\
-+		$(CP) libfltk_gl.so.4.0 $(libdir); \
-+		$(CHMOD) 755 $(libdir)/libfltk_gl.so.4.0; \
++		$(CP) libfltk_gl.so.$(LIBfltk_gl_VERSION) $(libdir); \
++		$(CHMOD) 755 $(libdir)/libfltk_gl.so.$(LIBfltk_gl_VERSION); \
  	fi
  	if test x$(GLDSONAME) = xlibfltk_gl.sl.1.1; then\
  		$(RM) $(libdir)/libfltk_gl.sl*;\
@@ -103,13 +103,13 @@ $OpenBSD: patch-src_Makefile,v 1.6 2003/12/26 14:18:30 wilfried Exp $
  		$(CHMOD) 755 $(libdir)/libfltk_gl.a; \
  	fi
 -	if test x$(IMGDSONAME) = xlibfltk_images.so.1.1; then\
-+	if test x$(IMGDSONAME) = xlibfltk_images.so.4.0; then\
++	if test x$(IMGDSONAME) = xlibfltk_images.so.$(LIBfltk_images_VERSION); then\
  		$(RM) $(libdir)/libfltk_images.so*;\
 -		$(CP) libfltk_images.so.1.1 $(libdir); \
 -		$(CHMOD) 755 $(libdir)/libfltk_images.so.1.1; \
 -		$(LN) libfltk_images.so.1.1 $(libdir)/libfltk_images.so;\
-+		$(CP) libfltk_images.so.4.0 $(libdir); \
-+		$(CHMOD) 755 $(libdir)/libfltk_images.so.4.0; \
++		$(CP) libfltk_images.so.$(LIBfltk_images_VERSION) $(libdir); \
++		$(CHMOD) 755 $(libdir)/libfltk_images.so.$(LIBfltk_images_VERSION); \
  	fi
  	if test x$(IMGDSONAME) = xlibfltk_images.sl.1.1; then\
  		$(RM) $(libdir)/libfltk_images.sl*;\

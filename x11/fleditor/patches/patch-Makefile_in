@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2002/08/10 20:04:16 wilfried Exp $
+$OpenBSD: patch-Makefile_in,v 1.7 2005/12/25 20:23:18 naddy Exp $
 --- Makefile.in.orig	Fri Jun 14 23:12:25 2002
 +++ Makefile.in	Sat Aug 10 19:49:59 2002
 @@ -29,7 +29,7 @@ FLTKLIBDIR	=	@ac_fltk_libraries@
@@ -91,7 +91,7 @@ $OpenBSD: patch-Makefile_in,v 1.6 2002/08/10 20:04:16 wilfried Exp $
  	$(RANLIB) libfleditor.a
  
 -libfleditor.so:	$(EDITOR_OBJS)
-+libfleditor.so.2.0:	$(EDITOR_OBJS)
++libfleditor.so.$(LIBfleditor_VERSION):	$(EDITOR_OBJS)
  	echo Building library $@...
  	$(RM) libfleditor.so
  	@DSOCOMMAND@ @DSOLIBNAME@@DSOEXT@ $(EDITOR_OBJS)

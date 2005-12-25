@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.5 2002/08/10 20:04:16 wilfried Exp $
+$OpenBSD: patch-configure_in,v 1.6 2005/12/25 20:23:18 naddy Exp $
 --- configure.in.orig	Wed Jan 10 00:11:25 2001
 +++ configure.in	Fri Aug  9 15:52:32 2002
 @@ -18,7 +18,7 @@ AC_PATH_PROG(AR,ar)
@@ -43,7 +43,7 @@ $OpenBSD: patch-configure_in,v 1.5 2002/08/10 20:04:16 wilfried Exp $
 -          DSOCOMMAND="\$(CXX) -Wl,-soname,\$@ -shared $DEBUGFLAG -o"
 -	  ;;
 -  esac
-+  DSOEXT=".so.2.0"
++  DSOEXT=".so.\$(LIBfleditor_VERSION)"
 +  DSOCOMMAND="\$(CXX) -Wl,-soname,\$@ \$(LDLIBS) -fPIC -shared $DEBUGFLAG -o"
  fi],
  [

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2005/11/20 12:58:52 wilfried Exp $
+# $OpenBSD: Makefile,v 1.14 2005/12/25 20:23:18 naddy Exp $
 
 COMMENT=		'Text Editor for FLTK'
 
 V=			0.4.5
 DISTNAME=		fl_editor-${V}
 PKGNAME=		fleditor-${V}p0
+SHARED_LIBS=		fleditor 2.0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.robertk.com/source/
@@ -28,6 +29,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-fltk=${LOCALBASE}
+MAKE_ENV=		LIBfleditor_VERSION=${LIBfleditor_VERSION}
 
 WRKDIST=		${WRKDIR}/fl_editor
 

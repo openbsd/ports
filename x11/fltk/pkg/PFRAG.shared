@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2004/09/15 19:26:28 espie Exp $
-@lib lib/libfltk.so.4.0
-@lib lib/libfltk_forms.so.4.0
-@lib lib/libfltk_gl.so.4.0
-@lib lib/libfltk_images.so.4.0
+@comment $OpenBSD: PFRAG.shared,v 1.10 2005/12/25 20:23:18 naddy Exp $
+@lib lib/libfltk.so.${LIBfltk_VERSION}
+@lib lib/libfltk_forms.so.${LIBfltk_forms_VERSION}
+@lib lib/libfltk_gl.so.${LIBfltk_gl_VERSION}
+@lib lib/libfltk_images.so.${LIBfltk_images_VERSION}
