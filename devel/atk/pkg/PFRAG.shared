@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.10 2005/09/09 19:05:10 marcm Exp $
-@lib lib/libatk-1.0.so.1011.3
+@comment $OpenBSD: PFRAG.shared,v 1.11 2005/12/25 17:13:29 bernd Exp $
+@lib lib/libatk-1.0.so.${LIBatk-1.0_VERSION}
