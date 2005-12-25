@@ -1,13 +1,19 @@
-# $OpenBSD: Makefile,v 1.10 2004/12/27 18:32:40 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2005/12/25 15:52:38 sturm Exp $
 
 COMMENT=	"XML security library"
 COMMENT-docs=	"XML security library documentation"
 
 VERSION=	1.2.5
 DISTNAME=	xmlsec1-${VERSION}
-PKGNAME=	xmlsec-${VERSION}p0
+PKGNAME=	xmlsec-${VERSION}p1
 PKGNAME-docs=	xmlsec-docs-${VERSION}
 CATEGORIES=	security
+SHARED_LIBS=	xmlsec1-gnutls	3.5 \
+		xmlsec1-openssl	3.5 \
+		xmlsec1		3.5
+MODGNU_SHARED_LIBS=xmlsec1-gnutls '' \
+		xmlsec1-openssl	'' \
+		xmlsec1		''
 
 HOMEPAGE=	http://www.aleksey.com/xmlsec/
 MAINTAINER=	Jim Geovedi <jim@corebsd.or.id>
@@ -38,6 +44,8 @@ BUILD_DEPENDS=		::devel/pkgconfig
 LIB_DEPENDS=		xslt.2::textproc/libxslt \
 			gnutls.12::security/gnutls
 .endif
+
+USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}

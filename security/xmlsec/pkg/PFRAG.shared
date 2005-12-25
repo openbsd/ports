@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2004/09/15 18:36:03 espie Exp $
-@lib lib/libxmlsec1-gnutls.so.3.5
-@lib lib/libxmlsec1-openssl.so.3.5
-@lib lib/libxmlsec1.so.3.5
+@comment $OpenBSD: PFRAG.shared,v 1.9 2005/12/25 15:52:39 sturm Exp $
+@lib lib/libxmlsec1-gnutls.so.${LIBxmlsec1-gnutls_VERSION}
+@lib lib/libxmlsec1-openssl.so.${LIBxmlsec1-openssl_VERSION}
+@lib lib/libxmlsec1.so.${LIBxmlsec1_VERSION}

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2005/12/25 15:52:38 sturm Exp $
+--- src/Makefile.in.orig	Sun Dec 25 12:23:53 2005
++++ src/Makefile.in	Sun Dec 25 12:24:36 2005
+@@ -181,7 +181,7 @@ lib_LTLIBRARIES = libotr.la
+ libotr_la_SOURCES = privkey.c context.c proto.c b64.c dh.c mem.c message.c \
+ 		    userstate.c tlv.c auth.c
+ 
+-libotr_la_LDFLAGS = -version-info @LIBOTR_LIBTOOL_VERSION@ @LIBS@ @LIBGCRYPT_LIBS@
++libotr_la_LDFLAGS = $(librealotr_la_LDFLAGS) @LIBS@ @LIBGCRYPT_LIBS@
+ otrincdir = $(includedir)/libotr
+ otrinc_HEADERS = b64.h context.h dh.h mem.h message.h privkey.h proto.h \
+ 		 version.h userstate.h tlv.h serial.h auth.h privkey-t.h
