@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.91 2005/09/04 23:38:18 espie Exp $
+# $OpenBSD: Makefile,v 1.92 2005/12/25 16:33:47 steven Exp $
 
 COMMENT=		"XML parsing library"
 
 VERSION=		2.6.16
 DISTNAME=		libxml2-${VERSION}
-PKGNAME=		libxml-${VERSION}p6
+PKGNAME=		libxml-${VERSION}p7
+SHARED_LIBS=		xml2	9.0
+MODGNU_SHARED_LIBS=	xml2	''
 CATEGORIES=		textproc
 MASTER_SITES=		ftp://xmlsoft.org/ \
 			${MASTER_SITE_GNOME:=sources/libxml2/2.6/}
@@ -21,6 +23,7 @@ WANTLIB=		c m z
 
 MODULES=		converters/libiconv
 
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static
@@ -29,8 +32,6 @@ CONFIGURE_ARGS+=	--with-html-subdir="libxml2/html"
 CONFIGURE_ARGS+=	--with-iconv="${DEPBASE}"
 CONFIGURE_ARGS+=	--without-python
 CONFIGURE_ARGS+=	--without-threads
-
-MAKE_FLAGS=	libxml2_la_LDFLAGS='-version-info 9:0:0'
 
 post-configure:
 	sed -e 's,@PREFIX@,${PREFIX},' <${FILESDIR}/rebuild >${WRKBUILD}/rebuild
