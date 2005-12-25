@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/10/13 16:36:35 pvalchev Exp $
-@lib lib/libhfsp.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.3 2005/12/25 22:56:32 pvalchev Exp $
+@lib lib/libhfsp.so.${LIBhfsp_VERSION}

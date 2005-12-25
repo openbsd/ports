@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/01/11 07:16:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2005/12/25 22:56:32 pvalchev Exp $
 
 COMMENT=	"hfsplus filesystem access tool"
 
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	::devel/autoconf/${AUTOCONF_VERSION}
 LIB_DEPENDS=	utf8::misc/libutf8 
 
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 
 HOMEPAGE=	http://ftp.penguinppc.org/projects/hfsplus/
 MASTER_SITES=	http://ftp.penguinppc.org/projects/hfsplus/
@@ -33,6 +34,8 @@ CONFIGURE_ENV=	LIBS="-lutf8" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}
+SHARED_LIBS=	hfsp	0.0
+MODGNU_SHARED_LIBS=	hfsp	'-no-undefined'
 
 pre-configure:
 	@cd ${WRKDIST} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
