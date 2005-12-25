@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2005/12/21 12:21:04 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2005/12/25 16:08:25 steven Exp $
 # $FreeBSD: Makefile,v 1.2 1999/08/31 02:09:14 peter Exp $
 
 COMMENT=	"XML 1.0 parser written in C"
 
 DISTNAME=	expat-1.95.6
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=		expat	4.0
+MODGNU_SHARED_LIBS=	expat	''
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=expat/}
 
@@ -21,6 +23,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 NO_REGRESS=Yes
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/conftools
+MAKE_FLAGS=	VSNFLAG='-version-info ${LIBexpat_VERSION:S/./:/}:0'
 
 DOC=${PREFIX}/share/doc/expat
 EXAMPLES=${PREFIX}/share/examples/expat
