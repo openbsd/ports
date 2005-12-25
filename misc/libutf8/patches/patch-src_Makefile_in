@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2005/12/25 23:23:47 steven Exp $
+--- src/Makefile.in.orig	Sun Dec 25 23:36:13 2005
++++ src/Makefile.in	Sun Dec 25 23:35:59 2005
+@@ -120,7 +120,7 @@ PLUG_SOURCES = \
+ all : libutf8.la @PLUGLIB@
+ 
+ libutf8.la : $(OBJECTS)
+-	$(LIBTOOL_LINK) $(CC) -o libutf8.la -rpath $(libdir) $(OBJECTS)
++	$(LIBTOOL_LINK) $(CC) -o libutf8.la $(libutf8_la_LDFLAGS) -rpath $(libdir) $(OBJECTS)
+ 
+ libutf8_plug.so : libutf8_plug_@OS@.so
+ 	$(RM) libutf8_plug.so
