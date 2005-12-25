@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2005/11/03 13:18:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2005/12/25 23:42:09 steven Exp $
 
 COMMENT=	"redhat package manager"
 
 PKGNAME=	${DISTNAME}p3
 DISTNAME=	rpm-3.0.6
+SHARED_LIBS=		rpm		0.1 \
+			rpmbuild	0.0
+MODGNU_SHARED_LIBS=	rpm		'' \
+			rpmbuild	''
 CATEGORIES=	misc archivers emulators
 
 PERMIT_DISTFILES_FTP=	Yes
@@ -30,8 +34,6 @@ CONFIGURE_ENV=		PGPBIN=$(LOCALBASE)/bin/pgp
 CONFIGURE_ENV+=		CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 CONFIGURE_ENV+=		varprefix=/var
-
-MAKE_FLAGS=	librpm_la_LDFLAGS='-version-info 0:1:0'
 
 SEPARATE_BUILD=		simple
 
