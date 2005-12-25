@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/15 18:36:00 espie Exp $
-@lib lib/libmhash.so.2.0
+@comment $OpenBSD: PFRAG.shared,v 1.6 2005/12/25 11:15:34 sturm Exp $
+@lib lib/libmhash.so.${LIBmhash_VERSION}

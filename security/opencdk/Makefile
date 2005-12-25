@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/27 13:28:34 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2005/12/25 11:15:34 sturm Exp $
 
 COMMENT=		"Open Crypto Development Kit"
 
 VERSION=		0.5.5
 DISTNAME=		opencdk-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		security
+SHARED_LIBS=		opencdk	8.1
+MODGNU_SHARED_LIBS=	opencdk	''
+LIBopencdk_ALIAS=	realopencdk
 
 HOMEPAGE=		http://www.gnutls.org/
 MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
@@ -23,6 +27,8 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gnutls/opencdk/ \
 EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	gcrypt.12::security/libgcrypt
+
+USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

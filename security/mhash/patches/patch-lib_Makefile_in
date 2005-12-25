@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1 2005/12/25 11:15:34 sturm Exp $
+--- lib/Makefile.in.orig	Sun Dec 25 09:31:33 2005
++++ lib/Makefile.in	Sun Dec 25 09:32:11 2005
+@@ -147,7 +147,7 @@ libmhash_la_SOURCES = mhash.c swap.c bze
+ 		adler32.c whirlpool.c
+ 
+ 
+-libmhash_la_LDFLAGS = -version-info 2 -no-undefined -export-symbols $(srcdir)/libmhash.sym
++libmhash_la_LDFLAGS = ${librealmhash_la_LDFLAGS} -no-undefined -export-symbols $(srcdir)/libmhash.sym
+ 
+ EXTRA_DIST = libmhash.sym
+ subdir = lib

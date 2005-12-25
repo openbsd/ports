@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2005/08/17 16:10:04 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2005/12/25 11:15:34 sturm Exp $
 
 COMMENT=	"strong hash library"
 
 DISTNAME=	mhash-0.9.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	security
+SHARED_LIBS=	mhash	2.0
+MODGNU_SHARED_LIBS=mhash ''
+LIBmhash_ALIAS=	realmhash
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mhash/}
 
@@ -17,8 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-		patch-*
+USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

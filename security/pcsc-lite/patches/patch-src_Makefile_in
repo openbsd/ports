@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2005/12/25 11:15:34 sturm Exp $
+--- src/Makefile.in.orig	Sun Dec 25 11:33:49 2005
++++ src/Makefile.in	Sun Dec 25 11:34:06 2005
+@@ -121,7 +121,8 @@ TESTS = testpcsc
+ libpcsclite_core_la_SOURCES = configfile.l bundleparser.l 	winscard.c eventhandler.c ifdwrapper.c atrhandler.c prothandler.c 	readerfactory.c winscard_msg.c debuglog.c $(PCSC_SYSTEM_SOURCE) 	$(PCSC_THREAD_SOURCE) $(PCSC_HOTPLUG_SOURCE) $(PCSC_DYNLOAD_SOURCE)
+ 
+ 
+-libpcsclite_core_la_LDFLAGS = -version-info 0:2:0 $(PCSC_INCLUDE_LIBS)
++libpcsclite_core_la_LDFLAGS = ${librealpcsclite_core_la_LDFLAGS} \
++	$(PCSC_INCLUDE_LIBS)
+ 
+ libpcsclite_la_SOURCES = winscard_clnt.c debuglog.c $(PCSC_SYSTEM_SOURCE) 			 winscard_msg.c $(PCSC_CLIENT)
+ 

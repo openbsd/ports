@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/09/22 07:59:04 robert Exp $
-@lib lib/libopencdk.so.8.1
+@comment $OpenBSD: PFRAG.shared,v 1.5 2005/12/25 11:15:34 sturm Exp $
+@lib lib/libopencdk.so.${LIBopencdk_VERSION}

@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2005/08/17 16:10:04 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2005/12/25 11:15:33 sturm Exp $
 
 COMMENT=		"Abstract Syntax Notation One structure parser library"
 
 VERSION=		0.1.2
 DISTNAME=		libtasn1-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		security
+SHARED_LIBS=		tasn1	0.2
+MODGNU_SHARED_LIBS=	tasn1	''
 
 HOMEPAGE=		http://www.gnutls.org/
 MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
@@ -21,6 +23,8 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gnutls/libtasn1/ \
 		http://ftp.planetmirror.com/pub/gnupg/alpha/gnutls/libtasn1/ \
 		http://sunsite.dk/pub/security/gcrypt/alpha/gnutls/libtasn1/ \
 		http://ftp.linux.it/pub/mirrors/gnupg/alpha/gnutls/libtasn1/
+
+USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}

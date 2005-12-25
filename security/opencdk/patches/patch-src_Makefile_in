@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2005/12/25 11:15:34 sturm Exp $
+--- src/Makefile.in.orig	Sun Dec 25 10:02:44 2005
++++ src/Makefile.in	Sun Dec 25 10:03:05 2005
+@@ -225,8 +225,7 @@ EXTRA_DIST = opencdk-config.in opencdk.m
+ AM_CPPFLAGS = $(LIBGCRYPT_CFLAGS)
+ @HAVE_LD_VERSION_SCRIPT_FALSE@libopencdk_version_script_cmd = 
+ @HAVE_LD_VERSION_SCRIPT_TRUE@libopencdk_version_script_cmd = -Wl,--version-script=$(srcdir)/libopencdk.vers
+-libopencdk_la_LDFLAGS = -version-info \
+-	@OPENCDK_LT_CURRENT@:@OPENCDK_LT_REVISION@:@OPENCDK_LT_AGE@ \
++libopencdk_la_LDFLAGS = ${librealopencdk_la_LDFLAGS} \
+ 	$(libopencdk_version_script_cmd)
+ 
+ libopencdk_la_SOURCES = \
