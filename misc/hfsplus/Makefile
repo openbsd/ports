@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2005/12/25 22:56:32 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2005/12/25 23:40:43 pvalchev Exp $
 
 COMMENT=	"hfsplus filesystem access tool"
 
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS= powerpc
 
 VERSION=	1.0.4
 DISTNAME=	hfsplus_${VERSION}
-PKGNAME=	hfsplus-${VERSION}
+PKGNAME=	hfsplus-${VERSION}p0
 WRKDIST=	${WRKDIR}/hfsplus-${VERSION}
 CATEGORIES=	misc 
 EXTRACT_SUFX=	.src.tar.bz2
@@ -35,7 +35,7 @@ CONFIGURE_ENV=	LIBS="-lutf8" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}
 SHARED_LIBS=	hfsp	0.0
-MODGNU_SHARED_LIBS=	hfsp	'-no-undefined'
+MODGNU_SHARED_LIBS=	hfsp	''
 
 pre-configure:
 	@cd ${WRKDIST} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
