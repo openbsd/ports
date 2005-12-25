@@ -1,7 +1,7 @@
-$OpenBSD: patch-src-utils-installifs_c,v 1.1.1.1 2001/12/07 06:33:19 shell Exp $
---- src/utils/installifd.c.orig	Wed Nov 28 18:29:49 2001
-+++ src/utils/installifd.c	Wed Nov 28 18:30:13 2001
-@@ -107,12 +107,12 @@
+$OpenBSD: patch-src-utils-installifs_c,v 1.2 2005/12/25 09:13:57 sturm Exp $
+--- src/utils/installifd.c.orig	Wed Nov  7 23:54:32 2001
++++ src/utils/installifd.c	Sun Dec 25 10:08:58 2005
+@@ -107,12 +107,12 @@ int main(int argc, char **argv) {
  
  
    printf("\n\n");

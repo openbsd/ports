@@ -1,6 +1,6 @@
-$OpenBSD: patch-src-sys_generic_h,v 1.1 2001/12/11 19:11:59 shell Exp $
---- src/sys_generic.h.orig	Thu Nov  8 06:54:32 2001
-+++ src/sys_generic.h	Wed Dec 12 02:58:14 2001
+$OpenBSD: patch-src-sys_generic_h,v 1.2 2005/12/25 09:13:57 sturm Exp $
+--- src/sys_generic.h.orig	Wed Nov  7 23:54:32 2001
++++ src/sys_generic.h	Sun Dec 25 10:08:58 2005
 @@ -19,6 +19,8 @@
  extern "C" {
  #endif     
@@ -10,7 +10,7 @@ $OpenBSD: patch-src-sys_generic_h,v 1.1 2001/12/11 19:11:59 shell Exp $
    int SYS_Initialize();
  
    int SYS_Mkdir( char*, int );
-@@ -73,13 +75,19 @@
+@@ -73,13 +75,19 @@ extern "C" {
    
    int SYS_Wait( int, int );
    

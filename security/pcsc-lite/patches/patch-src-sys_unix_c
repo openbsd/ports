@@ -1,7 +1,7 @@
-$OpenBSD: patch-src-sys_unix_c,v 1.1 2001/12/11 19:11:59 shell Exp $
---- src/sys_unix.c.orig	Thu Nov  8 06:54:32 2001
-+++ src/sys_unix.c	Wed Dec 12 02:58:14 2001
-@@ -128,7 +128,7 @@
+$OpenBSD: patch-src-sys_unix_c,v 1.2 2005/12/25 09:13:57 sturm Exp $
+--- src/sys_unix.c.orig	Wed Nov  7 23:54:32 2001
++++ src/sys_unix.c	Sun Dec 25 10:08:58 2005
+@@ -128,7 +128,7 @@ void *SYS_MemoryMap( int iSize, int iFid
    /* Here are some common error types:
    switch( errno ) {
    case EINVAL:
@@ -10,7 +10,7 @@ $OpenBSD: patch-src-sys_unix_c,v 1.1 2001/12/11 19:11:59 shell Exp $
    case EBADF:
      printf("EBADF");
      break;
-@@ -169,7 +169,11 @@
+@@ -169,7 +169,11 @@ int SYS_Wait( int iPid, int iWait ) {
   return waitpid( -1, 0, WNOHANG );
  }
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-src-sys_unix_c,v 1.1 2001/12/11 19:11:59 shell Exp $
    struct stat sStatus;
    return fstat( iFd, &sStatus );
  }
-@@ -205,5 +209,15 @@
+@@ -205,5 +209,15 @@ int SYS_GetSeed() {
  
  int SYS_Exit( int iRetVal ) {
    _exit( iRetVal );

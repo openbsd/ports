@@ -1,6 +1,6 @@
-$OpenBSD: patch-src-debuglog_c,v 1.1 2001/12/11 19:11:59 shell Exp $
---- src/debuglog.c.orig	Thu Nov  8 06:54:30 2001
-+++ src/debuglog.c	Wed Dec 12 02:58:45 2001
+$OpenBSD: patch-src-debuglog_c,v 1.2 2005/12/25 09:13:57 sturm Exp $
+--- src/debuglog.c.orig	Wed Nov  7 23:54:30 2001
++++ src/debuglog.c	Sun Dec 25 10:08:57 2005
 @@ -18,15 +18,17 @@
  #include <syslog.h>
  #include <stdio.h>
@@ -21,7 +21,7 @@ $OpenBSD: patch-src-debuglog_c,v 1.1 2001/12/11 19:11:59 shell Exp $
  #endif
    }
  
-@@ -34,14 +36,16 @@
+@@ -34,14 +36,16 @@ void DebugLogA( LPCSTR pcMessage, LPCSTR
  
  void DebugLogB( LPCSTR pcFormat, LONG liValue, LPCSTR pcFile, LONG liLine ) {
  
@@ -41,7 +41,7 @@ $OpenBSD: patch-src-debuglog_c,v 1.1 2001/12/11 19:11:59 shell Exp $
  #endif
    }
  
-@@ -50,14 +54,16 @@
+@@ -50,14 +54,16 @@ void DebugLogB( LPCSTR pcFormat, LONG li
  void DebugLogC( LPCSTR pcFormat, LPCSTR pcMessage, LPCSTR pcFile, 
  		LONG liLine ) {
  
@@ -61,7 +61,7 @@ $OpenBSD: patch-src-debuglog_c,v 1.1 2001/12/11 19:11:59 shell Exp $
  #endif
    }
  
-@@ -67,28 +73,26 @@
+@@ -67,28 +73,26 @@ void DebugLogD( LPCSTR pcFormat, PUCHAR 
  		LPCSTR pcFile, LONG liLine ) {
  
    int i;
