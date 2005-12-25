@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 17:54:17 espie Exp $
-@lib lib/libedsio.so.0.0
-@lib lib/libxdelta.so.11.1
+@comment $OpenBSD: PFRAG.shared,v 1.3 2005/12/25 23:44:30 steven Exp $
+@lib lib/libedsio.so.${LIBedsio_VERSION}
+@lib lib/libxdelta.so.${LIBxdelta_VERSION}
