@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST-tcl,v 1.1 2004/09/24 20:47:22 sturm Exp $
+@comment $OpenBSD: PLIST-tcl,v 1.2 2005/12/25 20:35:42 sturm Exp $
 @option no-default-conflict
 @conflict db-tcl->=4,<5
 lib/db4/libdb_tcl.a
 lib/db4/libdb_tcl.la
 @comment lib/db4/libdb_tcl.so
 @comment lib/db4/libdb_tcl.so.4
-@lib lib/db4/libdb_tcl.so.4.2
-@lib lib/libdb_tcl.so.4.2
+@lib lib/db4/libdb_tcl.so.${LIBdb_tcl_VERSION}
+@lib lib/libdb_tcl.so.${LIBdb_tcl_VERSION}
 share/doc/db4/api_tcl/
 share/doc/db4/api_tcl/db_close.html
 share/doc/db4/api_tcl/db_count.html

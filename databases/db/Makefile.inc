@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2005/01/23 10:30:02 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2005/12/25 20:35:41 sturm Exp $
 
 COMMENT=	"Berkeley DB package, revision ${REVISION}"
 COMMENT-tcl=	"TCL bindings for Berkeley DB, revision ${REVISION}"
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+USE_LIBTOOL=		Yes
 
 CONFIGURE_SCRIPT=	../dist/configure
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
@@ -54,6 +56,15 @@ LIB_DEPENDS=
 
 # this compiles slightly different code, some tests fail nevertheless
 #CONFIGURE_ARGS+=--enable-test
+
+MODGNU_SHARED_LIBS=db	'' \
+		db_cxx	'' \
+		db_tcl	''
+
+MAKE_FLAGS=	DBVERSION=${LIBdb_VERSION} \
+		DBCXXVERSION=${LIBdb_cxx_VERSION} \
+		DBTCLVERSION=${LIBdb_tcl_VERSION}
+FAKE_FLAGS=	${MAKE_FLAGS}
 
 do-regress:
 	@cd ${WRKBUILD}; env PATH=${PORTPATH} tclsh${TCL_VERSION} ${FILESDIR}/regress.tcl

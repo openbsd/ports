@@ -1,6 +1,6 @@
-$OpenBSD: patch-dist_configure,v 1.5 2005/11/03 23:12:45 brad Exp $
---- dist/configure.orig	Wed Dec  3 16:10:02 2003
-+++ dist/configure	Thu Nov  3 17:30:31 2005
+$OpenBSD: patch-dist_configure,v 1.6 2005/12/25 20:35:42 sturm Exp $
+--- dist/configure.orig	Wed Dec  3 22:10:02 2003
++++ dist/configure	Sun Dec 25 20:49:31 2005
 @@ -5889,12 +5889,10 @@ nto-qnx | nto-qnx6*)
    ;;
  
@@ -45,7 +45,7 @@ $OpenBSD: patch-dist_configure,v 1.5 2005/11/03 23:12:45 brad Exp $
    osf3*)
      case $cc_basename in
        KCC)
-@@ -20135,13 +20148,13 @@ echo "${ECHO_T}$JMODSUFFIX" >&6
+@@ -20135,13 +20148,14 @@ echo "${ECHO_T}$JMODSUFFIX" >&6
  
  
  
@@ -54,15 +54,16 @@ $OpenBSD: patch-dist_configure,v 1.5 2005/11/03 23:12:45 brad Exp $
  
  MAKEFILE_CC="\$(LIBTOOL) --mode=compile ${MAKEFILE_CC}"
 -MAKEFILE_SOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK} -avoid-version"
-+MAKEFILE_SOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK} -version-info ${DB_VERSION_MAJOR}:${DB_VERSION_MINOR}"
++MAKEFILE_dbLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK} \${libdb_la_LDFLAGS}"
++MAKEFILE_dbtclLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK} \${libdb_tcl_la_LDFLAGS}"
  MAKEFILE_CCLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK}"
  MAKEFILE_CXX="\$(LIBTOOL) --mode=compile ${MAKEFILE_CXX}"
 -MAKEFILE_XSOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK} -avoid-version"
-+MAKEFILE_XSOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK} -version-info ${DB_VERSION_MAJOR}:${DB_VERSION_MINOR}"
++MAKEFILE_XSOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK} \${libdb_cxx_la_LDFLAGS}"
  MAKEFILE_CXXLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK}"
  
  LIBTOOL="\$(SHELL) ./libtool"
-@@ -21441,7 +21454,7 @@ fi
+@@ -21441,7 +21455,7 @@ fi
  
  # Optional utilities.
  if test "$db_cv_dump185" = "yes"; then
@@ -71,7 +72,7 @@ $OpenBSD: patch-dist_configure,v 1.5 2005/11/03 23:12:45 brad Exp $
  fi
  
  # Checks for include files, structures, C types.
-@@ -28525,7 +28538,7 @@ int
+@@ -28525,7 +28539,7 @@ int
  main ()
  {
  
@@ -80,3 +81,13 @@ $OpenBSD: patch-dist_configure,v 1.5 2005/11/03 23:12:45 brad Exp $
  	exit(0);
  #else
  	FAIL TO COMPILE/LINK
+@@ -31043,7 +31057,8 @@ s,@MAKEFILE_CC@,$MAKEFILE_CC,;t t
+ s,@MAKEFILE_CCLINK@,$MAKEFILE_CCLINK,;t t
+ s,@MAKEFILE_CXX@,$MAKEFILE_CXX,;t t
+ s,@MAKEFILE_CXXLINK@,$MAKEFILE_CXXLINK,;t t
+-s,@MAKEFILE_SOLINK@,$MAKEFILE_SOLINK,;t t
++s,@MAKEFILE_dbLINK@,$MAKEFILE_dbLINK,;t t
++s,@MAKEFILE_dbtclLINK@,$MAKEFILE_dbtclLINK,;t t
+ s,@MAKEFILE_XSOLINK@,$MAKEFILE_XSOLINK,;t t
+ s,@OSDIR@,$OSDIR,;t t
+ s,@POSTLINK@,$POSTLINK,;t t

@@ -1,6 +1,6 @@
-$OpenBSD: patch-dist_configure,v 1.3 2005/11/01 15:44:24 bernd Exp $
+$OpenBSD: patch-dist_configure,v 1.4 2005/12/25 20:35:42 sturm Exp $
 --- dist/configure.orig	Mon Jul 31 18:58:18 2000
-+++ dist/configure	Tue Nov  1 12:34:21 2005
++++ dist/configure	Sun Dec 25 19:59:25 2005
 @@ -728,7 +728,7 @@ echo "$ac_t""no" 1>&6
  
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-dist_configure,v 1.3 2005/11/01 15:44:24 bernd Exp $
  	|| { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
  
  	SOSUFFIX=`sed -e '/^library_names_spec=/!d' -e 's/.*\.\([a-zA-Z0-9_]*\).*/\1/' ./libtool`
-@@ -1615,9 +1614,9 @@ echo "configure:1601: checking libtool c
+@@ -1615,9 +1614,11 @@ echo "configure:1601: checking libtool c
  	MAKEFILE_CXX="\$(LIBTOOL) --mode=compile ${SAVE_CXX}"
  	MAKEFILE_CCLINK="\$(LIBTOOL) --mode=link ${SAVE_CC}"
  
@@ -26,11 +26,13 @@ $OpenBSD: patch-dist_configure,v 1.3 2005/11/01 15:44:24 bernd Exp $
 +	INSTALLER="\$(LIBTOOL) --mode=install \${BSD_INSTALL_PROGRAM}"
  	POSTLINK="\$(LIBTOOL) --mode=execute true"
 -	SOLINK="\$(LIBTOOL) --mode=link ${SAVE_CC} -avoid-version"
-+	SOLINK="\$(LIBTOOL) --mode=link ${SAVE_CC} -version-info @DB_VERSION_MAJOR@:@DB_VERSION_MINOR@"
++	dbLINK="\$(LIBTOOL) --mode=link ${SAVE_CC} \${libdb_la_LDFLAGS}"
++	dbcxxLINK="\$(LIBTOOL) --mode=link ${SAVE_CC} \${libdb_cxx_la_LDFLAGS}"
++	dbtclLINK="\$(LIBTOOL) --mode=link ${SAVE_CC} \${libdb_tcl_la_LDFLAGS}"
  	SOFLAGS="-rpath \$(libdir)"
  	o=".lo"
  fi
-@@ -1936,7 +1935,7 @@ echo "configure:1911: checking for exist
+@@ -1936,7 +1937,7 @@ echo "configure:1911: checking for exist
  		TCFLAGS="-I$TCL_PREFIX/include"
  	fi
  
@@ -39,7 +41,7 @@ $OpenBSD: patch-dist_configure,v 1.3 2005/11/01 15:44:24 bernd Exp $
  
  	ADDITIONAL_LIBS="$ADDITIONAL_LIBS \$(libtso_target)"
  	DEFAULT_INSTALL="${DEFAULT_INSTALL} install_tcl"
-@@ -3911,7 +3910,7 @@ else
+@@ -3911,7 +3912,7 @@ else
  #line 3912 "configure"
  #include "confdefs.h"
  main(){
@@ -48,3 +50,14 @@ $OpenBSD: patch-dist_configure,v 1.3 2005/11/01 15:44:24 bernd Exp $
  #if defined(__GNUC__)
  	exit(0);
  #endif
+@@ -5359,7 +5360,9 @@ s%@MAKEFILE_CXX@%$MAKEFILE_CXX%g
+ s%@POSTLINK@%$POSTLINK%g
+ s%@RPC_OBJS@%$RPC_OBJS%g
+ s%@SOFLAGS@%$SOFLAGS%g
+-s%@SOLINK@%$SOLINK%g
++s%@dbLINK@%$dbLINK%g
++s%@dbcxxLINK@%$dbcxxLINK%g
++s%@dbtclLINK@%$dbtclLINK%g
+ s%@SOSUFFIX@%$SOSUFFIX%g
+ s%@o@%$o%g
+ s%@DB_VERSION_MAJOR@%$DB_VERSION_MAJOR%g
