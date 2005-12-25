@@ -1,0 +1,14 @@
+$OpenBSD: patch-kiklib_src_Makefile_in,v 1.1 2005/12/25 21:14:26 naddy Exp $
+--- kiklib/src/Makefile.in.orig	Sun Dec 25 21:58:34 2005
++++ kiklib/src/Makefile.in	Sun Dec 25 21:59:03 2005
+@@ -34,8 +34,8 @@ LIBTOOL_INSTALL = $(LIBTOOL) --mode=inst
+ 
+ LIBNAME=libkik
+ LIBNAME_DEB=libkik_deb
+-MAJOR = 10
+-MINOR = 0
++MAJOR = ${LIBkik_VERSION:R}
++MINOR = ${LIBkik_VERSION:E}
+ 
+ SUBDIRS = config util io collection sys i18n
+ 

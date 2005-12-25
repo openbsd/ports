@@ -1,10 +1,15 @@
-# $OpenBSD: Makefile,v 1.19 2004/12/17 15:18:32 alek Exp $
+# $OpenBSD: Makefile,v 1.20 2005/12/25 21:14:26 naddy Exp $
 
 COMMENT=	"color X11 terminal emulator with transparency support"
 COMMENT-kanji=	"color japanese terminal emulator with transparency support"
-PKGNAME=	eterm-0.8.10
-FULLPKGNAME-kanji=	ja-eterm-0.8.10
+PKGNAME=	eterm-0.8.10p0
+FULLPKGNAME-kanji=	ja-eterm-0.8.10p0
 DISTNAME=	Eterm-0.8.10
+SHARED_LIBS=	Eterm	0.8 \
+		mej	0.8
+MODGNU_SHARED_LIBS=	Eterm	'' \
+			mej	''
+
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=eterm/}
 
@@ -21,6 +26,7 @@ WANTLIB=		ICE SM X11 Xext c jpeg m png tiff ungif util z
 
 USE_X11=	Yes
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2005/11/15 22:11:48 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2005/12/25 21:14:26 naddy Exp $
 
 COMMENT=	"color terminal emulator with transparency and unicode support"
 DISTNAME=	mlterm-2.9.0
 PKGNAME=	${DISTNAME}p2
+SHARED_LIBS=	kik	10.0 \
+		mkf	13.0
 CATEGORIES=	x11
 
 MAINTAINER=	Waldemar Brodkorb <wbx@openbsd.de>
@@ -32,6 +34,8 @@ CONFIGURE_ARGS=	--enable-anti-alias --enable-utmp \
 		--with-imagelib=gdk-pixbuf2 --with-type-engines=xft,xcore
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2" \
 		PKG_CONFIG_PATH="${X11BASE}/lib/pkgconfig"
+MAKE_ENV=	LIBkik_VERSION=${LIBkik_VERSION} \
+		LIBmkf_VERSION=${LIBmkf_VERSION}
 
 NO_REGRESS=	Yes
 
