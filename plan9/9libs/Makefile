@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2005/09/27 21:07:55 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/12/25 17:40:49 sturm Exp $
 
 COMMENT=		"Plan 9 compatibility libraries"
 
 DISTNAME=		9libs-1.0
 PKGNAME=		${DISTNAME}p3
 CATEGORIES=		plan9 devel
+SHARED_LIBS=		Xg	0.0 \
+			frame	0.0 \
+			plan9c	0.0
+MODGNU_SHARED_LIBS=	Xg	'' \
+			frame	'' \
+			plan9c	''
 
 HOMEPAGE=		http://www.netlib.org/research/9libs/
 

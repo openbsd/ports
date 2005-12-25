@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 18:23:11 espie Exp $
-@lib lib/libXg.so.0.0
-@lib lib/libframe.so.0.0
-@lib lib/libplan9c.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.3 2005/12/25 17:40:49 sturm Exp $
+@lib lib/libXg.so.${LIBXg_VERSION}
+@lib lib/libframe.so.${LIBframe_VERSION}
+@lib lib/libplan9c.so.${LIBplan9c_VERSION}
