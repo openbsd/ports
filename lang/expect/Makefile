@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2005/06/12 12:04:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.46 2005/12/25 20:42:47 alek Exp $
 
 COMMENT=	"sophisticated scripter based on Tcl/Tk"
 
 DISTNAME=	expect-5.43.0
+SHARED_LIBS=	expect543 1.2
 CATEGORIES=	lang
 MASTER_SITES=	http://expect.nist.gov/old/
 
@@ -25,6 +26,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=--with-tclconfig="${LOCALBASE}/lib/tcl8.4"\
 		--with-tclinclude="${LOCALBASE}/include/tcl8.4"
+CONFIGURE_ENV=	LIBexpect543_VERSION=${LIBexpect543_VERSION}
 
 .if !${FLAVOR:L:Mno_tk}
 USE_X11=	Yes

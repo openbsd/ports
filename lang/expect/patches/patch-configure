@@ -1,11 +1,11 @@
 --- configure.orig	Tue Feb  8 03:01:27 2005
-+++ configure	Sun Jun 12 10:07:51 2005
++++ configure	Sun Dec 25 11:54:57 2005
 @@ -6382,7 +6382,7 @@ echo $ac_n "checking for type of library
  echo "configure:6383: checking for type of library to build" >&5
  if test "$enable_shared" = "yes" && test "x${TCL_SHLIB_SUFFIX}" != "x" ; then
    EXP_SHLIB_CFLAGS=$TCL_SHLIB_CFLAGS
 -  eval "EXP_SHARED_LIB_FILE=libexpect${TCL_SHARED_LIB_SUFFIX}"
-+  eval "EXP_SHARED_LIB_FILE=libexpect`echo ${VERSION} | tr -d .`.so.1.2"
++  eval "EXP_SHARED_LIB_FILE=libexpect`echo ${VERSION} | tr -d .`.so.${LIBexpect543_VERSION}"
    EXP_LIB_FILE=$EXP_SHARED_LIB_FILE
    EXP_LIB_FILES="$EXP_SHARED_LIB_FILE $EXP_UNSHARED_LIB_FILE"
    echo "$ac_t""both shared and unshared" 1>&6
