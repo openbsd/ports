@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2005/10/03 12:53:33 sturm Exp $
-@lib lib/libfftw.so.2.7
-@lib lib/librfftw.so.2.7
+@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/25 18:54:32 steven Exp $
+@lib lib/libfftw.so.${LIBfftw_VERSION}
+@lib lib/librfftw.so.${LIBrfftw_VERSION}
