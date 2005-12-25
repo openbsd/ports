@@ -1,6 +1,6 @@
-$OpenBSD: patch-prog_compress_c,v 1.1 2004/06/19 16:40:12 robert Exp $
+$OpenBSD: patch-prog_compress_c,v 1.2 2005/12/25 11:49:21 steven Exp $
 --- prog/compress.c.orig	Sat Aug 31 20:51:11 2002
-+++ prog/compress.c	Sat Jun 19 16:10:04 2004
++++ prog/compress.c	Sun Dec 25 11:45:04 2005
 @@ -28,6 +28,11 @@
  
  #endif
@@ -13,7 +13,7 @@ $OpenBSD: patch-prog_compress_c,v 1.1 2004/06/19 16:40:12 robert Exp $
  void usage () 
  {
    fputs("Compresses or uncompresses sorted word lists.\n"     , stderr);
-@@ -45,8 +50,9 @@
+@@ -45,8 +50,9 @@ static int get_word(FILE * in, char * w)
    if (c == EOF) return 0;
    do {
      *w++ = (char)(c);
@@ -24,7 +24,7 @@ $OpenBSD: patch-prog_compress_c,v 1.1 2004/06/19 16:40:12 robert Exp $
    ungetc(c, in);
    if (c == EOF) return 0;
    else return 1;
-@@ -61,8 +67,8 @@
+@@ -61,14 +67,15 @@ int main (int argc, const char *argv[]) 
      
    } else if (argv[1][0] == 'c') {
  
@@ -35,7 +35,6 @@ $OpenBSD: patch-prog_compress_c,v 1.1 2004/06/19 16:40:12 robert Exp $
      char * prev = s2;
      char * cur = s1;
      *prev = '\0';
-@@ -69,6 +75,7 @@
  
      SETBIN (stdout);
  
@@ -43,7 +42,7 @@ $OpenBSD: patch-prog_compress_c,v 1.1 2004/06/19 16:40:12 robert Exp $
      while (get_word(stdin, cur)) {
        int i = 0;
        /* get the length of the prefix */
-@@ -85,11 +92,12 @@
+@@ -85,11 +92,12 @@ int main (int argc, const char *argv[]) 
  	prev = s2; cur = s1;
        }
      }
@@ -57,7 +56,7 @@ $OpenBSD: patch-prog_compress_c,v 1.1 2004/06/19 16:40:12 robert Exp $
      int i;
      int c;
  
-@@ -100,8 +108,11 @@
+@@ -100,8 +108,11 @@ int main (int argc, const char *argv[]) 
        if (i == 0)
  	i = getc(stdin);
        --i;  
