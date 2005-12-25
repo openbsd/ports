@@ -1,9 +1,15 @@
-# $OpenBSD: Makefile,v 1.43 2004/12/07 00:23:22 alek Exp $
+# $OpenBSD: Makefile,v 1.44 2005/12/25 11:44:54 steven Exp $
 
 COMMENT=		"XSLT C Library for GNOME"
 
 DISTNAME=		libxslt-1.1.12
-PKGNAME=		$(DISTNAME)p1
+PKGNAME=		$(DISTNAME)p2
+SHARED_LIBS=		exslt	9.0 \
+			xslt	3.0
+MODGNU_SHARED_LIBS=	exslt	'' \
+			xslt	''
+LIBexslt_ALIAS=		realexslt
+
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://xmlsoft.org/XSLT/
@@ -21,13 +27,11 @@ WANTLIB=		c gpg-error iconv intl m z
 LIB_DEPENDS=		xml2.8::textproc/libxml \
 			gcrypt.12::security/libgcrypt
 
+USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-libxml-include-prefix='${LOCALBASE}/include/'
 CONFIGURE_ARGS+=	--without-python
-
-MAKE_FLAGS=	libxslt_la_LDFLAGS='-version-info 3:0:0' \
-		libexslt_la_VERSION='-version-info 9:0:0'
 
 .include <bsd.port.mk>
