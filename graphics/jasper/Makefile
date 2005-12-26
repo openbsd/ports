@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2005/10/30 00:10:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2005/12/26 15:44:01 steven Exp $
 
 COMMENT=	"reference implementation of JPEG-2000"
 
 DISTNAME=	jasper-1.701.0
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=		jasper	1.0
+MODGNU_SHARED_LIBS=	jasper	''
+
 CATEGORIES=	graphics
 MASTER_SITES=	${HOMEPAGE}software/
 EXTRACT_SUFX=	.zip
@@ -16,6 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --without-x --disable-opengl
