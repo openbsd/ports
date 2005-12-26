@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2005/10/30 00:10:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.23 2005/12/26 15:14:11 steven Exp $
 
 COMMENT=	"ascii art library"
 
 DISTNAME=	aalib-1.2
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=		aa	1.3
+MODGNU_SHARED_LIBS=	aa	''
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
 
@@ -15,6 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m ncurses
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
