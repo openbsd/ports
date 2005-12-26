@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.14 2005/07/24 04:55:35 brad Exp $
-@lib lib/libpng.so.4.2
+@comment $OpenBSD: PFRAG.shared,v 1.15 2005/12/26 22:33:17 steven Exp $
+@lib lib/libpng.so.${LIBpng_VERSION}

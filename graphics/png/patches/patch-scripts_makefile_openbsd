@@ -1,6 +1,6 @@
---- scripts/makefile.openbsd.orig	Thu Dec  2 19:14:31 2004
-+++ scripts/makefile.openbsd	Sun Jul 24 00:55:05 2005
-@@ -1,13 +1,16 @@
+--- scripts/makefile.openbsd.orig	Fri Dec  3 01:14:31 2004
++++ scripts/makefile.openbsd	Mon Dec 26 22:46:14 2005
+@@ -1,14 +1,14 @@
 -# makefile for libpng
 +# makefile for libpng under OpenBSD
  # Copyright (C) 1995 Guy Eric Schalnat, Group 42, Inc.
@@ -16,12 +16,11 @@
  
 -SHLIB_MAJOR=	0
 -SHLIB_MINOR=	1.2.8
-+SHLIB_MAJOR=	4
-+SHLIB_MINOR=	2
- 
+-
  LIB=	png
  SRCS=	png.c pngerror.c pnggccrd.c pngget.c pngmem.c pngpread.c \
-@@ -21,24 +24,39 @@ CPPFLAGS+= -I${.CURDIR} -DPNG_NO_ASSEMBL
+ 	pngread.c pngrio.c pngrtran.c pngrutil.c pngset.c pngtrans.c \
+@@ -21,24 +21,39 @@ CPPFLAGS+= -I${.CURDIR} -DPNG_NO_ASSEMBL
  
  NOPROFILE= Yes
  
@@ -68,7 +67,7 @@
  	fi
  	if [ ! -d ${DESTDIR}${LIBDIR} ]; then \
  	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${LIBDIR}; \
-@@ -52,21 +70,24 @@ beforeinstall:
+@@ -52,21 +67,24 @@ beforeinstall:
  	if [ ! -d ${DESTDIR}${MANDIR}5 ]; then \
  	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${MANDIR}5; \
  	fi
