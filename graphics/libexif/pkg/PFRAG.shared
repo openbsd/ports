@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/02/09 01:03:50 alek Exp $
-@lib lib/libexif.so.9.0
+@comment $OpenBSD: PFRAG.shared,v 1.5 2005/12/26 16:36:12 steven Exp $
+@lib lib/libexif.so.${LIBexif_VERSION}
