@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2005/11/09 21:17:20 brad Exp $
-@lib lib/libgif.so.5.4
-@lib lib/libungif.so.5.4
+@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/26 19:38:07 steven Exp $
+@lib lib/libgif.so.${LIBgif_VERSION}
+@lib lib/libungif.so.${LIBungif_VERSION}
