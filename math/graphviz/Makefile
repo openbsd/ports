@@ -1,11 +1,50 @@
-# $OpenBSD: Makefile,v 1.15 2005/03/14 15:27:13 alek Exp $
+# $OpenBSD: Makefile,v 1.16 2005/12/26 16:11:29 steven Exp $
 
 
 COMMENT=	"graph drawing software"
 
 DISTNAME=	graphviz-1.16
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	math devel graphics
+
+SHARED_LIBS=	agraph		0.0 \
+		cdt		0.0 \
+		circogen	0.0 \
+		common		0.0 \
+		dotgen		0.0 \
+		dotneato	0.0 \
+		expr		0.0 \
+		fdpgen		0.0 \
+		gdtclft		0.0 \
+		graph		0.0 \
+		gvgd		0.0 \
+		gvrender	0.0 \
+		neatogen	0.0 \
+		pack		0.0 \
+		pathplan	0.0 \
+		tcldot		0.0 \
+		tclplan		0.0 \
+		tkspline	0.0 \
+		twopigen	0.0
+MODGNU_SHARED_LIBS=	agraph		'' \
+			cdt		'' \
+			circogen	'' \
+			common		'' \
+			dotgen		'' \
+			dotneato	'' \
+			expr		'' \
+			fdpgen		'' \
+			gdtclft		'' \
+			graph		'' \
+			gvgd		'' \
+			gvrender	'' \
+			neatogen	'' \
+			pack		'' \
+			pathplan	'' \
+			tcldot		'' \
+			tclplan		'' \
+			tkspline	'' \
+			twopigen	''
 
 HOMEPAGE=	http://www.graphviz.org/
 
@@ -27,6 +66,7 @@ LIB_DEPENDS=	expat.4::textproc/expat \
 BUILD_DEPENDS=	:tk-8.4.*:x11/tk/8.4
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static \
@@ -60,6 +100,8 @@ post-extract:
 .endif
 
 post-install:
-	@cd ${PREFIX}/lib && ln -s graphviz/lib*.so.0.0 .
+.for _n _e in ${SHARED_LIBS}
+	@cd ${PREFIX}/lib && ln -s graphviz/lib${_n}.so.${_e} .
+.endfor
 
 .include <bsd.port.mk>
