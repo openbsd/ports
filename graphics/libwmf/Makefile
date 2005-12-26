@@ -1,8 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2005/05/16 19:22:16 alek Exp $
+# $OpenBSD: Makefile,v 1.10 2005/12/26 21:34:09 steven Exp $
 
 COMMENT=	"WMF handling and conversion library"
 
 DISTNAME=	libwmf-0.2.8.3
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=		wmf	8.0	\
+			wmflite	7.1
+MODGNU_SHARED_LIBS=	wmf	'-no-undefined -export-dynamic'	\
+			wmflite	'-no-undefined -export-dynamic'
+
 CATEGORIES=	graphics devel
 
 HOMEPAGE=	http://wvware.sf.net/
@@ -37,5 +43,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
 		PKG_CONFIG="/usr/bin/false"
 
 USE_X11=	Yes
+USE_LIBTOOL=	Yes
 
 .include <bsd.port.mk>
