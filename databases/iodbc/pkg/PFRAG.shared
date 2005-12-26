@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/08 16:50:45 espie Exp $
-@lib lib/libiodbc.so.2.50
+@comment $OpenBSD: PFRAG.shared,v 1.3 2005/12/26 21:32:01 sturm Exp $
+@lib lib/libiodbc.so.${LIBiodbc_VERSION}

@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2004/09/14 23:31:47 espie Exp $
-@lib lib/libsqlite.so.8.6
+@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/26 21:32:01 sturm Exp $
+@lib lib/libsqlite.so.${LIBsqlite_VERSION}

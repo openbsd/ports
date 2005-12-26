@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2005/12/12 04:55:43 brad Exp $
+# $OpenBSD: Makefile,v 1.113 2005/12/26 21:32:01 sturm Exp $
 # Uses pthreads
 
 .if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "m88k"
@@ -11,11 +11,14 @@ COMMENT-tests=	"multithreaded SQL database (regression test suite)"
 
 VERSION=	4.1.15
 DISTNAME=	mysql-${VERSION}
-FULLPKGNAME=	mysql-client-${VERSION}
+FULLPKGNAME=	mysql-client-${VERSION}p0
 PKGNAME-server=	mysql-server-${VERSION}
 FULLPKGNAME-tests= mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-4.1
+SHARED_LIBS=	mysqlclient	14.0 \
+		mysqlclient_r	14.0
+
 MASTER_SITES=	http://mysql.mirrors.pair.com/Downloads/$V/
 
 HOMEPAGE=	http://www.mysql.com/
@@ -41,6 +44,7 @@ CXXFLAGS=	${CFLAGS} -felide-constructors -fno-exceptions -fno-rtti
 VMEM_WARNING=	Yes
 
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
@@ -91,8 +95,9 @@ WANTLIB=
 DOCS=	manual.html manual.ps manual_toc.html manual.txt
 
 post-install:
-	cd ${PREFIX}/lib && ln -sf mysql/libmysqlclient.so.14.0 . && \
-		ln -sf mysql/libmysqlclient_r.so.14.0 .
+	cd ${PREFIX}/lib && \
+		ln -sf mysql/libmysqlclient.so.${LIBmysqlclient_VERSION} . && \
+		ln -sf mysql/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION} .
 
 do-regress:
 	@cd ${WRKSRC}/mysql-test && ./mysql-test-run --force

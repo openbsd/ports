@@ -1,15 +1,16 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2005/10/02 13:26:31 alek Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.2 2005/12/26 21:32:01 sturm Exp $
 --- src/Makefile.in.orig	Thu May 19 10:22:36 2005
-+++ src/Makefile.in	Wed Jun 15 21:28:57 2005
-@@ -214,9 +217,9 @@ libpqxx_la_SOURCES = binarystring.cxx \
++++ src/Makefile.in	Mon Dec 26 21:44:11 2005
+@@ -214,10 +214,10 @@ libpqxx_la_SOURCES = binarystring.cxx \
  
  
  # Uncomment to build an unversioned library (version in soname)
 -libpqxx_version = -release $(PQXXVERSION)
 +# libpqxx_version = -release $(PQXXVERSION)
  # Uncomment to build a versioned library
--#libpqxx_version = -version-info $(ABI_CURRENT):$(ABI_REVISION):$(ABI_AGE)
-+# libpqxx_version = -version-info $(ABI_CURRENT):$(ABI_REVISION):$(ABI_AGE)
- libpqxx_la_LDFLAGS = $(libpqxx_version) \
+ #libpqxx_version = -version-info $(ABI_CURRENT):$(ABI_REVISION):$(ABI_AGE)
+-libpqxx_la_LDFLAGS = $(libpqxx_version) \
++libpqxx_la_LDFLAGS = ${librealpqxx_la_LDFLAGS} \
  	-rpath $(libdir) \
  	${POSTGRES_LIB}
+ 

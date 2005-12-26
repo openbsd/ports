@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2005/12/26 21:32:01 sturm Exp $
+--- Makefile.in.orig	Mon Dec 26 22:10:12 2005
++++ Makefile.in	Mon Dec 26 22:11:17 2005
+@@ -233,7 +233,8 @@ last_change:	$(SRC)
+ 
+ libsqlite3.la:	$(LIBOBJ)
+ 	$(LTLINK) -o libsqlite3.la $(LIBOBJ) $(LIBPTHREAD) \
+-		${ALLOWRELEASE} -rpath $(libdir) -version-info "8:6:8"
++		${ALLOWRELEASE} -rpath $(libdir) \
++		${libsqlite3_la_LDFLAGS}
+ 
+ libtclsqlite3.la:	tclsqlite.lo libsqlite3.la
+ 	$(LTLINK) -o libtclsqlite3.la tclsqlite.lo \

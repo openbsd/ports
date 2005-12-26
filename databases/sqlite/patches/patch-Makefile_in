@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2005/12/21 07:58:32 jolan Exp $
---- Makefile.in.orig	Wed Dec 21 01:47:20 2005
-+++ Makefile.in	Wed Dec 21 01:47:37 2005
+$OpenBSD: patch-Makefile_in,v 1.2 2005/12/26 21:32:01 sturm Exp $
+--- Makefile.in.orig	Sun Apr 24 00:43:23 2005
++++ Makefile.in	Mon Dec 26 22:00:23 2005
 @@ -141,6 +141,7 @@ SRC = \
  # Source code to the test files.
  #
@@ -9,3 +9,12 @@ $OpenBSD: patch-Makefile_in,v 1.1 2005/12/21 07:58:32 jolan Exp $
    $(TOP)/src/btree.c \
    $(TOP)/src/func.c \
    $(TOP)/src/os.c \
+@@ -188,7 +189,7 @@ last_change:	$(SRC)
+ 
+ libsqlite.la:	$(LIBOBJ)
+ 	$(LTLINK) -o libsqlite.la $(LIBOBJ) ${RELEASE} -rpath @exec_prefix@/lib \
+-		-version-info "8:6:8"
++		${libsqlite_la_LDFLAGS}
+ 
+ libtclsqlite.la:	tclsqlite.lo libsqlite.la
+ 	$(LTLINK) -o libtclsqlite.la tclsqlite.lo \

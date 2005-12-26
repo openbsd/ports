@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2005/12/21 07:58:31 jolan Exp $
+# $OpenBSD: Makefile,v 1.12 2005/12/26 21:32:01 sturm Exp $
 
 COMMENT=	"Embedded SQL implementation"
 DISTNAME=	sqlite-2.8.17
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	databases
+SHARED_LIBS=	sqlite	8.6
+MODGNU_SHARED_LIBS=sqlite ''
+
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://www.sqlite.org/
@@ -16,6 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 AUTOCONF_VERSION=2.59
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 WANTLIB=	c ncurses readline

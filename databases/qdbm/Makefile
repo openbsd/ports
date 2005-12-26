@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2005/12/22 11:42:02 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2005/12/26 21:32:01 sturm Exp $
 
 COMMENT=		"high performance embedded database library"
 
 DISTNAME=		qdbm-1.8.36
 CATEGORIES=		databases
+SHARED_LIBS=		qdbm	11.8
 
-HOMEPAGE=		http://qdbm.sourceforge.net
+HOMEPAGE=		http://qdbm.sourceforge.net/
 
 MAINTAINER=		Bernd Ahlers <bernd@openbsd.org>
 
@@ -24,5 +25,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-zlib \
 			--enable-iconv
+
+MAKE_FLAGS=	LIBVER=${LIBqdbm_VERSION:R} LIBREV=${LIBqdbm_VERSION:E}
+FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 .include <bsd.port.mk>
