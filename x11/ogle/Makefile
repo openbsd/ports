@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2005/05/14 09:32:50 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2005/12/26 16:45:43 naddy Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64 amd64
 
@@ -6,7 +6,11 @@ CATEGORIES=	x11
 
 COMMENT=	"DVD player"
 DISTNAME=	ogle-0.9.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
+SHARED_LIBS=	dvdcontrol	11.0 \
+		msgevents	8.0
+MODGNU_SHARED_LIBS=	dvdcontrol	'' \
+			msgevents	''
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
 # Authors can be reached at dvd@dtek.chalmers.se
 MASTER_SITES=	${HOMEPAGE}dist/
@@ -34,6 +38,7 @@ USE_X11=	Yes
 FLAVORS=	altivec
 FLAVOR?=
 
+USE_LIBTOOL=	Yes
 CONFIGURE_ARGS=--disable-oss --disable-sunaudio --enable-obsdaudio
 #CONFIGURE_ARGS=--disable-oss --disable-sunaudio --disable-obsdaudio
 
@@ -53,7 +58,9 @@ CONFIGURE_ENV+=xml_config_args=--prefix=${DEPBASE}
 
 post-install:
 	cd ${PREFIX}/man/man5 && mv oglerc.5 oglerc.tbl
-	cd ${PREFIX}/lib && ln -sf ${TRUEPREFIX}/lib/ogle/libdvdcontrol.so.11.0
-	cd ${PREFIX}/lib && ln -sf ${TRUEPREFIX}/lib/ogle/libmsgevents.so.8.0
+	cd ${PREFIX}/lib && \
+	ln -sf ${TRUEPREFIX}/lib/ogle/libdvdcontrol.so.${LIBdvdcontrol_VERSION}
+	cd ${PREFIX}/lib && \
+	ln -sf ${TRUEPREFIX}/lib/ogle/libmsgevents.so.${LIBmsgevents_VERSION}
 
 .include <bsd.port.mk>

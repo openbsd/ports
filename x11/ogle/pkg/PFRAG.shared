@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.12 2004/08/10 22:03:35 espie Exp $
-@lib lib/libdvdcontrol.so.11.0
-@lib lib/libmsgevents.so.8.0
-@lib lib/ogle/libdvdcontrol.so.11.0
-@lib lib/ogle/libmsgevents.so.8.0
+@comment $OpenBSD: PFRAG.shared,v 1.13 2005/12/26 16:45:43 naddy Exp $
+@lib lib/libdvdcontrol.so.${LIBdvdcontrol_VERSION}
+@lib lib/libmsgevents.so.${LIBmsgevents_VERSION}
+@lib lib/ogle/libdvdcontrol.so.${LIBdvdcontrol_VERSION}
+@lib lib/ogle/libmsgevents.so.${LIBmsgevents_VERSION}
