@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_glsmap_Imakefile,v 1.4 2005/11/20 18:03:25 naddy Exp $
+$OpenBSD: patch-lib_glsmap_Imakefile,v 1.5 2005/12/26 21:08:52 steven Exp $
 --- lib/glsmap/Imakefile.orig	Sat Aug  8 02:20:50 1998
-+++ lib/glsmap/Imakefile	Sun Nov 20 18:52:58 2005
-@@ -2,11 +2,13 @@
++++ lib/glsmap/Imakefile	Mon Dec 26 22:04:07 2005
+@@ -2,11 +2,11 @@
  /* Copyright (c) Mark J. Kilgard, 1998. */
  
  #define DoNormalLib YES
@@ -11,14 +11,13 @@ $OpenBSD: patch-lib_glsmap_Imakefile,v 1.4 2005/11/20 18:03:25 naddy Exp $
 +#define SoRev SOGLSMAPREV
  
 -#include <Library.tmpl>
-+SOGLSMAPREV = 3.7
- 
+-
 -#include "../../Glut.cf"
 -
  SRCS = smap_buildsmap.c smap_context.c smap_create.c smap_destroy.c \
    smap_drawmesh.c smap_flag.c smap_get.c smap_getfunc.c smap_gettexdim.c \
    smap_gettexobj.c smap_getvec.c smap_makemesh.c smap_nearfar.c \
-@@ -19,6 +21,10 @@ OBJS = smap_buildsmap.o smap_context.o s
+@@ -19,6 +19,10 @@ OBJS = smap_buildsmap.o smap_context.o s
    smap_origin.o smap_render.o smap_rvec2st.o smap_set.o smap_setfunc.o \
    smap_setvec.o smap_texdim.o smap_texobj.o
  
@@ -29,7 +28,7 @@ $OpenBSD: patch-lib_glsmap_Imakefile,v 1.4 2005/11/20 18:03:25 naddy Exp $
  #ifdef LibraryObjectRule
  LibraryObjectRule()
  #else
-@@ -26,7 +32,5 @@ LibraryObjectRule()
+@@ -26,7 +30,5 @@ LibraryObjectRule()
     will probably do essentially what LibraryObjectRule does. */
  NormalLibraryObjectRule()
  #endif

@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2005/11/20 18:17:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2005/12/26 21:08:52 steven Exp $
 
 COMMENT=	"OpenGL Utility Toolkit"
 
 DISTNAME=	glut-3.7
 PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=	glsmap	3.7	\
+		glut	3.7	\
+		mui	3.7
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.opengl.org/resources/libraries/glut/
 	
@@ -17,6 +20,11 @@ PERMIT_DISTFILES_FTP=	"incomplete license"
 CONFIGURE_STYLE= 	imake
 USE_X11= 		Yes
 NO_REGRESS=		Yes
+
+MAKE_FLAGS=	SOGLSMAPREV=${LIBglsmap_VERSION}	\
+		SOGLUTREV=${LIBglut_VERSION}		\
+		SOMUIREV=${LIBmui_VERSION}
+FAKE_FLAGS=	${MAKE_FLAGS} ${DESTDIRNAME}=${WRKINST}
 
 post-extract:
 	@perl -i -p -e 's/3GLUT/3/;' ${WRKSRC}/man/glut/*.man

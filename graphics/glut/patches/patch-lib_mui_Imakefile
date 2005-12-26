@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_mui_Imakefile,v 1.4 2005/11/20 18:03:25 naddy Exp $
+$OpenBSD: patch-lib_mui_Imakefile,v 1.5 2005/12/26 21:08:52 steven Exp $
 --- lib/mui/Imakefile.orig	Sat Aug  8 02:20:51 1998
-+++ lib/mui/Imakefile	Sun Nov 20 18:52:58 2005
-@@ -2,17 +2,23 @@
++++ lib/mui/Imakefile	Mon Dec 26 22:04:27 2005
+@@ -2,17 +2,21 @@
  /* Copyright (c) Mark J. Kilgard, 1994. */
  
  #define DoNormalLib YES
@@ -11,8 +11,7 @@ $OpenBSD: patch-lib_mui_Imakefile,v 1.4 2005/11/20 18:03:25 naddy Exp $
 +#define SoRev SOMUIREV
  
 -#include <Library.tmpl>
-+SOMUIREV = 3.7
- 
+-
 -#include "../../Glut.cf"
 -
  SRCS = button.c displaylist.c gizmo.c glutmui.c \
@@ -28,7 +27,7 @@ $OpenBSD: patch-lib_mui_Imakefile,v 1.4 2005/11/20 18:03:25 naddy Exp $
  #ifdef LibraryObjectRule
  LibraryObjectRule()
  #else
-@@ -20,7 +26,5 @@ LibraryObjectRule()
+@@ -20,7 +24,5 @@ LibraryObjectRule()
     will probably do essentially what LibraryObjectRule does. */
  NormalLibraryObjectRule()
  #endif

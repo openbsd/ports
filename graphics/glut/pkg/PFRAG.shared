@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 00:50:09 espie Exp $
-@lib lib/libglsmap.so.3.7
-@lib lib/libglut.so.3.7
-@lib lib/libmui.so.3.7
+@comment $OpenBSD: PFRAG.shared,v 1.3 2005/12/26 21:08:52 steven Exp $
+@lib lib/libglsmap.so.${LIBglsmap_VERSION}
+@lib lib/libglut.so.${LIBglut_VERSION}
+@lib lib/libmui.so.${LIBmui_VERSION}

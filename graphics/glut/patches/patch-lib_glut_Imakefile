@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_glut_Imakefile,v 1.4 2005/11/20 18:03:25 naddy Exp $
---- lib/glut/Imakefile.orig	Sun Nov 20 18:53:41 2005
-+++ lib/glut/Imakefile	Sun Nov 20 18:52:58 2005
-@@ -2,11 +2,13 @@
+$OpenBSD: patch-lib_glut_Imakefile,v 1.5 2005/12/26 21:08:52 steven Exp $
+--- lib/glut/Imakefile.orig	Sat Aug  8 02:20:51 1998
++++ lib/glut/Imakefile	Mon Dec 26 22:03:44 2005
+@@ -2,11 +2,11 @@
  /* Copyright (c) Mark J. Kilgard, 1994. */
  
  #define DoNormalLib YES
@@ -11,14 +11,13 @@ $OpenBSD: patch-lib_glut_Imakefile,v 1.4 2005/11/20 18:03:25 naddy Exp $
 +#define SoRev SOGLUTREV
  
 -#include <Library.tmpl>
-+SOGLUTREV = 3.7
- 
+-
 -#include "../../Glut.cf"
 -
  HDRS = \
  	glutint.h \
  	glutstroke.h \
-@@ -108,6 +110,10 @@ OBJS = \
+@@ -108,6 +108,10 @@ OBJS = \
  	glut_winmisc.o \
  	layerutil.o
  
@@ -29,7 +28,7 @@ $OpenBSD: patch-lib_glut_Imakefile,v 1.4 2005/11/20 18:03:25 naddy Exp $
  #ifdef LibraryObjectRule
  LibraryObjectRule()
  #else
-@@ -115,8 +121,6 @@ LibraryObjectRule()
+@@ -115,8 +119,6 @@ LibraryObjectRule()
     will probably do essentially what LibraryObjectRule does. */
  NormalLibraryObjectRule()
  #endif
