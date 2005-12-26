@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/12/26 13:23:41 mbalmer Exp $
+bin/gotthard
+@man man/man8/gotthard.8
+share/examples/gotthard/
+share/examples/gotthard/gotthard.conf
+@sample ${SYSCONFDIR}/gotthard.conf
