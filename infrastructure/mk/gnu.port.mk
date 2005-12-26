@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.24 2005/12/24 20:11:03 sturm Exp $
+# $OpenBSD: gnu.port.mk,v 1.25 2005/12/26 21:29:41 naddy Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -102,8 +102,8 @@ REORDER_DEPENDENCIES+=${PORTSDIR}/infrastructure/mk/automake.dep
 MODGNU_SHARED_LIBS?=
 .for _n _e in ${MODGNU_SHARED_LIBS}
 .  if defined(LIB${_n}_ALIAS)
-MAKE_FLAGS+=lib${LIB${_n}_ALIAS}_la_LDFLAGS='-version-info ${LIB${_n}_VERSION:S/./:/}:0 ${_e}'
+MAKE_FLAGS+=lib${LIB${_n}_ALIAS}_la_LDFLAGS='-version-info ${LIB${_n}_VERSION:S/./:/}:0 '${_e}
 .  else
-MAKE_FLAGS+=lib${_n}_la_LDFLAGS='-version-info ${LIB${_n}_VERSION:S/./:/}:0 ${_e}'
+MAKE_FLAGS+=lib${_n}_la_LDFLAGS='-version-info ${LIB${_n}_VERSION:S/./:/}:0 '${_e}
 .  endif
 .endfor
