@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2005/10/30 00:10:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.28 2005/12/26 15:49:48 steven Exp $
 
 COMMENT=	"lossless image compression library"
 
 DISTNAME=	jbigkit-1.5
+SHARED_LIBS=	jbig	1.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cl.cam.ac.uk/~mgk25/download/
 
@@ -13,10 +14,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-LIBVERSION=	1.2
-
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/libjbig"
-MAKE_FLAGS=	CC="${CC}" CCFLAGS="${CFLAGS} -Wall" VERSION="${LIBVERSION}"
+MAKE_FLAGS=	CC="${CC}" CCFLAGS="${CFLAGS} -Wall" \
+		VERSION="${LIBjbig_VERSION}"
 
 WRKDIST=	${WRKDIR}/jbigkit
 
@@ -30,8 +30,8 @@ do-install:
 		${INSTALL_MAN} jbgtopbm.1 pbmtojbg.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/libjbig/jbig.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libjbig/libjbig.a ${PREFIX}/lib
-	@if [ -f ${WRKSRC}/libjbig/libjbig.so.${LIBVERSION} ]; then \
-	   ${INSTALL_DATA} ${WRKSRC}/libjbig/libjbig.so.${LIBVERSION} ${PREFIX}/lib; \
+	@if [ -f ${WRKSRC}/libjbig/libjbig.so.${LIBjbig_VERSION} ]; then \
+	   ${INSTALL_DATA} ${WRKSRC}/libjbig/libjbig.so.${LIBjbig_VERSION} ${PREFIX}/lib; \
 	fi
 	${INSTALL_DATA} ${WRKSRC}/libjbig/jbig.doc ${PREFIX}/share/doc/jbig
 

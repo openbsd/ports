@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/09/15 00:50:09 espie Exp $
-@lib lib/libjbig.so.1.2
+@comment $OpenBSD: PFRAG.shared,v 1.5 2005/12/26 15:49:48 steven Exp $
+@lib lib/libjbig.so.${LIBjbig_VERSION}
