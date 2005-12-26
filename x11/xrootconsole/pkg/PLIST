@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/12/26 11:30:12 sturm Exp $
+bin/xrootconsole
+@man man/man1/xrootconsole.1
