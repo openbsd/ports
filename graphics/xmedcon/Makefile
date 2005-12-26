@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2004/11/30 01:06:40 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2005/12/26 20:10:49 steven Exp $
 
 COMMENT=	"medical image conversion"
 
 DISTNAME=	xmedcon-0.5.2
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=		mdc	0.0
+MODGNU_SHARED_LIBS=	mdc	''
 CATEGORIES=	graphics
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmedcon/}
@@ -21,12 +24,9 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		X11 Xext Xi c gdk glib gmodule iconv intl jpeg m png \
 			tiff z
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static 
-
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
-		patch-*
 
 .include <bsd.port.mk>
