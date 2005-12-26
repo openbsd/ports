@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2005/12/26 13:17:35 steven Exp $
+--- src/Makefile.in.orig	Sun Dec 25 19:58:07 2005
++++ src/Makefile.in	Sun Dec 25 19:59:15 2005
+@@ -442,7 +442,7 @@ libdspam_la_LIBADD = $(adapter_objects) 
+ libdspam_la_DEPENDENCIES = $(adapter_objects) $(am__append_12)
+ 
+ #   current:revision:age
+-libdspam_la_LDFLAGS = -rpath '$(libdir)' -version-info $(libversion)
++libdspam_la_LDFLAGS = -rpath '$(libdir)' $(librealdspam_la_LDFLAGS)
+ @DYNAMIC_DRIVER_TRUE@libdb4_drv_la_SOURCES = \
+ @DYNAMIC_DRIVER_TRUE@	libdb4_drv.c libdb4_drv.h 
+ 

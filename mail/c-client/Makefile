@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2005/08/17 16:10:03 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2005/12/26 13:16:16 steven Exp $
 
 COMMENT=	"University of Washington's c-client mail access routines"
 NO_REGRESS=	Yes
@@ -6,6 +6,7 @@ NO_REGRESS=	Yes
 VERSION=	4.61
 DISTNAME=	pine${VERSION}
 PKGNAME=	c-client-${VERSION}p0
+SHARED_LIBS=	c-client	4.0
 CATEGORIES=	mail devel
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/
@@ -22,8 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 FLAVORS=	kerberos
 FLAVOR?=
 
-SHLIB=		libc-client.so.4.0
-SUBST_VARS=	SHLIB
+SHLIB=		libc-client.so.${LIBc-client_VERSION}
 
 MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" SHLIB="${SHLIB}" \
 		SSLTYPE="unix" CC="${CC}"
