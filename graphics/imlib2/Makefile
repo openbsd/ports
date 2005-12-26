@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2005/10/30 00:10:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2005/12/26 14:35:52 steven Exp $
 
 COMMENT=	"image manipulation library"
 
 DISTNAME=	imlib2-1.1.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=		Imlib2	2.2
+MODGNU_SHARED_LIBS=	Imlib2	''
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.enlightenment.org/pages/imlib2.html
@@ -26,6 +28,7 @@ LIB_DEPENDS+=	jpeg.62::graphics/jpeg \
 		ltdl::devel/libtool,-ltdl
 
 USE_X11=	Yes
+USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59

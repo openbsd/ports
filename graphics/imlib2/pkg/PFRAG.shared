@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2004/09/21 22:40:36 brad Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/26 14:35:52 steven Exp $
 lib/imlib2_loaders/filter/bump_map.so
 lib/imlib2_loaders/filter/colormod.so
 lib/imlib2_loaders/filter/testfilter.so
@@ -14,4 +14,4 @@ lib/imlib2_loaders/image/tga.so
 lib/imlib2_loaders/image/tiff.so
 lib/imlib2_loaders/image/xpm.so
 lib/imlib2_loaders/image/zlib.so
-@lib lib/libImlib2.so.2.2
+@lib lib/libImlib2.so.${LIBImlib2_VERSION}
