@@ -19,9 +19,6 @@ JPEG_LIB= ${LOCALBASE}/lib
 LCMS_INC= ${LOCALBASE}/inc
 LCMS_LIB= ${LOCALBASE}/lib
 
-SHLIB_MAJOR=	3
-SHLIB_MINOR=	0
-
 LIB=	mng
 SRCS=	libmng_callback_xs.c libmng_chunk_io.c libmng_chunk_descr.c \
 	libmng_chunk_prc.c libmng_chunk_xs.c libmng_cms.c libmng_display.c \
