@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2005/10/24 05:02:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.43 2005/12/26 14:40:13 steven Exp $
 
 COMMENT=	"library for dynamic creation of images"
 
 DISTNAME=	gd-2.0.33
 PKGNAME=	${DISTNAME}p2
+SHARED_LIBS=		gd	20.33
+MODGNU_SHARED_LIBS=	gd	''
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/
 
