@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2005/05/18 20:08:35 sturm Exp $
+# $OpenBSD: Makefile,v 1.24 2005/12/26 19:15:22 sturm Exp $
 
 COMMENT=		"GNU dbm"
 
@@ -6,6 +6,8 @@ VERSION=		1.8.3
 DISTNAME=		gdbm-${VERSION}
 PKGNAME=		${DISTNAME}p0
 CATEGORIES=		databases
+SHARED_LIBS=		gdbm	3.0
+MODGNU_SHARED_LIBS=	gdbm	''
 
 HOMEPAGE=		http://www.gnu.org/software/gdbm/
 
@@ -16,6 +18,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE= 	gnu dest
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}

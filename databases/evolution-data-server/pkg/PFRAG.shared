@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2005/09/08 04:46:25 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.7 2005/12/26 19:15:21 sturm Exp $
 lib/evolution-data-server-1.2/camel-providers/libcamelgroupwise.so
 lib/evolution-data-server-1.2/camel-providers/libcamelimap.so
 lib/evolution-data-server-1.2/camel-providers/libcamelimap4.so
@@ -9,18 +9,19 @@ lib/evolution-data-server-1.2/camel-providers/libcamelsendmail.so
 lib/evolution-data-server-1.2/camel-providers/libcamelsmtp.so
 lib/evolution-data-server-1.2/extensions/libebookbackendfile.so
 lib/evolution-data-server-1.2/extensions/libebookbackendgroupwise.so
+@comment lib/evolution-data-server-1.2/extensions/libebookbackendldap.so
 lib/evolution-data-server-1.2/extensions/libebookbackendvcf.so
 lib/evolution-data-server-1.2/extensions/libecalbackendcontacts.so
 lib/evolution-data-server-1.2/extensions/libecalbackendfile.so
 lib/evolution-data-server-1.2/extensions/libecalbackendgroupwise.so
 lib/evolution-data-server-1.2/extensions/libecalbackendhttp.so
 lib/evolution-data-server-1.2/extensions/libecalbackendweather.so
-@lib lib/libcamel-1.2.so.0.0
-@lib lib/libcamel-provider-1.2.so.4.3
-@lib lib/libebook-1.2.so.4.2
-@lib lib/libecal-1.2.so.3.1
-@lib lib/libedata-book-1.2.so.3.1
-@lib lib/libedata-cal-1.2.so.3.2
-@lib lib/libedataserver-1.2.so.4.1
-@lib lib/libedataserverui-1.2.so.5.3
-@lib lib/libegroupwise-1.2.so.5.1
+@lib lib/libcamel-1.2.so.${LIBcamel-1.2_VERSION}
+@lib lib/libcamel-provider-1.2.so.${LIBcamel-provider-1.2_VERSION}
+@lib lib/libebook-1.2.so.${LIBebook-1.2_VERSION}
+@lib lib/libecal-1.2.so.${LIBecal-1.2_VERSION}
+@lib lib/libedata-book-1.2.so.${LIBedata-book-1.2_VERSION}
+@lib lib/libedata-cal-1.2.so.${LIBedata-cal-1.2_VERSION}
+@lib lib/libedataserver-1.2.so.${LIBedataserver-1.2_VERSION}
+@lib lib/libedataserverui-1.2.so.${LIBedataserverui-1.2_VERSION}
+@lib lib/libegroupwise-1.2.so.${LIBegroupwise-1.2_VERSION}

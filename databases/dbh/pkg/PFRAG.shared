@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/10 08:36:46 espie Exp $
-@lib lib/libdbh.so.1.0
+@comment $OpenBSD: PFRAG.shared,v 1.3 2005/12/26 19:15:21 sturm Exp $
+@lib lib/libdbh.so.${LIBdbh_VERSION}

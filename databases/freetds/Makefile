@@ -1,8 +1,20 @@
-# $OpenBSD: Makefile,v 1.25 2005/06/21 15:50:51 jcs Exp $
+# $OpenBSD: Makefile,v 1.26 2005/12/26 19:15:22 sturm Exp $
 
 V=		0.63
 DISTNAME=	freetds-$V
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	databases
+SHARED_LIBS=	ct	3.0 \
+		sybdb	5.0 \
+		tds	4.0 \
+		tdssrv	2.0
+MODGNU_SHARED_LIBS=ct	'' \
+		sybdb	'' \
+		tds	'' \
+		tdssrv	''
+LIBct_ALIAS=	realct
+LIBsybdb_ALIAS=	realsybdb
+LIBtds_ALIAS=	realtds
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,6 +32,8 @@ MAINTAINER=	joshua stein <jcs@openbsd.org>
 
 FLAVORS=	msdblib
 FLAVOR?=
+
+USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

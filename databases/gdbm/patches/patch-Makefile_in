@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2005/01/27 02:09:52 naddy Exp $
+$OpenBSD: patch-Makefile_in,v 1.4 2005/12/26 19:15:22 sturm Exp $
 --- Makefile.in.orig	Tue Oct  8 18:09:12 2002
-+++ Makefile.in	Thu Jan 27 02:32:30 2005
++++ Makefile.in	Mon Dec 26 20:04:36 2005
 @@ -24,7 +24,7 @@ TEXI2DVI = texi2dvi
  DEFS =
  
@@ -19,3 +19,12 @@ $OpenBSD: patch-Makefile_in,v 1.3 2005/01/27 02:09:52 naddy Exp $
  
  progs: $(PROGS)
  
+@@ -156,7 +156,7 @@ install-compat:
+ libgdbm.la: $(LOBJS) gdbm.h
+ 	rm -f libgdbm.la
+ 	$(LIBTOOL) --mode=link $(CC) -o libgdbm.la -rpath $(libdir) \
+-		-version-info $(SHLIB_VER) $(LOBJS)
++		${libgdbm_la_LDFLAGS} $(LOBJS)
+ 
+ libgdbm_compat.la: $(C_LOBJS) gdbm.h
+ 	rm -f libgdbm_compat.la

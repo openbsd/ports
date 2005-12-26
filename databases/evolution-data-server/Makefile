@@ -1,9 +1,28 @@
-# $OpenBSD: Makefile,v 1.7 2005/09/08 04:46:25 marcm Exp $
+# $OpenBSD: Makefile,v 1.8 2005/12/26 19:15:21 sturm Exp $
 
 COMMENT=		"data backends for the Evolution mail/PIM suite"
 
-DISTNAME=		evolution-data-server-1.2.3
+R=			1.2
+DISTNAME=		evolution-data-server-$R.3
 CATEGORIES=		databases
+SHARED_LIBS=		camel-$R	0.0 \
+			camel-provider-$R 4.3 \
+			ebook-$R	4.2 \
+			ecal-$R		3.1 \
+			edata-book-$R	3.1 \
+			edata-cal-$R	3.2 \
+			edataserver-$R	4.1 \
+			edataserverui-$R 5.3 \
+			egroupwise-$R	5.1
+MODGNU_SHARED_LIBS=	camel-$R	'' \
+			camel-provider-$R '' \
+			ebook-$R	'' \
+			ecal-$R		'' \
+			edata-book-$R	'' \
+			edata-cal-$R	'' \
+			edataserver-$R	'' \
+			edataserverui-$R '' \
+			egroupwise-$R	''
 
 HOMEPAGE=		http://www.gnome.org
 
