@@ -1,5 +1,5 @@
 --- backend/Makefile.in.orig	Sat Jul 30 14:28:10 2005
-+++ backend/Makefile.in	Tue Nov 15 21:52:39 2005
++++ backend/Makefile.in	Mon Dec 26 14:44:59 2005
 @@ -25,7 +25,7 @@ infodir = @infodir@
  mandir = @mandir@
  includedir = @includedir@
@@ -27,3 +27,12 @@
  #	@# Assume the dll name without any versions is last
  #	@dllend=`../tools/libtool-get-dll-ext libsane-dll.la`; \
  #	list="$(ALL_BACKENDS)"; cd $(DESTDIR)$(libsanedir) && for be in $$list; do \
+@@ -274,7 +274,7 @@ dll-preload.c:
+ libsane.la: dll.lo dll-s.lo $(EXTRA) $(addsuffix .lo,$(DLL_PRELOAD)) $(LIBOBJS)
+ 	@$(LIBTOOL) $(MLINK) $(CC) -o $@ $(LDFLAGS) $(BACKENDLIBS)  $^ \
+ 		$(addsuffix .lo,$(DLL_PRELOAD_EXTRAS)) @LIBTOOL_LINK_EXTRA@ \
+-		-rpath $(libdir) -version-info $(V_MAJOR):$(V_REV):$(V_MINOR)
++		-rpath $(libdir) $(libsane_la_LDFLAGS)
+ 
+ # additional dependencies
+ 
