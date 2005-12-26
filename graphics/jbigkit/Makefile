@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2005/12/26 15:49:48 steven Exp $
+# $OpenBSD: Makefile,v 1.29 2005/12/26 18:00:15 brad Exp $
 
 COMMENT=	"lossless image compression library"
 
-DISTNAME=	jbigkit-1.5
-SHARED_LIBS=	jbig	1.2
+DISTNAME=	jbigkit-1.6
+SHARED_LIBS=	jbig	2.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cl.cam.ac.uk/~mgk25/download/
 
