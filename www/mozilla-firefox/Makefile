@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2005/12/21 15:33:00 kurt Exp $
+# $OpenBSD: Makefile,v 1.44 2005/12/26 02:17:53 ian Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -6,7 +6,7 @@ COMMENT=	"redesign of Mozilla's browser component"
 
 VER=		1.5
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}p0
+PKGNAME=	mozilla-firefox-${VER}p1
 SO_VERSION=	8.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -117,5 +117,7 @@ do-install:
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
 	${INSTALL_PROGRAM} ${MOB}/regxpcom ${MOB}/firefox-bin ${MOB}/mozilla-xremote-client ${MOZ}
 	ln -f ${MOZ}/firefox-bin ${MOZ}/mozilla-firefox-bin
+	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
+		< ${FILESDIR}/README.OpenBSD > ${MOZ}/README.OpenBSD
 
 .include <bsd.port.mk>

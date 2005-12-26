@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2005/12/20 23:44:00 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.15 2005/12/26 02:17:53 ian Exp $
 @conflict mozilla-firebird-*
 %%SHARED%%
 bin/firefox
@@ -6,6 +6,7 @@ bin/firefox-config
 bin/mozilla-firefox
 mozilla-firefox/
 mozilla-firefox/LICENSE
+mozilla-firefox/README.OpenBSD
 mozilla-firefox/chrome/
 mozilla-firefox/chrome/browser.jar
 mozilla-firefox/chrome/browser.manifest

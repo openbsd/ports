@@ -1,11 +1,3 @@
-If you encounter strange problems relating to bookmarks, downloads,
-window placement, toolbars, history, or other settings, it is
-recommended that you try creating a new profile and attempting to
-reproduce the problem before filing bugs.
-In order to create a new profile, start Firefox with the the 
--profilemanager switch, e.g. firefox -profilemanager
-
-If firefox doesn't start at all, first try and remove compreg.dat,
-xpti.dat and extensions/Extensions.rdf in your profile-dir, or you
-could just wack the old profile-dir,
-    rm -r ~/.mozilla/firefox/<profile-dir> ~/.firefox/<profile-dir>
+If firefox doesn't start at all or to configure email, Java,
+etc., see ${PREFIX}/mozilla-firefox/README.OpenBSD for more
+information on using FireFox in an OpenBSD environment.
