@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.77 2005/12/23 13:30:05 bernd Exp $
+# $OpenBSD: make-plist,v 1.78 2005/12/26 19:29:34 bernd Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -52,7 +52,7 @@ sub lib_backsubst
 	if (m/lib([^\/]+)\.so\.(\d+\.\d+)$/) {
 		my ($name, $v) = ($1, $2);
 		if (!defined $known_libs{$name}) {
-			$lib_warnings->{$name}->{missing} = 1;
+			$lib_warnings->{$name}->{missing} = $v;
 		} else {
 			if ($known_libs{$name} ne $v) {
 				$lib_warnings->{$name}->{version} = [$v,
@@ -1057,7 +1057,8 @@ for my $k (sort keys %$foundcomments) {
 
 for my $name (sort keys %$lib_warnings) {
 	if (defined $lib_warnings->{$name}->{missing}) {
-		print STDERR "WARNING: unregistered shared lib: $name\n";
+		print STDERR "WARNING: unregistered shared lib: $name "
+		    . "(version: $lib_warnings->{$name}->{missing})\n";
 	}
 	if (defined $lib_warnings->{$name}->{version}) {
 		my ($v1, $v2) = @{$lib_warnings->{$name}->{version}};
