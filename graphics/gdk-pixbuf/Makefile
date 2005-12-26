@@ -1,12 +1,22 @@
-# $OpenBSD: Makefile,v 1.35 2005/11/21 20:20:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2005/12/26 15:35:01 steven Exp $
 
 COMMENT=	"GdkPixbuf graphics library"
 COMMENT-gnome=	"GdkPixbuf graphics library (GNOME Canvas)"
 
 VERSION=	0.22.0
 DISTNAME=	gdk-pixbuf-${VERSION}
-PKGNAME=	${DISTNAME}p3
-PKGNAME-gnome=	gdk-pixbuf-gnome-${VERSION}
+PKGNAME=	${DISTNAME}p4
+PKGNAME-gnome=	gdk-pixbuf-gnome-${VERSION}p0
+SHARED_LIBS=		gdk_pixbuf		2.0	\
+			gdk_pixbuf_xlib		2.0	\
+			gnomecanvaspixbuf	1.0
+MODGNU_SHARED_LIBS=	gdk_pixbuf		''	\
+			gdk_pixbuf_xlib		''	\
+			gnomecanvaspixbuf	''
+LIBgdk_pixbuf_ALIAS=		realgdk_pixbuf
+LIBgdk_pixbuf_xlib_ALIAS=	realgdk_pixbuf_xlib
+LIBgnomecanvaspixbuf_ALIAS=	realgnomecanvaspixbuf
+
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://developer.gnome.org/arch/imaging/gdkpixbuf.html
@@ -23,6 +33,7 @@ WANTLIB=		iconv intl glib m X11 gmodule Xi Xext z
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gdk-pixbuf/0.22/}
 
 SEPARATE_BUILD=	simple
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.52
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
