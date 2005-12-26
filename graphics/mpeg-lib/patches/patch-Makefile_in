@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2004/06/22 03:07:17 brad Exp $
---- Makefile.in.orig	1998-11-26 09:03:29.000000000 -0700
-+++ Makefile.in	2004-06-21 20:04:38.000000000 -0600
+$OpenBSD: patch-Makefile_in,v 1.2 2005/12/26 18:02:44 steven Exp $
+--- Makefile.in.orig	Thu Nov 26 17:03:29 1998
++++ Makefile.in	Mon Dec 26 18:59:52 2005
 @@ -15,11 +15,13 @@ CFLAGS        = $(OPTIMIZE) $(EXTRA_CFLA
  CPPFLAGS      = $(INCLUDE_DIRS) $(DEFINES)
  
@@ -16,7 +16,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2004/06/22 03:07:17 brad Exp $
  
  # Other miscellaneous programs
  AR            = @AR@
-@@ -37,23 +39,29 @@ DITHER_SRC    = fs2.c fs2fast.c fs4.c hy
+@@ -37,6 +39,7 @@ DITHER_SRC    = fs2.c fs2fast.c fs4.c hy
  		mono.c ordered.c ordered2.c mb_ordered.c
  LIBSRC        = @libsrc@
  LIBOBJ        = @libobj@
@@ -24,10 +24,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2004/06/22 03:07:17 brad Exp $
  
  
  # Other files of interest
- 
- LIBRARY       = libmpeg.a
--SHLIB         = libmpeg.so
-+SHLIB         = libmpeg.so.13.1
+@@ -46,15 +49,20 @@ SHLIB         = libmpeg.so
  HEADER        = mpeg.h
  EXTRAS        = @extras@
  
@@ -42,13 +39,14 @@ $OpenBSD: patch-Makefile_in,v 1.1 2004/06/22 03:07:17 brad Exp $
 +.c.so:
 +		$(CC) -c $(CFLAGS) $(CPPFLAGS) $(PICFLAG) $< -o $@
  
--# Library/cleanup targets: 
++
+ # Library/cleanup targets: 
  
 -all:		lib $(EXTRAS)
-+# Library/cleanup targets: 
- 
+-
  lib:		$(LIBRARY)
  
+ shlib:          $(SHLIB)
 @@ -63,17 +71,24 @@ $(LIBRARY):	$(LIBOBJ)
  		$(AR) $(ARFLAGS) $(LIBRARY) $(LIBOBJ)
  		$(RANLIB) $(LIBRARY)
