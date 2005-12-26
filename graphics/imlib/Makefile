@@ -1,11 +1,15 @@
-# $OpenBSD: Makefile,v 1.50 2005/10/30 00:10:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.51 2005/12/26 14:23:14 steven Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	"image manipulation library for X11"
 
 V=		1.9.14
 DISTNAME=	imlib-${V}
-PKGNAME=	imlib-${V}p3
+PKGNAME=	imlib-${V}p4
+SHARED_LIBS=		Imlib		19.14	\
+			gdk_imlib	19.14
+MODGNU_SHARED_LIBS=	Imlib		''	\
+			gdk_imlib	''
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/imlib/1.9/}
 
@@ -27,6 +31,7 @@ VMEM_WARNING=	Yes
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

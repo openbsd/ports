@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2004/08/11 10:42:55 espie Exp $
-@lib lib/libImlib.so.19.14
-@lib lib/libgdk_imlib.so.19.14
+@comment $OpenBSD: PFRAG.shared,v 1.7 2005/12/26 14:23:14 steven Exp $
+@lib lib/libImlib.so.${LIBImlib_VERSION}
+@lib lib/libgdk_imlib.so.${LIBgdk_imlib_VERSION}
