@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.14 2005/12/26 20:47:28 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.15 2005/12/26 20:50:08 sturm Exp $
 
 COMMENT=	"Berkeley DB package, revision ${REVISION}"
 COMMENT-tcl=	"TCL bindings for Berkeley DB, revision ${REVISION}"
@@ -64,10 +64,7 @@ MODGNU_SHARED_LIBS=db	'' \
 MAKE_FLAGS=	DBVERSION=${LIBdb_VERSION} \
 		DBCXXVERSION=${LIBdb_cxx_VERSION} \
 		DBTCLVERSION=${LIBdb_tcl_VERSION}
-FAKE_FLAGS=	DBVERSION=${LIBdb_VERSION} \
-		DBCXXVERSION=${LIBdb_cxx_VERSION} \
-		DBTCLVERSION=${LIBdb_tcl_VERSION} \
-		${DESTDIRNAME}=${WRKINST}
+FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 
 do-regress:
