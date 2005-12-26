@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_osip2_Makefile_in,v 1.1 2005/12/26 13:13:46 steven Exp $
+--- src/osip2/Makefile.in.orig	Mon Dec 26 12:41:27 2005
++++ src/osip2/Makefile.in	Mon Dec 26 12:41:51 2005
+@@ -105,7 +105,7 @@ lib_LTLIBRARIES = libosip2.la
+ libosip2_la_SOURCES =  ict_fsm.c      ist_fsm.c      nict_fsm.c          nist_fsm.c    ict.c          ist.c          nict.c              nist.c        fsm_misc.c     osip.c         osip_transaction.c  osip_event.c  port_sema.c    port_fifo.c    port_thread.c       osip_dialog.c osip_negotiation.c            port_condv.c        osip_time.c
+ 
+ 
+-libosip2_la_LDFLAGS = -version-info $(LIBOSIP_SO_VERSION)  $(FSM_LIB) $(EXTRA_LIB) ../osipparser2/libosipparser2.la
++libosip2_la_LDFLAGS = $(librealosip2_la_LDFLAGS) $(FSM_LIB) $(EXTRA_LIB) ../osipparser2/libosipparser2.la
+ 
+ 
+ INCLUDES = -I$(top_srcdir)/include
