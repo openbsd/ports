@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2005/11/04 07:36:10 bernd Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2005/12/27 18:08:45 steven Exp $
 lib/gimp/2.0/modules/libcdisplay_colorblind.so
 lib/gimp/2.0/modules/libcdisplay_gamma.so
 lib/gimp/2.0/modules/libcdisplay_highcontrast.so
@@ -7,11 +7,11 @@ lib/gimp/2.0/modules/libcolorsel_cmyk.so
 lib/gimp/2.0/modules/libcolorsel_triangle.so
 lib/gimp/2.0/modules/libcolorsel_water.so
 lib/gimp/2.0/modules/libcontroller_midi.so
-@lib lib/libgimp-2.0.so.200.9
-@lib lib/libgimpbase-2.0.so.200.9
-@lib lib/libgimpcolor-2.0.so.200.9
-@lib lib/libgimpmath-2.0.so.200.9
-@lib lib/libgimpmodule-2.0.so.200.9
-@lib lib/libgimpthumb-2.0.so.200.9
-@lib lib/libgimpui-2.0.so.200.9
-@lib lib/libgimpwidgets-2.0.so.200.9
+@lib lib/libgimp-2.0.so.${LIBgimp-2.0_VERSION}
+@lib lib/libgimpbase-2.0.so.${LIBgimpbase-2.0_VERSION}
+@lib lib/libgimpcolor-2.0.so.${LIBgimpcolor-2.0_VERSION}
+@lib lib/libgimpmath-2.0.so.${LIBgimpmath-2.0_VERSION}
+@lib lib/libgimpmodule-2.0.so.${LIBgimpmodule-2.0_VERSION}
+@lib lib/libgimpthumb-2.0.so.${LIBgimpthumb-2.0_VERSION}
+@lib lib/libgimpui-2.0.so.${LIBgimpui-2.0_VERSION}
+@lib lib/libgimpwidgets-2.0.so.${LIBgimpwidgets-2.0_VERSION}
