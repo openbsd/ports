@@ -1,14 +1,16 @@
-$OpenBSD: patch-audio_audio_c,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
---- audio/audio.c.orig	Mon Nov 15 04:51:33 2004
-+++ audio/audio.c	Tue Feb 15 22:07:06 2005
-@@ -35,6 +35,10 @@
- #define ldebug(...)
- #endif
+$OpenBSD: patch-audio_audio_c,v 1.2 2005/12/27 07:56:15 todd Exp $
+--- audio/audio.c.orig	Mon Dec 19 16:51:53 2005
++++ audio/audio.c	Tue Dec 20 10:59:25 2005
+@@ -55,6 +55,12 @@ static struct audio_driver *drvtab[] = {
+     &wav_audio_driver
+ };
  
 +#ifdef __OpenBSD__
-+#define INT16_MAX		(32767)
++#include <sys/limits.h>
++#define INT16_MAX	SHRT_MAX
++#define	UINT64_MAX	ULONG_MAX
 +#endif
 +
- #define QC_AUDIO_DRV    "QEMU_AUDIO_DRV"
- #define QC_VOICES       "QEMU_VOICES"
- #define QC_FIXED_FORMAT "QEMU_FIXED_FORMAT"
+ struct fixed_settings {
+     int enabled;
+     int nb_voices;

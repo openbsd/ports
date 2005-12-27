@@ -1,7 +1,7 @@
-$OpenBSD: patch-target-arm_cpu_h,v 1.2 2005/08/11 01:15:17 todd Exp $
---- target-arm/cpu.h.orig	Wed Apr 27 10:10:47 2005
-+++ target-arm/cpu.h	Wed Apr 27 10:17:26 2005
-@@ -104,7 +104,7 @@ void cpu_arm_close(CPUARMState *s);
+$OpenBSD: patch-target-arm_cpu_h,v 1.3 2005/12/27 07:56:15 todd Exp $
+--- target-arm/cpu.h.orig	Mon Dec 19 16:51:53 2005
++++ target-arm/cpu.h	Tue Dec 20 08:06:20 2005
+@@ -123,7 +123,7 @@ void switch_mode(CPUARMState *, int);
     signal handlers to inform the virtual CPU of exceptions. non zero
     is returned if the signal was handled by the virtual CPU.  */
  struct siginfo;
@@ -9,4 +9,4 @@ $OpenBSD: patch-target-arm_cpu_h,v 1.2 2005/08/11 01:15:17 todd Exp $
 +int cpu_arm_signal_handler(int host_signum, qemu_siginfo *info, 
                             void *puc);
  
- #define TARGET_PAGE_BITS 12
+ #define CPSR_M (0x1f)

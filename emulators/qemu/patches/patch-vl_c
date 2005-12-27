@@ -1,8 +1,8 @@
-$OpenBSD: patch-vl_c,v 1.4 2005/11/05 12:11:05 todd Exp $
---- vl.c.orig	Sun Sep  4 12:11:31 2005
-+++ vl.c	Sat Nov  5 05:41:13 2005
-@@ -42,7 +42,7 @@
- #include <dirent.h>
+$OpenBSD: patch-vl_c,v 1.5 2005/12/27 07:56:15 todd Exp $
+--- vl.c.orig	Mon Dec 19 16:51:53 2005
++++ vl.c	Tue Dec 20 10:53:26 2005
+@@ -43,7 +43,7 @@
+ #include <netdb.h>
  #ifdef _BSD
  #include <sys/stat.h>
 -#ifndef __APPLE__
@@ -10,15 +10,40 @@ $OpenBSD: patch-vl_c,v 1.4 2005/11/05 12:11:05 todd Exp $
  #include <libutil.h>
  #endif
  #else
-@@ -128,6 +128,7 @@ NetDriverState nd_table[MAX_NICS];
- QEMUTimer *gui_timer;
+@@ -126,6 +126,7 @@ QEMUTimer *gui_timer;
  int vm_running;
- int audio_enabled = 0;
+ int rtc_utc = 1;
+ int cirrus_vga_enabled = 1;
 +int nic_pcnet = 0;
- int sb16_enabled = 1;
- int adlib_enabled = 1;
- int gus_enabled = 1;
-@@ -1637,11 +1638,35 @@ static int tun_open(char *ifname, int if
+ #ifdef TARGET_SPARC
+ int graphic_width = 1024;
+ int graphic_height = 768;
+@@ -549,7 +550,23 @@ int64_t cpu_get_real_ticks(void)
+ }
+ 
+ #else
+-#error unsupported CPU
++# warning non-optimized CPU
++#include <sys/time.h>
++#include <time.h>
++
++int64_t cpu_get_real_ticks(void)
++{
++    struct timeval tv;
++    static int64_t i = 0;
++    int64_t j;
++
++    gettimeofday(&tv, NULL);
++    do {
++	j = (tv.tv_sec * (uint64_t) 1000000) + tv.tv_usec;
++    } while (i == j);
++    i = j;
++    return j;
++}
+ #endif
+ 
+ static int64_t cpu_ticks_offset;
+@@ -2037,11 +2054,35 @@ static int tap_open(char *ifname, int if
      char *dev;
      struct stat s;
  
@@ -54,31 +79,31 @@ $OpenBSD: patch-vl_c,v 1.4 2005/11/05 12:11:05 todd Exp $
  
      fstat(fd, &s);
      dev = devname(s.st_rdev, S_IFCHR);
-@@ -2846,6 +2871,7 @@ void help(void)
+@@ -3986,6 +4027,7 @@ void help(void)
  #if defined(TARGET_PPC) || defined(TARGET_SPARC)
             "-g WxH[xDEPTH]  Set the initial graphical resolution and depth\n"
  #endif
 +           "-nic-pcnet     simulate an AMD PC-Net PCI ethernet adaptor\n"
             "\n"
             "Network options:\n"
-            "-nics n         simulate 'n' network cards [default=1]\n"
-@@ -2959,6 +2985,7 @@ enum {
-     QEMU_OPTION_L,
-     QEMU_OPTION_no_code_copy,
-     QEMU_OPTION_pci,
+            "-net nic[,vlan=n][,macaddr=addr]\n"
+@@ -4093,6 +4135,7 @@ enum {
+     QEMU_OPTION_audio_help,
+     QEMU_OPTION_soundhw,
+ #endif
 +    QEMU_OPTION_nic_pcnet,
-     QEMU_OPTION_isa,
-     QEMU_OPTION_prep,
-     QEMU_OPTION_k,
-@@ -3047,6 +3074,7 @@ const QEMUOption qemu_options[] = {
+ 
+     QEMU_OPTION_net,
+     QEMU_OPTION_tftp,
+@@ -4195,6 +4238,7 @@ const QEMUOption qemu_options[] = {
      
      /* temporary options */
-     { "pci", 0, QEMU_OPTION_pci },
+     { "usb", 0, QEMU_OPTION_usb },
 +    { "nic-pcnet", 0, QEMU_OPTION_nic_pcnet },
      { "cirrusvga", 0, QEMU_OPTION_cirrusvga },
      { NULL },
  };
-@@ -3185,7 +3213,7 @@ int main(int argc, char **argv)
+@@ -4441,7 +4485,7 @@ int main(int argc, char **argv)
          serial_devices[i][0] = '\0';
      serial_device_index = 0;
      
@@ -87,13 +112,13 @@ $OpenBSD: patch-vl_c,v 1.4 2005/11/05 12:11:05 todd Exp $
      for(i = 1; i < MAX_PARALLEL_PORTS; i++)
          parallel_devices[i][0] = '\0';
      parallel_device_index = 0;
-@@ -3452,6 +3480,9 @@ int main(int argc, char **argv)
+@@ -4601,6 +4645,9 @@ int main(int argc, char **argv)
+                         optarg);
+                 nb_net_clients++;
                  break;
-             case QEMU_OPTION_pci:
-                 pci_enabled = 1;
-+                break;
 +            case QEMU_OPTION_nic_pcnet:
-+                nic_pcnet = 1;
-                 break;
-             case QEMU_OPTION_isa:
-                 pci_enabled = 0;
++		nic_pcnet = 1;
++		break;
+ #ifdef CONFIG_SLIRP
+             case QEMU_OPTION_tftp:
+ 		tftp_prefix = optarg;

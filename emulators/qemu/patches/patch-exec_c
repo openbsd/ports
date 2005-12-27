@@ -1,7 +1,7 @@
-$OpenBSD: patch-exec_c,v 1.2 2005/10/25 03:25:44 todd Exp $
---- exec.c.orig	Sun Sep  4 12:11:31 2005
-+++ exec.c	Mon Oct 24 21:55:47 2005
-@@ -2176,7 +2176,7 @@ void cpu_physical_memory_rw(target_phys_
+$OpenBSD: patch-exec_c,v 1.3 2005/12/27 07:56:15 todd Exp $
+--- exec.c.orig	Mon Dec 19 16:51:53 2005
++++ exec.c	Tue Dec 20 08:06:20 2005
+@@ -1951,7 +1951,7 @@ void cpu_physical_memory_rw(target_phys_
      target_phys_addr_t page;
      unsigned long pd;
      PhysPageDesc *p;

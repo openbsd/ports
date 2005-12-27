@@ -1,15 +1,15 @@
-$OpenBSD: patch-vl_h,v 1.1 2005/08/11 01:15:17 todd Exp $
---- vl.h.orig	Sun Jul 24 13:52:08 2005
-+++ vl.h	Wed Aug 10 15:48:42 2005
-@@ -666,6 +666,12 @@ int fdctrl_get_drive_type(fdctrl_t *fdct
- void isa_ne2000_init(int base, int irq, NetDriverState *nd);
- void pci_ne2000_init(PCIBus *bus, NetDriverState *nd);
+$OpenBSD: patch-vl_h,v 1.2 2005/12/27 07:56:15 todd Exp $
+--- vl.h.orig	Mon Dec 19 16:51:53 2005
++++ vl.h	Tue Dec 20 10:55:04 2005
+@@ -729,6 +729,12 @@ int fdctrl_get_drive_type(fdctrl_t *fdct
+ void isa_ne2000_init(int base, int irq, NICInfo *nd);
+ void pci_ne2000_init(PCIBus *bus, NICInfo *nd);
  
 +/* pcnet.c */
 +
 +extern int nic_pcnet;
 +
-+void pci_pcnet_init(PCIBus *bus, NetDriverState *nd);
++void pci_pcnet_init(PCIBus *bus, NICInfo *nd);
 +
  /* pckbd.c */
  

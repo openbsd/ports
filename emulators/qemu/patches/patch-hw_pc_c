@@ -1,16 +1,16 @@
-$OpenBSD: patch-hw_pc_c,v 1.1 2005/08/11 01:15:17 todd Exp $
---- hw/pc.c.orig	Sun Jul 24 13:52:08 2005
-+++ hw/pc.c	Wed Aug 10 15:48:42 2005
-@@ -414,7 +414,7 @@ static void pc_init1(int ram_size, int v
+$OpenBSD: patch-hw_pc_c,v 1.2 2005/12/27 07:56:15 todd Exp $
+--- hw/pc.c.orig	Mon Dec 19 16:51:53 2005
++++ hw/pc.c	Tue Dec 20 11:22:29 2005
+@@ -616,7 +616,7 @@ static void pc_init1(int ram_size, int v
      char buf[1024];
      int ret, linux_boot, initrd_size, i, nb_nics1;
      unsigned long bios_offset, vga_bios_offset;
 -    int bios_size, isa_bios_size;
 +    int bios_size, isa_bios_size, vga_bios_size;
      PCIBus *pci_bus;
+     CPUState *env;
  
-     linux_boot = (kernel_filename != NULL);
-@@ -446,8 +446,12 @@ static void pc_init1(int ram_size, int v
+@@ -668,8 +668,12 @@ static void pc_init1(int ram_size, int v
      } else {
          snprintf(buf, sizeof(buf), "%s/%s", bios_dir, VGABIOS_FILENAME);
      }
@@ -24,14 +24,16 @@ $OpenBSD: patch-hw_pc_c,v 1.1 2005/08/11 01:15:17 todd Exp $
      /* setup basic memory access */
      cpu_register_physical_memory(0xc0000, 0x10000, 
                                   vga_bios_offset | IO_MEM_ROM);
-@@ -580,7 +584,10 @@ static void pc_init1(int ram_size, int v
+@@ -802,7 +806,12 @@ static void pc_init1(int ram_size, int v
  
      if (pci_enabled) {
          for(i = 0; i < nb_nics; i++) {
 -            pci_ne2000_init(pci_bus, &nd_table[i]);
++#if 0
 +            if (nic_pcnet)
 +                pci_pcnet_init(pci_bus, &nd_table[i]);
 +            else
++#endif
 +                pci_ne2000_init(pci_bus, &nd_table[i]); 
          }
          pci_piix3_ide_init(pci_bus, bs_table);

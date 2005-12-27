@@ -1,7 +1,7 @@
-$OpenBSD: patch-target-i386_helper2_c,v 1.1 2005/09/26 20:48:33 todd Exp $
---- target-i386/helper2.c.orig	Sun Jul 24 13:52:08 2005
-+++ target-i386/helper2.c	Tue Aug 23 14:38:11 2005
-@@ -124,7 +124,7 @@ CPUX86State *cpu_x86_init(void)
+$OpenBSD: patch-target-i386_helper2_c,v 1.2 2005/12/27 07:56:15 todd Exp $
+--- target-i386/helper2.c.orig	Mon Dec 19 16:51:53 2005
++++ target-i386/helper2.c	Tue Dec 20 08:06:20 2005
+@@ -123,7 +123,7 @@ CPUX86State *cpu_x86_init(void)
                  env->cpuid_model[i >> 2] |= c << (8 * (i & 3));
              }
          }
@@ -10,12 +10,12 @@ $OpenBSD: patch-target-i386_helper2_c,v 1.1 2005/09/26 20:48:33 todd Exp $
          /* currently not enabled for std i386 because not fully tested */
          env->cpuid_features |= CPUID_APIC;
          env->cpuid_ext2_features = (env->cpuid_features & 0x0183F3FF);
-@@ -133,7 +133,7 @@ CPUX86State *cpu_x86_init(void)
+@@ -132,7 +132,7 @@ CPUX86State *cpu_x86_init(void)
  
          /* these features are needed for Win64 and aren't fully implemented */
          env->cpuid_features |= CPUID_MTRR | CPUID_CLFLUSH | CPUID_MCA;
 -#endif
 +/* #endif -- To run Mac OS X x86  */
      }
-     cpu_single_env = env;
      cpu_reset(env);
+ #ifdef USE_KQEMU

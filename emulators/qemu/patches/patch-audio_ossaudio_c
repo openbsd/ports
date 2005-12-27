@@ -1,20 +1,19 @@
-$OpenBSD: patch-audio_ossaudio_c,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
---- audio/ossaudio.c.orig	Mon Nov 15 04:51:33 2004
-+++ audio/ossaudio.c	Tue Feb 15 22:07:06 2005
+$OpenBSD: patch-audio_ossaudio_c,v 1.2 2005/12/27 07:56:15 todd Exp $
+--- audio/ossaudio.c.orig	Mon Dec 19 16:51:53 2005
++++ audio/ossaudio.c	Tue Dec 20 11:00:04 2005
 @@ -21,10 +21,15 @@
   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   * THE SOFTWARE.
   */
-+#ifdef __OpenBSD__
 +#include <stdlib.h>
-+#include <soundcard.h>
-+#else
-+#include <sys/soundcard.h>
-+#endif
  #include <sys/mman.h>
  #include <sys/types.h>
  #include <sys/ioctl.h>
--#include <sys/soundcard.h>
- #include <assert.h>
++#ifdef __OpenBSD__
++#include <soundcard.h>
++#else
+ #include <sys/soundcard.h>
++#endif
  #include "vl.h"
  
+ #define AUDIO_CAP "oss"
