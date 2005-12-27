@@ -1,0 +1,13 @@
+$OpenBSD: patch-smb_Makefile_in,v 1.1 2005/12/27 21:06:09 naddy Exp $
+--- smb/Makefile.in.orig	Tue Dec 27 20:27:20 2005
++++ smb/Makefile.in	Tue Dec 27 20:27:55 2005
+@@ -279,8 +279,7 @@ libxffm_smb_la_SOURCES = \
+ 	smblookup.c 		smblookup.h				\
+ 	smb_open.c 		smb_open.h
+ 
+-libxffm_smb_la_LDFLAGS = -export-dynamic -version-info \
+-	@LIBXFFM_VERINFO@ $(am__append_1)
++libxffm_smb_la_LDFLAGS = -export-dynamic -module -avoid-version
+ libxffm_smb_la_CFLAGS = \
+ 	-DPACKAGE_DATA_DIR=\""$(datadir)"\" 				\
+ 	-DPACKAGE_LOCALE_DIR=\""$(localedir)"\"				\

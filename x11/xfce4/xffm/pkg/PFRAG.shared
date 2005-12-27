@@ -1,23 +1,16 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2005/11/10 22:57:41 jolan Exp $
-@lib lib/libxffm_actions.so.1.0
-@lib lib/libxffm_basic.so.1.0
-@lib lib/libxffm_calls.so.1.0
-@lib lib/libxffm_cpy.so.1.0
-@lib lib/libxffm_on_demand.so.1.0
-@lib lib/libxffm_secondary.so.1.0
-@lib lib/libxffm_tubo.so.1.0
+@comment $OpenBSD: PFRAG.shared,v 1.3 2005/12/27 21:06:09 naddy Exp $
+@lib lib/libxffm_actions.so.${LIBxffm_actions_VERSION}
+@lib lib/libxffm_basic.so.${LIBxffm_basic_VERSION}
+@lib lib/libxffm_calls.so.${LIBxffm_calls_VERSION}
+@lib lib/libxffm_cpy.so.${LIBxffm_cpy_VERSION}
+@lib lib/libxffm_on_demand.so.${LIBxffm_on_demand_VERSION}
+@lib lib/libxffm_secondary.so.${LIBxffm_secondary_VERSION}
+@lib lib/libxffm_tubo.so.${LIBxffm_tubo_VERSION}
 lib/xfce4/mcs-plugins/libxffmsettings.so
 lib/xfce4/xffm/libxffm_book.so
-@comment lib/xfce4/xffm/libxffm_book.so.1.0
 lib/xfce4/xffm/libxffm_find.so
-@comment lib/xfce4/xffm/libxffm_find.so.1.0
 lib/xfce4/xffm/libxffm_fstab.so
-@comment lib/xfce4/xffm/libxffm_fstab.so.1.0
 lib/xfce4/xffm/libxffm_prop.so
-@comment lib/xfce4/xffm/libxffm_prop.so.0.0
 lib/xfce4/xffm/libxffm_recent.so
-@comment lib/xfce4/xffm/libxffm_recent.so.1.0
 lib/xfce4/xffm/libxffm_smb.so
-@comment lib/xfce4/xffm/libxffm_smb.so.1.0
 lib/xfce4/xffm/libxffm_trash.so
-@comment lib/xfce4/xffm/libxffm_trash.so.1.0

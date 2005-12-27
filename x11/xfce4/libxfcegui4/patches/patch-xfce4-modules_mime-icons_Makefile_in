@@ -1,0 +1,12 @@
+$OpenBSD: patch-xfce4-modules_mime-icons_Makefile_in,v 1.1 2005/12/27 21:06:09 naddy Exp $
+--- xfce4-modules/mime-icons/Makefile.in.orig	Tue Dec 27 00:15:10 2005
++++ xfce4-modules/mime-icons/Makefile.in	Tue Dec 27 00:15:29 2005
+@@ -251,7 +251,7 @@ plugindir = $(libdir)/xfce4/modules
+ plugin_LTLIBRARIES = libxfce4_mime_icons.la
+ libxfce4_mime_iconsincludedir = $(includedir)/xfce4/xfce4-modules
+ libxfce4_mime_icons_la_SOURCES = mime_icons.c icon-theme.c icon-theme.h
+-libxfce4_mime_icons_la_LDFLAGS = -export-dynamic $(am__append_1)
++libxfce4_mime_icons_la_LDFLAGS = -export-dynamic -module -avoid-version
+ @HAVE_CYGWIN_TRUE@libxfce4_mime_icons_la_LIBADD = \
+ @HAVE_CYGWIN_TRUE@	$(top_builddir)/libxfcegui4/libxfcegui4.la			\
+ @HAVE_CYGWIN_TRUE@	@LIBXFCE4UTIL_LIBS@                                             \

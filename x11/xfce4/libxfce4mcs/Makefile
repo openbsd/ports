@@ -1,9 +1,19 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/16 09:52:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2005/12/27 21:06:09 naddy Exp $
 
 COMMENT=	"settings management library used by most xfce4 modules"
 DISTNAME=	libxfce4mcs-${V}
 PKGNAME=	${DISTNAME}p0
 V=		4.2.3
+SHARED_LIBS=	xfce4mcs-client 2.5 \
+		xfce4mcs-manager 2.5
+MODGNU_SHARED_LIBS= \
+	xfce4mcs-client \
+	'-export-dynamic -export-symbols-regex "^[^_].*" -L${X11BASE}/lib' \
+	xfce4mcs-manager \
+	'-export-dynamic -export-symbols-regex "^[^_].*" -L${X11BASE}/lib'
+LIBxfce4mcs-client_ALIAS=	xfce4mcs_client
+LIBxfce4mcs-manager_ALIAS=	xfce4mcs_manager
+
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 
 HOMEPAGE=	http://www.xfce.org/

@@ -1,0 +1,12 @@
+$OpenBSD: patch-xfce4-modules_combo_Makefile_in,v 1.1 2005/12/27 21:06:09 naddy Exp $
+--- xfce4-modules/combo/Makefile.in.orig	Tue Dec 27 00:12:04 2005
++++ xfce4-modules/combo/Makefile.in	Tue Dec 27 00:14:57 2005
+@@ -247,7 +247,7 @@ plugindir = $(libdir)/xfce4/modules
+ plugin_LTLIBRARIES = libxfce4_combo.la
+ libxfce4_comboincludedir = $(includedir)/xfce4/xfce4-modules
+ libxfce4_combo_la_SOURCES = combo.c 
+-libxfce4_combo_la_LDFLAGS = -export-dynamic $(am__append_1)
++libxfce4_combo_la_LDFLAGS = -export-dynamic -module -avoid-version
+ @HAVE_CYGWIN_TRUE@libxfce4_combo_la_LIBADD = \
+ @HAVE_CYGWIN_TRUE@	@GTK_LIBS@                                                      \
+ @HAVE_CYGWIN_TRUE@	@LIBDBH_LIBS@

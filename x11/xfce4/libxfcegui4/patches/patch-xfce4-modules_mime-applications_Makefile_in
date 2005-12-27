@@ -1,0 +1,12 @@
+$OpenBSD: patch-xfce4-modules_mime-applications_Makefile_in,v 1.1 2005/12/27 21:06:09 naddy Exp $
+--- xfce4-modules/mime-applications/Makefile.in.orig	Tue Dec 27 00:13:56 2005
++++ xfce4-modules/mime-applications/Makefile.in	Tue Dec 27 00:14:25 2005
+@@ -248,7 +248,7 @@ plugindir = $(libdir)/xfce4/modules
+ plugin_LTLIBRARIES = libxfce4_mime.la 
+ libxfce4_mimeincludedir = $(includedir)/xfce4/xfce4-modules
+ libxfce4_mime_la_SOURCES = mime.c 
+-libxfce4_mime_la_LDFLAGS = -export-dynamic -module $(am__append_1)
++libxfce4_mime_la_LDFLAGS = -export-dynamic -module -avoid-version
+ @HAVE_CYGWIN_TRUE@libxfce4_mime_la_LIBADD = \
+ @HAVE_CYGWIN_TRUE@	@LIBXFCE4UTIL_LIBS@                                             \
+ @HAVE_CYGWIN_TRUE@	@GTK_LIBS@                                                      \

@@ -1,9 +1,23 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/16 10:30:13 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2005/12/27 21:06:09 naddy Exp $
 
 COMMENT=	"xfce4 file manager"
 V=		4.2.3
 DISTNAME=	xffm-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=	xffm_actions	1.0 \
+		xffm_basic	1.0 \
+		xffm_calls	1.0 \
+		xffm_cpy	1.0 \
+		xffm_on_demand	1.0 \
+		xffm_secondary	1.0 \
+		xffm_tubo	1.0
+MODGNU_SHARED_LIBS=	xffm_actions	-export-dynamic \
+			xffm_basic	-export-dynamic \
+			xffm_calls	-export-dynamic \
+			xffm_cpy	-export-dynamic \
+			xffm_on_demand	-export-dynamic \
+			xffm_secondary	-export-dynamic \
+			xffm_tubo	-export-dynamic
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 
 HOMEPAGE=	http://www.xfce.org/
@@ -33,16 +47,5 @@ WANTLIB=	ICE SM X11 Xext Xrender c fontconfig \
 CONFIGURE_ARGS+=--disable-librsvg \
 		--enable-panel \
 		--enable-scrambledir
-
-# XXX workaround libtool's versioning of simple shared object modules
-post-install:
-.for n in book find fstab recent trash
-	${INSTALL_DATA} ${WRKSRC}/modules/.libs/libxffm_${n}.so.1.0 \
-		${PREFIX}/lib/xfce4/xffm/libxffm_${n}.so
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/modules/.libs/libxffm_prop.so.1.0 \
-		${PREFIX}/lib/xfce4/xffm/libxffm_prop.so
-	${INSTALL_DATA} ${WRKSRC}/smb/.libs/libxffm_smb.so.1.0 \
-		${PREFIX}/lib/xfce4/xffm/libxffm_smb.so
 
 .include <bsd.port.mk>

@@ -1,0 +1,28 @@
+$OpenBSD: patch-modules_Makefile_in,v 1.1 2005/12/27 21:06:09 naddy Exp $
+--- modules/Makefile.in.orig	Tue Dec 27 21:25:29 2005
++++ modules/Makefile.in	Tue Dec 27 21:26:12 2005
+@@ -310,18 +310,12 @@ libxffm_trash_la_SOURCES = \
+ libxffm_book_la_SOURCES = \
+ 	bookmarks.c 		bookmarks.h 	
+ 
+-libxffm_book_la_LDFLAGS = -export-dynamic -version-info \
+-	@LIBXFFM_VERINFO@ $(am__append_1)
+-libxffm_trash_la_LDFLAGS = -export-dynamic -version-info \
+-	@LIBXFFM_VERINFO@ $(am__append_2)
+-libxffm_recent_la_LDFLAGS = -export-dynamic -version-info \
+-	@LIBXFFM_VERINFO@ $(am__append_3)
+-libxffm_fstab_la_LDFLAGS = -export-dynamic -version-info \
+-	@LIBXFFM_VERINFO@ $(am__append_4)
+-libxffm_prop_la_LDFLAGS = -export-dynamic -version-info \
+-	@LIBXFFM_VERINFO@ $(am__append_5)
+-libxffm_find_la_LDFLAGS = -export-dynamic -version-info \
+-	@LIBXFFM_VERINFO@ $(am__append_6)
++libxffm_book_la_LDFLAGS = -export-dynamic -module -avoid-version
++libxffm_trash_la_LDFLAGS = -export-dynamic -module -avoid-version
++libxffm_recent_la_LDFLAGS = -export-dynamic -module -avoid-version
++libxffm_fstab_la_LDFLAGS = -export-dynamic -module -avoid-version
++libxffm_prop_la_LDFLAGS = -export-dynamic -module -avoid-version
++libxffm_find_la_LDFLAGS = -export-dynamic -module -avoid-version
+ @HAVE_CYGWIN_TRUE@cygwin_LDFLAGS = \
+ @HAVE_CYGWIN_TRUE@	-no-undefined							\
+ @HAVE_CYGWIN_TRUE@	-module								\

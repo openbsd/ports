@@ -1,8 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2005/11/10 22:57:38 jolan Exp $
-@lib lib/libxfcegui4.so.3.6
+@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/27 21:06:09 naddy Exp $
+@lib lib/libxfcegui4.so.${LIBxfcegui4_VERSION}
 lib/xfce4/modules/libxfce4_combo.so
-@comment @lib lib/xfce4/modules/libxfce4_combo.so.0.0
 lib/xfce4/modules/libxfce4_mime.so
-@comment @lib lib/xfce4/modules/libxfce4_mime.so.0.0
 lib/xfce4/modules/libxfce4_mime_icons.so
-@comment @lib lib/xfce4/modules/libxfce4_mime_icons.so.0.0

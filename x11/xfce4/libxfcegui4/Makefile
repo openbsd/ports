@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2005/11/16 09:49:41 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2005/12/27 21:06:09 naddy Exp $
 
 COMMENT=	"widget library for xfce4"
 V=		4.2.3
 DISTNAME=	libxfcegui4-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=	xfcegui4 3.6
+MODGNU_SHARED_LIBS=	xfcegui4 \
+	'-export-dynamic -export-symbols-regex "^[^_].*" -L${X11BASE}/lib'
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 
 HOMEPAGE=	http://www.xfce.org/
@@ -28,17 +31,5 @@ WANTLIB=	ICE SM X11 Xext Xrender fontconfig \
 		freetype m z cairo glitz png
 
 CONFIGURE_ARGS+=--disable-gtk-doc
-
-# XXX workaround libtool's versioning of simple shared object modules
-post-install:
-	${INSTALL_DATA} \
-		${WRKSRC}/xfce4-modules/combo/.libs/libxfce4_combo.so.0.0 \
-		${PREFIX}/lib/xfce4/modules/libxfce4_combo.so
-	${INSTALL_DATA} \
-		${WRKSRC}/xfce4-modules/mime-applications/.libs/libxfce4_mime.so.0.0 \
-		${PREFIX}/lib/xfce4/modules/libxfce4_mime.so
-	${INSTALL_DATA} \
-		${WRKSRC}/xfce4-modules/mime-icons/.libs/libxfce4_mime_icons.so.0.0 \
-		${PREFIX}/lib/xfce4/modules/libxfce4_mime_icons.so
 
 .include <bsd.port.mk>

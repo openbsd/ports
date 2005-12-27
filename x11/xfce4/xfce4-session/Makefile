@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2005/11/16 11:50:03 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2005/12/27 21:06:09 naddy Exp $
 
 COMMENT=	"xfce4 session manager"
 V=		4.2.3
 DISTNAME=	xfce4-session-${V}
 PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=	xfsm-4.2 0.1
+MODGNU_SHARED_LIBS=	xfsm-4.2 -export-dynamic
+LIBxfsm-4.2_ALIAS=	xfsm_4_2
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${V}/src/
 
 HOMEPAGE=	http://www.xfce.org/
@@ -13,8 +16,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-
-USE_LIBTOOL=	Yes
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
