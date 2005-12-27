@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.38 2005/07/17 20:54:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2005/12/27 16:42:43 steven Exp $
 
 COMMENT=	"tools and library routines for working with TIFF images"
 
 DISTNAME=	tiff-3.7.3
+SHARED_LIBS=		tiff	37.3	\
+			tiffxx	37.3
+MODGNU_SHARED_LIBS=	tiff	'-no-undefined'	\
+			tiffxx	'-no-undefined'
 CATEGORIES=	graphics
 
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
