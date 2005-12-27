@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2005/01/20 19:35:10 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2005/12/27 12:01:19 steven Exp $
 
 COMMENT=		"OpenGL Extrusion library"
 
 VERSION=		3.0.4
 DISTNAME=		gle-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
+SHARED_LIBS=		gle	3.4
+MODGNU_SHARED_LIBS=	gle	''
 CATEGORIES=     	graphics devel
 
 HOMEPAGE=		http://www.linas.org/gle/
@@ -22,6 +24,7 @@ PATCH_LIST=    	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
 	        ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
                 patch-*
 
+USE_LIBTOOL=		Yes
 USE_X11=		Yes
 SEPARATE_BUILD= 	concurrent
 CONFIGURE_STYLE=	gnu
