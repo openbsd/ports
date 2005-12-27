@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2005/11/10 11:15:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.26 2005/12/27 18:04:32 espie Exp $
 @conflict qt3-*
 @conflict qt3-base-*
 @pkgpath x11/qt3,mt
@@ -55,6 +55,7 @@ include/X11/qt3/private/qgl_x11_p.h
 include/X11/qt3/private/qgpluginmanager_p.h
 include/X11/qt3/private/qimageformatinterface_p.h
 include/X11/qt3/private/qinputcontext_p.h
+include/X11/qt3/private/qinputcontextinterface_p.h
 include/X11/qt3/private/qinternal_p.h
 include/X11/qt3/private/qisciicodec_p.h
 include/X11/qt3/private/qkbddriverinterface_p.h
@@ -212,6 +213,9 @@ include/X11/qt3/qiconset.h
 include/X11/qt3/qiconview.h
 include/X11/qt3/qimage.h
 include/X11/qt3/qimageformatplugin.h
+include/X11/qt3/qinputcontext.h
+include/X11/qt3/qinputcontextfactory.h
+include/X11/qt3/qinputcontextplugin.h
 include/X11/qt3/qinputdialog.h
 include/X11/qt3/qintcach.h
 include/X11/qt3/qintcache.h
@@ -371,6 +375,7 @@ include/X11/qt3/qstyleplugin.h
 include/X11/qt3/qstylesheet.h
 include/X11/qt3/qsyntaxhighlighter.h
 include/X11/qt3/qt.h
+include/X11/qt3/qt_pch.h
 include/X11/qt3/qtabbar.h
 include/X11/qt3/qtabdialog.h
 include/X11/qt3/qtabdlg.h
@@ -387,6 +392,7 @@ include/X11/qt3/qthread.h
 include/X11/qt3/qthreadstorage.h
 include/X11/qt3/qtimer.h
 include/X11/qt3/qtl.h
+include/X11/qt3/qtmultilineedit.h
 include/X11/qt3/qtoolbar.h
 include/X11/qt3/qtoolbox.h
 include/X11/qt3/qtoolbutton.h
@@ -394,6 +400,7 @@ include/X11/qt3/qtooltip.h
 include/X11/qt3/qtranslator.h
 include/X11/qt3/qtsciicodec.h
 include/X11/qt3/qtstream.h
+include/X11/qt3/qttableview.h
 include/X11/qt3/qurl.h
 include/X11/qt3/qurlinfo.h
 include/X11/qt3/qurloperator.h
@@ -1481,6 +1488,7 @@ lib/qt3/mkspecs/win32-watcom/
 lib/qt3/mkspecs/win32-watcom/qmake.conf
 lib/qt3/plugins/
 lib/qt3/plugins/designer/
+lib/qt3/plugins/inputmethods/
 lib/qt3/plugins/sqldrivers/
 lib/qt3/plugins/styles/
 share/doc/qt3/
@@ -1488,4 +1496,6 @@ share/doc/qt3/FAQ
 share/doc/qt3/LICENSE.GPL
 share/doc/qt3/README
 share/doc/qt3/README-QT.TXT
+share/doc/qt3/README.immodule
 share/doc/qt3/changes-3.3.5
+share/doc/qt3/changes.immodule

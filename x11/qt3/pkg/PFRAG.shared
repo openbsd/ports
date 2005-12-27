@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.17 2005/09/19 10:24:57 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.18 2005/12/27 18:04:32 espie Exp $
 @lib lib/libqt-mt.so.3.35
 @lib lib/libqui-mt.so.1.0
 @lib lib/libqui.so.1.0
@@ -9,3 +9,7 @@ lib/qt3/plugins/designer/libcppeditor.so
 lib/qt3/plugins/designer/libdlgplugin.so
 lib/qt3/plugins/designer/librcplugin.so
 lib/qt3/plugins/designer/libwizards.so
+lib/qt3/plugins/inputmethods/libqimsw-multi.so
+lib/qt3/plugins/inputmethods/libqimsw-none.so
+lib/qt3/plugins/inputmethods/libqsimple.so
+lib/qt3/plugins/inputmethods/libqxim.so

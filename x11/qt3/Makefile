@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2005/11/10 11:15:13 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2005/12/27 18:04:32 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -11,13 +11,21 @@ PKGNAME=		qt3-${VERSION}
 PKGNAME-mysql=		qt3-mysql-${VERSION}
 PKGNAME-postgresql=	qt3-postgresql-${VERSION}
 PKGNAME-examples=	qt3-examples-${VERSION}
-FULLPKGNAME=		qt3-mt-${VERSION}${PKGDEBUG}p0
+FULLPKGNAME=		qt3-mt-${VERSION}p1${PKGDEBUG}
 FULLPKGNAME-html=	qt3-html-${VERSION}
 
 VERSION=	3.5
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
+
+MASTER_SITES0=	http://freedesktop.org/~daisuke/
+
+PATCHFILES=	qt-x11-immodule-unified-qt3.3.5-20051018.diff.bz2:0
+PATCH_DIST_STRIP=	-p1
+
+pre-configure:
+	cd ${WRKDIST} && /bin/sh ./make-symlinks.sh
 
 HOMEPAGE=	http://www.trolltech.com/qt/
 
@@ -53,6 +61,7 @@ CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg -system-zl
 		-tablet \
 		-xinerama \
 		-cups \
+		-inputmethod \
 		-I${LOCALBASE}/include/libpng \
 		-I${X11BASE}/include/freetype2 \
 		-I${LOCALBASE}/include \
@@ -153,7 +162,8 @@ QT_BINDIR=	${QT_LIBDIR}/bin
 SUBST_VARS=	QT_LIBDIR QT_DOC
 
 DOCS=	FAQ LICENSE.GPL README README-QT.TXT \
-	changes-3*
+	changes-3* \
+	README.immodule changes.immodule
 
 VMEM_WARNING=	Yes
 NO_REGRESS=	Yes
@@ -244,7 +254,9 @@ do-install:
 .endfor
 	# plugins
 	${INSTALL_DATA_DIR} ${QT_PLUGINSDIR}/designer \
-		${QT_PLUGINSDIR}/sqldrivers ${QT_PLUGINSDIR}/styles
+		${QT_PLUGINSDIR}/sqldrivers ${QT_PLUGINSDIR}/styles \
+		${QT_PLUGINSDIR}/inputmethods
+
 .if empty(FLAVOR:L:Mno_postgresql)
 	${INSTALL_DATA} ${WRKBUILD}/plugins/sqldrivers/libqsqlpsql.so \
 	    ${QT_PLUGINSDIR}/sqldrivers
@@ -261,6 +273,14 @@ do-install:
 	    ${QT_PLUGINSDIR}/designer
 	${INSTALL_DATA} ${WRKBUILD}/plugins/designer/librcplugin.so \
 	    ${QT_PLUGINSDIR}/designer
+	${INSTALL_DATA} ${WRKBUILD}/plugins/inputmethods/libqimsw-multi.so \
+	    ${QT_PLUGINSDIR}/inputmethods
+	${INSTALL_DATA} ${WRKBUILD}/plugins/inputmethods/libqimsw-none.so \
+	    ${QT_PLUGINSDIR}/inputmethods
+	${INSTALL_DATA} ${WRKBUILD}/plugins/inputmethods/libqsimple.so \
+	    ${QT_PLUGINSDIR}/inputmethods
+	${INSTALL_DATA} ${WRKBUILD}/plugins/inputmethods/libqxim.so \
+	    ${QT_PLUGINSDIR}/inputmethods
 # compatibility transition
 .for p in ${PROGRAMS}
 	cd ${PREFIX}/bin && ln -sf $p $p-mt
