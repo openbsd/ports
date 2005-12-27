@@ -1,8 +1,16 @@
-# $OpenBSD: Makefile,v 1.26 2005/01/14 19:56:47 todd Exp $
+# $OpenBSD: Makefile,v 1.27 2005/12/27 12:46:51 steven Exp $
 # Uses pthreads
 
 COMMENT=	"General Input Library (used by libggi)"
 DISTNAME=	libgii-0.9.0
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=		gg	0.9	\
+			gii	0.9
+MODGNU_SHARED_LIBS=	gg	''	\
+			gii	''
+LIBgg_ALIAS=		realgg
+LIBgii_ALIAS=		realgii
+
 CATEGORIES=	graphics
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
@@ -18,6 +26,7 @@ EXTRACT_SUFX=	.src.tar.bz2
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 
 CFLAGS+=	-pthread
 SEPARATE_BUILD= concurrent

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2005/01/14 19:56:47 todd Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2005/12/27 12:46:51 steven Exp $
 lib/ggi/filter/keytrans.so
 lib/ggi/filter/mouse.so
 lib/ggi/filter/save.so
@@ -12,5 +12,5 @@ lib/ggi/input/stdin.so
 lib/ggi/input/tcp.so
 lib/ggi/input/x.so
 lib/ggi/input/xwin.so
-@lib lib/libgg.so.0.9
-@lib lib/libgii.so.0.9
+@lib lib/libgg.so.${LIBgg_VERSION}
+@lib lib/libgii.so.${LIBgii_VERSION}
