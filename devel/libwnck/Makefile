@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2005/12/24 15:04:18 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2005/12/27 21:36:04 naddy Exp $
 
 COMMENT=		"window navigator construction kit"
 
@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libwnck/2.10/}
 EXTRACT_SUFX=           .tar.bz2
 
 SHARED_LIBS=		wnck-1 16.1
-MODGNU_SHARED_LIBS=	wnck-1 "-no-undefined -export-symbols-regex "^[^_].*""
+MODGNU_SHARED_LIBS=	wnck-1 '-no-undefined -export-symbols-regex "^[^_].*"'
 LIBwnck-1_ALIAS=	wnck_1
 
 # LGPL
