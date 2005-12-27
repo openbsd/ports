@@ -1,7 +1,7 @@
-$OpenBSD: patch-WINGs_wwindow_c,v 1.1 2005/11/05 23:32:44 wilfried Exp $
---- WINGs/wwindow.c~	Sun Oct 24 04:58:20 2004
-+++ WINGs/wwindow.c	Sat Nov  5 15:38:16 2005
-@@ -254,14 +254,14 @@
+$OpenBSD: patch-WINGs_wwindow_c,v 1.2 2005/12/27 23:12:24 naddy Exp $
+--- WINGs/wwindow.c.orig	Sun Oct 24 04:58:20 2004
++++ WINGs/wwindow.c	Tue Dec 27 22:18:30 2005
+@@ -254,14 +254,14 @@ static void
  setMiniwindow(WMWindow *win, RImage *image)
  {
      WMScreen *scr= win->view->screen;
@@ -18,7 +18,7 @@ $OpenBSD: patch-WINGs_wwindow_c,v 1.1 2005/11/05 23:32:44 wilfried Exp $
  
      o= 0;
      data[o++] = image->width;
-@@ -269,7 +269,7 @@
+@@ -269,7 +269,7 @@ setMiniwindow(WMWindow *win, RImage *ima
  
      for (y= 0; y < image->height; y++) {
          for (x= 0; x < image->width; x++) {

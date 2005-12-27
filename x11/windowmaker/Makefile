@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.62 2005/11/13 08:49:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.63 2005/12/27 23:12:24 naddy Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 COMMENT-lang=		"language subpackage for Window Maker"
 
 V=			0.92.0
 DISTNAME=		WindowMaker-${V}
-PKGNAME=		${DISTNAME:L}p0
+PKGNAME=		${DISTNAME:L}p1
+FULLPKGNAME-lang=       windowmaker-lang-${V}p0
+SHARED_LIBS=		wraster 5.0
+MODGNU_SHARED_LIBS=	wraster ''
 CATEGORIES=		x11 x11/windowmaker
 
 HOMEPAGE=		http://www.windowmaker.org/
@@ -26,8 +29,9 @@ FLAVOR?=
 
 
 NO_REGRESS=		Yes
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		simple
 USE_X11=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
@@ -42,7 +46,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" 
 
 SUBPACKAGE?=
 MULTI_PACKAGES=         -lang
-FULLPKGNAME-lang=       windowmaker-lang-${V}
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
 RUN_DEPENDS=		:windowmaker->=0.90.0:x11/windowmaker

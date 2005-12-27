@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lang,v 1.4 2005/11/01 17:28:34 wilfried Exp $
+@comment $OpenBSD: PLIST-lang,v 1.5 2005/12/27 23:12:24 naddy Exp $
 share/WindowMaker/menu.bg
 share/WindowMaker/menu.ca
 share/WindowMaker/menu.cs
@@ -42,8 +42,6 @@ share/WindowMaker/plmenu.ro
 share/WindowMaker/plmenu.sk
 share/WindowMaker/plmenu.zh_CN
 share/WindowMaker/plmenu.zh_TW
-share/locale/be/
-share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/WindowMaker.mo
 share/locale/bg/LC_MESSAGES/WINGs.mo
 share/locale/bg/LC_MESSAGES/WPrefs.mo
@@ -51,8 +49,6 @@ share/locale/bg/LC_MESSAGES/WindowMaker.mo
 share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/WindowMaker.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/WINGs.mo
 share/locale/ca/LC_MESSAGES/WPrefs.mo
 share/locale/ca/LC_MESSAGES/WindowMaker.mo
