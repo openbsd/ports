@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2005/11/22 18:35:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2005/12/27 21:58:44 naddy Exp $
 
 COMMENT=	"aids with merging configuration files during an upgrade"
 
 DISTNAME=	mergemaster-1.46
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	sysutils
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -15,9 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://grappa.unix-ag.uni-kl.de/~naddy/
-
-# requires sdiff(1)
-RUN_DEPENDS=	::textproc/gdiff
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

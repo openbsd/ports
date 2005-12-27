@@ -1,6 +1,6 @@
-$OpenBSD: patch-mergemaster_sh,v 1.8 2005/11/22 18:36:00 naddy Exp $
+$OpenBSD: patch-mergemaster_sh,v 1.9 2005/12/27 21:58:44 naddy Exp $
 --- mergemaster.sh.orig	Sun May 11 00:06:02 2003
-+++ mergemaster.sh	Tue Nov 22 16:20:13 2005
++++ mergemaster.sh	Tue Dec 27 22:44:22 2005
 @@ -10,7 +10,7 @@
  
  # $FreeBSD: mergemaster.sh,v 1.46 2003/05/03 06:35:19 dougb Exp $
@@ -10,15 +10,6 @@ $OpenBSD: patch-mergemaster_sh,v 1.8 2005/11/22 18:36:00 naddy Exp $
  
  display_usage () {
    VERSION_NUMBER=`grep "[$]FreeBSD:" $0 | cut -d ' ' -f 4`
-@@ -59,7 +59,7 @@ merge_loop () {
-   while [ "${MERGE_AGAIN}" = "yes" ]; do
-     # Prime file.merged so we don't blat the owner/group id's
-     cp -p "${COMPFILE}" "${COMPFILE}.merged"
--    sdiff -o "${COMPFILE}.merged" --text --suppress-common-lines \
-+    gsdiff -o "${COMPFILE}.merged" --text --suppress-common-lines \
-       --width=${SCREEN_WIDTH:-80} "${DESTDIR}${COMPFILE#.}" "${COMPFILE}"
-     INSTALL_MERGED=V
-     while [ "${INSTALL_MERGED}" = "v" -o "${INSTALL_MERGED}" = "V" ]; do
 @@ -224,10 +224,10 @@ press_to_continue () {
  #
  TEMPROOT='/var/tmp/temproot'
