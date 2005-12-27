@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.32 2005/01/31 14:20:26 todd Exp $
+# $OpenBSD: Makefile,v 1.33 2005/12/27 13:13:28 steven Exp $
 # Uses pthreads
 
 COMMENT=	"Generic Graphics Library"
 DISTNAME=	libggi-2.1.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
+SHARED_LIBS=		ggi	2.1
+MODGNU_SHARED_LIBS=	ggi	''
+LIBggi_ALIAS=		realggi
+
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.ggi-project.org/
@@ -22,6 +26,7 @@ LIB_DEPENDS=	gii.0.9,gg:libgii->=0.9*:graphics/gii
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 
 CFLAGS+=	-pthread
 CONFIGURE_STYLE= gnu

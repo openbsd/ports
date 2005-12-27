@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2005/01/14 19:57:05 todd Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.10 2005/12/27 13:13:28 steven Exp $
 lib/ggi/default/color.so
 lib/ggi/default/ilbm.so
 lib/ggi/default/iplanar_2p.so
@@ -36,4 +36,4 @@ lib/ggi/helper/helper_x_dga.so
 lib/ggi/helper/helper_x_evi.so
 lib/ggi/helper/helper_x_shm.so
 lib/ggi/helper/helper_x_vidmode.so
-@lib lib/libggi.so.2.1
+@lib lib/libggi.so.${LIBggi_VERSION}
