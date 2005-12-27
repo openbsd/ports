@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.34 2005/12/17 12:45:39 alek Exp $
+# $OpenBSD: Makefile.inc,v 1.35 2005/12/27 19:41:21 alek Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -55,7 +55,7 @@ LIB_DEPENDS=	bz2::archivers/bzip2
 
 .if defined(PACKAGING)
 .  if !empty(SUBPACKAGE)
-RUN_DEPENDS=	:python-${VERSION}${PATCHLEVEL}:lang/python/${VERSION}
+RUN_DEPENDS=	:python-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}:lang/python/${VERSION}
 LIB_DEPENDS=
 .  else
 WANTLIB=	ssl curses termcap panel m crypto c util z readline pthread \
@@ -199,9 +199,9 @@ CONFIGURE_ENV+=	OPT='${CFLAGS}' LDFLAGS='-L${WRKSRC}'
 .else
 CONFIGURE_ENV+= OPT='${CFLAGS} -DTHREAD_STACK_SIZE=${THREAD_STACK_SIZE} -fPIC' \
 		LDFLAGS='-L${WRKSRC}'
-MAKE_FLAGS+=	MAJOR=0 MINOR=0 LDLIBRARY=libpython${VERSION}.so.0.0 \
+MAKE_FLAGS+=	LDLIBRARY=libpython${VERSION}.so.${LIBpython${VERSION}_VERSION} \
 		LD_LIBRARY_PATH=${WRKSRC} PATH="${WRKDIST}:${PORTPATH}"
-FAKE_FLAGS+=	MAJOR=0 MINOR=0 LDLIBRARY=libpython${VERSION}.so.0.0 \
+FAKE_FLAGS+=	LDLIBRARY=libpython${VERSION}.so.${LIBpython${VERSION}_VERSION} \
 		LD_LIBRARY_PATH=${WRKSRC} RANLIB=:
 .endif
 
@@ -225,12 +225,6 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/idle ${PREFIX}/bin/idle${VERSION}
 	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python${VERSION}; \
 		tar -xf -)
-	${INSTALL_DATA} ${WRKSRC}/libpython${VERSION}.a \
-		${PREFIX}/lib/python${VERSION}/config
-	@if [ -f ${PREFIX}/lib/python${VERSION}/config/libpython${VERSION}.so.0.0 ]; then \
-		cd ${PREFIX}/lib && ln -s python${VERSION}/config/libpython${VERSION}.so.0.0; \
-	fi
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/python${VERSION}
 	${INSTALL_DATA} ${FILESDIR}/CHANGES.OpenBSD \
 		${PREFIX}/share/doc/python${VERSION}/CHANGES.OpenBSD
-

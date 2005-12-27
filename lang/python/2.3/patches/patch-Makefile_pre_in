@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_pre_in,v 1.1.1.1 2003/12/31 17:38:33 sturm Exp $
---- Makefile.pre.in.orig	2003-11-18 20:54:00.000000000 +0100
-+++ Makefile.pre.in	2003-12-31 17:43:24.000000000 +0100
-@@ -305,7 +305,7 @@ all:		$(BUILDPYTHON) oldsharedmods share
+$OpenBSD: patch-Makefile_pre_in,v 1.2 2005/12/27 19:41:21 alek Exp $
+--- Makefile.pre.in.orig	Tue Jan 11 14:48:52 2005
++++ Makefile.pre.in	Sat Dec 24 11:18:58 2005
+@@ -308,7 +308,7 @@ all:		$(BUILDPYTHON) oldsharedmods share
  $(BUILDPYTHON):	Modules/$(MAINOBJ) $(LIBRARY) $(LDLIBRARY)
  		$(LINKCC) $(LDFLAGS) $(LINKFORSHARED) -o $@ \
  			Modules/$(MAINOBJ) \
@@ -10,19 +10,19 @@ $OpenBSD: patch-Makefile_pre_in,v 1.1.1.1 2003/12/31 17:38:33 sturm Exp $
  
  platform: $(BUILDPYTHON)
  	$(RUNSHARED) ./$(BUILDPYTHON) -E -c 'import sys ; from distutils.util import get_platform ; print get_platform()+"-"+sys.version[0:3]' >platform
-@@ -354,6 +354,11 @@ libpython$(VERSION).so: $(LIBRARY_OBJS)
+@@ -357,6 +357,11 @@ libpython$(VERSION).so: $(LIBRARY_OBJS)
  libpython$(VERSION).sl: $(LIBRARY_OBJS)
  	$(LDSHARED) -o $@ $(LIBRARY_OBJS) $(LIBC) $(LIBM)
  
 +# This rule for OpenBSD...
-+libpython$(VERSION).so.$(MAJOR).$(MINOR):      $(LIBRARY)
++$(LDLIBRARY):      $(LIBRARY)
 +	$(LDSHARED) -o $@ $(LIBRARY_OBJS)
 +
 +
  # This rule is here for OPENSTEP/Rhapsody/MacOSX. It builds a temporary
  # minimal framework (not including the Lib directory and such) in the current
  # directory.
-@@ -584,7 +589,6 @@ bininstall:	altbininstall
+@@ -587,7 +592,6 @@ bininstall:	altbininstall
  	then rm -f $(DESTDIR)$(BINDIR)/$(PYTHON); \
  	else true; \
  	fi
@@ -30,7 +30,7 @@ $OpenBSD: patch-Makefile_pre_in,v 1.1.1.1 2003/12/31 17:38:33 sturm Exp $
  
  # Install the interpreter with $(VERSION) affixed
  # This goes into $(exec_prefix)
-@@ -595,7 +599,7 @@ altbininstall:	$(BUILDPYTHON)
+@@ -598,7 +602,7 @@ altbininstall:	$(BUILDPYTHON)
  			exit 1; \
  		fi; \
  	fi
@@ -39,21 +39,25 @@ $OpenBSD: patch-Makefile_pre_in,v 1.1.1.1 2003/12/31 17:38:33 sturm Exp $
  	do \
  		if test ! -d $(DESTDIR)$$i; then \
  			echo "Creating directory $$i"; \
-@@ -604,11 +608,11 @@ altbininstall:	$(BUILDPYTHON)
+@@ -607,14 +611,12 @@ altbininstall:	$(BUILDPYTHON)
  		fi; \
  	done
  	$(INSTALL_PROGRAM) $(BUILDPYTHON) $(DESTDIR)$(BINDIR)/python$(VERSION)$(EXE)
 -	if test -f libpython$(VERSION)$(SO); then \
-+	if test -f libpython$(VERSION)$(SO).$(MAJOR).$(MINOR); then \
++	if test -f $(LDLIBRARY); then \
  		if test "$(SO)" = .dll; then \
  			$(INSTALL_SHARED) libpython$(VERSION)$(SO) $(DESTDIR)$(BINDIR); \
  		else \
 -			$(INSTALL_SHARED) libpython$(VERSION)$(SO) $(DESTDIR)$(LIBDIR)/$(INSTSONAME); \
-+			$(INSTALL_SHARED) libpython$(VERSION)$(SO).$(MAJOR).$(MINOR) $(DESTDIR)$(LIBPL)/libpython$(VERSION)$(SO).$(MAJOR).$(MINOR); \
- 			if test libpython$(VERSION)$(SO) != $(INSTSONAME); then \
- 				(cd $(DESTDIR)$(LIBDIR); $(LN) -sf $(INSTSONAME) libpython$(VERSION)$(SO)); \
- 			fi \
-@@ -627,7 +631,7 @@ maninstall:
+-			if test libpython$(VERSION)$(SO) != $(INSTSONAME); then \
+-				(cd $(DESTDIR)$(LIBDIR); $(LN) -sf $(INSTSONAME) libpython$(VERSION)$(SO)); \
+-			fi \
++			$(INSTALL_SHARED) $(LDLIBRARY) $(DESTDIR)$(LIBPL)/$(LDLIBRARY); \
++			(cd $(DESTDIR)$(LIBDIR); $(LN) -s python$(VERSION)/config/$(LDLIBRARY)); \
+ 		fi; \
+ 	else	true; \
+ 	fi
+@@ -630,7 +632,7 @@ maninstall:
  		fi; \
  	done
  	$(INSTALL_DATA) $(srcdir)/Misc/python.man \

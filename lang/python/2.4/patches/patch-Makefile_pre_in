@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_pre_in,v 1.1.1.1 2005/06/07 01:12:58 alek Exp $
---- Makefile.pre.in.orig	Sun Sep 26 19:26:55 2004
-+++ Makefile.pre.in	Thu Dec 30 22:46:12 2004
+$OpenBSD: patch-Makefile_pre_in,v 1.2 2005/12/27 19:41:21 alek Exp $
+--- Makefile.pre.in.orig	Tue Mar 29 01:23:01 2005
++++ Makefile.pre.in	Sat Dec 24 10:36:43 2005
 @@ -311,7 +311,7 @@ all:		$(BUILDPYTHON) oldsharedmods share
  $(BUILDPYTHON):	Modules/$(MAINOBJ) $(LIBRARY) $(LDLIBRARY)
  		$(LINKCC) $(LDFLAGS) $(LINKFORSHARED) -o $@ \
@@ -15,7 +15,7 @@ $OpenBSD: patch-Makefile_pre_in,v 1.1.1.1 2005/06/07 01:12:58 alek Exp $
  	$(LDSHARED) -o $@ $(LIBRARY_OBJS) $(LIBC) $(LIBM)
  
 +# This rule for OpenBSD...
-+libpython$(VERSION).so.$(MAJOR).$(MINOR):      $(LIBRARY)
++$(LDLIBRARY):      $(LIBRARY)
 +	$(LDSHARED) -o $@ $(LIBRARY_OBJS)
 +
 +
@@ -39,21 +39,25 @@ $OpenBSD: patch-Makefile_pre_in,v 1.1.1.1 2005/06/07 01:12:58 alek Exp $
  	do \
  		if test ! -d $(DESTDIR)$$i; then \
  			echo "Creating directory $$i"; \
-@@ -616,11 +620,11 @@ altbininstall:	$(BUILDPYTHON)
+@@ -616,14 +620,12 @@ altbininstall:	$(BUILDPYTHON)
  		fi; \
  	done
  	$(INSTALL_PROGRAM) $(BUILDPYTHON) $(DESTDIR)$(BINDIR)/python$(VERSION)$(EXE)
 -	if test -f libpython$(VERSION)$(SO); then \
-+	if test -f libpython$(VERSION)$(SO).$(MAJOR).$(MINOR); then \
++	if test -f $(LDLIBRARY); then \
  		if test "$(SO)" = .dll; then \
  			$(INSTALL_SHARED) libpython$(VERSION)$(SO) $(DESTDIR)$(BINDIR); \
  		else \
 -			$(INSTALL_SHARED) libpython$(VERSION)$(SO) $(DESTDIR)$(LIBDIR)/$(INSTSONAME); \
-+			$(INSTALL_SHARED) libpython$(VERSION)$(SO).$(MAJOR).$(MINOR) $(DESTDIR)$(LIBPL)/libpython$(VERSION)$(SO).$(MAJOR).$(MINOR); \
- 			if test libpython$(VERSION)$(SO) != $(INSTSONAME); then \
- 				(cd $(DESTDIR)$(LIBDIR); $(LN) -sf $(INSTSONAME) libpython$(VERSION)$(SO)); \
- 			fi \
-@@ -639,7 +643,7 @@ maninstall:
+-			if test libpython$(VERSION)$(SO) != $(INSTSONAME); then \
+-				(cd $(DESTDIR)$(LIBDIR); $(LN) -sf $(INSTSONAME) libpython$(VERSION)$(SO)); \
+-			fi \
++			$(INSTALL_SHARED) $(LDLIBRARY) $(DESTDIR)$(LIBPL)/$(LDLIBRARY); \
++			(cd $(DESTDIR)$(LIBDIR); $(LN) -s python$(VERSION)/config/$(LDLIBRARY)); \
+ 		fi; \
+ 	else	true; \
+ 	fi
+@@ -639,7 +641,7 @@ maninstall:
  		fi; \
  	done
  	$(INSTALL_DATA) $(srcdir)/Misc/python.man \
