@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2005/05/11 19:18:17 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2005/12/27 12:36:50 aanriot Exp $
 
 COMMENT=	"source code editing component for GTK+"
 
@@ -6,6 +6,9 @@ VERSION=	1.54
 DISTNAME=	scintilla${VERSION:S/.//}
 PKGNAME=	scintilla-${VERSION}p0
 CATEGORIES=	editors x11
+
+SHARED_LIBS=		scintilla		2.0 \
+			scintilla_lexers	2.0
 
 HOMEPAGE=	http://www.scintilla.org/
 
@@ -27,6 +30,10 @@ NO_REGRESS=	Yes
 MAKE_FILE=	makefile
 MAKE_ENV=	CXX='${CXX}' CXXFLAGS='${CXXFLAGS}' \
 		NO_SHARED_LIBS='${NO_SHARED_LIBS:L}'
+
+.for n v in ${SHARED_LIBS}
+MAKE_ENV+=	LIB$n_VERSION=${LIB$n_VERSION}
+.endfor
 
 WRKDIST=	${WRKDIR}/scintilla
 WRKSRC=		${WRKDIST}/gtk
