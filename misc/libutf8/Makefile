@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2005/12/25 23:23:47 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2005/12/27 19:17:46 brad Exp $
 
 COMMENT=	"provides UTF-8 locale support"
 
-DISTNAME=	libutf8-0.7.3
-PKGNAME=	${DISTNAME}p1
-SHARED_LIBS=		utf8	0.0
+DISTNAME=	libutf8-0.8
+SHARED_LIBS=		utf8	1.0
 MODGNU_SHARED_LIBS=	utf8	''
 CATEGORIES=     misc devel
 
-MASTER_SITES= 	ftp://ftp.ilog.fr/pub/Users/haible/utf8/ \
-		ftp://ftp.shellhung.org/pub/OpenBSD/packages/devel/
+MASTER_SITES= 	ftp://ftp.ilog.fr/pub/Users/haible/utf8/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
