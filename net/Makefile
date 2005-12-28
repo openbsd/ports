@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.396 2005/12/26 13:24:42 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.397 2005/12/28 19:55:33 jolan Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -300,7 +300,7 @@
      SUBDIR += tcpstat
      SUBDIR += tcptrace
      SUBDIR += tcptraceroute
-     SUBDIR += tftp-proxy
+#     SUBDIR += tftp-proxy
      SUBDIR += thcrut
      SUBDIR += tightvnc
      SUBDIR += tintin++
