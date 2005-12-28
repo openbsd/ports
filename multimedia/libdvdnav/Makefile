@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2005/11/09 16:37:46 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2005/12/28 15:28:28 jakemsr Exp $
 
 COMMENT=	"DVD read/navigation library"
 DISTNAME=	libdvdnav-20051102
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=	multimedia
+
+SHARED_LIBS=		dvdnav	5.0
+MODGNU_SHARED_LIBS=	dvdnav	'-export-symbols-regex "(^dvdnav.*|^nav.*|^ifo.*|^DVD.*)"'
+
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/
 
 HOMEPAGE=	http://dvd.sourceforge.net/

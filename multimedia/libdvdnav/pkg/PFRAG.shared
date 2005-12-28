@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2005/11/03 04:25:09 jolan Exp $
-@lib lib/libdvdnav.so.5.0
+@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/28 15:28:28 jakemsr Exp $
+@lib lib/libdvdnav.so.${LIBdvdnav_VERSION}
