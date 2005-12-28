@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.12 2005/06/04 14:39:21 naddy Exp $
-@lib lib/libMagick++.so.8.3
-@lib lib/libMagick.so.8.3
-@lib lib/libWand.so.8.3
+@comment $OpenBSD: PFRAG.shared,v 1.13 2005/12/28 14:56:54 steven Exp $
+@lib lib/libMagick++.so.${LIBMagick++_VERSION}
+@lib lib/libMagick.so.${LIBMagick_VERSION}
+@lib lib/libWand.so.${LIBWand_VERSION}

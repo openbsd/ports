@@ -1,11 +1,18 @@
-# $OpenBSD: Makefile,v 1.83 2005/06/28 18:08:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.84 2005/12/28 14:56:54 steven Exp $
 
 COMMENT=	"image processing tools"
 
 VER=		6.2.3
 DASHVER=	3
 DISTNAME=	ImageMagick-${VER}-${DASHVER}
-PKGNAME=	ImageMagick-${VER}.${DASHVER}
+PKGNAME=	ImageMagick-${VER}.${DASHVER}p0
+SHARED_LIBS=		Magick++	8.3	\
+			Magick		8.3	\
+			Wand		8.3
+MODGNU_SHARED_LIBS=	Magick++	''	\
+			Magick		'-no-undefined'	\
+			Wand		'-no-undefined'
+
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.imagemagick.org
@@ -36,6 +43,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c iconv jpeg m z
 
+USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59
