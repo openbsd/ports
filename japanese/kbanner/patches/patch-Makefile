@@ -1,25 +1,22 @@
---- Makefile.orig	Fri Oct 15 06:19:54 1993
-+++ Makefile	Thu Feb 22 23:00:16 2001
-@@ -1,21 +1,21 @@
+--- Makefile.orig	Tue Jul 13 03:06:57 2004
++++ Makefile	Wed Dec 28 09:25:07 2005
+@@ -1,7 +1,6 @@
  SHELL = /bin/sh
 -DESTDIR = /usr/local/bin
 -MANUAL = /usr/local/man/man1/kbanner.1
--CFLAGS = -O -KEOPT -KBREG -KINF
+-CFLAGS = -O
 +BINDIR = $(PREFIX)/bin
 +MANUAL = $(PREFIX)/man/man1/kbanner.1
-+#CFLAGS = -O # -KEOPT -KBREG -KINF
  OBJ = kbanner.o font1.o font2.o font3.o
  
  .SUFFIXES: .c .o
- 
- .c.o:
--	cc -c $(CFLAGS) $<
-+	$(CC) -c $(CFLAGS) $<
+@@ -10,12 +9,11 @@ OBJ = kbanner.o font1.o font2.o font3.o
+ 	cc -c $(CFLAGS) $<
  
  kbanner: $(OBJ)
 -	cc $(OBJ) -o kbanner
-+	$(CC) $(OBJ) -o kbanner
- 	strip kbanner
+-	strip kbanner
++	$(CC) $(CFLAGS) $(OBJ) -o kbanner
  
  clean:
  	rm -f *.o core
