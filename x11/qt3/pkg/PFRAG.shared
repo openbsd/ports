@@ -1,15 +1,15 @@
-@comment $OpenBSD: PFRAG.shared,v 1.18 2005/12/27 18:04:32 espie Exp $
-@lib lib/libqt-mt.so.3.35
-@lib lib/libqui-mt.so.1.0
-@lib lib/libqui.so.1.0
-@lib lib/qt3/libqt-mt.so.3.35
-@lib lib/qt3/libqui-mt.so.1.0
-@lib lib/qt3/libqui.so.1.0
-lib/qt3/plugins/designer/libcppeditor.so
-lib/qt3/plugins/designer/libdlgplugin.so
-lib/qt3/plugins/designer/librcplugin.so
-lib/qt3/plugins/designer/libwizards.so
-lib/qt3/plugins/inputmethods/libqimsw-multi.so
-lib/qt3/plugins/inputmethods/libqimsw-none.so
-lib/qt3/plugins/inputmethods/libqsimple.so
-lib/qt3/plugins/inputmethods/libqxim.so
+@comment $OpenBSD: PFRAG.shared,v 1.19 2005/12/28 16:50:59 espie Exp $
+@lib lib/libqt-mt.so.${LIBqt-mt_VERSION}
+@lib lib/libqui-mt.so.${LIBqui-mt_VERSION}
+@lib lib/libqui.so.${LIBqui_VERSION}
+@lib lib/qt3/libqt-mt.so.${LIBqt-mt_VERSION}
+@lib lib/qt3/libqui-mt.so.${LIBqui-mt_VERSION}
+@lib lib/qt3/libqui.so.${LIBqui_VERSION}
+lib/qt3/${QT_PLUGINS}/designer/libcppeditor.so
+lib/qt3/${QT_PLUGINS}/designer/libdlgplugin.so
+lib/qt3/${QT_PLUGINS}/designer/librcplugin.so
+lib/qt3/${QT_PLUGINS}/designer/libwizards.so
+lib/qt3/${QT_PLUGINS}/inputmethods/libqimsw-multi.so
+lib/qt3/${QT_PLUGINS}/inputmethods/libqimsw-none.so
+lib/qt3/${QT_PLUGINS}/inputmethods/libqsimple.so
+lib/qt3/${QT_PLUGINS}/inputmethods/libqxim.so

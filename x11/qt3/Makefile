@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2005/12/27 18:04:32 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2005/12/28 16:50:58 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -8,11 +8,19 @@ COMMENT-postgresql=	"PostgresSQL plugin for qt3"
 COMMENT-mysql=		"MySQL plugin for qt3"
 
 PKGNAME=		qt3-${VERSION}
-PKGNAME-mysql=		qt3-mysql-${VERSION}
-PKGNAME-postgresql=	qt3-postgresql-${VERSION}
+PKGNAME-mysql=		qt3-mysql-${VERSION}p0
+PKGNAME-postgresql=	qt3-postgresql-${VERSION}p0
 PKGNAME-examples=	qt3-examples-${VERSION}
-FULLPKGNAME=		qt3-mt-${VERSION}p1${PKGDEBUG}
+FULLPKGNAME=		qt3-mt-${VERSION}p2${PKGDEBUG}
 FULLPKGNAME-html=	qt3-html-${VERSION}
+SHARED_LIBS=		qt-mt	3.35 \
+			qui	1.0 \
+			qui-mt	1.0
+
+# note that qui-mt is a `false' library, just a link to qui.
+
+QT_PLUGINS=		plugins-${LIBqt-mt_VERSION:R}
+
 
 VERSION=	3.5
 DISTNAME=	qt-x11-free-3.${VERSION}
@@ -52,7 +60,11 @@ MAKE_ENV=	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
 # For qsettings to write its setup
 PORTHOME=	${WRKDIST}
 
-MAKE_FLAGS=	DESIGNER_SUBDIR=dummy
+MAKE_FLAGS=	DESIGNER_SUBDIR=dummy \
+		LIBqt-mt_VERSION=$(LIBqt-mt_VERSION) \
+		LIBqui_VERSION=$(LIBqui_VERSION)
+FAKE_FLAGS=	$(MAKE_FLAGS) DESTDIR=${WRKINST}
+
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg -system-zlib \
 		-qt-imgfmt-mng -qt-imgfmt-png -qt-imgfmt-jpeg -sm -no-g++-exceptions \
@@ -155,11 +167,11 @@ QT_MANDIR=	${QT_LIBDIR}/man
 QT_EXAMPLES=	${QT_LIBDIR}/examples
 QT_TUTORIAL=	${QT_LIBDIR}/tutorial
 QT_DOC=		${PREFIX}/share/doc/qt3
-QT_PLUGINSDIR=	${QT_LIBDIR}/plugins
+QT_PLUGINSDIR=	${QT_LIBDIR}/${QT_PLUGINS}
 QT_BINDIR=	${QT_LIBDIR}/bin
 
 # for manpages in MESSAGE
-SUBST_VARS=	QT_LIBDIR QT_DOC
+SUBST_VARS=	QT_LIBDIR QT_DOC QT_PLUGINS
 
 DOCS=	FAQ LICENSE.GPL README README-QT.TXT \
 	changes-3* \
@@ -170,9 +182,6 @@ NO_REGRESS=	Yes
 
 PROGRAMS3=designer findtr moc qt20fix qtrename140 uic
 PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig 
-
-LIBRARIES=qt-mt.so.3.35 qui.so.1.0 \
-	editor.a designercore.a qassistantclient.a
 
 .if !${FLAVOR:L:Mdebug}
 post-configure:
@@ -235,15 +244,23 @@ do-install:
 	cp -R ${WRKSRC}/doc/html/* ${QT_DOC}/html
 	cp -R ${WRKSRC}/mkspecs ${QT_LIBDIR}/mkspecs
 	# libraries
-.for l in ${LIBRARIES}
-	@if [ -f ${WRKBUILD}/lib/lib${l:C/\.so\..*/.a/} ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/lib${l:C/\.so\..*/.a/} ${PREFIX}/lib/qt3; \
+	@if [ -f ${WRKBUILD}/lib/libqt-mt.a ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt-mt.a ${PREFIX}/lib/qt3; \
 	fi
-	@if [ -f ${WRKBUILD}/lib/lib$l ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/lib$l ${PREFIX}/lib/qt3; \
-	 ln -sf qt3/lib$l ${PREFIX}/lib; \
+	@if [ -f  ${WRKBUILD}/lib/libqt-mt.so.$(LIBqt-mt_VERSION) ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt-mt.so.$(LIBqt-mt_VERSION) ${PREFIX}/lib/qt3; \
+	 ln -sf qt3/libqt-mt.so.$(LIBqt-mt_VERSION) ${PREFIX}/lib; \
 	fi
-.endfor
+	@if [ -f ${WRKBUILD}/lib/libqui.a ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqui.a ${PREFIX}/lib/qt3; \
+	fi
+	@if [ -f  ${WRKBUILD}/lib/libqui.so.$(LIBqui_VERSION) ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqui.so.$(LIBqui_VERSION) ${PREFIX}/lib/qt3; \
+	 ln -sf qt3/libqui.so.$(LIBqui_VERSION) ${PREFIX}/lib; \
+	fi
+	@${INSTALL_DATA} ${WRKBUILD}/lib/libeditor.a ${PREFIX}/lib/qt3
+	@${INSTALL_DATA} ${WRKBUILD}/lib/libdesignercore.a ${PREFIX}/lib/qt3
+	@${INSTALL_DATA} ${WRKBUILD}/lib/libqassistantclient.a ${PREFIX}/lib/qt3
 .for p in ${PROGRAMS3}
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/$p ${QT_BINDIR}/$p
 	@ln -sf ${TRUEPREFIX}/lib/qt3/bin/$p ${PREFIX}/bin/$p3
@@ -288,8 +305,8 @@ do-install:
 .for p in ${PROGRAMS3}
 	cd ${PREFIX}/bin && ln -sf $p3 $p3-mt
 .endfor
-	cd ${PREFIX}/lib && ln -sf libqui.so.1.0 libqui-mt.so.1.0
-	cd ${PREFIX}/lib/qt3 && ln -sf libqui.so.1.0 libqui-mt.so.1.0
+	cd ${PREFIX}/lib && ln -sf libqui.so.$(LIBqui_VERSION) libqui-mt.so.$(LIBqui_VERSION)
+	cd ${PREFIX}/lib/qt3 && ln -sf libqui.so.$(LIBqui_VERSION) libqui-mt.so.$(LIBqui_VERSION)
 # links for qtdir
 	cd ${PREFIX}/lib/qt3 && ln -sf . lib
 	cd ${PREFIX}/lib/qt3 && ln -sf ../../include/X11/qt3 include

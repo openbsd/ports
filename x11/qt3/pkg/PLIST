@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2005/12/27 18:04:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.27 2005/12/28 16:50:59 espie Exp $
 @conflict qt3-*
 @conflict qt3-base-*
 @pkgpath x11/qt3,mt
@@ -434,9 +434,6 @@ include/X11/qt3/qwizard.h
 include/X11/qt3/qwmatrix.h
 include/X11/qt3/qworkspace.h
 include/X11/qt3/qxml.h
-@comment lib/libdesignercore.a
-@comment lib/libeditor.a
-@comment lib/libqassistantclient.a
 lib/qt3/
 lib/qt3/.qmake.cache
 lib/qt3/bin/
@@ -1486,11 +1483,11 @@ lib/qt3/mkspecs/win32-msvc2005/qmake.conf
 lib/qt3/mkspecs/win32-msvc2005/qplatformdefs.h
 lib/qt3/mkspecs/win32-watcom/
 lib/qt3/mkspecs/win32-watcom/qmake.conf
-lib/qt3/plugins/
-lib/qt3/plugins/designer/
-lib/qt3/plugins/inputmethods/
-lib/qt3/plugins/sqldrivers/
-lib/qt3/plugins/styles/
+lib/qt3/${QT_PLUGINS}/
+lib/qt3/${QT_PLUGINS}/designer/
+lib/qt3/${QT_PLUGINS}/inputmethods/
+lib/qt3/${QT_PLUGINS}/sqldrivers/
+lib/qt3/${QT_PLUGINS}/styles/
 share/doc/qt3/
 share/doc/qt3/FAQ
 share/doc/qt3/LICENSE.GPL
