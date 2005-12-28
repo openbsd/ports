@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2005/12/25 09:43:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2005/12/28 22:52:30 sturm Exp $
 
 COMMENT=	'libraries for fwbuilder'
 DISTNAME=	libfwbuilder-2.0.7
 CATEGORIES=	net security
+SHARED_LIBS=	fwbuilder	6.30 \
+		fwcompiler	6.30
 
 HOMEPAGE=	http://www.fwbuilder.org/
 
@@ -24,6 +26,8 @@ CONFIGURE_STYLE=gnu
 
 NO_REGRESS=	Yes
 
-FAKE_FLAGS=	INSTALL_ROOT=${WRKINST} ${MAKE_FLAGS}
+MAKE_FLAGS=	LIBfwbuilder_VERSION=${LIBfwbuilder_VERSION} \
+		LIBfwcompiler_VERSION=${LIBfwcompiler_VERSION}
+FAKE_FLAGS=	${MAKE_FLAGS} INSTALL_ROOT=${WRKINST}
 
 .include <bsd.port.mk>
