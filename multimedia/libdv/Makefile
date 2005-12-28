@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2005/03/08 10:04:45 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2005/12/28 13:43:06 jakemsr Exp $
 
 COMMENT=		"Quasar DV codec"
 
 DISTNAME=		libdv-0.104
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://libdv.sourceforge.net/
 
-MAINTAINER=		Jacob Meuser <jakemsr@jakemsr.com>
+MAINTAINER=		Jacob Meuser <jakemsr@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,6 +19,12 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libdv/}
 
 BUILD_DEPENDS=		::devel/pkgconfig
+
+USE_LIBTOOL=		Yes
+
+SHARED_LIBS=		dv	4.2
+
+MODGNU_SHARED_LIBS=	dv	''
 
 MODULES=		devel/gettext
 LIB_DEPENDS=		SDL.2::devel/sdl \
@@ -32,7 +39,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-sdl --enable-gtk --with-x
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${X11BASE}/lib/pkgconfig
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

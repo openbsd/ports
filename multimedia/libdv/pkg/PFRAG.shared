@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/02/22 22:24:36 naddy Exp $
-@lib lib/libdv.so.4.2
+@comment $OpenBSD: PFRAG.shared,v 1.5 2005/12/28 13:43:07 jakemsr Exp $
+@lib lib/libdv.so.${LIBdv_VERSION}
