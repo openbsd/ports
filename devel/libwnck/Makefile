@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2005/12/27 21:36:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2005/12/28 22:38:21 naddy Exp $
 
 COMMENT=		"window navigator construction kit"
 
 DISTNAME=		libwnck-2.10.0
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org
