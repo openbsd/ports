@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2005/11/13 06:22:02 marcm Exp $
+# $OpenBSD: Makefile,v 1.24 2005/12/28 06:15:28 marcm Exp $
 
 COMMENT=		"general-purpose utility library"
 COMMENT-docs=           "glib2 documentation"
 
-VERSION=		2.8.3
+VERSION=		2.8.4
 DISTNAME=		glib-${VERSION}
 PKGNAME=		glib2-${VERSION}
 PKGNAME-docs=           glib2-docs-${VERSION}
@@ -11,6 +11,15 @@ CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gtk.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
+
+SHARED_LIBS=		glib-2.0    800.4 \
+			gmodule-2.0 800.4 \
+			gobject-2.0 800.4 \
+			gthread-2.0 800.4
+MODGNU_SHARED_LIBS=	glib-2.0    '' \
+			gmodule-2.0 '' \
+			gobject-2.0 '' \
+			gthread-2.0 ''
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -40,11 +49,16 @@ CONFIGURE_ARGS+=	--disable-threads
 .endif
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LIBS="-L${LOCALBASE}/lib" \
-			LDFLAGS="-L${WRKSRC}/glib/.libs -L${WRKSRC}/gthread/.libs -L${WRKSRC}/gobject/.libs -L${WRKSRC}/gmodule/.libs"
+			LDFLAGS="-L${LOCALBASE}/lib"
+
+# Work around an issue in our libtool where -pthread is not listed as a 
+# dependency
+post-install:
+	sed -e "s/dependency_libs='/dependency_libs='-pthread/" < ${PREFIX}/lib/libgthread-2.0.la > ${PREFIX}/lib/libgthread-2.0.temp && mv ${PREFIX}/lib/libgthread-2.0.temp ${PREFIX}/lib/libgthread-2.0.la
 
 .include <bsd.port.mk>
