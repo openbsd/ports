@@ -1,0 +1,15 @@
+$OpenBSD: patch-loader_ldt_keeper_c,v 1.1 2005/12/28 15:22:35 fgsch Exp $
+--- loader/ldt_keeper.c.orig	Fri Apr 15 20:17:12 2005
++++ loader/ldt_keeper.c	Wed Dec 28 14:30:44 2005
+@@ -243,7 +243,11 @@ ldt_fs_t* Setup_LDT_Keeper(void)
+         {
+             perror("install_fs");
+ 	    printf("Couldn't install fs segment, expect segfault\n");
++#if defined(__OpenBSD__)
++            printf("Did you set \"machdep.userldt\" to 1?\n");
++#else
+             printf("Did you reconfigure the kernel with \"options USER_LDT\"?\n");
++#endif
+         }
+     }
+ #endif  /* __NetBSD__ || __FreeBSD__ || __OpenBSD__ */
