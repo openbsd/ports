@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2005/12/26 20:50:08 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2005/12/28 08:50:09 steven Exp $
 
 COMMENT=	"Berkeley DB package, revision ${REVISION}"
 COMMENT-tcl=	"TCL bindings for Berkeley DB, revision ${REVISION}"
@@ -29,6 +29,15 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/dist
 
+MODGNU_SHARED_LIBS=db	'' \
+		db_cxx	'' \
+		db_tcl	''
+
+MAKE_FLAGS=	DBVERSION=${LIBdb_VERSION} \
+		DBCXXVERSION=${LIBdb_cxx_VERSION} \
+		DBTCLVERSION=${LIBdb_tcl_VERSION}
+FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
+
 WRKBUILD=	${WRKDIST}/build_unix
 
 PSEUDO_FLAVORS=	no_tcl
@@ -56,16 +65,6 @@ LIB_DEPENDS=
 
 # this compiles slightly different code, some tests fail nevertheless
 #CONFIGURE_ARGS+=--enable-test
-
-MODGNU_SHARED_LIBS=db	'' \
-		db_cxx	'' \
-		db_tcl	''
-
-MAKE_FLAGS=	DBVERSION=${LIBdb_VERSION} \
-		DBCXXVERSION=${LIBdb_cxx_VERSION} \
-		DBTCLVERSION=${LIBdb_tcl_VERSION}
-FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
-
 
 do-regress:
 	@cd ${WRKBUILD}; env PATH=${PORTPATH} tclsh${TCL_VERSION} ${FILESDIR}/regress.tcl
