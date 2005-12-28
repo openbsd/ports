@@ -1,8 +1,8 @@
-@comment $OpenBSD: PFRAG.ssl,v 1.1 2005/09/08 04:52:12 marcm Exp $
+@comment $OpenBSD: PFRAG.ssl,v 1.2 2005/12/28 08:02:16 steven Exp $
 lib/evolution/${PARENT_VERS}/libessmime.a
 lib/evolution/${PARENT_VERS}/libessmime.la
-@lib lib/evolution/${PARENT_VERS}/libessmime.so.0.0
+@lib lib/evolution/${PARENT_VERS}/libessmime.so.${LIBessmime_VERSION}
 lib/evolution/${PARENT_VERS}/libevolution-smime.a
 lib/evolution/${PARENT_VERS}/libevolution-smime.la
-@lib lib/evolution/${PARENT_VERS}/libevolution-smime.so.0.0
+@lib lib/evolution/${PARENT_VERS}/libevolution-smime.so.${LIBevolution-smime_VERSION}
 share/evolution/${PARENT_VERS}/glade/smime-ui.glade

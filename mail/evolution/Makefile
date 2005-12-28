@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2005/12/03 00:26:40 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2005/12/28 08:02:16 steven Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 
@@ -8,6 +8,53 @@ DISTNAME=		evolution-${VERSION}
 CATEGORIES=    		mail x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/projects/evolution/
+
+SHARED_LIBS=		eabutil				0.0	\
+			econduit			0.0	\
+			econtacteditor			0.0	\
+			econtactlisteditor		0.0	\
+			efilterbar			0.0	\
+			emiscwidgets			0.0	\
+			eshell				0.0	\
+			essmime				0.0	\
+			etimezonedialog			0.0	\
+			evolution-smime			0.0	\
+			eutil				0.0	\
+			evolution-a11y			0.0	\
+			evolution-addressbook-a11y	0.0	\
+			evolution-calendar-a11y		0.0	\
+			evolution-importer		0.0	\
+			evolution-mail-importers	0.0	\
+			evolution-widgets-a11y		0.0	\
+			filter				0.0	\
+			menus				0.0
+
+MODGNU_SHARED_LIBS=	eabutil				''	\
+			econduit			''	\
+			econtacteditor			''	\
+			econtactlisteditor		''	\
+			efilterbar			''	\
+			emiscwidgets			''	\
+			eshell				''	\
+			essmime				''	\
+			etimezonedialog			''	\
+			evolution-smime			''	\
+			eutil				''	\
+			evolution-a11y			''	\
+			evolution-addressbook-a11y	''	\
+			evolution-calendar-a11y		''	\
+			evolution-importer		''	\
+			evolution-mail-importers	''	\
+			evolution-widgets-a11y		''	\
+			filter				''	\
+			menus				''
+
+ALIASLIBS=	smime a11y addressbook-a11y calendar-a11y	\
+		importer mail-importers widgets-a11y
+
+.for _name in ${ALIASLIBS}
+LIBevolution-${_name}_ALIAS=		evolution_${_name:S/-/_/}
+.endfor
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -65,7 +112,7 @@ FLAVORS=		ssl
 FLAVOR?=
 
 .if ${FLAVOR:L:Mssl}
-BUILD_DEPENDS=		::www/mozilla,gtk2,-devel
+BUILD_DEPENDS=		::www/mozilla,-devel
 CONFIGURE_ARGS+=	--with-nspr-libs=${LOCALBASE}/mozilla/lib
 CONFIGURE_ARGS+=	--with-nspr-includes=${LOCALBASE}/mozilla/include/nspr
 CONFIGURE_ARGS+=	--with-nss-libs=${LOCALBASE}/mozilla/lib

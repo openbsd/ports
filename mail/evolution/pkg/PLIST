@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/09/08 04:52:12 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2005/12/28 08:02:16 steven Exp $
 bin/evolution
 bin/evolution-${PARENT_VERS}
 include/evolution-${PARENT_VERS}/
@@ -487,8 +487,6 @@ share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/evolution-${PARENT_VERS}.mo
 share/locale/fi/LC_MESSAGES/evolution-${PARENT_VERS}.mo
 share/locale/fr/LC_MESSAGES/evolution-${PARENT_VERS}.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/evolution-${PARENT_VERS}.mo
 share/locale/gl/LC_MESSAGES/evolution-${PARENT_VERS}.mo
 share/locale/gu/

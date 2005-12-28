@@ -1,25 +1,25 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2005/09/08 04:52:12 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.9 2005/12/28 08:02:16 steven Exp $
 lib/evolution/${PARENT_VERS}/components/libevolution-addressbook.so
 lib/evolution/${PARENT_VERS}/components/libevolution-calendar.so
 lib/evolution/${PARENT_VERS}/components/libevolution-mail.so
 lib/evolution/${PARENT_VERS}/evolution-calendar-importers/libevolution-calendar-importers.so
-@lib lib/evolution/${PARENT_VERS}/libeabutil.so.0.0
-@lib lib/evolution/${PARENT_VERS}/libeconduit.so.0.0
-@lib lib/evolution/${PARENT_VERS}/libecontacteditor.so.0.0
-@lib lib/evolution/${PARENT_VERS}/libecontactlisteditor.so.0.0
-@lib lib/evolution/${PARENT_VERS}/libefilterbar.so.0.0
-@lib lib/evolution/${PARENT_VERS}/libemiscwidgets.so.0.0
-@lib lib/evolution/${PARENT_VERS}/libeshell.so.0.0
-@lib lib/evolution/${PARENT_VERS}/libetimezonedialog.so.0.0
-@lib lib/evolution/${PARENT_VERS}/libeutil.so.0.0
-@lib lib/evolution/${PARENT_VERS}/libevolution-a11y.so.0.0
-@lib lib/evolution/${PARENT_VERS}/libevolution-addressbook-a11y.so.0.0
-@lib lib/evolution/${PARENT_VERS}/libevolution-calendar-a11y.so.0.0
-@lib lib/evolution/${PARENT_VERS}/libevolution-importer.so.0.0
-@lib lib/evolution/${PARENT_VERS}/libevolution-mail-importers.so.0.0
-@lib lib/evolution/${PARENT_VERS}/libevolution-widgets-a11y.so.0.0
-@lib lib/evolution/${PARENT_VERS}/libfilter.so.0.0
-@lib lib/evolution/${PARENT_VERS}/libmenus.so.0.0
+@lib lib/evolution/${PARENT_VERS}/libeabutil.so.${LIBeabutil_VERSION}
+@lib lib/evolution/${PARENT_VERS}/libeconduit.so.${LIBeconduit_VERSION}
+@lib lib/evolution/${PARENT_VERS}/libecontacteditor.so.${LIBecontacteditor_VERSION}
+@lib lib/evolution/${PARENT_VERS}/libecontactlisteditor.so.${LIBecontactlisteditor_VERSION}
+@lib lib/evolution/${PARENT_VERS}/libefilterbar.so.${LIBefilterbar_VERSION}
+@lib lib/evolution/${PARENT_VERS}/libemiscwidgets.so.${LIBemiscwidgets_VERSION}
+@lib lib/evolution/${PARENT_VERS}/libeshell.so.${LIBeshell_VERSION}
+@lib lib/evolution/${PARENT_VERS}/libetimezonedialog.so.${LIBetimezonedialog_VERSION}
+@lib lib/evolution/${PARENT_VERS}/libeutil.so.${LIBeutil_VERSION}
+@lib lib/evolution/${PARENT_VERS}/libevolution-a11y.so.${LIBevolution-a11y_VERSION}
+@lib lib/evolution/${PARENT_VERS}/libevolution-addressbook-a11y.so.${LIBevolution-addressbook-a11y_VERSION}
+@lib lib/evolution/${PARENT_VERS}/libevolution-calendar-a11y.so.${LIBevolution-calendar-a11y_VERSION}
+@lib lib/evolution/${PARENT_VERS}/libevolution-importer.so.${LIBevolution-importer_VERSION}
+@lib lib/evolution/${PARENT_VERS}/libevolution-mail-importers.so.${LIBevolution-mail-importers_VERSION}
+@lib lib/evolution/${PARENT_VERS}/libevolution-widgets-a11y.so.${LIBevolution-widgets-a11y_VERSION}
+@lib lib/evolution/${PARENT_VERS}/libfilter.so.${LIBfilter_VERSION}
+@lib lib/evolution/${PARENT_VERS}/libmenus.so.${LIBmenus_VERSION}
 lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-addressbook-file.so
 lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-addressbook-groupwise.so
 lib/evolution/${PARENT_VERS}/plugins/liborg-gnome-audio-inline.so
