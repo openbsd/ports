@@ -1,0 +1,12 @@
+$OpenBSD: patch-glib_Makefile_in,v 1.5 2005/12/28 06:25:27 marcm Exp $
+--- glib/Makefile.in.orig	Sat Dec 24 13:49:44 2005
++++ glib/Makefile.in	Sat Dec 24 13:58:15 2005
+@@ -418,7 +418,7 @@ libglib_2_0_la_DEPENDENCIES = libcharset
+ 
+ libglib_2_0_la_LDFLAGS = \
+ 	 $(glib_win32_res_ldflag) \
+-	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
++	 $(libglib-2.0_la_LDFLAGS) \
+ 	-export-dynamic $(no_undefined) $(export_symbols)
+ 
+ 
