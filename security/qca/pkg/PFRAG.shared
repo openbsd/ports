@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/19 20:26:59 niallo Exp $
-@lib lib/libqca.so.1.0
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/28 22:38:59 sturm Exp $
+@lib lib/libqca.so.${LIBqca_VERSION}

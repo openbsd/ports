@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/19 20:26:59 niallo Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/28 22:38:59 sturm Exp $
 
 COMMENT=	"Qt Cryptographic Architecture"
 
 DISTNAME=	qca-1.0
 CATEGORIES=	security
+SHARED_LIBS=	qca	1.0
 
 HOMEPAGE=	http://delta.affinix.com/qca/
 
@@ -27,8 +28,10 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	simple
 CONFIGURE_ENV=		LOCALBASE=${LOCALBASE}
 
+MAKE_FLAGS=		LIBqca_VERSION=${LIBqca_VERSION}
+
 do-install:
-	${INSTALL_DATA} ${WRKBUILD}/libqca.so.1.0 ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKBUILD}/libqca.so.${LIBqca_VERSION} ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/src/qca.h ${PREFIX}/include
 
 .include <bsd.port.mk>
