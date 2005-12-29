@@ -1,6 +1,6 @@
-$OpenBSD: patch-ext_gd_config_m4,v 1.2 2005/12/21 15:42:06 robert Exp $
---- ext/gd/config.m4.orig	Sat Nov 26 15:34:51 2005
-+++ ext/gd/config.m4	Sat Nov 26 15:35:23 2005
+$OpenBSD: patch-ext_gd_config_m4,v 1.3 2005/12/29 23:06:28 sturm Exp $
+--- ext/gd/config.m4.orig	Thu Dec 25 23:12:08 2003
++++ ext/gd/config.m4	Tue Jul 27 00:41:56 2004
 @@ -87,13 +87,13 @@
        AC_MSG_ERROR([PNG support requires ZLIB. Use --with-zlib-dir=<DIR>])
      fi
@@ -14,6 +14,6 @@ $OpenBSD: patch-ext_gd_config_m4,v 1.2 2005/12/21 15:42:06 robert Exp $
      [
 -      PHP_ADD_INCLUDE($GD_PNG_DIR/include)
 +      PHP_ADD_INCLUDE($GD_PNG_DIR/include/libpng)
-       PHP_ADD_LIBRARY_WITH_PATH(z, $PHP_ZLIB_DIR/$PHP_LIBDIR, GD_SHARED_LIBADD)
-       PHP_ADD_LIBRARY_WITH_PATH(png, $GD_PNG_DIR/$PHP_LIBDIR, GD_SHARED_LIBADD)
+       PHP_ADD_LIBRARY_WITH_PATH(z, $PHP_ZLIB_DIR/lib, GD_SHARED_LIBADD)
+       PHP_ADD_LIBRARY_WITH_PATH(png, $GD_PNG_DIR/lib, GD_SHARED_LIBADD)
      ],[
