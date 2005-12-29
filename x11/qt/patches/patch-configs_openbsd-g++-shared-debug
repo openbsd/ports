@@ -1,5 +1,5 @@
---- configs/openbsd-g++-shared-debug.orig	Sat Oct 21 17:39:42 2000
-+++ configs/openbsd-g++-shared-debug	Sat Oct 21 17:41:19 2000
+--- configs/openbsd-g++-shared-debug.orig	Thu Dec 29 13:50:47 2005
++++ configs/openbsd-g++-shared-debug	Thu Dec 29 13:50:47 2005
 @@ -1,35 +1,35 @@
  # Compiling
 -SYSCONF_CXX		= g++
@@ -43,7 +43,7 @@
  
  # Meta-object compiler
  SYSCONF_MOC		= $(QTDIR)/bin/moc
-@@ -39,9 +39,9 @@
+@@ -39,9 +39,9 @@ SYSCONF_MOC		= $(QTDIR)/bin/moc
  #   - Place target in $(DESTDIR) - which has a trailing /
  #   - Usually needs to incorporate $(VER_MAJ) and $(VER_MIN)
  #

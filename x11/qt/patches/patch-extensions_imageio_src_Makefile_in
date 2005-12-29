@@ -1,0 +1,16 @@
+$OpenBSD: patch-extensions_imageio_src_Makefile_in,v 1.1 2005/12/29 13:09:10 espie Exp $
+--- extensions/imageio/src/Makefile.in.orig	Thu Dec 29 13:54:12 2005
++++ extensions/imageio/src/Makefile.in	Thu Dec 29 13:56:25 2005
+@@ -24,8 +24,10 @@ MOC	=	$(SYSCONF_MOC)
+ 
+ TARGET	= qimgio
+ DESTDIR = ../../../lib/
+-VER_MAJ = 0
+-VER_MIN = 1
++QIMGIO_VER_MAJ = 0
++QIMGIO_VER_MIN = 1
++VER_MAJ = $(QIMGIO_VER_MAJ)
++VER_MIN = $(QIMGIO_VER_MIN)
+ 
+ ####### Files
+ 

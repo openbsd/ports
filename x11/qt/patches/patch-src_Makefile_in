@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2005/12/29 13:09:10 espie Exp $
+--- src/Makefile.in.orig	Thu Dec 29 13:56:37 2005
++++ src/Makefile.in	Thu Dec 29 13:56:57 2005
+@@ -24,8 +24,10 @@ MOC	=	$(SYSCONF_MOC)
+ 
+ TARGET	= qt
+ DESTDIR = ../lib/
+-VER_MAJ = 1
+-VER_MIN = 44
++QT_VER_MAJ = 1
++QT_VER_MIN = 44
++VER_MAJ = $(QT_VER_MAJ)
++VER_MIN = $(QT_VER_MIN)
+ 
+ ####### Files
+ 

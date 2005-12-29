@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/15 19:26:31 espie Exp $
-@lib lib/libqimgio.so.1.45
-@lib lib/libqt.so.1.45
-@lib lib/qt/libqt.so.1.45
+@comment $OpenBSD: PFRAG.shared,v 1.6 2005/12/29 13:09:10 espie Exp $
+@lib lib/libqimgio.so.${LIBqimgio_VERSION}
+@lib lib/libqt.so.${LIBqt_VERSION}
+@lib lib/qt/libqt.so.${LIBqt_VERSION}

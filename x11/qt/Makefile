@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2005/10/30 00:10:42 fgsch Exp $
+# $OpenBSD: Makefile,v 1.68 2005/12/29 13:09:10 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=	"C++ X11 GUI toolkit"
@@ -12,6 +12,8 @@ PKGNAME-html=	qt-html-${VERSION}
 PKGNAME=	qt-${VERSION}p0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
+SHARED_LIBS=	qt	1.45 \
+		qimgio	1.45
 
 HOMEPAGE=	http://www.trolltech.com/products/qt/
 
@@ -25,10 +27,8 @@ PERMIT_DISTFILES_CDROM=	"Restrictive license"
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext c m stdc++
 
-VER_MAJ=	1
-VER_MIN=	45
-
-MAKE_FLAGS=	VER_MAJ="${VER_MAJ}" VER_MIN="${VER_MIN}"
+MAKE_FLAGS=	QT_VER_MAJ=${LIBqt_VERSION:R} QT_VER_MIN=${LIBqt_VERSION:E} \
+    QIMGIO_VER_MAJ=${LIBqimgio_VERSION:R} QIMGIO_VER_MIN=${LIBqimgio_VERSION:E}
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -94,15 +94,15 @@ do-install:
 	@if [ -f ${WRKBUILD}/lib/libqt.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.a ${PREFIX}/lib/qt; \
 	fi
-	@if [ -f ${WRKBUILD}/lib/libqt.so.${VER_MAJ}.${VER_MIN} ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.${VER_MAJ}.${VER_MIN} ${PREFIX}/lib/qt; \
-	 ln -sf qt/libqt.so.${VER_MAJ}.${VER_MIN} ${PREFIX}/lib; \
+	@if [ -f ${WRKBUILD}/lib/libqt.so.${LIBqt_VERSION} ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.${LIBqt_VERSION} ${PREFIX}/lib/qt; \
+	 ln -sf qt/libqt.so.${LIBqt_VERSION} ${PREFIX}/lib; \
 	fi
 	@if [ -f ${WRKBUILD}/lib/libqimgio.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqimgio.a ${PREFIX}/lib; \
 	fi
-	@if [ -f ${WRKBUILD}/lib/libqimgio.so.${VER_MAJ}.${VER_MIN} ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqimgio.so.${VER_MAJ}.${VER_MIN} ${PREFIX}/lib; \
+	@if [ -f ${WRKBUILD}/lib/libqimgio.so.${LIBqimgio_VERSION} ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqimgio.so.${LIBqimgio_VERSION} ${PREFIX}/lib; \
 	fi
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/moc ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/include/* ${QT_INCDIR}
