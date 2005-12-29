@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2005/11/19 12:42:45 alek Exp $
+# $OpenBSD: Makefile,v 1.50 2005/12/29 13:43:40 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples and tutorial for qt2"
@@ -7,6 +7,11 @@ COMMENT-html=		"off-line html documentation for qt2"
 VERSION=	3.2
 DISTNAME=	qt-2.${VERSION}
 CATEGORIES=	x11
+PKGNAME=		qt2-${VERSION}p0
+PKGNAME-examples=	qt2-examples-${VERSION}p0
+PKGNAME-html=		qt2-html-${VERSION}p0
+SHARED_LIBS=		qt	2.32
+
 
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 DISTFILES=	qt-x11-2.${VERSION}.tar.gz
@@ -29,7 +34,9 @@ USE_GMAKE=	Yes
 MAKE_ENV=	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
 		SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS} -I${X11BASE}/include/freetype2" \
 		LD_LIBRARY_PATH="${WRKDIST}/lib"
-MAKE_FLAGS=	DESIGNER_SUBDIR=dummy
+MAKE_FLAGS=	DESIGNER_SUBDIR=dummy LIBqt_VERSION=$(LIBqt_VERSION)
+FAKE_FLAGS=	$(MAKE_FLAGS) DESTDIR=$(WRKINST)
+
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	-gif -system-libmng -system-libpng -system-jpeg \
 		-system-zlib -no-thread -sm -no-g++-exceptions \
@@ -112,9 +119,9 @@ do-install:
 	@if [ -f ${WRKBUILD}/lib/libqt.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.a ${PREFIX}/lib/qt2; \
 	fi
-	@if [ -f ${WRKBUILD}/lib/libqt.so.2.32 ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.2.32 ${PREFIX}/lib/qt2; \
-	 ln -sf qt2/libqt.so.2.32 ${PREFIX}/lib/libqt.so.2.32; \
+	@if [ -f ${WRKBUILD}/lib/libqt.so.$(LIBqt_VERSION) ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.$(LIBqt_VERSION) ${PREFIX}/lib/qt2; \
+	 ln -sf qt2/libqt.so.$(LIBqt_VERSION) ${PREFIX}/lib/libqt.so.$(LIBqt_VERSION); \
 	fi
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/moc ${QT_LIBDIR}/bin
 	${INSTALL_MAN} ${WRKSRC}/src/moc/moc.1 ${QT_MANDIR}/man1/moc2.1
@@ -148,10 +155,6 @@ do-install:
 	cp -R ${WRKSRC}/doc/html/* ${QT_DOC}/html
 	${INSTALL_DATA_DIR} ${QT_LIBDIR}/doc
 	ln -s ${TRUEPREFIX}/share/doc/qt2/html ${QT_LIBDIR}/doc/html
-
-PKGNAME=		qt2-${VERSION}p0
-PKGNAME-examples=	qt2-examples-${VERSION}p0
-PKGNAME-html=		qt2-html-${VERSION}p0
 
 .include <bsd.port.mk>
 
