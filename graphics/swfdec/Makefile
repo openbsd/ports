@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2005/11/15 14:20:53 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2005/12/29 12:57:59 steven Exp $
 
 COMMENT=	"flash rendering library"
 DISTNAME=	swfdec-0.2.2
 PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=		swfdec	0.0
+MODGNU_SHARED_LIBS=	swfdec	''
 CATEGORIES=	graphics www/mozilla
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=swfdec/}
 
