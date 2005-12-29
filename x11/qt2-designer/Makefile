@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/19 20:18:55 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2005/12/29 14:35:07 espie Exp $
 
 COMMENT=	"designer for qt2"
 
@@ -6,6 +6,8 @@ VERSION=	3.2
 DISTNAME=	qt-designer-2.${VERSION}
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11 devel
+SHARED_LIBS=	qutil	1.0
+SHARED_LIBS=	qutil	4.0
 
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 DISTFILES=	qt-x11-2.${VERSION}.tar.gz
@@ -39,7 +41,8 @@ MAKE_ENV=	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
 
 MAKE_FLAGS= 	SYSCONF_CXXFLAGS_QT=-I${LOCALBASE}/include/X11/qt2 \
 		SYSCONF_LFLAGS_QT=-L${LOCALBASE}/lib/qt2 \
-		SYSCONF_MOC=${LOCALBASE}/bin/moc2
+		SYSCONF_MOC=${LOCALBASE}/bin/moc2 \
+		LIBqutil_VERSION=$(LIBqutil_VERSION)
 
 
 
@@ -65,9 +68,9 @@ do-install:
 	@if [ -f ${WRKBUILD}/lib/libqutil.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqutil.a ${QT_LIBDIR}; \
 	fi
-	@if [ -f ${WRKBUILD}/lib/libqutil.so.1.0 ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqutil.so.1.0 ${QT_LIBDIR}; \
-	 ln -sf qt2/libqutil.so.1.0 ${PREFIX}/lib/libqutil.so.1.0; \
+	@if [ -f ${WRKBUILD}/lib/libqutil.so.$(LIBqutil_VERSION) ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqutil.so.$(LIBqutil_VERSION) ${QT_LIBDIR}; \
+	 ln -sf qt2/libqutil.so.$(LIBqutil_VERSION) ${PREFIX}/lib; \
 	fi
 	echo "#! /bin/sh" >${WRKDIR}/designer
 	echo "QTDIR=${TRUEDIR} exec ${TRUEDIR}/bin/designer" \
