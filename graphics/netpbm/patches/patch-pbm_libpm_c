@@ -1,6 +1,6 @@
-$OpenBSD: patch-pbm_libpm_c,v 1.1 2003/03/29 04:13:54 brad Exp $
---- pbm/libpm.c.orig	Fri Jan 25 19:18:05 2002
-+++ pbm/libpm.c	Fri Mar 28 20:22:07 2003
+$OpenBSD: patch-pbm_libpm_c,v 1.2 2005/12/29 15:45:43 steven Exp $
+--- pbm/libpm.c.orig	Sat Jan 26 01:18:05 2002
++++ pbm/libpm.c	Thu Dec 29 15:42:05 2005
 @@ -14,6 +14,7 @@
  **************************************************************************/
  
@@ -50,7 +50,6 @@ $OpenBSD: patch-pbm_libpm_c,v 1.1 2003/03/29 04:13:54 brad Exp $
  }
  
  
--
 +/*
 + *	Maths wrapping
 + */
@@ -64,7 +63,7 @@ $OpenBSD: patch-pbm_libpm_c,v 1.1 2003/03/29 04:13:54 brad Exp $
 +	if(a > INT_MAX / b)
 +		pm_error("object too large");
 +}
-+
+ 
 +void overflow3(int a, int b, int c)
 +{
 +	overflow2(a,b);

@@ -1,6 +1,15 @@
---- pnm/Makefile.orig	Sun Jan 20 18:17:29 2002
-+++ pnm/Makefile	Fri Mar  1 16:38:56 2002
-@@ -146,13 +146,14 @@ SCRIPTS = anytopnm pamstretch-gen pnmind
+--- pnm/Makefile.orig	Mon Jan 21 00:17:29 2002
++++ pnm/Makefile	Thu Dec 29 15:49:33 2005
+@@ -2,6 +2,8 @@ SRCDIR = ..
+ BUILDDIR = ..
+ include $(BUILDDIR)/Makefile.config
+ 
++SOVER=$(LIBpnm_VERSION)
++
+ LIBROOT = pnm
+ LIBPNM = $(NETPBMSHLIBPREFIX)$(LIBROOT).$(NETPBMLIBSUFFIX)
+ MAJ = 9
+@@ -146,13 +148,14 @@ SCRIPTS = anytopnm pamstretch-gen pnmind
  # MERGE_ALIASES is additional names to be linked to the merge binary which are
  # alternate names for a program whose source is called something else.
  # Every name here must be referenced in pnmmerge.c.
@@ -16,7 +25,7 @@
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libpnm
-@@ -170,7 +171,7 @@ endif
+@@ -170,7 +173,7 @@ endif
  	$(MAKE) -C jbig all
  	$(MAKE) -C pnmtopalm all
  PHONY: merge

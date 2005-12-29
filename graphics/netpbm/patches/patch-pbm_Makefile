@@ -1,6 +1,14 @@
---- pbm/Makefile.orig	Thu Jan 10 18:19:44 2002
-+++ pbm/Makefile	Fri Mar  1 16:03:29 2002
-@@ -52,6 +52,7 @@ MERGE_OBJECTS = $(patsubst %,%.o2, $(MER
+--- pbm/Makefile.orig	Fri Jan 11 00:19:44 2002
++++ pbm/Makefile	Thu Dec 29 15:48:07 2005
+@@ -4,6 +4,7 @@ BUILDDIR = ..
+ 
+ include $(BUILDDIR)/Makefile.config
+ 
++SOVER=$(LIBpbm_VERSION)
+ 
+ INCLUDE = -I$(SRCDIR)/shhopt
+ 
+@@ -52,6 +53,7 @@ MERGE_OBJECTS = $(patsubst %,%.o2, $(MER
  
  # Library objects to be built and linked by Makefile.common:
  LIBOBJECTS = libpm.o libpbm1.o libpbm2.o libpbm3.o libpbm4.o libpbm5.o 
@@ -8,7 +16,7 @@
  ifneq (${VMS}x,x)
  LIBOBJECTS += libpbmvms.o
  endif
-@@ -68,26 +69,21 @@ INTERFACE_HEADERS = pm.h pbm.h
+@@ -68,26 +70,21 @@ INTERFACE_HEADERS = pm.h pbm.h
  
  .PHONY: all
  all:	$(LIBPBM) $(BINARIES) $(EXTRA_STATICLIB)
@@ -36,7 +44,7 @@
  
  HEADERLINKS = pm_config.h version.h compile.h
  
-@@ -110,6 +106,5 @@ $(BUILDDIR)/shhopt/libshhopt.a:
+@@ -110,6 +107,5 @@ $(BUILDDIR)/shhopt/libshhopt.a:
  clean: clean.common
  	rm -f thinkjettopbm.c
  	rm -f compile.h
