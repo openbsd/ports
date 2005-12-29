@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.6 2005/12/21 15:42:06 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2005/12/29 23:03:29 sturm Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-V=			5.1.1
+V=		5.0.5
 DISTNAME=	php-${V}
 CATEGORIES=	www lang
 
@@ -15,7 +15,6 @@ MASTER_SITES=	http://us2.php.net/distributions/ \
 		http://se.php.net/distributions/ \
 		http://no.php.net/distributions/ \
 		http://uk.php.net/distributions/
-MASTER_SITES0=	http://www.bsd.hu/~robert/
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade
