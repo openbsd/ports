@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_business_business-utils_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/business/business-utils/Makefile.in.orig	Thu Dec 29 22:02:04 2005
++++ src/business/business-utils/Makefile.in	Thu Dec 29 22:02:16 2005
+@@ -255,7 +255,7 @@ noinst_HEADERS = \
+   business-options.h
+ 
+ 
+-libgncmod_business_utils_la_LDFLAGS = -module
++libgncmod_business_utils_la_LDFLAGS = -module -avoid-version
+ libgncmod_business_utils_la_LIBADD = \
+   ${GUILE_LIBS} \
+   ${GLIB_LIBS} \

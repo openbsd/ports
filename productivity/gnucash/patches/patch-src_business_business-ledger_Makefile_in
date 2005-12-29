@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_business_business-ledger_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/business/business-ledger/Makefile.in.orig	Thu Dec 29 21:57:35 2005
++++ src/business/business-ledger/Makefile.in	Thu Dec 29 21:58:06 2005
+@@ -253,7 +253,7 @@ noinst_HEADERS = \
+   gncEntryLedgerModel.h
+ 
+ 
+-libgnc_business_ledger_la_LDFLAGS = -module
++libgnc_business_ledger_la_LDFLAGS = -module -avoid-version
+ libgnc_business_ledger_la_LIBADD = \
+   ${top_builddir}/src/gnome-utils/libgncmod-gnome-utils.la \
+   ${top_builddir}/src/app-utils/libgncmod-app-utils.la \

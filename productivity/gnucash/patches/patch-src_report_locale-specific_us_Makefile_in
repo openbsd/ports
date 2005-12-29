@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_report_locale-specific_us_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/report/locale-specific/us/Makefile.in.orig	Thu Dec 29 22:08:03 2005
++++ src/report/locale-specific/us/Makefile.in	Thu Dec 29 22:08:12 2005
+@@ -240,7 +240,7 @@ libgncmod_locale_reports_us_la_SOURCES =
+   gncmod-locale-reports-us.c 
+ 
+ 
+-libgncmod_locale_reports_us_la_LDFLAGS = -module
++libgncmod_locale_reports_us_la_LDFLAGS = -module -avoid-version
+ libgncmod_locale_reports_us_la_LIBADD = \
+   ${top_builddir}/src/gnc-module/libgncmodule.la \
+   ${GUILE_LIBS} \

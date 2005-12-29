@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_register_ledger-core_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/register/ledger-core/Makefile.in.orig	Thu Dec 29 22:07:37 2005
++++ src/register/ledger-core/Makefile.in	Thu Dec 29 22:07:45 2005
+@@ -259,7 +259,7 @@ noinst_HEADERS = \
+   split-register-p.h
+ 
+ 
+-libgncmod_ledger_core_la_LDFLAGS = -module
++libgncmod_ledger_core_la_LDFLAGS = -module -avoid-version
+ libgncmod_ledger_core_la_LIBADD = \
+   ${top_builddir}/src/gnome-utils/libgncmod-gnome-utils.la \
+   ${top_builddir}/src/app-utils/libgncmod-app-utils.la \

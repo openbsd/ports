@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_register_register-gnome_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/register/register-gnome/Makefile.in.orig	Thu Dec 29 22:09:55 2005
++++ src/register/register-gnome/Makefile.in	Thu Dec 29 22:10:07 2005
+@@ -236,7 +236,7 @@ SUBDIRS = . test
+ 
+ pkglib_LTLIBRARIES = libgncmod-register-gnome.la
+ 
+-libgncmod_register_gnome_la_LDFLAGS = -module 
++libgncmod_register_gnome_la_LDFLAGS = -module -avoid-version
+ libgncmod_register_gnome_la_LIBADD = \
+   ${top_builddir}/src/register/register-core/libgncmod-register-core.la \
+   ${top_builddir}/src/gnc-module/libgncmodule.la \

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_import-export_qif-import_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/import-export/qif-import/Makefile.in.orig	Thu Dec 29 22:09:12 2005
++++ src/import-export/qif-import/Makefile.in	Thu Dec 29 22:09:21 2005
+@@ -247,7 +247,7 @@ noinst_HEADERS = \
+   druid-qif-import.h
+ 
+ 
+-libgncmod_qif_import_la_LDFLAGS = -module 
++libgncmod_qif_import_la_LDFLAGS = -module -avoid-version
+ 
+ libgncmod_qif_import_la_LIBADD = \
+   ${top_builddir}/src/gnome-utils/libgncmod-gnome-utils.la \

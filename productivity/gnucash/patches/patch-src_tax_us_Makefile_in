@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tax_us_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/tax/us/Makefile.in.orig	Thu Dec 29 22:12:42 2005
++++ src/tax/us/Makefile.in	Thu Dec 29 22:12:49 2005
+@@ -240,7 +240,7 @@ libgncmod_tax_us_la_SOURCES = \
+   gncmod-tax-us.c 
+ 
+ 
+-libgncmod_tax_us_la_LDFLAGS = -module
++libgncmod_tax_us_la_LDFLAGS = -module -avoid-version
+ libgncmod_tax_us_la_LIBADD = \
+  ${GUILE_LIBS} \
+  ${GLIB_LIBS}

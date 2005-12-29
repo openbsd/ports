@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_network-utils_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/network-utils/Makefile.in.orig	Thu Dec 29 22:08:53 2005
++++ src/network-utils/Makefile.in	Thu Dec 29 22:09:01 2005
+@@ -256,7 +256,7 @@ gncinclude_HEADERS = \
+   gnc-http.h
+ 
+ 
+-libgncmod_network_utils_la_LDFLAGS = -module
++libgncmod_network_utils_la_LDFLAGS = -module -avoid-version
+ 
+ libgncmod_network_utils_la_LIBADD = \
+   ${top_builddir}/src/gnc-module/libgncmodule.la \

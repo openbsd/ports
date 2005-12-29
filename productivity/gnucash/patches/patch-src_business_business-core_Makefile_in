@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_business_business-core_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/business/business-core/Makefile.in.orig	Thu Dec 29 22:01:09 2005
++++ src/business/business-core/Makefile.in	Thu Dec 29 22:01:33 2005
+@@ -292,7 +292,7 @@ noinst_HEADERS = \
+   gw-business-core.h
+ 
+ 
+-libgncmod_business_core_la_LDFLAGS = -module
++libgncmod_business_core_la_LDFLAGS = -module -avoid-version
+ 
+ libgncmod_business_core_la_LIBADD = \
+   ${GUILE_LIBS} \
+@@ -303,7 +303,7 @@ libgncmod_business_core_la_LIBADD = \
+ # business-core-helpers.c
+ 
+ libgw_business_core_la_SOURCES = gw-business-core.c 
+-libgw_business_core_la_LDFLAGS = -module ${G_WRAP_LINK_ARGS}
++libgw_business_core_la_LDFLAGS = -module -avoid-version ${G_WRAP_LINK_ARGS}
+ libgw_business_core_la_LIBADD = libgncmod-business-core.la
+ 
+ gncmoddir = ${GNC_SHAREDIR}/guile-modules/gnucash

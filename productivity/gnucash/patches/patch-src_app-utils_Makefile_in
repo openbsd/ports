@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_app-utils_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/app-utils/Makefile.in.orig	Thu Dec 29 21:58:40 2005
++++ src/app-utils/Makefile.in	Thu Dec 29 21:59:02 2005
+@@ -283,7 +283,7 @@ noinst_HEADERS = \
+   gw-app-utils.h
+ 
+ 
+-libgncmod_app_utils_la_LDFLAGS = -module
++libgncmod_app_utils_la_LDFLAGS = -module -avoid-version
+ 
+ libgncmod_app_utils_la_LIBADD = \
+   ${top_builddir}/src/gnc-module/libgncmodule.la \
+@@ -294,7 +294,7 @@ libgncmod_app_utils_la_LIBADD = \
+ 
+ 
+ libgw_app_utils_la_SOURCES = gw-app-utils.c
+-libgw_app_utils_la_LDFLAGS = -module
++libgw_app_utils_la_LDFLAGS = -module -avoid-version
+ 
+ gncmoddir = ${GNC_SHAREDIR}/guile-modules/gnucash
+ gncmod_DATA = app-utils.scm 

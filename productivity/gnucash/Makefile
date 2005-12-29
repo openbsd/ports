@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2005/11/27 10:54:10 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2005/12/29 22:44:00 sturm Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
 COMMENT=	"Quicken-like money and finance manager"
 DISTNAME=	gnucash-1.8.11
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11/gnome productivity
+
 MASTER_SITE_GNUCASH=	http://www.gnucash.org/pub/gnucash/ \
 		ftp://ftp.gnucash.org/pub/gnucash/ \
 		http://www.linas.org/pub/gnucash/gnucash/
@@ -31,6 +32,7 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu
 
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 CONFIGURE_ARGS+= ${ENABLE_SHARED} \
 		--with-glib-config=${LOCALBASE}/bin/glib-config \
 		--enable-nls --without-included-gettext \

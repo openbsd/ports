@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_report_stylesheets_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/report/stylesheets/Makefile.in.orig	Thu Dec 29 22:12:14 2005
++++ src/report/stylesheets/Makefile.in	Thu Dec 29 22:12:21 2005
+@@ -240,7 +240,7 @@ libgncmod_stylesheets_la_SOURCES = \
+   gncmod-stylesheets.c 
+ 
+ 
+-libgncmod_stylesheets_la_LDFLAGS = -module
++libgncmod_stylesheets_la_LDFLAGS = -module -avoid-version
+ 
+ AM_CFLAGS = -I${top_srcdir}/src/gnc-module ${GUILE_INCS} ${GLIB_CFLAGS}
+ 

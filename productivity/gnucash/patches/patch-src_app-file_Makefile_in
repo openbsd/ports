@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_app-file_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/app-file/Makefile.in.orig	Thu Dec 29 21:22:49 2005
++++ src/app-file/Makefile.in	Thu Dec 29 21:23:03 2005
+@@ -266,7 +266,7 @@ noinst_HEADERS = \
+   gw-app-file.h
+ 
+ 
+-libgncmod_app_file_la_LDFLAGS = -module
++libgncmod_app_file_la_LDFLAGS = -module -avoid-version
+ 
+ libgncmod_app_file_la_LIBADD = \
+   ../gnc-module/libgncmodule.la \
+@@ -279,7 +279,7 @@ libgncmod_app_file_la_LIBADD = \
+ 
+ 
+ libgw_app_file_la_SOURCES = gw-app-file.c
+-libgw_app_file_la_LDFLAGS = -module
++libgw_app_file_la_LDFLAGS = -module -avoid-version
+ 
+ gwmoddir = ${GNC_GWRAP_LIBDIR}
+ gwmod_DATA = gw-app-file-spec.scm gw-app-file.scm

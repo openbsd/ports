@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_gnc-module_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/gnc-module/Makefile.in.orig	Thu Dec 29 21:19:38 2005
++++ src/gnc-module/Makefile.in	Thu Dec 29 21:20:08 2005
+@@ -240,7 +240,7 @@ lib_LTLIBRARIES = libgncmodule.la 
+ pkglib_LTLIBRARIES = libgw-gnc-module.la
+ 
+ libgncmodule_la_SOURCES = gnc-module.c
+-libgncmodule_la_LDFLAGS = -module
++libgncmodule_la_LDFLAGS = -module -avoid-version
+ libgncmodule_la_LIBADD = \
+   ../core-utils/libcore-utils.la \
+   ${G_WRAP_LINK_ARGS} \
+@@ -249,7 +249,7 @@ libgncmodule_la_LIBADD = \
+ 
+ 
+ libgw_gnc_module_la_SOURCES = gw-gnc-module.c
+-libgw_gnc_module_la_LDFLAGS = -module 
++libgw_gnc_module_la_LDFLAGS = -module -avoid-version
+ libgw_gnc_module_la_LIBADD = libgncmodule.la \
+   ${G_WRAP_LINK_ARGS} \
+   ${GUILE_LIBS} \

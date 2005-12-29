@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_report_standard-reports_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/report/standard-reports/Makefile.in.orig	Thu Dec 29 22:10:54 2005
++++ src/report/standard-reports/Makefile.in	Thu Dec 29 22:11:02 2005
+@@ -240,7 +240,7 @@ libgncmod_standard_reports_la_SOURCES = 
+   gncmod-standard-reports.c 
+ 
+ 
+-libgncmod_standard_reports_la_LDFLAGS = -module
++libgncmod_standard_reports_la_LDFLAGS = -module -avoid-version
+ 
+ AM_CFLAGS = -I${top_srcdir}/src/gnc-module ${GUILE_INCS} ${GLIB_CFLAGS}
+ 

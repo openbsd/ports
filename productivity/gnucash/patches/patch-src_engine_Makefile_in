@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_engine_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/engine/Makefile.in.orig	Thu Dec 29 22:04:39 2005
++++ src/engine/Makefile.in	Thu Dec 29 22:05:02 2005
+@@ -348,7 +348,7 @@ noinst_HEADERS = \
+ 
+ noinst_SCRIPTS = iso-currencies-to-c
+ 
+-libgncmod_engine_la_LDFLAGS = -module
++libgncmod_engine_la_LDFLAGS = -module -avoid-version
+ libgncmod_engine_la_LIBADD = ${GNUCASH_ENGINE_BASE_LIBS} ${INTLLIBS} \
+  libgw-engine.la \
+  libgw-kvp.la \
+@@ -357,10 +357,10 @@ libgncmod_engine_la_LIBADD = ${GNUCASH_E
+ 
+ 
+ libgw_kvp_la_SOURCES = gw-kvp.c kvp-scm.c
+-libgw_kvp_la_LDFLAGS = -module ${G_WRAP_LINK_ARGS}
++libgw_kvp_la_LDFLAGS = -module -avoid-version ${G_WRAP_LINK_ARGS}
+ 
+ libgw_engine_la_SOURCES = gw-engine.c engine-helpers.c glib-helpers.c
+-libgw_engine_la_LDFLAGS = -module ${G_WRAP_LINK_ARGS}
++libgw_engine_la_LDFLAGS = -module -avoid-version ${G_WRAP_LINK_ARGS}
+ 
+ gncmoddir = ${GNC_SHAREDIR}/guile-modules/gnucash
+ gncmod_DATA = engine.scm 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_import-export_log-replay_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/import-export/log-replay/Makefile.in.orig	Thu Dec 29 22:08:36 2005
++++ src/import-export/log-replay/Makefile.in	Thu Dec 29 22:08:44 2005
+@@ -245,7 +245,7 @@ noinst_HEADERS = \
+   gnc-log-replay.h
+ 
+ 
+-libgncmod_log_replay_la_LDFLAGS = -module
++libgncmod_log_replay_la_LDFLAGS = -module -avoid-version
+ 
+ libgncmod_log_replay_la_LIBADD = \
+   ${top_builddir}/src/gnc-module/libgncmodule.la \

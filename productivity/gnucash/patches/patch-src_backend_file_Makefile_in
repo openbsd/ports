@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_backend_file_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/backend/file/Makefile.in.orig	Thu Dec 29 21:59:17 2005
++++ src/backend/file/Makefile.in	Thu Dec 29 21:59:26 2005
+@@ -289,7 +289,7 @@ noinst_HEADERS = \
+   sixtp-utils.h
+ 
+ 
+-libgncmod_backend_file_la_LDFLAGS = -module
++libgncmod_backend_file_la_LDFLAGS = -module -avoid-version
+ libgncmod_backend_file_la_LIBADD = \
+    ${GLIB_LIBS} ${GNOME_XML_LIB} \
+    ${top_builddir}/src/engine/libgncmod-engine.la 

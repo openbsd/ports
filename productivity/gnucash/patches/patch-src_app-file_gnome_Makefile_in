@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_app-file_gnome_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/app-file/gnome/Makefile.in.orig	Thu Dec 29 22:35:17 2005
++++ src/app-file/gnome/Makefile.in	Thu Dec 29 22:37:19 2005
+@@ -271,7 +271,7 @@ DEFS = @DEFS@ -I. -I$(srcdir) -I../../..
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-libgnc_app_file_gnome_la_LDFLAGS = 
++libgnc_app_file_gnome_la_LDFLAGS = -module -avoid-version
+ libgnc_app_file_gnome_la_DEPENDENCIES = 
+ libgnc_app_file_gnome_la_OBJECTS =  gnc-file-dialog.lo \
+ gnc-file-history.lo

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_business_business-gnome_Makefile_in,v 1.1 2005/12/29 22:44:00 sturm Exp $
+--- src/business/business-gnome/Makefile.in.orig	Thu Dec 29 22:01:41 2005
++++ src/business/business-gnome/Makefile.in	Thu Dec 29 22:01:56 2005
+@@ -296,7 +296,7 @@ noinst_HEADERS = \
+   gw-business-gnome.h
+ 
+ 
+-libgncmod_business_gnome_la_LDFLAGS = -module
++libgncmod_business_gnome_la_LDFLAGS = -module -avoid-version
+ 
+ libgncmod_business_gnome_la_LIBADD = \
+   ${top_builddir}/src/business/business-core/libgncmod-business-core.la \
+@@ -310,7 +310,7 @@ libgncmod_business_gnome_la_LIBADD = \
+ 
+ 
+ libgw_business_gnome_la_SOURCES = gw-business-gnome.c
+-libgw_business_gnome_la_LDFLAGS = -module ${G_WRAP_LINK_ARGS}
++libgw_business_gnome_la_LDFLAGS = -module -avoid-version ${G_WRAP_LINK_ARGS}
+ libgw_business_gnome_la_LIBADD = libgncmod-business-gnome.la
+ 
+ # For Business Reports
