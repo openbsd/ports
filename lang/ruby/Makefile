@@ -1,45 +1,84 @@
-# $OpenBSD: Makefile,v 1.33 2005/10/18 17:33:20 couderc Exp $
+# $OpenBSD: Makefile,v 1.34 2005/12/29 17:27:31 msf Exp $
 
 COMMENT=		"object oriented script language with threads"
+COMMENT-iconv=		"libiconv interface for ruby"
+COMMENT-gdbm=		"gdbm interface for ruby"
+COMMENT-tk=		"tk interface for ruby"
 
 SHARED_ONLY=		Yes
-VERSION=		1.8.1
+VERSION=		1.8.4
 DISTNAME=		ruby-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME-iconv=		ruby-iconv-${VERSION}
+PKGNAME-gdbm=		ruby-gdbm-${VERSION}
+PKGNAME-tk=		ruby-tk-${VERSION}
+
 CATEGORIES=		lang
 
 HOMEPAGE=		http://www.ruby-lang.org/
 
-# GPL
+MAINTAINER=		Mathieu Sauve-Frankel <msf@openbsd.org> 
+
+# GPL/Artistic/BSD/Public Domain/Beer-Ware
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ssl termcap m ncurses crypto c util z readline
 
-MASTER_SITES=	ftp://www.ruby-lang.org/pub/ruby/1.8/ \
-                ftp://mirror.nucba.ac.jp/pub/ruby/1.8/ \
-                ftp://ftp.kr.freebsd.org/pub/ruby/1.8/
+MASTER_SITES=		ftp://www.ruby-lang.org/pub/ruby/1.8/ \
+                	ftp://mirror.nucba.ac.jp/pub/ruby/1.8/ \
+                	ftp://ftp.kr.freebsd.org/pub/ruby/1.8/
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-
-FLAVORS=	tk
+PSEUDO_FLAVORS= 	no_x11
 FLAVOR?=
 
-.if ${FLAVOR:L} == "tk"
-LIB_DEPENDS=	tcl84.::lang/tcl/8.4 \
-		tk84.::x11/tk/8.4
+MULTI_PACKAGES=		-iconv -gdbm
+SUBPACKAGE?=
 
+MODULES=		converters/libiconv
+LIB_DEPENDS+=		gdbm.3::databases/gdbm
+
+.if !${FLAVOR:L:Mno_x11}
+MULTI_PACKAGES+=	-tk
+LIB_DEPENDS+=		tk84.::x11/tk/8.4 
+.endif 
+
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--enable-ipv6 \
+			--with-dbm-type=bogus \
+			--with-opt-dir="${LOCALBASE}"
+CONFIGURE_ENV+=		PREFIX="${PREFIX}"
+
+.if !${FLAVOR:L:Mno_x11}
+USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.4 \
 			--with-tk-include=${PREFIX}/include/tk8.4 \
 			--with-X11-dir=${X11BASE} 
-.else
-CONFIGURE_ARGS+=	--without-x11
 .endif
-CONFIGURE_ARGS+=	--with-dbm-type=bogus
 
-REGRESS_TARGET=	test
+INSTALL_TARGET=		install install-doc
+
+WANTLIB= 		ssl termcap ncurses c crypto m util z readline
+.if defined(PACKAGING)
+.  if empty(SUBPACKAGE)
+MODULES=	
+LIB_DEPENDS=
+.  elif ${SUBPACKAGE} == "-iconv"
+MODULES=		converters/libiconv
+LIB_DEPENDS=		ruby.1.84::lang/ruby
+WANTLIB=		c m
+.  elif ${SUBPACKAGE} == "-gdbm"
+MODULES=
+LIB_DEPENDS=		ruby.1.84::lang/ruby \
+			gdbm.3::databases/gdbm
+WANTLIB=		c m
+.  elif ${SUBPACKAGE} == "-tk"
+MODULES=		
+LIB_DEPENDS=		ruby.1.84::lang/ruby \
+			tk84.::x11/tk/8.4
+WANTLIB=		X11 tcl84.1 c m
+.  endif
+.endif 
 
 REV=1.8
 SUB=${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
