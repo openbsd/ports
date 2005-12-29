@@ -1,0 +1,33 @@
+$OpenBSD: patch-lib_RKC_Imakefile,v 1.1 2005/12/29 13:03:55 espie Exp $
+--- lib/RKC/Imakefile.orig	Thu Dec 29 13:35:34 2005
++++ lib/RKC/Imakefile	Thu Dec 29 13:39:34 2005
+@@ -27,5 +27,5 @@
+ #if ProjectX > 5
+ #define LibName RKC
+-#define SoRev		cannaDsoRev
++#define SoRev		LIBRKC_VERSION
+ #define SHLIBDIR	libCannaDir
+ #define USRLIBDIR	libCannaDir
+@@ -43,17 +43,17 @@ LibraryObjectRule()
+ #if DoSharedLib
+ #if DoNormalLib
+-SharedLibraryTarget(RKC,$(cannaDsoRev),$(OBJS),shared,..)
++SharedLibraryTarget(RKC,$(LIBRKC_VERSION),$(OBJS),shared,..)
+ #else
+-SharedLibraryTarget(RKC,$(cannaDsoRev),$(OBJS),.,.)
++SharedLibraryTarget(RKC,$(LIBRKC_VERSION),$(OBJS),.,.)
+ #endif
+-InstallSharedLibrary(RKC,$(cannaDsoRev),$(libCannaDir))
++InstallSharedLibrary(RKC,$(LIBRKC_VERSION),$(libCannaDir))
+ 
+ install::
+ 	$(RM) $(libCannaDir)/libRKC.so
+-	ln $(libCannaDir)/libRKC.so.$(cannaDsoRev) $(libCannaDir)/libRKC.so
++	ln $(libCannaDir)/libRKC.so.$(LIBRKC_VERSION) $(libCannaDir)/libRKC.so
+ 
+ AllTarget(libRKC.so)
+ 
+-libRKC.so: libRKC.so.$(cannaDsoRev)
++libRKC.so: libRKC.so.$(LIBRKC_VERSION)
+ 	$(RM) $@
+ 	ln $? $@

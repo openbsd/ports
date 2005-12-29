@@ -1,0 +1,23 @@
+$OpenBSD: patch-lib_canna_Imakefile,v 1.1 2005/12/29 13:03:55 espie Exp $
+--- lib/canna/Imakefile.orig	Thu Dec 29 13:41:34 2005
++++ lib/canna/Imakefile	Thu Dec 29 13:42:20 2005
+@@ -57,5 +57,5 @@
+ #if ProjectX > 5
+ #define LibName canna
+-#define SoRev		cannaDsoRev
++#define SoRev		LIBcanna_VERSION
+ #define SHLIBDIR	libCannaDir
+ #define USRLIBDIR	libCannaDir
+@@ -71,9 +71,9 @@ LibraryObjectRule()
+ #if DoSharedLib
+ #if DoNormalLib
+-SharedLibraryTarget(canna,$(cannaDsoRev),$(OBJS),shared,..)
++SharedLibraryTarget(canna,$(LIBcanna_VERSION),$(OBJS),shared,..)
+ #else
+-SharedLibraryTarget(canna,$(cannaDsoRev),$(OBJS),.,.)
++SharedLibraryTarget(canna,$(LIBcanna_VERSION),$(OBJS),.,.)
+ #endif
+-InstallSharedLibrary(canna,$(cannaDsoRev),$(libCannaDir))
++InstallSharedLibrary(canna,$(LIBcanna_VERSION),$(libCannaDir))
+ #endif /* DoSharedLib */
+ 
