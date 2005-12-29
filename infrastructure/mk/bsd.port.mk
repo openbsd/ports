@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.741 2005/12/23 12:41:37 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.742 2005/12/29 12:48:04 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -287,13 +287,14 @@ CONFIGURE_STYLE+=gnu
 .endif
 
 USE_LIBTOOL?=No
+_lt_libs=
 .if ${USE_LIBTOOL:L} == "yes"
 LIBTOOL?=			${DEPBASE}/bin/libtool
 BUILD_DEPENDS+=		::devel/libtool
-CONFIGURE_ENV+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
-MAKE_ENV+=			LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
-MAKE_FLAGS+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
-FAKE_FLAGS+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
+CONFIGURE_ENV+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
+MAKE_ENV+=			LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
+MAKE_FLAGS+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
+FAKE_FLAGS+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
 .endif
 
 SUBPACKAGE?=
@@ -640,6 +641,7 @@ SHARED_LIBS?=
 .for _n _v in ${SHARED_LIBS}
 LIB${_n}_VERSION=${_v}
 SUBST_VARS+=LIB${_n}_VERSION
+_lt_libs+=LIB${_n}_LTVERSION='-version-info ${_v:S/./:/}:0'
 .endfor
 
 # Create the generic variable substitution list, from subst vars
