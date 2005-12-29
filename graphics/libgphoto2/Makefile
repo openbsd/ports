@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2005/05/16 17:44:01 robert Exp $
+# $OpenBSD: Makefile,v 1.8 2005/12/29 13:16:32 steven Exp $
 
 COMMENT=	'digital camera library'
 CATEGORIES=	graphics devel
@@ -7,7 +7,12 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>, Arnaud Launay <asl@launay.org>
 
 VERSION=	2.1.5
 DISTNAME=	libgphoto2-${VERSION}
-PKGNAME=	libgphoto-${VERSION}
+PKGNAME=	libgphoto-${VERSION}p0
+
+SHARED_LIBS=		gphoto2			2.3	\
+			gphoto2_port		5.1
+MODGNU_SHARED_LIBS=	gphoto2			''	\
+			gphoto2_port		''	
 
 HOMEPAGE=	http://www.gphoto.org/
 
@@ -20,6 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 WANTLIB=		m
 
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.57
 SEPARATE_BUILD=		simple
