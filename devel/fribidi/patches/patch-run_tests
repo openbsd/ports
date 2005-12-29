@@ -1,0 +1,9 @@
+$OpenBSD: patch-run_tests,v 1.1 2005/12/29 13:56:08 bernd Exp $
+--- run.tests.orig	Wed Dec 28 18:24:05 2005
++++ run.tests	Wed Dec 28 18:24:47 2005
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # run.tests - Check that the algorithm does what it is supposed to
+ # Copyright (C) 1999,2000 Dov Grobgeld, and
+ # Copyright (C) 2001,2002 Behdad Esfahbod.

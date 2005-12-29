@@ -1,9 +1,20 @@
-# $OpenBSD: Makefile,v 1.38 2005/11/03 18:28:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2005/12/29 13:56:07 bernd Exp $
 
 COMMENT=	"high-performance CORBA ORB with support for the C language"
 
 DISTNAME=	ORBit-0.5.13
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=	IDL		4.4 \
+		IIOP		5.13 \
+		ORBit		5.13 \
+		ORBitCosNaming	5.13 \
+		ORBitutil	5.13
+MODGNU_SHARED_LIBS=	IDL		'' \
+			IIOP		'' \
+			ORBit		'' \
+			ORBitCosNaming	'' \
+			ORBitutil	''
+
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/ORBit/0.5/}
 
@@ -25,6 +36,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m wrap
 
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/popt ${WRKSRC}/libIDL

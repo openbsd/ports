@@ -1,0 +1,12 @@
+$OpenBSD: patch-avcall_Makefile_in,v 1.3 2005/12/29 13:56:07 bernd Exp $
+--- avcall/Makefile.in.orig	Wed Dec 28 15:49:22 2005
++++ avcall/Makefile.in	Wed Dec 28 15:49:38 2005
+@@ -144,7 +144,7 @@ structcpy.lo : $(srcdir)/structcpy.c
+ 	$(LIBTOOL_COMPILE) $(CC) $(CFLAGS) -c $(srcdir)/structcpy.c
+ 
+ libavcall.la : $(OBJECTS)
+-	$(LIBTOOL_LINK) $(CC) -o libavcall.la -rpath $(libdir) $(OBJECTS)
++	$(LIBTOOL_LINK) $(CC) -o libavcall.la $(libavcall_la_LDFLAGS) -rpath $(libdir) $(OBJECTS)
+ 
+ # Installs the library and include files only. Typically called with only
+ # $(libdir) and $(includedir) - don't use $(prefix) and $(exec_prefix) here.

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2004/08/10 09:43:46 espie Exp $
-@lib lib/libIDL.so.4.4
-@lib lib/libIIOP.so.5.13
-@lib lib/libORBit.so.5.13
-@lib lib/libORBitCosNaming.so.5.13
-@lib lib/libORBitutil.so.5.13
+@comment $OpenBSD: PFRAG.shared,v 1.9 2005/12/29 13:56:07 bernd Exp $
+@lib lib/libIDL.so.${LIBIDL_VERSION}
+@lib lib/libIIOP.so.${LIBIIOP_VERSION}
+@lib lib/libORBit.so.${LIBORBit_VERSION}
+@lib lib/libORBitCosNaming.so.${LIBORBitCosNaming_VERSION}
+@lib lib/libORBitutil.so.${LIBORBitutil_VERSION}

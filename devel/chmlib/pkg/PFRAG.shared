@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/11/08 10:40:17 espie Exp $
-@lib lib/libchm.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/29 13:56:07 bernd Exp $
+@lib lib/libchm.so.${LIBchm_VERSION}
