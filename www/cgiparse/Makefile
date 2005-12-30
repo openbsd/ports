@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2005/08/17 16:10:04 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2005/12/30 22:26:50 sturm Exp $
 
 COMMENT=	"C library to parse CGI Forms"
 
 DISTNAME=	cgiparse-0.9b
 PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
+SHARED_LIBS=	cgiparse	1.0
 
 HOMEPAGE=	http://resnet.uoregon.edu/~gurney_j/jmpc/cgiparse.html
 
@@ -23,6 +24,8 @@ BROKEN=		"Alpha architecture not yet supported"
 .endif
 
 NO_REGRESS=	Yes
+
+MAKE_ENV=	LIBcgiparse_VERSION=${LIBcgiparse_VERSION}
 
 .include <bsd.port.mk>
 

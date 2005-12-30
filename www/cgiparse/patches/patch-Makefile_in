@@ -1,13 +1,11 @@
---- Makefile.in.orig	Sun Sep 24 12:32:11 2000
-+++ Makefile.in	Sat Jun 28 03:02:06 2003
-@@ -29,11 +29,12 @@ LIBS+= @LIBS@
- AFLAGS = -Wall -I. -I$(srcdir) $(CPPFLAGS) $(DEBUG) $(OPT) $(LIBOPTS) $(CFLAGS)
+--- Makefile.in.orig	Sun Sep 24 20:32:11 2000
++++ Makefile.in	Fri Dec 30 22:47:00 2005
+@@ -30,10 +30,10 @@ AFLAGS = -Wall -I. -I$(srcdir) $(CPPFLAG
  
  MAJOR=1
-+MINOR=0
  ARNAME = lib$(LIB).a
 -SONAME = lib$(LIB).so.$(MAJOR)
-+SONAME = lib$(LIB).so.$(MAJOR).$(MINOR)
++SONAME = lib$(LIB).so.$(LIBcgiparse_VERSION)
  PANAME = lib$(LIB)_p.a
  
 -prefix = @prefix@
@@ -15,7 +13,7 @@
  exec_prefix = @exec_prefix@
  LIBDIR = @libdir@
  LIBOWN = 0
-@@ -52,6 +53,8 @@ MAN3 = cgigetvalue.3 cgiclose.3 cginewqu
+@@ -52,6 +52,8 @@ MAN3 = cgigetvalue.3 cgiclose.3 cginewqu
  
  all: $(ARNAME) $(SONAME) $(PANAME)
  
@@ -24,7 +22,7 @@
  $(ARNAME): $(OBJS)
  	$(AR) rc $@ $(OBJS)
  
-@@ -74,6 +77,20 @@ clean:
+@@ -74,6 +76,20 @@ clean:
  install: $(ARNAME) $(SONAME) $(PANAME) maninstall
  	mkdir -p -m 755 $(LIBDIR)
  	for i in $(ARNAME) $(SONAME) $(PANAME); do		\

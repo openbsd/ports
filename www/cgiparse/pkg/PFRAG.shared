@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/15 18:49:49 espie Exp $
-@lib lib/libcgiparse.so.1.0
+@comment $OpenBSD: PFRAG.shared,v 1.6 2005/12/30 22:26:50 sturm Exp $
+@lib lib/libcgiparse.so.${LIBcgiparse_VERSION}

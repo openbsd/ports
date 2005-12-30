@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2005/01/10 18:12:03 pedro Exp $
+# $OpenBSD: Makefile,v 1.6 2005/12/30 22:26:50 sturm Exp $
 
 COMMENT=		"FastCGI Development Kit"
 
 DISTNAME=		fcgi-2.4.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www
+SHARED_LIBS=		fcgi++	0.0 \
+			fcgi	0.0
 
 HOMEPAGE=		http://www.fastcgi.com/
 
@@ -17,6 +20,8 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c 
 
 MASTER_SITES=		${HOMEPAGE}/dist/
+
+USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 
