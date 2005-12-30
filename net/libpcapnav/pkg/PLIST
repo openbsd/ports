@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/27 23:00:45 mjc Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/12/30 22:51:31 steven Exp $
 bin/pcapnav-config
 include/pcapnav.h
 lib/libpcapnav.a
@@ -7,12 +7,14 @@ share/doc/libpcapnav/
 share/doc/libpcapnav/a1145.html
 share/doc/libpcapnav/a1147.html
 share/doc/libpcapnav/a1148.html
+share/doc/libpcapnav/a1295.html
 share/doc/libpcapnav/about.html
 share/doc/libpcapnav/api.html
 share/doc/libpcapnav/c15.html
 share/doc/libpcapnav/c16.html
 share/doc/libpcapnav/c58.html
 share/doc/libpcapnav/c59.html
+share/doc/libpcapnav/c60.html
 share/doc/libpcapnav/images/
 share/doc/libpcapnav/images/caution.gif
 share/doc/libpcapnav/images/note.gif

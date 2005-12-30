@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/27 23:00:45 mjc Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/30 22:51:31 steven Exp $
 
 COMMENT=	"library for navigating to arbitrary packets in a trace file"
 
 DISTNAME=	libpcapnav-0.6
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=		pcapnav	0.0
+MODGNU_SHARED_LIBS=	pcapnav	''
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netdude/}
 
@@ -19,6 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		pcap
 
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc/libpcapnav
 
