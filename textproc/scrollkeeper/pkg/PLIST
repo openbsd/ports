@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2005/09/04 23:38:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2005/12/30 08:14:33 steven Exp $
 %%SHARED%%
 bin/scrollkeeper-config
 bin/scrollkeeper-extract
@@ -35,17 +35,17 @@ share/doc/scrollkeeper-0.3.14/scrollkeeper-spec.txt
 share/examples/scrollkeeper/
 share/examples/scrollkeeper/scrollkeeper.conf
 @sample ${SYSCONFDIR}/scrollkeeper.conf
+share/libxml2/scrollkeeper.spec
+@exec %D/share/libxml2/rebuild
+@exec %D/bin/scrollkeeper-rebuilddb -q
+@unexec %D/share/libxml2/rebuild
 share/locale/am/
 share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/scrollkeeper.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/scrollkeeper.mo
-share/locale/be/
-share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/scrollkeeper.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/scrollkeeper.mo
 share/locale/cs/LC_MESSAGES/scrollkeeper.mo
 share/locale/da/LC_MESSAGES/scrollkeeper.mo
@@ -68,8 +68,6 @@ share/locale/ro/LC_MESSAGES/scrollkeeper.mo
 share/locale/ru/LC_MESSAGES/scrollkeeper.mo
 share/locale/sk/LC_MESSAGES/scrollkeeper.mo
 share/locale/sl/LC_MESSAGES/scrollkeeper.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/scrollkeeper.mo
 share/locale/sr@Latn/
 share/locale/sr@Latn/LC_MESSAGES/
@@ -77,8 +75,6 @@ share/locale/sr@Latn/LC_MESSAGES/scrollkeeper.mo
 share/locale/sv/LC_MESSAGES/scrollkeeper.mo
 share/locale/tr/LC_MESSAGES/scrollkeeper.mo
 share/locale/uk/LC_MESSAGES/scrollkeeper.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/scrollkeeper.mo
 share/locale/zh_CN/LC_MESSAGES/scrollkeeper.mo
 share/locale/zh_TW/LC_MESSAGES/scrollkeeper.mo
@@ -164,9 +160,5 @@ share/xml/scrollkeeper/
 share/xml/scrollkeeper/dtds/
 share/xml/scrollkeeper/dtds/scrollkeeper-cl.dtd
 share/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd
-share/libxml2/scrollkeeper.spec
-@exec %D/share/libxml2/rebuild
-@exec %D/bin/scrollkeeper-rebuilddb -q
-@unexec %D/share/libxml2/rebuild
 @extraunexec rm -rf /var/db/scrollkeeper/
 @extraunexec rm -f /var/log/scrollkeeper.log*

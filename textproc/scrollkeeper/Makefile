@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2005/09/04 23:38:18 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2005/12/30 08:14:33 steven Exp $
 
 COMMENT=		"Scrollkeeper Open Documentation Cataloging System"
 
 VERSION=		0.3.14
 DISTNAME=		scrollkeeper-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
+SHARED_LIBS=		scrollkeeper	1.0
+MODGNU_SHARED_LIBS=	scrollkeeper	''
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://scrollkeeper.sourceforge.net
@@ -29,6 +31,7 @@ RUN_DEPENDS=		:docbook->=4.2p1:textproc/docbook
 LIB_DEPENDS=		xml2.7:libxml->=2.6.16p6:textproc/libxml \
 			xslt.1::textproc/libxslt
 
+USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
