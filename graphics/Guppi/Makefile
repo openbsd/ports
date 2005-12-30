@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2005/12/10 15:34:34 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/12/30 10:46:04 steven Exp $
 # Original from: Adam Skutt <LordHunter317@softhome.net>
 
 COMMENT=		"GNOME-based plot program with statistics capabilities"
 DISTNAME=		Guppi-0.40.3
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
+SHARED_LIBS=		guppi		16.0	\
+			guppitank	16.0
+MODGNU_SHARED_LIBS=	guppi		''
 CATEGORIES=		graphics
 HOMEPAGE=		http://www.gnome.org/projects/guppi/
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
@@ -35,6 +38,7 @@ LIB_DEPENDS=	bonobo.2,bonobox,bonobo-print::x11/gnome/bonobo \
 
 SEPARATE_BUILD=		simple
 
+USE_LIBTOOL=		Yes
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

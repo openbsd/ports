@@ -1,0 +1,12 @@
+$OpenBSD: patch-libguppitank_Makefile_in,v 1.1 2005/12/30 10:46:04 steven Exp $
+--- libguppitank/Makefile.in.orig	Fri Dec 30 10:55:09 2005
++++ libguppitank/Makefile.in	Fri Dec 30 10:55:31 2005
+@@ -207,7 +207,7 @@ noinst_HEADERS =  	guppi-object-barchart
+ 
+ EXTRA_DIST = $(noinst_HEADERS)
+ 
+-libguppitank_la_LDFLAGS = -version-info $(GUPPI_CURRENT):$(GUPPI_REVISION):$(GUPPI_AGE) $(EXTRA_LDFLAGS)
++libguppitank_la_LDFLAGS = $(LIBguppitank_LTVERSION) $(EXTRA_LDFLAGS)
+ 
+ noinst_PROGRAMS = demo demo2 demo-scatter 
+ demo_SOURCES = demo.c
