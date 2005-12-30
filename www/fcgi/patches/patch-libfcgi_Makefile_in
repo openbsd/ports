@@ -1,0 +1,21 @@
+$OpenBSD: patch-libfcgi_Makefile_in,v 1.1 2005/12/30 22:27:40 sturm Exp $
+--- libfcgi/Makefile.in.orig	Fri Dec 30 23:20:04 2005
++++ libfcgi/Makefile.in	Fri Dec 30 23:20:29 2005
+@@ -115,7 +115,7 @@ libfcgi___la_SOURCES = $(INCLUDE_FILES) 
+                        fcgio.cpp
+ 
+ libfcgi___la_CFLAGS = @PTHREAD_CFLAGS@
+-libfcgi___la_LDFLAGS = -lfcgi -rpath @libdir@
++libfcgi___la_LDFLAGS = ${LIBfcgi++_LTVERSION} -lfcgi -rpath @libdir@
+ subdir = libfcgi
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/fcgi_config.h
+@@ -125,7 +125,7 @@ LTLIBRARIES = $(lib_LTLIBRARIES)
+ libfcgi___la_LIBADD =
+ am_libfcgi___la_OBJECTS = fcgio.lo
+ libfcgi___la_OBJECTS = $(am_libfcgi___la_OBJECTS)
+-libfcgi_la_LDFLAGS =
++libfcgi_la_LDFLAGS = ${LIBfcgi_LTVERSION}
+ libfcgi_la_LIBADD =
+ am_libfcgi_la_OBJECTS = libfcgi_la-fcgiapp.lo libfcgi_la-fcgi_stdio.lo \
+ 	libfcgi_la-os_@SYSTEM@.lo
