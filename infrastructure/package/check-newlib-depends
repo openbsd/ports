@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.11 2005/09/13 20:48:41 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.12 2005/12/30 14:09:47 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -78,7 +78,7 @@ sub check_wantlibs
 	}
 	# this will fail because of links, so we don't care.
 	eval { $file->create(); };
-	unless ($@) {
+	unless ($@ or defined $item->{symlink}) {
 		my $n = shellquote("$where$fullname");
 		my $cmd;
 		if ($main::opt_o) {
