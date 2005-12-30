@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/07/09 00:35:02 jolan Exp $
-@lib lib/libtheora.so.1.0
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/30 05:35:56 jakemsr Exp $
+@lib lib/libtheora.so.${LIBtheora_VERSION}

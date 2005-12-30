@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2005/07/09 04:19:30 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2005/12/30 05:35:56 jakemsr Exp $
 
 COMMENT=	"open video codec"
 DISTNAME=	libtheora-1.0alpha4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	multimedia
+SHARED_LIBS=		theora	1.0
+MODGNU_SHARED_LIBS=	theora	''
+
 MASTER_SITES=	http://downloads.xiph.org/releases/theora/
 
 HOMEPAGE=	http://www.theora.org/
@@ -16,11 +20,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
+# uses Ogg headers
+LIB_DEPENDS=	ogg.5::audio/libogg
 
-LIB_DEPENDS=	vorbis.4,vorbisenc.2,vorbisfile.4::audio/libvorbis
-
-WANTLIB=	ogg
-
+USE_LIBTOOL=	Yes
+SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE=gnu
 
 post-install:
