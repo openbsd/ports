@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2005/08/17 16:10:03 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2005/12/30 22:43:56 steven Exp $
 
 # see md.h, add others
 ONLY_FOR_ARCHS=		alpha i386 sparc
@@ -7,6 +7,7 @@ COMMENT=		"threaded library for writing Internet applications"
 
 DISTNAME=		st-1.4
 PKGNAME=		lib${DISTNAME}p0
+SHARED_LIBS=		st	1.4
 CATEGORIES=		net devel
 HOMEPAGE=		http://state-threads.sourceforge.net/
 
@@ -21,14 +22,16 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=state-threads/}
 
 MAKE_FLAGS=		CC='${CC}' CFLAGS='${CFLAGS} -fPIC -DOPENBSD' \
-			LD='${CC}' LDFLAGS='-shared -fPIC'
+			LD='${CC}' LDFLAGS='-shared -fPIC' \
+			VERSION=${LIBst_VERSION}
 
 USE_GMAKE=		Yes
 ALL_TARGET=		openbsd-optimized
 NO_REGRESS=		Yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/OPENBSD_${OPSYS_VER}_OPT/libst.so.1.4 \
+	${INSTALL_PROGRAM} \
+		${WRKSRC}/OPENBSD_${OPSYS_VER}_OPT/libst.so.${LIBst_VERSION} \
 		${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/OPENBSD_${OPSYS_VER}_OPT/libst.a \
 		${PREFIX}/lib
