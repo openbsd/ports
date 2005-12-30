@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.1 2005/12/25 11:49:21 steven Exp $
+$OpenBSD: patch-lib_Makefile_in,v 1.2 2005/12/30 08:39:05 steven Exp $
 --- lib/Makefile.in.orig	Sun Dec 25 11:45:45 2005
 +++ lib/Makefile.in	Sun Dec 25 11:47:16 2005
 @@ -212,10 +212,10 @@ libaspell_la_LIBADD = ${top_builddir}/co
@@ -6,11 +6,11 @@ $OpenBSD: patch-lib_Makefile_in,v 1.1 2005/12/25 11:49:21 steven Exp $
                        ${top_builddir}/modules/tokenizer/libaspell-tokenizer-standard.la
  
 -libaspell_la_LDFLAGS = ${extra_ldflags} -version-info 15:3:0
-+libaspell_la_LDFLAGS = ${extra_ldflags} ${librealaspell_la_LDFLAGS}
++libaspell_la_LDFLAGS = ${extra_ldflags} ${LIBaspell_LTVERSION}
  libpspell_la_SOURCES = dummy.cpp
  libpspell_la_LIBADD = libaspell.la
 -libpspell_la_LDFLAGS = ${extra_ldflags} -version-info 15:3:0
-+libpspell_la_LDFLAGS = ${extra_ldflags} ${librealpspell_la_LDFLAGS}
++libpspell_la_LDFLAGS = ${extra_ldflags} ${LIBpspell_LTVERSION}
  all: all-am
  
  .SUFFIXES:
