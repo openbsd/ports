@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2005/11/20 14:18:08 wilfried Exp $
+# $OpenBSD: Makefile,v 1.24 2005/12/30 00:35:14 naddy Exp $
 
 COMMENT=		"C++ interface for gtk+"
 COMMENT-docs=		"C++ interface for gtk+ documentation"
@@ -7,6 +7,10 @@ VERSION=		1.2.10
 DISTNAME=		gtkmm-${VERSION}
 PKGNAME=		${DISTNAME}p3
 PKGNAME-docs=		gtkmm-docs-${VERSION}
+SHARED_LIBS=		gdkmm 2.2 \
+			gtkmm 2.5
+MODGNU_SHARED_LIBS=	gdkmm '' \
+			gtkmm ''
 CATEGORIES=		devel x11
 
 HOMEPAGE=		http://gtkmm.sourceforge.net/
@@ -36,7 +40,6 @@ WANTLIB=
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
-NO_REGRESS=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2005/02/21 19:44:46 alek Exp $
+# $OpenBSD: Makefile,v 1.23 2005/12/30 00:35:14 naddy Exp $
 
 COMMENT=	"OpenGL widget for GTK+ GUI toolkit"
 
 DISTNAME=	gtkglarea-1.2.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=	gtkgl 1.2
+MODGNU_SHARED_LIBS=	gtkgl ''
 CATEGORIES=	x11 graphics
 MASTER_SITES=	http://www.student.oulu.fi/~jlof/gtkglarea/download/
 
@@ -20,7 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	simple
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --with-lib-GL
