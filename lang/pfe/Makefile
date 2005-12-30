@@ -1,8 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2005/06/28 17:46:43 aanriot Exp $
+# $OpenBSD: Makefile,v 1.3 2005/12/30 23:21:16 alek Exp $
 
-COMMENT=	"the Portable Forth Environment"
+COMMENT=	"Portable Forth Environment"
 
 DISTNAME=	pfe-0.32.94
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=		pfe 32.94 \
+			pfe-0 32.94
+MODGNU_SHARED_LIBS=	pfe '-export-dynamic -release 0' \
+			pfe-0 '-export-dynamic -release 0'
 CATEGORIES=    	lang
 
 HOMEPAGE=	http://pfe.sourceforge.net/
@@ -20,6 +25,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pfe/}
 WANTLIB=	c m ncurses
 
 CONFIGURE_STYLE=	gnu
+
+USE_LIBTOOL=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pfe/

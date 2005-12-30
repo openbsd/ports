@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/28 17:57:43 mbalmer Exp $
-@lib lib/libpfe-0.so.32.94
-@lib lib/libpfe.so.32.94
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/30 23:21:16 alek Exp $
+@lib lib/libpfe-0.so.${LIBpfe-0_VERSION}
+@lib lib/libpfe.so.${LIBpfe_VERSION}
 lib/pfe/dstrings.so
 lib/pfe/edit.so
 lib/pfe/floating.so

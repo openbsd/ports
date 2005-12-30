@@ -1,0 +1,25 @@
+$OpenBSD: patch-pfe_configure,v 1.1 2005/12/30 23:21:16 alek Exp $
+--- pfe/configure.orig	Mon Dec 26 14:30:13 2005
++++ pfe/configure	Mon Dec 26 14:30:39 2005
+@@ -11746,21 +11746,6 @@ echo "${ECHO_T}:can use --with-regs with
+ echo "${ECHO_T}:and use --with-regs on unknown gcc version" >&6 ;;
+   esac ;;
+ esac
+-if test "_$libpfe_need_libm" != "yes" ; then
+-echo "$as_me:11750: result: cleaning LIBS from -lm occurrences" >&5
+-echo "${ECHO_T}cleaning LIBS from -lm occurrences" >&6
+- LIBS=`echo " $LIBS " | sed -e "s/ -lm //g"`
+-fi
+-if test "$GCC" = "yes" ; then if test "_$libpfe_no_debug" = "_yes" ; then
+-echo "$as_me:11755: result: cleaning CFLAGS from -g occurrences" >&5
+-echo "${ECHO_T}cleaning CFLAGS from -g occurrences" >&6
+- CFLAGS=`echo " $CFLAGS " | sed -e "s/ -g //g"`
+-fi fi
+-if test "_$libpfe_no_strip" = "_yes" ; then
+-echo "$as_me:11760: result: cleaning LDFLAGS from -Wl" >&5
+-echo "${ECHO_T}cleaning LDFLAGS from -Wl" >&6
+- LDFLAGS=`echo " $LDFLAGS " | sed -e 's/ -Wl,-S //'`
+-fi
+ if test "$enable_shared" = "yes" ; then
+ 
+ cat >>confdefs.h <<\EOF
