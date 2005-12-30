@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/12/30 04:41:30 jolan Exp $
+@lib lib/libtorrent.so.${LIBtorrent_VERSION}

@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/12/30 04:41:30 jolan Exp $
+%%SHARED%%
+include/torrent/
+include/torrent/bencode.h
+include/torrent/common.h
+include/torrent/download.h
+include/torrent/entry.h
+include/torrent/event.h
+include/torrent/exceptions.h
+include/torrent/http.h
+include/torrent/peer.h
+include/torrent/poll.h
+include/torrent/poll_epoll.h
+include/torrent/poll_select.h
+include/torrent/rate.h
+include/torrent/torrent.h
+include/torrent/tracker.h
+lib/libtorrent.a
+lib/libtorrent.la
+lib/pkgconfig/
+lib/pkgconfig/libtorrent.pc
