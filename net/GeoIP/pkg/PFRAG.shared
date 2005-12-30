@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/09 19:33:45 steven Exp $
-@lib lib/libGeoIP.so.4.14
-@lib lib/libGeoIPUpdate.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.5 2005/12/30 21:04:39 steven Exp $
+@lib lib/libGeoIP.so.${LIBGeoIP_VERSION}
+@lib lib/libGeoIPUpdate.so.${LIBGeoIPUpdate_VERSION}
