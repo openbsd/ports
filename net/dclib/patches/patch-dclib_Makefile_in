@@ -1,0 +1,12 @@
+$OpenBSD: patch-dclib_Makefile_in,v 1.1 2005/12/30 20:27:43 naddy Exp $
+--- dclib/Makefile.in.orig	Fri Dec 30 18:09:57 2005
++++ dclib/Makefile.in	Fri Dec 30 18:10:27 2005
+@@ -171,7 +171,7 @@ chublistmanager.cpp chublistmanager.h cs
+ csearchsocket.cpp csearchsocket.h
+ 
+ 
+-libdc_la_LDFLAGS = -version-info 0:1 core/libcore.la hash/libhash.la $(XML_LIBS) $(LIBSSL) $(SSL_LDFLAGS) -rdynamic
++libdc_la_LDFLAGS = $(LIBdc_LTVERSION) core/libcore.la hash/libhash.la $(XML_LIBS) $(LIBSSL) $(SSL_LDFLAGS) -rdynamic
+ AM_CXXFLAGS = @CXXFLAGS@ -D_REENTRANT -Wall $(XML_CFLAGS) $(SSL_INCLUDES)
+ INCLUDES = $(all_includes) -Icore -Ihash
+ 
