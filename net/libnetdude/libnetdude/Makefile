@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2005/07/05 00:08:04 mjc Exp $
+# $OpenBSD: Makefile,v 1.3 2005/12/30 23:00:17 steven Exp $
 
 COMMENT=	"packet manipulation backend of the Netdude trace file editing framework"
 
 DISTNAME=	libnetdude-0.7
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=		netdude	0.0
+MODGNU_SHARED_LIBS=	netdude	''
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netdude/}
 
@@ -23,6 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c pcap
 
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc/libnetdude \
 			--disable-gtk-doc --datadir=${PREFIX}/lib
