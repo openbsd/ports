@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2005/05/11 19:08:53 alek Exp $
-@lib lib/libMrm.so.3.0
-@lib lib/libUil.so.3.0
-@lib lib/libXm.so.3.0
+@comment $OpenBSD: PFRAG.shared,v 1.6 2005/12/30 22:21:21 steven Exp $
+@lib lib/libMrm.so.${LIBMrm_VERSION}
+@lib lib/libUil.so.${LIBUil_VERSION}
+@lib lib/libXm.so.${LIBXm_VERSION}

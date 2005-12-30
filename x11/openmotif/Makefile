@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2005/05/11 19:08:53 alek Exp $
+# $OpenBSD: Makefile,v 1.24 2005/12/30 22:21:21 steven Exp $
 
 COMMENT=	"Motif toolkit"
 COMMENT-debuglibs="Motif toolkit debug libraries"
@@ -6,9 +6,13 @@ COMMENT-demos=	"Motif toolkit demos"
 VERSION=	2.1.30
 DISTNAME=	motif
 PATCHLEVEL=	5
-PKGNAME=	openmotif-${VERSION}.${PATCHLEVEL}p0
-PKGNAME-demos=	openmotif-demos-${VERSION}.${PATCHLEVEL}
-PKGNAME-debuglibs=openmotif-debuglibs-${VERSION}.${PATCHLEVEL}
+PKGNAME=	openmotif-${VERSION}.${PATCHLEVEL}p1
+PKGNAME-demos=	openmotif-demos-${VERSION}.${PATCHLEVEL}p0
+PKGNAME-debuglibs=openmotif-debuglibs-${VERSION}.${PATCHLEVEL}p0
+
+SHARED_LIBS=	Mrm	3.0	\
+		Uil	3.0	\
+		Xm	3.0
 
 CATEGORIES=	x11
 
@@ -28,8 +32,6 @@ PATCH_DIST_STRIP=	-p1
 
 HOMEPAGE=	http://www.opengroup.org/openmotif/
 
-MAINTAINER=	Sungman Cho <smcho@tsp.korea.ac.kr>
-
 # license only available on webpage
 # http://www.opengroup.org/openmotif/license
 PERMIT_PACKAGE_CDROM=	Yes
@@ -44,6 +46,11 @@ USE_X11=	Yes
 
 ALL_TARGET=	World
 INSTALL_TARGET=	install install.man
+
+MAKE_FLAGS=	SOMRMREV=${LIBMrm_VERSION}	\
+		SOUILREV=${LIBUil_VERSION}	\
+		SOXMREV=${LIBXm_VERSION}
+FAKE_FLAGS=	${MAKE_FLAGS} ${DESTDIRNAME}=${WRKINST}
 
 # This dialog has been copied from the lesstif port.
 .if defined(HAVE_MOTIF) && ${HAVE_MOTIF:L} == "yes"
