@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/22 11:50:30 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2005/12/30 23:25:56 steven Exp $
 
 COMMENT=	"filemanager for X Window"
 
 DISTNAME=	xnc-4.4.7
-DISTFILES=      ${DISTNAME}.src${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
+SHARED_LIBS=	xncaqua	0.0 \
+		xncfive	0.0
+
 CATEGORIES=	misc x11
 
 MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
@@ -31,6 +34,10 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/l
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-x
+
+FAKE_FLAGS=	LIBxncaqua_VERSION=${LIBxncaqua_VERSION} \
+		LIBxncfive_VERSION=${LIBxncfive_VERSION} \
+		DESTDIR=${WRKINST}
 
 XNLAUNCHFILES=	.launch.menu .xnlaunch.ini graphs.gif ives.gif kill.gif \
 		map.gif netscape.gif term.gif tnet.gif

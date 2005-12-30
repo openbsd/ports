@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2003/03/05 22:48:08 pvalchev Exp $
---- Makefile.in.orig	Wed Mar 27 05:16:28 2002
-+++ Makefile.in	Wed Mar  5 15:30:36 2003
+$OpenBSD: patch-Makefile_in,v 1.6 2005/12/30 23:25:56 steven Exp $
+--- Makefile.in.orig	Wed Mar 27 13:16:28 2002
++++ Makefile.in	Sat Dec 31 00:15:44 2005
 @@ -268,19 +268,19 @@ install: install-$(PLUGINS)
  	$(INSM) ./yo-man/*.1 $(INSTMAN)/man1
  	$(INS) ./ives/ives $(INSTDIR)
@@ -21,8 +21,8 @@ $OpenBSD: patch-Makefile_in,v 1.5 2003/03/05 22:48:08 pvalchev Exp $
  	mkdir -p $(INSTPLUG)
 -	$(INS) ./plugins/five/libxncfive.so $(INSTPLUG)
 -	$(INS) ./plugins/aqua/libxncaqua.so $(INSTPLUG)
-+	$(INS) ./plugins/five/libxncfive.so $(INSTPLUG)/libxncfive.so.0.0
-+	$(INS) ./plugins/aqua/libxncaqua.so $(INSTPLUG)/libxncaqua.so.0.0
++	$(INS) ./plugins/five/libxncfive.so $(INSTPLUG)/libxncfive.so.$(LIBxncfive_VERSION)
++	$(INS) ./plugins/aqua/libxncaqua.so $(INSTPLUG)/libxncaqua.so.$(LIBxncaqua_VERSION)
  
  install-:
  	@echo "Skipping..."

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.1 2003/12/26 19:34:23 naddy Exp $
---- configure.in.orig	2002-03-27 16:59:52.000000000 +0100
-+++ configure.in	2003-12-26 18:25:42.000000000 +0100
-@@ -198,20 +198,6 @@ AC_CHECK_LIB(jpeg, jpeg_read_scanlines,
+$OpenBSD: patch-configure_in,v 1.2 2005/12/30 23:25:56 steven Exp $
+--- configure.in.orig	Wed Mar 27 16:59:52 2002
++++ configure.in	Sat Dec 31 00:06:10 2005
+@@ -198,21 +198,7 @@ AC_CHECK_LIB(jpeg, jpeg_read_scanlines,
   need_jpeg="yes"
  ])
  
@@ -18,14 +18,17 @@ $OpenBSD: patch-configure_in,v 1.1 2003/12/26 19:34:23 naddy Exp $
 -  echo "TIFFDEFINE=" >>make.conf
 -  echo "TIFFINC=" >> make.conf
 -])
--
  
+-
  AC_CHECK_LIB(z, inflate,
  [
-@@ -227,6 +213,21 @@ AC_CHECK_LIB(z, inflate,
+  echo "ZINC=" >>make.conf
+@@ -225,6 +211,21 @@ AC_CHECK_LIB(z, inflate,
+  echo "ZLIB=`pwd`/zlib/libz.a" >>make.conf
+  echo "ZDEP=../zlib/libz.a" >>make.conf
  ])
- 
- 
++
++
 +AC_CHECK_LIB(tiff, TIFFGetField,
 +[
 +  out_lib="$out_lib -ltiff -ljpeg"
@@ -39,8 +42,6 @@ $OpenBSD: patch-configure_in,v 1.1 2003/12/26 19:34:23 naddy Exp $
 +  echo "TIFFDEFINE=" >>make.conf
 +  echo "TIFFINC=" >> make.conf
 +], -ljpeg -lz)
-+
-+
+ 
+ 
  AC_CHECK_LIB(png, png_get_valid,
- [
-  echo "PNGDEFINE=-DLOAD_PNG" >>make.conf
