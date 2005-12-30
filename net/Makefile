@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.397 2005/12/28 19:55:33 jolan Exp $
+# $OpenBSD: Makefile,v 1.398 2005/12/30 04:45:01 jolan Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -122,6 +122,7 @@
      SUBDIR += libpcapnav
      SUBDIR += libshout
      SUBDIR += libst
+     SUBDIR += libtorrent
      SUBDIR += luasocket
      SUBDIR += maradns
      SUBDIR += mbrowse
@@ -266,6 +267,7 @@
      SUBDIR += rrdtool,tcl
      SUBDIR += rsnapshot
      SUBDIR += rsync
+     SUBDIR += rtorrent
      SUBDIR += ruby-pcap
      SUBDIR += samba
      SUBDIR += samba,cups
