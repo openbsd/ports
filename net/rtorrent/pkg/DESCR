@@ -1,0 +1,8 @@
+rTorrent is an interactive ncurses BitTorrent client, based on
+libTorrent.
+
+rTorrents features include:
+ * Use an URL or file path to add torrents at runtime
+ * Stop, delete and resume torrents
+ * Load, save and delete torrents automatically in a session directory
+ * Safe fast resume support

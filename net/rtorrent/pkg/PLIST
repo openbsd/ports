@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/12/30 04:42:36 jolan Exp $
+bin/rtorrent
+@man man/man1/rtorrent.1
+share/doc/rtorrent/
+share/doc/rtorrent/README.OpenBSD
+share/examples/rtorrent/
+share/examples/rtorrent/rtorrent.rc

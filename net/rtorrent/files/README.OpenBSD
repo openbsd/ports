@@ -1,0 +1,11 @@
+$OpenBSD: README.OpenBSD,v 1.1.1.1 2005/12/30 04:42:36 jolan Exp $
+
+Note that rTorrent has hash performance issues on BSD systems.  
+Please refer to these links for further information:
+
+* http://libtorrent.rakshasa.no/ticket/14
+* http://libtorrent.rakshasa.no/wiki/RTorrentPerformanceTuning
+
+An example configuration file has been installed in
+@TRUEPREFIX@/share/examples/rtorrent.  It may serve as a starting point
+for tweaking rTorrent performance.
