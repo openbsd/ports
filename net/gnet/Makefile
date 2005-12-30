@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2005/06/01 20:02:47 jolan Exp $
+# $OpenBSD: Makefile,v 1.8 2005/12/30 22:19:10 steven Exp $
 
 COMMENT=	"simple network library"
 DISTNAME=	gnet-2.0.4
+SHARED_LIBS=	gnet-2.0	0.4
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}src/
 
