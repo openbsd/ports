@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2005/05/23 23:50:40 msf Exp $
-@lib lib/libnet-1.0/libnet.so.0.0
-@lib lib/libnet.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/31 14:03:28 steven Exp $
+@lib lib/libnet-1.0/libnet.so.${LIBnet_VERSION}
+@lib lib/libnet.so.${LIBnet_VERSION}

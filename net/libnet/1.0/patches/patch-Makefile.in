@@ -27,7 +27,7 @@
 +SHOBJECTS=	$(OBJECTS:S/.o/.so/)
  
 +PICFLAG= -fpic
-+SHLIB= $(LIBNET).so.0.0
++SHLIB= $(LIBNET).so.$(LIBnet_VERSION)
 +
 +.SUFFIXES: .o .so
 +

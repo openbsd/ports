@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2005/05/24 06:54:20 mjc Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.3 2005/12/31 14:03:28 steven Exp $
 --- src/Makefile.in.orig	Thu Mar 11 10:50:20 2004
 +++ src/Makefile.in	Mon May 23 23:36:28 2005
 @@ -43,10 +43,10 @@ datadir = @datadir@
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.2 2005/05/24 06:54:20 mjc Exp $
  DISTCLEANFILES = *~
  
 -lib_LIBRARIES = libnet.a
-+SHLIB= libnet.so.$(SHLIB_VERSION)
++SHLIB= libnet.so.$(LIBnet_VERSION)
  
 +lib_LIBRARIES = libnet.a $(SHLIB)
 +
