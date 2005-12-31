@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_Makefile,v 1.1.1.1 2001/07/13 17:50:45 pvalchev Exp $
+$OpenBSD: patch-lib_Makefile,v 1.2 2005/12/31 14:32:14 sturm Exp $
 --- lib/Makefile.orig	Thu Feb  4 01:43:26 1999
-+++ lib/Makefile	Sat Jun 30 23:38:26 2001
++++ lib/Makefile	Sat Dec 31 14:27:45 2005
 @@ -25,7 +25,7 @@
  # Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.         #
  ##############################################################################
@@ -18,8 +18,8 @@ $OpenBSD: patch-lib_Makefile,v 1.1.1.1 2001/07/13 17:50:45 pvalchev Exp $
 -	$(AR) $@ common/*.o $(PLATFORM)/*.o
 -	$(RANLIB) $@
 +	$(RM) $@
-+	$(CC) -o $@ common/*.lo $(PLATFORM)/*.lo \
-+		-rpath ${PREFIX}/lib -version-info 1:2
++	$(LIBTOOL) --mode=link $(CC) -o $@ common/*.lo $(PLATFORM)/*.lo \
++		-rpath ${PREFIX}/lib $(LIBXmHTML_LTVERSION)
  	
  depend:: 
  	@( for dir in $(SUBDIRS) ; do \

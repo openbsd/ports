@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/12/31 14:32:14 sturm Exp $
 include/XmHTML/
 include/XmHTML/Balloon.h
 include/XmHTML/BalloonP.h
@@ -14,6 +14,7 @@ include/XmHTML/resources.h
 include/XmHTML/tka.h
 include/XmHTML/toolkit.h
 lib/libXmHTML.a
+lib/libXmHTML.la
 share/doc/XmHTML/
 share/doc/XmHTML/GPL.html
 share/doc/XmHTML/LGPL.html
@@ -88,18 +89,11 @@ share/examples/XmHTML/book/
 share/examples/XmHTML/book/Imakefile
 share/examples/XmHTML/book/Makefile
 share/examples/XmHTML/book/Makefile.org
-share/examples/XmHTML/book/Makefile.orig
-share/examples/XmHTML/book/autosize_html
 share/examples/XmHTML/book/autosize_html.c
-share/examples/XmHTML/book/forced_html
 share/examples/XmHTML/book/forced_html.c
-share/examples/XmHTML/book/html
 share/examples/XmHTML/book/html.c
-share/examples/XmHTML/book/html_browser
 share/examples/XmHTML/book/html_browser.c
-share/examples/XmHTML/book/simple_html
 share/examples/XmHTML/book/simple_html.c
-share/examples/XmHTML/book/simple_html2
 share/examples/XmHTML/book/simple_html2.c
 share/examples/XmHTML/book/work_window.c
 share/examples/XmHTML/contrib/
@@ -113,22 +107,17 @@ share/examples/XmHTML/contrib/gif_decode.c
 share/examples/XmHTML/contrib/htmltest.c
 share/examples/XmHTML/contrib/netscape.c
 share/examples/XmHTML/contrib/swallow.c
-share/examples/XmHTML/contrib/swallow2
 share/examples/XmHTML/contrib/swallow2.c
 share/examples/XmHTML/examples/
 share/examples/XmHTML/examples/HTMLDemos.ad
 share/examples/XmHTML/examples/Imakefile
 share/examples/XmHTML/examples/Makefile
 share/examples/XmHTML/examples/Makefile.org
-share/examples/XmHTML/examples/Makefile.orig
 share/examples/XmHTML/examples/README
 share/examples/XmHTML/examples/cache.c
 share/examples/XmHTML/examples/cache.h
-share/examples/XmHTML/examples/example_1
 share/examples/XmHTML/examples/example_1.c
-share/examples/XmHTML/examples/example_2
 share/examples/XmHTML/examples/example_2.c
-share/examples/XmHTML/examples/example_4
 share/examples/XmHTML/examples/example_4.c
 share/examples/XmHTML/examples/form-test.pl
 share/examples/XmHTML/examples/ftypes.h

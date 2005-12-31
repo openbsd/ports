@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/11 13:29:22 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2005/12/31 14:32:13 sturm Exp $
 # $FreeBSD: ports/x11-toolkits/xmhtml/Makefile,v 1.15 2001/06/29 05:19:06 lkoeller Exp $
 # Original from: Peter Hawkins <thepish@freebsd.org>
 
 COMMENT=	"Motif widget capable of displaying HTML 3.2 conforming text"
 
 DISTNAME=	XmHTML-1.1.7
-PKGNAME=	${DISTNAME:L}
+PKGNAME=	${DISTNAME:L}p0
 CATEGORIES=     www x11
+SHARED_LIBS=	XmHTML	1.2
+MODGNU_SHARED_LIBS=XmHTML ''
 
 HOMEPAGE=	http://www.xs4all.nl/~ripley/XmHTML
 
@@ -17,7 +19,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c ICE SM X11 Xext Xmu Xpm Xt m z
+
+WANTLIB=	c ICE SM X11 Xext Xmu Xpm Xt m z
 
 MASTER_SITES=	${HOMEPAGE}/dist/
 
@@ -25,8 +28,6 @@ LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		png.2::graphics/png
 
 NO_REGRESS=	Yes
-
-MAKE_ENV=	CC="${LIBTOOL} ${CC}"
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -36,15 +37,9 @@ USE_LIBTOOL=	Yes
 EXMP_DIR=   ${PREFIX}/share/examples/XmHTML
 DOCS_DIR=   ${PREFIX}/share/doc/XmHTML
 
-post-build:
-	rm -rf ${WRKSRC}/examples/.libs ${WRKSRC}/examples/*.lo ${WRKSRC}/examples/*.o
-	rm -rf ${WRKSRC}/book/.libs ${WRKSRC}/book/*.lo ${WRKSRC}/book/*.o
-	rm -rf ${WRKSRC}/contrib/.libs ${WRKSRC}/contrib/*.lo ${WRKSRC}/contrib/*.o
-
 do-install:
 	${LIBTOOL} --mode=install ${INSTALL_DATA} \
 		${WRKSRC}/lib/libXmHTML.la ${PREFIX}/lib
-	rm -f ${PREFIX}/lib/libXmHTML.la
 	${INSTALL_DATA_DIR} ${PREFIX}/include/XmHTML
 	${INSTALL_DATA} ${WRKSRC}/include/XmHTML/*.h ${PREFIX}/include/XmHTML
 	${INSTALL_DATA_DIR} ${EXMP_DIR}

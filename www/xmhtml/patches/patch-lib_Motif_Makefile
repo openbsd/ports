@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_Motif_Makefile,v 1.1 2005/12/31 14:32:14 sturm Exp $
+--- lib/Motif/Makefile.orig	Sat Dec 31 14:31:20 2005
++++ lib/Motif/Makefile	Sat Dec 31 14:31:36 2005
+@@ -50,7 +50,8 @@ SUBDIRS=
+ # rule to create .o files from .c files 
+ .c.o:
+ 	$(RM) $@
+-	$(CC) $(CFLAGS) -DVERSION=$(VERSION) $(CPPFLAGS) $(INCLUDES) -c $<
++	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -DVERSION=$(VERSION) \
++		$(CPPFLAGS) $(INCLUDES) -c $<
+ 
+ # targets to build
+ all: $(TARGET)
