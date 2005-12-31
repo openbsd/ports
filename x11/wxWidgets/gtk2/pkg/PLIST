@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/11/10 12:18:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/12/31 15:18:44 naddy Exp $
 @conflict wxWidgets-gtk-<=2.4.2p0
 %%SHARED%%
 !%%SHARED%%
@@ -137,7 +137,6 @@ bin/wxgtk2-2.4-config
 @comment include/wx/glcanvas.h
 @comment include/wx/grid.h
 @comment include/wx/gsocket.h
-@comment include/wx/gtk/
 @comment include/wx/gtk/accel.h
 @comment include/wx/gtk/app.h
 @comment include/wx/gtk/bitmap.h

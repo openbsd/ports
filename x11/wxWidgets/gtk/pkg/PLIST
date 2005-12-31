@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/11/10 12:18:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/12/31 15:18:44 naddy Exp $
 %%SHARED%%
 !%%SHARED%%
 @comment bin/wx-config
@@ -136,7 +136,6 @@ bin/wxgtk-2.4-config
 @comment include/wx/glcanvas.h
 @comment include/wx/grid.h
 @comment include/wx/gsocket.h
-@comment include/wx/gtk/
 @comment include/wx/gtk/accel.h
 @comment include/wx/gtk/app.h
 @comment include/wx/gtk/bitmap.h
@@ -373,9 +372,7 @@ lib/wx/include/gtk-2.4/
 lib/wx/include/gtk-2.4/wx/
 lib/wx/include/gtk-2.4/wx/setup.h
 lib/wx/include/univ/
-@comment share/aclocal/
 @comment share/aclocal/wxwin.m4
-@comment share/locale/
 @comment share/wx/2.4/afm/Cour.afm
 @comment share/wx/2.4/afm/CourBo.afm
 @comment share/wx/2.4/afm/CourBoO.afm
