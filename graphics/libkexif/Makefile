@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2005/04/19 10:11:26 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2005/12/31 14:19:38 steven Exp $
 
 COMMENT=		"kde interface to exif"
 CATEGORIES=		graphics devel x11 x11/kde
 DISTNAME=		libkexif-0.2.1
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		kexif	1.0
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://extragear.kde.org/apps/kipi/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}
@@ -18,7 +20,8 @@ WANTLIB=	ICE Xrender SM Xext pthread X11 util m z \
 MODULES=	x11/kde
 
 MODKDE_VERSION=		3.4
-MODKDE_LIBTOOL=		Yes
+USE_LIBTOOL=		Yes
+LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
