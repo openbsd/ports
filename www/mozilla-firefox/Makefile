@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2005/12/26 02:17:53 ian Exp $
+# $OpenBSD: Makefile,v 1.45 2005/12/31 18:35:56 sturm Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -10,6 +10,18 @@ PKGNAME=	mozilla-firefox-${VER}p1
 SO_VERSION=	8.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
+.for _lib in accessibility appcomps auth autoconfig browsercomps \
+	browserdirprovider caps chrome commandlines composer cookie docshell \
+	editor embedcomponents fileview gfx_gtk gfxps gfxpsshar gkgfx \
+	gklayout gkplugin gtkembedmoz gtkxtbin htmlpars i18n imglib2 inspector \
+	jar50 jsd jsj mork mozfind mozjs necko necko2 nsappshell nspr4 nss3 \
+	nssckbi oji permissions pipboot pipnss pippki plc4 plds4 pref rdf \
+	remoteservice searchservice smime3 softokn3 ssl3 system-pref \
+	toolkitcomps transformiix txmgr uconv ucvmath universalchardet \
+	webbrwsr websrvcs widget_gtk2 xmlextras xpcom xpcom_compat \
+	xpcom_compat_c xpcom_core xpconnect xpinstall xpistub
+SHARED_LIBS+=	${_lib}	${SO_VERSION}
+.endfor
 
 CATEGORIES=	www
 
