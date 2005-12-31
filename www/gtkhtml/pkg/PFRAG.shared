@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/15 18:49:49 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2005/12/31 14:35:36 sturm Exp $
 lib/bonobo/plugin/libstorage_http.so
-@lib lib/libgtkhtml-1.1.so.3.5
+@lib lib/libgtkhtml-1.1.so.${LIBgtkhtml-1.1_VERSION}

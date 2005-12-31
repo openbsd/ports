@@ -1,3 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/05/24 22:12:39 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/31 14:35:36 sturm Exp $
 lib/gtkhtml/libgnome-gtkhtml-editor-${API_VERSION}.so
-@lib lib/libgtkhtml-${API_VERSION}.so.18.2
+@comment XXX pkg_create does not deal with nested variables
+@lib lib/libgtkhtml-${API_VERSION}.so.${LIBgtkhtml-3.6_VERSION}

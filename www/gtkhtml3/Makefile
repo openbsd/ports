@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2005/11/13 16:58:08 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2005/12/31 14:35:36 sturm Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
 VERSION=		3.6.2
 DISTNAME=		gtkhtml-${VERSION}
-PKGNAME=		gtkhtml3-${VERSION}p0
+PKGNAME=		gtkhtml3-${VERSION}p1
 CATEGORIES=    		www
+SHARED_LIBS=		gtkhtml-${API_VERSION}	18.2
+MODGNU_SHARED_LIBS=	gtkhtml-${API_VERSION}	''
+
 HOMEPAGE=		http://www.gnome.org/
 
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
@@ -38,6 +41,7 @@ LIB_DEPENDS=		gailutil::x11/gnome/gail \
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=        ${CONFIGURE_SHARED}

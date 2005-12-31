@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2005/01/30 11:23:14 alek Exp $
+# $OpenBSD: Makefile,v 1.11 2005/12/31 14:35:36 sturm Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
 DISTNAME=		gtkhtml-1.1.10
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=    		www
+SHARED_LIBS=		gtkhtml-1.1	3.5
+MODGNU_SHARED_LIBS=	gtkhtml-1.1	''
+
 HOMEPAGE=		http://www.gnome.org/
 
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
@@ -34,6 +37,7 @@ LIB_DEPENDS=		bonobo.2,bonobox.2::x11/gnome/bonobo \
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=        ${CONFIGURE_SHARED}
