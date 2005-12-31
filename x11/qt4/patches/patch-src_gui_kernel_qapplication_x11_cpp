@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gui_kernel_qapplication_x11_cpp,v 1.2 2005/09/19 20:40:16 espie Exp $
---- src/gui/kernel/qapplication_x11.cpp.orig	Tue Aug 16 10:41:12 2005
-+++ src/gui/kernel/qapplication_x11.cpp	Sun Sep 18 15:42:27 2005
-@@ -410,7 +410,7 @@ static int qt_x_errhandler(Display *dpy,
+$OpenBSD: patch-src_gui_kernel_qapplication_x11_cpp,v 1.3 2005/12/31 15:59:50 espie Exp $
+--- src/gui/kernel/qapplication_x11.cpp.orig	Fri Dec 16 12:52:04 2005
++++ src/gui/kernel/qapplication_x11.cpp	Thu Dec 29 15:06:27 2005
+@@ -417,7 +417,7 @@ static int qt_x_errhandler(Display *dpy,
      XGetErrorText( dpy, err->error_code, errstr, 256 );
      char buffer[256];
      char request_str[256];
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_gui_kernel_qapplication_x11_cpp,v 1.2 2005/09/19 20:40:16 es
      XGetErrorDatabaseText(dpy, "XRequest", buffer, "", request_str, 256);
      if (err->request_code < 128) {
          // X error for a normal protocol request
-@@ -433,11 +433,11 @@ static int qt_x_errhandler(Display *dpy,
+@@ -440,11 +440,11 @@ static int qt_x_errhandler(Display *dpy,
  
          char minor_str[256];
          if (extensionName) {

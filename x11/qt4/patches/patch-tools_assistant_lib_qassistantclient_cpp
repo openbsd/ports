@@ -1,0 +1,17 @@
+$OpenBSD: patch-tools_assistant_lib_qassistantclient_cpp,v 1.1 2005/12/31 15:59:50 espie Exp $
+--- tools/assistant/lib/qassistantclient.cpp.orig	Fri Dec 30 09:56:37 2005
++++ tools/assistant/lib/qassistantclient.cpp	Fri Dec 30 09:57:00 2005
+@@ -128,11 +128,11 @@ QAssistantClient::QAssistantClient( cons
+     : QObject( parent ), host ( "localhost" )
+ {
+     if ( path.isEmpty() )
+-        assistantCommand = "assistant";
++        assistantCommand = "assistant4";
+     else {
+         QFileInfo fi( path );
+         if ( fi.isDir() )
+-            assistantCommand = path + "/assistant";
++            assistantCommand = path + "/assistant4";
+         else
+             assistantCommand = path;
+     }

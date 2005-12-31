@@ -1,40 +1,22 @@
-@comment $OpenBSD: PFRAG.shared-debug,v 1.3 2005/09/19 20:40:16 espie Exp $
-@lib lib/libQt3Support_debug.so.4.1
-@lib lib/libQtCore_debug.so.4.1
-@lib lib/libQtDesignerComponents_debug.so.4.1
-@lib lib/libQtDesigner_debug.so.4.1
-@lib lib/libQtGui_debug.so.4.1
-@lib lib/libQtNetwork_debug.so.4.1
-@lib lib/libQtOpenGL_debug.so.4.1
-@lib lib/libQtSql_debug.so.4.1
-@lib lib/libQtXml_debug.so.4.1
-@comment lib/qt4/libQt3Support_debug.so
-@comment lib/qt4/libQt3Support_debug.so.4.0
-@lib lib/qt4/libQt3Support_debug.so.4.1
-@comment lib/qt4/libQtCore_debug.so
-@comment lib/qt4/libQtCore_debug.so.4.0
-@lib lib/qt4/libQtCore_debug.so.4.1
-@comment lib/qt4/libQtDesignerComponents_debug.so
-@comment lib/qt4/libQtDesignerComponents_debug.so.4.0
-@lib lib/qt4/libQtDesignerComponents_debug.so.4.1
-@comment lib/qt4/libQtDesigner_debug.so
-@comment lib/qt4/libQtDesigner_debug.so.4.0
-@lib lib/qt4/libQtDesigner_debug.so.4.1
-@comment lib/qt4/libQtGui_debug.so
-@comment lib/qt4/libQtGui_debug.so.4.0
-@lib lib/qt4/libQtGui_debug.so.4.1
-@comment lib/qt4/libQtNetwork_debug.so
-@comment lib/qt4/libQtNetwork_debug.so.4.0
-@lib lib/qt4/libQtNetwork_debug.so.4.1
-@comment lib/qt4/libQtOpenGL_debug.so
-@comment lib/qt4/libQtOpenGL_debug.so.4.0
-@lib lib/qt4/libQtOpenGL_debug.so.4.1
-@comment lib/qt4/libQtSql_debug.so
-@comment lib/qt4/libQtSql_debug.so.4.0
-@lib lib/qt4/libQtSql_debug.so.4.1
-@comment lib/qt4/libQtXml_debug.so
-@comment lib/qt4/libQtXml_debug.so.4.0
-@lib lib/qt4/libQtXml_debug.so.4.1
+@comment $OpenBSD: PFRAG.shared-debug,v 1.4 2005/12/31 15:59:50 espie Exp $
+@lib lib/libQt3Support_debug.so.${LIBQt3Support_debug_VERSION}
+@lib lib/libQtCore_debug.so.${LIBQtCore_debug_VERSION}
+@lib lib/libQtDesignerComponents_debug.so.${LIBQtDesignerComponents_debug_VERSION}
+@lib lib/libQtDesigner_debug.so.${LIBQtDesigner_debug_VERSION}
+@lib lib/libQtGui_debug.so.${LIBQtGui_debug_VERSION}
+@lib lib/libQtNetwork_debug.so.${LIBQtNetwork_debug_VERSION}
+@lib lib/libQtOpenGL_debug.so.${LIBQtOpenGL_debug_VERSION}
+@lib lib/libQtSql_debug.so.${LIBQtSql_debug_VERSION}
+@lib lib/libQtXml_debug.so.${LIBQtXml_debug_VERSION}
+@lib lib/qt4/libQt3Support_debug.so.${LIBQt3Support_debug_VERSION}
+@lib lib/qt4/libQtCore_debug.so.${LIBQtCore_debug_VERSION}
+@lib lib/qt4/libQtDesignerComponents_debug.so.${LIBQtDesignerComponents_debug_VERSION}
+@lib lib/qt4/libQtDesigner_debug.so.${LIBQtDesigner_debug_VERSION}
+@lib lib/qt4/libQtGui_debug.so.${LIBQtGui_debug_VERSION}
+@lib lib/qt4/libQtNetwork_debug.so.${LIBQtNetwork_debug_VERSION}
+@lib lib/qt4/libQtOpenGL_debug.so.${LIBQtOpenGL_debug_VERSION}
+@lib lib/qt4/libQtSql_debug.so.${LIBQtSql_debug_VERSION}
+@lib lib/qt4/libQtXml_debug.so.${LIBQtXml_debug_VERSION}
 lib/qt4/plugins/codecs/libqcncodecs_debug.so
 lib/qt4/plugins/codecs/libqjpcodecs_debug.so
 lib/qt4/plugins/codecs/libqkrcodecs_debug.so

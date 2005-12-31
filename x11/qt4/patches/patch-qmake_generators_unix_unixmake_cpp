@@ -1,0 +1,12 @@
+$OpenBSD: patch-qmake_generators_unix_unixmake_cpp,v 1.1 2005/12/31 15:59:50 espie Exp $
+--- qmake/generators/unix/unixmake.cpp.orig	Thu Dec 29 16:26:35 2005
++++ qmake/generators/unix/unixmake.cpp	Thu Dec 29 16:27:37 2005
+@@ -592,7 +592,7 @@ UnixMakefileGenerator::defaultInstall(co
+         if(project->isEmpty("QMAKE_CYGWIN_SHLIB")) {
+             if(!project->isActiveConfig("staticlib") && !project->isActiveConfig("plugin")) {
+                 if(project->isEmpty("QMAKE_HPUX_SHLIB")) {
+-                    links << "$(TARGET0)" << "$(TARGET1)" << "$(TARGET2)";
++                    //links << "$(TARGET0)" << "$(TARGET1)" << "$(TARGET2)";
+                 } else {
+                     links << "$(TARGET0)";
+                 }

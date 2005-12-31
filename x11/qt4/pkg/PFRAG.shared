@@ -1,46 +1,39 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2005/09/19 20:40:16 espie Exp $
-@lib lib/libQt3Support.so.4.1
-@lib lib/libQtCore.so.4.1
-@lib lib/libQtDesigner.so.4.1
-@lib lib/libQtDesignerComponents.so.4.1
-@lib lib/libQtGui.so.4.1
-@lib lib/libQtNetwork.so.4.1
-@lib lib/libQtOpenGL.so.4.1
-@lib lib/libQtSql.so.4.1
-@lib lib/libQtXml.so.4.1
-@comment lib/qt4/libQt3Support.so
-@comment lib/qt4/libQt3Support.so.4.0
-@lib lib/qt4/libQt3Support.so.4.1
-lib/qt4/libQtCore.so
-@comment lib/qt4/libQtCore.so.4.0
-@lib lib/qt4/libQtCore.so.4.1
-@comment lib/qt4/libQtDesigner.so
-@comment lib/qt4/libQtDesigner.so.4.0
-@lib lib/qt4/libQtDesigner.so.4.1
-@comment lib/qt4/libQtDesignerComponents.so
-@comment lib/qt4/libQtDesignerComponents.so.4.0
-@lib lib/qt4/libQtDesignerComponents.so.4.1
-@comment lib/qt4/libQtGui.so
-@comment lib/qt4/libQtGui.so.4.0
-@lib lib/qt4/libQtGui.so.4.1
-@comment lib/qt4/libQtNetwork.so
-@comment lib/qt4/libQtNetwork.so.4.0
-@lib lib/qt4/libQtNetwork.so.4.1
-@comment lib/qt4/libQtOpenGL.so
-@comment lib/qt4/libQtOpenGL.so.4.0
-@lib lib/qt4/libQtOpenGL.so.4.1
-@comment lib/qt4/libQtSql.so
-@comment lib/qt4/libQtSql.so.4.0
-@lib lib/qt4/libQtSql.so.4.1
-@comment lib/qt4/libQtXml.so
-@comment lib/qt4/libQtXml.so.4.0
-@lib lib/qt4/libQtXml.so.4.1
+@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/31 15:59:50 espie Exp $
+@lib lib/libQt3Support.so.${LIBQt3Support_VERSION}
+@lib lib/libQtCore.so.${LIBQtCore_VERSION}
+@lib lib/libQtDesigner.so.${LIBQtDesigner_VERSION}
+@lib lib/libQtDesignerComponents.so.${LIBQtDesignerComponents_VERSION}
+@lib lib/libQtGui.so.${LIBQtGui_VERSION}
+@lib lib/libQtNetwork.so.${LIBQtNetwork_VERSION}
+@lib lib/libQtOpenGL.so.${LIBQtOpenGL_VERSION}
+@lib lib/libQtSql.so.${LIBQtSql_VERSION}
+@lib lib/libQtSvg.so.${LIBQtSvg_VERSION}
+@lib lib/libQtTest.so.${LIBQtTest_VERSION}
+@lib lib/libQtXml.so.${LIBQtXml_VERSION}
+@lib lib/qt4/libQt3Support.so.${LIBQt3Support_VERSION}
+@lib lib/qt4/libQtCore.so.${LIBQtCore_VERSION}
+@lib lib/qt4/libQtDesigner.so.${LIBQtDesigner_VERSION}
+@lib lib/qt4/libQtDesignerComponents.so.${LIBQtDesignerComponents_VERSION}
+@lib lib/qt4/libQtGui.so.${LIBQtGui_VERSION}
+@lib lib/qt4/libQtNetwork.so.${LIBQtNetwork_VERSION}
+@lib lib/qt4/libQtOpenGL.so.${LIBQtOpenGL_VERSION}
+@lib lib/qt4/libQtSql.so.${LIBQtSql_VERSION}
+@lib lib/qt4/libQtSvg.so.${LIBQtSvg_VERSION}
+@lib lib/qt4/libQtTest.so.${LIBQtTest_VERSION}
+@lib lib/qt4/libQtXml.so.${LIBQtXml_VERSION}
+lib/qt4/plugins/accessible/libqtaccessiblecompatwidgets.so
+lib/qt4/plugins/accessible/libqtaccessiblewidgets.so
+lib/qt4/plugins/arthurplugin/libarthurplugin.so
 lib/qt4/plugins/codecs/libqcncodecs.so
 lib/qt4/plugins/codecs/libqjpcodecs.so
 lib/qt4/plugins/codecs/libqkrcodecs.so
 lib/qt4/plugins/codecs/libqtwcodecs.so
+lib/qt4/plugins/designer/libcontainerextension.so
 lib/qt4/plugins/designer/libcustomwidgetplugin.so
 lib/qt4/plugins/designer/libqt3supportwidgets.so
+lib/qt4/plugins/designer/libtaskmenuextension.so
 lib/qt4/plugins/designer/libworldtimeclockplugin.so
 lib/qt4/plugins/imageformats/libqgif.so
 lib/qt4/plugins/imageformats/libqjpeg.so
+lib/qt4/plugins/imageformats/libqmng.so
+lib/qt4/plugins/sqldrivers/libqsqlite.so

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/09/19 20:40:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/12/31 15:59:51 espie Exp $
 %%SHARED%%
 bin/assistant4
 bin/designer4
@@ -26,6 +26,7 @@ include/X11/qt4/Qt/Q3AsciiCacheIterator
 include/X11/qt4/Qt/Q3AsciiDict
 include/X11/qt4/Qt/Q3AsciiDictIterator
 include/X11/qt4/Qt/Q3BaseBucket
+include/X11/qt4/Qt/Q3BoxLayout
 include/X11/qt4/Qt/Q3Button
 include/X11/qt4/Qt/Q3ButtonGroup
 include/X11/qt4/Qt/Q3CString
@@ -49,6 +50,7 @@ include/X11/qt4/Qt/Q3CheckListItem
 include/X11/qt4/Qt/Q3CheckTableItem
 include/X11/qt4/Qt/Q3CleanupHandler
 include/X11/qt4/Qt/Q3ColorDrag
+include/X11/qt4/Qt/Q3ComboBox
 include/X11/qt4/Qt/Q3ComboTableItem
 include/X11/qt4/Qt/Q3DataBrowser
 include/X11/qt4/Qt/Q3DataTable
@@ -82,9 +84,11 @@ include/X11/qt4/Qt/Q3GListIterator
 include/X11/qt4/Qt/Q3GListStdIterator
 include/X11/qt4/Qt/Q3GVector
 include/X11/qt4/Qt/Q3Grid
+include/X11/qt4/Qt/Q3GridLayout
 include/X11/qt4/Qt/Q3GridView
 include/X11/qt4/Qt/Q3GroupBox
 include/X11/qt4/Qt/Q3HBox
+include/X11/qt4/Qt/Q3HBoxLayout
 include/X11/qt4/Qt/Q3HButtonGroup
 include/X11/qt4/Qt/Q3Header
 include/X11/qt4/Qt/Q3Http
@@ -182,6 +186,7 @@ include/X11/qt4/Qt/Q3UriDrag
 include/X11/qt4/Qt/Q3Url
 include/X11/qt4/Qt/Q3UrlOperator
 include/X11/qt4/Qt/Q3VBox
+include/X11/qt4/Qt/Q3VBoxLayout
 include/X11/qt4/Qt/Q3VButtonGroup
 include/X11/qt4/Qt/Q3ValueList
 include/X11/qt4/Qt/Q3ValueListConstIterator
@@ -193,12 +198,15 @@ include/X11/qt4/Qt/Q3WidgetStack
 include/X11/qt4/Qt/Q3Wizard
 include/X11/qt4/Qt/QAbstractButton
 include/X11/qt4/Qt/QAbstractEventDispatcher
+include/X11/qt4/Qt/QAbstractFileEngine
+include/X11/qt4/Qt/QAbstractFileEngineHandler
 include/X11/qt4/Qt/QAbstractItemDelegate
 include/X11/qt4/Qt/QAbstractItemModel
 include/X11/qt4/Qt/QAbstractItemView
 include/X11/qt4/Qt/QAbstractListModel
 include/X11/qt4/Qt/QAbstractPageSetupDialog
 include/X11/qt4/Qt/QAbstractPrintDialog
+include/X11/qt4/Qt/QAbstractProxyModel
 include/X11/qt4/Qt/QAbstractScrollArea
 include/X11/qt4/Qt/QAbstractSlider
 include/X11/qt4/Qt/QAbstractSocket
@@ -240,6 +248,7 @@ include/X11/qt4/Qt/QByteArray
 include/X11/qt4/Qt/QByteArrayMatcher
 include/X11/qt4/Qt/QByteRef
 include/X11/qt4/Qt/QCDEStyle
+include/X11/qt4/Qt/QCOORD
 include/X11/qt4/Qt/QCache
 include/X11/qt4/Qt/QChar
 include/X11/qt4/Qt/QCharRef
@@ -301,11 +310,10 @@ include/X11/qt4/Qt/QDropEvent
 include/X11/qt4/Qt/QErrorMessage
 include/X11/qt4/Qt/QEvent
 include/X11/qt4/Qt/QEventLoop
+include/X11/qt4/Qt/QFSFileEngine
 include/X11/qt4/Qt/QFactoryInterface
 include/X11/qt4/Qt/QFile
 include/X11/qt4/Qt/QFileDialog
-include/X11/qt4/Qt/QFileEngine
-include/X11/qt4/Qt/QFileEngineHandler
 include/X11/qt4/Qt/QFileIconProvider
 include/X11/qt4/Qt/QFileInfo
 include/X11/qt4/Qt/QFileInfoList
@@ -328,6 +336,7 @@ include/X11/qt4/Qt/QFtp
 include/X11/qt4/Qt/QGLColormap
 include/X11/qt4/Qt/QGLContext
 include/X11/qt4/Qt/QGLFormat
+include/X11/qt4/Qt/QGLPixelBuffer
 include/X11/qt4/Qt/QGLWidget
 include/X11/qt4/Qt/QGenericArgument
 include/X11/qt4/Qt/QGenericReturnArgument
@@ -340,6 +349,7 @@ include/X11/qt4/Qt/QGroupBox
 include/X11/qt4/Qt/QHBoxLayout
 include/X11/qt4/Qt/QHash
 include/X11/qt4/Qt/QHashData
+include/X11/qt4/Qt/QHashDummyNode
 include/X11/qt4/Qt/QHashDummyValue
 include/X11/qt4/Qt/QHashIterator
 include/X11/qt4/Qt/QHashNode
@@ -378,6 +388,7 @@ include/X11/qt4/Qt/QInputDialog
 include/X11/qt4/Qt/QInputEvent
 include/X11/qt4/Qt/QInputMethodEvent
 include/X11/qt4/Qt/QIntValidator
+include/X11/qt4/Qt/QInternal
 include/X11/qt4/Qt/QItemDelegate
 include/X11/qt4/Qt/QItemEditorCreator
 include/X11/qt4/Qt/QItemEditorCreatorBase
@@ -422,6 +433,7 @@ include/X11/qt4/Qt/QMatrix
 include/X11/qt4/Qt/QMenu
 include/X11/qt4/Qt/QMenuBar
 include/X11/qt4/Qt/QMenuItem
+include/X11/qt4/Qt/QMenubarUpdatedEvent
 include/X11/qt4/Qt/QMessageBox
 include/X11/qt4/Qt/QMetaClassInfo
 include/X11/qt4/Qt/QMetaEnum
@@ -449,6 +461,7 @@ include/X11/qt4/Qt/QMutableStringListIterator
 include/X11/qt4/Qt/QMutableVectorIterator
 include/X11/qt4/Qt/QMutex
 include/X11/qt4/Qt/QMutexLocker
+include/X11/qt4/Qt/QNetworkProxy
 include/X11/qt4/Qt/QNoDebug
 include/X11/qt4/Qt/QNoImplicitBoolCast
 include/X11/qt4/Qt/QODBCDriver
@@ -531,6 +544,7 @@ include/X11/qt4/Qt/QSizeGrip
 include/X11/qt4/Qt/QSizePolicy
 include/X11/qt4/Qt/QSlider
 include/X11/qt4/Qt/QSocketNotifier
+include/X11/qt4/Qt/QSortFilterProxyModel
 include/X11/qt4/Qt/QSound
 include/X11/qt4/Qt/QSpacerItem
 include/X11/qt4/Qt/QSpinBox
@@ -578,9 +592,12 @@ include/X11/qt4/Qt/QStyleOptionComplex
 include/X11/qt4/Qt/QStyleOptionDockWidget
 include/X11/qt4/Qt/QStyleOptionFocusRect
 include/X11/qt4/Qt/QStyleOptionFrame
+include/X11/qt4/Qt/QStyleOptionFrameV2
+include/X11/qt4/Qt/QStyleOptionGroupBox
 include/X11/qt4/Qt/QStyleOptionHeader
 include/X11/qt4/Qt/QStyleOptionMenuItem
 include/X11/qt4/Qt/QStyleOptionProgressBar
+include/X11/qt4/Qt/QStyleOptionProgressBarV2
 include/X11/qt4/Qt/QStyleOptionQ3DockWindow
 include/X11/qt4/Qt/QStyleOptionQ3ListView
 include/X11/qt4/Qt/QStyleOptionQ3ListViewItem
@@ -589,13 +606,18 @@ include/X11/qt4/Qt/QStyleOptionSlider
 include/X11/qt4/Qt/QStyleOptionSpinBox
 include/X11/qt4/Qt/QStyleOptionTab
 include/X11/qt4/Qt/QStyleOptionTabBarBase
+include/X11/qt4/Qt/QStyleOptionTabV2
 include/X11/qt4/Qt/QStyleOptionTabWidgetFrame
 include/X11/qt4/Qt/QStyleOptionTitleBar
+include/X11/qt4/Qt/QStyleOptionToolBar
 include/X11/qt4/Qt/QStyleOptionToolBox
 include/X11/qt4/Qt/QStyleOptionToolButton
 include/X11/qt4/Qt/QStyleOptionViewItem
 include/X11/qt4/Qt/QStylePainter
 include/X11/qt4/Qt/QStylePlugin
+include/X11/qt4/Qt/QSvgRenderer
+include/X11/qt4/Qt/QSvgWidget
+include/X11/qt4/Qt/QSyntaxHighlighter
 include/X11/qt4/Qt/QSysInfo
 include/X11/qt4/Qt/QTS
 include/X11/qt4/Qt/QTabBar
@@ -663,8 +685,10 @@ include/X11/qt4/Qt/QTranslator
 include/X11/qt4/Qt/QTreeView
 include/X11/qt4/Qt/QTreeWidget
 include/X11/qt4/Qt/QTreeWidgetItem
+include/X11/qt4/Qt/QTreeWidgetItemIterator
 include/X11/qt4/Qt/QTypeInfo
 include/X11/qt4/Qt/QUdpSocket
+include/X11/qt4/Qt/QUpdateLaterEvent
 include/X11/qt4/Qt/QUrl
 include/X11/qt4/Qt/QUrlInfo
 include/X11/qt4/Qt/QUuid
@@ -682,7 +706,6 @@ include/X11/qt4/Qt/QVectorData
 include/X11/qt4/Qt/QVectorIterator
 include/X11/qt4/Qt/QVectorTypedData
 include/X11/qt4/Qt/QWMatrix
-include/X11/qt4/Qt/QWSUpdateEvent
 include/X11/qt4/Qt/QWaitCondition
 include/X11/qt4/Qt/QWhatsThis
 include/X11/qt4/Qt/QWhatsThisClickedEvent
@@ -735,13 +758,17 @@ include/X11/qt4/Qt/QtAlgorithms
 include/X11/qt4/Qt/QtCleanUpFunction
 include/X11/qt4/Qt/QtCore
 include/X11/qt4/Qt/QtDebug
+include/X11/qt4/Qt/QtEndian
+include/X11/qt4/Qt/QtEvents
 include/X11/qt4/Qt/QtGlobal
 include/X11/qt4/Qt/QtGui
 include/X11/qt4/Qt/QtMsgHandler
 include/X11/qt4/Qt/QtNetwork
 include/X11/qt4/Qt/QtOpenGL
+include/X11/qt4/Qt/QtPlugin
 include/X11/qt4/Qt/QtPluginInstanceFunction
 include/X11/qt4/Qt/QtSql
+include/X11/qt4/Qt/QtSvg
 include/X11/qt4/Qt/QtXml
 include/X11/qt4/Qt/arch/
 include/X11/qt4/Qt/arch/qatomic.h
@@ -749,11 +776,13 @@ include/X11/qt4/Qt/q3accel.h
 include/X11/qt4/Qt/q3action.h
 include/X11/qt4/Qt/q3asciicache.h
 include/X11/qt4/Qt/q3asciidict.h
+include/X11/qt4/Qt/q3boxlayout.h
 include/X11/qt4/Qt/q3button.h
 include/X11/qt4/Qt/q3buttongroup.h
 include/X11/qt4/Qt/q3cache.h
 include/X11/qt4/Qt/q3canvas.h
 include/X11/qt4/Qt/q3cleanuphandler.h
+include/X11/qt4/Qt/q3combobox.h
 include/X11/qt4/Qt/q3cstring.h
 include/X11/qt4/Qt/q3databrowser.h
 include/X11/qt4/Qt/q3datatable.h
@@ -775,6 +804,7 @@ include/X11/qt4/Qt/q3gcache.h
 include/X11/qt4/Qt/q3gdict.h
 include/X11/qt4/Qt/q3glist.h
 include/X11/qt4/Qt/q3grid.h
+include/X11/qt4/Qt/q3gridlayout.h
 include/X11/qt4/Qt/q3gridview.h
 include/X11/qt4/Qt/q3groupbox.h
 include/X11/qt4/Qt/q3gvector.h
@@ -848,11 +878,13 @@ include/X11/qt4/Qt/q3widgetstack.h
 include/X11/qt4/Qt/q3wizard.h
 include/X11/qt4/Qt/qabstractbutton.h
 include/X11/qt4/Qt/qabstracteventdispatcher.h
+include/X11/qt4/Qt/qabstractfileengine.h
 include/X11/qt4/Qt/qabstractitemdelegate.h
 include/X11/qt4/Qt/qabstractitemmodel.h
 include/X11/qt4/Qt/qabstractitemview.h
 include/X11/qt4/Qt/qabstractpagesetupdialog.h
 include/X11/qt4/Qt/qabstractprintdialog.h
+include/X11/qt4/Qt/qabstractproxymodel.h
 include/X11/qt4/Qt/qabstractscrollarea.h
 include/X11/qt4/Qt/qabstractslider.h
 include/X11/qt4/Qt/qabstractsocket.h
@@ -909,6 +941,7 @@ include/X11/qt4/Qt/qdockwidget.h
 include/X11/qt4/Qt/qdom.h
 include/X11/qt4/Qt/qdrag.h
 include/X11/qt4/Qt/qdrawutil.h
+include/X11/qt4/Qt/qendian.h
 include/X11/qt4/Qt/qerrormessage.h
 include/X11/qt4/Qt/qevent.h
 include/X11/qt4/Qt/qeventloop.h
@@ -916,7 +949,6 @@ include/X11/qt4/Qt/qfactoryinterface.h
 include/X11/qt4/Qt/qfeatures.h
 include/X11/qt4/Qt/qfile.h
 include/X11/qt4/Qt/qfiledialog.h
-include/X11/qt4/Qt/qfileengine.h
 include/X11/qt4/Qt/qfileinfo.h
 include/X11/qt4/Qt/qfocusframe.h
 include/X11/qt4/Qt/qfont.h
@@ -925,10 +957,13 @@ include/X11/qt4/Qt/qfontdialog.h
 include/X11/qt4/Qt/qfontinfo.h
 include/X11/qt4/Qt/qfontmetrics.h
 include/X11/qt4/Qt/qframe.h
+include/X11/qt4/Qt/qfsfileengine.h
 include/X11/qt4/Qt/qftp.h
 include/X11/qt4/Qt/qgl.h
 include/X11/qt4/Qt/qglcolormap.h
 include/X11/qt4/Qt/qglobal.h
+include/X11/qt4/Qt/qglpbuffer.h
+include/X11/qt4/Qt/qglpixelbuffer.h
 include/X11/qt4/Qt/qgridlayout.h
 include/X11/qt4/Qt/qgroupbox.h
 include/X11/qt4/Qt/qhash.h
@@ -982,6 +1017,7 @@ include/X11/qt4/Qt/qmotifstyle.h
 include/X11/qt4/Qt/qmovie.h
 include/X11/qt4/Qt/qmutex.h
 include/X11/qt4/Qt/qnamespace.h
+include/X11/qt4/Qt/qnetworkproxy.h
 include/X11/qt4/Qt/qobject.h
 include/X11/qt4/Qt/qobjectcleanuphandler.h
 include/X11/qt4/Qt/qobjectdefs.h
@@ -1033,6 +1069,7 @@ include/X11/qt4/Qt/qsizegrip.h
 include/X11/qt4/Qt/qsizepolicy.h
 include/X11/qt4/Qt/qslider.h
 include/X11/qt4/Qt/qsocketnotifier.h
+include/X11/qt4/Qt/qsortfilterproxymodel.h
 include/X11/qt4/Qt/qsound.h
 include/X11/qt4/Qt/qspinbox.h
 include/X11/qt4/Qt/qsplashscreen.h
@@ -1071,6 +1108,9 @@ include/X11/qt4/Qt/qstylefactory.h
 include/X11/qt4/Qt/qstyleoption.h
 include/X11/qt4/Qt/qstylepainter.h
 include/X11/qt4/Qt/qstyleplugin.h
+include/X11/qt4/Qt/qsvgrenderer.h
+include/X11/qt4/Qt/qsvgwidget.h
+include/X11/qt4/Qt/qsyntaxhighlighter.h
 include/X11/qt4/Qt/qtabbar.h
 include/X11/qt4/Qt/qtableview.h
 include/X11/qt4/Qt/qtablewidget.h
@@ -1102,6 +1142,7 @@ include/X11/qt4/Qt/qtooltip.h
 include/X11/qt4/Qt/qtranslator.h
 include/X11/qt4/Qt/qtreeview.h
 include/X11/qt4/Qt/qtreewidget.h
+include/X11/qt4/Qt/qtreewidgetitemiterator.h
 include/X11/qt4/Qt/qudpsocket.h
 include/X11/qt4/Qt/qurl.h
 include/X11/qt4/Qt/qurlinfo.h
@@ -1132,6 +1173,7 @@ include/X11/qt4/Qt3Support/Q3AsciiCacheIterator
 include/X11/qt4/Qt3Support/Q3AsciiDict
 include/X11/qt4/Qt3Support/Q3AsciiDictIterator
 include/X11/qt4/Qt3Support/Q3BaseBucket
+include/X11/qt4/Qt3Support/Q3BoxLayout
 include/X11/qt4/Qt3Support/Q3Button
 include/X11/qt4/Qt3Support/Q3ButtonGroup
 include/X11/qt4/Qt3Support/Q3CString
@@ -1155,6 +1197,7 @@ include/X11/qt4/Qt3Support/Q3CheckListItem
 include/X11/qt4/Qt3Support/Q3CheckTableItem
 include/X11/qt4/Qt3Support/Q3CleanupHandler
 include/X11/qt4/Qt3Support/Q3ColorDrag
+include/X11/qt4/Qt3Support/Q3ComboBox
 include/X11/qt4/Qt3Support/Q3ComboTableItem
 include/X11/qt4/Qt3Support/Q3DataBrowser
 include/X11/qt4/Qt3Support/Q3DataTable
@@ -1188,9 +1231,11 @@ include/X11/qt4/Qt3Support/Q3GListIterator
 include/X11/qt4/Qt3Support/Q3GListStdIterator
 include/X11/qt4/Qt3Support/Q3GVector
 include/X11/qt4/Qt3Support/Q3Grid
+include/X11/qt4/Qt3Support/Q3GridLayout
 include/X11/qt4/Qt3Support/Q3GridView
 include/X11/qt4/Qt3Support/Q3GroupBox
 include/X11/qt4/Qt3Support/Q3HBox
+include/X11/qt4/Qt3Support/Q3HBoxLayout
 include/X11/qt4/Qt3Support/Q3HButtonGroup
 include/X11/qt4/Qt3Support/Q3Header
 include/X11/qt4/Qt3Support/Q3Http
@@ -1288,6 +1333,7 @@ include/X11/qt4/Qt3Support/Q3UriDrag
 include/X11/qt4/Qt3Support/Q3Url
 include/X11/qt4/Qt3Support/Q3UrlOperator
 include/X11/qt4/Qt3Support/Q3VBox
+include/X11/qt4/Qt3Support/Q3VBoxLayout
 include/X11/qt4/Qt3Support/Q3VButtonGroup
 include/X11/qt4/Qt3Support/Q3ValueList
 include/X11/qt4/Qt3Support/Q3ValueListConstIterator
@@ -1302,11 +1348,13 @@ include/X11/qt4/Qt3Support/q3accel.h
 include/X11/qt4/Qt3Support/q3action.h
 include/X11/qt4/Qt3Support/q3asciicache.h
 include/X11/qt4/Qt3Support/q3asciidict.h
+include/X11/qt4/Qt3Support/q3boxlayout.h
 include/X11/qt4/Qt3Support/q3button.h
 include/X11/qt4/Qt3Support/q3buttongroup.h
 include/X11/qt4/Qt3Support/q3cache.h
 include/X11/qt4/Qt3Support/q3canvas.h
 include/X11/qt4/Qt3Support/q3cleanuphandler.h
+include/X11/qt4/Qt3Support/q3combobox.h
 include/X11/qt4/Qt3Support/q3cstring.h
 include/X11/qt4/Qt3Support/q3databrowser.h
 include/X11/qt4/Qt3Support/q3datatable.h
@@ -1328,6 +1376,7 @@ include/X11/qt4/Qt3Support/q3gcache.h
 include/X11/qt4/Qt3Support/q3gdict.h
 include/X11/qt4/Qt3Support/q3glist.h
 include/X11/qt4/Qt3Support/q3grid.h
+include/X11/qt4/Qt3Support/q3gridlayout.h
 include/X11/qt4/Qt3Support/q3gridview.h
 include/X11/qt4/Qt3Support/q3groupbox.h
 include/X11/qt4/Qt3Support/q3gvector.h
@@ -1406,6 +1455,8 @@ include/X11/qt4/QtAssistant/QtAssistant
 include/X11/qt4/QtAssistant/qassistantclient.h
 include/X11/qt4/QtCore/
 include/X11/qt4/QtCore/QAbstractEventDispatcher
+include/X11/qt4/QtCore/QAbstractFileEngine
+include/X11/qt4/QtCore/QAbstractFileEngineHandler
 include/X11/qt4/QtCore/QAbstractItemModel
 include/X11/qt4/QtCore/QAbstractListModel
 include/X11/qt4/QtCore/QAbstractTableModel
@@ -1422,6 +1473,7 @@ include/X11/qt4/QtCore/QBuffer
 include/X11/qt4/QtCore/QByteArray
 include/X11/qt4/QtCore/QByteArrayMatcher
 include/X11/qt4/QtCore/QByteRef
+include/X11/qt4/QtCore/QCOORD
 include/X11/qt4/QtCore/QCache
 include/X11/qt4/QtCore/QChar
 include/X11/qt4/QtCore/QCharRef
@@ -1436,10 +1488,9 @@ include/X11/qt4/QtCore/QDebug
 include/X11/qt4/QtCore/QDir
 include/X11/qt4/QtCore/QEvent
 include/X11/qt4/QtCore/QEventLoop
+include/X11/qt4/QtCore/QFSFileEngine
 include/X11/qt4/QtCore/QFactoryInterface
 include/X11/qt4/QtCore/QFile
-include/X11/qt4/QtCore/QFileEngine
-include/X11/qt4/QtCore/QFileEngineHandler
 include/X11/qt4/QtCore/QFileInfo
 include/X11/qt4/QtCore/QFileInfoList
 include/X11/qt4/QtCore/QFileInfoListIterator
@@ -1452,10 +1503,12 @@ include/X11/qt4/QtCore/QGenericReturnArgument
 include/X11/qt4/QtCore/QGlobalStatic
 include/X11/qt4/QtCore/QHash
 include/X11/qt4/QtCore/QHashData
+include/X11/qt4/QtCore/QHashDummyNode
 include/X11/qt4/QtCore/QHashDummyValue
 include/X11/qt4/QtCore/QHashIterator
 include/X11/qt4/QtCore/QHashNode
 include/X11/qt4/QtCore/QIODevice
+include/X11/qt4/QtCore/QInternal
 include/X11/qt4/QtCore/QLatin1Char
 include/X11/qt4/QtCore/QLatin1String
 include/X11/qt4/QtCore/QLibrary
@@ -1583,12 +1636,15 @@ include/X11/qt4/QtCore/QtAlgorithms
 include/X11/qt4/QtCore/QtCleanUpFunction
 include/X11/qt4/QtCore/QtCore
 include/X11/qt4/QtCore/QtDebug
+include/X11/qt4/QtCore/QtEndian
 include/X11/qt4/QtCore/QtGlobal
 include/X11/qt4/QtCore/QtMsgHandler
+include/X11/qt4/QtCore/QtPlugin
 include/X11/qt4/QtCore/QtPluginInstanceFunction
 include/X11/qt4/QtCore/arch/
 include/X11/qt4/QtCore/arch/qatomic.h
 include/X11/qt4/QtCore/qabstracteventdispatcher.h
+include/X11/qt4/QtCore/qabstractfileengine.h
 include/X11/qt4/QtCore/qabstractitemmodel.h
 include/X11/qt4/QtCore/qalgorithms.h
 include/X11/qt4/QtCore/qatomic.h
@@ -1611,12 +1667,13 @@ include/X11/qt4/QtCore/qdatastream.h
 include/X11/qt4/QtCore/qdatetime.h
 include/X11/qt4/QtCore/qdebug.h
 include/X11/qt4/QtCore/qdir.h
+include/X11/qt4/QtCore/qendian.h
 include/X11/qt4/QtCore/qeventloop.h
 include/X11/qt4/QtCore/qfactoryinterface.h
 include/X11/qt4/QtCore/qfeatures.h
 include/X11/qt4/QtCore/qfile.h
-include/X11/qt4/QtCore/qfileengine.h
 include/X11/qt4/QtCore/qfileinfo.h
+include/X11/qt4/QtCore/qfsfileengine.h
 include/X11/qt4/QtCore/qglobal.h
 include/X11/qt4/QtCore/qhash.h
 include/X11/qt4/QtCore/qiodevice.h
@@ -1675,11 +1732,13 @@ include/X11/qt4/QtDesigner/
 include/X11/qt4/QtDesigner/QAbstractExtensionFactory
 include/X11/qt4/QtDesigner/QAbstractExtensionManager
 include/X11/qt4/QtDesigner/QAbstractFormBuilder
+include/X11/qt4/QtDesigner/QDesignerActionEditorInterface
 include/X11/qt4/QtDesigner/QDesignerComponents
 include/X11/qt4/QtDesigner/QDesignerContainerExtension
 include/X11/qt4/QtDesigner/QDesignerCustomWidgetCollectionInterface
 include/X11/qt4/QtDesigner/QDesignerCustomWidgetInterface
 include/X11/qt4/QtDesigner/QDesignerDnDItemInterface
+include/X11/qt4/QtDesigner/QDesignerExportWidget
 include/X11/qt4/QtDesigner/QDesignerExtraInfoExtension
 include/X11/qt4/QtDesigner/QDesignerFormEditorInterface
 include/X11/qt4/QtDesigner/QDesignerFormEditorPluginInterface
@@ -1704,6 +1763,7 @@ include/X11/qt4/QtDesigner/QExtensionFactory
 include/X11/qt4/QtDesigner/QExtensionManager
 include/X11/qt4/QtDesigner/QFormBuilder
 include/X11/qt4/QtDesigner/QtDesigner
+include/X11/qt4/QtDesigner/abstractactioneditor.h
 include/X11/qt4/QtDesigner/abstractdnditem.h
 include/X11/qt4/QtDesigner/abstractformbuilder.h
 include/X11/qt4/QtDesigner/abstractformeditor.h
@@ -1731,7 +1791,9 @@ include/X11/qt4/QtDesigner/membersheet.h
 include/X11/qt4/QtDesigner/propertysheet.h
 include/X11/qt4/QtDesigner/qdesigner_components.h
 include/X11/qt4/QtDesigner/qdesigner_components_global.h
+include/X11/qt4/QtDesigner/qdesignerexportwidget.h
 include/X11/qt4/QtDesigner/qextensionmanager.h
+include/X11/qt4/QtDesigner/resourceeditor.h
 include/X11/qt4/QtDesigner/sdk_global.h
 include/X11/qt4/QtDesigner/taskmenu.h
 include/X11/qt4/QtDesigner/ui4.h
@@ -1742,6 +1804,7 @@ include/X11/qt4/QtGui/QAbstractItemDelegate
 include/X11/qt4/QtGui/QAbstractItemView
 include/X11/qt4/QtGui/QAbstractPageSetupDialog
 include/X11/qt4/QtGui/QAbstractPrintDialog
+include/X11/qt4/QtGui/QAbstractProxyModel
 include/X11/qt4/QtGui/QAbstractScrollArea
 include/X11/qt4/QtGui/QAbstractSlider
 include/X11/qt4/QtGui/QAbstractSpinBox
@@ -1866,6 +1929,7 @@ include/X11/qt4/QtGui/QMatrix
 include/X11/qt4/QtGui/QMenu
 include/X11/qt4/QtGui/QMenuBar
 include/X11/qt4/QtGui/QMenuItem
+include/X11/qt4/QtGui/QMenubarUpdatedEvent
 include/X11/qt4/QtGui/QMessageBox
 include/X11/qt4/QtGui/QMimeSource
 include/X11/qt4/QtGui/QMotifStyle
@@ -1915,6 +1979,7 @@ include/X11/qt4/QtGui/QShowEvent
 include/X11/qt4/QtGui/QSizeGrip
 include/X11/qt4/QtGui/QSizePolicy
 include/X11/qt4/QtGui/QSlider
+include/X11/qt4/QtGui/QSortFilterProxyModel
 include/X11/qt4/QtGui/QSound
 include/X11/qt4/QtGui/QSpacerItem
 include/X11/qt4/QtGui/QSpinBox
@@ -1939,9 +2004,12 @@ include/X11/qt4/QtGui/QStyleOptionComplex
 include/X11/qt4/QtGui/QStyleOptionDockWidget
 include/X11/qt4/QtGui/QStyleOptionFocusRect
 include/X11/qt4/QtGui/QStyleOptionFrame
+include/X11/qt4/QtGui/QStyleOptionFrameV2
+include/X11/qt4/QtGui/QStyleOptionGroupBox
 include/X11/qt4/QtGui/QStyleOptionHeader
 include/X11/qt4/QtGui/QStyleOptionMenuItem
 include/X11/qt4/QtGui/QStyleOptionProgressBar
+include/X11/qt4/QtGui/QStyleOptionProgressBarV2
 include/X11/qt4/QtGui/QStyleOptionQ3DockWindow
 include/X11/qt4/QtGui/QStyleOptionQ3ListView
 include/X11/qt4/QtGui/QStyleOptionQ3ListViewItem
@@ -1950,13 +2018,16 @@ include/X11/qt4/QtGui/QStyleOptionSlider
 include/X11/qt4/QtGui/QStyleOptionSpinBox
 include/X11/qt4/QtGui/QStyleOptionTab
 include/X11/qt4/QtGui/QStyleOptionTabBarBase
+include/X11/qt4/QtGui/QStyleOptionTabV2
 include/X11/qt4/QtGui/QStyleOptionTabWidgetFrame
 include/X11/qt4/QtGui/QStyleOptionTitleBar
+include/X11/qt4/QtGui/QStyleOptionToolBar
 include/X11/qt4/QtGui/QStyleOptionToolBox
 include/X11/qt4/QtGui/QStyleOptionToolButton
 include/X11/qt4/QtGui/QStyleOptionViewItem
 include/X11/qt4/QtGui/QStylePainter
 include/X11/qt4/QtGui/QStylePlugin
+include/X11/qt4/QtGui/QSyntaxHighlighter
 include/X11/qt4/QtGui/QTabBar
 include/X11/qt4/QtGui/QTabWidget
 include/X11/qt4/QtGui/QTableView
@@ -2002,12 +2073,13 @@ include/X11/qt4/QtGui/QToolTip
 include/X11/qt4/QtGui/QTreeView
 include/X11/qt4/QtGui/QTreeWidget
 include/X11/qt4/QtGui/QTreeWidgetItem
+include/X11/qt4/QtGui/QTreeWidgetItemIterator
+include/X11/qt4/QtGui/QUpdateLaterEvent
 include/X11/qt4/QtGui/QVBoxLayout
 include/X11/qt4/QtGui/QVFbHeader
 include/X11/qt4/QtGui/QVFbKeyData
 include/X11/qt4/QtGui/QValidator
 include/X11/qt4/QtGui/QWMatrix
-include/X11/qt4/QtGui/QWSUpdateEvent
 include/X11/qt4/QtGui/QWhatsThis
 include/X11/qt4/QtGui/QWhatsThisClickedEvent
 include/X11/qt4/QtGui/QWheelEvent
@@ -2024,12 +2096,14 @@ include/X11/qt4/QtGui/QWorkspace
 include/X11/qt4/QtGui/QX11EmbedContainer
 include/X11/qt4/QtGui/QX11EmbedWidget
 include/X11/qt4/QtGui/QX11Info
+include/X11/qt4/QtGui/QtEvents
 include/X11/qt4/QtGui/QtGui
 include/X11/qt4/QtGui/qabstractbutton.h
 include/X11/qt4/QtGui/qabstractitemdelegate.h
 include/X11/qt4/QtGui/qabstractitemview.h
 include/X11/qt4/QtGui/qabstractpagesetupdialog.h
 include/X11/qt4/QtGui/qabstractprintdialog.h
+include/X11/qt4/QtGui/qabstractproxymodel.h
 include/X11/qt4/QtGui/qabstractscrollarea.h
 include/X11/qt4/QtGui/qabstractslider.h
 include/X11/qt4/QtGui/qabstractspinbox.h
@@ -2138,6 +2212,7 @@ include/X11/qt4/QtGui/qshortcut.h
 include/X11/qt4/QtGui/qsizegrip.h
 include/X11/qt4/QtGui/qsizepolicy.h
 include/X11/qt4/QtGui/qslider.h
+include/X11/qt4/QtGui/qsortfilterproxymodel.h
 include/X11/qt4/QtGui/qsound.h
 include/X11/qt4/QtGui/qspinbox.h
 include/X11/qt4/QtGui/qsplashscreen.h
@@ -2152,6 +2227,7 @@ include/X11/qt4/QtGui/qstylefactory.h
 include/X11/qt4/QtGui/qstyleoption.h
 include/X11/qt4/QtGui/qstylepainter.h
 include/X11/qt4/QtGui/qstyleplugin.h
+include/X11/qt4/QtGui/qsyntaxhighlighter.h
 include/X11/qt4/QtGui/qtabbar.h
 include/X11/qt4/QtGui/qtableview.h
 include/X11/qt4/QtGui/qtablewidget.h
@@ -2173,6 +2249,7 @@ include/X11/qt4/QtGui/qtoolbutton.h
 include/X11/qt4/QtGui/qtooltip.h
 include/X11/qt4/QtGui/qtreeview.h
 include/X11/qt4/QtGui/qtreewidget.h
+include/X11/qt4/QtGui/qtreewidgetitemiterator.h
 include/X11/qt4/QtGui/qvalidator.h
 include/X11/qt4/QtGui/qvfbhdr.h
 include/X11/qt4/QtGui/qwhatsthis.h
@@ -2194,6 +2271,7 @@ include/X11/qt4/QtNetwork/QHttpHeader
 include/X11/qt4/QtNetwork/QHttpRequestHeader
 include/X11/qt4/QtNetwork/QHttpResponseHeader
 include/X11/qt4/QtNetwork/QIPv6Address
+include/X11/qt4/QtNetwork/QNetworkProxy
 include/X11/qt4/QtNetwork/QTcpServer
 include/X11/qt4/QtNetwork/QTcpSocket
 include/X11/qt4/QtNetwork/QUdpSocket
@@ -2205,6 +2283,7 @@ include/X11/qt4/QtNetwork/qftp.h
 include/X11/qt4/QtNetwork/qhostaddress.h
 include/X11/qt4/QtNetwork/qhostinfo.h
 include/X11/qt4/QtNetwork/qhttp.h
+include/X11/qt4/QtNetwork/qnetworkproxy.h
 include/X11/qt4/QtNetwork/qtcpserver.h
 include/X11/qt4/QtNetwork/qtcpsocket.h
 include/X11/qt4/QtNetwork/qudpsocket.h
@@ -2213,10 +2292,13 @@ include/X11/qt4/QtOpenGL/
 include/X11/qt4/QtOpenGL/QGLColormap
 include/X11/qt4/QtOpenGL/QGLContext
 include/X11/qt4/QtOpenGL/QGLFormat
+include/X11/qt4/QtOpenGL/QGLPixelBuffer
 include/X11/qt4/QtOpenGL/QGLWidget
 include/X11/qt4/QtOpenGL/QtOpenGL
 include/X11/qt4/QtOpenGL/qgl.h
 include/X11/qt4/QtOpenGL/qglcolormap.h
+include/X11/qt4/QtOpenGL/qglpbuffer.h
+include/X11/qt4/QtOpenGL/qglpixelbuffer.h
 include/X11/qt4/QtSql/
 include/X11/qt4/QtSql/QIBaseDriver
 include/X11/qt4/QtSql/QIBaseResult
@@ -2268,6 +2350,42 @@ include/X11/qt4/QtSql/qsqlrelationaldelegate.h
 include/X11/qt4/QtSql/qsqlrelationaltablemodel.h
 include/X11/qt4/QtSql/qsqlresult.h
 include/X11/qt4/QtSql/qsqltablemodel.h
+include/X11/qt4/QtSvg/
+include/X11/qt4/QtSvg/QSvgRenderer
+include/X11/qt4/QtSvg/QSvgWidget
+include/X11/qt4/QtSvg/QtSvg
+include/X11/qt4/QtSvg/qsvgrenderer.h
+include/X11/qt4/QtSvg/qsvgwidget.h
+include/X11/qt4/QtTest/
+include/X11/qt4/QtTest/QSignalSpy
+include/X11/qt4/QtTest/QTestAccessibility
+include/X11/qt4/QtTest/QTestAccessibilityEvent
+include/X11/qt4/QtTest/QTestData
+include/X11/qt4/QtTest/QTestDelayEvent
+include/X11/qt4/QtTest/QTestEvent
+include/X11/qt4/QtTest/QTestEventList
+include/X11/qt4/QtTest/QTestEventLoop
+include/X11/qt4/QtTest/QTestKeyClicksEvent
+include/X11/qt4/QtTest/QTestKeyEvent
+include/X11/qt4/QtTest/QTestMouseEvent
+include/X11/qt4/QtTest/QtTest
+include/X11/qt4/QtTest/qsignalspy.h
+include/X11/qt4/QtTest/qtest.h
+include/X11/qt4/QtTest/qtest_global.h
+include/X11/qt4/QtTest/qtest_gui.h
+include/X11/qt4/QtTest/qtestaccessible.h
+include/X11/qt4/QtTest/qtestassert.h
+include/X11/qt4/QtTest/qtestcase.h
+include/X11/qt4/QtTest/qtestdata.h
+include/X11/qt4/QtTest/qtestevent.h
+include/X11/qt4/QtTest/qtesteventloop.h
+include/X11/qt4/QtTest/qtestkeyboard.h
+include/X11/qt4/QtTest/qtestmouse.h
+include/X11/qt4/QtTest/qtestsystem.h
+include/X11/qt4/QtUiTools/
+include/X11/qt4/QtUiTools/QUiLoader
+include/X11/qt4/QtUiTools/QtUiTools
+include/X11/qt4/QtUiTools/quiloader.h
 include/X11/qt4/QtXml/
 include/X11/qt4/QtXml/QDomAttr
 include/X11/qt4/QtXml/QDomCDATASection
@@ -2310,9 +2428,12 @@ lib/qt4/QtGui.pc
 lib/qt4/QtNetwork.pc
 lib/qt4/QtOpenGL.pc
 lib/qt4/QtSql.pc
+lib/qt4/QtSvg.pc
+lib/qt4/QtTest.pc
 lib/qt4/QtXml.pc
 lib/qt4/bin/
 lib/qt4/bin/assistant
+lib/qt4/bin/assistant4
 lib/qt4/bin/designer
 lib/qt4/bin/linguist
 lib/qt4/bin/lrelease
@@ -2328,31 +2449,26 @@ lib/qt4/bin/uic3
 lib/qt4/include
 @comment lib/qt4/libQt3Support.la
 lib/qt4/libQt3Support.prl
-@comment lib/qt4/libQt3Support.so.4
 lib/qt4/libQtAssistantClient.a
 lib/qt4/libQtAssistantClient.prl
 @comment lib/qt4/libQtCore.la
 lib/qt4/libQtCore.prl
-@comment lib/qt4/libQtCore.so.4
 lib/qt4/libQtDesigner.prl
-@comment lib/qt4/libQtDesigner.so.4
 lib/qt4/libQtDesignerComponents.prl
-@comment lib/qt4/libQtDesignerComponents.so.4
 @comment lib/qt4/libQtGui.la
 lib/qt4/libQtGui.prl
-@comment lib/qt4/libQtGui.so.4
 @comment lib/qt4/libQtNetwork.la
 lib/qt4/libQtNetwork.prl
-@comment lib/qt4/libQtNetwork.so.4
 @comment lib/qt4/libQtOpenGL.la
 lib/qt4/libQtOpenGL.prl
-@comment lib/qt4/libQtOpenGL.so.4
 @comment lib/qt4/libQtSql.la
 lib/qt4/libQtSql.prl
-@comment lib/qt4/libQtSql.so.4
+lib/qt4/libQtSvg.la
+lib/qt4/libQtSvg.prl
+lib/qt4/libQtTest.la
+lib/qt4/libQtTest.prl
 @comment lib/qt4/libQtXml.la
 lib/qt4/libQtXml.prl
-@comment lib/qt4/libQtXml.so.4
 lib/qt4/mkspecs/
 lib/qt4/mkspecs/aix-g++/
 lib/qt4/mkspecs/aix-g++-64/
@@ -2366,16 +2482,10 @@ lib/qt4/mkspecs/aix-xlc-64/qmake.conf
 lib/qt4/mkspecs/aix-xlc-64/qplatformdefs.h
 lib/qt4/mkspecs/aix-xlc/qmake.conf
 lib/qt4/mkspecs/aix-xlc/qplatformdefs.h
-lib/qt4/mkspecs/bsdi-g++/
-lib/qt4/mkspecs/bsdi-g++/qmake.conf
-lib/qt4/mkspecs/bsdi-g++/qplatformdefs.h
 lib/qt4/mkspecs/darwin-g++/
 lib/qt4/mkspecs/darwin-g++/qmake.conf
 lib/qt4/mkspecs/darwin-g++/qplatformdefs.h
 lib/qt4/mkspecs/default
-lib/qt4/mkspecs/dgux-g++/
-lib/qt4/mkspecs/dgux-g++/qmake.conf
-lib/qt4/mkspecs/dgux-g++/qplatformdefs.h
 lib/qt4/mkspecs/features/
 lib/qt4/mkspecs/features/assistant.prf
 lib/qt4/mkspecs/features/build_pass.prf
@@ -2387,25 +2497,33 @@ lib/qt4/mkspecs/features/designer.prf
 lib/qt4/mkspecs/features/dll.prf
 lib/qt4/mkspecs/features/exclusive_builds.prf
 lib/qt4/mkspecs/features/link_pkgconfig.prf
+lib/qt4/mkspecs/features/mac/
+lib/qt4/mkspecs/features/mac/default_pre.prf
+lib/qt4/mkspecs/features/mac/sdk.prf
+lib/qt4/mkspecs/features/macx/
+lib/qt4/mkspecs/features/macx/ppc.prf
+lib/qt4/mkspecs/features/macx/x86.prf
 lib/qt4/mkspecs/features/moc.prf
 lib/qt4/mkspecs/features/qt.prf
 lib/qt4/mkspecs/features/qt_config.prf
+lib/qt4/mkspecs/features/qtestlib.prf
 lib/qt4/mkspecs/features/qtopia.prf
 lib/qt4/mkspecs/features/qtopiainc.prf
 lib/qt4/mkspecs/features/qtopialib.prf
 lib/qt4/mkspecs/features/release.prf
 lib/qt4/mkspecs/features/resources.prf
 lib/qt4/mkspecs/features/shared.prf
+lib/qt4/mkspecs/features/silent.prf
 lib/qt4/mkspecs/features/static.prf
 lib/qt4/mkspecs/features/static_and_shared.prf
 lib/qt4/mkspecs/features/staticlib.prf
 lib/qt4/mkspecs/features/uic.prf
+lib/qt4/mkspecs/features/uitools.prf
 lib/qt4/mkspecs/features/unix/
 lib/qt4/mkspecs/features/unix/dylib.prf
 lib/qt4/mkspecs/features/unix/hide_symbols.prf
 lib/qt4/mkspecs/features/unix/largefile.prf
 lib/qt4/mkspecs/features/unix/opengl.prf
-lib/qt4/mkspecs/features/unix/silent.prf
 lib/qt4/mkspecs/features/unix/thread.prf
 lib/qt4/mkspecs/features/unix/x11.prf
 lib/qt4/mkspecs/features/unix/x11inc.prf
@@ -2518,6 +2636,7 @@ lib/qt4/mkspecs/macx-pbuilder/qmake.conf
 lib/qt4/mkspecs/macx-pbuilder/qplatformdefs.h
 lib/qt4/mkspecs/macx-xcode/
 lib/qt4/mkspecs/macx-xcode/Info.plist.app
+lib/qt4/mkspecs/macx-xcode/Info.plist.lib
 lib/qt4/mkspecs/macx-xcode/qmake.conf
 lib/qt4/mkspecs/macx-xcode/qplatformdefs.h
 lib/qt4/mkspecs/macx-xlc/
@@ -2556,18 +2675,15 @@ lib/qt4/mkspecs/qws/linux-sharp-g++/qplatformdefs.h
 lib/qt4/mkspecs/qws/linux-x86-g++/
 lib/qt4/mkspecs/qws/linux-x86-g++/qmake.conf
 lib/qt4/mkspecs/qws/linux-x86-g++/qplatformdefs.h
+lib/qt4/mkspecs/qws/linux-x86_64-g++/
+lib/qt4/mkspecs/qws/linux-x86_64-g++/qmake.conf
+lib/qt4/mkspecs/qws/linux-x86_64-g++/qplatformdefs.h
 lib/qt4/mkspecs/qws/macx-generic-g++/
 lib/qt4/mkspecs/qws/macx-generic-g++/qmake.conf
 lib/qt4/mkspecs/qws/macx-generic-g++/qplatformdefs.h
 lib/qt4/mkspecs/qws/solaris-generic-g++/
 lib/qt4/mkspecs/qws/solaris-generic-g++/qmake.conf
 lib/qt4/mkspecs/qws/solaris-generic-g++/qplatformdefs.h
-lib/qt4/mkspecs/reliant-cds/
-lib/qt4/mkspecs/reliant-cds-64/
-lib/qt4/mkspecs/reliant-cds-64/qmake.conf
-lib/qt4/mkspecs/reliant-cds-64/qplatformdefs.h
-lib/qt4/mkspecs/reliant-cds/qmake.conf
-lib/qt4/mkspecs/reliant-cds/qplatformdefs.h
 lib/qt4/mkspecs/sco-cc/
 lib/qt4/mkspecs/sco-cc/qmake.conf
 lib/qt4/mkspecs/sco-cc/qplatformdefs.h
@@ -2613,12 +2729,21 @@ lib/qt4/phrasebooks/russian.qph
 lib/qt4/phrasebooks/spanish.qph
 lib/qt4/phrasebooks/swedish.qph
 lib/qt4/plugins/
+lib/qt4/plugins/accessible/
+lib/qt4/plugins/arthurplugin/
 lib/qt4/plugins/codecs/
 lib/qt4/plugins/designer/
 lib/qt4/plugins/imageformats/
 lib/qt4/plugins/sqldrivers/
 lib/qt4/q3porting.xml
-share/doc/qt4/
+lib/qt4/translations/
+lib/qt4/translations/qt_ar.qm
+lib/qt4/translations/qt_cs.qm
+lib/qt4/translations/qt_de.qm
+lib/qt4/translations/qt_fr.qm
+lib/qt4/translations/qt_iw.qm
+lib/qt4/translations/qt_ru.qm
+lib/qt4/translations/qt_sk.qm
 share/doc/qt4/LICENSE.GPL
 share/doc/qt4/OPENSOURCE-NOTICE.TXT
 share/doc/qt4/README

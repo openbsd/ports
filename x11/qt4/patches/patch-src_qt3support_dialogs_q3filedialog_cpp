@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_qt3support_dialogs_q3filedialog_cpp,v 1.1 2005/12/31 15:59:50 espie Exp $
+--- src/qt3support/dialogs/q3filedialog.cpp.orig	Thu Dec 29 17:55:16 2005
++++ src/qt3support/dialogs/q3filedialog.cpp	Thu Dec 29 17:55:35 2005
+@@ -3120,6 +3120,9 @@ void Q3FileDialog::setDir(const QString 
+ #    define _POSIX_LOGIN_NAME_MAX 9
+ #  endif
+ 
++#if defined(Q_OS_OPENBSD)
++#include <sys/param.h>
++#endif
+             char name[_POSIX_LOGIN_NAME_MAX];
+             if (::getlogin_r(name, _POSIX_LOGIN_NAME_MAX) == 0)
+                 user = name;

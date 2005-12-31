@@ -1,0 +1,10 @@
+$OpenBSD: patch-examples_designer_customwidgetplugin_customwidgetplugin_pro,v 1.1 2005/12/31 15:59:50 espie Exp $
+--- examples/designer/customwidgetplugin/customwidgetplugin.pro.orig	Sat Dec 31 14:40:33 2005
++++ examples/designer/customwidgetplugin/customwidgetplugin.pro	Sat Dec 31 14:40:41 2005
+@@ -1,4 +1,5 @@
+-CONFIG      += designer plugin debug_and_release
++CONFIG      += designer plugin
++#CONFIG      += designer plugin debug_and_release
+ TEMPLATE    = lib
+ DESTDIR     = $$QT_BUILD_TREE/plugins/designer
+ 

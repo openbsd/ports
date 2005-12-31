@@ -1,0 +1,11 @@
+$OpenBSD: patch-config_tests_unix_ipv6ifname_ipv6ifname_cpp,v 1.1 2005/12/31 15:59:50 espie Exp $
+--- config.tests/unix/ipv6ifname/ipv6ifname.cpp.orig	Fri Dec 30 10:16:28 2005
++++ config.tests/unix/ipv6ifname/ipv6ifname.cpp	Fri Dec 30 10:16:33 2005
+@@ -5,6 +5,7 @@ on target platforms. */
+ #define _HPUX_SOURCE
+ #endif
+ 
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <net/if.h>
+ 

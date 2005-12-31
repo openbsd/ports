@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_plugins_imageformats_mng_mng_pro,v 1.1 2005/12/31 15:59:50 espie Exp $
+--- src/plugins/imageformats/mng/mng.pro.orig	Sat Dec 31 16:31:31 2005
++++ src/plugins/imageformats/mng/mng.pro	Sat Dec 31 16:31:47 2005
+@@ -9,7 +9,7 @@ SOURCES += main.cpp \
+            qmnghandler.cpp
+ 
+ contains(QT_CONFIG, system-mng) {
+-        unix:LIBS += -lmng
++        unix:LIBS += -lmng -llcms -ljpeg -lz
+         win32:LIBS += libmng.lib
+ }
+ !contains(QT_CONFIG, system-mng) {

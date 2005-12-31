@@ -1,0 +1,10 @@
+$OpenBSD: patch-tools_designer_src_components_component_pri,v 1.1 2005/12/31 15:59:50 espie Exp $
+--- tools/designer/src/components/component.pri.orig	Sat Dec 31 13:04:37 2005
++++ tools/designer/src/components/component.pri	Sat Dec 31 13:04:39 2005
+@@ -1,5 +1,5 @@
+ 
+-CONFIG += debug_and_release
++#CONFIG += debug_and_release
+ contains(TEMPLATE,lib) {
+    CONFIG(debug, debug|release) {
+       unix:TARGET = $$member(TARGET, 0)_debug
