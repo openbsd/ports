@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2005/02/07 19:01:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2005/12/31 16:33:45 naddy Exp $
 
 COMMENT=		"widgets library"
 
-VERSION=		0.2.2
-DISTNAME=		Mowitz-${VERSION}
-PKGNAME=		${DISTNAME:L}
+DISTNAME=		Mowitz-0.2.2
+PKGNAME=		${DISTNAME:L}p0
+SHARED_LIBS=		Mowitz 2.2
+MODGNU_SHARED_LIBS=	Mowitz ''
 CATEGORIES=		x11 devel
 
 HOMEPAGE=		http://siag.nu/mowitz/
@@ -22,6 +23,7 @@ USE_X11=		Yes
 
 LIB_DEPENDS=		XawM.1::x11/XawMu
 
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2005/02/07 19:01:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2005/12/31 16:33:45 naddy Exp $
 
 COMMENT=		"libXaw widget set replacement"
 
-VERSION=		0.14.0
-DISTNAME=		neXtaw-${VERSION}
+DISTNAME=		neXtaw-0.14.0
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		neXtaw 14.0
+MODGNU_SHARED_LIBS=	neXtaw ''
 CATEGORIES=		x11 devel
 
 HOMEPAGE=		http://siag.nu/neXtaw/
@@ -18,8 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		Xext Xmu 
 
 USE_X11=		Yes
-
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ENV+=		CPPFLAGS="-I${X11BASE}/include"
 
 NO_REGRESS=		Yes
