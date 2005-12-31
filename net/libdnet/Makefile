@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2005/09/16 09:51:27 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2005/12/31 13:10:15 steven Exp $
 
 COMMENT=	"portable low-level networking library"
 COMMENT-python= "python interface to libdnet"
 
 DISTNAME=	libdnet-1.10
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 PKGNAME-python= ${DISTNAME:S/^libdnet/py-libdnet/}
+SHARED_LIBS=		dnet	1.0
+MODGNU_SHARED_LIBS=	dnet	''
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libdnet/}
 
@@ -23,6 +25,7 @@ WANTLIB=		c
 PSEUDO_FLAVORS=        no_python
 FLAVOR?=
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 
 .if ${FLAVOR:L:Mno_python}
@@ -32,6 +35,8 @@ MULTI_PACKAGES=		-python
 SUBPACKAGE?=
 CONFIGURE_ARGS+=	--with-python
 BUILD_DEPENDS+=		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+MAKE_FLAGS=		PYTHON=${LOCALBASE}/bin/python${PYTHON_VER}
+FAKE_FLAGS=		${MAKE_FLAGS} DESTDIR=${WRKINST}
 PYTHON_VER=		2.3
 SUBST_VARS=		PYTHON_VER
 .  if defined(PACKAGING) && ${SUBPACKAGE} == "-python"
