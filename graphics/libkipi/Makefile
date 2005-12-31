@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/04/09 12:11:03 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/31 14:07:21 steven Exp $
 
 COMMENT=		"kde image plugins api"
 CATEGORIES=		graphics devel x11 x11/kde
 DISTNAME=		libkipi-0.1.1
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		kipi	0.0
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://extragear.kde.org/apps/kipi/
 MASTER_SITES=		${MASTER_SITE_KDE:=unstable/apps/KDE3.x/graphics/}
@@ -16,7 +18,8 @@ WANTLIB=		ICE Xrender SM Xext pthread X11 util m z \
 
 MODULES=	x11/kde
 
-MODKDE_LIBTOOL=		Yes
+USE_LIBTOOL=		Yes
+LIBTOOL_FLAGS+=		--tag=disable-static
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
 AUTOCONF=		/bin/sh ${WRKDIST}/admin/cvs.sh configure
