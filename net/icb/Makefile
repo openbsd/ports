@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2004/12/16 00:31:22 alek Exp $
+# $OpenBSD: Makefile,v 1.23 2005/12/31 02:09:46 fgsch Exp $
 # $NetBSD: Makefile,v 1.6 1998/04/15 11:15:34 frueauf Exp $
 
 COMMENT=	"Internet CB - mostly-defunct chat client"
 
 DISTNAME=	icb-5.0.9
-PKGNAME=	icb-5.0.9p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net
 
 MASTER_SITES=	ftp://ftp.swcp.com/pub/icb/clients/unix/

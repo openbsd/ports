@@ -1,0 +1,11 @@
+$OpenBSD: patch-glob_tilde_c,v 1.1 2005/12/31 02:09:46 fgsch Exp $
+--- glob/tilde.c.orig	Sat Dec 31 02:02:06 2005
++++ glob/tilde.c	Sat Dec 31 02:02:22 2005
+@@ -28,6 +28,7 @@
+ #endif
+ 
+ #include <pwd.h>
++#include <stdlib.h>
+ 
+ #ifndef savestring
+ #define savestring(x) (char *)strcpy ((char *)xmalloc (1 + strlen (x)), (x))

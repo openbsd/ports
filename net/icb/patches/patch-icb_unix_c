@@ -1,7 +1,7 @@
-$OpenBSD: patch-icb_unix_c,v 1.1 2001/05/14 16:42:54 millert Exp $
---- icb/unix.c.orig	Fri Feb 24 14:20:31 1995
-+++ icb/unix.c	Mon May 14 10:33:04 2001
-@@ -9,11 +9,35 @@
+$OpenBSD: patch-icb_unix_c,v 1.2 2005/12/31 02:09:46 fgsch Exp $
+--- icb/unix.c.orig	Fri Feb 24 21:20:31 1995
++++ icb/unix.c	Sat Dec 31 01:54:33 2005
+@@ -9,12 +9,36 @@
  #include "externs.h"
  #include <pwd.h>
  #include <sys/dir.h>
@@ -14,7 +14,7 @@ $OpenBSD: patch-icb_unix_c,v 1.1 2001/05/14 16:42:54 millert Exp $
  
 -#ifndef SYSV
 +#ifdef SYSV
-+
+ 
 +#define USE_TERMIO
 +#include <termio.h>
 +#define TTYSTRUCT termio
@@ -35,9 +35,10 @@ $OpenBSD: patch-icb_unix_c,v 1.1 2001/05/14 16:42:54 millert Exp $
 +#endif /* SYSV */
 +
 +#ifndef USE_TERMIO /* neither case above (SYSV or BSD4_4) */
- 
++
  #ifdef linux
  #include <bsd/sgtty.h>
+ #else
 @@ -22,18 +46,15 @@
  #endif
  
