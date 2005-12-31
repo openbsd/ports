@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2005/04/09 12:15:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2005/12/31 15:27:01 steven Exp $
 bin/gwenview
 ${KDE}/gwenview.la
 ${KDE}/gwenview.so
@@ -7,7 +7,7 @@ ${KDE}/libgvdirpart.so
 ${KDE}/libgvimagepart.la
 ${KDE}/libgvimagepart.so
 lib/libgwenviewcore.la
-@lib lib/libgwenviewcore.so.1.0
+@lib lib/libgwenviewcore.so.${LIBgwenviewcore_VERSION}
 lib/libkdeinit_gwenview.la
 lib/libkdeinit_gwenview.so
 @man man/man1/gwenview.1
@@ -116,8 +116,6 @@ share/icons/crystalsvg/48x48/apps/gwenview.png
 share/icons/crystalsvg/64x64/apps/gwenview.png
 share/locale/ar/LC_MESSAGES/gwenview.mo
 share/locale/az/LC_MESSAGES/gwenview.mo
-share/locale/br/
-share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/gwenview.mo
 share/locale/ca/LC_MESSAGES/gwenview.mo
 share/locale/cs/LC_MESSAGES/gwenview.mo
@@ -161,8 +159,6 @@ share/locale/uk/LC_MESSAGES/gwenview.mo
 share/locale/ven/
 share/locale/ven/LC_MESSAGES/
 share/locale/ven/LC_MESSAGES/gwenview.mo
-share/locale/xh/
-share/locale/xh/LC_MESSAGES/
 share/locale/xh/LC_MESSAGES/gwenview.mo
 share/locale/xx/
 share/locale/xx/LC_MESSAGES/

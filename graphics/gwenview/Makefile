@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.26 2005/10/30 00:10:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.27 2005/12/31 15:27:01 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"image viewer for KDE"
 
 DISTNAME=	gwenview-1.2.0
+PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=	gwenviewcore	1.0
 CATEGORIES=	graphics x11 x11/kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gwenview/}
 EXTRACT_SUFX=	.tar.bz2
@@ -34,7 +36,8 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION=	2.59
-MODKDE_LIBTOOL=		Yes
+USE_LIBTOOL=		Yes
+LIBTOOL_FLAGS+=		--tag=disable-static
 MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_ARGS=	${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --enable-shared

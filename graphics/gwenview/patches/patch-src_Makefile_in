@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2005/12/31 15:27:01 steven Exp $
+--- src/Makefile.in.orig	Sat Dec 31 15:50:03 2005
++++ src/Makefile.in	Sat Dec 31 15:50:32 2005
+@@ -304,7 +304,7 @@ lib_LTLIBRARIES = libgwenviewcore.la
+ 
+ #>- libgwenviewcore_la_LDFLAGS = $(all_libraries) -version-info 1:0:0 -no-undefined
+ #>+ 1
+-libgwenviewcore_la_LDFLAGS = $(all_libraries) -version-info 1:0:0 -no-undefined $(KDE_NO_UNDEFINED)
++libgwenviewcore_la_LDFLAGS = $(all_libraries) $(LIBgwenviewcore_LTVERSION) -no-undefined $(KDE_NO_UNDEFINED)
+ 
+ libgwenviewcore_la_LIBADD = \
+ 	$(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_KDEPRINT) $(LIB_QT) \
