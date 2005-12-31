@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/01/21 02:11:57 jolan Exp $
-@lib lib/libhowl.so.0.0
-@lib lib/libmDNSResponder.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/31 09:46:56 steven Exp $
+@lib lib/libhowl.so.${LIBhowl_VERSION}
+@lib lib/libmDNSResponder.so.${LIBmDNSResponder_VERSION}
