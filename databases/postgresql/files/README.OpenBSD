@@ -81,7 +81,7 @@ number of connections to the backend.
 
 By default, the _postgresql user, and so the postmaster and backend
 processes run in the login(1) class of "daemon". On a busy server,
-it may be advisable to put the _postgresql user and processed in
+it may be advisable to put the _postgresql user and processes in
 their own login(1) class with tuned resources, such as more open
 file descriptors etc.
 
