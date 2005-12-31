@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2005/04/20 16:46:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2005/12/31 08:45:56 steven Exp $
 
 COMMENT=	"audio/video converter and streamer with bktr(4) support"
 DISTNAME=	FFMpeg-20050413
 PKGNAME=	${DISTNAME:L}
+SHARED_LIBS=	avcodec		6.0	\
+		avformat	6.0	\
+		postproc	6.0
 
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://www.jakemsr.com/
@@ -36,11 +39,8 @@ USE_X11=	Yes
 CFLAGS+=-fomit-frame-pointer
 .endif
 
-# version numbers for the shared libraries
-SV=		6.0
-
 CONFIGURE_STYLE=simple
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" SV="${SV}"
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--cc=${CC} \
 		--make=${MAKE_PROGRAM} \
@@ -57,6 +57,10 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--disable-debug
 
 MAKE_ENV+=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+MAKE_FLAGS=	SLIBSUF=.so	\
+		LIBavcodec_VERSION=$(LIBavcodec_VERSION)	\
+		LIBavformat_VERSION=$(LIBavformat_VERSION)	\
+		LIBpostproc_VERSION=$(LIBpostproc_VERSION)
 
 # shared libpostproc
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
@@ -87,9 +91,10 @@ do-install:
 	${INSTALL_DATA} ${WRKBUILD}/libavcodec/libavcodec.a \
 		${WRKBUILD}/libavformat/libavformat.a ${PREFIX}/lib
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
-	${INSTALL_DATA} ${WRKBUILD}/libavcodec/libavcodec.so.${SV} \
-		${WRKBUILD}/libavformat/libavformat.so.${SV} \
-		${WRKBUILD}/libavcodec/libpostproc/libpostproc.so.${SV} \
+	${INSTALL_DATA} \
+		${WRKBUILD}/libavcodec/libavcodec.so.${LIBavcodec_VERSION} \
+		${WRKBUILD}/libavformat/libavformat.so.${LIBavformat_VERSION} \
+		${WRKBUILD}/libavcodec/libpostproc/libpostproc.so.${LIBpostproc_VERSION} \
 		${PREFIX}/lib
 .else
 	${INSTALL_DATA} ${WRKBUILD}/libavcodec/libpostproc/libpostproc.a \

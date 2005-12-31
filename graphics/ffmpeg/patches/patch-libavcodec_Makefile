@@ -1,6 +1,6 @@
-$OpenBSD: patch-libavcodec_Makefile,v 1.10 2005/04/20 16:46:54 naddy Exp $
---- libavcodec/Makefile.orig	Sat Apr  2 21:02:08 2005
-+++ libavcodec/Makefile	Tue Apr 12 23:05:59 2005
+$OpenBSD: patch-libavcodec_Makefile,v 1.11 2005/12/31 08:45:56 steven Exp $
+--- libavcodec/Makefile.orig	Sun Apr  3 07:02:08 2005
++++ libavcodec/Makefile	Thu Dec 29 08:49:19 2005
 @@ -73,11 +73,11 @@ ifeq ($(CONFIG_AC3),yes)
  OBJS+= a52dec.o
  
@@ -17,10 +17,12 @@ $OpenBSD: patch-libavcodec_Makefile,v 1.10 2005/04/20 16:46:54 naddy Exp $
  
  # currently using libdts for dts decoding
  ifeq ($(CONFIG_DTS),yes)
-@@ -208,6 +208,7 @@ OBJS := $(OBJS) $(ASM_OBJS)
+@@ -207,7 +207,8 @@ OBJS := $(OBJS) $(ASM_OBJS)
+ 
  LIB= $(LIBPREF)avcodec$(LIBSUF)
  ifeq ($(BUILD_SHARED),yes)
- SLIB= $(SLIBPREF)avcodec$(SLIBSUF)
+-SLIB= $(SLIBPREF)avcodec$(SLIBSUF)
++SLIB= $(SLIBPREF)avcodec$(SLIBSUF).$(LIBavcodec_VERSION)
 +CFLAGS += ${PIC} -DPIC
  endif
  TESTS= imgresample-test dct-test motion-test fft-test
