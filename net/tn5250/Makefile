@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/11/15 16:44:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2005/12/31 15:10:05 steven Exp $
 
 COMMENT=	"5250 telnet protocol and terminal"
 
 DISTNAME=	tn5250-0.17.3
+SHARED_LIBS=		5250	0.0
+MODGNU_SHARED_LIBS=	5250	''
 CATEGORIES=	net
 
 HOMEPAGE=	http://tn5250.sourceforge.net/	
