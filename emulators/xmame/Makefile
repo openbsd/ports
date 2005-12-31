@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2005/11/12 04:25:22 kurt Exp $
+# $OpenBSD: Makefile,v 1.20 2005/12/31 15:56:09 sturm Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -13,9 +13,12 @@ PKGNAME-mess=	xmess-${VERSION}p2
 
 CATEGORIES=	emulators games
 MASTER_SITES=	${HOMEPAGE}/download/ \
+		${HOMEPAGE}/download/historic/ \
+		ftp://ftp.erisiandiscord.de/pub/misc/ \
 		ftp://ftp.kaupp.cx/pub/xmame/ \
 		ftp://ftp.atlantilde.com/pub/distfiles/
 MASTER_SITES0=	http://www.mameworld.net/highscore/ \
+		ftp://ftp.erisiandiscord.de/pub/misc/ \
 		ftp://ftp.atlantilde.com/pub/distfiles/
 
 HOMEPAGE=	http://x.mame.net
