@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2005/02/27 19:14:40 naddy Exp $
-@lib lib/libshout.so.4.0
+@comment $OpenBSD: PFRAG.shared,v 1.4 2005/12/31 11:32:49 steven Exp $
+@lib lib/libshout.so.${LIBshout_VERSION}

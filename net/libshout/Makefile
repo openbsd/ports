@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2005/08/22 23:25:39 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2005/12/31 11:32:49 steven Exp $
 
 COMMENT=	"library for communicating with an icecast server"
 
 DISTNAME=	libshout-2.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
+SHARED_LIBS=		shout	4.0
+MODGNU_SHARED_LIBS=	shout	''
 CATEGORIES=	net audio
 
 HOMEPAGE=	http://www.icecast.org/
@@ -21,6 +23,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/libshout/
 
 LIB_DEPENDS=	vorbis.4::audio/libvorbis
 
+USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --disable-pkgconfig \
 		--without-theora
