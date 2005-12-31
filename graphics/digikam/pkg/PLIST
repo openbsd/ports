@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/09/11 10:03:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/12/31 15:24:26 steven Exp $
 bin/digikam
 bin/showfoto
 include/digikam/
@@ -28,7 +28,7 @@ ${KDE}/kio_digikamtags.so
 ${KDE}/kio_digikamthumbnail.la
 ${KDE}/kio_digikamthumbnail.so
 lib/libdigikam.la
-@lib lib/libdigikam.so.0.0
+@lib lib/libdigikam.so.${LIBdigikam_VERSION}
 share/applications/kde/showfoto.desktop
 share/applnk/
 share/applnk/Graphics/

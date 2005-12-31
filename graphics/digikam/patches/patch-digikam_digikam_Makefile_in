@@ -1,0 +1,12 @@
+$OpenBSD: patch-digikam_digikam_Makefile_in,v 1.1 2005/12/31 15:24:26 steven Exp $
+--- digikam/digikam/Makefile.in.orig	Sat Dec 31 15:58:52 2005
++++ digikam/digikam/Makefile.in	Sat Dec 31 16:00:54 2005
+@@ -506,7 +506,7 @@ libdigikam_la_LIBADD = $(LIB_KIO) $(LIB_
+ #>- 			-no-undefined
+ #>+ 2
+ libdigikam_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) \
+-			-no-undefined $(KDE_NO_UNDEFINED)
++			$(LIBdigikam_LTVERSION) -no-undefined $(KDE_NO_UNDEFINED)
+ 
+ digikam_SOURCES = main.cpp
+ digikam_LDADD = $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) \

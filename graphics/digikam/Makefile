@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2005/10/02 12:25:01 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2005/12/31 15:24:26 steven Exp $
 
 COMMENT=		"digital image kde application"
 CATEGORIES=		graphics x11 x11/kde
 V=			0.7.4
 DISTNAME=		digikam-$V
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		digikam	0.0
 HOMEPAGE=		http://extragear.kde.org/apps/kipi/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}
 DISTFILES=		${DISTNAME}.tar.bz2
@@ -25,7 +27,8 @@ WANTLIB=	util m c ICE Xrender SM pthread z stdc++ \
 MODULES=	x11/kde
 
 BUILD_DEPENDS=		::devel/pkgconfig
-MODKDE_LIBTOOL=		Yes
+USE_LIBTOOL=		Yes
+LIBTOOL_FLAGS+=		--tag=disable-static
 MODKDE_VERSION=		3.4
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
