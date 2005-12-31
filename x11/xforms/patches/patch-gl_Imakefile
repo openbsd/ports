@@ -1,0 +1,27 @@
+$OpenBSD: patch-gl_Imakefile,v 1.1 2005/12/31 17:29:38 naddy Exp $
+--- gl/Imakefile.orig	Sat Dec 31 18:19:37 2005
++++ gl/Imakefile	Sat Dec 31 18:20:18 2005
+@@ -71,7 +71,7 @@ CCOPTIONS	=
+     STD_DEFINES = LibraryDefines
+     CDEBUGFLAGS = LibraryCDebugFlags
+ #else
+-#define SoRev XFORMSLIBREV
++#define SoRev LIBformsGL_VERSION
+ #define IncSubdir X11
+ #include <Library.tmpl>
+ #endif
+@@ -102,11 +102,11 @@ LibraryObjectRule()
+ 
+ #if DoSharedLib
+ # if DoNormalLib
+-SharedLibraryTarget($(LIBNAME),$(XFORMSLIBREV),$(OBJS),shared,..)
++SharedLibraryTarget($(LIBNAME),$(LIBformsGL_VERSION),$(OBJS),shared,..)
+ # else
+-SharedLibraryTarget($(LIBNAME),$(XFORMSLIBREV),$(OBJS),.,.)
++SharedLibraryTarget($(LIBNAME),$(LIBformsGL_VERSION),$(OBJS),.,.)
+ #endif
+-InstallSharedLibrary($(LIBNAME),$(XFORMSLIBREV),$(XFORMSLIBDIR))
++InstallSharedLibrary($(LIBNAME),$(LIBformsGL_VERSION),$(XFORMSLIBDIR))
+ #endif
+ #if DoNormalLib
+ NormalLibraryTarget($(LIBNAME),$(OBJS))

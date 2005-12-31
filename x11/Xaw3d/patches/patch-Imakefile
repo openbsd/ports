@@ -1,19 +1,7 @@
-$OpenBSD: patch-Imakefile,v 1.1 2002/12/05 06:08:54 pvalchev Exp $
---- Imakefile.orig	Tue Oct 15 08:41:19 1996
-+++ Imakefile	Wed Dec  4 18:16:34 2002
-@@ -6,7 +6,11 @@ XCOMM $XConsortium: Imakefile,v 1.78 91/
- #define DoProfileLib ProfileLibXaw 
- #define HasSharedData YES
- #define LibName Xaw3d
-+#if XFree86Version < 4000
- #define SoRev SOXAWREV
-+#else
-+#define SoRev SOXAW6REV
-+#endif
- #define IncSubdir X11
- #define IncSubSubdir Xaw3d
- 
-@@ -39,9 +43,9 @@ DEFINES = XawI18nDefines
+$OpenBSD: patch-Imakefile,v 1.2 2005/12/31 17:29:38 naddy Exp $
+--- Imakefile.orig	Tue Oct 15 16:41:19 1996
++++ Imakefile	Sat Dec 31 16:32:15 2005
+@@ -39,9 +39,9 @@ DEFINES = XawI18nDefines
  
         LINTLIBS = $(LINTXLIB) $(LINTXTOOL)
  

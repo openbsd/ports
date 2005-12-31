@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2005/07/14 12:45:35 aanriot Exp $
+# $OpenBSD: Makefile,v 1.23 2005/12/31 17:29:37 naddy Exp $
 
 COMMENT=	"3D Athena Widget set that looks like Motif"
 
 DISTNAME=	Xaw3d-1.5
 PKGNAME=	${DISTNAME}p0
+SHARED_LIBS=	Xaw3d 11.0
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=widgets/Xaw3d/R6.3/}
@@ -17,7 +18,9 @@ WANTLIB=		ICE SM X11 Xext Xmu Xp Xpm Xt
 
 USE_X11=	Yes
 
-CONFIGURE_STYLE= imake
+CONFIGURE_STYLE=imake
+MAKE_FLAGS=	SOXAWREV=${LIBXaw3d_VERSION}
+FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} ${MAKE_FLAGS}
 
 WRKDIST=	${WRKDIR}/xc/lib/Xaw3d
 

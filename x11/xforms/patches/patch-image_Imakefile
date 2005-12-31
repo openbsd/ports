@@ -1,0 +1,27 @@
+$OpenBSD: patch-image_Imakefile,v 1.1 2005/12/31 17:29:38 naddy Exp $
+--- image/Imakefile.orig	Sat Dec 31 18:18:24 2005
++++ image/Imakefile	Sat Dec 31 18:19:22 2005
+@@ -101,7 +101,7 @@ CCOPTIONS	= -nostdinc
+     STD_DEFINES = LibraryDefines
+     CDEBUGFLAGS = LibraryCDebugFlags
+ #else
+-#define SoRev XFORMSLIBREV
++#define SoRev LIBflimage_VERSION
+ #define IncSubdir X11
+ #include <Library.tmpl>
+ #endif
+@@ -153,11 +153,11 @@ LibraryObjectRule()
+ 
+ #if DoSharedLib
+ #if DoNormalLib
+-SharedLibraryTarget($(LIBNAME),$(XFORMSLIBREV),$(OBJS),shared,..)
++SharedLibraryTarget($(LIBNAME),$(LIBflimage_VERSION),$(OBJS),shared,..)
+ #else
+-SharedLibraryTarget($(LIBNAME),$(XFORMSLIBREV),$(OBJS),.,.)
++SharedLibraryTarget($(LIBNAME),$(LIBflimage_VERSION),$(OBJS),.,.)
+ #endif
+-InstallSharedLibrary($(LIBNAME),$(XFORMSLIBREV),$(XFORMSLIBDIR))
++InstallSharedLibrary($(LIBNAME),$(LIBflimage_VERSION),$(XFORMSLIBDIR))
+ #endif
+ #if DoNormalLib
+ NormalLibraryTarget($(LIBNAME),$(OBJS))

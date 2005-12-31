@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/09/15 19:26:34 espie Exp $
-@lib lib/libflimage.so.1.0
-@lib lib/libforms.so.1.0
-@lib lib/libformsGL.so.1.0
+@comment $OpenBSD: PFRAG.shared,v 1.5 2005/12/31 17:29:38 naddy Exp $
+@lib lib/libflimage.so.${LIBflimage_VERSION}
+@lib lib/libforms.so.${LIBforms_VERSION}
+@lib lib/libformsGL.so.${LIBformsGL_VERSION}
