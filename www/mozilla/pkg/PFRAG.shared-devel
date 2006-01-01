@@ -1,95 +1,95 @@
-@comment $OpenBSD: PFRAG.shared-devel,v 1.9 2005/09/26 21:04:48 kurt Exp $
-@comment @lib mozilla/lib/components/libaccessibility.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libaddrbook.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libappcomps.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libautoconfig.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libbayesflt.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libcaps.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libchrome.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libcomposer.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libcookie.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libdocshell.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libeditor.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libembedcomponents.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libfileview.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libgfx_gtk.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libgfxps.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libgfxxprint.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libgklayout.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libgkplugin.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libhtmlpars.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libi18n.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libimglib2.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libimpComm4xMail.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libimpText.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libimport.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libinspector.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libipcdc.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libjar50.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libjsd.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/liblocalmail.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libmailnews.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libmailview.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libmime.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libmimeemitter.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libmork.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libmozfind.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libmsgcompose.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libmsgdb.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libmsgimap.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libmsgmdn.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libmsgnews.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libmsgsmime.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libmyspell.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libnecko.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libnecko2.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libnsappshell.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libnsprefm.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/liboji.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libp3p.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libpipboot.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libpipnss.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libpippki.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libpref.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libprofile.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/librdf.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libspellchecker.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libsystem-pref.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libtransformiix.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libtxmgr.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libtypeaheadfind.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libuconv.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libucvmath.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libuniversalchardet.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libvcard.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libwallet.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libwalletviewers.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libwebbrwsr.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libwebsrvcs.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libwidget_gtk2.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libxmlextras.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libxpcom_compat_c.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libxpconnect.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libxpinstall.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libxremote_client.so.${SO_VERSION}
-@comment @lib mozilla/lib/components/libxremoteservice.so.${SO_VERSION}
-@lib mozilla/lib/libfort.so.${SO_VERSION}
-@lib mozilla/lib/libgkgfx.so.${SO_VERSION}
-@lib mozilla/lib/libgtkembedmoz.so.${SO_VERSION}
-@lib mozilla/lib/libgtkxtbin.so.${SO_VERSION}
-@lib mozilla/lib/libjsj.so.${SO_VERSION}
-@lib mozilla/lib/libmozjs.so.${SO_VERSION}
-@lib mozilla/lib/libmsgbaseutil.so.${SO_VERSION}
-@lib mozilla/lib/libnspr4.so.${SO_VERSION}
-@lib mozilla/lib/libnss3.so.${SO_VERSION}
-@lib mozilla/lib/libnssckbi.so.${SO_VERSION}
-@lib mozilla/lib/libplc4.so.${SO_VERSION}
-@lib mozilla/lib/libplds4.so.${SO_VERSION}
-@lib mozilla/lib/libsmime3.so.${SO_VERSION}
-@lib mozilla/lib/libsoftokn3.so.${SO_VERSION}
-@lib mozilla/lib/libssl3.so.${SO_VERSION}
-@lib mozilla/lib/libswft.so.${SO_VERSION}
-@lib mozilla/lib/libxlibrgb.so.${SO_VERSION}
-@lib mozilla/lib/libxpcom.so.${SO_VERSION}
-@lib mozilla/lib/libxpcom_compat.so.${SO_VERSION}
-@lib mozilla/lib/libxpistub.so.${SO_VERSION}
+@comment $OpenBSD: PFRAG.shared-devel,v 1.10 2006/01/01 16:02:37 sturm Exp $
+@comment @lib mozilla/lib/components/libaccessibility.so.${LIBaccessibility_VERSION}
+@comment @lib mozilla/lib/components/libaddrbook.so.${LIBaddrbook_VERSION}
+@comment @lib mozilla/lib/components/libappcomps.so.${LIBappcomps_VERSION}
+@comment @lib mozilla/lib/components/libautoconfig.so.${LIBautoconfig_VERSION}
+@comment @lib mozilla/lib/components/libbayesflt.so.${LIBbayesflt_VERSION}
+@comment @lib mozilla/lib/components/libcaps.so.${LIBcaps_VERSION}
+@comment @lib mozilla/lib/components/libchrome.so.${LIBchrome_VERSION}
+@comment @lib mozilla/lib/components/libcomposer.so.${LIBcomposer_VERSION}
+@comment @lib mozilla/lib/components/libcookie.so.${LIBcookie_VERSION}
+@comment @lib mozilla/lib/components/libdocshell.so.${LIBdocshell_VERSION}
+@comment @lib mozilla/lib/components/libeditor.so.${LIBeditor_VERSION}
+@comment @lib mozilla/lib/components/libembedcomponents.so.${LIBembedcomponents_VERSION}
+@comment @lib mozilla/lib/components/libfileview.so.${LIBfileview_VERSION}
+@comment @lib mozilla/lib/components/libgfx_gtk.so.${LIBgfx_gtk_VERSION}
+@comment @lib mozilla/lib/components/libgfxps.so.${LIBgfxps_VERSION}
+@comment @lib mozilla/lib/components/libgfxxprint.so.${LIBgfxxprint_VERSION}
+@comment @lib mozilla/lib/components/libgklayout.so.${LIBgklayout_VERSION}
+@comment @lib mozilla/lib/components/libgkplugin.so.${LIBgkplugin_VERSION}
+@comment @lib mozilla/lib/components/libhtmlpars.so.${LIBhtmlpars_VERSION}
+@comment @lib mozilla/lib/components/libi18n.so.${LIBi18n_VERSION}
+@comment @lib mozilla/lib/components/libimglib2.so.${LIBimglib2_VERSION}
+@comment @lib mozilla/lib/components/libimpComm4xMail.so.${LIBimpComm4xMail_VERSION}
+@comment @lib mozilla/lib/components/libimpText.so.${LIBimpText_VERSION}
+@comment @lib mozilla/lib/components/libimport.so.${LIBimport_VERSION}
+@comment @lib mozilla/lib/components/libinspector.so.${LIBinspector_VERSION}
+@comment @lib mozilla/lib/components/libipcdc.so.${LIBipcdc_VERSION}
+@comment @lib mozilla/lib/components/libjar50.so.${LIBjar50_VERSION}
+@comment @lib mozilla/lib/components/libjsd.so.${LIBjsd_VERSION}
+@comment @lib mozilla/lib/components/liblocalmail.so.${LIBlocalmail_VERSION}
+@comment @lib mozilla/lib/components/libmailnews.so.${LIBmailnews_VERSION}
+@comment @lib mozilla/lib/components/libmailview.so.${LIBmailview_VERSION}
+@comment @lib mozilla/lib/components/libmime.so.${LIBmime_VERSION}
+@comment @lib mozilla/lib/components/libmimeemitter.so.${LIBmimeemitter_VERSION}
+@comment @lib mozilla/lib/components/libmork.so.${LIBmork_VERSION}
+@comment @lib mozilla/lib/components/libmozfind.so.${LIBmozfind_VERSION}
+@comment @lib mozilla/lib/components/libmsgcompose.so.${LIBmsgcompose_VERSION}
+@comment @lib mozilla/lib/components/libmsgdb.so.${LIBmsgdb_VERSION}
+@comment @lib mozilla/lib/components/libmsgimap.so.${LIBmsgimap_VERSION}
+@comment @lib mozilla/lib/components/libmsgmdn.so.${LIBmsgmdn_VERSION}
+@comment @lib mozilla/lib/components/libmsgnews.so.${LIBmsgnews_VERSION}
+@comment @lib mozilla/lib/components/libmsgsmime.so.${LIBmsgsmime_VERSION}
+@comment @lib mozilla/lib/components/libmyspell.so.${LIBmyspell_VERSION}
+@comment @lib mozilla/lib/components/libnecko.so.${LIBnecko_VERSION}
+@comment @lib mozilla/lib/components/libnecko2.so.${LIBnecko2_VERSION}
+@comment @lib mozilla/lib/components/libnsappshell.so.${LIBnsappshell_VERSION}
+@comment @lib mozilla/lib/components/libnsprefm.so.${LIBnsprefm_VERSION}
+@comment @lib mozilla/lib/components/liboji.so.${LIBoji_VERSION}
+@comment @lib mozilla/lib/components/libp3p.so.${LIBp3p_VERSION}
+@comment @lib mozilla/lib/components/libpipboot.so.${LIBpipboot_VERSION}
+@comment @lib mozilla/lib/components/libpipnss.so.${LIBpipnss_VERSION}
+@comment @lib mozilla/lib/components/libpippki.so.${LIBpippki_VERSION}
+@comment @lib mozilla/lib/components/libpref.so.${LIBpref_VERSION}
+@comment @lib mozilla/lib/components/libprofile.so.${LIBprofile_VERSION}
+@comment @lib mozilla/lib/components/librdf.so.${LIBrdf_VERSION}
+@comment @lib mozilla/lib/components/libspellchecker.so.${LIBspellchecker_VERSION}
+@comment @lib mozilla/lib/components/libsystem-pref.so.${LIBsystem-pref_VERSION}
+@comment @lib mozilla/lib/components/libtransformiix.so.${LIBtransformiix_VERSION}
+@comment @lib mozilla/lib/components/libtxmgr.so.${LIBtxmgr_VERSION}
+@comment @lib mozilla/lib/components/libtypeaheadfind.so.${LIBtypeaheadfind_VERSION}
+@comment @lib mozilla/lib/components/libuconv.so.${LIBuconv_VERSION}
+@comment @lib mozilla/lib/components/libucvmath.so.${LIBucvmath_VERSION}
+@comment @lib mozilla/lib/components/libuniversalchardet.so.${LIBuniversalchardet_VERSION}
+@comment @lib mozilla/lib/components/libvcard.so.${LIBvcard_VERSION}
+@comment @lib mozilla/lib/components/libwallet.so.${LIBwallet_VERSION}
+@comment @lib mozilla/lib/components/libwalletviewers.so.${LIBwalletviewers_VERSION}
+@comment @lib mozilla/lib/components/libwebbrwsr.so.${LIBwebbrwsr_VERSION}
+@comment @lib mozilla/lib/components/libwebsrvcs.so.${LIBwebsrvcs_VERSION}
+@comment @lib mozilla/lib/components/libwidget_gtk2.so.${LIBwidget_gtk2_VERSION}
+@comment @lib mozilla/lib/components/libxmlextras.so.${LIBxmlextras_VERSION}
+@comment @lib mozilla/lib/components/libxpcom_compat_c.so.${LIBxpcom_compat_c_VERSION}
+@comment @lib mozilla/lib/components/libxpconnect.so.${LIBxpconnect_VERSION}
+@comment @lib mozilla/lib/components/libxpinstall.so.${LIBxpinstall_VERSION}
+@comment @lib mozilla/lib/components/libxremote_client.so.${LIBxremote_client_VERSION}
+@comment @lib mozilla/lib/components/libxremoteservice.so.${LIBxremoteservice_VERSION}
+@lib mozilla/lib/libfort.so.${LIBfort_VERSION}
+@lib mozilla/lib/libgkgfx.so.${LIBgkgfx_VERSION}
+@lib mozilla/lib/libgtkembedmoz.so.${LIBgtkembedmoz_VERSION}
+@lib mozilla/lib/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
+@lib mozilla/lib/libjsj.so.${LIBjsj_VERSION}
+@lib mozilla/lib/libmozjs.so.${LIBmozjs_VERSION}
+@lib mozilla/lib/libmsgbaseutil.so.${LIBmsgbaseutil_VERSION}
+@lib mozilla/lib/libnspr4.so.${LIBnspr4_VERSION}
+@lib mozilla/lib/libnss3.so.${LIBnss3_VERSION}
+@lib mozilla/lib/libnssckbi.so.${LIBnssckbi_VERSION}
+@lib mozilla/lib/libplc4.so.${LIBplc4_VERSION}
+@lib mozilla/lib/libplds4.so.${LIBplds4_VERSION}
+@lib mozilla/lib/libsmime3.so.${LIBsmime3_VERSION}
+@lib mozilla/lib/libsoftokn3.so.${LIBsoftokn3_VERSION}
+@lib mozilla/lib/libssl3.so.${LIBssl3_VERSION}
+@lib mozilla/lib/libswft.so.${LIBswft_VERSION}
+@lib mozilla/lib/libxlibrgb.so.${LIBxlibrgb_VERSION}
+@lib mozilla/lib/libxpcom.so.${LIBxpcom_VERSION}
+@lib mozilla/lib/libxpcom_compat.so.${LIBxpcom_compat_VERSION}
+@lib mozilla/lib/libxpistub.so.${LIBxpistub_VERSION}

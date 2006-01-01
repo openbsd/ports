@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2005/11/17 15:53:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2006/01/01 16:03:53 sturm Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -10,6 +10,17 @@ PKGNAME=	mozilla-thunderbird-${VER}p2
 SO_VERSION=	4.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
+.for _lib in accessibility appcomps caps chrome composer docshell editor \
+	embedcomponents fileview gfx_gtk gfxps gfxxprint gkgfx gklayout \
+	gtkembedmoz gtkxtbin htmlpars i18n imglib2 import jar50 jsd ldap50 \
+	mail mailcomps mork mozfind mozjs mozldap msgsmime myspell necko \
+	necko2 nsappshell nspr4 nss3 nssckbi pipboot pipnss pippki plc4 plds4 \
+	pref prldap50 rdf smime3 softokn3 spellchecker ssl3 txmgr uconv wallet \
+	walletviewers webbrwsr websrvcs widget_gtk2 xlibrgb xmlextras xpcom \
+	xpcom_compat xpcom_compat_c xpconnect xpinstall xpistub \
+	xremote_client xremoteservice
+SHARED_LIBS+=	${_lib} ${SO_VERSION}
+.endfor
 
 CATEGORIES=	mail news
 

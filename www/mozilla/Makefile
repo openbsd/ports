@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2005/12/09 19:59:54 wilfried Exp $
+# $OpenBSD: Makefile,v 1.98 2006/01/01 16:02:36 sturm Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
@@ -13,6 +13,21 @@ DISTFILES=	mozilla-${VER}-source.tar.bz2
 SO_VERSION=	5.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
+.for _lib in accessibility addrbook appcomps autoconfig bayesflt caps chrome \
+	composer cookie docshell editor embedcomponents fileview fort gfx_gtk \
+	gfxps gfxxprint gkgfx gklayout gkplugin gtkembedmoz gtkxtbin htmlpars \
+	i18n imglib2 impComm4xMail impText import inspector ipcdc jar50 jsd \
+	jsj localmail mailnews mailview mime mimeemitter mork mozfind mozjs \
+	msgbaseutil msgcompose msgdb msgimap msgmdn msgnews msgsmime myspell \
+	necko necko2 nsappshell nspr4 nsprefm nss3 nssckbi oji p3p pipboot \
+	pipnss pippki plc4 plds4 pref profile rdf smime3 softokn3 \
+	spellchecker ssl3 swft system-pref transformiix txmgr typeaheadfind \
+	uconv ucvmath universalchardet vcard wallet walletviewers webbrwsr \
+	websrvcs widget_gtk2 xlibrgb xmlextras xpcom xpcom_compat \
+	xpcom_compat_c xpconnect xpinstall xpistub xremote_client \
+	xremoteservice
+SHARED_LIBS+=	${_lib} ${SO_VERSION}
+.endfor
  
 CATEGORIES=	www
 
