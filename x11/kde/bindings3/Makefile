@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2005/12/03 12:36:40 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2006/01/01 09:51:58 alek Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN=			"gcc spins on x_20.cpp"
@@ -18,10 +18,12 @@ LIB_DEPENDS=DCOP,kdecore.6,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmdi,knewstu
 WANTLIB=	GLU Xext stdc++ X11 util m ICE Xrender SM pthread \
 		c fontconfig z GL \
 		png pcre jpeg art_lgpl_2.0.0 pcreposix
-BUILD_DEPENDS=::lang/python/2.4
+PYTHON_VER=	2.4
+BUILD_DEPENDS=	::lang/python/${PYTHON_VER}
 #		::devel/tmake
 
-MAKE_FLAGS+=TMAKEPATH=${LOCALBASE}/share/tmake/openbsd-g++/
+MAKE_FLAGS+=	TMAKEPATH=${LOCALBASE}/share/tmake/openbsd-g++/ \
+		PYTHON=${LOCALBASE}/bin/python${PYTHON_VER}
 SEPARATE_BUILD=flavored
 
 CONFIGURE_ENV+=DO_NOT_COMPILE=python
