@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2005/05/11 19:18:43 alek Exp $
+@comment $OpenBSD: PLIST,v 1.33 2006/01/01 22:23:03 naddy Exp $
 %%SHARED%%
 bin/gtk-config
 include/gtk-1.2/
@@ -138,8 +138,6 @@ share/aclocal/gtk.m4
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/gtk+.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/gtk+.mo
 share/locale/cs/LC_MESSAGES/gtk+.mo
 share/locale/da/LC_MESSAGES/gtk+.mo
@@ -152,8 +150,6 @@ share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/gtk+.mo
 share/locale/fi/LC_MESSAGES/gtk+.mo
 share/locale/fr/LC_MESSAGES/gtk+.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/gtk+.mo
 share/locale/gl/LC_MESSAGES/gtk+.mo
 share/locale/hr/LC_MESSAGES/gtk+.mo
@@ -177,14 +173,10 @@ share/locale/sl/LC_MESSAGES/gtk+.mo
 share/locale/sp/
 share/locale/sp/LC_MESSAGES/
 share/locale/sp/LC_MESSAGES/gtk+.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/gtk+.mo
 share/locale/sv/LC_MESSAGES/gtk+.mo
 share/locale/tr/LC_MESSAGES/gtk+.mo
 share/locale/uk/LC_MESSAGES/gtk+.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/gtk+.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/

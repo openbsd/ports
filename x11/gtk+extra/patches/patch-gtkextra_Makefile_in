@@ -1,4 +1,4 @@
-$OpenBSD: patch-gtkextra_Makefile_in,v 1.1.1.1 2003/01/22 17:10:59 margarida Exp $
+$OpenBSD: patch-gtkextra_Makefile_in,v 1.2 2006/01/01 22:23:04 naddy Exp $
 --- gtkextra/Makefile.in.orig	Tue Jan 21 20:22:23 2003
 +++ gtkextra/Makefile.in	Tue Jan 21 20:22:50 2003
 @@ -126,7 +126,7 @@ libgtkextrainclude_HEADERS = $(gtkextra_
@@ -6,7 +6,7 @@ $OpenBSD: patch-gtkextra_Makefile_in,v 1.1.1.1 2003/01/22 17:10:59 margarida Exp
  lib_LTLIBRARIES = libgtkextra.la
  libgtkextra_la_SOURCES = $(gtkextra_c_sources)
 -libgtkextra_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE) 	-export-dynamic 	$(shell gtk-config --libs) $(GTKGL_LIBS)
-+libgtkextra_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) $(LT_RELEASE) 	-export-dynamic 	$(shell gtk-config --libs) $(GTKGL_LIBS)
++libgtkextra_la_LDFLAGS =  	$(LIBgtkextra_LTVERSION) 	-export-dynamic 	$(shell gtk-config --libs) $(GTKGL_LIBS)
  
  EXTRA_HEADERS =  
  EXTRA_DIST =  $(gtkextra_private_h_sources) gtkextra.def Makefile.win32 makefile.msc sat.xpm sg_small.xpm cloud.xpm suncloud.xpm testgtkplotdt.in

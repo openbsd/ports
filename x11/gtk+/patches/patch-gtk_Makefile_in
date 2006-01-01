@@ -14,7 +14,7 @@
  # libtool stuff: set version and export symbols for resolving
  libgtkincludedir = $(includedir)/gtk-1.2/gtk
 -libgtk_la_LDFLAGS = @STRIP_BEGIN@ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)		-release $(LT_RELEASE) 						-export-dynamic							@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm							@STRIP_END@
-+libgtk_la_LDFLAGS = @STRIP_BEGIN@ 	-version-info 2:0:0 						-export-dynamic							@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm							@STRIP_END@
++libgtk_la_LDFLAGS = @STRIP_BEGIN@ 	$(LIBgtk_LTVERSION) 						-export-dynamic							@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm							@STRIP_END@
  
  #	$(top_builddir)/gdk/libgdk.la
  
