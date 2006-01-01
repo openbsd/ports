@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/12/20 14:47:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2006/01/01 20:57:04 naddy Exp $
 include/bitmaps/
 include/bitmaps/1x1
 include/bitmaps/2x2
@@ -285,7 +285,7 @@ lib/help/ttysw.info
 lib/help/xview.info
 lib/libolgx.a
 lib/libxview.a
-lib/libxview.sa.3.2
+lib/libxview.sa.${LIBxview_VERSION}
 lib/text_extras_menu
 lib/textswrc
 lib/ttyswrc
