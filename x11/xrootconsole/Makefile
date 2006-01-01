@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/12/26 11:30:12 sturm Exp $Id: Makefile,v 1.8 2005/12/15 13:46:01 trahm Exp $
+# $OpenBSD: Makefile,v 1.2 2006/01/01 15:12:06 alek Exp $
 
 COMMENT=		"writes any log live onto the background"
 DISTNAME=		xrootconsole-0.6
