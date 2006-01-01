@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2005/12/10 13:26:54 alek Exp $
+# $OpenBSD: Makefile,v 1.4 2006/01/01 12:31:22 alek Exp $
 
 COMMENT=	"LiveJournal client for Python"
 
 DISTNAME=	charm-1.7.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net news
 
 HOMEPAGE=	http://ljcharm.sourceforge.net/
@@ -18,6 +19,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ljcharm/}
 
 MODULES=	lang/python
+RUN_DEPENDS=	:py-feedparser-*:textproc/py-feedparser
 
 NO_REGRESS=	Yes
 
