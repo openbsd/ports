@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2004/11/23 21:34:27 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2006/01/02 18:15:53 bernd Exp $
 
 COMMENT=		"library for accessing disks and disk image files"
 
 DISTNAME=		libdsk-1.0.0
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		dsk 2.2
+MODGNU_SHARED_LIBS=	dsk ''
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.seasip.demon.co.uk/Unix/LibDsk/
@@ -21,11 +24,13 @@ MASTER_SITES=		http://www.seasip.demon.co.uk/Unix/LibDsk/
 LIB_DEPENDS=		bz2.10::archivers/bzip2
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+FAKE_FLAGS=		${MAKE_FLAGS} DESTDIR=${WRKINST}
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 post-install:

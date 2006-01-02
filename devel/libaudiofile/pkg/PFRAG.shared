@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/08/09 13:28:31 espie Exp $
-@lib lib/libaudiofile.so.0.2
+@comment $OpenBSD: PFRAG.shared,v 1.5 2006/01/02 18:15:53 bernd Exp $
+@lib lib/libaudiofile.so.${LIBaudiofile_VERSION}

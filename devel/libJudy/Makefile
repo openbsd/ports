@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/18 17:34:15 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2006/01/02 18:15:53 bernd Exp $
 
 COMMENT=		"general purpose dynamic array"
 
 VERSION=		1.0.1
 DISTNAME=		Judy-${VERSION}
-PKGNAME=		libJudy-${VERSION}
+PKGNAME=		libJudy-${VERSION}p0
+SHARED_LIBS=		Judy 1.1
+MODGNU_SHARED_LIBS=	Judy ''
 CATEGORIES=		devel
 
 HOMEPAGE=		http://judy.sourceforge.net/
@@ -21,6 +23,9 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=judy/}
 
 CONFIGURE_STYLE=	GNU
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
+
+FAKE_FLAGS=		${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 EXAMPLESDIR=		${PREFIX}/share/examples/libJudy
 

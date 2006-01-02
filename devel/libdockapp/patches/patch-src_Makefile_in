@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2006/01/02 18:15:53 bernd Exp $
+--- src/Makefile.in.orig	Mon Jan  2 18:19:24 2006
++++ src/Makefile.in	Mon Jan  2 18:19:44 2006
+@@ -79,7 +79,7 @@ AUTOMAKE_OPTIONS = no-dependencies
+ 
+ lib_LTLIBRARIES = libdockapp.la
+ 
+-libdockapp_la_LDFLAGS = -version-info 1:0:0 @X_LIBS@
++libdockapp_la_LDFLAGS = $(LIBdockapp_LTVERSION) @X_LIBS@
+ 
+ include_HEADERS = dockapp.h
+ 

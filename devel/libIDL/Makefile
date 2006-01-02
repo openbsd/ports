@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2005/05/24 21:39:04 marcm Exp $
+# $OpenBSD: Makefile,v 1.17 2006/01/02 18:15:53 bernd Exp $
 
 COMMENT=		"IDL parsing library"
 
 DISTNAME=		libIDL-0.8.5
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		IDL-2 0.0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
@@ -20,6 +22,7 @@ BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		glib-2.0.0.0::devel/glib2
 
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

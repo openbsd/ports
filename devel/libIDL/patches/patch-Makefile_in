@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2006/01/02 18:15:53 bernd Exp $
+--- Makefile.in.orig	Mon Jan  2 14:28:57 2006
++++ Makefile.in	Mon Jan  2 14:29:44 2006
+@@ -280,7 +280,7 @@ BUILT_SOURCES = lexer.c parser.c parser.
+ libIDL_2_la_SOURCES = parser.c parser.h lexer.c \
+ 			  ns.c util.c util.h rename.h
+ 
+-libIDL_2_la_LDFLAGS = -version-info $(LT_VERSION) $(LIBIDL_LIBS) -no-undefined
++libIDL_2_la_LDFLAGS = $(LIBIDL-2_LTVERSION) $(LIBIDL_LIBS) -no-undefined
+ tstidl_SOURCES = tstidl.c
+ tstidl_LDADD = libIDL-2.la $(LIBIDL_LIBS)
+ pkgconfigdir = $(libdir)/pkgconfig

@@ -1,11 +1,13 @@
-$OpenBSD: patch-libaudiofile_Makefile_in,v 1.1 2004/06/20 21:15:08 naddy Exp $
---- libaudiofile/Makefile.in.orig	Sun Jun 20 12:54:03 2004
-+++ libaudiofile/Makefile.in	Sun Jun 20 12:54:42 2004
-@@ -115,7 +115,7 @@ libaudiofile_la_SOURCES = \
+$OpenBSD: patch-libaudiofile_Makefile_in,v 1.2 2006/01/02 18:15:53 bernd Exp $
+--- libaudiofile/Makefile.in.orig	Sat Mar  6 08:40:08 2004
++++ libaudiofile/Makefile.in	Mon Jan  2 16:27:06 2006
+@@ -114,8 +114,8 @@ libaudiofile_la_SOURCES = \
+ 
  libaudiofile_la_LIBADD = modules/libmodules.la
  
- libaudiofile_la_LDFLAGS = -version-info 0:2:0 -no-undefined \
+-libaudiofile_la_LDFLAGS = -version-info 0:2:0 -no-undefined \
 -	-export-symbols audiofile.exports
++libaudiofile_la_LDFLAGS = $(LIBaudiofile_LTVERSION) -no-undefined \
 +	-export-symbols $(srcdir)/audiofile.exports
  
  

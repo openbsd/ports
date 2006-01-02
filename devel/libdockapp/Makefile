@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2004/11/23 21:34:27 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2006/01/02 18:15:53 bernd Exp $
 
 COMMENT=		'dockapp-making standard library for Window Maker'
 
 DISTNAME=		libdockapp-0.4.0
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		dockapp 1.0
 CATEGORIES=		devel
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
@@ -16,11 +18,8 @@ WANTLIB=		Xext Xpm
 
 MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
 
-PATCH_LIST=		${PORTSDIR}/infrastructure/patches/patch-lt1.3.0-ltconfig \
-			${PORTSDIR}/infrastructure/patches/patch-lt1.3.0-ltmain_sh \
-			patch-*
-
 USE_X11=		Yes
+USE_LIBTOOL=		Yes
 NO_REGRESS=		Yes
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu

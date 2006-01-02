@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2003/10/17 06:24:42 grange Exp $
+# $OpenBSD: Makefile,v 1.4 2006/01/02 18:15:52 bernd Exp $
 
 COMMENT=		"library for the floppy controller emulation"
 
 DISTNAME=		lib765-0.3.1.1
+PKGNAME=		${DISTNAME}p0
+SHARED_LIBS=		765 3.1
+MODGNU_SHARED_LIBS=	765 ''
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.seasip.demon.co.uk/Unix/LibDsk/
@@ -18,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.seasip.demon.co.uk/Unix/LibDsk/
 
 LIB_DEPENDS=		dsk.2::devel/libdsk
+USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
