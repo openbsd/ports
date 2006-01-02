@@ -1,4 +1,4 @@
-# $OpenBSD: qt3.port.mk,v 1.2 2004/10/30 09:12:35 espie Exp $
+# $OpenBSD: qt3.port.mk,v 1.3 2006/01/02 16:59:37 espie Exp $
 
 MODULES+=	gcc3
 MODGCC3_ARCHES+=sparc64
@@ -24,6 +24,7 @@ LIB_DEPENDS+=lib/qt3/qt-mt.3::x11/qt3
 MODQT_MOC=	${LOCALBASE}/bin/moc3-mt
 MODQT_UIC=	${LOCALBASE}/bin/uic3-mt
 MODQT_QTDIR=	${LOCALBASE}/lib/qt3
+MODQT_PLUGINS=	lib/qt3/plugins-3
 
 .if ${MODQT_MT:L} != "yes"
 ERRORS+="Fatal: support QTMT only"

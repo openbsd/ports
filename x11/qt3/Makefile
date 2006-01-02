@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2005/12/28 16:50:58 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2006/01/02 16:59:37 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -19,6 +19,7 @@ SHARED_LIBS=		qt-mt	3.35 \
 
 # note that qui-mt is a `false' library, just a link to qui.
 
+# XXX be sure to update the qt3.port.mk version after a qt bump.
 QT_PLUGINS=		plugins-${LIBqt-mt_VERSION:R}
 
 
