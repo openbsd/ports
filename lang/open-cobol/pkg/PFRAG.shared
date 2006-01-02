@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/04/27 03:32:15 jcs Exp $
-@lib lib/libcob.so.1.0
+@comment $OpenBSD: PFRAG.shared,v 1.2 2006/01/02 21:49:23 alek Exp $
+@lib lib/libcob.so.${LIBcob_VERSION}
