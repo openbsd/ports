@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.43 2006/01/02 20:22:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.44 2006/01/02 22:44:50 sturm Exp $
 
 COMMENT=	"GNU PostScript interpreter"
 
 VERSION=	7.05
 DISTNAME=	ghostscript-${VERSION}
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 CATEGORIES=	print lang
+SHARED_LIBS=	gs	7.05
 
 DIR=		gnu/gs${VERSION:S/.//}
 MASTER_SITES=	${GS_SITES} ${MASTER_SITE_GNU:=ghostscript/}
@@ -53,7 +54,8 @@ BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 		PSOBJDIR=./objects \
 		PSGENDIR=./objects \
 		STDLIBS='-pthread -lm' \
-		DEVICE_DEVS=
+		DEVICE_DEVS= \
+		LIBgs_VERSION=${LIBgs_VERSION}
 
 PDFDIR=share/ghostscript/${VERSION}/lib
 
