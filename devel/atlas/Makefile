@@ -1,10 +1,26 @@
-# $OpenBSD: Makefile,v 1.8 2004/07/19 11:06:33 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2006/01/02 17:49:48 bernd Exp $
 
 COMMENT=	"C++ reference implementation of the Atlas protocol"
 
 VERSION=	0.4.3.1
 DISTNAME=	Atlas-C++-${VERSION}
-PKGNAME=	${DISTNAME:S/C++-//:L}
+PKGNAME=	${DISTNAME:S/C++-//:L}p0
+SHARED_LIBS=		Atlas			1.1 \
+			AtlasCodecs		1.1 \
+			AtlasFunky		1.1 \
+			AtlasMessage		1.1 \
+			AtlasNet		1.1 \
+			AtlasObjects		1.1 \
+			AtlasObjectsEntity	1.1 \
+			AtlasObjectsOperation	1.1
+MODGNU_SHARED_LIBS=	Atlas			'' \
+			AtlasCodecs		'' \
+			AtlasFunky		'' \
+			AtlasMessage		'' \
+			AtlasNet		'' \
+			AtlasObjects		'' \
+			AtlasObjectsEntity	'' \
+			AtlasObjectsOperation	''
 CATEGORIES=	devel
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
@@ -17,11 +33,8 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	ftp://ftp.ecs.soton.ac.uk/pub/worldforge/acorn/0.4/src/ \
 		http://kafka.i-site.com/~novalis/mirrors/acorn/0.4/src/
 
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
-		patch-*
-
 USE_X11=	Yes
+USE_LIBTOOL=	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu

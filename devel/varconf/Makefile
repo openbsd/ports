@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2005/11/11 21:19:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2006/01/02 17:49:48 bernd Exp $
 
 COMMENT=	"configuration system for the STAGE server"
 
 DISTNAME=	varconf-0.5.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
+SHARED_LIBS=	varconf 1.0
 CATEGORIES=	devel
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
