@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_services_name_Makefile_in,v 1.1 2006/01/02 17:04:20 bernd Exp $
+--- src/services/name/Makefile.in.orig	Mon Jan  2 17:02:59 2006
++++ src/services/name/Makefile.in	Mon Jan  2 17:03:28 2006
+@@ -143,7 +143,7 @@ libORBitservicesinclude_HEADERS = \
+ 
+ 
+ libORBitCosNaming_2_la_LDFLAGS = \
+-	-version-info $(LT_VERSION)					\
++	$(LIBORBitCosNaming-2_LTVERSION)				\
+ 	-no-undefined							\
+ 	$(ORBIT_NAME_LIBS)						\
+ 	$(top_builddir)/src/orb/libORBit-2.la

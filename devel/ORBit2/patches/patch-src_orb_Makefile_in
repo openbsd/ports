@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_orb_Makefile_in,v 1.1 2006/01/02 17:04:20 bernd Exp $
+--- src/orb/Makefile.in.orig	Mon Jan  2 16:58:14 2006
++++ src/orb/Makefile.in	Mon Jan  2 16:59:00 2006
+@@ -141,7 +141,7 @@ INCLUDES = \
+ libORBit_2_la_SOURCES = orbit-init.c orbit-init.h
+ 
+ libORBit_2_la_LDFLAGS = \
+-	-version-info $(LT_VERSION)   \
++	$(LIBORBit-2_LTVERSION)   \
+ 	-no-undefined		      \
+ 	$(ORBIT_LIBS)                 \
+ 	-lpopt

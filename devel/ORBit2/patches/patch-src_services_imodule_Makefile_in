@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_services_imodule_Makefile_in,v 1.1 2006/01/02 17:04:20 bernd Exp $
+--- src/services/imodule/Makefile.in.orig	Mon Jan  2 17:01:35 2006
++++ src/services/imodule/Makefile.in	Mon Jan  2 17:02:19 2006
+@@ -159,7 +159,7 @@ libORBit_imodule_2_la_LIBADD = \
+ 	$(ORBIT_LIBS)
+ 
+ 
+-libORBit_imodule_2_la_LDFLAGS = -no-undefined
++libORBit_imodule_2_la_LDFLAGS = $(LIBORBit-imodule-2_LTVERSION) -no-undefined
+ subdir = src/services/imodule
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
