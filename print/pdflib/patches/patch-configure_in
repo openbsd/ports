@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.2 2003/12/26 17:07:56 naddy Exp $
---- configure.in.orig	2002-06-15 22:41:53.000000000 +0200
-+++ configure.in	2003-12-26 17:32:02.000000000 +0100
+$OpenBSD: patch-configure_in,v 1.3 2006/01/02 20:05:09 sturm Exp $
+--- configure.in.orig	Sat Jun 15 22:41:53 2002
++++ configure.in	Mon Jan  2 20:59:02 2006
 @@ -601,42 +601,6 @@ AC_SUBST(TCLINCLUDE)
  AC_SUBST(TCLPACKAGEDIR)
  AC_SUBST(TCLBIN)
@@ -110,4 +110,13 @@ $OpenBSD: patch-configure_in,v 1.2 2003/12/26 17:07:56 naddy Exp $
 +# ----------------------------------------------------------------
  #  PDFlib auxiliary library: PDI (PDF import library)
  # ----------------------------------------------------------------
+ 
+@@ -934,7 +949,7 @@ if test "$WITH_SHARED" = "no"; then
+     RPATH=""
+ else
+     dnl we generate both static and shared libs
+-    RPATH="-rpath \$(libdir) -version-info $LTVERSIONINFO"
++    RPATH="-rpath \$(libdir) \$(LIBpdf_LTVERSION)"
+ 
+ fi
  
