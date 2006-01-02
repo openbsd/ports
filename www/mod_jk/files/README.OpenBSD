@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.3 2005/03/05 01:04:11 kurt Exp $
+$OpenBSD: README.OpenBSD,v 1.4 2006/01/02 18:24:57 kurt Exp $
 
                           OpenBSD mod_jk Package
                        Apache-Tomcat AJP Connector
@@ -51,4 +51,4 @@ Configuration questions can be asked (after checking archives of course)
 by subscribing to the tomcat-user mailing list. Instructions for subscribing
 can be found here:
 
-http://jakarta.apache.org/site/mail2.html#Tomcat
+http://tomcat.apache.org/lists.html#tomcat-users
