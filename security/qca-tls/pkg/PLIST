@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/19 20:28:27 niallo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2006/01/02 17:00:16 espie Exp $
 %%SHARED%%
-lib/qt3/
-lib/qt3/plugins/
-lib/qt3/plugins/crypto/
+${MODQT_PLUGINS}/crypto/
+${MODQT_PLUGINS}/crypto/libqca-tls.so

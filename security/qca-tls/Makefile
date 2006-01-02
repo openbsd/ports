@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/19 20:28:27 niallo Exp $ 
+# $OpenBSD: Makefile,v 1.2 2006/01/02 17:00:16 espie Exp $ 
 
 COMMENT=                "Qt Cryptographic Architecture, TLS plugin"
 
 DISTNAME=               qca-tls-1.0
+PKGNAME=		$(DISTNAME)p0
 CATEGORIES=             security
 
 HOMEPAGE=               http://delta.affinix.com/qca/
@@ -30,7 +31,8 @@ CONFIGURE_STYLE=        simple
 CONFIGURE_ENV=		LOCALBASE=${LOCALBASE}
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/qt3/plugins/crypto 
-	${INSTALL_DATA} ${WRKSRC}/libqca-tls.so ${PREFIX}/lib/qt3/plugins/crypto
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODQT_PLUGINS}/crypto 
+	${INSTALL_DATA} ${WRKSRC}/libqca-tls.so ${PREFIX}/${MODQT_PLUGINS}/crypto
 
+SUBST_VARS+= MODQT_PLUGINS
 .include <bsd.port.mk>
