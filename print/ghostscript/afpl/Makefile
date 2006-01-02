@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2006/01/02 20:08:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.30 2006/01/02 22:43:10 sturm Exp $
 
 COMMENT=	"AFPL PostScript interpreter"
 
@@ -6,6 +6,7 @@ VERSION=	8.14
 DISTNAME=	ghostscript-${VERSION}
 PKGNAME=	${DISTNAME}p4
 CATEGORIES=	print lang
+SHARED_LIBS=	gs	8.14
 
 DIR=		AFPL/gs${VERSION:S/.//}
 MASTER_SITES=	${GS_SITES}
@@ -54,7 +55,8 @@ BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 		PSOBJDIR=./objects \
 		PSGENDIR=./objects \
 		STDLIBS='-pthread -lm' \
-		DEVICE_DEVS=
+		DEVICE_DEVS= \
+		LIBgs_VERSION=${LIBgs_VERSION}
 
 PDFDIR=share/ghostscript/${VERSION}/lib
 

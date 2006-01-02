@@ -1,6 +1,22 @@
-$OpenBSD: patch-src_unix-dll_mak,v 1.4 2005/01/25 17:19:33 alek Exp $
+$OpenBSD: patch-src_unix-dll_mak,v 1.5 2006/01/02 22:43:10 sturm Exp $
 --- src/unix-dll.mak.orig	Fri Dec 12 23:08:05 2003
-+++ src/unix-dll.mak	Tue Jan 25 13:30:49 2005
++++ src/unix-dll.mak	Mon Jan  2 22:00:12 2006
+@@ -46,11 +46,11 @@ GSSOX=$(BINDIR)/$(SOBINRELDIR)/$(GSSOX_X
+ 
+ # shared library
+ GS_SONAME=lib$(GS).so
+-GS_SONAME_MAJOR=$(GS_SONAME).$(GS_VERSION_MAJOR)
+-GS_SONAME_MAJOR_MINOR= $(GS_SONAME).$(GS_VERSION_MAJOR).$(GS_VERSION_MINOR)
++GS_SONAME_MAJOR=$(GS_SONAME).$(LIBgs_VERSION:R)
++GS_SONAME_MAJOR_MINOR= $(GS_SONAME).$(LIBgs_VERSION)
+ GS_SO=$(BINDIR)/$(GS_SONAME)
+-GS_SO_MAJOR=$(GS_SO).$(GS_VERSION_MAJOR)
+-GS_SO_MAJOR_MINOR=$(GS_SO_MAJOR).$(GS_VERSION_MINOR)
++GS_SO_MAJOR=$(GS_SO).$(LIBgs_VERSION:R)
++GS_SO_MAJOR_MINOR=$(GS_SO).$(LIBgs_VERSION)
+ 
+ # Shared object is built by redefining GS_XE in a recursive make.
+ 
 @@ -70,11 +70,11 @@ $(GSSOX_XE): $(GS_SO) $(GLSRC)dxmain.c
  	$(GLCC) -g `gtk-config --cflags` -o $(GSSOX_XE) $(GLSRC)dxmain.c -L$(BINDIR) -l$(GS) `gtk-config --libs`
  
