@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2005/12/23 17:02:46 bernd Exp $
+# $OpenBSD: Makefile,v 1.49 2006/01/02 17:12:01 bernd Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
 COMMENT=	"generic shared library support script"
@@ -29,7 +29,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-FAKE_FLAGS=	 FAKE_FLAGS=${MAKE_FLAGS} DESTDIR=${WRKINST}
+FAKE_FLAGS=	 ${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 MULTI_PACKAGES=	-ltdl
 SUBPACKAGE?=
