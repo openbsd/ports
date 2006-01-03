@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile,v 1.1 2006/01/03 23:00:32 alek Exp $
+--- Makefile.orig	Fri Mar 12 02:50:55 2004
++++ Makefile	Tue Jan  3 23:45:20 2006
+@@ -38,9 +38,8 @@ install: all strip
+ 
+ # shared libraries (for Linux)
+ so:
+-	ld -o lib/liblua.so.$V -shared src/*.o
+-	ld -o lib/liblualib.so.$V -shared src/lib/*.o
+-	cd lib; ln -fs liblua.so.$V liblua.so; ln -fs liblualib.so.$V liblualib.so
++	ld -o lib/liblua.so.${LIBlua_VERSION} -shared src/*.o
++	ld -o lib/liblualib.so.${LIBlualib_VERSION} -shared src/lib/*.o
+ 
+ # binaries using shared libraries
+ sobin:

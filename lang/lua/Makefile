@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2005/12/10 23:02:05 pedro Exp $
+# $OpenBSD: Makefile,v 1.17 2006/01/03 23:00:31 alek Exp $
 
 COMMENT=	"powerful, light-weight programming language"
 
 DISTNAME=	lua-5.0.2
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
+SHARED_LIBS=	lua 5.0 \
+		lualib 5.0
 CATEGORIES=     lang
 
 MASTER_SITES=	http://www.lua.org/ftp/ \
@@ -30,6 +32,9 @@ NO_REGRESS=	Yes
 CFLAGS+=	-fPIC
 ALL_TARGET+=	all so sobin
 .endif
+
+MAKE_FLAGS=	LIBlua_VERSION=${LIBlua_VERSION} \
+		LIBlualib_VERSION=${LIBlualib_VERSION}
 
 post-extract:
 .for f in init luapkg packages
