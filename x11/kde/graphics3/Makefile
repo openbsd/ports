@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2005/12/19 09:54:29 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2006/01/03 14:10:51 espie Exp $
 
 COMMENT=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
@@ -16,6 +16,13 @@ PKGNAME=${DISTNAME}p0
 PKGNAME-kamera=kamera-${VERSION}p0
 PKGNAME-kpov=kpovmodeller-${VERSION}p0
 PKGNAME-sane=ksane-${VERSION}p0
+SHARED_LIBS=		kghostviewlib	0.0 \
+			kimageviewer	0.0 \
+			kmultipage	0.0 \
+			ksvg		0.1 \
+			text2path	0.0 \
+			kpovmodeler	0.0 \
+			kscan		1.0
 SUBPACKAGE?=
 
 BUILD_DEPENDS+=	::print/teTeX/base \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2005/11/30 11:22:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.28 2006/01/03 14:10:51 espie Exp $
 bin/kcolorchooser
 bin/kcoloredit
 bin/kdvi
@@ -306,15 +306,15 @@ lib/libkdeinit_mrmlsearch.so
 lib/libkfaximage.la
 lib/libkfaximage.so
 lib/libkghostviewlib.la
-@lib lib/libkghostviewlib.so.0.0
+@lib lib/libkghostviewlib.so.${LIBkghostviewlib_VERSION}
 lib/libkimageviewer.la
-@lib lib/libkimageviewer.so.0.0
+@lib lib/libkimageviewer.so.${LIBkimageviewer_VERSION}
 lib/libkmultipage.la
-@lib lib/libkmultipage.so.0.0
+@lib lib/libkmultipage.so.${LIBkmultipage_VERSION}
 lib/libksvg.la
-@lib lib/libksvg.so.0.1
+@lib lib/libksvg.so.${LIBksvg_VERSION}
 lib/libtext2path.la
-@lib lib/libtext2path.so.0.0
+@lib lib/libtext2path.so.${LIBtext2path_VERSION}
 share/applications/kde/kamera.desktop
 share/applications/kde/kcmkmrml.desktop
 share/applications/kde/kcolorchooser.desktop

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-sane,v 1.1 2005/11/30 11:22:09 espie Exp $
+@comment $OpenBSD: PLIST-sane,v 1.2 2006/01/03 14:10:51 espie Exp $
 bin/kooka
 lib/libkscan.la
-@lib lib/libkscan.so.1.0
+@lib lib/libkscan.so.${LIBkscan_VERSION}
 share/applications/kde/kooka.desktop
 share/apps/kooka/
 share/apps/kooka/kookaui.rc

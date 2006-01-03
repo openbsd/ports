@@ -1,0 +1,13 @@
+$OpenBSD: patch-kviewshell_Makefile_in,v 1.1 2006/01/03 14:10:51 espie Exp $
+--- kviewshell/Makefile.in.orig	Tue Jan  3 13:33:12 2006
++++ kviewshell/Makefile.in	Tue Jan  3 13:33:33 2006
+@@ -564,7 +564,8 @@ libkmultipage_la_SOURCES=kmultipage.cpp 
+ 		kprintDialogPage_pageoptions.cpp kmultipageInterface_skel.cpp kvsprefs.cpp
+ 
+ kde_kcfg_DATA = kviewshell.kcfg
+-libkmultipage_la_LDFLAGS = $(all_libraries)
++LIBkmultipage_LTVERSION=
++libkmultipage_la_LDFLAGS = $(all_libraries) $(LIBkmultipage_LTVERSION)
+ libkmultipage_la_LIBADD = $(LIB_KFILE) -lkdeprint -lkparts
+ emptymultipagepart_la_SOURCES = empty_multipage.cpp emptyRenderer.cpp
+ emptymultipagepart_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module

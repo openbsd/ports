@@ -1,0 +1,13 @@
+$OpenBSD: patch-libkscan_Makefile_in,v 1.1 2006/01/03 14:10:51 espie Exp $
+--- libkscan/Makefile.in.orig	Tue Jan  3 13:34:52 2006
++++ libkscan/Makefile.in	Tue Jan  3 13:35:09 2006
+@@ -491,7 +491,8 @@ libkscan_la_SOURCES = kscandevice.cpp ks
+ 
+ #>- libkscan_la_LDFLAGS = $(all_libraries) $(LIBSANE_LDFLAGS) -no-undefined -version-info 1:0
+ #>+ 1
+-libkscan_la_LDFLAGS = $(all_libraries) $(LIBSANE_LDFLAGS) -no-undefined $(KDE_NO_UNDEFINED) -version-info 1:0
++LIBkscan_LTVERSION=-version-info 1:0
++libkscan_la_LDFLAGS = $(all_libraries) $(LIBSANE_LDFLAGS) -no-undefined $(KDE_NO_UNDEFINED) $(LIBkscan_LTVERSION)
+ libkscan_la_LIBADD = $(LIBSANE_LIBS) $(LIB_KFILE)
+ kde_services_DATA = scanservice.desktop
+ #>- METASOURCES = AUTO
