@@ -1,0 +1,13 @@
+$OpenBSD: patch-kcontrol_kfontinst_lib_Makefile_in,v 1.1 2006/01/03 14:49:23 espie Exp $
+--- kcontrol/kfontinst/lib/Makefile.in.orig	Tue Jan  3 08:37:34 2006
++++ kcontrol/kfontinst/lib/Makefile.in	Tue Jan  3 08:37:55 2006
+@@ -594,7 +594,8 @@ KfiConstants.h
+ libkfontinst_la_LIBADD = $(LIB_KDECORE) $(LIBFONTCONFIG_LIBS) $(LIBFREETYPE_LIBS) $(LIB_KIO) $(LIBXFT_LIB)
+ #>- libkfontinst_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIBFONTCONFIG_RPATH) $(LIBFREETYPE_RPATH) -no-undefined
+ #>+ 1
+-libkfontinst_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIBFONTCONFIG_RPATH) $(LIBFREETYPE_RPATH) -no-undefined $(KDE_NO_UNDEFINED)
++LIBkfontinst_LTVERSION=
++libkfontinst_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIBFONTCONFIG_RPATH) $(LIBFREETYPE_RPATH) -no-undefined $(KDE_NO_UNDEFINED) $(LIBkfontinst_LTVERSION)
+ AM_CPPFLAGS = $(all_includes) $(LIBFREETYPE_CFLAGS) $(LIBFONTCONFIG_CFLAGS) -D_LARGEFILE64_SOURCE
+ #>- all: all-am
+ #>+ 1

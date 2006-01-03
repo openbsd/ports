@@ -1,0 +1,13 @@
+$OpenBSD: patch-kicker_libkicker_Makefile_in,v 1.1 2006/01/03 14:49:23 espie Exp $
+--- kicker/libkicker/Makefile.in.orig	Tue Jan  3 08:38:58 2006
++++ kicker/libkicker/Makefile.in	Tue Jan  3 08:39:16 2006
+@@ -600,7 +600,8 @@ libkickermain_la_SOURCES=appletinfo.cpp 
+ #>- libkickermain_la_METASOURCES = AUTO
+ #>- libkickermain_la_LDFLAGS = $(all_libraries) -version-info 1:0:0 -no-undefined
+ #>+ 1
+-libkickermain_la_LDFLAGS = $(all_libraries) -version-info 1:0:0 -no-undefined $(KDE_NO_UNDEFINED)
++LIBkickermain_LTVERSION=-version-info 1:0:0
++libkickermain_la_LDFLAGS = $(all_libraries) $(LIBkickermain_LTVERSION) -no-undefined $(KDE_NO_UNDEFINED)
+ libkickermain_la_LIBADD = $(LIB_KIO)
+ kde_kcfg_DATA = kickerSettings.kcfg
+ #>- all: all-am

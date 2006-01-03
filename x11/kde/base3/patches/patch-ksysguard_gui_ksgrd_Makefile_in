@@ -1,0 +1,13 @@
+$OpenBSD: patch-ksysguard_gui_ksgrd_Makefile_in,v 1.1 2006/01/03 14:49:23 espie Exp $
+--- ksysguard/gui/ksgrd/Makefile.in.orig	Tue Jan  3 08:40:42 2006
++++ ksysguard/gui/ksgrd/Makefile.in	Tue Jan  3 08:41:17 2006
+@@ -590,7 +590,8 @@ INCLUDES = -I$(srcdir)/../SensorDisplayL
+ lib_LTLIBRARIES = libksgrd.la
+ #>- libksgrd_la_LDFLAGS = -no-undefined -version-info 3:0:2 $(all_libraries)
+ #>+ 1
+-libksgrd_la_LDFLAGS = -no-undefined $(KDE_NO_UNDEFINED) -version-info 3:0:2 $(all_libraries)
++LIBksgrd_LTVERSION=-version-info 3:0:2
++libksgrd_la_LDFLAGS = -no-undefined $(KDE_NO_UNDEFINED) $(LIBksgrd_LTVERSION) $(all_libraries)
+ libksgrd_la_LIBADD = $(LIB_KDEUI)
+ 
+ # Which sources should be compiled for ksysguard.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2005/12/17 11:27:44 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2006/01/03 14:49:23 espie Exp $
 
 COMMENT= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
@@ -9,6 +9,19 @@ DISTNAME=		kdebase-${VERSION}
 PKGNAME=		${DISTNAME}p0
 PKGNAME-samba=		kdesamba-${VERSION}p0
 MODKDE_VERSION?=	3.5
+SHARED_LIBS=		kasbar			1.0 \
+			kateinterfaces		0.0 \
+			kateutils		0.0 \
+			kdecorations		1.0 \
+			kfontinst		0.0 \
+			khotkeys_shared		1.0 \
+			kickermain		1.0 \
+			konq			6.0 \
+			konqsidebarplugin	3.0 \
+			ksgrd			3.0 \
+			ksplashthemes		0.0 \
+			taskbar			3.0 \
+			taskmanager		1.0
 
 MULTI_PACKAGES=		-samba
 SUBPACKAGE?=
@@ -58,7 +71,7 @@ post-install:
 	rm -rf ${PREFIX}/share/config/kdm
 	${INSTALL_PROGRAM} ${WRKBUILD}/kdm/kfrontend/genkdmconf ${PREFIX}/libexec
 
-FAKE_FLAGS=DESTDIR=${WRKINST} sysconfdir=${SAMPLECONFDIR}
+FAKE_FLAGS=${MAKE_FLAGS} DESTDIR=${WRKINST} sysconfdir=${SAMPLECONFDIR}
 USE_LIBTOOL=Yes
 LIBTOOL_FLAGS=--tag=disable-static
 
